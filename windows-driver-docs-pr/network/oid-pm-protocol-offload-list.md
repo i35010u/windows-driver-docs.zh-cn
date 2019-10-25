@@ -1,44 +1,44 @@
 ---
 title: OID_PM_PROTOCOL_OFFLOAD_LIST
-description: 为查询，过量驱动程序可用于 OID_PM_PROTOCOL_OFFLOAD_LIST OID 枚举基础的网络适配器设置协议卸载。
+description: 作为查询，过量驱动程序可以使用 OID_PM_PROTOCOL_OFFLOAD_LIST OID 来枚举基础网络适配器上设置的协议卸载。
 ms.assetid: 95ace77b-e583-4611-8460-af67b4d4805d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PM_PROTOCOL_OFFLOAD_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f563ebb18f062c69796277d468aa611a4cc33cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2b56a7e7dab666171abca749c408a610033162fd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377063"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844051"
 ---
-# <a name="oidpmprotocoloffloadlist"></a>OID\_PM\_协议\_卸载\_列表
+# <a name="oid_pm_protocol_offload_list"></a>OID\_PM\_协议\_卸载\_列表
 
 
-为查询，过量驱动程序可以使用 OID\_PM\_协议\_卸载\_列表 OID 枚举基础的网络适配器设置协议卸载。 从 OID 查询请求，成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一系列的指针[ **NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)描述当前处于活动状态的协议的结构将卸载。
+作为查询，过量驱动程序可以使用 OID\_PM\_协议\_卸载\_列表 OID 来枚举基础网络适配器上设置的协议卸载。 成功从 OID 查询请求返回后， [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)的列表的指针描述当前处于活动状态的协议卸载的结构。
 
 <a name="remarks"></a>备注
 -------
 
-NDIS 处理查询的微型端口驱动程序。 NDIS 驱动程序可以使用 OID\_PM\_协议\_卸载\_列表 OID 来获取协议卸载的基础的网络适配器上设置的列表。
+NDIS 处理微型端口驱动程序的查询。 NDIS 驱动程序可以使用 OID\_PM\_协议\_卸载\_列表 OID，以获取在基础网络适配器上设置的协议卸载的列表。
 
-每个[ **NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构在列表中，NDIS 集**NextProtocolOffloadOffset**从 OID 信息缓冲区开头的偏移量的成员 (即，缓冲区开头的**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构指向) 到下一步 NDIS 开头\_PM\_协议\_卸载结构列表中的。 中的偏移量**NextProtocolOffloadOffset**列表中的最后一个结构的成员为零。
+对于列表中的每个[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构，NDIS 将**NextProtocolOffloadOffset**成员设置为距 OID 信息缓冲区开头的偏移量（即，缓冲区的开头[ **\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构指向）的 ndis**成员到**列表中的下一 NDIS\_PM\_协议\_卸载结构的开头。 列表中最后一个结构的**NextProtocolOffloadOffset**成员中的偏移量为零。
 
-如果网络适配器设置无协议卸载，请设置 NDIS**数据。查询\_信息。BytesWritten**成员的 NDIS\_OID\_为零，并返回 NDIS 请求结构\_状态\_成功。 中的数据**数据。查询\_INFORMATION.InformationBuffer** NDIS 不修改成员。
+如果未在网络适配器上设置任何协议卸载，NDIS 将设置**数据。查询\_信息。BytesWritten** ndis\_OID 的成员\_请求结构为零并返回 ndis\_状态\_成功。 数据内的数据 **。查询\_InformationBuffer**成员不由 NDIS 修改。
 
-NDIS 返回请求的以下状态代码之一：
+NDIS 为请求返回以下状态代码之一：
 
-<a href="" id="ndis-status-success"></a>NDIS\_状态\_成功  
-请求已成功完成。 **InformationBuffer**如果任何包含的协议卸载列表的指针。
+<a href="" id="ndis-status-success"></a>成功的 NDIS\_状态\_  
+请求已成功完成。 **InformationBuffer**包含指向协议卸载列表的指针（如果有）。
 
-<a href="" id="ndis-status-pending"></a>NDIS\_状态\_PENDING  
+<a href="" id="ndis-status-pending"></a>NDIS\_状态\_挂起  
 请求正在等待完成。 最终状态代码和结果将传递给调用方的 OID 请求完成处理程序。
 
-<a href="" id="ndis-status-buffer-too-short"></a>NDIS\_状态\_缓冲区\_过\_短  
-信息缓冲区太短。 NDIS 集**数据。查询\_信息。BytesNeeded** NDIS 中的成员\_OID\_结构到最小缓冲区大小的请求是必需的。
+<a href="" id="ndis-status-buffer-too-short"></a>NDIS\_状态\_缓存\_\_太短  
+信息缓冲区太短。 NDIS 设置**数据。查询\_信息。** \_OID 中的 BytesNeeded 成员\_请求结构到所需的最小缓冲区大小。
 
-<a href="" id="ndis-status-failure"></a>NDIS\_状态\_失败  
-请求失败，而原因并非前面的原因。
+<a href="" id="ndis-status-failure"></a>\_故障时的 NDIS\_状态  
+由于上述原因之外的原因，导致请求失败。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,22 +50,22 @@ NDIS 返回请求的以下状态代码之一：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.20 及更高版本。 未请求的微型端口驱动程序。 （请参见备注部分。）</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.20 和更高版本中受支持。 未请求微型端口驱动程序。 （请参见 "备注" 部分。）</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
+[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)
 
  
 

@@ -3,8 +3,8 @@ title: 将 NDIS 网络接口映射到 NDIS OID
 description: 将 NDIS 网络接口映射到 NDIS OID
 ms.assetid: 117f94fd-829d-4ad8-be25-a6a90a8d4c50
 keywords:
-- NDIS 网络接口 WDK 和映射
-- 网络接口 WDK 和映射
+- NDIS 网络接口 WDK，映射
+- 网络接口 WDK，映射
 - Oid WDK 网络，网络接口
 - OID 请求 WDK 网络
 - 代理接口提供程序 WDK 网络
@@ -12,12 +12,12 @@ keywords:
 - NDIS 网络接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3889228d9d5f13372f2443661bcccec210c0d977
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2aaebb5df2236a57f7adc4f45b5b742c391e6708
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387293"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844304"
 ---
 # <a name="mapping-of-ndis-network-interfaces-to-ndis-oids"></a>将 NDIS 网络接口映射到 NDIS OID
 
@@ -25,21 +25,21 @@ ms.locfileid: "67387293"
 
 
 
-若要响应的 NDIS 接口对象请求时，NDIS 接口提供程序可以缓存它们从基础驱动程序中获取，并还可以颁发 OID 请求以获取有关基础接口的信息的信息。
+为了响应 NDIS 接口对象请求，NDIS 接口提供程序可以缓存从基础驱动程序获取的信息，还可以发出 OID 请求以获取有关基础接口的信息。
 
-为代理接口提供程序，NDIS 通常会缓存它接收有关微型端口适配器和筛选器模块信息。 NDIS 代理接口提供程序使用缓存的信息，如果需要，对接口请求作出响应。 在某些情况下，NDIS 代理接口提供程序颁发 Oid，若要获取的接口的信息。 例如，主要的 NDIS 5 的接口信息来源。*x*早期驱动程序是通过 OID 请求。 NDIS 6.0 驱动程序中有额外的源接口的信息，如[ **NDIS\_重新启动\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_restart_attributes)并[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。 有关 Oid 中信息的备用源的详细信息，请参阅为每个 OID 的参考页。
+作为代理接口提供程序，NDIS 通常会缓存它收到的有关微型端口适配器和筛选器模块的信息。 NDIS 代理接口提供程序使用缓存的信息来响应接口请求。 在某些情况下，NDIS 代理接口提供程序会发出 Oid 以获取接口的信息。 例如，NDIS 5 的接口信息的主要来源。*x*及更早版本的驱动程序通过 OID 请求。 在 NDIS 6.0 驱动程序中，还提供了接口信息的其他源，如[**NDIS\_RESTART\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)和[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。 有关 Oid 中信息的替代源的详细信息，请参阅每个 OID 的参考页。
 
-NDIS 代理接口提供程序还会生成代表微型端口适配器和筛选器模块的一些接口信息。 例如，NDIS 生成接口别名 (*ifAlias*在 RFC 2863) 以响应*ifAlias*请求。 NDIS 定义其他 Oid 从 NDIS 接口提供程序获取此类信息。 例如， [OID\_代\_别名](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-alias)允许指定的接口提供*ifAlias*对象。 此类 Oid 是特定于接口提供程序，永远不会用于从其他的 NDIS 驱动程序中获取信息。
+NDIS 代理接口提供程序还代表小型端口适配器和筛选器模块生成一些接口信息。 例如，NDIS 会在 RFC*2863 中生成*一个接口别名，以响应*ifAlias*请求。 NDIS 定义了其他 Oid 来从 NDIS 接口提供程序获取此类信息。 例如， [OID\_GEN\_ALIAS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-alias)允许接口提供程序指定*ifAlias*对象。 此类 Oid 特定于接口提供程序，从不用于从其他 NDIS 驱动程序获取信息。
 
-除了特定于接口提供程序的 Oid，接口提供程序必须支持其他 NDIS 可用于获取接口的信息的 NDIS Oid。 NDIS 可以发出这些 Oid 到提供程序和提供程序可以发出这些 Oid，如有必要，若要从基础接口收集的信息。
+除了特定于接口提供程序的 Oid 以外，接口提供程序还必须支持 NDIS 可用于获取接口信息的其他 NDIS Oid。 NDIS 可以向提供程序颁发这些 Oid，提供程序可以颁发这些 Oid （如有必要）从基础接口中收集信息。
 
-**请注意**  NDIS 定义不包含在 RFC 2863 的更多统计信息。 将所有的 NDIS 支持接口统计信息映射到 Oid 的列表，请参阅的成员[ **NDIS\_界面\_信息**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)结构。 本主题中的表定义的统计信息的读取器的尝试与的 NDIS 实现规范 RFC 2863 规范中定义的映射。
+**请注意**  NDIS 定义 RFC 2863 中未包含的其他统计信息。 有关将 NDIS 支持的所有接口统计信息映射到 Oid 的列表，请参阅[**NDIS\_接口的成员\_信息**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)结构。 本主题中的表为尝试将规范与 NDIS 实现相关的读取器定义为 RFC 2863 规范中定义的统计信息进行了映射。
 
  
 
-下表显示了从管理信息基础 (MIB) 到 NDIS 6.0 Oid 和 NDIS 可能使用 NDIS 5 中获取信息的 Oid 中定义的对象的映射。*x*和早期驱动程序。 该表还包括一些未定义为 MIB 对象的其他接口对象。 界面对象也对应中的成员[ **NDIS\_界面\_信息**](ndis-interface-information.md)与关联的结构[OID\_代\_界面\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-interface-info)OID。
+下表显示了从管理信息库（MIB）中定义的对象到 NDIS 6.0 Oid 的映射，以及 NDIS 可能用于从 NDIS 5 获取信息的 Oid。*x*及更早版本的驱动程序。 该表还包括一些未定义为 MIB 对象的其他接口对象。 接口对象还对应于[**NDIS\_接口**](ndis-interface-information.md)中的成员\_信息结构与[OID\_第一代\_接口\_INFO](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-interface-info) OID 关联。
 
-**请注意**  NDIS 6.0 Oid 表中以星号标记 (\*) 前缀是特定于接口提供程序。 其他 NDIS 6.0 Oid 可以颁发给接口提供程序和其他 NDIS 驱动程序。
+**请注意**  用星号（\*）前缀标记的表中的 NDIS 6.0 oid 特定于接口提供程序。 其他 NDIS 6.0 Oid 可以颁发给接口提供程序和其他 NDIS 驱动程序。
 
  
 
@@ -51,9 +51,9 @@ NDIS 代理接口提供程序还会生成代表微型端口适配器和筛选器
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">接口的 MIB 值</th>
+<th align="left">接口 MIB 值</th>
 <th align="left">NDIS 6.0 Oid</th>
-<th align="left">NDIS 5.x 和早期的 Oid</th>
+<th align="left">NDIS 1.x 和更早的 Oid</th>
 </tr>
 </thead>
 <tbody>
@@ -85,7 +85,7 @@ NDIS 代理接口提供程序还会生成代表微型端口适配器和筛选器
 <tr class="even">
 <td align="left"><p><em>ifHCInOctets</em></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-bytes-rcv" data-raw-source="[OID_GEN_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-bytes-rcv)">OID_GEN_BYTES_RCV</a></p></td>
-<td align="left"><p>NDIS 将结果添加从这些 Oid 来收集<em>ifHCInOctets</em>从 NDIS 5 的值。<em>x</em>驱动程序：</p>
+<td align="left"><p>NDIS 添加这些 Oid 的结果，从 NDIS 5 收集<em>ifHCInOctets</em>值。<em>x</em>驱动程序：</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-rcv" data-raw-source="[OID_GEN_DIRECTED_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-rcv)">OID_GEN_DIRECTED_BYTES_RCV</a>+</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv" data-raw-source="[OID_GEN_MULTICAST_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-rcv)">OID_GEN_MULTICAST_BYTES_RCV</a>+</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv" data-raw-source="[OID_GEN_BROADCAST_BYTES_RCV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-rcv)">OID_GEN_BROADCAST_BYTES_RCV</a></p>
@@ -109,7 +109,7 @@ NDIS 代理接口提供程序还会生成代表微型端口适配器和筛选器
 <tr class="even">
 <td align="left"><p><em>ifHCOutOctets</em></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-bytes-xmit" data-raw-source="[OID_GEN_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-bytes-xmit)">OID_GEN_BYTES_XMIT</a></p></td>
-<td align="left"><p>NDIS 将结果添加从这些 Oid 来收集<em>ifHCInOctets</em>从 NDIS 5 的值。<em>x</em>驱动程序：</p>
+<td align="left"><p>NDIS 添加这些 Oid 的结果，从 NDIS 5 收集<em>ifHCInOctets</em>值。<em>x</em>驱动程序：</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-xmit" data-raw-source="[OID_GEN_DIRECTED_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-directed-bytes-xmit)">OID_GEN_DIRECTED_BYTES_XMIT</a>+</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit" data-raw-source="[OID_GEN_MULTICAST_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-multicast-bytes-xmit)">OID_GEN_MULTICAST_BYTES_XMIT</a>+</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit" data-raw-source="[OID_GEN_BROADCAST_BYTES_XMIT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-broadcast-bytes-xmit)">OID_GEN_BROADCAST_BYTES_XMIT</a></p>
@@ -122,7 +122,7 @@ NDIS 代理接口提供程序还会生成代表微型端口适配器和筛选器
 </tr>
 <tr class="even">
 <td align="left"><p><em>ifHighSpeed</em></p></td>
-<td align="left"><p>* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed-ex" data-raw-source="[OID_GEN_LINK_SPEED_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed-ex)">OID_GEN_LINK_SPEED_EX</a>, * <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-link-speed" data-raw-source="[OID_GEN_XMIT_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-link-speed)">OID_GEN_XMIT_LINK_SPEED</a>, * <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-link-speed" data-raw-source="[OID_GEN_RCV_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-link-speed)">OID_GEN_RCV_LINK_SPEED</a></p></td>
+<td align="left"><p>* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed-ex" data-raw-source="[OID_GEN_LINK_SPEED_EX](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed-ex)">OID_GEN_LINK_SPEED_EX</a>、* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-link-speed" data-raw-source="[OID_GEN_XMIT_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-xmit-link-speed)">OID_GEN_XMIT_LINK_SPEED</a>、* <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-link-speed" data-raw-source="[OID_GEN_RCV_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-rcv-link-speed)">OID_GEN_RCV_LINK_SPEED</a></p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed" data-raw-source="[OID_GEN_LINK_SPEED](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-link-speed)">OID_GEN_LINK_SPEED</a></p></td>
 </tr>
 <tr class="odd">

@@ -1,33 +1,33 @@
 ---
 title: EnumSchema 请求和响应架构
-description: 下面是 EnumSchema 请求架构和相应的响应架构定义和各自的示例。
+description: 下面是 EnumSchema 请求架构和相应的响应架构定义以及每个定义的示例。
 ms.assetid: 031FA2EA-A33B-409C-82FD-B4FE9D0A2E93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 05c4ea5d217578e313ff39a8b68cebe85be49169
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c34eb163316f3b614d3a43500538e507cb64c4aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324245"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843126"
 ---
 # <a name="enumschema-request-and-response-schemas"></a>EnumSchema 请求和响应架构
 
 
-下面是 EnumSchema 请求架构和相应的响应架构定义和各自的示例。
+下面是 EnumSchema 请求架构和相应的响应架构定义以及每个定义的示例。
 
 ## <a name="the-enumschema-request-schema"></a>EnumSchema 请求架构
 
 
-EnumSchema 请求用于获取的打印机的属性列表。
+EnumSchema 请求用于获取打印机属性的列表。
 
-所有 EnumSchema 请求是完全相同，并且包含的根元素。
+所有 EnumSchema 请求都是完全相同的，只包含一个根元素。
 
 ```xml
 <bidi:EnumSchema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi"/>
 ```
 
-EnumSchema 请求架构中的正式定义
+EnumSchema 请求架构的正式定义
 
 ```xml
 <?xml version='1.0'?>
@@ -45,9 +45,9 @@ EnumSchema 请求架构中的正式定义
 ## <a name="the-enumschema-response-schema"></a>EnumSchema 响应架构
 
 
-EnumSchema 响应具有&lt;架构&gt;每个属性元素。
+EnumSchema 响应具有每个属性的 &lt;架构&gt; 元素。
 
-在此示例中，打印机具有很少访问的属性。
+在此示例中，打印机只有几个可访问的属性。
 
 ```xml
 <bidi:EnumSchema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -58,7 +58,7 @@ EnumSchema 响应具有&lt;架构&gt;每个属性元素。
 </bidi:EnumSchema>
 ```
 
-EnumSchema 响应架构中的正式定义
+EnumSchema 响应架构的正式定义
 
 ```xml
 <?xml version='1.0'?>
@@ -88,9 +88,9 @@ EnumSchema 响应架构中的正式定义
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
 
 
 

@@ -1,47 +1,47 @@
 ---
 title: OID_WWAN_PCO
-description: OID_WWAN_PCO 报告的状态和调制解调器都已收到来自运营商网络 PCO 值的有效负载。
+description: OID_WWAN_PCO 报告调制解调器从操作员网络收到的 PCO 值的状态和负载。
 ms.assetid: BE664B41-3FE7-4E93-8739-12BD2F0AE5B8
 keywords:
-- OID_WWAN_PCO、 PCO OID
+- OID_WWAN_PCO、PCO OID
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eeec5c7afe4ae3762233bfc8f65a78a28175793
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 545a15e9b0291f83e426ab0264f9ed0dbe2afd3d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360778"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843822"
 ---
-# <a name="oidwwanpco"></a>OID_WWAN_PCO
+# <a name="oid_wwan_pco"></a>OID_WWAN_PCO
 
-OID_WWAN_PCO 报告的状态和调制解调器都已收到来自移动运营商网络协议配置 Optiont (PCO) 值的有效负载。 返回从调制解调器的 PCO 值对应于 PDN OID 请求结构中指定的端口号。
+OID_WWAN_PCO 报告调制解调器从移动运营商网络接收的协议配置 Optiont （PCO）值的状态和负载。 从调制解调器返回的 PCO 值对应于端口号在 OID 请求结构中指定的 PDN。
 
-对于查询请求，调制解调器首先响应 NDIS_STATUS_INDICATION_REQUIRED 接收此 OID 时。 [NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)通知将返回包含[NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)结构查询请求完成时。 **NDIS_WWAN_PCO_STATUS**，又包含 PCO 状态和一个[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value)结构，它表示 PCO 值。
+对于查询请求，该调制解调器在收到此 OID 时首次响应 NDIS_STATUS_INDICATION_REQUIRED。 查询请求完成后，将返回包含[NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)结构的[NDIS_STATUS_WWAN_PCO_STATUS](ndis-status-wwan-pco-status.md)通知。 **NDIS_WWAN_PCO_STATUS**还包含 PCO 状态和表示 PCO 值的[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value)结构。
 
-不适用集发出的请求。
+设置请求不适用。
 
 ## <a name="remarks"></a>备注
 
-选择使用 Microsoft 收件箱微型端口类驱动程序中，若要从主机接收查询请求的调制解调器，调制解调器必须播发，它支持的新**MBIM_CID_PCO** CID (索引 = 9) 中**MBB_UUID_BASIC_CONNECT_EXT_CONSTANT**服务响应时**MBIM_CID_DEVICE_SERVICES**查询。 有关详细信息*MBIM_CID_PCO*，请参阅[MB 协议配置选项 (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)。
+对于选择使用 Microsoft 收件箱微型端口类驱动程序的调制解调器，若要接收来自主机的查询请求，该调制解调器必须公布它支持**MBB_UUID_BASIC_CONNECT_EXT_CONSTANT**服务中的新**MBIM_CID_PCO** CID （index = 9）响应**MBIM_CID_DEVICE_SERVICES**查询时。 有关*MBIM_CID_PCO*的详细信息，请参阅[MB 协议配置选项（PCO）操作](mb-protocol-configuration-options-pco-operations.md)。
 
-对于选择的调制解调器不使用 Microsoft 收件箱微型端口类驱动程序，以便接收来自 WWANSVC 查询请求，它支持对调制解调器的微型端口驱动程序必须播发*WWAN_OPTIONAL_SERVICE_CAPS_PCO*选项时响应向[OID OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)查询请求。
+对于选择不使用 Microsoft 收件箱微型类驱动程序的调制解调器，若要接收来自 WWANSVC 的查询请求，则调制解调器的微型端口驱动程序必须在响应 OID 时播发该驱动程序支持*WWAN_OPTIONAL_SERVICE_CAPS_PCO*选项[OID_WWAN_DEVICE_CAPS_EX](oid-wwan-device-caps-ex.md)查询请求。
 
 ## <a name="requirements"></a>要求
 
 | | |
 | --- | --- |
-| Version | Windows 10 版本 1709 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows 10 版本 1709 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [**NDIS_STATUS_WWAN_PCO_STATUS**](ndis-status-wwan-pco-status.md)
 
-[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
+[**NDIS_WWAN_PCO_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)
 
-[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_pco_value) 
+[**WWAN_PCO_VALUE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value) 
 
 [**OID OID_WWAN_DEVICE_CAPS_EX**](oid-wwan-device-caps-ex.md)
 
-[MB 协议配置选项 (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)
+[MB 协议配置选项（PCO）操作](mb-protocol-configuration-options-pco-operations.md)

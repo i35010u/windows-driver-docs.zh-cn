@@ -4,17 +4,17 @@ description: MPIO\_控制器\_配置 WMI 类
 ms.assetid: c11429d6-b016-464e-a7b4-03b6cdc8ddb7
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c985641613154c1d837bed6600b9d159492330af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97129fd9a93995ae47fb9355479b9457e23c8afc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386178"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844548"
 ---
-# <a name="mpiocontrollerconfiguration-wmi-class"></a>MPIO\_控制器\_配置 WMI 类
+# <a name="mpio_controller_configuration-wmi-class"></a>MPIO\_控制器\_配置 WMI 类
 
 
-WMI 客户端使用 MPIO\_控制器\_到有关连接到系统的存储控制器的信息的查询 MPIO 配置 WMI 类。
+WMI 客户端使用 MPIO\_控制器\_配置 WMI 类来查询 MPIO，以了解有关附加到系统的存储控制器的信息。
 
 ```cpp
 class MPIO_CONTROLLER_CONFIGURATION
@@ -45,7 +45,7 @@ class MPIO_CONTROLLER_CONFIGURATION
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_控制器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_controller_configuration)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成[**MPIO\_控制器\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_controller_configuration)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

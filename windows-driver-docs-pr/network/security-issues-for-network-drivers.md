@@ -7,32 +7,32 @@ keywords:
 - 安全 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 414046a7bd47f40a35ad726bc05dbd13ef2373c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9677778e08ad80f2315d47fe3889a489d9d8d646
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382118"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841991"
 ---
 # <a name="security-issues-for-network-drivers"></a>网络驱动程序的安全问题
 
-有关编写安全的驱动程序的常规讨论，请参阅[创建可靠的内核模式驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)。
+有关编写安全驱动程序的一般讨论，请参阅[创建可靠的内核模式驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)。
 
-以下安全的编码实践和常规设备驱动程序指南，超出网络驱动程序应执行以下操作来增强安全性：
+除了遵循安全的编码实践和常规设备驱动程序指南之外，网络驱动程序还应执行以下操作以增强安全性：
 
-- 所有网络驱动程序应都验证从注册表中读取的值。 具体而言的调用方[ **NdisReadConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration)或[ **NdisReadNetworkAddress** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadnetworkaddress)必须不进行任何假设有关值从注册表中读取和必须验证它会读取每个注册表值。 如果调用方**NdisReadConfiguration**确定超出界限是一个值，它应改为使用默认值。 如果调用方**NdisReadNetworkAddress**确定一个值是超出界限，则应改为使用永久介质访问控制 (MAC) 地址或默认地址。
+- 所有网络驱动程序都应该验证它们从注册表中读取的值。 具体而言， [**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)或[**NdisReadNetworkAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadnetworkaddress)的调用方不能对从注册表中读取的值作出任何假设，并且必须验证其所读取的每个注册表值。 如果**NdisReadConfiguration**的调用方确定某个值超出界限，则应改用默认值。 如果**NdisReadNetworkAddress**的调用方确定某个值超出界限，则应改为使用永久的媒体访问控制（MAC）地址或默认地址。
 
-## <a name="oid-specific-issues"></a>特定于 OID 的问题
+## <a name="oid-specific-issues"></a>OID 特定的问题
 
-- 微型端口驱动程序，请在其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)或[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数，应验证任何对象标识符请求的驱动程序的 (OID) 值设置。 如果该驱动程序确定要设置的值超出界限，则应失败集请求。 有关对象标识符的详细信息，请参阅[获取和设置微型端口驱动程序的信息和 NDIS 支持 WMI](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
+- 微型端口驱动程序（在其[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)或[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数中）应验证请求设置的驱动程序的任何对象标识符（OID）值。 如果驱动程序确定要设置的值超出界限，则该设置请求应失败。 有关对象标识符的详细信息，请参阅[获取并设置微型端口驱动程序信息和对 WMI 的 NDIS 支持](obtaining-and-setting-miniport-driver-information-and-ndis-support-for.md)。
 
-- 如果中间驱动程序的*MiniportOidRequest*函数不会将设置操作中传递给基础的微型端口驱动程序，该函数应验证 OID 值。 有关详细信息，请参阅[中间驱动程序查询和设置操作](intermediate-driver-query-and-set-operations.md)。
+- 如果中间驱动程序的*MiniportOidRequest*函数未将设置操作传递到基础微型端口驱动程序，则该函数应验证 OID 值。 有关详细信息，请参阅[中间驱动程序查询和设置操作](intermediate-driver-query-and-set-operations.md)。
 
-### <a name="query-oid-security-guidelines"></a>查询 OID 安全指导原则
+### <a name="query-oid-security-guidelines"></a>查询 OID 安全准则
 
-大多数查询 Oid 可以由系统上的任何用户模式应用程序颁发。 对于查询 Oid 遵循这些特定的准则。
+大多数查询 Oid 都可以由系统上的任何 usermode 应用程序发出。 遵循这些特定的查询 Oid 指导原则。
 
-1. 始终验证缓冲区的大小过大的输出。 而不输出缓冲区大小检查任何查询 OID 处理程序是安全性错误。
+1. 始终验证缓冲区大小是否足以满足输出的大小。 任何没有输出缓冲区大小检查的查询 OID 处理程序都具有安全错误。
 
     ```c++
     if (oid->DATA.QUERY_INFORMATION.InformationBufferLength < sizeof(ULONG)) {
@@ -41,20 +41,20 @@ ms.locfileid: "67382118"
     }
     ```
 
-2. 始终写入 BytesWritten 正确和最小值。 它是一个红色标志，若要将分配`oid->BytesWritten = oid->InformationBufferLength`类似下面的示例执行的操作。
+2. 始终向 BytesWritten 写入正确的最小值。 这是一个用于分配 `oid->BytesWritten = oid->InformationBufferLength` 的红色标志，如以下示例中所示。
 
     ```c++
     // ALWAYS WRONG
     oid->DATA.QUERY_INFORMATION.BytesWritten = DATA.QUERY_INFORMATION.InformationBufferLength; 
     ```
 
-    操作系统将返回到用户模式应用程序复制 BytesWritten 字节。 如果 BytesWritten 为大于实际编写了驱动程序，字节数，则操作系统可能最终会将复制回到未初始化的内核内存到用户模式，则会出现信息泄漏漏洞。 相反，使用类似于以下代码：
+    操作系统会将 BytesWritten 字节复制回 usermode 应用程序。 如果 BytesWritten 大于驱动程序实际写入的字节数，则 OS 可能最终会将未初始化的内核内存复制回 usermode，这将是一个信息泄漏漏洞。 请改用类似于下面的代码：
 
     ```c++
     oid->DATA.QUERY_INFORMATION.BytesWritten = sizeof(ULONG);
     ``` 
 
-3. 永远不会返回从缓冲区读取的值。 在某些情况下，输出缓冲区的 oid 是直接映射到的恶意用户模式进程。 已写入后，恶意的过程可以更改输出缓冲区。 例如，下面的代码可能会遭到攻击，因为攻击者可以更改 NumElements 写入该值后：
+3. 从不从缓冲区中读取值。 在某些情况下，OID 的输出缓冲区直接映射到恶意 usermode 进程。 恶意过程可以在写入输出缓冲区后更改输出缓冲区。 例如，以下代码可能会受到攻击，因为攻击者可以在写入后更改 NumElements：
 
     ```c++
     output->NumElements = 4;
@@ -62,7 +62,7 @@ ms.locfileid: "67382118"
         output->Element[i] = . . .;
     }
     ```
-    若要避免读取返回的缓冲区，保留本地副本。 例如，若要解决上面的示例中，引入新的堆栈变量：
+    若要避免从缓冲区中读取，请保留本地副本。 例如，若要修复上述示例，请引入一个新的堆栈变量：
 
     ```c++
     ULONG num = 4;
@@ -72,13 +72,13 @@ ms.locfileid: "67382118"
     }
     ```
 
-    使用此方法时，返回的驱动程序的堆栈变量显示为循环`num`而不是从其输出缓冲区。 该驱动程序还应将标记与输出缓冲区`volatile`关键字来阻止编译器以无提示方式撤消此修补程序。
+    利用此方法，for 循环从驱动程序的堆栈变量 `num` 而不是从其输出缓冲区中读取。 驱动程序还应将输出缓冲区标记 `volatile` 关键字，以防止编译器无提示地撤消此修补程序。
 
 ### <a name="set-oid-security-guidelines"></a>设置 OID 安全指导原则
 
-可以通过运行中的管理员或系统安全组的用户模式应用程序颁发大多数设置的 Oid。 尽管它们是通常受信任的应用程序，微型端口驱动程序仍必须允许使用的内存损坏或内核代码注入。 为设置 Oid 遵循以下特定的规则：
+大多数集 Oid 都可以由在管理员或系统安全组中运行的 usermode 应用程序发出。 尽管这些应用程序通常是受信任的应用程序，但微型端口驱动程序仍然不得允许内存损坏或内核代码注入。 对于设置 Oid，请遵循以下特定规则：
 
-1.  始终验证输入有足够空间。 而无需输入的缓冲区大小检查任何 OID 组处理程序中存在安全漏洞。
+1.  始终验证输入是否足够大。 不带输入缓冲区大小检查的任何 OID 集处理程序都具有安全漏洞。
 
     ```c++
     if (oid->DATA.SET_INFORMATION.InformationBufferLength < sizeof(ULONG)) {
@@ -86,9 +86,9 @@ ms.locfileid: "67382118"
     }
     ```
 
-2. 只要验证与嵌入的偏移量 OID，则必须验证嵌入的缓冲区是在 OID 负载。 这需要多个检查。 例如， [OID_PM_ADD_WOL_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)交付的嵌入的模式，需要检查。 纠正验证需要检查：
+2. 当验证具有嵌入偏移量的 OID 时，必须验证嵌入的缓冲区是否位于 OID 有效负载中。 这需要进行多项检查。 例如， [OID_PM_ADD_WOL_PATTERN](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)可能会提供需要检查的嵌入模式。 正确的验证需要检查：
 
-    1. InformationBufferSize > = sizeof(NDIS_PM_PACKET_PATTERN)
+    1. InformationBufferSize > = sizeof （NDIS_PM_PACKET_PATTERN）
 
         ```c++
         PmPattern = (PNDIS_PM_PACKET_PATTERN) InformationBuffer;
@@ -100,7 +100,7 @@ ms.locfileid: "67382118"
         }
         ```
 
-    2. 模式-> PatternOffset + 模式-> PatternSize 都不会溢出
+    2. 模式 > PatternOffset + 模式 > PatternSize 不溢出
 
         ```c++
         ULONG TotalSize = 0;
@@ -111,7 +111,7 @@ ms.locfileid: "67382118"
         }
         ```
 
-        可以使用如下例所示的代码组合这些两个检查：
+        可以使用类似于以下示例的代码来合并这两个检查：
 
         ```c++
         ULONG TotalSize = 0;
@@ -123,7 +123,7 @@ ms.locfileid: "67382118"
         }
         ```
    
-    3. InformationBuffer + 模式-> PatternOffset + 模式-> PatternLength 都不会溢出
+    3. InformationBuffer + 模式 > PatternOffset + 模式-> PatternLength 未溢出
 
         ```c++
         ULONG TotalSize = 0;
@@ -135,7 +135,7 @@ ms.locfileid: "67382118"
         }
         ```
 
-    4. 模式-> PatternOffset + 模式-> PatternLength < = InformationBufferSize
+    4. 模式 > PatternOffset + 模式-> PatternLength < = InformationBufferSize
 
         ```c++
         ULONG TotalSize = 0;
@@ -148,15 +148,15 @@ ms.locfileid: "67382118"
    
 ### <a name="method-oid-security-guidelines"></a>方法 OID 安全指导原则
 
-可以通过运行中的管理员或系统安全组的用户模式应用程序颁发方法 Oid。 它们是指南的一组和一个查询的组合，因此这两个前面的列也适用于方法 Oid。
+可以通过在管理员或系统安全组中运行的 usermode 应用程序来颁发方法 Oid。 它们是集和查询的组合，所以前面的指南列表还适用于方法 Oid。
 
 ## <a name="other-network-driver-security-issues"></a>其他网络驱动程序安全问题
 
-- 许多 NDIS 微型端口驱动程序通过使用 NdisRegisterDeviceEx 公开控制设备。 执行此操作的那些必须审核它们 IOCTL 的处理程序，使用作为 WDM 驱动程序的所有相同的安全规则。 有关详细信息，请参阅[I/O 控制代码的安全问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)。
+- 许多 NDIS 微型端口驱动程序通过使用 NdisRegisterDeviceEx 来公开控制设备。 执行此操作的操作必须审核其 IOCTL 处理程序，并使用与 WDM 驱动程序相同的所有安全规则。 有关详细信息，请参阅[I/o 控制代码的安全问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)。
 
-- 设计良好的 NDIS 微型端口驱动程序不应依赖于在特定进程上下文中，调用和紧密的合作与用户模式 （与 Ioctl 和 Oid 正在异常） 进行交互。 它将是一个红色标志，以查看微型端口已打开 usermode 句柄、 执行 usermode 等待或分配内存中的 usermode 配额。 该代码应进行调查。
+- 设计良好的 NDIS 微型端口驱动程序不应依赖于在特定的进程上下文中调用，也不应与 usermode 非常紧密交互（IOCTLs & Oid 就是例外）。 它将是一个红色标志，用于查看打开 usermode 句柄、执行 usermode 等待或分配的内存和 usermode 配额的小型端口。 应调查该代码。
 
-- 大多数 NDIS 微型端口驱动程序应该不会涉及到分析数据包有效负载。 在某些情况下，不过，它可能有必要。 因此，应非常仔细地审核此代码，如果作为驱动程序解析来自不受信任源的数据。
+- 大多数 NDIS 微型端口驱动程序不应涉及分析数据包有效负载。 但在某些情况下，可能需要这样做。 如果是这样，则应仔细审核此代码，因为驱动程序正在分析来自不受信任的源的数据。
 
-- 由于分配内核模式内存时，则是标准，NDIS 驱动程序应使用适当[NX 池选择的机制](https://docs.microsoft.com/windows-hardware/drivers/kernel/nx-pool-opt-in-mechanisms)。 在 WDK 8 和更高版本，则`NdisAllocate*`系列函数都正确选择。
+- 与分配内核模式内存时的标准一样，NDIS 驱动程序应使用适当[的 NX 池选择机制](https://docs.microsoft.com/windows-hardware/drivers/kernel/nx-pool-opt-in-mechanisms)。 在 WDK 8 及更高版本中，已正确选择了 `NdisAllocate*` 系列的函数。
 

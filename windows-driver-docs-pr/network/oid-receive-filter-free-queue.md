@@ -1,50 +1,50 @@
 ---
 title: OID_RECEIVE_FILTER_FREE_QUEUE
-description: 协议的 NDIS 驱动程序发出对象标识符 (OID) 组的请求的 OID_RECEIVE_FILTER_FREE_QUEUE 免费接收队列。
+description: NDIS 协议驱动程序发出对象标识符（OID）设置 OID_RECEIVE_FILTER_FREE_QUEUE 的请求，以释放接收队列。
 ms.assetid: ee8cff69-2f5e-4798-9c18-28e996dd1dd4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_FREE_QUEUE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 027a2da22b4188269b4057519cba857fc9432853
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d63764fa3fa4b896b731ad788661b210fb02e5d9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371185"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844016"
 ---
-# <a name="oidreceivefilterfreequeue"></a>OID\_RECEIVE\_FILTER\_FREE\_QUEUE
+# <a name="oid_receive_filter_free_queue"></a>OID\_接收\_筛选器\_可用\_队列
 
 
-协议的 NDIS 驱动程序发出的 OID 的对象标识符 (OID) 组请求\_接收\_筛选器\_免费\_队列以释放接收队列。
+NDIS 协议驱动程序发出\_接收\_筛选器的对象标识符（OID）设置请求，以释放接收队列\_可用的\_队列。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_接收\_队列\_免费\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构类型的队列标识符**NDIS\_接收\_队列\_ID**。
+[**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_队列的指针\_免费\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构，队列标识符类型为**NDIS\_接收\_队列\_ID**。
 
 <a name="remarks"></a>备注
 -------
 
-OID 设置请求的 OID\_接收\_筛选器\_免费\_队列是可选的 NDIS 6.20 和更高版本的微型端口驱动程序。 它是必需的支持的虚拟机队列接口的微型端口驱动程序。
+对于 NDIS 6.20 和更高版本的小型小型驱动程序，oid\_接收\_筛选器\_FREE\_队列是可选的。 这对于支持虚拟机队列接口的微型端口驱动程序是必需的。
 
-过量的驱动程序问题后[OID\_接收\_筛选器\_分配\_队列](oid-receive-filter-allocate-queue.md)OID 分配接收队列中，它会发出 OID\_接收\_筛选器\_免费\_队列 OID 来释放接收队列。
+当过量驱动程序发出[OID\_接收\_FILTER\_分配\_队列](oid-receive-filter-allocate-queue.md)OID 来分配接收队列时，它会发出 OID\_接收\_筛选器\_免费\_队列 OID 以释放接收使.
 
-NDIS 请求微型端口驱动程序以释放 VMQ 时接收队列，则会遵循以下步骤：
+当 NDIS 请求微型端口驱动程序释放 VMQ 接收队列时，将执行以下步骤：
 
-1.  网络适配器停止 DMA 将数据传输到接收队列，队列必须在其后输入 DMA 停止状态与相关联的接收缓冲区。 网络适配器可能停止 DMA 活动，当它收到[OID\_接收\_筛选器\_清除\_筛选器](oid-receive-filter-clear-filter.md)OID 请求清除上接收的最后一组筛选器队列。
+1.  网络适配器停止数据的 DMA 传输以接收与接收队列关联的缓冲区，在此之后，队列必须进入 DMA 停止状态。 网络适配器在收到[oid\_接收\_筛选器](oid-receive-filter-clear-filter.md)时可能停止 DMA 活动，\_清除\_筛选 OID 请求以清除接收队列中的最后一个 set 筛选器。
 
-2.  微型端口驱动程序将生成[ **NDIS\_状态\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)与状态指示**QueueState**的成员[ **NDIS\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_receive_queue_state)结构设置为**NdisReceiveQueueOperationalStateDmaStopped**通知 NDIS DMA 传输已停止。
+2.  微型端口驱动程序生成[**ndis\_状态\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状态指示与[**NDIS\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构集的**QueueState**成员**NdisReceiveQueueOperationalStateDmaStopped**以通知 NDIS 已停止 DMA 传输。
 
-3.  微型端口驱动程序等待所有所指示接收该队列要返回给微型端口驱动程序的数据包。
+3.  微型端口驱动程序等待该队列的所有指示接收数据包返回到微型端口驱动程序。
 
-4.  微型端口驱动程序释放它分配为网络适配器的接收缓冲区通过调用与队列关联的所有共享的内存[ **NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)。
+4.  通过调用[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)，微型端口驱动程序可释放它为网络适配器的接收缓冲区分配的、与队列关联的所有共享内存。
 
-5.  微型端口驱动程序完成 OID\_接收\_筛选器\_免费\_队列 OID 请求免费接收队列。
+5.  微型端口驱动程序完成 OID\_接收\_FILTER\_可用的\_队列 OID 请求，以释放接收队列。
 
-微型端口驱动程序调用[ **NdisFreeSharedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)函数来释放队列的共享的内存。 该驱动程序微型端口驱动程序为非默认队列分配的共享的内存，如果释放 OID 的上下文中的共享的内存\_接收\_筛选器\_免费\_队列 OID 时它正在释放队列。 微型端口驱动程序免费共享默认的队列的上下文中为它们分配的内存[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数。
+微型端口驱动程序调用[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)函数来释放队列的共享内存。 如果微型端口驱动程序为非默认队列分配了共享内存，则驱动程序将在 OID\_接收\_筛选器的上下文中释放共享内存，\_在释放队列时使用\_队列 OID。 微型端口驱动程序在[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数的上下文中为默认队列分配的共享内存可用。
 
-基础驱动程序必须释放它在释放队列前在队列设置的所有筛选器。 此外，基础驱动程序必须释放它分配网络适配器调用之前的所有接收队列[ **NdisCloseAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)函数以关闭到的网络适配器的绑定。 NDIS 释放之前它将调用微型端口驱动程序的网络适配器分配的所有队列[ *MiniportHaltEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)函数。
+当过量驱动程序释放队列之前，必须释放它在队列上设置的所有筛选器。 此外，在调用[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)函数以关闭到网络适配器的绑定之前，过量驱动程序必须释放在网络适配器上分配的所有接收队列。 NDIS 在调用微型端口驱动程序的[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数之前，释放在网络适配器上分配的所有队列。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-微型端口驱动程序[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数将返回以下值之一用于此请求：
+微型端口驱动程序的[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数为此请求返回以下值之一：
 
 <table>
 <colgroup>
@@ -64,22 +64,22 @@ NDIS 请求微型端口驱动程序以释放 VMQ 时接收队列，则会遵循�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将以异步方式完成的请求。 微型端口驱动程序已完成所有处理后，它必须请求成功通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)"> <strong>NdisMOidRequestComplete</strong> </a>函数，传递<strong>NDIS_STATUS_SUCCESS</strong>对于<em>状态</em>参数。</p></td>
+<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>函数（为<em>STATUS</em>参数传递<strong>NDIS_STATUS_SUCCESS</strong> ）成功执行请求。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>
-<td><p>微型端口驱动程序正在重置。</p></td>
+<td><p>正在重置微型端口驱动程序。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_REQUEST_ABORTED</strong></p></td>
-<td><p>微型端口驱动程序已停止处理请求。 例如，名为 NDIS <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)"> <em>MiniportResetEx</em> </a>函数。</p></td>
+<td><p>微型端口驱动程序已停止处理请求。 例如，NDIS 称为<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset" data-raw-source="[&lt;em&gt;MiniportResetEx&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)"><em>MiniportResetEx</em></a>函数。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-NDIS 返回此请求的以下状态代码之一：
+NDIS 为此请求返回以下状态代码之一：
 
 <table>
 <colgroup>
@@ -95,11 +95,11 @@ NDIS 返回此请求的以下状态代码之一：
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>请求的队列已成功释放。</p></td>
+<td><p>已成功释放请求的队列。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>请求正在等待完成。 NDIS 将传递的最终状态代码和结果到 OID 请求完成处理程序调用方完成请求后。</p></td>
+<td><p>请求正在等待完成。 请求完成后，NDIS 会将最终状态代码和结果传递给调用方的 OID 请求完成处理程序。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_INVALID_PARAMETER</strong></p></td>
@@ -107,7 +107,7 @@ NDIS 返回此请求的以下状态代码之一：
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区是太短。 NDIS 集<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。<strong>BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的<strong>BytesNeeded</strong>成员到所需的最小缓冲区大小。</p></td>
 </tr>
 </tbody>
 </table>
@@ -124,32 +124,32 @@ NDIS 返回此请求的以下状态代码之一：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.20 及更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.20 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)
+[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RECEIVE\_QUEUE\_FREE\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)
+[**NDIS\_接收\_QUEUE\_可用\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)
 
 [**NDIS\_状态\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)
 
-[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)
+[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)
 
-[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)
+[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)
 
-[OID\_RECEIVE\_FILTER\_ALLOCATE\_QUEUE](oid-receive-filter-allocate-queue.md)
+[OID\_接收\_筛选器\_分配\_队列](oid-receive-filter-allocate-queue.md)
 
  
 

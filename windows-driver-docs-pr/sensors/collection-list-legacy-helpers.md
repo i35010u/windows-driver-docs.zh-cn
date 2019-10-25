@@ -1,105 +1,105 @@
 ---
 title: 集合列表旧版帮助程序
-description: 集合列表旧帮助程序函数由 v2 传感器驱动程序用来与传感器交互\_集合\_列表结构。
+description: V2 传感器驱动程序使用集合列表旧版 helper 函数与传感器\_集合\_列表结构进行交互。
 ms.assetid: AD5AB3EE-5AD7-4576-8E8E-3FEA08930DD7
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 600977b9c952d06d3590e253f1388903a1a0d712
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60a02bdabb936e888a00a62258823913f18deebc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354906"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842533"
 ---
 # <a name="collection-list-legacy-helpers"></a>集合列表旧版帮助程序
 
 
-集合列表旧帮助程序函数的 v2 传感器驱动程序用于与进行交互[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)结构。
+V2 传感器驱动程序使用集合列表旧版 helper 函数与[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)结构进行交互。
 
-传感器设备驱动程序软件接口 (DDSI) 一起使用的帮助器函数。
+Helper 函数与传感器设备驱动程序软件接口（DDSI）一起使用。
 
-**注意：** 这些旧集合列表帮助程序函数是特定于体系结构。 因此如果您实现您自己的集合列表帮助器函数，传感器驱动程序必须使用它们跨进程边界传输数据。
+**注意：** 这些旧的集合列表 helper 函数是特定于体系结构的。 因此，如果你实现自己的集合列表 helper 函数，则传感器驱动程序不得使用它们来跨进程边界传输数据。
 
 **CollectionsListGetMarshalledSize**
 
-通过传感器 DDSI 的使用情况
+传感器 DDSI 的使用情况
 
--   设置主键的值\_传感器\_MaximumDataFieldSize\_字节属性。
+-   设置 PKEY\_传感器\_MaximumDataFieldSize\_Bytes 属性的值。
 
--   返回*pSize*值从[EvtSensorGetProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
+-   返回[EvtSensorGetProperties](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的*pSize*值。
 
--   返回*pSize*值从[ *EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
+-   返回[*EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的*pSize*值。
 
--   返回*pSize*值从[ *EvtSensorGetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
+-   返回[*EvtSensorGetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)中的*pSize*值。
 
 备注
 
--   请参阅[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)详细了解*pSize*成员。
+-   有关*pSize*成员的详细信息，请参阅[**传感器\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
 
--   此外，请参阅[通用传感器属性](common-sensor-properties.md)有关详细信息。
+-   另请参阅[常见传感器属性](common-sensor-properties.md)以了解详细信息。
 
 **CollectionsListCopyAndMarshall**
 
-通过传感器 DDSI 的使用情况
+传感器 DDSI 的使用情况
 
--   使用中的集合列表来填充[ *EvtSensorGetProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   填充 EvtSensorGetProperties 中的集合[列表](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
--   使用中的集合列表来填充[ *EvtSensorGetDataFieldProperties*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   填充 EvtSensorGetDataFieldProperties 中的集合[列表](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
--   使用中的集合列表来填充[ *EvtSensorGetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+-   填充 EvtSensorGetDataThresholds 中的集合[列表](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 备注
 
--   请参阅[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)有关详细信息。
+-   有关详细信息，请参阅[**传感器\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
 
 **CollectionsListMarshall**
 
-通过传感器 DDSI 的使用情况
+传感器 DDSI 的使用情况
 
--   返回一个指向集合列表。
+-   返回指向集合列表的指针。
 
 备注
 
--   请参阅[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)有关详细信息。
+-   有关详细信息，请参阅[**传感器\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
 
 **CollectionsListGetMarshalledSizeWithoutSerialization**
 
-通过传感器 DDSI 的使用情况
+传感器 DDSI 的使用情况
 
--   报表**主键\_SensorHistory\_MaxSize\_字节**属性。
+-   报告**PKEY\_SensorHistory\_MaxSize\_Bytes**属性。
 
--   报表**主键\_SensorHistory\_MaximumRecordSize\_字节**属性。
+-   报告**PKEY\_SensorHistory\_MaximumRecordSize\_Bytes**属性。
 
 备注
 
--   请参阅[通用传感器属性](common-sensor-properties.md)有关详细信息。
+-   有关详细信息，请参阅[常见传感器属性](common-sensor-properties.md)。
 
 **CollectionsListUpdateMarshalledPointer**
 
-通过传感器 DDSI 的使用情况
+传感器 DDSI 的使用情况
 
--   将缓冲区传递给传感器驱动程序使用[ *EvtSensorSetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
+-   使用[*EvtSensorSetDataThresholds*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)将缓冲区传递到传感器驱动程序。
 
--   将缓冲区传递给驱动程序使用[ *EvtSensorDeviceIoControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)。
+-   使用[*EvtSensorDeviceIoControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)将缓冲区传递给驱动程序。
 
 备注
 
--   请参阅[**传感器\_集合\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ns-sensorsdef-sensor_collection_list)有关详细信息。
+-   有关详细信息，请参阅[**传感器\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)。
 
 ## <a name="requirements"></a>要求
 
 |                          |                        |
 |--------------------------|------------------------|
-| 最低受支持的客户端 | Windows 8.1            |
+| 最低受支持的客户端 | Windows 8.1            |
 | 最低受支持的服务器 | Windows Server 2012 R2 |
-| Header                   | Sensorsutils.h         |
+| 标头                   | Sensorsutils         |
 
  
 
 ## <a name="related-topics"></a>相关主题
 
 
-[帮助器函数的封送处理](marshalling-helper-functions.md)
+[封送处理 helper 函数](marshalling-helper-functions.md)
 
  
 

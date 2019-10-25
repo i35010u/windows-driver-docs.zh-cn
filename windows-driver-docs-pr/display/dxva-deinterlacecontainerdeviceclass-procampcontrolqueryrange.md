@@ -1,6 +1,6 @@
 ---
 title: ProcAmpControlQueryRange 方法
-description: 示例 DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange 函数允许 VMR 查询驱动程序以确定最小值、 最大值、 步长和每个 ProcAmp 属性的默认值。
+description: 示例 DXVA\_DeinterlaceContainerDeviceClass：:P rocAmpControlQueryRange 函数允许 VMR 查询驱动程序，以确定每个 ProcAmp 属性的最小值、最大值、步长大小和默认值。
 ms.assetid: 13fd5d4b-f753-4a2c-80e0-c9614d7ebd3d
 keywords:
 - ProcAmpControlQueryRange 方法显示设备
@@ -17,17 +17,17 @@ api_type:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 7e347f0a10ec59b6daa352d8d83618cc748736de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 592cec315545cd788d3d7687c1acd144edefbd7a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384269"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838963"
 ---
-# <a name="dxvadeinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA\_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange 方法
+# <a name="dxva_deinterlacecontainerdeviceclassprocampcontrolqueryrange-method"></a>DXVA\_DeinterlaceContainerDeviceClass：:P rocAmpControlQueryRange 方法
 
 
-该示例**ProcAmpControlQueryRange**函数允许*VMR*要查询的驱动程序，以确定最小值、 最大值，请单步大小和每个 ProcAmp 属性的默认值。
+示例**ProcAmpControlQueryRange**函数允许*VMR*查询驱动程序，以确定每个 ProcAmp 属性的最小值、最大值、步长大小和默认值。
 
 <a name="syntax"></a>语法
 ------
@@ -40,10 +40,10 @@ HRESULT ProcAmpControlQueryRange(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*VideoProperty* \[中\]标识驱动程序应为其返回信息的 ProcAmp 控件属性。 以下是此参数的可能值。
+\] 中的*VideoProperty* \[标识驱动程序应为其返回信息的 ProcAmp 控件属性。 下面是此参数的可能值。
 
 <table>
 <colgroup>
@@ -52,49 +52,49 @@ HRESULT ProcAmpControlQueryRange(
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">Value</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>DXVA_ProcAmp_Brightness</p></td>
-<td align="left"><p>返回亮度的信息。</p></td>
+<td align="left"><p>返回亮度信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DXVA_ProcAmp_Contrast</p></td>
-<td align="left"><p>返回进行对比的信息。</p></td>
+<td align="left"><p>返回对比度信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DXVA_ProcAmp_Hue</p></td>
-<td align="left"><p>返回 hue 的信息。</p></td>
+<td align="left"><p>返回色相信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DXVA_ProcAmp_Saturation</p></td>
-<td align="left"><p>返回饱和度的信息。</p></td>
+<td align="left"><p>返回饱和度信息。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-*lpVideoDescription* \[中\]提供一个指向[ **DXVA\_VideoDesc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)结构。 此结构可提供其描述为 ProcAmp 调整将应用于的视频驱动程序。 驱动程序可以调整它们 ProcAmp 对特定视频流支持。
+\] 中的*lpVideoDescription* \[提供指向[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)结构的指针。 此结构为驱动程序提供了 ProcAmp 调整将应用到的视频的说明。 驱动程序可以调整其 ProcAmp 对特定视频流的支持。
 
-*lpPropRange* \[出\]接收指向[ **DXVA\_VideoPropertyRange** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange)结构，它指定范围、 步长、 和ProcAmp 的默认值。
+*lpPropRange* \[Out\] 接收指向[**DXVA\_VideoPropertyRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange)结构的指针，该结构指定 ProcAmp 的范围、步长大小和默认值。
 
 <a name="return-value"></a>返回值
 ------------
 
-将返回零 (S\_确定或 DD\_确定) 如果成功; 否则，返回错误代码 (例如，电子\_NOTIMPL)。 请参阅*ddraw.h*有关错误代码的完整列表。
+如果成功，则返回零（\_确定或 DD\_正常）;否则，将返回错误代码（例如，E\_NOTIMPL）。 有关错误代码的完整列表，请参阅*ddraw。*
 
 <a name="remarks"></a>备注
 -------
 
-为每个 ProcAmp 属性 VMR 查询驱动程序以确定最小值、 最大值、 步长、 和默认值。 如果硬件不支持特定 ProcAmp 控件属性，则驱动程序应返回电子\_从 NOTIMPL **ProcAmpControlQueryRange**函数。
+对于每个 ProcAmp 属性，VMR 会查询驱动程序以确定最小值、最大值、步长大小和默认值。 如果硬件不支持特定的 ProcAmp 控件属性，则驱动程序应从**ProcAmpControlQueryRange**函数返回 E\_NOTIMPL。
 
-有关 ProcAmp 属性的详细信息，请参阅[ProcAmp 属性](https://docs.microsoft.com/windows-hardware/drivers/display/procamp-properties)。
+有关 ProcAmp 属性的详细信息，请参阅[ProcAmp properties](https://docs.microsoft.com/windows-hardware/drivers/display/procamp-properties)。
 
-该示例**ProcAmpControlQueryRange**函数将映射到调用直接**RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构。 **RenderMoComp**驱动程序提供指向成员[ **DdMoCompRender** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调引用[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。 DD\_RENDERMOCOMPDATA 结构填充，如下所示。
+示例**ProcAmpControlQueryRange**函数直接映射到[**DD\_MOTIONCOMPCALLBACKS**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员的调用。 **RenderMoComp**成员指向驱动程序提供的[**DdMoCompRender**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调，该回调引用[**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构。 DD\_RENDERMOCOMPDATA 结构按如下方式填充。
 
 <table>
 <colgroup>
@@ -104,13 +104,13 @@ HRESULT ProcAmpControlQueryRange(
 <thead>
 <tr class="header">
 <th align="left">成员</th>
-<th align="left">值</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>dwNumBuffers</p></td>
-<td align="left"><p>为零。</p></td>
+<td align="left"><p>无.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>lpBufferInfo</p></td>
@@ -118,26 +118,26 @@ HRESULT ProcAmpControlQueryRange(
 </tr>
 <tr class="odd">
 <td align="left"><p>dwFunction</p></td>
-<td align="left"><p><strong>DXVA_ProcAmpControlQueryRangeFnCode</strong>常量 (在中定义<em>dxva.h</em>)。</p></td>
+<td align="left"><p><strong>DXVA_ProcAmpControlQueryRangeFnCode</strong>常量（在<em>DXVA</em>中定义）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>lpInputData</p></td>
-<td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolqueryrange" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlQueryRange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolqueryrange)"> <strong>DXVA_ProcAmpControlQueryRange</strong> </a>结构。</p></td>
+<td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange" data-raw-source="[&lt;strong&gt;DXVA_ProcAmpControlQueryRange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange)"><strong>DXVA_ProcAmpControlQueryRange</strong></a>结构的指针。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>lpOutputData</p></td>
-<td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange" data-raw-source="[&lt;strong&gt;DXVA_VideoPropertyRange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange)"> <strong>DXVA_VideoPropertyRange</strong> </a>结构。</p></td>
+<td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange" data-raw-source="[&lt;strong&gt;DXVA_VideoPropertyRange&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange)"><strong>DXVA_VideoPropertyRange</strong></a>结构的指针。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-请注意，将不显示驱动程序提供 BeginMoCompFrame 或 EndMoCompFrame 要调用的函数首先调用 RenderMoComp 函数。
+请注意，在未首先调用显示驱动程序提供的 BeginMoCompFrame 或 EndMoCompFrame 函数的情况下，将调用 RenderMoComp 函数。
 
 **示例代码**
 
-以下代码举例说明如何实现您*ProcAmpControlQueryRange*函数：
+下面的代码提供了一个示例，说明如何实现*ProcAmpControlQueryRange*函数：
 
 ```cpp
 HRESULT
@@ -194,23 +194,23 @@ DXVA_DeinterlaceContainerDeviceClass::ProcAmpControlQueryRange(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">N/A (Declared 驱动程序所提供的标头文件中。)</td>
+<td align="left"><p>标头</p></td>
+<td align="left">不适用（在驱动程序提供的标头文件中声明）。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DXVA\_ProcAmpControlQueryRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_procampcontrolqueryrange)
+[**DXVA\_ProcAmpControlQueryRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_procampcontrolqueryrange)
 
-[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videodesc)
+[**DXVA\_VideoDesc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videodesc)
 
-[**DXVA\_VideoPropertyRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videopropertyrange)
+[**DXVA\_VideoPropertyRange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videopropertyrange)
 
  
 

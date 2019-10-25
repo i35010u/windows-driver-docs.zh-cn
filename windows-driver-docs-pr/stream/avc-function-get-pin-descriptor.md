@@ -3,7 +3,7 @@ title: AVC\_函数\_获取\_PIN\_描述符
 description: AVC\_函数\_获取\_PIN\_描述符
 ms.assetid: 1a02c328-e908-4125-abe7-4db9970ac86a
 keywords:
-- AVC_FUNCTION_GET_PIN_DESCRIPTOR 流式处理媒体设备
+- AVC_FUNCTION_GET_PIN_DESCRIPTOR 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cb459217c39a6fd4197b3c27fef287d3303e75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5f83d98c9ae7493dd6a557554b12dc55c5c0ed5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386740"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845084"
 ---
-# <a name="avcfunctiongetpindescriptor"></a>AVC\_函数\_获取\_PIN\_描述符
+# <a name="avc_function_get_pin_descriptor"></a>AVC\_函数\_获取\_PIN\_描述符
 
 
 ## <span id="ddk_avc_function_get_pin_descriptor_ks"></span><span id="DDK_AVC_FUNCTION_GET_PIN_DESCRIPTOR_KS"></span>
 
 
-**AVC\_函数\_获取\_PIN\_描述符**函数代码为每个 pin ID （从零开始的偏移量） 将获取 pin 描述符。
+**AVC\_函数\_获取\_pin\_描述符**函数代码获取每个 pin ID 的固定描述符（从零开始）。
 
 ### <a name="io-status-block"></a>I/O 状态块
 
-如果成功，AV/C 协议驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功。
+如果成功，AV/C 协议驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
 
-可能其他返回值包括：
+可能的其他返回值包括：
 
 <table>
 <colgroup>
@@ -47,15 +47,15 @@ ms.locfileid: "67386740"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>发出请求，但未收到响应之前所有的超时和重试处理已完成。</p></td>
+<td><p>发出了请求，但在所有超时和重试处理完成之前未收到响应。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>立即中止 STATUS_REQUEST_ABORTED IRP 完成状态时。 这表示设备已删除或不再可用的 1394年总线上。</p></td>
+<td><p>当 IRP 完成状态为 "STATUS_REQUEST_ABORTED" 时立即中止。 这表明设备已被删除或在1394总线上不再可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_*</p></td>
-<td><p>任何其他返回代码指示错误或警告发生了超出范围的 AV/C 协议。</p></td>
+<td><p>任何其他返回代码指示出现超出 AV/C 协议范围的错误或警告。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "67386740"
 
 ### <a name="comments"></a>备注
 
-此函数使用**PinDescriptor**成员的 AVC\_MULTIFUNC\_IRB 结构如下所示。
+此函数使用 AVC\_MULTIFUNC\_IRB 结构的**PinDescriptor**成员，如下所示。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -83,27 +83,27 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在中声明*avc.h*。 包括*avc.h*。
+**标头：** 在*avc*中声明。 包括*avc*。
 
-### <a name="avcmultifuncirb-input"></a>AVC\_MULTIFUNC\_IRB 输入
+### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 输入
 
-**Common**  
-**函数**必须设置为此成员的子**AVC\_函数\_获取\_PIN\_描述符**从 AVC\_函数的枚举。
+**常见问题解答**  
+必须将此成员的**函数**submember 设置为 AVC\_函数，\_从 AVC\_函数枚举**获取\_PIN\_说明符**。
 
 <span id="PinDescriptor"></span><span id="pindescriptor"></span><span id="PINDESCRIPTOR"></span>**PinDescriptor**  
-AV/C 子单元设备上指定的 pin 的描述。
+指定 AV/C 子单位设备上的 pin 说明。
 
-个虚拟实例不支持此函数代码*avc.sys*。
+*Avc*的虚拟实例不支持此函数代码。
 
-除了 pin 描述符，此函数可返回 intersect 处理程序和不透明的上下文值与 intersect 处理程序关联的地址。 如果 intersect 处理程序成员**NULL**，子单元驱动程序必须提供 intersect 处理程序。 如果不是 intersect 处理程序成员**NULL**、 提供 intersect 处理程序和驱动程序可能会使用它。
+除了 pin 说明符以外，此函数还可能返回 intersect 处理程序的地址，以及与 intersect 处理程序关联的不透明的上下文值。 如果 intersect 处理程序成员为**NULL**，则子单位驱动程序必须提供交集处理程序。 如果 intersect 处理程序成员不为**NULL**，则将提供交集处理程序，并且驱动程序可以使用该处理程序。
 
-*Avc.sys*永远不会提供数据重叠，但筛选器驱动程序 (例如， *avcstrm.sys*) 进行填充，因为正在通过堆栈中将在请求完成备份。
+*Avc*绝不会提供数据交集，但筛选器驱动程序（例如*avcstrm*）会在请求通过堆栈完成备份时将其填充。
 
-这必须在调用在 IRQL = 被动\_级别。
+此名称必须以 IRQL = 被动\_级别进行调用。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_PIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_descriptor)， [ **AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)， [ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)， [ **AV/C 相交处理程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/nc-avc-pfnavcintersecthandler)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)， [**AVC\_PIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_pin_descriptor)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)， [**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)， [**AV/C 交集处理程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/nc-avc-pfnavcintersecthandler)
 
  
 

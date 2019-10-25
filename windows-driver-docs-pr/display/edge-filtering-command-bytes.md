@@ -3,18 +3,18 @@ title: 边缘筛选命令字节
 description: 边缘筛选命令字节
 ms.assetid: eefb580a-133d-4c9e-a8d2-2d114107e2ea
 keywords:
-- 宏块 WDK DirectX VA，消除马赛克功能筛选器控件
-- 消除筛选器控件 WDK DirectX VA 马赛克功能
+- macroblocks WDK DirectX VA，deblocking filter control
+- deblocking 筛选器控件 WDK DirectX VA
 - 边缘筛选 WDK DirectX VA
-- 读回缓冲区 WDK DirectX VA
+- 读回缓冲 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e2007613e1d453389e17791e0e32a7c5d7c2aa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: baa4fd3b1339be795952b4392ca6fa659742dee1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364379"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838959"
 ---
 # <a name="edge-filtering-command-bytes"></a>边缘筛选命令字节
 
@@ -22,33 +22,33 @@ ms.locfileid: "67364379"
 ## <span id="ddk_edge_filtering_command_bytes_gg"></span><span id="DDK_EDGE_FILTERING_COMMAND_BYTES_GG"></span>
 
 
-每个边缘筛选控制命令包含一个字节。 *DXVA\_DeblockingEdgeControl*中定义常量*dxva.h*定义如何消除马赛克功能边缘进行处理。 7 的最高有效位的字节包含*EdgeFilterStrength*变量和最低有效位是*EdgeFilterOn*标志。
+每个边缘筛选控制命令都包含一个字节。 *DXVA*中定义的*DXVA\_DeblockingEdgeControl*常量定义处理 deblocking 边缘的方式。 该字节的7个最高有效位包含*EdgeFilterStrength*变量，并且最小有效位是*EdgeFilterOn*标志。
 
-指定在 H.263 Annex J.作为执行边缘筛选*EdgeFilterStrength*变量指定的筛选要执行的强度。 *EdgeFilterOn*标志指定是否筛选为完成。 *EdgeFilterOn*如果边缘是筛选，并且如果不为零，则为 1。
+按 .H 附录 J 中的指定执行边缘筛选。*EdgeFilterStrength*变量指定要执行的筛选的强度。 *EdgeFilterOn*标志指定是否要执行筛选。 如果要筛选边缘，则*EdgeFilterOn*的值为 1; 否则为0。
 
-边缘滤波 (与边缘*EdgeFilterOn*等于 1） 使用指定的强度值执行*EdgeFilterStrength*和剪辑到范围 0 到 2 的输出与<sup>(BPP)</sup> -1。 左边缘筛选任何块，因为用于顶部边缘筛选的示例的值必须是在之前的左边缘筛选任何 deblocking 筛选这些重新构造的值之前执行顶部边缘的所有块的都筛选。
+使用*EdgeFilterStrength*指定的强度值和将输出剪裁到0到 2<sup>（BPP）</sup> -1 范围内的值，以*EdgeFilterOn*等于1的边缘进行边缘筛选。 所有块的上边缘筛选是在对任何块进行左边缘筛选之前执行的，因为用于顶层边缘筛选的样本的值必须是在进行任何 deblocking 筛选之前用于进行左边缘筛选的那些重新构造的值。
 
-如果**bPicDeblockConfined**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构指示该示例的宏块之外的值不受影响当前消除马赛克功能筛选器命令缓冲区， *EdgeFilterOn*标志是左侧和顶部的涵盖的使用消除马赛克功能在缓冲区中的筛选器命令块效应的区域的所有边缘的零。
+如果[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicDeblockConfined**成员指示当前 deblocking 筛选器命令缓冲区之外的 macroblocks 的示例值不受影响，则*EdgeFilterOn*标志为对于缓冲区中 macroblocks 与 deblocking 筛选器命令所覆盖的区域的左侧和顶部的所有边缘，为零。
 
-### <a name="span-idread-backbuffersspanspan-idread-backbuffersspanspan-idread-backbuffersspanread-back-buffers"></a><span id="Read-Back_Buffers"></span><span id="read-back_buffers"></span><span id="READ-BACK_BUFFERS"></span>读回缓冲区
+### <a name="span-idread-back_buffersspanspan-idread-back_buffersspanspan-idread-back_buffersspanread-back-buffers"></a><span id="Read-Back_Buffers"></span><span id="read-back_buffers"></span><span id="READ-BACK_BUFFERS"></span>回读缓冲区
 
-一个读回命令缓冲区传递给快捷键时**bPicReadbackRequests**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构为 1。 此缓冲区中的数据的命令的快捷键 （在消除马赛克功能条件，如果适用） 之后的结果的最终图片宏块数据返回给主机。 如果加密协议正在使用中，可能会响应快捷键以读回请求通过返回的错误的含义、 错误数据或加密的数据 （如可通过加密协议指定）。
+当[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicReadbackRequests**成员为1时，一个回读命令缓冲区会传递到快捷键。 此缓冲区中的数据将命令加速器返回最终的最终图片宏块（如果适用）到主机的数据（如果适用）。 如果正在使用加密协议，此加速器可以通过返回错误数据、错误数据或加密的数据（可能由加密协议指定）来响应回读请求。
 
-传递给快捷键的读回命令缓冲区必须包含读回命令包含单个**wMBaddress**宏块宏块控制命令要读取的成员。 **WMBaddress**成员是 16 位值，该值指定当前宏块的宏块地址光栅扫描顺序。 光栅扫描顺序 (基于**wPicWidthInMBminus1**并**wPicHeightInMBminus1**的成员[ **DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构) 定义，如下所示：
+传递到加速器的回发命令缓冲区必须包含回发命令，该命令由宏块 control 命令的单个**wMBaddress**成员组成，以便宏块得以读取。 **WMBaddress**成员是一个16位值，该值指定当前宏块的宏块地址（以光栅扫描顺序表示）。 光栅扫描顺序（基于[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**wPicWidthInMBminus1**和**wPicHeightInMBminus1**成员）定义如下：
 
--   零是左上方宏块的地址。
+-   零是左上角宏块的地址。
 
--   **wPicWidthInMBminus1**是右上方宏块的地址。
+-   **wPicWidthInMBminus1**是右上宏块的地址。
 
--   **wPicHeightInMBminus1** x (**wPicWidthInMBminus1**+ 1) 是左下方宏块的地址。
+-   **wPicHeightInMBminus1** x （**wPicWidthInMBminus1**+ 1）是左下宏块的地址。
 
--   (**wPicHeightInMBminus1**+ 1) x (**wPicWidthInMBminus1**+ 1)-1 为右下宏块的地址。
+-   （**wPicHeightInMBminus1**+ 1） x （**wPicWidthInMBminus1**+ 1）-1 是右下宏块的地址。
 
-如果*BPP*中指定的那样**bBPPminus1**的成员[ **DXVA\_PictureParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_pictureparameters)结构是 8，宏块数据将以 8 位无符号值的形式返回 (因此，黑色是名义上 Y = 16，Cb = Cr = 128，和白色是名义上 Y = 235，Cb = Cr = 128)。 如果*BPP*大于 8、 16 位无符号值的形式返回的数据。
+如果[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bBPPminus1**成员中指定的*BPP*为8，则以8位无符号值的形式返回宏块数据（因此，黑色为通常 Y = 16，Cb = Cr = 128，白色为通常Y = 235，Cb = Cr = 128）。 如果*BPP*大于8，则返回的数据格式为16位无符号值。
 
-宏块数据是从加速器返回到主机上的副本的读回命令缓冲区本身下, 一步的 32 字节对齐边界后跟填充窗体。 然后，在读回命令缓冲区中的每个块为每个宏块中的每个块 64 示例窗体中发送的顺序返回亮度和色度数据的宏块数据值。
+宏块数据以读回命令缓冲区本身副本的形式从加速器返回到宿主，后跟下一个32字节对齐边界。 然后，将按照每个宏块中每个块的每个块64样本的形式，返回在回读命令缓冲区中发送的宏块数据值。
 
-宏块的残留差异块返回指定中 MPEG 2 图 6-10，6-11，6 到 12 的顺序 (Y 宏块，块的光栅扫描顺序跟 4:2:0 块的 Cb，跟在 4:2:0 块的 Cr。如果在 4:2:2 或 4： 在 4、 4:4 采样操作： 2:0 块后面跟有 4:2:2 块 Cb，跟在 4:2:2 块的 Cr。如果在 4: 4、 4:4 采样操作： 2:2 块后面跟有 4:4:4 块 Cb，跟在 4:4:4 块的 Cr)。
+宏块中的残差块按在 MPEG-2 图6-10、6-11 和6-12 中指定的顺序返回（宏块的 x 扫描顺序，后跟 Cb 的4:2:0 块，后跟的4:2:0 块）。如果在4:2:2 或4:4:4 采样操作中，4:2:0 块后跟 Cb 的4:2:2 块，然后是 Cr 的4:2:2 块。如果在4:4:4 采样操作中，4:2:2 块后跟 Cb 的4:4:4 块，然后是 Cr 的4:4:4 块）。
 
  
 

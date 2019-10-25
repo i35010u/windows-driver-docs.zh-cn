@@ -1,37 +1,37 @@
 ---
 title: CPU 主机孔径
-description: 对于 32 位操作系统离散图形处理的单元 (Gpu)，这不支持条可调整大小，或者当调整大小的帧缓冲区失败栏，Windows 显示驱动程序模型 (WDDM) v2 将提供替代机制，通过其离散的 GPU VRAM 可以有效地访问. 为 Gpu，支持可编程栏地址空间，WDDM v2 进行抽象该功能中引入了新的 CPU 主机 Aperture 功能。
+description: 对于不支持可调整大小的栏的32位 OS 离散图形处理单元（Gpu），或当调整框架缓冲区栏的大小时，Windows 显示驱动程序模型（WDDM） v2 会提供一种替代机制，通过该机制可以有效地访问离散 GPU VRAM. 对于支持可编程条地址空间的 Gpu，WDDM v2 中引入了一个新的 CPU 主机口径功能，以抽象该功能。
 ms.assetid: 0E4D01E4-93AF-4205-A360-0CA3470716D2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b526b75ec8d2160fb63dcde27f395ebd50463ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e1d599eba770d452e481b1584ece7bb2c696752
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370241"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839781"
 ---
 # <a name="cpu-host-aperture"></a>CPU 主机孔径
 
 
-对于 32 位操作系统离散图形处理的单元 (Gpu)，这不支持条可调整大小，或者当调整大小的帧缓冲区失败栏，Windows 显示驱动程序模型 (WDDM) v2 将提供替代机制，通过其离散的 GPU VRAM 可以有效地访问. 为 Gpu，支持可编程栏地址空间，WDDM v2 进行抽象该功能中引入了新的 CPU 主机 Aperture 功能。
+对于不支持可调整大小的栏的32位 OS 离散图形处理单元（Gpu），或当调整框架缓冲区栏的大小时，Windows 显示驱动程序模型（WDDM） v2 会提供一种替代机制，通过该机制可以有效地访问离散 GPU VRAM. 对于支持可编程条地址空间的 Gpu，WDDM v2 中引入了一个新的 CPU 主机口径功能，以抽象该功能。
 
-当公开 CPU 主机 aperture，内核模式驱动程序将填出一个新[ **DXGK\_CPUHOSTAPERTURE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_cpuhostaperture)指针顶端才支持 CPU 主机 aperture 的每个段的结构。 它定义的 CPU 主机 aperture 大小，这样一些栏保留供内部使用的驱动程序。 页大小为内存段的 GPU 页相同。
+公开 CPU 主机口径时，内核模式驱动程序会为支持 CPU 主机口径的每个段填写新的[**DXGK\_CPUHOSTAPERTURE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_cpuhostaperture) cap 结构。 这会定义 CPU 主机口径的大小，这样，驱动程序便可出于内部目的保留某些部分。 页面大小与内存段的 GPU 页面相同。
 
-内核模式驱动程序然后公开两个新设备驱动程序接口 (DDIs)，管理栏地址空间，具体而言[ *DxgkDdiMapCpuHostAperture* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)并[ *DxgkDdiUnmapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_unmapcpuhostaperture)。
+然后，内核模式驱动程序公开两个新的设备驱动程序接口（DDIs）来管理条形地址空间，特别是[*DxgkDdiMapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)和[*DxgkDdiUnmapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_unmapcpuhostaperture)。
 
-尽早在驱动程序初始化期间由驱动程序和设置管理 CPU 主机 aperture 后面的页表的内存。 这两[ *DxgkDdiMapCpuHostAperture* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)并[ *DxgkDdiUnmapCpuHostAperture* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_unmapcpuhostaperture)预期可立即后仍可运行细分枚举，并在视频内存管理器初始化过程中用于适配器初始化期间将 CPU 虚拟地址映射到的页面目录和系统分页进程的页表。
+CPU 主机口径后面的页表的内存是在驱动程序初始化过程中及早由驱动程序和设置管理的。 [*DxgkDdiMapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_mapcpuhostaperture)和[*DxgkDdiUnmapCpuHostAperture*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_unmapcpuhostaperture)都应立即在段枚举后正常运行，并在视频内存管理器初始化过程中使用，以将 CPU 虚拟地址映射到页面适配器初始化期间系统分页过程的目录和页表。
 
-当 CPU 访问内存段是必需的时视频内存管理器保留的 CPU 主机 Aperture 中的页面，而映射通过它的内存段页。 这如下所示。
+当需要对内存段的 CPU 访问时，视频内存管理器会在 CPU 主机口径中保留页面，并通过它映射内存段页。 如下所示。
 
-![cpu 主机 aperture 段映射](images/cpu-host-aperture.1.png)
+![cpu 主机口径段映射](images/cpu-host-aperture.1.png)
 
-在链接显示适配器配置操作类似以下情况除外。
+在链接的显示适配器配置中，类似于以下内容：
 
 -   *默认值*或*LinkMirrored*分配始终映射到 GPU0。
--   *LinkInstanced*分配具有的虚拟地址范围**AllocationSize**\***NumberOfGPUInLink**与各种部件与之相关联的分配映射到不同的 GPU。
+-   *LinkInstanced*分配的虚拟地址范围为**AllocationSize**\***NumberOfGPUInLink**关联，并将分配的不同部分映射到不同的 GPU。
 
-这如下所示：![链接的显示适配器配置的 cpu 主机 aperture 段映射](images/cpu-host-aperture.2.png)
+如下所示：为链接的显示适配器配置 ![cpu 主机口径段映射](images/cpu-host-aperture.2.png)
 
  
 

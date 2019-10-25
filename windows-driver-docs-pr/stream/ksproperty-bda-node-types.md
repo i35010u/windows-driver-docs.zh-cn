@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_NODE\_TYPES
-description: 客户端使用 KSPROPERTY\_BDA\_节点\_类型来检索节点类型的列表。
+title: KSPROPERTY\_BDA\_NODE\_类型
+description: 客户端使用 KSPROPERTY\_BDA\_NODE\_类型来检索节点类型列表。
 ms.assetid: 8fe72434-3635-4c2c-a72a-1fd398e488d8
 keywords:
-- KSPROPERTY_BDA_NODE_TYPES 流式处理媒体设备
+- KSPROPERTY_BDA_NODE_TYPES 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 590dbb0659bf11f36f85d3404d9c87175352bf70
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1e9edfbc59d070987e4f532bdaf129f323c07fe8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386916"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844341"
 ---
-# <a name="kspropertybdanodetypes"></a>KSPROPERTY\_BDA\_NODE\_TYPES
+# <a name="ksproperty_bda_node_types"></a>KSPROPERTY\_BDA\_NODE\_类型
 
 
-客户端使用 KSPROPERTY\_BDA\_节点\_类型来检索节点类型的列表。
+客户端使用 KSPROPERTY\_BDA\_NODE\_类型来检索节点类型列表。
 
 ## <span id="ddk_ksproperty_bda_node_types_ks"></span><span id="DDK_KSPROPERTY_BDA_NODE_TYPES_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67386916"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "67386916"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
 <td><p>Filter</p></td>
 <td><p>KSPROPERTY</p></td>
-<td><p>KSNODE_DESCRIPTORs 的列表</p></td>
+<td><p>KSNODE_DESCRIPTORs 列表</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "67386916"
 <a name="remarks"></a>备注
 -------
 
-在模板拓扑中每个节点类型可仅出现一次，但它可在实际的拓扑结构中出现多次。 此节点类型列表是一个数组 KSNODE\_描述符结构。 通常情况下，此数组中每个元素的索引用于标识每个特定节点类型。
+在模板拓扑中，每个节点类型只能出现一次，但它可以在实际拓扑中出现多次。 此节点类型列表是 KSNODE\_描述符结构的数组。 通常，此数组中每个元素的索引用于标识每个特定节点类型。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,20 +76,20 @@ ms.locfileid: "67386916"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h （包括 Bdamedia.h）</td>
+<td><p>标头</p></td>
+<td>Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**BdaPropertyNodeTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdapropertynodetypes)
+[**BdaPropertyNodeTypes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdapropertynodetypes)
 
-[**KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksnode_descriptor)
+[**KSNODE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksnode_descriptor)
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

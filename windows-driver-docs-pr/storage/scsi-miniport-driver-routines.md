@@ -7,12 +7,12 @@ keywords:
 - SCSI 微型端口驱动程序 WDK 存储，可选例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ef78bdaaf8eb2105873622a4640c6454ddff9b
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: b63c54857dcf45e46041dfb9259b065a15442c22
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256329"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842685"
 ---
 # <a name="required-and-optional-scsi-miniport-driver-routines"></a>必需的和可选的 SCSI 微型端口驱动程序例程
 
@@ -38,12 +38,12 @@ SCSI 微型端口驱动程序还具有以下系统定义的部分或全部，具
 | [*HwScsiDmaStarted*](scsi-miniport-driver-s-hwscsidmastarted-routine.md) | 如果 HBA 使用系统 DMA 控制器，则需要在端口驱动程序对系统 DMA 控制器进行编程后设置 HBA 传输。 |
 | [*HwScsiAdapterState*](scsi-miniport-driver-s-hwscsiadapterstate-routine.md) | 当且仅当 HBA 没有 BIOS 或 x86-实模式驱动程序和/或从不在仅 x86 的 Microsoft Windows 系统中运行时，可选。 |
 | [*HwScsiAdapterControl*](scsi-miniport-driver-s-hwscsiadaptercontrol-routine.md) | 如果微型端口驱动程序支持即插即用，则为必需。 |
-| [HwScsiWmiExecuteMethod](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_execute_method) | 执行与数据块关联的方法。 此例程是可选的。 |
-| [HwScsiWmiFunctionControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_function_control) | 启用或禁用事件通知，同时启用或禁用对小型端口驱动程序所指定为收集开销较高的数据块的数据收集。 可选。 |
-| [HwScsiWmiQueryDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock) | 获取数据块的单个实例或所有实例。 必需。 |
-| [HwScsiWmiQueryReginfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo) | 获取要通过 SCSI 端口驱动程序代表微型端口驱动程序注册的数据和事件块的相关信息。 必需。 |
-| [HwScsiWmiSetDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_set_datablock) | 更改数据块的单个实例中的所有数据项。 可选。 |
-| [HwScsiWmiSetDataItem](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nc-scsiwmi-pscsiwmi_set_dataitem) | 更改数据块的实例中的单个数据项。 可选。 |
+| [HwScsiWmiExecuteMethod](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_execute_method) | 执行与数据块关联的方法。 此例程是可选的。 |
+| [HwScsiWmiFunctionControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_function_control) | 启用或禁用事件通知，同时启用或禁用对小型端口驱动程序所指定为收集开销较高的数据块的数据收集。 可选。 |
+| [HwScsiWmiQueryDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_query_datablock) | 获取数据块的单个实例或所有实例。 必需。 |
+| [HwScsiWmiQueryReginfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_query_reginfo) | 获取要通过 SCSI 端口驱动程序代表微型端口驱动程序注册的数据和事件块的相关信息。 必需。 |
+| [HwScsiWmiSetDataBlock](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_set_datablock) | 更改数据块的单个实例中的所有数据项。 可选。 |
+| [HwScsiWmiSetDataItem](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nc-scsiwmi-pscsiwmi_set_dataitem) | 更改数据块的实例中的单个数据项。 可选。 |
 
 上述每个小型小型驱动程序例程（ [**DriverEntry**](driverentry-of-scsi-miniport-driver.md)除外）都有一个用于描述其功能的名称。 除了**DriverEntry**（这是每个微型端口驱动程序的初始入口点所需的名称），小型端口驱动程序例程的名称可以是驱动程序编写器选择的任何内容。
 

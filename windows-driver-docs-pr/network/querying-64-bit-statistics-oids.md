@@ -4,64 +4,64 @@ description: 查询 64 位统计信息 OID
 ms.assetid: dc43c33d-12a7-4468-9980-a9015f43e068
 keywords:
 - 统计信息 Oid WDK 网络
-- 64 位的统计信息 Oid WDK 网络
+- 64位统计信息 Oid WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 046de3820940786890ec595a88ad3bc2253c241b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6fd9342bd9af1165e841b40c5258482a894d0b6c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385446"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844896"
 ---
 # <a name="querying-64-bit-statistics-oids"></a>查询 64 位统计信息 OID
 
 
-每秒 (Gbps) 为 1 千兆字节和更快地必须支持 64 位的所有微型端口驱动程序对于某些计数器 Oid 的统计信息。 所有 100 兆字节为单位每秒 (Mbps) 和更快的微型端口驱动程序应支持此类 Oid 的 64 位计数器。 无连接的微型端口驱动程序的统计信息 Oid 的详细信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。 有关面向连接的微型端口驱动程序的此类 Oid 的详细信息，请参阅[Connection-Oriented 微型端口驱动程序的常规统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/general-statistics-oids-for-connection-oriented-miniport-drivers)。
+每秒 1 Gb 或更快的所有微型端口驱动程序必须支持特定统计信息 Oid 的64位计数器。 每秒100兆字节/秒（Mbps）和更快的微型端口驱动程序应支持此类 Oid 的64位计数器。 有关无连接微型端口驱动程序的统计信息 Oid 的详细信息，请参阅[常规统计](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)信息。 有关面向连接的微型端口驱动程序的此类 Oid 的详细信息，请参阅[面向连接的微型端口驱动程序的常规统计](https://docs.microsoft.com/windows-hardware/drivers/network/general-statistics-oids-for-connection-oriented-miniport-drivers)信息。
 
-查询统计信息 OID 的请求者设置 NDIS\_OID\_请求**InformationBufferLength**到 4 （字节），指示 32 位统计信息请求或 8 （字节） 以指示 64 位统计信息请求。 微型端口驱动程序在其响应中设置 NDIS\_OID\_请求**BytesNeeded**微型端口驱动程序支持 (4 个 32 位) 或 8，64 位的统计信息值的大小。 微型端口驱动程序设置 NDIS\_OID\_请求**BytesWritten**到较小的**InformationBufferLength**值和大小的统计信息的微型端口驱动程序支持。
+查询统计信息 OID 的请求者将 NDIS\_OID\_请求**InformationBufferLength**设置为4（字节）以指示32位统计请求，或设置为8（字节）以指示64位统计请求。 在响应中，微型端口驱动程序将 NDIS\_OID\_请求**BytesNeeded**设置为微型端口驱动程序支持的统计信息值的大小（4表示32位，64位为8）。 微型端口驱动程序将 NDIS\_OID\_请求**BytesWritten**设置为**InformationBufferLength**值较小的值，以及微型端口驱动程序所支持的统计信息的大小。
 
-以下部分介绍支持 64 位的统计信息 Oid 的微型端口驱动程序如何响应查询的此类 Oid。
+以下部分介绍了支持64位统计信息的多端口驱动程序如何响应此类 Oid 的查询。
 
-### <a href="" id="-64-bit-query-of-a-64-bit-value"></a>一个 64 位值的 64 位查询
+### <a href="" id="-64-bit-query-of-a-64-bit-value"></a>64位值的64位查询
 
-NDIS\_OID\_请求**InformationBufferLength**大于或等于 8。
-
-微型端口驱动程序：
-
--   返回信息缓冲区中的 64 位值。
-
--   设置 NDIS\_OID\_请求**BytesWritten**为 8。
-
--   返回 NDIS\_状态\_成功从其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)或者[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数。
-
-### <a href="" id="-32-bit-query-of-a-64-bit-value"></a>一个 64 位值的 32 位查询
-
-NDIS\_OID\_请求**InformationBufferLength**到大于或等于 4 且小于 8。
+\_OID\_请求**InformationBufferLength**大于或等于8。
 
 微型端口驱动程序：
 
--   在信息缓冲区，较低的 64 位值的 32 位返回。
+-   返回信息缓冲区中的64位值。
 
--   设置 NDIS\_OID\_请求**BytesWritten**为 4。
+-   将 NDIS\_OID\_请求**BytesWritten**设置为8。
 
--   设置 NDIS\_OID\_请求**BytesNeeded**为 8。
+-   从[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)或[**MINIPORTCOOIDREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数\_SUCCESS 返回 NDIS\_状态。
 
--   返回 NDIS\_状态\_成功从其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)或者[ **MiniportCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数。
+### <a href="" id="-32-bit-query-of-a-64-bit-value"></a>64位值的32位查询
 
-### <a name="invalid-length-query-of-a-64-bit-value"></a>一个 64 位值的长度无效的查询
-
-NDIS\_OID\_请求**InformationBufferLength**小于 4。
+NDIS\_OID\_REQUEST **InformationBufferLength**大于或等于4，小于8。
 
 微型端口驱动程序：
 
--   在信息缓冲区中不返回任何值。
+-   返回在信息缓冲区中64位值的低32位。
 
--   设置 NDIS\_OID\_请求**BytesWritten**为 0。
+-   将 NDIS\_OID\_请求**BytesWritten**设置为4。
 
--   设置 NDIS\_OID\_请求**BytesNeeded**为 8。
+-   将 NDIS\_OID\_请求**BytesNeeded**设置为8。
 
--   返回 NDIS\_状态\_无效\_长度从其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)或[ **MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_oid_request)函数。
+-   从[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)或[**MINIPORTCOOIDREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数\_SUCCESS 返回 NDIS\_状态。
+
+### <a name="invalid-length-query-of-a-64-bit-value"></a>64位值的无效长度查询
+
+\_请求**InformationBufferLength**的 NDIS\_OID 小于4。
+
+微型端口驱动程序：
+
+-   不返回信息缓冲区中的任何值。
+
+-   将 NDIS\_OID\_请求**BytesWritten**设置为0。
+
+-   将 NDIS\_OID\_请求**BytesNeeded**设置为8。
+
+-   返回 NDIS\_状态\_其[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)或[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数中\_长度无效。
 
  
 

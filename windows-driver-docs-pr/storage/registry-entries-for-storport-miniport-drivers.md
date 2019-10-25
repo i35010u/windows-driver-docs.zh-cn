@@ -1,25 +1,25 @@
 ---
 title: StorPort 微型端口驱动程序的注册表项
-description: StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行为。
+description: StorPort 定义一组注册表项，以配置 StorPort 和微型端口操作的行为。
 ms.assetid: 543EC6A4-113C-4525-8063-28854B50760E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a122a246d60b796d9b00295256368522a01e8808
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b712c6cbe0bdedb4bbbd1fa964da17861b88d67f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368944"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842716"
 ---
 # <a name="registry-entries-for-storport-miniport-drivers"></a>StorPort 微型端口驱动程序的注册表项
 
 
-StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行为。 中的微型端口驱动程序或每个实例的作用域可设置值。
+StorPort 定义一组注册表项，以配置 StorPort 和微型端口操作的行为。 值是在微型端口驱动程序或每个实例的作用域中设置的。
 
-## <a name="span-idserviceentriesspanspan-idserviceentriesspanspan-idserviceentriesspanservice-entries"></a><span id="Service_Entries"></span><span id="service_entries"></span><span id="SERVICE_ENTRIES"></span>服务条目
+## <a name="span-idservice_entriesspanspan-idservice_entriesspanspan-idservice_entriesspanservice-entries"></a><span id="Service_Entries"></span><span id="service_entries"></span><span id="SERVICE_ENTRIES"></span>服务项
 
 
-由微型端口的注册表项进行键控 *\\参数*子项并 *\\参数\\设备*子项的微型端口的服务密钥。 对于单个适配器条目，该子项经过扩展，包括适配器下标，如下所述 *\\参数\\Device1*。
+微型端口的注册表项由 *\\参数*子项和微型端口的服务密钥 *\\设备子项的\\参数*键控。 对于单个适配器条目，该子项会扩展为包含适配器索引，如 *\\\\Device1 参数*。
 
 <table>
 <colgroup>
@@ -38,17 +38,17 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>任何微型端口特定的数据。</p></td>
+<td align="left">Value</td>
+<td align="left"><p>任何微型端口特定数据。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>Storport 检索此注册表数据，并将缓冲区传递到作为微型端口<em>参数</em>时，它调用的微型端口<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)"> <strong>HwStorFindAdapter</strong> </a>例程。</p></td>
+<td align="left"><p>Storport 检索此注册表数据，并在它调用微型端口的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter" data-raw-source="[&lt;strong&gt;HwStorFindAdapter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)"><strong>HwStorFindAdapter</strong></a>例程时将缓冲区作为<em>参数</em>传递给微型端口。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -76,19 +76,19 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：30</p>
-<p>最长：600</p>
-<p>单位： 秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：30</p>
+<p>最大值：600</p>
+<p>单位：秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>微型端口驱动程序使用此值以通知 Storport、 链接中断，如何长时间后重新启动到微型端口驱动程序的 I/O 之前应等待 StorPort。</p></td>
+<td align="left"><p>此值由微型端口驱动程序用来通知 Storport，链接关闭后，在重新启动到微型端口驱动程序的 i/o 之前，StorPort 应等待多长时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -116,18 +116,18 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：255</p>
-<p>最长：如果在注册表中设置的 8</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：255</p>
+<p>最大值：在注册表中设置为8</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>此值设置为目标设备的逻辑单元 (LUN) 的最大数目。</p></td>
+<td align="left"><p>此值设置目标设备的逻辑单元（LUN）的最大数量。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -155,18 +155,18 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：0xffffffff</p>
-<p>StorPort 时 0，使用默认值</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：0xffffffff</p>
+<p>如果为0，则 StorPort 使用默认值</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>此值设置未缓存扩展的最大的地址值。</p></td>
+<td align="left"><p>此值设置非缓存扩展的最大地址值。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -194,18 +194,18 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
-<td align="left"><p>Default：0x00000000</p>
-<p>当 MinimumUCXAddress &gt;= MaximumUCXAddress-PAGE_SIZE、 StorPort 使用默认值。</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：0x00000000</p>
+<p>如果 MinimumUCXAddress &gt;= MaximumUCXAddress-PAGE_SIZE，则 StorPort 使用默认值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>此值设置未缓存扩展的最小地址值。</p></td>
+<td align="left"><p>此值设置非缓存扩展的最小地址值。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -233,19 +233,19 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：0</p>
-<p>最低：3</p>
-<p>最长：16</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：0</p>
+<p>最小值：3</p>
+<p>最大值：16</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>StorPort 使用此值来计算基本的 2 个指数 (例如 1 &lt; &lt;值) 用作未缓存的扩展缓冲区分配的对齐值。</p></td>
+<td align="left"><p>StorPort 使用此值来计算底数2指数（例如 1 &lt;&lt; 值），以用作未缓存扩展缓冲区分配的对齐值。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -273,19 +273,19 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device</p>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters\Device&lt;微型端口名称</p>
 <p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters\Device&lt;adapter#&gt;</p></td>
+<p>HKLM\System\CurrentControlSet\Services&lt;微型端口名称&gt;\Parameters\Device&lt;适配器 #&gt;</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
-<td align="left"><p>Default：1000</p>
-<p>最低：16</p>
-<p>最长：255</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：1000</p>
+<p>最小值：16</p>
+<p>最大值：255</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>适配器可以处理的请求或数。 设置时，范围为小于默认值。</p></td>
+<td align="left"><p>适配器可处理的一个或多个请求。 设置后，范围小于默认值。</p></td>
 </tr>
 </tbody>
 </table>
@@ -309,16 +309,16 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters</p></td>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters&lt;微型端口名称</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：6, <strong>BusTypeFiber</strong></p>
-<p>最长：0x7f，更高版本的任何值被视为默认值。</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：6， <strong>BusTypeFiber</strong></p>
+<p>最大值：0x7f，任何大于的值都被视为默认值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>此值用于指示微型端口驱动程序管理的适配器的总线类型。 值对应于总线枚举类型：<strong>STORAGE_BUS_TYPE</strong>。</p></td>
+<td align="left"><p>此值用于指示微型端口驱动程序管理的适配器的总线类型。 该值对应于总线枚举类型： <strong>STORAGE_BUS_TYPE</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -346,21 +346,21 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters</p></td>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters&lt;微型端口名称</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>最低：0</p>
-<p>最长：65535</p>
-<p>单位： 秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>最小值：0</p>
+<p>最大值：65535</p>
+<p>单位：秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>指示由微型端口驱动程序管理的设备的 I/O 超时值。 如果不存在此注册表值，则系统将使用全局磁盘 I/O 超时值。</p></td>
+<td align="left"><p>指示微型端口驱动程序管理的设备的 i/o 超时值。 如果此注册表值不存在，系统将使用全局磁盘 i/o 超时值。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>
@@ -384,27 +384,27 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>微型端口范围：</p>
-<p>HKLM\System\CurrentControlSet\Services&lt;miniport name&gt;\Parameters</p></td>
+<p>HKLM\System\CurrentControlSet\Services&gt;\Parameters&lt;微型端口名称</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：0</p>
-<p>单位： 毫秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：0</p>
+<p>单位：毫秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>如果此注册表值为&gt;0，StorPort 将传入的 I/O 请求在队列中时保存任何 I/O 请求发送到微型端口驱动程序未在指定的时间段内完成。</p></td>
+<td align="left"><p>如果此注册表值为 &gt; 0，则在指定的时间段内，如果发送到微型端口驱动程序的任何 i/o 请求未完成，则 StorPort 会将传入 i/o 请求保存在队列中。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-iddeviceenumerationentriesspanspan-iddeviceenumerationentriesspanspan-iddeviceenumerationentriesspandevice-enumeration-entries"></a><span id="Device_Enumeration_Entries"></span><span id="device_enumeration_entries"></span><span id="DEVICE_ENUMERATION_ENTRIES"></span>设备枚举项
+## <a name="span-iddevice_enumeration_entriesspanspan-iddevice_enumeration_entriesspanspan-iddevice_enumeration_entriesspandevice-enumeration-entries"></a><span id="Device_Enumeration_Entries"></span><span id="device_enumeration_entries"></span><span id="DEVICE_ENUMERATION_ENTRIES"></span>设备枚举条目
 
 
 <table>
@@ -424,18 +424,18 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Enum&lt;instance path&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;实例路径&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：255</p>
-<p>最低：18</p>
-<p>最长：255</p>
-<p>单元： 字节</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：255</p>
+<p>最小值：18</p>
+<p>最大值：255</p>
+<p>单位：字节</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>指示<em>检测数据</em>StorPort 微型端口驱动程序返回的大小。</p></td>
+<td align="left"><p>指示微型端口驱动程序返回到 StorPort 的<em>感知数据</em>大小。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -462,18 +462,18 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="odd">
 <td align="left">路径</td>
-<td align="left"><p>逻辑单元作用域：</p>
+<td align="left"><p>逻辑单元范围：</p>
 <p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">值</td>
-<td align="left"><p>Default：25</p>
-<p>最长：100</p>
-<p>单位：队列深度的百分比</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：25</p>
+<p>最大值：100</p>
+<p>单位：队列深度百分比</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>当微型端口报告设备忙通过设置<strong>SCSISTAT_QUEUE_FULL</strong>中<strong>ScsiStatus</strong>的<strong>SRB</strong>，StorPort 暂停逻辑单元队列，并等待一定我/O 请求发送的任何请求之前完成的微型端口。 使用此注册表值相对于当前微型端口到发送的 I/O 请求数计算的 StorPort 等待 I/O 请求数。</p></td>
+<td align="left"><p>当微型端口通过在<strong>SRB</strong>的<strong>ScsiStatus</strong>中设置<strong>SCSISTAT_QUEUE_FULL</strong>来报告设备忙时，StorPort 将暂停逻辑单元队列，并等待，直到微型端口完成了特定数量的 i/o 请求，然后再发送其他发出. 根据当前发送到小型端口的 i/o 请求计数，使用此注册表值计算 StorPort 等待的 i/o 请求量。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -500,17 +500,17 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="odd">
 <td align="left">路径</td>
-<td align="left"><p>逻辑单元作用域：</p>
+<td align="left"><p>逻辑单元范围：</p>
 <p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：250</p>
-<p>单位： 毫秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：250</p>
+<p>单位：毫秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>当微型端口报告设备忙通过设置<strong>SRB_STATUS_BUSY</strong>中<strong>SrbStatus</strong>的<strong>SRB</strong>，StorPort 暂停单元队列，等待指定的时间之前启动重新发送的 I/O 请求。</p></td>
+<td align="left"><p>当微型端口通过在<strong>SRB</strong>的<strong>SrbStatus</strong>中设置<strong>SRB_STATUS_BUSY</strong>来报告设备忙时，StorPort 将暂停单元队列并等待指定的时间，然后再开始发送 i/o 请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -537,17 +537,17 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="odd">
 <td align="left">路径</td>
-<td align="left"><p>逻辑单元作用域：</p>
+<td align="left"><p>逻辑单元范围：</p>
 <p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：250</p>
-<p>单位： 毫秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：250</p>
+<p>单位：毫秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>当微型端口报告设备忙通过设置<strong>SRB_STATUS_BUSY</strong>中<strong>SrbStatus</strong>的<strong>SRB</strong>，StorPort 暂停逻辑单元队列，等待指定开始重新发送的 I/O 请求之前的长时间。</p></td>
+<td align="left"><p>当微型端口通过在<strong>SRB</strong>的<strong>SrbStatus</strong>中设置<strong>SRB_STATUS_BUSY</strong>来报告设备忙时，StorPort 将暂停逻辑单元队列，并等待指定的时间，然后再开始发送 i/o 请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -574,16 +574,16 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="odd">
 <td align="left">路径</td>
-<td align="left"><p>逻辑单元作用域：</p>
+<td align="left"><p>逻辑单元范围：</p>
 <p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：10</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：10</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>StorPort 以重新颁发的重试<strong>Srb</strong>微型端口时向下报告了设备繁忙或链接。</p></td>
+<td align="left"><p>当微型端口报告设备忙或链接关闭时，重试 StorPort 重新发出<strong>Srb</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -611,15 +611,15 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Enum&lt;instance path&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;实例路径&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：0 禁用</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：0，已禁用</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>如果此注册表值为&gt;启用了 0，则空闲电源管理。 空闲的电源管理适用于连接到适配器的逻辑单元。</p></td>
+<td align="left"><p>如果此注册表值为 &gt; 0，则启用空闲电源管理。 空闲电源管理适用于连接到适配器的逻辑单元。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
@@ -646,20 +646,20 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="odd">
 <td align="left">路径</td>
-<td align="left"><p>逻辑单元作用域：</p>
+<td align="left"><p>逻辑单元范围：</p>
 <p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：0 启用</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：0，已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>如果此注册表值为&gt;0，则空闲电源管理禁用为此逻辑单元。</p></td>
+<td align="left"><p>如果此注册表值为 &gt; 0，则会为此逻辑单元禁用空闲电源管理。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>
@@ -682,21 +682,21 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="odd">
 <td align="left">路径</td>
-<td align="left"><p>逻辑单元作用域：</p>
+<td align="left"><p>逻辑单元范围：</p>
 <p>HKLM\CurrentControlSet\Enum\SCSI&lt;HardwareId&gt;&lt;InstanceId&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：MAXULONG，指示未设置。 如果微型端口不提供任何超时值，实际默认值是 5 分钟或 5 * 60 * 1000。</p>
-<p>单位： 毫秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值： MAXULONG，指示未设置。 如果微型端口未提供超时值，则实际默认值为5分钟，即 5 * 60 * 1000。</p>
+<p>单位：毫秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>此值指定的最小电源框架必须等待关闭逻辑单元的电源后在空闲时间量。</p></td>
+<td align="left"><p>此值指定在逻辑单元处于空闲状态后，power framework 必须等待的最短时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>
@@ -720,17 +720,17 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Enum&lt;instance path&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;实例路径&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>默认值： 已启用</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>如果值&gt;0，则运行时的适配器的电源管理会禁用。 这会禁用为特定的适配器运行时电源管理。</p>
+<td align="left"><p>如果值 &gt; 0，则会禁用适配器的运行时电源管理。 这会禁用特定适配器的运行时电源管理。</p>
 <div class="alert">
-<strong>请注意</strong>  运行时电源管理的设备连接到此适配器不会受到影响。
+<strong>注意</strong>  连接到此适配器的设备的运行时电源管理不受影响。
 </div>
 <div>
  
@@ -738,7 +738,7 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>
@@ -762,20 +762,20 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Enum&lt;instance path&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;实例路径&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>Default：60</p>
-<p>单位： 秒</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值：60</p>
+<p>单位：秒</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>指定的时间该运行时电源框架需要关闭空闲适配器前等待。</p></td>
+<td align="left"><p>指定在关闭空闲适配器之前运行时电源框架需要等待的时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>
@@ -799,19 +799,19 @@ StorPort 定义一组注册表项来配置 StorPort 和微型端口操作的行�
 <tr class="odd">
 <td align="left">路径</td>
 <td align="left"><p>适配器作用域：</p>
-<p>HKLM\System\CurrentControlSet\Enum&lt;instance path&gt;\Device Parameters\StorPort</p></td>
+<p>HKLM\System\CurrentControlSet\Enum&lt;实例路径&gt;\Device Parameters\StorPort</p></td>
 </tr>
 <tr class="even">
-<td align="left">ReplTest1</td>
-<td align="left"><p>默认值： 已启用 （如果支持 D3Cold）</p></td>
+<td align="left">Value</td>
+<td align="left"><p>默认值： enabled （当支持 D3Cold 时）</p></td>
 </tr>
 <tr class="odd">
 <td align="left">描述</td>
-<td align="left"><p>如果值&gt;0，则 D3Cold 支持的适配器处于禁用状态。</p></td>
+<td align="left"><p>如果值 &gt; 0，则禁用对适配器的 D3Cold 支持。</p></td>
 </tr>
 <tr class="even">
 <td align="left">应用</td>
-<td align="left"><p>随着 Windows 8 启动。</p></td>
+<td align="left"><p>从 Windows 8 开始。</p></td>
 </tr>
 </tbody>
 </table>

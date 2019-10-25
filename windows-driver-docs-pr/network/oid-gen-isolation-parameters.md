@@ -1,47 +1,47 @@
 ---
 title: OID_GEN_ISOLATION_PARAMETERS
-description: NDIS 和基础驱动程序发出 OID_GEN_ISOLATION_PARAMETERS 对象标识符 (OID) 的请求，以获取 VM 网络适配器的端口设置的 （隔离） 参数的多租户配置。
+description: NDIS 和过量驱动程序发出 OID_GEN_ISOLATION_PARAMETERS 的对象标识符（OID）请求，以获取在 VM 网络适配器的端口上设置的多租户配置（隔离）参数。
 ms.assetid: 68E89349-4907-4241-9C50-B13C75273F0D
 ms.date: 08/08/2017
-keywords: -OID_GEN_ISOLATION_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_ISOLATION_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c997b7b8e61bce6ae3f08b6fceace4af5352dc24
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8601ee40be6a20a2b4fae64d0d790a2b7d96954f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369089"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844624"
 ---
-# <a name="oidgenisolationparameters"></a>OID\_GEN\_隔离\_参数
+# <a name="oid_gen_isolation_parameters"></a>OID\_代\_隔离\_参数
 
 
-NDIS 和基础驱动程序发出的 OID 的对象标识符 (OID) 请求\_GEN\_隔离\_参数来获取在 VM 设置的 （隔离） 参数的多租户配置网络适配器的端口。
+NDIS 和过量驱动程序发出 OID\_代\_隔离\_参数的对象标识符（OID）请求，以获取在 VM 网络适配器的端口上设置的多租户配置（隔离）参数。
 
-尽管在端口上单独配置每个路由域，但此 OID 单个查询中返回参数的所有路由域。
+尽管每个路由域都在端口上单独配置，但此 OID 在单个查询中返回所有路由域的参数。
 
-基础驱动程序应发出此 OID 中两个步骤：
+过量驱动程序应通过两个步骤发出此 OID：
 
-1.  Io 查询所需的缓冲区大小，发出与 OID 查询**大小**的成员**标头**的成员[ **NDIS\_隔离\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_isolation_parameters)结构设置为**NDIS\_SIZEOF\_NDIS\_隔离\_参数\_修订\_1**. (请参阅**NDIS\_状态\_无效\_长度**下面。)
-2.  发出使用 OID **InformationBuffer**的所需的大小。
+1.  Io 查询所需的缓冲区大小，并通过[**ndis\_隔离\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)结构设置为 **ndis\_SIZEOF\_ndis\_隔离来发出 OID 查询\_参数\_版本\_1**。 （请参阅下面的 " **NDIS\_状态\_无效的\_长度**。）
+2.  使用所需大小的**InformationBuffer**发出 OID。
 
-如果成功，完成 OID 查询请求**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含指向缓冲区的指针。 此缓冲区包含订单中的以下数据：
+如果 OID 查询请求成功完成， [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区按顺序包含以下数据：
 
-1.  [ **NDIS\_隔离\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_isolation_parameters)结构
+1.  [**NDIS\_隔离\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)结构
 
-2.  一个或多个[ **NDIS\_路由\_域\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)结构，一个用于每个路由域
+2.  一个或多个[**NDIS\_路由\_域\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)结构，每个路由域一个
 
-3.  一个或多个[ **NDIS\_路由\_域\_隔离\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)结构，按路由域分组
+3.  一个或多个[**NDIS\_路由\_域\_隔离\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)结构，按路由域分组
 
-在每个[ **NDIS\_路由\_域\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)结构**FirstIsolationInfoEntryOffset**成员包含从 OID 信息缓冲区开头的偏移量 (即，缓冲区开头的**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构指向) 与第一个[ **NDIS\_路由\_域\_隔离\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)为该路由域。 中的偏移量**NextIsolationInfoEntryOffset**列表中的最后一个结构的成员为零。
+在每个[**NDIS\_路由\_域\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)结构中， **FIRSTISOLATIONINFOENTRYOFFSET**成员包含 OID 信息缓冲区开始处的偏移量（即，缓冲区**的开头** [ **\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构指向）的 ndis 成员指向该路由域的第一个[**NDIS\_路由\_域\_隔离\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)。 列表中最后一个结构的**NextIsolationInfoEntryOffset**成员中的偏移量为零。
 
-如果 VM 网络适配器上不设置任何多租户配置参数，则网络适配器的微型端口驱动程序设置**数据。查询\_信息。BytesWritten**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)为零，并返回结构**NDIS\_状态\_成功**。 在此情况下中的数据**数据。查询\_INFORMATION.InformationBuffer**微型端口驱动程序不修改成员。
+如果未在 VM 网络适配器上设置多租户配置参数，网络适配器微型端口驱动程序将设置**数据。查询\_信息。BytesWritten** [**NDIS\_OID 的成员\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构为零并返回**NDIS\_状态\_成功**。 在这种情况下，数据中的数据 **。查询\_InformationBuffer**成员不由微型端口驱动程序修改。
 
 <a name="remarks"></a>备注
 -------
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-VM 网络适配器的微型端口驱动程序返回一个此 OID 请求的以下状态代码：
+VM 网络适配器微型端口驱动程序返回此 OID 请求的以下状态代码之一：
 
 <table>
 <colgroup>
@@ -61,11 +61,11 @@ VM 网络适配器的微型端口驱动程序返回一个此 OID 请求的以下
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区长度太小，无法返回所请求的信息。 VM 网络适配器的微型端口驱动程序设置<strong>数据。METHOD_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>到最小缓冲区大小，以字节为单位，所需的结构。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回请求的信息。 VM 网络适配器微型端口驱动程序设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_FAILURE</strong></p></td>
-<td><p>请求由于其他原因而失败。</p></td>
+<td><p>由于其他原因，请求失败。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,26 +82,26 @@ VM 网络适配器的微型端口驱动程序返回一个此 OID 请求的以下
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.40 及更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.40 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_隔离\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_isolation_parameters)
+[**NDIS\_隔离\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_isolation_parameters)
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_路由\_域\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)
+[**NDIS\_路由\_域\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_entry)
 
-[**NDIS\_路由\_域\_隔离\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)
+[**NDIS\_路由\_域\_隔离\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_routing_domain_isolation_entry)
 
 [**NDIS\_状态\_隔离\_参数\_更改**](ndis-status-isolation-parameters-change.md)
 

@@ -4,7 +4,7 @@ description: 命令属性
 ms.assetid: 8ce2c668-a130-428e-bf5f-0eab2dcd3fdb
 keywords:
 - 打印机属性 WDK Unidrv，命令
-- WDK Unidrv 命令
+- 命令 WDK Unidrv
 - 打印机命令 WDK Unidrv，属性
 - CallbackID
 - Cmd
@@ -13,12 +13,12 @@ keywords:
 - 参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb7ece877d22ba38be66c5a5763dab7ff02114c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75e435cb80ca84e31c31866c9ffa308a09ea095f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382058"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842873"
 ---
 # <a name="command-attributes"></a>命令属性
 
@@ -26,15 +26,15 @@ ms.locfileid: "67382058"
 
 
 
-在指定打印机命令时，您使用属性 Unidrv 提供以下信息：
+指定打印机命令时，可以使用属性为 Unidrv 提供以下信息：
 
--   如果在打印机硬件中实现该操作会导致硬件来执行此操作，转义序列。
+-   导致硬件执行操作的转义序列（如果在打印机硬件中实现了此操作）。
 
--   回调标识符和所需的参数[ **IPrintOemUni::CommandCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)方法时，如果操作的实现中[呈现插件](rendering-plug-ins.md)。
+-   如果在[呈现插件](rendering-plug-ins.md)中实现该操作，则为[**IPrintOemUni：： CommandCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)方法所需的回调标识符和参数。
 
--   该命令应会发送顺序，相对于其他命令。
+-   命令的发送顺序，相对于其他命令。
 
-下表列出了按字母顺序的命令属性，并介绍其参数。
+下表按字母顺序列出了命令特性，并描述了它们的参数。
 
 <table>
 <colgroup>
@@ -45,37 +45,37 @@ ms.locfileid: "67382058"
 <thead>
 <tr class="header">
 <th>属性名称</th>
-<th>特性参数</th>
+<th>Attribute 参数</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong><em>CallbackID</strong></p></td>
-<td><p>传递给呈现插件的正数值的值<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"> <strong>IPrintOemUni::CommandCallback</strong> </a>方法作为其<em>dCmdCbID</em>参数。</p></td>
-<td><p>所需<a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">动态生成的打印机命令</a>。 如果不是有效 <strong></em>Cmd</strong>指定。</p></td>
+<td><p>正数值，传递给呈现插件的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback" data-raw-source="[&lt;strong&gt;IPrintOemUni::CommandCallback&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-commandcallback)"><strong>IPrintOemUni：： CommandCallback</strong></a>方法作为其<em>dCmdCbID</em>参数。</p></td>
+<td><p><a href="dynamically-generated-printer-commands.md" data-raw-source="[dynamically generated printer commands](dynamically-generated-printer-commands.md)">动态生成的打印机命令</a>所必需的。 如果指定<strong></em>Cmd</strong> ，则无效。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong><em>Cmd</strong></p></td>
-<td><p>包含打印机命令转义序列，使用指定的文本字符串<a href="command-string-format.md" data-raw-source="[command string format](command-string-format.md)">命令字符串格式</a>。</p></td>
-<td><p>必填，除非 <strong></em>CallbackID</strong>指定。</p></td>
+<td><p>包含打印机命令转义序列的文本字符串，使用<a href="command-string-format.md" data-raw-source="[command string format](command-string-format.md)">命令字符串格式</a>指定。</p></td>
+<td><p>除非指定<strong></em>CallbackID</strong> ，否则是必需的。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong><em>NoPageEject?</strong></p></td>
-<td><p><strong>TRUE</strong>或<strong>FALSE</strong>，以指示是否执行该命令会导致要弹出当前物理页的打印机。</p>
-<p>使用仅当<strong></em>顺序</strong>指定 DOC_SETUP 部分，如果启用了双工打印功能。 若要避免双工模式文档页之间的过早页弹出，Unidrv 仅发出命令使用此属性设置为<strong>，则返回 TRUE</strong>如有可能。</p></td>
-<td><p>可选。 如果未指定，默认值是<strong>FALSE</strong>，这意味着该命令可能会导致页弹出。</p>
-<p>不能<strong>，则返回 TRUE</strong>如果命令引发副作用 (即，如果该命令修改范围由命令与控制打印机设置<strong> <em>NoPageEject？</strong>设置为<strong>TRUE</strong>)。</p></td>
+<td><p><strong><em>NoPageEject？</strong></p></td>
+<td><p><strong>TRUE</strong>或<strong>FALSE</strong>，指示执行命令是否会导致打印机弹出当前物理页。</p>
+<p>仅当<strong></em>顺序</strong>指定 DOC_SETUP 部分并且启用双面打印时才使用。 若要避免在 duplexed 文档页之间出现过早的页面弹出，只应在可能的情况下，Unidrv 将此特性设置为<strong>TRUE</strong>的命令发出。</p></td>
+<td><p>可选。 如果未指定此参数，则默认值为<strong>FALSE</strong>，这意味着命令可能会导致页面弹出。</p>
+<p>如果命令导致副作用（也就是说，如果命令将使用 <strong><em>NoPageEject？</strong> 设置为<strong>TRUE</strong>的命令修改打印机设置），则不得为<strong>true</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong></em>顺序</strong></p></td>
-<td><p>部分名称和订单号，如中所述<a href="command-execution-order.md" data-raw-source="[Command Execution Order](command-execution-order.md)">命令执行顺序</a>。</p></td>
-<td><p>仅对于配置命令和自定义的选项命令有效除非命令说明中另有说明。</p></td>
+<td><p>节名称和订单号，如<a href="command-execution-order.md" data-raw-source="[Command Execution Order](command-execution-order.md)">命令执行顺序</a>中所述。</p></td>
+<td><p>仅对配置命令和自定义选项命令有效，除非在命令说明中指出。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong><em>params</strong></p></td>
-<td><p><a href="lists.md" data-raw-source="[List](lists.md)">列表</a>的<a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">标准变量</a>传递到呈现插件的 IPrintOemUni::CommandCallback 方法作为传递 EXTRAPARAM 结构中其<em>pdwParams</em>参数。</p></td>
-<td><p>有效才 <strong></em>CallbackID</strong>还指定了。</p></td>
+<td><p><strong><em>参数</strong></p></td>
+<td><p><a href="standard-variables.md" data-raw-source="[standard variables](standard-variables.md)">标准变量</a>的<a href="lists.md" data-raw-source="[List](lists.md)">列表</a>，传递给作为其<em>pdwParams</em>参数传递的 EXTRAPARAM 结构中的呈现插件的 IPrintOemUni：： CommandCallback 方法。</p></td>
+<td><p>仅当同时指定<strong></em>CallbackID</strong>时才有效。</p></td>
 </tr>
 </tbody>
 </table>

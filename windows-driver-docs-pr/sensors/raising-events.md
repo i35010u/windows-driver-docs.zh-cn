@@ -4,26 +4,26 @@ description: 引发传感器事件
 ms.assetid: a6e428f8-1613-4e8d-813d-5a54824dab82
 keywords:
 - 传感器事件
-- 事件处理程序 (event handler)
+- 事件处理程序
 - 数据更新事件
 - 传感器数据更新事件
 - 状态更改事件
 - 传感器状态更改事件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a98f8cd73ff35b5e2cb58f5207fb82e757e5e289
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2eec9a30bf3b174b4f6d6b5282418315047480b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368956"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842526"
 ---
 # <a name="raising-sensor-events"></a>引发传感器事件
 
 
-有关传感器事件的工作原理的详细信息，请参阅[有关传感器驱动程序事件](about-sensor-driver-events.md)。
+有关传感器事件工作方式的详细信息，请参阅[关于传感器驱动程序事件](about-sensor-driver-events.md)。
 
-下面的代码示例演示引发数据更新和状态更改事件的类。 此类命名**CSensorManager**。
+下面的代码示例演示一个类，该类引发数据更新和状态更改事件。 类命名为**CSensorManager**。
 
 ### <a name="member-variables"></a>成员变量
 
@@ -48,7 +48,7 @@ DWORD m_dwInterval;
 
 ### <a name="global-variables"></a>全局变量
 
-该驱动程序会定义此类使用以下全局变量。
+驱动程序将定义此类使用的下列全局变量。
 
 ```c
 // Sensor ID
@@ -60,9 +60,9 @@ static const DWORD g_dwDefaultInterval = 1000; // one second
 
 ### <a name="lifetime-management"></a>生存期管理
 
-回调类，名为 CSensorDdi，实现[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nn-sensorsclassextension-isensordriver)，第一个客户端订阅的事件时创建 CSampleEvents 事件类的实例。 客户端无法再订阅事件时，回调类将销毁 CSampleEvents 实例。
+在第一个客户端订阅事件时，名为 CSensorDdi 的名为[ISensorDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nn-sensorsclassextension-isensordriver)的回调类创建 CSampleEvents 事件类的实例。 当客户端不再订阅事件时，回调类会销毁 CSampleEvents 实例。
 
-CSampleEvents 回拨到 CSensorDdi 要检索的最新的数据使用的相同方法，此类扩展使用，如[ **ISensorDriver::OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)。
+CSampleEvents 调用 CSensorDdi 以检索最新的数据，方法是使用类扩展所使用的相同方法，例如[**ISensorDriver：： OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)。
 
 下面的代码示例包含 CSampleEvents 事件类的方法实现。
 
@@ -197,7 +197,7 @@ HRESULT CSampleEvents::PostDataEvent(IPortableDeviceValues* pValues)
 
 ### <a name="thread-procedure"></a>线程过程
 
-下面的代码示例显示使用 CSampleEvents 类来引发数据更新事件的线程过程。
+下面的示例代码演示了一个线程过程，该过程使用 CSampleEvents 类来引发数据更新事件。
 
 ```c
 DWORD WINAPI CSampleEvents::_EventThreadProc(__in LPVOID pvData)

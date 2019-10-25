@@ -1,38 +1,38 @@
 ---
 title: NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG
-description: 微型端口驱动程序使用 NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 状态指示通知发生了更改任务卸载的 NIC 配置 NDIS 和基础驱动程序
+description: 微型端口驱动程序使用 NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 状态指示通知 NDIS 和过量驱动程序已更改了 NIC 的任务卸载配置。
 ms.assetid: 8a098dff-409e-4168-a3aa-372851aa999d
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 网络驱动程序
+- NDIS_STATUS_TASK_OFFLOAD_CURRENT_CONFIG 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d496e929fabc15bba6621f9092c8b348aea7c3d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4dfff15f00209884b882ab74ce996dd2815b273
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372577"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843510"
 ---
-# <a name="ndisstatustaskoffloadcurrentconfig"></a>NDIS\_状态\_任务\_卸载\_当前\_配置
+# <a name="ndis_status_task_offload_current_config"></a>\_任务\_卸载\_当前\_配置的 NDIS\_状态
 
 
-微型端口驱动程序使用**NDIS\_状态\_任务\_卸载\_当前\_配置**状态指示通知 NDIS 和已有的基础驱动程序更改任务卸载配置中的 nic。
+小型端口驱动程序使用**NDIS\_状态\_任务\_卸载\_当前\_配置**状态指示，以通知 NDIS 和过量驱动程序已更改 NIC 的任务卸载配置。
 
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序必须报告与当前 capabilities **NDIS\_状态\_任务\_卸载\_当前\_配置**状态指示当前记录功能更改。 此状态指示可确保所有基础协议驱动程序使用新的功能信息更新。 微型端口驱动程序需要发出此状态指示在以下情况下：
+小型端口驱动程序必须在当前功能发生更改时，用**NDIS\_状态报告当前功能\_任务\_卸载\_当前\_配置**状态指示。 此状态指示可确保所有的过量协议驱动程序都用新功能信息进行更新。 在以下情况下，需要微型端口驱动程序来发出此状态指示：
 
-1.  当微型端口驱动程序收到[OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)集请求，它必须使用的内容[ **NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构，以更新当前已启用任务卸载功能。
-2.  当微型端口驱动程序收到[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)集请求，它必须使用的内容[ **NDIS\_卸载\_封装**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)结构，以更新当前已启用任务卸载功能。
+1.  当微型端口驱动程序接收[OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)设置请求时，它必须使用[**NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构的内容来更新当前启用的任务卸载功能.
+2.  当微型端口驱动程序收到[OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)集请求时，它必须使用[**NDIS\_卸载\_封装**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)结构的内容来更新当前启用的任务卸载功能.
 
-**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)结构包含[ **NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)结构。 在发出**NDIS\_状态\_任务\_卸载\_当前\_配置**微型端口驱动程序必须使用状态指示**NDIS\_卸载**到当前任务卸载的 NIC 配置的报表的结构
+[**Ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含[**ndis\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 发出**NDIS\_状态时\_任务\_卸载\_当前\_配置**状态指示，微型端口驱动程序必须使用**NDIS\_卸载**结构来报告当前的任务卸载配置的。
 
-**请注意**  的内容[ **NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)结构反映仅 NIC 的当前任务卸载配置中，不是其实际硬件功能。
+**请注意**  [**NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构的内容仅反映 NIC 的当前任务卸载配置，而不是其实际硬件功能。
 
  
 
-有关当前任务卸载配置的详细信息，请参阅[OID\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)。
+有关当前任务卸载配置的详细信息，请参阅[OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,34 +44,34 @@ ms.locfileid: "67372577"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.0 及更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.0 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ndis .h （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_OFFLOAD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)
+[**NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)
 
-[**NDIS\_卸载\_封装**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_offload_encapsulation)
+[ **\_封装的 NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_offload_encapsulation)
 
-[**NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)
+[**NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)
 
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_状态\_任务\_卸载\_硬件\_功能**](ndis-status-task-offload-hardware-capabilities.md)
+[ **\_任务\_卸载\_硬件\_功能的 NDIS\_状态**](ndis-status-task-offload-hardware-capabilities.md)
 
 [OID\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)
 
 [OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)
 
-[OID\_TCP\_OFFLOAD\_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)
+[OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)
 
  
 

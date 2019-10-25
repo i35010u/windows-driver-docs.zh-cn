@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_MACHINE_NAME
-description: 作为一组 OID_GEN_MACHINE_NAME OID 指示微型端口驱动程序将本地计算机名称。
+description: 作为一组，OID_GEN_MACHINE_NAME OID 会将本地计算机名称指定为微型端口驱动程序。
 ms.assetid: 771d21ff-e989-4717-8f3e-28f4b8afe274
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_MACHINE_NAME 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bd5874b3ad7e02d0953b7ab2b86bd68cb46d0ea8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 74d92e7df9a4d41bb4cd95620a4084a34c034638
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369068"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843070"
 ---
-# <a name="oidgenmachinename"></a>OID\_GEN\_MACHINE\_NAME
+# <a name="oid_gen_machine_name"></a>OID\_代\_计算机\_名称
 
 
-作为一组 OID\_GEN\_机\_名称 OID 指示微型端口驱动程序将本地计算机名称。
+作为一个集，OID\_代\_计算机\_名称 OID 指示到微型端口驱动程序的本地计算机名称。
 
 **版本信息**
 
@@ -37,9 +37,9 @@ ms.locfileid: "67369068"
 <a name="remarks"></a>备注
 -------
 
-在此请求中传递的信息缓冲区包含表示本地计算机名称的 Unicode 字符数组。 **InformationBufferLength**提供给的值[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数指定此数组的长度以字节为单位，不包括 null 值终结器。
+传入此请求的信息缓冲区包含表示本地计算机名称的 Unicode 字符数组。 提供给[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数的**InformationBufferLength**值指定此数组的长度（以字节为单位），不包括 NULL 终止符。
 
-NDIS 设置 OID\_GEN\_机\_微型端口驱动程序完成初始化后一次命名。 在 Windows XP 下 NDIS 不会动态地通知微型端口驱动程序的计算机名称更改。 更改计算机名称后，用户必须重新启动计算机，以便 NDIS 通知新的计算机名称的微型端口驱动程序。
+在微型端口驱动程序完成初始化后，NDIS\_代\_计算机\_名称中设置 OID。 在 Windows XP 下，NDIS 不会动态通知小型端口驱动程序的计算机名称更改。 更改计算机名后，用户必须重新启动计算机，以便 NDIS 通知小型端口驱动程序的新计算机名。
 
 <a name="requirements"></a>要求
 ------------
@@ -51,16 +51,16 @@ NDIS 设置 OID\_GEN\_机\_微型端口驱动程序完成初始化后一次命�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)
+[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
 
  
 

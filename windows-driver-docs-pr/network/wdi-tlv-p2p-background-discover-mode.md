@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE
-description: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 是包含 Wi-Fi Direct 背景发现模式参数 TLV。
+description: WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 是包含 Wi-fi Direct 后台发现模式参数的 TLV。
 ms.assetid: 987DB282-A992-497F-98B5-0D3DD477B91C
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 网络驱动程序
+- WDI_TLV_P2P_BACKGROUND_DISCOVER_MODE 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c0323cf72f029ab425147667b64d63c3492fd66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f7df9e0f598857c71ece77ddd6019cf1ac7c940
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386824"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842361"
 ---
-# <a name="wditlvp2pbackgrounddiscovermode"></a>WDI\_TLV\_P2P\_背景\_DISCOVER\_模式
+# <a name="wdi_tlv_p2p_background_discover_mode"></a>WDI\_TLV\_P2P\_后台\_发现\_模式
 
 
-WDI\_TLV\_P2P\_背景\_DISCOVER\_模式是包含 Wi-Fi Direct 背景发现模式参数 TLV。
+WDI\_TLV\_P2P\_后台\_发现\_模式是包含 Wi-fi Direct 后台发现模式参数的 TLV。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,7 +26,7 @@ WDI\_TLV\_P2P\_背景\_DISCOVER\_模式是包含 Wi-Fi Direct 背景发现模式
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
@@ -44,17 +44,17 @@ WDI\_TLV\_P2P\_背景\_DISCOVER\_模式是包含 Wi-Fi Direct 背景发现模式
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_discover_type" data-raw-source="[&lt;strong&gt;WDI_P2P_DISCOVER_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_discover_type)"><strong>WDI_P2P_DISCOVER_TYPE</strong></a></td>
-<td>通过该端口执行发现的类型。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_discover_type" data-raw-source="[&lt;strong&gt;WDI_P2P_DISCOVER_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_discover_type)"><strong>WDI_P2P_DISCOVER_TYPE</strong></a></td>
+<td>端口要执行的发现的类型。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type" data-raw-source="[&lt;strong&gt;WDI_P2P_SERVICE_DISCOVERY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type)"><strong>WDI_P2P_SERVICE_DISCOVERY_TYPE</strong></a></td>
-<td>通过该端口执行服务发现的类型。
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type" data-raw-source="[&lt;strong&gt;WDI_P2P_SERVICE_DISCOVERY_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_p2p_service_discovery_type)"><strong>WDI_P2P_SERVICE_DISCOVERY_TYPE</strong></a></td>
+<td>端口要执行的服务发现的类型。
 <p>唯一有效的值为 WDI_P2P_SERVICE_DISCOVERY_TYPE_NO_SERVICE_DISCOVERY 和 WDI_P2P_SERVICE_DISCOVERY_TYPE_SERVICE_NAME_ONLY。</p></td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>设备的可见性超时。 指定用于报告设备条目的最大超时 （以毫秒为单位）。 这是必需的仅背景扫描。</td>
+<td>设备可见性超时。 指定报告设备条目的最大超时值（毫秒）。 这对于后台扫描是必需的。</td>
 </tr>
 </tbody>
 </table>
@@ -72,14 +72,14 @@ WDI\_TLV\_P2P\_背景\_DISCOVER\_模式是包含 Wi-Fi Direct 背景发现模式
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

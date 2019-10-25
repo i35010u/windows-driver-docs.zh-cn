@@ -1,22 +1,22 @@
 ---
 title: 通用传感器属性
-description: 本主题介绍常见的所有传感器的传感器属性。
+description: 本主题介绍所有传感器的常见传感器属性。
 ms.assetid: 3E4DD221-BA8E-446E-BA7A-EF84DFED332F
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 356d6348d986997c1f25f2ae3635b66d48ddc2f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 654eac3d8f9e93c8d613bfd69a0304f8c3a97199
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842529"
 ---
 # <a name="common-sensor-properties"></a>通用传感器属性
 
 
-本主题介绍常见的所有传感器的传感器属性。
+本主题介绍所有传感器的常见传感器属性。
 
-下表显示通用属性。 有关类型列中显示的类型的详细信息，请参阅[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
+下表显示了常用属性。 有关 "类型" 列中显示的类型的详细信息，请参阅[PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)。
 
 <table>
 <colgroup>
@@ -30,7 +30,7 @@ ms.locfileid: "67376939"
 <tr class="header">
 <th>属性键</th>
 <th>在任务栏的搜索框中键入</th>
-<th>访问 （R/O，R/W）</th>
+<th>访问（R/O，R/W）</th>
 <th>必需/可选</th>
 <th>描述</th>
 </tr>
@@ -41,50 +41,50 @@ ms.locfileid: "67376939"
 <td><p>VT_CLSID</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器的类型。 GUID 将包括与 Windows 传感器 (例如，SENSOR_TYPE_ACCELEROMETER_3D) 相同的格式。 有关传感器类型的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)">传感器类型 Guid</a>。</p></td>
+<td><p>传感器的类型。 GUID 将包含与 Windows 传感器相同的格式（例如，SENSOR_TYPE_ACCELEROMETER_3D）。 有关传感器类型的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants" data-raw-source="[Sensor type GUIDs](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)">传感器类型 guid</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_State</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器的状态。 有关传感器状态的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state)"> <strong>SENSOR_STATE</strong></a>。</p></td>
+<td><p>传感器的状态。 有关传感器状态的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state" data-raw-source="[&lt;strong&gt;SENSOR_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)"><strong>SENSOR_STATE</strong></a>。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_MinimumDataInterval_Ms</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>传感器数据生成报告的硬件支持的最小时间间隔 （以毫秒为单位）。</p></td>
+<td><p>硬件支持的传感器数据报表生成的最小时间间隔（毫秒）。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_MaximumDataFieldSize_Bytes</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>必需</p></td>
-<td><p>ReadFile 调用中返回的最大大小。 ReadFile 调用允许本机 API 来分配缓冲区来存放数据的任何字段。</p></td>
+<td><p>ReadFile 调用中返回的最大大小。 ReadFile 调用允许本机 API 分配一个缓冲区来保存任何数据字段。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_Power_Milliwatts</p></td>
 <td><p>VT_R4</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p></td>
-<td><p>表示单位为毫瓦传感器的强大功能。</p></td>
+<td><p>传感器功率以毫瓦表示。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_SensorHistory_MaxSize_Bytes</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p>
-<p>但需要，如果传感器支持历史记录。</p></td>
-<td><p>传感器历史记录数据，以字节为单位的最大大小。</p></td>
+<p>但如果传感器支持历史记录，则为必需。</p></td>
+<td><p>传感器历史记录数据的最大大小，以字节表示。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_SensorHistory_Interval_Ms</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p>
-<p>但需要，如果传感器支持历史记录。</p></td>
+<p>但如果传感器支持历史记录，则为必需。</p></td>
 <td><p>传感器历史记录采样间隔，以毫秒为单位。</p></td>
 </tr>
 <tr class="even">
@@ -92,78 +92,78 @@ ms.locfileid: "67376939"
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p>
-<p>但需要，如果传感器支持历史记录。</p></td>
-<td><p>以字节为单位表示的最大记录大小。</p></td>
+<p>但如果传感器支持历史记录，则为必需。</p></td>
+<td><p>以字节表示的最大记录大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_FifoReservedSize_Samples</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p>
-<p>但需要，如果传感器支持批处理。</p></td>
-<td><p>为批处理此传感器前先出 (FIFO) 缓冲区中保留的事件数。 这可以保证最低数目的事件。 如果此值为零，则不能保证传感器将执行批处理。</p></td>
+<p>但如果传感器支持批处理，则需要。</p></td>
+<td><p>此传感器在批处理的前（FIFO）缓冲区中保留的事件数。 这可保证最小数量的事件。 如果此值为零，则无法保证传感器会执行批处理。</p></td>
 </tr>
 <tr class="even">
 <td><p>PKEY_Sensor_FifoMaxSize_Samples</p></td>
 <td><p>VT_UI4</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p>
-<p>但需要，如果传感器支持批处理。</p></td>
-<td><p>最大可能 FIFO 中成批处理的事件数。 如果此值为零，则不支持批处理传感器。 自可由多个传感器共享先进先出的批处理的事件的实际数目可能比此数值较小。</p></td>
+<p>但如果传感器支持批处理，则需要。</p></td>
+<td><p>可在 FIFO 中批处理的最大事件数。 如果此值为零，则传感器不支持批处理。 实际事件数可能小于此数字，因为批处理 FIFO 可由多个传感器共享。</p></td>
 </tr>
 <tr class="odd">
 <td><p>PKEY_Sensor_WakeCapable</p></td>
 <td><p>VT_BOOL</p></td>
 <td><p>R/O</p></td>
 <td><p>可选</p>
-<p>但需要，如果传感器支持批处理。</p></td>
-<td><p>指示是否支持唤醒的传感器。</p>
-<p>当传感器支持传感器批处理时，这应设置为 VARIANT_TRUE，这是如果先进先出已满时，传感器可以唤醒应用程序处理器。 并且，当传感器无法唤醒应用程序处理器，应为 VARIANT_FALSE，设置此值。 在这种情况下，此属性的状态将指示从连接待机状态唤醒的传感器的能力。</p>
-<p>如果从 SX 唤醒传感器支持唤醒从 SX 系统，此属性应设置为 VARIANT_TRUE，如果它不支持，则此属性应设置为 VARIANT_FALSE。</p></td>
+<p>但如果传感器支持批处理，则需要。</p></td>
+<td><p>指示传感器是否支持唤醒。</p>
+<p>如果传感器支持传感器批处理，则应将其设置为 VARIANT_TRUE，如果当 FIFO 已满时，传感器可以唤醒应用程序处理器。 如果传感器无法唤醒应用程序处理器，则应将该值设置为 VARIANT_FALSE。 在这种情况下，此属性的状态指示传感器从连接待机状态中唤醒的能力。</p>
+<p>如果传感器支持从 SX 唤醒系统，则此属性应设置为 VARIANT_TRUE，如果不支持从 SX 唤醒，则应将此属性设置为 VARIANT_FALSE。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idnotespanspan-idnotespanspan-idnotespannote"></a><span id="Note"></span><span id="note"></span><span id="NOTE"></span>请注意
+## <a name="span-idnotespanspan-idnotespanspan-idnotespannote"></a><span id="Note"></span><span id="note"></span><span id="NOTE"></span>纪录
 
 
-支持批处理的数据的传感器驱动程序必须报告以下常见传感器属性：
+支持数据批处理的传感器驱动程序必须报告以下常见传感器属性：
 
--   PKEY\_Sensor\_FifoReservedSize\_Samples
+-   PKEY\_传感器\_FifoReservedSize\_示例
 
--   PKEY\_Sensor\_FifoMaxSize\_Samples
+-   PKEY\_传感器\_FifoMaxSize\_示例
 
--   PKEY\_Sensor\_WakeCapable
+-   PKEY\_传感器\_WakeCapable
 
-从 Windows 10，版本 1511，开始支持现已可供实现数据批处理使用的 HID 传感器类驱动程序。 有关此信息，请参阅[传感器批处理控件](sensor-batching-for-power-saving-.md)。
+从 Windows 10 开始，版本1511现在可以使用 HID 传感器类驱动程序来实现数据批处理。 有关此方面的信息，请参阅[传感器批处理控件](sensor-batching-for-power-saving-.md)。
 
-请参阅[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)有关回调函数的信息与数据批处理。
+有关与数据批处理相关的回调函数的信息，请参阅[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config) 。
 
-使用传感器的附加功能来唤醒的 CPU 和操作系统从 SX 状态，主键\_传感器\_WakeCapable 还用作枚举属性，可从要找出传感器是否的即插即用驱动程序存储区查询能够从 SX 系统除了唤醒从连接待机系统唤醒。
+使用传感器的额外功能唤醒 CPU 和操作系统的 SX 状态，PKEY\_传感器\_WakeCapable 也用作枚举属性，该属性可从 PnP 驱动程序存储中查询，以确定传感器是否能够除了从连接待机唤醒系统外，还从 SX 唤醒系统。
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
-当客户端驱动程序报告了以下属性时，必须使用客户端驱动程序**CollectionsListGetMarshalledSizeWithoutSerialization**而不是**CollectionsListGetMarshalledSize**:
+当客户端驱动程序报告以下属性时，客户端驱动程序必须使用**CollectionsListGetMarshalledSizeWithoutSerialization**而不是**CollectionsListGetMarshalledSize**：
 
--   PKEY\_SensorHistory\_MaxSize\_Bytes
+-   PKEY\_SensorHistory\_MaxSize\_字节数
 
--   PKEY\_SensorHistory\_MaximumRecordSize\_Bytes
+-   PKEY\_SensorHistory\_MaximumRecordSize\_字节数
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorscx/ns-sensorscx-_sensor_controller_config)
+[EvtSensorSetBatchLatency](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)
 
 [PROPVARIANT 结构](https://go.microsoft.com/fwlink/p/?linkid=313395)
 
 [传感器属性](sensor-properties2.md)
 
-[**SENSOR\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_state)
+[**传感器\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_state)
 
-[Guid 的传感器类型](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)
+[传感器类型 Guid](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-constants)
 
  
 

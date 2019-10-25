@@ -4,22 +4,22 @@ description: MSFC\_FCAdapterHBAAttributes WMI 类
 ms.assetid: fa0ff9c2-e7cc-4000-bd18-ade953e57dcc
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 31117754c7702111899a83e7d9402168c6d6642e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ce11527979d22d93bf63ae519e9d127321c1d73
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353261"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842859"
 ---
-# <a name="msfcfcadapterhbaattributes-wmi-class"></a>MSFC\_FCAdapterHBAAttributes WMI 类
+# <a name="msfc_fcadapterhbaattributes-wmi-class"></a>MSFC\_FCAdapterHBAAttributes WMI 类
 
 
 ## <span id="ddk_msfc_fcadapterhbaattributes_wmi_class_kr"></span><span id="DDK_MSFC_FCADAPTERHBAATTRIBUTES_WMI_CLASS_KR"></span>
 
 
-HBA 微型端口驱动程序支持 T11 委员会*光纤通道 HBA API*规范使用 MSFC\_FCAdapterHBAAttributes WMI 类来公开与光纤通道适配器相关联的属性信息。
+支持 T11 委员会*光纤通道 HBA API*规范的 hba 微型端口驱动程序使用 MSFC\_FCAdapterHBAAttributes WMI 类来公开与光纤通道适配器关联的属性信息。
 
-MSFC\_FCAdapterHBAAttributes 类定义中，如下所示*Hbaapi.mof*:
+*Hbaapi*中的 MSFC\_FCAdapterHBAAttributes 类定义如下：
 
 ```cpp
 class MSFC_FCAdapterHBAAttributes {
@@ -53,9 +53,9 @@ class MSFC_FCAdapterHBAAttributes {
 };
 ```
 
-通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
+由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-[**MSFC\_FCAdapterHBAAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fcadapterhbaattributes)
+[**MSFC\_FCAdapterHBAAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fcadapterhbaattributes)
 
 没有与此 WMI 类相关联的方法。
 

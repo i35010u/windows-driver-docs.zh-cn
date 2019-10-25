@@ -4,31 +4,31 @@ description: 修改数据包的可扩展交换机源端口数据
 ms.assetid: 44338441-160C-4CD1-8C0B-27CFBE136910
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1539fab658bc32976b02b68448a983b12623424
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8296ae6c43256124504d2e4762ca6c6917c1825f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372594"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844225"
 ---
 # <a name="modifying-a-packets-extensible-switch-source-port-data"></a>修改数据包的可扩展交换机源端口数据
 
 
-指定的 HYPER-V 可扩展交换机源端口**SourcePortId**中的成员[ **NDIS\_切换\_转发\_详细\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。 此结构包含在带外 (OOB) 转发的数据包的上下文[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 此上下文的详细信息，请参阅[HYPER-V 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+Hyper-v 可扩展交换机源端口由 NDIS\_交换机中的**SourcePortId**成员指定[ **\_转发\_详细信息\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。 此结构包含在数据包的[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的带外（OOB）转发上下文\_列表结构。 有关此上下文的详细信息，请参阅[Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
-可扩展的交换机扩展必须遵循以下准则，以便修改数据包的源端口标识符：
+可扩展交换机扩展必须遵循以下准则来修改数据包的源端口标识符：
 
--   可扩展的交换机扩展必须调用[ *SetNetBufferListSource* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)修改数据包的源端口。 扩展必须直接修改**SourcePortId**的成员[ **NDIS\_开关\_转发\_详细\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。
+-   可扩展交换机扩展必须调用[*SetNetBufferListSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)来修改数据包的源端口。 扩展不能直接修改 NDIS\_交换机的**SourcePortId**成员[ **\_转发\_详细信息\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。
 
--   如果扩展是创建或克隆一个数据包时，它必须调用[ *AllocateNetBufferListForwardingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)函数后它会调用[ **NdisAllocateNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlist). 此函数用于转发数据包的信息的 OOB 数据分配可扩展交换机上下文区域。
+-   如果扩展正在创建或克隆数据包，则它必须在调用[**NdisAllocateNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlist)后调用[*AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)函数。 此函数为用于转发数据包信息的 OOB 数据分配可扩展的交换机上下文区域。
 
-    当扩展调用[ *AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)，则**SourcePortId**成员设置为**NDIS\_交换机\_默认值\_端口\_ID**。 这将指定数据包源自而不是传入到可扩展交换机端口的扩展。
+    当扩展调用[*AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)时， **SourcePortId**成员设置为**NDIS\_交换机\_默认\_端口\_ID**。 这会指定数据包源自扩展，而不是到达可扩展的交换机端口。
 
-    源端口为数据包**NDIS\_切换\_默认\_端口\_ID**为特权的可扩展交换机扩展数据路径处理和受信任的。 此类流量应不会对应用到数据包来自其他源端口的策略中。 例如，源端口标识符的数据包**NDIS\_切换\_默认\_端口\_ID**绕过应用的基础的内置的可扩展交换机策略可扩展交换机的微型端口边缘。 这些策略包括访问控制列表 (Acl) 和服务质量 (QoS)。
+    具有 NDIS\_交换机的源端口的数据包 **\_默认\_端口\_ID**由可扩展交换机扩展数据路径视为特权和可信。 此类流量不应对应用于来自其他源端口的数据包的策略进行。 例如，具有 NDIS\_交换机的源端口标识符的数据包 **\_默认\_端口\_ID**会绕过可扩展交换机的基础微型端口边缘应用的内置可扩展交换机策略。 这些策略包括访问控制列表（Acl）和服务质量（QoS）。
 
-    当扩展原始数据包流量时，它应使用的源端口**NDIS\_交换机\_默认\_端口\_ID**尽量少，并仔细。 在大多数情况下，该扩展应修改可扩展交换机上的活动端口的源端口标识符。 这样，该端口将应用于该数据包的策略。
+    当扩展是源自数据包流量时，应慎用\_交换机的源端口 **\_默认\_端口\_ID** 。 在大多数情况下，扩展应将源端口标识符修改为可扩展交换机上的活动端口。 这允许将该端口的策略应用到该数据包。
 
-    但是，可能有其中扩展具有要使用的源端口的情况下**NDIS\_交换机\_默认\_端口\_ID**它源自的数据包。 例如，如果该扩展源自已发送到其目标上的物理或虚拟网络，应使用的控制数据包**NDIS\_交换机\_默认\_端口\_ID**的源端口标识符。 这可确保数据包将无法筛选，可扩展交换机驱动程序堆栈中的基础扩展被拒绝。
+    但是，在某些情况下，扩展必须使用 NDIS\_交换机的源端口 **\_默认\_端口\_ID**作为其源自的数据包。 例如，如果扩展插件产生了一个必须发送到其在物理或虚拟网络上的目标的控制数据包，则它应使用 **\_交换机\_默认\_端口标识符的\_ID** 。 这可确保包不会被可扩展交换机驱动程序堆栈中的基础扩展筛选和拒绝。
 
  
 

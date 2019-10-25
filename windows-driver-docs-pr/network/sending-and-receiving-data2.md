@@ -3,15 +3,15 @@ title: 在 CoNDIS 中发送和接收数据
 description: 在 CoNDIS 中发送和接收数据
 ms.assetid: aad7ccf9-0eaa-4327-b048-268d12593a70
 keywords:
-- 虚拟连接 WDK 的 CoNDIS，数据传输
+- 虚拟连接 WDK CoNDIS，数据传输
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24714e43ae8ba05bb37f5732bd347e03d8191202
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 339f0c8538eb2962e84ec502b338ec333eac6ac9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383642"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841979"
 ---
 # <a name="sending-and-receiving-data-in-condis"></a>在 CoNDIS 中发送和接收数据
 
@@ -19,25 +19,25 @@ ms.locfileid: "67383642"
 
 
 
-将数据传输涉及发送或通过已建立并激活 VC 接收数据包。
+传输数据涉及到通过已建立并激活的 VC 发送或接收数据包。
 
-**请注意**  协议驱动程序不能调用[ **NdisCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscosendnetbufferlists)调用后将数据发送到 VC [ **NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)为该 VC。
+**请注意**  协议驱动程序在为该 Vc 调用[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)后，不能调用[**NDISCOSENDNETBUFFERLISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists)将数据发送到 vc。
 
  
 
-CoNDIS 发送和接收函数类似于无连接发送和接收函数。 CoNDIS 和无连接的接口之间的主要区别是虚拟的连接 (VCs) 的管理。 详细了解无连接发送和接收操作，请参阅[发送和接收操作](send-and-receive-operations.md)。
+CoNDIS 发送和接收函数类似于无连接发送和接收功能。 CoNDIS 和无连接接口之间的主要区别是虚拟连接（VCs）的管理。 有关无连接发送和接收操作的详细信息，请参阅[发送和接收操作](send-and-receive-operations.md)。
 
-在单个函数调用，CoNDIS 驱动程序可以发送多个[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构具有多个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)每个网络上的结构\_缓冲区\_列表结构。 此外，驱动程序可以指示已完成的 CoNDIS 发送操作的多个 NET\_缓冲区\_具有多个网络的列表结构\_每个网络上的缓冲区结构\_缓冲区\_列表结构。
+在单个函数调用中，CoNDIS 驱动程序可以将多个 net [ **\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构发送到每个网络\_缓冲区\_列表结构的多个 NET [ **\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构。 此外，CoNDIS 驱动程序还可以针对多个 net\_缓冲区\_列表结构的已完成发送操作\_，其中每个网络\_缓冲区\_列表结构。
 
-在接收路径的 CoNDIS 微型端口驱动程序可以提供一系列 NET\_缓冲区\_列表结构，以指示接收。 每个 NET\_缓冲区\_微型端口驱动程序提供的列表包含一个 NET\_缓冲区结构。 因为不同的协议绑定可以处理每个 NET\_缓冲区\_列表结构 NDIS 可以独立返回每个 NET\_缓冲区\_微型端口驱动程序的列表结构。
+在接收路径中，CoNDIS 微型端口驱动程序可以提供网络\_缓冲区的列表\_列表结构以指示接收。 每个网络\_缓冲区\_列表，微型端口驱动程序提供的包含一个网络\_缓冲区结构。 由于不同的协议绑定可以处理每个网络\_缓冲区\_列表结构，因此 NDIS 可以将每个 NET\_缓冲区单独返回到微型端口驱动程序的\_列表结构。
 
-若要支持 NDIS 5。*x*和早期版本的驱动程序的 CoNDIS 提供旧版之间创建转换层[ **NDIS\_数据包**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构和 NET\_缓冲区基于结构。 CoNDIS 执行必要的转换之间 NET\_缓冲区结构和 NDIS\_数据包结构。 若要避免由于转换会降低性能，必须将的 CoNDIS 驱动程序更新为支持 NET\_缓冲结构，并且应该支持多个 NET\_缓冲区\_中数据的所有路径的列表结构。
+支持 NDIS 5。*x*及更早版本的驱动程序，CoNDIS 在旧版[**NDIS\_数据包**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构和基于网络\_缓冲区的结构之间提供转换层。 CoNDIS 在 NET\_缓冲区结构与 NDIS\_数据包结构之间执行必要的转换。 为了避免由于转换而导致性能下降，必须更新 CoNDIS 驱动程序以支持 NET\_缓冲区结构，并且应支持所有数据路径中的多个 NET\_缓冲器\_列表结构。
 
-本部分包括以下主题：
+本部分包括下列主题：
 
-[发送 NET\_缓冲区结构的 CoNDIS 驱动程序](sending-net-buffer-structures-from-condis-drivers.md)
+[从 CoNDIS 驱动程序发送 NET\_缓冲区结构](sending-net-buffer-structures-from-condis-drivers.md)
 
-[接收 NET\_缓冲区中的 CoNDIS 驱动程序的结构](receiving-net-buffer-structures-in-condis-drivers.md)
+[在 CoNDIS 驱动程序中接收 NET\_缓冲区结构](receiving-net-buffer-structures-in-condis-drivers.md)
 
  
 

@@ -3,15 +3,15 @@ title: 查询或设置信息
 description: 查询或设置信息
 ms.assetid: 39bd9846-7c7e-4b93-8060-4da9c66ac591
 keywords:
-- 查询的面向连接的信息
+- 查询面向连接的信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3ccd33913d00dab3a910a6c487ca2ac63aa073
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9976f73bb9aa0ea56d217f50c27ec35ac2492bef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381185"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844894"
 ---
 # <a name="querying-or-setting-information"></a>查询或设置信息
 
@@ -19,17 +19,17 @@ ms.locfileid: "67381185"
 
 
 
-CoNDIS 协议驱动程序和 NDIS 可以 OID 请求发送至基础驱动程序。 CoNDIS 协议驱动程序和微型端口调用管理器 (MCMs) 还可以发送 OID 请求为其他协议驱动程序。
+CoNDIS protocol 驱动程序和 NDIS 可以将 OID 请求发送到底层驱动程序。 CoNDIS 协议驱动程序和微型端口调用管理器（MCMs）还可以将 OID 请求发送到其他协议驱动程序。
 
-面向连接的客户端或调用管理器会调用[ **NdisCoOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscooidrequest)查询或设置在绑定上的另一个协议驱动程序或基础微型端口驱动程序维护的信息。
+面向连接的客户端或调用管理器调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)来查询或设置由绑定上的另一个协议驱动程序或基础微型端口驱动程序维护的信息。
 
-在调用之前**NdisCoOidRequest**，一个客户端或调用管理器为其请求分配缓冲区，并初始化[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构。 此结构指定的请求 （查询或设置），类型标识的信息 (OID)，在查询或设置，并指向用于传递 OID 数据的缓冲区。
+在调用**NdisCoOidRequest**之前，客户端或调用管理器会为其请求分配一个缓冲区，并[ **\_请求结构初始化 NDIS\_OID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request) 。 此结构指定请求的类型（查询或设置），标识要查询或设置的信息（OID），并指向用于传递 OID 数据的缓冲区。
 
-如果面向连接的客户端或调用 manager 传递有效*NdisAfHandle* (请参阅[地址系列](address-families.md))，NDIS 调用[ **ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_oid_request)函数在绑定上每个协议驱动程序。
+如果面向连接的客户端或调用管理器传递了有效的*NdisAfHandle* （请参阅[地址系列](address-families.md)），NDIS 将调用绑定上每个协议驱动程序的[**ProtocolCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_oid_request)函数。
 
-NDIS 定义用于标识适配器参数，包括操作参数，如设备特征、 可配置设置和统计信息的对象标识符 (OID) 值。 有关 Oid 的详细信息，请参阅[NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
+NDIS 定义对象标识符（OID）值以标识适配器参数，其中包括操作参数，如设备特征、可配置的设置和统计信息。 有关 Oid 的详细信息，请参阅[NDIS oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
 
-本部分包括以下主题：
+本部分包括下列主题：
 
 [CoNDIS 微型端口驱动程序 OID 请求](condis-miniport-driver-oid-requests.md)
 

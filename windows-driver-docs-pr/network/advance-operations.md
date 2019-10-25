@@ -3,9 +3,9 @@ title: 前进操作
 description: 前进操作
 ms.assetid: 42554221-201d-4014-900d-435a47b3afa1
 keywords:
-- 网络数据 WDK，提前操作
-- 数据 WDK 网络，提前操作
-- 数据包 WDK 网络，提前操作
+- 网络数据 WDK，高级操作
+- 数据 WDK 网络，高级操作
+- 包 WDK 网络，高级操作
 - 高级操作 WDK 网络
 - 发送数据 WDK 网络
 - 接收数据 WDK 网络
@@ -13,12 +13,12 @@ keywords:
 - 减少使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 188bc3d019608b365cdd84391df91347c3021910
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3dd93025b08dae8f6e8fd7a01431e7a8699c87b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382924"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838236"
 ---
 # <a name="advance-operations"></a>前进操作
 
@@ -26,21 +26,21 @@ ms.locfileid: "67382924"
 
 
 
-高级操作减少中使用的数据空间的大小[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构或在所有 NET\_缓冲区中结构[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
+高级操作将[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构或 NET [ **\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中所有 net\_缓冲区结构中的已用数据空间减小。
 
 驱动程序使用以下高级功能：
 
-[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferdatastart)
+[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferdatastart)
 
-[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
+[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
 
-高级操作有时可以释放与网络相关联的 MDLs\_缓冲区结构。 若要提供用于释放 MDLs 的机制，驱动程序可以提供的可选入口点[ **NetFreeMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_free_mdl_handler)函数。 如果入口点是**NULL**，NDIS 使用默认方法来分配 MDLs。 必须仅在释放 MDLs *NetFreeMdl*使用的机制，用于分配在 MDL 该倒数[ **NetAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-net_buffer_allocate_mdl_handler)函数。
+高级操作有时可以释放与 NET\_BUFFER 结构关联的 MDLs。 为提供释放 MDLs 的机制，驱动程序可以为[**NetFreeMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_free_mdl_handler)函数提供可选的入口点。 如果入口点为**NULL**，NDIS 将使用默认方法来分配 MDLs。 MDLs 只能在*NetFreeMdl*中使用与用于在[**NetAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-net_buffer_allocate_mdl_handler)函数中分配 MDL 的机制互惠相同的机制来释放。
 
-若要获取的新**DataLength**，NDIS 中减去的驱动程序指定*DataOffsetDelta*从当前**DataLength** 。 如果以前的参加操作分配新的数据空间，则高级操作可以释放此类之前分配的内存。 如果提前操作不会释放内存，只需添加 NDIS *DataOffsetDelta*与当前**DataOffset**以获取新**DataOffset** 。 如果提前操作已释放的内存，调整 NDIS **DataOffset**相应地。
+为了获取新的**DataLength**，NDIS 从当前**DataLength**中减去驱动程序指定的*DataOffsetDelta* 。 如果上一个撤回操作分配了新的数据空间，则提前操作可释放此类之前分配的内存。 如果高级操作不能释放内存，NDIS 只需将*DataOffsetDelta*添加到当前**数据偏移量**即可获得新的**数据偏移量**。 如果高级操作释放了内存，NDIS 会相应地调整**数据偏移量**。
 
-对于发送的完成情况，提前操作可以释放以前撤回操作中所分配的内存。 为了提高性能，驱动程序应以容纳所有基础驱动程序的参加操作在发送之前分配足够的总数据大小。
+对于 send complete 事例，高级操作可释放以前的撤回操作中分配的内存。 为了获得更好的性能，驱动程序应在发送之前分配足够的总数据大小，以容纳所有底层驱动程序的撤回操作。
 
-接收指示的情况下，高级操作只需调整**DataOffset**并**DataLength**相应地。 提前完成操作后，较低层的标头将保留在*未使用的数据空间*。
+对于接收指示事例，高级操作只需相应地调整**数据偏移量**和**DataLength** 。 前进操作完成后，较低层的标头将保留在*未使用的数据空间*中。
 
  
 

@@ -9,37 +9,37 @@ keywords:
 - 关系 WDK NET_BUFFER_LIST
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b869a9b07250f99d5cfff8d83c41527e85222876
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 466b01723c7007bfc85f504c7eed65fa9f8bcd02
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359136"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842063"
 ---
-# <a name="relationships-between-netbufferlist-generations"></a>NET 之间的关系\_缓冲区\_列表代
+# <a name="relationships-between-net_buffer_list-generations"></a>NET\_BUFFER\_列表生成之间的关系
 
 
 
 
 
-驱动程序编写人员应理解和维护父 （原始） 之间的关系[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构和 （派生） 的子结构由于克隆、 片段和重装配操作。
+驱动程序编写者应该理解并维护父（原始）[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构和派生自重新组合操作的子（派生）结构之间的关系。
 
-重装配克隆/片段函数的调用方维护的父/子关系，包括子网中的父指针\_缓冲区\_列表结构和子级计数。 子级计数可确保调用方释放父级，被释放所有子级之后。 以下规则适用：
+克隆/分段/重组函数的调用方维护父/子关系，包括子网\_缓冲区中的父指针\_列表结构和子计数。 子计数确保调用方在释放所有子级后释放父级。 以下规则适用：
 
--   驱动程序创建子结构从后[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构，它应保留父结构的所有权以及应传递子为其他驱动程序的结构。 该驱动程序应永远不会通过父 NET\_缓冲区\_列表结构到另一个驱动程序。
+-   在驱动程序从[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)创建子结构\_列表结构时，它应保留父结构的所有权，并应将子结构传递到其他驱动程序。 驱动程序绝不应将 parent NET\_缓冲区\_列表结构传递到另一个驱动程序。
 
--   驱动程序应只更新父 NET 中的子计数\_缓冲区\_列表结构。 父结构永远不会传递给另一个驱动程序，因为不存在风险的子级计数值可能被覆盖。 驱动程序应将父指针设置为指向父结构的子结构中。
+-   驱动程序只应更新 parent\_缓冲区\_列表结构中的子计数。 因为父结构决不会传递到另一个驱动程序，所以子计数的值可能不会被覆盖。 驱动程序应将子结构中的父指针设置为指向父结构。
 
--   当驱动程序收到 NET\_缓冲区\_从另一个驱动程序，该驱动程序的列表必须不会覆盖父指针。 如果接收到的 NET\_缓冲区\_列表结构是子级，应已设置其父指针。 该驱动程序可以使用 NET\_缓冲区\_列表来自另一个驱动程序，因为父结构。
+-   当驱动程序收到来自另一驱动程序的 NET\_缓冲区\_列表时，驱动程序不得覆盖父指针。 如果收到的 NET\_缓冲区\_列表结构是子结构，则应设置其父指针。 驱动程序可以使用从另一个驱动程序接收的 NET\_缓冲区作为父结构\_列表。
 
--   NDIS 不强制前面的规则。 当前所有者的 NET\_缓冲区\_列表结构必须管理的子计数和父指针。 例如，如果当前所有者将克隆并片段 NET\_缓冲区\_列表结构，它必须管理父指针和子计数器。
+-   NDIS 不强制执行上述规则。 NET\_缓冲区的当前所有者\_列表结构必须管理子计数和父指针。 例如，如果当前所有者同时克隆并分段网络\_缓冲区\_列表结构，则它必须管理父指针和子计数器。
 
--   NDIS 设置子计数为零和父指向**NULL**时，它会分配 NET\_缓冲区\_列表结构。 NDIS 不会更改这些字段每次将驱动程序将传递 NET\_缓冲区\_列表结构到另一个驱动程序。
+-   NDIS 在分配 NET\_缓冲区\_列表结构时，会将子计数设置为零，并将父指针设置为**NULL** 。 每次驱动程序将 NET\_缓冲区\_列表结构传递到另一个驱动程序时，NDIS 不会更改这些字段。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[派生 NET\_缓冲区\_列表结构](derived-net-buffer-list-structures.md)
+[派生的 NET\_缓冲区\_列表结构](derived-net-buffer-list-structures.md)
 
  
 

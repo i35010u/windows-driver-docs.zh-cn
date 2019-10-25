@@ -5,22 +5,22 @@ ms.assetid: c27c79d9-c0b2-433b-b3f4-7674c361f1aa
 keywords:
 - 注入硬件错误 WDK WHEA
 - 错误 WDK WHEA，注入，WHEA WDK，注入
-- Windows 硬件错误体系结构 WDK 注入
+- Windows 硬件错误体系结构 WDK，注入
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7305f84ab2d3f05c3ffc5b3d0202fea1994182
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 678b063cacf101422fa90aaaef336c27747ae60a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387161"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844400"
 ---
 # <a name="injecting-a-hardware-error"></a>注入硬件错误
 
 
-在用户模式应用程序可以注入硬件错误的硬件平台通过调用[ **WHEAErrorInjectionMethods::InjectError** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法。 应用程序将硬件错误注入测试和验证系统的硬件错误处理功能的硬件平台。
+用户模式应用程序可以通过调用[**WHEAErrorInjectionMethods：： InjectError**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法将硬件错误注入硬件平台。 应用程序将硬件错误注入硬件平台，以测试和验证系统的硬件错误处理功能。
 
-下面的代码示例演示如何插入硬件错误。
+下面的代码示例演示如何注入硬件错误。
 
 ```cpp
 IWbemServices *pIWbemServices;

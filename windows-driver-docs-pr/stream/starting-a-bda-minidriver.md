@@ -3,16 +3,16 @@ title: 启动 BDA 微型驱动程序
 description: 启动 BDA 微型驱动程序
 ms.assetid: c71e1483-756c-4e98-a413-64ff02ee4a9b
 keywords:
-- BDA 微型驱动程序 WDK AVStream，启动
+- BDA 微型驱动程序 WDK AVStream，正在启动
 - 启动 BDA 微型驱动程序 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e09e5381a25b1a3e8ffadb6a680aa46052f604
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bb26d511dd464ceb3213af7d50252872355c6104
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377845"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837700"
 ---
 # <a name="starting-a-bda-minidriver"></a>启动 BDA 微型驱动程序
 
@@ -20,18 +20,18 @@ ms.locfileid: "67377845"
 
 
 
-BDA 设备启动时运行，插即用 (PnP) 管理器将调度[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)。 AVStream 类反过来调用 BDA 微型驱动程序与 BDA 设备相关联的启动例程。 此启动例程从注册表检索有关设备的信息，将有关设备的信息，然后调用[ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)支持到函数：
+当 BDA 设备开始运行时，即插即用（PnP）管理器将[**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)。 AVStream 类又调用与 BDA 设备关联的 BDA 微型驱动程序的启动例程。 此开始例程将从注册表中检索有关设备的信息、设置有关设备的信息，然后调用[**BdaCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数来执行以下操作：
 
--   从初始的筛选器描述符创建设备筛选器工厂 ([**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)) 设备。 初始的筛选器描述符引用筛选器和输入插针调度和自动化的表。 请参阅[创建调度表](creating-dispatch-tables.md)并[定义自动化表](defining-automation-tables.md)有关详细信息。
+-   从设备的初始筛选器描述符（[**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)）为设备创建筛选器工厂。 初始筛选器描述符引用 "筛选器" 和 "输入插针" 的调度和自动化表。 有关详细信息，请参阅[创建调度表](creating-dispatch-tables.md)和[定义自动化表](defining-automation-tables.md)。
 
--   将与筛选器工厂相关联[ **BDA\_筛选器\_模板**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template)结构。 此结构引用模板筛选器描述符，设备并对可能的输入和输出插针的列表。 此描述符和列表又引用：
-    -   网络提供商可用于确定 BDA 筛选器的拓扑的静态模板结构。
-    -   节点和 BDA 筛选器以及可能的方法连接筛选器的 pin。
-    -   网络提供商可用于创建和关闭筛选器实例的例程。
-    -   网络提供商可用于处理 BDA 筛选器的静态模板结构。
--   注册的静态模板结构所指定的 BDA\_筛选器\_BDA 模板支持库，以便库可以提供默认处理 BDA 微型驱动程序的属性和方法。
+-   将筛选器工厂与[**BDA\_筛选器相关联\_模板**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_bda_filter_template)结构。 此结构引用设备的模板筛选器描述符以及可能的输入插针和输出插针对的列表。 此描述符和列表依次引用：
+    -   网络提供程序可用于确定 BDA 筛选器拓扑的静态模板结构。
+    -   用于 BDA 筛选器的节点和 pin 以及连接筛选器的可能方法。
+    -   网络提供程序可用于创建和关闭筛选器实例的例程。
+    -   网络提供程序可用于处理 BDA 筛选器的静态模板结构。
+-   使用 BDA 支持库注册由 BDA\_筛选器指定的静态模板结构\_模板，使库可以为 BDA 微型驱动程序的属性和方法提供默认处理。
 
-下面的代码段显示的设备是初始的筛选器描述符示例**BdaCreateFilterFactory**设置作为筛选器工厂：
+以下代码片段显示了**BdaCreateFilterFactory**设置为筛选器工厂的设备的初始筛选器描述符的示例：
 
 ```cpp
 const KSFILTER_DESCRIPTOR    InitialTunerFilterDescriptor;
@@ -67,7 +67,7 @@ DEFINE_KSFILTER_DESCRIPTOR(InitialTunerFilterDescriptor)
 };
 ```
 
-下面的代码段显示了由初始化筛选器的初始 pin 描述符的数组的示例。 网络提供程序初始化之前的网络提供程序来配置该筛选器使用这样的数组的筛选器。 但是，在配置初始化筛选器时，网络提供商选择引用的 pin 中指向 BDA 的筛选器描述符成员的指针\_筛选器\_模板的结构。 请参阅[配置 BDA 筛选器](configuring-a-bda-filter.md)有关详细信息。
+下面的代码片段演示一个由初始化的筛选器公开的初始 pin 说明符数组的示例。 网络提供程序在网络提供程序配置该筛选器之前使用此类数组初始化筛选器。 但是，在配置已初始化的筛选器时，网络提供程序会选择指向 BDA\_筛选器的筛选器描述符成员的指针中引用的 pin\_模板结构。 有关详细信息，请参阅[配置 BDA 筛选器](configuring-a-bda-filter.md)。
 
 ```cpp
 //
@@ -109,9 +109,9 @@ InitialPinDescriptors[] =
 };
 ```
 
-请注意，初始化筛选器必须有一个或多个输入插针公开，以便 Microsoft DirectShow **IFilterMapper2**或**IFilterMapper**接口可以找到该筛选器。 请参阅 Microsoft Windows SDK 文档，以了解有关这些 DirectShow 接口。
+请注意，已初始化的筛选器必须公开一个或多个输入插针，以便 Microsoft DirectShow **IFilterMapper2**或**IFilterMapper**接口可以找到该筛选器。 请参阅 Microsoft Windows SDK 文档，获取有关这些 DirectShow 接口的信息。
 
-下面的代码段显示了示例的 BDA\_筛选器\_模板结构和相关的结构和数组：
+下面的代码片段演示了一个 "BDA\_筛选器"\_模板结构和相关结构和数组的示例：
 
 ```cpp
 const KSFILTER_DESCRIPTOR  TemplateTunerFilterDescriptor;

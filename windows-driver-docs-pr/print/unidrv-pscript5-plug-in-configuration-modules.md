@@ -3,51 +3,51 @@ title: Unidrv/PScript5 插件配置模块
 description: Unidrv/PScript5 插件配置模块
 ms.assetid: 806175ba-18a9-48f3-8f50-06e794d1f304
 keywords:
-- 版本 3 XPS 驱动程序 WDK XPSDrv Unidrv 插件
-- 版本 3 XPS 驱动程序 WDK XPSDrv PScript5 插件
+- 版本 3 XPS 驱动程序 WDK XPSDrv、Unidrv 插件
+- 版本 3 XPS 驱动程序 WDK XPSDrv、PScript5 插件
 - IPrintCoreHelper
 - Pscript WDK 打印，XPSDrv 打印驱动程序
-- Unidrv、 XPSDrv 打印驱动程序
+- Unidrv，XPSDrv 打印驱动程序
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba06c8719462c3e5c5972c8473c5d65c82efcdca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7723a7674408a1aaece1c8211208c8b030d991c5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385957"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843621"
 ---
 # <a name="unidrvpscript5-plug-in-configuration-modules"></a>Unidrv/PScript5 插件配置模块
 
 
-在 Windows Vista 中使用 Unidrv 或 PScript5 配置插件的 XPSDrv 打印机驱动程序配置模块支持以下新功能：
+在 Windows Vista 中使用 Unidrv 或 PScript5 配置插件的 XPSDrv 打印驱动程序配置模块支持以下新功能：
 
 -   PrintTicket 和 PrintCapabilities 功能
 
--   [IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)接口用于操作 Unidrv 和 PScript5 设置
+-   用于操作 Unidrv 和 PScript5 设置的[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelper)接口
 
 -   XPSDrv 文档事件
 
--   与通信打印驱动程序筛选器管道中的筛选器
+-   与筛选器管道中的打印驱动程序筛选器通信
 
 ### <a name="printticket-and-printcapabilities-interface-support"></a>PrintTicket 和 PrintCapabilities 接口支持
 
-Unidrv 和 PScript5 打印驱动程序插件实现[IPrintOemPrintTicketProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintoemprintticketprovider)接口可自定义的 PrintTicket 和 PrintCapabilities 数据。 此接口中的方法允许插件以自定义 PrintTicket 和 PrintCapabilities 处理此插件提供的自定义功能。
+Unidrv 和 PScript5 打印驱动程序插件实现[IPrintOemPrintTicketProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintoemprintticketprovider)接口，以自定义 PrintTicket 和 PrintCapabilities 数据。 此接口中的方法允许插件为该插件提供的自定义功能自定义 PrintTicket 和 PrintCapabilities 处理。
 
-Unidrv 和 PScript5 打印驱动程序实现[IPrintTicketProvider](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))接口，并生成基于 GPD 或 PPD 文件的 PrintTicket 和 PrintCapabilities 数据的初始版本。 之后的初始处理 Unidrv 或 PScript5 打印驱动程序然后调用即插即用接**IPrintOemPrintTicketProvider**接口，以便插件可以修改此数据，然后打印驱动程序将其返回给调用应用程序。
+Unidrv 和 PScript5 打印驱动程序实现[IPrintTicketProvider](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554375(v=vs.85))接口，并生成基于 GPD 或 PPD 文件的 PrintTicket 和 PrintCapabilities 数据的初始版本。 初次处理后，Unidrv 或 PScript5 打印驱动程序将调用插件的**IPrintOemPrintTicketProvider**接口，以便在打印驱动程序将此数据返回到调用应用程序之前，该插件可以修改此数据。
 
 ### <a name="iprintcorehelper-interface"></a>IPrintCoreHelper 接口
 
-**IPrintCoreHelper**接口，插件的打印驱动程序配置：
+**IPrintCoreHelper**接口启用打印驱动程序配置插件来执行以下操作：
 
--   获取和设置 DEVMODE 结构的专用部分中的值，该 Unidrv 和 PScript5 打印驱动程序使用。
+-   获取并设置 Unidrv 和 PScript5 打印驱动程序使用的 DEVMODE 结构的私有部分中的值。
 
--   枚举打印驱动程序功能、 选项和约束。
+-   枚举打印驱动程序功能、选项和约束。
 
--   访问完整 GPD 或部分 PPD 文件内容。
+-   访问完整的 GPD 或部分 PPD 文件内容。
 
-若要正确设置 Unidrv 或 PScript5 配置并启用完整的用户界面 (UI) 的替代功能为插件的唯一方法是通过使用以下**IPrintCoreHelper**接口。
+插件正确设置 Unidrv 或 PScript5 配置和启用完全用户界面（UI）替换功能的唯一方法是使用以下**IPrintCoreHelper**接口。
 
 ```cpp
 DECLARE_INTERFACE_(IPrintCoreHelper, IUnknown) {
@@ -62,7 +62,7 @@ DECLARE_INTERFACE_(IPrintCoreHelper, IUnknown) {
 };
 ```
 
-以下两个其他接口， [IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)并[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)，派生自**IPrintCoreHelper**接口。 这些接口是特定于 Unidrv 和 PScript5 分别打印驱动程序，并包括是唯一的每个驱动程序的其他方法。
+以下两个附加接口（ [IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)和[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperps)）派生自**IPrintCoreHelper**接口。 这些接口分别是 Unidrv 和 PScript5 打印驱动程序的特定，并包含每个驱动程序独有的其他方法。
 
 ```cpp
 DECLARE_INTERFACE_(IPrintCoreHelperUni, IUnknown) {
@@ -81,7 +81,7 @@ DECLARE_INTERFACE_(IPrintCoreHelperPS, IUnknown) {
 };
 ```
 
-下面的代码示例演示了如何使用**IPrintCoreHelper**查询信息从 DEVMODE 结构的接口。 此示例中是 XPSDrv 打印机驱动程序示例代码中 Windows Driver Kit (WDK) 的一部分。
+下面的代码示例演示如何使用**IPrintCoreHelper**接口从 DEVMODE 结构中查询信息。 此示例是 Windows 驱动程序工具包（WDK）中 XPSDrv 打印驱动程序示例代码的一部分。
 
 ```cpp
 HRESULT

@@ -3,22 +3,22 @@ title: 使用 WmiFireEvent 发送事件
 description: 使用 WmiFireEvent 发送事件
 ms.assetid: f9cf8491-0f5a-4d83-849f-3edb77488092
 keywords:
-- WMI WDK 内核事件跟踪
-- WDK WMI 事件
+- WMI WDK 内核，事件跟踪
+- 事件 WDK WMI
 - 跟踪 WDK WMI
-- 发送的 WMI 事件
-- 事件阻止 WDK WMI
+- 发送 WMI 事件
+- 事件块 WDK WMI
 - 通知 WDK WMI
 - WmiFireEvent
 - 动态实例名称 WDK WMI
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3132ed67fb520db6b08f1ca1eb0fd711283f1146
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c5303113f4f1ac4bb8c5ccc25eaeb4ab8bc23789
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364076"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838438"
 ---
 # <a name="sending-an-event-with-wmifireevent"></a>使用 WmiFireEvent 发送事件
 
@@ -26,29 +26,29 @@ ms.locfileid: "67364076"
 
 
 
-驱动程序可以调用[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)发送事件，不要使用动态实例名称和的基础单个基名称字符串或 PDO 的设备实例 ID 的静态实例名称。
+驱动程序可以调用[**WmiFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent)来发送不使用动态实例名称的事件，以及将静态实例名称基于单个基名称字符串或 PDO 的设备实例 ID。
 
-事件必须是一个块的单个实例 — 也就是说，调用一个驱动程序不能**WmiFireEvent**发送事件的单个项或多个实例组成。 若要发送此类事件，驱动程序必须调用[ **IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)，如中所述[发送与 IoWMIWriteEvent 事件](sending-an-event-with-iowmiwriteevent.md)。
+事件必须是块的单个实例，即，驱动程序无法调用**WmiFireEvent**来发送由单个项或多个实例构成的事件。 若要发送此类事件，驱动程序必须调用[**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)，如[使用 IoWMIWriteEvent 发送事件](sending-an-event-with-iowmiwriteevent.md)中所述。
 
-驱动程序不应发送事件，直到 WMI 启用了该事件。 启用事件后，事件的触发器条件时，该驱动程序：
+在 WMI 启用事件之前，驱动程序不应发送事件。 事件启用后，当事件的触发条件发生时，驱动程序将：
 
-1.  分配从非分页缓冲池的缓冲区，并将事件数据写入到缓冲区。 如果事件没有任何数据，该驱动程序可以跳过此步骤。
+1.  从非分页池分配缓冲区，并将事件数据写入缓冲区。 如果事件没有数据，则驱动程序可以跳过此步骤。
 
-2.  调用[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)使用以下参数：
+2.  调用具有以下参数的[**WmiFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent) ：
 
     -   指向驱动程序的设备对象的指针
 
     -   指向表示事件块的 GUID 的指针
 
-    -   如果事件块都有多个实例，该实例的索引
+    -   如果事件块具有多个实例，则为该实例的索引
 
-    -   如果要使用发送事件、 数据的字节数或 0 如果无数据
+    -   如果要与事件一起发送数据，则为数据的字节数，或者，如果没有，则为0
 
-    -   如果数据将发送与事件，指向包含的数据驱动程序分配的缓冲区的指针或**NULL**如果没有，则
+    -   如果要随事件一起发送数据，则为指向包含数据的驱动程序分配的缓冲区的指针; 如果没有，则为**NULL** 。
 
-    驱动程序必须分配所有参数传递给**WmiFireEvent**，包括非分页缓冲池中的事件数据缓冲区。 WMI 释放由驱动程序而无需进一步干预的驱动程序分配内存。
+    驱动程序必须分配从非分页池传递到**WmiFireEvent**的所有参数，包括事件数据缓冲区。 WMI 释放驱动程序分配的内存，而不会因驱动程序而进一步介入。
 
-之后**WmiFireEvent**返回时，驱动程序将继续监视事件的触发器条件及其触发条件发生之前 WMI 禁用该事件每次发送该事件。
+**WmiFireEvent**返回后，驱动程序将继续监视事件的触发条件，并在每次发生触发器条件时发送事件，直到 WMI 禁用该事件。
 
  
 

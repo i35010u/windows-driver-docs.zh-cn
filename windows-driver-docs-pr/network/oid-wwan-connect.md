@@ -1,72 +1,72 @@
 ---
 title: OID_WWAN_CONNECT
-description: OID_WWAN_CONNECT 激活或停用特定的数据包上下文和读取的激活状态的上下文。
+description: OID_WWAN_CONNECT 激活或停用特定的数据包上下文并读取上下文的激活状态。
 ms.assetid: 51be35fe-750b-4c2b-aab3-a9df59711f7d
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_CONNECT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a7f93008a12b7cee62c899d109e38d45e1e16adb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c00e90cf4058f577f9e47a8cd9cd3e53fe94c0db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362860"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843870"
 ---
-# <a name="oidwwanconnect"></a>OID\_WWAN\_连接
+# <a name="oid_wwan_connect"></a>OID\_WWAN\_连接
 
 
-OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文和读取的激活状态的上下文。
+OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文，并读取上下文的激活状态。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_上下文\_状态**](ndis-status-wwan-context-state.md)状态通知包含[ **NDIS\_WWAN\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构，它指示无论完成集或查询请求的 MB 设备的数据包数据协议 (PDP) 上下文状态。
+微型端口驱动程序必须异步处理集和查询请求，最初返回 NDIS\_状态\_指示\_需要原始请求，稍后再发送[**ndis\_状态\_WWAN\_上下文\_状态**](ndis-status-wwan-context-state.md)通知，包含[**NDIS\_WWAN\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构，该结构指示 MB 设备的数据包数据协议（PDP）上下文状态，而不考虑完成的集或查询请求。
 
-调用方请求数据包数据协议 (PDP) 上下文状态的 MB 设备的设置提供[ **NDIS\_WWAN\_设置\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state)结构的相应信息的微型端口驱动程序。
+请求设置 MB 设备的数据包数据协议（PDP）上下文状态的调用方提供[**NDIS\_WWAN\_使用适当的信息将\_上下文\_状态结构设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state)为微型端口驱动程序。
 
 <a name="remarks"></a>备注
 -------
 
 有关使用此 OID 的详细信息，请参阅[WWAN 数据包上下文管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)。
 
-此对象会激活或停用特定的数据包上下文和读取的激活状态的上下文。 激活状态发生更改时，微型端口驱动程序必须发送相应的事件通知。
+此对象激活或停用特定的数据包上下文并读取上下文的激活状态。 当激活状态发生变化时，微型端口驱动程序必须发送相应的事件通知。
 
-此对象称为微型端口驱动程序处于注册状态的才**WwanRegisterStateHome**， **WwanRegisterStatePartner**，或**WwanRegisterStateRoaming**。 如果数据包服务处于活动状态，设备还必须处于附加状态的**WwanPacketServiceStateAttached**。
+仅当微型端口驱动程序处于**WwanRegisterStateHome**、 **WwanRegisterStatePartner**或**WwanRegisterStateRoaming**的注册状态时，才会调用此对象。 当数据包服务处于活动状态时，该设备还必须处于**WwanPacketServiceStateAttached**的附加状态。
 
-二者都设置为查询支持和操作，此对象。
+此对象支持 set 和 query 操作。
 
--   设置请求的处理要求的网络访问权限但不是能 SIM 访问。
+-   处理集请求需要网络访问，但不需要访问 SIM。
 
--   查询请求的处理不需要访问网络或 SIM。
+-   处理查询请求不需要访问网络或 SIM。
 
-此 OID 的数据结构是 NDIS\_WWAN\_设置\_上下文\_状态。 微型端口驱动程序问题的状态指示的 NDIS\_状态\_WWAN\_上下文\_集和查询请求的状态。
+此 OID 的数据结构为 NDIS\_WWAN\_设置\_上下文\_状态。 对于 set 和 query 请求，微型端口驱动程序会发出\_WWAN\_上下文\_状态的 NDIS\_状态指示。
 
-在此版本的驱动程序模型，微型端口驱动程序将尝试上下文激活仅按 MB 服务的说明。 （微型端口驱动程序可能会激活由更高版本中的网络启动的上下文。）微型端口驱动程序必须自动激活上下文即使导致注册或信号丢失。 如果在激活请求中未提供访问字符串，微型端口驱动程序不应尝试提供默认字符串。 相反，它必须继续进行激活具有空白访问字符串的上下文。
+在此版本的驱动程序模型中，微型端口驱动程序仅在 MB 服务指示的情况下尝试上下文激活。 （微型端口驱动程序可以激活网络在更高版本中启动的上下文。）小型小型驱动程序不能自动激活上下文，即使在丢失注册或信号后也是如此。 如果激活请求中未提供访问字符串，则微型端口驱动程序不应尝试提供默认字符串。 相反，它必须继续使用空白访问字符串激活上下文。
 
-另一方面，微型端口驱动程序可取消 MB 服务按照的说明激活上下文。 已超出阈值的信号，或作为正常关闭或状态清理的一部分暂时中断一段丢失网络连接可能会发生该错误。
+另一方面，小型端口驱动程序可以按 MB 服务的指示停用上下文。 如果网络连接已丢失，超过了信号暂时丢失的阈值，或者作为正常关机或状态清理的一部分，则可能会发生这种情况。
 
-由于只有一个激活上下文在此版本中，激活或停用特定的上下文相当于设置或关闭第 2 层 MB 连接支持。
+由于此版本中仅支持一个激活的上下文，因此激活或停用特定的上下文数量，以设置或撕裂第2层连接。
 
-在设置请求 MB 服务提供两**ConnectionId**并**ActivationCommand** WWAN 中的参数\_上下文\_状态数据结构。 它指示要激活或停用由标识数据包上下文的微型端口驱动程序**ConnectionId**根据**ActivationCommand**参数值*WwanActivationCommandActivate*或*WwanActivationCommandDeactivate*。
+在设置请求中，MB 服务将 furnishes\_状态数据结构\_中的**ConnectionId**和**ActivationCommand**参数。 它基于**ActivationCommand**参数值*WwanActivationCommandActivate*或 WwanActivationCommandDeactivate 指示微型端口驱动程序激活或停用**ConnectionId**标识的数据包上下文.
 
--   如果服务或订阅需要激活，微型端口驱动程序应返回错误代码 WWAN\_状态\_服务\_不\_已激活。 PDP 激活该服务之前可能不会发生或激活订阅。 所有紧急服务可能还会从设备和运算符的支持受可用。 操作系统可能会调用 OID\_WWAN\_服务\_激活与该错误代码的响应中。
+-   如果服务或订阅需要激活，微型端口驱动程序应返回错误代码 WWAN\_状态\_服务\_未\_激活。 在激活服务或订阅之前，可能不会发生 PDP 激活。 所有紧急服务都可能受设备和操作员提供的支持的限制。 操作系统可能会调用\_WWAN\_\_服务的 OID，以响应此错误代码。
 
--   如果另一个数据包上下文当前处于激活状态时，微型端口驱动程序将收到上下文激活请求，它将返回错误代码 WWAN\_状态\_最大\_ACTIVATED\_上下文。
+-   如果微型端口驱动程序在当前激活其他数据包上下文时接收上下文激活请求，则它将返回错误代码 WWAN\_状态\_MAX\_已激活\_上下文。
 
--   如果微型端口驱动程序收到但由标识的上下文的上下文停用请求**ConnectionId**是当前未激活，则会返回错误代码 WWAN\_状态\_上下文\_不\_已激活。
+-   如果微型端口驱动程序收到上下文停用请求，但**ConnectionId**标识的上下文当前未激活，它将返回错误代码 WWAN\_状态\_CONTEXT\_未\_激活。
 
-微型端口驱动程序使用以下逻辑来确定从集请求 AccessString、 用户名和密码设置的有效性：
+微型端口驱动程序使用以下逻辑来确定设置请求中 AccessString、用户名和密码设置的有效性：
 
--   如果**ActivationCommand**是*WwanActivationCommandDeactivate*，微型端口驱动程序应忽略这三个参数的设置。 用例的其余部分只考虑这种情况时**ActivationCommand**是*WwanActivationCommandActivate*。
+-   如果**ActivationCommand**为*WwanActivationCommandDeactivate*，则微型端口驱动程序应忽略这三个参数的设置。 其余情况下，仅在**ActivationCommand**为*WwanActivationCommandActivate*时才考虑这种情况。
 
-上下文激活会一直保持在用户登录和注销。 它不是每个登录用户。
+上下文激活会在用户登录和注销期间保持。 它不是每个登录用户。
 
-在查询请求 MB 服务使用此对象以查找激活状态。
+在查询请求中，MB 服务使用此对象来找出激活状态。
 
-对查询请求的响应，微型端口驱动程序将发送 NDIS\_状态\_WWAN\_上下文\_状态通知。
+对于对查询请求的响应，微型端口驱动程序会将 NDIS\_状态发送\_WWAN\_上下文\_状态通知。
 
 **重要**  注意：
 
  
 
-在很少见，但具体的情况下，Windows 7 上的 MB 服务可能会尝试自动连接到 Internet 的连接已确定预先存在的连接或暂时中断过程中的预先存在的 Internet 连接之前连接数。 这可能导致同时 MB 和 WLAN/以太网连接。 例如，这可能在系统启动期间时同时尝试 MB 和其他连接和网络列表管理器服务仍在尝试确定使用主动和被动方法的其他连接的 Internet 连接。 由于企业代理服务器或 ISP 网络等的网络基础结构中的临时服务中断，则可能还会发生。 因此，MB 服务可能会尝试自动连接到 internet 而不考虑是否选中"自动连接仅当没有备用的 Internet 连接是可用的"选项。
+在极少数情况下，在特定情况下，Windows 7 上的 MB 服务可能会尝试自动连接，然后才能为预先存在的连接确定连接到 Internet 的连接，或者在预先存在的 Internet 连接发生短暂中断期间，网卡. 这可能会导致同时出现 MB 和 WLAN/以太网连接。 例如，当同时尝试使用 MB 和其他连接并且网络列表管理器服务仍尝试使用主动和被动方法确定其他连接的 Internet 连接时，系统启动期间可能会发生这种情况。 这也可能是由于网络基础结构（如企业代理服务器或 ISP 网络）的临时中断引起的。 因此，MB 服务可能会尝试自动连接到 internet，而不管是否选择了 "如果没有可用的备用 Internet 连接，则自动连接" 选项。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,17 +78,17 @@ OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文和读取的激活�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [WWAN 数据包上下文管理](https://docs.microsoft.com/windows-hardware/drivers/network/mb-packet-context-management)

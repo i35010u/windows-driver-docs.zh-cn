@@ -1,9 +1,9 @@
 ---
 title: SRB\_通知\_空闲\_状态
-description: 在类驱动程序发送的第一次打开请求或最后一个的关闭请求之前立即将此请求发送到微型驱动程序。 微型驱动程序可以使用 SRB\_通知\_空闲\_作为通知唤醒从 USB 选择性挂起状态。
+description: 类驱动程序会在发送第一个打开请求或最后一个关闭请求之前立即将此请求发送到微型驱动程序。 微型驱动程序可以使用 SRB\_通知\_空闲\_状态，作为从 USB 选择性挂起唤醒的通知。
 ms.assetid: 7a2950a4-bd9f-4765-bb60-9e3aeeff49fb
 keywords:
-- SRB_NOTIFY_IDLE_STATE 流式处理媒体设备
+- SRB_NOTIFY_IDLE_STATE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,47 +12,47 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38cdeac2dc57d690a369c2135d2e6911cd0197cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c9b85da8423269f8761a00e8ed2402cf7d41815
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377901"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843294"
 ---
-# <a name="srbnotifyidlestate"></a>SRB\_通知\_空闲\_状态
+# <a name="srb_notify_idle_state"></a>SRB\_通知\_空闲\_状态
 
 
-在类驱动程序发送的第一次打开请求或最后一个的关闭请求之前立即将此请求发送到微型驱动程序。 微型驱动程序可以使用 SRB\_通知\_IDLE\_状态的通知，以便从唤醒作为[USB 选择性挂起](../usbcon/usb-selective-suspend.md)。
+类驱动程序会在发送第一个打开请求或最后一个关闭请求之前立即将此请求发送到微型驱动程序。 微型驱动程序可以使用 SRB\_通知\_空闲\_状态，作为从[USB 选择性挂起](../usbcon/usb-selective-suspend.md)唤醒的通知。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-此请求是通知数据包仅;将忽略任何微型驱动程序提供的返回值。
+此请求仅为通知数据包;将忽略任何微型驱动程序提供的返回值。
 
 <a name="remarks"></a>备注
 -------
 
-SRB\_通知\_空闲\_中 Microsoft Windows XP Service Pack 2 (SP2) 和更高版本，但在 Microsoft Windows Server 2003 中不发送状态。
+在 Microsoft windows XP Service Pack 2 （SP2）和更高版本（但不是在 Microsoft Windows Server 2003 中）发出的 SRB\_通知\_空闲\_状态。
 
-SRB\_通知\_IDLE\_状态修补程序 USB 选择性挂起的流类驱动程序中存在的问题 (*Stream.sys*) 在 Windows XP sp1 中中, 所述[知识文章 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)。 可以使用 SRB\_通知\_IDLE\_状态，以便支持选择性挂起单个实例的微型驱动程序基于中[流式传输类](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)并[USBCAMD2](https://docs.microsoft.com/windows-hardware/drivers/stream/usbcamd2-minidriver-operation)。
+SRB\_通知\_空闲\_状态修复了 Windows XP SP1 （在 Windows XP SP1*中）中*存在的 USB 选择性挂起问题，如[知识库文章 813348](https://go.microsoft.com/fwlink/p/?linkid=210855)中所述。 您可以使用 SRB\_通知\_空闲\_状态，以支持在基于[流类](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)和[USBCAMD2](https://docs.microsoft.com/windows-hardware/drivers/stream/usbcamd2-minidriver-operation)的单一实例微型驱动程序内进行选择性挂起。
 
-在 Windows XP 及更早版本，SRB\_通知\_空闲\_状态不存在。 对于 Windows XP 及更早版本，微型驱动程序收到[ **SRB\_获取\_设备\_属性**](srb-get-device-property.md)从空闲状态唤醒。 然后调用微型驱动程序[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)设备状态更改为 D0。
+在 Windows XP 及更早版本中，SRB\_通知\_空闲\_状态不存在。 对于 Windows XP 和更早版本，微型驱动程序接收[**SRB\_获取\_设备\_属性**](srb-get-device-property.md)以从空闲状态唤醒。 然后，微型驱动程序调用[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)将设备状态更改为 D0。
 
-在 Windows XP SP1 和 Windows Server 2003，SRB\_获取\_设备\_属性不在此情况下发送。 如果使用的*Stream.sys*使用这些操作系统，请按照前面提到的知识库文章中的说明。
+在 Windows XP SP1 和 Windows Server 2003 中，在这种情况下，SRB\_获取\_设备\_属性未发送。 如果使用的是包含这些操作系统的*sys.databases* ，请按照前面提到的知识库文章中的说明进行操作。
 
-当打开设备的第一个实例，在类驱动程序将发送 SRB\_通知\_IDLE\_之前发送的状态[ **SRB\_打开\_设备\_实例**](srb-open-device-instance.md)。
+打开设备的第一个实例时，类驱动程序会立即发送 SRB\_通知\_空闲\_状态，然后再发送[**SRB\_打开\_设备\_实例**](srb-open-device-instance.md)。
 
-当关闭设备的最后一个实例，在类驱动程序将发送 SRB\_通知\_空闲\_状态之前为该设备将请求发送到转换到状态 D3。
+关闭设备的最后一个实例时，类驱动程序将发送 SRB\_在发送设备请求以便转换到状态 D3 之前立即通知\_空闲\_状态。
 
-当流类驱动程序发送 SRB\_通知\_IDLE\_状态请求，微型驱动程序将接收到调用[ *StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)。
+当 stream 类驱动程序发送 SRB\_通知\_IDLE\_状态请求时，微型驱动程序将接收对[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)的调用。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SRB\_GET\_DEVICE\_PROPERTY**](srb-get-device-property.md)
+[**SRB\_获取\_设备\_属性**](srb-get-device-property.md)
 
-[**SRB\_开放\_设备\_实例**](srb-open-device-instance.md)
+[**SRB\_打开\_设备\_实例**](srb-open-device-instance.md)
 
-[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)
+[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)
 
  
 

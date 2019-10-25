@@ -4,15 +4,15 @@ description: 完成 IRP
 ms.assetid: 3174b36c-feb5-497c-a6e4-0d070c658899
 keywords:
 - IRP 调度例程 WDK 文件系统，完成 Irp
-- 完成 I/O 请求 WDK 文件系统
+- 完成 i/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d96d1301bcb4ce22aaf78cc31cf48eb7adb32155
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c7344d1d44aa4300a72dabc15da44ccec319abf6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363551"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841467"
 ---
 # <a name="completing-the-irp"></a>完成 IRP
 
@@ -20,27 +20,27 @@ ms.locfileid: "67363551"
 ## <span id="ddk_handling_the_control_device_object_case_if"></span><span id="DDK_HANDLING_THE_CONTROL_DEVICE_OBJECT_CASE_IF"></span>
 
 
-每个调度例程接收指向 IRP 的目标设备对象中其*DeviceObject*参数。 如果筛选器驱动程序具有一个控制设备对象 (CDO)，应检查调度例程是否*DeviceObject* IRP 上执行任何处理之前指针指向筛选器驱动程序的 CDO。
+每个调度例程都会在其*DeviceObject*参数中收到指向 IRP 目标设备对象的指针。 如果筛选器驱动程序具有控制设备对象（CDO），则在对 IRP 执行任何处理之前，调度例程应检查*DeviceObject*指针是否指向筛选器驱动程序的 CDO。
 
-文件系统筛选器驱动程序不需要支持特定于 CDO 发送任何 I/O 操作。 (有关通常支持的操作的详细信息，请参阅[筛选器驱动程序的控制设备对象](the-filter-driver-s-control-device-object.md)。)但是，CDO 必须完成发送给它的每个 IRP。
+文件系统筛选器驱动程序不需要支持特别发送到 CDO 的任何 i/o 操作。 （有关常见支持的操作的详细信息，请参阅[筛选器驱动程序的控制设备对象](the-filter-driver-s-control-device-object.md)。）但是，CDO 必须完成发送到它的每个 IRP。
 
-向*完整*IRP，调度例程必须执行所有以下步骤：
+若要*完成*IRP，调度例程必须执行以下所有步骤：
 
-1.  设置**Irp-&gt;IoStatus.Status**为适当的 NTSTATUS 值。
+1.  将**Irp&gt;IoStatus**设置为相应的 NTSTATUS 值。
 
-2.  调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)返回 IRP 到 I/O 管理器。
+2.  调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)将 IRP 返回到 I/o 管理器。
 
-3.  如步骤 1 中所示将同一状态值返回给调用方。
+3.  返回与步骤1中的调用方相同的状态值。
 
-完成 IRP 有时称为"成功"或"失败"IRP:
+完成 IRP 有时被称为 "成功" 或 "失败" IRP：
 
--   向*成功*IRP 意味着完成与成功或类似于状态的信息性 NTSTATUS 值\_成功。
+-   若要*成功*完成 IRP，请使用成功或信息性的 NTSTATUS 值（如状态\_成功）完成此目的。
 
--   向*失败*IRP 意味着若要完成使用错误或警告 NTSTATUS 值类似于状态\_无效\_设备\_请求或状态\_缓冲区\_溢出。
+-   若要使 IRP*失败*，请使用错误或警告 NTSTATUS 值（如状态\_无效\_设备\_请求或状态\_缓冲区\_溢出来完成它。
 
-NTSTATUS 值 ntstatus.h 中发现了定义。 这些值划分为四个类别： 成功后，信息性消息、 警告和错误。 有关详细信息，请参阅[使用 NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)。
+NTSTATUS 值在 ntstatus 中定义。 这些值分为四类：成功、信息性、警告和错误。 有关详细信息，请参阅[使用 NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)。
 
-**请注意**  虽然状态\_PENDING 是成功 NTSTATUS 值，而是编程错误才能完成，状态 IRP\_PENDING。
+**请注意**   尽管状态\_挂起是成功的 NTSTATUS 值，但它是一个编程错误，用于完成状态为\_挂起的 IRP。
 
  
 

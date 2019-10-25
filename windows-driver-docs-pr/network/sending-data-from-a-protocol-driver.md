@@ -6,12 +6,12 @@ keywords:
 - 发送数据 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cf94038bb0ed6ab4267dee5502c9b7ce1ad5dae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d62a59ae9aec083551fd4783a8b0d40f223790f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378650"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841975"
 ---
 # <a name="sending-data-from-a-protocol-driver"></a>从协议驱动程序发送数据
 
@@ -19,25 +19,25 @@ ms.locfileid: "67378650"
 
 
 
-下图说明了涉及协议驱动程序、 NDIS 驱动程序堆栈中的基础驱动程序和协议驱动程序发送操作。
+下图说明了一个协议驱动程序发送操作，该操作涉及驱动程序堆栈中的协议驱动程序、NDIS 和基础驱动程序。
 
-![说明协议驱动程序的关系图发送操作，这涉及到协议驱动程序、 ndis 和驱动程序堆栈中的基础驱动程序](images/protocolsend.png)
+![阐释协议驱动程序发送操作的关系图，该操作涉及驱动程序堆栈中的协议驱动程序、ndis 和基础驱动程序](images/protocolsend.png)
 
-协议驱动程序调用[ **NdisSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissendnetbufferlists)函数来发送的列表中定义的网络数据[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
+协议驱动程序调用[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数来发送网络\_缓冲区列表中定义的网络数据[ **\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。
 
-协议驱动程序必须设置**SourceHandle**的每个 NET 成员\_缓冲区\_将其传递到的相同值的列表结构*NdisBindingHandle*参数。 绑定句柄介绍 NDIS 需要返回 NET\_缓冲区\_给基础的微型端口驱动程序调用后协议驱动程序的列表结构[ **NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)。
+协议驱动程序必须将每个 NET\_缓冲区\_列表结构的**SourceHandle**成员设置为传递给*NdisBindingHandle*参数的相同值。 在基础微型端口驱动程序调用[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)后，绑定句柄提供 NDIS 要求将 NET\_\_缓冲区返回到协议驱动程序的信息。
 
-然后再调用**NdisSendNetBufferLists**，协议驱动程序可以设置发送请求，附带的信息[ **NET\_缓冲区\_列表\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)宏。 基础驱动程序可以检索此信息与 NET\_缓冲区\_列表\_信息宏。
+在调用**NdisSendNetBufferLists**之前，协议驱动程序可以使用[**NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)宏设置发送请求附带的信息。 底层驱动程序可以通过 NET\_缓冲区\_列表\_信息宏检索此信息。
 
-只要协议驱动程序调用**NdisSendNetBufferLists**，它将放弃所有权的 NET\_缓冲区\_列表结构和所有关联的资源。 NDIS 调用[ **ProtocolSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_send_net_buffer_lists_complete)函数以返回到协议驱动程序的结构和数据。 NDIS 可以收集结构和数据从多个将请求发送到一个链接列表的 NET\_缓冲区\_列表结构传递到列表之前*ProtocolSendNetBufferListsComplete*。
+一旦协议驱动程序调用**NdisSendNetBufferLists**，它就让给了 NET\_缓冲区的所有权\_列表结构和所有关联的资源。 NDIS 调用[**ProtocolSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_send_net_buffer_lists_complete)函数将结构和数据返回到协议驱动程序。 在将列表传递到*ProtocolSendNetBufferListsComplete*之前，NDIS 可以将多个发送请求中的结构和数据收集到网络\_缓冲区的单个链接列表中\_列表结构。
 
-NDIS 调用直到*ProtocolSendNetBufferListsComplete*，协议驱动程序启动发送的当前状态为未知。 协议驱动程序暂时释放它分配给发送请求时，它调用的所有资源的所有权**NdisSendNetBufferLists**。 协议驱动程序应永远不会尝试检查 NET\_缓冲区\_列表结构或任何关联数据，然后 NDIS 返回到结构再*ProtocolSendNetBufferListsComplete*。
+在 NDIS 调用*ProtocolSendNetBufferListsComplete*之前，协议驱动程序启动的发送的当前状态是未知的。 协议驱动程序会在调用**NdisSendNetBufferLists**时暂时释放它为发送请求分配的所有资源的所有权。 在 NDIS 将结构返回到*ProtocolSendNetBufferListsComplete*之前，协议驱动程序决不会尝试检查 NET\_缓冲区\_列表结构或任何关联的数据。
 
-*ProtocolSendNetBufferListsComplete*执行任何后续处理是完成发送操作所必需。 例如，协议驱动程序可以通知客户端，请求协议驱动程序，以发送网络数据，发送操作已完成。
+*ProtocolSendNetBufferListsComplete*执行完成发送操作所需的任何后处理操作。 例如，协议驱动程序可以通知客户端，请求发送网络数据的协议驱动程序，发送操作已完成。
 
-当调用 NDIS *ProtocolSendNetBufferListsComplete*，协议驱动程序重新获得所有与网络相关联的资源的所有权\_缓冲区\_由指定的列表结构*NetBufferLists*参数。 *ProtocolSendNetBufferListsComplete*可以是释放这些资源 (例如，通过调用[ **NdisFreeNetBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbuffer)并[ **NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlist)) 或让其可供在后续调用中重用**NdisSendNetBufferLists**。
+当 NDIS 调用*ProtocolSendNetBufferListsComplete*时，协议驱动程序会重新获得*NetBufferLists*参数指定的与 NET\_\_缓冲区关联的所有资源的所有权。 *ProtocolSendNetBufferListsComplete*可以释放这些资源（例如，通过调用[**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)和[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)），或准备好它们以便在对**NdisSendNetBufferLists**的后续调用中重复使用。
 
-尽管 NDIS 始终提交到基础的微型端口驱动程序的顺序确定协议的协议提供网络数据传递给**NdisSendNetBufferLists**，基础驱动程序，可以完成中随机的发送请求顺序。 也就是说，每个绑定的协议驱动程序可以依赖提交协议驱动程序将传递到的网络数据的 NDIS **NdisSendNetBufferLists**到基础驱动程序的先进先出顺序。 但是，没有协议驱动程序可以依赖于基础驱动程序来调用**NdisMSendNetBufferListsComplete**顺序相同。
+尽管 NDIS 始终将协议提供的网络数据以协议确定的顺序提交给**NdisSendNetBufferLists**，但基础驱动程序可以按随机顺序完成发送请求。 也就是说，每个绑定协议驱动程序都可以依赖 NDIS 将协议驱动程序传递到**NdisSendNetBufferLists**的网络数据提交到底层驱动程序。 但是，任何协议驱动程序都不能依赖于基础驱动程序以相同顺序调用**NdisMSendNetBufferListsComplete** 。
 
  
 

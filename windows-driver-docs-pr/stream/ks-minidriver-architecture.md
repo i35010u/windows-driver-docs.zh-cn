@@ -3,17 +3,17 @@ title: KS 微型驱动程序体系结构
 description: KS 微型驱动程序体系结构
 ms.assetid: a9c17040-72a8-4290-831b-7fb46b00f532
 keywords:
-- 流式处理 WDK，体系结构的内核
+- 内核流 WDK，体系结构
 - KS WDK，体系结构
 - 筛选器关系图 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a9d785e5af98c693a17772ae30c7552ae93257
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d4c88a0d0f2ba81232e39944eb8bf30b753fe4f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382490"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842511"
 ---
 # <a name="ks-minidriver-architecture"></a>KS 微型驱动程序体系结构
 
@@ -21,17 +21,17 @@ ms.locfileid: "67382490"
 
 
 
-流式处理的流数据服务支持内核模式下处理的内核。 在此模型中，流式传输数据流通过一系列分组到块的节点称为筛选器。 每个筛选器封装要对数据执行一些处理任务。 一个[KS 筛选器](ks-filters.md)作为内核模式下实现[**驱动程序\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)。
+内核流式处理服务支持流式处理数据的内核模式处理。 在此模型中，流数据流经分组到块（称为筛选器）的一系列节点。 每个筛选器封装了对数据执行的某个处理任务。 [KS 筛选器](ks-filters.md)作为\_对象的内核模式[**驱动程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)实现。
 
-通过代理服务器，KS 筛选器显示为在用户模式下的 DirectShow 筛选器。 在这种情况下，图形生成器和用户模式应用程序可以与 KS 筛选器进行交互。 在活动图形中，内核模式组件仍直接进行通信，消除消耗资源的用户模式和内核模式之间的转换。
+在用户模式下，KS 筛选器将通过代理作为 DirectShow 筛选器出现。 因此，图形生成器和用户模式应用程序可以与 KS 筛选器进行交互。 在活动图中，内核模式组件仍直接通信，消除了用户模式和内核模式间的资源消耗转换。
 
-数据流入流出在连接点的筛选器称为[pin](ks-pins.md)。 Pin 实例呈现或捕获数据的流，如数字音频。
+数据流入和流出连接点（称为[pin](ks-pins.md)）的筛选器。 Pin 实例呈现或捕获数据流，如数字音频。
 
-筛选器关系图是一组已连接的筛选器。 筛选器图形链接在流上执行多个处理任务。 你可以测试各种[筛选器图形配置](filter-graph-examples.md)使用 GraphEdit 工具在 Microsoft Windows 驱动程序工具包 (WDK)。 (有关 GraphEdit 详细信息，请参阅[筛选器关系图编辑器工具](https://go.microsoft.com/fwlink/p/?linkid=9230)网站。)
+筛选器图是一组已连接的筛选器。 筛选器关系图将链接多个要在流上执行的处理任务。 您可以使用 Microsoft Windows 驱动程序工具包（WDK）中的 GraphEdit 工具测试各种[筛选器图形配置](filter-graph-examples.md)。 （有关 GraphEdit 的详细信息，请参阅[筛选器图形编辑器工具](https://go.microsoft.com/fwlink/p/?linkid=9230)网站。）
 
-支持的驱动程序[板载时钟](ks-clocks.md)公开作为文件对象的时钟。 微型驱动程序可以[查询的时钟时间](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-clock)，或者[**请求通知**](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-clock)时钟在到达特定时间。
+支持[板上时钟](ks-clocks.md)的驱动程序将时钟作为文件对象公开。 微型驱动程序可以[查询时钟时间](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-clock)，或在时钟到达特定时间时[**通知请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-clock)。
 
-支持自定义内存管理界面的微型驱动程序作为名为的文件对象公开此接口[分配器](ks-allocators.md)。 例如，设备管理器处理载入内存可能会使此类接口。 然后，微型驱动程序可以使用相关的文件对象来分配和释放内存。
+支持自定义内存管理接口的微型驱动程序将此接口作为称为[分配](ks-allocators.md)器的文件对象公开。 例如，处理机载内存的设备管理器可能会暴露此类接口。 然后，微型驱动程序可以使用相关的文件对象来分配和释放内存。
 
 本部分包含有关以下主题的其他信息：
 
@@ -39,7 +39,7 @@ ms.locfileid: "67382490"
 
 [KS Pin](ks-pins.md)
 
-[KS 数据格式和数据区域](ks-data-formats-and-data-ranges.md)
+[KS 数据格式和数据范围](ks-data-formats-and-data-ranges.md)
 
 [KS 媒体](ks-mediums.md)
 

@@ -1,41 +1,41 @@
 ---
 title: 升级为 NVMe 设备的固件
-description: NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序。
+description: 对 NVMe 存储设备上的固件的更新会颁发给该设备的微型端口驱动程序。
 ms.assetid: A912715A-F82A-41E5-BE14-5B17930C29B7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9437d51baa99095c6381f939983757fa2e06bf3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fae5703910c981967d2ac6a416532e2ea07cc570
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386812"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844443"
 ---
 # <a name="upgrading-firmware-for-an-nvme-device"></a>升级为 NVMe 设备的固件
 
 
-NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序。 函数用于获取固件信息的命令，下载和激活固件映像被颁发给微型端口。
+对 NVMe 存储设备上的固件的更新会颁发给该设备的微型端口驱动程序。 用于获取固件信息、下载和激活固件映像的函数命令将颁发给微型端口。
 
-## <a name="span-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanspan-idfirmwareupgradeprocessspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>固件升级过程
-
-
-认证 Windows NVMe 设备都能在设备处于操作更新其固件。 使用更新固件[ **IOCTL\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求 SRB 包含具有关联的固件控制数据格式。 更新过程包括：
-
-1.  收集固件插槽信息以确定更新的放置位置。 有一些在决定固件更新所在的位置的几个注意事项。
-
-    -   提供了多少槽？
-    -   多少槽可以容纳更新？ 某些槽是只读的或保存图像，如果需要还原到以前的映像的功能，则必须保留。
-    -   哪个插槽包含当前活动固件映像 （正在运行的固件）？
-
-    若要更新设备，这就是可写和不当前处于活动状态选择槽。 在更新完成时，是覆盖选定的插槽中的所有现有图像数据。
-
-2.  下载所选槽的新固件映像。 具体取决于图像的大小，这是图像的在单个传输操作中进行还是在连续传输的多个部分。 图像的一部分受到**最小**(*控制器最大传输大小*，512 KB)。
-3.  若要下载的映像将活动固件映像，它被分配槽。 活动固件插槽切换从当前使用的槽到分配给已下载的映像的槽。 具体取决于下载和固件映像中的更改的类型，可能需要重新启动系统。 这是通过 NVMe 控制器确定。
-
-## <a name="span-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanspan-idminiportfirmwarecontrolrequestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>微型端口固件控制请求
+## <a name="span-idfirmware_upgrade_processspanspan-idfirmware_upgrade_processspanspan-idfirmware_upgrade_processspanfirmware-upgrade-process"></a><span id="Firmware_upgrade_process"></span><span id="firmware_upgrade_process"></span><span id="FIRMWARE_UPGRADE_PROCESS"></span>固件升级过程
 
 
-在中设置每个函数命令**固件\_请求\_阻止**结构附带[ **SRB\_IO\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ns-ntddscsi-_srb_io_control)中的缓冲区[ **IOCTL\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求。 **ControlCode**的成员**SRB\_IO\_控制**设置为**IOCTL\_SCSI\_微型端口\_固件**表示微型端口固件操作。 函数的每个命令具有相关的信息的结构位于后**固件\_请求\_阻止**。 下表列出了每个函数命令，并包含有关系统缓冲区中的结构**IOCTL\_SCSI\_微型端口**。
+为 Windows 认证的 NVMe 设备在设备处于操作时可以更新其固件。 使用[**IOCTL\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求更新固件，其中包含使用 SRB 格式设置的关联固件控制数据。 更新过程涉及：
+
+1.  收集固件槽信息以确定放置更新的位置。 在决定固件更新的位置时，需要考虑几个注意事项。
+
+    -   有多少插槽可用？
+    -   有多少个槽可以容纳更新？ 如果需要还原到以前的图像，某些槽是只读的或包含必须保留的映像。
+    -   哪个槽包含当前活动固件映像（正在运行的固件）？
+
+    若要更新设备，请选择一个可写且当前未处于活动状态的槽。 更新完成后，所选槽中的所有现有图像数据都将被覆盖。
+
+2.  下载所选槽的新固件映像。 根据映像的大小，此操作将在单个传输操作中或在映像的多个部分的后续传输中发生。 图像的部分限制为**最小值**（*控制器最大传输大小*512 KB）。
+3.  为了使下载的映像成为活动固件映像，将其分配给槽。 然后，将活动固件槽从当前使用的槽切换到分配给已下载映像的槽。 根据下载的类型和固件映像中的更改，可能需要重新启动系统。 这由 NVMe 控制器确定。
+
+## <a name="span-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanspan-idminiport_firmware_control_requestsspanminiport-firmware-control-requests"></a><span id="Miniport_firmware_control_requests"></span><span id="miniport_firmware_control_requests"></span><span id="MINIPORT_FIRMWARE_CONTROL_REQUESTS"></span>微型端口固件控制请求
+
+
+每个函数命令都在**固件\_请求\_块**结构中设置，该结构包含在 IOCTL 的缓冲区中的[**SRB\_IO\_控件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ns-ntddscsi-_srb_io_control)中， [ **\_SCSI\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_miniport)请求。 **SRB\_IO\_控制**的**ControlCode**成员设置为**IOCTL\_SCSI\_微型端口\_固件**以指示微型端口固件操作。 每个函数命令都具有位于**固件\_请求\_块**后的相关信息结构。 下表列出了每个函数命令以及用于**IOCTL\_SCSI\_微型端口**的系统缓冲区中包含的结构。
 
 <table>
 <colgroup>
@@ -46,7 +46,7 @@ NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">输入的数据</th>
+<th align="left">输入数据</th>
 <th align="left">输出数据</th>
 </tr>
 </thead>
@@ -78,12 +78,12 @@ NVMe 存储设备上的固件更新颁发给该设备的微型端口驱动程序
 
  
 
-中定义的固件函数和关联的结构*ntddscsi.h*。
+固件功能和关联的结构在*ntddscsi*中定义。
 
-## <a name="span-idfirmwareslotinformationspanspan-idfirmwareslotinformationspanspan-idfirmwareslotinformationspanfirmware-slot-information"></a><span id="Firmware_slot_information"></span><span id="firmware_slot_information"></span><span id="FIRMWARE_SLOT_INFORMATION"></span>固件插槽信息
+## <a name="span-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanspan-idfirmware_slot_informationspanfirmware-slot-information"></a><span id="Firmware_slot_information"></span><span id="firmware_slot_information"></span><span id="FIRMWARE_SLOT_INFORMATION"></span>固件槽信息
 
 
-固件映像位置调用槽中的设备上维护。 找到可用的插槽的固件映像驻留在下载后激活时需要它。 若要查找可用的插槽，升级的实用程序可以将信息查询发送到接收槽信息描述符的设备。 下面的示例函数演示如何检索所选的 NVMe 设备上所有固件插槽的信息。
+固件映像在设备上保留为 "槽"。 下载之后激活固件映像时，必须找到可用的槽。 若要查找可用槽，升级实用工具可将信息查询发送到设备以接收槽信息描述符。 以下示例函数显示了如何检索所选 NVMe 设备上所有固件槽的信息。
 
 ```ManagedCPlusPlus
 // A device list item structure for an adapter
@@ -211,23 +211,23 @@ Return Value:
 }
 ```
 
-在一个数组中返回槽信息**存储\_固件\_槽\_信息**结构。 每个结构指示激活状态和固件插槽的可用性。 有关可用性的条件有：
+槽信息以**存储\_固件\_槽\_信息**结构）的数组返回。 每个结构都指示固件槽的激活状态和可用性。 可用性条件如下：
 
--   **ReadOnly**成员设置为 0。
--   槽不是由槽编号中的活动槽**ActiveSlot**的成员**存储\_固件\_信息**。
--   **PendingActiveSlot**的成员**存储\_固件\_信息**设置为存储\_固件\_信息\_无效\_槽。
--   **PendingActiveSlot**的成员**存储\_固件\_信息**未设置为所需的槽。
+-   **ReadOnly**成员设置为0。
+-   槽不是**存储\_固件\_信息**的**ActiveSlot**成员中的插槽号指示的活动槽。
+-   **存储\_固件\_信息**的**PendingActiveSlot**成员设置为存储\_固件\_信息\_无效\_槽。
+-   **存储\_固件\_信息**的**PendingActiveSlot**成员未设置为所需的槽。
 
-此外，如果在槽状态符合可用性的条件，但**信息**字符串包含有效的修订的数据，为非零字节，则插槽包含有效的固件映像，但它可能被替换。 所有零**信息**字符串指示一个空插槽。
+此外，如果槽状态满足可用性条件，但**信息**字符串包含有效的修订数据，即非零字节，则该槽包含有效的固件映像，但可能会被替换。 **信息**字符串中的所有零都表示空槽。
 
-## <a name="span-idexamplefirmwareupgrade-slotselectiondownloadandactivationspanspan-idexamplefirmwareupgrade-slotselectiondownloadandactivationspanspan-idexamplefirmwareupgrade-slotselectiondownloadandactivationspanexample-firmware-upgrade---slot-selection-download-and-activation"></a><span id="Example__Firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="example__firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="EXAMPLE__FIRMWARE_UPGRADE_-_SLOT_SELECTION__DOWNLOAD__AND_ACTIVATION"></span>示例：固件升级-所选槽、 下载和激活
+## <a name="span-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanspan-idexample__firmware_upgrade_-_slot_selection__download__and_activationspanexample-firmware-upgrade---slot-selection-download-and-activation"></a><span id="Example__Firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="example__firmware_upgrade_-_slot_selection__download__and_activation"></span><span id="EXAMPLE__FIRMWARE_UPGRADE_-_SLOT_SELECTION__DOWNLOAD__AND_ACTIVATION"></span>示例：固件升级-槽选择、下载和激活
 
 
-升级的实用程序将执行前面所述更新固件控制器中的三个步骤。 例如，以下升级例程包含代码过程中的每个步骤。 槽发现步骤，所示*DeviceGetFirmwareInfo*示例中，调用通过升级例程，以选择可用的插槽。 紧接所选槽演示图像下载和激活步骤。 在每个步骤，显示相应函数命令的使用。
+升级实用工具将执行前面提到的三个步骤来更新控制器中的固件。 例如，以下升级例程包含过程中每个步骤的代码。 *DeviceGetFirmwareInfo*示例中所示的槽发现步骤由升级例程调用，以选择可用槽。 映像下载和激活步骤直接演示了下面的槽选项。 在每个步骤中，将显示相应的函数命令的用法。
 
-在下载步骤中，固件图像文件读取到的分配的缓冲区和缓冲区的内容传输到控制器。 如果固件图像文件大小大于缓冲区的大小，图像文件读取多个时间，固件映像的该部分传输直到读取整个文件。
+在下载步骤中，固件映像文件会读入分配的缓冲区，缓冲区内容将传输到控制器。 如果固件映像文件大于缓冲区的大小，则会多次读取映像文件，并传输固件映像的部分，直到读取整个文件为止。
 
-在的固件映像下载完成之后，激活步骤需要从控制器的两个操作。 首先，将选定的插槽分配给固件映像，并且第二，所选的槽设置为活动的槽。
+完成固件映像下载后，激活步骤需要控制器中的两项操作。 首先，将所选槽分配给固件映像，然后将所选槽设置为活动槽。
 
 ```ManagedCPlusPlus
 VOID
@@ -579,13 +579,13 @@ Exit:
 }
 ```
 
-**请注意**  不支持同时下载多个固件映像。 单个固件下载始终后跟单个固件激活。
+**请注意**，  不支持同时下载多个固件映像。 单个固件下载总是后跟单一固件激活。
 
  
 
-通过使用相应的槽数只需激活函数命令，可以重新激活已驻留在槽中的固件映像。
+可以通过只使用带有相应插槽号的 "激活函数" 命令，重新激活已驻留在槽中的固件映像。
 
-**IOCTL\_SCSI\_微型端口\_固件**SRB I/O 控制的控制代码是从 Windows 8.1 开始提供。
+SRB i/o 控制的**IOCTL\_SCSI\_微型端口\_固件**控制代码可从 Windows 8.1 开始使用。
 
  
 

@@ -4,63 +4,63 @@ description: 对 I/O 请求与组件电源状态进行协调
 ms.assetid: CF74B946-BF62-481A-B8AA-DD106DDB94CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 758124bb7fea4b017a0da143d59f4327b26ad783
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1beb028b93983a500d92c875db09a0b758fedf2b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382412"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845622"
 ---
 # <a name="coordinating-io-requests-with-component-power-state"></a>对 I/O 请求与组件电源状态进行协调
 
 
 \[仅适用于 KMDF\]
 
-多个组件设备的 KMDF 驱动程序必须仅将请求发送到处于活动状态的组件。 通常情况下，该驱动程序将 I/O 队列分配给组件或组件的设置。
+多组件设备的 KMDF 驱动程序必须仅向处于活动状态的组件发送请求。 通常，驱动程序将 i/o 队列分配给组件或组件集。
 
-首先考虑分配给单个组件的队列。 当该组件将变为活动状态并停止队列，组件进入空闲状态时，驱动程序将启动该队列。 在这种情况下，当 KMDF 调用队列时请求处理程序，设备处于其完全开启 (D0) 状态，并且所需的组件处于活动状态。 请求处理程序可以安全地访问组件的硬件。
+首先考虑分配给单个组件的队列。 当组件激活时，驱动程序将启动队列，并在组件处于空闲状态时停止队列。 因此，当 KMDF 调用队列的请求处理程序时，设备处于完全打开（D0）状态，并且所需的组件处于活动状态。 请求处理程序可以安全地访问组件硬件。
 
-相同的概念适用于队列分配给一组组件。 在这种情况下，该驱动程序启动该队列中的所有组件集处于活动状态。 组件的任何一个进入空闲状态时，驱动程序将停止队列。
+相同的概念适用于分配给一组组件的队列。 在这种情况下，当集中的所有组件都处于活动状态时，驱动程序将启动队列。 当任何一个组件处于空闲状态时，驱动程序将停止队列。
 
-本主题介绍如何用于多个组件设备的 KMDF 驱动程序可能涉及多个请求需要的类型的不同组件组合的情况下实现这种支持。
+本主题介绍多组件设备的 KMDF 驱动程序如何在涉及多个需要不同组件组合的请求类型的情况下实现此类支持。
 
 ## <a name="example"></a>示例
 
 
-对于每个驱动程序支持的请求类型，确定所需的组件。 例如，考虑具有三个组件的设备：0、 1 和 2，为其驱动程序收到的请求的三种类型：A、 B 和 c。请求的组件要求如下所示：
+对于该驱动程序支持的每个请求类型，确定所需的组件。 例如，假设有三个组件的设备：0、1和2，驱动程序将收到三种类型的请求： A、B 和 C。请求的组件要求如下所示：
 
 | 请求类型 | 所需组件 |
 |--------------|-------------------|
-| A            | 0,2               |
+| 一个            | 0、2               |
 | B            | 1                 |
-| C            | 0,1,2             |
+| C            | 0、1、2             |
 
  
 
-在此示例中，有三个截然不同的组件，分别为每个请求类型。
-驱动程序提供一个默认、 电源管理设备的 I/O 队列，以及一个将对应于每个组的组件其他电源管理队列。 在上面的示例中，该驱动程序创建一个主队列和三个辅助队列，一个对应于每个组件集。 在下图显示了此队列配置：
+在此示例中，有三个不同的组件集，分别用于每个请求类型。
+驱动程序为设备提供了一个默认的电源托管 i/o 队列，以及一个与每组组件相对应的其他电源管理队列。 在上面的示例中，驱动程序将创建一个主队列和三个辅助队列，每个都对应于每个组件集。 下图显示了此队列配置：
 
-![队列实现多个组件设备](images/multicompqueues.png)
+![多个组件设备的队列实现](images/multicompqueues.png)
 
-该驱动程序维护每个组件集的位掩码。 位掩码中的每个位表示的一个组件的活动/空闲状态。 如果设置了位，该组件处于活动状态。 如果清除了位，则该组件处于空闲状态。
+驱动程序为每个组件集维护一个位掩码。 位掩码中的每个位代表一个组件的活动/空闲状态。 如果设置了位，则组件处于活动状态。 如果清除该位，该组件将处于空闲状态。
 
-当请求到达时，[请求处理程序](request-handlers.md)顶级队列决定哪些组件需要请求，并调用[ **PoFxActivateComponent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxactivatecomponent)为每个。 请求处理程序然后将其转发给辅助的 I/O 队列对应于该组件集。
+请求到达时，顶级队列的[请求处理程序](request-handlers.md)将确定请求需要的组件，并为每个组件调用[**PoFxActivateComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxactivatecomponent) 。 然后，请求处理程序将请求转发到对应于该组件集的辅助 i/o 队列。
 
-电源管理框架 (PoFx) 组件将变为活动状态，当调用的驱动程序[ *ComponentActiveConditionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_active_condition_callback)例程。 在此回调中，驱动程序设置对应于指定的组件，在每个表示该组件的位掩码中的位。 如果设置了所有给定的位掩码中的位，对应的一组中的组件的所有处于活动状态。 对于当前正在执行完全每个组件集，该驱动程序调用[ **WdfIoQueueStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestart)启动相应的辅助 I/O 队列。
+当组件激活时，电源管理框架（PoFx）会调用驱动程序的[*ComponentActiveConditionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_active_condition_callback)例程。 在此回调中，驱动程序会在表示组件的每个位掩码中设置对应于指定组件的位。 如果设置了给定位掩码中的所有位，则相应集中的所有组件都将处于活动状态。 对于完全活动的每个组件集，驱动程序将调用[**WdfIoQueueStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestart)来启动相应的辅助 i/o 队列。
 
-例如，考虑上述假设的设备。 假设该组件 0 处于活动状态，而 1 和 2 的组件都处于空闲状态。 PoFx 组件 2 将变为活动状态，当调用该组件[ *ComponentActiveConditionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_active_condition_callback)例程。 请求类型 A 和 C 使用组件 2，因此驱动程序操作这些两个请求类型的位屏蔽。 由于现在设置为请求类型 a 的位掩码中的所有位，因此驱动程序启动的队列的请求类型 a。但是，并非所有的位将设置为请求类型 C （组件 1 是仍然空闲）。 该驱动程序不会启动的队列的请求类型 c。
+例如，假设设备上有假设的设备。 假设组件0处于活动状态，而组件1和2处于空闲状态。 当组件2变为活动状态时，PoFx 将调用该组件的[*ComponentActiveConditionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_active_condition_callback)例程。 请求类型 A 和 C 使用组件2，因此驱动程序将为这两种请求类型处理位掩码。 由于请求类型 A 的位掩码中的所有位现在均已设置，因此驱动程序将为请求类型 A 启动队列。但是，并不是所有的位都为请求类型 C （组件1仍处于空闲状态）设置。 驱动程序未启动请求类型 C 的队列。
 
-当启动辅助的 I/O 队列时，框架将开始提供存储在队列中的请求。 在中[请求处理程序](request-handlers.md)辅助的 I/O 队列，驱动程序可以安全地处理请求，因为该组件处于活动状态，并且 power 引用已在组件上的每个请求。
+启动辅助 i/o 队列时，框架会开始传递存储在队列中的请求。 在辅助 i/o 队列的[请求处理程序](request-handlers.md)中，驱动程序可以安全地处理请求，因为该组件处于活动状态，并且已对每个请求的组件执行了电源引用。
 
-当驱动程序完成处理的请求时，它将调用[ **PoFxIdleComponent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxidlecomponent)为每个请求使用的，，然后完成请求的组件。 有没有更多的请求使用的组件，电源框架将调用的驱动程序[ *ComponentIdleConditionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_idle_condition_callback)例程。
+当驱动程序完成请求处理后，它将为该请求使用的每个组件调用[**PoFxIdleComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxidlecomponent) ，然后完成该请求。 当没有更多的请求使用组件时，power framework 会调用驱动程序的[*ComponentIdleConditionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_idle_condition_callback)例程。
 
-在此回调中，驱动程序将清除每个表示该组件的位掩码中的指定组件所对应的位。 如果给定的位掩码表示该组件中的相应设置为过渡到空闲条件的第一个，该驱动程序会调用[ **WdfIoQueueStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestop)停止相应的辅助 I/O队列。 通过此操作，该驱动程序可确保该队列不会除非所有相应的组中的组件处于活动状态，否则调度请求。
+在此回调中，驱动程序将清除与指定组件相对应的位，其中每个位掩码表示该组件。 如果给定的位掩码指示组件是要过渡到空闲状态的相应集合中的第一个位掩码，则驱动程序将调用[**WdfIoQueueStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)来停止相应的辅助 i/o 队列。 通过此操作，驱动程序可确保队列不会调度请求，除非相应集中的所有组件都处于活动状态。
 
-再次考虑上面的示例。 假设所有组件都处于活动状态，因此启动的所有队列。 当组件 1 变为空闲状态时，调用 PoFx [ *ComponentIdleConditionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_idle_condition_callback)例程组件 1。 在此回调中，驱动程序操作请求类型 B 和 C 的位的屏蔽，因为它们使用组件 1。 由于组件 1 变为空闲状态的这两种请求类型的第一个组件，驱动程序将停止的队列的请求类型 B 和 c。
+请再次考虑上述示例。 假设所有组件都处于活动状态，因此所有队列均已启动。 当组件1处于空闲状态时，PoFx 将为组件1调用[*ComponentIdleConditionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_idle_condition_callback)例程。 在此回调中，驱动程序为请求类型 B 和 C 操作了位掩码，因为它们使用组件1。 由于组件1是每个请求类型都处于空闲状态的第一个组件，因此驱动程序将停止请求类型 B 和 C 的队列。
 
-假设，在此情况下，组件 0 进入空闲状态。 在中[ *ComponentIdleConditionCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_component_idle_condition_callback)组件 0，驱动程序操作的请求类型 A 和 c。 位掩码由于组件 0 是第一个组件变为空闲状态的请求类型 A （2 组件仍处于活动状态），驱动程序将停止的队列的请求类型 A.但是，为请求类型 C，组件 0 不是进入空闲状态的第一个组件。 该驱动程序不会停止的队列的请求类型 C （因此之前那样）。
+假设此时组件0变为空闲状态。 在[*ComponentIdleConditionCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_idle_condition_callback) for component 0 中，驱动程序为请求类型 A 和 C 操作位掩码。由于组件0是请求类型 A 空闲的第一个组件（组件2仍处于活动状态），驱动程序将停止请求类型 A 的队列。但是，对于请求类型 C，组件0不是要进入空闲状态的第一个组件。 对于请求类型 C，驱动程序不会停止队列（已在前面的步骤中）。
 
-若要使用此示例中所述的技术，该驱动程序还必须注册[ *EvtIoCanceledOnQueue* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)其辅助队列的每个回调函数。 如果要在辅助队列中取消请求，该驱动程序可以使用此回调以调用[ **PoFxIdleComponent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxidlecomponent)每个对应的组件。 执行请求处理程序时调用它采取 power 引用的是版本[ **PoFxActivateComponent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxactivatecomponent)之前将请求转发到辅助队列。
+若要使用本示例中所述的方法，驱动程序还必须为其每个辅助队列注册一个[*EvtIoCanceledOnQueue*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)回调函数。 如果请求在辅助队列中被取消，则驱动程序可以使用此回调为每个相应的组件调用[**PoFxIdleComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxidlecomponent) 。 这样做会释放请求处理程序在将请求转发到辅助队列之前调用[**PoFxActivateComponent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxactivatecomponent)时所用的 power reference。
 
  
 

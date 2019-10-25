@@ -1,77 +1,77 @@
 ---
-title: 编写入门的 HYPER-V 可扩展交换机扩展
-description: 本部分介绍如何开始编写的 HYPER-V 可扩展交换机扩展
+title: 开始编写 Hyper-v 可扩展交换机扩展
+description: 本部分介绍如何开始编写 Hyper-v 可扩展交换机扩展
 ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f93b3e047839d98d15c1a76859874eedf4d5d0
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: fc7405f8b0cc19b4c2bf8ce9a2067e8ac47a2097
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393402"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842180"
 ---
 # <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>开始编写 Hyper-V 可扩展交换机扩展
 
 
-NDIS 筛选器或 HYPER-V 可扩展交换机 （也称为"HYPER-V 虚拟交换机"） 中运行的 Windows 筛选平台 (WFP) 筛选器，HYPER-V 可扩展交换机扩展。
+Hyper-v 可扩展交换机扩展是一个 NDIS 筛选器或 Windows 筛选平台（WFP）筛选器，可在 Hyper-v 可扩展交换机（也称为 "Hyper-v 虚拟交换机"）中运行。
 
-有 3 个类的扩展： 捕获、 筛选以及转发。 所有这些可作为 NDIS 筛选器驱动程序。 筛选扩展也作为 WFP 筛选器驱动程序实现。
+有3类扩展：捕获、筛选和转发。 它们都可以作为 NDIS 筛选器驱动程序实现。 筛选扩展还可以作为 WFP 筛选器驱动程序实现。
 
-有关驱动程序开发人员的体系结构概述，请参阅[概述的 HYPER-V 可扩展交换机](overview-of-the-hyper-v-extensible-switch.md)。
+有关驱动程序开发人员的体系结构概述，请参阅[Hyper-v 可扩展交换机概述](overview-of-the-hyper-v-extensible-switch.md)。
 
-若要创建的 HYPER-V 可扩展交换机扩展，请执行以下步骤：
+若要创建 Hyper-v 可扩展交换机扩展，请执行以下步骤：
 
 1.  了解扩展体系结构和编程模型。
-    -   阅读基于 NDIS 的扩展，开头的联机文档[HYPER-V 可扩展交换机](hyper-v-extensible-switch.md)。 捕获、 筛选以及转发扩展使用标准的 NDIS 筛选 API。 NDIS 接口已得到增强，提供配置、 通知和虚拟交换机和虚拟机的标识。
-        [HYPER-V 可扩展交换机函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
-        [HYPER-V 可扩展交换机枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/index)
-        [HYPER-V 可扩展交换机结构和联合](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
-        [的 HYPER-V 可扩展交换机 Oid](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-oids)
-        [HYPER-V 可扩展交换机状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications)
-        [的 HYPER-V 可扩展交换机宏](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-macros)
-    -   阅读基于 WFP 的扩展，开头的联机文档[使用虚拟交换机筛选](using-virtual-switch-filtering.md)。
-    -   观看扩展上的以下说明视频。
-        -   [TechEd 会话上的 HYPER-V 可扩展交换机](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2012/VIR307)
-        -   [HYPER-V 可扩展交换机，第 I 部分 — 简介](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-I--Introduction)
-        -   [HYPER-V 可扩展交换机，第 ii 部分 — 了解控制路径](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-II--Understanding-the-Control-Path)
-        -   [HYPER-V 可扩展交换机，第 iii 部分 — 用于捕获和筛选器扩展数据路径的细节](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-III--The-Ins-and-Outs-of-the-Data-Path-for-Capture-and-Filter-Extensi)
-    -   有多个可用于管理扩展的 PowerShell 命令。 中列出了这些[管理安装的 HYPER-V 可扩展交换机扩展](managing-installed-hyper-v-extensions.md)。
+    -   从[Hyper-v 可扩展交换机](hyper-v-extensible-switch.md)开始，阅读有关基于 NDIS 的扩展的联机文档。 捕获、筛选和转发扩展使用标准 NDIS 筛选 API。 已增强 NDIS 接口以提供虚拟交换机和虚拟机的配置、通知和标识。
+        [Hyper-v 可扩展交换机功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+        hyper-v 可扩展交换机的
+        [枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)和[hyper-v 可扩展](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-oids)交换机[的联合
+        的联合](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+        [hyper-v可扩展交换机状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications)
+        [Hyper-v 可扩展交换机宏](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-macros)
+    -   从[使用虚拟交换机筛选](using-virtual-switch-filtering.md)开始，阅读基于 WFP 的扩展的联机文档。
+    -   观看以下有关扩展的指导性视频。
+        -   [Hyper-v 可扩展交换机上的 TechEd 会话](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2012/VIR307)
+        -   [Hyper-v 可扩展交换机，第 I 部分-简介](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-I--Introduction)
+        -   [Hyper-v 可扩展交换机，第二部分–了解控制路径](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-II--Understanding-the-Control-Path)
+        -   [Hyper-v 可扩展交换机，第 III 部分-数据路径 for Capture and Filter Extension](https://channel9.msdn.com/posts/Hyper-V-Extensible-Switch-Part-III--The-Ins-and-Outs-of-the-Data-Path-for-Capture-and-Filter-Extensi)
+    -   可以使用多个 PowerShell 命令来管理扩展。 这些列在[管理安装的 Hyper-v 可扩展交换机扩展](managing-installed-hyper-v-extensions.md)中列出。
 
 2.  设置开发环境。
-    -   安装 Microsoft Visual Studio Professional 2012。
-    -   下载并安装[Windows Driver Kit 8](https://developer.microsoft.com/windows/hardware)。
+    -   安装 2012 Microsoft Visual Studio Professional。
+    -   下载并安装[Windows 驱动程序工具包 8](https://developer.microsoft.com/windows/hardware)。
 
-3.  研究的示例扩展插件。
-    -   下载[转发扩展插件示例的 NDIS](https://go.microsoft.com/fwlink/p/?LinkId=618935)。
-    -   下载[WFP 示例](https://go.microsoft.com/fwlink/p/?LinkId=618934)。 这是包括 vSwitch 功能的正常工作原型。
+3.  研究示例扩展。
+    -   下载[NDIS 转发扩展示例](https://go.microsoft.com/fwlink/p/?LinkId=618935)。
+    -   下载[WFP 示例](https://go.microsoft.com/fwlink/p/?LinkId=618934)。 这是一个包含 vSwitch 功能的功能原型。
 
-4.  编写你的扩展。
-    -   可以使用其中一个示例作为起点，移植现有筛选器代码，或从头开始编写你的扩展。
-    -   如果正在开发的 NDIS 扩展，您可以使用标准的 NDIS INF 带有少量的更改中所述[INF 的 HYPER-V 可扩展交换机扩展的要求](inf-requirements-for-hyper-v-extensions.md)。
+4.  编写扩展。
+    -   你可以使用其中一个示例作为起点、移植现有筛选器代码或从头开始编写你的扩展。
+    -   如果要开发 NDIS 扩展，则可以使用标准 NDIS INF，其中有一些更改，如[Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)中所述。
 
-5.  构建您的扩展插件和单元测试。
-    -   您必须[使用 Visual Studio 生成扩展以](https://msdn.microsoft.com/library/windows/hardware/ff554644.aspx)。
-    -   你可以熟悉扩展生成过程使用 Visual Studio 编译和运行的示例扩展插件。
+5.  构建扩展并对其进行单元测试。
+    -   必须[使用 Visual Studio 生成扩展](https://msdn.microsoft.com/library/windows/hardware/ff554644.aspx)。
+    -   你可以通过使用 Visual Studio 编译和运行示例扩展，熟悉扩展生成过程。
 
-6.  了解有关获取签名的扩展的 Windows 认证 （徽标） 过程。
-    -   扩展必须通过在测试[Windows 硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?LinkId=733613)。
-    -   扩展的要求下列出在 Filter.Driver.vSwitchExtension.ExtensionRequirements [Windows 硬件认证要求的筛选器驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/windows-hardware-certification-requirements---filter-driver)。
+6.  了解用于获取扩展签名的 Windows 认证（徽标）过程。
+    -   扩展必须通过[Windows 硬件认证包（HCK）](https://go.microsoft.com/fwlink/p/?LinkId=733613)中的测试。
+    -   扩展的要求列在[Windows 硬件认证要求-筛选器驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/windows-hardware-certification-requirements---filter-driver)的 VSwitchExtension. ExtensionRequirements 下。
 
 7.  设置 Windows 硬件认证工具包环境。
     -   下载并安装[Windows 硬件认证工具包](https://msdn.microsoft.com/windows/hardware/hh852359)。
 
-8.  运行扩展 WHCK 测试：
-    -   Filter.Driver.Fundamentals
-    -   Filter.Driver.Security
-    -   Filter.Driver.vSwitchExtension
+8.  为扩展运行 WHCK 测试：
+    -   筛选器。
+    -   Filter. Security
+    -   VSwitchExtension
 
-9.  您最终的扩展插件通过 WHCK 认证后，将其提交给 Microsoft。
-    -   您的扩展插件必须提交为具有特定的格式，以确保它可以进行跟踪并部署的管理包，如 MSI 安装程序包[System Center Virtual Machine Manager (SCVMM) 2012年](https://docs.microsoft.com/previous-versions/technet-magazine/hh300651(v=msdn.10))。 中定义的 MSI 格式[扩展驱动程序 MSI 打包要求](https://docs.microsoft.com/windows-hardware/drivers/network/extension-driver-msi-packaging-requirements)。
+9.  最终扩展传递 WHCK 认证后，将其提交给 Microsoft。
+    -   必须以具有特定格式的 MSI 安装包的形式提交你的扩展，以确保可通过管理包（如[System Center Virtual Machine Manager （SCVMM）2012）](https://docs.microsoft.com/previous-versions/technet-magazine/hh300651(v=msdn.10))跟踪和部署你的扩展。 MSI 格式在[扩展驱动程序 MSI 打包要求](https://docs.microsoft.com/windows-hardware/drivers/network/extension-driver-msi-packaging-requirements)中定义。
 
-10. 列出您 WindowsServerCatalog.com 的扩展。
-    -   列出您的扩展 WindowsServerCatalog.com 的简短说明。
-    -   列出 WindowsServerCatalog.com 上经过认证的扩展的信息将很快可用。
+10. 在 WindowsServerCatalog.com 上列出你的扩展。
+    -   在 WindowsServerCatalog.com 上列出扩展的简短说明。
+    -   稍后将提供有关在 WindowsServerCatalog.com 上列出已验证扩展的信息。
 
  
 

@@ -4,12 +4,12 @@ description: SCSI 端口提供的功能
 ms.assetid: 549dc3f1-b62f-4047-bdc0-7e24d5bc6ad5
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: af6d7be4a08eb9293da3853d3d9802fa0c5a5c8f
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 29f34287c19f88b949e2d794fabe5c3ce8d93a03
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252443"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844508"
 ---
 # <a name="capabilities-provided-by-scsi-port"></a>SCSI 端口提供的功能
 
@@ -38,7 +38,7 @@ SCSI 端口驱动程序提供以下功能：
 
 - 为类驱动程序提供主机适配器限制的相关信息。
 
-    类驱动程序负责控制数据传输的大小，以适应主机总线适配器（HBA）的限制。 不过，SCSI 端口为类驱动程序提供了完成此任务所需的信息。 SCSI 端口将此信息 furnishes 适配器描述符（[STORAGE_ADAPTER_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)）中，以响应[**IOCTL_STORAGE_QUERY_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property) IOCTL 请求。 类驱动程序负责根据此描述符中报告的信息将请求分解为适当大小的块。
+    类驱动程序负责控制数据传输的大小，以适应主机总线适配器（HBA）的限制。 不过，SCSI 端口为类驱动程序提供了完成此任务所需的信息。 SCSI 端口将此信息 furnishes 适配器描述符（[STORAGE_ADAPTER_DESCRIPTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)）中，以响应[**IOCTL_STORAGE_QUERY_PROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property) IOCTL 请求。 类驱动程序负责根据此描述符中报告的信息将请求分解为适当大小的块。
 
 - 将总线相对地址转换为逻辑地址。
 
@@ -60,12 +60,12 @@ SCSI 端口驱动程序提供以下功能：
 
 SCSI 端口通过 SCSI 端口库例程向微型端口驱动程序提供服务。 微型端口驱动程序编写器可调用这些例程，而不是将其提供的功能编码为单一单一端口驱动程序。 使用这些例程的一些最重要的服务如下所示：
 
-- SCSI 端口微型端口驱动程序可以将许多与操作系统相关的初始化操作委托给 SCSI 端口的[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)库例程。 这使得 SCSI 端口微型驱动器驱动程序在不同版本的操作系统之间更易于移植。 有关 SCSI 端口微型端口驱动程序的初始化任务的说明，请参阅[Scsi 微型端口驱动程序的 DriverEntry 例程](scsi-miniport-driver-s-driverentry-routine.md)。
+- SCSI 端口微型端口驱动程序可以将许多与操作系统相关的初始化操作委托给 SCSI 端口的[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)库例程。 这使得 SCSI 端口微型驱动器驱动程序在不同版本的操作系统之间更易于移植。 有关 SCSI 端口微型端口驱动程序的初始化任务的说明，请参阅[Scsi 微型端口驱动程序的 DriverEntry 例程](scsi-miniport-driver-s-driverentry-routine.md)。
 
-- 非 PnP 设备的 SCSI 端口微型端口驱动程序可代替查找适配器并向 PnP 管理器报告其资源的任务。 这是在[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)中完成的。
+- 非 PnP 设备的 SCSI 端口微型端口驱动程序可代替查找适配器并向 PnP 管理器报告其资源的任务。 这是在[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)中完成的。
 
-- SCSI 端口微型端口驱动程序不初始化驱动程序对象中的调度入口点。 当微型端口驱动程序调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)时，SCSI 端口驱动程序代表微型端口驱动程序执行此功能。
+- SCSI 端口微型端口驱动程序不初始化驱动程序对象中的调度入口点。 当微型端口驱动程序调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)时，SCSI 端口驱动程序代表微型端口驱动程序执行此功能。
 
-- SCSI 端口微型端口驱动程序不使用[**HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))将与总线相关的地址转换为逻辑地址。 SCSI 端口微型端口驱动程序通过调用[**ScsiPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportgetdevicebase)来实现此目的。
+- SCSI 端口微型端口驱动程序不使用[**HalTranslateBusAddress**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))将与总线相关的地址转换为逻辑地址。 SCSI 端口微型端口驱动程序通过调用[**ScsiPortGetDeviceBase**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportgetdevicebase)来实现此目的。
 
 有关 SCSI 端口可用于 SCSI 端口微型端口驱动程序的库例程的摘要，请参阅[Scsi 端口驱动程序支持例程](scsi-port-driver-support-routines.md)。

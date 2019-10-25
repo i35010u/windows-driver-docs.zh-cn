@@ -4,12 +4,12 @@ description: 本部分介绍 WDI TX 路径
 ms.assetid: 8DF3E82E-761E-4A90-A789-1CB8EE8F0377
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3556944f45e0e44eef30c9f2997b60c76e79cc00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 51af368e4aabd1b6f01cd18a64f2a4579b2d96e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357108"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841713"
 ---
 # <a name="wdi-tx-path"></a>WDI TX 路径
 
@@ -24,112 +24,112 @@ ms.locfileid: "67357108"
 ## <a name="tx-descriptors"></a>TX 描述符
 
 
-谈论使用目标 TX 描述符 (TTD) 来通知目标的大小和位置的帧。
+TAL 使用目标 TX 描述符（TTD）来向目标通知帧的大小和位置。
 
-不同的目标 WLAN 设备可能具有不同的 TTD 的定义。 因此，TTD 编程中谈论，基于由 WDI 提供的信息完成。 要编制 TTD，WDI 指定[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list) (NBL) 通过框架元数据，例如帧 ID 的 TID、 适用的任务卸载和加密进行扩展例外的操作，都可以访问。
+不同的目标 WLAN 设备可能具有不同的 TTD 定义。 因此，TTD 编程是在 TAL 中根据 WDI 提供的信息来完成的。 若要对 TTD 进行编程，WDI 指定了[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)（NBL），通过该缓冲区可访问帧元数据（如框架 ID、扩展的 TID、适用的任务卸载和加密免除操作）。
 
-谈论将 TTD 和 TX 帧传输到目标。 从 TTD 和帧的标头中的字段中的元数据，目标可以确定传输帧以及如何将其传输的目标接收方。
+TAL 将 TTD 和 TX 帧传输到目标。 通过 TTD 中的元数据和框架标头中的字段，目标可以确定传输帧的目标接收方以及如何传输。
 
-最终，目标传输将在帧和传输，则可能传输） 完成时通知宿主。 目标使用指定传输是否成功，将 TX 完成消息和已完成，但其传输的帧的 Id。
+最终，目标会传输该帧，并在传输（可能传输）完成时通知主机。 目标使用 TX 完成消息来指定传输是否成功，以及传输已完成的帧的 Id。
 
 ## <a name="basic-operation"></a>基本操作
 
 
-传输的数据帧 WLAN 主机 TX 软件中的步骤如下。
+传输数据帧涉及 WLAN 主机 TX 软件中的以下步骤。
 
-1.  WDI 从 NDIS 获取 NBL，并执行 TX 分类 （如果 WDI PeerTID 排队模式中运行）。
-2.  NBL 链接到通过查询谈论获取 TTD。 为提高效率，谈论可能预 TTDs 分配从后备链列表。
-3.  TxMgr 队列基于 PeerTID 或端口，具体取决于传输帧**TargetPriorityQueueing**模式。
-4.  TxMgr 提供到 TxEngine，又将其传递给传输到目标 TIL NBL 和附加的 TTD。 TxEngine / 磁贴不会排队帧 （例如之前使它们可为 DMA）。
-5.  TxEngine 指示的帧归 TxEngine/目标使用传输完成更新的 TX 状态 （和传输完成指示如果适用）。
-6.  帧这两个传输完成后 （并且如果需要，TX 完整）、 TxMgr 查找使用框架 ID NBL，便会回到 TTD TxEngine 的池，并发送完成到 NDIS 帧。
+1.  WDI 从 NDIS 获取 NBL 并执行 TX 分类（如果 WDI 在 PeerTID 排队模式下操作）。
+2.  NBL 链接到通过查询 TAL 获取的 TTD。 为提高效率，TAL 可以从后备链表列表预分配 TTDs。
+3.  TxMgr 根据**TargetPriorityQueueing**模式，根据 PeerTID 或端口对传输帧排队。
+4.  TxMgr 向 TxEngine 提供 NBL 和附加的 TTD，然后将其传递给等到以传输到目标。 TxEngine/等到不会对帧进行排队（例如，在将它们提供给 DMA 之前）。
+5.  TxEngine 指示 TxEngine/目标拥有的帧的已更新 TX 状态使用传输完成（如果适用，则发送完成指示）。
+6.  当帧既完成传输（并在需要时，TX 完成）时，TxMgr 将使用该帧 ID 查找 NBL，将 TTD 返回到 TxEngine 的池，并将帧发送到 NDIS。
 
-## <a name="host---target-tx-flow-control"></a>主机-面向 TX 流控制
+## <a name="host---target-tx-flow-control"></a>主机-目标 TX 流控制
 
 
-TX 流控制是避免淹没 TIL 和目标资源所必需的。
+TX 流控制是避免等到和目标资源的巨大必要。
 
-### <a name="the-target-credit-scheme-and-the-pauseresume-mechanism"></a>目标信用额度方案和暂停/恢复机制
+### <a name="the-target-credit-scheme-and-the-pauseresume-mechanism"></a>目标-信用方案和暂停/继续机制
 
-TxMgr 排队，并将 TX 帧传输到根据信用额度基于方案的目标。 目标提供了与目标系统指定可用于其他帧的资源的信用额度更新指示 TX 引擎。 在 TTD 编程时确定的信用额度用完每个目标上的帧数。 帧数传递给 TxEngine 受可用信用额度和按 FIFO 顺序行开头的帧的成本限制从给定队列的发送操作的一部分。
+TxMgr 根据基于信用的方案将 TX 帧传输到目标。 目标为 TX 引擎提供了信用更新指示，以指定可用于目标上的其他帧的资源。 在 TTD 编程时确定目标上每个帧使用的信用额度。 作为给定队列中的发送操作的一部分，传递给 TxEngine 的帧数受到在按 FIFO 顺序排列的可用信用额度和行头的帧成本的限制。
 
-到 TxMgr，信用额度具有抽象单位。 目标/TxEngine 应使用的信用额度的任何定义是最适用于特定实现。
+对于 TxMgr，信用额度具有抽象单位。 目标/TxEngine 应使用任何信用定义对于特定实现最有用。
 
-谈论使用暂停/恢复的指示来停止/恢复 TX 通信流量从给定的端口，或要发送到特定接收端使用给定的 TID。 如果 TxEngine 获取发送请求时可用的信用额度小于最大帧成本，TxEngine 将暂停目标在下一步信用额度更新之前，来自 TxMgr （跨所有端口） 的流量。
+TAL 使用暂停/恢复指示停止/恢复来自给定端口的 TX 流量流，或发送到具有给定 TID 的特定接收方。 如果 TxEngine 在可用信用额度低于最大帧成本时获得发送请求，则 TxEngine 将从 TxMgr （跨所有端口）暂停流量，直到目标的下一个信用更新。
 
-当 WDI 处于端口排队模式 (**TargetPriorityQueueing**等于 TRUE)，暂停/恢复指示是仅允许定义在由于没有对等方，TID 分类端口或适配器级别和队列。
+当 WDI 处于 "端口队列" 模式（**TargetPriorityQueueing**等于 TRUE）时，仅在端口或适配器级别上允许/定义暂停/继续指示，因为缺少对等互连、TID 分类和排队。
 
 ### <a name="limiting-the-maximum-frame-count-for-send-operations"></a>限制发送操作的最大帧计数
 
-若要避免临时队列中 （例如，DMA 速率匹配队列） TIL 的需要，将传递给 TxEngine 的 TxMgr 发送操作中的帧数受到 TxEngine 由指定的最大计数。 此限制可能是特定于队列 TxMgr 尝试从发送，并随着更多的空间现已推出 TIL 发生变化时。
+为了避免在等到中使用临时队列（例如，DMA 速率匹配队列），TxMgr 在发送操作中传递到 TxEngine 的帧数受 TxEngine 指定的最大计数的限制。 此限制可能特定于 TxMgr 尝试发送的队列，并随时间而变化，因为等到中有更多可用空间。
 
 ## <a name="host---target-tx-transfer-scheduling"></a>主机-目标 TX 传输计划
 
 
-TxMgr 使用单个 TX 线程提交 TxEngine 的帧。 没有主动提交 TxEngine 的帧，只要积压的队列 TX 线程。
+TxMgr 使用单个 TX 线程将帧提交到 TxEngine。 只要存在累积队列，TX 线程就会主动地将帧提交到 TxEngine。
 
-TxMgr 计划队列按以下方式具体取决于排队模式。
+TxMgr 根据队列模式按以下方式计划队列。
 
-WDI 端口队列 (**TargetPriorityQueueing**等于 true 时适用)、 跨所有囤积的端口队列使用患轮循机制 (DRR) TxMgr 服务队列。
+对于 WDI 端口队列（**TargetPriorityQueueing**等于 TRUE），TxMgr 服务使用不足轮循机制（DRR）跨所有囤积的端口队列进行排队。
 
-WDI PeerTID 队列 (**TargetPriorityQueueing**等于 FALSE)，TxMgr 服务根据 AC 优先级队列的而不造成任何队列，并确保任何瓶颈 TIL 中的资源和目标所共享的远程协助 TID公平的方式的流。 它会阻止慢速流使用此类资源的过多共享。
+对于 WDI PeerTID 队列（**TargetPriorityQueueing** = FALSE），TxMgr services 会根据 AC 优先级进行排队，而不会在任何队列中排队，并确保从而使和目标中的所有瓶颈资源在 RA-TID 流之间以公平的方式共享. 它可防止慢速流消耗不相称的资源份额。
 
-一般情况下，计划程序使用 DRR 选择要在任何给定时间从传输的对等方 TID 队列。 对于每个队列，DRR 将限制发送队列中每一轮的八进制数的量程参数相关联。 TxEngine 更新此参数在每个发送操作中涉及队列以匹配一个或两个传输机会的预期的大小。
+通常，计划程序使用 DRR 选择要在任何给定时间传输的对等-TID 队列。 对于每个队列，DRR 会关联一个量程参数，用于限制每个循环中从队列发送的八进制数。 TxEngine 在涉及队列的每个发送操作中更新此参数，以匹配一个或两个传输机会的预期大小。
 
-一般情况下，与最高优先级囤积 AC DRR 计划程序服务的远程协助 TID 队列、 关联。 若要防止资源不足，计划程序内定期执行 DRR 囤积的所有队列。
+通常，DRR 计划程序仅提供与最高优先级的积压 AC 关联的 RA-TID 队列。 若要防止不足，计划程序会定期在所有囤积队列中执行 DRR。
 
-### <a name="priority-mapping-for-ihv-reserved-extended-tids"></a>优先级映射 IHV 保留扩展的 Tid
+### <a name="priority-mapping-for-ihv-reserved-extended-tids"></a>IHV 保留扩展 TIDs 的优先级映射
 
-帧由与 IHV 保留的范围映射到以下扩展 TID IHV 注入扩展的优先级计划用于 ACs。 表是按顺序递增的优先级。
+Ihv 保留范围内的由 IHV 注入的帧会映射到以下扩展的 ACs，目的是制定优先级计划。 该表按优先级提高。
 
 |              |        |        |        |        |         |         |         |         |
 |--------------|--------|--------|--------|--------|---------|---------|---------|---------|
-| 扩展的 TID | 17     | 18     | 19     | 20     | 21      | 22      | 23      | 24      |
-| 扩展的交流  | AC\_BK | AC\_BE | AC\_VI | AC\_VO | AC\_PR0 | AC\_PR1 | AC\_PR2 | AC\_PR3 |
+| 扩展 TID | 17     | 18     | 19     | 20     | 21      | 22      | 23      | 24      |
+| 扩展 AC  | AC\_BK | AC\_ | AC\_VI | AC\_VO | AC\_PR0 | AC\_PR1 | AC\_PR2) | AC\_PR3 |
 
  
 
-WDI 端口队列，而不考虑扩展 TID 同等对待所有注入的帧中。
+对于 WDI 端口队列，无论扩展 TID 如何，所有注入的帧都同样被视为相同。
 
-## <a name="txmgr-txengine-interface"></a>TxMgr TxEngine 接口
+## <a name="txmgr-txengine-interface"></a>TxMgr-TxEngine 接口
 
 
-### <a name="requests-to-txengine"></a>对 TxEngine 请求
+### <a name="requests-to-txengine"></a>对 TxEngine 的请求
 
--   [*MINIPORT\_WDI\_TX\_ABORT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_abort)
--   [*MINIPORT\_WDI\_TX\_DATA\_SEND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_data_send)
--   [*微型端口\_WDI\_TX\_谈论\_队列\_IN\_顺序*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_queue_in_order)
--   [*MINIPORT\_WDI\_TX\_TAL\_SEND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_send)
--   [*MINIPORT\_WDI\_TX\_TAL\_SEND\_COMPLETE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_send_complete)
--   [*MINIPORT\_WDI\_TX\_TARGET\_DESC\_DEINIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_target_desc_deinit)
--   [*MINIPORT\_WDI\_TX\_TARGET\_DESC\_INIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_target_desc_init)
+-   [*小型端口\_WDI\_TX\_中止*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_abort)
+-   [*小型端口\_WDI\_TX\_数据\_发送*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_data_send)
+-   [*小型端口\_WDI\_TX\_TAL\_队列\_\_顺序*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_queue_in_order)
+-   [*小型端口\_WDI\_TX\_TAL\_发送*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_send)
+-   [*小型端口\_WDI\_TX\_TAL\_发送\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_tal_send_complete)
+-   [*小型端口\_WDI\_TX\_目标\_DESC\_DEINIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_target_desc_deinit)
+-   [*小型端口\_WDI\_TX\_目标\_DESC\_INIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_target_desc_init)
 
-### <a name="indications-from-txengine"></a>指示从 TxEngine
+### <a name="indications-from-txengine"></a>TxEngine 中的指示
 
--   [*NDIS\_WDI\_TX\_DEQUEUE\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_dequeue_ind)
--   [*NDIS\_WDI\_TX\_TRANSFER\_COMPLETE\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)
--   [*NDIS\_WDI\_TX\_SEND\_COMPLETE\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_complete_ind)
--   [*NDIS\_WDI\_TX\_查询\_RA\_TID\_状态*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_query_ra_tid_state)
+-   [*NDIS\_WDI\_TX\_取消排队\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_dequeue_ind)
+-   [*NDIS\_WDI\_TX\_传输\_完成\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)
+-   [*NDIS\_WDI\_TX\_发送\_完成\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_complete_ind)
+-   [*NDIS\_WDI\_TX\_查询\_RA\_TID\_状态*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_query_ra_tid_state)
 
 ### <a name="tx-specific-control-requests"></a>TX 特定控制请求
 
--   [*微型端口\_WDI\_TX\_对等方\_积压工作*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-miniport_wdi_tx_peer_backlog)
+-   [*小型端口\_WDI\_TX\_对等\_积压*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-miniport_wdi_tx_peer_backlog)
 
-### <a name="tx-specific-control-indications"></a>TX 特定控件指示
+### <a name="tx-specific-control-indications"></a>TX 特定控制指示
 
--   [*NDIS\_WDI\_TX\_SEND\_PAUSE\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)
--   [*NDIS\_WDI\_TX\_SEND\_RESTART\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_restart_ind)
--   [*NDIS\_WDI\_TX\_RELEASE\_FRAMES\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind)
--   [*NDIS\_WDI\_TX\_INJECT\_FRAME\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_tx_inject_frame_ind)
+-   [*NDIS\_WDI\_TX\_发送\_暂停\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_pause_ind)
+-   [*NDIS\_WDI\_TX\_发送\_重启\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_send_restart_ind)
+-   [*NDIS\_WDI\_TX\_RELEASE\_帧\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_release_frames_ind)
+-   [*NDIS\_WDI\_TX\_插入\_帧\_IND*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_inject_frame_ind)
 
 ## <a name="related-topics"></a>相关主题
 
 
-[WDI TX 路径函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI TX 路径函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)
+[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)
 
-[**WDI\_TXRX\_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
+[**WDI\_TXRX\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_txrx_target_capabilities)
 
  
 

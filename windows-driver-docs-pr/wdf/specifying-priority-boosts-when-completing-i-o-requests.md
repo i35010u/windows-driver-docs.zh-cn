@@ -7,19 +7,19 @@ keywords:
 - 优先级提升 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a30d15f8209943c94f0fb4ac89b2cbe3887491
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9c8098efd572c9be60b320f598e3392a5ab943f1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382362"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842191"
 ---
 # <a name="specifying-priority-boosts-when-completing-io-requests"></a>完成 I/O 请求时指定优先级提升
 
 
-驱动程序完成的 I/O 请求，它可以调用[ **WdfRequestCompleteWithPriorityBoost** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)指定一个值，则系统使用来提升请求 I/O 的线程运行时优先级操作。
+当驱动程序完成 i/o 请求时，它可以调用[**WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)来指定一个值，系统使用该值来提升请求 i/o 操作的线程的运行时优先级。
 
-如果该驱动程序调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)或[ **WdfRequestCompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)而不是[ **WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，框架使用基于设备类型的默认优先级提升值。 下表列出了框架使用的默认优先级提升值。 在中定义的设备类型和优先级提升常量*wdm.h 中*。
+如果驱动程序调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)或[**WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)而不是[**WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)，则框架将使用基于设备类型的默认优先级提升值。 下表列出了框架使用的默认优先级提升值。 在*Wdm .h*中定义了设备类型和优先级提升常数。
 
 <table>
 <colgroup>

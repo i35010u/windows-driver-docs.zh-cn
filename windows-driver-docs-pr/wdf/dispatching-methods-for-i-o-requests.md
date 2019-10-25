@@ -3,22 +3,22 @@ title: I/O 请求的调度方法
 description: I/O 请求的调度方法
 ms.assetid: 3e91aa7c-bccf-4eeb-8b68-b1277a690f8c
 keywords:
-- I/O 队列 WDK KMDF，创建
-- I/O 队列 WDK KMDF，调度方法
+- I/o 队列 WDK KMDF，创建
+- I/o 队列 WDK KMDF，调度方法
 - 调度方法 WDK KMDF
-- 顺序调度 WDK KMDF
-- 同步调度 WDK KMDF
-- 并行调度 WDK KMDF
-- 异步调度 WDK KMDF
-- 手动调度 WDK KMDF
+- 顺序分派 WDK KMDF
+- 同步分派 WDK KMDF
+- 并行分派 WDK KMDF
+- 异步分派 WDK KMDF
+- 手动分派 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba5b3170e86ad0fb136ad51e8f1f0f701ff8331
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be88ba6724347b49864bdc67c0b2f7bc4e30b80c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377407"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843195"
 ---
 # <a name="dispatching-methods-for-io-requests"></a>I/O 请求的调度方法
 
@@ -26,39 +26,39 @@ ms.locfileid: "67377407"
 
 
 
-当驱动程序调用[ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)若要创建的 I/O 队列，它指定队列的调度方法。 该框架提供了三个调度方法：[顺序](#sequential-dispatching)，[并行](#parallel-dispatching)，并[手动](#manual-dispatching)。 该驱动程序可以指定其中的任何调度的任何 I/O 队列，包括设备的方法[默认 I/O 队列](creating-i-o-queues.md)。
+当驱动程序调用[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)来创建 i/o 队列时，它将为队列指定调度方法。 该框架提供了三种调度方法：[顺序](#sequential-dispatching)、[并行](#parallel-dispatching)和[手动](#manual-dispatching)。 驱动程序可以为任何 i/o 队列指定任意一种调度方法，包括设备的[默认 i/o 队列](creating-i-o-queues.md)。
 
-驱动程序设置队列的调度方法通过指定[ **WDF\_IO\_队列\_调度\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)-队列中的类型的值[**WDF\_IO\_队列\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_config)结构。
+驱动程序通过指定[**WDF\_io\_队列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_queue_dispatch_type)来设置队列的调度方法，\_在队列的[**WDF\_io\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)的配置结构中调度\_类型化值。
 
-有关示例使用的每个调度的方法，请参阅[I/O 队列的示例使用](example-uses-of-i-o-queues.md)。
+有关使用每个调度方法的示例，请参阅[I/o 队列的使用示例](example-uses-of-i-o-queues.md)。
 
-### <a href="" id="sequential-dispatching"></a> 顺序调度
+### <a href="" id="sequential-dispatching"></a>顺序调度
 
-如果您的驱动程序或设备可以处理一次只有一个 I/O 请求从队列，则应设置设备的 I/O 队列用于*顺序调度*，这也称为*同步调度*。 使用此类型的调度，框架提供的请求向一个驱动程序一次。 框架并不提供驱动程序直到下一个请求[完成](completing-i-o-requests.md)，[取消](canceling-i-o-requests.md)，或[requeues](requeuing-i-o-requests.md)上一个请求。
+如果你的驱动程序或设备一次只能处理一个队列的 i/o 请求，则应将设备的 i/o 队列设置为使用*顺序调度*，这也称为*同步分派*。 对于这种类型的调度，框架每次将请求传递给驱动程序。 在驱动程序[完成](completing-i-o-requests.md)、[取消](canceling-i-o-requests.md)或[会](requeuing-i-o-requests.md)上一个请求之前，框架不会传递下一个请求。
 
-该框架将请求传递到一个驱动程序的后[请求处理程序](request-handlers.md)，该驱动程序[处理请求](processing-i-o-requests.md)。 如果该驱动程序将请求转发到[常规 I/O 目标](general-i-o-targets.md)，它通常会调用一个 I/O 目标对象的同步方法。 有关这些方法的详细信息，请参阅[以同步方式发送 I/O 请求](sending-i-o-requests-synchronously.md)。 该驱动程序必须最终[完整](completing-i-o-requests.md)或[取消](canceling-i-o-requests.md)I/O 队列中收到的每个请求。
+在框架将请求传递给某个驱动程序的[请求处理](request-handlers.md)程序后，该驱动程序将[处理该请求](processing-i-o-requests.md)。 如果驱动程序将请求转发到[一般 i/o 目标](general-i-o-targets.md)，则通常会调用 i/o 目标对象的同步方法之一。 有关这些方法的详细信息，请参阅[同步发送 I/o 请求](sending-i-o-requests-synchronously.md)。 驱动程序最终必须[完成](completing-i-o-requests.md)或[取消](canceling-i-o-requests.md)从 i/o 队列接收的每个请求。
 
-设置了 I/O 队列的顺序调度可以调用的驱动程序[ **WdfIoQueueRetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)或[ **WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)从早于最后队列获取另一个请求收到的请求已完成或已取消。 您可能想要执行此操作到函数的驱动程序，以便驱动程序可以开始时，驱动程序的下一个硬件操作[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数仍在处理从以前的数据硬件操作。
+为顺序调度设置 i/o 队列的驱动程序可以调用[**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)或[**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject) ，以在最后接收的请求完成之前从队列中获取另一个请求。或已取消。 你可能想要在函数驱动程序中执行此操作，以便驱动程序可以启动下一个硬件操作，同时驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数仍在处理以前的硬件操作的数据。
 
-如果创建多个 I/O 队列并将它们设置所有最多的顺序调度，框架会将请求分派从每个队列按顺序，但队列以并行方式运行。 如果驱动程序或设备可以处理任何类型的一次只有一个请求，则必须使用与单个 I/O 队列[ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)回调函数。
+如果创建多个 i/o 队列并将它们全部设置为顺序调度，则该框架将按顺序调度每个队列的请求，但队列将并行运行。 如果你的驱动程序或设备一次只能处理一个请求，则必须使用具有[*EvtIoDefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)回调函数的单个 i/o 队列。
 
-### <a href="" id="parallel-dispatching"></a> 并行调度
+### <a href="" id="parallel-dispatching"></a>并行调度
 
-如果您的驱动程序和设备可以同时处理多个 I/O 请求，则可以设置设备的 I/O 队列用于*并行调度*以便驱动程序可以以异步方式处理请求。 此调度方法也称为*异步调度*。
+如果驱动程序和设备可以同时处理多个 i/o 请求，则可以设置设备的 i/o 队列以使用*并行调度*，以便驱动程序可以异步处理请求。 此调度方法也称为*异步分派*。
 
-如果驱动程序设置的 I/O 队列，以使用并行调度，框架提供给驱动程序 I/O 请求的只要它们是在队列中可用。 结果是驱动程序可能需要在一次处理多个请求。
+如果驱动程序将 i/o 队列设置为使用并行调度，则当队列中有可用的驱动程序时，框架会立即将 i/o 请求发送到该驱动程序。 因此，驱动程序可能必须一次处理多个请求。
 
-每次在驱动程序之一[请求处理程序](request-handlers.md)收到请求时，该驱动程序必须[处理该请求](processing-i-o-requests.md)，然后[完整](completing-i-o-requests.md)请求。 如果该驱动程序将请求转发到[常规 I/O 目标](general-i-o-targets.md)，它通常会调用一个 I/O 目标对象的异步方法。 有关这些方法的详细信息，请参阅[以异步方式发送 I/O 请求](sending-i-o-requests-asynchronously.md)。 该驱动程序必须最终[完整](completing-i-o-requests.md)或[取消](canceling-i-o-requests.md)I/O 队列中收到的每个请求。
+每次驱动程序的[请求处理程序](request-handlers.md)之一收到请求时，驱动程序必须[处理该请求](processing-i-o-requests.md)，然后[完成](completing-i-o-requests.md)该请求。 如果驱动程序将请求转发到[一般 i/o 目标](general-i-o-targets.md)，则通常会调用某个 i/o 目标对象的异步方法。 有关这些方法的详细信息，请参阅[异步发送 I/o 请求](sending-i-o-requests-asynchronously.md)。 驱动程序最终必须[完成](completing-i-o-requests.md)或[取消](canceling-i-o-requests.md)从 i/o 队列接收的每个请求。
 
-使用并行调度的驱动程序可以调用[ **WdfIoQueueStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestop)或[ **WdfIoQueueStopSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestopsynchronously)若要暂时停止队列，然后再调用[ **WdfIoQueueStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuestart)重新启动队列。
+使用并行调度的驱动程序可以调用[**WdfIoQueueStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestop)或[**WdfIoQueueStopSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestopsynchronously)来暂时停止队列，然后调用[**WdfIoQueueStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuestart)来重新启动队列。
 
-### <a href="" id="manual-dispatching"></a> 手动调度
+### <a href="" id="manual-dispatching"></a>手动分派
 
-如果您希望您可以完全控制的 I/O 请求传递的驱动程序，您可以设置设备的 I/O 队列用于*手动调度*，这意味着，该框架不请求向传递该驱动程序除非驱动程序明确要求之一。
+如果希望驱动程序能够完全控制 i/o 请求的传送，则可以设置设备的 i/o 队列以使用*手动调度*，这意味着框架不会将请求传递给驱动程序，除非驱动程序显式请求一个。
 
-若要获取从手动队列请求，该驱动程序可以调用[ **WdfIoQueueRetrieveNextRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)或[ **WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)轮询队列中的循环中。 或者，驱动程序可以调用[ **WdfIoQueueReadyNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuereadynotify)注册一个或多个请求在队列中可用时，框架将调用的回调函数。 该驱动程序框架调用的回调函数后，可以调用**WdfIoQueueRetrieveNextRequest**或**WdfIoQueueRetrieveRequestByFileObject**中用于检索请求的循环。
+若要获取手动队列的请求，驱动程序可以在轮询队列的循环中调用[**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)或[**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject) 。 或者，驱动程序可以调用[**WdfIoQueueReadyNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuereadynotify)来注册一个回调函数，当队列中有一个或多个请求可用时，框架将调用该函数。 在框架调用回调函数后，驱动程序可以在循环中调用**WdfIoQueueRetrieveNextRequest**或**WdfIoQueueRetrieveRequestByFileObject**来检索请求。
 
-驱动程序将从队列获取请求后，它必须[处理该请求](processing-i-o-requests.md)。 该驱动程序必须最终[完整](completing-i-o-requests.md)或[取消](canceling-i-o-requests.md)每个请求。
+驱动程序从队列中获取请求后，必须[处理该请求](processing-i-o-requests.md)。 驱动程序最终必须[完成](completing-i-o-requests.md)或[取消](canceling-i-o-requests.md)每个请求。
 
  
 

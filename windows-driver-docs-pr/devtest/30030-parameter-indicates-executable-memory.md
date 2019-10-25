@@ -1,62 +1,62 @@
 ---
 title: C30030
-description: 警告 C30030 调用内存分配函数并传递一个参数，指示可执行文件的内存。
+description: 警告 C30030 调用内存分配函数并传递指示可执行文件内存的参数。
 ms.assetid: D1C8B316-DC04-4B18-A0EB-40833D50B843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C30030
-ms.openlocfilehash: 3014a05934855aaae1795c5cb67803747fee3979
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f5128021f75e46114b6209b81e1b80486e7b1a7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371694"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840310"
 ---
 # <a name="c30030"></a>C30030
 
 
-警告 C30030:调用内存分配函数并传递一个参数，指示可执行文件的内存
+警告 C30030：调用内存分配函数并传递指示可执行内存的参数
 
-已禁止\_内存优化\_分配\_UNSAFE
+禁止\_内存\_分配\_不安全
 
-某些 Api 已配置无论内存可执行文件的参数。 此错误指示参数使用结果中可执行文件的非分页池正在分配。 应使用的可用选项之一来请求非可执行文件的内存。
+某些 Api 有一些参数，可用于配置内存是否可执行。 此错误表示使用的参数会导致分配可执行文件非分页池。 你应使用一个可用的选项来请求不可执行的内存。
 
-## <a name="span-idfordefectsinvolvingtheparametertypesmmpagepriorityandpooltypespanspan-idfordefectsinvolvingtheparametertypesmmpagepriorityandpooltypespanspan-idfordefectsinvolvingtheparametertypesmmpagepriorityandpooltypespanfor-defects-involving-the-parameter-types-mmpagepriority-and-pooltype"></a><span id="For_defects_involving_the_parameter_types_MM_PAGE_PRIORITY_and_POOL_TYPE"></span><span id="for_defects_involving_the_parameter_types_mm_page_priority_and_pool_type"></span><span id="FOR_DEFECTS_INVOLVING_THE_PARAMETER_TYPES_MM_PAGE_PRIORITY_AND_POOL_TYPE"></span>有关涉及的参数类型的缺陷**MM\_页面\_优先级**并**池\_类型**
+## <a name="span-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanspan-idfor_defects_involving_the_parameter_types_mm_page_priority_and_pool_typespanfor-defects-involving-the-parameter-types-mm_page_priority-and-pool_type"></a><span id="For_defects_involving_the_parameter_types_MM_PAGE_PRIORITY_and_POOL_TYPE"></span><span id="for_defects_involving_the_parameter_types_mm_page_priority_and_pool_type"></span><span id="FOR_DEFECTS_INVOLVING_THE_PARAMETER_TYPES_MM_PAGE_PRIORITY_AND_POOL_TYPE"></span>对于涉及参数类型 MM 的缺陷 **\_页面\_优先级**和**池\_类型**
 
 
 使用以下选项之一：
 
--   指定预处理器定义[池\_NX\_OPTIN\_自动](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)源/项目设置中。
--   指定预处理器定义[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)中，源/项目设置并调用**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)** 从驱动程序初始化函数 (**DriverEntry**或**DllInitialize**)。
+-   在源/项目设置中[\_NX\_OPTIN\_自动](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)指定预处理器定义池。
+-   在源/项目设置中[\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)指定预处理器定义池，**并从驱动程序初始化函数（** **DriverEntry**或**DllInitialize**）。
 
-**请注意**是否要使用的选项[池\_NX\_OPTIN\_自动](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)或者[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)很大程度上取决于哪种平台上您的目标和要进行多少二进制文件。 这两种选项会导致这两种类型更改为您 （由编译器或在运行时） 为其 NX 等效项。 查看详细信息的主题链接。
-
-
-
-**请注意**如果以下条件之一为 true，则可能出现的假正警告：
--   驱动程序初始化函数调用另一个调用的函数**ExInitializeDriverRuntime (*DrvRtPoolNxOptIn*)**
--   要创建**驱动程序\_库**，并指定了[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin)但没有初始化函数。
+**注意** 选择是使用[池\_nx\_OPTIN\_自动](https://docs.microsoft.com/windows-hardware/drivers/kernel/multiple-binary-opt-in-pool-nx-optin-auto)还是[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin) ，这在很大程度上取决于您所面向的平台和要进行的二进制文件的数量。 这两个选项都会导致这两种类型（由编译器或运行时）更改为其 NX 等效项。 有关详细信息，请参阅主题链接。
 
 
 
--   分配类型更改为非可执行文件类型。
+**注意** 如果满足以下条件之一，则可能会出现误报警告：
+-   驱动程序初始化函数调用另一个调用**ExInitializeDriverRuntime （*DrvRtPoolNxOptIn*）** 的函数
+-   正在创建 **\_库的驱动程序**，并且已指定了[池\_NX\_OPTIN](https://docs.microsoft.com/windows-hardware/drivers/kernel/single-binary-opt-in-pool-nx-optin) ，但没有初始化函数。
 
-**示例 (池\_NX\_OPTIN\_自动):**
 
-源文件中的以下设置将允许该警告应提供一个可执行文件参数中的 API 调用：
+
+-   将分配类型更改为不可执行的类型。
+
+**示例（POOL\_NX\_OPTIN\_自动）：**
+
+源文件中的以下设置将允许在 API 调用中提供可执行参数的警告：
 
 ```
 C_DEFINES=$(C_DEFINES)
 ```
 
-源文件中的以下设置可避免此警告：
+源文件中的以下设置可避免出现此警告：
 
 ```
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN_AUTO=1
 ```
 
-**示例 (池\_NX\_OPTIN):**
+**示例（POOL\_NX\_OPTIN）：**
 
 源文件中的以下代码生成警告：
 
@@ -70,7 +70,7 @@ C_DEFINES=$(C_DEFINES)
 C_DEFINES=$(C_DEFINES) -DPOOL_NX_OPTIN=1
 ```
 
-在中**DriverEntry()** 、 任何内存分配发生之前：
+在**DriverEntry （）** 中，在发生任何内存分配之前：
 
 ```
 NTSTATUS
@@ -85,33 +85,33 @@ DriverEntry (
 …
 ```
 
-**示例 （更改分配类型）：**
+**示例（更改分配类型）：**
 
-有关**MM\_页面\_优先级**类型可以解决此问题通过添加**MdlMappingNoExecute**优先级类型的标志。 Windows 8 及更高版本才支持此选项。
+对于**MM\_页面\_优先级**类型，可以通过将**MdlMappingNoExecute**标志添加到优先级类型来解决此问题。 只有 Windows 8 及更高版本支持此版本。
 
-下面的代码生成警告：
+下面的代码生成一个警告：
 
 ```
 pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority);
 ```
 
-下面的代码可避免此警告：
+下面的代码可避免出现此警告：
 
 ```
 pPtr = MmGetSystemAddressForMdlSafe( pMdl, NormalPagePriority | MdlMappingNoExecute);
 ```
 
-**示例 (池\_类型)**
+**示例（池\_类型）**
 
-有关**池\_类型**可以通过将请求类型更改为的类型的非可执行文件版本来修复此问题的类型。 Windows 8 及更高版本才支持此选项。
+对于**池\_类型**类型，可以通过将请求类型更改为类型的不可执行版本来解决此问题。 只有 Windows 8 及更高版本支持此版本。
 
-下面的代码生成警告：
+下面的代码生成一个警告：
 
 ```
 ExAllocatePoolWithTag(NonPagedPool, numberOfBytes, 'xppn');
 ```
 
-下面的代码可避免此警告：
+下面的代码可避免出现此警告：
 
 ```
 ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
@@ -119,7 +119,7 @@ ExAllocatePoolWithTag(NonPagedPoolNx, numberOfBytes, 'xppn');
 
 **其他特殊情况：**
 
-已在中的更改[ **ExInitializeNPagedLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializenpagedlookasidelist)例程现在可用于指定非可执行文件的非分页缓冲的池内存。 例如，下面的代码生成此警告：
+[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)例程发生了变化，现在可以指定不可执行的非分页池内存。 例如，下面的代码将生成此警告：
 
 ```
 ExInitializeNPagedLookasideList(pLookaside,
@@ -143,19 +143,19 @@ ExInitializeNPagedLookasideList(pLookaside,
                 depth);
 ```
 
-## <a name="span-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanspan-idfordefectsinvolvingpageprotectionsspanfor-defects-involving-page-protections"></a><span id="For_defects_involving_page_protections_"></span><span id="for_defects_involving_page_protections_"></span><span id="FOR_DEFECTS_INVOLVING_PAGE_PROTECTIONS_"></span>为涉及页保护的缺陷：
+## <a name="span-idfor_defects_involving_page_protections_spanspan-idfor_defects_involving_page_protections_spanspan-idfor_defects_involving_page_protections_spanfor-defects-involving-page-protections"></a><span id="For_defects_involving_page_protections_"></span><span id="for_defects_involving_page_protections_"></span><span id="FOR_DEFECTS_INVOLVING_PAGE_PROTECTIONS_"></span>对于涉及页面保护的缺陷：
 
 
-某些 Api，可以指定页保护[ **ZwMapViewOfSection** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwmapviewofsection)就是其中之一。 在这些情况下，使用保护类型的非可执行文件版本。
+某些 Api 允许你指定页面保护， [**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)是其中之一。 在这些情况下，请使用保护类型的不可执行版本。
 
-更改：
+转
 
--   页\_执行的任何以下替代方法或页\_NOACCESS
--   页\_EXECUTE\_读取到页\_READONLY
--   页\_EXECUTE\_读写到页面\_READWRITE
--   页\_EXECUTE\_WRITECOPY 到页\_WRITECOPY
+-   页面\_执行到以下任意替代或页面\_NOACCESS
+-   页\_执行\_读取到页\_READONLY
+-   页\_执行\_READWRITE 到页\_READWRITE
+-   页\_\_WRITECOPY\_WRITECOPY
 
-下面的代码生成警告：
+下面的代码生成一个警告：
 
 ```
 Status = ZwMapViewOfSection(   handle,
@@ -187,17 +187,17 @@ Status = ZwMapViewOfSection(   handle,
                 ); 
 ```
 
-## <a name="span-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanspan-idfordefectsinvolvingcachetypesspanfor-defects-involving-cache-types"></a><span id="For_defects_involving_cache_types_"></span><span id="for_defects_involving_cache_types_"></span><span id="FOR_DEFECTS_INVOLVING_CACHE_TYPES_"></span>为涉及缓存类型的缺陷：
+## <a name="span-idfor_defects_involving_cache_types_spanspan-idfor_defects_involving_cache_types_spanspan-idfor_defects_involving_cache_types_spanfor-defects-involving-cache-types"></a><span id="For_defects_involving_cache_types_"></span><span id="for_defects_involving_cache_types_"></span><span id="FOR_DEFECTS_INVOLVING_CACHE_TYPES_"></span>有关涉及缓存类型的缺陷：
 
 
-某些 Api 分配内存以及可执行文件的权限取决于缓存类型。 两个此类 api [ **MmAllocateContiguousMemorySpecifyCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)并[ **MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)。 应缓存类型的**MmCached**使用 (请参阅[**内存\_缓存\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_memory_caching_type))，然后将分配给可执行文件的内存。 若要解决此问题，请选择另一种缓存类型，或如果是必需的内存缓存然后使用 API [ **MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)。
+某些 Api 使用依赖于缓存类型的可执行权限来分配内存。 这两个 Api 是[**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)和[**MmAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycachenode)。 如果要使用**MmCached**的缓存类型（请参阅[**内存\_缓存\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_memory_caching_type)），则将分配可执行内存。 若要解决此问题，请选择其他缓存类型，或者如果需要缓存的内存，则使用 API [**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousnodememory)。
 
-更改：
+转
 
--   **MmCached**到**MmNonCached**或**MmWriteCombined**如果不需要缓存的内存
--   到 API [ **MmAllocateContiguousNodeMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousnodememory)是否需要缓存的内存
+-   **MmCached**到**MmNonCached**或**MmWriteCombined** （如果不需要缓存的内存）
+-   如果需要缓存内存，则为要[**MmAllocateContiguousNodeMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousnodememory)的 API
 
-下面的代码生成警告：
+下面的代码生成一个警告：
 
 ```
 MmAllocateContiguousMemorySpecifyCache(       numberOfBytes,
@@ -208,7 +208,7 @@ MmAllocateContiguousMemorySpecifyCache(       numberOfBytes,
                                               ); 
 ```
 
-下面的代码可避免此警告，如果不需要内存缓存：
+如果不需要缓存内存，以下代码可避免此警告：
 
 ```
 MmAllocateContiguousMemorySpecifyCache(       numberOfBytes,
@@ -219,7 +219,7 @@ MmAllocateContiguousMemorySpecifyCache(       numberOfBytes,
                                               ); 
 ```
 
-下面的代码生成警告：
+下面的代码生成一个警告：
 
 ```
 MmAllocateContiguousMemorySpecifyCacheNode(   numberOfBytes,
@@ -231,7 +231,7 @@ MmAllocateContiguousMemorySpecifyCacheNode(   numberOfBytes,
                                               ); 
 ```
 
-下面的代码可避免此警告，如果是必需的内存缓存：
+如果需要缓存内存，以下代码可避免此警告：
 
 ```
 MmAllocateContiguousNodeMemory(       numberOfBytes,
@@ -243,7 +243,7 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
                                       ); 
 ```
 
-下面的代码不需要缓存的内存时使用备用 API:
+如果不需要缓存内存，以下代码将使用替代 API：
 
 ```
 MmAllocateContiguousNodeMemory(       numberOfBytes,
@@ -255,10 +255,10 @@ MmAllocateContiguousNodeMemory(       numberOfBytes,
                                       ); 
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_pool_type)
+[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)
 
 
 

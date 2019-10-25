@@ -4,15 +4,15 @@ description: DVD 区域化
 ms.assetid: 931441c8-9521-43c9-86f1-dbf75d36e190
 keywords:
 - DVD 解码器微型驱动程序 WDK
-- 区域化 WDK DVD 解码器
+- 实行 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bf9536cf9620b571f18683090d6c3f48d70fe5a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f6b456e2f27c01ef9a62bf9b6c93a712106104a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384147"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843214"
 ---
 # <a name="dvd-regionalization"></a>DVD 区域化
 
@@ -20,11 +20,11 @@ ms.locfileid: "67384147"
 
 
 
-DVD 解码器微型驱动程序不应为参与区域化过程的任何部分。 流式处理体系结构的其他部分强制执行之前实行。 在大多数情况下，解码器微型驱动程序不实现[ **KS\_DVDCOPY\_区域**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ks_dvdcopy_region)属性。
+DVD 解码器微型驱动程序不应涉及实行过程的任何部分。 流式处理体系结构的其他部分强制执行实行。 在大多数情况下，解码器微型驱动程序未实现[**KS\_DVDCOPY\_REGION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_region)属性。
 
-如果解码器被限制为特定的区域 （由硬件或其他考虑因素），则它可能会响应**KS\_DVDCOPY\_区域**属性重写所有其他系统区域。 DVD 解码器微型驱动程序应设置完全与解码器被指定为该区域对应一位。 请注意，逻辑*反转*从媒体上的地区编码。 例如，用于处理仅在区域 1 （美国） 的解码器返回到 0x01 **KS\_DVDCOPY\_区域**属性。
+如果解码器仅限于特定区域（通过硬件或其他注意事项），则它可能会响应**KS\_DVDCOPY\_region**属性以覆盖所有其他系统区域。 DVD 解码器微型驱动程序应正好设置一位，对应于为解码器指定的区域。 请注意，逻辑从媒体上的区域编码中*反转*。 例如，旨在仅在区域1（USA）中使用的解码器将0x01 返回到**KS\_DVDCOPY\_Region**属性。
 
-如果解码器提供了一个区域，系统区域将更改应用程序仍函数。 在系统中有其他解码器的情况下，它会更改系统区域。 请注意 Windows DVD 播放仅函数是否系统区域与解码器区域相匹配。
+如果解码器提供了区域，则系统区域更改应用程序仍将起作用。 如果系统中存在其他解码器，则会更改系统区域。 请注意，Windows DVD 播放仅在系统区域和解码器区域匹配时才起作用。
 
  
 

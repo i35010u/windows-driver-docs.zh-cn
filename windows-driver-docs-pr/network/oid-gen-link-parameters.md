@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_LINK_PARAMETERS
-description: 作为一组 NDIS 和基础驱动程序使用 OID_GEN_LINK_PARAMETERS OID 来设置的微型端口适配器的当前链接状态。 微型端口驱动程序收到 NDIS_LINK_PARAMETERS 结构中的双工状态、 链接速度和暂停函数。
+description: 作为集，NDIS 和过量驱动程序使用 OID_GEN_LINK_PARAMETERS OID 来设置微型端口适配器的当前链接状态。 微型端口驱动程序接收 NDIS_LINK_PARAMETERS 结构中的双工状态、链接速度和暂停函数。
 ms.assetid: 6a8ee5b1-ac68-424f-b749-45b085ca1d75
 ms.date: 08/08/2017
-keywords: -OID_GEN_LINK_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_LINK_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4ddf0d0f5a3132cf6365dc1edd8a17e142a92f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9c100faed784a0bbb121aacbce077ef120862cc4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369101"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843071"
 ---
-# <a name="oidgenlinkparameters"></a>OID\_GEN\_链接\_参数
+# <a name="oid_gen_link_parameters"></a>OID\_代\_LINK\_参数
 
 
-作为一组 NDIS 和基础驱动程序使用 OID\_GEN\_链接\_参数 OID 的微型端口适配器的当前链接状态设置。 微型端口驱动程序在 NDIS 接收双工状态、 链接速度和暂停函数\_链接\_参数结构。
+作为集，NDIS 和过量驱动程序使用 OID\_代\_LINK\_参数 OID 设置微型端口适配器的当前链接状态。 微型端口驱动程序在 NDIS\_链接\_参数结构中接收双工状态、链接速度和暂停函数。
 
 **版本信息**
 
@@ -23,9 +23,9 @@ ms.locfileid: "67369101"
 支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
-必需。
+必需.
 
-NDIS\_链接\_参数结构定义，如下所示：
+\_参数结构的 NDIS\_链接定义如下：
 
 ```ManagedCPlusPlus
     typedef struct _NDIS_LINK_PARAMETERS {
@@ -44,55 +44,55 @@ NDIS\_链接\_参数结构定义，如下所示：
 此结构包含以下成员：
 
 <a href="" id="header"></a>**标头**  
-[ **NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header) ndis 结构\_链接\_参数结构。 设置**类型**结构中的成员的**标头**指定到 NDIS\_对象\_类型\_默认情况下，**修订**成员添加到 NDIS\_链接\_参数\_修订\_1，并且**大小**成员添加到 NDIS\_SIZEOF\_链接\_参数\_修订\_1。
+[**Ndis\_对象的对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)\_结构\_参数结构。 将**标头**指定的结构的**类型**成员设置为 NDIS\_对象\_类型\_默认值、ndis 的**修订**成员\_链接\_参数\_修订版\_1 和**大小**成员到 NDIS\_SIZEOF\_LINK\_参数\_修订\_版本1。
 
 <a href="" id="mediaduplexstate"></a>**MediaDuplexState**  
-介质双工状态。 此值是通过返回的值相同[OID\_代\_媒体\_双工\_状态](oid-gen-media-duplex-state.md)OID。
+媒体双工状态。 此值与[OID\_GEN\_MEDIA\_双工\_状态](oid-gen-media-duplex-state.md)oid 返回的值相同。
 
 <a href="" id="xmitlinkspeed"></a>**XmitLinkSpeed**  
-传输链接的速度比特 / 秒。
+传输链接速度，以每秒位数为单位。
 
 <a href="" id="rcvlinkspeed"></a>**RcvLinkSpeed**  
-接收链接的速度比特 / 秒。
+接收链接的速度（以每秒位数为单位）。
 
 <a href="" id="pausefunctions"></a>**PauseFunctions**  
-支持 IEEE 802.3 暂停帧的类型。 此成员必须为下列暂停函数之一：
+IEEE 802.3 暂停帧的支持类型。 此成员必须是以下 pause 函数之一：
 
 <a href="" id="ndispausefunctionsunsupported"></a>**NdisPauseFunctionsUnsupported**  
-适配器或链接的合作伙伴不支持暂停帧。
+适配器或链接伙伴不支持暂停帧。
 
 <a href="" id="ndispausefunctionssendonly"></a>**NdisPauseFunctionsSendOnly**  
-仅暂停帧发送从适配器到链接合作伙伴适配器和链接合作伙伴支持。
+适配器和链接伙伴支持仅将暂停帧从适配器发送到链接伙伴。
 
 <a href="" id="ndispausefunctionsreceiveonly"></a>**NdisPauseFunctionsReceiveOnly**  
-仅将暂停帧从链接合作伙伴发送到适配器适配器和链接的合作伙伴支持
+适配器和链接伙伴仅支持将暂停帧从链接伙伴发送到适配器
 
 <a href="" id="ndispausefunctionssendandreceive"></a>**NdisPauseFunctionsSendAndReceive**  
-适配器和链接合作伙伴支持发送和接收的暂停在这种帧传输和接收方向。
+适配器和链接伙伴支持在传输和接收方向上发送和接收暂停帧。
 
 <a href="" id="autonegotiationflags"></a>**AutoNegotiationFlags**  
-微型端口适配器的自动协商设置。 此成员是从以下标志的按位 OR 创建：
+微型端口适配器的自动协商设置。 此成员是从以下标志的按位 "或" 创建的：
 
-<a href="" id="ndis-link-state-xmit-link-speed-auto-negotiated"></a>NDIS\_链接\_状态\_XMIT\_链接\_速度\_自动\_NEGOTIATED  
-适配器应自动协商传输链接速度与链接合作伙伴。 如果未设置此标志，微型端口驱动程序应设置为在指定的值的传输链接速度**XmitLinkSpeed**成员。
+<a href="" id="ndis-link-state-xmit-link-speed-auto-negotiated"></a>NDIS\_链接\_状态\_XMIT\_链接\_速度\_自动\_协商  
+适配器应通过链接伙伴自动协商传输链接速度。 如果未设置此标志，微型端口驱动程序应将传输链接速度设置为在**XmitLinkSpeed**成员中指定的值。
 
-<a href="" id="ndis-link-state-rcv-link-speed-auto-negotiated"></a>NDIS\_LINK\_STATE\_RCV\_LINK\_SPEED\_AUTO\_NEGOTIATED  
-适配器应自动协商接收链接速度与链接合作伙伴。 如果未设置此标志，微型端口驱动程序应设置为在指定的值的接收链接速度**RcvLinkSpeed**成员。
+<a href="" id="ndis-link-state-rcv-link-speed-auto-negotiated"></a>NDIS\_链接\_状态\_RCV\_链接\_速度\_自动\_协商  
+适配器应通过链接伙伴自动协调接收链接速度。 如果未设置此标志，微型端口驱动程序应将接收链接速度设置为在**RcvLinkSpeed**成员中指定的值。
 
-<a href="" id="ndis-link-state-duplex-auto-negotiated"></a>NDIS\_LINK\_STATE\_DUPLEX\_AUTO\_NEGOTIATED  
-适配器应自动协商的双工状态与链接合作伙伴。 如果未设置此标志，微型端口驱动程序应将双工状态设置为在指定的值**MediaDuplexState**成员。
+<a href="" id="ndis-link-state-duplex-auto-negotiated"></a>NDIS\_链接\_状态\_双工\_自动\_协商  
+适配器应通过链接伙伴自动协商双工状态。 如果未设置此标志，微型端口驱动程序应将双工状态设置为**MediaDuplexState**成员中指定的值。
 
-<a href="" id="ndis-link-state-pause-functions-auto-negotiated"></a>NDIS\_链接\_状态\_暂停\_函数\_自动\_NEGOTIATED  
-微型端口驱动程序应自动协商暂停帧与另一端的支持。 如果未设置此标志，微型端口驱动程序应使用中指定的暂停帧支持**PauseFunctions**成员。
+<a href="" id="ndis-link-state-pause-functions-auto-negotiated"></a>NDIS\_LINK\_状态\_暂停\_函数\_已协商自动\_  
+微型端口驱动程序应自动协调对暂停帧与另一端的支持。 如果未设置此标志，微型端口驱动程序应使用**PauseFunctions**成员中指定的暂停帧支持。
 
 <a name="remarks"></a>备注
 -------
 
-**请注意**设置 OID\_代\_链接\_参数可能会导致连接丢失。 当设置此 OID 时，微型端口驱动程序必须重新配置的微型端口适配器。 例如，微型端口驱动程序可以重置生成现有的连接丢失的微型端口适配器。 重新配置的特定机制是独立于应用程序。
+**注意** 设置 OID\_代\_LINK\_参数会导致连接断开。 设置此 OID 时，微型端口驱动程序必须重新配置微型端口适配器。 例如，微型端口驱动程序可以重置微型端口适配器，导致现有连接丢失。 用于重新配置的特定机制依赖于应用程序。
 
 
 
-如果微型端口适配器的链接状态发生更改，因为 OID\_GEN\_链接\_参数设置请求、 微型端口驱动程序应生成[ **NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状态指示通知 NDIS 和基础驱动程序的新的链接状态。
+如果微型端口适配器的链接状态由于 OID\_代\_LINK\_参数设置请求而发生更改，则微型端口驱动程序应生成[**NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)状态指示以通知新链接状态的 NDIS 和过量驱动程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -104,20 +104,20 @@ NDIS\_链接\_参数结构定义，如下所示：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
+[ **\_标头的 NDIS\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)
 
-[**NDIS\_STATUS\_LINK\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
+[**NDIS\_状态\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)
 
-[OID\_GEN\_MEDIA\_DUPLEX\_STATE](oid-gen-media-duplex-state.md)
+[OID\_代\_介质\_双工\_状态](oid-gen-media-duplex-state.md)
 
 
 

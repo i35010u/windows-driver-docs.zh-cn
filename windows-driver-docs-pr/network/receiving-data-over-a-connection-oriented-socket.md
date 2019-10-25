@@ -7,19 +7,19 @@ keywords:
 - WskReceive
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f47d82f64c900dc380f4f4bd4738d594fd3d46b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 14f4d6c95e2b73a1e436663a34226e44791501d7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373301"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844848"
 ---
 # <a name="receiving-data-over-a-connection-oriented-socket"></a>通过面向连接的套接字接收数据
 
 
-Winsock Kernel (WSK) 应用程序具有连接到远程传输地址的面向连接的套接字后它可通过套接字接收数据。 WSK 应用程序还可以通过面向连接的套接字，它接受在侦听套接字上接收数据。 WSK 应用程序通过调用通过面向连接的套接字接收数据[ **WskReceive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive)函数。
+Winsock 内核（WSK）应用程序将面向连接的套接字连接到远程传输地址后，它可以通过套接字接收数据。 WSK 应用程序还可以通过面向连接的套接字接收数据，该套接字在侦听套接字上接受。 WSK 应用程序通过调用[**WskReceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)函数，在面向连接的套接字上接收数据。
 
-下面的代码示例显示如何 WSK 应用程序可以通过面向连接的套接字接收数据。
+下面的代码示例演示 WSK 应用程序如何通过面向连接的套接字接收数据。
 
 ```C++
 // Prototype for the receive IoCompletion routine
@@ -124,9 +124,9 @@ NTSTATUS
 }
 ```
 
-作为调用的替代方法[ **WskReceive** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive)函数通过面向连接的套接字接收数据，WSK 应用程序可以启用[ *WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)套接字上的事件的回调函数。 如果启用了 WSK 应用程序*WskReceiveEvent*面向连接的套接字上的事件回调函数，WSK 子系统调用的套接字*WskReceiveEvent*每当事件回调函数套接字上收到新的数据。 有关启用面向连接的套接字的详细信息*WskReceiveEvent*事件回调函数，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
+作为调用[**WskReceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)函数通过面向连接的套接字接收数据的一种替代方法，WSK 应用程序可以在套接字上启用[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。 如果 WSK 应用程序在面向连接的套接字上启用*WskReceiveEvent*事件回调函数，则每当在套接字上收到新数据时，WSK 子系统都会调用套接字的*WskReceiveEvent*事件回调函数。 有关启用面向连接的套接字的*WskReceiveEvent*事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
 
-下面的代码示例显示如何 WSK 应用程序可以接收数据，调用面向连接的套接字的 WSK 子系统*WskReceiveEvent*事件回调函数。
+下面的代码示例演示 WSK 应用程序如何通过调用面向连接的套接字的*WskReceiveEvent*事件回调函数的 WSK 子系统来接收数据。
 
 ```C++
 // A connection-oriented socket's WskReceiveEvent
@@ -169,9 +169,9 @@ NTSTATUS WSKAPI
 }
 ```
 
-如果面向连接的套接字[ *WskReceiveEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数不会检索包含在列表中的数据的所有[ **WSK\_数据\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_data_indication)指向结构*DataIndication*参数，它可以保留供进一步处理通过返回状态列表\_PENDING。 在这种情况下，WSK 应用程序必须调用[ **WskRelease** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))函数，以释放 WSK 列表\_数据\_指示结构回 WSK 子系统后完成列表中的结构中检索的所有数据。
+如果面向连接的套接字的[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数未检索*DataIndication*参数指向的[**WSK\_数据\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_data_indication)结构的列表中包含的所有数据，则它可以通过返回状态\_挂起来保留列表以供进一步处理。 在这种情况下，WSK 应用程序必须调用[**WskRelease**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))函数，以便在完成从列表中的结构检索所有数据后，释放 WSK\_数据\_指示结构的列表返回到 WSK 子系统。
 
-如果面向连接的套接字*WskReceiveEvent*事件的回调函数只接受的接收数据的字节总数的一部分，但它必须设置该变量指向的*BytesAccepted*参数的实际已被接受的数据的字节数。 但是，如果对套接字*WskReceiveEvent*事件的回调函数接受所有接收到的数据，它不需要设置变量，指向*BytesAccepted*参数。
+如果面向连接的套接字的*WskReceiveEvent*事件回调函数只接受收到的数据的总字节数，则必须将*BytesAccepted*参数指向的变量设置为实际接受。 但是，如果套接字的*WskReceiveEvent*事件回调函数接受所有接收到的数据，则不需要设置*BytesAccepted*参数指向的变量。
 
  
 

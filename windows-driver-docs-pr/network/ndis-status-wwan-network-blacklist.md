@@ -1,36 +1,36 @@
 ---
 title: NDIS_STATUS_WWAN_NETWORK_BLACKLIST
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_NETWORK_BLACKLIST 通知来通知关于完成的上一个 OID_WWAN_NETWORK_BLACKLIST 查询或一组请求的移动宽带 (MB) 服务。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_NETWORK_BLACKLIST 通知来通知移动宽带（MB）服务完成了上一个 OID_WWAN_NETWORK_BLACKLIST 查询或设置请求。
 ms.assetid: 38ED7C51-D352-4B48-BF80-433A7C4642AB
 ms.date: 08/21/2018
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_NETWORK_BLACKLIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c1b00724a44e8af2514d54a4d8d9c0104a51771f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4a64bc693e49fdd6b09906464eed187e45fa2bcd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369884"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844667"
 ---
-# <a name="ndisstatuswwannetworkblacklist"></a>NDIS_STATUS_WWAN_NETWORK_BLACKLIST
+# <a name="ndis_status_wwan_network_blacklist"></a>NDIS_STATUS_WWAN_NETWORK_BLACKLIST
 
-微型端口驱动程序使用**NDIS_STATUS_WWAN_NETWORK_BLACKLIST**通知来通知关于完成的上一次移动宽带 (MB) 服务[OID_WWAN_NETWORK_BLACKLIST](oid-wwan-network-blacklist.md)查询或设置请求。
+微型端口驱动程序使用**NDIS_STATUS_WWAN_NETWORK_BLACKLIST**通知来通知移动宽带（MB）服务完成了上一个[OID_WWAN_NETWORK_BLACKLIST](oid-wwan-network-blacklist.md)查询或设置请求。
 
-如果任何方块列表状态已更改从启动以不启动、 发送未经请求的事件，反之亦然。 例如，如果 SIM 将插入的提供程序与 SIM 提供程序方块列表匹配。
+如果任何黑名单状态已从 "开始" 改为 "未开始"，则发送未经请求的事件，反之亦然。 例如，如果插入的 SIM 与 SIM 提供程序黑名单匹配，则为。
 
-使用此通知[ **NDIS_WWAN_NETWORK_BLACKLIST** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist)结构。
+此通知使用[**NDIS_WWAN_NETWORK_BLACKLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist)结构。
 
 ## <a name="requirements"></a>要求
 
 |   |   |
 | --- | --- |
-| Version | Windows 10 版本 1703 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows 10 版本 1703 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[MB 网络方块列表操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
+[MB 网络黑名单操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
 
 [OID_WWAN_NETWORK_BLACKLIST](oid-wwan-network-blacklist.md)
 
-[**NDIS_WWAN_NETWORK_BLACKLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist)
+[**NDIS_WWAN_NETWORK_BLACKLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist)

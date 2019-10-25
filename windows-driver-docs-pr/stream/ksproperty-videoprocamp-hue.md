@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_VIDEOPROCAMP\_HUE
-description: KSPROPERTY\_VIDEOPROCAMP\_HUE 属性控制照相机的 hue 设置。 此属性为可选项。
+title: KSPROPERTY\_VIDEOPROCAMP\_色调
+description: KSPROPERTY\_VIDEOPROCAMP\_色相属性控制照相机的色调设置。 此属性为可选项。
 ms.assetid: 2e347a6b-c04f-41e2-841f-0d77213035e5
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_HUE 流式处理媒体设备
+- KSPROPERTY_VIDEOPROCAMP_HUE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31649e8d56276b908c691ce3f1b764cdf3a34c6f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a5b36d2f74f788a6e7291cba9e6ea1e7a29374b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381928"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842825"
 ---
-# <a name="kspropertyvideoprocamphue"></a>KSPROPERTY\_VIDEOPROCAMP\_HUE
+# <a name="ksproperty_videoprocamp_hue"></a>KSPROPERTY\_VIDEOPROCAMP\_色调
 
 
-KSPROPERTY\_VIDEOPROCAMP\_HUE 属性控制照相机的 hue 设置。 此属性为可选项。
+KSPROPERTY\_VIDEOPROCAMP\_色相属性控制照相机的色调设置。 此属性为可选项。
 
 ## <span id="ddk_ksproperty_videoprocamp_hue_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_HUE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDEOPROCAMP\_HUE 属性控制照相机的 hue 设置。 此属性�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_VIDEOPROCAMP\_HUE 属性控制照相机的 hue 设置。 此属性�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>长</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>漫长</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 为指定照相机的 hue 设置长时间。 Hue 设置的值表示以度为单位乘以 100。
+属性值（操作数据）是指定相机的色调设置的 LONG。 色调设置的值以度乘以100表示。
 
 <a name="remarks"></a>备注
 -------
 
-**值**KSPROPERTY 成员\_VIDEOPROCAMP\_S 结构指定的色调设置。
+KSPROPERTY\_VIDEOPROCAMP\_S 结构的**值**成员指定色相设置。
 
-每个视频捕获微型驱动程序必须定义的范围和默认值**值**此属性的成员。 所需的范围必须是-18000 到 18000 (-180 到 + 180 度)。 默认值必须为 0。
+每个视频捕获微型驱动程序都必须为此属性的**value**成员定义一个范围和默认值。 所需范围必须为-18000 到18000（-180 到 + 180 度）。 默认值必须为0。
 
 <a name="requirements"></a>要求
 ------------
@@ -80,18 +80,18 @@ KSPROPERTY\_VIDEOPROCAMP\_HUE 属性控制照相机的 hue 设置。 此属性�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSPROPERTY\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

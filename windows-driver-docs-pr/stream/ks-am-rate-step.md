@@ -1,9 +1,9 @@
 ---
 title: KS\_AM\_速率\_步骤
-description: KS\_AM\_速率\_步属性尚未实现。
+description: KS\_AM\_RATE\_步骤属性尚未实现。
 ms.assetid: fc3e3369-335b-4403-876f-c55d4616e290
 keywords:
-- KS_AM_RATE_Step 流式处理媒体设备
+- KS_AM_RATE_Step 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dabb9f0c97067cd48b038643bf40dcee82e6ba69
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05b7f3850b16494286c4b4bd3a086e7c89bfbee4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362249"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843448"
 ---
-# <a name="ksamratestep"></a>KS\_AM\_速率\_步骤
+# <a name="ks_am_rate_step"></a>KS\_AM\_速率\_步骤
 
 
-KS\_AM\_速率\_步属性尚未实现。
+KS\_AM\_RATE\_步骤属性尚未实现。
 
 ## <span id="ddk_ks_am_rate_step_ks"></span><span id="DDK_KS_AM_RATE_STEP_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KS\_AM\_速率\_步属性尚未实现。
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KS\_AM\_速率\_步属性尚未实现。
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>否</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>无</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>KS_AM_Step</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ KS\_AM\_速率\_步属性尚未实现。
 
  
 
-属性值 （操作数据） 是 KS\_AM\_步骤 （这是一个定义类型的 dword 值）
+属性值（操作数据）是一个 KS\_AM\_步骤（这是一个类型定义的 DWORD）
 
 <a name="remarks"></a>备注
 -------
 
-此属性始终返回状态\_不\_实现。
+此属性始终返回\_未\_实现的状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,8 +78,8 @@ KS\_AM\_速率\_步属性尚未实现。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>

@@ -1,25 +1,25 @@
 ---
-Description: 设备描述符包含有关 USB 设备作为一个整体的信息。 本主题描述 USB_DEVICE_DESCRIPTOR 结构，并包括有关客户端驱动程序将获取描述符请求以获取设备描述符可以发送的信息。
+Description: 设备描述符同时包含有关 USB 设备的信息。 本主题介绍 USB_DEVICE_DESCRIPTOR 结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。
 title: USB 设备描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1d4388e67fb3a283cc2c0fd4a9708804015fc30
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7f6a01644f1b7890d3956d1623a6d70a320131b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360163"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844828"
 ---
 # <a name="usb-device-descriptors"></a>USB 设备描述符
 
 
-设备描述符包含有关 USB 设备作为一个整体的信息。 本主题介绍[ **USB\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)结构，并包含有关客户端驱动程序如何发送 get 描述符请求以获取设备信息描述符。
+设备描述符同时包含有关 USB 设备的信息。 本主题介绍[**USB\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。
 
-每个通用串行总线 (USB) 设备必须能够提供包含有关设备的相关信息的单个设备描述符。 [ **USB\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)结构描述设备描述符。 Windows 使用该信息来派生不同组的信息。 例如， **idVendor**并**idProduct**字段分别指定供应商和产品标识符。 Windows 使用这些字段值来构造*硬件 ID*设备。 若要查看特定设备的硬件 ID，请打开**设备管理器**和查看设备属性。 在中**详细信息**选项卡上，**硬件 Id**属性值指示的硬件 ID ("USB\\*XXX*") 生成的 Windows。 **BcdUSB**字段指示设备是否符合的 USB 规范的版本。 例如，0x0200 指示该设备的设计根据 USB 2.0 规范。 **BcdDevice**值指示设备定义修订号。 使用 USB 驱动程序堆栈**bcdDevice**，连同**idVendor**并**idProduct**，以便生成硬件和设备兼容 Id。 您可以查看与中的标识符**设备管理器**。 设备描述符还指示设备支持的配置的总数。
+每个通用串行总线（USB）设备必须能够提供单个设备描述符，其中包含有关设备的相关信息。 [**USB\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)结构描述了设备描述符。 Windows 使用该信息来派生各种信息集。 例如，" **idVendor** " 和 " **idProduct** " 字段分别指定供应商和产品标识符。 Windows 使用这些字段值来构造设备的*硬件 ID* 。 若要查看特定设备的硬件 ID，请打开**设备管理器**并查看设备属性。 在 "**详细信息**" 选项卡中，"**硬件 id** " 属性值表示 WINDOWS 生成的硬件 id （"USB\\*XXX*"）。 **BcdUSB**字段指示设备符合的 USB 规范的版本。 例如，0x0200 指示设备按照 USB 2.0 规范设计。 **BcdDevice**值指示设备定义的修订号。 USB 驱动程序堆栈使用**bcdDevice**以及**idVendor**和**idProduct**来生成设备的硬件和兼容 id。 可以在**设备管理器**中查看这些标识符。 设备描述符还表明设备支持的配置总数。
 
-当设备连接到主计算机在高速能力比全速容量中的连接时，设备可能会报告其设备描述符中的不同信息。 设备不得更改设备描述符中的连接，包括电源状态更改期间的生命周期内包含的信息。
+当设备连接到主计算机的速度比全速容量大时，设备可能会在其设备描述符中报告不同的信息。 在连接的生存期内（包括电源状态更改期间），设备不得更改设备描述符中包含的信息。
 
-获得通过控制传输的设备描述符。 在传输中的请求类型是获取描述符和接收方是设备。 客户端驱动程序可以启动该传输中通过两种方式： 使用框架 USB 目标设备对象或发送的请求信息 URB。
+宿主通过控件传输获取设备描述符。 在传输中，请求类型为 GET 描述符，接收方是设备。 客户端驱动程序可以通过以下两种方式之一来启动该传输：通过使用 framework USB 目标设备对象或发送包含请求信息的 URB。
 
 -   [获取设备描述符](#getting-the-device-descriptor)
 -   [示例设备描述符](#sample-device-descriptor)
@@ -27,15 +27,15 @@ ms.locfileid: "67360163"
 ## <a name="getting-the-device-descriptor"></a>获取设备描述符
 
 
-只有在创建框架 USB 目标设备对象后，Windows 驱动程序框架 (WDF) 客户端驱动程序可以获取设备描述符。
+Windows 驱动程序框架（WDF）客户端驱动程序只能在创建框架 USB 目标设备对象之后获取设备描述符。
 
-KMDF 驱动程序必须通过调用获取 USB 目标设备对象的 WDFUSBDEVICE 句柄[ **WdfUsbTargetDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)。 通常，客户端驱动程序会调用**WdfUsbTargetDeviceCreate**中的驱动程序[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调实现。 然后，客户端驱动程序必须调用[ **WdfUsbTargetDeviceGetDeviceDescriptor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)方法。 在调用完成后，在调用方分配中收到的设备描述符[ **USB\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)结构。
+KMDF 驱动程序必须通过调用[**WdfUsbTargetDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreate)获取 USB 目标设备对象的 WDFUSBDEVICE 句柄。 通常，客户端驱动程序会在驱动程序的[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调实现中调用**WdfUsbTargetDeviceCreate** 。 之后，客户端驱动程序必须调用[**WdfUsbTargetDeviceGetDeviceDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicegetdevicedescriptor)方法。 调用完成后，会在调用方分配的[**USB\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)结构中接收设备描述符。
 
-UMDF 驱动程序必须 framework 设备对象中查询[ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)指针，然后调用[ **IWDFUsbTargetDevice::RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)方法并指定 USB\_设备\_描述符\_与描述符类型的类型。
+UMDF 驱动程序必须在框架设备对象中查询[**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice)指针，然后调用[**IWDFUsbTargetDevice：： RetrieveDescriptor**](https://msdn.microsoft.com/library/windows/hardware/ff560362_retrievedescriptor)方法并指定 USB\_设备\_描述符\_类型为描述符类型。
 
-主机还可以通过发送 URB 获取设备描述符。 此方法仅适用于内核模式驱动程序。 但是，客户端驱动程序应永远不会需要将发送此类请求 URB，除非该驱动程序基于 Windows 驱动程序模型 (WDM)。 此类驱动程序必须分配[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构，然后调用[ **UsbBuildGetDescriptorRequest** ](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))宏，以指定格式请求 URB。 驱动程序然后可以通过将提交到 USB 驱动程序堆栈 URB 发送请求。 有关详细信息，请参阅[如何提交 URB](send-requests-to-the-usb-driver-stack.md)。
+主机还可以通过发送 URB 来获取设备描述符。 此方法仅适用于内核模式驱动程序。 但是，客户端驱动程序绝不应发送此类请求的 URB，除非该驱动程序基于 Windows 驱动模型（WDM）。 此类驱动程序必须分配[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构，然后调用[**UsbBuildGetDescriptorRequest**](https://docs.microsoft.com/previous-versions/ff538943(v=vs.85))宏来指定请求的 URB 格式。 然后，该驱动程序可以通过将 URB 提交到 USB 驱动程序堆栈来发送请求。 有关详细信息，请参阅[如何提交 URB](send-requests-to-the-usb-driver-stack.md)。
 
-此代码示例显示了格式由与相应 URB pURB 指向的缓冲区的 UsbBuildGetDescriptorRequest 调用：
+此代码示例演示了一个 UsbBuildGetDescriptorRequest 调用，该调用使用适当的 URB 格式化 pURB 指向的缓冲区：
 
 ```cpp
 UsbBuildGetDescriptorRequest(
@@ -54,7 +54,7 @@ UsbBuildGetDescriptorRequest(
 ## <a name="sample-device-descriptor"></a>示例设备描述符
 
 
-此示例显示了 USB 网络摄像机设备的设备描述符 (请参阅[USB 设备布局](usb-device-layout.md))，获得使用 USBView 应用程序：
+此示例显示了通过使用 USBView 应用程序获得的 USB 网络摄像机设备（请参阅[Usb 设备布局](usb-device-layout.md)）的设备描述符：
 
 ``` syntax
 Device Descriptor:
@@ -75,11 +75,11 @@ iSerialNumber:        0x00
 bNumConfigurations:   0x01
 ```
 
-在上述示例中，将看到，设备已开发了根据 USB 规范，版本 2.0。 请注意**bDeviceClass**， **bDeviceSubClass**，并**bDeviceProtocol**值。 这些值指示该设备包含一个或多个 USB 接口关联描述符的可用于分组每个函数的多个接口。 有关详细信息，请参阅[USB 接口关联描述符](usb-interface-association-descriptor.md)。
+在前面的示例中，你将看到设备按照每个 USB 规范（版本2.0）进行开发。 请注意**bDeviceClass**、 **bDeviceSubClass**和**bDeviceProtocol**值。 这些值表明设备包含一个或多个 USB 接口关联描述符，可用于对每个函数的多个接口进行分组。 有关详细信息，请参阅[USB 接口关联描述符](usb-interface-association-descriptor.md)。
 
-接下来，请参阅的值**bMaxPacketSize0**。 此值指示的默认终结点的最大数据包大小。 此示例设备可以传输最多 64 个字节的数据通过其默认终结点。
+接下来，请参阅**bMaxPacketSize0**的值。 此值指示默认终结点的最大数据包大小。 此示例设备可以通过其默认终结点最多传输64个字节的数据。
 
-通常情况下，若要配置设备，客户端驱动程序获取有关所支持的配置信息的设备中获取设备描述符后。 若要确定设备支持的配置的数量，请检查**bNumConfigurations**返回的结构的成员。 此设备支持的一种配置。 若要获取有关 USB 配置的信息，该驱动程序必须获取[USB 配置描述符](usb-configuration-descriptors.md)。
+通常，若要配置设备，客户端驱动程序会在获取设备描述符后获取有关设备中支持的配置的信息。 若要确定设备支持的配置数，请检查返回的结构的**bNumConfigurations**成员。 此设备支持一个配置。 若要获取有关 USB 配置的信息，驱动程序必须获取[Usb 配置描述符](usb-configuration-descriptors.md)。
 
 ## <a name="related-topics"></a>相关主题
 [USB 描述符](usb-descriptors.md)  

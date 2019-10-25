@@ -6,12 +6,12 @@ keywords:
 - 并行端口 WDK，获取信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dffbfd5980341de13063fd178f12b6affc456299
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b762df9f899e1a1d47670d35dbb043cce9f1762f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358510"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844498"
 ---
 # <a name="obtaining-information-about-a-parallel-port"></a>获取有关并行端口的信息
 
@@ -19,23 +19,23 @@ ms.locfileid: "67358510"
 
 
 
-客户端使用的并行端口之前，它可以获取有关以下信息：
+在客户端使用并行端口之前，它可以获取有关以下内容的信息：
 
 -   并行端口使用的资源
 
--   硬件功能的并行端口
+-   并行端口的硬件功能
 
--   [并行端口回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)，可以使用的内核模式驱动程序
+-   内核模式驱动程序可以使用的[并行端口回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-客户端使用以下内置设备控制请求获取上面的信息：
+客户端使用以下内部设备控制请求来获取上述信息：
 
-[**IOCTL\_INTERNAL\_GET\_PARALLEL\_PORT\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_get_parallel_port_info)
+[**IOCTL\_内部\_获取\_并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_port_info)
 
-[**IOCTL\_内部\_获取\_详细\_并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_get_more_parallel_port_info)
+[**IOCTL\_内部\_获取\_\_并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_more_parallel_port_info)
 
-[**IOCTL\_INTERNAL\_GET\_PARALLEL\_PNP\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info)
+[**IOCTL\_内部\_获取\_并行\_PNP\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_get_parallel_pnp_info)
 
-客户端通过使用版本并行端口的信息[ **IOCTL\_内部\_发行\_并行\_端口\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/parallel/ni-parallel-ioctl_internal_release_parallel_port_info)请求。
+客户端通过使用[**IOCTL\_内部\_版本\_并行\_端口\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_release_parallel_port_info)请求中释放并行端口信息。
 
  
 

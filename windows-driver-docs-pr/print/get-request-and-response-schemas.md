@@ -1,25 +1,25 @@
 ---
 title: 获取请求和响应架构
-description: 下面是 Get 请求架构和相应的响应架构定义和各自的示例。
+description: 下面是 Get 请求架构和相应的响应架构定义以及每个定义的示例。
 ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1d2e9ab650b9ea94eff9ec5c17f7fbe459e0e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93965c0096d702bbfb6fefe53034265420db9453
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358749"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844513"
 ---
 # <a name="get-request-and-response-schemas"></a>获取请求和响应架构
 
-下面是 Get 请求架构和相应的响应架构定义和各自的示例。
+下面是 Get 请求架构和相应的响应架构定义以及每个定义的示例。
 
 ## <a name="the-get-request-schema"></a>Get 请求架构
 
-Get 请求和响应用于查询打印机的一个或多个其当前值。
+Get 请求和响应用于查询打印机的一个或多个当前值。
 
-在此示例中，有三个查询。 第一个查询是指向特定的双向通信架构值和第二个定义的子树的双向通信架构属性。 第三个是故意的错误： 没有任何&lt;Foo&gt;双向通信架构中的属性。 (下一节中对此请求的响应是[获取响应架构](#the-get-response-schema)。)
+在此示例中，有三个查询。 第一个查询指向特定的双向通信架构值，第二个查询用于定义子树的双向通信架构属性。 第三个错误是：双向通信架构中没有 &lt;Foo&gt; 属性。 （对此请求的响应位于[获取响应架构](#the-get-response-schema)的下一节中。）
 
 ```xml
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -29,7 +29,7 @@ Get 请求和响应用于查询打印机的一个或多个其当前值。
 </bidi:Get>
 ```
 
-Get 请求架构中的正式定义
+Get 请求架构的正式定义
 
 ```xml
 <?xml version='1.0'?>
@@ -59,7 +59,7 @@ Get 请求架构中的正式定义
 
 ## <a name="the-get-response-schema"></a>获取响应架构
 
-此示例是对上面的 Get 请求的响应。 对于查询该成功，结果是值的特定架构。 第三个查询失败，因此结果是一个错误代码。 请注意第二个查询请求具有子级的属性，因为响应提供的名称和值的所有子级。
+此示例是对上述 Get 请求的响应。 对于成功的查询，结果为特定架构的值。 第三个查询失败，因此结果为错误代码。 请注意，由于第二个查询请求了具有子级的属性，因此响应提供所有子级的名称和值。
 
 ```xml
 <bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -85,7 +85,7 @@ Get 请求架构中的正式定义
 </bidi:Get>
 ```
 
-获取响应架构中的正式定义
+获取响应架构的正式定义
 
 ```xml
 <?xml version='1.0'?>
@@ -139,6 +139,6 @@ Get 请求架构中的正式定义
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  

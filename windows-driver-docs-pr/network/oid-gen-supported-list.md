@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_SUPPORTED_LIST
-description: 为查询，OID_GEN_SUPPORTED_LIST OID 指定数组 Oid 的微型端口驱动程序或 NIC 支持的对象。
+description: 作为查询，OID_GEN_SUPPORTED_LIST OID 为微型端口驱动程序或 NIC 支持的对象指定 Oid 数组。
 ms.assetid: 4e663204-eee0-4732-83c9-ec1dacd41034
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 22935f04df1de75b97f6ea2762b2634fe0f1c503
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b5b5632c9a55720b6530163ca59c5d9806478c6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386995"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844597"
 ---
-# <a name="oidgensupportedlist"></a>OID\_GEN\_支持\_列表
+# <a name="oid_gen_supported_list"></a>OID\_GEN\_支持\_列表
 
 
-为查询，OID\_GEN\_支持\_列表 OID 指定的 Oid 的微型端口驱动程序或 NIC 支持的对象的数组。 对象包括常规、 媒体特定和特定于实现的对象。
+作为查询，支持的 OID\_GEN\_支持\_列表 OID 为微型端口驱动程序或 NIC 支持的对象指定 Oid 数组。 对象包括常规、特定于媒体和特定于实现的对象。
 
 **版本信息**
 
@@ -26,26 +26,26 @@ ms.locfileid: "67386995"
 未请求。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。 请参阅[OID\_代\_支持\_列表 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))。
+必需. 请参阅[支持 OID\_GEN\_支持\_列表（NDIS 5.1）](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))。
 
 <a href="" id="windows-xp"></a>Windows XP  
 支持。
 
 <a href="" id="ndis-5-1-miniport-drivers"></a>NDIS 5.1 微型端口驱动程序  
-必需。 请参阅[OID\_代\_支持\_列表 (NDIS 5.1)](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))。
+必需. 请参阅[支持 OID\_GEN\_支持\_列表（NDIS 5.1）](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff560258(v=vs.85))。
 
 <a name="remarks"></a>备注
 -------
 
-NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 处理此 OID 微型端口驱动程序在初始化过程中提供的缓存值。
+NDIS 6.0 和更高版本的微型端口驱动程序不会收到此 OID 请求。 NDIS 使用小型端口驱动程序在初始化期间提供的缓存值处理此 OID。
 
-若要在初始化期间指定的受支持的 Oid 列表，微型端口驱动程序设置**SupportedOidList**的成员[ **NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，并将传递到结构[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
+若要在初始化期间指定支持的 Oid 列表，微型端口驱动程序将设置[**NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的**SupportedOidList**成员，并将该结构传递到[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数。
 
-NDIS 将转发到使此查询的协议驱动程序提供的列表的子集。 即 NDIS 筛选任何受支持的统计信息 Oid 的列表，因为协议驱动程序永远不会使统计信息的查询。
+NDIS 将提供的列表的一个子集转发到执行此查询的协议驱动程序。 也就是说，NDIS 筛选出列表中任何受支持的统计信息 Oid，因为协议驱动程序从不进行统计查询。
 
-如果微型端口驱动程序列出在其受支持的 Oid 列表中的 OID，它必须完全支持 OID。 也就是说，微型端口驱动程序必须响应查询时返回有效的数据或设置包含列表中的 Oid 的请求。 例如， [OID\_代\_统计信息](oid-gen-statistics.md)OID 是 NDIS 6.0 和更高版本的微型端口驱动程序所需的 OID。 如果微型端口驱动程序不支持统计信息中的硬件或软件，并返回不正确的统计信息，该驱动程序不能指定 OID\_常规\_其受支持的 Oid 列表中的统计信息。
+如果微型端口驱动程序在其支持的 Oid 列表中列出了 OID，则它必须完全支持 OID。 也就是说，微型端口驱动程序在响应查询或为列表中包含的 Oid 设置请求时必须返回有效的数据。 例如， [oid\_GEN\_STATISTICS](oid-gen-statistics.md) OID 是 NDIS 6.0 和更高的微型端口驱动程序的必需 oid。 如果微型端口驱动程序不支持硬件或软件中的统计信息，并且返回错误的统计信息，则驱动程序无法在其支持的 Oid 列表中指定 OID\_代\_统计信息。
 
-中受支持的 Oid 列表可能会显示重复项。 驱动程序不需要保证在列表中每个 OID 的只有一个条目。
+重复项可能出现在支持的 Oid 列表中。 驱动程序不需要确保列表中的每个 OID 只有一个条目。
 
 <a name="requirements"></a>要求
 ------------
@@ -57,16 +57,16 @@ NDIS 将转发到使此查询的协议驱动程序提供的列表的子集。 �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_GEN\_STATISTICS](oid-gen-statistics.md)
+[OID\_代\_统计信息](oid-gen-statistics.md)
 
  
 

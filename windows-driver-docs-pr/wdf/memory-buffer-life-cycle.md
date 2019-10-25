@@ -4,45 +4,45 @@ description: 内存缓冲区生命周期
 ms.assetid: abf43bf5-a4a3-4aeb-9ec5-3458252933d5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8716361e6b1de4c5896941b876dcc1d01cca63f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 748483de4fddb8bb703571b62c7bdbd86b75b7eb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371725"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843148"
 ---
 # <a name="memory-buffer-life-cycle"></a>内存缓冲区生命周期
 
 
-内存缓冲区的生命周期的范围为从缓冲区创建时到被删除时的时间。 本主题介绍缓冲区的使用方案以及它们如何影响时删除缓冲区。
+内存缓冲区的生命周期跨越从创建缓冲区到删除缓冲区的时间。 本主题介绍缓冲区使用方案以及它们在删除缓冲区时的影响。
 
-在内核模式驱动程序框架 (KMDF)，请求对象表示的 I/O 请求。 每个请求对象所关联具有一个或多个内存对象和内存的每个对象都表示一个缓冲区，用于输入或输出请求中。
+在内核模式驱动程序框架（KMDF）中，请求对象表示 i/o 请求。 每个请求对象与一个或多个内存对象相关联，每个内存对象都表示一个用于请求中的输入或输出的缓冲区。
 
-当 framework 创建请求和内存来表示传入的 I/O 请求的对象时，它会设置为相关联的内存对象的父级的请求对象。 因此，可以不会请求对象的生存期超过保留的内存对象。 基于框架的驱动程序完成 I/O 请求，框架就会删除请求对象，该内存对象，因此对这两个对象的句柄无效。
+当框架创建用于表示传入 i/o 请求的请求和内存对象时，它会将请求对象设置为关联内存对象的父级。 因此，内存对象的持续时间不能长于请求对象的生存期。 当基于框架的驱动程序完成 i/o 请求时，框架会删除请求对象和内存对象，因此，这两个对象的句柄变为无效。
 
-但是，基础缓冲区是不同的。 具体取决于哪个组件创建缓冲区以及它如何创建缓冲区，缓冲区可能具有引用计数，并可能拥有的内存对象，或它可能不会。 如果内存对象拥有缓冲区，然后缓冲区的引用计数并将限制为内存对象的生存期。 如果某些其他组件创建缓冲区，然后将缓冲区和内存对象的生存期不相关。
+但是，基础缓冲区是不同的。 根据创建缓冲区的组件及其创建缓冲区的方式，缓冲区可能具有引用计数，并且可能由内存对象拥有，也可能不是。 如果内存对象拥有缓冲区，则该缓冲区将具有引用计数，并且它的生存期限制为内存对象的生存期。 如果某个其他组件创建了缓冲区，则该缓冲区的生存期和内存对象不相关。
 
-基于框架的驱动程序还可以创建其自己的请求对象发送到 I/O 目标。 驱动程序创建请求可以重复使用该驱动程序接收的 I/O 请求中的现有内存对象。 频繁地将请求发送到 I/O 目标的驱动程序可以[重复使用的请求对象](reusing-framework-request-objects.md)它创建的。
+基于框架的驱动程序还可以创建自己的请求对象以发送到 i/o 目标。 驱动程序创建的请求可以重复使用驱动程序在 i/o 请求中收到的现有内存对象。 经常向 i/o 目标发送请求的驱动程序可以[重复使用它创建的请求对象](reusing-framework-request-objects.md)。
 
-了解请求对象，该内存对象和基础缓冲区的生存期很重要，以确保您的驱动程序不会尝试引用无效的句柄或缓冲区指针。
+若要确保驱动程序不会尝试引用无效的句柄或缓冲区指针，请了解请求对象、内存对象和基础缓冲区的生存期。
 
 请考虑以下使用方案：
 
--   方案 1：[驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它](#scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it)。
--   方案 2：[驱动程序收到来自 KMDF 的 I/O 请求并将其转发到 I/O 目标](#scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target)。
--   方案 3：[驱动程序将发出使用一个现有的内存对象的 I/O 请求](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)。
--   方案 4:[驱动程序将发出 I/O 请求使用新的内存对象。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
--   方案 5:[驱动程序将重新使用它创建一个请求对象。](#scenario-5-driver-reuses-a-request-object-that-it-created)
+-   方案1：[驱动程序接收来自 KMDF 的 i/o 请求，处理该请求并完成该请求](#scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it)。
+-   方案2：[驱动程序接收来自 KMDF 的 i/o 请求并将其转发给 i/o 目标](#scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target)。
+-   方案3：[驱动程序发出使用现有内存对象的 i/o 请求](#scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object)。
+-   方案4：[驱动程序发出的 i/o 请求使用新的内存对象。](#scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object)
+-   方案5：[驱动程序重用它创建的请求对象。](#scenario-5-driver-reuses-a-request-object-that-it-created)
 
-## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>方案 1：驱动程序接收来自 KMDF 的 I/O 请求、 处理它，并完成后，它。
+## <a name="scenario-1-driver-receives-an-io-request-from-kmdf-handles-it-and-completes-it"></a>方案1：驱动程序接收来自 KMDF 的 i/o 请求，处理该请求并完成该请求。
 
-在最简单的方案中，KMDF 调度对驱动程序，它执行 I/O，并完成请求的请求。 在这种情况下，基础缓冲区可能已创建的用户模式应用程序，另一个驱动程序或操作系统本身。 有关如何对访问缓冲区的信息，请参阅[基于 Framework 的驱动程序中访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)。
+在最简单的方案中，KMDF 将请求发送到驱动程序，该驱动程序将执行 i/o 并完成请求。 在这种情况下，可能已由用户模式应用程序、其他驱动程序或操作系统本身创建了基础缓冲区。 有关如何访问缓冲区的信息，请参阅[在基于框架的驱动程序中访问数据缓冲区](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)。
 
-当驱动程序[完成请求](completing-i-o-requests.md)，框架将删除内存对象。 缓冲区指针然后是无效的。
+当驱动程序[完成请求](completing-i-o-requests.md)时，框架会删除内存对象。 然后，该缓冲区指针无效。
 
-## <a name="scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target"></a>方案 2：驱动程序收到来自 KMDF 的 I/O 请求，并将其转发到 I/O 的目标。
+## <a name="scenario-2-driver-receives-an-io-request-from-kmdf-and-forwards-it-to-an-io-target"></a>方案2：驱动程序接收来自 KMDF 的 i/o 请求并将其转发给 i/o 目标。
 
-在此方案中，该驱动程序[会将请求转发](forwarding-i-o-requests.md)到 I/O 的目标。 下面的示例代码显示了一个驱动程序从传入的请求对象检索到内存对象的句柄、 设置格式的请求将发送到 I/O 目标，并发送请求：
+在此方案中，驱动程序将[请求转发](forwarding-i-o-requests.md)到 i/o 目标。 下面的示例代码演示了驱动程序如何从传入的请求对象中检索内存对象的句柄，格式化发送到 i/o 目标的请求，并发送请求：
 
 ```cpp
 VOID
@@ -91,7 +91,7 @@ End:
 }
 ```
 
-I/O 目标已完成请求，框架将调用驱动程序将设置为请求的完成回调。 下面的代码演示一个简单的完成回调：
+当 i/o 目标完成请求时，框架将调用为请求设置的驱动程序的完成回调。 下面的代码演示了一个简单的完成回调：
 
 ```cpp
 VOID
@@ -112,38 +112,38 @@ RequestCompletionRoutine(
 }
 ```
 
-当驱动程序调用[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)从其完成回调，该框架将删除内存对象。 该驱动程序检索到的内存对象句柄现在是无效的。
+当驱动程序从其完成回调调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)时，框架会删除内存对象。 驱动程序检索的内存对象句柄现在无效。
 
-## <a name="scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object"></a>方案 3：驱动程序将发出使用一个现有的内存对象的 I/O 请求。
+## <a name="scenario-3-driver-issues-an-io-request-that-uses-an-existing-memory-object"></a>方案3：驱动程序发出使用现有内存对象的 i/o 请求。
 
 
-某些驱动程序发出其自己的 I/O 请求，并将其发送到由 I/O 目标对象表示的 I/O 目标。 该驱动程序可以创建其自己的请求对象或[重用框架创建请求对象](reusing-framework-request-objects.md)。 使用两种方法之一，则可以重复驱动程序使用的前一个请求的内存对象。 该驱动程序不能更改基础缓冲区，但它可以将传递的缓冲区偏移量时设置新的 I/O 请求的格式。
+某些驱动程序发出自己的 i/o 请求，并将它们发送到 i/o 目标，这些目标由 i/o 目标对象表示。 驱动程序可以创建自己的请求对象，也可以[重复使用框架创建的请求对象](reusing-framework-request-objects.md)。 使用任一种方法，驱动程序都可以重复使用以前请求中的内存对象。 驱动程序不得更改基础缓冲区，但它可以在对新 i/o 请求进行格式化时传递缓冲区偏移量。
 
-有关如何设置使用现有的内存对象的新 I/O 请求的格式信息，请参阅[将 I/O 请求发送到常规 I/O 目标](sending-i-o-requests-to-general-i-o-targets.md)。
+有关如何设置使用现有内存对象的新 i/o 请求的格式的信息，请参阅[向常规 I/o 目标发送 I/o 请求](sending-i-o-requests-to-general-i-o-targets.md)。
 
-当框架格式的请求将发送到 I/O 目标时，这除去了代表 I/O 目标对象回收的内存对象的引用。 I/O 目标对象将保留此引用，直到发生以下操作之一：
+当框架设置发送到 i/o 目标的请求的格式时，它将代表 i/o 目标对象对回收的内存对象进行引用。 在执行下列操作之一之前，i/o 目标对象会保留此引用：
 
 -   请求已完成。
--   该驱动程序会重新设置格式的请求对象再次通过调用之一*WdfIoTargetFormatRequestXxx*或*WdfIoTargetSendXxxSynchronously*方法。 有关这些方法的详细信息，请参阅[Framework I/O 目标对象方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/)。
--   驱动程序调用[ **WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)。
+-   该驱动程序通过调用*WdfIoTargetFormatRequestXxx*或*WdfIoTargetSendXxxSynchronously*方法之一重新格式化请求对象。 有关这些方法的详细信息，请参阅[框架 I/o 目标对象方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/)。
+-   驱动程序调用[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)。
 
-新的 I/O 请求完成后，框架将调用该驱动程序设置此请求的 I/O 完成回调。 此时，I/O 目标对象仍保留的引用，对内存对象。 因此，在 I/O 完成回调中，该驱动程序必须调用[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)驱动程序创建请求对象，它完成从其检索到内存的原始请求之前对象。 如果该驱动程序不会调用**WdfRequestReuse**，错误是由于的额外引用导致的 bug 检查。
+新的 i/o 请求完成后，框架将调用此请求的驱动程序设置的 i/o 完成回调。 此时，i/o 目标对象仍保留对该内存对象的引用。 因此，在 i/o 完成回调中，驱动程序必须先在驱动程序创建的请求对象上调用[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse) ，然后才能完成从中检索内存对象的原始请求。 如果驱动程序未调用**WdfRequestReuse**，则会由于额外的引用而发生 bug 检查。
 
-## <a name="scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object"></a>方案 4:驱动程序将发出 I/O 请求使用新的内存对象。
-
-
-该框架提供三种方法来创建新的内存对象，具体取决于基础缓冲区的源的驱动程序。 有关详细信息，请参阅[使用的内存缓冲区](using-memory-buffers.md)。
-
-由框架或从驱动程序创建，如果分配缓冲区[后备](using-memory-buffers.md#using-lookaside-lists)，内存对象拥有缓冲区，因此，只要该内存对象存在缓冲区指针保持有效。 发出异步 I/O 请求的驱动程序应始终使用所拥有的内存对象，以便该框架可以确保缓冲区持续，直到返回到颁发的驱动程序已完成的 I/O 请求的缓冲区。
-
-如果该驱动程序将以前分配的缓冲区分配给新的内存对象，通过调用[ **WdfMemoryCreatePreallocated**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreatepreallocated)，内存对象不拥有缓冲区。 在这种情况下，内存对象的生存期和基础缓冲区的生存期无关。 驱动程序必须管理的缓冲区的生存期，一定不要尝试使用无效的缓冲区指针。
-
-## <a name="scenario-5-driver-reuses-a-request-object-that-it-created"></a>方案 5:驱动程序将重新使用它创建一个请求对象。
+## <a name="scenario-4-driver-issues-an-io-request-that-uses-a-new-memory-object"></a>方案4：驱动程序发出的 i/o 请求使用新的内存对象。
 
 
-驱动程序可以重复使用它创建的请求对象，但它必须通过调用重新初始化每个此类对象[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)之前每个重复使用。 有关详细信息，请参阅[重用 Framework 请求对象](reusing-framework-request-objects.md)。
+框架为驱动程序提供了三种方法来创建新的内存对象，具体取决于基础缓冲区的源。 有关详细信息，请参阅[使用内存缓冲区](using-memory-buffers.md)。
 
-有关重新初始化请求对象的示例代码，请参阅[Toaster](https://go.microsoft.com/fwlink/p/?linkid=256195)并[NdisEdge](https://go.microsoft.com/fwlink/p/?linkid=256154) KMDF 与提供的示例版本。
+如果缓冲区是由框架或从驱动程序创建的[后备链表列表](using-memory-buffers.md#using-lookaside-lists)分配的，则内存对象拥有缓冲区，因此只要内存对象存在，缓冲区指针就会保持有效。 发出异步 i/o 请求的驱动程序应始终使用内存对象所拥有的缓冲区，这样框架就可以确保在 i/o 请求已完成到发出驱动程序之前，缓冲区一直存在。
+
+如果驱动程序通过调用[**WdfMemoryCreatePreallocated**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreatepreallocated)将以前分配的缓冲区分配给新的内存对象，则该内存对象不拥有该缓冲区。 在这种情况下，内存对象的生存期和基础缓冲区的生存期不相关。 驱动程序必须管理缓冲区的生存期，并且不能尝试使用无效的缓冲区指针。
+
+## <a name="scenario-5-driver-reuses-a-request-object-that-it-created"></a>方案5：驱动程序重用它创建的请求对象。
+
+
+驱动程序可以重复使用它创建的请求对象，但必须在每次重复使用之前通过调用[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)来重新初始化每个此类对象。 有关详细信息，请参阅[重复使用框架请求对象](reusing-framework-request-objects.md)。
+
+有关重新初始化请求对象的代码示例，请参阅随 KMDF 版本一起提供的[Toaster](https://go.microsoft.com/fwlink/p/?linkid=256195)和[NdisEdge](https://go.microsoft.com/fwlink/p/?linkid=256154)示例。
 
 
 

@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能
-description: KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_KSPROPERTY 中定义的功能属性 ID\_CAMERACONTROL\_PERFRAMESETTING\_属性用于获取每个帧从驱动程序的功能。
+description: KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_属性中定义的 KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能属性 ID 用于获取驱动程序中的每帧功能。
 ms.assetid: 9EB8AB4C-56C0-4F70-AFFE-76444FAADFF8
 keywords:
-- KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_CAPABILITY 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_PERFRAMESETTING_CAPABILITY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,72 +14,72 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 605f647216d8ca92bf86ab16caf3892ef323b965
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 715305b681160e7c733ed434e56b77e5ef87c3f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355191"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842495"
 ---
-# <a name="kspropertycameracontrolperframesettingcapability"></a>KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能
+# <a name="ksproperty_cameracontrol_perframesetting_capability"></a>KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能
 
-**KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)用于获得驱动程序的每个框架功能。 这是 GET 的唯一控件;该驱动程序必须失败的任何集调用。
+\_KSPROPERTY 中定义的**KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能**属性 ID [ **\_CAMERACONTROL\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_perframesetting_property)用于获取每帧驱动程序的功能。 这是一个仅获取控件;驱动程序必须失败任何设置调用。
 
 ## <a name="usage-summary"></a>使用情况摘要
 
-每个帧设置功能使用驱动程序，查询**KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能**属性控制发送到数据缓冲区以及该驱动程序。 在 GET 调用，该驱动程序将填充每个帧设置功能有效负载中使用下面指定的格式布局提供的数据缓冲区。
+若要使用驱动程序查询每帧设置功能，请将**KSPROPERTY\_CAMERACONTROL\_PERFRAMESETTING\_功能**属性控件连同数据缓冲区一起发送到该驱动程序。 在 GET 调用中，驱动程序将使用下面指定的格式布局在提供的数据缓冲区中填充每帧设置功能负载。
 
--   功能标头 ([**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header))
+-   功能头（[**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)）
 
--   项标头 ([**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header))
+-   项标题（[**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标题**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)）
 
--   项标头 ([**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header))
+-   项标题（[**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标题**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)）
 
--   项有效负载 ([**KSPROPERTY\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long)或者[ **KSPROPERTY\_单步执行\_LONGLONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_longlong))
+-   项负载（[**KSPROPERTY\_单步执行\_LONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)或[**KSPROPERTY\_步进\_LONGLONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_longlong)）
 
-功能有效负载必须以功能标头开头。 每个功能项必须开头的项标头。 如果功能的项具有一个有效负载，项标头后面必须有相应的项有效负载。
+功能负载必须以功能头开头。 每个功能项必须以项标题开头。 如果功能项具有有效负载，则项标头必须后跟相应的项负载。
 
-在 GET 调用中，一个零长度缓冲区是先发送到该驱动程序来找出所需的数据缓冲区大小来保存整个功能有效负载。 在响应调用，则驱动程序必须返回**状态\_缓冲区\_OVERFLOW**使用所需的功能的缓冲区大小必须至少为的大小[ **KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)。
+在 GET 调用中，将先向驱动程序发送零长度缓冲区，以找出所需的数据缓冲区大小来保存整个功能负载。 作为对调用的响应，驱动程序必须返回**状态\_缓冲区\_溢出**，其中必须至少包含[**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)的大小。
 
-以下是的说明**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**中的项类型的上下文中的字段定义**KSCAMERA\_PERFRAMESETTING\_项\_类型**枚举。 负载字段表示后的项有效负载结构**KSCAMERA\_PERFRAMESETTING\_CAP\_项\_标头**结构。
+下面介绍了**KSCAMERA\_PERFRAMESETTING\_CAP**在**KSCAMERA\_PERFRAMESETTING\_类型**枚举中定义的项类型上下文中的\_标头字段。 负载字段表示**KSCAMERA\_PERFRAMESETTING\_CAP 后的项负载结构\_项\_标头**结构。
 
 
-**项的暴露时间**  
+**曝光时间项**  
 
 **大小**
 
-这是的大小**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**结构 + 的大小**KSPROPERTY\_单步执行\_LONGLONG**结构，如果支持手动模式。
+这是**KSCAMERA\_PERFRAMESETTING\_帽\_标头**结构的大小 + **KSPROPERTY\_单步执行**的大小，如果支持手动模式，则\_LONGLONG 结构。
 
 **Type**
 
-这必须是**KSCAMERA\_PERFRAMESETTING\_项\_暴露\_时间**。
+这必须是**KSCAMERA\_PERFRAMESETTING\_项\_公开\_时间**。
 
-**标志**
+**随意**
 
-这包含可用的标志。 通过执行按位或的 ksmedia.h 中定义的标志，此字段必须包含可用的标志。
+其中包含可用标志。 此字段必须包含可通过执行 ksmedia 中定义的一个或一些标志的标志。
 
 ```cpp
 #define KSCAMERA_PERFRAMESETTING_AUTO       0x0000000100000000
 #define KSCAMERA_PERFRAMESETTING_MANUAL     0x0000000200000000
 ```
 
-**Payload**
+**负载**
 
-如果该驱动程序支持手动模式下，必须 KSPROPERTY 中指定的范围有效负载\_单步执行\_LONGLONG。Bounds.SignedMinimum\\SignedMaxmum 和 KSPROPERTY\_单步执行\_LONGLONG。SteppingDelta
+如果驱动程序支持手动模式，则必须在 KSPROPERTY\_步进\_LONGLONG 中指定范围负载。SignedMinimum\\SignedMaxmum 和 KSPROPERTY\_单步执行\_LONGLONG。SteppingDelta
 
-**Flash 项**  
+**闪存项**  
 
 **大小**
 
-这是的大小[ **KSCAMERA\_PERFRAMESETTING\_CAP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)结构。
+这是[**KSCAMERA\_PERFRAMESETTING\_帽\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kscamera_perframesetting_cap_header)结构的大小。
 
 **Type**
 
-这必须是**KSCAMERA\_PERFRAMESETTING\_项\_类型。KSCAMERA\_PERFRAMESETTING\_项\_FLASH**
+这必须是**KSCAMERA\_PERFRAMESETTING\_ITEM\_类型。KSCAMERA\_PERFRAMESETTING\_项\_FLASH**
 
-**标志**
+**随意**
 
-这包含可用的标志。 通过执行按位或的 ksmedia.h 中定义下面的闪存标志，此字段必须包含可用的标志。
+其中包含可用标志。 此字段必须包含可通过在 ksmedia 中定义的按位或 FLASH 标志提供的标志。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_FLASH_OFF                                 0x0000000000000000  
@@ -90,23 +90,23 @@ ms.locfileid: "63355191"
 #define KSCAMERA_EXTENDEDPROP_FLASH_REDEYEREDUCTION                     0x0000000000000010
 ```
 
-**Payload**
+**负载**
 
-闪存项没有有效负载。 如果 KSCAMERA\_EXTENDEDPROP\_闪存\_ON\_ADJUSTABLEPOWER 或 KSCAMERA\_EXTENDEDPROP\_FLASH\_自动\_中指定 ADJUSTABLEPOWER标志，power 参数是介于 0 到 100 之间。
+闪光灯项没有有效负载。 如果 KSCAMERA\_EXTENDEDPROP\_闪存\_\_ADJUSTABLEPOWER 或 KSCAMERA\_EXTENDEDPROP\_闪存\_自动\_ADJUSTABLEPOWER 在标志中指定，则 power 参数的范围介于0到100之间。
 
 **曝光补偿项**  
 
 **大小**
 
-这是的大小**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**结构 + 的大小**KSPROPERTY\_单步执行\_长时间**结构，如果受支持的步骤。
+这是**KSCAMERA\_PERFRAMESETTING\_帽\_标头**结构的大小 + **KSPROPERTY\_单\_步执行**步骤的大小（如果支持步骤）。
 
 **Type**
 
-这必须是**KSCAMERA\_PERFRAMESETTING\_项\_类型。KSCAMERA\_PERFRAMESETTING\_项\_暴露\_补偿**
+这必须是**KSCAMERA\_PERFRAMESETTING\_ITEM\_类型。KSCAMERA\_PERFRAMESETTING\_项\_公开\_补偿**
 
-**标志**
+**随意**
 
-这包含可用的标志。 此字段必须包含通过执行按位可用的标志，或者的 EVCOMP ksmedia.h 或自动标记中定义以下标志定义如下 ksmedia\_phone.h。
+其中包含可用标志。 此字段必须包含可用的标志，这些标志可通过执行以下在 ksmedia 中定义的 EVCOMP 标志或在 ksmedia\_phone 中定义的自动标志来完成。
 
 ```cpp
 #define KSCAMERA_PERFRAMESETTING_AUTO               0x0000000100000000
@@ -117,23 +117,23 @@ ms.locfileid: "63355191"
 #define KSCAMERA_EXTENDEDPROP_EVCOMP_FULLSTEP       0x0000000000000010
 ```
 
-**Payload**
+**负载**
 
-如果驱动程序支持仅 auto 模式，则不包含有效负载。 否则，必须在指定的范围有效负载[ **KSPROPERTY\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long)结构。 最小和最大值为 EV 补偿是绝对 EV 补偿值，将根据**KSPROPERTY\_单步执行\_长。Bounds.SignedMinimum**和 KSPROPERTY\_单步执行\_长。Bounds.SignedMaximum。 EV 补偿步骤由对应于一个浮点数的最小 EVCOMP 步骤标志的步骤大小 (例如，1/6 为 KSCAMERA\_EXTENDEDPROP\_EVCOMP\_SIXTHSTEP)。
+如果驱动程序仅支持 auto 模式，则不包含有效负载。 否则，必须在[**KSPROPERTY\_单步执行\_LONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)结构中指定范围负载。 EV 补偿的最小值和最大值为绝对 EV 补偿值，并由**KSPROPERTY\_单步执行\_长时间决定。SignedMinimum**和 KSPROPERTY\_步进\_LONG。SignedMaximum。 EV 补偿的步骤由对应于 float 的最小 EVCOMP 步骤标志的步长大小确定（例如，1/6 for KSCAMERA\_EXTENDEDPROP\_EVCOMP\_SIXTHSTEP）。
 
 **ISO 速度项**  
 
 **大小**
 
-这是的大小**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**结构 + 的大小**KSPROPERTY\_单步执行\_长时间**结构，如果支持手动模式。
+这是**KSCAMERA\_PERFRAMESETTING\_帽\_标头**结构的大小 + **KSPROPERTY\_单步执行**的大小，如果支持手动模式，则\_长结构。
 
 **Type**
 
-这必须是**KSCAMERA\_PERFRAMESETTING\_项\_类型。KSCAMERA\_PERFRAMESETTING\_项\_ISO**
+这必须是**KSCAMERA\_PERFRAMESETTING\_ITEM\_类型。KSCAMERA\_PERFRAMESETTING\_ITEM\_ISO**
 
-**标志**
+**随意**
 
-此字段包含可用的标志。 此字段必须包含可用的标志，通过执行按位或的定义如下 ksmedia.h 和 ksmedia 中的 ISO 标志\_phone.h。 如果支持每个帧 ISO，则该驱动程序必须支持至少一个以下功能，ISO\_自动和 ISO\_手动中的 ISO\_自动是必需的。 如果 ISO\_手动播发、 驱动程序必须进一步播发的受支持的 ISO 速度最小值\\最大\\中的步骤**KSPROPERTY\_单步执行\_长。ISO\_手动**如果需要手动 ISO，则必须支持。
+此字段包含可用标志。 此字段必须包含可通过执行以下操作的标志：在 ksmedia 中定义的 ISO 标志或在中定义的 ISO 标志\_。 如果支持每帧 ISO，则驱动程序必须至少支持以下功能之一，ISO\_自动和 ISO\_手动，其中 ISO\_AUTO 是必需的。 如果播发 ISO\_"手动"，则驱动程序必须在**KSPROPERTY\_单步执行\_长时间内进一步公布受支持的 ISO 速度\\max\\步骤。** 如果需要手动 iso，则必须支持 iso\_"手动"。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ISO_MANUAL    0x0080000000000000
@@ -143,78 +143,78 @@ ms.locfileid: "63355191"
 #define KSCAMERA_EXTENDEDPROP_ISO_AUTO      0x0000000000000001
 ```
 
-**Payload**
+**负载**
 
-如果驱动程序支持仅 auto 模式，则不包含有效负载。 否则，必须在指定的范围有效负载**KSPROPERTY\_单步执行\_长**结构。 Min、 max 和 ISO 速度的步骤将根据**KSPROPERTY\_单步执行\_长。Bounds.UnsignedMinimum**，K**SPROPERTY\_单步执行\_长。Bounds.UnsignedMaximum**，并**KSPROPERTY\_单步执行\_长。Bounds.SteppingDelta**。 驱动程序支持整数手动 ISO 应只播发 ISO\_受支持的 ISO 速度本手册的范围 （最小值/最大/步骤）。 数值 ISO\_Xxx 预设不支持的每个帧 ISO。
+如果驱动程序仅支持 auto 模式，则不包含有效负载。 否则，必须在**KSPROPERTY\_单步执行\_LONG**结构中指定范围负载。 ISO 速度的最小值、最大值和阶数由**KSPROPERTY\_单步执行\_长时间决定。UnsignedMinimum**，K**SPROPERTY\_步进\_LONG。UnsignedMaximum**和**KSPROPERTY\_步进\_LONG。SteppingDelta**。 支持整数手动 ISO 的驱动程序应仅公布 ISO\_手册，其中包含支持的 ISO 速度范围（最小/最大/步骤）。 对于每帧 ISO，不支持将数字 ISO\_Xxx 预设。
 
 **焦点项**  
 
 **大小**
 
-这是的大小**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**结构 + 的大小**KSPROPERTY\_单步执行\_长时间**结构。
+这是**KSCAMERA\_PERFRAMESETTING\_帽\_标头**结构的大小 + **KSPROPERTY\_单步\_执行长**结构的大小。
 
 **Type**
 
-这必须是[ **KSCAMERA\_PERFRAMESETTING\_项\_类型。KSCAMERA\_PERFRAMESETTING\_项\_焦点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-kscamera_perframesetting_item_type#kscamera-perframesetting-item-focus)。
+这必须是[**KSCAMERA\_PERFRAMESETTING\_ITEM\_类型。KSCAMERA\_PERFRAMESETTING\_项\_焦点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-kscamera_perframesetting_item_type#kscamera-perframesetting-item-focus)。
 
-**标志**
+**随意**
 
-这包含可用的标志。 此字段必须通过执行按位或在 ksmedis.h 下面定义的标志的设置。
+其中包含可用标志。 此字段必须通过执行 ksmedis 中定义的一个按位或标记来设置。
 
 ```cpp
 #define KSCAMERA_PERFRAMESETTING_MANUAL     0x0000000200000000
 ```
 
-**Payload**
+**负载**
 
-必须在 KSPROPERTY 中指定的范围有效负载\_单步执行\_长时间结构。 Min、 max 和可重用功能区位置的步骤将根据**KSPROPERTY\_单步执行\_长。Bounds.UnsignedMinimum**， **KSPROPERTY\_单步执行\_长。Bounds.UnsignedMaximum**，并**KSPROPERTY\_单步执行\_长。SteppingDelta**。 每个帧设置焦点和它如何与全局焦点设置 interworks 的行为的定义，如下所示。
+必须在 KSPROPERTY\_单步执行\_LONG 结构中指定范围负载。 镜头位置的最小值、最大值和阶数取决于**KSPROPERTY\_步进\_长。UnsignedMinimum**， **KSPROPERTY\_步进\_LONG。UnsignedMaximum**和**KSPROPERTY\_步进\_LONG。SteppingDelta**。 按照以下方式定义每帧设置焦点的行为以及它如何 interworks 全局焦点设置。
 
-1.  可重用功能区位置是粘滞;但不是焦点命令。 如果已在全局设置中选择持续自动聚焦 （自助餐厅），自助餐厅操作仅对指定的帧中被重写和自助餐厅将可能提供手动焦点后移动 （有可能后全面扫描） 的可重用功能区位置。
+1.  镜头位置为粘滞;但不包括焦点命令。 如果在全局设置中选择了 "连续自动焦点（CAF）"，则只会为指定的帧重写 CAF 操作，并且在提供的手动焦点后 CAF 可能会移动镜头位置（可能在完全扫描之后）。
 
-2.  除非显式重写使用 PFS 中手动设置始终假定全局焦点设置。
+2.  除非使用 PFS 中的手动设置显式重写，否则始终假定全局焦点设置。
 
-3.  全局 AF 是单步，只适用于第一个帧，如果未不指定任何手动重写。
+3.  如果没有指定手动替代，则全局 AF 为一步，并且仅适用于第一帧。
 
-4.  除非显式重写由 PFS，全局自助餐厅适用于所有帧。
+4.  除非 PFS 显式重写，否则全局 CAF 适用于所有帧。
 
-5.  全局手动焦点设置不还原之后手动 PFS （可重用功能区位置保持） 信息。
+5.  全局手动焦点设置在手动 PFS 之后不会还原（镜头位置仍然存在）。
 
 **确认图像类型** 
 
 **大小**
 
-这是的大小**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**结构。
+这是**KSCAMERA\_PERFRAMESETTING\_帽\_标头**结构的大小。
 
 **Type**
 
-这必须是**KSCAMERA\_PERFRAMESETTING\_项\_类型。KSCAMERA\_PERFRAMESETTING\_项\_PHOTOCONFIRMATION**。
+这必须是**KSCAMERA\_PERFRAMESETTING\_ITEM\_类型。KSCAMERA\_PERFRAMESETTING\_项\_PHOTOCONFIRMATION**。
 
-**标志**
+**随意**
 
-不使用标志字段。
+不使用 "标志" 字段。
 
-**Payload**
+**负载**
 
-为此项目没有有效负载。
+此项没有有效负载。
 
 
 **自定义属性项**  
 
 **大小**
 
-这是的大小**KSCAMERA\_PERFRAMESETTING\_CAP\_标头**结构 + GUID 的大小。
+这是**KSCAMERA\_PERFRAMESETTING\_帽\_标头**结构和 GUID 大小的大小。
 
 **Type**
 
-这必须是**KSCAMERA\_PERFRAMESETTING\_项\_类型。KSCAMERA\_PERFRAMESETTING\_项\_自定义**。
+这必须是**KSCAMERA\_PERFRAMESETTING\_ITEM\_类型。KSCAMERA\_PERFRAMESETTING\_项\_自定义**。
 
-**标志**
+**随意**
 
-不使用标志字段。
+不使用 "标志" 字段。
 
-**Payload**
+**负载**
 
-这是自定义属性的 GUID。
+这是自定义属性 GUID。
 
 ## <a name="requirements"></a>要求
 
@@ -225,7 +225,7 @@ ms.locfileid: "63355191"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

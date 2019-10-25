@@ -1,6 +1,6 @@
 ---
-title: MRxLowIOSubmit\ LOWIO\_OP\_解锁\_多例程
-description: MRxLowIOSubmit\ LOWIO\_OP\_解锁\_多例程调用通过 RDBSS 请求网络微型重定向删除多个文件对象持有的锁。
+title: MRxLowIOSubmit \ LOWIO\_OP\_解锁\_多 \ 例程
+description: RDBSS 调用 MRxLowIOSubmit \ LOWIO\_OP\_\_多个 \ 例程，请求网络小型重定向程序删除对某个文件对象持有的多个锁。
 ms.assetid: 50f7abdf-a3f7-4625-ac54-75e80807d05e
 keywords:
 - MRxLowIOSubmit LOWIO_OP_UNLOCK_MULTIPLE 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 79fb5258b050a27a7cdfb3d915cfe6cc54529480
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c019eedabca0492abcd6e863830bff647494c38
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370091"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841097"
 ---
-# <a name="mrxlowiosubmitlowioopunlockmultiple-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]例程
+# <a name="mrxlowiosubmitlowio_op_unlock_multiple-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_\_多个\] 例程
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求的网络最小重定向程序中删除多个文件对象持有的锁。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用了*MRxLowIOSubmit\[LOWIO\_OP\_\_多个\]* 例程，请求网络小型重定向程序删除对某个文件对象持有的多个锁。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE](
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxLowIOSubmit\[LOWIO\_OP\_"解锁"\_多个\]* 返回状态\_成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -68,19 +68,19 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE](
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成请求。</p></td>
+<td align="left"><p>资源不足，无法完成请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>从远程服务器收到了无效的响应。</p></td>
+<td align="left"><p>从远程服务器收到无效的响应。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>在指定的参数无效<em>RxContext</em>。</p></td>
+<td align="left"><p>在<em>RxContext</em>中指定了无效的参数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_LINK_FAILED</strong></td>
-<td align="left"><p>尝试重新连接到远程服务器来完成该请求失败。</p></td>
+<td align="left"><p>尝试重新连接到远程服务器以完成请求失败。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
@@ -92,7 +92,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE](
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_UNSUCCESSFUL</strong></td>
-<td align="left"><p>在调用不成功。</p></td>
+<td align="left"><p>调用失败。</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,17 +102,17 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_UNLOCK_MULTIPLE](
 <a name="remarks"></a>备注
 -------
 
-RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 接收响应[ **IRP\_MJ\_锁\_控件**](irp-mj-lock-control.md) IRP 的细微的代码请求\_MN\_解锁\_所有或 IRP\_MN\_解锁\_所有\_BY\_密钥。
+RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* ，以响应接收[**IRP\_MJ\_** ](irp-mj-lock-control.md)使用次代码 IRP\_MN 锁定\_控制请求\_\_ALL 或 IRP\_解除锁定\_通过\_密钥\_所有\_。
 
-然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* ，RDBSS 修改 RX 中的以下成员\_上下文结构指向*RxContext*参数：
+在调用*MRxLowIOSubmit\[LOWIO\_OP\_\_多个\]* 时，RDBSS 会修改*RxContext*参数指向的 RX\_上下文结构中的以下成员：
 
-**LowIoContext.Operation**成员设置为 LOWIO\_OP\_解锁\_多个。
+**LowIoContext**成员设置为 LOWIO\_OP\_解锁\_多。
 
-**LowIoContext.ResourceThreadId**成员设置为启动 RDBSS 中的操作的进程线程。
+**LowIoContext. ResourceThreadId**成员设置为在 RDBSS 中启动操作的进程线程。
 
-**LowIoContext.ParamsFor.Locks.LockList**成员设置为一系列 LOWIO\_锁\_列表元素。 每个元素指定要将其解锁的范围。
+**LowIoContext**成员设置为 LOWIO\_锁定\_列表元素的列表。 每个元素都指定要解除锁定的范围。
 
-中指定的字节范围，以便能够解锁**LowIoContext.ParamsFor.Locks.LockList** RX 成员\_上下文结构。 LOWIO\_锁\_列表结构如下所示：
+要解锁的字节范围是在 RX\_上下文结构的**LockList**成员中指定的。 LOWIO\_锁定\_列表结构如下所示：
 
 ``` syntax
 typedef struct _LOWIO_LOCK_LIST {
@@ -125,11 +125,11 @@ typedef struct _LOWIO_LOCK_LIST {
 } LOWIO_LOCK_LIST, *PLOWIO_LOCK_LIST;
 ```
 
-**LowIoContext.Operation** RX 成员\_上下文指定要执行的较低的 I/O 操作。 可以为多个较低的 I/O 例程，使其指向网络微型重定向中的相同例程，因为**LowIoContext.Operation**成员可用于区分低请求的 I/O 操作。 例如，与文件锁相关的所有 I/O 调用可以在网络微型-重定向程序中都调用相同的低 I/O 例程，可以使用此例程**LowIoContext.Operation**成员区分锁定和解锁请求的操作。
+RX\_的**LowIoContext**成员指定要执行的低 i/o 操作。 由于可以使用**LowIoContext**成员来区分请求的低 i/o 操作，因此几个低 i/o 例程可能会指向网络小型重定向程序中的同一例程。 例如，所有与文件锁相关的 i/o 调用都可以在网络小型重定向程序中调用相同的低 i/o 例程，此例程可以使用**LowIoContext**成员来区分所请求的锁定和解除锁定操作。
 
-如果*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 例程可能需要很长时间才能完成，网络微型重定向程序驱动程序应释放FCB 之前启动的网络通信的结构。 FCB 结构可以释放通过调用[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)。 虽然*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 处理例程， **LowIoContext.ResourceThreadId** RX 成员\_上下文保证以指示启动了 RDBSS 中的操作的进程线程。
+如果*MRxLowIOSubmit\[LOWIO\_OP\_"解锁"\_多个\]* 例程可能需要很长时间才能完成，则网络微型重定向程序驱动程序应在启动网络之前释放 FCB 结构通讯. 可以通过调用[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)来释放 FCB 结构。 尽管*MRxLowIOSubmit\[LOWIO\_OP\_解锁\_多个\]* 例程正在处理，但 RX\_上下文的**LowIoContext**成员仍可指示启动 RDBSS 中的操作的进程。
 
-**LowIoContext.ResourceThreadId** RX 成员\_上下文可用于释放 FCB 结构代表另一个线程。 完成异步例程后，可以释放已获取从初始线程的 FCB 结构。
+RX\_上下文的**ResourceThreadId**成员可用于代表其他线程发布 FCB 结构。 异步例程完成后，可以释放从初始线程获取的 FCB 结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -142,35 +142,35 @@ typedef struct _LOWIO_LOCK_LIST {
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_NOTIFY\_CHANGE\_DIRECTORY\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]** ](mrxlowiosubmit-lowio-op-notify-change-directory-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_读取\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_解锁\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_写入\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

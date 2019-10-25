@@ -4,16 +4,16 @@ description: 电源管理的标准化 INF 关键字
 ms.assetid: bec8dd96-f64a-40eb-ade9-73c9a66a756e
 ms.date: 08/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ec32cac72955b92fecc9db9cd96c5306a4826e4c
-ms.sourcegitcommit: e2e4746c0efe082296c18de7ab14a1901e2eda9d
+ms.openlocfilehash: 5c9f647e485dd0b1ed90d6cf3b774272ebdcdc1d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71716939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841845"
 ---
 # <a name="standardized-inf-keywords-for-power-management"></a>电源管理的标准化 INF 关键字
 
-电源管理标准化关键字在设备驱动程序 INF 文件中定义。 操作系统将读取这些标准化关键字，并调整设备的当前电源管理功能。 设备驱动程序应始终在[**ndis\_微型端口\_适配器\_的 "\_常规属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)" 结构中指出设备的硬件电源管理功能。
+电源管理标准化关键字在设备驱动程序 INF 文件中定义。 操作系统将读取这些标准化关键字，并调整设备的当前电源管理功能。 设备驱动程序应始终将设备的硬件电源管理功能指示到[**ndis\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。
 
 定义了以下标准化 INF 关键字，以启用或禁用对网络适配器电源管理功能的支持。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71716939"
 一个值，用于描述在设备接收到*幻 paket*并且系统处于*S0ix*电源状态时是否应启用设备唤醒计算机。 当系统处于*S4*电源状态时，此功能不适用。
 
 > [!NOTE]
-> 在 NDIS 6.60 和更高版本，或者 Windows 10 版本1607及更高版本中支持**1ModernStandbyWoLMagicPacket。 @no__t**
+> 在 NDIS 6.60 和更高版本，或者 Windows 10 版本1607及更高版本中支持 **\*ModernStandbyWoLMagicPacket** 。
 
 <a href="" id="-devicesleepondisconnect"></a> **\*DeviceSleepOnDisconnect**  
 一个值，该值描述当媒体断开连接时是否应启用设备使设备进入低功耗状态（睡眠状态），并在媒体再次连接时返回到完全电源状态（唤醒状态）。
@@ -53,7 +53,7 @@ ms.locfileid: "71716939"
 与 SubkeyName 关联的显示文本。
 
 <a href="" id="value"></a>负值  
-与列表中的每个选项关联的枚举整数值。 此值存储在**NDI\\params\\** <em>SubkeyName\\值中。</em>
+与列表中的每个选项关联的枚举整数值。 此值存储在**NDI\\参数\\** <em>SubkeyName\\值中。</em>
 
 <a href="" id="enumdesc"></a>EnumDesc  
 与菜单中显示的每个值相关联的显示文本。
@@ -66,7 +66,7 @@ ms.locfileid: "71716939"
 <tr class="header">  
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -75,97 +75,97 @@ ms.locfileid: "71716939"
 <td align="left"><p><strong><em>WakeOnPattern</strong></p></td>
 <td align="left"><p>模式匹配时唤醒</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>WakeOnMagicPacket</strong></p></td>
 <td align="left"><p>幻数据包唤醒</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>ModernStandbyWoLMagicPacket</strong></p></td>
 <td align="left"><p>当系统处于<i>S0ix</i>电源状态时唤醒幻数据包</p></td>
 <td align="left"><p>0（默认值）</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>DeviceSleepOnDisconnect</strong></p></td>
 <td align="left"><p>断开连接时设备睡眠</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMARPOffload</strong></p></td>
 <td align="left"><p>ARP 卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PMNSOffload</strong></p></td>
 <td align="left"><p>NS 卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMWiFiRekeyOffload</strong></p></td>
 <td align="left"><p>WiFi 重新生成密钥卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*EEE</strong></p></td>
 <td align="left"><p>高能效以太网</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,48 +1,48 @@
 ---
 title: 实现 IPv6 NS 卸载
-description: 本部分介绍如何实现 IPv6 邻居招标 (NS) 卸载
+description: 本部分介绍如何实现 IPv6 邻居请求（NS）卸载
 ms.assetid: 48AACE46-4D39-49ED-90AD-F73E27D0CDBE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565613a276a8f876f97cbbe279c73a4940ff68a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d31487cbad6874e54437ed5070d8fe103c66d488
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374865"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843638"
 ---
 # <a name="implementing-ipv6-ns-offload"></a>实现 IPv6 NS 卸载
 
 
-NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_PM\_添加\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)OID 请求。 若要支持这些 NS 卸载请求，微型端口应执行以下操作。
+NDIS 协议驱动程序以 OID\_PM 的形式发送 IPv6 邻居请求（NS）卸载请求[\_添加\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)OID 请求。 若要支持这些 NS 卸载请求，微型端口应执行以下操作。
 
-## <a name="indicating-how-many-offload-requests-the-miniport-adapter-supports"></a>指示多少卸载请求微型端口适配器支持
+## <a name="indicating-how-many-offload-requests-the-miniport-adapter-supports"></a>指示微型端口适配器支持多少卸载请求
 
 
-微型端口驱动程序设置**NumNSOffloadIPv6Addresses**的成员[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构，以指示多少 NS卸载请求微型端口适配器支持。
+微型端口驱动程序将[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的**NumNSOffloadIPv6Addresses**成员设置为指示微型端口适配器支持的 NS 卸载请求数。
 
-**请注意**  尽管其名称**NumNSOffloadIPv6Addresses**成员包含的支持请求，不是数字的地址数。
-
- 
-
-**请注意**  某些 Windows 硬件认证要求，如**Device.Network.LAN.PM.PowMgmtNDIS**并**Device.Network.WLAN.WoWLAN.ImplementWakeOnWLAN**，指定的微型端口适配器必须支持至少 2 个 NS 卸载请求。 (即，以满足这些要求的值**NumNSOffloadIPv6Addresses**必须至少为 2。)有关详细信息，请参阅[Windows 8 硬件认证要求](https://go.microsoft.com/fwlink/p/?linkid=268621)。
+**请注意**  尽管名称相同，但**NumNSOffloadIPv6Addresses**成员包含受支持的请求数，而不是地址的数目。
 
  
 
-每个 NS 卸载请求可以包含 1 或 2 个目标地址。
+**请注意**，  一些 Windows 硬件认证要求，如**PowMgmtNDIS**和**WoWLAN。 ImplementWakeOnWLAN**，请指定微型端口适配器必须至少支持2个 NS。卸载请求。 （也就是说，若要满足这些要求， **NumNSOffloadIPv6Addresses**的值必须至少为2。）有关详细信息，请参阅[Windows 8 硬件认证要求](https://go.microsoft.com/fwlink/p/?linkid=268621)。
 
-此外，还有两种类型的 NS 消息： 单播和多播。 微型端口驱动程序必须准备好与两种类型的每个目标地址的 NS 消息相匹配。
+ 
+
+每个 NS 卸载请求可包含1个或2个目标地址。
+
+此外，有2种类型的 NS 消息：单播和多播。 小型端口驱动程序必须准备好匹配每个目标地址的 NS 消息类型。
 
 ### <a name="example"></a>示例
 
-如果微型端口驱动程序设置[ **NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)隶属**NumNSOffloadIPv6Addresses**然后 NDIS 可能为 3，结构发送最多 3 个[OID\_PM\_添加\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)类型的请求**NdisPMProtocolOffloadIdIPv6NS**。 每个 OID\_PM\_添加\_协议\_卸载请求中可以有完全 1 或 2 个地址**TargetIPv6Addresses**隶属[ **NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构。 因此，微型端口必须支持 3 x 2 = 6 目标地址。
+如果微型端口驱动程序将**NumNSOffloadIPv6Addresses**结构的[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)成员设置为3，则 ndis 最多可以向3个[\_\_PM 发送\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)键入**NdisPMProtocolOffloadIdIPv6NS**。 每个 OID\_PM\_添加\_协议\_卸载请求在[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的**TargetIPv6Addresses**成员中可能正好有1或2个地址。 因此，小型端口必须支持 3 x 2 = 6 目标地址。
 
-由于微型端口必须匹配这两个单播和多播的 NS 消息为每个目标地址，微型端口应该能够匹配总共 6 x 2 = 12 NS 消息模式。
+由于微型端口必须匹配每个目标地址的单播和多播 NS 消息，因此，微型端口应能匹配总共 6 x 2 = 12 个 NS 消息模式。
 
-## <a name="matching-the-ns-message"></a>NS 消息相匹配
+## <a name="matching-the-ns-message"></a>与 NS 消息匹配
 
 
-中指定 NS 消息格式[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)部分 4.3，"邻居请求消息格式"。 微型端口应与下表中的字段匹配。
+NS 消息格式在[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)第4.3 节 "邻居请求消息格式" 中指定。 小型端口应与下表中的字段匹配。
 
 <table>
 <colgroup>
@@ -54,57 +54,57 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">匹配值</th>
-<th align="left">说明</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>Ethernet.EtherType</strong></td>
-<td align="left"><p>0x86dd (IPv6)</p></td>
-<td align="left"><p>调整所需的非以太网的媒体类型。</p></td>
+<td align="left"><strong>EtherType</strong></td>
+<td align="left"><p>0x86dd （IPv6）</p></td>
+<td align="left"><p>根据非以太网介质类型的需要进行调整。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.Version</strong></td>
+<td align="left"><strong>IPv6. 版本</strong></td>
 <td align="left"><p>6</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.NextHeader</strong></td>
-<td align="left"><p>58 (ICMPv6)</p></td>
+<td align="left"><strong>NextHeader</strong></td>
+<td align="left"><p>58（ICMPv6）</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.HopLimit</strong></td>
+<td align="left"><strong>HopLimit</strong></td>
 <td align="left"><p>255</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.Destination</strong></td>
-<td align="left"><p><strong>OID.TargetIPv6Addresses[x]</strong> or <strong>OID.SolicitedNodeIPv6Address</strong></p></td>
-<td align="left"><p>微型端口必须匹配此字段的这两个选项：<strong>OID。TargetIPv6Addresses [x]</strong>和<strong>OID。SolicitedNodeIPv6Address</strong>。</p>
-<p>如果此字段为<strong>OID。TargetIPv6Addresses [x]</strong>，NS 消息是单播消息。</p>
-<p>如果此字段为<strong>OID。SolicitedNodeIPv6Address</strong>，NS 消息是多路广播的消息。</p>
-<p><strong>OID。TargetIPv6Addresses</strong>是一个数组，其中可以包含 1 或 2 个地址。 如果它包含 2 个地址，微型端口必须与匹配这两个值。 如果第二个地址，"0::0"必须忽略它，并且必须创建第二个匹配模式。</p></td>
+<td align="left"><strong>IPv6。目标</strong></td>
+<td align="left"><p><strong>OID。TargetIPv6Addresses [x]</strong>或<strong>OID。SolicitedNodeIPv6Address</strong></p></td>
+<td align="left"><p>小型端口必须与此字段的两个选项匹配： <strong>OID。TargetIPv6Addresses [x]</strong>和<strong>OID。SolicitedNodeIPv6Address</strong>。</p>
+<p>如果此字段为 OID，则为<strong>。TargetIPv6Addresses [x]</strong>，NS 消息是单播消息。</p>
+<p>如果此字段为 OID，则为<strong>。SolicitedNodeIPv6Address</strong>，NS 消息是一条多播消息。</p>
+<p><strong>OID。TargetIPv6Addresses</strong>是一个可包含1个或2个地址的数组。 如果它包含2个地址，则它必须同时匹配这两个地址。 如果第二个地址为 "0::0"，则必须将其忽略，并且不能创建另一个匹配模式。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.Type</strong></td>
-<td align="left"><p>135 (NS)</p></td>
+<td align="left"><strong>IPv6。类型</strong></td>
+<td align="left"><p>135（NS）</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.ICMPv6.Code</strong></td>
+<td align="left"><strong>IPv6. 代码</strong></td>
 <td align="left"><p>0</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.TargetAddress</strong></td>
-<td align="left"><p><strong>OID.TargetIPv6Addresses[x]</strong></p></td>
-<td align="left"><p><strong>OID。TargetIPv6Addresses [x]</strong>是一个数组，其中可以包含 1 或 2 个地址。</p></td>
+<td align="left"><strong>TargetAddress</strong></td>
+<td align="left"><p><strong>OID.TargetIPv6Addresses [x]</strong></p></td>
+<td align="left"><p><strong>OID。TargetIPv6Addresses [x]</strong>是可以包含1个或2个地址的数组。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.Source</strong></td>
+<td align="left"><strong>IPv6。源</strong></td>
 <td align="left"><p><strong>OID.RemoteIPv6Address</strong></p></td>
-<td align="left"><p>如果<strong>OID。RemoteIPv6Address</strong>是"0::0"，应忽略此字段。</p></td>
+<td align="left"><p>如果为，则为<strong>。RemoteIPv6Address</strong>是 "0::0"，应忽略此字段。</p></td>
 </tr>
 </tbody>
 </table>
@@ -114,7 +114,7 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 ## <a name="sending-the-na-message"></a>发送 NA 消息
 
 
-收到 NS 消息时，设备固件应执行验证步骤中调用[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)部分 7.1 中，"消息验证"，包括验证校验和。 如果传入的 NS 消息通过所有验证，然后 NA 消息必须生成和发送作为回复。 中指定它的格式[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)部分 4.4，"邻居公告消息格式"。 微型端口应该设置下表中的字段。
+接收到 NS 消息后，设备固件应执行[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)第7.1 节 "消息验证" 中调用的验证步骤，包括验证校验和。 如果传入 NS 消息通过了所有验证，则必须生成 NA 消息并将其作为答复发送。 其格式在[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)第4.4 节 "邻居广告消息格式" 中指定。 小型端口应设置下表中的字段。
 
 <table>
 <colgroup>
@@ -125,78 +125,78 @@ NDIS 协议驱动程序将发送 (NS) 卸载请求作为 IPv6 邻居招标[OID\_
 <thead>
 <tr class="header">
 <th align="left">字段</th>
-<th align="left">值</th>
-<th align="left">说明</th>
+<th align="left">Value</th>
+<th align="left">注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>Ethernet.Destination</strong></td>
-<td align="left"><strong>Ethernet.Source</strong></td>
-<td align="left"><p>NS 帧中复制此值。 调整所需的非以太网的媒体类型。</p></td>
+<td align="left"><strong>以太网。目标</strong></td>
+<td align="left"><strong>以太网。源</strong></td>
+<td align="left"><p>从 NS 帧中复制此值。 根据非以太网介质类型的需要进行调整。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Ethernet.Source</strong></td>
-<td align="left"><p>微型端口的当前的 MAC 地址</p></td>
+<td align="left"><strong>以太网。源</strong></td>
+<td align="left"><p>微型端口的当前 MAC 地址</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.HopLimit</strong></td>
+<td align="left"><strong>HopLimit</strong></td>
 <td align="left"><p>255</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.Source</strong></td>
-<td align="left"><strong>IPv6.ICMPv6.TargetAddress</strong></td>
-<td align="left"><p>NS 帧中复制此值。</p></td>
+<td align="left"><strong>IPv6。源</strong></td>
+<td align="left"><strong>TargetAddress</strong></td>
+<td align="left"><p>从 NS 帧中复制此值。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.Destination</strong></td>
-<td align="left"><strong>IPv6.Source</strong></td>
-<td align="left"><p>除非从 NS 帧中，复制此值的值<strong>IPv6.Source</strong>已"0::0"。 如果的值<strong>IPv6.Source</strong>已"0::0"设置此字段为"ff02:: 1"。</p></td>
+<td align="left"><strong>IPv6。目标</strong></td>
+<td align="left"><strong>IPv6。源</strong></td>
+<td align="left"><p>从 NS 帧复制此值，除非<strong>IPv6</strong>的值是 "0::0"。 如果<strong>IPv6</strong>的值为 "0::0"将此字段设置为 "FF02：： 1"。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.Type</strong></td>
-<td align="left"><p>136 (NA)</p></td>
+<td align="left"><strong>IPv6。类型</strong></td>
+<td align="left"><p>136（NA）</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.ICMPv6.Code</strong></td>
+<td align="left"><strong>IPv6. 代码</strong></td>
 <td align="left"><p>0</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.RouterFlag</strong></td>
+<td align="left"><strong>RouterFlag</strong></td>
 <td align="left"><p>0</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.ICMPv6.SolicitedFlag</strong></td>
+<td align="left"><strong>SolicitedFlag</strong></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>如果的值<strong>IPv6.Source</strong> NS 在帧是"0::0"，将此字段设置为 1。</p></td>
+<td align="left"><p>如果 NS 帧中的 " <strong>IPv6</strong> " 的值为 "0::0"，则将此字段设置为1。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.OverrideFlag</strong></td>
+<td align="left"><strong>OverrideFlag</strong></td>
 <td align="left"><p>1</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.ICMPv6.TargetAddress</strong></td>
-<td align="left"><strong>IPv6.ICMPv6.TargetAddress</strong></td>
-<td align="left"><p>NS 帧中复制此值。</p></td>
+<td align="left"><strong>TargetAddress</strong></td>
+<td align="left"><strong>TargetAddress</strong></td>
+<td align="left"><p>从 NS 帧中复制此值。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.TLLAOption.Type</strong></td>
-<td align="left"><p>2 （目标链路层地址）</p></td>
+<td align="left"><strong>TLLAOption。类型</strong></td>
+<td align="left"><p>2（目标链路层地址）</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>IPv6.ICMPv6.TLLAOption.Length</strong></td>
+<td align="left"><strong>TLLAOption. 长度</strong></td>
 <td align="left"><p>1</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>IPv6.ICMPv6.TLLAOption.LinkLayerAddress</strong></td>
+<td align="left"><strong>TLLAOption. LinkLayerAddress</strong></td>
 <td align="left"><strong>OID.MacAddress</strong></td>
 <td align="left"></td>
 </tr>

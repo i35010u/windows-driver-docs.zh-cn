@@ -3,16 +3,16 @@ title: 呼叫
 description: 呼叫
 ms.assetid: b5273df1-b99f-415c-a099-16a51f3329ee
 keywords:
-- 调用安装 WDK 的 CoNDIS
-- 进行呼叫 WDK 的 CoNDIS
+- 调用设置 WDK CoNDIS
+- 拨打 WDK CoNDIS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 394a69a9582a2c272d167401e9b2059f2690baf0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6956556adad86bef889f2d9fa0b2efb7ce39bce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356184"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844132"
 ---
 # <a name="making-a-call"></a>呼叫
 
@@ -20,43 +20,43 @@ ms.locfileid: "67356184"
 
 
 
-下图显示了客户端管理器发出的传出调用通过调用。
+下图显示了通过呼叫管理器发出传出呼叫的客户端。
 
-![说明客户端管理器发出的传出调用通过调用关系图](images/cm-11.png)
+![演示通过呼叫管理器发出传出呼叫的客户端的关系图](images/cm-11.png)
 
-下图显示了客户端进行传出调用通过 MCM 驱动程序。
+下图显示了通过 MCM 驱动程序发出传出呼叫的客户端。
 
-![说明客户端进行传出调用通过 mcm 驱动程序的关系图](images/fig1-11.png)
+![说明通过 mcm 驱动程序发出传出呼叫的客户端的关系图](images/fig1-11.png)
 
-传出调用前，必须面向连接的客户端：
+发出传出呼叫之前，面向连接的客户端必须：
 
--   初始化类型的结构中的调用参数[**共同\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))。 呼叫管理器或 MCM 驱动程序通常使用调用参数在客户端指定的调用，而派生的微型端口驱动程序使用的媒体参数。
+-   初始化类型为[**CO\_调用\_参数**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))的结构中的调用参数。 调用管理器或 MCM 驱动程序通常使用客户端指定的调用参数来设置呼叫，并使用这些参数来派生用于微型端口驱动程序的媒体参数。
 
--   启动[创建 VC](creating-a-vc.md)与[ **NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscocreatevc)。
+-   使用[**NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscocreatevc)开始[创建 VC](creating-a-vc.md) 。
 
-在成功返回的**NdisCoCreateVc**，客户端调用[ **NdisClMakeCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmakecall)来启动调用 （请参阅本部分中的两个图）。
+成功返回**NdisCoCreateVc**时，客户端会调用[**NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)来启动调用（请参阅本部分中的两个数字）。
 
-对其调用中**NdisClMakeCall**，客户端将指针传递给产生的 CO\_调用\_以前初始化的参数结构。 客户端还会传递*NdisVcHandle* (返回由**NdisCoCreateVc**)，它标识在调用的 VC 的客户端将传输 （和可能是接收） 数据。 如果客户端发出的多点调用 （对多个远程方的调用），它还会将*ProtocolPartyContext* ，它指定客户端维护每个参与方的客户端分配驻留的上下文区域的句柄在 multipoint VC 的初始参与方的状态。
+在调用**NdisClMakeCall**时，客户端会传递一个指向 CO\_调用的指针\_先前初始化的参数结构。 客户端还传递*NdisVcHandle* （由**NdisCoCreateVc**返回），该程序标识了客户端将在其上传输（并可能接收）调用的数据的 VC。 如果客户端进行 multipoint 调用（调用多个远程方），则它还会传递一个*ProtocolPartyContext* ，它指定客户端分配的常驻上下文区域的句柄，在该区域中，客户端将维护初始的每个参与方状态multipoint VC 上的参与方。
 
-在调用**NdisClMakeCall**会导致此请求转发到的 NDIS [ **ProtocolCmMakeCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_make_call)呼叫管理器或客户端与之共享的 MCM 驱动程序的函数给定*NdisVcHandle* 。 *ProtocolCmMakeCall*必须验证客户端设置的输入的调用参数。
+对**NdisClMakeCall**的调用会使 NDIS 将此请求转发到调用管理器或 MCM 驱动程序的[**ProtocolCmMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_make_call)函数，客户端在该驱动程序中共享给定的*NdisVcHandle* 。 *ProtocolCmMakeCall*必须验证客户端设置的输入调用参数。
 
-*ProtocolCmMakeCall*与网络控制的设备建立的通信 （信号消息交换）。 呼叫管理器调用[ **NdisCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscosendnetbufferlists)若要启动此类交换 (请参阅[发送 NET\_CoNDIS 驱动程序缓冲区结构](sending-net-buffer-structures-from-condis-drivers.md))。 MCM 驱动程序永远不会调用**NdisCoSendNetBufferLists**。 相反，它可以直接在网络上传输数据。
+*ProtocolCmMakeCall*通过网络控制设备进行连接以建立连接。 调用管理器调用[**NdisCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists)来启动此类交换（请参阅[通过 CoNDIS 驱动程序发送 NET\_缓冲区结构](sending-net-buffer-structures-from-condis-drivers.md)）。 MCM 驱动程序绝不会调用**NdisCoSendNetBufferLists**。 相反，它会直接通过网络传输数据。
 
-呼叫管理器或 MCM 驱动程序可以与相关的网络组件协商时修改客户端提供调用参数和可以返回不同的通信参数不是客户端最初提供给**NdisClMakeCall**（请参阅[传入请求，更改调用参数](incoming-request-to-change-call-parameters.md))。
+调用管理器或 MCM 驱动程序可以在与相关的网络组件协商时修改客户端提供的调用参数，并可以返回不同于客户端最初提供给**NdisClMakeCall**的流量参数（请参阅[传入请求更改调用参数](incoming-request-to-change-call-parameters.md)）。
 
-使用显式*NdisPartyHandle*传递给*ProtocolCmMakeCall*指示客户端创建 VC 将用于多点调用。 呼叫管理器或 MCM 驱动程序必须分配并初始化维护每个参与方的状态信息和控制的多点调用所需的所有必要的资源。
+传递给*ProtocolCmMakeCall*的显式*NdisPartyHandle*表示客户端创建的 VC 将用于 multipoint 调用。 调用管理器或 MCM 驱动程序必须分配和初始化维护每方状态信息和控制 multipoint 调用所需的任何必要资源。
 
-呼叫管理器已完成与所需的其介质其网络硬件的所有必要通信后，它必须调用[ **NdisCmActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmactivatevc)启动[VC 激活](activating-a-vc.md)上的调用发送和可能是接收数据。 MCM 驱动程序必须调用[ **NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmactivatevc)。
+在呼叫管理器按介质介质的要求完成与其网络硬件的所有必要通信后，必须调用[**NdisCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmactivatevc)来启动对将在其上发送和接收调用数据的[VC 的激活](activating-a-vc.md)。 MCM 驱动程序必须调用[**NdisMCmActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmactivatevc)。
 
-准备好进行 VC （即，具有 VC 后已激活） 上的数据传输基础微型端口驱动程序时，调用管理器会调用[ **NdisCmMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmmakecallcomplete)，和 MCM 驱动程序调用[ **NdisMCmMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmmakecallcomplete)。 此时，应与网络建立调用参数为 VC，协商呼叫管理器或 MCM 驱动程序和基础微型端口驱动程序应该已完成的 VC 激活。
+当基础微型端口驱动程序准备好在 VC 上进行数据传输时（即，在启用 VC 后），调用管理器将调用[**NdisCmMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmmakecallcomplete)，而 MCM 驱动程序调用[**NdisMCmMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmmakecallcomplete)。 此时，调用管理器或 MCM 驱动程序应该已与网络协商，以便为 VC 建立调用参数，基础微型端口驱动程序应已完成 VC 的激活。
 
-在调用**Ndis (M) CmMakeCallComplete**，呼叫管理器或 MCM 驱动程序调用向传递参数，为 VC 作为指针类型共同的结构\_调用\_参数。 如果呼叫管理器已修改客户端最初指定的调用参数，它可以通过设置调用通知客户端\_参数\_CHANGED 标志中产生的 CO\_调用\_参数结构。
+在调用**Ndis （M） CmMakeCallComplete**时，调用管理器或 MCM 驱动程序会将 VC 的 call 参数传递为指向类型为 CO\_调用的结构的指针\_参数。 如果调用管理器已修改客户端最初指定的调用参数，则它可以通过在 CO\_调用\_参数结构中设置调用\_参数\_CHANGED 标志来通知客户端。
 
-调用**Ndis (M) CmMakeCallComplete** NDIS 调用将导致[ **ProtocolClMakeCallComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cl_make_call_complete)发起传出呼叫的客户端函数。 调用*ProtocolClMakeCallComplete*指示呼叫管理器已完成处理客户端的请求建立与虚拟连接**NdisClMakeCall**。
+调用**ndis （M） CmMakeCallComplete**会使 ndis 调用发起传出调用的客户端的[**ProtocolClMakeCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cl_make_call_complete)函数。 对*ProtocolClMakeCallComplete*的调用指示调用管理器已完成处理客户端的请求，以便与**NdisClMakeCall**建立虚拟连接。
 
-如果客户端尝试建立传出调用是否成功， *ProtocolClMakeCallComplete*应检查在调用\_参数\_CHANGED 标志以确定是否调用参数最初客户端指定已修改。 如果设置了标志，指示更改了调用参数，请*ProtocolClMakeCallComplete*应检查返回的调用参数，以确定它们是否可接受此连接。
+如果客户端尝试建立传出调用成功， *ProtocolClMakeCallComplete*应检查调用\_参数\_CHANGED 标志，以确定客户端最初指定的调用参数是否为时间. 如果设置了标志，指示调用参数已更改，则*ProtocolClMakeCallComplete*应检查返回的调用参数，以确定它们是否可用于此连接。
 
-如果调用参数可接受的*ProtocolClMakeCallComplete*只需返回控件。 如果调用参数不接受的并且如果信号协议允许重新协商此时，客户端可以调用[ **NdisClModifyCallQoS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclmodifycallqos)请求调用的参数 （请参阅中的更改[Client-Initiated 关闭调用请求](client-initiated-request-to-close-a-call.md))。 如果信号协议不允许的不可接受的调用参数的重新协商*ProtocolClMakeCallComplete*必须关闭使用调用**NdisClCloseCall**（请参阅 Client-Initiated 请求到关闭调用）。
+如果调用参数是可接受的， *ProtocolClMakeCallComplete*只会返回 control。 如果调用参数不可接受，并且信号协议此时允许重新协商，则客户端可以调用[**NdisClModifyCallQoS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmodifycallqos)来请求调用参数的更改（请参阅[客户端启动的请求以关闭调用](client-initiated-request-to-close-a-call.md)）。 如果信号协议不允许重新协商无法接受的调用参数，则*ProtocolClMakeCallComplete*必须使用**NdisClCloseCall**销毁调用（请参阅客户端启动的请求以关闭调用）。
 
  
 

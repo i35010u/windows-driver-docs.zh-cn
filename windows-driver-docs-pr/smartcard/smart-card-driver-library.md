@@ -3,16 +3,16 @@ title: 智能卡驱动程序库
 description: 智能卡驱动程序库
 ms.assetid: 12f67a8d-9281-4f79-88c0-e1c9dff5a05d
 keywords:
-- 智能卡驱动程序 WDK、 库
+- 智能卡驱动程序 WDK，库
 - 库 WDK 智能卡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce343585823aace6cb1c59f28cdc434b3e585498
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d9e98529e8df9e7593a5a4b31a9a1134eb0db3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356662"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843572"
 ---
 # <a name="smart-card-driver-library"></a>智能卡驱动程序库
 
@@ -20,27 +20,27 @@ ms.locfileid: "67356662"
 ## <span id="_ntovr_smart_card_driver_library"></span><span id="_NTOVR_SMART_CARD_DRIVER_LIBRARY"></span>
 
 
-Microsoft 提供了一个包含一组标准化的智能卡读卡器驱动程序必须执行的函数的大部分例程的驱动程序库。 供应商提供读卡器驱动程序必须调用这些例程执行以下操作：
+Microsoft 提供了一个驱动程序库，其中包含一组用于标准化智能卡读卡器驱动程序必须执行的大部分功能的例程。 供应商提供的读取器驱动程序必须调用这些例程才能执行以下操作：
 
--   若要创建智能卡资源管理器要求的设备名称
+-   创建智能卡资源管理器所需的设备名称
 
--   若要检查参数并检测错误 IOCTL 调用
+-   检查参数并检测 IOCTL 调用的错误
 
--   若要分析 ATR 字符串并将参数转换
+-   分析 ATR 并转换参数
 
--   若要支持 T = 0 和 T = 1 ISO 协议
+-   支持 T = 0 和 T = 1 ISO 协议
 
--   若要支持的反约定
+-   支持反向约定
 
--   若要记录的事件
+-   记录事件
 
--   该驱动程序对访问进行同步
+-   同步对驱动程序的访问
 
-[WDM 智能卡驱动程序例程](https://docs.microsoft.com/previous-versions/ff549046(v=vs.85))部分中，列出了驱动程序库例程并标识哪个例程执行每个操作。
+" [WDM 智能卡驱动程序例程](https://docs.microsoft.com/previous-versions/ff549046(v=vs.85))" 部分列出了驱动程序库例程，并标识了执行每个操作的例程。
 
-驱动程序库处理大多数 IOCTL 请求的资源管理器将发送到读卡器驱动程序。 [智能卡驱动程序 Ioctl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)部分中，列出了 Ioctl 代表读卡器驱动程序处理驱动程序库。
+驱动程序库处理资源管理器发送到读取器驱动程序的大部分 IOCTL 请求。 "[智能卡驱动程序 IOCTLs](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) " 部分列出了驱动程序库代表读取器驱动程序处理的 IOCTLs。
 
-通过智能卡驱动程序库和驱动程序调用智能卡驱动程序库例程，均使用下面的文件。
+以下文件由智能卡驱动程序库和调用智能卡驱动程序库例程的驱动程序使用。
 
 <table>
 <colgroup>
@@ -55,20 +55,20 @@ Microsoft 提供了一个包含一组标准化的智能卡读卡器驱动程序�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><em>Smclib.h</em></p></td>
-<td align="left"><p>包含声明和定义所需的所有驱动程序调用智能卡库例程。</p></td>
+<td align="left"><p><em>Smclib</em></p></td>
+<td align="left"><p>包含调用智能卡库例程的所有驱动程序所需的声明和定义。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>Smcnt.h</em></p></td>
-<td align="left"><p>包含声明和定义所需的调用智能卡库例程的 WDM 驱动程序。</p></td>
+<td align="left"><p><em>Smcnt</em></p></td>
+<td align="left"><p>包含 WDM 驱动程序调用智能卡库例程所需的声明和定义。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>Winsmcrd.h</em></p></td>
-<td align="left"><p>所有智能卡读卡器驱动程序和可识别智能卡的应用程序的全局标头文件。</p></td>
+<td align="left"><p><em>Winsmcrd</em></p></td>
+<td align="left"><p>所有智能卡读卡器驱动程序和智能卡感知应用程序的全局头文件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>Smclib.sys</em></p></td>
-<td align="left"><p>用于 WDM 驱动程序库的二进制文件。</p></td>
+<td align="left"><p><em>Smclib</em></p></td>
+<td align="left"><p>用于 WDM 驱动程序的库的二进制文件。</p></td>
 </tr>
 </tbody>
 </table>

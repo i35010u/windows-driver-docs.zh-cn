@@ -4,19 +4,19 @@ description: 移动宽带 (MB) 设计指南主题
 ms.assetid: d5db6b69-c5a9-41d5-88c9-7c4d1e7c9c03
 ms.date: 08/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a15a0f45f6cf77d0a4fd93a4cdb76e24736ff8
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 84e13c423b535043d5e57973fe31cbf8c3dfca42
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565655"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844227"
 ---
 # <a name="mobile-broadband-mb-design-guide-topics"></a>移动宽带 (MB) 设计指南主题
 
 
-移动宽带 (MB) 设计指南部分介绍了移动宽带微型端口驱动程序必须执行的操作和任务。
+移动宽带（MB）设计指南部分介绍了移动宽带微型端口驱动程序必须执行的操作和任务。
 
-本部分包括以下主题：
+本部分包括下列主题：
 
 [开发 MB 微型驱动程序的路线图](roadmap-to-develop-mb-miniport-drivers.md)
 
@@ -64,7 +64,7 @@ ms.locfileid: "69565655"
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 
-[MB 协议配置选项 (PCO) 操作](mb-protocol-configuration-options-pco-operations.md)
+[MB 协议配置选项（PCO）操作](mb-protocol-configuration-options-pco-operations.md)
 
 [MB 低级别 UICC 访问](mb-low-level-uicc-access.md)
 
@@ -87,7 +87,7 @@ ms.locfileid: "69565655"
 ## <a name="related-topics"></a>相关主题
 
 
-[移动宽带参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[移动宽带参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

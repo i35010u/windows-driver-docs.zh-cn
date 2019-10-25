@@ -3,19 +3,19 @@ title: 微型驱动程序控制流
 description: 微型驱动程序控制流
 ms.assetid: c3c23d32-4023-445b-bd89-e0b454bec1ed
 keywords:
-- Stream.sys 类驱动程序 WDK Windows 2000 内核，控制流
-- 流式处理微型驱动程序 WDK Windows 2000 内核，控制流
+- Flow 类驱动程序 WDK Windows 2000 内核，控制流
+- 流式传输微型驱动程序 WDK Windows 2000 内核，控制流
 - 微型驱动程序 WDK Windows 2000 内核流式处理，控制流
-- 未初始化的流式处理微型驱动程序 WDK 流式处理微型驱动程序
+- 未初始化流式处理微型驱动程序 WDK 流式处理微型驱动程序
 - 初始化流式处理微型驱动程序 WDK Windows 2000 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8db361b5da8655504ccb06ea8e0138de13a0682b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 38e6a1eb3b114cebe51eb41d59f8a8781064ec95
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363309"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842137"
 ---
 # <a name="minidriver-flow-of-control"></a>微型驱动程序控制流
 
@@ -23,29 +23,29 @@ ms.locfileid: "67363309"
 
 
 
-以下步骤集通常遵循在初始化、 使用和取消流微型驱动程序。 以下引用的命令和结构此文档中其他地方介绍。
+以下一组步骤通常遵循初始化、使用和取消初始化流式处理微型驱动程序。 本文档的其他部分介绍了以下引用的命令和结构。
 
-**在初始化时，遵循的步骤使用，并且取消流式处理的微型驱动程序**
+**在初始化、使用和取消初始化流式处理微型驱动程序时遵循的步骤如下**
 
-1.  插枚举器中检测到微型驱动程序支持的硬件适配器。 枚举器检查注册表以解析符号的任何引用，并将请求传递到 I/O 子系统。
+1.  即插即用枚举器检测到微型驱动程序支持的硬件适配器。 枚举器检查注册表以解析任何符号引用，并将请求传递给 i/o 子系统。
 
-2.  I/O 子系统加载微型驱动程序，并调用微型驱动程序的**DriverEntry**例程 (请参阅[ **Stream 类微型驱动程序的 DriverEntry**](https://docs.microsoft.com/previous-versions/ff558717(v=vs.85))) 其中[**HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)分配并初始化结构。 中的信息创建一个文件对象**DriverEntry**例程。
+2.  I/o 子系统将加载微型驱动程序并调用微型驱动程序的**DriverEntry**例程（请参阅[**DriverEntry For Stream Class 微型驱动程序**](https://docs.microsoft.com/previous-versions/ff558717(v=vs.85))），其中\_数据结构分配和初始化[**HW\_初始化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)。 文件对象是从**DriverEntry**例程中的信息创建的。
 
-3.  微型驱动程序的**DriverEntry**例程然后调用流类驱动程序[ **StreamClassRegisterMinidriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassregisteradapter)函数并传递[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构作为参数。 HW\_初始化\_数据结构包括处理 Srb 的微型驱动程序函数的地址。 这允许微型驱动程序以响应 Srb 发送的类驱动程序。
+3.  然后，微型驱动程序的**DriverEntry**例程调用 stream 类驱动程序的[**StreamClassRegisterMinidriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassregisteradapter)函数并将[**HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构作为参数传递。 \_数据结构的 HW\_初始化包含处理 SRBs 的微型驱动程序函数的地址。 这允许微型驱动程序响应类驱动程序发送的 SRBs。
 
-4.  在初始化期间，stream 类驱动程序调用中指定的函数[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构的**HwReceivePacket**成员 (请参阅[ *StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nc-strmini-phw_receive_device_srb)) 使用和与 SRB**命令**成员设置为 SRB\_初始化\_设备。 然后，微型驱动程序初始化硬件适配器。
+4.  在初始化期间，stream 类驱动程序将在[**HW\_初始化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)中指定的函数\_数据结构的**HwReceivePacket**成员（请参阅[*StrMiniReceiveDevicePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nc-strmini-phw_receive_device_srb)）以及 SRB**和命令**成员设置为 SRB\_初始化\_设备。 然后，微型驱动程序初始化硬件适配器。
 
-5.  Stream 类驱动程序调用中指定的函数[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构的**HwReceivePacket**成员使用 SRB\_获取\_流\_信息。 然后，微型驱动程序返回有关它支持的流的信息。
+5.  流类驱动程序调用\_HW 中指定的函数[ **\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构的**HWRECEIVEPACKET**成员与 SRB\_获取\_流\_信息。 然后，微型驱动程序返回有关它所支持的流的信息。
 
-6.  Stream 类驱动程序调用中指定的函数**HW\_初始化\_数据**结构的**HwReceivePacket** SRB 成员\_打开\_流，与[ **HW\_流\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)结构。 微型驱动程序执行必要的硬件操作，以打开指定的流。
+6.  流类驱动程序调用 **\_hw**中指定的函数\_数据结构的**HWRECEIVEPACKET**成员与 SRB\_OPEN\_Stream，并使用[**hw\_stream\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)构造. 微型驱动程序执行必要的硬件操作以打开指定的流。
 
-7.  Stream 类驱动程序发送或从流请求数据，通过传递 SRB\_读取\_数据或 SRB\_编写\_数据命令中指定的函数**ReceiveDataPacket**成员的 HW\_流\_流的对象结构。
+7.  Stream 类驱动程序通过传递 SRB\_读取\_数据或 SRB\_将\_数据命令写入到 HW\_流的**ReceiveDataPacket**成员中指定的函数，发送或请求流中的数据\_流的对象结构。
 
-8.  Stream 类驱动程序获取和设置的属性和其他控制信息流通过传递适当的流请求块 ([**HW\_流\_请求\_块** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)) 中指定的函数到**ReceiveControlPacket** HW 成员\_流\_流的对象结构。
+8.  Stream 类驱动程序通过将相应的流请求块（[**HW\_stream\_请求\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)）传递给在中**指定的函数来获取和设置流的属性和其他控制信息。ReceiveControlPacket**\_流的对象结构的 HW\_流的成员。
 
-9.  如果系统是通过使用一个流，流类驱动程序调用中指定的函数[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构的**HwReceivePacket**成员 SRB\_关闭\_流。 微型驱动程序然后关闭指定的流。
+9.  当系统通过使用流时，stream 类驱动程序会调用\_HW 中指定的函数[ **\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构的**HWRECEIVEPACKET**成员与 SRB\_CLOSE\_流。 然后，微型驱动程序将关闭指定的流。
 
-10. Stream 类驱动程序时就可以取消初始化适配器时，调用中指定的函数[ **HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_initialization_data)结构的**HwReceivePacket**成员 SRB\_UNINITIALIZE\_设备。 微型驱动程序然后取消初始化设备。
+10. 当需要取消对适配器的初始化时，stream 类驱动程序会调用\_HW 中指定的函数[ **\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_initialization_data)结构的**HWRECEIVEPACKET**成员与 SRB\_取消初始化\_设备。 然后，微型驱动程序取消设备。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: AVCSTRM\_SET\_STATE
-description: AVCSTRM\_SET\_STATE
+title: AVCSTRM\_设置\_状态
+description: AVCSTRM\_设置\_状态
 ms.assetid: 890ae8d1-d7e2-40a4-af7f-b6df32d845e4
 keywords:
-- AVCSTRM_SET_STATE 流式处理媒体设备
+- AVCSTRM_SET_STATE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 547c16e95daf1d67c1b32f07cb145bb1e5cef6c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 007ebe7a07b43f40f9a03e2d1749298df8228d7a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386714"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845022"
 ---
-# <a name="avcstrmsetstate"></a>AVCSTRM\_SET\_STATE
+# <a name="avcstrm_set_state"></a>AVCSTRM\_设置\_状态
 
 
 ## <span id="ddk_avcstrm_set_state_ks"></span><span id="DDK_AVCSTRM_SET_STATE_KS"></span>
 
 
-**AVCSTRM\_设置\_状态**函数代码将指定的流放入新的流状态。
+**AVCSTRM\_设置\_状态**函数代码将指定流置于新的流状态。
 
 ### <a name="io-status-block"></a>I/O 状态块
 
-如果成功， *avcstrm.sys*设置**Irp-&gt;IoStatus.Status**状态\_成功。
+如果成功， *avcstrm*会将**Irp&gt;IOSTATUS**设置为 STATUS，状态\_SUCCESS。
 
-可能的错误返回的值包括：
+可能的错误返回值包括：
 
 <table>
 <colgroup>
@@ -47,11 +47,11 @@ ms.locfileid: "67386714"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_DEVICE_REMOVED</p></td>
-<td><p>设备对应于<strong>AVCSTRM_READ</strong>操作不再存在。</p></td>
+<td><p>与<strong>AVCSTRM_READ</strong>操作相对应的设备不再存在。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_CANCELLED</p></td>
-<td><p>请求无法完成。</p></td>
+<td><p>无法完成请求。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_INVALID_PARAMETER</p></td>
@@ -59,11 +59,11 @@ ms.locfileid: "67386714"
 </tr>
 <tr class="even">
 <td><p>STATUS_INSUFFICIENT_RESOURCES</p></td>
-<td><p>没有足够的系统资源来完成该请求。</p></td>
+<td><p>系统资源不足，无法完成请求。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_PENDING</p></td>
-<td><p>请求已收到但需要进一步处理。 I/O 完成例程将处理最终响应。</p></td>
+<td><p>已收到请求，但需要进一步处理。 I/o 完成例程将处理最后的响应。</p></td>
 </tr>
 </tbody>
 </table>
@@ -72,7 +72,7 @@ ms.locfileid: "67386714"
 
 ### <a name="comments"></a>备注
 
-此函数使用**StreamState**的成员**CommandData**联合 AVC\_流\_请求\_块结构如下所示。
+此函数使用 AVC\_流\_请求\_块结构中的**CommandData**联合的**StreamState**成员，如下所示。
 
 ```cpp
 typedef struct _AVC_STREAM_REQUEST_BLOCK {
@@ -96,30 +96,30 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在中声明*avcstrm.h*。 包括*avcstrm.h*。
+**标头：** 在*avcstrm*中声明。 包括*avcstrm*。
 
-### <a name="span-idavcstreamrequestblockinputspanspan-idavcstreamrequestblockinputspanavcstreamrequestblock-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC\_流\_请求\_块输入
+### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC\_STREAM\_请求\_块输入
 
-<span id="SizeOfThisBlock__Version_and_Function"></span><span id="sizeofthisblock__version_and_function"></span><span id="SIZEOFTHISBLOCK__VERSION_AND_FUNCTION"></span>**SizeOfThisBlock、 版本和函数**  
-使用[ **INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化这些成员。 传递**AVCSTRM\_设置\_状态**宏的请求参数中。
+<span id="SizeOfThisBlock__Version_and_Function"></span><span id="sizeofthisblock__version_and_function"></span><span id="SIZEOFTHISBLOCK__VERSION_AND_FUNCTION"></span>**SizeOfThisBlock、Version 和 Function**  
+使用[**INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化这些成员。 传递 AVCSTRM\_在宏的 Request 参数中**设置\_状态**。
 
 <span id="AVCStreamContext"></span><span id="avcstreamcontext"></span><span id="AVCSTREAMCONTEXT"></span>**AVCStreamContext**  
-指定流上下文 （句柄） 返回的早期**AVCSTRM\_打开**调用要放入新的流状态。
+指定由早期 AVCSTRM 返回的流上下文（句柄）， **\_打开**调用进入新的流状态。
 
 <span id="StreamState"></span><span id="streamstate"></span><span id="STREAMSTATE"></span>**StreamState**  
-指定新的流状态，将流式传输到。
+指定要将流置于其中的新流状态。
 
-子单元驱动程序必须首先分配 IRP 和一个[ **AVC\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)结构。 接下来，它应使用[ **INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化 AVC\_流\_请求\_块结构传递**AVCSTRM\_获取\_状态**为宏的请求参数。 接下来，设置子单元驱动程序**AVCStreamContext**成员添加到流的流上下文 （句柄） 以获取从流状态。
+子单位驱动程序必须先分配 IRP，并[ **\_流\_请求\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block)结构。 接下来，它应使用[**INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化 AVC\_流\_请求\_块结构，同时传递**AVCSTRM\_获取\_状态**作为宏的请求参数。 接下来，子源驱动程序将**AVCStreamContext**成员设置为要从其获取流状态的流的流上下文（句柄）。
 
-若要发送此请求，子单元提交[ **IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)与 IRP **IoControlCode** IRP 成员设置为[ **IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)并**Argument1** IRP 成员设置为AVC\_流\_请求\_块结构描述要放入新的流状态的流。
+若要发送此请求，子组会将[**irp\_MJ 提交\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)irp，并将 irp 集的**IoControlCode**成员设置为[**IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class)和**Argument1**IRP 的成员设置为 AVC\_STREAM\_请求\_块结构，该结构描述要置于新流状态的流。
 
-子单元驱动程序可能会以同步方式完成此命令。 挂起的操作中而不立即返回的结果*avcstrm.sys*。
+子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在*avcstrm*中运行挂起的操作。
 
-此函数代码必须调用在 IRQL = 被动\_级别。
+必须在 IRQL = 被动\_级别调用此函数代码。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
-[**AVC\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_avc_stream_request_block)， [ **INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/nf-avcstrm-init_avcstrm_header)， [ **IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)， [ **IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ni-avcstrm-ioctl_avcstrm_class)， [ **KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksstate)， [ **AVCSTRM\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ne-avcstrm-_avcstrm_function)
+[**AVC\_STREAM\_请求\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block)， [**INIT\_AVCSTRM\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)， [**IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)， [**IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class)、 [**KSSTATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)、 [**AVCSTRM\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ne-avcstrm-_avcstrm_function)
 
  
 

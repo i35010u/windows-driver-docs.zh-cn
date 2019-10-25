@@ -1,57 +1,57 @@
 ---
 title: I/O 传输序列
-description: 存储框架扩展 (SpbCx) 支持 I/O 传输序列。
+description: SPB 框架扩展（SpbCx）支持 i/o 传输顺序。
 ms.assetid: 7415DB28-5E93-4F47-B169-7C652969D4C7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e9868102afdce349af0e7da69c9369d0dfb77a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 109362ddf4fcca4d5d5558cc0cf66ec63764e50c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373753"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842871"
 ---
 # <a name="io-transfer-sequences"></a>I/O 传输序列
 
-存储框架扩展 (SpbCx) 支持 I/O 传输序列。 I/O 传输序列是一组有序的总线传输 （读取和写入操作），作为单个、 原子总线操作执行。 在 I/O 传输序列中传输的所有访问总线上相同的目标设备。 一个序列，在执行时，可以访问总线上的没有其他设备，即使存储控制器驱动程序可能会收到其他设备的 I/O 请求 I/O 传输序列完成之前也是如此。
+SPB 框架扩展（SpbCx）支持 i/o 传输顺序。 I/o 传输序列是一组有序的总线传输（读取和写入操作），作为一种原子总线操作执行。 I/o 传输序列中的所有传输在总线上访问相同的目标设备。 执行序列时，即使在 i/o 传输序列完成之前，SPB 控制器驱动程序可能会收到其他设备的 i/o 请求，也无法访问总线上的其他设备。
 
-I/O 传输序列的示例是一个读写操作，这是读取操作的总线后, 跟一个总线写操作。 客户端外围设备驱动程序可能会使用此类型的序列将写入存储连接的外围设备中的函数选择寄存器，然后阅读所选的设备函数的值。 不同长度可以是以下两个传输。 例如，写入操作可能会传输一个字节的数据，并且读取的操作可能会传输数据的字节数。
+I/o 传输序列的一个示例是一个写入读取操作，该操作是一个后跟总线读取操作的总线写入操作。 客户端外设驱动程序可以使用这种类型的序列来写入由 SPB 连接的外围设备中的函数选择注册，然后读取所选设备功能的值。 这两个传输的长度可能不同。 例如，写操作可能传输一个字节的数据，并且读取操作可能传输多个字节的数据。
 
-## <a name="types-of-io-transfer-sequences"></a>类型的 I/O 传输序列
+## <a name="types-of-io-transfer-sequences"></a>I/o 传输序列的类型
 
-客户端可以启动 I/O 传输序列中通过以下两种方法之一：
+客户端可以通过以下两种方式之一来启动 i/o 传输序列：
 
-* 客户端可以指定中的整个序列[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857) I/O 控制请求。 此请求启用存储控制器驱动程序使用任何特定于硬件的性能优化，可用于执行传输序列。 有关详细信息，请参阅[单请求序列](#single-request-sequences)。
+* 客户端可以在 IOCTL\_SPB 中指定整个序列[ **\_执行\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)i/o 控制请求。 此请求使 SPB 控制器驱动程序可以使用任何特定于硬件的性能优化来执行传输顺序。 有关详细信息，请参阅[单请求序列](#single-request-sequences)。
 
-* 客户端可以发送[ **IOCTL\_存储\_锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858) I/O 控制请求锁定在序列开头的控制器并发送[ **IOCTL\_存储\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)序列何时完成。 当控制器处于锁定状态时，客户端发送一个单独的 I/O 请求 ([**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或者[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)) 为每个读取或写入操作的顺序。 有关详细信息，请参阅[Client-Implemented 序列](#client-implemented-sequences)。
+* 客户端可以发送[**ioctl\_SPB\_锁定\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)i/o 控制请求，以在序列的开头锁定控制器，并在序列为时发送[**ioctl\_SPB\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)完成. 锁定控制器时，客户端将为序列中的每个读取或写入操作发送单独的 i/o 请求（[**IRP\_mj\_read**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或[**irp\_mj\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)）。 有关详细信息，请参阅[客户端实现的序列](#client-implemented-sequences)。
 
-只要有可能，应使用客户端**IOCTL\_存储\_EXECUTE\_序列**请求，这是速度更快，不太容易发生错误，并明显减少在的其他过程的时间客户端被锁定在总线之外。 但是，可以使用客户端**IOCTL\_存储\_锁\_控制器**并**IOCTL\_存储\_解锁\_控制器**请求如果它必须查看之前它可以启动序列中的更高版本复制期间其中一个传输序列中读取的值。 在这种情况下，精心的设计是避免锁定超出的总线长于是必需的其他客户端所必需的设计得不合理的外围设备驱动程序会降低总体系统性能。
+只要有可能，客户端应使用**IOCTL\_SPB\_执行\_序列**请求，该请求速度更快，不容易出错，并且大大减少了其他客户端被锁定到总线的时间。 但是，客户端可以使用**ioctl\_spb\_锁定\_控制器**和**ioctl\_SPB** ，如果必须查看在序列中的某个传输过程中读取的值，则\_控制器请求，然后才能在序列中启动后续传输。 在这种情况下，需要仔细设计，以避免在总线外锁定其他客户端的时间比所需时间更长，并且设计错误的外设驱动程序可能会降低整体系统性能。
 
 ## <a name="single-request-sequences"></a>单请求序列
 
-若要提高性能，您的存储控制器驱动程序应实现[ *EvtSpbControllerIoSequence* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_sequence)回调函数来处理[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求。 这种方法向存储控制器驱动程序添加某种程度的复杂性，但可以避免需要客户端来执行 I/O 传输序列作为一系列单独读取和写入操作，而其他客户端被锁定在总线。
+为了提高性能，SPB 控制器驱动程序应实现[*EvtSpbControllerIoSequence*](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_sequence)回调函数来处理[**IOCTL\_SPB\_执行\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求。 此方法增加了对 SPB 控制器驱动程序的复杂性，但避免了在其他客户端被锁定在总线之外时，客户端将 i/o 传输序列作为一系列单独的读取和写入操作执行。
 
 > [!NOTE]
-> 实现*EvtSpbControllerIoSequence*函数强烈建议，并可能会针对 Windows 8 的一项要求。
+> 强烈建议实现*EvtSpbControllerIoSequence*函数，这可能成为 Windows 8 的要求。
 
- 传输序列的实现类似于简单的读取或写入操作，但此外要求对序列中的各个传输之间的序列操作的存储状态的更新。 首次传输完成后，存储控制器驱动程序更新要选择下一个传输序列中的序列状态。 序列状态存储在设备上下文中，包括[ **SPBREQUEST** ](https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-object-handles)句柄传递给*EvtSpbControllerIoSequence*回调。 存储控制器驱动程序使用此句柄来获取缓冲区、 长度、 方向，并为序列中的各个传输位置参数。 有关获取这些参数的详细信息，请参阅[ **SpbRequestGetTransferParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nf-spbcx-spbrequestgettransferparameters)。
+ 传输序列的实现类似于简单的读取或写入操作，但此外还要求更新序列中单个传输之间的顺序操作的存储状态。 第一次传输完成后，SPB 控制器驱动程序会更新序列状态，以选择序列中的下一次传输。 序列状态存储在设备上下文中，并包含传递给*EvtSpbControllerIoSequence*回调的[**SPBREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/spb/spbcx-object-handles)句柄。 SPB 控制器驱动程序使用此句柄获取顺序中单个传输的缓冲区、长度、方向和位置参数。 有关获取这些参数的详细信息，请参阅[**SpbRequestGetTransferParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nf-spbcx-spbrequestgettransferparameters)。
 
-如果存储控制器驱动程序将无法执行请求**IOCTL\_存储\_EXECUTE\_序列**操作，完成了失败代码的请求。 如果发生此类故障，客户端可以作为一个选项，锁定总线、 明确地执行 I/O 传输序列作为一系列简单的 I/O 请求，然后解锁总线。 有关详细信息，请参阅[Client-Implemented 序列](#client-implemented-sequences)。
+如果 SPB 控制器驱动程序无法执行所请求的**IOCTL\_SPB\_执行\_序列**操作，则会完成请求并出现错误代码。 如果发生此类故障，客户端可以选择锁定总线，将 i/o 传输序列显式作为一系列简单的 i/o 请求，并将总线解锁。 有关详细信息，请参阅[客户端实现的序列](#client-implemented-sequences)。
 
-SpbCx does 参数检查**IOCTL\_存储\_* XXX*** 从外围设备驱动程序收到的请求。 有关**IOCTL\_存储\_EXECUTE\_序列**请求时，SpbCx 拒绝空序列和包含缓冲区指针为 NULL 或零长度的缓冲区的序列。
+SpbCx 对**IOCTL\_SPB 进行参数检查\_* XXX*** 从外围设备驱动程序接收的请求。 对于**IOCTL\_SPB\_执行\_序列**请求，SpbCx 拒绝空序列以及包含空缓冲区指针或长度为零的缓冲区的序列。
 
-存储控制器驱动程序应验证序列中每次传输的长度不超过驱动程序指定的限制。 例如，SkeletonI2C 示例驱动程序 Windows Driver Kit (WDK) 中失败**IOCTL\_存储\_EXECUTE\_序列**指定超过 4k 字节的传输和设置状态的请求此请求状态代码\_无效\_参数。 初始化为序列操作之前**IOCTL\_存储\_EXECUTE\_序列**请求，驱动程序应验证所有传输序列中，若要验证的参数可以成功完成操作。
+SPB 控制器驱动程序应验证序列中每个传输的长度是否不超过驱动程序指定的限制。 例如，Windows 驱动程序工具包（WDK）中的 SkeletonI2C 示例驱动程序无法通过**IOCTL\_SPB\_执行**指定传输超过4k 个字节的\_序列请求，并将此请求的状态代码设置为 "状态"\_\_参数无效。 为 IOCTL\_SPB 启动序列操作后 **\_执行\_序列**请求，驱动程序应该验证顺序中所有传输的参数，以验证是否可以成功完成操作。
 
-永远不会位于 SpbCx *EvtSpbControllerIoSequence*具有回调[ *EvtSpbControllerLock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_lock)回调，并且它永远不会遵循*EvtSpbControllerIoSequence*具有回调[ *EvtSpbControllerUnlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_controller_lock)回调。
+SpbCx 绝不会在*EvtSpbControllerIoSequence*回调之前使用[*EvtSpbControllerLock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_lock)回调，并且它永远不会跟随带有[*EvtSpbControllerUnlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/spbcx/nc-spbcx-evt_spb_controller_lock)回调的*EvtSpbControllerIoSequence*回调。
 
-## <a name="client-implemented-sequences"></a>客户端实现序列
+## <a name="client-implemented-sequences"></a>客户端实现的序列
 
-存储控制器驱动程序的客户端可以显式执行 I/O 传输序列，如一系列简单的读取和写入。 客户端可以是一个内核模式驱动程序或控制连接到总线的外围设备的用户模式驱动程序。 之前在序列中第一个传输，客户端发送[ **IOCTL\_存储\_锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)到目标设备的请求，以防止其他，从出现的顺序传输之间的不相关的总线访问。 接下来，客户端发送[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)按顺序执行传输的请求。 最后，客户端发送[ **IOCTL\_存储\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)释放锁的请求。
+SPB 控制器驱动程序的客户端可以将 i/o 传输序列显式执行为一系列简单的读取和写入操作。 客户端可以是内核模式驱动程序，也可以是控制连接到总线的外围设备的用户模式驱动程序。 在序列中第一次传输之前，客户端会向目标设备发送[**IOCTL\_SPB\_锁定\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)请求，以防在序列中的传输之间发生其他不相关的总线访问。 接下来，客户端发送[**IRP\_mj\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)和[**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求，以在序列中执行传输。 最后，客户端发送[**IOCTL\_SPB\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)请求以释放该锁。
 
-客户端可能需要实施这种类型的 I/O 传输序列，如果序列中的更高版本传输程序依赖于早期的传输。 例如，第一次读取可能指示更多的字节数，随后读取或写入。 如果没有此类依赖项存在，但是，客户端应发送[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求存储控制器驱动程序，后者可以更有效地执行序列。
+如果序列中的后续传输依赖于早期传输，则客户端可能需要实现此类型的 i/o 传输顺序。 例如，第一次读取可能指示以后要读取或写入的字节数。 但是，如果不存在这样的依赖项，则客户端应发送[**IOCTL\_spb\_** ](https://msdn.microsoft.com/library/windows/hardware/hh450857)对 spb 控制器驱动程序执行\_序列请求，这样可以更有效地执行序列。
 
-之间**IOCTL\_存储\_锁\_控制器**请求启动客户端实现的序列，和**IOCTL\_存储\_解锁\_控制器**结束序列，请求客户端可以发送到目标设备的唯一 I/O 请求**IRP\_MJ\_读取**和**IRP\_MJ\_编写**请求。 此规则的任何冲突时出错。
+在**IOCTL\_SPB 之间\_锁定\_控制器**请求，该请求启动客户端实现的序列，而**IOCTL\_SPB\_解锁**结束序列的\_控制器请求，即唯一 i/o 请求客户端可以向目标设备发送的是**IRP\_mj\_读取**和**irp\_mj\_写入**请求。 任何违反此规则的情况都是错误。
 
-存储锁仅用于保证读取和写入一系列作为总线原子操作，执行，并应专门用于此目的。
+SPB 锁仅用于保证读取和写入序列作为原子总线操作执行，应专门用于此目的。
 
-有关详细信息，请参阅[Handling Client-Implemented 序列](https://docs.microsoft.com/windows-hardware/drivers/spb/handling-client-implemented-sequences)。
+有关详细信息，请参阅[处理客户端实现的序列](https://docs.microsoft.com/windows-hardware/drivers/spb/handling-client-implemented-sequences)。

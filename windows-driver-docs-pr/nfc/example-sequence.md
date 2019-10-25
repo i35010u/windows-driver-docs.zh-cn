@@ -2,87 +2,87 @@
 title: 示例序列
 ms.assetid: 2B15570A-A220-4BF7-B595-D9CF66E02673
 keywords:
-- Ioctl 序列中包括启动连接和断开连接的智能卡资源管理器的示例
+- 智能卡资源管理器中的 IOCTLs 序列示例，包括启动连接和断开连接
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
-description: 提供在智能卡资源管理器，包括启动、 连接和断开连接的 Ioctl 序列的示例。
+description: 提供智能卡资源管理器中 IOCTLs 序列的示例，包括启动、连接和断开连接。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d85138dfb1fe9ee298d72c85d8788709ac55888
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fff748d7c696c5c0abf46e539a65c92aca542d89
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370523"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843414"
 ---
 # <a name="example-sequence"></a>示例序列
 
 
-下面是 Ioctl 智能卡资源管理器中的示例序列：
+下面是智能卡资源管理器中 IOCTLs 的一个示例序列：
 
-## <a name="start-up-sequence"></a>启动顺序
+## <a name="start-up-sequence"></a>启动序列
 
 
-1.  使用智能卡访问设备接口的 GUID 与 DevObj 或 CfgMgr API，以发现 NFC 设备驱动程序的名称，并将其用于 CreateFile 打开的设备句柄。
+1.  使用具有智能卡访问设备接口 GUID 的 DevObj 或 Cfgmgr.lnk API 来发现 NFC 设备驱动程序的名称，并将其与 CreateFile 一起使用以打开设备句柄。
 
 2.  初始化线程池。
 
-3.  确定读取器的名称。
+3.  确定读取器名称。
 
-    -   IOCTL\_智能卡\_获取\_放弃属性\_ATTR\_供应商\_名称、 放弃\_ATTR\_供应商\_IFD\_类型并放弃\_ATTR\_设备\_单元
+    -   IOCTL\_智能卡\_在放弃\_ATTR 上获取\_特性\_供应商\_名称、放弃\_属性\_供应商\_IFD\_类型和放弃\_ATTR\_设备\_单元
 
-4.  确定读取器的特征。
-    -   IOCTL\_智能卡\_获取\_放弃属性\_ATTR\_特征
+4.  确定读取器特征。
+    -   IOCTL\_智能卡\_在\_放弃上获取\_特性\_特性
 
 5.  启动卡状态监视器。
-    -   IOCTL\_智能卡\_IS\_存在 – 要等待的时间智能卡到达。
+    -   IOCTL\_智能卡\_\_存在–等待智能卡到达。
 
-    -   IOCTL\_智能卡\_IS\_ABSENT – 要等待的时间智能卡出发。
+    -   IOCTL\_智能卡\_\_不存在–等待智能卡离开。
 
-重置电源是不相关，因为我们不支持放弃\_SWALLOWED、 放弃\_提供支持的状态。
+因为我们不支持放弃\_吞并，放弃\_通电状态，所以重置功能是不相关的。
 
-## <a name="connect-sequence"></a>连接序列
+## <a name="connect-sequence"></a>连接顺序
 
 
-1.  循环的开头。
+1.  循环起点。
 
 2.  IOCTL\_智能卡\_获取\_状态
 
-    -   本例中放弃\_UNKNOWN 和放弃\_不存在，不执行任何操作
+    -   大小写放弃\_未知和放弃\_不存在，不执行任何操作
 
-    -   本例中放弃\_存在，允许存在卡
+    -   Case 放弃\_存在，吞并卡
 
-    -   本例中放弃\_被抑制，冷重置
+    -   Case 放弃\_吞并，冷重置
 
-    -   本例中放弃\_提供支持，尝试重置
+    -   放弃\_电源、热重置
 
-    -   本例中放弃\_NEGOTIABLE，确定卡 ATR
+    -   Case 放弃\_流通，确定卡 ATR
 
-    -   本例中放弃\_特定，确定卡 ATR 和协议
+    -   Case 放弃\_特定的，确定卡 ATR 和协议
 
-3.  IOCTL\_智能卡\_设置\_协议
+3.  IOCTL\_智能卡\_集\_协议
 
 ## <a name="disconnect-sequence"></a>断开连接序列
 
 
-1.  启动电源关闭超时。
+1.  关机超时。
 
-2.  循环的开头。
+2.  循环起点。
 
 3.  IOCTL\_智能卡\_获取\_状态
 
-    -   本例中放弃\_详细信息，放弃\_NEGOTIABLE、 放弃\_提供支持，将幂设置向下
+    -   案例放弃\_特定、放弃\_流通、放弃\_已接通电源，并将电源关闭
 
-    -   本例中放弃\_SWALLOWED、 放弃\_存在，不执行任何操作
+    -   Case 放弃\_吞并，放弃\_存在，不执行任何操作
 
-    -   本例中放弃\_不存在，放弃\_未知、 不执行任何操作
+    -   Case 放弃\_不存在，放弃\_未知，不执行任何操作
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 [智能卡 DDI 和命令参考](https://docs.microsoft.com/previous-versions/dn905601(v=vs.85))  

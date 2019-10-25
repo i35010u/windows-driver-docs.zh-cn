@@ -4,12 +4,12 @@ description: 网络设备的标准化 INF 关键字
 ms.assetid: F79AFB63-D404-4A5C-9515-82FFEB667048
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf83131e0ab1b8b65a5268b27a71de74335c544
-ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
+ms.openlocfilehash: 09f77d3d5cde454777adb118e73360ea4ea0fb70
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71285089"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841847"
 ---
 # <a name="standardized-inf-keywords-for-network-devices"></a>网络设备的标准化 INF 关键字
 
@@ -31,11 +31,11 @@ ms.locfileid: "71285089"
 
 -   **\*IfType**
 
--   **\*MediaType**
+-   **\*媒体媒体**
 
 -   **\*PhysicalMediaType**
 
-如果驱动程序的 INF 文件中缺少必需的关键字，NDIS 不会调用微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数。
+如果驱动程序的 INF 文件中缺少必需的关键字，NDIS 不会调用微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数。
 
 如果以下两个条件均为 true，则 NDIS 6.0 和更高的微型端口驱动程序需要标准化关键字：
 
@@ -43,7 +43,7 @@ ms.locfileid: "71285089"
 
 -   设备完全支持指定的属性。
 
-**注意标准化关键字**是可选的，但建议用于 ndis 5.1 和更低版本的 ndis 微型端口驱动程序。  
+**请注意**  标准化关键字是可选的，但建议用于 ndis 5.1 和更早的 ndis 小型端口驱动程序。
 
  
 

@@ -5,109 +5,109 @@ ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES, OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ba83740d068d846bc02820c6f72758524ab314
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5614807dbc4922fb0e2969d4475ea0ec96d60826
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360805"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844603"
 ---
 [!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
 
-# <a name="oidgenrsssetindirectiontableentries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
+# <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
 
-向发送 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID [RSSv2](receive-side-scaling-version-2-rssv2-.md)-支持的微型端口驱动程序执行的单个间接移动表条目。 此 oid[同步 OID](synchronous-oid-request-interface-in-ndis-6-80.md)，这意味着它不能返回 NDIS_STATUS_PENDING。 将为它颁发作为仅方法请求，在 IRQL = = DISPATCH_LEVEL。 
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID 发送到支持[RSSv2](receive-side-scaling-version-2-rssv2-.md)的微型端口驱动程序，以执行单个间接表项的移动。 此 OID 是[同步 oid](synchronous-oid-request-interface-in-ndis-6-80.md)，这意味着它不能返回 NDIS_STATUS_PENDING。 它仅作为方法请求发出，位于 IRQL = = DISPATCH_LEVEL。 
 
-此调用使用*XxxSynchronousOidRequest*入口点，其中*Xxx*可以是*微型端口*或*筛选器*具体取决于的类型收到请求后的驱动程序。 如果它看到 NDIS_STATUS_PENDING 返回状态，此入口点会导致检查系统错误。
+此调用使用*XxxSynchronousOidRequest*入口点，其中*Xxx*是*微型端口*或*筛选器*，具体取决于接收请求的驱动程序类型。 如果此入口点发现 NDIS_STATUS_PENDING 返回状态，则会导致系统 bug 检查。
 
-使用 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)结构，以指示的微型端口适配器以同步方式执行的一组操作，其中每个操作移动单个条目的 RSS间接寻址到的目标指定 VPort 表指定的 CPU。
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 使用[NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)结构来指示微型端口适配器同步执行一组操作，其中每个操作都将一个输入的 RSS 间接寻址表指定的 VPort 为目标指定的 CPU。
 
 ## <a name="remarks"></a>备注
 
-此 OID 必须执行，并在颁发它的处理器上下文中完成。 微型端口驱动程序必须完全执行后返回到较高层的 NDIS_STATUS_SUCCESS 此 OID。 这意味着，微型端口驱动程序应准备好接收 NDIS_STATUS_SUCCESS 与第一次移动完成后立即在新的处理器上移动多个 Ite 的连续 OID 请求。 
+此 OID 必须在发出它的处理器上下文中执行和完成。 将 NDIS_STATUS_SUCCESS 返回到上层时，微型端口驱动程序必须完全执行此 OID。 这意味着，小型端口驱动程序应准备好接收返回的 OID 请求，以便在第一次移动完成后立即接收到新处理器上的多个 ITEs。 
 
 > [!TIP]
-> 完全执行此 OID 意味着微型端口驱动程序必须准备好成功尝试另一项操作来移动项。 它并不指定其中正在进行接收队列移动，这可以是源 CPU 或目标 CPU 后会指示流量。
+> 完全执行此 OID 意味着微型端口驱动程序必须准备好，才能成功尝试另一个操作来移动 I)。 它并不规定在队列移动后（可以在源 CPU 或目标 CPU 上）直接指定正在进行的接收流量的位置。
 
-上层协议发出 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 设置 Ite 和/或主数据库和默认处理器参数以指向不同的处理器。 
+上层协议颁发 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES，将 ITEs 和/或主和默认处理器参数设置为指向不同的处理器。 
 
-可以为颁发此 OID *active*或*处于非活动状态*流量控制的参数。 控制参数的详细信息，请参阅[接收方缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)。 针对中的参数/Ite*处于非活动状态*状态下，应验证微型端口驱动程序，将其缓存直到下一个相关 RSS 状态更改 （启用或禁用） 的目标处理器。 此时，缓存会变得处理器编号*active* ，用于将流量定向。 更新到*active*参数 （这些也必须进行验证） 参数，应采取立即生效以将流量定向。
+可以为*活动*或*非活动*流量控制参数发出此 OID。 有关方向盘参数的详细信息，请参阅[接收方缩放版本2（RSSv2）](receive-side-scaling-version-2-rssv2-.md)。 对于处于*非活动*状态的参数/ITEs，微型端口驱动程序应该验证并缓存目标处理器，直到下一个相关 RSS 状态更改（启用或禁用）。 此时，缓存的处理器编号将变为*活动状态*，并用于定向流量。 应立即将对*活动*参数的更新（还必须验证）进行更新，以指示流量。
 
-必须给微型端口适配器与颁发 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES *NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*清除的标志。 这是因为数组中的不同元素所引用的不同 VPorts 的可能性。
+必须将 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 颁发给微型端口适配器，并清除*NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*标志。 这是因为数组中的不同元素可能会引用不同的 VPorts。
 
-此 OID 调用仅在 IRQL = DISPATCH_LEVEL =。
+此 OID 仅在 IRQL = = DISPATCH_LEVEL 上调用。
 
-微型端口驱动程序应准备好处理至少任意数量的间接寻址表项移动动作为它们中播发[NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。 在中定义的这**NumberOfIndirectionTableEntriesPerNonDefaultVPort**或**NumberOfIndirectionTableEntriesForDefaultVPort**该结构的成员或**128**在本机 RSS 模式下。
+小型端口驱动程序应准备好处理在[NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构中播发时所需的最少数量的间接寻址表项移动操作。 这是在该结构的**NumberOfIndirectionTableEntriesPerNonDefaultVPort**或**NumberOfIndirectionTableEntriesForDefaultVPort**成员中定义的，或者是在本机 RSS 模式下的**128**中定义的。
 
-微型端口驱动程序应尝试执行任意数量的条目，因为它们可以并更新**EntryStatus**的每个成员[NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)与操作的结果。
+微型端口驱动程序应尝试执行尽可能多的条目，并将每个[NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)的**EntryStatus**成员更新为操作结果。
 
-### <a name="oid-handler-for-oidgenrsssetindirectiontableentries"></a>OID OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的处理程序
+### <a name="oid-handler-for-oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序
 
-OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序被预期行为，如下所示：
+OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下所示：
 
-- 由于 OID 的同步调用类型，不允许的 NDIS_STATUS_PENDING 返回。
-- 完成所有传入的项移动已发送到当前的 CPU （以前启动远程处理器上）。 
-- 强烈建议的微型端口驱动程序执行参数验证通过。 如果不可行，请执行一个地验证和执行的数组项数。 具体而言，微型端口驱动程序应检查所有被引用的对象是否有效：
-    - 返回在 NDIS_STATUS_PENDING **EntryStatus**字段不允许项。
-    - 微型端口适配器存在并处于良好状态。 否则，设置**EntryStatus** NDIS_STATUS_ADAPTER_NOT_FOUND、 NDIS_STATUS_ADAPTER_NOT_READY 等项的字段。
-    - 每个 VPort 存在并处于良好状态。 否则，设置**EntryStatus** NDIS_STATUS_INVALID_PORT、 NDIS_STATUS_INVALID_PORT_STATE 等项的字段。
-    - 每个间接表条目索引是已配置的范围内。 此范围是任一 0xFFFF 或在 [0...NumberOfIndirectionTableEntries-1] 范围设置[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) OID。 0xFFFF 和 0xFFFE 条目索引具有特殊含义：0xFFFF 定义默认的处理器，而 0xFFFE 定义主处理器。 出现错误时，该处理程序设置**EntryStatus**到 NDIS_STATUS_INVALID_PARAMETER 条目的字段。
-    - 较高层和微型端口驱动程序期望 ITE 指向当前处理器 （CPU 操作者） 在移动前。 换而言之，无法远程定向 ITE。 如果不为 true，则设置**EntryStatus**到 NDIS_STATUS_NOT_ACCEPTED 条目的字段。
-    - 目标的所有处理器的有效期，并且是微型端口适配器的 RSS 集的一部分。 否则，设置**EntryStatus**到 NDIS_STATUS_INVALID_DATA 条目的字段。
-- 随后或作为一部分参数验证通过，验证资源这种情况。 验证要完整批移动 （疏散） 后使用的队列数不超过**NumberOfQueues**集中[NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)结构在[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)请求。 否则，返回 NDIS_STATUS_NO_QUEUES。 NDIS_STATUS_NO_QUEUES 应该用于表示与配置的队列数的冲突的所有条件。 NDIS_STATUS_RESOURCES 仅应该用于指定暂时内存不足情况。
-- 作为资源检查，为每个缩放实体 (例如，VPort) 的一部分微型端口驱动程序必须处理条件时点到 CPU 移开它当前的所有 Ite...
+- 由于 OID 的同步调用类型，不允许返回 NDIS_STATUS_PENDING。
+- 完成目标为当前 CPU （以前在远程处理器上启动）的任何传入 I) 移动。 
+- 强烈建议使用微型端口驱动程序来执行完整参数验证。 如果不可能，请逐个执行验证和执行数组项。 微型端口驱动程序应专门检查所有被引用对象是否有效：
+    - 不允许在 I) 的**EntryStatus**字段中返回 NDIS_STATUS_PENDING。
+    - 微型端口适配器存在并且处于良好状态。 否则，将条目的**EntryStatus**字段设置为 NDIS_STATUS_ADAPTER_NOT_FOUND、NDIS_STATUS_ADAPTER_NOT_READY，等等。
+    - 每个 VPort 都存在并且处于良好状态。 否则，将条目的**EntryStatus**字段设置为 NDIS_STATUS_INVALID_PORT、NDIS_STATUS_INVALID_PORT_STATE，等等。
+    - 每个间接表项索引在配置的范围内。 此范围为0xFFFF 或处于[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) OID 设置的 [0 ... NumberOfIndirectionTableEntries-1] 范围内。 0xFFFF 和0xFFFE 条目索引具有特殊含义：0xFFFF 定义默认的处理器，而0xFFFE 定义主处理器。 出现错误时，处理程序将该项的**EntryStatus**字段设置为 NDIS_STATUS_INVALID_PARAMETER。
+    - 上层和微型端口驱动程序预计在移动之前，I) 指向当前处理器（执行组件 CPU）。 换句话说，I) 不能远程重定向。 如果不是这种情况，请将该项的**EntryStatus**字段设置为 NDIS_STATUS_NOT_ACCEPTED。
+    - 所有目标处理器都是有效的，并且是小型端口适配器的 RSS 集的一部分。 否则，请将该项的**EntryStatus**字段设置为 NDIS_STATUS_INVALID_DATA。
+- 或者作为参数验证传递的一部分，验证资源的情况。 验证在进行完整批处理移动后要使用的队列数量（疏散）不会超过[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)请求期间在[NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)结构中设置的**NumberOfQueues**数。 否则，将返回 NDIS_STATUS_NO_QUEUES。 NDIS_STATUS_NO_QUEUES 应用于表示与配置的队列数冲突的所有条件。 NDIS_STATUS_RESOURCES 应仅用于指定暂时性内存不足的情况。
+- 在资源检查过程中，对于每个缩放实体（例如，VPort），微型端口驱动程序必须在指向 currrent CPU 的所有 ITEs 移出时处理条件。
 
-如果所有的上述检查通过，微型端口驱动程序应该可以无条件地应用新配置，并且必须设置**EntryStatus** NDIS_STATUS_SUCCESS 到每个条目的字段。
+如果上述所有检查都通过，微型端口驱动程序应能够无条件地应用新配置，并且必须将每个条目的 " **EntryStatus** " 字段设置为 "NDIS_STATUS_SUCCESS"。
 
-一般情况下，此 OID 的处理程序应非常轻量。 它不应调用 NDIS 或操作系统服务比其他可能的同步操作，例如自旋锁和[ **NdisMConfigMSIXTableEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismconfigmsixtableentry)。
+通常，此 OID 的处理程序应该非常轻量。 对于可能的同步操作（如旋转锁和[**NdisMConfigMSIXTableEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismconfigmsixtableentry)），它不应调用 NDIS 或操作系统服务。
 
-微型端口驱动程序不应调用 NDIS 来指出状态或即插即用事件。
+微型端口驱动程序不应调用 NDIS 来指示状态或 PnP 事件。
 
-微型端口驱动程序也不应使用接收/传输完成指示上下文中的 OID 此处理程序，因为这样做因此导致递归。 为上层可以调用接收上下文中的此 OID 或传输的指示。
+小型端口驱动程序也不应在此 OID 处理程序的上下文中使用接收/传输完成指示，因为这样会导致递归。 上层可以从接收或发送指示的上下文中调用此 OID。
 
-### <a name="moving-all-indirection-table-entries"></a>移动所有间接表条目
+### <a name="moving-all-indirection-table-entries"></a>移动所有的间接寻址表项
 
-微型端口驱动程序应识别和处理移动离开当前的 CPU 的所有间接表项的特殊请求。 由于 RSSv2 运行与单个项将移动，微型端口驱动程序必须保证整个操作的原子性。 微型端口驱动程序处理移动命令的相应数组时遇到批处理期间出现错误，应还原所有已执行的命令并将所有命令都标记为"失败"中每个命令**EntryStatus**字段。 上层协议始终需要包含标记为"succeeded"的所有命令或标记为"失败"的所有命令的"移动所有 Ite"批，并且它会假设流量服从生成的状态，（之前或之后都移动）。 如果为上层发现仅某些条目标记为"失败"，它将 bug 检查系统，然后指向微型端口驱动程序，因为原因。
+微型端口驱动程序应识别并处理一个特殊的请求，该请求将所有间接表条目移出当前 CPU。 由于 RSSv2 操作的是单个 I) 移动，因此微型端口驱动程序必须保证总体操作的原子性。 如果在处理相应的移动命令数组时在批处理中间遇到错误，微型端口驱动程序应还原所有已执行的命令，并在每个命令**EntryStatus**字段中将所有命令标记为 "失败"。 上层协议始终需要 "移动所有 ITEs" 批处理才能包含标记为 "succeeded" 的所有命令或标记为 "失败" 的所有命令，并且它将假定流量服从产生状态（移动之前或之后）。 如果上层仅看到某些标记为 "失败" 的项，它将错误检查系统，并将其指向微型端口驱动程序作为原因。
 
-若要帮助微型端口驱动程序的"移动所有 Ite"命令的处理和以避免死锁，上层协议中的对批中的组都移动命令**SwitchId + VPortId**字段，以便：
+为了帮助微型端口驱动程序对 "移动所有 ITEs" 命令的处理，并避免死锁，上层协议组**SwitchId + VPortId**字段对批处理中的移动命令，以便：
 
-- 上层想要针对同一 VPort 一起，作为"移动所有"命令的一部分执行的命令位于总体的批处理中的连续。
-- 微型端口驱动程序不应尝试执行整个批命令，可能会针对不同 VPorts，以"所有移动"的方式。 仅面向相同 VPort 的命令组 (具有相同标记**SwitchId + VPortId**对) 需要执行符合"所有移动"语义。
-- 当为上层并不关心"移动所有"语义时，它可能会交错到相同 VPort 具有不同 VPort(s) 命令的命令。 在这种情况下，如果由于"的队列数"冲突，无法执行到同一个 VPort 命令的第二个组，微型端口驱动程序会标记该组中使用对应的状态代码 (NDIS_STATUS_NO_QUEUES) 并有责任在上层恢复。
+- 上层要一起执行的命令，作为相同 VPort 的 "全部移动" 命令的一部分，在整个批处理中连续放置。
+- 微型端口驱动程序不应尝试执行整个命令批处理，该批处理以 "全部移动" 的方式面向不同的 VPorts。 只需执行针对相同 VPort 的命令组（标记为同一**SwitchId + VPortId**对），才能符合 "移动全部" 语义。
+- 如果上层并不关心 "全部移动" 语义，则它可能会将命令与不同 VPort 的命令进行 VPort。 在这种情况下，如果由于存在 "队列数量" 冲突而导致第二组命令无法执行，则微型端口驱动程序会使用相应的状态代码（NDIS_STATUS_NO_QUEUES）来标记该组，并使用上层的 VPort从中.
 
-例如，如果上层协议交错出现一的系列命令如下：
+例如，如果上层协议交错一系列命令，如下所示：
 
 - `VPort=1 ITE[0,1]`
 - `VPort=2 ITE[0]`
 - `VPort=1 ITE[2]`
 
-微型端口驱动程序不需要尝试以原子方式执行所有四个移动命令，或所有这三个移动命令`VPort=1`(`ITE[0,1,2]`)。 它只需要执行`VPort=1 ITE[0,1]`组中"所有移动"的方式，则`VPort=2 ITE[0]`组，然后`VPort=1 ITE[2]`。 所有这三个命令组可能具有不同的结果。 例如，对于组`VPort=1 ITE[0,1]`并`VPort=2 ITE[0]`可能会成功，和`VPort=1 ITE[2]`组可能会失败。 结果应反映在相应**EntryStatus**命令的每个结构的成员。 这样一来，微型端口驱动程序不需要采取的安全执行的总体批次 （例如，锁定整个适配器） 的预防措施。 仅这些命令目标特定 VPort 需要进行序列化，可以使用更精细地 VPort 每锁定，并且避免了某些死锁。
+微型端口驱动程序无需尝试以原子方式执行所有四个移动命令，或所有三个移动命令用于 `VPort=1` （`ITE[0,1,2]`）。 它只需以 "移动全部" 的方式执行 `VPort=1 ITE[0,1]` 组，然后以 `VPort=2 ITE[0]` 组的形式执行，然后 `VPort=1 ITE[2]`。 这三个命令组可能会有不同的结果。 例如，`VPort=1 ITE[0,1]` 和 `VPort=2 ITE[0]` 的组可能会成功，并且 `VPort=1 ITE[2]` 组可能会失败。 结果应在每个命令结构的相应**EntryStatus**成员中反映出来。 这样一来，微型端口驱动程序无需采取措施来安全地执行整个批处理（例如锁定整个适配器）。 只有面向特定 VPort 的命令需要进行序列化，可使用更细粒度的 VPort 锁定，并避免某些死锁。
 
 > [!NOTE]
-> 命令项的整个组必须具有相同的项状态标记。
+> 整个命令条目组必须标记为相同的条目状态。
 
 ### <a name="error-conditions-and-status-codes"></a>错误情况和状态代码
 
-发生错误时，此 OID 返回下面的状态代码：
+当发生错误时，此 OID 返回以下状态代码：
 
 | 状态代码 | 错误条件 |
 | --- | --- |
 | NDIS_STATUS_INVALID_LENGTH | OID 的格式不正确。 |
-| NDIS_STATUS_INVALID_PARAMETER | 其他字段中，标头中或在自身的 OID （但不是在单个命令条目） 包含无效值。 |
+| NDIS_STATUS_INVALID_PARAMETER | 其他字段（在标头中或 OID 本身中，而不是在单独的命令项中）包含无效的值。 |
 
 ## <a name="requirements"></a>要求
 
 | | |
 | --- | --- |
-| Version | Windows 10 版本 1709 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows 10 版本 1709 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [接收方缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
-- [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)
-- [NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)
-- [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
+- [接收方缩放版本2（RSSv2）](receive-side-scaling-version-2-rssv2-.md)
+- [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)
+- [NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)
+- [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)
-- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
+- [NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)
 

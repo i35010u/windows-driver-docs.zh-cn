@@ -3,17 +3,17 @@ title: 标准驱动程序例程要求
 description: 标准驱动程序例程要求
 ms.assetid: 49b382ad-c282-41d2-b8b3-68eca4e12b9c
 keywords:
-- 标准驱动程序例程 WDK 内核要求
-- 驱动程序例程 WDK 内核要求
-- 例程 WDK 内核要求
+- 标准驱动程序例程 WDK 内核，要求
+- 驱动程序例程 WDK 内核，要求
+- 例程的 WDK 内核，要求
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d03fa6b24e16f70de95db610d2b69c1e1638034e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0870238d846b4f0813ce5c4df07770ef807e7075
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383004"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838411"
 ---
 # <a name="standard-driver-routine-requirements"></a>标准驱动程序例程要求
 
@@ -21,21 +21,21 @@ ms.locfileid: "67383004"
 
 
 
-设计的内核模式驱动程序时，请记住以下几点：
+设计内核模式驱动程序时，请记住以下几点：
 
--   每个驱动程序必须具有[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程，初始化驱动程序范围内的数据结构和资源。 I/O 管理器调用**DriverEntry**例程时加载驱动程序。
+-   每个驱动程序都必须有一个[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程，该例程初始化驱动程序范围内的数据结构和资源。 当 i/o 管理器加载驱动程序时，它会调用**DriverEntry**例程。
 
--   每个驱动程序必须具有至少一个调度例程用于接收和处理 I/O 请求数据包 (Irp)。 每个驱动程序必须将放置中的调度例程的入口点及其[**驱动程序\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object)结构，每个[IRP 主要函数代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)的驱动程序可以接收。 驱动程序可以具有每个 IRP 主要函数代码中，一个单独的调度例程也可以有一个或多个处理多个函数代码的调度例程。
+-   每个驱动程序都必须至少有一个接收和处理 i/o 请求数据包（Irp）的调度例程。 每个驱动程序都必须为驱动程序可以接收的每个[IRP 主要功能代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-major-function-codes)，在其[**驱动程序\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)结构中放置一个调度例程的入口点。 对于每个 IRP 主要功能代码，驱动程序可以有一个单独的调度例程，也可以有一个或多个调度例程来处理多个函数代码。
 
--   每个 WDM 驱动程序必须具有[ *Unload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程。 该驱动程序必须将放*Unload*驱动程序的驱动程序对象中的例程的入口点。 职责[PnP 驱动程序的卸载例程](pnp-driver-s-unload-routine.md)非常小，但[非 PnP 驱动程序的卸载例程](non-pnp-driver-s-unload-routine.md)会释放该驱动程序使用任何系统资源。
+-   每个 WDM 驱动程序都必须有一个[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程。 驱动程序必须将*卸载*例程的入口点置于驱动程序的驱动程序对象中。 [PnP 驱动程序的卸载例程](pnp-driver-s-unload-routine.md)的责任非常小，但[非 PnP 驱动程序的 unload 例程](non-pnp-driver-s-unload-routine.md)负责释放驱动程序所使用的任何系统资源。
 
--   每个 WDM 驱动程序必须具有*AddDevice*的驱动程序对象。 *AddDevice*例程负责创建和初始化设备用于每个即插即用设备驱动程序控件对象。
+-   每个 WDM 驱动程序必须具有驱动程序对象的*AddDevice* 。 *AddDevice*例程负责为驱动程序控制的每个 PnP 设备创建和初始化设备对象。
 
--   驱动程序可以具有[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程，该驱动程序的启动 I/O 操作的 Irp 调用 I/O 管理器已排队到系统提供 IRP 队列。 不具有任何驱动程序*StartIo*或例程必须设置并管理内部队列的 Irp 接收，则必须完成其调度例程中的每个 IRP。 更高级别的驱动程序可能不具有*StartIo*例程中，如果它们只需将 Irp 传递到较低级别的驱动程序直接从其调度例程。
+-   驱动程序可以有一个[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程，i/o 管理器会调用它来启动对 irp 的 i/o 操作。该驱动程序已排入系统提供的 irp 队列。 任何没有*StartIo*例程的驱动程序都必须设置和管理其接收的 irp 的内部队列，或者必须在其调度例程内完成每个 irp。 如果较高级别的驱动程序只是直接从调度例程将 Irp 传递到较低级别的驱动程序，则可能没有*StartIo*的例程。
 
--   某些微型端口驱动程序是上述要求的例外情况。 请参阅特定于设备的类型的文档了解微型端口驱动程序要求在 Windows Driver Kit (WDK)。
+-   某些微型端口驱动程序是前述要求的例外情况。 有关微型端口驱动程序的要求的信息，请参阅 Windows 驱动程序工具包（WDK）中特定于设备类型的文档。
 
--   驱动程序是否包含任何其他类型的标准例程取决于其功能以及如何将该驱动程序适用于系统 （例如，无论它与互操作系统提供的驱动程序）。 请参阅 WDK 的详细信息中的设备类型特定文档。
+-   驱动程序是否有任何其他类型的标准例程取决于其功能以及该驱动程序如何适合系统（例如，它是否与系统提供的驱动程序互操作）。 有关详细信息，请参阅 WDK 中设备类型的特定文档。
 
  
 

@@ -1,6 +1,6 @@
 ---
-title: MRxLowIOSubmit\ LOWIO\_OP\_通知\_更改\_目录 \&gt 例程
-description: MRxLowIOSubmit\ LOWIO\_OP\_通知\_更改\_目录 \&gt 例程调用通过 RDBSS 网络微型重定向目录更改通知操作向发出请求。
+title: MRxLowIOSubmit \ LOWIO\_OP\_通知\_更改\_DIRECTORY \ 例程
+description: MRxLowIOSubmit \ LOWIO\_OP\_通知\_更改\_DIRECTORY \ 例程由 RDBSS 调用，以向网络小型重定向程序发出目录更改通知操作请求。
 ms.assetid: a3ac7936-7c46-4e46-929a-dc495187a01b
 keywords:
 - MRxLowIOSubmit LOWIO_OP_NOTIFY_CHANGE_DIRECTORY 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: edbc2b8b5992bbb247467f9d8f8c72180034a39b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f7d2e7aff720b3837cdad446ab48f43bcb9b398
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355534"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841105"
 ---
-# <a name="mrxlowiosubmitlowioopnotifychangedirectory-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY\]例程
+# <a name="mrxlowiosubmitlowio_op_notify_change_directory-routine"></a>MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY\] 例程
 
 
-*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)到向网络微型重定向目录更改通知操作发出请求。
+*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，以向网络小型重定向程序发出目录更改通知操作请求。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY](
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY\]* 返回状态\_成功的成功或适当的 NTSTATUS 值，此类为以下值之一：
+*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY*\]返回状态\_成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,11 +64,11 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY](
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_FILE_CLOSED</strong></td>
-<td align="left"><p>FCB 结构被获得，但已关闭关联的 SRV_OPEN 结构。</p></td>
+<td align="left"><p>已获取 FCB 结构，但已关闭关联的 SRV_OPEN 结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成请求。</p></td>
+<td align="left"><p>资源不足，无法完成请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_DEVICE_REQUEST</strong></td>
@@ -76,7 +76,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY](
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>在指定的参数无效<em>RxContext</em>。</p></td>
+<td align="left"><p>在<em>RxContext</em>中指定了无效的参数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
@@ -84,7 +84,7 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY](
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>指定的请求不受网络微型重定向。</p></td>
+<td align="left"><p>网络小型重定向程序不支持指定的请求。</p></td>
 </tr>
 </tbody>
 </table>
@@ -94,25 +94,25 @@ NTSTATUS MRxLowIOSubmit[LOWIO_OP_NOTIFY_CHANGE_DIRECTORY](
 <a name="remarks"></a>备注
 -------
 
-RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 接收响应[ **IRP\_MJ\_目录\_控制**](irp-mj-directory-control.md)请求。
+RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_directory*\]，以响应接收[**IRP\_目录\_** ](irp-mj-directory-control.md)的请求。
 
-然后再调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* ，RDBSS 修改 RX中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY\]* 中，RDBSS 修改*RxContext*参数指向的 RX\_上下文结构中的以下成员：
 
-**LowIoContext.Operation**成员设置为 LOWIO\_OP\_通知\_更改\_目录。
+**LowIoContext**成员设置为 LOWIO\_OP\_通知\_更改\_目录。
 
-**LowIoContext.ResourceThreadId**成员设置为启动 RDBSS 中的操作的进程线程。
+**LowIoContext. ResourceThreadId**成员设置为在 RDBSS 中启动操作的进程线程。
 
-**LowIoContext.ParamsFor.NotifyChangeDirectory.WatchTree**成员设置为**TRUE**如果**IrpSp-&gt;标志**具有 SL\_监视\_树位集。
+如果**IrpSp&gt;标志**具有 SL\_WATCH\_树位集，则将**LowIoContext**成员设置为**TRUE** 。
 
-**LowIoContext.ParamsFor.NotifyChangeDirectory.CompletionFilter**成员设置为值**IrpSp-&gt;Parameters.NotifyDirectory.CompletionFilter**。
+**LowIoContext. ParamsFor. NotifyChangeDirectory. CompletionFilter**成员的值设置为 **&gt;IrpSp**，NotifyDirectory. CompletionFilter。
 
-**LowIoContext.ParamsFor.NotifyChangeDirectory.NotificationBufferLength**成员设置为值**IrpSp-&gt;Parameters.NotifyDirectory.Length**。
+**LowIoContext. ParamsFor. NotifyChangeDirectory. NotificationBufferLength**成员设置为**IrpSp-&gt;参数**的值。 NotifyDirectory。
 
-**LowIoContext.ParamsFor.NotifyChangeDirectory.pNotificationBuffer**成员设置为通过调用返回的值**MmGetSystemAddressForMdlSafe**传入**Irp&gt;MdlAddress**和 NormalPagePriority。 用户缓冲区也是探测和锁定以进行写访问。
+**LowIoContext. ParamsFor. NotifyChangeDirectory. pNotificationBuffer**成员设置为**通过调用并传入** **Irp&gt;MmGetSystemAddressForMdlSafe**和 MdlAddress 返回的值。 还会探测并锁定用户缓冲区以进行写访问。
 
-目录更改通知操作通常由实现网络微型重定向作为异步操作因为它可能需要相当长的时间。 该操作通常组成的网络请求发送到远程服务器请求更改通知。 所需的更改会影响服务器上时，获得响应。 这是网络微型重定向可能需要为其注册唯一的上下文值来处理本地启动取消操作的示例。
+目录更改通知操作通常由网络小型重定向程序作为异步操作来实现，因为这可能需要相当长的时间。 此操作通常包含向远程服务器发送请求更改通知的网络请求。 当所需的更改在服务器上受到影响时，将获取响应。 这是一个操作示例，网络小型重定向程序可能需要为此操作注册一个唯一的上下文值，以便处理本地启动的取消。
 
-虽然*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 处理例程， **LowIoContext.ResourceThreadId** RX 成员\_上下文保证以指示启动了 RDBSS 中的操作的进程线程。 **LowIoContext.ResourceThreadId**成员可用于释放 FCB 结构代表另一个线程。 完成异步例程后，可以释放已获取从初始线程的 FCB 结构。 FCB 结构可以释放通过调用[ **RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)。
+尽管*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_DIRECTORY\]* 例程正在处理，但 RX\_上下文的**LowIoContext**成员仍可指示启动 RDBSS 中的操作的进程线程。 **LowIoContext. ResourceThreadId**成员可用于代表其他线程发布 FCB 结构。 异步例程完成后，可以释放从初始线程获取的 FCB 结构。 可以通过调用[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)来释放 FCB 结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -125,35 +125,35 @@ RDBSS 调用*MRxLowIOSubmit\[LOWIO\_OP\_通知\_更改\_目录\]* 接收响应[ 
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_EXCLUSIVELOCK\]** ](mrxlowiosubmit-lowio-op-exclusivelock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_FSCTL\]** ](mrxlowiosubmit-lowio-op-fsctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_IOCTL\]** ](mrxlowiosubmit-lowio-op-ioctl-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_READ\]** ](mrxlowiosubmit-lowio-op-read-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_读取\]** ](mrxlowiosubmit-lowio-op-read-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_操作\_SHAREDLOCK\]** ](mrxlowiosubmit-lowio-op-sharedlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_解锁\]** ](mrxlowiosubmit-lowio-op-unlock-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_UNLOCK\_MULTIPLE\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_\_多个\]** ](mrxlowiosubmit-lowio-op-unlock-multiple-.md)
 
-[**MRxLowIOSubmit\[LOWIO\_OP\_WRITE\]** ](mrxlowiosubmit-lowio-op-write-.md)
+[**MRxLowIOSubmit\[LOWIO\_OP\_写入\]** ](mrxlowiosubmit-lowio-op-write-.md)
 
-[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
+[**RxReleaseFcbResourceForThreadInMRx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)
 
  
 

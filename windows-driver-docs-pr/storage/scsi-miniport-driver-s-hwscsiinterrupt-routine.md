@@ -3,16 +3,16 @@ title: SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
 description: SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
 ms.assetid: 8760e7e4-1721-4e55-99e6-c9e234368fa1
 keywords:
-- SCSI 微型端口驱动程序 WDK 存储 HwScsiInterrupt
+- SCSI 微型端口驱动程序 WDK 存储，HwScsiInterrupt
 - HwScsiInterrupt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f61e82591caedfda9ce5d29c2b87ded623aa4d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 32755817e01e3ab720512ced49d9f9708afe5fbc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385224"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842667"
 ---
 # <a name="scsi-miniport-drivers-hwscsiinterrupt-routine"></a>SCSI 微型端口驱动程序的 HwScsiInterrupt 例程
 
@@ -20,25 +20,25 @@ ms.locfileid: "67385224"
 ## <span id="ddk_scsi_miniport_drivers_hwscsiinterrupt_routine_kg"></span><span id="DDK_SCSI_MINIPORT_DRIVERS_HWSCSIINTERRUPT_ROUTINE_KG"></span>
 
 
-在进入时， [ **HwScsiInterrupt** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557312(v=vs.85))例程应确定其 HBA 是否实际生成中断。 *HwScsiInterrupt*必须返回**FALSE**越早越好如果它检测到虚假的中断，因此可以快速调用 ISR 实际生成中断的设备。
+进入时， [**HwScsiInterrupt**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557312(v=vs.85))例程应确定其 HBA 是否确实生成了中断。 如果*HwScsiInterrupt*检测到虚假中断，则必须尽快返回**FALSE** ，以便可以快速调用实际产生中断的设备的 ISR。
 
-否则为微型端口驱动程序*HwScsiInterrupt*例程程序通常负责完成 I/O 操作导致中断。 具体取决于 HBA 和的微型端口驱动程序，设计*HwScsiInterrupt*例程会执行一些或所有以下：
+否则，微型端口驱动程序的*HwScsiInterrupt*例程通常负责完成导致中断的 i/o 操作。 根据 HBA 和微型端口驱动程序的设计， *HwScsiInterrupt*例程会执行以下部分或全部操作：
 
--   解除 HBA （必需） 上中断
+-   消除 HBA 上的中断（必需）
 
--   通知端口驱动程序 (通过调用[ **ScsiPortNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportnotification)或[ **ScsiPortCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportcompleterequest)) 如果 HBA 指明某些 SCSI 错误条件操作过程中发生，并可能会将错误记录。
+-   如果 HBA 指示在操作过程中发生了某些 SCSI 错误情况并可能记录错误，则通知端口驱动程序（通过调用[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification)或[**ScsiPortCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportcompleterequest)）。
 
-    有关日志记录错误的详细信息，请参阅[SCSI 微型端口驱动程序中的错误处理](error-handling-in-scsi-miniport-drivers.md)。
+    有关记录错误的详细信息，请参阅[SCSI 微型端口驱动程序中的错误处理](error-handling-in-scsi-miniport-drivers.md)。
 
--   完成请求的操作导致的中断，例如，调用[ **ScsiPortIoMapTransfer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportiomaptransfer) (请参阅[SCSI 微型端口驱动程序 HwScsiDmaStarted 例程](scsi-miniport-driver-s-hwscsidmastarted-routine.md)) 如果中断来自以前选定的目标 TID 和 LU，指示已准备好将数据传输。
+-   完成导致中断的请求操作，如调用[**ScsiPortIoMapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportiomaptransfer) （请参阅[SCSI 微型端口驱动程序的 HwScsiDmaStarted 例程](scsi-miniport-driver-s-hwscsidmastarted-routine.md)）（如果中断来自以前选择的目标 TID 和 LU），指示传输数据的准备情况。
 
-当*HwScsiInterrupt*例程 （或内部的微型端口驱动程序例程） 完成 SRB，它将调用**ScsiPortNotification**两次：
+当*HwScsiInterrupt*例程（或内部微型端口驱动程序例程）完成 SRB 时，它将调用**ScsiPortNotification**两次：
 
-1.  首先，由于*NotificationType * * * RequestComplete** 和只满足 SRB。
+1.  首先，提供了*NotificationType * * * RequestComplete** 和刚满足的 SRB。
 
-2.  接下来，使用 * NotificationType ***NextRequest**，或使用**NextLuRequest**如果 HBA 支持有标记的队列或每个逻辑单元的多个请求。
+2.  接下来，对于 * NotificationType ***NextRequest**，或者如果 HBA 支持标记队列或每个逻辑单元多个请求，则为**NextLuRequest** 。
 
-为了更好地整体系统性能，微型端口驱动程序的*HwScsiInterrupt*例程应执行的操作仅处理 I/O 请求所需的最低。 也就是说，微型端口驱动程序应设计为返回控件从*HwScsiInterrupt*尽可能快地例程。 *HwScsiInterrupt*不能调用例程[ **ScsiPortStallExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportstallexecution)与较大的时间间隔，从而占用处理器和阻止从其他驱动程序服务及其设备中断。
+为了获得更好的整体系统性能，微型端口驱动程序的*HwScsiInterrupt*例程只应执行处理 i/o 请求所需的最低要求。 也就是说，应将微型端口驱动程序设计为尽可能快地从*HwScsiInterrupt*例程返回控制权。 *HwScsiInterrupt*例程不能使用较大的间隔调用[**ScsiPortStallExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportstallexecution) ，因此会使处理器独占，并阻止其他驱动程序为其设备中断提供服务。
 
  
 

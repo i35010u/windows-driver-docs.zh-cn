@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_LINK_STATE
-description: 为查询，NDIS 和基础驱动程序使用 OID_GEN_LINK_STATE OID 来确定微型端口适配器的当前链接状态。
+description: 作为查询，NDIS 和过量驱动程序使用 OID_GEN_LINK_STATE OID 来确定微型端口适配器的当前链接状态。
 ms.assetid: 75a30054-8700-4b79-902c-c8382a25c0a2
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_GEN_LINK_STATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f70e82fb4da4a2523dcd56cc0d4de01b2d5447
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 20d1c7b8b2b11fc5e4d51ee3b7fddb6be105e3a2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844618"
 ---
-# <a name="oidgenlinkstate"></a>OID\_GEN\_链接\_状态
+# <a name="oid_gen_link_state"></a>OID\_代\_LINK\_状态
 
 
-为查询，NDIS 和基础驱动程序使用 OID\_GEN\_链接\_状态 OID，以确定微型端口适配器的当前链接状态。 微型端口驱动程序接收中的链接状态[ **NDIS\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)结构。
+作为查询，NDIS 和过量驱动程序使用 OID\_代\_LINK\_状态 OID 来确定微型端口适配器的当前链接状态。 微型端口驱动程序在[**NDIS\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构中接收链接状态。
 
 **版本信息**
 
@@ -23,16 +23,16 @@ ms.locfileid: "67369072"
 支持。
 
 <a href="" id="ndis-6-0-and-later-miniport-drivers"></a>NDIS 6.0 和更高版本的微型端口驱动程序  
-未请求。 (请参阅备注部分)
+未请求。 （请参见 "备注" 部分）
 
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序在初始化过程中提供的链接状态，并提供更新与状态的指示。
+微型端口驱动程序在初始化期间提供链接状态，并提供具有状态指示的更新。
 
-若要指定链接状态，请设置**MediaConnectState**， **MediaDuplexState**， **XmitLinkSpeed**， **RcvLinkSpeed**， **PauseFunctions**，并**AutoNegotiationFlags**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的微型端口驱动程序将传递给[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)函数。
+若要指定链接状态，请将NDIS\_微型端口的 MediaConnectState、MediaDuplexState、 **XmitLinkSpeed**、 **RcvLinkSpeed**、 **PauseFunctions**和**AutoNegotiationFlags**成员设置[ **\_适配器\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)微型端口驱动程序传递给[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的常规\_属性结构。
 
-如果微型端口驱动程序不支持此 OID，则驱动程序应返回 NDIS\_状态\_不\_受支持。 如果微型端口驱动程序支持此 OID，它将返回的连接状态、 双工状态，并链接速度中[ **NDIS\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)结构。
+如果微型端口驱动程序不支持此 OID，驱动程序将返回 NDIS\_状态\_不\_支持。 如果微型端口驱动程序支持此 OID，它将返回 NDIS 中的连接状态、双工状态和链接速度[ **\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,26 +44,26 @@ ms.locfileid: "67369072"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_LINK\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_link_state)
+[**NDIS\_链接\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)
 
-[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
+[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)
 
-[**NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)
+[ **\_标头的 NDIS\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)
 
-[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)
+[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)
 
-[OID\_GEN\_媒体\_CONNECT\_状态\_EX](oid-gen-media-connect-status-ex.md)
+[OID\_代\_媒体\_连接\_状态\_EX](oid-gen-media-connect-status-ex.md)
 
-[OID\_GEN\_MEDIA\_DUPLEX\_STATE](oid-gen-media-duplex-state.md)
+[OID\_代\_介质\_双工\_状态](oid-gen-media-duplex-state.md)
 
  
 

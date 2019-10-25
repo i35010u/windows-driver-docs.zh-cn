@@ -4,12 +4,12 @@ description: 添加中断事件支持
 ms.assetid: 74fbaa7c-f058-4b17-b278-3dea0faf4431
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 889e70793d24db6e8472787e231852f23179bacd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cc71847b137e63962a8cc047c2e4dd6ef093d478
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383398"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840909"
 ---
 # <a name="adding-interrupt-event-support"></a>添加中断事件支持
 
@@ -17,35 +17,35 @@ ms.locfileid: "67383398"
 
 
 
-若要正确设置 WIA 驱动程序来报告中断事件，请执行以下操作：
+若要正确设置 WIA 驱动程序以报告中断事件，请执行以下操作：
 
-1.  设置**功能 = 0x31**设备的 INF 文件中。 (请参阅[WIA 设备 INF 文件](inf-files-for-wia-devices.md)有关详细信息。)
+1.  设置设备 INF 文件中的**0x31 =** 。 （有关详细信息，请参阅[用于 WIA 设备的 INF 文件](inf-files-for-wia-devices.md)。）
 
-2.  报告 STI\_GENCAP\_通知和 STI\_美元\_GENCAP\_本机\_PUSHSUPPORT 中的[ **IStiUSD::GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)方法。
+2.  Report STI\_GENCAP\_通知和 STI\_USD\_GENCAP\_[**PUSHSUPPORT：： IStiUSD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getcapabilities)方法中的本机\_GetCapabilities。
 
-3.  中的所有报表支持事件[ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法。
+3.  报告[**IWiaMiniDrv：:D rvgetcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法中所有受支持的事件。
 
-4.  缓存和使用中传递的事件句柄[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)方法。 这是设备信号的事件句柄或 WIA 微型驱动程序发出信号直接使用**SetEvent** （Microsoft Windows SDK 文档中所述）。 它在这种方法是，启动 WIA 设备的等待状态。
+4.  缓存并使用[**IStiUSD：： SetNotificationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-setnotificationhandle)方法中传递的事件句柄。 此事件句柄表示设备发出信号，或 WIA 微型驱动程序直接使用**SetEvent** （如 Microsoft Windows SDK 文档中所述）发出信号。 在此方法中，您将启动 WIA 设备的等待状态。
 
-5.  报告中的相应的事件信息响应[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法。
+5.  在[**IStiUSD：： GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getnotificationdata)方法中报告正确的事件信息响应。
 
-以下两个示例演示使用的实现配置你的设备进行中断**IWiaMiniDrv::drvGetCapabilities**并**IStiUSD::SetNotificationHandle**方法。
+以下两个示例演示如何将设备配置为具有**IWiaMiniDrv：:D rvgetcapabilities**和**IStiUSD：： SetNotificationHandle**方法的实现的中断。
 
-**请注意**  务必使用重叠的 I/O 调用包含涉及内核模式驱动程序的所有活动。 这允许适当的超时和设备请求取消。
-
- 
-
-### <a href="" id="explanation-of-the-iwiaminidrv-drvgetcapabilities-implementation"></a>IWiaMiniDrv::drvGetCapabilities 实现的说明
-
-WIA 服务调用**IWiaMiniDrv::drvGetCapabilities**方法来获取 WIA 设备支持事件和命令。 WIA 驱动程序应首先看一下传入*lFlags*参数，以确定该请求应回答。
-
-WIA 驱动程序应分配内存 （以将 WIA 驱动程序使用的并由其释放） 使其包含的数组[ **WIA\_DEV\_CAP\_DRV** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv)结构。 在调用**IWiaMiniDrv::drvGetCapabilities**，将指针传递到存储中的 WIA 驱动程序分配内存的地址的内存位置*ppCapabilities*参数。
-
-**请注意**   WIA 服务不会释放此内存。 请务必 WIA 驱动程序管理的已分配的内存。
+**请注意**   对涉及内核模式驱动程序的所有活动使用重叠 i/o 调用非常重要。 这允许对设备请求进行适当的超时和取消操作。
 
  
 
-下面的示例演示的实现[ **IWiaMiniDrv::drvGetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法。
+### <a href="" id="explanation-of-the-iwiaminidrv-drvgetcapabilities-implementation"></a>IWiaMiniDrv：:d rvGetCapabilities 实现的说明
+
+WIA 服务调用**IWiaMiniDrv：:D rvgetcapabilities**方法，以获取 WIA 设备支持的事件和命令。 WIA 驱动程序应该首先查看传入的*lFlags*参数，以确定应应答的请求。
+
+WIA 驱动程序应分配内存（由 WIA 驱动程序使用并由其释放）以包含[**WIA\_DEV\_CAP\_winspool.drv**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_wia_dev_cap_drv)结构的数组。 在对**IWiaMiniDrv：:D rvgetcapabilities**的调用中，在*ppCapabilities*参数中传递一个指针，该指针指向保存 WIA 驱动程序分配的内存地址的内存位置。
+
+**请注意**   WIA 服务不会释放此内存。 WIA 驱动程序必须管理分配的内存，这一点很重要。
+
+ 
+
+下面的示例演示[**IWiaMiniDrv：:D rvgetcapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvgetcapabilities)方法的实现。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvGetCapabilities(
@@ -173,11 +173,11 @@ HRESULT _stdcall CWIADevice::drvGetCapabilities(
 }
 ```
 
-[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle) WIA 服务或在内部启动或停止事件通知此驱动程序调用方法。 WIA 服务将在创建使用有效句柄中传递**CreateEvent** （Microsoft Windows SDK 文档中介绍），指示 WIA 驱动程序在硬件中发生事件时通知此句柄。
+WIA 服务调用[**IStiUSD：： SetNotificationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-setnotificationhandle)方法，或由该驱动程序在内部调用，以启动或停止事件通知。 WIA 服务将传入有效的句柄，该句柄使用**CreateEvent**创建（在 Microsoft Windows SDK 文档中介绍），指示 WIA 驱动程序在硬件中发生事件时向此句柄发送信号。
 
-**NULL**可以传递给**IStiUSD::SetNotificationHandle**方法。 **NULL**指示 WIA 微型驱动程序将停止设备的所有活动，并退出任何事件的等待操作。
+**NULL**可传递给**IStiUSD：： SetNotificationHandle**方法。 **NULL**表示 WIA 微型驱动程序要停止所有设备活动，并退出所有事件等待操作。
 
-下面的示例演示的实现**IStiUSD::SetNotificationHandle**方法。
+下面的示例演示**IStiUSD：： SetNotificationHandle**方法的实现。
 
 ```cpp
 STDMETHODIMP CWIADevice::SetNotificationHandle(HANDLE hEvent)
@@ -269,17 +269,17 @@ STDMETHODIMP CWIADevice::SetNotificationHandle(HANDLE hEvent)
 }
 ```
 
-当 WIA 微型驱动程序或 WIA 设备已检测到并发出信号事件时，WIA 服务调用[ **IStiUSD::GetNotificationData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getnotificationdata)方法。 它是事件的在此方法中 WIA 微型驱动程序应报告发生的详细信息。
+如果 WIA 微型驱动程序或 WIA 设备检测到事件并发出信号，WIA 服务将调用[**IStiUSD：： GetNotificationData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getnotificationdata)方法。 在此方法中，WIA 微型驱动程序应报告发生的事件的详细信息。
 
-WIA 服务调用**IStiUSD::GetNotificationData**方法以获取有关刚发送信号的事件信息。 **IStiUSD::GetNotificationData**可以作为两个事件操作的其中一个的结果调用方法。
+WIA 服务调用**IStiUSD：： GetNotificationData**方法来获取有关刚发出信号的事件的信息。 可以通过两个事件操作中的一个来调用**IStiUSD：： GetNotificationData**方法。
 
-1.  **IStiUSD::GetStatus**报告通过设置 STI 是否存在挂起的事件\_EVENTHANDLING\_挂起中标志[ **STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_sti_device_status)结构。
+1.  **IStiUSD：： GetStatus**报告存在挂起的事件，方法是在[**STI\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/ns-sti-_sti_device_status)结构中设置 STI\_EVENTHANDLING\_挂起标志。
 
-2.  *HEvent*句柄由传入**IStiUSD::SetNotificationHandle**硬件，或通过调用收到信号**SetEvent** （Microsoft Windows SDK 中所述文档）。
+2.  由**IStiUSD：： SetNotificationHandle**传入的*hEvent*句柄已通过硬件或通过调用**SetEvent** （如 Microsoft Windows SDK 文档中所述）发出信号。
 
-WIA 驱动程序负责填写[ **STINOTIFY** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sti/ns-sti-_stinotify)结构
+WIA 驱动程序负责填写[**STINOTIFY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sti/ns-sti-_stinotify)结构
 
-下面的示例演示的实现**IStiUSD::GetNotificationData**方法。
+下面的示例演示**IStiUSD：： GetNotificationData**方法的实现。
 
 ```cpp
 STDMETHODIMP CWIADevice::GetNotificationData( LPSTINOTIFY pBuffer )
@@ -328,31 +328,31 @@ STDMETHODIMP CWIADevice::GetNotificationData( LPSTINOTIFY pBuffer )
 }
 ```
 
-中断事件可以随时停止通过传递**NULL**作为事件句柄。 微型驱动程序应将此视为信号停止硬件设备上的任何等待状态。
+可以通过将**NULL**作为事件句柄传递来随时停止中断事件。 微型驱动程序应将此解释为信号，以停止硬件设备上的任何等待状态。
 
-**请注意**   [ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)方法可以接收影响事件等待状态的电源管理事件。
+**请注意**   [**IWiaMiniDrv：:d rvnotifypnpevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)方法可以接收影响事件等待状态的电源管理事件。
 
  
 
-WIA 服务调用**IWiaMiniDrv::drvNotifyPnpEvent**方法，并将 WIA\_事件\_POWER\_系统即将置于睡眠状态时的挂起事件。 发生此调用时，设备可能已是从其等待状态。 睡眠状态会自动触发内核模式驱动程序退出任何等待状态，以允许系统进入此关闭的状态。 当系统从睡眠状态恢复时，WIA 服务将发送 WIA\_事件\_电源\_恢复事件。 这次 WIA 微型驱动程序必须重新建立中断事件等待状态。 有关睡眠状态的详细信息，请参阅[系统的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)并[设备的电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)。
+WIA 服务调用**IWiaMiniDrv：:D rvnotifypnpevent**方法，并在系统即将置于睡眠状态时发送 WIA\_事件\_POWER\_挂起事件。 如果发生此调用，则设备可能已超出其等待状态。 睡眠状态会自动触发内核模式驱动程序，以退出任何等待状态以允许系统进入此关闭状态。 当系统从睡眠状态恢复时，WIA 服务会将 WIA\_事件发送\_POWER\_RESUME 事件。 此时，WIA 微型驱动程序必须重新建立中断事件等待状态。 有关睡眠状态的详细信息，请参阅[系统电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)和[设备电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)。
 
-建议的 WIA 微型驱动程序缓存的事件句柄最初传递到[ **IStiUSD::SetNotificationHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-setnotificationhandle)方法，以便可以重复使用它，系统从睡眠状态唤醒时或休眠状态。
+建议 WIA 微型驱动程序缓存最初传递到[**IStiUSD：： SetNotificationHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-setnotificationhandle)方法的事件句柄，以便在系统从睡眠或休眠中唤醒时可以重复使用该事件句柄。
 
-WIA 服务*却不*调用**IStiUSD::SetNotificationHandle**后系统已恢复的方法。 建议微型驱动程序调用其**IStiUSD::SetNotificationHandle**方法，并传递缓存的事件句柄。
+恢复系统后，WIA 服务不*会*调用**IStiUSD：： SetNotificationHandle**方法。 建议微型驱动程序调用其**IStiUSD：： SetNotificationHandle**方法，传递缓存的事件句柄。
 
-WIA 服务调用**IWiaMiniDrv::drvNotifyPnpEvent**系统事件发生时的方法。 WIA 驱动程序应检查*pEventGUID*参数，以确定正在处理的事件。
+WIA 服务在发生系统事件时调用**IWiaMiniDrv：:D rvnotifypnpevent**方法。 WIA 驱动程序应检查*pEventGUID*参数，以确定正在处理的事件。
 
-必须处理一些常见事件是：
+必须处理的一些常见事件如下：
 
-<a href="" id="wia-event-power-suspend"></a>WIA\_事件\_电源\_挂起  
-系统正在进入挂起/睡眠模式。
+<a href="" id="wia-event-power-suspend"></a>WIA\_事件\_POWER\_挂起  
+系统将进入挂起/休眠模式。
 
-<a href="" id="wia-event-power-resume"></a>WIA\_事件\_电源\_恢复  
-系统从挂起/睡眠模式唤醒。
+<a href="" id="wia-event-power-resume"></a>WIA\_事件\_POWER\_简历  
+系统正在从挂起/睡眠模式唤醒。
 
-WIA 驱动程序应返回从挂起后进行还原的任何事件中断等待状态。 这可确保事件系统被唤醒时仍将正常工作。
+WIA 驱动程序应在从挂起返回后还原任何事件中断等待状态。 这可确保在系统唤醒时事件仍将正常工作。
 
-下面的示例演示的实现[ **IWiaMiniDrv::drvNotifyPnpEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)方法。
+下面的示例演示[**IWiaMiniDrv：:D rvnotifypnpevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)方法的实现。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvNotifyPnpEvent(

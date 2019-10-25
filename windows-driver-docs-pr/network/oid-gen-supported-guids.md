@@ -1,21 +1,21 @@
 ---
 title: OID_GEN_SUPPORTED_GUIDS
-description: 为查询，OID_GEN_SUPPORTED_GUIDS OID 请求微型端口驱动程序，以返回类型 NDIS_GUID 的结构数组。
+description: 作为查询，OID_GEN_SUPPORTED_GUIDS OID 请求微型端口驱动程序返回 NDIS_GUID 类型的结构的数组。
 ms.assetid: 6985727e-50f8-4dbf-b8cd-ce31d49e8294
 ms.date: 08/08/2017
-keywords: -OID_GEN_SUPPORTED_GUIDS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_GUIDS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b64730adc113af58773878669f0c36e1189bbff9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d3c119c128f511a4c749aa374a9ef6d85279006d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386994"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844602"
 ---
-# <a name="oidgensupportedguids"></a>OID\_GEN\_支持\_GUID
+# <a name="oid_gen_supported_guids"></a>OID\_代\_支持\_GUID
 
 
-为查询，OID\_GEN\_支持\_GUID OID 请求微型端口驱动程序，以返回类型 NDIS 的结构数组\_GUID。
+作为查询，OID\_GEN\_支持\_GUID OID 请求微型端口驱动程序返回类型为 NDIS\_GUID 的结构的数组。
 
 **版本信息**
 
@@ -37,9 +37,9 @@ ms.locfileid: "67386994"
 <a name="remarks"></a>备注
 -------
 
-数组中的每个结构指定的映射的自定义 GUID （全局唯一标识符） 是一个自定义的 OID 或 NDIS\_微型端口驱动程序将通过发送的状态[ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)函数。
+数组中的每个结构都指定自定义的 GUID （全局唯一标识符）到自定义 OID 的映射，或指定微型端口驱动程序通过[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)函数发送的 NDIS\_状态的映射。
 
-NDIS\_GUID 结构定义，如下所示：
+NDIS\_GUID 结构定义如下：
 
 ```C++
 typedef struct _NDIS_GUID {
@@ -53,49 +53,49 @@ typedef struct _NDIS_GUID {
 } NDIS_GUID, *PNDIS_GUID;
 ```
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
-<a href="" id="guid"></a>**guid**  
+<a href="" id="guid"></a>**Guid.empty**  
 指定为微型端口驱动程序定义的自定义 GUID。
 
-<a href="" id="oid"></a>**oid**  
-指定向其自定义 OID **Guid**映射。
+<a href="" id="oid"></a>**Oid**  
+指定**Guid**映射到的自定义 OID。
 
-<a href="" id="status"></a>**状态**  
-指定 NDIS\_状态设置为这**Guid**映射。
+<a href="" id="status"></a>**状态值**  
+指定**Guid**映射到的 NDIS\_状态。
 
-<a href="" id="size"></a>**大小**  
-以字节为单位的微型端口驱动程序返回的数组中每个数据项中指定的大小。 如果 fNDIS\_GUID\_ANSI\_字符串或 fNDIS\_GUID\_NDIS\_设置字符串标志，则**大小**设置为-1。 否则为**大小**以字节为单位的 GUID 表示的数据项中指定的大小。 指定此成员时，才 fNDIS\_GUID\_数组标志设置。
+<a href="" id="size"></a>**规格**  
+指定微型端口驱动程序返回的数组中的每个数据项的大小（以字节为单位）。 如果 fNDIS\_GUID\_ANSI\_STRING 或 fNDIS\_\_GUID，则设置 " **Size** " 设置为-1。 否则， **size**指定 GUID 表示的数据项的大小（以字节为单位）。 仅当设置了 fNDIS\_GUID\_ARRAY 标志时，才指定此成员。
 
-<a href="" id="flags"></a>**标志**  
-可以使用 OR 运算符，以指示 GUID 映射到 OID 或 NDIS 组合以下标志\_状态字符串，还可以指示的 GUID 为提供的数据类型：
+<a href="" id="flags"></a>**随意**  
+可以通过 OR 运算符组合下列标志，以指示 GUID 是映射到 OID 还是映射到 NDIS\_状态字符串，并指示为 GUID 提供的数据类型：
 
-<a href="" id="fndis-guid-to-oid"></a>fNDIS\_GUID\_TO\_OID  
-指示 NDIS\_GUID 结构映射到 OID 的 GUID。
+<a href="" id="fndis-guid-to-oid"></a>fNDIS\_GUID\_到\_OID  
+指示 NDIS\_GUID 结构将 GUID 映射到 OID。
 
-<a href="" id="fndis-guid-to-status"></a>fNDIS\_GUID\_TO\_状态  
+<a href="" id="fndis-guid-to-status"></a>fNDIS\_GUID\_到\_状态  
 指示 NDIS\_GUID 结构将 GUID 映射到 NDIS\_状态字符串。
 
-<a href="" id="fndis-guid-ansi-string"></a>fNDIS\_GUID\_ANSI\_STRING  
-指示以 null 结尾的 ANSI 字符串，提供的 guid。
+<a href="" id="fndis-guid-ansi-string"></a>fNDIS\_GUID\_ANSI\_字符串  
+指示为 GUID 提供了以 null 结尾的 ANSI 字符串。
 
 <a href="" id="fndis-guid-unicode-string"></a>fNDIS\_GUID\_UNICODE\_字符串  
-指示 Unicode 字符串，提供的 guid。
+指示为 GUID 提供了 Unicode 字符串。
 
-<a href="" id="fndis-guid-array"></a>fNDIS\_GUID\_ARRAY  
-指示数据项的数组，提供的 guid。 指定**大小**指示数组中每个数据项的长度。
+<a href="" id="fndis-guid-array"></a>fNDIS\_GUID\_数组  
+指示为 GUID 提供数据项的数组。 指定的**大小**指示数组中每个数据项的长度。
 
-<a href="" id="fndis-guid-allow-read"></a>fNDIS\_GUID\_ALLOW\_READ  
-设置时，指示允许所有用户使用此 GUID 来获取信息。
+<a href="" id="fndis-guid-allow-read"></a>fNDIS\_GUID\_允许\_读取  
+如果设置，则表示允许所有用户使用此 GUID 获取信息。
 
-<a href="" id="fndis-guid-allow-write"></a>fNDIS\_GUID\_允许\_编写  
-设置时，指示允许所有用户可使用此 GUID 来设置的信息。
+<a href="" id="fndis-guid-allow-write"></a>fNDIS\_GUID\_允许\_写入  
+如果设置，则表示允许所有用户使用此 GUID 设置信息。
 
-**请注意**  默认情况下提供的微型端口驱动程序的自定义 WMI Guid 是仅具有管理员权限的用户可以访问。 具有管理员权限的用户始终可以读取或写入一个自定义 GUID，如果微型端口驱动程序支持读取或写入该 GUID 的操作。 设置 fNDIS\_GUID\_允许\_读取和 fNDIS\_GUID\_允许\_写标志以允许所有用户访问自定义 GUID。
+**注意**   默认情况下，只有具有管理员权限的用户才能访问微型端口驱动程序提供的自定义 WMI guid。 如果微型端口驱动程序支持该 GUID 的读取或写入操作，则具有管理员权限的用户始终可以读取或写入自定义 GUID。 将 fNDIS\_GUID\_允许\_READ and fNDIS\_GUID\_允许\_写入标志允许所有用户访问自定义 GUID。
 
  
 
-请注意，所有自定义 Guid 注册的微型端口驱动程序必须设置任一 fNDIS\_GUID\_TO\_OID 或 fNDIS\_GUID\_TO\_状态 （永远不会同时设置）。 所有其他标志可能会根据使用 OR 运算符组合。
+请注意，微型端口驱动程序注册的所有自定义 Guid 必须将 fNDIS\_GUID\_设置为\_OID 或 fNDIS\_GUID\_为\_状态（绝不会设置两者）。 所有其他标志可以通过使用 OR 运算符（如果适用）组合在一起。
 
 在下面的示例中，NDIS\_GUID 结构将 GUID 映射到 OID\_802\_3\_多播\_列表：
 
@@ -108,11 +108,11 @@ NDIS_GUID    NdisGuid = {{0x44795701, 0xa61b, 0x11d0, 0x8d, 0xd4,
                           fNDIS_GUID_TO_OID | fNDIS_GUID_ARRAY};
 ```
 
-GUID 是通过 Windows Management Instrumentation (WMI) 用于获取或设置信息的标识符。 NDIS 截获由 WMI 发送到 NDIS 驱动程序的 GUID，它将 GUID 映射到 OID，并向驱动程序发送 OID。 驱动程序返回的数据项目到 NDIS，然后将数据返回到 WMI。
+GUID 是 Windows Management Instrumentation （WMI）用于获取或设置信息的标识符。 NDIS 截获 WMI 发送到 NDIS 驱动程序的 GUID，将 GUID 映射到 OID，并将 OID 发送到该驱动程序。 驱动程序将数据项返回到 NDIS，然后将数据返回到 WMI。
 
-NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 微型端口驱动程序中使用 NIC 状态的更改进行报告时[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)函数，NDIS 转换 NDIS\_到 GUID 的 NDIS 所表示的微型端口驱动程序状态将发送到 WMI。
+NDIS 还会将 NIC 状态的更改转换为 WMI 识别的 Guid。 当微型端口驱动程序使用[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)函数报告 NIC 状态发生的更改时，ndis 会将微型端口驱动程序指示的 NDIS\_状态转换为 ndis 发送到 WMI 的 GUID。
 
-如果微型端口驱动程序支持海关 Guid，它必须支持 OID\_GEN\_支持\_GUID。 此 OID 返回到 NDIS 的自定义 Guid 到自定义 Oid 或 NDIS 映射\_状态字符串。 查询使用 OID 的微型端口驱动程序后\_GEN\_支持\_GUID，NDIS 向 WMI 注册微型端口驱动程序的自定义 Guid。
+如果微型端口驱动程序支持海关 Guid，则它必须支持 OID\_\_支持的\_GUID。 此 OID 返回到 NDIS，将自定义 Guid 映射到自定义 Oid 或 NDIS\_状态字符串。 使用 OID 查询微型端口驱动程序后\_生成\_支持\_GUID，NDIS 会将微型端口驱动程序的自定义 Guid 注册到 WMI。
 
 <a name="requirements"></a>要求
 ------------
@@ -124,16 +124,16 @@ NDIS 还将通过 WMI 识别的 Guid 转换为 NIC 状态变化。 微型端口�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
 
  
 

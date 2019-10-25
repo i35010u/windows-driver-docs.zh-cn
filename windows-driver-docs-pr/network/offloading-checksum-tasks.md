@@ -3,48 +3,48 @@ title: 卸载校验和任务
 description: 卸载校验和任务
 ms.assetid: 5fb2f379-c357-4ec3-b103-bdbe23fcc033
 keywords:
-- 任务卸载，WDK TCP/IP 传输，校验和任务
+- 任务卸载 WDK TCP/IP 传输，校验和任务
 - 校验和任务 WDK 网络
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cb33ffb7a0ca2d022b4e2f20307656e092b6665e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8f5f83914519db0a820c1d234018b20f930df1a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368505"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844330"
 ---
 # <a name="offloading-checksum-tasks"></a>卸载校验和任务
 
-NDIS 支持在运行时将 TCP/IP 校验和任务。
+NDIS 支持在运行时卸载 TCP/IP 校验和任务。
 
 > [!NOTE]
-> 校验和卸载带外 (OOB) 数据存储在[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)信息数组。 OOB 数据有关的详细信息，请参阅[访问 TCP/IP 卸载 NET\_缓冲区\_列出信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。
+> 校验和卸载带外（OOB）数据将存储在[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)信息数组中。 有关 OOB 数据的详细信息，请参阅[访问 Tcp/ip 卸载 NET\_BUFFER\_列表信息](accessing-tcp-ip-offload-net-buffer-list-information.md)。
 
-然后再将传递到微型端口驱动程序 NET\_缓冲区\_列表结构的微型端口驱动程序将在其执行校验和任务的数据包，TCP/IP 传输指定 NET与相关联的校验和信息\_缓冲区\_列表结构。 此信息由指定[ **NDIS\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构，它是网络的一部分\_缓冲区\_与网络相关联的列表信息 （带外数据）\_缓冲区\_列表结构。
+在向微型端口驱动程序传递一个网络\_缓冲区\_列表结构（其中，微型端口驱动程序将在其上执行校验和任务）之前，TCP/IP 传输会指定与 NET\_缓冲区关联的校验和信息\_列表结构。 此信息由[**NDIS\_TCP\_IP\_校验和\_net\_buffer\_list\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构，这是网络\_缓冲区\_列表信息（带外数据）的一部分与 NET\_缓冲区\_列表结构关联的。
 
-卸载 TCP 数据包的校验和计算之前, TCP/IP 传输计算 1 的补数的总和 TCP pseudoheader。 TCP/IP 传输计算 pseudoheader，包括源 IP 地址、 目标 IP 地址、 协议和 TCP 数据包的 TCP 长度中的所有字段中的 1 的补数之和。 TCP/IP 传输会为 pseudoheader TCP 标头的校验和字段中输入 1 的补数之和。
+在为 TCP 数据包卸载校验和计算之前，TCP/IP 传输会计算 TCP pseudoheader 的补码和。 TCP/IP 传输在 pseudoheader 中的所有字段之间计算一次补码之和，包括源 IP 地址、目标 IP 地址、协议和 TCP 数据包的 TCP 长度。 TCP/IP 传输在 TCP 标头的校验和字段中输入 pseudoheader 的补码总和。
 
-1 的补数的总和通过 TCP/IP 传输提供 pseudoheader 为 NIC 提供了在发送数据包的实际 TCP 校验和计算最早开始时间。 若要计算的实际 TCP 校验和，NIC 计算 TCP 校验和 （适用于 TCP 标头和有效负载中） 的变量部分，此校验和 1 的补数的总和计算通过 TCP/IP 传输 pseudoheader 并添加计算的 16 位一个的校验和的补数。 有关计算此类校验和的详细信息，请参阅 RFC 793 和 RFC 1122。
+TCP/IP 传输提供的 pseudoheader 的补码 sum 使 NIC 在计算发送数据包的实际 TCP 校验和时提前开始。 若要计算实际 TCP 校验和，NIC 将计算 TCP 校验和的可变部分（对于 TCP 标头和负载），将此校验和添加到由 TCP/IP 传输计算的 pseudoheader 的补码总和，并计算16位一校验和的补充。 有关计算此类校验和的详细信息，请参阅 RFC 793 和 RFC 1122。
 
 > [!NOTE]
-> TCP/IP 传输计算 1 的补数的总和 pseudoheader UDP 数据包，因为它会为 TCP 数据包时，并将值存储在 UDP 标头的校验和字段使用相同的步骤。
+> TCP/IP 传输使用与 TCP 数据包相同的步骤来计算 UDP 数据包的 pseudoheader 的补码和，并将该值存储在 UDP 标头的校验和字段中。
 
-请注意，TCP/IP 传输始终将确保数据包的 IP 标头中的校验和字段设置为零，然后再将数据包传递到基础的微型端口驱动程序。 微型端口驱动程序应忽略 IP 标头中的校验和字段。 微型端口驱动程序不需要验证校验和字段设置为零，并且不需要将此字段设置为零。
+请注意，TCP/IP 传输总是确保数据包的 IP 标头中的校验和字段设置为零，然后将数据包传递到基础微型端口驱动程序。 微型端口驱动程序应忽略 IP 标头中的校验和字段。 微型端口驱动程序无需验证校验和字段是否设置为零，且不需要将此字段设置为零。
 
-收到 NET 后\_缓冲区\_列表中的结构及其[ *MiniportSendNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_send_net_buffer_lists)或者[ **MiniportCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)函数，微型端口驱动程序通常执行以下的校验和处理：
+在它的[*MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)或[**MiniportCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists)函数中收到 NET\_BUFFER\_列表结构后，微型端口驱动程序通常会执行以下校验和处理：
 
-1.  微型端口驱动程序调用[ **NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)宏替换 *\_Id*的**TcpIpChecksumNetBufferListInfo**以获取[ **NDIS\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构。
+1.  微型端口驱动程序使用 *\_Id* **TcpIpChecksumNetBufferListInfo**调用[**net\_缓冲区\_列表\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-info)宏，以获取[**NDIS\_\_网络\_\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构。
 
-2.  微型端口驱动程序测试**IsIPv4**并**IsIPv6**标志在 NDIS\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_信息结构。 如果这两个**IsIPv4**并**IsIPv6**标志未设置、 NIC 不应执行对数据包的任何校验和操作。
+2.  微型端口驱动程序会测试 NDIS 中的**IsIPv4**和**ISIPV6**标志\_TCP\_IP\_校验和\_NET\_BUFFER\_LIST\_INFO 结构。 如果未设置**IsIPv4**和**IsIPv6**标志，则 NIC 不应对包执行任何校验和操作。
 
-3.  如果**IsIPv4**或**IsIPv6**设置标志，微型端口驱动程序测试**TcpChecksum**， **UdpChecksum**，和**IpHeaderChecksum**标志以确定 NIC 数据包应计算的校验和。
+3.  如果设置了**IsIPv4**或**IsIPv6**标志，微型端口驱动程序会测试**TcpChecksum**、 **UDPCHECKSUM**和**IpHeaderChecksum**标志，以确定 NIC 应该为数据包计算哪些校验和。
 
-4.  微型端口驱动程序将数据包传递到 NIC，计算的数据包的适当校验和。 如果数据包具有隧道 IP 标头和传输 IP 标头，支持 IP 校验和卸载的 NIC 只能在隧道标头上执行 IP 校验和任务。 TCP/IP 传输上传输 IP 标头执行 IP 校验和任务。
+4.  微型端口驱动程序将数据包传递到 NIC，这将计算数据包的相应校验和。 如果数据包具有隧道 IP 标头和传输 IP 标头，则支持 IP 校验和卸载的 NIC 将仅对隧道标头执行 IP 校验和任务。 TCP/IP 传输对传输 IP 标头执行 IP 校验和任务。
 
-之前，该值指示[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构对于它在其执行校验和任务的接收数据包，微型端口驱动程序来验证相应的校验和并设置适当*Xxx * * * ChecksumFailed** 或*Xxx * * * ChecksumSucceeded** 中 NDIS 标志\_TCP\_IP\_校验和\_NET\_缓冲区\_列表\_信息结构。
+在为用于执行校验和任务的接收数据包指示[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构之前，微型端口驱动程序将验证相应的校验和，并设置相应的*xxx * * * ChecksumFailed** 或*xxx * ** ChecksumSucceeded ** 中的标记\_TCP\_IP\_校验和\_NET\_BUFFER\_LIST\_INFO 结构。
 
-关闭地址校验和卸载时启用大量发送卸载 (LSO) 不会阻止从计算并将校验和插入由 LSO 功能生成的数据包中的微型端口驱动程序。 若要禁用地址校验和卸载在这种情况下用户还必须禁用 LSO。
+如果启用了大规模发送卸载（LSO），则关闭地址校验和卸载不会阻止微型端口驱动程序计算和插入由 LSO 功能生成的数据包中的校验和。 若要禁用地址校验和卸载，在这种情况下，用户还必须禁用 LSO。
 
  
 

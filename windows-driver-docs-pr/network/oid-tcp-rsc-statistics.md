@@ -1,35 +1,35 @@
 ---
 title: OID_TCP_RSC_STATISTICS
-description: 为查询，NDIS 和基础驱动程序或用户模式应用程序使用 OID_TCP_RSC_STATISTICS OID 获取接收段合并 (RSC) 统计信息的微型端口适配器。
+description: 作为查询，NDIS 和过量驱动程序或用户模式应用程序使用 OID_TCP_RSC_STATISTICS OID 来获取微型端口适配器的接收段合并（RSC）统计信息。
 ms.assetid: CD289868-1925-4222-8A4D-359118124325
 ms.date: 08/08/2017
-keywords: -OID_TCP_RSC_STATISTICS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_TCP_RSC_STATISTICS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a65cdf87a6c6d9ecccb5ebbc3fe493106bbb82b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d23634c0cb6ff59b4a01583bc7d33d0fce5c2561
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386958"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843899"
 ---
-# <a name="oidtcprscstatistics"></a>OID\_TCP\_RSC\_统计信息
+# <a name="oid_tcp_rsc_statistics"></a>OID\_TCP\_RSC\_统计信息
 
 
-为查询，NDIS 和基础驱动程序或用户模式应用程序使用 OID\_TCP\_RSC\_统计信息 OID 获取接收段合并 (RSC) 统计信息的微型端口适配器。
+作为查询，NDIS 和过量驱动程序或用户模式应用程序使用 OID\_TCP\_RSC\_STATISTICS OID 来获取微型端口适配器的接收段合并（RSC）统计信息。
 
-NDIS 6.30 和更高版本的微型端口驱动程序提供 RSC 服务必须支持此 OID。 否则，此 OID 是可选的。
+提供 RSC 服务的 NDIS 6.30 和更高版本的微型端口驱动程序必须支持此 OID。 否则，此 OID 是可选的。
 
 <a name="remarks"></a>备注
 -------
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含[ **NDIS\_RSC\_统计信息\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构。
+[ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个[**ndis\_RSC\_STATISTICS\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构。
 
-微型端口驱动程序必须维护中的成员的统计信息[ **NDIS\_RSC\_统计信息\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构，如下所示：
+微型端口驱动程序必须在[**NDIS\_RSC\_统计信息\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)结构的成员中维护统计信息，如下所示：
 
--   该驱动程序必须递增中的合并的数据包数**CoalescedPkts**由一个每次数据包添加到单个合并单元 (SCU) 的成员。
--   该驱动程序必须递增中的合并后的八位字节计数**CoalescedOctets**成员的每次数据包添加到 SCU 数据包的 TCP 有效负载大小。
--   该驱动程序必须递增合并的事件数**CoalesceEvents**由一个每次完成 SCU 的成员。 所有此类 SCUs 应具有一个非零**CoalescedSegCount**值。
--   该驱动程序必须递增中的中止计数**中止**每次它遇到的异常不是 IP 数据报长度超过一个的成员。 此计数应包括数据包由于硬件资源的未合并其中的用例。
+-   每次向单个合并的单元（SCU）添加数据包时，驱动程序必须在**CoalescedPkts**成员中递增合并的数据包计数。
+-   每次将数据包添加到 SCU 时，驱动程序必须在**CoalescedOctets**成员中递增每个数据包的 TCP 负载大小。
+-   每次完成 SCU 时，驱动程序必须将合并的事件计数**CoalesceEvents**成员递增1。 所有此类 SCUs 应有一个非零的**CoalescedSegCount**值。
+-   驱动程序必须在每次遇到不超过 IP 数据报长度的异常**时，将中止成员中**的中止计数递增1。 此计数应包括由于硬件资源未合并数据包的情况。
 
 <a name="requirements"></a>要求
 ------------
@@ -41,22 +41,22 @@ NDIS 6.30 和更高版本的微型端口驱动程序提供 RSC 服务必须支�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>NDIS 6.30 和更高版本在 Windows 8 中的驱动程序支持。</p></td>
+<td><p>版本</p></td>
+<td><p>Windows 8 中的 NDIS 6.30 和更高版本驱动程序支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_RSC\_STATISTICS\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)
+[**NDIS\_RSC\_统计信息\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rsc_statistics_info)
 
  
 

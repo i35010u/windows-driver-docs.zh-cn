@@ -8,22 +8,22 @@ keywords:
 - 存储支持例程
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d6c0413d5cb7843addea08017ddf334bddbc0c
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: a69c5f07a50bdb4624db65ed88a39a9e0cd68d29
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256297"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844460"
 ---
 # <a name="storport-driver-miniport-routines"></a>Storport 驱动程序微型端口例程
 
-与 Storport 驱动程序配合使用的微型端口驱动程序必须包含本部分中列出的例程说明的实现，并且它必须在微型端口驱动程序的初始化过程中通过[HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_hw_initialization_data)结构公开它们。阶段.
+与 Storport 驱动程序配合使用的微型端口驱动程序必须包含本部分中列出的例程说明的实现，并且它必须在微型端口驱动程序的初始化过程中通过[HW_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/ns-storport-_hw_initialization_data)结构公开它们。阶段.
 
 Storport 微型端口驱动程序例程在大多数方面都等效于其 SCSI 端口对应项（有关详细信息，请参阅[SCSI 微型端口驱动程序例程](scsi-miniport-driver-routines.md)）。 但是，SCSI 端口驱动程序的设计和 Storport 驱动程序的设计之间存在重要差异，并且这些例程必须适应这些差异。
 
-例如，使用 Storport 驱动程序的微型端口驱动程序必须始终准备好在[HwStorStartIo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio)例程完成后接收另一个 i/o 请求。 使用 SCSI 端口的微型端口驱动程序无需执行此操作。 SCSI 端口版本不会接收到新的 i/o 请求，直到使用[StorPortNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportnotification)函数显式发出端口驱动程序的信号，然后才能处理另一请求。
+例如，使用 Storport 驱动程序的微型端口驱动程序必须始终准备好在[HwStorStartIo](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_startio)例程完成后接收另一个 i/o 请求。 使用 SCSI 端口的微型端口驱动程序无需执行此操作。 SCSI 端口版本不会接收到新的 i/o 请求，直到使用[StorPortNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)函数显式发出端口驱动程序的信号，然后才能处理另一请求。
 
-如果小型端口驱动程序的 Storport 版本无法在提交请求时处理请求，则它将具有一组队列管理功能，而不能用于 SCSI 端口版本，使其能够处理重载。 与 SCSI 端口版本一样，微型端口驱动程序的 Storport 版本完成了使用**SRB_STATUS_BUSY**的请求，但与 scsi 端口版本不同的是，它还可以使用[StorPortDeviceBusy](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportdevicebusy)例程将设备队列标记为忙。 类似的功能允许微型端口驱动程序在适配器范围内暂停和恢复处理。
+如果小型端口驱动程序的 Storport 版本无法在提交请求时处理请求，则它将具有一组队列管理功能，而不能用于 SCSI 端口版本，使其能够处理重载。 与 SCSI 端口版本一样，微型端口驱动程序的 Storport 版本完成了使用**SRB_STATUS_BUSY**的请求，但与 scsi 端口版本不同的是，它还可以使用[StorPortDeviceBusy](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportdevicebusy)例程将设备队列标记为忙。 类似的功能允许微型端口驱动程序在适配器范围内暂停和恢复处理。
 
 有关 Storport 驱动程序提供的支持例程的详细信息，请参阅[storport 驱动程序支持例程](storport-driver-support-routines.md)。
 
@@ -33,19 +33,19 @@ Storport 微型端口驱动程序例程在大多数方面都等效于其 SCSI �
 
 | 例程 | 描述 |
 | ------- | ----------- |
-| [HW_MESSAGE_SIGNALED_INTERRUPT_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_message_signaled_interrupt_routine) | 处理消息信号中断（MSI）。 |
-| [HW_ADAPTER_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_adapter_control) | 执行同步操作以控制适配器的状态或行为，如停止或重启 HBA 以进行电源管理。 |
-| [HW_BUILDIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_buildio) | 在将共享系统数据结构传递到**HwStorStartIo**之前，处理对该 SRB 的不同步访问。 |
-| [HW_DPC_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_dpc_routine) | 通过延迟的过程调用（DPC）机制，延迟在调度 IRQL 处执行的例程。 |
-| [HW_FIND_ADAPTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter) | 使用提供的配置来确定是否支持特定的 HBA，如果是，则返回有关该适配器的配置信息。 |
-| [HW_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_initialize) | 在系统重新启动或出现电源故障后初始化微型端口驱动程序。 |
-| [HW_INTERRUPT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_interrupt) | Storport 驱动程序在 HBA 生成中断请求后调用**HwStorInterrupt**例程。 |
-| [HW_PASSIVE_INITIALIZE_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_passive_initialize_routine) | 当当前 IRQL 处于 PASSIVE_LEVEL 时，在**HwStorInitialize**例程后调用。 |
-| [HW_RESET_BUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus) | 由端口驱动程序调用以清除错误条件。 |
-| [HW_STARTIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_startio) | Storport 驱动程序针对每个传入 i/o 请求调用**HwStorStartIo**例程一次。 |
-| [HW_TIMER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_timer) | 在微型端口驱动程序调用**StorPortNotification**且**RequestTimerCall** *NotificationType*值指定的时间间隔后调用。 |
-| [HW_TRACING_ENABLED](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_tracing_enabled) | 允许 Storport 通知小型端口启用了事件跟踪。 |
-| [HW_UNIT_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_unit_control) | 调用以执行同步操作，以控制存储单元设备的状态。 将通知微型端口驱动程序启动单位或处理设备设备的电源状态转换。 |
-| [HW_WORKITEM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_workitem) | 用于处理 Storport 工作项请求的微型端口提供的回调函数。 |
-| [STORPORT_TELEMETRY_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/ns-storport-_storport_telemetry_event) | 介绍微型端口遥测数据负载。 |
-| [StorPortLogTelemetry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportlogtelemetry) | 记录微型端口遥测事件以帮助诊断或收集任何有用的信息。 小型端口可以记录8个常规用途名称-值对和最大长度为4KB 的缓冲区，以及结构 STORPORT_TELEMETRY_EVENT 中定义的多个事件相关字段。 |
+| [HW_MESSAGE_SIGNALED_INTERRUPT_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_message_signaled_interrupt_routine) | 处理消息信号中断（MSI）。 |
+| [HW_ADAPTER_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_adapter_control) | 执行同步操作以控制适配器的状态或行为，如停止或重启 HBA 以进行电源管理。 |
+| [HW_BUILDIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_buildio) | 在将共享系统数据结构传递到**HwStorStartIo**之前，处理对该 SRB 的不同步访问。 |
+| [HW_DPC_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_dpc_routine) | 通过延迟的过程调用（DPC）机制，延迟在调度 IRQL 处执行的例程。 |
+| [HW_FIND_ADAPTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter) | 使用提供的配置来确定是否支持特定的 HBA，如果是，则返回有关该适配器的配置信息。 |
+| [HW_INITIALIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_initialize) | 在系统重新启动或出现电源故障后初始化微型端口驱动程序。 |
+| [HW_INTERRUPT](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_interrupt) | Storport 驱动程序在 HBA 生成中断请求后调用**HwStorInterrupt**例程。 |
+| [HW_PASSIVE_INITIALIZE_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_passive_initialize_routine) | 当当前 IRQL 处于 PASSIVE_LEVEL 时，在**HwStorInitialize**例程后调用。 |
+| [HW_RESET_BUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_reset_bus) | 由端口驱动程序调用以清除错误条件。 |
+| [HW_STARTIO](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_startio) | Storport 驱动程序针对每个传入 i/o 请求调用**HwStorStartIo**例程一次。 |
+| [HW_TIMER](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_timer) | 在微型端口驱动程序调用**StorPortNotification**且**RequestTimerCall** *NotificationType*值指定的时间间隔后调用。 |
+| [HW_TRACING_ENABLED](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_tracing_enabled) | 允许 Storport 通知小型端口启用了事件跟踪。 |
+| [HW_UNIT_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_unit_control) | 调用以执行同步操作，以控制存储单元设备的状态。 将通知微型端口驱动程序启动单位或处理设备设备的电源状态转换。 |
+| [HW_WORKITEM](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_workitem) | 用于处理 Storport 工作项请求的微型端口提供的回调函数。 |
+| [STORPORT_TELEMETRY_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/ns-storport-_storport_telemetry_event) | 介绍微型端口遥测数据负载。 |
+| [StorPortLogTelemetry](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportlogtelemetry) | 记录微型端口遥测事件以帮助诊断或收集任何有用的信息。 小型端口可以记录8个常规用途名称-值对和最大长度为4KB 的缓冲区，以及结构 STORPORT_TELEMETRY_EVENT 中定义的多个事件相关字段。 |

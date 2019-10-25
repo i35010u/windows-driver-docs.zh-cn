@@ -1,9 +1,9 @@
 ---
-title: AVC\_函数\_获取\_EXT\_即插即用\_计数
-description: AVC\_函数\_获取\_EXT\_即插即用\_计数
+title: AVC\_函数\_获取\_EXT\_插入\_计数
+description: AVC\_函数\_获取\_EXT\_插入\_计数
 ms.assetid: dced18ac-dc26-4c47-bc92-a3f3daec505b
 keywords:
-- AVC_FUNCTION_GET_EXT_PLUG_COUNTS 流式处理媒体设备
+- AVC_FUNCTION_GET_EXT_PLUG_COUNTS 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65fe4cde47b5526f4326e1fd4b82e10d74546398
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e633c45f67e6ea7af0dfbef327a94e15e63f3bff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386743"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844658"
 ---
-# <a name="avcfunctiongetextplugcounts"></a>AVC\_函数\_获取\_EXT\_即插即用\_计数
+# <a name="avc_function_get_ext_plug_counts"></a>AVC\_函数\_获取\_EXT\_插入\_计数
 
 
 ## <span id="ddk_avc_function_get_ext_plug_counts_ks"></span><span id="DDK_AVC_FUNCTION_GET_EXT_PLUG_COUNTS_KS"></span>
 
 
-**AVC\_函数\_获取\_EXT\_插入\_计数**函数代码获取外部输入和输出插入计数。
+**AVC\_函数\_GET\_EXT\_即插\_计数**函数代码获取外部输入和输出插件计数。
 
 ### <a name="io-status-block"></a>I/O 状态块
 
-如果成功，AV/C 协议驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功。
+如果成功，AV/C 协议驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
 
-可能其他返回值包括：
+可能的其他返回值包括：
 
 <table>
 <colgroup>
@@ -47,15 +47,15 @@ ms.locfileid: "67386743"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>发出请求，但未收到响应之前所有的超时和重试处理已完成。</p></td>
+<td><p>发出了请求，但在所有超时和重试处理完成之前未收到响应。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>立即中止 STATUS_REQUEST_ABORTED IRP 完成状态时。 这表示设备已删除或不再可用的 1394年总线上。</p></td>
+<td><p>当 IRP 完成状态为 "STATUS_REQUEST_ABORTED" 时立即中止。 这表明设备已被删除或在1394总线上不再可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_*</p></td>
-<td><p>任何其他返回代码指示错误或警告发生了超出范围的 AV/C 协议。</p></td>
+<td><p>任何其他返回代码指示出现超出 AV/C 协议范围的错误或警告。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ ms.locfileid: "67386743"
 
 ### <a name="comments"></a>备注
 
-此函数使用**ExtPlugCounts**成员的 AVC\_MULTIFUNC\_IRB 结构如下所示。
+此函数使用 AVC\_MULTIFUNC\_IRB 结构的**ExtPlugCounts**成员，如下所示。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -83,25 +83,25 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在中声明*avc.h*。 包括*avc.h*。
+**标头：** 在*avc*中声明。 包括*avc*。
 
-### <a name="avcmultifuncirb-input"></a>AVC\_MULTIFUNC\_IRB 输入
+### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 输入
 
-**Common**  
-**函数**必须设置为此成员的子**AVC\_函数\_获取\_EXT\_即插即用\_计数**从 AVC\_函数的枚举。
+**常见问题解答**  
+此成员的**函数**submember 必须设置为 AVC\_函数\_从 AVC\_函数枚举**获取\_EXT\_插入\_计数**。
 
 <span id="ExtPlugCounts"></span><span id="extplugcounts"></span><span id="EXTPLUGCOUNTS"></span>**ExtPlugCounts**  
-指定的外部输入和输出插入的计数。
+指定外部输入和输出插头的计数。
 
-个虚拟实例不支持此函数代码*avc.sys*。
+*Avc*的虚拟实例不支持此函数代码。
 
-子单元驱动程序负责确定函数、 格式和外部插入的使用。 *Avc.sys*的确会但是，报告任何外部插入和子单元插入之间的永久连接专用图钉形式子单元 (有关详细信息，请参阅[ **AVC\_函数\_GET\_CONNECTINFO**](avc-function-get-connectinfo.md))。
+子单位驱动程序负责确定外部插头的函数、格式和使用情况。 不过， *Avc*将外部插头和子单位插头之间的任何永久连接报告为子单位的专用 pin （有关详细信息，请参阅[**Avc\_函数\_GET\_CONNECTINFO**](avc-function-get-connectinfo.md)）。
 
-这必须在调用在 IRQL = 被动\_级别。
+此名称必须以 IRQL = 被动\_级别进行调用。
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)， [ **AVC\_EXT\_即插即用\_计数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_ext_plug_counts)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)， [**AVC\_EXT\_插入\_计数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_ext_plug_counts)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)
 
  
 

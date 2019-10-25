@@ -3,20 +3,20 @@ title: 缓冲状态控件
 description: 缓冲状态控件
 ms.assetid: 16590332-9d0d-4d8b-8304-a3fa9269c0e2
 keywords:
-- RDBSS WDK 的文件系统，缓冲状态
-- 重定向驱动器缓冲子系统 WDK 的文件系统，缓冲状态
+- RDBSS WDK 文件系统，缓冲状态
+- 重定向驱动器缓冲子系统 WDK 文件系统，缓冲状态
 - 缓冲状态 WDK RDBSS
-- 分布式的缓存协调性 WDK RDBSS
+- 分布式缓存一致性 WDK RDBSS
 - 缓存 WDK RDBSS
 - SRV_OPEN 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c44aa59b0b2ba409dfc57d334bbfc0a7c7f40db0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b664f3966da3bde490d0310bcd1633540918de6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364356"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841479"
 ---
 # <a name="buffering-state-control"></a>缓冲状态控件
 
@@ -24,43 +24,43 @@ ms.locfileid: "67364356"
 ## <span id="ddk_buffering_state_control_if"></span><span id="DDK_BUFFERING_STATE_CONTROL_IF"></span>
 
 
-RDBSS 提供缓冲管理器，用于提供各种网络的最小重定向结合使用的分布式的缓存协调性的机制。 此服务被封装在处理请求，以更改缓冲状态的 RDBSS 中的缓冲管理器。 RDBSS 中的缓冲管理器跟踪，并启动上缓冲生成由各种网络最小重定向以及 RDBSS 状态请求的所有更改的操作。
+RDBSS 提供了一个缓冲管理器，它是一种用于提供分布式缓存与各种网络微型重定向程序的一致性的机制。 此服务封装在 RDBSS 中的缓冲管理器中，用于处理更改缓冲状态的请求。 RDBSS 中的缓冲管理器跟踪并启动由各种网络微型重定向程序以及 RDBSS 生成的所有更改缓冲状态请求的操作。
 
-在典型的网络微型重定向的缓存协调性的实现中有多个常见组件：
+典型的网络微重定向程序中的缓存一致性实现中有几个常见组件：
 
--   若要创建和打开文件例程的修改。
+-   用于创建和打开文件例程的修改。
 
-    在此路径中，确定缓冲请求的类型，并向服务器发出相应的请求。 返回从网络微型重定向，和可能是服务器时，缓冲 FCB 与相关联的状态将会更新基于创建或打开调用的结果。
+    在此路径中，将确定缓冲请求的类型，并向服务器发出适当的请求。 从网络小型重定向程序（可能为服务器）返回时，将根据创建或打开调用的结果更新与 FCB 关联的缓冲状态。
 
--   修改，以便收到指示代码来处理从服务器更改缓冲状态通知。
+-   用于接收指示代码以处理来自服务器的更改缓冲状态通知的修改。
 
-    如果检测到此类请求，则必须触发本地的机制来协调缓冲状态。
+    如果检测到此类请求，则必须触发用于协调缓冲状态的本地机制。
 
--   用于更改 RDBSS 的一部分实现的缓冲状态的机制。 缓冲状态请求的任何更改必须标识 SRV\_打开请求应用的结构。
+-   一种用于更改作为 RDBSS 的一部分实现的缓冲状态的机制。 任何更改缓冲状态请求都必须确定请求适用的 SRV\_开放结构。
 
-标识 SRV 所涉及的计算工作量\_打开结构取决于协议和网络微型重定向的详细信息。 SMB 协议在机会锁 (oplock) 的缓存一致性提供必要的基础结构。 在 Windows 中的 SMB 协议实现中，使用多路复用 ID Api 提供通过 RDBSS。 在服务器获取选择用于标识在服务器上打开的文件的多路复用 ID。 多路复用 Id 是相对于 NET\_根 （共享） 打开它们。 因此，缓冲状态请求的每项更改由两个密钥： NetRootKey 和 SrvOpenKey，需要转换为相应的 NET\_根和 SRV\_分别打开结构。 若要与资源获取/释放机制提供更好地集成并避免重复此操作在各种网络最小重定向，RDBSS 提供此服务。
+标识 SRV\_开放结构所涉及的计算工作量取决于网络小型重定向器的协议和详细信息。 在 SMB 协议中，机会锁（oplock）为缓存一致性提供必要的基础结构。 在 Windows 中的 SMB 协议实现中，使用 RDBSS 提供的多路复用 ID Api。 服务器将获取用于标识在服务器上打开的文件的多路复用 ID。 多路复用 Id 相对于打开它们的网络\_根（共享）。 因此，每个更改缓冲状态请求都由两个密钥标识： NetRootKey 和 SrvOpenKey，需要分别将其转换为相应的 NET\_ROOT 和 SRV\_开放结构。 为了更好地与资源获取/释放机制集成，并避免在各种网络微型重定向器中重复此项工作，RDBSS 提供了此服务。
 
-有两个例程 RDBSS 中提供的该值指示缓冲状态更改为 SRV\_打开结构：
+RDBSS 中提供了两个例程，用于指示对 SRV\_开放结构的缓冲状态更改：
 
--   [**RxIndicateChangeOfBufferingState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)注册请求
+-   用于注册请求的[**RxIndicateChangeOfBufferingState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)
 
--   [**RxIndicateChangeOfBufferingStateForSrvOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)为关联的 SRV\_与键打开结构
+-   用于将 SRV\_开放结构与密钥相关联的[**RxIndicateChangeOfBufferingStateForSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)
 
-请注意，键的关联是不可逆的并且将持续的生存期相关联的 SRV\_打开结构。
+请注意，密钥关联是不可逆的，并且将在关联的 SRV\_开放结构的生存期内进行。
 
-网络微型-重定向程序需要辅助机制用于建立从多路复用 Id 映射到 SRV\_打开结构可以使用[ **RxIndicateChangeOfBufferingState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)，尽管可以使用网络微型-重定向程序不需要这种辅助[ **RxIndicateChangeOfBufferingStateForSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)。
+需要使用辅助机制建立从多路复用 Id 到 SRV\_开放结构的映射的网络微重定向器可使用[**RxIndicateChangeOfBufferingState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)，而不需要此的网络微重定向器帮助可以使用[**RxIndicateChangeOfBufferingStateForSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)。
 
-RDBSS 中的缓冲管理器在不同阶段中处理这些请求。 它维护从各种基础网络微型-重定向程序在多个列表之一中接收的请求。
+RDBSS 中的缓冲管理器在不同阶段处理这些请求。 它在多个列表之一中维护从各种基础网络微重定向程序收到的请求。
 
--   调度程序列表包含的所有请求为其映射到 SRV 的适当\_打开结构未建立。
+-   调度程序列表包含的所有请求都未建立与 SRV\_开放结构的适当映射。
 
--   处理程序列表包含所有相应的映射已建立，但尚未处理的请求。
+-   处理程序列表包含已为其建立适当映射但尚未处理的所有请求。
 
--   LastChanceHandlerList 包含所有为其初始处理未成功的请求。 这通常发生在 FCB 已获取在共享模式下在缓冲状态请求的更改时接收到的时间。 在这种情况下，只能由延迟的辅助线程处理 oplock 破坏请求。
+-   LastChanceHandlerList 包含初始处理未成功的所有请求。 这通常发生在收到更改缓冲状态请求时，在共享模式下获取 FCB。 在这种情况下，oplock 中断请求只能由延迟的工作线程处理。
 
-FCB 获得和释放协议而更改缓冲状态请求网络微型重定向程序驱动程序中处理。 这有助于确保周转时间更短。
+网络微型重定向程序驱动程序中的更改缓冲状态请求处理与 FCB 获取和释放协议过度交织。 这有助于确保周转时间较短。
 
-RDBSS 提供了以下例程来管理网络微型重定向程序驱动程序可以使用的缓冲状态：
+RDBSS 提供以下例程来管理可由网络微型重定向程序驱动程序使用的缓冲状态：
 
 <table>
 <colgroup>
@@ -75,16 +75,16 @@ RDBSS 提供了以下例程来管理网络微型重定向程序驱动程序可�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxchangebufferingstate" data-raw-source="[&lt;strong&gt;RxChangeBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxchangebufferingstate)"><strong>RxChangeBufferingState</strong></a></p></td>
-<td align="left"><p>此例程调用以处理缓冲的状态更改请求。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxchangebufferingstate" data-raw-source="[&lt;strong&gt;RxChangeBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxchangebufferingstate)"><strong>RxChangeBufferingState</strong></a></p></td>
+<td align="left"><p>调用此例程来处理缓冲状态更改请求。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)"><strong>RxIndicateChangeOfBufferingState</strong></a></p></td>
-<td align="left"><p>此例程称为注册以供将来处理缓冲状态更改请求 （oplock 中断指示）。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstate)"><strong>RxIndicateChangeOfBufferingState</strong></a></p></td>
+<td align="left"><p>调用此例程来注册缓冲状态更改请求（例如，oplock 中断指示）以供以后处理。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingStateForSrvOpen&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)"><strong>RxIndicateChangeOfBufferingStateForSrvOpen</strong></a></p></td>
-<td align="left"><p>此例程称为注册以供将来处理缓冲状态更改请求 （oplock 中断指示）。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen" data-raw-source="[&lt;strong&gt;RxIndicateChangeOfBufferingStateForSrvOpen&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxindicatechangeofbufferingstateforsrvopen)"><strong>RxIndicateChangeOfBufferingStateForSrvOpen</strong></a></p></td>
+<td align="left"><p>调用此例程来注册缓冲状态更改请求（例如，oplock 中断指示）以供以后处理。</p></td>
 </tr>
 </tbody>
 </table>

@@ -3,32 +3,32 @@ title: 注册扩展接口
 description: 注册扩展接口
 ms.assetid: 33dc32da-9bc1-40b4-8737-ec132ec36708
 keywords:
-- 网络、 Winsock 内核 WDK 扩展插件接口
-- WSK WDK 网络、 扩展插件接口
+- Winsock 内核 WDK 网络，扩展接口
+- WSK WDK 网络，扩展接口
 - 扩展接口 WDK Winsock 内核
-- 注册 Winsock 内核扩展插件接口
+- 注册 Winsock 内核扩展接口
 - SIO_WSK_REGISTER_EXTENSION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a1adad4b82d8a0525014309b2db135c07856d005
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 239551ec06e469d25ae0d3dcea43f1931ea35159
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374797"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842095"
 ---
 # <a name="registering-an-extension-interface"></a>注册扩展接口
 
 
-Winsock Kernel (WSK) 应用程序已成功创建套接字后，它可以为一个或多个注册的套接字[扩展插件接口](winsock-kernel-extension-interfaces.md)受 WSK 子系统。 WSK 应用程序确定 WSK 子系统支持的扩展插件接口的一组，应检查**版本**的成员[ **WSK\_提供程序\_调度** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch) WSK 子系统返回到应用程序在附件的结构。
+Winsock 内核（WSK）应用程序成功创建套接字后，它可以为 WSK 子系统支持的一个或多个[扩展接口](winsock-kernel-extension-interfaces.md)注册该套接字。 WSK 应用程序通过检查 WSK 子系统返回给应用程序的[**WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)结构的**版本**成员，确定 WSK 子系统支持的扩展接口集。在附件时。
 
-由独立于 WSK NPI NPI 定义每个扩展接口。 但是，请注意，扩展插件接口 NPIs 不支持特定于 NPI 的特征。
+每个扩展接口都由与 WSK NPI 无关的 NPI 定义。 但请注意，扩展接口的 NPIs 不支持 NPI 特定的特征。
 
-WSK 应用程序注册的扩展接口通过执行[ **SIO\_WSK\_注册\_扩展**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-register-extension)套接字 IOCTL 套接字上的操作。 有关正在执行的套接字 IOCTL 操作的详细信息，请参阅[套接字上执行管理操作](performing-control-operations-on-a-socket.md)。
+WSK 应用程序通过执行[**SIO\_WSK\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-register-extension)在套接字上注册\_扩展套接字 IOCTL 操作来注册扩展接口。 有关执行套接字 IOCTL 操作的详细信息，请参阅[在套接字上执行控制操作](performing-control-operations-on-a-socket.md)。
 
-如果 WSK 应用程序将尝试注册 WSK 子系统，SIO 不支持的扩展接口的套接字\_WSK\_注册\_扩展套接字 IOCTL 操作将返回状态\_不\_受支持。
+如果 WSK 应用程序尝试为 WSK 子系统不支持的扩展接口注册套接字，则 SIO\_WSK\_REGISTER\_扩展套接字 IOCTL 操作将返回\_\_不受支持的状态。
 
-例如，假设，如以下代码示例所示定义扩展插件接口。
+例如，假设扩展接口定义为，如下面的代码示例中所示。
 
 ```C++
 const NPIID EXAMPLE_EXTIF_NPIID = {...};
@@ -48,7 +48,7 @@ typedef struct _EXAMPLE_EXTIF_CLIENT_DISPATCH {
 } EXAMPLE_EXTIF_CLIENT_DISPATCH, *PEXAMPLE_EXTIF_CLIENT_DISPATCH;
 ```
 
-下面显示了如何为面向连接的套接字此扩展插件接口注册 WSK 应用程序。
+下面演示了 WSK 应用程序如何为面向连接的套接字注册此扩展接口。
 
 ```C++
 // Client dispatch structure for the extension interface
@@ -121,7 +121,7 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序注册为基于套接字的套接字的扩展插件接口。
+WSK 应用程序在套接字基础上注册扩展接口。
 
  
 

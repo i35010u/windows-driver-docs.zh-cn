@@ -1,27 +1,27 @@
 ---
 title: GetWithArgument 请求和响应架构
-description: 下面是 GetWithArgument 请求架构和相应的响应架构定义和各自的示例。
+description: 下面是 GetWithArgument 请求架构和相应的响应架构定义以及每个定义的示例。
 ms.assetid: F68731BC-2907-4FA2-B5A4-0FAC0A9F663A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6de45195127289ddbf510ea008aa0a65efbf4d19
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d197342049aa9e50188e06736f033c8a12d671e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385240"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844584"
 ---
 # <a name="getwithargument-request-and-response-schemas"></a>GetWithArgument 请求和响应架构
 
 
-下面是 GetWithArgument 请求架构和相应的响应架构定义和各自的示例。
+下面是 GetWithArgument 请求架构和相应的响应架构定义以及每个定义的示例。
 
 ## <a name="getwithargument-request-schema"></a>GetWithArgument 请求架构
 
 
-GetWithArgument 请求用于一个或多个其当前值的查询的打印机。
+GetWithArgument 请求用于查询打印机的一个或多个当前值。
 
-对此请求的响应是下一节[GetWithArgument 响应架构](#getwithargument-response-schema)。
+对此请求的响应位于以下[GetWithArgument 响应架构](#getwithargument-response-schema)部分。
 
 ```xml
 <bidi:GetWithArgument xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'>
@@ -31,7 +31,7 @@ GetWithArgument 请求用于一个或多个其当前值的查询的打印机。
 </bidi:GetWithArgument>
 ```
 
-GetWithArgument 请求架构中的正式定义
+GetWithArgument 请求架构的正式定义
 
 ```xml
 <?xml version='1.0'?>  
@@ -75,7 +75,7 @@ GetWithArgument 请求架构中的正式定义
 
 ## <a name="getwithargument-response-schema"></a>GetWithArgument 响应架构
 
-此示例是对上述 GetWithArgument 请求的响应。 对于成功的查询，结果为特定架构的值。 对于失败的查询，结果是一个错误代码。
+此示例是对上述 GetWithArgument 请求的响应。 对于成功的查询，结果为特定架构的值。 如果查询失败，则结果为错误代码。
 
 ```xml
 <bidi:GetWithArgumentResponse xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -87,7 +87,7 @@ GetWithArgument 请求架构中的正式定义
 </bidi:GetWithArgumentResponse>
 ```
 
-GetWithArgument 响应架构中的正式定义
+GetWithArgument 响应架构的正式定义
 
 ```xml
 <?xml version='1.0'?>  
@@ -142,6 +142,6 @@ GetWithArgument 响应架构中的正式定义
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  

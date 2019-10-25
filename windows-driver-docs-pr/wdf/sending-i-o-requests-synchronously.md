@@ -3,18 +3,18 @@ title: 同步发送 I/O 请求
 description: 同步发送 I/O 请求
 ms.assetid: e7e9f2d2-afc5-439b-8a04-72d117114fae
 keywords:
-- 常规 I/O 面向 WDK KMDF，I/O 将请求发送到
-- 发送 I/O 请求 WDK KMDF
-- 发送的 I/O 请求 WDK KMDF，同步
-- 以同步方式发送 I/O 请求 WDK KMDF
+- 一般 i/o 目标 WDK KMDF，将 i/o 请求发送到
+- 发送 i/o 请求 WDK KMDF
+- 发送 i/o 请求 WDK KMDF，同步
+- 同步发送 i/o 请求 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81e88dac9a5caa3f17da119ca815481a4806121a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e87d84e7adb4ed20f10c330eb5f1a8469b417dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376203"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842195"
 ---
 # <a name="sending-io-requests-synchronously"></a>同步发送 I/O 请求
 
@@ -22,7 +22,7 @@ ms.locfileid: "67376203"
 
 
 
-下表列出了您的驱动程序可以调用以同步方式将 I/O 请求发送到的 I/O 目标的 I/O 目标对象方法。 有关如何使用这些方法的详细信息，请参阅这些方法的参考页。
+下表列出了驱动程序可以调用以将 i/o 请求同步发送到 i/o 目标的 i/o 目标对象方法。 有关如何使用这些方法的详细信息，请参阅方法的参考页。
 
 <table>
 <colgroup>
@@ -37,45 +37,45 @@ ms.locfileid: "67376203"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendReadSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)"><strong>WdfIoTargetSendReadSynchronously</strong></a></p></td>
-<td align="left"><p>将发送的读取的请求</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendReadSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)"><strong>WdfIoTargetSendReadSynchronously</strong></a></p></td>
+<td align="left"><p>发送读取请求</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendWriteSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)"><strong>WdfIoTargetSendWriteSynchronously</strong></a></p></td>
-<td align="left"><p>发送一个写请求</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendWriteSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)"><strong>WdfIoTargetSendWriteSynchronously</strong></a></p></td>
+<td align="left"><p>发送写入请求</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendIoctlSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)"><strong>WdfIoTargetSendIoctlSynchronously</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendIoctlSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)"><strong>WdfIoTargetSendIoctlSynchronously</strong></a></p></td>
 <td align="left"><p>发送设备控制请求</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlsynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendInternalIoctlSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlsynchronously)"><strong>WdfIoTargetSendInternalIoctlSynchronously</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlsynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendInternalIoctlSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlsynchronously)"><strong>WdfIoTargetSendInternalIoctlSynchronously</strong></a></p></td>
 <td align="left"><p>发送内部设备控制请求</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlotherssynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendInternalIoctlOthersSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlotherssynchronously)"><strong>WdfIoTargetSendInternalIoctlOthersSynchronously</strong></a></p></td>
-<td align="left"><p>发送的非标准的内部设备控制请求</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlotherssynchronously" data-raw-source="[&lt;strong&gt;WdfIoTargetSendInternalIoctlOthersSynchronously&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlotherssynchronously)"><strong>WdfIoTargetSendInternalIoctlOthersSynchronously</strong></a></p></td>
+<td align="left"><p>发送非标准内部设备控制请求</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-您还可以发送请求以同步方式通过调用[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)，但您必须先按照中所述的规则将格式化请求[发送 I/O 请求以异步方式](sending-i-o-requests-asynchronously.md)。
+你还可以通过调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)来同步发送请求，但必须先按照[发送 i/o 请求](sending-i-o-requests-asynchronously.md)中所述的规则来格式化请求。
 
-以同步方式将 I/O 请求发送到的 I/O 目标是比将 I/O 请求发送到程序更简单[异步](sending-i-o-requests-asynchronously.md)。 但是，应使用以下准则来帮助您决定同步 I/O 是否适合于您的驱动程序：
+与异步发送 i/o 请求相比，将 i/o 请求同步发送到 i/o 目标的[方式](sending-i-o-requests-asynchronously.md)更简单。 但是，你应使用下列准则来帮助你确定同步 i/o 是否适用于你的驱动程序：
 
--   如果您的驱动程序不会发送多个 I/O 请求，则可以使用同步 I/O，如果不减少了系统或设备的性能，因为您的驱动程序在等待每个 I/O 请求完成。
+-   如果你的驱动程序未发送多个 i/o 请求，并且由于你的驱动程序等待每个 i/o 请求完成，则可以使用同步 i/o。
 
--   如果您的驱动程序必须处理多个 I/O 请求以短的时间段，可能不能允许您的驱动程序要等待的每个请求发送的下一个请求之前完成。 否则为您的驱动程序可能会丢失数据，或者降低其设备 （和可能是，整个系统） 的性能。 在这种情况下，异步 I/O 可能更好的选择。
+-   如果你的驱动程序必须在较短的时间内处理多个 i/o 请求，你可能无法允许驱动程序等待每个请求完成，然后再发送下一个请求。 否则，你的驱动程序可能会丢失数据或降低其设备（可能是整个系统）的性能。 在这种情况下，异步 i/o 可能是更好的选择。
 
--   同步 I/O 可用于处理操作，必须启动并完成而无需其他并发活动。 此类操作可能包括重置 USB 管道或读取设备注册。
+-   同步 i/o 用于处理必须启动和完成的操作，而无需其他并发活动。 此类操作可能包括重置 USB 管道或读取设备寄存器。
 
--   大多数时候，调用对象方法以同步方式发送的 I/O 请求时，您的驱动程序应指定一个超时值。 如果您的驱动程序未指定超时值，以及如果是设备或较低级别驱动程序无法响应，可以停止正在您的驱动程序。 因此，用户可以体验的无响应的应用程序。 此外，其他驱动程序可能无法获取系统资源，例如[的工作项](using-framework-work-items.md)，如果您的驱动程序没有释放它们。
+-   大多数情况下，当驱动程序调用发送 i/o 请求的对象方法时，您的驱动程序应指定超时值。 如果您的驱动程序未指定超时值，并且如果某个设备或较低级别的驱动程序未能响应，则您的驱动程序可以停止。 因此，用户可能会遇到无响应的应用程序。 此外，如果你的驱动程序未发布，则其他驱动程序可能无法获取系统资源，如[工作项](using-framework-work-items.md)。
 
--   如果驱动程序的上方和下方你堆栈中需要操作继续进行同步，您的驱动程序应使用同步 I/O。 因此，应了解可能存在于驱动程序堆栈中其他驱动程序的要求。
+-   如果堆栈中的以上和下面的驱动程序需要操作以同步方式执行，则驱动程序应使用同步 i/o。 因此，您应该了解驱动程序堆栈中可能存在的其他驱动程序的要求。
 
-下面的示例演示如何将发送一个同步 I/O 控制 (IOCTL) 请求：
+下面的示例演示如何发送同步 i/o 控制（IOCTL）请求：
 
 ```cpp
 NTSTATUS                status;

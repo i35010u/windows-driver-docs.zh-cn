@@ -1,50 +1,50 @@
 ---
-title: 自定义设备 I/O 使用插件 WDTF 简单 I/O 操作
-description: 若要从设备基础测试和测试您可能需要编写使用 Visual Studio 测试模板获取最大效益，应通过一个简单的 I/O 插件支持你的设备。
+title: 使用 WDTF 简单 i/o 操作插件自定义设备 i/o
+description: 若要从使用 Visual Studio 测试模板编写的设备基础测试和测试中获得最大好处，你的设备应由简单的 i/o 插件支持。
 ms.assetid: 96BC880B-79DC-4CB1-BD79-87B0A4717634
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61aca1168a72388c26e3bbedb58f4ade6a165154
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cdeb8b063816163eceb4194ff0a19d967ec3c8d8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369472"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844385"
 ---
-# <a name="how-to-customize-io-for-your-device-using-the-wdtf-simple-io-action-plug-in"></a>如何使用 WDTF 简单 I/O 操作插件为你的设备自定义 I/O
+# <a name="how-to-customize-io-for-your-device-using-the-wdtf-simple-io-action-plug-in"></a>如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O
 
 
-若要从设备基础测试和测试您可能需要编写使用 Visual Studio 测试模板获取最大效益，应通过一个简单的 I/O 插件支持你的设备。 若要了解设备类型是否受支持以及确定是否有特定的测试要求，请参阅[提供的 WDTF 简单 I/O 插件](provided-wdtf-simpleio-plug-ins.md)。如果不支持你的设备，你可以创建插件在 Microsoft Visual Studio 中使用**WDTF 简单 I/O 操作插件**模板。
+若要从使用 Visual Studio 测试模板编写的设备基础测试和测试中获得最大好处，你的设备应由简单的 i/o 插件支持。 若要查看设备类型是否受支持，并确定是否有特定的测试要求，请参阅[提供的 WDTF 简单 i/o 插件](provided-wdtf-simpleio-plug-ins.md)。如果你的设备不受支持，则可以使用**WDTF 简单的 I/o 操作插件**模板在 Microsoft Visual Studio 中创建插件。
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>必备条件
 
--   在测试计算机上安装待测试的设备。
--   是测试签名，并且在测试计算机上安装的驱动程序包。 若要验证您的驱动程序是否正确安装，请参阅[如何测试驱动程序包](https://docs.microsoft.com/windows-hardware/drivers)。
--   测试针对部署配置和预配的计算机。 请参阅[测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
+-   测试中的设备已安装在测试计算机上。
+-   在测试计算机上对其进行测试签名和安装的驱动程序包。 若要验证是否正确安装了驱动程序，请参阅[如何测试驱动程序包](https://docs.microsoft.com/windows-hardware/drivers)。
+-   测试针对部署配置和预配的计算机。 请参阅[使用 Visual Studio 在运行时测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
 
 <a name="instructions"></a>说明
 ------------
 
-### <a href="" id="create-a-project-for-a-wdtf-simple-i-o-action-plug-in-"></a>步骤 1:为 WDTF 简单 I/O 操作插件创建项目
+### <a href="" id="create-a-project-for-a-wdtf-simple-i-o-action-plug-in-"></a>步骤1：为 WDTF 简单 i/o 操作插件创建项目
 
-1. 从**文件**菜单中，单击**新建&gt;项目**。
-2. 从列表中已安装模板**新的项目**对话框中，选择**Visual C++ &gt; Windows 驱动程序&gt;测试&gt;WDTF 简单 I/O 操作插件**.
-3. 提供简单的 I/O 项目和位置的名称 （或使用默认值）。
-4. 项目模板生成的 Visual Studio 解决方案。 该解决方案包含需要创建一个简单的 I/O 设备插件的所有文件。 文件的名称采用以下形式 WDTF<em>&lt;项目&gt;</em>SimpleIoAction\*。 简单的 I/O 项目的默认名称是设备类型。
-5. 该模板将创建一个 WDTF 相当简单的 I/O 操作接口，用于你的项目。 接口对 IWDTFTarget2 接口的实例。
-6. 生成 WDTF 简单 I/O 插件解决方案以验证所需的所有文件都都存在。
-7. 实现方法以设置目标，然后通过在实现文件中添加代码来实现简单的 I/O 操作 （打开、 关闭、 和 RunIO）。 文件的名称采用以下格式 CWDTF*项目*SimpleIoActionImpl.cpp 文件。
+1. 从“文件”菜单中，单击“新建”&gt;“项目”。
+2. 从 "**新建项目**" 对话框的已安装模板列表中，选择 **" C++ Visual&gt;Windows 驱动程序&gt;测试"&gt;WDTF Simple i/o 操作插件**。
+3. 提供简单的 i/o 项目和位置的名称（或使用默认值）。
+4. 项目模板生成 Visual Studio 解决方案。 此解决方案包含为设备创建简单的 i/o 插件所需的所有文件。 这些文件的名称采用 WDTF&gt;SimpleIoAction\*<em>&lt;项目</em>格式。 简单 i/o 项目的默认名称为 DeviceType。
+5. 模板为你的项目创建 WDTF 简单 i/o 操作接口。 接口作用于 IWDTFTarget2 接口的实例。
+6. 构建 WDTF 简单的 i/o 插件解决方案，验证是否存在所有必需的文件。
+7. 实现方法，通过在实现文件中添加代码来设置目标并实现简单的 i/o 操作（Open、Close 和 RunIO）。 该文件的名称采用 CWDTF*project*SimpleIoActionImpl 文件格式。
 
-### <a href="" id="implement-the-settarget-method-for-your-device"></a>步骤 2:实现你的设备的 settarget 定位方法
+### <a href="" id="implement-the-settarget-method-for-your-device"></a>步骤2：为设备实现 SetTarget 方法
 
-- 打开你的项目，例如，CWDTFmyDeviceTypeSimpleIoActionImpl.cpp，实现文件并找到的实例[ **IAction::SetTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nf-wdtf-iaction-settarget) settarget 定位方法。 此方法中有一部分标有注释，而 TODO:，该值指示应在其中实现与你的设备的兼容性检查的代码。
+- 打开项目的实现文件（例如 CWDTFmyDeviceTypeSimpleIoActionImpl），找到[**IAction：： SetTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iaction-settarget) SetTarget 方法的实例。 此方法有一个标记为注释和 TODO 的部分：指示应在何处实现代码以检查与设备的兼容性。
 
-  **Settarget 定位**方法由调用一次 WDTF 每个实例。 它具有两个主要目的：
+  对于每个实例， **SetTarget**方法只调用一次 WDTF。 它有两个主要用途：
 
-  - 以便 WDTF 可以确定对象是否支持设备目标，pMainTarget
-  - 以便 CWDTF<em>&lt;项目&gt;</em>SimpleIoActionImpl 实例可以从目标中，以便实现更高版本 open （），close （），RunIO() 方法调用来获取所需的信息。
+  - 以便 WDTF 可以确定该对象是否支持设备目标、pMainTarget
+  - 因此，CWDTF<em>&lt;项目&gt;</em>SimpleIoActionImpl 实例可以从目标获取所需的信息，以完成以后打开（）、Close （）、RunIO （）方法调用。
 
-  此方法的实现应返回 E\_NOINTERFACE 以指示不支持目标。 该方法应返回 S\_确定目标是否支持。 如果发生任何其他故障，该方法应返回 HRESULT 来指示错误。
+  此方法的实现应返回 E\_NOINTERFACE，以指示目标不受支持。 如果支持目标，方法应返回\_OK。 如果发生其他任何失败，则该方法应返回 HRESULT 以指示错误。
 
   ```ManagedCPlusPlus
        
@@ -56,17 +56,17 @@ ms.locfileid: "67369472"
       //       to accomplish the later Open() method call.
   ```
 
-### <a href="" id="implement-simpleioaction-to-open-the-interface"></a>步骤 3:若要打开该接口的实现 SimpleIoAction
+### <a href="" id="implement-simpleioaction-to-open-the-interface"></a>步骤3：实现 SimpleIoAction 以打开接口
 
-接下来，您需要打开 ITarget 用于测试的实现提供的 open （） 方法。
+接下来，需要通过实现提供的 Open （）方法打开 ITarget 以进行测试。
 
-这[**打开**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-open)方法应尝试打开目标设备。 如果该方法无法执行此操作，该方法应返回一个 HRESULT，指示失败。 如果 SimpleIO 接口是已打开 （初始化），此方法应失败。 如何实现此方法取决于 ITarget 类型和最适合您的情况。 也许这意味着您应使用 createfile （） 打开的句柄。 这可能意味着初始化上下文结构，以便你可以跟踪的正在进行的测试用例。 发生错误时该方法应在理想情况下使用 COMReportError （），并且应提供错误任何信息或步骤，可以帮助防止将来再次发生的说明。
+此[**Open**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-open)方法应尝试打开目标设备。 如果该方法无法执行此操作，则该方法应返回一个 HRESULT，指示失败。 如果已打开（初始化） SimpleIO 接口，此方法应失败。 实现此方法的方式取决于您的 ITarget 类型，以及在您的情况下最有用的内容。 也许，这意味着您应该使用 CreateFile （）打开它的句柄。 也许，这意味着您初始化了上下文结构，以便您可以跟踪正在进行的测试用例。 如果发生错误，方法应理想使用 COMReportError （），并应提供错误的说明以及可帮助防止将来出现的任何信息或步骤。
 
-**请注意**  如果此方法应失败 ISimpleIO\_操作已打开。
+**请注意**  如果已打开 ISimpleIO\_操作，此方法应失败。
 
  
 
--   打开你的项目，例如，CWDTFmyDeviceTypeSimpleIoActionImpl.cpp，实现文件并找到的实例[**开放**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-open)方法。 此方法有标有注释，而 TODO 部分：
+-   打开项目的实现文件（例如 CWDTFmyDeviceTypeSimpleIoActionImpl），找到[**open**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-open)方法的实例。 此方法具有标记为注释和 TODO 的部分：
 
     ```cpp
     //
@@ -81,15 +81,15 @@ ms.locfileid: "67369472"
        //
     ```
 
-### <a href="" id="implement-the-simpleioaction-method-to--close-the-interface"></a>步骤 4:实现 SimpleIoAction 方法以关闭界面
+### <a href="" id="implement-the-simpleioaction-method-to--close-the-interface"></a>步骤4：实现 SimpleIoAction 方法以关闭接口
 
-此方法应关闭以前打开的测试上下文。 您应清除您的上下文，即使必须报告失败的 HRESULT。 有仅几种的情况其中错误发生在关闭时的实际意义。 在此方法中，应还原在 open （） 中执行任何操作。 这可能意味着应关闭 CloseHandle() 与您以前打开的句柄。 发生错误，请为它提供可操作的说明。
+此方法应关闭先前打开的测试上下文。 即使您必须报告失败的 HRESULT，您也应该清除您的上下文。 只有在少数情况下，当您结束时出现的错误才有意义。 在此方法中，应恢复在 Open （）中执行的任何操作。 也许，这意味着您应该用 CloseHandle （）关闭先前打开的句柄。 如果发生错误，请为其提供可操作的说明。
 
-**请注意**  如果此方法应失败 ISimpleIO\_操作已关闭或从未打开。
+**请注意**  此方法应在 ISimpleIO\_操作已关闭或从未打开的情况下失败。
 
  
 
--   打开你的项目，例如，CWDTFmyDeviceTypeSimpleIoActionImpl.cpp，实现文件并找到的实例[**关闭**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-close)方法。 此方法有标有注释，而 TODO 部分：
+-   打开项目的实现文件，例如 CWDTFmyDeviceTypeSimpleIoActionImpl，并找到[**Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nf-wdtfinterfaces-iwdtfsimpleioex2-close)方法的实例。 此方法具有标记为注释和 TODO 的部分：
 
     ```cpp
     //
@@ -108,15 +108,15 @@ ms.locfileid: "67369472"
        //
     ```
 
-### <a href="" id="implement-the-simpleioaction-method-to-perform-simple-i-o-operations-"> </a>步骤 5:实现 SimpleIoAction 方法以执行简单的 I/O 操作
+### <a href="" id="implement-the-simpleioaction-method-to-perform-simple-i-o-operations-"></a>步骤5：实现 SimpleIoAction 方法以执行简单的 i/o 操作
 
-此方法应执行少量的目标系统上的输入和输出操作。 然后，该方法应验证已正确完成 I/O 操作。 然后，每个测试可以控制多长时间对设备执行 I/O。 每次调用 RunIo() 方法仅应执行少量的 I/O。 WDTF 将重复调用 RunIo()，在一个循环，以便执行更多的 I/O。 一般情况下，尝试保留对几秒钟的单个 RunIo() 方法调用。
+此方法应对目标执行少量的输入和输出操作。 然后，该方法应验证 i/o 操作是否已正确完成。 然后，每个测试都可以控制它对设备执行 i/o 的时间。 每次调用 RunIo （）方法时，只应执行少量的 i/o。 WDTF 将在循环中反复调用 RunIo （）以执行更多 i/o。 一般情况下，尝试将单个 RunIo （）方法调用保存到几秒钟。
 
-**请注意**  如果此方法应失败 ISimpleIO\_操作当前已关闭。
+**请注意**  在当前关闭 ISimpleIO\_操作时，此方法应失败。
 
  
 
--   打开你的项目，例如，CWDTFmyDeviceTypeSimpleIoActionImpl.cpp，实现文件并找到 RunIO 方法的实例。 此方法有标有注释，而 TODO 部分：
+-   打开项目的实现文件，例如 CWDTFmyDeviceTypeSimpleIoActionImpl，并找到 RunIO 方法的实例。 此方法具有标记为注释和 TODO 的部分：
 
     ```cpp
     //
@@ -135,21 +135,21 @@ ms.locfileid: "67369472"
        //
     ```
 
-### <a href="" id="build-and-install-the-simple-i-o-action-plugin-"></a>步骤 6:生成并安装简单的 I/O 操作插件
+### <a href="" id="build-and-install-the-simple-i-o-action-plugin-"></a>步骤6：生成并安装简单 i/o 操作插件
 
-如果尚未这样做，您需要配置用于测试的计算机。 有关详细信息，请参阅[预配计算机，以使驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)或[预配计算机，以使驱动程序部署和测试 (WDK 8)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
+如果尚未执行此操作，你将需要配置计算机进行测试。 有关详细信息，请参阅为[驱动程序部署和测试预配计算机（wdk 8.1）](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)或[设置用于驱动程序部署和测试的计算机（wdk 8）](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 
 1. 生成解决方案。
 
-   生成简单插件的 I/O 操作时，创建两个测试。 这些测试安装和卸载测试计算机上的插件。 默认情况下，简单的 I/O 操作的插件文件出现在**测试组资源管理器**，在测试类别**我的测试类别**。
+   生成简单的 i/o 操作插件后，会创建两个测试。 这些测试将在测试计算机上安装和卸载插件。 默认情况下，简单的 i/o 操作插件文件显示在测试**组资源管理器**的 "测试类别"**我的测试类别**中。
 
-2. 若要安装简单的 I/O 操作插件，请运行名为测试**注册 WDTF**<em>&lt;项目&gt;</em>**SimpleIOAction.DLL**在测试计算机上. 测试的选择和运行的信息，请参阅[如何测试在运行时使用 Visual Studio 的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
-3. 若要验证是否安装了简单的 I/O 操作插件，请运行**显示了 WDTF 简单 I/O 插件设备**测试计算机上进行测试。 你的插件和设备应显示在结果中。 有关详细信息，请参阅[方法如何确定是否需要为你的设备自定义 WDTF 简单 I/O 操作插件](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)。
-4. 若要卸载简单的 I/O 操作插件，请运行名为测试**取消注册 WDTF**<em>&lt;项目&gt;</em>**SimpleIOAction.DLL**上测试计算机。 你可以验证已通过运行卸载插件**显示了 WDTF 简单 I/O 插件设备**测试。
+2. 若要安装简单的 i/o 操作插件，请在测试计算机上运行名为**REGISTER WDTF** <em>&lt;项目&gt;</em> **SimpleIOAction**的测试。 有关选择和运行测试的信息，请参阅[如何使用 Visual Studio 在运行时测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
+3. 若要验证简单的 i/o 操作插件是否已安装，请在测试计算机上运行**具有 WDTF 简单 I/o 插件的显示设备**测试。 插件和设备应出现在结果中。 有关详细信息，请参阅[如何确定设备是否需要自定义 WDTF 简单 I/o 操作插件](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)。
+4. 若要卸载简单的 i/o 操作插件，请在测试**计算机上运行**名为 "**取消注册" WDTF** <em>&lt;项目&gt;</em>"的测试。 可以通过运行**具有 WDTF 简单 i/o 插件测试的显示设备**来验证是否已卸载了插件。
 
 ## <a name="related-topics"></a>相关主题
 [测试授权和执行框架 (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/index)  
-[如何确定自定义 WDTF 简单 I/O 操作插件是否需要为你的设备](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)  
+[如何确定设备是否需要自定义 WDTF 简单的 i/o 操作插件](test-your-device-to-see-if-you-need-to-customize-the-wdtf-simple-i-o-action-plug-in.md)  
 [如何在运行时使用 Visual Studio 测试驱动程序](https://docs.microsoft.com/windows-hardware/drivers)  
 
 

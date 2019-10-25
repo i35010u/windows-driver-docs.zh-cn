@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_MPDP_STATE
-description: 移动宽带的微型端口驱动程序发送 NDIS_STATUS_WWAN_MPDP_STATE 通知以以前 OID_WWAN_MPDP 集请求的完成情况通知给 MB 服务。
+description: NDIS_STATUS_WWAN_MPDP_STATE 通知由移动宽带微型端口驱动程序发送，通知 MB 服务完成了以前的 OID_WWAN_MPDP 设置请求。
 ms.assetid: 59B8D9A0-FB22-4252-A24B-A9E58B068C4E
 keywords:
-- NDIS_STATUS_WWAN_MPDP_STATE，与 Windows Vista 一起启动的网络驱动程序
+- NDIS_STATUS_WWAN_MPDP_STATE，从 Windows Vista 开始的网络驱动程序
 topic_type:
 - apiref
 api_name:
@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.date: 10/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f756200c7f49dbcf77a24e2f72903f58570a40bf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0da96368e5e2fe387663ed50ac754ee0f6e0ced4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369894"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844670"
 ---
-# <a name="ndisstatuswwanmpdpstate"></a>NDIS_STATUS_WWAN_MPDP_STATE
+# <a name="ndis_status_wwan_mpdp_state"></a>NDIS_STATUS_WWAN_MPDP_STATE
 
-**NDIS_STATUS_WWAN_MPDP_STATE**移动宽带的微型端口驱动程序发送通知来告知在前一次完成 MB 服务[OID_WWAN_MPDP](oid-wwan-mpdp.md)集请求。
+**NDIS_STATUS_WWAN_MPDP_STATE**通知由移动宽带微型端口驱动程序发送，通知 MB 服务完成了以前的[OID_WWAN_MPDP](oid-wwan-mpdp.md)设置请求。
 
-为未经请求的事件不发送此通知。
+此通知不是作为未经请求的事件发送的。
 
-使用此通知[ **NDIS_WWAN_MPDP_STATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_mpdp_state)结构。
+此通知使用[**NDIS_WWAN_MPDP_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_mpdp_state)结构。
 
 ## <a name="requirements"></a>要求
 
 |   |   |
 | --- | --- |
-| Version | Windows 10 版本 1809 |
-| Header | Ndis.h |
+| 版本 | Windows 10 版本 1809 |
+| 标头 | Ndis。h |

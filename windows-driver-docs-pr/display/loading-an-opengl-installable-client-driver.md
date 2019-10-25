@@ -4,83 +4,83 @@ description: 加载 OpenGL 可安装客户端驱动程序
 ms.assetid: 2b244bbf-f26c-4307-a347-a29e12c6d496
 keywords:
 - OpenGL ICD WDK 显示
-- 加载驱动程序 WDK 显示
+- 正在加载驱动程序 WDK 显示
 - ICD WDK 显示
-- 可安装的客户端驱动程序 WDK 显示
+- 可安装客户端驱动程序 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab3877fbea6256eba7fde292fc43ec5147c450fd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a03d3197418eca3b5d71cfa09b655a3b7f17be8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360907"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840603"
 ---
 # <a name="loading-an-opengl-installable-client-driver"></a>加载 OpenGL 可安装客户端驱动程序
 
 
-OpenGL 运行时访问注册表，以确定哪个 OpenGL 可安装的客户端驱动程序 (ICD) 加载。 若要加载 OpenGL ICD，OpenGL 运行时：
+OpenGL 运行时访问注册表，以确定要加载的 OpenGL 可安装客户端驱动程序（ICD）。 若要加载 OpenGL ICD，OpenGL 运行时：
 
--   确定名称、 版本和标志与相关联的 OpenGL ICD 通过调用[ **D3DKMTQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数和 KMTQAITYPE\_UMOPENGLINFO 值中设置**类型**的成员[ **D3DKMT\_QUERYADAPTERINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)结构*pData*参数指向。
+-   确定与 OpenGL ICD 关联的名称、版本和标志，方法是调用[**D3DKMTQueryAdapterInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数，并在 D3DKMT 的**Type**成员中设置 KMTQAITYPE\_UMOPENGLINFO 值[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo) *PData*参数指向的 QUERYADAPTERINFO 结构。
 
--   检查 OpenGL ICD 的版本号， **D3DKMTQueryAdapterInfo**返回验证 OpenGL ICD 的版本。
+-   检查**D3DKMTQueryAdapterInfo**返回的 opengl icd 的版本号，以验证 opengl icd 的版本。
 
--   通过使用 OpenGL ICD 名称加载 OpenGL ICD。
+-   使用 OpenGL ICD 的名称加载 OpenGL ICD。
 
--   初始化 OpenGL ICD 函数的访问。
-    **请注意**  若要获取许可证的 OpenGL ICD 开发工具包，请联系[OpenGL 问题](mailto:opengl@microsoft.com)团队。
+-   初始化对 OpenGL ICD 函数的访问。
+    **请注意**，   获取 Opengl ICD 开发工具包的许可证，请联系[opengl 问题](mailto:opengl@microsoft.com)团队。
 
      
 
-若要查找的 OpenGL ICD，名称[ **D3DKMTQueryAdapterInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)注册表中搜索以下项中：
+若要查找 OpenGL ICD 的名称， [**D3DKMTQueryAdapterInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)将在注册表中搜索以下项：
 
 ```registry
 HKLM/System/CurrentControlSet/Control/Class/{Adapter GUID}/0000/
 ```
 
-此项也包含的名称[Microsoft Direct3D 用户模式显示驱动程序](initializing-communication-with-the-direct3d-user-mode-display-driver.md)。 此项包含为 32 位 Windows Vista 显示驱动程序在 32 位 Windows Vista 上使用的四个注册表项，适用于 32 位 Windows Vista 的四个条目显示在 64 位 Windows Vista 使用的驱动程序。 以下条目是针对 32 位 Windows Vista 显示驱动程序在 32 位 Windows Vista 使用：
+此密钥还包含[Microsoft Direct3D 用户模式显示驱动程序](initializing-communication-with-the-direct3d-user-mode-display-driver.md)的名称。 此注册表项包含32位 windows vista 显示器驱动程序的四个注册表条目，用于32位 Windows Vista 上的四个条目，以及用于64位 Windows vista 的32位 Windows Vista 显示器驱动程序的四个条目。 以下条目适用于32位 windows Vista 显示器驱动程序，用于32位 Windows Vista：
 
 <span id="UserModeDriverName"></span><span id="usermodedrivername"></span><span id="USERMODEDRIVERNAME"></span>**UserModeDriverName**  
 REG\_SZ
 
-Direct3D 用户模式显示驱动程序，即无论操作系统是否支持 OpenGL ICD Direct3D 呈现设备的操作所必需的名称。
+Direct3D 用户模式显示驱动程序的名称，无论操作系统是否支持 OpenGL ICD，该驱动程序的操作都需要该驱动程序。
 
 <span id="OpenGLDriverName"></span><span id="opengldrivername"></span><span id="OPENGLDRIVERNAME"></span>**OpenGLDriverName**  
 REG\_SZ
 
-OpenGL ICD 的名称。 例如，如果是 OpenGL ICD *Mydriver.dll*，此项的值是**Mydriver.dll**。
+OpenGL ICD 的名称。 例如，如果 OpenGL ICD 为*Mydriver*，则此项的值为**Mydriver**。
 
 <span id="OpenGLVersion"></span><span id="openglversion"></span><span id="OPENGLVERSION"></span>**OpenGLVersion**  
 REG\_DWORD
 
-OpenGL ICD OpenGL 运行时用来验证 OpenGL ICD 的版本的版本号。
+OpenGL 运行时用于验证 OpenGL ICD 版本的 OpenGL ICD 的版本号。
 
 <span id="OpenGLFlags"></span><span id="openglflags"></span><span id="OPENGLFLAGS"></span>**OpenGLFlags**  
 REG\_DWORD
 
-标志位掩码。 目前，位 0 (0x00000001) 设置的兼容性。 当设置位 1 (0x00000002) 时，OpenGL 运行时之前运行时调用 ICD 交换缓冲区函数不会调用 ICD 的 finish 函数。
+标志位掩码。 目前，位0（0x00000001）设置为兼容。 设置位1（0x00000002）后，在运行时调用 ICD 的交换缓冲区函数之前，OpenGL 运行时不调用 ICD 的完成函数。
 
-32 位 Windows Vista 显示驱动程序在 64 位 Windows Vista 使用的是以下项：
+以下条目适用于32位 windows Vista 显示器驱动程序，用于64位 Windows Vista：
 
 <span id="UserModeDriverNameWow"></span><span id="usermodedrivernamewow"></span><span id="USERMODEDRIVERNAMEWOW"></span>**UserModeDriverNameWow**  
 REG\_SZ
 
-32 位 Microsoft Direct3D 用户模式的名称为 64 位 Windows Vista 显示驱动程序。
+64位 Windows Vista 的32位 Microsoft Direct3D 用户模式显示驱动程序的名称。
 
 <span id="OpenGLDriverNameWow"></span><span id="opengldrivernamewow"></span><span id="OPENGLDRIVERNAMEWOW"></span>**OpenGLDriverNameWow**  
 REG\_SZ
 
-适用于 64 位 Windows Vista 的 32 位 OpenGL ICD 名称。
+64位 Windows Vista 的32位 OpenGL ICD 的名称。
 
 <span id="OpenGLVersionWow"></span><span id="openglversionwow"></span><span id="OPENGLVERSIONWOW"></span>**OpenGLVersionWow**  
 REG\_DWORD
 
-64 位 Windows Vista 32 位 OpenGL ICD 的版本号。
+64位 Windows Vista 的32位 OpenGL ICD 的版本号。
 
 <span id="OpenGLFlagsWow"></span><span id="openglflagswow"></span><span id="OPENGLFLAGSWOW"></span>**OpenGLFlagsWow**  
 REG\_DWORD
 
-64 位 Windows Vista 32 位 OpenGL ICD 标志位掩码。
+64位 Windows Vista 的32位 OpenGL ICD 的标志位掩码。
 
  
 

@@ -1,25 +1,25 @@
 ---
 title: OID_WWAN_DEVICE_SERVICES
-description: OID_WWAN_DEVICE_SERVICES 返回微型端口驱动程序支持的设备服务的列表。NDIS_WWAN_DEVICE_SERVICES 结构，它指示受支持的设备服务 Guid。
+description: OID_WWAN_DEVICE_SERVICES 返回微型端口驱动程序所支持的设备服务的列表。NDIS_WWAN_DEVICE_SERVICES 结构，指示支持的设备服务 Guid。
 ms.assetid: 79DB0FC0-9AAA-465D-9479-9AD41BE9F4B4
 ms.date: 08/08/2017
-keywords: -OID_WWAN_DEVICE_SERVICES 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 790a5a263f760008f75e3ea963e6fdb7af01c0af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 37f4ed3b522775ba7333fb713bfcd944d64869fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358601"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843850"
 ---
-# <a name="oidwwandeviceservices"></a>OID\_WWAN\_DEVICE\_SERVICES
+# <a name="oid_wwan_device_services"></a>OID\_WWAN\_设备\_服务
 
 
-OID\_WWAN\_设备\_服务返回的微型端口驱动程序支持的设备服务的列表。
+OID\_WWAN\_设备\_服务返回微型端口驱动程序所支持的设备服务列表。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_到原始请求和更高版本发送 NDIS REQUIRED\_状态\_WWAN\_设备\_服务状态通知包含[ **NDIS\_WWAN\_设备\_服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)结构，它指示受支持的设备服务 Guid。
+微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后将 NDIS\_状态\_WWAN\_设备发送\_服务状态通知，其中包含一个[**NDIS\_WWAN\_设备\_服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)结构，该结构指示受支持的设备服务 guid。
 
-不支持组的请求。
+不支持设置请求。
 
 <a name="requirements"></a>要求
 ------------
@@ -31,12 +31,12 @@ OID\_WWAN\_设备\_服务返回的微型端口驱动程序支持的设备服务�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
+<td><p>版本</p></td>
+<td><p>版本：在 windows 8 及更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>

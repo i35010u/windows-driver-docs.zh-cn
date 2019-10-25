@@ -5,24 +5,24 @@ ms.assetid: 9979d654-8214-4e2d-9c6e-fc29a7f4ab40
 keywords:
 - 错误源 WDK WHEA，获取信息
 - 错误 WDK WHEA，错误源
-- WHEA WDK，获取错误的源代码信息
-- Windows 硬件错误体系结构 WDK，获取错误的源代码信息
+- WHEA WDK，获取错误源信息
+- Windows 硬件错误体系结构 WDK，获取错误源信息
 - 硬件错误源 WDK WHEA，获取信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 765b5bb44d711548ff9a828b23698c8b840e1e67
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80bc564e6ed5e86556756bea5490480997df10e6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386480"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844421"
 ---
 # <a name="getting-error-source-information-for-a-specific-error-source"></a>获取特定错误源的错误源信息
 
 
-在用户模式应用程序可以获取有关特定的信息[错误源](hardware-errors-and-error-sources.md)支持的硬件平台通过调用[ **WHEAErrorSourceMethods::GetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法。 此方法返回[ **WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)描述指定的错误源的结构。
+用户模式应用程序可以通过调用[**WHEAErrorSourceMethods：： GetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法获取有关硬件平台支持的特定[错误源](hardware-errors-and-error-sources.md)的信息。 此方法返回描述指定错误源的[**WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor)结构。
 
-下面的代码示例演示如何获取特定的错误源的错误源信息。
+下面的代码示例演示如何获取特定错误源的错误源信息。
 
 ```cpp
 IWbemServices *pIWbemServices;

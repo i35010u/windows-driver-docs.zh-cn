@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bd191593d16a888648e4fc6ce5f496c4ee3d8f52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d4a9454d7c0257649a2c1289bd904901f6119587
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363346"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844315"
 ---
 # <a name="scsireportluns-function"></a>ScsiReportLuns 函数
 
 
-**ScsiReportLuns** WMI 方法将 SCSI 报表 Lun 命令发送到指定的设备。
+**ScsiReportLuns** WMI 方法将 SCSI 报表 lun 命令发送到指定的设备。
 
 <a name="syntax"></a>语法
 ------
@@ -44,35 +44,35 @@ void ScsiReportLuns(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构的**HBAStatus**成员中返回此信息。
 
 *Cdb*   
-命令描述符块包含 SCSI 报表 Lun 命令发送到目标设备。 此信息传递到中的微型端口驱动程序**Cdb**的成员[ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)结构。
+包含要发送到目标设备的 SCSI 报表 Lun 命令的命令描述符块。 此信息会以结构中[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)的**Cdb**成员的形式传递到微型端口驱动程序。
 
 *HbaPortWWN*   
-通过它访问目标 HBA 全球通用名称。 此信息传递到中的微型端口驱动程序**HbaPortWWN**的成员[ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)结构。
+用于访问目标的 HBA 的全球名称。 此信息将传送到结构中[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)的**HbaPortWWN**成员中的微型端口驱动程序。
 
 *DiscoveredPortWWN*   
-通过它访问目标设备的端口全球通用名称。 此信息传递到中的微型端口驱动程序**DiscoveredPortWWN**的成员[ **ScsiReportLuns\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)结构。
+用于访问目标设备的端口的全球名称。 此信息将传送到结构中[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)的**DiscoveredPortWWN**成员中的微型端口驱动程序。
 
 *ResponseBufferSize*   
-以字节为单位的缓冲区将保留 SCSI 报告 Lun 命令的结果的大小。 微型端口驱动程序将返回此信息**ResponseBufferSize**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
+将保存 SCSI 报表 Lun 命令结果的缓冲区的大小（以字节为单位）。 微型端口驱动程序在[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构的**ResponseBufferSize**成员中返回此信息。
 
 *SenseBufferSize*   
-从 SCSI 报表 Lun 命令结果以字节为单位的缓冲区将保留 SCSI 检测数据的大小。 微型端口驱动程序将返回此信息**SenseBufferSize**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
+缓冲区的大小（以字节为单位），该缓冲区将保留 SCSI 报表 Lun 命令生成的 SCSI 感知数据。 微型端口驱动程序在[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构的**SenseBufferSize**成员中返回此信息。
 
 *ScsiStatus*   
-SCSI 报表 Lun 命令的状态。 微型端口驱动程序将返回此信息**ScsiStatus**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
+SCSI 报表 Lun 命令的状态。 微型端口驱动程序在[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构的**ScsiStatus**成员中返回此信息。
 
 *ResponseBuffer*   
-SCSI 的结果将报告 Lun 命令。 微型端口驱动程序将返回此信息**ResponseBuffer**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
+SCSI 报表 Lun 命令的结果。 微型端口驱动程序在[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构的**ResponseBuffer**成员中返回此信息。
 
 *SenseBuffer*   
-生成从 SCSI 的 SCSI 意义上数据报告 Lun 命令。 微型端口驱动程序将返回此信息**SenseBuffer**的成员[ **ScsiReportLuns\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构。
+Scsi 报告 Lun 命令生成的 SCSI 感知数据。 微型端口驱动程序在[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)结构的**SenseBuffer**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -82,7 +82,7 @@ SCSI 的结果将报告 Lun 命令。 微型端口驱动程序将返回此信息
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -95,27 +95,27 @@ SCSI 的结果将报告 Lun 命令。 微型端口驱动程序将返回此信息
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Hbaapi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [HBA\_状态](hba-status.md)
 
-[**ScsiReportLuns\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)
+[**ScsiReportLuns\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_in)
 
-[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)
+[**ScsiReportLuns\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_scsireportluns_out)
 
  
 

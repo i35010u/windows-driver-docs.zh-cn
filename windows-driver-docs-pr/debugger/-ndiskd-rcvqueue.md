@@ -1,9 +1,9 @@
 ---
 title: ndiskd.rcvqueue
-description: Ndiskd.rcvqueue 命令显示有关接收队列的信息。
+description: Ndiskd. rcvqueue 命令显示有关接收队列的信息。
 ms.assetid: 776A459F-A698-4BF6-8DAD-BEB15858AD7F
 keywords:
-- ndiskd.rcvqueue Windows 调试
+- ndiskd rcvqueue Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,49 +12,49 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7c4fee97298d7c4d7aadb929fec845d8a42cee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fe45892232bac37a9ff651403f31093490c7d25
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362451"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837654"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
 
 
-**！ Ndiskd.rcvqueue**命令显示有关接收队列的信息。
+**！ Ndiskd. rcvqueue**命令显示有关接收队列的信息。
 
 ```console
 !ndiskd.rcvqueue [-handle <x>] [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-必需。 接收队列句柄。
+必需。 接收队列的句柄。
 
-<span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-filters*   
-队列显示筛选器。
+<span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-筛选器*   
+显示队列中的筛选器。
 
 <span id="_______-mem______"></span><span id="_______-MEM______"></span> *-mem*   
 显示共享内存分配。
 
-<span id="_______-verbose______"></span><span id="_______-VERBOSE______"></span> *-verbose*   
-显示更多详细信息。
+<span id="_______-verbose______"></span><span id="_______-VERBOSE______"></span> *-详细*   
+显示其他详细信息。
 
 <span id="_______-rcvqueueverbosity______"></span><span id="_______-RCVQUEUEVERBOSITY______"></span> *-rcvqueueverbosity*   
-要显示的详细信息级别。
+要显示的详细信息的级别。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-若要获取接收队列句柄，首次进入[ **！ ndiskd.netadapter** ](-ndiskd-netadapter.md)命令不带任何参数，以查看网络适配器、 其驱动程序和其句柄的列表。 在以下示例中，查找 Microsoft ISATAP 适配器\#2 的 NetAdapter 句柄，ffff8083e02ce1a0。
+若要获取接收队列句柄，请首先输入不带参数的[ **！ ndiskd**](-ndiskd-netadapter.md)命令，以查看网络适配器列表、驱动程序及其句柄。 在以下示例中，查找 Microsoft ISATAP 适配器 \#2 的 Get-netadapter 句柄 ffff8083e02ce1a0。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -63,7 +63,7 @@ Ndiskd.dll
     ffff8083e210fae0   ffff8083e0f501a0    Microsoft Kernel Debug Network Adapter
 ```
 
-接下来，使用网络适配器的句柄，使用 **！ ndiskd.netadapter-处理-rcvqueues**命令来获取其句柄以及此网络适配器的接收队列的列表。 在此示例中，还有一个仅接收与 ffff8083e3a3d3a0 句柄的队列 （默认）。
+接下来，使用 net 适配器的句柄，使用 **！ ndiskd-rcvqueues**命令获取此网络适配器及其句柄的接收队列列表。 在此示例中，只有一个接收队列（默认值）与 ffff8083e3a3d3a0 的句柄。
 
 ```console
 3: kd> !ndiskd.netadapter ffff8083e02ce1a0 -rcvqueues
@@ -77,7 +77,7 @@ RECEIVE QUEUES
                        VM Name:            [Zero-length string]
 ```
 
-现在，可以使用队列句柄来检查接收队列的详细信息， **！ ndiskd.rcvqueue**命令。
+现在，你可以使用队列句柄来检查接收队列的详细信息，并提供 **！ ndiskd. rcvqueue**命令。
 
 ```console
 3: kd> !ndiskd.rcvqueue ffff8083e3a3d3a0
@@ -109,20 +109,20 @@ RECEIVE QUEUE
     Shared memory allocations
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
-[ **!ndiskd.netadapter**](-ndiskd-netadapter.md)
+[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
 
  
 

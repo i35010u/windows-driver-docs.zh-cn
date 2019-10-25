@@ -3,17 +3,17 @@ title: 服务计时器
 description: 服务计时器
 ms.assetid: 6a80a55b-4c7e-4a48-8903-0a1fb28af153
 keywords:
-- 计时器服务 WDK NDIS
-- NDIS 计时器服务 WDK
-- 正在取消 NDIS 计时器
+- timer 服务 WDK NDIS
+- NDIS timer 服务 WDK
+- 取消 NDIS 计时器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6547f79211c33a3cf1e6381ca4e59ce46c307dbd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3276ec663f4a69761510e305df2578abac0c2cc1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386832"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841955"
 ---
 # <a name="servicing-timers"></a>服务计时器
 
@@ -21,17 +21,17 @@ ms.locfileid: "67386832"
 
 
 
-NDIS 调用[ **NetTimerCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_timer_function) NDIS 6.0 计时器将激发时的功能。 *FunctionContext*此函数的参数包含驱动程序提供的上下文区域的指针。 默认值为*FunctionContext*中指定[ **NDIS\_计时器\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_timer_characteristics)结构。 该驱动程序传递的结构[ **NdisAllocateTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatetimerobject)函数以分配并初始化关联的计时器对象。
+当 NDIS 6.0 计时器触发时，NDIS 将调用[**NetTimerCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_timer_function)函数。 此函数的*FunctionContext*参数包含指向驱动程序提供的上下文区域的指针。 *FunctionContext*的默认值是在[**NDIS\_计时器\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_timer_characteristics)结构中指定的。 驱动程序将结构传递到[**NdisAllocateTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatetimerobject)函数，以分配和初始化关联的计时器对象。
 
-如果该驱动程序中指定了非 NULL 值*FunctionContext*参数传递给[ **NdisSetTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissettimerobject)函数，NDIS 将该值传递到*FunctionContext*的参数*NetTimerCallback*函数。 否则，NDIS 传递 NDIS 中指定的默认值\_计时器\_特征结构。
+如果驱动程序在传递到[**NdisSetTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)函数的*FunctionContext*参数中指定了非 NULL 值，则 NDIS 会将该值传递给*NetTimerCallback*函数的*FunctionContext*参数。 否则，NDIS 会将 NDIS\_计时器中指定的默认值传递\_特征结构。
 
-任何 NDIS 驱动程序可以有多个*NetTimerCallback*函数。 每个此类*NetTimerCallback*函数必须与不同的驱动程序分配并初始化计时器对象相关联。
+任何 NDIS 驱动程序都可以有多个*NetTimerCallback*函数。 每个此类*NetTimerCallback*函数都必须与不同的驱动程序分配和初始化的 timer 对象相关联。
 
-调用[ **NdisSetTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndissettimerobject)函数的原因*NetTimerCallback*与要在指定时间间隔之后运行的计时器对象相关联的函数或定期。
+调用[**NdisSetTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)函数会导致与计时器对象关联的*NetTimerCallback*函数在指定间隔后或定期运行。
 
-若要停止对调用*NetTimerCallback*函数中，调用[ **NdisCancelTimerObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscanceltimerobject)函数。 可能仍需调用 NDIS *NetTimerCallback*如果在超时已过期之前调用**NdisCancelTimerObject**。
+若要停止对*NetTimerCallback*函数的调用，请调用[**NdisCancelTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)函数。 如果在调用**NdisCancelTimerObject**之前超时已过期，NDIS 仍可能会调用*NetTimerCallback* 。
 
-如果*NetTimerCallback*函数与其他驱动程序函数共享资源、 驱动程序应与旋转锁来同步对这些资源的访问。
+如果*NetTimerCallback*函数与其他驱动程序函数共享资源，则驱动程序应使用自旋锁同步对这些资源的访问。
 
  
 

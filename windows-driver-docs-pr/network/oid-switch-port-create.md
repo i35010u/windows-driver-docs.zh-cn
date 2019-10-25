@@ -1,56 +1,56 @@
 ---
 title: OID_SWITCH_PORT_CREATE
-description: HYPER-V 可扩展交换机的协议边缘发出一个对象标识符 (OID) 组请求的 OID_SWITCH_PORT_CREATE 以通知有关的可扩展交换机端口创建可扩展的交换机扩展。
+description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_CREATE 的对象标识符（OID）设置请求，通知有关创建可扩展交换机端口的可扩展交换机扩展。
 ms.assetid: 579D51CD-0594-4A06-998E-3886E7325D97
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_CREATE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ecb89e17e9df2bb7fa39a1cf0256c1cc795b81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c72c4e09af8f2bc6aa2de2319a69fa111cd9d13
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356110"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843938"
 ---
-# <a name="oidswitchportcreate"></a>OID\_交换机\_端口\_创建
+# <a name="oid_switch_port_create"></a>OID\_交换机\_端口\_创建
 
 
-HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求的 OID\_切换\_端口\_创建，以通知有关的可扩展交换机端口创建可扩展的交换机扩展。
+Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设置 OID\_SWITCH\_端口\_CREATE，以通知有关创建可扩展交换机端口的可扩展交换机扩展。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构。
+[ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_SWITCH\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的指针。
 
 <a name="remarks"></a>备注
 -------
 
-**PortId**的成员[ **NDIS\_开关\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构为其指定的端口创建通知进行了。
+[**NDIS\_SWITCH\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构中的**PortId**成员指定了创建通知所针对的端口。
 
-可扩展的交换机扩展必须遵守以下原则处理 OID 设置请求的 OID\_切换\_端口\_创建：
+可扩展交换机扩展必须遵循以下准则，以便处理 OID\_SWITCH\_端口\_创建：
 
--   该扩展不能修改[ **NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)与 OID 请求关联的结构。
+-   扩展不能修改与 OID 请求关联的[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构。
 
--   扩展有权创建通知决策通过返回 NDIS\_状态\_数据\_不\_OID 请求被接受。 例如，如果扩展不能分配资源，以强制实施其配置的端口上的策略，该驱动程序应能阻止创建通知。
+-   扩展可以通过将 NDIS\_状态返回\_数据\_未\_为 OID 请求接受，来否决创建通知。 例如，如果扩展无法分配资源来强制在端口上配置策略，则驱动程序应否决创建通知。
 
-    如果扩展插件可以返回其他 NDIS\_状态\_*Xxx*还禁止错误状态代码，创建通知。 但是，返回状态代码为暂时性的情况下，如返回 NDIS\_状态\_资源，可能会导致创建通知的重试。
+    如果扩展返回的其他 NDIS\_状态\_*Xxx*错误状态代码，则创建通知也被否决。 然而，为暂时性方案返回状态代码（如将 NDIS\_状态返回\_资源）可能会导致创建通知重试。
 
-    如果扩展不能阻止 OID 请求，它在请求完成时应监视的状态。 该扩展应这样做可以确定 OID 请求已被否决的可扩展交换机控制路径中的基础扩展或可扩展交换机接口。
+    如果扩展不否决 OID 请求，则应在请求完成时监视状态。 扩展应执行此操作，以确定可扩展交换机控制路径中的基础扩展或可扩展交换机接口是否否决了 OID 请求。
 
-    端口策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](https://docs.microsoft.com/windows-hardware/drivers/network/managing-hyper-v-extensible-switch-extensibility-policies)。
+    有关端口策略的详细信息，请参阅[管理 Hyper-v 可扩展交换机策略](https://docs.microsoft.com/windows-hardware/drivers/network/managing-hyper-v-extensible-switch-extensibility-policies)。
 
--   如果扩展将调用[ **NdisFOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)转发此 OID 集请求，该扩展应监视此 OID 请求的完成状态。 扩展执行此检测中可扩展交换机驱动程序堆栈的基础扩展是否已被否决端口创建通知操作。
+-   如果扩展调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)来转发此 oid 集请求，则扩展应监视此 oid 请求的完成状态。 此扩展用于检测可扩展交换机驱动程序堆栈中的基础扩展是否否决了端口创建通知。
 
--   OID 请求被转发和成功完成后，该扩展可以 Oid 的发出请求端口，如[OID\_交换机\_端口\_属性\_枚举](oid-switch-port-property-enum.md)，直到OID 的请求[OID\_交换机\_端口\_拆卸](oid-switch-port-teardown.md)发出。 此 OID 请求向扩展通知端口将开始删除过程从可扩展的交换机。
+-   在转发 OID 请求并成功完成后，扩展可以为端口发出 Oid 请求，如[oid\_交换机\_端口\_属性\_枚举](oid-switch-port-property-enum.md)，直到 OID 的 oid 请求[\_SWITCH\_端口\_拆卸](oid-switch-port-teardown.md)。 此 OID 请求通知扩展端口将从可扩展交换机开始删除过程。
 
--   扩展不能将数据包转发到在指定的端口[ **NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构，直到 OID 设置请求[OID\_交换机\_NIC\_CONNECT](oid-switch-nic-connect.md)发出和已成功完成。
+-   扩展不能将数据包转发到[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构中的指定端口，直到 OID 参数结构的 oid\_请求在发出和完成[连接\_](oid-switch-nic-connect.md)顺利.
 
-**请注意**  扩展插件必须发出 OID 集请求的 OID\_交换机\_端口\_创建。
+**请注意**  扩展不能\_SWITCH\_端口\_CREATE 中发出 oid set 请求。
 
  
 
-有关可扩展交换机端口和网络适配器连接的状态的详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)。
+有关可扩展交换机端口和网络适配器连接状态的详细信息，请参阅[Hyper-v 可扩展交换机端口和网络适配器状态](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-如果该扩展完成 OID 集请求的 OID\_交换机\_端口\_创建，它返回一个下面的状态代码。
+如果扩展完成 oid\_SWITCH\_端口\_CREATE 的 OID 设置请求，它将返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -66,26 +66,26 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_DATA_NOT_ACCEPTED</p></td>
-<td><p>扩展操作禁止创建通知。</p></td>
+<td><p>该扩展否决了创建通知。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_RESOURCES</p></td>
-<td><p>该扩展被否决由于资源不足的情况创建通知。</p></td>
+<td><p>由于资源不足，扩展拒绝了创建通知。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_<em>Xxx</em></p></td>
-<td><p>扩展操作由于其他原因禁止创建通知。</p></td>
+<td><p>由于其他原因，扩展拒绝了创建通知。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  如果扩展完成 OID 集请求，它必须返回 NDIS\_状态\_成功。
+**请注意**  扩展是否完成了 OID 设置请求，则不能\_SUCCESS 返回 NDIS\_状态。
 
  
 
-如果扩展不会完成 OID 集请求的 OID\_切换\_端口\_可扩展交换机基础的微型端口边缘完成创建，该请求。 基础的微型端口边缘返回此 OID 集请求的以下状态代码。
+如果扩展未完成 OID\_SWITCH\_端口\_创建的 OID 集请求，则该请求将由可扩展交换机的基础微型端口边缘完成。 基础微型端口边缘返回此 OID 集请求的以下状态代码。
 
 <table>
 <colgroup>
@@ -118,31 +118,31 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 组请求�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持在 NDIS 6.30 和更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)
+[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)
 
-[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfoidrequest)
+[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)
 
 [OID\_交换机\_NIC\_连接](oid-switch-nic-connect.md)
 
 [OID\_交换机\_端口\_数组](oid-switch-port-array.md)
 
-[OID\_SWITCH\_PORT\_PROPERTY\_ENUM](oid-switch-port-property-enum.md)
+[OID\_SWITCH\_端口\_属性\_枚举](oid-switch-port-property-enum.md)
 
  
 

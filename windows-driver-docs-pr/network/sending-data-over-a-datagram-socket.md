@@ -8,19 +8,19 @@ keywords:
 - WskSendTo
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf31762e2c838a660b15d63045dbabefd0a862a5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d2fca60c9f45739aaaf1c678bf04b27eee863b3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386848"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841969"
 ---
 # <a name="sending-data-over-a-datagram-socket"></a>通过数据报套接字发送数据
 
 
-Winsock Kernel (WSK) 应用程序已绑定到本地传输地址的数据报套接字后它可以通过套接字发送数据报。 WSK 应用程序通过调用通过数据报套接字发送数据报[ **WskSendTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)函数。
+Winsock 内核（WSK）应用程序已将数据报套接字绑定到本地传输地址后，它可以通过套接字发送数据报。 WSK 应用程序通过调用[**WskSendTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数在数据报套接字上发送数据报。
 
-下面的代码示例显示如何 WSK 应用程序可以通过数据报套接字发送数据报。
+下面的代码示例演示 WSK 应用程序如何通过数据报套接字发送数据报。
 
 ```C++
 // Prototype for the send datagram IoCompletion routine
@@ -129,11 +129,11 @@ NTSTATUS
 }
 ```
 
-WSK 应用程序已设置固定的远程传输地址或数据报套接字，一个固定的目标传输地址*RemoteAddress*参数传递给[ **WskSendTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to)函数是可选的可以是**NULL**。 如果**NULL**，数据报发送到固定的远程传输地址或固定的目标传输地址。 如果非**NULL**，数据报发送到指定的远程传输地址。
+如果 WSK 应用程序已为数据报套接字设置固定远程传输地址或固定目标传输地址，则传递到[**WskSendTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_send_to)函数的*RemoteAddress*参数是可选的，并且可以为**NULL**。 如果**为 NULL**，则将数据报发送到固定远程传输地址或固定目标传输地址。 如果非**NULL**，则将数据报发送到指定的远程传输地址。
 
-有关如何设置固定的远程传输地址的数据报套接字的详细信息，请参阅[ **SIO\_WSK\_设置\_远程\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)。
+有关为数据报套接字设置固定远程传输地址的详细信息，请参阅[**SIO\_WSK\_设置\_远程\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-remote-address)。
 
-有关如何设置固定的目标传输地址的数据报套接字的详细信息，请参阅[ **SIO\_WSK\_设置\_SENDTO\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-sendto-address).
+有关为数据报套接字设置固定目标传输地址的详细信息，请参阅[**SIO\_WSK\_设置\_SENDTO\_地址**](https://docs.microsoft.com/windows-hardware/drivers/network/sio-wsk-set-sendto-address)。
 
  
 

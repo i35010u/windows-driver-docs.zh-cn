@@ -3,18 +3,18 @@ title: 完成 DMA 传输
 description: 完成 DMA 传输
 ms.assetid: 86383b9f-9b82-4afa-81ac-2ab09bd8778b
 keywords:
-- DMA 操作 WDK KMDF 传输
-- 主总线 DMA WDK KMDF 传输
-- DMA 传输 WDK KMDF，完成
+- DMA 操作 WDK KMDF，传输
+- 总线主控 DMA WDK KMDF，传输
+- DMA 传输 WDK KMDF，正在完成
 - 完成 DMA 传输 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a81150c78514ea0ad46487480120fce46d6add9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1646d0ab87170f3222adebb45a062ccadff51f58
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382890"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844609"
 ---
 # <a name="completing-a-dma-transfer"></a>完成 DMA 传输
 
@@ -24,15 +24,15 @@ ms.locfileid: "67382890"
 
 
 
-通常情况下，您的驱动程序的[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数完成的每个 DMA 传输处理。
+通常，驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数完成每个 DMA 传输的处理。
 
-第一个，因为多个 DMA 事务可以是正在进行中同时[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数必须确定哪个 DMA 事务已完成的传输是与相关联。 回调函数可以执行此操作通过检索驱动程序存储时的事务句柄它[启动 DMA 事务](starting-a-dma-transaction.md)。 若要检索的设备扩展[PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)示例定义一个名为函数**PLxGetDeviceContext** Private.h 标头文件中：
+首先，因为多个 DMA 事务可以同时进行，所以[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数必须确定完成的传输与哪个 dma 事务相关联。 回调函数可以通过检索驱动程序[启动 DMA 事务](starting-a-dma-transaction.md)时存储的事务句柄来实现此目的。 若要检索设备扩展， [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)示例在其 Private .h 头文件中定义了一个名为**PLxGetDeviceContext**的函数：
 
 ```cpp
 WDF_DECLARE_CONTEXT_TYPE_WITH_NAME(DEVICE_EXTENSION, PLxGetDeviceContext)
 ```
 
-然后，在驱动程序的[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调中，执行以下操作：
+然后，在驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调中执行以下操作：
 
 ```cpp
 WDFDMATRANSACTION   dmaTransaction;
@@ -43,31 +43,31 @@ devExt  = PLxGetDeviceContext(WdfInterruptGetDevice(Interrupt));
 dmaTransaction = devExt->WriteDmaTransaction;
 ```
 
-下一步， [ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数必须告知框架，已完成传输，通过调用以下传输完成方法之一：
+接下来， [*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数必须通过调用下列传输完成方法之一，通知框架传输已完成：
 
--   [**WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)，如果已成功完成的传输和硬件不会报告传输的字节数的计数。
+-   [**WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)，如果传输已成功完成，并且硬件未报告传输的字节数。
 
--   [**WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)，如果已成功完成的传输和硬件报告计数的传输的字节数 （或不传输的字节数的计数），或如果该驱动程序检测到错误，并指定传输计数为零，则重试传输。 如果该驱动程序指定传输计数为零，框架中减去从保持并因此将发送到的同一个传输的字节数为零[ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
+-   [**WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)，如果传输已成功完成，并且硬件报告传输的字节数（或未传输的字节数），或驱动程序检测到错误并指定的传输计数为0到重试传输。 如果驱动程序指定的传输计数为零，则框架将从剩余的字节数中减去零，从而将同一传输发送到[*EvtProgramDma*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数。
 
--   [**WdfDmaTransactionDmaCompletedFinal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)，如果硬件报告不足或失败条件。
+-   如果硬件报告不足或失败的情况，则为[**WdfDmaTransactionDmaCompletedFinal**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)。
 
-您的驱动程序可以调用[ **WdfDmaTransactionGetCurrentDmaTransferLength** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetcurrentdmatransferlength)若要获取已完成传输原始长度。 此调用是你的设备将报告不传输的字节数的情况下很有用，因为该驱动程序可以减少非传输数量从原始字节传输长度，然后调用**WdfDmaTransactionGetCurrentDmaTransferLength**报告实际传输大小。
+你的驱动程序可以调用[**WdfDmaTransactionGetCurrentDmaTransferLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetcurrentdmatransferlength)来获取已完成传输的原始长度。 如果设备报告未传输的字节数，则此调用非常有用，因为驱动程序可以将未传输的字节数减去原始传输长度，然后将**WdfDmaTransactionGetCurrentDmaTransferLength**调用到报告实际传输大小。
 
-每个前面的传输完成方法会通知框架的单个[DMA 传输](dma-transactions-and-dma-transfers.md)(不是全部[DMA 事务](dma-transactions-and-dma-transfers.md)) 完成。 您的驱动程序调用下列方法之一后，该驱动程序将检查方法的返回值来确定事务是否需要更多传输：
+前面的每个传输完成方法都通知框架单个[DMA 传输](dma-transactions-and-dma-transfers.md)（而非整个[dma 事务](dma-transactions-and-dma-transfers.md)）已完成。 驱动程序调用这些方法之一后，驱动程序将检查该方法的返回值，以查看该事务是否需要更多的传输：
 
--   如果完成方法的返回值是**FALSE**，该框架已确定其他 DMA 传输所需完成的处理的 DMA 事务。
+-   如果完成方法的返回值为**FALSE**，则框架确定需要其他 DMA 传输来完成对 dma 事务的处理。
 
-    通常情况下，驱动程序[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数只返回。 框架将调用的驱动程序[ *EvtProgramDma* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)同样，回调函数和回调函数可以进行下一步传输程序硬件。
+    通常，驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数将返回。 该框架将再次调用驱动程序的[*EvtProgramDma*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nc-wdfdmatransaction-evt_wdf_program_dma)回调函数，并且回调函数可以对硬件进行编程以进行下一次传输。
 
-    传输完成方法提供了一个状态的值，该值始终是状态\_更多\_处理\_这种情况下需要。
+    传输完成方法提供状态值，该值始终为状态\_更\_处理\_此情况下需要此值。
 
--   如果返回值是 **，则返回 TRUE**、 没有更多传输，则 DMA 事务会发生。
+-   如果返回值为**TRUE**，则不会对 DMA 事务进行更多的传输。
 
-    传输完成方法提供状态的值。 如果状态值为状态\_成功，DMA 事务的所有传输都已完成，该驱动程序必须[完成 DMA 事务](completing-a-dma-transaction.md)。 如果任何其他操作的状态值，出现错误，DMA 事务可能未完成。
+    传输完成方法提供状态值。 如果 status 值为 STATUS\_SUCCESS，则 DMA 事务的所有传输将完成，并且驱动程序必须[完成 dma 事务](completing-a-dma-transaction.md)。 如果 status 值为其他任何值，则会出现错误，并且 DMA 事务可能尚未完成。
 
-如果[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数检测到错误，通常由于计时器过期或信号传输错误的硬件中断，该驱动程序可以重新启动该事务的当前传输。
+如果[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数检测到错误，通常是由于计时器过期或硬件中断发出传输错误，驱动程序可以重新启动事务的当前传输。
 
-若要重新启动该事务的当前传输，该驱动程序的[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数可以调用[ **WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)与*TransferredLength*参数设置为零。
+若要重新启动事务的当前传输，驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数可以调用[**WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength) ，并将*TransferredLength*参数设置为零。
 
  
 

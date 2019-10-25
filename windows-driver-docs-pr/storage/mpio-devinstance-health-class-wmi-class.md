@@ -1,20 +1,20 @@
 ---
-title: MPIO\_DEVINSTANCE\_运行状况\_类 WMI 类
-description: MPIO\_DEVINSTANCE\_运行状况\_类 WMI 类
+title: MPIO\_DEVINSTANCE\_HEALTH\_类 WMI 类
+description: MPIO\_DEVINSTANCE\_HEALTH\_类 WMI 类
 ms.assetid: d2c77461-d89c-4c1b-86dc-3373de0f11e4
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 30863ec93e521bb8eb91adf33e3a864fb1c27530
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2716c40abf0f9c2e5ed7f3839b997135734549cb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386172"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844542"
 ---
-# <a name="mpiodevinstancehealthclass-wmi-class"></a>MPIO\_DEVINSTANCE\_运行状况\_类 WMI 类
+# <a name="mpio_devinstance_health_class-wmi-class"></a>MPIO\_DEVINSTANCE\_HEALTH\_类 WMI 类
 
 
-MPIO 驱动程序使用 MPIO\_DEVINSTANCE\_运行状况\_类 WMI 类以报告运行状况统计信息的设备通过特定的路径。
+MPIO 驱动程序使用 MPIO\_DEVINSTANCE\_HEALTH\_类 WMI 类，通过特定路径报告设备的运行状况统计信息。
 
 ```cpp
 class MPIO_DEVINSTANCE_HEALTH_CLASS
@@ -140,7 +140,7 @@ class MPIO_DEVINSTANCE_HEALTH_CLASS
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_DEVINSTANCE\_运行状况\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_mpio_devinstance_health_class)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成[**MPIO\_DEVINSTANCE\_HEALTH\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_mpio_devinstance_health_class)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

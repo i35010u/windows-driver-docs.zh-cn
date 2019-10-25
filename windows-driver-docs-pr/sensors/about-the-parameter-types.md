@@ -1,20 +1,20 @@
 ---
-title: 有关传感器参数类型
+title: 关于传感器参数类型
 description: 关于参数类型
 ms.assetid: 392ea7b9-df6f-4d47-9367-a167c0656dd4
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 99848cefd1ad8e9f2de5ffcb46483ee200d2c577
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 0b7f4e362dbc0d913e2d8029e8a218f2ecf79658
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161433"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842376"
 ---
-# <a name="about-sensor-parameter-types"></a>有关传感器参数类型
+# <a name="about-sensor-parameter-types"></a>关于传感器参数类型
 
 
-您应该了解传感器类扩展如何将某些数据类型用作方法参数。 下表介绍了这些数据类型。
+你应了解传感器类扩展如何使用某些数据类型作为方法参数。 下表描述了这些数据类型。
 
 <table>
 <colgroup>
@@ -31,15 +31,15 @@ ms.locfileid: "67161433"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile" data-raw-source="[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)">IWDFFile</a></p></td>
 <td><p>pClientFile</p></td>
-<td><p>此 UMDF COM 接口表示平台将与客户端应用程序相关联的文件对象。 尽管传感器方法调用始终提供此类型作为有效的接口指针，但它被旨在用作应用程序 ID。 包含指针的地址是可以识别客户端应用程序的唯一编号。 请注意，此值是不同于指针本身的地址。 不使用 address-of 运算符 (&) 来检索 id。 使用指针本身。</p>
-<p>如果您选择用这个指针来访问基础对象，请记住最初，通过指针调用 AddRef，然后完成后调用 Release。</p></td>
+<td><p>此 UMDF COM 接口表示平台与客户端应用程序关联的文件对象。 虽然传感器方法调用始终将此类型提供为有效的接口指针，但它旨在用作应用程序的 ID。 指针包含的地址是可以标识客户端应用程序的唯一编号。 请注意，此值不同于指针本身的地址。 不要使用地址运算符（&）来检索 ID。 使用指针本身。</p>
+<p>如果选择使用此指针来访问基础对象，请记得先通过指针调用 AddRef，并在完成后调用发布。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>LPWSTR</strong></p></td>
 <td><p>pwszSensorID</p></td>
-<td><p>此字符串是某个特定传感器驱动程序提供的唯一 ID。 此 ID 必须是唯一的特定设备上的每个传感器。</p></td>
+<td><p>此字符串是由特定传感器的驱动程序提供的唯一 ID。 对于特定设备上的每个传感器，此 ID 必须是唯一的。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a></p></td>
@@ -47,15 +47,15 @@ ms.locfileid: "67161433"
 <p>ppPropertyValues</p>
 <p>pPropertiesToSet</p>
 <p>ppResults</p></td>
-<td><p>此 WPD 接口提供了方便地创建属性包的名称/值对。 <strong>PROPERTYKEY</strong>s 表示名称和<strong>PROPVARIANT</strong>s 表示值。 DDI 使用此接口来设置和检索的值，或为单个值集。</p>
-<p>你可以从一种方法来检索此接口或者，如果需要一个新的对象，通过调用使用 CoCreateInstance <strong>CLSID_PortableDeviceValues</strong>。</p></td>
+<td><p>此 WPD 接口提供一种简便的方法来创建名称/值对的属性包。 <strong>PROPERTYKEY</strong>表示名称， <strong>PROPVARIANT</strong>表示值。 DDI 使用此接口来设置和检索值集或单个值。</p>
+<p>如果需要新的对象，可以通过使用<strong>CLSID_PortableDeviceValues</strong>调用 CoCreateInstance，从方法检索此接口。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=131487" data-raw-source="[IPortableDeviceValuesCollection](https://go.microsoft.com/fwlink/p/?linkid=131487)">IPortableDeviceValuesCollection</a></p></td>
 <td><p>pEventCollection</p>
 <p>ppSensorObjectCollection</p></td>
-<td><p>此 WPD 接口包含一系列<a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a>对象。 使用此接口的 DDI 方法，可提供多个数据集的同时，如多个事件或多个传感器有关的信息。</p>
-<p>你可以从一种方法来检索此接口或者，如果需要一个新的对象，通过调用使用 CoCreateInstance <strong>CLSID_PortableDeviceValuesCollection</strong>。</p></td>
+<td><p>此 WPD 接口包含<a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a>对象的集合。 使用此接口的 DDI 方法使你能够同时提供多个数据集，例如多个事件或多个传感器的相关信息。</p>
+<p>如果需要新的对象，可以通过使用<strong>CLSID_PortableDeviceValuesCollection</strong>调用 CoCreateInstance，从方法检索此接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=131484" data-raw-source="[IPortableDeviceKeyCollection](https://go.microsoft.com/fwlink/p/?linkid=131484)">IPortableDeviceKeyCollection</a></p></td>
@@ -63,8 +63,8 @@ ms.locfileid: "67161433"
 <p>pProperties</p>
 <p>ppSupportedDataFields</p>
 <p>ppSupportedProperties</p></td>
-<td><p>此 WPD 接口包含一系列<strong>PROPERTYKEY</strong>s。 这些密钥表示可以存储的属性名称<a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a>。 DDI 使用此集合对象用于设置和检索的属性名称集或单一名称。</p>
-<p>你可以从一种方法来检索此接口或者，如果需要一个新的对象，通过调用使用 CoCreateInstance <strong>CLSID_PortableDeviceKeyCollection</strong>。</p></td>
+<td><p>此 WPD 接口包含<strong>PROPERTYKEY</strong>的集合。 这些键表示可以由<a href="https://go.microsoft.com/fwlink/p/?linkid=131486" data-raw-source="[IPortableDeviceValues](https://go.microsoft.com/fwlink/p/?linkid=131486)">IPortableDeviceValues</a>存储的属性名称。 DDI 使用此集合对象来设置和检索属性名称集或单个名称。</p>
+<p>如果需要新的对象，可以通过使用<strong>CLSID_PortableDeviceKeyCollection</strong>调用 CoCreateInstance，从方法检索此接口。</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,26 +1,26 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_SERVICE_SUBSCRIPTION
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUBSCRIPTION 通知来告知 OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS 集请求的响应中的设备服务订阅 MB 服务。NDIS_WWAN_DEVICE_SERVICE_SUBSCRIPTION 结构。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUBSCRIPTION 通知来通知 MB 服务有关设备服务的订阅，以响应 OID_WWAN_SUBSCRIBE_DEVICE_SERVICE_EVENTS 的请求。NDIS_WWAN_DEVICE_SERVICE_SUBSCRIPTION 结构。
 ms.assetid: E2B839AE-F81A-41EE-8374-F830B79D1E74
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUBSCRIPTION 网络驱动程序
+- NDIS_STATUS_WWAN_DEVICE_SERVICE_SUBSCRIPTION 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: efbe036efb411c9649bdecb12166cb967b67453f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 038ddc7e5bbff54eadf84cfc4d0aa4743841782b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366606"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843034"
 ---
-# <a name="ndisstatuswwandeviceservicesubscription"></a>NDIS\_状态\_WWAN\_设备\_服务\_订阅
+# <a name="ndis_status_wwan_device_service_subscription"></a>\_WWAN\_设备\_SERVICE\_订阅的 NDIS\_状态
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_设备\_服务\_订阅通知，以通知 MB 服务响应中的设备服务订阅有关[OID\_WWAN\_SUBSCRIBE\_设备\_服务\_事件](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-subscribe-device-service-events)集请求。
+小型端口驱动程序使用 NDIS\_状态\_WWAN\_设备\_服务\_订阅通知来通知 MB 服务有关设备服务订阅的信息，以响应[OID\_WWAN\_订阅\_设备\_服务\_事件](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-subscribe-device-service-events)设置请求。
 
-微型端口驱动程序不能使用此通知将发送未经请求的事件。
+微型端口驱动程序无法使用此通知发送未经请求的事件。
 
-此指示使用[ **NDIS\_WWAN\_设备\_服务\_订阅**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_subscription)结构。
+此指示使用[**NDIS\_WWAN\_设备\_服务\_订阅**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_subscription)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -32,22 +32,22 @@ ms.locfileid: "67366606"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持从 Windows 8 开始。</p></td>
+<td><p>版本</p></td>
+<td><p>从 Windows 8 开始支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h</td>
+<td><p>标头</p></td>
+<td>Ndis。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WWAN\_SUBSCRIBE\_DEVICE\_SERVICE\_EVENTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-subscribe-device-service-events)
+[OID\_WWAN\_订阅\_设备\_服务\_事件](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-subscribe-device-service-events)
 
-[**NDIS\_WWAN\_设备\_服务\_订阅**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_subscription)
+[**NDIS\_WWAN\_设备\_服务\_订阅**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_subscription)
 
  
 

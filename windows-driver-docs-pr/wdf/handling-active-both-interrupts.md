@@ -4,37 +4,37 @@ description: 处理同时处于活动状态的中断
 ms.assetid: CFA205B1-FDDD-4E27-8CF9-106C8D1CC4EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4994396d0e2937f9fea92838f88e17131b11672
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66568a41b18d1e9599cb199b24721259ccbb932f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384442"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844432"
 ---
 # <a name="handling-active-both-interrupts"></a>处理同时处于活动状态的中断
 
 
-**请注意**  本主题适用仅到内核模式驱动程序框架 (KMDF) 版本 1.13 及更早版本。
+**请注意**  本主题仅适用于内核模式驱动程序框架（KMDF）版本1.13 及更早版本。
 
  
 
-许多设备都有硬件寄存器该控制中断生成和屏蔽。 通常情况下，此类设备用于 KMDF 和 UMDF 驱动程序使用框架的内置中断支持。
+许多设备都有控制中断生成和屏蔽的硬件寄存器。 通常，此类设备的 KMDF 和 UMDF 驱动程序使用框架的内置中断支持。
 
-但是，一个芯片 (SoC) 的硬件平台上的系统上的简单设备可能没有中断的硬件寄存器。 因此，此类设备的驱动程序可能不能够控制时生成中断，或能够掩码中的硬件中断。 如果设备连接后，立即中断，并且该驱动程序正在使用框架的中断支持，就可以中断该框架已完全初始化的 framework 中断对象之前激发。 因此，KMDF 驱动程序必须调用 WDM 例程直接进行连接和断开连接中断。 UMDF 驱动程序不能调用这些方法，因为您无法编写此类设备的 UMDF 驱动程序。
+但是，芯片（SoC）硬件平台上系统上的一个简单设备可能没有用于中断的硬件寄存器。 因此，此类设备的驱动程序可能无法控制中断的生成时间，也不能掩盖硬件中的中断。 如果设备在连接时立即中断，并且驱动程序使用框架的中断支持，则在框架完全初始化框架中断对象之前，中断可能会激发。 因此，KMDF 驱动程序必须直接调用 WDM 例程来连接和断开中断。 因为 UMDF 驱动程序无法调用这些方法，所以无法为此类设备写入 UMDF 驱动程序。
 
-本主题介绍如何 KMDF 驱动程序可能处理这类设备的中断。
+本主题介绍了 KMDF 驱动程序如何处理此类设备的中断。
 
-SoC 硬件平台上同时处于活动状态的中断通常用于非常简单的设备，如硬件按钮。 当用户按下按钮式时，从设备的中断信号行转换从低到很高，或从高到低。 当用户释放按钮式时，中断行转换相反的方向。 GPIO pin 配置为同时处于活动状态的中断输入生成低到高和高到低的转换，从而导致在这两种情况下调用外围设备驱动程序的中断服务例程 (ISR) 在系统上的中断。 但是，该驱动程序不会接收指示转换是否低到高或高到低。
+在 SoC 硬件平台上，活动-两个中断通常用于非常简单的设备，如硬件推送按钮。 当用户按下按钮时，来自设备的中断信号线路从低到高进行转换，或从高到低转换。 当用户释放 "推送" 按钮时，中断线会以相反方向转换。 配置为活动-两个中断的 GPIO 输入会在低到高和低到低的转换上生成中断，导致系统在这两种情况下都调用外围设备驱动程序的中断服务例程（ISR）。 但是，驱动程序不会收到指示转换是从低到高还是从高到低的指示。
 
-若要区分低到高和高到低的转换，该驱动程序必须跟踪每个中断状态。 为此，您的驱动程序可能维护是布尔中断状态值**FALSE**中断行状态较低时和**TRUE**高行状态时。
+若要区分低到高和低到低转换，驱动程序必须跟踪每个中断的状态。 若要执行此操作，驱动程序可能会保留一个布尔中断状态值，该值在中断线路状态为 low 时为**FALSE** ，当行状态为高时为 TRUE，则为**TRUE** 。
 
-请考虑在其中的行状态默认为低在系统启动时的示例。 该驱动程序初始化到状态值**FALSE**在其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数。 然后每次调用时，驱动程序的 ISR，发出信号状态，更改驱动程序反转其 ISR.中的状态值
+假设在系统启动时，线路状态默认为 low。 驱动程序在其[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中将状态值初始化为**FALSE** 。 然后，每次调用驱动程序的 ISR 时，向状态的更改发出信号，驱动程序将反转其 ISR 中的状态值。
 
-如果在系统启动时，行状态为高，中断之后将立即触发启用它。 由于该驱动程序调用[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)直接，而不是调用例程[ **WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)，它是确保接收可能立即中断。
+如果在系统启动时线路状态很高，则中断在启用后立即触发。 由于驱动程序直接调用[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)例程，而不是调用[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)，因此可以确保接收可能的即时中断。
 
-此解决方案需要 GPIO 控制器中的硬件，支持同时处于活动状态的中断或 GPIO 控制器的驱动程序模拟软件中同时处于活动状态的中断。 有关模拟同时处于活动状态的中断的信息，请参阅的说明**EmulateActiveBoth**的成员[**控制器\_特性\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags)结构。
+此解决方案要求 GPIO 控制器支持在硬件中的主动中断，或 GPIO 控制器的驱动程序在软件中模拟活动-两个中断。 有关模拟活动-两个中断的信息，请参阅控制器的**EmulateActiveBoth**成员的说明[ **\_属性\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_controller_attribute_flags)结构。
 
-下面的代码示例演示如何外围设备的 KMDF 驱动程序可以跟踪中断极性。
+下面的代码示例演示如何使用 KMDF 驱动程序来跟踪中断极性。
 
 ```cpp
 typedef struct _INTERRUPT_CONTEXT INTERRUPT_CONTEXT, *PINTERRUPT_CONTEXT;
@@ -171,11 +171,11 @@ EvtDeviceReleaseHardware(
 }
 ```
 
-在前面的代码示例中，该驱动程序的[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数将配置的设备上下文，然后调用[ **IoInitializeDpcRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializedpcrequest)注册[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程。
+在上面的代码示例中，驱动程序的[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数将配置设备上下文，然后调用[**IoInitializeDpcRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializedpcrequest)来注册[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程。
 
-在驱动程序[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)例程反转中断状态值，然后调用[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)排队 DPC。
+驱动程序的[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)例程反转中断状态值，然后调用[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)将 DPC 排队。
 
-在其[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数，该驱动程序初始化到状态值**FALSE** ，然后调用[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)。 在其[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数、 驱动程序调用[ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex)注销其 ISR.
+在其[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中，驱动程序将状态值初始化为**FALSE** ，然后调用[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)。 在其[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数中，驱动程序调用[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)来注销其 ISR。
 
  
 

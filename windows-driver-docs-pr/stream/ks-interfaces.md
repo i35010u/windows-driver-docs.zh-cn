@@ -3,18 +3,18 @@ title: KS 接口
 description: KS 接口
 ms.assetid: cc6fad32-0587-44a8-92d1-54bc0370e5c0
 keywords:
-- 流式处理接口 WDK 内核
+- 接口 WDK 内核流式处理
 - KSPIN_INTERFACE
-- 流式处理 WDK，接口的内核
-- KS WDK 接口
+- 内核流 WDK，接口
+- KS WDK，接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 574853d4d05fb0fff7a384e4a14b60846833fe5a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 575992aec5b1e33801aa4395c0d7c6dcc866aff3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382498"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844350"
 ---
 # <a name="ks-interfaces"></a>KS 接口
 
@@ -22,11 +22,11 @@ ms.locfileid: "67382498"
 
 
 
-*接口*是定义 pin 的进行通信的描述符参数。 微型驱动程序指示 pin 支持通过提供指向的数组的指针的接口[ **KSPIN\_界面**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))中的相关结构[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)结构。 然后，KS 用于确定潜在的连接和关系图构建使用此信息。
+*接口*是一个描述符参数，用于定义 pin 的通信方式。 微型驱动程序通过在相关[**KSPIN\_说明符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)结构中提供指向[**KSPIN\_接口**](https://docs.microsoft.com/previous-versions/ff563537(v=vs.85))结构的数组的指针来指示 pin 支持的接口。 然后，KS 使用此信息来确定潜在连接和图形构建。
 
-媒体，如接口还介绍了作为一组以及该集的元素。 KSPIN\_接口结构定义的接口集内的特定接口。
+与媒体一样，接口也被描述为集的集合和元素。 KSPIN\_接口结构定义接口集内的特定接口。
 
-用户模式下客户端然后通过使用指定的连接的接口的类型**接口**的相关成员[ **KSPIN\_CONNECT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_connect)结构。 客户端传递此 KSPIN\_对的调用中的连接实例[ **KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)，这会导致 IRP\_MJ\_创建发送到微型驱动程序。
+然后，用户模式客户端使用相关[ **\_KSPIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_connect)的**接口**成员指定连接的接口类型。 在对[**KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatepin)的调用中，客户端传递此 KSPIN\_连接实例，这将导致 IRP\_MJ\_创建发送到微型驱动程序。
 
  
 

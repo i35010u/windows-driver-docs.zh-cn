@@ -1,30 +1,30 @@
 ---
-Description: 在 USB 复合设备上的描述符
-title: 在 USB 复合设备上的描述符
+Description: USB 复合设备上的描述符
+title: USB 复合设备上的描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e7b320b524b9f3904942b276b12a0e506b0d551
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c29ff848daba9517d440293164c67a92a9ef0c85
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386272"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842396"
 ---
-# <a name="descriptors-on-usb-composite-devices"></a>在 USB 复合设备上的描述符
+# <a name="descriptors-on-usb-composite-devices"></a>USB 复合设备上的描述符
 
 
-如 USB 规范中所述，每个 USB 设备提供了一系列定义其功能的分层描述符。 最高级别每个设备都有一个或多个 USB 配置描述符，每个都有一个或多个接口描述符。 有关 USB 配置描述符的进一步信息，请参阅[USB 配置描述符](usb-configuration-descriptors.md)。 配置是互斥的因此，只有一个配置，可以选择要一次操作。
+如 USB 规范所述，每个 USB 设备都提供一组定义其功能的分层描述符。 在顶级，每个设备都有一个或多个 USB 配置描述符，其中每个都有一个或多个接口描述符。 有关 USB 配置描述符的详细信息，请参阅[Usb 配置描述符](usb-configuration-descriptors.md)。 配置是互相排斥的，因此，一次只能选择一个配置来操作。
 
-Windows Vista 以前的 Microsoft 提供的驱动程序只能选择配置 1。 在 Windows Vista 和更高版本的 Windows 中，可以设置注册表值以指定的配置[USB 通用父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)将使用。 有关选择复合设备上的设备配置的详细信息，请参阅[如何为 USB 设备选择一个配置](how-to-select-a-configuration-for-a-usb-device.md)。
+在 Windows Vista 之前，Microsoft 提供的驱动程序只选择 "配置 1"。 在 Windows Vista 和更高版本的 Windows 中，你可以设置注册表值以指定[USB 通用父驱动程序（Usbccgp）](usb-common-class-generic-parent-driver.md)将使用的配置。 有关在复合设备上选择设备配置的详细信息，请参阅[如何为 USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)。
 
-在配置中，接口和接口集合是单独管理。 每个接口表示，级别的描述符中的唯一值来**bInterfaceNumber**的成员及其[ **USB\_接口\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_interface_descriptor)结构。
+在配置中，接口和接口集合是独立管理的。 每个接口都通过其[**USB\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)的**bInterfaceNumber**成员中的唯一值来表示（在描述符级别）\_描述符结构。
 
-接口的函数将由**bInterfaceClass**， **bInterfaceSubClass**，并**bInterfaceProtocol**成员相同的结构，以及与可以按照它的特定于类的描述符。
+接口的功能由相同结构的**bInterfaceClass**、 **bInterfaceSubClass**和**bInterfaceProtocol**成员以及可能跟随它的类特定说明符指示。
 
-描述符的详细信息，请参阅[USB 描述符](usb-descriptors.md)。
+有关描述符的详细信息，请参阅[USB 描述符](usb-descriptors.md)。
 
 ## <a name="related-topics"></a>相关主题
-[USB 泛型父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)  
+[USB 通用父驱动程序（Usbccgp）](usb-common-class-generic-parent-driver.md)  
 [Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  
 
 

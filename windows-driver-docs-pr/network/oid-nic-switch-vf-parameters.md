@@ -1,48 +1,48 @@
 ---
 title: OID_NIC_SWITCH_VF_PARAMETERS
-description: 基础驱动程序或用户模式应用程序发出的对象标识符 (OID) 方法请求的 OID_NIC_SWITCH_VF_PARAMETERS 以获取当前的配置参数的 PCI Express (PCIe) 虚拟函数 (VF) 上的网络适配器。
+description: 过量驱动程序或用户模式应用程序发出 OID_NIC_SWITCH_VF_PARAMETERS 的对象标识符（OID）方法请求，以获取网络适配器上 PCI Express （PCIe）虚拟功能（VF）的当前配置参数。
 ms.assetid: DF08B0BA-6D86-4C4F-AC38-8A401F097925
 ms.date: 08/08/2017
-keywords: -OID_NIC_SWITCH_VF_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_VF_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1892f41a97859058667d300f93dd900310367afe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b837949593853fd8f7b7c7107387da1a7c96dad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383660"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844078"
 ---
-# <a name="oidnicswitchvfparameters"></a>OID\_NIC\_SWITCH\_VF\_PARAMETERS
+# <a name="oid_nic_switch_vf_parameters"></a>OID\_NIC\_交换机\_VF\_参数
 
 
-基础驱动程序或用户模式应用程序颁发的 OID 的对象标识符 (OID) 方法请求\_NIC\_交换机\_VF\_参数来获取当前的配置参数的 PCI Express (PCIe)虚拟函数 (VF) 上的网络适配器。 已通过 OID 方法请求的分配的资源的 VFs [OID\_NIC\_交换机\_分配\_VF](oid-nic-switch-allocate-vf.md)可以通过 OIDOID方法请求查询\_NIC\_交换机\_VF\_参数。
+覆盖的驱动程序或用户模式应用程序发出 OID\_的对象标识符（OID）方法请求\_交换机\_VF\_参数，以获取 a PCI Express （PCIe）虚函数（VF）的当前配置参数网络适配器。 只有具有通过 OID 方法（oid）的 oid [\_nic\_交换机\_分配\_vf](oid-nic-switch-allocate-vf.md)的 VFs 才能通过 OID\_nic\_PARAMETERS.
 
-NDIS 处理 OID 方法请求的 OID\_NIC\_交换机\_VF\_微型端口驱动程序的参数。
+NDIS 处理 OID\_NIC 的 OID 方法请求\_交换机\_微端口驱动程序的参数\_参数。
 
-发出 OID 方法请求后， **InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含的指针[ **NDIS\_NIC\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。
+进行 OID 方法请求时， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)的指针，\_VF\_参数结构。
 
 <a name="remarks"></a>备注
 -------
 
-过量的驱动程序或用户模式应用程序通过设置指定查询 VF **VFId**的成员[ **NDIS\_NIC\_开关\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构为 VF 的标识符。 基础驱动程序或应用程序中获取 VF 标识符通过以下方式之一：
+过量驱动程序或用户模式应用程序通过将 NDIS\_NIC 的**VFId**成员设置为要查询的 VF [ **\_交换机\_vf\_参数结构转换**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)为 vf 的标识符。 过量驱动程序或应用程序通过以下方式之一获取 VF 标识符：
 
--   通过发出的 OID 方法请求[OID\_NIC\_交换机\_枚举\_VFS](oid-nic-switch-enum-vfs.md)。
+-   通过\_\_NIC 发出 oid 方法请求， [\_枚举\_VFS](oid-nic-switch-enum-vfs.md)。
 
-    如果已成功完成此 OID 请求，则基础驱动程序或用户模式应用程序接收所有 VFs 上的网络适配器分配的列表。 在列表中的每个元素均[ **NDIS\_NIC\_交换机\_VF\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)的结构，其中指定VF标识符**VFId**成员。
+    如果此 OID 请求成功完成，则过量驱动程序或用户模式应用程序将收到网络适配器上分配的所有 VFs 的列表。 列表中的每个元素都是一个[**NDIS\_NIC\_交换机\_VF\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)结构，以及由**VFId**成员指定的 vf 标识符。
 
--   通过发出的 OID 方法请求[OID\_NIC\_交换机\_分配\_VF](oid-nic-switch-allocate-vf.md)。
+-   通过向[\_分配\_VF\_\_NIC](oid-nic-switch-allocate-vf.md)发出 OID 的 oid 方法请求。
 
-    如果已成功完成此 OID 请求，则基础驱动程序接收的标识符中新创建的 VF **VFId**所返回的成员[ **NDIS\_NIC\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。
+    如果此 OID 请求成功完成，则过量驱动程序会在返回的 NDIS\_NIC 的**VFId**成员中接收新创建的 VF 的标识符[ **\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。
 
-    **请注意**  仅过量驱动程序可以获取这种方式中的取景器标识符。
+    **请注意**  只有过量驱动程序才能以这种方式获取 VF 标识符。
 
      
 
-通过 OID 方法请求成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_NIC\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。 此结构包含有关指定 VF 配置参数。
+成功从 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_NIC 的指针\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。 此结构包含指定的 VF 的配置参数。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-NDIS 处理 OID 方法请求的 OID\_NIC\_交换机\_VF\_微型端口驱动程序，并返回以下状态代码的 OID 的 OID 方法请求参数\_NIC\_交换机\_VF\_参数。
+NDIS 处理 oid\_NIC 的 OID 方法请求\_交换机\_取景器的参数\_微型端口驱动程序的参数，并为 OID 的 OID 方法请求返回以下状态代码\_.
 
 <table>
 <colgroup>
@@ -58,27 +58,27 @@ NDIS 处理 OID 方法请求的 OID\_NIC\_交换机\_VF\_微型端口驱动程�
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_SUCCESS</p></td>
-<td><p>请求已成功完成。 <strong>InformationBuffer</strong>成员将指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"> <strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong> </a>结构。</p></td>
+<td><p>请求已成功完成。 <strong>InformationBuffer</strong>成员指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>结构。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>微型端口驱动程序不支持的单个根 I/O 虚拟化 (SR-IOV) 接口，或未启用要使用的界面。</p></td>
+<td><p>微型端口驱动程序不支持单根 i/o 虚拟化（SR-IOV）接口，或者未启用使用接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>一个或多个的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"> <strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong> </a>结构具有无效值。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>结构中的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度不超过 sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>)。 NDIS 集<strong>数据。METHOD_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区的长度小于 sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VF_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)"><strong>NDIS_NIC_SWITCH_VF_PARAMETERS</strong></a>）。 NDIS 设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 集<strong>数据。METHOD_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>请求由于其他原因而失败。</p></td>
+<td><p>由于其他原因，请求失败。</p></td>
 </tr>
 </tbody>
 </table>
@@ -95,31 +95,31 @@ NDIS 处理 OID 方法请求的 OID\_NIC\_交换机\_VF\_微型端口驱动程�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持在 NDIS 6.30 和更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
-[**NDIS\_NIC\_SWITCH\_VF\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)
+[**NDIS\_NIC\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[OID\_NIC\_SWITCH\_ALLOCATE\_VF](oid-nic-switch-allocate-vf.md)
+[OID\_NIC\_交换机\_分配\_VF](oid-nic-switch-allocate-vf.md)
 
-[OID\_NIC\_SWITCH\_ENUM\_VFS](oid-nic-switch-enum-vfs.md)
+[OID\_NIC\_交换机\_枚举\_VFS](oid-nic-switch-enum-vfs.md)
 
-[**NDIS\_NIC\_SWITCH\_VF\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)
+[**NDIS\_NIC\_交换机\_VF\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_info)
 
-[OID\_NIC\_SWITCH\_VF\_PARAMETERS](oid-nic-switch-vf-parameters.md)
+[OID\_NIC\_交换机\_VF\_参数](oid-nic-switch-vf-parameters.md)
 
  
 

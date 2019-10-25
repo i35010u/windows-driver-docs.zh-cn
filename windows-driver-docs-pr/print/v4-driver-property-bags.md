@@ -1,24 +1,24 @@
 ---
 title: V4 打印机驱动程序属性包
-description: V4 打印驱动程序模型提供了大量简化从自定义 UI 应用程序到呈现过程的数据流的属性包。
+description: V4 打印驱动程序模型提供了许多属性包，便于从自定义 UI 应用程序到呈现过程的数据流。
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ccaafefa4e5716fd08b9813b82128c7cd2b7eaff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5aaa3f520cf05f14bf59aeeccd219afd461aeb94
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362695"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844194"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 打印机驱动程序属性包
 
 
-V4 打印驱动程序模型提供了大量简化从自定义 UI 应用程序到呈现过程的数据流的属性包。
+V4 打印驱动程序模型提供了许多属性包，便于从自定义 UI 应用程序到呈现过程的数据流。
 
-这些属性包允许自定义属性和功能定义要在自定义 UI 中创建，然后使用由呈现进程。 所有属性包通过使用都公开[ **IPrinterScriptablePropertyBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablepropertybag)界面在 JavaScript 中或通过使用[ **IPrinterPropertyBag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterpropertybag)在其他环境中的接口。
+这些属性包允许在自定义 UI 中创建自定义属性和功能定义，并由呈现进程使用。 所有属性包都通过使用 JavaScript 中的[**IPrinterScriptablePropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablepropertybag)接口或在其他环境中使用[**IPrinterPropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterpropertybag)接口公开。
 
-下表概述了如何使用不同的组件来获取属性包对象从 v4 打印驱动程序的不同部分。
+下表概述了如何使用不同的组件从 v4 打印驱动程序的不同部分获取属性包对象。
 
 <table>
 <colgroup>
@@ -27,77 +27,77 @@ V4 打印驱动程序模型提供了大量简化从自定义 UI 应用程序到�
 </colgroup>
 <thead>
 <tr class="header">
-<th>组件</th>
+<th>Component</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>JavaScript 约束脚本</td>
-<td>驱动程序和队列属性包传递给 JavaScript 约束脚本使用 scriptContext 参数。 此参数的类型是<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext" data-raw-source="[&lt;strong&gt;IPrinterScriptContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)"> <strong>IPrinterScriptContext</strong> </a>和包含子项：驱动程序属性 – 表示驱动程序属性包。
-QueueProperties – 表示队列属性包。
-UserProperties – 用户属性包。
-DEVMODE 属性包传递到 DEVMODE &lt; - &gt; PrintTicket 转换方法，例如<em>devModeProperties</em>参数 (它属于类型<strong>IPrinterScriptablePropertyBag</strong>)。 它将对其他方法不可用。</td>
+<td>使用 scriptContext 参数将驱动程序和队列属性包传递到 JavaScript 约束脚本。 此参数的类型为<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext" data-raw-source="[&lt;strong&gt;IPrinterScriptContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)"><strong>IPrinterScriptContext</strong></a> ，包含子级： DriverProperties –指驱动程序属性包。
+QueueProperties –表示 queue 属性包。
+UserProperties-用户属性包。
+DEVMODE 属性包作为<em>devModeProperties</em>参数（其类型为<strong>IPrinterScriptablePropertyBag</strong>）传递到 Devmode &lt;-&gt; PrintTicket 转换方法。 其他方法不可用。</td>
 </tr>
 <tr class="even">
-<td>USB Bidi JavaScript</td>
-<td>驱动程序和队列属性包传递到 USB Bidi JavaScript 脚本使用 scriptContext 参数。 此参数的类型是<strong>IPrinterScriptContext</strong>和包含子项：驱动程序属性 – 表示驱动程序属性包。
-QueueProperties – 表示队列属性包。</td>
+<td>USB 双向 JavaScript</td>
+<td>使用 scriptContext 参数将驱动程序和队列属性包传递到 USB 双向 JavaScript 脚本。 此参数的类型为<strong>IPrinterScriptContext</strong> ，包含子级： DriverProperties –指驱动程序属性包。
+QueueProperties –表示 queue 属性包。</td>
 </tr>
 <tr class="odd">
 <td>打印机扩展应用程序</td>
-<td>所有属性包的一部分都传入<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs" data-raw-source="[&lt;strong&gt;IPrinterExtensionEventArgs&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)"> <strong>IPrinterExtensionEventArgs</strong> </a> OnDriverEvent 处理程序的参数。 它们是类型的所有<strong>IPrinterPropertyBag</strong>。 被指定为以下：驱动程序属性 – 表示驱动程序属性包。
-UserProperties – 用户属性包。
-PrinterQueue.GetProperties() – 指队列属性包</td>
+<td>所有属性包都作为<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs" data-raw-source="[&lt;strong&gt;IPrinterExtensionEventArgs&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)"><strong>IPrinterExtensionEventArgs</strong></a>参数的一部分传递给 OnDriverEvent 处理程序。 它们都是<strong>IPrinterPropertyBag</strong>类型。 它们被指定为以下形式： DriverProperties –指驱动程序属性包。
+UserProperties-用户属性包。
+PrinterQueue. GetProperties （）–引用 queue 属性包</td>
 </tr>
 <tr class="even">
-<td>UWP 的设备应用程序</td>
-<td>使用激活过程中的所有属性包都传递<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext" data-raw-source="[&lt;strong&gt;IPrinterExtensionContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext)"> <strong>IPrinterExtensionContext</strong> </a>对象。 被指定为：驱动程序属性 – 表示驱动程序属性包。
-UserProperties – 用户属性包。
-PrinterQueue.GetProperties() – 指队列属性包</td>
+<td>UWP 设备应用</td>
+<td>在激活过程中，将使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioncontext" data-raw-source="[&lt;strong&gt;IPrinterExtensionContext&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioncontext)"><strong>IPrinterExtensionContext</strong></a>对象传入所有属性包。 它们被指定为： DriverProperties –是指驱动程序属性包。
+UserProperties-用户属性包。
+PrinterQueue. GetProperties （）–引用 queue 属性包</td>
 </tr>
 <tr class="odd">
 <td>XPS 呈现筛选器</td>
-<td><p>XPS 筛选器可以从内部访问驱动程序属性包<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>打印筛选器管道属性包</strong></a>使用属性命名为"DriverPropertyBag"或从定义的值XPS_FP_PROPERTY_BAG<em>filterpipeline.h</em>。 下面是有关 DriverPropertyBag 信息：</p>
-<strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 来获取驱动程序属性包的 IPrinterPropertyBag 接口的指针。
-<p>XPS 筛选器可以访问队列属性包中使用属性名称"QueuePropertyBag"，或定义打印筛选器管道属性包和值从 XPS_FP_QUEUE_PROPERTY_BAG <em>filterpipeline.h</em>。 下面是有关 QueuePropertyBag 信息：</p>
-<strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 来获取对队列的属性包的 IPrinterPropertyBag 接口的指针。</td>
+<td><p>XPS 筛选器可以使用属性名称 "DriverPropertyBag" 从 "<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>打印筛选器管道" 属性包</strong></a>内访问驱动程序属性包，也可以从<em>filterpipeline</em>访问定义的值 XPS_FP_PROPERTY_BAG。 下面是有关 DriverPropertyBag 的信息：</p>
+<strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 以获取指向驱动程序属性包的 IPrinterPropertyBag 接口的指针。
+<p>和 XPS 筛选器可以使用属性名称 "QueuePropertyBag" 从 "打印筛选器管道" 属性包内或从<em>filterpipeline</em>中 XPS_FP_QUEUE_PROPERTY_BAG 定义的值来访问队列属性包。 下面是有关 QueuePropertyBag 的信息：</p>
+<strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 以获取指向 queue 属性包的 IPrinterPropertyBag 接口的指针。</td>
 </tr>
 </tbody>
 </table>
 
 
 
-在 JavaScript 实现中，在作为参数传递属性包。 打印机扩展应用程序，在属性包传递中作为用于启动应用程序事件自变量的成员。
+在 JavaScript 实现中，属性包作为参数传入。 在打印机扩展应用程序中，属性包作为事件参数的成员传入，用于启动应用程序。
 
-提供的 COM IPrinterQueue、 IPrinterExtensionContext 和 IPrinterExtensionEventArgs 接口的属性包访问器，以及在 Javascript 实现的属性包访问器将引发异常，如果未指定的属性包或找不到。 此外，查询 IPrinterPropertyBag 接口上的单个属性将引发异常，如果找不到该属性。 应使用 try catch 语句来避免崩溃如果属性不可用。
+如果未指定属性包，COM IPrinterQueue、IPrinterExtensionContext 和 IPrinterExtensionEventArgs 接口以及 Javascript 实现中的属性包访问器提供的属性包访问器将引发异常。或找不到。 此外，如果找不到该属性，则在 IPrinterPropertyBag 接口上查询各个属性将引发异常。 如果属性不可用，则应使用 try catch 语句来避免发生崩溃。
 
 ## <a name="driver-property-bag"></a>驱动程序属性包
 
 
-驱动程序属性包是预定义属性或数据 blob 的只读、 只使用了由驱动程序的驱动程序的数据存储。 它可以通过在 v4 清单文件中使用"PropertyBag"指令指定并不能修改在运行时。
+驱动程序属性包是用于预定义属性的驱动程序的数据存储，也可以是用于由驱动程序以只读方式使用的数据 blob。 可以通过在 v4 清单文件中使用 "PropertyBag" 指令来指定它，并且在运行时可能不会修改它。
 
-Windows 驱动程序工具包包括驱动程序属性包的模板项目。 驱动程序属性包是一个编译的二进制 blob。 Visual Studio 包含用于生成已编译的驱动程序属性包的模板。 为此模板生成的 XML 文件不是属性包，而是此模板的已编译的输出是应在 v4 清单文件中指定的属性包文件。
+Windows 驱动程序工具包包含驱动程序属性包的模板项目。 驱动程序属性包是已编译的二进制 blob。 Visual Studio 包含一个用于生成编译的驱动程序属性包的模板。 为此模板生成的 XML 文件不是属性包，而是此模板的编译输出是应在 v4 清单文件中指定的属性包文件。
 
 ## <a name="user-property-bag"></a>用户属性包
 
 
-用户属性包让合作伙伴可以将设置存储在每个用户、 计算机本地上下文。 此属性包非常适合用作用户首选项，如"不再显示此信息"的存储机制。 此属性包不是可由管理员管理和打印机共享期间客户端和服务器之间不同步。 用户属性包只能在运行时设置，并且仅可供打印机扩展、 UWP 设备应用和 JavaScript 约束。
+用户属性包允许合作伙伴将设置存储在每个用户的本地上下文中。 此属性包非常适合用作用户首选项（如 "不再显示此类"）的存储机制。 此属性包不能由管理员管理，并且在打印机共享期间不会在客户端和服务器之间进行同步。 用户属性包仅在运行时设置，并且仅适用于打印机扩展、UWP 设备应用和 JavaScript 约束。
 
-**请注意**因为 JavaScript 约束也可能称为外部用户上下文中，在 despooling、 用户属性包这一次是不可用，Windows 将返回 HRESULT\_FROM\_WIN32 (错误\_不\_找到)。
+**注意** 由于 JavaScript 约束也可能在用户上下文之外调用，因此在 despooling 期间，用户属性包此时不可用，Windows 将从\_WIN32 返回 HRESULT\_（错误\_未\_找到）。
 
 
 
 ## <a name="devmode-property-bag"></a>DEVMODE 属性包
 
 
-DEVMODE 属性包用来组织 DEVMODE 结构的专用部分中的内容。 在 ConvertPrintTicketToDevMode 调用期间调用 JavaScript，以填充 DEVMODE 属性包的内容。 ConvertDevModeToPrintTicket 在调用期间，会调用 JavaScript 来从 DEVMODE 属性包读取持久化的设置，然后将其存储在 PrintTicket 返回。
+DEVMODE 属性包用于在 DEVMODE 结构的 private 节中组织内容。 在 ConvertPrintTicketToDevMode 调用过程中，将调用 JavaScript 来填充 DEVMODE 属性包的内容。 在 ConvertDevModeToPrintTicket 调用过程中，将调用 JavaScript 以从 DEVMODE 属性包读取持久设置并将其存储在 PrintTicket 中。
 
-此属性包的大小小于 60 KB （恰到好处的差异取决于已分配的 DEVMODE 节的大小），大小限制，因为它必须序列化为 DEVMODE 结构以避免数据丢失，在某些情况下。 因为由 DEVMODE 的公共部分加上配置模块管理的专用部分大小提供的确切大小将因驱动程序。
+此属性包的大小限制为小于 60 KB （确切的数量因 DEVMODE 分配部分的大小而异），因为它必须序列化为 DEVMODE 结构，以避免在某些情况下丢失数据。 每个驱动程序的可用确切大小会有所不同，因为它是由 DEVMODE 的 public 部分的大小和配置模块管理的私有部分确定的。
 
-DEVMODE 属性包使用的 XML 文件指定的属性包的成员，并使用 convertPrintTicketToDevMode 和 convertDevModeToPrintTicket Api 来处理转换。 必须使用 DevModeMap 指令，v4 清单中指定 XML DEVMODE 映射文件。
+DEVMODE 属性包使用 XML 文件来指定属性包的成员，并使用 convertPrintTicketToDevMode 和 convertDevModeToPrintTicket Api 来处理转换。 必须使用 DevModeMap 指令在 v4 清单中指定 XML DEVMODE 映射文件。
 
-下面的代码段显示了一个 DEVMODE 属性包映射 XML 示例。
+下面的代码段演示了 DEVMODE 属性包映射 XML 示例。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -108,74 +108,74 @@ DEVMODE 属性包使用的 XML 文件指定的属性包的成员，并使用 con
 </Properties>
 ```
 
-下面的屏幕截图显示了 DEVMODE 属性包映射 XML 架构，以及它在 WDK 安装文件夹中可从以下路径：\\Include\\um\\printerdriverdevmodemap.xsd.pr
+以下屏幕截图显示了 DEVMODE 属性包映射 XML 架构，并可在 WDK 安装文件夹中找到以下路径： \\包括\\um\\printerdriverdevmodemap.xsd.pr
 
 ![devmode 属性包映射 xml 架构](images/propbagmapschema.png)
 
-DEVMODE 属性包映射的 XML 文件进行验证由 INFGate 工具。
+DEVMODE 属性包映射的 XML 文件由 INFGate 工具验证。
 
 ## <a name="queue-property-bag"></a>队列属性包
 
 
-队列属性包将存储每个队列配置设置，包括窗体送纸器映射和打印机属性，如可安装选项的配置。 驱动程序定义的属性和打印机属性是在 PowerShell 中，可配置，而是在 UI 中的打印机属性可配置的送纸器映射到窗体。 打印机扩展不能编辑的任何属性值。
+队列属性包存储每个队列的配置设置，包括窗体到托盘映射和打印机属性（如可安装选项）的配置。 驱动程序定义的属性和打印机属性在 PowerShell 中是可配置的，而窗体到托盘的映射可以在打印机属性 UI 中进行配置。 打印机扩展无法编辑任何属性值。
 
-队列属性包会自动创建有关许多 v4 打印驱动程序，但驱动程序还可能会提供其他属性使用的 XML 文件进行配置。 不应使用该驱动程序属性包工具编译此 XML 文件。 队列属性包是可用于执行以下任一操作的 v4 打印驱动程序支持的打印机：
+队列属性包是为多个 v4 打印驱动程序自动创建的，但驱动程序还可以提供其他属性以使用 XML 文件进行配置。 不应使用驱动程序属性包工具编译此 XML 文件。 队列属性包可用于 v4 打印驱动程序支持的打印机，这些驱动程序执行以下任一操作：
 
-1. 指定多个送纸器，或
+1. 指定多个纸盒，或
 
-2. 在 GPD 或 PPD 文件中，指定可安装选项或
+2. 指定 GPD 或 PPD 文件中的可安装选项，或
 
-3. 使用 QueueProperties 指令在驱动程序清单中指定的队列属性包。
+3. 使用 QueueProperties 指令在驱动程序清单中指定队列属性包。
 
-管理员配置队列属性包使用 PowerShell。 以下命令-允许 (cmdlet) 是一个打印机对象，可以使用 Get 打印机 cmdlet 获取对象的子级。
+管理员使用 PowerShell 配置 queue 属性包。 以下命令-允许（cmdlet）是打印机对象的子项，可以使用 "打印机" cmdlet 获取该对象。
 
 | Cmdlet 名称                                                                                                  | 描述                                                             |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| Get-PrinterProperty -printerName &lt;printerName&gt; -name &lt;propertyName\*&gt;                            | 检索一个或多个属性 (-名称支持通配)              |
-| Set-PrinterProperty -inputObject &lt;printerPropertyObject&gt;                                               | 更改使用持久化的 printerPropertyObject 的打印队列属性。 |
-| set-PrinterProperty -printerName &lt;printerName&gt; -PropertyName &lt;propertyName&gt; -Value &lt;value&gt; | 更改为指定的值指定的属性。                  |
+| PrinterProperty-printerName &lt;printerName&gt;-name &lt;propertyName\*&gt;                            | 检索一个或多个属性（-name 支持通配）              |
+| PrinterProperty-inputObject &lt;printerPropertyObject&gt;                                               | 使用持久化 printerPropertyObject 更改打印队列属性。 |
+| PrinterProperty-printerName &lt;printerName&gt;-PropertyName &lt;属性名称&gt;-值 &lt;值&gt; | 将指定的属性更改为指定的值。                  |
 
 
 
-**可安装选项**。 这些选项，例如，双面打印器，状态将作为单独的属性公开到队列的属性包。 如下所示，该功能名称基于从驱动程序的 GPD 或 PPD 文件功能的名称，将名为每个属性：
+可**安装选项**。 例如，双面打印器的状态将作为单个属性公开给队列属性包。 每个属性的名称如下所示，其中的功能名称基于驱动程序的 GPD 或 PPD 文件中的功能名称：
 
-- Config:&lt;功能名称&gt;
+- Config：&lt;功能名称&gt;
 
-例如，Config:DuplexUnit
+例如，Config： DuplexUnit
 
-属性的值是已由管理员选择的选项的关键字名称。 例如，安装。 可安装选项是编辑使用同一组 PrinterProperty cmdlet 用于队列属性。
+属性的值是管理员已选择的选项的关键字名称。 例如，已安装。 可使用用于队列属性的 PrinterProperty cmdlet 编辑可安装选项。
 
-**请注意**从 Windows 8.1 开始，具有管理员权限的用户或创建打印队列的用户可以更改可安装选项和队列属性包的每个队列配置设置从 UWP 设备应用。
+**注意** 从 Windows 8.1 开始，拥有管理员权限的用户或创建打印队列的用户可以更改 UWP 设备应用中队列属性包的可安装选项和每队列配置设置。
 
 
 
-**送纸器映射到窗体**。 使用 v4 打印机的打印驱动程序，并使用多个送纸器，可以通过名为"FormTrayTable"属性中的队列属性包中公开"窗体到任务栏"映射。
+**窗体到托盘映射**。 对于带有 v4 打印驱动程序的打印机和多个送纸器，可以通过名为 "FormTrayTable" 的属性中的队列属性包公开 "窗体到托盘" 映射。
 
-此属性的格式设置为以 null 结尾的字符串包含格式对"&lt;纸盒名&gt;，&lt;窗体名称&gt;，"窗体名称其中是以下值之一：
+此属性的格式为以 null 结尾的字符串，该字符串包含格式为 "&lt;托盘名称&gt;，&lt;窗体名称&gt;"，其中窗体名称是以下内容之一：
 
-1. 如果纸张大小映射到 GPD 或 PPD 文件中的打印架构 (通过使用标准\*PaperSize /\*PageSize 关键字或\*（毫秒） PrintSchemaKeywordMap)，则窗体名称将遵循以下格式：
+1. 如果纸张大小在 GPD 或 PPD 文件中映射到打印架构（通过使用标准 \*PaperSize/\*PageSize 关键字或 \*（MS） PrintSchemaKeywordMap），则窗体名称将遵循以下格式：
 
-PrintSchema:&lt;纸张大小名称&gt;
+PrintSchema：&lt;纸张大小名称&gt;
 
-例如，PrintSchema:NorthAmericaLetter
+例如，PrintSchema： NorthAmericaLetter
 
-2. 如果窗体是用户定义的形式，由窗体\_用户标志，则窗体名称将是按如下所示。 窗体索引是在后台处理程序的窗体数据库中使用的相同值。 这是与索引的纸张大小指定为用户窗体 PrintTicket 中时使用一致&lt;窗体索引&gt;。
+2. 如果窗体是用户定义的窗体（由窗体\_用户标志确定），则窗体名称将如下所示。 窗体索引与后台处理程序的窗体数据库中使用的值相同。 这与在 PrintTicket 中以用户窗体&lt;窗体索引&gt;在 PrintTicket 中指定纸张大小时使用的索引一致。
 
-用户窗体&lt;窗体索引&gt;
+窗体&lt;窗体索引&gt;
 
 例如，UserForm123
 
-3. 否则，窗体名称将遵循以下格式，其中的窗体名称是 GPD 中指定的名称\*PaperSize 或 PPD \*PageSize。
+3. 否则，窗体名称将遵循以下格式，其中 form name 为 GPD 的 \*PaperSize 或 PPD 的 \*PageSize 中指定的名称。
 
-Config:&lt;名称&gt;
+Config：&lt;名称&gt;
 
-例如，配置：\_8\_5 x 16
+例如，Config：\_8\_5x16
 
-完整示例字符串将如下所示："Config:Tray1、 PrintSchema:NorthAmericaLetter、 Config:Tray2、 配置：\_8\_5 X 16，Config:Manual、 UserForm123，\\0"。
+下面是一个完整的示例字符串，如下所示： "Config： Tray1，PrintSchema： NorthAmericaLetter，Config： Tray2，Config：\_8\_5X16，Config： Manual，UserForm123，\\0"。
 
-呈现的筛选器应读取传入 PrintTicket PageMediaSize 设置，并搜索 FormTrayTable 中的窗体名称值中的值。
+呈现筛选器应读取传入的 PrintTicket 的 PageMediaSize 设置，并在 FormTrayTable 的名称值中搜索该值。
 
-**队列属性包的 XML 示例**。 下面的代码段显示了可用于以下三个属性、 Name1、 Name2，Name3 和它们的子元素的 XML 语法：
+**队列属性包 XML 示例**。 以下代码段显示了可用于三个属性、Name1、Name2、Name3 及其子元素的 XML 语法：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -192,16 +192,16 @@ Config:&lt;名称&gt;
 </Properties>
 ```
 
-**队列属性包 XML 架构**。 下面的屏幕截图显示了队列属性包 XML 架构，以及它在 WDK 安装文件夹中可从以下路径：\\包括\\um\\printqueueproperties.xsd。
+**队列属性包 XML 架构**。 以下屏幕截图显示队列属性包 XML 架构，并可在 WDK 安装文件夹中找到以下路径： \\包括\\um\\printqueueproperties。
 
 ![队列属性包 xml 架构](images/queuepropbagschem.png)
 
 ## <a name="related-topics"></a>相关主题
-[**IPrinterExtensionContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioncontext)  
-[**IPrinterExtensionEventArgs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterextensioneventargs)  
-[**IPrinterPropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterpropertybag)  
-[**IPrinterScriptablePropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptablepropertybag)  
-[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterscriptcontext)  
+[**IPrinterExtensionContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioncontext)  
+[**IPrinterExtensionEventArgs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)  
+[**IPrinterPropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterpropertybag)  
+[**IPrinterScriptablePropertyBag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablepropertybag)  
+[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)  
 [**打印筛选器管道属性包**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)  
 
 

@@ -4,15 +4,15 @@ description: 创建框架请求对象
 ms.assetid: 4bd668ec-14fb-4999-9535-a49712a26ba6
 keywords:
 - 请求对象 WDK KMDF，创建
-- 请求对象 WDK KMDF 读取操作
+- 请求对象 WDK KMDF，读取操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be2838e848994b8d4c5e9c949458c3913bf34bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1049ce9eaa8c4f2027395440167ae8ee8e5684d1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377502"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844683"
 ---
 # <a name="creating-framework-request-objects"></a>创建框架请求对象
 
@@ -20,37 +20,37 @@ ms.locfileid: "67377502"
 
 
 
-大多数 framework 请求对象创建的框架，但您的驱动程序也可以创建请求对象。
+大多数框架请求对象由框架创建，但您的驱动程序还可以创建 request 对象。
 
 ### <a name="request-objects-created-by-the-framework"></a>由框架创建的请求对象
 
-时基于 framework 的驱动程序从 I/O 管理器接收的 I/O 请求数据包 (IRP)，框架将截获 IRP，并创建一个框架请求对象。 框架将请求对象放入 I/O 队列和驱动程序已注册[请求处理程序](request-handlers.md)队列，请调用相应的处理程序。
+当基于框架的驱动程序从 i/o 管理器接收 i/o 请求数据包（IRP）时，框架会截获 IRP 并创建框架请求对象。 框架将请求对象置于 i/o 队列，如果驱动程序已为队列注册了[请求处理](request-handlers.md)程序，则将调用相应的处理程序。
 
-下图演示了框架创建用于读取操作的请求对象时发生的步骤。
+下图说明了在框架为读取操作创建请求对象时发生的步骤。
 
-![若要创建的读取操作的请求对象的步骤](images/kmdf-creating-request-objects.png)
+![为读取操作创建请求对象的步骤](images/kmdf-creating-request-objects.png)
 
-以下步骤对应于在上图中的数字：
+以下步骤与上图中的数字相对应：
 
-1.  在用户模式应用程序读取的文件时，通过调用 Microsoft Win32 **ReadFile**函数。
+1.  用户模式应用程序通过调用 Microsoft Win32 **ReadFile**函数读取文件。
 
-2.  **ReadFile**函数调用 I/O 管理器，它在内核模式下运行。
+2.  **ReadFile**函数调用以内核模式运行的 i/o 管理器。
 
-3.  I/O 管理器分配的 IRP 结构，并将存储[ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)函数在结构中的代码。
+3.  I/o 管理器分配 IRP 结构并存储[**irp\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)结构中的函数代码。
 
-4.  I/O 管理器调用[ **DispatchRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)驱动程序的标准驱动程序例程*x*，指针传递给 IRP 结构。 因为驱动程序*x*是基于 framework 的驱动程序，该框架提供的驱动程序*DispatchRead*例程。
+4.  I/o 管理器将为驱动程序*x*调用[**DispatchRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)标准驱动程序例程，并向 IRP 结构传递指针。 由于驱动程序*x*是基于框架的驱动程序，因此框架提供驱动程序的*DispatchRead*例程。
 
-5.  框架将创建一个表示 IRP 结构的请求对象。 该框架将请求对象添加到驱动程序的队列对象之一。
+5.  框架创建表示 IRP 结构的 request 对象。 框架将请求对象添加到驱动程序的某个队列对象。
 
-6.  框架将调用的驱动程序[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)请求处理程序，并传递队列对象句柄和请求对象句柄。
+6.  框架调用驱动程序的[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)请求处理程序，同时传递队列对象句柄和请求对象句柄。
 
-### <a name="request-objects-created-by-a-driver"></a>创建一个驱动程序的请求对象
+### <a name="request-objects-created-by-a-driver"></a>请求驱动程序创建的对象
 
-基于框架的驱动程序还可以创建请求对象。 例如，驱动程序可能会创建请求对象，如果它收到读取或写入请求大于在驱动程序的数据量[I/O 目标](using-i-o-targets.md)可以处理一次。 在这种情况下，该驱动程序可以将数据划分为多个较小请求，并使用额外的请求对象将这些较小的请求发送到一个或多个 I/O 目标。
+基于框架的驱动程序还可以创建请求对象。 例如，如果驱动程序收到的数据量大于驱动程序的[i/o 目标](using-i-o-targets.md)可以一次处理的数据量，则该驱动程序可能会创建请求对象。 在这种情况下，驱动程序可以将数据分成几个较小的请求，并使用其他请求对象将这些较小的请求发送到一个或多个 i/o 目标。
 
-若要创建一个请求对象，您的驱动程序应调用[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate) framework 对象方法，如初始化请求后, 跟[ **WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)。
+若要创建请求对象，驱动程序应调用[**WdfRequestCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate) ，然后调用初始化请求的框架对象方法（如[**WdfUsbTargetPipeFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeformatrequestforread)）。
 
-如果驱动程序 WDM 的调度例程中接收 WDM Irp，然后服务或将其转发使用框架，该驱动程序可以调用[ **WdfRequestCreateFromIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)。
+如果驱动程序通过使用框架来接收 WDM 调度例程中的 WDM Irp，然后服务或转发这些 Irp，则驱动程序可以调用[**WdfRequestCreateFromIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreatefromirp)。
 
  
 

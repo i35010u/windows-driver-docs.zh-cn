@@ -4,12 +4,12 @@ description: 分段筛选器的接口
 ms.assetid: 428f6fce-d76c-4485-aa92-39f2b608160d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bd074b613f7badbbf97dc69118fe46d4ba565b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97309c6a71bbfb1eddbf8158e9882ec4f1ddb377
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378917"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840813"
 ---
 # <a name="interfaces-for-segmentation-filters"></a>分段筛选器的接口
 
@@ -17,27 +17,27 @@ ms.locfileid: "67378917"
 
 
 
-从 Windows Vista 开始，WIA 将支持分段的筛选器。 分段筛选器必须实现[IWiaSegmentationFilter 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nn-wia_lh-iwiasegmentationfilter)。
+从 Windows Vista 开始，WIA 将支持分段筛选器。 分段筛选器必须实现[IWiaSegmentationFilter 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nn-wia_lh-iwiasegmentationfilter)。
 
-**IWiaSegmentationFilter**接口是依赖于新 （适用于 Windows Vista) 的界面**IWiaItem2**，在本部分中，用于为的超集**IWiaItem**. 除了**IWiaItem**方法， **IWiaItem2**接口包括方法**IWiaItem2::GetExtension**，用于应用程序创建 WIA扩展，其中包括分段筛选器。 **IWiaItem**并**IWiaItem2**接口 Microsoft Windows SDK 文档中所述。
+**IWiaSegmentationFilter**接口依赖于本部分中使用的新（适用于 Windows Vista）接口**IWiaItem2**，这是**IWiaItem**的超集。 除了**IWiaItem**方法， **IWiaItem2**接口还包含方法**IWiaItem2：： path.getextension 对**，应用程序使用该方法来创建 WIA 扩展，包括分段筛选器。 Microsoft Windows SDK 文档中介绍了**IWiaItem**和**IWiaItem2**接口。
 
-**IWiaSegmentationFilter**接口实现单个方法**DetectRegions**。 此方法具有三个参数， *lFlags*， *pInputStream*，并*pWiaItem2*。
+**IWiaSegmentationFilter**接口实现了单一方法**DetectRegions**。 此方法有三个参数： *lFlags*、 *pInputStream*和*pWiaItem2*。
 
-*LFlags*参数是当前未使用。
+*LFlags*参数当前未使用。
 
-*PInputStream*参数是指向图像分段是要执行的。 这通常是表示平板的整个扫描曲面的预览图像。 中的应用程序创建流及其**IWiaTransferCallback::GetNextStream**方法; 此方法在图像采集过程中调用。 该驱动程序获取的映像将数据写入到流中的**IWiaTransferCallback::GetNextStream**方法返回。 这也是应传递到分段的筛选器应用程序的流。 **IWiaTransferCallback** Windows SDK 文档中详细介绍了接口。
+*PInputStream*参数是一个指针，指向要在其上执行分段的图像。 通常，这是表示平板的整个扫描表面的预览图像。 流是由应用程序在其**IWiaTransferCallback：： GetNextStream**方法中创建的;此方法在图像获取过程中调用。 驱动程序将获取的图像数据写入到**IWiaTransferCallback：： GetNextStream**方法返回的流中。 这也是应用程序应传递到分段筛选器中的流。 Windows SDK 文档中介绍了**IWiaTransferCallback**接口。
 
-*PWiaItem2*参数是指向为其的 WIA 项*pInputStream*已获取。 它也称为父项。 例如，项的*pWiaItem2*指向可能是平板项。
+*PWiaItem2*参数是指向为其获取*pInputStream*的 WIA 项的指针。 它也称为父项。 例如， *pWiaItem2*指向的项可以是 "平台" 项。
 
-[ **IWiaSegmentationFilter::DetectRegions** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)方法用于确定所表示的图像的子区域*pInputStream*。 有关检测到，每个子区域**IWiaSegmentationFilter::DetectRegions**创建新的子 WIA 项指向的项下*pWiaItem2*。 对于每个子项，分段的筛选器必须设置以下 WIA 属性的值：[**WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)， [ **WIA\_IP\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)， [ **WIA\_IPS\_大 XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)，并[ **WIA\_IP\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)。 这些属性表示要扫描的区域的边框。 更高级的分段筛选器可能还想要设置其他 WIA 属性，如[分段的筛选器的 WIA 属性](wia-properties-for-segmentation-filters.md)驱动程序是否支持噪。
+[**IWiaSegmentationFilter：:D etectregions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiasegmentationfilter-detectregions)方法用于确定*pInputStream*表示的图像的子区域。 对于检测到的每个子区域， **IWiaSegmentationFilter：:D etectregions**将在*pWiaItem2*指向的项下创建新的子 WIA 项。 对于每个子项，分段筛选器必须设置以下 WIA 属性的值： [**WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)、 [**wia\_ip\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)、 [**wia\_ips\_XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)和[**wia\_IP\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)。 这些属性表示要扫描的区域的边框。 如果驱动程序支持 deskewing，更高级的分段筛选器可能还需要设置其他 WIA 属性，如[分段筛选器的 Wia 属性](wia-properties-for-segmentation-filters.md)。
 
-下图显示了如何细分筛选器修改应用程序项树。 在此图中，分段的筛选器已检测到在平板、 三个映像，并对于每个映像，它已创建新的子项目平板项下。
+下图显示了分段筛选器如何修改应用程序项树。 在此图中，分段筛选器已在平板上检测到三个图像，对于每个图像，它在 "平台" 项下创建了一个新的子项。
 
-![说明如何细分筛选器修改应用程序项树的关系图](images/art-segmentation2.png)
+![阐释分段筛选器如何修改应用程序项树的关系图](images/art-segmentation2.png)
 
-分段筛选器必须支持它扩展了驱动程序支持的所有图像格式。 Microsoft 提供的分段筛选器支持 BMP、 GIF、 JPEG、 PNG 和 TIFF 格式。 因此，任何使用此筛选器的驱动程序被限制为这些格式。
+分段筛选器必须支持它所扩展的驱动程序支持的所有映像格式。 Microsoft 提供的分段筛选器支持 BMP、GIF、JPEG、PNG 和 TIFF 格式。 因此，使用此筛选器的任何驱动程序都被限制为这些格式。
 
-若要创建子项目，分段筛选调用**IWiaItem2::CreateChildItem**方法。 下面是此类调用的示例：
+若要创建子项目，分段筛选器将调用**IWiaItem2：： CreateChildItem**方法。 下面是此类调用的一个示例：
 
 ```cpp
 lItemFlags = WiaItemTypeGenerated | WiaItemTypeTransfer | WiaItemTypeImage | WiaItemTypeFile |
@@ -51,23 +51,23 @@ pWiaItem2->CreateChildItem(lItemFlags,
                            &pChildItem);
 ```
 
-**IWiaItem2::CreateChildItem**稍有不同**IWiaItem::CreateChildItem**。 **IWiaItem2::CreateChildItem**方法具有一个新的参数*lCreationFlags*;**IWiaItem2::CreateChildItem**方法的*lItemFlags*参数对应于*lFlags*参数**IWiaItem::CreateChildItem**。 传递复制\_父\_属性\_值替换*lCreationFlags* WIA 服务中，参数中前面的代码段中，所示指示 WIA 服务来设置所有可读/写WIA 的为相同的值作为其父级的子项目的属性。 分段筛选器应通过此标志的原因是为了确保属性，例如图像格式，并在新创建的子项目中，解析为父项。 因为范围设置的属性的分段的筛选器将到子项目依赖于图像的分辨率的解决方法是相同至关重要。 也很重要的映像格式和解决方法都是相同的子项中如果应用程序想要使用预览组件 （Microsoft Windows SDK 文档中所述）。 才会获取最终映像，应用程序可以修改获取扫描程序从更高质量的图像的分辨率。
+**IWiaItem2：： CreateChildItem**与**IWiaItem：： CreateChildItem**略有不同。 **IWiaItem2：： CreateChildItem**方法有一个新参数*lCreationFlags*;**IWiaItem2：： CreateChildItem**方法的*lItemFlags*参数对应于**IWiaItem：： CreateChildItem**的*lFlags*参数。 如前面的代码片段中所示，将复制\_父\_属性\_值与 WIA 服务的*lCreationFlags*参数一起传递给 wia 服务，通知 wia 服务将子项项的所有可读/可写 WIA 属性设置为与其父级的值相同。 分段筛选器应传递此标志的原因是确保新创建的子项目中的属性（如图像格式和分辨率）作为父项。 这一点很重要，因为分段筛选器将设置到子项的区属性取决于图像的分辨率。 如果应用程序想要使用预览组件（如 Microsoft Windows SDK 文档中所述），则子项目中的图像格式和分辨率也是相同的。 在获取最终映像之前，应用程序可以修改分辨率以从扫描仪获取更高质量的图像。
 
-请务必注意，通过它可以和不能执行中的应用程序相同的限制绑定分段筛选器。 这意味着应用程序可以修改分段筛选器创建的子项。 例如，用户可能不能满足与区域分段筛选器检测到并可能告知应用程序来修改此区域通过拖动它的角。 应用程序可以还删除分段筛选器创建的子项目，以及添加新的。
+需要注意的是，分段筛选器与应用程序在它可以和不能执行的操作上绑定的限制相同。 这意味着应用程序可以修改分段筛选器创建的子项。 例如，用户可能对分段筛选器检测到的区域不满意，并且可能会告诉应用程序通过拖动其角来修改此区域。 应用程序还可以删除由分段筛选器创建的子项，还可以添加新的子项目。
 
-请注意，分段筛选器不负责"清理"它创建的子项目。 因此，如果应用程序调用**IWiaSegmentationFilter::DetectRegions**不止一次，应用程序必须先删除对的第一个调用中创建的子项目**IWiaSegmentationFilter::DetectRegions**方法。 分段的筛选器也不是负责重置*pInputStream*参数。 应用程序必须确保已将搜索指针设置到流的开头之前调用分段的筛选器。
+请注意，分段筛选器不负责 "清除" 它创建的子项。 因此，如果应用程序多次调用**IWiaSegmentationFilter：:D etectregions** ，应用程序必须首先删除在第一次调用**IWiaSegmentationFilter：:D etectregions**方法时创建的子项目。 分段筛选器也不负责重置*pInputStream*参数。 在调用分段筛选器之前，应用程序必须确保已将查找指针设置到流的开始位置。
 
-电影项和平板项上，应仅使用分段的筛选器。 针对电影扫描，扫描程序通常提供固定帧，在这种情况下，驱动程序创建子项目 (请参阅[WIA 扫描程序项树布局](wia-scanner-item-tree-layout.md)有关详细信息)。 在这种情况下，应用程序不应调用创建的子项目和区域检测的分段筛选器。
+分段筛选器只应在电影项目和平板项目上使用。 对于胶片扫描，扫描仪通常附带固定帧，在这种情况下，驱动程序将创建子项（有关详细信息，请参阅[WIA 扫描器项树布局](wia-scanner-item-tree-layout.md)）。 在这种情况下，应用程序不应调用分段筛选器来检测和创建子项目。
 
-如果驱动程序附带的分段的筛选器，它应实现[ **WIA\_IPS\_分段**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-segmentation)其平板和电影胶片 WIA 项的属性。 此只读属性具有两个有效的值：WIA\_使用\_分段\_筛选器和 WIA\_不\_使用\_分段\_筛选器，该驱动程序设置。 此属性允许应用程序确定是否应为对某一项的区域检测使用驱动程序的分段的筛选器。
+如果驱动程序附带分段筛选器，它应为其平板和胶卷 WIA 项目实现[**WIA\_IPS\_分段**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-segmentation)属性。 此只读属性具有两个有效值： WIA\_使用\_分段\_筛选器和 WIA\_不要\_使用驱动程序设置\_分段\_筛选器。 此属性可让应用程序知道它是否应该使用驱动程序的分段筛选器来检测特定项的区域。
 
-如果扫描仪的电影胶片扫描使用固定的帧，它会将此属性设置为 WIA\_不\_使用\_分段\_电影项中的筛选器。 在这种情况下，应用程序不应尝试加载分段的筛选器后已获取电影预览;相反，它应枚举驱动程序创建的子项目。 这些子项表示固定的帧。
+如果扫描程序使用固定帧进行胶片扫描，则会将此属性设置为 WIA\_不\_使用胶片项中的\_分段\_筛选器。 在这种情况下，应用程序不应在获取了胶片预览后尝试加载分段筛选器;相反，它应枚举由驱动程序创建的子项目。 这些子项表示固定的帧。
 
-因为 WIA 项传递到**IWiaSegmentationFilter::DetectRegions**，很可能使用不同的算法，具体取决于类别的项，即平板或电影的分段筛选器。 项的类别存储在[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性。
+由于 WIA 项会传递到**IWiaSegmentationFilter 中：:D etectregions**，因此，分段筛选器可能会根据项的类别（即平板或胶片）使用不同的算法。 项的类别存储在[**WIA\_IPA\_item\_category**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性中。
 
-如果应用程序更改的任何属性*pWiaItem2*之间获取中的图像*pInputStream*以及对应用程序的调用**IWiaSegmentationFilter::DetectRegions**，必须还原原始属性设置 （即流已获取已有的项的属性设置）。 这可以使用**IWiaPropertyStorage::GetPropertyStream**并**IWiaPropertyStorage::SetPropertyStream**方法。 需要还原这些更改的原因是可能是 WIA 项所必需的分段的筛选器，但不是存储在映像标头中的信息。 此类信息的示例包括中存储的数据[ **WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)， [ **WIA\_IP\_YPOS** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)，并[ **WIA\_IP\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)属性。 **IWiaPropertyStorage** Windows SDK 文档中所述接口和其方法。
+如果应用程序在*pInputStream*中获取映像和应用程序对**IWiaSegmentationFilter：:D etectregions**的调用之间更改*pWiaItem2*中的任何属性，则原始属性设置（即属性设置获取流时的项必须还原。 可以使用**IWiaPropertyStorage：： GetPropertyStream**和**IWiaPropertyStorage：： SetPropertyStream**方法完成此操作。 需要还原这些更改的原因是，在分段筛选器所需的 WIA 项中可能存在信息，但这些信息并不存储在图像标头中。 此类信息的示例包括[**WIA\_ip\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)、 [**wia\_ip\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)和[**wia\_ip\_旋转**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-rotation)属性中存储的数据。 Windows SDK 文档中介绍了**IWiaPropertyStorage**接口及其方法。
 
-应用程序通过调用获取分段的筛选器的实例**IWiaItem2::GetExtension** （Windows SDK 文档中所述）。 应用程序通常会显示其预览窗口之前调用此方法。 这是因为驱动程序可能会不附带分段筛选器，用例 UI 应该知道不希望显示不受支持的按钮，如**执行分段**。
+应用程序通过调用**IWiaItem2：： path.getextension 对**获取分段筛选器的实例（如 Windows SDK 文档中所述）。 在显示其预览窗口之前，应用程序通常会调用此方法。 这是因为，驱动程序可能不附带分段筛选器，在这种情况下，UI 应知道不会显示不受支持的按钮，例如**执行分段**。
 
  
 

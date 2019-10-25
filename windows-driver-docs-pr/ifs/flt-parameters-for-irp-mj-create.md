@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_CREATE 联合
-description: 使用以下联合组件时 FLT MajorFunction 字段\_IO\_参数\_操作的块结构是 IRP\_MJ\_创建。
+title: FLT_PARAMETERS for IRP_MJ_CREATE union
+description: 当 FLT\_IO\_参数\_块结构的操作为 IRP\_MJ\_CREATE 时，使用以下联合组件。
 ms.assetid: aa223d51-7d13-4244-bad5-db14f1fb0d2c
 keywords:
-- FLT_PARAMETERS IRP_MJ_CREATE 联合可安装文件系统驱动程序
-- FLT_PARAMETERS 联合可安装文件系统驱动程序
-- PFLT_PARAMETERS 联合指针可安装文件系统驱动程序
+- FLT_PARAMETERS for IRP_MJ_CREATE union 可安装的文件系统驱动程序
+- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b1ec07e063f906516e394124acaccc94f390a4d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 278dab8a1626c3f8c40d5795679a02de8cc36f53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386078"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841389"
 ---
-# <a name="fltparameters-for-irpmjcreate-union"></a>FLT\_IRP 的参数\_MJ\_创建联合
+# <a name="flt_parameters-for-irp_mj_create-union"></a>用于 IRP\_MJ\_CREATE union 的 FLT\_参数
 
 
-使用以下联合组件时**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构操作[ **IRP\_MJ\_创建**](irp-mj-create.md)。
+当[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的操作为[**IRP\_MJ\_CREATE**](irp-mj-create.md)**时，使用**以下联合组件。
 
 <a name="syntax"></a>语法
 ------
@@ -51,39 +51,39 @@ typedef union _FLT_PARAMETERS {
 -------
 
 **创建**  
-结构，它包含以下成员。
+包含以下成员的结构。
 
 **SecurityContext**  
 SecurityContext-&gt;AccessState
 
-指向[**访问权限\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)结构，其中包含对象的使用者上下文，授予其访问权限类型，以及剩余所需访问类型。
+指向[**访问\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)结构的指针，该结构包含对象的主题上下文、授予访问类型和剩余所需的访问类型。
 
 SecurityContext-&gt;DesiredAccess
 
-[**访问\_掩码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)结构，它指定为文件请求的访问权限。 有关详细信息，请参阅*DesiredAccess*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。
+[**访问\_掩码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)结构，用于指定为文件请求的访问权限。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*DesiredAccess*参数。
 
 **选项**  
-指定要创建或打开该文件，以及该文件已存在时要采取的操作时应用的选项的标志的位掩码。 此成员的较低的 24 位对应于*CreateOptions*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。 高的 8 位对应于*CreateDisposition*参数**FltCreateFile**。
+标志的位掩码，用于指定创建或打开该文件时要应用的选项，以及在文件已存在时要执行的操作。 此成员的低24位对应于[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*CreateOptions*参数。 高8位对应于**FltCreateFile**的*CreateDisposition*参数。
 
 **FileAttributes**  
-位屏蔽的属性创建或打开文件时应用。 有关详细信息，请参阅*FileAttributes*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。
+创建或打开文件时要应用的属性的位掩码。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*FileAttributes*参数。
 
 **ShareAccess**  
-为文件请求的共享访问权限的位掩码。 如果此参数为零，正在请求独占访问权限。 有关详细信息，请参阅*ShareAccess*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。
+为文件请求的共享访问权限位掩码。 如果此参数为零，则请求独占访问。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*ShareAccess*参数。
 
 **EaLength**  
-缓冲区的长度，以字节为单位，该**EaBuffer**成员指向。 有关详细信息，请参阅*EaLength*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。
+**EaBuffer**成员指向的缓冲区的长度（以字节为单位）。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*EaLength*参数。
 
 **EaBuffer**  
-指向调用方提供，指针[**文件\_完整\_EA\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)-包含要应用于的扩展的属性 (EA) 信息的结构化的缓冲区该文件。 有关详细信息，请参阅*EaBuffer*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。
+指向调用方提供的、[**文件\_完整\_EA\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)结构缓冲区的指针，该缓冲区包含要应用于文件的扩展属性（EA）信息。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*EaBuffer*参数。
 
 **AllocationSize**  
-（可选） 指定的初始分配大小，以字节为单位的文件。 一个非零值无任何效果，除非创建文件时，覆盖，还是所取代。 有关详细信息，请参阅*AllocationSize*参数[ **FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)。
+（可选）指定文件的初始分配大小（以字节为单位）。 如果创建、覆盖或取代了文件，则非零值将不起作用。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*AllocationSize*参数。
 
 <a name="remarks"></a>备注
 -------
 
-[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构[ **IRP\_MJ\_创建**](irp-mj-create.md)操作表示回调数据 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 包含在[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
+用于[**IRP\_MJ\_创建**](irp-mj-create.md)操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构，由回调数据（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构表示。 它包含在[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
 
 IRP\_MJ\_创建是基于 IRP 的操作。
 
@@ -97,36 +97,36 @@ IRP\_MJ\_创建是基于 IRP 的操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Fltkernel （包括 Fltkernel）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**ACCESS\_MASK**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)
+[**访问\_掩码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)
 
-[**ACCESS\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_access_state)
+[**访问\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)
 
-[**文件\_完整\_EA\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_full_ea_information)
+[**文件\_完整\_EA\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)
 
-[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_IS\_FASTIO\_OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[**FLT\_\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[**FLT\_IS\_FS\_FILTER\_OPERATION**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT\_\_FS\_筛选器\_操作**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_IS\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT\_\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatefile)
+[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)
 
-[**IRP\_MJ\_CREATE**](irp-mj-create.md)
+[**IRP\_MJ\_创建**](irp-mj-create.md)
 
  
 

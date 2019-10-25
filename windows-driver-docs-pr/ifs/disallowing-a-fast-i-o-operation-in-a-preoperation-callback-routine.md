@@ -1,45 +1,45 @@
 ---
-title: 不允许 Preoperation 回调例程中的快速 I/O 操作
-description: 不允许 Preoperation 回调例程中的快速 I/O 操作
+title: 禁止在 Preoperation 回调例程中使用快速 i/o 操作
+description: 禁止在 Preoperation 回调例程中使用快速 i/o 操作
 ms.assetid: 20797d8c-ffcf-46df-b870-839d5c02d2d4
 keywords:
-- preoperation 回调例程 WDK 文件系统微筛选器，不允许快速 I/O
-- 不允许快速 I/O 操作 WDK 文件系统微筛选器
-- 快速的 i/o 操作不允许使用 WDK 文件系统
+- preoperation 回调例程 WDK 文件系统微筛选器，不允许快速 i/o
+- 不允许快速 i/o 操作 WDK 文件系统微筛选器
+- 快速 i/o 不允许的 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afc61f1f77cee583691f97684d1dce45da0859d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 038301b102db1a7b6111f25340169a8800e152a9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385558"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841435"
 ---
-# <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>不允许 Preoperation 回调例程中的快速 I/O 操作
+# <a name="disallow-a-fast-io-operation-in-a-preoperation-callback-routine"></a>禁止在 Preoperation 回调例程中使用快速 i/o 操作
 
 
 ## <span id="ddk_disallowing_a_fast_io_operation_in_a_preoperation_callback_routine"></span><span id="DDK_DISALLOWING_A_FAST_IO_OPERATION_IN_A_PREOPERATION_CALLBACK_ROUTINE"></span>
 
 
-在某些情况下，可以选择微筛选器驱动程序不允许一个快速的 I/O 操作，而无需完成它。 不允许快速 I/O 操作会阻止快速 I/O 路径用来执行操作。
+在某些情况下，微筛选器驱动程序可能会选择禁止快速 i/o 操作，而不是完成此操作。 禁止快速 i/o 操作可防止此操作使用快速 i/o 路径。
 
-与类似完成某个 I/O 操作，不允许快速 I/O 操作意味着若要暂停上它的处理，并将其返回到筛选器管理器。 但是，不允许快速 I/O 操作是不同于完成它。 如果微筛选器驱动程序不允许的快速 I/O 操作中，已颁发的 I/O 管理器，I/O 管理器可能会重新发出相同的操作的等效基于 IRP 的操作。
+与完成 i/o 操作一样，不允许快速 i/o 操作对其暂停处理，并将其返回到筛选器管理器。 但是，不允许快速 i/o 操作与完成的操作不同。 如果微筛选器驱动程序不允许由 i/o 管理器颁发的快速 i/o 操作，则 i/o 管理器可能会重新发出与基于 IRP 的等效操作相同的操作。
 
-当微筛选器驱动程序[ **preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_pre_operation_callback)不允许快速 I/O 操作，筛选器管理器执行以下操作：
+当微筛选器驱动程序的[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)不允许快速 i/o 操作时，筛选器管理器将执行以下操作：
 
--   下面当前微筛选器驱动程序的微筛选器驱动程序、 旧筛选器，或文件系统，则不发送该操作。
+-   不会将操作发送到当前微筛选器驱动程序下的微筛选器驱动程序、旧筛选器或文件系统。
 
--   调用[ **postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_post_operation_callback)上面微筛选器驱动程序实例堆栈中的当前微筛选器驱动程序的微筛选器驱动程序。
+-   在微筛选器驱动程序实例堆栈中的当前微微筛选器驱动程序之前调用微筛选器驱动程序的[**postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)。
 
--   如果存在，不会为该操作，调用当前微筛选器驱动程序的 postoperation 回调例程。
+-   不会为操作（如果有）调用当前微筛选器驱动程序的 postoperation 回调例程。
 
-微筛选器驱动程序不允许快速 I/O 操作，通过返回 FLT\_PREOP\_禁止\_FASTIO 操作 preoperation 回调例程。
+微筛选器驱动程序不允许快速 i/o 操作，方法是：返回 FLT\_PREOP\_禁止从操作的 preoperation 回调例程\_FASTIO。
 
-Preoperation 回调例程不应设置的回调数据结构**IoStatus.Status**字段，因为筛选器管理器会自动将此字段设置为状态\_FLT\_禁止\_快速\_IO。
+由于筛选器管理器自动将此字段设置为状态\_FLT\_不允许\_快速\_IO，因此 preoperation 回调例程不应设置此**字段。**
 
-FLT\_PREOP\_禁止\_FASTIO 才会返回用于快速 I/O 操作。 若要确定操作是否是一个快速的 I/O 操作，请参阅[ **FLT\_IS\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+FLT\_PREOP\_不允许为快速 i/o 操作返回\_FASTIO。 若要确定某一操作是否为快速 i/o 操作，请参阅[**FLT\_is\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-微筛选器驱动程序不能返回 FLT\_PREOP\_禁止\_IRP 的 FASTIO\_MJ\_关闭、 IRP\_MJ\_卷\_装载点或 IRP\_MJ\_卷\_卸除操作。
+微筛选器驱动程序无法返回 FLT\_PREOP\_禁止对\_IRP 的\_FASTIO，\_关闭，IRP\_MJ\_卷\_装载，或 IRP\_
 
  
 

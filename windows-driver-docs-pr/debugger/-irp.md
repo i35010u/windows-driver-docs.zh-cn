@@ -15,12 +15,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aaecd8295d8ad58a0fcdf6746535d2ce2a684a1
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 9ce7587c842bf269e91cb941d2cab478f7317f55
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70025231"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837602"
 ---
 # <a name="irp"></a>!irp
 
@@ -61,7 +61,7 @@ ms.locfileid: "70025231"
 
 请参阅[即插即用调试](plug-and-play-debugging.md)和调试此扩展命令应用程序的[中断风暴](debugging-an-interrupt-storm.md)。 有关 Irp 的信息，请参阅 Windows 驱动程序工具包（WDK）文档和*Microsoft Windows 内部*Russinovich，并将其标记为 "" 和 "David"。 有关主要和次要函数代码的详细信息，请参阅 Windows 驱动程序工具包（WDK）文档。
 
-本主题介绍 IRP 结构[**irp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)。
+本主题介绍 IRP 结构[**irp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)。
 
 有关对 IRP 结构（包括返回的参数）进行解码的详细信息，请参阅以下资源。
 
@@ -102,7 +102,7 @@ Irp is active with 2 stacks 1 is current (= 0xac598e38)
             Args: 00000000 00000000 0x00110008 00000000
 ```
 
-从 Windows 10 开始，将显示 irp 的主要和次要代码文本，例如，"IRP\_MJ\_文件\_系统\_控制" 此代码值还以十六进制显示，在本例中为 "（d）"。
+从 Windows 10 开始，将显示 IRP 的主要和次要代码文本，例如，"IRP\_MJ\_文件\_系统\_控制" 代码值还以十六进制显示，在本例中为 "（d）"。
 
 输出中显示的第三个参数是 IOCTL 代码。 使用[ **！ ioctldecode**](-ioctldecode.md)命令显示有关 IOCTL 的信息。
 
@@ -139,7 +139,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **Ntfs ！ NtfsMasterIrpSyncCompletionRoutine** 由设置 **\\文件系统\\Ntfs**。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到 Ntfs 的上下文 **！NtfsMasterIrpSyncCompletionRoutine**。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的地址为**847eeed0**，并且在调用时将传递给此例程的上下文为**829e2ba8**。
+请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **ntfs！ NtfsMasterIrpSyncCompletionRoutine**由 **\\FileSystem\\ntfs**设置。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到 Ntfs 的上下文 **！NtfsMasterIrpSyncCompletionRoutine**。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的地址为**847eeed0**，并且在调用时将传递给此例程的上下文为**829e2ba8**。
 
 **IRP 主要功能代码**
 
@@ -513,7 +513,7 @@ SCSI 次要函数代码如下所示：
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [ **!irpfind**](-irpfind.md)
 

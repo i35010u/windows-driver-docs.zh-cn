@@ -4,21 +4,21 @@ description: 适用于旧版应用程序和 Windows Vista 驱动程序的映射
 ms.assetid: 6f4ebcc7-ecf0-4e0b-bcef-e5b72dc472dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52bc8ff3126171f533c65de6cde87e9206e7b774
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b6b771ae00a837fc269429617dbc61abc6c9f212
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378849"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840787"
 ---
 # <a name="mapping-for-a-legacy-application-and-windows-vista-driver"></a>适用于旧版应用程序和 Windows Vista 驱动程序的映射
 
 
-本部分介绍如何 Windows Vista 传输消息和数据流映射到旧传输消息和数据流的旧版应用程序需要能够与 Windows Vista 驱动程序时。
+本部分介绍当旧的应用程序需要使用 Windows Vista 驱动程序时，Windows Vista 传输消息和数据流如何映射到传统传输消息和数据流。
 
 ### <a name="callback-transfers"></a>回调传输
 
-此表显示了 Windows Vista 驱动程序的回调传输到的消息发送到旧应用程序的消息的映射。
+此表显示了如何将 Windows Vista 驱动程序的回调传输消息映射到发送到旧应用程序的消息。
 
 <table>
 <colgroup>
@@ -28,7 +28,7 @@ ms.locfileid: "67378849"
 <tbody>
 <tr class="odd">
 <td><p><strong>Windows Vista 驱动程序消息</strong></p></td>
-<td><p><strong>（后兼容性层转换） 的旧应用程序消息</strong></p></td>
+<td><p><strong>旧应用程序消息（兼容性层转换后）</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_STATUS</p></td>
@@ -36,31 +36,31 @@ ms.locfileid: "67378849"
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_ERROR</p></td>
-<td><p>忽略。</p></td>
+<td><p>掉.</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>忽略。 此消息始终会对的调用以及<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>。 不重复的任何消息，这在中实现<strong>GetNextStream</strong>实现相反。</p></td>
+<td><p>掉. 此消息始终与对<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"><strong>IWiaTransferCallback：： GetNextStream</strong></a>的调用一起发送。 不复制任何消息，而是在<strong>GetNextStream</strong>实现中实现。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
-<td><p>IT_MSG_TERMINATION （请注意 WIA_TRANSFER_MSG_END_OF_TRANSFER 不会发送由驱动程序）。</p></td>
+<td><p>IT_MSG_TERMINATION （请注意，驱动程序不发送 WIA_TRANSFER_MSG_END_OF_TRANSFER）。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_DEVICE_STATUS</p></td>
-<td><p>如果 hrErrorStatus = = WIA_STATUS_WARMING_UP，兼容性层将使用 IT_STATUS_TRANSFER_FROM_DEVICE IT_MSG_STATUS 发送为了提供一些状态设置为应用程序，以及提供 Windows Vista 应用程序可能会取消传输。</p></td>
+<td><p>如果 hrErrorStatus = = WIA_STATUS_WARMING_UP，则兼容层将使用 IT_STATUS_TRANSFER_FROM_DEVICE 发送 IT_MSG_STATUS，以便向应用程序提供某种状态，并使 Windows Vista 应用程序可以取消传输。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_NEW_PAGE</p></td>
-<td><p>忽略。 应永远不会发送由 Windows Vista 驱动程序在这种情况下，由于我们调入 TYMED_FILE 与 Windows Vista 驱动程序。</p></td>
+<td><p>掉. 在这种情况下，绝不应发送 Windows Vista 驱动程序，因为我们使用 TYMED_FILE 调入 Windows Vista 驱动程序。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>IWiaTransferCallback::GetNextStream</strong></p></td>
-<td><p>第一页：IT_MSG_DATA_HEADER</p>
-<p>后续页：IT_MSG_NEW_PAGE</p></td>
+<td><p><strong>IWiaTransferCallback：： GetNextStream</strong></p></td>
+<td><p>第一页： IT_MSG_DATA_HEADER</p>
+<p>后续页面： IT_MSG_NEW_PAGE</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>IStream::Write</strong></p></td>
+<td><p><strong>IStream：： Write</strong></p></td>
 <td><p>IT_MSG_DATA</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ ms.locfileid: "67378849"
 
 ### <a name="file-transfers"></a>文件传输
 
-此表显示了 Windows Vista 驱动程序的文件传输到的消息发送到旧应用程序的消息的映射。
+此表显示了如何将 Windows Vista 驱动程序的文件传输消息映射到发送到旧应用程序的消息。
 
 <table>
 <colgroup>
@@ -80,7 +80,7 @@ ms.locfileid: "67378849"
 <tbody>
 <tr class="odd">
 <td><p><strong>Windows Vista 驱动程序消息</strong></p></td>
-<td><p><strong>（后兼容性层转换） 的旧应用程序消息</strong></p></td>
+<td><p><strong>旧应用程序消息（兼容性层转换后）</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_STATUS</p></td>
@@ -88,44 +88,44 @@ ms.locfileid: "67378849"
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_ERROR</p></td>
-<td><p>忽略。</p></td>
+<td><p>掉.</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_END_OF_STREAM</p></td>
-<td><p>忽略。 此消息始终会对的调用以及<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"> <strong>IWiaTransferCallback::GetNextStream</strong></a>。 若要避免重复消息，此消息中实现<strong>GetNextStream</strong>实现相反。</p></td>
+<td><p>掉. 此消息始终与对<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream" data-raw-source="[&lt;strong&gt;IWiaTransferCallback::GetNextStream&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiatransfercallback-getnextstream)"><strong>IWiaTransferCallback：： GetNextStream</strong></a>的调用一起发送。 若要避免重复的消息，则应在<strong>GetNextStream</strong>实现中实现此消息。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_END_OF_TRANSFER</p></td>
-<td><p>IT_MSG_TERMINATION （请注意 WIA_TRANSFER_MSG_END_OF_TRANSFER 不会发送由驱动程序）。</p></td>
+<td><p>IT_MSG_TERMINATION （请注意，驱动程序不发送 WIA_TRANSFER_MSG_END_OF_TRANSFER）。</p></td>
 </tr>
 <tr class="even">
 <td><p>WIA_TRANSFER_MSG_DEVICE_STATUS</p></td>
-<td><p>如果 hrErrorStatus = = WIA_STATUS_WARMING_UP，IT_MSG_STATUS 为了提供一些状态设置为应用程序，以及提供 Windows Vista 应用程序可能会取消传输，与 IT_STATUS_TRANSFER_FROM_DEVICE 一起发送。</p></td>
+<td><p>如果 hrErrorStatus = = WIA_STATUS_WARMING_UP，则使用 IT_STATUS_TRANSFER_FROM_DEVICE 发送 IT_MSG_STATUS，以便向应用程序提供某种状态，并为 Windows Vista 应用程序提供取消传输的可能。</p></td>
 </tr>
 <tr class="odd">
 <td><p>WIA_TRANSFER_MSG_NEW_PAGE</p></td>
 <td><p>IT_MSG_NEW_PAGE</p>
-<p>注意： 此行为是多页的稍有不同现在文件传输，因为<em>wiasWritePageBufToFile</em>永远不会发送 IT_MSG_NEW_PAGE。</p></td>
+<p>注意：此行为与今天的多页面文件传输有些不同，因为<em>wiasWritePageBufToFile</em>从不发送 IT_MSG_NEW_PAGE。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>IWiaTransferCallback::GetNextStream</strong></p></td>
-<td><p>第一页：IT_MSG_FILE_PREVIEW_DATA_HEADER</p>
-<p>后续页：错误 （WIA_ERROR_GENERAL_ERROR 传递回驱动程序）。 <strong>IWiaTransferCallback::GetNextStream</strong>因为您仅可以传输页与 TYMED_FILE 和 TYMED_MULTIPAGE_FILE 传输期间，Windows Vista 驱动程序应只调用后只应调用<strong>GetNextStream</strong>后因为所有的页面应进入同一个流。</p></td>
+<td><p><strong>IWiaTransferCallback：： GetNextStream</strong></p></td>
+<td><p>第一页： IT_MSG_FILE_PREVIEW_DATA_HEADER</p>
+<p>后续页面：错误（WIA_ERROR_GENERAL_ERROR 传递回驱动程序）。 <strong>IWiaTransferCallback：： GetNextStream</strong>只应调用一次，因为你只能在一个页面上传输 TYMED_FILE，在 TYMED_MULTIPAGE_FILE 传输过程中，Windows Vista 驱动程序只应调用<strong>GetNextStream</strong>一次，因为所有页面应进入同一个流。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>IStream::Write</strong></p></td>
-<td><p>发送任何消息。 对于文件传输，兼容性层不转换任何驱动程序 （图像处理筛选器） 将写入到旧传输消息的数据。 相反，数据只是写入到返回到末尾的传输用户的文件。</p></td>
+<td><p><strong>IStream：： Write</strong></p></td>
+<td><p>未发送消息。 对于文件传输，兼容层不会转换驱动程序（图像处理筛选器）写入旧式传输消息的任何数据。 相反，数据只是写入到传输结束时返回给用户的文件中。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关详细信息在旧传输消息，请参阅[IWiaMiniDrvCallBack 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)。
+有关旧传输消息的详细信息，请参阅[IWiaMiniDrvCallBack 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)。
 
-TYMED 常量的详细信息，请参阅[了解 TYMED](understanding-tymed.md)。
+有关 TYMED 常量的详细信息，请参阅[了解 TYMED](understanding-tymed.md)。
 
-**IStream** Microsoft Windows SDK 文档中详细介绍了接口。
+Microsoft Windows SDK 文档中介绍了**IStream**接口。
 
  
 

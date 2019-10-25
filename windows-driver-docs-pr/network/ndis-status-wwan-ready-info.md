@@ -1,32 +1,32 @@
 ---
 title: NDIS_STATUS_WWAN_READY_INFO
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_READY_INFO 通知来告知设备已准备状态发生变化以响应 OID_WWAN_READY_INFO MB 服务 \ 160; 查询请求。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_READY_INFO 通知来通知 MB 服务设备就绪状态更改，以响应 OID_WWAN_READY_INFO \ 160; 查询请求。
 ms.assetid: 92ddf95f-8829-4259-b53a-c7ce56ee53f0
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_READY_INFO 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: d13ede5e4ae0b866cfafc057a1d389d3cce728a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8ac58f7e0c8680c9ec0a9fe6c34b30a15c503b8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377583"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844652"
 ---
-# <a name="ndisstatuswwanreadyinfo"></a>NDIS\_状态\_WWAN\_准备\_信息
+# <a name="ndis_status_wwan_ready_info"></a>NDIS\_状态\_WWAN\_就绪\_信息
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_准备\_信息通知来通知设备就绪状态发生变化以响应 MB 服务[OID\_WWAN\_准备好\_INFO](oid-wwan-ready-info.md) 查询请求。
+微型端口驱动程序使用 NDIS\_状态\_WWAN\_准备就绪的\_信息通知，通知 MB 服务设备就绪状态更改，以响应[OID\_WWAN\_就绪\_INFO](oid-wwan-ready-info.md) 查询请求。
 
-微型端口驱动程序还可以发送未经请求的事件与该通知。
+小型端口驱动程序还可以通过此通知发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_准备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)结构。
+此通知使用[**NDIS\_WWAN\_就绪\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)结构。
 
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序必须报告所有设备就绪状态更改为未经请求的事件。 微型端口驱动程序微型端口驱动程序初始化时 MB 设备，必须设置 WWAN\_准备好\_信息**ReadyState**成员添加到**WwanReadyStateOff**。 此后，微型端口驱动程序必须向通过此通知 MB 服务报告的任何设备就绪状态更改。 例如，微型端口驱动程序必须报告设备的就绪状态更改时**ReadyState**从更改成员**WwanReadyStateOff**到**WwanReadyStateDeviceLocked**，或**WwanReadyStateBadSim**，或**WwanReadyStateSimNotInserted**，或任何其他不同的设备就绪状态。
+微型端口驱动程序必须将所有设备就绪状态更改报告为一个未经请求的事件。 当微型端口驱动程序初始化 MB 设备时，微型端口驱动程序必须将 WWAN\_READY\_INFO **ReadyState**成员设置为**WwanReadyStateOff**。 此后，小型端口驱动程序必须通过此通知向 MB 服务报告任何设备就绪状态更改。 例如，微型端口驱动程序必须在**ReadyState**成员从**WwanReadyStateOff**更改为**WwanReadyStateDeviceLocked**或**WwanReadyStateBadSim**时报告设备就绪状态更改，或**WwanReadyStateSimNotInserted**或任何其他不同设备就绪状态。
 
-大多数设备就绪状态更改发生时设备初始化单选堆栈和 SIM 卡 （如果需要）。 更改可以 MB 服务之间的微型端口驱动程序，例如更改 SIM 卡的用户会话期间也会发生。 MB 服务的行为应更改相应地基于新设备就绪的状态。
+如果设备初始化无线电堆栈和 SIM 卡（如果需要），则大多数设备就绪状态发生更改。 在 MB 服务和微型端口驱动程序之间的会话过程中，还会发生更改，例如用户更改 SIM 卡。 MB 服务的行为应根据新设备就绪状态进行相应的更改。
 
 <a name="requirements"></a>要求
 ------------
@@ -38,22 +38,22 @@ ms.locfileid: "67377583"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h</td>
+<td><p>标头</p></td>
+<td>Ndis。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_READY\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
+[**NDIS\_WWAN\_准备好\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ready_info)
 
-[OID\_WWAN\_READY\_INFO](oid-wwan-ready-info.md)
+[OID\_WWAN\_就绪\_信息](oid-wwan-ready-info.md)
 
  
 

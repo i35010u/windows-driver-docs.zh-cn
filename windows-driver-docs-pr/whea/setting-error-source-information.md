@@ -10,19 +10,19 @@ keywords:
 - 硬件错误源 WDK WHEA，设置信息
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8415bb2d2e67b3c46230cb1721b5495227ba9d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 490cd16d833ae8520ca45abc7865f0461096ad61
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387152"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843283"
 ---
 # <a name="setting-error-source-information"></a>设置错误源信息
 
 
-在用户模式应用程序可以设置为特定的信息[错误源](hardware-errors-and-error-sources.md)支持的硬件平台通过调用[ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法。 在此情况下，该应用程序提供[ **WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_whea_error_source_descriptor)结构描述要为设置的信息指定的错误源。
+用户模式应用程序可以通过调用[**WHEAErrorSourceMethods：： SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法来设置硬件平台支持的特定[错误源](hardware-errors-and-error-sources.md)的信息。 在这种情况下，应用程序会提供一个[**WHEA\_错误\_源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_source_descriptor)结构，该结构描述要为指定的错误源设置的信息。
 
-下面的代码示例演示如何设置特定的错误源的错误源信息。
+下面的代码示例演示如何为特定错误源设置错误源信息。
 
 ```cpp
 IWbemServices *pIWbemServices;
@@ -163,19 +163,19 @@ pClass->Release();
 pOutParameters->Release();
 ```
 
-修改错误源的配置时，应用程序通常设置错误源的信息。 应用程序可以通过执行以下步骤来修改错误源的配置：
+应用程序通常会在修改错误源的配置时设置错误源的信息。 应用程序可以通过执行以下步骤来修改错误源的配置：
 
-1.  检索 WHEA\_错误\_源\_描述符结构，描述特定错误源。
+1.  检索描述特定错误源的 WHEA\_错误\_源\_描述符结构。
 
-    有关如何获取有关的所有信息的详细信息[错误源](hardware-errors-and-error-sources.md)在系统中，请参阅[的所有错误源获取错误的源信息](getting-error-source-information-for-all-error-sources.md)。
+    有关获取系统中所有[错误源](hardware-errors-and-error-sources.md)的信息的详细信息，请参阅[获取所有错误源的错误源信息](getting-error-source-information-for-all-error-sources.md)。
 
-    在系统中获得有关特定错误源的信息的详细信息，请参阅[特定的错误源获取错误的源信息](getting-error-source-information-for-a-specific-error-source.md)。
+    有关获取系统中特定错误源的信息的详细信息，请参阅[获取特定错误源的错误源信息](getting-error-source-information-for-a-specific-error-source.md)。
 
-2.  修改内容 WHEA\_错误\_源\_描述符结构更改错误源的配置。
+2.  修改 WHEA\_错误\_源\_描述符结构的内容，以更改错误源的配置。
 
-3.  通过调用设置错误源的错误源信息[ **WHEAErrorSourceMethods::SetErrorSourceInfoRtn** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_whea/)方法
+3.  调用[**WHEAErrorSourceMethods：： SetErrorSourceInfoRtn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/_whea/)方法为错误源设置错误源信息
 
-重新启动系统后，对错误源的配置进行任何更改才会生效之前。
+在系统重新启动之前，对错误源的配置所做的任何更改都不会生效。
 
  
 

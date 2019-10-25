@@ -1,35 +1,35 @@
 ---
 title: USB I/O 目标
-description: 本部分介绍 KMDF 和 UMDF 2 驱动程序如何与通用串行总线 (USB) 设备进行交互。
+description: 本部分介绍了 KMDF 和 UMDF 2 驱动程序如何与通用串行总线（USB）设备交互。
 ms.assetid: 195c0f4b-7f33-428a-8de7-32643ad854c6
 keywords:
-- I/O 目标 WDK KMDF USB
-- USB I/O 面向 WDK KMDF
-- USB 请求阻止 WDK KMDF
+- I/o 目标 WDK KMDF，USB
+- USB i/o 目标 WDK KMDF
+- USB 请求块 WDK KMDF
 - URBs WDK KMDF
-- USB I/O 面向 WDK KMDF 有关 USB I/O 目标
+- USB i/o 目标 WDK KMDF，关于 USB i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f38ac962ab7c0cdbfd55080ca7c06107c9ec4d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 163ba4f1a1766b378dc86397322df0b7c7a62ab2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372299"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843112"
 ---
 # <a name="usb-io-targets"></a>USB I/O 目标
 
 
-本部分介绍从版本 2 的内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序如何与通用串行总线 (USB) 设备进行交互。
+本部分介绍从版本2开始的内核模式驱动程序框架（KMDF）和用户模式驱动程序框架（UMDF）驱动程序如何与通用串行总线（USB）设备交互。
 
 
 
 
-每个 USB 设备和 USB 设备接口支持，每个管道都有单独的 I/O 目标。 控制传输的 USB 设备句柄发送到设备的 I/O 目标。 特定的管道处理的 I/O 传输发送到该管道的 I/O 目标。
+每个 USB 设备以及 USB 设备接口支持的每个管道都具有单独的 i/o 目标。 将 USB 设备处理的控制传输发送到设备的 i/o 目标。 I/o 会传输特定管道句柄发送到该管道的 i/o 目标。
 
-通过发送 USB 请求块与 USB 设备的 I/O 目标通信框架 ([**URBs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb))。 该框架提供隐藏 URBs 从您的驱动程序，使驱动程序不需要生成并将其发送本身的对象方法。 如果您希望您的驱动程序生成 URBs，KMDF 驱动程序可以使用一组额外的生成和发送 URBs 对象方法。
+此框架通过发送 USB 请求块（[**URBs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)）与 usb 设备的 i/o 目标通信。 该框架提供了对象方法，这些方法可隐藏驱动程序中的 URBs，以便驱动程序无需生成并发送自身。 如果希望驱动程序生成 URBs，KMDF 驱动程序可以使用一组额外的对象方法来生成和发送 URBs。
 
-有关如何确定 USB 设备需要哪种类型的驱动程序的信息，请参阅[选择用于开发 USB 客户端驱动程序的驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+有关如何确定 USB 设备所需的驱动程序类型的信息，请参阅[选择用于开发 usb 客户端驱动](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)程序的驱动程序模型。
 
 本部分包括：
 

@@ -6,12 +6,12 @@ keywords:
 - 缓冲 WDK NDIS 微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 769e83f5650b687262ecf47da8944de31c2eacdc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec22e69bb4b068aba0959651d54a80a67626bc81
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844240"
 ---
 # <a name="miniport-driver-buffer-management"></a>微型端口驱动程序缓冲区管理
 
@@ -19,17 +19,17 @@ ms.locfileid: "67373939"
 
 
 
-通常情况下调用微型端口驱动程序[ **NdisAllocateNetBufferListPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlistpool)从[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)创建池[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 微型端口驱动程序使用这些结构指示接收到的数据。
+微型端口驱动程序通常从[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)调用[**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool) ，以创建[ **\_缓冲区池\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。 微型端口驱动程序使用这些结构指示接收的数据。
 
-通常情况下，分配 NET 的微型端口驱动程序才能\_缓冲区\_列表结构将分配和队列之一[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) 该网络上的结构\_缓冲区\_列表结构。 若要预分配 NET 效率更高\_缓冲区结构时的 NET 池分配\_缓冲区\_比以分配 NET 列表结构\_缓冲区\_列表结构和 NET\_结构的单独缓冲区。
+通常情况下，分配网络\_缓冲区\_列表结构的微型端口驱动程序将在该网络\_缓冲区\_列表结构上分配一个[**网络\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构并对该结构进行排队。 当分配网络\_缓冲区池\_列表结构的池，而不是分别分配网络\_缓冲区\_列表结构和 NET\_缓冲结构时，预分配 NET\_缓冲区结构的效率更高。
 
-微型端口驱动程序可以调用**NdisAllocateNetBufferListPool**并设置*AllocateNetBuffer*参数**TRUE**指示[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)预先分配结构。 在此情况下，NET\_缓冲区结构都已预分配以每个 NET\_缓冲区\_从池中分配驱动程序的列表结构。 此类驱动程序必须调用[ **NdisAllocateNetBufferAndNetBufferList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist)无法从这个池分配结构。
+微型端口驱动程序可以调用**NdisAllocateNetBufferListPool** ，并将*AllocateNetBuffer*参数设置为**TRUE** ，以指示[**网络\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构已预分配。 在这种情况下，将使用驱动程序从池中分配的每个网络\_缓冲区\_列表结构预分配网络\_缓冲区结构。 此类驱动程序必须调用[**NdisAllocateNetBufferAndNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist) ，才能从此池分配结构。
 
-通常，微型端口驱动程序会调用**NdisAllocateNetBufferAndNetBufferList**从*MiniportInitializeEx*来分配任意多个缓冲区，因为它会将用于后续接收操作。 在这种情况下，该驱动程序管理免费缓冲区的内部的列表。
+通常情况下，微型端口驱动程序从*MiniportInitializeEx*调用**NdisAllocateNetBufferAndNetBufferList** ，以便分配尽可能多的缓冲区，因为后续接收操作将需要该缓冲区。 在这种情况下，驱动程序管理可用缓冲区的内部列表。
 
-[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)函数可以准备返回的 NET\_缓冲区\_列表结构以供重用在后面会收到指示。 尽管*MiniportReturnNetBufferLists*无法返回 NET\_缓冲区\_给池的列表结构 (例如，它可能会调用[ **NdisFreeNetBufferList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlist))，它可能更有效，而无需将它们返回到池重用结构。
+[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)函数可准备返回的 NET\_缓冲区\_列表结构，以便在后续接收指示中重复使用。 尽管*MiniportReturnNetBufferLists*可以将 NET\_BUFFER\_列表结构返回到池（例如，它可以调用[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)），但如果不将这些结构返回到，则可以更高效地重用它们。池。
 
-微型端口驱动程序应释放所有 NET\_缓冲区\_列表结构和关联的数据时 NDIS 停止适配器。 驱动程序可以调用**NdisFreeNetBufferList**来释放结构并[ **NdisFreeNetBufferListPool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreenetbufferlistpool)函数来释放 NET\_缓冲区\_列表池。
+当 NDIS 停止适配器时，微型端口驱动程序应释放所有 NET\_缓冲区\_列表结构和关联数据。 驱动程序可以调用**NdisFreeNetBufferList**来释放结构，使用[**NDISFREENETBUFFERLISTPOOL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlistpool)函数释放 NET\_缓冲区\_列表池。
 
  
 

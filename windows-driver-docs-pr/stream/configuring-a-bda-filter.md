@@ -6,15 +6,15 @@ keywords:
 - 方法设置 WDK BDA，筛选器配置
 - 属性设置 WDK BDA，筛选器配置
 - KSMETHODSETID_BdaDeviceConfiguration
-- 筛选器配置 WDK BDA
+- 筛选配置 WDK BDA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5676193716a52220377bff23cca7514b20369ef2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 50f57c7916ccc552c658772faf54374420a1bb37
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386644"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844710"
 ---
 # <a name="configuring-a-bda-filter"></a>配置 BDA 筛选器
 
@@ -22,9 +22,9 @@ ms.locfileid: "67386644"
 
 
 
-BDA 微型驱动程序处理的方法请求[KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)方法设置为当前筛选器关系图中微型驱动程序中配置筛选器实例。
+BDA 微型驱动程序进程方法请求[KSMETHODSETID\_BdaDeviceConfiguration](https://docs.microsoft.com/windows-hardware/drivers/stream/ksmethodsetid-bdadeviceconfiguration)方法集，以在当前筛选器关系图中为微型驱动程序配置筛选器实例。
 
-在以下代码片段中，两个方法的 KSMETHODSETID\_BdaDeviceConfiguration 方法集将被分派给 BDA 支持库的直接和剩余的方法先截获 BDA 微型驱动程序调度到之前BDA 支持库。
+在以下代码片段中，KSMETHODSETID\_BdaDeviceConfiguration 方法集的两个方法均直接调度到 BDA 支持库，并且在调度到 BDA 之前，将首先由 BDA 微型驱动程序截获剩余方法。支持库。
 
 ```cpp
 //
@@ -99,7 +99,7 @@ errExit:
 }
 ```
 
-KSMETHOD\_BDA\_创建\_拓扑方法请求调用微型驱动程序的 CFilter::CreateTopology 方法。 此方法调用 BDA 支持库函数[ **BdaMethodCreateTopology** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdamethodcreatetopology)创建筛选器插针之间的拓扑。 此函数在第 3 环，这反映了其他属性集，筛选器的已知的连接中实际创建拓扑结构。 BDA 微型驱动程序应截获 KSMETHOD\_BDA\_创建\_拓扑中所示上述代码段中如果该微型驱动程序时必须发送特殊说明硬件连接特定的方法请求pin 类型--例如，如果 BDA 设备执行硬件解多路复用，并创建任意数目的输出插针，按从单个输入插针关闭扇形展开。
+KSMETHOD\_BDA\_CREATE\_拓扑方法请求调用微型驱动程序的 CFilter：： CreateTopology 方法。 此方法将调用 BDA 支持库函数[**BdaMethodCreateTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdamethodcreatetopology)以在筛选器 pin 之间创建拓扑。 此函数实际上在第3环中创建拓扑结构，该结构反映了筛选器的已知连接的其他属性集。 如前面的代码片段中所示，BDA 微型驱动程序应截获 KSMETHOD\_BDA\_创建\_拓扑方法请求，前提是在连接特定的 pin 类型时微型驱动程序必须向硬件发送特殊指令--对于例如，如果 BDA 设备执行硬件 demultiplexing，并从单个输入插针创建任意数量的输出插针扇形展开。
 
  
 

@@ -4,17 +4,17 @@ description: ISCSI\_路径 WMI 类
 ms.assetid: d4067869-2c67-42d3-988e-af825549853d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 63a99b532c8e2122a7d37cde20269a60f71bdc0d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3acf193ce8e941cc108bfc0ab288d9ed8dac9b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378432"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842265"
 ---
-# <a name="iscsipath-wmi-class"></a>ISCSI\_路径 WMI 类
+# <a name="iscsi_path-wmi-class"></a>ISCSI\_路径 WMI 类
 
 
-ISCSI\_路径 WMI 类包含有关 iSCSI 门户的连接的信息。 此类定义，如下所示在*Mgmt.mof。*
+ISCSI\_路径 WMI 类包含有关 iSCSI 门户连接的信息。 此类在*管理 mof*中定义为：
 
 ```cpp
 class ISCSI_Path
@@ -59,7 +59,7 @@ class ISCSI_Path
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_路径**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_path)数据结构。
+当 WMI 工具套件编译上述类定义时，它将生成[**ISCSI\_路径**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_path)数据结构。
 
  
 

@@ -4,57 +4,57 @@ description: 非默认虚拟端口和 VMQ
 ms.assetid: 5F6F5378-2CA7-491D-953C-6F98B855B51A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 721b3b7b508dcb3547f4c4d7e883d7f9a97cb42f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e2f09cfd9d19cb78bac6e7b5d536c128490c1ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354542"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842764"
 ---
 # <a name="nondefault-virtual-ports-and-vmq"></a>非默认虚拟端口和 VMQ
 
 
-默认 NIC 切换为支持单个根 I/O 虚拟化 (SR-IOV) 接口的网络适配器的一个组件。 该开关始终将默认虚拟端口 (VPort) 附加到 PCI Express (PCIe) 物理函数 (PF)。 此开关可以将一个或多个非默认 VPorts 附加到 PF. 有关详细信息，请参阅[创建虚拟端口](creating-a-virtual-port.md)。
+默认 NIC 交换机是支持单根 i/o 虚拟化（SR-IOV）接口的网络适配器组件。 开关始终将默认的虚拟端口（VPort）附加到 PCI Express （PCIe）物理功能（PF）。 开关可以将一个或多个非默认 VPorts 附加到 PF。 有关详细信息，请参阅[创建虚拟端口](creating-a-virtual-port.md)。
 
-在管理操作系统的 HYPER-V 父分区中运行虚拟化堆栈。 此堆栈通过发出对象标识符 (OID) 的方法请求创建 VPorts [OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。 但是，在堆栈可以为通过 OID 方法请求的已分配的资源创建比 active PCIe 虚函数 (VFs) 数的更多 VPorts [OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。
+虚拟化堆栈在 Hyper-v 父分区的管理操作系统中运行。 此堆栈通过\_\_NIC 发出对象标识符（OID）方法请求来创建 VPorts， [\_CREATE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。 但是，堆栈创建的 VPorts 超过活动 PCIe 虚拟函数（VFs）的数目，而这些功能是通过 oid\_NIC 的 oid 方法请求[\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。
 
-如果网络适配器上启用了 SR-IOV，必须禁用 VMQ 的全部功能。 但是，非默认的附加到 PF 和未附加到 VF VPorts 可以提供与虚拟机队列 (VMQ) 接口相同的功能。 以下几点讨论如何 VPorts 能够提供类似于 VMQ 的数据包传输的硬件加速数据路径：
+如果在网络适配器上启用了 SR-IOV，则必须禁用全部 VMQ 功能。 但是，附加到 PF 且未附加到 VF 的非默认 VPorts 可以提供与虚拟机队列（VMQ）界面相同的功能。 以下几点讨论了 VPorts 如何为数据包传输提供硬件加速的数据路径，这与 VMQ 类似：
 
--   VMQ 确定的目标 VM 的媒体访问控制 (MAC) 在硬件中进行筛选。 这避免了确定虚拟化堆栈中的目标 VM 的开销。
+-   VMQ 通过硬件中的媒体访问控制（MAC）筛选来确定目标 VM。 这样可以避免在虚拟化堆栈中确定目标 VM 的开销。
 
-    从 Windows Server 2012 开始，虚拟化堆栈配置的接收筛选器上 VPort 通过发出的 OID 方法请求[OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter). 对于此 OID 请求中，虚拟化堆栈传递[ **NDIS\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构，它指定 MAC 地址和虚拟LAN (VLAN) 与虚拟网络适配器相关联的标识符。 类似于 VMQ，它可以配置多个 MAC 地址和 VLAN ID 对 VPort 上。 虚拟化堆栈还指定了接收筛选器将设置为目标 VPort。
+    从 Windows Server 2012 开始，虚拟化堆栈通过发出 oid [\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)来配置接收筛选器。 对于此 OID 请求，虚拟化堆栈会传递[**NDIS\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构，该结构指定与虚拟网络适配器关联的 MAC 地址和虚拟 LAN （VLAN）标识符。 与 VMQ 类似，它可以在 VPort 上配置多个 MAC 地址和 VLAN ID 对。 虚拟化堆栈还指定接收筛选器将设置到的目标 VPort。
 
-    SR-IOV 网络适配器执行基于通过指定筛选条件的类似硬件筛选[OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)请求。 在硬件上接收数据包时接收队列 VPort、 微型端口驱动程序的带外 (OOB) 数据中指定的源 VPort 标识符[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)数据包的结构。 基于 VPort 标识符，虚拟化堆栈确定目标 VM，并指示在 VM 中运行的网络堆栈的数据包。
+    SR-IOV 网络适配器根据通过 OID 指定的筛选条件[\_接收\_filter\_设置\_FILTER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)请求来执行类似的硬件筛选。 在 VPort 的硬件接收队列中接收数据包时，微型端口驱动程序会在[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的带外（OOB）数据中指定源 VPort 标识符，\_数据包的列表结构。 根据 VPort 标识符，虚拟化堆栈确定目标 VM，并向 VM 中运行的网络堆栈指出数据包。
 
-    同样，虚拟化堆栈的 OOB 数据中指定的目标 VPort 标识符[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)传输数据包的结构。 当驱动程序处理该数据包在发送请求时，它指定 VPort 的硬件传输队列中将该数据包。
+    同样，虚拟化堆栈指定传输数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中的目标 VPort 标识符。 当驱动程序处理数据包的发送请求时，它会将数据包放在指定 VPort 的硬件传输队列中。
 
-    可以通过使用从数据包的 OOB 数据获取 VPort 标识符[ **NET\_缓冲区\_列表\_接收\_筛选器\_VPORT\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)宏。
+    可以使用 NET\_BUFFER\_列表从数据包的 OOB 数据中获取 VPort 标识符， [ **\_\_FILTER\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)宏。
 
-    有关此过程的详细信息，请参阅[数据包流经虚拟端口](packet-flow-over-a-virtual-port.md)。
+    有关此过程的详细信息，请参阅[通过虚拟端口的数据包流](packet-flow-over-a-virtual-port.md)。
 
-    有关筛选要求的 SR-IOV 网络适配器的接收的详细信息，请参阅[确定收到的筛选功能](determining-receive-filtering-capabilities.md)。
+    有关 SR-IOV 网络适配器接收筛选要求的详细信息，请参阅[确定接收筛选功能](determining-receive-filtering-capabilities.md)。
 
--   VMQ 提供中断和 DPC 并发性。
+-   VMQ 提供中断和 DPC 并发。
 
-    从 NDIS 6.30 和 Windows Server 2012 开始，可以对附加到 PF VPort 被配置为具有特定的 CPU 关联。 虚拟化堆栈情况下使用的 OID 方法请求针对 VPort 配置 CPU 关联和中断裁决参数[OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)或[OID\_NIC\_交换机\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 通过执行此操作，虚拟化堆栈配置基于中断的中断和 DPC 并发类似于 VMQ 的参数。
+    从 NDIS 6.30 和 Windows Server 2012 开始，可以将附加到 PF 的 VPort 配置为具有特定的 CPU 关联。 虚拟化堆栈为 VPort 配置 CPU 关联和中断裁决参数，方法是使用 Oid\_NIC 的 OID 方法请求[\_交换机\_创建\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)或[OID\_nic\_交换机\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 这样，虚拟化堆栈就会为中断和 DPC 并发配置类似于 VMQ 的基于中断的参数。
 
-    例如，当 SR-IOV 网络适配器收到上被配置为具有特定的 CPU 关联 VPort 数据包时，适配器将生成指定 CPU 上的中断。 微型端口驱动程序指示该 CPU 到 NDIS 和虚拟化堆栈接收到的数据包。
+    例如，当 SR-IOV 网络适配器在配置为具有特定 CPU 关联的 VPort 上接收数据包时，适配器将在指定 CPU 上生成中断。 微型端口驱动程序指示接收到 NDIS 的数据包和该 CPU 的虚拟化堆栈。
 
-PF 微型端口驱动程序播发到调用上下文中的其 SR-IOV 功能[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)。 该驱动程序初始化[ **NDIS\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构与它的功能和调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)来注册它的功能。 有关详细信息，请参阅[确定的 SR-IOV 功能](determining-sr-iov-capabilities.md)。
+PF 微型端口驱动程序在对[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的调用的上下文中公布其 sr-iov 功能。 驱动程序使用其功能初始化[**NDIS\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构，并调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)来注册其功能。 有关详细信息，请参阅[确定 Sr-iov 功能](determining-sr-iov-capabilities.md)。
 
-以下成员[ **NDIS_NIC_SWITCH_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构会影响分配 VPorts 的方式：
+[**NDIS_NIC_SWITCH_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构的以下成员会影响分配 VPorts 的方式：
 
--   **MaxNumVPorts**，它指定可以在网络适配器创建的 VPorts 的最大数目。
+-   **MaxNumVPorts**，指定可在网络适配器上创建的最大 VPorts 数。
 
--   **MaxNumVFs**，其中网络适配器上指定可以分配的 VFs 的最大数目。
+-   **MaxNumVFs**，指定可在网络适配器上分配的最大 VFs 数。
 
-从 NDIS 6.30 开始，当微型端口驱动程序初始化[ **NDIS_NIC_SWITCH_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构，它可以设置 NDIS\_NIC\_开关\_CAPS\_单个\_VPORT\_中的池标志**NicSwitchCapabilities**成员。 此标志指定非默认 VPorts 可以创建从网络适配器上的 VPort 池未预留的方式。 这允许提供非默认 VPorts 创建并基于根据需要分配到 PF 和分配 VFs。 如果 VMQ 接口，非默认分配给 PF VPorts 还可以为 VM 使用此网络适配器支持接收队列。
+从 NDIS 6.30 开始，当微型端口驱动程序初始化[**NDIS_NIC_SWITCH_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构时，它可以设置 NDIS\_NIC\_交换机\_cap\_ **\_NicSwitchCapabilities**成员。 此标志指定可以从网络适配器上的 VPort 池 nonreserved 的方式创建非默认 VPorts。 这允许按照所需的方式创建和分配可用的非默认 VPorts 到 PF 和分配的 VFs。 如果网络适配器支持 VMQ 接口，则分配到 PF 的非默认 VPorts 也可用于 VM 接收队列。
 
-如果 NDIS\_NIC\_交换机\_CAP\_单个\_VPORT\_池标志是设置此选项，提供非默认，VPorts 被创建并分配给 PF 并分配 VFs。 VPorts，可以创建并分配给 PF 的最大数目是相同的值，该驱动程序中的报表**MaxNumVPorts**成员。 微型端口驱动程序必须保留一个 VPort 要用作默认值分配给 PF.VPort 因此，非默认 VPorts，可以分配给 PF 并用于 VM 的最大数目接收队列是 (**MaxNumVPorts**– 1)。
+如果设置了 NDIS\_NIC\_交换机\_CAP\_单个\_VPORT\_池标志已设置，则将创建可用的非默认 VPorts，并将其分配给 PF 并分配给 VFs。 可创建并分配到 PF 的最大 VPorts 数与驱动程序在**MaxNumVPorts**成员中报告的值相同。 微型端口驱动程序必须保留一个 VPort，以将其用作分配到 PF 的默认 VPort。 因此，可分配到 PF 并用于 VM 接收队列的非默认 VPorts 数为（**MaxNumVPorts**–1）。
 
 > [!NOTE]
-> 如果设置此标志，创建和分配的非默认 VPorts 不保留 VF 分配。 因此，其中取景器可能无法分配 VPort 如果池已耗尽可用 VPorts 的情况下可能会发生。 
+> 如果设置此标志，则不会为 VF 分配保留创建和分配非默认 VPorts。 因此，如果某个 VF 的可用 VPorts 用尽，则可能不会为 VF 分配 VPort。 
 
-如果 NDIS\_NIC\_交换机\_CAP\_单个\_VPORT\_池标志不是组、 创建和分配的非默认为 VF 分配保留 VPorts。 其他非默认 VPorts，可以创建和分配给 PF 并用于 VM 的最大数目接收队列是 (**MaxNumVPorts**–**MaxNumVFs**)。
+如果未设置\_NIC\_交换机\_CAP\_单个\_VPORT\_池标志，则将为 VF 分配保留创建和分配非默认的 VPorts。 可创建并分配到 PF 并用于 VM 接收队列的其他非默认 VPorts 数为（**MaxNumVPorts**–**MaxNumVFs**）。
 
-有关 VMQ 的详细信息，请参阅[虚拟机队列 (VMQ)](virtual-machine-queue--vmq-.md)。
+有关 VMQ 的详细信息，请参阅[虚拟机队列（VMQ）](virtual-machine-queue--vmq-.md)。

@@ -4,17 +4,17 @@ description: 再次设置并从 HwScsiFindAdapter 返回
 ms.assetid: 8a9cde40-06fa-4b56-818d-63a9c71da208
 keywords:
 - HwScsiFindAdapter
-- SCSI 微型端口驱动程序 WDK 存储 HwScsiFindAdapter
+- SCSI 微型端口驱动程序 WDK 存储，HwScsiFindAdapter
 - 再次 WDK SCSI
 - 返回值 WDK SCSI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d080829fe3bce587c1983882063fdbdd641de1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 824f3ec22fb4f79e3ae0bee3019c61d356334e68
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363949"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845231"
 ---
 # <a name="setting-again-and-returning-from-hwscsifindadapter"></a>再次设置并从 HwScsiFindAdapter 返回
 
@@ -22,15 +22,15 @@ ms.locfileid: "67363949"
 ## <span id="ddk_setting_again_and_returning_from_hwscsifindadapter_kg"></span><span id="DDK_SETTING_AGAIN_AND_RETURNING_FROM_HWSCSIFINDADAPTER_KG"></span>
 
 
-对于支持的和已成功配置 HBA 中， [ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))返回 SP\_返回\_找到。
+对于支持且已成功配置的 HBA， [*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))返回 SP\_返回\_找到。
 
-它将返回之前，请*HwScsiFindAdapter*微型端口驱动程序应设置的旧版和插*Again*在本部分中所述。 尽管*Again*微型端口驱动程序加载作为插驱动程序时不起作用*Again*必须正确设置，以便系统可以运行插微型端口驱动程序作为旧驱动程序如有必要.
+在返回之前，应*再次*设置旧版和即插即用微型端口驱动程序的*HwScsiFindAdapter* ，如本部分中所述。 当将微型端口驱动程序作为即插即用驱动程序加载时，这种情况*同样*不相关，因此必须对其进行*适当的设置*，以便系统可以根据需要将即插即用微型端口驱动程序作为旧驱动程序运行。
 
-*HwScsiFindAdapter*应设置*Again*到**TRUE**以指示它应再次调用*完全相同的端口与\_配置\_信息，但新设备扩展*如果另一个其 Hba 可能连接相同的 I/O 总线上。
+*HwScsiFindAdapter*应*再次*设置为**TRUE** ，以指示应*使用完全相同的端口再次调用该端口\_配置\_信息，但*如果它的另一个 hba 可能已连接，则为新的设备扩展在同一 i/o 总线上。
 
-如果*HwScsiFindAdapter*找不到 HBA 它支持，但它应设置*Again*到**FALSE** ，并返回 SP\_返回\_不\_找到。 如果*HwScsiFindAdapter*查找受支持的 HBA，但输入[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)具有不一致的配置数据 (如无效**DmaChannel**或**BusInterruptLevel** EISA 总线上)，应设置*Again*到**FALSE**和返回 SP\_返回\_错误\_配置。 有关在 PCI 总线上的 HBA *HwScsiFindAdapter*必须接受由系统提供的中断配置信息。
+如果*HwScsiFindAdapter*找不到它支持的 HBA，则它应*再次*设置为**FALSE**并返回 SP\_返回\_未\_找到。 如果*HwScsiFindAdapter*发现支持的 HBA 但输入[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)具有不一致的配置数据（例如，在 EISA 总线上的**DmaChannel**或**BusInterruptLevel**无效），则应*再次*设置为**FALSE**并返回 SP\_返回\_错误\_配置。 对于 PCI 总线上的 HBA， *HwScsiFindAdapter*必须接受系统提供的中断配置信息。
 
-请注意，设置*Again*到**FALSE**并返回具有 SP 控件\_返回\_不\_找到或 SP\_返回\_坏\_配置指示给定的 I/O 总线，标识由**SystemIoBusNumber**中输入端口\_配置\_的信息，有的微型端口驱动程序可以支持任何 HBA。 它不会阻止系统端口驱动程序调用*HwScsiFindAdapter*再次通过更新端口\_配置\_HBA(s) 扫描另一个 I/O 总线，如果计算机上存在其他 I/O 总线的信息相同**AdapterInterfaceType**。
+请注意，*再次*设置为**FALSE**并返回具有 SP\_返回\_未\_找到或 SP\_返回\_错误\_配置指示给定 I/o 总线，由**SystemIoBusNumber**标识在输入端口\_配置\_信息中，无小型端口驱动程序可以支持的 HBA。 它不会阻止系统端口驱动程序再次调用*HwScsiFindAdapter* ，并\_配置\_信息来扫描 HBA 的另一个 i/o 总线，如果计算机具有相同**的其他 i/o 总线AdapterInterfaceType**。
 
  
 

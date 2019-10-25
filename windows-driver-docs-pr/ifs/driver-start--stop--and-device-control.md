@@ -3,38 +3,38 @@ title: 驱动程序启动、停止和设备控制
 description: 驱动程序启动、停止和设备控制
 ms.assetid: d3608a5f-3bf4-43b1-8c32-55a6fcd4fbe8
 keywords:
-- 最小重定向程序 WDK，启动
-- 最小重定向程序 WDK，停止
-- 最小重定向程序 WDK，设备控件
+- 小型重定向程序 WDK，开始
+- 小型重定向程序 WDK，停止
+- 小型重定向程序 WDK，设备控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b53fc50e8a1b5b1c314a9e1dc239f797dfa7c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65019dffc8a5d0189a57a9666b4164fd03eea8db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386095"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841430"
 ---
 # <a name="driver-start-stop-and-device-control"></a>驱动程序启动、停止和设备控制
 
 
-在中处理驱动程序注册**DriverEntry**例程的网络的最小重定向程序驱动程序。 网络微型重定向的第一次启动 (在其**DriverEntry**例程)，该驱动程序必须调用 RDBSS [ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)例程，以注册网络微型重定向与 RDBSS。 网络微型重定向传入 MINIRDR\_调度结构包括网络微型重定向程序驱动程序实现的例程的配置数据和例程的指针 （调度表） 的表。
+驱动程序注册在网络小型重定向程序驱动程序的**DriverEntry**例程中处理。 当网络小型重定向程序首次启动（在其**DriverEntry**例程中）时，驱动程序必须调用 RDBSS [**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)例程来向 RDBSS 注册网络小型重定向程序。 网络小型重定向器传入了 MINIRDR\_调度结构，其中包括配置数据和一个例程指针表（调度表）到网络小型重定向程序驱动程序实现的例程。
 
-[ **MRxStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)并[ **MRxStop** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)例程必须实现网络微型重定向程序驱动程序，以允许将驱动程序启动和停止。
+[**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)和[**MRxStop**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)例程必须由网络微重定向程序驱动程序实现，以允许启动和停止驱动程序。
 
-要启动或停止网络微型重定向的序列很复杂。 此序列通常由用户模式应用程序或使用网络微型重定向程序驱动程序提供的服务控制管理和管理目的的驱动程序启动。 网络微型-重定向程序可以使用配置为在操作系统启动时自动启动的服务。 此服务可以请求每次操作系统启动时启动网络微型重定向。
+用于启动或停止网络小型重定向器的序列非常复杂。 此顺序通常由网络微型重定向驱动程序提供的用户模式应用程序或服务启动，用于控制用于管理和管理的驱动程序。 网络小型重定向程序可以使用配置为在操作系统启动时自动启动的服务。 此服务可以请求在操作系统启动时启动网络小型重定向程序。
 
-[**MRxStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx) RDBSS 调用时[ **RxStartMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstartminirdr)调用例程。 **RxStartMinirdr**例程通常从启动网络微型重定向的用户模式应用程序或服务调用 FSCTL 或 IOCTL 请求的结果。 在调用**RxStartMinirdr**不能从进行**DriverEntry**网络微型-重定向程序在成功调用后的日常[ **RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)因为一些开始处理需要完成驱动程序初始化。 一次**RxStartMinirdr**接收到调用、 RDBSS 完成启动过程通过调用**MRxStart**网络微型重定向的例程。 如果在调用**MRxStart**返回成功，RDBSS 设置最小-重定向程序的内部状态中到 RDBSS RDBSS\_已启动。
+调用[**RxStartMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstartminirdr)例程时， [**MRxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)由 RDBSS 调用。 **RxStartMinirdr**例程通常作为来自用户模式应用程序或服务的 FSCTL 或 IOCTL 请求的结果被调用，以启动网络小型重定向程序。 成功调用[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)后，不能从网络小型重定向程序的**DriverEntry**例程对**RxStartMinirdr**进行调用，因为某些启动处理需要驱动程序初始化完成. 接收到**RxStartMinirdr**调用后，RDBSS 将通过调用网络小型重定向器的**MRxStart**例程来完成启动过程。 如果对**MRxStart**的调用返回 SUCCESS，RDBSS 会在 RDBSS 中将的内部状态设置\_为 "已启动"。
 
-[**MRxStop** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop) RDBSS 调用时[ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)调用例程。 RDBSS **RxStopMinirdr**例程通常从停止网络微型重定向的用户模式应用程序或服务调用 FSCTL 或 IOCTL 请求的结果。 此调用也可从网络微型重定向，或关闭过程的一部分操作系统。 一次**RxStopMinirdr**接收到调用、 RDBSS 通过调用来完成该过程**MRxStop**网络微型重定向的例程。
+调用[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)例程时， [**MRxStop**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)由 RDBSS 调用。 通常将 RDBSS **RxStopMinirdr**例程作为来自用户模式应用程序或服务的 FSCTL 或 IOCTL 请求，以停止网络微型重定向程序。 也可以通过网络小型重定向程序或操作系统的关闭过程的一部分来执行此调用。 接收到**RxStopMinirdr**调用后，RDBSS 将通过调用网络小型重定向器的**MRxStop**例程来完成此过程。
 
-[ **MRxDevFcbXXXControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)例程用于接收来自通过 IOCTL 或 FSCTL 调用 FCB 的设备上控制网络微型重定向的用户模式应用程序或服务请求。
+[**MRxDevFcbXXXControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)例程用于接收来自用户模式应用程序或服务的请求，通过在设备 FCB 上发出 IOCTL 或 FSCTL 调用来控制网络小型重定向程序。
 
-此外，有两个较低的 I/O 例程处理 IOCTL 和 FSCTL 驱动程序对象上的操作：[**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]**  ](https://msdn.microsoft.com/library/windows/hardware/ff550709)并[ **MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。
+此外，还存在两个处理驱动程序对象上的 IOCTL 和 FSCTL 操作的低 i/o 例程： [**MRxLowIOSubmit\[LOWIO\_OP\_FSCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550709)和[**MRxLowIOSubmit\[LOWIO\_OP\_IOCTL\]** ](https://msdn.microsoft.com/library/windows/hardware/ff550715)。
 
-网络微型重定向也可以使用这些较低的 I/O 例程提供控制和管理网络微型-重定向程序从用户模式应用程序或服务。
+网络小型重定向程序还可以使用这些低 i/o 例程从用户模式应用程序或服务提供网络微型重定向程序的控制和管理。
 
-下表列出了可以由网络微型重定向的启动 （停止） 和设备控制操作实现的例程。
+下表列出了可由网络小型重定向程序实现的、用于启动、停止和设备控制操作的例程。
 
 <table>
 <colgroup>
@@ -50,15 +50,15 @@ ms.locfileid: "67386095"
 <tbody>
 <tr class="odd">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile" data-raw-source="[&lt;strong&gt;MRxDevFcbXXXControlFile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxdevfcbxxxcontrolfile)"><strong>MRxDevFcbXXXControlFile</strong></a></td>
-<td align="left"><p>RDBSS 调用此例程将传递给网络微型重定向的设备 FCB 控制请求。 RDBSS 发出响应 FCB 的设备上接收 IRP_MJ_DEVICE_CONTROL、 IRP_MJ_FILE_SYSTEM_CONTROL 或 IRP_MJ_INTERNAL_DEVICE_CONTROL 此调用。</p></td>
+<td align="left"><p>RDBSS 调用此例程将设备 FCB 控制请求传递到网络小型重定向程序。 RDBSS 发出此调用来响应设备 FCB 上的 IRP_MJ_DEVICE_CONTROL、IRP_MJ_FILE_SYSTEM_CONTROL 或 IRP_MJ_INTERNAL_DEVICE_CONTROL。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>
-<td align="left"><p>RDBSS 调用此例程，以启动网络微型重定向。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx" data-raw-source="[&lt;strong&gt;MRxStart&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)"><strong>MRxStart</strong></a></td>
+<td align="left"><p>RDBSS 调用此例程来启动网络小型重定向程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop" data-raw-source="[&lt;strong&gt;MRxStop&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/mrxstop)"><strong>MRxStop</strong></a></td>
-<td align="left"><p>RDBSS 调用此例程，以停止网络微型重定向。</p></td>
+<td align="left"><p>RDBSS 调用此例程来停止网络微型重定向程序。</p></td>
 </tr>
 </tbody>
 </table>

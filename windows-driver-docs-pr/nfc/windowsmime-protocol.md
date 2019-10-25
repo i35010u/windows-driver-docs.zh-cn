@@ -5,69 +5,69 @@ ms.assetid: 03C5A31F-269A-45B3-9359-B6FFF4823190
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56fbf2a761594e899f3cef02ce8b9188a6bff531
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 42d2988a61bb9a0770a8234c9eba329f156c888f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380713"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843288"
 ---
 # <a name="windowsmime-protocol"></a>WindowsMime 协议
 
 
-## <a name="windowsmime-subscriptions"></a>"WindowsMime"订阅
+## <a name="windowsmime-subscriptions"></a>"WindowsMime" 订阅
 
 
-"WindowsMime"订阅是一种提取所有可能的 MIME 类型负载的订阅。 Windows 订阅以向驱动程序注册 Windows 兴趣接收 MIME 类型化数据，用户可能感兴趣使用此类型。 由于这是所有可能的 MIME 类型负载的订阅，则驱动程序必须返回类型，以及有效负载。
+"WindowsMime" 订阅是一种为所有可能的 MIME 类型的负载抽象订阅的方法。 Windows 订阅此类型是为了向 Windows 要接收用户可能想要使用的 MIME 类型化数据的驱动程序注册。 由于这是针对所有可能的 MIME 类型的有效负载的订阅，因此驱动程序必须返回类型以及负载。
 
-### <a name="required-actions"></a>所需的操作
+### <a name="required-actions"></a>必需的措施
 
--   作为 ASCII 编码，并且以 NULL 结尾的字符串中的输出缓冲区的前 256 个字节，则驱动程序必须返回有效负载的 MIME 类型。
--   输出缓冲区的前 256 字节之后，驱动程序必须返回消息负载。
--   该驱动程序必须设置的信息字段的已完成的 IRP 为 256 +**sizeof**（有效负载）。
--   如果邻近技术公布为 NFC，驱动程序必须匹配与具有 0x02 TNF 字段值的所有 NDEF 消息"WindowsMime"的订阅。
-    -   该驱动程序必须返回到此类型的订阅服务器仅匹配 NDEF 消息的有效负载。
-    -   驱动程序都不能返回到此类型的订阅服务器的完整编码的 NDEF 消息。
--   提供程序可能支持其他兼容的方案。
+-   驱动程序必须将有效负载的 MIME 类型作为 ASCII 编码且以 NULL 结尾的字符串返回到输出缓冲区的前256个字节内。
+-   驱动程序必须在输出缓冲区的前256字节后返回消息负载。
+-   驱动程序必须将已完成 IRP 的信息字段设置为 256 +**sizeof**（有效负载）。
+-   如果邻近技术被播发为 NFC，则驱动程序必须将 "WindowsMime" 的订阅与具有 TNF 字段值0x02 的所有 NDEF 消息匹配。
+    -   驱动程序必须仅将匹配的 NDEF 消息的负载返回到此类型的订阅服务器。
+    -   驱动程序不得将完整编码的 NDEF 消息返回到此类型的订阅服务器。
+-   提供程序还可以支持其他兼容方案。
 
-## <a name="windowsmime-protocol"></a>"WindowsMime。" Protocol
-
-
-"WindowsMime。" 发布是一种只需发布到对等设备的 MIME 类型的有效负载。 "WindowsMime。" 订阅是一种订阅于与特定的 MIME 类型的负载。 Windows 将向近程设备时用户定向为此，发布一个简单的 MIME 类型化消息。
-
-一般示例类型："WindowsMime。&lt;SomeMimeType&gt;"
-
-具体的示例类型：“WindowsMime.image/jpeg”
-
-### <a name="required-actions"></a>所需的操作
-
--   如果邻近技术公布为 NFC，则该驱动程序必须与匹配订阅"WindowsMime。&lt;SomeMimeType&gt;"仅与接收的 NDEF 消息 0x02 TNF 字段值和具有匹配的类型字段"&lt;SomeMimeType&gt;"中指定的等效性规则基于\[NDEF\]。
-
-    该驱动程序必须返回到此类型的订阅服务器仅的各个匹配 NDEF 消息有效负载。
-
--   如果邻近技术公布为 NFC，然后该驱动程序必须将封装每个"WindowsMime。&lt;SomeSubType&gt;"NDEF 中的发布消息的 0x02 TNF 字段值。
-    -   NDEF 类型字段必须包含的直接映射&lt;SomeSubType&gt;其中每个宽字符被解释为一个字节的字符串。
-    -   NDEF 有效负载必须包含发布消息负载的直接二进制内容。
-
-## <a name="windowsmimewritetag-publications"></a>"WindowsMime:WriteTag。" 发布
+## <a name="windowsmime-protocol"></a>"WindowsMime." 协议
 
 
-"WindowsMime:WriteTag。" 发布是用于只是写入到一个标记的 MIME 类型的有效负载的应用的方式。
+"WindowsMime"。 发布是将 MIME 类型的负载发布到对等设备的一种方法。 "WindowsMime"。 订阅是一种订阅负载特定 MIME 类型的方式。 当用户指导你执行此操作时，Windows 将向近程设备发布简单的 MIME 类型的消息。
 
-### <a name="required-actions"></a>所需的操作
+泛型示例类型： "WindowsMime"。&lt;SomeMimeType&gt;"
 
--   常见"\*: WriteTag"其他部分所述的要求适用。
--   "WindowsMime。&lt;SomeMimeType&gt;"发布要求其他部分的说明适用于"WindowsMime:WriteTag。&lt;SomeMimeType&gt;"发布。
+具体示例类型： "WindowsMime/jpeg"
+
+### <a name="required-actions"></a>必需的措施
+
+-   如果近程技术被播发为 NFC，则驱动程序必须与 "WindowsMime" 的订阅匹配。仅&lt;SomeMimeType&gt;"接收的 NDEF 消息，该消息的 TNF 字段值为0x02，并且具有与在 \[NDEF\]中指定的等效规则匹配"&lt;SomeMimeType&gt;"的类型字段。
+
+    驱动程序必须仅将单个匹配的 NDEF 消息的负载返回到此类型的订阅服务器。
+
+-   如果近程技术被播发为 NFC，则驱动程序必须将每个 "WindowsMime" 封装。&lt;SomeSubType&gt;"在 TNF 字段值为0x02 的 NDEF 消息中发布。
+    -   NDEF 类型字段必须包含 &lt;SomeSubType&gt; 字符串的直接映射，其中每个宽字符被解释为单字节。
+    -   NDEF 负载必须包含发布消息负载的直接二进制内容。
+
+## <a name="windowsmimewritetag-publications"></a>"WindowsMime:WriteTag." 之中
+
+
+"WindowsMime： WriteTag"。 发布是一种应用程序，只需将 MIME 类型的负载写入标记。
+
+### <a name="required-actions"></a>必需的措施
+
+-   其他地方所述的常见 "\*： WriteTag" 要求适用。
+-   "WindowsMime"。&lt;SomeMimeType&gt;"其他地方所述的发布要求适用于" WindowsMime： WriteTag。&lt;SomeMimeType&gt;"发布。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 
