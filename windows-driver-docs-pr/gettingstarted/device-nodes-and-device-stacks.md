@@ -7,12 +7,12 @@ keywords:
 - 设备堆栈
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99befc5f4c2bc04430dbdcbc164c3681d5d95621
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 68cafd6b5f4929e1b17b77f6e6a1907edc4daa18
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371976"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825191"
 ---
 # <a name="device-nodes-and-device-stacks"></a>设备节点和设备堆栈
 
@@ -37,7 +37,7 @@ Windows 在称为*即插即用设备树*或简称为*设备树*的树结构中�
 ## <a name="span-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspanspan-iddevice_objects_and_device_stacksspandevice-objects-and-device-stacks"></a><span id="Device_objects_and_device_stacks"></span><span id="device_objects_and_device_stacks"></span><span id="DEVICE_OBJECTS_AND_DEVICE_STACKS"></span>设备对象和设备堆栈
 
 
-“设备对象”  是 [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object) 结构的实例。 PnP 设备树中的每个设备节点都有设备对象的有序列表，这些设备对象中的每一个都与一个驱动程序相关联。 设备对象的有序列表与它们的关联驱动程序一起被称为设备节点的“设备堆栈”  。
+“设备对象”  是 [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 结构的实例。 PnP 设备树中的每个设备节点都有设备对象的有序列表，这些设备对象中的每一个都与一个驱动程序相关联。 设备对象的有序列表与它们的关联驱动程序一起被称为设备节点的“设备堆栈”  。
 
 你可以采用多种方式考虑设备堆栈。 就最正式的意义而言，设备堆栈为（设备对象、驱动程序）对的有序列表。 但是，在某些上下文中，将设备堆栈视为设备对象的有序列表可能会有用。 在其他上下文中，将设备堆栈视为驱动程序的有序列表可能会有用。
 

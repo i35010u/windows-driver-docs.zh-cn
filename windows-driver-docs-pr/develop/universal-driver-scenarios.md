@@ -3,12 +3,12 @@ title: 通用驱动程序方案
 description: 介绍了 DCHU 通用驱动程序示例如何应用 DCHU 设计原则（声明性、组件化、硬件支持应用 [HSA]，以及通用 API 合规性）。
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: da943cd371aeb509cb346afd13ab78cae06f9280
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a868e73ff14234fea0cc4721fc0a7ed7e1be8765
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364181"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839608"
 ---
 # <a name="universal-driver-scenarios"></a>通用驱动程序方案
 
@@ -198,7 +198,7 @@ CopyInf=osrfx2_DCHU_component.inf
 [DestinationDirs]
 OsrFx2_UserSvcCopyFiles = 13 ; copy to Driver Store
 ```
-从驱动程序存储运行的内核模式驱动程序可以调用 [**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioqueryfulldriverpath) 并使用该路径来查找与之相对应的配置文件。  如果内核模式驱动程序是 KMDF 驱动程序，则它可以使用 [**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) 来检索要传递到 IoQueryFullDriverPath 的 WDM 驱动程序对象。 UMDF 驱动程序可以使用 [**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) 和 [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) 来确定驱动程序是从何处加载的。  例如： 
+从驱动程序存储运行的内核模式驱动程序可以调用 [**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 并使用该路径来查找与之相对应的配置文件。  如果内核模式驱动程序是 KMDF 驱动程序，则它可以使用 [**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) 来检索要传递到 IoQueryFullDriverPath 的 WDM 驱动程序对象。 UMDF 驱动程序可以使用 [**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) 和 [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) 来确定驱动程序是从何处加载的。  例如： 
 
 ```cpp
 bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
@@ -248,13 +248,13 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
 以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，该变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) 来解析路径中的环境变量。 
 
-如果此值需由内核模式组件读取，则此值应该是 REG_SZ 值。 内核模式组件在读取该值时应该在其前面预置 `\??\`，然后再将其传递给 [**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwopenfile) 之类的 API。 
+如果此值需由内核模式组件读取，则此值应该是 REG_SZ 值。 内核模式组件在读取该值时应该在其前面预置 `\??\`，然后再将其传递给 [**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) 之类的 API。 
 
 当此设置成为设备状态的一部分时，如果要访问它，则应用程序必须先找到设备的标识。  用户模式代码可以使用 [**CM_Get_Device_ID_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) 和 [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 获取设备的列表（按需筛选）。 该设备列表可能包含多个设备，因此请先搜索相应的设备，然后再从设备读取状态。 例如，在查找符合特定条件的设备时，请调用 [**CM_Get_DevNode_Property**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw) 来检索设备的属性。
 
 找到正确的设备以后，请调用 [**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) 来获取存储设备状态的注册表位置的句柄。 
 
-内核模式代码应该检索 PDO（Physical Device Object，物理设备对象）并调用 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey)。 
+内核模式代码应该检索 PDO（Physical Device Object，物理设备对象）并调用 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)。 
 
 若要在此设置是设备接口状态时访问它，可以通过用户模式代码来调用 [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizea) 和 [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista)。
 
@@ -262,9 +262,9 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 找到正确的设备接口以后，调用 [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)。
 
-内核模式代码可以检索从其获取状态的设备接口的符号链接名称。 为此，请调用 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)，以便注册获取相应设备接口类的设备接口通知。  也可调用 [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces)，获取系统中当前设备接口的列表。  在设备接口类（在上述 API 中使用）中可能有多个设备接口。  检查这些接口，确定哪个接口是应该读取设置的正确接口。
+内核模式代码可以检索从其获取状态的设备接口的符号链接名称。 为此，请调用 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)，以便注册获取相应设备接口类的设备接口通知。  也可调用 [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)，获取系统中当前设备接口的列表。  在设备接口类（在上述 API 中使用）中可能有多个设备接口。  检查这些接口，确定哪个接口是应该读取设置的正确接口。
 
-找到适当的符号链接名称以后，请调用 [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)，以便检索在其中存储了设备接口状态的注册表位置的句柄。 
+找到适当的符号链接名称以后，请调用 [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)，以便检索在其中存储了设备接口状态的注册表位置的句柄。 
 
 > [!NOTE]
 > 将 **CM_GETIDLIST_FILTER_PRESENT** 标志与 [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) 和 [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 配合使用，或者将 **CM_GET_DEVICE_INTERFACE_LIST_PRESENT** 标志与 [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) 和 [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) 配合使用。 这样可确保硬件存在并已做好通信准备。 

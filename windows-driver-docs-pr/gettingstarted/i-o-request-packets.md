@@ -4,19 +4,19 @@ description: I/O 请求数据包
 ms.assetid: 72288D9A-86F7-4145-8470-FFA1AC26E9BF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d61c83d5f2403d57b7e266172f37db0762a797f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29efe2ed355650db9e7e95bb1cd80b1cb9e49229
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371955"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829121"
 ---
 # <a name="io-request-packets"></a>I/O 请求数据包
 
 
-发送到设备驱动程序的大部分请求都打包在 I/O 请求数据包 ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)) 中。 操作系统组件或驱动程序将 IRP 发送到驱动程序，方法是调用 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)，它有两个参数：指向 [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_object) 的指针和指向 **IRP** 的指针。 **DEVICE\_OBJECT** 具有指向关联 [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_driver_object) 的指针。 当组件调用 **IoCallDriver** 时，我们说组件“将 IRP 发送到设备对象”  或“将 IRP 发送到与设备对象关联的驱动程序”  。 有时，我们使用短语“传递 IRP”  或“转发 IRP”  而非“发送 IRP”  。
+发送到设备驱动程序的大部分请求都打包在 I/O 请求数据包 ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)) 中。 操作系统组件或驱动程序将 IRP 发送到驱动程序，方法是调用 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)，它有两个参数：指向 [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object) 的指针和指向 **IRP** 的指针。 **DEVICE\_OBJECT** 具有指向关联 [**DRIVER\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object) 的指针。 当组件调用 **IoCallDriver** 时，我们说组件“将 IRP 发送到设备对象”  或“将 IRP 发送到与设备对象关联的驱动程序”  。 有时，我们使用短语“传递 IRP”  或“转发 IRP”  而非“发送 IRP”  。
 
-通常，IRP 由在堆栈中排列的多个驱动程序进行处理。 堆栈中的每个驱动程序都与一个设备对象相关联。 有关详细信息，请参阅[设备节点和设备堆栈](device-nodes-and-device-stacks.md)。 如果 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp) 由设备堆栈进行处理，则通常先将 **IRP** 发送至设备堆栈中的顶部设备对象。 例如，如果 **IRP** 由此图所示的设备堆栈进行处理，则会先将 IRP 发送至设备堆栈顶部的筛选器设备对象（筛选器 DO）。
+通常，IRP 由在堆栈中排列的多个驱动程序进行处理。 堆栈中的每个驱动程序都与一个设备对象相关联。 有关详细信息，请参阅[设备节点和设备堆栈](device-nodes-and-device-stacks.md)。 如果 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp) 由设备堆栈进行处理，则通常先将 **IRP** 发送至设备堆栈中的顶部设备对象。 例如，如果 **IRP** 由此图所示的设备堆栈进行处理，则会先将 IRP 发送至设备堆栈顶部的筛选器设备对象（筛选器 DO）。
 
 ![设备节点及其设备堆栈的示意图](images/prosewaredevicenode03.png)
 

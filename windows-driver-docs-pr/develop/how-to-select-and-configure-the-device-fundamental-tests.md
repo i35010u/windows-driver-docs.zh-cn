@@ -4,12 +4,12 @@ title: 如何选择和配置设备基础功能测试
 description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架，其中包括一组设备基础功能测试。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d711a7140ce1c284d80122efa70adf8f739efeac
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: 155e3e4d792052db0e7bb4a24fb439bb8eefcf69
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020647"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839614"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
 
@@ -43,7 +43,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 
 可以编辑多个设备基础功能测试的运行时参数。 在“驱动程序测试组”窗口中，测试名称旁边的箭头 (») 指示你可以更改此测试参数。 单击箭头 (») 即可显示运行时参数。
 
-其中一个最常用的参数是 *DQ*，用于指定要测试的目标设备。 默认值 (**IsDevice**) 将测试目标计算机上的所有设备。 *DQ* 参数将通过 [**WDTF**](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) [SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index) 查询来确定目标设备。 可以指定特定测试设备，如：
+其中一个最常用的参数是 *DQ*，用于指定要测试的目标设备。 默认值 (**IsDevice**) 将测试目标计算机上的所有设备。 *DQ* 参数将通过 [**WDTF**](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) [SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) 查询来确定目标设备。 可以指定特定测试设备，如：
 
 **DeviceID=’USB\\ROOT\_HUB\\4&1CD5D022&0’** 仅选择具有指定 **DeviceID** 的测试设备。
 
@@ -66,7 +66,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="DQ"></span><span id="dq"></span><em>DQ</em></p></td>
-<td align="left"><p>确定应当用于测试的设备。 <em>DQ</em> 参数将通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index" data-raw-source="[SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)">SDEL</a> 查询来确定目标设备。 此查询非常灵活，可用于表示任何数量的设备，从单个设备到系统中的所有设备。</p>
+<td align="left"><p>确定应当用于测试的设备。 <em>DQ</em> 参数将通过 <a href="https://docs.microsoft.com/windows-hardware/drivers/wdtf/index" data-raw-source="[&lt;strong&gt;WDTF&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index)"><strong>WDTF</strong></a><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/index" data-raw-source="[SDEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)">SDEL</a> 查询来确定目标设备。 此查询非常灵活，可用于表示任何数量的设备，从单个设备到系统中的所有设备。</p>
 <p>常见示例：</p>
 <p></p>
 <dl>

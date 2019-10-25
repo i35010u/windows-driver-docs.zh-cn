@@ -4,12 +4,12 @@ description: 发送到设备驱动程序的大部分请求都打包在 I/O 请�
 ms.assetid: 8D55CB83-C50A-48B8-9379-ECF2CF30AEE5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0813e3d13bc4a74b2331dbd4965ab4fd60ea31e3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3b4acd32c0824b28c7c45101b6da0c57aedae67
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825182"
 ---
 # <a name="driver-stacks"></a>驱动程序堆栈
 
@@ -60,7 +60,7 @@ ms.locfileid: "67371987"
 
 显示特定技术或操作系统的特定组件或一部分的所有驱动程序的框图称为“技术驱动程序堆栈”  。 通常，会为技术驱动程序堆栈命名，如 USB 核心驱动程序堆栈、存储堆栈、1394 驱动程序堆栈以及音频驱动程序堆栈。
 
-**注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+**注意**  本主题中的 USB 核心框图显示了说明 USB 1.0 和 2.0 技术驱动程序堆栈的几种可能方法之一。 有关 USB 1.0、2.0 以及 3.0 驱动程序堆栈的正式图，请参阅 [USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
  
 

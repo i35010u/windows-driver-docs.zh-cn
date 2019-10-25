@@ -13,12 +13,12 @@ keywords:
 - 文件 WDK 头文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d517eb0cf67d274bbffd80403f7927400793a76
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2613202fb101bcd13bd6cbc2d76c1ab39b7766f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825155"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows 驱动程序工具包中的头文件
 
@@ -99,7 +99,7 @@ KeSetTargetProcessorDpcEx (
 #endif
 ```
 
-在该示例中，你可以看到仅在 Windows 7 和更高版本的 Windows 中才提供 [**KeSetTargetProcessorDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettargetprocessordpcex) 函数。
+在该示例中，你可以看到仅在 Windows 7 和更高版本的 Windows 中才提供 [**KeSetTargetProcessorDpcEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettargetprocessordpcex) 函数。
 
 此条件声明出现在 Winspool.h 中，该文件为可能由用户模式驱动程序包含的头文件。
 

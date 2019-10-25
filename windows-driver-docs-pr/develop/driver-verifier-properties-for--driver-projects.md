@@ -4,12 +4,12 @@ title: 驱动程序包项目的驱动程序验证程序属性
 description: 驱动程序验证程序是一款运行时验证工具，用于提高驱动程序测试的有效性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3537290ee321df517088dd181c556960f3d643
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: 42f53baf932735ec28168f437aeebad78c69eeac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020648"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839612"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的驱动程序验证程序属性
 
@@ -98,7 +98,7 @@ ms.locfileid: "70020648"
 
 -   [强制挂起 I/O 请求](https://docs.microsoft.com/windows-hardware/drivers/devtest/force-pending-i-o-requests)
 
-    当此选项处于活动状态时，驱动程序验证程序将检测驱动程序对 STATUS\_PENDING 返回值的响应，方法是为对 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) 的随机调用返回 STATUS\_PENDING。
+    当此选项处于活动状态时，驱动程序验证程序将检测驱动程序对 STATUS\_PENDING 返回值的响应，方法是为对 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 的随机调用返回 STATUS\_PENDING。
 
 -   [IRP 日志记录](https://docs.microsoft.com/windows-hardware/drivers/devtest/irp-logging)
 

@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4c8f9325984b275a24087811991074b7212ea6a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 185b2598c332c828495065ab43a3b312e83c3a20
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368029"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844796"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能
 
@@ -134,7 +134,7 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部菜单选项中，�
 
 #### <a name="debugging-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的调试
 
-* **新的调试器数据模型 API** – 现已推出一个新的面向对象的调试器数据模型接口，该接口可使用 dbgmodel.h 标头支持调试器自动化。 调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 可以在调试器的 dx 表达式计算器中以及从 JavaScript 扩展或 C++ 扩展访问写入到数据模型 API 的构造。 文档位置：[调试器数据模型 C++ 接口概述](debugger/data-model-cpp-overview.md)和 [dbgmodel.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/) 标头参考主题。
+* **新的调试器数据模型 API** – 现已推出一个新的面向对象的调试器数据模型接口，该接口可使用 dbgmodel.h 标头支持调试器自动化。 调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 可以在调试器的 dx 表达式计算器中以及从 JavaScript 扩展或 C++ 扩展访问写入到数据模型 API 的构造。 文档位置：[调试器数据模型 C++ 接口概述](debugger/data-model-cpp-overview.md)和 [dbgmodel.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/) 标头参考主题。
 
 * **IPv6** - 我们将在 KDNET 中添加对 IPv6 的支持。 为了给 IPv6 所需的较大标头留出空间，我们减少了数据包的有效负载大小。 因此，我们将会声明 KDNET 协议的新版本，使运行最新版调试器的主机电脑可用于调试仅支持 IPv4 的目标电脑。 [https://aka.ms/windbgpreview](https://aka.ms/windbgpreview) 上提供了支持 IPv6 的 WinDbg 预览版。 请关注“Windows 调试工具”博客来了解有关 KDNET IPv6 支持的最新信息，并参阅[手动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)了解更多详细信息。
 
@@ -264,10 +264,10 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部菜单选项中，�
 
 Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)。  相关的参考文档包括：
 
-* [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-po_fx_device_v3)
-* [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_down_callback)
-* [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-po_fx_directed_power_up_callback)
-* [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxcompletedirectedpowerdown) 函数
+* [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)
+* [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_down_callback)
+* [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)
+* [PoFxCompleteDirectedPowerDown](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxcompletedirectedpowerdown) 函数
 
 有关 DFx 测试的信息，请参阅以下页：
 
@@ -280,9 +280,9 @@ Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.micro
 [WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)引入了新的功能：*即时跟踪记录器*。 如果驱动程序启用了 WPP 跟踪和 WPP 记录器，则会自动启用跟踪日志记录，你无需启动或停止跟踪会话即可轻松查看消息。 若要对日志进行更细微的控制，WPP 记录器允许 KMDF 驱动程序创建和管理自定义缓冲区。
 
 * [用于日志跟踪的 WPP 记录器](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-wpp-recorder)
-* [WppRecorderLogGetDefault](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-imp_wpprecorderloggetdefault)
-* [WppRecorderLogCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)（仅限 KMDF）
-* [WppRecorderDumpLiveDriverData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
+* [WppRecorderLogGetDefault](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-imp_wpprecorderloggetdefault)
+* [WppRecorderLogCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderlogcreate)（仅限 KMDF）
+* [WppRecorderDumpLiveDriverData](https://docs.microsoft.com/windows-hardware/drivers/ddi/wpprecorder/nf-wpprecorder-wpprecorderdumplivedriverdata)
 
 ## <a name="whats-new-in-windows-10-version-1903-latest"></a>Windows 10 版本 1903（最新版）中的新增功能
 
@@ -294,7 +294,7 @@ Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.micro
 
 下面是 Windows 10 版本 1903 中新的和更新的音频功能列表：
 
-* 有关在新的 [eventdetectoroemadapter.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/eventdetectoroemadapter/) 标头中用于语音激活的音频 OEM 适配器的新参考主题。
+* 有关在新的 [eventdetectoroemadapter.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/) 标头中用于语音激活的音频 OEM 适配器的新参考主题。
 * 新的远场音频信息： 
     * [PKEY_Devices_AudioDevice_Microphone_IsFarField](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-devices-audiodevice-microphone-isfarfield)
     * [KSPROPSETID_InterleavedAudio](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-interleavedaudio)
@@ -317,15 +317,15 @@ Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.micro
 
 Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
-* **超级湿墨**：添加了新的 DDI 以实现前端缓冲渲染。 请参阅 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) 和 [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
+* **超级湿墨**：添加了新的 DDI 以实现前端缓冲渲染。 请参阅 [D3DWDDM2_6DDI_SCANOUT_FLAGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3dwddm2_6ddi_scanout_flags) 和 [PFND3DWDDM2_6DDI_PREPARE_SCANOUT_TRANSFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_6ddi_prepare_scanout_transformation)。
 
-* **可变速率着色**：在不同的渲染图像中以不同的速率分配渲染性能/算力。 请参阅 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) 和 [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
+* **可变速率着色**：在不同的渲染图像中以不同的速率分配渲染性能/算力。 请参阅 [PFND3D12DDI_RS_SET_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_rs_set_shading_rate_0062) 和 [D3D12DDI_SHADING_RATE_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_shading_rate_0062)。
 
-* **收集诊断信息**：允许 OS 从包括渲染和显示功能的图形适配器的驱动程序中收集专用数据。 请参阅 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
+* **收集诊断信息**：允许 OS 从包括渲染和显示功能的图形适配器的驱动程序中收集专用数据。 请参阅 [DXGKDDI_COLLECTDIAGNOSTICINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_collectdiagnosticinfo)。
 
-* **后台处理**：允许用户模式驱动程序表达所需的线程行为，并允许运行时控制/监视此行为。 用户模式驱动程序将运转后台线程，为线程分配尽量低的优先级，并依赖于 NT 计划程序来确保这些线程不会干扰关键路径线程（一般会成功）。 请参阅 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
+* **后台处理**：允许用户模式驱动程序表达所需的线程行为，并允许运行时控制/监视此行为。 用户模式驱动程序将运转后台线程，为线程分配尽量低的优先级，并依赖于 NT 计划程序来确保这些线程不会干扰关键路径线程（一般会成功）。 请参阅 [PFND3D12DDI_QUEUEPROCESSINGWORK_CB_0062](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_queueprocessingwork_cb_0062)。
 
-* **驱动程序热更新**：需要更新 OS 组件时，尽量减少服务器停机时间。 请参阅 [DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) 和 [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
+* **驱动程序热更新**：需要更新 OS 组件时，尽量减少服务器停机时间。 请参阅 [DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) 和 [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
 
 ### <a name="networking-1903"></a>网络
 
@@ -340,9 +340,9 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 支持此功能的新标头包括：
 
-* [Ring.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ring/index)
-* [Ringcollection.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ringcollection/index)
-* [Netringiterator.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/index)
+* [Ring.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/index)
+* [Ringcollection.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ringcollection/index)
+* [Netringiterator.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/index)
 
 下面是 NetAdapterCx 内容更新的列表：
 
@@ -353,18 +353,18 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 * 硬件卸载和数据包扩展 DDI 已重新组织为新标头：
 
-  * [Checksum.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksum/index)
-  * [Checksumtypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/checksumtypes/index)
-  * [Extension.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/extension/index)
-  * [Lso.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lso/index)
-  * [Lsotypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/lsotypes/index)
-  * [Rsc.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsc/index)
-  * [Rsctypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rsctypes/index)
+  * [Checksum.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/index)
+  * [Checksumtypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksumtypes/index)
+  * [Extension.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/extension/index)
+  * [Lso.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/index)
+  * [Lsotypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/index)
+  * [Rsc.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/index)
+  * [Rsctypes.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/index)
 
 * 基本网络数据结构、数据包和段已更新，并已放入新标头：
 
-  * [Packet.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/index)
-  * [Fragment.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fragment/index)
+  * [Packet.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/index)
+  * [Fragment.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/index)
 
 * 大幅修改了[传输和接收队列](https://docs.microsoft.com/windows-hardware/drivers/netcx/transmit-and-receive-queues)主题，以包含回调示例和数据包队列的主要操作。
 
@@ -389,11 +389,11 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 * 新的 USB 打印 IOCTL：
 
-  * [IOCTL_USBPRINT_GET_INTERFACE_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_interface_type)
-  * [IOCTL_USBPRINT_GET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_get_protocol)
-  * [IOCTL_USBPRINT_SET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbprint/ni-usbprint-ioctl_usbprint_set_protocol)
+  * [IOCTL_USBPRINT_GET_INTERFACE_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_get_interface_type)
+  * [IOCTL_USBPRINT_GET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_get_protocol)
+  * [IOCTL_USBPRINT_SET_PROTOCOL](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbprint/ni-usbprint-ioctl_usbprint_set_protocol)
 
-* 新的 **fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_printprovidor) 结构成员和更新的文档。
+* 新的 **fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_printprovidor) 结构成员和更新的文档。
 
 ### <a name="sensors-1903"></a>传感器
 
@@ -413,13 +413,13 @@ Windows 10 版本 1903 中添加了以下存储功能：
 
 Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请参阅以下页：
 
-* [**WheaAddErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheaadderrorsourcedevicedriver)
-* [**WheaReportHwErrorDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
-* [**WheaRemoveErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-whearemoveerrorsourcedevicedriver)
-* [**WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-whea_error_source_configuration_device_driver)
-* [*WHEA_ERROR_SOURCE_READY_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-_whea_error_source_ready_device_driver)
-* [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
-* [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
+* [**WheaAddErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-wheaadderrorsourcedevicedriver)
+* [**WheaReportHwErrorDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-wheareporthwerrordevicedriver)
+* [**WheaRemoveErrorSourceDeviceDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-whearemoveerrorsourcedevicedriver)
+* [**WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-whea_error_source_configuration_device_driver)
+* [*WHEA_ERROR_SOURCE_READY_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_ready_device_driver)
+* [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
+* [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
 
 ### <a name="wifi-1903"></a>Wi-Fi
 
@@ -433,7 +433,7 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 
 已更新 Windows 10 版本 1903 的以下主题：
 
-* [WDI_AUTH_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm) - 添加了对 WPA3-SAE 身份验证的支持
+* [WDI_AUTH_ALGORITHM](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm) - 添加了对 WPA3-SAE 身份验证的支持
 * [OID_WDI_TASK_P2P_SEND_REQUEST_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-request-action-frame) 和 [OID_WDI_TASK_P2P_SEND_RESPONSE_ACTION_FRAME](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-p2p-send-response-action-frame) - 对传出的点对点 (P2P) 动作帧添加了更多验证
 
 ## <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
@@ -444,7 +444,7 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 
 ### <a name="audio-1809"></a>音频
 
-现已发布有关新的 [sidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sidebandaudio/) 和 [usbsidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbsidebandaudio/) 标头的文档。
+现已发布有关新的 [sidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/sidebandaudio/) 和 [usbsidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbsidebandaudio/) 标头的文档。
 
 ### <a name="bluetooth-1809"></a>蓝牙
 
@@ -456,7 +456,7 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 
 Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
-* **光线跟踪**：为了支持硬件加速的光线跟踪，我们在开发 Direct3D API 的同时开发了新的 Direct3D DDI。 示例 DDI 包括：[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 有关光线跟踪的详细信息，请参阅[宣布推出 Microsoft DirectX 光线跟踪](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)。
+* **光线跟踪**：为了支持硬件加速的光线跟踪，我们在开发 Direct3D API 的同时开发了新的 Direct3D DDI。 示例 DDI 包括：[PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_build_raytracing_acceleration_structure_0054)、[PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_copy_raytracing_acceleration_structure_0054)。 有关光线跟踪的详细信息，请参阅[宣布推出 Microsoft DirectX 光线跟踪](https://devblogs.microsoft.com/directx/announcing-microsoft-directx-raytracing/)。
 
 * **通用驱动程序要求**：WDDM 2.5 驱动程序需要确保其 DirectX11 UMD、DirectX12 UMD、KMD 以及这些组件加载的其他任何 DLL 遵守通用 API。
 
@@ -469,7 +469,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
   * 在现有的驱动程序上运行新的 API。
   * 使用户模式驱动程序能够选择最佳的渲染路径，且不会严重降低 CPU 的性能。
 
-* **元命令**：元命令是代表 IHV 加速算法的 Direct3D12 对象。 它是对驱动程序实现的命令生成器的不透明引用。 元命令的更新包括描述符表绑定和纹理绑定。 请参阅 [D3D12DDI_META_COMMAND_PARAMETER_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ne-d3d12umddi-d3d12ddi_meta_command_parameter_type) 和 [D3D12DDIARG_META_COMMAND_PARAMETER_DESC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_meta_command_parameter_desc)。
+* **元命令**：元命令是代表 IHV 加速算法的 Direct3D12 对象。 它是对驱动程序实现的命令生成器的不透明引用。 元命令的更新包括描述符表绑定和纹理绑定。 请参阅 [D3D12DDI_META_COMMAND_PARAMETER_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ne-d3d12umddi-d3d12ddi_meta_command_parameter_type) 和 [D3D12DDIARG_META_COMMAND_PARAMETER_DESC](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/ns-d3d12umddi-d3d12ddiarg_meta_command_parameter_desc)。
 
   启用计算算法以使用纹理资源（重排内存）
   * 启用图形管道算法
@@ -479,18 +479,18 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
   1. 只能在预先混合的前提下，针对 SDR 内容应用此提升。 HDR 内容不受影响。 同时，对于大多数笔记本电脑/brightness3 方案，用户预期所有内容（SDR 和 HDR）可调整。
   2. 当 OS 中的 Brightness3 堆栈确定所需的尼特值时，并不知道已经应用了 SDR 提升。
 
-     驱动程序必须对来自 HDR Brightness3 DDI 的所需尼特值应用补偿。 由于图形驱动程序（和下游的 TCON 等）将会修改内容的像素值以获取所需的尼特值，因此，还应该对应用程序通过 [D3DDDI_HDR_METADATA_HDR10](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_hdr_metadata_hdr10) 提供的 HDR 内容元数据或者通过 [DxgkDdiSetTargetAdjustedColorimetry](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_settargetadjustedcolorimetry) 提供的 OS 默认值应用补偿。 由于图形驱动程序 (TCON) 负责修改像素数据，因此驱动程序需负责补偿 HDR 内容元数据。
+     驱动程序必须对来自 HDR Brightness3 DDI 的所需尼特值应用补偿。 由于图形驱动程序（和下游的 TCON 等）将会修改内容的像素值以获取所需的尼特值，因此，还应该对应用程序通过 [D3DDDI_HDR_METADATA_HDR10](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_hdr_metadata_hdr10) 提供的 HDR 内容元数据或者通过 [DxgkDdiSetTargetAdjustedColorimetry](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_settargetadjustedcolorimetry) 提供的 OS 默认值应用补偿。 由于图形驱动程序 (TCON) 负责修改像素数据，因此驱动程序需负责补偿 HDR 内容元数据。
 
 * **HDR 像素格式支持**：此内核模式设备驱动程序接口 (DDI) 更改包含在 WDDM 2.5 中，公开了驱动程序/设备报告的新功能，提供有关驱动程序/设备支持的 HDR 功能的信息。
 
-   目前，OS 根据从 [DdiUpdateMonitorLinkInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo) 读取的 [DXGK_MONITORLINKINFO_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_monitorlinkinfo_capabilities) 结构的 *HighColorSpace* 位确定驱动程序/设备是否支持 HDR。 *HighColorSpace* 位提供以 HDR 模式运行的驱动程序/链接/监视功能的组合。
+   目前，OS 根据从 [DdiUpdateMonitorLinkInfo](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updatemonitorlinkinfo) 读取的 [DXGK_MONITORLINKINFO_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_monitorlinkinfo_capabilities) 结构的 *HighColorSpace* 位确定驱动程序/设备是否支持 HDR。 *HighColorSpace* 位提供以 HDR 模式运行的驱动程序/链接/监视功能的组合。
 
     驱动程序报告的 HDR 功能现在包括驱动程序/设备级功能，可让 OS 知道驱动程序/设备是支持真正的 HDR（即 FP16HDR），还是仅支持受限形式的 HDR（即 ARGB10HDR），相关定义如下：
 
   * FP16HDR：驱动程序/设备可将 FP16 像素格式图面与 scRGB/CCCS 色彩空间结合使用，并在运行扫描输出管道期间应用 PQ/2084 编码和 BT.2020 原色，以将输出信号转换为 HDR10。
   * ARGB10HDR：驱动程序/设备可以采用已经过 PQ/2084 编码的 ARGB10 像素格式图面，并扫描输出 HDR10 信号。 驱动程序/设备无法处理上面定义的 FP16HDR，也无法处理 scRGB FP16 的扩展数值范围。
 
-    图形驱动程序只能报告 FP16HDR 或 ARGB10HDR 的支持，因为它们并不真正采用超集/子集配置；如果同时报告支持 FP16HDR 和 ARGB10HDR，则 OS 会使启动适配器失败。 请参阅 [DXGK_MONITORLINKINFO_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_dxgk_monitorlinkinfo_capabilities) 和 [_DXGK_DISPLAY_DRIVERCAPS_EXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_display_drivercaps_extension)。
+    图形驱动程序只能报告 FP16HDR 或 ARGB10HDR 的支持，因为它们并不真正采用超集/子集配置；如果同时报告支持 FP16HDR 和 ARGB10HDR，则 OS 会使启动适配器失败。 请参阅 [DXGK_MONITORLINKINFO_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgk_monitorlinkinfo_capabilities) 和 [_DXGK_DISPLAY_DRIVERCAPS_EXTENSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_display_drivercaps_extension)。
 
 * **SDR 白水平**：内核模式设备驱动程序接口的更改包括将新的参数添加到现有的 DDI，使图形驱动程序知道 OS 复合器对所有在 HDR 模式下显示的 SDR 内容应用的“SDR 白水平”值。 请参阅“_DXGK_COLORIMETRY”。
 
@@ -498,22 +498,22 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
 核心内核中添加了几个新的 API：
 
-* [RtlQueryRegistryValueWithFallback 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlqueryregistryvaluewithfallback)：在缺少主句柄的情况下使用回退句柄查询注册表值项。
-* [PsGetSiloContainerId 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetsilocontainerid)和 [PsGetThreadServerSilo 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetthreadserversilo)
-* 已将新的信息类添加到 [_FILE_INFORMATION_CLASS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_file_information_class)
+* [RtlQueryRegistryValueWithFallback 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlqueryregistryvaluewithfallback)：在缺少主句柄的情况下使用回退句柄查询注册表值项。
+* [PsGetSiloContainerId 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetsilocontainerid)和 [PsGetThreadServerSilo 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetthreadserversilo)
+* 已将新的信息类添加到 [_FILE_INFORMATION_CLASS](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_file_information_class)
   * FileLinkInformationExBypassAccessCheck
   * FileCaseSensitiveInformationForceAccessCheck
   * FileStorageReserveIdInformation
     * FileLinkInformationEx
-* 已将扩展的 NtCreateSection 版本添加到 [NtCreateSectionEx 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatesectionex)，以指示这实际上是一个 AWE 节。
+* 已将扩展的 NtCreateSection 版本添加到 [NtCreateSectionEx 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatesectionex)，以指示这实际上是一个 AWE 节。
 * 新的 Ex 宏授予对 Ntoskernel 导出的实际推送锁 API 的直接访问权限。
-  * [ExAcquirePushLockExclusive 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirepushlockexclusive)
-  * [ExAcquirePushLockShared 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exacquirepushlockshared)
-  * [ExInitializePushLock 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializepushlock)
-  * [ExReleasePushLockExclusive 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleasepushlockexclusive)
-  * [ExReleasePushLockShared 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleasepushlockshared)
-* [KzLowerIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kzlowerirql) 和 [KzRaiseIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kzraiseirql) 已移到面向 Windows 8 和更高版本的内核组件的受支持外部 forceinline，而不依赖于转发器来实例化内联函数的特殊用例。
-* 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅[官方规范](https://pcisig.com/sites/default/files/specification_documents/ECN_FPB_9_Feb_2017.pdf)。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/) 中声明了新的 API (_PCI_FPB_*)。
+  * [ExAcquirePushLockExclusive 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquirepushlockexclusive)
+  * [ExAcquirePushLockShared 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exacquirepushlockshared)
+  * [ExInitializePushLock 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepushlock)
+  * [ExReleasePushLockExclusive 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleasepushlockexclusive)
+  * [ExReleasePushLockShared 宏](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleasepushlockshared)
+* [KzLowerIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzlowerirql) 和 [KzRaiseIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzraiseirql) 已移到面向 Windows 8 和更高版本的内核组件的受支持外部 forceinline，而不依赖于转发器来实例化内联函数的特殊用例。
+* 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅[官方规范](https://pcisig.com/sites/default/files/specification_documents/ECN_FPB_9_Feb_2017.pdf)。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) 中声明了新的 API (_PCI_FPB_*)。
 
 ### <a name="networking-1809"></a>网络
 
@@ -568,7 +568,7 @@ MBBCx 电源管理方法已简化。
 如果硬件符合 UCSI 规范并且需要通过非 ACPI 传输进行通信，则你可以利用新的类扩展 &mdash; (UcmUcsiCx.sys)。 此扩展以传输无关的方式实现 UCSI 规范。 只需编写极少量的代码，驱动程序（即 UcmUcsiCx 的客户端）即可通过非 ACPI 传输来与 USB 类型 C 硬件通信。 本主题介绍 UCSI 类扩展提供的服务，以及客户端驱动程序的预期行为。
 
 * [编写 UCSI 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/write-a-ucsi-driver)
-* [UcmUcsiCx 类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+* [UcmUcsiCx 类扩展参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 * [UcmUcsiCx 客户端驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmUcsiAcpiSample)
 
 **使用面向 USB 类型 C 驱动程序开发人员的新功能可以监视 USB 类型 C 连接器的活动和/或参与 USB 类型 C 连接器的策略决策。**
@@ -576,17 +576,17 @@ MBBCx 电源管理方法已简化。
 例如，根据热量状况控制设备的充电，使设备不会过热。
 
 * [编写 USB 类型 C 策略管理器客户端驱动程序](https://www.microsoft.com/windows-hardware/drivers/usbcon/policy-manager-client)
-* [Usbpmapi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbpmapi/) 中提供了新的 API
+* [Usbpmapi.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbpmapi/) 中提供了新的 API
 
 **适用于模拟 USB 设备 (UDE) - 1.1 和 USB 主控制器 (Ucx) 1.5 的新版类扩展：**
 
 模拟设备现在可通过功能 (FLDR) 和平台 (PLDR) 重置来支持更好的重置和恢复。 客户端驱动程序现在可让系统知道设备需要重置以及重置的类型：功能或平台。
 
-* [UdecxWdfDeviceNeedsReset 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceneedsreset)
+* [UdecxWdfDeviceNeedsReset 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceneedsreset)
 
 主控制器还可通过以下方式选择 FLDR 和 PLDR 重置：
 
-* [EVT_UCX_USBDEVICE_DISABLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_disable)
+* [EVT_UCX_USBDEVICE_DISABLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_disable)
 
 ### <a name="wifi-1809"></a>Wi-Fi
 
@@ -682,19 +682,19 @@ Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信�
 
 有不同的位置用于存储特定于驱动程序内部组件或特定于设备的文件状态。 对于包含文件状态的驱动程序，可以确定写入到磁盘的状态是：
 
-* 驱动程序状态 ([IoGetDriverDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory))：可能正在控制多个设备的驱动程序的全局状态，还是
+* 驱动程序状态 ([IoGetDriverDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory))：可能正在控制多个设备的驱动程序的全局状态，还是
 
-* 设备状态 ([IoGetDeviceDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdevicedirectory))：特定于驱动程序控制的单个设备，其他设备可能对类似的状态使用不同的值。
+* 设备状态 ([IoGetDeviceDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory))：特定于驱动程序控制的单个设备，其他设备可能对类似的状态使用不同的值。
 
 现在，当功能驱动程序 (FDO) 的相应 PCIe 设备处于 D3Cold 状态时，可与其他电源协商。 这包括：
 
-* 辅助电源要求 [D3COLD_REQUEST_AUX_POWER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-d3cold_request_aux_power)。
-* 核心电源导轨 [D3COLD_REQUEST_CORE_POWER_RAIL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-d3cold_request_core_power_rail)。
-* 在从 PCI Express 下游端口收到消息，到相应终结点或 PCI Express 下游端口在系统处于 ACPI 工作状态时转换为 D3cold 期间平台将 PERST# 断言到插槽的固定延迟时间要求。 请参阅 [D3COLD_REQUEST_PERST_DELAY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-d3cold_request_perst_delay)。
+* 辅助电源要求 [D3COLD_REQUEST_AUX_POWER](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_aux_power)。
+* 核心电源导轨 [D3COLD_REQUEST_CORE_POWER_RAIL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_core_power_rail)。
+* 在从 PCI Express 下游端口收到消息，到相应终结点或 PCI Express 下游端口在系统处于 ACPI 工作状态时转换为 D3cold 期间平台将 PERST# 断言到插槽的固定延迟时间要求。 请参阅 [D3COLD_REQUEST_PERST_DELAY](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_perst_delay)。
 
-NT 服务以及内核模式和用户模式驱动程序可以使用 [RtlRaiseCustomSystemEventTrigger](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlraisecustomsystemeventtrigger) 函数针对设备引发自定义触发器。 驱动程序开发人员拥有的自定义触发器通知系统事件代理使用自定义触发器标识符标识的触发器启动关联的后台任务。
+NT 服务以及内核模式和用户模式驱动程序可以使用 [RtlRaiseCustomSystemEventTrigger](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlraisecustomsystemeventtrigger) 函数针对设备引发自定义触发器。 驱动程序开发人员拥有的自定义触发器通知系统事件代理使用自定义触发器标识符标识的触发器启动关联的后台任务。
 
-现在，可以在激发通知时注册活动会话更改通知并获取回调。 作为此通知的一部分，某些数据还会与调用方共享。 这些关联的数据通过 [PO_SPR_ACTIVE_SESSION_DATA 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntpoapi/ns-ntpoapi-_po_spr_active_session_data)传送。
+现在，可以在激发通知时注册活动会话更改通知并获取回调。 作为此通知的一部分，某些数据还会与调用方共享。 这些关联的数据通过 [PO_SPR_ACTIVE_SESSION_DATA 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntpoapi/ns-ntpoapi-_po_spr_active_session_data)传送。
 
 ### <a name="networking-1803"></a>网络
 
@@ -740,11 +740,11 @@ NDIS 的更新包括：
 
 ### <a name="sensors-1803"></a>传感器
 
-添加了 [SENSOR_CONNECTION_TYPES 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sensorsdef/ne-sensorsdef-sensor_connection_types)用于澄清连接类型属性。
+添加了 [SENSOR_CONNECTION_TYPES 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_connection_types)用于澄清连接类型属性。
 
 ### <a name="usb-1803"></a>USB
 
-添加了新的 API 用于模拟共享连接器的分离。 如果 USB 设备已附加到主机，或者在删除堆栈时包含共享连接器，则你可以模拟分离事件。 此时已禁用所有附加/分离通知机制。 有关详细信息，请参阅 [UfxDeviceNotifyFinalExit 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ufxclient/nf-ufxclient-ufxdevicenotifyfinalexit)。
+添加了新的 API 用于模拟共享连接器的分离。 如果 USB 设备已附加到主机，或者在删除堆栈时包含共享连接器，则你可以模拟分离事件。 此时已禁用所有附加/分离通知机制。 有关详细信息，请参阅 [UfxDeviceNotifyFinalExit 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicenotifyfinalexit)。
 
 ### <a name="wifi-1803"></a>Wi-Fi
 
@@ -772,26 +772,26 @@ Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源�
 
 下面是用于支持输入/输出缓冲区的新高级配置和电源接口 (ACPI) DDI 列表。
 
-* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1)
-* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1_ex)
-* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v2)
-* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v2_ex)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v2)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v2_ex)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1_ex)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v2)
-* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v2_ex)
-* [ACPI_EVAL_INPUT_BUFFER_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1)
-* [ACPI_EVAL_INPUT_BUFFER_V1_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1_ex)
-* [ACPI_EVAL_INPUT_BUFFER_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v2)
-* [ACPI_EVAL_INPUT_BUFFER_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v2_ex)
-* [ACPI_EVAL_OUTPUT_BUFFER_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)
-* [ACPI_EVAL_OUTPUT_BUFFER_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v2)
-* [ACPI_METHOD_ARGUMENT_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
-* [ACPI_METHOD_ARGUMENT_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_method_argument_v2)
-* [GIC_ITS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpitabl/ns-acpitabl-_gic_its)
+* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1)
+* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v1_ex)
+* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v2)
+* [ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_complex_v2_ex)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v1)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v2)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_integer_v2_ex)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v1_ex)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v2)
+* [ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_simple_string_v2_ex)
+* [ACPI_EVAL_INPUT_BUFFER_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1)
+* [ACPI_EVAL_INPUT_BUFFER_V1_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v1_ex)
+* [ACPI_EVAL_INPUT_BUFFER_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v2)
+* [ACPI_EVAL_INPUT_BUFFER_V2_EX](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_input_buffer_v2_ex)
+* [ACPI_EVAL_OUTPUT_BUFFER_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v1)
+* [ACPI_EVAL_OUTPUT_BUFFER_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_eval_output_buffer_v2)
+* [ACPI_METHOD_ARGUMENT_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)
+* [ACPI_METHOD_ARGUMENT_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v2)
+* [GIC_ITS](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpitabl/ns-acpitabl-_gic_its)
 
 ### <a name="biometric-1709"></a>生物识别
 
@@ -813,29 +813,29 @@ Windows 生物识别驱动程序有新的签名要求。 有关详细信息，�
 Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬件的支持。 有关详细信息，请参阅：
 
 * [硬件通知支持](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/hardware-notifications-support)
-* [硬件通知参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_gpiobtn/)
+* [硬件通知参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gpiobtn/)
 
 ### <a name="kernel-1709"></a>Windows 内核
 
 在 Windows 10 版本 1709 中，为驱动程序的 Windows 内核添加了多个新例程。
 
 * ExGetFirmwareType 和 ExIsSoftBoot &ndash; 执行库支持例程。
-* [PsSetLoadImageNotifyRoutineEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-pssetloadimagenotifyroutineex) &ndash; 针对所有可执行映像的扩展映像通知例程，包括其体系结构与操作系统本机体系结构不同的映像。
-* [MmMapMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapmdl) &ndash; [内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)例程，用于将内存描述符列表 (MDL) 描述的物理页面映射到系统虚拟地址空间。
-* [PoFxSetTargetDripsDevicePowerState ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; 一个 PoFx 例程，用于向电源管理器告知 DRIPS 的设备目标电源状态。
-* 下面是 [ZwSetInformationThread](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-zwsetinformationthread) 例程的与处理策略相关的新选项列表：
+* [PsSetLoadImageNotifyRoutineEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetloadimagenotifyroutineex) &ndash; 针对所有可执行映像的扩展映像通知例程，包括其体系结构与操作系统本机体系结构不同的映像。
+* [MmMapMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapmdl) &ndash; [内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)例程，用于将内存描述符列表 (MDL) 描述的物理页面映射到系统虚拟地址空间。
+* [PoFxSetTargetDripsDevicePowerState ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; 一个 PoFx 例程，用于向电源管理器告知 DRIPS 的设备目标电源状态。
+* 下面是 [ZwSetInformationThread](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwsetinformationthread) 例程的与处理策略相关的新选项列表：
 
-  * [PROCESS_MITIGATION_CHILD_PROCESS_POLICY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_process_mitigation_child_process_policy)
-  * [PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_process_mitigation_payload_restriction_policy)
+  * [PROCESS_MITIGATION_CHILD_PROCESS_POLICY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_process_mitigation_child_process_policy)
+  * [PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_process_mitigation_payload_restriction_policy)
   * PROCESS_READWRITEVM_LOGGING_INFORMATION
 
-* [PsGetServerSiloActiveConsoleId](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetserversiloactiveconsoleid) 和 [PsGetParentSilo](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetparentsilo) &ndash; 新的接收器 API，用于获取有关计算机上创建和销毁的服务器接收器的信息。
+* [PsGetServerSiloActiveConsoleId](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetserversiloactiveconsoleid) 和 [PsGetParentSilo](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-psgetparentsilo) &ndash; 新的接收器 API，用于获取有关计算机上创建和销毁的服务器接收器的信息。
 * 下面是新的 RTL 函数列表，通过这些函数可以使用关联矢量来引用事件和生成的日志，以进行诊断。
-  * [CORRELATION_VECTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-correlation_vector)
-  * [RtlExtendCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlextendcorrelationvector)
-  * [RtlIncrementCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlincrementcorrelationvector)
-  * [RtlInitializeCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlinitializecorrelationvector)
-  * [RtlValidateCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-rtlvalidatecorrelationvector)
+  * [CORRELATION_VECTOR](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-correlation_vector)
+  * [RtlExtendCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlextendcorrelationvector)
+  * [RtlIncrementCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlincrementcorrelationvector)
+  * [RtlInitializeCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlinitializecorrelationvector)
+  * [RtlValidateCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlvalidatecorrelationvector)
 
 ### <a name="mobilebroadband-1709"></a>移动宽带
 
@@ -867,13 +867,13 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
 
 ### <a name="pci-1709"></a>虚拟化 PCI
 
-提供新的编程接口用于编写符合 PCI Express 单根 I/O 虚拟化 (SR-IOV) 规范的设备的物理功能驱动程序。 接口在 Pcivirt.h 中声明。 有关详细信息，请参阅 [PCI 虚拟化](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pcivirt/)。
+提供新的编程接口用于编写符合 PCI Express 单根 I/O 虚拟化 (SR-IOV) 规范的设备的物理功能驱动程序。 接口在 Pcivirt.h 中声明。 有关详细信息，请参阅 [PCI 虚拟化](https://docs.microsoft.com/windows-hardware/drivers/ddi/pcivirt/)。
 
 ### <a name="pwm-1709"></a>脉宽调制 (PWM) 控制器
 
 在 Windows 10 版本 1709 中，若要提供对已映射到 SoC 地址空间的 SoC 和内存中的脉宽调制 (PWM) 控制器的访问，需要编写一个内核模式驱动程序。 有关详细信息，请参阅 [SoC 中 PWM 模块的 PWM 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/spb/pulse-width-controller%20driver?branch=spb)。
 
-若要分析和验证引脚路径和提取引脚编号，内核模型驱动程序应使用 [PwmParsePinPath](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pwmutil/nf-pwmutil-pwmparsepinpath)。
+若要分析和验证引脚路径和提取引脚编号，内核模型驱动程序应使用 [PwmParsePinPath](https://docs.microsoft.com/windows-hardware/drivers/ddi/pwmutil/nf-pwmutil-pwmparsepinpath)。
 
 应用可以通过发送 [PWM IOCTL](https://docs.microsoft.com/windows-hardware/drivers/spb/pulse-width-controller%20driver#pwm-ioctl-requests) 请求，将请求发送到控制器驱动程序。
 
@@ -901,22 +901,22 @@ Posix 更新包括新的 **delete** 和 **rename** 函数。
 
 #### <a name="media-agnostic-usb-ma-usb-protocol"></a>不区分媒体的 USB (MA-USB) 协议
 
-USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通过非 USB 物理媒体（例如 Wi-Fi）发送 USB 数据包。 为了实现此功能，我们已发布新的编程接口。 新的 DDI 可让驱动程序确定与 [_URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_get_isoch_pipe_transfer_path_delays) 关联的延迟。 可以通过生成新的 URB 请求来检索该信息。
+USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通过非 USB 物理媒体（例如 Wi-Fi）发送 USB 数据包。 为了实现此功能，我们已发布新的编程接口。 新的 DDI 可让驱动程序确定与 [_URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_get_isoch_pipe_transfer_path_delays) 关联的延迟。 可以通过生成新的 URB 请求来检索该信息。
 有关此新增功能的信息，请参阅以下主题：
 
 * [不区分媒体的 (MA-USB) 协议的客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-client-drivers-for-ma-usb)
-* [_URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_get_isoch_pipe_transfer_path_delays)
+* [_URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_get_isoch_pipe_transfer_path_delays)
 * [USB 请求块 (URB)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/communicating-with-a-usb-device)
 
 若要支持 MA-USB，主控制器驱动程序必须通过实现特定的回调函数来提供传输特征。 下表显示了支持 MA-USB 的回调函数和结构。
 
 | 回调函数 | 结构 |
 | ----- | ----- |
-| [EVT_UCX_USBDEVICE_GET_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_get_characteristic) | [UCX_ENDPOINT_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_isoch_transfer_path_delays) |
-| [EVT_UCX_USBDEVICE_RESUME](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_resume) | [UCX_CONTROLLER_ENDPOINT_CHARACTERISTIC_PRIORITY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/ne-ucxendpoint-_ucx_endpoint_characteristic_priority) |
-| [EVT_UCX_USBDEVICE_SUSPEND](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_suspend) | [UCX_ENDPOINT_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_characteristic) |
-| [EVT_UCX_ENDPOINT_GET_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_get_isoch_transfer_path_delays) | [UCX_ENDPOINT_CHARACTERISTIC_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/ne-ucxendpoint-_ucx_endpoint_characteristic_type) |
-| [EVT_UCX_ENDPOINT_SET_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_set_characteristic) | [UCX_ENDPOINT_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_isoch_transfer_path_delays) |
+| [EVT_UCX_USBDEVICE_GET_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_get_characteristic) | [UCX_ENDPOINT_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_isoch_transfer_path_delays) |
+| [EVT_UCX_USBDEVICE_RESUME](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_resume) | [UCX_CONTROLLER_ENDPOINT_CHARACTERISTIC_PRIORITY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ne-ucxendpoint-_ucx_endpoint_characteristic_priority) |
+| [EVT_UCX_USBDEVICE_SUSPEND](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_suspend) | [UCX_ENDPOINT_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_characteristic) |
+| [EVT_UCX_ENDPOINT_GET_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_get_isoch_transfer_path_delays) | [UCX_ENDPOINT_CHARACTERISTIC_TYPE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ne-ucxendpoint-_ucx_endpoint_characteristic_type) |
+| [EVT_UCX_ENDPOINT_SET_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/nc-ucxendpoint-evt_ucx_endpoint_set_characteristic) | [UCX_ENDPOINT_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_isoch_transfer_path_delays) |
 
 #### <a name="synchronized-system-qpc-with-usb-frame-and-microframes"></a>系统 QPC 与 USB 帧和微帧同步
 
@@ -924,9 +924,9 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 
 仅当调用方在主控制器中启用了该功能时，才可以检索此信息。 若要启用此功能，主控制器驱动程序必须实现以下回调函数。
 
-* [EVT_UCX_CONTROLLER_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_get_frame_number_and_qpc_for_time_sync)
-* [EVT_UCX_CONTROLLER_START_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_start_tracking_for_time_sync)
-* [EVT_UCX_CONTROLLER_STOP_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_stop_tracking_for_time_sync)
+* [EVT_UCX_CONTROLLER_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_get_frame_number_and_qpc_for_time_sync)
+* [EVT_UCX_CONTROLLER_START_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_start_tracking_for_time_sync)
+* [EVT_UCX_CONTROLLER_STOP_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxcontroller/nc-ucxcontroller-evt_ucx_controller_stop_tracking_for_time_sync)
 
 应用程序可以使用以下 API 来启用/禁用该功能以及检索信息：
 
@@ -936,24 +936,24 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 
 其他驱动程序可以发送以下 IOCTL 请求来启用/禁用该功能以及检索信息：
 
-* [IOCTL_USB_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_frame_number_and_qpc_for_time_sync)
-* [IOCTL_USB_START_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_start_tracking_for_time_sync)
-* [IOCTL_USB_STOP_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_stop_tracking_for_time_sync)
+* [IOCTL_USB_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_get_frame_number_and_qpc_for_time_sync)
+* [IOCTL_USB_START_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_start_tracking_for_time_sync)
+* [IOCTL_USB_STOP_TRACKING_FOR_TIME_SYNC](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_stop_tracking_for_time_sync)
 
 下面是与 USB 帧和微帧同步的系统 OPC 的支持结构：
 
-* [USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_start_tracking_for_time_sync_information)
-* [USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_stop_tracking_for_time_sync_information)
-* [USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_frame_number_and_qpc_for_time_sync_information)
+* [USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ns-usbioctl-_usb_start_tracking_for_time_sync_information)
+* [USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ns-usbioctl-_usb_stop_tracking_for_time_sync_information)
+* [USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ns-usbioctl-_usb_frame_number_and_qpc_for_time_sync_information)
 
 #### <a name="ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed"></a>IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED
 
-[IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmtcpciportcontrollerrequests/ni-ucmtcpciportcontrollerrequests-ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed) 请求是 USB 类型 C 端口控制器接口框架扩展中的新请求。 此请求向客户端驱动程序告知 DisplayPort 连接的显示输出状态已更改。
+[IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmtcpciportcontrollerrequests/ni-ucmtcpciportcontrollerrequests-ioctl_ucmtcpci_port_controller_displayport_display_out_status_changed) 请求是 USB 类型 C 端口控制器接口框架扩展中的新请求。 此请求向客户端驱动程序告知 DisplayPort 连接的显示输出状态已更改。
 
 下面是支持 IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED 请求的结构：
 
-* [UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED_IN_PARAMS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmtcpciportcontrollerrequests/ns-ucmtcpciportcontrollerrequests-_ucmtcpci_port_controller_displayport_display_out_status_changed_in_params)
-* [UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmtcpciportcontrollerrequests/ne-ucmtcpciportcontrollerrequests-_ucmtcpci_port_controller_displayport_display_out_status)
+* [UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED_IN_PARAMS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmtcpciportcontrollerrequests/ns-ucmtcpciportcontrollerrequests-_ucmtcpci_port_controller_displayport_display_out_status_changed_in_params)
+* [UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmtcpciportcontrollerrequests/ne-ucmtcpciportcontrollerrequests-_ucmtcpci_port_controller_displayport_display_out_status)
 
 ## <a name="whats-new-in-windows-10-version-1703"></a>Windows 10 版本 1703 中的新增功能
 
@@ -969,7 +969,7 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 * 有关支持 APO 模块通信发现的新 DDI 和属性参考主题：
   * [KSPROPSETID_AudioModule](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audiomodule) - 用于定义特定于音频模块的三个属性的新 KS 属性集。
   * [KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command) 属性 - 可让音频模块客户端发送自定义命令以查询和设置音频模块的参数。
-  * [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nn-portcls-iportclsnotifications) - 新的端口类通知，用于提供微型端口的通知帮助器来支持音频模块通信。
+  * [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsnotifications) - 新的端口类通知，用于提供微型端口的通知帮助器来支持音频模块通信。
 
 ### <a name="bluetooth-1703"></a>蓝牙
 
@@ -1009,17 +1009,17 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 
 ### <a name="networking-1703"></a>网络
 
-Windows 10 版本 1703 中的网络驱动程序开发更新包括名为“流套接字”的新套接字类型，该类型支持 Windows 上的 Linux 网络应用程序。 有关详细信息，请参阅 [**Winsock 内核**](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)。 新的函数和结构包括 [WskConnectEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_connect_ex)、[WskListen](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_listen)、[WSK_CLIENT_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_client_stream_dispatch) 和 [WSK_PROVIDER_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_stream_dispatch)
+Windows 10 版本 1703 中的网络驱动程序开发更新包括名为“流套接字”的新套接字类型，该类型支持 Windows 上的 Linux 网络应用程序。 有关详细信息，请参阅 [**Winsock 内核**](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)。 新的函数和结构包括 [WskConnectEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_connect_ex)、[WskListen](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_listen)、[WSK_CLIENT_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_stream_dispatch) 和 [WSK_PROVIDER_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_stream_dispatch)
 
 ### <a name="pos-1703"></a>POS
 
 下面是 Windows 10 版本 1703 中 POS 的新主题列表：
 
 * [蓝牙条形码扫描仪 UUID](https://docs.microsoft.com/windows-hardware/drivers/pos/barcode-scanner-bluetooth-service-uuids)
-* [BarcodeSymbologyDecodeLenthType 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicecommontypes/ne-pointofservicecommontypes-_barcodesymbologydecodelengthtype)
-* [BarcodeSymbologyAttributesData 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicecommontypes/ns-pointofservicecommontypes-_barcodesymbologyattributesdata)
+* [BarcodeSymbologyDecodeLenthType 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicecommontypes/ne-pointofservicecommontypes-_barcodesymbologydecodelengthtype)
+* [BarcodeSymbologyAttributesData 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicecommontypes/ns-pointofservicecommontypes-_barcodesymbologyattributesdata)
 
-[BarcodeSymbology 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pointofservicecommontypes/ne-pointofservicecommontypes-_barcodesymbology)有新的 Gs1DWCode 符号。
+[BarcodeSymbology 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicecommontypes/ne-pointofservicecommontypes-_barcodesymbology)有新的 Gs1DWCode 符号。
 
 ### <a name="usb-1703"></a>USB
 
@@ -1039,7 +1039,7 @@ Windows 10 版本 1703 提供新的类扩展 (UcmTcpciCx.sys) 用于支持通用
 * 可以更好地支持 Cortana 体验的结构和属性：
   * [**KSPROPERTY\_AUDIO\_MIC\_SENSITIVITY**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-sensitivity)
   * [**KSPROPERTY\_AUDIO\_MIC\_SNR**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mic-snr)
-  * [**KSAUDIO\_PACKETSIZE\_CONSTRAINTS2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2)
+  * [**KSAUDIO\_PACKETSIZE\_CONSTRAINTS2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2)
 * [PKEY\_AudioEndpoint\_Default\_VolumeInDb](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-audioendpoint-default-volumeindb) &ndash; 一个 INF 键，将相应的增益或衰减应用到音频信号时，该键可为用户提供更好的体验。
 
 ### <a name="camera-1607"></a>相机
@@ -1054,14 +1054,14 @@ Windows 10 版本 1607 中的相机驱动程序开发包括新的和更新的主
 
 Windows 10 版本 1607 中的定位驱动程序开发包括以下新的 GNSS 痕迹导航 DDI：
 
-* [**GNSS\_BREADCRUMB\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ns-gnssdriver-gnss_breadcrumb_list)
-* [**GNSS\_BREADCRUMB\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ns-gnssdriver-gnss_breadcrumb_v1)
-* [**GNSS\_BREADCRUMBING\_ALERT\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ns-gnssdriver-gnss_breadcrumbing_alert_data)
-* [**GNSS\_BREADCRUMBING\_PARAM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ns-gnssdriver-gnss_breadcrumbing_param)
-* [**IOCTL\_GNSS\_LISTEN\_BREADCRUMBING\_ALERT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_breadcrumbing_alert)
-* [**IOCTL\_GNSS\_POP\_BREADCRUMBS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_pop_breadcrumbs)
-* [**IOCTL\_GNSS\_START\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_start_breadcrumbing)
-* [**IOCTL\_GNSS\_STOP\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_breadcrumbing)
+* [**GNSS\_BREADCRUMB\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumb_list)
+* [**GNSS\_BREADCRUMB\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumb_v1)
+* [**GNSS\_BREADCRUMBING\_ALERT\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumbing_alert_data)
+* [**GNSS\_BREADCRUMBING\_PARAM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumbing_param)
+* [**IOCTL\_GNSS\_LISTEN\_BREADCRUMBING\_ALERT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_breadcrumbing_alert)
+* [**IOCTL\_GNSS\_POP\_BREADCRUMBS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_pop_breadcrumbs)
+* [**IOCTL\_GNSS\_START\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_breadcrumbing)
+* [**IOCTL\_GNSS\_STOP\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_breadcrumbing)
 
 ### <a name="print-1607"></a>打印
 
@@ -1106,7 +1106,7 @@ Windows 10 的[手机网络体系结构和实现](https://docs.microsoft.com/win
 
 ### <a name="display-1507"></a>显示
 
-Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_display/)已融合到 Windows 10 的统一模型。
+Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/_display/)已融合到 Windows 10 的统一模型。
 
 实现了新的内存模型，可为每个 GPU 提供一个进程虚拟地址空间。 对于需要视频内存直接寻址的图形硬件，WDDMv2 仍然支持此寻址方式，但这种用例被视为已过时。 IHV 有望开发出支持虚拟寻址的新硬件。 为了支持这种新的内存模型，我们对 DDI 做了重大更改。
 
@@ -1115,15 +1115,15 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 新的虚拟 HID 框架 (VHF) 消除了编写内核模式传输微型驱动程序的需要。 该框架包括 Microsoft 提供的静态库 (Vhfkm.lib)，该库可公开驱动程序使用的编程元素。 此外，它还包括 Microsoft 提供的现成驱动程序 (Vhf.sys)，该驱动程序可以枚举一个或多个子设备，并继续生成虚拟的[人机接口设备](https://docs.microsoft.com/windows-hardware/drivers/hid/) (HID) 树。
 
 * [使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序](https://docs.microsoft.com/windows-hardware/drivers/hid/virtual-hid-framework--vhf-)
-* [虚拟 HID 框架](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/vhf/)
+* [虚拟 HID 框架](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/)
 
 ### <a name="location-1507"></a>定位
 
-全球导航卫星系统 (GNSS) 驱动程序 DDI 已融合到 [GNSS 通用 Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_gnss/) (UMDF 2.0)。
+全球导航卫星系统 (GNSS) 驱动程序 DDI 已融合到 [GNSS 通用 Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gnss/) (UMDF 2.0)。
 
 ### <a name="near-field-communication"></a>近场通信 (NFC)
 
-[NFC DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_nfpdrivers/) 包含新的融合驱动程序模型用于支持移动和桌面解决方案。
+[NFC DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/_nfpdrivers/) 包含新的融合驱动程序模型用于支持移动和桌面解决方案。
 
 [NFC 类扩展](https://docs.microsoft.com/windows-hardware/drivers/nfc/nfc-class-extension-)：推出了新的 NFC 类扩展驱动程序。 该 NFC 类扩展驱动程序实现 Windows 定义的所有 DDI，以便与 NFC 控制器、安全元素和远程 RF 终结点交互。
 
@@ -1137,10 +1137,10 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 
 * [V4 驱动程序清单](https://docs.microsoft.com/windows-hardware/drivers/print/v4-driver-manifest) &ndash; 提供有关对 v4 打印驱动程序清单所做的更改，以支持 PWG 光栅渲染筛选器的信息，包括更新的 DriverConfig 和 DriverRender 指令，以及更新的示例清单。
 * [WS-Discovery 移动打印支持](https://docs.microsoft.com/windows-hardware/drivers/print/ws-discovery-mobile-printing-support) &ndash; 描述在 Windows 10 移动设备上通过 Windows 10 移动版兼容打印机进行移动打印所要满足的 WS-Discovery 要求。
-* [**IXpsRasterizationFactory2 接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory2) &ndash; 支持使用 XPS 光栅化服务执行从 XPS 到 PWG 光栅的打印机内容转换。 PWG 光栅支持非矩形 DPI。
+* [**IXpsRasterizationFactory2 接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory2) &ndash; 支持使用 XPS 光栅化服务执行从 XPS 到 PWG 光栅的打印机内容转换。 PWG 光栅支持非矩形 DPI。
 * [**打印管道属性包**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag) &ndash; 新的 PrintDeviceCapabilities 属性，可让 XPS 渲染筛选器从打印筛选管道属性包中检索新的 PrintDeviceCapabilities XML 文件。
 * [GetWithArgument 请求和响应架构](https://docs.microsoft.com/windows-hardware/drivers/print/getwithargument-request-and-response-schemas) &ndash; 使用 GetWithArgument 请求和响应双向通信架构的正式定义与示例提供移动打印支持。
-* [**IBidiSpl::SendRecv 方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl-sendrecv) &ndash; 使用 GetWithArgument 双向架构值添加移动打印支持。
+* [**IBidiSpl::SendRecv 方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl-sendrecv) &ndash; 使用 GetWithArgument 双向架构值添加移动打印支持。
 
 ### <a name="smart-card"></a>智能卡
 
@@ -1158,7 +1158,7 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 
 ### <a name="system-supplied-driver-interfaces"></a>系统提供的驱动程序接口
 
-[GUID\_DEVICE\_RESET\_INTERFACE\_STANDARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_reset_interface_standard) 接口定义功能驱动程序尝试重置和恢复有故障设备的标准方式。
+[GUID\_DEVICE\_RESET\_INTERFACE\_STANDARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_reset_interface_standard) 接口定义功能驱动程序尝试重置和恢复有故障设备的标准方式。
 
 ### <a name="usb-1507"></a>USB
 

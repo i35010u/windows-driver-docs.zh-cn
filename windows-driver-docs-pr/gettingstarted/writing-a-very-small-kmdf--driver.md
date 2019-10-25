@@ -6,12 +6,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d41c513bf9ad3a7ae05b15c59028c85af430e77e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d43b1c8593473a5724208048d9acfa78803fe95
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359287"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825164"
 ---
 # <a name="write-a-universal-hello-world-driver-kmdf"></a>编写通用 Hello World 驱动程序 (KMDF)
 
@@ -66,7 +66,7 @@ ms.locfileid: "67359287"
     #include <wdf.h>
     ```
 
-    [Ntddk.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk) 包含所有驱动程序的核心 Windows 内核定义，而 [Wdf.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_wdf) 包含基于 Windows 驱动程序框架 (WDF) 的驱动程序的定义。 
+    [Ntddk.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk) 包含所有驱动程序的核心 Windows 内核定义，而 [Wdf.h](https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf) 包含基于 Windows 驱动程序框架 (WDF) 的驱动程序的定义。 
 
 2. 接下来，为要使用的两个回调提供声明：
 
@@ -110,7 +110,7 @@ ms.locfileid: "67359287"
     }
     ```
 
-    [*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize) 是所有驱动程序的入口点，就像 `Main()` 适用于许多用户模式应用程序一样。 *DriverEntry* 的任务是初始化驱动程序范围的结构和资源。 在此示例中，你针对 *DriverEntry* 输出了“Hello World”，将驱动程序对象配置为注册 *EvtDeviceAdd* 回调的入口点，然后创建了驱动程序对象并返回。 
+    [*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 是所有驱动程序的入口点，就像 `Main()` 适用于许多用户模式应用程序一样。 *DriverEntry* 的任务是初始化驱动程序范围的结构和资源。 在此示例中，你针对 *DriverEntry* 输出了“Hello World”，将驱动程序对象配置为注册 *EvtDeviceAdd* 回调的入口点，然后创建了驱动程序对象并返回。 
 
     驱动程序对象充当你可能在驱动程序中创建的所有其他框架对象的父对象，这些框架对象包括设备对象、I/O 队列、计时器、旋转锁等。 有关框架对象的详细信息，请参阅[框架对象简介](../wdf/introduction-to-framework-objects.md)。
 
@@ -147,7 +147,7 @@ ms.locfileid: "67359287"
     }
     ```
 
-    系统在检测到你的设备已到达时，会调用 [*EvtDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)。 它的任务是初始化该设备的结构和资源。 在此示例中，你仅针对 *EvtDeviceAdd* 输出了“Hello World”消息、创建了设备对象并返回。 在你编写的其他驱动程序中，可以为硬件创建 I/O 队列，为特定于设备的信息设置设备上下文  存储空间，或执行准备设备所需的其他任务。
+    系统在检测到你的设备已到达时，会调用 [*EvtDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)。 它的任务是初始化该设备的结构和资源。 在此示例中，你仅针对 *EvtDeviceAdd* 输出了“Hello World”消息、创建了设备对象并返回。 在你编写的其他驱动程序中，可以为硬件创建 I/O 队列，为特定于设备的信息设置设备上下文  存储空间，或执行准备设备所需的其他任务。
 
     > [!TIP]
     > 对于设备添加回调，请注意以驱动程序名称为前缀对回调命名的方式 (*KmdfHelloWorld*EvtDeviceAdd)。 通常，我们建议以这种方式命名驱动程序功能，以区别于其他驱动程序的功能。 *DriverEntry* 是完全应该这样命名的唯一一项。

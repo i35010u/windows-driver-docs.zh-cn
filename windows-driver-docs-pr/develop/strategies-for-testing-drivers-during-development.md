@@ -4,12 +4,12 @@ title: 测试驱动程序代码和驱动程序包的相关建议。
 description: 应在何时开始测试？ 了解驱动程序的要求后，便可以立即开始设计测试用例来测试是否已实现了这些关键要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2273cafe071233a29c0af92a2728a78c2be8c7f9
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: d87219f107954890359a79e613281d014498edd7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020633"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840322"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧
 
@@ -38,7 +38,7 @@ ms.locfileid: "70020633"
 
 -   签署驱动程序可以推进驱动程序的安装和测试，如[在开发和测试期间签署驱动程序](https://docs.microsoft.com/windows-hardware/drivers/install/signing-drivers-during-development-and-test)中所述。
 
--   运行作为 WDK 中提供的设备基础功能测试的一部分包含的 **DriverInstall** 测试。 请参阅[如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)和[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。 **DriverInstall** 测试可以在驱动程序部署到测试计算机后运行。 可以将 **DriverInstall** 测试添加到驱动程序测试组。 **DriverInstall** 测试显示在 All Tests\\Basic\\Device Fundamentals\\DriverInstall 下的**驱动程序测试类别**中。 还可以使用 [**IWDTFDriverPackageAction2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2) 接口编写自己的测试。
+-   运行作为 WDK 中提供的设备基础功能测试的一部分包含的 **DriverInstall** 测试。 请参阅[如何使用 Visual Studio 在运行时测试驱动程序](testing-a-driver-at-runtime.md)和[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。 **DriverInstall** 测试可以在驱动程序部署到测试计算机后运行。 可以将 **DriverInstall** 测试添加到驱动程序测试组。 **DriverInstall** 测试显示在 All Tests\\Basic\\Device Fundamentals\\DriverInstall 下的**驱动程序测试类别**中。 还可以使用 [**IWDTFDriverPackageAction2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2) 接口编写自己的测试。
 
 -   通过使用设备管理器查看有关驱动程序和设备的系统信息并通过参考 SetupAPI 日志来[解决设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/troubleshooting-device-and-driver-installations)问题。 SetupAPI 日志包含设备或驱动程序安装期间所发生的操作序列的相关信息。
 

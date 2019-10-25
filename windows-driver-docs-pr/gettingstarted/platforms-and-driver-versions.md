@@ -4,12 +4,12 @@ description: 为不同版本的 Windows 编写驱动程序
 ms.assetid: 7519235c-46c5-49aa-8b11-9e9ac5a51026
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32b135f00ba40f3d8cbf267bff7c19fb3973b50
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 107cc59327605255a735af304d8637f93cfcb5c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363674"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72825151"
 ---
 # <a name="writing-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 编写驱动程序
 
@@ -40,7 +40,7 @@ ms.locfileid: "67363674"
 
 ### <a name="span-iddetermining_the_windows_versionspanspan-iddetermining_the_windows_versionspandetermining-the-windows-version"></a><span id="determining_the_windows_version"></span><span id="DETERMINING_THE_WINDOWS_VERSION"></span>确定 Windows 版本
 
-[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) 为驱动程序可以在运行时用于确定特定版本的 Windows 提供的功能是否可用的函数。 该函数的原型如下所示：
+[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 为驱动程序可以在运行时用于确定特定版本的 Windows 提供的功能是否可用的函数。 该函数的原型如下所示：
 
 ```cpp
 BOOLEAN RtlIsNtDdiVersionAvailable(IN ULONG Version)
@@ -48,9 +48,9 @@ BOOLEAN RtlIsNtDdiVersionAvailable(IN ULONG Version)
 
 在此原型中，*Version* 是一个值，指示 Windows DDI 的所需版本。 此值必须为 sdkddkver.h 中定义的 DDI 版本常量之一，如 NTDDI\_WIN8 或 NTDDI\_WIN7。
 
-当调用程序运行在与 *Version* 指定的相同的 Windows 版本上或比之更高的版本上时，[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) 会返回 TRUE。
+当调用程序运行在与 *Version* 指定的相同的 Windows 版本上或比之更高的版本上时，[**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 会返回 TRUE。
 
-驱动程序还可以通过调用 [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisservicepackversioninstalled) 函数来检查是否安装了特定的 Service Pack。 该函数的原型如下所示：
+驱动程序还可以通过调用 [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 函数来检查是否安装了特定的 Service Pack。 该函数的原型如下所示：
 
 ```cpp
 BOOLEAN RtlIsServicePackVersionInstalled(IN ULONG Version)
@@ -58,11 +58,11 @@ BOOLEAN RtlIsServicePackVersionInstalled(IN ULONG Version)
 
 在此原型中，*Version* 为一个值，指示所需的 Windows 版本和 Service Pack。 此值必须为 sdkddkver.h 中定义的 DDI 版本常量之一，如 NTDDI\_WS08SP3。
 
-请注意，仅当操作系统版本与指定版本完全匹配时，[**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisservicepackversioninstalled) 才会返回 TRUE。 因此，如果驱动程序不是在 Windows Server 2008 SP4 上运行，则将 *Version* 设置为 NTDDI\_WS08SP3 的 **RtlIsServicePackVersionInstalled** 调用会失败。
+请注意，仅当操作系统版本与指定版本完全匹配时，[**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 才会返回 TRUE。 因此，如果驱动程序不是在 Windows Server 2008 SP4 上运行，则将 *Version* 设置为 NTDDI\_WS08SP3 的 **RtlIsServicePackVersionInstalled** 调用会失败。
 
 ### <a name="span-idconditionally_calling_windows_version_dependent_functionsspanspan-idconditionally_calling_windows_version_dependent_functionsspanconditionally-calling-windows-version-dependent-functions"></a><span id="conditionally_calling_windows_version_dependent_functions"></span><span id="CONDITIONALLY_CALLING_WINDOWS_VERSION_DEPENDENT_FUNCTIONS"></span>有条件地调用与 Windows 版本相关的函数
 
-在驱动程序确定计算机上可用的特定操作系统版本后，该驱动程序可以使用 [**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemroutineaddress) 函数动态查找例程并通过指针调用该例程。 Windows 7 及更高操作系统版本上提供了此函数。
+在驱动程序确定计算机上可用的特定操作系统版本后，该驱动程序可以使用 [**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemroutineaddress) 函数动态查找例程并通过指针调用该例程。 Windows 7 及更高操作系统版本上提供了此函数。
 
 **注意**  若要帮助保留键入检查和防止出现无意识的错误，应创建映射原始函数类型的 typedef。
 
@@ -117,9 +117,9 @@ PAISQSL AcquireInStackQueued = NULL;
 }
 ```
 
-在此示例中，驱动程序调用 [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) 以确定驱动程序是否在 Windows 7 或更高版本上运行。 如果版本为 Windows 7 或更高版本，驱动程序将会调用 [**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmgetsystemroutineaddress) 来获取指向 [**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 函数的指针并将此指针存储在名为 `AcquireInStackQueued` 的变量（该变量声明为 PAISQSL 类型）中。
+在此示例中，驱动程序调用 [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 以确定驱动程序是否在 Windows 7 或更高版本上运行。 如果版本为 Windows 7 或更高版本，驱动程序将会调用 [**MmGetSystemRoutineAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmgetsystemroutineaddress) 来获取指向 [**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 函数的指针并将此指针存储在名为 `AcquireInStackQueued` 的变量（该变量声明为 PAISQSL 类型）中。
 
-随后，当驱动程序必须获取旋转锁时，它会检查是否收到了指向 [**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 函数的指针。 如果驱动程序已收到此指针，则驱动程序会使用该指针调用 **KeAcquireInStackQueuedSpinLock**。 如果指向 **KeAcquireInStackQueuedSpinLock** 的指针为 Null，则驱动程序会使用 [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock) 来获取旋转锁。
+随后，当驱动程序必须获取旋转锁时，它会检查是否收到了指向 [**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) 函数的指针。 如果驱动程序已收到此指针，则驱动程序会使用该指针调用 **KeAcquireInStackQueuedSpinLock**。 如果指向 **KeAcquireInStackQueuedSpinLock** 的指针为 Null，则驱动程序会使用 [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) 来获取旋转锁。
 
 
 

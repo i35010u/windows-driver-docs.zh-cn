@@ -1,12 +1,12 @@
 ---
 title: 驱动程序包隔离
 ms.date: 10/01/2019
-ms.openlocfilehash: d68677c90cec4c2aa630f8595d2f272c355d8dd8
-ms.sourcegitcommit: 0b38c5075d85ede328bf9901b0d36e84ec0e3d66
+ms.openlocfilehash: 1da8fc165779b46c9bbbb05466cb9442ef0095f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71830024"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839616"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -26,9 +26,9 @@ ms.locfileid: "71830024"
 
 所有独立驱动程序包都将其驱动程序包文件保留在驱动程序存储中。 这意味着，它们在其 INF 中指定 [DIRID 13](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids) 以在安装时指定驱动程序包文件的位置  。
 
-WDM 或 KMDF 驱动程序从 DriverStore 中运行并需要从其驱动程序包访问其他文件，它可以使用 [IoQueryFullDriverPath](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioqueryfulldriverpath) 来查找它的路径、获取加载它的目录路径以及查找与该路径相关的配置文件  。
+WDM 或 KMDF 驱动程序从 DriverStore 中运行并需要从其驱动程序包访问其他文件，它可以使用 [IoQueryFullDriverPath](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 来查找它的路径、获取加载它的目录路径以及查找与该路径相关的配置文件  。
 
-或者，在 Windows 10 版本 1803 及更高版本中，使用 DriverDirectoryImage 作为目录类型来调用 [IoGetDriverDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory)，以获取加载该驱动程序的目录路径   。
+或者，在 Windows 10 版本 1803 及更高版本中，使用 DriverDirectoryImage 作为目录类型来调用 [IoGetDriverDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory)，以获取加载该驱动程序的目录路径   。
 
 对于 INF 负载的文件，INF 中该文件的 [SourceDisksFiles](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section) 条目中列出的 subdir 必须与 INF 中该文件的 [DestinationDirs](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section) 条目中列出的 subdir 匹配    。
 
@@ -51,7 +51,7 @@ WDM 或 KMDF 驱动程序从 DriverStore 中运行并需要从其驱动程序包
 
 这些接口或状态（取决于使用的共享方法）需要进行正确的版本控制，以便拥有该状态的驱动程序可以独立于访问该状态的其他驱动程序而获得服务。 驱动程序供应商不能同时依赖于正在获得服务且版本相同的两个驱动程序。  
 
-因为控制接口的设备和驱动程序变化不定，所以驱动程序和应用程序应该避免在组件启动时调用 [IoGetDeviceInterfaces](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceinterfaces) 来获取已启用接口的列表  。
+因为控制接口的设备和驱动程序变化不定，所以驱动程序和应用程序应该避免在组件启动时调用 [IoGetDeviceInterfaces](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) 来获取已启用接口的列表  。
 
 最佳做法是注册设备接口到达或删除的通知，然后调用适当的函数来获取计算机上现有的已启用接口的列表。
 
@@ -80,8 +80,8 @@ WDM 或 KMDF 驱动程序从 DriverStore 中运行并需要从其驱动程序包
 
 独立驱动程序包和用户模式组件通常使用两个位置在注册表中存储设备状态。 它们是用于设备的硬件密钥（设备密钥）和用于设备的软件密钥（驱动程序密钥）   。 若要检索这些注册表位置的句柄，请根据使用的平台使用以下选项之一：
 
-* [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
-* [**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)、[**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) (WDF)
+* [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
+* [**WdfDeviceOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopenregistrykey)、[**WdfFdoInitOpenRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitopenregistrykey) (WDF)
 * [**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key)（用户模式代码）
 * [**INF AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) 指令，使用引用自 [INF DDInstall](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section) 部分或 [DDInstall.HW](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section) 部分的 add-registry-section 中的 HKR reg-root 条目，如下所示  ：
 
@@ -98,7 +98,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 若要读取和写入设备接口注册表状态，请根据使用的平台使用以下选项之一：
 
-* [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) (WDM)
+* [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) (WDM)
 * [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keya)（用户模式代码）
 * [INF AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) 指令，使用引用自 [add-interface-section](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive) 部分的 add-registry-section 中的 HKR reg-root 条目  
 
@@ -124,16 +124,16 @@ HKR, Parameters, ExampleValue, 0x00010001, 1
 
 若要访问该状态的位置，请根据平台使用下列函数之一：
 
-* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
-* [**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
+* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
+* [**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
 * **GetServiceRegistryStateKey**（Win32 服务）
 
 ### <a name="device-file-state"></a>设备文件状态
 
 如果需要写入与设备相关的文件，这些文件应相对于通过 OS API 提供的句柄或文件路径进行存储。 例如，特定于该设备的配置文件就是一个应存储在此处的文件类型。
 
-* [**IoGetDeviceDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdevicedirectory) (WDM)
-* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring) (WDF)
+* [**IoGetDeviceDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory) (WDM)
+* [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring) (WDF)
 
 ### <a name="service-file-state"></a>服务文件状态
 
@@ -141,9 +141,9 @@ Win32 和驱动程序服务均读取和写入关于本身的状态。
 
 若要访问服务自己的内部状态值，该服务需使用下列选项之一： 
 
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (WDM)
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
-* [**WdfDriverRetrieveDriverDataDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
+* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (WDM)
+* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
+* [**WdfDriverRetrieveDriverDataDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
 * **GetServiceDirectory**（Win32 服务）
 
 若要与其他组件共享服务的内部状态，请使用受控制的、受版本控制的接口，而不是直接注册表或文件读取。

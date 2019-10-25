@@ -4,12 +4,12 @@ description: Microsoft Windows 包含适用于许多设备类型的内置驱动�
 ms.assetid: B08994F9-9E60-4C49-BD5C-F5C128075D33
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cebfaae84f8fe6e9a3e37691786e9c79230a8ff9
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: ff119ad2519b741d0af87982c10203474e20f2c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394127"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829119"
 ---
 # <a name="do-you-need-to-write-a-driver"></a>是否需要编写驱动程序？
 
@@ -19,7 +19,7 @@ Microsoft Windows 包含适用于许多设备类型的内置驱动程序。 如�
 ## <a name="span-idbuilt-in_drivers_for_usb_devicesspanspan-idbuilt-in_drivers_for_usb_devicesspanspan-idbuilt-in_drivers_for_usb_devicesspanbuilt-in-drivers-for-usb-devices"></a><span id="Built-in_drivers_for_USB_devices"></span><span id="built-in_drivers_for_usb_devices"></span><span id="BUILT-IN_DRIVERS_FOR_USB_DEVICES"></span>适用于 USB 设备的内置驱动程序
 
 
-如果你的设备属于由 USB 设备工作组 (DWG) 定义的设备类，则可能已经存在适用于该设备的 Windows USB 类驱动程序。 有关详细信息，请参阅[支持的 USB 设备类的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+如果你的设备属于由 USB 设备工作组 (DWG) 定义的设备类，则可能已经存在适用于该设备的 Windows USB 类驱动程序。 有关详细信息，请参阅[支持的 USB 设备类的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 ## <a name="span-idbuilt-in_drivers_for_other_devicesspanspan-idbuilt-in_drivers_for_other_devicesspanspan-idbuilt-in_drivers_for_other_devicesspanbuilt-in-drivers-for-other-devices"></a><span id="Built-in_drivers_for_other_devices"></span><span id="built-in_drivers_for_other_devices"></span><span id="BUILT-IN_DRIVERS_FOR_OTHER_DEVICES"></span>适用于其他设备的内置驱动程序
 

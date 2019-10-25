@@ -4,12 +4,12 @@ description: Sharks Cove 是硬件开发板，可用于开发 Windows 硬件和�
 ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d8f91d435020e2314a071c71f959df24c6e8e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 05949ca727d68333f60016df1ef8e06797a5f980
+ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385172"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72681935"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
 
@@ -473,10 +473,7 @@ GpioInt(... "\\_SB.GPO2") {0x17}
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-
-[SharksCove.org](https://go.microsoft.com/fwlink/p?linkid=403167)
-
-[用于所有驱动程序开发人员的概念](https://go.microsoft.com/fwlink/p/?linkid=399233)
+[适用于所有驱动程序开发人员的概念](https://go.microsoft.com/fwlink/p/?linkid=399233)
 
 [开发、测试以及部署驱动程序](https://go.microsoft.com/fwlink/p/?linkid=399234)
 

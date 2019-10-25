@@ -4,12 +4,12 @@ title: 为不同版本的 Windows 生成驱动程序
 description: 如果你在为不同版本的 Windows 编写驱动程序，以下部分提供了一些有关如何使用 Windows 驱动程序工具包 (WDK) 8.1 或 WDK 8、Visual Studio 和 MSBuild 生成这些驱动程序的指南。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ed6f801a077a40912921455f3c904721f09397
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d00ea320f46d52efb357a2c28489b7788dbdba4b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370355"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829903"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 生成驱动程序
 
@@ -27,7 +27,7 @@ ms.locfileid: "67370355"
 
 -   如果希望内核模式驱动程序在多个版本的 Windows 上运行，并且动态确定驱动程序可用的功能，则应使用最新版本操作系统的生成配置生成驱动程序。 例如，如果希望驱动程序支持从 Windows 7 开始的所有 Windows 版本，但在驱动程序运行于 Windows 8.1 或更高版本的操作系统时使用 Windows 8.1 率先推出的某些功能，则应指定 Windows 8.1 (**Win8.1**) 为目标配置。
 
--   使用 [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisntddiversionavailable) 和 [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlisservicepackversioninstalled) 函数来确定你的驱动程序在运行时可用的 Windows 版本。 有关详细信息，请参阅[为不同版本的 Windows 编写驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)。
+-   使用 [**RtlIsNtDdiVersionAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisntddiversionavailable) 和 [**RtlIsServicePackVersionInstalled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlisservicepackversioninstalled) 函数来确定你的驱动程序在运行时可用的 Windows 版本。 有关详细信息，请参阅[为不同版本的 Windows 编写驱动程序](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/platforms-and-driver-versions)。
 -   创建驱动程序必须按条件调用的函数的指针原型。
 -   如果你有 WDM 驱动程序或非 KMDF 内核模式驱动程序并且针对 Windows 8.1 或 Windows 8，但同时希望在较早版本的 Windows 上运行，则需要重写链接器 **$(KernelBufferOverflowLib)** 选项。 在选择 Windows 8 或 Windows 8.1 配置时，驱动程序将与 BufferOverflowFastFailK.lib 链接，较早的 Windows 版本中没有这一项。 对于 Windows 7 和 Vista，则必须改为与 BufferOverflowK.lib 链接。
 
