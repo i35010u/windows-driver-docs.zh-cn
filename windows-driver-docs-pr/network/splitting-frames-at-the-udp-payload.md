@@ -3,16 +3,16 @@ title: 在 UDP 有效负载中拆分帧
 description: 在 UDP 有效负载中拆分帧
 ms.assetid: 10116077-89d2-4d07-9807-46b6281e9851
 keywords:
-- 以太网帧拆分 WDK 网络，UDP 有效负载
-- UDP 负载 WDK 标头数据拆分
+- 用于拆分 WDK 网络、UDP 有效负载的以太网帧
+- UDP 负载 WDK 标头-数据拆分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 950e148c4279c58af75519c85e06f9d8290f6fe6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a72cd08e833641f95e76db34205fb6cbe20bf50
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383614"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841863"
 ---
 # <a name="splitting-frames-at-the-udp-payload"></a>在 UDP 有效负载中拆分帧
 
@@ -20,13 +20,13 @@ ms.locfileid: "67383614"
 
 
 
-支持标头数据拆分的 NDIS 微型端口适配器必须支持 UDP 帧拆分帧的上限层协议标头。 但是，NIC 必须首先尝试拆分 UDP 负载的开始处的帧。
+支持标头数据拆分的 NDIS 微型端口适配器必须支持 UDP 帧的高层协议标头上的拆分帧。 但是，NIC 必须首先尝试将帧拆分为 UDP 有效负载的开头。
 
-NIC 可能不能拆分 UDP 框架，如果生成的标头缓冲区的长度大于最大标题大小更大长度。 当超过最大标头大小拆分帧的详细信息，请参阅[分配标头缓冲区](allocating-the-header-buffer.md)。
+如果生成的标头缓冲区的长度大于最大标头大小，则 NIC 可能无法拆分 UDP 帧。 有关超出最大标头大小时拆分框架的详细信息，请参阅[分配标头缓冲区](allocating-the-header-buffer.md)。
 
-如果 NIC 不能拆分的 UDP 负载在帧，NIC 应拆分上限层协议标头的开始处的帧，或不应拆分帧。 有关拆分上限层协议标头的开始处的帧的详细信息，请参阅[Upper 层协议标头的开始处拆分帧](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)。
+如果 NIC 无法拆分 UDP 有效负载中的帧，则 NIC 会将帧拆分为上层协议标头的开头，否则不应拆分该帧。 有关在上层协议标头开头拆分框架的详细信息，请参阅[在上层协议标头的开头拆分帧](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)。
 
-如果标头数据拆分提供程序将在所指示的 UDP 负载帧拆分[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_IS\_UDP 和 NDIS\_NBL\_标志\_拆分\_在\_上部\_层\_协议\_有效负载标记中的设置**NblFlags**成员。 有关详细信息，有关设置标头数据拆分 NET\_缓冲区\_标志列表，请参阅[设置 NET\_缓冲区\_列表信息](setting-net-buffer-list-information.md)。
+如果标头-数据拆分提供程序在 UDP 负载处拆分了帧，则指定的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_\_UDP，NDIS\_NBL\_标志\_在**NblFlags**成员中设置\_协议\_负载标志的\_层\_上，拆分\_。 有关设置标头-数据拆分 NET\_BUFFER\_列表标志的详细信息，请参阅[设置 NET\_BUFFER\_列表信息](setting-net-buffer-list-information.md)。
 
  
 

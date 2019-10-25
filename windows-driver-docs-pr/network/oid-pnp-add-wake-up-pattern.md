@@ -5,36 +5,36 @@ ms.assetid: 96b95d1d-d557-4012-b95f-b1c43e2c590f
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_PNP_ADD_WAKE_UP_PATTERN 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d59e684e90a178ebc722c6875c02bcf05bc9f4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41425f07f43e4d8f17747f1ffc98cfa817c6574d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357728"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844044"
 ---
-# <a name="oidpnpaddwakeuppattern"></a>OID\_PNP\_ADD\_WAKE\_UP\_PATTERN
+# <a name="oid_pnp_add_wake_up_pattern"></a>OID\_PNP\_添加\_唤醒\_向上\_模式
 
 
 
 
 
-OID\_PNP\_添加\_唤醒\_向上\_模式 OID 由发送协议驱动程序微型端口驱动程序以指定唤醒模式。 由描述唤醒模式，以及其掩码[ **NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)结构。
+OID\_PNP\_ADD\_唤醒\_\_将协议驱动程序发送到微型端口驱动程序以指定唤醒模式。 唤醒模式及其掩码由[**NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)结构进行描述。
 
-一种协议，使模式匹配唤醒的微型端口驱动程序 (请参阅[OID\_PNP\_启用\_唤醒\_向上](oid-pnp-enable-wake-up.md)) 使用 OID\_PNP\_添加\_唤醒\_向上\_模式来指定唤醒模式。 可以存储唤醒模式，在主机内存或网络适配器，具体取决于网络适配器的功能上。
+一种协议，用于启用微型端口驱动程序的模式匹配唤醒（请参阅[oid\_pnp\_启用\_唤醒\_](oid-pnp-enable-wake-up.md)）使用 OID\_PNP\_添加\_唤醒\_UP\_模式来指定唤醒模式。 唤醒模式可以存储在主机内存或网络适配器上，具体取决于网络适配器的功能。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含以下：
+[ **\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含以下内容：
 
--   [ **NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)结构，它提供有关模式和其掩码的信息。
+-   [**NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)结构，该结构提供有关该模式及其掩码的信息。
 
--   一个掩码，指示应与模式中的相应字节进行比较的传入数据包的字节数。 掩码开头的第一个字节的数据包。 掩码紧随[ **NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)结构*InformationBuffer*。 有关此掩码的工作原理的详细信息，请参阅[网络设备类电源管理的参考规范](https://go.microsoft.com/fwlink/p/?linkid=27255)。
+-   一个掩码，用于指示应将传入数据包的哪些字节与模式中的相应字节进行比较。 掩码以数据包的第一个字节开始。 掩码紧跟在*InformationBuffer*中的[**NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)结构。 有关此掩码如何工作的详细信息，请参阅[网络设备类电源管理参考规范](https://go.microsoft.com/fwlink/p/?linkid=27255)。
 
--   唤醒模式，其开始**PatternOffset**从一开始的字节*InformationBuffer*。 有关唤醒模式的详细信息，请参阅[网络设备类电源管理的参考规范](https://go.microsoft.com/fwlink/p/?linkid=27255)。
+-   唤醒模式，从*InformationBuffer*的开头开始**PatternOffset**字节。 有关唤醒模式的详细信息，请参阅[网络设备类电源管理参考规范](https://go.microsoft.com/fwlink/p/?linkid=27255)。
 
-唤醒模式微型端口驱动程序可以接受从一种协议的数量可能依赖的资源，例如微型端口驱动程序已为此类模式或可用存储的网络适配器分配的主机内存可用性。 如果微型端口驱动程序不能添加唤醒模式由于资源不足，微型端口驱动程序返回**NDIS\_状态\_资源**OID 响应\_PNP\_添加\_唤醒\_向上\_模式。
+微型端口驱动程序可以接受的唤醒模式数可能取决于资源的可用性，例如，小型端口驱动程序为此类模式分配的主机内存或网络适配器中的可用存储。 如果微型端口驱动程序无法添加唤醒模式，原因是资源不足，微型端口驱动程序会返回**NDIS\_状态\_资源**来响应 OID\_PNP\_添加\_唤醒\_UP\_模式。
 
-如果协议驱动程序将尝试添加的重复模式，应返回微型端口驱动程序**NDIS\_状态\_无效\_数据**响应 OID\_PNP\_添加\_唤醒\_向上\_模式。
+如果协议驱动程序尝试添加重复模式，微型端口驱动程序应将**NDIS\_状态返回\_无效的\_数据**以响应 OID\_PNP\_\_\_\_模式添加唤醒。
 
-在其中收到此 OID 请求时的上边缘的中间驱动程序必须始终将对基础微型端口驱动程序的请求传播通过调用[ **NdisRequest** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff554681(v=vs.85))或[ **NdisCoRequest**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff551877(v=vs.85))。
+在其中，上边缘接收此 OID 请求的中间驱动程序必须始终通过调用[**NdisRequest**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff554681(v=vs.85))或[**NdisCoRequest**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff551877(v=vs.85))将该请求传播到基础微型端口驱动程序。
 
 <a name="requirements"></a>要求
 ------------
@@ -46,22 +46,22 @@ OID\_PNP\_添加\_唤醒\_向上\_模式 OID 由发送协议驱动程序微型�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>NDIS 6.0 和 NDIS 6.1 支持。 NDIS 6.20 和更高版本，使用<a href="oid-pm-add-wol-pattern.md" data-raw-source="[OID_PM_ADD_WOL_PATTERN](oid-pm-add-wol-pattern.md)">OID_PM_ADD_WOL_PATTERN</a>相反。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.0 和 NDIS 6.1 中受支持。 对于 NDIS 6.20 和更高版本，请改用<a href="oid-pm-add-wol-pattern.md" data-raw-source="[OID_PM_ADD_WOL_PATTERN](oid-pm-add-wol-pattern.md)">OID_PM_ADD_WOL_PATTERN</a> 。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_PM\_PACKET\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)
+[**NDIS\_PM\_数据包\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_packet_pattern)
 
-[OID\_PM\_ADD\_WOL\_PATTERN](oid-pm-add-wol-pattern.md)
+[OID\_PM\_添加\_WOL\_模式](oid-pm-add-wol-pattern.md)
 
  
 

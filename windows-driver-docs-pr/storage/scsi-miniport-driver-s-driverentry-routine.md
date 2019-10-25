@@ -6,18 +6,18 @@ keywords:
 - DriverEntry WDK 存储
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7974ccb2076eb603466d357878ab92c192506f
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 5eba3fdcc63b2efe61b6a69ce76db741f0461bfe
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842680"
 ---
 # <a name="scsi-miniport-drivers-driverentry-routine"></a>SCSI 微型端口驱动程序的 DriverEntry 例程
 
 **DriverEntry**例程是大多数 Microsoft Windows 内核模式驱动程序和每个 SCSI 微型端口驱动程序的初始入口点。 使用 PVOID 类型的两个输入参数调用微型端口驱动程序的[**DriverEntry**](driverentry-of-scsi-miniport-driver.md)例程，并且必须执行以下操作：
 
-1. 使用零初始化堆栈上的[HW_INITIALIZATION_DATA （SCSI）](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)结构。
+1. 使用零初始化堆栈上的[HW_INITIALIZATION_DATA （SCSI）](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_hw_initialization_data)结构。
 
 2. 将**HwInitializationDataSize**成员设置为**sizeof**（HW_INITIALIZATION_DATA）。
 
@@ -37,4 +37,4 @@ ms.locfileid: "72252461"
 
 4. 在旧式微型端口驱动程序中，设置任何驱动程序确定的、微型端口驱动程序的*HwScsiFindAdapter*例程将使用的上下文数据。
 
-5. 调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize) ，并在**DriverEntry**例程中输入的指针、已填充 HW_INITIALIZATION_DATA 的地址和上下文数据的地址（如果有）。
+5. 调用[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize) ，并在**DriverEntry**例程中输入的指针、已填充 HW_INITIALIZATION_DATA 的地址和上下文数据的地址（如果有）。

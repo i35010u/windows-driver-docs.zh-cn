@@ -1,53 +1,53 @@
 ---
 title: NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE
-description: 支持 NDIS 服务质量 (QoS) 的微型端口驱动程序发出 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 状态指示其操作的 NDIS QoS 参数是解决第一次或更高版本更改时。
+description: 支持 NDIS 服务质量（QoS）的微型端口驱动程序会在其操作 NDIS QoS 参数首次解析或稍后更改时发出 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 状态指示。
 ms.assetid: 15D2B139-1AEA-4252-8599-0EA4ED2E3733
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 网络驱动程序
+- NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 1258a6f692f5d4052d69fa615d1230c83dcb0761
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9e537e9f05b1705aa252503b880e5ec670e1a7e1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368512"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843530"
 ---
-# <a name="ndisstatusqosoperationalparameterschange"></a>NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改
+# <a name="ndis_status_qos_operational_parameters_change"></a>NDIS\_状态\_QOS\_操作\_参数\_更改
 
 
-支持 NDIS 服务质量 (QoS) 问题的微型端口驱动程序**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**状态指示当其操作的 NDIS QoS 参数是第一次解决或以后更改。 微型端口驱动程序使用这些操作的参数，以执行 QoS 数据包传输配置网络适配器。
+支持 NDIS 服务质量（QoS）的微型端口驱动程序发出**ndis\_状态\_QoS\_操作\_参数**，在解析其操作 NDIS QoS 参数时\_更改状态指示第一次或以后更改。 微型端口驱动程序用这些操作参数配置网络适配器，以执行 QoS 数据包传输。
 
-当微型端口驱动程序将此状态指示时，它会设置**StatusBuffer**的成员[ **NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)为指向的结构[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构。 该驱动程序初始化其操作的 NDIS QoS 参数与此结构。
+当微型端口驱动程序发出此状态指示时，它会将[**ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员设置为指向[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。 驱动程序用其操作的 NDIS QoS 参数初始化此结构。
 
-**请注意**  此 NDIS 状态指示是仅对支持 IEEE 802.1 数据中心桥接 (DCB) 接口的微型端口驱动程序有效。
+**请注意**  此 NDIS 状态指示仅对支持 IEEE 802.1 数据中心桥接（DCB）接口的微型端口驱动程序有效。
 
  
 
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序问题**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**状态指示在以下情况下：
+在以下条件下，微型端口驱动程序会在 **\_QOS\_操作\_参数\_更改**状态指示中发出 NDIS\_状态：
 
--   微型端口驱动程序必须发出**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**状态指示后它最初已解析其操作的 NDIS QoS 参数并使用它们配置网络适配器。
+-   微型端口驱动程序必须在 **\_QOS\_运行\_参数时发出 NDIS\_状态，\_更改**状态指示，之后它最初解析了其操作 NDIS QOS 参数并配置了网络与它们一起进行适配器。
 
--   在此初始状态指示后, 微型端口驱动程序必须发出**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**状态指示时其操作的 NDIS QoS 参数已发生更改。 这可以是本地或远程 NDIS QoS 参数发生更改时。
+-   在此初始状态指示后，微型端口驱动程序必须在运行的 NDIS QoS 参数发生更改时 **\_QOS\_操作\_\_参数发出 NDIS\_状态**。 如果更改了本地或远程 NDIS QoS 参数，就会发生这种情况。
 
--   微型端口驱动程序从 Windows 操作系统获取本地的 NDIS QoS 参数，当数据中心桥接 (DCB) 组件 (Msdcb.sys) 发出的对象标识符 (OID) 方法请求[OID\_QOS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)。 此 OID 请求包含[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，它指定本地的 NDIS QoS 参数。
+-   当数据中心桥接（DCB）组件（Msdcb）发出 OID 的对象标识符（OID）方法请求[\_QoS\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)时，微型端口驱动程序将从 Windows 操作系统获取本地 NDIS QoS 参数。 此 OID 请求包含一个[**NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，用于指定本地 NDIS QOS 参数。
 
-    可能的情况下，当微型端口驱动程序必须在解析其操作的 NDIS QoS 参数时将覆盖本地的 NDIS QoS 参数。 这是本地的 QoS 参数破坏正在使用的任何基础协议或技术的网络适配器上当前已启用的操作 QoS 参数尤其如此。 例如，如果通过 Ethernet (FCoE) 协议情况下，启用通过光纤通道的远程启动的网络适配器驱动程序可以重写本地 QoS 参数。
+    在某些情况下，微型端口驱动程序必须在解析其操作 NDIS QoS 参数时重写本地 NDIS QoS 参数。 如果本地 QoS 参数危害网络适配器上当前启用的任何基础协议或技术所使用的操作 QoS 参数，则更是如此。 例如，如果光纤通道通过以太网（FCoE）协议为网络适配器启用了远程启动，则驱动程序可以替代本地 QoS 参数。
 
-    微型端口驱动程序通知 NDIS 和基础驱动程序的意向替代本地的 NDIS QoS 参数通过发出**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**状态指示。
+    微型端口驱动程序通过发出**ndis\_状态\_QoS\_操作\_参数\_更改**状态指示，通知 ndis 和过量驱动程序的意图替代本地 NDIS QoS 参数。
 
-    有关详细信息，请参阅[管理的 NDIS QoS 参数](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)。
+    有关详细信息，请参阅[管理 NDIS QoS 参数](https://docs.microsoft.com/windows-hardware/drivers/network/managing-ndis-qos--parameters)。
 
-**请注意**  过量驱动程序可以使用**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**会向状态指示确定操作的 NDIS QoS 参数。 或者，这些驱动程序还可以颁发的 OID 查询请求[OID\_QOS\_OPERATIONAL\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)以在任何时候获取操作的 NDIS QoS 参数。
+**请注意**  过量驱动程序可以使用**NDIS\_状态\_QOS\_操作\_参数\_更改**状态指示来确定操作 NDIS QOS 参数。 此外，这些驱动程序还可以[\_QOS\_操作\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)发出 oid 查询请求，以便随时获取操作的 NDIS QOS 参数。
 
  
 
-有关如何微型端口驱动程序问题的信息**NDIS\_状态\_QOS\_OPERATIONAL\_参数\_更改**状态指示，请参阅[指示对操作的 NDIS QoS 参数更改](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-changes-to-the-operational-ndis-qos-parameters)。
+有关微型端口驱动程序如何发出**NDIS\_状态的信息\_QOS\_操作\_参数\_更改**状态指示，请参阅[指示对操作 NDIS QOS 参数的更改](https://docs.microsoft.com/windows-hardware/drivers/network/indicating-changes-to-the-operational-ndis-qos-parameters)。
 
-有关各种类型的 NDIS QoS 参数的详细信息，请参阅[NDIS QoS 参数的概述](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)。
+有关各种类型的 NDIS QoS 参数的详细信息，请参阅 " [Ndis Qos 参数概述](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)"。
 
 <a name="requirements"></a>要求
 ------------
@@ -59,25 +59,25 @@ ms.locfileid: "67368512"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持在 NDIS 6.30 和更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ndis .h （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
-[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)
+[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)
 
-[**NDIS\_QOS\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)
+[**NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)
 
-[OID\_QOS\_OPERATIONAL\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)
+[OID\_QOS\_操作\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)
 
  
 

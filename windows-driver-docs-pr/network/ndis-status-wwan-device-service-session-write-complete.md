@@ -1,26 +1,26 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 通知来报告设备服务会话执行写入操作的状态。NDIS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 结构。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 通知来报告设备服务会话上写入操作的状态。NDIS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 结构。
 ms.assetid: 39C0FE62-E262-4D7D-8A93-6C31431AF846
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 网络驱动程序
+- NDIS_STATUS_WWAN_DEVICE_SERVICE_SESSION_WRITE_COMPLETE 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a87e2e2b42091d72b229fb6e560b853922a125
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9891afecc7b8b91f442c924ee0547366ee0811b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366609"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843037"
 ---
-# <a name="ndisstatuswwandeviceservicesessionwritecomplete"></a>NDIS\_状态\_WWAN\_设备\_服务\_会话\_编写\_完成
+# <a name="ndis_status_wwan_device_service_session_write_complete"></a>NDIS\_状态\_WWAN\_设备\_服务\_会话\_写入\_完成
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_设备\_服务\_会话\_编写\_完成通知以进行写入操作的状态报告上设备服务会话。
+微型端口驱动程序使用 NDIS\_状态\_WWAN\_设备\_SERVICE\_会话\_写入\_完整通知，以报告设备服务会话上写入操作的状态。
 
-微型端口驱动程序不能使用此通知将发送未经请求的事件。
+微型端口驱动程序无法使用此通知发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_设备\_服务\_会话\_编写\_完成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)结构。
+此通知使用[**NDIS\_WWAN\_设备\_服务\_会话\_写入\_完整**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -32,20 +32,20 @@ ms.locfileid: "67366609"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持从 Windows 8 开始。</p></td>
+<td><p>版本</p></td>
+<td><p>从 Windows 8 开始支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h</td>
+<td><p>标头</p></td>
+<td>Ndis。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_设备\_服务\_会话\_编写\_完成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)
+[**NDIS\_WWAN\_设备\_服务\_会话\_写入\_完成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_session_write_complete)
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - GetOptionAttribute
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4040f5ec83409a89825450c8f21a43cd5546262
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1db41a468e2ba0a3aa2dc972ace848c4e1e304cf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362727"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843614"
 ---
 # <a name="using-getoptionattribute"></a>使用 GetOptionAttribute
 
@@ -19,11 +19,11 @@ ms.locfileid: "67362727"
 
 
 
-此函数仅支持 PPD 功能。 如果某个属性不可用， **GetOptionAttribute**返回 E\_INVALIDARG。
+只有 PPD 功能支持此函数。 如果某一属性不可用，则**GetOptionAttribute**将返回 E\_INVALIDARG。
 
-下表中*pdwDataType*参数接受值为[ **EATTRIBUTE\_数据类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ne-printoem-_eattribute_datatype)枚举类型。
+在下表中， *pdwDataType*参数采用[**EATTRIBUTE\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ne-printoem-_eattribute_datatype)枚举类型的值。
 
-### <a name="output-parameters-for-general-option-attributes"></a>输出参数的常规选项属性
+### <a name="output-parameters-for-general-option-attributes"></a>常规选项属性的输出参数
 
 <table>
 <colgroup>
@@ -39,128 +39,128 @@ ms.locfileid: "67362727"
 <tbody>
 <tr class="odd">
 <td><p><strong>DisplayName</strong></p></td>
-<td><p><em><em>pdwDataType</em>: kADT_UNICODE</p>
-<p><em>pbData</em>： 选项关键字名称的翻译字符串的 null 终止的 Unicode 字符串</p>
-<p>pcbNeeded</em>： 指向 Unicode 字符串的字节数<em>pbData</em> （包括 null 终止符）</p>
-<p>此选项属性可供任何选项<strong>EnumOptions</strong> PPD 功能可以返回。</p></td>
+<td><p><em><em>pdwDataType</em>： kADT_UNICODE</p>
+<p><em>pbData</em>：以 null 结尾的选项关键字名称的翻译字符串的 Unicode 字符串</p>
+<p>pcbNeeded</em>： <em>pbData</em>指向的 Unicode 字符串的字节计数（包括 null 终止符）</p>
+<p>此选项属性可用于<strong>EnumOptions</strong>可以在 PPD 功能上返回的任何选项。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>调用</strong></p></td>
-<td><p><em><em>pdwDataType</em>: kADT_BINARY</p>
-<p><em>pbData</em>： 选项的 InvocationValue 的字节数组。</p>
-<p>pcbNeeded</em>： 指向二进制数据的字节数<em>pbData</em></p>
-<p>此选项属性可供任何选项<strong>EnumOptions</strong> PPD 功能可以返回。 如果该选项的 InvocationValue 为空，函数将设置<em>pdwDataType</em>如上所示，设置<em> <em>pcbNeeded</em> = 0，，然后返回 S_OK。</p></td>
+<td><p><em><em>pdwDataType</em>： kADT_BINARY</p>
+<p><em>pbData</em>：选项的 InvocationValue 的字节数组。</p>
+<p>pcbNeeded</em>： <em>pbData</em>指向的二进制数据的字节计数</p>
+<p>此选项属性可用于<strong>EnumOptions</strong>可以在 PPD 功能上返回的任何选项。 如果选项的 InvocationValue 为空，函数将按上述方式设置<em>pdwDataType</em> ，将 <em><em>pcbNeeded</em> = 0，然后返回 S_OK。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>OrderDependencyValue</strong></p></td>
-<td><p></em>pdwDataType: kADT_LONG</p>
-<p><em><em>pbData</em>： 指定的 PPD 的相对顺序<em>OrderDependency 或 * NonUIOrderDependency 关键字，此选项。 请注意，这些关键字的第一个参数转换为 long 类型的值，并返回的实数。</p>
-<p>pcbNeeded</em>: <strong>sizeof</strong>（长整型）</p>
-<p>此选项属性是仅适用于具有一个选项<em>OrderDependency 或 * 中 PPD NonUIOrderDependency 项和条目不能省略 optionKeyword。</p></td>
+<td><p></em>pdwDataType： kADT_LONG</p>
+<p><em><em>pbData</em>：此选项的 PPD <em>OrderDependency 或 * NonUIOrderDependency 关键字指定的相对顺序。 请注意，这些关键字的第一个参数是一个实数，转换为 LONG，并返回。</p>
+<p>pcbNeeded</em>： <strong>sizeof</strong>（LONG）</p>
+<p>此选项特性仅适用于在 PPD 中具有 <em>OrderDependency 或 * NonUIOrderDependency 项的选项，并且该项不会省略 optionKeyword。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>OrderDependencySection</strong></p></td>
-<td><p>pdwDataType</em>: kADT_ASCII</p>
-<p><em>pbData</em>: null 终止的 ASCII 字符串包含下列节名称之一："ExitServer""Prolog""DocumentSetup""PageSetup""JCLSetup""AnySetup"。</p>
-<p>pcbNeeded</em>： 指向 ASCII 字符串的字节数<em>pbData</em> （包括 null 终止符）</p>
-<p>此选项属性是仅适用于具有一个选项 * OrderDependency 或 * 中 PPD NonUIOrderDependency 项和条目不能省略 optionKeyword。</p></td>
+<td><p>pdwDataType</em>： kADT_ASCII</p>
+<p><em>pbData</em>：以 null 结尾的 ASCII 字符串，其中包含以下部分名称之一： "ExitServer" "Prolog" "DocumentSetup" "PageSetup" "JCLSetup" "AnySetup"。</p>
+<p>pcbNeeded</em>： <em>pbData</em>指向的 ASCII 字符串的字节计数（包括 null 终止符）</p>
+<p>此选项特性仅适用于在 PPD 中具有 * OrderDependency 或 * NonUIOrderDependency 条目的选项，并且该条目不会省略 optionKeyword。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="output-parameters-for-specific-option-attributes"></a>输出参数的特定选项属性
+### <a name="output-parameters-for-specific-option-attributes"></a>特定选项属性的输出参数
 
-除了前面所述的常规选项属性下, 表中列出的选项属性可能会限制可用时。 某些属性可供所有选项的特定 PPD 功能，而有些则是仅供其 PPD 功能的特定选项。 为每个选项属性列出了任何此类限制。
+除了前面所述的常规选项属性以外，下表中列出的选项属性在可用时可能会有限制。 某些属性可用于特定 PPD 功能的所有选项，而其他属性仅适用于其 PPD 功能的特定选项。 每个选项特性都列出了所有此类限制。
 
-功能选择属性输出参数关键字\*InputSlot
+功能选项属性输出参数关键字 \*InputSlot
 
 **RequiresPageRegion**
 
-\*pdwDataType: kADT\_BOOL
+\*pdwDataType： kADT\_BOOL
 
-*\*pbData*:**TRUE**如果\*PageRegion 调用代码必须与发送\*InputSlot 调用代码，并**FALSE**否则为。 这基于 PPD \*RequiresPageRegion 关键字。 如果此输入槽选项时，省略了关键字 **，则返回 TRUE**此属性的返回。
+*\*pbData*：如果必须随 \*InputSlot 调用代码一起发送 \*PageRegion 调用代码，**则为 TRUE** ; 否则为**FALSE** 。 这基于 PPD 的 \*RequiresPageRegion 关键字。 如果在此输入槽选项中省略关键字，则将为此属性返回**TRUE** 。
 
-*\*pcbNeeded*: **sizeof**(BOOL)
+*\*pcbNeeded*： **sizeof**（BOOL）
 
-此选项属性可供任何选项"InputSlot"PPD 功能，除了驱动程序生成选项"\*UseFormTrayTable"。
+除驱动程序生成的选项 "\*UseFormTrayTable" 外，此选项属性可用于 "InputSlot" PPD 功能的任何选项。
 
 \*OutputBin
 
 **OutputOrderReversed**
 
-\*pdwDataType: kADT\_BOOL
+\*pdwDataType： kADT\_BOOL
 
-*\*pbData*:**TRUE**如果 binOption 的输出顺序是"反向"，并**FALSE**如果输出顺序为"Normal"。 这基于 PPD \*DefaultOutputOrder 和\*PageStackOrder 关键字。
+*\*pbData*：如果 binOption 的输出顺序为 "反向"，则**为 TRUE** ; 如果输出顺序为 "Normal"，则为**FALSE** 。 这基于 PPD 的 \*DefaultOutputOrder 和 \*PageStackOrder 关键字。
 
-*\*pcbNeeded*: **sizeof**(BOOL)
+*\*pcbNeeded*： **sizeof**（BOOL）
 
-此选项属性可供任何选项"OutputBin"PPD 功能。
+此选项属性可用于 "OutputBin" PPD 功能的任何选项。
 
 \*PageSize
 
 **ImageableArea**
 
-\*pdwDataType: kADT\_RECT
+\*pdwDataType： kADT\_RECT
 
-*\*pbData*: PageSize 选项成像区域，由 PPD 的指定边界框\*ImageableArea 关键字中返回 （在 Microsoft Windows SDK 文档中定义） 的 RECT 结构，它的**留**并**底部**llx 和是否手动值和其包含的成员**右**并**顶部**成员包含 urx 和 ury 值。 所有值都均以微米。 PPD llx 手动值向上舍入到最接近的整数转换为微米之前。 PPD urx 和 ury 值是向下舍入到最接近的整数转换为微米之前。
+*\*pbData*： PageSize 选项的可成像区域的边界框，如 PPD 的 \*ImageableArea 关键字指定的那样，将在 RECT 结构（在 Microsoft Windows SDK 文档中定义）中返回，其**左侧**和**下半**个成员包含 llx 和 lly 值，其**右**成员和**顶级**成员包含 urx 和 ury 值。 所有值都在 microns 中。 将 PPD 的 llx 和 lly 值向上舍入到最接近的整数，然后将其转换为 microns。 将 PPD 的 urx 和 ury 值向下舍入到最接近的整数，然后将其转换为 microns。
 
-*\*pcbNeeded*: **sizeof**(RECT)
+*\*pcbNeeded*： **sizeof**（RECT）
 
-此选项属性可供任何选项"PageSize"PPD 功能，除"CustomPageSize"选项。
+除 "CustomPageSize" 选项外，此选项属性可用于 "PageSize" PPD 功能的任何选项。
 
 **PaperDimension**
 
-\*pdwDataType: kADT\_SIZE
+\*pdwDataType： kADT\_大小
 
-*\*pbData*: PageSize 选项，PPD 的由指定的物理维度\*PaperDimension 关键字是结构中返回大小 （在 Windows SDK 文档中定义），其**cx**成员包含宽度值并且其**cy**成员包含的高度值。 所有值都均以微米。
+*\*pbData*：由 PPD 的 \*PaperDimension 关键字指定的 PageSize 选项的物理维度以大小结构（在 Windows SDK 文档中定义）返回，其**cx**成员包含宽度值，其**cy**成员包含高度值。 所有值都在 microns 中。
 
-*\*pcbNeeded*: **sizeof**（大小）
+*\*pcbNeeded*： **sizeof**（SIZE）
 
-此选项属性可供任何选项"PageSize"PPD 功能，除"CustomPageSize"选项。
+除 "CustomPageSize" 选项外，此选项属性可用于 "PageSize" PPD 功能的任何选项。
 
-\*PageSize:CustomPageSize
+\*PageSize： CustomPageSize
 
 **HWMargins**
 
-\*pdwDataType: kADT\_RECT
+\*pdwDataType： kADT\_RECT
 
-*\*pbData*： 指定的 PPD 的四个值\*HWMargins 关键字返回 RECT 结构 （在 Windows SDK 文档中定义） 中。 所有值都均以微米。
+*\*pbData*：由 PPD 的 \*HWMargins 关键字指定的四个值在矩形结构中返回（在 Windows SDK 文档中定义）。 所有值都在 microns 中。
 
-*\*pcbNeeded*: **sizeof**(RECT)
+*\*pcbNeeded*： **sizeof**（RECT）
 
-此选项属性是仅供"PageSize"PPD"CustomPageSize"选择功能。
+此选项特性仅适用于 "PageSize" PPD 功能的 "CustomPageSize" 选项。
 
 **MaxMediaHeight**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*： KADT\_DWORD
 
-*\*pbData*： 指定的 PPD 的值\*MaxMediaHeight 关键字，微米中的。
+*\*pbData*：由 PPD 的 \*MaxMediaHeight 关键字指定的值（在 microns 中）。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded*： **sizeof**（DWORD）
 
-此选项属性是仅供"PageSize"PPD"CustomPageSize"选择功能。
+此选项特性仅适用于 "PageSize" PPD 功能的 "CustomPageSize" 选项。
 
 **MaxMediaWidth**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*： KADT\_DWORD
 
-*\*pbData*： 指定的 PPD 的值\*MaxMediaWidth 关键字，微米中的。
+*\*pbData*：由 PPD 的 \*MaxMediaWidth 关键字指定的值（在 microns 中）。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded*： **sizeof**（DWORD）
 
-此选项属性是仅供"PageSize"PPD"CustomPageSize"选择功能。
+此选项特性仅适用于 "PageSize" PPD 功能的 "CustomPageSize" 选项。
 
 **ParamCustomPageSize**
 
-*\*pdwDataType*: kADT\_CUSTOMSIZEPARAMS
+*\*pdwDataType*： KADT\_CUSTOMSIZEPARAMS
 
-*pbData*： 数组 CUSTOMPARAM\_最大元素，其中每个元素都[ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)结构。 此数组的每个元素将存储的 PPD 中指定的值\*ParamCustomPageSize 关键字 paramOption 条目。 对于"方向"以外的 paramOption，lMinVal 和 lMaxVal 值为微米中。 对于"方向"lMinVal 和 lMaxVal 的值为范围内的\[0，3 个\]。
+*pbData*： CUSTOMPARAM\_最大元素数组，其中每个元素都是一个[**CUSTOMSIZEPARAM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_customsizeparam)结构。 此数组的每个元素都存储在 PPD \*ParamCustomPageSize 关键字的 paramOption 条目中指定的值。 对于 "方向" 之外的 paramOption，lMinVal 和 lMaxVal 值都在 microns 中。 对于 "方向"，lMinVal 和 lMaxVal 值的范围是 \[0，3\]。
 
-*\*pcbNeeded*: **sizeof**(CUSTOMSIZEPARAM) \* CUSTOMPARAM\_最大值
+*\*pcbNeeded*： **sizeof**（CUSTOMSIZEPARAM） \* CUSTOMPARAM\_MAX
 
-此选项属性是仅供"PageSize"PPD"CustomPageSize"选择功能。
+此选项特性仅适用于 "PageSize" PPD 功能的 "CustomPageSize" 选项。
 
 请参阅以下说明。
 
@@ -168,29 +168,29 @@ ms.locfileid: "67362727"
 
 **VMOption**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*： KADT\_DWORD
 
-*\*pbData*： 指定的 PPD 的值\*VMOption 关键字，或者，如果未指定 PPD 0 \*VMOption 关键字，此选项。
+*\*pbData*：由 ppd 的 \*VMOption 关键字指定的值; 如果 ppd 未指定此选项的 \*VMOption 关键字，则为0。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded*： **sizeof**（DWORD）
 
-此选项属性可供任何选项"InstalledMemory"PPD 功能。
+此选项属性可用于 "InstalledMemory" PPD 功能的任何选项。
 
 **FCacheSize**
 
-*\*pdwDataType*: kADT\_DWORD
+*\*pdwDataType*： KADT\_DWORD
 
-*\*pbData*： 指定的 PPD 的值\*FCacheSize 关键字，或者，如果未指定 PPD 0 \*FCacheSize 关键字，此选项。
+*\*pbData*：由 ppd 的 \*FCacheSize 关键字指定的值; 如果 ppd 未指定此选项的 \*FCacheSize 关键字，则为0。
 
-*\*pcbNeeded*: **sizeof**(DWORD)
+*\*pcbNeeded*： **sizeof**（DWORD）
 
-此选项属性可供任何选项"InstalledMemory"PPD 功能。
+此选项属性可用于 "InstalledMemory" PPD 功能的任何选项。
 
  
 
-### <a name="note-on-paramcustompagesize"></a>关于 ParamCustomPageSize 说明
+### <a name="note-on-paramcustompagesize"></a>ParamCustomPageSize 上的注意事项
 
-下面是演示如何获取 PPD 文件的原始顺序、 最小和最大值的一些示例代码"\*ParamCustomPageSize 宽度"条目。 CUSTOMPARAM\_printoem.h 中定义，宽度常量表示的偏移量[ **CUSTOMSIZEPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/ns-printoem-_customsizeparam)与宽度条目相关的结构，它包含的信息。 此结构是一个 CUSTOMPARAM\_形成此类结构的数组的最大 CUSTOMSIZEPARAM 结构。 Printoem.h 标头定义一组常量名为 CUSTOMPARAM\_XXX 列出此数组 （宽度、 高度、 WidthOffset、 HeightOffset 和方向） 中的结构的偏移量。
+下面的示例代码演示如何获取 PPD 文件的 "\*ParamCustomPageSize Width" 条目的原始顺序、最小值和最大值。 在 printoem 中定义的 CUSTOMPARAM\_WIDTH 常量指示包含与 Width 项相关的信息的[**CUSTOMSIZEPARAM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/ns-printoem-_customsizeparam)结构的偏移量。 此结构是一种\_CUSTOMPARAM 的最大 CUSTOMSIZEPARAM 结构，构成此类结构的数组。 Printoem 标头定义一组名为 CUSTOMPARAM\_XXX，其中列出了此数组中结构的偏移量（Width、Height、WidthOffset、HeightOffset 和方向）。
 
 ```cpp
 PCUSTOMSIZEPARAM  pCSParam;

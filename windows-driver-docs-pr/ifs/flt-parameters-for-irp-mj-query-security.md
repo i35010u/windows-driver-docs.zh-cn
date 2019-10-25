@@ -1,11 +1,11 @@
 ---
-title: FLT_PARAMETERS IRP_MJ_QUERY_SECURITY 联合
-description: 联合组件时使用 FLT MajorFunction 字段\_IO\_参数\_操作的块结构是 IRP\_MJ\_查询\_安全。
+title: FLT_PARAMETERS for IRP_MJ_QUERY_SECURITY union
+description: 在 FLT 的 MajorFunction 字段\_IO\_参数\_操作的块结构时使用的联合组件是 IRP\_MJ\_查询\_安全。
 ms.assetid: 7707fec2-9fe8-40f6-9f34-f43403551440
 keywords:
-- FLT_PARAMETERS IRP_MJ_QUERY_SECURITY 联合可安装文件系统驱动程序
-- FLT_PARAMETERS 联合可安装文件系统驱动程序
-- PFLT_PARAMETERS 联合指针可安装文件系统驱动程序
+- FLT_PARAMETERS for IRP_MJ_QUERY_SECURITY union 可安装的文件系统驱动程序
+- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 99d8954cbb20859431bbcdfa7abc8770a43449b6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fea2cb7033b12ba9ae37dc1cdb6c10447eb111ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380506"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841359"
 ---
-# <a name="fltparameters-for-irpmjquerysecurity-union"></a>FLT\_IRP 的参数\_MJ\_查询\_安全联合
+# <a name="flt_parameters-for-irp_mj_query_security-union"></a>用于 IRP\_MJ\_查询\_安全联合的 FLT\_参数
 
 
-联合组件时使用**MajorFunction**字段[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构操作已[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)。
+在 FLT 的**MajorFunction**字段[ **\_IO\_参数\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作的块结构时使用的联合组件是[**IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)。
 
 <a name="syntax"></a>语法
 ------
@@ -48,10 +48,10 @@ typedef union _FLT_PARAMETERS {
 -------
 
 **QuerySecurity**  
-结构，它包含以下成员。
+包含以下成员的结构。
 
 **SecurityInformation**  
-指向调用方提供[**安全\_信息**](security-information.md)值，该值指定要查询的安全信息。 下列情况之一：
+指向调用方提供的[**安全性\_信息**](security-information.md)值的指针，它指定要查询的安全信息。 下列情况之一：
 
 <table>
 <colgroup>
@@ -67,19 +67,19 @@ typedef union _FLT_PARAMETERS {
 <tbody>
 <tr class="odd">
 <td align="left"><p>OWNER_SECURITY_INFORMATION</p></td>
-<td align="left"><p>正在查询的对象的所有者标识符。 需要 READ_CONTROL 访问权限。</p></td>
+<td align="left"><p>正在查询对象的所有者标识符。 需要 READ_CONTROL 访问权限。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GROUP_SECURITY_INFORMATION</p></td>
-<td align="left"><p>正在查询的对象的主要组标识符。 需要 READ_CONTROL 访问权限。</p></td>
+<td align="left"><p>正在查询对象的主要组标识符。 需要 READ_CONTROL 访问权限。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DACL_SECURITY_INFORMATION</p></td>
-<td align="left"><p>正在查询的对象的自由访问控制列表 (DACL)。 需要 READ_CONTROL 访问权限。</p></td>
+<td align="left"><p>正在查询对象的随机访问控制列表（DACL）。 需要 READ_CONTROL 访问权限。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SACL_SECURITY_INFORMATION</p></td>
-<td align="left"><p>正在查询的对象的系统 ACL (SACL)。 需要 ACCESS_SYSTEM_SECURITY 访问权限。</p></td>
+<td align="left"><p>正在查询对象的系统 ACL （SACL）。 需要 ACCESS_SYSTEM_SECURITY 访问权限。</p></td>
 </tr>
 </tbody>
 </table>
@@ -87,22 +87,22 @@ typedef union _FLT_PARAMETERS {
  
 
 **长度**  
-缓冲区的长度，以字节为单位，该**SecurityBuffer**指向。
+**SecurityBuffer**指向的缓冲区的长度（以字节为单位）。
 
 **SecurityBuffer**  
-指向接收副本的指定对象的安全描述符的调用方提供输出缓冲区的指针。 调用进程必须有权查看对象的安全状态的指定的方面。 [**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))自相关格式返回结构。
+指向调用方提供的输出缓冲区的指针，该缓冲区接收指定对象的安全描述符的副本。 调用进程必须具有查看对象安全状态的指定方面的权限。 [**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))结构以自相关格式返回。
 
 **MdlAddress**  
-描述缓冲区的内存描述符列表 (MDL) 的地址， **SecurityBuffer**指向。 此成员是可选的可以是**NULL**。
+描述**SecurityBuffer**指向的缓冲区的内存描述符列表（MDL）的地址。 此成员是可选的，并且可以为**NULL**。
 
 <a name="remarks"></a>备注
 -------
 
-[ **FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)结构[ **IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)操作包含表示的回调数据基于 IRP 的安全信息的查询操作的参数 ([**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data))结构。 包含在[ **FLT\_IO\_参数\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
+[**IRP\_MJ\_查询\_安全**](irp-mj-query-security.md)操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据表示的基于 IRP 的查询-安全信息操作的参数（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构。 它包含在[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。
 
-Windows XP 及更高版本，该对象的**TargetFileObject** FLT 成员\_IO\_参数\_块结构指向可以表示命名的数据流。 有关命名的数据流的详细信息，请参阅[**文件\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)。
+在 Windows XP 和更高版本中，FLT\_IO\_参数\_块结构**指向的对象**可以表示已命名的数据流。 有关命名数据流的详细信息，请参阅[**FILE\_STREAM\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stream_information)。
 
-IRP\_MJ\_查询\_安全是一个基于 IRP 的操作。
+IRP\_MJ\_查询\_安全性是基于 IRP 的操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -114,24 +114,24 @@ IRP\_MJ\_查询\_安全是一个基于 IRP 的操作。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel.h （包括 Fltkernel.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Fltkernel （包括 Fltkernel）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**文件\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_stream_information)
+[**文件\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stream_information)
 
-[**FLT\_CALLBACK\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_PARAMETER\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IRP\_MJ\_QUERY\_SECURITY**](irp-mj-query-security.md)
+[**IRP\_MJ\_QUERY\_安全性**](irp-mj-query-security.md)
 
 [**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 

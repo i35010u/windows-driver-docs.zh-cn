@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_CHANNEL_LIST
-description: WDI_TLV_CHANNEL_LIST 是包含一个或多个频道号 TLV。
+description: WDI_TLV_CHANNEL_LIST 是包含一个或多个通道号的 TLV。
 ms.assetid: DBBA28C2-D80F-409B-BEE6-81B6FEDF7484
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_CHANNEL_LIST 网络驱动程序
+- WDI_TLV_CHANNEL_LIST 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0bb6f30d9753ee2d3d17ec8dc7f35675301eb3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eb2ba3fe2be6f79bb71b14733ab1a0796ff3beea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387204"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844524"
 ---
-# <a name="wditlvchannellist"></a>WDI\_TLV\_通道\_列表
+# <a name="wdi_tlv_channel_list"></a>WDI\_TLV\_通道\_列表
 
 
-WDI\_TLV\_通道\_列表是包含一个或多个频道号 TLV。
+WDI\_TLV\_通道\_列表是包含一个或多个通道号的 TLV。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +26,14 @@ WDI\_TLV\_通道\_列表是包含一个或多个频道号 TLV。
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_通道\_映射\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_channel_mapping_entry)结构。 该数组必须包含一个或多个结构。
+WDI 的数组的大小（以字节为单位） [ **\_通道\_映射\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_channel_mapping_entry)结构。 数组必须包含1个或多个结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                                       | 描述                          |
 |----------------------------------------------------------------------------|--------------------------------------|
-| [**WDI\_通道\_映射\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ns-wditypes-_wdi_channel_mapping_entry)\[\] | 通道映射项的数组。 |
+| [**WDI\_通道\_映射\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ns-wditypes-_wdi_channel_mapping_entry)\[\] | 通道映射项的数组。 |
 
  
 
@@ -48,14 +48,14 @@ WDI\_TLV\_通道\_列表是包含一个或多个频道号 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

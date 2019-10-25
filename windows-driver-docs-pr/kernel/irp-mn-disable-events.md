@@ -1,41 +1,41 @@
 ---
 title: IRP_MN_DISABLE_EVENTS
-description: 注册一个或多个事件块任何 WMI 驱动程序必须处理此 IRP。
+description: 注册一个或多个事件块的任何 WMI 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 3187643b-27d7-4a6d-8fbe-4f8eb6c251ed
 keywords:
-- IRP_MN_DISABLE_EVENTS Kernel-Mode Driver Architecture
+- IRP_MN_DISABLE_EVENTS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: ebd4f27cc59882d0405fa28f2a2aacaefc2f7cfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8672d4360f2aaa1dc301c00404a495870bd148e3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383320"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838588"
 ---
-# <a name="irpmndisableevents"></a>IRP\_MN\_DISABLE\_EVENTS
+# <a name="irp_mn_disable_events"></a>IRP\_MN\_禁用\_事件
 
 
-注册一个或多个事件块任何 WMI 驱动程序必须处理此 IRP。 驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
+注册一个或多个事件块的任何 WMI 驱动程序都必须处理此 IRP。 驱动程序可以通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)或处理 IRP 本身来处理 wmi irp，如[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)中所述。
 
-如果驱动程序调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)处理**IRP\_MN\_禁用\_事件**请求时，WMI 反过来调用驱动程序的[ *DpWmiFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)例程。
+如果驱动程序调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理**IRP\_MN\_禁用\_事件**请求，则 WMI 反过来会调用该驱动程序的[*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)例程。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)时发送
+[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)发送时间
 ---------
 
-WMI 将发送此 IRP 来通知该驱动程序的数据使用者已请求事件的任何进一步的通知。
+WMI 发送此 IRP，通知驱动程序数据使用者已请求不进一步通知事件。
 
-WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
+WMI 在任意线程上下文中以 IRQL = 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Parameters.WMI.ProviderId**指向应该对请求进行响应的驱动程序的设备对象。 此指针位于 IRP 中的驱动程序的 I/O 堆栈位置。
+**Parameters。 ProviderId**指向应响应请求的驱动程序的设备对象。 此指针位于 IRP 中驱动程序的 i/o 堆栈位置。
 
-**Parameters.WMI.DataPath**指向标识要禁用的事件块的 GUID。
+**数据路径**指向标识要禁用的事件块的 GUID。
 
 ## <a name="output-parameters"></a>输出参数
 
@@ -45,32 +45,32 @@ WMI 将此 IRP 发送在 IRQL = 被动\_级别在任意线程上下文中。
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果该驱动程序通过调用来处理 IRP [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，WMI 集**Irp-&gt;IoStatus.Status**并**Irp-&gt;IoStatus.Information** I/O 状态块中。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 IRP，WMI 将在 i/o 状态块中设置**irp&gt;IoStatus**和**irp-&gt;IoStatus** 。
 
-否则，该驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功或相应的错误状态，如下所示：
+否则，驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS 或适当的错误状态，如下所示：
 
-状态\_WMI\_GUID\_不\_找到
+找不到\_WMI\_GUID\_的状态\_
 
-STATUS\_INVALID\_DEVICE\_REQUEST
+状态\_无效\_设备\_请求
 
-如果成功，驱动程序设置**Irp-&gt;IoStatus.Information**为零。
+成功时，驱动程序将**Irp&gt;IoStatus**设置为零。
 
 <a name="operation"></a>操作
 ---------
 
-驱动程序可以处理 WMI Irp 通过调用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)或通过处理 IRP 本身，如中所述[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)。
+驱动程序可以通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)或处理 IRP 本身来处理 wmi irp，如[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)中所述。
 
-如果驱动程序通过调用来处理 WMI Irp [ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)，例程调用的驱动程序[ *DpWmiFunctionControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)例程，返回状态或\_成功如果驱动程序不会定义该例程。
+如果驱动程序通过调用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来处理 WMI irp，则该例程将调用驱动程序的[*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)例程，或在驱动程序未定义例程的情况下返回状态\_成功。
 
-如果驱动程序处理**IRP\_MN\_禁用\_事件**请求本身，才应该这样做**Parameters.WMI.ProviderId**指向同一个设备对象与指针，该驱动程序传递给[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，该驱动程序必须将请求转发到下一步低驱动程序。
+如果驱动程序处理**IRP\_MN\_禁用\_事件**请求本身，则只有当**参数. ProviderId**指向与驱动程序传递到[**的指针相同的设备对象时，才应执行此操作。IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)。 否则，驱动程序必须将请求转发到下一个较低版本的驱动程序。
 
-之前处理请求，该驱动程序必须确定是否**Parameters.WMI.DataPath**指向 GUID 的驱动程序支持。 如果不是，该驱动程序必须失败 IRP，并返回状态\_WMI\_GUID\_不\_找到。
+在处理请求之前，驱动程序必须确定**数据路径**是否指向驱动程序所支持的 GUID。 否则，驱动程序必须失败 IRP 并返回状态\_WMI\_GUID\_找不到\_。
 
-如果该驱动程序支持事件块，它将禁用该块中的所有实例的事件。
+如果驱动程序支持事件块，它将禁用该块的所有实例的事件。
 
-不需要的驱动程序来检查因为 WMI 当最后一个数据使用者禁用事件时发送该事件块的单个禁用请求是否事件的事件块已被禁用。 WMI 不会发送另一个没有启用的干预请求禁用请求。
+驱动程序不需要检查是否已为事件块禁用了事件，因为当最后一个数据使用者禁用该事件时，WMI 会为该事件块发送单个禁用请求。 WMI 将不会发送其他禁用请求，而不会发出要启用的请求。
 
-有关事件块定义的详细信息，请参阅[设计 WMI 数据和事件块](https://docs.microsoft.com/windows-hardware/drivers/kernel/designing-wmi-data-and-event-blocks)。
+有关定义事件块的详细信息，请参阅[设计 WMI 数据和事件块](https://docs.microsoft.com/windows-hardware/drivers/kernel/designing-wmi-data-and-event-blocks)。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,24 +82,24 @@ STATUS\_INVALID\_DEVICE\_REQUEST
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)
+[*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)
 
-[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**IRP\_MN\_ENABLE\_EVENTS**](irp-mn-enable-events.md)
+[**IRP\_MN\_启用\_事件**](irp-mn-enable-events.md)
 
-[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
+[**WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
+[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)
 
  
 

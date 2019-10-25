@@ -3,18 +3,18 @@ title: 基于 x86 的计算机中的全屏 VDM
 description: 基于 x86 的计算机中的全屏 VDM
 ms.assetid: 5be4919d-d46f-430f-9d4f-670134379268
 keywords:
-- 微型端口驱动程序 WDK Windows 2000 中，VGA，在基于 x86 的计算机中的全屏幕 Vdm
-- VGA WDK 视频微型端口，在基于 x86 的计算机中的全屏幕 Vdm
-- 在基于 x86 的计算机 WDK 视频微型端口中的全屏幕 Vdm
-- 基于 x86 的计算机兼容的 VGA WDK 的微型端口
+- 视频微型端口驱动程序-基于 x86 的计算机中的 WDK Windows 2000、VGA 和全屏幕 VDMs
+- 基于 x86 的计算机中的 VGA WDK 视频微型端口、全屏 VDMs
+- 基于 x86 的计算机中的全屏 VDMs WDK 视频微型端口
+- 基于 x86 的计算机 WDK VGA 兼容视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6444c03a427481cbebcbb8042b332fbe6a1771f3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d3832bd85c6e470b10810458518c6d3885691a95
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356378"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838940"
 ---
 # <a name="full-screen-vdms-in-x86-based-machines"></a>基于 x86 的计算机中的全屏 VDM
 
@@ -22,15 +22,15 @@ ms.locfileid: "67356378"
 ## <span id="ddk_full_screen_vdms_in_x86_based_machines_gg"></span><span id="DDK_FULL_SCREEN_VDMS_IN_X86_BASED_MACHINES_GG"></span>
 
 
-出于性能原因，当用户在基于 x86 的计算机中，切换到全屏模式的 MS-DOS 应用程序显示驱动程序产生的适配器的控件。 系统的 VGA 或兼容的 VGA 的微型端口驱动程序然后挂钩出 V86 仿真程序中所有 I/O 指令，如应用程序颁发**IN**， **REP INSB/INSW/INSD**， **OUT**，并**REP OUTSB/OUTSW/OUTSD**到视频的 I/O 端口的说明。 这些已挂钩的 I/O 操作转发到兼容的 VGA 的微型端口驱动程序*SvgaHwIoPortXxx*函数。
+出于性能原因，当用户在基于 x86 的计算机上将 MS-DOS 应用程序切换到全屏模式时，显示驱动程序会控制适配器。 然后，系统 VGA 或 VGA 兼容的微型端口驱动程序将从 V86 模拟器挂钩到模拟器，如应用程序发出**的 IN**、**代表 INSB/INSW/INSD**、 **OUT**和**代表 OUTSB/OUTSW**说明，到视频 I/O 个端口。 这些挂钩 i/o 操作将转发到与 VGA 兼容的微型端口驱动程序的*SvgaHwIoPortXxx*函数。
 
-但是，为了提高性能，微型端口驱动程序可以调用[ **VideoPortSetTrappedEmulatorPorts** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportsettrappedemulatorports)以允许应用程序直接访问某些 I/O 端口。 微型端口驱动程序将继续挂钩与其他 I/O 端口及其*SvgaHwIoPortXxx*来验证应用程序发出指令流到这些端口。
+但是，为了提高性能，微型端口驱动程序可以调用[**VideoPortSetTrappedEmulatorPorts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportsettrappedemulatorports) ，以允许应用程序直接访问某些 i/o 端口。 微型端口驱动程序继续将其他 i/o 端口与*SvgaHwIoPortXxx*挂钩，以将应用程序发出的指令流验证到这些端口。
 
-为了防止提供全屏幕的应用程序发出一系列可能会挂起计算机的说明*SvgaHwIoPortXxx*函数监视应用程序指令流中的驱动程序确定一系列适配器寄存器。 微型端口驱动程序必须启用直接访问仅完全安全的 I/O 端口。 例如，排序器和其他输出寄存器的端口应始终挂接 V86 仿真程序并捕获到的微型端口驱动程序提供*SvgaHwIoPortXxx*函数以进行验证。
+若要防止全屏应用程序发出可能挂起计算机的指令序列， *SvgaHwIoPortXxx*函数会将应用程序指令流监视到驱动程序确定的适配器寄存器集。 微型端口驱动程序必须仅对完全安全的 i/o 端口启用直接访问。 例如，sequencer 和杂项输出寄存器的端口应始终与 V86 模拟器挂钩，并捕获到微型端口驱动程序提供的用于验证的*SvgaHwIoPortXxx*函数。
 
-直接访问 I/O 端口 （在为 x86 I/O 权限映射） IOPM 的决定应用程序的兼容的 VGA 的微型端口驱动程序通过调用来设置**VideoPortSetTrappedEmulatorPorts**。 请注意微型端口驱动程序可以通过调用此函数可具有访问权限范围，描述 I/O 调整 IOPM 端口、 应用程序发布用于直接访问或到 retrapped *SvgaHwIoPortXxx*函数。 当前 IOPM 确定哪些端口可以由应用程序直接访问，而这仍处于挂接 V86 模拟器并且捕获到*SvgaHwIoPortXxx*函数以进行验证。
+直接访问应用程序的 i/o 端口取决于 VGA 兼容的微型端口驱动程序通过调用**VideoPortSetTrappedEmulatorPorts**来设置的 IOPM （名为 x86 i/o 权限映射）。 请注意，微型端口驱动程序可以通过调用此函数来对 IOPM 进行调整，以使应用程序或 retrapped 访问*SvgaHwIoPortXxx*函数时释放访问范围（描述 i/o 端口）。 当前 IOPM 确定哪些端口可由应用程序直接访问，哪些端口仍与 V86 模拟器挂钩，并捕获到*SvgaHwIoPortXxx*函数进行验证。
 
-默认情况下，设置这样的微型端口驱动程序的仿真程序的访问范围数组中的所有 I/O 端口被截获都放到相应*SvgaHwIoPortXxx*函数。 但是，兼容的 VGA 的微型端口驱动程序通常调用**VideoPortSetTrappedEmulatorPorts** IOCTL 收到\_视频\_启用\_VDM 请求以重置IOPM*VDM*以允许直接访问某些这些 I/O 端口。 通常情况下，此类驱动程序允许直接访问除 VGA sequencer 寄存器和杂项输出寄存器中，所有视频适配器寄存器以及应该始终由验证驱动程序编写器已确定任何 SVGA 特定于适配器的寄存器*SvgaHwIoPortXxx*函数。
+默认情况下，在这种微型端口驱动程序的仿真器访问范围中设置的所有 i/o 端口都将捕获到相应的*SvgaHwIoPortXxx*函数。 但是，与 VGA 兼容的微型端口驱动程序通常会在收到\_视频的 IOCTL 时调用**VideoPortSetTrappedEmulatorPorts**\_启用\_vdm 请求来重置*vdm*的 IOPM，以允许直接访问其中的某些 i/o端口. 通常，此类驱动程序允许直接访问除 VGA sequencer 寄存器和杂项输出寄存器之外的所有视频适配器注册，以及驱动程序编写器已确定的任何 SVGA 适配器特定寄存器应始终由*SvgaHwIoPortXxx*函数。
 
  
 

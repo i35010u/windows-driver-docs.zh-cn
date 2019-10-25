@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: febb28cf8a4b2881c4449fee8c21aa4a8d4f25fd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7f75320262701266f584b9851e7344ce723d0a6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353505"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844560"
 ---
 # <a name="dsmsetloadbalancepolicyalua-function"></a>DsmSetLoadBalancePolicyALUA 函数
 
@@ -36,11 +36,11 @@ void DsmSetLoadBalancePolicyALUA(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *LoadBalancePolicy*   
-一个[ **DsmSetLoadBalancePolicyALUA\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicyalua_out)结构。
+[**DsmSetLoadBalancePolicyALUA\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsmsetloadbalancepolicyalua_out)结构。
 
 *状态*   
 操作的状态。
@@ -53,7 +53,7 @@ void DsmSetLoadBalancePolicyALUA(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[DSM\_LB\_Operations](dsm-lb-operations-wmi-class.md) WMI 类。
+此 WMI 方法属于[DSM\_LB\_操作](dsm-lb-operations-wmi-class.md)WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,11 +66,11 @@ void DsmSetLoadBalancePolicyALUA(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">MPIOdisk.h （包括 MPIOdisk.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">MPIOdisk （包括 MPIOdisk）</td>
 </tr>
 </tbody>
 </table>

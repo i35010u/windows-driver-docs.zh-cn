@@ -1,101 +1,101 @@
 ---
-title: 即插即用的处理和协议驱动程序中的电源管理事件
+title: 处理协议驱动程序中的 PnP 和电源管理事件
 description: 处理协议驱动程序中的 PnP 事件和电源管理事件
 ms.assetid: 97cc51f1-7d83-4bf1-87e3-7d986f54e7a1
 keywords:
-- 协议驱动程序 WDK 网络、 电源管理
-- NDIS 协议驱动程序 WDK、 电源管理
-- 协议驱动程序 WDK 网络插
-- NDIS 协议驱动程序 WDK，插
+- 协议驱动程序 WDK 网络，电源管理
+- NDIS 协议驱动程序 WDK，电源管理
+- 协议驱动程序 WDK 网络，即插即用
+- NDIS 协议驱动程序 WDK，即插即用
 - 电源管理 WDK NDIS 协议
 - 即插即用 WDK NDIS 协议
-- 通知 WDK 即插即用，协议的 NDIS 驱动程序
+- 通知 WDK PnP，NDIS 协议驱动程序
 - 事件通知 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b3d38c6f612a38054b2b3b3eeb2fb05aa62f9d9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a2bb96056020ac10c590d9b8dc48d5c17a44900
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379791"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842569"
 ---
 # <a name="handling-pnp-events-and-power-management-events-in-a-protocol-driver"></a>处理协议驱动程序中的 PnP 事件和电源管理事件
 
-当操作系统对表示网络接口卡 (NIC) 的目标设备对象发出插即用 (PnP) I/O 请求数据包 (IRP) 或电源管理 IRP 时，NDIS 截获 IRP。 NDIS 指示通过调用驱动程序的每个绑定的协议驱动程序和每个绑定的中间驱动程序的事件[ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)函数。 在调用*ProtocolNetPnPEvent*，NDIS 将传递一个指向[ **NET\_PNP\_事件\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification) ，其中包含NET\_PNP\_事件结构。 NET\_PNP\_事件结构描述的即插即用事件或指示的电源管理事件。 有关协议驱动程序即插即用接口的详细信息，请参阅[协议驱动程序中处理即插即用事件通知](handling-pnp-event-notifications-in-a-protocol-driver.md)。
+当操作系统向代表网络接口卡（NIC）的目标设备对象发出即插即用（PnP） i/o 请求数据包（IRP）或电源管理 IRP 时，NDIS 会截获 IRP。 NDIS 通过调用驱动程序的[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数，指示每个绑定协议驱动程序的事件和每个绑定的中间驱动程序。 在对*ProtocolNetPnPEvent*的调用中，NDIS 传递指向包含 NET\_PNP\_事件结构的[**net\_PNP\_事件\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)的指针。 NET\_PNP\_事件结构描述了所指示的 PnP 事件或电源管理事件。 有关协议驱动程序 PnP 接口的详细信息，请参阅[在协议驱动程序中处理 PnP 事件通知](handling-pnp-event-notifications-in-a-protocol-driver.md)。
 
-以下列表包含 PnP 和电源管理事件，如所示**NetEvent** NET 中的代码\_PNP\_事件结构：
+以下列表包含 PnP 和电源管理事件，如 NET\_PNP\_事件结构中的**NetEvent**代码所示：
 
 -   **NetEventSetPower**
 
-    指示设置 Power 请求，它指定微型端口适配器应转换为特定电源状态。 电源管理 – 注意协议驱动程序应始终成功此事件，通过返回 NDIS\_状态\_成功。 旧的协议驱动程序可以返回 NDIS\_状态\_不\_以指示 NDIS 应取消其绑定从微型端口适配器的支持。
+    指示设置的电源请求，该请求指定微型端口适配器应转换为特定电源状态。 支持电源管理的协议驱动程序应始终通过返回 NDIS\_状态\_成功来成功完成此事件。 旧协议驱动程序可以将 NDIS\_状态返回\_不\_支持，以指示 NDIS 应从微型端口适配器将其解除绑定。
 
-    发出 set power 请求后, NDIS 暂停驱动程序堆栈，如果微型端口适配器正在过渡到低功耗状态。 NDIS 微型端口适配器转换到工作状态 (D0)，则将重新启动之前设置电源请求驱动程序堆栈。 有关暂停和重新启动驱动程序堆栈的详细信息，请参阅[暂停驱动程序堆栈](pausing-a-driver-stack.md)。
+    发出设置电源请求后，如果微型端口适配器正在转换为低功耗状态，NDIS 将暂停驱动程序堆栈。 如果微型端口适配器正在转换到工作状态（D0），NDIS 将在设置电源请求之前重新启动驱动程序堆栈。 有关暂停和重新启动驱动程序堆栈的详细信息，请参阅[暂停驱动程序堆栈](pausing-a-driver-stack.md)。
 
-    如果微型端口适配器在低功耗状态，协议驱动程序不能发出任何 OID 请求。 此要求是添加到驱动程序堆栈处于已暂停状态时应用的其他限制的其他的电源管理限制。
+    如果微型端口适配器处于低功耗状态，则协议驱动程序无法发出任何 OID 请求。 此要求是额外的电源管理限制，添加到了驱动程序堆栈处于暂停状态时所应用的其他限制。
 
-    如果基础的微型端口适配器是电源管理感知，微型端口驱动程序设置**布尔**的成员[ **NDIS\_微型端口\_适配器\_常规\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)到**NULL**和 NDIS 集**布尔**隶属[**NDIS\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_bind_parameters)到**NULL**。
+    如果基础微型端口适配器不是电源管理-感知，微型端口驱动程序将 NDIS\_微型端口的**PowerManagementCapabilities**成员设置[ **\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)设置为**NULL** ，NDIS 将[**ndis\_绑定\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)的**PowerManagementCapabilities**成员设置为**NULL**。
 
-    **请注意**从 NDIS 6.30 开始后通知此事件，必须停止生成新的 I/O 请求协议驱动程序，应等待的任何挂起的 I/O 请求调用的上下文中完成[ *ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)。
+    **注意** 从 NDIS 6.30 开始，在收到此事件的通知后，协议驱动程序必须停止生成新的 i/o 请求，且不应在调用[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)的上下文中等待完成任何挂起的 i/o 请求。
 
-    有关设置电源事件的详细信息，请参阅[处理即插即用事件和中间驱动程序中的电源管理事件](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)。
+    有关设置电源事件的详细信息，请参阅[在中间驱动程序中处理 PnP 事件和电源管理事件](handling-pnp-events-and-power-management-events-in-an-intermediate-dri.md)。
 
 -   **NetEventQueryPower**
 
-    指示查询能力请求，哪些查询的基础的微型端口适配器可以建立到特定的电源状态的转换。 协议驱动程序应始终成功**NetEventQueryPower** 。 建立活动连接后，协议驱动程序可以调用[ **PoRegisterSystemState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-poregistersystemstate)注册连续的忙碌状态。 只要状态注册生效时，电源管理器不会尝试将系统进入睡眠状态。 协议驱动程序的连接成为非活动状态后，通过调用取消状态注册[ **PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pounregistersystemstate)。 协议驱动程序应永远不会尝试防止系统转换到的睡眠状态的故障**NetEventQueryRemoveDevice**。 请注意， **NetEventQueryPower**始终跟**NetEventSetPower**。 一个**NetEventSetPower** ，设置设备的当前电源状态实际上会取消**NetEventQueryPower**。
+    指示查询电源请求，该请求查询基础微型端口适配器是否可以转换为特定电源状态。 协议驱动程序应始终成功**NetEventQueryPower** 。 建立活动连接后，协议驱动程序可以调用[**PoRegisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregistersystemstate)来注册连续繁忙状态。 只要状态注册生效，电源管理器不会尝试将系统置于睡眠状态。 在连接处于非活动状态后，协议驱动程序会通过调用[**PoUnregisterSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pounregistersystemstate)取消状态注册。 协议驱动程序绝不应尝试防止系统通过**NetEventQueryRemoveDevice**故障转换为休眠状态。 请注意， **NetEventQueryPower**总是后跟**NetEventSetPower**。 设置设备当前电源状态的**NetEventSetPower**取消了**NetEventQueryPower**。
 
-    **请注意**通知此事件的 NDIS 6.30 从开始协议驱动程序应等待完成的任何挂起的 I/O 请求调用的上下文中[ *ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event).
+    **注意** 从 NDIS 6.30 开始，在收到此事件的通知后，在对[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)的调用上下文中，协议驱动程序不应等待完成任何挂起的 i/o 请求。
 
 -   **NetEventQueryRemoveDevice**
 
-    指示查询删除设备请求，哪些查询是否可以无需中断操作删除 NIC。 如果协议驱动程序不能释放某一设备 （例如，因为设备正在使用中），它必须失败**NetEventQueryRemoveDevice**通过返回 NDIS\_状态\_失败。
+    指示查询删除设备请求，该请求查询是否可以在不中断操作的情况下删除 NIC。 如果协议驱动程序无法释放设备（例如，因为设备正在使用），则它必须通过将 NDIS\_状态返回\_故障来使**NetEventQueryRemoveDevice**失败。
 
 -   **NetEventCancelRemoveDevice**
 
-    指示取消删除设备请求，这将取消删除基础 nic。 协议驱动程序应始终成功此事件，通过返回 NDIS\_状态\_成功。
+    指示取消删除设备请求，该请求取消了基础 NIC 的删除。 协议驱动程序应始终通过返回 NDIS\_状态\_成功来成功完成此事件。
 
 -   **NetEventReconfigure**
 
-    指示的配置已更改的网络组件。 例如，如果用户更改了 tcp/ip 的 IP 地址，NDIS 指示此事件来使用 TCP/IP 协议**NetEventReconfigure**代码。 协议驱动程序可以在极少数情况下，返回了失败代码如果不能应用所指示的配置更改，并且没有任何可用的默认值。 尝试分配内存失败是协议在其中返回了失败代码将用例的示例。 返回错误代码可能会导致系统提示用户重新启动系统。
+    指示网络组件的配置已更改。 例如，如果用户更改了 TCP/IP 的 IP 地址，NDIS 会使用**NetEventReconfigure**代码来指示 tcp/ip 协议的此事件。 如果协议驱动程序无法应用指定的配置更改并且没有可用的默认值，则在极少数情况下，它可能会返回失败代码。 尝试分配内存失败是一个示例，其中，协议返回故障代码。 返回错误代码可能会导致提示用户重新启动系统。
 
-    应验证协议**NetEventReconfigure**的相关的数据传递给其[ *ProtocolNetPnPEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_net_pnp_event)函数。 有关此类数据的详细信息，请参阅[ **NET\_PNP\_协议驱动程序的事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)。
+    协议应验证传递到其[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数的**NetEventReconfigure**相关数据。 有关此类数据的详细信息，请参阅[**NET\_Protocol 驱动程序的 PNP\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)。
 
 -   **NetEventBindList**
 
-    指示协议驱动程序已重新配置其绑定列表处理顺序。 此列表指示相对顺序处理，例如，可能被路由到多个绑定之一的用户请求时要应用于协议的绑定。 与此事件传递的缓冲区包含格式为以 NULL 结尾的 Unicode 字符串的设备名称的列表。 每个设备名称的格式等同于*DeviceName*传递给调用的参数[ *ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)。
+    向协议驱动程序指示已重新配置其绑定列表处理顺序。 此列表指示要在处理时应用到协议的绑定的相对顺序，例如，可能会路由到多个绑定之一的用户请求。 随此事件传递的缓冲区包含格式为以 NULL 结尾的 Unicode 字符串格式的设备名称列表。 每个设备名称的格式与传递给对[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)的调用的*DeviceName*参数相同。
 
-    应验证协议**NetEventBindList**的相关的数据传递给其*ProtocolNetPnPEvent*函数。 有关此类数据的详细信息，请参阅[ **NET\_PNP\_协议驱动程序的事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)。
+    协议应验证传递到其*ProtocolNetPnPEvent*函数的**NetEventBindList**相关数据。 有关此类数据的详细信息，请参阅[**NET\_Protocol 驱动程序的 PNP\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)。
 
-    应验证协议**NetEventBindList**的相关的数据传递给其*ProtocolNetPnPEvent*函数。 有关此类数据的详细信息，请参阅[ **NET\_PNP\_协议驱动程序的事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event)。
+    协议应验证传递到其*ProtocolNetPnPEvent*函数的**NetEventBindList**相关数据。 有关此类数据的详细信息，请参阅[**NET\_Protocol 驱动程序的 PNP\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)。
 
 -   **NetEventBindsComplete**
 
-    指示协议驱动程序已绑定到可以绑定到的所有 Nic。 NDIS 除非即插即用的 NIC 插入到系统中，将不会指示任何绑定到协议驱动程序的更多信息。
+    指示协议驱动程序已绑定到它可以绑定到的所有 Nic。 除非将 PnP NIC 插入系统，否则 NDIS 不会指示任何其他绑定到协议驱动程序。
 
 -   **NetEventPnPCapabilities**
 
-    指示用户已启用或禁用基础适配器的唤醒功能。 ( *ProtocolBindingContext* NDIS 将传递给参数*ProtocolNetPnPEvent*指定的绑定。)
+    指示用户启用或禁用了基础适配器的唤醒功能。 （NDIS 传递到*ProtocolNetPnPEvent*的*ProtocolBindingContext*参数指定绑定。）
 
 -   **NetEventPause**
 
-    指示指定的协议绑定，应输入 thePausing 状态。 NDIS 完成所有未完成发送请求的绑定后，绑定将进入暂停状态。 有关暂停绑定的详细信息，请参阅[暂停绑定](pausing-a-binding.md)。
+    指示指定的协议绑定应进入 thePausing 状态。 当 NDIS 完成绑定的所有未完成的发送请求后，绑定将进入暂停状态。 有关暂停绑定的详细信息，请参阅[暂停绑定](pausing-a-binding.md)。
 
 -   **NetEventRestart**
 
-    指示指定的协议绑定已进入正在重新启动状态。 协议驱动程序已准备好继续发送和接收操作的绑定后，该绑定将进入运行状态。 有关重新启动绑定的详细信息，请参阅[重新启动绑定](restarting-a-binding.md)。
+    指示指定的协议绑定已进入重新启动状态。 在协议驱动程序准备好为绑定恢复发送和接收操作后，绑定将进入 "正在运行" 状态。 有关重新启动绑定的详细信息，请参阅[重新启动绑定](restarting-a-binding.md)。
 
 -   **NetEventPortActivation**
 
-    指示激活与指定绑定相关联的端口的列表。 有关暂停绑定的详细信息，请参阅[处理端口激活即插即用事件](handling-the-port-activation-pnp-event.md)。
+    指示激活与指定绑定关联的端口列表。 有关暂停绑定的详细信息，请参阅[处理端口激活 PnP 事件](handling-the-port-activation-pnp-event.md)。
 
 -   **NetEventPortDeactivation**
 
-    表示与指定绑定相关联的端口的列表的停用操作。 有关暂停绑定的详细信息，请参阅[处理端口停用的即插即用事件](handling-the-port-deactivation-pnp-event.md)。
+    指示停用与指定绑定关联的端口列表。 有关暂停绑定的详细信息，请参阅[处理端口停用 PnP 事件](handling-the-port-deactivation-pnp-event.md)。
 
 -   **NetEventIMReEnableDevice**
 
-    指示为 NDIS 6.0 或更高版本的中间驱动程序的虚拟微型端口已更改配置。 **NetEventIMReEnableDevice**类似于**NetEventReconfigure**事件只不过中间驱动程序将收到此事件的单个虚拟微型端口和**NetEventReconfigure**事件适用于所有中间驱动程序的虚拟微型端口。 例如，中间驱动程序收到**NetEventIMReEnableDevice**事件时用户禁用然后再启用设备管理器或另一个源从单个虚拟微型端口。 中间驱动程序电源管理的示例，请参阅[NDIS MUX 中间驱动程序和通知对象](https://go.microsoft.com/fwlink/p/?LinkId=617916)中提供的驱动程序示例[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+    指示对于 NDIS 6.0 或更高版本中间驱动程序的虚拟小型端口，配置已更改。 **NetEventIMReEnableDevice**类似于**NetEventReconfigure**事件，只不过中间驱动程序接收单个虚拟小型端口的此事件， **NetEventReconfigure**事件适用于所有中间驱动程序的虚拟微型端口。 例如，当用户禁用并启用设备管理器或其他源中的单个虚拟小型端口时，中间驱动程序将接收**NetEventIMReEnableDevice**事件。 有关中间驱动程序电源管理的示例，请参阅 GitHub 上的[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)存储库中提供的[NDIS MUX 中间驱动程序和通知对象](https://go.microsoft.com/fwlink/p/?LinkId=617916)驱动程序示例。
 
-**缓冲区**NET 成员\_PNP\_事件结构指向包含特定于所指示的事件的信息的缓冲区。
+NET\_PNP\_事件结构的**buffer**成员指向的缓冲区包含特定于所指示事件的信息。
 
-协议驱动程序可以完成对调用*ProtocolNetPnPEvent*使用以异步方式[ **NdisCompleteNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompletenetpnpevent)。
+协议驱动程序可以使用[**NdisCompleteNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletenetpnpevent)异步完成对*ProtocolNetPnPEvent*的调用。

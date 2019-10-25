@@ -6,12 +6,12 @@ keywords:
 - 上下文 WDK 文件系统微筛选器，获取
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f644c53e895b7283e1cc72c8ec66a06b9e0c4ea6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65b5d74ddda725c48621620076973e2550ea0277
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365897"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841228"
 ---
 # <a name="getting-contexts"></a>获取上下文
 
@@ -19,9 +19,9 @@ ms.locfileid: "67365897"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-一旦微筛选器驱动程序已设置的对象上下文，它可以通过调用获取上下文**FltGet***Xxx***上下文**，其中*Xxx*是上下文类型。
+微筛选器驱动程序设置对象的上下文后，它可以通过调用**FltGet***xxx***上下文**获取上下文，其中*xxx*是上下文类型。
 
-在下面的代码示例摘自 SwapBuffers 示例微筛选器驱动程序，微筛选器驱动程序将调用[ **FltGetVolumeContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumecontext)获取卷上下文：
+在以下代码示例中，从 SwapBuffers 示例微筛选器驱动程序开始，微筛选器驱动程序调用[**FltGetVolumeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetvolumecontext)来获取卷上下文：
 
 ```cpp
 status = FltGetVolumeContext(
@@ -34,7 +34,7 @@ if (volCtx != NULL) {
 }
 ```
 
-如果在调用[**FltGetVolumeContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetvolumecontext) θ *上下文*参数接收调用方的卷上下文的地址。 **FltGetVolumeContext**的引用计数的增量*上下文*指针。 因此，当不再需要此指针时，微筛选器驱动程序必须将其释放通过调用[ **FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltreleasecontext)。
+如果对[**FltGetVolumeContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetvolumecontext)的调用成功，*上下文*参数将接收调用方的卷上下文的地址。 **FltGetVolumeContext**在*上下文*指针上递增引用计数。 因此，当不再需要此指针时，微筛选器驱动程序必须通过调用[**FltReleaseContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltreleasecontext)来释放它。
 
  
 

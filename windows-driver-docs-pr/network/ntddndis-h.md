@@ -1,32 +1,32 @@
 ---
 title: Ntddndis.h
-description: 本部分包含 Ntddndis.h 标头的内核模式网络驱动程序主题。
+description: 本部分包含 Ntddndis 标头的内核模式网络驱动程序主题。
 ms.assetid: EC2CD8C5-A2E9-4CA3-9229-BF0A955E6F53
 keywords:
-- Ntddndis.h 网络驱动程序
+- Ntddndis 网络驱动程序
 ms.date: 08/08/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bdf469406016b48e8bffbf123e717015e7cf314b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c876f6de98c8eb177795c6b1e05aea5c691fddd9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351940"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843274"
 ---
 # <a name="ntddndish"></a>Ntddndis.h
 
 
-本部分包含 Ntddndis.h 标头的内核模式网络驱动程序主题。 此标头包括在 Windows SDK 中，因为它也与用户模式应用程序的网络共享。
+本部分包含 Ntddndis 标头的内核模式网络驱动程序主题。 此标头包含在 Windows SDK 中，因为它也与用户模式网络应用程序共享。
 
-Ntddndis.h 标头包含常量的定义，以及与网络驱动程序进行连接的类型。
+Ntddndis 标头包含用于与网络驱动程序进行交互的常量和类型的定义。
 
 > [!NOTE]
-> 本部分的主题包含用于定义和 Oid，但不属于网络驱动程序 DDI 参考页。 
+> 本部分的主题包含用于定义和 Oid 的页面，这些页面不属于网络驱动程序 DDI 引用。 
 >
-> 此标头的 DDI 参考，请参阅[ntddndis.h 标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis)。
+> 有关此标头的 DDI 引用，请参阅[ntddndis 标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 * [GUID_NDIS_GEN_PCI_DEVICE_CUSTOM_PROPERTIES](guid-ndis-gen-pci-device-custom-properties.md)
 * [OID_802_3_ADD_MULTICAST_ADDRESS](oid-802-3-add-multicast-address.md)

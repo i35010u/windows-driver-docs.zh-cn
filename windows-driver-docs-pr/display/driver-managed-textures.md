@@ -3,17 +3,17 @@ title: 驱动程序管理的纹理
 description: 驱动程序管理的纹理
 ms.assetid: 7ec56b86-dc29-41c3-91f4-2a30e9116b61
 keywords:
-- 纹理管理 WDK Direct3D，驱动程序管理
-- 驱动程序管理纹理 WDK Direct3D
-- 可管理纹理 WDK Direct3D
+- 纹理管理 WDK Direct3D，驱动程序托管
+- 驱动程序管理的纹理 WDK Direct3D
+- 可管理的纹理 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ddb04034e4a6d233535c685188b7e4a7d9f6a4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: afc88e50312503cfb737982bf9127f642f210a1b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381079"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839730"
 ---
 # <a name="driver-managed-textures"></a>驱动程序管理的纹理
 
@@ -21,19 +21,19 @@ ms.locfileid: "67381079"
 ## <span id="ddk_driver_managed_textures_gg"></span><span id="DDK_DRIVER_MANAGED_TEXTURES_GG"></span>
 
 
-该驱动程序可以管理已标记为可托管的纹理。 这些 DirectDrawSurface 对象都被标记为可使用 DDSCAPS2\_TEXTUREMANAGE 标志**dwCaps2**引用结构成员**lpSurfMore-&gt;ddCapsEx**. (**lpSurfMore**并**ddCapsEx**属于[ **DD\_面\_本地**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)和[ **DD\_图面\_详细**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more)结构，分别。)
+驱动程序可以管理已标记为可管理的纹理。 这些 DirectDrawSurface 对象在**lpSurfMore&gt;ddCapsEx**所引用的结构的**dwCaps2**成员中使用 DDSCAPS2\_TEXTUREMANAGE 标志进行标记为可管理。 （**lpSurfMore**和**ddCapsEx**是[**dd\_surface\_本地**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_local)和[**dd\_面的成员分别\_更多**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_more)结构。）
 
-该驱动程序支持通过设置驱动程序管理的纹理**dwCaps2**的成员[ **DDCORECAPS** ](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)结构 DDCAPS2\_CANMANAGETEXTURE 位。 该驱动程序指定在此 DDCORECAPS 结构**ddCaps**的成员[ **DD\_HALINFO** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构。 DD\_返回 HALINFO [ **DrvGetDirectDrawInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)响应 DirectDraw 组件的驱动程序的初始化。
+驱动程序通过将[**DDCORECAPS**](https://docs.microsoft.com/windows/desktop/api/ddrawi/ns-ddrawi-_ddcorecaps)结构的**dwCaps2**成员设置为 DDCAPS2\_CANMANAGETEXTURE 位，来支持驱动程序托管纹理。 驱动程序在[**DD\_HALINFO**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_halinfo)结构的**ddCaps**成员中指定此 DDCORECAPS 结构。 DD\_HALINFO 由[**DrvGetDirectDrawInfo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetdirectdrawinfo)返回，以响应驱动程序的 DirectDraw 组件的初始化。
 
-该驱动程序然后可以在以"迟缓"方式的视频或非本地内存中创建必要的图面。 也就是说，驱动程序会使后备图面，直到它需要它们，但之前光栅化基元，可使用的纹理中的纹理。
+然后，该驱动程序可以采用 "延迟" 方式在视频或非本地内存中创建必要的图面。 也就是说，驱动程序将纹理置于后备面中，直到它需要它们，这刚好在对使用纹理的基元进行光栅化之前。
 
-应主要由其优先级分配逐出图面。 该驱动程序响应 D3DDP2OP\_SETPRIORITY 操作代码中[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)命令流。 此操作的代码对于给定表面的优先级设置。 作为辅助措施，该驱动程序应使用的最早使用 (LRU) 方案中收回图面。 在特定方案完全相同的两个或多个纹理的优先级时，驱动程序将使用此方案。 在逻辑上，应该不会在所有逐出正在使用中的任何图面。
+应该首先通过其优先级分配来逐出面。 驱动程序在[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)命令流中对 D3DDP2OP\_SETPRIORITY 操作代码做出响应。 此操作代码设置给定表面的优先级。 作为辅助度量，驱动程序应使用最近最少使用的（LRU）方案来逐出表面。 每当在特定方案中两个或更多纹理的优先级相同时，驱动程序将使用此方案。 从逻辑上讲，所有正在使用的表面都不应被逐出。
 
-如果驱动程序支持托管图面，则该驱动程序可能会收到一个特殊[ *DdDestroySurface* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)为托管的图面中的视频内存丢失，如模式切换发生时的情况下调用。 在本例中，DRAWISURF\_设置无效标志和驱动程序只需逐出的此托管的图面则视频内存的副本，并保留其他结构保持不变。 否则，该驱动程序执行正则表达式销毁图面上的调用。
+如果驱动程序支持托管的图面，则驱动程序可能会在视频内存丢失的情况下（例如，当发生模式切换时）为托管表面接收特殊的[*DdDestroySurface*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_destroysurface)调用。 在这种情况下，将设置 DRAWISURF\_无效的标志，驱动程序只是逐出此托管表面的视频内存副本，并使其他结构保持不变。 否则，驱动程序将执行常规销毁面调用。
 
-该驱动程序应处理[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)并[ *DdLock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)管理纹理时相应调用。 这是因为对后备图面上图像的任何更改必须传播到表面的视频内存副本，然后再次使用纹理。 该驱动程序应确定它是否更好的做法更新只需在图面或所有它的一部分。 例如，如果驱动程序的*DdLock*函数调用以修改仅为一部分的图面上，则视频内存的副本的备份 （系统内存） 映像，然后当驱动程序的*DdBlt*调用函数驱动程序可以通过只是平面闪表面从系统内存到视频内存以下需要优化更新。
+管理纹理时，驱动程序应适当处理[*DdBlt*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)和[*DdLock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)调用。 这是因为对后备面映像所做的任何更改都必须传播到表面的视频内存副本中，然后再再次使用纹理。 驱动程序应该确定是否最好只更新部分表面或全部。 例如，如果调用驱动程序的*DdLock*函数来仅修改表面视频内存副本的部分后备（系统内存）映像，则在调用驱动程序的*DdBlt*函数时，该驱动程序只需优化更新blitting 将必要的 subsurface 从系统内存转换为视频内存。
 
-允许驱动程序以便对纹理执行优化转换或位置和时间确定为自身执行纹理管理传输内存中的纹理。
+允许该驱动程序执行纹理管理，以便在纹理上执行优化转换或自行决定在内存中传输纹理的位置和时间。
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: EXT\_TDOP\_SET\_FROM\_TYPE\_ID\_AND\_U64
-description: EXT\_TDOP\_设置\_FROM\_类型\_ID\_AND\_U64 子操作的调试\_请求\_EXT\_类型化\_数据\_ANSI 请求操作创建类型化的数据说明从数据类型和内存位置。
+title: EXT\_TDOP\_设置\_\_类型\_ID\_和\_U64
+description: EXT\_TDOP\_将\_从\_类型\_\_\_\_\_\_类型\_\_数据 ANSI 请求操作根据数据类型和内存位置创建类型化的数据说明。
 ms.assetid: 5b1ee241-6f35-4bbf-b4e0-3cefa5a39dde
 keywords:
-- EXT_TDOP_SET_FROM_TYPE_ID_AND_U64 Windows Debugging
+- EXT_TDOP_SET_FROM_TYPE_ID_AND_U64 Windows 调试
 topic_type:
 - apiref
 api_name:
@@ -12,61 +12,61 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c1c2d7ccacea05192ddbbbe9d5d115bae7863c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64dafc6b88eeef4307a5df3445e60d89bd51981c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361321"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838765"
 ---
-# <a name="exttdopsetfromtypeidandu64"></a>EXT\_TDOP\_SET\_FROM\_TYPE\_ID\_AND\_U64
+# <a name="ext_tdop_set_from_type_id_and_u64"></a>EXT\_TDOP\_设置\_\_类型\_ID\_和\_U64
 
 
-EXT\_TDOP\_设置\_FROM\_类型\_ID\_AND\_U64 子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作创建从类型化的数据说明数据类型和内存位置。
+EXT\_TDOP\_将\_从\_类型\_\_\_\_\_\_类型\_\_[**数据 ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作根据数据类型和内存位置创建类型化的数据说明。
 
 **Parameters**
 
-<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
-设置为 EXT\_TDOP\_设置\_FROM\_类型\_ID\_AND\_U64 此子操作。
+<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
+设置为 EXT\_TDOP\_将\_从\_类型\_ID\_和\_U64 设置为此子操作。
 
-<span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>**标志**  
-指定位标志，用于描述类型化数据的值所在的目标的内存。 请参阅[ **EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)的这些标志的详细信息。
+<span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span>**随意**  
+指定用于描述类型化数据的值所在的目标内存的位标志。 有关这些标志的详细信息，请参阅[**EXT\_类型化的\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-指定的类型和内存位置。 此实例的[**调试\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_debug_typed_data)结构可以手动创建并填充其所需的成员。 使用以下成员：
+指定类型和内存位置。 可以手动创建并填充所需成员的[**调试\_类型\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data)结构的此实例。 使用以下成员：
 
 <span id="ModBase"></span><span id="modbase"></span><span id="MODBASE"></span>**ModBase**  
-指定包含类型的模块的基址的目标的虚拟内存中的位置。
+指定包含类型的模块基址的目标虚拟内存中的位置。
 
-<span id="Offset"></span><span id="offset"></span><span id="OFFSET"></span>**Offset**  
-在数据的目标的内存中指定的位置。 **偏移量**是虚拟内存地址，除非有标志中存在**标志**，用于指定的**偏移量**是物理内存地址。
+<span id="Offset"></span><span id="offset"></span><span id="OFFSET"></span>**抵销**  
+指定目标的数据内存中的位置。 **偏移量**是虚拟内存地址，除非**标志**中存在指定该**偏移量**是物理内存地址的标志。
 
 <span id="TypeId"></span><span id="typeid"></span><span id="TYPEID"></span>**TypeId**  
 指定类型的类型 ID。
 
 <span id="OutData"></span><span id="outdata"></span><span id="OUTDATA"></span>**OutData**  
-接收类型化的数据说明。
+接收类型化数据说明。
 
-<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态**  
-接收此子操作返回的状态代码。 这是与返回的值相同[**请求**](request.md)。
+<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态值**  
+接收此子操作返回的状态代码。 这与[**请求**](request.md)返回的值相同。
 
 <a name="remarks"></a>备注
 -------
 
-EXT\_TDOP\_设置\_FROM\_类型\_ID\_AND\_U64 是中的值[ **EXT\_TDOP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)枚举。
+EXT\_TDOP\_从\_类型\_ID\_设置\_，\_U64 是[**ext\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的一个值。
 
-此子操作的参数属于[ **EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)结构。 EXT 隶属\_类型化\_前面的参数部分中未列出的数据不使用此子操作，应设置为零。 前面的 Parameters 节中的成员的说明指定使用的成员。 请参阅**EXT\_类型化\_数据**的更多详细信息。
+此子操作的参数是[**类型\_数据结构的 EXT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)的成员。 此子操作不使用 EXT\_类型化\_数据的成员，此子操作不使用该类型的数据，应将其设置为零。 前面参数部分中的成员的说明指定了成员的用途。 有关更多详细信息，请参阅**EXT\_类型化的\_数据**。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DEBUG\_REQUEST\_EXT\_TYPED\_DATA\_ANSI**](debug-request-ext-typed-data-ansi.md)
+[**调试\_请求\_EXT\_类型\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)
 
-[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)
+[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)
 
-[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)
+[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
-[**请求**](request.md)
+[**需要**](request.md)
 
  
 

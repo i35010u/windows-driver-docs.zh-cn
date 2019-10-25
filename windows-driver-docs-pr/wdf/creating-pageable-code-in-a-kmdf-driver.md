@@ -3,43 +3,43 @@ title: 在 KMDF 驱动程序中创建可分页的代码
 description: 在 KMDF 驱动程序中创建可分页的代码
 ms.assetid: 5c694ae2-2a16-4c2f-84b0-62e26f4121bc
 keywords:
-- 可分页的驱动程序 WDK KMDF
-- KMDF WDK，可分页的驱动程序
+- 可分页驱动程序 WDK KMDF
+- KMDF WDK，可分页驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc4b4be6d98f53cfd2042b7475aadf1d6843087
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a6e9963e90ab4957aac6698949c6c8d21f594ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382368"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844678"
 ---
 # <a name="creating-pageable-code-in-a-kmdf-driver"></a>在 KMDF 驱动程序中创建可分页的代码
 
 
-*可分页代码*是未使用代码时可以写入到计算机的分页文件的代码。 您可使您的驱动程序部分，以减少其映像加载和初始加载时间并减少使用计算机的有限的非分页的内存池的驱动程序的代码的可分页。
+可*分页代码*是代码未使用时可以写入计算机的分页文件中的代码。 可以进行部分驱动程序分页以减少其负载映像和初始加载时间，还可以减少使用计算机的非分页内存池的驱动程序代码量。
 
-为了帮助您确定是否适合您的驱动程序的可分页的代码或数据，执行以下操作：
+若要帮助你确定可分页代码或数据是否适合你的驱动程序，请执行以下操作：
 
-1.  识别驱动程序中的可分页部分。
+1.  标识驱动程序中的可分页部分。
 
-    可分页部分未加载到内存中，直到需要它们。 有关如何在一个驱动程序中创建可分页部分的信息，请参阅[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)。
+    可分页节在需要之前不会加载到内存中。 有关如何在驱动程序中创建可分页的部分的信息，请参阅[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)。
 
-2.  请确保分页驱动程序代码不会影响计算机的功能快速唤醒从低功耗状态。
+2.  请确保分页的驱动程序代码不会妨碍计算机迅速从低功耗状态唤醒。
 
-    驱动程序提供的所有设备对象的回调函数都调用在 IRQL = 被动\_级别，这样就可以提高其代码的可分页 (如中所述[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable))。
+    驱动程序提供的所有设备对象回调函数都是在 IRQL = 被动\_级别调用的，这使你可以使其代码可分页（如[使驱动程序可分页](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)中所述）。
 
-    但是，不应造成会回调函数的代码可分页，如果设备离开低功耗状态，并返回到其工作 (D0) 状态时，框架将调用的回调函数。
+    但是，如果框架在设备处于低功耗状态时调用回调函数并返回到其工作（D0）状态，则不应使回调函数的代码可分页。
 
-    如果此类代码可分页，代码可能会写入到分页文件之前在计算机进入睡眠状态。 因此，计算机会变慢来唤醒因为无法重新加载您的代码 （并因此你的设备不能成为完全可操作） 直到还原分页磁盘的能力。
+    如果此类代码是可分页的，则可能会在计算机进入睡眠状态之前将代码写入页面文件。 因此，计算机速度会变慢，因为无法重新加载您的代码（因而您的设备不能完全操作），直到寻呼磁盘的电源恢复。
 
-    因此，回调函数中列出[设备返回到工作状态](a-device-returns-to-its-working-state.md)主题不应为可分页。
+    因此，在设备中列出的回调函数将[返回其工作状态](a-device-returns-to-its-working-state.md)主题。
 
-3.  确定您的驱动程序需要的驱动程序，例如文件、 注册表中，外部的可分页数据的访问权限还是 power 进行转换时分页池。
+3.  确定驱动程序是否需要访问驱动程序外部的可分页数据（如文件、注册表或页面缓冲池），然后再进行电源转换。
 
-    有关如何启用和禁用的驱动程序能够访问 power 转换期间的可分页数据的信息，请参阅[ **WdfDeviceInitSetPowerPageable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable)并[ **WdfDeviceInitSetPowerNotPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowernotpageable)。
+    有关如何启用和禁用驱动程序在电源转换期间访问可分页数据的功能的信息，请参阅[**WdfDeviceInitSetPowerPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpageable)和[**WdfDeviceInitSetPowerNotPageable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowernotpageable)。
 
-    有关如何确定您的驱动程序何时在分页状态的信息，请参阅[ **WdfDevStateIsNP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevstateisnp)。
+    有关如何确定驱动程序处于不可分页状态的信息，请参阅[**WdfDevStateIsNP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevstateisnp)。
 
  
 

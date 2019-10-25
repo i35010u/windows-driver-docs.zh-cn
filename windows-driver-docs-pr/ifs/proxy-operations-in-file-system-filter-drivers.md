@@ -7,12 +7,12 @@ keywords:
 - 代理操作 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 740894dc3a3bf2e0103175f177868ee3ccf61627
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60c735bc1af7b9ff8732ec20e7d933fd42abb64b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385148"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841019"
 ---
 # <a name="proxy-operations-in-file-system-filter-drivers"></a>文件系统筛选器驱动程序中的代理操作
 
@@ -20,11 +20,11 @@ ms.locfileid: "67385148"
 ## <span id="ddk_proxy_operations_in_file_system_filter_drivers_if"></span><span id="DDK_PROXY_OPERATIONS_IN_FILE_SYSTEM_FILTER_DRIVERS_IF"></span>
 
 
-文件系统筛选器驱动程序必须频繁地执行代表原始 （用户模式） 调用方的操作。 这样做时，它是命令性文件系统筛选器驱动程序不执行的操作，可能需要原始用户不可能的操作。 例如，假设用户尝试打开文件进行文件\_SUPERSEDE。 筛选器驱动程序不能再尝试打开文件指定相同类型的访问[ **ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)，例如，因为即使用户没有权限来取代该文件，文件系统筛选器驱动程序执行时，操作会成功。
+文件系统筛选器驱动程序必须经常代表原始（用户模式）调用方执行操作。 执行此操作时，文件系统筛选器驱动程序不会执行可能执行原始用户无法执行的操作的操作。 例如，假设用户尝试打开文件\_取代。 然后，筛选器驱动程序不能尝试使用[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)打开指定相同访问类型的文件，例如，即使用户没有取代该文件的权限，该操作也会在文件系统执行时成功。筛选器驱动程序。
 
-在其中的文件系统筛选器驱动程序可能会引入此类问题的方法有很多。 它们可的随时文件系统筛选器驱动程序不知道用户的操作结果的情况下执行基础文件系统上的操作发生。 因此，文件系统筛选器驱动程序必须识别这种情况下，并确保它要么已确定该操作的结果，或者它具有用于从实际用户操作中的错误中恢复的机制。 例如，对于取代该文件的请求，筛选器驱动程序可能需要打开代表原始调用方使用的文件[ **IoCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatefile) ，该值指示对该文件的安全权限的将足以满足 supersede 操作。 如果筛选器驱动程序已使用 IO\_FORCE\_访问\_检查选项，例如，安全检查操作即告完成，在当前线程的凭据即使在调用是从内核驱动程序。
+文件系统筛选器驱动程序可能导致此类问题的方法很多。 当文件系统筛选器驱动程序在基础文件系统上执行操作时，如果不知道用户操作的结果，则可能会发生这种情况。 文件系统筛选器驱动程序必须这样识别此类情况，并确保该驱动程序已确定操作的结果，或者它具有用于从实际用户操作中的错误中恢复的机制。 例如，在请求取代该文件时，筛选器驱动程序可能需要使用[**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)代表原始调用方打开该文件，该文件指示对该文件的安全权限，这些权限足以满足替代操作的要求。 例如，如果筛选器驱动程序使用 IO\_强制\_访问\_检查选项，则会使用当前线程的凭据进行安全检查，即使调用来自内核驱动程序也是如此。
 
-它是必需的文件系统筛选器驱动程序来标识的实例驱动程序正在其中执行操作代表的或为，一些用户级操作。 在这些情况下，如何确保操作正确的清除策略需要进行标识。
+文件系统筛选器驱动程序必须标识驱动程序在其上执行操作的实例，或执行某些用户级别操作的实例。 在这些情况下，需要确定正确操作的明确策略。
 
  
 

@@ -11,12 +11,12 @@ keywords:
 - Unidrv WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ef06be43537bfd2ce64fe5bfb15e46f6aed9c3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9366dd1465a5db1af5f0073cc8addc9d1ec97671
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378595"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843408"
 ---
 # <a name="handling-color-formats"></a>处理颜色格式
 
@@ -24,7 +24,7 @@ ms.locfileid: "67378595"
 
 
 
-每个打印机支持的颜色格式指定为 ColorMode 功能的选项。 通过使用[选项为 ColorMode 功能特性](option-attributes-for-the-colormode-feature.md)，可以描述您的打印机接受每个颜色格式。 下表说明了 Unidrv 可以处理的颜色数据格式。
+打印机支持的每种颜色格式被指定为 ColorMode 功能的选项。 通过使用[ColorMode 功能的选项属性](option-attributes-for-the-colormode-feature.md)，可以描述打印机所能接受的每种颜色格式。 下表说明了 Unidrv 可以处理的颜色数据格式。
 
 <table>
 <colgroup>
@@ -39,12 +39,12 @@ ms.locfileid: "67378595"
 </thead>
 <tbody>
 <tr class="odd">
-<td>在设备 (<em>DevNumOfPlanes)</td>
-<td>在设备 (</em>DevBPP)</td>
+<td>在设备中（<em>DevNumOfPlanes）</td>
+<td>在设备中（</em>DevBPP）</td>
 </tr>
 <tr class="even">
 <td><p>1</p></td>
-<td><p>1 （黑色和白色）</p></td>
+<td><p>1（黑色和白色）</p></td>
 </tr>
 <tr class="odd">
 <td><p>1</p></td>
@@ -56,40 +56,40 @@ ms.locfileid: "67378595"
 </tr>
 <tr class="odd">
 <td><p>3</p></td>
-<td><p>1 （CMY 和 RGB）</p></td>
+<td><p>1（CMY 和 RGB）</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
-<td><p>1 (<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>)</p></td>
+<td><p>1（<a href="https://docs.microsoft.com/windows-hardware/drivers/#wdkgloss-cmyk" data-raw-source="&lt;em&gt;CMYK&lt;/em&gt;"><em>CMYK</em></a>）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-对于这些格式，可以转换 Unidrv*独立于设备的位图 (DIB)* 到适当的数据设置格式并将其发送到打印机。 (可以对此数据执行的半色调操作中所述[Unidrv 与半色调](halftoning-with-unidrv.md)。)
+对于这些格式，Unidrv 可以将与*设备无关的位图（DIB）* 数据转换为正确的格式，并将其发送到打印机。 （在[Unidrv](halftoning-with-unidrv.md)中，可以对此数据执行半色调运算。）
 
-如果您的打印机支持前面的表中未列出的颜色格式，您必须执行以下操作：
+如果打印机支持上表中未列出的颜色格式，则必须执行以下操作：
 
--   设置\*DevNumOfPlanes 和\*DevBPP 属性为零。 执行此操作可防止 Unidrv 将 DIB 数据发送到打印机。
+-   将 \*DevNumOfPlanes 和 \*DevBPP 特性设置为零。 这样做可以防止 Unidrv 将 DIB 数据发送到打印机。
 
--   提供[呈现插件](rendering-plug-ins.md)实现[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法。
+-   提供实现[**IPrintOemUni：： ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法的[呈现插件](rendering-plug-ins.md)。
 
-[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法必须执行以下操作：
+[**IPrintOemUni：： ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)方法必须执行以下操作：
 
 -   将 DIB 数据转换为打印机的颜色格式。
 
--   半色调数据执行操作。
+-   对数据执行半色调运算。
 
 -   将数据发送到打印后台处理程序。
 
-提供有关详细信息[ **IPrintOemUni::ImageProcessing** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)函数中，请参阅[自定义颜色格式](customized-color-formats.md)。
+有关提供[**IPrintOemUni：： ImageProcessing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemuni-imageprocessing)函数的详细信息，请参阅[自定义颜色格式](customized-color-formats.md)。
 
-### <a name="rendering-high-quality-images"></a>呈现高质量的图像
+### <a name="rendering-high-quality-images"></a>呈现高质量映像
 
-对于每个颜色格式，您可以指定每个打印机硬件接受的像素的位数和每个你想 Unidrv 创建 Dib 时要使用的像素的位数。 这些值指定与\*DevBPP 和\*DrvBPP 属性，分别。 有时，所以最好图像呈现为位图，具有更多的每像素位数超过打印机可以处理 （按顺序，例如，若要尝试重现高质量的照片）。 因此，它是允许指定\* **DrvBPP**大于相乘的结果的值\* **DevBPP**值\*DevNumOfPlanes 值。
+对于每个颜色格式，你都可以指定打印机硬件接受的每个像素的位数，以及你希望 Unidrv 在创建 Dib 时使用的每个像素的位数。 这些值分别与 \*DevBPP 和 \*DrvBPP 特性一起指定。 有时，图像会呈现为位图，因为位图的位数大于打印机可以处理的位数（例如，尝试复制高质量的照片）。 因此，允许指定一个 \***DrvBPP**值，该值大于 \***DevBPP**值与 \*DevNumOfPlanes 值相乘所得的结果。
 
-例如，假设你想要定义一种 ColorMode 选项，会将图像呈现为 24 位/像素位图，但然后想要发送到为打印机的位图*CMYK*数据。 您可以定义此模式，如下所示：
+例如，假设要定义一个 ColorMode 选项，该选项会使图像呈现为24位/像素位图，但随后需要将位图作为*CMYK*数据发送到打印机。 可以按如下所示定义此模式：
 
 ```cpp
 *Feature: ColorMode
@@ -107,7 +107,7 @@ ms.locfileid: "67378595"
 }
 ```
 
-在此示例中， \* **DevBPP**并\* **DevNumOfPlanes**属性表示的四个平面，每个平面一位 CMYK 格式 Unidrv 可以呈现，然后发送到打印机。 但是，在这种情况下，半色调操作必须执行在呈现的图像在打印之前。 [微型驱动程序提供半色调](minidriver-supplied-halftoning.md)必须使用。
+在此示例中，\***DevBPP**和 \***DevNumOfPlanes**属性表示 Unidrv 可呈现并发送到打印机的四个平面的每个平面 CMYK 格式。 但是，在这种情况下，必须在呈现的图像上执行半色调操作才能进行打印。 必须使用[微型驱动程序提供的半色调](minidriver-supplied-halftoning.md)。
 
  
 

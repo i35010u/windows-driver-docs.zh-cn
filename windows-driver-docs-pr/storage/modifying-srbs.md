@@ -8,12 +8,12 @@ keywords:
 - SRB 修改 WDK 存储
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 235a11afbd05d21136382cce3e0c939b88c846ca
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.openlocfilehash: 19276bce6f47708f1bfd3afdc94ad59061ae5a37
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252466"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841613"
 ---
 # <a name="modifying-srbs"></a>修改 SRB
 
@@ -31,7 +31,7 @@ ms.locfileid: "72252466"
 
 - 如果微型端口驱动程序支持8个以上的逻辑单元，则将**Lun**成员设置为逻辑单元号
 
-如果 HBA 可以处理超过八个逻辑单元（如*HwScsiFindAdapter*设置[PORT_CONFIGURATION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_port_configuration_information)时所示），则端口驱动程序不会解释 LUN 信息。 如果需要，微型端口驱动程序负责将8位 LUN 从 SRB 映射到 SCSI-3 地址。
+如果 HBA 可以处理超过八个逻辑单元（如*HwScsiFindAdapter*设置[PORT_CONFIGURATION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_port_configuration_information)时所示），则端口驱动程序不会解释 LUN 信息。 如果需要，微型端口驱动程序负责将8位 LUN 从 SRB 映射到 SCSI-3 地址。
 
 从8位 LUN 到 SCSI-3 地址的映射是特定于微型端口驱动程序。 下表显示了建议的映射，其中*P*为物理寻址模式， *B*为总线， *T*为目标。
 

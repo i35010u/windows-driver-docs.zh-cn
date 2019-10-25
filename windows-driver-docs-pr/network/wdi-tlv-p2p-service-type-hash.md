@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_P2P_SERVICE_TYPE_HASH
-description: WDI_TLV_P2P_SERVICE_TYPE_HASH 是包含服务类型的哈希 TLV。
+description: WDI_TLV_P2P_SERVICE_TYPE_HASH 是一个 TLV，其中包含服务类型的哈希。
 ms.assetid: A475C2E3-F558-47EC-9708-87887AE2D8AF
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_P2P_SERVICE_TYPE_HASH 网络驱动程序
+- WDI_TLV_P2P_SERVICE_TYPE_HASH 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 8308a82a3c4298b04a5f067ecb3b03d84187bf07
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd2c6d3ef612cbe57dcced5bd5d06422ea87ea23
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355421"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838024"
 ---
-# <a name="wditlvp2pservicetypehash"></a>WDI\_TLV\_P2P\_SERVICE\_TYPE\_HASH
+# <a name="wdi_tlv_p2p_service_type_hash"></a>WDI\_TLV\_P2P\_服务\_类型\_哈希
 
 
-WDI\_TLV\_P2P\_服务\_类型\_哈希是包含服务类型的哈希 TLV。
+WDI\_TLV\_P2P\_服务\_类型\_哈希是包含服务类型的哈希的 TLV。
 
-**请注意**  此 TLV 添加 Windows 10，版本 1607，WDI 版本 1.0.21 中。
+**请注意**  此 TLV 添加到了 Windows 10 1607 版 WDI 版本1.0.21 中。
 
  
 
@@ -30,14 +30,14 @@ WDI\_TLV\_P2P\_服务\_类型\_哈希是包含服务类型的哈希 TLV。
 ## <a name="length"></a>长度
 
 
-大小 （以字节为单位） [ **WDI\_P2P\_服务\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构。
+WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash)结构。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                                    | 描述               |
 |-------------------------------------------------------------------------|---------------------------|
-| [**WDI\_P2P\_SERVICE\_NAME\_HASH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | 服务类型的哈希值。 |
+| [**WDI\_P2P\_服务\_名称\_哈希**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_p2p_service_name_hash) | 服务类型的哈希。 |
 
  
 
@@ -52,14 +52,14 @@ WDI\_TLV\_P2P\_服务\_类型\_哈希是包含服务类型的哈希 TLV。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

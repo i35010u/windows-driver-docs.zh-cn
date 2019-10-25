@@ -4,19 +4,19 @@ description: MS\_SMHBA\_PORTATTRIBUTES WMI 类
 ms.assetid: 26f17443-cb89-4c93-9b67-35acb75b6d03
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6a43e54d1c942ad23b96cd1283a01c0f59c6aeb0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd06c0dc605a2adc429b4bae37494a2627597b55
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386140"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844534"
 ---
-# <a name="mssmhbaportattributes-wmi-class"></a>MS\_SMHBA\_PORTATTRIBUTES WMI 类
+# <a name="ms_smhba_portattributes-wmi-class"></a>MS\_SMHBA\_PORTATTRIBUTES WMI 类
 
 
-支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SMHBA\_PORTATTRIBUTES 类公开的端口属性。 应为每个端口的此类的一个实例。
+支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SMHBA\_PORTATTRIBUTES 类公开端口属性。 每个端口都应有此类的一个实例。
 
-MS\_SMHBA\_PORTATTRIBUTES 类定义，如下所示在*Hbaapi.mof*:
+MS\_SMHBA\_PORTATTRIBUTES 类在*Hbaapi*中定义如下：
 
 ```cpp
 class MS_SMHBA_PORTATTRIBUTES 
@@ -46,9 +46,9 @@ class MS_SMHBA_PORTATTRIBUTES
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成以下数据结构：
+当 WMI 工具套件编译此类定义时，它将生成以下数据结构：
 
-[**MS\_SMHBA\_PORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_smhba_portattributes)
+[**MS\_SMHBA\_PORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_smhba_portattributes)
 
 没有与此 WMI 类相关联的方法。
 

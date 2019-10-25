@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_RECEIVE_FILTER_FIELD (0x65)
-description: WDI_TLV_RECEIVE_FILTER_FIELD 是包含接收筛选器 TLV 网络标头中进行测试的一个字段的条件。
+description: WDI_TLV_RECEIVE_FILTER_FIELD 是一个 TLV，其中包含网络标头中的一个字段的接收筛选器测试条件。
 ms.assetid: 9037CD08-742E-4A99-A37B-9969A2BC666A
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_RECEIVE_FILTER_FIELD (0x65) 网络驱动程序
+- WDI_TLV_RECEIVE_FILTER_FIELD （0x65）从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 772caf5d21d87076f9bf7b84f95ee95e6f6405a4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f73f8212e171874fdc7a475bcb315314d4167a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376991"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842273"
 ---
-# <a name="wditlvreceivefilterfield-0x65"></a>WDI\_TLV\_RECEIVE\_FILTER\_FIELD (0x65)
+# <a name="wdi_tlv_receive_filter_field-0x65"></a>WDI\_TLV\_接收\_筛选器\_字段（0x65）
 
 
-WDI\_TLV\_接收\_筛选器\_字段是包含网络标头中的一个字段的接收筛选器测试条件 TLV。
+WDI\_TLV\_接收\_筛选器\_字段是一个 TLV，其中包含网络标头中的一个字段的接收筛选器测试条件。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,7 +26,7 @@ WDI\_TLV\_接收\_筛选器\_字段是包含网络标头中的一个字段的接
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
@@ -45,31 +45,31 @@ WDI\_TLV\_接收\_筛选器\_字段是包含网络标头中的一个字段的接
 <tbody>
 <tr class="odd">
 <td>UINT32</td>
-<td>指定标志的按位 OR。 可能的标志值为 WDI_RECEIVE_FILTER_FIELD_MAC_HEADER_VLAN_UNTAGGED_OR_ZERO。 如果设置此标志，网络适配器必须仅指示满足以下条件的接受的数据包：
+<td>指定标志的按位 "或"。 可能的标志值为 WDI_RECEIVE_FILTER_FIELD_MAC_HEADER_VLAN_UNTAGGED_OR_ZERO。 如果设置了此标志，则网络适配器只能指示已接收的数据包，这些数据包通过以下标准：
 <ul>
-<li>数据包的 MAC 地址匹配指定的 MAC 标头字段测试。</li>
-<li>数据包不包含的 VLAN 标记，或一个 VLAN 标记具有 ID 为 0。</li>
+<li>数据包的 MAC 地址与指定的 MAC 标头字段测试匹配。</li>
+<li>数据包不包含 VLAN 标记，或者其 VLAN 标记的 ID 为零。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_frame_header" data-raw-source="[&lt;strong&gt;NDIS_FRAME_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_frame_header)"><strong>NDIS_FRAME_HEADER</strong></a> (UINT32)</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_frame_header" data-raw-source="[&lt;strong&gt;NDIS_FRAME_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_frame_header)"><strong>NDIS_FRAME_HEADER</strong></a> （UINT32）</td>
 <td>框架标头。 指定框架标头的类型。</td>
 </tr>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_receive_filter_test" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_TEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_receive_filter_test)"><strong>NDIS_RECEIVE_FILTER_TEST</strong></a> (UINT32)</td>
-<td>收到筛选测试。 指定接收筛选器执行的测试的类型。</td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_receive_filter_test" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_TEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_receive_filter_test)"><strong>NDIS_RECEIVE_FILTER_TEST</strong></a> （UINT32）</td>
+<td>接收筛选器测试。 指定接收筛选器执行的测试类型。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>标头字段。 与联合中指定的特定于协议的标头字段类型，如中所述<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_FIELD_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)"> <strong>NDIS_RECEIVE_FILTER_FIELD_PARAMETERS</strong></a>。HeaderField。</td>
+<td>标头字段。 按照<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_FIELD_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)"><strong>NDIS_RECEIVE_FILTER_FIELD_PARAMETERS</strong></a>中所述，按联合指定协议特定的标头字段类型。HeaderField.</td>
 </tr>
 <tr class="odd">
-<td>UINT8[16]</td>
-<td>字段值。 指定的微型端口适配器将与传入的数据包中的相应标头字段值进行比较的值。 标头字段值的位置由中指定的字段类型<em>标头字段</em>元素。 此值是以网络字节顺序，如中所述，使用联合指定<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_FIELD_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)"> <strong>NDIS_RECEIVE_FILTER_FIELD_PARAMETERS</strong></a>。FieldValue。</td>
+<td>UINT8 [16]</td>
+<td>字段值。 指定微型端口适配器与传入数据包中相应标头字段值进行比较的值。 标头字段值的位置由<em>标头字段</em>元素中指定的字段类型决定。 此值采用网络字节顺序，并按<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_FIELD_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)"><strong>NDIS_RECEIVE_FILTER_FIELD_PARAMETERS</strong></a>中所述的联合进行指定。FieldValue.</td>
 </tr>
 <tr class="even">
-<td>UINT8[16]</td>
-<td>测试结果值。 如果<em>接收筛选器测试</em>元素设置为 ReceiveFilterTestMaskEqual、 网络适配器首先计算中的值的结果<em>字段值</em>成员和标头字段与指定的值通过<em>标头字段</em>成员。 然后，适配器会比较计算的结果与<em>导致值</em>。 如中所述，指定此值与联合<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_FIELD_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)"> <strong>NDIS_RECEIVE_FILTER_FIELD_PARAMETERS</strong></a>。ResultValue。</td>
+<td>UINT8 [16]</td>
+<td>测试结果值。 如果 "<em>接收筛选器测试</em>" 元素设置为 "ReceiveFilterTestMaskEqual"，则网络适配器将首先从<em>字段值</em>成员的值和<em>标</em>头字段成员指定的标头字段值计算结果。 然后，该适配器会将计算结果与<em>结果值</em>进行比较。 此值与<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_FILTER_FIELD_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)"><strong>NDIS_RECEIVE_FILTER_FIELD_PARAMETERS</strong></a>中所述的联合一起指定。ResultValue.</td>
 </tr>
 </tbody>
 </table>
@@ -87,14 +87,14 @@ WDI\_TLV\_接收\_筛选器\_字段是包含网络标头中的一个字段的接
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

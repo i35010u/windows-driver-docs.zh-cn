@@ -1,41 +1,41 @@
 ---
 title: SR-IOV OID
-description: 本部分介绍单根 I/O 虚拟化 (SR-IOV) Oid 和它们的特征。
+description: 本部分介绍单根 i/o 虚拟化（SR-IOV） Oid 及其特性。
 keywords:
 - SR-IOV OID
-- 单根 I/O 虚拟化 Oid
-- WDK 的 SR-IOV Oid
+- 单个根 i/o 虚拟化 Oid
+- WDK SR-IOV Oid
 - SR-IOV 对象标识符
 ms.assetid: E93751BF-17BC-4BE7-89F7-53F6C9941120
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b8d5b7e6859fe087c90e155432c63483bbc57e6f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e39b18ffd6943437503245607820e8951b69f21
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386210"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841857"
 ---
 # <a name="sr-iov-oids"></a>SR-IOV OID
 
-单根 I/O 虚拟化 (SR-IOV) 对象标识符 (Oid) 适用于微型端口和基础驱动程序支持 SR-IOV 的接口。 在 NDIS 版本 6.30 和更高版本中支持此接口。 
+单个根 i/o 虚拟化（SR-IOV）对象标识符（Oid）适用于支持 SR-IOV 接口的微型端口和过量驱动程序。 此接口在 NDIS 版本6.30 及更高版本中受支持。 
 
-下表定义的 SR-IOV Oid 的特征。 下面的缩写形式用于在表中指定的 Oid 的特征。
+下表定义了 SR-IOV Oid 的特征。 以下缩写用于指定表中的 Oid 特性。
 
 - Q  
-仅在查询请求中使用 OID。
+OID 仅用于查询请求。
 - S  
-仅在设置请求中使用 OID。
+OID 仅用于设置请求。
 - M  
-仅在方法请求中使用 OID。 无法对集或查询操作发出这些请求。
+OID 仅在方法请求中使用。 可以为集或查询操作发出这些请求。
 - N  
-OID 请求直接由 NDIS 而不是由微型端口驱动程序处理。 该驱动程序将不会颁发这些 Oid。
+OID 请求直接由 NDIS 处理，而不由微型端口驱动程序处理。 该驱动程序不会被颁发。
 - P  
-仅对网络适配器的物理函数 (PF) 的微型端口驱动程序发出 OID 请求。  
-PF 驱动程序必须支持这些 Oid。 该驱动程序还必须列出在这些 Oid **SupportedOidList**的成员[NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)驱动程序中传递的结构*MiniportAttributes*到调用的参数[NdisMSetMiniportAttributes](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)。
+OID 请求仅颁发给网络适配器的物理功能（PF）的微型端口驱动程序。  
+PF 驱动程序必须支持这些 Oid。 驱动程序还必须在[NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的**SupportedOidList**成员中列出这些 oid，驱动程序在调用 [的 MiniportAttributes 参数中传递NdisMSetMiniportAttributes](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)。
 - V  
-仅对网络的虚拟函数 (VFs) 之一的微型端口驱动程序发出 OID 请求。  
-VF 驱动程序必须支持这些 Oid。 该驱动程序还必须列出在这些 Oid **SupportedOidList**的成员[NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)驱动程序中传递的结构*MiniportAttributes*到调用的参数[NdisMSetMiniportAttributes](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)。
+OID 请求仅颁发给某个网络虚函数（VFs）的微型端口驱动程序。  
+VF 驱动程序必须支持这些 Oid。 驱动程序还必须在[NDIS_MINIPORT_ADAPTER_GENERAL_ATTRIBUTES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构的**SupportedOidList**成员中列出这些 oid，驱动程序在调用 [的 MiniportAttributes 参数中传递NdisMSetMiniportAttributes](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)。
 
 | 名称                                                                                                 | Q | S | M | N | P | V |
 |---                                                                                                   |---|---|---|---|---|---|

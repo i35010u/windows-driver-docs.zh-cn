@@ -1,22 +1,22 @@
 ---
 title: V4 打印机驱动程序本地化
-description: Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发的标准的、 已本地化的显示字符串。
+description: Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展和 UWP 设备应用程序的开发。
 ms.assetid: 5C587AF2-C51E-4728-A214-7FC1F8A6E445
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e06e28be29d29329e15511be1b09387f9f26635e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 22d4d5c24d481953c0e07ddc209d2986cf5a5117
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362719"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844196"
 ---
 # <a name="v4-printer-driver-localization"></a>V4 打印机驱动程序本地化
 
 
-Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发的标准的、 已本地化的显示字符串。
+Windows 8 提供了标准的本地化显示字符串，以支持打印机扩展和 UWP 设备应用程序的开发。
 
-通过新提供了这些标准的、 已本地化的显示字符串[ **IPrintSchemaCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)对象以支持某些功能和其关联的标准选项。 下表显示了 Windows 8 可以使用其标准本地化的功能显示字符串：
+这些标准的本地化显示字符串通过新的[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)对象提供，用于支持某些功能及其关联的标准选项。 下表显示了 Windows 8 可以用其标准显示字符串本地化的功能：
 
 <table>
 <colgroup>
@@ -31,15 +31,15 @@ Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发�
 </thead>
 <tbody>
 <tr class="odd">
-<td>输入的箱</td>
-<td>Job/Document/PageInputBin</td>
+<td>输入纸盒</td>
+<td>作业/文档/PageInputBin</td>
 </tr>
 <tr class="even">
 <td>媒体类型</td>
 <td>PageMediaType</td>
 </tr>
 <tr class="odd">
-<td>双面打印</td>
+<td>打印</td>
 <td>JobDuplexAllDocumentsContiguously</td>
 </tr>
 <tr class="even">
@@ -55,7 +55,7 @@ Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发�
 <td>PageOrientation</td>
 </tr>
 <tr class="odd">
-<td>每张多</td>
+<td>N 向上</td>
 <td>JobNUpAllDocumentsContiguously</td>
 </tr>
 <tr class="even">
@@ -92,23 +92,23 @@ Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发�
 
  
 
-此外，这些字符串是 PrintCapabilities，XML 形式提供，前提是该驱动程序未指定资源 DLL 使用的功能或选项的显示名称。 如果驱动程序未指定使用的资源 DLL 的显示名称，将在 XML 中，以及对旧 COMPSTUI 基于打印首选项用户界面使用以前版本的 Windows 提供。
+此外，这些字符串在 PrintCapabilities 的 XML 格式中提供，前提是该驱动程序不使用该功能或选项的资源 DLL 指定显示名称。 如果驱动程序使用资源 DLL 指定显示名称，它将在 XML 中提供，并在以前版本的 Windows 上使用的基于旧版 COMPSTUI 打印首选项 UI。
 
-跨不同的用户界面和 Api，显示名称各不相同。 使用以下三个流程图看到预期的本地化行为针对给定方案的概述。
+在不同的用户界面和 Api 上，显示名称有所不同。 使用以下三个流程图查看给定方案的预期本地化行为的概述。
 
-下面的流程图 UWP 应用中显示的预期的本地化行为如下所示[ **IPrintSchemaFeature** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)并[ **IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption)系列的对象。
+以下流程图显示了 UWP 应用中的预期本地化行为以及对象的[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemafeature)和[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemaoption)系列。
 
-![Windows 应用、 iprintschemafeature 或 iprintschemaoption 本地化行为流程图](images/locstringmodern.png)
+![适用于 Windows apps、iprintschemafeature 或 iprintschemaoption 的本地化行为流程图](images/locstringmodern.png)
 
-下列流程图显示了中的预期的本地化行为**PrintCapabilities** XML 文档。
+以下流程图显示了**PrintCapabilities** XML 文档中的预期本地化行为。
 
 ![printcapabilities xml 文档的本地化行为流程图](images/locstringpcap.png)
 
-下列流程图显示了标准、 基于 Compstui 的打印首选项对话框中的预期的本地化行为。
+以下流程图显示了标准的、基于 Compstui 的打印首选项对话框中的预期本地化行为。
 
-![本地化的 compstui 基于对话框的行为流程图 ](images/locstringcomp.png)
+![基于 compstui 的对话框的本地化行为流程图 ](images/locstringcomp.png)
 
-若要使用的 Microsoft 本地化显示名称，请按照此表中的说明正确编辑 GPD 或 PPD 配置文件。
+若要使用 Microsoft 本地化的显示名称，请按照此表中的说明进行操作，以正确编辑 GPD 或 PPD 配置文件。
 
 <table>
 <colgroup>
@@ -125,18 +125,18 @@ Windows 8 提供了支持的打印机扩展和 UWP 的设备应用程序开发�
 <tr class="odd">
 <td>GPD</td>
 <td><ul>
-<li><p>指定<strong><em>名称</strong>GPD 功能或选项的条目。</p></li>
-<li><p>未指定 <strong></em>rcNameID</strong>条目。</p></li>
-<li>对于以下功能/选项，还必须指定<strong> <em>PrintSchemaKeywordMap</strong>将 GPD 功能或选项映射到相应的打印架构定义的功能或选项，除非被指定为<a href="standard-features.md" data-raw-source="[Standard Features](standard-features.md)">标准功能</a>。 若要查看示例演示如何使用 <strong></em>PrintSchemaKeywordMap</strong>若要将功能映射，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">基于 GPD/PPD 的功能说明更改</a>。
-o JobHolePunch，DocumentHolePunch o JobStapleAllDocuments DocumentStaple o JobBindAllDocuments，DocumentBinding o PageOutputQuality o PageMediaType</li>
-<li><p>不使用为每张<strong> <em>PrintSchemaKeywordMap</strong>选项值。</p></li>
+<li><p>为 GPD 功能或选项指定 <strong><em>名称</strong> 条目。</p></li>
+<li><p>不要指定<strong></em>rcNameID</strong> "项。</p></li>
+<li>对于以下功能/选项，还必须指定 <strong><em>PrintSchemaKeywordMap</strong> 将 GPD 功能或选项映射到相应的打印架构定义的功能或选项，除非将它们指定为<a href="standard-features.md" data-raw-source="[Standard Features](standard-features.md)">标准功能</a>. 若要查看演示如何使用<strong></em>PrintSchemaKeywordMap</strong>映射功能的示例，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">GPD/基于 PPD 的功能说明更改</a>。
+o JobHolePunch，DocumentHolePunch o JobStapleAllDocuments，DocumentStaple o JobBindAllDocuments，DocumentBinding o PageOutputQuality o PageMediaType</li>
+<li><p>对于 "N 向上"，请不要在选项值上使用 <strong><em>PrintSchemaKeywordMap</strong>。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
-<td>PPD</td>
+<td>信息库</td>
 <td><ul>
-<li><p>使用 <strong></em>PrintSchemaKeywordMap</strong> PPD 功能或选项映射到相应的打印架构定义的功能或选项。 若要查看示例演示如何使用<strong> <em>PrintSchemaKeywordMap</strong>若要将功能映射，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">基于 GPD/PPD 的功能说明更改</a>。</p></li>
-<li><p>不使用为每张 <strong></em>PrintSchemaKeywordMap</strong>选项值。</p></li>
+<li><p>使用<strong></em>PrintSchemaKeywordMap</strong>将 PPD 功能或选项映射到相应的打印架构定义的功能或选项。 若要查看演示如何使用 <strong><em>PrintSchemaKeywordMap</strong> 映射功能的示例，请参阅<a href="gpd-ppd-based-feature-description-changes.md" data-raw-source="[GPD/PPD-Based Feature Description Changes](gpd-ppd-based-feature-description-changes.md)">GPD/基于 PPD 的功能说明更改</a>。</p></li>
+<li><p>对于 "N 向上"，请不要对选项值使用<strong></em>PrintSchemaKeywordMap</strong> 。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -144,14 +144,14 @@ o JobHolePunch，DocumentHolePunch o JobStapleAllDocuments DocumentStaple o JobB
 
  
 
-**本地化 PPD 基于驱动程序**
+**本地化基于 PPD 的驱动程序**
 
-基于 PPD 驱动程序不支持资源 Dll。 因此，它可能有必要提供多个 PPD 文件。 Microsoft 建议使用 PPD 配置文件的 v4 打印驱动程序应使用本主题中介绍的方法包括每个区域设置的一个 PPD 文件。
+基于 PPD 的驱动程序不支持资源 Dll。 因此，可能需要提供多个 PPD 文件。 Microsoft 建议使用 PPD 配置文件的 v4 打印驱动程序应使用本主题中所述的方法在每个区域设置中包含一个 PPD 文件。
 
 ## <a name="related-topics"></a>相关主题
-[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemacapabilities)  
-[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemafeature)  
-[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintschemaoption)  
+[**IPrintSchemaCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemacapabilities)  
+[**IPrintSchemaFeature**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemafeature)  
+[**IPrintSchemaOption**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintschemaoption)  
 [基于 GPD/PPD 的功能说明更改](gpd-ppd-based-feature-description-changes.md)  
 [标准功能](standard-features.md)  
 

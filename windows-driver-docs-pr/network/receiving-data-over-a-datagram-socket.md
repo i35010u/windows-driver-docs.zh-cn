@@ -8,19 +8,19 @@ keywords:
 - WskReceiveFrom
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a96a47bd3ac477a57cf85e24665c9979945f0f95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a7f0ab3dfd8cc4760239a192b01091dec8e7200
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353293"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843467"
 ---
 # <a name="receiving-data-over-a-datagram-socket"></a>通过数据报套接字接收数据
 
 
-Winsock Kernel (WSK) 应用程序已绑定到本地传输地址的数据报套接字后它可通过套接字接收数据报。 WSK 应用程序通过调用通过数据报套接字接收数据报[ **WskReceiveFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from)函数。
+Winsock 内核（WSK）应用程序已将数据报套接字绑定到本地传输地址后，它可以通过套接字接收数据报。 WSK 应用程序通过调用[**WskReceiveFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from)函数接收数据报套接字上的数据报。
 
-下面的代码示例演示如何 WSK 应用程序可以通过数据报套接字接收数据报。
+下面的代码示例演示 WSK 应用程序如何通过数据报套接字接收数据报。
 
 ```C++
 // Prototype for the receive datagram IoCompletion routine
@@ -129,9 +129,9 @@ NTSTATUS
 }
 ```
 
-作为调用的替代方法[ **WskReceiveFrom** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from)函数将通过数据报套接字接收每个数据报、 WSK 应用程序可以启用[ *WskReceiveFromEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)套接字上的事件的回调函数。 如果启用了 WSK 应用程序*WskReceiveFromEvent*数据报套接字上的事件回调函数，WSK 子系统调用的套接字*WskReceiveFromEvent*每当新事件的回调函数套接字上接收的数据报。 有关启用数据报套接字的详细信息*WskReceiveFromEvent*事件回调函数，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
+作为调用[**WskReceiveFrom**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from)函数以接收数据报套接字上的每个数据报的替代方法，WSK 应用程序可以在套接字上启用[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)事件回调函数。 如果 WSK 应用程序在数据报套接字上启用*WskReceiveFromEvent*事件回调函数，则每当在套接字上接收到新的数据报时，WSK 子系统都会调用套接字的*WskReceiveFromEvent*事件回调函数。 有关启用数据报套接字的*WskReceiveFromEvent*事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](enabling-and-disabling-event-callback-functions.md)。
 
-下面的代码示例演示如何 WSK 应用程序可以接收数据报 WSK 子系统通过调用数据报套接字*WskReceiveFromEvent*事件回调函数。
+下面的代码示例演示 WSK 应用程序如何通过调用数据报套接字的*WskReceiveFromEvent*事件回调函数来通过 WSK 子系统接收数据报。
 
 ```C++
 // A datagram socket's WskReceiveFromEvent
@@ -172,7 +172,7 @@ NTSTATUS WSKAPI
 }
 ```
 
-如果数据报套接字[ *WskReceiveFromEvent* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from_event)事件回调函数不会检索所有的数据报中的列表[ **WSK\_数据报\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_datagram_indication)指向结构*DataIndication*参数，它可以保留供进一步处理通过返回状态列表\_PENDING。 在这种情况下，WSK 应用程序必须调用[ **WskRelease** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))函数，以释放 WSK 列表\_数据报\_指示结构回 WSK 子系统后它已完成列表中的结构中检索所有的数据报。
+如果数据报套接字的[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)事件回调函数未从[**WSK\_数据报**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_datagram_indication)列表中检索所有数据报\_*DataIndication*参数指向的指示结构，则它可以保留列表以供进一步处理，方法是返回状态\_"挂起"。 在这种情况下，WSK 应用程序必须调用[**WskRelease**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff571144(v=vs.85))函数，以释放 WSK\_数据\_报列表，使其在从中检索到所有列表。
 
  
 

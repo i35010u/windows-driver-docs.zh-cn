@@ -3,17 +3,17 @@ title: 锁定和解锁流指针
 description: 锁定和解锁流指针
 ms.assetid: 3826a5bc-4ba5-4ada-a8aa-e7bbd949187e
 keywords:
-- 流指针 WDK AVStream，锁定和解锁
+- 流指针 WDK AVStream、锁定和解锁
 - 锁定的流指针 WDK AVStream
-- 解锁的流指针 WDK AVStream
+- 未锁定的流指针 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c2fe8296f806855e986e6312b41e80e11bef1c2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b2acb3cae2a0fbc9438242dd408df4df9d5a1db2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386642"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838046"
 ---
 # <a name="locking-and-unlocking-stream-pointers"></a>锁定和解锁流指针
 
@@ -21,21 +21,21 @@ ms.locfileid: "67386642"
 
 
 
-每个流指针保持锁定状态： 已锁定或解锁。
+每个流指针都保持锁定状态：锁定或解锁。
 
-锁定的流保证指针引用队列中的数据。 无法取消锁定的流指针指向的数据帧。 在这种情况下，微型驱动程序应尽量减少它们花费的时间保存锁定流指针。
+锁定的流指针保证引用队列中的数据。 无法取消锁定流指针指向的数据帧。 因此，微型驱动程序应最大程度地减少其持有锁定的流指针所花费的时间。
 
-不保证解锁的流指针引用队列中的数据帧。 通过解锁的流指针，微型驱动程序可以保留数据指针，但仍允许要取消的框架。
+不保证解除锁定的流指针引用队列中的数据帧。 通过保存未锁定的流指针，微型驱动程序可以保留数据指针，但仍允许取消帧。
 
-就可以访问由未锁定的流指针指向的数据。 如果*CancelCallback*中提供日常[ **KsStreamPointerClone** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)调用[ **KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)，您应该同步*CancelCallback*和它执行任何数据访问。 微型驱动程序必须确保它使用另一个线程时，取消回调例程并不删除流指针。
+可以通过未锁定的流指针访问指向的数据。 如果在[**KsStreamPointerClone**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)中提供的*CancelCallback*例程调用[**KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)，则应同步*CancelCallback*及其执行的任何数据访问。 微型驱动程序必须确保取消回调例程不会删除流指针，而另一个线程正在使用该指针。
 
-如果未调用取消回调例程**KsStreamPointerDelete**，可能不需要同步。
+如果取消回调例程未调用**KsStreamPointerDelete**，则可能无需同步。
 
-若要锁定流指针，调用[ **KsStreamPointerLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerlock)。 若要解锁流指针，调用[ **KsStreamPointerUnlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)。
+若要锁定流指针，请调用[**KsStreamPointerLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerlock)。 若要解锁流指针，请调用[**KsStreamPointerUnlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock)。
 
-当取消 IRP 时，AVStream 的所有未锁定的流指针指向 IRP 中帧的调用取消回调。
+取消 IRP 后，AVStream 将为指向 IRP 内的帧的所有未锁定流指针调用取消回调。
 
-仅当未使用时，请解锁前导和尾随边缘流指针。
+仅在不使用前导和尾随边缘流指针时对其进行解锁。
 
  
 

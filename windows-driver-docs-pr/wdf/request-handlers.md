@@ -3,17 +3,17 @@ title: 请求处理程序
 description: 请求处理程序
 ms.assetid: bfc543bf-18a8-4e2c-ba7a-d0a21cefb038
 keywords:
-- I/O 队列 WDK KMDF，创建
-- I/O 队列 WDK KMDF 请求处理程序
+- I/o 队列 WDK KMDF，创建
+- I/o 队列 WDK KMDF，请求处理程序
 - 请求处理程序 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af70dbb2c27f1f24334d50f8099c0e8a6345664a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54471c6d50ba503dec9ddfa28ee8d466e05de4f8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376278"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842214"
 ---
 # <a name="request-handlers"></a>请求处理程序
 
@@ -21,30 +21,30 @@ ms.locfileid: "67376278"
 
 
 
-如果您的驱动程序已指定的顺序或并行[调度方法](dispatching-methods-for-i-o-requests.md)I/O 队列，框架调用驱动程序提供的回调函数每次它已准备好将其中一个队列的请求传递到驱动程序。
+如果你的驱动程序为 i/o 队列指定了顺序或并行[调度方法](dispatching-methods-for-i-o-requests.md)，则该框架将在每次准备向驱动程序提供队列请求之一时调用驱动程序提供的回调函数。
 
-对于每个 I/O 队列，该驱动程序可以提供一个或多个以下的回调函数，称为*请求处理程序*:
+对于每个 i/o 队列，驱动程序可以提供以下一个或多个称为*请求处理程序*的回调函数：
 
-<a href="" id="evtioread"></a>[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)  
-框架将调用的 I/O 队列[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)回调函数的读取的请求时在队列中可用。
+<a href="" id="evtioread"></a>[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)  
+当队列中有可用的读取请求时，框架将调用 i/o 队列的[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)回调函数。
 
-<a href="" id="evtiowrite"></a>[*EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)  
-框架将调用的 I/O 队列[ *EvtIoWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)写入请求在队列中可用时的回调函数。
+<a href="" id="evtiowrite"></a>[*EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)  
+当队列中有写入请求时，框架将调用 i/o 队列的[*EvtIoWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_write)回调函数。
 
-<a href="" id="evtiodevicecontrol"></a>[*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)  
-框架将调用的 I/O 队列[ *EvtIoDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)设备 I/O 控制请求在队列中可用时的回调函数。
+<a href="" id="evtiodevicecontrol"></a>[*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)  
+当设备 i/o 控制请求在队列中可用时，框架会调用 i/o 队列的[*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)回调函数。
 
-<a href="" id="evtiointernaldevicecontrol"></a>[*EvtIoInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)  
-框架将调用的 I/O 队列[ *EvtIoInternalDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数内部设备 I/O 控制请求在队列中不可用。
+<a href="" id="evtiointernaldevicecontrol"></a>[*EvtIoInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)  
+当队列中有内部设备 i/o 控制请求可用时，框架会调用 i/o 队列的[*EvtIoInternalDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调函数。
 
-<a href="" id="evtiodefault"></a>[*EvtIoDefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)  
-框架将调用的 I/O 队列[ *EvtIoDefault* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)回调函数的任何请求不可用，如果该驱动程序不提供相关联的特定于类型请求的回调函数。
+<a href="" id="evtiodefault"></a>[*EvtIoDefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)  
+如果该驱动程序未提供关联的特定于请求类型的回调函数，则在有任何可用请求时，框架将调用 i/o 队列的[*EvtIoDefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)回调函数。
 
-该驱动程序时它将调用注册回调函数[ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)创建设备的 I/O 队列。
+驱动程序在调用[**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)以为设备创建 i/o 队列时注册回调函数。
 
-每个回调函数接收两个输入的参数： 的句柄的 I/O 请求的框架将传递到驱动程序和句柄的 I/O 队列的保存请求。 回调函数可以确定目标设备，通过调用[ **WdfIoQueueGetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuegetdevice)。
+其中每个回调函数都接收两个输入参数：框架要传递给驱动程序的 i/o 请求的句柄，以及包含请求的 i/o 队列的句柄。 回调函数可以通过调用[**WdfIoQueueGetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuegetdevice)来确定目标设备。
 
-框架在任意线程上下文中调用您的驱动程序请求处理程序。 驱动程序不应等待时间，并且在任意线程上下文中执行长时间。 在某些情况下，您的驱动程序可能使用内核调度程序对象作为同步机制。 当您的驱动程序可以等待调度程序对象，以及要时它不能执行的操作有关的信息，请参阅[内核调度程序对象简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects)。
+框架在任意线程上下文中调用驱动程序的请求处理程序。 在任意线程上下文中执行时，驱动程序不应等待很长一段时间。 在某些情况下，驱动程序可能使用内核调度程序对象作为同步机制。 有关驱动程序何时可以等待调度程序对象的信息，以及在无法进行操作时要执行的操作，请参阅[内核调度程序对象简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-kernel-dispatcher-objects)。
 
  
 

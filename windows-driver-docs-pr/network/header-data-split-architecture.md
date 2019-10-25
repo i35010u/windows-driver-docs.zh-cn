@@ -3,16 +3,16 @@ title: 标头数据拆分体系结构
 description: 标头数据拆分体系结构
 ms.assetid: a2594360-cbac-4f77-840a-2572a2381646
 keywords:
-- 标头数据拆分 WDK，体系结构
-- 标头数据拆分提供程序 WDK
+- 标头-数据拆分 WDK，体系结构
+- 标头-数据拆分提供程序 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b694ff32cebc0d0220bd092fc0c17e4bf801717f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0a12823d8ed28a48662059dda78535717801e432
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386351"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842545"
 ---
 # <a name="header-data-split-architecture"></a>标头数据拆分体系结构
 
@@ -20,29 +20,29 @@ ms.locfileid: "67386351"
 
 
 
-标头数据拆分提供程序通过将标头和在接收到的以太网帧中的数据拆分为单独的缓冲区可以提高网络性能。 标头数据拆分提供程序包括网络接口卡 (NIC) 的 NDIS 6.1 或更高版本的微型端口驱动程序服务于 nic。
+标头-数据拆分提供程序通过将接收的以太网帧中的标头和数据拆分为单独的缓冲区来提高网络性能。 标头-数据拆分提供程序包括一个网络接口卡（NIC），以及用于服务 NIC 的 NDIS 6.1 或更高版本的微型端口驱动程序。
 
-下图显示了标头数据拆分体系结构。
+下图显示了标头数据拆分结构。
 
-![说明标头数据的关系图分离的体系结构](images/hdsplitarchitecture.png)
+![说明标头-数据拆分体系结构的关系图](images/hdsplitarchitecture.png)
 
-微型端口驱动程序从 NDIS 设置 NIC 的标头数据拆分接收操作接收配置信息。 此外，微型端口驱动程序公开到 NDIS 的 NIC 的服务的运行时操作，如发送和接收操作。
+微型端口驱动程序接收来自 NDIS 的配置信息，以设置用于标头数据拆分接收操作的 NIC。 此外，小型小型驱动程序驱动程序将 NIC 的服务公开给用于运行时操作（如发送和接收操作）的 NDIS。
 
-NIC 的标头数据拆分操作能够接收以太网帧并拆分标头和数据到单独的接收缓冲区。
+支持标头数据拆分操作的 NIC 接收以太网帧，并将标头和数据拆分为单独的接收缓冲区。
 
-微型端口驱动程序使用正常的 NDIS 接收函数，以指示到 NDIS 接收到的数据。 此外，驱动程序必须分配一个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构时，该值指示接收到的数据。 有关详细信息，请参阅[，该值指示接收到的以太网帧](indicating-received-ethernet-frames.md)。
+微型端口驱动程序使用常规 NDIS 接收函数将接收的数据指示到 NDIS。 同时，驱动程序必须在指示收到的数据时，为[**网络\_\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)分配准确的一条[**net\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构。 有关详细信息，请参阅[指示收到的以太网帧](indicating-received-ethernet-frames.md)。
 
-为标头数据拆分[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)中接收指示结构使用单独的内存描述符标头列表 (MDLs) 拆分接收的以太网帧和数据。 此外， [ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构包含标头数据拆分中 NET 信息\_缓冲区\_列表信息。
+对于标头数据拆分，接收指示中的[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构使用单独的内存描述符列表（MDLs）对标头和数据进行拆分。 此外， [**net\_buffer\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构包含 NET\_缓冲区\_列表信息中的标头数据拆分信息。
 
-下图显示了接收的帧、 拆分缓冲区和标头缓冲区的内存布局。
+下图显示了接收的帧、拆分缓冲区和标头缓冲区的内存布局。
 
-![说明接收的帧、 拆分缓冲区和标头缓冲区的内存布局的关系图](images/hdspllitbuffers.png)
+![阐释接收的帧、拆分缓冲区和标头缓冲区的内存布局的关系图](images/hdspllitbuffers.png)
 
-标头缓冲区都应在存储的连续块。
+标头缓冲区应全部位于连续的存储块中。
 
-*上层协议*是如 TCP、 UDP 或 ICMP 的 IP 传输协议。
+*上层协议*是 IP 传输协议，例如 TCP、UDP 或 ICMP。
 
-**请注意**  IPsec 时不考虑上层协议定义标头数据拆分要求的目的。 有关拆分 IPsec 帧的详细信息，请参阅[拆分 IPsec 帧](splitting-ipsec-frames.md)。
+**请注意**  IPsec 不被视为用于定义标头数据拆分要求的上层协议。 有关拆分 IPsec 帧的详细信息，请参阅[拆分 Ipsec 帧](splitting-ipsec-frames.md)。
 
  
 

@@ -1,30 +1,30 @@
 ---
 title: OID_GEN_HD_SPLIT_PARAMETERS
-description: 作为一组 NDIS 和基础驱动程序或用户模式应用程序使用 OID_GEN_HD_SPLIT_PARAMETERS OID 来设置当前的标头数据拆分微型端口适配器的设置。
+description: 作为集，NDIS 和过量驱动程序或用户模式应用程序使用 OID_GEN_HD_SPLIT_PARAMETERS OID 来设置微型端口适配器的当前标头-数据拆分设置。
 ms.assetid: 1b33c601-4302-4f63-8265-b75889b42d42
 ms.date: 08/08/2017
-keywords: -OID_GEN_HD_SPLIT_PARAMETERS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_HD_SPLIT_PARAMETERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d527c7f431dd9986945395ed31afeecfc496f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9d9387232d4ce872a64517758121a4691a46bf0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369105"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843020"
 ---
-# <a name="oidgenhdsplitparameters"></a>OID\_GEN\_HD\_拆分\_参数
+# <a name="oid_gen_hd_split_parameters"></a>OID\_GEN\_HD\_拆分\_参数
 
 
-作为一组 NDIS 和基础驱动程序或用户模式应用程序使用 OID\_GEN\_HD\_拆分\_参数 OID，设置当前标头数据拆分微型端口适配器的设置。 NDIS 6.1 和更高版本的微型端口驱动程序提供标头数据拆分服务必须支持此 OID。 否则，此 OID 是可选的。
+作为集，NDIS 和过量驱动程序或用户模式应用程序使用 OID\_GEN\_HD\_拆分\_参数 OID 来设置微型端口适配器的当前标头-数据拆分设置。 提供标头数据拆分服务的 NDIS 6.1 和更高的微型端口驱动程序必须支持此 OID。 否则，此 OID 是可选的。
 
 <a name="remarks"></a>备注
 -------
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含[ **NDIS\_HD\_拆分\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)结构。
+[**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[**ndis\_HD\_SPLIT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)结构。
 
-NDIS 可能设置 OID\_GEN\_HD\_拆分\_参数 OID 时 NDIS 5。*x*协议驱动程序将绑定到 NDIS 6.1 微型端口。 NDIS 然后再将它传递到微型端口驱动程序处理此 OID，并更新微型端口适配器 **\*HeaderDataSplit**关键字，如果需要进行标准化。 如果禁用了标头数据拆分，则 NDIS 不向微型端口适配器发送此 OID。
+在 NDIS 5 时，NDIS 可以将 OID\_GEN\_HD\_拆分\_参数 OID。*x*协议驱动程序绑定到 NDIS 6.1 微型端口。 NDIS 处理此 OID，然后将其传递给微型端口驱动程序，并更新微型端口适配器的 **\*HeaderDataSplit**标准化关键字（如果需要）。 如果禁用了标头-数据拆分，NDIS 不会将此 OID 发送到微型端口适配器。
 
-NDIS 将向此 OID 微型端口驱动程序仅当标头数据拆分已启用与的 NDIS\_HD\_拆分\_启用\_标头\_数据\_中的拆分标志[**NDIS\_HD\_拆分\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_hd_split_attributes)在微型端口初始化过程中的结构。
+只有在使用 NDIS\_HD\_SPLIT 启用了标头-数据拆分，\_在[**ndis\_hd\_split\_拆分中启用\_标头时，ndis 才会将此 OID 发送到微型端口驱动程序\_t_10_ 属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_hd_split_attributes)结构。
 
 <a name="requirements"></a>要求
 ------------
@@ -36,24 +36,24 @@ NDIS 将向此 OID 微型端口驱动程序仅当标头数据拆分已启用与�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持 NDIS 6.1 及更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.1 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_HD\_SPLIT\_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_hd_split_attributes)
+[**NDIS\_HD\_SPLIT\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_hd_split_attributes)
 
-[**NDIS\_HD\_SPLIT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)
+[**NDIS\_HD\_SPLIT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hd_split_parameters)
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
  
 

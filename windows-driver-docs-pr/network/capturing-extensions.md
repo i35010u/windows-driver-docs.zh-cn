@@ -4,53 +4,53 @@ description: 捕获扩展
 ms.assetid: A8C2E550-4B1F-4DDB-B97F-1F7B6B74F5E7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a51c59cfd8a7421c9d4bd503dcf319cb21a6913
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 514b2a2c016e3284a2803fca7b6feec87146643b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382796"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838208"
 ---
 # <a name="capturing-extensions"></a>捕获扩展
 
 
-捕获扩展的 HYPER-V 可扩展交换机检查数据包流量、 对象标识符 (OID) 请求和 NDIS 状态指示。 此类型的扩展不能修改或丢弃的数据包，或从正被传递到可扩展的交换机端口中排除的数据包。 但是，捕获扩展可以源自数据包流量，例如包，其中包含扩展将发送到主机应用程序的流量统计数据。
+Hyper-v 可扩展交换机捕获扩展检查数据包流量、对象标识符（OID）请求和 NDIS 状态指示。 这种类型的扩展不能修改或丢弃数据包，也不能排除数据包被传递到可扩展交换机端口。 但是，捕获扩展可能会产生数据包流量，例如包含扩展发送到主机应用程序的流量统计信息的数据包。
 
-捕获扩展调用的入口数据路径的开头和末尾的出口数据路径。 有关这些数据路径的详细信息，请参阅[HYPER-V 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
+捕获扩展是在入口数据路径开头和传出数据路径结束时调用的。 有关这些数据路径的详细信息，请参阅[Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 
 捕获扩展具有以下要求和限制：
 
--   捕获扩展必须作为支持可扩展交换机接口的 NDIS 筛选器驱动程序开发。
+-   捕获扩展必须开发为支持可扩展交换机接口的 NDIS 筛选器驱动程序。
 
     有关筛选器驱动程序的详细信息，请参阅[NDIS 筛选器驱动程序](ndis-filter-drivers2.md)。
 
-    有关如何编写捕获扩展的详细信息，请参阅[编写的 HYPER-V 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
+    有关如何编写捕获扩展的详细信息，请参阅[编写 Hyper-v 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
 
--   捕获扩展提供了与标准 NDIS 监视筛选器驱动程序相同的功能。 但是，捕获扩展的 INF 文件必须安装它为修改的筛选器驱动程序。
+-   捕获扩展提供了与标准 NDIS 监视筛选器驱动程序相同的功能。 但是，捕获扩展的 INF 文件必须将其安装为修改筛选器驱动程序。
 
-    有关修改筛选器驱动程序的详细信息，请参阅[类型的筛选器驱动程序](types-of-filter-drivers.md)。
+    有关修改筛选器驱动程序的详细信息，请参阅[筛选器驱动程序的类型](types-of-filter-drivers.md)。
 
-    修改筛选器驱动程序的 INF 要求的详细信息，请参阅[配置修改筛选器驱动程序 INF 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
+    有关修改筛选器驱动程序的 INF 要求的详细信息，请参阅[配置修改筛选器驱动程序的 Inf 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
 
--   捕获扩展可以监视数据包通过入口和出口可扩展交换机数据路径。 但是，此类型的扩展必须始终调用[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)将数据包转发给可扩展交换机驱动程序堆栈中的基础驱动程序并不完成它们。
+-   捕获扩展可通过入口和出口的可扩展交换机数据路径来监视数据包。 但是，这种类型的扩展必须始终调用[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists) ，将数据包转发到可扩展交换机驱动程序堆栈中的底层驱动程序，而不是完成它们。
 
--   捕获扩展必须不修改这些包中的数据也不会将端口目标添加到该数据包的带外 (OOB) 数据。 扩展必须不免除任何可扩展交换机端口的数据包传送。
+-   捕获扩展不能修改数据包中的数据，也不能将端口目标添加到数据包的带外（OOB）数据。 扩展不能将数据包传递到任何可扩展交换机端口。
 
--   捕获扩展可以源自数据包。 例如，该扩展可能来源中对报表到远程监视应用程序的交通状况的顺序的数据包。
+-   捕获扩展可产生数据包。 例如，扩展可能会产生数据包，以便向远程监视应用程序报告流量状态。
 
-    由扩展原始数据包的详细信息，请参阅[源自数据包流量](originating-packet-traffic.md)。
+    若要详细了解如何通过扩展来发起数据包，请参阅[原始数据包流量](originating-packet-traffic.md)。
 
-    **请注意**  如与其他扩展，捕获扩展可以仅由可扩展交换机入口数据路径中的数据包流量。
+    **请注意**，与其他扩展一样  ，捕获扩展只能在可扩展交换机入口数据路径中产生数据包流量。
 
      
 
--   捕获扩展可以监视数据包、 OID 请求和通过可扩展交换机驱动程序堆栈发出的 NDIS 状态指示。 但是，此类型的扩展必须转发数据包、 OID 请求和 NDIS 状态指示通过可扩展交换机驱动程序堆栈。 该扩展不能修改在数据包、 OID 请求或 NDIS 状态指示对其所监视的数据。
+-   捕获扩展可以监视通过可扩展交换机驱动程序堆栈发出的数据包、OID 请求和 NDIS 状态指示。 但是，这种类型的扩展必须通过可扩展交换机驱动程序堆栈转发数据包、OID 请求和 NDIS 状态指示。 扩展不得修改它所监视的数据包、OID 请求或 NDIS 状态指示内的数据。
 
--   **FilterClass**值 INF 文件中的扩展必须设置为**ms\_切换\_捕获**。 有关详细信息，请参阅[INF 的 HYPER-V 可扩展交换机扩展的要求](inf-requirements-for-hyper-v-extensions.md)。
+-   必须将扩展 INF 文件中的**FilterClass**值设置为**ms\_交换机\_捕获**。 有关详细信息，请参阅[Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)。
 
--   任意数量的捕获扩展可以绑定到可扩展交换机实例。 默认情况下，多个捕获扩展排序基于安装时。 例如，多个捕获扩展的分层在可扩展交换机驱动程序堆栈中使用最近安装的扩展在堆栈中的其他捕获扩展的上面。
+-   可以将任意数量的捕获扩展绑定到可扩展的交换机实例。 默认情况下，多个捕获扩展基于其安装时间进行排序。 例如，多个捕获扩展在可扩展交换机驱动程序堆栈中分层，其中最新安装的扩展位于堆栈中的其他捕获扩展之上。
 
-    绑定到可扩展交换机实例后，可以重新捕获可扩展交换机驱动程序堆栈中的扩展的分层。 有关详细信息，请参阅[重新排序的 HYPER-V 可扩展交换机扩展](reordering-hyper-v-extensibility-switch-extensions.md)。
+    绑定到可扩展交换机实例后，可对可扩展交换机驱动程序堆栈中捕获扩展的分层进行重新排序。 有关详细信息，请参阅对[Hyper-v 可扩展交换机扩展重新排序](reordering-hyper-v-extensibility-switch-extensions.md)。
 
  
 

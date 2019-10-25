@@ -5,19 +5,19 @@ ms.assetid: d451208d-c850-4f2f-9ee0-d34139454ed4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 SIO_ADDRESS_LIST_CHANGE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: c36e03403cd41e8dbf71cf02d7a72da4d07510e4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 92425311277c269c3e14008fc3a28adc7cca202d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384908"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841917"
 ---
-# <a name="sioaddresslistchange"></a>SIO\_地址\_列表\_更改
+# <a name="sio_address_list_change"></a>SIO\_地址\_列表\_更改
 
 
-SIO\_地址\_列表\_更改套接字 I/O 控制操作通知 WSK 应用程序时对套接字地址族的本地传输地址的列表的更改。 此套接字的 I/O 控制操作适用于所有套接字类型。
+当套接字地址族的本地传输地址列表发生变化时，SIO\_地址\_列表\_更改套接字 i/o 控制操作会通知 WSK 应用程序。 此套接字 i/o 控制操作适用于所有套接字类型。
 
-已对套接字地址族的本地传输地址的列表的更改时收到通知，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
+若要在已更改套接字地址系列的本地传输地址列表时收到通知，WSK 应用程序使用以下参数调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数。
 
 <table>
 <colgroup>
@@ -27,7 +27,7 @@ SIO\_地址\_列表\_更改套接字 I/O 控制操作通知 WSK 应用程序时�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>ReplTest1</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +40,7 @@ SIO\_地址\_列表\_更改套接字 I/O 控制操作通知 WSK 应用程序时�
 <td><p>SIO_ADDRESS_LIST_CHANGE</p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>调配</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
@@ -66,7 +66,7 @@ SIO\_地址\_列表\_更改套接字 I/O 控制操作通知 WSK 应用程序时�
 </tbody>
 </table>
 
-WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数的套接字地址族的本地传输地址的列表的更改通知。 WSK 子系统排队 IRP，并返回状态\_PENDING。 如果更改的套接字地址族的本地传输地址的列表，WSK 子系统完成 IRP。 WSK 应用程序调用 IRP 的完成例程时，可以使用[ **SIO\_地址\_列表\_查询**](sio-address-list-query.md)套接字来查询新的 I/O 控制操作套接字的地址族的本地传输地址的列表。
+在调用**WskControlSocket**函数时，WSK 应用程序必须指定一个指向 IRP 的指针，以通知对套接字地址系列的本地传输地址列表的更改。 WSK 子系统将 IRP 排队并返回状态\_"挂起"。 如果对套接字地址系列的本地传输地址列表进行了更改，则 WSK 子系统完成 IRP。 调用 IRP 的完成例程后，WSK 应用程序可使用[**SIO\_地址\_列表\_查询**](sio-address-list-query.md)套接字 i/o 控制操作，查询套接字地址系列的本地传输地址的新列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,12 +78,12 @@ WSK 应用程序调用时必须指定一个指向 IRP **WskControlSocket**函数
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Windows Vista 和更高版本的 Windows 操作系统中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ws2def.h （包括 Wsk.h）</td>
+<td><p>标头</p></td>
+<td>Ws2def （包括 Wsk）</td>
 </tr>
 </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
-title: MRxSetEaInfo routine
-description: TheMRxSetEaInfo 例程调用 RDBSS 请求网络微型重定向程序集扩展文件系统对象的属性信息。
+title: MRxSetEaInfo 例程
+description: TheMRxSetEaInfo 例程由 RDBSS 调用，请求网络小型重定向程序设置文件系统对象的扩展属性信息。
 ms.assetid: 6882ab3c-a679-491b-a35f-71cfbf77bb39
 keywords:
 - MRxSetEaInfo 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5b68cf37fc4c1bf23a8e0dda7c7912540ff25fb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c8943c2801c5309928be455b0e8675c6923a7ffc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385652"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841081"
 ---
-# <a name="mrxseteainfo-routine"></a>MRxSetEaInfo routine
+# <a name="mrxseteainfo-routine"></a>MRxSetEaInfo 例程
 
 
-*MRxSetEaInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向程序集扩展文件系统对象的属性信息。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetEaInfo*例程来请求网络小型重定向程序设置文件系统对象上的扩展属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetEaInfo(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IPR 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IPR。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetEaInfo*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxSetEaInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,11 +64,11 @@ NTSTATUS MRxSetEaInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_EA_TOO_LARGE</strong></td>
-<td align="left"><p>传递的扩展的特性信息大于支持的远程共享的大小。</p></td>
+<td align="left"><p>传递的扩展属性信息大于远程共享支持的大小。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_FILE_CLOSED</strong></td>
@@ -76,7 +76,7 @@ NTSTATUS MRxSetEaInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -84,23 +84,23 @@ NTSTATUS MRxSetEaInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NETWORK_ACCESS_DENIED</strong></td>
-<td align="left"><p>网络访问被拒绝。 如果网络微型重定向需要只读共享上设置扩展的属性，可以返回此错误。</p></td>
+<td align="left"><p>网络访问被拒绝。 如果要求网络微型重定向程序设置只读共享上的扩展属性，则会返回此错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>未实现请求，例如在远程页面文件上设置的扩展的信息的功能。</p></td>
+<td align="left"><p>未实现请求的功能，如在远程页面文件上设置扩展信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>不支持扩展的属性。</p></td>
+<td align="left"><p>不支持扩展属性。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
-<td align="left"><p>找不到对象名称。 如果要求网络微型重定向文件，设置扩展的属性，但该文件不存在，则可以返回此错误。</p></td>
+<td align="left"><p>找不到对象名称。 如果要求网络微型重定向程序设置文件的扩展属性，但该文件不存在，则会返回此错误。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
-<td align="left"><p>找不到对象路径。 如果传入非 NTFS 流对象，并且远程文件系统不支持流，可以返回此错误。</p></td>
+<td align="left"><p>找不到对象路径。 如果已传递 NTFS 流对象，而远程文件系统不支持流，则可以返回此错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_ONLY_IF_CONNECTED</strong></td>
@@ -108,7 +108,7 @@ NTSTATUS MRxSetEaInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_REPARSE</strong></td>
-<td align="left"><p>重新分析需要处理符号链接。</p></td>
+<td align="left"><p>需要重新分析才能处理符号链接。</p></td>
 </tr>
 </tbody>
 </table>
@@ -118,13 +118,13 @@ NTSTATUS MRxSetEaInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxSetEaInfo*接收响应[ **IRP\_MJ\_设置\_EA** ](irp-mj-set-ea.md)请求。
+RDBSS 发出对*MRxSetEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-mj-set-ea.md)请求。
 
-然后再调用*MRxSetEaInfo*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxSetEaInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**Info.Buffer** I/O 请求数据包从成员设置为用户缓冲区。 如果需要通过 RDBSS 已锁定已此缓冲区。
+**信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.QueryEa.Length**。
+**LengthRemaining**成员设置为**IrpSp-&gt;QueryEa**。
 
 <a name="requirements"></a>要求
 ------------
@@ -137,19 +137,19 @@ RDBSS 发出调用*MRxSetEaInfo*接收响应[ **IRP\_MJ\_设置\_EA** ](irp-mj-s
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

@@ -1,9 +1,9 @@
 ---
 title: usb3kd.ucx_controller
-description: Usb3kd.ucx_controller 命令显示有关 USB 3.0 主控制器的信息。 显示基于由 UcxVersion.sys 维护的数据结构。
+description: Usb3kd. ucx _controller 命令显示有关 USB 3.0 主机控制器的信息。 显示基于 UcxVersion 维护的数据结构。
 ms.assetid: A2768E47-C8D7-4A01-80AC-98FB5AAA17BD
 keywords:
-- usb3kd.ucx_controller Windows 调试
+- usb3kd. ucx _controller Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f358e645c89bca3daa351e08105f070013be35a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 12bb51e58874954f8ffed0dd3eb9213ca0693751
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837842"
 ---
-# <a name="usb3kducxcontroller"></a>!usb3kd.ucx\_controller
+# <a name="usb3kducx_controller"></a>！ usb3kd. ucx\_控制器
 
 
-[ **！ Usb3kd.ucx\_控制器**](-usb3kd-device-info.md)命令显示有关 USB 3.0 主控制器的信息。 显示基于 USB 主控制器扩展驱动程序所维护的数据结构 (Ucx*版本*.sys)。
+[ **！ Usb3kd. ucx\_控制器**](-usb3kd-device-info.md)命令显示有关 USB 3.0 主机控制器的信息。 此显示基于 USB 主机控制器扩展驱动程序 *（Ucx）* 所维护的数据结构。
 
 ```dbgcmd
 !usb3kd.ucx_controller UcxControllerPrivContext
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
 
 
-<span id="_______UcxControllerPrivContext______"></span><span id="_______ucxcontrollerprivcontext______"></span><span id="_______UCXCONTROLLERPRIVCONTEXT______"></span> *UcxControllerPrivContext*   
-地址\_UCXCONTROLLER\_PRIVCONTEXT 结构，它表示控制器。
+<span id="_______UcxControllerPrivContext______"></span><span id="_______ucxcontrollerprivcontext______"></span><span id="_______UCXCONTROLLERPRIVCONTEXT______"></span>*UcxControllerPrivContext*   
+表示控制器的 \_UCXCONTROLLER\_PRIVCONTEXT 结构的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>备注
 -------
 
-USB 主控制器扩展驱动程序 (Ucx*版本*.sys) 提供的 USB 3.0 集线器驱动程序和 USB 3.0 主机之间的抽象层，控制器驱动程序。 扩展驱动程序具有其自己的主机控制器、 设备和终结点的表示形式。 输出[ **！ ucx\_控制器**](-usb3kd-device-info.md)命令基于由扩展驱动程序维护的数据结构。 有关 USB 主控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出[ **！ ucx\_控制器**](-usb3kd-device-info.md)命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 <a name="examples"></a>示例
 --------
 
-若要获取 UCX 控制器专用上下文的地址，请查看的输出[ **！ ucx\_控制器\_列表**](-usb3kd-ucx-controller-list.md)命令。 在以下示例中，专用上下文的地址是 0xfffffa80052da050。
+若要获取 UCX 控制器专用上下文的地址，请查看[ **！ UCX\_控制器的输出\_list**](-usb3kd-ucx-controller-list.md)命令。 在下面的示例中，专用上下文的地址为0xfffffa80052da050。
 
 ```dbgcmd
 3: kd> !ucx_controller_list
@@ -63,7 +63,7 @@ USB 主控制器扩展驱动程序 (Ucx*版本*.sys) 提供的 USB 3.0 集线器
         ...
 ```
 
-现在可以将传递到 UCX 控制器专用上下文的地址[ **！ ucx\_控制器**](-usb3kd-device-info.md)命令。
+现在可以将 UCX 控制器专用上下文的地址传递给[ **！ UCX\_控制器**](-usb3kd-device-info.md)命令。
 
 ```dbgcmd
 3: kd> !ucx_controller 0xfffffa80052da050
@@ -108,14 +108,14 @@ Device Tree:
         .!ucx_endpoint 0xfffffa80036a20c0 [Blk Out], UcxEndpointStateStale
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[ **!usb3kd.ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)
+[ **！ usb3kd. ucx\_控制器\_列表**](-usb3kd-ucx-controller-list.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
 
  
 

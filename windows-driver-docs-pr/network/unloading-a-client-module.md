@@ -3,24 +3,24 @@ title: 卸载客户端模块
 description: 卸载客户端模块
 ms.assetid: 2cca2918-ce0b-4016-b3f2-fbbc06c0b7f7
 keywords:
-- 客户端模块 WDK 网络模块注册机构，卸载
-- 正在卸载的网络模块
+- 客户端模块 WDK 网络模块注册器，卸载
+- 卸载网络模块
 - NmrDeregisterClient
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e9d105a6d69553c3d329259f3c67b4bcafe01ec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9f4a80c287c32438b640b83e726e589b3093bfdf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385995"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843014"
 ---
 # <a name="unloading-a-client-module"></a>卸载客户端模块
 
 
-若要卸载客户端模块，操作系统将调用客户端模块[**卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数。 请参阅[初始化和注册客户端模块](initializing-and-registering-a-client-module.md)有关如何指定客户端模块的详细信息**卸载**在初始化过程中的函数。
+若要卸载客户端模块，操作系统将调用客户端模块的[**unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数。 有关如何在初始化过程中指定客户端模块的**Unload**函数的详细信息，请参阅[初始化和注册客户端模块](initializing-and-registering-a-client-module.md)。
 
-客户端模块[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数还可确保从系统内存中卸载客户端模块之前，以此客户端模块从网络模块注册机构 (NMR)。 客户端模块启动注销 NMR 从通过调用[ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)函数，它通常会调用从其**卸载**函数。 客户端模块不能返回从其**Unload**后它具有已完全取消注册从 NMR 直到正常。 如果在调用**NmrDeregisterClient**将返回状态\_挂起状态，必须调用客户端模块[ **NmrWaitForClientDeregisterComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrwaitforclientderegistercomplete)函数等待注销完成之前它将返回其**Unload**函数。
+在从系统内存中卸载客户端模块之前，客户端模块的[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数可确保从网络模块注册器（NMR）取消对客户端模块的注册。 客户端模块通过调用[**NmrDeregisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient)函数开始从 NMR 注销，该函数通常从其**Unload**函数调用它。 在从 NMR 完全取消注册后，客户端模块不能从其**Unload**函数返回。 如果对**NmrDeregisterClient**的调用返回状态\_"挂起"，则客户端模块必须调用[**NmrWaitForClientDeregisterComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrwaitforclientderegistercomplete)函数以等待注销完成，然后从其**卸载**返回才能.
 
 例如：
 
@@ -60,11 +60,11 @@ VOID
 }
 ```
 
-如果客户端模块已注册为多个客户端[网络编程接口 (NPIs)](network-programming-interface.md)，它必须调用[ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)为它支持每个 NPI。 如果网络模块已注册为客户端模块和提供程序模块 （也就是说，它是一个 NPI 的客户端和提供程序的另一个 NPI），它必须同时调用**NmrDeregisterClient**并[ **NmrDeregisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterprovider)。
+如果客户端模块注册为多个[网络编程接口（NPIs）](network-programming-interface.md)的客户端，则它必须为其支持的每个 NPI 调用[**NmrDeregisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient) 。 如果将网络模块注册为客户端模块和提供程序模块（即，它是一个 NPI 的客户端和另一个 NPI 的提供程序），则它必须同时调用**NmrDeregisterClient**和[**NmrDeregisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterprovider)。
 
-网络模块必须等待，直到注销都完成之前返回从其[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数。
+在从其[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数返回之前，网络模块必须一直等待，直到所有注销都完成。
 
-客户端模块不需要调用[ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)中其[**卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数。 例如，在其中客户端模块是一个复杂的驱动程序的子组件的情况下，客户端模块注销时可能发生的客户端模块子组件将停用。 但是，在这种情况下，驱动程序仍须确保，客户端模块具有已完全取消注册从 NMR 之前从返回其**Unload**函数。
+不需要客户端模块从其[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数中调用[**NmrDeregisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient) 。 例如，在客户端模块是复杂驱动程序的子组件的情况下，当停用客户端模块子组件时，可能会取消注册客户端模块。 但是，在这种情况下，驱动程序必须确保在从 NMR 的**Unload**函数返回之前已完全从取消对该客户端模块的注册。
 
  
 

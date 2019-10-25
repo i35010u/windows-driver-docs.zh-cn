@@ -4,12 +4,12 @@ description: 加载和卸载 WIA 微型驱动程序
 ms.assetid: a5f930c3-f92c-498a-a334-b5eb60fbd61b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93b88277b8eaa89a20f33e9554d091492181cc2a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d2cfab2b3e58b8afe9c0059292afb26040a06c87
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378869"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840789"
 ---
 # <a name="loading-and-unloading-a-wia-minidriver"></a>加载和卸载 WIA 微型驱动程序
 
@@ -17,25 +17,25 @@ ms.locfileid: "67378869"
 
 
 
-WIA 的设备驱动程序安装后，WIA 服务会尝试将其加载第一次。 WIA 微型驱动程序的[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)方法调用，并且应执行以下任务：
+安装 WIA 设备驱动程序后，WIA 服务将尝试首次加载该驱动程序。 WIA 微型驱动程序的[**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法被调用，并应执行以下任务：
 
-1.  检查传输模式，以确定用于初始化此设备驱动程序的调用方的意图。 这是通过调用[ **IStiDeviceControl::GetMyDeviceOpenMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceopenmode)方法。
+1.  检查传输模式，确定调用方的初始化此设备驱动程序的意图。 这是通过调用[**IStiDeviceControl：： GetMyDeviceOpenMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceopenmode)方法来完成的。
 
-2.  获取已安装的设备的端口名称，以便此驱动程序可以调用[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) （Microsoft Windows SDK 中所述） 上访问设备的正确端口。 这是通过调用[ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)方法。
+2.  获取已安装设备的端口名称，以便此驱动程序可以在适当端口上调用[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) （记录在 Microsoft Windows SDK 中）以访问设备。 这是通过调用[**IStiDeviceControl：： GetMyDevicePortName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)方法来完成的。
 
-3.  读取设备安装过程中写入的特定于设备的注册表设置。 这可以通过使用*hParametersKey*参数传递给**IStiUSD::Initialize**。
+3.  读取设备安装过程中写入的特定于设备的注册表设置。 这可以通过使用传递到**IStiUSD：： Initialize**的*hParametersKey*参数来完成。
 
-WIA 服务调用**IStiUSD::Initialize**方法第一个驱动程序时加载。 **IStiUSD::Initialize**方法也称为客户端使用旧 STI DDIs 和调用时[ **IStillImage::CreateDevice** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543778(v=vs.85))方法。
+首次加载驱动程序时，WIA 服务将调用**IStiUSD：： Initialize**方法。 当客户端使用旧版 STI DDIs 并调用[**IStillImage：： CreateDevice**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543778(v=vs.85))方法时，也会调用**IStiUSD：： Initialize**方法。
 
-**IStiUSD::Initialize**方法应初始化 WIA 驱动程序和适用于使用的设备。 WIA 驱动程序可以存储**IStiDeviceControl**如果它们在更高版本时需要的接口指针。 [ **IStiDeviceControl::AddRef** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-addref)存储此接口之前，必须在调用方法。 如果不需要存储接口，则忽略它。 不要*不*发行**IStiDeviceControl**接口，如果您不调用**IStiDeviceControl::AddRef**第一个。 这可能会导致不可预知的结果。 [IStiDeviceControl COM 接口](istidevicecontrol-com-interface.md)需获取有关设备的端口的信息。 对的调用中使用的端口名称[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数可以通过调用来获取**IStiDeviceControl::GetMyDevicePortName**方法。 共享端口，例如串行端口设备上的设备打开中的端口**IStiUSD::Initialize**不建议。 应仅在调用中打开该端口**IStiUSD::LockDevice**。 应在内部控制的端口的结束，以便快速访问。 (打开并在关闭**IStiUSD::LockDevice**并**IStiUSD::UnLockDevice**非常低效。 **CreateFile**可能会导致延迟导致设备出现缓慢甚至失去反应给用户。)
+**IStiUSD：： Initialize**方法应初始化 WIA 驱动程序和设备以供使用。 WIA 驱动程序可以在以后需要时存储**IStiDeviceControl**接口指针。 在存储此接口之前，必须先调用[**IStiDeviceControl：： AddRef**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-addref)方法。 如果不需要存储接口，则将其忽略。 如果*尚未先*调用**IStiDeviceControl：： AddRef** ，请不要释放**IStiDeviceControl**接口。 这可能会导致不可预知的结果。 需要[ISTIDEVICECONTROL COM 接口](istidevicecontrol-com-interface.md)，才能获取有关设备端口的信息。 可以通过调用**IStiDeviceControl：： GetMyDevicePortName**方法来获取对[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数的调用中使用的端口名称。 对于共享端口上的设备，如串行端口设备，不建议在**IStiUSD：： Initialize**中打开端口。 仅应在对**IStiUSD：： LockDevice**的调用中打开端口。 应在内部控制端口的关闭，以提供快速访问。 （在**IStiUSD：： LockDevice**和**IStiUSD：： UnLockDevice**中打开和关闭非常低效。 **CreateFile**可能会导致设备出现慢且无法响应用户的延迟。）
 
-如果 WIA 驱动程序不能支持多个[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)调用在同一设备端口，则**IStiDeviceControl::GetMyDeviceOpenMode**应调用方法。
+如果 WIA 驱动程序不能支持同一设备端口上的多个[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)调用，则应调用**IStiDeviceControl：： GetMyDeviceOpenMode**方法。
 
-WIA 驱动程序应检查返回的模式值 STI\_设备\_创建\_数据标记，并相应地打开端口。
+WIA 驱动程序应检查 STI\_设备返回的模式值\_创建\_数据标志并相应地打开端口。
 
-如果设备端口必须打开，则会调用[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)应使用。 打开一个端口，该文件时\_标志\_应使用 OVERLAPPED 标志。 这允许 OVERLAPPED 结构 （Windows SDK 文档中所述） 来访问设备时使用。 使用重叠的 I/O 可帮助控制响应式访问到的硬件。 WIA 驱动程序检测到问题时，可以调用**CancelIo** （Windows SDK 文档中所述） 若要停止当前的所有硬件访问。
+如果必须打开设备端口，则应使用对[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)的调用。 打开端口时，应使用\_重叠标志的文件\_标志。 这允许在访问设备时使用重叠结构（如 Windows SDK 文档中所述）。 使用重叠 i/o 有助于控制对硬件的响应性访问。 当检测到问题时，WIA 驱动程序可以调用**CancelIo** （如 Windows SDK 文档中所述）来停止所有当前的硬件访问。
 
-下面的示例演示的实现**IStiUSD::Initialize**方法。
+下面的示例演示**IStiUSD：： Initialize**方法的实现。
 
 ```cpp
 STDMETHODIMP CWIADevice::Initialize(
@@ -155,9 +155,9 @@ STDMETHODIMP CWIADevice::Initialize(
 }
 ```
 
-WIA 服务调用[ **IStiUSD::GetCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-getcapabilities)之后在成功调用**IStiUSD::Initialize**方法。 **IStiUSD::GetCapabilities**然后提供[ **STI\_美元\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/ns-stiusd-_sti_usd_caps) STI 版本信息，WIA 支持标志 （位标志，指示结构驱动程序功能），以及任何事件要求。
+WIA 服务在成功调用**IStiUSD：： Initialize**方法后调用[**IStiUSD：： GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-getcapabilities) 。 **IStiUSD：： GetCapabilities**提供[**STI\_USD\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/ns-stiusd-_sti_usd_caps)结构，其中包含 STI 版本信息、WIA 支持标志（指示驱动程序功能的位标志）和任何事件要求。
 
-下面的示例演示的实现**IStiUSD::GetCapabilities**。
+下面的示例演示**IStiUSD：： GetCapabilities**的实现。
 
 ```cpp
 /********************************************************************\

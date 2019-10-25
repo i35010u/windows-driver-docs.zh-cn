@@ -1,98 +1,98 @@
 ---
-Description: 本主题介绍用于分配、 生成和发送到 Windows 8 附带的 USB 驱动程序堆栈 URB 的客户端驱动程序的最佳做法。
+Description: 本主题介绍客户端驱动程序的最佳实践，以便将 URB 分配、构建和发送到 Windows 8 随附的 USB 驱动程序堆栈。
 title: 最佳做法-使用 URBs
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c8d2bbb6bed330ef9f537e07f9fd991638b7bd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3127c45b6e63e21e91c324152fcfff17db32b26a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369526"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843200"
 ---
-# <a name="best-practices-using-urbs"></a>最佳做法：使用 URB
+# <a name="best-practices-using-urbs"></a>最佳做法：使用 URBs
 
 
-本主题介绍用于分配、 生成和发送到 Windows 8 附带的 USB 驱动程序堆栈 URB 的客户端驱动程序的最佳做法。
+本主题介绍客户端驱动程序的最佳实践，以便将 URB 分配、构建和发送到 Windows 8 随附的 USB 驱动程序堆栈。
 
-Windows 8 中包含新的 USB 驱动程序堆栈，以支持通用串行总线 (USB) 3.0 的设备。 新的 USB 3.0 驱动程序堆栈实现几个新功能，根据 USB 3.0 规范。 此外，驱动程序堆栈包括其他功能，使客户端驱动程序即可有效地执行常见任务。 例如，新的驱动程序堆栈接受链接在一起-MDLs，允许客户端驱动程序将在物理内存不连续的页中发送的传输缓冲区。
+Windows 8 提供了一个新的 USB 驱动程序堆栈，用于支持通用串行总线（USB）3.0 设备。 新的 USB 3.0 驱动程序堆栈根据 USB 3.0 规范实现多种新功能。 此外，驱动程序堆栈还包含其他功能，使客户端驱动程序能够有效地执行常见任务。 例如，新的驱动程序堆栈接受链式 MDLs，以允许客户端驱动程序在物理内存中不连续的页中发送传输缓冲区。
 
-客户端驱动程序可用于 Windows 8 的 USB 驱动程序堆栈的新功能之前，该驱动程序必须注册本身与基础 Windows 设备中加载的 USB 驱动程序堆栈。 若要注册客户端驱动程序，请调用[ **USBD\_CreateHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle) ，并指定*协定版本*。 如果客户端驱动程序用于生成、 运行和在 Windows 8 上使用的改进和新功能，客户端协定版本是 USBD\_客户端\_协定\_版本\_602。
+在客户端驱动程序可以使用适用于 Windows 8 的 USB 驱动程序堆栈的新功能之前，驱动程序必须向 Windows 为设备加载的基础 USB 驱动程序堆栈自行注册。 若要注册客户端驱动程序，请调用[**USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)并指定*协定版本*。 如果客户端驱动程序打算在 Windows 8 上生成、运行和使用改进和新功能，则客户端合同版本是 USBD\_客户端\_协定\_版本\_602。
 
-有关 USBD\_客户端\_协定\_版本\_602 版客户端驱动程序，USB 驱动程序堆栈假定客户端驱动程序符合以下规则集：
+对于 USBD\_客户端\_合约\_版本\_602 版客户端驱动程序，USB 驱动程序堆栈假定客户端驱动程序符合以下规则集：
 
--   [不发送使用过期或无效的管道句柄的 I/O 请求](#do-not-send-io-requests-by-using-stale-or-invalid-pipe-handles)
--   [通过在 Windows 8 中调用的分配例程分配 URBs](#allocate-urbs-by-calling-allocation-routines-in-windows8)
--   [不要重复使用与挂起的请求相关联的 active URBs](#do-not-reuse-active-urbs-associated-with-pending-requests)
--   [使用轮询时间不大于 8 的高速和 SuperSpeed 同步传输](#do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers)
--   [请确保每个框架的数据包数的倍数的同步数据包数](#make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame)
--   [在有案可稽的 IRQL 级别调用该例程](#call-the-routine-at-the-documented-irql-level)
+-   [不要通过使用陈旧或无效的管道句柄发送 i/o 请求](#do-not-send-io-requests-by-using-stale-or-invalid-pipe-handles)
+-   [通过在 Windows 8 中调用分配例程来分配 URBs](#allocate-urbs-by-calling-allocation-routines-in-windows8)
+-   [不要重复使用与挂起的请求相关联的活动 URBs](#do-not-reuse-active-urbs-associated-with-pending-requests)
+-   [对于高速和 SuperSpeed 同步传输，不要使用大于8的轮询周期](#do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers)
+-   [请确保每帧数据包数量为多个数据包的同步数据包数](#make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame)
+-   [在记录的 IRQL 级别调用例程](#call-the-routine-at-the-documented-irql-level)
 -   [相关主题](#related-topics)
 
-USB 驱动程序堆栈上接收的请求执行验证并处理只要有可能的违规行为。 如果不这样做可能会导致未定义的行为。
+USB 驱动程序堆栈对收到的请求执行验证，并尽可能处理冲突。 否则，可能会导致未定义的行为。
 
-## <a name="do-not-send-io-requests-by-using-stale-or-invalid-pipe-handles"></a>不发送使用过期或无效的管道句柄的 I/O 请求
-
-
-客户端驱动程序必须*不*使用过时的管道句柄将 I/O 请求发送到 USB 驱动程序堆栈。 一个*过时的管道句柄*引用中选择一个配置、 接口或替代设置不能再在设备中选择的请求获得的管道句柄。 若要避免过时的管道句柄，每次客户端驱动程序选择一个配置或接口时，该驱动程序必须刷新其缓存 （通常存储在设备上下文） 的管道句柄。 某些争用情况也可能导致过时的管道句柄。 例如，客户端驱动程序发送的 I/O 请求所选接口上使用的管道句柄。 在请求完成之前，客户端驱动程序选择不使用相同的终结点与正在使用的管道句柄关联的备用设置。 这两个挂起的请求可能会导致争用条件进行的管道句柄无效。
-
-## <a name="allocate-urbs-by-calling-allocation-routines-in-windows8"></a>通过在 Windows 8 中调用的分配例程分配 URBs
+## <a name="do-not-send-io-requests-by-using-stale-or-invalid-pipe-handles"></a>不要通过使用陈旧或无效的管道句柄发送 i/o 请求
 
 
-Windows 8 提供新的分配、 生成和发布 USB 请求块 (URBs) 的例程。 若要分配 URBs，Windows 驱动程序模型 (WDM) 客户端驱动程序必须始终使用下面的列表中所示的新例程：
+客户端驱动程序*不得使用陈旧*的管道句柄将 i/o 请求发送到 USB 驱动程序堆栈。 *陈旧的管道句柄*指的是在请求中获得的管道句柄，用于选择配置、接口或不再在设备中选择的备用设置。 若要避免陈旧的管道句柄，每次客户端驱动程序选择配置或接口时，驱动程序必须刷新其管道句柄缓存（通常存储在设备上下文中）。 某些争用条件也可能导致陈旧的管道句柄。 例如，客户端驱动程序使用所选接口上的管道句柄发送 i/o 请求。 请求完成之前，客户端驱动程序将选择不使用与使用中的管道句柄关联的相同终结点的备用设置。 这两个挂起的请求都可能导致管道句柄无效的争用情况。
 
--   [**USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
--   [**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)
--   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)
--   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)
--   [**USBD\_UrbFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urbfree)
--   [**USBD\_AssignUrbToIoStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)
-
-上述列表中的例程可能会将不透明的 URB 上下文附加到已分配 URB，以便提高跟踪和处理。 客户端驱动程序不能查看或修改 URB 上下文的内容。 有关 Windows 8 中 URB 分配的详细信息，请参阅[Allocating 和构建 URBs](how-to-add-xrb-support-for-client-drivers.md)。
-
-如果 Windows 驱动程序框架 (WDF) 的客户端驱动程序，用于标识其版本为 USBD\_客户端\_协定\_版本\_602 在注册过程中的 (请参阅**WdfUsbTargetDeviceCreateWithParameters**)，USB 驱动程序堆栈要求分配内存来存放 URB 通过调用新的客户端驱动程序**WdfUsbTargetDeviceCreateUrb**。
-
-## <a name="do-not-reuse-active-urbs-associated-with-pending-requests"></a>不要重复使用与挂起的请求相关联的 active URBs
+## <a name="allocate-urbs-by-calling-allocation-routines-in-windows8"></a>通过在 Windows 8 中调用分配例程来分配 URBs
 
 
-如果它检测到的活动在请求之前重新提交的 URB 与关联 URB USB 驱动程序堆栈故意错误检查。 只要请求处于挂起状态，并且尚未调用客户端驱动程序的 IRP 完成例程，URB 处于活动状态。 不要在 active URB 上执行以下任务。
+Windows 8 提供了用于分配、构建和释放 USB 请求块（URBs）的新例程。 若要分配 URBs，Windows 驱动模型（WDM）客户端驱动程序必须始终使用下表中所示的新例程：
 
--   不要*不*重新提交另一个请求 （关联与另一个 IRP URB） active URB。
--   不要*不*修改 active URB 的内容。
--   不要*不*免费 active URB。
+-   [**USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)
+-   [**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_isochurballocate)
+-   [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)
+-   [**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)
+-   [**USBD\_UrbFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urbfree)
+-   [**USBD\_AssignUrbToIoStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_assignurbtoiostacklocation)
 
-客户端驱动程序的完成例程调用之后，驱动程序可以重新提交 URBs 某些类型的请求内完成例程。 以下规则适用于重新提交：
+前面列表中的例程可能会将不透明的 URB 上下文附加到分配的 URB，以便改进跟踪和处理。 客户端驱动程序无法查看或修改 URB 上下文的内容。 有关 Windows 8 中的 URB 分配的详细信息，请参阅[分配和生成 URBs](how-to-add-xrb-support-for-client-drivers.md)。
 
--   客户端驱动程序不重复使用分配的 URB [ **USBD\_SelectConfigUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)为任何类型的选择相同的选择配置请求之外的请求配置。
--   客户端驱动程序不重复使用分配的 URB [ **USBD\_SelectInterfaceUrbAllocateAndBuild** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)为任何类型的选择相同的选择接口请求之外的请求在接口中的替代设置。 有关示例，请参阅备注中的**USBD\_SelectInterfaceUrbAllocateAndBuild**。
--   由分配 URB [ **USBD\_IsochUrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_isochurballocate)必须仅针对同步传输请求重复使用。 相反，对于其他类型的 I/O 请求 （控件、 大容量或中断） 分配 URB 不必须用于同步请求。
+如果 Windows 驱动程序框架（WDF）客户端驱动程序在注册过程中将其版本标识为 USBD\_客户端\_协定\_版本\_602，**请参阅 USB**驱动程序堆栈要求客户端驱动程序通过调用新的**WdfUsbTargetDeviceCreateUrb**为 URB 分配内存。
 
-    例如，客户端驱动程序分配，并生成[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)的大容量传输请求的结构。 客户端驱动程序还想要将数据发送到设备中的同步终结点。 客户端驱动程序的大容量传输请求完成后，必须*不*重新格式化并提交同步请求 URB。 这是因为一个同步请求，与关联 URB 具有可变长度根据数据包的数量。 此外，数据包都需要开始和结束的框架边界。 （适用于大容量传输中） 已分配的 URB 可能并不符合所需的同步传输的缓冲区布局，则请求可能会失败。
-
--   由分配 URB [ **USBD\_UrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)不能将重复使用的同步、 选择配置或选择接口请求。 URB 可用于选择要禁用所选的配置的设备中的 NULL 配置重复使用。 URB 必须不处于活动状态和客户端驱动程序必须通过调用格式化 URB [ **UsbBuildSelectConfigurationRequest** ](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))宏和中传递 NULL *ConfigurationDescriptor*参数。
--   然后重新提交 URB，客户端驱动程序必须通过重新格式化 URB 使用相应**UsbBuildXxx**为请求的类型定义的宏。 由于 USB 堆栈可能会更改其内容的一些驱动程序来设置格式 URB 至关重要。
-
-    例如，假设一个驱动程序调用[ **UsbBuildInterruptOrBulkTransferRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbbuildinterruptorbulktransferrequest)初始化大容量传输请求 URB (请参阅[  **\_URB\_大容量\_或者\_中断\_传输**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_bulk_or_interrupt_transfer))。 如果该驱动程序初始化**TransferBufferMDL**的成员[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)结构为 NULL，USB 驱动程序堆栈使用指定的传输缓冲区**TransferBuffer**，以与设备而不是 MDL 交换数据。 但是，在内部，USB 驱动程序堆栈可能创建 MDL，存储指向中 MDL **TransferBufferMDL**，并使用 MDL 堆栈的下层的数据传递。 即使 USB 驱动程序堆栈释放 MDL 内存，也是如此**TransferBufferMDL**可能不能为 NULL，当客户端驱动程序正在处理中完成例程 URB 时。 若要确保正确设置格式的 URB 成员，该驱动程序必须调用**UsbBuildInterruptOrBulkTransferRequest**再次以重新 URB 提交请求之前设置的格式
-
-## <a name="do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers"></a>使用轮询时间不大于 8 的高速和 SuperSpeed 同步传输
+## <a name="do-not-reuse-active-urbs-associated-with-pending-requests"></a>不要重复使用与挂起的请求相关联的活动 URBs
 
 
-USB 驱动程序堆栈支持高速度和 SuperSpeed 等时管道以 1、 2、 4 或 8 轮询周期数。 客户端驱动程序必须发送到终结点的周期为大于 8 的 IO。 执行此操作可能会导致出现 bugcheck。
+如果 USB 驱动程序堆栈检测到在与 URB 关联的请求之前已重新提交的活动 URB，则该堆栈会有意检查错误。 只要请求处于挂起状态，并且尚未调用客户端驱动程序的 IRP 完成例程，URB 就会处于活动状态。 不要在活动的 URB 上执行以下任务。
 
-## <a name="make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame"></a>请确保每个框架的数据包数的倍数的同步数据包数
+-   不要为另一*请求重新提交*活动的 URB （将 URB 与其他 IRP 相关联）。
+-   请勿*修改活动*URB 的内容。
+-   不要*释放活动*的 URB。
+
+在调用客户端驱动程序的完成例程之后，驱动程序可以在完成例程内针对特定类型的请求重新提交 URBs。 以下规则适用于 resubmissions：
+
+-   对于除了选择配置请求以外的任何类型的请求，客户端驱动程序不得重复使用 URB 分配给[**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild) 。
+-   客户端驱动程序不得重复使用由[**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)为任何类型的请求分配的 URB，而不是选择接口请求来选择接口中的相同替代设置。 有关示例，请参阅**USBD\_SelectInterfaceUrbAllocateAndBuild**中的 "备注"。
+-   [**USBD\_IsochUrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_isochurballocate)分配的 URB 必须仅对同步传输请求重复使用。 相反，为其他类型的 i/o 请求（控制、批量或中断）分配的 URB 不能用于同步请求。
+
+    例如，客户端驱动程序为批量传输请求分配并生成[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构。 客户端驱动程序还想要将数据发送到设备中的同步终结点。 大容量传输请求完成后，客户端驱动程序*不得为同步请求重新格式化*并提交 URB。 这是因为与同步请求关联的 URB 的长度可变，具体取决于数据包的数量。 此外，数据包还需要在帧边界上启动和结束。 分配的 URB （用于大容量传输）可能不适合同步传输所需的缓冲区布局，请求可能会失败。
+
+-   不能对同步、选择配置或选择接口请求重复使用[**USBD\_UrbAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)分配的 URB。 可以重复使用 URB 来选择 NULL 配置，以禁用设备中所选的配置。 URB 不得处于活动状态，并且客户端驱动程序必须通过调用[**UsbBuildSelectConfigurationRequest**](https://docs.microsoft.com/previous-versions/ff538968(v=vs.85))宏并在*ConfigurationDescriptor*参数中传递 NULL 来重新设置 URB 的格式。
+-   在重新提交 URB 之前，客户端驱动程序必须使用为请求类型定义的适当**UsbBuildXxx**宏来重新设置 URB 的格式。 驱动程序需要设置 URB 的格式，这一点很重要，因为 USB stack 可能已更改了它的某些内容。
+
+    例如，假定驱动程序调用[**UsbBuildInterruptOrBulkTransferRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbbuildinterruptorbulktransferrequest)来初始化大容量传输请求的 URB （请参阅[ **\_URB\_批量\_或\_中断\_传输**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_bulk_or_interrupt_transfer)）。 如果驱动程序将[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的**TransferBufferMDL**成员初始化为 NULL，则 USB 驱动程序堆栈将使用中指定的**TransferBuffer**传输缓冲区来与设备交换数据，而不是使用 MDL。 但是，在内部，USB 驱动程序堆栈可能会创建一个 MDL，并在**TransferBufferMDL**中存储一个指向 mdl 的指针，并使用 MDL 将数据沿堆栈向下传递。 即使 USB 驱动程序堆栈释放 MDL 内存，当客户端驱动程序在完成例程中处理 URB 时， **TransferBufferMDL**可能不会为 NULL。 若要确保 URB 的成员的格式正确，驱动程序必须再次调用**UsbBuildInterruptOrBulkTransferRequest**来重新格式化 URB，然后再提交请求。
+
+## <a name="do-not-use-polling-period-greater-than-8-for-high-speed-and-superspeed-isochronous-transfers"></a>对于高速和 SuperSpeed 同步传输，不要使用大于8的轮询周期
 
 
-对于高速度和 SuperSpeed 同步传输，每个框架等时数据包数计算为 8 / 轮询段。 客户端驱动程序必须确保**NumberOfPackets** URB 中指定的值 (请参阅[  **\_URB\_ISOCH\_传输**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb_isoch_transfer)) 的每一帧的数据包数的倍数。
+USB 驱动程序堆栈支持高速和 SuperSpeed 同步管道，轮询周期数为1、2、4或8。 客户端驱动程序不能将 IO 发送到周期大于8的终结点。 这样做可能会导致错误检测。
 
-USB 驱动程序堆栈不支持在其中同步传输 URBs **NumberOfPackets**不是每个框架的数据包数的倍数。
-
-## <a name="call-the-routine-at-the-documented-irql-level"></a>在有案可稽的 IRQL 级别调用该例程
+## <a name="make-sure-that-the-number-of-isochronous-packets-that-is-a-multiple-of-number-of-packets-per-frame"></a>请确保每帧数据包数量为多个数据包的同步数据包数
 
 
-如果您的客户端驱动程序注册 USBD\_客户端\_协定\_版本\_作为协定版本 602，USB 驱动程序堆栈假定客户端驱动程序发送请求在适当的 IRQL 级别。 如果客户端驱动程序发送的请求在调度\_级别，应在被动发送\_级别。 收到请求后，在某些情况下，USB 驱动程序堆栈验证 IRQL 值，并使请求失败。 但是，在其他情况下，USB 驱动程序堆栈可能会生成错误检查。
+对于高速和 SuperSpeed 同步传输，每帧的同步数据包数将按 8/轮询周期计算。 客户端驱动程序必须确保在 URB 中指定的**NumberOfPackets**值（请参阅[ **\_URB\_ISOCH\_传输**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_isoch_transfer)）为每帧的数据包数倍数。
+
+USB 驱动程序堆栈不支持按同步传输 URBs，其中**NumberOfPackets**不是每个帧的数据包数的倍数。
+
+## <a name="call-the-routine-at-the-documented-irql-level"></a>在记录的 IRQL 级别调用例程
+
+
+如果将客户端驱动程序注册到 USBD\_客户端的客户端驱动程序\_协定\_版本\_602 作为协定版本，则 USB 驱动程序堆栈会假定客户端驱动程序已在相应的 IRQL 级别发送请求。 如果客户端驱动程序在调度\_级别发送请求，则应在被动\_级别发送请求。 收到请求后，在某些情况下，USB 驱动程序堆栈会验证 IRQL 值并导致请求失败。 但在其他情况下，USB 驱动程序堆栈可能会生成错误检查。
 
 ## <a name="related-topics"></a>相关主题
-[将请求发送到 USB 设备](communicating-with-a-usb-device.md)  
+[向 USB 设备发送请求](communicating-with-a-usb-device.md)  
 
 
 

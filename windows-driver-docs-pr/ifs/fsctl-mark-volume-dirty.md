@@ -1,9 +1,9 @@
 ---
 title: FSCTL_MARK_VOLUME_DIRTY 控制代码
-description: FSCTL\_标记\_卷\_脏控制代码将标记指定的卷为已更新，这会触发 Autochk.exe 在下次系统重新启动过程中在卷上运行。
+description: FSCTL\_将\_批量\_脏控制代码标记为已更新，这将在下一次系统重新启动期间触发 Autochk 在卷上运行。
 ms.assetid: 9062b212-fc8a-4467-b32f-047fc3702445
 keywords:
-- FSCTL_MARK_VOLUME_DIRTY 控制代码可安装文件系统驱动程序
+- FSCTL_MARK_VOLUME_DIRTY 控制代码可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -14,50 +14,50 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec703816f5154a7cae2ff48a5d794b779aa5462
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d7e7788529834de6336cf49c88f095f958913efd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380114"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841285"
 ---
-# <a name="fsctlmarkvolumedirty-control-code"></a>FSCTL\_标记\_卷\_脏控制代码
+# <a name="fsctl_mark_volume_dirty-control-code"></a>FSCTL\_标记\_卷\_脏控制代码
 
 
-**FSCTL\_标记\_卷\_繁琐**控制代码将标记指定的卷为已更新，这会触发 Autochk.exe 在下次系统重新启动过程中在卷上运行。
+**FSCTL\_将\_批量\_脏**控制代码标记为已更新，这将在下一次系统重新启动期间触发 Autochk 在卷上运行。
 
-若要执行此操作，调用[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)使用以下参数。
+若要执行此操作，请调用具有以下参数的[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。
 
 **Parameters**
 
 <a href="" id="instance"></a>*实例*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 指向正在启动 FSCTL 请求微筛选器驱动程序实例的不透明实例指针。
+仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 指向启动 FSCTL 请求的微筛选器驱动程序实例的不透明实例指针。
 
 <a href="" id="fileobject"></a>*FileObject*  
-[**FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)仅。 文件指针对象指定要将标记为已更新的卷。 此参数是必需的不能**NULL**。
+仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 一个文件指针对象，用于指定要标记为已更新的卷。 此参数是必需的，不能为**NULL**。
 
 <a href="" id="filehandle"></a>*FileHandle*  
-[**ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)仅。 若要将标记为已更新的卷句柄。 此参数是必需的不能**NULL**。
+仅[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。 要标记为已更新的卷的句柄。 此参数是必需的，不能为**NULL**。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作的控制代码。 使用**FSCTL\_标记\_卷\_繁琐**对于此操作。
+操作的控制代码。 使用**FSCTL\_标记\_卷\_** 为此操作更新。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-不使用与此操作。 设置为**NULL**。
+不与此操作一起使用。 设置为**NULL**。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-不使用与此操作。 设置为 0。
+不与此操作一起使用。 设置为0。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-不使用与此操作。 设置为**NULL**。
+不与此操作一起使用。 设置为**NULL**。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
-不使用与此操作。 设置为 0。
+不与此操作一起使用。 设置为0。
 
 <a name="status-block"></a>状态块
 ------------
 
-[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)或[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)例程将返回状态\_成功或相应 NTSTATUS值。
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)例程返回\_SUCCESS 或适当的 NTSTATUS 值的状态。
 
 <table>
 <colgroup>
@@ -73,11 +73,11 @@ ms.locfileid: "67380114"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_INVALID_PARAMETER</strong></p></td>
-<td align="left"><p><em>的文件对象</em>或<em>FileHandle</em>不表示有效卷句柄或另一个参数无效。</p></td>
+<td align="left"><p><em>FileObject</em>或<em>FileHandle</em>不表示有效的卷句柄，或者其他参数无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p> <strong>STATUS_ACCESS_DENIED</strong></p></td>
-<td align="left"><p>调用方没有 SE_MANAGE_VOLUME 访问权限。</p></td>
+<td align="left"><p>调用方不具有 SE_MANAGE_VOLUME 访问权限。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_VOLUME_DISMOUNTED</strong></p></td>
@@ -85,11 +85,11 @@ ms.locfileid: "67380114"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>STATUS_TOO_LATE</strong></p></td>
-<td align="left"><p>文件系统卷将关闭。</p></td>
+<td align="left"><p>文件系统卷已关闭。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>STATUS_MEDIA_WRITE_PROTECTED</strong></p></td>
-<td align="left"><p>文件系统卷是只读的。</p></td>
+<td align="left"><p>文件系统卷为只读。</p></td>
 </tr>
 </tbody>
 </table>
@@ -99,7 +99,7 @@ ms.locfileid: "67380114"
 <a name="remarks"></a>备注
 -------
 
-**ReFS:  **不支持此代码。
+**ReFS：  **此代码不受支持。
 
 <a name="requirements"></a>要求
 ------------
@@ -111,18 +111,18 @@ ms.locfileid: "67380114"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntifs.h （包括 FltKernel.h 或 Ntifs.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntifs （包括 FltKernel 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**FSCTL\_IS\_卷\_繁琐**](fsctl-is-volume-dirty.md)
+[**FSCTL\_\_卷\_更新**](fsctl-is-volume-dirty.md)
 
 [**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
 

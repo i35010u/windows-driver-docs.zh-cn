@@ -4,33 +4,33 @@ description: 基于优先级的流控制 (PFC)
 ms.assetid: 9DD8A66F-273F-4E5A-99EF-33C2EDF3240C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b319526c9c8c7fd1ca29d7169ad557c98330575a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b01cb4a7c8193a56f83e2715a4454ecb68dc8f59
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385478"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843494"
 ---
 # <a name="priority-based-flow-control-pfc"></a>基于优先级的流控制 (PFC)
 
 
-基于优先级的流控制 (PFC) 指定在 IEEE 802.1Qbb 草案标准。 此标准是 framework 的 IEEE 802.1 数据中心桥接 (DCB) 接口的一部分。
+基于优先级的流控制（PFC）是在 IEEE 802.1 Q b b 草案标准中指定的。 此标准是适用于 IEEE 802.1 数据中心桥接（DCB）接口的框架的一部分。
 
-PFC 启用流控制统一 802.3 以太网媒体接口或*fabric*、 局域网 (LAN) 和存储区域网络 (SAN) 技术。 PFC 用于避免由于网络链接上的拥塞的数据包丢失。 这允许丢失区分协议，如通过 Ethernet (FCoE) 的光纤通道与传统丢失半协议通过在相同的统一构造共存。
+PFC 启用了针对局域网（LAN）和存储区域网络（SAN）技术的统一802.3 以太网媒体接口或*构造*的流控制。 PFC 旨在消除网络链路上的拥塞导致的数据包丢失。 这允许丢失敏感的协议（如光纤通道 over 以太网（FCoE））与相同统一构造上的传统不区分的协议共存。
 
-PFC 指定直接连接的对等方之间的链路层流控制机制。 PFC 类似于 IEEE 802.3 暂停帧，但改为在单独的 802.1p 优先级级别上进行操作。 这允许接收端暂停发送器上任何的 802.1p 优先级级别。
+PFC 指定直接连接的对等方之间的链接层流控制机制。 PFC 类似于 IEEE 802.3 暂停帧，而是对单个 802.1 p 优先级别进行操作。 这允许接收方在任何 802.1 p 优先级级别暂停发送器。
 
-PFC 使用 802.3 暂停帧，并将其扩展具有以下 PFC 字段：
+PFC 使用802.3 暂停帧，并将其扩展到以下 PFC 字段：
 
--   应暂停指定的 802.1p 优先级级别的 8 位掩码。
+-   一个8位掩码，用于指定应暂停的 802.1 p 优先级别。
 
--   指定应多长时间暂停该优先级级别的流量的每个优先级计时器值。
+-   每个优先级的计时器值，指定应将该优先级级别的流量暂停多长时间。
 
-当接收方发送 PFC 数据 802.3 暂停帧时，交换机会阻止具有到在其连接接收方的端口的指定的优先级级别的帧传输。 计时器值过期时，此开关恢复暂停帧的端口上的传输。
+当接收方发送含 PFC 数据的802.3 暂停帧时，开关会阻止将具有指定优先级别的帧传输到连接到接收器的端口。 当计时器值过期时，开关会恢复端口上已暂停帧的传输。
 
-通过指定 NDIS 服务质量 (QoS) 参数[ **NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构。 **PfcEnable**成员包含的位图，每一位指定是否为的 802.1p 优先级级别启用 PFC。
+通过[**ndis\_QoS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构指定 Ndis 服务质量（QoS）参数。 **PfcEnable**成员包含一个位图，其中每个位指定是否对 802.1 p 优先级启用 PFC。
 
-有关优先级级别的详细信息，请参阅[IEEE 802.1p 优先级](ieee-802-1p-priority-levels.md)。
+有关优先级别的详细信息，请参阅[IEEE 802.1 p Priority 级别](ieee-802-1p-priority-levels.md)。
 
  
 

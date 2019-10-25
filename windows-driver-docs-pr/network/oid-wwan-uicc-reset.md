@@ -3,23 +3,23 @@ title: OID_WWAN_UICC_RESET
 description: OID_WWAN_UICC_RESET
 ms.assetid: D6654B8D-8700-437B-A944-BB273C7D31A1
 keywords:
-- MB UICC 重置时，移动宽带 UICC 重置，移动宽带 UICC 重置的微型端口驱动程序
+- MB UICC reset，Mobile 宽带 UICC reset，Mobile 宽带微型端口驱动程序 UICC reset
 ms.date: 08/17/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 044af332f0d583ecb6a51394c5934be322ae00fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c9613a7d44f9a07dad516102aed9f1bd78b0ed0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385492"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843767"
 ---
-# <a name="oidwwanuiccreset"></a>OID_WWAN_UICC_RESET
+# <a name="oid_wwan_uicc_reset"></a>OID_WWAN_UICC_RESET
 
-OID_WWAN_UICC_RESET 是发送到调制解调器微型端口适配器来重置 UICC 智能卡和指定 UICC 的传递状态之后重置，, 或查询该适配器的传递状态的移动宽带主机。
+移动宽带主机将 OID_WWAN_UICC_RESET 发送到调制解调器微型端口适配器，以重置 UICC 智能卡，并在重置后指定 UICC 的传递状态，或查询适配器的直通状态。
 
-调制解调器微型端口驱动程序必须查询请求进行异步处理，最初在更高版本发送之前对原始请求返回 NDIS_STATUS_INDICATION_REQUIRED [NDIS_STATUS_WWAN_UICC_RESET_INFO](ndis-status-wwan-uicc-reset-info.md)通知包含[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)结构，其中又包含[WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_uicc_reset_info)结构，它表示适配器的传递状态。
+调制解调器小型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回给原始请求，然后再发送包含 NDIS_WWAN 的[NDIS_STATUS_WWAN_UICC_RESET_INFO](ndis-status-wwan-uicc-reset-info.md)通知[_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)结构，后者又包含表示适配器的传递状态的[WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_uicc_reset_info)结构。
 
-对于组的请求，使用 OID_WWAN_UICC_RESET [NDIS_WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_uicc_reset)结构，其中又包含[WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_set_uicc_reset)结构，它表示传递操作主机指定的微型端口适配器后它会重置 UICC。 重置完成后，使用做出响应的微型端口适配器**NDIS_STATUS_WWAN_UICC_RESET_INFO**通知，又包含[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)结构，以指示其传递状态。
+对于 set 请求，OID_WWAN_UICC_RESET 使用[NDIS_WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_uicc_reset)结构，后者又包含一个[WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_set_uicc_reset)结构，该结构表示主机在重置后为微型端口适配器指定的直通操作UICC。 重置完成后，微型端口适配器将使用**NDIS_STATUS_WWAN_UICC_RESET_INFO**通知进行响应，该通知又包含[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)结构，以指示其传递状态。
 
 未经请求的事件不适用。
 
@@ -29,18 +29,18 @@ OID_WWAN_UICC_RESET 是发送到调制解调器微型端口适配器来重置 UI
 
 | | |
 | --- | --- |
-| Version | Windows 10 版本 1709 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows 10 版本 1709 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)
+[NDIS_WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_reset_info)
 
-[WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_uicc_reset_info)
+[WWAN_UICC_RESET_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_uicc_reset_info)
 
-[NDIS_WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_set_uicc_reset)
+[NDIS_WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_uicc_reset)
 
-[WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_set_uicc_reset)
+[WWAN_SET_UICC_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_set_uicc_reset)
 
 [NDIS_STATUS_WWAN_UICC_RESET_INFO](ndis-status-wwan-uicc-reset-info.md)
 

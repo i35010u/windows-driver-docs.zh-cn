@@ -10,18 +10,18 @@ keywords:
 - 调度例程 WDK 内核，DispatchWrite 例程
 - 调度例程 WDK 内核，DispatchRead 例程
 - 读/写调度例程 WDK 内核
-- IRP_MJ_WRITE I/O 函数代码
-- IRP_MJ_READ I/O 函数代码
+- IRP_MJ_WRITE i/o 函数代码
+- IRP_MJ_READ i/o 函数代码
 - 数据传输 WDK 内核，读/写调度例程
-- 传输数据 WDK 内核，读/写调度例程
+- 传输数据 WDK 内核，读取/写入调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12500961b4e637857e934b225c3ac850e420303c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd34f3de9a4926fb24fce991dcfaefc879616728
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384979"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838726"
 ---
 # <a name="dispatchread-dispatchwrite-and-dispatchreadwrite-routines"></a>DispatchRead、DispatchWrite 和 DispatchReadWrite 例程
 
@@ -29,25 +29,25 @@ ms.locfileid: "67384979"
 
 
 
-驱动程序的[ *DispatchRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)并[ *DispatchWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程使用的 I/O 函数代码来处理 Irp [ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)并[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)分别。 或者，组合[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程可以处理 Irp 为这两个这些 I/O 函数代码。
+驱动程序的[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)和[*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程使用 irp 的 i/o 函数代码来处理 IRP [ **\_mj\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)和[**irp\_mj\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)。 此外，组合的[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程还可以处理这两个 i/o 函数代码的 irp。
 
-设备将从其数据可以传输到系统的每个驱动程序必须具有*DispatchRead*例程。 设备向其可以从系统传输数据的每个驱动程序必须具有*DispatchWrite*例程。 将两个方向中的数据传输任何驱动程序可以有组合*DispatchReadWrite*例程。
+可以将数据传输到系统的设备的每个驱动程序都必须具有*DispatchRead*例程。 可将数据从系统传输到的设备的每个驱动程序都必须具有*DispatchWrite*例程。 传输双向数据的任何驱动程序都可以有合并的*DispatchReadWrite*例程。
 
-较低级别的驱动程序处理**IRP\_MJ\_读取**并**IRP\_MJ\_编写**异步请求。 因此， *DispatchRead*和/或*DispatchWrite*最高级别的驱动程序中的例程必须传递这些请求进行进一步处理，前提是请求该驱动程序中具有有效的参数IRP 的 I/O 堆栈位置。
+较低级别的驱动程序将**IRP\_mj\_READ**和**IRP\_\_mj 异步写入**请求。 因此，在高级驱动程序中的*DispatchRead*和/或*DispatchWrite*例程必须将这些请求传递给，以便进行进一步处理，前提是该请求在该驱动程序的 i/o 堆栈位置中具有有效的参数。
 
-是否一个驱动程序设置了其设备对象为缓冲或直接 I/O 会影响它如何处理传输请求。 具体而言，使用直接 I/O 执行 DMA 操作的驱动程序可能需要拆分成较小的传输操作的序列才能符合要求的大型传输请求**IRP\_MJ\_读取**或**IRP\_MJ\_编写**请求。 有关详细信息，请参阅[输入/输出技术](i-o-programming-techniques.md)。
+驱动程序是否为缓冲或直接 i/o 设置其设备对象会影响其处理传输请求的方式。 具体而言，使用直接 i/o 执行 DMA 操作的驱动程序可能需要将大型传输请求拆分为一系列较小的传输操作，以便满足**IRP\_MJ\_读取**或**IRP\_mj\_写入**请求。 有关详细信息，请参阅[输入/输出技术](i-o-programming-techniques.md)。
 
-以下各小节讨论一些设计和实现注意事项*DispatchReadWrite*例程以及更高级别的驱动程序中使用缓冲的 I/O 和直接 I/O 的最低级别的设备驱动程序上面它们：
+以下小节讨论了使用缓冲 i/o 和直接 i/o 的最低级别设备驱动程序中的*DispatchReadWrite*例程的一些设计和实现注意事项，以及上面分层的更高级别的驱动程序：
 
-[以异步方式处理传输](handling-transfers-asynchronously.md)
+[异步处理传输](handling-transfers-asynchronously.md)
 
-[DispatchReadWrite 使用缓冲的 I/O](dispatchreadwrite-using-buffered-i-o.md)
+[使用缓冲 i/o 的 DispatchReadWrite](dispatchreadwrite-using-buffered-i-o.md)
 
-[使用直接 I/O DispatchReadWrite](dispatchreadwrite-using-direct-i-o.md)
+[使用直接 i/o 的 DispatchReadWrite](dispatchreadwrite-using-direct-i-o.md)
 
-[在更高级别的驱动程序中的 DispatchReadWrite](dispatchreadwrite-in-higher-level-drivers.md)
+[更高级的驱动程序中的 DispatchReadWrite](dispatchreadwrite-in-higher-level-drivers.md)
 
-[读/写调度例程的摘要](summary-of-read-write-dispatch-routines.md)
+[读/写调度例程摘要](summary-of-read-write-dispatch-routines.md)
 
  
 

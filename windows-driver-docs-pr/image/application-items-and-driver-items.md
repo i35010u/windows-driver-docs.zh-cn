@@ -4,12 +4,12 @@ description: 应用程序项和驱动程序项
 ms.assetid: 33b602dc-4a0b-47e1-90e2-b77ecc05f66d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17f2e83816dd4d51f1ad7cc6b3073942a8ef6e81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dbe2f2839fd2a88d47ddb122eba30cf7881cb49d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372606"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840897"
 ---
 # <a name="application-items-and-driver-items"></a>应用程序项和驱动程序项
 
@@ -17,35 +17,35 @@ ms.locfileid: "67372606"
 
 
 
-WIA 项表示设备属性和设备数据。 图像处理应用程序显示 WIA 设备为层次结构树的项，但根项，它表示在设备本身，以及任何表示图像或包含图像的文件夹的子项目。 应用程序发现时，树，但独立于创建和维护由 WIA 微型驱动程序的树。 当微型驱动程序创建的项的树时，WIA 服务将自动创建的图像处理应用程序即可查看此树的相同副本。 复制树中的项称为*应用程序项目*。 在树中创建的微型驱动程序的项目称为*驱动程序项*。
+WIA 项表示设备属性和设备数据。 图像处理应用程序将 WIA 设备视为项的层次结构树，根项表示设备本身，子项表示包含图像的图像或文件夹。 但是，应用程序看到的树与由 WIA 微型驱动程序创建和维护的树分开。 当微型驱动程序创建项目树时，WIA 服务会自动创建此树的相同副本，该副本可由图像应用程序查看。 复制树中的项称为*应用程序项*。 微型驱动程序创建的树中的项称为 "*驱动程序项*"。
 
-多个图像的应用程序可以在同一时间使用单一的图像处理设备。 因此，设备树中的项对象的每个应用程序的视图必须独立于另一个应用程序的视图。 实现这一点，如下所示：
+多个映像应用程序可以同时使用单个图像设备。 因此，设备树中项对象的每个应用程序的视图必须独立于另一个应用程序的视图。 完成此操作的方法如下：
 
-1.  微型驱动程序创建的一个项树[IWiaDrvItem 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)对象使用[IWiaMiniDrv 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)并[WIA 驱动程序服务库函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/index)。 此驱动程序项树中的项是微型驱动程序使用来表示设备的项的全局对象。
+1.  微型驱动程序使用[IWiaMiniDrv 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrv)和[WIA 驱动程序服务库函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/index)创建[IWiaDrvItem 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiadrvitem)对象的项树。 此驱动程序项树中的项是全局对象，微型驱动程序使用它们来表示设备的项。
 
-2.  当在树中的项图像处理应用程序请求访问时，WIA 服务将返回项对象的驱动程序项的副本。 当应用程序获取应用程序**IWiaItem** （Microsoft Windows SDK 文档中所述） 项对象 （应用程序项目），此对象与微型驱动程序的相应的 WIA 服务链接**IWiaDrvItem**中的对象*驱动程序项树*。
+2.  当映像应用程序请求访问树中的某一项时，WIA 服务将返回一个项对象，该对象是驱动程序项的副本。 当应用程序获取应用程序**IWiaItem** （如 Microsoft Windows SDK 文档中所述）项对象（应用程序项）时，WIA 服务会将此对象链接到微型驱动程序的相应**IWiaDrvItem**对象*驱动程序项树*。
 
-3.  WIA 创建一个单独*应用程序项树*对于每个应用程序，每个应用程序项树是驱动程序项树的副本。
+3.  WIA 为每个应用程序创建一个单独的*应用程序项树*，每个应用程序项树都是驱动程序项树的副本。
 
-应用程序通常使用**IWiaItem**对象来读取、 验证，并写入项属性，并请求项数据。
+应用程序通常使用**IWiaItem**对象来读取、验证和写入项属性，并请求项数据。
 
-下图显示了应用程序项目与驱动程序项目的关系。
+下图显示了应用程序项与驱动程序项之间的关系。
 
-![说明应用程序项目和驱动程序项之间的关系的关系图](images/art-5.png)
+![说明应用程序项和驱动程序项之间的关系的关系图](images/art-5.png)
 
-如图所示，每个映像的应用程序具有其自己的项树的单独副本。 在应用程序项树的根项目包含返回到设备项树中的根项的指针。
+如图所示，每个图像应用程序都有自己的项树的单独副本。 应用程序项树中的根项包含一个指针，该指针返回到设备项树中的根项。
 
 本部分的其余部分包含以下主题：
 
-[有关项的属性](about-item-properties.md)
+[关于项属性](about-item-properties.md)
 
 [WIA 驱动程序项树](wia-driver-item-tree.md)
 
-[WIA 照相机树](wia-camera-tree.md)
+[WIA 相机树](wia-camera-tree.md)
 
-[WIA 扫描程序树](wia-scanner-tree.md)
+[WIA 扫描器树](wia-scanner-tree.md)
 
-[常用、 相机和扫描程序属性](common--camera--and-scanner-properties.md)
+[常用、照相机和扫描仪属性](common--camera--and-scanner-properties.md)
 
  
 

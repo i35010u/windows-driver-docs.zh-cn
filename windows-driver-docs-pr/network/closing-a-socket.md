@@ -3,33 +3,33 @@ title: 关闭套接字
 description: 关闭套接字
 ms.assetid: 3fa2d5c3-7b52-4bbe-b99d-ef3be19c7c7e
 keywords:
-- Winsock 内核 WDK 网络套接字关闭
-- WSK WDK 网络，套接字关闭
+- Winsock 内核 WDK 网络，插座关闭
+- WSK WDK 网络，插座关闭
 - 关闭套接字
 - WskCloseSocket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63b5e645d3a2b4b29736ff806be4a27fcf05a1a4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9f76372dbd8e8dc160ea8988d25f23b1671f21e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384212"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835162"
 ---
 # <a name="closing-a-socket"></a>关闭套接字
 
 
-完成后使用套接字的 Winsock Kernel (WSK) 应用程序，它应关闭套接字并释放任何关联的资源。 应用程序可以从 WSK 子系统中分离本身之前，WSK 应用程序必须关闭所有打开的套接字。 分离 WSK 子系统提供 WSK 的应用程序的详细信息，请参阅[Winsock 内核应用程序中注销](unregistering-a-winsock-kernel-application.md)。
+如果 Winsock 内核（WSK）应用程序已使用套接字完成，则它应关闭套接字并释放所有关联的资源。 WSK 应用程序必须关闭所有打开的套接字，然后应用程序才能从 WSK 子系统分离其自身。 有关从 WSK 子系统分离 WSK 应用程序的详细信息，请参阅取消[注册 Winsock 内核应用程序](unregistering-a-winsock-kernel-application.md)。
 
-WSK 应用程序通过调用关闭套接字[ **WskCloseSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)函数。 然后再调用**WskCloseSocket**函数，WSK 应用程序必须确保没有任何其他函数调用到套接字的函数，在任何应用程序中包括任何扩展函数的任何正在进行中的其它线程数。 但是，WSK 应用程序可以调用**WskCloseSocket**是否存在挂起的 Irp 从以前调用尚未完成的套接字的函数。
+WSK 应用程序通过调用[**WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_close_socket)函数关闭套接字。 在调用**WskCloseSocket**函数之前，WSK 应用程序必须确保任何套接字函数正在进行其他函数调用，包括任何应用程序的任何其他线程中的扩展函数。 但是，如果之前调用了尚未完成的套接字函数，WSK 应用程序可以调用**WskCloseSocket** 。
 
-调用之前 WSK 应用程序使用以确保不不存在任何其他函数的方法调用中的任何套接字的函数的进度**WskCloseSocket**函数所依赖的应用程序的设计。 例如，如果 WSK 应用程序可能需要在向该套接字进行可能存在的调用中时关闭一个线程中的套接字中一个或多个其他线程，则该应用程序的其他函数通常将引用计数器用于跟踪的函数当前正在进行中的套接字上的调用。 在此情况下，WSK 应用程序以原子方式测试并递增套接字的引用计数器之前它将调用一个套接字的函数，然后以原子方式递减套接字的引用计数器时该函数将返回。 WSK 应用程序时的引用计数器为零，可以安全地调用**WskCloseSocket**函数来关闭套接字。
+WSK 应用程序使用的方法，以确保在调用**WskCloseSocket**函数之前，不会对任何套接字函数进行任何其他函数调用，这取决于应用程序的设计。 例如，如果 WSK 应用程序可能需要在一个线程中关闭套接字，而在一个或多个其他线程中可能正在调用该套接字的其他函数，则该应用程序通常会使用引用计数器来跟踪函数的数目套接字上当前正在进行的调用。 在这种情况下，WSK 应用程序会在调用某个套接字的函数之前，以原子方式测试并递增套接字的引用计数器，然后在函数返回时以原子方式递减套接字的引用计数器。 当引用计数器为零时，WSK 应用程序可以安全地调用**WskCloseSocket**函数来关闭套接字。
 
-另一方面，如果 WSK 应用程序的设计可保证，不会的任何调用在其他线程中的特定套接字的函数的正在进行中时在应用程序调用**WskCloseSocket**函数以关闭套接字，则 WSK 应用程序不需要使用引用计数器来跟踪当前正在对套接字的函数调用的数目。 例如，如果 WSK 应用程序在单个线程中执行其特定的套接字的套接字操作的所有操作，然后应用程序可以安全地调用**WskCloseSocket**而无需该线程中从函数引用计数器。
+另一方面，如果 WSK 应用程序的设计保证在应用程序调用**WskCloseSocket**函数关闭套接字时，不会对任何其他线程中的特定套接字函数进行任何调用，则 WSK应用程序不需要使用引用计数器来跟踪套接字上当前正在进行的函数调用的数量。 例如，如果 WSK 应用程序从单个线程为特定套接字执行其所有套接字操作，则应用程序可以安全地从该线程中调用**WskCloseSocket**函数，而无需引用计数器。
 
-调用**WskCloseSocket**函数会导致要取消和完成从以前对套接字的函数调用的所有挂起 Irp 的 WSK 子系统。 WSK 子系统还可确保在进行任何事件回调函数，具有回 WSK 子系统中返回控件之前完成关闭操作。
+调用**WskCloseSocket**函数会导致 WSK 子系统取消并完成先前调用套接字的函数的所有挂起的 irp。 WSK 子系统还可确保正在进行的任何事件回调函数都在关闭操作完成之前返回到 WSK 子系统。
 
-下面的代码示例演示如何 WSK 应用程序可以关闭套接字。
+下面的代码示例演示 WSK 应用程序如何关闭套接字。
 
 ```C++
 // Prototype for the socket close IoCompletion routine
@@ -129,9 +129,9 @@ NTSTATUS
 }
 ```
 
-应用程序已调用后 WSK [ **WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_close_socket)，它不应造成会对任何套接字的函数的任何进一步调用。
+在 WSK 应用程序调用[**WskCloseSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_close_socket)后，它不应对任何套接字函数进行进一步调用。
 
-如果 WSK 应用程序关闭已不之前断开连接两个方向的面向连接的套接字，WSK 子系统将自动关闭套接字之前执行套接字硬性断开的连接。 正在断开连接的套接字的详细信息，请参阅[断开与目标的连接套接字](disconnecting-a-socket-from-a-destination.md)。
+如果 WSK 应用程序关闭了一个面向连接的套接字，该套接字在两个方向上都未断开连接，则在关闭套接字之前，WSK 子系统会自动执行套接字的异常断开连接。 有关断开套接字连接的详细信息，请参阅[断开套接字与目标的连接](disconnecting-a-socket-from-a-destination.md)。
 
  
 

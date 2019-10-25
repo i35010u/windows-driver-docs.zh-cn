@@ -5,39 +5,39 @@ ms.assetid: 96C5CE38-25EE-425A-A7C5-05990CBE2C3E
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ece68cfc77d249cabc64dcb3959f54808ff2ed8b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 003d56f117aca0ab67bff31ef26653333d9e49f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375093"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843456"
 ---
 # <a name="message-transmission"></a>消息传输
 
 
-当 NFP 技术确定，定义的邻近性技术是近似，另一台设备时，这应充当触发器来传输设备之间的已发布的消息。
+当 NFP 技术确定另一个设备近程（如近程技术定义）时，这应充当在设备之间传输已发布消息的触发器。
 
-在邻近设备时，应仅一次传输已发布的消息。
+在设备处于邻近范围内时，已发布的消息只应传输一次。
 
-当前发布的所有消息都应都传输设备来自内在邻近每次。
+每次设备进入邻近范围时，都应传输所有当前已发布的消息。
 
-如果消息已发布近程设备并且该触发器，则仍处于活动状态时，应将该消息传输。
+如果在近程设备时发布消息，而触发器仍处于活动状态，则应传输该消息。
 
-传递到近程设备发布的并不意味着应由 NFP 提供程序已取消发布发布。 该发布将保持活动状态的下一步的近程事件，直到客户端取消发布它。
+将发布传递到近程设备并不意味着该发布应由 NFP 提供程序取消发布。 对于下一个近程事件，发布保持活动状态，直到客户端 unpublishes。
 
-NFP 设备驱动程序接口不需要已发布的消息能传输的已发布的顺序。 NFP 设备驱动程序接口不需要所有已发布的消息将传输作为单个块。 NFC 专门提供了详细防止这种情况的互操作要求： 传输多个消息，不允许单个块的方式。 但是，它是一项要求完全和不包含错误的情况下接收单个已发布的消息或它们不应传递到已订阅的客户端。
+NFP 设备驱动程序接口不要求按发布的消息发布的顺序进行传输。 NFP 设备驱动程序接口不需要将所有发布的消息作为单个块传输。 NFC 专门提供了一些详细的互操作要求，可防止出现这种情况：不允许将多个消息作为单个块传输。 但是，要求完全接收并不出错的单个已发布消息，否则不应将这些消息传递给订阅的客户端。
 
-没有 NFP 设备驱动程序接口，如果接收的设备上的任何应用已订阅该消息告诉客户端中定义的机制。 还有告诉客户端接收到它们未订阅到消息的机制。
+如果接收设备上的任何应用订阅了消息，则在 NFP 设备驱动程序接口中未定义任何机制来通知客户端。 还没有用于告诉客户端收到的消息未订阅的机制。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

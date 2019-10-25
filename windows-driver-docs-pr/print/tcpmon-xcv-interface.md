@@ -4,17 +4,17 @@ description: TCPMON Xcv 接口
 ms.assetid: 7b2b1cff-ab8f-44e0-9327-dc60a0072bf5
 keywords:
 - 打印监视器 WDK，TCPMON Xcv
-- 收发 (Xcv) 接口 WDK 打印
+- transceive （Xcv）接口 WDK 打印
 - Xcv 接口 WDK 打印
 - TCPMON Xcv 接口 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf1af37f5dbd97c987a3267c71cf4cc46d58e2d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 18800207a56cbc58a1f044f21585b25e19c38a2a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381115"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838784"
 ---
 # <a name="tcpmon-xcv-interface"></a>TCPMON Xcv 接口
 
@@ -22,9 +22,9 @@ ms.locfileid: "67381115"
 
 
 
-本部分介绍标准 TCP/IP 端口监视器 (TCPMON) 收发 (Xcv) 接口。 此接口，使用实现[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))并[ **XcvDataPort** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-xcvdataport)函数调用，使那些使用它来配置TCP/IP 打印机端口或要获得有关 TCP/IP 打印机端口配置的信息。 在本部分中所述的 Xcv 接口是特定的 TCP/IP 端口。 其他 Xcv 接口可能适用于其他端口类型。
+本部分介绍标准 TCP/IP 端口监视器（TCPMON）的 transceive （Xcv）接口。 此接口是使用[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))和[**XcvDataPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-xcvdataport)函数调用实现的，使其能够使用它来配置 tcp/ip 打印机端口或获取有关 tcp/ip 打印机端口配置的信息。 本部分中所述的 Xcv 接口特定于 TCP/IP 端口。 其他 Xcv 接口可能适用于其他端口类型。
 
-若要获取本地计算机或远程计算机的 Xcv 接口的句柄，请调用**OpenPrinter**函数 （Microsoft Windows SDK 文档中所述）。 下面的代码示例说明了如何获取端口 Xcv 句柄：
+若要获取本地计算机或远程计算机的 Xcv 接口的句柄，请调用**OpenPrinter**函数（如 Microsoft Windows SDK 文档中所述）。 下面的代码示例演示如何获取端口的 Xcv 句柄：
 
 ```cpp
 HANDLE hXcv = INVALID_HANDLE_VALUE;
@@ -43,9 +43,9 @@ if (OpenPrinter("<ServerName>\\,XcvPort <PortName>", &hXcv, &Defaults )
 }
 ```
 
-在代码示例中， *ServerName*并*PortName*表示服务器和端口名称字符串。 一旦您获取句柄，您可以查询特定于 TCPMON 端口监视器的信息，或者可以更改端口配置。 请注意，必须以指定所需的端口监视器的访问权限**DesiredAccess**打印机的成员\_默认值结构 (或传递**NULL**如果需要任何特殊的安全性)。 对于某些调用[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))函数 (如时指定的端口和 DeletePort 命令-请参阅[TCPMON Xcv 命令](tcpmon-xcv-commands.md))，服务器\_访问\_是需要管理权限。 有关详细信息**OpenPrinter**函数，并可能在打印机中请求的访问权限\_默认结构，请参阅 Windows SDK 文档。
+在代码示例中， *ServerName*和*portvalue*表示服务器和端口名称字符串。 一旦获取了句柄，就可以查询特定于 TCPMON 端口监视器的信息，也可以更改端口配置。 请注意，必须在打印机\_默认结构的**DesiredAccess**成员中指定端口监视器所需的访问权限（如果不需要特殊安全性，则传递**NULL** ）。 对于对[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))函数的某些调用（如指定了 AddPort 和 DeletePort 命令时），请参阅[TCPMON Xcv 命令](tcpmon-xcv-commands.md)）、SERVER\_ACCESS\_管理权限是必需的。 有关**OpenPrinter**函数的详细信息以及在打印机\_默认结构中可能需要的访问权限，请参阅 Windows SDK 文档。
 
-如果尚不存在该端口，Xcv 句柄可以是从服务器获取通过指定监视器名称。 （对于标准 TCP/IP 端口监视器端口，这是"标准 TCP/IP 端口"。）下面的代码示例说明了如何获取 Xcv 数据句柄端口监视器：
+如果该端口尚不存在，则可以通过指定监视器名称从服务器中获取 Xcv 句柄。 （对于标准 TCP/IP 端口监视器端口，这是 "标准 TCP/IP 端口"。）下面的代码示例演示如何获取端口监视器的 Xcv 数据句柄：
 
 ```cpp
 HANDLE hXcv = INVALID_HANDLE_VALUE;
@@ -65,9 +65,9 @@ if (OpenPrinter("<ServerName>\\,XcvMonitor <MonitorName>", &hXcv, &Defaults )
 }
 ```
 
-在代码示例中， *ServerName*并*PortName*表示服务器和端口名称字符串。 一旦您获取 Xcv 数据句柄，您可以发出说明和请求监视器通过调用[ **XcvData** ](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))函数。
+在代码示例中， *ServerName*和*portvalue*表示服务器和端口名称字符串。 获取 Xcv 数据句柄后，可以通过调用[**XcvData**](https://docs.microsoft.com/previous-versions/ff564255(v=vs.85))函数向监视器发出指令和请求。
 
-请注意的返回值**XcvData**函数仅指示是否已正确地将数据发送到端口监视器。 返回值 **，则返回 TRUE**不指示操作是否成功。 若要确定操作是否成功，请检查中的值\* *pdwStatus*。 下表总结了这些状态的值：
+请注意，从**XcvData**函数返回的值仅指示数据是否已正确发送到端口监视器。 如果返回值**为 TRUE** ，则表示操作成功。 若要确定操作是否成功，请检查 \**pdwStatus*中的值。 下表汇总了这些状态值：
 
 <table>
 <colgroup>
@@ -87,16 +87,16 @@ if (OpenPrinter("<ServerName>\\,XcvMonitor <MonitorName>", &hXcv, &Defaults )
 </tr>
 <tr class="even">
 <td><p>ERROR_ACCESS_DENIED</p></td>
-<td><p>用户没有足够的特权。 该命令要求 SERVER_ACCESS_ADMINISTER 特权。</p></td>
+<td><p>用户的权限不足。 命令需要 SERVER_ACCESS_ADMINISTER 权限。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ERROR_INSUFFICIENT_BUFFER</p></td>
-<td><p>输出缓冲区是必需的但小于所需。</p></td>
+<td><p>需要输出缓冲区，但其小于所需的大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>ERROR_INVALID_DATA</p></td>
-<td><p>输入的缓冲区是必需的但指针指向它<strong>NULL</strong>，或</p>
-<p>输入缓冲区的大小小于所需。</p></td>
+<td><p>需要输入缓冲区，但指向它的指针为<strong>NULL</strong>，或</p>
+<p>输入缓冲区的大小小于所需的大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ERROR_INVALID_HANDLE</p></td>
@@ -104,13 +104,13 @@ if (OpenPrinter("<ServerName>\\,XcvMonitor <MonitorName>", &hXcv, &Defaults )
 </tr>
 <tr class="even">
 <td><p>ERROR_INVALID_LEVEL</p></td>
-<td><p>输入或输出数据结构不是正确的版本。</p></td>
+<td><p>输入或输出数据结构的版本不正确。</p></td>
 </tr>
 <tr class="odd">
 <td><p>ERROR_INVALID_PARAMETER</p></td>
-<td><p>输出缓冲区是必需的但很<strong>NULL</strong>，或</p>
-<p>输出必需参数是<strong>NULL</strong>和输出缓冲区因过小，或</p>
-<p>标准 TCP/IP 端口监视器不了解发出的命令。</p></td>
+<td><p>需要输出缓冲区，但它为<strong>NULL</strong>，或</p>
+<p>output required 参数为<strong>NULL</strong> ，输出缓冲区太小，或</p>
+<p>标准 TCP/IP 端口监视器不理解正在发出的命令。</p></td>
 </tr>
 </tbody>
 </table>

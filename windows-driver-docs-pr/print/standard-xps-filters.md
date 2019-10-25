@@ -1,41 +1,41 @@
 ---
 title: 标准 XPS 筛选器
-description: Windows 提供了两个 （标准） XPS 筛选器以支持内置转换从 XPS PCL6 和 PostScript 级别 3。
+description: Windows 提供了两个（标准）的 XPS 筛选器，用于支持从 XPS 到 PCL6 和 PostScript level 3 的内置转换。
 ms.assetid: 6404D215-8154-4604-A67B-19B20D1CF229
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f82f26ffdd457ef1580d20cae2cbf1ff788c33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 97e210a972c6cc197adb1ef7976f64efb1e64053
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363979"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840402"
 ---
 # <a name="standard-xps-filters"></a>标准 XPS 筛选器
 
 
-Windows 提供了两个 （标准） XPS 筛选器以支持内置转换从 XPS PCL6 和 PostScript 级别 3。
+Windows 提供了两个（标准）的 XPS 筛选器，用于支持从 XPS 到 PCL6 和 PostScript level 3 的内置转换。
 
-Windows 提供的筛选器是可用于打印类驱动程序和特定于模型的 v4 打印驱动程序。 可以与 IHV 功能筛选器，以及 IHV 后期处理筛选器组合这些 XPS 筛选器，根据需要以确保与现有的固件实现兼容性。
+Windows 提供的筛选器可用于打印类驱动程序和特定于模型的 v4 打印驱动程序。 这些 XPS 筛选器可与 IHV 功能筛选器和 IHV 后处理筛选器结合，以确保与现有固件实现兼容。
 
-**请注意**提供这些 Windows XPS 筛选器不是可重新分发，且不支持到 v3 打印驱动程序。
+**注意** 这些 Windows 提供的 XPS 筛选器不能重新分发，并且不适用于 v3 打印驱动程序。
 
 
 
 ## <a name="the-manifest-file"></a>清单文件
 
 
-若要使用 Windows 提供 XPS 筛选器，v4 驱动程序清单文件必须使用的下，RequiredFiles 指令**DriverConfig**部分，以指定的筛选器。 这些是筛选器的名称：
+若要使用 Windows 提供的 XPS 筛选器，v4 驱动程序清单文件必须使用**DriverConfig**部分下的 RequiredFiles 指令来指定筛选器。 下面是筛选器的名称：
 
-*MSxpsPCL6.dll*。 提供从 XPS 到 PCL6 转换。
-*MSxpsPS.dll*。 提供从 XPS 转换为 PostScript 级别 3。
-不支持重新分发和没有 INF 更新所需的这些筛选器，一个。
+*MSxpsPCL6*。 提供从 XPS 到 PCL6 的转换。
+*MSxpsPS*。 提供从 XPS 到 PostScript level 3 的转换。
+使用其中一个筛选器不需要任何 INF 更新，并且不支持再分发。
 ## <a name="print-filter-pipeline-configuration"></a>打印筛选器管道配置
 
 
-若要配置要使用这些筛选器的打印筛选器管道，必须创建配置文件，如以下示例所示。
+若要将打印筛选器管道配置为使用这些筛选器，必须创建配置文件，如以下示例中所示。
 
-指定到 PCL6 转换的示例配置文件。
+指定转换为 PCL6 的示例配置文件。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -47,7 +47,7 @@ Windows 提供的筛选器是可用于打印类驱动程序和特定于模型的
 </Filters>
 ```
 
-指定 PostScript 到转换的示例配置文件。
+指定转换到 PostScript 的示例配置文件。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -62,122 +62,122 @@ Windows 提供的筛选器是可用于打印类驱动程序和特定于模型的
 ## <a name="supported-features"></a>支持的功能
 
 
-标准 XPS 筛选器都支持许多通用功能。 所有功能定义驱动程序都使用 GPD 或 PPD 文件。 *MSxpsPCL6.dll*筛选器要求 GPD 文件的使用进行配置，并*MSxpsPS.dll*筛选器要求 PPD 文件的使用进行配置。 除非另行说明，如果自定义的 PDL 命令指定的一项功能，将使用它。
+标准 XPS 筛选器支持许多常见功能。 所有功能定义使用驱动程序的 GPD 或 PPD 文件。 *MSxpsPCL6*筛选器需要使用 GPD 文件进行配置，而*MSxpsPS*筛选器需要使用 PPD 文件来进行配置。 除非另有说明，否则，如果为功能指定了自定义 PDL 命令，则将使用该命令。
 
-如果在任何特定部分下存在注入字符串 (与指定 **\*顺序**命令)，然后在 GPD 文件的情况下筛选器将进行各种假设这些字符串的内容，并将避免发送默认命令。 这是因为发送默认命令在这种情况下可能导致命令发生冲突。 因此 GPD 文件的创建者必须遵循以下准则：
+如果在任何特定的节（使用 **\*Order**命令指定）下存在注入字符串，则在 GPD 文件的情况下，筛选器将对这些字符串的内容进行一些假设，并避免发送默认命令。 这是因为在这种情况下，发送默认命令可能会导致命令冲突。 因此，GPD 文件的创建者必须遵循以下准则：
 
--   作业\_安装程序。\# o PCL6 二进制 Stream 标头 (例如:")&lt;SP&gt;HP PCL XL; 1;&lt;CR&gt;&lt;LF&gt;") 必须存在。
-    必须存在 o BeginSession 运算符，包括所有必需的属性。
-    必须存在 o OpenDataSource 运算符，包括所有必需的属性。
--   页\_安装程序。\# o BeginPage 运算符必须存在，其中包括所需的所有属性。
--   页\_完成。\# o EndPage 运算符必须存在。
--   作业\_完成。\# o CloseDataSource 运算符必须存在。
+-   作业\_安装程序。\# o PCL6 二进制流标头（例如： "）&lt;SP&gt;HP-PCL XL; 1;&lt;CR&gt;&lt;LF&gt;"）必须存在。
+    o BeginSession 运算符必须存在，包括所有必需的属性。
+    o OpenDataSource 运算符必须存在，包括所有必需的属性。
+-   页面\_安装程序。\# o，BeginPage 运算符必须存在，包括所有必需的属性。
+-   页面\_完成。\# o EndPage 运算符必须存在。
+-   作业\_完成。\# o，CloseDataSource 运算符必须存在。
     o EndSession 运算符必须存在。
     o EndPJLCommands 运算符必须存在。
 
-XPS 标准筛选器生成相应的 PDL 数据设置页上，根据原点\*PrintableArea， \*PrintableOrigin 或\*ImageableArea 命令。 为避免出现于预期的来源的其他偏移量，GPD 文件不应指定任何和 = SetPageOrigin 命令\*Cmd 其纸张大小的字符串定义。
+XPS 标准筛选器根据 \*PrintableArea、\*PrintableOrigin 或 \*ImageableArea 命令生成合适的 PDL 数据，以设置页面的来源。 为了避免与预期来源的额外偏移，GPD 文件不应在其纸张大小 \*Cmd 字符串定义中指定任何 = SetPageOrigin 命令。
 
-有关支持的标准 XPS 筛选器，请参阅 PrintTicket 功能的详细信息[支持的 PrintTicket 功能](supported-printticket-features.md)。
+有关标准 XPS 筛选器支持的 PrintTicket 功能的详细信息，请参阅[支持的 Printticket 功能](supported-printticket-features.md)。
 
-## <a name="retrieving-printticket-in-post-processing-filters"></a>在后期处理筛选器检索 PrintTicket
+## <a name="retrieving-printticket-in-post-processing-filters"></a>正在处理后处理筛选器中的 PrintTicket
 
 
-一个 MSxps 筛选器后添加后续处理筛选器时发布与 Windows 8 的 v4 驱动程序模型，有时还不得不添加预处理的筛选器。 添加预处理的筛选器是为了捕获作业级别的打印票证所必需的。 但这种方法实质上是添加一个对象的基于模型的筛选器，一个基于流的 MSxps 筛选器，从而导致反序列化，然后再打印的数据，只需提取 PrintTicket 的序列化之前。
+在随 Windows 8 一起发布的 v4 驱动程序模型中，当你在其中一个 MSxps 筛选器后添加后处理筛选器时，有时你还必须添加预处理筛选器。 需要添加预处理筛选器才能捕获作业级打印票证。 但这种方法实质上是在基于流的 MSxps 筛选器之前添加基于对象模型的筛选器，导致反序列化，然后对打印数据进行序列化以只提取 PrintTicket。
 
-在 Windows 8.1，用户默认 PrintTicket 与 MSxps 筛选器，在作业级别 PrintTicket 和合并的 PrintTicket 合并然后添加到打印筛选器管道的属性包。 合并的 PrintTicket 中与用户 PrintTicket 相同的方式添加到打印筛选器管道的属性包。 该属性进行命名，如下所示：
+在 Windows 8.1 中，用户默认值 PrintTicket 与 MSxps 筛选器中的作业级 PrintTicket 合并，并将合并的 PrintTicket 添加到打印筛选器管道的属性包。 合并的 PrintTicket 按照与用户 PrintTicket 相同的方式添加到打印筛选器管道的属性包中。 属性的命名方式如下：
 
 ```cpp
 #define XPS_FP_JOB_LEVEL_PRINTTICKET    "JobPrintTicket"
 ```
 
-期间 InitializeFilter，MTI 筛选器将添加的实现[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)到属性包。 此接口的一种方法**GetStream**，将一直阻止到 PrintTicket 流可用为止。 这提供了一种同步属性的访问权限。
+在 InitializeFilter 期间，MTI 筛选器会将[IPrintReadStreamFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintreadstreamfactory)的实现添加到属性包中。 此接口的一种方法**system.resources.resourcemanager.getstream**会一直阻止，直到 PrintTicket 流可用。 这提供了一种方法来同步对属性的访问。
 
-**重要**:如果**GetStream**称为从 InitializeFilter，它将导致死锁。
+**重要提示**：如果从 InitializeFilter 调用**system.resources.resourcemanager.getstream** ，则会导致死锁。
 
 
 
 ## <a name="other-features"></a>其他功能
 
 
-对于不支持的标准 XPS 筛选器的 PrintTicket 功能，筛选器将检查所有 PrintTicket 成员以查看是否在 GPD/PPD 中引用它们，然后指定要输出的命令。 如果是这样，将生成指定的命令。
+对于标准 XPS 筛选器不支持的 PrintTicket 功能，筛选器将检查所有 PrintTicket 成员，以查看它们是否在 GPD/PPD 中引用，然后指定要输出的命令。 如果是这样，则将生成指定的命令。
 
-按以下顺序映射 GPD 功能：
+GPD 功能按以下顺序映射：
 
-1. PrintSchemaKeywordMap 值指定，并且与 PrintTicket 功能名称相匹配。
+1. 指定了 PrintSchemaKeywordMap 值并与 PrintTicket 功能名称匹配。
 
-2. 指定 PrintSchemaPrivateNamespaceURI 属性，而且 GPD 功能名称的 PrintTicket 功能名称匹配。 匹配功能名称并不简单，并遵循的规则数：
+2. 指定了 PrintSchemaPrivateNamespaceURI 特性，并且 GPD 功能名称与 PrintTicket 功能名称匹配。 匹配功能名称并不是很简单，并遵循若干规则：
 
-a. 如果 **\*顺序**部分中的第一个选项是页面\_安装程序或页\_完成和 GPD 功能不会开始使用"页上"，然后尝试之前"页"预置到 GPD 功能名称匹配项。
+a. 如果第一个选项的 **\*Order**部分为 PAGE\_SETUP 或 PAGE\_FINISH，并且 GPD 功能不以 "page" 开头，则在尝试匹配之前，"page" 将在 GPD 功能名称之前预置。
 
-b. 如果 **\*顺序**部分中的第一个选项是文档\_安装程序或文档\_完成和 GPD 功能不会开始使用"文档"，然后"文档"预置到之前的 GPD 功能名称尝试进行匹配。
+b. 如果第一个选项的 **\*Order**部分为 DOC\_SETUP 或 DOC\_FINISH，并且 GPD 功能不以 "document" 开头，则在尝试匹配之前，"文档" 会预置到 GPD 功能名称之前。
 
-c. 如果 **\*顺序**部分中的第一个选项是作业\_安装程序或作业\_完成和 GPD 功能不会开始使用"作业"，然后尝试匹配之前"作业"预置到 GPD 功能名称.
+c. 如果第一个选项的 " **\*顺序**" 部分为 "作业"\_"设置" 或 "作业\_" "完成"，并且 "GPD" 功能不以 "job" 开头，则在尝试匹配之前，"作业" 将附加到 GPD 功能名称之前。
 
-d. 不是任何字符\[A-Z\]， \[a 到 z\]， \[0-9\]或\_替换为\_然后再尝试匹配字符。 但是，如果\*NoPunctuationCharSubstitute？ 属性设置为 TRUE，则筛选器不会替换 '。 或-与\_字符。
+d. 在尝试匹配之前，不 \[a-z\]，\[a-z\]，\[0-9\] 或 "\_" 的任何字符都将替换为 "\_" 字符。 但是，如果 \*NoPunctuationCharSubstitute？特性设置为 TRUE，则筛选器不会替换 "." 或带有 "\_" 字符的 "-"。
 
-按以下顺序映射 PPD 功能：
-1. 指定 PrintSchemaKeywordMap 值并且其与 PrintTicket 功能名称匹配。
+PPD 功能按以下顺序映射：
+1. 指定了 PrintSchemaKeywordMap 值，并且它与 PrintTicket 功能名称匹配。
 
-2. 指定 PrintSchemaPrivateNamespaceURI 属性，而且 PPD 功能名称的 PrintTicket 功能名称匹配。 匹配功能名称并不简单，并遵循的规则数：
+2. 指定了 PrintSchemaPrivateNamespaceURI 属性，并且 PPD 功能名称与 PrintTicket 功能名称匹配。 匹配功能名称并不是很简单，并遵循若干规则：
 
-a. 如果**OrderDependency**部分是 ExitServer、 序言中或 JCLSetup，并且 PPD 功能名称不以开头"作业"，则"作业"将追加到前面 PPD 功能名称然后再尝试匹配。
+a. 如果**OrderDependency**部分为 ExitServer、Prolog 或 JCLSetup，并且 ppd 功能名称不以 "Job" 开头，则在尝试匹配之前，"作业" 将会预置到 PPD 功能名称之前。
 
-b. 如果**OrderDependency**部分是 DocumentSetup，并且 PPD 功能名称不以开头"文档"则"文档"然后再尝试匹配预置到 PPD 功能名称。
+b. 如果**OrderDependency**部分为 DocumentSetup，并且 ppd 功能名称未以 "Document" 开头，则在尝试匹配之前，将 "document" 预置到 PPD 功能名称之前。
 
-c. 如果**OrderDependency**部分是 AnySetup，则该筛选器执行两个匹配项检查：
+c. 如果**OrderDependency**部分为 AnySetup，则筛选器将执行两个匹配检查：
 
-i. 如果使用"文档"未开始 PPD 功能名称，然后"文档"预置到 PPD 功能名称然后再尝试匹配。
+i. 如果 PPD 功能名称不以 "Document" 开头，则在尝试匹配之前，"文档" 会预置到 PPD 功能名称上。
 
-ii. 如果未找到匹配，或者如果 PPD 功能名称不以"Job"开头，然后"作业"预置到 PPD 功能名称然后再尝试匹配。
+ii. 如果找不到匹配项，或者 PPD 功能名称不是以 "Job" 开头，则在尝试匹配之前，"作业" 将附加到 PPD 功能名称之前。
 
-d. 如果**OrderDependency**部分是 PageSetup，并且 PPD 功能名称不以开头"页上"，则尝试匹配之前"页"预置到 PPD 功能名称。
+d. 如果**OrderDependency**部分为 PageSetup，并且 ppd 功能名称不以 "Page" 开头，则在尝试匹配之前，将在 ppd 功能名称前附加 "page"。
 
-e. 不是任何字符\[A-Z\]， \[a 到 z\]， \[0-9\]或\_替换为\_然后再尝试匹配字符。 但是，如果\*MSNoPunctuationCharSubstitute？ 字符串设置为 TRUE，该筛选器不会替换 '。 或-与\_字符。
+e. 在尝试匹配之前，不 \[a-z\]，\[a-z\]，\[0-9\] 或 "\_" 的任何字符都将替换为 "\_" 字符。 但是，如果 \*MSNoPunctuationCharSubstitute？ String 设置为 TRUE，则筛选器不会替换 "." 或带有 "\_" 字符的 "-"。
 
-按以下顺序映射 GPD 和 PPD 选项：
-1. 指定 PrintSchemaKeywordMap 值并且其与 PrintTicket 选项名称匹配。
+GPD 和 PPD 选项按以下顺序映射：
+1. 指定了 PrintSchemaKeywordMap 值，并且它与 PrintTicket 选项名称匹配。
 
-2. 指定 PrintSchemaPrivateNamespaceURI 属性，并且 GPD/PPD 选项名称与 PrintTicket 选项名称匹配。 匹配的选项名称并不简单，并遵循的规则数：
+2. 指定了 PrintSchemaPrivateNamespaceURI 属性，并且 GPD/PPD 选项名称与 PrintTicket 选项名称匹配。 匹配选项名称并不简单，并且遵循了若干规则：
 
-a. 如果 GPD/PPD 选项名称开头\[0-9\]或\_，则\_字符将追加到前面 GPD/PPD 选项名称然后再尝试匹配。 但是，下列附加规则适用：
+a. 如果 GPD/PPD 选项名称以 \[0-9\] 或 "\_" 开头，则在尝试匹配之前，"\_" 字符会附加到 GPD/PPD 选项名称之前。 但是，以下附加规则适用：
 
-i. 如果这是一个 GPD 选项，并\*NoPunctuationCharSubstitute？ 属性设置为 TRUE，则不会不会预置筛选器\_与\_字符。
+i. 如果这是 GPD 选项，并且 \*NoPunctuationCharSubstitute？特性设置为 TRUE，则筛选器不会在 "\_" 前面追加 "\_" 字符。
 
-ii. 如果这是一个 PPD 选项，并\*MSNoPunctuationCharSubstitute？ 字符串设置为 TRUE，则筛选器不会不在前面添加\_与\_字符。
+ii. 如果这是一个 PPD 选项，并且 \*MSNoPunctuationCharSubstitute？string 设置为 TRUE，则筛选器不会在 "\_" 前面追加 "\_" 字符。
 
-b. 不是任何字符\[A-Z\]， \[a 到 z\]， \[0-9\]或\_替换为\_然后再尝试匹配字符。 但是，下列附加规则适用：
+b. 在尝试匹配之前，不 \[a-z\]，\[a-z\]，\[0-9\] 或 "\_" 的任何字符都将替换为 "\_" 字符。 但是，以下附加规则适用：
 
-i. 如果这是一个 GPD 选项，和\*NoPunctuationCharSubstitute？ 属性设置为 TRUE，则筛选器不会替换 '。 或-与\_字符。
+i. 如果这是 GPD 选项，并且 \*NoPunctuationCharSubstitute？特性设置为 TRUE，则筛选器不会替换 "." 或带有 "\_" 字符的 "-"。
 
-ii. 如果这是一个 PPD 选项，和\*MSNoPunctuationCharSubstitute？ 字符串设置为 TRUE，则筛选器不会替换 '。 或-与\_字符。
+ii. 如果这是一个 PPD 选项，并且 \*MSNoPunctuationCharSubstitute？string 设置为 TRUE，则筛选器不会替换 "." 或带有 "\_" 字符的 "-"。
 
-## <a name="form-to-tray-mapping"></a>送纸器映射到窗体
-
-
-到 PCL6 XPS 和 XPS 到 PS 筛选器支持送纸器窗体映射表。 如果多个送纸器支持所选的媒体大小 （例如，字母），筛选器，如下所示中断关联：
-
-1. 如果 （如 GPD 或 PPD 文件中指定） 的默认送纸器配置为使用指定的介质大小，则使用的默认送纸器。
-
-2. 否则，该筛选器选择第一个送纸器 （上到下 GPD/PPD 文件中指定），指定的介质大小进行配置。
-
-## <a name="extra-backside-page-suppression"></a>额外的背面页禁止显示
+## <a name="form-to-tray-mapping"></a>窗体到托盘的映射
 
 
-默认情况下，PCL6 到 XPS 和 XPS 到 PS 筛选器处理文档的情况下插入一个空白页面，包含混合媒体大小、 媒体类型、 输入或输出的箱中，双工的打印。 当筛选器插入此空页时，它将强制设备在前面的一个新的媒体上打印的下一页。 对于不需要用背面页作为输出的设备，可通过将以下关键字添加到驱动程序的 GPD 或 PPD 文件禁止此行为。
+XPS 到 PCL6 和 XPS 到 PS 的筛选器支持窗体到托盘的映射表。 如果多个送纸器支持所选媒体大小（例如，字母），筛选器将按如下所示中断关联：
 
-| 文件类型 | 背面页禁止显示关键字    |
+1. 如果默认纸盒（在 GPD 或 PPD 文件中指定）配置为使用指定的介质大小，则使用默认纸盒。
+
+2. 否则，筛选器将选择在 GPD/PPD 文件中指定的第一个送纸器（从上到下），该空间配置了指定的介质大小。
+
+## <a name="extra-backside-page-suppression"></a>额外的背面页面抑制
+
+
+默认情况下，通过插入空页面，XPS 到 PCL6 和 XPS 到 PS 的筛选器可以处理包含混合介质大小、介质类型、输入或输出箱的文档的双工打印。 当筛选器插入此空页面时，它会强制设备打印新介质的前一页。 对于不需要输出背面页面的设备，可以通过将以下关键字添加到驱动程序的 GPD 或 PPD 文件来禁止显示此行为。
+
+| 文件类型 | 背面页面抑制关键字    |
 |-----------|--------------------------------------|
-| GPD       | \*SuppressExtraBacksidePages?:TRUE  |
-| PPD       | \*MSSuppressExtraBacksidePages:True |
+| GPD       | \*SuppressExtraBacksidePages？： TRUE  |
+| 信息库       | \*MSSuppressExtraBacksidePages： True |
 
 
 
 ## <a name="optimizing-setpagedevice-commands"></a>优化 SetPageDevice 命令
 
 
-使用驱动程序以及 MSxpsPS.dll PostScript 设备的默认行为是，每个页上，发出 SetPageDevice 命令，此命令声明完整的选项为页上指定集。 请注意，某些设备可能不很好地处理这种技术。
+使用驱动程序与 MSxpsPS 的 PostScript 设备的默认行为是：对每个页面发出一个 SetPageDevice 命令，此命令声明为该页指定的一组完整的选项。 请注意，某些设备在此方法中可能无法正常运行。
 
-但是，如果你的设备使用 MSxpsPS.dll 和随附的 PPD 文件指定 **\*MSOptimizeSetPageDevice:True**，则以下为 PostScript 设备行为:-对于每个页面自前一页已被 SetPageDevice 命令的任何部分中的更改，其中发出新的 SetPageDevice 命令指示指定的选项集页。 但是，如果存在不以来 SetPageDevice 命令的任何部分中的任何更改前一页，然后页面不发出 SetPageDevice 命令。
+但是，如果你的设备使用 MSxpsPS，而随附的 PPD 文件指定 **\*MSOptimizeSetPageDevice： True**，则以下是 PostScript 设备行为：-适用于在SetPageDevice 命令自上一页面后，将发出新的 SetPageDevice 命令，以指示为页面指定的选项集。 但是，如果自上一页面起，SetPageDevice 命令的任何部分没有任何更改，则不会为该页发出 SetPageDevice 命令。
 
 ## <a name="related-topics"></a>相关主题
 [支持的 PrintTicket 功能](supported-printticket-features.md)  

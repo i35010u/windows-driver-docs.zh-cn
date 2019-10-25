@@ -4,12 +4,12 @@ description: 将 WIA 属性设置应用到硬件
 ms.assetid: adb85f77-1814-427b-8b75-0bfce4c8ca06
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c997e2f2227d91e7a869fa0ebba118bf090796b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc54a559c2405203c396ddc6f16ec4e0463c6f3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366769"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840894"
 ---
 # <a name="applying-wia-property-settings-to-the-hardware"></a>将 WIA 属性设置应用到硬件
 
@@ -17,15 +17,15 @@ ms.locfileid: "67366769"
 
 
 
-当 WIA 应用程序启动数据传输时，WIA 服务可以允许 WIA 微型驱动程序应用当前 WIA 属性设置，而将任何特定于设备的设置应用到的硬件。 WIA 服务随后将调用[ **IWiaMiniDrv::drvWriteItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)方法之前调用[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法。 后一种方法称为 WIA 应用程序启动数据传输时才。 WIA 微型驱动程序应使用 WIA 服务函数来读取其自己的驱动程序项树中的属性。
+当 WIA 应用程序启动数据传输时，WIA 服务会为 WIA 微型驱动程序提供应用当前 WIA 属性设置的机会，并向硬件应用任何特定于设备的设置。 WIA 服务在调用[**IWiaMiniDrv：:D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法之前，先调用[**IWiaMiniDrv：:d rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)方法。 仅当 WIA 应用程序启动数据传输时，才会调用后一种方法。 WIA 微型驱动程序应使用 WIA 服务函数读取其自己的驱动程序项树中的属性。
 
-### <a href="" id="implementing-iwiaminidrv-drvwriteitemproperties"></a>实现 IWiaMiniDrv::drvWriteItemProperties
+### <a href="" id="implementing-iwiaminidrv-drvwriteitemproperties"></a>实现 IWiaMiniDrv：:d rvWriteItemProperties
 
-WIA 服务调用**IWiaMiniDrv::drvWriteItemProperties**方法后的客户端请求数据传输。 WIA 服务调用此方法进行调用之前[ **IWiaMiniDrv::drvAcquireItemData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)。 此方法返回之前，WIA 微型驱动程序应硬件提交其所需的任何设置。
+WIA 服务在客户端请求数据传输后调用**IWiaMiniDrv：:D rvwriteitemproperties**方法。 WIA 服务在调用[**IWiaMiniDrv：:D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)之前调用此方法。 WIA 微型驱动程序应在从此方法返回之前提交硬件所需的任何设置。
 
-调用此方法时，WIA 微型驱动程序已提交给执行数据传输。 WIA service 会发生故障的任何应用程序尝试获取数据，在这次使用 WIA\_错误\_正忙错误代码。
+调用此方法时，WIA 微型驱动程序已提交到执行数据传输。 由于 wia\_错误\_繁忙错误代码，WIA 服务将失败，此时任何尝试获取数据的应用程序都将失败。
 
-下面的示例演示的实现[ **IWiaMiniDrv::drvWriteItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)方法：
+下面的示例演示[**IWiaMiniDrv：:D rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)方法的实现：
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvWriteItemProperties(

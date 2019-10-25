@@ -3,18 +3,18 @@ title: 从 CoNDIS WAN 微型端口驱动程序发送数据包
 description: 从 CoNDIS WAN 微型端口驱动程序发送数据包
 ms.assetid: 66c42e90-e0d9-47d1-9e6d-cadb511bcb7a
 keywords:
-- WAN 的 CoNDIS 驱动程序 WDK 网络数据包发送
+- CoNDIS WAN 驱动程序 WDK 网络，数据包发送
 - 环回 WDK 网络
-- 软件环回 WDK 的网络
-- 混杂模式环回 WDK 网络
+- 软件环回 WDK 网络
+- 混合模式环回 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dccd719b551a3f61a602c87475d9b6c4297a51d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 07bbad0de67fd1413188334737aa73e1b882c8ae
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386835"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841957"
 ---
 # <a name="sending-packets-from-a-condis-wan-miniport-driver"></a>从 CoNDIS WAN 微型端口驱动程序发送数据包
 
@@ -22,21 +22,21 @@ ms.locfileid: "67386835"
 
 
 
-上层驱动程序调用[ **NdisCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscosendnetbufferlists)若要发送到基础的 CoNDIS WAN 微型端口驱动程序的列表中的网络数据包[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 NDISWAN 中间驱动程序将转发这些 NET\_缓冲区\_来自上层驱动程序的列表结构。 NDISWAN 会发送指标前重新打包结构。 NDISWAN 转发数据包中新的 NET\_缓冲区\_列表结构。
+上层驱动程序调用[**NdisCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists) ，将网络数据包发送到网络\_列表结构的网络[ **\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的列表。 NDISWAN 中间驱动程序将这些 NET\_BUFFER\_列表结构从上层驱动程序转发。 NDISWAN 在发送之前重新打包结构。 NDISWAN 将新的 NET\_缓冲区中的数据包转发\_列表结构。
 
-NDISWAN 中间驱动程序调用 NDIS 转发新 NET\_缓冲区\_列表结构 NDIS 调用 WAN 微型端口驱动程序[ **MiniportCoSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_send_net_buffer_lists)函数。
+NDISWAN 中间驱动程序调用 NDIS 以将新的 NET\_缓冲区\_列表结构中转发，NDIS 调用 WAN 微型端口驱动程序的[**MiniportCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_send_net_buffer_lists)函数。
 
-WAN 的 CoNDIS 微型端口驱动程序拥有这两个 NET\_缓冲区\_列表结构和关联的数据之前在发送完成。 微型端口驱动程序必须更高版本调用[ **NdisMSendNetBufferListsComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsendnetbufferlistscomplete)完成发送请求。
+CoNDIS WAN 微型端口驱动程序拥有 NET\_缓冲区\_列表结构和关联数据，直到发送完成。 小型端口驱动程序稍后必须调用[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)来完成发送请求。
 
-完成调用并不一定表示的已传输网络 datahas;但是除了智能 Nic 的网络数据通常已传输。 但是不完成调用，指示微型端口驱动程序已准备好发布 NET 的所有权\_缓冲区\_列表结构。
+完成调用不一定表示网络 datahas 已传输;但除智能 Nic 外，网络数据通常已传输。 完成调用后，会指示微型端口驱动程序已准备好释放 NET\_缓冲区的所有权\_列表结构。
 
-之后的 CoNDIS WAN 微型端口驱动程序将收到 NET\_缓冲区\_列表结构，其中包含网络数据包，它应将数据包发送出活动的虚拟连接 (VC) 上。
+CoNDIS WAN 微型端口驱动程序接收到包含网络数据包\_列表结构的网络\_缓冲区后，应将数据包发送到活动虚拟连接（VC）。
 
-CoNDIS WAN 的微型端口驱动程序指定它可以具有每个 VC 中的未完成数据包数**MaxSendWindow**成员的 NDIS\_WAN\_共同\_信息结构。 微型端口驱动程序微型端口驱动程序响应时提供此结构[OID\_WAN\_共同\_获取\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-get-info)从协议驱动程序的请求。 但是，微型端口驱动程序可以调整此数字动态并在每个 VC 的基础上使用**SendWindow**中的成员[ **WAN\_CO\_LINKPARAMS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构。 微型端口驱动程序将传递到此结构[ **NdisMCoIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatestatusex)函数。 NDISWAN 使用当前**SendWindow**与未完成发送其上限的值。 微型端口驱动程序可以设置的值**SendWindow**为零的成员才能指定它无法处理任何未完成的数据包。 也就是说，如果**SendWindow**成员设置为零，发送窗口关闭的情况下，NDISWAN 停止将数据包发送有关特定 VC。
+CoNDIS WAN 微型端口驱动程序指定在 NDIS 的**MaxSendWindow**成员中，它可以具有的未处理数据包的数量，\_WAN\_CO\_信息结构。 当微型端口驱动程序响应[OID\_WAN\_CO\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wan-co-get-info)从协议驱动程序获取\_信息请求时，微型端口驱动程序将提供此结构。 但是，微型端口驱动程序可以通过使用[**WAN\_CO\_LINKPARAMS**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565819(v=vs.85))结构中的**SendWindow**成员，以动态方式和按 VC 调整此数字。 微型端口驱动程序将此结构传递给[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)函数。 NDISWAN 使用当前**SendWindow**值作为其未处理发送的限制。 微型端口驱动程序可以将**SendWindow**成员的值设置为零，以指定它无法处理任何未完成的数据包。 也就是说，如果**SendWindow**成员设置为零，则将关闭发送窗口，NDISWAN 停止发送特定 VC 的数据包。
 
-如果设置 PPP 帧，WAN 微型端口驱动程序将发送的数据包包含简单 HDLC PPP 帧。 对于单或 RAS 组帧数据包包含仅说明，否则没有帧的数据部分。 有关 WAN 数据包分帧的详细信息，请参阅[WAN 数据包分帧](wan-packet-framing.md)。
+如果设置了 PPP 组帧，则 WAN 微型端口驱动程序发送的数据包包含简单的 HDLC PPP 组帧。 对于 SLIP 或 RAS 组帧，数据包只包含无组帧的数据部分。 有关 WAN 数据包帧的详细信息，请参阅[Wan 数据包组帧](wan-packet-framing.md)。
 
-WAN 微型端口驱动程序必须尝试提供软件环回或 promiscuous 模式环回。 这两种环回类型完全支持通过 NDISWAN 驱动程序。
+WAN 微型端口驱动程序不得尝试提供软件环回或混合模式环回。 NDISWAN 驱动程序完全支持这两种环回类型。
 
  
 

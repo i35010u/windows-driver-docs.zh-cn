@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE
-description: KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性将返回 Microsoft DirectDraw 图面上的句柄属性信息。
+description: KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性返回 Microsoft DirectDraw surface handle 属性信息。
 ms.assetid: 8fb85c4f-bd1f-4fb9-a8e5-541d6c5fcdac
 keywords:
-- KSPROPERTY_VPCONFIG_DDRAWSURFACEHANDLE 流式处理媒体设备
+- KSPROPERTY_VPCONFIG_DDRAWSURFACEHANDLE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58138bb7f7c88b800b57ba8da253fcf5aa76265b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab42f436ef39296ffbcb833c29ab373574eb8781
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327043"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843204"
 ---
-# <a name="kspropertyvpconfigddrawsurfacehandle"></a>KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE
+# <a name="ksproperty_vpconfig_ddrawsurfacehandle"></a>KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE
 
 
-KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性将返回 Microsoft DirectDraw 图面上的句柄属性信息。
+KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性返回 Microsoft DirectDraw surface handle 属性信息。
 
 ## <span id="ddk_ksproperty_vpconfig_ddrawsurfacehandle_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_DDRAWSURFACEHANDLE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性将返回 Microsoft DirectDraw �
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性将返回 Microsoft DirectDraw �
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>否</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>无</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性将返回 Microsoft DirectDraw �
 
  
 
-属性值 （操作数据） 为 ULONG。
+属性值（操作数据）是 ULONG。
 
 <a name="requirements"></a>要求
 ------------
@@ -73,16 +73,16 @@ KSPROPERTY\_VPCONFIG\_DDRAWSURFACEHANDLE 属性将返回 Microsoft DirectDraw �
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

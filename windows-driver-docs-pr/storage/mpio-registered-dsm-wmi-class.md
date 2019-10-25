@@ -1,20 +1,20 @@
 ---
-title: MPIO\_已注册\_DSM WMI 类
-description: MPIO\_已注册\_DSM WMI 类
+title: '\_DSM WMI 类注册了 MPIO\_'
+description: '\_DSM WMI 类注册了 MPIO\_'
 ms.assetid: 3be335bd-e5d8-4611-9ccf-bd7fb0457b61
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dc5270747e93080250298617e67fe566043065d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cb832ee0201ae52fc9207244098a92bc3d833037
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386146"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843568"
 ---
-# <a name="mpioregistereddsm-wmi-class"></a>MPIO\_已注册\_DSM WMI 类
+# <a name="mpio_registered_dsm-wmi-class"></a>\_DSM WMI 类注册了 MPIO\_
 
 
-WMI 客户端使用 MPIO\_已注册\_DSM WMI 类来查询系统中配置的所有 DSMs。
+WMI 客户端使用\_DSM WMI 类注册的 MPIO\_来查询在系统中配置的所有 Dsm。
 
 ```cpp
 class MPIO_REGISTERED_DSM
@@ -44,7 +44,7 @@ class MPIO_REGISTERED_DSM
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **MPIO\_已注册\_DSM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_registered_dsm)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成[**MPIO\_注册\_DSM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_registered_dsm)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

@@ -7,25 +7,25 @@ keywords:
 - 同步 WDK UMDF
 - 队列回调函数 WDK UMDF
 - 回调函数 WDK UMDF
-- I/O 队列 WDK UMDF
+- I/o 队列 WDK UMDF
 - 锁定 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caa43943f6925481bf4527a58da4266dbf3444a8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58546459818257e2104754e2857caa77c9973b7d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376182"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842199"
 ---
 # <a name="specifying-a-callback-synchronization-mode"></a>指定回调同步模式
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-该驱动程序可以指定框架如何调用其回调函数。 该驱动程序指定同步 （或锁定） 的调用之前的设备模式[ **IWDFDriver::CreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdriver-createdevice)方法创建[设备对象](framework-device-object.md)设备. 若要指定同步模式下，该驱动程序应调用[ **IWDFDeviceInitialize::SetLockingConstraint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)方法。 驱动程序收到一个指向[IWDFDeviceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdeviceinitialize)接口时其[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)调用方法以将设备添加到系统。
+驱动程序可以指定框架如何调用回调函数。 在调用[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)方法为设备创建[设备对象](framework-device-object.md)之前，驱动程序为设备指定同步（或锁定）模式。 若要指定同步模式，驱动程序应调用[**IWDFDeviceInitialize：： SetLockingConstraint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)方法。 当调用[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法将设备添加到系统时，驱动程序将收到指向[IWDFDeviceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)接口的指针。
 
-该驱动程序可以指定以下值之一从 WDF\_回调\_约束中的枚举类型*LockType*参数的**IWDFDeviceInitialize::SetLockingConstraint**确定锁定模式。 约束 （或锁定） 指定的类型取决于硬件设备可以利用对多少并行处理和多大的驱动程序可以处理。
+驱动程序可以在**IWDFDeviceInitialize：： SetLockingConstraint**的*LockType*参数中的 WDF\_回调\_约束枚举类型中指定以下值之一，以标识锁定模式。 指定的约束（或锁定）的类型取决于硬件设备可以利用的并行度以及驱动程序可以处理的数量。
 
 <table>
 <colgroup>
@@ -34,39 +34,39 @@ ms.locfileid: "67376182"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">Value</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>无</strong>(0)</p></td>
-<td align="left"><p>指示已同步到驱动程序没有回调函数。</p></td>
+<td align="left"><p><strong>无</strong>（0）</p></td>
+<td align="left"><p>指示不同步对驱动程序的回调函数。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>WdfDeviceLevel</strong> (1)</p></td>
-<td align="left"><p>指示已同步到驱动程序的所有队列的回调函数。</p></td>
+<td align="left"><p><strong>WdfDeviceLevel</strong> （1）</p></td>
+<td align="left"><p>指示同步所有队列回调函数到驱动程序中。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  如果驱动程序不会调用**IWDFDeviceInitialize::SetLockingConstraint**若要指定一个值，框架将设置此属性设置为默认值**WdfDeviceLevel**.
+**请注意**   如果驱动程序未调用**IWDFDeviceInitialize：： SetLockingConstraint**来指定值，则框架会将此属性的默认值设置为**WdfDeviceLevel**。
 
  
 
-约束仅适用于队列回调函数而不适用于插即用 (PnP) 和电源管理回调函数。 队列回调函数包括：
+约束仅适用于队列回调函数，不适用于即插即用（PnP）和电源管理回调函数。 队列回调函数包括：
 
--   自动调度回调函数，如[ **IQueueCallbackRead::OnRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackread-onread)并[ **IQueueCallbackWrite::OnWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)。 有关详细信息，请参阅[I/O 队列事件回调函数](i-o-queue-event-callback-functions.md)。
+-   自动调度回调函数，如， [**IQueueCallbackRead：： OnRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackread-onread)和[**IQueueCallbackWrite：： OnWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackwrite-onwrite)。 有关详细信息，请参阅[I/o 队列事件回调函数](i-o-queue-event-callback-functions.md)。
 
--   队列状态将更改回调函数，例如， [ **IQueueCallbackStateChange::OnStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iqueuecallbackstatechange-onstatechange)。
+-   队列状态更改回调函数，如， [**IQueueCallbackStateChange：： OnStateChange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackstatechange-onstatechange)。
 
--   例如，请求取消回调函数[ **IRequestCallbackCancel::OnCancel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackcancel-oncancel)。
+-   请求取消回调函数，如， [**IRequestCallbackCancel：： OnCancel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackcancel-oncancel)。
 
--   文件清理并关闭回调函数，如[ **IFileCallbackCleanup::OnCleanupFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)并[ **IFileCallbackClose::OnCloseFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile).
+-   文件清理和关闭回调函数，如， [**IFileCallbackCleanup：： OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)和[**IFileCallbackClose：： OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)。
 
-请求完成回调函数 ([**IRequestCallbackRequestCompletion::OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)) 都不队列是回调函数。 因此，它们不会同步。
+请求完成回调函数（[**IRequestCallbackRequestCompletion：： OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)）不是队列回调函数。 因此，它们不会同步。
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: MRxExtendForNonCache 例程
-description: MRxExtendForNonCache 例程由 RDBSS 请求网络微型重定向扩展一个文件，当缓存管理器不缓存该文件时调用。
+description: MRxExtendForNonCache 例程由 RDBSS 调用，以请求当缓存管理器未缓存文件时，网络小型重定向程序会扩展文件。
 ms.assetid: 80ec5142-7188-45ba-a1cb-73be99ce1ac4
 keywords:
 - MRxExtendForNonCache 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be87cff4701ac24baefd15e01e2d362c7902fece
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a04795dd28991dbff6802a7976dada38d8f42420
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363529"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841110"
 ---
 # <a name="mrxextendfornoncache-routine"></a>MRxExtendForNonCache 例程
 
 
-*MRxExtendForNonCache*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向扩展一个文件，当缓存管理器不缓存该文件。
+*MRxExtendForNonCache*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，以请求当缓存管理器未缓存文件时，网络小型重定向程序会扩展文件。
 
 <a name="syntax"></a>语法
 ------
@@ -41,35 +41,35 @@ ULONG MRxExtendForNonCache(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
-*pNewFileSize* \[in, out\]  
-指向大\_整数值，该值指示新的文件大小的字节数。
+*pNewFileSize* \[in，out\]  
+指向大型\_整数值的指针，该整数值指示新文件大小的字节数。
 
 *pNewAllocationSize* \[out\]  
-指向大型\_用于存储新分配的整数大小[ **MRxExtendForCache** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)返回。
+一个指针，指向用于在[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)返回时存储新分配大小的大\_整数。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxExtendForNonCache*将返回状态\_成功或失败的错误代码成功。
+如果成功， *MRxExtendForNonCache*将返回状态\_成功或错误代码。
 
 <a name="remarks"></a>备注
 -------
 
-*MRxExtendForNonCache*句柄网络请求，若要为非缓存 I/O 扩展文件。
+*MRxExtendForNonCache*处理网络请求，以扩展非缓存 i/o 的文件。
 
-然后再调用*MRxExtendForNonCache*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxExtendForNonCache*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**LowIoContext.Operation**设置为 LOWIO\_OP\_编写
+**LowIoContext**设置为 LOWIO\_操作\_写入
 
-**LowIoContext.ParamsFor.ReadWrite.Flags**具有 LOWIO\_READWRITEFLAG\_扩展\_设置位文件大小
+**LowIoContext**包含 LOWIO\_READWRITEFLAG\_扩展\_FILESIZE 位集
 
-网络微型重定向的缓存文件或目录的信息可能需要时扩展该文件使其缓存信息无效。
+缓存文件或目录信息的网络微型重定向程序可能需要在扩展文件时使其缓存信息无效。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,39 +82,39 @@ ULONG MRxExtendForNonCache(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_EXTENDED\_CAMERAANGLEOFFSET
-description: 相机角度偏移量的属性提供有关照相机的位置的俯仰和横角度的只读信息。 俯仰和横角度定义为从水平和垂直轴的偏移量。
+title: KSPROPERTY\_CAMERACONTROL\_扩展\_CAMERAANGLEOFFSET
+description: "\"相机角度偏移量\" 属性提供有关相机位置的螺距和偏航角度的只读信息。 螺距和偏航角度定义为从水平轴和垂直轴的偏移量。"
 ms.assetid: 06F62EB9-DAF7-486F-9940-24EA2224BCB0
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_CAMERAANGLEOFFSET 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_CAMERAANGLEOFFSET 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,18 +14,18 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ae39693bc962ecc1ca5fb1c1a99a00cea1fe71
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0c6a51073eaffb8f834f1836e0df1580f1b17748
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331665"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843244"
 ---
-# <a name="kspropertycameracontrolextendedcameraangleoffset"></a>KSPROPERTY\_CAMERACONTROL\_EXTENDED\_CAMERAANGLEOFFSET
+# <a name="ksproperty_cameracontrol_extended_cameraangleoffset"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_CAMERAANGLEOFFSET
 
-相机角度偏移量的属性提供有关照相机的位置的俯仰和横角度的只读信息。 俯仰和横角度定义为从水平和垂直轴的偏移量。
+"相机角度偏移量" 属性提供有关相机位置的螺距和偏航角度的只读信息。 螺距和偏航角度定义为从水平轴和垂直轴的偏移量。
 
-## <a name="usage-summary-table"></a>使用率摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -37,7 +37,7 @@ ms.locfileid: "63331665"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -46,34 +46,34 @@ ms.locfileid: "63331665"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
 <td><p>Filter</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_HEADER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)"><strong>KSCAMERA_EXTENDEDPROP_HEADER</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-（操作数据） 的属性值包含[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和一个[ **KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)结构。
+属性值（操作数据）包含[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和[**KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_fieldofview)结构。
 
-Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof**(KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW)。 **大小**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)设置为此属性的总数据大小。
+总属性数据大小为**sizeof**（KSCAMERA\_EXTENDEDPROP\_标头） + **sizeof**（KSCAMERA\_EXTENDEDPROP\_FIELDOFVIEW）。 [**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
 
-**功能**并**标志**的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)不用于此属性。
+[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**功能**和**标志**成员不用于此属性。
 
-如果该驱动程序无法确定正确的字段的视图照相机，驱动程序必须指示支持此属性。
+如果驱动程序无法为照相机确定正确的视图字段，则驱动程序不得指示此属性的支持。
 
-此属性控制是同步的不取消。
+此属性控件是同步的，不可取消。
 
 ## <a name="remarks"></a>备注
 
-如果相机传感器回转仪传感器位于同一物理机架，建议照相机的驱动程序报告的正确偏移的角度，这可能是 0 度。 如果相机传感器和回转仪传感器不位于同一物理机架，驱动程序被建议不指示对此属性的支持。
+如果相机传感器和 gyro 传感器都位于相同的物理机箱中，则建议照相机驱动程序报告适当的偏移角度，这可能是0度。 如果相机传感器和 gyro 传感器不在同一个物理机箱中，则建议使用驱动程序来指示对此属性的支持。
 
 ### <a name="getting-the-property"></a>获取属性
 
-当响应 KSPROPERTY\_类型\_GET 请求，该驱动程序设置的成员[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)到以下。
+当响应 KSPROPERTY\_类型\_GET 请求时，驱动程序会将[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的成员设置为以下项。
 
 <table>
 <colgroup>
@@ -83,21 +83,21 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>ReplTest1</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Version</td>
+<td>版本</td>
 <td>1</td>
 </tr>
 <tr class="even">
 <td>PinId</td>
-<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0XFFFFFFFF)。</td>
+<td>KSCAMERA_EXTENDEDPROP_FILTERSCOPE （0xFFFFFFFF）。</td>
 </tr>
 <tr class="odd">
-<td>大小</td>
-<td><p>sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_CAMERAOFFSET)</p></td>
+<td>Size</td>
+<td><p>sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_CAMERAOFFSET）</p></td>
 </tr>
 <tr class="even">
 <td>结果</td>
@@ -116,7 +116,7 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 
  
 
-驱动程序设置的角度偏移量[ **KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)结构。
+驱动程序设置[**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)结构的角度偏移量。
 
 ## <a name="requirements"></a>要求
 
@@ -127,18 +127,18 @@ Total 属性数据的大小**sizeof**(KSCAMERA\_EXTENDEDPROP\_标头) + **sizeof
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>从开始提供 Windows 8.1。</p></td>
+<td><p>版本</p></td>
+<td><p>可从 Windows 8.1 开始。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[**KSCAMERA\_EXTENDEDPROP\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
+[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)
 
-[**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)
+[**KSCAMERA\_EXTENDEDPROP\_CAMERAOFFSET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_cameraoffset)

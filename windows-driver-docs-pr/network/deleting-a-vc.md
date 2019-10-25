@@ -3,16 +3,16 @@ title: 删除 VC
 description: 删除 VC
 ms.assetid: 6e49fb69-0b22-4f52-9b6d-661e818c1758
 keywords:
-- 虚拟连接 WDK 的 CoNDIS，删除
+- 虚拟连接 WDK CoNDIS，删除
 - 正在删除虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd4ae02529c02b6d9b5b28a7e3db0a719695505
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 63ec0604c350817f6eafaa735a7a07682d11c70e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381475"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838180"
 ---
 # <a name="deleting-a-vc"></a>删除 VC
 
@@ -20,39 +20,39 @@ ms.locfileid: "67381475"
 
 
 
-面向连接的客户端、 呼叫管理器或启动的虚拟线路 (VC) 创建的 MCM 驱动程序可以启动该 VC 的删除。 客户端因此删除 VC 它之前创建的传出呼叫、 呼叫管理器或 MCM 驱动程序删除它之前为创建的传入呼叫通过网络，VC 并呼叫管理器删除它之前创建用于交换信号 VC在网络上的消息。 （MCM 驱动程序不会调用 NDIS 以删除它创建信号消息交换的 VC。 MCM 驱动程序将删除此类使用的内部操作，则不透明的 NDIS VC。）
+只有面向连接的客户端、调用管理器或启动虚拟线路（VC）创建的 MCM 驱动程序才能启动删除该 VC。 因此，客户端会删除先前为传出调用创建的 VC，呼叫管理器或 MCM 驱动程序将删除以前为通过网络进行的传入呼叫创建的 vc，并使用呼叫管理器删除先前创建的用于交换信号的 VC通过网络发送的消息。 （MCM 驱动程序不调用 NDIS 来删除它创建用于交换信号消息的 VC。 MCM 驱动程序将使用不透明的内部操作删除此类 VC。）
 
-面向连接的客户端或调用管理器会启动删除的与 VC [ **NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)。
+面向连接的客户端或调用管理器使用[**NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)启动删除 VC。
 
-下图显示的某调用的客户端的 VC 删除启动管理器。
+下图显示了启动删除 VC 的呼叫管理器的客户端。
 
-![说明的 vc 删除启动呼叫管理器的客户端的关系图](images/cm-09.png)
+![说明启动删除 vc 的调用管理器客户端的关系图](images/cm-09.png)
 
-下图显示了启动 VC 删除 MCM 驱动程序的客户端。
+下图显示了启动删除 VC 的 MCM 驱动程序的客户端。
 
-![说明的 vc 删除启动 mcm 驱动程序的客户端的关系图](images/fig1-09.png)
+![说明启动删除 vc 的 mcm 驱动程序的客户端的关系图](images/fig1-09.png)
 
-下图显示调用的 VC 删除启动管理器。
+下图显示了启动删除 VC 的调用管理器。
 
-![说明的 vc 删除启动呼叫管理器的关系图](images/cm-10.png)
+![说明调用管理器启动删除 vc 的关系图](images/cm-10.png)
 
-当客户端或调用管理器调用**NdisCoDeleteVc**或当 MCM 驱动程序调用**NdisMCmDeleteVc**，给定 VC 上必须有任何未完成的调用，必须已被 VC [停用](deactivating-a-vc.md)。 若要满足这些要求意味着满足以下条件：
+当客户端或调用管理器调用**NdisCoDeleteVc**或 MCM 驱动程序调用**NdisMCmDeleteVc**时，给定 VC 上必须没有未处理的调用，并且 VC 必须已被[停用](deactivating-a-vc.md)。 为了满足这些要求，意味着满足以下条件：
 
--   已调用客户端[ **NdisClCloseCall** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclclosecall)与给定*NdisVcHandle*并将其[close 调用请求](client-initiated-request-to-close-a-call.md)已完成已成功。
+-   客户端已在给定的*NdisVcHandle*中调用了[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall) ，但其[结束调用请求](client-initiated-request-to-close-a-call.md)已成功完成。
 
--   已调用呼叫管理器[ **NdisCmDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdeactivatevc)或已调用 MCM 驱动程序[ **NdisMCmDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeactivatevc)与给定*NdisVcHandle*和停用请求已成功完成 (请参阅[传入请求，关闭调用](incoming-request-to-close-a-call.md))。
+-   调用管理器已调用[**NdisCmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdeactivatevc) ，或者 MCM 驱动程序已通过给定的*NdisVcHandle*调用了[**NdisMCmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeactivatevc) ，并已成功完成停用请求（请参阅[传入请求到关闭呼叫](incoming-request-to-close-a-call.md)）。
 
-客户端或调用 manager 调用**NdisCoDeleteVc** NDIS 调用这两个基础微型端口驱动程序将导致[ **MiniportCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_delete_vc)函数并[ **ProtocolCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_delete_vc)函数的调用方与其共享的客户端或调用管理器*NdisVcHandle* （请参阅前面的三个数字）。
+客户端或调用管理器对**NdisCoDeleteVc**的调用会使 NDIS 同时调用基础微型端口驱动程序的[**MiniportCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_delete_vc)函数，以及调用方将使用的客户端或调用管理器的[**ProtocolCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_delete_vc)函数共享*NdisVcHandle* （请参阅前三个图形）。
 
-*MiniportCoDeleteVc*释放为 VC 分配为 VC，微型端口驱动程序的上下文的任何资源。 *ProtocolCoDeleteVc*版本为 VC 状态的客户端或调用管理器用来执行操作，并跟踪任何资源。 这两*MiniportCoDeleteVc*并*ProtocolCoDeleteVc*是不能返回 NDIS 同步函数\_状态\_PENDING。
+*MiniportCoDeleteVc*释放为 vc 分配的任何资源，以及 vc 的微型端口驱动程序的上下文。 *ProtocolCoDeleteVc*释放客户端或调用管理器用于对 VC 执行操作和跟踪状态的任何资源。 *MiniportCoDeleteVc*和*ProtocolCoDeleteVc*都是同步函数，不能\_挂起状态返回 NDIS\_状态。
 
-MCM 驱动程序将启动删除的与 VC [ **NdisMCmDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmdeletevc)（请参阅下图）。
+MCM 驱动程序使用[**NdisMCmDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmdeletevc)启动删除 VC 的操作（见下图）。
 
-![说明的 vc 删除启动 mcm 驱动程序的关系图 ](images/fig1-10.png)
+![说明启动删除 vc 的 mcm 驱动程序的示意图 ](images/fig1-10.png)
 
-MCM 驱动程序调用**NdisMCmDeleteVc** NDIS 调用将导致[ **ProtocolCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_delete_vc)函数的客户端与 MCM 驱动程序共享*NdisVcHandle* 。
+MCM 驱动程序对**NdisMCmDeleteVc**的调用会使 NDIS 调用 MCM 驱动程序与*NdisVcHandle*共享的客户端的[**ProtocolCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_delete_vc)函数。
 
-当**NdisCoDeleteVc**或**NdisMCmDeleteVc**控件，将返回*NdisVcHandle*不再有效。
+当**NdisCoDeleteVc**或**NdisMCmDeleteVc**返回 control 时， *NdisVcHandle*不再有效。
 
  
 

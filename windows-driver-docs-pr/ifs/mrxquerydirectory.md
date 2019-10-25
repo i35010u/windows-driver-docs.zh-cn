@@ -1,6 +1,6 @@
 ---
 title: MRxQueryDirectory 例程
-description: MRxQueryDirectory 例程调用 RDBSS 来请求网络微型重定向查询信息上的文件目录。
+description: RDBSS 调用 MRxQueryDirectory 例程来请求一个有关文件目录的网络微重定向程序查询信息。
 ms.assetid: 26c7c7fa-7dfa-43fb-a1db-cfc2fc40b969
 keywords:
 - MRxQueryDirectory 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf42a7d4d4f02646f91c2aaeb70b73d2e74c568
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef35dd5a37265c13b45a73a6c6964064d87216ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370080"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841093"
 ---
 # <a name="mrxquerydirectory-routine"></a>MRxQueryDirectory 例程
 
 
-*MRxQueryDirectory*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询文件目录的信息。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxQueryDirectory*例程来请求一个有关文件目录的网络微重定向程序查询信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryDirectory(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQueryDirectory*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxQueryDirectory*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,19 +64,19 @@ NTSTATUS MRxQueryDirectory(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>从远程服务器接收到无效的文件信息缓冲区或返回文件名长度超过最大允许长度。</p></td>
+<td align="left"><p>从远程服务器接收到无效的文件信息缓冲区，或返回的文件名长度超出了允许的最大长度。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
-<td align="left"><p>中指定了无效的 FileInformationClass <strong>Info.FileInformationClass</strong> RX_CONTEXT 结构中的成员由指向<em>RxContext</em>参数。</p></td>
+<td align="left"><p><em>RxContext</em>参数指向的 RX_CONTEXT 结构中的<strong>FileInformationClass</strong>成员中指定的 FileInformationClass 无效。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_LINK_FAILED</strong></td>
@@ -84,7 +84,7 @@ NTSTATUS MRxQueryDirectory(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NO_SUCH_FILE</strong></td>
-<td align="left"><p>查询未找到任何条目。</p></td>
+<td align="left"><p>查询找不到任何条目。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_SHARING_VIOLATION</strong></td>
@@ -98,27 +98,27 @@ NTSTATUS MRxQueryDirectory(
 <a name="remarks"></a>备注
 -------
 
-然后再调用*MRxQueryDirectory*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxQueryDirectory*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**Info.FileInformationClass**成员设置为**IrpSp-&gt;Parameters.QueryDirectory.FileInformationClass**。
+**FileInformationClass**成员设置为**IrpSp-&gt;QueryDirectory. FileInformationClass**。
 
-**Info.Buffer** I/O 请求数据包从成员设置为用户缓冲区。 如果需要通过 RDBSS 已锁定已此缓冲区。
+**信息. Buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.QueryDirectory.Length**。
+**LengthRemaining**成员设置为**IrpSp-&gt;QueryDirectory**。
 
-**QueryDirectory.FileIndex**成员设置为**IrpSp-&gt;Parameters.QueryDirectory.FileIndex**。
+**FileIndex**成员设置为**IrpSp&gt;QueryDirectory. FileIndex**。
 
-**QueryDirectory.RestartScan**成员设置为非零**IrpSp-&gt;标志**具有 SL\_重启\_位上的扫描。
+如果**IrpSp&gt;标志**具有 SL\_RESTART\_扫描位，则将**QueryDirectory**成员设置为非零值。
 
-**QueryDirectory.ReturnSingleEntry**成员设置为非零**IrpSp-&gt;标志**具有 SL\_返回\_单一\_位上的条目。
+如果**IrpSp&gt;标志**具有 SL\_返回上\_单一\_项位，则将**QueryDirectory**成员设置为非零值。
 
-**QueryDirectory.IndexSpecified**成员设置为非零**IrpSp-&gt;标志**具有 SL\_索引\_指定位。
+如果**IrpSp&gt;标志**的\_索引\_指定的位，则将**QueryDirectory**成员设置为非零值。
 
-**QueryDirectory.InitialQuery**成员设置为非零**UnicodeQueryTemplate.Buffer**成员相关联的 FOBX **NULL**和**标志** FOBX 成员没有 FOBX\_标志\_匹配\_所有位。
+如果关联 FOBX 的**UnicodeQueryTemplate**成员为 NULL，并且 FOBX 的**FLAGS**成员没有 FOBX\_标志\_匹配，则将**QueryDirectory**设置为非零**值**@no__t_6全部为。
 
-通配符查询 ("\*。\*"，例如)，将设置 RDBSS **UnicodeQueryTemplate.Buffer**传递关联 FOBX 通配符查询的成员。
+对于通配符查询（"\*。例如\*"，RDBSS 会将关联的 FOBX 的**UnicodeQueryTemplate**成员设置为通过的通配符查询。
 
-如果**PostRequest** RX 成员\_上下文结构**TRUE**返回时从*MRxQueryDirectory*，然后将调用 RDBSS [ **RxFsdPostRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)传递 RX\_上下文结构到辅助队列中进行处理的文件系统进程 (FSP)。
+如果 RX\_上下文结构的**PostRequest**成员在从*MRxQueryDirectory*返回时为**TRUE** ，则 RDBSS 将调用[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)将 RX\_上下文结构传递到辅助角色队列进行处理文件系统进程（FSP）。
 
 <a name="requirements"></a>要求
 ------------
@@ -131,19 +131,19 @@ NTSTATUS MRxQueryDirectory(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryEaInfo**](mrxqueryeainfo.md)
 
@@ -167,7 +167,7 @@ NTSTATUS MRxQueryDirectory(
 
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
-[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/rxprocs/nf-rxprocs-rxfsdpostrequest)
+[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)
 
  
 

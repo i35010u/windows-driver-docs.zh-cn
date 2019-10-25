@@ -4,17 +4,17 @@ description: 流更改
 ms.assetid: 3bd6a511-c602-4159-87b4-7e1e55c03b2e
 keywords:
 - 流更改 WDK DVD 解码器
-- 设置格式的 WDK DVD 解码器
-- 标头的 WDK DVD 解码器
-- 流格式的 WDK DVD 解码器
+- 格式化 WDK DVD 解码器
+- 标头 WDK DVD 解码器
+- 流格式化 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e45bc2789e9941231fcba60226e8c164ed4c89
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 220ef48d354ed5c0efc843e7af513b0bd05ae7aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377829"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837690"
 ---
 # <a name="stream-changes"></a>流更改
 
@@ -22,38 +22,38 @@ ms.locfileid: "67377829"
 
 
 
-DVD 流的格式可能会在更改任何时间。 例如，音频流格式可以 AC3 和 LPCM 之间切换在播放期间。
+DVD 流的格式可能会随时更改。 例如，播放期间，音频流格式在 E-AC3 和 LPCM 之间可能会更改。
 
-包含在流中的每个数据样本[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)追加到它的结构。 此结构包含**OptionsFlags**成员。
+流中的每个数据样本都包含附加了[**KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构。 此结构包含**OptionsFlags**成员。
 
-与包含一个以下标志的标头关联的数据示例可能或不能包含 null 数据数据包或有效的数据。
+与包含以下标志之一的标头关联的数据示例可以包含空数据数据包，也可以不包含有效数据。
 
-以下值的 KSSTREAM\_标头**OptionsFlags**成员对 DVD 播放至关重要：
+以下 KSSTREAM\_标头**OptionsFlags**成员的值对于 DVD 播放很重要：
 
 <a href="" id="ksstream-header-optionsf-datadiscontinuity"></a>**KSSTREAM\_标头\_OPTIONSF\_DATADISCONTINUITY**  
-KSSTREAM\_标头\_OPTIONSF\_DATADISCONTINUITY 位指示紧随的示例，属于不同的来源 （或位置/位置） 的数据比前面的示例。 这表示任何处理已在使用必须完成前面的示例。 此位通常会出现在上一帧，因此，该值指示解码器应放弃上一帧并开始使用新的数据处理的中间。
+KSSTREAM\_标头\_OPTIONSF\_DATADISCONTINUITY 位指示紧随前面的示例的数据所属的数据源（或位置）不同。 这表明，使用前面的示例进行的任何处理都必须完成。 此位通常出现在上一帧的中间，这表示解码器应丢弃上一个帧并开始使用新数据进行处理。
 
 <a href="" id="ksstream-header-optionsf-timediscontinuity"></a>**KSSTREAM\_标头\_OPTIONSF\_TIMEDISCONTINUITY**  
-KSSTREAM\_标头\_OPTIONSF\_TIMEDISCONTINUITY 位指示将数据立即遵循此示例中的时间间隙。 例如，如果 DVD 流包含一个静态帧编码为单个我帧，解码器收到的所有数据对于 I 帧与最后一个样本包含 KSSTREAM\_标头\_OPTIONSF\_TIMEDISCONTINUITY 标志. 这表示，解码器应立即解码 I 帧并不等待 B 帧数据。
+KSSTREAM\_标头\_OPTIONSF\_TIMEDISCONTINUITY 位表示在此示例之后的数据中将存在时间间隔。 例如，如果 DVD 流包含编码为单个 I 帧的静止帧，则解码器将收到 I 帧的所有数据，其中包含 KSSTREAM\_标头的最后一个示例\_OPTIONSF\_TIMEDISCONTINUITY 标志。 这表明解码器应该立即解码 I 帧，而不是等待 B 帧数据。
 
 <a href="" id="ksstream-header-optionsf-typechanged"></a>**KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED**  
-KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED 位指示连接与此标头的示例将一个新[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)块流。 这样可以动态更改的数据类型。 示例将更改视频的 4 x 3 为 16 x 9，或更改的音频从 AC3 pcm。 只有在处理之前包含新的格式设置块的数据包的所有数据时，解码器应使新的格式设置块的所有必要的更改。
+KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED 位指示与标头连接的示例将成为流的新[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)块。 这允许动态更改数据类型。 例如，将视频从4x3 更改为16x9，或将音频从 E-AC3 更改为 PCM。 只有在处理具有新格式块的数据包之前的所有数据后，解码器才能对新格式块进行所有必要的更改。
 
-微型驱动程序的流格式更改时，接收数据包中的使用 KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED 中的设置位**OptionsFlags** KSSTREAM成员\_数据包的标头结构。
+当流格式发生变化时，微型驱动程序接收数据包，其中包含 KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED 位，该数据包是在数据包的 OPTIONSFLAGS\_标头结构的**KSSTREAM**成员中设置的。
 
-微型驱动程序可能永远不会看到 KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED 标志，如果没有正确公开其音频流支持的数据格式。
+如果未正确地公开其音频流支持的数据格式，则微型驱动程序可能无法看到 KSSTREAM\_标头\_OPTIONSF\_TYPECHANGED 标志。
 
-**正确公开流支持的数据格式包括两个步骤：**
+**正确公开流支持的数据格式涉及两个步骤：**
 
-1.  SRB\_获取\_流\_必须设置为流的信息处理程序**StreamFormatsArray**指针指向的数组**NumberOfFormatArrayEntries**指针，其中每个指向有效的格式块。
+1.  SRB\_获取流的\_流\_信息处理程序必须将**StreamFormatsArray**指针设置为指向**NumberOfFormatArrayEntries**指针的数组，其中每个都指向有效的格式块。
 
-2.  SRB\_获取\_数据\_交集处理程序必须将复制到所提供的缓冲区对应于建议的格式的格式设置块。
+2.  SRB\_获取\_数据\_交集处理程序必须将与所建议格式相对应的格式块复制到提供的缓冲区中。
 
-视频格式更改还必须向 KSSTREAM 事件以指示已更改的视频格式的视频端口连接到发送信号。 微型驱动程序应使用[ **StreamClassStreamNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification)(SignalMultipleStreamEvents，pMyHwDevExt-&gt;pMyStreamObject，和我\_KSEVENTSETID\_VPNOTIFY、 KSEVENT\_VPNOTIFY\_格式) 实现此目的。
+视频格式更改还必须向视频端口连接发送 KSSTREAM 事件，以指示视频格式已更改。 微型驱动程序应使用[**StreamClassStreamNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification)（SignalMultipleStreamEvents，pMyHwDevExt-&gt;pMyStreamObject，& 我的\_KSEVENTSETID\_VPNOTIFY，KSEVENT\_VPNOTIFY\_FORMATCHANGE）用途.
 
-当某个参数的视频格式发生更改，如像素的纵横比，解码器接收格式设置块。 解码器应发出信号要重新协商的视频端口连接的视频端口。 解码器调用[ **StreamClassStreamNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassstreamnotification)与参数*SignalMultipleStreamEvents*。
+当视频格式的某些参数发生变化时，如像素纵横比，解码器将接收格式块。 解码器应指示视频端口重新协商视频端口连接。 解码器用参数*SignalMultipleStreamEvents*调用[**StreamClassStreamNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassstreamnotification) 。
 
-DVD 解码器微型驱动程序必须支持用于在此事件指示[ **HW\_流\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_information)条目为视频端口的流。 事件设置的视频端口事件 ID [KSEVENTSETID\_VPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify)和事件 ID 是[ **KSEVENT\_VPNOTIFY\_格式**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vpnotify-formatchange).
+DVD 解码器微型驱动程序必须指明为 VideoPort 流的[**HW\_STREAM\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_information)条目中的此事件提供支持。 视频端口事件的事件集 ID 是[KSEVENTSETID\_VPNotify](https://docs.microsoft.com/windows-hardware/drivers/stream/kseventsetid-vpnotify) ，事件 ID 为[**KSEVENT\_VPNotify\_FORMATCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-vpnotify-formatchange)。
 
  
 

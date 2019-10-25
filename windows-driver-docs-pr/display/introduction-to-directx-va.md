@@ -3,17 +3,17 @@ title: DirectX VA 简介
 description: DirectX VA 简介
 ms.assetid: e7d4faf7-f6ec-49ec-8116-faeed1ddd01c
 keywords:
-- DirectX 视频加速 WDK Windows 2000 显示有关 DirectX 视频加速
-- 视频加速 WDK DirectX，有关 DirectX 视频加速
-- VA WDK DirectX，有关 DirectX 视频加速
+- DirectX 视频加速 WDK Windows 2000 显示，关于 DirectX 视频加速
+- 视频加速 WDK DirectX，关于 DirectX 视频加速
+- VA WDK DirectX，关于 DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34cd076af5b9c3a5fd24de77d4696cf2e371fdac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d9cfbd09ebc6abf521333e2eda8990126605bcb3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379865"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840348"
 ---
 # <a name="introduction-to-directx-va"></a>DirectX VA 简介
 
@@ -21,33 +21,33 @@ ms.locfileid: "67379865"
 ## <span id="ddk_introduction_to_directx_va_gg"></span><span id="DDK_INTRODUCTION_TO_DIRECTX_VA_GG"></span>
 
 
-DirectX VA 允许将频繁地执行简单的硬件快捷键要执行的视频处理操作。 限于给快捷键不太复杂的视频处理操作允许视频解码加速度也要为与最小到加速器的自定义项的各种视频标准来完成。 视频处理操作的执行频率较低且更复杂，例如位流分析和可变长度解码 (VLD)，可以执行主机 CPU 上。
+DirectX VA 允许硬件加速器执行频繁执行且简单的视频处理操作。 对于加速器而言，受限不太复杂的视频处理操作允许通过对加速器进行最小化自定义来实现各种视频标准的视频解码加速。 不经常执行且更复杂的视频处理操作（如位流分析和可变长度解码（VLD））可在主机 CPU 上执行。
 
-DirectX VA API 和相应[动作补偿](motion-compensation.md)DDI 提供支持以下操作：
+DirectX VA API 和相应的[运动补偿](motion-compensation.md)DDI 为以下操作提供支持：
 
--   [Alpha 值混合处理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)的目的，例如 DVD 子图支持。
+-   适用于的[Alpha 混合](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，如 DVD 子画面支持。
 
--   [加密](encryption-support.md)需要它的应用程序。
+-   对需要它的应用程序进行[加密](encryption-support.md)。
 
--   [取消隔行和帧速率转换](deinterlacing-and-frame-rate-conversion.md)的视频内容。
+-   视频内容的[取消隔行扫描和帧速率转换](deinterlacing-and-frame-rate-conversion.md)。
 
--   [ProcAmp](procamp-control-processing.md)控制和后续处理的视频内容。
+-   视频内容的[ProcAmp](procamp-control-processing.md)控件和后处理。
 
--   保护视频内容从未经授权的复制和显示通过[认证的输出保护协议](copp-processing.md)。
+-   保护视频内容不受未经授权的复制和[显示。](copp-processing.md)
 
-此处提供的信息也适用于应用程序和设备驱动程序开发人员。 指定的格式定义的用户模式下主机解码器和内核模式设备驱动程序之间交换信息的方式。 在大多数情况下，从主机到设备驱动程序传输数据，但在某些情况下，在另一个方向发送数据。
+此处提供的信息适用于应用程序和设备驱动程序开发人员。 指定的格式定义了如何在用户模式主机解码器和内核模式设备驱动程序之间交换信息。 在大多数情况下，将数据从主机传输到设备驱动程序，但在某些情况下，会以其他方向发送数据。
 
-有关使用用于解码 Windows media 视频格式的示例代码，请参阅 Windows 媒体移植工具包中的 Windows 媒体示例驱动程序。 Windows 媒体移植工具包用于将音频和视频为 Windows media 格式转换。
+有关用于解码 Windows media 视频格式的示例代码，请参阅 Windows Media 移植工具包中的 Windows media 示例驱动程序。 Windows Media 移植套件用于将音频和视频转换为 Windows media 格式。
 
-有关 Windows media 格式的支持，必须使用 Windows Media 视频编解码器 9 或更高版本。 Windows Media 视频编解码器版本 8 与 Windows XP 一起提供并支持 DirectX 弗吉尼亚
+为了支持 Windows media 格式，必须使用 Windows Media 视频编解码器版本9或更高版本。 Windows XP 提供的 Windows Media 视频编解码器版本8不支持 DirectX VA。
 
-使用的显示驱动程序[去隔行 DDI](deinterlacing-and-frame-rate-conversion.md)，必须隔行扫描的视频内容，并将其正确标记为隔行扫描。 视频混合呈现器 (VMR) 与取消隔行扫描 DDI 结合使用 VIDEOINFOHEADER2 结构，来取消隔行扫描，并执行帧速率转换。 VIDEOINFOHEADER2 结构的详细信息，请参阅 Windows SDK 文档。
+对于使用[取消隔行扫描 DDI](deinterlacing-and-frame-rate-conversion.md)的显示驱动程序，必须将视频内容隔行扫描并正确地标记为交错。 视频混合呈现器（VMR）将 VIDEOINFOHEADER2 结构与取消隔行扫描 DDI 结合使用，以进行取消隔行扫描并执行帧速率转换。 有关 VIDEOINFOHEADER2 结构的详细信息，请参阅 Windows SDK 文档。
 
-[ProcAmp 控件 DDI](procamp-control-processing.md)扩展了 DirectX VA，以支持 ProcAmp 控件和图形设备驱动程序的后续处理的视频内容。 DDI 映射到现有的 DirectDraw 和 DirectX VA DDI。 不能通过访问 DDI **IAMVideoAccelerator**接口。 ProcAmp 控件 DDI 是在 Microsoft DirectX 9.0 和更高版本中可用。
+[ProcAmp 控件 DDI](procamp-control-processing.md)扩展了 DirectX VA，以支持 ProcAmp 控制，并按图形设备驱动程序对视频内容进行处理。 DDI 映射到现有 DirectDraw 和 DirectX VA DDI。 不能通过**IAMVideoAccelerator**接口访问 DDI。 ProcAmp 控件 DDI 仅在 Microsoft DirectX 9.0 和更高版本中可用。
 
-[实施的当前标准](implementation-of-current-standards.md)主题详细介绍的硬件加速器和软件解码器要求必须满足以下、 经过运动补偿视频编解码器标准：ITU-T H.261、 mpeg-1、 mpeg-2 (H.262)、 ITU-T H.263、 MPEG 4、 MPEG 4 AVC (H.264) 和 vc-1。
+[当前标准的实现](implementation-of-current-standards.md)主题详细介绍了以下各项需要满足的硬件加速器和软件解码器要求： itu-t 261、mpeg-2、mpeg-2 （262）、Itu-t .H、MPEG-2、mpeg-4、、、、、和。MPEG-2 AVC （h.264）和 VC-1。
 
-提供与 DirectX 弗吉尼亚没有工具 有关为 Windows 媒体支持提供的工具的详细信息，请参阅 Windows 媒体移植工具包。
+DirectX VA 未提供任何工具。 有关为 Windows media 支持提供的工具的详细信息，请参阅 Windows Media 移植工具包。
 
  
 

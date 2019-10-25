@@ -1,14 +1,14 @@
 ---
-Description: 在 Windows 中，从 Windows 10 开始中现在支持 USB 双角色控制器。
+Description: 从 Windows 10 开始，Windows 现在支持 USB 双重角色控制器。
 title: USB 双角色驱动程序堆栈体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e061da8d7a328379f38c21397ad030ff0a1384f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d166ac2c6f96444f28255aab503e9424903f9801
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360148"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844822"
 ---
 # <a name="usb-dual-role-driver-stack-architecture"></a>USB 双角色驱动程序堆栈体系结构
 
@@ -19,125 +19,125 @@ ms.locfileid: "67360148"
 
 **Windows 版本**
 
--   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
+-   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 -   Windows 10 移动版
 
-在 Windows 中，从 Windows 10 开始中现在支持 USB 双角色控制器。
+从 Windows 10 开始，Windows 现在支持 USB 双重角色控制器。
 
 ## <a name="introduction"></a>简介
 
 
-USB 双角色功能可以系统不是 USB*设备*或 USB*主机*。 可以位于 USB 双角色的详细的规范[usb.org](https://www.usb.org/developers/wusb/docs/presentations/2006/Taipei06_SA_SBD_DRD_Design_Considerations.pdf)网站。
+USB 双重角色功能使系统成为 USB*设备*或 usb*主机*成为可能。 可在[usb.org](https://www.usb.org/developers/wusb/docs/presentations/2006/Taipei06_SA_SBD_DRD_Design_Considerations.pdf)网站上找到适用于 USB 双重角色的详细规范。
 
-这里的重要一点是双角色功能，允许移动设备，如手机、 平板手机或平板电脑，可将自身指定为设备或主机。
+这里的重要一点是，双重角色功能允许移动设备（如手机、phablet 或 tablet）将自身指定为设备或主机。
 
-当移动设备处于*函数*模式下，附加到一台 PC 或某些其他设备，它作为连接的移动设备的主机。
+当移动设备处于*功能*模式时，它会附加到作为连接移动设备的主机的 PC 或其他设备。
 
-当移动设备处于*主机*模式下，用户可以将其设备，例如鼠标或键盘，附加到它。 在这种情况下在移动设备承载附加的设备。
+当移动设备处于*主机*模式时，用户可以将其设备（如鼠标或键盘）连接到该设备。 在这种情况下，移动设备承载附加设备。
 
-通过为 Windows 10 中的 USB 双角色提供支持，我们提供以下优势：
+通过在 Windows 10 中为 USB 双重角色提供支持，我们提供了以下优势：
 
--   连接到移动外围设备通过 USB，它提供了更大数据带宽相比无线协议，如蓝牙。
--   电池充电通过 USB 连接到时以及 （只要存在所需的硬件支持是） 与其他 USB 设备通信的选项。
--   启用将很可能拥有其所有工作的智能手机等移动设备的客户。 此功能将允许在有线停靠方案中，移动设备将停靠，因此承载外围设备提高工作效率。
+-   通过 USB 连接到移动外围设备，与蓝牙等无线协议相比，它提供更大的数据带宽。
+-   当连接到其他 USB 设备并与之通信时，可通过 USB 进行电池充电选项（只要存在所需的硬件支持）。
+-   使最有可能拥有移动设备的客户（如智能手机）能够满足所有工作的需要。 此功能将允许在有线插接方案中提高工作效率，移动设备在该环境中进行停靠，因而承载外围设备。
 
-下表显示的列表*主机*类桌面和移动 Windows Sku 可用的驱动程序。
+下表显示了在 Windows 的 desktop 和 mobile Sku 上可用的*主机*类驱动程序的列表。
 
 | USB 主机类驱动程序                                             | Windows 10 移动版 | Windows 10 桌面版 |
 |--------------------------------------------------------------------|-------------------|---------------------------------|
-| USB 集线器 (USBHUB)                                                  | 是               | 是 （自 Windows 2000)        |
-| HID-键盘/鼠标 （HidClass、 KBDCLass、 MouClass、 KBDHid、 MouHid） | 是               | 是 （自 Windows 2000)        |
-| USB 大容量存储 （大容量和 UASP）                                     | 是               | 是 （自 Windows 2000)        |
-| 泛型 USB 主机驱动程序 (WinUSB)                                   | 是               | 是 （自 Windows Vista)       |
-| USB 音频输入 / 输出 (USBAUDIO)                                      | 是               | 是 （自 Windows XP)          |
-| 串行设备 (USBSER)                                            | 是               | 是 （自 Windows 10)          |
-| 蓝牙 (BTHUSB)                                                 | 是               | 是 （自 Windows XP)          |
-| 打印 (usbprint)                                                   | 否                | 是 （自 Windows XP)          |
-| 扫描 (USBSCAN)                                                 | 否                | 是 （自 Windows 2000)        |
-| 网络摄像头 (USBVIDEO)                                                  | 否                | 是 （自 Windows Vista)       |
-| 媒体传输协议 （MTP 发起程序）                            | 否                | 是 （自 Windows Vista)       |
-| 远程 NDIS (RNDIS)                                                | 否                | 是 （自 Windows XP)          |
-| 通过 USB (IPoverUSB) 的 IP                                            | 否                | 是 （新于 Windows 10）        |
+| USB 集线器（USBHUB）                                                  | “是”               | 是（自 Windows 2000）        |
+| HID-键盘/鼠标（HidClass、KBDCLass、MouClass、KBDHid、MouHid） | “是”               | 是（自 Windows 2000）        |
+| USB 大容量存储（大容量 & UASP）                                     | “是”               | 是（自 Windows 2000）        |
+| 通用 USB 主机驱动程序（WinUSB）                                   | “是”               | 是（从 Windows Vista 开始）       |
+| USB Audio in/out （USBAUDIO）                                      | “是”               | 是（自 Windows XP 后）          |
+| 串行设备（USBSER）                                            | “是”               | 是（从 Windows 10 开始）          |
+| 蓝牙（BTHUSB）                                                 | “是”               | 是（自 Windows XP 后）          |
+| 打印（usbprint）                                                   | 无                | 是（自 Windows XP 后）          |
+| 扫描（USBSCAN）                                                 | 无                | 是（自 Windows 2000）        |
+| 网络摄像机（USBVIDEO）                                                  | 无                | 是（从 Windows Vista 开始）       |
+| 媒体传输协议（MTP 发起程序）                            | 无                | 是（从 Windows Vista 开始）       |
+| 远程 NDIS (RNDIS)                                                | 无                | 是（自 Windows XP 后）          |
+| 通过 USB 的 IP （IPoverUSB）                                            | 无                | 是（适用于 Windows 10 的新）        |
 
 
 
-根据设备类遥测数据，并根据选择适用于 Windows 10 的关键方案选择表中的类驱动程序。 我们计划提供有限的数量的收件箱，第三方主机驱动程序，以支持 Windows 10 移动版上的主要设备。 将适用于桌面版本的 Windows 10，这些驱动程序提供的 OEM 网站上或通过 Windows Update (WU)。
+表中的类驱动程序是基于设备类遥测选择的，并且基于为 Windows 10 选择的关键方案。 我们计划包括有限数量的收件箱、第三方主机驱动程序，以支持 Windows 10 移动版上的密钥设备。 对于适用于 Windows 10 的桌面版，这些驱动程序将在 OEM 网站上或通过 Windows 更新（WU）提供。
 
-适用于 Windows 10 移动设备，不包括收件箱的第三方驱动程序将不可用 WU 上。 而保留的 USB 主堆栈 + hid 标准的磁盘占用空间小。 这是为什么不是所有类驱动程序和很少第三方驱动程序包括针对 Windows 10 移动版收件箱。 想要使第三方驱动程序可用的 OEM 可以使用看板支持包 (BSP) 将它们添加到其移动设备的操作系统映像。 有关此策略的详细信息，请参阅[驱动程序开发的 Windows Phone](https://go.microsoft.com/fwlink/p/?LinkId=761246)，并向下的滚动到节*驱动程序开发的 Windows Phone 和 Windows 之间的差异*。
+对于 Windows 10 移动版，不包含收件箱的第三方驱动程序在 WU 上将不可用。 USB 主机堆栈 + HID 的磁盘占用量已经很小。 这就是为什么不是所有类驱动程序，而是 Windows 10 移动版的收件箱中包含的第三方驱动程序的原因。 希望使用第三方驱动程序的 OEM 可以使用板支持包（BSP）将它们添加到其移动设备的操作系统映像中。 有关此策略的详细信息，请参阅[Windows Phone 的驱动程序开发](https://go.microsoft.com/fwlink/p/?LinkId=761246)，并向下滚动到 " *Windows Phone 和 Windows 的驱动程序开发之间的差异*" 一节。
 
-下表显示*函数*类 Windows 移动 Sku 可用的驱动程序。
+下表显示了 Windows 移动 Sku 上可用的*函数*类驱动程序。
 
-**请注意**函数的驱动程序*不*可在 Windows 10 的桌面版本中。
+**注意** 对于桌面版，函数驱动程序在 Windows 10 上*不可用。*
 
 
 
-| USB 函数类驱动程序                 | Windows 10 移动版 | Windows 10 桌面版 | 说明                                                                                                                                  |
+| USB 函数类驱动程序                 | Windows 10 移动版 | Windows 10 桌面版 | 注释                                                                                                                                  |
 |--------------------------------------------|-------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 媒体传输协议 （MTP 响应方）    | 是               | 否                              | 没有在桌面上 MTP 响应程序方案。 P2P 桌面系统之间的情况下已启用通过 Easy MigCable WinUSB 转移。 |
-| Out (vidstream) 的视频显示              | 是               | 否                              |                                                                                                                                        |
-| 泛型 USB 功能驱动程序 (GenericUSBFn) | 是               | 否                              | 这将需要通过 IPoverUSB 和其他桌面闪烁的方案。                                                                 |
+| 媒体传输协议（MTP 响应程序）    | “是”               | 无                              | 桌面上没有适用于 MTP 响应程序的方案。 桌面系统之间的 P2P 方案通过 WinUSB 上的 MigCable 启用。 |
+| 视频显示（vidstream）              | “是”               | 无                              |                                                                                                                                        |
+| 泛型 USB 函数驱动程序（GenericUSBFn） | “是”               | 无                              | IPoverUSB 和其他桌面闪烁方案需要此方法。                                                                 |
 
 
 
-我们将监视设备附件的数据，让我们知道是否我们需要提供其他类驱动程序支持，并为设备类受欢迎程度列表发生变化时。
+我们将监视设备附件数据，如果需要提供额外的类驱动程序支持，请告知我们，因为设备类的受欢迎列表随时间推移而变化。
 
 ## <a name="driver-implementation"></a>驱动程序实现
 
 
-Microsoft USB 角色切换 (URS) 驱动程序允许系统实施者可以利用其平台的双角色 USB 功能。
+Microsoft USB 角色交换机（URS）驱动程序允许系统实施者充分利用其平台的双重角色 USB 功能。
 
-URS 驱动程序旨在为使用可以在主机和外围角色在单个端口上运行的单个 USB 控制器的平台提供双角色功能。 *外围角色*也称为*函数角色*。 URS 驱动程序管理当前角色的端口，并加载和卸载的适当的软件堆栈，基于硬件的平台的事件。
+URS 驱动程序旨在为使用单个 USB 控制器的平台提供双重角色功能，该控制器可以在一个端口上同时操作主机和外围角色。 *外围角色*也称为*函数角色*。 URS 驱动程序根据平台上的硬件事件，管理端口的当前角色以及适当软件堆栈的加载和卸载。
 
-在系统上具有 USB 微 AB 连接器，驱动程序，可以使用的硬件中断指示状态的连接器上的 ID pin。 此 pin 用于检测是否在控制器需要假设主机角色，或者在连接中的函数角色。 有关详细信息，请参阅[USB 在外出时随时规范](https://go.microsoft.com/fwlink/p/?LinkId=698414)。 在系统上使用 USB 类型 C 连接器，OEM 实施者应使用提供的连接器客户端驱动程序[USB 类型 C 连接器驱动程序的编程接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)。 客户端驱动程序如 CC 检测、 PD 消息传递，以及其他与 Microsoft 提供的 USB 连接器管理器类扩展 (UcmCx) 来管理的 USB 类型 C 连接器的所有方面进行通信。 对于角色切换，客户端驱动程序通信的 USB 类型 C 连接器向 URS 驱动程序的状态。
+在具有 USB 微 AB 连接器的系统上，驱动程序使用硬件中断来指示连接器上 ID pin 的状态。 此 pin 用于检测控制器是否需要在连接中采用主机角色或函数角色。 有关详细信息，请参阅[USB 点播规范](https://go.microsoft.com/fwlink/p/?LinkId=698414)。 在使用 USB 类型 C 连接器的系统上，OEM 实施者应该使用[USB 类型 c 连接器驱动程序编程接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)提供连接器客户端驱动程序。 客户端驱动程序与 Microsoft 提供的 USB 连接器管理器类扩展（UcmCx）进行通信，以管理 USB 类型 C 连接器的所有方面，如 CC 检测、PD 消息传递和其他。 对于角色切换，客户端驱动程序会将 USB 类型 C 连接器的状态传达给 URS 驱动程序。
 
-下图显示了使用 URS 驱动程序的双角色控制器 USB 软件驱动程序堆栈。
+下图显示了使用 URS 驱动程序的双角色控制器的 USB 软件驱动程序堆栈。
 
 ![usb 角色切换驱动程序堆栈体系结构。 ](images/dual-role-arch.png)
 
-请注意，URS 驱动程序将永远不会加载同时在上图中所示的函数和主机堆栈。 URS 驱动程序将加载*任一*函数堆栈*或*主机 stack-具体取决于 USB 控制器的角色。
+请注意，URS 驱动程序绝不会同时加载上图中显示的函数和主机堆栈。 URS 驱动程序*将加载函数*堆栈*或*主机堆栈-具体取决于 USB 控制器的角色。
 
 ## <a name="hardware-requirements"></a>硬件要求
 
 
-如果你正在开发一个平台，它将利用 URS 驱动程序，以提供双角色 USB 功能，以下硬件要求必须满足：
+如果正在开发将利用 URS 驱动程序的平台，若要提供双重角色的 USB 功能，必须满足以下硬件要求：
 
 -   USB 控制器
 
-    作为现成驱动程序，由 Microsoft 提供这些驱动程序。
+    这些驱动程序由 Microsoft 作为内置驱动程序提供。
 
-    Synopsys DesignWare 核心 USB 3.0 控制器。 收件箱 INF:UrsSynopsys.inf。
+    Synopsys DesignWare Core USB 3.0 控制器。 收件箱 INF： UrsSynopsys。
 
-    Chipidea 高速 USB OTG 控制器。 收件箱 INF:UrsChipidea.inf。
+    Chipidea 高速 USB OTG 控制器。 收件箱 INF： UrsChipidea。
 
 -   ID pin 中断
 
-    非 USB 类型-C 系统 ID pin interrupt(s) 可能在两种方式之一实现：
+    可以通过以下两种方式之一实现非 USB 类型 C 系统的 ID pin 中断：
 
-    两个边缘触发中断： 接地连接器上的 ID pin 时, 激发的一个，浮点 ID pin 时激发的另一个。
+    两个边缘触发的中断：一个是在连接器上的 ID pin 被接地时触发的，另一个是在 ID pin 为浮动时激发的另一个。
 
-    单个同时处于活动状态的中断时在活动级别 ID 插针接地。
+    单个主动-两个中断，在 ID pin 被接地时处于活动状态。
 
 -   USB 控制器枚举
 
-    USB 双角色控制器必须是 ACPI 枚举。
+    USB 双重角色控制器必须是 ACPI 枚举的。
 
--   软件的支持
+-   软件支持
 
-    URS 驱动程序需要允许 VBus 控制连接器软件界面。 此接口是特定于 SoC 的。 有关详细信息，请与 SoC 供应商联系。
+    URS 驱动程序需要一个允许通过连接器控制 VBus 的软件接口。 此接口是 SoC 特定的。 有关更多详细信息，请联系 SoC 供应商。
 
-在 Windows 中不支持这些 USB OTG 功能：
+Windows 不支持以下 USB OTG 功能：
 
--   附件充电器适配器检测 (ACA)。
--   会话请求协议 (SRP)。
--   主机协商协议 (HNP)。
--   将附加检测协议 (ADP)。
+-   配件充电器适配器检测（ACA）。
+-   会话请求协议（SRP）。
+-   主机协商协议（HNP）。
+-   附加检测协议（ADP）。
 
 ## <a href="" id="acpi"></a>系统配置
 
 
-若要使用 URS 驱动程序，必须为您的系统中创建的 ACPI 定义文件。 此外，还有一些必须考虑到帐户的驱动程序相关注意事项。
+若要使用 URS 驱动程序，必须为系统创建一个 ACPI 定义文件。 此外，还必须考虑一些与驱动程序相关的注意事项。
 
-下面是 USB 双角色控制器的示例 ACPI 定义。
+下面是 USB 双重角色控制器的示例 ACPI 定义。
 
 ```Text
 //
@@ -219,51 +219,51 @@ Device(URS0)
 }
 ```
 
-下面是一些了 ACPI 文件的主要部分的说明：
+下面是 ACPI 文件主要部分的一些说明：
 
--   URS0 是 USB 双角色控制器的 ACPI 定义。 这是 URS 驱动程序将加载在其的 ACPI 设备。
+-   URS0 是 USB 双重角色控制器的 ACPI 定义。 这是 URS 驱动程序将加载到的 ACPI 设备。
 
--   USB0 和 UFN0 URS0 的范围内的子设备。 USB0 和 UFN0 分别表示将枚举由 URS 驱动程序的两个子堆栈和主机和函数堆栈。 请注意， \_ADR 是 ACPI 与 URS 驱动程序创建的设备对象与这些设备定义相匹配的方法。
+-   USB0 和 UFN0 是 URS0 作用域内的子设备。 USB0 和 UFN0 表示将分别由 URS 驱动程序和主机和函数堆栈枚举的两个子堆栈。 请注意，\_ADR 是 ACPI 将这些设备定义与 URS 驱动程序创建的设备对象进行匹配的方式。
 
--   如果控制器使用两个角色相同的中断，可以在这两个子设备中所述相同的控制器中断。 甚至在这种情况下，中断可以仍描述为"独占"。
+-   如果控制器对这两个角色都使用相同的中断，则两个子设备中都可以描述相同的控制器中断。 即使在这种情况下，也仍然可以将中断描述为 "独占"。
 
--   可以根据需要将此 ACPI 定义文件的新增功能。 例如，您可以设置任何其他必需的方法或属性的任何设备上的 ACPI 定义文件中。 这种添加不会干扰 URS 驱动程序的操作。 也可以在描述中堆栈的任何所需的任何其他资源\_CRS 的适当的设备。
+-   你可以根据需要将其添加到此 ACPI 定义文件。 例如，你可以在 ACPI 定义文件中的任何设备上设置任何其他所需的方法或属性。 此类添加操作不会影响 URS 驱动程序的操作。 任何堆栈中所需的任何其他资源也可以在相应设备的 \_CRS 中进行描述。
 
-URS 驱动程序将硬件 Id 分配给主机和函数堆栈。 这些硬件 Id 派生自 URS 设备的硬件 ID。 例如，如果 URS 设备硬件 ID 是 ACPI\\ABCD1234，然后 URS 驱动程序硬件 Id 为创建的主机和函数的堆栈，如下所示：
+URS 驱动程序将硬件 Id 分配给主机和函数堆栈。 这些硬件 Id 派生自 URS 设备的硬件 ID。 例如，如果你的 URS 设备的硬件 ID 为 ACPI\\ABCD1234，则 URS 驱动程序将为主机和函数堆栈创建硬件 Id，如下所示：
 
--   主机堆栈：URS\\ABCD1234&HOST
+-   主机堆栈： URS\\ABCD1234 & 主机
 
--   函数堆栈：URS\\ABCD1234 &AMP; 函数
+-   函数堆栈： URS\\ABCD1234 & 函数
 
 ## <a href="" id="inf"></a>驱动程序安装包
 
 
-第三方驱动程序包可以依赖于此方案中，如有必要。
+必要时，第三方驱动程序包可以依赖于此方案。
 
-如果你是 IHV 或 OEM 并提供你自己的驱动程序包正在考虑，以下是一些要考虑的事项：
+如果你是 IHV 或 OEM，并且想要提供自己的驱动程序包，以下是一些需要考虑的事项：
 
 - URS 驱动程序包
 
-  预计每个平台上的双角色控制器则硬件 ID 将收件箱 INF 添加为 URS。 但是，如果出于某种原因无法添加 ID，IHV/OEM 可能会提供一个驱动程序包使用 INF 需要 / 包括收件箱 INF 并匹配其硬件 id。
+  应将每个平台上的双重角色控制器的硬件 ID 添加到 URS 的收件箱 INF。 但是，如果出于某种原因无法添加 ID，则 IHV/OEM 可能会提供一个具有 INF 的驱动程序包，该 INF 需要/包含收件箱 INF，并与硬件 ID 匹配。
 
-  这是在其中 IHV/OEM 需要筛选器驱动程序位于驱动程序堆栈的情况下必需的。
+  如果 IHV/OEM 需要驱动程序堆栈中存在筛选器驱动程序，则这是必需的。
 
 - 主机驱动程序包。
 
-  IHV/OEM 提供的驱动程序包需要 / 包括收件箱*usbxhci.inf*和主机设备硬件 ID 是必需的匹配项。 硬件 ID 匹配项将基于在上一部分中所述的方案。
+  IHV/OEM 提供的驱动程序包需要/包括收件箱*usbxhci .inf* ，并需要与主机设备硬件 ID 匹配。 硬件 ID 匹配将基于上一部分中所述的方案。
 
-  这是在其中 IHV/OEM 需要筛选器驱动程序位于驱动程序堆栈的情况下必需的。
+  如果 IHV/OEM 需要驱动程序堆栈中存在筛选器驱动程序，则这是必需的。
 
-  没有正在进行的工作，使 URS 驱动程序分配主机设备 XHCI 兼容 ID。
+  正在进行的工作使 URS 驱动程序为主机设备分配 XHCI 兼容 ID。
 
 - 函数驱动程序包
 
-  IHV/OEM 提供的驱动程序包需要 / 包括收件箱*Ufxsynopsys.inf*和外围设备硬件 ID 是必需的匹配项。 硬件 ID 匹配项将基于在上一部分中所述的方案。
+  IHV/OEM 提供的需要/包含收件箱*Ufxsynopsys*的驱动程序包，并且需要匹配外围设备硬件 ID。 硬件 ID 匹配将基于上一部分中所述的方案。
 
-  IHV/OEM 还可以在驱动程序包中包含的筛选器驱动程序。
-  ## <a name="see-also"></a>请参阅
+  IHV/OEM 还可以在驱动程序包中包含筛选器驱动程序。
+  ## <a name="see-also"></a>另请参阅
 
-[双角色控制器驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#dual-role-controller-driver-reference)
+[双重角色控制器驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#dual-role-controller-driver-reference)
 
 
 

@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY
-description: KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY 属性指示是否视频图像的大小可以减少硬件。
+description: KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY 属性指示是否可通过硬件降低视频图像的大小。
 ms.assetid: a929b154-165e-4075-9295-d34fecc8e18d
 keywords:
-- KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY 流式处理媒体设备
+- KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a5844e0d8918bc423fdad8fc248759d76fecc86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ae25af8099b552ceb95f7aa614b05b2da07af537
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327313"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842815"
 ---
-# <a name="kspropertyvpconfigdecimationcapability"></a>KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY
+# <a name="ksproperty_vpconfig_decimationcapability"></a>KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY
 
 
-KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY 属性指示是否视频图像的大小可以减少硬件。
+KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY 属性指示是否可通过硬件降低视频图像的大小。
 
 ## <span id="ddk_ksproperty_vpconfig_decimationcapability_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_DECIMATIONCAPABILITY_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY 属性指示是否视频图像的大�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_VPCONFIG\_DECIMATIONCAPABILITY 属性指示是否视频图像的大�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>布尔</p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>布尔型</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是一个布尔值。 指定 **，则返回 TRUE**如果硬件可以减小视频图像尺寸，或者指定**FALSE**如果硬件不能减少维度。
+属性值（操作数据）为布尔值。 如果硬件可以减少视频图像尺寸，则指定**TRUE** ; 如果硬件无法减少尺寸，则指定**FALSE** 。
 
 <a name="remarks"></a>备注
 -------
 
-属性值 **，则返回 TRUE**指定视频图像可缩小大小。 **FALSE**指定映像仍可进行调整，但还会向该矩形剪裁而不是扩展。
+如果属性值为**TRUE** ，则指定视频图像大小可减小。 **FALSE**指定仍可调整图像大小，但也会将其剪裁到矩形而不是缩放。
 
-KSPROPERTY\_VPCONFIG\_抽取\_功能属性请求返回状态\_成功以指示成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY\_VPCONFIG\_DECIMATION\_功能属性请求返回状态\_SUCCESS，指示成功完成。 否则，请求将返回相应的错误状态代码。
 
-此属性由 KSPROPSETID\_VPVBIConfig，属性的所有请求必须都返回状态\_不\_实现。
+当 KSPROPSETID\_VPVBIConfig 使用此属性时，所有属性请求都必须返回状态，\_不\_实现。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,16 +82,16 @@ KSPROPERTY\_VPCONFIG\_抽取\_功能属性请求返回状态\_成功以指示成
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

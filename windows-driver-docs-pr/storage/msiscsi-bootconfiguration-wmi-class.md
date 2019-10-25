@@ -4,22 +4,22 @@ description: MSiSCSI\_BootConfiguration WMI 类
 ms.assetid: 5ca350ba-8689-46c2-8313-8f523354db98
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cb45546a4f2cdd22a8f319f2c404c0ca8fc28ab0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d7f0726c034ece4c09fec23a8b57aef89978224b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376693"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842522"
 ---
-# <a name="msiscsibootconfiguration-wmi-class"></a>MSiSCSI\_BootConfiguration WMI 类
+# <a name="msiscsi_bootconfiguration-wmi-class"></a>MSiSCSI\_BootConfiguration WMI 类
 
 
 ## <span id="ddk_msiscsi_bootconfiguration_wmi_class_kr"></span><span id="DDK_MSISCSI_BOOTCONFIGURATION_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_BootConfiguration WMI 类描述了如何配置启动设备。
+MSiSCSI\_BootConfiguration WMI 类描述如何配置启动设备。
 
-此类定义中，如下所示*Config.mof*。
+此类在*配置*中定义为，如下所示。
 
 ```cpp
 class MSiSCSI_BootConfiguration {
@@ -69,7 +69,7 @@ class MSiSCSI_BootConfiguration {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_BootConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsicfg/ns-iscsicfg-_msiscsi_bootconfiguration)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_BootConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsicfg/ns-iscsicfg-_msiscsi_bootconfiguration)数据结构。
 
  
 

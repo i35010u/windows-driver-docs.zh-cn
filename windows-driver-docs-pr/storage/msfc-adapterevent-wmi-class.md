@@ -4,22 +4,22 @@ description: MSFC\_AdapterEvent WMI 类
 ms.assetid: 83077288-e3f6-4b21-80ed-677aad7d2979
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eee6fae19b0e141e938921917f1ec17d3571697c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 616383dd556c31ed0508ac0edb4c30dfb0f54f6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386124"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844519"
 ---
-# <a name="msfcadapterevent-wmi-class"></a>MSFC\_AdapterEvent WMI 类
+# <a name="msfc_adapterevent-wmi-class"></a>MSFC\_AdapterEvent WMI 类
 
 
 ## <span id="ddk_msfc_adapterevent_wmi_class_kr"></span><span id="DDK_MSFC_ADAPTEREVENT_WMI_CLASS_KR"></span>
 
 
-HBA 微型端口驱动程序支持 T11 委员会*光纤通道 HBA API*规范使用 MSFC\_AdapterEvent 类要报告给 WMI 客户端，以便将已注册的适配器事件的特征接收这些事件通知。
+支持 T11 委员会*光纤通道 HBA API*规范的 hba 微型端口驱动程序使用 MSFC\_AdapterEvent 类将适配器事件的特征报告给已注册为通知这些事件的 WMI 客户端。
 
-MSFC\_AdapterEvent 类定义中，如下所示*Hbaapi.mof*:
+*Hbaapi*中的 MSFC\_AdapterEvent 类定义如下：
 
 ```cpp
 class MSFC_AdapterEvent : WMIEvent  {
@@ -31,9 +31,9 @@ class MSFC_AdapterEvent : WMIEvent  {
 };
 ```
 
-通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
+由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-[**MSFC\_AdapterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_adapterevent)
+[**MSFC\_AdapterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_adapterevent)
 
 没有与此 WMI 类相关联的方法。
 

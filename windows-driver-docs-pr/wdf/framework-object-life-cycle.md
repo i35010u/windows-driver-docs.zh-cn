@@ -3,19 +3,19 @@ title: 框架对象生命周期
 description: 框架对象生命周期
 ms.assetid: 33efc3a8-ac46-4626-ba0f-beb1eaa9ee47
 keywords:
-- framework 对象 WDK KMDF、 生命周期
+- framework 对象 WDK KMDF、生命周期
 - 生命周期 WDK KMDF
 - framework 对象 WDK KMDF，创建
 - 引用计数 WDK KMDF
 - framework 对象 WDK KMDF，删除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 358095c96a619fcdabd591024615a321b0086b40
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 63cd01ac5cba944730bb484e2f08e44ace760c6f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843116"
 ---
 # <a name="framework-object-life-cycle"></a>框架对象生命周期
 
@@ -23,41 +23,41 @@ ms.locfileid: "67384455"
 
 
 
-Framework 对象的"生命周期"时被删除时，创建一个对象到跨越的时间。 对象的引用计数控件时它将被删除。
+框架对象的 "生命周期" 跨越从对象创建到删除对象的时间。 对象的引用计数将被删除。
 
 ### <a name="creating-a-framework-object"></a>创建框架对象
 
-由驱动程序的调用对象的创建方法创建框架的大多数对象。 例如，每个框架驱动程序必须调用[ **WdfDriverCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate)创建 framework 驱动程序对象。
+大多数框架对象是通过驱动程序对对象的创建方法的调用来创建的。 例如，每个 framework 驱动程序都必须调用[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)来创建框架驱动程序对象。
 
-由框架创建其他框架对象。 例如，当用户应用程序打开设备的读取或写入操作，框架创建框架文件对象并将其传递给驱动程序的[ *EvtDeviceFileCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)回调函数。
+其他框架对象由框架创建。 例如，当用户应用程序打开设备进行读取或写入操作时，框架会创建一个框架文件对象并将其传递给驱动程序的[*EvtDeviceFileCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_file_create)回调函数。
 
-可以创建几个 framework 对象，由任一框架或由驱动程序。 例如，当 I/O 管理器将 I/O 请求传递到驱动程序，框架将创建一个框架请求对象和将其传递给该驱动程序，通常通过调用一个驱动程序的请求处理程序。 驱动程序还可以创建 framework 请求对象并将其交付给其他驱动程序。
+框架或驱动程序可以创建几个框架对象。 例如，当 i/o 管理器向驱动程序提供 i/o 请求时，框架会创建一个框架请求对象并将其传递给驱动程序，这通常是通过调用某个驱动程序的请求处理程序来实现的。 驱动程序还可以创建框架请求对象并将其传递给其他驱动程序。
 
 ### <a name="using-reference-counts"></a>使用引用计数
 
-框架维护每个对象的引用计数。 创建对象后，框架将设置其引用计数为 1。 如果引用计数变为零，框架将删除对象。
+框架维护每个对象的引用计数。 创建对象时，框架会将其引用计数设置为1。 如果引用计数变为零，则框架将删除该对象。
 
-驱动程序可以通过调用修改对象的引用计数[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)递增引用计数或[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)要递减引用计数。 (驱动程序可以调用**WdfObjectDereference**仅当它以前被称为**WdfObjectReference**。)
+驱动程序可以通过调用[**WdfObjectReference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)以递增引用计数或[**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)来修改对象的引用计数，从而减少引用计数。 （仅当驱动程序之前已调用**WdfObjectReference**时，才可以调用**WdfObjectDereference** 。）
 
-在大多数情况下，驱动程序没有要递增或递减对象的引用计数。 框架增加计数传递对象的句柄到之前的驱动程序，和它递减计数时，驱动程序不再需要该对象。
+在大多数情况下，驱动程序不需要增加或减少对象的引用计数。 框架在将对象的句柄传递给驱动程序之前递增计数，并在驱动程序不再需要该对象时递减计数。
 
-驱动程序调用[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)以确保对象将不会删除 （通过该框架或由驱动程序线程） 之前该驱动程序使用完。 有关驱动程序应调用在其中出现示例情况**WdfObjectReference**并[ **WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)，请参阅[发送的同步取消请求](synchronizing-cancellation-of-sent-requests.md)。
+驱动程序调用[**WdfObjectReference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference) ，以确保在驱动程序使用完对象之前，不会将该对象（由框架或驱动程序线程删除）删除。 有关驱动程序应调用**WdfObjectReference**和[**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)的示例情况，请参阅[同步取消已发送请求](synchronizing-cancellation-of-sent-requests.md)。
 
-### <a name="deleting-a-framework-object"></a>正在删除 Framework 对象
+### <a name="deleting-a-framework-object"></a>删除框架对象
 
-对象是删除由于一个驱动程序调用[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)或因为框架将调用一个内部删除例程，但仅当其引用计数为零时删除对象。 驱动程序或框架已尝试删除对象后，该对象的句柄后仍保持有效直到引用计数变为零。 驱动程序*不能*只需调用删除对象[ **WdfObjectDereference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)以减少对象的引用计数为零-驱动程序还必须调用**WdfObjectDelete**。
+由于驱动程序调用[**WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)或框架调用内部删除例程，因此将删除对象，但只有在对象的引用计数为零时，才会删除该对象。 当驱动程序或框架尝试删除某个对象之后，该对象的句柄保持有效，直到引用计数变为零。 驱动程序*无法*删除对象，只需调用[**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)将对象的引用计数递减到零，驱动程序也必须调用**WdfObjectDelete**。
 
-如果框架对象是父级的子对象，则删除的父级，框架将尝试删除父级之前删除的子对象。 对象删除从距离最远的父对象开始，直至根对象层次结构向上工作原理。
+如果框架对象是父级的子对象，并且父对象正在被删除，则该框架将在删除父对象之前尝试删除该子对象。 对象的删除从最远离父对象的对象开始，并与根的对象层次结构建立在一起。
 
-驱动程序可以注册框架时，驱动程序或框架删除某个对象调用以下两个回调函数：
+当驱动程序或框架删除对象时，驱动程序可以注册框架调用的以下两个回调函数：
 
--   [ *EvtCleanupCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)框架调用，以便该驱动程序可以调用的回调函数[ **WdfObjectDereference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)如果以前调用过[ **WdfObjectReference** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference)正在删除的对象。
+-   一个[*EvtCleanupCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)回调函数，框架将调用该函数，以便驱动程序可以调用[**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference) （如果它之前为正在删除的对象调用了[**WdfObjectReference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectreference) ）。
 
--   [ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)回调函数，该框架将调用对象的引用计数后已减为零。
+-   一个[*EvtDestroyCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)回调函数，框架在对象的引用计数减少到零后调用该函数。
 
-这些回调函数之一必须解除分配时创建对象时，该驱动程序分配给任何特定于对象的资源。
+其中一个回调函数必须释放在创建对象时驱动程序所分配的任何特定于对象的资源。
 
-该框架将始终处理的某些 framework 对象，删除和驱动程序不得尝试删除这些对象。 无法删除驱动程序的 framework 对象的列表，请参阅[ **WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)。
+框架始终处理删除某些框架对象，驱动程序不得尝试删除这些对象。 有关驱动程序无法删除的框架对象的列表，请参阅[**WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)。
 
  
 

@@ -6,12 +6,12 @@ keywords:
 - 无连接驱动程序 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c4fa72085c28b1e5961d6cbc6be9c4f83492346
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96da894b88fa723ed6e5e3b5080dca66e4b087f4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375158"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841942"
 ---
 # <a name="setting-information-for-a-connectionless-miniport-driver"></a>设置无连接微型端口驱动程序的信息
 
@@ -19,11 +19,11 @@ ms.locfileid: "67375158"
 
 
 
-若要设置的无连接的微型端口驱动程序维护的 OID，绑定的协议调用[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest) ，并将传递[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构，它指定的对象 (OID) 正被查询的和，它指向包含该对象应设置为值的缓冲区。 在调用**NdisOidRequest** NDIS 调用微型端口驱动程序将导致[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数，这将设置与所提供的值的对象。
+若要设置无连接微型端口驱动程序维护的 OID，绑定协议将调用[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) ，并将[**NDIS\_OID 传递\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构，该结构指定正在查询的对象（OID），并指向缓冲区，它包含应将对象设置为的值。 对**NdisOidRequest**的调用会使 NDIS 调用微型端口驱动程序的[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数，该函数将对象设置为提供的值。
 
-在调用*MiniportOidRequest*可以同步或异步完成。 若要以异步方式完成的调用，微型端口驱动程序调用[ **NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)。 下图说明了设置信息 （每个绑定） 的无连接的微型端口驱动程序中。
+对*MiniportOidRequest*的调用可同步或异步完成。 若要异步完成调用，微型端口驱动程序将调用[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)。 下图说明了如何在无连接微型端口驱动程序中设置信息（每个绑定）。
 
-![说明 （每个绑定） 的无连接的微型端口驱动程序中的设置信息的关系图](images/fig5-4.png)
+![演示如何在无连接微型端口驱动程序中设置信息的示意图（每个绑定）](images/fig5-4.png)
 
  
 

@@ -4,12 +4,12 @@ description: 本部分介绍 WDI RX 路径
 ms.assetid: EEEA7181-4A24-4F40-8A44-65EC38D1A867
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa477567ccf32c0c83f394b20ce5c4a1d7a10b7c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 23dd4df927de8e5e2d4007f107c53749830bde53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842893"
 ---
 # <a name="wdi-rx-path"></a>WDI RX 路径
 
@@ -21,48 +21,48 @@ ms.locfileid: "67384337"
 
 ![wdi 接收路径](images/wdi-receive-path-block-diagram.png)
 
-## <a name="rx-manager-rxmgr"></a>RX 管理器 (RxMgr)
+## <a name="rx-manager-rxmgr"></a>RX 管理器（RxMgr）
 
 
-RX 管理器执行接收未卸载到目标或 RxEngine 由执行的处理步骤。
+RX 管理器执行不会卸载到目标或由 RxEngine 执行的接收处理步骤。
 
 | RX 函数            | 描述                                                                                                                                                                                     |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MSDU 放弃           | 放弃 MSDUs 但出现错误。                                                                                                                                                                      |
-| 队列和限制 | 管理 DPC 监视器以防止从调度级别过多指示 DPC，按和太长错误检查。 向 RxEngine 帮助进行限制，请提供反压。 |
+| MSDU 放弃           | 丢弃具有错误的 MSDUs。                                                                                                                                                                      |
+| 排队和限制 | 管理 DPC 监视程序以防止每个 DPC 的错误检测次数过多，调度级别过长。 适当时，提供 RxEngine 的反压，以帮助进行限制。 |
 
  
 
 ## <a name="rxengine"></a>RxEngine
 
 
-RxEngine 发送和接收来自目标的数据同步消息，解释 RX 描述符格式，并管理直接硬件到软件 RX Dma 的缓冲区。
+RxEngine 在目标中发送和接收数据同步消息，解释 RX 描述符格式，并管理直接硬件到 software RX DMAs 的缓冲区。
 
 | RX 函数                             | 描述                                                                                                                                                                                                                                              |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 构造主机到目标消息     | 构造主机到目标数据与路径相关的消息。                                                                                                                                                                                                     |
-| 目标主机消息解析          | 分析和处理目标主机的数据同步消息，如[ *NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)。                                                                                                          |
-| 目标 RX 描述符的解释 | 用于查询特定于目标的说明符中 RX 帧特性提供的接口 （函数）。                                                                                                                                                   |
-| RX FIFO 管理                      | 提供可访问目标的先进先出用于发布的目标来填充的空 RX 缓冲区。 从 FIFO 期间删除缓冲区[ *NdisWdiRxInorderDataIndication* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)处理，并提供替换空缓冲区。 |
-| RX 缓冲池管理               | 维护的 DMA 传输的接收帧缓冲区的池。                                                                                                                                                                                           |
-| MPDU 放弃                            | 放弃 MPDUs 但出现错误。 目标指示接收帧标记丢弃-例如，由于 FCS 错误或 ARQ 重复错误。 如果它未实现的目标，这会仅完成。                                              |
-| MPDU 重新排序                            | 在 RX 重新排序数组中的顺序存储 MPDUs，直到缺少前面 MPDUs 到达。 如果它未实现的目标，这会仅完成。                                                                                                   |
-| MPDU PN chk                             | 如果不会卸载到目标，这只会完成。                                                                                                                                                                                                  |
-| MSDU 碎片重组                | 如果不会卸载到目标，这只会完成。                                                                                                                                                                                                  |
+| 主机到目标消息构造     | 构造与目标数据路径相关的消息。                                                                                                                                                                                                     |
+| 目标到主机消息分析          | 分析并处理目标到主机的数据同步消息，如[*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)。                                                                                                          |
+| 目标 RX 描述符的解释 | 提供用于从特定于目标的描述符查询 RX 帧属性的接口（函数）。                                                                                                                                                   |
+| RX FIFO 管理                      | 提供目标可访问的 FIFO，用于发布要填充的目标的空 RX 缓冲区。 在[*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)处理期间删除 FIFO 中的缓冲区，并提供替换空缓冲区。 |
+| RX 缓冲池管理               | 维护用于接收帧的 DMA 传输的缓冲区池。                                                                                                                                                                                           |
+| MPDU 放弃                            | 丢弃具有错误的 MPDUs。 目标表示标记为丢弃的接收帧-例如，由于 FCS 错误或 ARQ 重复错误。 仅当目标未实现时，才执行此操作。                                              |
+| 重新排序 MPDU                            | 在 RX 重新排序数组中按顺序存储 MPDUs，直到前面缺少 MPDUs。 仅当目标未实现时，才执行此操作。                                                                                                   |
+| MPDU PN .chk                             | 仅当未将其卸载到目标时才执行此操作。                                                                                                                                                                                                  |
+| MSDU 片段重组                | 仅当未将其卸载到目标时才执行此操作。                                                                                                                                                                                                  |
 
  
 
 ## <a name="rx-path-requests-and-indications"></a>RX 路径请求和指示
 
 
-RX 路径请求和指示函数的参考，请参阅[WDI RX 路径函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
+有关 RX 路径请求和指示函数引用，请参阅[WDI RX 路径函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)
+[*NdisWdiRxInorderDataIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_rx_inorder_data_ind)
 
-[WDI RX 路径函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[WDI RX 路径函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
  
 

@@ -4,14 +4,14 @@ description: 安全\_信息
 ms.assetid: 28023f0f-62ae-407b-b81b-1c98499df9a2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29d4ba2e9766057e6ed226a81c75d80f4b7027f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee146129b5cadeeed2eb84597108ab6439b4c569
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371336"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840969"
 ---
-# <a name="securityinformation"></a>安全\_信息
+# <a name="security_information"></a>安全\_信息
 
 
 安全\_信息
@@ -23,17 +23,17 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 
 
 
-类型安全的值\_信息用于标识要设置或查询的对象相关的任何安全信息。 此安全信息包括：
+Type SECURITY\_信息的值用于标识正在设置或查询的与对象相关的安全信息。 此安全信息包括：
 
--   对象所有者
+-   对象的所有者
 
 -   对象的主要组
 
--   对象的自由访问控制列表 (DACL)
+-   对象的自由访问控制列表（DACL）
 
--   对象的系统 ACL (SACL)
+-   对象的系统 ACL （SACL）
 
-每个项的安全信息被指定的位标志。 以下值指定位。
+安全信息的每一项都由一个位标志来指定。 以下值指定位。
 
 <table>
 <colgroup>
@@ -43,7 +43,7 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 <th align="left">含义</th>
 <th align="left">访问</th>
 </tr>
@@ -51,24 +51,24 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 <tbody>
 <tr class="odd">
 <td align="left"><p>DACL_SECURITY_INFORMATION</p></td>
-<td align="left"><p>指示对象的 DACL 正在设置或查询。</p>
-<p>以下各项，查询 DACL:</p>
+<td align="left"><p>指示正在设置或查询对象的 DACL。</p>
+<p>对于以下各项，将查询 DACL：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
-<p>以下各项设置 DACL:</p>
+<p>对于以下各项，将设置 DACL：</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltSetSecurityObject</p>
 <p>SeSetSecurityDescriptorInfo</p>
 <p>SeSetSecurityDescriptorInfoEx</p></td>
-<td align="left"><p>需要为 READ_CONTROL 访问权限：</p>
+<td align="left"><p>需要对 READ_CONTROL 的访问权限：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
-<p>需要 WRITE_DAC 访问的权限：</p>
+<p>需要对 WRITE_DAC 的访问权限：</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltSetSecurityObject</p>
@@ -77,24 +77,24 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 </tr>
 <tr class="even">
 <td align="left"><p>GROUP_SECURITY_INFORMATION</p></td>
-<td align="left"><p>指示该对象的主要组标识符正在设置或查询。</p>
-<p>以下各项，查询组标识符：</p>
+<td align="left"><p>指示正在设置或查询对象的主要组标识符。</p>
+<p>对于以下各项，将查询组标识符：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
-<p>以下各项设置的组标识符：</p>
+<p>对于以下各项，将设置组标识符：</p>
 <p>FltSetSecurityObject</p>
 <p>SeSetSecurityDescriptorInfo</p>
 <p>SeSetSecurityDescriptorInfoEx</p></td>
-<td align="left"><p>需要为 READ_CONTROL 访问权限：</p>
+<td align="left"><p>需要对 READ_CONTROL 的访问权限：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
-<p>需要为 WRITE_OWNER 访问权限：</p>
+<p>需要对 WRITE_OWNER 的访问权限：</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltSetSecurityObject</p>
@@ -103,24 +103,24 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 </tr>
 <tr class="odd">
 <td align="left"><p>OWNER_SECURITY_INFORMATION</p></td>
-<td align="left"><p>指示该对象的所有者标识符正在设置或查询。</p>
-<p>以下各项，查询所有者标识符：</p>
+<td align="left"><p>指示正在设置或查询对象的所有者标识符。</p>
+<p>对于以下各项，将查询所有者标识符：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
-<p>以下各项设置所有者标识符：</p>
+<p>对于以下各项，将设置所有者标识符：</p>
 <p>FltSetSecurityObject</p>
 <p>SeSetSecurityDescriptorInfo</p>
 <p>SeSetSecurityDescriptorInfoEx</p></td>
-<td align="left"><p>需要为 READ_CONTROL 访问权限：</p>
+<td align="left"><p>需要对 READ_CONTROL 的访问权限：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
-<p>需要为 WRITE_OWNER 访问权限：</p>
+<p>需要对 WRITE_OWNER 的访问权限：</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltSetSecurityObject</p>
@@ -129,19 +129,19 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 </tr>
 <tr class="even">
 <td align="left"><p>SACL_SECURITY_INFORMATION</p></td>
-<td align="left"><p>指示对象的 SACL 正在设置或查询。</p>
-<p>以下各项，SACL 被查询：</p>
+<td align="left"><p>指示正在设置或查询对象的 SACL。</p>
+<p>对于以下各项，将查询 SACL：</p>
 <p>IRP_MJ_QUERY_SECURITY</p>
 <p>IRP_MJ_QUERY_SECURITY 的 FLT_PARAMETERS</p>
 <p>FltQuerySecurityObject</p>
 <p>SeQuerySecurityDescriptorInfo</p>
 <p>IRP_MJ_SET_SECURITY</p>
 <p>IRP_MJ_SET_SECURITY 的 FLT_PARAMETERS</p>
-<p>以下各项设置 SACL:</p>
+<p>对于以下各项，将设置 SACL：</p>
 <p>FltSetSecurityObject</p>
 <p>SeSetSecurityDescriptorInfo</p>
 <p>SeSetSecurityDescriptorInfoEx</p></td>
-<td align="left"><p>需要在所有情况下 ACCESS_SYSTEM_SECURITY 访问权限。</p></td>
+<td align="left"><p>所有情况下都需要 ACCESS_SYSTEM_SECURITY 访问权限。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PROCESS_TRUST_LABEL_SECURITY_INFORMATION</p></td>
@@ -156,20 +156,20 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 ## <a name="requirements"></a>要求
 
 
-Wdm.h 中 （包括 wdm.h 中）
+Wdm （包括 Wdm）
 
 ## <a name="related-topics"></a>相关主题
 
 
-[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_acl)
+[**ACL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_acl)
 
 [**安全\_描述符**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
-[**SeQuerySecurityDescriptorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sequerysecuritydescriptorinfo)
+[**SeQuerySecurityDescriptorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-sequerysecuritydescriptorinfo)
 
-[**SeSetSecurityDescriptorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sesetsecuritydescriptorinfo)
+[**SeSetSecurityDescriptorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-sesetsecuritydescriptorinfo)
 
-[**SeSetSecurityDescriptorInfoEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-sesetsecuritydescriptorinfoex)
+[**SeSetSecurityDescriptorInfoEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-sesetsecuritydescriptorinfoex)
 
 [**ZwQuerySecurityObject**](https://msdn.microsoft.com/library/windows/hardware/ff567066)
 

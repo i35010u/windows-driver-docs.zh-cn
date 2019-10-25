@@ -3,21 +3,21 @@ title: IEEE 1394 设备的常时等量交谈选项
 description: IEEE 1394 设备的常时等量交谈选项
 ms.assetid: b3df5dd5-9903-48b4-9cb2-17b8d3a08f8f
 keywords:
-- 同步 I/O WDK IEEE 1394 总线，讨论选项
-- 通信选项 WDK IEEE 1394 总线
+- 同步 i/o WDK IEEE 1394 总线，交谈选项
+- 交谈选项 WDK IEEE 1394 总线
 - 标头 WDK IEEE 1394 总线
 - 固定大小的数据数据包 WDK IEEE 1394 总线
-- 大小可变的数据数据包 WDK IEEE 1394 总线
+- 可变大小的数据数据包 WDK IEEE 1394 总线
 - 标头元素 WDK IEEE 1394 总线
-- 缓冲区 WDK IEEE 1394 总线
+- 缓冲 WDK IEEE 1394 总线
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ac524be304111e23ac2964158d3662ed58e498
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7eab9ca2f9174e84662a74402280952617643b10
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385761"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841533"
 ---
 # <a name="isochronous-talk-options-for-ieee-1394-devices"></a>IEEE 1394 设备的常时等量交谈选项
 
@@ -25,13 +25,13 @@ ms.locfileid: "67385761"
 
 
 
-有三种方法的组织中等时讨论操作的输出数据： 没有标头、 固定大小的数据的数据包，其中标头和变量大小的数据的数据包，其中标头的数据包。
+可以通过三种方式来组织同步对话运营中的输出数据：没有标头的数据包、带有标头的固定大小的数据包，以及带有标头的可变大小数据包。
 
-### <a name="packets-with-no-headers"></a>没有标头的数据包
+### <a name="packets-with-no-headers"></a>无标头的数据包
 
-默认情况下，主控制器发出的附加缓冲区中的数据由**Mdl**的成员[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)结构，在缓冲区已附加的顺序。 默认情况下，主控制器自动拆分缓冲区大小的数据包不应超过中指定的**nMaxBytesPerFrame**成员的缓冲区的 ISOCH\_描述符结构。
+默认情况下，主机控制器会按附加缓冲区的顺序在附加缓冲区中发送数据，由[**ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_isoch_descriptor)结构的**Mdl**成员指示。 默认情况下，主机控制器会自动将缓冲区拆分为大小不大于在缓冲区的 ISOCH\_说明符结构的**nMaxBytesPerFrame**成员中指定的大小的数据包。
 
-例如，将要在 512 字节的数据包中接收其数据的设备的驱动程序将缓冲区的 ISOCH 其声明中包括以下\_描述符：
+例如，设备的驱动程序需要在512字节数据包中接收其数据，在其缓冲区的 ISOCH\_描述符的声明中包括以下内容：
 
 ```cpp
 /* elsewhere, the buffer has declared: */
@@ -39,13 +39,13 @@ ms.locfileid: "67385761"
 isoch_descriptor->nMaxBytesPerFrame = 512;
 ```
 
-### <a name="fixed-size-data-packets-with-headers"></a>固定大小的数据的数据包，其中标头
+### <a name="fixed-size-data-packets-with-headers"></a>固定大小的数据包和标头
 
-某些设备需要某些标头信息将附加到每个设备接收的数据包。 （之前数据，但之后的 IEEE 1394 标准同步数据包标头，将插入此标头信息。）在此情况下，驱动程序可以组合的标头，缓冲区和缓冲区的数据，并且可以自动在前面添加的标头的数据包将发送到设备的主机控制器。 该驱动程序指示缓冲区包含标头的列表，通过指定描述符\_标头\_散点图\_收集标志中该缓冲区 ISOCH\_描述符结构。 有两种类型的可附加到一个数据包的标头： 固定大小且大小可变的。
+某些设备要求将一些标头信息附加到设备接收的每个数据包中。 （此标头信息将插入数据之前，但在 IEEE 1394 标准同步数据包标头之后。）在这种情况下，驱动程序可以汇编标头缓冲区和数据缓冲区，并让主机控制器自动为它发送到设备的数据包预置标头。 驱动程序通过在该缓冲区的 ISOCH\_描述符结构中指定描述符\_标头\_散点\_集合标志来指示缓冲区包含一个标头列表。 有两种类型的标头可附加到数据包：固定大小和可变大小的标头。
 
-具有固定大小标头，该驱动程序指定的标头大小**nMaxBytesPerFrame** ISOCH 成员\_描述符结构。 主控制器将作为对中处理此缓冲区的下一个缓冲区： 标头缓冲区和数据缓冲区。 当会汇集的数据包时，它从数据缓冲区将标头缓冲区中的一个框架和一个框架，并拼接它们一起以形成它向设备发送的下一个数据包。
+对于固定大小的标头，驱动程序在 ISOCH\_说明符结构的**nMaxBytesPerFrame**成员中指定标头大小。 宿主控制器将此缓冲区和下一个缓冲区视为成对：标头缓冲区和数据缓冲区。 当它汇编数据包时，它将从标头缓冲区和数据缓冲区中获取一个帧，并将这些数据包接合在一起以形成发送到设备的下一个数据包。
 
-例如，假设设备要求每个 512 字节的数据缓冲区，前面加上 8 个字节标头。 该驱动程序可以声明一对 ISOCH\_描述符结构，如下所示：
+例如，假设设备需要每个512字节数据缓冲区前面带有8个字节的标头。 驱动程序可以声明一对 ISOCH\_描述符结构，如下所示：
 
 ```cpp
 /* elsewhere, the buffer has declared: */
@@ -63,21 +63,21 @@ isoch_descriptor_2->ulLength = 512 * NUM_HEADERS;
 isoch_descriptor_2->nMaxBytesPerFrame = 512;
 ```
 
-并非所有主机控制器都支持描述符\_标头\_散点图\_收集标志。 若要确定主机控制器支持它，请查询使用总线驱动程序[**请求\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求，使用**nLevel** = GET\_主机\_功能。 总线驱动程序将设置主机\_INFO\_支持\_ISO\_HDR\_插入标志**HostCapabilities**的 GET 成员\_本地\_主机\_INFO2 结构，它返回。
+并非所有主机控制器都支持描述符\_标头\_散点\_集合标志。 若要确定主机控制器是否支持此功能，请通过请求查询总线驱动程序[ **\_获取\_本地\_主机\_信息**](https://msdn.microsoft.com/library/windows/hardware/ff537644)请求，并**nLevel** = 获取\_主机\_功能。 总线驱动程序将设置主机\_信息\_支持\_ISO\_返回的 GET\_本地\_主机\_**INFO2 成员的**\_插入标志。
 
-### <a name="variable-size-data-packets-with-headers"></a>大小可变的数据的数据包，其中标头
+### <a name="variable-size-data-packets-with-headers"></a>带标头的可变大小数据包
 
-这种情况下是类似于固定大小的数据包方案。 正如一样固定大小的情况下，该驱动程序必须设置描述符\_标头\_散点图\_中的标头缓冲区 ISOCH 收集标志\_描述符结构，如下所示：
+这种情况类似于固定大小的数据包大小写。 与固定大小的情况一样，驱动程序必须在标头缓冲区的 ISOCH\_描述符结构中设置描述符\_标头\_散点\_集合标志，如下所示：
 
 ```cpp
 isoch_descriptor_1->fulFlags = DESCRIPTOR_HEADER_SCATTER_GATHER;
 ```
 
-对于可变大小的情况，该驱动程序还必须设置资源，但是\_变量\_ISOCH\_中的有效负载标志**u.IsochAllocateResources.fulFlags** IRB 时它会分配的成员使用资源[**请求\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求。
+但对于可变大小的情况，驱动程序还必须在 IRB\_ISOCH\_负载标志的**fulFlags**成员分配包含请求的\_请求时，将该资源\_变量设置为[**ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求。
 
-此外，在大小可变的数据包的情况下，驱动程序必须组合标头，如固定大小的缓冲区。 但是，与可变大小的数据包，与不同的固定大小的数据包，驱动程序必须记录每个数据包的大小中分散/聚拢*标头元素*它前添加到每个标头。
+此外，对于可变大小的数据包，驱动程序必须将标头的缓冲区组装为固定大小的大小写。 但是，对于大小可变的数据包，与固定大小的数据包不同，驱动程序必须在每个标头前面加上一个散播/聚集*标头元素*中记录每个数据包的大小。
 
-标头元素定义由以下结构中找到*1394.h*:
+标头元素由在*1394*中找到的以下结构定义：
 
 ```cpp
 typedef struct _IEEE1394_SCATTER_GATHER_HEADER {
@@ -87,51 +87,51 @@ typedef struct _IEEE1394_SCATTER_GATHER_HEADER {
 } IEEE1394_SCATTER_GATHER_HEADER, *PIEEE1394_SCATTER_GATHER_HEADER;
 ```
 
-标头元素指示标头的长度和数据的长度。 因此，与可变大小数据包**nMaxSizeBytesPerFrame**的成员*数据*描述符不再指示单个数据包的大小。 每个数据包可以具有不同的大小及其相应的标头元素中所示。 **NMaxSizeBytesPerFrame**的成员*标头*描述符定义，如下所示。
+标头元素指示标头的长度和数据的长度。 因此，对于可变大小的数据包，*数据*描述符的**nMaxSizeBytesPerFrame**成员不再指示单个数据包的大小。 每个数据包的相应标头元素中可能有不同的大小。 *标头*描述符的**nMaxSizeBytesPerFrame**成员的定义如下。
 
 ```cpp
 IsochDescriptor->nMaxBytesPerFrame = MAX_HEADER_DATA_SIZE+FIELD_OFFSET(HeaderElement,HeaderData)
 ```
 
-其中最大\_标头\_数据\_大小指示要附加到每个数据包和字段的标头大小\_OFFSET(HeaderElement,HeaderData) 指示插入的标头元素的长度之前每个标头。
+其中，MAX\_标头\_数据\_大小指示要预置到每个数据包的标头的大小，字段\_偏移量（HeaderElement，HeaderData）指示紧靠在每个数据包之前插入的标头元素的长度。标头.
 
-应注意的方面的定义微妙的地方**nMaxBytesPerFrame**每当您的驱动程序正在传输"对话模式"中的大小可变的数据包。 有两种情况下，驱动程序必须在其中定义**nMaxBytesPerFrame**，并在这两种情况下主机控制器驱动程序截获的值分配给**nMaxBytesPerFrame**作为*最小值*帧大小，而不是最大值，如果该驱动程序传输大小是可变的帧。
+只要驱动程序在 "交谈模式" 下传输可变**大小的数据包**，就应该知道个很微妙的定义。 在两种情况下，驱动程序必须定义**nMaxBytesPerFrame**，并且在这两种情况下，主机控制器驱动程序会将分配给**nMaxBytesPerFrame**的值解释为*最小*帧大小，而不是最大值（如果驱动程序传输大小可变的帧。
 
--   在请求\_ISOCH\_分配\_资源请求，该驱动程序必须指示中的帧大小**u.IsochAllocateResources.nMaxBytesPerFrame**隶属[ **IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_irb)。
+-   在请求\_ISOCH\_分配\_资源请求时，驱动程序必须在[**IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_irb)的**nMaxBytesPerFrame**成员中指定帧大小。
 
--   在请求\_ISOCH\_附加\_缓冲区请求驱动程序必须指示中的帧大小**nMaxBytesPerFrame**隶属[ **ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_isoch_descriptor)。
+-   在请求\_ISOCH\_附加\_缓冲区请求时，驱动程序必须在[**ISOCH\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_isoch_descriptor)的**nMaxBytesPerFrame**成员中指明帧大小。
 
-越小框架，多个帧主机控制器驱动程序可以根据传输缓冲区。 每个帧都需要系统资源，例如时间戳和状态信息，因为较小的帧更快地消耗系统资源。 主机控制器驱动程序计算将缓冲区中容纳不下的帧数和这些帧，根据中的值所需的资源数**nMaxBytesPerFrame**。 如果小于帧大小所示**nMaxBytesPerFrame**需要资源的帧数将大于由主机控制器驱动程序计算的值，这可能会导致错误。
+帧越小，主机控制器驱动程序可容纳到传输缓冲区中的帧就越多。 由于每个帧都需要系统资源（例如时间戳和状态信息），因此较小的帧会更快速地消耗系统资源。 主机控制器驱动程序根据**nMaxBytesPerFrame**中的值，计算将适合缓冲区的帧数，以及这些帧所需的资源数。 如果帧小于**nMaxBytesPerFrame**中指示的大小，则需要资源的帧数将大于主机控制器驱动程序计算的值，这可能会导致错误。
 
-这些注意事项不适用于驱动程序接收数据时，仅当该驱动程序正在传输中的大小可变的帧时"通信模式"。 驱动程序指定的数据传输与某一特定通道时获取与通道的资源句柄相关联的类型[**请求\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求。 该驱动程序设置的资源\_变量\_ISOCH\_中的有效负载标志**u.IsochAllocateResources.fulFlags**期间此请求，以指示它会将传输大小可变的帧。 该驱动程序设置的资源\_用\_IN\_中的活动的谈话标志**u.IsochAllocateResources.fulFlags**以指示它将使用该通道来传输，而不是接收数据。 仅当驱动程序设置这两个这些标志在资源分配请求时将主机控制器驱动程序解释**nMaxBytesPerFrame**作为最小值而不是最大值。
+当驱动程序接收数据时，仅当驱动程序在 "交谈模式" 下传输可变大小的帧时，这些注意事项才适用。 驱动程序指定与特定通道关联的数据传输类型。 [ **\_ISOCH\_分配\_资源**](https://msdn.microsoft.com/library/windows/hardware/ff537649)请求的请求获取该通道的资源句柄。 驱动**程序在该请求期间将**资源\_变量\_ISOCH\_负载标记设置为，以指示它将传输大小可变的帧。 驱动程序将\_中使用的资源\_\_的**会话中，以指示**它将使用通道传输而不是接收数据。 仅当驱动程序在资源分配请求期间设置这两个标志时，主机控制器驱动程序才会将**nMaxBytesPerFrame**解释为最小值，而不是最大值。
 
-请注意， **u.IsochAllocateResources.nMaxBufferSize**的成员[ **IRB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/1394/ns-1394-_irb)始终是最大值。
+请注意， [**IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/1394/ns-1394-_irb)的**IsochAllocateResources. nMaxBufferSize**成员始终是最大值。
 
-驱动程序现在可以通过只需设置传输纯标头的数据包**DataLength**为零的标头元素的成员：
+驱动程序现在只能通过将标头元素的**DataLength**成员设置为零来传输仅标头的数据包：
 
 ```cpp
 HeaderElement->DataLength = 0
 ```
 
-标头的描述符缓冲区的总长度指示通过常规方式**ulLength**描述符的成员。 它必须是整数的标头分散/集中元素数的倍数：
+标头描述符缓冲区的总长度是通过描述符的**ulLength**成员通常的方式来表示的。 它必须是标头散点/集合元素数的整数倍：
 
 ```cpp
 IsochDescriptor->ulLength = IsochDescriptor->nMaxBytesPerFrame * NUMBER_OF_PACKETS;
 ```
 
-其中数字\_OF\_数据包是传输 （包括仅限标头的数据包） 的数据包数。
+其中，\_数据包的数目\_是要传输的数据包数（包括仅限标头的数据包）。
 
-标头元素结构，第三个成员**HeaderData**，是只是一个占位符，用以指示标头数据的开始位置。 下图演示了一个已组装的缓冲区的 8 字节 CIP 标头的示例。
+标头元素结构**HeaderData**的第三个成员只是一个占位符，用于指示标头数据的开始位置。 下图演示了8字节 CIP 标头的已汇编缓冲区的示例。
 
-![说明的 8 字节 cip 标头缓冲区的关系图](images/hdrelem.png)
+![阐释8字节 cip 标头的缓冲区的关系图](images/hdrelem.png)
 
-给定描述符中的所有标头必须是长度相同。 这允许 OHCI 端口驱动程序 (*ohci1394.sys*) 分析类似于数组的元素的固定大小的标头描述符。 数据包的大小，可能会有所不同，但是必须是连续的没有"漏洞。"
+给定说明符中的所有标头必须具有相同的长度。 这允许 OHCI 端口驱动程序（*ohci1394*）分析标头描述符，如固定大小元素数组。 数据包的大小可能不同，但必须是连续的，没有 "洞"。
 
-标头和数据描述符中的数据必须是页面对齐。 数据数据包的大小没有限制，但标头和数据包都不允许跨页边界。 驱动程序必须正确对齐描述符缓冲区*之前设置缓冲区 MDL*。
+标头和数据描述符中的数据都必须是页对齐的。 数据包的大小不受限制，但不允许标头和数据数据包跨页面边界。 *在为缓冲区设置 MDL 之前，* 驱动程序必须正确对齐描述符缓冲区。
 
-如果，例如，驱动程序汇编 12 字节标头和 4 字节的标头元素的标头描述符，每个数据包将具有 16 个字节的预置数据。 16 字节到 4,096 字节页适合恰好 256 次，因为任何预置数据不断跨越页边界。
+例如，如果驱动程序汇编了包含12个字节的标头和4个字节的标头元素的标头描述符，则每个数据包将具有16字节的预置数据。 因为16个字节的页256恰好适合4096个字节，所以任何预置数据都不会跨越页面边界。
 
-如果，但是，该驱动程序汇编 8 字节标头和 4 字节的标头元素的标头描述符，每个包将具有 12 个字节的预置数据。 因为 4,096 字节页不是一个整数，多个标头描述符必须为 12，是在 4,096 字节的大小，以防止跨页边界标头。 但是，标头的描述符缓冲区的大小可以扩展最多两个页面通过调整缓冲区中遵循的伪代码所示的基址。
+另一方面，如果驱动程序装配带有8个字节的标头和4个字节的标头元素的标头描述符，则每个数据包的预置数据将包含12个字节。 由于4096字节页不是12的整数倍数，因此标头描述符的大小必须小于4096字节，以防止标头跨越页面边界。 但是，可以通过调整缓冲区的基址（如以下伪代码中所示），将标头描述符缓冲区的大小扩展到两页。
 
 ```cpp
 // First find the number of headers (together with header elements)

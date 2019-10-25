@@ -6,20 +6,20 @@ keywords:
 - 帧 WDK AVStream
 - 注入模式 WDK AVStream 帧
 - 帧注入 WDK AVStream
-- pin 为中心的筛选器 WDK AVStream
-- 筛选器为中心的筛选器 WDK AVStream
+- pin 中心筛选器 WDK AVStream
+- 以筛选为中心的筛选器 WDK AVStream
 - 空帧 WDK AVStream
-- 默认框架行为 WDK AVStream
-- 重写默认框架行为 WDK 流式处理媒体
+- 默认帧行为 WDK AVStream
+- 覆盖默认帧行为 WDK 流式处理媒体
 - 线路 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c9a61903cbbb61e825eaceb18d768fadc8f65d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b35de0fd7d27bd90a4ea6f1c40b846cd224b6563
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384072"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842596"
 ---
 # <a name="frame-injection"></a>帧注入
 
@@ -27,19 +27,19 @@ ms.locfileid: "67384072"
 
 
 
-默认情况下，在 AVStream 请求者获取中分配器的空帧，并将它们放在队列中。 微型驱动程序然后填充帧通过[pin 以中心处理](pin-centric-processing.md)或[筛选器以中心处理](filter-centric-processing.md)。 跨传输将移动帧到线路，最终完成线路并返回给请求者中的下一个对象。 AVStream 然后重用帧。
+默认情况下，在 AVStream 中，请求程序从分配器获取空帧，并将其放在队列中。 然后，微型驱动程序将使用以[零为中心的处理](pin-centric-processing.md)或以[筛选为中心的处理](filter-centric-processing.md)来填充帧。 帧会移动到线路中的下一个对象，最终完成线路并返回给请求者。 然后，AVStream 重用这些帧。
 
-微型驱动程序可以通过使用替代此默认行为*注入模式*。 在注入模式下，微型驱动程序负责将框架放入该线路。 帧周围以默认方式线路传播。 微型驱动程序提供当帧回到 AVStream 对象的开始位置时，请调用 AVStream [ *AVStrMiniFrameReturn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinframereturn)例程。
+微型驱动程序可以使用*注入模式*替代此默认行为。 在注入模式下，微型驱动程序负责将帧放置到线路中。 帧以默认方式传播到线路。 当帧返回到其开始位置的 AVStream 对象时，AVStream 会调用微型驱动程序提供的[*AVStrMiniFrameReturn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinframereturn)例程。
 
-在此例程中，微型驱动程序无法例如解除分配帧、 完成的框架中，返回挂起的工作或重新填充并 reinject 帧。
+在这种情况下，微型驱动程序可能会导致解除分配帧的操作、完成帧返回时挂起的工作或重填和 reinject 帧。
 
-若要设置注入模式，微型驱动程序调用[ **KsPinRegisterFrameReturnCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinregisterframereturncallback) ，并提供一个指向其*AVStrMiniFrameReturn*例程。
+若要设置注入模式，微型驱动程序将调用[**KsPinRegisterFrameReturnCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinregisterframereturncallback)并提供指向其*AVStrMiniFrameReturn*例程的指针。
 
-*不要调用* ***KsPinRegisterFrameReturnCallback*** *除非筛选器处于停止状态。*
+*除非筛选器处于停止状态*，否则*不要调用* ***KsPinRegisterFrameReturnCallback*** 。
 
-若要将帧注入到线路，请调用[ **KsPinSubmitFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframe)或[ **KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspinsubmitframemdl)。
+若要将帧插入线路，请调用[**KsPinSubmitFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframe)或[**KsPinSubmitFrameMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinsubmitframemdl)。
 
-下图显示了设置组成源筛选器，一个 AVStream 筛选器*就地*与源注入帧转换筛选器和呈现筛选器。
+下图显示了由源筛选器、*就地*转换筛选器和包含源注入帧的呈现筛选器组成的 AVStream 筛选器集。
 
 ![说明 avstream 筛选器集的关系图](images/inject1.png)
 

@@ -1,28 +1,28 @@
 ---
 title: WDI 低延迟连接质量
-description: 本部分介绍如何维护使用 WDI 中的低延迟连接质量
+description: 本部分介绍如何在 WDI 中保持低延迟连接的质量
 ms.assetid: 194A26DA-A138-4967-9A09-5843A38007E9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0777b6f1f8134ba08beb72ee2d7c3148650f8f37
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2a9d01cbe64e6c0d16169c2cba2715d3e0cf1bef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387208"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842922"
 ---
 # <a name="wdi-low-latency-connection-quality"></a>WDI 低延迟连接质量
 
 
-如果需要低延迟数据流量 （例如，VoIP 应用程序） 在系统上运行的应用程序，可以将端口配置为较低的延迟模式下操作。 在此模式下的操作，该驱动程序应修改任何行为将导致离开的低延迟模式下配置的端口的通道 （如扫描或更高 AP 漫游)。 它还应遵循的指定的指南[NDIS\_状态\_WDI\_指示\_链接\_状态\_更改](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-link-state-change)指示。 主机提供[ **WDI\_TLV\_低\_延迟\_连接\_质量\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters)的端口在此模式下时，应使用。 这将指定该端口应为关闭通道和连接启动较低的延迟漫游之前必须在向下的最小链接质量值的最长时间 (包括发送[NDIS\_状态\_WDI\_指示\_漫游\_需执行](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed))。
+如果在系统上运行的应用程序需要低延迟数据流量（例如，VoIP 应用程序），则可以为低延迟模式操作配置端口。 在此操作模式下，驱动程序应修改任何行为（如扫描或更好的 AP 漫游），这会导致其移出配置为低延迟模式的端口通道。 它还应遵循[NDIS\_状态的指定指南\_WDI\_指示\_链接\_状态\_更改](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-link-state-change)指示。 主机提供[**WDI\_TLV\_低\_延迟\_连接\_质量\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-low-latency-connection-quality-parameters)在此模式下端口应使用的参数。 此值指定端口应为 off 通道的最长时间，以及在启动低延迟漫游之前连接必须下降到的最小链接质量值（包括发送[NDIS\_状态\_WDI\_指示\_漫游\_需要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)）。
 
-扫描主机提供 （有不同的值为主动和被动通道） 的最大通道停留时间和适配器应不超过最长时间。 主机还限制不必要的扫描。 但是，适配器可以限制扫描进一步 if [ **WDI\_扫描\_触发器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_scan_trigger)是**WDI\_扫描\_触发器\_背景**或**WDI\_扫描\_触发器\_漫游**。 如果适配器在此模式下执行其自己的扫描，则建议，它包含在寻找 （除非它是从睡眠状态恢复后） 来减少的通道上的停留时间的 SSID。 此外，它应避免扫描单个通道关闭扫描中的多个通道，以便它在整体关闭通道时间限制之内。
+对于扫描，主机提供最大通道停留时间（主动和被动通道有不同的值），并且适配器不应超过最大时间。 主机还会限制不必要的扫描。 但是，如果[**WDI\_扫描\_触发器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_scan_trigger) **WDI\_scan\_触发器\_后台**或**WDI\_scan\_trigger\_漫游**，则适配器可以进一步限制扫描。 如果适配器在此模式下执行其自己的扫描，则建议包含它所查找的 SSID （除非它在从睡眠状态恢复之后），以减少通道上的停留时间。 此外，它应避免在单通道扫描中扫描多个通道，使其低于总体的非通道时间限制。
 
-主机认为[NDIS\_状态\_WDI\_指示\_漫游\_需执行](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)漫游，因此在此模式下，适配器应该从适配器的强请求谨慎发送这种指示是何种频率。 如果适配器执行其自身漫游/AP 选择决策，它必须采用适当的机制 （如邻居报表或 PMKIDs） 来查找和选择/排名 APs。
+主机将[NDIS\_状态视为\_WDI\_指示\_漫游\_需要](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wdi-indication-roaming-needed)适配器的强请求进行漫游，因此在此模式下，适配器应小心发送此指示的频率。 如果适配器执行其自己的漫游/AP 选择决定，则必须使用适当的机制（如邻居报告或 PMKIDs）来查找并选择/分级 Ap。
 
-若要优化关联进程，适配器应使用缓存的 BSS 条目 TSF 计时器同步在加入期间在可能的情况。 缓存的条目应足以有关 TSF 计时器同步，这是最新的大部分时间，因为已获取了从最新的探测请求。 TSF 同步可以进行更高版本，即使驱动程序决定选择不具有最新的缓存的探测响应的接入点。 该驱动程序可以禁用 Wi-fi 节能，直到收到的下一步的信号，在 100 毫秒内，通常会出现。
+若要优化关联进程，在可能的情况下，适配器应使用缓存的 BSS 条目进行 TSF 计时器同步。 缓存的条目应该足以应对 TSF 计时器同步，这是最新的，因为它是从最近的探测请求获取的。 即使驱动程序决定选择不具有最新缓存探测响应的 AP，TSF 同步也可以在以后进行。 驱动程序可以在接收到下一个信标之前禁用 Wi-fi 节能，这通常出现在100ms 中。
 
-在多渠道并发模式下操作时，建议，适配器使用 ECSA 或其他机制，可启用无缝/无抖动体验执行多路复用通道时。
+当在多通道并发模式下操作时，建议适配器使用 ECSA 或其他机制来实现通道多路复用时无缝/无抖动体验。
 
  
 

@@ -4,17 +4,17 @@ description: 存储类驱动程序的 SplitTransferRequest 例程
 ms.assetid: 4f449d3b-9a0a-4ff9-a7fb-bfa21b8a56c0
 keywords:
 - SplitTransferRequest
-- 非连续页 WDK 存储
+- 不连续的页面 WDK 存储
 - 拆分传输请求
-- 转移请求拆分 WDK 存储
+- 传输请求拆分 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a30aac1b4615b80a01c9f4b99a21b2f4328d17
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3420d968d87a9822cb1c8bd377a17f839e80d81d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368883"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841607"
 ---
 # <a name="storage-class-drivers-splittransferrequest-routine"></a>存储类驱动程序的 SplitTransferRequest 例程
 
@@ -22,11 +22,11 @@ ms.locfileid: "67368883"
 ## <span id="ddk_storage_class_drivers_splittransferrequest_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_SPLITTRANSFERREQUEST_ROUTINE_KG"></span>
 
 
-存储\_适配器\_描述符数据返回给*GetDescriptor*例程指示类驱动程序到给定 HBA 的传输功能。 具体而言，此数据指示**MaximumTransferLength**以字节为单位， **MaximumPhysicalPages**： 即，多少个不连续页面 HBA 可以管理中的备份系统的物理内存缓冲区 （即，其分散/集中支持的范围）。
+返回到*GetDescriptor*例程的存储\_适配器\_描述符数据指示给定 HBA 到类驱动程序的传输功能。 具体而言，此数据指示**MaximumTransferLength** （以字节为单位）和**MaximumPhysicalPages**：也就是说，HBA 可以在支持系统缓冲区的物理内存（即，其散播/收集支持）。
 
-大多数类驱动程序存储到此配置数据的指针设备扩展的每个设备对象中，因为存储类驱动程序负责将拆分超出 HBA 的功能将数据传输的所有传输请求。 换而言之，类驱动程序的[ **DispatchReadWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程必须确定每个 IRP 是否请求多于 HBA 可以处理单个传输操作中的传输。
+大多数类驱动程序在每个设备对象的设备扩展中存储指向此配置数据的指针，因为存储类驱动程序负责拆分超过 HBA 传输数据的所有传输请求。 换句话说，类驱动程序的[**DispatchReadWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程必须确定每个 IRP 是否请求的传输超过 HBA 可以在单个传输操作中处理的情况。
 
-例如，此类*DispatchReadWrite*例程可以类似于以下代码：
+例如，此类*DispatchReadWrite*例程可能包含类似于下面的代码：
 
 ```cpp
 PSTORAGE_ADAPTER_DESCRIPTOR adapterDescriptor = 
@@ -60,23 +60,23 @@ if (currentIrpStack->Parameters.Read.Length > maximumTransferLength ||
     :        : 
 ```
 
-在类驱动程序无法判断多少物理分隔线缓冲区将具有后映射，因此它必须假定在传输中的每一页是不连续和比较针对允许的物理分隔线数的页数。
+类驱动程序无法判断缓冲区在被映射后将包含多少物理中断，因此它必须假定传输中的每一页都是不连续的，并根据允许的物理中断数来比较页的数目。
 
-请注意，此类的驱动程序的*DispatchReadWrite*例程调用**IoMarkIrpPending** ，并返回状态\_PENDING 后立即调用其*SplitTransferRequest*例程替换原始 IRP。
+请注意，在使用原始 IRP 调用其*SplitTransferRequest*例程后，此类驱动程序的*DispatchReadWrite*例程将调用**也**并返回状态\_立即挂起。
 
-若要执行原始传输请求，驱动程序的*SplitTransferRequest*例程创建了一个或多个 Irp，以处理 subbuffers 大小将调整为适应 HBA 的功能。 对于每个此类 IRP *SplitTransferRequest*例程：
+若要执行原始传输请求，驱动程序的*SplitTransferRequest*例程会创建一个或多个 irp 来处理调整大小以适合 HBA 功能的 subbuffers。 对于每个此类 IRP， *SplitTransferRequest*例程：
 
--   通过调用内部通常设置 SRB *BuildRequest*例程 (请参阅[存储类驱动程序 BuildRequest 例程](storage-class-driver-s-buildrequest-routine.md))
+-   通常通过调用内部*BuildRequest*例程来设置 SRB （请参阅[存储类驱动程序的 BuildRequest 例程](storage-class-driver-s-buildrequest-routine.md)）
 
--   副本 MDL 从原始 IRP 地址到新的 IRP
+-   将 MDL 地址从原始 IRP 复制到新 IRP
 
--   集**DataBuffer**中为此传输的一段 MDL 字节中的偏移量 SRB
+-   将 SRB 中的**DataBuffer**设置为这部分传输的 MDL 中的偏移量（以字节为单位）
 
--   设置其*IoCompletion*例程之前发送到端口驱动程序和 IRP [ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)
+-   在将 IRP 发送到带有[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的端口驱动程序之前设置其*IoCompletion*例程
 
-若要跟踪的传输，每个部分*SplitTransferRequest*注册*IoCompletion*向较低的下一步驱动程序发送的每个驱动程序分配的 IRP 例程。 *IoCompletion*例程维护原始 IRP 中的已完成的部分传输请求的计数使用**InterlockedIncrement**并**InterlockedDecrement**到请确保计数准确。
+为了跟踪传输的每个部分， *SplitTransferRequest*会为它发送到下一个较低驱动程序的每个由驱动程序分配的 IRP 注册一个*IoCompletion*例程。 *IoCompletion*例程使用**InterlockedIncrement**和**InterlockedDecrement**来维护原始 IRP 中已完成的部分传输请求计数，以确保计数准确无误。
 
-此类*IoCompletion*例程必须释放任何 Irp 和/或 Srb 驱动程序已分配，但必须完成原始 IRP，或者在类驱动程序已经用完了 IRP 的重试和必须故障时转移所有请求的数据它由于设备传输错误。
+此类*IoCompletion*例程必须释放已分配的任何 irp 和/或 SRBs，并在传输所有请求的数据或类驱动程序已用尽 irp 的重试时完成原始 IRP，并必须在设备传输错误。
 
  
 

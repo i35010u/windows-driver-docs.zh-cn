@@ -1,36 +1,36 @@
 ---
 title: OID_SWITCH_FEATURE_STATUS_QUERY
-description: 对象标识符 (OID) 方法请求的 OID_SWITCH_FEATURE_STATUS_QUERY 以获取自定义状态信息从可扩展交换机有关扩展的 HYPER-V 可扩展交换机问题协议边缘。
+description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_FEATURE_STATUS_QUERY 的对象标识符（OID）方法请求，以获取有关可扩展交换机的扩展中的自定义状态信息。
 ms.assetid: 580EFBD0-7798-4C56-99C5-84EADB8F8E82
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_SWITCH_FEATURE_STATUS_QUERY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 18af7aabc7d558b63db4ba53b22a78a8862ea3d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7165676f77980acf6c127891ed25629da7cacf27
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362877"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843965"
 ---
-# <a name="oidswitchfeaturestatusquery"></a>OID\_交换机\_功能\_状态\_查询
+# <a name="oid_switch_feature_status_query"></a>OID\_交换机\_功能\_状态\_查询
 
 
-HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请求的 OID\_切换\_功能\_状态\_查询，以获取有关从扩展的自定义状态信息可扩展交换机。 此信息被称为*功能状态*信息。 此信息的格式由独立软件供应商 (ISV) 定义。
+Hyper-v 可扩展交换机的协议边缘发出 OID\_SWITCH\_\_\_功能的对象标识符（OID）方法请求，以获取有关可扩展交换机的扩展中的自定义状态信息。 此信息称为*功能状态*信息。 此信息的格式是由独立软件供应商（ISV）定义的。
 
-通过此 OID 方法请求成功返回后**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含指向缓冲区的指针。 此缓冲区包含以下数据：
+成功从此 OID 方法请求返回后， [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向**缓冲区的指针**。 此缓冲区包含以下数据：
 
--   [ **NDIS\_交换机\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)结构，它指定的参数的类型的功能状态要返回的信息。
+-   [**NDIS\_交换机\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)结构，它指定要返回的功能状态信息类型的参数。
 
--   [ **NDIS\_切换\_功能\_状态\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)结构，其中包含可扩展交换机的功能状态信息。
+-   [**NDIS\_交换机\_功能\_状态\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)包含可扩展交换机的功能状态信息的自定义结构。
 
 <a name="remarks"></a>备注
 -------
 
-有关如何处理 OID 的指导原则设置请求的 OID\_交换机\_功能\_状态\_查询，请参阅[管理自定义开关功能状态信息](https://docs.microsoft.com/windows-hardware/drivers/network/managing-custom-switch-feature-status-information)。
+有关如何处理 OID\_SWITCH\_功能\_状态\_查询的 OID 集请求的指南，请参阅[管理自定义交换机功能状态信息](https://docs.microsoft.com/windows-hardware/drivers/network/managing-custom-switch-feature-status-information)。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-扩展插件可以返回一个 OID 的 OID 方法请求的以下状态代码\_交换机\_功能\_状态\_查询。
+该扩展将为 OID\_SWITCH\_功能\_状态\_查询返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -50,11 +50,11 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区长度太小，无法返回功能的状态信息并将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_FEATURE_STATUS_CUSTOM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)"> <strong>NDIS_SWITCH_FEATURE_STATUS_CUSTOM</strong> </a>并<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_FEATURE_STATUS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)"> <strong>NDIS_SWITCH_FEATURE_STATUS_PARAMETERS</strong> </a>结构。 可扩展交换机设置的基础的微型端口边缘<strong>数据。METHOD_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回功能状态信息以及<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_FEATURE_STATUS_CUSTOM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)"><strong>NDIS_SWITCH_FEATURE_STATUS_CUSTOM</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_FEATURE_STATUS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)"><strong>NDIS_SWITCH_FEATURE_STATUS_PARAMETERS</strong></a>结构。 可扩展交换机的基础微型端口边缘设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>请求由于其他原因而失败。</p></td>
+<td><p>由于其他原因，请求失败。</p></td>
 </tr>
 </tbody>
 </table>
@@ -71,27 +71,27 @@ HYPER-V 可扩展交换机的协议边缘发出对象标识符 (OID) 方法请�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持在 NDIS 6.30 和更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NDIS\_SWITCH\_PROPERTY\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_switch_property_type)
+[**NDIS\_\_属性\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_property_type)
 
-[**NDIS\_交换机\_功能\_状态\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)
+[**NDIS\_交换机\_功能\_状态\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_custom)
 
-[**NDIS\_交换机\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)
+[**NDIS\_交换机\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_feature_status_parameters)
 
  
 

@@ -1,31 +1,31 @@
 ---
 title: NDIS_STATUS_WWAN_IP_ADDRESS_STATE
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 通知来告知附加 PDP 上下文的 IP 配置的更改 MB 服务。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 通知来通知 MB 服务有关 IP 配置的更改的额外 PDP 上下文。
 ms.assetid: 98E4028D-AD75-4F12-ADA4-41725253166F
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 NDIS_STATUS_WWAN_IP_ADDRESS_STATE 网络驱动程序
+- NDIS_STATUS_WWAN_IP_ADDRESS_STATE 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: b246b73cc066af436961799c972cdcc05a5a4eec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c547aec60bd2c0334db6d282bc2f66fc3a16095a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377632"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843026"
 ---
-# <a name="ndisstatuswwanipaddressstate"></a>NDIS\_状态\_WWAN\_IP\_地址\_状态
+# <a name="ndis_status_wwan_ip_address_state"></a>\_WWAN\_IP\_地址\_状态的 NDIS\_状态
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_IP\_地址\_状态通知来告知附加 PDP 上下文的 IP 配置的更改 MB 服务。
+小型端口驱动程序使用 NDIS\_状态\_WWAN\_IP\_地址\_状态通知来通知 MB 服务有关 IP 配置的更改的额外 PDP 上下文。
 
-使用此通知[ **NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)结构。
+此通知使用[**NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)结构。
 
 <a name="remarks"></a>备注
 -------
 
-必须与其他 PDP 上下文会话相关联的 NDIS 端口上发送此通知。
+必须在与其他 PDP 上下文会话关联的 NDIS 端口上发送此通知。
 
-微型端口驱动程序应发送此通知后附加 PDP 上下文已成功激活并已针对此上下文获取的 IP 配置。 如果设备将指示未经请求的 IP 配置更改后的上下文激活，微型端口驱动程序应发送未经请求的指示与此通知使用更新的 IP 配置。
+如果已成功激活额外的 PDP 上下文并且已获取该上下文的 IP 配置，微型端口驱动程序应发送此通知。 如果设备指示在上下文激活后发生了未经请求的 IP 配置更改，则微型端口驱动程序应使用更新的 IP 配置发送此通知的未经请求的指示。
 
 <a name="requirements"></a>要求
 ------------
@@ -37,20 +37,20 @@ ms.locfileid: "67377632"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
+<td><p>版本</p></td>
 <td><p>在 Windows 8.1 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ndis .h （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)
+[**NDIS\_WWAN\_IP\_地址\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ip_address_state)
 
  
 

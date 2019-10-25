@@ -1,38 +1,38 @@
 ---
-title: 编写 MBB NetAdapterCx 客户端驱动程序
-description: 描述 MBB NetAdapter 类扩展和客户端驱动程序必须为 MBB moderm 执行的任务的行为。
+title: 编写 MBB-NetAdapterCx 客户端驱动程序
+description: 描述 MBB-Get-netadapter 类扩展的行为和客户端驱动程序必须对 MBB moderm 执行的任务。
 ms.assetid: FE69E832-848F-475A-9BF1-BBB198D08A86
 keywords:
-- 移动宽带 (MBB) WDF 类扩展，MBBCx，移动宽带 NetAdapterCx
+- Mobile 宽带（MBB） WDF 类扩展，MBBCx，Mobile 宽带 NetAdapterCx
 ms.date: 03/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fdbe9f8861a0db9217fdbf4c6276003547a815
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac24ff1b5112d158c8a5405055b9144c0ab636c5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353412"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838266"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>编写 MBBCx 客户端驱动程序
 
 [!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
 >[!WARNING]
->本主题中的序列图是仅用于说明目的。 它们不是公共协定，将来可能会有所变动。
+>本主题中的序列图仅用于说明目的。 它们不是公共协定，将来可能会更改。
 
 ## <a name="inf-files-for-mbbcx-client-drivers"></a>MBBCx 客户端驱动程序的 INF 文件
 
-与其他 NetAdapterCx 客户端驱动程序相同的 MBBCx 客户端驱动程序的 INF 文件。 有关详细信息，请参阅[NetAdapterCx 客户端驱动程序的 INF 文件](inf-files-for-netadaptercx-client-drivers.md)。
+MBBCx 客户端驱动程序的 INF 文件与其他 NetAdapterCx 客户端驱动程序相同。 有关详细信息，请参阅[NetAdapterCx 客户端驱动程序的 INF 文件](inf-files-for-netadaptercx-client-drivers.md)。
 
 ## <a name="initialize-the-device"></a>初始化设备
 
-除了这些任务所需的有关 NetAdapterCx [NetAdapter 设备初始化](device-and-adapter-initialization.md)，MBB 客户端驱动程序还必须执行以下任务在其[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数：
+除了 NetAdapterCx for [get-netadapter 设备初始化](device-and-adapter-initialization.md)所需的那些任务，MBB 客户端驱动程序还必须在其[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中执行以下任务：
 
-1. 调用[ **MbbDeviceInitConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdeviceinitconfig)后调用[ *NetAdapterDeviceInitConfig* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterdeviceinitconfig)但在通过调用[ *WdfDeviceCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate)，引用相同[ **WDFDEVICE\_INIT** ](../wdf/wdfdevice_init.md)由框架传入的对象。
+1. 调用[*NetAdapterDeviceInitConfig*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterdeviceinitconfig)后调用[**MbbDeviceInitConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceinitconfig) ，但在调用[*WdfDeviceCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前，引用由框架传入的同一[**WDFDEVICE\_INIT**](../wdf/wdfdevice_init.md)对象。
 
-2. 调用[ **MbbDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdeviceinitialize)注册 MBB 特定于设备的回调函数使用一个已初始化[ **MBB_DEVICE_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/ns-mbbcx-_mbb_device_config)从结构和 WDFDEVICE 对象获取*WdfDeviceCreate*。
+2. 调用[**MbbDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceinitialize) ，以使用初始化的[**MBB_DEVICE_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/ns-mbbcx-_mbb_device_config)结构和从*WdfDeviceCreate*获取的 WDFDEVICE 对象来注册 MBB 特定于设备的回调函数。
 
-下面的示例演示如何初始化 MBB 设备。 为清楚起见，错误处理已被省略。
+下面的示例演示如何初始化 MBB 设备。 为清楚起见，已省略错误处理。
 
 ```C++
     status = NetAdapterDeviceInitConfig(deviceInit);
@@ -52,9 +52,9 @@ ms.locfileid: "63353412"
     status = MbbDeviceInitialize(wdfDevice, &mbbDeviceConfig);
 ```
 
-与其他类型的 NetAdapterCx 驱动程序，不同 MBB 客户端驱动程序必须创建 NETADAPTER 对象内*EvtDriverDeviceAdd*回调函数。 相反，它会指示 MBBCx 由为此，更高版本。
+与其他类型的 NetAdapterCx 驱动程序不同，MBB 客户端驱动程序不能从*EvtDriverDeviceAdd*回调函数中创建 get-netadapter 对象。 相反，它将由 MBBCx 进行指示。
 
-接下来，客户端驱动程序必须调用[ **MbbDeviceSetMbimParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdevicesetmbimparameters)，通常在[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调下面的函数。
+接下来，客户端驱动程序必须调用[**MbbDeviceSetMbimParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicesetmbimparameters)，通常在后面的[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调函数中。
 
 此消息流关系图说明了初始化过程。
 
@@ -66,48 +66,48 @@ ms.locfileid: "63353412"
 
 ## <a name="handling-mbim-control-messages"></a>处理 MBIM 控制消息
 
-MBBCx 使用 MBIM 规范 1.0，部分 8、 9 和 10，控制平面中定义的标准 MBIM 控制命令。 命令和响应通过一系列客户端驱动程序提供的回调函数和提供的 MBBCx Api 进行交换。 通过使用这些函数调用 MBIM 规范 1.0，5.3、 部分中定义，MBBCx 模仿 MBIM 设备的操作模式：
+MBBCx 使用在 MBIM 规范 Rev 1.0 中定义的标准 MBIM 控制命令，第8、9和10部分用于控制平面。 通过一组由 MBBCx 提供的客户端驱动程序和 Api 提供的回调函数来交换命令和响应。 MBBCx 通过使用以下函数调用来模拟 MBIM 设备的操作模型，如 MBIM 规范 Rev 5.3 1.0 中所定义的：
 
-- MBBCx 将 MBIM 命令消息发送到客户端驱动程序，通过调用其[ *EvtMbbDeviceSendMbimFragment* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/nc-mbbcx-evt_mbb_device_send_mbim_fragment)回调函数。 客户端驱动程序将通过调用以异步方式完成此发送请求[ **MbbRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbrequestcomplete)。
-- 客户端驱动程序通过调用表示结果的可用性[ **MbbDeviceResponseAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdeviceresponseavailable)。
-- MBBCx 中提取 MBIM 响应消息从客户端驱动程序通过调用其[ *EvtMbbDeviceReceiveMbimFragment* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nc-mbbcx-evt_mbb_device_receive_mbim_fragment)回调函数。 客户端驱动程序将通过调用以异步方式完成此获取响应请求[ **MbbRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbrequestcompletewithinformation)。
-- MBB 客户端驱动程序可以通过调用通知的未经请求的设备事件 MBBCx **MbbDeviceResponseAvailable**。 MBBCx 然后检索的信息从客户端驱动程序同样到它如何提取 MBIM 响应消息。
+- MBBCx 通过调用其[*EvtMbbDeviceSendMbimFragment*](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/nc-mbbcx-evt_mbb_device_send_mbim_fragment)回调函数向客户端驱动程序发送 MBIM 命令消息。 客户端驱动程序通过调用[**MbbRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcomplete)以异步方式完成此发送请求。
+- 客户端驱动程序通过调用[**MbbDeviceResponseAvailable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdeviceresponseavailable)来通知结果的可用性。
+- MBBCx 通过调用其[*EvtMbbDeviceReceiveMbimFragment*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_receive_mbim_fragment)回调函数从客户端驱动程序中提取 MBIM 响应消息。 客户端驱动程序通过调用[**MbbRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbrequestcompletewithinformation)以异步方式完成此获取响应请求。
+- MBB 客户端驱动程序可能会通过调用**MbbDeviceResponseAvailable**通知 MBBCx 未经请求的设备事件。 然后，MBBCx 将从客户端驱动程序中检索信息，类似于获取 MBIM 响应消息的方式。
 
-下图说明了 MBBCx 客户端驱动程序消息交换流。
+下图说明了 MBBCx-客户端驱动程序消息交换流。
 
 ![Mbim 消息交换](images/mbim.png)
 
-### <a name="synchronization-of-mbim-control-messages"></a>MBIM 控制消息的同步
+### <a name="synchronization-of-mbim-control-messages"></a>同步 MBIM 控制消息
 
-MBBCx framework 总是序列化到客户端驱动程序调用*EvtMbbDeviceSendMbimFragment*并*EvtMbbDeviceReceiveMbimFragment*回调函数。 直到客户端驱动程序调用任何一个，将由框架所做的任何新的调用**MbbRequestComplete**或**MbbRequestCompleteWithInformation**。
+MBBCx 框架始终将调用序列化为客户端驱动程序的*EvtMbbDeviceSendMbimFragment*和*EvtMbbDeviceReceiveMbimFragment*回调函数。 在客户端驱动程序调用**MbbRequestComplete**或**MbbRequestCompleteWithInformation**之前，框架不会进行任何新的调用。
 
-虽然客户端驱动程序保证不会接收重叠*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*回调，它可能会收到多个调用连续前一命令的响应才可从该设备。
+虽然保证客户端驱动程序不会收到重叠的*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*回调，但它可能会在对前一个命令的响应之前连续收到对它们的多次调用可从设备上获取。
 
-如果设备处于*D0*状态，则 MBBCx framework 首次将设备添加到 D0 (换而言之，它将调用[ *EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)) 调用之前*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*。 MBBCx 框架还可确保，它将保留在设备处于 D0 状态，这意味着它将不会调用[ *EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)，直到客户端调用**MbbRequestComplete**或**MbbRequestCompleteWithInformation**。
+如果设备未处于*d0*状态，则在调用*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*之前，MBBCx 框架将首先使设备到 D0 （换言之，它调用[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)）。 MBBCx 框架还保证设备处于 D0 状态，这意味着它将不会调用[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)，直到客户端调用**MbbRequestComplete**或**MbbRequestCompleteWithInformation**。
 
-## <a name="creating-the-netadapter-interface-for-the-pdp-contexteps-bearer"></a>为 PDP 上下文/EPS 持有者创建的 NetAdapter 接口
+## <a name="creating-the-netadapter-interface-for-the-pdp-contexteps-bearer"></a>为 PDP 上下文/EPS 持有者创建 Get-netadapter 接口
 
-之前建立的数据的会话，MBBCx 将指示客户端驱动程序，以创建 NETADAPTER 对象，它将由 MBBCx 来激活数据会话表示网络接口。 这通过 MBBCx 调入客户端驱动程序的实现[ *EvtMbbDeviceCreateAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nc-mbbcx-evt_mbb_device_create_adapter)回调函数。
+在建立数据会话之前，MBBCx 将指示客户端驱动程序创建 GET-NETADAPTER 对象，并且 MBBCx 将使用它来表示激活的数据会话的网络接口。 这是通过 MBBCx 调用客户端驱动程序的[*EvtMbbDeviceCreateAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_create_adapter)回调函数实现的。
 
-在实现中的*EvtMbbDeviceCreateAdapter*回调函数 MBBCx 客户端驱动程序必须首先执行相同的任务创建任何 NetAdapterCx 客户端驱动程序的 NETADAPTER 对象所需的。 此外，它还必须执行以下额外任务：
+在*EvtMbbDeviceCreateAdapter*回调函数的实现中，MBBCx 客户端驱动程序必须先执行创建 get-netadapter 对象所需的相同任务（作为任何 NetAdapterCx 客户端驱动程序）。 此外，它还必须执行以下附加任务：
 
-1. 调用[ **MbbAdapterInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbadapterinitialize)上创建的 NETADAPTER 对象[ *NetAdapterCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptercreate)。
+1. 对[*NetAdapterCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)创建的 get-netadapter 对象调用[**MbbAdapterInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbadapterinitialize) 。
 
-2. 在调用*MbbAdapterinitialize*，调用[ **MbbAdapterGetSessionId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbadaptergetsessionid)哪些 MBBCx 数据会话 ID 想要使用此 NETADAPTER 对象的检索。 例如，如果返回的值为 0，则意味着 MBBCx 数据会话建立主 PDP 上下文/默认 EPS 持有者将使用此 NETADAPTER 接口。
+2. 调用*MbbAdapterinitialize*后，调用[**MbbAdapterGetSessionId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbadaptergetsessionid)来检索 MBBCX 打算使用此 get-netadapter 对象的数据会话 ID。 例如，如果返回值为0，则表示 MBBCx 将使用此 GET-NETADAPTER 接口来表示由主 PDP 上下文/默认 EPS 持有者建立的数据会话。
 
-3. 我们建议 MBBCx 客户端驱动程序将创建的 NETADAPTER 对象和返回之间的内部映射*SessionId*。 这有助于跟踪数据会话 NETADAPTER 对象关系，在多个 PDP 上下文/EPS 承载已激活时尤其有用。
+3. 建议 MBBCx 客户端驱动程序在创建的 GET-NETADAPTER 对象和返回的*SessionId*之间保留内部映射。 这有助于跟踪数据会话间 GET-NETADAPTER 对象关系，这在激活多个 PDP 上下文/EPS bearers 时特别有用。
 
-4. 返回从之前*EvtMbbDeviceCreateAdapter*，客户端驱动程序必须启动适配器通过调用[ **NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadapterstart)。 或者，他们还可以通过调用一个或多个这些函数设置适配器的功能*之前*调用**NetAdapterStart**:
-    - [**NetAdapterSetDatapathCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)
-    - [**NetAdapterSetLinkLayerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetlinklayercapabilities)
-    - [**NetAdapterSetLinkLayerMtuSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetlinklayermtusize)
-    - [**NetAdapterSetPowerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netadapter/nf-netadapter-netadaptersetpowercapabilities)
+4. 从*EvtMbbDeviceCreateAdapter*返回之前，客户端驱动程序必须通过调用[**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)来启动适配器。 此外，还可以在调用**NetAdapterStart***之前*调用一个或多个此类函数来设置适配器的功能：
+    - [**NetAdapterSetDatapathCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetdatapathcapabilities)
+    - [**NetAdapterSetLinkLayerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayercapabilities)
+    - [**NetAdapterSetLinkLayerMtuSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetlinklayermtusize)
+    - [**NetAdapterSetPowerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetpowercapabilities)
 
-MBBCx 至少一次，调用此回调函数，因此始终主 PDP 上下文/默认 EPS 持有者的一个 NETADPATER 对象。 如果激活了多个 PDP 上下文/EPS 承载，MBBCx 可能调用此回调函数多次，一次用于建立每个数据会话。 之间由 NETADAPTER 对象和数据工作期，如以下关系图中所示的网络接口必须是一对一的关系。
+MBBCx 至少调用此回调函数一次，因此主 PDP 上下文/默认 EPS 持有者始终有一个 NETADPATER 对象。 如果激活了多个 PDP 上下文/EPS bearers，MBBCx 可能会多次调用此回调函数，每个数据会话将被建立。 GET-NETADAPTER 对象和数据会话所表示的网络接口之间必须存在一对一的关系，如下图所示。
 
 ![多个 NetAdapters](images/multi-netadapter.png)
 
-下面的示例演示如何为数据会话创建 NETADAPTER 对象。 请注意，错误处理和所需的设置适配器功能的代码省略了简洁和清晰度。
+下面的示例演示如何为数据会话创建 GET-NETADAPTER 对象。 请注意，为了简洁和清晰起见，设置适配器功能所需的错误处理和代码会保持不变。
 
 ```C++
     NTSTATUS
@@ -172,28 +172,28 @@ MBBCx 至少一次，调用此回调函数，因此始终主 PDP 上下文/默�
     }
 ```
 
-设置数据路径功能的代码示例，请参阅[网络数据缓冲区管理](network-data-buffer-management.md)。
+有关设置数据路径功能的代码示例，请参阅[网络数据缓冲区管理](network-data-buffer-management.md)。
 
-它调用 MBBCx 保证*EvtMbbDeviceCreateAdapter*请求之前**MBIM_CID_CONNECT**相同的会话 id。 以下流程图显示了客户端驱动程序和类扩展之间的交互创建 NETADAPTER 对象。  
+MBBCx 保证在向具有相同会话 ID 的**MBIM_CID_CONNECT**请求之前调用*EvtMbbDeviceCreateAdapter* 。 以下流程图显示了客户端驱动程序和类扩展在创建 GET-NETADAPTER 对象中的交互。  
 
-![NETADAPTER 创建和激活 MBB 客户端驱动程序](images/activation.png)
+![GET-NETADAPTER MBB 客户端驱动程序的创建和激活](images/activation.png)
 
-创建由 MBBCx 启动主 PDP 上下文/默认 EPS 持有者的 NETADAPTER 对象的流时[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)已成功完成。
+当[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)成功完成后，MBBCx 将启动主 PDP 上下文/默认 EPS 持有者的 get-netadapter 对象创建的流。
 
-用于创建 NETADAPTER 对象，通过触发辅助 PDP 上下文/专用 EPS 持有者的流*WwanSvc*按需连接由应用程序的请求时。
+当应用程序请求按需连接时， *WwanSvc*会触发为辅助 PDP 上下文/专用 EPS 持有者创建 get-netadapter 对象的流。
 
-### <a name="lifetime-of-the-netadapter-object"></a>NETADAPTER 对象的生存期
+### <a name="lifetime-of-the-netadapter-object"></a>GET-NETADAPTER 对象的生存期
 
-不再使用时，将由 MBBCx 自动销毁由客户端驱动程序创建的 NETADAPTER 对象。 例如，发生这种情况后附加 PDP 上下文/EPS 承载处于非活动状态。 **不能调用 MBBCx 客户端驱动程序[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)他们创建的 NETADAPTER 对象。**
+当 MBBCx 不再使用时，由客户端驱动程序创建的 GET-NETADAPTER 对象将自动销毁。 例如，在停用额外的 PDP 上下文/EPS bearers 后，会发生这种情况。 **MBBCx 客户端驱动程序不能在其创建的 GET-NETADAPTER 对象上调用[WdfObjectDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 。**
 
-如果客户端驱动程序所需清理上下文数据绑定到 NETADAPTER 对象，它应提供[ *EvtDestroyCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)对象中的函数调用时特性结构**NetAdapterCreate**。  
+如果客户端驱动程序需要清除绑定到 GET-NETADAPTER 对象的上下文数据，则在调用**NetAdapterCreate**时，它应在对象属性结构中提供[*EvtDestroyCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)函数。  
 
 ## <a name="power-management-of-the-mbb-device"></a>MBB 设备的电源管理
 
-电源管理的客户端驱动程序应使用 NETPOWERSETTINGS 对象[等其他类型的 NetAdapterCx 客户端驱动程序](configuring-power-management.md)。
+对于电源管理，客户端驱动程序应使用[类似于其他类型的 NetAdapterCx 客户端驱动程序](configuring-power-management.md)的 NETPOWERSETTINGS 对象。
 
 ## <a name="handling-device-service-sessions"></a>处理设备服务会话
 
-当应用程序发送到调制解调器设备 DSS 数据时，MBBCx 调用客户端驱动程序[ *EvtMbbDeviceSendServiceSessionData* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nc-mbbcx-evt_mbb_device_send_device_service_session_data)回调函数。 客户端驱动程序应然后异步发送数据到该设备并调用[ **MbbDeviceSendDeviceServiceSessionDataComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdevicesenddeviceservicesessiondatacomplete)完成后发送，因此 MBBCx 然后可以释放的内存分配的数据。
+当应用程序将 DSS 数据发送到调制解调器设备时，MBBCx 调用客户端驱动程序的[*EvtMbbDeviceSendServiceSessionData*](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nc-mbbcx-evt_mbb_device_send_device_service_session_data)回调函数。 然后，客户端驱动程序应将数据异步发送到设备，并在发送完成后调用[**MbbDeviceSendDeviceServiceSessionDataComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicesenddeviceservicesessiondatacomplete) ，以便 MBBCx 可以释放为数据分配的内存。
 
-相反，客户端驱动程序调用[ **MbbDeviceReceiveDeviceServiceSessionData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mbbcx/nf-mbbcx-mbbdevicereceivedeviceservicesessiondata)传递由 MBBCx 通过应用程序的任何数据。
+相反，客户端驱动程序调用[**MbbDeviceReceiveDeviceServiceSessionData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mbbcx/nf-mbbcx-mbbdevicereceivedeviceservicesessiondata) ，通过 MBBCx 将任何数据传递到应用程序。

@@ -3,24 +3,24 @@ title: Windows 显示驱动程序模型 (WDDM) 64 位问题
 description: Windows 显示驱动程序模型 (WDDM) 64 位问题
 ms.assetid: ab391fca-bc98-4e98-9531-7a1d24ee173d
 keywords:
-- 64 位 WDK 显示
-- 显示器驱动程序模型 WDK Windows Vista 中，64 位
-- Windows Vista 显示器驱动程序模型 WDK，64 位
+- 64位 WDK 显示
+- 显示驱动程序模型 WDK Windows Vista，64位
+- Windows Vista 显示器驱动程序型号 WDK，64位
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d7b39693502caf703b0991ad69bf777b5788f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 866a98eb54c80414cfd25ebb4025563541adfdb9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385604"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840573"
 ---
 # <a name="windows-display-driver-model-wddm-64-bit-issues"></a>Windows 显示驱动程序模型 (WDDM) 64 位问题
 
 
-若要允许 32 位应用程序在 64 位操作系统上运行，必须除了 64 位应用程序需要 64 位用户模式显示驱动程序提供 32 位用户模式显示驱动程序。 但是，仅显示微型端口驱动程序的 64 位版本需要 64 位操作系统上。 Windows (WOW64) 上的 Windows 允许 32 位应用程序在 64 位操作系统上运行。 有关详细信息，请参阅[在 64 位驱动程序中支持 32 位 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-32-bit-i-o-in-your-64-bit-driver)。
+若要允许32位应用程序在64位操作系统上运行，除了需要64位应用程序需要的64位用户模式显示驱动程序外，还必须提供一个32位用户模式显示驱动程序。 但是，64位操作系统只需要64位版本的显示微型端口驱动程序。 Windows on Windows （WOW64）使32位应用程序能够在64位操作系统上运行。 有关详细信息，请参阅[64 位驱动程序中的支持32位 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-32-bit-i-o-in-your-64-bit-driver)。
 
-若要在 64 位操作系统上安装 32 位用户模式显示驱动程序，必须添加注册表部分中的图形设备显示微型端口驱动程序的 INF 文件中设置以下条目。 这必须发生，以便在安装驱动程序 32 位用户模式显示驱动程序的 DLL 名称添加到注册表：
+若要在64位操作系统上安装32位用户模式显示驱动程序，必须在图形设备的显示微型端口驱动程序的 INF 文件的 "外接程序" 部分中设置以下项。 这必须发生，以便在驱动程序安装过程中将32位用户模式显示驱动程序的 DLL 名称添加到注册表中：
 
 ```inf
  [Xxx_SoftwareDeviceSettings]
@@ -29,13 +29,13 @@ ms.locfileid: "67385604"
 ...
 ```
 
-INF 文件必须包含信息以指示操作系统将 32 位用户模式显示驱动程序复制到系统的 %systemroot%\\SysWOW64 目录。 有关详细信息，请参阅[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)并[ **INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)。
+INF 文件必须包含信息，以指示操作系统将32位用户模式显示驱动程序复制到系统的% systemroot%\\SysWOW64 目录。 有关详细信息，请参阅[**Inf CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)和[**inf DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)。
 
-因为 WOW64 中不能处理不透明或非类型化数据结构如[ **D3DDDICB\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)结构传递通过[ **pfnAllocateCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数，它不能执行从 32 位到 64 位的自动转换。 因此，对于 WOW64 才能正常工作，必须考虑以下各项写入 32 位用户模式时显示在 64 位操作系统上运行的驱动程序：
+由于 WOW64 无法处理不透明或非类型化的数据结构，例如[**D3DDDICB\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)通过[**pfnAllocateCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数传递的结构，因此它无法执行从32位到64位的自动转换。 因此，要使 WOW64 正常工作，在将32位用户模式显示驱动程序写入到64位操作系统上运行时，必须考虑以下各项：
 
--   避免指针或数据类型对敏感的多个操作系统，例如，大小\_T 或句柄。 使整个结构变量的大小，以及这些宽度可变的数据类型进行的对齐方式和各个成员的位置不同。 如果可变宽度成员都是不可避免的则可以添加另一个成员，以指示数据结构源自于 32 位用户模式显示驱动程序。 64 位显示微型端口驱动程序可以正确执行转换。
+-   避免指向多个操作系统（如大小\_T 或句柄）的敏感指针或数据类型。 除了设置整个结构变量的大小以外，这些可变宽度数据类型使各个成员的对齐和位置不同。 如果可变宽度成员是不可避免的，你可以添加另一个成员，以指示该数据结构源自32位用户模式显示驱动程序。 然后，64位显示微型端口驱动程序可以正确执行转换。
 
--   即使可变宽度成员不存在，可能需要考虑特定于体系结构的对齐需求。 例如，在 x64 上，UINT64 （或 QWORD） 应为 8 字节对齐。 标准的 32 位编译器编译的 32 位用户模式显示驱动程序可能无法正确对齐这些本机 64 位类型，因为 64 位显示微型端口驱动程序可能无法准确地从 32 位用户模式显示驱动程序访问数据。 但是，可以使用合适的强制对齐**杂注**编译器指令。 尽管使用**杂注**编译器指令可能会稍有浪费了空间导致 32 位操作系统上，这样便可以在 32 位和 64 位操作系统上使用相同的 32 位用户模式显示驱动程序。 如果你不能使用合适的强制对齐**杂注**编译器指令将在运行 64 位操作系统上使用 WOW64 32 位用户模式显示驱动程序必须不同于 32 位用户模式显示驱动程序在 32 位操作系统上运行。
+-   即使不存在可变宽度成员，您也可能需要考虑特定于体系结构的对齐要求。 例如，在 x64 上，UINT64 （或 QWORD）应为8字节对齐。 由于标准32位编译器编译的32位用户模式显示驱动程序可能不会正确对齐这些本机64位类型，因此，64位显示微型端口驱动程序可能无法从32位用户模式显示驱动程序中精确地访问数据。 但是，您可以通过使用相应的**杂注**编译器指令来强制对齐。 尽管使用**杂注**编译器指令可能会导致在32位操作系统上稍微浪费空间，但这使你可以在32位和64位操作系统上使用相同的32位用户模式显示驱动程序。 如果无法通过使用适当的**杂注**编译器指令来强制对齐，则在64位操作系统上使用 WOW64 运行的32位用户模式显示驱动程序必须不同于在32位上运行的32位用户模式显示驱动程序操作系统。
 
  
 

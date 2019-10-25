@@ -1,90 +1,90 @@
 ---
 title: IRP_MN_FILTER_RESOURCE_REQUIREMENTS
-description: PnP 管理器将此 IRP 发送到设备堆栈，因此如果适当，功能驱动程序可以调整该设备，所需的资源。功能驱动程序通常会处理此 IRP。
+description: PnP 管理器将此 IRP 发送到设备堆栈，以便函数驱动程序可以根据需要调整设备所需的资源。函数驱动程序通常处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: f43dc60e-de88-4af0-ad83-3ce3a414d880
 keywords:
 - IRP_MN_FILTER_RESOURCE_REQUIREMENTS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc438a73d13e39307b7e9596a21d9c254d2121c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1ad420323974af261444fcfc3d53b7a62136656
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370871"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838580"
 ---
-# <a name="irpmnfilterresourcerequirements"></a>IRP\_MN\_FILTER\_RESOURCE\_REQUIREMENTS
+# <a name="irp_mn_filter_resource_requirements"></a>IRP\_MN\_筛选器\_资源\_要求
 
 
-PnP 管理器将此 IRP 发送到设备堆栈，因此如果适当，功能驱动程序可以调整该设备，所需的资源。
+PnP 管理器将此 IRP 发送到设备堆栈，以便函数驱动程序可以根据需要调整设备所需的资源。
 
-功能驱动程序通常会处理此 IRP。
+函数驱动程序通常处理此 IRP。
 
-父总线驱动程序 （和总线筛选器驱动程序） 不应处理子 PDO; 此请求相反，此类驱动程序应报告在响应中的资源要求[ **IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求。
+父总线驱动程序（和总线筛选器驱动程序）不应处理子 PDO 的此请求;相反，此类驱动程序应报告资源要求，以响应[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求。
 
-上限和较低的筛选器驱动程序不处理此 IRP。
+上限和小写筛选器驱动程序不处理此 IRP。
 
 <a name="major-code"></a>主代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
 ---------
 
-PnP 管理器将发送此 IRP 时它正在准备，以便分配到设备的资源。
+PnP 管理器将在准备向设备分配资源时发送此 IRP。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别的任意线程上下文中。
+PnP 管理器在任意线程的上下文中以 IRQL 被动\_级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-**Irp-&gt;IoStatus.Information**指向[ **IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)包含硬件设备的资源要求。 在指针位于**NULL**如果设备不使用的任何硬件资源。
+**Irp-&gt;IoStatus**指向[**IO\_资源\_要求\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)包含设备硬件资源要求的列表。 如果设备不消耗硬件资源，则指针为**NULL** 。
 
-**Parameters.FilterResourceRequirements.IoResourceRequirementList**还指向**IO\_资源\_要求\_列表**，但功能驱动程序应使用列表中**IoStatus**块。
+**FilterResourceRequirements. IoResourceRequirementList**还 **\_列表指向 IO\_资源\_需求**，但函数驱动程序应使用**IoStatus**块中的列表。
 
 ## <a name="output-parameters"></a>输出参数
 
 
-返回在 I/O 状态块中。
+在 i/o 状态块中返回。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果功能驱动程序处理此 IRP，它处理它在 IRP 的方式备份在堆栈上。 如果功能驱动程序已成功处理 IRP，它会设置**Irp-&gt;IoStatus.Status**于状态\_成功和集**Irp-&gt;IoStatus.Information**到指向[ **IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)包含筛选的资源要求。 请参阅下面有关设置筛选的资源列表的详细信息"操作"部分。 如果功能驱动程序处理此 IRP 时遇到错误，它会设置错误**Irp-&gt;IoStatus.Status**。 如果功能驱动程序不处理此 IRP，它将使用[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)将传递在堆栈的下层 IRP 保持不变。
+如果函数驱动程序处理此 IRP，则它会按照 IRP 的方式备份堆栈。 如果函数驱动程序成功处理 IRP，则它会将**irp&gt;IoStatus**设置为 STATUS\_SUCCESS，并将**irp&gt;IoStatus**设置为指向[**IO\_资源\_要求的指针 @no__t**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)包含筛选的资源要求的 _9_ 列表。 有关设置筛选的资源列表的详细信息，请参阅下面的 "操作" 部分。 如果函数驱动程序在处理此 IRP 时遇到错误，则会在**irp&gt;IoStatus**中设置错误。 如果函数驱动程序不处理此 IRP，它将使用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)将 irp 向下传递到不变的堆栈。
 
-上限和较低的筛选器驱动程序不处理此 IRP。 此类驱动程序调用**IoSkipCurrentIrpStackLocation**，将传递到下一步的驱动程序 IRP，不能修改**Irp-&gt;IoStatus**，并且必须完成 IRP。
+上限和小写筛选器驱动程序不处理此 IRP。 此类驱动程序调用**IoSkipCurrentIrpStackLocation**，将 irp 向下传递到下一个驱动程序，不能修改**irp&gt;IoStatus**，且不能完成 irp。
 
-父总线驱动程序不处理此 IRP。 离开**Irp-&gt;IoStatus**完成 IRP 和时。
+父总线驱动程序无法处理此 IRP。 它会将**irp&gt;IoStatus**保持原样，并完成 irp。
 
 <a name="operation"></a>操作
 ---------
 
-PnP 管理器将发送[ **IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)之前对该设备，该父总线驱动程序的请求功能驱动程序已附加到设备堆栈其设备对象。 若要使功能驱动程序有机会修改设备的资源要求，如果适用，即插即用管理器更高版本将发送**IRP\_MN\_筛选器\_资源\_要求**完整的设备堆栈的请求。 PnP 管理器将发送此 IRP 之前在初始设备配置过程中分配到设备的硬件资源。 PnP 管理器还可以在资源重新平衡过程中发送此 IRP。
+PnP 管理器将[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求发送到设备的父总线驱动程序，然后将其设备对象附加到设备堆栈。 为了使函数驱动程序有机会修改设备的资源要求（如果适用），PnP 管理器稍后会将**IRP\_MN\_筛选器**发送到完整设备堆栈\_资源\_要求请求。 PnP 管理器将在初始设备配置过程中向设备分配硬件资源之前发送此 IRP。 PnP 管理器还可能在重新平衡资源期间发送此 IRP。
 
-当 PnP 管理器将发送此 IRP 时，它提供的资源要求列表，该驱动程序可以修改并返回驱动程序堆栈。 PnP 管理器会提供一个以下类型的资源要求列表 （按优先顺序列出）：
+当 PnP 管理器发送此 IRP 时，它将为驱动程序堆栈提供资源需求列表，驱动程序可以修改并返回该列表。 PnP 管理器提供以下类型的资源要求列表（按优先级顺序列出）：
 
--   （从资源列表资源要求列表修改） 的强制性的配置
+-   强制配置（从资源列表修改为资源需求列表）
 
 -   替代配置
 
 -   基本配置
 
--   启动配置 （从资源列表资源要求列表修改）
+-   启动配置（从资源列表修改为资源需求列表）
 
-如果功能驱动程序处理此 IRP，它必须设置完成例程，并处理重新启动设备堆栈手 IRP。 请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理备份设备堆栈手 PnP IRP 的相关信息。
+如果函数驱动程序处理此 IRP，则它必须设置完成例程，并按其备份设备堆栈的方式处理 IRP。 请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解有关如何处理 PnP IRP 的详细信息，请参阅备份设备堆栈。
 
-如果功能驱动程序未更改指向的当前列表的大小**Irp-&gt;IoStatus.Information**，驱动程序可以修改在位置列表。 如果驱动程序所需更改要求列表的大小，该驱动程序必须分配一个新[ **IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)列表从分页内存和免费的前面的列表。 当不再需要时，即插即用管理器释放返回的结构。
+如果函数驱动程序未更改 Irp 所指向的当前列表的大小 **&gt;IoStatus**，则驱动程序可以就地修改列表。 如果驱动程序需要更改需求列表的大小，则驱动程序必须分配新的[**IO\_资源\_需求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)从分页内存中列表，并释放以前的列表。 当不再需要返回的结构时，PnP 管理器会将其释放。
 
-功能驱动程序必须保留指向列表中的资源的顺序**Irp-&gt;IoStatus.Information**和不得更改不会处理的资源标记。 该驱动程序必须小心以调整设备的父总线支持一种方法中的要求列表。 如果功能驱动程序将新的资源添加到要求列表，并且该资源分配给设备，功能驱动程序应筛选出的该资源[ **IRP\_MN\_启动\_设备**](irp-mn-start-device.md)然后再将传递开始 IRP 向总线驱动程序。
+函数驱动程序必须保留由**Irp&gt;** 的列表中资源的顺序，而不能更改它不处理的资源标记。 驱动程序必须小心调整设备的父总线支持的方法列表。 如果函数驱动程序向需求列表中添加了新资源，并且该资源已分配给设备，则函数驱动程序应在将启动 IRP 向下传递到之前从[**irp\_MN\_启动\_设备**](irp-mn-start-device.md)总线驱动程序。
 
-如果设备功能驱动程序不处理此 IRP，PnP 管理器将使用指定的响应中的父总线驱动程序的资源要求[ **IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求。
+如果设备的函数驱动程序未处理此 IRP，则 PnP 管理器将使用父总线驱动程序指定的资源要求来响应[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求。
 
-功能驱动程序必须准备好处理此 IRP 的设备驱动程序的后随时[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程名为的设备。
+在为设备调用了驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程之后，必须准备好函数驱动程序为设备处理此 IRP。
 
-请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)处理的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解用于处理[即插即用次要 irp](plug-and-play-minor-irps.md)的一般规则。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-保留供系统使用。 驱动程序必须发送此 IRP。
+保留供系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -96,22 +96,22 @@ PnP 管理器将发送[ **IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resour
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)
+[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
-[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)
+[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)
 
-[**IO\_资源\_要求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_resource_requirements_list)
+[**IO\_资源\_需求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)
 
-[**IRP\_MN\_START\_DEVICE**](irp-mn-start-device.md)
+[**IRP\_MN\_启动\_设备**](irp-mn-start-device.md)
 
  
 

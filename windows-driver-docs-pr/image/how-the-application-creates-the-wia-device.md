@@ -4,12 +4,12 @@ description: 应用程序如何创建 WIA 设备
 ms.assetid: f4268c61-11e5-4796-b7cb-80c8112be4d8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 425bb21b5c0f44ea18eb9897373c36ad7a1d5a10
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64bd865a52fe598e44ee7802e21bdd502b38e412
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363061"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840835"
 ---
 # <a name="how-the-application-creates-the-wia-device"></a>应用程序如何创建 WIA 设备
 
@@ -17,32 +17,32 @@ ms.locfileid: "67363061"
 
 
 
-当应用程序想要使用 WIA 的设备驱动程序时，它将调用**IWiaDevMgr::CreateDevice**方法 （Microsoft Windows SDK 文档中所述）。 WIA 服务首先调用[ **IStiUSD::LockDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-lockdevice)锁定互斥独占访问的 WIA 驱动程序。 接下来，WIA 服务调用[ **IWiaMiniDrv::drvInitializeWia** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)创建初始 WIA 项树状结构。 最后，WIA 服务解锁设备驱动程序通过调用[ **IStiUSD::UnLockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-unlockdevice)。
+当应用程序打算使用 WIA 设备驱动程序时，它会调用**IWiaDevMgr：： CreateDevice**方法（如 Microsoft Windows SDK 文档中所述）。 WIA 服务首先调用[**IStiUSD：： LockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-lockdevice) ，以将 WIA 驱动程序锁定为互相排斥的访问。 接下来，WIA 服务调用[**IWiaMiniDrv：:D rvinitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)创建初始 WIA 项树结构。 最后，WIA 服务通过调用[**IStiUSD：： UnLockDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-unlockdevice)解锁设备驱动程序。
 
-**IWiaMiniDrv::drvInitializeWia**方法应执行以下任务。
+**IWiaMiniDrv：:D rvinitializewia**方法应执行以下任务。
 
-1.  缓存接口的*pStiDevice*参数指向正确的设备锁定。 (有关详细信息，请参阅[ **IWiaMiniDrv::drvLockWiaDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvlockwiadevice)。)
+1.  缓存*pStiDevice*参数指向的接口以获取适当的设备锁定。 （有关详细信息，请参阅[**IWiaMiniDrv：:D rvlockwiadevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvlockwiadevice)。）
 
-2.  创建初始 WIA 项树状结构。
+2.  创建初始 WIA 项树结构。
 
-3.  递增当前应用程序连接数。 此计数用来通知该驱动程序是否仍连接应用程序。 它还有助于确定要在中执行的适当操作[ **IWiaMiniDrv::drvUnInitializeWia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)。
+3.  递增当前应用程序连接数。 此计数用于通知驱动程序应用程序是否仍处于连接状态。 它还有助于确定要在 IWiaMiniDrv 中采取的正确操作[ **：:D rvuninitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvuninitializewia)。
 
-WIA 项应被命名为某些逻辑含义。 Microsoft 需要以下项名称适用于 Windows XP 及更高版本。
+WIA 项的名称应带有一些逻辑含义。 Microsoft 需要适用于 Windows XP 和更高版本的以下项名称。
 
 <a href="" id="root"></a>**Root**  
-这是 WIA 项树的根项目使用的术语。
+这是 WIA 项树的根项的术语。
 
 <a href="" id="flatbed"></a>**平板**  
-这是支持平板扫描仪，扫描程序或支持具有文档送纸器平板扫描仪的扫描的术语。
+这是仅支持平板扫描仪或支持带有文档送纸器的平板扫描仪的扫描仪的术语。
 
-<a href="" id="feeder"></a>**送纸器**  
-这是支持只进纸器的扫描仪的术语。
+<a href="" id="feeder"></a>**放**  
+这是仅支持送纸器的扫描仪的术语。
 
-WIA 服务调用**IWiaMiniDrv::drvInitializeWia**响应 WIA 应用程序的调用中的方法**IWiaDevMgr::CreateDevice** （Windows SDK 文档中所述）。 这样的后果是 WIA 服务调用**IWiaMiniDrv::drvInitializeWia**为每个新的客户端连接的方法。
+WIA 服务调用**IWiaMiniDrv：:D rvinitializewia**方法来响应 WIA 应用程序对**IWiaDevMgr：： CreateDevice**的调用（在 Windows SDK 文档中进行了介绍）。 这样做的结果是 WIA 服务为每个新的客户端连接调用**IWiaMiniDrv：:D rvinitializewia**方法。
 
-**IWiaMiniDrv::drvInitializeWia**方法应初始化任何专用的结构并创建驱动程序项树。 驱动程序项树显示了此 WIA 设备支持的所有 WIA 项的布局。 此方法用于创建初始树状结构仅*不*内容 （WIA 属性）。 WIA 服务分别将通过多个调用来填充 WIA 驱动程序项的 WIA 属性[ **IWiaMiniDrv::drvInitItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)方法。
+**IWiaMiniDrv：:D rvinitializewia**方法应初始化任何专用结构，并创建驱动程序项树。 驱动程序项树显示此 WIA 设备支持的所有 WIA 项的布局。 此方法仅用于创建初始树结构，*而不*创建内容（WIA 属性）。 WIA 服务将通过多次调用[**IWiaMiniDrv：:D rvinititemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinititemproperties)方法来分别填充 wia 驱动程序项的 wia 属性。
 
-所有 WIA 设备都有一个根项，它是 WIA 设备的所有项的父级。 若要创建 WIA 设备项目 WIA 驱动程序应调用 WIA 的服务帮助程序函数， [ **wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamdef/nf-wiamdef-wiascreatedrvitem)。
+所有 WIA 设备都有一个根项，它是所有 WIA 设备项的父项。 若要创建 WIA 设备项，WIA 驱动程序应调用 WIA 服务 helper 函数[**wiasCreateDrvItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamdef/nf-wiamdef-wiascreatedrvitem)。
 
 下面的示例演示如何创建 WIA 设备根项。
 
@@ -69,9 +69,9 @@ if(S_OK == hr){
  }
 ```
 
-若要创建 WIA 子项目，直接位于上一示例中创建的根项目使用类似于下面的代码。
+若要创建 WIA 子项，请在上一个示例中创建的根项的紧下方，使用如下所示的代码。
 
-**请注意**  * * * 注意[ **IWiaDrvItem::AddItemToFolder** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-additemtofolder)调用方法以将新创建的子项目添加到根项。
+**请注意**  * * * * 请注意， [**IWiaDrvItem：： AddItemToFolder**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiadrvitem-additemtofolder)方法用于将新创建的子项目添加到根项。
 
  
 
@@ -110,7 +110,7 @@ if(S_OK == hr){
  }
 ```
 
-下面的示例演示的实现**IWiaMiniDrv::drvInitializeWia**方法。
+下面的示例演示**IWiaMiniDrv：:D rvinitializewia**方法的实现。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvInitializeWia(

@@ -4,42 +4,42 @@ description: 指定上下文信息
 ms.assetid: 7133529f-5a6c-4df1-8d03-1c79c0d98fa9
 keywords:
 - 筛选注册表调用 WDK 内核，上下文信息
-- 筛选驱动程序 WDK 内核，上下文信息的注册表
+- 注册表筛选驱动程序 WDK 内核，上下文信息
 - 上下文信息
-- 上下文信息 WDK 筛选器注册表调用
+- 上下文信息 WDK 筛选注册表调用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 381f34994c57aacee3c45c1398054d76196f61db
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 734645b3ec2ca323a79e063e03aac447febaf8f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383014"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838416"
 ---
 # <a name="specifying-context-information"></a>指定上下文信息
 
 
-配置管理器提供多种方式筛选驱动程序，以将上下文信息分配给注册表操作的注册表。 注册表筛选驱动程序可以：
+配置管理器为注册表筛选驱动程序提供了多种方法，用于将上下文信息分配到注册表操作。 注册表筛选驱动程序可以：
 
--   将分配到的上下文信息[ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)例程。
+-   向[*RegistryCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function)例程分配上下文信息。
 
-    当您的驱动程序调用[ **CmRegisterCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallback)或[ **CmRegisterCallbackEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmregistercallbackex)以注册通知注册表操作该驱动程序可以指定驱动程序定义的上下文值。 配置管理器将此上下文值传递给驱动程序的*RegistryCallback*例程的配置管理器调用例程每次。
+    当驱动程序调用[**CmRegisterCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallback)或[**CmRegisterCallbackEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmregistercallbackex)来注册注册操作的通知时，驱动程序可以指定驱动程序定义的上下文值。 每次配置管理器调用例程时，配置管理器都会将此上下文值传递到驱动程序的*RegistryCallback*例程。
 
-    开始使用 Windows XP 支持此上下文信息。
+    从 Windows XP 开始支持此上下文信息。
 
--   将上下文信息分配给注册表操作。
+-   将上下文信息分配到注册表操作。
 
-    驱动程序可以存储特定于操作的上下文中的信息**CallContext**的每个成员**REG\_*XXX*\_密钥\_信息**结构的驱动程序的*RegistryCallback*例程接收。 如果您的驱动程序收到预通知和注册表操作的后通知[ **REG\_POST\_操作\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_post_operation_information)结构包含适当的预先通知结构的指针。 当*RegistryCallback*例程接收**REG\_POST\_操作\_信息**结构， **CallContext**该结构的成员匹配**CallContext**预通知结构中的成员。
+    驱动程序可以在每个**REG\_*XXX*** 的**CallContext**成员中存储特定于操作的上下文信息\_密钥\_驱动程序的*RegistryCallback*例程接收的信息结构。 如果你的驱动程序接收到注册操作的预先通知和后通知，则[**REG\_post\_操作\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_post_operation_information)结构包含指向合适的通知结构的指针。 当*RegistryCallback*例程接收到**REG\_POST\_操作\_信息**结构时，该结构的**CallContext**成员将与前通知的**CallContext**成员匹配构造.
 
-    **CallContext**这些结构的成员是从 Windows Vista 开始提供。
+    从 Windows Vista 开始提供这些结构的**CallContext**成员。
 
--   分配到注册表项对象的上下文信息。
+-   将上下文信息分配给注册表项对象。
 
-    一个[ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)例程可以将上下文信息分配给特定的注册表密钥对象。 如果*RegistryCallback*例程调用[ **CmSetCallbackObjectContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-cmsetcallbackobjectcontext)以将上下文信息分配给键对象，后续的预先通知和在对象上的所有操作后通知将包括中的上下文值**ObjectContext**的每个成员**REG\_*XXX* \_密钥\_信息**结构。 如果驱动程序提供了多个*RegistryCallback*例程，该驱动程序可以分配不同的上下文信息为每个例程，用于单个注册表密钥对象。
+    [*RegistryCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function)例程可将上下文信息分配给特定的注册表项对象。 如果*RegistryCallback*例程调用[**CmSetCallbackObjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-cmsetcallbackobjectcontext)来将上下文信息分配给某个密钥对象，则针对该对象的所有操作的后续通知和后通知将包含上下文值每个 REG\_的**ObjectContext**成员 **\_密钥\_信息** 结构。 如果驱动程序提供多个*RegistryCallback*例程，则驱动程序可以为一个注册表项对象为每个例程分配不同的上下文信息。
 
-    如果驱动程序已调用**CmSetCallbackObjectContext**，在驱动程序*RegistryCallback*例程将收到**RegNtCallbackObjectContextCleanup**通知后密钥对象的句柄已关闭。 在响应此通知，该例程应释放它分配给对象的上下文的资源。 当*Argument1*参数*RegistryCallback*例程**RegNtCallbackObjectContextCleanup**，则*Argument2*参数是指向指针[ **REG\_回调\_上下文\_清理\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_callback_context_cleanup_information)结构，其中包含指向的指针上下文。
+    如果驱动程序调用了**CmSetCallbackObjectContext**，则在关闭密钥对象的句柄之后，驱动程序的*RegistryCallback*例程将收到**RegNtCallbackObjectContextCleanup**通知。 为响应此通知，例程应释放为对象的上下文分配的所有资源。 当*RegistryCallback*例程的*Argument1*参数为**RegNtCallbackObjectContextCleanup**时， *Argument2*参数是指向[**REG\_回调\_上下文的指针\_清理\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_callback_context_cleanup_information)包含指向上下文的指针的信息结构。
 
-    **CmSetCallbackObjectContext**例程并**RegNtCallbackObjectContextCleanup**通知是从 Windows Vista 开始提供。
+    从 Windows Vista 开始提供**CmSetCallbackObjectContext**例程和**RegNtCallbackObjectContextCleanup**通知。
 
  
 

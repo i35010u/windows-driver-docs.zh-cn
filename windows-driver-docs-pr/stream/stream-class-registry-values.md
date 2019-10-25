@@ -3,18 +3,18 @@ title: 流类注册表值
 description: 流类注册表值
 ms.assetid: a6800f53-4d55-4a28-839b-47f0cecc17bf
 keywords:
-- Stream.sys 类驱动程序 WDK Windows 2000 内核注册表
-- 流式处理微型驱动程序 WDK Windows 2000 内核注册表
-- 微型驱动程序 WDK Windows 2000 内核流式处理、 注册表
+- Stream .sys 类驱动程序 WDK Windows 2000 内核，注册表
+- 流式处理微型驱动程序 WDK Windows 2000 内核，注册表
+- 微型驱动程序 WDK Windows 2000 内核流式处理，注册表
 - 注册表 WDK 流式处理微型驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0f71193b94d7c91e83ebf8d5529959f18b11695
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7166f776544d495aecae084703fc51317819eb50
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377811"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837686"
 ---
 # <a name="stream-class-registry-values"></a>流类注册表值
 
@@ -22,28 +22,28 @@ ms.locfileid: "67377811"
 
 
 
-若要安装下的微型驱动程序*Stream.sys*，供应商必须提供符合的特定于设备的 INF 文件[泛型 INF 文件要求](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。 在此文件中，流类下运行的微型驱动程序可以设置中特定于设备的特殊的注册表值[ **AddReg** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)部分。 这些注册表项提供作为二进制指示符： 将其设置为十六进制值 01 以启用功能。
+若要在微型驱动程序下安装一个 *，供应*商必须提供符合[一般 INF 文件要求](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)的特定于设备的 INF 文件。 在此文件中，在 stream 类下运行的微型驱动程序可以在设备特定的[**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)节中设置特殊的注册表值。 这些注册表项作为二进制指示器：将其设置为十六进制值01以启用该功能。
 
 Stream 类微型驱动程序可以使用以下注册表值：
 
 <a href="" id="pageoutwhenunopened"></a>**PageOutWhenUnopened**  
-此注册表项均表示未打开时的设备驱动程序应出页。 如果设备不能出页，在未打开时，此功能处于关闭状态的整个驱动程序。
+此注册表项指示设备驱动程序应在打开时分页。 如果在未打开时不能将设备取出，则会关闭整个驱动程序的此功能。
 
 <a href="" id="powerdownwhenunopened"></a>**PowerDownWhenUnopened**  
-此注册表项均表示设备未打开时关闭。
+此注册表项指示设备在打开时应关闭电源。
 
 <a href="" id="driverusesswenumtoload"></a>**DriverUsesSWEnumToLoad**  
-仅限软件的设备驱动程序应使用此注册表字符串以通知流类的设备驱动程序需要不同*AddRef/DecRef*比硬件设备驱动程序处理。
+仅软件设备驱动程序应使用此注册表字符串通知 stream 类：设备驱动程序需要不同于硬件设备驱动程序的*AddRef/DecRef*处理。
 
-在 Windows 9 上支持以下标志 x，但在基于 NT 的操作系统中已过时：
+以下标志在 Windows 9x 上受支持，但在基于 NT 的操作系统中已过时：
 
 <a href="" id="dontsuspendifstreamsarerunning"></a>**DontSuspendIfStreamsAreRunning**  
-此注册表变量是在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。 （截至此版本中，DirectShow 侦听 power 查询，并且当它收到低功耗查询中的所有流都加入暂停。）应用程序仍可以通知正在使用它通过调用系统**SetThreadExecutionState**。 此例程是 Microsoft Windows SDK 文档中所述。 或者，可以使用驱动程序[ **PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)。
+此注册表变量在 Windows 2000 和更高版本的基于 NT 的操作系统中已过时。 （在此版本中，DirectShow 会侦听 power query，并使所有流在收到低功耗查询时暂停。）应用程序仍可通过调用**SetThreadExecutionState**来通知系统正在使用它。 此例程在 Microsoft Windows SDK 文档中进行了介绍。 或者，驱动程序可以使用[**PoSetSystemState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)。
 
 <a href="" id="oktohibernate"></a>**OkToHibernate**  
-此注册表字符串值仅对于驱动程序运行于 Windows 98 上有效。 在基于 NT 的操作系统中不使用它。
+此注册表字符串仅对 Windows 98 上运行的驱动程序有效。 它不在基于 NT 的操作系统中使用。
 
-下面是提取*Usbintel.inf*演示如何设置这些注册表值的文件。 此文件的 UsbIntel 示例中，现已推出的驱动程序开发工具包 (DDK) 和适用于 Windows XP 到 Windows 7 (生成 7600) 的 Windows Driver Kit (WDK)。
+下面是从*Usbintel*文件中提取的文件，该文件演示如何设置这些注册表值。 此文件是 UsbIntel 示例的一部分，适用于 Windows XP 的驱动程序开发工具包（DDK）和 Windows 驱动程序工具包（WDK）（版本7600）。
 
 ```INF
 [Intel.USBDCam]

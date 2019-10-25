@@ -1,40 +1,40 @@
 ---
 title: OID_WWAN_PREFERRED_PROVIDERS
-description: OID_WWAN_PREFERRED_PROVIDERS 返回信息的首选提供程序的基于 GSM 的设备的列表。
+description: OID_WWAN_PREFERRED_PROVIDERS 返回有关基于 GSM 的设备的首选提供程序列表的信息。
 ms.assetid: fa70f1ac-5b14-44f8-a2c4-d2163fe81c5a
 ms.date: 08/08/2017
-keywords: -OID_WWAN_PREFERRED_PROVIDERS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_PREFERRED_PROVIDERS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: fa078036ff9709533f800801e0f42e03bf9aef0f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4bafac81046a5e112ef8f7814d645b8d1f99de4b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383213"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843809"
 ---
-# <a name="oidwwanpreferredproviders"></a>OID\_WWAN\_首选\_提供程序
+# <a name="oid_wwan_preferred_providers"></a>OID\_WWAN\_首选\_提供程序
 
 
-OID\_WWAN\_首选\_提供程序返回的列表信息的首选提供程序的基于 GSM 的设备。 基于 CDMA 的设备的微型端口驱动程序不需要支持此 OID。
+OID\_WWAN\_首选\_提供程序返回有关基于 GSM 的设备的首选提供程序列表的信息。 基于 CDMA 的设备的微型端口驱动程序无需支持此 OID。
 
-微型端口驱动程序必须处理集和查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PREFERRED\_提供程序**](ndis-status-wwan-preferred-providers.md)状态通知包含[ **NDIS\_WWAN\_首选\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)结构，以便提供而不考虑完成设置首选提供程序列表 (PPL) 有关的信息或查询请求。
+微型端口驱动程序必须异步处理集和查询请求，最初返回 NDIS\_状态\_指示\_需要原始请求，稍后发送[**ndis\_状态\_WWAN\_首选\_提供程序**](ndis-status-wwan-preferred-providers.md)状态通知，其中包含一个[**NDIS\_WWAN\_首选\_提供**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)程序结构，以便提供有关首选提供程序列表（PPL）的信息，而不考虑完成的集合或查询请求。
 
 <a name="remarks"></a>备注
 -------
 
 有关使用此 OID 的详细信息，请参阅[WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)。
 
-微型端口驱动程序可以访问用户识别模块 （SIM 卡） 当处理查询请求，但不是应访问提供程序网络。
+小型端口驱动程序可以在处理查询请求时访问订阅服务器标识模块（SIM 卡），但不应访问提供程序网络。
 
-微型端口驱动程序可以访问用户识别模块 （SIM 卡） 或提供程序网络，处理时设置的请求。
+当处理设置请求时，微型端口驱动程序可以访问订阅服务器标识模块（SIM 卡）或提供程序网络。
 
-处理 OID 时\_WWAN\_PREFERRED\_提供程序，微型端口驱动程序可能会将设置仅 WWAN\_提供程序\_状态\_首选或 WWAN\_提供程序\_状态\_禁止访问标志来标记的列表项。 请注意，已禁止的提供程序可能不会显示在列表中为基于 GSM 的设备。
+当处理 OID\_WWAN\_首选\_提供程序时，微型端口驱动程序只能将 WWAN\_提供程序设置\_\_\_\_禁止标志来标记列表的状态\_日志. 请注意，对于基于 GSM 的设备，禁止的访问接口可能不会出现在列表中。
 
-应设置微型端口 driverrs **PreferredListHeader.ElementType**成员添加到*WwanStructProvider*。 微型端口驱动程序应设置**PreferredListHeader.ElementCount**成员为 0 时响应 OID\_WWAN\_首选\_提供程序将设置请求。
+微型端口 driverrs 应将**PreferredListHeader**成员设置为*WwanStructProvider*。 \_WWAN\_首选\_提供程序设置请求时，微型端口驱动程序应将 Elementcount 多于成员设置为 0 **。**
 
-是否可以覆盖在设备上的 PPL 或未设置时处理请求取决于设备功能、 移动电话技术，和/或网络提供程序的策略。
+处理设置请求时是否可以覆盖设备上的 PPL 取决于设备功能、移动电话技术和/或网络提供商的策略。
 
-微型端口驱动程序应返回 NDIS\_状态\_不\_如果它们不支持返回或设置 PPL 支持。
+如果不支持返回或设置 PPL，微型端口驱动程序应返回 NDIS\_状态\_不\_支持。
 
 <a name="requirements"></a>要求
 ------------
@@ -46,22 +46,22 @@ OID\_WWAN\_首选\_提供程序返回的列表信息的首选提供程序的基�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_PREFERRED\_PROVIDERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)
+[**NDIS\_WWAN\_首选\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_providers)
 
-[**NDIS\_STATUS\_WWAN\_PREFERRED\_PROVIDERS**](ndis-status-wwan-preferred-providers.md)
+[ **\_WWAN\_首选\_提供程序的 NDIS\_状态**](ndis-status-wwan-preferred-providers.md)
 
 [WWAN 提供程序操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provider-operations)
 

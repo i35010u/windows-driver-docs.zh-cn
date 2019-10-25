@@ -4,115 +4,115 @@ description: 克隆数据包流量
 ms.assetid: 6BAE348D-B5BA-4B74-8D9B-79B146427D8C
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2165c56a5a2e79d1f60c6ee16e2bdf7577921dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bab4008cac345e997d8d50d6b8fc7619c78e358d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384729"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835164"
 ---
 # <a name="cloning-packet-traffic"></a>克隆数据包流量
 
 
-本主题介绍 HYPER-V 可扩展如何切换扩展克隆或重复，数据包并将其注入到可扩展交换机数据路径。 克隆数据包的详细信息，请参阅[克隆 NET\_缓冲区\_列表结构](cloned-net-buffer-list-structures.md)。
+本主题介绍 Hyper-v 可扩展交换机扩展如何克隆或复制数据包，以及如何将它们注入可扩展交换机数据路径。 有关克隆数据包的详细信息，请参阅[克隆的 NET\_BUFFER\_列表结构](cloned-net-buffer-list-structures.md)。
 
-**请注意**此页面假定您熟悉的信息和中的关系图[概述的 HYPER-V 可扩展交换机](overview-of-the-hyper-v-extensible-switch.md)并[混合转发](hybrid-forwarding.md)。
+**注意** 本页假设你熟悉[Hyper-v 可扩展交换机](overview-of-the-hyper-v-extensible-switch.md)和[混合转发](hybrid-forwarding.md)概述中的信息和关系图。
 
-**请注意**可扩展交换机接口，在 NDIS 筛选器驱动程序被称为*可扩展交换机扩展*驱动程序堆栈称为*可扩展交换机驱动程序堆栈*。 有关扩展的详细信息，请参阅[HYPER-V 可扩展交换机扩展](hyper-v-extensible-switch-extensions.md)。
+**注意** 在可扩展交换机接口中，NDIS 筛选器驱动程序称为*可扩展交换机扩展*，驱动程序堆栈称为*可扩展交换机驱动程序堆栈*。 有关扩展的详细信息，请参阅[Hyper-v 可扩展交换机扩展](hyper-v-extensible-switch-extensions.md)。
 
-筛选和转发扩展的可扩展交换机可以遵循以下准则将克隆的数据包注入到可扩展交换机入口或出口数据路径：
+可扩展的交换机筛选和转发扩展可遵循以下准则，将克隆的数据包注入到可扩展的交换机入口或出口数据路径：
 
--   扩展必须首先分配[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)克隆数据包的结构。 扩展必须然后数据包数据将从复制的原始数据包到克隆的数据包。 如何克隆数据包的详细信息，请参阅[派生的 NET\_缓冲区\_列表结构](derived-net-buffer-list-structures.md)。
+-   扩展必须首先为克隆的数据包分配一个[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构。 然后，该扩展必须将原始数据包中的数据包数据复制到克隆的数据包中。 有关如何克隆数据包的详细信息，请参阅[派生的 NET\_BUFFER\_列表结构](derived-net-buffer-list-structures.md)。
 
--   扩展分配后[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)结构，它必须调用[ *AllocateNetBufferListForwardingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)处理程序函数的数据包分配可扩展交换机转发上下文。
+-   扩展\_列表结构分配了[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)后，它必须调用[*AllocateNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)处理程序函数以为数据包分配可扩展的 switch 转发上下文。
 
-    转发上下文驻留在数据包的带外 (OOB) 数据。 它包含转发的数据包，例如其源端口和数组的一个或多个目标端口的信息。
+    转发上下文位于数据包的带外（OOB）数据中。 它包含数据包的转发信息，如其源端口和一个或多个目标端口的数组。
 
-    有关转发上下文的详细信息，请参阅[HYPER-V 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
+    有关转发上下文的详细信息，请参阅[Hyper-v 可扩展交换机转发上下文](hyper-v-extensible-switch-forwarding-context.md)。
 
--   扩展必须复制 OOB 数据，包括现有的源端口，从通过调用克隆的数据包的原始数据包[ *CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)。 如果该扩展计划要注入的入口数据路径的数据包，它还需要从原始数据包的 OOB 数据复制的目标端口。
+-   此扩展必须通过调用[*CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)将 OOB 数据（包括现有源端口）从原始数据包复制到克隆的数据包。 如果扩展插件计划将数据包注入入入口数据路径，则它还必须从原始数据包的 OOB 数据复制目标端口。
 
-    它在复制时的 OOB 数据，该扩展必须遵循以下准则：
+    复制 OOB 数据时，扩展必须遵循以下准则：
 
-    -   如果筛选扩展计划要注入的入口数据路径的数据包，它必须调用[ *CopyNetBufferListInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)与的 NDIS\_开关\_复制\_NBL\_INFO\_标志\_保留\_未指定目标标志。 这将导致原始数据包的目标端口不会复制到克隆的数据包。 时筛选扩展会将此数据包注入到入口数据路径，则目标端口将添加到数据包中的基础的转发扩展 （如果启用驱动程序堆栈中） 或可扩展交换机的微型端口边缘。
+    -   如果筛选扩展插件计划将数据包注入入入口数据路径，则它必须通过 NDIS\_交换机调用[*CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)\_COPY\_NBL\_信息\_标志\_保留\_目标未指定标志。 这会导致原始数据包的目标端口不会复制到克隆的数据包中。 当筛选扩展将此数据包注入到入口数据路径时，目标端口将被基础转发扩展（如果在驱动程序堆栈中启用）或可扩展交换机的微型端口边缘添加到数据包中。
 
-    -   如果筛选扩展计划要将数据包注入到出口数据路径，它必须调用[ *CopyNetBufferListInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)与的 NDIS\_开关\_复制\_NBL\_INFO\_标志\_保留\_目标指定的标志。 这将导致原始数据包的目标端口，以复制到克隆的数据包。
+    -   如果筛选扩展插件计划将数据包注入传出数据路径，则它必须通过 NDIS\_交换机调用[*CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)\_COPY\_NBL\_信息\_标志\_保留\_目标指定的标志。 这会导致原始数据包的目标端口被复制到克隆的数据包中。
 
--   如果筛选扩展是在克隆或复制的包将从出口数据路径中获取了，它可以更改数据包的目标端口后，它调用[ *CopyNetBufferListInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)与NDIS\_交换机\_副本\_NBL\_信息\_标志\_保留\_目标指定的标志。 此过程的详细信息，请参阅[修改数据包的可扩展交换机的源端口数据](modifying-a-packet-s-extensible-switch-source-port-data.md)。
+-   如果筛选扩展正在克隆或复制从出口数据路径获取的数据包，则它可以在使用 NDIS\_SWITCH\_COPY\_[*NBL 时更改*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)数据包的目标端口。\_信息\_标志\_保留指定的\_目标标志。 有关此过程的详细信息，请参阅[修改数据包的可扩展交换机源端口数据](modifying-a-packet-s-extensible-switch-source-port-data.md)。
 
--   如果转发扩展是在克隆或复制的包将从传入数据路径中获取了，它必须先将数据包注入的入口数据路径添加新数据包的目标端口。 此过程的详细信息，请参阅[添加可扩展交换机目标将数据转到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
+-   如果转发扩展正在克隆或复制从入口数据路径获取的数据包，则它必须为数据包添加新的目标端口，然后才能将数据包注入到入口数据路径。 有关此过程的详细信息，请参阅[将可扩展交换机目标端口数据添加到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
 
--   扩展调用后[ *CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)，数据包将被分配原始数据包中所包含的相同源端口信息。
+-   扩展调用[*CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)后，将为数据包分配原始数据包中包含的相同源端口信息。
 
-    该扩展可以调用[ *SetNetBufferListSource* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)更改数据包的带外 (OOB) 数据中的源端口信息。
+    扩展可以调用[*SetNetBufferListSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)来更改数据包的带外（OOB）数据中的源端口信息。
 
-    该扩展可能想要视为源自特定端口的数据包。 这样，该端口将应用于该数据包的策略。 扩展调用[ *SetNetBufferListSource* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)更改数据包的源端口。
+    扩展可能需要将数据包视为来自特定端口。 这允许将该端口的策略应用到该数据包。 该扩展调用[*SetNetBufferListSource*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_source)来更改数据包的源端口。
 
-    但是，可能有该扩展可能会的想要分配到的数据包的源端口标识符**NDIS\_交换机\_默认\_端口\_ID**。 例如，该扩展可能想要将源端口标识符设置为**NDIS\_交换机\_默认\_端口\_ID**为发送到设备的专有控制数据包外部网络。
+    但在某些情况下，扩展可能需要将数据包的源端口标识符分配给**NDIS\_交换机\_默认\_端口\_ID**。 例如，扩展可能需要将源端口标识符设置为**NDIS\_交换机\_默认\_端口\_ID**发送到外部网络上的设备的专用控制数据包。
 
--   在标准的 NDIS 数据路径中，非可扩展交换机 OOB 数据通常具有不同的值，具体取决于是否指示为发送或接收数据包。 例如， [ **NDIS\_IPSEC\_卸载\_V2\_标头\_NET\_缓冲区\_列表\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info) OOB 数据是发送和接收 – 特定结构的联合
+-   在标准 NDIS 数据路径中，非可扩展交换机 OOB 数据通常具有不同的值，具体取决于数据包是否被指示为发送或接收。 例如， [**NDIS\_IPSEC\_卸载\_V2\_标头\_NET\_BUFFER\_LIST\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_ipsec_offload_v2_header_net_buffer_list_info) OOB 数据是发送和接收特定结构的联合
 
-    在可扩展交换机数据路径中，所有数据包移动到每个扩展驱动程序堆栈上为同时发送和接收。 因此，非可扩展交换机 OOB 数据中的数据包[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构将在发送或接收的格式通过驱动程序堆栈的流。
+    在可扩展交换机数据路径中，所有数据包都将通过扩展驱动程序堆栈，同时作为发送和接收。 因此，数据包的[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)中的非可扩展交换机 OOB 数据\_列表结构将是通过驱动程序堆栈的流持续时间内的发送或接收格式。
 
-    此 OOB 数据的格式取决于源可扩展交换机端口从该数据包到达可扩展交换机。 如果源端口连接到外部网络适配器，非可扩展交换机 OOB 数据将为接收格式。 对于其他端口，此 OOB 数据将发送格式。
+    此 OOB 数据的格式取决于源可扩展交换机端口，数据包从该端口传入可扩展交换机。 如果源端口已连接到外部网络适配器，则非可扩展交换机 OOB 数据将采用接收格式。 对于其他端口，此 OOB 数据将为发送格式。
 
-    源端口信息存储在[ **NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)数据包的 OOB 数据中联合[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 该扩展使用获取数据[ **NET\_缓冲区\_列表\_开关\_转发\_详细**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏。
+    源端口信息存储在[**NDIS\_交换机中\_转发\_详细信息\_net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)\_的 OOB 数据\_[**缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)构造. 扩展通过使用[**NET\_缓冲区\_列表获取数据\_开关\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏。
 
-    **请注意**如果该扩展克隆的数据包[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构，它必须考虑非可扩展交换机 OOB 数据时，如果它添加或修改 OOB 数据。 该扩展可以调用[ *CopyNetBufferListInfo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)将 OOB 的所有数据源数据包从复制到克隆的数据包。 此函数将维护 OOB 发送或接收时将数据复制到数据包格式。
-
-
-
--   当扩展克隆一个数据包时，克隆的数据包数据位于本地，或*受信任*，父操作系统的 HYPER-V 父分区中的内存。 此内存不访问的子分区。 因此，它被视为"安全"未同步的更新中由该分区中运行来宾操作系统。
-
-    克隆的原始数据包后，必须获取该扩展[ **NDIS\_交换机\_转发\_详细信息\_NET\_缓冲区\_列表\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info) union 中通过使用克隆的数据包[ **NET\_缓冲区\_列表\_交换机\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏。 扩展必须设置**IsPacketDataSafe**成员为 TRUE。 这将指定的所有数据包数据位于受信任的内存中。
-
-筛选和转发扩展必须遵循以下准则，以便将克隆的数据包注入到入口或出口数据路径：
-
--   扩展必须调用[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)克隆的数据包注入的入口数据路径。 扩展必须设置*SendFlags*使用相应的可扩展交换机标志设置的参数。 有关详细信息，有关这些标志设置，请参阅[HYPER-V 可扩展交换机发送和接收标志](hyper-v-extensible-switch-send-and-receive-flags.md)。
-
-    NDIS 时调用的扩展[ *FilterSendNetBufferListsComplete* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_send_net_buffer_lists_complete)函数以完成克隆数据包在发送请求，则扩展必须调用[ *FreeNetBufferListForwardingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context)以释放已分配的转发上下文。 扩展必须执行此操作之前它释放或重用[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)数据包的结构。
-
-    **请注意**如果修改的数据包，它从出口数据路径获取的数据包数据或源端口扩展必须将克隆的数据包注入到入口数据路径。 它必须将克隆的数据包注入到入口数据路径，如果不保留数据包的目标端口。
+    **注意** 如果扩展克隆了包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构，则在添加或修改 oob 数据时，必须考虑到不可扩展的 switch OOB 数据。 此扩展可以调用[*CopyNetBufferListInfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_copy_net_buffer_list_info)将所有 OOB 数据从源数据包复制到克隆的数据包。 将数据复制到数据包时，此函数将维护 OOB 发送或接收格式。
 
 
 
--   扩展必须调用[ **NdisFIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatereceivenetbufferlists)克隆的数据包注入出口数据路径。 扩展必须设置*ReceiveFlags*使用相应的可扩展交换机标志设置的参数。
+-   当扩展克隆数据包时，克隆的数据包数据位于 Hyper-v 父分区的父操作系统中的 "本地" 或 "*受信任*的内存" 中。 子分区无法访问此内存。 因此，在该分区中运行的来宾操作系统不同步更新将其视为 "安全"。
 
-    NDIS 时调用的扩展[ *FilterReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_return_net_buffer_lists)函数来完成克隆数据包的接收请求，则扩展必须调用[ *FreeNetBufferListForwardingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context)它释放或重新使用之前[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)结构数据包。
+    克隆原始数据包后，扩展必须获取[**NDIS\_交换机\_转发\_详细信息\_net\_BUFFER\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)在克隆的数据包中使用[**net\_缓冲区\_列表\_交换机\_转发\_详细信息**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏。 扩展必须将**IsPacketDataSafe**成员设置为 TRUE。 这指定所有数据包数据都位于受信任的内存中。
 
-    **请注意**转发扩展调用之前[ **NdisFIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfindicatereceivenetbufferlists)，它必须确定克隆的数据包的目标端口和此数据添加到的数据包OOB 数据。
+筛选和转发扩展必须遵循以下准则，将克隆的数据包注入入入口或传出数据路径：
+
+-   扩展必须调用[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists) ，以将克隆的数据包注入到入口数据路径。 扩展必须设置具有适当的可扩展开关标志设置的*SendFlags*参数。 有关这些标志设置的详细信息，请参阅[Hyper-v 可扩展交换机发送和接收标志](hyper-v-extensible-switch-send-and-receive-flags.md)。
+
+    当 NDIS 调用扩展的[*FilterSendNetBufferListsComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists_complete)函数来完成克隆数据包的发送请求时，扩展必须调用[*FreeNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context)以释放已分配的转发上下文。 扩展必须在释放之前执行此操作，或重用包的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构。
+
+    **注意** 如果该扩展修改了从出口数据路径获取的数据包数据或源端口，则该扩展必须将克隆的数据包注入到入口数据路径中。 如果未保留数据包的目标端口，还必须将克隆的数据包注入到入口数据路径中。
 
 
 
--   如果该扩展克隆的数据包[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)结构，它必须保留的原始数据包的所有权**NET\_缓冲区\_列表**结构直到克隆的数据包的发送或接收请求已完成。 扩展插件必须使用**ParentNetBufferList**克隆数据包的成员**NET\_缓冲区\_列表**要链接到原始数据包的结构**NET\_缓冲区\_列表**结构。
+-   扩展必须调用[**NdisFIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatereceivenetbufferlists) ，以将克隆的数据包注入传出数据路径。 扩展必须设置具有适当的可扩展开关标志设置的*ReceiveFlags*参数。
 
-    **请注意**在 NDIS 6.30 (Windows Server 2012)，可以使用该扩展**ParentNetBufferList**成员链接到原始数据包，但它不需要执行此操作。 使用 NDIS 6.40 (Windows Server 2012 R2) 及更高版本，需要扩展**ParentNetBufferList**成员链接到原始数据包。
+    当 NDIS 调用扩展的[*FilterReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_return_net_buffer_lists)函数来完成克隆数据包的接收请求时，扩展必须先调用[*FreeNetBufferListForwardingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_free_net_buffer_list_forwarding_context) ，然后才能释放或重新调用[**NET\_缓冲区数据包\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构。
 
-    一旦克隆的数据包的发送或接收请求已完成，扩展插件必须完成发送或接收的原始数据包的请求。
+    **注意** 在转发扩展调用[**NdisFIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatereceivenetbufferlists)之前，它必须已确定克隆的数据包的目标端口，并将此数据添加到数据包的 OOB 数据中。
 
-    **请注意**如果扩展已克隆的数据包[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list_context)结构，它可以完成此次发送或接收后它的原始数据包的请求克隆。
 
--   如果该扩展克隆一个数据包，它可以完成此次发送或接收原始数据包的请求，只要进行克隆。
 
-如果转发或筛选扩展获取出口数据路径中的数据包，则它无法插入该数据路径中的数据包的克隆的版本，如果扩展修改数据包数据，或更改源端口。 但是，扩展可以注入这些数据包的入口数据路径。 这允许将数据包转发和正确筛选通过可扩展交换机数据路径。
+-   如果扩展克隆了包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构，则在克隆的发送或接收请求完成之前，必须保留原始数据包的**网络\_缓冲区的所有权\_列表**结构。 扩展必须使用克隆数据包的**net\_缓冲区\_列表**结构的**ParentNetBufferList**成员链接到原始数据包的**网络\_缓冲区\_列表**结构。
 
-**请注意**筛选扩展可以仅将注入克隆的数据包的入口数据路径如果数据包的目标端口不会保留。
+    **注意** 在 NDIS 6.30 （Windows Server 2012）中，扩展可以使用**ParentNetBufferList**成员链接到原始数据包，但这不是必需的。 在 NDIS 6.40 （Windows Server 2012 R2）及更高版本中，需要使用**ParentNetBufferList**成员链接到原始数据包。
 
-例如，假定在可扩展交换机出口数据路径中已获取多个目标端口的数据包。 如果一个目标端口需要特殊处理，如数据封装，转发或筛选扩展会处理此通过执行以下步骤：
+    克隆的数据包的发送或接收请求完成后，该扩展必须完成原始数据包的发送或接收请求。
 
-1.  排除的数据包发送到需要特殊处理的端口。 通过设置的扩展插件实现这**IsExcluded**成员的目标端口[ **NDIS\_开关\_端口\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_switch_port_destination)结构的值。 此过程的详细信息，请参阅[可扩展交换机目标端口不包括数据包传递](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
+    **注意** 如果扩展已将数据包的[**网络\_缓冲区克隆\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list_context)结构，则它可以在克隆后完成原始数据包的发送或接收请求。
 
-2.  克隆的原始数据包并执行所需的数据包数据处理。
+-   如果扩展克隆了数据包，则它可以在克隆后立即完成原始数据包的发送或接收请求。
 
-    **请注意**筛选扩展不能将克隆的数据包的目标端口添加。 此数据将由转发扩展或可扩展交换机的微型端口边缘稍后添加。
+如果转发或筛选扩展在出口数据路径中获取了数据包，并且该扩展修改了数据包数据或更改了源端口，则无法在此数据路径中注入数据包的克隆版本。 但是，该扩展可以将这些数据包注入到入口数据路径中。 这样，便可以通过可扩展交换机数据路径正确转发和筛选数据包。
 
-3.  通过调用转发出口数据路径上的原始数据包[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)。
+**注意** 如果未保留数据包的目标端口，筛选扩展只能将克隆的数据包注入到入口数据路径中。
 
-4.  通过调用注入的入口数据路径上的克隆的数据包[ **NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)。
+例如，假设有多个目标端口的数据包是在可扩展交换机出口数据路径中获得的。 如果一个目标端口需要特殊处理（如数据封装），则转发或筛选扩展会按照以下步骤处理此操作：
 
-有关可扩展交换机入口和出口数据路径的详细信息，请参阅[HYPER-V 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
+1.  将数据包传递到需要特殊处理的端口。 扩展通过将目标**端口的** [**NDIS\_SWITCH\_端口\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构设置为一个值，来实现此目的。 有关此过程的详细信息，请参阅[排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
-**请注意**捕获扩展不能克隆数据包流量。 但是，它们可以源自数据包流量。 有关详细信息，请参阅[源自数据包流量](originating-packet-traffic.md)。
+2.  克隆原始数据包，并执行所需的数据包数据处理。
+
+    **注意** 筛选扩展不得为克隆的数据包添加目标端口。 此数据稍后将由可扩展交换机的转发扩展或微型端口边缘添加。
+
+3.  通过调用[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)，将源包转发到出口数据路径。
+
+4.  通过调用[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)，将克隆的数据包注入到入口数据路径。
+
+有关可扩展交换机入口和出口数据路径的详细信息，请参阅[Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
+
+**注意** 捕获扩展无法克隆数据包通信。 但是，它们可能会产生数据包流量。 有关详细信息，请参阅[发起数据包流量](originating-packet-traffic.md)。
 
 
 

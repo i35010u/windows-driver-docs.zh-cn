@@ -6,39 +6,39 @@ keywords:
 - 数据包指示 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bac82e6838c9578aca4b08635714137ffd453ade
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25d060b728cab3c98eff66f6ab4a5f2fe5e2a8fb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376424"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843714"
 ---
 # <a name="packet-indication-format"></a>数据包指示格式
 
 
-网络数据作为 NDIS net 缓冲区列表所示 WFP ([**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list))。 **下一步**的成员**NET\_缓冲区\_列表**结构可用于描述*链*的 net 缓冲区列表。 WFP 仅指示到标注的单个 net 缓冲区列表 (即，netBufferList-&gt;接下来 = = **NULL**)，但以下情况除外：
+网络数据在 WFP 中以 NDIS 网络缓冲区列表（[**net\_buffer\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)）表示。 **Net\_缓冲区**的**下一个**成员\_列表结构可用于描述网络缓冲区列表*链*。 WFP 仅指示&gt;netBufferList 的单个网络缓冲区列表（即，下一次 = = **NULL**），但以下情况除外：
 
--   WFP 可以从 Stream 层到标注指示最终缓冲区列表链。
+-   WFP 可以指示从流层到标注的网络缓冲区列表链。
 
--   WFP 指示最终缓冲区列表链接至标注时将调出的前向路径中的 IP 数据包片段组分为两类。 链中的每个网络缓冲区列表描述了单个片段。
+-   当向标注的正向路径中的 IP 数据包片段组分类时，WFP 指示将网络缓冲区列表链接到标注。 链中的每个网络缓冲区列表都描述了一个片段。
 
-尽管 net 缓冲区列表可以描述整个数据包时，为不同类型的层，WFP net 缓冲区列表向指示标注在不同的偏移量从 IP 标头的开头。 例如，在传入的网络层，则 net 缓冲区列表开始执行后 IP 标头，在传入的传输层，net 缓冲区列表后开始传输标头。 IP 和传输标头始终由第一个描述[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer) net 缓冲区列表中的结构。
+尽管网络缓冲区列表可以描述一个完整的数据包，但对于不同的层类型，WFP 会以不同于 IP 标头开头的偏移量指示网络缓冲区列表。 例如，在传入网络层，net buffer 列表在 IP 标头后开始，而在传入传输层，net buffer 列表在传输标头之后启动。 IP 和传输标头始终由网络缓冲区列表内的第一个[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构描述。
 
-Net 缓冲区列表中的偏移通过使用指定给标注**ipHeaderSize**并**transportHeaderSize**的成员[ **FWPS\_传入\_元数据\_VALUES0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_incoming_metadata_values0_)结构。 调出可以使用 NDIS 函数[ **NdisRetreatNetBufferDataStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisretreatnetbufferdatastart)并[ **NdisAdvanceNetBufferDataStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisadvancenetbufferdatastart)调整列出了指示最终缓冲区的偏移量。 但是在这种情况下，标注必须撤销的偏移量的调整之前它将返回[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)函数。
+通过使用[**FWPS\_传入\_元数据\_VALUES0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_incoming_metadata_values0_)结构的的**ipHeaderSize**和**transportHeaderSize**成员，将网络缓冲区列表的偏移量指定为标注。 标注可以使用 NDIS 函数[**NdisRetreatNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferdatastart)和[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferdatastart)调整所指示的网络缓冲区列表的偏移量。 但在这种情况下，标注必须先撤消偏移调整，然后才能从[*classifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)函数返回。
 
-在调用*classifyFn*传出数据的函数[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)可以包含多个[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)其中每个描述的 IP 数据包的结构。 如果 net 缓冲区列表中的某些数据包 （例如，网络缓冲区） 可以接受的但其他人不会标注驱动程序必须执行以下操作：
+在对传出数据的*classifyFn*函数调用中，[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)可以包含多个[**net\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构，其中每个结构都描述了一个 IP 数据包。 如果网络缓冲区列表中的某些数据包（例如，net buffer）是可接受的，但其他数据包不是，则标注驱动程序必须执行以下操作：
 
-1.  克隆并阻止整个 net 缓冲区列表。
+1.  克隆并阻止整个网络缓冲区列表。
 
-2.  生成一个新的 net 缓冲区列表描述的网络缓冲区可接受的子集。
+2.  构建一个新的网络缓冲区列表，用于描述网络缓冲区的可接受子集。
 
-3.  将新的 net 缓冲区列表传回发送路径。
+3.  将新的 net buffer 列表注入回发送路径。
 
-或者，标注可以从网络缓冲区列表中不需要的网络缓冲区中取消链接并将传回发送路径更改后的净缓冲区列表。 但是，在这种情况下标注驱动程序必须撤消此修改到克隆的 net 缓冲区列表之前它将调用[ **FwpsFreeCloneNetBufferList0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0)函数。 标注驱动程序还必须将原始 net 缓冲区链接信息保存其状态数据的一部分。
+或者，标注可以取消链接网络缓冲区列表中不需要的网络缓冲区，并将已更改的网络缓冲区列表重新注入发送路径。 但是，在这种情况下，在调用[**FwpsFreeCloneNetBufferList0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsfreeclonenetbufferlist0)函数之前，标注驱动程序必须撤消对克隆的网络缓冲区列表所做的修改。 标注驱动程序还必须将原始网络缓冲区链接信息保存为其状态数据的一部分。
 
-有关 WFP 使用的数据偏移量的详细信息，请参阅[数据的偏移量位置](https://docs.microsoft.com/windows-hardware/drivers/network/data-offset-positions)。
+有关 WFP 使用的数据偏移量的详细信息，请参阅[数据偏移位置](https://docs.microsoft.com/windows-hardware/drivers/network/data-offset-positions)。
 
-**请注意**  调出适用于已解密的 IPSec ESP 数据包必须使用的数据长度[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)而不是 MDL 数据以确定结构数据包长度。 若要获取的数据长度，请使用[ **NET\_缓冲区\_数据\_长度**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-data-length)宏。 有关详细信息，请参阅[开发 IPsec 兼容标注驱动程序](developing-ipsec-compatible-callout-drivers.md)。
+**请注意**，使用已解密的 IPSec ESP 数据包  的标注必须使用[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的数据长度，而不是使用 MDL 数据来确定数据包长度。 若要获取数据长度，请使用[**NET\_BUFFER\_data\_length**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-data-length)宏。 有关详细信息，请参阅[开发与 IPsec 兼容的标注驱动程序](developing-ipsec-compatible-callout-drivers.md)。
 
  
 

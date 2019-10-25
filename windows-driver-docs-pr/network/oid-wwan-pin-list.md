@@ -1,38 +1,38 @@
 ---
 title: OID_WWAN_PIN_LIST
-description: OID_WWAN_PIN_LIST 返回所有不同类型的个人标识号 (Pin) 支持的 MB 设备的列表以及其他详细信息，对于每个插针类型，例如 PIN （最小和最大长度），PIN 格式 PIN 输入模式的长度（已启用/禁用/不可用）。 此 OID 还指定设备支持的每个 PIN 的当前模式。 不支持组的请求。 微型端口驱动程序必须查询请求进行异步处理，最初将 NDIS_STATUS_INDICATION_REQUIRED 恢复到原始请求，并更高版本将发送一封包含到 NDIS_WWAN_PIN_LIST 结构 NDIS_STATUS_WWAN_PIN_LIST 状态通知完成查询请求时，则返回与相应说明的图钉列表。
+description: OID_WWAN_PIN_LIST 返回 MB 设备支持的所有不同类型的个人标识号（Pin）的列表，以及每种 PIN 类型的其他详细信息，例如 PIN 长度（最小长度和最大长度）、PIN 格式、PIN 输入模式（启用/禁用/不可用）。 此 OID 还指定设备支持的每个 PIN 的当前模式。 不支持设置请求。 微型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回到原始请求，稍后将包含 NDIS_WWAN_PIN_LIST 结构的 NDIS_STATUS_WWAN_PIN_LIST 状态通知发送到完成查询请求时，返回具有相应说明的 Pin 列表。
 ms.assetid: 76a1181c-974e-472d-ad15-d9c6208aa2b4
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_PIN_LIST 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ff9595dfb399a370d3c976febb8440cc20c9a45
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f4c28923eee706ea830ac1e2f65ceed667255d5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360765"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843816"
 ---
-# <a name="oidwwanpinlist"></a>OID\_WWAN\_PIN\_LIST
+# <a name="oid_wwan_pin_list"></a>OID\_WWAN\_固定\_列表
 
 
-OID\_WWAN\_PIN\_列表返回所有不同类型的个人标识号 (Pin) 支持的 MB 设备的列表以及其他详细信息，对于每个插针类型，例如 PIN 的长度 (最小和最大长度），PIN 格式，PIN 输入模式 （启用/禁用/不可用）。 此 OID 还指定设备支持的每个 PIN 的当前模式。
+OID\_WWAN\_PIN\_列表返回 MB 设备支持的所有不同类型的个人标识号（Pin）的列表，以及每种 PIN 类型的其他详细信息，例如 PIN 长度（最小和最大长度）、PIN 格式、PIN 输入模式（启用/禁用/不可用）。 此 OID 还指定设备支持的每个 PIN 的当前模式。
 
-不支持组的请求。
+不支持设置请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_PIN\_列表**](ndis-status-wwan-pin-list.md)状态通知包含[ **NDIS\_WWAN\_PIN\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)结构，以完成查询请求时返回的 Pin 与相应说明的列表。
+微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后再发送[**ndis\_状态\_WWAN\_PIN\_列出**](ndis-status-wwan-pin-list.md)状态通知，其中包含一个[**NDIS\_WWAN\_PIN\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)结构，以便在完成查询请求时返回具有相应说明的 pin 列表。
 
 <a name="remarks"></a>备注
 -------
 
 有关使用此 OID 的详细信息，请参阅[WWAN Pin 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)。
 
-微型端口驱动程序可以访问用户识别模块 （SIM 卡） 当处理查询操作，但不是应访问提供程序网络。
+当处理查询操作时，微型端口驱动程序可以访问订阅服务器标识模块（SIM 卡），但不应访问提供程序网络。
 
-微型端口驱动程序必须报告其设备支持的所有球瓶。 如果设备不支持列出的 Pin，微型端口驱动程序必须报告静态 （硬编码） 列表中的微型端口驱动程序本身支持的所有设备维护此列表。
+微型端口驱动程序必须报告其设备支持的所有 Pin。 如果设备不支持列出 Pin，微型端口驱动程序必须从在微型端口驱动程序中为其支持的所有设备维护的静态（硬编码）列表中报告此列表。
 
-提供设备电源的验证或标识的功能的任何 PIN 应作为 PIN1 报告，并且必须符合 PIN1 指导原则。
+任何提供设备电源验证或标识功能的 PIN 都应报告为 PIN1，并且必须符合 PIN1 指导原则。
 
-微型端口驱动程序必须返回此信息时在设备就绪状态更改为*WwanReadyStateInitialized*或者在设备就绪状态时*WwanReadyStateDeviceLocked* (锁定的 PIN)。 只要有可能，微型端口驱动程序还应在其他设备就绪的状态，返回此信息。
+当设备就绪状态更改为*WwanReadyStateInitialized*或设备就绪状态为*WwanReadyStateDeviceLocked* （PIN 锁定）时，微型端口驱动程序必须返回此信息。 小型端口驱动程序还应尽可能将此信息返回到其他设备就绪状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -44,24 +44,24 @@ OID\_WWAN\_PIN\_列表返回所有不同类型的个人标识号 (Pin) 支持的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_PIN\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)
+[**NDIS\_WWAN\_固定\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pin_list)
 
-[**NDIS\_STATUS\_WWAN\_PIN\_LIST**](ndis-status-wwan-pin-list.md)
+[ **\_WWAN\_PIN\_列表的 NDIS\_状态**](ndis-status-wwan-pin-list.md)
 
-[WWAN 固定操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)
+[WWAN Pin 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-pin-operations)
 
  
 

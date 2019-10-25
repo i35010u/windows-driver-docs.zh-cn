@@ -6,12 +6,12 @@ keywords:
 - 网络驱动程序 WDK，文档
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4832be8f00942e6d0682de8febaf6368fc963d2c
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: b2a3d3d20c325524060aa34608349c6f8cc4721a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70063876"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842970"
 ---
 # <a name="navigating-the-network-driver-design-guide"></a>在网络驱动程序设计指南中导航
 
@@ -39,7 +39,7 @@ ms.locfileid: "70063876"
 
     有关 NDIS 6.1 的详细信息，请参阅[ndis 6.1 简介](introduction-to-ndis-6-1.md)。
 
--   NDIS 6.0，在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序的支持，以及以前的 NDIS 版本未提供的许多其他服务。 NDIS 6.0 包括对驱动程序初始化和网络数据管理的重要更新，其中包括在运行时对驱动程序重新配置所需的支持和用于处理网络数据包数据的[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)体系结构。 有关支持运行时重新配置的详细信息，请参阅[驱动程序堆栈管理](driver-stack-management.md)。 有关如何在 NDIS 6.0 中处理网络数据包数据的详细信息，请参阅[NET\_BUFFER 体系结构](net-buffer-architecture.md)。
+-   NDIS 6.0，在 Windows Vista 和更高版本的 Windows 上受支持。 NDIS 6.0 包括对筛选器驱动程序的支持，以及以前的 NDIS 版本未提供的许多其他服务。 NDIS 6.0 包括对驱动程序初始化和网络数据管理的重要更新，其中包括在运行时对驱动程序重新配置所需的支持和用于处理网络数据包数据的[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)体系结构。 有关支持运行时重新配置的详细信息，请参阅[驱动程序堆栈管理](driver-stack-management.md)。 有关如何在 NDIS 6.0 中处理网络数据包数据的详细信息，请参阅[NET\_BUFFER 体系结构](net-buffer-architecture.md)。
 
     有关 NDIS 6.0 的详细信息，请参阅[ndis 6.0 简介](introduction-to-ndis-6-0.md)。
 
@@ -70,7 +70,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 可以使用以下附加的驱动程序模型来使用特定的硬件技术和体系结构。
 
 <table>  
-<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
 <thead>  
 <tr class="header">  
 <th align="left">技术</th>
@@ -79,7 +79,7 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Scalable Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">可缩放网络</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Scalable Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">可缩放网络</a></p></td>
 <td align="left"><p>支持将任务卸载到网络适配器的网络技术，如下所示：</p>
 <ul>
 <li><p><a href="header-data-split.md" data-raw-source="[Header-Data Split](header-data-split.md)">标头-数据拆分</a>，一种服务，它将接收的以太网帧中的标头和数据拆分为单独的缓冲区。</p></li>
@@ -106,15 +106,15 @@ Windows Vista 和更高版本的操作系统版本支持以下类型的基于 ND
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Wireless Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">无线网络</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Wireless Networking](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">无线网络</a></p></td>
 <td align="left"><p>包含本机802.11 无线 LAN 的网络功能。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Network Module Registrar](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">网络模块注册器</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Network Module Registrar](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">网络模块注册器</a></p></td>
 <td align="left"><p>允许驱动程序将网络模块相互连接的系统设备。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/" data-raw-source="[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)">Winsock 内核</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/" data-raw-source="[Winsock Kernel](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)">Winsock 内核</a></p></td>
 <td align="left"><p>内核模式网络编程接口（NPI）。</p></td>
 </tr>
 <tr class="even">

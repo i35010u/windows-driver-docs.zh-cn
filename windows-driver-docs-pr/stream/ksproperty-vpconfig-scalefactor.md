@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_VPCONFIG\_SCALEFACTOR
-description: KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定义的规范。
+description: KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性将视频端口尺寸设置为用户定义的规范。
 ms.assetid: 0fbfedc8-9dff-4c7c-910f-507b84614e47
 keywords:
-- KSPROPERTY_VPCONFIG_SCALEFACTOR 流式处理媒体设备
+- KSPROPERTY_VPCONFIG_SCALEFACTOR 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8a20751e3a9d55149eab9074961bcc614f4e98
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e089d947f66c642567079a43ae671cc8aa19f269
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361058"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838826"
 ---
-# <a name="kspropertyvpconfigscalefactor"></a>KSPROPERTY\_VPCONFIG\_SCALEFACTOR
+# <a name="ksproperty_vpconfig_scalefactor"></a>KSPROPERTY\_VPCONFIG\_SCALEFACTOR
 
 
-KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定义的规范。
+KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性将视频端口尺寸设置为用户定义的规范。
 
 ## <span id="ddk_ksproperty_vpconfig_scalefactor_ks"></span><span id="DDK_KSPROPERTY_VPCONFIG_SCALEFACTOR_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,23 +50,23 @@ KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>否</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpsize" data-raw-source="[&lt;strong&gt;KS_AMVPSIZE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpsize)"><strong>KS_AMVPSIZE</strong></a></p></td>
+<td><p>无</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_amvpsize" data-raw-source="[&lt;strong&gt;KS_AMVPSIZE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_amvpsize)"><strong>KS_AMVPSIZE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是 KS\_AMVPSIZE 结构，它指定的宽度和高度的视频端口。
+属性值（操作数据）是一个 KS\_AMVPSIZE 结构，它指定视频端口的宽度和高度。
 
 <a name="remarks"></a>备注
 -------
 
-此属性由 KSPROPSETID\_VPVBIConfig，属性的所有请求必须都返回状态\_不\_实现。
+当 KSPROPSETID\_VPVBIConfig 使用此属性时，所有属性请求都必须返回状态，\_不\_实现。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,18 +78,18 @@ KSPROPERTY\_VPCONFIG\_SCALEFACTOR 属性设置的视频端口维度对用户定�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KS\_AMVPSIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_amvpsize)
+[**KS\_AMVPSIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_amvpsize)
 
  
 

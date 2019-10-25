@@ -1,38 +1,38 @@
 ---
 title: OID_WWAN_DEVICE_CAPS
-description: OID_WWAN_DEVICE_CAPS 返回 MB 设备的功能，包括移动电话技术支持，它支持的数据包数据，它支持无线电频率、 语音服务，它提供的类型的类以及其是否使用订阅服务器识别模块 （SIM 卡）。 受支持的移动电话技术和设备是否使用 SIM 是特别重要，因为网络提供程序选择和 SIM 用户界面取决于这两项功能的值。 作为可选字段返回的制造商和固件修订版本。 不支持组的请求。 微型端口驱动程序必须查询请求进行异步处理，最初将 NDIS_STATUS_INDICATION_REQUIRED 恢复到原始请求，并更高版本发送包含 NDIS_WWAN_DEVICE_CAPS NDIS_STATUS_WWAN_DEVICE_CAPS 状态通知结构，它指示完成查询请求时的 MB 设备的功能。
+description: OID_WWAN_DEVICE_CAPS 返回 MB 设备的功能，包括它支持的移动电话技术、它支持的数据包数据类、它支持的射频类型、提供的语音服务的类型以及是否使用订阅者标识模块（SIM 卡）。 受支持的移动电话技术以及设备是否使用 SIM 尤为重要，因为网络提供程序选择和 SIM 用户界面取决于这两项功能的值。 制造商和固件版本作为可选字段返回。 不支持设置请求。 微型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回给原始请求，稍后发送 NDIS_STATUS_WWAN_DEVICE_CAPS 状态通知，其中包含 NDIS_WWAN_DEVICE_CAPS结构，该结构指示在完成查询请求时 MB 设备的功能。
 ms.assetid: bcf04d0b-70f3-48b7-a505-c82e50edadb2
 ms.date: 08/08/2017
-keywords: -OID_WWAN_DEVICE_CAPS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_CAPS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: cece38d740ade8029b242ebc9adb434dbdce09a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47da6d6fb38509d23ba6568bda6e823db1e449f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362851"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843862"
 ---
-# <a name="oidwwandevicecaps"></a>OID\_WWAN\_DEVICE\_CAPS
+# <a name="oid_wwan_device_caps"></a>OID\_WWAN\_设备\_CAP
 
 
-OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术的功能，它支持的数据包数据，它支持无线电频率、 语音的类型的类的维护提供了，以及其是否使用用户识别模块 （SIM 卡）。 受支持的移动电话技术和设备是否使用 SIM 是特别重要，因为网络提供程序选择和 SIM 用户界面取决于这两项功能的值。 作为可选字段返回的制造商和固件修订版本。
+OID\_WWAN\_设备\_CAP 返回 MB 设备的功能，包括它支持的移动电话技术、它支持的数据包数据的类、它支持的广播频率、它所提供的语音服务的类型，以及它是否使用订户标识模块（SIM 卡）。 受支持的移动电话技术以及设备是否使用 SIM 尤为重要，因为网络提供程序选择和 SIM 用户界面取决于这两项功能的值。 制造商和固件版本作为可选字段返回。
 
-不支持组的请求。
+不支持设置请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)状态通知包含[ **NDIS\_WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构，完成查询请求时指示 MB 设备的功能。
+微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后将[**ndis\_状态\_WWAN\_设备发送\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)状态通知，其中包含[**NDIS\_WWAN\_设备\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构，该结构指示在完成查询请求时 MB 设备的功能。
 
 <a name="remarks"></a>备注
 -------
 
-从 Windows 8 开始，MB 驱动程序模型已更新为版本 2.0。 Windows 8 微型端口驱动程序应设置**Header.Revision**的成员[ **NDIS\_WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构**NDIS\_WWAN\_设备\_CAPS\_修订\_2**对于*查询*请求。 Windows 7 微型端口驱动程序应设置**Header.Revision**的成员**NDIS\_WWAN\_设备\_CAPS**结构**NDIS\_WWAN\_设备\_CAPS\_修订\_1**有关*查询*请求。
+从 Windows 8 开始，MB 驱动程序模型已更新到版本2.0。 Windows 8 微型端口驱动程序应将[**ndis\_wwan\_设备\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps) **结构的 ndis 成员设置**为**ndis\_WWAN\_设备\_cap**\_*查询*请求。 Windows 7 微型端口驱动程序应将**ndis\_wwan\_设备\_cap** **结构的 ndis 成员设置**为**ndis\_WWAN\_设备\_cap\_1** *查询*请求。
 
 有关使用此 OID 的详细信息，请参阅[WWAN 驱动程序初始化过程](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)。
 
-当处理查询操作，但不是能访问提供程序网络或用户识别模块 （SIM 卡） 时，微型端口驱动程序可以访问设备的内存。
+当处理查询操作时，微型端口驱动程序可以访问设备内存，但不应访问提供程序网络或订阅服务器标识模块（SIM 卡）。
 
-多个"全球范围内"MB 设备现在支持多个频率带区，因为频率带区为 2.5 g / 3 G 不同国家/地区到国家/地区。 所有 3GPP 标准 （适用于基于 GSM 的网络） 和 （适用于基于 CDMA 的网络） 3GPP2 标准中指定的射频显示下表中的列表。 这两种标准采用类似的带区分类方案。
+如今，许多 "世界范围" MB 设备支持多个频率区段，因为 2.5 G/3G 的频带大小因国家/地区而异。 下表显示了3GPP 标准（适用于基于 GSM 的网络）和3GPP2 标准（适用于基于 CDMA 的网络）中指定的所有射频频率列表。 这两个标准采用类似的带区分类方案。
 
-**3GPP （基于 GSM） 频率外类**
+**3GPP （基于 GSM）频段类**
 
 <table style="width:100%;">
 <colgroup>
@@ -45,57 +45,57 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 </colgroup>
 <thead>
 <tr class="header">
-<th>3GPP 外</th>
-<th>指定的范围</th>
+<th>3GPP 带区</th>
+<th>指定色谱</th>
 <th>行业名称</th>
-<th>上行链路 （BTS 到毫秒）</th>
-<th>下行链路 (BTS 到毫秒)</th>
-<th>Regions</th>
+<th>上行（MS 到 BTS）</th>
+<th>下行（BTS 到 MS）</th>
+<th>区域</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>我外</p></td>
+<td><p>带 I</p></td>
 <td><p>UMTS2100</p></td>
 <td><p>IMT</p></td>
 <td><p>1920-1980</p></td>
 <td><p>2110-2170</p></td>
-<td><p>欧洲、 韩国、 日本、 中国</p></td>
+<td><p>欧洲、韩国、日本、中国</p></td>
 </tr>
 <tr class="even">
-<td><p>带外 II</p></td>
+<td><p>区段 II</p></td>
 <td><p>UMTS1900</p></td>
 <td><p>PCS1900</p></td>
 <td><p>1850-1910</p></td>
 <td><p>1930-1990</p></td>
-<td><p>North America、 LATAM</p></td>
+<td><p>北美，LATAM</p></td>
 </tr>
 <tr class="odd">
-<td><p>带外 III</p></td>
+<td><p>波段 III</p></td>
 <td><p>UMTS1800</p></td>
 <td><p>DCS1800</p></td>
 <td><p>1710-1785</p></td>
 <td><p>1805-1880</p></td>
-<td><p>欧洲中国</p></td>
+<td><p>欧洲、中国</p></td>
 </tr>
 <tr class="even">
-<td><p>带外 IV</p></td>
+<td><p>区段 IV</p></td>
 <td><p>AWS</p></td>
-<td><p>AWS, 1.7/2.1</p></td>
+<td><p>AWS、1.7/2。1</p></td>
 <td><p>1710-1755</p></td>
 <td><p>2110-2155</p></td>
-<td><p>North America、 LATAM</p></td>
+<td><p>北美，LATAM</p></td>
 </tr>
 <tr class="odd">
-<td><p>带外 V</p></td>
+<td><p>波段 V</p></td>
 <td><p>UMTS850</p></td>
 <td><p>GSM850</p></td>
 <td><p>824-849</p></td>
 <td><p>869-894</p></td>
-<td><p>North America、 LATAM</p></td>
+<td><p>北美，LATAM</p></td>
 </tr>
 <tr class="even">
-<td><p>带外 VI</p></td>
+<td><p>区段 VI</p></td>
 <td><p>UMTS800</p></td>
 <td><p>UMTS800</p></td>
 <td><p>830-840</p></td>
@@ -103,7 +103,7 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 <td><p>日本</p></td>
 </tr>
 <tr class="odd">
-<td><p>带外 VII</p></td>
+<td><p>带 VII</p></td>
 <td><p>UMTS2600</p></td>
 <td><p>UMTS2600</p></td>
 <td><p>2500-2570</p></td>
@@ -111,15 +111,15 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 <td><p>欧洲</p></td>
 </tr>
 <tr class="even">
-<td><p>带外 VIII</p></td>
+<td><p>带 VIII</p></td>
 <td><p>UMTS900</p></td>
 <td><p>EGSM900</p></td>
 <td><p>880-915</p></td>
 <td><p>925-960</p></td>
-<td><p>欧洲中国</p></td>
+<td><p>欧洲、中国</p></td>
 </tr>
 <tr class="odd">
-<td><p>带外 IX</p></td>
+<td><p>带 IX</p></td>
 <td><p>UMTS1700</p></td>
 <td><p>UMTS1700</p></td>
 <td><p>1750-1785</p></td>
@@ -127,7 +127,7 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 <td><p>日本</p></td>
 </tr>
 <tr class="even">
-<td><p>带 X</p></td>
+<td><p>波段 X</p></td>
 <td></td>
 <td></td>
 <td><p>1710-1770</p></td>
@@ -139,153 +139,153 @@ OID\_WWAN\_设备\_CAPS 返回 MB 设备，包括它支持的移动电话技术�
 
  
 
-**3GPP2 （基于 CDMA） 频率外类**
+**3GPP2 （基于 CDMA）频段类**
 
-3GPP 外行业名称上行 (MS 到 BTS) 下行链路 (BTS 到毫秒) 外 0
+3GPP 带行业名称上行（MS 到 BTS）下行（BTS 到 MS）波段0
 
-800MHz Cellular
+800MHz 移动电话
 
 824.025-844.995
 
 869.025-889.995
 
-我外
+带 I
 
-1900 MHz 外
+1900MHz 带区
 
 1850-1910
 
 1930-1990
 
-带外 II
+区段 II
 
-TACS 外
+TACS 带区
 
 872.025-914.9875
 
 917.0125-959.9875
 
-带外 III
+波段 III
 
-JTACS 外
+JTACS 带区
 
 887.0125-924.9875
 
 832.0125-869.9875
 
-带外 IV
+区段 IV
 
-朝鲜语电脑外
+韩国 PC 波段
 
-1750 - 1780
+1750-1780
 
-1840 - 1870
+1840-1870
 
-带外 V
+波段 V
 
-450 MHz Band
+450 MHz 带区
 
-410 - 483.475
+410-483.475
 
-420 - 493.475
+420-493.475
 
-带外 VI
+区段 VI
 
-2 GHz 外
+2 GHz 波段
 
-1920 - 1979.950
+1920-1979.950
 
-2110 - 2169.950
+2110-2169.950
 
-带外 VII
+带 VII
 
-700 MHz Band
+700 MHz 带区
 
-776 - 794
+776-794
 
-746 - 764
+746-764
 
-带外 VIII
+带 VIII
 
-1800 MHz Band
+1800 MHz 带区
 
-1710 - 1784.950
+1710-1784.950
 
-1805 - 1879.95
+1805-1879.95
 
-带外 IX
+带 IX
 
-900 MHz Band
+900 MHz 带区
 
-880 - 914.950
+880-914.950
 
-925 - 959.950
+925-959.950
 
-带 X
+波段 X
 
-辅助 800 MHz 外
+辅助 800 MHz 带区
 
-806 - 900.975
+806-900.975
 
-851 - 939.975
+851-939.975
 
-带外 XI
+波段 XI
 
-400 MHz 欧洲 PAMR 外
+400 MHz 欧洲 PAMR
 
-410 - 483.475
+410-483.475
 
-420 - 493.475
+420-493.475
 
-带外 XII
+带 I.XII。
 
-800 MHz PAMR 外
+800 MHz PAMR
 
-870.125 - 875.9875
+870.125-875.9875
 
-915.0125 - 920.9875
+915.0125-920.9875
 
-带外 XIII
+带 XIII
 
-2.5 g h z IMT2000 扩展外
+2.5 GHz IMT2000 扩展带区
 
-2500 - 2570
+2500-2570
 
-2620 - 2690
+2620-2690
 
-带外 XIV
+乐队 XIV
 
-美国 PC 1.9 GHz 外
+美国电脑 1.9 GHz 波段
 
-1850 - 1915
+1850-1915
 
-1930 - 1995
+1930-1995
 
-带外 XV
+带 XV
 
-AWS 外
+AWS 带区
 
-1710 - 1755
+1710-1755
 
-2110 - 2155
+2110-2155
 
-带外 XVI
+带 XVI
 
-美国 2.5ghz 外
+美国 2.5 GHz 波段
 
-2502 - 2568
+2502-2568
 
-2624 - 2690
+2624-2690
 
-带外 XVII
+带 XVII
 
-美国 2.5ghz 前向链接仅外
+仅限美国 2.5 GHz 前向链接波段
 
 2624-2690
 
  
 
-这两个表中的射频带区的单位是兆赫 (MHz)。
+两个表中的无线电射频带区的单位为兆赫（MHz）。
 
 <a name="requirements"></a>要求
 ------------
@@ -297,20 +297,20 @@ AWS 外
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_DEVICE\_CAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)
+[**NDIS\_WWAN\_设备\_CAP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)
 
 [WWAN 驱动程序初始化过程](https://docs.microsoft.com/windows-hardware/drivers/network/mb-miniport-driver-initialization)
 

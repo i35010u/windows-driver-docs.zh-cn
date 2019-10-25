@@ -8,12 +8,12 @@ keywords:
 - D3dDrawPrimitives2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 957821ee5d85e1ad0f191daac26066b8b87beea1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd7ed5c7aaae8d0021529099d4749ca908c4ae26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370635"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840500"
 ---
 # <a name="operation-code-handling"></a>操作代码处理
 
@@ -21,13 +21,13 @@ ms.locfileid: "67370635"
 ## <span id="ddk_opcode_handling_gg"></span><span id="DDK_OPCODE_HANDLING_GG"></span>
 
 
-显示驱动程序处理请求来呈现图形基元和流程中的状态更改其[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数。 该驱动程序将接收为这些请求[ **D3DHAL\_DP2OPERATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码。 下面的主题介绍如何驱动程序处理操作代码以及如何在此类处理过程改进其性能：
+显示驱动程序处理请求以呈现图形基元，并处理其[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数中的状态更改。 驱动程序将这些请求作为[**D3DHAL\_DP2OPERATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码接收。 以下主题介绍了驱动程序如何处理操作代码，以及在此类处理过程中如何提高其性能：
 
-[命令 Stream](command-stream.md)
+[命令流](command-stream.md)
 
-[提高了操作处理的性能](improving-performance-of-operation-handling.md)
+[提高操作处理的性能](improving-performance-of-operation-handling.md)
 
-若要支持的 Microsoft DirectX 7.0 和更高版本的 Direct3D 驱动程序模型，驱动程序编写人员需要使响应在其实现中的新操作代码的许多其驱动程序[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb). 这些操作代码的一些替换回调函数和其他人提供了新功能。 下表中，将为回调的总结了最重要的新操作代码。
+为了支持 Microsoft DirectX 7.0 和更高版本的 Direct3D 驱动程序模型，驱动程序编写器需要使其驱动程序在其[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)实现中响应多个新的操作代码。 其中一些操作代码替换回调函数，其他一些则提供新功能。 下表总结了最重要的新操作代码，从替换回叫的代码开始。
 
 <table>
 <colgroup>
@@ -37,25 +37,25 @@ ms.locfileid: "67370635"
 <thead>
 <tr class="header">
 <th align="left">操作代码</th>
-<th align="left">条件/说明</th>
+<th align="left">条件/描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>D3DDP2OP_SETRENDERTARGET</p></td>
-<td align="left"><p><strong>始终要求。</strong> 映射的新呈现目标面和深度缓冲区当前上下文中。 将替换<em>D3dSetRenderTarget</em>。</p></td>
+<td align="left"><p><strong>始终是必需的。</strong> 映射当前上下文中的新呈现目标图面和深度缓冲区。 替换<em>D3dSetRenderTarget</em>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDP2OP_CLEAR</p></td>
-<td align="left"><p><strong>始终要求。</strong> 用于清除上下文的呈现器目标，Z 缓冲区。 将替换<em>D3dClear2</em>。 此外用于清除硬件模具缓冲区和深度填充位块传输不能正确清除的深度缓冲区。</p></td>
+<td align="left"><p><strong>始终是必需的。</strong> 用于清除上下文的呈现目标 Z 缓冲区。 替换<em>D3dClear2</em>。 还用于清除硬件模具缓冲区和深度填充位块传输无法正确清除的深度缓冲区。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDP2OP_SETPALETTE</p></td>
-<td align="left"><p>用于映射调色板的句柄和图面上的句柄之间的关联和指定的调色板的特征。 仅需用于支持调色板纹理; 的驱动程序否则，这应该是 (NOP) 的任何操作。</p></td>
+<td align="left"><p>用于映射调色板控点和图面控点之间的关联，并指定调色板的特征。 仅支持支持调色板纹理的驱动程序需要;否则，此操作不应为（NOP）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDP2OP_UPDATEPALETTE</p></td>
-<td align="left"><p>用于对进行的修改纹理调色板，支持调色板纹理的驱动程序。 否则，这应该是 NOP。</p></td>
+<td align="left"><p>用于对支持调色板纹理的驱动程序进行更改纹理调色板。 否则，这应该是一个 NOP。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDP2OP_TEXBLT</p></td>

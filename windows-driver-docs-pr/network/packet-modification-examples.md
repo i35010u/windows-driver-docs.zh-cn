@@ -6,19 +6,19 @@ keywords:
 - 数据包修改 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4facd3a3181c19b34287f5a3af26fde72727a24a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1826428de19e33cd868b53b245f847fcedbb7b4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382631"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843708"
 ---
 # <a name="packet-modification-examples"></a>数据包修改示例
 
 
-下面的代码示例演示如何修改和检查 WFP 的数据包。
+下面的示例代码演示如何用 WFP 修改和检查数据包。
 
-### <a name="inline-packet-modification-from-outgoing-transport-layers"></a>内联数据包从传出的传输层的修改
+### <a name="inline-packet-modification-from-outgoing-transport-layers"></a>传出传输层中的内联数据包修改
 
 ```C++
 HANDLE gInjectionHandle;
@@ -170,7 +170,7 @@ Exit:
 }
 ```
 
-### <a name="out-of-band-packet-modification-from-incoming-datagram-data-layers"></a>从传入的数据报数据层的带外数据包修改
+### <a name="out-of-band-packet-modification-from-incoming-datagram-data-layers"></a>来自传入数据报数据层的带外数据包修改
 
 ```C++
 typedef struct DD_RECV_CLASSIFY_INFO_ {
@@ -403,9 +403,9 @@ Exit:
 }
 ```
 
-### <a href="" id="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and"></a>从传入的传输层和 ALE 接收/接受层的非侵入式带外检查
+### <a href="" id="non-intrusive-out-of-band-inspection-from-incoming-transport-layer-and"></a>传入传输层和 ALE 接收/接受层之间的非干扰带外检查
 
-以下是有关数据包数据视图而不更改它的检查过程的示例代码。
+下面是检查过程的示例代码，用于查看数据包数据而无需对其进行更改。
 
 ```C++
 typedef struct TL_ALE_RECV_CLASSIFY_INFO_ {
@@ -775,9 +775,9 @@ Exit:
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[类型的标注](types-of-callouts.md)
+[标注类型](types-of-callouts.md)
 
  
 

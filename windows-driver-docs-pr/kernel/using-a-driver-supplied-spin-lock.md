@@ -3,17 +3,17 @@ title: 使用驱动程序提供的自旋锁
 description: 使用驱动程序提供的自旋锁
 ms.assetid: e81d5c93-47d6-407c-80a2-b2d55f9eb717
 keywords:
-- 数值调节钮锁 WDK 内核
-- 驱动程序所提供的自旋锁 WDK 内核
-- 全局取消自旋锁 WDK 内核
+- 旋转锁定 WDK 内核
+- 驱动程序提供的旋转锁定 WDK 内核
+- 全局取消旋转锁定 WDK 内核
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 226e3c6245b2a337167b1fc36ab8cc0fc16298ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6105f3989fc60feda8b9d1ceefb8947d97f2cc12
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383718"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838368"
 ---
 # <a name="using-a-driver-supplied-spin-lock"></a>使用驱动程序提供的自旋锁
 
@@ -21,21 +21,21 @@ ms.locfileid: "67383718"
 
 
 
-管理他们自己队列 Irp 的驱动程序可以使用驱动程序所提供的旋转锁，而不是系统取消自旋锁来同步对队列的访问。 可以通过在绝对必要时避免使用除取消自旋锁来提高性能。 由于系统只有一个取消自旋锁，驱动程序有时可能需要等待该数值调节钮锁变为可用。 使用驱动程序所提供的旋转锁可消除此潜在延迟并使取消自旋锁对 I/O 管理器和其他驱动程序。 尽管系统仍获取取消自旋锁时调用的驱动程序[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_cancel)例程，驱动程序可以使用其自己的自旋锁来保护 Irp 其队列。
+管理自己的 Irp 队列的驱动程序可以使用驱动程序提供的自旋锁，而不是系统取消旋转锁来同步对队列的访问。 除了绝对必要时，还可以通过避免使用取消旋转锁定来提高性能。 因为系统只有一个 cancel 自旋锁，所以驱动程序有时必须等待该旋转锁定变为可用。 使用驱动程序提供的旋转锁定可消除这种潜在延迟，并使 i/o 管理器和其他驱动程序可以使用取消旋转锁定。 尽管系统在调用驱动程序的[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程时仍获取 cancel 自旋锁，但驱动程序可以使用自己的自旋锁来保护其 irp 队列。
 
-即使驱动程序不会挂起的 Irp，排队，但保留以某种其他方式的所有权，必须设置该驱动程序*取消*例程的 IRP 和必须使用旋转锁来保护 IRP 指针。 例如，假设一个驱动程序将标记 IRP 挂起状态，然后将 IRP 指针传递到上下文作为[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)例程。 该驱动程序必须设置*取消*取消计时器，并且必须在这种使用相同的旋转锁的例程*取消*例程和计时器回调时访问 IRP。
+即使驱动程序未将挂起的 Irp 排队，但以其他方式保留所有权，该驱动程序也必须为 IRP 设置 "*取消*" 例程，并且必须使用旋转锁来保护 irp 指针。 例如，假设驱动程序将 IRP 标记为 "正在挂起"，然后将 IRP 指针作为上下文传递到[*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)例程。 驱动程序必须设置*取消*计时器，并在访问 IRP 时必须在*cancel*例程和计时器回调中使用相同的自旋锁。
 
-排队自己 Irp，并使用其自己的自旋锁的任何驱动程序必须执行以下操作：
+任何对其自身的 Irp 进行排队并使用其自己的自旋锁的驱动程序都必须执行以下操作：
 
--   创建使用数值调节钮锁来保证队列。
+-   创建旋转锁来保护队列。
 
--   设置和清除*取消*例程只能同时保留此数值调节钮锁定。
+-   仅在持有此旋转锁时设置并清除*取消*例程。
 
--   如果*取消*例程将开始运行时，驱动程序取消排队 IRP，允许*取消*例程，以完成 IRP。
+-   如果当驱动程序出列 IRP 时*取消*例程开始运行，则允许*取消*例程完成 irp。
 
--   获取的锁的保护中的队列*取消*例程。
+-   获取在*取消*例程中保护队列的锁。
 
-若要创建旋转锁，驱动程序调用[ **KeInitializeSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializespinlock)。 在以下示例中，该驱动程序将保存在旋转锁**设备\_上下文**结构以及已创建的队列：
+若要创建旋转锁定，驱动程序将调用[**KeInitializeSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializespinlock)。 在下面的示例中，驱动程序将旋转锁定保存在**设备\_的上下文**结构以及它所创建的队列中：
 
 ```cpp
 typedef struct {
@@ -51,7 +51,7 @@ VOID InitDeviceContext(DEVICE_CONTEXT *deviceContext)
 }
 ```
 
-若要进行排队 IRP，驱动程序将获取数值调节钮锁，调用[ **InsertTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-inserttaillist)，然后将标记 IRP 挂起状态，如以下示例所示：
+若要将 IRP 排队，驱动程序将获取自旋锁，调用[**InsertTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-inserttaillist)，然后将 IRP 标记为 "挂起"，如以下示例中所示：
 
 ```cpp
 NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
@@ -104,17 +104,17 @@ NTSTATUS QueueIrp(DEVICE_CONTEXT *deviceContext, PIRP Irp)
 }
 ```
 
-如示例所示，该驱动程序保存其旋转锁时它设置并清除*取消*例程。 该示例队列例程包含两次调用[ **IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcancelroutine)。
+如示例所示，驱动程序在设置并清除*取消*例程时保留其旋转锁。 示例队列例程包含对[**IoSetCancelRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcancelroutine)的两次调用。
 
-第一个调用集*取消*IRP 的例程。 但是，由于队列例程运行时，IRP 可能已取消，驱动程序必须检查**取消**IRP 的成员。
+第一次调用设置 IRP 的*取消*例程。 但是，因为在队列例程运行时 IRP 可能已被取消，所以驱动程序必须检查 IRP 的**Cancel**成员。
 
--   如果**取消**设置，已请求取消，并驱动程序必须使第二个调用**IoSetCancelRoutine**若要查看是否以前设置*取消*调用例程。
+-   如果设置了**取消**，则请求取消，并且驱动程序必须对**IoSetCancelRoutine**进行第二次调用，以查看是否调用了以前设置的*取消*例程。
 
--   如果已取消 IRP，但*取消*尚未调用例程，则当前例程 IRP 中取消排队并完成后，它与状态\_已取消。
+-   如果 IRP 已被取消，但尚未调用*Cancel*例程，则当前例程取消排队 IRP 并完成，其状态\_已取消。
 
--   如果已取消 IRP 和*取消*已调用例程，则当前返回将挂起的 IRP 标记，并返回状态\_PENDING。 *取消*例程将完成 IRP。
+-   如果已取消 IRP 并且已经调用了*Cancel*例程，则当前返回的会将 irp 标记为挂起，并返回状态\_"挂起"。 *取消*例程将完成 IRP。
 
-下面的示例演示如何从以前创建的队列中删除 IRP:
+下面的示例演示如何从以前创建的队列中删除 IRP：
 
 ```cpp
 PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
@@ -159,11 +159,11 @@ PIRP DequeueIrp(DEVICE_CONTEXT *deviceContext)
 }
 ```
 
-在示例中，该驱动程序获取关联的数值调节钮锁，然后才能访问队列。 同时保留数值调节钮锁定，它会检查该队列不为空，并获取下一步从队列 IRP。 然后，调用**IoSetCancelRoutine**重置*取消*IRP 的例程。 因为该驱动程序取消排队 IRP 和重置时，无法取消 IRP*取消*例程，该驱动程序必须检查返回的值**IoSetCancelRoutine**。 如果**IoSetCancelRoutine**返回**NULL**，这指示*取消*例程已经或很快就将调用，然后取消排队的例程允许*取消*例程完成 IRP。 它然后释放锁，可以在队列，并返回。
+在此示例中，驱动程序在访问队列之前获取关联的自旋锁。 在持有自旋锁时，它会检查队列是否不为空，并从队列中获取下一个 IRP。 然后，它会调用**IoSetCancelRoutine**来重置 IRP 的*取消*例程。 由于可以在驱动程序取消排队 IRP 并重置*取消*例程时取消 irp，因此驱动程序必须检查**IoSetCancelRoutine**返回的值。 如果**IoSetCancelRoutine**返回**NULL**，表示*取消*例程已或即将被调用，则出列例程会使*取消*例程完成 IRP。 然后，它会释放保护队列并返回的锁。
 
-请注意，使用[ **InitializeListHead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializelisthead)前面例程中。 驱动程序无法将 IRP，重新排队，以便*取消*例程可以取消排队，但以调用会更简单**InitializeListHead**，这会重新初始化 IRP **ListEntry**使其指向 IRP 本身的字段。 使用自引用的指针很重要，因为列表的结构可能会更改之前*取消*例程获取自旋锁。 如果列表结构发生更改，可能生成的原始值和**ListEntry**无效，*取消*例程可能会损坏列表时取消排队 IRP。 但是，如果**ListEntry** IRP 本身，到点则*取消*例程将始终使用正确的 IRP。
+请注意，在前面的例程中使用[**InitializeListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-initializelisthead) 。 驱动程序可以重新排队 IRP，以便取消操作可以将其*取消*排队，但调用**InitializeListHead**更简单，后者会重新初始化 IRP 的**ListEntry**字段，使其指向 IRP 本身。 使用自引用指针非常重要，因为在*取消*例程获取旋转锁之前，列表的结构可能会更改。 如果列表结构发生更改，可能会使**ListEntry**的原始值无效，则*取消*例程在取消排队 IRP 时可能会损坏列表。 但如果**ListEntry**指向 IRP 本身，则*Cancel*例程将始终使用正确的 IRP。
 
-*取消*例程，反过来，只需执行以下：
+而*取消*例程则只需执行以下操作：
 
 ```cpp
 VOID IrpCancelRoutine(IN PDEVICE_OBJECT DeviceObject, IN PIRP Irp)
@@ -193,9 +193,9 @@ VOID IrpCancelRoutine(IN PDEVICE_OBJECT DeviceObject, IN PIRP Irp)
 }
 ```
 
-I/O 管理器之前它将调用始终获取全局取消自旋锁*取消*例程，因此第一个任务*取消*例程是释放此自旋锁。 然后，它获取的自旋锁的保护的 Irp 的驱动程序的队列、 从队列中移除当前 IRP，释放其自旋锁、 完成状态 IRP\_已取消以及没有优先级提升选项，并返回。
+在调用*取消*例程之前，i/o 管理器始终获取全局取消旋转锁，因此*取消*例程的第一个任务是释放此自旋锁。 然后，它获取保护该驱动程序的 Irp 队列的自旋锁，从队列中删除当前 IRP，释放其旋转锁定，完成 IRP，状态\_已取消且无优先级提升，并返回。
 
-有关取消自旋锁的详细信息，请参阅[Windows 驱动程序中的取消逻辑](https://go.microsoft.com/fwlink/p/?linkid=59531)白皮书。
+有关取消旋转锁定的详细信息，请参阅[Windows 驱动程序中的取消逻辑](https://go.microsoft.com/fwlink/p/?linkid=59531)白皮书。
 
  
 

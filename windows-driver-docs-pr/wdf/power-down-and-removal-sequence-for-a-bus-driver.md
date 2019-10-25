@@ -4,23 +4,23 @@ description: 总线驱动程序的电源关闭和删除顺序
 ms.assetid: 71397945-D9DB-43E2-AE06-548684F72B63
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 02277f5c689c51255a8fdbfe2c4691dd9f09f797
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1ae0aaaacd0360bfa33f5526575943605cc43b6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379641"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842248"
 ---
 # <a name="power-down-and-removal-sequence-for-a-bus-driver"></a>总线驱动程序的电源关闭和删除顺序
 
 
-下图显示了当关闭框架调用 KMDF 总线驱动程序的事件回调函数的顺序和删除连接到该总线的设备。 在序列图顶部开头操作设备处于工作电源状态 (D0):
+下图显示了在关闭和删除已连接到总线的设备时，框架调用 KMDF 总线驱动程序的事件回调函数的顺序。 序列从图形顶部开始，其操作设备处于工作电源状态（D0）：
 
-![总线驱动程序的电源关闭和删除序列](images/pdo-powerdown.png)
+![总线驱动程序的关机和删除序列](images/pdo-powerdown.png)
 
-框架不会删除 PDO，直到从系统以物理方式删除该设备。 例如，如果用户禁用的设备在设备管理器或安全删除硬件实用程序中停止，但不会以物理方式删除设备，该框架将保留 PDO。 如果以后重新启用该设备，该框架使用相同的 PDO 和首先启动序列调用[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调，如中所示[强化序列物理设备对象](power-up-sequence-for-a-bus-driver.md)。
+在物理上将设备从系统中删除之前，框架不会删除 PDO。 例如，如果用户设备管理器在 "安全删除硬件" 实用程序中禁用该设备，或在 "安全删除硬件" 实用程序中停止该设备，但并不实际删除该设备，则该框架将保留 PDO。 如果以后重新启用了设备，则该框架将使用同一 PDO，并通过调用[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调来启动启动序列，如[物理设备对象的开机序列](power-up-sequence-for-a-bus-driver.md)中所示。
 
-**注意**：通常情况下，框架将调用总线驱动程序[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数后它被称为[ *EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)函数的所有子设备的驱动程序枚举。  该框架可能会发生时遇到的设备通电或断电故障的父代、 调用驱动程序的[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)已调用之前[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)函数的所有子设备。  请考虑调用[WdfDeviceInitSetReleaseHardwareOrderOnFailure](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)若要确保框架调用总线驱动程序[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调仅后已删除所有子设备。
+**注意**：通常，框架在为驱动程序枚举的所有子设备调用[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)函数后，会调用总线驱动程序的[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数。  如果父项出现设备断电或关机故障，则在为所有子设备调用[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)函数之前，框架可能会调用驱动程序的[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) 。  请考虑调用[WdfDeviceInitSetReleaseHardwareOrderOnFailure](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure) ，以确保框架仅在删除所有子设备后才调用总线驱动程序的[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调。
 
 
 

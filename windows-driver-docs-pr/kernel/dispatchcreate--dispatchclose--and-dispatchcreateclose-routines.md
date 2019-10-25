@@ -9,18 +9,18 @@ keywords:
 - DispatchCreateClose 例程
 - DispatchClose 例程
 - DispatchCreate 例程
-- IRP_MJ_CREATE I/O 函数代码
-- IRP_MJ_CLOSE I/O 函数代码
+- IRP_MJ_CREATE i/o 函数代码
+- IRP_MJ_CLOSE i/o 函数代码
 - 创建调度例程 WDK 内核
 - 关闭调度例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b259a4c10bbb28a0d7acfd246ad2058afb9f93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec8ba65849767383f5b4d0f66a4e0cb715a71c86
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381719"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838734"
 ---
 # <a name="dispatchcreate-dispatchclose-and-dispatchcreateclose-routines"></a>DispatchCreate、DispatchClose 和 DispatchCreateClose 例程
 
@@ -28,13 +28,13 @@ ms.locfileid: "67381719"
 
 
 
-驱动程序的[ *DRIVER_DISPATCH* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch) I/O 函数代码的 Irp [ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)和[**IRP\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)分别。 或者，组合[ *DispatchCreateClose* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程可以处理 Irp 为这两个这些 I/O 函数代码。
+驱动程序的[*DRIVER_DISPATCH*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) irp，其中的 i/o 函数代码为[**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)和[**IRP\_MJ 分别\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)。 此外，组合的[*DispatchCreateClose*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程还可以处理这两个 i/o 函数代码的 irp。
 
-创建请求可能源自从用户模式下子系统的尝试获取一个表示设备 （可能是代表应用程序或子系统级驱动程序） 的文件对象的句柄或更高级别的驱动程序中调用[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)或[ **IoAttachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevice)。
+Create 请求可能源自用户模式子系统，它尝试获取表示设备（可能代表应用程序或子系统级驱动程序）的文件对象的句柄，或从更高级别的驱动程序调用[**plxntb。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)或[**IoAttachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice)。
 
-相应的关闭请求所源自的驱动程序的设备对象与关联的文件对象句柄的用户模式下子系统的关闭。
+互惠关闭请求源自与驱动程序的设备对象关联的文件对象句柄的用户模式子系统。
 
-每个请求是本质上是同步的。
+其中每个请求都是同步的。
 
  
 

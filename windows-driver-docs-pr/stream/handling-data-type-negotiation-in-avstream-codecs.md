@@ -8,34 +8,34 @@ keywords:
 - AVStream 硬件编解码器支持 WDK，处理数据类型协商
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5edacb66f45537baf480a3ac2c86f40e9227fc8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03716daec4b50d8dde2df8f4c97377324771916f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384054"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844506"
 ---
 # <a name="handling-data-type-negotiation-in-avstream-codecs"></a>在 AVStream 编解码器中处理数据类型协商
 
-初始化设备时，系统提供设备代理 (Devproxy) 模块将分析驱动程序提供的筛选器描述符。 此外，Devproxy 公开相应的 MFT （媒体基础转换） 的输入和输出插针上的驱动程序支持的数据范围。
+初始化设备时，系统提供的设备代理（Devproxy）模块会分析驱动程序提供的筛选器描述符。 此外，Devproxy 还会在相应 MFT 的输入插针和输出插针（媒体基础转换）中公开受驱动程序支持的数据范围。
 
-流式处理开始时，MF 管道和用户模式应用程序使用这些范围执行使用驱动程序的数据类型协商。
+流式处理开始时，MF 管道和用户模式应用程序使用这些范围来对驱动程序进行数据类型协商。
 
-数据类型协商期间发生以下交互：
+在数据类型协商过程中，会发生下列交互：
 
-1.  Devproxy 检索由硬件编解码器筛选器的每个 pin 描述符中微型驱动程序提供的数据范围。
+1.  Devproxy 检索硬件编解码器筛选器的每个 pin 描述符中的微型驱动程序提供的数据范围。
 
-2.  Devproxy 向驱动程序发出数据交集请求。
+2.  Devproxy 发出对驱动程序的数据交集请求。
 
-3.  Devproxy 公开到 MF 完全正确的类型。
+3.  Devproxy 向 MF 公开格式完全相同的类型。
 
-4.  MF 拓扑生成器 （MF 相当于 DirectShow 图生成器） 构造流式处理拓扑。
+4.  MF 拓扑生成器（用于 DirectShow 图形生成器的 MF 等效项）构造流拓扑。
 
-5.  MF 拓扑生成器完成 Devproxy 输入/输出插针的数据类型后，它设置的数据类型在针上通过调用微型驱动程序的[ *AVStrMiniPinSetDataFormat* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspinsetdataformat)回调函数。 如果 KS pin 不存在，调用 Devproxy [ **KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kscreatepin)。
+5.  在 MF 拓扑生成器为 Devproxy 输入/输出插针完成数据类型后，它将通过调用微型驱动程序的[*AVStrMiniPinSetDataFormat*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspinsetdataformat)回调函数来设置 pin 上的数据类型。 如果 KS pin 不存在，Devproxy 将调用[**KsCreatePin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kscreatepin)。
 
 若要启用成功的数据类型协商，微型驱动程序必须执行以下步骤：
 
-1.  提供一系列中的受支持的数据范围**DataRanges**的成员[ **KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kspin_descriptor)硬件编解码器筛选器中包含每个公开 pin。 例如：
+1.  为硬件编解码器筛选器中包含的每个公开的 pin，在[**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)的**DataRanges**成员中提供受支持的数据范围列表。 例如：
 
     ```cpp
     const PKSDATARANGE VideoDecoderInputPinDataRanges[8] = {
@@ -50,38 +50,38 @@ ms.locfileid: "67384054"
     };
     ```
 
-    在这种情况下，指定的范围都是包装器类型如[ **KS\_DATARANGE\_MPEG2\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)， [ **KS\_DATARANGE\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video)，并[ **KS\_DATARANGE\_视频 2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagks_datarange_video2)。 在前面列出的代码示例中，每个范围进行类型转换到[ **KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))。
+    在这种情况下，指定的范围为包装类型，例如[**KS\_DATARANGE\_MPEG2\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_mpeg2_video)、 [**ks\_DATARANGE\_视频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video)和[**ks\_DATARANGE\_VIDEO2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video2)。 在前面列出的代码示例中，每个范围都是转换到[**KSDATARANGE**](https://docs.microsoft.com/previous-versions/ff561658(v=vs.85))。
 
     包装结构的最后一个成员称为格式块结构，例如，KS\_DATARANGE\_MPEG2\_视频。**VideoInfoHeader**。
 
-    支持连续数据区域的驱动程序应指定格式的块结构中的最大值。 支持离散数据范围的驱动程序应指定一个包含格式块结构中的离散值的数组。
+    支持连续数据区域的驱动程序应指定格式块结构中的最大值。 支持离散数据范围的驱动程序应指定包含格式块结构中离散值的数组。
 
-    如果声明，以便更高版本支持给定的格式的驱动程序失败 set 格式请求为该格式，则可能会降低性能。 只有您能保证支持列表格式。
+    如果以后声明支持给定格式的驱动程序失败，则可能降低性能。 仅可保证支持的列表格式。
 
-2.  驱动程序应允许在 pin 中 KSSTATE 上设置的媒体类型\_停止/KSSTATE\_运行。 不需要执行操作此处以外来确保该驱动程序不会不禁止这。
+2.  驱动程序应允许在 KSSTATE\_停止/KSSTATE\_运行时在 pin 上设置媒体类型。 除了之外，不需要执行任何操作，以确保该驱动程序不会禁止此操作。
 
-3.  该驱动程序应提供 intersect 处理程序中的[ **KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)。**IntersectHandler**对于每个插针。
+3.  驱动程序应在[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)中提供交集处理程序。每个 pin 的**IntersectHandler** 。
 
-4.  微型驱动程序应提供一个处理程序[ **KSPROPERTY\_连接\_PROPOSEDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)属性。
+4.  微型驱动程序应为[**KSPROPERTY\_连接\_PROPOSEDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-proposedataformat)属性提供处理程序。
 
-5.  如果设置的输出媒体类型，编码器应报告 （通过使用 pin 描述符） 可能输入的类型根据指定的输出媒体类型。 如果未设置输出媒体类型，则编码器应报告任何输入的媒体类型。
+5.  如果设置了输出媒体类型，则编码器应根据指定的输出媒体类型报告可能的输入类型（通过使用 pin 描述符）。 如果未设置输出媒体类型，则编码器不应报告任何输入媒体类型。
 
-6.  如果输入的媒体类型设置，解码器应报告根据指定的输入的媒体类型的可能的输出类型。
+6.  如果设置了输入媒体类型，则解码器应根据指定的输入媒体类型报告可能的输出类型。
 
-7.  如果输入的媒体类型设置，视频处理器应报告根据指定的输入的媒体类型及其输出类型。
+7.  如果设置了输入媒体类型，则视频处理器应根据指定的输入媒体类型报告其输出类型。
 
-8.  该驱动程序应支持[ICodecAPI](https://docs.microsoft.com/en-us/previous-versions/ms784893(v%3Dvs.85))接口。 用户模式组件也可以通过使用此用户模式接口获得编解码器的配置信息。
+8.  驱动程序应支持[ICodecAPI](https://docs.microsoft.com/en-us/previous-versions/ms784893(v%3Dvs.85))接口。 然后，用户模式组件可以使用此用户模式接口获取编解码器配置信息。
 
-9.  安装过程中的编码器，首先 ICodecAPI 设置的属性后, 跟输出媒体类型。 接着，编码器应仅使用当前配置中提供它可以支持的输入的类型。
+9.  在编码器的设置过程中，首先设置 ICodecAPI 属性，后跟输出媒体类型。 在此之后，编码器只应提供它可以通过当前配置支持的输入类型。
 
-10. **ICodecAPI**属性和编解码器 API 介质类型属性重叠在某些方面，例如，配置文件和级别。 在这些情况下，与媒体类型相关的编解码器 API 属性重写 ICodecAPI 属性。 设置媒体类型后，微型驱动程序不应允许修改这些重叠的属性。
+10. **ICodecAPI**属性和编解码器 API 媒体类型属性在某些区域中重叠，例如，配置文件和级别。 在这些情况下，与媒体类型 "重写" ICodecAPI 属性相关的编解码器 API 属性。 设置介质类型后，微型驱动程序不应允许修改这些重叠属性。
 
-11. 安装过程中的解码器，是首次设置输入的类型。 接着，解码器应提供仅输出类型，它可以支持使用其当前的输入类型。
+11. 在安装解码器期间，将首先设置输入类型。 在此之后，解码器只应提供它可支持的输出类型及其当前输入类型。
 
-12. 编码器的预期的输入应为 4:2:0，并且至少隔行扫描的 NV12 渐进/式。 预期的输出是一个压缩的基本流格式 MPEG2 PS / TS 或 H.264 附录 b。
+12. 编码器的预期输入应为4:2:0，且至少为 NV12 交错/渐进。 预期输出是格式 MPEG2 PS/p 或 H-p 附录 B 的压缩基本流。
 
-13. 解码器的预期的输入是针对基本流。 预期的输出是未压缩 NV12 作为源流的不成比例的版本。
+13. 解码器的预期输入是基本流。 预期输出为未压缩的源流的未缩放版本 NV12。
 
-14. 插针上 AVStream 驱动程序应具有都相互独立的状态。 这意味着可以从转换输入插针**KSSTATE\_停止**达**KSSTATE\_运行**在输出插针保持**KSSTATE\_停止**状态。
+14. AVStream 驱动程序的 pin 应具有相互独立的状态。 这意味着，在输出 pin 仍处于**KSSTATE\_停止**状态时，输入插针可以从 **\_KSSTATE**切换到**KSSTATE\_运行**。
 
-15. 当微型驱动程序收到的 GET 请求属性，变量的数据缓冲区大小时，微型驱动程序应如何解释**NULL**作为查询的所需的缓冲区大小的缓冲区。 在这种情况下，该驱动程序应指定所需的长度的 Irp-&gt;IoStatus.Information 字段并返回状态\_缓冲区\_溢出。 此外，微型驱动程序应设置为警告而不是错误的返回代码。 例如，请按照本指南使用数据交集处理程序。
+15. 当微型驱动程序接收到带有可变数据缓冲区大小的属性 GET 请求时，微型驱动程序应将**NULL**缓冲区解释为所需缓冲区大小的查询。 在这种情况下，驱动程序应在 Irp&gt;IoStatus 字段中指定所需的长度，并\_缓冲区返回状态\_溢出。 此外，微型驱动程序应将返回代码设置为警告而不是错误。 例如，对数据交集处理程序遵循此指南。

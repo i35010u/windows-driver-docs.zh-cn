@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_CA\_SET\_PROGRAM\_PIDS
-description: 客户端使用 KSPROPERTY\_BDA\_CA\_设置\_程序\_PID 在特定的程序中设置的数据包标识符列表。
+title: KSPROPERTY\_BDA\_CA\_设置\_程序\_PID
+description: 客户端使用 KSPROPERTY\_BDA\_CA\_将\_程序\_PID 设置为在特定程序中设置数据包标识符的列表。
 ms.assetid: 5cc049f7-df97-4739-8ec4-22ab646781a6
 keywords:
-- KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS 流式处理媒体设备
+- KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d15d6d1cac90709fa45414ace31a5f8f223065a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd6131bbc58139e9c0866d91d1ef032469938202
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364891"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842156"
 ---
-# <a name="kspropertybdacasetprogrampids"></a>KSPROPERTY\_BDA\_CA\_SET\_PROGRAM\_PIDS
+# <a name="ksproperty_bda_ca_set_program_pids"></a>KSPROPERTY\_BDA\_CA\_设置\_程序\_PID
 
 
-客户端使用 KSPROPERTY\_BDA\_CA\_设置\_程序\_PID 在特定的程序中设置的数据包标识符列表。
+客户端使用 KSPROPERTY\_BDA\_CA\_将\_程序\_PID 设置为在特定程序中设置数据包标识符的列表。
 
 ## <span id="ddk_ksproperty_bda_ca_set_program_pids_ks"></span><span id="DDK_KSPROPERTY_BDA_CA_SET_PROGRAM_PIDS_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67364891"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364891"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
 <td><p>Filter</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>BDA_PROGRAM_PID_LIST</p></td>
@@ -64,7 +64,7 @@ ms.locfileid: "67364891"
 <a name="remarks"></a>备注
 -------
 
-BDA\_程序\_PID\_列表结构包含的指定程序的数据包标识符列表。
+BDA\_程序\_PID\_列表结构包含指定程序的数据包标识符的列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,20 +76,20 @@ BDA\_程序\_PID\_列表结构包含的指定程序的数据包标识符列表�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h （包括 Bdamedia.h）</td>
+<td><p>标头</p></td>
+<td>Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**BDA\_PROGRAM\_PID\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_bda_program_pid_list)
+[**BDA\_程序\_PID\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_bda_program_pid_list)
 
-[**KSEVENT\_BDA\_程序\_流\_状态\_已更改**](ksevent-bda-program-flow-status-changed.md)
+[**KSEVENT\_BDA\_PROGRAM\_FLOW\_状态\_更改**](ksevent-bda-program-flow-status-changed.md)
 
-[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_节点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

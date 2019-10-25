@@ -4,12 +4,12 @@ description: WIA 微型驱动程序调试
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de83d900e29497ee740d7749eb35a7445d8b9855
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0db7e17f8422d7128c767e041e06a5d6b28807fa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355196"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840679"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA 微型驱动程序调试
 
@@ -17,47 +17,47 @@ ms.locfileid: "67355196"
 
 
 
-WIA 服务进程内执行 WIA 驱动程序。 因此，若要执行这些驱动程序的调试用户模式下，您必须将调试器连接到 WIA 服务。 有几种不同的方法要这样做;本主题介绍了其中两个。 （请参阅 Microsoft Windows SDK 文档的其他信息中调试服务）。
+WIA 驱动程序在 WIA 服务进程内执行。 因此，为了执行这些驱动程序的用户模式调试，必须将调试器连接到 WIA 服务。 有多种不同的方法可实现此目的;本主题介绍其中的两个。 （有关其他信息，请参阅 Microsoft Windows SDK 文档中的调试服务）。
 
-可在两种方式之一启动您的调试器：
+可以通过以下两种方式之一启动调试器：
 
--   通过自动启动在调试器下的 WIA 服务。
+-   通过在调试器下自动启动 WIA 服务。
 
--   通过在运行时将调试器附加到相应的进程。
+-   在运行时将调试器附加到相应的进程。
 
-以下是两个点，请记住：
+下面是两个需要注意的要点：
 
-如果您需要网络访问的符号和在调试器中的其他文件，这些可能不会显示如果在调试器下的 WIA 服务自动启动。 WIA 为 Windows XP 中的本地系统服务和以 localservice 身份运行 Microsoft Windows Server 2003 和更高版本的操作系统版本，并且没有适当的权限来访问网络。 因此，即使你的计算机可以"看到"的所有内容在网络上，可能无法再到调试器运行服务。 有关 WIA 服务的详细信息的更改的权限级别，请参阅[WIA 驱动程序的安全问题](security-issues-for-wia-drivers.md)。
+如果需要从调试器中访问符号和其他文件的网络，则在调试器下自动启动 WIA 服务时，这些文件可能不可见。 WIA 作为 LocalSystem 服务在 Windows XP 和 Microsoft Windows Server 2003 及更高版本的操作系统版本中运行，并且没有访问网络的适当权限。 因此，即使您的计算机可以 "查看" 网络上的所有内容，运行该服务的调试器也可能无法运行。 有关 WIA 服务的更改权限级别的详细信息，请参阅[Wia 驱动程序的安全问题](security-issues-for-wia-drivers.md)。
 
--   如果驱动程序加载或初始化该驱动程序的 STI 部分期间出现问题 (例如，在为[ **IStiUSD::Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize))，然后附加调试器时，该错误已有发生并已经太迟以获得有用的信息。 此问题的常见症状是，设备不会不会显示在**我的电脑**文件夹中，但*does*显示在**设备管理器**文件夹。
+-   如果在驱动程序的 STI 部分的加载或初始化过程中出现问题（例如，在[**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)期间），则在附加调试器时，此错误已经发生并且太晚，无法获取有用的信息。 此问题的常见症状是设备不*会显示在***我的电脑**文件夹中，而是显示在**设备管理器**文件夹中。
 
-### <a name="starting-the-wia-service-under-a-debugger"></a>启动在调试器下 WIA 服务
+### <a name="starting-the-wia-service-under-a-debugger"></a>在调试器下启动 WIA 服务
 
-WIA 服务启动时，服务控制管理器 (SCM) 看起来在服务管理数据库中的条目，并启动该条目指向可执行文件。 启动调试程序下的 WIA 服务的简单方法是将该条目替换为一个包含您的调试器。 可以在注册表中找到该条目：
+WIA 服务启动后，服务控制管理器（SCM）将查看服务控制数据库中的条目，并启动该条目指向的可执行文件。 在调试器下启动 WIA 服务的一种简单方法是将该项替换为包含调试器的项。 可在以下注册表项中找到该条目：
 
-**HKLM\\System\\CurrentControlSet\\Services\\StiSvc\\ImagePath**
+**HKLM\\System\\CurrentControlSet\\服务\\StiSvc\\ImagePath**
 
 最初， **ImagePath**键设置为以下字符串值：
 
-" **%SystemRoot%\\System32\\svchost.exe -k imgsvc**"
+" **% SystemRoot%\\System32\\svchost.exe-k imgsvc**"
 
-若要运行 NTSD WIA 服务，例如，按如下所示修改上面的值：
+例如，若要在 NTSD 下运行 WIA 服务，请按如下所示修改上述值：
 
-"**ntsd -g -G %SystemRoot%\\System32\\svchost.exe -k imgsvc**"
+"**ntsd-g-g% SystemRoot%\\System32\\svchost.exe-k imgsvc**"
 
-进行此更改后，WIA 服务始终在 NTSD 下启动。 请注意，是否已在运行该服务，它必须停止并重新启动此更改才能生效。 请参阅[启动和停止静止图像服务](starting-and-stopping-the-still-image-service.md)有关详细信息。
+进行此更改后，WIA 服务始终在 NTSD 下启动。 请注意，如果服务已在运行，则必须先停止并重新启动该服务，然后才能使此更改生效。 有关详细信息，请参阅[启动和停止静止映像服务](starting-and-stopping-the-still-image-service.md)。
 
-若要使调试器的窗口可见，还需要更改另一个注册表项。 对此注册表项的路径为：
+若要使调试器窗口可见，还需要更改另一个注册表项。 此注册表项的路径为：
 
-**HKLM\\System\\CurrentControlSet\\Services\\StiSvc\\Type**
+**HKLM\\System\\CurrentControlSet\\服务\\StiSvc\\类型**
 
-初始值**类型**密钥，0X20，阻止显示在调试器窗口。 更改的值**类型**为 DWORD 值 0X120 密钥。
+**类型**键0x20 的初始值会阻止显示调试器窗口。 将**类型**键的值更改为 DWORD 值0X120。
 
-### <a name="attaching-the-debugger-at-run-time"></a>将调试器附加在运行时
+### <a name="attaching-the-debugger-at-run-time"></a>在运行时附加调试器
 
-大多数调试器需要才能将连接到该进程已启动后正在运行的进程的 PID。 因为名为泛型宿主进程下运行 WIA *svchost.exe*，查找正确的实例*svchost.exe*至关重要。
+大多数调试器都需要正在运行的进程的 PID，才能在该进程已启动之后附加到该进程。 由于 WIA 在名为*svchost.exe*的泛型宿主进程下运行，因此查找正确的*svchost.exe*实例是必不可少的。
 
-如果从 Microsoft 网站 (www.microsoft.com) 下载调试器包，它包含名为的实用程序*tlist.exe*。 *Tlist.exe*显示所有正在运行的进程。 如果您执行*tlist.exe*使用 s 开关，此实用工具还显示哪些进程托管的服务。 例如，运行*tlist.exe s*生成类似于以下输出：
+如果从 Microsoft 站点（www.microsoft.com）下载了调试程序包，该程序包将包含一个名为*tlist.exe*的实用程序。 *Tlist.exe*显示所有正在运行的进程。 如果使用 s 开关执行*tlist.exe* ，此实用工具还会显示哪些进程正在托管哪些服务。 例如，运行*tlist.exe*会生成类似于以下内容的输出：
 
 ```console
    0 System Process
@@ -80,14 +80,14 @@ WIA 服务启动时，服务控制管理器 (SCM) 看起来在服务管理数据
 22824 tlist.exe
 ```
 
-在前面的示例中，五个实例的*svchost.exe*正在运行。 WIA 服务**StiSvc** （静止图像服务） 下运行*svchost.exe*其 PID 是 1076年的实例。 将调试器附加到进程 1076 开始调试。
+在前面的示例中， *svchost.exe*的五个实例正在运行。 WIA 服务**StiSvc** （静态图像服务）在其 PID 为1076的*svchost.exe*实例下运行。 将调试器附加到进程1076以启动调试。
 
-而不是使用一个实用程序，如*tlist.exe，* 标识的多个单个实例*svchost.exe*情况下，您可以制作一份*svchost.exe*和重命名它 (例如， *stisvc.exe*)。 然后，将更改的服务控制条目**ImagePath**要使用此副本的值*svchost.exe* (其名称现在是的一个*stisvc.exe*)。 例如，可以设置其路径的键
+您可以创建*svchost.exe*的副本并对其重命名（例如， *stisvc*），而不是使用*tlist.exe*等实用工具程序来标识多个*svchost.exe*实例的单个实例。 然后，将服务控制项的**ImagePath**值更改为使用此*svchost.exe*副本（其名称现在为*stisvc*）。 例如，可以设置其路径为
 
-**HKLM\\System\\CurrentControlSet\\Control\\Services\\Stisvc\\ImagePath**
+**HKLM\\System\\CurrentControlSet\\控件\\Services\\Stisvc\\ImagePath**
 
-为以下字符串值：
+到以下字符串值：
 
-" **%SystemRoot%\\System32\\stisvc.exe -k imgsvc**"
+" **% SystemRoot%\\System32\\stisvc-k imgsvc**"
 
-现在，当 WIA 服务启动时，它运行下*stisvc.exe*而不是*svchost.exe*。 查找此过程是更简单，因为没有单个实例的*stisvc.exe*。 无需查找 PID 查找它。 因此，例如，如果你要开发使用 Microsoft Visual Studio 的驱动程序，则可以转到**开始调试**下的菜单项**构建**菜单中，单击**附加到进程...** ，然后选择*stisvc.exe*列表中。
+现在，当 WIA 服务启动时，它将在*stisvc*而不是*svchost.exe*下运行。 查找此过程更简单，因为只有一个*stisvc*实例。 无需查找 PID 即可找到它。 例如，如果使用 Microsoft Visual Studio 开发驱动程序，则可以在 "**生成**" 菜单下，单击 "**启动调试**" 菜单项，单击 "**附加到进程 ...** "，然后在列表中选择 " *stisvc* "。

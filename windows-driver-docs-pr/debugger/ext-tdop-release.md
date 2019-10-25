@@ -1,6 +1,6 @@
 ---
-title: EXT\_TDOP\_RELEASE
-description: EXT\_TDOP\_释放子操作的调试\_请求\_EXT\_类型化\_数据\_ANSI 请求操作释放类型化的数据说明。
+title: 扩展\_TDOP\_版本
+description: EXT\_TDOP\_调试\_请求的发布子操作\_EXT\_类型\_数据\_ANSI 请求操作将释放类型化的数据说明。
 ms.assetid: 4c2bbc65-a98d-4ee7-bbd0-e30b33c330e0
 keywords:
 - EXT_TDOP_RELEASE Windows 调试
@@ -12,46 +12,46 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4b0882014ac5668a920a6199044423be0586bfd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba47443e5432dac224dc7bb9458d2b6f3bf059e5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361331"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838763"
 ---
-# <a name="exttdoprelease"></a>EXT\_TDOP\_RELEASE
+# <a name="ext_tdop_release"></a>扩展\_TDOP\_版本
 
 
-EXT\_TDOP\_版本的子操作[**调试\_请求\_EXT\_类型化\_数据\_ANSI** ](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作释放类型化的数据说明。
+EXT\_TDOP\_调试\_请求的发布子操作[ **\_EXT\_类型\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)[**请求**](request.md)操作将释放类型化的数据说明。
 
 **Parameters**
 
-<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**Operation**  
-设置为 EXT\_TDOP\_此子操作的版本。
+<span id="Operation"></span><span id="operation"></span><span id="OPERATION"></span>**运作**  
+设置为 EXT\_TDOP\_此子操作的发布。
 
 <span id="InData"></span><span id="indata"></span><span id="INDATA"></span>**InData**  
-指定的实例[**调试\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_debug_typed_data)结构释放。
+指定要发布[ **\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data)结构的调试实例。
 
-<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态**  
-接收此子操作返回的状态代码。 这是与返回的值相同[**请求**](request.md)。
+<span id="Status"></span><span id="status"></span><span id="STATUS"></span>**状态值**  
+接收此子操作返回的状态代码。 这与[**请求**](request.md)返回的值相同。
 
 <a name="remarks"></a>备注
 -------
 
-EXT\_TDOP\_版本是中的值[ **EXT\_TDOP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)枚举。
+EXT\_TDOP\_版本是[**ext\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)枚举中的一个值。
 
-此子操作的参数属于[ **EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)结构。 EXT 隶属\_类型化\_前面的参数部分中未列出的数据不使用此子操作，应设置为零。 前面的 Parameters 节中的成员的说明在此特定的设置中指定只有成员的用途。 请参阅**EXT\_类型化\_数据**的更多详细信息。
+此子操作的参数是[**类型\_数据结构的 EXT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)的成员。 此子操作不使用 EXT\_类型化\_数据的成员，此子操作不使用该类型的数据，应将其设置为零。 前面参数部分中的成员的说明仅指定此特定设置中的成员的用途。 有关更多详细信息，请参阅**EXT\_类型化的\_数据**。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**DEBUG\_REQUEST\_EXT\_TYPED\_DATA\_ANSI**](debug-request-ext-typed-data-ansi.md)
+[**调试\_请求\_EXT\_类型\_数据\_ANSI**](debug-request-ext-typed-data-ansi.md)
 
-[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ne-wdbgexts-_ext_tdop)
+[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)
 
-[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdbgexts/ns-wdbgexts-_ext_typed_data)
+[**EXT\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_ext_typed_data)
 
-[**请求**](request.md)
+[**需要**](request.md)
 
  
 

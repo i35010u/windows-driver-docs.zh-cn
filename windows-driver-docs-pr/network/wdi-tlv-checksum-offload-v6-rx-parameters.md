@@ -1,24 +1,24 @@
 ---
-title: WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS (0xDD)
-description: WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS 是包含校验和卸载对 IPv6 的 rx TLV。
+title: WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS （0xDD）
+description: WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS 是包含用于 IPv6 的 Rx 校验和卸载的 TLV。
 ms.assetid: F647B2B6-F535-4AE2-B7A9-DF08AADB2A95
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS (0xDD) 网络驱动程序
+- WDI_TLV_CHECKSUM_OFFLOAD_V6_RX_PARAMETERS （0xDD）从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 169a55d0e77d955b07809e50d1fc879debb7b022
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7eeb6416eeda52541839d8cf4aad98d8ee1b853f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387196"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841641"
 ---
-# <a name="wditlvchecksumoffloadv6rxparameters-0xdd"></a>WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数 (0xDD)
+# <a name="wdi_tlv_checksum_offload_v6_rx_parameters-0xdd"></a>WDI\_TLV\_校验和\_卸载\_V6\_RX\_参数（0xDD）
 
 
-WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数是包含用于对 IPv6 的 Rx 校验和卸载 TLV。
+WDI\_TLV\_校验和\_卸载\_V6\_RX\_参数是包含用于 IPv6 的 Rx 校验和卸载的 TLV。
 
-将报告功能值，如中所述[ **NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)。 使用 NDIS\_卸载\_不\_支持和 NDIS\_卸载\_时，该值指示通过功能支持[OID\_WDI\_GET\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)。
+功能值以[**NDIS\_TCP\_IP\_校验和\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)的形式报告。 使用 NDIS\_卸载\_不\_受支持，并且通过[OID\_WDI\_获取\_适配器\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-get-adapter-capabilities)时，支持 NDIS\_卸载\_。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -28,7 +28,7 @@ WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数是包含用于对 IPv6 的 Rx 校验�
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
@@ -54,15 +54,15 @@ WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数是包含用于对 IPv6 的 Rx 校验�
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>指定是否支持卸载 IP 扩展标头的数据包的校验和。</td>
+<td>指定是否支持卸载具有 IP 扩展标头的数据包的校验和。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
-<td>指定是否支持使用 TCP 选项的校验和卸载。</td>
+<td>指定是否支持卸载带有 TCP 选项的校验和。</td>
 </tr>
 <tr class="even">
 <td>UINT32</td>
-<td>指定是否启用了 TCP 校验和卸载。</td>
+<td>指定是否启用 TCP 校验和卸载。</td>
 </tr>
 <tr class="odd">
 <td>UINT32</td>
@@ -84,14 +84,14 @@ WDI\_TLV\_CHECKSUM\_卸载\_V6\_RX\_参数是包含用于对 IPv6 的 Rx 校验�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

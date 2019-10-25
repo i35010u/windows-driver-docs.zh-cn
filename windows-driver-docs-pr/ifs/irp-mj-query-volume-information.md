@@ -12,29 +12,29 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ead50b6913b1915b67aa4c8941885f5bd4003db6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3381954c99c37221f4c6a8e096a395676ec4a28b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384814"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841173"
 ---
-# <a name="irpmjqueryvolumeinformation"></a>IRP\_MJ\_查询\_卷\_信息
+# <a name="irp_mj_query_volume_information"></a>IRP\_MJ\_查询\_卷\_信息
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-**IRP\_MJ\_查询\_卷\_信息**I/O 管理器发送请求。 它可以发送，例如，在用户模式应用程序具有如调用 Microsoft Win32 函数时**GetDiskFreeSpace**或**GetFileType**。
+**IRP\_MJ\_查询\_卷\_信息**请求由 I/o 管理器发送。 例如，在用户模式应用程序调用 Microsoft Win32 函数（如**GetDiskFreeSpace**或**GetFileType**）时，可以发送它。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-文件系统驱动程序应提取和解码以确定目标设备对象是否为文件系统控制设备对象的文件对象。 如果是，并已打开的卷 （或一种开放的卷上的对象） 句柄上发出请求，文件系统驱动程序应处理该请求，并完成 IRP。
+文件系统驱动程序应提取并解码文件对象，以确定目标设备对象是否为文件系统的控制设备对象。 如果是，并且如果请求是在打开的某个卷（或该卷上某个对象的打开）上发出的，则文件系统驱动程序应处理该请求并完成 IRP。
 
-否则为文件系统驱动程序应查询将失败，并完成 IRP。
+否则，文件系统驱动程序应使查询失败并完成 IRP。
 
-可以查询的卷信息的类型是文件系统相关，但通常包括以下各项：
+可以查询的卷信息的类型与文件系统相关，但通常包括：
 
 FileFsAttributeInformation
 
@@ -44,28 +44,28 @@ FileFsSizeInformation
 
 FileFsVolumeInformation
 
-有关所有可能的信息类型的列表，请参阅*IrpSp-&gt;Parameters.QueryVolume.FsInformationClass*下面。
+有关所有可能的信息类型的列表，请参阅下面的*IrpSp-&gt;QueryVolume. FsInformationClass* 。
 
 ## <a name="operation-network-redirect-drivers"></a>操作：网络重定向驱动程序
 
 
-收到请求时为 FileFsDeviceInformation，网络重定向程序必须包括文件\_远程\_设备的选项之一**DeviceCharacteristics**的成员[ **文件\_FS\_设备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_fs_device_information)返回结构。
+接收 FileFsDeviceInformation 请求的网络重定向程序必须包含文件\_远程\_设备作为 [**文件\_FS\_设备的 DeviceCharacteristics 成员的选项之一\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_fs_device_information)返回的信息结构。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
-筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序。
+筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序。
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理查询卷信息请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。 （IRP 显示为*irp*。）驱动程序可以使用 IRP 的下列成员中设置的信息，并使用 IRP 堆栈位置来处理查询卷信息请求：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
-指向目标设备对象指针。
+指向目标设备对象的指针。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp.SystemBuffer*  
-到其中的卷信息是要返回的系统提供的输出缓冲区的指针。 此信息存储在一个以下结构：
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp. SystemBuffer*  
+指向系统提供的输出缓冲区的指针，将在其中返回卷信息。 此信息存储在以下结构之一中：
 
 文件\_FS\_属性\_信息
 
@@ -87,19 +87,19 @@ FileFsVolumeInformation
 
 文件\_FS\_扇区\_大小\_信息
 
-FileFsVolumeFlagsInformation 类和关联[**文件\_FS\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_volume_information)结构是适用于 Windows Vista 及更高版本版本。
+Windows Vista 和更高版本中提供了 FileFsVolumeFlagsInformation 类和关联的[**文件\_FS\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_volume_information)结构。
 
-<a href="" id="------irp--iostatus"></a> *Irp-&gt;IoStatus*指针，指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)有关接收最终的完成状态和信息的结构请求的操作。
+<a href="" id="------irp--iostatus"></a>*Irp-&gt;IoStatus*指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
 
-<a href="" id="------irp--userbuffer"></a> *Irp-&gt;UserBuffer*可选指向在其中的调用方提供输出缓冲区的内容*Irp-&gt;AssociatedIrp.SystemBuffer* I/O 管理器在 I/O 完成复制。 驱动程序不要使用此缓冲区来返回请求的任何数据。
+<a href="" id="------irp--userbuffer"></a>*Irp-&gt;UserBuffer*指向调用方提供的输出缓冲区的可选指针，在 i/o 管理器的 i/o 完成过程中，将通过 i/o 管理器将*Irp&gt;AssociatedIrp*的内容复制到其中。 驱动程序不使用此缓冲区返回请求的任何数据。
 
-<a href="" id="------irpsp--fileobject"></a> *IrpSp-&gt;的文件对象*与关联的文件对象的指针*DeviceObject*。
+<a href="" id="------irpsp--fileobject"></a>*IrpSp-&gt;FileObject*指向与*DeviceObject*关联的文件对象的指针。
 
-*IrpSp-&gt;的文件对象*参数包含一个指向**RelatedFileObject**字段中，这也是一个文件\_对象结构。 **RelatedFileObject**字段的文件\_对象结构不是有效的处理过程**IRP\_MJ\_查询\_卷\_信息**，不应使用。
+*&gt;IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理**IRP\_MJ\_查询\_卷\_信息**时无效，不应使用。
 
-<a href="" id="------irpsp--majorfunction"></a> *IrpSp-&gt;MajorFunction*指定**IRP\_MJ\_查询\_卷\_信息**。
+<a href="" id="------irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*指定**IRP\_MJ\_QUERY\_卷\_信息**。
 
-<a href="" id="------irpsp--parameters-queryvolume-fsinformationclass"></a> *IrpSp-&gt;Parameters.QueryVolume.FsInformationClass*指定返回文件系统卷信息的类型。 此成员可以是以下值之一：
+<a href="" id="------irpsp--parameters-queryvolume-fsinformationclass"></a>*IrpSp-&gt;参数. QueryVolume. FsInformationClass*指定文件系统要返回的卷信息的类型。 此成员可以是以下项之一：
 
 <table>
 <colgroup>
@@ -108,81 +108,81 @@ FileFsVolumeFlagsInformation 类和关联[**文件\_FS\_卷\_信息**](https://d
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 <th align="left">含义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>FileFsAttributeInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_attribute_information" data-raw-source="[&lt;strong&gt;FILE_FS_ATTRIBUTE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_attribute_information)"> <strong>FILE_FS_ATTRIBUTE_INFORMATION</strong> </a>结构，其中包含有关文件系统负责该卷的属性信息。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_attribute_information" data-raw-source="[&lt;strong&gt;FILE_FS_ATTRIBUTE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_attribute_information)"><strong>FILE_FS_ATTRIBUTE_INFORMATION</strong></a>结构，其中包含有关负责卷的文件系统的属性信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsControlInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information)"> <strong>FILE_FS_CONTROL_INFORMATION</strong> </a>结构，其中包含有关卷的文件系统控制信息。</p></td>
+<td align="left"><p>返回包含有关卷的文件系统控制信息的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information" data-raw-source="[&lt;strong&gt;FILE_FS_CONTROL_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)"><strong>FILE_FS_CONTROL_INFORMATION</strong></a>结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsDeviceInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_fs_device_information" data-raw-source="[&lt;strong&gt;FILE_FS_DEVICE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_fs_device_information)"> <strong>FILE_FS_DEVICE_INFORMATION</strong> </a>结构，其中包含该卷的设备信息。</p></td>
+<td align="left"><p>返回包含卷的设备信息的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_fs_device_information" data-raw-source="[&lt;strong&gt;FILE_FS_DEVICE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_fs_device_information)"><strong>FILE_FS_DEVICE_INFORMATION</strong></a>结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsDriverPathInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_DRIVER_PATH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_driver_path_information)"> <strong>FILE_FS_DRIVER_PATH_INFORMATION</strong> </a>结构，其中包含有关指定驱动程序是在该卷的 I/O 路径信息。 创建者<strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>请求必须存储到驱动程序的名称<strong>FILE_FS_DRIVER_PATH_INFORMATION</strong>之前将 IRP 发送到文件系统的结构卷设备堆栈。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information" data-raw-source="[&lt;strong&gt;FILE_FS_DRIVER_PATH_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)"><strong>FILE_FS_DRIVER_PATH_INFORMATION</strong></a>结构，该结构包含有关指定的驱动程序是否处于卷的 i/o 路径中的信息。 在将 IRP 发送到文件系统卷设备堆栈之前， <strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>请求的发起方必须将驱动程序的名称存储到<strong>FILE_FS_DRIVER_PATH_INFORMATION</strong>结构。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsFullSizeInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_full_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_FULL_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_full_size_information)"> <strong>FILE_FS_FULL_SIZE_INFORMATION</strong> </a>结构，其中包含有关在卷上的总可用空间量的信息。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_FULL_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information)"><strong>FILE_FS_FULL_SIZE_INFORMATION</strong></a>结构，其中包含有关卷上可用空间总量的信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsObjectIdInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information)"> <strong>FILE_FS_OBJECTID_INFORMATION</strong> </a>结构，其中包含该卷的特定于系统文件的对象 ID 信息。 请注意，这是不由操作系统分配的 （基于 GUID 的） 唯一卷名称相同。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information" data-raw-source="[&lt;strong&gt;FILE_FS_OBJECTID_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)"><strong>FILE_FS_OBJECTID_INFORMATION</strong></a>结构，其中包含卷的特定于文件的对象 ID 信息。 请注意，这与由操作系统分配的（基于 GUID 的）唯一卷名称不同。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsSizeInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_size_information)"> <strong>FILE_FS_SIZE_INFORMATION</strong> </a>结构，它包含有关可供用户使用与发出线程关联的卷上的空间量的信息<strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>请求。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information)"><strong>FILE_FS_SIZE_INFORMATION</strong></a>结构，该结构包含有关卷上的空间量的信息，该信息可供与发起<strong>IRP_MJ_QUERY_VOLUME_INFORMATION</strong>请求的线程关联的用户使用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileFsVolumeInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_volume_information" data-raw-source="[&lt;strong&gt;FILE_FS_VOLUME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_volume_information)"> <strong>FILE_FS_VOLUME_INFORMATION</strong> </a> ，包含有关卷的卷标签、 序列号和创建时间等信息。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_volume_information" data-raw-source="[&lt;strong&gt;FILE_FS_VOLUME_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_volume_information)"><strong>FILE_FS_VOLUME_INFORMATION</strong></a> ，其中包含有关卷的信息，例如卷标、序列号和创建时间。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileFsSectorSizeInformation</strong></p></td>
-<td align="left"><p>返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_sector_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SECTOR_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_sector_size_information)"> <strong>FILE_FS_SECTOR_SIZE_INFORMATION</strong> </a>结构，其中包含有关物理和逻辑扇区大小的卷的信息。</p></td>
+<td align="left"><p>返回一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_sector_size_information" data-raw-source="[&lt;strong&gt;FILE_FS_SECTOR_SIZE_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_sector_size_information)"><strong>FILE_FS_SECTOR_SIZE_INFORMATION</strong></a>结构，其中包含有关卷的物理扇区大小和逻辑扇区大小的信息。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a href="" id="------irpsp--parameters-queryvolume-length"></a> *IrpSp-&gt;Parameters.QueryVolume.Length*指向的缓冲区的长度，以字节为单位， *Irp-&gt;UserBuffer*。 返回时，此变量接收到的缓冲区写入的字节数。
+<a href="" id="------irpsp--parameters-queryvolume-length"></a>*IrpSp-&gt;参数. QueryVolume. 长度*Irp 所指向的缓冲区的长度（以字节为单位） *&gt;UserBuffer*。 返回时，此变量将接收写入缓冲区的字节数。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**文件\_FS\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_attribute_information)
+[**文件\_FS\_属性\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_attribute_information)
 
-[**文件\_FS\_控制\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_control_information)
+[**文件\_FS\_控制\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)
 
-[**FILE\_FS\_DEVICE\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_fs_device_information)
+[**文件\_FS\_设备\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_fs_device_information)
 
-[**文件\_FS\_驱动程序\_路径\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_fs_driver_path_information)
+[**文件\_FS\_驱动程序\_路径\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_driver_path_information)
 
-[**文件\_FS\_完整\_大小\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_full_size_information)
+[**文件\_FS\_完整\_大小\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_full_size_information)
 
-[**文件\_FS\_OBJECTID\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_objectid_information)
+[**文件\_FS\_OBJECTID\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_objectid_information)
 
-**文件\_FS\_扇区\_大小\_信息**
-[**文件\_FS\_大小\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_size_information)
+**文件\_fs\_扇区\_大小\_信息**
+[**文件\_FS\_大小\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_size_information)
 
-[**文件\_FS\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_file_fs_volume_information)
+[**文件\_FS\_卷\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_fs_volume_information)
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**IRP\_MJ\_设置\_卷\_信息**](irp-mj-set-volume-information.md)
 

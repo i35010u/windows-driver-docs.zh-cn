@@ -1,8 +1,8 @@
 ---
 title: KSPROPERTY\_CAMERACONTROL\_扩展\_IRTORCHMODE
-description: 此扩展的属性控制客户端用于控制红外线 （ir） 照相机的红外 torch 电源级别和关税重启。
+description: 此扩展属性控件由客户端用来控制 IR 相机的红外 torch 的电源级别和工作周期。
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -16,55 +16,55 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: d9aeba21b57ca4c895253684ebf95a97ece48964
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8833e4b946294c4c1a9a987d4e2d0c35ee66414
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355381"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843226"
 ---
-# <a name="kspropertycameracontrolextendedirtorchmode"></a>KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE
+# <a name="ksproperty_cameracontrol_extended_irtorchmode"></a>KSPROPERTY_CAMERACONTROL_EXTENDED_IRTORCHMODE
 
-此扩展的属性控制客户端用于控制红外线 （ir） 照相机的红外 torch 电源级别和关税重启。 发送到标准以及驱动程序[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构跟[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构。
+此扩展属性控件由客户端用来控制 IR 相机的红外 torch 的电源级别和工作周期。 它连同标准[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构一起发送到驱动程序，后跟[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构。
 
-## <a name="usage-summary-table"></a>使用率摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
-| Get | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
+| “获取” | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
 | --- | --- | --- | --- | --- |
-| 是 | 是 | Filter | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)|
+| “是” | “是” | Filter | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)|
 
 ## <a name="remarks"></a>备注
 
-属性请求包含[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和一个[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构。
+属性请求包含[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构。
 
-Total 属性数据大小为 sizeof(KSCAMERA_EXTENDEDPROP_HEADER) + sizeof(KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING)。 **大小**的成员[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)设置为此属性的总数据大小。
+总的属性数据大小为 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING）。 [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的**Size**成员设置为此总属性数据大小。
 
-以下是标志，它们可以放入**KSCAMERA_EXTENDEDPROP_HEADER。标志**和**KSCAMERA_EXTENDEDPROP_HEADER。功能**字段。  它们定义 IR torch 运行模式。
+下面是可以放置在 KSCAMERA_EXTENDEDPROP_HEADER 中的标志 **。Flags**和**KSCAMERA_EXTENDEDPROP_HEADER。功能**字段。  它们定义了 IR torch 的运行模式。
 
 | Torch 模式                                                       | 描述                        |
 |------------------------------------------------------------------|------------------------------------|
-| KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF                            | 关闭                                |
-| KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON                      | 始终可用                          |
-| KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATING_FRAME_ILLUMINATION | 在每个其他帧           |
+| KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF                            | Off                                |
+| KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON                      | Always on                          |
+| KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATING_FRAME_ILLUMINATION | 每隔一帧上的           |
 
-KSCAMERA_EXTENDEDPROP_IRTORCHMODE 始终是同步的控件。  照相机不流式处理时，该控件具有未定义的行为。
+KSCAMERA_EXTENDEDPROP_IRTORCHMODE 始终是一个同步控件。  当照相机未进行流式处理时，控件没有已定义的行为。
 
 对于 GET 请求，驱动程序将设置以下字段：
 
-- **KSCAMERA_EXTENDEDPROP_HEADER。功能**与上述 KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ 的位掩码*XXX*表示支持的照相机的运行模式的标志。
-- **KSCAMERA_EXTENDEDPROP_HEADER。标志**上述 KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ 之一*XXX*标志以指示当前操作模式。
-- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。模式**为 0。
-- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。最小值**到可用的最小功率级别。
-- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。最大**到可用的最大的功率级别。
-- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。步骤**到电源级别之间的最小增量。
-- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。VideoProc.ul**到当前的电源级别。 此值应默认为人脸验证控件通常使用的相同电源级别。
+- **KSCAMERA_EXTENDEDPROP_HEADER。此功能**具有上述 KSCAMERA_EXTENDEDPROP_IRTORCHMODE_*XXX*标志的位掩码，表示照相机支持的操作模式。
+- **KSCAMERA_EXTENDEDPROP_HEADER。标记**为上述 KSCAMERA_EXTENDEDPROP_IRTORCHMODE_*XXX*标志之一，以指示当前运行模式。
+- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。模式**为0。
+- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。** 最小可用电源级别的最小值。
+- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。最大**可用电源级别。
+- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。单步执行**电源级别间的最小增量。
+- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。VideoProc**到当前电源级别。 默认情况下，此值应为正面身份验证控件通常使用的相同电源级别。
 
-对于组的请求，驱动程序使用以下字段：
+对于集请求，驱动程序使用以下字段：
 
-- **KSCAMERA_EXTENDEDPROP_HEADER。标志**设置运行模式。
-- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。VideoProc.ul**设置功率级别。  此值不起 KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF 上。
+- **KSCAMERA_EXTENDEDPROP_HEADER。** 用于设置运行模式的标志。
+- **KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING。VideoProc**设置一个电源级别。  此值对 KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF 不起作用。
 
-下表包含的说明和要求[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构时使用元数据控件字段。
+下表包含在使用元数据控件时[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -79,35 +79,35 @@ KSCAMERA_EXTENDEDPROP_IRTORCHMODE 始终是同步的控件。  照相机不流�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>这必须是 1。</p></td>
+<td><p>版本</p></td>
+<td><p>这必须为1。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0XFFFFFFFF)。</p></td>
+<td><p>KSCAMERA_EXTENDEDPROP_FILTERSCOPE （0xFFFFFFFF）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>大小</p></td>
-<td><p>This must be sizeof(KSCAMERA_EXTENDEDPROP_HEADER)+sizeof([KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)),</p></td>
+<td><p>Size</p></td>
+<td><p>这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)），</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
-<td><p>对于同步控件将忽略此值。</p></td>
+<td><p>对于同步控件，此值将被忽略。</p></td>
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>可能的任意组合<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF</strong>， <strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON</strong>或<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>。  
-此字段必须报告至少一个功能。  该字段必须报告<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON</strong>或<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>和 / 或。 该值<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF</strong>是可选的。
+<td><p>可以是<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF</strong>、 <strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON</strong>或<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>的任意组合。  
+此字段必须报告至少一项功能。  此字段必须报告 " <strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON</strong> " 或 " <strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATIVE_FRAME_ILLUMINATION</strong> "。 值<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF</strong>是可选的。
 </p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>必须在其中一个标志中报告功能。  默认值必须必须是<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON</strong>或<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>。</p></td>
+<td><p>必须是功能中所报告的标志之一。  默认值必须是<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON</strong>或<strong>KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATIVE_FRAME_ILLUMINATION</strong>。</p></td>
 </tr>
 </tbody>
 </table>
 
-下表包含的说明和要求[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构字段时使用 IR torch 模式控制。
+下表包含使用 IR torch 模式控件时[KSCAMERA_EXTENDEDPROP_VIDEOPROCSETTING](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_videoprocsetting)结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -122,20 +122,20 @@ KSCAMERA_EXTENDEDPROP_IRTORCHMODE 始终是同步的控件。  照相机不流�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>模式</p></td>
-<td><p>未使用。  必须为 0。</p></td>
+<td><p>“模式”</p></td>
+<td><p>用.  必须为0。</p></td>
 </tr>
 <tr class="even">
-<td><p>最小值/最大/步骤</p></td>
-<td><p>最小值/最大/步骤包含最小值/最大/增量的红外线 （ir） 电源设置。  驱动程序必须返回它们的 GET 操作。  （最大值-最小值） 必须是整除的步骤。  步骤可能不是零 (0)。</p></td>
+<td><p>最小/最大/步骤</p></td>
+<td><p>最小/最大/步骤包含 IR 电源设置的最小/最大/增量。  对于 GET 操作，驱动程序必须返回这些。  （最大值–分钟）必须按步骤进行均匀地分隔。  步骤不能为零（0）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>VideoProc</p></td>
-<td><p>对于集合运算，VideoProc.Value.ul 必须指定最小值/最大/Step 参数所描述的范围内的电源级别。  对于 GET 操作，则驱动程序必须返回当前的电源级别。</p></td>
+<td><p>对于 SET 操作，VideoProc 必须指定最小/最大值/步骤参数描述的范围内的电源级别。  对于 GET 操作，驱动程序必须返回当前的电源级别。</p></td>
 </tr>
 <tr class="even">
 <td><p>保留</p></td>
-<td><p>未使用。  必须忽略由驱动程序。</p></td>
+<td><p>用.  驱动程序必须忽略。</p></td>
 </tr>
 </tbody>
 </table>
@@ -149,7 +149,7 @@ KSCAMERA_EXTENDEDPROP_IRTORCHMODE 始终是同步的控件。  照相机不流�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

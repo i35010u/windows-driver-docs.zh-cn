@@ -11,41 +11,41 @@ keywords:
 - 延迟的过程调用 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c265a458ca8a852b67fd4452c86f25a23fa3963
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76aa653a7eac3b04416f20822fc0c1f86593ef8d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376187"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842193"
 ---
 # <a name="servicing-an-interrupt"></a>为中断提供服务
 
 
-本主题介绍如何以服务的 DIRQL 中断。 有关维护服务的被动级别中断的信息，请参阅[支持被动中断级别](supporting-passive-level-interrupts.md#servicing)。
+本主题介绍如何为 DIRQL 中断服务。 有关维护被动级中断的信息，请参阅[支持被动级别中断](supporting-passive-level-interrupts.md#servicing)。
 
-服务中断包括两个，并有时三个步骤：
+为中断提供服务包括两个步骤：
 
-1.  快速保存易失性信息 （如寄存器内容），在中断服务例程运行在 IRQL = DIRQL。
+1.  在以 IRQL = DIRQL 运行的中断服务例程中快速保存易失性信息（如注册内容）。
 
-2.  处理延迟的过程调用 (DPC) 的 IRQL 运行中已保存的易失性信息 = 调度\_级别。
+2.  在以 IRQL = 调度\_级别运行的延迟过程调用（DPC）中处理已保存的可变信息。
 
-3.  执行额外的工作在 IRQL = 被动\_级别，如有必要。
+3.  如有必要，请在 IRQL = 被动\_级别执行额外的工作。
 
-当设备生成的硬件中断时，框架将调用驱动程序的中断服务例程 (ISR) 作为实现的基于框架的驱动程序[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数。
+当设备生成硬件中断时，框架会调用驱动程序的中断服务例程（ISR），这是基于框架的驱动程序作为[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数实现的。
 
-[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数，如设备的 DIRQL，快速保存中断的信息，必须在运行注册的内容，将会丢失，如果另一个中断发生的。
+在设备的 DIRQL 上运行的[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数必须快速保存中断信息，如注册内容，如果发生其他中断，则会丢失该函数。
 
-通常情况下， [ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数计划延迟的过程调用 (DPC) 来处理更高版本在较低的 IRQL 已保存的信息 (调度\_级别)。 基于框架的驱动程序实现为 DPC 例程[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[ *EvtDpcFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数。
+通常情况下， [*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数计划延迟的过程调用（DPC），以便在较低的 IRQL （调度\_级别）下处理保存的信息。 基于框架的驱动程序将 DPC 例程作为[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtDpcFunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数实现。
 
-大多数驱动程序使用单个[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)中断每种类型的回调函数。 若要计划的执行*EvtInterruptDpc*驱动程序必须调用回调函数[ **WdfInterruptQueueDpcForIsr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr)中[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数。
+大多数驱动程序对每种类型的中断使用单个[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数。 若要计划*EvtInterruptDpc*回调函数的执行，驱动程序必须从[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数中调用[**WdfInterruptQueueDpcForIsr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptqueuedpcforisr) 。
 
-如果您的驱动程序创建多个[framework 队列对象](framework-queue-objects.md)对于每个设备，你可以考虑使用单独[DPC 对象](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/)并[ *EvtDpcFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nc-wdfdpc-evt_wdf_dpc)每个队列的回调函数。 若要计划的执行*EvtDpcFunc*回调函数，该驱动程序必须先创建一个或多个 DPC 对象通过调用[ **WdfDpcCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nf-wdfdpc-wdfdpccreate)，通常在驱动程序[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。 然后，驱动程序的[ *EvtInterruptIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数可以调用[ **WdfDpcEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nf-wdfdpc-wdfdpcenqueue)。
+如果你的驱动程序为每个设备创建多个[框架队列对象](framework-queue-objects.md)，则可以考虑对每个队列使用单独的[DPC 对象](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/)和[*EvtDpcFunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)的回调函数。 若要计划*EvtDpcFunc*回调函数的执行，驱动程序必须首先通过调用[**WdfDpcCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpccreate)来创建一个或多个 DPC 对象，通常是在驱动程序的[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中。 然后，驱动程序的[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数可以调用[**WdfDpcEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpcenqueue)。
 
-驱动程序通常[完成 I/O 请求](completing-i-o-requests.md)在其[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或者[ *EvtDpcFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数。
+驱动程序通常会在其[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtDpcFunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数中[完成 i/o 请求](completing-i-o-requests.md)。
 
-有时一个驱动程序必须一些中断服务在执行操作的 IRQL = 被动\_级别。 在此类情况下，驱动程序的[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[ *EvtDpcFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数，执行在 IRQL = 调度\_级别，可以安排执行的一个或多个[framework 工作项](using-framework-work-items.md)，它运行在 IRQL = 被动\_级别。
+有时，驱动程序必须在 IRQL = 被动\_级别执行一些中断服务操作。 在这种情况下，驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtDpcFunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nc-wdfdpc-evt_wdf_dpc)回调函数（在 IRQL = 调度\_级别执行）可以计划执行一个或多个[框架工作项，这些工作项](using-framework-work-items.md)在 irql = 被动\_级别运行。
 
-有关使用服务设备中断时工作项的驱动程序示例，请参阅[PCIDRV](sample-kmdf-drivers.md)示例驱动程序。
+有关在服务设备中断时使用工作项的驱动程序的示例，请参阅[PCIDRV](sample-kmdf-drivers.md)示例驱动程序。
 
  
 

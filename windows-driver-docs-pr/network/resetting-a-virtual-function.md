@@ -4,27 +4,27 @@ description: 重置虚拟功能
 ms.assetid: 4B7A4E02-6383-45FB-9F75-D17C047C40D0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62bc2c3c71f04fa068330668348fe231f3afd775
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1ec9e3385fb7b39720bbea442f0f67fbdc547dc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384710"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842026"
 ---
 # <a name="resetting-a-virtual-function"></a>重置虚拟功能
 
 
-基础驱动程序发出的一个对象标识符 (OID) 组请求[OID\_SRIOV\_重置\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)重置指定 PCI Express (PCIe) 虚拟函数 (VF)。 VF 是支持单根 I/O 虚拟化的网络适配器的硬件组件。 基础驱动程序微型端口驱动程序的 PCI Express (PCIe) 物理函数 (PF) 向颁发此 OID 集请求。
+过量驱动程序发出 OID\_SRIOV 的对象标识符（OID）设置请求[\_reset\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)来重置指定的 PCI Express （PCIe）虚拟功能（VF）。 VF 是支持单根 i/o 虚拟化的网络适配器的硬件组件。 过量驱动程序将此 OID 集请求颁发给 PCI Express （PCIe）物理功能（PF）的微型端口驱动程序。
 
-例如，虚拟化堆栈在 HYPER-V 父分区的管理操作系统中运行。 在堆栈中分离 VF 从 HYPER-V 子分区之前，它将请求函数级别重置 (FLR) vf。 由于 FLR 是一项特权的操作，它可以执行只能由管理操作系统中还运行 PF 微型端口驱动程序。 若要请求指定 VF，虚拟化堆栈问题 FLR [OID\_SRIOV\_重置\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)PF 微型端口驱动程序的请求。
+例如，虚拟化堆栈在 Hyper-v 父分区的管理操作系统中运行。 在堆栈从 Hyper-v 子分区分离 VF 之前，它会在 VF 上请求函数级别重置（FLR）。 由于 FLR 是一项特权操作，因此只能由也在管理操作系统中运行的 PF 微型端口驱动程序执行。 若要请求指定的 VF 的 FLR，虚拟化堆栈会发出[OID\_SRIOV\_RESET\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-reset-vf)请求发送到 PF 微型端口驱动程序。
 
-它会发出此 OID 集请求之前，必须初始化基础驱动程序[ **NDIS\_SRIOV\_重置\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)结构。 该驱动程序必须设置**VFId** VF 要重置的标识符的成员。
+在发出此 OID 集请求之前，过量驱动程序必须初始化[**NDIS\_SRIOV\_RESET\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)结构。 驱动程序必须将**VFId**成员设置为要重置的 VF 的标识符。
 
 当它处理此 OID 请求时，PF 微型端口驱动程序必须遵循以下准则：
 
--   PF 微型端口驱动程序必须验证指定 VF **VFId**的成员[ **NDIS\_SRIOV\_重置\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)结构，具有先前已分配的资源。 PF 微型端口驱动程序 OID 方法请求的过程将资源分配的 VF [OID\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 如果尚未分配指定 VF 的资源的驱动程序必须失败 OID 请求。
+-   PF 微型端口驱动程序必须验证由 NDIS\_SRIOV 的**VFId**成员指定的 vf 是否[ **\_RESET\_vf\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_reset_vf_parameters)结构）是否具有以前分配的资源。 在 oid 的 OID 方法请求中，PF 微型端口驱动程序为一个 VF 分配资源[\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 如果没有为指定的 VF 分配资源，则驱动程序必须使 OID 请求失败。
 
--   重置操作只会影响指定的 VF。 该操作必须不影响其他 VFs 或同一个网络适配器上的 PF。
+-   Reset 操作必须只影响指定的 VF。 此操作不能影响同一网络适配器上的其他 VFs 或 PF。
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: SetPersistentEntry 函数
-description: SetPersistentEntry 方法将绑定添加到与指定的端口相关联的绑定的列表。
+description: SetPersistentEntry 方法将绑定添加到与所指示的端口关联的绑定列表。
 ms.assetid: 52680641-9f63-4c8e-9538-4c725b9074a3
 keywords:
 - SetPersistentEntry 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1056e3d3c088b8d3887f6122c896ec8809f39fa7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a39ca2923d7f5b7e3fad4db351df763fe42d707
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363961"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840469"
 ---
 # <a name="setpersistententry-function"></a>SetPersistentEntry 函数
 
 
-**SetPersistentEntry**方法将绑定添加到与指定的端口相关联的绑定的列表。
+**SetPersistentEntry**方法将绑定添加到与所指示的端口关联的绑定列表。
 
 <a name="syntax"></a>语法
 ------
@@ -37,17 +37,17 @@ void SetPersistentEntry(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *PortWWN*   
-指示将更改其永久绑定的端口的全球通用名称。
+一个全球名称，它指示将更改其持久性绑定的端口。
 
 *绑定*   
-类型的结构[ **HBAFCPBindingEntry2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2) ，该值指示要从绑定的指定的端口的列表中移除的绑定。
+[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)类型的结构，指示要从指示的端口的绑定列表中移除的绑定。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **SetPersistentEntry\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**SetPersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -57,7 +57,7 @@ void SetPersistentEntry(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAFCPInfo WMI 类](msfc-hbafcpinfo-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAFCPINFO WMI 类](msfc-hbafcpinfo-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,21 +70,21 @@ void SetPersistentEntry(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**SetPersistentEntry\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_in)
+[**SetPersistentEntry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_setpersistententry_in)
 
-[**SetPersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)
+[**SetPersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_setpersistententry_out)
 
  
 

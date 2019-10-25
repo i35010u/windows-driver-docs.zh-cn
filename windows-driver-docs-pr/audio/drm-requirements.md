@@ -4,20 +4,20 @@ description: DRM 要求
 ms.assetid: 312b943b-f280-4b29-a5d4-e78c7088bb22
 keywords:
 - WHQL 测试 WDK 音频
-- 数字权限管理 WDK 音频，法规遵从性测试
-- DRM WDK 音频，法规遵从性测试
-- 法规遵从性测试 WDK 音频
-- 测试 DRM 法规遵从性 WDK 音频
+- 数字 Rights Management WDK 音频，合规性测试
+- DRM WDK 音频，合规性测试
+- 合规性测试 WDK 音频
+- 测试 DRM 相容性 WDK 音频
 - 为 Windows XP 徽标测试 WDK 音频设计
 - 徽标测试 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43fd2c78006662f49e1b40abae894afbbf72dade
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6c68740d885ba8d751d5e5d70ca891ee46a069ed
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360087"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833429"
 ---
 # <a name="drm-requirements"></a>DRM 要求
 
@@ -25,25 +25,25 @@ ms.locfileid: "67360087"
 ## <span id="drm_requirements"></span><span id="DRM_REQUIREMENTS"></span>
 
 
-本部分提供音频微型端口驱动程序通过 DRM 法规遵从性测试的 Microsoft Windows 硬件质量实验室 (WHQL) 而必须满足的要求。 这些要求仅适用于 WaveCyclic 和 WavePci[音频微型端口驱动程序](audio-miniport-drivers.md)，这是特定于硬件的对应的端口 Class Library (Portcls.sys) 中的 WavePci 和 WaveCyclic 端口驱动程序。 DRM 法规遵从性测试不是当前适用于 USB 驱动程序。
+本部分介绍了音频微型端口驱动程序必须满足的要求，以通过 Microsoft Windows 硬件质量实验室（WHQL）传递 DRM 遵从性测试。 这些要求专门适用于 WaveCyclic 和 WavePci[音频微型端口驱动程序，这些驱动程序](audio-miniport-drivers.md)是与端口类库（Portcls）中的 WavePci 和 WaveCyclic 端口驱动程序对应的硬件特定的设备。 DRM 遵从性测试当前不适用于 USB 驱动程序。
 
-Windows Me 中和在 Windows XP 及更高版本，仅的受信任音频驱动程序可以播放受 DRM 保护的内容。 Windows 通过特定于 DRM 的数字签名存储在驱动程序的 （目录） 的.cat 文件中标识的受信任的驱动程序。 Microsoft 发布作为由 WHQL 管理硬件兼容性测试的一部分通过 DRM 法规遵从性测试的驱动程序仅的 DRM 签名。
+在 Windows Me 和 Windows XP 及更高版本中，只有受信任的音频驱动程序可以播放受 DRM 保护的内容。 Windows 通过存储在驱动程序的 .cat （目录）文件中的特定于 DRM 的数字签名来标识受信任的驱动程序。 Microsoft 仅为作为 WHQL 管理的硬件兼容性测试的一部分的驱动程序颁发了 DRM 签名。
 
-驱动程序 Windows Me，DRM 法规遵从性测试是可选的只在硬件供应商的请求执行。 DRM 签名是单独从，此外还包括 Windows 徽标签名。 请注意，传递 Windows 徽标测试，但不是 DRM 法规遵从性测试的驱动程序仍可以播放不受 DRM 安全的内容。
+对于 Windows Me 驱动程序，DRM 相容性测试是可选的，仅在硬件供应商的请求中执行。 除 Windows 徽标签名外，DRM 签名还独立于和。 请注意，通过 Windows 徽标测试但不是 DRM 相容性测试的驱动程序仍可播放不受 DRM 安全保护的内容。
 
-对于 Windows XP 及更高版本，但是，DRM 法规遵从性测试是 WHQL 测试的必需的部分。 为了获得"设计 Windows XP"徽标的资格，驱动程序必须通过 DRM 法规遵从性测试。
+但对于 Windows XP 和更高版本，DRM 遵从性测试是 WHQL 测试的必需部分。 驱动程序必须通过 DRM 遵从性测试，才能符合 "专为 Windows XP" 徽标。
 
-DRM 法规遵从性测试要求受信任的音频驱动程序来执行以下操作：
+DRM 相容性测试要求使用受信任的音频驱动程序来执行以下操作：
 
--   音频的微型端口驱动程序必须实现[IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/nn-drmk-idrmaudiostream)接口的 IID 查询时必须返回的对象类型 IDrmAudioStream 其流对象中\_IDrmAudioStream。
+-   音频微型端口驱动程序必须在其流对象中实现[IDrmAudioStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/drmk/nn-drmk-idrmaudiostream)接口，如果\_查询 IDrmAudioStream，则必须返回 IDrmAudioStream 类型的对象。
 
--   当请求复制保护 ([**DRMRIGHTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/drmk/ns-drmk-tagdrmrights)。**CopyProtect** = **TRUE**)，音频驱动程序必须禁用捕获当前正在播放的流的功能。 这意味着该驱动程序必须将未受保护的数字内容保存到任何形式的非易失性存储，其中包括硬盘，EEPROM、 内存卡以及内存条。 此外，驱动程序必须禁用捕获输出 D/A 转换器上多路复用器，否则阻止的数字内容环回。
+-   请求复制保护时（[**DRMRIGHTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/drmk/ns-drmk-tagdrmrights)。**CopyProtect** = **TRUE**），则音频驱动程序必须禁用捕获当前播放的流的功能。 这意味着，驱动程序不能将未受保护的数字内容保存到任何形式的非易失性存储，包括硬盘、EEPROM、内存卡和内存条。 同时，驱动程序必须禁用输出 D/A 转换器上的捕获多路复用器，否则会阻止数字内容的环回。
 
--   如果音频驱动程序要求以禁用设备上的数字音频输出 (DRMRIGHTS。**DigitalOutputDisable** = **TRUE**)，它必须禁用能够通过标准接口，通过标准的相互连接方案中传输内容的所有数字音频输出。 数字输出包括-但不是严格限制为-S/PDIF，IEEE 1394 并行、 串行，调制解调器和网络端口。 （此要求不适当前用于 USB。）
+-   当要求音频驱动程序禁用设备上的数字音频输出时（DRMRIGHTS。**DigitalOutputDisable** = **TRUE**），则它必须禁用所有能够通过标准互连方案通过标准接口传输内容的数字音频输出。 数字输出包括--但并不严格限制为--S/PDIF、IEEE 1394、并行、串行、调制解调器和网络端口。 （此要求目前不适用于 USB。）
 
--   在处理安全内容时，音频驱动程序必须永远不会附加到其堆栈不受信任的驱动程序。 换而言之，音频驱动程序必须只是依赖还包含 DRM 签名的其他组件。 该驱动程序必须永远不会促进将音频数据传输到不具有 DRM 签名的任何组件。 具体而言，如果驱动程序将数字内容传递给另一个组件，该驱动程序必须使用 DRM Api 在内核中通知[DRMK 系统驱动程序](kernel-mode-wdm-audio-components.md#drmk_system_driver)的这一事实。
+-   处理安全内容时，音频驱动程序绝不能将不受信任的驱动程序附加到其堆栈。 换句话说，音频驱动程序必须仅依赖于另外包含 DRM 签名的其他组件。 驱动程序决不能促进音频数据到没有 DRM 签名的任何组件的传输。 特别是，如果驱动程序将数字内容传递到另一个组件，则驱动程序必须使用内核中的 DRM Api 来通知[DRMK 系统驱动程序](kernel-mode-wdm-audio-components.md#drmk_system_driver)的情况。
 
-除了通过 DRM 法规遵从性测试，音频设备和驱动程序必须允许用户选择的操作模式的失败或 subverts 内核中的 DRM 组件。 具体而言，驱动程序必须提供注册表设置、 用户控件面板或禁用 DRM 函数的其他方式。
+除了传递 DRM 相容性测试以外，音频设备和驱动程序不得允许用户选择在内核中破坏或 subverts DRM 组件的操作模式。 具体而言，驱动程序不得提供注册表设置、用户控制面板或禁用 DRM 功能的其他方法。
 
  
 

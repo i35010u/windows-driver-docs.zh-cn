@@ -3,23 +3,23 @@ title: 驱动程序如何识别 32 位调用方
 description: 驱动程序如何识别 32 位调用方
 ms.assetid: 9bfe9024-60f1-41ad-a034-160caaaa7801
 keywords:
-- 32 位 I/O 支持 WDK 64 位、 32 位的调用方标识
-- 确定调用方 32 位
-- 32 位调用方标识 WDK 64 位
+- 32位 i/o 支持 WDK 64 位，可识别32位调用方
+- 标识32位调用方
+- 32位调用方标识 WDK 64 位
 - 文件系统控制代码 WDK 64 位
 - FSCTL WDK 64 位
 - 控制代码 WDK 64 位
-- I/O 控制代码 WDK 内核，在 64 位驱动程序中的 32 位 I/O
-- Ioctl WDK 内核，在 64 位驱动程序中的 32 位 I/O
+- I/o 控制代码 WDK 内核，64位驱动程序中的32位 i/o
+- IOCTLs WDK 内核，64位驱动程序中的32位 i/o
 - 调用方标识 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c53fbb940efc707b09c9734f4e700892120a2b2a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc368f20f840ecb36b0dffdbacb20076f4e1b472
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371867"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836478"
 ---
 # <a name="how-drivers-identify-32-bit-callers"></a>驱动程序如何识别 32 位调用方
 
@@ -27,13 +27,13 @@ ms.locfileid: "67371867"
 
 
 
-有两种方法确定一个 IOCTL 或 FSCTL 请求的发起方是一个 32 位或 64 位应用程序的驱动程序。 首先，为应用程序来标识自身。 第二个是应用程序是 32 位或 64 位驱动程序以自行决定的。
+驱动程序可通过两种方法来确定 IOCTL 或 FSCTL 请求的发起方是32位还是64位应用程序。 第一种是让应用程序标识自己。 第二个是让驱动程序自行决定应用程序是32位还是64位。
 
-第一种方法涉及到定义 IOCTL 或 FSCTL 控制代码中的"64 位"字段。 此字段包含的 64 位的调用方设置的单个位。 因此 64 位的调用方标识自身使用一组单独的 64 位控制代码将设置此位。 32 位的调用方使用一组类似的控制代码将不设置此位。
+第一种方法涉及到在 IOCTL 或 FSCTL 控制代码中定义 "64 位" 字段。 此字段包含单个位，只为64位调用方设置。 因此，64位调用方使用一组单独的64位控制代码（其中设置了此位）来标识自身。 32位调用方使用一组类似的控制代码，其中没有设置此位。
 
-第二种方法允许 32 位和 64 位应用程序以继续使用相同的 IOCTL 或 FSCTL 代码。 相反，该驱动程序确定用户模式进程是否通过调用为 32 位或 64 位[ **IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iois32bitprocess)。
+第二种方法允许32和64位应用程序继续使用相同的 IOCTL 或 FSCTL 代码。 相反，驱动程序将通过调用[**IoIs32bitProcess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iois32bitprocess)来确定用户模式进程是32还是64位。
 
-第一种方法是更高效，因为该驱动程序检查而不是调用内核模式例程的位标志。 但是，第二种方法需要对用户模式代码的任何更改。 应使用何种技术取决于您的驱动程序将 I/O 请求发送到它的应用程序的要求。
+第一种方法更高效，因为驱动程序会检查位标志，而不是调用内核模式例程。 但是，第二种方法不需要对用户模式代码进行任何更改。 应使用哪种方法取决于驱动程序的要求，以及向其发送 i/o 请求的应用程序。
 
  
 

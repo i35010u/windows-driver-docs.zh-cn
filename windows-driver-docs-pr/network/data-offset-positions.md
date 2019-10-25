@@ -1,38 +1,38 @@
 ---
 title: 数据偏移位置
-description: 本部分介绍 Windows 筛选平台标注驱动程序的数据偏移量的位置。
+description: 本部分介绍 Windows 筛选平台标注驱动程序的数据偏移位置。
 ms.assetid: cf4656cf-b978-4539-9fff-8f0aa5de1b5e
 keywords:
-- 数据偏移的位置的网络驱动程序
+- 数据偏移位置网络驱动程序
 ms.date: 11/09/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9077d9cdf35d362af81aeab2529dbcca2bcf948e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5585ea707800c47b3f4fc3c3b10e770fcb7eeb37
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364939"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838164"
 ---
 # <a name="data-offset-positions"></a>数据偏移位置
 
-当筛选器引擎调用标注驱动程序[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数，它将指针传递到一个结构*数据*参数。 对于筛选数据包数据层，该指针指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 具体取决于在其中筛选层*classifyFn*标注函数被调用时，筛选器引擎将指针数据 * 参数中传递给以下结构：
+当筛选器引擎调用标注驱动程序的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数时，它会在*layerData*参数中传递一个指向结构的指针。 对于筛选数据包数据的层，指针引用[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。 根据调用*classifyFn* callout 函数的筛选层，筛选器引擎会将 layerData * 参数中的指针传递到以下结构之一：
 
-- 为流层*数据*参数包含一个指向[FWPS_STREAM_CALLOUT_IO_PACKET0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)结构。 此结构的 streamData 成员包含一个指向[FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_data0_)结构。 
+- 对于流层， *layerData*参数包含指向[FWPS_STREAM_CALLOUT_IO_PACKET0](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)结构的指针。 此结构的 streamData 成员包含指向[FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_data0_)结构的指针。 
 
-    **NetBufferListChain**的成员[FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_data0_)结构包含一个指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 
+    [FWPS_STREAM_DATA0](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_data0_)结构的**netBufferListChain**成员包含指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的指针。 
 
-- 对于所有其他层，*数据*参数包含一个指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
+- 对于所有其他层， *layerData*参数包含指向[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的指针。
 
 > [!NOTE]
-> *数据*参数可以为 NULL，具体取决于要筛选的层和在其下的条件的驱动程序[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数进行调用。
+> *LayerData*参数可能为 NULL，具体取决于正在筛选的层以及用于调用驱动程序的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数的条件。
  
-[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构中包含的链接的列表[NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构。 内[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_data)结构的每个**NET_BUFFER**结构**DataOffset**成员指向的数据包数据中的特定位置。 位置的**DataOffset**成员指向取决于筛选的筛选器引擎将调用标注驱动程序的一层*classifyFn*标注函数。 
+[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构包含[NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的链接列表。 在每个**NET_BUFFER**结构的[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)结构中，**数据偏移量**成员指向数据包数据中的特定位置。 **数据偏移量**成员指向的位置取决于筛选器引擎调用标注驱动程序的*classifyFn*标注函数的筛选层。 
 
-对于每个筛选层，由指定的数据包数据中的位置**DataOffset**成员定义，如下所示：
+对于每个筛选层，由**数据偏移量**成员指定的数据包数据中的位置定义如下：
 
 <table>
 <tr>
-<th>运行时筛选层标识符 （从 Windows Vista 开始）</th>
+<th>运行时筛选层标识符（从 Windows Vista 开始）</th>
 <th>数据包数据中的位置</th>
 </tr>
 <tr>
@@ -50,7 +50,7 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_INBOUND_IPPACKET_V6_DISCARD</p>
 </td>
 <td>
-<p>TCP/IP 堆栈的位置的偏移量已停止处理。</p>
+<p>TCP/IP 堆栈停止处理的偏移量。</p>
 </td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_OUTBOUND_IPPACKET_V6_DISCARD</p>
 </td>
 <td>
-<p>TCP/IP 堆栈的位置的偏移量已停止处理。</p>
+<p>TCP/IP 堆栈停止处理的偏移量。</p>
 </td>
 </tr>
 <tr>
@@ -95,8 +95,8 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_INBOUND_TRANSPORT_V6</p>
 </td>
 <td>
-<p>数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
 </td>
 </tr>
@@ -106,8 +106,8 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_INBOUND_TRANSPORT_V6_DISCARD</p>
 </td>
 <td>
-<p>数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
 </td>
 </tr>
@@ -135,8 +135,8 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_STREAM_V6</p>
 </td>
 <td>
-<p>数据的起始处。</p>
-<div class="alert"><b>请注意</b>  数据包数据中的位置包含没有 IP、 IPv6 和的传输标头。</div>
+<p>数据的开头。</p>
+<div class="alert"><b>请注意</b>   数据包数据中的位置不包含 IP、IPv6 和传输标头。</div>
 <div> </div>
 </td>
 </tr>
@@ -146,8 +146,8 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_STREAM_V6_DISCARD</p>
 </td>
 <td>
-<p>数据的起始处。</p>
-<div class="alert"><b>请注意</b>  数据包数据中的位置不包含任何 IP、 IPv6 或传输标头。</div>
+<p>数据的开头。</p>
+<div class="alert"><b>请注意</b>   数据包数据中的位置不包含 IP、IPv6 或传输标头。</div>
 <div> </div>
 </td>
 </tr>
@@ -157,10 +157,10 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_DATAGRAM_DATA_V6</p>
 </td>
 <td>
-<p>为入站数据报：数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>对于入站数据报：数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
-<p>为出站数据报：传输标头的开头。</p>
+<p>对于出站数据报：传输标头的开头。</p>
 </td>
 </tr>
 <tr>
@@ -169,10 +169,10 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_DATAGRAM_DATA_V6_DISCARD</p>
 </td>
 <td>
-<p>为入站数据报：数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>对于入站数据报：数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
-<p>为出站数据报：传输标头的开头。</p>
+<p>对于出站数据报：传输标头的开头。</p>
 </td>
 </tr>
 <tr>
@@ -253,10 +253,10 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_ALE_AUTH_RECV_ACCEPT_V6</p>
 </td>
 <td>
-<p>对于入站的数据包的方向：数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>对于入站数据包方向：数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
-<p>对于出站数据包的方向：传输标头的开头。</p>
+<p>对于出站数据包方向：传输标头的开头。</p>
 </td>
 </tr>
 <tr>
@@ -265,10 +265,10 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_ALE_AUTH_RECV_ACCEPT_V6_DISCARD</p>
 </td>
 <td>
-<p>对于入站的数据包的方向：数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>对于入站数据包方向：数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
-<p>对于出站数据包的方向：传输标头的开头。</p>
+<p>对于出站数据包方向：传输标头的开头。</p>
 </td>
 </tr>
 <tr>
@@ -277,8 +277,8 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_ALE_AUTH_CONNECT_V6</p>
 </td>
 <td>
-<p>为非 TCP 流量：传输标头的开头。</p>
-<p>TCP 流量：不适用。</p>
+<p>对于非 TCP 流量：传输标头的开头。</p>
+<p>对于 TCP 流量：不适用。</p>
 </td>
 </tr>
 <tr>
@@ -287,8 +287,8 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_ALE_AUTH_CONNECT_V6_DISCARD</p>
 </td>
 <td>
-<p>为非 TCP 流量：传输标头的开头。</p>
-<p>TCP 流量：不适用。</p>
+<p>对于非 TCP 流量：传输标头的开头。</p>
+<p>对于 TCP 流量：不适用。</p>
 </td>
 </tr>
 <tr>
@@ -297,10 +297,10 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_ALE_FLOW_ESTABLISHED_V6</p>
 </td>
 <td>
-<p>对于入站的数据包的方向：数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>对于入站数据包方向：数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
-<p>对于出站数据包的方向：传输标头的开头。</p>
+<p>对于出站数据包方向：传输标头的开头。</p>
 </td>
 </tr>
 <tr>
@@ -309,10 +309,10 @@ ms.locfileid: "67364939"
 <p>FWPS_LAYER_ALE_FLOW_ESTABLISHED_V6_DISCARD</p>
 </td>
 <td>
-<p>对于入站的数据包的方向：数据的起始处。</p>
-<div class="alert"><b>请注意</b>  对于 TCP/IP 堆栈 ICMP 套接字上接收到的入站数据包，偏移量是 ICMP 标头的开头。</div>
+<p>对于入站数据包方向：数据的开头。</p>
+<div class="alert"><b>请注意</b>，  在 tcp/ip 堆栈的 icmp 套接字上收到的入站数据包，偏移量是 icmp 标头的开头。</div>
 <div> </div>
-<p>对于出站数据包的方向：传输标头的开头。
+<p>对于出站数据包方向：传输标头的开头。
       </p>
 </td>
 </tr>
@@ -384,7 +384,7 @@ ms.locfileid: "67364939"
 </td>
 </tr>
 <tr>
-<th>运行时筛选层标识符 （从 Windows 7 开始）</th>
+<th>运行时筛选层标识符（从 Windows 7 开始）</th>
 <th>数据包数据中的位置</th>
 </tr>
 <tr>
@@ -422,7 +422,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p>不适用。</p>
-<div class="alert"><b>请注意</b>筛选层，这些<i><em>数据</em></i>参数包含一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_connect_request0"> <b>FWPS_CONNECT_REQUEST0</b> </a>结构。 此结构不引用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>描述包的数据结构。</div>
+<div class="alert"><b>注意</b> 对于这些筛选层， <i><em>layerData</em></i>参数包含指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_connect_request0"><b>FWPS_CONNECT_REQUEST0</b></a>结构的指针。 此结构不引用描述数据包数据的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>结构。</div>
 <div> </div>
 </td>
 </tr>
@@ -433,7 +433,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 <td>
 <p>不适用。</p>
-<div class="alert"><b>请注意</b>筛选层，这些<i><em>数据</em></i>参数包含一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-_fwps_bind_request0"> <b>FWPS_BIND_REQUEST0</b> </a>结构。 此结构不引用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list"> <b>NET_BUFFER_LIST</b> </a>描述包的数据结构。</div>
+<div class="alert"><b>注意</b> 对于这些筛选层， <i><em>layerData</em></i>参数包含指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-_fwps_bind_request0"><b>FWPS_BIND_REQUEST0</b></a>结构的指针。 此结构不引用描述数据包数据的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list"><b>NET_BUFFER_LIST</b></a>结构。</div>
 <div> </div>
 </td>
 </tr>
@@ -443,8 +443,8 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 <p>FWPS_LAYER_STREAM_PACKET_V6</p>
 </td>
 <td>
-<p>对于入站的数据包的方向：数据的起始处。</p>
-<p>对于出站数据包的方向：传输标头的开头。</p>
+<p>对于入站数据包方向：数据的开头。</p>
+<p>对于出站数据包方向：传输标头的开头。</p>
 </td>
 </tr>
 <tr>
@@ -456,7 +456,7 @@ FWPS_LAYER_NAME_RESOLUTION_CACHE_V6</p>
 </td>
 </tr>
 <tr>
-<th>运行时筛选层标识符 （从 Windows 8 开始）</th>
+<th>运行时筛选层标识符（从 Windows 8 开始）</th>
 <th>数据包数据中的位置</th>
 </tr>
 <tr>

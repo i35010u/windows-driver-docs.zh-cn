@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE 属性已扩展为支持助手立刻正式投入工作。
+description: 扩展\_FLASHMODE\_的 KSPROPERTY\_CAMERACONTROL 扩展为支持助手 flash。
 ms.assetid: 413B3A02-498A-4C5A-8940-9A0D10D6CE81
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_FLASHMODE 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_FLASHMODE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,18 +14,18 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f8806bf3588b8564c604d97cd6ad22c4d9832c51
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bb87cdccb34b4ea3267c154993754f82a6a1fd1f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347957"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843229"
 ---
-# <a name="kspropertycameracontrolextendedflashmode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE
+# <a name="ksproperty_cameracontrol_extended_flashmode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE**属性已扩展为支持助手立刻正式投入工作。
+扩展 **\_FLASHMODE\_的 KSPROPERTY\_CAMERACONTROL**扩展为支持助手 flash。
 
-## <a name="usage-summary-table"></a>使用率摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
 
 <table>
@@ -50,7 +50,7 @@ ms.locfileid: "63347957"
 </tbody>
 </table>
 
-功能标志定义，如下所示。
+功能标志的定义如下。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_FLASH_ASSISTANT_ON               0x0000000000000080
@@ -58,19 +58,19 @@ ms.locfileid: "63347957"
 #define KSCAMERA_EXTENDEDPROP_FLASH_ASSISTANT_OFF              0x0000000000000000
 ```
 
-**KSCAMERA\_EXTENDEDPROP\_FLASH\_ASSISTANT\_ON**
+**KSCAMERA\_EXTENDEDPROP\_闪存\_助手\_**
 
-此标志指示已打开 AF 助手 light。
+此标志指示 "AF 助手" 指示灯处于开启状态。
 
-**KSCAMERA\_EXTENDEDPROP\_FLASH\_ASSISTANT\_AUTO**
+**KSCAMERA\_EXTENDEDPROP\_闪存\_助手\_自动**
 
-此标志是类似于**助手\_ON**标志。 而不是始终打开 AF 助手灯，照相机驱动程序将确定是否 AF 助手 light 应打开根据当前的光照条件。
+此标志类似于标志 **\_的助手**。 照相机驱动程序不会始终打开 AF 助手灯，而是根据当前的照明条件来确定是否应打开 AF 助手灯。
 
-**KSCAMERA\_EXTENDEDPROP\_FLASH\_ASSISTANT\_OFF**
+**KSCAMERA\_EXTENDEDPROP\_闪存\_助手\_关闭**
 
-此标志指示 AF 助手指示灯不亮。
+此标志指示 AF 助手 light 处于关闭状态。
 
-有关说明[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段时使用**KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE**属性将与 Windows 8.1 DDI 相同。
+使用**KSPROPERTY\_CAMERACONTROL\_扩展\_FLASHMODE**属性时， [**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明与 Windows 8.1 DDI 相同。
 
 ## <a name="requirements"></a>要求
 
@@ -81,7 +81,7 @@ ms.locfileid: "63347957"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

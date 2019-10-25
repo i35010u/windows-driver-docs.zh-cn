@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST
-description: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 是包含一系列多路广播的密码算法 TLV。
+description: WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 是一个 TLV，其中包含多播密码算法的列表。
 ms.assetid: 55CDD295-6BDA-4F3A-B01F-FC9D5FB38355
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 网络驱动程序
+- WDI_TLV_MULTICAST_CIPHER_ALGO_LIST 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f195f68b4c1d16a6cf3a2f0c9cbf1beafef7fc6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aae75b2ca8f73b478d14d475939ab6ca259f2f26
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377006"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842879"
 ---
-# <a name="wditlvmulticastcipheralgolist"></a>WDI\_TLV\_多播\_密码\_ALGO\_列表
+# <a name="wdi_tlv_multicast_cipher_algo_list"></a>WDI\_TLV\_多播\_密码\_算法\_列表
 
 
-WDI\_TLV\_多播\_密码\_ALGO\_列表是包含一系列多路广播的密码算法 TLV。
+WDI\_TLV\_多播\_密码\_算法\_列表是包含多播密码算法列表的 TLV。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,14 +26,14 @@ WDI\_TLV\_多播\_密码\_ALGO\_列表是包含一系列多路广播的密码算
 ## <a name="length"></a>长度
 
 
-数组的大小 （以字节为单位） [ **WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)结构。 该数组必须包含一个或多个元素。
+WDI 数组的大小（以字节为单位） [ **\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)结构。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                                            | 描述                              |
 |-----------------------------------------------------------------|------------------------------------------|
-| [**WDI\_CIPHER\_ALGORITHM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | 多播的密码算法的数组。 |
+| [**WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)\[\] | 多播密码算法的数组。 |
 
  
 
@@ -48,14 +48,14 @@ WDI\_TLV\_多播\_密码\_ALGO\_列表是包含一系列多路广播的密码算
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

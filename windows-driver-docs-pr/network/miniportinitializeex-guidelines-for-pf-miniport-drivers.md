@@ -4,67 +4,67 @@ description: PF 微型端口驱动程序的 MiniportInitializeEx 指导原则
 ms.assetid: 338035E7-7677-49FE-A06D-CCFD813B0C10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61324d8f97a0a6827d2a98bb460afe7bcc422aff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 009ba15c94531db6a0169b367b56d40c2e862b0f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380888"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844232"
 ---
 # <a name="miniportinitializeex-guidelines-for-pf-miniport-drivers"></a>PF 微型端口驱动程序的 MiniportInitializeEx 指导原则
 
 
-本主题介绍进行写入的准则[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)微型端口驱动程序的 PCI Express (PCIe) 物理函数 (PF) 的函数。 PF 是支持单根 I/O 虚拟化 (SR-IOV) 的网络适配器的组件。
+本主题介绍为 PCI Express （PCIe）物理功能（PF）的微型端口驱动程序编写[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数的准则。 PF 是支持单根 i/o 虚拟化（SR-IOV）的网络适配器组件。
 
-**请注意**  这些指南仅适用于 PF 微型端口驱动程序。 微型端口驱动程序的 PCIe 虚拟函数 (VF) 的适配器的初始化准则，请参阅[初始化 VF 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
+**请注意**  这些准则仅适用于 PF 小型端口驱动程序。 有关适配器的 PCIe 虚拟功能（VF）的微型端口驱动程序的初始化准则，请参阅[初始化 VF 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
 
  
 
-PF 微型端口驱动程序遵循相同的步骤为任何 NDIS 微型端口驱动程序时其[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数。 有关这些步骤的详细信息，请参阅[初始化微型端口驱动程序](initializing-a-miniport-driver.md)。
+当任何 NDIS 微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时，PF 微型端口驱动程序将遵循相同的步骤。 有关这些步骤的详细信息，请参阅[初始化微型端口驱动程序](initializing-a-miniport-driver.md)。
 
-除了这些步骤中，PF 微型端口驱动程序时必须遵守下列附加步骤 NDIS 调用驱动程序的[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数：
+除了这些步骤以外，在 NDIS 调用驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时，PF 微型端口驱动程序还必须执行以下附加步骤：
 
-1.  PF 微型端口驱动程序调用[ **NdisGetHypervisorInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgethypervisorinfo)函数来验证它是否正在运行的 HYPER-V 父分区中。 此函数将返回[ **NDIS\_虚拟机监控程序\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_hypervisor_info)结构，它定义的分区类型。 如果分区类型将报告为**NdisHypervisorPartitionMsHvParent**，微型端口驱动程序运行附加到在适配器上 PF 在 HYPER-V 父分区中。
+1.  PF 微型端口驱动程序调用[**NdisGetHypervisorInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgethypervisorinfo)函数来验证它是否正在 hyper-v 父分区中运行。 此函数返回用于定义分区类型的[**NDIS\_虚拟机监控程序\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_hypervisor_info)结构。 如果将分区类型报告为**NdisHypervisorPartitionMsHvParent**，则微型端口驱动程序将在附加到适配器上的 PF 的 hyper-v 父分区中运行。
 
-    **请注意**  如果分区类型将报告为**NdisHypervisorPartitionMsHvChild**，微型端口驱动程序是否正在附加到 VF 在适配器上的 HYPER-V 子分区。 在这种情况下，作为 PF 驱动程序必须初始化微型端口驱动程序。 如果可能，该驱动程序必须将初始化为某个 VF 驱动程序中所述[初始化 VF 微型端口驱动程序](initializing-a-vf-miniport-driver.md)。
-
-     
-
-2.  PF 微型端口驱动程序必须读取要确定是否启用 SR-IOV，并获取配置设置的 NIC 交换机的 SR-IOV 标准化关键字。 有关这些关键字的详细信息，请参阅[SR-IOV 的标准化 INF 关键字](standardized-inf-keywords-for-sr-iov.md)。
-
-    **请注意**  PF 微型端口驱动程序如果注册的入口点[ *MiniportSetOptions* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-set_options)函数，该驱动程序可能已以前获得了这些设置注册表 NDIS 调用时*MiniportSetOptions*。
+    **注意**  如果将分区类型报告为**NdisHypervisorPartitionMsHvChild**，则微型端口驱动程序将在附加到适配器上的 VF 的 hyper-v 子分区中运行。 在这种情况下，微型端口驱动程序不得初始化为 PF 驱动程序。 如有可能，驱动程序必须初始化为 VF 驱动程序，如[初始化 Vf 微型端口驱动程序](initializing-a-vf-miniport-driver.md)中所述。
 
      
 
-3.  如果网络适配器支持 SR-IOV、 虚拟机队列 (VMQ) 或 RSS，微型端口驱动程序必须确定哪种功能的网络适配器上启用。 有关如何确定这一点的详细信息，请参阅[处理 SR-IOV、 VMQ 和 RSS 标准化 INF 关键字](handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md)。
+2.  PF 微型端口驱动程序必须读取 SR-IOV 标准化关键字，以确定是否已启用 SR-IOV 并获取 NIC 交换机配置设置。 有关这些关键字的详细信息，请参阅[sr-iov 的标准化 INF 关键字](standardized-inf-keywords-for-sr-iov.md)。
 
-4.  RSS 和 VMQ 硬件功能 （如果支持），以及的微型端口驱动程序必须报告其完整的硬件的 SR-IOV 功能集。 这些功能必须播发在注册表中的 SR-IOV 标准化关键字设置无关。
+    **请注意**  如果 PF 微型端口驱动程序已将入口点注册到[*MiniportSetOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-set_options)函数，则当 NDIS 调用*MiniportSetOptions*时，驱动程序可能以前从注册表获取了这些设置。
 
-    如果网络适配器上启用了 SR-IOV，微型端口驱动程序还必须在适配器上报告 currentlyenabled 的 SR-IOV 设置。
+     
 
-    报告的 SR-IOV 功能的详细信息，请参阅[确定的 SR-IOV 功能](determining-sr-iov-capabilities.md)。
+3.  如果网络适配器支持 SR-IOV、虚拟机队列（VMQ）或 RSS，微型端口驱动程序必须确定要在网络适配器上启用的功能。 有关如何确定此情况的详细信息，请参阅[处理 sr-iov、VMQ 和 RSS 标准化 INF 关键字](handling-sr-iov--vmq--and-rss-standardized-inf-keywords.md)。
 
-5.  微型端口驱动程序必须报告其完整的 NIC 的硬件交换机功能集。 这些功能必须播发在注册表中的 SR-IOV 标准化关键字设置无关。
+4.  除了 RSS 和 VMQ 硬件功能（如果支持），微型端口驱动程序必须报告其完整的硬件 sr-iov 功能集。 无论注册表中的 SR-IOV 标准化关键字设置如何，都必须公布这些功能。
 
-    如果网络适配器上启用了 SR-IOV，微型端口驱动程序还必须在适配器上报告 currentlyenabled NIC 交换机设置。
+    如果在网络适配器上启用了 SR-IOV，则微型端口驱动程序还必须在适配器上报告 currentlyenabled SR-IOV 设置。
 
-    有关详细信息报告 NIC 上切换功能，请参阅[确定 NIC 切换功能](determining-nic-switch-capabilities.md)。
+    有关报告 SR-IOV 功能的详细信息，请参阅[确定 Sr-iov 功能](determining-sr-iov-capabilities.md)。
 
-6.  微型端口驱动程序必须报告其完整的硬件设置接收的筛选功能。 这些功能必须播发在注册表中的 SR-IOV 标准化关键字设置无关。
+5.  微型端口驱动程序必须报告其整套硬件 NIC 交换机功能。 无论注册表中的 SR-IOV 标准化关键字设置如何，都必须公布这些功能。
 
-    如果网络适配器上启用了 SR-IOV，微型端口驱动程序还必须报告 currentlyenabled 接收适配器上的筛选设置。
+    如果在网络适配器上启用了 SR-IOV，则微型端口驱动程序还必须在适配器上报告 currentlyenabled NIC 交换机设置。
 
-    报告接收筛选功能的详细信息，请参阅[确定收到的筛选功能](determining-receive-filtering-capabilities.md)。
+    有关如何报告 NIC 交换机功能的详细信息，请参阅[确定 Nic 交换机功能](determining-nic-switch-capabilities.md)。
 
-7.  如果微型端口驱动程序支持静态 NIC 交换机创建，它必须执行以下操作的调用上下文中[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)。
+6.  微型端口驱动程序必须报告其硬件接收筛选功能的完整集。 无论注册表中的 SR-IOV 标准化关键字设置如何，都必须公布这些功能。
 
-    -   该驱动程序配置基于 NIC 交换机标准化关键字设置适配器硬件。 根据这些设置，则驱动程序为 NIC 开关分配所需的硬件和软件资源。
+    如果在网络适配器上启用了 SR-IOV，则微型端口驱动程序还必须在适配器上报告 currentlyenabled 接收筛选设置。
 
-    -   微型端口驱动程序调用[ **NdisMEnableVirtualization** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismenablevirtualization)启用 SR-IOV 和网络适配器上设置的 VFs 数。 此函数适配器的 PCI 配置空间中配置的 SR-IOV 扩展功能。 如果此函数返回 NDIS\_状态\_成功后，启用 SR-IOV 和 VFs 公开通过 PCIe 接口。
+    有关报告接收筛选功能的详细信息，请参阅[确定接收筛选功能](determining-receive-filtering-capabilities.md)。
 
-    有关详细信息，请参阅[静态创建的 NIC 交换机](static-creation-of-a-nic-switch.md)。
+7.  如果微型端口驱动程序支持静态 NIC 交换机创建，则必须在调用[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的上下文中执行以下操作。
 
-    **请注意**  如果微型端口驱动程序支持动态 NIC 交换机创建，它创建了交换机和它处理的对象标识符 (OID) 方法请求时，可以实现虚拟化[OID\_NIC\_交换机\_创建\_交换机](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)。 有关详细信息，请参阅[动态创建的 NIC 交换机](dynamic-creation-of-a-nic-switch.md)。
+    -   驱动程序根据 NIC 交换机标准化关键字设置配置适配器硬件。 根据这些设置，驱动程序将为 NIC 交换机分配必要的硬件和软件资源。
+
+    -   微型端口驱动程序调用[**NdisMEnableVirtualization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismenablevirtualization)以启用 sr-iov，并在网络适配器上设置 VFs 的数目。 此函数在适配器的 PCI 配置空间中配置 SR-IOV 扩展功能。 如果此函数返回 NDIS\_状态\_SUCCESS，则启用 SR-IOV，并通过 PCIe 接口公开 VFs。
+
+    有关详细信息，请参阅[创建 NIC 交换机的静态](static-creation-of-a-nic-switch.md)。
+
+    **请注意**  如果微型端口驱动程序支持动态 NIC 交换机创建，它将创建开关，并在处理 OID\_\_NIC 的对象标识符（OID）方法请求时启用虚拟化， [\_创建\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)。 有关详细信息，请参阅[动态创建 NIC 交换机](dynamic-creation-of-a-nic-switch.md)。
 
      
 

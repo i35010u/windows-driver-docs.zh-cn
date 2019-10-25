@@ -2,18 +2,18 @@
 title: 调试器数据模型C++接口概述
 description: 本主题概述了用于扩展和自定义调试器C++功能的调试器数据模型接口。
 ms.date: 09/12/2019
-ms.openlocfilehash: 1f92d9eb8b8095ccbe3d486b027e2c6259da810a
-ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
+ms.openlocfilehash: b68998897980b48aa60ab2f0c60c691e5057803a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930380"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837808"
 ---
 # <a name="debugger-data-model-c-overview"></a>调试器数据模型 C++ 概述
 
 本主题概述了如何使用调试器数据模型C++接口来扩展和自定义调试器的功能。
 
-本主题是一系列文章的一部分，其中描述了可C++从访问的接口，如何使用它们C++来生成基于的调试器扩展，以及如何使用其他数据模型构造（例如：JavaScript 或 NatVis） C++ 。
+本主题是一系列文章的一部分，其中描述了可C++从其访问的接口，如何使用C++它们来生成基于的调试器扩展，以及如何从C++数据模型扩展使用其他数据模型构造（例如： JavaScript 或 NatVis）.
 
 [调试器数据模型C++概述](data-model-cpp-overview.md)
 
@@ -29,7 +29,7 @@ ms.locfileid: "70930380"
 
 ---
 
-## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview">调试器数据模型C++接口概述
+## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview"> 调试器数据模型C++接口概述
 
 调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 编写到数据模型 Api 的构造可用于调试器的较新（dx）表达式计算器以及 JavaScript 扩展或C++扩展。 
 
@@ -121,7 +121,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 ![数据模型体系结构视图](images/data-model-manager.png)
 
 
-## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary">调试器数据模型接口摘要
+## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a>调试器数据模型接口 <span id="summary"> 摘要
 
 许多C++接口都包含不同的数据模型部分。 若要以一致且简单的方式来实现这些接口的方法，它们按常规类别细分。 主要区域如下： 
 
@@ -132,41 +132,41 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 *DbgEng 和数据模型之间的桥梁*
 
-[IHostDataModelAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ihostdatamodelaccess) 
+[IHostDataModelAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-ihostdatamodelaccess) 
 
 *主接口* 
 
-[IModelObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelobject) 
+[IModelObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelobject) 
 
-[IKeyStore](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ikeystore) 
+[IKeyStore](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-ikeystore) 
 
-[IModelIterator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodeliterator) 
+[IModelIterator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodeliterator) 
 
-[IModelPropertyAccessor](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelpropertyaccessor) 
+[IModelPropertyAccessor](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelpropertyaccessor) 
 
-[IModelMethod](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelmethod) 
+[IModelMethod](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelmethod) 
 
-[IKeyEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ikeyenumerator) 
+[IKeyEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-ikeyenumerator) 
 
-[IRawEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-irawenumerator) 
+[IRawEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-irawenumerator) 
 
-[IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
+[IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
 
 *概念接口*
 
-[IStringDisplayableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-istringdisplayableconcept) 
+[IStringDisplayableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-istringdisplayableconcept) 
 
-[IIterableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-iiterableconcept) 
+[IIterableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-iiterableconcept) 
 
-[IIndexableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-iindexableconcept) 
+[IIndexableConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-iindexableconcept) 
 
-[IPreferredRuntimeTypeConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-ipreferredruntimetypeconcept) 
+[IPreferredRuntimeTypeConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-ipreferredruntimetypeconcept) 
 
-[IDataModelConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelconcept) 
+[IDataModelConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelconcept) 
 
-[IDynamicKeyProviderConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idynamickeyproviderconcept) 
+[IDynamicKeyProviderConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idynamickeyproviderconcept) 
 
-[IDynamicConceptProviderConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idynamicconceptproviderconcept) 
+[IDynamicConceptProviderConcept](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idynamicconceptproviderconcept) 
 
 
 **数据模型和扩展性的管理**
@@ -177,13 +177,13 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 *常规数据模型管理器访问* 
 
-[IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelmanager)  / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
+[IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager)  / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
 
 *脚本管理* 
 
-[IDataModelScriptManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptmanager) 
+[IDataModelScriptManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptmanager) 
 
-[IDataModelScriptProviderEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptproviderenumerator) 
+[IDataModelScriptProviderEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptproviderenumerator) 
 
 
 **访问调试器的类型系统和内存空间**
@@ -192,46 +192,46 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 *常规宿主（调试器）接口*
 
-[IDebugHost](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughost) 
+[IDebugHost](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughost) 
 
-[IDebugHostStatus](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughoststatus) 
+[IDebugHostStatus](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughoststatus) 
 
-[IDebugHostContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostcontext) 
+[IDebugHostContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostcontext) 
 
-[IDebugHostMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostmemory)  / [IDebugHostMemory2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostmemory2) 
+[IDebugHostMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory)  / [IDebugHostMemory2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory2) 
 
-[IDebugHostErrorSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughosterrorsink) 
+[IDebugHostErrorSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosterrorsink) 
 
-[IDebugHostEvaluator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostevaluator)  / [IDebugHostEvaluator2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostevaluator2) 
+[IDebugHostEvaluator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator)  / [IDebugHostEvaluator2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator2) 
 
-[IDebugHostExtensibility](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostextensibility) 
+[IDebugHostExtensibility](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostextensibility) 
 
 *宿主（调试器）类型系统接口* 
 
-[IDebugHostSymbols](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostsymbols) 
+[IDebugHostSymbols](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbols) 
 
-[IDebugHostSymbol](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostsymbol)  / [IDebugHostSymbol2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostsymbol2) 
+[IDebugHostSymbol](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol)  / [IDebugHostSymbol2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol2) 
 
-[IDebugHostModule](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostmodule) 
+[IDebugHostModule](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmodule) 
 
-[IDebugHostType](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughosttype)  / [IDebugHostType2](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughosttype2) 
+[IDebugHostType](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype)  / [IDebugHostType2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype2) 
 
-[IDebugHostConstant](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostconstant) 
+[IDebugHostConstant](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostconstant) 
 
-[IDebugHostField](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostfield) 
+[IDebugHostField](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostfield) 
 
-[IDebugHostData](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostdata) 
+[IDebugHostData](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostdata) 
 
-[IDebugHostBaseClass](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostbaseclass) 
-[IDebugHostPublic](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostpublic) 
+[IDebugHostBaseClass](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostbaseclass) 
+[IDebugHostPublic](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostpublic) 
 
-[IDebugHostModuleSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostmodulesignature) 
+[IDebugHostModuleSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmodulesignature) 
 
-[IDebugHostTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughosttypesignature) 
+[IDebugHostTypeSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttypesignature) 
 
 *宿主（调试器）对脚本的支持* 
 
-[IDebugHostScriptHost](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idebughostscripthost) 
+[IDebugHostScriptHost](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostscripthost) 
 
 
 **创作和使用脚本**
@@ -242,39 +242,39 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 *常规脚本接口* 
 
-[IDataModelScriptProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscript) 
+[IDataModelScriptProvider](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscript) 
 
-[IDataModelScript](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscript) 
+[IDataModelScript](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscript) 
 
-[IDataModelScriptClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptclient) 
+[IDataModelScriptClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptclient) 
 
-[IDataModelScriptHostContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscripthostcontext) 
+[IDataModelScriptHostContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscripthostcontext) 
 
-[IDataModelScriptTemplate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscripttemplate) 
+[IDataModelScriptTemplate](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscripttemplate) 
 
-[IDataModelScriptTemplateEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscripttemplateenumerator) 
+[IDataModelScriptTemplateEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscripttemplateenumerator) 
 
-[IDataModelNameBinder](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelnamebinder) 
+[IDataModelNameBinder](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelnamebinder) 
 
 
 *脚本调试器接口* 
 
-[IDataModelScriptDebug](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebug) 
+[IDataModelScriptDebug](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebug) 
 
-[IDataModelScriptDebugClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugclient) 
+[IDataModelScriptDebugClient](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugclient) 
 
-[IDataModelScriptDebugStack](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugstack) 
+[IDataModelScriptDebugStack](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugstack) 
 
-[IDataModelScriptDebugStackFrame](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugstackframe) 
+[IDataModelScriptDebugStackFrame](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugstackframe) 
 
-[IDataModelScriptDebugVariableSetEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugvariablesetenumerator) 
+[IDataModelScriptDebugVariableSetEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugvariablesetenumerator) 
 
-[IDataModelScriptDebugBreakpoint](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpoint) 
+[IDataModelScriptDebugBreakpoint](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpoint) 
 
-[IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
+[IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
 
 
-## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex">使用 DbgModelClientEx 库
+## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a>使用 DbgModelClientEx 库 <span id="dbgmodelclientex">
 
 **概述**
 

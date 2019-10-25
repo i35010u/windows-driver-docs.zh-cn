@@ -1,9 +1,9 @@
 ---
-title: SRB\_GET\_STREAM\_INFO
-description: SRB\_GET\_STREAM\_INFO
+title: SRB\_获取\_流\_信息
+description: SRB\_获取\_流\_信息
 ms.assetid: ff5412ee-6e4f-43f4-a90d-4a2bdfa5d4ae
 keywords:
-- SRB_GET_STREAM_INFO 流式处理媒体设备
+- SRB_GET_STREAM_INFO 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,40 +12,40 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55703bfffb363c27088f9f236053ac4f279d32de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1deced6611edcd29ba91870d1abe51082175889
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358374"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843301"
 ---
-# <a name="srbgetstreaminfo"></a>SRB\_GET\_STREAM\_INFO
+# <a name="srb_get_stream_info"></a>SRB\_获取\_流\_信息
 
 
 ## <span id="ddk_srb_get_stream_info_ks"></span><span id="DDK_SRB_GET_STREAM_INFO_KS"></span>
 
 
-在类驱动程序将发送此请求可获取说明的设备和它支持的流。
+类驱动程序发送此请求以获取设备及其支持的流的描述。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-微型驱动程序应设置以下项之一为 SRB 中的状态：
+微型驱动程序应将以下内容之一设置为 SRB 中的状态：
 
-<span id="STATUS_SUCCESS"></span><span id="status_success"></span>状态\_成功  
+<span id="STATUS_SUCCESS"></span><span id="status_success"></span>成功\_状态  
 指示命令成功完成。
 
-<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>状态\_IO\_设备\_错误  
-指示发生了硬件故障。
+<span id="STATUS_IO_DEVICE_ERROR"></span><span id="status_io_device_error"></span>IO\_设备状态\_\_错误  
+指示出现硬件故障。
 
 ### <a name="comments"></a>备注
 
-在类驱动程序将传递的缓冲区*pSrb*-&gt;**CommandData.StreamBuffer**微型驱动程序的类驱动程序的响应中指定的大小的[**SRB\_初始化\_设备**](srb-initialize-device.md)请求。 *PSrb*指针指向[ **HW\_流\_请求\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_request_block)结构。 另请参阅[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_port_configuration_information)。
+类驱动程序传递-*pSrb*中的缓冲区&gt;**StreamBuffer**指定的大小，以响应类驱动程序的[**SRB\_初始化\_设备**](srb-initialize-device.md)请求。 *PSrb*指针指向[**HW\_STREAM\_请求\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_request_block)结构。 另请参阅[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_port_configuration_information)。
 
-微型驱动程序填充**CommandData.StreamBuffer**与[ **HW\_流\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_descriptor)设备和流描述它支持。 此缓冲区的大小将由在微型驱动程序**StreamDescriptorSize**字段中[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_port_configuration_information)结构。
+微型驱动程序使用[**HW\_STREAM\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_descriptor)填充**StreamBuffer** ，其中描述了设备及其支持的流。 此缓冲区的大小由[**端口\_配置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_port_configuration_information)结构中的 " **StreamDescriptorSize** " 字段中的微型驱动程序指示。
 
-在类驱动程序通常只有一次发出此请求。 微型驱动程序可能会强制类驱动程序来重新发出此请求中，若要更新的受支持的流，其说明通过调用[StreamClassReenumerateStreams](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassreenumeratestreams)。
+类驱动程序通常只颁发此请求一次。 微型驱动程序可以通过调用[StreamClassReenumerateStreams](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassreenumeratestreams)强制类驱动程序重新发出此请求，以更新其支持的流的说明。
 
-**当 SRB\_获取\_流\_微型驱动程序收到 INFO 命令时，微型驱动程序应：**
+**当微型驱动程序接收到 SRB\_获取\_STREAM\_信息命令时，微型驱动程序应：**
 
 1.  检索流标头和流信息数据结构的指针。 例如：
 
@@ -57,6 +57,6 @@ ms.locfileid: "67358374"
      
     ```
 
-2.  验证缓冲区足够大以保存返回的数据。
+2.  验证缓冲区是否足够大以容纳返回的数据。
 
-3.  将信息写入到缓冲区。
+3.  将信息写入缓冲区。

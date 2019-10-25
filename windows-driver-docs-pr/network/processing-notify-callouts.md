@@ -7,39 +7,39 @@ keywords:
 - 标注驱动程序 WDK Windows 筛选平台，通知标注
 - notifyFn
 - 通知标注 WDK Windows 筛选平台
-- Windows 筛选平台标注驱动程序 WDK，筛选器添加和删除操作
-- 标注驱动程序 WDK Windows 筛选平台，筛选器添加和删除操作
+- Windows 筛选平台标注驱动程序 WDK、筛选器添加和删除
+- 标注驱动程序 WDK Windows 筛选平台，筛选添加和删除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa5853a9154521c9ea95af15f3968fb9de4b5140
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47dc589056f07b755dd456c25560799919786aab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385476"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843486"
 ---
 # <a name="processing-notify-callouts"></a>处理通知标注
 
 
-筛选器引擎将调用一个标注[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)标注函数，以通知有关与标注相关联的事件的标注驱动程序。
+筛选器引擎调用标注的[*notifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数，以通知标注驱动程序与标注关联的事件。
 
-### <a href="" id="filter-addition"></a> 筛选器添加
+### <a href="" id="filter-addition"></a>筛选器加法
 
-当指定的筛选器操作添加到筛选器引擎标注的筛选器，筛选器引擎调用的标注[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)标注函数，传递 FWPS\_标注\_通知\_添加\_筛选*notifyType*参数。
+当指定筛选器操作的标注的筛选器添加到筛选器引擎时，筛选器引擎将调用标注的[*notifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数，将 FWPS\_标注传递\_通知\_ *\_notifyType*参数。
 
-后指定筛选器的操作的标注的筛选器已添加到筛选器引擎，标注驱动程序可以使用筛选器引擎注册一个标注。 在此情况下，筛选器引擎不会调用的标注[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)标注函数，以通知有关的任何现有筛选器的标注。
+标注驱动程序可以在指定筛选器操作的标注的筛选器已添加到筛选器引擎之后，使用筛选器引擎注册标注。 在这种情况下，筛选器引擎不调用标注的[*notifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数来通知标注有关现有筛选器的信息。
 
-筛选器引擎仅调用的标注*notifyFn*标注函数，以指定筛选器的操作的标注的新筛选器添加到筛选器引擎时通知标注。 在此情况下，一个标注的*notifyFn*标注函数可能不会调用中指定的筛选器操作的标注的筛选器引擎的每个筛选器。
+筛选器引擎仅在指定筛选器操作的标注的新筛选器添加到筛选器引擎时，才调用标注的*notifyFn* callout 函数来通知标注。 在这种情况下，可能不会为筛选器引擎中指定筛选器操作的标注的每个筛选器调用标注的*notifyFn*标注函数。
 
-如果标注驱动程序筛选器引擎启动和标注必须接收有关每个筛选器信息中指定的筛选器操作的标注的筛选器引擎后注册一个标注，标注驱动程序必须调用合适的管理若要枚举筛选器引擎中的所有筛选器的功能。 标注驱动程序必须对通过生成的所有筛选器以查找指定的筛选器操作的标注这些筛选器列表进行排序。 请参阅[调用其他 Windows 筛选平台函数](calling-other-windows-filtering-platform-functions.md)有关调用这些函数的详细信息。
+如果标注驱动程序在筛选器引擎开始后注册标注，而且标注必须收到有关筛选器引擎中每个筛选器的信息，而该筛选器引擎指定筛选器操作的标注，则标注驱动程序必须调用适当的管理用于枚举筛选器引擎中所有筛选器的函数。 标注驱动程序必须按所有筛选器的结果列表进行排序，才能查找指定筛选器操作标注的筛选器。 有关调用这些函数的详细信息，请参阅[调用其他 Windows 筛选平台函数](calling-other-windows-filtering-platform-functions.md)。
 
-### <a href="" id="filter-deletion"></a> 筛选器删除
+### <a href="" id="filter-deletion"></a>筛选器删除
 
-当指定一个标注的筛选器引擎中删除筛选器的操作筛选器，筛选器引擎调用的标注[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)标注函数并传递 FWPS\_标注\_通知\_删除\_筛选*notifyType*参数和**NULL**中*filterKey*参数。 筛选器引擎将调用的标注*notifyFn*标注函数中指定的筛选器操作的标注的筛选器引擎的每个已删除筛选器。 这包括已添加到筛选器引擎标注驱动程序筛选器引擎注册标注之前的任何筛选器。 因此，一个标注可能会收到筛选器删除通知，如为其未收到筛选器的筛选器，可添加通知。
+如果从筛选器引擎中删除指定筛选器操作的标注的筛选器，则筛选器引擎将调用标注的[*notifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数并将 FWPS\_标注传递\_通知\_\_*notifyType*参数，并在*FilterKey*参数中**为 NULL** 。 对于指定筛选器操作的标注的筛选器引擎中，筛选器引擎为每个已删除的筛选器调用标注的*notifyFn*标注函数。 这包括标注驱动程序将标注注册到筛选器引擎之前添加到筛选器引擎的任何筛选器。 因此，对于未接收筛选器添加通知的筛选器，标注可能会收到筛选器删除通知。
 
-如果的标注[ *notifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_notify_fn0)标注函数不能识别传入的通知类型*notifyType*参数，则它应忽略通知并返回状态\_成功。
+如果标注的[*notifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_notify_fn0) callout 函数无法识别在*notifyType*参数中传递的通知类型，它应忽略通知并返回状态\_SUCCESS。
 
-标注驱动程序可以指定筛选器添加到筛选器引擎时要与筛选器相关联的上下文。 此类上下文是不透明的筛选器引擎。 标注[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数可以使用此上下文以保存筛选器引擎通过调用下一次的状态信息。 从筛选器引擎中删除筛选器，标注驱动程序将执行上下文的任何必要的清理。
+标注驱动程序可以指定在将筛选器添加到筛选器引擎时要与筛选器关联的上下文。 此类上下文对于筛选器引擎是不透明的。 标注的[*classifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数可以使用此上下文保存状态信息，以便在筛选器引擎下次调用时保存状态信息。 从筛选器引擎中删除筛选器后，标注驱动程序将执行任何所需的上下文清理。
 
 例如：
 

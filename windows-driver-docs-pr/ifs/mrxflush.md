@@ -1,6 +1,6 @@
 ---
 title: MRxFlush 例程
-description: MRxFlush 例程调用 RDBSS 请求网络微型重定向到存储写入文件系统对象的内容。 RDBSS 发出此调用以响应接收 IRP\_MJ\_刷新\_缓冲区请求。
+description: MRxFlush 例程由 RDBSS 调用，请求网络小型重定向程序将文件系统对象的内容写入存储。 RDBSS 发出此调用以响应接收 IRP\_MJ\_刷新\_缓冲区请求。
 ms.assetid: b133a91f-3f8c-45af-a02c-58d894a2fa2e
 keywords:
 - MRxFlush 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2915bcec1c3c0dde62cf0e7403b03b78d530c6dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5490d869c7886cc79f5c7c4e65e454f16cde7976
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374324"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841108"
 ---
 # <a name="mrxflush-routine"></a>MRxFlush 例程
 
 
-*MRxFlush*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向到存储写入文件系统对象的内容。 RDBSS 发出此调用中接收响应[ **IRP\_MJ\_刷新\_缓冲区**](irp-mj-flush-buffers.md)请求。
+*MRxFlush*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，请求网络小型重定向程序将文件系统对象的内容写入存储。 RDBSS 发出此调用以响应接收[**IRP\_MJ\_刷新\_缓冲区**](irp-mj-flush-buffers.md)请求。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxFlush(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxFlush*将返回状态\_成功的成功或相应 NTSTATUS 值，如下所示：
+*MRxFlush*返回成功的状态\_成功或相应的 NTSTATUS 值，如下所示：
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ NTSTATUS MRxFlush(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有足够的资源来完成该操作。</p></td>
+<td align="left"><p>资源不足，无法完成此操作。</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +74,7 @@ NTSTATUS MRxFlush(
 <a name="remarks"></a>备注
 -------
 
-*MRxFlush*句柄网络请求刷新的文件。
+*MRxFlush*处理用于文件刷新的网络请求。
 
 <a name="requirements"></a>要求
 ------------
@@ -87,41 +87,41 @@ NTSTATUS MRxFlush(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkfcb_calldown)
+[**MRxAreFilesAliased**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkfcb_calldown)
 
 [**MRxCleanupFobx**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549841(v=vs.85))
 
-[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown)
+[**MRxCloseSrvOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown)
 
 [**MRxCollapseOpen**](mrxcollapseopen.md)
 
 [**MRxCreate**](mrxcreate.md)
 
-[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fcb)
+[**MRxDeallocateForFcb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fcb)
 
-[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_deallocate_for_fobx)
+[**MRxDeallocateForFobx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_deallocate_for_fobx)
 
-[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_extendfile_calldown)
+[**MRxExtendForCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_extendfile_calldown)
 
 [**MRxExtendForNonCache**](mrxextendfornoncache.md)
 
 [**MRxFlush**](mrxflush.md)
 
-[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_forceclosed_calldown)
+[**MRxForceClosed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_forceclosed_calldown)
 
-[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_is_lock_realizable)
+[**MRxIsLockRealizable**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_is_lock_realizable)
 
 [**MRxShouldTryToCollapseThisOpen**](mrxshouldtrytocollapsethisopen.md)
 

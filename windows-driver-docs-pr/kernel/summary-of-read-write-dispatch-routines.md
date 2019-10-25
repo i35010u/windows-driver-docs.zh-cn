@@ -10,18 +10,18 @@ keywords:
 - 调度例程 WDK 内核，DispatchWrite 例程
 - 调度例程 WDK 内核，DispatchRead 例程
 - 读/写调度例程 WDK 内核
-- IRP_MJ_WRITE I/O 函数代码
-- IRP_MJ_READ I/O 函数代码
+- IRP_MJ_WRITE i/o 函数代码
+- IRP_MJ_READ i/o 函数代码
 - 数据传输 WDK 内核，读/写调度例程
-- 传输数据 WDK 内核，读/写调度例程
+- 传输数据 WDK 内核，读取/写入调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58a0af9f13253aeadbabaeef3f46897a402442d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 087db34294c7d5c9047af976da4af2ac0979cfec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838402"
 ---
 # <a name="summary-of-readwrite-dispatch-routines"></a>读/写 Dispatch 例程摘要
 
@@ -29,29 +29,29 @@ ms.locfileid: "67382966"
 
 
 
-在实现时记住以下几点[ *DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)， [ *DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)，或[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程：
+实现[*DispatchRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 [*DispatchWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)或[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程时，请记住以下几点：
 
--   它负责的分层驱动程序来检查传入读/写 Irp 的有效性之前设置 IRP 中的下一步低级驱动程序的 I/O 堆栈位置参数，链中的最高级别的驱动程序。
+-   分层驱动程序链中的最高级别的驱动程序负责检查传入的读/写 Irp 的参数是否有效，然后再在 IRP 中设置下一个较低级别的驱动程序的 i/o 堆栈位置。
 
--   通常，中间和最低级别的驱动程序可以依赖于将向下传输请求具有有效的参数传递其链中的最高级别的驱动程序。 但是，任何驱动程序可以在 IRP，其 I/O 堆栈位置执行完整性检查的参数和每个设备驱动程序应检查可能会违反其设备施加任何限制条件的参数。
+-   中间和最低级别驱动程序通常可以依赖于其链中的最高级别的驱动程序来向下传递包含有效参数的传输请求。 但是，任何驱动程序都可以对 IRP 的 i/o 堆栈位置中的参数执行健全性检查，并且每个设备驱动程序都应检查参数中是否存在可能违反其设备施加的任何限制的情况。
 
--   如果*DispatchReadWrite*例程完成并出现错误 IRP，但它应设置 I/O 堆栈位置**状态**成员使用适当的 NTSTATUS 类型值，设置**信息**成员为零，并调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与 IRP 和一个*PriorityBoost*的 IO\_否\_增量。
+-   如果*DispatchReadWrite*例程完成 IRP 但出现错误，则应使用适当的 NTSTATUS 类型值设置 i/o 堆栈位置**状态**成员，将**信息**成员设置为零，并使用调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)IRP 和 IO 的*PRIORITYBOOST*不\_\_递增。
 
--   如果驱动程序将使用缓冲的 I/O，它可能需要定义包含要传输的数据的结构，并可能需要一定数量的这些结构在内部进行缓冲。
+-   如果驱动程序使用缓冲 i/o，则可能需要定义一个结构，使其包含要传输的数据，并且可能需要在内部缓冲一些这类结构。
 
--   如果驱动程序使用直接 I/O，则可能需要检查是否在 MDL **Irp-&gt;MdlAddress**介绍基础设备来处理单个传输中包含过多的数据 （或过多的分页符） 的缓冲区操作。 如果是这样，该驱动程序必须拆分到一系列较小的传输操作的原始传输请求。
+-   如果驱动程序使用直接 i/o，可能需要检查**Irp&gt;MdlAddress**中的 MDL 是否描述了包含过多数据（或过多分页符）的缓冲区，以使基础设备在单个传输操作中进行处理。 如果是这样，则驱动程序必须将原始传输请求拆分为较小的传输操作序列。
 
-    紧密耦合的类驱动程序可能会拆分此类请求在其*DispatchReadWrite*例程其基础端口驱动程序。 SCSI 类驱动程序，尤其是对于大容量存储设备，需要执行此操作。 有关 SCSI 驱动程序要求的详细信息，请参阅[存储设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
+    紧耦合的类驱动程序可以将此类请求拆分为其基本端口驱动程序的*DispatchReadWrite*例程。 要执行此操作，需要 SCSI 类驱动程序，特别是大容量存储设备。 有关 SCSI 驱动程序要求的详细信息，请参阅[存储驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)。
 
--   较低级别的设备驱动程序*DispatchReadWrite*例程应推迟将大型传输请求拆分为分部传输，直到另一个驱动程序例程取消排队 IRP，若要设置设备进行传输。
+-   较低级别的设备驱动程序的*DispatchReadWrite*例程应延迟将大型传输请求拆分为部分传输，直到另一个驱动程序例程取消排队 IRP 来设置用于传输的设备。
 
--   如果较低级别设备驱动程序队列以做进一步处理由其自己的例程的读/写 IRP，它必须调用[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)队列 IRP 之前。 *DispatchReadWrite*例程也必须返回具有状态控件\_PENDING 在这些情况下。
+-   如果较低级别的设备驱动程序将读取/写入 IRP 排队以供其自己的例程进一步处理，则必须在将 IRP 排队之前调用[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)。 在这些情况下， *DispatchReadWrite*例程还必须返回状态\_"挂起" 的控制。
 
--   如果*DispatchReadWrite*例程将传递到较低的驱动程序 IRP，它必须设置 IRP 中的下一步低驱动程序的 I/O 堆栈位置。 是否更高级别的驱动程序还设置[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程中之前将其传递对与 IRP [ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)取决于设计的驱动程序和其下分层。
+-   如果*DispatchReadWrite*例程将 irp 传递到较低的驱动程序，则必须在 irp 中设置下一个较低驱动程序的 i/o 堆栈位置。 更高级别的驱动程序是否还会在将其传递到[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)之前在 IRP 中设置[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，这取决于驱动程序的设计及其下分层的。
 
-    但是，更高级别的驱动程序必须调用[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)调用之前[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)前提是它分配任何资源，例如 Irp 或内存。 其*IoCompletion*例程必须释放所有驱动程序分配的资源，较低的驱动程序之前完成请求时*IoCompletion*例程调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与原始 IRP。
+    但是，更高级别的驱动程序必须先调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，然后才能调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) （如果它分配了 irp 或内存等资源）。 如果较低的驱动程序完成了请求，但在*IoCompletion*例程调用[**IOCOMPLETEREQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)与原始 IRP 之前，则其*IoCompletion*例程必须释放任何驱动程序分配的资源。
 
--   如果更高级别的驱动程序将 Irp 为低级驱动程序可能包含基础的可移动介质设备驱动程序分配，分配驱动程序必须建立中它会分配每个 IRP 的线程上下文。
+-   如果较高级别的驱动程序为可能包含基础可移动媒体设备驱动程序的较低驱动程序分配 Irp，则分配的驱动程序必须在它分配的每个 IRP 中建立线程上下文。
 
  
 

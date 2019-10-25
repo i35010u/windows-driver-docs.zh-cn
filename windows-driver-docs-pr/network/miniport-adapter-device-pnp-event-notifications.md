@@ -3,19 +3,19 @@ title: 微型端口适配器设备 PnP 事件通知
 description: 微型端口适配器设备 PnP 事件通知
 ms.assetid: b9417d5d-1f99-480e-8021-e5dd02f28c36
 keywords:
-- 插 WDK 网络，处理即插即用事件通知
-- 微型端口适配器 WDK 网络，插事件通知
-- 适配器 WDK 网络，插事件通知
+- 即插即用 WDK 网络，处理 PnP 事件通知
+- 微型端口适配器 WDK 网络，即插即用事件通知
+- 适配器 WDK 网络，即插即用事件通知
 - MiniportDevicePnPEventNotify
 - 事件 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e55b2190c45a3c91d40ee39eb171fed9b6d68b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8a9dda1cd5069dc5cbbd6b83df613dca753bbf2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373971"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844255"
 ---
 # <a name="miniport-adapter-device-pnp-event-notifications"></a>微型端口适配器设备 PnP 事件通知
 
@@ -23,13 +23,13 @@ ms.locfileid: "67373971"
 
 
 
-NDIS 调用微型端口驱动程序[ *MiniportDevicePnPEventNotify* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_device_pnp_event_notify)函数，以通知插即用 (PnP) 事件的驱动程序。
+NDIS 调用微型端口驱动程序的[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)函数，将即插即用（PnP）事件的驱动程序通知给驱动程序。
 
-NDIS 提供了描述的即插即用事件的事件代码。 代码可以表示适配器已意外删除从系统或主机系统的电源配置文件已更改。
+NDIS 提供了一个描述 PnP 事件的事件代码。 此代码可能表示适配器已从系统中意外删除，或者主机系统的电源配置文件已更改。
 
-如果事件代码指示电源配置文件已更改，NDIS 还指示的更改的类型。 在系统电池电源运行，或者系统正在 AC 电源。
+如果事件代码指示电源配置文件已更改，NDIS 还会指示更改的类型。 系统正在使用电池电源运行，或者系统正在通过交流电源运行。
 
-微型端口驱动程序应调整的适配器设置相应地。
+微型端口驱动程序应该相应地调整适配器设置。
 
  
 

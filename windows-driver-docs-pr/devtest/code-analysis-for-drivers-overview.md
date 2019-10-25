@@ -1,76 +1,76 @@
 ---
 title: 驱动程序的代码分析概述
-description: Windows 驱动程序工具包提供了 Microsoft Visual Studio Ultimate 2012 中的代码分析工具的特定于驱动程序的扩展。
+description: Windows 驱动程序工具包为 Microsoft Visual Studio Ultimate 2012 中的代码分析工具提供了特定于驱动程序的扩展。
 ms.assetid: 2A780608-F386-4838-A4EB-022C2F0EED3B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b775f9e6a8d7ae59dfe91045577b4016bee7ae8d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 692ac4ebc62b7a3ee03a83b5e44ec9d06e6104ca
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371620"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840296"
 ---
 # <a name="code-analysis-for-drivers-overview"></a>驱动程序的代码分析概述
 
 
-Windows 驱动程序工具包提供的特定于驱动程序的扩展[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)Microsoft Visual Studio 中。 Code Analysis for Drivers 包括仅适用于驱动程序，尤其是内核模式驱动程序的规则。 驱动程序的代码分析可以在代码中检测潜在的错误，就立即可以编译代码。
+Windows 驱动程序工具包为 Microsoft Visual Studio 中的[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)提供了特定于驱动程序的扩展。 驱动程序的代码分析包括仅适用于驱动程序（特别是内核模式驱动程序）的规则。 如果代码可以编译，则驱动程序的代码分析会立即检测到代码中的潜在错误。
 
-## <a name="span-idhowthecodeanalysistoolworksspanspan-idhowthecodeanalysistoolworksspanspan-idhowthecodeanalysistoolworksspanhow-the-code-analysis-tool-works"></a><span id="How_the_Code_Analysis_tool_works"></span><span id="how_the_code_analysis_tool_works"></span><span id="HOW_THE_CODE_ANALYSIS_TOOL_WORKS"></span>代码分析工具的工作原理
+## <a name="span-idhow_the_code_analysis_tool_worksspanspan-idhow_the_code_analysis_tool_worksspanspan-idhow_the_code_analysis_tool_worksspanhow-the-code-analysis-tool-works"></a><span id="How_the_Code_Analysis_tool_works"></span><span id="how_the_code_analysis_tool_works"></span><span id="HOW_THE_CODE_ANALYSIS_TOOL_WORKS"></span>代码分析工具的工作原理
 
 
-代码分析工具截获对标准编译器 Cl.exe 生成实用程序的调用，并改为，运行分析驱动程序源代码，并创建一个日志文件的错误和警告消息的 CL 截距编译器。 可以运行代码分析工具本身，也可以配置代码分析工具运行时构建您的驱动程序。 当通过自身运行代码分析工具时 (**分析&gt;对解决方案运行代码分析**) 在代码分析报告窗口中显示结果。 当作为生成的一部分运行代码分析工具时，CL 截距编译器创建的错误和警告消息的日志文件，然后它调用 Cl.exe 以产生生成输出的标准版本。 作为这些由标准生成命令，生成的对象文件都是相同的。
+代码分析工具会截获生成实用工具对标准编译器、node.js 的调用，而是运行 CL 截取编译器来分析驱动程序源代码，并创建错误和警告消息的日志文件。 您可以单独运行代码分析工具，也可以配置在生成驱动程序时运行的代码分析工具。 当你自行运行代码分析工具时（**分析 &gt; 对解决方案运行代码分析**），结果将显示在 "代码分析报表" 窗口中。 当您在生成过程中运行代码分析工具时，CL 截获编译器将创建错误和警告消息的日志文件，然后它将调用该标准版本的 Cl 以生成生成输出。 生成的对象文件与标准生成命令所生成的文件相同。
 
-截取编译器在运行时，Code Analysis for Drivers 独立检查代码中的每个函数，然后模拟执行所有可能的路径执行代码，查找常见驱动程序错误和不明智的编码做法。 代码分析工具运行相对较快，甚至对较大的驱动程序，并准确地说它生成报表标识怀疑有错误的驱动程序代码行。
+当截获编译器运行时，针对驱动程序的代码分析将单独检查代码中的每个函数，然后通过代码模拟所有可能路径的执行，寻找常见的驱动程序错误和不明智的编码做法。 即使在较大的驱动程序上，代码分析工具也会相对快捷地运行，并且它生成的报表会精确地标识驱动程序代码的行，并出现可疑错误。
 
-## <a name="span-idthetypesoferrorscodeanalysiscandetectspanspan-idthetypesoferrorscodeanalysiscandetectspanspan-idthetypesoferrorscodeanalysiscandetectspanthe-types-of-errors-code-analysis-can-detect"></a><span id="The_types_of_errors_Code_Analysis_can_detect"></span><span id="the_types_of_errors_code_analysis_can_detect"></span><span id="THE_TYPES_OF_ERRORS_CODE_ANALYSIS_CAN_DETECT"></span>代码分析可检测的错误类型
+## <a name="span-idthe_types_of_errors_code_analysis_can_detectspanspan-idthe_types_of_errors_code_analysis_can_detectspanspan-idthe_types_of_errors_code_analysis_can_detectspanthe-types-of-errors-code-analysis-can-detect"></a><span id="The_types_of_errors_Code_Analysis_can_detect"></span><span id="the_types_of_errors_code_analysis_can_detect"></span><span id="THE_TYPES_OF_ERRORS_CODE_ANALYSIS_CAN_DETECT"></span>代码分析的错误类型可以检测
 
 
 代码分析可以检测到多种类型的错误，包括以下类别中的错误：
 
--   **内存：** 潜在的内存泄漏，取消引用**NULL**指针，访问未初始化的内存、 内核模式堆栈的过度使用和不正确使用池标记。
+-   **内存：** 潜在的内存泄漏，取消引用的**空**指针，访问未初始化的内存，过度使用内核模式堆栈，并且不恰当地使用池标记。
 
--   **资源：** 发布资源，如锁、 调用某些函数时应保留的资源和资源的调用其他函数时不应保存失败。
+-   **资源：** 无法释放资源（如锁、调用某些函数时应持有的资源）以及调用其他函数时不应持有的资源。
 
--   **函数，请使用：** 某些功能可能不正确使用，会显示不正确，则可能参数的函数参数类型不匹配的函数的不严格检查类型，可能使用某些已过时的函数，并在调用函数可能IRQL 不正确。
+-   **函数使用：** 可能不正确地使用某些函数、出现不正确的函数参数、对不严格检查类型的函数的可能的参数类型不匹配、可能使用某些已过时的函数和函数调用（可能IRQL 不正确。
 
--   **浮点状态：** 保护浮点硬件状态中的驱动程序并将其保存在不同的 IRQL 后还原的浮点状态的尝试失败。
+-   **浮点状态：** 未能保护驱动程序中的浮点硬件状态，并在将其保存到不同的 IRQL 后尝试还原浮点状态。
 
--   **优先顺序规则：** 可能不会作为程序员不由于 C 编程的优先规则的代码。
+-   **优先规则：** 由于 C 编程的优先规则，可能不会表现为程序员所需的代码。
 
--   **内核模式的编码实践：** 编码实践，可能会导致错误，例如修改不透明内存描述符列表 (MDL) 结构，对故障调用函数，通过检查设置变量的值以及使用 C /C++而不是安全字符串的字符串操作函数Ntstrsafe.h 中定义的函数。
+-   **内核模式编码做法：** 可能导致错误的编码做法，如修改不透明的内存描述符列表（MDL）结构、无法检查被调用函数设置的变量的值，以及使用 C/C++字符串操作函数而不是安全字符串。Ntstrsafe.h 而中定义的函数。
 
--   **特定于驱动程序的编码做法：** 通常是内核模式驱动程序中的错误的源的特定操作。 例如，复制整个的 I/O 请求数据包 (IRP) 而无需修改成员并将一个指针保存到一个字符串或结构的参数，而不是复制中的自变量[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。
+-   **特定于驱动程序的编码做法：** 通常是内核模式驱动程序中的错误源的特定操作。 例如，在不修改成员的情况下复制整个 i/o 请求数据包（IRP），并保存指向 string 或 structure 参数的指针，而不是在[*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程中复制参数。
 
-## <a name="span-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspanspan-idcodeanalysiswarningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>代码分析警告
+## <a name="span-idcode_analysis_warningsspanspan-idcode_analysis_warningsspanspan-idcode_analysis_warningsspancode-analysis-warnings"></a><span id="Code_Analysis_warnings"></span><span id="code_analysis_warnings"></span><span id="CODE_ANALYSIS_WARNINGS"></span>代码分析警告
 
 
-代码分析工具使用基于规则的模型来确定程序或驱动程序代码中的错误。 每个规则都与代码分析工具检测到违反规则时报告警告相关联。 有关特定于驱动程序的警告的详细信息，请参阅[的代码分析驱动程序警告](prefast-for-drivers-warnings.md)。 Visual Studio 中的代码分析工具报告的警告的核心集有关的信息，请参阅[代码分析警告](https://go.microsoft.com/fwlink/p/?linkid=226853)。
+代码分析工具使用基于规则的模型来识别程序或驱动程序代码中的错误。 每个规则都与一个警告相关联，如果代码分析工具检测到规则冲突，则会报告该警告。 有关特定于驱动程序的警告的详细信息，请参阅[针对驱动程序警告的代码分析](prefast-for-drivers-warnings.md)。 有关 Visual Studio 中的代码分析工具报告的核心警告集的信息，请参阅[代码分析警告](https://go.microsoft.com/fwlink/p/?linkid=226853)。
 
 ## <a name="span-idannotationsspanspan-idannotationsspanspan-idannotationsspanannotations"></a><span id="Annotations"></span><span id="annotations"></span><span id="ANNOTATIONS"></span>批注
 
 
-代码分析工具提供的重要功能之一是能够批注函数说明和驱动程序的源代码中的某些其他实体。 代码分析工具具有内部功能的作用域;也就是说，它将分析函数之间的交互。 批注的目的是协定的提供名为和调用函数之间的更完整的表达式，以便代码分析工具可检查符合协定。 批注的另一个目标是他们告知任何人读取应如何使用该函数的代码，并可以预期的结果。 批注声明接口的协定，并不试图介绍如何实现该协定。 在许多情况下，运行代码分析工具的结果反映没有相应批注，并且通过添加批注，抑制缺少批注有关的警告，和启用了其他检查。 有关详细信息，请参阅[SAL 2.0 注释为 Windows 驱动程序](sal-2-annotations-for-windows-drivers.md)。 有关 SAL 2.0 的详细信息，请参阅[使用 SAL 注释减少 C /C++代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)。 SAL 2.0 替换 SAL 1.0。 SAL 2.0 应在 Windows 8 的 WDK。 如果驱动程序需要有关 SAL 1.0 的信息，请参阅 WDK 为 Windows 7 附带的驱动程序批注文档 PREfast。
+代码分析工具提供的一项重要功能是能够批注驱动程序源代码中的函数说明和其他一些实体。 代码分析工具具有功能范围内的范围;也就是说，它会分析函数之间的交互。 批注的目标是为调用函数和调用函数之间的协定提供更完整的表达式，以便代码分析工具可以检查是否满足约定。 批注的另一个目标是，它们会通知任何代码读取了应如何使用函数的代码和预期的结果。 批注声明接口的协定，并且不尝试说明该协定是如何实现的。 在许多情况下，运行代码分析工具的结果会反映缺少相应的批注，并且通过添加批注，会禁止显示缺失批注的警告，并启用其他检查。 有关详细信息，请参阅[Windows 驱动程序的 SAL 2.0 批注](sal-2-annotations-for-windows-drivers.md)。 有关 SAL 2.0 的详细信息，请参阅[使用 Sal 注释减少 CC++ /代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)。 SAL 2.0 替换 SAL 1.0。 SAL 2.0 应与适用于 Windows 8 的 WDK 一起使用。 如果需要有关 SAL 1.0 的驱动程序的信息，请参阅随 WDK for Windows 7 附带的 PREfast for 驱动程序批注文档。
 
-## <a name="span-idinterpretingtheresultspanspan-idinterpretingtheresultspanspan-idinterpretingtheresultspaninterpreting-the-result"></a><span id="Interpreting_the_result"></span><span id="interpreting_the_result"></span><span id="INTERPRETING_THE_RESULT"></span>解释结果
+## <a name="span-idinterpreting_the_resultspanspan-idinterpreting_the_resultspanspan-idinterpreting_the_resultspaninterpreting-the-result"></a><span id="Interpreting_the_result"></span><span id="interpreting_the_result"></span><span id="INTERPRETING_THE_RESULT"></span>解释结果
 
 
-驱动程序的代码分析是可以方便地运行，运行速度很快，甚至在很大的驱动程序和程序。 检查输出，分析的错误的代码分析工具检测到，并使实际编码错误的代码分析工具会错误地解释的有效代码开发人员的工作。
+驱动程序的代码分析易于运行，并且即使在非常大的驱动程序和程序上，也能快速运行。 开发人员的工作是检查输出，分析代码分析工具检测到的错误，并将代码分析工具误解的有效代码中的实际编码错误区分开来。
 
-介绍代码分析工具可能检测到每个警告的全面参考，请参阅[的代码分析驱动程序警告](prefast-for-drivers-warnings.md)。 Visual Studio 中的代码分析工具报告的警告的核心集有关的信息，请参阅[代码分析警告](https://go.microsoft.com/fwlink/p/?linkid=226853)。
+有关描述代码分析工具可能检测到的每个警告的全面参考，请参阅[针对驱动程序警告的代码分析](prefast-for-drivers-warnings.md)。 有关 Visual Studio 中的代码分析工具报告的核心警告集的信息，请参阅[代码分析警告](https://go.microsoft.com/fwlink/p/?linkid=226853)。
 
-解决代码分析警告通常涉及到更新的源代码，如果合适，或添加批注以阐明函数协定。 添加批注，该分析器，以强制执行所有未来调用方的约定，它还提高了可读性。
+解决代码分析警告通常涉及在适当情况下更新源代码，或添加批注来阐明函数协定。 添加批注后，分析器就可以对所有将来的调用方强制协定，还可以提高可读性。
 
-如果**代码分析结果**确定，请仔细检查后显示错误无效，无法避免甚至与使用批注，则可以选择排除或取消这些警告。 有关详细信息，请参阅[如何运行代码分析的驱动程序](how-to-run-code-analysis-for-drivers.md)。
+如果**代码分析结果**显示你确定的错误（在仔细检查后）无效，并且即使使用批注，也不能避免使用，则可以选择排除或禁止显示这些警告。 有关详细信息，请参阅[如何对驱动程序运行代码分析](how-to-run-code-analysis-for-drivers.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [如何为驱动程序运行“代码分析”](how-to-run-code-analysis-for-drivers.md)
 
-[在 Visual Studio 中的代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)
+[Visual Studio 中的代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)
 
-[代码分析驱动程序警告](prefast-for-drivers-warnings.md)
+[驱动程序警告的代码分析](prefast-for-drivers-warnings.md)
 
 [代码分析警告](https://go.microsoft.com/fwlink/p/?linkid=226853)
 

@@ -1,46 +1,46 @@
 ---
 title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA
-description: 作为一组 TCP/IP 传输使用 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA OID 请求微型端口驱动程序将指定的安全关联 (Sa) 添加到 nic。
+description: 作为集，TCP/IP 传输使用 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA OID 来请求微型端口驱动程序将指定的安全关联（SAs）添加到 NIC。
 ms.assetid: bd1d0cf2-234d-4c06-904e-fe2de6022981
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b3c1ad587d308c51a09c2e7bd5840b2cb0d444
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cbe156d3c4aeaaf86dd146852ad83529114fb8a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353713"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843888"
 ---
-# <a name="oidtcptaskipsecoffloadv2addsa"></a>OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_ADD\_SA
+# <a name="oid_tcp_task_ipsec_offload_v2_add_sa"></a>OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA
 
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 
-作为一组 TCP/IP 传输使用 OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA OID 以请求微型端口驱动程序添加指定的安全性关联 (Sa) 到 nic。
+作为一组设置，TCP/IP 传输使用 OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA OID 来请求微型端口驱动程序将指定的安全关联（SAs）添加到 NIC。
 
-**请注意**  NDIS 支持此 OID 与 direct 的 OID 请求接口。 有关直接 OID 请求接口的详细信息，请参阅[NDIS 6.1 直接 OID 请求接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)。
+**请注意**  通过直接 OID 请求接口，NDIS 支持此 oid。 有关直接 OID 请求接口的详细信息，请参阅[NDIS 6.1 直接 Oid 请求接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
 
  
 
-**请注意**  NDIS 6.1 和 6.20 中支持此 OID。 NDIS 6.30 和更高版本的驱动程序，请参阅[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA\_EX](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)。
+**请注意**，在 NDIS 6.1 和6.20 中支持此 OID  。 对于 NDIS 6.30 和更高版本的驱动程序，请参阅[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA\_EX](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)
 
  
 
 <a name="remarks"></a>备注
 -------
 
-所有 NDIS 6.1 和 6.20 微型端口驱动程序支持 IPsec 都卸载版本 2 (IPsecOV2) 必须支持此 OID。
+所有支持 IPsec 卸载版本2（IPsecOV2）的 NDIS 6.1 和6.20 微型端口驱动程序必须支持此 OID。
 
-TCP/IP 传输确定 NIC 可以执行 IPsecOV2 操作后，TCP/IP 传输请求的微型端口驱动程序添加 SAs。 传输添加 SA 之前，传输不能卸载到 NIC IPsecOV2 操作。
+TCP/IP 传输确定 NIC 可以执行 IPsecOV2 操作后，TCP/IP 传输请求微型端口驱动程序以添加 SAs。 传输添加 SA 之前，传输无法将 IPsecOV2 操作卸载到 NIC。
 
-微型端口驱动程序收到[ **IPSEC\_卸载\_V2\_添加\_SA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_add_sa)结构，其中包含指向下一步 IPSEC\_卸载\_V2\_添加\_SA 结构链接列表中的。 微型端口驱动程序配置的 NIC IPsecOV2 对该 SAs 的处理。 成功设置为 OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA，微型端口驱动程序提供标识中卸载的 SAs 的句柄**OffloadHandle** IPSEC 成员\_卸载\_V2\_添加\_SA。 （例如，传输使用句柄发送路径中以指示其卸载 SA 使用）。 如果链接列表中的任何的 SAs 已卸载，集请求是成功的。
+微型端口驱动程序接收[**IPSEC\_卸载\_v2\_添加\_sa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa)结构，该结构包含指向下一个 IPSEC\_卸载\_V2\_在链接列表中添加\_SA 结构的指针。 微型端口驱动程序将 NIC 配置为针对 SAs 的 IPsecOV2 处理。 成功设置到 OID 后\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA，微型端口驱动程序提供了用于标识 IPSEC 的**OffloadHandle**成员中已卸载的 SAs 的句柄\_卸载\_V2\_添加\_SA。 （例如，传输使用发送路径中的句柄来指示要使用的卸载 SA）。 如果链接列表中的任何 SAs 已卸载，则该设置请求成功。
 
-微型端口驱动程序可以返回 OID 请求的失败状态，如当 NIC 不足的容量来卸载多个 SAs 时。 此外，微型端口驱动程序可能会返回故障状态，因为它需要避免争用条件。 在这种情况下，NIC 配置更改并不包括特定的算法。
+小型端口驱动程序可能会返回 OID 请求的失败状态，例如，当 NIC 用尽容量来卸载更多 SAs 时。 此外，微型端口驱动程序可能会返回失败状态，因为它需要避免争用条件。 在这种情况下，NIC 配置会更改，并排除特定的算法。
 
-如果请求失败，已卸载无链接列表中的 SAs。 如果链接列表中特定 sa 发生故障，应设置微型端口驱动程序**OffloadHandle**成员中相应的 IPSEC\_卸载\_V2\_添加\_SA结构**NULL**。
+如果请求失败，则不会卸载链接列表中的任何 SAs。 如果链接列表中的某个 SA 发生故障，微型端口驱动程序应将相应 IPSEC 中的**OffloadHandle**成员设置\_卸载\_V2\_将\_SA 结构添加到**NULL**。
 
-微型端口驱动程序报告可以支持中的 NIC 的 SAs 的最大数目**SaOffloadCapacity**的成员[ **NDIS\_IPSEC\_卸载\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)在初始化过程中的结构。 如果有必要，请 TCP/IP 传输可以设置[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_删除\_SA](oid-tcp-task-ipsec-offload-v2-delete-sa.md)要请求的 OID微型端口驱动程序从 NIC 中删除 SA
+微型端口驱动程序报告在初始化期间，在[**NDIS\_IPSEC\_卸载\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)结构的**SaOffloadCapacity**成员中可以支持的最大 SAs 数目。 如有必要，TCP/IP 传输可以将[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_delete\_SA](oid-tcp-task-ipsec-offload-v2-delete-sa.md) OID 来请求微型端口驱动程序删除 NIC 中的 SA。
 
 <a name="requirements"></a>要求
 ------------
@@ -52,26 +52,26 @@ TCP/IP 传输确定 NIC 可以执行 IPsecOV2 操作后，TCP/IP 传输请求的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 NDIS 6.1 和 6.20 中受支持。 NDIS 6.30 和更高版本，使用<a href="oid-tcp-task-ipsec-offload-v2-add-sa-ex.md" data-raw-source="[OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)">OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX</a>。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.1 和6.20 中受支持。 对于 NDIS 6.30 和更高版本，请使用<a href="oid-tcp-task-ipsec-offload-v2-add-sa-ex.md" data-raw-source="[OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)">OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA_EX</a>。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IPSEC\_OFFLOAD\_V2\_ADD\_SA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ipsec_offload_v2_add_sa)
+[**IPSEC\_卸载\_V2\_添加\_SA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa)
 
-[**NDIS\_IPSEC\_OFFLOAD\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)
+[ **\_卸载\_V2 的 NDIS\_IPSEC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v2)
 
-[OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_ADD\_SA\_EX](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)
+[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA\_](oid-tcp-task-ipsec-offload-v2-add-sa-ex.md)
 
-[OID\_TCP\_TASK\_IPSEC\_OFFLOAD\_V2\_DELETE\_SA](oid-tcp-task-ipsec-offload-v2-delete-sa.md)
+[OID\_TCP\_任务\_IPSEC\_卸载\_V2\_删除\_SA](oid-tcp-task-ipsec-offload-v2-delete-sa.md)
 
  
 

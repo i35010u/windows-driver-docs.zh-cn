@@ -4,12 +4,12 @@ description: 为数据分配内存
 ms.assetid: 15df5616-ddce-44ec-bd10-65cae0d95cf4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8332db210589f68cd4514da118891800b0a2b10a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c85eeb041a5f53b999f86ffd7ed66dbcecfca3f9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372607"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840900"
 ---
 # <a name="allocating-memory-for-data"></a>为数据分配内存
 
@@ -17,104 +17,104 @@ ms.locfileid: "67372607"
 
 
 
-WIA 服务依赖于中提供的信息[ **MINIDRV\_传输\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)结构，以执行正确的数据传输。 此结构与 WIA 微型驱动程序相关的成员包括：
+WIA 服务依赖于 MINIDRV 中提供的信息[ **\_传输\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)结构来执行适当的数据传输。 此结构中与 WIA 微型驱动程序相关的成员包括：
 
-**bClassDrvAllocBuf** − WIA 服务分配一个布尔值。
+**bClassDrvAllocBuf** − WIA 服务分配布尔值。
 
-**pTransferBuffer** − 指向内存的内存分配给传输的数据。
+**pTransferBuffer** −指向为传输的数据分配的内存的指针。
 
-**lBufferSize** − 内存的大小由指向**pTransferBuffer**成员。
+**lBufferSize** − **pTransferBuffer**成员指向的内存大小。
 
-如果**bClassDrvAllocBuf** MINIDRV 成员\_传输\_上下文结构设置为**TRUE**，然后 WIA 服务为微型驱动程序分配内存。 如果**bClassDrvAllocBuf**成员设置为**FALSE**，WIA 服务未分配任何内存的微型驱动程序。
+如果 MINIDRV\_\_传输的**bClassDrvAllocBuf**成员设置为**TRUE**，则 WIA 服务为微型驱动程序分配内存。 如果**bClassDrvAllocBuf**成员设置为**FALSE**，则 WIA 服务不会为微型驱动程序分配任何内存。
 
-微型驱动程序应使用的内存分配**CoTaskMemAlloc**函数 （Microsoft Windows SDK 文档中所述）。 微型驱动程序然后应存储中的内存位置的指针**pTransferBuffer**和中的内存大小**lBufferSize** （以字节为单位）。
+微型驱动程序应使用**CoTaskMemAlloc**函数（如 Microsoft Windows SDK 文档中所述）分配内存。 然后，微型驱动程序应将指针存储在**pTransferBuffer**中的内存位置，并将内存大小存储在**lBufferSize**中的内存大小（以字节为单位）。
 
-**BClassDrvAllocBuff**成员设置为**FALSE**才[ **WIA\_IPA\_TYMED** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)属性设置为 TYMED\_文件或 TYMED\_多页\_文件，和[ **WIA\_IPA\_项\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)属性设置为零。
+仅当[**wia\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)属性设置为 TYMED\_FILE or TYMED\_多页\_文件，并且 WIA\_IPA\_项时，才将**bClassDrvAllocBuff**成员设置为**FALSE** [ **\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)属性设置为零。
 
-微型驱动程序必须小心以免 overfill 通过指向的缓冲区**pTransferBuffer**成员。 您可以避免这种情况中的写入数据量小于或等于中存储的值**lBufferSize**成员。
+微型驱动程序必须注意不要 overfill **pTransferBuffer**成员指向的缓冲区。 可以通过写入小于或等于**lBufferSize**成员中存储的值的数据来避免这种情况。
 
-### <a name="enhancing-data-transfer-performance-by-using-minimum-buffer-size"></a>通过使用最小缓冲区大小的增强的数据传输性能
+### <a name="enhancing-data-transfer-performance-by-using-minimum-buffer-size"></a>使用最小缓冲区大小增强数据传输性能
 
-WIA 微型驱动程序可以控制设置在数据传输过程中使用的内存量[ **WIA\_IPA\_项\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)和[ **WIA\_IPA\_缓冲区\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)属性。
+WIA 微型驱动程序可以通过设置[**WIA\_IPA\_项\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)和[**WIA\_IPA\_缓存\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)属性，来控制数据传输期间使用的内存量。
 
-WIA 应用程序使用 WIA\_IPA\_缓冲区\_大小属性确定要在内存传输期间请求的最小传输缓冲区大小。 此值越大，请求的外就越大。 如果 WIA 应用程序请求的缓冲区，则在 WIA 值大小小于\_IPA\_缓冲区\_大小属性 WIA 服务将忽略此请求的大小和要求 WIA 微型驱动程序提供的缓冲区，则 WIA\_IPA\_缓冲区\_大小字节的大小。 WIA 服务始终要求提供 WIA 微型驱动程序至少缓冲区 WIA\_IPA\_缓冲区\_大小字节的大小。
+WIA 应用程序使用 WIA\_IPA\_BUFFER\_大小属性来确定内存传输期间请求的最小传输缓冲区大小。 此值越大，请求的带区大小就越大。 如果 WIA 应用程序请求的缓冲区大小小于 WIA\_IPA\_BUFFER\_SIZE 属性中的值，则 WIA 服务将忽略此请求的大小并向 WIA\_微型驱动程序请求 IPA\_BUFFER\_大小的字节大小。 WIA 服务始终为至少为 WIA\_IPA\_缓冲区的缓冲区请求 WIA，\_大小为字节。
 
-**请注意**  值的 WIA\_IPA\_缓冲区\_大小属性包含为最小的应用程序可以请求在任何给定时间的数据量。 缓冲区大小越大，设备将较大的请求。 缓冲区大小太小可能会降低数据传输的性能。
+**请注意**   WIA\_IPA\_BUFFER\_SIZE 属性包含的值为应用程序可以在任何给定时间请求的最小数据量。 缓冲区大小越大，请求的数量越大。 太小的缓冲区大小会降低数据传输的性能。
 
  
 
-建议设置 WIA\_IPA\_缓冲区\_大小属性设置为合理的大小，以允许设备将传输数据以高效的速率。 为此，为了确保获得最佳性能平衡请求 （缓冲区大小不太小） 数和需花时间请求 （缓冲区太大） 为你的设备数。
+建议将 WIA\_IPA\_BUFFER\_SIZE 属性设置为合理的大小，以允许设备以高效速率传输数据。 为此，请平衡设备的请求数（缓冲区大小不太小）和设备的耗时请求数（缓冲区太大），以确保最佳性能。
 
-应设置[ **WIA\_IPA\_项\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)属性设置为零，如果 WIA 微型驱动程序可将数据传输。 如果传输类型为 TYMED\_文件或 TYMED\_多页\_文件时，它是为要传递给 WIA 服务函数写入文件的数据缓冲区分配内存的微型驱动程序的责任。 这提供了在实现中的一致性[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法。
+如果 WIA 微型驱动程序可以传输数据，则应将[**wia\_IPA\_项\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)属性设置为零。 如果传输类型为 TYMED\_文件或 TYMED\_多页\_文件，则微型驱动程序负责为要传递到写入文件的 WIA 服务函数的数据缓冲区分配内存。 这会在[**IWiaMiniDrv：:D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法的实现中提供一致性。
 
-[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)打算将数据从设备传输到应用程序时，由 WIA 服务调用的方法。 WIA 驱动程序应确定哪种类型的传输 （通过 WIA 服务） 应用程序正在请求，通过阅读**tymed**的成员[ **MINIDRV\_传输\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context):
+当 WIA 服务打算将数据从设备传输到应用程序时，会调用[**IWiaMiniDrv：:D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)方法。 WIA 驱动程序应通过读取[**MINIDRV\_传输\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)的**tymed**成员来确定应用程序正在尝试的传输类型（通过 WIA 服务）：
 
-**Tymed**成员，该应用程序设置，可以具有以下四个值之一：
+应用程序设置的**tymed**成员可以具有以下四个值之一：
 
 <a href="" id="tymed-file"></a>TYMED\_文件  
-数据传输到一个文件。
+将数据传输到文件。
 
 <a href="" id="tymed-multipage-file"></a>TYMED\_多页\_文件  
-数据传输到多页的文件格式。
+将数据传输到多页文件格式。
 
 <a href="" id="tymed-callback"></a>TYMED\_回调  
-将数据传输到内存中。
+将数据传输到内存。
 
 <a href="" id="tymed-multipage-callback"></a>TYMED\_多页\_回调  
-将多个页的数据传输到内存。
+将多个数据页传输到内存。
 
-不同 TYMED 设置 XXX\_回调，XXX\_文件更改调用应用程序的回调接口的使用情况。
+不同的 TYMED 设置 XXX\_回调和 XXX\_文件更改调用应用程序的回调接口的使用情况。
 
 ### <a href="" id="tymed-callback-and-tymed-multipage-callback"></a>TYMED\_回调和 TYMED\_多页\_回调
 
-有关内存传输问题[ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)回调：
+对于内存传输，请发出[**IWiaMiniDrvCallBack：： MiniDrvCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)回调：
 
-(*pmdtc-&gt;pIWiaMiniDrvCallBack-&gt;MiniDrvCallback*下面的示例源代码中)
+（*pmdtc-&gt;pIWiaMiniDrvCallBack-* 在下面的示例代码中&gt;MiniDrvCallback）
 
-请使用以下值的回调：
+使用以下值进行回调：
 
-<a href="" id="it-msg-data"></a>IT\_MSG\_DATA  
-该驱动程序在传输数据。
+<a href="" id="it-msg-data"></a>它\_MSG\_数据  
+驱动程序正在传输数据。
 
-<a href="" id="it-status-transfer-to-client"></a>IT\_状态\_传输\_TO\_客户端  
+<a href="" id="it-status-transfer-to-client"></a>它\_状态\_将\_传输到\_客户端  
 数据传输消息。
 
 <a href="" id="lpercentcomplete"></a>*lPercentComplete*  
-传输已完成的百分比。
+已完成的传输的百分比。
 
 <a href="" id="pmdtc--cboffset"></a>*pmdtc-&gt;cbOffset*  
-更新到当前应用程序应在其中编写下一个数据块的位置。
+将此更新到应用程序应将下一个数据块写入到的当前位置。
 
 <a href="" id="lbytesreceived"></a>*lBytesReceived*  
-发送到应用程序的数据块区中的字节数。
+要发送到应用程序的数据块区中的字节数。
 
 <a href="" id="pmdtc"></a>*pmdtc*  
-指向[ **MINIDRV\_传输\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)结构，其中包含的数据传输值。
+指向[**MINIDRV\_传输**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/ns-wiamindr_lh-_minidrv_transfer_context)的指针\_包含数据传输值的上下文结构。
 
 ### <a href="" id="tymed-file-and-tymed-multipage-file"></a>TYMED\_文件和 TYMED\_多页\_文件
 
-有关文件传输问题[ **IWiaMiniDrvCallBack::MiniDrvCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)回调::
+对于文件传输，请发出[**IWiaMiniDrvCallBack：： MiniDrvCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvcallback-minidrvcallback)回调：：
 
-(*pmdtc-&gt;pIWiaMiniDrvCallBack-&gt;MiniDrvCallback*下面的示例源代码中)
+（*pmdtc-&gt;pIWiaMiniDrvCallBack-* 在下面的示例代码中&gt;MiniDrvCallback）
 
-请使用以下值的回调。
+使用以下值进行回调。
 
-<a href="" id="it-msg-status"></a>IT\_MSG\_状态  
-该驱动程序正在发送仅状态 （无数据）。
+<a href="" id="it-msg-status"></a>\_消息\_状态  
+驱动程序仅发送状态（无数据）。
 
-<a href="" id="it-status-transfer-to-client"></a>IT\_状态\_传输\_TO\_客户端  
+<a href="" id="it-status-transfer-to-client"></a>它\_状态\_将\_传输到\_客户端  
 数据传输消息。
 
 <a href="" id="lpercentcomplete"></a>*lPercentComplete*  
-传输已完成的百分比。
+已完成的传输的百分比。
 
-如果**ItemSize** MINIDRV 成员\_传输\_上下文结构设置为零，这表示对应用程序 WIA 驱动程序不知道所生成的图像大小，然后，将分配其自己数据缓冲区。 WIA 驱动程序将读取[ **WIA\_IPA\_缓冲区\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)属性并为单个带区的数据分配内存。 WIA 驱动程序可以分配任何在这里，所需的内存量，但建议的分配会保持小。
+如果 MINIDRV\_\_传输的**ItemSize**成员设置为零，则这将向应用程序指示 WIA 驱动程序不知道产生的图像大小，然后将分配其自己的数据缓冲区。 WIA 驱动程序将读取[**WIA\_IPA\_BUFFER\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)属性，并为单条数据分配内存。 WIA 驱动程序可以在此处分配任何所需的内存量，但建议将分配保存为小。
 
-若要查看 WIA 服务是否已为该驱动程序分配内存，请*pmdtc-&gt;bClassDrvAllocBuf*标志。 如果设置为 **，则返回 TRUE**，然后 WIA 服务已为该驱动程序分配内存。 若要了解已分配的内存量，检查值*pmdtc-&gt;lBufferSize*。
+若要查看 WIA 服务是否为驱动程序分配了内存，请检查*pmdtc-&gt;bClassDrvAllocBuf*标志。 如果设置为**TRUE**，则 WIA 服务已为驱动程序分配内存。 若要查看分配的内存量，请检查*pmdtc-&gt;lBufferSize*中的值。
 
-若要分配你自己的内存，请使用**CoTaskMemAlloc** （Microsoft Windows SDK 文档中介绍），并使用位于指针*pmdtc-&gt;pTransferBuffer*。 （请记住，该驱动程序分配给此内存，因此驱动程序还必须释放它。）设置*pmdtc-&gt;lBufferSize*向你分配的大小。 如前文所述，此 WIA 示例驱动程序分配一个缓冲区，其大小，以字节为单位，是否等于中包含的值[ **WIA\_IPA\_缓冲区\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)。 然后，该驱动程序使用的内存。
+若要分配自己的内存，请使用**CoTaskMemAlloc** （如 Microsoft Windows SDK 文档中所述），并使用*Pmdtc-&gt;pTransferBuffer*中的指针。 （请记住，驱动程序分配了此内存，因此驱动程序还必须释放它。）将 *&gt;Pmdtc lBufferSize*设置为分配的大小。 如前所述，此 WIA 示例驱动程序分配一个缓冲区，该缓冲区的大小（以字节为单位）等于[**WIA\_IPA\_缓冲区\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)中包含的值。 然后，驱动程序将使用该内存。
 
-下面的示例演示的实现**IWiaMiniDrv::drvAcquireItemData**方法。 此示例中可以处理这两个内存分配情况。
+下面的示例演示**IWiaMiniDrv：:D rvacquireitemdata**方法的实现。 此示例可以处理两个内存分配情况。
 
 ```cpp
 HRESULT _stdcall CWIADevice::drvAcquireItemData(

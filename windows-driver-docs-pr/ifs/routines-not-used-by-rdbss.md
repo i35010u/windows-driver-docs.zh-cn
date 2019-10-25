@@ -3,22 +3,22 @@ title: 不是由 RDBSS 使用的例程
 description: 不是由 RDBSS 使用的例程
 ms.assetid: bf3e2936-05c9-4012-a55b-40022844f5db
 keywords:
-- 最小-重定向程序 WDK RDBSS
+- 小型重定向程序 WDK，RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 114552f3848f9da5b0b440436681dcd58e6f9356
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 183069f6d22ce2d5c6c390a9a42d115fa4732d8c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371931"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840981"
 ---
 # <a name="routines-not-used-by-rdbss"></a>不是由 RDBSS 使用的例程
 
 
-数量的例程中 MINIRDR 列出\_未调用或使用 RDBSS 调度结构。 不需要为网络微型-重定向程序以实现任何这些例程的因为它们将永远不会调用。 应设置网络微型重定向**NULL** MINIRDR 中的所有这些例程的指针\_调度结构传递给[ **RxRegisterMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxregisterminirdr)从其[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程。
+RDBSS 不会调用 MINIRDR\_调度结构中列出的许多例程，也不会使用这些例程。 网络小型重定向程序无需实现其中的任何例程，因为它们永远不会被调用。 网络小型重定向程序应在\_MINIRDR 中从其[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程传入的[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)中为所有这些例程设置**NULL**指针。
 
-下面是不由 RDBSS 的例程的完整列表：
+下面是 RDBSS 未使用的例程的完整列表：
 
 -   **MRxCancel**
 
@@ -32,7 +32,7 @@ ms.locfileid: "67371931"
 
 -   **MRxEnumeratePrintQueue**
 
--   **MRxLowIOSubmit\[LOWIO\_OP\_CLEAROUT\]**
+-   **MRxLowIOSubmit\[LOWIO\_操作\_CLEAROUT\]**
 
 -   **MRxOpenPrintFile**
 

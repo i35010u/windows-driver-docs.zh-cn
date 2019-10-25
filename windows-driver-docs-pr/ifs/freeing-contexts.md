@@ -7,12 +7,12 @@ keywords:
 - 释放上下文
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9100a9bf404c94bc6ec92ca74bdf7cf46a2b78c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8130c31ee714110e6398f70b004706472ff6ee3a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384570"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841331"
 ---
 # <a name="freeing-contexts"></a>释放上下文
 
@@ -20,11 +20,11 @@ ms.locfileid: "67384570"
 ## <span id="ddk_registering_the_minifilter_if"></span><span id="DDK_REGISTERING_THE_MINIFILTER_IF"></span>
 
 
-将其删除并已发布到其所有未完成的引用后，将释放上下文。
+上下文在被删除后会被释放，并且对它的所有未完成引用都已释放。
 
-此规则的例外： 如果上下文已创建但尚未设置通过调用**FltSet***Xxx***上下文**，它不需要进行删除。 当其引用计数达到零时释放它。 (请参阅中的代码示例[释放上下文](releasing-contexts.md)。)
+此规则有一个例外：如果已创建上下文但尚未通过调用**FltSet***Xxx***上下文**进行设置，则无需删除它。 它在其引用计数达到零时被释放。 （请参阅[释放上下文](releasing-contexts.md)中的代码示例。）
 
-当微筛选器驱动程序注册其上下文类型时，每个上下文定义可以选择性地包含之前释放上下文调用的上下文清理回调例程。 有关详细信息，请参阅[ **PFLT\_上下文\_清理\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)。
+当微筛选器驱动程序注册其上下文类型时，每个上下文定义可以选择性地包含要在释放上下文之前调用的上下文清理回调例程。 有关详细信息，请参阅[**PFLT\_CONTEXT\_清理\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_context_cleanup_callback)。
 
  
 

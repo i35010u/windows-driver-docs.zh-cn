@@ -1,25 +1,25 @@
 ---
 title: OID_WWAN_ENUMERATE_DEVICE_SERVICES
-description: OID_WWAN_ENUMERATE_DEVICE_SERVICES 返回微型端口驱动程序支持的设备服务的列表。包含提供的受支持的设备列表服务 Guid 的 NDIS_WWAN_SUPPORTED_DEVICE_SERVICES 结构 NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 状态通知。
+description: OID_WWAN_ENUMERATE_DEVICE_SERVICES 返回微型端口驱动程序所支持的设备服务的列表。NDIS_STATUS_WWAN_DEVICE_SERVICE_SUPPORTED_COMMANDS 状态通知，其中包含提供受支持的设备服务 Guid 列表的 NDIS_WWAN_SUPPORTED_DEVICE_SERVICES 结构。
 ms.assetid: 12AB2235-DDF8-44CB-BD3D-61D0FFCB4080
 ms.date: 08/08/2017
-keywords: -OID_WWAN_ENUMERATE_DEVICE_SERVICES 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_ENUMERATE_DEVICE_SERVICES 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 3033d3b57040e3ead19da911ded8dbda809b0ec4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47279d09418e78a2359b296a4e2f19ef7a599141
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375173"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843844"
 ---
-# <a name="oidwwanenumeratedeviceservices"></a>OID\_WWAN\_ENUMERATE\_DEVICE\_SERVICES
+# <a name="oid_wwan_enumerate_device_services"></a>OID\_WWAN\_枚举\_设备\_服务
 
 
-OID\_WWAN\_ENUMERATE\_设备\_服务返回的微型端口驱动程序支持的设备服务的列表。
+OID\_WWAN\_枚举\_设备\_服务返回微型端口驱动程序所支持的设备服务列表。
 
-不支持组的请求。
+不支持设置请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)状态通知包含[ **NDIS\_WWAN\_支持\_设备\_SERVICES** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_supported_device_services)结构，它提供服务 Guid 的受支持的设备的列表。
+微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后将[**ndis\_状态\_WWAN\_设备发送\_服务\_支持的\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)状态通知，其中包含一个[**NDIS\_WWAN\_支持的\_设备\_SERVICES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_supported_device_services)结构，提供受支持的设备服务 guid 列表。
 
 <a name="requirements"></a>要求
 ------------
@@ -31,22 +31,22 @@ OID\_WWAN\_ENUMERATE\_设备\_服务返回的微型端口驱动程序支持的�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>版本：支持 Windows 8 和更高版本的 Windows 中。</p></td>
+<td><p>版本</p></td>
+<td><p>版本：在 windows 8 及更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_状态\_WWAN\_设备\_服务\_支持\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)
+[**NDIS\_状态\_WWAN\_设备\_服务\_支持的\_命令**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-supported-commands)
 
-[**NDIS\_WWAN\_SUPPORTED\_DEVICE\_SERVICES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_supported_device_services)
+[**NDIS\_WWAN\_支持\_设备\_服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_supported_device_services)
 
  
 

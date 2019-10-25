@@ -3,17 +3,17 @@ title: 虚拟连接上下文
 description: 虚拟连接上下文
 ms.assetid: 9b318f9d-70f4-41b5-acab-5a193f7d2ab4
 keywords:
-- 虚拟连接 WDK 网络、 上下文
-- VCs WDK 网络上下文
+- 虚拟连接 WDK 网络，上下文
+- VCs WDK 网络，上下文
 - 上下文 WDK 虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5da8eeff07fec2e74931944c90f440ab7124f94
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 179fac4ba2452ca5ab68187b5c0efe07a036b7db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377009"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842957"
 ---
 # <a name="virtual-connection-context"></a>虚拟连接上下文
 
@@ -21,17 +21,17 @@ ms.locfileid: "67377009"
 
 
 
-调用前，面向连接的客户端请求的面向连接的微型端口驱动程序设置的数据包可以传输或接收到的虚拟连接 (VC)。 同样，在之前，该值指示对面向连接的客户端的传入呼叫，呼叫管理器或集成的微型端口调用管理器 (MCM) 驱动程序请求微型端口驱动程序，若要设置的传入呼叫 VC。
+进行呼叫之前，面向连接的客户端请求面向连接的微型端口驱动程序，以设置可用于传输或接收数据包的虚拟连接（VC）。 同样，在指示对面向连接的客户端的传入调用之前，呼叫管理器或集成微型端口调用管理器（MCM）驱动程序会请求微型端口驱动程序为传入调用设置 VC。
 
-VC 是两个面向连接的实体之间的逻辑连接。 面向连接的传输和接收始终在特定 VC 上发生。
+VC 是两个面向连接的实体之间的逻辑连接。 面向连接的传输和接收始终发生在特定的 VC 上。
 
-面向连接的微型端口驱动程序维护微型端口驱动程序分配的上下文区域中设置了每个 VC 有关的状态信息。 此上下文中每个 VC 维护的微型端口驱动程序，到 NDIS 和协议驱动程序不透明。 在其[ **MiniportCoCreateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_create_vc)函数、 NDIS 和 NDIS 的 VC 上下文区域的句柄通过面向连接的微型端口驱动程序传递*NdisVcHandle* ，唯一地标识创建的 VC 回微型端口驱动程序、 适当的面向连接的客户端，以及呼叫管理器或集成的微型端口调用管理器 (MCM) 驱动程序。
+面向连接的微型端口驱动程序在与它设置的每个 VC 有关的小型小型驱动程序分配上下文区域中维护状态信息。 此每个 VC 上下文由微型端口驱动程序维护，不透明到 NDIS 和协议驱动程序。 在[**MiniportCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_create_vc)函数中，面向连接的微型端口驱动程序将指向 VC 上下文区域的句柄传递给 NDIS，而 ndis 会将已创建的 VC 唯一标识的*NdisVcHandle*传递回微型端口驱动程序，面向连接的客户端，以及呼叫管理器或集成微型端口调用管理器（MCM）驱动程序。
 
-可以发送或接收上 VC 数据之前，必须激活 VC。 呼叫管理器通过调用启动激活 VC **Ndis (M) CmActivateVc**并传递包含 VC 要激活的特征的调用参数。 NDIS 以响应此调用，调用微型端口驱动程序[ **MiniportCoActivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_activate_vc)函数，这便激活 VC。
+在 VC 上可以发送或接收数据之前，必须激活 VC。 调用管理器通过调用**Ndis （M） CmActivateVc**并传递包含要激活的 VC 特性的调用参数来启动 VC 的激活。 为响应此调用，NDIS 调用微型端口驱动程序的[**MiniportCoActivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_activate_vc)函数，该函数可激活 VC。
 
-呼叫管理器调用已完成或 VC 是否则不需要后，可以停 VC 用通过调用[ **Ndis (M) CmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmdeactivatevc)，这将导致调用微型端口驱动程序的 NDIS [ **MiniportCoDeactivateVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_deactivate_vc)函数。 面向连接的客户端或呼叫管理器可以通过调用启动的 VC 删除[ **NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscodeletevc)，这将导致调用微型端口驱动程序的 NDIS [ **MiniportCoDeleteVc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_co_delete_vc)函数。
+完成调用或不需要 VC 后，调用管理器可以通过调用[**Ndis （M） CmDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmdeactivatevc)来停用 vc，这会导致 ndis 调用微型端口驱动程序的[**MiniportCoDeactivateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_deactivate_vc)函数。 面向连接的客户端或调用管理器都可以通过调用[**NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)来启动删除 VC，这会导致 NDIS 调用微型端口驱动程序的[**MiniportCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_delete_vc)函数。
 
-有关对 VCs 的微型端口驱动程序操作的详细信息，请参阅[VCs 操作](operations-on-vcs.md)。
+有关 VCs 上微型端口驱动程序操作的详细信息，请参阅[vcs 上的操作](operations-on-vcs.md)。
 
  
 

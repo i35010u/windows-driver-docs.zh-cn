@@ -1,44 +1,44 @@
 ---
 title: OID_WWAN_SMS_READ
-description: OID_WWAN_SMS_READ 读取存储在 MB 设备或用户识别模块 （SIM 卡），或任何其他辅助的非易失性内存或内存中的 SMS 文本消息。
+description: OID_WWAN_SMS_READ 读取存储在 MB 设备或订阅服务器标识模块（SIM 卡）或任何其他辅助非易失性内存或内存中的短信消息。
 ms.assetid: f4dbb7e8-1348-4fa8-abac-f644a443df48
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_WWAN_SMS_READ 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c3efe3fadfc6a15ac79b3506e16bbf7d1e7b85
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a3b8fd7c35443f3dc1db96f0753ab5d453bcfe99
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361157"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843784"
 ---
-# <a name="oidwwansmsread"></a>OID\_WWAN\_SMS\_READ
+# <a name="oid_wwan_sms_read"></a>OID\_WWAN\_SMS\_读取
 
 
-OID\_WWAN\_SMS\_读取读取存储在 MB 设备或用户识别模块 （SIM 卡），或任何其他辅助的非易失性内存或内存中的 SMS 文本消息。
+OID\_WWAN\_SMS\_读取读取存储在 MB 设备或订阅服务器标识模块（SIM 卡）或任何其他辅助非易失性内存或内存中的 SMS 文本消息。
 
-不支持组的请求。
+不支持设置请求。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS\_状态\_指示\_原始请求和更高版本发送所需[ **NDIS\_状态\_WWAN\_SMS\_接收**](ndis-status-wwan-sms-receive.md)状态通知包含[ **NDIS\_WWAN\_SMS\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)结构提供的短信请求时完成查询请求最初由调用方中提供。
+微型端口驱动程序必须异步处理查询请求，最初返回 NDIS\_状态\_指示\_需要原始请求，稍后将[**ndis\_状态\_WWAN\_SMS 发送\_接收**](ndis-status-wwan-sms-receive.md)状态通知，包含[**NDIS\_WWAN\_SMS\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)结构，以提供在完成查询请求时最初由调用方提供的 sms 消息。
 
-调用方请求读取 SMS 文本消息提供 NDIS\_WWAN\_SMS\_读取结构，以指示哪些短信调用方想要返回的微型端口。
+请求读取 SMS 文本消息的调用方提供一个 NDIS\_WWAN\_SMS\_READ 结构，以指示调用方想要返回的短信消息。
 
 <a name="remarks"></a>备注
 -------
 
 有关使用此 OID 的详细信息，请参阅[WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)。
 
-在处理此 OID 时，微型端口驱动程序可以访问用户识别模块 （SIM 卡），但不是应访问提供程序网络。
+当处理此 OID 时，微型端口驱动程序可以访问订阅服务器标识模块（SIM 卡），但不应访问提供程序网络。
 
-OID\_WWAN\_SMS\_读取支持读取 PDU 模式和 CDMA 模式 SMS 文本消息，具体取决于设备的功能。
+OID\_WWAN\_SMS\_READ 支持读取 PDU 模式和 CDMA 模式短信，这取决于设备的功能。
 
-微型端口驱动程序可能会收到请求读取基于索引，短信或读取所有短信。 读取请求可能包含的任何一种基本的筛选器等新的 （未读） 邮件、 旧 （读取） 的消息、 草稿消息或发送的消息。
+微型端口驱动程序可能会收到根据索引读取 SMS 文本消息的请求，或读取所有 SMS 文本消息的请求。 读取请求可能包含任何一种基本筛选器，例如新的（未读）消息、旧的（读取）消息、草稿消息或发送的消息。
 
-实现 SMS 文本消息功能的微型端口驱动程序必须支持使用的基本筛选器的新消息的读取*WwanSmsFlagNew*。 所有其他筛选器类型是可选的支持。
+实现 SMS 文本消息功能的微型端口驱动程序必须支持使用*WwanSmsFlagNew*的基本筛选器读取新消息。 所有其他筛选器类型都是可选的以支持。
 
-微型端口驱动程序必须以逻辑方式跨所有可用物理不同的 SMS 文本消息存储项目的单个 SMS 文本消息存储区。
+微型端口驱动程序必须在逻辑上跨所有可用的物理不同 SMS 文本消息存储投影单个短信文本消息存储。
 
-微型端口驱动程序应返回 NDIS\_状态\_不\_如果它们不支持短信支持。
+如果不支持短信，微型端口驱动程序应返回 NDIS\_状态\_不\_支持。
 
 <a name="requirements"></a>要求
 ------------
@@ -50,20 +50,20 @@ OID\_WWAN\_SMS\_读取支持读取 PDU 模式和 CDMA 模式 SMS 文本消息，
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_SMS\_READ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)
+[**NDIS\_WWAN\_SMS\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read)
 
 [WWAN SMS 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sms-operations)
 

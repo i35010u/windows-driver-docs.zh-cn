@@ -3,67 +3,67 @@ title: XPS 筛选器
 description: XPS 筛选器
 ms.assetid: dd8044a6-6558-488e-9508-a83718fabb7d
 keywords:
-- XPSDrv 的打印机驱动程序 WDK，呈现模块
-- 呈现模块 WDK XPSDrv XPS 筛选器
-- XPS 筛选 WDK XPSDrv
+- XPSDrv 打印机驱动程序 WDK，呈现模块
+- 渲染模块 WDK XPSDrv，XPS 筛选器
+- XPS 筛选器 WDK XPSDrv
 - DllGetClassObject
-- WDK XPS 的筛选器
+- 筛选 WDK XPS
 - IPrintPipelineFilter
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 55fd4706bd9fa0b9cad0605ab2c520d21835ed3c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 359e5a0ce31e3db3a642c74ed58bd112c0fadbe8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356874"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841695"
 ---
 # <a name="xps-filters"></a>XPS 筛选器
 
 
-有关 XPS 打印路径，筛选器是一个驱动程序用于为打印机准备打印的数据的主要方法。 在 Windows Vista 之前的 Microsoft Windows 操作系统版本中，打印处理器和呈现模块进行了筛选器的工作。
+对于 XPS 打印路径，筛选器是驱动程序为打印机准备打印数据的主要方式。 在 Windows Vista 之前的 Microsoft Windows 操作系统版本中，打印处理器和呈现模块执行筛选器工作。
 
-XPS 筛选器是导出的 DLL [DllGetClassObject](https://go.microsoft.com/fwlink/p/?linkid=123418)并[DllCanUnloadNow](https://go.microsoft.com/fwlink/p/?linkid=123419)函数。 它加载和卸载 XPS 筛选器 DLL 时，筛选器管道管理器将调用这些函数。 加载筛选器 DLL 后, 筛选器管道管理器执行以下任务：
+XPS 筛选器是导出[DllGetClassObject](https://go.microsoft.com/fwlink/p/?linkid=123418)和[DLLCANUNLOADNOW](https://go.microsoft.com/fwlink/p/?linkid=123419)函数的 DLL。 在加载和卸载 XPS 筛选器 DLL 时，筛选器管道管理器会调用这些函数。 在加载筛选器 DLL 之后，筛选器管道管理器将执行以下操作：
 
--   调用**DllGetClassObject**若要获取对筛选器对象的引用[IClassFactory](https://go.microsoft.com/fwlink/p/?linkid=123420)接口。
+-   调用**DllGetClassObject**以获取对筛选器对象的[IClassFactory](https://go.microsoft.com/fwlink/p/?linkid=123420)接口的引用。
 
--   调用[IClassFactory::CreateInstance](https://go.microsoft.com/fwlink/p/?linkid=123421)方法来获取对筛选器对象的引用[IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nn-filterpipeline-iprintpipelinefilter)接口。
+-   调用[IClassFactory：： CreateInstance](https://go.microsoft.com/fwlink/p/?linkid=123421)方法以获取对筛选器对象的[IPrintPipelineFilter](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintpipelinefilter)接口的引用。
 
--   调用[ **IPrintPipelineFilter::InitializeFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)方法来初始化筛选器对象。
+-   调用[**IPrintPipelineFilter：： InitializeFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)方法以初始化筛选器对象。
 
-卸载前倒带筛选器 DLL，该筛选器管道管理器调用**DllCanUnloadNow**。
+在卸载筛选器 DLL 之前，筛选器管道管理器调用**DllCanUnloadNow**。
 
-**请注意**  在某些较旧的 XPS 筛选器， **DllGetClassObject**函数将检索到的筛选器的引用**IPrintPipelineFilter** 而不是接口**IClassFactory**接口。 为了向后兼容，Windows Vista 和更高版本的 Windows 中的筛选器管道管理器将继续支持这些筛选器。 但是，对于新的筛选器设计**DllGetClassObject**应检索到的引用**IClassFactory**接口。
+**请注意**   在一些较旧的 XPS 筛选器中， **DllGetClassObject**函数检索对筛选器的**IPrintPipelineFilter**接口而不是**IClassFactory**接口的引用。 为了向后兼容，Windows Vista 和更高版本的 Windows 中的筛选器管道管理器将继续支持这些筛选器。 但是，对于新的筛选器设计， **DllGetClassObject**应检索对**IClassFactory**接口的引用。
 
 
 
-XPS 筛选器会使打印子系统更加可靠，因为筛选器不同于后台处理程序的进程中运行。 此"沙盒"同时可避免失败，并允许插件使用不同的安全权限来运行。 XPSDrv 还可以在打印机来降低成本和开发时间系列中重复使用筛选器。
+XPS 筛选器使打印子系统更可靠，因为筛选器在与后台处理程序不同的进程中运行。 这种 "沙盒处理" 可防止出现故障，并允许插件以不同的安全权限运行。 使用 XPSDrv，还可以在打印机系列之间重复使用筛选器，从而降低成本和开发时间。
 
-有关最大的灵活性和重复使用，每个筛选器应执行的特定打印处理函数。 例如，一个筛选器仅会应用水印，而另一个仅可进行记帐。
+为了最大限度地提高灵活性和重复使用，每个筛选器都应执行特定的打印处理功能。 例如，一个筛选器将仅应用水印，而另一个筛选器只会执行记帐。
 
-Windows Vista 不包括任何筛选器中的框中，但以下示例筛选器包括在 Windows 驱动程序工具包 (WDK) 中\\Src\\打印\\Xpsdrvsmpl\\Src\\筛选器文件夹：
+Windows Vista 并不包括任何筛选器，但以下示例筛选器包含在 \\Src 中的 Windows 驱动程序工具包（WDK）中\\打印\\Xpsdrvsmpl\\Src\\Filters 文件夹：
 
--   手册
+-   单
 
 -   颜色转换
 
 -   Nup
 
--   页面缩放方式
+-   页面缩放
 
 -   水印
 
-有关筛选器管道管理器的详细信息，请参阅[XPSDrv 呈现模块](xpsdrv-render-module.md)。
+有关筛选器管道管理器的详细信息，请参阅[XPSDrv Render Module](xpsdrv-render-module.md)。
 
 有关实现筛选器的详细信息，请参阅[实现 XPS 筛选器](implementing-xps-filters.md)。
 
 有关打印筛选器中的异步通知的详细信息，请参阅[打印筛选器中的异步通知](asynchronous-notifications-in-print-filters.md)。
 
-必须使用配置筛选器[筛选器管道配置文件](filter-pipeline-configuration-file.md)。
+必须使用[筛选器管道配置文件](filter-pipeline-configuration-file.md)配置筛选器。
 
-有关如何调试打印筛选器管道服务的信息，请参阅[将调试器附加到打印筛选器管道服务](attaching-a-debugger-to-the-print-filter-pipeline-service.md)。
+有关如何调试打印筛选器管道服务的信息，请参阅将[调试器附加到打印筛选器管道服务](attaching-a-debugger-to-the-print-filter-pipeline-service.md)。
 
-在 Windows 7 中，可以使用 XPS 筛选器[XPS 光栅化服务](using-the-xps-rasterization-service.md)将转换为位图的 XPS 文档中的固定的页。
+在 Windows 7 中，XPS 筛选器可以使用[xps 光栅化服务](using-the-xps-rasterization-service.md)将 xps 文档中的固定页面转换为位图。
 
-有关 Windows 的方式的信息为 XPS 光栅化使用 GPU 加速，请参阅[XPSRas GPU 使用情况决策树](xpsras-usage-decision-tree.md)。
+有关 Windows 使用 XPS 光栅化的 GPU 加速方式的信息，请参阅[XPSRAS GPU 使用情况决策树](xpsras-usage-decision-tree.md)。
 

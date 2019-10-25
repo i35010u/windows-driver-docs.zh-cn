@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_EXTXPORT\_STATE\_NOTIFY
+title: KSPROPERTY\_EXTXPORT\_状态\_通知
 description: KSPROPERTY\_EXTXPORT\_状态\_通知属性设置或获取传输模式和状态更改的通知。
 ms.assetid: 3ebf3806-bdec-4ea2-8f2a-e75314ee020a
 keywords:
-- KSPROPERTY_EXTXPORT_STATE_NOTIFY 流式处理媒体设备
+- KSPROPERTY_EXTXPORT_STATE_NOTIFY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f12a65f5657ae7fc340bb63db169a2bb6a2c241
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 63d82378846f6270dcd9047d4c3601b61da0b0a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354828"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838055"
 ---
-# <a name="kspropertyextxportstatenotify"></a>KSPROPERTY\_EXTXPORT\_STATE\_NOTIFY
+# <a name="ksproperty_extxport_state_notify"></a>KSPROPERTY\_EXTXPORT\_状态\_通知
 
 
 KSPROPERTY\_EXTXPORT\_状态\_通知属性设置或获取传输模式和状态更改的通知。
@@ -29,7 +29,7 @@ KSPROPERTY\_EXTXPORT\_状态\_通知属性设置或获取传输模式和状态�
 ## <span id="ddk_ksproperty_extxport_state_notify_ks"></span><span id="DDK_KSPROPERTY_EXTXPORT_STATE_NOTIFY_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_EXTXPORT\_状态\_通知属性设置或获取传输模式和状态�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,25 +50,25 @@ KSPROPERTY\_EXTXPORT\_状态\_通知属性设置或获取传输模式和状态�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
 <td><p>设备</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 是 KSPROPERTY\_EXTXPORT\_S 结构，描述当前外部传输，每当传输状态发生更改时。
+当传输状态发生更改时，属性值（操作数据）是描述当前外部传输的 KSPROPERTY\_EXTXPORT\_S 结构。
 
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_EXTXPORT\_S 结构当传输状态已发生更改时接收通知。
+当传输状态发生更改时，KSPROPERTY\_EXTXPORT\_S 结构将接收通知。
 
-此调用是同步操作，并且不会返回，直到传输状态已更改。 建议不要使用由于并非所有的 DV 摄像机可以支持此操作。
+此调用是一个同步操作，将不会返回，直到传输状态发生更改。 不建议使用此方法，因为并非所有 DV 摄像机都可以支持此操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -80,18 +80,18 @@ KSPROPERTY\_EXTXPORT\_S 结构当传输状态已发生更改时接收通知。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_extxport_s)
+[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)
 
  
 

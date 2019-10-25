@@ -6,18 +6,18 @@ keywords:
 - AVStream 分配器 WDK
 - 分配器 WDK AVStream
 - 帧 WDK AVStream
-- 数据缓冲 WDK AVStream
+- 数据缓冲区 WDK AVStream
 - 缓冲区 WDK AVStream
 - 分配帧 WDK AVStream
 - 释放帧 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4396c1322d131155e5494e02111db6af8b8d631
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9f7669b716be81896a880d1d07c192a1db5186c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386708"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845020"
 ---
 # <a name="avstream-allocators"></a>AVStream 分配器
 
@@ -25,37 +25,37 @@ ms.locfileid: "67386708"
 
 
 
-AVStream 类驱动程序将使用*Allocator*分配名为的单元中的数据缓冲区*帧*。 框架是连续的内存，它的大小是通过供应商指定的区块**AllocatorFraming**的成员[ **KSPIN\_描述符\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex).
+AVStream 类驱动程序使用*分配*器在名为*帧*的单元中分配数据缓冲区。 帧是连续内存块区，其大小是由供应商通过[**KSPIN\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)的**AllocatorFraming**成员指定的，\_例如。
 
-微型驱动程序访问通过这些缓冲区[Stream 指针](stream-pointers.md)API; 调用[ **KsPinGetLeadingEdgeStreamPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-kspingetleadingedgestreampointer)到流中获取一个指针。
+微型驱动程序通过[流指针](stream-pointers.md)API 访问这些缓冲区;调用[**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)以获取指向流的指针。
 
-AVStream 客户端可以使用只读属性获取 pin 组帧要求的信息[ **KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-allocatorframing-ex). 此属性返回类型的结构[ **KSALLOCATOR\_组帧\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksallocator_framing_ex) ，用于描述 pin 的组帧要求。
+AVStream 客户端可以使用只读属性[**KSPROPERTY\_连接\_ALLOCATORFRAMING\_EX**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-connection-allocatorframing-ex)获取有关 pin 的帧需求的信息。 此属性返回[ **\_组帧\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksallocator_framing_ex)类的结构，该结构描述了 pin 的组帧要求。
 
-数据不再使用时，AVStream 将使用的分配器释放缓冲区。
+当不再使用数据时，AVStream 将使用分配器来释放缓冲区。
 
-AVStream 提供默认分配器。 默认分配器分配基于微型驱动程序中提供的分配器要求的池内存**AllocatorFraming**的成员[ **KSPIN\_描述符\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)结构。
+AVStream 提供默认分配器。 默认分配器根据微型驱动程序在[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**AllocatorFraming**成员中提供的分配器要求，分配池内存。
 
-具有特定于设备的分配要求的供应商可以编写包含其自己的分配例程的微型驱动程序。 例如，你可能会提供一个分配器，如果您的驱动程序分配的内存[常见 DMA 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-common-buffer-system-dma)。
+具有特定于设备的分配要求的供应商可以编写包含其自己的分配例程的微型驱动程序。 例如，如果驱动程序从[公共 DMA 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-common-buffer-system-dma)分配内存，则可以提供分配器。
 
-若要提供分配器，提供[ **KSALLOCATOR\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksallocator_dispatch)结构，其中包含指向以下供应商提供的回调例程的指针：
+若要提供分配器，请提供一个[**KSALLOCATOR\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksallocator_dispatch)结构，其中包含指向以下供应商提供的回调例程的指针：
 
--   [*AVStrMiniInitializeAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspininitializeallocator)
+-   [*AVStrMiniInitializeAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspininitializeallocator)
 
--   [*AVStrMiniDeleteAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdeleteallocator)
+-   [*AVStrMiniDeleteAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdeleteallocator)
 
--   [*AVStrMiniAllocate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdefaultallocate)
+-   [*AVStrMiniAllocate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdefaultallocate)
 
--   [*AVStrMiniAllocatorFreeFrame*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnksdefaultfree)
+-   [*AVStrMiniAllocatorFreeFrame*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksdefaultfree)
 
-提供指向在此分配器调度结构的指针**Allocator**的成员[ **KSPIN\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_dispatch)结构描述为其 pin此分配器将实例化框架。
+提供指向[**KSPIN\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)结构的**分配**器成员中的此分配器调度结构的指针，该结构描述此分配器将为其实例化帧的 pin。
 
-提供指向在此 pin 调度结构的指针**调度**的相应成员[ **KSPIN\_描述符\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_kspin_descriptor_ex)结构。 若要了解有关 AVStream 中调度结构的详细信息，请阅读[AVStream 调度表](avstream-dispatch-tables.md)。
+提供一个指针，该指针指向相应[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**调度**成员。 若要详细了解 AVStream 中的调度结构，请阅读[AVStream 调度表](avstream-dispatch-tables.md)。
 
-在运行时，图形管理器 (例如，[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)模块) 处理的分配器所选内容。 供应商提供的分配器*不*保证供选择的图形管理器。
+在运行时，图形管理器（例如[内核流式处理代理](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)模块）处理分配器选择。 *不*保证关系图管理器选择供应商提供的分配器。
 
-如果连接是在内核模式下，仅选择内核模式分配器。 此外，如果分配器要求和你的分配器的功能不匹配，则可以拒绝你的分配器。 如果未选择你的分配器，你[ *AVStrMiniInitializeAllocator* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nc-ks-pfnkspininitializeallocator)永远不会调用回调例程。
+仅当连接处于内核模式时，才会选择内核模式分配器。 此外，如果分配器要求和分配器的功能不匹配，则分配器可能会被拒绝。 如果未选择分配器，则永远不会调用[*AVStrMiniInitializeAllocator*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspininitializeallocator)回调例程。
 
-另请参阅[AVStream DMA 服务](avstream-dma-services.md)并[Stream 指针](stream-pointers.md)。
+另请参阅[AVSTREAM DMA 服务](avstream-dma-services.md)和[流指针](stream-pointers.md)。
 
  
 

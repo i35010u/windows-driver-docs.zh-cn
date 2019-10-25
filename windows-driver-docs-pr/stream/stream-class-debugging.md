@@ -3,18 +3,18 @@ title: 流类调试
 description: 流类调试
 ms.assetid: 544b922b-58e4-4cbb-a76c-d8e13ae17e55
 keywords:
-- Stream.sys 类驱动程序 WDK Windows 2000 内核，调试
-- 流式处理微型驱动程序 WDK Windows 2000 内核调试
+- Stream .sys 类驱动程序 WDK Windows 2000 内核，调试
+- 流式处理微型驱动程序 WDK Windows 2000 内核，调试
 - 微型驱动程序 WDK Windows 2000 内核流式处理，调试
-- 调试流类微型驱动程序 WDK Windows 2000 内核
+- 调试 stream 类微型驱动程序 WDK Windows 2000 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 060ddb9dc4cd370fed1bfa2361c9ee909679a5ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2a571acc40cf4474938965184157d0d99db25be6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377815"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837683"
 ---
 # <a name="stream-class-debugging"></a>流类调试
 
@@ -22,15 +22,15 @@ ms.locfileid: "67377815"
 
 
 
-使用选中 （调试） 版本的*stream.sys*遇到微型驱动程序中的错误时打印出有关断言的微型驱动程序的状态信息性消息。
+当遇到微型驱动程序中的错误时，请使用 checked （调试）版本的*stream*打印有关微型驱动程序和 ASSERT 状态的信息性消息。
 
-调试流类微型驱动程序时，可以使用以下、 其他提示：
+下面是调试 stream 类微型驱动程序时可以使用的其他提示：
 
--   在 Windows Me 的系统上调试使用 wdeb386 调试器 （或使用 Softice），调试信息将可通过中断到调试器中，键入。NTKERN，，然后选择选项 d。这将显示调试日志，按时间顺序显示的条目。 在调试时与 Windows 2000，调试信息打印到终端实时调试。
+-   当使用 wdeb386 调试器（或通过 Softice）在 Windows Me 系统上进行调试时，调试信息可通过中断到调试器中，键入。NTKERN，然后选择 "选项 D"。此时将显示 "调试日志"，其中按时间顺序显示项。 当通过 Windows 2000 进行调试时，调试信息将实时打印到调试终端。
 
--   若要调整调试器的输出级，加载*stream.sys*符号 (*stream.sym* Windows 我和*stream.sys*适用于 Windows 2000) 和修改*StreamDebug*变量与"e StreamDebug *xx*"。 默认值为 00，这将输出仅为严重错误。 将其设置为 FF 要打印的所有消息。
+-   若要调整调试器的输出级别，*请加载*符号符号（适用于 windows Me 的 StreamDebug 和用于 windows *2000 的* ），并将变量修改为 "e StreamDebug *xx*"。 默认值为00，这会仅打印严重错误。 将其设置为 FF 可打印所有消息。
 
--   微型驱动程序可以打印自己的消息，使用*stream.sys*设施前面所述，通过调用[ **StreamClassDebugPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/nf-strmini-streamclassdebugprint)。 请注意，如前面所述的输出级别必须设置为大于或等于所选的调用中的输出级别。
+-   微型驱动程序可以通过调用[**StreamClassDebugPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/nf-strmini-streamclassdebugprint)来使用前面所述的*sys.databases*功能打印自己的消息。 请注意，前面所述的输出级别必须设置为大于或等于在调用中选择的输出级别。
 
  
 

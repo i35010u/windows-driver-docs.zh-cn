@@ -1,28 +1,28 @@
 ---
 title: 供应和回收更改
-description: Windows 显示器驱动程序模型 (WDDM) v2 是正在放宽要求产品/服务和回收。
+description: 对于 Windows 显示驱动程序模型（WDDM） v2，有关产品/服务和回收的要求将被放松。
 ms.assetid: 1A987708-DE73-4998-B5F9-03A9D502205A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aff2d9946931d081ff60ad8f4201ca21ea9db7ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce81472b86ae091ee7cd5e1e7450035c92e54427
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372792"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840502"
 ---
 # <a name="offer-and-reclaim-changes"></a>供应和回收更改
 
 
-对于 Windows 显示器驱动程序模型 (WDDM) v2，规定*产品/服务*和*回收*正在放宽了。 用户模式驱动程序不再需要使用产品/服务，并在内部分配上回收。 空闲/已挂起应用程序将使用的驱动程序内部资源消除**剪裁**Microsoft DirectX 11.1 中引入的 API。
+对于 Windows 显示驱动程序模型（WDDM） v2，有关*产品/服务*和*回收*的要求将被放松。 用户模式驱动程序不再需要在内部分配中使用产品/服务和回收。 空闲/挂起的应用程序将使用 Microsoft DirectX 11.1 中引入的**剪裁**API 来消除驱动程序内部资源。
 
-产品/服务和回收将继续支持在 API 级别和用户模式驱动程序所需转发产品/服务或回收对内核的资源的应用程序请求。 WDDM v2，通过分配列表不再支持产品/服务分配，因此用户模式驱动程序所需更改的方式，它将实现产品/服务并回收。
+在 API 级别继续支持产品/服务和回收，需要用户模式驱动程序来转发应用程序请求，以便向内核提供或回收资源。 在 WDDM v2 下，将不再支持通过分配列表提供的服务分配，因此，用户模式驱动程序需要更改其实现产品/服务的方式。
 
-资源提供的应用程序应提供立即由用户模式驱动程序通过调用**OfferCb**，如果资源在所有当前正在生成的直接内存访问 (DMA) 缓冲区中有没有引用上下文。 如果资源具有挂起的所生成的 DMA 缓冲区中的引用，用户模式驱动程序应延迟到调用**OfferCb**直到通过提交依赖 DMA 缓冲区后[ *RenderCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb). 将推迟到该操作，以非阻止方式，则可以安全地提供资源，这种情况下用户模式驱动程序无需担心是否有将延迟到调用处理图形内核**OfferCb**之前图形处理单元 (GPU) 上完成相关操作。
+如果资源在当前在所有上下文中生成的直接内存访问（DMA）缓冲区中没有**引用，则**由用户模式驱动程序立即提供应用程序提供的资源。 如果资源在正在生成的 DMA 缓冲区中有挂起的引用，则用户模式驱动程序应将对**OfferCb**的调用推迟到通过[*RENDERCB*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)提交依赖 DMA 缓冲区之后。 图形内核将负责以非阻止方式延迟操作，直到能够安全地提供资源，这样，用户模式驱动程序无需担心必须推迟对**OfferCb**的调用，直到依赖操作完成在图形处理单元（GPU）上。
 
-它是驻留要求列表中，调用回收将自动分页在分配中 (即用户或驱动程序已请求分配通过驻留[ *MakeResidentCb* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)调用)。 有关[ **ReclaimAllocations2Cb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocations2cb)，此操作是异步的以及分页 fence 返回，并且其处理方式与从返回的界定相同*MakeResidentCb*. 分配被保证时发出信号 fence 可以驻留和 GPU 上可用。
+如果调用了驻留要求列表（即，用户或驱动程序已请求通过[*MakeResidentCb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_makeresidentcb)调用进行分配），则调用回收会自动在分配中分页。 对于[**ReclaimAllocations2Cb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocations2cb)，此操作是异步的，并且会返回分页防护，其处理方式与从*MakeResidentCb*返回的隔离方式相同。 此分配可保证为常驻，并在向其发出防护时在 GPU 上可用。
 
-从返回后立即[ **ReclaimAllocationsCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocationscb)/[**ReclaimAllocations2Cb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocations2cb)，后备存储保证是有效分配和分配可能会放置在通过 CPU 访问下[ *Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)。 该驱动程序不需要等待分页 fence，若要执行此操作。
+从[**ReclaimAllocationsCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocationscb)/[**ReclaimAllocations2Cb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocations2cb)返回后，将保证分配的后备存储有效，并可通过[*Lock2Cb*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock2cb)将分配置于 CPU 访问下。 驱动程序无需等待分页防护。
 
  
 

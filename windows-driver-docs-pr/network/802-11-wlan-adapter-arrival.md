@@ -3,16 +3,16 @@ title: 802.11 WLAN 适配器抵达
 description: 802.11 WLAN 适配器抵达
 ms.assetid: 4d533f32-0f98-4a65-ac1b-7a470e54ad29
 keywords:
-- 适配器 WDK 802.11 WLAN，到达的请求
-- WLAN 适配器 WDK，到达的请求
+- 适配器 WDK 802.11 WLAN，抵达
+- WLAN 适配器 WDK，抵达
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7bb676d2760550647c7d3e966cc851ba0c00ef8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8afa6fa1aed3e0e56b53aa6962ee516bb1a171e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379314"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838263"
 ---
 # <a name="80211-wlan-adapter-arrival"></a>802.11 WLAN 适配器抵达
 
@@ -21,35 +21,35 @@ ms.locfileid: "67379314"
 
  
 
-当操作系统检测到为其安装 IHV 扩展 DLL 的无线 LAN (WLAN) 适配器时，操作系统将调用[ *Dot11ExtIhvInitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter) IHV 处理程序函数。 操作系统将调用此函数时 WLAN 适配器成为可用且已启用供使用，例如当插入 PCMCIA 适配器。
+当操作系统检测到安装了 IHV 扩展 DLL 的无线 LAN （WLAN）适配器时，操作系统将调用[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter) IHV 处理程序函数。 只要 WLAN 适配器可用且已启用以供使用，操作系统就会调用此函数，例如插入 PCMCIA 适配器的时间。
 
-当[ *Dot11ExtIhvInitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)调用函数，IHV 扩展 DLL 执行以下操作：
+调用[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter)函数时，将执行以下操作：
 
--   WLAN 适配器的上下文数据以及 DLL 将 WLAN 适配器所需的任何资源分配一个数组。
+-   分配 WLAN 适配器上下文数据的数组，以及 WLAN 适配器所需的任何资源。
 
--   注册为安全数据包接收并由 IHV 扩展 DLL 的 IEEE EtherTypes 列表。
+-   为 IHV 扩展 DLL 接收并使用的安全数据包注册 IEEE EtherTypes 的列表。
 
--   使用由 IHV 定义任何专有设置来配置适配器。
+-   使用 IHV 定义的任何专有设置配置适配器。
 
-IHV 扩展 DLL 必须遵循这些准则时[ *Dot11ExtIhvInitAdapter* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_init_adapter)调用。
+调用[*Dot11ExtIhvInitAdapter*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_init_adapter)时，必须遵循以下准则。
 
--   *HDot11SvcHandle*参数包含将 WLAN 适配器操作系统分配一个唯一的句柄值。 IHV 扩展 DLL 必须保存此句柄值并将其传递给*hDot11SvcHandle* IHV 扩展性函数的参数与特定于适配器的处理，如相关[ **Dot11ExtSetKeyMappingKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key)。
+-   *HDot11SvcHandle*参数包含由操作系统为 WLAN 适配器分配的唯一句柄值。 IHV 扩展 DLL 必须保存此句柄值，并将其传递给与特定于适配器的处理（如[**Dot11ExtSetKeyMappingKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_key_mapping_key)）相关的 IHV 扩展性函数的*hDot11SvcHandle*参数。
 
-    通常情况下，DLL 将保存其 WLAN 适配器上下文数组的一个成员中此句柄值。
+    通常，DLL 会在其 WLAN 适配器上下文数组的成员内保存此句柄值。
 
--   IHV 扩展 DLL 必须唯一的句柄为返回值通过将 WLAN 适配器*phIhvExtAdapter*参数。 操作系统句柄将值传递给*hIhvExtAdapter* IHV 处理程序函数的参数与特定于适配器的处理，如相关[ *Dot11ExtIhvReceiveIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_receive_indication).
+-   IHV 扩展 DLL 必须通过*phIhvExtAdapter*参数为 WLAN 适配器返回唯一的句柄值。 操作系统将句柄值传递到与特定于适配器的处理相关的 IHV 处理程序函数（如[*Dot11ExtIhvReceiveIndication*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_indication)）的*hIhvExtAdapter*参数。
 
-    通常情况下，该 DLL 的句柄值作为返回 WLAN 适配器上下文数组的地址。
+    通常，DLL 返回作为句柄值的 WLAN 适配器上下文数组的地址。
 
--   IHV 扩展 DLL 调用[ **Dot11ExtSetEtherTypeHandling** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)注册的 DLL 将接收的安全数据包 IEEE EtherTypes 列表。 IHV 扩展 DLL 还可以指定将从有效负载解密中排除的 EtherTypes 的列表。 有关注册 EtherTypes 的详细信息，请参阅[IEEE EtherType 处理](ieee-ethertype-handling.md)。
+-   IHV 扩展 DLL 会调用[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling) ，以便为 DLL 将接收的安全数据包注册 IEEE EtherTypes 列表。 IHV 扩展 DLL 还可以指定将从负载解密中排除的 EtherTypes 的列表。 有关注册 EtherTypes 的详细信息，请参阅[IEEE EtherType 处理](ieee-ethertype-handling.md)。
 
-    EtherTypes 注册后，操作系统将调用[ *Dot11ExtIhvReceivePacket* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_receive_packet)其 EtherType 与列表中的某个条目匹配的每个数据包的 IHV 处理程序函数。
+    注册 EtherTypes 后，操作系统将为其 EtherType 与列表中的条目相匹配的每个数据包调用[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet) IHV 处理程序函数。
 
--   操作系统通过本机 802.11 对象标识符 (Oid) 的集请求的标准 802.11 参数与配置的适配器。 有关这些 Oid 的详细信息，请参阅[本机 802.11 无线 LAN Oid](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-oids)。
+-   操作系统通过本机802.11 对象标识符（Oid）的 set 请求来配置具有标准802.11 参数的适配器。 有关这些 Oid 的详细信息，请参阅[本机802.11 无线 LAN oid](https://docs.microsoft.com/windows-hardware/drivers/network/native-802-11-oids)。
 
-    但是，该 DLL 可以配置适配器使用专有参数通过调用[ **Dot11ExtNicSpecificExtension** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension)函数。 通过此函数调用，该 DLL 可以直接与管理 WLAN 适配器和问题查询的本机 802.11 微型端口驱动程序进行通信或将请求设置为基于定义 IHV 的专有格式的驱动程序。
+    但是，DLL 可以通过调用[**Dot11ExtNicSpecificExtension**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_nic_specific_extension)函数，使用专用参数配置适配器。 通过此函数调用，DLL 可直接与本机802.11 微型端口驱动程序通信，该驱动程序管理 WLAN 适配器和发出查询，或基于由 IHV 定义的专有格式将请求设置为驱动程序。
 
-    有关通过该 DLL 和 WLAN 适配器进行通信的接口的详细信息，请参阅[802.11 WLAN 适配器通信通道](802-11-wlan-adapter-communication-channel.md)。
+    有关 DLL 和 WLAN 适配器进行通信的接口的详细信息，请参阅[802.11 WLAN 适配器通信通道](802-11-wlan-adapter-communication-channel.md)。
 
  
 

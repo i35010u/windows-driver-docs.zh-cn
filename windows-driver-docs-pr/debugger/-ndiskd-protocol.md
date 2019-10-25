@@ -1,9 +1,9 @@
 ---
-title: ndiskd.protocol
-description: Ndiskd.protocol 命令显示有关 NDIS 协议驱动程序的信息。
+title: ndiskd 协议
+description: Ndiskd 命令显示有关 NDIS 协议驱动程序的信息。
 ms.assetid: c1d349d5-b0ba-4665-a399-1bc5cd55dde6
 keywords:
-- ndiskd.protocol Windows 调试
+- ndiskd Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9967afc8bcb392bc473b548b84a63da969a5b289
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9929fd946d63653c9bad051d9080fea404cf307f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363107"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837656"
 ---
 # <a name="ndiskdprotocol"></a>!ndiskd.protocol
 
 
-**！ Ndiskd.protocol**命令显示有关 NDIS 协议驱动程序的信息。 如果不带任何参数运行此扩展 ！ ndiskd 将显示在系统处于活动状态的 NDIS 协议驱动程序的列表。
+**！ Ndiskd**命令显示有关 NDIS 协议驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 协议驱动程序的列表。
 
 ```console
 !ndiskd.protocol [-handle <x>] [-findname <any>] 
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 NDIS 协议的句柄。
 
-<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-findname*   
-按名称前缀筛选的协议。
+<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-system.windows.frameworkelement.findname*   
+按名称前缀筛选协议。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-输入 **！ ndiskd.protocol**命令以列出所有 NDIS 协议，其句柄，并打开到微型端口的绑定 （如果有）。 在以下示例中，查找 TCPIP6TUNNEL 协议的句柄，ffff8083e1a95c00。
+输入 **！ ndiskd**命令，以查看所有 NDIS 协议的列表、它们的句柄以及到微型端口（如果有）的开放绑定。 在下面的示例中，查找 TCPIP6TUNNEL 协议的句柄 ffff8083e1a95c00。
 
 ```console
 3: kd> !ndiskd.protocol
@@ -79,7 +79,7 @@ ffff8083e11cec10 - TCPIP
   ffff8083e0c565a0 - Microsoft Kernel Debug Network Adapter
 ```
 
-提供的协议的句柄，现在可以输入可以单击该句柄，或输入 **！ ndiskd.protocol-处理**命令以查看有关该协议，例如绑定到该微型端口的句柄的信息。
+在协议的句柄中，现在可以输入或输入 **！ ndiskd**命令来查看该协议的信息，例如绑定到它的微型端口的句柄。
 
 ```console
 3: kd> !ndiskd.protocol ffff8083e1a95c00
@@ -120,18 +120,18 @@ HANDLERS
     DirectOidRequestCompleteHandler        fffff80e2e398120  bp
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
  
 

@@ -1,105 +1,105 @@
 ---
-title: 调试通用驱动程序的分步实验室 （Echo 内核模式）
-description: 此实验室中引入了 WinDbg 内核调试程序。 使用 WinDbg 调试 echo 内核模式示例驱动程序代码。
+title: 调试通用驱动程序-分步实验室（回显内核模式）
+description: 此实验室引入了 WinDbg 内核调试器。 WinDbg 用于调试回显内核模式示例驱动程序代码。
 ms.assetid: 3FBC3693-4288-42BA-B1E8-84DC2A9AFFD9
 keywords:
 - 调试实验室
-- step-by-step
-- ECHO
+- 循序渐进
+- 传回
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3a6aefb65bd90c63ca9e2a8ee6a1d88f600b86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b15d006868171ec2e0e2e8bcee2013e46316de5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367027"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837788"
 ---
-# <a name="span-iddebuggerdebuguniversaldrivers-stepbysteplabechokernel-modespandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序的执行步骤的实验室 （Echo 内核模式）
+# <a name="span-iddebuggerdebug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_spandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序-逐步骤实验室（回显内核模式）
 
 
-此实验室中引入了 WinDbg 内核调试程序。 使用 WinDbg 调试 echo 内核模式示例驱动程序代码。
+此实验室引入了 WinDbg 内核调试器。 WinDbg 用于调试回显内核模式示例驱动程序代码。
 
-## <a name="span-idlabobjectivesspanspan-idlabobjectivesspanspan-idlabobjectivesspanlab-objectives"></a><span id="Lab_objectives"></span><span id="lab_objectives"></span><span id="LAB_OBJECTIVES"></span>实验室目的
+## <a name="span-idlab_objectivesspanspan-idlab_objectivesspanspan-idlab_objectivesspanlab-objectives"></a><span id="Lab_objectives"></span><span id="lab_objectives"></span><span id="LAB_OBJECTIVES"></span>实验室目标
 
 
-此实验室包括相关的练习，引入的调试工具、 介绍常见的调试命令、 中断点的用法和显示了如何使用调试扩展。
+此实验室包括一些练习，其中引入了调试工具、讲授常见的调试命令、阐释了断点的使用，并演示了调试扩展的使用。
 
-在此实验中，实时内核调试连接用于采用以下机制：
+在此实验室中，使用实时内核调试连接来浏览以下内容：
 
 -   使用 Windows 调试器命令
--   使用标准命令 （调用堆栈、 变量、 线程、 IRQL）
--   使用高级驱动程序调试命令 (！ 命令)
+-   使用标准命令（调用堆栈、变量、线程、IRQL）
+-   使用高级驱动程序调试命令（！命令）
 -   使用符号
--   设置断点的实时调试
+-   在实时调试中设置断点
 -   查看调用堆栈
--   显示插设备树
--   使用线程和进程的上下文
+-   显示即插即用设备树
+-   使用线程和进程上下文
 
-**请注意**时使用的 Windows 调试器，有两种类型的调试可执行的用户或内核模式调试。
+**注意** 使用 Windows 调试器时，可以执行两种类型的调试：用户或内核模式调试。
 
-*用户模式下*-应用程序和子系统在用户模式下在计算机上运行。 在用户模式下运行的进程执行此操作在其自己的虚拟地址空间内。 它们被限制直接访问系统，包括系统硬件，其使用，并可能危及系统完整性的系统的其他部分为未分配的内存的很多部分。 在用户模式下运行的进程是从系统和其他用户模式进程有效地隔离的因为它们不能干扰这些资源。
+*用户模式*-应用程序和子系统在计算机上以用户模式运行。 在用户模式下运行的进程在其自己的虚拟地址空间内执行此操作。 它们受到限制，无法直接访问系统的多个部分，包括系统硬件、未分配给其使用的内存，以及可能危及系统完整性的系统的其他部分。 由于在用户模式下运行的进程有效地与系统和其他用户模式进程隔离，因此它们不能干扰这些资源。
 
-*内核模式*-内核模式是在其中运行的系统和特权程序运行的处理器访问模式。 内核模式代码有权访问的系统，任何部分，并且不受限制用户模式代码等。 它可以访问在用户模式或内核模式中运行的任何其他进程的任何部分。 在内核模式下运行的核心操作系统功能和许多硬件设备驱动程序。
+*内核模式*-内核模式是运行操作系统和特权程序的处理器访问模式。 内核模式代码有权访问系统的任何部分，并且不受限于用户模式代码。 它可以访问在用户模式或内核模式下运行的任何其他进程的任何部分。 许多核心操作系统功能和许多硬件设备驱动程序在内核模式下运行。
 
-此实验室将重点介绍内核模式调试，因为这是用来调试多个设备驱动程序的方法。
-
-
-本练习中介绍了在用户模式和内核模式调试期间经常使用的调试命令。 本练习还介绍了调试扩展 (有时称为"！ 命令")，用于内核模式调试。
-
-## <a name="span-idlabsetupspanspan-idlabsetupspanspan-idlabsetupspanlab-setup"></a><span id="Lab_setup"></span><span id="lab_setup"></span><span id="LAB_SETUP"></span>实验室设置
+此实验室将重点介绍内核模式调试，就像用于调试多个设备驱动程序的方法一样。
 
 
-你将需要以下硬件以便能够完成实验室。
+此练习涉及在用户模式和内核模式调试过程中经常使用的调试命令。 本练习还介绍了用于内核模式调试的调试扩展（有时称为 "！命令"）。
 
--   便携式计算机或台式计算机 （主机） 运行 Windows 10
--   便携式计算机或台式计算机 （目标） 运行 Windows 10
--   网络中心/路由器和网络电缆连接两台 Pc
+## <a name="span-idlab_setupspanspan-idlab_setupspanspan-idlab_setupspanlab-setup"></a><span id="Lab_setup"></span><span id="lab_setup"></span><span id="LAB_SETUP"></span>实验室设置
+
+
+你将需要以下硬件才能完成实验室。
+
+-   运行 Windows 10 的便携式计算机或台式计算机（主机）
+-   运行 Windows 10 的便携式计算机或台式计算机（目标）
+-   用于连接两台电脑的网络集线器/路由器和网络电缆
 -   访问 internet 以下载符号文件
 
-你将需要以下软件才能将无法完成该实验。
+你将需要以下软件才能完成实验室。
 
 -   Visual Studio 2017
 -   适用于 Windows 10 的 Windows 软件开发工具包 (SDK)
--   适用于 Windows 10 的 Windows 驱动程序工具包 (WDK)
--   适用于 Windows 10 示例 echo 驱动程序
+-   适用于 Windows 10 的 windows 驱动程序工具包（WDK）
+-   适用于 Windows 10 的示例回显驱动程序
 
-实验室有以下 11 个部分。
+实验室有以下11个部分。
 
--   [第 1 部分：连接到内核模式 WinDbg 会话](#connectto)
--   [第 2 部分：内核模式调试命令和技术](#kernelmodedebuggingcommandsandtechniques)
--   [第 3 部分：下载并构建 KMDF 通用 Echo 驱动程序](#download)
--   [第 4 部分：在目标系统上安装回送 KMDF 驱动程序示例](#install)
--   [第 5 部分：使用 WinDbg 显示有关驱动程序的信息](#usewindbgtodisplayinformation)
--   [第 6 部分：显示插设备树信息](#displayingtheplugandplaydevicetree)
--   [第 7 部分：使用断点和源代码](#workingwithbreakpoints)
--   [第 8 部分：查看变量和调用堆栈](#viewingvariables)
--   [第 9 部分：显示进程和线程](#displayingprocessesandthreads)
--   [第 10 部分：IRQL，寄存器并结束 WinDbg 会话](#irqlregistersmemory)
--   [第 11 节：Windows 调试资源](#windowsdebuggingresources)
+-   [第1节：连接到内核模式 WinDbg 会话](#connectto)
+-   [第2部分：内核模式调试命令和技术](#kernelmodedebuggingcommandsandtechniques)
+-   [第3部分：下载并构建 KMDF 通用回送驱动程序](#download)
+-   [第4部分：在目标系统上安装 KMDF Echo 驱动程序示例](#install)
+-   [第5节：使用 WinDbg 显示有关驱动程序的信息](#usewindbgtodisplayinformation)
+-   [第6部分：显示即插即用设备树信息](#displayingtheplugandplaydevicetree)
+-   [第7部分：处理断点和源代码](#workingwithbreakpoints)
+-   [第8节：查看变量和调用堆栈](#viewingvariables)
+-   [第9部分：显示进程和线程](#displayingprocessesandthreads)
+-   [第10部分： IRQL、注册和结束 WinDbg 会话](#irqlregistersmemory)
+-   [第11节： Windows 调试资源](#windowsdebuggingresources)
 
-## <a name="span-idconnecttospanspan-idconnecttospansection-1-connect-to-a-kernel-mode-windbg-session"></a><span id="connectto"></span><span id="CONNECTTO"></span>第 1 部分：连接到内核模式 WinDbg 会话
+## <a name="span-idconnecttospanspan-idconnecttospansection-1-connect-to-a-kernel-mode-windbg-session"></a><span id="connectto"></span><span id="CONNECTTO"></span>第1节：连接到内核模式 WinDbg 会话
 
 
-*在第 1 部分，将配置网络在主机和目标系统上进行调试。*
+*在第1部分中，你将在主机和目标系统上配置网络调试。*
 
-此实验室中的 Pc 需要将配置为使用以太网网络连接进行内核调试。
+此实验室中的电脑需要配置为使用以太网网络连接进行内核调试。
 
-此实验使用两台 Pc。 在运行 Windows 的调试程序*主机*上运行的系统和 KMDF Echo 驱动程序*目标*系统。
+此实验室使用两台电脑。 Windows 调试器在*主机*系统上运行，KMDF Echo 驱动程序在*目标*系统上运行。
 
- 使用网络中心/路由器和网络电缆连接两台 Pc。
+ 使用网络集线器/路由器和网络电缆连接两台 Pc。
 
-![与双向箭头连接的两台 pc](images/debuglab-image-targethostdrawing1.png)
+![使用双箭头连接的两台电脑](images/debuglab-image-targethostdrawing1.png)
 
-若要使用的内核模式应用程序和使用 WinDbg，我们建议通过以太网传输使用 KDNET。 有关如何使用以太网传输协议的信息，请参阅[开始使用 WinDbg （内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[手动驱动程序部署准备一台计算机](https://docs.microsoft.com/windows-hardware/drivers)并[设置向上 KDNET 网络内核调试自动](setting-up-a-network-debugging-connection-automatically.md)。
+若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅[使用 WinDbg 入门（内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[为手动驱动程序部署准备计算机](https://docs.microsoft.com/windows-hardware/drivers)和[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
-### <a name="span-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanspan-idconfigurekernelmodedebuggingusingethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="Configure__kernel_mode_debugging_using_ethernet"></span><span id="configure__kernel_mode_debugging_using_ethernet"></span><span id="CONFIGURE__KERNEL_MODE_DEBUGGING_USING_ETHERNET"></span>配置内核模式 – 调试使用以太网
+### <a name="span-idconfigure__kernel_mode_debugging_using_ethernetspanspan-idconfigure__kernel_mode_debugging_using_ethernetspanspan-idconfigure__kernel_mode_debugging_using_ethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="Configure__kernel_mode_debugging_using_ethernet"></span><span id="configure__kernel_mode_debugging_using_ethernet"></span><span id="CONFIGURE__KERNEL_MODE_DEBUGGING_USING_ETHERNET"></span>使用以太网配置内核-模式调试
 
-若要启用内核模式下在目标系统上进行调试，请执行以下步骤。
+若要在目标系统上启用内核模式调试，请执行以下步骤。
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-1. 打开命令提示符上的主机系统和类型**ipconfig**以确定其 IP 地址。
+1. 在主机系统上打开命令提示符，然后键入**ipconfig**以确定其 IP 地址。
 
 ```console
 C:\>ipconfig
@@ -114,9 +114,9 @@ Ethernet adapter Ethernet:
 
 2. 记录主机系统的 IP 地址： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**-&gt; 在目标系统上**
+**目标系统上的-&gt;**
 
-3. 打开在目标系统上的命令提示符，并使用**ping**命令来确认这两个系统之间的网络连接。 而不是示例输出所示的 169.182.1.1 使用主机系统所记录的实际 IP 地址。
+3. 在目标系统上打开命令提示符，并使用**ping**命令确认两个系统之间的网络连接。 使用所记录主机系统的实际 IP 地址，而不是示例输出中所示的169.182.1.1。
 
 ```console
 C:\> ping 169.182.1.1
@@ -133,13 +133,13 @@ Approximate round trip times in milli-seconds:
     Minimum = 0ms, Maximum = 1ms, Average = 0ms
 ```
 
-启用内核模式下通过完成以下步骤在目标系统上进行调试。
+通过完成以下步骤，在目标系统上启用内核模式调试。
 
 > [!IMPORTANT]
-> 使用 BCDEdit 以更改启动信息之前可能需要暂时挂起如 BitLocker 和安全引导测试 PC 上的 Windows 安全功能。
-> 测试完成后重新启用这些安全功能和安全功能将被禁用时适当地管理测试 PC。
+> 使用 BCDEdit 更改启动信息之前，您可能需要在测试电脑上暂时挂起 Windows 安全功能，例如 BitLocker 和安全启动。
+> 当安全功能处于禁用状态时，在测试完成后重新启用这些安全功能，并对测试 PC 进行适当的管理。
 
-1. 在目标计算机上，以管理员身份打开命令提示符窗口。 输入此命令以启用调试。
+1. 在目标计算机上，以管理员身份打开“命令提示符”窗口。 输入此命令以启用调试。
 
     ```console
     C:\> bcdedit /set {default} DEBUG YES
@@ -152,15 +152,15 @@ Approximate round trip times in milli-seconds:
     ```
 
 
-3. 键入以下命令以设置主机系统的 IP 地址。 使用你之前记录未显示的一个主机系统的 IP 地址。
+3. 键入此命令可设置主机系统的 IP 地址。 使用之前记录的主机系统的 IP 地址，而不是显示的 IP 地址。
 
     ```console
     C:\> bcdedit /dbgsettings net hostip:192.168.1.1 port:50000 key:1.2.3.4
     ```
 
-**警告**若要增加连接的安全性和降低风险随机客户端调试器连接请求，请考虑使用自动生成的随机密钥。 有关详细信息，请参阅[设置向上 KDNET 网络内核调试自动](setting-up-a-network-debugging-connection-automatically.md)。
+**警告** 若要提高连接的安全性并降低随机客户端调试器连接请求的风险，请考虑使用自动生成的随机密钥。 有关详细信息，请参阅[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
-4. 键入以下命令以确认 dbgsettings 它们设置正确。
+4. 键入以下命令，确认已正确设置 dbgsettings。
 
     ```console
     C:\> bcdedit /dbgsettings
@@ -175,37 +175,37 @@ Approximate round trip times in milli-seconds:
 **注意**  
 **防火墙和调试器**
 
-如果从防火墙，看到一个弹出消息，并且你想要使用调试器，检查**所有这三个**的框。
+如果收到来自防火墙的弹出消息，并且想要使用调试器，请选中**所有三**个框。
 
-![windows 安全警报的 windows 防火墙已阻止此应用的某些功能 ](images/debuglab-image-firewall-dialog-box.png)
+![windows 安全警报-windows 防火墙阻止了此应用的某些功能 ](images/debuglab-image-firewall-dialog-box.png)
 
 
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-1. 在主计算机上，以管理员身份打开命令提示符窗口。 我们将使用 x64 版本的 WinDbg.exe 已作为 Windows 工具包安装的一部分安装 Windows Driver Kit (WDK) 中。 默认情况下它位于此处。
+1. 在主计算机上，以管理员身份打开命令提示符窗口。 我们将使用 Windows 驱动程序工具包（WDK）中的 x64 版本，该版本已作为 Windows 工具包安装的一部分进行安装。 默认情况下，它位于此处。
 
     ```console
     C:\> Cd C:\Program Files(x86)\Windows Kits\10\Debuggers\x64 
     ```
 
 > [!NOTE]
-> 此实验室假定这两台 Pc 上的目标和主机运行 Windows 的 64 位版本。 如果这不是这样，最好的方法是运行在目标主机上运行工具的同一"位数"。 例如，如果目标是正在运行 32 位 Windows，在主机上运行 32 版本的调试器。 有关详细信息，请参阅[选择 32 位或 64 位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
+> 此实验室假定两台 Pc 同时在目标和主机上运行64位版本的 Windows。 如果不是这种情况，最好的方法是在目标正在运行的主机上运行相同的工具 "位数"。 例如，如果目标运行的是32位 Windows，请在主机上运行调试器的32版本。 有关详细信息，请参阅[选择32位或64位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
 > 
 
-2. 使用远程用户调试使用以下命令启动 WinDbg。 我们前面设置的密钥和端口的值匹配在目标系统上使用 BCDEdit。
+2. 使用以下命令通过远程用户调试启动 WinDbg。 此键和端口的值与我们以前在目标上使用 BCDEdit 时所设置的值匹配。
 
     ```console
     WinDbg –k net:port=50000,key=1.2.3.4
     ```
 
-**-&gt;在目标系统上**
+**目标系统上的-&gt;**
 
 重新启动目标系统。
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-在一分钟或两个，应在主机系统上显示调试输出。
+在一分钟或两分钟内，调试输出应显示在主机系统上。
 
 ```dbgcmd
 Microsoft (R) Windows Debugger Version 10.0.17074.1002 AMD64
@@ -229,52 +229,52 @@ Debug session time: Wed Feb 28 17:16:23.816 2018 (UTC - 8:00)
 System Uptime: 0 days 0:00:20.534
 ```
 
-调试器命令窗口是在 WinDbg 中主要的调试信息窗口。 您可以输入的调试器命令，在此窗口中查看命令输出。
+调试器命令窗口是 WinDbg 的主调试信息窗口。 您可以在此窗口中输入调试器命令并查看命令输出。
 
-调试器命令窗口拆分为两个窗格。 在窗口底部的小窗格 （命令项窗格） 中键入命令，并在更大窗口的顶部窗格中查看命令输出。
+调试器命令窗口拆分为两个窗格。 您可以在窗口底部的小窗格（命令条目窗格）中键入命令，然后在窗口顶部更大的窗格中查看命令输出。
 
-在命令项窗格中，使用向上箭头和向下箭头键可以滚动浏览命令历史记录。 命令出现时，你可以对其进行编辑，或按**ENTER**运行命令。
+在 "命令项" 窗格中，使用向上键和向下键滚动浏览命令历史记录。 显示命令时，你可以对其进行编辑或按**enter**运行该命令。
 
-## <a name="span-idkernelmodedebuggingcommandsandtechniquesspanspan-idkernelmodedebuggingcommandsandtechniquesspanspan-idkernelmodedebuggingcommandsandtechniquesspansection-2-kernel-mode-debugging-commands-and-techniques"></a><span id="KernelModeDebuggingCommandsAndTechniques"></span><span id="kernelmodedebuggingcommandsandtechniques"></span><span id="KERNELMODEDEBUGGINGCOMMANDSANDTECHNIQUES"></span>第 2 部分：内核模式调试命令和技术
-
-
-*在第 2 部分，您将使用调试命令来显示有关目标系统的信息。*
-
-**&lt;在主机系统**
-
-**让调试器标记语言 (DML) 使用.prefer\_dml**
-
-一些调试命令的显示文本使用调试器标记语言，可以单击快速收集的详细信息。
-
-1. 在 WinDBg 中使用 Ctrl + Break (Scroll Lock) 分解为目标系统上运行的代码。 可能需要一些时间才能在目标系统进行响应。
-
-![windows 调试器实时内核连接进行连接时显示命令窗口输出](images/debuglab-image-winddbg-hh.png)
+## <a name="span-idkernelmodedebuggingcommandsandtechniquesspanspan-idkernelmodedebuggingcommandsandtechniquesspanspan-idkernelmodedebuggingcommandsandtechniquesspansection-2-kernel-mode-debugging-commands-and-techniques"></a><span id="KernelModeDebuggingCommandsAndTechniques"></span><span id="kernelmodedebuggingcommandsandtechniques"></span><span id="KERNELMODEDEBUGGINGCOMMANDSANDTECHNIQUES"></span>第2部分：内核模式调试命令和技术
 
 
-2. 键入以下命令以启用 DML 调试器命令窗口中。
+*在第2部分中，你将使用 "调试" 命令显示有关目标系统的信息。*
+
+**&lt;-主机系统上**
+
+**使用启用调试器标记语言（DML），\_DML**
+
+某些调试命令使用调试器标记语言显示文本，您可以单击该语言来快速收集详细信息。
+
+1. 使用 WinDBg 中的 Ctrl + Break （滚动锁定）来中断目标系统上运行的代码。 目标系统可能需要一些时间才能响应。
+
+![显示实时内核连接的命令窗口输出的 windows 调试器](images/debuglab-image-winddbg-hh.png)
+
+
+2. 键入以下命令，在调试器中启用 DML 命令窗口。
 
 ```dbgcmd
 0: kd> .prefer_dml 1
 DML versions of commands on by default
 ```
 
-**使用.hh * 若要获取帮助**
+**使用 hh 获取帮助**
 
-可以参考命令帮助使用访问 **.hh *** 命令。
+您可以使用**hh**命令访问 reference 命令帮助。
 
-3. 键入以下命令以查看命令的参考帮助 **.prefer\_dml**。
+3. 键入以下命令以查看的命令参考帮助 **。首选\_dml**。
 
 ```dbgcmd
 0: kd> .hh .prefer_dml
 ```
 
-调试器帮助文件将显示的帮助 **.prefer\_dml**命令。
+调试器帮助文件将显示的帮助 **。首选\_dml**命令。
 
-![调试器帮助应用程序显示帮助.prefer\-dml 命令](images/debuglab-image-prefer-dml-help.png)
+![调试器帮助应用程序，显示的帮助。首选\-dml 命令](images/debuglab-image-prefer-dml-help.png)
 
 **显示目标系统上的 Windows 版本**
 
-5. 通过键入目标系统上显示详细的版本信息[ **vertarget （显示目标计算机版本）** ](vertarget--show-target-computer-version-.md) WinDbg 窗口命令。
+5. 在 WinDbg 窗口中键入[**vertarget （显示目标计算机版本）** ](vertarget--show-target-computer-version-.md)命令，以显示目标系统上的详细版本信息。
 
 ```dbgcmd
 0: kd> vertarget
@@ -289,7 +289,7 @@ System Uptime: 0 days 01:31:58.931
 
 **列出已加载的模块**
 
-6. 你可以验证你正在使用正确的内核模式进程通过显示已加载的模块，通过键入[ **lm （列表加载模块）** ](lm--list-loaded-modules-.md) WinDbg 窗口命令。
+6. 您可以通过在 WinDbg 窗口中键入 " [**lm （列表加载的模块）** ](lm--list-loaded-modules-.md) " 命令，来验证是否正在使用正确的内核模式进程。
 
 ```dbgcmd
 0: Kd> lm
@@ -307,11 +307,11 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 ...
 ```
 
-**请注意**已省略的输出指示"... "在此实验中。
+**注意** 已省略的输出用 "...。 "。
 
 
 
-7. 若要请求有关的特定模块的详细的信息，请使用 v （详细） 选项所示。
+7. 若要请求有关特定模块的详细信息，请使用 "v （详细）" 选项，如下所示。
 
 ```dbgcmd
 0: Kd> lm v m tcpip
@@ -330,173 +330,173 @@ fffff801`09eeb000 fffff801`0a157000   tcpip      (no symbols)
 Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 ```
 
-8. 因为我们尚未设置符号路径和已加载的符号，有限的信息可在调试器中。
+8. 由于我们尚未设置符号路径和加载的符号，因此在调试器中提供了有限的信息。
 
-## <a name="span-iddownloadspanspan-iddownloadspanspan-iddownloadspansection-3-download-and-build-the-kmdf-universal-echo-driver"></a><span id="Download"></span><span id="download"></span><span id="DOWNLOAD"></span>第 3 部分：下载并构建 KMDF 通用 echo 驱动程序
+## <a name="span-iddownloadspanspan-iddownloadspanspan-iddownloadspansection-3-download-and-build-the-kmdf-universal-echo-driver"></a><span id="Download"></span><span id="download"></span><span id="DOWNLOAD"></span>第3部分：下载并构建 KMDF 通用回送驱动程序
 
-*在第 3 部分，将下载并构建 KMDF 通用 echo 驱动程序。*
+*在第3部分中，你将下载并构建 KMDF 通用回送驱动程序。*
 
-通常情况下，您应该使用与你自己的驱动程序代码使用 WinDbg 时。 若要熟悉 WinDbg 操作，请使用 KMDF 模板"的 Echo"示例驱动程序。 提供源代码，它还将更轻松地了解在 WinDbg 中显示的信息。 此外，此示例用于说明如何可以单一单步执行本机内核模式代码。 这种技术都是用于调试复杂的内核模式代码问题非常有用。
+通常，使用 WinDbg 时，将使用自己的驱动程序代码。 若要熟悉 WinDbg 操作，请使用 KMDF 模板 "Echo" 示例驱动程序。 使用可用的源代码，还可以更容易地理解 WinDbg 中显示的信息。 此外，此示例还可用于说明如何单步执行本机内核模式代码。 此方法对于调试复杂的内核模式代码问题非常有用。
 
-若要下载并生成 Echo 示例音频驱动程序时，执行以下步骤。
+若要下载并构建 Echo 示例音频驱动程序，请执行以下步骤。
 
-1.  **下载并从 GitHub 提取 KMDF Echo 示例**
+1.  **从 GitHub 下载并提取 KMDF Echo 示例**
 
-    浏览器可用于在此处查看 GitHub 中的 echo 示例：
+    可在 GitHub 中使用浏览器查看回显示例：
 
     [https://github.com/Microsoft/Windows-driver-samples/tree/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf](https://github.com/Microsoft/Windows-driver-samples/blob/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf/ReadMe.md)
 
-    你可以阅读此处的示例：
+    可在此处阅读有关示例的内容：
 
     <https://github.com/Microsoft/Windows-driver-samples/blob/97cf5197cf5b882b2c689d8dc2b555f2edf8f418/general/echo/kmdf/ReadMe.md>
 
-    您可以浏览所有通用驱动程序示例：
+    你可以在此处浏览所有通用驱动程序示例：
 
     <https://github.com/Microsoft/Windows-driver-samples>
 
     KMDF Echo 示例位于常规文件夹中。
 
-    ![github windows 的驱动程序的示例突出显示的常规文件夹和下载 zip 按钮](images/debuglab-image-github.png)
+    ![github windows-驱动程序-示例突出显示 "常规" 文件夹和 "下载 zip" 按钮](images/debuglab-image-github.png)
 
-    a. 此实验中，演示如何下载一个 zip 文件中的通用驱动程序示例。
+    a. 此实验室演示如何在一个 zip 文件中下载通用驱动程序示例。
 
     <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-    b. Master.zip 文件下载到本地硬盘。
+    b. 将主 .zip 文件下载到本地硬盘驱动器。
 
-    c. 右键单击*Windows 驱动程序示例 master.zip*，然后选择**全部提取**。 指定新文件夹，或浏览到一个现有将存储提取的文件。 例如，可以指定*c:\\DriverSamples\\* 作为文件提取到其中的新文件夹。
+    c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，你可以指定*C：\\DriverSamples\\* 作为要将文件提取到其中的新文件夹。
 
     d. 提取文件后，导航到以下子文件夹。
 
-    *C:\\DriverSamples\\general\\echo\\kmdf*
+    *C：\\DriverSamples\\常规\\回显\\kmdf*
 
 2.  **在 Visual Studio 中打开驱动程序解决方案**
 
-    在 Microsoft Visual Studio 中，单击**文件** &gt; **打开** &gt; **项目/解决方案...** 并导航到包含所提取的文件的文件夹 (例如， *c:\\DriverSamples\\常规\\echo\\kmdf*)。 双击*kmdfecho*解决方案文件以将其打开。
+    在 Microsoft Visual Studio 中，单击 "**文件**" &gt; "**打开**&gt;**项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C：\\DriverSamples\\general\\echo\\kmdf*）。 双击 " *kmdfecho* " 解决方案文件以将其打开。
 
-    在 Visual Studio 中，找到解决方案资源管理器。 (如果尚未打开，请将此选择**解决方案资源管理器**从**视图**菜单。)在解决方案资源管理器，可以看到一个包含三个项目的解决方案。
+    在 Visual Studio 中，找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，可以看到一个包含三个项目的解决方案。
 
-    ![visual studio 中的使用 device.c 文件加载从 kmdfecho 项目](images/debuglab-image-echo-visual-studio.png)
+    ![带有从 kmdfecho 项目加载的设备 .c 文件的 visual studio](images/debuglab-image-echo-visual-studio.png)
 
 3.  **设置示例的配置和平台**
 
-    在解决方案资源管理器中右键单击**kmdfecho （3 个项目） 的解决方案**，然后选择**Configuration Manager**。 请确保配置和平台设置是相同的三个项目。 默认情况下的配置设置为"Win10 Debug"，并将所有项目的平台设置为"Win64"。 如果你进行任何配置和/或平台更改为一个项目，必须进行的剩余三个项目相同的更改。
+    在解决方案资源管理器中，右键单击 "**解决方案 ' kmdfecho ' （3个项目）"** ，然后选择 " **Configuration Manager**"。 请确保三个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
 
 4.  **设置运行时库**
 
-    设置运行时库-打开 echo 驱动程序的属性页，并找到**C /C++**  &gt; **代码生成**。  将运行时库 DLL 版本更改为非 DLL 版本。 如果没有此设置，您必须单独安装到目标计算机的 MSVC 运行时。
+    设置运行时库-打开回显驱动程序的属性页，并找到**CC++ /** &gt;**代码生成**。  将运行库从 DLL 版本更改为非 DLL 版本。 如果没有此设置，则必须单独将 MSVC 运行时安装到目标计算机上。
 
-    ![突出显示此运行时库设置回显属性页](images/debuglab-image-echoapp-properties.png)
+    ![显示运行时库设置的回响属性页](images/debuglab-image-echoapp-properties.png)
 
 5.  **检查驱动程序签名**
 
-    此外，驱动程序的属性上请确保**驱动程序签名** &gt; **登录模式**设置为"测试登录"。 这是必需的因为 Windows 需要的驱动程序签名。
+    同样，在驱动程序的属性中，请确保将**驱动程序签名**&gt;**签名模式**设置为 "测试签名"。 这是必需的，因为 Windows 要求对驱动程序进行签名。
 
-    ![突出显示的登录模式设置回送属性页](images/debuglab-image-echoapp-driver-signing.png)
+    ![显示签名模式设置的回响属性页](images/debuglab-image-echoapp-driver-signing.png)
 
 6.  **使用 Visual Studio 生成示例**
 
-    在 Visual Studio 中，单击**构建** &gt; **生成解决方案**。
+    在 Visual Studio 中，单击 "**生成**&gt;**生成解决方案**"。
 
-    如果一切顺利，生成 windows 应显示一条指示对于所有三个项目生成成功消息。
+    如果一切顺利，生成窗口应显示一条消息，指示所有三个项目的生成均已成功。
 
-7.  **找到的内置驱动程序文件**
+7.  **找到生成的驱动程序文件**
 
-    在文件资源管理器，导航到包含示例提取的文件的文件夹。 例如，你可以导航到*c:\\DriverSamples\\常规\\echo\\kmdf*，如果这是你在前面指定的文件夹。 在该文件夹中，已编译的驱动程序文件的位置而异的配置和平台设置中选择**Configuration Manager**。 例如，如果保留默认设置保持不变，然后将已编译的驱动程序文件将保存到名为的文件夹 *\\x64\\调试*适用于 64 位，调试版本。
+    在 "文件资源管理器" 中，导航到包含示例提取的文件的文件夹。 例如，如果您之前指定的文件夹，则可以导航到*C：\\DriverSamples\\常规\\echo\\kmdf*。 在该文件夹中，编译的驱动程序文件的位置根据你在**Configuration Manager**中选择的配置和平台设置而有所不同。 例如，如果将默认设置保持不变，则已编译的驱动程序文件将保存到一个名为 *\\x64\\64 调试*版本的文件夹中。
 
-    导航到包含自动同步驱动程序的生成的文件的文件夹：
+    导航到包含 Autosync 驱动程序的生成文件的文件夹：
 
-    *C:\\DriverSamples\\常规\\echo\\kmdf\\驱动程序\\AutoSync\\x64\\调试*。 
+    *C：\\DriverSamples\\常规\\回送\\kmdf\\驱动程序\\AutoSync\\x64\\调试*。 
 
-    该文件夹应包含这些文件：
+    该文件夹应包含以下文件：
 
     | 文件     | 描述                                                                       |
     |----------|-----------------------------------------------------------------------------------|
-    | Echo.sys | 驱动程序文件中。                                                                  |
-    | Echo.inf | 一个包含安装驱动程序所需信息的信息 (INF) 文件。 |
+    | Sys.databases | 驱动程序文件。                                                                  |
+    | 回显 .inf | 一个信息（INF）文件，其中包含安装驱动程序所需的信息。 |
 
-    此外，echoapp.exe 文件生成，并且它应该位于此处：*C:\\DriverSamples\\general\\echo\\kmdf\\exe\\x64\\Debug*
+    此外，还生成了 echoapp 文件，该文件应位于以下位置： *C：\\DriverSamples\\常规\\echo\\kmdf\\exe\\x64\\调试*
 
     | 文件        | 描述                                                                       |
     |-------------|-----------------------------------------------------------------------------------|
-    | EchoApp.exe | 一个与 echo.sys 驱动程序进行通信的命令提示符可执行的测试文件。 |     
+    | EchoApp | 与 echo 驱动程序通信的命令提示符可执行文件测试文件。 |     
 
-8.  找到 USB 拇指驱动器或网络共享设置为将内置的驱动程序文件和测试 EchoApp 复制从主机到目标系统。
+8.  找到 USB 拇指驱动器或设置网络共享，以将构建的驱动程序文件和测试 EchoApp 从主机复制到目标系统。
 
-在下一步部分中，会将代码复制到目标系统中，并安装和测试驱动程序。
+在下一部分中，你将代码复制到目标系统，然后安装并测试驱动程序。
 
-## <a name="span-idinstallspanspan-idinstallspanspan-idinstallspansection-4-install-the-kmdf-echo-driver-sample-on-the-target-system"></a><span id="Install"></span><span id="install"></span><span id="INSTALL"></span>第 4 部分：在目标系统上安装 KMDF echo 驱动程序示例
+## <a name="span-idinstallspanspan-idinstallspanspan-idinstallspansection-4-install-the-kmdf-echo-driver-sample-on-the-target-system"></a><span id="Install"></span><span id="install"></span><span id="INSTALL"></span>第4部分：在目标系统上安装 KMDF echo 驱动程序示例
 
-*在第 4 部分，您将使用 devcon 安装 echo 示例驱动程序。*
+*在第4部分中，你将使用 devcon 安装 echo 示例驱动程序。*
 
-**-&gt; 在目标系统上**
+**目标系统上的-&gt;**
 
-安装该驱动程序的计算机称为*目标计算机*或*测试计算机*。 通常情况下，这是在其开发和生成的驱动程序包的计算机不同的计算机。 开发和生成该驱动程序的计算机称为*主机计算机*。
+安装驱动程序的计算机称为*目标计算机*或*测试计算机*。 通常，这是与你开发和构建驱动程序包的计算机不同的计算机。 开发和构建驱动程序的计算机称为 "*主机*"。
 
-将驱动程序包移动到目标计算机和安装该驱动程序的过程称为*部署*驱动程序。 你可以自动或手动部署示例 echo 驱动程序。
+将驱动程序包移动到目标计算机并安装驱动程序的过程称为 "*部署*驱动程序"。 可以自动或手动部署示例回显驱动程序。
 
-手动部署驱动程序之前，必须通过启用测试签名来准备目标计算机。 此外需要在 WDK 安装中找到 DevCon 工具。 之后，您就可以运行内置驱动程序示例。
+手动部署驱动程序之前，必须通过启用测试签名来准备目标计算机。 还需要在 WDK 安装中找到 DevCon 工具。 之后，就可以运行生成的驱动程序示例了。
 
-若要在目标系统上安装该驱动程序，请执行以下步骤。
+若要在目标系统上安装驱动程序，请执行以下步骤。
 
 **启用测试签名驱动程序**
 
-启用的功能，若要运行测试签名驱动程序：
+启用运行测试签名驱动程序的功能：
 
 a. 打开 Windows 设置。
 
-b. 在更新和安全中，选择**恢复**。
+b. 在 "更新和安全性" 中，选择 "**恢复**"。
 
-c. 在下，高级启动时，单击**立即重新启动**。
+c. 在 "高级启动" 下，单击 "**立即重新启动**"。
 
-d. 当 PC 重新启动时，选择**启动选项**。 在 Windows 10 中，选择**进行故障排除** > **高级选项** > **启动设置**，然后单击重新启动按钮。 
+d. 重新启动计算机时，请选择 "**启动选项**"。 在 Windows 10 中，选择 "**故障排除**" > **高级选项**" > **启动设置**"，然后单击 "重新启动" 按钮。 
 
-e. 通过按选择禁用强制驱动程序签名**F7**密钥。
+e. 按**F7**键，选择 "禁用驱动程序签名强制"。
 
 f. 重新启动目标计算机。
 
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-导航到 WDK 安装中的工具文件夹并找到 DevCon 工具。 例如，在以下文件夹中查看：
+导航到 WDK 安装中的 "工具" 文件夹，并找到 DevCon 工具。 例如，在以下文件夹中查看：
 
-*C:\\Program Files (x86)\\Windows 工具包\\10\\工具\\x64\\devcon.exe*内置的驱动程序包的目标上创建一个文件夹 (例如， *C:\\EchoDriver*)。 从主计算机上的前面所述的内置驱动程序复制的所有文件并将其保存到目标计算机创建的文件夹。
+*C：\\Program Files （x86）\\Windows 工具包\\10\\工具\\x64\\devcon*在目标上为生成的驱动程序包创建一个文件夹（例如， *C：\\EchoDriver*）。 复制主机计算机上前面介绍的生成驱动程序中的所有文件，并将它们保存到在目标计算机上创建的文件夹。
 
-在主机系统上找到.cer 证书，而是在包含内置的驱动程序文件的文件夹中的主机计算机上的同一文件夹中。 在目标计算机上，右键单击该证书文件，然后单击**安装**，然后按照提示安装测试证书。
+在主机系统上找到 .cer 证书，该证书位于主计算机上包含生成的驱动程序文件的文件夹中的相同文件夹中。 在目标计算机上，右键单击证书文件，然后单击 "**安装**"，然后按照提示安装测试证书。
 
-如果设置的目标计算机需要更多详细的说明，请参阅[手动驱动程序部署准备计算机](../develop/preparing-a-computer-for-manual-driver-deployment.md)。
+如果需要有关设置目标计算机的更详细说明，请参阅为[手动驱动程序部署准备计算机](../develop/preparing-a-computer-for-manual-driver-deployment.md)。
 
-**-&gt; 在目标系统上**
+**目标系统上的-&gt;**
 
 **安装驱动程序**
 
-以下说明介绍如何安装和测试的示例驱动程序。 以下是将用于安装驱动程序的 devcon 工具的常规语法：
+下面的说明演示了如何安装和测试示例驱动程序。 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
 *devcon install &lt;INF file&gt; &lt;hardware ID&gt;*
 
-安装此驱动程序所需的 INF 文件*echo.inf*。 Inf 文件包含用于安装的硬件 ID *echo.sys*。 Echo 示例硬件 ID 是**根\\ECHO**。
+安装此驱动程序所需的 INF 文件为 " *echo*"。 Inf 文件包含用于安装*echo*的硬件 ID。 对于回显示例，硬件 ID 是**根\\echo**。
 
-在目标计算机上，以管理员身份打开命令提示符窗口。 导航到驱动程序的包文件夹，并输入以下命令：
+在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到驱动程序包文件夹，然后输入以下命令：
 
-**devcon 安装 echo.inf 根\\ECHO**如果你收到一条错误消息*devcon*未被识别，请尝试添加的路径*devcon*工具。 例如，如果复制到名为的文件夹*c:\\工具*，然后尝试使用以下命令：
+**devcon install echo root\\echo**如果收到有关无法识别的*devcon*的错误消息，请尝试将路径添加到*devcon*工具。 例如，如果将该文件复制到名为*C：\\Tools*的文件夹，请尝试使用以下命令：
 
-**c:\\工具\\devcon 安装 echo.inf 根\\ECHO** ，该值指示测试驱动程序未签名的驱动程序将出现一个对话框。 单击**仍然安装此驱动程序**以继续。
+**c：\\工具\\devcon 安装 echo root\\echo**将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 单击“仍然安装此驱动程序”以继续。
 
-![windows 安全警告-windows 无法验证该驱动程序软件的发布者](images/debuglab-image-install-security-warning.png)
+![windows 安全警告-windows 无法验证此驱动程序软件的发布者](images/debuglab-image-install-security-warning.png)
 
-有关详细说明，请参阅[配置一台计算机的驱动程序部署、 测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
+有关更多详细说明，请参阅[配置计算机以进行驱动程序部署、测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 
-已成功安装后的示例驱动程序，现在，你准备好对其进行测试。
+成功安装示例驱动程序后，就可以对其进行测试了。
 
-**检查驱动程序在设备管理器**
+**查看设备管理器中的驱动程序**
 
-在目标计算机，在命令提示符窗口中，输入**devmgmt**打开设备管理器。 在设备管理器中，在视图菜单上选择按类型列出的设备。 在设备树中，找到*示例 WDF Echo 驱动程序*示例设备节点中。
+在目标计算机上的命令提示符窗口中，输入**devmgmt.msc** open 设备管理器。 在设备管理器的 "视图" 菜单上，选择 "设备（按类型）"。 在设备树中，找到示例设备节点中的 "*示例 WDF 回显驱动程序*"。
 
-![设备管理器树中突出显示的示例 wdf echo 驱动程序](images/debuglab-image-device-manager-echo.png)
+![突出显示了示例 wdf 回显驱动程序的设备管理器树](images/debuglab-image-device-manager-echo.png)
 
 **测试驱动程序**
 
-类型**echoapp**以启动测试回显应用程序，以确认该驱动程序可正常运行。
+键入**echoapp**以启动测试回显应用，以确认该驱动程序是否正常运行。
 
 ```dbgcmd
 C:\Samples\KMDF_Echo_Sample> echoapp
@@ -510,42 +510,42 @@ Pattern Verified successfully
 Pattern Verified successfully
 ```
 
-## <a name="span-idusewindbgtodisplayinformationspanspan-idusewindbgtodisplayinformationspanspan-idusewindbgtodisplayinformationspansection-5-use-windbg-to-display-information-about-the-driver"></a><span id="UseWinDbgToDisplayInformation"></span><span id="usewindbgtodisplayinformation"></span><span id="USEWINDBGTODISPLAYINFORMATION"></span>第 5 部分：使用 WinDbg 显示有关驱动程序的信息
+## <a name="span-idusewindbgtodisplayinformationspanspan-idusewindbgtodisplayinformationspanspan-idusewindbgtodisplayinformationspansection-5-use-windbg-to-display-information-about-the-driver"></a><span id="UseWinDbgToDisplayInformation"></span><span id="usewindbgtodisplayinformation"></span><span id="USEWINDBGTODISPLAYINFORMATION"></span>第5节：使用 WinDbg 显示有关驱动程序的信息
 
-*第 5 节中将设置符号路径，并使用内核调试器命令以显示有关 KMDF echo 示例驱动程序信息。*
+*在第5部分中，您将设置符号路径并使用内核调试器命令显示有关 KMDF echo 示例驱动程序的信息。*
 
-通过执行以下步骤来查看有关该驱动程序的信息。
+通过执行以下步骤来查看有关驱动程序的信息。
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-1.  如果关闭调试器时，打开管理员命令提示符窗口中再次使用以下命令。
+1.  如果关闭了调试器，请在管理员命令提示符窗口中使用以下命令重新打开它。
 
     ```dbgcmd
     WinDbg -k net:port=50000,key=1.2.3.4
     ```
 
-2.  使用 Ctrl + Break (Scroll Lock) 分解为目标系统上运行的代码。
+2.  使用 Ctrl + Break （滚动锁定）进入目标系统上运行的代码。
 
 **设置符号路径**
 
-1.  若要向 Microsoft 符号服务器在 WinDbg 环境中设置符号路径，请使用 **.symfix**命令。
+1.  若要在 WinDbg 环境中将符号路径设置为 Microsoft 符号服务器，请使用**symfix**命令。
 
     ```dbgcmd
     0: kd> .symfix
     ```
 
-2.  若要添加你的本地符号位置使用本地符号，添加以下路径 using **.sympath +** ，然后 **.reload /f**。
+2.  若要添加您的本地符号位置以使用您的本地符号，请使用 **. sympath +** 和 then **/f**添加该路径。
 
     ```dbgcmd
     0: kd> .sympath+ C:\DriverSamples\general\echo\kmdf
     0: kd> .reload /f
     ```
 
-    **请注意** **.reload**命令 **/f** force 选项将删除指定的模块的所有符号信息，然后重新加载符号。 在某些情况下，此命令还将重新加载或卸载该模块本身。
+    **注意** 带有 **/f** force 选项的**reload.sql**命令将删除指定模块的所有符号信息，并重新加载符号。 在某些情况下，此命令还会重新加载或卸载模块本身。
 
 
 
-**请注意**必须加载正确的符号使用 WinDbg 提供的高级的功能。 如果不具有正确配置的符号，将收到消息，指示的符号不可用时尝试使用依赖于符号的功能。
+**注意** 您必须加载适当的符号才能使用 WinDbg 提供的高级功能。 如果未正确配置符号，则在尝试使用依赖于符号的功能时，你将收到一条消息，指示符号不可用。
 
 ```dbgcmd
 0:000> dv
@@ -559,16 +559,16 @@ Type “.hh dbgerr005” for details.
 **注意**  
 **符号服务器**
 
-有多种方法可用于使用符号。 在许多情况下，您可以从符号服务器，Microsoft 提供了在需要时访问符号配置 PC。 本演练假设将使用此方法。 如果你的环境中的符号不在不同的位置，来修改使用该位置的步骤。 有关其他信息，请参阅[符号存储区和符号服务器](symbol-stores-and-symbol-servers.md)。
+有多种方法可用于处理符号。 在许多情况下，可以将 PC 配置为从 Microsoft 在需要时提供的符号服务器访问符号。 本演练假定将使用此方法。 如果你的环境中的符号位于不同的位置，请修改这些步骤以使用该位置。 有关其他信息，请参阅[符号存储和符号服务器](symbol-stores-and-symbol-servers.md)。
 
 
 
 **注意**  
 **了解源代码符号要求**
 
-若要执行源代码调试，必须生成选中 （调试） 版本的二进制文件的位置。 编译器会创建符号文件 （.pdb 文件）。 这些符号文件将显示在调试器的二进制说明如何与源行相对应。 此外必须可以访问调试器本身的实际源文件。
+若要执行源调试，必须生成已选中（调试）的二进制文件版本。 编译器将创建符号文件（.pdb 文件）。 这些符号文件将显示调试器与源行的对应关系。 实际的源文件本身还必须可供调试器访问。
 
-符号文件不包含源代码的文本。 对于调试，最好是如果链接器不会优化你的代码。 源调试和本地变量的访问权限是更困难，并且有时几乎不可能，如果代码已经过优化。 如果您无法查看本地变量或源行，设置以下生成选项：
+符号文件不包含源代码的文本。 对于调试，最好是链接器不优化代码。 如果代码已经过优化，则源调试和对本地变量的访问更难，有时可能几乎不可能。 如果在查看本地变量或源行时遇到问题，请设置以下生成选项：
 
 ```console
 set COMPILE_DEBUG=1
@@ -577,7 +577,7 @@ set ENABLE_OPTIMIZER=0
 
 
 
-1. 键入以下命令在命令区域中的调试器显示 echo 驱动程序有关的信息：
+1. 在调试器的 "命令" 区域中键入以下内容以显示有关 echo 驱动程序的信息：
 
    ```dbgcmd
    0: kd> lm m echo* v
@@ -590,15 +590,15 @@ set ENABLE_OPTIMIZER=0
    ...  
    ```
 
-   有关信息，请参阅[ **lm**](lm--list-loaded-modules-.md)。
+   有关信息，请参阅[**lm**](lm--list-loaded-modules-.md)。
 
-2. 因为我们设置首选\_dml = 1 更早版本，输出的某些元素是可单击的快速链接。 单击*浏览所有全局符号链接*中调试输出以显示有关以字母开头的项符号信息"a"。
+2. 由于我们将首选\_dml = 1，因此输出的某些元素是可单击的热链接。 单击 "调试输出" 中的 "*浏览所有全局符号" 链接*，以显示以字母 "a" 开头的项符号的相关信息。
 
    ```dbgcmd
    0: kd> x /D Echo!a*
    ```
 
-3. 事实证明，echo 示例不包含任何符号以字母开头的"a"，因此若要显示的 echo 驱动程序与关联的符号以回显，开头的所有信息键入 * * x ECHO ！Echo\\* * *。
+3. 事实证明，echo 示例中不包含以字母 "a" 开头的任何符号，因此，若要显示与 echo 驱动程序相关联的所有符号的相关信息，以 Echo 开头，请键入 * * x ECHO！回显\\* * *。
 
    ```dbgcmd
    0: kd> x ECHO!Echo*
@@ -609,9 +609,9 @@ set ENABLE_OPTIMIZER=0
    ...
    ```
 
-   有关信息，请参阅[ **（检查符号） x**](x--examine-symbols-.md)。
+   有关信息，请参阅[**x （检查符号）** ](x--examine-symbols-.md)。
 
-4. **！ Lmi**扩展显示有关模块的详细的信息。 类型 **！ lmi echo**。 输出应类似于如下所示的文本。
+4. **！ Lmi**扩展显示有关模块的详细信息。 键入 **！ lmi echo**。 输出应类似于下面所示的文本。
 
    ```dbgcmd
    0: kd> !lmi echo
@@ -622,7 +622,7 @@ set ENABLE_OPTIMIZER=0
    … 
    ```
 
-5. 使用 **！ dh**扩展名，即可显示标头信息，如下所示。
+5. 使用 **！ dh**扩展显示标头信息，如下所示。
 
    ```dbgcmd
    0: kd> !dh echo
@@ -637,19 +637,19 @@ set ENABLE_OPTIMIZER=0
 
 6. **设置调试掩码**
 
-   以下内容，以更改默认调试位掩码，以便所有调试从目标系统的消息将显示在调试器中的类型。
+   键入以下项以更改默认调试位掩码，以便从目标系统中的所有调试消息都显示在调试器中。
 
    ```dbgcmd
    0: kd> ed nt!Kd_DEFAULT_MASK  0xFFFFFFFF
    ```
 
-   某些驱动程序将使用掩码为 0xFFFFFFFF 时显示的其他信息。 如果你想要减少显示的信息，请将掩码设置为 0x00000000。
+   当使用0xFFFFFFFF 的掩码时，某些驱动程序将显示其他信息。 如果要减少显示的信息量，请将掩码设置为0x00000000。
 
    ```dbgcmd
    0: kd> ed nt!Kd_DEFAULT_MASK  0x00000000
    ```
 
-   使用 dd 命令以显示确认掩码设置为显示所有调试器消息。 
+   使用 dd 命令显示 "确认掩码" 设置为显示所有调试器消息。 
 
    ```dbgcmd
    0: kd> dd nt!kd_DEFAULT_MASK 
@@ -664,17 +664,17 @@ set ENABLE_OPTIMIZER=0
    ```
 
 
-## <a name="span-iddisplayingtheplugandplaydevicetreespanspan-iddisplayingtheplugandplaydevicetreespanspan-iddisplayingtheplugandplaydevicetreespansection-6-displaying-plug-and-play-device-tree-information"></a><span id="DisplayingThePlugAndPlayDeviceTree"></span><span id="displayingtheplugandplaydevicetree"></span><span id="DISPLAYINGTHEPLUGANDPLAYDEVICETREE"></span>第 6 部分：显示插设备树信息
+## <a name="span-iddisplayingtheplugandplaydevicetreespanspan-iddisplayingtheplugandplaydevicetreespanspan-iddisplayingtheplugandplaydevicetreespansection-6-displaying-plug-and-play-device-tree-information"></a><span id="DisplayingThePlugAndPlayDeviceTree"></span><span id="displayingtheplugandplaydevicetree"></span><span id="DISPLAYINGTHEPLUGANDPLAYDEVICETREE"></span>第6部分：显示即插即用设备树信息
 
-*在第 6 节，将显示有关 echo 示例设备驱动程序的信息和何处插设备树中。*
+*在第6部分中，将显示有关 echo 示例设备驱动程序以及它在即插即用设备树中的位置的信息。*
 
-Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排除。 例如，如果设备驱动程序不是驻留在设备树中，可以安装设备驱动程序出现问题。
+有关故障排除的详细信息，请查看即插即用设备树中的设备驱动程序。 例如，如果设备驱动程序不在设备树中，则设备驱动程序的安装可能会出现问题。
 
 有关设备节点调试扩展的详细信息，请参阅[ **！ devnode**](-devnode.md)。
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-1. 若要查看在插设备树中的所有设备节点，请输入 **！ devnode 0 1**命令。
+1. 若要查看即插即用设备树中的所有设备节点，请输入 **！ devnode 0 1**命令。
 
    ```dbgcmd
    0: kd> !devnode 0 1
@@ -692,11 +692,11 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
    …
    ```
 
-2. 使用 Ctrl + F 来生成，以查找设备驱动程序，该名称在输出中搜索*echo*。
+2. 使用 Ctrl + F 在生成的输出中搜索，以查找设备驱动程序的名称， *echo*。
 
-   ![查找对话框显示要搜索的术语回显](images/debuglab-image-find-dialog.png)
+   ![显示要搜索的字词回显的 "查找" 对话框](images/debuglab-image-find-dialog.png)
 
-3. 应加载 echo 设备驱动程序。 使用 **！ devnode 0 1 echo**命令以显示插信息与我们回显设备驱动程序相关联，如下所示。
+3. 应加载 echo 设备驱动程序。 使用 **！ devnode 0 1 echo**命令显示与回显设备驱动程序关联的即插即用信息，如下所示。
 
    ```dbgcmd
    0: Kd> !devnode 0 1 echo
@@ -709,7 +709,7 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
    …
    ```
 
-4. 前一个命令中显示的输出包括与正在运行的驱动程序实例相关联的是 PDO，在此示例中它是*0xffffe0007b71a960*。 输入 **！ devobj**<em>&lt;PDO 地址&gt;</em>命令以显示与 echo 设备驱动程序相关联的插信息。 使用 PDO 解决 **！ devnode**显示在您 PC 上，不是如下所示。
+4. 前一个命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO，在此示例中为*0xffffe0007b71a960*。 输入 **！ devobj** <em>&lt;PDO address&gt;</em>命令，以显示与 echo 设备驱动程序关联即插即用信息。 使用 **！ devnode**在你的电脑上显示的 PDO 地址，而不是此处显示的地址。
 
    ```dbgcmd
    0: kd> !devobj 0xffffe0007b71a960
@@ -723,7 +723,7 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
    Device queue is not busy.
    ```
 
-5. 中显示的输出 **！ 0 1 devnode**命令包含与正在运行的驱动程序实例关联的 PDO 地址，在此示例很*0xffffe0007b71a960*。 输入 **！ devstack**<em>&lt;PDO 地址&gt;</em>命令以显示与设备驱动程序相关联的插信息。 使用 PDO 解决 **！ devnode**显示在您 PC 上，不是如下所示。
+5. **！ Devnode 0 1**命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO 地址，在此示例中为*0xffffe0007b71a960*。 输入 **！ devstack** <em>&lt;PDO address&gt;</em>命令，以显示与设备驱动程序相关即插即用信息。 使用 **！ devnode**在你的电脑上显示的 PDO 地址，而不是以下显示的地址。
 
    ```dbgcmd
    0: kd> !devstack 0xffffe0007b71a960
@@ -735,32 +735,32 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
      ServiceName is "ECHO"
    ```
 
-输出显示有相当简单的设备驱动程序堆栈。 Echo 驱动程序是 PnPManager 节点的子节点。 PnPManager 是根节点。
+输出显示我们有一个相当简单的设备驱动程序堆栈。 Echo 驱动程序是 PnPManager 节点的子节点。 PnPManager 是根节点。
 
 \Driver\ECHO      
 
 \Driver\PnpManager
 
-下图显示了更复杂的设备节点树。
+此图显示了更复杂的设备节点树。
 
-![设备有大约具有 20 个节点的节点树](images/debuglab-image-device-node-tree.png)
+![包含大约20个节点的设备节点树](images/debuglab-image-device-node-tree.png)
 
-**请注意**有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)并[设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
+**注意** 有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)和[设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
 
 
 
-## <a name="span-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspansection-7-working-with-breakpoints-and-source-code"></a><span id="WorkingWithBreakpoints"></span><span id="workingwithbreakpoints"></span><span id="WORKINGWITHBREAKPOINTS"></span>第 7 部分：使用断点和源代码
+## <a name="span-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspansection-7-working-with-breakpoints-and-source-code"></a><span id="WorkingWithBreakpoints"></span><span id="workingwithbreakpoints"></span><span id="WORKINGWITHBREAKPOINTS"></span>第7部分：使用断点和源代码
 
-*第 7 节中将设置断点并单步执行完内核模式下的源代码。*
+*在第7部分中，您将通过内核模式源代码设置断点和单步执行。*
 
 **注意**  
 **使用命令设置断点**
 
-若要能够单步执行代码，并检查在真实时间中的变量的值，我们需要启用断点，并将路径设置为的源代码。
+为了能够逐步执行代码并检查变量的值，我们需要启用断点并设置源代码的路径。
 
-使用断点来中断代码执行一个特定的代码行。 你可以然后单步前进在代码中从该点，若要调试该特定代码部分。
+断点用于在特定代码行处停止执行代码。 然后，可以从该点开始前进，以调试该代码的特定部分。
 
-若要设置使用调试命令断点，请使用以下值之一**b**命令。
+若要使用调试命令设置断点，请使用下列**b**命令之一。
 
 <table>
 <colgroup>
@@ -769,16 +769,16 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>bp</p></td>
-<td align="left"><p>设置断点将处于活动状态，直到卸载的模块。</p></td>
+<td align="left"><p>最佳</p></td>
+<td align="left"><p>设置一个断点，该断点将在卸载之前处于活动状态。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>bu</p></td>
-<td align="left"><p>设置断点时该模块卸载并重新启用时重新加载该模块未经解析。</p></td>
+<td align="left"><p>设置在卸载模块时未解析的断点，在模块重新加载时重新启用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>bm</p></td>
-<td align="left"><p>设置符号的断点。 此命令将适当地使用 bu 或最佳实践，并允许通配符 * 以用于在每个符号相匹配 （如在类中的所有方法） 上设置断点。</p></td>
+<td align="left"><p>bm.exe</p></td>
+<td align="left"><p>设置符号的断点。 此命令将适当地使用 bu 或 bp，并允许使用通配符 * 来设置每个匹配的符号（如类中的所有方法）上的断点。</p></td>
 </tr>
 </tbody>
 </table>
@@ -787,25 +787,25 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
 
 
 
-有关详细信息，请参阅[源代码调试在 WinDbg 中](source-window.md)调试的参考文档中。
+有关详细信息，请参阅调试参考文档[中的 WinDbg 中的源代码调试](source-window.md)。
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-1.  使用 WinDbg UI 以确认**调试** &gt; **源模式**当前 WinDbg 会话中启用。
+1.  使用 WinDbg UI 确认在当前 WinDbg 会话中启用了**调试**&gt;**源模式**。
 
-2.  通过键入以下命令将你的本地代码位置添加到源路径。
+2.  键入以下命令，将本地代码位置添加到源路径。
 
     ```dbgcmd
     .srcpath+ C:\DriverSamples\KMDF_Echo_Sample\driver\AutoSync
     ```
 
-3.  通过键入以下命令将你的本地符号位置添加到符号路径。
+3.  键入以下命令，将本地符号位置添加到符号路径中。
 
     ```dbgcmd
     .sympath+ C:\DriverSamples\KMDF_Echo_Sample\driver\AutoSync
     ```
 
-4.  我们将使用**x**命令来检查 echo 驱动程序，以确定要使用断点的函数名称与相关联的符号。 我们可以使用通配符或 Ctrl + F 来定位**DeviceAdd**函数名称。
+4.  我们将使用**x**命令来检查与 echo 驱动程序关联的符号，以确定用于该断点的函数名称。 我们可以使用通配符或 Ctrl + F 来查找**DeviceAdd**函数名称。
 
     ```dbgcmd
     0: kd> x ECHO!EchoEvt*
@@ -818,11 +818,11 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
     …
     ```
 
-    上面的输出显示**DeviceAdd**我们回显驱动程序的方法是*ECHO ！EchoEvtDeviceAdd*。
+    以上输出显示了回显驱动程序的**DeviceAdd**方法为*echo！EchoEvtDeviceAdd*。
 
-    或者，我们可以查看源代码，以找到的断点的所需的函数名称。
+    另外，我们还可以查看源代码，为断点找到所需的函数名称。
 
-5.  设置的断点**bm**命令使用驱动程序后, 跟函数名称的名称 (例如**AddDevice**) 在你想要设置断点，分隔一个感叹号。 我们将使用**AddDevice**观看所加载的驱动程序。
+5.  使用**bm.exe**命令设置断点，使用驱动程序名称，后跟要设置断点的函数名称（例如**AddDevice**），用感叹号分隔。 我们将使用**AddDevice**来监视正在加载的驱动程序。
 
     ```dbgcmd
     0: kd> bm ECHO!EchoEvtDeviceAdd
@@ -830,45 +830,45 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
     ```
 
     **注意**  
-    可以使用不同的语法与设置变量，如结合&lt;模块&gt;！&lt;符号&gt;，&lt;类&gt;::&lt;方法&gt;，&lt;file.cpp&gt;:&lt;行号&gt;，或跳过数乘以&lt;条件&gt; &lt; \# &gt;。 有关详细信息，请参阅[WinDbg 和其他 Windows 调试器中的条件断点](setting-a-conditional-breakpoint.md)。
+    可以将不同语法与 &lt;module&gt;的设置变量结合使用！&lt;符号&gt;、&lt;类&gt;：：&lt;方法&gt;、"&lt;file .cpp&gt;：&lt;行号&gt;"，或跳过多次 &lt;条件&gt; &lt;\#&gt;。 有关详细信息，请参阅[WinDbg 和其他 Windows 调试器中的条件断点](setting-a-conditional-breakpoint.md)。
 
 
 
-6.  列出要确认通过键入来设置了断点的当前断点**bl**命令。
+6.  列出当前断点以确认是否通过键入**bl**命令设置了断点。
 
     ```dbgcmd
     0: kd> bl
     1 e fffff801`0bf9b1c0     0001 (0001) ECHO!EchoEvtDeviceAdd
     ```
 
-    在上面所示的输出中的"e"指示启用断点数 1 激发。
+    上面显示的输出中的 "e" 表示启用了断点号1。
 
-7.  重新在目标系统上的执行代码启动通过键入**转**命令**g**。
+7.  在目标系统上重新启动代码执行，方法是键入 "**开始**" 命令**g**。
 
-8.  **-&gt; 在目标系统上**
+8.  **目标系统上的-&gt;**
 
-    在 Windows 中，打开**设备管理器**使用的图标，或通过输入**mmc devmgmt.msc**。 在设备管理器中，展开**示例**节点。
+    在 Windows 中，使用图标或输入**mmc devmgmt.msc**打开**设备管理器**。 在设备管理器中，展开 "**示例**" 节点。
 
-9.  右键单击 KMDF Echo 驱动程序条目，然后选择**禁用**菜单中。
+9.  右键单击 "KMDF Echo 驱动程序" 条目，然后从菜单中选择 "**禁用**"。
 
-10. 再次右键单击 KMDF Echo 驱动程序条目，然后选择**启用**菜单中。
+10. 再次右键单击 "KMDF Echo 驱动程序" 条目，然后从菜单中选择 "**启用**"。
 
-11. **&lt;在主机系统**
+11. **&lt;-主机系统上**
 
-    启用驱动程序后， [ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)调试断点应触发，并且在目标系统上的驱动程序代码的执行应暂停。 当到达断点时，应开始时停止执行*AddDevice*例程。 调试命令输出会显示"命中断点 1"。
+    如果启用了驱动程序，则应激发[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)调试断点，并且应停止目标系统上的驱动程序代码的执行。 命中断点时，应在*AddDevice*例程开始时停止执行。 调试命令输出将显示 "命中断点 1"。
 
-    ![windbg 显示示例代码局部变量和命令窗口](images/debuglab-image-breakpoint-echo-deviceadd.png)
+    ![显示示例代码局部变量和命令窗口的 windbg](images/debuglab-image-breakpoint-echo-deviceadd.png)
 
-12. 通过键入逐步执行代码--逐行**p**命令或按 F10，直到达到以下结尾[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 大括号字符"}"将突出显示所示。
+12. 键入**p**命令或按 F10 逐行逐行执行代码，直到到达[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的以下结尾。 将突出显示大括号字符 "}"。
 
-    ![显示在开头 adddevice 例程时突出显示的大括号字符的代码窗口](images/debuglab-image-breakpoint-end-deviceadd.png)
+    ![显示 adddevice 例程开头突出显示的大括号字符的代码窗口](images/debuglab-image-breakpoint-end-deviceadd.png)
 
-13. 在下一部分中，我们将执行 DeviceAdd 代码后检查变量的状态。
+13. 在下一部分中，我们将在执行 DeviceAdd 代码后检查变量的状态。
 
 **注意**  
-**修改断点的状态**
+**修改断点状态**
 
-可以使用以下命令来修改现有断点：
+您可以使用以下命令修改现有断点：
 
 <table>
 <colgroup>
@@ -881,30 +881,30 @@ Plug and Play 设备树中的设备驱动程序有关的信息可用于故障排
 <td align="left"><p>列出断点。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>bc</p></td>
-<td align="left"><p>清除列表中的断点。 使用 bc * 若要清除所有断点。</p></td>
+<td align="left"><p>连续性</p></td>
+<td align="left"><p>从列表中清除断点。 使用 bc * 清除所有断点。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>bd</p></td>
-<td align="left"><p>禁用断点。 使用 bd * 若要禁用所有断点。</p></td>
+<td align="left"><p>禁用断点。 使用 bd * 禁用所有断点。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>将</p></td>
-<td align="left"><p>启用断点。 使用 * 若要启用所有断点。</p></td>
+<td align="left"><p>必须</p></td>
+<td align="left"><p>启用断点。 使用 * 启用所有断点。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-或者，您还可以通过单击修改断点**编辑** &gt; **断点**在 WinDbg 中。 请注意，断点对话框仅适用于现有断点。 必须从命令行设置新断点。
+此外，还可以通过单击 "**编辑**" "在 WinDbg 中 &gt;**断点**" 来修改断点。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
 
 
 
 **注意**  
-**设置访问断点的内存**
+**设置内存访问断点**
 
-此外可以设置触发访问的内存位置时的断点。 使用**ba** （换行的访问权限） 命令，使用以下语法。
+还可以设置在访问内存位置时激发的断点。 使用以下语法，使用 " **ba** （访问时中断）" 命令。
 
 ```dbgcmd
 ba <access> <size> <address> {options}
@@ -917,31 +917,31 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Option</th>
+<th align="left">选项</th>
 <th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>E</p></td>
-<td align="left"><p>执行 （时 CPU 会从地址中提取一条指令）</p></td>
+<td align="left"><p>电邮</p></td>
+<td align="left"><p>execute （当 CPU 从地址提取指令时）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>r</p></td>
-<td align="left"><p>读/写 （时 CPU 读取或写入到的地址）</p></td>
+<td align="left"><p>读/写（CPU 读取或写入地址时）</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>W</p></td>
-<td align="left"><p>写入 （当 CPU 将写入地址）</p></td>
+<td align="left"><p>水平</p></td>
+<td align="left"><p>写入（CPU 写入地址时）</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-请注意，在任何给定时间只能设置四个数据断点，它将由您来确保将正确对齐数据或将不会触发该断点 （字必须以整除的地址结尾的一半，dword 值必须是整除 4和四字的 0 或 8)。
+请注意，在任何给定时间，只能设置四个数据断点，并由您确保正确对齐数据或不触发断点（单词必须以2为界限的地址结束，dword 必须可被4整除），并按0或 8 quadwords）。
 
-例如，若要设置特定的内存地址的读/写断点，可以使用如下命令。
+例如，若要在特定内存地址上设置读/写断点，可以使用如下所示的命令。
 
 ```dbgcmd
 ba r 4 0x0003f7bf0
@@ -950,47 +950,47 @@ ba r 4 0x0003f7bf0
 
 
 **注意**  
-**从调试器命令窗口中逐句通过代码**
+**单步执行调试器中的代码命令窗口**
 
-以下是可以使用的命令来逐句通过代码 （具有关联的键盘快捷方式显示在括号中）。
+以下命令可用于单步执行代码（使用括号中显示的关联键盘短切削）。
 
--   中断 (Ctrl + Break)-此命令将中断一个系统，只要系统正在运行，并且是与 WinDbg （内核调试程序中的序列是 Ctrl + C） 的通信中。
+-   中断（Ctrl + Break）-只要系统正在运行且与 WinDbg 通信，则此命令将中断系统（内核调试器中的序列为 Ctrl + C）。
 
--   运行到光标处 （F7 或 Ctrl + F10） – 将光标放在源代码或反汇编窗口中要执行中断操作，然后按 F7;执行代码将运行到该点。 请注意，是否代码执行流将不会访问点表示游标 （IF 语句不会执行），WinDbg 将不会中断，因为代码执行未到达指定的点。
+-   "运行到光标处" （F7 或 Ctrl + F10）–将光标放在要中断执行的源或反汇编窗口中，然后按 F7;代码执行将运行到该点。 请注意，如果代码执行流未到达光标指示的点（不执行 IF 语句），则 WinDbg 不会中断，因为代码执行过程不会到达指示的点。
 
--   运行 (F5) – 运行直到遇到断点时或发生的 bug 检查之类的事件发生。
+-   运行（F5）–直到遇到断点或发生错误检查等事件时运行。
 
--   步跃 (f10) – 此命令将导致代码执行来继续执行一个语句或一次一条指令。 如果遇到调用，代码执行将通过调用而无需输入调用的例程。 (如果编程语言为 C 或C++和 WinDbg 位于源模式中，源模式可以打开或关闭使用**调试**&gt;**源模式**)。
+-   逐过程执行（F10）–此命令可使代码执行一次一条语句或一个指令。 如果遇到调用，代码执行将通过调用而不输入被调用的例程。 （如果编程语言为 C 或C++ ，WinDbg 为源模式，则可以使用 "**调试**&gt;源"**模式**打开或关闭源模式）。
 
--   步骤中 (F11)-此命令是逐过程类似，只不过调用的执行将进入被调用例程。
+-   单步执行（F11）–此命令类似于 "逐过程"，不同之处在于执行调用的操作进入被调用例程。
 
--   跳出 (Shift + F11) – 此命令将导致执行运行并从当前退出例程 （调用堆栈中的当前位置）。 这是很有用，如果您已了解足够多的例程。
+-   跳出（Shift + F11）-此命令将执行运行并从当前例程（位于调用堆栈中的当前位置）中退出。 如果你已看到足够的例程，这会很有用。
 
 
 
-有关详细信息，请参阅[源代码调试在 WinDbg 中](source-window.md)调试的参考文档中。
+有关详细信息，请参阅调试参考文档[中的 WinDbg 中的源代码调试](source-window.md)。
 
-## <a name="span-idviewingvariablesspanspan-idviewingvariablesspanspan-idviewingvariablesspansection-8-viewing-variables-and-call-stacks"></a><span id="ViewingVariables"></span><span id="viewingvariables"></span><span id="VIEWINGVARIABLES"></span>第 8 部分：查看变量和调用堆栈
+## <a name="span-idviewingvariablesspanspan-idviewingvariablesspanspan-idviewingvariablesspansection-8-viewing-variables-and-call-stacks"></a><span id="ViewingVariables"></span><span id="viewingvariables"></span><span id="VIEWINGVARIABLES"></span>第8节：查看变量和调用堆栈
 
-*在第 8 节，将显示有关变量的信息，并调用堆栈。*
+*在第8节中，您将显示有关变量和调用堆栈的信息。*
 
-此实验室假定在你已停止[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程使用前面所述的过程。 若要查看输出显示于此，请重复前面所述的步骤，如有必要。
+此实验室假设你使用前面所述的过程在[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程处停止。 若要在此处查看输出显示内容，请根据需要重复上述步骤。
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
 **显示变量**
 
-使用**视图**&gt; **本地**菜单项以显示本地变量。
+使用 "**视图**&gt;**本地**" 菜单项可显示局部变量。
 
-![windbg 局部变量窗口](images/debuglab-image-display-variables.png)
+![windbg 本地变量窗口](images/debuglab-image-display-variables.png)
 
 **全局变量**
 
-也可以键入找到的全局变量地址位置 *？&lt;变量名&gt;* 。
+您可以通过键入 *？ &lt;变量名&gt;* 来找到全局变量地址的位置。
 
-**本地变量**
+**局部变量**
 
-可以通过键入显示的名称和值的给定的框架的所有局部变量**dv**命令。
+您可以通过键入**dv**命令显示给定帧的所有局部变量的名称和值。
 
 ```dbgcmd
 0: kd> dv
@@ -1002,9 +1002,9 @@ ba r 4 0x0003f7bf0
 **调用堆栈**
 
 **注意**  
-调用堆栈是导致程序计数器当前位置的函数调用链。 在调用堆栈顶部的函数是当前函数，而下一步函数调用当前函数的函数，等等。
+调用堆栈是已导致程序计数器当前位置的函数调用的链。 调用堆栈上的 top 函数是当前函数，下一个函数是调用当前函数的函数，依此类推。
 
-若要显示调用堆栈，请使用 k\*命令。
+若要显示调用堆栈，请使用 k\* 命令。
 
 <table>
 <colgroup>
@@ -1013,16 +1013,16 @@ ba r 4 0x0003f7bf0
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>kb</p></td>
+<td align="left"><p>知识库</p></td>
 <td align="left"><p>显示堆栈和前三个参数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>kp</p></td>
-<td align="left"><p>显示堆栈和参数的完整列表。</p></td>
+<td align="left"><p>显示参数的堆栈和完整列表。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>kn</p></td>
-<td align="left"><p>可以看到它旁边的帧信息堆栈。</p></td>
+<td align="left"><p>允许你查看堆栈，其中包含框架信息。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1031,13 +1031,13 @@ ba r 4 0x0003f7bf0
 
 
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-1. 如果你想要保留可用的调用堆栈，则可以单击**视图** &gt; **调用堆栈**查看它。 单击可切换的附加信息显示在窗口顶部的列。
+1. 如果要保留可用的调用堆栈，可以单击 "**查看**&gt;**调用堆栈**" 以查看该堆栈。 单击窗口顶部的列可以切换其他信息的显示。
 
-![windbg 显示调用堆栈窗口](images/debuglab-image-display-callstacks.png)
+![windbg 显示 "调用堆栈" 窗口](images/debuglab-image-display-callstacks.png)
 
-2. 使用**kn**命令，以调试示例适配器代码中中断状态时显示调用堆栈。
+2. 使用**kn**命令可在调试中断状态下的示例适配器代码时显示调用堆栈。
 
 ```dbgcmd
 3: kd> kn
@@ -1051,22 +1051,22 @@ ba r 4 0x0003f7bf0
 ...
 ```
 
-调用堆栈显示了内核 (nt) 到插代码 （即插即用），名为的 code 驱动程序框架 (WDF)，随后调用 echo 驱动程序**DeviceAdd**函数。
+调用堆栈显示调用的内核（nt）即插即用代码（PnP）中，该代码调用了驱动程序框架代码（WDF），后者随后称为 echo driver **DeviceAdd**函数。
 
-## <a name="span-iddisplayingprocessesandthreadsspanspan-iddisplayingprocessesandthreadsspanspan-iddisplayingprocessesandthreadsspansection-9-displaying-processes-and-threads"></a><span id="DisplayingProcessesAndThreads"></span><span id="displayingprocessesandthreads"></span><span id="DISPLAYINGPROCESSESANDTHREADS"></span>第 9 部分：显示进程和线程
+## <a name="span-iddisplayingprocessesandthreadsspanspan-iddisplayingprocessesandthreadsspanspan-iddisplayingprocessesandthreadsspansection-9-displaying-processes-and-threads"></a><span id="DisplayingProcessesAndThreads"></span><span id="displayingprocessesandthreads"></span><span id="DISPLAYINGPROCESSESANDTHREADS"></span>第9部分：显示进程和线程
 
-### <a name="span-idprocessesspanspan-idprocessesspanspan-idprocessesspanprocesses"></a><span id="Processes"></span><span id="processes"></span><span id="PROCESSES"></span>Processes
+### <a name="span-idprocessesspanspan-idprocessesspanspan-idprocessesspanprocesses"></a><span id="Processes"></span><span id="processes"></span><span id="PROCESSES"></span>工艺
 
-*在第 9 节，将显示有关进程和线程在内核模式下运行的信息。*
+*在第9部分中，将显示有关在内核模式下运行的进程和线程的信息。*
 
 **注意**  
-可以显示或通过设置进程信息[ **！ 过程**](-process.md)调试器扩展。 我们将设置断点，以检查时，将会播放声音，将使用的过程。
+您可以使用[ **！ process**](-process.md)调试器扩展显示或设置过程信息。 我们将设置一个断点来检查播放声音时使用的进程。
 
 
 
-1. **&lt;在主机系统**
+1. **&lt;-主机系统上**
 
-   类型**dv**命令，检查与关联的区域设置变量**EchoEvtIo**例程所示。
+   键入**dv**命令来检查与**EchoEvtIo**例程关联的区域设置变量，如下所示。
 
    ```dbgcmd
    0: kd> dv ECHO!EchoEvtIo*
@@ -1075,13 +1075,13 @@ ba r 4 0x0003f7bf0
    ECHO!EchoEvtIoRead         
    ```
 
-2. 清除上一个断点使用 * * bc \\* * *。
+2. 使用 * * bc \\* * * 清除前面的断点。
 
    ```dbgcmd
    0: kd> bc *  
    ```
 
-3. 3. 设置符号断点**EchoEvtIo**例程使用以下命令。
+3. 3. 使用以下命令在**EchoEvtIo**例程上设置符号断点。
 
    ```dbgcmd
    0: kd> bm ECHO!EchoEvtIo*
@@ -1090,7 +1090,7 @@ ba r 4 0x0003f7bf0
      4: aade54c0          @!”ECHO!EchoEvtIoRead”
    ```
 
-4. 列出要确认正确设置了断点的断点。
+4. 列出断点以确认是否正确设置了断点。
 
    ```dbgcmd
    0: kd> bl
@@ -1098,19 +1098,19 @@ ba r 4 0x0003f7bf0
    ...
    ```
 
-5. 类型**g**重新启动代码执行。
+5. 键入**g**以重新启动代码执行。
 
    ```dbgcmd
    0: kd> g
    ```
 
-6. **-&gt; 在目标系统上**
+6. **目标系统上的-&gt;**
 
-   在目标系统上运行 EchoApp.exe 驱动程序测试程序。
+   在目标系统上运行 EchoApp 驱动程序测试程序。
 
-7. **&lt;在主机系统**
+7. **&lt;-主机系统上**
 
-   测试应用运行时，将调用该驱动程序中的 I/O 例程。 这会导致断点激发，并在目标系统上的驱动程序代码的执行都将停止。
+   测试应用运行时，将调用驱动程序中的 i/o 例程。 这将导致触发断点，并使目标系统上的驱动程序代码执行停止。
 
    ```dbgcmd
    Breakpoint 2 hit
@@ -1118,7 +1118,7 @@ ba r 4 0x0003f7bf0
    fffff801`0bf95810 4c89442418      mov     qword ptr [rsp+18h],r8
    ```
 
-8. 使用 **！ 过程**命令以显示当前所涉及的进程中运行 echoapp.exe。
+8. 使用 **！ process**命令显示运行 echoapp 所涉及的当前进程。
 
    ```dbgcmd
    0: kd> !process
@@ -1146,9 +1146,9 @@ ba r 4 0x0003f7bf0
            THREAD ffffe00080e32080  Cid 03c4.0ec0  Teb: 00007ff7cfece000 Win32Thread: 0000000000000000 RUNNING on processor 1
    ```
 
-   该输出显示过程都与 echoapp.exe 命中的断点上驱动程序写入事件时正在运行的关联。 有关详细信息，请参阅[ **！ 过程**](-process.md)。
+   此输出显示该进程与 echoapp 关联，该进程是在命中驱动程序写入事件上的断点时运行的。 有关详细信息，请参阅[ **！ process**](-process.md)。
 
-9. 使用 **！ process 0 0**以显示所有进程的摘要信息。 在输出中，使用 CTRL + F 来查找与 echoapp.exe 映像关联的进程的相同过程地址。 在如下所示示例中，进程地址是 ffffe0007e6a7780。
+9. 使用 **！ process 0 0**显示所有进程的摘要信息。 在输出中，使用 CTRL + F 定位与 echoapp 映像关联的进程的相同进程地址。 在下面所示的示例中，进程地址为 ffffe0007e6a7780。
 
    ```dbgcmd
    ...
@@ -1161,13 +1161,13 @@ ba r 4 0x0003f7bf0
    ...
    ```
 
-10. 与 echoapp.exe 以更高版本在此实验室中使用关联的记录进程 ID。 CTRL + C，还可用于将地址复制到复制缓冲区以供将来使用。
+10. 记录与 echoapp 关联的进程 ID 以在此实验室稍后使用。 你还可以使用 CTRL + C 将地址复制到复制缓冲区以供以后使用。
 
-    \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_（echoapp.exe 进程地址）
+    \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_（echoapp 进程地址）
 
-11. 输入**g**调试器要前滚 echoapp.exe 完成运行之前运行此代码中所需的方式。 它将在读取命中了断点，并编写大量的时间的事件。 Echoapp.exe 完成后，在中中断到调试器，通过按 CTRL + ScrLk (Ctrl + Break)。
+11. 在调试器中将**g**输入为必需，以便向前运行代码，直到 echoapp 运行完毕。 它会多次命中读写事件中的断点。 当 echoapp 完成时，按 CTRL + ScrLk （Ctrl + Break）中断到调试器。
 
-12. 使用 **！ 过程**命令以确认现在运行不同的进程。 在输出如下所示，映像值为进程*系统*不同于*Echo*图像值。
+12. 使用 **！ process**命令确认现在正在运行不同的进程。 在下面显示的输出中，具有*系统*映像值的进程不同于*Echo* Image 值。
 
     ```dbgcmd
     1: kd> !process
@@ -1182,35 +1182,35 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    上面的输出显示系统进程 ffffe0007b65d900 正在运行，当我们停止 OS。
+    上面的输出显示系统进程 ffffe0007b65d900 在停止操作系统时运行。
 
-13. 现在，使用 **！ 过程**命令以尝试查看已与 echoapp.exe 之前记录相关联的进程 ID。 提供你的 echoapp.exe 进程地址之前，而不是如下所示的示例过程地址记录。
+13. 现在，使用 **！ process**命令尝试查看与之前记录的 echoapp 关联的进程 ID。 提供之前记录的 echoapp 进程地址，而不是如下所示的示例进程地址。
 
     ```dbgcmd
     0: kd> !process ffffe0007e6a7780
     TYPE mismatch for process object at 82a9acc0
     ```
 
-    进程对象不再可用，作为 echoapp.exe 进程是不再运行。
+    进程对象不再可用，因为 echoapp 进程不再运行。
 
 ### <a name="span-idthreadsspanspan-idthreadsspanspan-idthreadsspanthreads"></a><span id="Threads"></span><span id="threads"></span><span id="THREADS"></span>线程
 
 **注意**  
-若要查看和设置线程的命令是非常类似于那些进程。 使用[ **！ 线程**](-thread.md)命令查看线程。 使用[ **.thread** ](-thread--set-register-context-.md)设置当前线程。
+用于查看和设置线程的命令与进程的命令非常相似。 使用[ **！ thread**](-thread.md)命令查看线程。 使用[ **. thread**](-thread--set-register-context-.md)设置当前线程。
 
 
 
-1.  **&lt;在主机系统**
+1.  **&lt;-主机系统上**
 
-    输入**g**进入重新启动目标系统上的执行代码的调试器。
+    将**g**输入到调试器中，以在目标系统上重新启动代码执行。
 
-2.  **-&gt; 在目标系统上**
+2.  **目标系统上的-&gt;**
 
-    在目标系统上运行 EchoApp.exe 驱动程序测试程序。
+    在目标系统上运行 EchoApp 驱动程序测试程序。
 
-3.  **&lt;在主机系统**
+3.  **&lt;-主机系统上**
 
-    将命中断点并且执行代码将暂停。
+    断点将被命中，代码执行将暂停。
 
     ```dbgcmd
     Breakpoint 4 hit
@@ -1218,7 +1218,7 @@ ba r 4 0x0003f7bf0
     aade54c0 55              push    ebp
     ```
 
-4.  若要查看正在运行的线程，请键入[ **！ 线程**](-thread.md)。 应显示类似于以下信息：
+4.  若要查看正在运行的线程，请键入[ **！ thread**](-thread.md)。 应显示类似于以下内容的信息：
 
     ```dbgcmd
     0: kd>  !thread
@@ -1231,9 +1231,9 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    记下的映像名称*echoapp.exe*，指示我们正在查看的测试应用程序与关联的线程。
+    请注意*echoapp*的映像名称，表示我们正在查看与该测试应用相关联的线程。
 
-5.  4. 使用 **！ 过程**命令，以确定这是否与 echoapp.exe 关联的进程中运行的唯一线程。 请注意，在过程中正在运行的线程的线程数是运行在同一线程 ！ thread 命令显示。
+5.  4. 使用 **！ process**命令确定这是否是在与 echoapp 关联的进程中运行的唯一线程。 请注意，进程中正在运行的线程的线程号就是运行的、！ thread 命令所运行的线程数。
 
     ```dbgcmd
     0: kd> !process
@@ -1261,11 +1261,11 @@ ba r 4 0x0003f7bf0
             THREAD ffffe000809a0880  Cid 0b28.1158  Teb: 00007ff7d00dd000 Win32Thread: 0000000000000000 RUNNING on processor 0
     ```
 
-6.  使用 **！ process 0 0 命令**找到两个进程地址相关的进程并记录这些过程解决此处。
+6.  使用 **！ process 0 0 命令**查找两个相关进程的进程地址并在此处记录这些进程地址。
 
-    Cmd.exe: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    Cmd.exe： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-    EchoApp.exe: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    EchoApp： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_@no__t_54
 
     ```dbgcmd
     0: kd> !process 0 0 
@@ -1284,13 +1284,13 @@ ba r 4 0x0003f7bf0
     …
     ```
 
-    **请注意**也可以使用 **！ 处理 0 17**以显示有关每个进程的详细的信息。 此命令的输出可能很长。 可以使用 Ctrl + F 搜索输出。
+    **注意** 您也可以使用 **！ process 0 17**来显示有关每个进程的详细信息。 此命令的输出可能很长。 可以使用 Ctrl + F 搜索输出。
 
 
 
-7.  使用 **！ 过程**命令列出运行您的 PC 这两个进程的进程信息。 提供从进程地址你 **！ process 0 0**输出，不是地址如下所示。
+7.  使用 **！ process**命令列出运行 PC 的两个进程的进程信息。 提供来自 **！ process 0 0**输出的进程地址，而不是如下所示的地址。
 
-    此示例输出是前面记录的 cmd.exe 进程 ID。 请注意，此进程 ID 的映像名称 cmd.exe。
+    此示例输出适用于先前记录的 cmd.exe 进程 ID。 请注意，此进程 ID 的映像名称是 cmd.exe。
 
     ```dbgcmd
     0: kd>  !process ffffe0007bbde900
@@ -1321,7 +1321,7 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    此示例输出是前面记录的 echoapp.exe 进程 ID。
+    此示例输出适用于之前记录的 echoapp 进程 ID。
 
     ```dbgcmd
     0: kd>  !process ffffe0008096c900
@@ -1353,13 +1353,13 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-8.  与两个进程关联的记录的第一个线程地址。
+8.  记录此处与这两个进程关联的第一个线程地址。
 
-    Cmd.exe: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    Cmd.exe： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-    EchoApp.exe: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    EchoApp： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-9.  使用 **！线程**命令以显示有关当前线程的信息。
+9.  使用 **！** 用于显示有关当前线程的信息的线程命令。
 
     ```dbgcmd
     0: kd>  !Thread
@@ -1373,9 +1373,9 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    按预期运行，当前线程 echoapp.exe 与关联的线程，它是处于运行状态。
+    与预期一样，当前线程是与 echoapp 关联的线程，并且它处于运行状态。
 
-10. 使用 **！线程**命令以显示有关与 cmd.exe 进程关联线程的信息。 提供之前记录的线程地址。
+10. 使用 **！** 用于显示与 cmd.exe 进程关联的线程相关信息的线程命令。 提供前面记录的线程地址。
 
     ```dbgcmd
     0: kd> !Thread ffffe0007cf34880
@@ -1400,16 +1400,16 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    此线程与 cmd.exe 相关联，处于等待状态。
+    此线程与 cmd.exe 关联并且处于等待状态。
 
-11. 提供等待 CMD.exe 线程以将上下文更改为该等待线程的线程地址。
+11. 提供等待 CMD.EXE 线程的线程地址以将上下文更改为该等待线程。
 
     ```dbgcmd
     0: kd> .Thread ffffe0007cf34880
     Implicit thread is now ffffe000`7cf34880
     ```
 
-12. 使用**k**命令以查看调用堆栈与等待的线程关联。
+12. 使用**k**命令查看与等待线程关联的调用堆栈。
 
     ```dbgcmd
     0: kd> k
@@ -1422,10 +1422,10 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    调用堆栈元素，如**KiCommitThreadWait**指示该线程不运行是正常。
+    调用 stack 元素（例如**KiCommitThreadWait** ）指示此线程未按预期运行。
 
 **注意**  
-有关线程和进程的详细信息，请参阅以下引用：
+有关线程和进程的详细信息，请参阅以下参考资料：
 
 [线程和进程](threads-and-processes.md)
 
@@ -1433,15 +1433,15 @@ ba r 4 0x0003f7bf0
 
 
 
-## <a name="span-idsection10irqlregistersandendingthewindbgsessionspanspan-idsection10irqlregistersandendingthewindbgsessionspanspan-idsection10irqlregistersandendingthewindbgsessionspansection-10-irql-registers-and-ending-the-windbg-session"></a><span id="Section_10__IRQL__Registers_and_Ending_the_WinDbg_session"></span><span id="section_10__irql__registers_and_ending_the_windbg_session"></span><span id="SECTION_10__IRQL__REGISTERS_AND_ENDING_THE_WINDBG_SESSION"></span>第 10 部分：IRQL，寄存器并结束 WinDbg 会话
+## <a name="span-idsection_10__irql__registers_and_ending_the_windbg_sessionspanspan-idsection_10__irql__registers_and_ending_the_windbg_sessionspanspan-idsection_10__irql__registers_and_ending_the_windbg_sessionspansection-10-irql-registers-and-ending-the-windbg-session"></a><span id="Section_10__IRQL__Registers_and_Ending_the_WinDbg_session"></span><span id="section_10__irql__registers_and_ending_the_windbg_session"></span><span id="SECTION_10__IRQL__REGISTERS_AND_ENDING_THE_WINDBG_SESSION"></span>第10部分： IRQL、注册和结束 WinDbg 会话
 
-### <a name="span-idirqlregistersmemoryspanspan-idirqlregistersmemoryspanspan-idirqlregistersmemoryspanviewing-the-saved-irql"></a><span id="IRQLRegistersMemory"></span><span id="irqlregistersmemory"></span><span id="IRQLREGISTERSMEMORY"></span>查看已保存的 IRQL
+### <a name="span-idirqlregistersmemoryspanspan-idirqlregistersmemoryspanspan-idirqlregistersmemoryspanviewing-the-saved-irql"></a><span id="IRQLRegistersMemory"></span><span id="irqlregistersmemory"></span><span id="IRQLREGISTERSMEMORY"></span>查看保存的 IRQL
 
-*在部分 10 中，将显示 irql，因此和 regsisters 的内容。*
+*在第10节中，您将显示 regsisters 的 IRQL 和内容。*
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-中断请求级别 (IRQL) 用于管理的服务中断的优先级。 每个处理器都有线程可以提高或降低的 IRQL 设置。 中断的发生或以下处理器的 IRQL 设置被屏蔽并不会干扰当前操作。 中断的发生以上处理器的 IRQL 设置优先于当前操作。 [ **！ Irql** ](-irql.md)扩展当前的目标计算机的处理器上显示的中断请求级别 (IRQL)，在调试器中断发生之前。 当目标计算机进入调试器，IRQL 更改，但 IRQL 有效只是随着在调试器中断保存和显示通过 **！ irql**。
+中断请求级别（IRQL）用于管理中断服务的优先级。 每个处理器都有一个可以提高或降低线程的 IRQL 设置。 在处理器的 IRQL 设置下或之下发生的中断会被屏蔽，并且不会影响当前操作。 超出处理器的 IRQL 设置的中断优先于当前操作。 在调试程序发生中断之前， [ **！ irql**](-irql.md)扩展会在目标计算机的当前处理器上显示中断请求级别（irql）。 当目标计算机中断到调试器时，IRQL 会发生更改，但在调试器中断之前有效的 IRQL 会被保存，并由 **！ IRQL**显示。
 
 ```dbgcmd
 0: kd> !irql
@@ -1450,9 +1450,9 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 
 ### <a name="span-idviewingtheregistersspanspan-idviewingtheregistersspanspan-idviewingtheregistersspanviewing-the-registers"></a><span id="ViewingTheRegisters"></span><span id="viewingtheregisters"></span><span id="VIEWINGTHEREGISTERS"></span>查看寄存器
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-使用当前处理器上显示当前线程的寄存器的内容[ **r （寄存器）** ](r--registers-.md)命令。
+使用[**r （寄存器）** ](r--registers-.md)命令显示当前处理器上的当前线程的寄存器内容。
 
 ```dbgcmd
 0: kd> r
@@ -1468,53 +1468,53 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-或者，您可以通过单击显示寄存器的内容**视图** &gt; **注册**。 有关详细信息请参阅[ **r （寄存器）** ](r--registers-.md)。
+或者，您可以通过单击 "**查看**&gt;**寄存器**" 来显示寄存器内容。 有关详细信息，请参阅[**r （寄存器）** ](r--registers-.md)。
 
-逐句通过程序集语言代码执行和在其他情况下时，查看寄存器内容非常有用。 有关程序集语言反汇编的详细信息，请参阅[Annotated x86 反汇编](annotated-x86-disassembly.md)并[Annotated x64 反汇编](annotated-x64-disassembly.md)。
+在单步执行汇编语言代码执行和其他情况时，查看寄存器的内容会很有帮助。 有关汇编语言反汇编的详细信息，请参阅[带批注的 X86 反汇编](annotated-x86-disassembly.md)和[带批注的 x64 反汇编](annotated-x64-disassembly.md)。
 
-寄存器的内容的信息，请参阅[x86 体系结构](x86-architecture.md)并[x64 体系结构](x64-architecture.md)。
+有关寄存器内容的信息，请参阅[X86 体系结构](x86-architecture.md)和[x64 体系结构](x64-architecture.md)。
 
 ### <a name="span-idendingthesessionspanspan-idendingthesessionspanspan-idendingthesessionspanending-the-windbg-session"></a><span id="EndingTheSession"></span><span id="endingthesession"></span><span id="ENDINGTHESESSION"></span>结束 WinDbg 会话
 
-**&lt;在主机系统**
+**&lt;-主机系统上**
 
-若要用户模式下调试会话结束，返回休眠模式下，调试器并设置目标应用程序再次运行，请输入**qd** （Quit 和分离） 命令。
+若要结束用户模式调试会话，请将调试器返回到休眠模式，然后将目标应用程序设置为再次运行，请输入**qd** （Quit 并分离）命令。
 
-确保并用**g**命令，以使目标计算机运行的代码，以便可以使用它。 它还建议清除任何断点，使用 * * bc \\* * *，以便目标计算机不会中断并尝试连接到主机计算机调试器。
+请确保并使用**g**命令让目标计算机运行代码，使其可以使用。 使用 * * bc \\* * * 来清除任何断点也是一个不错的做法，这样，目标计算机将不会中断，而会尝试连接到主机计算机调试器。
 
 ```dbgcmd
 0: kd> qd
 ```
 
-有关详细信息，请参阅[结束调试会话在 WinDbg 中](ending-a-debugging-session-in-windbg.md)调试的参考文档中。
+有关详细信息，请参阅调试参考文档[中的在 WinDbg 结束调试会话](ending-a-debugging-session-in-windbg.md)。
 
-## <a name="span-idwindowsdebuggingresourcesspanspan-idwindowsdebuggingresourcesspanspan-idwindowsdebuggingresourcesspansection-11-windows-debugging-resources"></a><span id="WindowsDebuggingResources"></span><span id="windowsdebuggingresources"></span><span id="WINDOWSDEBUGGINGRESOURCES"></span>第 11 节：Windows 调试资源
+## <a name="span-idwindowsdebuggingresourcesspanspan-idwindowsdebuggingresourcesspanspan-idwindowsdebuggingresourcesspansection-11-windows-debugging-resources"></a><span id="WindowsDebuggingResources"></span><span id="windowsdebuggingresources"></span><span id="WINDOWSDEBUGGINGRESOURCES"></span>第11节： Windows 调试资源
 
 
-有关 Windows 调试提供了其他信息。 请注意，这些书籍将使用在其示例中，如 Windows Vista 的 Windows 的较旧版本，但要讨论的概念也适用于大多数版本的 Windows。
+有关其他信息，请访问 Windows 调试。 请注意，其中的一些书籍将使用旧版 Windows （如 Windows Vista）的示例，但讨论的概念适用于大多数 Windows 版本。
 
-**丛书**
+**帐簿**
 
--   高级的 Windows 调试由 Mario Hewardt 和 Daniel Pravat
+-   Mario Hewardt 和 Daniel Pravat 的高级 Windows 调试
 
--   深入了解 Windows 调试：调试和跟踪策略通过 Tarik Soulami Windows® 中的实践指南
+-   在 Windows 调试中：通过 Tarik Soulami 在 Windows®中调试和跟踪策略的实用指南
 
--   Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu Windows 内部结构
+-   Windows 内部机制，Russinovich，David 为所罗门群岛和 Alex Ionescu
 
 **视频**
 
-碎片整理工具显示 WinDbg 剧集 13 29 <https://channel9.msdn.com/Shows/Defrag-Tools>
+碎片整理工具显示 WinDbg 剧集 13-29 <https://channel9.msdn.com/Shows/Defrag-Tools>
 
 **培训供应商：**
 
 OSR <https://www.osr.com/>
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [标准调试技术](standard-debugging-techniques.md)
 
-[专用的调试技术](specialized-debugging-techniques.md)
+[专用调试技术](specialized-debugging-techniques.md)
 
 [Windows 调试入门](getting-started-with-windows-debugging.md)
 

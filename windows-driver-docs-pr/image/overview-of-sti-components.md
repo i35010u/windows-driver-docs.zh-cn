@@ -4,12 +4,12 @@ description: STI 组件概述
 ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f856a68715e29b263f62831669f2458b023be0c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d05bb8c82a75bff2d98352b8120cb7a6250633ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374325"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840777"
 ---
 # <a name="overview-of-sti-components"></a>STI 组件概述
 
@@ -17,43 +17,43 @@ ms.locfileid: "67374325"
 
 
 
-下图说明了构成 Microsoft STI 的软件组件。 以下关系图是一个组件列表。
+下图说明了构成 Microsoft STI 的软件组件。 下面的关系图是一个组件列表。
 
-![说明 microsoft sti 组件的关系图](images/sticomp.png)
+![说明 microsoft sti 组件的示意图](images/sticomp.png)
 
 ### <a href="" id="ddk-imaging-application-si"></a>图像处理应用程序
 
-图像处理应用程序通常接收、 显示和允许捕获静止图像编辑。 通过调用图像收购 API，如 TWAIN，他们获得的映像。 它们必须自行注册静止图像事件监视器，与通过[IStillImage COM 接口](istillimage-com-interface.md)。 有关详细信息，请参阅[创建推送模型意识的应用程序](creating-push-model-aware-applications.md)。
+图像处理应用程序通常会接收、显示和允许编辑捕获的静止图像。 它们通过调用图像获取 API （如 TWAIN）来获取映像。 它们必须通过[ISTILLIMAGE COM 接口](istillimage-com-interface.md)向其自身注册静止图像事件监视器。 有关详细信息，请参阅[创建推送模型识别的应用程序](creating-push-model-aware-applications.md)。
 
-### <a href="" id="ddk-image-acquisition-api-si"></a>图像采集 API
+### <a href="" id="ddk-image-acquisition-api-si"></a>映像获取 API
 
-TWAIN，ISIS 和 Adobe Systems Acquire 是图像采集 Api 的示例。 下图说明了 TWAIN。 供应商提供了 TWAIN 数据源是与仍映像设备进行通信的特定于设备的、 特定于操作系统的组件。
+"TWAIN"、"ISIS" 和 "Adobe Systems" 获取图像获取 Api 的示例。 此图说明了 TWAIN。 供应商提供的 TWAIN 数据源是设备特定的、特定于操作系统的组件，这些组件与静态图像设备通信。
 
-在 Microsoft STI 下 TWAIN 数据源调用方法提供[IStillImage](istillimage-com-interface.md)并[IStiDevice](istidevice-com-interface.md)接口。 有关详细信息，请参阅[图像采集 api 创建特定于设备的组件](creating-device-specific-components-for-image-acquisition-apis.md)。
+在 Microsoft STI 下，TWAIN 数据源调用[IStillImage](istillimage-com-interface.md)和[IStiDevice](istidevice-com-interface.md)接口提供的方法。 有关详细信息，请参阅[为映像获取 Api 创建设备特定的组件](creating-device-specific-components-for-image-acquisition-apis.md)。
 
-### <a href="" id="ddk-scanners-and-cameras-control-panel-si"></a>扫描仪和照相机控件面板
+### <a href="" id="ddk-scanners-and-cameras-control-panel-si"></a>扫描仪和照相机控制面板
 
-扫描仪和照相机控件面板使用户能够执行以下操作：
+"扫描仪和照相机" 控制面板使用户能够执行以下操作：
 
 -   查看已安装的静止图像设备的列表。
 
--   测试仍映像的设备。
+-   测试静止图像设备。
 
--   查看和修改提供的信息由供应商提供特定于设备的[的属性表页静止图像设备](property-sheet-pages-for-still-image-devices.md)。
+-   查看和修改供应商提供的、特定于设备的[属性表页的静止图像设备](property-sheet-pages-for-still-image-devices.md)的信息。
 
--   将分配[静止图像的设备事件](still-image-device-events.md)给特定应用程序。
+-   将[静止图像设备事件](still-image-device-events.md)分配给特定的应用程序。
 
 ### <a href="" id="ddk-still-image-event-monitor-si"></a>静止图像事件监视器
 
-静止图像事件监视器驻留在静止图像服务器进程中。 它维护一个数据库的所有静止图像设备 （即插即用和 Play−compatible 设备和那些通过添加硬件向导安装）。 它还维护已注册的应用程序和仍映像设备事件的数据库。
+静止图像事件监视器驻留在静止图像服务器进程中。 它将维护所有静止图像设备（即插即用−兼容设备和通过添加硬件向导安装的设备）的数据库。 它还维护已注册应用程序的数据库和仍为映像的设备事件。
 
-事件监视器等待仍映像设备事件。 （对于不会生成仍映像设备事件的较旧驱动程序支持的设备，事件监视器创建一个轮询线程。）检测到事件时，事件监视器启动的应用程序的用户以前已 （通过扫描仪和照相机控件面板） 分配给该事件。 如果用户已分配给多个应用程序的事件，事件监视器，询问用户要启动的应用程序。 如果该事件尚未分配到任何应用程序，则忽略它。
+事件监视器等待仍图像设备事件。 （对于不生成静止图像设备事件的旧驱动程序支持的设备，事件监视器会创建轮询线程。）当检测到事件时，事件监视器会启动用户以前已分配给事件的应用程序（通过 "扫描仪和相机" 控制面板）。 如果用户已将事件分配给多个应用程序，则事件监视器会要求用户启动哪个应用程序。 如果事件尚未分配到任何应用程序，则将其忽略。
 
-有关静止图像事件监视器的详细信息，请参阅*静止图像*Microsoft Windows SDK 文档中。
+有关静止图像事件监视器的详细信息，请参阅 Microsoft Windows SDK 文档中的*静止图像*。
 
 ### <a href="" id="ddk-com-interfaces-for-still-image-si"></a>静态图像的 COM 接口
 
-Microsoft STI 定义一组 COM 接口，提供的各种 Microsoft STI 组件之间的通信路径。 定义以下 COM 接口：
+Microsoft STI 定义一组 COM 接口，这些接口提供各种 Microsoft STI 组件之间的通信路径。 定义了下列 COM 接口：
 
 [IStillImage COM 接口](istillimage-com-interface.md)
 
@@ -63,38 +63,38 @@ Microsoft STI 定义一组 COM 接口，提供的各种 Microsoft STI 组件之�
 
 [IStiDeviceControl COM 接口](istidevicecontrol-com-interface.md)
 
-### <a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>用户模式下仍映像微型驱动程序
+### <a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>用户模式静止图像微型驱动程序
 
-用户模式下仍映像微型驱动程序是为提供适当的内核模式驱动程序的特定于设备的用户模式接口的供应商提供的组件。 每个这些用户模式驱动程序必须实现[IStiUSD COM 接口](istiusd-com-interface.md)。 它们与内核模式驱动程序通信通过调用[ **CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)， **ReadFile**， **WriteFile**，和[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数 （Microsoft Windows SDK 文档中所述）。 有关详细信息，请参阅[创建用户模式下仍映像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
+用户模式静止图像微型驱动程序是供应商提供的组件，可向相应的内核模式驱动程序提供设备特定的用户模式接口。 其中每个用户模式驱动程序必须实现[ISTIUSD COM 接口](istiusd-com-interface.md)。 它们通过调用[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**和[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) Win32 函数（如 Microsoft Windows SDK 文档中所述）与内核模式驱动程序通信。 有关详细信息，请参阅[创建用户模式静止图像微型驱动程序](creating-a-user-mode-still-image-minidriver.md)。
 
-### <a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>内核模式下仍映像驱动程序
+### <a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>内核模式静止映像驱动程序
 
-内核模式下仍映像驱动程序打包为传递到静态图像设备连接到特定的总线类型的数据。 Microsoft 提供了基于 WDM 的内核模式下仍映像驱动程序对于 USB 和 SCSI 总线。 有关详细信息，请参阅[访问内核模式设备驱动程序仍映像](accessing-kernel-mode-drivers-for-still-image-devices.md)。
+内核模式静止映像驱动程序包数据，用于传递到连接到特定总线类型的静止图像设备。 Microsoft 为 USB 和 SCSI 总线提供基于 WDM 的内核模式静止映像驱动程序。 有关详细信息，请参阅[访问静止图像设备的内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
-对于仍连接到其他总线映像设备，用户模式下微型驱动程序进行通信与内核模式总线驱动程序堆栈直接。
+对于连接到其他总线的静止图像设备，用户模式微型驱动程序直接与内核模式总线驱动程序堆栈进行通信。
 
-供应商只需提供内核模式下仍映像驱动程序，如果设备不符合 Microsoft 提供的驱动程序。
+如果设备与 Microsoft 提供的驱动程序不兼容，则供应商只需提供内核模式的静止映像驱动程序。
 
 ### <a href="" id="ddk-kernel-mode-bus-driver-stacks-si"></a>内核模式总线驱动程序堆栈
 
-Microsoft 仍支持图像设备连接到 SCSI、 USB、 并行，IEEE 1394 兼容和串行总线，以及设备连接到如红外接口，如下所示：
+Microsoft 支持连接到 SCSI、USB、并行、IEEE 1394 兼容的设备和串行总线的静止图像设备，以及连接到红外接口的设备，如下所示：
 
-<a href="" id="devices-connected-to-scsi-and-usb-buses"></a>**设备连接到 SCSI 和 USB 总线**  
-用户模式驱动程序调用总线特有[内核模式驱动程序进行静止图像设备](accessing-kernel-mode-drivers-for-still-image-devices.md)。
+<a href="" id="devices-connected-to-scsi-and-usb-buses"></a>**连接到 SCSI 总线和 USB 总线的设备**  
+用户模式驱动程序为静止图像设备调用特定于总线的[内核模式驱动程序](accessing-kernel-mode-drivers-for-still-image-devices.md)。
 
-<a href="" id="devices-connected-to-a-parallel-port"></a>**连接到并行端口设备**  
-扩展功能端口 (ECP) 并支持增强的并行端口 (EPP) 模式。 供应商提供内核模式*筛选器驱动程序*可以添加用户模式下仍映像驱动程序和内核模式总线驱动程序堆栈之间。 (有关并行端口驱动程序的详细信息，请参阅[并行设备设计指南](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))并[并行设备引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 有关筛选器驱动程序的详细信息，请参阅[筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)。)
+<a href="" id="devices-connected-to-a-parallel-port"></a>**连接到并行端口的设备**  
+支持扩展功能端口（ECP）和增强的并行端口（EPP）模式。 供应商提供的内核模式*筛选器驱动程序*可以添加到用户模式静止映像驱动程序和内核模式总线驱动程序堆栈之间。 （有关并行端口驱动程序的详细信息，请参阅[并行设备设计指南](https://docs.microsoft.com/previous-versions/ff544263(v=vs.85))和[并行设备参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 有关筛选器驱动程序的详细信息，请参阅[筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/filter-drivers)。）
 
-<a href="" id="devices-connected-to-an-ieee-1394-bus"></a>**设备连接到 IEEE 1394 总线**  
-对于支持 sbp-2 协议的设备，用户模式驱动程序可以调用的 sbp-2 接口。 否则，供应商提供的筛选器驱动程序是必需的。
+<a href="" id="devices-connected-to-an-ieee-1394-bus"></a>**连接到 IEEE 1394 总线的设备**  
+对于支持 SBP 协议的设备，用户模式驱动程序可以调用 Microsoft 的 SBP 接口。 否则，需要供应商提供的筛选器驱动程序。
 
-<a href="" id="devices-connected-to-a-serial-port"></a>**设备连接到串行端口**  
-使用标准的串行端口驱动程序。 (有关详细信息，请参阅[串行设备和驱动程序](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))。)
+<a href="" id="devices-connected-to-a-serial-port"></a>**连接到串行端口的设备**  
+使用标准串行端口驱动程序。 （有关详细信息，请参阅[串行设备和驱动程序](https://docs.microsoft.com/previous-versions/ff547451(v=vs.85))。）
 
-<a href="" id="devices-connected-to-an-infrared-interface"></a>**设备连接到红外接口**  
-驱动程序可以调用**IrSock**软件界面 （Microsoft Windows SDK 文档中所述）。
+<a href="" id="devices-connected-to-an-infrared-interface"></a>**连接到红外线接口的设备**  
+驱动程序可以调用**IrSock**软件接口（如 Microsoft Windows SDK 文档中所述）。
 
-供应商只需为 Microsoft 驱动程序不支持的总线提供总线驱动程序。
+供应商只需要为 Microsoft 驱动程序不支持的总线提供总线驱动程序。
 
  
 

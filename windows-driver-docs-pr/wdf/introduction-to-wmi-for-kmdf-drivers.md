@@ -4,39 +4,39 @@ description: 用于 KMDF 驱动程序的 WMI 简介
 ms.assetid: e919f6c9-a4c5-4972-91e7-f4fa609455fe
 keywords:
 - WMI WDK KMDF
-- WMI WDK KMDF，有关 WMI 的基于框架的驱动程序
+- WMI WDK KMDF，关于基于框架的驱动程序的 WMI
 - 回调函数 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c58c615e5f92e45460b70dadf0e0c2fbacd9a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 460e1ae7255bf253fb881d3fe434aa8c6fa0e428
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371110"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843160"
 ---
 # <a name="introduction-to-wmi-for-kmdf-drivers"></a>用于 KMDF 驱动程序的 WMI 简介
 
 
 \[仅适用于 KMDF\]
 
-内核模式驱动程序框架支持驱动程序的信息提供给[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-wmi) (WMI)。 此类驱动程序被称为*WMI 数据提供程序*因为它们提供数据到*WMI 客户端*，这是已注册从 WMI 接收信息的应用程序。
+内核模式驱动程序框架支持提供[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-wmi) （WMI）的信息的驱动程序。 此类驱动程序称为*wmi 数据提供*程序，因为它们向*wmi 客户端*提供数据，这些客户端是已注册为从 WMI 接收信息的应用程序。
 
-WMI 数据访问接口支持*WMI 数据块*，前者表示一个或多个以下：
+WMI 数据提供程序支持*wmi 数据块*，它可以代表以下一项或多项：
 
--   *数据项*，其中包含设备特定的驱动程序将发送到，或从 WMI 客户端接收的数据。
+-   *数据项*，其中包含驱动程序向 WMI 客户端发送或从其接收的设备特定数据。
 
--   *方法*（函数） 驱动程序执行代表 WMI 客户端。
+-   驱动程序代表 WMI 客户端执行的*方法*（函数）。
 
--   *事件*驱动程序发送到已注册接收通知的特定于设备的事件的 WMI 客户端。
+-   驱动程序向已注册接收设备特定事件的通知的 WMI 客户端发送的*事件*。
 
-WMI 数据块指定为*WMI 类*.mof 文件中。 每个 WMI 数据块是由 GUID 标识。
+在 mof 文件中，WMI 数据块被指定为*wmi 类*。 每个 WMI 数据块由 GUID 标识。
 
-所有驱动程序必须支持其设备类的 WMI 定义任何标准 WMI 数据块。 这些 WMI 数据块中定义*Wmicore.mof*。
+所有驱动程序都必须支持 WMI 为其设备类定义的任何标准 WMI 数据块。 这些 WMI 数据块是在*Wmicore*中定义的。
 
-您的驱动程序还可以支持的.mof 文件中定义的 WMI 数据块。 若要了解如何定义和发布自定义的 WMI 数据块，请参阅以下各节：
+你的驱动程序还可以支持你在 mof 文件中定义的 WMI 数据块。 若要了解如何定义和发布自定义的 WMI 数据块，请参阅以下部分：
 
--   [WMI 数据和事件块的 MOF 语法](https://docs.microsoft.com/windows-hardware/drivers/kernel/mof-syntax-for-wmi-data-and-event-blocks)
+-   [用于 WMI 数据和事件块的 MOF 语法](https://docs.microsoft.com/windows-hardware/drivers/kernel/mof-syntax-for-wmi-data-and-event-blocks)
 
 -   [设计 WMI 数据和事件块](https://docs.microsoft.com/windows-hardware/drivers/kernel/designing-wmi-data-and-event-blocks)
 
@@ -44,25 +44,25 @@ WMI 数据块指定为*WMI 类*.mof 文件中。 每个 WMI 数据块是由 GUID
 
 -   [WMI 属性表](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-property-sheets)
 
-### <a name="framework-wmi-objects-and-callback-functions"></a>Framework WMI 对象和回调函数
+### <a name="framework-wmi-objects-and-callback-functions"></a>框架 WMI 对象和回调函数
 
-框架定义驱动程序可用于实现 WMI 数据提供程序的两个对象。 *WMI 提供程序对象*表示 WMI 数据块的驱动程序提供的架构。 *WMI 实例对象*表示与特定的提供程序相关联的数据块的一个实例。 通过实现这两个对象定义的以下事件回调函数将与 WMI 客户端通信的驱动程序：
+框架定义了两个对象，驱动程序可以使用这些对象来实现 WMI 数据提供程序。 *Wmi 提供程序对象*表示驱动程序提供的 wmi 数据块的架构。 *WMI 实例对象*表示与特定提供程序相关联的数据块的实例。 驱动程序通过实现以下两个对象定义的以下事件回调函数与 WMI 客户端进行通信：
 
-<a href="" id="evtwmiproviderfunctioncontrol"></a>[*EvtWmiProviderFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)  
-启用和禁用对收集 WMI 数据和将 WMI 事件发送的驱动程序的支持。
+<a href="" id="evtwmiproviderfunctioncontrol"></a>[*EvtWmiProviderFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_provider_function_control)  
+启用和禁用驱动程序对收集 WMI 数据和发送 WMI 事件的支持。
 
-<a href="" id="evtwmiinstancequeryinstance"></a>[*EvtWmiInstanceQueryInstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)  
-传递到 WMI 客户端 WMI 提供程序的实例数据。
+<a href="" id="evtwmiinstancequeryinstance"></a>[*EvtWmiInstanceQueryInstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_query_instance)  
+将 WMI 提供程序的实例数据传递到 WMI 客户端。
 
-<a href="" id="evtwmiinstancesetinstance-and-evtwmiinstancesetitem"></a>[*EvtWmiInstanceSetInstance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_instance)并[ *EvtWmiInstanceSetItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_item)  
-在为客户提供值的驱动程序的数据块中设置的信息。
+<a href="" id="evtwmiinstancesetinstance-and-evtwmiinstancesetitem"></a>[*EvtWmiInstanceSetInstance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_instance)和[ *EvtWmiInstanceSetItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_set_item)  
+将驱动程序的数据块中的信息设置为客户端提供的值。
 
-<a href="" id="evtwmiinstanceexecutemethod"></a>[*EvtWmiInstanceExecuteMethod*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_execute_method)  
-执行驱动程序所提供的方法，客户端的请求。
+<a href="" id="evtwmiinstanceexecutemethod"></a>[*EvtWmiInstanceExecuteMethod*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nc-wdfwmi-evt_wdf_wmi_instance_execute_method)  
+在客户端请求时执行驱动程序提供的方法。
 
 ### <a name="sample-drivers-that-implement-wmi"></a>实现 WMI 的示例驱动程序
 
-FIREFLY、 PCIDRV 和 Toaster[示例驱动程序](sample-kmdf-drivers.md)WMI 数据提供程序。
+FIREFLY、PCIDRV 和 Toaster[示例驱动程序](sample-kmdf-drivers.md)为 WMI 数据提供程序。
 
  
 

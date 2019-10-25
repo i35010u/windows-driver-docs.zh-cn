@@ -7,12 +7,12 @@ keywords:
 - 数据结构 WDK NDIS 6.20
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87eb715d2db71914556435aaa05a46db67cee87b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cdaad950481937d5a9a68af017c9c1b96130b6c8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371794"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842986"
 ---
 # <a name="using-ndis-620-data-structures"></a>使用 NDIS 6.20 数据结构
 
@@ -20,9 +20,9 @@ ms.locfileid: "67371794"
 
 
 
-NDIS 可以支持多个版本的相同的数据结构。 NDIS 6.20 和更高版本的驱动程序，使用更新后的结构必须报告正确**修订**成员和**大小**中的成员值[ **NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)结构，它是在**标头**结构，如果有的话，当驱动程序初始化 NDIS 6.20 数据结构的成员。
+NDIS 可支持同一数据结构的多个版本。 使用更新结构的 NDIS 6.20 和更高版本的驱动程序必须在结构的**标头**成员（如果有）中的 " [**NDIS\_" 对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)中报告正确的 "**修订**成员" 和 "**大小**" 成员值\_当驱动程序初始化 NDIS 6.20 数据结构时。
 
-**请注意**  来确定正确的版本和大小信息，请参阅每个结构，其中包含的参考页**标头**成员。 结构中包含的参考页**标头**成员的已更新和 NDIS 6.20 包括 NDIS 6.20 和更高版本的驱动程序的新信息。 如果不会更新到结构的 NDIS 6.20，NDIS 6.0 或 NDIS 6.1 驱动程序提供的信息也适用于 NDIS 6.20 和更高版本的驱动程序。
+**请注意**  确定正确的版本和大小信息，请参阅每个包含**标头**成员的结构的参考页。 对于包含**标头**成员并且已针对 ndis 6.20 更新的结构，其引用页包含 ndis 6.20 和更高版本的驱动程序的新信息。 如果没有针对 NDIS 6.20 的结构的更新，则为 NDIS 6.0 或 NDIS 6.1 驱动程序提供的信息也适用于 NDIS 6.20 和更高版本的驱动程序。
 
  
 

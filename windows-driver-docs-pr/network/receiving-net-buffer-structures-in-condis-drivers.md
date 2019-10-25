@@ -4,44 +4,44 @@ description: 在 CoNDIS 驱动程序中接收 NET_BUFFER 结构
 ms.assetid: b3bbd3ef-9206-4edc-8f7a-4ce896d77150
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8132c97999a461e57d70d9fa128fb3c810fb7a5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2558990f10e584eeb8af069788a45bd423157846
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385426"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844845"
 ---
-# <a name="receiving-netbuffer-structures-in-condis-drivers"></a>接收 NET\_缓冲区中的 CoNDIS 驱动程序的结构
+# <a name="receiving-net_buffer-structures-in-condis-drivers"></a>在 CoNDIS 驱动程序中接收 NET\_缓冲区结构
 
 
 
 
 
-下图说明了基本的 CoNDIS 接收操作，这涉及到协议驱动程序、 NDIS 和微型端口驱动程序。
+下图说明了一个基本 CoNDIS 接收操作，该操作涉及一个协议驱动程序、NDIS 和一个微型端口驱动程序。
 
-![说明基本 condis 的关系图的接收操作，这涉及到协议驱动程序、 ndis 和微型端口驱动程序](images/netbuffercoreceive.png)
+![说明基本 condis 接收操作（涉及协议驱动程序、ndis 和微型端口驱动程序）的示意图](images/netbuffercoreceive.png)
 
-如前图所示，微型端口驱动程序调用[ **NdisMCoIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)函数来指示[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)到过量驱动程序的结构。 在大多数的微型端口驱动程序中每个 NET\_缓冲区结构附加到一个单独[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构，因此协议驱动程序可以创建子集NET 的原始列表的\_缓冲区\_列表结构并将其转发到不同的客户端。 但是，NET 数\_缓冲区结构附加到 NET\_缓冲区\_列表取决于驱动程序。
+如上图所示，微型端口驱动程序调用[**NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)函数，以指示对过量驱动程序的[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构。 在大多数微型端口驱动程序中，每个网络\_缓冲结构都附加到单独的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构，因此协议驱动程序可以创建 .NET\_缓冲区的原始列表的子集\_列表结构和将它们转发到不同的客户端。 但是，附加到网络\_缓冲区\_列表的净\_缓冲区的数量取决于驱动程序。
 
-后微型端口驱动程序链接所有 NET\_缓冲区\_列表结构，则微型端口驱动程序会将指针传递到第一个 NET\_缓冲区\_到列表中的列表结构**NdisMCoIndicateReceiveNetBufferLists**函数。 NDIS 检查 NET\_缓冲区\_列表结构并调用[ **ProtocolCoReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)与关联的协议驱动程序的函数指定的虚拟连接 (VC)。 NDIS 传递的列表，包括仅 NET 子集\_缓冲区\_与正确的绑定到每个协议驱动程序相关联的列表结构。
+当微型端口驱动程序将所有 NET\_缓冲区链接\_列表结构后，微型端口驱动程序会将该列表中第一个网络\_\_缓冲区的指针传递到**NdisMCoIndicateReceiveNetBufferLists**函数。 NDIS 检查 NET\_缓冲区\_列表结构并调用与指定虚拟连接（VC）关联的协议驱动程序的[**ProtocolCoReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)函数。 NDIS 传递列表的一个子集，该子集只包含与每个协议驱动程序的正确绑定关联的 NET\_缓冲区\_列表结构。
 
-如果 NDIS\_接收\_标志\_状态\_中设置资源标志*CoReceiveFlags*协议驱动程序的参数*ProtocolCoReceiveNetBufferLists*函数，NDIS 重新获得所有权[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)后立即结构*ProtocolCoReceiveNetBufferLists*返回。
+如果 NDIS\_收到\_标志\_状态\_资源标志是在协议驱动程序的*ProtocolCoReceiveNetBufferLists*函数的*CoReceiveFlags*参数中设置的，NDIS 会重新获得网络的所有权[ **\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)在*ProtocolCoReceiveNetBufferLists*返回后立即\_列出结构。
 
-如果 NDIS\_接收\_标志\_状态\_未设置资源标志*CoReceiveFlags*协议驱动程序的参数[ **ProtocolCoReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)函数，协议驱动程序可以保留的 NET 所有权\_缓冲区\_列表结构。 在这种情况下，协议驱动程序必须返回 NET\_缓冲区\_通过调用列表结构[ **NdisReturnNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreturnnetbufferlists)函数。
+如果 NDIS\_接收\_标志\_状态\_资源标志未在协议驱动程序的[**ProtocolCoReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_receive_net_buffer_lists)函数的*CoReceiveFlags*参数中设置，则协议驱动程序可保留所有权NET\_缓冲区\_列表结构。 在这种情况下，协议驱动程序必须通过调用[**NdisReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreturnnetbufferlists)函数来返回 NET\_缓冲区\_列表结构。
 
-如果运行在较低的微型端口驱动程序在接收资源，但它可以设置 NDIS\_接收\_标志\_状态\_中的资源标记*CoReceiveFlags*参数[ **NdisMCoIndicateReceiveNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)函数。 在这种情况下，该驱动程序可以回收所有所指示的所有权[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构和嵌入[ **NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer)结构一旦**NdisMCoIndicateReceiveNetBufferLists**返回。 如果微型端口驱动程序指示 NET\_缓冲区结构与的 NDIS\_接收\_标志\_资源标志设置，协议驱动程序必须复制数据，因此，应避免使用 NDIS\_接收\_标志\_这种方式中的资源。 具有低接收资源和应完成所需避免这种情况的任何步骤时，应检测到的微型端口驱动程序。
+如果微型端口驱动程序在接收资源上运行较少，则可以在[**NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)函数的*CoReceiveFlags*参数中将 NDIS\_接收\_标志\_状态\_资源标志。 在这种情况下，只要**NdisMCoIndicateReceiveNetBufferLists**返回，驱动程序就可以回收所有指定的[**net\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构和嵌入的[**net\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的所有权。 如果微型端口驱动程序使用 NDIS\_接收\_标志\_资源标志来指示 NET\_缓冲区结构，则协议驱动程序必须复制数据，因此应避免使用 NDIS\_接收\_标志\_以这种方式进行资源。 微型端口驱动程序应检测其接收资源不足的情况，并应完成避免此情况所需的任何步骤。
 
-NDIS 调用微型端口驱动程序[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)函数之后，协议驱动程序调用**NdisReturnNetBufferLists**。
+在协议驱动程序调用**NdisReturnNetBufferLists**后，NDIS 调用微型端口驱动程序的[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)函数。
 
-**请注意**  如果微型端口驱动程序指示[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)给定状态、 NDIS 结构不需要它来指示 NET\_缓冲区\_列表结构具有相同状态的基础驱动程序。 例如，可以将 NDIS 复制 NET\_缓冲区\_列表结构与的 NDIS\_接收\_标志\_资源标志设置和清除此标志指示复制到基础驱动程序。
+**请注意**  如果微型端口驱动程序指示具有给定状态的[**网络\_缓冲器\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构，则不需要使用 NDIS 向状态相同的过量驱动程序指示网络\_缓冲区\_列表结构。 例如，NDIS 可以使用 NDIS\_接收\_标志\_资源标志来复制网络\_缓冲区\_列表结构，并指示清除了此标志的过量驱动程序的副本。
 
  
 
-NDIS 可以返回 NET\_缓冲区\_微型端口驱动程序和任何组合中任何任意顺序列表结构。 即，链接的列表的 NET\_缓冲区\_NDIS 通过调用返回至微型端口驱动程序的列表结构[ *MiniportReturnNetBufferLists* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_return_net_buffer_lists)可以具有 NET\_缓冲区\_从对不同的上一个调用列表结构[ **NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)。
+NDIS 可以按任意顺序和任意组合将 NET\_缓冲区\_列表结构返回到小型端口驱动程序。 也就是说，通过调用[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) ，NDIS 返回到微型端口驱动程序的 NET\_缓冲区\_列表结构的链接列表可以具有 NET\_BUFFER\_列表结构[**的NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)。
 
-微型端口驱动程序必须设置**SourceHandle**中的成员[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构为相同的值为*NdisVcHandle*的参数**NdisMCoIndicateReceiveNetBufferLists**。 以便 NDIS 可以返回 NET\_缓冲区\_到正确的微型端口驱动程序的列表结构。
+微型端口驱动程序必须将[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中的**SourceHandle**成员设置为与**NdisMCoIndicateReceiveNetBufferLists**的*NdisVcHandle*参数相同的值。 因此，NDIS 可以将 NET\_BUFFER\_列表结构返回到正确的微型端口驱动程序。
 
-中间驱动程序还设置**SourceHandle**成员在 NET\_缓冲区\_列表结构*NdisVcHandle*值。 如果中间驱动程序将转发的接收指示，该驱动程序必须将保存**SourceHandle**基础驱动程序，提供之前它将写入到的值**SourceHandle**成员。 当 NDIS 返回转发的 NET\_缓冲区\_必须还原到中间驱动程序，中间驱动程序的列表结构**SourceHandle**保存它。
+中间驱动程序还将 NET\_BUFFER\_列表结构中的**SourceHandle**成员设置为*NdisVcHandle*值。 如果中间驱动程序转发接收指示，则驱动程序必须保存基础驱动程序在写入**SourceHandle**成员之前提供的**SourceHandle**值。 当 NDIS 向中间驱动程序返回已转发的 NET\_缓冲区\_列表结构时，中间驱动程序必须还原它保存的**SourceHandle** 。
 
  
 

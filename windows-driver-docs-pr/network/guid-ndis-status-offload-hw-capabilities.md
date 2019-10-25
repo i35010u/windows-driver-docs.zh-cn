@@ -1,27 +1,27 @@
 ---
 title: GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
-description: 本主题介绍 NDIS WMI 接口的 GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES GUID。
+description: 本主题描述了 NDIS WMI 接口的 GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES GUID。
 ms.assetid: 6f5e11c1-4fa0-4a9b-90f3-85a3cb8b8878
 keywords:
 - GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES，WDK GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES 网络驱动程序
 ms.date: 11/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 296c738742425851722d1e8ad6910c2bd4e10aea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 09d9e14b384281557e8d71a6a37f749760c85336
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369659"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842331"
 ---
-# <a name="guidndisstatusoffloadhwcapabilities"></a>GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
+# <a name="guid_ndis_status_offload_hw_capabilities"></a>GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES
 
-GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES 事件 GUID 表示已与的 NDIS 端口或微型端口适配器相关联的硬件的卸载特征中的更改。 添加或删除与 MUX 中间驱动程序相关联的硬件，通常反映了硬件更改。 NDIS 6.0 及更高版本支持此 WMI GUID。
+GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES 事件 GUID 表示与 NDIS 端口或微型端口适配器关联的硬件的卸载特性发生了变化。 硬件更改通常会反映添加或删除与 MUX 中间驱动程序关联的硬件。 在 NDIS 6.0 和更高版本中支持此 WMI GUID。
 
-MUX 驱动程序使用的中间[NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES](ndis-status-task-offload-hardware-capabilities.md)状态指示通知 NDIS 和基础驱动程序已在任务更改卸载功能。
+MUX 中间驱动程序使用[NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES](ndis-status-task-offload-hardware-capabilities.md)状态指示通知 NDIS 和过量驱动程序已更改任务卸载功能。
 
-当驱动程序指示任务卸载硬件发生变化时，NDIS 将转换为 WMI GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES 事件的 WMI 客户端的状态指示。
+当驱动程序指示任务卸载硬件更改时，NDIS 会将状态指示转换为 WMI 客户端的 WMI GUID_NDIS_STATUS_OFFLOAD_HW_CAPABILITIES 事件。
 
-包含的数据缓冲区的 NDIS 提供具有 GUID [NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_wmi_event_header)结构，后跟[NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload)结构。
+具有 GUID 的 NDIS 提供的数据缓冲区包含后跟[NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构的[NDIS_WMI_EVENT_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_wmi_event_header)结构。
 
-有关任务卸载功能的详细信息，请参阅[NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES](ndis-status-task-offload-hardware-capabilities.md)并[OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES](oid-tcp-offload-hardware-capabilities.md)。
+有关任务卸载功能的详细信息，请参阅[NDIS_STATUS_TASK_OFFLOAD_HARDWARE_CAPABILITIES](ndis-status-task-offload-hardware-capabilities.md)和[OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES](oid-tcp-offload-hardware-capabilities.md)。
 

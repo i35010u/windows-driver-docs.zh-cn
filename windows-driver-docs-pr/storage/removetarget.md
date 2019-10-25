@@ -1,6 +1,6 @@
 ---
 title: RemoveTarget 函数
-description: RemoveTarget WMI 方法配置 WMI 提供程序，以便它将停止将传递到 WMI 客户端所指示的目标与关联的事件。
+description: RemoveTarget WMI 方法配置 WMI 提供程序，使其停止将与指示的目标关联的事件传递给 WMI 客户端。
 ms.assetid: 413cee3c-5e3a-4012-925b-b4699fbd2e1b
 keywords:
 - RemoveTarget 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 130a61c45e1adc3a0e420417091e2b0145956829
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ebab0c1eaae0936aaff6b04db55726cfd5976eb0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368907"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842701"
 ---
 # <a name="removetarget-function"></a>RemoveTarget 函数
 
 
-**RemoveTarget** WMI 方法配置 WMI 提供程序，以便它将停止将传递到 WMI 客户端所指示的目标与关联的事件。
+**RemoveTarget** wmi 方法配置 wmi 提供程序，使其停止将与指示的目标关联的事件传递给 WMI 客户端。
 
 <a name="syntax"></a>语法
 ------
@@ -38,20 +38,20 @@ void RemoveTarget(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HbaPortWWN*   
-唯一标识应从其事件报告给 WMI 客户端的端口的列表中删除的本地端口 64 位全球通用名称 (WWN)。 全球通用名称的讨论，请参阅 T11 委员会*光纤通道 HBA API*规范。
+一个64位世界名称（WWN），唯一标识应该从其事件报告给 WMI 客户端的端口列表中删除的本地端口。 有关全球名称的讨论，请参阅 T11 委员会*光纤通道 HBA API*规范。
 
 *DiscoveredPortWWN*   
-指示应从其事件报告给 WMI 客户端的端口的列表中删除的远程发现的端口的 WWN。
+一个 WWN，指示远程发现的端口，应从其事件报告给 WMI 客户端的端口列表中删除该端口。
 
 *AllTargets*   
-要停止报告的事件。 如果此成员为零，WMI 提供程序客户端将停止报告事件与端口所指示的关联*DiscoveredPortWWN*。 如果此成员为非零值，则 WMI 提供程序将停止报告的所有事件相关都联的任何目标。
+要停止报告的事件。 如果此成员为零，则 WMI 提供程序客户端将停止报告与*DiscoveredPortWWN*指示的端口关联的事件。 如果此成员不为零，则 WMI 提供程序将停止报告所有关联的事件。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **RemoveTarget\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -61,7 +61,7 @@ void RemoveTarget(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_将 EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,21 +74,21 @@ void RemoveTarget(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemoveTarget\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_in)
+[**RemoveTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_in)
 
-[**RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_removetarget_out)
+[**RemoveTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removetarget_out)
 
  
 

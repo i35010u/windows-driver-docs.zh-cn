@@ -4,53 +4,53 @@ description: 处理分类标注
 ms.assetid: 284aeda0-8275-440f-abf4-84a0c61cc4f4
 keywords:
 - Windows 筛选平台标注驱动程序 WDK，分类标注
-- 标注驱动程序 WDK Windows 筛选平台，分类标注
+- 标注驱动程序 WDK Windows 筛选平台，对标注进行分类
 - classifyFn
-- 分类标注 WDK Windows 筛选平台
-- 分类标注 WDK Windows 筛选平台，大约分类标注
+- 对注解 WDK Windows 筛选平台进行分类
+- 分类标注 WDK Windows 筛选平台，关于对标注进行分类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dda31876f745df486aee716a996b5ecf2c4b46d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb25beb1535a6b25b51f9c84fe3e5de6041a49dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385481"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843490"
 ---
 # <a name="processing-classify-callouts"></a>处理分类标注
 
 
-筛选器引擎将调用一个标注[ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数时没有要处理的标注的网络数据。 满足指定筛选器的操作的标注的筛选器的所有筛选条件时，将发生这种情况。 如果这样的筛选器不具有任何筛选条件，筛选器引擎始终调用的标注*classifyFn*标注函数。
+如果有要通过标注处理的网络数据，则筛选器引擎将调用标注的[*classifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)标注函数。 对于指定筛选器操作的标注的筛选器，所有筛选条件都为 true，则会发生这种情况。 如果此类筛选器没有筛选条件，则筛选器引擎始终调用标注的*classifyFn* callout 函数。
 
-筛选器引擎将多个不同的数据项传递到一个标注*classifyFn*标注函数。 这些数据项包含固定的数据值、 元数据值、 网络原始数据、 筛选器信息和任何流上下文。 筛选器引擎将传递到标注的特定数据项目依赖于特定的筛选层，并在其下的条件*classifyFn*调用。 一个*classifyFn*函数可以使用这些数据项目的任意组合来决定其筛选。
+筛选器引擎将多个不同的数据项传递给标注的*classifyFn* callout 函数。 这些数据项包括固定的数据值、元数据值、原始网络数据、筛选器信息和任何流上下文。 筛选器引擎传递给标注的特定数据项取决于特定筛选层和调用*classifyFn*的条件。 *ClassifyFn*函数可以使用这些数据项的任意组合来做出筛选决策。
 
-实现一个标注*classifyFn*标注函数取决于哪些标注旨在执行操作。 以下部分提供的一些示例标注的更常见的函数：
+标注的*classifyFn* callout 函数的实现取决于标注的设计方式。 以下部分提供了一些更典型的标注功能的示例：
 
-[使用适用于深度检测标注](using-a-callout-for-deep-inspection.md)
+[使用标注进行深度检查](using-a-callout-for-deep-inspection.md)
 
-[使用适用于 Stream 数据的深度检测标注](using-a-callout-for-deep-inspection-of-stream-data.md)
+[使用标注对流数据进行深度检查](using-a-callout-for-deep-inspection-of-stream-data.md)
 
-[检查数据包和 Stream 数据](inspecting-packet-and-stream-data.md)
+[检查数据包和流数据](inspecting-packet-and-stream-data.md)
 
-[修改 Stream 数据](modifying-stream-data.md)
+[修改流数据](modifying-stream-data.md)
 
 [数据日志记录](data-logging.md)
 
 [将上下文与数据流相关联](associating-context-with-a-data-flow.md)
 
-[处理对以异步方式进行分类的标注](processing-classify-callouts-asynchronously.md)
+[异步处理分类标注](processing-classify-callouts-asynchronously.md)
 
-[使用绑定或连接重定向](using-bind-or-connect-redirection.md)
+[使用 Bind 或 Connect 重定向](using-bind-or-connect-redirection.md)
 
 [ALE 终结点生存期管理](ale-endpoint-lifetime-management.md)
 
 [使用数据包标记](using-packet-tagging.md)
 
-一个特定的标注的实际实现*classifyFn*标注函数可以基于这些示例的组合。
+特定标注的*classifyFn*标注函数的实际实现可基于这些示例的组合。
 
-对于标注处理筛选的数据层的支持数据流，标注*classifyFn*标注函数可以将上下文关联与每个数据流。 *ClassifyFn*函数可以使用此上下文来保存下次调用由该数据流的筛选器引擎的状态信息。 有关如何标注函数可与数据流关联上下文的详细信息，请参阅[与数据流相关联的上下文](associating-context-with-a-data-flow.md)。
+对于在支持数据流的筛选层处理数据的标注，标注的*classifyFn* callout 函数可以将上下文与每个数据流相关联。 *ClassifyFn*函数可以使用此上下文保存状态信息，以便在该数据流的筛选器引擎下次调用时保存状态信息。 有关 callout 函数如何将上下文与数据流相关联的详细信息，请参阅将[上下文与](associating-context-with-a-data-flow.md)数据流相关联。
 
-WFP 支持异步处理*classifyFn*标注函数。 有关异步处理的详细信息，请参阅[异步处理分类的标注](processing-classify-callouts-asynchronously.md)。
+WFP 支持*classifyFn*标注函数的异步处理。 有关异步处理的详细信息，请参阅[异步处理分类标注](processing-classify-callouts-asynchronously.md)。
 
  
 

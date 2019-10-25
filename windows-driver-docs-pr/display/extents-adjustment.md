@@ -3,16 +3,16 @@ title: 范围调整
 description: 范围调整
 ms.assetid: b3562744-375a-4d6f-be09-e28314282faa
 keywords:
-- Direct3D WDK Windows 2000 显示，扩展盘区调整
-- 扩展盘区调整 WDK Direct3D
+- Direct3D WDK Windows 2000 显示，区调整
+- 区调整 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e34dbdf74c36c25f58883e7b92bc454f1329202
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c06790f1507db5df060949eca10496422b0d7dec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381849"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839696"
 ---
 # <a name="extents-adjustment"></a>范围调整
 
@@ -20,9 +20,9 @@ ms.locfileid: "67381849"
 ## <span id="ddk_extents_adjustment_gg"></span><span id="DDK_EXTENTS_ADJUSTMENT_GG"></span>
 
 
-某些硬件使用影响像素的屏幕空间顶点定义的扩展盘区矩形之外的抗锯齿内核。 使用扩展盘区矩形 D3DCLIPSTATUS 结构中的应用程序 (在中定义*d3dtypes.h*) 的已更新矩形处理可能会呈现项目，因为该扩展盘区矩形不涉及像素修改的硬件。
+某些硬件使用抗锯齿内核，该内核影响屏幕空间顶点定义的区的范围。 使用 D3DCLIPSTATUS 结构（在*d3dtypes*中定义）进行脏矩形处理的应用程序可能会遇到渲染项目，因为区矩形不涵盖硬件修改的像素。
 
-Direct3D 硬件驱动程序以请求扩展盘区矩形进行向外调整为指定的中的像素数，从而解决了此问题**dvExtentsAdjust**的成员[ **D3DHAL\_D3DEXTENDEDCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)结构。 此成员填充以响应 GUID\_D3DExtendedCaps GUID [ **DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)。 扩展盘区矩形剪辑到的盘区的设备将呈现器目标图面中。 默认值为 0。
+Direct3D 通过以下方式解决此问题：允许硬件驱动程序请求在[**D3DHAL\_D3DEXTENDEDCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_d3dextendedcaps)结构的**dvExtentsAdjust**成员中，将范围矩形向外调整到指定的像素数。 此成员是为响应[**DdGetDriverInfo**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getdriverinfo)中的 Guid\_D3DExtendedCaps guid 而填充的。 区矩形被剪裁到设备的呈现器目标表面的范围。 默认值为 0。
 
  
 

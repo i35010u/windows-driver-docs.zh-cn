@@ -4,98 +4,98 @@ description: 用于测试驱动程序是否支持多个处理器组的启动参�
 ms.assetid: 8ce311d6-a182-4d04-a453-81f6abe2043b
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2afd170e4fcd5cd644e9f7a2b877b14f6ee166a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 846e3594c114eed564e15776b244bd6360278afd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371638"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839582"
 ---
 # <a name="boot-parameters-to-test-drivers-for-multiple-processor-group-support"></a>用于测试驱动程序是否支持多个处理器组的启动参数
 
 
-Windows 7 和 Windows Server 2008 R2 具有超过 64 个处理器的计算机提供支持。 这种支持通过实现简介[处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)。 出于测试目的，可以配置具有多个逻辑处理器，通过限制组大小具有多个处理器组的任何计算机。 这意味着您可以测试驱动程序和多个处理器组的兼容性具有 64 或更少的逻辑处理器的计算机上的组件。
+Windows 7 和 Windows Server 2008 R2 为具有超过64个处理器的计算机提供支持。 这种支持是通过引入[处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)来实现的。 出于测试目的，可以将具有多个逻辑处理器的任何计算机配置为具有多个处理器组，方法是限制组大小。 这意味着，可以在具有64个或更少逻辑处理器的计算机上测试多个处理器组兼容性的驱动程序和组件。
 
-**请注意**  这一概念*处理器组*，引入了 Windows 7，允许现有 Api 和 DDIs 以继续使用超过 64 个逻辑处理器的计算机上工作。 通常情况下，由长度是 64 位关联掩码表示组的处理器。 具有超过 64 个逻辑处理器的任何计算机都必须多个组。
-创建一个过程后，该过程分配给特定组。 默认情况下，此进程线程可以运行的所有逻辑处理器的同一组中，尽管可以显式更改线程关联。 调用任何 API 或 DDI 采用的关联掩码或处理器编号作为参数，但不是组数字、 仅限于影响或报告调用线程的组中的处理器。 这同样适用的 Api 或返回相关性掩码或处理器编号，例如 DDIs **GetSystemInfo**。
+**请注意**   Windows 7 中引入的*处理器组*的概念，允许现有 api 和 DDIs 在超过64个逻辑处理器的计算机上继续工作。 通常，组的处理器由关联掩码表示，后者长度为64位。 具有超过64个逻辑处理器的任何计算机都必须有多个组。
+创建进程时，该进程将分配给特定组。 默认情况下，进程的线程可以在同一组的所有逻辑处理器上运行，尽管可以显式更改线程关联。 对使用关联掩码或处理器编号作为参数而不是组号的任何 API 或 DDI 的调用，只能影响调用线程组中这些处理器上的或报告。 这同样适用于返回关联掩码或处理器编号（如**GetSystemInfo**）的 Api 或 DDIs。
 
-从 Windows 7 开始，应用程序或驱动程序可以进行扩展的旧 Api 的函数的使用。 这些新组感知函数接受组号自变量来明确地限定处理器数或关联掩码，并因此可以操作调用线程的组之外的处理器。 当涉及到旧的 Api 或 DDIs 时，驱动程序和运行在计算机中的不同组中的组件之间的交互引入 bug 的可能性。 在 Windows 7 和 Windows Server 2008 R2 上，可以使用传统的非可识别组的 Api。 但是，驱动程序要求是更严格。 必须将任何 DDI 的处理器数或蒙板接受作为没有随附的处理器组参数或返回处理器数或掩码而无需为具有多个处理器组的计算机上的驱动程序的功能是否正确，随附的处理器组。 这些旧的非可识别组的 DDIs 可以具有多个进程组，因为推断出的组可能会不同于适用哪个调用线程的计算机上后无法正常执行。 因此，使用这些旧 DDIs 和针对 Windows Server 2008 R2 驱动程序必须更新为使用新的扩展的版本的界面。 驱动程序不调用任何函数，使用处理器关联掩码或处理器编号将正常运行，而不考虑的处理器数。 调用新 DDIs 的驱动程序可以通过包含 procgrp.h 标头，运行以前版本的 Windows 上调用[ **WdmlibProcgrpInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/procgrp/nf-procgrp-wdmlibprocgrpinitialize)，并针对[处理器组兼容性库](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)(procgrp.lib)。
+从 Windows 7 开始，应用程序或驱动程序可以使用扩展旧版 Api 的函数。 这些新的组感知函数接受组号参数以明确限定处理器编号或关联掩码，因此可以操作调用线程的组以外的处理器。 在计算机中的不同组中运行的驱动程序和组件之间的交互会在涉及到旧 Api 或 DDIs 时引入 bug。 可以在 Windows 7 和 Windows Server 2008 R2 上使用旧版的非组感知 Api。 但是，驱动程序要求更为严格。 对于具有多个处理器组的计算机上的驱动程序的功能正确性，你必须将接受处理器号或掩码的任何 DDI 替换为不带随附处理器组的参数，或者不使用随附的处理器组。 这些旧式的非组感知 DDIs 在具有多个进程组的计算机上可能不稳定，因为推断组可能不同于调用线程所需的组。 因此，使用这些旧式 DDIs 的驱动程序和面向 Windows Server 2008 R2 的驱动程序必须更新为使用新的扩展版本的接口。 不调用任何使用处理器关联掩码或处理器编号的函数的驱动程序将正常运行，而不考虑处理器的数量。 调用新 DDIs 的驱动程序可以通过包括 procgrp 标头、调用[**WdmlibProcgrpInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/procgrp/nf-procgrp-wdmlibprocgrpinitialize)并针对[处理器组兼容性库](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)（procgrp）进行链接，来在以前版本的 Windows 上运行。
 
-可识别组的新 Api 和 DDIs 的详细信息，请下载白皮书[具有超过 64 个逻辑处理器的支持系统：面向开发人员准则](https://go.microsoft.com/fwlink/p/?linkid=147914)。
-
- 
-
-若要帮助确定潜在处理器与组相关的问题在驱动程序和组件中，可以使用[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)选项。 两个 BCD 启动配置设置， **groupsize**并**maxgroup**，可以配置具有多个逻辑处理器，支持多个处理器组的任何计算机。 **Groupaware**选项修改某些 DDIs 的行为和操作组环境以进行测试。
-
-### <a name="span-idcreatemultipleprocessorgroupsbychangingthegroupsizespanspan-idcreatemultipleprocessorgroupsbychangingthegroupsizespancreate-multiple-processor-groups-by-changing-the-group-size"></a><span id="create_multiple_processor_groups_by_changing_the_group_size"></span><span id="CREATE_MULTIPLE_PROCESSOR_GROUPS_BY_CHANGING_THE_GROUP_SIZE"></span>通过更改组大小来创建多个处理器组
-
-**Groupsize**选项在组中指定的最大逻辑处理器数。 默认情况下**groupsize**未设置选项，并具有 64 或更少的逻辑处理器的任何计算机都有一个组，这是组 0。
-
-**请注意**  物理处理器或处理器包可以有一个或多个内核或处理器单元，其中每个可以包含一个或多个逻辑处理器。 在操作系统认为逻辑处理器作为一种逻辑计算引擎。
+有关新的组感知 Api 和 DDIs 的详细信息，请下载[包含64个以上逻辑处理器的支持系统的白皮书：面向开发人员的指南](https://go.microsoft.com/fwlink/p/?linkid=147914)。
 
  
 
-若要创建多个处理器组，请运行[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)在提升的命令提示符窗口，并指定新*maxsize*值**groupsize** ，它是少于逻辑处理器的总数。 请注意组大小设置用于测试，不应使用此设置配置传送系统。 *Maxsize*值可以设置为 1 到 64 （含) 之间的 2 的任意次幂。 该命令使用以下语法：
+若要帮助确定驱动程序和组件中与处理器组相关的潜在问题，可以使用[**BCDEdit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)选项。 这两个 BCD 启动配置设置**groupsize**和**maxgroup**可以配置具有多个逻辑处理器的任何计算机，以支持多个处理器组。 **Groupaware**选项会修改特定 DDIs 的行为，并出于测试目的操作组环境。
+
+### <a name="span-idcreate_multiple_processor_groups_by_changing_the_group_sizespanspan-idcreate_multiple_processor_groups_by_changing_the_group_sizespancreate-multiple-processor-groups-by-changing-the-group-size"></a><span id="create_multiple_processor_groups_by_changing_the_group_size"></span><span id="CREATE_MULTIPLE_PROCESSOR_GROUPS_BY_CHANGING_THE_GROUP_SIZE"></span>通过更改组大小来创建多个处理器组
+
+**Groupsize**选项指定组中的逻辑处理器的最大数量。 默认情况下，未设置**groupsize**选项，并且具有64或更少逻辑处理器的任何计算机都有一个组0。
+
+**请注意**   物理处理器或处理器包可以有一个或多个核心或处理器单元，其中每个都可以包含一个或多个逻辑处理器。 操作系统将逻辑处理器视为一个逻辑计算引擎。
+
+ 
+
+若要创建多个处理器组，请在提升的命令提示符窗口中运行[**BCDEdit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set) ，并为**groupsize**指定一个小于逻辑处理器总数的新*maxsize*值。 请注意，"组大小" 设置用于测试，不应配置带有此设置的 "发运系统"。 *Maxsize*值可以设置为1到64之间的任何2次幂。 该命令使用以下语法：
 
 ```
 bcdedit.exe /set groupsize maxsize
 ```
 
-例如，以下命令设置的最大处理器数为 2 组中。
+例如，以下命令将组中的最大处理器数设置为2。
 
 ```
 bcdedit.exe /set groupsize 2
 ```
 
-如果非 NUMA 计算机有 8 个逻辑处理器，则将设置**groupsize** 2 使用 2 个逻辑处理器每个创建 4 个处理器组。
+如果非 NUMA 计算机有8个逻辑处理器，则将**groupsize**设置为2将创建4个处理器组，每个处理器组有2个逻辑处理器。
 
-组 0:1 包含 1 个包的 2 个逻辑处理器的 NUMA 节点
+包含2个逻辑处理器的1个包的组 0: 1 NUMA 节点
 
-组 1:1 包含 1 个包的 2 个逻辑处理器的 NUMA 节点
+包含2个逻辑处理器的1个包的组 1: 1 NUMA 节点
 
-组 2:1 包含 1 个包的 2 个逻辑处理器的 NUMA 节点
+包含2个逻辑处理器的1个包的组 2: 1 NUMA 节点
 
-组 3:1 包含 1 个包的 2 个逻辑处理器的 NUMA 节点
+包含2个逻辑处理器的1个包的组 3: 1 NUMA 节点
 
-根据设计，在非 NUMA 计算机被视为具有一个 NUMA 节点。 NUMA 节点不能跨组，因为系统会创建每个组的节点后重新启动计算机。
+按照设计，非 NUMA 计算机被视为具有一个 NUMA 节点。 由于 NUMA 节点不能跨组，系统会在重新启动计算机后为每个组创建一个节点。
 
-如果**groupsize**设置为小于其概念包后重新启动，包不跨越一组系统一些专门选出中物理处理器包 （套接字），逻辑处理器数的值。 这意味着，不是实际存在的更多包报告的处理器拓扑 Api。 这也意味着许可限制的 Windows （包级别） 处理器可能会阻止某些处理器包启动时**groupsize**设置。
+如果**groupsize**设置为一个小于物理处理器包（套接字）中的逻辑处理器数的值，则系统会在重新启动时重新定义包的概念，以便包不会跨组。 这意味着处理器拓扑 Api 会报告比实际存在的包多的包。 这也意味着，在设置**groupsize**时，Windows （包级）处理器授权限制可能会阻止某些处理器包的启动。
 
-处理器包可以跨组，如果它在其中定义的多个 NUMA 节点，系统将这些节点分配给不同的组。
+如果处理器包中定义了多个 NUMA 节点，并且系统将这些节点分配给不同的组，则它可以跨组。
 
-Windows 限制受支持的组的数。 用新版本的 Windows 或 service pack 版本中，可以更改此数字。 驱动程序或组件不应依赖于 Windows 支持为常量的组数。 组数的限制可以限制允许启动时用于值较小的逻辑处理器数**groupsize**启动选项。
+Windows 限制了支持的组数。 在新版本的 Windows 或 Service Pack 版本中，此数字可能会发生变化。 驱动程序或组件不应依赖于 Windows 支持的组数。 当使用小值作为**groupsize** boot 选项时，对组数的限制可能会限制允许启动的逻辑处理器的数量。
 
-若要删除**groupsize**设置您用于测试并返回到 64 个逻辑处理器每个组的默认设置，请使用以下 BCDEdit 命令。
+若要删除用于测试的**groupsize**设置并返回每个组64逻辑处理器的默认设置，请使用以下 BCDEdit 命令。
 
 ```
 bcdedit.exe /deletevalue groupsize
 ```
 
-此命令是设置的等效**groupsize**为 64。
+此命令等效于将**groupsize**设置为64。
 
-### <a name="span-idmaximizethenumberofprocessorgroupsspanspan-idmaximizethenumberofprocessorgroupsspanmaximize-the-number-of-processor-groups"></a><span id="maximize_the_number_of_processor_groups"></span><span id="MAXIMIZE_THE_NUMBER_OF_PROCESSOR_GROUPS"></span>最大化处理器组的数
+### <a name="span-idmaximize_the_number_of_processor_groupsspanspan-idmaximize_the_number_of_processor_groupsspanmaximize-the-number-of-processor-groups"></a><span id="maximize_the_number_of_processor_groups"></span><span id="MAXIMIZE_THE_NUMBER_OF_PROCESSOR_GROUPS"></span>最大化处理器组的数目
 
-**Maxgroup**选项是另一种方法来创建具有多个逻辑处理器和 NUMA 节点的计算机上的处理器组。 **Maxgroup**启动选项没有任何影响非 NUMA 的计算机上。
+**Maxgroup**选项是在具有多个逻辑处理器和 NUMA 节点的计算机上创建处理器组的另一种方法。 **Maxgroup** boot 选项在非 NUMA 计算机上不起作用。
 
-若要最大化的组数，请运行[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令，在提升的命令提示符窗口。 该命令使用以下语法：
+若要最大程度地增加组数，请在提升的命令提示符窗口中运行[**BCDEdit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。 该命令使用以下语法：
 
 ```
 bcdedit.exe /set maxgroup on
 ```
 
-例如，考虑具有 2 个 NUMA 节点、 1 个处理器包每个节点，以及每个包，共 8 个逻辑处理器的 4 个处理器核心的计算机。
+例如，假设有一个具有2个 NUMA 节点的计算机，每个节点1个处理器包，每个包4个处理器核心，总共8个逻辑处理器。
 
-默认组配置为：
+默认组配置是：
 
-组 0:8 个逻辑处理器，2 个包，2 个 NUMA 节点
+组 0: 8 逻辑处理器，2个包，2个 NUMA 节点
 
-如果输入**bcdedt.exe/上设置 maxgroup**命令并后接一次重启，该命令将生成下面的组配置：
+如果在执行重新启动后输入**bcdedt/set maxgroup**命令，则该命令将生成以下组配置：
 
-组 0:4 个逻辑处理器、 1 个包、 1 个 NUMA 节点
+组 0: 4 逻辑处理器，1个包，1个 NUMA 节点
 
-组 1:4 个逻辑处理器、 1 个包、 1 个 NUMA 节点
+组 1: 4 逻辑处理器，1个包，1个 NUMA 节点
 
-请注意，NUMA 节点分配到组中最大化的组数的方式。
+请注意，NUMA 节点以最大化组数的方式分配给组。
 
 若要更改回默认设置，请使用以下**BCDEdit**命令。
 
@@ -103,13 +103,13 @@ bcdedit.exe /set maxgroup on
 bcdedit.exe /set maxgroup off
 ```
 
-### <a name="span-idtestmultiplegroupcompatibilitybysettingthegroupawarebootoptispanspan-idtestmultiplegroupcompatibilitybysettingthegroupawarebootoptispantest-multiple-group-compatibility-by-setting-the-group-aware-boot-option"></a><span id="test_multiple_group_compatibility_by_setting_the_group_aware_boot_opti"></span><span id="TEST_MULTIPLE_GROUP_COMPATIBILITY_BY_SETTING_THE_GROUP_AWARE_BOOT_OPTI"></span>通过设置组注意启动选项测试多个组的兼容性
+### <a name="span-idtest_multiple_group_compatibility_by_setting_the_group_aware_boot_optispanspan-idtest_multiple_group_compatibility_by_setting_the_group_aware_boot_optispantest-multiple-group-compatibility-by-setting-the-group-aware-boot-option"></a><span id="test_multiple_group_compatibility_by_setting_the_group_aware_boot_opti"></span><span id="TEST_MULTIPLE_GROUP_COMPATIBILITY_BY_SETTING_THE_GROUP_AWARE_BOOT_OPTI"></span>通过设置 "感知启动" 选项来测试多组兼容性
 
-Windows 7 和 Windows Server 2008 R2 引入了新的 BCD 选项 (**groupaware**)，会强制驱动程序和组件需要注意的多个处理器组环境中的多个组。 **Groupaware**选项更改设备驱动程序函数，以帮助公开在驱动程序和组件中的跨组不兼容的一组的行为。 可以使用**groupaware**启动选项连同**groupsize**并**maxgroup**选项，可测试具有多个组的驱动程序兼容性时的计算机具有 64 或较少活动的逻辑处理器。
+Windows 7 和 Windows Server 2008 R2 引入了一个新的 BCD 选项（**groupaware**），它强制驱动程序和组件识别多个处理器组环境中的多个组。 **Groupaware**选项更改一组设备驱动程序功能的行为，以帮助在驱动程序和组件中公开跨组不兼容问题。 可以结合使用**groupaware** boot 选项和**groupsize**和**maxgroup**选项，在计算机具有64或更低的活动逻辑处理器时，与多个组测试驱动程序的兼容性。
 
-当**groupaware**设置启动选项，则操作系统可确保组 0 以外的组中启动了进程。 这会增加驱动程序和组件之间的跨组交互的机会。 该选项还会修改为不支持组的旧版功能的行为**KeSetTargetProcessorDpc**， **KeSetSystemAffinityThreadEx**，和**KeRevertToUserAffinityThreadEx**，以便它们始终在最高编号组包含活动的逻辑处理器上执行。 应更改驱动程序调用这些旧的函数的任何调用对应的可识别组 (**KeSetTargetProcessorDpcEx**， **KeSetSystemGroupAffinityThread**，和**KeRevertToUserGroupAffinityThread**)，
+设置**groupaware** boot 选项后，操作系统将确保在组0以外的组中启动进程。 这增加了驱动程序与组件之间的跨组交互的机会。 选项还修改了不能识别组、 **KeSetTargetProcessorDpc**、 **KeSetSystemAffinityThreadEx**和**KeRevertToUserAffinityThreadEx**的旧函数的行为，以便它们始终在最高包含活动的逻辑处理器的编号组。 调用这些旧函数的驱动程序的驱动程序应更改为调用其组感知对应项（**KeSetTargetProcessorDpcEx**、 **KeSetSystemGroupAffinityThread**和**KeRevertToUserGroupAffinityThread**），
 
-若要测试兼容性，请使用以下[ **BCDEdit /set** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。
+若要测试兼容性，请使用以下[**BCDEdit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。
 
 ```
 bcdedit.exe /set groupaware on
@@ -122,8 +122,8 @@ bcdedit.exe /set groupaware on
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">旧的非组注意函数</th>
-<th align="left">Windows 7 可识别组替换</th>
+<th align="left">旧的非组感知函数</th>
+<th align="left">Windows 7 组感知替换</th>
 </tr>
 </thead>
 <tbody>

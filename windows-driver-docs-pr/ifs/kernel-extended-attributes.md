@@ -2,75 +2,75 @@
 title: 内核扩展属性
 description: 筛选器管理器和微筛选器驱动程序体系结构
 keywords:
-- 扩展文件属性
-- Kernel EA
+- 扩展的文件属性
+- 内核 EA
 - 扩展特性
 - $Kernel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aac76e5a893ce4742578315333b2710b14d882f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16b9dbe69f85ba5c1561f920803ba1a8d151c8a5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375987"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841143"
 ---
 # <a name="kernel-extended-attributes"></a>内核扩展属性
-内核扩展的特性 (内核 EA 的) 是作为一种方法来提高性能的图像文件签名验证添加到 Windows 8 中 NTFS 的功能。  它是代价高昂的操作来验证映像签名。 因此，有关存储信息，是否的二进制文件，以前已验证、 已更改或不会降低图像将不得不进行完整签名检查的实例数。
+内核扩展属性（内核 EA）是在 Windows 8 中添加到 NTFS 的一项功能，可提高映像文件签名验证的性能。  验证映像签名是一种开销高昂的操作。 因此，存储有关以前已验证的二进制文件的信息是否已更改，或者是否会减少映像需要进行完整签名检查的实例数。
 
 
 ## <a name="overview"></a>概述
-EA 具有名称前缀``$Kernel``只能从内核模式下进行修改。 此字符串开头的任何 EA 被视为内核 EA。 检索必要的更新序列号 (USN) 之前，建议**FSCTL_WRITE_USN_CLOSE_RECORD**会发出第一个，因为这会提交任何挂起的 USN 日志更新对先前可能已发生的文件。 如果没有， **FileUSN**不久前设置内核 EA 值可能会更改。
+只能从内核模式修改带有名称前缀 ``$Kernel`` 的 EA。 以该字符串开头的任何 EA 都被视为内核 EA。 在检索所需的更新序列号（USN）之前，建议首先发出**FSCTL_WRITE_USN_CLOSE_RECORD** ，因为这会提交先前可能已发生的文件的任何挂起的 USN 日志更新。 如果不这样做， **FileUSN**值可能会在内核 EA 设置之后不久发生更改。
 
 建议内核 EA 至少包含以下信息：
 - USN UsnJournalID
-  - **UsnJournalID**字段是一个 GUID，标识 USN 日记文件的当前发展。  USN 日志可以删除并创建从每个卷的用户模式。  每次 USN 日志创建一个新**UsnJournalID**将生成的 GUID。  使用此字段中，你可以判断是否有一段时间内 USN 日志被禁用，并可以重新验证。
-    - 可以使用检索该值[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)。
+  - **UsnJournalID**字段是一个 GUID，用于标识 USN 日志文件的当前具体化更新。  可以从每个卷的用户模式中删除和创建 USN 日志。  每次创建 USN 日志时，都会生成一个新的**UsnJournalID** GUID。  使用此字段，你可以判断是否存在禁用了 USN 日志并且可以重新验证的时间段。
+    - 可以使用[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)检索此值。
 - USN FileUSN
-  - **FileUSN**值包含对文件进行和跟踪在给定的文件的主文件表 (MFT) 记录内的最后一个更改的 USN ID。
-    - 当删除 USN 日志时， **FileUSN**重置为零。
+  - **FileUSN**值包含对文件进行的最后一次更改的 USN ID 并在给定文件的主文件表（MFT）记录内进行跟踪。
+    - 删除 USN 日志时， **FileUSN**将重置为零。
 
-此信息，以及任何其他可能需要给定的使用情况，则将设置该文件为内核 EA。
-
-
-## <a name="setting-a-kernel-extended-attribute"></a>设置扩展属性的内核
-若要设置内核 EA，则它必须以前缀开头``"$Kernel."``和尾随的是有效的 EA 名称字符串。 将以无提示方式忽略尝试从用户模式下设置内核 EA。  请求将返回**STATUS_SUCCESS**但不能进行任何实际的 EA 修改。 若要设置调用 API，例如内核 EA [ZwSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961908)或[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltseteafile)从内核模式不足够。  这是因为 SMB 支持 EA 的整个网络的设置，并从服务器上的内核模式发出这些请求。  
-
-若要设置内核 EA 调用方必须也设置**IRP_MN_KERNEL_CALL** IRP （I/O 请求数据包） 的 MinorFunction 字段中的值。 由于将此字段设置的唯一方法是通过生成自定义 IRP，例程[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)作为支持函数来设置内核 EA 导出从 FsRtl 包。
-
-不可能会互相混合的正常和内核 EA 的同一调用中设置到[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)。  如果执行此操作将失败， **STATUS_INTERMIXED_KERNEL_EA_OPERATION**。    设置将不会生成内核 EA **USN_REASON_EA_CHANGE** USN 日志; 因此记录，内核 EA 和常规 EA 不能用于相同的操作。  
+然后，将此信息与任何其他的给定使用量一起设置为内核 EA。
 
 
-## <a name="querying-an-extended-attribute"></a>查询的扩展的属性
-查询从用户模式下的文件上的 EA 将返回这两个正常和内核 EA。 它们将返回到用户模式，以最大程度减少任何应用程序兼容性问题。 法线[ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)并[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryeafile)操作将返回正常和内核 EA 的用户和内核模式。
+## <a name="setting-a-kernel-extended-attribute"></a>设置内核扩展属性
+若要设置内核 EA，它必须以前缀 ``"$Kernel."`` 开头，并 trailed 有效的 EA 名称字符串。 如果尝试从用户模式设置内核 EA，将被自动忽略。  请求将返回**STATUS_SUCCESS** ，但不会进行实际的 EA 修改。 若要设置从内核模式调用 API （如[ZwSetEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961908)或[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltseteafile) ）的内核 EA 是不够的。  这是因为 SMB 支持在网络中设置 EA，并将从服务器上的内核模式发出这些请求。  
 
-当仅**的文件对象**，则使用[FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)可能会更方便使用内核 EA 查询从内核模式。
+若要设置内核 EA，调用方还必须在 IRP （i/o 请求数据包）的 MinorFunction 字段中设置**IRP_MN_KERNEL_CALL**值。 由于设置此字段的唯一方法是生成自定义 IRP，因此从 FsRtl 包中将例程[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)导出为设置内核 EA 的支持函数。
+
+你不能将普通 EA 和内核 EA 的设置与[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)的同一调用混合。  如果执行此操作，操作将失败，并出现**STATUS_INTERMIXED_KERNEL_EA_OPERATION**。    设置内核 EA 不会生成**USN_REASON_EA_CHANGE**记录到 USN 日志;因此，不能在同一操作中使用内核 EA 和常规 EA。  
+
+
+## <a name="querying-an-extended-attribute"></a>查询扩展属性
+在用户模式下查询 EA 的在文件中会同时返回普通 EA 和内核 EA。 它们将返回到用户模式，以最大程度地减少应用程序兼容性问题。 正常的[ZwQueryEaFile](https://msdn.microsoft.com/library/windows/hardware/ff961907)和[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryeafile)操作将同时从用户模式和内核模式返回普通 EA 和内核 EA。
+
+当只有**FileObject**可用时，使用[FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)可以更方便地从内核模式查询内核 EA。
 
 
 ## <a name="querying-update-sequence-number-journal-information"></a>查询更新序列号日志信息
-[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作要求**SE_MANAGE_VOLUME_PRIVILEGE**即使发出从内核模式，除非**IRP_MN_KERNEL_CALL**设置值IRP MinorFunction 字段。 例程**FsRtlKernelFsControlFile**已从内核以轻松地使内核模式组件，发出此 USN 请求中的 FsRtl 包中导出。
+[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作需要**SE_MANAGE_VOLUME_PRIVILEGE** ，即使是从内核模式发出的，除非在 IRP 的 MinorFunction 字段中设置了**IRP_MN_KERNEL_CALL**值。 例程**FsRtlKernelFsControlFile**已从内核中的 FsRtl 包导出，以便轻松地允许内核模式组件发出此 USN 请求。
 
-**请注意**不再与 Windows 10，版本 1703年及更高版本中开始此操作需要 SE_MANAGE_VOLUME_PRIVILEGE。  
+**注意**从 Windows 10 开始，版本1703及更高版本，此操作不再需要 SE_MANAGE_VOLUME_PRIVILEGE。  
 
-## <a name="auto-deletion-of-kernel-extended-attributes"></a>自动删除内核的扩展属性
-只需重新扫描文件，因为文件已更改的 USN ID 可能很昂贵，因为有良性的原因有很多 USN 更新可能会发布到该文件。  若要简化此操作，内核 EA 功能自动删除已添加到 NTFS。
+## <a name="auto-deletion-of-kernel-extended-attributes"></a>自动删除内核扩展属性
+只需重新扫描文件，因为更改文件的 USN ID 可能会占用大量资源，因为有许多良性原因可能会将 USN 更新发布到该文件。  为简化此操作，已将内核 EA 功能的自动删除添加到 NTFS。
 
-因为并非所有内核 EA 可能都想要删除在此方案中，使用扩展的 EA 前缀名称。  如果内核 EA 以开始：``"$Kernel.Purge."``然后 NTFS USN 由于以下原因的任何写入 USN 日志中，如果将删除对给定的命名语法符合该文件存在的所有内核 EAs:  
+由于在这种情况下不会删除所有内核 EA，因此使用的是扩展的 EA 前缀名称。  如果内核 EA 开头为： ``"$Kernel.Purge."`` 那么，如果以下任何 USN 原因写入到 USN 日志中，NTFS 就会删除该文件上存在的、符合给定命名语法的所有内核 EAs：  
 - USN_REASON_DATA_OVERWRITE
 - USN_REASON_DATA_EXTEND
 - USN_REASON_DATA_TRUNCATION
 - USN_REASON_REPARSE_POINT_CHANGE
 
-此删除内核 EA 会成功甚至在内存不足的情况。
+即使在内存不足的情况下，也可以成功删除内核 EA。
 
 ## <a name="remarks"></a>备注
-- 不能由用户模式组件篡改内核 EA。
-- 内核 EA 可以位于与正常 EA 相同的文件。
+- 用户模式组件无法篡改内核 EA。
+- 内核 EA 可以与普通 EA 位于同一文件中。
 
 
-## <a name="see-also"></a>请参阅
-[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltqueryeafile)  
-[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltseteafile)  
+## <a name="see-also"></a>另请参阅
+[FltQueryEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueryeafile)  
+[FltSetEaFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltseteafile)  
 [FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)  
 [FsRtlQueryKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807492)      
 [FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)  

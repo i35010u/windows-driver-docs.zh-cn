@@ -3,15 +3,15 @@ title: 获取 NDIS 版本
 description: 获取 NDIS 版本
 ms.assetid: f7bbd11c-b6ec-4adb-8c42-ec438d518ed8
 keywords:
-- 操作系统版本与的 NDIS 版本信息 WDK，
+- NDIS 版本信息 WDK，与操作系统版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae668097acb96772b3918536e022613aa923dbd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec744da14872d49b7d6ac80592ff3cd02fd02209
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354504"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842169"
 ---
 # <a name="obtaining-the-ndis-version"></a>获取 NDIS 版本
 
@@ -19,12 +19,12 @@ ms.locfileid: "67354504"
 
 
 
-NDIS 版本可能不会与操作系统版本相同。 例如，如果您使用[ **RtlGetVersion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlgetversion)并[ **RtlVerifyVersionInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlverifyversioninfo)例程，从而获取操作系统版本中，执行操作获取与特定的 NDIS 版本的有保证的关联。 因此，NDIS 驱动程序必须获得 NDIS 版本和操作系统版本单独。 NDIS 驱动程序可以获取与的 NDIS 版本[ **NdisGetVersion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetversion)函数。
+NDIS 版本可能与操作系统版本不同。 例如，如果使用[**RtlGetVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlgetversion)和[**RtlVerifyVersionInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlverifyversioninfo)例程获取操作系统版本，则不会获得与特定 NDIS 版本的保证关联。 因此，NDIS 驱动程序必须单独获取 NDIS 版本和操作系统版本。 NDIS 驱动程序可以通过[**NdisGetVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetversion)函数获取 NDIS 版本。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[NDIS 版本的概述](overview-of-ndis-versions.md)
+[NDIS 版本概述](overview-of-ndis-versions.md)
 
 [指定 NDIS 版本信息](specifying-ndis-version-information.md)
 

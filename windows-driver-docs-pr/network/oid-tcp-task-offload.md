@@ -1,71 +1,71 @@
 ---
 title: OID_TCP_TASK_OFFLOAD
-description: 本主题介绍 OID_TCP_TASK_OFFLOAD 对象标识符 (OID)。
+description: 本主题介绍 OID_TCP_TASK_OFFLOAD 对象标识符（OID）。
 ms.assetid: 4e16cdb7-b899-43b6-a94b-d691622be105
 keywords:
 - OID_TCP_TASK_OFFLOAD
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85a5b7920351589b5b0043fa581004223763f116
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f93d2fb8e52654f67c2c686c04e9f265c2c837c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353698"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843882"
 ---
-# <a name="oidtcptaskoffload"></a>OID_TCP_TASK_OFFLOAD
+# <a name="oid_tcp_task_offload"></a>OID_TCP_TASK_OFFLOAD
 
-主机堆栈查询 OID_TCP_TASK_OFFLOAD OID 获取 TCP 卸载功能的微型端口驱动程序的 NIC 或卸载目标。 在确定 NIC 或卸载目标支持的卸载功能之后, 主机堆栈设置此 OID 启用一个或多个报告功能。 所有的 NIC，也可以禁用主机堆栈或卸载目标的 TCP 通过设置 OID_TCP_TASK_OFFLOAD 卸载功能。 一次只有一个协议可以启用 TCP 卸载功能的特定 nic。
+宿主堆栈查询 OID_TCP_TASK_OFFLOAD OID，以获取微型端口驱动程序的 NIC 或卸载目标的 TCP 卸载功能。 确定 NIC 或卸载目标支持的卸载功能之后，主机堆栈会将此 OID 设置为启用一个或多个报告的功能。 主机堆栈还可以通过设置 OID_TCP_TASK_OFFLOAD 来禁用 NIC 或卸载目标的 TCP 卸载功能。 一次只能有一个协议可以启用特定 NIC 的 TCP 卸载功能。
 
 ## <a name="querying-offload-capabilities"></a>查询卸载功能
 
-当主机堆栈查询 OID_TCP_TASK_OFFLOAD 时，它会提供在*InformationBuffer* [NDIS_TASK_OFFLOAD_HEADER](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))结构。 此结构有如下规定：
+当主机堆栈查询 OID_TCP_TASK_OFFLOAD 时，它将在*InformationBuffer*中提供[NDIS_TASK_OFFLOAD_HEADER](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))结构。 此结构指定以下各项：
 
-- 由主机堆栈支持卸载版本。
-- 为封装格式发送和接收数据包由主机堆栈处理。
-- 此类数据包封装标头的大小。
+- 宿主堆栈支持的卸载版本。
+- 主机堆栈处理的发送和接收数据包的封装格式。
+- 此类数据包中封装标头的大小。
 
-使用此信息，微型端口驱动程序或其 NIC 可以传输数据包，这是用于执行卸载任务的先决条件中找到第一个 IP 标头的开头。 卸载目标需要知道到封装格式进程接收数据包。 OID_TCP_TASK_OFFLOAD 的查询响应，微型端口驱动程序或卸载目标返回时，在*InformationBuffer*，NDIS_TASK_OFFLOAD_HEADER 结构后面紧跟一个或多个[NDIS_TASK_卸载](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558995(v=vs.85))结构。 每个 NDIS_TASK_OFFLOAD 结构描述的微型端口驱动程序的 NIC 或卸载目标支持的卸载功能。 如果微型端口驱动程序的 NIC 或卸载目标支持多个版本的特定卸载功能，则它应返回一个 NDIS_TASK_OFFLOAD 结构为每个版本。
+使用此信息，微型端口驱动程序或其 NIC 可以定位传输数据包中第一个 IP 标头的开头，这是执行卸载任务的先决条件。 卸载目标需要知道封装格式才能处理接收数据包。 在响应 OID_TCP_TASK_OFFLOAD 的查询时，微型端口驱动程序或卸载目标将返回*InformationBuffer*中的 NDIS_TASK_OFFLOAD_HEADER 结构，后跟一个或多个[NDIS_TASK_OFFLOAD](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558995(v=vs.85))结构。 每个 NDIS_TASK_OFFLOAD 结构都描述了微型端口驱动程序 NIC 或卸载目标支持的卸载功能。 如果微型端口驱动程序的 NIC 或卸载目标支持多个版本的特定卸载功能，则它应为每个版本返回一个 NDIS_TASK_OFFLOAD 结构。
 
-每个 NDIS_TASK_OFFLOAD 结构已**任务**成员，用于指定特定卸载的功能结构取决于。 每个 NDIS_TASK_OFFLOAD 结构还有**TaskBuffer** ，其中包含与指定的卸载功能相关的信息。 中的信息**TaskBuffer**格式化为一个以下结构：
+每个 NDIS_TASK_OFFLOAD 结构都有一个**任务**成员，该成员指定结构适用的特定卸载功能。 每个 NDIS_TASK_OFFLOAD 结构还包含一个**TaskBuffer** ，其中包含与指定的卸载功能有关的信息。 **TaskBuffer**中的信息设置为以下结构之一：
 
 - [NDIS_TASK_TCP_IP_CHECKSUM](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559004(v=vs.85))  
     指定校验和卸载功能。
 - [NDIS_TASK_IPSEC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff558990(v=vs.85))  
-    指定 Internet 协议安全 (IPsec) 卸载功能。
+    指定 Internet 协议安全（IPsec）卸载功能。
 - [NDIS_TASK_TCP_LARGE_SEND](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559008(v=vs.85))  
-    指定大型 TCP 数据包分段功能。
-- [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)  
-    指定 TCP 烟囱卸载功能。 NDIS_TASK_TCP_CONNECTION_OFFLOAD 的详细信息，请参阅[TCP 烟囱卸载](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)。
+    指定大 TCP 数据包分段功能。
+- [NDIS_TASK_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_tcp_connection_offload_parameters)  
+    指定 TCP 烟囱卸载功能。 有关 NDIS_TASK_TCP_CONNECTION_OFFLOAD 的详细信息，请参阅[TCP 烟囱卸载](https://docs.microsoft.com/previous-versions/windows/hardware/network/ndis-tcp-chimney-offload)。
 
 > [!NOTE]
-> 如果中间驱动程序修改以便 TCP 卸载函数不能执行的数据包转发到基础的微型端口驱动程序的数据包的内容，中间驱动程序应响应状态为 OID_TCP_TASK_OFFLOAD 查询而不是传递 OID NDIS_STATUS_NOT_SUPPORTED 对基础微型端口驱动程序的请求，或卸载目标。
+> 如果中间驱动程序修改转发到基础微型端口驱动程序的数据包的内容，以便无法对数据包执行 TCP 卸载功能，则中间驱动程序应响应状态为 "OID_TCP_TASK_OFFLOAD" 的查询NDIS_STATUS_NOT_SUPPORTED，而不是将 OID 请求传递到基础微型端口驱动程序或卸载目标。
 
 ## <a name="enabling-offload-capabilities"></a>启用卸载功能
 
-查询的 NIC 或卸载目标后卸载功能，主机堆栈通过设置 OID_TCP_TASK_OFFLOAD 启用一个或多个这些功能。 当设置 OID_TCP_TASK_OFFLOAD，主机堆栈提供，请在*InformationBuffer*，NDIS_TASK_OFFLOAD_HEADER 结构后面紧随每个卸载功能的 NDIS_TASK_OFFLOAD 结构的主机启用堆栈。
+在查询 NIC 或卸载目标的卸载功能之后，主机堆栈通过设置 OID_TCP_TASK_OFFLOAD 来启用这些功能中的一个或多个。 设置 OID_TCP_TASK_OFFLOAD 时，主机堆栈提供*InformationBuffer*中的 NDIS_TASK_OFFLOAD_HEADER 结构，后面紧跟了主机堆栈正在启用的每个卸载功能的 NDIS_TASK_OFFLOAD 结构。
 
-**任务**结构中每个 NDIS_TASK_OFFLOAD 指示主机堆栈启用卸载功能。 主机还堆栈的启用特定方面的特定卸载功能，通过设置中的结构的成员**TaskBuffer**的每个 NDIS_TASK_OFFLOAD 结构。
+每个 NDIS_TASK_OFFLOAD 结构中的**任务**指示宿主堆栈正在启用的卸载功能。 宿主堆栈还通过设置每个 NDIS_TASK_OFFLOAD 结构的**TaskBuffer**中结构的成员来启用特定卸载功能的特定方面。
 
 ## <a name="changing-offload-capabilities"></a>更改卸载功能 
 
-若要更改为 NIC 或卸载目标启用卸载功能，主机堆栈设置 OID_TCP_TASK_OFFLOAD。 只有那些卸载指定的最新的 OID_TCP_TASK_OFFLOAD 集的功能，必须启用微型端口驱动程序或卸载目标。 微型端口驱动程序或卸载目标必须禁用所有其他卸载功能。 请注意，然后再禁用特定的 TCP 烟囱卸载功能，主机堆栈终止任何使用该功能的卸载 TCP 连接的卸载。
+若要更改为 NIC 或卸载目标启用的卸载功能，主机堆栈将设置 OID_TCP_TASK_OFFLOAD。 微型端口驱动程序或卸载目标必须仅启用由最新的 OID_TCP_TASK_OFFLOAD 集指定的那些卸载功能。 微型端口驱动程序或卸载目标必须禁用所有其他卸载功能。 请注意，在禁用特定 TCP 烟囱卸载功能之前，主机堆栈终止使用该功能的任何已卸载的 TCP 连接的卸载。
 
-卸载目标可以使用暂停或恢复将卸载指示若要更改其报告的 TCP 卸载功能：
+卸载目标可以使用 "暂停" 或 "恢复卸载" 指示更改其报告的 TCP 卸载功能：
 
-- 卸载目标调用，从而使暂停指示[NdisMIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex) NDIS_STATUS_INDICATION 配合->**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_PAUSE。
-- 卸载目标调用，从而使恢复指示**NdisMIndicateStatusEx** NDIS_STATUS_INDICATION 配合->**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_RESUME。
+- 卸载目标会通过调用[NdisMIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)函数，并将 NDIS_STATUS_INDICATION >**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_PAUSE，来做出暂停的指示。
+- 卸载目标通过调用**NdisMIndicateStatusEx**函数，并将 NDIS_STATUS_INDICATION >**StatusCode**成员设置为 NDIS_STATUS_OFFLOAD_RESUME，从而进行恢复指示。
 
-卸载目标请求主机堆栈继续卸载状态对象后，主机堆栈查询 OID_TCP_TASK_OFFLOAD 再次以获取卸载目标的 TCP 卸载修订后的功能。 有关详细信息，请参阅[NDIS_STATUS_OFFLOAD_RESUME](https://docs.microsoft.com/windows-hardware/drivers/network/)。
+在卸载目标请求宿主堆栈恢复卸载状态对象之后，主机堆栈再次查询 OID_TCP_TASK_OFFLOAD，以获取卸载目标的 TCP 卸载修改后的功能。 有关详细信息，请参阅[NDIS_STATUS_OFFLOAD_RESUME](https://docs.microsoft.com/windows-hardware/drivers/network/)。
 
 ## <a name="disabling-offload-capabilities"></a>禁用卸载功能
 
-若要禁用所有支持的 NIC 或卸载目标的卸载功能，主机堆栈设置 OID_TCP_TASK_OFFLOAD。 在中*InformationBuffer*，主机堆栈提供具有 NDIS_TASK_OFFLOAD_HEADER 结构**OffsetFirstTask**此结构的成员设置为零。
+若要禁用 NIC 或卸载目标支持的所有卸载功能，主机堆栈将设置 OID_TCP_TASK_OFFLOAD。 在*InformationBuffer*中，主机堆栈提供 NDIS_TASK_OFFLOAD_HEADER 结构，此结构的**OffsetFirstTask**成员设置为零。
 
 ## <a name="requirements"></a>要求
 
 | | |
 | --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows Vista 及更高版本 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 

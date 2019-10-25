@@ -1,6 +1,6 @@
 ---
 title: Iasphelp get\_MediaReady 方法
-description: MediaReady 属性启用 ASP 网页，以获取该名称是当前可供使用的打印机纸张的所有窗体的一组字符串。
+description: 使用 MediaReady 属性可以获取一组字符串，这些字符串命名当前可供使用的打印机的所有纸张窗体。
 MS-HAID:
 - webfnc\_b10e8434-7e12-4bb5-8c43-77cb890f72a8.xml
 - print.iasphelp\_mediaready
@@ -20,16 +20,16 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5a7721ffeda339468e553b1d055218b6694fe0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99dd80c0fb7807f0d820d06f4f71734444653cff
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392828"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838095"
 ---
-# <a name="iasphelpgetmediaready-method"></a>Iasphelp::get\_MediaReady 方法
+# <a name="iasphelpget_mediaready-method"></a>Iasphelp：： get\_MediaReady 方法
 
-**MediaReady**属性启用 ASP 网页，以获取一组命名的打印机纸张窗体的所有当前可供使用的字符串。
+使用**MediaReady**属性可以获取一组字符串，这些字符串命名当前可供使用的打印机的所有纸张窗体。
 
 <a name="syntax"></a>语法
 ------
@@ -40,16 +40,16 @@ HRESULT get_MediaReady(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *pVal* \[out\]  
-调用方提供的位置，以接收所有纸张的窗体的打印机的当前可使用该名称的一组字符串的指针。
+调用方提供的位置，用于接收指向一组字符串的指针，这些字符串命名当前可供使用的打印机的所有纸张窗体。
 
 <a name="return-value"></a>返回值
 ------------
 
-下表中，此属性返回的值之一。
+此属性返回下表中的值之一。
 
 <table>
 <colgroup>
@@ -69,7 +69,7 @@ HRESULT get_MediaReady(
 </tr>
 <tr class="even">
 <td><strong>E_HANDLE</strong></td>
-<td><p><a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"> <strong>Iasphelp::Open</strong> </a>尚未调用方法。</p></td>
+<td><p>未调用<a href="iasphelp-open.md" data-raw-source="[&lt;strong&gt;Iasphelp::Open&lt;/strong&gt;](iasphelp-open.md)"><strong>Iasphelp：： Open</strong></a>方法。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>E_OUTOFMEMORY</strong></td>
@@ -80,9 +80,9 @@ HRESULT get_MediaReady(
 
 ## <a name="vbscript-example"></a>VBScript 示例
 
-此方法获取的纸质表单，通过调用打印机驱动程序的当前可供使用的名称的列表[ **DrvDeviceCapabilities** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities)函数与 DC\_MEDIAREADY标志设置。
+此方法获取当前可供使用的纸张窗体的列表，该列表通过在设置了 DC\_MEDIAREADY 标志的情况下调用打印机驱动程序的[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)函数。
 
-[ **Iasphelp::Open** ](iasphelp-open.md)前必须调用方法**Iasphelp::MediaReady**属性可以进行查询。
+在查询**Iasphelp：： MediaReady**属性之前，必须先调用[**Iasphelp：： Open**](iasphelp-open.md)方法。
 
 ```vb
 Dim objPrinter, MediaReadyArray
@@ -103,13 +103,13 @@ MediaReadyArray = objPrinter.MediaReady
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面设备</td>
+<td>桌面</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvdevicecapabilities)
+[**DrvDeviceCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)
 
-[**Iasphelp::Open**](iasphelp-open.md)
+[**Iasphelp：： Open**](iasphelp-open.md)

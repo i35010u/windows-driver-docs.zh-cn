@@ -1,30 +1,30 @@
 ---
-Description: USB 设备提供了有关其自身的数据结构称为 USB 描述符中的信息。 本部分提供有关客户端驱动程序可以从 USB 设备中获取的各种描述符信息。
+Description: USB 设备在称为 USB 描述符的数据结构中提供自身的相关信息。 本部分提供有关客户端驱动程序可以从 USB 设备获取的各种描述符的信息。
 title: USB 描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa76f5ebd1a17daea749c8fe0eb781df4b9f2407
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1caf2a5da4aacf9ed5f067fd0a8b1aa4cbc6a2e1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360158"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844829"
 ---
 # <a name="usb-descriptors"></a>USB 描述符
 
 
-USB 设备提供了有关其自身在名为的数据结构中的信息*USB 描述符*。 本部分提供有关客户端驱动程序可以从 USB 设备中获取的各种描述符信息。
+USB 设备在称为*USB 描述符*的数据结构中提供自身的相关信息。 本部分提供有关客户端驱动程序可以从 USB 设备获取的各种描述符的信息。
 
 
 
 
-主机通过发送各种标准控件请求从已连接的设备获取描述符 (获取\_描述符请求) 到默认终结点。 这些请求指定的类型描述符来检索。 此类请求的响应，设备发送描述符包括有关设备、 其配置、 接口和相关的终结点的信息。 *设备描述符*包含整个设备的相关信息。 *配置描述符*包含有关每个设备配置信息。 *字符串描述符*包含 Unicode 文本字符串。
+宿主通过向默认终结点发送各种标准控制请求（获取\_描述符请求）从附加的设备获取描述符。 这些请求指定要检索的描述符类型。 为响应此类请求，设备会发送包含有关设备、其配置、接口和相关终结点的信息的描述符。 *设备描述符*包含有关整个设备的信息。 *配置描述符*包含有关每个设备配置的信息。 *字符串描述符*包含 Unicode 文本字符串。
 
-每个 USB 设备公开的设备描述符，指示设备的类信息、 供应商和产品标识符，以及多个配置。 每个配置还公开其配置描述符，该值指示大量接口和功耗特征。 每个接口公开其包含类和数量的终结点信息的替代设置的每个接口描述符。 每个接口中的每个终结点公开终结点，描述符可指明终结点类型和最大数据包大小。
+每个 USB 设备都公开一个设备描述符，用于指示设备的类信息、供应商和产品标识符，以及配置数。 每个配置都公开其配置描述符，指示接口和电源特征的数目。 每个接口都公开其每个替代设置的接口描述符，其中包含有关类的信息和终结点的数目。 每个接口中的每个终结点都公开终结点描述符，指示终结点类型和最大数据包大小。
 
-例如，请考虑 OSR FX2 板设备布局中所述[USB 设备布局](usb-device-layout.md)。 在设备级别，设备会公开设备描述符和默认终结点的终结点描述符。 在配置级别，设备配置 0 公开配置描述符。 在接口级别，它公开一个接口描述符为备用设置 0。 为终结点级别，它公开三个终结点描述符。
+例如，请考虑[USB 设备布局](usb-device-layout.md)中所述的 OSR FX2 板设备布局。 在设备级别，设备将公开默认终结点的设备描述符和终结点描述符。 在配置级别，设备会为配置0公开配置描述符。 在接口级别，它为备用设置0公开了一个接口描述符。 在终结点级别，它公开了三个终结点说明符。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 
 <table>
@@ -41,19 +41,19 @@ USB 设备提供了有关其自身在名为的数据结构中的信息*USB 描�
 <tbody>
 <tr class="odd">
 <td><p><a href="usb-device-descriptors.md" data-raw-source="[USB device descriptors](usb-device-descriptors.md)">USB 设备描述符</a></p></td>
-<td><p>设备描述符包含有关 USB 设备作为一个整体的信息。 本主题介绍<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbspec/ns-usbspec-_usb_device_descriptor)"> <strong>USB_DEVICE_DESCRIPTOR</strong> </a>结构，并包含有关客户端驱动程序如何发送 get 描述符请求以获取设备描述符信息。</p></td>
+<td><p>设备描述符同时包含有关 USB 设备的信息。 本主题介绍<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor" data-raw-source="[&lt;strong&gt;USB_DEVICE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_device_descriptor)"><strong>USB_DEVICE_DESCRIPTOR</strong></a>结构，并包括有关客户端驱动程序如何发送获取描述符请求以获取设备描述符的信息。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="usb-configuration-descriptors.md" data-raw-source="[USB configuration descriptors](usb-configuration-descriptors.md)">USB 配置描述符</a></p></td>
-<td><p>USB 设备公开的接口称为 USB 配置一系列的窗体中的其功能。 每个接口由一个或多个备用的设置，和每个备用设置由一组终结点组成。 本主题介绍与 USB 配置相关联的各种描述符。</p></td>
+<td><p>USB 设备以一系列称为 USB 配置的接口的形式公开其功能。 每个接口都由一个或多个备用设置组成，每个备用设置由一组终结点组成。 本主题介绍与 USB 配置相关的各种描述符。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="usb-string-descriptors.md" data-raw-source="[USB String Descriptors](usb-string-descriptors.md)">USB 字符串描述符</a></p></td>
-<td><p>设备、 配置和接口描述符可能包含对字符串描述符的引用。 本主题介绍如何从设备获取特定字符串描述符。</p></td>
+<td><p>设备、配置和接口描述符可能包含对字符串描述符的引用。 本主题介绍如何从设备获取特定字符串描述符。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="usb-interface-association-descriptor.md" data-raw-source="[USB Interface Association Descriptor](usb-interface-association-descriptor.md)">USB 接口关联描述符</a></p></td>
-<td><p>USB 接口关联描述符 (IAD) 允许设备连接到属于函数的组接口。 本主题介绍客户端驱动程序可以确定设备是否包含一个函数 IAD。</p></td>
+<td><p>USB 接口关联描述符（IAD）允许设备对属于函数的接口进行分组。 本主题介绍客户端驱动程序如何确定设备是否包含用于函数的 IAD。</p></td>
 </tr>
 </tbody>
 </table>

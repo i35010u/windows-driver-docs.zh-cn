@@ -4,12 +4,12 @@ description: WIA 驱动程序的注册表访问权限
 ms.assetid: 0e0b7493-858b-4add-9e1d-fd71bae21b6e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba2d916e2ce22f233f616c0fb503bbf8331b6262
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d8fb15acd8b99e02b2c3ee3c3fe7efb9f9bdc7cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376491"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840759"
 ---
 # <a name="registry-access-for-wia-drivers"></a>WIA 驱动程序的注册表访问权限
 
@@ -17,11 +17,11 @@ ms.locfileid: "67376491"
 
 
 
-驱动程序开发人员应了解访问所需的注册表项的权限。 在注册表的大部分是可用于驱动程序进行读取。 但是，WIA 驱动程序应仅向传递给它们中的注册表项写入[ **IStiUSD::Initialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-initialize)方法。
+驱动程序开发人员应该知道他们需要访问的注册表项的权限。 许多注册表都可供驱动程序读取。 但是，WIA 驱动程序只应写入在[**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法中传递给它们的注册表项。
 
-尽管因为 WIA 服务在高特权下运行在 Windows XP 中，可以写入其他注册表项**LocalSystem**帐户，这可不能再在低特权下**LocalService**帐户，在 Microsoft Windows Server 2003 和更高版本。
+虽然在 Windows XP 中可以写入到其他注册表项，但由于 WIA 服务在**高特权** **LocalSystem**帐户下运行，因此在 Microsoft Windows Server2003及更高版本。
 
-驱动程序通常需要对其注册表项之外的写访问权限**IStiUSD::Initialize**。 因为大多数驱动程序存储中的数据**DeviceData**子项，它可轻松打开**DeviceData**子项，并将存储到更高版本使用的打开密钥句柄。 仅当它不再需要该密钥时，该驱动程序应关闭注册表项。
+驱动程序通常需要对其注册表项（ **IStiUSD：： Initialize**之外）的写入访问权限。 由于大多数驱动程序将数据存储在**DeviceData**子项中，因此可以轻松地打开**DeviceData**子项，并将句柄存储到打开的密钥，以备稍后使用。 仅当驱动程序不再需要此注册表项时，才应将其关闭。
 
 下面的代码示例演示如何使用**DeviceData**注册表子项。
 
@@ -130,9 +130,9 @@ CWIADevice::~CWIADevice(void)
 }
 ```
 
-**DeviceData**注册表子项是打开 Windows Me 和 Windows XP 上的驱动程序的读/写访问和更高版本。 设备密钥本身 (例如，父注册表项**DeviceData**) 可能也不是打开以进行写访问由驱动程序，具体取决于操作系统版本。
+**DeviceData**注册表子项在 windows Me、windows XP 和更高版本上可用于对驱动程序进行读/写访问。 设备密钥本身（例如， **DeviceData**的父注册表项）可能会打开，也可能不会打开以供驱动程序写入访问，具体取决于操作系统版本。
 
-**请注意**  驱动程序*必须*关闭时它们不再需要必须关闭所有注册表项之前卸载它打开任何注册表项。
+**请注意**   驱动程序*必须*关闭不再需要时打开的任何注册表项，并且必须在卸载之前关闭所有注册表项。
 
  
 
