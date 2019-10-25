@@ -4,39 +4,39 @@ description: 发送 IOCTL_ACPI_ENUM_CHILDREN 请求
 ms.assetid: cbad53dd-4320-4920-9d16-231d0aaae839
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f2551111415ee5350f7dad6cb778f25811abbdc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4997f58455d32941c95ef6e6ea4003f3e5e32ef7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355808"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831466"
 ---
-# <a name="sending-an-ioctlacpienumchildren-request"></a>发送 IOCTL\_ACPI\_枚举\_子级请求
+# <a name="sending-an-ioctl_acpi_enum_children-request"></a>发送 IOCTL\_ACPI\_枚举\_子请求
 
 
-驱动程序通常使用两个序列[ **IOCTL\_ACPI\_枚举\_子级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)枚举到设备的命名空间中的相关对象的请求将它发送请求。 该驱动程序将发送第一个请求来获取包含的路径和名称的对象的所需的驱动程序分配输出缓冲区的大小。 该驱动程序将发送第二个请求，以便在驱动程序分配输出缓冲区中返回的路径和名称的对象。
+驱动程序通常使用两条 IOCTL 序列[ **\_ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求，以枚举请求发送到的设备的命名空间中感兴趣的对象。 驱动程序将发送第一个请求，以获取包含对象的路径和名称所需的驱动程序分配输出缓冲区的大小。 驱动程序发送第二个请求以返回驱动程序分配的输出缓冲区中的对象的路径和名称。
 
-以下代码示例演示如何将发送一系列两个同步 IOCTL\_ACPI\_枚举\_子级请求以递归方式枚举父设备将请求发送的所有子设备。 该代码执行以下一系列操作以处理第一个请求：
+下面的代码示例演示如何将两个同步 IOCTL 序列\_ACPI\_枚举\_子请求以递归方式枚举要向其发送请求的父设备的所有子设备。 此代码执行以下操作序列来处理第一个请求：
 
-1.  设置第一个请求的输入的缓冲区。 输入的缓冲区[ **ACPI\_ENUM\_子级\_输入\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)结构**签名**设置枚举\_子级\_输入\_缓冲区\_签名并**标志**设置为枚举\_子级\_MULTILEVEL。
+1.  为第一个请求设置输入缓冲区。 输入缓冲区是[**ACPI\_枚举\_子元素\_输入\_缓冲**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_input_buffer)结构，**并将** **签名**设置为枚举\_子\_输入\_缓存\_\_多级\_子元素。
 
-2.  设置第一个请求的输出缓冲区。 输出缓冲区设置为[ **ACPI\_ENUM\_子级\_输出\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)结构。 此输出缓冲区只包含一个[ **ACPI\_ENUM\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/acpiioct/ns-acpiioct-_acpi_enum_child)结构，这是不足够大，以返回设备的名称。
+2.  设置第一个请求的输出缓冲区。 输出缓冲区设置为[**ACPI\_枚举\_子\_输出\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)结构。 此输出缓冲区只包含一个[**ACPI\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_child)结构，此结构的大小不足以返回设备的名称。
 
-3.  调用调用方提供[SendDownStreamIrp 函数](senddownstreamirp-function.md)将以同步方式将第一个请求发送到父设备。
+3.  调用调用方提供的[SendDownStreamIrp 函数](senddownstreamirp-function.md)，以同步方式将第一个请求发送到父设备。
 
-4.  检查是否 ACPI 驱动程序将返回状态设置为状态\_缓冲区\_溢出。 如果返回另一个状态，则表明发生了错误，代码将终止。
+4.  检查 ACPI 驱动程序是否将返回状态设置为\_BUFFER\_溢出。 如果返回了其他状态，则表明出现了错误，代码已终止。
 
-5.  ACPI 驱动程序设置的检查**签名**成员添加到 ACPI\_ENUM\_子级\_输出\_缓冲区\_签名和集**NumberOfChildren**为值大于或等于**sizeof**(ACPI\_枚举\_子级\_输出\_缓冲区)。 如果两者都是 true 的值**NumberOfChildren**是以字节为单位，包含请求的子对象名称所需的输出缓冲区的大小。
+5.  检查 ACPI 驱动程序是否将**签名**成员设置为 ACPI\_枚举\_子元素\_输出\_缓冲区\_签名，并将**NumberOfChildren**设置为大于或等于**sizeof**的值（ACPI\_枚举\_子\_输出\_缓冲区）。 如果两者都为 true，则**NumberOfChildren**的值是输出缓冲区的大小（以字节为单位），它需要包含请求的子对象名称。
 
-此示例代码将获取所需的输出缓冲区大小后，它将执行以下一系列操作来处理返回的路径和名称的请求的子对象的第二个请求：
+示例代码获取所需的输出缓冲区大小后，它将执行以下操作序列来处理第二个请求，该请求将返回所请求子对象的路径和名称：
 
-1.  分配输出缓冲区的所需的大小，以字节为单位。
+1.  分配所需大小的输出缓冲区（以字节为单位）。
 
-2.  调用的驱动程序提供**SendDownStreamIrp**函数以同步方式将第二个请求发送到父设备。
+2.  调用驱动程序提供的**SendDownStreamIrp**函数，以同步方式向父设备发送第二个请求。
 
-3.  ACPI 驱动程序设置的检查**签名**成员添加到 ACPI\_ENUM\_子级\_输出\_缓冲区\_签名，设置**NumberOfChildren**到一个或多个 （指示返回的路径和名称的至少一个对象），并设置**信息**的成员[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)到输出缓冲区的分配大小。
+3.  检查 ACPI 驱动程序是否将**签名**成员设置为 ACPI\_枚举\_子\_输出\_缓冲区\_签名，并将**NumberOfChildren**设置为一个或多个（指示至少有一个对象的路径和名称）返回），并将[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)的**信息**成员设置为输出缓冲区的已分配大小。
 
-4.  处理的输出缓冲区中的子对象名称的数组。
+4.  在输出缓冲区中处理子对象名称的数组。
 
 ```cpp
 #define MY_TAG 'gTyM'   // Pool tag for memory allocation

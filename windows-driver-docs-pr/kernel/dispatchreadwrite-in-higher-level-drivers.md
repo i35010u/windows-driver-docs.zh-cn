@@ -6,18 +6,18 @@ keywords:
 - DispatchReadWrite 例程
 - 调度例程 WDK 内核，DispatchReadWrite 例程
 - 读/写调度例程 WDK 内核
-- IRP_MJ_WRITE I/O 函数代码
-- IRP_MJ_READ I/O 函数代码
+- IRP_MJ_WRITE i/o 函数代码
+- IRP_MJ_READ i/o 函数代码
 - 数据传输 WDK 内核，读/写调度例程
-- 传输数据 WDK 内核，读/写调度例程
+- 传输数据 WDK 内核，读取/写入调度例程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54b2b9918de2b89d0c6ed7d4777908a8402a6c72
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ddfd2831410c51da04126f6b91fbd050367ade98
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384977"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836840"
 ---
 # <a name="dispatchreadwrite-in-higher-level-drivers"></a>较高级驱动程序中的 DispatchReadWrite
 
@@ -25,17 +25,17 @@ ms.locfileid: "67384977"
 
 
 
-除了文件系统驱动程序，更高级别的驱动程序通常不具有任何内部驱动程序队列的 Irp。 此类的驱动程序的[ *DispatchReadWrite* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程可以将 Irp 传递到较低的驱动程序的有效参数可能是设置后其[ *IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，如中所述[驱动程序堆栈的下层传递 Irp](passing-irps-down-the-driver-stack.md)。
+除了文件系统驱动程序，较高级别的驱动程序通常不会有任何用于 Irp 的内部驱动程序队列。 此类驱动程序的[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程可以将具有有效参数的 irp 传递到更低版本的驱动程序，如设置其[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，如将[Irp 向下传递到驱动程序堆栈](passing-irps-down-the-driver-stack.md)中所述。
 
-但是，SCSI 类驱动程序的*DispatchReadWrite*例程负责拆分大型传输请求，如有必要，再发送与主要函数代码 IRP [ **IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) SCSI 端口/微型端口驱动程序配对。 有关详细信息，请参阅[存储类驱动程序 SplitTransferRequest 例程](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-class-driver-s-splittransferrequest-routine)。
+但是，如果需要，SCSI 类驱动程序的*DispatchReadWrite*例程负责拆分大型传输请求，然后将 IRP 发送到主要函数代码[**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或[**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)SCSI 端口/微型端口驱动程序对。 有关详细信息，请参阅[存储类驱动程序的 SplitTransferRequest 例程](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-class-driver-s-splittransferrequest-routine)。
 
-如果更高级别的驱动程序分配一个或多个 Irp，它为下一步低驱动程序中设置其*DispatchReadWrite*例程，以请求一定数量的部分传输*DispatchReadWrite*例程必须调用[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)与每个驱动程序分配的 IRP。 该驱动程序必须注册其*IoCompletion*例程，以跟踪每个部分传输操作中传输数据量，以便*IoCompletion*例程可发布所有驱动程序分配的 Irp 和最终，完成原始请求。
+如果更高级别的驱动程序分配一个或多个 Irp，而该 Irp 在其*DispatchReadWrite*例程中为下一个较低版本的驱动程序进行了设置，则若要请求某些部分传输， *DispatchReadWrite*例程必须调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)每个驱动程序分配的 IRP。 驱动程序必须注册其*IoCompletion*例程，以跟踪在每个部分传输操作中传输的数据量，以便*IoCompletion*例程可以释放所有驱动程序分配的 irp，并最终完成原始请求.
 
-如果基础驱动程序控制可移动介质设备，由更高级别的驱动程序分配任何 Irp 必须具有线程上下文。 若要设置的线程上下文，但分配驱动程序必须设置**Irp-&gt;Tail.Overlay**。在每个线程新分配 IRP 中传入传输 IRP 的相同值。 有关详细信息，请参阅[支持可移动介质](supporting-removable-media.md)。
+如果底层驱动程序控制可移动媒体设备，则由较高级别的驱动程序分配的任何 Irp 都必须具有线程上下文。 若要设置线程上下文，分配的驱动程序必须将**Irp&gt;** 。来自传入传输 IRP 中相同值的每个新分配的 IRP 中的线程。 有关详细信息，请参阅[支持可移动介质](supporting-removable-media.md)。
 
-如果基础设备驱动程序返回一个错误，部分传输 IRP *IoCompletion*例程可以重试部分传输请求或完成其 I/O 状态块设置使用返回原始的 IRP错误，在释放任何 Irp 和内存的更高级别的驱动程序已分配。
+如果基础设备驱动程序返回一个用于部分传输的 IRP，并出现错误， *IoCompletion*例程可以重试部分传输请求，或使用返回的错误来完成原始 IRP，并在释放任何已分配更高级别驱动程序的 Irp 和内存。
 
-如果更高级别的驱动程序的*DispatchReadWrite*例程的部分传输操作分配内存，并将由驱动程序的访问其分配*IoCompletion*例程 (或通过基础设备驱动程序）， *DispatchReadWrite*例程必须从非分页缓冲池分配的内存。
+如果较高级别的驱动程序的*DispatchReadWrite*例程为部分传输操作分配内存，并且驱动程序的*IoCompletion*例程（或基础设备驱动程序）将访问其分配， *DispatchReadWrite*例程必须从非分页池分配该内存。
 
  
 

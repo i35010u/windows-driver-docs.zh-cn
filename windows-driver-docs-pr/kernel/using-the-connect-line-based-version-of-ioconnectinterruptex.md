@@ -9,33 +9,33 @@ keywords:
 - 自动中断检测 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ed0fa2d386c3c9d30f8f6e0ceb28d4c4d4ace4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1b11f541600ce432672b4dedb569f1e2d8b42505
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358186"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835868"
 ---
-# <a name="using-the-connect_line_based-version-of-ioconnectinterruptex"></a>使用 CONNECT\_行\_IoConnectInterruptEx 基于版本
+# <a name="using-the-connect_line_based-version-of-ioconnectinterruptex"></a>使用连接\_行\_IoConnectInterruptEx 版本
 
 
-对于 Windows Vista 和更高版本操作系统中，驱动程序可以使用 CONNECT\_行\_基于版本[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)例程的驱动程序的基于线条的中断。 (早期版本操作系统的驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版**IoConnectInterruptEx**。)
+对于 Windows Vista 和更高版本的操作系统，驱动程序可以使用 CONNECT\_LINE\_[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)版本为驱动程序的基于行的中断注册[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)例程。 （对于较早版本的操作系统，驱动程序可以使用连接\_完全\_指定版本的**IoConnectInterruptEx**。）
 
-**请注意**  可以为其基于行的中断的所有使用此方法只应该用于注册单个中断服务例程 (ISR) 的驱动程序。 如果该驱动程序可以接收多个中断，它必须使用 CONNECT\_完全\_SPECIFIED 新版**IoConnectInterruptEx**。
+**请注意**   只能对为其所有基于行的中断注册单个中断服务例程（ISR）的驱动程序使用此方法。 如果驱动程序可以接收多个中断，则必须使用连接\_完全\_指定的**IoConnectInterruptEx**版本。
 
  
 
-该驱动程序指定的连接值\_行\_基于 for*参数*-&gt;**版本**，并使用的成员*参数*-&gt;**LineBased**来指定该操作的其他参数：
+驱动程序将\_行\_的值指定为-&gt;**版本**的*参数*，并使用-**LineBased** *参数*的成员，以指定运作
 
--   *参数*-&gt;**LineBased.PhysicalDeviceObject**指定设备的物理设备对象 (PDO) 的 ISR 服务。 系统使用的设备对象自动识别设备的基于线条的中断。
+-   *参数*-&gt;**LineBased。 PhysicalDeviceObject**指定 ISR 服务的设备的物理设备对象（PDO）。 系统使用设备对象自动标识设备的基于线路的中断。
 
--   *参数*-&gt;**LineBased.ServiceRoutine**指向*InterruptService*例程，而*参数*- &gt; **LineBased**。**ServiceContext**指定系统将作为传递的值*ServiceContext*参数*InterruptService*。 该驱动程序可以使用此传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
+-   *参数*-&gt;**ServiceRoutine**指向*InterruptService*例程，而*参数*-&gt;**LineBased**。**ServiceContext**指定系统作为*ServiceContext*参数传递到*InterruptService*的值。 驱动程序可以使用它来传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
 
--   该驱动程序提供了指向 PKINTERRUPT 变量中的 * 参数 * **-&gt;LineBased.InterruptObject**。 **IoConnectInterruptEx**设置此变量，使其指向的中断，可以删除 ISR 时使用的中断对象 有关详细信息，请参阅[删除 ISR](removing-an-isr.md)。
+-   驱动程序提供指向 * Parameters * **-&gt;LineBased InterruptObject**中的 PKINTERRUPT 变量的指针。 **IoConnectInterruptEx**将此变量设置为指向中断的中断对象，可在删除 ISR 时使用该对象。 有关详细信息，请参阅[删除 ISR](removing-an-isr.md)。
 
--   驱动程序可以选择指定在旋转锁*参数 * * *-&gt;LineBased.SpinLock** ISR 与同步时要使用的系统 大多数驱动程序可以只需指定**NULL**启用系统分配旋转锁代表该驱动程序。 有关与 ISR 同步的详细信息，请参阅[对设备数据的同步访问](synchronizing-access-to-device-data.md)。
+-   驱动程序可以选择指定参数中的自旋锁 ** * *-&gt;旋转锁** 以便系统在与 ISR 同步时使用。 大多数驱动程序可以仅指定**NULL** ，使系统能够代表驱动程序分配自旋锁。 有关与 ISR 同步的详细信息，请参阅[同步对设备数据的访问](synchronizing-access-to-device-data.md)。
 
-下面的代码示例演示如何注册*InterruptService*例程使用 CONNECT\_行\_基于：
+下面的代码示例演示如何使用 CONNECT\_LINE\_来注册*InterruptService*例程：
 
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;

@@ -3,15 +3,15 @@ title: 调试器引擎 API 概述
 description: 调试器引擎 API 概述
 ms.assetid: ea8beca6-93b7-4537-af89-78d599b8b982
 keywords:
-- 调试器引擎 API 概述
+- 调试器引擎 API，概述
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19356776e5b311e00b5c21c167866b16ee685602
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25a3754cffd481507e310815fb5eea6f97510fea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366945"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837776"
 ---
 # <a name="debugger-engine-api-overview"></a>调试器引擎 API 概述
 
@@ -21,7 +21,7 @@ ms.locfileid: "67366945"
 
 本部分包括：
 
-[与引擎进行交互](interacting-with-the-engine.md)
+[与引擎交互](interacting-with-the-engine.md)
 
 [使用输入和输出](using-input-and-output.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "67366945"
 
 [使用符号](using-symbols.md)
 
-[使用源代码文件](using-source-files.md)
+[使用源文件](using-source-files.md)
 
 [连接到目标](connecting-to-targets.md)
 
@@ -45,11 +45,11 @@ ms.locfileid: "67366945"
 
 [目标状态](target-state.md)
 
-[调用扩展和扩展函数](calling-extensions-and-extension-functions.md)
+[调用 Extension 和 Extension 函数](calling-extensions-and-extension-functions.md)
 
-[组装和拆装功能说明](assembling-and-disassembling-instructions.md)
+[组装和反汇编说明](assembling-and-disassembling-instructions.md)
 
-**重要**  IDebug\*接口如[ **IDebugEventCallbacks** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbacks)接口，尽管类似，COM 不是正确的 COM Api。 从托管代码中调用这些接口是一个不受支持的方案。 如果使用托管代码调用的接口，例如垃圾回收和线程所有权的问题会导致系统不稳定。
+**重要**  IDebug\* 接口（如 COM like）不是正确的 com api，如[**IDebugEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
 
  
 

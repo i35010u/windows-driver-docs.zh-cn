@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f0c7256bdac73282af3c5a2c0a96004b8baf2141
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d3cb5e9f1f050baaa8c23b82ad77a2dca8637a28
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378551"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837968"
 ---
 # <a name="geteventbuffer-function"></a>GetEventBuffer 函数
 
@@ -38,17 +38,17 @@ void GetEventBuffer(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetEventBuffer\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构。
+返回时，将包含一个 WMI 限定符值，该值指示操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构的**HBAStatus**成员中返回此信息。
 
 *EventCount*   
-返回时，指示已检索到其信息的事件数。 微型端口驱动程序将返回此信息**EventCount**的成员[ **GetEventBuffer\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构。
+返回时，指示检索其信息的事件数。 微型端口驱动程序在[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构的**EventCount**成员中返回此信息。
 
 *事件\[\]*    
-类型的结构数组[ **MSFC\_EventBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)包含 HBA 事件队列中的下一步事件有关的信息。 微型端口驱动程序将返回此信息**事件**的成员[ **GetEventBuffer\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构。
+类型为[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)的结构的数组，其中包含有关 HBA 事件队列中的下一个事件的信息。 微型端口驱动程序会在[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)结构的**Events**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -58,9 +58,9 @@ void GetEventBuffer(
 <a name="remarks"></a>备注
 -------
 
-**GetEventBuffer**方法从队列检索其信息后删除事件。
+**GetEventBuffer**方法会在检索其信息后从队列中删除事件。
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -73,25 +73,25 @@ void GetEventBuffer(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Hbaapi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)
+[**GetEventBuffer\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_geteventbuffer_out)
 
-[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
+[**MSFC\_EventBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_eventbuffer)
 
  
 

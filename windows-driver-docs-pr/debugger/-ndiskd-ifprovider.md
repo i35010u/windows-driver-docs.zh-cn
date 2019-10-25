@@ -1,9 +1,9 @@
 ---
 title: ndiskd.ifprovider
-description: Ndiskd.ifprovider 扩展显示有关 NDIS 接口提供程序 (IfProvider) 的信息。
+description: Ndiskd. ifprovider 扩展显示有关 NDIS 接口提供程序（IfProvider）的信息。
 ms.assetid: 89C406E5-81D3-42AA-BA15-3D7C093BCD3C
 keywords:
-- ndiskd.ifprovider Windows 调试
+- ndiskd ifprovider Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,36 +12,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1126d8cb14d51cb95fe9b7ad79b38525aca163e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac2a2daeb2eae938122790475ecd95a403fc2a43
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365755"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837594"
 ---
 # <a name="ndiskdifprovider"></a>!ndiskd.ifprovider
 
 
-**！ Ndiskd.ifprovider**扩展显示有关的信息[NDIS 接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)(IfProvider)。 如果不带任何参数运行此扩展 ！ ndiskd 将显示所有已注册的 NDIS 接口提供程序的列表。
+**！ Ndiskd ifprovider**扩展显示有关[NDIS 接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)（ifprovider）的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示所有已注册 NDIS 接口提供程序的列表。
 
 ```console
 !ndiskd.ifprovider [-handle <x>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
 IfProvider 的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd.dll
+Ndiskd
 
 <a name="examples"></a>示例
 --------
 
-运行 **！ ndiskd.ifprovider**注册 IfProviders 不带任何参数，以获取所有的列表的扩展。
+运行不带参数的 **！ ndiskd ifprovider**扩展，以获取所有已注册 IfProviders 的列表。
 
 ```console
 1: kd> !ndiskd.ifprovider
@@ -52,13 +52,13 @@ Ndiskd.dll
     ffffd20d11deae70 - The NDIS interface provider
 ```
 
-您可以看到从上一示例的调试对象计算机具有注册的四个接口提供程序。 其中两个 NDIS 接口提供程序。
+可以从前面的示例中看到，调试对象计算机注册了四个接口提供程序。 其中两个是 NDIS 接口提供程序。
 
-**请注意**  接口提供程序是一个通用的概念，并且不要求具有微型端口驱动程序。 虽然微型端口驱动程序可能会选择将注册为接口提供程序，如果需要，大多数微型端口驱动程序不这样做因为 NDIS 具有内置的接口提供程序。 NDIS 内置接口提供程序会自动提供用于每个微型端口驱动程序、 轻型筛选器 (LWF) 的每个模块和环回接口的接口。 有关详细信息，请参阅[NDIS 接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)。
+**注意**  接口提供程序是一种通用概念，无需成为微型端口驱动程序。 如果需要，微型端口驱动程序可以选择将注册为接口提供程序，大多数微型端口驱动程序不会这样做，因为 NDIS 具有内置接口提供程序。 NDIS 内置接口提供程序自动为每个微型端口驱动程序、每个轻型筛选器（LWF）模块和环回接口提供接口。 有关详细信息，请参阅[NDIS interface provider](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)。
 
  
 
-下面的示例演示了在上一示例中，其句柄是 ffffd20d14334180"wanarp"接口提供程序的详细信息。
+下面的示例显示了上一示例中 "wanarp" 接口提供程序的详细信息，其句柄为 ffffd20d14334180。
 
 ```console
 1: kd> !ndiskd.ifprovider ffffd20d14334180
@@ -83,18 +83,18 @@ HANDLERS
     SetObjectHandler                       fffff80d2f04bd10  bp wanarp!WanNdisIfSetHandler
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
-[Windows Vista 和更高版本的网络参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)
+[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
 
-[**NDIS 扩展 (Ndiskd.dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[ **！ ndiskd。帮助**](-ndiskd-help.md)
 
 [注册为接口提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/registering-as-an-interface-provider)
 

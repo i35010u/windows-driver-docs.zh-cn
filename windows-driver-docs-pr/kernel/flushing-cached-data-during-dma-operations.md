@@ -9,12 +9,12 @@ keywords:
 - 刷新缓存的数据
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cee326a8f5df5ed787a0e1e55be193b010c77b9c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13c78deaa9d36a428127c0077d5322daf5ba8ff0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386594"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836710"
 ---
 # <a name="flushing-cached-data-during-dma-operations"></a>执行 DMA 操作期间刷新缓存数据
 
@@ -22,37 +22,37 @@ ms.locfileid: "67386594"
 
 
 
-在某些平台的处理器和系统 DMA 控制器 （或总线 master DMA 适配器） 表现出缓存协调性异常。 以下指导原则启用使用版本 1 或 2 的 DMA 操作接口的驱动程序 (请参阅[ **DMA\_OPERATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_operations)) 以跨所有受支持的处理器维护一致的缓存状态体系结构，包括体系结构不包含硬件自动强制实施缓存一致性。
+在某些平台中，处理器和系统 DMA 控制器（或总线主机 DMA 适配器）显示缓存一致性异常。 以下准则启用使用第1版或第2版 DMA 操作界面的驱动程序（请参阅[**dma\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_dma_operations)），在所有支持的处理器体系结构中维护一致的缓存状态，包括不包含自动强制缓存一致性的硬件。
 
-**请注意**  本主题中的指导原则仅适用于使用版本 1 和 2 DMA 操作接口的驱动程序。 使用此接口的版本 3 的驱动程序必须遵循一组不同的指导原则。 有关详细信息，请参阅[DMA 操作接口的版本 3](version-3-of-the-dma-operations-interface.md)。
+**请注意**  本主题中的准则仅适用于使用 DMA 操作接口版本1和版本2的驱动程序。 使用此接口版本3的驱动程序必须遵循一组不同的准则。 有关详细信息，请参阅[DMA 操作界面的版本 3](version-3-of-the-dma-operations-interface.md)。
 
  
 
-**若要在 DMA 操作期间保持数据完整性，最低级别的驱动程序必须遵循这些指导原则**
+**若要在 DMA 操作期间保持数据完整性，最低级别驱动程序必须遵循这些准则**
 
-1.  调用[ **KeFlushIoBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keflushiobuffers)之前开始传输操作中可能缓存在处理器中的数据和内存中的数据之间保持一致。
+1.  在开始传输操作之前调用[**KeFlushIoBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keflushiobuffers) ，以在处理器中缓存的数据与内存中的数据之间保持一致性。
 
-    如果驱动程序调用[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer)与*CacheEnabled*参数设置为**TRUE**，驱动程序必须调用**KeFlushIoBuffers**开始传输操作中的向/从其缓冲区之前。
+    如果驱动程序调用[**AllocateCommonBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) ，并将*CacheEnabled*参数设置为**TRUE**，则驱动程序必须先调用**KeFlushIoBuffers** ，然后再开始对其缓冲区的传输操作。
 
-2.  调用[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)末尾的每个设备传输操作以确保系统 DMA 控制器的缓冲区中的任何其余部分字节都已写入到内存或从属的设备。
+2.  请在每个设备传输操作结束时调用[**FlushAdapterBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers) ，以确保系统 DMA 控制器的所有缓冲区中的剩余字节已写入内存或从属设备。
 
-    或者，致电**FlushAdapterBuffers**给定 IRP 每个传输操作的末尾以确保所有数据已读取到系统内存或写出到总线 master DMA 设备。
+    或者，在给定 IRP 的每个传输操作结束时调用**FlushAdapterBuffers** ，以确保所有数据都已读取到系统内存或写出到主线主机 DMA 设备。
 
-为何重要刷新处理器如下图所示缓存之前读取或写入操作使用 DMA，如果主机处理器和 DMA 控制器不会自动维护缓存一致性。
+下图显示了在主机处理器和 DMA 控制器不自动维护缓存一致性的情况下，在使用 DMA 读取或写入操作之前刷新处理器缓存非常重要的原因。
 
-![关系图说明如何读取和写入操作使用 dma](images/16cchdma.png)
+![说明如何使用 dma 进行读写操作的关系图](images/16cchdma.png)
 
-异步 DMA 读取或写入操作访问数据，在内存中，而不在处理器缓存。 除非此缓存已刷新通过调用**KeFlushIoBuffers**之前读取，只需通过 DMA 操作传输到系统内存的数据无法被覆盖过时的数据如果处理器缓存刷新更高版本。 除非已通过调用刷新处理器缓存**KeFlushIoBuffers**之前执行写入操作，此缓存中的数据可能会比在内存中复制更新。
+异步 DMA 读取或写入操作访问内存中的数据，而不是在处理器缓存中访问数据。 除非已通过在读取之前调用**KeFlushIoBuffers**刷新了此缓存，否则 DMA 操作传输到系统内存中的数据可能会使用陈旧数据覆盖（如果稍后刷新处理器缓存）。 除非已通过在写入之前调用**KeFlushIoBuffers**来刷新处理器缓存，否则此缓存中的数据可能比内存中的副本新。
 
-**KeFlushIoBuffers** nothing 如果到，可用来确定处理器和 DMA 控制器中保存了缓存一致性，因此对此支持例程的调用具有这种平台中几乎没有开销。
+如果处理器和 DMA 控制器可以依靠来维护缓存一致性， **KeFlushIoBuffers**不会执行任何操作，因此，对此支持例程的调用在此类平台上几乎没有任何开销。
 
-由于在上图中还显示，DMA 控制器，由适配器对象表示可以让内部缓冲区。 DMA 控制器可以传输中固定大小的区块，一次的通常八个或多个字节的缓存的数据。 此外，这些 DMA 控制器可以等待，直到其内部缓冲区已满之前每个传输操作。
+如上图所示，由适配器对象表示的 DMA 控制器可以具有内部缓冲区。 此类 DMA 控制器可以将缓存的数据传输为固定大小的区块，一次通常有八个或更多字节。 此外，在每次传输操作之前，这些 DMA 控制器都可以等待它们的内部缓冲区已满。
 
-请考虑使用从属 DMA 读取可变大小的区块中或不是系统 DMA 控制器的缓存大小的整数倍的固定大小的区块中数据的最低级别驱动程序的情况。 除非此驱动程序调用**FlushAdapterBuffers**在每个设备传输结束时，它不能确保当实际将传输请求的驱动程序的每个字节。
+请考虑使用从属 DMA 读取大小可变的块区中的数据或固定大小的区块（不是系统 DMA 控制器的缓存大小的整数倍）的最低级别驱动程序的情况。 除非此驱动程序在每次设备传输结束时调用**FlushAdapterBuffers** ，否则当传输所请求的驱动程序的每个字节时，它都无法确定。
 
-主总线 DMA 设备的驱动程序还应调用**FlushAdapterBuffers** IRP 以确保所有数据是否已经都传输到系统内存中每个传输操作结束时或扩展到设备。
+总线主控 DMA 设备的驱动程序还应在 IRP 的每个传输操作结束时调用**FlushAdapterBuffers** ，以确保所有数据都已传输到系统内存或传出到设备。
 
-**FlushAdapterBuffers**返回布尔值，该值指示请求的刷新操作是否成功。 驱动程序可以使用此值以确定如何设置 I/O 状态块时完成的 DMA IRP 读取或写入操作。
+**FlushAdapterBuffers**返回一个布尔值，该值指示请求的刷新操作是否成功。 当完成 IRP 的读取或写入操作时，驱动程序可以使用此值来确定如何设置 i/o 状态块。
 
  
 

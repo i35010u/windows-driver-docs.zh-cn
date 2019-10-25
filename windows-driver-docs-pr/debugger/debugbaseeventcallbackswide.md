@@ -1,6 +1,6 @@
 ---
 title: debugbaseeventcallbackswide
-description: DebugBaseEventCallbacksWide 类提供了 IDebugEventCallbacksWide 接口的基实现。
+description: DebugBaseEventCallbacksWide 类提供 IDebugEventCallbacksWide 接口的基实现。
 ms.assetid: 38AD8472-1BA3-42EA-99CE-E91098A5B334
 keywords:
 - DebugBaseEventCallbacksWide
@@ -12,29 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fcddd75b4a243630c7b7c43f949d96580f1ed456
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7182bdb21fe2bc8f8cf9ef733fcc2f53e6ffb10
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366963"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837774"
 ---
 # <a name="debugbaseeventcallbackswide-class"></a>DebugBaseEventCallbacksWide 类 
 
-DebugBaseEventCallbacksWide 类提供的基实现[IDebugEventCallbacksWide](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugeventcallbackswide)接口。 
+DebugBaseEventCallbacksWide 类提供[IDebugEventCallbacksWide](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbackswide)接口的基实现。 
 
-程序可以从 DebugBaseEventCallbacksWide 派生事件回调类并实现所需方法。 
+程序可以从 DebugBaseEventCallbacksWide 派生事件回调类并仅实现所需的方法。 
 
-请注意适当地实现 GetInterestMask。
+请小心地实现 GetInterestMask。
  
 ### <a name="requirements"></a>要求
 
-Header
+标头
 
-Dbgeng.h （包括 Dbgeng.h）  
+Dbgeng （包括 Dbgeng）  
 
 
-### <a name="see-also"></a>请参阅
+### <a name="see-also"></a>另请参阅
 [DebugBaseEventCallbacks](debugbaseeventcallbacks.md)
 
  

@@ -4,40 +4,40 @@ ms.assetid: 0234BA57-477E-408C-94C8-8DD8922FD386
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
-description: 定义对等标准 NFC 论坛有关的信息，确保设备的协议可以使用 NFC 进行交互。
+description: 有关 NFC 论坛定义的对等标准和协议的信息，可确保设备能够使用 NFC 进行交互。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8212c433858234ceeb26aeb821e873339ae6ad6e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7867e588b2b534512e8fd38c24ba87b5f7240485
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383162"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834086"
 ---
 # <a name="peer-to-peer"></a>对等
 
 
-若要确保两个设备均可使用 NFC 进行交互，该驱动程序必须传输和接收数据通过以下 NFC 论坛定义对等标准和协议：
+为了确保两个设备能够使用 NFC 进行交互，驱动程序必须通过以下 NFC 论坛定义的对等标准和协议来传输和接收数据：
 
--   LLCP v1.1
--   SNEP v1.0
+-   LLCP 1.1 版
+-   SNEP v1。0
 
 ## <a name="driver-requirements"></a>驱动程序要求
 
 
-驱动程序必须支持运行通过 LLCP 交换 NDEF 消息的默认 SNEP 服务器：
+驱动程序必须支持在 LLCP 上运行的默认 SNEP 服务器以交换 NDEF 消息：
 
--   远程 P2P 设备到达时，驱动程序必须建立与远程设备的默认 SNEP 服务器 （后跟"DeviceArrived"订阅触发） 的客户端 SNEP 连接。
--   该驱动程序还必须能够接受其默认 SNEP 服务器从远程设备的 SNEP 客户端连接上的连接。
--   接收 SNEP 服务器上的所有 NDEF 消息必须都转换为消息类型，如本文档中定义。
--   要发布的所有消息类型必须转换为 NDEF 消息并发送到远程设备，如上文所定义。 传输消息时，一旦[ **IOCTL\_NFP\_获取\_下一步\_传输\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)中定义完成本文档中。
+-   在远程 P2P 设备到达时，驱动程序必须与远程设备的默认 SNEP 服务器建立客户端 SNEP 连接（之后会触发 "DeviceArrived" 订阅）。
+-   驱动程序还必须能够从远程设备的 SNEP 客户端连接接受其默认 SNEP 服务器上的连接。
+-   在 SNEP 服务器上收到的所有 NDEF 消息必须按照本文档中的定义转换为消息类型。
+-   要发布的所有消息类型必须转换为 NDEF 消息，并按上述定义发送到远程设备。 传输消息后， [**IOCTL\_NFP\_获取\_下一\_传输的\_消息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_transmitted_message)按照本文档中的定义完成。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  

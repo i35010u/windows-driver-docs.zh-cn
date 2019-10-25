@@ -3,21 +3,21 @@ title: 用于测试 WMI 驱动程序支持的常规方法
 description: 用于测试 WMI 驱动程序支持的常规方法
 ms.assetid: 4d1a9198-2cc7-491d-a803-80f846882a6e
 keywords:
-- WMI WDK 内核测试
+- WMI WDK 内核，测试
 - 测试 WMI 支持 WDK 内核
 - WMI WDM 提供程序日志 WDK
-- WDK WMI 错误
+- 错误 WDK WMI
 - 提供程序记录 WDK WMI
-- WDK WMI 事件
-- WMI WDK 内核错误
+- 事件 WDK WMI
+- WMI WDK 内核，错误
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9735c59323a45ddd39855aff8593b97c19688452
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2aff029db061d387d185e198c99d4581ab517ad9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386592"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836696"
 ---
 # <a name="general-techniques-for-testing-wmi-driver-support"></a>用于测试 WMI 驱动程序支持的常规方法
 
@@ -27,42 +27,42 @@ ms.locfileid: "67386592"
 
 ### <a name="wmi-client-tools"></a>WMI 客户端工具
 
-有几种工具可用于 WMI 支持测试驱动程序中。
+您可以使用多种工具在您的驱动程序中测试 WMI 支持。
 
 <a href="" id="wbemtest"></a>Wbemtest  
-操作系统包括 Wbemtest 工具，它提供可用于查询 WMI 类和类实例，更改属性值、 执行方法，并接收事件通知的 GUI。 连接到"根\\wmi"命名空间以测试您的驱动程序支持。
+操作系统包括 Wbemtest 工具，该工具提供了一个 GUI，可用于查询 WMI 类和类实例、更改属性值、执行方法和接收事件通知。 连接到 "根\\wmi" 命名空间来测试驱动程序的支持。
 
-<a href="" id="wmic"></a>Wmic  
-Microsoft Windows XP 和更高版本操作系统包括 Wmic 工具，它提供了可用于发出与 WMI 相关命令，以测试您的驱动程序的命令外壳。
+<a href="" id="wmic"></a>Wmic.exe  
+Microsoft Windows XP 和更高版本的操作系统包含 Wmic 工具，该工具提供了一个命令行界面，可用于发出 WMI 相关命令来测试驱动程序。
 
 <a href="" id="wmimofck"></a>Wmimofck  
-**Wmimofck**命令可用来检查二进制的 MOF 文件的语法。 此外可以使用**wmimofck t**命令以生成 VBScript 文件。 此脚本可用于测试您的驱动程序处理的 WMI 类实例查询。 **Wmimofck-w**命令生成可以测试查询和设置的类、 执行方法，并接收事件的网页。 请注意，网页不支持使用复杂的参数或返回值 （如嵌入类的一个数组） 的执行方法。 在这种情况下可以改为使用 Wbemtest。 请参阅[使用 wmimofck.exe](using-wmimofck-exe.md) Wmimofck 有关详细信息。
+**Wmimofck**命令可用于检查二进制 MOF 文件的语法。 还可以使用**wmimofck-t**命令生成 VBScript 文件。 你可以使用此脚本来测试驱动程序的 WMI 类实例查询的处理。 **Wmimofck**命令生成可测试查询和设置类、执行方法和接收事件的网页。 请注意，网页不支持执行使用复杂参数或返回值的方法（如嵌入类的数组）。 在这种情况下，可以改为使用 Wbemtest。 有关 Wmimofck 的详细信息，请参阅[使用 wmimofck](using-wmimofck-exe.md) 。
 
-您还可以测试驱动程序的 WMI 支持通过编写自定义 WMI 客户端应用程序使用 WMI 用户模式 API。
+还可以通过使用 WMI 用户模式 API 编写自定义 WMI 客户端应用程序来测试驱动程序的 WMI 支持。
 
-详细了解此用户模式 API，它允许应用程序提供或使用 WMI 的信息，请参阅 Microsoft Windows SDK 文档中的 Windows Management Instrumentation 信息。
+有关此用户模式 API 的详细信息，允许应用程序提供或使用 WMI 信息，请参阅 Microsoft Windows SDK 文档中的 Windows Management Instrumentation 信息。
 
-WMI 客户端应用程序将执行以下任务来测试驱动程序：
+WMI 客户端应用程序执行以下任务来测试驱动程序：
 
 -   连接到 WMI。
 
-    若要连接到 WMI，应用程序可以调用组件对象模型 (COM) 函数中， **CoCreateInstance**来检索一个指向**IWbemLocator**接口。 然后，应用程序调用**IWbemLocator::ConnectServer**方法连接到 WMI。 此调用，从应用程序接收一个指向**IWbemServices**接口。
+    若要连接到 WMI，应用程序可以调用组件对象模型（COM）函数**CoCreateInstance**来检索指向**IWbemLocator**接口的指针。 然后，应用程序会调用**IWbemLocator：： ConnectServer**方法连接到 WMI。 通过此调用，应用程序将收到指向**IWbemServices**接口的指针。
 
 -   访问驱动程序中的信息。
 
-    若要访问的信息并注册事件，应用程序使用的方法**IWbemServices**接口。
+    若要访问信息并注册事件，应用程序需要使用**IWbemServices**接口的方法。
 
 ### <a href="" id="ddk-wmi-irps-and-the-system-event-log-kg"></a>WMI Irp 和系统事件日志
 
-严格地出现在内核模式下的 WMI 错误记录到系统事件日志。 可以使用事件查看器来检查系统事件日志。 (请参阅[日志记录错误](logging-errors.md)有关详细信息。)
+严格发生在内核模式下的 WMI 错误将记录到系统事件日志中。 您可以使用事件查看器来检查系统事件日志。 （有关详细信息，请参阅[日志记录错误](logging-errors.md)。）
 
-此类错误的两个主要源是对 WMI 请求的格式不正确答复和事件通知的参数不正确。 例如，如果驱动程序返回格式不正确[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)响应中的数据结构[ **IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)或[ **IRP\_MN\_REGINFO\_例如**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)请求时，系统将记录到系统事件日志。 系统还会记录到的无效调用[ **IoWMIWriteEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiwriteevent)并[ **WmiFireEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmifireevent)发出 WMI 事件通知。
+此类错误的两个主要原因是错误地回复了 WMI 请求，并对事件通知的参数不正确。 例如，如果驱动程序返回了格式不正确的[**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)数据结构来响应[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)或[**irp\_MN\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)请求，系统会将该请求记录到系统事件日志中。 系统还会记录对[**IoWMIWriteEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiwriteevent)和[**WmiFireEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmifireevent)的无效调用，以发出 WMI 事件通知。
 
 ### <a href="" id="ddk-wmi-wdm-provider-log-kg"></a>WMI WDM 提供程序日志
 
-WMI WDM 提供程序 Wmiprov.log 下，WMI WDM 提供程序 (Wmiprov.dll) 被处理时出现 WMI 错误将记录到日志文件。 这是文本文件位于 %windir%\\system32\\wbem\\日志\\wmiprov.log。 错误，例如错误或缺少 MOF 资源的驱动程序，会在此处记录。 对于错误的 MOF 资源的文件 %windir%\\system32\\mofcomp.log 可能包含与错误相关的其他信息。
+Wmi WDM 提供程序（Wmiprov）所处理的 WMI 错误将记录到 WMI WDM 提供程序 Wmiprov 的日志文件中。 这是可在% windir%\\system32\\wbem\\日志中找到的文本文件\\wmiprov。 此处记录了错误，如驱动程序的 MOF 资源错误或缺失。 如果 MOF 资源错误，文件% windir%\\system32\\mofcomp.exe 可能有与错误相关的其他信息。
 
-在版本的 Windows 早于 Windows Vista，您可以使用 Wmimgmt.msc 应用程序来更改所有 WMI 提供程序的日志记录设置。 (在 Windows 98 / 我，改为使用 Wbemcntl。)您可以禁用或重新启用日志记录，其中 WMI 日志文件会保留，以及设置此类文件的最大大小将目录更改。 有关详细信息，请参阅[WMI 日志文件](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-log-files)。
+在早于 Windows Vista 的 Windows 版本中，你可以使用 Wmimgmt.msc 应用程序更改所有 WMI 提供程序的日志记录设置。 （在 Windows 98/Me 中，请改用 Wbemcntl。）您可以禁用或重新启用日志记录、更改 WMI 日志文件的保留目录以及设置此类文件的最大大小。 有关详细信息，请参阅[WMI 日志文件](https://docs.microsoft.com/windows/desktop/WmiSdk/wmi-log-files)。
 
  
 

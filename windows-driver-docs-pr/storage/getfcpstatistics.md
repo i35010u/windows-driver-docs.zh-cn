@@ -1,6 +1,6 @@
 ---
 title: GetFCPStatistics 函数
-description: GetFCPStatistics WMI 方法返回所指示的 SCSI 逻辑单元上指示本地 HBA FCP 流量统计数据。
+description: GetFCPStatistics WMI 方法返回指定的本地 HBA 上所指示的 SCSI 逻辑单元的 FCP 流量统计信息。
 ms.assetid: 566368d7-ee13-449d-97c3-1c214984fee5
 keywords:
 - GetFCPStatistics 函数存储设备
@@ -15,17 +15,17 @@ api_type:
 - LibDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e8be48eac90fdc3f392f9dd29b523907e9e42e40
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 948ab29d0a5e2b41dd267969ca71c21a902f387b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378534"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837962"
 ---
 # <a name="getfcpstatistics-function"></a>GetFCPStatistics 函数
 
 
-**GetFCPStatistics** WMI 方法返回 FCP 流量统计数据所指示的 SCSI 逻辑单元上指示本地 HBA。
+**GetFCPStatistics** WMI 方法返回指定的本地 HBA 上所指示的 SCSI 逻辑单元的 FCP 流量统计信息。
 
 <a name="syntax"></a>语法
 ------
@@ -38,17 +38,17 @@ void GetFCPStatistics(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含 WMI 限定符值，该值指示操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **GetFCPStatistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)结构。
+返回时，将包含一个 WMI 限定符值，该值指示操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**GetFCPStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)结构的**HBAStatus**成员中返回此信息。
 
 *ScsiId*   
-在返回时包含类型的结构[ **HBAScsiID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbascsiid)保存标识设备的信息。 此信息传递到中的微型端口驱动程序**ScsiId**的成员[ **GetFCPStatistics\_IN** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)结构。
+返回时，包含[**HBAScsiID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbascsiid)类型的结构，该结构保存标识设备的信息。 此信息将传送到结构中[**GetFCPStatistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)的**ScsiId**成员中的微型端口驱动程序。
 
 *FC4Statistics*   
-在返回时包含类型的结构[ **MSFC\_FC4STATISTICS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)用于保存所指示的 SCSI 逻辑单元的统计信息。 微型端口驱动程序将返回此信息**FC4Statistics**的成员[ **GetFCPStatistics\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)结构。
+返回时，包含一个类型为[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)的结构，该结构保存指示的 SCSI 逻辑单元的统计信息。 微型端口驱动程序在[**GetFCPStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)结构的**FC4Statistics**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -58,7 +58,7 @@ void GetFCPStatistics(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAAdapterMethods WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
+此 WMI 方法属于[MSFC\_HBAADAPTERMETHODS WMI 类](msfc-hbaadaptermethods-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -71,27 +71,27 @@ void GetFCPStatistics(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">Hbaapi.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Hbaapi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**GetFCPStatistics\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)
+[**GetFCPStatistics\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_in)
 
-[**GetFCPStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)
+[**GetFCPStatistics\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_getfcpstatistics_out)
 
-[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
+[**MSFC\_FC4STATISTICS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_fc4statistics)
 
  
 

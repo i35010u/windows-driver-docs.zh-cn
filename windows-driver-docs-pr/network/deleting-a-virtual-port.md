@@ -4,51 +4,51 @@ description: 删除虚拟端口
 ms.assetid: CBE7AC59-D878-44BA-8FE6-168EC17A2D67
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c565b9898a33be0e8c3c58941d59a2dbbc58e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 628bbc2877baaa56864fd085109c61e21cf4bf54
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384562"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834928"
 ---
 # <a name="deleting-a-virtual-port"></a>删除虚拟端口
 
 
-基础驱动程序发出的一个对象标识符 (OID) 组请求[OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)若要删除的网络适配器上的非默认虚拟端口 (VPort)NIC 开关。 基础驱动程序时，才能删除它之前已创建通过发出的 OID 方法请求 VPort [OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。
+过量驱动程序发出 OID\_NIC 的对象标识符（OID）设置请求[\_交换机\_delete\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)删除网络适配器的 NIC 交换机上的非默认虚拟端口（VPORT）。 过量驱动程序只能删除先前创建的 VPort，方法是\_开关\_NIC 发出 oid 方法请求， [\_CREATE\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_NIC\_交换机\_删除\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构。
+[ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向[**NDIS\_NIC 的指针\_交换机\_DELETE\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构。
 
-基础驱动程序，如虚拟化堆栈中，可以删除非默认 VPort 以前创建了它。 基础驱动程序通过发出的 OID 方法请求创建 VPort [OID\_NIC\_交换机\_创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)。
+过量驱动程序（例如虚拟化堆栈）可以删除先前创建的非默认 VPort。 过量驱动程序通过\_\_NIC 发出 oid 方法请求， [\_CREATE\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)，来创建一个 VPort。
 
-它会发出 OID 集请求的前[OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)，基础驱动程序必须执行以下操作：
+在发出 oid\_NIC 的 OID 集请求之前[\_交换机\_DELETE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)，过量驱动程序必须执行以下操作：
 
--   基础驱动程序必须删除或移动的所有接收该驱动程序之前设置 VPort 删除 VPort 之前的筛选器。 接收的 OID 请求通过设置筛选器[OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)并且通过 OID 请求的移动[OID\_接收\_筛选器\_移动\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)。
+-   在删除 VPort 之前，过量驱动程序必须清除或移动驱动程序以前在 VPort 上设置的所有接收筛选器。 接收筛选器是通过 oid\_接收\_筛选器的 OID 请求设置的， [\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)，并通过 OID [\_接收\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)的 oid 请求移动\_筛选器进行移动。
 
--   过量的驱动程序集**VPortId**的成员[ **NDIS\_NIC\_开关\_删除\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构为非默认 VPort 要删除的标识符。
+-   过量驱动程序将 NDIS\_NIC 的**VPortId**成员设置[ **\_交换机\_DELETE\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构设置为要删除的非默认 VPORT 的标识符。
 
-    **请注意**  过量的驱动程序必须未设置**VPortId**成员添加到**NDIS\_默认\_端口\_数**。 默认情况下附加到 PCI Express (PCIe) 物理函数 (PF) 网络适配器上的 VPort 保留此 VPort 标识符。 VPort 始终存在，以及删除不明确，但 OID 设置的请求的默认值[OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)。
+    **请注意**  过量驱动程序不得将**VPortId**成员设置为**NDIS\_默认\_端口\_号**。 此 VPort 标识符保留用于连接到网络适配器上 PCI Express （PCIe）物理功能（PF）的默认 VPort。 默认 VPort 始终存在，但不会通过 OID [\_NIC\_开关\_DELETE\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)中显式删除。
 
      
 
-过量的驱动程序调用[ **NdisOidRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisoidrequest)颁发[OID\_NIC\_交换机\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)对基础 PF 微型端口驱动程序的请求。 当微型端口驱动程序收到 OID\_NIC\_交换机\_删除\_VPORT 请求，该驱动程序必须执行以下操作：
+过量驱动程序调用[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest) [\_\_NIC 发出 OID，\_删除\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)请求到基础 PF 微型端口驱动程序。 当微型端口驱动程序接收 OID\_NIC\_交换机\_DELETE\_VPORT 请求时，驱动程序必须执行以下操作：
 
--   该驱动程序必须释放已分配给指定 VPort 的硬件和软件资源。
+-   驱动程序必须释放为指定的 VPort 分配的硬件和软件资源。
 
--   该驱动程序必须分离指定的 VPort 从 PF 或 PCIe 虚拟函数 (VF)。
+-   驱动程序必须从 PF 或 PCIe 虚函数（VF）分离指定的 VPort。
 
-    如果 VPort 附加到 VF，虚拟化堆栈可确保，在来宾操作系统中运行的 VF 微型端口驱动程序具有先前已暂停并暂停。 因此，所有 previouslyindicated VPort 从都接收数据包时应已返回到 VF 微型端口驱动程序。
+    如果将 VPort 附加到 VF，则虚拟化堆栈会确保已暂停和暂停来宾操作系统中运行的 VF 微型端口驱动程序。 因此，所有 previouslyindicated 从 VPort 接收数据包都应该已经返回到 VF 微型端口驱动程序。
 
-    如果 VPort 附加到 PF，PF 微型端口驱动程序必须停止任何其他 DMA VPort 与相关联的共享内存。 PF 微型端口驱动程序必须确保所有 previouslyindicated VPort 从都接收数据包返回到微型端口。 PF 微型端口驱动程序必须不进行任何其他接收到的数据包中指定 VPort 的标识符的 NDIS 迹象[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 所指示的所有接收数据包从 VPort 后将返回到 PF 微型端口驱动程序，则它必须释放通过调用与 VPort 相关联的共享的内存[ **NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfreesharedmemory)。
+    如果 VPort 附加到 PF，则 PF 微型端口驱动程序必须停止与 VPort 关联的共享内存的任何附加 DMA。 PF 微型端口驱动程序必须确保将 VPort 中的所有 previouslyindicated 接收数据包返回到小型端口。 PF 小型端口驱动程序不得为 NDIS 指定在数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中指定 VPort 标识符的任何其他接收指示。 将 VPort 中的所有指定接收数据包返回到 PF 微型端口驱动程序后，必须通过调用[**NdisFreeSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreesharedmemory)来释放与 VPort 关联的共享内存。
 
-以下几点适用于 VPorts 删除：
+以下几点适用于删除 VPorts：
 
--   基础协议驱动程序必须删除所有非默认之前创建的 VPorts 调用[ **NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)。
+-   过量协议驱动程序必须删除其在调用[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)之前创建的所有非默认 VPorts。
 
--   基础筛选器驱动程序必须删除所有非默认 VPorts 它在创建其[ *FilterDetach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_detach)函数。
+-   过量筛选器驱动程序必须删除其在其[*FilterDetach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_detach)函数内创建的所有非默认 VPorts。
 
--   NDIS 发出 set 请求的前[OID\_NIC\_切换\_删除\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)若要删除的网络适配器上的 NIC 交换机，它保证会删除所有非默认 VPorts从该交换机。
+-   在 NDIS 发出\_NIC 的 OID 的 set 请求之前[\_交换机\_delete\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)来删除网络适配器上的 NIC 交换机，这可保证从该交换机删除所有非默认 VPorts。
 
--   非默认，可以通过 OID 请求的显式删除 VPorts [OID\_NIC\_交换机\_删除\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)。 PF 微型端口驱动程序删除默认 NIC 交换机时，默认 VPort 是隐式删除。 有关详细信息，请参阅[删除 NIC 交换机](deleting-a-nic-switch.md)。
+-   只有非默认的 VPorts 才能通过 oid [\_NIC\_交换机\_DELETE\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)显式删除。 当 PF 微型端口驱动程序删除默认 NIC 交换机时，会隐式删除默认 VPort。 有关详细信息，请参阅[删除 NIC 交换机](deleting-a-nic-switch.md)。
 
  
 

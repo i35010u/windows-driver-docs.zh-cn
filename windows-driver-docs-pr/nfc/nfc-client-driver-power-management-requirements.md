@@ -4,37 +4,37 @@ ms.assetid: FBA0821B-859F-4A44-998E-E00162FBD265
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
-description: 有关会议上连接待机 NFP 设备的要求的信息。 平台
+description: 有关在连接待机时满足 NFP 设备的要求的信息。 适用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 740b1f070e12955636d8ede47df663fd782e328a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d31fa09026ad5444575987d22acfe5a15039ae6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383576"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831872"
 ---
 # <a name="nfc-client-driver-power-management-requirements"></a>NFC 客户端驱动程序电源管理要求
 
 
-NFC 客户端驱动程序必须实现 D0 和 D3 电源，如下所示处理回调，以符合已连接的备用平台上的 NFP 设备要求：
+NFC 客户端驱动程序必须实现 D0 和 D3 电源处理回调，以便满足连接备用平台上的 NFP 设备的要求：
 
--   NFC 客户端驱动程序必须确保当驱动程序将从 D3-&gt; D0 它可以在不超过 100 毫秒之后恢复的状态。 这是为了确保 NFC 操作可能需要立即上切换屏幕的位置。
+-   NFC 客户端驱动程序必须确保驱动程序从 D3&gt; D0 状态（它可在小于100ms 的情况恢复）。 这是为了确保可以在切换屏幕时立即进行 NFC 操作。
 
--   NFC 客户端驱动程序还必须确保功率消耗小于 1mW 处于 D3 状态时。 这是为了确保在关闭屏幕时没有显著的功率消耗。
+-   当处于 D3 状态时，NFC 客户端驱动程序还必须确保功率消耗小于1mW。 这是为了确保在屏幕关闭时不会有明显的功率消耗。
 
-为了满足这些目标，以下为建议的 NFC 客户端驱动程序：
+为了满足这些目标，推荐使用以下 NFC 客户端驱动程序：
 
--   可以通过转到 power 删除或硬断电满足这些要求的 NFC 控制器中，我们建议 NFC 客户端驱动程序将重新初始化期间 D0-的芯片组&gt;D3，然后从 D3-&gt; D0 转换。
+-   对于可以通过电源删除或硬关机来满足这些要求的 NFC 控制器，我们建议 NFC 客户端驱动程序在 D0&gt; D3 期间重新初始化芯片组，然后从 D3&gt; D0 转换。
 
--   NFC 控制器需要修补程序下载没有非易失性 (即，基于 RAM) 的情况下由于内存中，我们建议 NFC 客户端驱动程序启用和禁用期间 D0-待机模式&gt;D3 和 D3-&gt; D0 过渡，分别。 完整的初始化完成 (HostActionStart) 时从 D3Final-转&gt;D0 和未初始化 (HostActionStop) 完成时从 D0-&gt; D3Final。
+-   对于需要修补程序下载的 NFC 控制器（即基于 RAM 的内存），我们建议在 D0&gt; D3 和 D3&gt; D0 转换期间使用 NFC 客户端驱动程序启用和禁用备用模式。 从 D3Final-&gt; D0 进行完全初始化（HostActionStart）后，从 D0&gt; D3Final 开始时，将执行完全初始化。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[NFC 类扩展 (CX) 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[NFC 类扩展（CX）参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  

@@ -5,18 +5,18 @@ ms.assetid: 909d99ac-5bd3-4b12-bfb4-79713cf2a156
 keywords:
 - 调度例程 WDK 内核，DispatchPnP 例程
 - DispatchPnP 例程
-- 即插即用的调度例程 WDK 内核
-- Irp WDK 内核，插调度例程
-- 插调度例程 WDK 内核
-- IRP_MJ_PNP I/O 函数代码
+- PnP 调度例程 WDK 内核
+- Irp WDK 内核，即插即用调度例程
+- 即插即用调度例程 WDK 内核
+- IRP_MJ_PNP i/o 函数代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edb3ced028b893484c95d4b2f90f74f5aa7e46e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba19c14b474574161fc5f48db3dc90b418679fad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836850"
 ---
 # <a name="dispatchpnp-routines"></a>DispatchPnP 例程
 
@@ -24,49 +24,49 @@ ms.locfileid: "67376461"
 
 
 
-驱动程序的[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程支持[插](implementing-plug-and-play.md)通过处理 Irp 为[ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp) I/O 函数代码。 与相关联**IRP\_MJ\_PNP**函数代码是几个小的 I/O 函数代码 (请参阅[即插即用和播放次要 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps))，某些必须处理的所有驱动程序和一些这可以根据需要处理。 PnP 管理器使用这些次要函数代码直接驱动程序来启动、 停止和删除的设备和查询有关他们的设备的驱动程序。
+驱动程序的[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程通过处理[**irp\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp) I/o 函数代码的 irp 来支持[即插即用](implementing-plug-and-play.md)。 与**IRP\_MJ\_PNP**函数代码关联的是多个次要 i/o 函数代码（请参阅[即插即用次要 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)），其中一些是所有驱动程序都必须处理的，一些则可以选择处理。 PnP 管理器使用这些次要函数代码指示驱动程序启动、停止和删除设备，并查询有关其设备的驱动程序。
 
-设备的所有驱动程序必须有机会处理 PnP Irp 对于设备，除了在少数情况下允许函数或筛选器驱动程序失败 IRP 的位置。
+设备的所有驱动程序都必须有机会处理设备的 PnP Irp，但在某些情况下，允许函数或筛选器驱动程序失败 IRP 的情况除外。
 
-每个驱动程序*DispatchPnP*例程必须遵循下列规则：
+每个驱动程序的*DispatchPnP*例程必须遵循以下规则：
 
--   函数或筛选器驱动程序必须通过向设备堆栈中下一步的驱动程序 PnP Irp，除非该函数或筛选器驱动程序处理 IRP，并在遇到失败 （由于没有足够的资源，例如）。
+-   函数或筛选器驱动程序必须将 PnP Irp 传递到设备堆栈中的下一个驱动程序，除非该函数或筛选器驱动程序处理 IRP 并遇到故障（例如，资源不足）。
 
-    设备的所有驱动程序必须有机会处理 PnP Irp 的设备，除非的驱动因素之一时遇到错误。 PnP 管理器将 Irp 发送到设备堆栈中的顶部驱动程序。 函数和筛选器驱动程序传递到下一步的驱动程序，IRP，父总线驱动程序完成 IRP。 请参阅[向下设备堆栈传递 PnP Irp](passing-pnp-irps-down-the-device-stack.md)有关详细信息。
+    设备的所有驱动程序都必须有机会为设备处理 PnP Irp，除非其中一个驱动程序遇到错误。 PnP 管理器将 Irp 发送到设备堆栈中的顶部驱动程序。 函数和筛选器驱动程序将 IRP 传递到下一个驱动程序，并且父总线驱动程序完成 IRP。 有关详细信息，请参阅[将 PnP Irp 传递到设备堆栈中](passing-pnp-irps-down-the-device-stack.md)。
 
-    驱动程序可能会失败 IRP，如果它尝试处理 IRP，并且在遇到错误 （如资源不足）。 如果驱动程序接收 IRP，它无法处理代码，该驱动程序必须无法 IRP。 应用程序必须通过此类 IRP 到下一步的驱动程序而无需修改 IRP 的状态。
+    如果 IRP 试图处理 IRP 并遇到错误（如资源不足），则它可能会导致 IRP 失败。 如果驱动程序收到的 IRP 的代码不是，则该驱动程序不能使 IRP 失败。 它必须将此类 IRP 传递到下一个驱动程序，而无需修改 IRP 的状态。
 
--   驱动程序必须处理某些 PnP Irp，可能会根据需要处理其他人。
+-   驱动程序必须处理某些 PnP Irp，还可以选择处理其他 Irp。
 
-    每个即插即用驱动程序需要处理某些 Irp，如[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)，并可以根据需要处理其他人。 请参阅[即插即用和播放次要 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)有关哪些 Irp 的必需和可选的每一类驱动程序 （函数驱动程序、 筛选器驱动程序和总线驱动程序）。
+    每个 PnP 驱动程序都需要处理某些 Irp，如[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)，还可以选择处理其他 irp。 有关每种类型的驱动程序（函数驱动程序、筛选器驱动程序和总线驱动程序）所需的 Irp 的详细信息，请参阅[即插即用次 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps) 。
 
-    驱动程序可以故障所需的 PnP IRP，相应的错误状态，但驱动程序不能返回状态\_不\_支持此类 IRP。
+    驱动程序可能会使所需的 PnP IRP 失败，并出现相应的错误状态，但驱动程序不能返回状态\_不\_支持此类 IRP。
 
--   如果驱动程序已成功处理 PnP IRP，驱动程序将 IRP 状态设置为成功。 它不依赖于另一个驱动程序堆栈设置的状态中。
+-   如果驱动程序成功处理 PnP IRP，驱动程序会将 IRP 状态设置为 "成功"。 它不依赖于堆栈中的另一个驱动程序来设置状态。
 
-    驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功通知即插即用经理驱动程序已成功处理 IRP。 对于某些 Irp，非总线驱动程序可能能够依赖于其父总线驱动程序将状态设置为成功。 但是，这是一种有风险的做法。 以保持一致性和可靠性，驱动程序必须设置 IRP 状态为成功它已成功处理每个 PnP IRP。
+    驱动程序将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS，以通知 PnP 经理驱动程序已成功处理 Irp。 对于某些 Irp，非总线驱动程序可能能够依赖其父总线驱动程序将状态设置为 "成功"。 但这是一种风险的做法。 为了保持一致性和可靠性，驱动程序必须将 IRP 状态设置为成功处理的每个 PnP IRP。
 
--   如果驱动程序失败 IRP，驱动程序完成 IRP 具有错误状态，并不会传递到下一步的驱动程序 IRP。
+-   如果某个驱动程序失败了 IRP，则该驱动程序将完成 IRP 并带有错误状态，并且不会将 IRP 向下传递到下一个驱动程序。
 
-    无法像 IRP [ **IRP\_MN\_查询\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)，驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_未成功。 其他错误的其他 Irp 的状态值包括状态\_不足\_资源和状态\_无效\_设备\_状态。
+    为了使 irp （如[**irp）\_MN\_QUERY\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)，驱动程序将**IRP&gt;IOSTATUS**设置为状态\_不成功。 其他 Irp 的其他错误状态值包括状态\_\_资源不足，状态\_无效\_设备\_状态。
 
-    驱动程序未设置状态\_不\_它们处理 Irp 的支持。 这是由即插即用管理器设置的初始状态。 如果 IRP 完成，此状态，则表示堆栈中的没有驱动程序处理 IRP;所有驱动程序只被传递给下一步的驱动程序的 IRP。
+    对于它们处理的 Irp，驱动程序不会设置状态\_\_支持。 这是 PnP 管理器设置的初始状态。 如果 IRP 完成时具有此状态，则意味着堆栈中没有驱动程序处理 IRP;所有驱动程序都将 IRP 传递到下一个驱动程序。
 
--   驱动程序必须在处理其 （在向设备堆栈下的 IRP 的方法） 的调度例程中 PnP IRP [ **IoCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程 （上 IRP 的方式重新启动设备堆栈)，或同时指定参考中IRP 的页。
+-   驱动程序必须按照 IRP 的 "引用" 页中所指定的那样，在其调度例程（基于设备堆栈的 IRP）上处理 PnP IRP，并在[**IoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程（基于 irp 的方式备份设备堆栈）中处理这两种情况。
 
-    一些 PnP Irp，如[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)，按设备堆栈顶部的驱动程序，然后按每个下一步低驱动程序必须首先处理。 其他人，例如[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)，必须首先处理由父总线驱动程序。 还有一些业务负责人，如[ **IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)，可以重新启动设备堆栈下的方法和方法处理。 请参阅[即插即用和播放次要 Irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps)将应用于每个 PnP IRP 的规则。 请参阅[推迟 PnP IRP 处理直到较低的驱动程序完成](postponing-pnp-irp-processing-until-lower-drivers-finish.md)处理父总线驱动程序必须首先处理的 PnP Irp 的相关信息。
+    某些 PnP Irp，如[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)，必须首先由设备堆栈顶部的驱动程序处理，然后再处理下一个低的驱动程序。 其他人（如[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)）必须首先由父总线驱动程序处理。 还有其他一些功能，例如[**IRP\_MN\_查询\_功能**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)，可同时在设备堆栈和备份的方式上进行处理。 请参阅即插即用适用于每个 PnP IRP 的规则的[次要 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/plug-and-play-minor-irps) 。 请参阅[推迟 PNP IRP 处理，直到较低版本的驱动程序完成](postponing-pnp-irp-processing-until-lower-drivers-finish.md)有关处理 PnP irp （必须首先由父总线驱动程序处理）的信息。
 
--   驱动程序必须将信息添加到 IRP 的向下设备堆栈上 IRP 和修改或删除备份的 IRP 的方式的信息。
+-   驱动程序必须将信息添加到 IRP 上的 IRP，并按设备堆栈向下修改或删除有关 IRP 的备份方法的信息。
 
-    PnP IRP 查询响应中返回的信息，驱动程序必须遵循此约定，可以使有序地按设备的分层驱动程序传递的信息。
+    当返回响应 PnP 查询 IRP 的信息时，驱动程序必须遵循此约定，以支持设备的分层驱动程序传递有序的信息。
 
--   除了明确的说明文档，其中一个驱动程序必须不依赖于 PnP Irp 正在按任何特定顺序发送。
+-   除了明确记录的情况外，驱动程序不能依赖于以任何特定顺序发送 PnP Irp。
 
--   当驱动程序发送 PnP IRP 时，它必须将 IRP 发送到设备堆栈中的顶部驱动程序。
+-   当驱动程序发送 PnP IRP 时，它必须将 IRP 发送到设备堆栈中的顶层驱动程序。
 
-    大多数 PnP Irp 发送的即插即用管理器中，但一些可以由驱动程序 (例如， [ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface))。 驱动程序必须将 PnP IRP 发送到设备堆栈顶部的驱动程序。 调用[ **IoGetAttachedDeviceReference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)指针设备对象为获取该驱动程序在设备堆栈的顶部。
+    大多数 PnP Irp 由 PnP 管理器发送，但某些可由驱动程序发送（例如， [**IRP\_MN\_QUERY\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)）。 驱动程序必须将 PnP IRP 发送到设备堆栈顶部的驱动程序。 调用[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)可获取指向设备堆栈顶部驱动程序的设备对象的指针。
 
-应测试与已检验版本操作系统的驱动程序。 系统已检验的版本验证驱动程序是否遵循众多上面列出的即插即用规则。
+你应该使用操作系统的已检查版本来测试驱动程序。 系统的检查内部版本验证驱动程序是否遵循上面列出的许多 PnP 规则。
 
  
 

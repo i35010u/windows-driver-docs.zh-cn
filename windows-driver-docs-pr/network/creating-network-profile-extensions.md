@@ -4,15 +4,15 @@ description: 创建网络配置文件扩展
 ms.assetid: b5f7a057-28bc-4df9-99da-58d39b81fb60
 keywords:
 - 网络配置文件 WDK 本机 802.11 IHV 扩展 DLL，创建扩展
-- 扫描操作 WDK 本机 802.11
+- 扫描操作 WDK 本机802.11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df7ce8da5ffc9d51138f73c2003847b621f454a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8724c6b65f900662b47863b2288c2da1276c9dde
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374889"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835018"
 ---
 # <a name="creating-network-profile-extensions"></a>创建网络配置文件扩展
 
@@ -21,23 +21,23 @@ ms.locfileid: "67374889"
 
  
 
-基础的无线 LAN (WLAN) 适配器完成扫描操作后，它将返回到操作系统检测到的基本服务集 (BSS) 网络的列表。 操作系统调用[ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)函数为每个用户已创建的网络配置文件的 BSS 网络。 当调用此函数时，临时连接性和可用于连接到 BSS 网络的安全配置文件片段可以返回 IHV 扩展 DLL。
+基础无线 LAN （WLAN）适配器完成扫描操作后，会将检测到的基本服务集（BSS）网络列表返回到操作系统。 对于用户尚未为其创建网络配置文件的每个 BSS 网络，操作系统将调用[*Dot11ExtIhvCreateDiscoveryProfiles*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)函数。 调用此函数时，IHV 扩展 DLL 可以返回可用于连接到 BSS 网络的临时连接和安全配置文件片段。
 
-有关扫描操作的详细信息，请参阅[本机 802.11 扫描操作](native-802-11-scan-operations.md)。
+有关扫描操作的详细信息，请参阅[本机802.11 扫描操作](native-802-11-scan-operations.md)。
 
-当[ *Dot11ExtIhvCreateDiscoveryProfiles* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)是调用，IHV 扩展 DLL 必须遵循这些准则。
+调用[*Dot11ExtIhvCreateDiscoveryProfiles*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_create_discovery_profiles)时，IHV 扩展 DLL 必须遵循这些准则。
 
--   操作系统将传递给*pConnectableBssid*参数在最后一次扫描操作期间收到一个 IEEE 802.11 信标和探测响应框架的列表。 此列表的格式设置为 DOT11\_BSS\_条目结构。 在列表中的每个信号或探测响应已发送的具有相同的服务集标识符 (SSID) 的访问点 (AP)。
+-   操作系统将向*pConnectableBssid*参数传递在上一次扫描操作期间接收的 IEEE 802.11 信标和探测响应帧的列表。 此列表的格式为 DOT11\_BSS\_条目结构。 列表中的每个信标或探测响应都是通过具有相同服务集标识符（SSID）的访问点（AP）发送的。
 
-    **请注意**  For Windows Vista 中，只有在基础结构的基本服务设置 (BSS) 网络 IHV 扩展 DLL 支持。
+    **注意**  对于 Windows VISTA，IHV 扩展 DLL 仅支持基础结构基本服务集（BSS）网络。
 
      
 
-    IHV 扩展 DLL 必须分析每个固定长度的字段长度可变的信息元素 (IEs) 以便创建相应的配置文件片段。
+    为了创建适当的配置文件片段，IHV 扩展 DLL 必须分析每个固定长度的字段和可变长度的信息元素。
 
--   连接和安全配置文件片段必须包含有效设置，可用于连接到每个通过引用 BSS 标识符 (BSSIDs) 的 Ap *pConnectableBssid*参数。
+-   连接和安全配置文件片段必须包含有效的设置，这些设置可用于连接到每个 Ap，其 BSS 标识符（BSSIDs）通过*pConnectableBssid*参数进行引用。
 
--   每个连接和安全配置文件片段包含由 IHV 定义的配置文件扩展的 XML 数据。 配置文件片段中的 XML 数据必须分隔&lt;IHV&gt;并&lt;/IHV&gt;标记。
+-   每个连接和安全配置文件片段都包含由 IHV 定义的配置文件扩展的 XML 数据。 配置文件片段中的 XML 数据必须由 &lt;IHV&gt; 和 &lt;/IHV&gt; 标记进行分隔。
 
  
 

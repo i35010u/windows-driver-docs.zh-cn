@@ -4,15 +4,15 @@ description: 不是基于 COM 的渲染插件
 ms.assetid: 435f9754-50be-4a4b-a5b4-b2bc8d66f034
 keywords:
 - 非基于 COM 的呈现插件 WDK 打印
-- 呈现插件 WDK 打印，非基于 COM 的
+- 呈现插件 WDK 打印，基于非 COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8f0c019f5ea6951d76a0c6f8c55b7344aab901
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: edba3952df5128892839b25d378ee8429c0157c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716980"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837564"
 ---
 # <a name="non-com-based-rendering-plug-ins"></a>不是基于 COM 的渲染插件
 
@@ -20,15 +20,15 @@ ms.locfileid: "67716980"
 
 
 
-打印机微型驱动程序通过实现通知其功能的核心驱动[ **OEMEnableDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemenabledriver)函数中的成员填充[ **DRVENABLEDATA** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)结构。 **Pdrvfn**应设置此结构的成员的数组地址[ **DRVFN** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)结构。 应使用一个函数的索引和的其中一个的地址初始化此数组的每个元素**OEM**_Xxx_实现 IHV，分别的函数。 (有关详细说明的每个**OEM**_Xxx_函数，请参阅[非基于 COM 的 DDI 挂钩-函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)。)
+打印机微型驱动程序通过实现[**OEMEnableDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/nf-printoem-oemenabledriver)函数通知核心驱动程序的功能，该函数将填充[**DRVENABLEDATA**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdrvenabledata)结构的成员。 应通过[**DRVFN**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_drvfn)结构的数组地址设置此结构的**pdrvfn**成员。 此数组的每个元素都应该使用函数索引进行初始化，并使用 IHV 实现的其中一个**OEM**_Xxx_函数的地址。 （有关每个**OEM**_Xxx_函数的详细说明，请参阅[非基于 COM 的 DDI 挂钩函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)。）
 
-当应用程序调用 Microsoft Win32 GDI，又执行渲染任务，Win32 GDI 调入 Unidrv 或 Pscript5 核心驱动程序，它通常处理任务。 但是，如果打印机微型驱动程序已指明能够特定呈现的操作，挂接，核心驱动程序将呈现任务传递给 IHV 呈现插件。
+当应用程序调用 Microsoft Win32 GDI 来执行呈示任务时，Win32 GDI 反过来会调用 Unidrv 或 Pscript5 核心驱动程序，该驱动程序通常会处理该任务。 但是，如果打印机微型驱动程序表明它能够与特定的渲染操作挂钩，则核心驱动程序会将渲染任务传递给 IHV 呈现插件。
 
-例如，假设应用程序调用 Win32 **LineTo** API （Windows SDK 文档中所述）。 通常情况下，这将导致另一个调用到核心驱动[ **DrvLineTo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto) DDI 绘制直线。 如果打印机微型驱动程序已指明其意图掉此 DDI，但是，调用挂钩**DrvLineTo**立即将转发到 IHV 调用[ **OEMLineTo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printoem/nf-printoem-oemlineto)函数。
+例如，假设某个应用程序调用 Win32 **LineTo** API （如 Windows SDK 文档中所述）。 通常，这会导致另一次调用核心驱动程序的[**DrvLineTo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvlineto) DDI 来绘制线条。 如果打印机微型驱动程序表明它打算将调用挂钩到该 DDI，则**DrvLineTo**会立即将调用转发到 IHV 的[**OEMLineTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printoem/nf-printoem-oemlineto)函数。
 
-IHV 可以实现**OEMLineTo**，或任何其他挂钩扩展函数中所述[非基于 COM 的 DDI 挂钩-函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_print/index)，以便它可以完全处理呈现操作，或可以回调若要安装内核驱动程序处理该操作。
+IHV 可以实现**OEMLineTo**或[非基于 COM 的 DDI 挂钩函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)中描述的任何其他挂钩函数，使其能够完全处理呈现操作，也可以回调以使核心驱动程序处理该操作。
 
-**OEMLineTo**可实现，如下面的伪代码示例中所示：
+可以实现**OEMLineTo** ，如下面的伪代码示例所示：
 
 ```cpp
 BOOL APIENTRY
@@ -68,9 +68,9 @@ else
 poempdev->pfnUnidrv[UD_DrvLineTo]
 ```
 
-计算结果为核心驱动程序的地址**DrvLineTo** DDI。 (**PFN\_DrvLineTo**) 它前面的表达式将转换为适当的类型的函数指针。 在本部分中列出的挂钩扩展函数的每个都具有其自己的函数指针相关联。
+计算结果为核心驱动程序的**DrvLineTo** DDI 的地址。 它之前的（**PFN\_DrvLineTo**）表达式将函数指针转换为相应的类型。 本节中列出的每个挂钩函数都与其自己的函数指针相关联。
 
-请注意，当**OEM**_Xxx_回 Unidrv 核心驱动程序和图面 DDI 调用所涉及的是设备管理面，Unidrv 可以只需通过返回忽略调用**FALSE**.
+请注意，当**OEM**_Xxx_ DDI 回拨到 Unidrv 核心驱动程序，并且所涉及的表面是设备管理的图面时，Unidrv 可以通过返回**FALSE**来忽略调用。
 
  
 

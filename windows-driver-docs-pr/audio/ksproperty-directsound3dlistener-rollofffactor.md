@@ -1,6 +1,6 @@
 ---
 title: KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR
-description: KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定三维侦听器卷绕身份。
+description: KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定3D 侦听器的 rolloff 系数。
 ms.assetid: 3eef80ef-921b-4364-b31d-14a62f305f5d
 keywords:
 - KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR 音频设备
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c575914f63950f425c67a28144decd3020172c33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a2b7bec2c6d954cd194285108a6c64403d11ac0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361010"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832772"
 ---
-# <a name="kspropertydirectsound3dlistenerrollofffactor"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR
+# <a name="ksproperty_directsound3dlistener_rollofffactor"></a>KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR
 
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定三维侦听器卷绕身份。
+KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定3D 侦听器的 rolloff 系数。
 
 ## <span id="ddk_ksproperty_directsound3dlistener_rollofffactor_ks"></span><span id="DDK_KSPROPERTY_DIRECTSOUND3DLISTENER_ROLLOFFFACTOR_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定三维侦听器卷�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Get</th>
+<th align="left">“获取”</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定三维侦听器卷�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>Pin</p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>“是”</p></td>
+<td align="left"><p>大头针</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)"><strong>KSNODEPROPERTY</strong></a></p></td>
 <td align="left"><p>浮点数</p></td>
 </tr>
 </tbody>
@@ -61,18 +61,18 @@ KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性指定三维侦听器卷�
 
  
 
-（操作数据） 的属性值类型为 FLOAT 的是，它指定卷绕身份。 卷绕身份可以介于 DS3D\_MINROLLOFFFACTOR 到 DS3D\_MAXROLLOFFFACTOR，分别定义为介于 0.0 和 10.0。 默认卷绕因素是 DS3D\_DEFAULTROLLOFFFACTOR，定义为 1.0。
+属性值（操作数据）的类型为 FLOAT，并指定 rolloff 系数。 Rolloff 因子的范围为 DS3D\_MINROLLOFFFACTOR 到 DS3D\_MAXROLLOFFFACTOR，分别定义为0.0 和10.0。 默认 rolloff 因子为 DS3D\_DEFAULTROLLOFFFACTOR，其定义为1.0。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性请求将返回状态\_成功以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY\_DIRECTSOUND3DLISTENER\_ROLLOFFFACTOR 属性请求返回状态\_SUCCESS，以指示该请求已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
 
-卷绕是衰减的应用于声音，基于声音的源的侦听器的距离量。 卷绕因子为零意味着从侦听器没有衰减应用于声音而不考虑其距离。 大于 1 的因素夸大声音与距离的实际衰减。
+Rolloff 是根据侦听器与声音源之间的距离应用到声音的衰减量。 如果 rolloff 因子为零，则表示不会对声音应用衰减，而不管它与侦听器之间的距离。 大于1的系数夸大是声音与距离的实际衰减。
 
-DirectSound 使用此属性来实现**IDirectSound3DListener::GetRolloffFactor**并**IDirectSound3DListener::SetRolloffFactor** Microsoft 所述的方法Windows SDK 文档。
+DirectSound 使用此属性实现**IDirectSound3DListener：： GetRolloffFactor**和**IDirectSound3DListener：： SetRolloffFactor**方法，如 Microsoft Windows SDK 文档中所述。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,16 +84,16 @@ DirectSound 使用此属性来实现**IDirectSound3DListener::GetRolloffFactor**
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksnodeproperty)
+[**KSNODEPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty)
 
  
 

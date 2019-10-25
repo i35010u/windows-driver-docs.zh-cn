@@ -3,20 +3,20 @@ title: 音频属性的基本支持查询
 description: 音频属性的基本支持查询
 ms.assetid: d08b6f86-e4fd-4b2c-bfaa-191bcbac3ff8
 keywords:
-- 音频属性 WDK，basic 支持的查询
-- WDM 音频属性 WDK，basic 支持的查询
-- basic 支持查询 WDK 音频
-- 设置属性 WDK 音频
+- 音频属性 WDK，基本支持查询
+- WDM 音频属性 WDK，基本支持查询
+- 基本-支持查询 WDK 音频
+- 设置-属性 WDK 音频
 - 有效范围 WDK 音频
 - 范围值 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f8495132bfbb8e048257f2dabfc28d023df19e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b64b6cffc67b018e8ba684f3e4375cc6e691ad5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355622"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72831262"
 ---
 # <a name="basic-support-queries-for-audio-properties"></a>音频属性的基本支持查询
 
@@ -24,43 +24,43 @@ ms.locfileid: "67355622"
 ## <span id="basic_support_queries_for_audio_properties"></span><span id="BASIC_SUPPORT_QUERIES_FOR_AUDIO_PROPERTIES"></span>
 
 
-指定对筛选器、 pin 或节点的设置属性请求数据，客户端经常需要知道，它指定属性的值的有效的数据范围。 范围可以在同一设备内改变设备的和可能甚至从节点到节点。
+为筛选器、pin 或节点指定设置属性请求的数据时，客户端通常需要知道为属性指定的一个或多个值的有效数据范围。 范围可能因设备而异，甚至可能是从节点到相同设备中的节点。
 
-某些属性定义为允许设置属性指定值超出范围的请求，但微型端口驱动程序以无提示方式将这些值与支持的范围 (有关示例，请参阅[ **KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel))。 相同属性的后续的 get 请求检索驱动程序的实际设置的值或值，这可能是限制的版本的客户端设置在请求中指定的值。
+某些属性定义为允许设置属性请求指定超出范围的值，但微型端口驱动程序会以静默方式将这些值固定到支持的范围（例如，请参阅[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)）。 对于同一个属性，后续的 get 请求将检索该驱动程序的值或值的实际设置，这些设置可能是客户端在设置请求中指定的值的限制版本。
 
-但是，客户端可能需要知道而不是简单地依靠微型端口驱动程序会自动将超出范围值的属性值的范围。 例如，窗口中应用程序，其中的一个音量控制滑块，用于将音频设备可能需要知道设备的卷范围，才能将该范围映射到滑块的完整长度。
+但是，客户端可能需要知道属性值的范围，而不是只依靠微型端口驱动程序来自动固定超出范围的值。 例如，为音频设备提供音量控制滑块的窗口化应用程序可能需要知道设备的卷范围才能将该范围映射到滑块的全长长度。
 
-对于特定属性的驱动程序的处理程序例程应能够提供基本支持属性请求的响应中的范围信息 (KSPROPERTY\_类型\_BASICSUPPORT)。 当 basic 支持属性请求发送到驱动程序，客户端提供的属性处理程序在其中写入 basic 支持信息，其中包括的值缓冲区[ **KSPROPERTY\_说明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_description)可能跟属性特定于数据的结构。 此数据通常包含一个或多个参数范围，具体取决于属性的规范。
+特定属性的驱动程序例程应能够提供范围信息以响应基本支持属性请求（KSPROPERTY\_类型\_BASICSUPPORT）。 将基本-支持属性请求发送到驱动程序时，客户端会提供一个值缓冲区，属性处理程序会将基本支持信息写入其中，其中[ **\_KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)的特定于属性的数据。 此数据通常包含一个或多个参数范围的规范，具体取决于属性。
 
-一般情况下，客户端不知道此值缓冲区应事先了解大型并必须将一个或两个预备请求发送到的属性处理程序，以确定值的大小。 这些预备请求的格式是定义完善的。 客户端预期驱动程序，以处理 basic 支持请求时遵循以下约定：
+通常情况下，客户端不会提前知道此值缓冲区应为多大，并且必须向属性处理程序发送一两个初步请求，才能确定值大小。 这些初步请求的格式已定义良好。 当处理基本支持请求时，客户端应遵循以下约定：
 
--   如果该请求指定了具有值的大小**sizeof**(ULONG) 然后属性处理程序应写入的值**AccessFlags** KSPROPERTY 成员\_描述结构ULONG 大小的值的缓冲区。 该处理程序设置 KSPROPERTY\_类型\_BASICSUPPORT 标志位，如果提供了进一步的支持的基本支持属性请求。
+-   如果请求将值大小指定为**sizeof**（ULONG），则属性处理程序应将 KSPROPERTY\_说明结构的**AccessFlags**成员的值写入 ULONG 大小的值缓冲区。 如果 KSPROPERTY\_类型为基本支持属性请求提供进一步支持，则将其设置\_BASICSUPPORT 标志位。
 
--   如果该请求指定了具有值的大小**sizeof**(KSPROPERTY\_说明)，该处理程序应编写 KSPROPERTY\_描述结构的数据缓冲区。 处理程序集**DescriptionSize**字段的结构等于该结构的大小加上其大小、 特定属性的附加信息的所有处理程序具有可用于加载到数据缓冲区以下结构。 这是客户端需要分配以包含该属性的基本支持信息的值缓冲区的大小。
+-   如果请求将值大小指定为**sizeof**（KSPROPERTY\_DESCRIPTION），则处理程序应将 KSPROPERTY\_说明结构写入数据缓冲区。 处理程序将结构的 " **DescriptionSize** " 字段设置为等于该结构的大小，以及该处理程序可用于加载到结构后面的数据缓冲区中的所有其他属性特定信息的大小。 这是需要为包含属性的基本支持信息的客户端分配的值缓冲区大小。
 
--   如果该请求指定了值大小足以包含这两个 KSPROPERTY\_描述结构和特定于属性的信息，该处理程序应编写 KSPROPERTY\_描述结构的开头缓冲区，和它应写入特定于属性的信息的数据缓冲区的 KSPROPERTY 结束之后的部分\_描述结构。 当编写 KSPROPERTY\_描述结构，该处理程序应设置**DescriptionSize**字段为该结构的大小加上遵循的结构的特定于属性的信息的大小。
+-   如果请求指定的值大小足以同时包含 KSPROPERTY\_说明结构和特定于属性的信息，则该处理程序应将 KSPROPERTY\_说明结构写入缓冲区的开头，它应将特定于属性的信息写入到 KSPROPERTY\_说明结构末尾后面的数据缓冲区中。 在写入 KSPROPERTY\_说明结构时，处理程序应将**DescriptionSize**字段设置为该结构的大小，并将该结构后面的特定于属性的信息的大小设置为。
 
-如果该请求指定了这三种情况之一不匹配的值大小，将拒绝该请求的属性处理程序，并且返回状态代码状态\_缓冲区\_过\_小。
+如果请求指定的值大小与这三个事例之一不匹配，则属性处理程序将拒绝该请求并返回状态代码状态\_缓冲区\_\_太小。
 
-处理程序将写入到值缓冲区的特定于属性的信息可能包含属性值的数据范围。 **MembersSize** KSPROPERTY 成员\_MEMBERSHEADER 指示数据区域是否包含：
+处理程序写入到值缓冲区中的属性特定信息可能包含属性值的数据范围。 KSPROPERTY\_MEMBERSHEADER 的**MembersSize**成员表明是否包含数据范围：
 
--   **MembersSize**为零，如果需要无范围。 这种，例如，如果属性值的类型 BOOL。
+-   如果不需要范围， **MembersSize**为零。 例如，如果属性值的类型为 BOOL，就会出现这种情况。
 
--   **MembersSize**为非零值如果 KSPROPERTY\_MEMBERSHEADER 结构后跟一个或多个属性值的范围说明符。
+-   如果 KSPROPERTY\_MEMBERSHEADER 结构后跟一个或多个属性值的范围说明符，则**MembersSize**为非零值。
 
-对于类型 BOOL 的属性值，因为范围被隐式限制为值需要没有范围描述符 **，则返回 TRUE**并**FALSE**。 但是，范围描述符所需的整数类型使用指定的属性值的范围。
+对于类型为 BOOL 的属性值，不需要范围说明符，因为范围隐式限制为值**TRUE**和**FALSE**。 但是，需要范围描述符来指定具有整数类型的属性值的范围。
 
-例如，basic 支持请求[ **KSPROPERTY\_音频\_VOLUMELEVEL** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)卷节点上的属性 ([**KSNODETYPE\_卷**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)) 检索该节点的最小值和最大卷设置。 在这种情况下，客户端需要分配值的缓冲区足够大，以包含以下结构：
+例如，对卷节点上的[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)属性（[**KSNODETYPE\_卷**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)）的基本支持请求将检索该节点的最小和最大卷设置。 在这种情况下，客户端需要分配一个足够大的值缓冲区来包含以下结构：
 
-[**KSPROPERTY\_说明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_description)
+[**KSPROPERTY\_说明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)
 
-[**KSPROPERTY\_MEMBERSLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_memberslist)
+[**KSPROPERTY\_MEMBERSLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_memberslist)
 
-[**KSPROPERTY\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_stepping_long)
+[**KSPROPERTY\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)
 
-三个结构都打包到上述列表中显示的顺序在缓冲区中的相邻位置。 微型端口驱动程序在处理请求时，写入到的最小值和最大卷级别**边界**KSPROPERTY 成员\_单步执行\_长时间结构。
+这三个结构按前面列表中显示的顺序打包到缓冲区中的相邻位置。 处理请求时，微型端口驱动程序将最小和最大音量级别写入到 KSPROPERTY\_单步执行\_长结构的**边界**成员中。
 
-与非数组范围说明符的 basic 支持请求的示例，请参阅中的图形[公开多通道节点](exposing-multichannel-nodes.md)。 有关基本支持属性请求的详细信息，请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。 有关代码示例，请参阅中的属性处理程序实现[示例音频驱动程序](sample-audio-drivers.md)Microsoft Windows Driver Kit (WDK) 中。
+有关包含范围说明符数组的基本支持请求的示例，请参阅[公开多通道节点](exposing-multichannel-nodes.md)中的图。 有关基本支持属性请求的详细信息，请参阅[KS 属性](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)。 有关代码示例，请参阅 Microsoft Windows 驱动程序工具包（WDK）中的[示例音频驱动程序](sample-audio-drivers.md)中的属性处理程序实现。
 
  
 

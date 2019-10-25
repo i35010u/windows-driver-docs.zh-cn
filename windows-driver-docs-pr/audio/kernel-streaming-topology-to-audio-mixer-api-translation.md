@@ -3,26 +3,26 @@ title: 从内核流式处理拓扑到音频混音器 API 的转换
 description: 从内核流式处理拓扑到音频混音器 API 的转换
 ms.assetid: ee89dc67-c9f3-41cd-8a09-0c46d636fe64
 keywords:
-- mixer API WDK 音频
-- 内核流 WDK 音频
-- 音频混音器行 WDK 音频
-- 源 mixer 行 WDK 音频
-- 目标 mixer 行 WDK 音频
-- 转换到 mixer 行 WDK 音频 KS 拓扑
-- mixer 行 WDK 音频
+- 混音器 API WDK 音频
+- 内核流式处理 WDK 音频
+- 音频混合器线条 WDK 音频
+- 源混合器线条 WDK 音频
+- 目标混音器线条 WDK 音频
+- 将 KS 拓扑转换为混音器曲线 WDK 音频
+- 混音器线条乐曲音频
 - KS 流混合 WDK 音频
 - KS 拓扑 WDK 音频
-- 接收器 pin WDK 音频
-- 源 pin WDK 音频
-- KS 固定 WDK 音频，转换
+- 接收器引脚 WDK 音频
+- 源引脚 WDK 音频
+- KS 引脚音频，转换
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fb11d4223749d342f0bb0b07cdbbb63016bad2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ac47a44751cfe58dcc851fe2c76c3c8fabd91a47
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359829"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833168"
 ---
 # <a name="kernel-streaming-topology-to-audio-mixer-api-translation"></a>从内核流式处理拓扑到音频混音器 API 的转换
 
@@ -30,53 +30,53 @@ ms.locfileid: "67359829"
 ## <span id="kernel_streaming_topology_to_audio_mixer_api_translation"></span><span id="KERNEL_STREAMING_TOPOLOGY_TO_AUDIO_MIXER_API_TRANSLATION"></span>
 
 
-**Mixer** API 是一组 Windows 多媒体函数用于检索有关音频混音器设备的信息。 **Mixer** API 将分为两类音频混音器作为源和目标行的行。 *源行*是声卡 （例如，CD、 麦克风、 行中和 wave） 的输入。 *目标行*是从智能卡 （例如，扬声器、 耳机、 电话线路和批中的） 的输出。 对于源行有效，它应有的唯一路径从源到目标。 包含一个源行可能会映射到多个目标，但不能超过单个路径可以连接到目标行的源行。 有关详细信息**mixer** API，请参阅 Microsoft Windows SDK 文档。
+**混音**器 API 是一组 Windows 多媒体功能，用于检索有关音频混音器设备的信息。 **混音**器 API 将音频混合器行分类为源和目标线。 *源行*是音频卡中的输入（例如 CD、麦克风、线路输入和 wave）。 *目标行*是卡的输出（例如，扬声器、耳机、电话线和波输入）。 为了使源行有效，它应具有从源到目标的唯一路径。 单个源行可能映射到多个目标，但不能有多个路径可以将源行连接到目标行。 有关**混音**器 API 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-音频的适配器的 WDM 驱动程序公开表示通过硬件和这些路径可用的函数使用的数据路径的 KS 筛选器拓扑。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)（在 Wdmaud.sys 和 Wdmaud.drv 文件中） 应解释 KS 筛选器拓扑并生成相应的源和目标通过公开的混音器行**mixer**API。 此外可以处理 WDMAud **mixer** API 调用，并会将它们转换为等效的属性的调用上的筛选器插针和由适配器驱动程序管理的节点。
+音频适配器的 WDM 驱动程序公开一个 KS 筛选器拓扑，该拓扑表示通过硬件的数据路径和这些路径上可用的功能。 [WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)（在 Wdmaud 和 WDMAud 文件中）应解释 KS 筛选器拓扑，并生成通过**混音**器 API 公开的相应源和目标混音器行。 WDMAud 还处理**混音**器 API 调用，并将其转换为对适配器驱动程序管理的筛选器引脚和节点的等效属性调用。
 
-[KMixer 系统驱动程序](kernel-mode-wdm-audio-components.md#kmixer_system_driver)(Kmixer.sys) 和[SWMidi 系统驱动程序](kernel-mode-wdm-audio-components.md#swmidi_system_driver)(Swmidi.sys) 个内核音频堆栈的不可或缺组成部分。 KMixer 提供整个系统音频混合、 位深度转换、 采样率转换和 PCM 音频流的通道扬声器配置 (supermix) 转换。 SWMidi 提供高质量的软件合成的 MIDI 流。 系统音频驱动程序，SysAudio (Sysaudio.sys，请参见[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver))，将 KMixer 和 SWMidi 的功能和增强的功能上的窗体所安装的音频适配器驱动程序结合起来[虚拟音频设备](virtual-audio-devices.md)。
+[KMixer 系统驱动](kernel-mode-wdm-audio-components.md#kmixer_system_driver)程序（KMixer）和[SWMidi 系统驱动程序](kernel-mode-wdm-audio-components.md#swmidi_system_driver)（SWMidi）是内核音频堆栈的组成部分。 KMixer 为 PCM 音频流提供系统范围内的音频混合、位深度转换、采样率转换和通道到扬声器配置（supermix）转换。 SWMidi 提供 MIDI 流的高质量软件合成。 系统音频驱动程序 SysAudio （Sysaudio，请参阅[SysAudio 系统驱动程序](kernel-mode-wdm-audio-components.md#sysaudio_system_driver)）将 KMixer 和 SWMidi 的功能与安装的音频适配器驱动程序结合起来，以形成功能增强的[虚拟音频设备](virtual-audio-devices.md)。
 
-WDMAud 管理 KS 部分和旧之间的接口 (请参阅[WinMM 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)) 音频堆栈的一部分。 WDMAud SysAudio 虚拟化筛选器上的针转换为 SndVol32 等应用程序中提供的旧混音器行。 从 KS 拓扑转换为 mixer 行执行，如下所示：
+WDMAud 管理音频堆栈的 KS 部分和旧（请参阅[Winmm.dll 系统组件](user-mode-wdm-audio-components.md#winmm_system_component)）部分之间的接口。 WDMAud 将 SysAudio 虚拟化筛选器上的 pin 转换为显示在应用程序（如 SndVol32）中的旧混音器行。 从 KS 拓扑转换到混音器行将按如下方式执行：
 
--   源插针 (KSPIN\_数据流\_出) 在 KS 拓扑公开为目标 mixer 行 (MIXERLINE\_COMPONENTTYPE\_DST\_*XXX*)。
+-   KS 拓扑中的源 pin （KSPIN\_数据流\_输出）作为目标混合器行（MIXERLINE\_COMPONENTTYPE\_DST\_*XXX*）公开。
 
--   接收器插针 (KSPIN\_数据流\_中) 在 KS 拓扑公开为源 mixer 行 (MIXERLINE\_COMPONENTTYPE\_SRC\_*XXX*)。
+-   KS 拓扑中的接收器插针（KSPIN\_数据流\_）公开为源混合器行（MIXERLINE\_COMPONENTTYPE\_SRC\_*XXX*）。
 
--   WDMAud 指导在源 pin 都是筛选器关系图的终结点并遍历中数据流的相反方向的关系图，直到达到接收器 pin KS 筛选器关系图开始。
+-   WDMAud 将引导 KS 筛选器图形，该图形位于位于筛选器图端点的源引脚上，并沿与数据流相反的方向遍历关系图，直到到达接收器 pin。
 
--   在遍历过程中遇到每个 KS 节点支持的属性被称为源混音器行上的控件。
+-   在遍历期间遇到的每个 KS 节点上支持的属性将公开为源混合器行中的控件。
 
-在前两个项上，KS 的映射到目标和源混音器行的源和接收器插针是可能会导致混淆由于术语中的差异。 在 KS，设备都包装在筛选器具有接收器 （输入） 插针和源 （输出） 的 pin。 术语"sink"和"源"，请参阅筛选器而不是而是与两个筛选器之间的 （通常为缓冲） 连接：
+在上述前两个项中，由于术语的不同，将 KS 源和接收器插针映射到目标和源混音器可能会造成混淆。 在 KS 中，设备包装在具有接收器（输入）插针和源（输出）插针的筛选器中。 术语 "sink" 和 "source" 指的是筛选器，而不是引用两个筛选器之间的（通常是缓冲的）连接：
 
--   上游筛选器的源 pin 是数据流的进入该连接的源。
+-   上游筛选器的源 pin 是进入连接的数据流的源。
 
--   数据流将退出下游筛选器的接收器 pin 要用的连接。
+-   数据流通过下游筛选器的接收器 pin 来退出连接。
 
-与此相反，mixer 行术语是以设备为中心：
+与此相反，混音器行术语是以设备为中心的：
 
--   在源 mixer 行是流的输入设备的源。
+-   源混合器行是进入设备的流的源。
 
--   目标 mixer 行是流的退出设备的目标。
+-   目标混音器行是退出设备的流的目标。
 
-此外，KS 术语是某种程度上它将分配给 pin KS 筛选器的流流方向不一致。 使用 pin 描述符[ **KSPIN\_数据流**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-kspin_dataflow)枚举值指定的方向：
+此外，在将其分配给 KS 筛选器的 pin 的流流方向上，KS 术语有些不一致。 Pin 描述符使用[**KSPIN\_数据流**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-kspin_dataflow)枚举值来指定方向：
 
--   输入通过接收器 pin 的筛选器的流都有的 KSPIN 方向\_数据流\_in。
+-   通过接收器 pin 进入筛选器的流在中具有 KSPIN\_数据流\_的方向。
 
--   退出通过源 pin 的筛选器的流都有方向的 KSPIN\_数据流\_出。
+-   通过源 pin 退出筛选器的流具有 KSPIN\_数据流\_的方向。
 
-"In"和"out"的说明是清楚地筛选器以为中心，，而"source"的条款"sink"是连接为中心。
+"传入" 和 "输出" 方向以清晰的以筛选方式进行，而 "sink" 和 "源" 这两者以连接为中心。
 
-有关分析 WDMAud 所用算法的拓扑的详细信息，请参阅[WDMAud 拓扑分析](wdmaud-topology-parsing.md)。
+有关 WDMAud 使用的拓扑分析算法的详细信息，请参阅[WDMAud 拓扑分析](wdmaud-topology-parsing.md)。
 
 本部分还包括：
 
-[拓扑 Pin](topology-pins.md)
+[拓扑引脚](topology-pins.md)
 
 [拓扑节点](topology-nodes.md)
 
-[系统托盘和 SndVol32](systray-and-sndvol32.md)
+[托盘和 SndVol32](systray-and-sndvol32.md)
 
-[公开筛选拓扑](exposing-filter-topology.md)
+[公开筛选器拓扑](exposing-filter-topology.md)
 
  
 
