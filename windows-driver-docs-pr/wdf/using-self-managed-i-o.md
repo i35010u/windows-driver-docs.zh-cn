@@ -3,78 +3,78 @@ title: 使用自我管理的 I/O
 description: 使用自我管理的 I/O
 ms.assetid: 539b3618-44bb-41fd-a9f2-ed6a377c94e2
 keywords:
-- PnP WDK KMDF，自托管 I/O
-- 即插即用 WDK KMDF，自托管 I/O
-- 电源管理 WDK KMDF 自托管 I/O
-- 自托管的 I/O WDK KMDF
-- I/O 自助管理 WDK KMDF
-- 感到惊讶设备删除 WDK KMDF
+- PnP WDK KMDF，自我托管 i/o
+- 即插即用 WDK KMDF，自我托管 i/o
+- 电源管理 WDK KMDF，自我托管 i/o
+- 自托管 i/o WDK KMDF
+- I/o 自助管理 WDK KMDF
+- 意外的设备删除 WDK KMDF
 - 意外的设备删除 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 618dd322624e95509e7be41cc23dc02dc6bd820e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d291fcabb8813d33e090d4a8b16d9f452e65884a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372229"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845432"
 ---
 # <a name="using-self-managed-io"></a>使用自我管理的 I/O
 
 
-大多数基于框架的驱动程序充分利用它们支持的设备的框架的 PnP 和电源管理功能。 换而言之，大多数基于框架的驱动程序让框架管理设备的即插即用和电源状态，通过执行以下所有操作：
+大多数基于框架的驱动程序都利用了框架为其支持的设备提供的 PnP 和电源管理功能。 换句话说，大多数基于框架的驱动程序允许框架通过执行以下所有操作管理设备的 PnP 和电源状态：
 
--   提供[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)并[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数。
+-   提供[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)和[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)回调函数。
 
--   提供[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)并[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数。
+-   提供[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)和[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数。
 
--   使用电源管理队列的 I/O 请求的要求设备在其工作状态，并使用不是所有其他请求的电源管理的队列。
+-   对 i/o 请求使用电源管理的队列，这些请求要求设备处于工作状态，并使用对所有其他请求不具有电源管理功能的队列。
 
-但是，一些基于框架的驱动程序将需要更清楚地知道他们的设备，在以下情况下包括驱动程序的状态：
+然而，一些基于框架的驱动程序将需要更好地了解其设备的状态，包括在以下情况下的驱动程序：
 
--   由驱动程序框架 I/O 队列中接收的 I/O 请求的一组不确定，驱动程序执行的操作。
+-   驱动程序执行的操作不由驱动程序从框架 i/o 队列接收的一组 i/o 请求决定。
 
--   驱动程序与较旧的、 非 framework 驱动程序进行通信，直接与 WDM 接口处理。
+-   驱动程序与较旧的非框架驱动程序通信并直接使用 WDM 接口进行处理。
 
--   驱动程序接收的 I/O 请求无法拆分为两个组： 那些要求在其工作状态中并且没有设备。
+-   驱动程序接收到的 i/o 请求不能分为两组：那些要求设备处于工作状态的组和不是的请求。
 
-大多数驱动程序不在上述情况下，之一，但如果您的驱动程序，它可能需要更直接控制设备的即插即用和电源管理操作。 可以使用此类驱动程序*自行管理 I/O*。 使用自托管的 I/O 意味着只要有一个如果接通电源或拔出，其设备，只要该设备是暂时停止 （通过一组回调函数） 的方式通知驱动程序。
+大多数驱动程序并不是上述一种情况，但如果您的驱动程序是，可能需要更直接控制设备的 PnP 和电源管理操作。 此类驱动程序可以使用*自管理 i/o*。 使用自托管 i/o 意味着，无论何时插入或拔出设备，都会通知驱动程序（使用一组回调函数），并在每次临时停止设备时收到通知。
 
-请注意，驱动程序可以使用自我管理的 I/O 仍使用框架的 I/O 队列，为电源管理队列。 例如，驱动程序可以使用框架的 I/O 队列，不电源管理，使用一组自托管 I/O 回调函数。
+请注意，驱动程序可以使用自托管 i/o，并仍使用框架的 i/o 队列，如电源管理的队列。 例如，驱动程序可以使用一组自行管理的 i/o 回调函数，而不是对其进行电源管理。
 
-若要使用自托管的 I/O，该驱动程序注册一组额外的事件回调函数时，它调用[ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)。 这些事件回调函数包括：
+若要使用自托管 i/o，驱动程序会在调用[**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)时注册一组额外的事件回调函数。 这些事件回调函数为：
 
--   [*EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)，它初始化并启动设备的 I/O 操作。
+-   [*EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)，用于初始化和启动设备的 i/o 操作。
 
--   [*EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)的挂起 I/O 操作。
+-   [*EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)，它将挂起 i/o 操作。
 
--   [*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)，这将重新启动设备的 I/O 操作后已挂起。
+-   [*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)，它将在挂起后重新启动设备的 i/o 操作。
 
--   [*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)，这将删除未服务输入/输出请求。
+-   [*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)，它删除通往 i/o 请求。
 
--   [*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)，其中释放资源，所分配的[ *EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)。
+-   [*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)，它释放由[*EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)分配的资源。
 
-你的设备为第一次输入其工作 (D0) 状态，框架将调用您的驱动程序[ *EvtDeviceSelfManagedIoInit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)回调函数。 每次用户将设备插入系统和每次重新启动系统时，将发生这种情况。
+当设备首次进入工作（D0）状态时，框架会调用驱动程序的[*EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)回调函数。 每次用户将设备插入系统并每次重新启动系统时，都会发生这种情况。
 
-有三种情况下，驱动程序必须在其中停止设备的 I/O 操作： 即将进入低功耗状态的设备，它将被删除，或已意外删除。 以下列表检查每个这种情况下，在详细信息：
+在以下三种情况下，驱动程序必须停止设备的 i/o 操作：设备即将进入低功耗状态、即将被删除或已被意外删除。 以下列表详细介绍了上述每种情况：
 
--   设备将进入低功耗状态，并最终又返回到其工作状态。
+-   设备即将进入低功耗状态，最终会恢复到其工作状态。
 
-    当你的设备将进入低功耗状态 (因为你的设备处于空闲状态，整个系统即将进入低功耗状态，或者 PnP 管理器是[重新发布系统硬件资源](handling-requests-to-stop-a-device.md#redistributing-resources))，框架将调用你驱动程序的[ *EvtDeviceSelfManagedIoSuspend* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)回调函数。 设备重新输入其工作状态后，框架将调用您的驱动程序[ *EvtDeviceSelfManagedIoRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)回调函数。
+    当设备即将进入低功耗状态时（由于设备处于空闲状态，整个系统进入低功耗状态，或 PnP 管理器重新[分发系统硬件资源](handling-requests-to-stop-a-device.md#redistributing-resources)），框架将调用你的[*驱动程序EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)回调函数。 设备重新输入其工作状态后，框架将调用驱动程序的[*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)回调函数。
 
--   设备已被移除。
+-   将删除设备。
 
-    若要处理[用户请求设备删除](handling-requests-to-stop-a-device.md#a-user-removes-or-disables-a-device)，框架将调用您的驱动程序[ *EvtDeviceSelfManagedIoSuspend* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)之前停止设备的回调函数。 停止后该设备，框架将调用您的驱动程序[ *EvtDeviceSelfManagedIoFlush* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)回调函数。 删除设备后，框架将调用[ *EvtDeviceSelfManagedIoCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)回调函数。
+    为了处理[用户请求的设备删除](handling-requests-to-stop-a-device.md#a-user-removes-or-disables-a-device)，框架会在停止设备之前调用驱动程序的[*EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)回调函数。 停止设备后，框架将调用驱动程序的[*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)回调函数。 删除设备后，框架将调用[*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)回调函数。
 
--   已意外删除设备 （感到惊讶删除）。
+-   设备已意外删除（意外删除）。
 
-    如果设备的总线驱动程序确定设备不再存在，或者在堆栈中的另一个驱动程序确定设备未响应，发现了问题的驱动程序可以通知即插即用管理器。 然后，PnP 管理器会通知驱动程序的其余部分设备将消失。 基于框架的驱动程序，请框架接收即插即用管理器的消息并调用您的驱动程序[ *EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)， [ *EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)，并[ *EvtDeviceSelfManagedIoCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)回调函数。
+    如果设备总线的驱动程序确定设备不再存在，或者堆栈中的另一个驱动程序确定设备未响应，则发现此问题的驱动程序将通知 PnP 管理器。 然后，PnP 管理器通知其他驱动程序设备丢失。 对于基于框架的驱动程序，该框架会接收 PnP 管理器的消息，并调用驱动程序的[*EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)、 [*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)和[*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)回调函数。
 
-    (您的驱动程序还可以注册[ *EvtDeviceSurpriseRemoval* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数。 如果设备已在其工作 (D0) 状态中删除时，框架将调用*EvtDeviceSurpriseRemoval*自托管的 I/O 回调函数在调用之前。 如果设备处于低功耗状态删除时， *EvtDeviceSurpriseRemoval*后，会调用[ *EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend))
+    （驱动程序还可以注册[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数。 如果设备在移除时处于工作（D0）状态，则框架将在调用自行托管 i/o 回调函数之前调用*EvtDeviceSurpriseRemoval* 。 如果设备在删除时处于低功耗状态，则在[*EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)后调用*EvtDeviceSurpriseRemoval* ）
 
-有关在其中框架调用驱动程序的事件回调函数的顺序的详细信息，请参阅[PnP 和电源管理方案](pnp-and-power-management-scenarios.md)。
+有关框架调用驱动程序的事件回调函数的顺序的详细信息，请参阅[PnP 和电源管理方案](pnp-and-power-management-scenarios.md)。
 
-尽管很少会有必要，该框架允许驱动程序具有更多控制设备的即插即用和电源状态，通过访问[状态机 framework 中的](state-machines-in-the-framework.md)。
+尽管很少需要，但通过访问[框架中的状态计算机](state-machines-in-the-framework.md)，驱动程序可以更好地控制设备的 PnP 和电源状态。
 
  
 

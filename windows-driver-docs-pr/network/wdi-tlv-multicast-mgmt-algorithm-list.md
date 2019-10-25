@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST
-description: WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST 是 TLV 包含多播的管理算法对的数组。
+description: WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST 是一个 TLV，其中包含多播管理算法对的数组。
 ms.assetid: 96EAD5FE-71C7-4B3E-BB52-06FA50F375D8
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST 网络驱动程序
+- WDI_TLV_MULTICAST_MGMT_ALGORITHM_LIST 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 043476559e82a270988bcb7702365b07f01a9af5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c56e83266e7156dcd4cf19153d60bf95e8341e2f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371175"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844980"
 ---
-# <a name="wditlvmulticastmgmtalgorithmlist"></a>WDI\_TLV\_多播\_MGMT\_算法\_列表
+# <a name="wdi_tlv_multicast_mgmt_algorithm_list"></a>WDI\_TLV\_多播\_管理\_算法\_列表
 
 
-WDI\_TLV\_多播\_MGMT\_算法\_列表是 TLV 包含多播的管理算法对的数组。
+WDI\_TLV\_多播\_管理\_算法\_列表是包含多址广播管理算法对的数组。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,29 +26,29 @@ WDI\_TLV\_多播\_MGMT\_算法\_列表是 TLV 包含多播的管理算法对的�
 ## <a name="length"></a>长度
 
 
-WDI 的数组的大小 （以字节为单位）\_ALGO\_对元素。 该数组必须包含一个或多个元素。
+WDI 的数组的大小（以字节为单位）\_算法\_对元素。 数组必须包含1个或多个元素。
 
-**请注意**  WDI\_ALGO\_对不是 WDI 结构。 它定义在 WDI TLV 分析器生成器，并仅供文档使用。
+**请注意**  WDI\_算法\_对不是 WDI 结构。 它在 WDI TLV 分析程序生成器中定义，仅用于文档目的。
 
  
 
-算法对的数组大小 （以字节为单位）。
+算法对数组的大小（以字节为单位）。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                 | 描述                                            |
 |----------------------|--------------------------------------------------------|
-| WDI\_ALGO\_PAIRS\[\] | 身份验证和加密算法对的数组。 |
+| WDI\_算法\_对\[\] | 身份验证和密码算法对的数组。 |
 
  
 
-WDI\_ALGO\_对以下元素组成。
+WDI\_算法\_对包含以下元素。
 
 | 在任务栏的搜索框中键入  | 描述                                                                                     |
 |-------|-------------------------------------------------------------------------------------------------|
-| UINT8 | 如中所定义的身份验证算法[ **WDI\_身份验证\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_auth_algorithm)。 |
-| UINT8 | 如中所定义的密码算法[ **WDI\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wditypes/ne-wditypes-_wdi_cipher_algorithm)。     |
+| UINT8 | WDI 中定义的身份验证算法[ **\_AUTH\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_auth_algorithm)。 |
+| UINT8 | 在 WDI 中定义的密码算法[ **\_密码\_算法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_cipher_algorithm)。     |
 
  
 
@@ -63,14 +63,14 @@ WDI\_ALGO\_对以下元素组成。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

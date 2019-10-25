@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_AUDDECOUT\_CUR\_模式
-description: KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
+title: KSPROPERTY\_AUDDECOUT\_当前\_模式
+description: KSPROPERTY\_AUDDECOUT\_当前\_模式属性指示当前音频输出模式。
 ms.assetid: 4ac6d181-f532-4ac6-b8fd-2975214a3618
 keywords:
-- KSPROPERTY_AUDDECOUT_CUR_MODE 流式处理媒体设备
+- KSPROPERTY_AUDDECOUT_CUR_MODE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9a53e89cdd5e1322f785be97ac644a6ee8db72a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 78c3c44a23cc9cc3b452470bbc9fe922953e47e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386924"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845380"
 ---
-# <a name="kspropertyauddecoutcurmode"></a>KSPROPERTY\_AUDDECOUT\_CUR\_模式
+# <a name="ksproperty_auddecout_cur_mode"></a>KSPROPERTY\_AUDDECOUT\_当前\_模式
 
 
-KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
+KSPROPERTY\_AUDDECOUT\_当前\_模式属性指示当前音频输出模式。
 
 ## <span id="ddk_ksproperty_auddecout_cur_mode_ks"></span><span id="DDK_KSPROPERTY_AUDDECOUT_CUR_MODE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -61,25 +61,25 @@ KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
 
  
 
-属性值 （操作数据） 是一个 dword 值，表示音频解码器的当前输出模式。
+属性值（操作数据）是表示音频解码器当前输出模式的 DWORD 值。
 
 <a name="remarks"></a>备注
 -------
 
-属性值可以是以下标头文件中定义的模式常量之一*ksmedia.h*:
+属性值可以是头文件*ksmedia*中定义的以下模式常量之一：
 
-<span id="KSAUDDECOUTMODE_STEREO_ANALOG"></span><span id="ksauddecoutmode_stereo_analog"></span>**KSAUDDECOUTMODE\_STEREO\_ANALOG**  
-指示输出是在模拟立体声设备中。
+<span id="KSAUDDECOUTMODE_STEREO_ANALOG"></span><span id="ksauddecoutmode_stereo_analog"></span>**KSAUDDECOUTMODE\_立体声\_模拟**  
+指示输出为模拟立体声。
 
 <span id="KSAUDDECOUTMODE_PCM_51"></span><span id="ksauddecoutmode_pcm_51"></span>**KSAUDDECOUTMODE\_PCM\_51**  
-指示输出为数字的 PCM 5.1 通道中。
+指示输出处于 PCM 5.1 信道数字中。
 
 <span id="KSAUDDECOUTMODE_SPDIFF"></span><span id="ksauddecoutmode_spdiff"></span>**KSAUDDECOUTMODE\_SPDIFF**  
-指示输出为 SPDIFF 格式 AC3 数字。
+指示输出的格式为 SPDIFF E-AC3 数码。
 
-音频的微型端口驱动程序 get 属性处理程序返回的当前模式解码器，而音频微型端口驱动程序集属性处理程序请求解码器到请求的模式切换输出音频格式。
+音频微型端口驱动程序 get 属性处理程序返回解码器的当前模式，而音频微型端口驱动程序设置属性处理程序请求解码器将输出音频格式转换为请求的模式。
 
-我们建议你指定默认值为 KSPROPERTY\_AUDDECOUT\_CUR\_微型驱动程序中的模式属性的序列化的注册表中设置的属性。
+建议为注册表中微型驱动程序的序列化属性集中的 KSPROPERTY\_AUDDECOUT\_当前\_模式属性指定默认值。
 
 有关详细信息，请参阅[音频微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-miniport-drivers)。
 
@@ -93,13 +93,13 @@ KSPROPERTY\_AUDDECOUT\_CUR\_模式属性指示当前的音频输出模式。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY\_AUDDECOUT\_模式**](ksproperty-auddecout-modes.md)

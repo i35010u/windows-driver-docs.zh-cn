@@ -1,144 +1,144 @@
 ---
 title: 在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
-description: 当 Windows 驱动程序框架 (WDF) 驱动程序收到读取、 写入或设备的 I/O 控制请求时，请求对象将包含输入的缓冲区、 输出缓冲区，或这两者。
+description: 当 Windows 驱动程序框架（WDF）驱动程序收到读取、写入或设备 i/o 控制请求时，请求对象将包含输入缓冲区和/或输出缓冲区。
 ms.assetid: ceba2279-b0fb-4261-b439-723d5dad967b
 keywords:
 - 请求处理 WDK KMDF，数据缓冲区
-- 数据缓冲 WDK KMDF
-- 输入的缓冲区 WDK KMDF
+- 数据缓冲区 WDK KMDF
+- 输入缓冲 WDK KMDF
 - 输出缓冲区 WDK KMDF
 - 缓冲区 WDK KMDF
-- 缓冲的 I/O WDK KMDF
-- 直接 I/O WDK KMDF
-- 既不缓冲，也不直接 I/O WDK KMDF
-- I/O 请求 WDK KMDF，数据缓冲区
+- 缓冲 i/o WDK KMDF
+- 直接 i/o WDK KMDF
+- 缓冲和直接 i/o WDK KMDF
+- I/o 请求 WDK KMDF，数据缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6980ab1aa5068f5583685fb587a55ed35a3e2658
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed05fb46f85d09394f4d093521d3c53c668c95dd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363867"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845516"
 ---
 # <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
 
 
-当 Windows 驱动程序框架 (WDF) 驱动程序收到读取、 写入或设备的 I/O 控制请求时，请求对象将包含输入的缓冲区、 输出缓冲区，或这两者。
+当 Windows 驱动程序框架（WDF）驱动程序收到读取、写入或设备 i/o 控制请求时，请求对象将包含输入缓冲区和/或输出缓冲区。
 
-输入的缓冲区包含驱动程序需要的信息。 对于写请求，此信息通常是功能驱动程序必须向设备发送的数据。 对于设备 I/O 控制请求，请输入的缓冲区可能包含指示驱动程序必须执行的操作的类型的信息。
+输入缓冲区包含驱动程序所需的信息。 对于写入请求，此信息通常是函数驱动程序必须发送到设备的数据。 对于设备 i/o 控制请求，输入缓冲区可能包含表明驱动程序必须执行的操作类型的信息。
 
-输出缓冲区接收来自驱动程序的信息。 对于读取请求，此信息通常是功能驱动程序从设备接收的数据。 对于设备 I/O 控制请求，输出缓冲区可能会收到状态或指定请求的 I/O 控制代码的其他信息。
+输出缓冲区从驱动程序接收信息。 对于读取请求，此信息通常是函数驱动程序从设备接收的数据。 对于设备 i/o 控制请求，输出缓冲区可能接收由请求的 i/o 控制代码指定的状态或其他信息。
 
-您的驱动程序使用来访问请求的数据缓冲区的方法取决于用于访问数据缓冲区的设备驱动程序的方法。 有三种访问方法：
+驱动程序用于访问请求的数据缓冲区的方法取决于用于访问设备数据缓冲区的驱动程序的方法。 有三种访问方法：
 
--   [缓冲 I/O](#buffered)。 I/O 管理器创建它，驱动程序与共享的中间缓冲区。
--   [直接 I/O](#direct)。 I/O 管理器到物理内存中，锁定缓冲区空间，然后为该驱动程序提供了直接访问权限的缓冲区空间。
--   [既不缓冲，也不直接 I/O](#neither)。 I/O 管理器将驱动程序提供请求的缓冲区空间的虚拟地址。 I/O 管理器不会验证请求的缓冲区空间，因此，该驱动程序必须验证缓冲区空间的可访问，并锁定到物理内存中缓冲区空间。
+-   [缓冲 i/o](#buffered)。 I/o 管理器会创建与驱动程序共享的中间缓冲区。
+-   [直接 i/o](#direct)。 I/o 管理器会将缓冲区空间锁定为物理内存，并为该驱动程序提供对缓冲区空间的直接访问。
+-   [缓冲或直接](#neither)i/o。 I/o 管理器为驱动程序提供请求的缓冲区空间的虚拟地址。 I/o 管理器不会验证请求的缓冲区空间，因此驱动程序必须验证缓冲区空间是否可访问，并将缓冲区空间锁定为物理内存。
 
-内核模式驱动程序框架 (KMDF) 驱动程序可以使用任何三种访问方法。 用户模式驱动程序框架 (UMDF) 驱动程序可以用于读取、 写入和 IOCTL 请求缓冲或直接 I/O，并且可以[转换指定的请求**方法\_NEITHER**方法](managing-buffer-access-methods-in-umdf-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
+内核模式驱动程序框架（KMDF）驱动程序可以使用三种访问方法中的任意一种。 用户模式驱动程序框架（UMDF）驱动程序可以对读、写和 IOCTL 请求使用缓冲的或直接 i/o，并可以[转换指定**方法\_两**种方法的请求](managing-buffer-access-methods-in-umdf-drivers.md#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
 
-## <a href="" id="ddk-preprocessing-i-o-requests-df"></a>指定缓冲区的访问方法
-
-
-<a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
-
-对于读取和写入请求时，驱动程序堆栈中的所有驱动程序必须使用相同的方法，用于访问设备的缓冲区，但最高级别的驱动程序，可以使用"不"方法，无论哪个方法由较低的驱动程序除外。
-
-从版本 1.13，KMDF 驱动程序通过调用中指定的所有设备的读取和写入请求的访问方法[ **WdfDeviceInitSetIoTypeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex)为每个设备。 例如，如果驱动程序指定其设备之一的缓冲的 I/O 方法，I/O 管理器使用缓冲的 I/O 方法时提供读取和写入请求发送到该设备的驱动程序。
-
-对于设备 I/O 控制请求的 I/O 控制代码 (IOCTL) 包含指定的缓冲区的访问方法的位。 因此，KMDF 驱动程序不需要采取任何操作来为 Ioctl 选择缓冲方法。 Ioctl 有关详细信息，请参阅[定义的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。 与不同的是读取和写入请求时，所有设备的 Ioctl 不需要指定相同的访问方法。
-
-<a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
-
-UMDF 驱动程序指定*首选项*访问的方法，该框架使用的方法读取和写入请求，以及设备 I/O 控制请求。 UMDF 驱动程序提供的值是仅首选项，并不保证由框架使用。 有关详细信息，请参阅[UMDF 驱动程序中管理缓冲区的访问方法](managing-buffer-access-methods-in-umdf-drivers.md)。
-
-UMDF 驱动程序指定的所有设备的读取、 写入和 IOCTL 请求的访问方法通过调用[ **WdfDeviceInitSetIoTypeEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex)为每个设备。 例如，如果驱动程序指定其设备之一的缓冲的 I/O 方法，该框架使用缓冲的 I/O 方法传送到该设备的驱动程序的读取、 写入和 IOCTL 请求时。
-
-请注意 KMDF 和 UMDF 之间 Ioctl 缓冲区访问技术中的差异。 KMDF 驱动程序没有为 Ioctl，指定缓冲区的访问方法，而 UMDF 驱动程序执行为 Ioctl 指定缓冲区的访问方法。
-
-如果 WDF 驱动程序使用的 I/O 目标使用的 I/O 方法对于不正确的技术描述 I/O 请求的缓冲区，该框架将更正缓冲区说明。 例如，如果驱动程序使用 MDL 来描述它将传递到的缓冲区[ **WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)，如果 I/O 目标使用缓冲的 I/O (这需要缓冲区是使用指定的虚拟地址而不是 MDLs），该框架将从 MDL 缓冲区说明转换为虚拟地址和长度。 但是，它是效率更高如果您的驱动程序在正确的格式中指定的缓冲区。
-
-有关 framework 内存对象、 后备链列表、 MDLs 和的本地缓冲区的信息，请参阅[使用的内存缓冲区](using-memory-buffers.md)。
-
-有关何时删除内存缓冲区的信息，请参阅[内存缓冲区生命周期](memory-buffer-life-cycle.md)。
-
-## <a href="" id="buffered"></a> 对于缓冲的 I/O 访问数据缓冲区
-
-
-如果您的驱动程序使用缓冲的 I/O，具体取决于数据请求和是否使用 KMDF 或 UMDF 类型发生更改其行为。
-
-<a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
-
-当 KMDF 驱动程序使用缓冲的 I/O 时，I/O 管理器创建一个驱动程序可以访问的每种类型的请求的中间缓冲区。 下面是会发生什么情况：
-
--   写入请求。 调用驱动程序堆栈之前，I/O 管理器将从调用应用程序的输入缓冲区传输输入的信息。 然后，KMDF 驱动程序从中间缓冲区中读取输入的信息并将其写入到设备。
--   读取请求。 KMDF 驱动程序从设备中读取信息并将其存储在中间的缓冲区中。 然后，I/O 管理器将中间缓冲区的输出数据复制到应用的输出缓冲区。
--   设备 I/O 控制请求。 KMDF 驱动程序读取，或将该请求的数据写入或从中间缓冲区。
-
-<a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
-
-当 UMDF 驱动程序使用缓冲的 I/O 时，驱动程序主机进程将创建一个或两个中间缓冲区，具体取决于请求的类型。 下面是会发生什么情况：
-
--   写入请求。 框架将创建一个缓冲区，将从调用应用程序的输入缓冲区传输输入的信息，然后调用驱动程序堆栈。 UMDF 驱动程序从中间缓冲区中读取输入的信息，并将其写入到设备。
--   读取请求。 UMDF 驱动程序从设备读取信息并将其存储在框架创建的缓冲区。 驱动程序主机进程将输出数据从中间缓冲区复制到应用的输出缓冲区。
--   设备 I/O 控制请求。 框架将创建两个对应的驱动程序可以访问 IOCTL 的输入和输出缓冲区的缓冲区。 框架将从 IOCTL 的输入的信息复制到新的中间缓冲区，并使其可供该驱动程序。 框架不会复制输出缓冲区的内容，以便该驱动程序不应尝试从其读取 （否则将其读取包含垃圾数据）。 该驱动程序将写入到输出缓冲区的任何数据复制回原始 IOCTL 缓冲区，并返回到 I/O 请求的成功完成后应用。 请注意，驱动程序将写入到输入缓冲区的任何数据是被丢弃，并且不返回到调用应用程序。
-
-若要检索的句柄表示的缓冲区的 framework 内存对象，KMDF 和 UMDF 驱动程序调用[ **WdfRequestRetrieveInputMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或[ **WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)，具体取决于这是读取或写入请求。 该驱动程序然后可以通过调用检索到缓冲区的指针[ **WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)。 读取和写入的缓冲区，驱动程序调用[ **WdfMemoryCopyFromBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)或[ **WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)。
-
-若要检索的虚拟地址和缓冲区的长度，该驱动程序调用[ **WdfRequestRetrieveInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)或[ **WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer).
-
-若要分配并生成缓冲区的内存描述符列表 (MDL)，KMDF 驱动程序调用[ **WdfRequestRetrieveInputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)或[ **WdfRequestRetrieveOutputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl).
-
-## <a href="" id="direct"></a> 对于直接 I/O 访问数据缓冲区
+## <a href="" id="ddk-preprocessing-i-o-requests-df"></a>指定缓冲区访问方法
 
 
 <a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
 
-如果您的驱动程序使用的直接 I/O，I/O 管理器验证发信方的 I/O 请求 （通常在用户模式应用程序） 指定，到物理内存中，将锁定缓冲区空间，然后即可提供与驱动程序的缓冲区空间的可访问性缓冲区空间的直接访问。
+对于读取和写入请求，驱动程序堆栈中的所有驱动程序都必须使用与访问设备缓冲区相同的方法，这是最高级别的驱动程序除外，无论驱动程序使用哪种方法，都可以使用 "两个" 方法。
+
+从1.13 版开始，KMDF 驱动程序通过为每个设备调用[**WdfDeviceInitSetIoTypeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex) ，为所有设备的读取和写入请求指定访问方法。 例如，如果驱动程序为其某个设备指定了缓冲 i/o 方法，则当将读取和写入请求传递到该设备的驱动程序时，i/o 管理器将使用该缓冲 i/o 方法。
+
+对于设备 i/o 控制请求，i/o 控制代码（IOCTL）包含指定缓冲区访问方法的位。 因此，KMDF 驱动程序无需执行任何操作即可为 IOCTLs 选择缓冲方法。 有关 IOCTLs 的详细信息，请参阅[定义 I/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。 与读取和写入请求不同，设备的所有 IOCTLs 无需指定相同的访问方法。
 
 <a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
 
-如果您的驱动程序已指定直接 I/O 的首选项，因此已达到直接 I/O 的所有 UMDF 要求 (请参阅[UMDF 驱动程序中管理缓冲区的访问方法](managing-buffer-access-methods-in-umdf-drivers.md))，框架将映射从 I/O 收到的内存缓冲区管理器直接插入驱动程序的主机进程地址空间，并因此为驱动程序提供了直接访问权限的缓冲区空间。
+UMDF 驱动程序为框架用于读取和写入请求的访问方法和设备 i/o 控制请求指定*首选项*。 UMDF 驱动程序提供的值仅为首选项，不保证框架使用这些值。 有关详细信息，请参阅[在 UMDF 驱动程序中管理缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)。
 
-若要检索表示缓冲区空间，驱动程序调用 framework 内存对象的句柄[ **WdfRequestRetrieveInputMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或[ **WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)。 该驱动程序然后可以通过调用检索到缓冲区的指针[ **WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)。 读取和写入的缓冲区，驱动程序调用[ **WdfMemoryCopyFromBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)或[ **WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)。
+UMDF 驱动程序通过为每个设备调用[**WdfDeviceInitSetIoTypeEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetiotypeex) ，为所有设备的读取、写入和 IOCTL 请求指定访问方法。 例如，如果驱动程序为其某个设备指定了缓冲 i/o 方法，则当将读取、写入和 IOCTL 请求传送到该设备的驱动程序时，框架将使用该缓冲 i/o 方法。
 
-若要检索的虚拟地址和长度的缓冲区空间，该驱动程序调用[ **WdfRequestRetrieveInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)或[ **WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer).
+请注意在 KMDF 和 UMDF 之间用于 IOCTLs 的缓冲区访问技术之间的差异。 KMDF 驱动程序未指定 IOCTLs 的缓冲区访问方法，而 UMDF 驱动程序则为 IOCTLs 指定缓冲区访问方法。
 
-如果设备的驱动程序使用的直接 I/O，I/O 管理器通过使用 MDLs 描述缓冲区。 若要检索一个指向缓冲区的 MDL，KMDF 驱动程序调用[ **WdfRequestRetrieveInputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)或[ **WdfRequestRetrieveOutputWdmMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl). UMDF 驱动程序无法访问 MDLs。
+如果 WDF 驱动程序通过使用对 i/o 目标使用的 i/o 方法不正确的方法来描述 i/o 请求的缓冲区，则该框架会更正缓冲区说明。 例如，如果驱动程序使用 MDL 来描述它传递给[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)的缓冲区，并且 i/o 目标使用缓冲 i/o （这要求使用虚拟地址（而不是 MDLs）来指定缓冲区），框架将缓冲区说明从 MDL 转换为虚拟地址和长度。 但是，如果您的驱动程序以正确的格式指定缓冲区，则会更有效。
 
-## <a href="" id="neither"></a> 对于既不缓冲，也不直接 I/O 访问数据缓冲区
+有关 framework 内存对象、后备链表列表、MDLs 和本地缓冲区的信息，请参阅[使用内存缓冲区](using-memory-buffers.md)。
+
+有关删除内存缓冲区的信息，请参阅[内存缓冲区生命周期](memory-buffer-life-cycle.md)。
+
+## <a href="" id="buffered"></a>访问缓冲 i/o 的数据缓冲区
+
+
+如果你的驱动程序使用的是缓冲 i/o，则其行为会根据数据请求的类型以及它是使用 KMDF 还是 UMDF 而发生更改。
+
+<a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
+
+当 KMDF 驱动程序使用缓冲 i/o 时，i/o 管理器会创建一个中间缓冲区，驱动程序可以对每个请求类型进行访问。 下面是发生的情况：
+
+-   写入请求。 在调用驱动程序堆栈之前，i/o 管理器会在调用应用的输入缓冲区中传输输入信息。 然后，KMDF 驱动程序从中间缓冲区读取输入信息，并将其写入到设备。
+-   读取请求。 KMDF 驱动程序从设备读取信息，并将其存储在中间缓冲器中。 然后，i/o 管理器将输出数据从中间缓冲区复制到应用程序的输出缓冲区。
+-   设备 i/o 控制请求。 KMDF 驱动程序在中间缓冲区中读取或写入该请求的数据。
+
+<a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
+
+当 UMDF 驱动程序使用缓冲 i/o 时，驱动程序主机进程会根据请求的类型创建一个或两个中间缓冲区。 下面是发生的情况：
+
+-   写入请求。 该框架将创建一个缓冲区，从调用应用的输入缓冲区传输输入信息，然后调用驱动程序堆栈。 UMDF 驱动程序从中间缓冲区读取输入信息，并将其写入到设备。
+-   读取请求。 UMDF 驱动程序从设备读取信息，并将其存储在框架所创建的缓冲区中。 驱动程序主机进程将输出数据从中间缓冲区复制到应用程序的输出缓冲区。
+-   设备 i/o 控制请求。 框架创建两个缓冲区，对应于驱动程序可以访问的 IOCTL 的输入和输出缓冲区。 框架将这些输入信息从 IOCTL 复制到新的中间缓冲区，并使其可供驱动程序使用。 该框架不复制输出缓冲区的内容，因此，驱动程序不应尝试从该缓冲区中进行读取（否则，它将最终读取垃圾数据）。 驱动程序写入到输出缓冲区的任何数据都将复制回原始 IOCTL 缓冲区，并在 i/o 请求成功完成后返回到应用程序。 请注意，驱动程序写入到输入缓冲区的任何数据都将被丢弃，而不会返回给调用应用程序。
+
+若要检索表示缓冲区的 framework memory 对象的句柄，KMDF 和 UMDF 驱动程序都调用[**WdfRequestRetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或[**WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)，具体取决于这是读取还是写入请求。 然后，该驱动程序可以通过调用[**WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)来检索指向缓冲区的指针。 若要读取和写入缓冲区，驱动程序将调用[**WdfMemoryCopyFromBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)或[**WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)。
+
+若要检索缓冲区的虚拟地址和长度，驱动程序将调用[**WdfRequestRetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)或[**WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer)。
+
+若要为缓冲区分配和生成内存描述符列表（MDL），KMDF 驱动程序将调用[**WdfRequestRetrieveInputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)或[**WdfRequestRetrieveOutputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)。
+
+## <a href="" id="direct"></a>访问直接 i/o 的数据缓冲区
 
 
 <a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
 
-如果您的驱动程序使用名为缓冲区的访问方法*既不缓冲 I/O，也不直接 I/O 方法*（或"方法都不"，简称），I/O 管理器只需提供驱动程序和虚拟地址的发起方指定请求的缓冲区空间的 I/O 请求。 I/O 管理器不会验证 I/O 请求的缓冲区空间，因此，该驱动程序必须验证缓冲区空间的可访问，并锁定到物理内存中缓冲区空间。
-
-I/O 管理器提供的虚拟地址可以访问仅在 I/O 请求的发起进程上下文中。 保证仅驱动程序堆栈中的最高级别的驱动程序创建者进程上下文中执行。
-
-若要获得访问权限的 I/O 请求的缓冲区空间，最高级别的驱动程序必须提供[ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)回调函数。 框架调用此回调函数每次收到该驱动程序的 I/O 请求。
-
-如果请求的缓冲区的访问方法是"均不"，KMDF 驱动程序必须执行以下操作为每个缓冲区：
-
-1.  调用[ **WdfRequestRetrieveUnsafeUserInputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuserinputbuffer)或[ **WdfRequestRetrieveUnsafeUserOutputBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuseroutputbuffer)若要获取的缓冲区虚拟地址。
-
-2.  调用[ **WdfRequestProbeAndLockUserBufferForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestprobeandlockuserbufferforread)或[ **WdfRequestProbeAndLockUserBufferForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestprobeandlockuserbufferforwrite)探测和锁定缓冲和若要获取的句柄 framework 内存对象缓冲区。
-
-3.  在请求中保存内存对象句柄[上下文空间](using-request-object-context.md)。
-
-4.  调用[ **WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)，它返回与框架的请求。
-
-随后，框架将请求添加到驱动程序的 I/O 队列之一。 如果已提供该驱动程序[请求处理程序](request-handlers.md)，框架将最终调用相应的请求处理程序。
-
-请求处理程序可以从请求的上下文空间检索请求的内存对象句柄。 该驱动程序可以将传递到句柄[ **WdfMemoryGetBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)获取缓冲区的地址。
-
-有时，最高级别的驱动程序必须使用在前面的步骤来访问的用户模式缓冲区，即使该驱动程序使用"不"访问方法。 例如，假设驱动程序使用缓冲的 I/O。 使用缓冲的访问方法的 I/O 控制代码可能会传递包含嵌入到用户模式缓冲区指针的结构。 在这种情况下，该驱动程序必须提供[ *EvtIoInCallerContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)回调函数，该结构中提取指针，然后使用前面步骤 2 至 4。
+如果你的驱动程序使用的是直接 i/o，则 i/o 管理器将验证指定的 i/o 请求（通常为用户模式应用程序）的发起方的缓冲空间的可访问性，将缓冲区空间锁定在物理内存中，然后为驱动程序提供直接访问缓冲区空间。
 
 <a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
 
-UMDF 不支持既不缓冲，也不直接 I/O 类型缓冲区，因此 UMDF 驱动程序永远不需要直接处理此类型的缓冲区。
+如果你的驱动程序为直接 i/o 指定了首选项，并且满足了直接 i/o 的所有 UMDF 要求（请参阅[在 UMDF 驱动程序中管理缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)），则该框架会将它从 i/o 管理器接收的内存缓冲区直接映射到驱动程序的主机进程地址空间，从而为驱动程序提供对缓冲区空间的直接访问。
 
-但是，如果框架收到的此类缓冲区将读取或写入 I/O 管理器中，会将其提供给 UMDF 驱动程序为缓冲的 I/O 或直接 I/O，具体取决于所选驱动程序的访问方法。 如果框架接收 IOCTL 指定"不"缓冲区方法，它可以根据需要将 IOCTL 请求的缓冲区的访问方法转换为缓冲的 I/O 或基于存在一个 INF 指令的直接 I/O。 请参阅[UMDF 驱动程序中管理缓冲区的访问方法](managing-buffer-access-methods-in-umdf-drivers.md)的详细信息。
+若要检索表示缓冲区空间的 framework memory 对象的句柄，驱动程序将调用[**WdfRequestRetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或[**WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)。 然后，该驱动程序可以通过调用[**WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)来检索指向缓冲区的指针。 若要读取和写入缓冲区，驱动程序将调用[**WdfMemoryCopyFromBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)或[**WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)。
+
+若要检索缓冲空间的虚拟地址和长度，驱动程序将调用[**WdfRequestRetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)或[**WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer)。
+
+如果设备的驱动程序使用的是直接 i/o，则 i/o 管理器使用 MDLs 描述缓冲区。 若要检索指向缓冲区 MDL 的指针，KMDF 驱动程序将调用[**WdfRequestRetrieveInputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)或[**WdfRequestRetrieveOutputWdmMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl)。 UMDF 驱动程序无法访问 MDLs。
+
+## <a href="" id="neither"></a>访问非缓冲和直接 i/o 的数据缓冲区
+
+
+<a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
+
+如果你的驱动程序使用称为*非缓冲 i/o 方法和直接 i/o 方法*的缓冲区访问方法（或者，"两者都" 方法为 short），则 i/o 管理器仅向该驱动程序提供 i/o 请求的发起方的虚拟地址为请求的缓冲区空间指定。 I/o 管理器不会验证 i/o 请求的缓冲区空间，因此驱动程序必须验证缓冲区空间是否可访问，并将缓冲区空间锁定为物理内存。
+
+只能在 i/o 请求的发起方的进程上下文中访问 i/o 管理器提供的虚拟地址。 仅保证驱动程序堆栈中的最高级别的驱动程序在发起方的进程上下文中执行。
+
+若要获取对 i/o 请求的缓冲区空间的访问权限，最上层的驱动程序必须提供一个[*EvtIoInCallerContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)回调函数。 每次收到驱动程序的 i/o 请求时，框架都会调用此回调函数。
+
+如果请求的缓冲区访问方法为 "两者都不"，则 KMDF 驱动程序必须为每个缓冲区执行以下操作：
+
+1.  调用[**WdfRequestRetrieveUnsafeUserInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuserinputbuffer)或[**WdfRequestRetrieveUnsafeUserOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveunsafeuseroutputbuffer)以获取缓冲区的虚拟地址。
+
+2.  调用[**WdfRequestProbeAndLockUserBufferForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestprobeandlockuserbufferforread)或[**WdfRequestProbeAndLockUserBufferForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestprobeandlockuserbufferforwrite)以探测并锁定缓冲区，并获取缓冲区的框架内存对象的句柄。
+
+3.  在请求的[上下文空间](using-request-object-context.md)中保存内存对象句柄。
+
+4.  调用[**WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)，这将向框架返回请求。
+
+然后，框架会将请求添加到驱动程序的一个 i/o 队列。 如果驱动程序提供了[请求处理](request-handlers.md)程序，则框架最终将调用相应的请求处理程序。
+
+请求处理程序可以从请求的上下文空间中检索请求的内存对象句柄。 驱动程序可以将句柄传递给[**WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer) ，以获取缓冲区的地址。
+
+有时，最高级别的驱动程序必须使用前面的步骤来访问用户模式缓冲区，即使该驱动程序未使用 "两者都" 访问方法。 例如，假设驱动程序使用缓冲 i/o。 使用缓冲访问方法的 i/o 控制代码可能会将包含嵌入指针的结构传递到用户模式缓冲区。 在这种情况下，驱动程序必须提供一个[*EvtIoInCallerContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)回调函数，该函数从结构中提取指针，然后使用前面的步骤2到4。
+
+<a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
+
+UMDF 不支持非缓冲和直接 i/o 类型的缓冲区，因此，UMDF 驱动程序永远不需要直接处理此类型的缓冲区。
+
+但是，如果框架接收到用于从 i/o 管理器中进行读取或写入的缓冲区，则它会根据驱动程序选择的访问方法，将其提供给作为缓冲 i/o 或直接 i/o 的 UMDF 驱动程序。 如果框架接收到指定 "两个" 缓冲区方法的 IOCTL，则可以选择将 IOCTL 请求的缓冲区访问方法转换为缓冲 i/o，或根据 INF 指令的存在性来指示 i/o。 有关详细信息，请参阅[在 UMDF 驱动程序中管理缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)。
 
  
 

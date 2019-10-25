@@ -1,39 +1,39 @@
 ---
 title: NFP 提供程序模型
-description: 附近字段邻近 (NFP) 提供程序的驱动程序模型提供了用于 Windows 使用 NFP 功能还可以启用 NFP 方案和用例的常见面。
+description: 近字段邻近性（NFP）提供程序驱动程序模型为 Windows 提供了一个使用 NFP 功能并启用 NFP 方案和用例的通用表面。
 ms.assetid: AD8DC80F-5CE2-4547-B951-A82A280F18ED
 keywords:
 - NFC
 - 近场通信
-- 近程
+- proximity
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b717151b74579fad943a3d7cf84965663a4f9cf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5b0bea2e15b8d60a65c506d9c5e88fa3cb72a9c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373823"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845268"
 ---
 # <a name="nfp-provider-model"></a>NFP 提供程序模型
 
 
-附近字段邻近 (NFP) 提供程序的驱动程序模型提供了用于 Windows 使用 NFP 功能还可以启用 NFP 方案和用例的常见面。
+近字段邻近性（NFP）提供程序驱动程序模型为 Windows 提供了一个使用 NFP 功能并启用 NFP 方案和用例的通用表面。
 
-若要公开这些功能为 Windows，兼容的设备的实施者必须提供实现的设备驱动程序**GUID\_DEVINTERFACE\_NFP**设备接口。 此驱动程序适用于在软件和/或设备以形成 NFP 提供程序上的硬件中实现的基础 NFP 技术。
+若要将这些功能公开给 Windows，兼容设备的实施者必须提供实现**GUID\_DEVINTERFACE\_NFP**设备接口的设备驱动程序。 此驱动程序适用于在软件和/或设备硬件上实现的底层 NFP 技术，以形成 NFP 提供程序。
 
-**GUID\_DEVINTERFACE\_NFP**设备接口，Windows 使用各种 NFP 技术。 此设备接口的实现者公开的最常见功能是一般并不特定于任何基础 NFP 技术。 编程到此通用功能与其他 Windows 应用进行通信的应用程序应该能够使用任何 NFP 提供程序而无需修改应用程序的代码。 由于 NFC NFP 空间中的前导标准，设备接口通过让 NFP 提供程序能够处理本机 NDEF 数据包支持 NFC 的特定行为。 应用程序可能依赖于此 NFC 特有的功能，并限制其自身的功能对 nfc 的 NFP 提供程序。
+**GUID\_DEVINTERFACE\_NFP**设备接口允许 Windows 使用各种 NFP 技术。 此设备接口的实施者公开的最常见功能是通用的，不特定于任何底层的 NFP 技术。 对此常见功能进行编程以与其他 Windows 应用进行通信时，应能够使用任何 NFP 提供程序，而无需修改应用程序代码。 由于 NFC 是 NFP 空间中的一个前导标准，因此设备接口通过使 NFP 提供程序能够处理本机 NDEF 数据包来支持特定 NFC 行为。 应用可能会依赖于此 NFC 特定功能并仅将其自己的功能限制为启用了 NFC 的 NFP 提供程序。
 
-使用不兼容 NFP 提供程序的两台 Pc 不能通过其 NFP 提供程序进行通信。 此规范提供了指导原则不足以支持的两个经过认证的 Windows 系统的互操作，因为支持 nfc 的至少一个提供程序是必需的 Windows 系统证书。
+具有不兼容的 NFP 提供程序的两台电脑无法通过其 NFP 提供程序进行通信。 此规范提供的指导原则足以支持两个经过认证的 Windows 系统的互操作性，因为至少支持一个启用了 NFC 的访问接口。
 
-NFP 提供商预暂存使用发布/订阅模型的基础 NFP 技术准确性无法保证事件触发其传输其通信。 消息发布和订阅到根据消息类型。 当两个设备变得近程 NFP 技术时，邻近状态时触发，目前已发布的所有消息都传输到另一台设备上的当前订户。 此机制提供了模型，其中用户在其设备上，设置一些上下文，然后点击与其他设备来完成的方案中的简单方法。
+NFP 提供程序使用发布/订阅模型（其传输由底层 NFP 技术的近程事件触发）来预暂存通信。 消息根据消息类型发布和订阅。 当两个设备根据 NFP 技术近程时，将触发邻近状态，并且所有当前发布的消息将传输到另一台设备上的当前订阅服务器。 此机制提供了一个模型，其中用户在其设备上设置了某些上下文，然后将其与另一台设备点击，以轻松完成此方案。
 
  
 
  
 ## <a name="related-topics"></a>相关主题
-[NFC 设备驱动程序接口 (DDI) 概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
-[邻近 DDI 引用附近](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)  
+[NFC 设备驱动程序接口（DDI）概述](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
+[近字段邻近 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)  
 

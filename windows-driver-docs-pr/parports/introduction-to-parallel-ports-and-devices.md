@@ -3,18 +3,18 @@ title: 并行端口和设备简介
 description: 并行端口和设备简介
 ms.assetid: b0aaf63d-cc2d-4273-9760-6446cbb28938
 keywords:
-- WDK 的并行端口
-- WDK、 并行端口
-- 有关并行端口的并行端口 WDK，
+- 并行端口 WDK
+- 端口 WDK，并行
+- 并行端口 WDK，关于并行端口
 - 并行设备 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a69bf5e6712fead3dfbab391dcffdfd5951a85d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 94416a2c191bc9450933f9c4e879ae56681d51c4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358532"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845320"
 ---
 # <a name="introduction-to-parallel-ports-and-devices"></a>并行端口和设备简介
 
@@ -22,35 +22,35 @@ ms.locfileid: "67358532"
 
 
 
-本部分介绍有关 Microsoft Windows 提供的并行端口和设备的支持的以下主题：
+本部分介绍有关 Microsoft Windows 为并行端口和设备提供的支持的以下主题：
 
-[物理配置的并行端口](physical-configuration-of-parallel-ports.md)
+[并行端口的物理配置](physical-configuration-of-parallel-ports.md)
 
-[连接到并行端口设备的物理配置](physical-configuration-of-devices-attached-to-a-parallel-port.md)
+[附加到并行端口的设备的物理配置](physical-configuration-of-devices-attached-to-a-parallel-port.md)
 
-并行端口通常是支持以下功能的多模式通信端口：
+并行端口通常是一种支持以下各项的多模式通信端口：
 
--   字节和位元组 （读取） 模式
+-   字节和半字节（读取）模式
 
--   IEEE 1284 兼容性模式
+-   IEEE 1284-兼容性模式
 
--   扩展的功能端口模式
+-   扩展功能端口模式
 
--   增强的并行端口模式
+-   增强型并行端口模式
 
-有关并行端口和标准设备信息，请参阅以下规范：
+有关并行端口和设备标准的信息，请参阅以下规范：
 
--   *IEEE Std 1284 1994 年 IEEE 标准为个人计算机为双向并行外围接口信号方法*
+-   *IEEE Std 1284-1994，适用于个人计算机的双向并行外围设备的 IEEE 标准信号方法*
 
--   *IEEE P1284.3、 接口和协议 IEEE 1284 1994年符合外围设备和主机适配器扩展标准草案 D6.00，1998 年 12 月 3 日*
+-   *IEEE P 1284.3，适用于符合 IEEE 1284-1994 标准的外围设备和主机适配器的接口和协议扩展标准，草稿 D 6.00，1998*
 
-有关 Windows 支持的并行端口和设备的详细信息，请参阅：
+有关 Windows 对并行端口和设备的支持的详细信息，请参阅：
 
 [系统提供的并行驱动程序](system-supplied-parallel-drivers.md)
 
 [供应商提供的并行驱动程序](vendor-supplied-parallel-drivers.md)
 
-[系统提供并行的驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[系统提供的并行驱动程序的客户端接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
  
 

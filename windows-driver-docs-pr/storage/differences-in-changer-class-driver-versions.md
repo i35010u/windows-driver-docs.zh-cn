@@ -3,17 +3,17 @@ title: 更换器类驱动程序版本中的差异
 description: 更换器类驱动程序版本中的差异
 ms.assetid: 4ae4d1b0-cf2f-4c81-b8ae-3a91fd479a89
 keywords:
-- 更换器驱动程序 WDK 存储类驱动程序
-- 存储更换器驱动程序 WDK、 类驱动程序
+- 更换器驱动程序 WDK 存储，类驱动程序
+- 存储更换器驱动程序 WDK、类驱动程序
 - 类驱动程序 WDK 存储，更换器驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ea5081a3dd8f0759cfc79b3ba4a85e8b16d1f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0202d048b821ea8fc0f08ccfa701e8b94311bc1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368290"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845176"
 ---
 # <a name="differences-in-changer-class-driver-versions"></a>更换器类驱动程序版本中的差异
 
@@ -21,37 +21,37 @@ ms.locfileid: "67368290"
 ## <span id="ddk_differences_in_changer_class_driver_versions_kg"></span><span id="DDK_DIFFERENCES_IN_CHANGER_CLASS_DRIVER_VERSIONS_KG"></span>
 
 
-有的转换器类/miniclass 驱动程序对在 Windows XP 和 Windows 2000 中实现的三个主要区别：
+在 Windows XP 和 Windows 2000 中，转换器类/miniclass 驱动程序对的实现有三个主要区别：
 
-1.  不同的用[ **DriverEntry 的转换器 Miniclass 驱动程序**](https://docs.microsoft.com/windows-hardware/drivers/storage/driverentry-of-changer-miniclass-drivers)例程 miniclass 驱动程序中。
+1.  Miniclass 驱动程序中[**DriverEntry 的转换器 Miniclass 驱动程序**](https://docs.microsoft.com/windows-hardware/drivers/storage/driverentry-of-changer-miniclass-drivers)例程的不同用法。
 
-    在 Windows 2000，转换器类驱动程序**DriverEntry**例程执行不同的驱动程序初始化任务，包括输入/输出请求的入口点的初始化。 在 Windows XP 和更高版本操作系统中，初始化发生在**DriverEntry** miniclass 驱动程序的例程。 请参阅[需换带机 Miniclass 例程](required-changer-miniclass-routines.md)有关详细信息的任务的 miniclass 驱动程序**DriverEntry**执行所需的例程。
+    在 Windows 2000 中，变换器类驱动程序的**DriverEntry**例程执行各种驱动程序初始化任务，包括初始化 i/o 请求的入口点。 在 Windows XP 和更高版本的操作系统中，将在 miniclass 驱动程序的**DriverEntry**例程中进行初始化。 请参阅[所需的转换器 Miniclass 例程](required-changer-miniclass-routines.md)，详细了解 Miniclass Driver 的**DriverEntry**例程需要执行的任务。
 
-2.  其他方法来访问*classpnp.sys*库例程。
+2.  访问*classpnp*库例程的不同方式。
 
-    使磁盘、 磁带、 CD-ROM 和换带机设备的类驱动程序使用的*classpnp.sys*库，系统提供的 DLL，其中包含特定于操作系统的、 独立于设备的例程的集合。
+    磁盘、磁带、cd-rom 和转换器设备的类驱动程序使用*classpnp*库，它是系统提供的、包含操作系统特定的、与设备无关的例程的集合。
 
-    大多数系统提供的存储类驱动程序提供的一组类似于例程中找到密钥例程*classpnp.sys*库。 这是，以便其 miniclass 驱动程序可以调用类驱动程序例程，而不是直接调用*classpnp.sys。* 这为屏蔽 miniclass 驱动程序从将变为*classpnp.sys* DDI。
+    大多数系统提供的存储类驱动程序提供一组类似于在*classpnp*库中找到的例程的密钥例程。 这样做是为了使其 miniclass 驱动程序可以调用类驱动程序例程，而不是直接调用*classpnp。* 这会阻止 miniclass 驱动程序更改*classpnp* DDI。
 
-    Windows 2000 换带机 miniclass 驱动程序是此规则的例外，因为在 Windows 2000 中的转换器类驱动程序不提供 miniclass 驱动程序使用一个工具，以便调用*classpnp.sys*例程间接。 因此，在 Windows 2000 中，换带机 miniclass 驱动程序必须调用*classpnp.sys*例程直接或调用行中的等效例程。 Miniclass 驱动程序调用*classpnp.sys*例程直接必须链接到*classpnp.sys*库以静态方式，swelling 驱动程序的大小。 如果驱动程序动态链接到*classpnp.sys*，对此库在后续版本中的更改可能会导致驱动程序无法正常工作。
+    Windows 2000 转换器 miniclass 驱动程序是此规则的例外，因为在 Windows 2000 中，变换器类驱动程序不会为 miniclass 驱动程序提供用于间接调用*classpnp*例程的工具。 因此，在 Windows 2000 中，变换器 miniclass 驱动程序必须直接调用*classpnp*例程，或者行中调用等效的例程。 直接调用*classpnp*例程的 Miniclass 驱动程序必须以静态方式链接到*classpnp*库，大军驱动程序的大小。 如果驱动程序动态链接到*classpnp*，则在后续版本中对此库所做的更改可能会导致驱动程序无法正常工作。
 
-    在 Windows XP 和更高版本操作系统中，多个最重要的服务以前提供的直接调用*classpnp.sys*库提供的转换器类驱动程序。 因此，在 Windows XP 和更高版本操作系统中，它是调用转换器 miniclass 的驱动程序通常不必要*classpnp.sys*直接库例程。
+    在 Windows XP 和更高版本的操作系统中，先前通过直接调用*classpnp*库提供的多个最重要的服务由变换器类驱动程序提供。 因此，在 Windows XP 和更高版本的操作系统中，转换器 miniclass 驱动程序通常不需要直接调用*classpnp*库例程。
 
-3.  在 Windows XP 转换器类驱动程序提供了例程在 Windows 2000 中不可用。 以下讨论介绍这种差异。
+3.  Windows XP 变换器类驱动程序提供了 Windows 2000 中不可用的例程。 下面讨论了这种差异。
 
-在 Windows 2000 中，在换带机类驱动程序提供 miniclass 驱动程序调用以下例程：
+在 Windows 2000 中，变换器类驱动程序为要调用的 miniclass 驱动程序提供以下例程：
 
--   [**ChangerClassAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassallocatepool) -分配池的内存。
+-   [**ChangerClassAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassallocatepool) --分配池内存。
 
--   [**ChangerClassFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassfreepool) -释放池内存。
+-   [**ChangerClassFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassfreepool) --释放池内存。
 
--   [**ChangerClassDebugPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassdebugprint) -打印调试信息。
+-   [**ChangerClassDebugPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassdebugprint) --打印调试信息。
 
-在 Windows XP 和更高版本操作系统中，提供了在换带机类驱动程序，除了例程之外的两个其他例程前面列出。
+在 Windows XP 及更高版本的操作系统中，变换器类驱动程序除了提供前面列出的例程外，还提供两个附加的例程。
 
--   [**ChangerClassInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize) -换带机 miniclass 驱动程序调用**ChangerClassInitialize**中其**DriverEntry**例程，以初始化的驱动程序。 **ChangerClassInitialize**执行以前由 Windows 2000 转换器类驱动程序的执行的许多任务**DriverEntry**例程。
+-   [**ChangerClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize) --转换器 miniclass 驱动程序从其**DriverEntry**例程中调用**ChangerClassInitialize**以初始化驱动程序。 **ChangerClassInitialize**执行以前由 Windows 2000 变换器类驱动程序的**DriverEntry**例程执行的许多任务。
 
--   [**ChangerClassSendSrbSynchronous** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclasssendsrbsynchronous) -初始化，并以同步方式将 SRB 发送到所指示的目标设备。
+-   [**ChangerClassSendSrbSynchronous**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclasssendsrbsynchronous) --初始化并将 SRB 同步发送到指定的目标设备。
 
  
 

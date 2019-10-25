@@ -1,9 +1,9 @@
 ---
-title: 端口函数
-description: 端口 WMI 方法配置 WMI 提供程序，以通知有关与指定的端口相关联的事件的 WMI 客户端。
+title: AddPort 函数
+description: AddPort WMI 方法将 WMI 提供程序配置为通知 WMI 客户端与所指示的端口关联的事件。
 ms.assetid: d20021c8-2326-4fd8-b098-70ab8bf53ed3
 keywords:
-- 端口函数存储设备
+- AddPort 函数存储设备
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7510f9d4c406fa67c41c219cf730d724068fd06f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e378cbe309642583e4895dd32c45f3bde19c7b72
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377919"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845114"
 ---
-# <a name="addport-function"></a>端口函数
+# <a name="addport-function"></a>AddPort 函数
 
 
-**端口**WMI 方法配置 WMI 提供程序，以通知有关与指定的端口相关联的事件的 WMI 客户端。
+**AddPort** wmi 方法将 wmi 提供程序配置为通知 wmi 客户端与所指示的端口关联的事件。
 
 <a name="syntax"></a>语法
 ------
@@ -36,14 +36,14 @@ void AddPort(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *PortWWN\[8\]*    
-全球通用名称，指示其事件将被报告的端口的说明。
+一个全球名称，用于指示要报告其事件的端口。
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[**端口\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**AddPort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addport_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -53,7 +53,7 @@ void AddPort(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_将 EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,21 +66,21 @@ void AddPort(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbapiwmi.h、 Hbaapi.h 或 Hbaapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**AddPort\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_in)
+[**AddPort\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addport_in)
 
-[**AddPort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addport_out)
+[**AddPort\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addport_out)
 
  
 

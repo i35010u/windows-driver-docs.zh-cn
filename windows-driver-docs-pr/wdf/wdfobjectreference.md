@@ -1,24 +1,24 @@
 ---
 title: WdfObjectReference 宏
-description: WdfObjectReference 宏递增指定的 framework 对象的引用计数。
+description: WdfObjectReference 宏会递增指定框架对象的引用计数。
 ms.assetid: 8e024197-d366-4665-994b-4e03f559e017
 keywords:
 - WdfObjectReference 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab634cf93c1b05af63914dacd534893f6d585b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 58fbaf87d086c0df938421a1421715e136abf88c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385052"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845155"
 ---
 # <a name="wdfobjectreference-macro"></a>WdfObjectReference 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectReference**宏递增指定的 framework 对象的引用计数。
+**WdfObjectReference**宏会递增指定框架对象的引用计数。
 
 <a name="syntax"></a>语法
 ------
@@ -29,32 +29,32 @@ VOID WdfObjectReference(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*处理*\[中\]  
-Framework 对象的句柄。
+*处理*\] 中的 \[  
+框架对象的句柄。
 
 <a name="return-value"></a>返回值
 ------------
 
 无。
 
-如果驱动程序提供了无效的对象句柄，则会发生的 bug 检查。
+如果驱动程序提供的对象句柄无效，则会发生 bug 检查。
 
 <a name="remarks"></a>备注
 -------
 
-如果您的驱动程序调用**WdfObjectReference**递增引用计数，该驱动程序必须调用[ **WdfObjectDereference** ](wdfobjectdereference.md)要递减计数。
+如果驱动程序调用**WdfObjectReference**来递增引用计数，则驱动程序必须调用[**WdfObjectDereference**](wdfobjectdereference.md)来减小计数。
 
-而不是调用**WdfObjectReference**，驱动程序可以调用[ **WdfObjectReferenceWithTag** ](wdfobjectreferencewithtag.md)或者[ **WdfObjectReferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual).
+驱动程序可以调用[**WdfObjectReferenceWithTag**](wdfobjectreferencewithtag.md)或[**WdfObjectReferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectreferenceactual)，而不是调用**WdfObjectReference**。
 
-有关对象引用计数的详细信息，请参阅[Framework 对象生命周期](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)。
+有关对象引用计数的详细信息，请参阅[框架对象生命周期](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-life-cycle)。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例递增对象的引用计数。
+下面的代码示例将增加对象的引用计数。
 
 ```cpp
 WdfObjectReference(Object); 
@@ -71,7 +71,7 @@ WdfObjectReference(Object);
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">全局</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
@@ -82,12 +82,12 @@ WdfObjectReference(Object);
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wdfobject.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfobject （包含 Wdf .h）</td>
 </tr>
 <tr class="odd">
-<td><p>Library</p></td>
-<td>Wdf01000.sys (KMDF); WUDFx02000.dll (UMDF)</td>
+<td><p>库</p></td>
+<td>Wdf01000 （KMDF）;WUDFx02000 （UMDF）</td>
 </tr>
 <tr class="even">
 <td><p>IRQL</p></td>
@@ -95,15 +95,15 @@ WdfObjectReference(Object);
 </tr>
 <tr class="odd">
 <td><p>DDI 符合性规则</p></td>
-<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate" data-raw-source="[&lt;strong&gt;DriverCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate)"><strong>DriverCreate</strong></a>, <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIntIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla)"><strong>MemAfterReqCompletedIntIoctlA</strong></a>, <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla)"><strong>MemAfterReqCompletedIoctlA</strong></a>, <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedReadA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada)"><strong>MemAfterReqCompletedReadA</strong></a>, <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedWriteA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea)"><strong>MemAfterReqCompletedWriteA</strong></a></td>
+<td><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate" data-raw-source="[&lt;strong&gt;DriverCreate&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-drivercreate)"><strong>DriverCreate</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIntIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedintioctla)"><strong>MemAfterReqCompletedIntIoctlA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedIoctlA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedioctla)"><strong>MemAfterReqCompletedIoctlA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedReadA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedreada)"><strong>MemAfterReqCompletedReadA</strong></a>、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea" data-raw-source="[&lt;strong&gt;MemAfterReqCompletedWriteA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-memafterreqcompletedwritea)"><strong>MemAfterReqCompletedWriteA</strong></a></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**WdfObjectReferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectreferenceactual)
+[**WdfObjectReferenceActual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectreferenceactual)
 
 [**WdfObjectReferenceWithTag**](wdfobjectreferencewithtag.md)
 

@@ -1,134 +1,134 @@
 ---
-title: 设备固件更新的 USB 设备而无需使用共同安装程序
-description: 概述了更新而无需辅助安装程序的 USB 设备固件的建议方法。
+title: USB 设备的设备固件更新（不使用共同安装程序）
+description: 概述在不使用共同安装程序的情况下更新 USB 设备固件的建议方法。
 ms.date: 11/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b58da9895f456a4f8960b6cd5bfc0f89b28fa2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a762b2632f146005bcec69917c4251b4c9c5a9b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360190"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844782"
 ---
-# <a name="device-firmware-update-for-usb-devices-without-using-a-co-installer"></a>设备固件更新的 USB 设备而无需使用共同安装程序
+# <a name="device-firmware-update-for-usb-devices-without-using-a-co-installer"></a>USB 设备的设备固件更新（不使用共同安装程序）
 
-USB 设备供应商使用共同安装程序来更新设备固件对于使用收件箱 USB 设备驱动程序的设备。 但是，共同安装程序不支持由新"通用 INF"标准，这是 Windows 10 上的要求。 这是一个挑战到现有的 USB 设备固件更新过程。 本主题概述了更新而无需辅助安装程序的 USB 设备固件的建议方法。
+USB 设备供应商使用共同安装程序为使用收件箱 USB 设备驱动程序的设备更新设备固件。 但是，新的 "通用 INF" 标准不支持共同安装程序，这是 Windows 10 上的一项要求。 这对于现有 USB 设备固件更新过程是一项挑战。 本主题概述了在不使用共同安装程序的情况下更新 USB 设备固件的建议方法。
 
 ## <a name="requirements"></a>要求
 
-从 USB 设备固件更新过程的主要要求如下：
+USB 设备固件更新过程的主要要求如下：
 
-1. 无需用户交互的无缝的固件更新
+1. 无缝固件更新，无用户交互
 
-1. 可靠的恢复机制 (例如，没有 bricking 的设备)
+1. 可靠恢复机制（例如，没有设备的 bricking）
 
-1. Windows 7 及更高版本的工作原理
+1. 适用于 Windows 7 和更高版本
 
 ## <a name="overview"></a>概述
 
-在发布中字段的可更新固件时 UVC 照相机之类的 USB 设备。 没有立即更新固件的标准方法。 普遍适用于所有现有的更新机制的一件事是一些自定义软件套件在客户端上运行，并下载到设备的固件。 通常情况下，设备安装过程的一部分安装固件更新软件套件。 辅助安装程序启动启动固件更新过程。 Windows 10 上的共同安装程序缺少可防止设备供应商更新域中的这些设备上的固件。
+USB 设备（如 UVC 摄像机）是通过现场可更新固件发布的。 目前尚无标准方法来更新固件。 所有现有的更新机制都有一个常见的问题是，某些自定义软件套件在客户端上运行，并将固件下载到设备。 通常，作为设备安装过程的一部分，将安装固件更新软件套件。 共同安装程序开始启动固件更新过程。 在 Windows 10 上缺少共同安装程序会阻止设备供应商在该字段中更新这些设备上的固件。
 
-绕过共同安装程序缺少 USB 设备固件更新方案是使用较低的筛选器驱动程序，到将启动的 USB 设备的推荐的方式启动固件更新过程。 期间[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)调用时，筛选器驱动程序将检查设备固件版本并根据需要进行更新固件。
+若要绕过 USB 设备固件更新方案的共同安装程序，建议使用较低的筛选器驱动程序，将启动固件更新过程。 在[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)调用期间，筛选器驱动程序将检查设备固件版本并更新固件（如有必要）。
 
 ## <a name="firmware-update-overview"></a>固件更新概述
 
-USB 设备插入到系统，泛型收件箱驱动程序安装的设备。 安装之后的通用驱动程序，操作系统查询 Windows 更新服务器上的任何供应商特定的驱动程序包可用性并将其下载并安装驱动程序。 已安装的驱动程序包将执行固件更新。
+当 USB 设备插到系统中时，将为该设备安装通用收件箱驱动程序。 安装通用驱动程序后，操作系统会在 Windows 更新服务器中查询特定于供应商的驱动程序包可用性，并将其下载并安装驱动程序。 安装的驱动程序包将执行固件更新。
 
-有两种方法可以更新固件。
+可以通过两种方式来更新固件。
 
 1. 固件更新筛选器驱动程序
 
-    1. 供应商提供的较低的筛选器驱动程序执行固件更新。
+    1. 供应商提供的用于执行固件更新的较低筛选器驱动程序。
 
 1. 固件更新设备驱动程序
 
-    1. 供应商提供的较低的筛选器驱动程序，将设备置于"固件更新模式"。
+    1. 供应商提供的低筛选器驱动程序，它将设备置于 "固件更新模式"。
 
-    1. 设备枚举为固件更新设备。
+    1. 设备将枚举为固件更新设备。
 
-    1. 供应商提供的固件更新驱动程序将加载对此设备，并更新固件。
+    1. 供应商提供的固件更新驱动程序将针对此设备进行加载并更新固件。
 
-## <a name="method-1-firmware-update-filter-driver"></a>方法 1：固件更新筛选器驱动程序
+## <a name="method-1-firmware-update-filter-driver"></a>方法1：固件更新筛选器驱动程序
 
-在此方法中，将驱动程序更新过程的一部分安装 USB 设备驱动程序的较低的筛选器驱动程序。 此筛选器驱动程序将执行固件更新。
+在此方法中，将在驱动程序更新过程中安装 USB 设备驱动程序的较低筛选器驱动程序。 此筛选器驱动程序将执行固件更新。
 
-将包含 Windows 更新服务器上的驱动程序更新包：
+Windows 更新服务器上的驱动程序更新包将包含：
 
-- 固件更新 WDF 低筛选器驱动程序
+- 固件更新 WDF lower 筛选器驱动程序
 
-- 扩展 INF 安装固件更新 WDF 较低的筛选器驱动程序
+- 用于安装固件更新 WDF 较低筛选器驱动程序的扩展 INF
 
-- "Firmware.bin"文件
+- "固件 bin" 文件
 
-![固件更新 UMDF 低筛选器驱动程序方法](images/fw-update-umdf-lower-filter-driver-method.png)
+![固件更新 UMDF 降低筛选器驱动程序方法](images/fw-update-umdf-lower-filter-driver-method.png)
 
-安装驱动程序更新包，时固件更新 WDF 筛选驱动程序的[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)将调用例程。 此例程从 WDF 筛选器驱动程序将设备固件版本从获取设备 HW 注册表项。 设备固件应已经使用 MSO 描述符到的设备硬件注册表项上的固件版本。
+安装驱动程序更新包时，将调用固件更新 WDF 筛选器驱动程序的[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程。 通过此例程，WDF 筛选器驱动程序将从 device HW 注册表项中获取设备固件版本。 设备固件应使用 MSO 描述符将固件版本放置在 device HW 注册表项上。
 
-1. 如果设备固件版本和筛选器驱动程序预期的固件版本不同，或
+1. 如果设备固件版本和筛选器驱动程序的固件版本不同，则为; 否则为
 
-1. 固件版本中不可用的设备硬件注册表项
+1. 固件版本在设备硬件注册表项中不可用
 
-    1. 然后，筛选器驱动程序将自身插入到设备堆栈通过返回到成功的消息[ **AddDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)回调。
+    1. 然后，筛选器驱动程序会通过将 success 返回到[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)回拨，将自身插入到设备堆栈中。
 
-1. 否则，筛选器驱动程序会将自身插入设备堆栈
+1. 否则，筛选器驱动程序不会将自身插入到设备堆栈中
 
-    1. 因为没有必要的设备具有预期的固件更新的固件。
+    1. 由于设备具有预期固件，因此不需要更新固件。
 
-当[EVT_WDF_DEVICE_D0_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) WDF 筛选器驱动程序回调调用在以后，筛选器驱动程序必须注册以使用 CM 设备接口更改通知\_注册\_通知或 IoRegisterPlugPlayNotification （UMDF 或 KMDF），以侦听设备接口类 USB 设备将注册到设备。 例如 RGB 照相机的固件更新筛选器驱动程序将注册为 KSCATEGORY\_视频\_照相机。 在接收通知时，筛选器驱动程序应该发布将执行固件更新工作项。
+稍后在调用 WDF 筛选器驱动程序的[EVT_WDF_DEVICE_D0_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)回调时，筛选器驱动程序必须使用 CM\_Register\_通知注册设备接口更改通知或IoRegisterPlugPlayNotification （UMDF 或 KMDF），用于侦听设备接口类，USB 设备会将设备注册到该设备。 例如 RGB 照相机的固件更新筛选器驱动程序将注册 KSCATEGORY\_视频\_相机。 收到通知后，筛选器驱动程序应发布执行固件更新的工作项。
 
-UMDF 基于固件更新驱动程序可以使用设备特定的 Api 或问题控件将传输直接以访问 USB 设备执行固件更新。 例如，照相机 UMDF 基于筛选器驱动程序会使用相机 Api 执行固件更新。
+基于 UMDF 的固件更新驱动程序可以使用设备特定的 Api，也可以发出控制直接传输来访问 USB 设备以执行固件更新。 例如，照相机的基于 UMDF 的筛选器驱动程序将使用相机 Api 来执行固件更新。
 
-KMDF 基于固件更新驱动程序可以发送供应商特定命令来执行固件更新。
+基于 KMDF 的固件更新驱动程序可以发送特定于供应商的命令来执行固件更新。
 
-闪烁的固件完成后，设备必须断开连接并重新连接到总线。 设备将使用新固件重新枚举。
+完成固件闪烁后，设备必须断开连接，然后重新连接到该总线。 将通过新固件重新枚举设备。
 
-方法使用"固件更新筛选器驱动程序"，对于设备具有足够的资源以容纳两个完整的固件映像 （更新映像和备份映像） 上的设备内存的建议。 原因是如果下载已更新的固件期间出现故障，设备可以放弃该更新，并启动到其原始的固件。 因此，不 bricking 设备。
+建议使用 "固件更新筛选器驱动程序" 的方法，使其资源足以容纳设备内存上的两个完整固件映像（更新映像和备份映像）。 原因是下载更新的固件时出现故障，设备可能会放弃更新并启动到其原始固件。 因此，不 bricking 设备。
 
-## <a name="method-2-firmware-update-device-driver"></a>方法 2：固件更新设备驱动程序
+## <a name="method-2-firmware-update-device-driver"></a>方法2：固件更新设备驱动程序
 
-在此方法中，将驱动程序更新过程的一部分安装到 USB 设备的较低的筛选器驱动程序。 此筛选器驱动程序会将命令发送到设备固件更新模式，在重新启动设备在其中公开固件更新接口。 固件更新接口的驱动程序将加载并执行固件更新。
+在此方法中，将在驱动程序更新过程中安装 USB 设备的较低筛选器驱动程序。 此筛选器驱动程序会将命令发送到设备以在固件更新模式下重新启动，在此模式下，设备将公开固件更新接口。 固件更新接口的驱动程序将加载并执行固件更新。
 
-将包含设备的 Windows 更新服务器上的驱动程序更新包：
+设备 Windows 更新服务器上的驱动程序更新包将包含：
 
-1. WDF 低筛选器驱动程序，将设备置于固件更新模式
+1. 一个 WDF 较低筛选器驱动程序，它将设备置于固件更新模式
 
-1. 扩展 INF 安装 WDF 较低的筛选器驱动程序
+1. 用于安装 WDF lower 筛选器驱动程序的扩展 INF
 
-除了驱动程序更新包，单独的固件更新设备驱动程序包将会显示在 Windows 更新，请使用：
+除驱动程序更新包外，Windows 更新上还存在一个单独的固件更新设备驱动程序包，其中包含：
 
-1. WDF 固件更新设备驱动程序和其 INF 和
+1. WDF 固件更新设备驱动程序及其 INF 和
 
-1. "Firmware.bin"文件中。
+1. "固件 bin" 文件。
 
 ![固件更新 WDF 驱动程序方法](images/fw-update-wdf-driver-method.png)
 
-安装驱动程序更新包，WDF 更低时，将调用筛选器驱动程序的 AddDevice 例程。 从该例程中，筛选器驱动程序将查询从设备 HW 注册表项的设备固件版本。 设备固件应已置于"固件版本"，使用 MSO 描述符或 USB 设备的扩展 INF，到设备硬件注册表项。
+安装驱动程序更新包时，将调用 WDF 较低筛选器驱动程序的 AddDevice 例程。 通过此例程，筛选器驱动程序将从设备 HW 注册表项中查询设备固件版本。 设备固件应将 "固件版本" 设置为使用 MSO 描述符或 USB 设备的扩展 INF，放入设备 HW 注册表项。
 
-1. 如果设备固件版本和筛选器驱动程序应固件版本不一致或
+1. 如果设备固件版本和筛选器驱动程序所需的固件版本不同或
 
-1. 固件版本中不可用的设备硬件注册表项
+1. 固件版本在设备硬件注册表项中不可用
 
-1. 然后，WDF 筛选器驱动程序将自身插入到设备堆栈。
+1. 然后，WDF 筛选器驱动程序将自身插入到设备堆栈中。
 
-1. 否则，WDF 筛选器驱动程序会将自身插入设备堆栈
+1. 否则，WDF 筛选器驱动程序不会将自身插入到设备堆栈中
 
-当[EVT_WDF_DEVICE_D0_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry) WDF 筛选器驱动程序回调调用在以后，筛选器驱动程序将发出一个供应商特定命令到设备会将它置于固件更新模式。 即设备将断开连接并重新连接，公开该固件更新接口。
+以后调用 WDF 筛选器驱动程序的[EVT_WDF_DEVICE_D0_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)回调时，筛选器驱动程序将向设备发出特定于供应商的命令，该命令会将其置于固件更新模式。 即，设备将断开连接并重新连接，同时公开固件更新接口。
 
-系统将枚举固件更新设备接口。 由供应商，固件更新包中提供的自定义的固件更新 WDF 驱动程序将加载此固件更新接口。 此驱动程序将更新的固件。
+系统将枚举固件更新设备接口。 将为此固件更新接口加载供应商在固件更新包中提供的自定义固件更新 WDF 驱动程序。 此驱动程序将更新固件。
 
-当[EVT_WDF_DEVICE_D0_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)在稍后的某个时刻调用回调 WDF 固件更新驱动程序、 驱动程序必须发布将执行固件更新工作项。
+稍后在调用 WDF 固件更新驱动程序的[EVT_WDF_DEVICE_D0_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)回调时，驱动程序必须发布执行固件更新的工作项。
 
-闪烁的固件完成后，设备必须断开连接并重新连接到总线。 设备将使用新固件重新枚举。
+完成固件闪烁后，设备必须断开连接，然后重新连接到该总线。 将通过新固件重新枚举设备。
 
-建议使用此方法不能在设备上保存由于内存不足的更新和原始的固件映像的设备。 原因是如果在下载已更新的固件期间出现故障，设备可以放弃该更新并重新启动到其固件更新模式的设备和固件更新可以重试。 因此，不 bricking 设备。
+对于由于设备上的内存不足而无法保存已更新和原始固件映像的设备，建议使用此方法。 原因是下载更新的固件时出现故障，设备可能会放弃更新，并再次将设备启动到其固件更新模式，并且可以重试固件更新。 因此，不 bricking 设备。
 
-## <a name="recovery"></a>恢复
+## <a name="recovery"></a>“恢复”
 
-固件更新过程可能会出于各种原因而失败。 如果出现这种情况，当再次枚举设备时，固件更新驱动程序可能会尝试再次更新固件可能再次失败和此更新过程的最终可能会在循环中。 固件更新驱动程序必须让它可以执行的重试次数上限。 固件更新时重试获取超出了阈值 （例如，试 3 次），则筛选器驱动程序不应尝试更新固件试，直到从 WU 下载新版本的驱动程序。 固件更新驱动程序可能使用注册表来保留重试状态。
+由于各种原因，固件更新过程可能会失败。 如果出现这种情况，则再次枚举设备时，固件更新驱动程序可能会再次尝试更新固件并可能再次失败，并且此更新过程可能会在循环中结束。 固件更新驱动程序必须将上限限制为它可以执行的重试次数。 如果固件更新重试次数超出阈值（例如，3次重试），筛选器驱动程序不应再次尝试更新固件，直到从 WU 下载了新版本的驱动程序。 固件更新驱动程序可以使用注册表来保持重试状态。
 
-在进行设备固件更新结束时，我们建议在设备重置，并重新枚举。
+更新设备固件结束后，建议重置设备本身并重新枚举。
 
-这两种方法的固件更新，必须在执行固件更新之前停止设备函数。 这可确保有到设备的任何打开句柄，并避免任何操作系统重新启动要求。
+固件更新的两种方法都必须先停止，然后才能执行固件更新。 这可确保设备没有打开的句柄，并避免操作系统重启要求。
 
 ## <a name="sample-inf"></a>示例 INF
 

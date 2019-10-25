@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_STREAM\_MASTERCLOCK
-description: KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成可用于同步主时钟应实现。
+description: KSPROPERTY\_STREAM\_MASTERCLOCK 属性是一个可选属性，如果 pin 使用或生成可用于同步的主时钟，则应该实现该属性。
 ms.assetid: b8fb4d7b-e2e3-498c-9f76-4075d3ae0cb2
 keywords:
-- KSPROPERTY_STREAM_MASTERCLOCK 流式处理媒体设备
+- KSPROPERTY_STREAM_MASTERCLOCK 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f208b5ac166110626a663f884f4a256f8df3a40c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 49b2baac5c511e5a71a4024f3af80e1bab767b97
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376351"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844954"
 ---
-# <a name="kspropertystreammasterclock"></a>KSPROPERTY\_STREAM\_MASTERCLOCK
+# <a name="ksproperty_stream_masterclock"></a>KSPROPERTY\_STREAM\_MASTERCLOCK
 
 
-KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成可用于同步主时钟应实现。
+KSPROPERTY\_STREAM\_MASTERCLOCK 属性是一个可选属性，如果 pin 使用或生成可用于同步的主时钟，则应该实现该属性。
 
 ## <span id="ddk_ksproperty_stream_masterclock_ks"></span><span id="DDK_KSPROPERTY_STREAM_MASTERCLOCK_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>句柄</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>柄</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,15 +64,15 @@ KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成�
 <a name="remarks"></a>备注
 -------
 
-该属性返回**NULL**处理查询时。 通过调用是否成功返回确定支持。
+在查询时，属性返回**NULL**句柄。 支持取决于调用是否成功返回。
 
-可以使用 KSPROPERTY\_流\_MASTERCLOCK 查询主时钟是否受 pin 或设置一个 pin 的当前主时钟。 这通常是通过 graph 管理器中，如 DirectShow 中。 主时钟句柄检索并可用于在另一个插针上设置主时钟或可作为用户模式下代理的主时钟，如 DirectShow 关系图中。
+你可以使用 KSPROPERTY\_STREAM\_MASTERCLOCK 来查询某个 pin 是否支持某个主时钟，或者是否为 pin 设置当前的主时钟。 通常通过图形管理器（如在 DirectShow 中）完成此操作。 检索主时钟句柄并将其用于在另一个插针上设置主时钟，也可以将其用作主时钟的用户模式代理，如在 DirectShow 图形中。
 
-时钟是设置 pin，pin 引用基础文件对象，并且可以更高版本执行针对该文件对象的查询。 必须由的客户端的查询的句柄关闭自身的文件句柄。
+如果在 pin 上设置时钟，则 pin 将引用基础文件对象，并可在以后对该文件对象执行查询。 文件句柄本身必须由查询该句柄的客户端关闭。
 
-筛选器不支持属性时它既不会生成主时钟也不需要引用一个，如转换器筛选器放置而无需将与其他流同步图的中间。 该属性还可为只读时筛选器生成主时钟，但不会同步到外部的主时钟。
+当筛选器既不生成主时钟也不需要引用一个时，筛选器不需要支持该属性，例如，在关系图中间放置的转换器筛选器无需与其他流同步。 如果筛选器生成了主时钟但不同步到外部主时钟，则该属性还可用作只读。
 
-另请参阅[KS 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)并[AVStream 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)。
+另请参阅[KS 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-clocks)和[AVStream 时钟](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-clocks)。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,16 +84,16 @@ KSPROPERTY\_流\_MASTERCLOCK 属性是可选属性，如果 pin 使用或生成�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ks.h （包括 Ks.h）</td>
+<td><p>标头</p></td>
+<td>Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

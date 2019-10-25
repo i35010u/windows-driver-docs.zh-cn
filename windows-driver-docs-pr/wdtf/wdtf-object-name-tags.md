@@ -1,19 +1,19 @@
 ---
 title: WDTF 对象名称标记
-description: WDTF 对象日志记录中使用 WDTF OBJECT_NAME 标记。
+description: WDTF OBJECT_NAME 标记用于 WDTF 对象日志记录。
 ms.assetid: 25C669DD-12D0-4C78-802F-CB8E26C4FD80
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d96a869a93dfc0eb0d0968a5e6c0bb5b7f065fd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c144ed6a6fe9de034321f270a986356c7ab43c9e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368015"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844792"
 ---
 # <a name="wdtf-object-name-tags"></a>WDTF 对象名称标记
 
-WDTF 对象\_WDTF 对象日志记录中使用名称标记。
+WDTF 对象在 WDTF 对象日志记录中使用\_名称标记。
 
 ## <a name="wdtf-core"></a>WDTF 核心
 
@@ -33,12 +33,12 @@ WDTF 对象\_WDTF 对象日志记录中使用名称标记。
 <tbody>
 <tr class="odd">
 <td><p>WDTF_TARGET</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2" data-raw-source="[&lt;strong&gt;IWDTFTarget2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftarget2)"><strong>IWDTFTarget2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftarget2" data-raw-source="[&lt;strong&gt;IWDTFTarget2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftarget2)"><strong>IWDTFTarget2</strong></a></p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>WDTF_TARGETS</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2" data-raw-source="[&lt;strong&gt;IWDTFTargets2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)"><strong>IWDTFTargets2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2" data-raw-source="[&lt;strong&gt;IWDTFTargets2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2)"><strong>IWDTFTargets2</strong></a></p></td>
 <td><pre class="syntax" space="preserve"><code>Device query 
 WDTF_TARGETS              : INFO  :  - Query("IsDevice AND Volume::BOOT")
 WDTF_TARGETS              : INFO  :          Target: Generic volume (C:) STORAGE\VOLUME{F1309F19-F052-11DF-BC7C-B1A2109AB6D2}
@@ -48,12 +48,12 @@ WDTF_TARGETS              : INFO  :          Target: Generic volume (C:) STORAGE
 </tr>
 <tr class="odd">
 <td><p>WDTF_SIMPLE_IO</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleioex2" data-raw-source="[&lt;strong&gt;IWDTFSimpleIOEx2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleioex2)"><strong>IWDTFSimpleIOEx2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleioex2" data-raw-source="[&lt;strong&gt;IWDTFSimpleIOEx2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleioex2)"><strong>IWDTFSimpleIOEx2</strong></a></p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>WDTF_SIMPLEIO_STRESS</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2" data-raw-source="[&lt;strong&gt;IWDTFSimpleIOStressAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)"><strong>IWDTFSimpleIOStressAction2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2" data-raw-source="[&lt;strong&gt;IWDTFSimpleIOStressAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfinterfaces/nn-wdtfinterfaces-iwdtfsimpleiostressaction2)"><strong>IWDTFSimpleIOStressAction2</strong></a></p></td>
 <td><pre class="syntax" space="preserve"><code>WDTF_SIMPLEIO_STRESS      : INFO  :  - Start(Generic volume (C:) STORAGE\VOLUME{2550460D-F167-11E0-B20B-806E6F6E6963}#0000000018100000)
 WDTF_SIMPLE_IO            : INFO  :  - Open(Generic volume (C:) STORAGE\VOLUME{2550460D-F167-11E0-B20B-806E6F6E6963}#0000000018100000) Try count 1
 WDTF_SIMPLE_IO            : INFO  :  - PerformIO(Generic volume (C:) STORAGE\VOLUME{2550460D-F167-11E0-B20B-806E6F6E6963}#0000000018100000) Count 1
@@ -94,12 +94,12 @@ WDTF_SIMPLE_IO            : INFO  :  - Close(Generic volume (C:) STORAGE\VOLUME{
 <tbody>
 <tr class="odd">
 <td><p>WDTF_SYSTEM</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfsystemaction/nn-wdtfsystemaction-iwdtfsystemaction2" data-raw-source="[&lt;strong&gt;IWDTFSystemAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfsystemaction/nn-wdtfsystemaction-iwdtfsystemaction2)"><strong>IWDTFSystemAction2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfsystemaction/nn-wdtfsystemaction-iwdtfsystemaction2" data-raw-source="[&lt;strong&gt;IWDTFSystemAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfsystemaction/nn-wdtfsystemaction-iwdtfsystemaction2)"><strong>IWDTFSystemAction2</strong></a></p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>WDTF_TARGETS</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2" data-raw-source="[&lt;strong&gt;IWDTFTargets2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtf/nn-wdtf-iwdtftargets2)"><strong>IWDTFTargets2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2" data-raw-source="[&lt;strong&gt;IWDTFTargets2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nn-wdtf-iwdtftargets2)"><strong>IWDTFTargets2</strong></a></p></td>
 <td><pre class="syntax" space="preserve"><code>// When reboot and restart is initiated<br/>WDTF_SYSTEM               : INFO  :  - Reboot and Restart
 // When we come back 
 WDTF_SYSTEM               : INFO  :  - Have restarted. Context = WDTF_RebootRestart
@@ -147,19 +147,19 @@ WDTF_SYSTEM               : INFO  : Returning from Hibernate. Elapsed time (hh:m
 <tbody>
 <tr class="odd">
 <td><p>WDTF_DRIVER_PACKAGE</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2" data-raw-source="[&lt;strong&gt;IWDTFDriverPackageAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2)"><strong>IWDTFDriverPackageAction2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2" data-raw-source="[&lt;strong&gt;IWDTFDriverPackageAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriverpackageaction/nn-wdtfdriverpackageaction-iwdtfdriverpackageaction2)"><strong>IWDTFDriverPackageAction2</strong></a></p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>WDTF_DRIVER_SETUP_DEVICE</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nn-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2" data-raw-source="[&lt;strong&gt;IWDTFDriverSetupAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupdeviceaction/nn-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2)"><strong>IWDTFDriverSetupAction2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nn-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2" data-raw-source="[&lt;strong&gt;IWDTFDriverSetupAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupdeviceaction/nn-wdtfdriversetupdeviceaction-iwdtfdriversetupaction2)"><strong>IWDTFDriverSetupAction2</strong></a></p></td>
 <td><pre class="syntax" space="preserve"><code>WDTF_DRIVER_SETUP_DEVICE  : INFO  :  - UpdateDriver()
 WDTF_DRIVER_SETUP_DEVICE  : INFO  :          Target: TI EHCI controller ACPI\TXI_USBEHCI\2&DABA3FF&2
 </code></pre></td>
 </tr>
 <tr class="odd">
 <td><p>WDTF_DRIVER_SETUP_SYSTEM</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupsystemaction/nn-wdtfdriversetupsystemaction-iwdtfdriversetupsystemaction2" data-raw-source="[&lt;strong&gt;IWDTFDriverSetupSystemAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfdriversetupsystemaction/nn-wdtfdriversetupsystemaction-iwdtfdriversetupsystemaction2)"><strong>IWDTFDriverSetupSystemAction2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupsystemaction/nn-wdtfdriversetupsystemaction-iwdtfdriversetupsystemaction2" data-raw-source="[&lt;strong&gt;IWDTFDriverSetupSystemAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfdriversetupsystemaction/nn-wdtfdriversetupsystemaction-iwdtfdriversetupsystemaction2)"><strong>IWDTFDriverSetupSystemAction2</strong></a></p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -169,7 +169,7 @@ WDTF_DRIVER_SETUP_DEVICE  : INFO  :          Target: TI EHCI controller ACPI\TXI
 </tr>
 <tr class="odd">
 <td><p>WDTF_EDT</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfedtaction/nn-wdtfedtaction-iwdtfenhanceddevicetestsupportaction2" data-raw-source="[&lt;strong&gt;IWDTFEnhancedDeviceTestSupportAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdtfedtaction/nn-wdtfedtaction-iwdtfenhanceddevicetestsupportaction2)"><strong>IWDTFEnhancedDeviceTestSupportAction2</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfedtaction/nn-wdtfedtaction-iwdtfenhanceddevicetestsupportaction2" data-raw-source="[&lt;strong&gt;IWDTFEnhancedDeviceTestSupportAction2&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtfedtaction/nn-wdtfedtaction-iwdtfenhanceddevicetestsupportaction2)"><strong>IWDTFEnhancedDeviceTestSupportAction2</strong></a></p></td>
 <td><pre class="syntax" space="preserve"><code>WDTF_EDT                  : INFO  :  - Enable()<br/>WDTF_EDT                  : INFO  :          Target: TI EHCI controller ACPI\TXI_USBEHCI\2&DABA3FF&2 
 WDTF_EDT                  : INFO  :          Result: System reboot required as device is not disableable  ( 80004005 ).
 
@@ -222,7 +222,7 @@ WDTF_EDT                  : INFO  :  - Disable()<br/>WDTF_EDT                  :
 
 
 
-## <a name="wdtf-device-simple-io-actions"></a>WDTF 设备简单 I/O 操作
+## <a name="wdtf-device-simple-io-actions"></a>WDTF 设备简单 i/o 操作
 
 
 <table>

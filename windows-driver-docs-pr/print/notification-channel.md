@@ -3,21 +3,21 @@ title: 通知通道
 description: 通知通道
 ms.assetid: 3161342a-0737-4f3b-bb16-32d6949bceea
 keywords:
-- 后台处理程序通知 WDK 打印，通道
-- 打印后台处理程序通知 WDK、 通道
+- 后台处理程序通知 WDK 打印，频道
+- 打印后台处理程序通知 WDK，通道
 - 通知通道 WDK 打印后台处理程序
 - CreatePrintAsyncNotifyChannel
-- 通道通知 WDK 打印后台处理程序
+- 频道通知 WDK 打印后台处理程序
 - 数据通道 WDK 后台处理程序通知
 - IPrintAsyncNotifyChannel
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d6094c2414aa5648d8dd585274e057a5abcfcce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98f8159727f3ff78b84eaebcd2c1b6ae325f2f58
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385969"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845150"
 ---
 # <a name="notification-channel"></a>通知通道
 
@@ -25,7 +25,7 @@ ms.locfileid: "67385969"
 
 
 
-本部分包含有关的信息[CreatePrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124750)函数和[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)接口。
+本部分包含有关[CreatePrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124750)函数和[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)接口的信息。
 
 ```cpp
 HRESULT
@@ -39,31 +39,31 @@ HRESULT
     );
 ```
 
-打印组件调用**CreatePrintAsyncNotifyChannel**函数来创建通知通道。 通道可以是每个打印机或每个服务器。
+打印组件调用**CreatePrintAsyncNotifyChannel**函数来创建通知通道。 频道可以是每个打印机或每个服务器。
 
-打印组件可以打开通知通道，仅当该组件加载的后台处理程序。 Winspool.drv 禁用此功能，如果调用方在运行应用程序-内而不是在后台处理程序服务。 例如，当应用程序加载驱动程序来执行呈现，调用**CreatePrintAsyncNotifyChannel**失败。 但是，如果后台处理程序服务加载驱动程序将成功相同的调用。
+仅当后台处理程序加载组件时，打印组件才能打开通知通道。 如果调用方在应用程序（而不是在后台处理程序服务中）运行，winspool.drv 将禁用此功能。 例如，当应用程序加载要执行呈现的驱动程序时，对**CreatePrintAsyncNotifyChannel**的调用将失败。 但是，如果后台处理程序服务加载了驱动程序，则相同的调用将成功。
 
-Spoolss.lib 提供此功能，使端口监视器可以打开通道。 可以调用的组件在后台处理程序内运行的和，链接到 Spoolss.lib **CreatePrintAsyncNotifyChannel**函数。 以下过程说明对此函数的调用中每个输入参数的用途。 该过程的第一步应用于此函数中的第一个参数，第二个步骤适用于第二个参数，依此类推。
+Spoolss 提供了此功能，以便端口监视器可以打开通道。 在后台处理程序和链接到 Spoolss 的组件中运行的组件可以调用**CreatePrintAsyncNotifyChannel**函数。 下面的过程说明调用此函数时每个输入参数的用途。 该过程的第一步适用于此函数中的第一个参数，第二个步骤适用于第二个参数，依此类推。
 
-若要创建通知通道，指定以下各项：
+若要创建通知通道，请指定以下项：
 
-1.  服务器的打印机的名称。
+1.  打印机或服务器的名称。
 
-2.  通知通道类型。 调用方可以指定通过此通道发送的通知的类型。
+2.  通知通道类型。 调用方可以指定要通过此通道发送的通知的类型。
 
-3.  用户筛选器。 调用方可以指定要接收通知，或者作为通知发送相同的用户或所有用户的用户。
+3.  用户筛选器。 调用方可以指定要接收通知的用户，无论是通知发件人的用户还是所有用户。
 
-4.  会话筛选器。 调用方必须指定这是单向还是双向通道。 若要将标记为单向通道，将设置的最后一个参数 (类型的**IPrintAsyncNotifyChannel**\*\*) 的**CreatePrintAsyncNotifyChannel**到**NULL**.
+4.  会话筛选器。 调用方必须指定这是单向还是双向通道。 若要将通道标记为单向，请将**CreatePrintAsyncNotifyChannel**的**IPrintAsyncNotifyChannel**\*\*）的最后一个参数设置为**NULL**。
 
-5.  **IPrintAsyncNotifyCallback**通知返回来自通道的另一端时要调用的接口。 这可以是**NULL**，如果调用方不希望接收响应。
+5.  当通知从通道的另一端返回时要调用的**IPrintAsyncNotifyCallback**接口。 如果调用方不希望收到响应，则此值可以为**NULL**。
 
-当**CreatePrintAsyncNotifyChannel**返回时，第六个参数 (类型的**IPrintAsyncNotifyChannel**\*\*) 指向包含的地址的内存位置**IPrintAsyncNotifyChannel**对象。 此对象标识通道，并用于将通知发送并关闭通道。
+当**CreatePrintAsyncNotifyChannel**返回时，第六个参数（类型为**IPrintAsyncNotifyChannel**\*\*）指向包含**IPrintAsyncNotifyChannel**对象地址的内存位置。 此对象标识通道，并用于发送通知和关闭通道。
 
-### <a name="iprintasyncnotifychannel-interface"></a>IPrintAsyncNotifyChannel Interface
+### <a name="iprintasyncnotifychannel-interface"></a>IPrintAsyncNotifyChannel 接口
 
-**IPrintAsyncNotifyChannel**接口标识一个通道，并用于将通知发送并关闭通道。 当打印组件调用**CreatePrintAsyncNotifyChannel**函数来提供公开的对象创建一个通知通道，后台处理程序服务响应**IPrintAsyncNotifyChannel**接口。
+**IPrintAsyncNotifyChannel**接口标识信道并用于发送通知和关闭通道。 当打印组件调用**CreatePrintAsyncNotifyChannel**函数来创建通知通道时，后台处理程序服务将通过提供一个公开**IPrintAsyncNotifyChannel**接口的对象来做出响应。
 
-此接口继承自**IUnknown**接口，以便客户端的后台处理程序通知机制可以实现或者 COM 或C++对象。 在下面的代码示例中的接口声明显示了此继承：
+此接口继承自**IUnknown**接口，以便后台处理程序通知机制的客户端可以实现 COM 或C++对象。 下面的代码示例中的接口声明演示了此继承：
 
 ```cpp
 #define INTERFACE IPrintAsyncNotifyChannel
@@ -95,26 +95,26 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyChannel, IUnknown)
 };
 ```
 
-若要发送通知，发件人调用[IPrintAsyncNotifyChannel::SendNotification](https://go.microsoft.com/fwlink/p/?linkid=124760)方法。 发件人可以是任一打印组件打开通道并发送通知或侦听客户端必须对通知做出响应时。 此方法以异步方式执行操作。 当该方法返回成功代码时，后台处理程序会尝试将通知发送到侦听器。 但不能保证任何侦听器接收的通知。
+若要发送通知，发送程序将调用[IPrintAsyncNotifyChannel：： SendNotification](https://go.microsoft.com/fwlink/p/?linkid=124760)方法。 发件人可以是打开通道的打印组件，并在必须响应通知时发送通知或侦听客户端。 此方法以异步方式进行。 当该方法返回成功代码时，后台处理程序将尝试将通知发送到侦听器。 但不能保证任何侦听器收到通知。
 
-若要关闭通道，发件人或侦听器可以调用[IPrintAsyncNotifyChannel::CloseChannel](https://go.microsoft.com/fwlink/p/?linkid=124759)方法。 调用方可以传入一条通知，提供了在通道关闭的原因，或者可以将传递**NULL**指针。 当通道关闭时，将放弃所有排队的通知。
+若要关闭通道，发送方或侦听器可以调用[IPrintAsyncNotifyChannel：： CloseChannel](https://go.microsoft.com/fwlink/p/?linkid=124759)方法。 调用方可以传入通知，该通知提供关闭通道或可以传递**NULL**指针的原因。 关闭通道后，将丢弃所有排队的通知。
 
-必须要小心，在调用[版本](https://go.microsoft.com/fwlink/p/?linkid=98433)通道对象，因为它没有采用所有常规的 COM 编程固定条件。 应调用**发行**上**IPrintAsyncNotifyChannel**才会出现以下情况：
+必须小心调用通道对象上的[Release](https://go.microsoft.com/fwlink/p/?linkid=98433) ，因为它不遵循所有常规 COM 编程的固定条件。 仅当出现以下情况时，才应在**IPrintAsyncNotifyChannel**上调用**Release** ：
 
--   如果您调用[AddRef](https://go.microsoft.com/fwlink/p/?linkid=98432)显式，并将它必须通过调用匹配**发行**。
+-   如果显式调用了[AddRef](https://go.microsoft.com/fwlink/p/?linkid=98432) ，则必须将其与**Release**调用匹配。
 
--   如果创建的通道为单向的并且必须调用**版本**收到作为输出参数的指针上一次。 应调用**版本**后尚未发送所需的通知和关闭通道。
+-   如果已创建通道作为单向通道，并且必须在收到的作为输出参数的指针上调用一次**发布**。 在发送所需通知并结束通道后，应调用**发布**。
 
--   如果您创建作为双向通道，您可能必须调用**版本**收到作为输出参数的指针上一次。 应调用**版本**仅当您执行一个或多项操作：
-    -   在调用之前**发行**对于双向通道，您必须始终调用**CloseChannel**和接收成功结果。 您不能调用**发行**如果在调用**CloseChannel**将失败，因为通道可能已发布你的名义。
-    -   您必须调用**发行**输入时**ChannelClosed**事件。 若要避免这种情况下，检查调用**CloseChannel**的失败，出现错误通道\_ALREADY\_已关闭。 无需调用**版本**在这种情况下，因为你的名义已释放通道。
-    -   您必须调用**CloseChannel**，**发行**，或任何其他成员函数在通道上，如果你**ChannelClosed**回调函数完成运行。 在这种情况下，通道已被释放，因此任何进一步的调用可能会导致未定义的行为。 此限制可能会要求您的前台线程和回调对象之间的协调。
-    -   您必须确保您的前台线程和回调对象协调对调用**CloseChannel**并**发行**。 前台线程和回调对象不能以调用**CloseChannel**如果另一个是要调用或完成后调用**发行**。 您可以通过使用实现这一限制[ **3&gt;interlockedcompareexchange&lt;3}** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedcompareexchange)例程。 如果不使用**3&gt;interlockedcompareexchange&lt;3}** ，可能会导致未定义的行为。
--   如果您注册为在通道上的侦听器，则可以调用**CloseChannel** ，然后调用**发行**在你[IPrintAsyncNotifyCallback::OnEventNotify](https://go.microsoft.com/fwlink/p/?linkid=124757)回调若要结束的双向通信的函数。 但是，您必须调用**CloseChannel**或**发行**在你**ChannelClosed**回调。
+-   如果已创建通道作为双向通道，则可能必须在收到作为输出参数的指针上一次调用**发布**。 仅当你执行以下一项或多项操作时，才应调用**Release** ：
+    -   在调用双向通道的**Release**之前，必须始终调用**CloseChannel**并收到成功结果。 如果对**CloseChannel**的调用失败，则不得调用**Release** ，因为该通道可能已代表您发布。
+    -   输入**ChannelClosed**事件时，不得调用**Release** 。 若要避免这种情况，请检查对**CloseChannel**的调用失败，错误通道\_已\_关闭。 在这种情况下，您无需调用**发布**，因为已代表您释放了该频道。
+    -   如果**ChannelClosed**回调函数已完成运行，则不得在通道上调用**CloseChannel**、 **Release**或任何其他成员函数。 在这种情况下，通道已被释放，因此任何其他调用可能会导致未定义的行为。 此限制可能需要在前台线程和回调对象之间进行协调。
+    -   必须确保前台线程和回调对象协调对**CloseChannel**的调用并**释放**。 如果其他线程要调用或已完成调用**Release**，则前台线程和回调对象将无法开始对**CloseChannel**的调用。 可以使用[**InterlockedCompareExchange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedcompareexchange)例程实现此限制。 如果不使用**InterlockedCompareExchange**，则可能会导致未定义的行为。
+-   如果在通道上注册为侦听器，则可以调用**CloseChannel** ，然后调用[IPrintAsyncNotifyCallback：： OnEventNotify](https://go.microsoft.com/fwlink/p/?linkid=124757)回调函数中的**Release**来结束双向通信。 但是，不能在**ChannelClosed**回调中调用**CloseChannel**或**Release** 。
 
-如果满足以下条件之一，则必须调用**版本**。 如果您不能满足这些条件之一，您必须调用**版本**。
+如果满足这些条件之一，则必须调用**Release**。 如果不满足上述条件之一，则不得调用**Release**。
 
-**请注意**  调用**发行**任何上述条件，但第一个调用的顺序下**AddRef**到常规 COM 异常显式编程模式。 **IPrintAsyncNotifyChannel**不同于在此情况下标准 COM 做法。
+**请注意**，   在上述任何条件下调用**Release** ，但第一种情况是，在这种情况下，你可以显式调用**ADDREF** ，这是一般 COM 编程模式的例外。 在这种情况下， **IPrintAsyncNotifyChannel**与标准 COM 实践不同。
 
  
 

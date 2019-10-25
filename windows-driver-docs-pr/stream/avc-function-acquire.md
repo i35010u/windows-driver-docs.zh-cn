@@ -1,9 +1,9 @@
 ---
-title: AVC\_函数\_ACQUIRE
-description: AVC\_函数\_ACQUIRE
+title: AVC\_函数\_获取
+description: AVC\_函数\_获取
 ms.assetid: c250d800-1777-44c0-8902-09017eb46c78
 keywords:
-- AVC_FUNCTION_ACQUIRE 流式处理媒体设备
+- AVC_FUNCTION_ACQUIRE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9edc1b2a8c1a7bd970a369b4068c27b71b083b0d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1c791ee2fed6aeb71aadd6cdb3f47b51ef4cfda2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386751"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845162"
 ---
-# <a name="avcfunctionacquire"></a>AVC\_函数\_ACQUIRE
+# <a name="avc_function_acquire"></a>AVC\_函数\_获取
 
-**AVC\_函数\_ACQUIRE**函数的代码会导致*avc.sys*建立任何建议的缓存的 AVCCONNECTINFO 值的连接。
+**AVC\_函数\_获取**函数代码会导致*AVC*建立缓存的 AVCCONNECTINFO 值建议的任何连接。
 
 ## <a name="io-status-block"></a>I/O 状态块
 
-如果成功，AV/C 协议驱动程序设置**Irp-&gt;IoStatus.Status**于状态\_成功。
+如果成功，AV/C 协议驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
 
-可能其他返回值包括：
+可能的其他返回值包括：
 
 <table>
 <colgroup>
@@ -43,22 +43,22 @@ ms.locfileid: "67386751"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_TIMEOUT</p></td>
-<td><p>发出请求，但未收到响应之前所有的超时和重试处理已完成。</p></td>
+<td><p>发出了请求，但在所有超时和重试处理完成之前未收到响应。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>立即中止 STATUS_REQUEST_ABORTED IRP 完成状态时。 这表示设备已删除或不再可用的 1394年总线上。</p></td>
+<td><p>当 IRP 完成状态为 "STATUS_REQUEST_ABORTED" 时立即中止。 这表明设备已被删除或在1394总线上不再可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STATUS_*</p></td>
-<td><p>任何其他返回代码指示错误或警告发生了超出范围的 AV/C 协议。</p></td>
+<td><p>任何其他返回代码指示出现超出 AV/C 协议范围的错误或警告。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="comments"></a>备注
 
-此函数使用**PinId**成员的 AVC\_MULTIFUNC\_IRB 结构如下所示。
+此函数使用 AVC\_MULTIFUNC\_IRB 结构的**PinId**成员，如下所示。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -77,28 +77,28 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ## <a name="requirements"></a>要求
 
-**标头：** 在中声明*avc.h*。 包括*avc.h*。
+**标头：** 在*avc*中声明。 包括*avc*。
 
-## <a name="avcmultifuncirb-input"></a>AVC\_MULTIFUNC\_IRB 输入
+## <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 输入
 
-**Common**  
+**常见问题解答**  
 
-**函数**必须设置为此成员的子**AVC\_函数\_ACQUIRE**从 AVC\_函数枚举。
+此成员的**函数**submember 必须设置为**AVC\_函数\_** 从 AVC\_函数枚举获取。
 
 **PinId**  
 
-指定连接要为其获取的 pin 的偏移量 （或 ID）。
+指定要为其获取连接的 pin 的偏移量（或 ID）。
 
-个虚拟实例不支持此函数代码*avc.sys*。
+*Avc*的虚拟实例不支持此函数代码。
 
-Pin 将变为活动状态时，子单元驱动程序必须使用此函数。
+当 pin 变为活动状态时，子单位驱动程序必须使用此函数。
 
-这必须在调用在 IRQL = 被动\_级别。
+此名称必须以 IRQL = 被动\_级别进行调用。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_multifunc_irb)
+[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)
 
-[**AVC\_PIN\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_pin_id)
+[**AVC\_PIN\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_pin_id)
 
-[**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ne-avc-_tagavc_function)
+[**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)

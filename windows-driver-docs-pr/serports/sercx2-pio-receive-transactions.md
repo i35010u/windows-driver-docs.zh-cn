@@ -1,55 +1,55 @@
 ---
 title: SerCx2 PIO-Receive 事务
-description: SerCx2 需要所有串行控制器驱动程序，以实现对支持接收事务使用编程 I/O (PIO)。
+description: SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o （PIO）的接收事务的支持。
 ms.assetid: 00C43A55-ACAF-4AB6-BDFB-F3D9350C4536
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a29de3836a96c4e0a5b9cbd2985bd00548664f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 74b09b724e4b4a08ac7fea592f0de353649a6e47
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356773"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845404"
 ---
 # <a name="sercx2-pio-receive-transactions"></a>SerCx2 PIO-Receive 事务
 
-SerCx2 需要所有串行控制器驱动程序，以实现对支持接收事务使用编程 I/O (PIO)。 若要启动 PIO 接收事务，SerCx2 调用驱动程序的[ *EvtSerCx2PioReceiveReadBuffer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)事件回叫函数并读取缓冲区作为参数提供。
+SerCx2 要求所有串行控制器驱动程序都实现对使用程控 i/o （PIO）的接收事务的支持。 若要启动 PIO 接收事务，SerCx2 将调用驱动程序的[*EvtSerCx2PioReceiveReadBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)事件回调函数并将读取缓冲区作为参数提供。
 
-在此调用期间*EvtSerCx2PioReceiveReadBuffer*函数将数据传输到读取缓冲区中接收 FIFO 串行控制器硬件中。 此数据传输持续读取的缓冲区已满或没有更多数据是从接收 FIFO 立即可用。 传输结束时，该函数将返回已成功传输到读取缓冲区从先进先出的字节数。 此函数永远不会等待接收更多的数据。
+在此调用期间， *EvtSerCx2PioReceiveReadBuffer*函数将数据从串行控制器硬件中的 receive FIFO 传输到读取缓冲区。 此数据传输将继续，直到读取缓冲区已满，或者无法从 receive FIFO 立即获得更多数据。 当传输结束时，函数将返回成功从 FIFO 传输到读取缓冲区的字节数。 此函数永远不会等待接收更多数据。
 
 ## <a name="creating-the-pio-receive-object"></a>创建 PIO 接收对象
 
-SerCx2 可以调用任何串行控制器驱动程序之前*EvtSerCx2PioReceive*Xxx * * 函数，该驱动程序必须调用[ **SerCx2PioReceiveCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecreate)方法这些函数注册到 SerCx2。 此方法接受，作为输入参数，一个指向[ **SERCX2\_PIO\_接收\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/ns-sercx-_sercx2_pio_receive_config)结构，其中包含指向在驱动程序*EvtSerCx2PioReceive*Xxx * * 函数。
+在 SerCx2 可以调用任何串行控制器驱动程序的*EvtSerCx2PioReceive*Xxx * * 函数之前，驱动程序必须调用[**SerCx2PioReceiveCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecreate)方法将这些函数注册到 SerCx2。 此方法接受作为输入参数的指针，指向[**SERCX2\_PIO\_接收\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/ns-sercx-_sercx2_pio_receive_config)结构，该结构包含指向驱动程序的*EvtSerCx2PioReceive*Xxx * * 函数的指针。
 
-该驱动程序，则需要实现所有这三个以下函数：
+需要驱动程序才能实现以下三个函数：
 
-- [*EvtSerCx2PioReceiveReadBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)
-- [*EvtSerCx2PioReceiveEnableReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)
-- [*EvtSerCx2PioReceiveCancelReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)
+- [*EvtSerCx2PioReceiveReadBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_read_buffer)
+- [*EvtSerCx2PioReceiveEnableReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)
+- [*EvtSerCx2PioReceiveCancelReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)
 
-作为一个选项，该驱动程序可以实现一个或两个以下函数：
+作为选项，驱动程序可以实现以下一个或两个函数：
 
-- [*EvtSerCx2PioReceiveInitializeTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)
-- [*EvtSerCx2PioReceiveCleanupTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)
+- [*EvtSerCx2PioReceiveInitializeTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)
+- [*EvtSerCx2PioReceiveCleanupTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)
 
-**SerCx2PioReceiveCreate**方法创建 PIO 接收对象并提供与调用驱动程序[ **SERCX2PIORECEIVE** ](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-object-handles)此对象的句柄。 在驱动程序*EvtSerCx2PioReceive*Xxx * * 函数所有采用该句柄作为其第一个参数。 以下 SerCx2 方法将此句柄作为其第一个参数：
+**SerCx2PioReceiveCreate**方法创建一个 PIO 接收对象，并向该对象的[**SERCX2PIORECEIVE**](https://docs.microsoft.com/windows-hardware/drivers/serports/sercx2-object-handles)句柄提供调用驱动程序。 驱动程序的*EvtSerCx2PioReceive*Xxx * * 函数全部使用此句柄作为其第一个参数。 以下 SerCx2 方法使用此句柄作为其第一个参数：
 
-- [**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveready)
-- [**SerCx2PioReceiveInitializeTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)
-- [**SerCx2PioReceiveCleanupTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)
+- [**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)
+- [**SerCx2PioReceiveInitializeTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)
+- [**SerCx2PioReceiveCleanupTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)
 
 ## <a name="hardware-initialization-and-clean-up"></a>硬件初始化和清理
 
-初始化 PIO 接收事务开始时的串行控制器硬件或清理该事务结束时的串行控制器的硬件状态，可能需要一些串行控制器驱动程序。
+某些串行控制器驱动程序可能需要在启动 PIO 接收事务时初始化串行控制器硬件，或在事务结束时清理串行控制器的硬件状态。
 
-如果驱动程序实现[ *EvtSerCx2PioReceiveInitializeTransaction* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)事件回调函数，SerCx2 调用此函数可初始化串行控制器，然后*EvtSerCx2PioReceiveReadBuffer*启动事务的调用。 如果实现，则*EvtSerCx2PioReceiveInitializeTransaction*函数必须调用[ **SerCx2PioReceiveInitializeTransactionComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)方法，从而通知SerCx2 初始化串行控制器驱动程序完成。
+如果驱动程序实现了[*EvtSerCx2PioReceiveInitializeTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_initialize_transaction)事件回调函数，SerCx2 将调用此函数以在启动该事务的*EvtSerCx2PioReceiveReadBuffer*调用之前初始化串行控制器。 如果实现，则*EvtSerCx2PioReceiveInitializeTransaction*函数必须调用[**SerCx2PioReceiveInitializeTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveinitializetransactioncomplete)方法，以便在驱动程序完成串行控制器初始化后通知 SerCx2。
 
-如果该驱动程序实现[ *EvtSerCx2PioReceiveCleanupTransaction* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)事件回调函数，SerCx2 调用此函数后进行清除的硬件状态最终*EvtSerCx2PioReceiveReadBuffer*在事务中调用。 如果实现，则*EvtSerCx2PioReceiveInitializeTransaction*函数必须调用[ **SerCx2PioReceiveCleanupTransactionComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)方法，从而通知 SerCx2该驱动程序完成后清理串行控制器。
+如果驱动程序实现了[*EvtSerCx2PioReceiveCleanupTransaction*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cleanup_transaction)事件回调函数，SerCx2 将调用此函数，以清理事务中最后一个*EvtSerCx2PioReceiveReadBuffer*调用之后的硬件状态。 如果实现，则*EvtSerCx2PioReceiveInitializeTransaction*函数必须调用[**SerCx2PioReceiveCleanupTransactionComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceivecleanuptransactioncomplete)方法，以便在驱动程序完成串行控制器清理后通知 SerCx2。
 
-## <a name="ready-notifications"></a>准备就绪通知
+## <a name="ready-notifications"></a>就绪通知
 
-当*EvtSerCx2PioReceiveReadBuffer*调用结束，因为没有更多数据可立即用于从接收 FIFO，读取 SerCx2 无法完成该 PIO 接收事务之前，在稍后的某个时间，串行控制器接收更多的数据。 在这种情况下，调用 SerCx2 [ *EvtSerCx2PioReceiveEnableReadyNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)事件回调函数，以使就绪通知。 通常情况下，此函数允许中断可供读取从接收先进先出的数据的一个或多个字节时触发。 当且仅当启用了此通知，串行控制器驱动程序调用[ **SerCx2PioReceiveReady** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveready)方法以通知 SerCx2 时驱动程序检测到接收 FIFO 不再为空。 在响应此通知时，调用 SerCx2 *EvtSerCx2PioReceiveReadBuffer*函数来读取新收到的数据。
+当*EvtSerCx2PioReceiveReadBuffer*调用结束时，如果不能立即从 receive FIFO 中读取数据，SerCx2 将无法完成 PIO 接收事务，直到稍后，串行控制器才能接收更多数据。 在这种情况下，SerCx2 将调用[*EvtSerCx2PioReceiveEnableReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_enable_ready_notification)事件回调函数以启用就绪通知。 此函数通常允许在一个或多个字节的数据可从 receive FIFO 读取时触发中断。 当且仅当启用此通知时，串行控制器驱动程序会调用[**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)方法，以便在驱动程序检测到 receive FIFO 不再为空时通知 SerCx2。 为了响应此通知，SerCx2 调用*EvtSerCx2PioReceiveReadBuffer*函数来读取新接收的数据。
 
-此外，SerCx2 使用就绪通知来有效地管理作为 PIO 接收事务处理读取请求的处理过程中的超时值。 有关这些超时值的详细信息，请参阅[**串行\_超时**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddser/ns-ntddser-_serial_timeouts)。
+此外，SerCx2 还使用准备好的通知在处理作为 PIO 接收事务处理的读取请求期间有效地管理超时。 有关这些超时的详细信息，请参阅[**串行\_超时**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ns-ntddser-_serial_timeouts)。
 
-如果就绪通知已启用读取的请求超时或被取消时，调用 SerCx2 [ *EvtSerCx2PioReceiveCancelReadyNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)事件回调函数，若要取消挂起通知。 如果此函数已成功取消挂起通知，它将返回 **，则返回 TRUE**。 返回值 **，则返回 TRUE**串行控制器驱动程序将不会调用保证[ **SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nf-sercx-sercx2pioreceiveready)。 返回值**FALSE**指示控制器驱动程序已调用，或将很快就会调用**SerCx2PioReceiveReady**。
+如果在读取请求超时时启用了就绪通知，则 SerCx2 将调用[*EvtSerCx2PioReceiveCancelReadyNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_pio_receive_cancel_ready_notification)事件回调函数以取消挂起的通知。 如果此函数成功取消了挂起的通知，则返回**TRUE**。 如果返回值**为 TRUE** ，则保证串行控制器驱动程序将不会调用[**SerCx2PioReceiveReady**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sercx/nf-sercx-sercx2pioreceiveready)。 如果返回值为**FALSE** ，则指示控制器驱动程序已调用或即将调用**SerCx2PioReceiveReady**。

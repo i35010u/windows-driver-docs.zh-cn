@@ -4,22 +4,22 @@ description: MSFC\_TM WMI 类
 ms.assetid: c81b9b2a-6381-4ff9-a579-bee53ac8678d
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9b87ceb4a9fb9a7e4a6e032d2e12bbec3935d3d8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a8cdd113acf227ee293a5977b40d1f8c03ea258c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376707"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845599"
 ---
-# <a name="msfctm-wmi-class"></a>MSFC\_TM WMI 类
+# <a name="msfc_tm-wmi-class"></a>MSFC\_TM WMI 类
 
 
 ## <span id="ddk_msfc_tm_wmi_class_kr"></span><span id="DDK_MSFC_TM_WMI_CLASS_KR"></span>
 
 
-WMI 提供程序使用 MSFC\_到时间戳事件 TM WMI 类。
+WMI 提供程序使用 MSFC\_TM WMI 类来时间戳事件。
 
-MSFC\_TM 类定义中，如下所示*Hbaapi.mof*:
+MSFC\_TM 类在*Hbaapi*中定义如下：
 
 ```cpp
 class MSFC_TM {
@@ -35,9 +35,9 @@ class MSFC_TM {
 };
 ```
 
-通过 WMI 工具套件在编译时此类定义将生成以下数据结构：
+由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-[**MSFC\_TM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_msfc_tm)
+[**MSFC\_TM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_tm)
 
  
 

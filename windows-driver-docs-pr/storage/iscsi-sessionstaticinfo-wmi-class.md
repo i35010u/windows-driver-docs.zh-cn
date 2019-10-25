@@ -4,20 +4,20 @@ description: ISCSI\_SessionStaticInfo WMI 类
 ms.assetid: e6ef8389-c4f3-4498-9864-6e4c1e8ca5b5
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 77b03584f0d49dbf325f620cf608533cee7b77ff
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0b1f50b325bb33c62eb9dd62e7ea4c8263aadc77
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378399"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844351"
 ---
-# <a name="iscsisessionstaticinfo-wmi-class"></a>ISCSI\_SessionStaticInfo WMI 类
+# <a name="iscsi_sessionstaticinfo-wmi-class"></a>ISCSI\_SessionStaticInfo WMI 类
 
 
 ## <span id="ddk_iscsi_sessionstaticinfo_wmi_class_kr"></span><span id="DDK_ISCSI_SESSIONSTATICINFO_WMI_CLASS_KR"></span>
 
 
-ISCSI\_SessionStaticInfo 类用于存储静态会话的特征。 此类定义中，如下所示*Mgmt.mof*。
+ISCSI\_SessionStaticInfo 类用于存储会话的静态特性。 此类在*管理 mof*中定义为：
 
 ```cpp
 class ISCSI_SessionStaticInfo {
@@ -166,7 +166,7 @@ class ISCSI_SessionStaticInfo {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_SessionStaticInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_sessionstaticinfo)数据结构。
+当 WMI 工具套件编译上述类定义时，它将生成[**ISCSI\_SessionStaticInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_sessionstaticinfo)数据结构。
 
  
 

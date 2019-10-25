@@ -9,21 +9,21 @@ keywords:
 - 时钟 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 509b0a1b4879e0edb8474a971d8b2f0bdf20f801
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9abfc3262db97431b542cab383aa718d40138899
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377741"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845546"
 ---
 # <a name="time-stamps"></a>时间戳
 
 
-微型驱动程序应该时间戳数据包来同步多个数据流。 内核模式时钟开始计数时它们先过渡带的时间**KSSTATE\_停止**状态。 此后，时钟将递增时间戳按规律性间隔的 100 纳秒为单位的流转换到直到**KSSTATE\_停止**状态。
+微型驱动程序应将数据包时间戳以同步多个数据流。 当第一次转换**KSSTATE\_停止**状态时，内核模式时钟开始计算时间。 此后，时钟周期应以100毫微秒单位的固定时间间隔递增时间戳，直到流转换到**KSSTATE\_停止**状态。
 
-传输的每个数据包对应于单个帧或视频或辅助数据字段。 涉及到帧精确视频捕获的视频捕获驱动程序编写人员可以选择提供所有其他筛选器可用作参考的时钟。 数字视频的微型驱动程序是应提供时钟，以使用筛选器关系图中的微型驱动程序的一个示例。 或者，运行以异步方式向其他多媒体流，如 USB 和 IEEE 1394 会议摄像机的视频捕获微型驱动程序应时间的戳与时钟其数据数据包提供的另一个组件，例如音频数字化器。
+传输的每个数据包都对应于一个帧或视频或辅助数据的一个字段。 与帧准确视频捕获相关的视频捕获驱动程序编写器可以选择提供所有其他筛选器都可用作参考的时钟。 数字视频微型驱动程序是应提供要在筛选器图中使用的时钟的微型驱动程序示例。 此外，视频捕获微型驱动程序（以异步方式运行到其他多媒体流，如 USB 和 IEEE 1394 摄像机）应使用另一个组件（如音频数字化仪）提供的时钟来标记其数据包。
 
-如果 Stream 类微型驱动程序提供了主时钟，还应指定以下值中的[ **HW\_流\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/strmini/ns-strmini-_hw_stream_object)结构：
+如果 Stream 类微型驱动程序提供主时钟，则它应在[**HW\_Stream\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/strmini/ns-strmini-_hw_stream_object)结构中指定以下值：
 
 ```cpp
 PHW_STREAM_OBJECT *pStreamObject;

@@ -4,12 +4,12 @@ description: AV/C 流式处理格式 GUID
 ms.assetid: 60f1fd59-e760-4be4-8990-e49628b76d15
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 49bcce8badc19047464f7f1269b2d432c90c490c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0bd11aa78568557bb2e39ae2a07054e163034d4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386760"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845580"
 ---
 # <a name="avc-streaming-format-guids"></a>AV/C 流式处理格式 GUID
 
@@ -17,59 +17,59 @@ ms.locfileid: "67386760"
 ## <span id="ddk_av_c_streaming_format_guids_ks"></span><span id="DDK_AV_C_STREAMING_FORMAT_GUIDS_KS"></span>
 
 
-任何流式处理驱动程序的内核，如 AV/C 流式处理子单元驱动程序指定的每个 pin 支持通过使用 Guid 格式的数据格式的范围。 内核流式处理应用程序然后使用这些格式的 Guid 来执行数据范围交集为特定的数据格式。 结果是一个填充接[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构。 中进一步介绍了数据交集[AVStream 中的数据范围交集](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)。
+与任何内核流式处理驱动程序一样，AV/C 流式处理次级驱动程序使用格式 Guid 为每个 pin 指定它支持的数据格式范围。 然后，内核流式处理应用程序使用这些格式 Guid 来执行特定数据格式的数据范围交集。 结果为填充[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构。 [AVStream 中的数据范围交集](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)进一步介绍了数据交集。
 
-KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 说明符指定遵循 KSDATAFORMAT 结构在内存中的扩展数据结构。 例如，假设数据格式有的主要格式为 KSDATAFORMAT\_类型\_交叉存取 KSDATAFORMAT 的子格式类型\_子类型\_DVSD，和 KSDATAFORMAT 说明符\_说明符\_DVINFO。 在这种情况下，则扩展数据结构[ **DVINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_dvinfo)结构。
+KSDATAFORMAT 结构指定 Guid 的主要格式、格式子类型和说明符。 说明符指定在内存中遵循 KSDATAFORMAT 结构的扩展数据结构。 例如，假设数据格式的主要格式为 KSDATAFORMAT\_类型\_交错、KSDATAFORMAT\_子类型的格式子类型\_DVSD 和 KSDATAFORMAT\_说明符的说明符\_DVINFO。 在这种情况下，扩展数据结构是[**DVINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo)结构。
 
-*Avcstrm.h*标头文件定义以下流式处理格式的 Guid:
+*Avcstrm*头文件定义以下流格式 guid：
 
-<span id="KSDATAFORMAT_TYPE_INTERLEAVED"></span><span id="ksdataformat_type_interleaved"></span>KSDATAFORMAT\_类型\_交叉存取  
-将指定的交错的音频和视频信号。 任何包含音频的视频流应指定此 GUID 作为流的类型。
+<span id="KSDATAFORMAT_TYPE_INTERLEAVED"></span><span id="ksdataformat_type_interleaved"></span>KSDATAFORMAT\_类型\_交错  
+指定交错的音频和视频信号。 任何包含音频的视频流都应将此 GUID 指定为流的类型。
 
-<span id="KSDATAFORMAT_TYPE_MPEG2_TRANSPORT_STRIDE"></span><span id="ksdataformat_type_mpeg2_transport_stride"></span>KSDATAFORMAT\_TYPE\_MPEG2\_TRANSPORT\_STRIDE  
-将指定偏离正常 188 字节 MPEG2 数据包大小 MPEG2 流类型。 KSDATAFORMAT\_类型\_MPEG2\_传输\_STRIDE 类型用于符合 IEC 61883 4 规范的流。 这些流使用[ **MPEG2\_传输\_STRIDE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdatypes/ns-bdatypes-_mpeg2_transport_stride)结构，它允许将流来描述不同于典型 188 字节数据包的格式。 例如，MPEG2 dwOffset 成员\_传输\_STRIDE 将设置为 4，到 188，dwPacketLength 成员和 192 dwStride 成员。
+<span id="KSDATAFORMAT_TYPE_MPEG2_TRANSPORT_STRIDE"></span><span id="ksdataformat_type_mpeg2_transport_stride"></span>KSDATAFORMAT\_类型\_MPEG2\_传输\_步幅  
+指定偏离标准188字节 MPEG2 数据包大小的 MPEG2 流类型。 KSDATAFORMAT\_类型\_MPEG2\_传输\_步幅类型与符合 IEC 61883-4 规范的流一起使用。 这些流使用[**MPEG2\_传输\_步幅**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdatypes/ns-bdatypes-_mpeg2_transport_stride)结构，该结构允许流描述不同于典型188字节数据包的格式。 例如，MPEG2\_传输\_步幅的 dwOffset 成员将设置为4，将 dwPacketLength 成员设置为188，将 dwStride 成员设置为192。
 
-<span id="KSDATAFORMAT_SUBTYPE_DVSD"></span><span id="ksdataformat_subtype_dvsd"></span>KSDATAFORMAT\_SUBTYPE\_DVSD  
-指定 IEC 61883 2 标准定义 25 Mbps DV 信号，使用 4:1:1 个采样结构 NTSC 信号或，使用 4:2:0 PAL 采样结构发出信号。 此格式的子类型作为数据格式的扩展数据结构使用 DVINFO 结构。
+<span id="KSDATAFORMAT_SUBTYPE_DVSD"></span><span id="ksdataformat_subtype_dvsd"></span>KSDATAFORMAT\_DVSD\_子类型  
+指定一个 IEC 61883-2 标准定义 25-Mbps DV 信号，该信号使用用于 NTSC 信号的4:1:1 采样结构，或使用适用于 PAL 信号的4:2:0 采样结构。 此格式子类型使用 DVINFO 结构作为数据格式的扩展数据结构。
 
-<span id="KSDATAFORMAT_SUBTYPE_DVSL"></span><span id="ksdataformat_subtype_dvsl"></span>KSDATAFORMAT\_SUBTYPE\_DVSL  
-指定 IEC 61883 3 长时间播放 12.5 Mbps DVSD 信号，具有相同数量的行作为 NTSC 或 PAL 信号，但实现更高的压缩率。 此格式的子类型作为数据格式的扩展数据结构使用 DVINFO 结构。
+<span id="KSDATAFORMAT_SUBTYPE_DVSL"></span><span id="ksdataformat_subtype_dvsl"></span>KSDATAFORMAT\_DVSL\_子类型  
+指定 IEC 61883-3 长时间运行的 12.5-Mbps DVSD 信号，该信号的行数与 NTSC 或 PAL 信号的行数相同，但是实现更高的压缩率。 此格式子类型使用 DVINFO 结构作为数据格式的扩展数据结构。
 
-<span id="KSDATAFORMAT_SUBTYPE_DVHD"></span><span id="ksdataformat_subtype_dvhd"></span>KSDATAFORMAT\_SUBTYPE\_DVHD  
-将指定的 IEC 61883 3 高清晰度 DV 信号，例如 1125年行 60 Hz NTSC 信号或 1250年行 50 Hz PAL 信号。 目前不支持此格式的子类型。
+<span id="KSDATAFORMAT_SUBTYPE_DVHD"></span><span id="ksdataformat_subtype_dvhd"></span>KSDATAFORMAT\_DVHD\_子类型  
+指定 IEC 61883-3 高清晰 DV 信号，如1125行 60-Hz NTSC 信号或1250线路 50-Hz PAL 信号。 当前不支持此格式子类型。
 
-<span id="KSDATAFORMAT_SUBTYPE_DV25"></span><span id="ksdataformat_subtype_dv25"></span>KSDATAFORMAT\_SUBTYPE\_DV25  
-指定 SMPTE 314 M 25 Mbps DVCPRO 视频信号，使用 4:1:1 采样结构 NTSC 或 PAL 信号。 此格式的子类型作为数据格式的扩展数据结构使用 DVINFO 结构。
+<span id="KSDATAFORMAT_SUBTYPE_DV25"></span><span id="ksdataformat_subtype_dv25"></span>KSDATAFORMAT\_DV25\_子类型  
+指定一个 SMPTE 314M 25-Mbps DVCPRO 视频信号，该信号对 NTSC 和 PAL 信号使用4:1:1 采样结构。 此格式子类型使用 DVINFO 结构作为数据格式的扩展数据结构。
 
-<span id="KSDATAFORMAT_SUBTYPE_DV50"></span><span id="ksdataformat_subtype_dv50"></span>KSDATAFORMAT\_子类型\_DV50  
-指定 SMPTE 314 M 50 Mbps DVCPRO50 视频信号，使用 4:2:2 NTSC 或 PAL 信号的示例结构。 此格式的子类型作为数据格式的扩展数据结构使用 DVINFO 结构。
+<span id="KSDATAFORMAT_SUBTYPE_DV50"></span><span id="ksdataformat_subtype_dv50"></span>KSDATAFORMAT\_DV50\_子类型  
+指定一个 SMPTE 314M 50-Mbps DVCPRO50 视频信号，该信号对 NTSC 和 PAL 信号使用4:2:2 示例结构。 此格式子类型使用 DVINFO 结构作为数据格式的扩展数据结构。
 
-<span id="KSDATAFORMAT_SUBTYPE_DVH1"></span><span id="ksdataformat_subtype_dvh1"></span>KSDATAFORMAT\_SUBTYPE\_DVH1  
-指定 SMPTE 370 M 100-Mbps 的高清 DV 视频信号，例如 720p （渐进式） 或 1080i （交错） 信号。 此格式的子类型作为数据格式的扩展数据结构使用 DVINFO 结构。
+<span id="KSDATAFORMAT_SUBTYPE_DVH1"></span><span id="ksdataformat_subtype_dvh1"></span>KSDATAFORMAT\_DVH1\_子类型  
+指定 SMPTE 370M 100-Mbps 高清晰 DV 视频信号，如720p （渐进式）或1080i （交错）信号。 此格式子类型使用 DVINFO 结构作为数据格式的扩展数据结构。
 
-<span id="KSDATAFORMAT_SPECIFIER_DVINFO"></span><span id="ksdataformat_specifier_dvinfo"></span>KSDATAFORMAT\_SPECIFIER\_DVINFO  
-将 DVINFO 结构指定为以下 KSDATAFORMAT 在内存中的扩展数据结构。
+<span id="KSDATAFORMAT_SPECIFIER_DVINFO"></span><span id="ksdataformat_specifier_dvinfo"></span>KSDATAFORMAT\_DVINFO\_说明符  
+将 DVINFO 结构指定为 KSDATAFORMAT 内存中后面的扩展数据结构。
 
-<span id="KSDATAFORMAT_SPECIFIER_DV_AVC"></span><span id="ksdataformat_specifier_dv_avc"></span>KSDATAFORMAT\_SPECIFIER\_DV\_AVC  
-将在 DVINFO 和 AVCCONNECTINFO 结构指定为以下 KSDATAFORMAT 在内存中的扩展数据结构。
+<span id="KSDATAFORMAT_SPECIFIER_DV_AVC"></span><span id="ksdataformat_specifier_dv_avc"></span>KSDATAFORMAT\_说明符\_DV\_AVC  
+将 DVINFO 和 AVCCONNECTINFO 结构指定为在内存中执行 KSDATAFORMAT 后的扩展数据结构。
 
-<span id="KSDATAFORMAT_SPECIFIER_AVC"></span><span id="ksdataformat_specifier_avc"></span>KSDATAFORMAT\_SPECIFIER\_AVC  
-将 AVCCONNECTINFO 结构指定为以下 KSDATAFORMAT 在内存中的扩展数据结构。 MPEG2TS 格式，具体取决于该格式的子类型，可能还使用此说明符。
+<span id="KSDATAFORMAT_SPECIFIER_AVC"></span><span id="ksdataformat_specifier_avc"></span>KSDATAFORMAT\_AVC\_说明符  
+将 AVCCONNECTINFO 结构指定为 KSDATAFORMAT 内存中后面的扩展数据结构。 此说明符还可用于 MPEG2TS 格式，具体取决于格式的子类型。
 
-<span id="KSDATAFORMAT_SPECIFIER_61883_4"></span><span id="ksdataformat_specifier_61883_4"></span>KSDATAFORMAT\_SPECIFIER\_61883\_4  
-指定 MPEG2-TS 格式都符合 IEC 61883 4 协议。 此说明符不使用任何扩展的数据结构来按照 KSDATAFORMAT 在内存中。
+<span id="KSDATAFORMAT_SPECIFIER_61883_4"></span><span id="ksdataformat_specifier_61883_4"></span>KSDATAFORMAT\_说明符\_61883\_4  
+指定遵循 IEC 61883-4 协议的 MPEG2 TS 格式。 此说明符不使用任何扩展的数据结构来跟踪内存中的 KSDATAFORMAT。
 
 ### <a name="comments"></a>备注
 
-*Avcstrm.sys*并*Msdv.sys*支持 KSDATAFORMAT\_子类型\_DV25、 KSDATAFORMAT\_子类型\_DV50 和 KSDATAFORMAT\_子类型\_DVH1 格式在 Windows Vista、 Windows Server 2003 Service Pack 1 (SP1) 和 Windows XP Service Pack 2 (SP2) 操作系统中的子类型。
+*Avcstrm*和*Msdv*支持 KSDATAFORMAT\_子类型\_DV25、KSDATAFORMAT\_子类型\_DV50 和 KSDATAFORMAT\_子类型\_WINDOWS Vista 中的 DVH1 格式子类型，windows Server 2003Service Pack 1 （SP1）和带有 Service Pack 2 （SP2）的 Windows XP 操作系统。
 
-请注意，KSDATAFORMAT\_子类型\_DVSD 和 KSDATAFORMAT\_子类型\_DV25 格式子类型都兼容使用 4: NTSC 的 1 对 1 采样。 但是，KSDATAFORMAT\_子类型\_DV25 PAL 格式使用 4:1:1 采样但 KSDATAFORMAT\_子类型\_DVSD PAL 格式使用 4:2:0，因此采样 DVSD 和 DV25 之间的区别。
+请注意，KSDATAFORMAT\_子类型\_DVSD 和 KSDATAFORMAT\_子类型\_DV25 格式子类型将使用4:1:1 的 NTSC 采样进行兼容。 不过，对于 PAL 格式，KSDATAFORMAT\_子类型\_DV25 使用4:1:1 采样，但 KSDATAFORMAT\_子类型\_用于 PAL 格式的 DVSD 使用4:2:0 采样，因此在 DVSD 和 DV25 之间进行区分。
 
-子单元驱动程序通过其格式的子类型和其扩展数据结构的组合指示的帧大小 （示例大小）。 例如，KSDATAFORMAT 的组合\_子类型\_DVSD 格式子类型和 DVINFO 扩展数据结构中设置的 NTSC 位指示的 DV 帧大小为 120 KB。
+子单位驱动程序通过其格式子类型及其扩展数据结构的组合指示帧大小（示例大小）。 例如，KSDATAFORMAT\_子类型\_DVSD 格式子类型和 DVINFO 扩展数据结构中设置的 NTSC 位的组合指示 DV 帧大小为 120 KB。
 
-[ **KSDATAFORMAT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksdataformat)结构包含**FormatSize**用于验证的扩展数据结构大小的成员。 它是有效的扩展数据结构大小 FormatSize 等于 sizeof(KSDATAFORMAT) + sizeof (扩展数据 structure(s))。
+[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构包含用于验证扩展数据结构大小的**FormatSize**成员。 也就是说，在有效的扩展数据结构大小 FormatSize 等于 sizeof （KSDATAFORMAT） + sizeof （扩展数据结构）中。
 
-下表介绍 KS 数据的格式说明符 Guid 和其对应的扩展数据结构。
+下表介绍了 KS 数据格式说明符 Guid 及其相应的扩展数据结构。
 
 <table>
 <colgroup>
@@ -85,11 +85,11 @@ KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 
 <tbody>
 <tr class="odd">
 <td><p>KSDATAFORMAT_SPECIFIER_DVINFO</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_dvinfo" data-raw-source="[&lt;strong&gt;DVINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avcstrm/ns-avcstrm-_dvinfo)"><strong>DVINFO</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo" data-raw-source="[&lt;strong&gt;DVINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_dvinfo)"><strong>DVINFO</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>KSDATAFORMAT_SPECIFIER_DV_AVC</p></td>
-<td><p>DVINFO 并<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo" data-raw-source="[&lt;strong&gt;AVCCONNECTINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avcconnectinfo)"> <strong>AVCCONNECTINFO</strong></a></p></td>
+<td><p>DVINFO 和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo" data-raw-source="[&lt;strong&gt;AVCCONNECTINFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)"> <strong>AVCCONNECTINFO</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>KSDATAFORMAT_SPECIFIER_AVC</p></td>
@@ -97,18 +97,18 @@ KSDATAFORMAT 结构的主要格式、 格式子类型和说明符指定 Guid。 
 </tr>
 <tr class="even">
 <td><p>KSDATAFORMAT_SPECIFIER_61883_4</p></td>
-<td><p>不使用任何扩展的数据结构</p></td>
+<td><p>不使用扩展的数据结构</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Microsoft Corporation 引入*msdv.sys*子单元驱动程序和 Windows 98 SE。 此驱动程序支持大多数 MiniDV 摄像机相机模式和 VTR （视频磁带记录器） 模式。
+Microsoft Corporation 向 Windows 98 SE 引入了*msdv*子的驱动程序。 此驱动程序支持在摄像机模式和 VTR （视频磁带录制器）模式下的大多数 MiniDV 摄像机。
 
-Microsoft Corporation 引入*mstape.sys*磁带子单元驱动程序和 Windows me 一起提供。 此驱动程序支持 D VHS 磁带卡片组和 MPEG 摄像机设备。
+Microsoft Corporation 在 Windows Me 中引入了*mstape*磁带子单位驱动程序。 此驱动程序支持 VHS 磁带卡座和 MPEG 摄像机设备。
 
-**请注意**Microsoft 不提供支持 DVCPro 格式解码的编解码器。
+**注意**Microsoft 不提供支持 DVCPro 格式解码的编解码器。
 
  
 

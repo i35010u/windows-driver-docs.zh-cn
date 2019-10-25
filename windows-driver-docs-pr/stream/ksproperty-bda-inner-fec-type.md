@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_INNER\_FEC\_TYPE
-description: 客户端使用 KSPROPERTY\_BDA\_内部\_FEC\_类型来控制解调器节点的内部转发错误纠错 (FEC) 类型。
+title: KSPROPERTY\_BDA\_INNER\_FEC\_类型
+description: 客户端使用 KSPROPERTY\_BDA\_INNER\_FEC\_类型来控制某个解调器节点的内部正向纠错（FEC）类型。
 ms.assetid: e6640d89-cf75-4073-98fb-2a877d6c38d3
 keywords:
-- KSPROPERTY_BDA_INNER_FEC_TYPE 流式处理媒体设备
+- KSPROPERTY_BDA_INNER_FEC_TYPE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd3917e01a4d1a9f4cadc50959f0cd07866fad9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 659ef3981d8a2547b4f6b18daecd3006486ab6ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364853"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845558"
 ---
-# <a name="kspropertybdainnerfectype"></a>KSPROPERTY\_BDA\_INNER\_FEC\_TYPE
+# <a name="ksproperty_bda_inner_fec_type"></a>KSPROPERTY\_BDA\_INNER\_FEC\_类型
 
 
-客户端使用 KSPROPERTY\_BDA\_内部\_FEC\_类型来控制解调器节点的内部转发错误纠错 (FEC) 类型。
+客户端使用 KSPROPERTY\_BDA\_INNER\_FEC\_类型来控制某个解调器节点的内部正向纠错（FEC）类型。
 
 ## <span id="ddk_ksproperty_bda_inner_fec_type_ks"></span><span id="DDK_KSPROPERTY_BDA_INNER_FEC_TYPE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67364853"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "67364853"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
 <td><p>Filter</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>FECMethod</p></td>
@@ -64,9 +64,9 @@ ms.locfileid: "67364853"
 <a name="remarks"></a>备注
 -------
 
-FECMethod 枚举类型中的返回的值标识 FEC 类型。
+FECMethod 枚举类型返回的值标识 FEC 类型。
 
-**NodeId** KSP 成员\_节点指定解调器节点的标识符。
+KSP\_**节点的节点**标识号指定了解调器节点的标识符。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,18 +78,18 @@ FECMethod 枚举类型中的返回的值标识 FEC 类型。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h （包括 Bdamedia.h）</td>
+<td><p>标头</p></td>
+<td>Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**FECMethod**](https://docs.microsoft.com/previous-versions/windows/desktop/mstv/fecmethod)
 
-[**KSP\_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksp_node)
+[**KSP\_节点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
 

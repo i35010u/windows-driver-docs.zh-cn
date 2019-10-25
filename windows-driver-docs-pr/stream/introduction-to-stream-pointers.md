@@ -3,20 +3,20 @@ title: 流指针简介
 description: 流指针简介
 ms.assetid: 2682b145-5148-4301-b382-9811bb5e8fa6
 keywords:
-- 流指针 WDK AVStream 有关流指针
+- 流指针 WDK AVStream，关于流指针
 - 前移流指针 WDK AVStream
-- 流指针 WDK AVStream，改进
-- 框架的引用计数 WDK AVStream
+- 流指针 WDK AVStream，前进
+- 帧引用计数 WDK AVStream
 - 引用计数 WDK 流指针
-- 计数 WDK 流指针的引用
+- 计数引用 WDK 流指针
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 952a4a12d6a33f7790d16d52760338f6ca280801
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c1c1b155756088fab574819eaf30dba79da2d9b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360664"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845564"
 ---
 # <a name="introduction-to-stream-pointers"></a>流指针简介
 
@@ -24,27 +24,27 @@ ms.locfileid: "67360664"
 
 
 
-在较旧的流类模型，微型驱动程序是负责维护其自己数据的流请求块 (SRB) 队列。 AVStream 提供此功能通过流指针抽象。 流指针是为特定 AVStream 数据框架的引用。
+在较旧的流类模型中，微型驱动程序负责维护其自己的数据流请求块（SRB）队列。 AVStream 通过流指针抽象提供此功能。 流指针是对特定 AVStream 数据帧的引用。
 
-使用的微型驱动程序[pin 以中心处理](pin-centric-processing.md)（大多数硬件驱动程序），使用流指针管理 pin 队列。 每个 pin 有独立队列的数据缓冲区。 当数据包到达 pin （的读取或写入请求） 时，AVStream 将数据包添加到队列，并可能调用插针的进程调度。
+使用以[引脚为中心的处理](pin-centric-processing.md)（大多数硬件驱动程序）的微型驱动程序，可使用流指针来管理 pin 队列。 每个 pin 都具有独立的数据缓冲区队列。 当数据包到达 pin （读取或写入请求）时，AVStream 会将数据包添加到队列中，并可能会调用 pin 的进程调度。
 
-使用筛选器以中心处理的微型驱动程序不应直接使用流指针。 请参阅[筛选器以中心处理](filter-centric-processing.md)有关详细信息。
+使用以筛选器为中心的处理的微型驱动程序不应直接使用流指针。 有关详细信息，请参阅以[筛选为中心的处理](filter-centric-processing.md)。
 
-默认情况下，每个队列具有前导边缘流指针。 （可选） 它可以具有尾随边缘流指针，如果指定的尾随边标志。 微型驱动程序可以通过调用创建新流指针[ **KsStreamPointerClone**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerclone)。
+默认情况下，每个队列都具有一个前导边缘流指针。 或者，如果指定了尾部边缘标志，则它可以有一个尾随边缘流指针。 微型驱动程序可以通过调用[**KsStreamPointerClone**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerclone)创建新的流指针。
 
-可以只在一个方向移动流指针： 到较新帧。 这称为前移流指针。
+只能在一个方向上移动流指针：到较新的帧。 这称为前进流指针。
 
-### <a name="advancing-a-stream-pointer"></a>改进的 Stream 指针
+### <a name="advancing-a-stream-pointer"></a>前进流指针
 
-当前进流指针时，则将其移动到较新帧，或翻阅一定数量的其当前框架内的字节数。 例如，微型驱动程序可以继续学习流指针从第一个帧到达第二个帧到达。
+当你前进流指针时，请将其移动到较新的帧，或将其前进到其当前帧中的一些字节。 例如，微型驱动程序可以将第一个帧到达的流指针前进到第二个帧到达。
 
-若要前进的流指针，以固定为中心的筛选器可以通过调用[ **KsStreamPointerAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointeradvance)或[ **KsStreamPointerUnlock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerunlock)与*Eject*参数设置为**TRUE**。
+若要前进流指针，可以在以零为中心的情况下调用[**KsStreamPointerAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvance)或[**KsStreamPointerUnlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerunlock) ，并将*Eject*参数设置为**TRUE**。
 
-### <a name="frame-reference-counts"></a>框架引用计数
+### <a name="frame-reference-counts"></a>帧引用计数
 
-使用流指针指向它们的帧进行引用计数，因为是在窗口之间的前导和尾随边缘中的帧。
+具有指向它们的流指针的帧具有引用计数，就像是在主边缘和尾随边缘之间的窗口中。
 
-完成流指针微型驱动程序时，它可以根据需要调用[ **KsStreamPointerSetStatusCode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointersetstatuscode)指定用来完成指定的 I/O 请求数据包 (IRP) 错误代码。 然后，微型驱动程序必须调用[ **KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksstreampointerdelete)。 AVStream 然后递减引用计数已删除的流指针之前引用的帧。 无法删除前导边缘，尾随边缘流指针。
+当微型驱动程序使用流指针完成后，可以选择调用[**KsStreamPointerSetStatusCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointersetstatuscode)来指定用于完成给定 i/o 请求数据包（IRP）的错误代码。 然后，微型驱动程序必须调用[**KsStreamPointerDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)。 然后，AVStream 将减少删除的流指针之前引用的帧上的引用计数。 不能删除前导边缘和尾随边缘流指针。
 
  
 

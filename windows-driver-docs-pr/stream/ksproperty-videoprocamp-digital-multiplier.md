@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数
-description: KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定的数字要应用于图像的缩放量。
+description: KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定要应用于图像的数字缩放量。
 ms.assetid: e566dd2b-d99a-4e7f-888e-f0f431618c2d
 keywords:
-- KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER 流式处理媒体设备
+- KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ae7a62287a4d8d1408aa82a19c05afcb701a3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64af958054b1593d9d31f3a26f9a21ac3afc3ce2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381966"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844763"
 ---
-# <a name="kspropertyvideoprocampdigitalmultiplier"></a>KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数
+# <a name="ksproperty_videoprocamp_digital_multiplier"></a>KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数
 
 
-KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定的数字要应用于图像的缩放量。
+KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定要应用于图像的数字缩放量。
 
 ## <span id="ddk_ksproperty_videoprocamp_digital_multiplier_ks"></span><span id="DDK_KSPROPERTY_VIDEOPROCAMP_DIGITAL_MULTIPLIER_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定的数字要应用于图像�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,27 +50,27 @@ KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定的数字要应用于图像�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
-<td><p>长</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)"><strong>KSPROPERTY_VIDEOPROCAMP_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_VIDEOPROCAMP_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_node_s)"> <strong>KSPROPERTY_VIDEOPROCAMP_NODE_S</strong></a></p></td>
+<td><p>漫长</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值 （操作数据） 为指定照相机的数字乘数设置长时间。 值指定数字的乘数值的相机应用于映像。
+属性值（操作数据）是指定相机的数字乘数设置的 LONG。 值指定相机应用于图像的数字乘数值。
 
 <a name="remarks"></a>备注
 -------
 
-在 set 请求时，客户端应提供中的数字的乘数值**值**KSPROPERTY 成员\_VIDEOPROCAMP\_节点\_S 结构。
+发出集请求时，客户端应在 KSPROPERTY\_VIDEOPROCAMP\_NODE\_结构的**值**成员中提供数字乘数值。
 
-若要确定设备支持的数字的乘数值的范围，应用程序可以发出 KSPROPERTY\_类型\_BASICSUPPORT 请求。 您可以指定 KSPROPERTY\_类型\_中的 BASICSUPPORT**标志**的成员[ **KSPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksproperty_item)结构。
+若要确定设备支持的数字乘数的范围，应用程序可以\_BASICSUPPORT 请求发出 KSPROPERTY\_类型。 可以在[**KSPROPERTY\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_item)结构的**Flags**成员中指定 KSPROPERTY\_类型\_BASICSUPPORT。
 
-客户端时发出 get 请求，接收类型的值长数据类型位于**值**KSPROPERTY 成员\_VIDEOPROCAMP\_节点\_S 结构。
+发出 get 请求时，客户端会在 KSPROPERTY\_VIDEOPROCAMP\_NODE\_结构的**值**成员中接收 LONG 类型的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,18 +82,18 @@ KSPROPERTY\_VIDEOPROCAMP\_数字\_乘数属性指定的数字要应用于图像�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
+[**KSPROPERTY\_VIDEOPROCAMP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_videoprocamp_s)
 
  
 

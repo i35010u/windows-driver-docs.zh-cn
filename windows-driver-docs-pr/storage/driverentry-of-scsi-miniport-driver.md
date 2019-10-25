@@ -1,6 +1,6 @@
 ---
-title: DriverEntry 的 SCSI 微型端口驱动程序例程
-description: 每个微型端口驱动程序必须具有显式命名以便加载 DriverEntry 例程。请注意 SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能被修改或不可用在将来。
+title: DriverEntry SCSI 微型端口驱动程序例程
+description: 每个微型端口驱动程序必须有一个显式命名为 DriverEntry 的例程才能加载。请注意，SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能会在将来更改或不可用。
 ms.assetid: dda79363-06a9-4902-8e04-186293b6c9d4
 keywords:
 - DriverEntry 例程存储设备
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 629778fc5987971e7d8bf8b056f55f7aee38596b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e3bd556f6cfd74c3ce63afb4ab3b54764bef214
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368261"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845172"
 ---
-# <a name="driverentry-of-scsi-miniport-driver-routine"></a>DriverEntry 的 SCSI 微型端口驱动程序例程
+# <a name="driverentry-of-scsi-miniport-driver-routine"></a>DriverEntry SCSI 微型端口驱动程序例程
 
 
-每个微型端口驱动程序必须具有显式命名的例程**DriverEntry**才能加载。
+每个微型端口驱动程序必须有一个显式命名为**DriverEntry**的例程才能加载。
 
-&gt; \[!请注意\] &gt; SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
+&gt; \[！请注意\] &gt; SCSI 端口驱动程序和 SCSI 微型端口驱动程序模型在将来可能会更改或不可用。 相反，我们建议使用[storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)程序和[storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
 
  
 
@@ -38,37 +38,37 @@ ULONG DriverEntry(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*Argument1* \[中\]  
-是一个指针，微型端口驱动程序必须调用与其**ScsiPortInitialize**。
+\] 中的*Argument1* \[  
+是一个指针，微型端口驱动程序必须调用**ScsiPortInitialize**。
 
-*Argument2* \[中\]  
-是一个指针，微型端口驱动程序必须调用与其**ScsiPortInitialize**。
+\] 中的*Argument2* \[  
+是一个指针，微型端口驱动程序必须调用**ScsiPortInitialize**。
 
 <a name="return-value"></a>返回值
 ------------
 
-**DriverEntry**返回的值将返回**ScsiPortInitialize**。 如果它调用**ScsiPortInitialize**不止一次**DriverEntry**返回返回的最小值**ScsiPortInitialize**。
+**DriverEntry**返回**ScsiPortInitialize**返回的值。 如果多次调用**ScsiPortInitialize** ，则**DriverEntry**将返回**ScsiPortInitialize**返回的最小值。
 
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序**DriverEntry**例程在堆栈上分配内存并初始化 HW\_初始化\_用零的数据结构。 **DriverEntry**必须为零的 HW 中的所有成员\_初始化\_再使用适合的 HBA 微型端口驱动程序的值初始化的数据结构支持。
+微型端口驱动程序的**DriverEntry**例程在堆栈上分配内存，并使用零\_数据结构初始化 HW\_初始化。 **DriverEntry**必须为\_数据结构中的所有成员提供零个\_初始化，然后将其初始化为适用于微型端口驱动程序支持的 HBA 的值。
 
-**DriverEntry**应设置**HwInitializationDataSize**成员添加到**sizeof**(HW\_初始化\_数据) 以指示此结构的版本它是使用，以及初始化为其 HBA(s) 适当的所有成员。
+**DriverEntry**应将**HwInitializationDataSize**成员设置为**sizeof**（HW\_初始化\_数据），以指示该结构使用的是哪个版本的结构，并为其HBA。
 
-下一步， **DriverEntry**调用**ScsiPortInitialize**。 微型端口驱动程序是否支持多个类型的 I/O 总线，如上可以连接的 HBA(s)**微通道**并**Isa**键入总线，则应调用**ScsiPortInitialize**每种类型的 I/O 总线的一次。 这样的微型端口驱动程序必须返回到其调用返回的最小值**ScsiPortInitialize**从**DriverEntry**例程。 微型端口驱动程序编写器可以作出任何假设返回的值**ScsiPortInitialize**。
+接下来， **DriverEntry**调用**ScsiPortInitialize**。 如果微型端口驱动程序支持可连接到多种类型 i/o 总线（例如**MicroChannel**和**Isa**类型总线）的 HBA，则它应为每种类型的 i/o 总线调用**ScsiPortInitialize**一次。 此类微型端口驱动程序必须从**DriverEntry**例程返回对**ScsiPortInitialize**的调用返回的最小值。 小型小型驱动程序编写器不会假设**ScsiPortInitialize**返回的值。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**HW\_INITIALIZATION\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/ns-srb-_hw_initialization_data)
+[ **\_数据的 HW\_初始化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_hw_initialization_data)
 
 [*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))
 
-[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportinitialize)
+[**ScsiPortInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportinitialize)
 
  
 

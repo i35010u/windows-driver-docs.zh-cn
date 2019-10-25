@@ -4,12 +4,12 @@ description: 通过 SCSI 传递请求绕过类驱动程序
 ms.assetid: 7f26e0bc-f01b-4430-aa9f-0f684fdbc2ec
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe7404bb612d108552ef4e8c4a02361f680e9784
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 46668169e6911e62dc4cbccee4f507643d72cca6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368369"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845096"
 ---
 # <a name="bypassing-the-class-driver-with-scsi-pass-through-requests"></a>通过 SCSI 传递请求绕过类驱动程序
 
@@ -17,13 +17,13 @@ ms.locfileid: "67368369"
 ## <span id="ddk_bypassing_the_class_driver_with_scsi_pass_through_requests_kg"></span><span id="DDK_BYPASSING_THE_CLASS_DRIVER_WITH_SCSI_PASS_THROUGH_REQUESTS_KG"></span>
 
 
-在大多数情况下，类驱动程序负责调解 SCSI 端口以及更高级别的驱动程序和应用程序之间的所有通信。 某些目标设备，但是，没有类驱动程序。 通过使用类名为"直通"请求的请求的情况下，此类设备的驱动程序必须直接与 SCSI 端口通信。 若要使用的传递请求，更高级别的组件是必需设置在请求中，使用 CDB，而不是依赖于类驱动程序来执行此操作。
+在大多数情况下，类驱动程序会调节 SCSI 端口和更高级别的驱动程序与应用程序之间的所有通信。 但有些目标设备没有类驱动程序。 此类设备的驱动程序必须使用称为 "传递" 请求的一类请求直接与 SCSI 端口进行通信。 若要使用传递请求，需要较高级别的组件来设置请求中使用的 CDB，而不是依靠类驱动程序来执行此操作。
 
-SCSI 传递请求包含类型 IRP 的 IRP\_MJ\_设备\_IOCTL 代码为控件[ **IOCTL\_SCSI\_传递\_通过**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)或[ **IOCTL\_SCSI\_传递\_THROUGH\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)。 请求，如果通过类驱动程序的类驱动程序是义务设置 IRP **MinorFunction** IRP 的代码\_MJ\_设备\_控件。 SCSI 端口检查此值以确定是否传递请求跳过的类驱动程序。 它是直接向 SCSI 端口发送传递请求，如果目标设备具有已声明的存储类驱动程序应用程序错误。
+SCSI 传递请求包含 IRP 类型为 IRP\_MJ 的 IRP\_设备\_控制，其中包含 ioctl 的 IOCTL 代码[ **\_scsi\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)通过或[**ioctl\_scsi\_通过\_DIRECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)。 如果请求通过类驱动程序，则类驱动程序有义务将 IRP 的**MinorFunction**代码设置为 IRP\_MJ\_设备\_控件。 SCSI 端口检查此值以确定传递请求是否绕过类驱动程序。 如果目标设备已被存储类驱动程序所声称，将直接向 SCSI 端口发送传递请求是应用程序错误。
 
-SCSI 端口不会检查传递的请求中嵌入的 SCSI 命令的有效性。
+SCSI 端口不检查在传递请求中嵌入的 SCSI 命令的有效性。
 
-从存储类驱动程序的角度来看 SCSI 传递请求的讨论，请参阅[处理 SCSI 传递请求](handling-scsi-pass-through-requests.md)
+有关从存储类驱动程序的角度对 SCSI 传递请求的讨论，请参阅[处理 Scsi 传递请求](handling-scsi-pass-through-requests.md)
 
  
 

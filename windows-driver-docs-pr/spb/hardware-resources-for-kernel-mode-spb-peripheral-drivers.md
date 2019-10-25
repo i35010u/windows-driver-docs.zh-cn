@@ -1,26 +1,26 @@
 ---
 title: 内核模式 SPB 外设驱动程序的硬件资源
-description: 代码示例外围设备上存储的 KMDF 驱动程序，并获取的硬件资源。
+description: SPB 上外围设备的 KMDF 驱动程序的代码示例，并获取硬件资源。
 ms.assetid: ABFFCBEC-16AB-44AF-BEF6-34AEE612EAF7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca4240eac03c58d1a86ff9663115359e983cfa95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 054bc2f739205b86cb22239457d927216f59c36b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368415"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845238"
 ---
 # <a name="hardware-resources-for-kernel-mode-spb-peripheral-drivers"></a>内核模式 SPB 外设驱动程序的硬件资源
 
 
-此主题演示中的代码示例如何[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)外围设备上的 (KMDF) 驱动程序[简单的外围总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))（存储） 获取到它需要的硬件资源操作设备。 这些资源中包含的是驱动程序使用建立的逻辑连接到设备的信息。 其他资源可能包括中断和一个或多个 GPIO 输入或输出插针。 (GPIO 引脚是已配置为输入或输出; 有关详细信息的通用 I/O 控制器设备上的 pin，请参阅[常规用途 I/O (GPIO) 驱动程序](https://developer.microsoft.com/windows/hardware)。)与不同的是内存映射的设备，与存储连接的外围设备不需要的系统内存地址将映射到其寄存器的块。
+本主题中的代码示例说明了[简单外围总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))（SPB）上外围设备的[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)（KMDF）驱动程序如何获得操作设备所需的硬件资源。 这些资源包含驱动程序用于建立到设备的逻辑连接的信息。 其他资源可能包括中断和一个或多个 GPIO 输入或输出插针。 （GPIO pin 是一般用途 i/o 控制器设备上的一个配置为输入或输出的 pin; 有关详细信息，请参阅[常规用途 i/o （GPIO）驱动程序](https://developer.microsoft.com/windows/hardware)。）与内存映射的设备不同，由 SPB 连接的外围设备不需要系统内存地址块来将寄存器映射到。
 
-此驱动程序实现了一组插和电源管理事件回调函数。 若要注册这些函数与 KMDF，驱动程序的[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)事件回调函数调用[ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)方法。 框架在调用电源管理事件回调函数来通知中的外围设备电源状态更改的驱动程序。 包含在这些函数是[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)函数，用于执行使该设备驱动程序可以访问所需的任何操作。
+此驱动程序实现一组即插即用和电源管理事件回调函数。 若要将这些函数注册到 KMDF，驱动程序的[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)事件回调函数会调用[**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)方法。 该框架调用电源管理事件回调功能，以通知驱动程序电源设备电源状态发生的更改。 这些函数包括[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)函数，该函数执行使设备可供驱动程序访问所需的任何操作。
 
-电源恢复到外围设备，驱动程序框架将调用*EvtDevicePrepareHardware*函数，以通知此设备必须准备用于存储外围设备驱动程序。 在此调用，驱动程序将收到硬件资源的两个的列表作为输入参数。 *ResourcesRaw*参数是 WDFCMRESLIST 对象句柄的列表[*原始资源*](https://docs.microsoft.com/windows-hardware/drivers/wdf/raw-and-translated-resources)，以及*ResourcesTranslated*参数是 WDFCMRESLIST 对象句柄的列表[*资源转换*](https://docs.microsoft.com/windows-hardware/drivers/wdf/raw-and-translated-resources)。 翻译后的资源包括*连接 ID*驱动程序需要以建立与外围设备的逻辑连接。 有关详细信息，请参阅 [Connection IDs for SPB-Connected Peripheral Devices](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)（SPB 连接的外围设备的连接 ID）。
+当电源恢复到外围设备时，驱动程序框架将调用*EvtDevicePrepareHardware*函数，通知 SPB 外围设备驱动程序必须准备好使用。 在此调用期间，驱动程序收到两个硬件资源列表作为输入参数。 *ResourcesRaw*参数是[*原始资源*](https://docs.microsoft.com/windows-hardware/drivers/wdf/raw-and-translated-resources)列表的 WDFCMRESLIST 对象句柄， *ResourcesTranslated*参数是已[*转换资源*](https://docs.microsoft.com/windows-hardware/drivers/wdf/raw-and-translated-resources)列表的 WDFCMRESLIST 对象句柄。 已翻译的资源包括驱动程序建立与外围设备的逻辑连接所需的*连接 ID* 。 有关详细信息，请参阅 [Connection IDs for SPB-Connected Peripheral Devices](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)（SPB 连接的外围设备的连接 ID）。
 
-下面的代码示例演示如何*EvtDevicePrepareHardware*函数可获取的连接 ID *ResourcesTranslated*参数。
+下面的代码示例演示*EvtDevicePrepareHardware*函数如何从*ResourcesTranslated*参数获取连接 ID。
 
 ```cpp
 BOOLEAN fConnectionIdFound = FALSE;
@@ -91,9 +91,9 @@ for (ULONG ix = 0; ix < resourceCount; ix++)
 }
 ```
 
-前面的代码示例将与存储连接的外围设备的连接 ID 复制到一个名为变量`connectionId`。
+前面的代码示例将与 SPB 连接的外围设备的连接 ID 复制到名为 `connectionId`的变量中。
 
-下面的代码示例演示如何将此连接 ID 合并到可用于打开到外围设备的逻辑连接的设备路径名称。 此设备路径名称作为系统组件，从中获取访问外围设备所需的参数标识的资源中心。
+下面的代码示例演示如何将此连接 ID 合并到设备路径名称中，该名称可用于打开到外围设备的逻辑连接。 此设备路径名称将资源中心标识为要从中获取访问外围设备所需参数的系统组件。
 
 ```cpp
 // Use the connection ID to create the full device path name.
@@ -111,9 +111,9 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-在前面的代码示例中， **DECLARE\_UNICODE\_字符串\_大小**宏创建的一个初始化声明[ **UNICODE\_字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfwdm/ns-wudfwdm-_unicode_string)名为变量`szDeviceName`具有缓冲区足够大以包含资源中心使用的格式中的设备路径名称。 Ntdef.h 标头文件中定义此宏。 **资源\_中心\_路径\_大小**常量设备路径名称中指定的字节数。 **资源\_中心\_创建\_路径\_FROM\_ID**宏生成的设备路径名称从连接 id。 **资源\_集线器\_路径\_大小**并**资源\_中心\_创建\_路径\_FROM\_ID**是Reshub.h 标头文件中定义。
+在上面的代码示例中， **DECLARE\_unicode\_STRING\_SIZE**宏创建一个名为 `szDeviceName` 的已初始化[**UNICODE\_字符串**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)变量的声明，该变量的缓冲区足以包含设备资源中心使用的格式的路径名称。 此宏在 Ntdef 头文件中定义。 **资源\_中心\_路径\_大小**常量指定设备路径名中的字节数。 **资源\_中心\_从\_ID 宏创建\_路径\_从**连接 ID 生成设备路径名。 **资源\_中心\_路径\_大小**和**资源\_中心\_** 在 Reshub 头文件中定义\_ID\_创建\_路径。
 
-下面的代码示例使用的设备路径名称来打开文件句柄 (名为`SpbIoTarget`) 到存储连接的外围设备。
+下面的代码示例使用设备路径名称打开连接到 SPB 的外围设备的文件句柄（名为 `SpbIoTarget`）。
 
 ```cpp
 // Open the SPB peripheral device as a remote I/O target.
@@ -136,11 +136,11 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-在前面的代码示例中， [ **WDF\_IO\_目标\_打开\_PARAMS\_INIT\_打开\_BY\_名称**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_name)函数初始化[ **WDF\_IO\_目标\_打开\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/ns-wdfiotarget-_wdf_io_target_open_params)结构，以便可以打开该驱动程序与外围设备通过指定设备的名称的逻辑连接。 `SpbIoTarget`变量是 framework I/O 目标对象的 WDFIOTARGET 句柄。 此句柄已获取从上次调用[ **WdfIoTargetCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetcreate)方法，而不会显示在示例中。 如果在调用[ **WdfIoTargetOpen** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)方法成功，驱动程序可以使用`SpbIoTarget`句柄将 I/O 请求发送到外围设备。
+在上面的代码示例中， [**WDF\_IO\_目标\_打开\_参数\_INIT\_通过\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_name)函数初始化 WDF\_\_\_[**打开\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ns-wdfiotarget-_wdf_io_target_open_params)结构，以便驱动程序可以通过指定设备的名称来打开到外围设备的逻辑连接。 `SpbIoTarget` 变量是框架 i/o 目标对象的 WDFIOTARGET 句柄。 此句柄是从以前对[**WdfIoTargetCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetcreate)方法的调用获得的，该方法未在示例中显示。 如果对[**WdfIoTargetOpen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)方法的调用成功，驱动程序可以使用 `SpbIoTarget` 句柄向外围设备发送 i/o 请求。
 
-在中*EvtDriverDeviceAdd*事件的回调函数、 存储外围设备驱动程序可以调用[ **WdfRequestCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcreate)方法，以用于分配一个框架请求对象驱动程序。 随后，当不再需要对象时，该驱动程序将调用[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)方法来删除该对象。 该驱动程序可以重复使用从获取 framework request 对象**WdfRequestCreate**多次调用将 I/O 请求发送到外围设备。 对于读取、 写入或 IOCTL 请求，该驱动程序调用[ **WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)， [ **WdfIoTargetSendWriteSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)，或[ **WdfIoTargetSendIoctlSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)方法将请求发送。
+在*EvtDriverDeviceAdd*事件回调函数中，SPB 外设驱动程序可以调用[**WdfRequestCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcreate)方法来分配框架请求对象以供驱动程序使用。 以后不再需要该对象时，驱动程序将调用[**WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)方法来删除该对象。 驱动程序可以重复使用从**WdfRequestCreate**调用获取的框架请求对象，将 i/o 请求发送到外围设备。 对于读取、写入或 IOCTL 请求，驱动程序调用[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)、 [**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)或[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)方法发送请求。
 
-在下面的代码示例，该驱动程序将调用**WdfIoTargetSendWriteSynchronously**若要以同步方式发送[ **IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)对存储连接的外围设备的请求。 在此示例中，开头`pBuffer`变量指向包含要写入到外围设备的数据的非分页缓冲区和`dataSize`变量指定的大小，以字节为单位，此类数据。
+在下面的代码示例中，驱动程序调用**WdfIoTargetSendWriteSynchronously** ，以同步方式向连接到 SPB 的外围设备发送[**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求。 在此示例开始时，`pBuffer` 变量指向包含要写入外围设备的数据的非分页缓冲区，而 `dataSize` 变量指定此数据的大小（以字节为单位）。
 
 ```cpp
 ULONG_PTR bytesWritten;
@@ -172,13 +172,13 @@ if (!NT_SUCCESS(status))
 }
 ```
 
-前面的代码示例将执行以下操作：
+前面的代码示例执行以下操作：
 
-1.  [ **WDF\_内存\_描述符\_INIT\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdf_memory_descriptor_init_buffer)函数调用初始化`memoryDescriptor`变量，这是[ **WDF\_内存\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/ns-wdfmemory-_wdf_memory_descriptor)描述输入的缓冲区的结构。 以前，该驱动程序调用例程如[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)无法分配从非分页缓冲池的缓冲区和写入数据复制到此缓冲区。
-2.  [ **WDF\_请求\_发送\_选项\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdf_request_send_options_init)函数调用初始化`requestOptions`变量，这是[ **WDF\_请求\_发送\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ns-wdfrequest-_wdf_request_send_options)结构，其中包含写入请求的可选设置。 在此示例中，结构配置对超时的请求，如果它不会在两秒后完成。
-3.  在调用**WdfIoTargetSendWriteSynchronously**方法将写入请求发送到存储连接的外围设备。 该方法以同步方式，返回后写入操作完成或超时。如有必要，可以调用另一个驱动程序线程[ **WdfRequestCancelSentRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcancelsentrequest)取消请求。
+1.  [**Wdf\_内存\_描述符\_INIT\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdf_memory_descriptor_init_buffer)函数调用初始化 `memoryDescriptor` 变量，这是描述输入缓冲区的[**WDF\_内存\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/ns-wdfmemory-_wdf_memory_descriptor)结构。 以前，驱动程序调用了例程（如[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) ），以便从非分页池分配缓冲区，并将写入数据复制到此缓冲区。
+2.  [**WDF\_请求\_发送\_选项\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdf_request_send_options_init)函数调用初始化 `requestOptions` 变量，这是一个[**WDF\_请求\_SEND\_OPTIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)结构，其中包含可选设置用于写入请求。 在此示例中，结构将请求配置为在两秒钟后未完成时超时。
+3.  对**WdfIoTargetSendWriteSynchronously**方法的调用会将写入请求发送到已连接到 SPB 的外围设备。 在写操作完成或超时后，方法会同步返回。如有必要，另一个驱动程序线程可以调用[**WdfRequestCancelSentRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcancelsentrequest)来取消请求。
 
-在中**WdfIoTargetSendWriteSynchronously**调用，该驱动程序提供了一个名为变量`SpbRequest`，这是以前创建的驱动程序框架请求对象的句柄。 之后**WdfIoTargetSendWriteSynchronously**调用时，通常应调用该驱动程序[ **WdfRequestReuse** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestreuse)方法以准备 framework 请求对象为再次使用。
+在**WdfIoTargetSendWriteSynchronously**调用中，驱动程序提供名为 `SpbRequest`的变量，该变量是驱动程序之前创建的框架请求对象的句柄。 **WdfIoTargetSendWriteSynchronously**调用之后，驱动程序通常应调用[**WdfRequestReuse**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestreuse)方法来准备要再次使用的 framework 请求对象。
 
  
 

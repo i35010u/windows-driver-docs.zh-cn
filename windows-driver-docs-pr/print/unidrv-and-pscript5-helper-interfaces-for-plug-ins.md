@@ -6,20 +6,20 @@ keywords:
 - IPrintCoreHelperPS
 - IPrintCoreHelperUni
 - IPrintCoreHelper
-- 帮助器接口 WDK 打印机接口 DLL
+- helper 接口 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 68ebf1d245e9d043e14293091c517e9b4843c941
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 38db3f592fc39b4372e909576ad52fb184d2eb91
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378591"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845240"
 ---
 # <a name="unidrv-and-pscript5-helper-interfaces-for-plug-ins"></a>插件的 Unidrv 和 Pscript5 帮助程序接口
 
 
-因为[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperps)并[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelperuni)接口继承[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/prcomoem/nn-prcomoem-iprintcorehelper)接口，所有三个接口共享一组公共的方法。 下表列出了中的帮助程序接口和说明中所有三个接口的方法有并且只有一个接口中的方法有的方法。
+由于[IPrintCoreHelperPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperps)和[IPrintCoreHelperUni](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni)接口继承自[IPrintCoreHelper](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelper)接口，因此所有这三个接口都共享一组公共方法。 下表列出了帮助程序接口中的方法，并说明了哪些方法在所有三个接口中可用，哪些方法仅在一个接口中可用。
 
 <table>
 <colgroup>
@@ -39,11 +39,11 @@ ms.locfileid: "67378591"
 </tr>
 <tr class="even">
 <td><p><strong>ConvertDefaultGDLSnapshot</strong></p></td>
-<td><p><strong>IPrintCoreHelperUni</strong>仅接口</p></td>
+<td><p>仅限<strong>IPrintCoreHelperUni</strong>接口</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ConvertGDLSnapshot</strong></p></td>
-<td><p><strong>IPrintCoreHelperUni</strong>仅接口</p></td>
+<td><p>仅限<strong>IPrintCoreHelperUni</strong>接口</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>CreateInstanceOfMSXMLObject</strong></p></td>
@@ -63,15 +63,15 @@ ms.locfileid: "67378591"
 </tr>
 <tr class="even">
 <td><p><strong>GetFeatureAttribute</strong></p></td>
-<td><p><strong>IPrintCoreHelperPS</strong>仅接口</p></td>
+<td><p>仅限<strong>IPrintCoreHelperPS</strong>接口</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>GetGlobalAttribute</strong></p></td>
-<td><p><strong>IPrintCoreHelperPS</strong>仅接口</p></td>
+<td><p>仅限<strong>IPrintCoreHelperPS</strong>接口</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>GetOptionAttribute</strong></p></td>
-<td><p><strong>IPrintCoreHelperPS</strong>仅接口</p></td>
+<td><p>仅限<strong>IPrintCoreHelperPS</strong>接口</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>GetOption</strong></p></td>

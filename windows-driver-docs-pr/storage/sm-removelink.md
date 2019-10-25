@@ -1,6 +1,6 @@
 ---
 title: SM\_RemoveLink 函数
-description: SM\_RemoveLink WMI 方法配置 WMI 提供程序，以便它将停止将 fabric 链接事件信息传递给 WMI 客户端。
+description: SM\_RemoveLink WMI 方法配置 WMI 提供程序，使其停止将构造链接事件信息传递到 WMI 客户端。
 ms.assetid: 25f6b807-f921-44b6-b087-e5c6ec8c72ec
 keywords:
 - SM_RemoveLink 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1b355b97c6d467b7d55a518f1cb92bfc0ec52f99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1fd09179248ee66dbee3ef9586c9fb9d687c7f6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384304"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845478"
 ---
-# <a name="smremovelink-function"></a>SM\_RemoveLink 函数
+# <a name="sm_removelink-function"></a>SM\_RemoveLink 函数
 
 
-SM\_RemoveLink WMI 方法配置 WMI 提供程序，以便它将停止将 fabric 链接事件信息传递给 WMI 客户端。
+SM\_RemoveLink WMI 方法配置 WMI 提供程序，使其停止将构造链接事件信息传递到 WMI 客户端。
 
 <a name="syntax"></a>语法
 ------
@@ -35,11 +35,11 @@ void SM_RemoveLink(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序返回此信息在 SM HBAStatus 成员\_RemoveLink\_结构。
+操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_RemoveLink\_OUT 结构的 HBAStatus 成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -49,7 +49,7 @@ void SM_RemoveLink(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_将 EventControl WMI 类。
+此 WMI 方法属于 MS\_SM\_EventControl WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -62,21 +62,21 @@ void SM_RemoveLink(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_RemoveLink\_出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_removelink_out)
+[**SM\_RemoveLink\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_removelink_out)
 
  
 

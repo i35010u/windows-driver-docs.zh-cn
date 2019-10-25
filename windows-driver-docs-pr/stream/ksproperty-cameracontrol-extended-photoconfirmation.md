@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION KSPROPERTY 中定义的属性 ID\_CAMERACONTROL\_扩展\_属性枚举是用于设置和驱动程序中获取照片确认设置。
+description: KSPROPERTY\_CAMERACONTROL 中定义的 KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION 属性 ID\_扩展\_属性枚举用于设置和获取照片确认驱动程序中的设置。
 ms.assetid: 3EF6FF15-6805-4D91-B053-1BF6C5D5BEF2
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOCONFIRMATION 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOCONFIRMATION 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,18 +14,18 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 65b21b0bbfe7d4e933510564abbe16154483bc0c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 11c84800d68f581c430166ecfa16be2f5b67ce82
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355363"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844774"
 ---
-# <a name="kspropertycameracontrolextendedphotoconfirmation"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION
+# <a name="ksproperty_cameracontrol_extended_photoconfirmation"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**中定义的属性 ID [ **KSPROPERTY\_CAMERACONTROL\_扩展\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)枚举用于设置和驱动程序中获取照片确认设置。
+[**KSPROPERTY\_CAMERACONTROL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ne-ksmedia-ksproperty_cameracontrol_extended_property)中定义的**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**属性 ID\_用于设置和获取驱动程序中的照片确认设置。
 
-## <a name="usage-summary-table"></a>使用率摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -49,16 +49,16 @@ ms.locfileid: "67355363"
 </tbody>
 </table>
 
-有关[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)，下面的标志值用于启用或禁用照片确认。 默认情况下，该驱动程序应具有**KSPROPERTY\_PHOTOCONFIRMATION\_ON**设置。 标志值定义，如下所示。
+对于[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)，以下标志值用于打开或关闭照片确认。 默认情况下，驱动程序应设置**KSPROPERTY\_PHOTOCONFIRMATION\_** 。 标志值的定义如下。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_OFF     0x0000000000000000 
 #define KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_ON      0x0000000000000001
 ```
 
-如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_OFF**，不能生成照片帧或生成驱动程序预览针[ **KSCAMERA\_元数据\_PHOTOCONFIRMATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)结构，其中包含照片确认元数据。 如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_ON**，驱动程序预览针必须生成照片帧并生成**KSCAMERA\_元数据\_PHOTOCONFIRMATION**结构，其中包含照片确认元数据。
+如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_关闭**，则驱动程序预览 pin 不得生成 photo 帧或生成[**KSCAMERA\_元数据\_PHOTOCONFIRMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_metadata_photoconfirmation)包含照片确认元数据的结构。 如果照片确认设置为**KSCAMERA\_EXTENDEDPROP\_PHOTOCONFIRMATION\_** ，则驱动程序预览 pin 必须生成照片帧并生成**KSCAMERA\_元数据\_PHOTOCONFIRMATION**包含照片确认元数据的结构。
 
-下表包含的说明和要求**KSCAMERA\_EXTENDEDPROP\_标头**结构字段时使用**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**属性。
+下表包含了在使用**KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOCONFIRMATION**时， **KSCAMERA\_EXTENDEDPROP\_标头**结构字段的说明和要求知识产权.
 
 <table>
 <colgroup>
@@ -73,28 +73,28 @@ ms.locfileid: "67355363"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>这必须是 1，</p></td>
+<td><p>版本</p></td>
+<td><p>这必须为1，</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>这必须是<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> (0xFFFFFFFF)</p></td>
+<td><p>这必须是<strong>KSCAMERA_EXTENDEDPROP_FILTERSCOPE</strong> （0xffffffff），</p></td>
 </tr>
 <tr class="odd">
-<td><p>大小</p></td>
-<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>)。</p></td>
+<td><p>Size</p></td>
+<td><p>这必须是 sizeof （<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>） + Sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>）。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
-<td><p>这包含最后一个设置操作的错误结果。 如果未设置操作发生，这必须为 0。</p></td>
+<td><p>这包含上一次设置操作的错误结果。 如果未执行任何设置操作，则此必须为0。</p></td>
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>这必须是 0。</p></td>
+<td><p>这必须是0。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>这是读/写字段。 这可以是任意<strong>KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_Xxx</strong>上面定义的标志。</p></td>
+<td><p>这是一个读/写字段。 这可以是上面定义的任何<strong>KSCAMERA_EXTENDEDPROP_PHOTOCONFIRMATION_Xxx</strong>标志。</p></td>
 </tr>
 </tbody>
 </table>
@@ -108,7 +108,7 @@ ms.locfileid: "67355363"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

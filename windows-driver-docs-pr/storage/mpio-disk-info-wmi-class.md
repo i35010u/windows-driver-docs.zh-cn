@@ -4,17 +4,17 @@ description: MPIO\_磁盘\_信息 WMI 类
 ms.assetid: 75c66c84-d815-43a5-a70d-1952bf0e8d44
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cba52b3b14290427d84f6893bf2b9fe7d4d51bb5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c35ab052a7b69d18e5cae68bbf5c86e7ab355011
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386161"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844976"
 ---
-# <a name="mpiodiskinfo-wmi-class"></a>MPIO\_磁盘\_信息 WMI 类
+# <a name="mpio_disk_info-wmi-class"></a>MPIO\_磁盘\_信息 WMI 类
 
 
-WMI 客户端使用 MPIO\_磁盘\_在系统中配置 MPIO，以便它收集有关每个 MPIO 的信息的磁盘的查询的信息的 WMI 类。
+WMI 客户端使用 MPIO\_磁盘\_信息 WMI 类来查询 MPIO，以便收集有关系统中配置的每个 MPIO 磁盘的信息。
 
 ```cpp
 class MPIO_DISK_INFO
@@ -45,7 +45,7 @@ class MPIO_DISK_INFO
 };
 ```
 
-此类定义时编译的 WMI 工具套件，生成[ **MPIO\_磁盘\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_disk_info)数据结构。 没有与此 WMI 类相关联的方法。
+由 WMI 工具套件编译时，此类定义生成[**MPIO\_磁盘\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_disk_info)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

@@ -4,12 +4,12 @@ description: HBAFC3MgmtInfo WMI 类
 ms.assetid: 7c3e5b7e-aed9-4d82-91d9-e0c7b8f5ddf6
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5cb54755cc1cfaa8b170fd5f8be4b28951dfee71
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 958e34d72cfa4501960f356b9f094c6d3162100c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386183"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845236"
 ---
 # <a name="hbafc3mgmtinfo-wmi-class"></a>HBAFC3MgmtInfo WMI 类
 
@@ -17,9 +17,9 @@ ms.locfileid: "67386183"
 ## <span id="ddk_hbafc3mgmtinfo_wmi_class_kr"></span><span id="DDK_HBAFC3MGMTINFO_WMI_CLASS_KR"></span>
 
 
-WMI 客户端使用 HBAFC3MgmtInfo 类来查询与光纤通道适配器相关联的 FC3 管理信息的 HBA 微型端口驱动程序。 FC3 指光纤通道协议的常见服务层。 它定义一组跨多个端口节点的一些常见的服务。 有关常见服务层的说明，请参阅 T11 委员会*光纤通道 HBA API*规范。
+WMI 客户端使用 HBAFC3MgmtInfo 类在 HBA 微型端口驱动程序中查询与光纤通道适配器关联的 FC3 管理信息。 FC3 是指光纤通道协议的公共服务层。 它定义了一组服务，这些服务在节点的多个端口上通用。 有关 "通用服务" 层的说明，请参阅 T11 委员会*光纤通道 HBA API*规范。
 
-HBAFC3MgmtInfo 类定义中，如下所示*Hbaapi.mof*:
+HBAFC3MgmtInfo 类在*Hbaapi*中定义如下：
 
 ```cpp
 class HBAFC3MgmtInfo {
@@ -45,7 +45,7 @@ class HBAFC3MgmtInfo {
 };
 ```
 
-此类定义时编译的 WMI 工具套件，生成[ **HBAFC3MgmtInfo** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)数据结构。 没有与此 WMI 类相关联的方法。
+由 WMI 工具套件编译时，此类定义生成[**HBAFC3MgmtInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafc3mgmtinfo)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

@@ -1,27 +1,27 @@
 ---
-title: 绕过向 Storport SCSI 传递请求的类驱动程序
-description: 绕过向 Storport SCSI 传递请求的类驱动程序
+title: 使用 SCSI 直通请求跳过对 Storport 的类驱动程序
+description: 使用 SCSI 直通请求跳过对 Storport 的类驱动程序
 ms.assetid: 1162a1e7-a4f8-446f-8106-527f9b916382
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ac6ba120790f9800eeed420e23bde4bfc7245d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69ef1a01a31c56466e4634e2c594ab4c2a9e7eb5
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362681"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845100"
 ---
-# <a name="bypass-a-class-driver-with-scsi-pass-through-requests-to-storport"></a>绕过向 Storport SCSI 传递请求的类驱动程序
+# <a name="bypass-a-class-driver-with-scsi-pass-through-requests-to-storport"></a>使用 SCSI 直通请求跳过对 Storport 的类驱动程序
 
-在大多数情况下，类驱动程序负责调解 Storport 和更高级别的驱动程序和应用程序之间的所有通信。 某些目标设备，但是，没有类驱动程序。 此类设备的驱动程序必须直接与 Storport 通信通过使用名为"直通"请求的请求的类。 若要使用的传递请求，更高级别的组件是必需设置在请求中，使用 CDB，而不是依赖于类驱动程序来执行此操作。
+在大多数情况下，类驱动程序会调节 Storport 和更高级别的驱动程序与应用程序之间的所有通信。 但有些目标设备没有类驱动程序。 此类设备的驱动程序必须使用称为 "传递" 请求的一类请求直接与 Storport 通信。 若要使用传递请求，需要较高级别的组件来设置请求中使用的 CDB，而不是依靠类驱动程序来执行此操作。
 
-如果类驱动程序和设备声明，然后"传递"请求必须将定向到的类驱动程序通过打开相应的设备句柄。 如果设备没有类驱动程序且未声明该设备，然后"传递"请求可能会直接发送到适配器，同样，通过打开相应的设备句柄。
+如果存在类驱动程序，并且设备已声明，则必须通过打开相应的设备句柄，将 "传递" 请求定向到类驱动程序。 如果没有设备的类驱动程序，并且未声明设备，则可以通过打开相应的设备句柄，将 "传递" 请求直接发送到适配器。
 
-SCSI 传递请求包含类型 IRP 的 IRP\_MJ\_设备\_IOCTL 代码控件[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)或[ **IOCTL\_SCSI\_传递\_THROUGH\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)。 请求，如果通过类驱动程序的类驱动程序是设置有义务**MinorFunction** IRP 到 IRP 代码\_MJ\_设备\_控件。 Storport 检查此值以确定是否传递请求跳过的类驱动程序。 它是应用程序错误将传递请求直接发送到 Storport 如果目标设备具有已声明的存储类驱动程序。
+SCSI 传递请求包含 IRP 类型为 IRP\_MJ 的 IRP\_设备\_控制，其中包含 ioctl 的 IOCTL 代码[ **\_scsi\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)通过或[**ioctl\_\_DIRECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)。 如果请求通过类驱动程序，则类驱动程序有义务将 IRP 的**MinorFunction**代码设置为 IRP\_MJ\_设备\_控件。 Storport 检查此值以确定传递请求是否绕过类驱动程序。 如果目标设备已被存储类驱动程序所声称，则将传递请求直接发送到 Storport 会出现应用程序错误。
 
-Storport 不会检查传递的请求中嵌入的 SCSI 命令的有效性。
+Storport 不检查在传递请求中嵌入的 SCSI 命令的有效性。
 
-从存储类驱动程序的角度来看 SCSI 传递请求的讨论，请参阅[处理 SCSI 传递请求](handling-scsi-pass-through-requests.md)。
+有关从存储类驱动程序的角度对 SCSI 传递请求的讨论，请参阅[处理 Scsi 传递请求](handling-scsi-pass-through-requests.md)。
 
  
 

@@ -4,44 +4,44 @@ description: 查询虚拟功能的 PCI 基址寄存器
 ms.assetid: 99C2BF61-E87E-4C3B-BE7E-C16B5318EC1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 774154db042ba94c4b4d2b42ea47b3786673811a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee82180401a4dbcd3f01fb2e529eeb7440d7b0bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377045"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844870"
 ---
 # <a name="querying-the-pci-base-address-registers-of-a-virtual-function"></a>查询虚拟功能的 PCI 基址寄存器
 
-**请注意**此方法只能由过量的 HYPER-V 父分区在管理操作系统中运行的驱动程序。
+**注意**此方法只能由 Hyper-v 父分区的管理操作系统中运行的过量驱动程序使用。
 
-PCI 总线驱动程序，它运行在管理操作系统的 HYPER-V 父分区中，查询的内存或 I/O 地址空间的要求的每个 PCI 基本注册 （的地址栏） 的网络适配器。 PCI 总线驱动程序第一次检测到总线上的适配器时执行此查询。
+PCI 总线驱动程序在 Hyper-v 父分区的管理操作系统中运行，它查询网络适配器的每个 PCI 基址寄存器（BAR）的内存或 i/o 地址空间要求。 PCI 总线驱动程序在第一次检测总线上的适配器时执行此查询。
 
-PCI 栏此查询中，通过 PCI 总线驱动程序确定：
+通过此 PCI BAR 查询，PCI 总线驱动程序将确定以下各项：
 
--   无论网络适配器是否支持 PCI 栏。
+-   网络适配器是否支持 PCI BAR。
 
--   如果支持一个栏，则是栏需要多少内存或 I/O 地址空间。
+-   如果支持一个条，则条需要多少内存或 i/o 地址空间。
 
-PCI 驱动程序按下述方式执行此 PCI 栏查询：
+PCI 驱动程序通过以下方式执行此 PCI BAR 查询：
 
-1.  PCI 驱动程序第一次写入都是 1 到栏。
+1.  PCI 驱动程序首先将所有数据写入一个条形。
 
-2.  PCI 驱动程序然后读取确定所需的内存或地址空间所需的条形的条形图。 零值指示网络适配器不支持在栏。
+2.  然后，PCI 驱动程序会读取条来确定所需的内存或地址空间。 如果值为零，则表示网络适配器不支持此栏。
 
-在 HYPER-V 子分区的来宾操作系统中运行虚拟 PCI (VPCI) 总线驱动程序。 PCI Express (PCIe) 虚拟函数 (VF) 附加到子分区，VPCI 总线驱动程序公开的虚拟网络适配器，以便 VF (*VF 网络适配器*)。 它执行此操作之前，VPCI 总线驱动程序必须执行 PCI 栏查询以确定所需的内存或 VF 网络适配器所需的地址空间。
+虚拟 PCI （VPCI）总线驱动程序在 Hyper-v 子分区的来宾操作系统中运行。 当 PCI Express （PCIe）虚拟功能（VF）附加到子分区时，VPCI 总线驱动程序将公开用于 VF （*vf 网络适配器*）的虚拟网络适配器。 在执行此之前，VPCI bus 驱动程序必须执行 PCI BAR 查询来确定 VF 网络适配器所需的内存或地址空间。
 
-由于对 PCI 配置空间的访问是一项特权的操作，只能由管理操作系统的 HYPER-V 父分区中运行的组件执行。 NDIS 当 VPCI 总线驱动程序查询 PCI 条时，发出的对象标识符 (OID) 查询请求[OID\_SRIOV\_PROBED\_条](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-probed-bars)到 PF 微型端口驱动程序。 此 OID 查询请求返回的结果将转发到 VPCI 总线驱动程序，以便它可以确定需要多少内存地址空间 VF 网络适配器。
+由于对 PCI 配置空间的访问是一项特权操作，因此它只能由 Hyper-v 父分区的管理操作系统中运行的组件执行。 当 VPCI 总线驱动程序查询 PCI 条时，NDIS 发出[OID\_SRIOV](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-probed-bars)的对象标识符（oid）查询请求，\_探测到 PF 微型端口驱动程序\_条。 此 OID 查询请求返回的结果将转发到 VPCI 总线驱动程序，以便它可以确定 VF 网络适配器所需的内存地址空间量。
 
-**请注意**  OID 请求的 OID\_SRIOV\_栏\_只可由 NDIS 发出资源。 不必须由基础驱动程序，例如协议或筛选器驱动程序颁发的 OID 请求。
+**请注意**，  OID\_SRIOV\_BAR\_资源只能由 NDIS 发出。 OID 请求不得由过量驱动程序发出，如协议或筛选器驱动程序。
 
  
 
-OID\_SRIOV\_PROBED\_条查询请求包含[ **NDIS\_SRIOV\_PROBED\_条\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)结构。 当 PF 微型端口驱动程序处理此 OID 时，则驱动程序必须返回引用的数组中的 PCI 栏值**BaseRegisterValuesOffset**的成员**NDIS\_SRIOV\_PROBED\_条\_信息**结构。 每个数组内的偏移量，PF 微型端口驱动程序必须设置为在相同物理网络适配器的 PCI 配置空间内的偏移量的栏的 ULONG 值的数组元素。
+\_探测的 OID\_SRIOV 探测的\_条查询请求包含\_INFO 结构\_探测到的[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 。 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须在由 NDIS\_SRIOV 的**BaseRegisterValuesOffset**成员引用的数组中返回 PCI BAR 值， **\_探测的\_条\_信息**结构。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理网络适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
 
-每个条由驱动程序返回的值必须是将遵循 PCI 条查询，因为由管理操作系统中运行的 PCI 驱动程序执行的相同值。 PF 微型端口驱动程序可以调用[ **NdisMQueryProbedBars** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismqueryprobedbars)来确定此信息。
+驱动程序返回的每个条形值的值都必须与在管理操作系统中运行的 PCI 驱动程序执行的 PCI BAR 查询遵循的值相同。 PF 微型端口驱动程序可以调用[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars)来确定此信息。
 
-有关基址寄存器 PCI 设备的详细信息，请参阅*PCI 本地总线规范*。
+有关 PCI 设备的基本地址寄存器的详细信息，请参阅*Pci 本地总线规范*。
 
  
 

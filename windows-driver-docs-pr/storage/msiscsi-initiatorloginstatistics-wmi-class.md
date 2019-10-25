@@ -4,14 +4,14 @@ description: MSiSCSI\_InitiatorLoginStatistics WMI 类
 ms.assetid: cbbfdc11-2c8a-4afa-b62f-187f8c959750
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 059387eb0d3cee259ff723582dbcabff61634da6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fdc41680faf1194a5929c0557612e578249c49ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370455"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845356"
 ---
-# <a name="msiscsiinitiatorloginstatistics-wmi-class"></a>MSiSCSI\_InitiatorLoginStatistics WMI 类
+# <a name="msiscsi_initiatorloginstatistics-wmi-class"></a>MSiSCSI\_InitiatorLoginStatistics WMI 类
 
 
 ## <span id="ddk_msiscsi_initiatorloginstatistics_wmi_class_kr"></span><span id="DDK_MSISCSI_INITIATORLOGINSTATISTICS_WMI_CLASS_KR"></span>
@@ -19,9 +19,9 @@ ms.locfileid: "67370455"
 
 MSiSCSI\_InitiatorLoginStatistics WMI 类公开登录统计信息。
 
-因为此类与存储微型端口驱动程序的特定实例相关联，微型端口驱动程序必须注册使用的微型端口驱动程序管理的特定的物理设备对象 (PDO) 名称的类。
+由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象（PDO）的名称来注册该类。
 
-MSiSCSI\_InitiatorLoginStatistics 类中定义*Iscsiprf.mof*。
+MSiSCSI\_InitiatorLoginStatistics 类是在*Iscsiprf*中定义的。
 
 ```cpp
 class MSiSCSI_InitiatorLoginStatistics : Win32_PerfRawData {
@@ -100,7 +100,7 @@ class MSiSCSI_InitiatorLoginStatistics : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_InitiatorLoginStatistics** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_initiatorloginstatistics)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_InitiatorLoginStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_initiatorloginstatistics)数据结构。
 
  
 

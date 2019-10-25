@@ -1,6 +1,6 @@
 ---
 title: SM\_SendCTPassThru 函数
-description: SM\_SendCTPassThru WMI 方法将常见的传输 (CT) 传递命令发送到指定的端口。
+description: SM\_SendCTPassThru WMI 方法将通用传输（CT）传递命令发送到指定的端口。
 ms.assetid: 437f0c79-78f6-406e-8774-79de4425bfe8
 keywords:
 - SM_SendCTPassThru 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f93a07a8e4efc80a30fc2d5139e9bfd0b07aaf99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d33f65e26d17829f2e018bc8fbcecbe757898e8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384290"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845464"
 ---
-# <a name="smsendctpassthru-function"></a>SM\_SendCTPassThru 函数
+# <a name="sm_sendctpassthru-function"></a>SM\_SendCTPassThru 函数
 
 
-SM\_SendCTPassThru WMI 方法将常见的传输 (CT) 传递命令发送到指定的端口。
+SM\_SendCTPassThru WMI 方法将通用传输（CT）传递命令发送到指定的端口。
 
 <a name="syntax"></a>语法
 ------
@@ -42,32 +42,32 @@ void SM_SendCTPassThru(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HbaPortWWN*   
-通过它访问目标 HBA 全球通用名称 (WWN)。 此信息传递到 SendCTPassThru 端口全球通用名称成员中的微型端口驱动程序\_结构中。
+用于访问目标的 HBA 的全球名称（WWN）。 此信息将传送到结构中 SendCTPassThru\_的 PortWWN 成员中的微型端口驱动程序。
 
 *InRespBufferMaxSize*   
 响应缓冲区的最大大小。
 
 *RequestBufferSize*   
-以字节为单位，将保存常见传输命令的结果的缓冲区的大小。 微型端口驱动程序返回此信息在 SM RequestBufferSize 成员\_SendCTPassThru\_结构中。
+将保存通用传输命令结果的缓冲区的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendCTPassThru 的 RequestBufferSize 成员中以结构的\_返回此信息。
 
 *RequestBuffer*   
-常见的传输命令的结果。 微型端口驱动程序返回此信息在 SM RequestBuffer 成员\_SendCTPassThru\_结构中。
+常见传输命令的结果。 微型端口驱动程序在 SM\_SendCTPassThru 的 RequestBuffer 成员中以结构的\_返回此信息。
 
 *HBAStatus*   
-操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序返回此信息在 SM HBAStatus 成员\_SendCTPassThru\_结构。
+操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_SendCTPassThru\_OUT 结构的 HBAStatus 成员中返回此信息。
 
 *TotalResponseBufferSize*   
-以字节为单位，结果常见传输命令的大小。 微型端口驱动程序返回此信息在 SM TotalResponseBufferSize 成员\_SendCTPassThru\_结构。
+常见传输命令的结果大小（以字节为单位）。 微型端口驱动程序在 SM\_SendCTPassThru\_OUT 结构的 TotalResponseBufferSize 成员中返回此信息。
 
 *ActualResponseBufferSize*   
-以字节为单位的实际检索数据的大小。 微型端口驱动程序返回此信息在 SM ActualResponseBufferSize 成员\_SendCTPassThru\_结构。
+实际检索到的数据的大小（以字节为单位）。 微型端口驱动程序在 SM\_SendCTPassThru\_OUT 结构的 ActualResponseBufferSize 成员中返回此信息。
 
 *ResponseBuffer*   
-常见的传输命令的结果。 微型端口驱动程序返回此信息在 SM ResponseBuffer 成员\_SendCTPassThru\_结构。
+常见传输命令的结果。 微型端口驱动程序在 SM\_SendCTPassThru\_OUT 结构的 ResponseBuffer 成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -90,23 +90,23 @@ void SM_SendCTPassThru(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [HBA\_状态](hba-status.md)
 
-[**SM\_SendCTPassThru\_IN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_in)
+[**SM\_SendCTPassThru\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_in)
 
-[**SM\_SendCTPassThru\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_out)
+[**SM\_SendCTPassThru\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_sendctpassthru_out)
 
  
 

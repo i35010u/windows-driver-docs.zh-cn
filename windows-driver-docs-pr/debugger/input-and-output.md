@@ -3,34 +3,34 @@ title: 输入和输出
 description: 输入和输出
 ms.assetid: 78e181c1-c577-49ca-910b-d2e8db2495b5
 keywords:
-- 调试器引擎、 输入和输出
+- 调试器引擎、输入和输出
 - 输入和输出
-- output
+- 输出
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8250722a6d024e828b40747ef8118cb982e5047
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 90c7131ff684e7436542f7d4f788ac2ab2c3bef7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366825"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826399"
 ---
 # <a name="input-and-output"></a>输入和输出
 
 
-输入和输出设施[调试器引擎](introduction.md#debugger-engine)可用于交互式调试器操作和日志记录。 命令和响应键入的用户，通常表示输入和输出通常表示向用户显示或发送到日志文件的信息。
+[调试器引擎](introduction.md#debugger-engine)的输入和输出功能可用于交互式调试器操作和日志记录。 输入通常表示用户键入的命令和响应，输出通常表示向用户显示的信息或发送到日志文件的信息。
 
-调试器引擎维护*输入的流*和一个*输出流*。 输入可请求从输入的流和输出发送到输出流。
+调试器引擎维护*输入流*和*输出流*。 可以从输入流请求输入，并将输出发送到输出流。
 
-当[**输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol-input)方法调用来请求从该引擎的输入流输入时，引擎将调用所有已注册[输入回调](using-input-and-output.md#input-callbacks)通知他们，它是等待输入。 然后，在等待输入进行输入，通过调用的回调[ **ReturnInput** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-returninput)方法。
+当调用[**输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol-input)方法以请求引擎输入流中的输入时，引擎将调用所有注册的[输入回调](using-input-and-output.md#input-callbacks)以通知它们正在等待输入。 然后，它会等待输入回调通过调用[**ReturnInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-returninput)方法提供输入。
 
-当输出发送到引擎的输出流时，引擎将调用的已注册[输出回调](using-input-and-output.md#output-callbacks)将输出传递给它们。 当将输出发送到输出流，它可以筛选由客户端对象中;在这种情况下，仅向注册的特定客户端对象的输出回调将接收输出。
+当输出发送到引擎的输出流时，引擎将调用向其传递输出的已注册[输出回调](using-input-and-output.md#output-callbacks)。 在将输出发送到输出流时，可以通过客户端对象对其进行筛选。在这种情况下，仅向特定客户端对象注册的输出回调将接收输出。
 
-到远程客户端以透明方式提供的输入和输出流。 远程客户端可以请求输入并将输出发送到引擎的输入和输出流中，引擎将调用注册远程客户端请求的输入或输出发送到回调。
+远程客户端可以透明地使用输入流和输出流。 远程客户端可以请求输入并将输出发送到引擎的输入和输出流，引擎将调用向远程客户端注册的回调以请求输入或发送输出。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关使用输入和输出的详细信息，请参阅[使用输入和输出](using-input-and-output.md)。 有关客户端对象的信息和输入和输出回调，请参阅[客户端对象](client-objects.md)。
+有关使用输入和输出的详细信息，请参阅[使用输入和输出](using-input-and-output.md)。 有关客户端对象以及输入和输出回调的详细信息，请参阅[客户端对象](client-objects.md)。
 
  
 

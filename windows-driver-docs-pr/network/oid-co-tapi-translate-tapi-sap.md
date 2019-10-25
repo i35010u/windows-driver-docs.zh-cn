@@ -1,23 +1,23 @@
 ---
 title: OID_CO_TAPI_TRANSLATE_TAPI_SAP
-description: 本主题介绍 OID_CO_TAPI_TRANSLATE_TAPI_SAP 对象标识符 (OID)。
+description: 本主题介绍 OID_CO_TAPI_TRANSLATE_TAPI_SAP 对象标识符（OID）。
 ms.assetid: 701a1d02-8528-4b61-adbb-97c817194ac7
 keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_SAP
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0302579e16016b3888e93830325792b502140949
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c257d84f9ff3b34a23b0685d4a170f3cd4145a29
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385503"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844948"
 ---
-# <a name="oidcotapitranslatetapisap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
+# <a name="oid_co_tapi_translate_tapi_sap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
 
-OID_CO_TAPI_TRANSLATE_TAPI_SAP OID 请求要准备从 TAPI 调用参数的一个或多个 SAPs 的呼叫管理器或 MCM 的集成驱动程序。 查询此 OID 的客户端使用 NDIS SAP 返回的呼叫管理器或作为输入的 MCM 驱动程序 (格式为[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构) 到[NdisClRegisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)，该客户端调用上注册 SAP要接收传入的呼叫。
+OID_CO_TAPI_TRANSLATE_TAPI_SAP OID 请求调用管理器或集成 MCM 驱动程序，以便从 TAPI 调用参数中准备一个或多个 Sap。 查询此 OID 的客户端使用调用管理器或 MCM 驱动程序返回的 NDIS SAP 作为输入（格式化为[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构）到[NdisClRegisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)，客户端调用该客户端调用来注册要接收传入调用的 SAP。
 
-此请求使用 CO_TAPI_TRANSLATE_SAP 结构，其定义，如下所示：
+此请求使用 CO_TAPI_TRANSLATE_SAP 结构，定义如下：
 
 ```c++
 typedef struct _CO_TAPI_TRANSLATE_SAP {
@@ -30,74 +30,74 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 } CO_AF_TAPI_SAP, *PCO_AF_TAPI_SAP;
 ```
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
 **ulLineID**  
-指定的从零开始的行标识符。
+指定从零开始的行标识符。
 
 **ulAddressID**  
-通过指定的行上指定的从零开始的地址标识符**ulLineID**。
+指定由**ulLineID**指定的行中的从零开始的地址标识符。
 
 **ulMediaModes**  
-指定的调用的客户端很感兴趣，作为一个或多个以下 LINEMEDIAMODE_constants 信息流的媒体模式： 
+指定客户端所感兴趣的信息流的媒体模式，作为以下一个或多个 LINEMEDIAMODE_constants： 
 
 - **LINEMEDIAMODE_UNKNOWN**  
-媒体流存在，但其模式是当前未知的可能会变得更高版本已知。 这对应于具有未分类的媒体类型的调用。 在典型的模拟电话服务环境中的传入呼叫的媒体模式可能未知直到后应答呼叫和已筛选的媒体流来确定。 
+媒体流存在，但其模式目前未知，以后可能会被识别。 这对应于具有未分类媒体类型的调用。 在典型的模拟电话服务环境中，传入呼叫的媒体模式可能是未知的，直到呼叫得到应答并筛选出媒体流进行确定。 
 
-    如果**LINEMEDIAMODE_UNKNOWN**设置标志，还可以设置其他媒体标志。 这表示媒体是未知但可能需要其他指示的媒体模式之一。
+    如果设置了**LINEMEDIAMODE_UNKNOWN**标志，还可以设置其他媒体标志。 这表明媒体是未知的，但它可能是其他指定媒体模式之一。
 
 - **LINEMEDIAMODE_INTERACTIVEVOICE**  
-语音能源上调用，并调用存在被视为具有两个边界的人类的交互式调用。
+电话上的语音能量出现，并且呼叫被视为交互式呼叫，这两个端点都是这样的。
 
 - **LINEMEDIAMODE_AUTOMATEDVOICE**  
-通过自动化应用程序本地处理的调用和语音的语音能源状态。
+电话上出现语音能量，语音由自动应用程序在本地处理。
 
 - **LINEMEDIAMODE_DATAMODEM**  
-在调用数据调制解调器会话。
+调用中的数据调制解调器会话。
 
 - **LINEMEDIAMODE_G3FAX**  
-组 3 传真正在通过调用发送或接收。
+通过呼叫发送或接收组3传真。
 
 - **LINEMEDIAMODE_G4FAX**  
-正在组 4 传真发送或接收通过调用。
+通过呼叫发送或接收组4传真。
 
 - **LINEMEDIAMODE_TDD**  
-在调用一个 TDD （对于失聪电信设备） 会话。
+呼叫上的 TDD （用于失聪的电信设备）会话。
 
 - **LINEMEDIAMODE_DIGITALDATA**  
-数字数据正在通过调用发送或接收。
+通过呼叫发送或接收数字数据。
 
 - **LINEMEDIAMODE_TELETEX**  
-在调用 teletex 会话。 （Teletex 是信息通讯业务服务之一。）
+调用上的 teletex 会话。 （Teletex 是 telematic 服务之一。）
 
 - **LINEMEDIAMODE_VIDEOTEX**  
-在调用 videotex 会话。 (Videotex 是一个信息通讯业务服务。)
+调用上的 videotex 会话。 （Videotex 是 telematic 服务之一。）
 
 - **LINEMEDIAMODE_TELEX**  
-在调用电报会话。 （电报是信息通讯业务服务之一。）
+调用上的电传会话。 （电传是 telematic services 之一。）
 
 - **LINEMEDIAMODE_MIXED**  
-在调用混合的会话。 （混合是 ISDN 信息通讯业务服务之一。）
+调用时的混合会话。 （Mixed 是 ISDN telematic 服务之一。）
 
 - **LINEMEDIAMODE_ADSI**  
-在调用 ADSI （模拟显示服务接口） 会话。
+调用中的 ADSI （模拟显示服务接口）会话。
 
 - **LINEMEDIAMODE_VOICEVIEW**  
-在调用媒体模式下是 VoiceView。
+调用的媒体模式为 VoiceView。
 
-**保留**  
-这会保留。 客户端必须将此字段设置为 0。
+**保护**  
+这是保留的。 客户端必须将此字段设置为0。
 
 **NumberOfSaps**  
-指定的数量[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))缓冲区中包含结构**NdisSapParams**。
+指定**NdisSapParams**中包含在缓冲区中的[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构的数量。
 
 **NdisSapParams**  
-指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的变长数组。 每个 NDIS_VAR_DATA_DESC 结构包含的偏移量，以及的长度[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构。 每个 CO_SAP 结构指定的面向连接的客户端可以接收传入调用的服务访问点 (SAP)。
+指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的可变长度数组。 每个 NDIS_VAR_DATA_DESC 结构都包含偏移量，以及[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的长度。 每个 CO_SAP 结构都指定了一个面向连接的客户端可以在其上接收传入呼叫的服务访问点（SAP）。
 
 ## <a name="requirements"></a>要求
 
 | | |
 | --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows Vista 及更高版本 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 

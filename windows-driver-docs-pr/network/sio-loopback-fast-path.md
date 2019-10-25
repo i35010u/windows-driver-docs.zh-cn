@@ -1,27 +1,27 @@
 ---
 title: SIO_LOOPBACK_FAST_PATH 控制代码
-description: SIO_LOOPBACK_FAST_PATH 套接字 I/O 控制代码允许 WSK 的应用程序配置 TCP 套接字的环回接口上更快的操作。
+description: SIO_LOOPBACK_FAST_PATH 套接字 i/o 控制代码允许 WSK 应用程序配置 TCP 套接字，以便更快地在环回接口上操作。
 ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
-keywords: -SIO_LOOPBACK_FAST_PATH 控制代码与 Windows Vista 一起启动的网络驱动程序
+keywords: -SIO_LOOPBACK_FAST_PATH 控制从 Windows Vista 开始的代码网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 172c07a24ceaa78e3d45fe9013a6bf0f8bc76e96
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4362a8a503cb4b8cd314c936e46421ee36fb51d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379161"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841913"
 ---
-# <a name="sioloopbackfastpath-control-code"></a>SIO\_环回\_快速\_路径控制代码
+# <a name="sio_loopback_fast_path-control-code"></a>SIO\_环回\_快速\_路径控制代码
 
 
-**重要**   **SIO\_环回\_快速\_路径**已弃用，并且不建议在代码中使用。
+**重要**  **SIO\_环回\_快速\_路径**已弃用，不建议在代码中使用。
 
  
 
-**SIO\_环回\_快速\_路径**套接字 I/O 控制代码允许 WSK 的应用程序配置 TCP 套接字的环回接口上更快的操作。
+**SIO\_环回\_快速\_路径**套接字 i/o 控制代码允许 WSK 应用程序配置 TCP 套接字，以便更快地在环回接口上操作。
 
-若要使用此 IOCTL，WSK 应用程序调用[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)使用以下参数的函数。
+若要使用此 IOCTL，WSK 应用程序需要使用以下参数调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数。
 
 <table>
 <colgroup>
@@ -31,7 +31,7 @@ ms.locfileid: "67379161"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>值</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -44,16 +44,16 @@ ms.locfileid: "67379161"
 <td><p><strong>SIO_LOOPBACK_FAST_PATH</strong></p></td>
 </tr>
 <tr class="odd">
-<td><p><em>Level</em></p></td>
+<td><p><em>调配</em></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="even">
 <td><p><em>InputSize</em></p></td>
-<td><p>以字节为单位，输入缓冲区的大小。</p></td>
+<td><p>输入缓冲区的大小（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>指向输入缓冲区的指针。 此参数包含一个指向<strong>布尔</strong>值，该值指示是否套接字应该配置为快速 loopback 操作。</p></td>
+<td><p>指向输入缓冲区的指针。 此参数包含一个指向布尔值的指针，该<strong>布尔</strong>值指示是否应为快速环回操作配置套接字。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>
@@ -61,11 +61,11 @@ ms.locfileid: "67379161"
 </tr>
 <tr class="odd">
 <td><p><em>OutputBuffer</em></p></td>
-<td><p><strong>NULL</strong></p></td>
+<td><p><strong>无效</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSizeReturned</em></p></td>
-<td><p><strong>NULL</strong></p></td>
+<td><p><strong>无效</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p>Irp</p></td>
@@ -76,39 +76,39 @@ ms.locfileid: "67379161"
 
  
 
-应用程序可以使用**SIO\_环回\_快速\_路径**IOCTL，以提高针对 TCP 套接字的 loopback 操作的性能。 此 IOCTL 请求 TCP/IP 堆栈的 loopback 操作的此套接字使用特殊的快速路径。 **SIO\_环回\_快速\_路径**IOCTL 可以仅可用于 TCP 套接字。 在环回会话的两端必须采用此 IOCTL。 使用的 IPv4 或 IPv6 环回接口支持 TCP 环回快速路径。
+应用程序可以使用**SIO\_环回\_快速\_路径**IOCTL，提高 TCP 套接字上环回操作的性能。 此 IOCTL 请求 TCP/IP 堆栈为此套接字上的环回操作使用特殊的快速路径。 **SIO\_环回\_快速\_路径**IOCTL 只能与 TCP 套接字一起使用。 此 IOCTL 必须在环回会话两侧使用。 使用 IPv4 或 IPv6 环回接口支持 TCP 环回快速路径。
 
-计划来启动连接请求的套接字必须在发出连接请求之前应用此 IOCTL。 侦听连接请求的套接字必须申请此 IOCTL 接受连接。
+计划启动连接请求的套接字必须应用此 IOCTL，才能发出连接请求。 侦听连接请求的套接字必须应用此 IOCTL 才能接受连接。
 
-一旦应用程序建立使用快速路径环回接口上的连接，连接的生存期内的所有数据包必须都使用快速路径。
+当应用程序使用 fast 路径在环回接口上建立连接后，该连接的生存期的所有数据包都必须使用快速路径。
 
-将应用**SIO\_环回\_快速\_路径**到套接字将连接到非环回路径会产生任何效果。
+将**SIO\_环回\_快速\_路径**连接到将连接到非回送路径的套接字将不起作用。
 
-此 TCP 环回优化会导致流通过传输层 (TL) 而不是传统环回通过网络层的数据包。 此优化可优化的环回数据包延迟。 连接级别设置，以使用环回快速路径的情况下，应用程序中选择，所有数据包将都按照环回路径。 对于环回通信，不应拥塞和数据包丢弃。 将不必要的拥塞控制和 TCP 中的可靠传递的概念。 但是，这不用于流控制，则返回 true。 没有流控制发件人会占用大量的接收缓冲区中，从而导致错误 TCP 环回行为。 TCP 优化的环回路径中的流控制由将发送请求置于队列中进行维护。 接收缓冲区已满时，TCP/IP 堆栈将保证发送队列已得到处理，维护流控制之前，不会完成。
+此 TCP 环回优化导致数据包通过传输层（TL）而不是通过网络层进行传统环回。 此优化可缩短环回数据包的延迟时间。 一旦某个应用程序将连接级别设置为使用环回快速路径，所有数据包就会按照环回路径进行。 对于环回通信，不需要拥塞和数据包丢弃。 TCP 中的拥塞控制和可靠传递的概念是不必要的。 不过，对于流控制，这种情况并不适用。 如果没有 flow 控制，发送方可能会严重影响接收缓冲区，从而导致 TCP 环回行为错误。 通过在队列中放置发送请求，维护 TCP 优化环回路径中的流控制。 当接收缓冲区已满时，TCP/IP 堆栈保证发送完成后才会完成，直到处理队列，维护流控制。
 
-出现的情况下连接数据的 Windows 筛选平台 (WFP) 标注 TCP 的快速路径环回连接必须执行的未优化的环回是慢速路径。 因此 WFP 筛选器将阻止从正在使用此新的环回快速路径。 启用 WFP 筛选器后，系统将使用慢速路径即使**SIO\_环回\_快速\_路径**IOCTL 已设置。 接下来就用户模式应用程序具有完整的 WFP 安全功能。
+如果存在用于连接数据的 Windows 筛选平台（WFP）标注，则 TCP 快速路径环回连接必须采用未优化的慢速路径进行环回。 因此，WFP 筛选器将阻止使用此新的环回快速路径。 启用 WFP 筛选器后，即使设置了**SIO\_环回\_快速\_路径**IOCTL，系统也会使用慢速路径。 这可以了用户模式应用程序具有完整的 WFP 安全功能。
 
-默认情况下**SIO\_环回\_快速\_路径**被禁用。
+默认情况下， **SIO\_环回\_快速\_路径**处于禁用状态。
 
-TCP/IP 套接字选项的一个子集是支持何时**SIO\_环回\_快速\_路径**IOCTL 用于启用对套接字的环回快速路径。 支持的选项的列表包括：
+当**SIO\_环回\_快速\_路径**IOCTL 用于在套接字上启用环回快速路径时，仅支持 tcp/ip 套接字选项的子集。 支持的选项列表包括以下各项：
 
 -   IP\_TTL
--   IP\_UNICAST\_IF
--   IPV6\_UNICAST\_HOPS
--   IPV6\_UNICAST\_IF
+-   IP\_单播\_
+-   IPV6\_单播\_跃点
+-   IPV6\_单播\_
 -   IPV6\_V6ONLY
--   [**SO\_CONDITIONAL\_ACCEPT**](https://docs.microsoft.com/windows/desktop/WinSock/so-conditional-accept)
--   [SO\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows/desktop/WinSock/so-exclusiveaddruse)
--   [**因此\_端口\_可伸缩性**](https://docs.microsoft.com/windows/desktop/WinSock/so-port-scalability)
--   SO\_RCVBUF
--   因此\_REUSEADDR
+-   [**因此\_条件\_接受**](https://docs.microsoft.com/windows/desktop/WinSock/so-conditional-accept)
+-   [\_EXCLUSIVEADDRUSE](https://docs.microsoft.com/windows/desktop/WinSock/so-exclusiveaddruse)
+-   [ **\_端口\_可伸缩性**](https://docs.microsoft.com/windows/desktop/WinSock/so-port-scalability)
+-   \_RCVBUF
+-   \_REUSEADDR
 -   TCP\_BSDURGENT
 
-WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskControlSocket** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_control_socket)对于此类型的请求的函数。 应用程序必须释放缓冲区，直到完成 IRP WSK 子系统。 完成后 IRP，子系统调用完成例程。 在完成例程中，应用程序必须检查 IRP 状态并释放它以前已分配给请求的所有资源。
+为此类型的请求调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)函数时，WSK 应用程序必须指定指向 IRP 和完成例程的指针。 在 WSK 子系统完成 IRP 之前，应用程序不能释放缓冲区。 完成 IRP 后，子系统将调用完成例程。 在完成例程中，应用程序必须检查 IRP 状态，并释放以前为请求分配的所有资源。
 
-有关 WSK IRP 处理的详细信息，请参阅[Winsock 内核函数使用 Irp](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)。
+有关 WSK IRP 处理的详细信息，请参阅将[irp 与 Winsock 内核函数配合使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)。
 
-完成后 IRP，将设置子系统*Irp-&gt;IoStatus.Status*到**状态\_成功**如果请求成功。 否则为*Irp-&gt;IoStatus.Status*将设置为**状态\_无效\_缓冲区\_大小**或**状态\_未\_支持**如果调用不成功。
+完成 IRP 后，如果请求成功，子系统会将*IRP&gt;IoStatus*设置为**status\_SUCCESS** 。 否则， *Irp&gt;IoStatus*将设置为 "**状态\_无效的\_缓冲区\_大小**或状态，如果调用不成功，则**不\_支持**。
 
 ## <a name="return-value"></a>返回值
 
@@ -131,7 +131,7 @@ WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskCont
 <td><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Mstcpip.h</td>
 </tr>
 <tr class="even">
@@ -141,12 +141,12 @@ WSK 应用程序调用时必须指定一个指向 IRP 和完成例程[ **WskCont
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SIO\_LOOPBACK\_FAST\_PATH (SDK)** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
+[**SIO\_环回\_快速\_路径（SDK）** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj841212(v=vs.85))
 
-[Irp 使用 Winsock 内核函数](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
+[将 Irp 与 Winsock 内核函数结合使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)
 
  
 

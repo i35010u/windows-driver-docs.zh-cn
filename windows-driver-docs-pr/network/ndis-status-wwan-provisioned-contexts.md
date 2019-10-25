@@ -1,32 +1,32 @@
 ---
 title: NDIS_STATUS_WWAN_PROVISIONED_CONTEXTS
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PROVISIONED_CONTEXTS 通知来告知 MB 服务有关的预配的上下文，由于网络更新列表的更新。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PROVISIONED_CONTEXTS 通知来通知 MB 服务有关预配上下文列表的更新作为网络更新的结果。
 ms.assetid: 3ec3d991-98c0-4be3-a157-a04e8565a54b
 ms.date: 08/08/2017
-keywords: -NDIS_STATUS_WWAN_PROVISIONED_CONTEXTS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PROVISIONED_CONTEXTS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 44590017fcb49bb1b7d14f9937555c8e88c13f36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 574e248b92c76aaa41d49953d2870c8834e5b6da
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377590"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844694"
 ---
-# <a name="ndisstatuswwanprovisionedcontexts"></a>NDIS\_状态\_WWAN\_已设置\_上下文
+# <a name="ndis_status_wwan_provisioned_contexts"></a>\_WWAN\_预配\_上下文的 NDIS\_状态
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_已设置\_上下文通知来通知 MB 服务有关的预配的上下文，由于网络更新列表的更新。
+微型端口驱动程序使用 NDIS\_状态\_WWAN\_预配\_上下文通知，以通知 MB 服务作为网络更新的结果对预配上下文列表进行的更新。
 
-微型端口驱动程序还可以发送未经请求的事件与该通知。
+小型端口驱动程序还可以通过此通知发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_已预配\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts)结构。
+此通知使用[**NDIS\_WWAN\_预配\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts)结构。
 
 <a name="remarks"></a>备注
 -------
 
-微型端口驱动程序必须设置**ElementType**成员的 NDIS\_WWAN\_已预配\_上下文结构**ContextListHeader**到**WwanStructContext**。
+微型端口驱动程序必须将 NDIS\_WWAN\_预配\_上下文**结构的** **ContextListHeader**设置为**WwanStructContext**。
 
-在某些情况下，预配的上下文的列表更新的网络是无线 (OTA) 或短消息服务 (SMS)。 微型端口驱动程序必须相应地更新预配的上下文的列表。 此后，微型端口驱动程序必须通知有关此指示使用的更新列表的更新 MB 服务。
+在某些情况下，已设置上下文的列表由网络通过无线（OTA）或短消息服务（SMS）进行更新。 微型端口驱动程序必须相应地更新已设置上下文的列表。 此后，小型端口驱动程序必须将此指示用于更新的列表，通知 MB 服务有关更新的信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -38,22 +38,22 @@ ms.locfileid: "67377590"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h</td>
+<td><p>标头</p></td>
+<td>Ndis。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_已设置\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts)
+[**NDIS\_WWAN\_预配\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_provisioned_contexts)
 
-[OID\_WWAN\_已设置\_上下文](oid-wwan-provisioned-contexts.md)
+[OID\_WWAN\_预配\_上下文](oid-wwan-provisioned-contexts.md)
 
  
 

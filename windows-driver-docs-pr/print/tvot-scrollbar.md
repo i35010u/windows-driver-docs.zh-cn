@@ -14,64 +14,64 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c359f89e7bada64120c3a59c160aa32746e28ca0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b256d933cc42181733fef9ade4559eafb8ccf387
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362758"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845248"
 ---
-# <a name="tvotscrollbar"></a>TVOT\_滚动条
+# <a name="tvot_scrollbar"></a>TVOT\_滚动条
 
 
 ## <span id="ddk_tvot_scrollbar_gg"></span><span id="DDK_TVOT_SCROLLBAR_GG"></span>
 
 
-TVOT\_包含组框中的滚动条的滚动条选项类型。
+TVOT\_滚动条选项类型包括分组框中的滚动条。
 
-<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optitem)结构  
+<span id="OPTITEM_Structure"></span><span id="optitem_structure"></span><span id="OPTITEM_STRUCTURE"></span>[**OPTITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optitem)构造  
 
 <span id="Sel_pSel"></span><span id="sel_psel"></span><span id="SEL_PSEL"></span>**Sel/pSel**  
-值，该值表示当前滚动条的位置。
+表示当前滚动条位置的值。
 
-<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_optparam)结构数组 (**pOptParam**的成员[ **OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype))  
+<span id="OPTPARAM_Structure_Array__pOptParam_member_of_OPTTYPE_"></span><span id="optparam_structure_array__poptparam_member_of_opttype_"></span><span id="OPTPARAM_STRUCTURE_ARRAY__POPTPARAM_MEMBER_OF_OPTTYPE_"></span>[**OPTPARAM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_optparam)结构数组（ [**OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)的**pOptParam**成员）  
 
 <span id="pData"></span><span id="pdata"></span><span id="PDATA"></span>**pData**  
-**pOptParam**\[0\]-&gt;**pData**指向标识滚动栏单位的以 NULL 结尾的文本字符串。
+**pOptParam**\[0\]-&gt;**PDATA**指向以 NULL 结尾的文本字符串，该字符串标识滚动条单位。
 
-**pOptParam**\[1\]-&gt;**pData**指向描述滚动条范围的低端的以 NULL 结尾的文本字符串。
+**pOptParam**\[1\]-&gt;**PDATA**指向以 NULL 结尾的文本字符串，该字符串描述滚动条范围的下限。
 
-**pOptParam**\[2\]-&gt;**pData**到 aNULL 终止文本字符串，描述滚动条范围的高端点。
+**pOptParam**\[2\]-&gt;**pData**指向 aNULL 结束的文本字符串，该字符串描述滚动条范围的上限。
 
 <span id="IconID"></span><span id="iconid"></span><span id="ICONID"></span>**IconID**  
-**pOptParam**\[0\]-&gt;**IconID**标识要与滚动条相关联的图标。
+**pOptParam**\[0\]-&gt;**IconID**标识与滚动条关联的图标。
 
-**pOptParam**\[1\]-&gt;**IconID**指定表示滚动条范围的低端的 16 位有符号的值。
+**pOptParam**\[1\]-&gt;**IconID**指定一个16位有符号值，该值表示滚动条范围的下限。
 
-**pOptParam**\[2\]-&gt;**IconID**指定 mulitplication 的因子，显示其值之前应用于所选的滚动位置。 （通常情况下，此值为 1。）
+**pOptParam**\[2\]-&gt;**IconID**指定在显示其值之前应用于所选滚动位置的 mulitplication 系数。 （通常情况下，此值为1。）
 
 <span id="lParam"></span><span id="lparam"></span><span id="LPARAM"></span>**lParam**  
-**pOptParam**\[0\]-&gt;**lParam**不使用。
+未使用**pOptParam**\[0\]-&gt;**lParam** 。
 
-**pOptParam**\[1\]-&gt;**lParam**指定表示滚动条范围的高端的 16 位有符号的值。
+**pOptParam**\[1\]-&gt;**lParam**指定一个16位有符号值，该值表示滚动条范围的上限。
 
-**pOptParam**\[2\]-&gt;**lParam**指定滚动的增量值。
+**pOptParam**\[2\]-&gt;**lParam**指定滚动增量值。
 
-<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_opttype)结构  
+<span id="OPTTYPE_Structure"></span><span id="opttype_structure"></span><span id="OPTTYPE_STRUCTURE"></span>[**OPTTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_opttype)构造  
 
-<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**Type**  
+<span id="Type"></span><span id="type"></span><span id="TYPE"></span>**类别**  
 TVOT\_滚动条
 
-<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**Count**  
+<span id="Count"></span><span id="count"></span><span id="COUNT"></span>**计**  
 3
 
-<span id="Style"></span><span id="style"></span><span id="STYLE"></span>**Style**  
+<span id="Style"></span><span id="style"></span><span id="STYLE"></span>**方式**  
 不使用。
 
 <span id="BegCtrlID"></span><span id="begctrlid"></span><span id="BEGCTRLID"></span>**BegCtrlID**  
-如果**pDlgPage**中[ **COMPROPSHEETUI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_compropsheetui)标识 CPSUI 提供的页，或者如果**DlgTemplateID**中[ **DLGPAGE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/compstui/ns-compstui-_dlgpage)标识 CPSUI 提供模板**BegCtrlID**不使用。
+如果[**COMPROPSHEETUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_compropsheetui)中的**pDlgPage**标识 CPSUI 提供的页面，或[**DLGPAGE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/ns-compstui-_dlgpage)中的**DlgTemplateID**标识 CPSUI 提供的模板，则不使用**BegCtrlID** 。
 
-否则为**BegCtrlID**必须包含一组按顺序编号的控件标识符的第一个控件标识符。 控件标识符必须标识以下 Windows 控件：
+否则， **BegCtrlID**必须包含按顺序编号的控件标识符集的第一个控件标识符。 控件标识符必须标识以下 Windows 控件：
 
 <table>
 <colgroup>
@@ -98,35 +98,35 @@ TVOT\_滚动条
 <td><p>滚动条</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>BegCtrlID</strong>内容加上 3</p></td>
-<td><p>滚动栏图标</p></td>
+<td><p><strong>BegCtrlID</strong>内容 + 3</p></td>
+<td><p>滚动条图标</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>BegCtrlID</strong>内容 + 4</p></td>
-<td><p>描述的滚动条范围低端的文本</p></td>
+<td><p>描述滚动条范围低端的文本</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>BegCtrlID</strong>内容 + 5</p></td>
-<td><p>描述滚动条范围的高端的文本</p></td>
+<td><p>描述滚动条范围的上限的文本</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>BegCtrlID</strong>内容 + 6</p></td>
-<td><p>描述滚动栏单位的文本</p></td>
+<td><p>描述滚动条单位的文本</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>BegCtrlID</strong>内容 + 7</p></td>
-<td><p>扩展的复选框或扩展下压按钮 （可选）</p></td>
+<td><p>"扩展" 复选框或扩展的 "推送" 按钮（可选）</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>BegCtrlID</strong>内容 + 8</p></td>
-<td><p>扩展的复选框或扩展下压按钮图标 （可选）</p></td>
+<td><p>"扩展" 复选框或 "扩展" 推送按钮图标（可选）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-有关其他信息，请参阅[Customizing CPSUI-Supported 窗口控件](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)。
+有关其他信息，请参阅[自定义 CPSUI 支持的窗口控件](https://docs.microsoft.com/windows-hardware/drivers/print/customizing-cpsui-supported-window-controls)。
 
 <a name="requirements"></a>要求
 ------------
@@ -138,8 +138,8 @@ TVOT\_滚动条
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Compstui.h （包括 Compstui.h）</td>
+<td><p>标头</p></td>
+<td>Compstui （包括 Compstui）</td>
 </tr>
 </tbody>
 </table>

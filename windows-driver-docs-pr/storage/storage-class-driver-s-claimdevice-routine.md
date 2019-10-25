@@ -4,17 +4,17 @@ description: 存储类驱动程序的 ClaimDevice 例程
 ms.assetid: 175b9be6-34a5-4d20-970c-aa9a6880c242
 keywords:
 - ClaimDevice
-- 声明存储设备
-- 查询属性请求 WDK 存储
-- WDk 存储的配置信息
+- 申报存储设备
+- 查询-属性请求 WDK 存储
+- 配置信息 WDk 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec72bdf62e6b2af47e79d227969c2c5ab70614ca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af0e257b64ba7707630f4f5c92bbf9ecebd090b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368219"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844750"
 ---
 # <a name="storage-class-drivers-claimdevice-routine"></a>存储类驱动程序的 ClaimDevice 例程
 
@@ -22,15 +22,15 @@ ms.locfileid: "67368219"
 ## <span id="ddk_storage_class_drivers_claimdevice_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_CLAIMDEVICE_ROUTINE_KG"></span>
 
 
-*ClaimDevice*例程，用于对声明的存储设备，通常称为从[存储类驱动程序 AddDevice 例程](storage-class-driver-s-adddevice-routine.md)。
+声明存储设备的*ClaimDevice*例程通常是从[存储类驱动程序的 AddDevice 例程](storage-class-driver-s-adddevice-routine.md)中调用的。
 
-若要声明的存储设备，类驱动程序对设备对象的引用通过调用来获取[ **IoGetAttachedDeviceReference** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iogetattacheddevicereference)与传递给的类驱动程序中的 PDO *AddDevice*调用，则操作会调用内部*ClaimDevice*例程从其*AddDevice*例程或实现相同功能内联。 一个*ClaimDevice*例程设置 SRB**函数**值 SRB\_函数\_声明\_设备并将其发送到的设备对象返回的类驱动程序的调用**IoGetAttachedDeviceReference**。
+若要声明存储设备，类驱动程序可以通过在*AddDevice*调用中通过将 PDO 与类驱动程序一起调用来调用[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)来获取对设备对象的引用，然后从调用内部*ClaimDevice*例程它的*AddDevice*例程或实现内嵌相同的功能。 *ClaimDevice*例程使用**函数**值 SRB\_函数\_声明\_设备设置一个 SRB，并将其发送到类驱动程序调用**IoGetAttachedDeviceReference**返回的设备对象。
 
-*ClaimDevice*例程分配与 IRP [ **IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)、 设置端口驱动程序的 I/O 堆栈位置使用的 I/O 控制代码 IOCTL\_SCSI\_EXECUTE\_NONE 和指向在 SRB **Parameters.Scsi.Srb**。 *ClaimDevice*还必须设置一个事件对象与**KeInitializeEvent**以便它可以等待的 IRP 完成。 然后，它将发送到下一步低驱动程序和 IRP [ **IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)。
+*ClaimDevice*例程使用[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)分配 IRP，使用 i/o 控制代码 IOCTL 设置端口驱动程序的 I/O 堆栈位置\_SCSI\_执行\_NONE 和指向 SRB**的指针Srb**。 *ClaimDevice*还必须使用**KeInitializeEvent**设置事件对象，以便它可以等待完成 IRP 的操作。 然后，它会将 IRP 发送到带有[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的下一个较低版本的驱动程序。
 
-完成 IRP *ClaimDevice*应释放对返回的设备对象的引用**IoGetAttachedDeviceReference**。
+IRP 完成后， *ClaimDevice*应发布对**IoGetAttachedDeviceReference**返回的设备对象的引用。
 
-一个*ClaimDevice*例程可以充当要从类驱动程序调用的例程 double 值班*RemoveDevice*例程，或从*AddDevice*如果驱动程序成功声明该设备，但不能创建一个设备对象。 在这种情况下， *ClaimDevice*发送与 SRB**函数**值 SRB\_函数\_版本\_设备。
+*ClaimDevice*例程可以将双义务作为要从类驱动程序的*RemoveDevice*例程调用的例程，或者，如果驱动程序成功在为设备提供服务，但无法创建设备对象，则可以通过*AddDevice* 。 在这种情况下， *ClaimDevice*将使用**函数**value SRB\_函数\_RELEASE\_设备发送 SRB。
 
  
 

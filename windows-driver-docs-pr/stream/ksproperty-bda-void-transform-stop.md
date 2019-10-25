@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_BDA\_VOID\_TRANSFORM\_STOP
-description: 客户端使用 KSPROPERTY\_BDA\_VOID\_转换\_停止来停止节点的操作。
+title: KSPROPERTY\_BDA\_VOID\_转换\_停止
+description: 客户端使用 KSPROPERTY\_BDA\_VOID\_转换\_停止操作来停止节点的操作。
 ms.assetid: fa9a7cb3-b802-4417-a2cc-9061f95cce67
 keywords:
-- KSPROPERTY_BDA_VOID_TRANSFORM_STOP 流式处理媒体设备
+- KSPROPERTY_BDA_VOID_TRANSFORM_STOP 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b62cc8884a9941682c2cad2f92c88fd2d32012a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57b744e010043e8567015b84f9fa0a5a8e1f4f07
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330304"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845310"
 ---
-# <a name="kspropertybdavoidtransformstop"></a>KSPROPERTY\_BDA\_VOID\_TRANSFORM\_STOP
+# <a name="ksproperty_bda_void_transform_stop"></a>KSPROPERTY\_BDA\_VOID\_转换\_停止
 
 
-客户端使用 KSPROPERTY\_BDA\_VOID\_转换\_停止来停止节点的操作。
+客户端使用 KSPROPERTY\_BDA\_VOID\_转换\_停止操作来停止节点的操作。
 
 ## <span id="ddk_ksproperty_bda_void_transform_stop_ks"></span><span id="DDK_KSPROPERTY_BDA_VOID_TRANSFORM_STOP_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "63330304"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,8 +50,8 @@ ms.locfileid: "63330304"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>否</p></td>
-<td><p>是</p></td>
+<td><p>无</p></td>
+<td><p>“是”</p></td>
 <td><p>Filter</p></td>
 <td><p>KSPROPERTY</p></td>
 <td><p>无</p></td>
@@ -71,16 +71,16 @@ ms.locfileid: "63330304"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Bdamedia.h （包括 Bdamedia.h）</td>
+<td><p>标头</p></td>
+<td>Bdamedia （包括 Bdamedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

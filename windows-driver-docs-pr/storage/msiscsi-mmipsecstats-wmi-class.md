@@ -4,24 +4,24 @@ description: MSiSCSI\_MMIPSECStats WMI 类
 ms.assetid: fda67ca5-58b6-4338-a7c2-b1058bd11a57
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7e4febaa63ad958676d0b5407ae920463a81e37f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba8831c885da5970dafb14de37fa21f56e7f5911
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384680"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845346"
 ---
-# <a name="msiscsimmipsecstats-wmi-class"></a>MSiSCSI\_MMIPSECStats WMI 类
+# <a name="msiscsi_mmipsecstats-wmi-class"></a>MSiSCSI\_MMIPSECStats WMI 类
 
 
 ## <span id="ddk_msiscsi_mmipsecstats_wmi_class_kr"></span><span id="DDK_MSISCSI_MMIPSECSTATS_WMI_CLASS_KR"></span>
 
 
-MSiSCSI\_MMIPSECStats WMI 类公开了主模式 IPsec 统计信息。
+MSiSCSI\_MMIPSECStats WMI 类公开主模式 IPsec 统计信息。
 
-因为此类与存储微型端口驱动程序的特定实例相关联，微型端口驱动程序必须注册使用的微型端口驱动程序管理的特定的物理设备对象 (PDO) 名称的类。
+由于此类与存储微型端口驱动程序的特定实例相关联，因此微型端口驱动程序必须使用微型端口驱动程序管理的特定物理设备对象（PDO）的名称来注册该类。
 
-MSiSCSI\_MMIPSECStats 类中定义*Iscsiprf.mof*。
+MSiSCSI\_MMIPSECStats 类是在*Iscsiprf*中定义的。
 
 ```cpp
 class MSiSCSI_MMIPSECStats : Win32_PerfRawData {
@@ -259,7 +259,7 @@ class MSiSCSI_MMIPSECStats : Win32_PerfRawData {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **MSiSCSI\_MMIPSECStats** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsiprf/ns-iscsiprf-_msiscsi_mmipsecstats)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_MMIPSECStats**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_mmipsecstats)数据结构。
 
  
 

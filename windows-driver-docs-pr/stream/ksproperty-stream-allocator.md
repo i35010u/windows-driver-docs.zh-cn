@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_流\_分配器
-description: KSPROPERTY\_流\_分配器属性是可选属性，如果 pin 分配流缓冲区，或者可以提供一个分配器应实现
+title: KSPROPERTY\_STREAM\_分配器
+description: KSPROPERTY\_STREAM\_分配器属性是一个可选属性，如果 pin 分配流缓冲区或可提供分配器，则应实现该属性。
 ms.assetid: 9a13efe6-4ad4-49bc-b9f1-10c22b47d9d0
 keywords:
-- KSPROPERTY_STREAM_ALLOCATOR 流式处理媒体设备
+- KSPROPERTY_STREAM_ALLOCATOR 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d720349855711e149387112f4503ff8f025a1042
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdb64a6fbb1850fe785dcb3b99d69f6c7748ae4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392706"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844966"
 ---
-# <a name="kspropertystreamallocator"></a>KSPROPERTY\_流\_分配器
+# <a name="ksproperty_stream_allocator"></a>KSPROPERTY\_STREAM\_分配器
 
 
-KSPROPERTY\_流\_分配器属性是可选属性，如果 pin 分配流缓冲区，或者可以提供一个分配器应实现
+KSPROPERTY\_STREAM\_分配器属性是一个可选属性，如果 pin 分配流缓冲区或可提供分配器，则应实现该属性。
 
 ## <span id="ddk_ksproperty_stream_allocator_ks"></span><span id="DDK_KSPROPERTY_STREAM_ALLOCATOR_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_流\_分配器属性是可选属性，如果 pin 分配流缓冲区�
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_流\_分配器属性是可选属性，如果 pin 分配流缓冲区�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p>句柄</p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p>柄</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ KSPROPERTY\_流\_分配器属性是可选属性，如果 pin 分配流缓冲区�
 <a name="remarks"></a>备注
 -------
 
-返回的值始终是**NULL**处理。 但是，支持取决于调用是否成功返回。
+返回的值始终为**NULL**句柄。 但是，支持由调用是否成功返回决定。
 
-该属性设置分配给流连接点的分配器的句柄。 KSPIN 的连接点\_通信\_源检查属性，以确定应使用的数据分配的分配器的句柄。 此属性通常由如 DirectShow 的图形管理器设置。
+属性设置分配给流连接点的分配器的句柄。 KSPIN\_通信的连接点\_源检查属性，以确定应该用于数据分配的分配器的句柄。 此属性通常由图形管理器（如 DirectShow）设置。
 
-分配器句柄获得，并可以用于设置另一个筛选器固定的分配器。 使用分配器的筛选器必须引用要获取的文件对象的指针和分配新的分配器时或当连接关闭时取消引用的文件对象的对象。 此外可以查询属性以确定此连接点是否支持提供分配器。
+获取分配器句柄，并可用于为另一个筛选器 pin 设置分配器。 使用分配器的筛选器必须引用对象，以获取指向文件对象的指针，并在分配新分配器或关闭连接时取消引用文件对象。 还可以查询属性以确定此连接点是否支持提供分配器。
 
 <a name="requirements"></a>要求
 ------------
@@ -80,16 +80,16 @@ KSPROPERTY\_流\_分配器属性是可选属性，如果 pin 分配流缓冲区�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ks.h （包括 Ks.h）</td>
+<td><p>标头</p></td>
+<td>Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
 

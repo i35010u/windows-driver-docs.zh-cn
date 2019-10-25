@@ -1,20 +1,20 @@
 ---
-title: DSM\_负载\_平衡\_策略\_V2 WMI 类
-description: DSM\_负载\_平衡\_策略\_V2 WMI 类
+title: DSM\_负载\_均衡\_策略\_V2 WMI 类
+description: DSM\_负载\_均衡\_策略\_V2 WMI 类
 ms.assetid: 8895d0ca-b9bd-4f8d-bf8f-4ba2f459c264
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1921d549cb23d68f36a0cce6dde726b9b27a1b56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d473314a9ab2e9bcdb2c8172cca233f18bb08792
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368239"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845164"
 ---
-# <a name="dsmloadbalancepolicyv2-wmi-class"></a>DSM\_负载\_平衡\_策略\_V2 WMI 类
+# <a name="dsm_load_balance_policy_v2-wmi-class"></a>DSM\_负载\_均衡\_策略\_V2 WMI 类
 
 
-MPIO 发布 DSM\_负载\_平衡\_策略\_V2 WMI 类但需要进行注册，GUID 和处理其实现的 DSM。 MPIO 驱动程序使用 DSM\_加载\_平衡\_策略\_V2 WMI 类，以标识应用于 MPIO 磁盘的负载平衡策略。
+MPIO\_负载发布 DSM 负载\_均衡\_策略\_V2 WMI 类，但要求 DSM 注册 GUID 并处理其实现。 MPIO 驱动程序使用 DSM\_负载\_均衡\_策略\_V2 WMI 类，以标识应用于 MPIO 磁盘的负载平衡策略。
 
 ```cpp
 class DSM_Load_Balance_Policy_V2
@@ -83,7 +83,7 @@ class DSM_Load_Balance_Policy_V2
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成[ **DSM\_负载\_平衡\_策略\_V2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy_v2)数据结构。 没有与此 WMI 类相关联的方法。
+当 WMI 工具套件编译此类定义时，它将生成[**DSM\_负载\_均衡\_策略\_V2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiodisk/ns-mpiodisk-_dsm_load_balance_policy_v2)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

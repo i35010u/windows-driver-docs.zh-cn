@@ -1,179 +1,179 @@
 ---
-Description: 想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 的常见问题。
-title: 常见问题-Windows 系统上的 USB C 型连接器
+Description: 希望用 USB 类型 C 连接器构建 Windows 系统的 Oem 的常见问题。
+title: FAQ-Windows 系统上的 USB 类型 C 连接器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0fe390047cdfb56f12883d905e64b32aac8aa4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec045e2702731f2542d91625d4b2f56c4d880466
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363911"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845006"
 ---
-# <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答：Windows 系统上的 USB 类型 C 连接器
+# <a name="faq-usb-type-c-connector-on-a-windows-system"></a>常见问题解答： Windows 系统上的 USB 类型 C 连接器
 
-**Windows 版本**:
+**Windows 版本**：
 
 * Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 * Windows 10 移动版
 
-针对想要构建通过 USB 类型 C 连接器的 Windows 系统的 Oem 的讨论的常见点。
+针对想要用 USB 类型 C 连接器构建 Windows 系统的 Oem 的常见讨论点。
 
 * [USB 类型 C 连接器功能](#usb-type-c-connector-features)
-* [备用模式需要进行协商，如分发点 2 道 vs 操作系统输入。DP 4-lane](#operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane)
-* [预操作系统与类型 C PD 收费](#pre-os-charging-with-type-c-and-pd)
-* [若要启用扩展方案，如连续体的 USB 主机时收费电话](#charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum)
-* [Windows 10 移动版支持 USB 布告栏设备](#windows10-mobile-support-of-usb-billboard-devices)
-* [在早期版本的 Windows 上支持 USB 类型-C](#support-for-usb-type-c-on-earlier-versions-of-windows)
-* [在早期版本的 Windows 支持 UCSI](#ucsi-support-on-earlier-versions-of-windows)
+* [需要协商备用模式的操作系统输入，例如 DP 2 通道与 DP 4 通道](#operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane)
+* [类型 C 和 PD 的预操作系统收费](#pre-os-charging-with-type-c-and-pd)
+* [在电话为 USB 主机时对电话进行收费，以启用扩展方案，例如 Continuum](#charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum)
+* [USB 布告栏设备的 Windows 10 移动版支持](#windows10-mobile-support-of-usb-billboard-devices)
+* [在早期版本的 Windows 上支持 USB 类型 C](#support-for-usb-type-c-on-earlier-versions-of-windows)
+* [Windows 早期版本上的 UCSI 支持](#ucsi-support-on-earlier-versions-of-windows)
 * [如何测试 UCSI 的实现](#how-to-test-an-implementation-of-ucsi)
-* [条件和不同的错误的用户界面](#conditions-and-ui-for-the-different-errors)
-* [非 PD 端口连接到 PD 提供程序并不是 PD 提供程序的系统的 PD 使用者](#connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider)
-* [连接到不支持这些功能的 PC 的闪电、 SuperMHL 或 PCI express](#connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities)
-* [支持和 MTP 通过 USB 类型-C 在 Windows 中的限制](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
-* [如何向下游设备和中心建立连接和通信与 USB 连接器管理器 (UCM)](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
-* [USB 类型 C MUTT HLK 测试要求](#usb-type-c-mutt-requirements-for-hlk-tests)
-* [Microsoft 支持 P2P 之间的数据传输相同的 Windows 10 SKU](#microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku)
-* [UCM 类扩展 (UcmCx) 通信使用 PMIC 或电池驱动程序来获取或设置充电状态](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
-* [HLK 支持 USB 类型-C](#hlk-support-for-usb-type-c)
+* [不同错误的条件和 UI](#conditions-and-ui-for-the-different-errors)
+* [将非 PD 端口连接到 PD 提供程序，将 PD 使用者连接到不是 PD 提供程序的系统](#connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider)
+* [将闪电、SuperMHL 或 PCI express 连接到不支持这些功能的电脑](#connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities)
+* [Windows 中通过 USB 类型 C 进行 MTP 的支持和限制](#support-and-limitations-for-mtp-over-usb-type-c-in-windows)
+* [下游设备和集线器如何连接和与 USB 连接器管理器通信（UCM）](#how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm)
+* [针对 HLK 测试的 USB 类型-C MUTT 要求](#usb-type-c-mutt-requirements-for-hlk-tests)
+* [Microsoft 对同一 Windows 10 SKU 之间的 P2P 数据传输的支持](#microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku)
+* [UCM 类扩展（UcmCx）与 PMIC 或电池驱动程序通信以获取/设置充电状态](#ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status)
+* [对 USB 类型 C 的 HLK 支持](#hlk-support-for-usb-type-c)
 * [UCSI](#ucsi)
 * [测试 Windows 10 上运行的 UCSI 实现](#test-a-ucsi-implementation-running-on-windows-10)
-* [测试 Windows 10 上的 UCMCx 客户端驱动程序](#test-a-ucmcx-client-driver-on-windows-10)
-* [VBus/VConn 控制和角色切换由 UCM 类扩展插件处理的操作](#vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension)
+* [在 Windows 10 上测试 UCMCx 客户端驱动程序](#test-a-ucmcx-client-driver-on-windows-10)
+* [UCM 类扩展处理的 VBus/VConn 控件和角色切换操作](#vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension)
 
 ## <a name="usb-type-c-connector-features"></a>USB 类型 C 连接器功能
 
 ### <a name="symmetric-and-reversible-design"></a>对称和可逆设计
 
-* 连接器已*对称*。 电缆有 USB 类型 C 连接器上允许使用 USB 类型 C 连接器对主机和函数设备每一端。 下面是将连接器进行比较的图像：
-* 连接器旨在作为*可逆*。 传统的连接器必须已连接"右端的启动"。 使用可逆的设计中，可以翻转连接器。
+* 连接器为*对称*连接器。 每个端点上都有一个 USB 类型 C 连接器，允许主机和功能设备使用 USB 类型 C 连接器。 下面是比较连接器的图像：
+* 连接器设计为*可逆*。 传统连接器必须连接到 "右对齐"。 利用可逆的设计，可以翻转连接器。
 
-### <a name="supports-all-usb-device-speeds"></a>支持所有 USB 设备的速度
+### <a name="supports-all-usb-device-speeds"></a>支持所有 USB 设备速度
 
-连接器可支持 SuperSpeed （包括 SS +） 是低速度、 最快速度、 高速的 USB 设备。
+连接器可以支持全速、全速、高速、SuperSpeed （包括 SS +）的 USB 设备。
 
 ### <a name="alternate-modes"></a>备用模式
 
-连接器可以支持*备用模式*。 备用模式功能允许非 USB 协议通过 USB 电缆，运行时同时保留 USB 2.0 和计费功能。 目前，最受欢迎的备用模式是 DisplayPort/DockPort 和 MHL。
+连接器可以支持*备用模式*。 备用模式功能允许非 USB 协议通过 USB 电缆运行，同时保留 USB 2.0 和充电功能。 目前，最常用的备用模式为 DisplayPort/DockPort 和 MHL。
 
 * **DisplayPort** /**DockPort**
 
-  此备用模式允许用户通过 USB 连接器投影到外部 DisplayPort 显示音频/视频。
+  此备用模式允许用户将音频/视频投影到外部 DisplayPort 通过 USB 连接器显示。
 
 * **MHL**
 
-  MHL 备用模式是允许对项目视频/音频向外部用户显示支持 MHL。
+  MHL 备用模式允许用户将视频/音频投影到支持 MHL 的外部显示器。
 
-* **宣传位置错误消息**
+* **布告栏错误消息**
 
-  如果用户连接的 USB 类型 C 备用模式设备或附加的电脑或手机不支持的适配器时，设备或适配器可以公开布告栏设备，其中包含有关错误条件，以帮助用户解决问题的信息。
+  如果用户连接的 USB 类型为 C 的备用模式设备或适配器不受连接的 PC 或手机支持，则设备或适配器可以公开一个布告栏设备，其中包含有关错误条件的信息，以帮助用户解决问题。
 
-* **更高的能力限制**
+* **增加的电源限制**
 
-   使用 USB 类型 C 连接器的系统具有更高版本的 power 限制，它可以支持多达 5V、 3A，15W。
+   使用 USB 类型 C 连接器的系统具有更高的电源限制，最多可支持5V、3A、15W。
 
-   此外，可以选择性地支持连接器*电源交付*功能由定义[USB 供电](https://go.microsoft.com/fwlink/p/?LinkID=623310)OEM。 如果连接器支持 power 交付，USB C 类型系统可电源源提供程序或使用者，且支持多达 100W。
+   此外，连接器可以选择支持[USB 电源交付](https://go.microsoft.com/fwlink/p/?LinkID=623310)OEM 定义的*电源交付*功能。 如果连接器支持电源交付，则 USB 类型 C 系统可以是电源提供商，也可以是使用者，支持最多100W。
 
-* **支持 USB 双角色**
+* **支持 USB 双重角色**
 
-  外围设备可以连接到移动与 USB 类型 C 连接器，将移动系统的传统角色从函数更改为主机系统。 当同一个系统连接到 PC 时，系统恢复函数的角色，并且 PC 将成为主机。
+  外围设备可以使用 USB 类型 C 连接器连接到移动系统，从而将移动系统的传统角色从功能更改为主机。 当同一个系统连接到 PC 时，系统将恢复某个功能的角色，而 PC 会成为该主机。
 
-## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>备用模式需要进行协商，如分发点 2 道 vs 操作系统输入。DP 4 球道
+## <a name="operating-system-input-into-which-alternate-mode-needs-to-be-negotiated-such-as-dp-2-lane-vs-dp-4-lane"></a>需要协商备用模式的操作系统输入，例如 DP 2 通道与 DP 4 通道
 
-否。 操作系统 （或任何由 Microsoft 提供的软件组件） 不起任何作用中选择备用模式。 通过连接器，特别是 USB 连接器管理器 (UCM) 客户端驱动程序的驱动程序做出的决定。 该驱动程序，会使用硬件接口，使用连接器的固件进行通讯。
+不相同。 操作系统（或任何 Microsoft 提供的软件组件）在选择备用模式时不起作用。 此决定由连接器的驱动程序（特别是 USB 连接器管理器（UCM）客户端驱动程序）决定。 驱动程序通过使用硬件接口与连接器的固件通信来实现此目的。
 
-## <a name="pre-os-charging-with-type-c-and-pd"></a>预操作系统与类型 C PD 收费
+## <a name="pre-os-charging-with-type-c-and-pd"></a>类型 C 和 PD 的预操作系统收费
 
-启用预操作系统充电属于由 OEM。 您可以选择不实现[USB 供电](https://go.microsoft.com/fwlink/p/?LinkID=623310)，并在 USB 类型 C power 级别，直到您启动到操作系统的费用。
+启用预操作系统收费由 OEM 所有。 你可以选择不实现[Usb 电源交付](https://go.microsoft.com/fwlink/p/?LinkID=623310)，并按 USB 类型-C 电源级别收费，直到启动到操作系统为止。
 
-## <a name="charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum"></a>若要启用扩展方案，如连续体的 USB 主机时收费电话
+## <a name="charging-the-phone-when-it-is-a-usb-host-to-enable-docking-scenarios-like-continuum"></a>在电话为 USB 主机时对电话进行收费，以启用扩展方案，例如 Continuum
 
-下面是需要考虑的一些事项：
+下面是一些需要考虑的事项：
 
-* 必须实现[USB 供电](https://go.microsoft.com/fwlink/p/?LinkID=623310)，以便可以独立地交换功能和数据的角色。
-* 停靠的上游端口应作为充电 UFP，USB 类型 C 规范中定义。 有关详细信息，请参阅部分 4.8.4，版本 1.1。
-* 在停靠应请求在灾难恢复\_交换如果它解析为 DFP 或 PR\_如果它解析为 UFP 交换。
+* 必须实现[USB 电源交付](https://go.microsoft.com/fwlink/p/?LinkID=623310)，以便能够独立交换电源和数据角色。
+* 坞站的上游端口应作为收费 UFP 来实现，这是在 USB 类型 C 规范中定义的。 有关详细信息，请参阅4.8.4 版本1.1。
+* 如果你的 dock 解析为 DFP，则你的 dock 应该请求进行\_交换，如果它解析为 UFP\_，则会请求交换。
 
-  初始 DFP 是电源，因此必须更改数据角色。 初始 UFP 是 power 接收器中，因此必须更改 power 角色。 您可以在实现这些回调函数中执行这些操作：
+  初始 DFP 是电源，因此必须更改数据角色。 初始 UFP 是电源接收器，因此必须更改电源角色。 您可以在以下回调函数的实现中执行这些操作：
 
-## <a name="windows10-mobile-support-of-usb-billboard-devices"></a>Windows 10 移动版支持 USB 布告栏设备
+## <a name="windows10-mobile-support-of-usb-billboard-devices"></a>USB 布告栏设备的 Windows 10 移动版支持
 
-是的如果将该手机连接到支持 USB 布告栏，为每个设备[布告栏设备规范的 USB 设备类定义](https://go.microsoft.com/fwlink/p/?linkid=620207)，通知用户。 USB 连接器管理器 (UCM) 客户端驱动程序不需要处理通知。 如果您的系统无法识别备用模式下，不要输入模式。
+是的，如果将手机连接到支持 USB 布告栏的设备，根据[布告栏设备规范的 Usb 设备类定义](https://go.microsoft.com/fwlink/p/?linkid=620207)，会通知用户。 不需要 USB 连接器管理器（UCM）客户端驱动程序来处理通知。 如果系统无法识别备用模式，请不要进入该模式。
 
-## <a name="support-for-usb-type-c-on-earlier-versions-of-windows"></a>在早期版本的 Windows 上支持 USB 类型-C
+## <a name="support-for-usb-type-c-on-earlier-versions-of-windows"></a>在早期版本的 Windows 上支持 USB 类型 C
 
-USB C 类型不支持在 Windows 10 之前的 Windows 版本上。
+在 Windows 10 之前的 Windows 版本中不支持 USB 类型 C。
 
-## <a name="ucsi-support-on-earlier-versions-of-windows"></a>在早期版本的 Windows 支持 UCSI
+## <a name="ucsi-support-on-earlier-versions-of-windows"></a>Windows 早期版本上的 UCSI 支持
 
-UCSI 不支持在 Windows 10 之前的 Windows 版本上。
+Windows 10 之前的 Windows 版本不支持 UCSI。
 
 ## <a name="how-to-test-an-implementation-of-ucsi"></a>如何测试 UCSI 的实现
 
-若要测试您的实现，请遵循中给出的准则[USB 类型 C 手动互操作性测试过程](type.md)。 我们建议运行 USB 测试适用于 Windows 10 的 Windows 硬件 Lab Kit (HLK) 中。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
+若要测试你的实现，请遵循[USB 类型 C 手动互操作性测试过程](type.md)中提供的指导原则。 建议在适用于 Windows 10 的 Windows 硬件实验室工具包（HLK）中运行 USB 测试。 这些测试在适用于[USB 的 Windows 硬件认证包测试](windows-hardware-certification-kit-tests-for-usb.md)中列出。
 
-## <a name="conditions-and-ui-for-the-different-errors"></a>条件和不同的错误的用户界面
+## <a name="conditions-and-ui-for-the-different-errors"></a>不同错误的条件和 UI
 
-Windows 10 可以显示一系列 USB 类型 C 错误消息，可帮助使用户了解使用 USB 类型 C 硬件和软件的不同组合的限制。 例如，用户可能会收到"设备正在充电缓慢"消息如果充电器连接到 USB 类型 C 连接器功能强大，足以，请与系统不兼容或已连接到非充电的端口。 有关详细信息，请参阅[USB 类型 C Windows 系统的消息疑难解答](https://go.microsoft.com/fwlink/?LinkId=526894)。
+Windows 10 可以显示一组 USB 类型 C 错误消息，以帮助用户了解有关 USB 类型 C 硬件和软件的不同组合的限制。 例如，如果连接到 USB 类型 C 连接器的充电器的功能不足、与系统不兼容，或连接到非充电端口，则用户可能会收到 "设备充电缓慢" 消息。 有关详细信息，请参阅[有关 USB 类型 C Windows 系统的消息疑难解答](https://go.microsoft.com/fwlink/?LinkId=526894)。
 
-## <a name="connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider"></a>非 PD 端口连接到 PD 提供程序并不是 PD 提供程序的系统的 PD 使用者
+## <a name="connecting-a-non-pd-port-to-a-pd-provider-and-a-pd-consumer-to-a-system-that-is-not-a-pd-provider"></a>将非 PD 端口连接到 PD 提供程序，将 PD 使用者连接到不是 PD 提供程序的系统
 
-非 PD 端口尝试通过使用 USB 类型 C 当前级别收费系统。 有关详细信息，请参阅[USB 3.1 和 USB 类型 C 规范](https://go.microsoft.com/fwlink/p/?LinkId=699515)。
+非 PD 端口尝试使用 USB 类型 C 当前级别对系统进行计费。 有关详细信息，请参阅[usb 3.1 和 Usb Type-C 规范](https://go.microsoft.com/fwlink/p/?LinkId=699515)。
 
-## <a name="connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities"></a>连接到不支持这些功能的 PC 的闪电、 SuperMHL 或 PCI express
+## <a name="connecting-thunderbolt-supermhl-or-pci-express-to-a-pc-that-does-not-support-those-capabilities"></a>将闪电、SuperMHL 或 PCI express 连接到不支持这些功能的电脑
 
-备用模式功能允许非 USB 协议 （如闪电，SuperMHL） 通过 USB 电缆，运行时同时保留 USB 2.0 和计费功能。 如果用户连接的 USB 类型 C 备用模式设备或附加电脑或手机运行 Windows 10 不支持的适配器时，检测到错误条件，并向用户显示一条消息。
+备用模式功能允许非 USB 协议（如闪电、SuperMHL）通过 USB 电缆运行，同时保留 USB 2.0 和充电功能。 如果用户连接的 USB 类型为 C 的备用模式设备或适配器不受连接的 PC 或运行 Windows 10 的电话支持，则会检测到一个错误情况并向用户显示一条消息。
 
-* 如果设备或适配器公开布告栏设备，用户会看到有关错误条件，以帮助进行故障排除问题的信息。 Windows 10 的宣传位置设备提供现成驱动程序，并通知用户，出现错误。
-* 用户可能会看到如下错误通知，"尝试改进 USB 连接"。 有关详细信息，请参阅[USB 类型 C Windows 系统的错误消息](introduction-to-usb-type-c-connectors.md#-4)。
+* 如果设备或适配器公开了布告栏设备，则用户将看到有关错误条件的信息，以帮助解决问题。 Windows 10 提供了一个用于布告栏设备的内置驱动程序，并通知用户出现了错误。
+* 用户可能会看到错误通知 "尝试改善 USB 连接"。 有关详细信息，请参阅[USB 类型 C Windows 系统的错误消息](introduction-to-usb-type-c-connectors.md#-4)。
 
-为获得最佳结果，请确保通过 PC 或电话或电缆满足备用模式设备或适配器的要求。
+为获得最佳结果，请确保电脑或电话或电缆满足备用模式设备或适配器的要求。
 
-## <a name="support-and-limitations-for-mtp-over-usb-type-c-in-windows"></a>支持和 MTP 通过 USB 类型-C 在 Windows 中的限制
+## <a name="support-and-limitations-for-mtp-over-usb-type-c-in-windows"></a>Windows 中通过 USB 类型 C 进行 MTP 的支持和限制
 
-面向桌面版本的 Windows 10 支持 MTP 中发起方角色中;Windows 10 移动版支持 MTP 响应方角色中。
+适用于桌面版的 Windows 10 支持 "发起方" 角色中的 MTP;Windows 10 移动版支持响应方角色中的 MTP。
 
-## <a name="how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm"></a>如何向下游设备和中心建立连接和通信与 USB 连接器管理器 (UCM)
+## <a name="how-downstream-devices-and-hubs-connect-and-communicate-with-usb-connector-manager-ucm"></a>下游设备和集线器如何连接和与 USB 连接器管理器通信（UCM）
 
-UCM 是其自己的设备堆栈 (请参阅[体系结构：Windows 系统的 USB 类型 C 设计](architecture--usb-type-c-in-a-windows-system.md))。 Windows 10 支持 USB 类型-C 包括所需的探测功能，以便确保不同的类驱动程序知道如何与不同的 USB 类型 C 连接器进行通信。 若要获取 Windows 10 支持 USB 类型-C，必须插入 UCM 设备堆栈。
+UCM 是自己的设备堆栈（请参阅[体系结构：适用于 Windows 系统的 USB 类型 C 设计](architecture--usb-type-c-in-a-windows-system.md)）。 Windows 10 对 USB 类型-C 的支持包括所需的管道，以确保不同的类驱动程序知道如何与不同的 USB 类型 C 连接器通信。 若要为 USB 类型 C 获取 Windows 10 支持，必须插入到 UCM 设备堆栈中。
 
-## <a name="usb-type-c-mutt-requirements-for-hlk-tests"></a>USB 类型 C MUTT HLK 测试要求
+## <a name="usb-type-c-mutt-requirements-for-hlk-tests"></a>针对 HLK 测试的 USB 类型-C MUTT 要求
 
-Windows HLK 适用于 Windows 10 的包含 USB 主机和函数控制器的测试。 若要测试您的系统，请使用 USB C 一个适配器。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
+适用于 Windows 10 的 Windows HLK 包含 USB 主机和函数控制器的测试。 若要测试您的系统，请使用 USB C-A 适配器。 这些测试在适用于[USB 的 Windows 硬件认证包测试](windows-hardware-certification-kit-tests-for-usb.md)中列出。
 
-## <a name="microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku"></a>Microsoft 支持 P2P 之间的数据传输相同的 Windows 10 SKU
+## <a name="microsoft-support-for-p2p-data-transfer-between-the-same-windows10-sku"></a>Microsoft 对同一 Windows 10 SKU 之间的 P2P 数据传输的支持
 
 这不是有效的连接。
 
-* 无法连接两台运行 Windows 10 桌面版的 Pc。
-* 无法连接两个运行 Windows 10 移动版的移动设备。
+* 对于桌面版，不能连接两台运行 Windows 10 的电脑。
+* 不能连接运行 Windows 10 移动版的两个移动设备。
 
-如果用户尝试进行此类连接，Windows 将显示一条错误消息。 有关详细信息，请参阅[USB 类型 C Windows 系统的错误消息](introduction-to-usb-type-c-connectors.md#-6)。
+如果用户尝试建立此类连接，Windows 将显示一条错误消息。 有关详细信息，请参阅[USB 类型 C Windows 系统的错误消息](introduction-to-usb-type-c-connectors.md#-6)。
 
-Windows 移动设备和 Windows 桌面设备之间是唯一有效的连接。
+唯一有效的连接是在 Windows 移动设备和 Windows 桌面设备之间。
 
-## <a name="ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status"></a>UCM 类扩展 (UcmCx) 通信使用 PMIC 或电池驱动程序来获取或设置充电状态
+## <a name="ucm-class-extension-ucmcx-communication-with-pmic-or-battery-driver-to-getset-charging-status"></a>UCM 类扩展（UcmCx）与 PMIC 或电池驱动程序通信以获取/设置充电状态
 
-在软件辅助充电平台，UcmCx 与 PMIC 和电池子系统进行通信。 客户端驱动程序可能会通过与通过硬件接口硬件通信确定计费级别。 硬件辅助的平台上嵌入式的控制器负责进行收费。 在过程中不涉及 UcmCx。
+在软件辅助充电平台上，UcmCx 与 PMIC 和电池子系统通信。 客户端驱动程序可以通过硬件接口与硬件通信来确定充电级别。 在硬件辅助平台上，嵌入式控制器负责充电。 在此过程中，UcmCx 不会执行任何操作。
 
-## <a name="hlk-support-for-usb-type-c"></a>HLK 支持 USB 类型-C
+## <a name="hlk-support-for-usb-type-c"></a>对 USB 类型 C 的 HLK 支持
 
-在 Windows HLK 适用于 Windows 10 中没有 USB 类型 C 的特定测试。 我们建议在 Windows HLK 适用于 Windows 10 中运行 USB 测试。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
+在适用于 Windows 10 的 Windows HLK 中，没有 USB 类型 C 特定的测试。 建议在适用于 Windows 10 的 Windows HLK 中运行 USB 测试。 这些测试在适用于[USB 的 Windows 硬件认证包测试](windows-hardware-certification-kit-tests-for-usb.md)中列出。
 
 ## <a name="ucsi"></a>UCSI
 
-USB 类型 C 连接器系统软件接口 (UCSI) 规范介绍 USB 类型 C 连接器系统软件接口 (UCSI) 的功能并介绍了的硬件组件设计器，系统构建者寄存器和数据结构和设备驱动程序开发人员。 获取从规范[此站点](https://go.microsoft.com/fwlink/p/?LinkId=703713)。
+USB 类型 C 连接器系统软件接口（UCSI）规范描述了 USB C # 连接器系统软件接口（UCSI）的功能，并说明了适用于硬件组件设计器、系统构建者、和设备驱动程序开发人员。 从此[站点](https://go.microsoft.com/fwlink/p/?LinkId=703713)获取规范。
 
-Microsoft 提供了与 Windows，UcmUcsi.sys，实现功能规范所定义的现成驱动程序。 此驱动程序适用于具有嵌入式控制器的系统。
+Microsoft 为 Windows （UcmUcsi）提供内置驱动程序，该驱动程序实现由规范定义的功能。 此驱动程序适用于具有嵌入式控制器的系统。
 
 ## <a name="test-a-ucsi-implementation-running-on-windows-10"></a>测试 Windows 10 上运行的 UCSI 实现
 
-我们建议在 Windows HLK 适用于 Windows 10 中运行 USB 测试。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
+建议在适用于 Windows 10 的 Windows HLK 中运行 USB 测试。 这些测试在适用于[USB 的 Windows 硬件认证包测试](windows-hardware-certification-kit-tests-for-usb.md)中列出。
 
-## <a name="test-a-ucmcx-client-driver-on-windows-10"></a>测试 Windows 10 上的 UCMCx 客户端驱动程序
+## <a name="test-a-ucmcx-client-driver-on-windows-10"></a>在 Windows 10 上测试 UCMCx 客户端驱动程序
 
-我们建议在 Windows HLK 适用于 Windows 10 中运行 USB 测试。 这些测试所示[USB 的 Windows 硬件认证工具包测试](windows-hardware-certification-kit-tests-for-usb.md)。
+建议在适用于 Windows 10 的 Windows HLK 中运行 USB 测试。 这些测试在适用于[USB 的 Windows 硬件认证包测试](windows-hardware-certification-kit-tests-for-usb.md)中列出。
 
-## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>VBus/VConn 控制和角色切换由 UCM 类扩展插件处理的操作
+## <a name="vbusvconn-control-and-role-switch-operations-handled-by-the-ucm-class-extension"></a>UCM 类扩展处理的 VBus/VConn 控件和角色切换操作
 
-UCM 类扩展可能会从操作系统更改的连接器的数据或电源方向 get 请求。 在收到这些请求，它将调用的客户端驱动程序实现[ *EVT\_UCM\_连接器\_设置\_数据\_角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)并[ *EVT\_UCM\_连接器\_设置\_POWER\_角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)回调函数 (如果连接器实现 PD）。 在实现中，客户端驱动程序是预期的控制 VBUS 和 VCONN pin。 有关这些回调函数的详细信息，请参阅[写入 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。
+UCM 类扩展可能会从操作系统获取请求，以更改连接器的数据或电源方向。 当获取这些请求时，它会调用客户端驱动程序的[ *\_UCM\_连接器的实现，\_将\_数据\_角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_data_role)和[ *.evt\_\_\_\_\_角色*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmmanager/nc-ucmmanager-evt_ucm_connector_set_power_role)回调函数（如果连接器实现 PD）。 在实现中，客户端驱动程序应该控制 VBUS 和 VCONN 的 pin。 有关这些回调函数的详细信息，请参阅[编写 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)。

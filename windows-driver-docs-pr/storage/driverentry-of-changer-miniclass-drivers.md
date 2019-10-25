@@ -1,6 +1,6 @@
 ---
-title: 换带机 Miniclass 驱动的 DriverEntry 例程
-description: 在 Microsoft Windows 2000 中，换带机 miniclass 驱动程序不具有 DriverEntry 例程中，但在 Windows XP 和更高版本操作系统 miniclass 驱动程序必须具有以下特征的 DriverEntry 例程。
+title: DriverEntry of Miniclass 驱动程序例程
+description: 在 Microsoft Windows 2000 中，更换器 miniclass 驱动程序没有 DriverEntry 例程，但在 Windows XP 和更高版本的操作系统中，miniclass 驱动程序必须具有具有以下特征的 DriverEntry 例程。
 ms.assetid: f7954e15-f995-44da-92fd-979248c69553
 keywords:
 - DriverEntry 例程存储设备
@@ -14,17 +14,17 @@ api_type:
 - DllExport
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dcd9adc72a8a19d5d29d4a4a8efed931a302b062
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3b0afece294aa0044e30e1dd2ff6aea78aa3392d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368274"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845170"
 ---
-# <a name="driverentry-of-changer-miniclass-drivers-routine"></a>换带机 Miniclass 驱动的 DriverEntry 例程
+# <a name="driverentry-of-changer-miniclass-drivers-routine"></a>DriverEntry of Miniclass 驱动程序例程
 
 
-在 Microsoft Windows 2000 中，换带机 miniclass 驱动程序不具有**DriverEntry**例程，但在 Windows XP 及更高版本 miniclass 驱动程序必须具有的操作系统**DriverEntry**例程替换以下特征。
+在 Microsoft Windows 2000 中，更换器 miniclass 驱动程序没有**DriverEntry**例程，但在 Windows XP 和更高版本的操作系统中，miniclass 驱动程序必须具有具有以下特征的**DriverEntry**例程。
 
 <a name="syntax"></a>语法
 ------
@@ -36,26 +36,26 @@ NTSTATUS DriverEntry(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*Argument1* \[中\]  
-指向特定于操作系统的信息。
+\] 中的*Argument1* \[  
+指向特定于操作系统的信息的指针。
 
-*Argument2* \[中\]  
-指向特定于操作系统的信息。
+\] 中的*Argument2* \[  
+指向特定于操作系统的信息的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-Miniclass 驱动**DriverEntry**例程必须返回返回的值[ **ChangerClassInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize)例程。
+Miniclass 驱动程序的**DriverEntry**例程必须返回[**ChangerClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize)例程返回的值。
 
 <a name="remarks"></a>备注
 -------
 
-参数**Argument1**并**Argument2**指向特定于操作系统的信息。 Miniclass 驱动程序应*不*尝试解释这些参数。 相反，它应传递到这些参数**ChangerClassInitialize**例程。
+参数**Argument1**和**Argument2**指向特定于操作系统的信息。 Miniclass 驱动程序*不*应尝试解释这些参数。 相反，它应将这些参数传递到**ChangerClassInitialize**例程。
 
-**ChangerClassInitialize**执行大部分 miniclass 驱动程序所需的初始化。 微型驱动程序中的主要任务及其**DriverEntry**例程是加载到其命令处理例程的入口点[ **MCD\_INIT\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/ns-mcd-_mcd_init_data)结构，将传递到此结构的地址**ChangerClassInitialize**例程。
+**ChangerClassInitialize**执行 miniclass 驱动程序所需的大部分初始化。 微型驱动程序在其**DriverEntry**例程中的主要任务是将入口点加载到其命令处理[ **\_例程\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/ns-mcd-_mcd_init_data)结构中，并将此结构的地址传递到**ChangerClassInitialize**例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,29 +68,29 @@ Miniclass 驱动**DriverEntry**例程必须返回返回的值[ **ChangerClassIni
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mcd.h （包括 Mcd.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mcd （包括 Mcd）</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Library</p></td>
-<td align="left">NtosKrnl.lib</td>
+<td align="left"><p>库</p></td>
+<td align="left">Ntoskrnl.exe</td>
 </tr>
 <tr class="even">
 <td align="left"><p>DLL</p></td>
-<td align="left">NtosKrnl.exe</td>
+<td align="left">Ntoskrnl.exe</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**ChangerClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/nf-mcd-changerclassinitialize)
+[**ChangerClassInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassinitialize)
 
-[**MCD\_INIT\_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mcd/ns-mcd-_mcd_init_data)
+[**MCD\_INIT\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/ns-mcd-_mcd_init_data)
 
  
 

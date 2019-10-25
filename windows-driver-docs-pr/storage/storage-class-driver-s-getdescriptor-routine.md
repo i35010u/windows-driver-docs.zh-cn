@@ -6,12 +6,12 @@ keywords:
 - GetDescriptor
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0b0f5fa489d944f94e7a068340d3ebd60fd29b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d2974409fb82fc47da579ccf2eb342a2c43ae645
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368201"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844747"
 ---
 # <a name="storage-class-drivers-getdescriptor-routine"></a>存储类驱动程序的 GetDescriptor 例程
 
@@ -19,29 +19,29 @@ ms.locfileid: "67368201"
 ## <span id="ddk_storage_class_drivers_getdescriptor_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_GETDESCRIPTOR_ROUTINE_KG"></span>
 
 
-对于数据传输操作中，存储类驱动程序需要有关每个 HBA 驱动其设备连接到总线的配置信息。 若要获取此信息，请类驱动程序可以调用内部*GetDescriptor*例程或实现中相同的功能及其*StartDevice*例程。 (有关*StartDevice*，请参阅[存储类驱动程序中处理即插即用启动](handling-pnp-start-in-a-storage-class-driver.md)。)
+对于数据传输操作，存储类驱动程序需要与每个 HBA 的配置信息，驱动其设备所连接到的总线。 若要获取此信息，类驱动程序需要调用内部*GetDescriptor*例程，或在其*StartDevice*例程中实现相同的功能。 （有关*StartDevice*的信息，请参阅[在存储类驱动程序中处理 PnP 开始](handling-pnp-start-in-a-storage-class-driver.md)。）
 
-一个*GetDescriptor*例程生成，并设置查询属性请求 ([**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)与[**IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ni-ntddstor-ioctl_storage_query_property)) 端口驱动程序检索的类驱动程序存储在其设备的设备和适配器描述符扩展插件。 类驱动程序还可能会根据返回的描述符数据的设备扩展中设置确定驱动程序编写器的标志。
+*GetDescriptor*例程生成并设置查询属性请求（[**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)与[**IOCTL\_存储\_查询\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_query_property)），以便端口驱动程序检索设备和类驱动程序在其设备扩展中存储的适配器描述符。 类驱动程序还可以根据返回的描述符数据在设备扩展中设置驱动程序写入器确定的标志。
 
-返回的类驱动程序将检查[**存储\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_device_descriptor)数据，如确定设备功能 （SCSI 查询数据或非 SCSI 等效项）SCSI 设备类型，无论设备的介质 （如果有） 是可移动 (**RemovableMedia**)，无论设备是否支持多个未完成的命令 (**CommandQueueing**)，和各种 ID字符串。 返回的类驱动程序将检查[**存储\_适配器\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddstor/ns-ntddstor-_storage_adapter_descriptor)数据来确定适配器功能，包括：
+类驱动程序将检查返回的[**存储\_设备\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_device_descriptor)数据来确定设备功能（scsi 查询数据或非 scsi 等效项）（如 scsi 设备类型），无论设备的媒体（如果有）是否可移动（**RemovableMedia**）、设备是否支持多个未处理的命令（**CommandQueueing**）和各种 ID 字符串。 类驱动程序将检查返回的[**存储\_适配器\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ns-ntddstor-_storage_adapter_descriptor)数据来确定适配器功能，其中包括：
 
--   最大特定 HBA 可以在单个操作中传输的字节数 (**MaximumTransferLength**)。
+-   特定 HBA 可以在单个操作中传输的最大字节数（**MaximumTransferLength**）。
 
--   如果传输 HBA 可以缓冲的数据支持的非连续的物理页面 （换句话说，如果它支持散播-聚集），多少不连续的物理页，每次可缓存它可以管理，每个传输操作 (**MaximumPhysicalPages**).
+-   如果 HBA 可以传输非连续物理页面支持的缓冲数据（换言之，如果它支持散点/集合），则每个传输操作（**MaximumPhysicalPages**）每个缓存可管理的非连续物理页面数。
 
--   HBA 的对齐要求的传输，因此可以正确设置的类驱动程序**AlignmentRequirement**字段中其设备对象 (**AlignmentMask**)。
+-   HBA 对传输的对齐要求，因此类驱动程序可以正确设置其设备对象（**AlignmentMask**）中的**AlignmentRequirement**字段。
 
-    发送的应用程序[ **IOCTL\_SCSI\_传递\_THROUGH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)请求还可以使用此字段。
+    通过请求发送[**IOCTL\_SCSI\_\_通过**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)请求的应用程序也可能使用此字段。
 
-    有关设置详细信息**AlignmentRequirement**中的设备对象，请参阅[初始化设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/initializing-a-device-object)。
+    有关在设备对象中设置**AlignmentRequirement**的详细信息，请参阅[初始化设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/initializing-a-device-object)。
 
--   HBA 支持 SCSI 标记队列和/或逻辑单元内部队列 (**CommandQueueing**)。
+-   HBA 是否支持 SCSI 标记的排队和/或每个逻辑单元的内部队列（**CommandQueueing**）。
 
--   HBA 是否支持同步传输 (**AcceleratedTransfer**)。
+-   HBA 是否支持同步传输（**AcceleratedTransfer**）。
 
--   HBA 在内部缓存的数据是否 (**CachesData**)。
+-   HBA 是否在内部缓存数据（**CachesData**）。
 
-在类驱动程序应 FDO 设备扩展中存储此信息，以便其调度例程可以确保发送到存储端口驱动程序的所有请求都符合大小、 数量的物理分隔线和对齐要求的基础的 HBA。 有关类驱动程序调度例程的详细信息，请参阅[存储类驱动程序调度例程](storage-class-driver-s-dispatch-routines.md)。 有关设置设备扩展的详细信息，请参阅[设置了存储类驱动程序的设备扩展](setting-up-a-storage-class-driver-s-device-extension.md)。
+类驱动程序应将此信息存储在 FDO 的设备扩展中，以便其调度例程能够确保发送到存储端口驱动程序的所有请求都符合底层 HBA 的大小、物理中断数和对齐要求。 有关类驱动程序调度例程的详细信息，请参阅[存储类驱动程序的调度例程](storage-class-driver-s-dispatch-routines.md)。 有关设置设备扩展的详细信息，请参阅[设置存储类驱动程序的设备扩展](setting-up-a-storage-class-driver-s-device-extension.md)。
 
  
 

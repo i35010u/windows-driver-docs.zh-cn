@@ -1,9 +1,9 @@
 ---
 title: KSEVENT\_设备\_丢失
-description: KSEVENT\_设备\_丢失的事件触发时从系统中删除照相机设备 \ 8212; 例如，当连接的 USB 电缆照相机被拔出。
+description: 从系统 \ 8212 中删除照相机设备时，将触发 KSEVENT\_设备\_丢失事件; 例如，当拔出连接照相机的 USB 电缆时。
 ms.assetid: 28E21A2D-63CC-4991-AEBA-694773FC009A
 keywords:
-- KSEVENT_DEVICE_LOST 流式处理媒体设备
+- KSEVENT_DEVICE_LOST 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b83a6beb33c44b68746a569aa05e090c5190d0c
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: fbd685479530d7b4e6be89d324398e47387b51ef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391701"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844926"
 ---
-# <a name="kseventdevicelost"></a>KSEVENT\_设备\_丢失
+# <a name="ksevent_device_lost"></a>KSEVENT\_设备\_丢失
 
 
-**KSEVENT\_设备\_丢失**照相机设备从系统中删除时触发事件，例如，当连接相机的 USB 电缆被拔出时。
+从系统中删除照相机设备时，将触发**KSEVENT\_设备\_丢失**事件，例如，当拔出连接照相机的 USB 电缆时。
 
 ## <span id="ddk_ksevent_vidcap_auto_update_ks"></span><span id="DDK_KSEVENT_VIDCAP_AUTO_UPDATE_KS"></span>
 
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -39,7 +39,7 @@ ms.locfileid: "67391701"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>事件描述符类型</th>
@@ -48,23 +48,23 @@ ms.locfileid: "67391701"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>否</p></td>
-<td><p>是</p></td>
+<td><p>无</p></td>
+<td><p>“是”</p></td>
 <td><p>Filter</p></td>
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff561744(v=vs.85)" data-raw-source="[&lt;strong&gt;KSEVENT&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561744(v=vs.85))"><strong>KSEVENT</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata" data-raw-source="[&lt;strong&gt;KSEVENTDATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata)"><strong>KSEVENTDATA</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSEVENT\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ne-ks-ksevent_device)
+[**KSEVENT\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksevent_device)
 
-[**KSEVENT\_设备\_已占用**](ksevent-device-preempted.md)
+[**KSEVENT\_设备\_被抢占**](ksevent-device-preempted.md)
 
  
 

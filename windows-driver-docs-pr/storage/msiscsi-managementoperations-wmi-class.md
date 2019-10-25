@@ -4,17 +4,17 @@ description: MSiSCSI\_ManagementOperations WMI 类
 ms.assetid: 1037be46-6cae-458d-8549-927c7a053195
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 20291f4cdd88cddc0caa62fd1c1b3746caafa1ab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25e853881189b03e4526a88a1ab18289f12222cc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379090"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845343"
 ---
-# <a name="msiscsimanagementoperations-wmi-class"></a>MSiSCSI\_ManagementOperations WMI 类
+# <a name="msiscsi_managementoperations-wmi-class"></a>MSiSCSI\_ManagementOperations WMI 类
 
 
-MSiSCSI\_MangementOperations WMI 类包含 ping 方法来执行 ICMP ping 请求到的目标地址。 此类 Mgmt.mof 中定义，如下所示。
+MSiSCSI\_MangementOperations WMI 类包含用于对目标地址执行 ICMP ping 请求的 ping 方法。 此类在管理 mof 中定义为：
 
 ```cpp
 class MSiSCSI_ManagementOperations
@@ -71,7 +71,7 @@ class MSiSCSI_ManagementOperations
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成之一[MSiSCSI\_ManagementOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成一个[MSiSCSI\_ManagementOperations](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)的数据结构。
 
  
 

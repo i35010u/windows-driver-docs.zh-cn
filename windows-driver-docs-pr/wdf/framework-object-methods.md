@@ -6,12 +6,12 @@ keywords:
 - framework 对象 WDK KMDF，方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd19a2818854f2bd820c59e480463d651881283
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c17fa1b066809e2b0a0ba866d8279804ecaab829
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384460"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845140"
 ---
 # <a name="framework-object-methods"></a>框架对象方法
 
@@ -19,21 +19,21 @@ ms.locfileid: "67384460"
 
 
 
-每个框架对象将导出一的组方法 （函数）。 每个方法有两个目的之一：
+每个框架对象均导出一组方法（函数）。 每个方法都有两种用途：
 
--   它执行与对象相关联的操作。
+-   它执行与对象关联的操作。
 
-    例如， [ **WdfIoQueueCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueuecreate)方法创建设备的 I/O 队列。
+    例如， [**WdfIoQueueCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuecreate)方法为设备创建 i/o 队列。
 
-    通常执行的操作的方法将返回[NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)。
+    执行操作的方法通常会返回一个[NTSTATUS 值](https://docs.microsoft.com/windows-hardware/drivers/kernel/ntstatus-values)。
 
--   它检索或修改[属性](framework-object-properties.md)与对象相关联。
+-   它检索或修改与对象相关联的[属性](framework-object-properties.md)。
 
-    例如， [ **WdfRequestGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)方法返回的 I/O 请求的完成状态有关的信息。
+    例如， [**WdfRequestGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestgetinformation)方法返回有关 i/o 请求完成状态的信息。
 
-    检索一个属性通常的方法返回属性的值，而通常修改属性的方法不返回值。
+    检索属性的方法通常会返回属性的值，而修改属性的方法通常不会返回值。
 
-每个对象方法接受对象句柄作为输入。 如果驱动程序将无效的对象句柄传递给对象方法，检查系统错误发生。
+每个对象方法都接受对象句柄作为输入。 如果驱动程序向对象方法传递的对象句柄无效，则会发生系统 bug 检查。
 
  
 

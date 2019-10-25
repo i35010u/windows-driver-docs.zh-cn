@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES
-description: WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 是 TLV 包含 Wi-Fi Direct 预配服务属性。
+description: WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 是包含 Wi-fi Direct 预配服务属性的 TLV。
 ms.assetid: CA318E91-660A-4F17-827B-F27E18643CC6
 ms.date: 07/18/2017
 keywords:
-- 从 Windows Vista 开始 WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 网络驱动程序
+- WDI_TLV_P2P_PROVISION_SERVICE_ATTRIBUTES 从 Windows Vista 开始的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b498f207938e9640f6d107cede6c831e8f81511
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 90098dd89339c0c3820efb4258c8af563410c3b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353296"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845128"
 ---
-# <a name="wditlvp2pprovisionserviceattributes"></a>WDI\_TLV\_P2P\_PROVISION\_SERVICE\_ATTRIBUTES
+# <a name="wdi_tlv_p2p_provision_service_attributes"></a>WDI\_TLV\_P2P\_预配\_服务\_属性
 
 
-WDI\_TLV\_P2P\_预配\_服务\_属性是包含 Wi-Fi Direct 预配服务特性 TLV。
+WDI\_TLV\_P2P\_预配\_服务\_属性是包含 Wi-fi Direct 预配服务属性的 TLV。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,25 +26,25 @@ WDI\_TLV\_P2P\_预配\_服务\_属性是包含 Wi-Fi Direct 预配服务特性 T
 ## <a name="length"></a>长度
 
 
-所有包含的元素的大小的总和 （以字节为单位）。
+所有包含的元素的大小的总和（以字节为单位）。
 
 ## <a name="values"></a>值
 
 
 | 在任务栏的搜索框中键入                                              | 描述                                                                                                                                        |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| UINT8                                             | Wi-Fi Direct 状态代码，如 Wi-Fi Direct 规范所定义。                                                                            |
-| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 以后 Wi-Fi Direct 进行连接的本地 MAC 地址。                                                                                              |
+| UINT8                                             | Wi-fi Direct 状态代码，由 Wi-fi Direct 规范定义。                                                                            |
+| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 用于未来 Wi-fi Direct 连接的本地 MAC 地址。                                                                                              |
 | UINT8                                             | 连接功能位掩码。                                                                                                                     |
 | UINT32                                            | 功能功能位掩码。                                                                                                                        |
 | UINT32                                            | 服务实例的播发 ID。                                                                                                         |
-| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 服务实例的服务地址。                                                                                                          |
-| UINT32                                            | 唯一标识连接到该服务的会话的会话 ID。                                                                                    |
-| [**WDI\_MAC\_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 唯一标识连接到该服务的会话的会话地址。                                                                               |
-| UINT16                                            | 转配置超时以毫秒为单位。                                                                                                          |
-| UINT16                                            | 客户端配置超时以毫秒为单位。                                                                                                      |
-| UINT8                                             | 指示是否的永久组将用于连接的标志。 如果将使用的永久组，该标志设置为 1。                  |
-| UINT8                                             | 指示此帧是否为后续的预配在发现的一部分的标志。 如果它是后续预配发现的一部分，该标志设置为 1。 |
+| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 服务实例的服务地址。                                                                                                          |
+| UINT32                                            | 唯一标识服务会话的会话 ID。                                                                                    |
+| [**WDI\_MAC\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) | 唯一标识服务会话的会话地址。                                                                               |
+| UINT16                                            | 中转配置超时（毫秒）。                                                                                                          |
+| UINT16                                            | 客户端配置超时（毫秒）。                                                                                                      |
+| UINT8                                             | 一个标志，用于指示是否将永久组用于连接。 如果将使用永久性组，则将标志设置为1。                  |
+| UINT8                                             | 一个标志，用于指示此框架是否是跟踪预配发现的一部分。 如果该标志是跟进预配发现的一部分，则该标志设置为1。 |
 
  
 
@@ -59,14 +59,14 @@ WDI\_TLV\_P2P\_预配\_服务\_属性是包含 Wi-Fi Direct 预配服务特性 T
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
 title: AddLink 函数
-description: AddLink WMI 方法可配置要通知的 fabric 链接事件的 WMI 客户端的 WMI 提供程序。
+description: AddLink WMI 方法将 WMI 提供程序配置为通知 WMI 客户端 fabric 链接事件。
 ms.assetid: 67c17627-3f41-429b-a0f7-ec7782f1b1f9
 keywords:
 - AddLink 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 76794d52dc005959f77a4094a74c4f5fb6fd18a7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df71b5b3022bb1af53bed06adbf4cd46da2b638a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386284"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845116"
 ---
 # <a name="addlink-function"></a>AddLink 函数
 
 
-**AddLink** WMI 方法可配置要通知的 fabric 链接事件的 WMI 客户端的 WMI 提供程序。
+**AddLink** wmi 方法将 wmi 提供程序配置为通知 wmi 客户端 fabric 链接事件。
 
 <a name="syntax"></a>语法
 ------
@@ -35,11 +35,11 @@ void AddLink(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 *HBAStatus*   
-在返回时包含操作的状态。 允许的值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序将返回此信息**HBAStatus**的成员[ **AddLink\_OUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addlink_out)结构。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**AddLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addlink_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -49,7 +49,7 @@ void AddLink(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_将 EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -62,19 +62,19 @@ void AddLink(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hbapiwmi.h （包括 Hbaapi.h 或 Hbapiwmi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hbapiwmi （包括 Hbaapi 或 Hbapiwmi）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**AddLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_addlink_out)
+[**AddLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addlink_out)
 
  
 

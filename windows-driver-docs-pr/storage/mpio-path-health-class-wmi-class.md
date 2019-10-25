@@ -4,17 +4,17 @@ description: MPIO\_路径\_运行状况\_类 WMI 类
 ms.assetid: fcbc86a4-9035-489e-a406-9901c5af0a32
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8431d9504afe106aeba8475180ab422e41159626
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c4f7d8fdbbc1bef52ddfa570d36ee6034e12f981
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386153"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844964"
 ---
-# <a name="mpiopathhealthclass-wmi-class"></a>MPIO\_路径\_运行状况\_类 WMI 类
+# <a name="mpio_path_health_class-wmi-class"></a>MPIO\_路径\_运行状况\_类 WMI 类
 
 
-WMI 客户端使用 MPIO\_路径\_运行状况\_类 WMI 类，以便它收集与 MPIO 磁盘相关联的特定路径的运行状况统计信息查询 MPIO 子系统。
+WMI 客户端使用 MPIO\_路径\_运行状况\_类 WMI 类来查询 MPIO 子系统，以便为与 MPIO 磁盘关联的特定路径收集运行状况统计信息。
 
 ```cpp
 class MPIO_PATH_HEALTH_CLASS
@@ -143,7 +143,7 @@ class MPIO_PATH_HEALTH_CLASS
 };
 ```
 
-此类定义时编译的 WMI 工具套件，生成[ **MPIO\_路径\_运行状况\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mpiowmi/ns-mpiowmi-_mpio_path_health_class)数据结构。 没有与此 WMI 类相关联的方法。
+由 WMI 工具套件编译时，此类定义生成[**MPIO\_路径\_HEALTH\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mpiowmi/ns-mpiowmi-_mpio_path_health_class)数据结构。 没有与此 WMI 类相关联的方法。
 
  
 

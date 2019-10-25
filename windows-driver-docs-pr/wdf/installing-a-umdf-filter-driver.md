@@ -1,30 +1,30 @@
 ---
 title: 安装 UMDF 筛选器驱动程序
-description: 筛选器驱动程序可以支持特定设备或所有设备安装程序类中。
+description: 筛选器驱动程序可以支持特定设备或安装程序类中的所有设备。
 ms.assetid: AE6D4E36-B758-451A-983E-6F0D7ADFD7A7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27c172a681a2cc9b8427487a8b6ba3bb19f96588
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca50b91261b82f80968ba847dc90d8c7995cc8ec
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371136"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844772"
 ---
 # <a name="installing-a-umdf-filter-driver"></a>安装 UMDF 筛选器驱动程序
 
 
-筛选器驱动程序可以支持特定设备或所有设备安装程序类中。 上部的筛选器将附加设备的功能驱动程序之上时，较低的筛选器驱动程序将附加设备的功能驱动程序，如下。
+筛选器驱动程序可以支持特定设备或安装程序类中的所有设备。 较低版本的筛选器驱动程序会附加到设备的功能驱动程序以下，而上层筛选器会附加到设备的功能驱动程序之上。
 
-本主题介绍如何安装和配置用户模式驱动程序框架 (UMDF) 特定于设备的 （上限或下限） 筛选器驱动程序。 您不能使用 UMDF 编写类筛选器驱动程序。 本主题适用于这两种 UMDF 版本 1 和 2。
+本主题介绍如何安装和配置特定于用户模式驱动程序框架（UMDF）设备的筛选器驱动程序。 不能使用 UMDF 来编写类筛选器驱动程序。 本主题适用于 UMDF 版本1和2。
 
-结构设备堆栈，请记住框架当前支持的每个堆栈的 UMDF 驱动程序只能有一个连续的块。 此外，不能在同一个设备堆栈中安装 UMDF 版本 1 和版本 2 的驱动程序。
+构建设备堆栈的结构时，请记住，框架目前仅支持每个堆栈一个连续的 UMDF 驱动程序块。 此外，不能在同一设备堆栈中安装 UMDF 版本1和版本2驱动程序。
 
-**如何安装和配置您的驱动程序**
+**如何安装和配置驱动程序**
 
-1.  UMDF 1 筛选器驱动程序应调用[ **IWDFDeviceInitialize::SetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)从其[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)回调函数。 从 UMDF 版本 2 开始，您的驱动程序改为调用[ **WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)。
+1.  UMDF 1 筛选器驱动程序应从其[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)回调函数调用[**IWDFDeviceInitialize：： SetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter) 。 从 UMDF 版本2开始，驱动程序将调用[**WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetfilter)。
 
-2.  除了您的驱动程序可以指定任何特定于 UMDF 的指令，还必须指定**UmdfService**并**UmdfServiceOrder**指令。 在本主题中，我们将指定的上限的筛选器驱动程序：
+2.  除了驱动程序可以指定的任何特定于 UMDF 的指令外，还必须指定**UmdfService**和**UmdfServiceOrder**指令。 在本主题中，我们将指定上方筛选器驱动程序：
 
     ```cpp
     [<mydriver>_Install.NT.Wdf]
@@ -33,13 +33,13 @@ ms.locfileid: "67371136"
     UmdfServiceOrder=UMDFFunction,UMDFFilter
     ```
 
-    驱动程序添加到设备堆栈中列出的顺序**UmdfServiceOrder**条目。 第一个参数指定最低 UMDF 驱动程序设备堆栈中。 若要安装较低的筛选器驱动程序，只需反转的参数**UmdfServiceOrder**。
+    驱动程序将按照它们在**UmdfServiceOrder**项中的列出顺序添加到设备堆栈中。 第一个参数指定设备堆栈中最低的 UMDF 驱动程序。 若要安装更低的筛选器驱动程序，只需反转**UmdfServiceOrder**的参数。
 
-    有关这些和其他特定于 UMDF 的 INF 指令的详细信息，请参阅[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
+    有关这些和其他 UMDF 特定 INF 指令的详细信息，请参阅[在 INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 
-3.  如果您的驱动程序设备堆栈包含 UMDF 驱动程序，请跳过此步骤。
+3.  如果驱动程序的设备堆栈只包含 UMDF 驱动程序，请跳过此步骤。
 
-    如果您的驱动程序设备堆栈包含任何不所 UMDF 驱动程序，您的 INF 文件必须包括**AddReg**作为上限的筛选器驱动程序指定该发送程序的部分：
+    如果驱动程序的设备堆栈包含任何不是 UMDF 的驱动程序，则 INF 文件必须包含将反射器指定为上层筛选器驱动程序的**AddReg**部分：
 
     ```cpp
     [<mydriver>_Device_AddReg]
@@ -48,9 +48,9 @@ ms.locfileid: "67371136"
     HKR,,"UpperFilters",0x00010008,"WUDFRd" 
     ```
 
-4.  您的驱动程序加载为上限的筛选器后，它负责转发对堆栈中的下一步驱动程序的 I/O 请求。 若要说明，请考虑的简单直通驱动程序 (UMDF 第 1 版) 高于 KMDF 功能驱动程序。
+4.  将驱动程序作为上限筛选器加载后，它负责将 i/o 请求转发到堆栈中的下一个驱动程序。 要说明这一点，请考虑使用 KMDF 函数驱动程序的简单直通驱动程序（UMDF 版本1）。
 
-    首先，检索默认 I/O 目标的接口 （在堆栈中的下一步驱动程序）。 然后，设置格式并将请求发送。 最简单的方案如下所示：
+    首先，检索默认 i/o 目标的接口（堆栈中的下一个驱动程序）。 然后，格式化并发送请求。 最简单的方案如下所示：
 
     ```cpp
     IWDFIoTarget * kmdfIoTarget = NULL;

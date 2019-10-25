@@ -1,30 +1,30 @@
 ---
 title: 查询和更改 RSC 状态
-description: 本部分介绍如何查询或更改当前接收段合并 (RSC) 的支持 RSC 的微型端口驱动程序的状态。
+description: 本部分介绍如何查询或更改支持 RSC 的微型端口驱动程序的当前接收段合并（RSC）状态。
 ms.assetid: 5455FBB2-3603-44EF-B1C6-494D31DD820D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac1d26144e47ab596be373221c93ef3716bfba4c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b35a3494657abfd6a58b492872902539a17f993
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385431"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844887"
 ---
 # <a name="querying-and-changing-rsc-state"></a>查询和更改 RSC 状态
 
 
-本部分介绍如何查询或更改当前接收段合并 (RSC) 的支持 RSC 的微型端口驱动程序的状态。
+本部分介绍如何查询或更改支持 RSC 的微型端口驱动程序的当前接收段合并（RSC）状态。
 
-## <a name="querying-rsc-state"></a>查询 RSC 状态
+## <a name="querying-rsc-state"></a>正在查询 RSC 状态
 
 
-可以通过发出查询的当前 RSC 状态[OID\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 请求。 NDIS 处理此 OID 并不将它传递到微型端口。
+可以通过发出[OID\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 请求来查询当前 RSC 状态。 NDIS 处理此 OID，但不将其向下传递到小型端口。
 
 ## <a name="changing-rsc-state"></a>更改 RSC 状态
 
 
-可以启用或禁用通过发出 RSC [OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求。 使用此 OID [ **NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构。 在此结构中， **RscIPv4**并**RscIPv6**成员都可以具有以下值：
+可以通过[\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，来启用或禁用 RSC。 此 OID 使用[**NDIS\_卸载\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)结构。 在此结构中， **RscIPv4**和**RscIPv6**成员可以具有以下值：
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ ms.locfileid: "67385431"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>NDIS_OFFLOAD_PARAMETERS_RSC_DISABLED</strong></p></td>
-<td align="left"><p>指定此标志，以禁用 RSC。</p></td>
+<td align="left"><p>指定此标志可禁用 RSC。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>NDIS_OFFLOAD_PARAMETERS_RSC_ENABLED</strong></p></td>
@@ -55,9 +55,9 @@ ms.locfileid: "67385431"
 
  
 
-微型端口驱动程序进程后[OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，它必须为提供[ **NDIS\_状态\_任务\_卸载\_当前\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)使用更新的状态指示卸载状态。
+在微型端口驱动程序处理[oid 后\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，它必须为[**NDIS\_状态\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)\_\_更新的卸载状态。
 
-当微型端口驱动程序收到[OID\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 请求在其中**NDIS\_卸载\_参数\_RSC\_禁用**指定标志，该驱动程序必须指示完成 OID 请求之前存在的任何合并在堆栈中向上的段。
+当微型端口驱动程序接收[OID 时\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 请求，在该请求中， **NDIS\_卸载\_** 在，驱动程序必须在完成 OID 请求之前，指示堆栈上的任何现有接合段。
 
  
 

@@ -3,69 +3,69 @@ title: 创建和使用驱动程序创建的文件对象
 description: 创建和使用驱动程序创建的文件对象
 ms.assetid: 84b677b4-fddf-4f06-9ea6-e4642c3f1b2d
 keywords:
-- 驱动程序创建文件对象 WDK UMDF
-- 驱动程序创建文件对象 WDK UMDF，创建和使用
-- 文件句柄 I/O WDK UMDF 驱动程序创建、 创建和使用的对象
-- I/O 请求 WDK UMDF，文件对象，创建和使用
-- 用户模式驱动程序框架 WDK、 I/O、 创建和使用句柄的文件对象
-- UMDF WDK、 I/O、 创建和使用句柄的文件对象
-- 用户模式驱动程序 WDK UMDF，文件 I/O，创建和使用句柄的对象
+- 驱动程序创建的文件对象 WDK UMDF
+- 驱动程序创建的文件对象 WDK UMDF，创建和使用
+- 用于处理 i/o WDK UMDF、驱动程序创建、创建和使用的文件对象
+- I/o 请求 WDK UMDF、file 对象、创建和使用
+- 用户模式驱动程序框架 WDK，处理 i/o 的文件对象，创建和使用
+- UMDF WDK，处理 i/o 的文件对象，创建和使用
+- 用户模式驱动程序 WDK UMDF，处理 i/o 的文件对象，创建和使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 252089bc68f053ca823bd7bd7dce7717789023fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b14670c7a8ca5d1ccc34a641f330852aea777d6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382410"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845607"
 ---
 # <a name="creating-and-using-driver-created-file-objects"></a>创建和使用驱动程序创建的文件对象
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-如果您的驱动程序需要创建并发送到堆栈 （默认 I/O 目标） 中的下一步驱动程序应用程序无关的 I/O 请求，该驱动程序必须创建并关闭其自己的文件对象。
+如果驱动程序需要创建独立于应用程序的 i/o 请求并将其发送到堆栈中的下一个驱动程序（默认 i/o 目标），则驱动程序必须创建并关闭其自己的文件对象。
 
 ### <a name="creating-a-file-object"></a>创建文件对象
 
-您的驱动程序必须调用[ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)方法创建的驱动程序使用的文件对象。 当驱动程序调用**IWDFDevice::CreateWdfFile**，框架将创建请求发送到堆栈中的下一步驱动程序。 在内核模式下或在用户模式下，可能是在堆栈中的下一步驱动程序。
+驱动程序必须调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)方法来创建用于驱动程序的文件对象。 当驱动程序调用**IWDFDevice：： CreateWdfFile**时，框架会将 create 请求发送到堆栈中的下一个驱动程序。 堆栈中的下一个驱动程序可能处于内核模式或用户模式下。
 
-此创建文件请求处理是在 Windows 驱动程序模型 (WDM) 不同。 在 WDM，调用[ **ZwCreateFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile)函数会导致创建 IRP 转到内核模式堆栈的顶部。 下图显示与 WDM UMDF 中创建文件请求处理：
+此创建文件请求处理在 Windows 驱动模型（WDM）中是不同的。 在 WDM 中，对[**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)函数的调用会导致 create IRP 转向内核模式堆栈的顶部。 下图显示了在 UMDF 与 WDM 中创建文件请求的处理：
 
-![在与 wdm umdf 中处理的创建文件请求](images/drvrcrtfile.gif)
+![在 umdf 与 wdm 中创建文件请求处理](images/drvrcrtfile.gif)
 
-通过调用[ **IWDFDevice::CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)，驱动程序可以创建文件对象并之前已开始整个堆栈，在设备启动期间发送的 I/O 请求。
+通过调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)，驱动程序可以在启动整个堆栈之前，创建文件对象，然后在设备启动过程中发送 i/o 请求。
 
-在堆栈中的下一步驱动程序必须确定是否可处理创建文件请求，或者它必须进一步在堆栈的下层将请求转发。
+堆栈中的下一个驱动程序必须确定它是否可以处理创建文件请求，或者是否必须在堆栈中进一步转发请求。
 
-在调用[ **IWDFDevice::CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)，驱动程序不能取消创建操作。
+调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)之后，驱动程序无法取消创建操作。
 
-## <a name="using-the-file-object"></a>使用文件对象
+## <a name="using-the-file-object"></a>使用 File 对象
 
 
-若要发送到下一步的驱动程序的异步读取的请求堆积下面，您的驱动程序可以使用以下模式。
+若要将异步读取请求发送到其下堆叠的下一个驱动程序，你的驱动程序可以使用以下模式。
 
-1.  调用[ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)创建文件对象。
-2.  调用[ **IWDFDevice::GetDefaultIoTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-getdefaultiotarget)来检索表示较低级别的驱动程序的接口。
-3.  调用[ **IWDFDevice::CreateRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createrequest)若要创建未格式化[ **IWDFIoRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiorequest)对象。
-4.  调用[ **IWDFIoRequest::SetCompletionCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)注册[ **IRequestCallbackRequestCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion) 接口[**OnCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)框架在 I/O 请求完成时调用的方法。
-5.  调用[ **IWDFIoTarget::FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)，提供一个指向[ **IWDFDriverCreatedFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)中接口*pFile*参数。
-6.  调用[ **IWDFIoRequest::Send** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)将请求发送。
+1.  调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)以创建文件对象。
+2.  调用[**IWDFDevice：： GetDefaultIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-getdefaultiotarget)以检索表示低级驱动程序的接口。
+3.  调用[**IWDFDevice：： CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)以创建未格式化的[**IWDFIoRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)对象。
+4.  调用[**IWDFIoRequest：： SetCompletionCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)来注册一个[**IRequestCallbackRequestCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-irequestcallbackrequestcompletion)接口，该接口用于框架在 i/o 请求完成时调用的[**OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)方法。
+5.  调用[**IWDFIoTarget：： FormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotarget-formatrequestforread)，在 *.pfile*参数中提供指向[**IWDFDriverCreatedFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)接口的指针。
+6.  调用[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)发送请求。
 
 ## <a name="closing-the-file-object"></a>关闭文件对象
 
 
-调用的驱动程序[ **IWDFDevice::CreateWdfFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)必须更高版本调用[ **IWDFDriverCreatedFile::Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)。
+调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)的驱动程序稍后必须调用[**IWDFDriverCreatedFile：： Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)。
 
-通常情况下，您的驱动程序调用[ **IWDFDriverCreatedFile::Close** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)从其[ **IPnpCallbackHardware::OnReleaseHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)或[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)回调方法。
+通常，驱动程序从其[**IPnpCallbackHardware：： OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)或[**IPnpCallbackSelfManagedIo：： OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)回调方法中调用[**IWDFDriverCreatedFile：： Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close) 。
 
-当驱动程序调用[ **IWDFDriverCreatedFile::Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)，框架将调用下一步的驱动程序[ **IFileCallbackCleanup::OnCleanupFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)方法。 在此方法下, 一步的驱动程序必须取消或完成与文件对象相关联的所有挂起的 I/O 请求。 Framework 然后取消创建名为的驱动程序的所有 I/O 请求[ **IWDFDevice::CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)。 框架不会取消任何堆栈中的低级驱动程序可能包含关联的文件对象使用的 I/O 请求。 它是驱动程序的责任取消任何此类请求。 文件对象仅与之关联的所有 I/O 请求都完成后将关闭。
+当驱动程序调用[**IWDFDriverCreatedFile：： Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)时，框架将调用下一个驱动程序的[**IFileCallbackCleanup：： OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)方法。 在此方法中，下一个驱动程序必须取消或完成与该文件对象关联的所有挂起的 i/o 请求。 然后，框架会取消由驱动程序创建的、名为[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)的所有 i/o 请求。 框架不取消堆栈中较低的驱动程序可能与 file 对象相关联的任何 i/o 请求。 驱动程序负责取消所有此类请求。 仅当与该对象关联的所有 i/o 请求都完成后，该文件对象才会关闭。
 
-接下来，框架将调用下一步的驱动程序[ **IFileCallbackClose::OnCloseFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)方法。 此时，该框架可保证下一步的驱动程序将不会收到此文件对象的其他 I/O 请求。
+接下来，该框架将调用下一个驱动程序的[**IFileCallbackClose：： OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)方法。 此时，框架保证下一个驱动程序不会收到此文件对象的其他 i/o 请求。
 
-框架将调用后[ **OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)，它将销毁[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdffile)表示文件对象的接口。
+在框架调用[**OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)后，它会销毁表示 file 对象的[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)接口。
 
-如果驱动程序的设备删除方法后保持驱动程序创建文件对象 (例如[ **IPnpCallbackHardware::OnReleaseHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)并[ **IPnpCallbackSelfManagedIo::OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)) 返回，框架才生成驱动程序停止。 有关此问题的疑难解答信息，请参阅[确定为什么 UMDF 指示未完成的文件在设备删除时](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)。
+如果在驱动程序的设备删除方法（例如[**IPnpCallbackHardware：： OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)和[**IPnpCallbackSelfManagedIo：： OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)）返回之后，驱动程序创建的文件对象仍然存在，则该框架将生成一个驱动程序停止。 有关解决此问题的信息，请参阅[确定 UMDF 在设备删除时指示未完成文件的原因](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)。
 
  
 

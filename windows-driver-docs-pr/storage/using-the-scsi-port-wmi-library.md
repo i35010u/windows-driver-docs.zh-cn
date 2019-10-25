@@ -3,16 +3,16 @@ title: 使用 SCSI 端口 WMI 库
 description: 使用 SCSI 端口 WMI 库
 ms.assetid: cb55bbb3-39bb-491f-a6d2-50dceace4a86
 keywords:
-- WMI Srb WDK 存储，SCSI 端口 WMI 库
+- WMI SRBs WDK 存储，SCSI 端口 WMI 库
 - SCSI 端口 WMI 库 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2fe6318f020c7df3210cc4819fdcd48a365c82
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 530e9ae66d20a5f212183be07d89d2543e788133
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386796"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845587"
 ---
 # <a name="using-the-scsi-port-wmi-library"></a>使用 SCSI 端口 WMI 库
 
@@ -20,25 +20,25 @@ ms.locfileid: "67386796"
 ## <span id="ddk_using_the_scsi_port_wmi_library_kg"></span><span id="DDK_USING_THE_SCSI_PORT_WMI_LIBRARY_KG"></span>
 
 
-函数与 WMI 提供程序的存储微型端口驱动程序可以使用 SCSI 端口 WMI 库可以简化处理 SCSI 请求块 (Srb) 包含 WMI 命令的任务。 微型端口驱动程序的启动 I/O 例程[ **HwScsiStartIo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))，相关信息中 WMI SRB 通过向传递 SCSI 端口 WMI 库处理在调用[ **ScsiPortWmiDispatchFunction** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)库的调度例程。 微型端口驱动程序会将以下数据传递到调度例程：
+作为 WMI 提供程序运行的存储微型端口驱动程序可以使用 SCSI 端口 WMI 库来简化处理包含 WMI 命令的 SCSI 请求块（SRBs）的任务。 微型端口驱动程序的启动 i/o 例程[**HwScsiStartIo**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557323(v=vs.85))将 wmi SRB 中的相关信息传递到 SCSI 端口 wmi 库，以便通过调用[**ScsiPortWmiDispatchFunction**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/nf-scsiwmi-scsiportwmidispatchfunction)库的调度例程进行处理。 微型端口驱动程序会将以下数据传递到调度例程：
 
--   在中*WmiLibInfo*参数： [ **SCSI\_WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-_scsiwmilib_context)微型端口驱动程序的回调例程的指针的结构。
+-   在*WmiLibInfo*参数中：一个[**SCSI\_WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-_scsiwmilib_context)结构，其中包含指向微型端口驱动程序的回调例程的指针。
 
--   在中*WMISubFunction*参数： 中的值**WMISubFunction** SRB 的成员。
+-   在*WMISubFunction*参数中： SRB 的**WMISubFunction**成员中的值。
 
--   在中*DeviceContext*参数： 指向设备扩展。
+-   在*DeviceContext*参数中：指向设备扩展的指针。
 
--   在中*RequestContext*参数： 类型的请求上下文结构[ **SCSIWMI\_请求\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmi_request_context)的 SCSI 端口 WMI库使用来记录的信息，如返回状态和数据的大小。
+-   在*RequestContext*参数中： SCSIWMI 类型的请求上下文结构[ **\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmi_request_context)SCSI 端口 WMI 库用来记录信息的\_上下文，如返回的数据的状态和大小。
 
--   在中*数据路径*参数： 中的值**数据路径**SRB 的成员。
+-   在*数据路径*参数中： SRB 的**数据路径**成员中的值。
 
--   在中*BufferSize*参数： 中的值**DataTransferLength** SRB 的成员。
+-   在*BufferSize*参数中： SRB 的**DataTransferLength**成员中的值。
 
--   在中*缓冲区*参数： 中的值**DataBuffer** SRB 的成员。
+-   在*Buffer*参数中： SRB 的**DataBuffer**成员中的值。
 
-初始化微型端口驱动程序时，它必须填写[ **SCSI\_WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-_scsiwmilib_context)使用指向所需的微型端口驱动程序回调例程的指针的结构，然后微型端口驱动程序特定于存储区域，如驱动程序扩展插件中存储结构。 每个微型端口驱动程序回调例程对应于次 IRP 版本号中, 所述[如何端口驱动程序进程 WMI 请求](how-the-port-driver-processes-wmi-requests.md)。 有关如何设计微型端口驱动程序回调例程的信息，请参阅[设计 WMI 微型端口驱动程序回调例程](designing-wmi-miniport-driver-callback-routines.md)
+初始化微型端口驱动程序时，它必须使用指向所需微型端口驱动程序回调例程的指针填充[**SCSI\_WMILIB\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-_scsiwmilib_context)结构，然后将该结构存储在微型端口驱动程序特定的存储区域中，如驱动程序扩展。 每个微型端口驱动程序回调例程对应次要 IRP 号，如[端口驱动程序处理 WMI 请求的方式中所](how-the-port-driver-processes-wmi-requests.md)述。 有关如何设计微型端口驱动程序回调例程的信息，请参阅[设计 WMI 微型端口驱动程序回调例程](designing-wmi-miniport-driver-callback-routines.md)
 
-**GuidList**成员的 SCSI\_WMILIB\_上下文结构必须指向类型的元素的数组[ **SCSIWMIGUIDREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/scsiwmi/ns-scsiwmi-scsiwmiguidreginfo) ，包含唯一地标识在 MOF 文件中定义的受支持的 WMI 类的 Guid 有关的信息。 下面的代码段说明了此类元素的数组的定义：
+SCSI\_WMILIB\_上下文结构的**GuidList**成员必须指向[**SCSIWMIGUIDREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/scsiwmi/ns-scsiwmi-scsiwmiguidreginfo)类型的元素数组，其中包含有关 guid 的信息，这些 guid 用于唯一标识在MOF 文件。 下面的代码段演示了此类元素数组的定义：
 
 ```cpp
 SCSIWMIGUIDREGINFO GuidList[] = 
@@ -56,9 +56,9 @@ SCSIWMIGUIDREGINFO GuidList[] =
 };
 ```
 
-数组包含的两个 WMI 类，信息 Guid **HBAStatistics**并**HBAAttributes**。 Guid 的符号常量拍摄从编译 MOF 文件，用于定义两个类的 WMI 工具套件与生成的标头文件 ( **mofcomp**并**wmimofck**工具)。 有关如何使用这些工具的详细信息，请参阅[编译的驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)并[使用 wmimofck.exe](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)。
+该数组包含有关两个 WMI 类（ **HBAStatistics**和**HBAAttributes**）的 guid 的信息。 Guid 的符号常量来自于通过编译 MOF 文件生成的头文件，该文件使用 WMI 工具套件（ **mofcomp.exe**和**wmimofck**工具）定义这两个类。 有关如何使用这些工具的详细信息，请参阅[编译驱动程序的 MOF 文件](https://docs.microsoft.com/windows-hardware/drivers/kernel/compiling-a-driver-s-mof-file)和[使用 wmimofck](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-wmimofck-exe)。
 
-WMI 工具套件生成通过串联 WMI 类的名称后缀"GUID"的 GUID 的符号常量的名称。 例如，对于类**HBAStatistics，** 该工具将创建名为符号常量**HBAStatisticsGUID** ，表示该类的 GUID。
+WMI 工具套件将后缀 "GUID" 连接到 WMI 类的名称，从而生成 GUID 的符号常数的名称。 例如，对于类**HBAStatistics，** 该工具将创建一个名为**HBAStatisticsGUID**的符号常数，表示该类的 GUID。
 
  
 

@@ -3,16 +3,16 @@ title: 初始化 BDA 微型驱动程序
 description: 初始化 BDA 微型驱动程序
 ms.assetid: 4df2efc6-e666-48d5-9a7b-cbf724c027f0
 keywords:
-- BDA 微型驱动程序 WDK AVStream 初始化
+- BDA 微型驱动程序 WDK AVStream，初始化
 - 初始化 BDA 微型驱动程序 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf05ce402aabcf70bfe9597826ea38fee6297d90
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a67f7a6c9825066cc189b9b1bebe026d9798c4f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360684"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845573"
 ---
 # <a name="initializing-a-bda-minidriver"></a>初始化 BDA 微型驱动程序
 
@@ -20,13 +20,13 @@ ms.locfileid: "67360684"
 
 
 
-同样 BDA 微型驱动程序初始化为其他 AVStream 微型驱动程序。 BDA 微型驱动程序的驱动程序入口函数调用 AVStream [ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver)函数以初始化 BDA 微型驱动程序的驱动程序对象。 在此调用，BDA 微型驱动程序将传递一个指向[ **KSDEVICE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_descriptor)结构，它指定特征的设备，这可能包括：
+BDA 微型驱动程序的初始化方式类似于其他 AVStream 微型驱动程序。 BDA 微型驱动程序的 DriverEntry 函数调用 AVStream [**KsInitializeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver)函数以初始化 BDA 微型驱动程序的驱动程序对象。 在此调用中，BDA 微型驱动程序会传递一个指向[**KSDEVICE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice_descriptor)结构的指针，该结构指定设备的特性，其中包括：
 
--   一个指向[ **KSDEVICE\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice_dispatch)包含 BDA 设备的调度表的结构。 BDA 微型驱动程序应至少提供创建和启动设备，并指定这些例程中的例程**外**并**启动**成员分别 KSDEVICE\_调度结构。 BDA 微型驱动程序的创建例程应设备类分配内存并引用指向指针[ **KSDEVICE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksdevice) BDA 设备连接到此设备类的结构。 BDA 微型驱动程序的启动例程应从注册表获取有关设备的信息、 设置设备的相关信息和 BDA 支持库注册的静态模板结构的组。 请参阅[启动 BDA 微型驱动程序](starting-a-bda-minidriver.md)有关详细信息。
+-   指向[ **\_KSDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice_dispatch)的指针，该结构包含 BDA 设备的调度表。 BDA 微型驱动程序应该至少提供用于创建和启动设备的例程，并分别在 "**添加**" 和 "**启动**" 成员中指定这些例程，并分别指定 KSDEVICE\_调度结构。 BDA 微型驱动程序的 create 例程应为设备类分配内存，并将指向该 BDA 设备的[**KSDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksdevice)结构的指针引用到此设备类。 BDA 微型驱动程序的启动例程应从注册表获取有关设备的信息、设置有关设备的信息，然后使用 BDA 支持库注册一组静态模板结构。 有关详细信息，请参阅[启动 BDA 微型驱动程序](starting-a-bda-minidriver.md)。
 
--   一个数组[ **KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksfilter_descriptor)支持此设备的单个筛选器类型的结构。 此结构类型描述由给定筛选器工厂创建的筛选器的特征。 如果您创建您 BDA 微型驱动程序，以便它不使用 BDA 支持库，应在此数组中指定的此类型的结构的成员 (*Bdasup.lib*) 来处理你 BDA 微型驱动程序的属性和方法集。 如果您创建您 BDA 微型驱动程序，以便它使用 BDA 支持库，然后在 BDA 微型驱动程序应改为调用[ **BdaCreateFilterFactory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数以添加筛选器工厂描述符 （KSFILTER\_描述符结构) 为你的设备。 请参阅[启动 BDA 微型驱动程序](starting-a-bda-minidriver.md)有关详细信息。
+-   此设备支持的各个筛选器类型的[**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的数组。 此结构类型描述了给定筛选器工厂创建的筛选器的特征。 如果创建的是 BDA 微型驱动程序，使其不使用 BDA 支持库（*Bdasup*）来处理 bda 微型驱动程序的属性和方法集，则应在此数组中指定此类型的结构的成员。 如果创建的是 BDA 微型驱动程序，使其能够使用 BDA 支持库，则 BDA 微型驱动程序应改为调用[**BdaCreateFilterFactory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdacreatefilterfactory)支持函数，\_为你的装置. 有关详细信息，请参阅[启动 BDA 微型驱动程序](starting-a-bda-minidriver.md)。
 
-下面的代码段显示了筛选器描述符的数组、 调度表以获取 BDA 设备和 BDA 设备描述符的示例：
+下面的代码片段演示了一个筛选器描述符数组的示例、一个 BDA 设备的一个调度表以及 BDA 设备的描述符：
 
 ```cpp
 //

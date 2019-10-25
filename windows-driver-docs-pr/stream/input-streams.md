@@ -3,22 +3,22 @@ title: 输入流
 description: 输入流
 ms.assetid: 0aa378d8-e7e2-4555-b541-dd1ed77b4a12
 keywords:
-- 输入的流的 WDK DVD 解码器
+- 输入流 WDK DVD 解码器
 - DVD 包 WDK DVD 解码器
-- 子流 WDK DVD 解码器图
-- SDD 音频输入流的 WDK DVD 解码器
-- DTS 音频输入流的 WDK DVD 解码器
-- LPCM 音频输入流的 WDK DVD 解码器
-- Ac-3 WDK DVD 解码器
-- MPEG2 视频输入流的 WDK DVD 解码器
+- 子画面流 WDK DVD 解码器
+- SDD 音频输入流 WDK DVD 解码器
+- DTS 音频输入流 WDK DVD 解码器
+- LPCM 音频输入流 WDK DVD 解码器
+- AC 3 WDK DVD 解码器
+- MPEG2 视频输入流 WDK DVD 解码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56b90a5e86c945b5fc9f907fbd1baa3b24c5044e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 427db085c4e0884aca43c14def259b757ad07e94
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360675"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845568"
 ---
 # <a name="input-streams"></a>输入流
 
@@ -26,11 +26,11 @@ ms.locfileid: "67360675"
 
 
 
-DVD 输入的流作为数组的已加密的 DVD 包提供给微型驱动程序。 包是 DVD 规范中定义。 请注意因为 Microsoft 的 DVD 体系结构为音频和视频同步使用的"主时钟"模式的包的系统时钟参考 (SCR) 字段设置为零。 通常情况下，DVD 解码器微型驱动程序的音频流提供主时钟。 有关详细信息，请参阅[Master 时钟](master-clock.md)。
+DVD 输入流作为加密 DVD 包的数组提供给微型驱动程序。 包是在 DVD 规范中定义的。 请注意，PACK 的 "系统时钟引用（SCR）" 字段设置为零，因为 Microsoft 的 DVD 体系结构使用 "主时钟" 模式进行音频和视频同步。 通常，DVD 解码器微型驱动程序的音频流提供主时钟。 有关详细信息，请参阅[主时钟](master-clock.md)。
 
-DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)请求。 有关 SRB 请求的详细信息，请参阅[处理 Stream 请求块](handling-stream-request-blocks.md)并[Stream 类 SRB 引用](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)。 硬件应支持散播-聚集 DMA，因为多个 DVD 包可能会出现在单个请求数据包。
+DVD 数据流通过[**SRB\_写入\_数据**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-write-data)请求发送到微型驱动程序。 有关 SRB 请求的详细信息，请参阅[处理流请求块](handling-stream-request-blocks.md)和[Stream 类 SRB 引用](https://docs.microsoft.com/windows-hardware/drivers/stream/stream-class-srb-reference)。 硬件应支持散播/聚集 DMA，因为多个 DVD 包可能存在于单个请求数据包中。
 
-下表介绍了使用的 DVD 电影 MPEG2 视频的输入的流媒体类型：
+下表描述了 DVD 电影使用的 MPEG2 视频输入流媒体类型：
 
 <table>
 <colgroup>
@@ -39,8 +39,8 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>ReplTest1</th>
+<th>属性</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -53,7 +53,7 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 <td><p>KSDATAFORMAT_SUBTYPE_MPEG2_VIDEO</p></td>
 </tr>
 <tr class="odd">
-<td><p>设置格式块说明符 GUID</p></td>
+<td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_MPEG2_VIDEO</p></td>
 </tr>
 <tr class="even">
@@ -62,14 +62,14 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 <div>
  
 </div>
-（VIDEOINFO2 结构的超集。 此外指示 MPEG 配置文件和级别。）</td>
+（VIDEOINFO2 结构的超集。 还指示 MPEG 配置文件和级别。）</td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表介绍了使用的 DVD 电影 ac-3 音频输入的流媒体类型：
+下表描述了 DVD 电影使用的 AC 3 音频输入流媒体类型：
 
 <table>
 <colgroup>
@@ -78,8 +78,8 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>ReplTest1</th>
+<th>属性</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -92,9 +92,9 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
 <td><p>KSDATAFORMAT_SUBTYPE_AC3_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>设置格式块说明符 GUID</p></td>
+<td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>（请注意，这希望变化）。</p></td>
+<p>（请注意，这应该会改变。）</p></td>
 </tr>
 <tr class="even">
 <td><p>格式块结构</p></td>
@@ -103,14 +103,14 @@ DVD 数据流发送到微型的驱动程序通过[ **SRB\_编写\_数据**](http
  
 </div>
 WaveFormatEx 的超集
-<p>（两个以上声道。 Down-mix 描述符。)</p></td>
+<p>（超过两个通道。 下组合描述符。）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表介绍了使用的 DVD 电影 LPCM 音频输入的流媒体类型：
+下表描述了 DVD 电影使用的 LPCM 音频输入流媒体类型：
 
 <table>
 <colgroup>
@@ -119,8 +119,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>值</th>
+<th>属性</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -133,7 +133,7 @@ WaveFormatEx 的超集
 <td><p>KSDATAFORMAT_SUBTYPE_LPCM_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>设置格式块说明符 GUID</p></td>
+<td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p></td>
 </tr>
 <tr class="even">
@@ -145,7 +145,7 @@ WaveFormatEx 的超集
 
  
 
-下表介绍了使用的 DVD 电影的 DTS 音频输入的流媒体类型：
+下表描述了 DVD 电影使用的 DTS 音频输入流媒体类型：
 
 <table>
 <colgroup>
@@ -154,8 +154,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>值</th>
+<th>属性</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -168,9 +168,9 @@ WaveFormatEx 的超集
 <td><p>KSDATAFORMAT_SUBTYPE_DTS_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>设置格式块说明符 GUID</p></td>
+<td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>（请注意，这希望变化）。</p></td>
+<p>（请注意，这应该会改变。）</p></td>
 </tr>
 <tr class="even">
 <td><p>格式块结构</p></td>
@@ -179,14 +179,14 @@ WaveFormatEx 的超集
  
 </div>
 WaveFormatEx 的超集
-<p>（两个以上声道。 Down-mix 描述符。)</p></td>
+<p>（超过两个通道。 下组合描述符。）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表介绍了使用的 DVD 电影 SDD 音频输入的流媒体类型：
+下表描述了 DVD 电影使用的 SDD 音频输入流媒体类型：
 
 <table>
 <colgroup>
@@ -195,8 +195,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>ReplTest1</th>
+<th>属性</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -209,9 +209,9 @@ WaveFormatEx 的超集
 <td><p>KSDATAFORMAT_SUBTYPE_SDDS_AUDIO</p></td>
 </tr>
 <tr class="odd">
-<td><p>设置格式块说明符 GUID</p></td>
+<td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_WAVEFORMATEX</p>
-<p>（请注意，这希望变化）。</p></td>
+<p>（请注意，这应该会改变。）</p></td>
 </tr>
 <tr class="even">
 <td><p>格式块结构</p></td>
@@ -220,14 +220,14 @@ WaveFormatEx 的超集
  
 </div>
 WaveFormatEx 的超集
-<p>（两个以上声道。 Down-mix 描述符。)</p></td>
+<p>（超过两个通道。 下组合描述符。）</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表介绍了使用的 DVD 电影的子画面流媒体类型：
+下表描述了 DVD 电影使用的子画面流媒体类型：
 
 <table>
 <colgroup>
@@ -236,8 +236,8 @@ WaveFormatEx 的超集
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
-<th>ReplTest1</th>
+<th>属性</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
@@ -250,7 +250,7 @@ WaveFormatEx 的超集
 <td><p>KSDATAFORMAT_SUBTYPE_SUBPICTURE</p></td>
 </tr>
 <tr class="odd">
-<td><p>设置格式块说明符 GUID</p></td>
+<td><p>格式块说明符 GUID</p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_NONE</p></td>
 </tr>
 <tr class="even">
@@ -262,15 +262,15 @@ WaveFormatEx 的超集
 
  
 
-突出显示子画面，调色板信息和突出显示的信息作为属性传递。 子画面数据流包含的数据包数据，如 DVD 规范提供。 尽管包标头将剥，但仍提供。
+对于子画面突出显示，调色板信息和突出显示信息作为属性传递。 子画面数据流由 DVD 规范提供的数据数据包组成。 虽然 PACK 标头被去除，但仍会提供。
 
-Microsoft 在任何给定时间提供 DVD 导航器筛选器分析所有按钮和键盘的信息和仅传递到子画面解码器的一个突出显示矩形。 因此，突出显示的信息通常不是位于 DVD 流发送到解码器。 这与 DVD 规范中的不同。
+Microsoft 提供的 DVD 导航器筛选器分析所有按钮和键盘信息，并且在任何给定时间只将一个突出显示的矩形向下传递到子画面解码器。 因此，将突出显示信息发送到解码器的频率比 DVD 流中显示的信息更多。 这不同于 DVD 规范。
 
-DVD 拆分器导航器/筛选器处理击键的所有信息并发送新突出显示每次在按钮状态发生更改的信息。 信息描述一次只有一种模式的一个按钮。 如果存在，它会在屏幕的像素坐标或显示的子画面，包括显示矩形。 [ **KSPROPERTY\_SPHLI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-_ksproperty_sphli)结构还包含颜色和对比的信息，但仅针对当前所选按钮的当前状态。 DVD 规范中定义的格式。
+DVD 导航器/拆分器筛选器处理所有击键信息，并在每次按钮状态发生更改时发送新的突出显示信息。 信息一次仅描述一个按钮的一种模式。 它包括屏幕像素坐标中的显示矩形或子画面（如果存在）的显示。 [**KSPROPERTY\_SPHLI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksproperty_sphli)结构还包含颜色和对比度信息，但仅适用于当前所选按钮的当前状态。 格式是在 DVD 规范中定义的。
 
-突出显示信息以异步方式到达了数据流。 DVD 解码器微型驱动程序必须使用突出显示开始和结束时间戳，以关联到相关的子画面信息中，突出显示的信息，如果有的话。 如果 DVD 解码器微型驱动程序未收到的请求的时间戳的任何子画面流信息，解码器假定将突出显示信息是独立的并且不适用于子画面。 在这种情况下，可以假定的颜色和对比的信息完全相同颜色。
+突出显示信息以异步方式到达数据流。 DVD 解码器微型驱动程序必须使用突出显示开始和结束时间戳将突出显示信息关联到相关的子画面信息（如果有）。 如果 DVD 解码器微型驱动程序尚未收到请求的时间戳的任何子画面流信息，则解码器会假设突出显示信息是独立的，不适用于子画面。 在这种情况下，可以假设颜色和对比度信息的颜色完全相同。
 
-突出显示的信息包含开始和结束时间戳。 以下是在同一个单位为其他时间戳，但以下两点除外：0xFFFFFFFF 开始时间戳表示突出显示属性才有效收到后，结束时间戳的 0xFFFFFFFF 表示突出显示属性有效，直到接收到的下一步的突出显示。
+突出显示的信息包含开始和结束时间戳。 它们的单位与其他时间戳的单位相同，但有两个例外：0xFFFFFFFF 的开始时间戳表示突出显示属性在收到回执时有效，而在下一个高光之前，则为0xFFFFFFFF 的结束时间戳。收发.
 
  
 

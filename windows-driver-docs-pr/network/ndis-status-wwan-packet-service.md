@@ -1,56 +1,56 @@
 ---
 title: NDIS_STATUS_WWAN_PACKET_SERVICE
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PACKET_SERVICE 通知来告知 MB 服务数据包服务可用性的更改，包括要通知的当前使用的数据包数据服务的类型的更改时。
+description: 当数据包服务可用性发生变化时，微型端口驱动程序使用 NDIS_STATUS_WWAN_PACKET_SERVICE 通知来通知 MB 服务，包括通知当前所使用的数据包数据服务类型的更改。
 ms.assetid: 7a04b54e-e07b-43dc-ba76-086d7521ff60
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PACKET_SERVICE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e08ed1be5b53def4c3baf1b51b6d58384301694
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e12f5906cfad6030b88cd5615e289c6e19531597
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377623"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844759"
 ---
-# <a name="ndisstatuswwanpacketservice"></a>NDIS\_状态\_WWAN\_数据包\_服务
+# <a name="ndis_status_wwan_packet_service"></a>WWAN\_数据包\_服务\_的 NDIS\_状态
 
 
-微型端口驱动程序使用 NDIS\_状态\_WWAN\_数据包\_服务通知来通知 MB 服务数据包服务可用性的更改，包括要通知的数据包数据的类型的更改时当前使用的服务。
+小型端口驱动程序使用 NDIS\_状态\_WWAN\_数据包\_服务通知，以在数据包服务可用性发生更改时通知 MB 服务，包括通知当前所使用的数据包数据服务的类型发生更改。
 
-微型端口驱动程序还可以发送未经请求的事件与该通知。
+小型端口驱动程序还可以通过此通知发送未经请求的事件。
 
-使用此通知[ **NDIS\_WWAN\_数据包\_服务\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)结构。
+此通知使用[**NDIS\_WWAN\_数据包\_服务\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)结构。
 
 <a name="remarks"></a>备注
 -------
 
-基于 CDMA 的微型端口驱动程序可以自动启动数据包附加服务是否存在任何资源分配/发布可能并可以向 MB 服务发送事件通知。
+如果没有资源分配/发布，基于 CDMA 的微型端口驱动程序可以自动启动包附加服务，并可以将事件通知发送到 MB 服务。
 
-微型端口驱动程序应遵循以下准则的事件通知：
+小型端口驱动程序应遵守事件通知的以下准则：
 
--   微型端口驱动程序应设置**AvailableDataClasses**设置为 WWAN\_数据\_类\_微型端口驱动程序初始化期间 NONE。 此后，微型端口驱动程序必须通知 MB 服务时没有任何更改**AvailableDataClasses**。
+-   小型端口驱动程序应将**AvailableDataClasses**设置为 WWAN\_数据\_类在微型端口驱动程序初始化期间\_NONE。 此后，每当**AvailableDataClasses**发生任何更改时，微型端口驱动程序都必须通知 MB 服务。
 
--   微型端口驱动程序应设置**CurrentDataClass**到 WWAN\_数据\_类\_微型端口驱动程序初始化期间 NONE。 此后，微型端口驱动程序必须通知 MB 服务时没有任何更改**CurrentDataClass** 。 微型端口驱动程序应发送 NDIS\_状态\_链接\_状态通知，如果对更改**CurrentDataClass**导致的更改的传输或接收链接速度。
+-   小型端口驱动程序应在微型端口驱动程序初始化过程中将**CurrentDataClass**设置为 WWAN\_数据\_类\_NONE。 此后，每当**CurrentDataClass**发生任何更改时，微型端口驱动程序都必须通知 MB 服务。 如果更改**CurrentDataClass**导致传输或接收链接速度发生变化，微型端口驱动程序应将 NDIS\_状态\_链接\_状态通知。
 
--   微型端口驱动程序必须通知 MB 服务，只要有数据包服务中的任何更改将附加状态。
+-   当数据包服务附加状态发生任何变化时，微型端口驱动程序必须通知 MB 服务。
 
-微型端口驱动程序应返回*查询*结果根据以下规则：
+微型端口驱动程序应根据以下规则返回*查询*结果：
 
--   微型端口驱动程序必须返回 WWAN\_状态\_成功**WwanPacketServiceStateAttaching**每当设备尝试将数据包附加。
+-   每当设备尝试建立数据包时，微型端口驱动程序都必须返回 WWAN\_状态\_SUCCESS，并返回**WwanPacketServiceStateAttaching** 。
 
--   微型端口驱动程序应返回 WWAN\_状态\_成功**WwanPacketServiceStateDetaching**每当设备尝试数据包分离。
+-   每当设备尝试进行数据包**分离时，** 微型端口驱动程序都应\_SUCCESS 返回 WWAN\_状态。
 
--   当设备处于最终状态时，微型端口驱动程序应返回 WWAN\_状态\_成功以及相应的当前状态 ( **WwanPacketServiceStateAttached**或**WwanPacketServiceStateDetached**)
+-   当设备处于最终状态时，微型端口驱动程序应将 WWAN\_状态连同适当的当前状态一起返回\_SUCCESS （ **WwanPacketServiceStateAttached**或**WwanPacketServiceStateDetached**）
 
--   微型端口驱动程序必须列出所有可用数据的类;不只是最高的数据的类可用。 这同时适用于*查询*操作以及事件通知。
+-   微型端口驱动程序必须列出所有可用的数据类;不只是最高的可用数据类。 这同时适用于*查询*操作和事件通知。
 
-微型端口驱动程序应返回*设置*结果根据以下规则：
+微型端口驱动程序应根据以下规则返回*设置*的结果：
 
--   返回 WWAN\_状态\_成功后，如果*设置*请求**WwanPacketServiceActionAttach**，由服务颁发和设备已处于数据包附加状态。
+-   如果使用**WwanPacketServiceActionAttach***设置*请求，则返回 WWAN\_状态\_成功，该服务已在数据包附加状态下发出。
 
--   返回 WWAN\_状态\_成功后，如果*设置*请求**WwanPacketServiceActionDetach**，由服务颁发和设备已处于数据包分离状态。
+-   如果使用**WwanPacketServiceActionDetach***设置*请求，则返回 WWAN\_状态\_成功，该服务已在数据包分离状态下发出。
 
--   永远不会返回暂时性状态*设置*请求。 只有最终状态**WwanPacketServiceStateAttached**或**WwanPacketServiceStateDetached**必须具有 WWAN的数据包服务操作的成功完成后返回\_状态\_成功
+-   从不返回*设置*请求的暂时性状态。 只有在成功完成数据包服务操作和 WWAN\_状态\_成功后，才能返回最终状态**WwanPacketServiceStateAttached**或**WwanPacketServiceStateDetached**
 
 <a name="requirements"></a>要求
 ------------
@@ -62,22 +62,22 @@ ms.locfileid: "67377623"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td><p>版本</p></td>
+<td><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ndis.h</td>
+<td><p>标头</p></td>
+<td>Ndis。h</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**NDIS\_WWAN\_数据包\_服务\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)
+[**NDIS\_WWAN\_数据包\_服务\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_packet_service_state)
 
-[OID\_WWAN\_PACKET\_SERVICE](oid-wwan-packet-service.md)
+[OID\_WWAN\_数据包\_服务](oid-wwan-packet-service.md)
 
  
 
