@@ -1,133 +1,105 @@
 ---
-Description: 若要准备的 Windows 硬件认证计划提交的 USB 设备和主机控制器的硬件供应商和设备制造商的指南。
+Description: 适用于硬件供应商和设备制造商的指南，用于为 Windows 硬件认证计划提交准备 USB 设备和主机控制器。
 title: USB-IF 认证测试
-ms.date: 04/20/2017
+ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: da91a8ac1aaa06a104d6b283e7c1e12137990d50
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cc2ac3be6ea1d3dbf0b74e15590091e73e17387
+ms.sourcegitcommit: 0660c8d6d374298f3246fdb91661360610f8c846
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356594"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72889650"
 ---
-# <a name="usb-if-certification-tests"></a>USB-IF 认证测试
+# <a name="usb-if-certification"></a>USB-IF 证书
 
-
-若要准备的 Windows 硬件认证计划提交的 USB 设备和主机控制器的硬件供应商和设备制造商的指南。
+适用于硬件供应商和设备制造商的指南，用于为 Windows 硬件认证计划提交准备 USB 设备和主机控制器。
 
 ## <a name="usb-if-certification-tests"></a>USB-IF 认证测试
 
+USB 硬件（特别是 USB 设备或主机控制器）必须满足 USB 的电气和机械要求-如果要接收 Windows 认证。 USB-如果证书包含更深入的 USB 设备和主机控制器测试，并确保实现高质量的实现。
 
-如果制造 USB 硬件，特别是 USB 设备或主机控制器，您的硬件必须满足 USB 的电气和机械要求-如果为了接收 Windows 认证。 USB-如果认证涵盖的 USB 设备和主机控制器的更多深入测试，并确保高质量实现。
+更早版本的 Windows 硬件认证工具包需要制造商将其设备提交到 USB-如果测试。 新版本的 HLK、USB-如果测试要求允许制造商从 USB-IF 网站下载并运行测试，然后在 HLK 中断言这些测试已传入。 如果你的设备已被 USB-IF 认证，则需要为设备向设备提供 USB IF 测试 ID （TID）。
 
-早期版本的 Windows 硬件认证工具包所需硬件制造商将提交到 USB 设备-如果用于测试。 但是，该要求已更改。 不再需要提交到 USB 设备-如果用于测试。
+即使 USB 设备通过了当前的 Microsoft Windows 认证计划要求，其中许多设备也不能完全遵守 USB 规范。 最常见的示例包括：
 
-HLK，USB 的新版本-如果测试要求允许供应商下载并从 USB 运行的测试-如果网站，然后添加这些测试已通过在 HLK 中。 如果已认证设备通过 USB-如果你需要提供 USB 的设备对 HLK 的 IF 测试 ID (TID)。
+- **集线器**：通常会失败，因为它们报告它们在实际只有总线电源时具有外部电源。 错误报告将导致总线上出现无效电压情况。
+- **硬盘驱动器**：常见的原因是由于 USB 总线的功率消耗过多而无法正确枚举。 在许多情况下，这些硬盘驱动器需要非标准电缆才能正常工作。
+- **闪存驱动器**：通常会因不正确地处理描述符请求而失败;这会导致设备挂起，并使 Microsoft 操作系统描述符失败。
+- **卡读取器**：通常会因为未进入 "选择性挂起" 状态而失败。
+- **打印机**：通常会因为无法从待机状态恢复而失败。
+- **音频**：常见失败，因为它们不会从待机状态恢复。
 
-即使 USB 设备通过当前 Microsoft Windows 认证计划要求，其中许多设备不完全符合 USB 规范。 最常见示例包括：
+不符合的 USB 设备可能会导致用户体验不佳、难于公共关系、产品退货、高产品支持呼叫量，以及与交付产品中的服务错误关联的成本增加。
 
--   **中心**:通常会失败，因为它们报告它们具有外部电源时它们实际上只具有总线能力。 False 报表会导致无效的电压条件在总线上。
--   **硬盘驱动器**:通常失败，因为它们不正确地枚举由于从 USB 总线过量的功率绘图。 在许多情况下，这些硬盘磁盘驱动器都需要非标准电缆才能正常工作。
--   **闪存驱动器**:通常会失败，因为它们正确; 不处理描述符请求这将导致设备挂起或失败的 Microsoft 操作系统描述符。
--   **卡读取器**:通常失败，因为它们不进入的选择性挂起状态。
--   **打印机**:通常失败，因为它们不从待机状态恢复。
--   **音频**:通常失败，因为它们不从待机状态恢复。
+## <a name="windows-hlk-requirements-for-usb-if-tests"></a>适用于 USB 的 Windows HLK 要求-IF 测试
 
-糟糕的用户体验、 困难公共关系、 产品返回和丢失的收入、 高产品的支持呼叫量、 和与维护服务已发货的产品中的错误关联的成本增加，可能会导致不符合标准的 USB 设备。
-## <a name="windows-hlk-requirements-for-usb-if-tests"></a>USB Windows HLK 要求-IF 测试
+- 设备（**UsbDevices. UsbifCertification）** ：
 
+    强烈建议采用 USB-IF 认证;但是，Windows HLK 要求**UsbDevices。 UsbifCertification**不再需要 usb 设备的 usb 证书。 要求表明设备可以是 USB 设备，也可以是 usb （如果已经过认证），也可以在设备上运行 USB 假设的认证测试的子集。
 
--   设备 (**Device.Connectivity.UsbDevices.UsbifCertification)**
+- 主机控制器（**BusController. UsbController. UsbifCertification**）
 
-    我们强烈建议 USB-如果证书;但是，Windows HLK 要求**Device.Connectivity.UsbDevices.UsbifCertification**不再需要 USB-如果认证的 USB 设备。 要求状态，设备可以是任一 USB-如果认证，或子集 USB-如果的认证测试可以在设备上运行。
+    为了满足各自的 Windows HLK 要求，USB 主机控制器制造商必须获取完整的 USB 证书。
 
--   托管控制器 (**Device.BusController.UsbController.UsbifCertification**)
+- 集线器（**UsbDevices. UsbifCertification**）
 
-    USB 主机控制器制造商必须获取完整的 USB-如果以符合其各自的 Windows HLK 要求的证书。
+    为了满足各自的 Windows HLK 要求，USB 集线器制造商必须获取完整的 USB-IF 证书。
 
--   中心 (**Device.Connectivity.UsbDevices.UsbifCertification**)
-
-    USB 集线器制造商必须获取完整的 USB-如果以符合其各自的 Windows HLK 要求的证书。
-
-当用户选择 USB 主控制器，若要将集成到他们的系统时，应注意这些要求的系统制造商。 与 USB 设备，这些要求可以显著提高客户体验。 它们可以帮助防止崩溃和挂起，主要原因，并减少进行故障排除和调试非合规性问题所花费的时间。
+当系统制造商选择要集成到系统中的 USB 主机控制器时，应了解这些要求。 这些要求可显著改善客户体验 USB 设备。 它们有助于防止崩溃和挂起的关键原因，并缩短排查和调试不符合性问题所花费的时间。
 
 ## <a name="windows-hardware-certification-submission-options"></a>Windows 硬件认证提交选项
 
+此图显示了如何获取 Windows 证书的过程流程。
 
-此图显示了如何获取 Windows 认证的处理流程。
+![usb-if 测试](images/usbif-testing.png)
 
-![usb-如果测试](images/usbif-testing.png)
+你可以使用以下方法之一提交用于 Windows 认证限定的 USB 设备，以满足新的 USB-IF 测试要求：
 
-您可以提交 Windows 认证资格，以满足新 USB 的 USB 设备-如果通过使用以下方法之一来测试要求：
+- **USB-IF 证书**
 
-- **USB-如果认证**
+  从 Usb 获取 USB-如果[授权独立测试实验室](https://www.usb.org/labs)，然后提交设备以进行 Windows 认证资格。 你可以选择以下选项之一来获取设备或主机控制器的 USB-IF 证书：
 
-  获取 USB-从如果认证[USB-如果授权独立的测试实验室](https://www.usb.org/developers/compliance/labs/)，并提交针对 Windows 证书认证设备。 您可以选择以下选项之一来获取 USB-如果认证的设备或主机控制器：
+  - 将设备提交到 USB 设备，以用于测试。 有关如何查找实验室的信息，请参阅 USB-如果授权独立测试实验室。
+      **注意** 它通常需要一个到两周的授权独立测试实验室来测试单个 USB 设备是否符合 USB 规范。
 
-  -   提交到 USB 设备-如果授权用于测试的独立的测试实验室。 有关如何查找实验室的信息，请参阅 USB-如果授权独立的测试实验室。
-      **请注意**通常所花费的已授权的独立测试实验室一到两周测试 USB 规范的单个 USB 设备。
+  - 若要将 USB 设备提交给授权的、适用于 USB 的独立测试实验室（如果是认证），制造商必须向实验室注册，并且具有有效的供应商 ID （VID）。
 
-         
+  设备成功通过 USB-如果认证测试后，你将拥有以下设备权限：
 
-  -   要提交供 USB 的 USB 设备向已授权的独立测试实验室-如果认证制造商必须注册到实验室并具有有效的供应商 ID (VID)。
+  - 你可以使用 USB 徽标获取设备的手册、打包和产品信息。
+  - 可以在 "USB-IF 集成商" 列表中列出。
+  - 将设备带到[USB 赞助合规性研讨会](https://www.usb.org/upcoming-events)。 每年，美国的四个讨论会都已举行，其中一场讨论会保存在亚洲。
 
-  设备已成功通过 USB 后-如果认证测试，则必须在设备的以下权限：
+  设备通过 USB-IF 认证测试后，将从测试实验室或讨论会接收测试 ID 号（TID）。 当你为设备运行其余的 Windows HLK 测试时，向 Windows HLK 提供此 TID 编号。
 
-  -   可以在你的设备的手册、 打包和产品信息的使用 USB 徽标。
-  -   你可以列出 USB 上-如果集成商列表。
-  -   将设备引入[USB 如果赞助法规遵从性研讨会](https://www.usb.org/developers/events/compshop/)。 每年在美国，保留四个学习班，并且一个研讨会保存在亚洲。
+  在授权的独立测试实验室中测试和验证 USB 设备的成本可能因实验室而异。 某些授权的独立测试实验室为一些关联企业提供批量折扣或折扣。 在任何带任何 USB 的符合性研讨会上测试和认证 USB 设备不收取任何费用。 你必须是 USB-IF 的成员才能参加 USB-IF 赞助合规性研讨会。
 
-  设备通过 USB 后的认证测试，如果您收到来自测试实验室或研讨会的测试 ID 数量 (TID)。 在运行 Windows HLK 测试设备的其余部分时，可以向 Windows HLK 提供此 TID 数字。
+- **USB-如果自测试**
 
-  测试和认证 USB 设备在授权独立的测试实验室的成本而异实验室实验室。 某些授权单独的测试实验室会提供批量折扣或一些关联的企业的折扣。 没有任何费用，若要测试和认证的 USB 设备在任何 USB 如果赞助法规遵从性研讨会。 您必须是 USB 的成员-如果参加 USB-如果赞助法规遵从性研讨会。
+  下载 USB 命令验证程序测试工具和 USB 互操作性测试文档，并从[USB-IF](https://usb.org/usb32tools)运行所需的测试。 然后提交设备以进行 Windows 认证。
 
-- **USB-如果自我测试**
+ >**注意**： usb 主机控制器和集线器不符合 USB-if 自测试选项的条件，必须获取完整的 usb 证书。
 
-  下载 USB 命令验证工具测试工具和 USB 互操作性测试文档，并运行从所需的测试[USB-如果](https://www.usb.org/)。 然后提交针对 Windows 证书认证设备。
+  如果你决定使用 USB-IF 自测试选项来获取 Windows 认证，则至少必须执行以下 USB 测试：
 
-  **请注意**USB 主控制器和中心均不适合 USB-如果自测试选项，必须获取完整的 USB-如果认证。
+  - USB 命令验证器测试： USB 命令验证器测试可验证设备理解和接受常见 USB 命令的能力。
+  - USB 互操作性测试： USB 互操作性测试面向设备与其他 USB 外围设备共存的功能和能力。
 
-  如果您决定使用 USB-如果自检选项来获取 Windows 认证，你必须至少执行下列 USB-IF 测试：
+  这些测试是在 Windows HLK 之外下载和运行的。 请注意，这些测试必须仅在最新版本的 Windows 上运行（如 USB-IF 所指定），即使你要为 windows 的多个版本提交适用于 Windows 认证的认证。 测试结果适用于所有版本的 Windows 的所有 Windows 认证提交。
 
-  -   USB 命令验证工具进行测试：USB 命令验证工具测试来验证设备以了解并接受 USB 的常用命令的能力。
-  -   USB 互操作性测试：USB 互操作性测试的目标的功能和设备能够与其他 USB 外围设备共存。
+  以下步骤介绍如何执行所需的 USB-IF 测试来限定设备进行 Windows 认证。
 
-  下载和外部 Windows HLK 运行这些测试。 请注意，必须仅最新版本的 Windows 上运行这些测试 (所指定的 USB-如果)，即使您在提交您针对 Windows 的多个版本的 Windows 证书认证的 USB 设备。 测试结果适用于所有版本的 Windows 的所有 Windows 认证提交。
+  1. 从[Usb 软件和硬件工具](https://usb.org/usb32tools)下载 Usb 命令验证器测试工具（USB3CV）和互操作性测试文档。
 
-  以下步骤介绍如何执行所需的 USB-IF 测试才能符合 Windows 认证的设备。
+  2. 按下表中指定的方式运行 usb 硬件测试：
 
-  1. 下载 USB 3.0 命令验证工具测试工具 (USB30CV) 和互操作性测试中的文档[SuperSpeed USB 软件和硬件工具](https://go.microsoft.com/fwlink/p/?LinkId=623333)。
-  2. 运行 USB-IF 测试下表中指定的 USB 硬件：
-
-     <table>
-     <colgroup>
-     <col width="50%" />
-     <col width="50%" />
-     </colgroup>
-     <thead>
-     <tr class="header">
-     <th>USB 版本</th>
-     <th>USB-IF 测试</th>
-     </tr>
-     </thead>
-     <tbody>
-     <tr class="odd">
-     <td>USB 2.0</td>
-     <td><p>附加后 xHCI 主控制器的设备并运行 USB 3.0 命令验证工具测试工具 (USB30CV) 中的一章 9 测试 [USB 2.0 设备]。</p>
-     <p>EHCI 一部分的互操作性部分中所述运行互操作性测试<a href="http://compliance.usb.org/resources/GoldSuite%20Test%20Procedure.pdf">GoldSuite 测试过程文档</a>。 两次运行这些测试： 一个与 EHCI 主控制器，后面附加设备，然后随附背后 xHCI 主控制器的设备。</p></td>
-     </tr>
-     <tr class="even">
-     <td>USB 3.0</td>
-     <td><p>附加后 xHCI 主控制器的设备并运行 USB 3.0 命令验证工具测试工具 (USB30CV) 中的一章 9 测试 [USB 3.0 设备]。</p>
-     <p>运行互操作性测试，如中所述<a href="https://go.microsoft.com/fwlink/p/?LinkId=623335" data-raw-source="[XHCI Interoperability Testing](https://go.microsoft.com/fwlink/p/?LinkId=623335)">XHCI 互操作性测试</a>文档。 运行这些测试两次： 一次，后面 EHCI 主控制器，连接的设备和随附背后 xHCI 主控制器的设备的一次。</p></td>
-     </tr>
-     </tbody>
-     </table>
-    
-  3. 如果已通过测试输入字符串"SELFTEST"作为测试 ID (TID) 输入到 USB-IF HLK 中的证书验证测试。
+  | USB 版本 | USB-IF 测试 |
+  | --- | --- |
+  | USB 2.0 | 在 xHCI 主机控制器后面附加设备，并在 USB 3.0 命令验证器测试工具（USB3CV）中运行第9章测试 [USB 2.0 设备]。 <br><br> 按照[Ehci 测试过程](http://compliance.usb.org/resources/GoldSuite%20Test%20Procedure.pdf)的 "互操作性" 部分的 "ehci 部分" 中所述运行互操作性测试。 运行这些测试两次：一次用于连接到 EHCI 主机控制器后面的设备，然后连接到 xHCI 主机控制器后面的设备。 |
+  | USB 3.0 | 在 xHCI 主机控制器后面附加设备，并在 USB 3.0 命令验证器测试工具（USB3CV）中运行第9章测试 [USB 3.0 设备]。 <br><br> 运行[XHCI 互操作性测试过程](https://www.usb.org/document-library/xhci-interoperability-test-procedures-peripherals-hubs-and-hosts-version-096)文档中所述的互操作性测试。 两次运行以下测试：一次将设备连接到 EHCI 主机控制器之后，一次将设备连接到 xHCI 主机控制器。 |
+  
+  3. 如果测试通过，则在 HLK 中输入字符串 "SELFTEST" 作为 "USB-IF" 认证验证测试的 "测试 ID （TID）" 输入。
 
 ## <a name="related-topics"></a>相关主题
-[有关 USB 的 Windows 硬件实验室工具包测试](windows-hardware-certification-kit-tests-for-usb.md)  
 
-
-
+[适用于 USB 的 Windows 硬件实验室包测试](windows-hardware-certification-kit-tests-for-usb.md)

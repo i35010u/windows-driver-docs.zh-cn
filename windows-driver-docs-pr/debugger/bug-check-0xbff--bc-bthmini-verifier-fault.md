@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xBFF BC_BTHMINI_VERIFIER_FAULT
-description: BC_BTHMINI_VERIFIER_FAULT bug 检查具有 0x00000BFF 值。 这指示蓝牙微型端口可扩展驱动程序验证程序已捕获了冲突。
+description: BC_BTHMINI_VERIFIER_FAULT bug 检查的值为0x00000BFF。 这表明蓝牙微型端口可扩展驱动程序验证程序已捕获到冲突。
 ms.assetid: 4BB54209-89EA-455D-B850-CC2A96A43C87
 keywords:
 - Bug 检查 0xBFF BC_BTHMINI_VERIFIER_FAULT
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c41bc7ecb9b1f81bbcaf3486d40e3a3804907727
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 014ce8979258d37187c8733570e559491febeb41
+ms.sourcegitcommit: d2dab8b8bf335835d0341ca3f0a36eab0ec028f5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518971"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72892685"
 ---
-# <a name="bug-check-0xbff-bcbthminiverifierfault"></a>Bug 检查 0xBFF：业务连续性\_BTHMINI\_VERIFIER\_容错
+# <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>Bug 检查0xBFF： BC\_BTHMINI\_VERIFIER\_错误
 
 
-业务连续性\_BTHMINI\_VERIFIER\_故障错误检查的值为 0x00000BFF。 这指示蓝牙微型端口可扩展驱动程序验证程序已捕获了冲突。
+BC\_BTHMINI\_VERIFIER\_错误 bug 检查的值为0x00000BFF。 这表明蓝牙微型端口可扩展驱动程序验证程序已捕获到冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bcbthminiverifierfault-parameters"></a>业务连续性\_BTHMINI\_VERIFIER\_错误参数
+## <a name="bc_bthmini_verifier_fault-parameters"></a>BC\_BTHMINI\_VERIFIER\_错误参数
 
 
 <table>
@@ -64,15 +64,15 @@ ms.locfileid: "67518971"
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,8 @@ ms.locfileid: "67518971"
 <a name="resolution"></a>分辨率
 ----------
 
-参数 1 描述冲突的类型。 查看调用堆栈，以确定表现不正常的驱动程序。
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+参数1描述了冲突类型。 查看调用堆栈，确定驱动程序是否有异常。
 
 
 
