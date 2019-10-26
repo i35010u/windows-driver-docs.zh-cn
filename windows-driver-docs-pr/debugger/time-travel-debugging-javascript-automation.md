@@ -1,16 +1,16 @@
 ---
 title: 时光穿越调试 - JavaScript 自动化
-description: 本部分介绍如何使用 JavaScript 自动化以帮助分析 TTD 跟踪。
+description: 本部分介绍如何使用 JavaScript 自动化帮助分析 TTD 跟踪。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a61fb69b82440c74e82480afc722d147604b8e41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f680527217ac64cdde0046c3086709a1617c5375
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389105"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916203"
 ---
-![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png)
+![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png)
 
 #  <a name="time-travel-debugging---javascript-automation"></a>时光穿越调试 - JavaScript 自动化
 
@@ -18,14 +18,7 @@ ms.locfileid: "63389105"
 
 ---
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
-
----
-
-
-
-
-
+[行程调试-概述](time-travel-debugging-overview.md)
 

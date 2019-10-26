@@ -3,24 +3,24 @@ title: TTD 堆对象
 description: 本部分介绍与时间行程调试关联的堆模型对象。
 ms.date: 09/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21d1e2be8456ba705f68337196bc41b442a6692e
-ms.sourcegitcommit: e94e072ef90fc1c4f343055098920463fbf5c630
+ms.openlocfilehash: 473e6f5f199e9633d98e58200d85e8ba4d1754c6
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71227726"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916206"
 ---
 # <a name="ttd-heap-objects"></a>TTD 堆对象
+
 ## <a name="description"></a>描述
 *TTD 堆*对象用于给出有关在跟踪过程中发生的堆调用的信息。
 
-
-## <a name="properties"></a>属性
+## <a name="properties"></a>“属性”
 每个堆对象将具有这些属性。
 
 | 属性 | 描述 |
 | --- | --- |
-| 操作 | 描述发生的操作。 可能的值为：分配、ReAlloc、免费、创建、保护、锁定、解锁、销毁。 |
+| “操作” | 描述发生的操作。 可能的值包括：分配、ReAlloc、免费、创建、保护、锁定、解锁、销毁。 |
 | 堆栈 | Win32 堆的句柄。 |
 
 ### <a name="conditional-properties"></a>条件属性
@@ -40,7 +40,7 @@ ms.locfileid: "71227726"
 
 ## <a name="children"></a>Children
 
-| Object | 描述 |
+| 对象 | 描述 |
 | --- | --- |
 | TimeStart | 一个[位置对象](time-travel-debugging-position-objects.md)，该对象描述在分配开始时的位置。 |
 | TimeEnd | 一个[位置对象](time-travel-debugging-position-objects.md)，该对象描述分配末尾的位置。 |
@@ -76,16 +76,8 @@ dx -r1 @$cursession.TTD.Data.Heap()[2].@"Parameters"
     [0x3]            : 0x0
 ```
 
-
-
-
-
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [旅行调试-时间行程调试对象简介](time-travel-debugging-object-model.md)
 
 [行程调试-概述](time-travel-debugging-overview.md)
-
----
-
-

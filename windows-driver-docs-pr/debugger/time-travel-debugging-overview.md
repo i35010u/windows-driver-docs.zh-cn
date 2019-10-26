@@ -1,170 +1,170 @@
 ---
 title: 时光穿越调试 - 概述
-description: 本部分介绍时间旅行调试。
+description: 本部分介绍了时间行程调试。
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d25dfef0a29d3d11566e784cdae0257a7183a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a600102db182a37bf5e919c2d1e79e9ea13b7f8c
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349050"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916183"
 ---
-![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png) 
-
 # <a name="time-travel-debugging---overview"></a>时光穿越调试 - 概述
 
+![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png) 
 
-## <a name="what-is-time-travel-debugging"></a>什么是时间旅行调试？
 
-时间旅行调试，是一个工具，这样可以记录您的进程运行，请执行，然后更高版本同时向前和向后对其进行重播。 时间旅行调试 (TTD) 可帮助你调试问题更容易通过让你"后退"到调试器会话，而无需重现此问题，直到找到 bug。 
+## <a name="what-is-time-travel-debugging"></a>什么是旅行调试？
+
+时间行程调试是一种工具，可让你记录正在运行的进程的执行，然后在以后向前和向后重播。 旅行调试（TTD）可让您通过 "倒带" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。 
  
-TTD，可返回要更好地了解情况导致 bug 和重播多次若要了解如何最大程度来解决该问题的时间。 
+TTD 可让你返回时间，以便更好地了解导致错误的条件并多次重播，以了解如何最好地解决问题。 
 
-TTD 于更具有优势通常缺少促成 ultimate 故障的代码执行的故障转储文件。  
+与故障转储文件相比，TTD 具有更多优点，这通常会导致最终失败导致的代码执行。  
 
-如果您不能找出问题自行，可以与同事共享跟踪和他们可以查看完全什么您正在寻找。 这可允许更轻松协作比实时调试，因为记录的说明是相同的其中的地址位置和执行代码将不同的电脑上不同。 你还可以及时地帮助您的同事共享的特定点找出要启动。 
+如果您不能自行判断问题所在，您可以与同事共享跟踪，并且可以确切地查看您正在查看的内容。 与实时调试相比，此操作可以更方便地进行协作，因为记录的说明是相同的，其中的地址位置和代码执行在不同的 Pc 上将有所不同。 你还可以共享特定的时间点，以帮助你的同事找出开始位置。 
 
-TTD 有效，并添加降至最低开销捕获跟踪文件中的代码执行的工作。  
+TTD 的效率更高，可在跟踪文件中捕获代码执行时尽可能少地添加开销。  
 
-TTD 包括一组调试器数据模型对象，以允许你查询使用 LINQ 的跟踪。 例如，可以使用 TTD 对象以查找特定的代码模块加载时或找到的所有异常。 
+TTD 包含一组调试器数据模型对象，使你可以使用 LINQ 查询跟踪。 例如，你可以使用 TTD 对象来查找特定代码模块的加载时间或查找所有异常。 
 
-![示例屏幕截图显示时间的 WinDbg 预览旅行命令和 cdog 应用](images/ttd-windbgx-screen-shot-example-cdog-app.png)
+![显示时间行进命令和 cdog 应用的 WinDbg 预览示例屏幕截图](images/ttd-windbgx-screen-shot-example-cdog-app.png)
 
 ##  <a name="comparison-of-debugging-tools"></a>调试工具的比较
 
-此表总结了可用的各种调试解决方案的优缺点。
+下表总结了可用的各种调试解决方案的优点和缺点。
 
 
 |          方法           |                                                      优点                                                       |                                                                                                               缺点                                                                                                                |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       实时调试        |   交互式体验，可以看到执行流，可以更改目标状态，熟悉设置中熟悉的工具。   | 会中断用户体验，可能需要花费精力重复重现此问题，可能会影响安全，不总是生产系统上的选项。  使用重现难以处理返回的点故障以确定原因。 |
-|            转储            |                            低的侵入性，无需进行编码前期，基于触发器。                             |                                                          连续快照发布或实时转储提供了简单的"结束时间"视图。 如果未使用，则开销是实质上是零。                                                           |
-|      遥测和日志       |            轻型，通常绑定到业务方案 / 用户操作，机器学习友好。             |                                                         （使用任何遥测数据） 的意外的代码路径中出现的问题。 缺少的数据的深度，静态编译的代码。                                                         |
-| 调试 (TTD) 按时间顺序查看 | 适合复杂的 bug，将无需进行编码前期成本，友好的可重复脱机调试、 分析捕获的所有内容。 |                                                                 在记录时的较大开销。 可能会收集所需的更多数据。 数据文件会变得大。                                                                 |
+|       实时调试        |   交互式体验，查看执行流，可以更改目标状态（熟悉的工具）。   | 中断用户体验后，可能需要精力重复重现该问题，这可能会影响安全性，而不是始终是生产系统上的一个选项。  从故障点重新开始，难以确定原因。 |
+|            储            |                            根据触发器，无需预先编码，侵入性。                             |                                                          连续的快照或实时转储提供简单的 "一段时间" 视图。 如果未使用，则开销实质上是零。                                                           |
+|      遥测 & 日志       |            轻型，通常绑定到业务方案/用户操作、机器学习友好。             |                                                         异常代码路径中出现问题（没有遥测）。 缺少数据深度，静态编译到代码中。                                                         |
+| 行程调试（TTD） | 非常复杂的 bug，无需预先编码、脱机的可重复调试、可识别分析、捕获一切内容。 |                                                                 记录时间大的开销。 可能会收集需要的更多数据。 数据文件可能会变得很大。                                                                 |
 
 ## <a name="ttd-availability"></a>TTD 可用性 
 
-从应用商店安装 WinDbg 预览应用程序后可在 Windows 10 上 TTD。  WinDbg 预览版是 WinDbg 的改进的版本与更现代的视觉对象、 更快的 windows、 功能齐全的脚本编写体验，使用内置的可扩展调试器数据模型的支持。 从应用商店下载 WinDbg 预览版的详细信息，请参阅[调试使用 WinDbg 预览版](debugging-using-windbg-preview.md)。
+从应用商店安装 WinDbg Preview 应用后，TTD 在 Windows 10 上可用。  WinDbg 预览版是具有更多新式视觉对象、更快的 windows、具有完备功能的脚本编写体验的 WinDbg 的改进版本，并内置了对可扩展调试器数据模型的支持。 有关从应用商店下载 WinDbg Preview 的详细信息，请参阅[使用 WinDbg preview 进行调试](debugging-using-windbg-preview.md)。
 
 ## <a name="administrator-rights-required-to-use-ttd"></a>使用 TTD 所需的管理员权限
 
-若要使用 TTD，您需要运行提升的调试器。 安装使用的帐户具有管理员权限的 WinDbg 预览并记录在调试器中时使用该帐户。 若要运行提升的调试器，右键单击开始菜单中的 WinDbg 预览图标和选择的详细信息 > 以管理员身份运行。
+若要使用 TTD，需要运行提升的调试器。 使用具有管理员权限的帐户安装 WinDbg 预览版，并在调试器中记录时使用该帐户。 若要以提升的权限运行调试器，请右键单击 "开始" 菜单中的 "WinDbg 预览" 图标，然后选择 "更多 > 以管理员身份运行"。
 
 ## <a name="video-training"></a>视频培训
 
-若要了解有关 TTD 的详细信息请参阅这些视频。
+若要了解有关 TTD 的详细信息，请参阅这些视频。
 
-[碎片整理工具 185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) -Ivette 和 JamesP 超出 TTD 的基础知识和演示 WinDbg 预览版中的某些功能
+[碎片整理工具 185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) -Ivette 和 JamesP 介绍了 TTD 的基本知识，并演示了 WinDbg 预览版中的一些功能
 
-[碎片整理工具 186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) -Jordi 和 JCAB 演示的 TTD WinDbg 预览版中的多个强大功能
+[碎片整理工具 186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) -在 WinDbg 预览版中，JORDI 和 JCAB 演示更好的 TTD 功能
 
-[Cppcon 的谈话 (YouTube)](https://www.youtube.com/watch?v=l1YJTg_A914) -Jordi、 Ken 和 JamesM 按 TTD 显示 WinDbg 在 cppcon 的谈话 2017年预览版
+[CppCon （YouTube）](https://www.youtube.com/watch?v=l1YJTg_A914) -Jordi，Ken 和 JamesM 在 WinDbg 预览版中的 CppCon 2017
 
 
 ## <a name="trace-file-basics"></a>跟踪文件基础知识 
 
 ### <a name="trace-file-size"></a>跟踪文件大小
 
-跟踪文件可获得大并 TTD 用户应确保没有足够的可用空间可用。 如果甚至几分钟后，记录程序，可以快速增长的跟踪文件以达到数千兆字节。 TTD 不会设置跟踪文件以复杂的长时间运行的情况下允许的最大大小。 快速重新创建此问题，将保留跟踪文件大小越小越好。
+跟踪文件可能会很大，TTD 的用户需要确保有足够的可用空间。 如果录制节目甚至几分钟，跟踪文件就会迅速增长到数 gb。 TTD 不会将跟踪文件的最大大小设置为允许复杂长时间运行的方案。 快速重新创建问题，会使跟踪文件的大小尽可能小。
 
 ### <a name="trace-and-index-files"></a>跟踪和索引文件
 
-跟踪 (。运行） 文件存储在录制期间的代码执行。 
+跟踪（。运行）文件存储在记录过程中执行的代码。 
 
-录制停止后，索引 (。创建 IDX) 文件以允许更快地访问跟踪信息。 WinDbg 预览打开跟踪文件时，还会自动创建索引文件。
+停止录制后，索引（。IDX）创建文件以允许更快地访问跟踪信息。 当 WinDbg Preview 打开跟踪文件时，也会自动创建索引文件。
 
-大型、 通常大小的两倍的跟踪文件，也可以是索引文件。  
+索引文件也可以是大，通常是跟踪文件的两倍。  
 
-你可以重新创建从跟踪文件中使用的索引文件 ！ tt.index 命令。
+您可以使用！ tt 命令重新创建跟踪文件中的索引文件。
 
 ```dbgcmd
 0:000> !tt.index
 Successfully created the index in 10ms.
 ```
 
-记录错误和其他记录输出写入 WinDbg 日志文件。
+记录错误和其他记录输出会写入到 WinDbg 日志文件。
 
-所有输出文件都存储在用户配置的位置。 默认位置是在用户文档文件夹中。 例如，为 User1 TTD 文件将存储在此处：
+所有输出文件都存储在用户配置的位置中。 默认位置在 "用户" 文档文件夹中。 例如，对于 User1，将在此处存储 TTD 文件：
 
 ```console
 C:\Users\User1\Documents
 ```
 
-有关使用跟踪文件的详细信息，请参阅[时间旅行调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)。
+有关使用跟踪文件的详细信息，请参阅[行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)。
 
-## <a name="things-to-look-out-for"></a>需要注意的事项 
+## <a name="things-to-look-out-for"></a>要查看的项 
 
-### <a name="anti-virus-incompatibilities"></a>防病毒软件不兼容性 
+### <a name="anti-virus-incompatibilities"></a>防病毒不兼容 
 
-由于 TTD 挂钩到进程来记录它们的方式，可能会遇到不兼容问题。 通常的防病毒软件或尝试跟踪和卷影系统内存调用其他系统软件出现问题。 如果遇到问题的记录，例如没有足够的权限消息，请尝试暂时禁用任何防病毒软件。  
+你可能会遇到不兼容问题，因为 TTD 挂钩如何处理它们。 出现防病毒或其他系统软件（尝试跟踪和隐藏系统内存调用）时，通常会出现问题。 如果遇到记录问题（如权限不足），请尝试暂时禁用任何防病毒软件。  
 
-其他的实用程序尝试阻止内存访问，也可能存在问题，例如，Microsoft 增强的缓解体验工具包。 EMET 的详细信息，请参阅[的增强的缓解体验工具包](https://support.microsoft.com/help/2458544/the-enhanced-mitigation-experience-toolkit)。
+尝试阻止内存访问的其他实用程序也可能有问题，例如，Microsoft 增强的缓解体验工具包。 有关 EMET 的详细信息，请参阅[增强的缓解体验工具包](https://support.microsoft.com/help/2458544/the-enhanced-mitigation-experience-toolkit)。
 
-与 TTD，冲突的环境的另一个示例将 electron 应用程序框架。 在这种情况下可能会记录跟踪，但死锁或进程正在记录的故障，还可以。
+与 TTD 冲突的环境的另一个示例是 electron 应用程序框架。 在这种情况下，跟踪可能会记录，但也可能会导致正在记录的进程发生死锁或故障。
 
-### <a name="user-mode-only"></a>仅限用户模式
+### <a name="user-mode-only"></a>仅用户模式
 
-TTD 目前支持仅用户模式下操作，因此不可能跟踪内核模式过程。 
+TTD 目前仅支持用户模式操作，因此无法跟踪内核模式进程。 
 
-### <a name="read-only-playback"></a>只读的播放
+### <a name="read-only-playback"></a>只读播放
 
-可以传输返回的时间，但不能更改历史记录。 可以使用读取的内存命令，但不能使用命令修改或写入内存。
+您可以及时返回，但不能更改历史记录。 您可以使用 "读取内存" 命令，但不能使用修改或写入内存的命令。
 
-### <a name="system-protected-processes"></a>受保护进程的系统
+### <a name="system-protected-processes"></a>系统保护的进程
 
-某些 Windows 系统保护的进程，如受保护进程 Light (PPL) 进程受到保护，以便 TTD 不能将自身注入到受保护的进程，以允许执行代码的记录。
+某些 Windows 系统保护的进程（如受保护的进程轻型（PPL）进程）受保护，因此，TTD 无法将自身注入到受保护的进程中以允许执行代码的记录。
 
-### <a name="performance-impact-of-recording"></a>录制的性能影响
+### <a name="performance-impact-of-recording"></a>记录对性能的影响
 
-记录应用程序或进程会影响性能的 PC。 根据量和录制期间所执行的代码的类型而异的实际性能开销。 您可以预计的 10 个 x-20 x 性能下降普通录制方案中有关。 有时不会明显减慢，但对于更多资源密集型操作 （即文件打开对话框），可以查看录制的影响。
+记录应用程序或进程会影响计算机的性能。 实际的性能开销因记录期间要执行的代码的数量和类型的不同而异。 在典型的录制方案中，可能会对性能造成20倍的影响。 有时，不会有明显的减速，但对于更多的资源密集型操作（即 "文件打开" 对话框），您可以看到记录的影响。
 
 ### <a name="trace-file-errors"></a>跟踪文件错误
 
-有某些情况下，跟踪文件可能会发生错误。 有关详细信息，请参阅[调试-故障排除按时间顺序查看](time-travel-debugging-troubleshooting.md)。
+在某些情况下，可能会发生跟踪文件错误。 有关详细信息，请参阅[行程调试-故障排除](time-travel-debugging-troubleshooting.md)。
 
 
-## <a name="advanced-features-of-time-travel-debugging"></a>高级的功能的时间旅行调试
+## <a name="advanced-features-of-time-travel-debugging"></a>行程调试的高级功能
 
-下面是一些高级功能，最值得注意 TTD。
+下面是一些最值得注意的 TTD 高级功能。
 
-### <a name="debugger-data-model-support"></a>调试程序数据模型支持
+### <a name="debugger-data-model-support"></a>调试器数据模型支持
 
-- **内置数据模型支持**-TTD 包括数据模型支持。 使用 LINQ 查询来分析应用程序故障可以是一个强大的工具。 可以使用 WinDbg 预览版中的数据模型窗口以使用可展开和可浏览版本 dx 和 dx-g，让你创建使用 NatVis、 JavaScript 和 LINQ 查询的表。 
+- **内置的数据模型支持**-TTD 包括数据模型支持。 使用 LINQ 查询分析应用程序故障可能是一个功能强大的工具。 您可以使用 WinDbg Preview 中的 "数据模型" 窗口处理 "dx" 和 "dx-g" 的可展开和可浏览版本，使您可以使用 NatVis、JavaScript 和 LINQ 查询创建表。 
 
-有关调试器的数据模型的常规信息，请参阅[WinDbg 预览版-数据模型](windbg-data-model-preview.md)。 有关使用 TTD 调试器对象模型的信息，请参阅[时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)。
+有关调试器数据模型的常规信息，请参阅[WinDbg 预览-数据模型](windbg-data-model-preview.md)。 有关使用 TTD 调试器对象模型的信息，请参阅[行程调试-时间行程调试对象简介](time-travel-debugging-object-model.md)。
 
 ### <a name="scripting-support"></a>脚本支持  
 
-- **脚本编写自动化**-脚本支持 JavaScript 和 NatVis 可以自动化地问题调查。 有关详细信息，请参阅[时间旅行调试-JavaScript 自动化](time-travel-debugging-javascript-automation.md)。
+- **脚本编写自动化**-针对 JavaScript 和 NatVis 的脚本支持可让问题调查实现自动化。 有关详细信息，请参阅[时间行程调试-JavaScript 自动化](time-travel-debugging-javascript-automation.md)。
 
-有关使用 JavaScript 和 NatVis 的常规信息，请参阅[WinDbg 预览版-脚本](windbg-scripting-preview.md)。
+有关使用 JavaScript 和 NatVis 的常规信息，请参阅[WinDbg 预览-脚本](windbg-scripting-preview.md)。
 
-### <a name="managed-code-ttd-support"></a>托管的代码 TTD 支持
+### <a name="managed-code-ttd-support"></a>托管代码 TTD 支持
 
-可以使用 SOS 调试扩展 (sos.dll) 在 64 位模式下运行来调试使用 TTD WinDbg 预览版中的托管的代码。 有关详细信息，请参阅[使用 Windows 调试器调试托管代码](debugging-uwp-apps-using-the-windows-debugger.md)。
+可以使用在64位模式下运行的 SOS 调试扩展（sos），在 WinDbg Preview 中使用 TTD 调试托管代码。 有关详细信息，请参阅[使用 Windows 调试器调试托管代码](debugging-uwp-apps-using-the-windows-debugger.md)。
 
 
 ## <a name="span-idprovidingfeedbackspanproviding-feedback"></a><span id="providingfeedback"></span>提供反馈
 
-你的反馈将帮助指南时间旅行今后开发优先级。
+你的反馈将有助于指导发展行程发展的优先级。
 
-- 如果有一项功能，您真正想要查看或执行某困难 bug 等的反馈，请使用反馈中心。
+- 如果你有一些反馈（如你确实想要查看的功能）或 bug，则请使用反馈中心。
 
-![反馈中心显示反馈选项包括添加新的反馈按钮的屏幕截图](images/windbgx-feedback.png)
+![显示反馈选项（包括 "添加新反馈" 按钮）的反馈中心的屏幕截图](images/windbgx-feedback.png)
 
 
-## <a name="getting-started-with-ttd"></a>开始使用 TTD
+## <a name="getting-started-with-ttd"></a>TTD 入门
 
-查阅这些主题以记录和重播跟踪文件也信息与有关使用跟踪文件和故障排除。
+有关使用跟踪文件和故障排除的详细信息，请参阅这些主题：记录和重播跟踪文件以及有关使用跟踪文件和疑难解答的信息。
 
-- [时间旅行调试-记录跟踪](time-travel-debugging-record.md)
-- [时间旅行调试-重播的跟踪](time-travel-debugging-replay.md)
-- [调试-使用跟踪文件按时间顺序查看](time-travel-debugging-trace-file-information.md)
-- [时间顺序查看调试-故障排除](time-travel-debugging-troubleshooting.md)
-- [时间旅行调试-示例应用程序演练](time-travel-debugging-walkthrough.md)
+- [旅行调试-记录跟踪](time-travel-debugging-record.md)
+- [旅行调试-重播跟踪](time-travel-debugging-replay.md)
+- [时间行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)
+- [行程调试-故障排除](time-travel-debugging-troubleshooting.md)
+- [旅行调试-示例应用演练](time-travel-debugging-walkthrough.md)
 
-这些主题描述时间旅行调试中的其他高级的功能。 
+这些主题介绍了时间旅行调试的其他高级功能。 
 
-- [时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
-- [按照时间顺序逐个调试-JavaScript 自动化](time-travel-debugging-javascript-automation.md)
+- [旅行调试-时间行程调试对象简介](time-travel-debugging-object-model.md)
+- [行程调试-JavaScript 自动化](time-travel-debugging-javascript-automation.md)

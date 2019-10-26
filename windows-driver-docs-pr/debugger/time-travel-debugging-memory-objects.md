@@ -1,61 +1,62 @@
 ---
 title: TTD 内存对象
-description: 本部分介绍与时间旅行调试相关联的内存模型对象。
+description: 本部分介绍与时间行程调试相关联的内存模型对象。
 ms.date: 01/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aaa9dc8d392fa4f14ef5df663bd1a657c2965502
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b960859d1698518e451b555e0fce385af3bfac6
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389113"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916189"
 ---
 # <a name="ttd-memory-objects"></a>TTD 内存对象
-## <a name="description"></a>描述
-*TTD 内存*是一种方法接受 beginAddress、 endAddress 和 dataAccessMask 参数并返回包含内存访问信息的内存对象的集合。
 
-## <a name="parameters"></a>Parameters
+## <a name="description"></a>描述
+*TTD 内存*是一种方法，该方法采用 BeginAddress、EndAddress 和 dataAccessMask 参数，并返回包含内存访问信息的内存对象的集合。
+
+## <a name="parameters"></a>参数
 
 | 属性 | 描述 |
 | --- | --- |
-| beginAddress | 内存对象以 0x 开头的起始地址。|
-| endAddress| 内存对象以 0x 开头的结束地址。|
-| dataAccessMask |包含在双引号内数据访问掩码。 这可以在读取、 写入、 e 表示 execute 和更改 c w r。 |
+| beginAddress | 以0x 开头的内存对象的开始地址。|
+| endAddress| 以0x 开头的内存对象的结束地址。|
+| dataAccessMask |双引号中包含的数据访问掩码。 这可以是 r 进行读取，w 用于写入，e 表示执行，c 表示更改。 |
 
 
 ## <a name="children"></a>Children
 
-| Object      | 描述 |
+| 对象      | 描述 |
 | ----------- | ----------- |
-| EventType  |  事件的类型。 这是为所有 TTD"MemoryAccess"。内存对象。 |
+| EventType  |  事件的类型。 对于所有 TTD，这是 "MemoryAccess"。内存对象。 |
 | ThreadId   |  发出请求的线程的操作系统线程 ID。 |
-| UniqueThreadId |   跟踪跨线程的唯一 ID。 常规线程 Id 可获取进程的生存期内重复使用，但 UniqueThreadIds 不能。 |
-| TimeStart | 一个[位置对象](time-travel-debugging-position-objects.md)的描述时进行内存访问的位置。 |
-| TimeEnd | 一个[位置对象](time-travel-debugging-position-objects.md)的描述时进行内存访问的位置。 此属性始终为 TTD TimeStart 相同。内存对象。
-| AccessType |  访问类型的读取、 写入或执行。 |
-| IP         |  所做的内存访问的代码指令指针。 |
-| 地址    |  已读取 / 写入 / 执行的地址并将处于的范围 [beginAddress, endAddress) 从的参数。Memory()。  请注意，该间隔是半开。  也就是说，没有任何返回的事件将具有匹配 endAddress，但可以匹配 endAddress – 1 的事件。|
-| 大小       |  读取/写入/执行以字节为单位的大小。 这通常是 8 个字节或更少。 发生时执行代码，它是已执行的指令中的字节数。 |
-| ReplTest1   | 读取、 写入或执行的值。 如果执行，它包含指令的代码字节。 请注意指令字节拆装器 MSB 顺序列出，但将存储在 LSB 顺序的值。 |
+| UniqueThreadId |   跟踪内线程的唯一 ID。 可以在进程的生存期内重复使用常规线程 Id，但 UniqueThreadIds 不能。 |
+| TimeStart | 一个[位置对象](time-travel-debugging-position-objects.md)，该对象描述进行内存访问时的位置。 |
+| TimeEnd | 一个[位置对象](time-travel-debugging-position-objects.md)，该对象描述进行内存访问时的位置。 这将始终与 TTD 的 TimeStart 相同。内存对象。
+| AccessType |  "访问类型"-"读取"、"写入" 或 "执行"。 |
+| IP         |  进行内存访问的代码的指令指针。 |
+| 地址    |  读取/写入/执行的地址，它将位于 [beginAddress，endAddress）范围内（从参数到）。内存（）。  请注意，间隔为半开。  也就是说，返回的任何事件都不会有地址匹配 endAddress，但也可能存在与 endAddress –1匹配的事件。|
+| Size       |  读/写/执行的大小（以字节为单位）。 通常为8个字节或更少。 执行代码时，它是执行的指令中的字节数。 |
+| Value   | 读取、写入或执行的值。 在执行时，它包含指令的代码字节。 请注意，指令字节按 MSB 顺序按反汇编程序列出，但将按 LSB 顺序存储在值中。 |
 
 
 ## <a name="remarks"></a>备注
 
-TTD 中允许使用以下访问权限类型。内存查询：
+允许在 TTD 中使用以下访问类型。内存查询：
 
 -   r-读取
 -   w-写入
--   rw-读取/写入
--   e-执行
--   rwe-读取 / 写入/执行
--   ec-执行/更改
+-   读/写
+-   电子执行
+-   rwe-读取/写入/执行
+-   ec-执行/change
 
-请注意，这是执行计算，因此需要一段时间才能运行的函数。 
+请注意，这是一个执行计算的函数，因此需要一段时间才能运行。 
 
 
 ## <a name="example-usage"></a>示例用法
 
-此示例中显示的所有四个字节的内存从 0x00a4fca0 处开始，已读取访问权限的位置在跟踪中的网格显示出错。 单击向下钻取每个发生内存访问的任何条目。
+此示例显示了跟踪中的所有位置的网格显示，其中从0x00a4fca0 开始的四个字节的内存是读取访问。 单击任意条目，在每次出现内存访问时向下钻取。
 
 ```dbgcmd
 dx -g @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")
@@ -63,7 +64,7 @@ dx -g @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")
 
 ![内存对象 dx 示例网格输出](images/ttd-time-travel-memory-object-dx-output.png) 
 
-您可以单击的 TimeStart 字段中的任何事件网格显示，以显示该事件的信息中。 
+可以在网格显示的任何事件中单击 "TimeStart" 字段，以显示该事件的信息。 
 
 ```dbgcmd
 0:000> dx -r1 @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")[16].TimeStart
@@ -72,7 +73,7 @@ dx -g @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")
     Steps            : 0x113
 ```
 
-若要将移动到发生事件的跟踪中的位置，单击 [时程]。
+若要移动到跟踪中发生事件的位置，请单击 "时间段"。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Memory(0x00a4fca0,0x00a4fca4, "r")[16].TimeStart.SeekTo()
@@ -86,7 +87,7 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
 690795e5 ffb604040000    push    dword ptr [esi+404h] ds:002b:00a4fca0=00000000
 ```
 
-在此示例中，会列出所有在跟踪中的四个字节的内存开始 0x1bf7d0 处于读/写访问的位置。 单击向下钻取每个发生内存访问的任何条目。
+在此示例中，列出了跟踪中从0x1bf7d0 开始的四个字节的内存，其中列出了读取/写入访问。 单击任意条目，在每次出现内存访问时向下钻取。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Memory(0x1bf7d0,0x1bf7d4, "rw")
@@ -97,7 +98,7 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
     [0x3]           
      ...
 ```
-在此示例中会列出所有 postions 其中四个字节的 0x13a1710 处开始的内存已访问/执行更改跟踪中。 单击任何实例以向下钻取每个匹配项上的内存访问的其他信息。  
+在此示例中，将列出跟踪中从 postions 开始的四个字节（从 "0x13a1710" 开始）的所有内存。 单击任意匹配项以查看有关每次出现内存访问的其他信息。  
 
 ```dbgcmd
 0:000> dx -r1 @$cursession.TTD.Memory(0x13a1710,0x13a1714, "ec")[0]
@@ -114,14 +115,9 @@ cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
     Value            : 0x55
 ```
 
+## <a name="see-also"></a>另请参阅
 
+[旅行调试-时间行程调试对象简介](time-travel-debugging-object-model.md)
 
-## <a name="see-also"></a>请参阅
-
-[时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
-
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
-
----
-
+[行程调试-概述](time-travel-debugging-overview.md)
 

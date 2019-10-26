@@ -1,35 +1,36 @@
 ---
 title: TTD 事件对象
-description: 本部分介绍与时间旅行调试相关联的事件模型对象。
+description: 本部分介绍与时间行程调试关联的事件模型对象。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3511933227006dc5a5fe22b8c8da99a75dbfe887
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 99c5a84dc57edad2eebac21fb6185fafc5595cb2
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342048"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916217"
 ---
 # <a name="ttd-event-objects"></a>TTD 事件对象
-## <a name="description"></a>描述
-*TTD 事件*对象用于提供有关时间旅行跟踪过程中发生的重要事件的信息。
 
-## <a name="properties"></a>属性
+## <a name="description"></a>描述
+*TTD 事件*对象用于给出有关在时间行程跟踪期间发生的重要事件的信息。
+
+## <a name="properties"></a>“属性”
 
 | 属性 | 描述 |
 | --- | --- |
-| 在任务栏的搜索框中键入 | 描述发生的事件的类型。 可能的值为：ThreadCreated、 ThreadTerminated、 ModuleLoaded、 ModuleUnloaded、 异常 |
+| 在任务栏的搜索框中键入 | 描述发生的事件的类型。 可能的值包括： ThreadCreated、ThreadTerminated、ModuleLoaded、ModuleUnloaded、Exception |
 
 ## <a name="children"></a>Children
 
-| Object | 描述 |
+| 对象 | 描述 |
 | --- | --- |
-| 位置 | 一个[位置对象](time-travel-debugging-position-objects.md)用于描述该事件发生的位置。 |
-| 模块 * | 一个[模块对象](time-travel-debugging-module-objects.md)包含已加载或卸载的模块有关的信息。 |
-| 线程 * | 一个[线程对象](time-travel-debugging-thread-objects.md)包含有关已创建或终止线程的信息。 |
-| 异常 * | [异常对象](time-travel-debugging-exception-objects.md)包含有关异常已被命中的信息。 |
+| 位置 | 一个[位置对象](time-travel-debugging-position-objects.md)，该对象描述事件发生的位置。 |
+| 模块 | 一个[module 对象](time-travel-debugging-module-objects.md)，其中包含有关已加载或卸载的模块的信息。 |
+| Thread | 一个[线程对象](time-travel-debugging-thread-objects.md)，其中包含有关已创建或终止的线程的信息。 |
+| 异常 | 一个[异常对象](time-travel-debugging-exception-objects.md)，其中包含有关所命中的异常的信息。 |
 
-\* -这些子对象存在取决于事件的类型
+\*-这些子对象是否存在取决于事件的类型
 
 ## <a name="example-usage"></a>示例用法
 
@@ -55,12 +56,8 @@ ms.locfileid: "63342048"
 ```
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
+[旅行调试-时间行程调试对象简介](time-travel-debugging-object-model.md)
 
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
-
----
-
-
+[行程调试-概述](time-travel-debugging-overview.md)

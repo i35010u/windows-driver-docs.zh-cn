@@ -1,73 +1,65 @@
 ---
-title: 时间旅行调试扩展 ！ tt 命令
-description: ！ Tt 时间旅行调试器扩展，可用于在时间中向前和向后导航。
+title: 时间行程调试扩展！ tt 命令
+description: 允许您在时间中向前和向后导航的！ tt 时间旅行调试器扩展。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26817ac6f106064afdec8f80a74359c23d476768
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29b678ba0c8dd73b105bd9f6f9ab7ab69710d648
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389119"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916208"
 ---
-![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png)
+# <a name="tt-time-travel"></a>！ tt （行程）
 
-#  <a name="tt-time-travel"></a>！ tt （时程）
+![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png)
 
-！ Tt （时程） 调试器扩展，可用于在时间中向前和向后导航。
+允许您在时间中向前和向后导航的！ tt （时间段）调试器扩展。
 
 ## <a name="tt-navigation-commands"></a>！ tt 导航命令
 
-使用 ！ tt 扩展向前或向后导航通过体验到在跟踪中的给定位置中的时间。 
+使用！ tt 扩展，通过前往跟踪中的给定位置，向前或向后导航。 
 
 ```dbgcmd
 !tt [position] 
 ```
 
-## <a name="span-idddkanalyzedbgspanspan-idddkanalyzedbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>参数
+## <a name="span-idddk__analyze_dbgspanspan-idddk__analyze_dbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>Parameters
 
-**position**
+**置于**
 
-提供在任何时间传输到该点的以下格式的时间位置。
+提供以下任意格式的时间位置以在该时间点旅行。
            
-- 如果 {位置} 是介于 0 和 100 之间的十进制数字，它跟踪到传输大约该 %。 例如：
-    - ！ ttdext.tt 0-时间旅行到跟踪的开头
-    - ！ ttdext.tt 50-时间出差到一半通过跟踪
-    - ！ ttdext.tt 到跟踪的末尾 100-按时间顺序查看
+- 如果 {position} 是一个介于0到100之间的十进制数字，则它会在跟踪中大约向其传递百分比。 例如：
+    - ！ ttdext.tt 0-时间到达跟踪开始处
+    - ！ ttdext.tt 50-经历跟踪的一半时间
+    - ！ ttdext.tt 100-时间到达跟踪结尾
  
 
-- 如果 {位置} #: #，其中 # 为十六进制数字，它传递到该位置。 如果数字格式后： 已省略，默认为零。
-    - ！ ttdext.tt 1A0:-按照时间顺序逐个来定位 1A0:0
-    - ！ ttdext.tt 1A0:0-来定位 1A0:0 按时间顺序查看
-    - ！ ttdext.tt 1A0:12F-来定位 1A0:12F 按时间顺序查看
+- 如果 {position} 为 #： #，其中 # 是十六进制数字，则将其移动到该位置。 如果省略了 after：，则默认为零。
+    - ！ ttdext.tt 1A0：-生存时间到位置1A0：0
+    - ！ ttdext.tt 1A0： 0-时间到位置1A0：0
+    - ！ ttdext.tt 1A0： 12F-Time to position 1A0：12F
 
 
    > [!NOTE]
-   > 跟踪使用的两部分指令位置引用在跟踪中的特定位置引用，例如 12:0。 或 15:7。 两个元素是十六进制数字定义如下所述。
+   > 跟踪使用两部分说明位置，该位置引用跟踪中的特定位置引用，例如12:0。 或15:7。 这两个元素是按此处所述定义的十六进制数。
    >
-   > xx:yy
+   > xx： yy
    > 
-   > xx 的第一个元素是序列化数，它对应于序列化事件。
+   > xx-第一个元素是对应于序列化事件的序列号。
    >
-   > yy-第二个元素是步骤计数，与对应的大致指令计数因为序列化事件。
+   > yy-第二个元素是一个步骤计数，它大致对应于自排序事件之后的指令计数。
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-ttdext.dll
+ttdext
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-此扩展只适用于时间传输跟踪。 有关按时间顺序查看详细信息，请参阅[时间旅行调试-概述](time-travel-debugging-overview.md)。
+此扩展仅适用于时间行程跟踪。 有关时间段的详细信息，请参阅[行程调试-概述](time-travel-debugging-overview.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
-
----
-
-
-
-
-
-
+[行程调试-概述](time-travel-debugging-overview.md)

@@ -1,43 +1,43 @@
 ---
 title: 时光穿越调试 - 重放跟踪
-description: 本部分介绍如何重播时间旅行跟踪。
+description: 本部分介绍如何重播时间行程跟踪。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9eb21ef930c66b3995e4afbd587a347049b880
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2639b5e4654a2e52554295243aa0ada484b8b1a3
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364775"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916140"
 ---
-![显示时钟的较短时间的行程徽标](images/ttd-time-travel-debugging-logo.png) 
+# <a name="time-travel-debugging---replay-a-trace"></a>时光穿越调试 - 重放跟踪
 
-# <a name="time-travel-debugging---replay-a-trace"></a>时光穿越调试 - 重放跟踪 
+![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png) 
 
-本部分介绍如何重播按时间顺序查看跟踪，向前导航和向后的时间。
+本部分介绍如何重播时间行程跟踪，并在时间前后导航。
 
 ## <a name="command-time-travel-navigation"></a>命令时间旅行导航
 
-使用以下命令使用尾随负号在过去。
+使用尾随负号，并使用以下命令及时返回。
 
-| Command  | 
+| 命令  | 
 |----------------|
 | p-（后退） | 
-| t-（回溯）| 
+| t-（Trace Back）| 
 | g-（返回）   |
 
-有关详细信息，请参阅[时间旅行调试-导航命令](time-travel-debugging-navigation-commands.md)。 
+有关详细信息，请参阅[行程调试-导航命令](time-travel-debugging-navigation-commands.md)。 
 
-## <a name="ribbon-button-time-travel-navigation"></a>功能区按钮时间旅行导航
+## <a name="ribbon-button-time-travel-navigation"></a>功能区按钮时间行程导航
 
 或者，使用功能区按钮在跟踪中导航。
 
-![显示开始录制复选框的 WinDbg 预览的屏幕截图](images/ttd-ribbon-buttons.png)
+![显示 "开始记录" 复选框的 WinDbg 预览屏幕截图](images/ttd-ribbon-buttons.png)
 
 
 ## <a name="example-ttd-trace-replay"></a>示例 TTD 跟踪重播
 
-使用 g 命令来执行向后直到事件或达到 TTD 跟踪的开头。 可以停止向后执行的事件都将停止向前执行相同。 在此示例中，达到了跟踪的开始。
+使用 g-command 来向后执行，直到到达事件或 TTD 跟踪的开头。 可以停止向后执行的事件与停止执行的事件相同。 在此示例中，已达到跟踪的开头。
 
 
 ```dbgcmd
@@ -49,7 +49,7 @@ ntdll!ZwTestAlert+0x14:
 00007ffc`61f789d4 c3              ret
 ```
 
-使用[p （步骤）](https://docs.microsoft.com/windows-hardware/drivers/debugger/p--step-)命令来单步前进 TTD 跟踪中。 
+使用[p （Step）](https://docs.microsoft.com/windows-hardware/drivers/debugger/p--step-)命令在 TTD 跟踪中前进。 
 
 ```dbgcmd
 0:000> p
@@ -75,7 +75,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 7774f83c 0f8450e8ffff    je      ntdll!LdrpInitializeProcess+0x42f (7774e092) [br=1]
 ```
 
-你还使用[t (Trace)](https://docs.microsoft.com/windows-hardware/drivers/debugger/t--trace-)命令在跟踪中导航。
+你还可以使用[t （Trace）](https://docs.microsoft.com/windows-hardware/drivers/debugger/t--trace-)命令在跟踪中导航。
 
 ```dbgcmd
 0:000> t
@@ -95,7 +95,7 @@ ntdll!LdrpInitializeProcess+0x431:
 ```
 
 
-使用 p 命令 TTD 跟踪中向后步骤。 
+使用 p-command 在 TTD 跟踪中向后单步执行。 
 
 ```dbgcmd
 0:000> p-
@@ -114,27 +114,27 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 7774f83c 0f8450e8ffff    je      ntdll!LdrpInitializeProcess+0x42f (7774e092) [br=1]
 ```
 
-T 命令还可用于在时间中向后导航。
+你还可以使用 t-命令来及时向后导航。
 
 
 ## <a name="tt-navigation-commands"></a>！ tt 导航命令
 
-使用 ！ tt 命令向前或向后导航通过跳过到在跟踪中的给定位置中的时间。 
+使用！！命令向前或向后导航，方法是跳到跟踪中的给定位置。 
 
-！ tt [位置]
+！ tt [position]
 
-提供在任何时间传输到该点的以下格式的时间位置。
+提供以下任意格式的时间位置以在该时间点旅行。
            
-- 如果 [位置] 是介于 0 和 100 之间的十进制数字，它跟踪到传输大约该 %。 例如`!tt 50`传输到中途跟踪。
+- 如果 [position] 为介于0到100之间的十进制数字，则它会在跟踪中接近该百分比。 例如 `!tt 50` 向跟踪的一半。
 
-- 如果 {位置} #: #，其中 # 为十六进制数字，它传递到该位置。 例如，`!tt 1A0:12F`方式传送 1A0:12F 定位在跟踪中。
+- 如果 {position} 为 #： #，其中 # 是十六进制数字，则将其移动到该位置。 例如，`!tt 1A0:12F` 传播到跟踪中的位置1A0：12F。
 
-有关详细信息，请参阅[调试旅行时间-！ tt （时程）](time-travel-debugging-extension-tt.md)。
+有关详细信息，请参阅[行程调试-！ tt （行程时间）](time-travel-debugging-extension-tt.md)。
 
 
-## <a name="positions"></a>！ 位置
+## <a name="positions"></a>！位置
 
-使用`!positions`以显示所有活动的线程，包括在跟踪中的位置。 有关详细信息，请参阅[调试旅行时间-！ 位置 （时程）](time-travel-debugging-extension-positions.md)。
+使用 `!positions` 显示所有活动线程，包括它们在跟踪中的位置。 有关详细信息，请参阅[行程调试-！位置（旅行时间）](time-travel-debugging-extension-positions.md)。
 
 ```dbgcmd
 0:000> !positions
@@ -147,15 +147,15 @@ T 命令还可用于在时间中向后导航。
  Thread ID=0x32B4 - Position: C87:0
  Thread ID=0x337C - Position: DF1:0
 ```
-此示例演示在当前位置有八个线程。 当前线程是 3604，标有 >。  
+此示例显示当前位置有8个线程。 当前线程为3604，标记为 ">"。  
 
 > [!TIP] 
-> 若要显示当前的线程和它们的位置列表的另一种方法是使用数据模型 dx 命令：
+> 显示当前线程及其位置列表的另一种方法是使用数据模型 dx 命令：
 >
 > `dx -g @$curprocess.Threads.Select(t => new { IsCurrent = t.Id == @$curthread.Id, ThreadId = t.Id, Position = t.TTD.Position })`
 >
 
-使用用户模式[~ （线程状态）](---thread-status-.md)命令显示了相同的八个线程，并将标记与当前线程。:
+使用 user mode [~ （Thread Status）](---thread-status-.md)命令显示相同的八个线程，并使用 "." 标记当前线程：
 
 ```dbgcmd
 0:000> ~
@@ -169,7 +169,7 @@ T 命令还可用于在时间中向后导航。
    7  Id: 954.337c Suspend: 4096 Teb: 00ff3000 Unfrozen
 ```
 
-单击中的第三个线程 (3FFC) 旁边的链接 ！ 定位输出到跟踪 200:0 中该位置按时间顺序查看到。
+单击 "！位置" 输出中第三个线程（3FFC）旁边的链接，以便在跟踪中的该位置到达此位置（200:0）。
 
 ```dbgcmd
 0:002> !ttdext.tt 200:0
@@ -183,7 +183,7 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 7775396c c21400          ret     14h
 ```
 
-使用[~ （线程状态）](---thread-status-.md)命令来确认，我们现在放置于第三个线程，3ffc。
+使用[~ （Thread Status）](---thread-status-.md)命令确认我们目前定位于第三个线程3ffc。
 
 ```dbgcmd
 0:002> ~
@@ -199,28 +199,21 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 
 
 > [!NOTE]
-> *~ S #* ，其中 *#* 也是大量线程，则会切换到给定的线程，但它不会更改跟踪中的当前位置。  当 *！ tt*是用于时间旅行到另一个线程的位置，你 （和调试器） 从内存中读取的任何值将查找该位置。 切换的线程时 *~ s #* ，调试器不会更改当前的位置在内部，用于内存中的所有查询。 此方法主要工作，以便 *~ s #* 无需重置调试器的内部循环。
+> *~ S #* ，其中 *#* 是一个线程号，还切换到给定线程，但它不会更改跟踪中的当前位置。  当使用 *！ tt*来使到达另一个线程的位置时，将在该位置查找您（和调试器）从内存中读取的任何值。 当使用 *~ s #* 切换线程时，调试器不会内部更改当前位置，这用于所有内存查询。 这主要以这种方式运行，因此 *~ s #* 不必重置调试器的内部循环。
 
 
-## <a name="time-travel-debugging-extension-commands"></a>调试扩展命令按时间顺序查看
+## <a name="time-travel-debugging-extension-commands"></a>行程调试扩展命令
 
-有关的信息`!tt`，`!positions`并`!index`命令查看[时间旅行调试-扩展命令](time-travel-debugging-extension-commands.md)。
+有关 `!tt`的信息，[请参阅 `!positions` 和 `!index` 命令。](time-travel-debugging-extension-commands.md)
 
  
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
+[行程调试-概述](time-travel-debugging-overview.md)
 
-[时间旅行调试-记录跟踪](time-travel-debugging-record.md)
+[旅行调试-记录跟踪](time-travel-debugging-record.md)
 
-[调试-使用跟踪文件按时间顺序查看](time-travel-debugging-trace-file-information.md)
+[时间行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)
 
-[时间旅行调试-示例应用程序演练](time-travel-debugging-walkthrough.md)
-
----
-
-
-
-
-
+[旅行调试-示例应用演练](time-travel-debugging-walkthrough.md)
 

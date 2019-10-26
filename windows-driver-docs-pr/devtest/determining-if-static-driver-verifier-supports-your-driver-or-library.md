@@ -4,12 +4,12 @@ description: 静态驱动程序验证程序（SDV）可以支持 WDM、KMDF、ND
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f57ab972746eff63b2fa4cf04425696855960c25
-ms.sourcegitcommit: 8fdbd7d16dd2393e5df0a87388aed91d2898cd71
+ms.openlocfilehash: 22f409b0f5c75d672e7fa9bd30f20abcdb6f7c95
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72165029"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916103"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>确定静态驱动程序验证程序是否支持你的驱动程序或库
 
@@ -17,12 +17,16 @@ ms.locfileid: "72165029"
 
 ## <a name="driver-or-library-requirements"></a>驱动程序或库要求
 
-如果驱动程序或库满足以下条件之一，则可以在 SDV 分析工具中运行全套规则：
+如果驱动程序或库满足以下条件之一，则可以在 SDV 分析工具中运行完整的一组规则 **，而**不会链接到[下面列出的任何类框架库](#class-framework-libraries)。
 
-- 有一个 WDM 驱动程序或库，驱动程序或库不链接到类框架（即 Microsoft 提供的库）。 有关详细信息，请参阅[类框架库](#class-framework-libraries)。
+- 有一个 WDM 驱动程序或库。
 - 你有一个链接到 WdfLdr 或 WdfDriverEntry 的驱动程序或库。
 - 你有一个链接到 NDIS .lib 的驱动程序或库。
 - 你有一个链接到 Storport .lib 的驱动程序或库。
+
+如果你的驱动程序在上述条件以外，则 SDV 会将驱动程序视为 "通用"，并运行有限的一组检查。
+
+此外，请注意，由 SDV 验证的库必须是内核模式驱动程序库，而不是常规C++ C 或库。  
 
 静态驱动程序验证程序支持通过这些条件的驱动程序或库，即使驱动程序或库链接到多个[实用程序库](#utility-libraries)。
 

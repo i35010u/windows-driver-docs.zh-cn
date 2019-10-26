@@ -1,39 +1,34 @@
 ---
 title: TTD 模块对象
-description: 本部分介绍与时间旅行调试相关联的模块模型对象。
+description: 本部分介绍与时间行程调试关联的模块模型对象。
 ms.date: 09/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e16bb0b5d5ba89741358ba79235178f74fbd76bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c7f5875c1a70cf0809a98c00323d0f91810984c6
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389089"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916188"
 ---
 # <a name="ttd-module-objects"></a>TTD 模块对象
-## <a name="description"></a>描述
-*TTD 模块*对象用于提供已加载和卸载期间跟踪会话的模块有关的信息。
 
-## <a name="properties"></a>属性
+## <a name="description"></a>描述
+*TTD 模块*对象用于在跟踪会话期间，为加载和卸载的模块生成相关信息。
+
+## <a name="properties"></a>“属性”
 
 | 属性 | 描述 |
 | --- | --- |
-| 名称 | 名称和模块的路径。 |
-| 地址 | 已加载的模块地址。 |
-| 大小 | 以字节为单位的模块的大小。 |
+| 名称 | 模块的名称和路径。 |
+| 地址 | 加载模块的地址。 |
+| Size | 模块的大小（以字节为单位）。 |
 | 校验和 | 模块的校验和。 |
 | 时间戳 | 模块的时间戳。 |
 
-*挂起的信息*
+*待处理信息*
 
+## <a name="see-also"></a>另请参阅
 
+[旅行调试-时间行程调试对象简介](time-travel-debugging-object-model.md)
 
-## <a name="see-also"></a>请参阅
-
-[时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
-
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
-
----
-
-
+[行程调试-概述](time-travel-debugging-overview.md)

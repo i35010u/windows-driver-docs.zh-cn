@@ -1,38 +1,40 @@
 ---
 title: TTD 线程对象
-description: 本部分介绍与时间旅行调试相关联的线程模型对象。
+description: 本部分介绍与时间行程调试相关联的线程模型对象。
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5694c648acd00d3933db17cac8e46e661b8f0211
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d38085e78f03dc80ee63facaf3a16dab87c6b4e
+ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330957"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916138"
 ---
 # <a name="ttd-thread-objects"></a>TTD 线程对象
-## <a name="description"></a>描述
-*TTD 线程*对象用于提供有关线程和其生存期期间移动跟踪的信息。
 
-## <a name="properties"></a>属性
+## <a name="description"></a>描述
+
+*TTD 线程*对象用于在时间段跟踪期间为线程及其生存期生成信息。
+
+## <a name="properties"></a>“属性”
 
 | 属性 | 描述 |
 | --- | --- |
-| UniqueId | 跟踪跨线程的唯一 ID。 |
-| ID | 线程的该 TID。 |
+| UniqueId | 跟踪内线程的唯一 ID。 |
+| ID | 线程的 TID。 |
 
 
 ## <a name="children"></a>Children
 
-| Object | 描述 |
+| 对象 | 描述 |
 | --- | --- |
-| LifeTime | 一个[TTD 范围对象](time-travel-debugging-range-objects.md)描述的线程的生存期。 |
-| ActiveTime | 一个[TTD 范围对象](time-travel-debugging-range-objects.md)用于描述该线程处于活动状态的时间。 |
+| 生存期 | 描述线程生存期的[TTD 范围对象](time-travel-debugging-range-objects.md)。 |
+| ActiveTime | 描述线程处于活动状态的时间的[TTD 范围对象](time-travel-debugging-range-objects.md)。 |
 
 
 ## <a name="example-usage"></a>示例用法
 
-使用此 dx 命令数组中显示的所有线程。
+使用此 dx 命令可显示数组中的所有线程。
 
 ```dbgcmd
 0:0:000> dx -g @$curprocess.TTD.Threads
@@ -50,7 +52,7 @@ ms.locfileid: "63330957"
 =================================================================================================================
 ```
 
-使用此 dx 命令数组中显示的第一个线程有关的信息。
+使用此 dx 命令显示有关数组中第一个线程的信息。
 
 ```dbgcmd
 0:0:000 dx -r2 @$curprocess.TTD.Threads[0]
@@ -65,7 +67,7 @@ ms.locfileid: "63330957"
         MaxPosition      : 6F0C4:0 [Time Travel]
 ```
 
-当线程处于活动状态时，[时程] 链接将提供指向 SeekTo() 在跟踪中的特定位置。 
+当线程处于活动状态时，[Time 旅行] 链接提供指向跟踪中特定位置的 SeekTo （）的链接。 
 
 ```dbgcmd
 0:0:000> dx @$curprocess.TTD.Threads[0].@"ActiveTime".@"MinPosition".SeekTo()
@@ -78,12 +80,8 @@ ntdll!NtTestAlert+0x14:
 ```
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[时间旅行调试-时间旅行调试对象简介](time-travel-debugging-object-model.md)
+[旅行调试-时间行程调试对象简介](time-travel-debugging-object-model.md)
 
-[按照时间顺序逐个调试-概述](time-travel-debugging-overview.md)
-
----
-
-
+[行程调试-概述](time-travel-debugging-overview.md)
