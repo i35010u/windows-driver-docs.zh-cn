@@ -6,23 +6,23 @@ keywords:
 - 筛选层 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a491eddb04c6eb29981ee3291925386ccd609ec
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 8f31bf376e8c4f0a4137ae21fed2fc9d22724ffd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716920"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840488"
 ---
 # <a name="filtering-layer"></a>筛选层
 
 
-一个*筛选层*是个网络数据传递给 TCP/IP 网络堆栈中的点[筛选器引擎](filter-engine.md)为与当前组筛选器相匹配。 由一个唯一标识网络堆栈中的每个筛选层[筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/filtering-layer-identifiers)。
+*筛选层*是 tcp/ip 网络堆栈中的一个点，其中的网络数据被传递到[筛选器引擎](filter-engine.md)以与当前的一组筛选器匹配。 网络堆栈中的每个筛选层都由唯一的[筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/filtering-layer-identifiers)标识。
 
-当[筛选器](filter.md)添加到筛选器引擎中，添加在指定的筛选层，它将筛选器的网络数据。 特定[数据字段](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)都可用在处理每个筛选层的已添加到筛选器引擎在该图层的筛选器。 如果筛选器引擎传递到的网络数据[标注](callout.md)以进行其他处理，它包括这些数据字段和任何[元数据](https://docs.microsoft.com/windows-hardware/drivers/network/metadata-fields)位于该筛选层。
+将[筛选器](filter.md)添加到筛选器引擎后，会将其添加到将在其中筛选网络数据的指定筛选层。 特定[数据字段](https://docs.microsoft.com/windows-hardware/drivers/network/data-field-identifiers)在每个筛选层提供，以供已添加到该层的筛选器引擎的筛选器进行处理。 如果筛选器引擎将网络数据传递给[标注](callout.md)进行其他处理，则它会包括这些数据字段以及该筛选层上提供的任何[元](https://docs.microsoft.com/windows-hardware/drivers/network/metadata-fields)数据。
 
-[运行时筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)(FWPS\_*XXX*) 使用的内核模式标注驱动程序。 [管理筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)(FWPM\_*XXX*) 由**Fwpm<em>Xxx</em>** 交互使用基本筛选的函数引擎 (BFE) 从用户模式或内核模式 (例如， [ **FwpmFilterAdd0**](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmfilteradd0))。
+内核模式标注驱动程序使用[运行时筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/run-time-filtering-layer-identifiers)（FWPS\_*XXX*）。 从用户模式或内核模式（例如， [**FwpmFilterAdd0**](https://docs.microsoft.com/windows/desktop/api/fwpmu/nf-fwpmu-fwpmfilteradd0)）与基本筛选引擎（BFE）交互的**FWPM<em>XXX</em>** 函数使用[管理筛选层标识符](https://docs.microsoft.com/windows-hardware/drivers/network/management-filtering-layer-identifiers)（FWPM\_*xxx*）。
 
-FWPS 数据类型为小于对应的 FWPM: FWPM 筛选层标识符是 Guid （128 位），而是筛选层标识符 FWPS [ **Luid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/igpupvdev/ns-igpupvdev-_luid)（64 位）。 FWPS 数据类型的较小大小可以提高系统性能，因为整数比较速度要快于实时流量的 GUID 比较和内核内存更有效地处理 FWPS 类型。
+FWPS 数据类型小于其 FWPM 的类型： FWPM 筛选层标识符是 Guid （128位），而 FWPS 筛选层标识符为[**luid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/igpupvdev/ns-igpupvdev-_luid)（64位）。 FWPS 数据类型的较小大小可提高系统性能，因为整数比较比实时流量的 GUID 比较快，而内核内存则更有效地处理 FWPS 类型。
 
  
 

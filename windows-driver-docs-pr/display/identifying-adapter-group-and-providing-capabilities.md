@@ -3,16 +3,16 @@ title: 识别适配器组和提供功能
 description: 识别适配器组和提供功能
 ms.assetid: 44a2ac71-8852-472f-82a2-7bd4d7dffa1a
 keywords:
-- 多个头硬件 WDK DirectX 9.0 中，配置
-- 多个头硬件 WDK DirectX 9.0 中，适配器
+- 多头硬件 WDK DirectX 9.0，配置
+- 多头硬件 WDK DirectX 9.0，适配器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85003a30008b8221b6fde880dd2eb44b8a13ccec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 394bf0aebd46ed8dbc71cbec36ee80516b64d219
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380180"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839649"
 ---
 # <a name="identifying-adapter-group-and-providing-capabilities"></a>识别适配器组和提供功能
 
@@ -20,23 +20,23 @@ ms.locfileid: "67380180"
 ## <span id="ddk_identifying_adapter_group_and_providing_capabilities_gg"></span><span id="DDK_IDENTIFYING_ADAPTER_GROUP_AND_PROVIDING_CAPABILITIES_GG"></span>
 
 
-DirectX 9.0 运行时发送**GetDriverInfo2**请求使用 D3DGDI2\_类型\_GETADAPTERGROUP 值到 DirectX 9.0 版本驱动程序请求的标识符组成的适配器的组驱动程序的多个头视频卡。 驱动程序将返回中的标识符**ulUniqueAdapterGroupId**的成员[ **DD\_GETADAPTERGROUPDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getadaptergroupdata)结构。 该驱动程序必须为 master 和组中的所有从属适配器提供的唯一标识符。 运行时在后续操作中使用此标识符，以确定给定的适配器是否为组的一部分。 此标识符必须是唯一的驱动程序，包括其他硬件供应商提供的驱动程序。 因此，建议以不能为常见的其他多个头视频卡的唯一的非零内核模式地址的形式报告此标识符。
+DirectX 9.0 运行时使用 D3DGDI2\_\_类型将**GetDriverInfo2**请求发送到 DirectX 9.0 版本驱动程序，以请求构成驱动程序的多头视频卡的适配器组的标识符. 驱动程序在[**DD\_GETADAPTERGROUPDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getadaptergroupdata)结构的**ulUniqueAdapterGroupId**成员中返回标识符。 驱动程序必须为组中的主适配器和所有从属适配器提供唯一标识符。 运行时在后续操作中使用此标识符来确定给定适配器是否是组的一部分。 此标识符必须在驱动程序（包括来自其他硬件供应商的驱动程序）中是唯一的。 因此，建议将此标识符报告为唯一的非零内核模式地址，此地址不能与其他多头视频卡相同。
 
-DirectX 9.0 版本驱动程序指示其多个头硬件通过设置以下 D3DCAPS9 结构的成员的配置方式：
+DirectX 9.0 版本驱动程序通过设置 D3DCAPS9 结构的以下成员，指示其多头硬件的配置方式：
 
 -   **NumberOfAdaptersInGroup**
 
-    （仅当 master) 适配器组中指定适配器的数。 这是 1 的单个头卡 （常规适配器）。 值为大于 1 的多个头卡的主适配器。 值为 0 的从属适配器的多个头卡。 每个卡可以具有最多一个主机，但可以有多个从属项。
+    指定适配器组中的适配器数量（仅当 master）。 对于单层卡（传统适配器），这是1。 对于多头卡的主适配器，该值大于1。 对于多头卡的从属适配器，该值为0。 每张卡片最多只能有一个主节点，但可以有多个从属节点。
 
 -   **MasterAdapterOrdinal**
 
-    指定组中主适配器的数量。 此数字是适用于系统包含多个多头卡。 例如，如果系统中包含单个头卡、 双头卡和 triple 头卡，系统将引用作为头：单个为 0、 1 和为双精度型、 2 和 3、 4 和 5 三重。 在这种情况下，主适配器是：单个为 0、 1 表示双精度型和三重为 3。
+    指定组中的主适配器的编号。 如果系统包含多个多个头卡，则此数字是相关的。 例如，如果系统包含一个卡、一个双头卡和一个三头卡，则系统会将 head 引用为：0（对于 double，为1和2），将3、4和5用于三级。 在这种情况下，主适配器为：0表示单个，1表示双精度，3表示三个。
 
 -   **AdapterOrdinalInGroup**
 
-    指定一个数字，指示该驱动程序引用组中的头的顺序。 此值始终是主适配器为 0，为每个从属适配器连续编号 （即，1，2，依此类推）。
+    指定一个数字，该数字指示组中的头在由驱动程序引用的顺序。 对于主适配器，此值始终为0，对于每个从属适配器，此值为连续编号（即1、2等）。
 
-该驱动程序在响应中返回 D3DCAPS9 结构**GetDriverInfo2**查询类似于如何返回 D3DCAPS8 结构，如中所述[报告 DirectX 8.0 样式 Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)。 此查询的支持中所述[支持 GetDriverInfo2](supporting-getdriverinfo2.md)。
+驱动程序将返回 D3DCAPS9 结构，以响应**GetDriverInfo2**查询，如[报告 DirectX 8.0 Style Direct3D 功能](reporting-directx-8-0-style-direct3d-capabilities.md)中所述的那样返回 D3DCAPS8 结构。 支持[GetDriverInfo2](supporting-getdriverinfo2.md)中介绍了此查询的支持。
 
  
 

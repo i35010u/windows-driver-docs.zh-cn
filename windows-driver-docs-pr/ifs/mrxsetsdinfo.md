@@ -1,6 +1,6 @@
 ---
-title: MRxSetSdInfo routine
-description: TheMRxSetSdInfo 例程调用 RDBSS 请求网络微型重定向，在文件系统对象设置安全描述符信息。
+title: MRxSetSdInfo 例程
+description: TheMRxSetSdInfo 例程由 RDBSS 调用，请求网络小型重定向程序设置文件系统对象的安全描述符信息。
 ms.assetid: 2a03dde1-440c-4e59-b989-ca4b58b91f3a
 keywords:
 - MRxSetSdInfo 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0e3b79c7eee18a4e63ec21b0728cd35e06d33b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a2c86c1dc3caacebaf233602f96254716488a371
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370088"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841073"
 ---
-# <a name="mrxsetsdinfo-routine"></a>MRxSetSdInfo routine
+# <a name="mrxsetsdinfo-routine"></a>MRxSetSdInfo 例程
 
 
-*MRxSetSdInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向，在文件系统对象设置安全描述符信息。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetSdInfo*例程来请求网络小型重定向程序设置文件系统对象的安全描述符信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetSdInfo(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetSdInfo*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxSetSdInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ NTSTATUS MRxSetSdInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -72,7 +72,7 @@ NTSTATUS MRxSetSdInfo(
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -84,19 +84,19 @@ NTSTATUS MRxSetSdInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>未实现请求，例如，在远程页面文件上设置安全信息的功能。</p></td>
+<td align="left"><p>未实现请求的功能，如在远程页面文件上设置安全信息。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>在远程共享上不支持安全描述符信息。</p></td>
+<td align="left"><p>远程共享不支持安全描述符信息。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_OBJECT_PATH_NOT_FOUND</strong></td>
-<td align="left"><p>找不到对象路径。 如果在 NTFS 流对象上的安全信息已请求设置和远程文件系统不支持流，可以返回此错误。</p></td>
+<td align="left"><p>找不到对象路径。 如果请求设置 NTFS 流对象上的安全信息，并且远程文件系统不支持流，则会返回此错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_REPARSE</strong></td>
-<td align="left"><p>重新分析需要处理符号链接。</p></td>
+<td align="left"><p>需要重新分析才能处理符号链接。</p></td>
 </tr>
 </tbody>
 </table>
@@ -106,13 +106,13 @@ NTSTATUS MRxSetSdInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxSetSdInfo*接收响应[ **IRP\_MJ\_设置\_安全**](irp-mj-set-security.md)请求。
+RDBSS 发出对*MRxSetSdInfo*的调用，以响应接收[**IRP\_MJ\_集\_安全**](irp-mj-set-security.md)请求。
 
-然后再调用*MRxSetSdInfo*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxSetSdInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**SetSecurity.SecurityInformation**成员设置为**IrpSp-&gt;Parameters.SetSecurity.SecurityInformation**。
+**SecurityInformation**成员设置为**IrpSp&gt;SetSecurity. SecurityInformation**。
 
-**SetSecurity.SecurityDescriptor**成员设置为**IrpSp-&gt;Parameters.SetSecurity.SecurityDescriptor**。
+**SecurityDescriptor**成员设置为**IrpSp&gt;SetSecurity. SecurityDescriptor**。
 
 <a name="requirements"></a>要求
 ------------
@@ -125,19 +125,19 @@ RDBSS 发出调用*MRxSetSdInfo*接收响应[ **IRP\_MJ\_设置\_安全**](irp-m
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

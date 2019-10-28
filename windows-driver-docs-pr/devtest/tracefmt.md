@@ -4,21 +4,21 @@ description: Tracefmt
 ms.assetid: abf23d76-423d-4d1e-afde-83739015bbfd
 keywords:
 - Tracefmt WDK
-- 跟踪 WDK，Tracefmt 软件
+- 软件跟踪 WDK，Tracefmt
 - 显示跟踪消息
-- 格式设置的跟踪消息 WDK Tracefmt
+- 格式化跟踪消息 WDK Tracefmt
 - 跟踪消息格式 WDK Tracefmt
-- 软件跟踪 WDK、 设置消息格式
-- 跟踪 WDK Tracefmt
-- 跟踪消息格式文件 WDK
+- 软件跟踪 WDK，设置消息格式
+- 跟踪 WDK，Tracefmt
+- 跟踪消息格式化文件 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9ecf7d820cc494d13b75f9dc2e233c0f11f9e5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d06f7347e233e2a2dc17f162c1c98e6135bcdd69
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360333"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839266"
 ---
 # <a name="tracefmt"></a>Tracefmt
 
@@ -26,7 +26,7 @@ ms.locfileid: "67360333"
 ## <span id="ddk_tracefmt_tools"></span><span id="DDK_TRACEFMT_TOOLS"></span>
 
 
-Tracefmt (Tracefmt.exe) 是一个命令行工具，设置格式并显示从事件跟踪日志文件 (.etl) 或实时跟踪会话的跟踪消息。 Tracefmt 可以在命令提示符窗口中显示的消息或将它们保存在文本文件中。
+Tracefmt （Tracefmt）是一种命令行工具，用于设置和显示事件跟踪日志文件（.etl）或实时跟踪会话中的跟踪消息。 Tracefmt 可以在命令提示符窗口中显示消息或将其保存在文本文件中。
 
 <table>
 <colgroup>
@@ -34,17 +34,17 @@ Tracefmt (Tracefmt.exe) 是一个命令行工具，设置格式并显示从事�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">哪里可以获得 Tracefmt？</th>
+<th align="left">在哪里可以获得 Tracefmt？</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>在安装 WDK、 Visual Studio 和适用于桌面应用程序的 Windows SDK 时 Tracefmt (Tracefmt.exe) 包含。 有关下载工具包的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">下载 Windows 硬件</a>。</p>
-<p><strong>Windows Driver Kit (WDK) 8.1</strong> （安装路径）</p>
+<td align="left"><p>安装 WDK、Visual Studio 和适用于桌面应用的 Windows SDK 时，将包含 Tracefmt （Tracefmt）。 有关下载套件的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows 硬件下载</a>。</p>
+<p><strong>Windows 驱动程序工具包（WDK） 8.1</strong> （安装路径）</p>
 <p>%WindowsSdkDir%\bin\x64\Tracefmt.exe</p>
 <p>%WindowsSdkDir%\bin\x86\Tracefmt.exe</p>
 <div class="alert">
-<strong>请注意</strong>  Visual Studio 环境变量，%windowssdkdir%，表示 Windows 工具包工具包安装的目录，例如，C:\Program Files (x86) \Windows Kits\8.1 的路径。
+<strong>请注意</strong>  Visual Studio 环境变量% WindowsSdkDir% 表示安装了包的 Windows 工具包目录的路径，例如，C:\Program Files （x86） \windows kits\8.1。
 </div>
 <div>
  
@@ -55,9 +55,9 @@ Tracefmt (Tracefmt.exe) 是一个命令行工具，设置格式并显示从事�
 
  
 
-Tracefmt 使用中的格式设置说明[跟踪消息格式 (TMF) 文件](trace-message-format-file.md)将转换为人工可读格式的二进制跟踪消息。 可以提供 TMF 文件或跟踪提供程序提供的图像文件并具有 Tracefmt 创建 TMF 文件。
+Tracefmt 使用[跟踪消息格式（TMF）文件](trace-message-format-file.md)中的格式说明将二进制跟踪消息转换为可读格式。 你可以提供 TMF 文件或提供跟踪提供程序的图像文件，并 Tracefmt 创建 TMF 文件。
 
-Tracefmt 可以设置生成的跟踪事件的格式**TraceEvent**函数，并且生成的跟踪消息[ **WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-wmitracemessage)，则**TraceMessage**函数，或[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏。 有关详细信息**TraceEvent**并**TraceMessage**函数，请参阅 Windows SDK 文档。
+Tracefmt 可以设置**TraceEvent**函数生成的跟踪事件的格式，以及[**WmiTraceMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-wmitracemessage)、 **TraceMessage**函数或[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏生成的跟踪消息。 有关**TraceEvent**和**TraceMessage**函数的详细信息，请参阅 Windows SDK 文档。
 
 本部分包括：
 

@@ -3,20 +3,20 @@ title: 池分配和免费例程
 description: 池分配和免费例程
 ms.assetid: 757eebc0-ebd4-49a1-acea-6c27956b4b23
 keywords:
-- RDBSS WDK 文件系统中，池分配
-- 重定向驱动器缓冲子系统 WDK 文件系统中，池分配
+- RDBSS WDK 文件系统，池分配
+- 重定向驱动器缓冲子系统 WDK 文件系统，池分配
 - 池分配 WDK RDBSS
-- RDBSS WDK 的文件系统，免费例程
-- 重定向驱动器缓冲子系统 WDK 的文件系统，免费例程
+- RDBSS WDK 文件系统，免费例程
+- 重定向驱动器缓冲子系统 WDK 文件系统，免费例程
 - 免费例程 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f868d30d8a92cdfe1894f68386e8cfb7da5c3a95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0c5f018913de323fd05a5f26660b52792c80bc53
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841031"
 ---
 # <a name="pool-allocation-and-free-routines"></a>池分配和免费例程
 
@@ -24,13 +24,13 @@ ms.locfileid: "67366788"
 ## <span id="ddk_pool_allocation_and_free_functions_if"></span><span id="DDK_POOL_ALLOCATION_AND_FREE_FUNCTIONS_IF"></span>
 
 
-RDBSS 提供大量例程用于池分配。 通常情况下，不是通过直接调用这些例程使用宏，调用这些例程。 宏自动处理零售版和已检查生成之间的差异。
+RDBSS 提供了许多用于池分配的例程。 通常，使用宏调用这些例程，而不是直接调用这些例程。 宏会自动处理零售版本和已检查版本之间的差异。
 
-已检验版本已设计这些例程在正常内核分配和可用例程周围添加包装。 这些包装器的池分配和可用例程提供其他调试信息并调用的例程的执行各种检查和监视在调用内核池分配和免费的例程之前的一组。 但是，这些功能当前未实现这些分配和免费的例程中，可能会添加在将来的版本。
+在已检查的版本上，这些例程旨在围绕普通内核分配和自由例程添加包装。 这些包装用于池分配和自由例程提供额外的调试信息，并调用一组在调用内核池分配和自由例程之前执行各种检查和保护的例程。 不过，这些功能当前在这些分配和免费例程中未实现，但可能会在将来的版本中添加。
 
-免费版本，这些例程会变得直接调用内核分配和免费的例程[ **ExAllocatePoolWithTag** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)并[ **ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool).
+在免费版本上，这些例程会直接调用内核分配和自由例程[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)和[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)。
 
-下表列出了 RDBSS 池分配和免费的例程。
+下表列出了 RDBSS 池分配和自由例程。
 
 <table>
 <colgroup>
@@ -46,25 +46,25 @@ RDBSS 提供大量例程用于池分配。 通常情况下，不是通过直接�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxallocatepoolwithtag" data-raw-source="[&lt;strong&gt;_RxAllocatePoolWithTag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxallocatepoolwithtag)"><strong>_RxAllocatePoolWithTag</strong></a></p></td>
-<td align="left"><p>此例程会具有四个字节标记可帮助捕获内存问题的块的开头的池将分配内存。</p>
-<p>建议<strong>RxAllocatePoolWithTag</strong>宏调用而不是直接使用此例程。</p></td>
+<td align="left"><p>此例程使用块开头的包含四个字节的标记从池中分配内存，有助于捕获内存问题。</p>
+<p>建议调用<strong>RxAllocatePoolWithTag</strong>宏，而不是直接使用此例程。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxcheckmemoryblock" data-raw-source="[&lt;strong&gt;_RxCheckMemoryBlock&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxcheckmemoryblock)"><strong>_RxCheckMemoryBlock</strong></a></p></td>
-<td align="left"><p>此例程将检查的特殊 RX_POOL_HEADER 标头签名的内存块。 请注意，网络微型重定向程序驱动程序将需要此特殊的签名块添加到内存分配才能使用该例程。</p>
-<p>由于尚未实现此特殊的标头块，则不应使用此例程。</p></td>
+<td align="left"><p>此例程检查内存块中是否有特殊的 RX_POOL_HEADER 标头签名。 请注意，网络小型重定向器驱动程序需要将此特殊的签名块添加到分配的内存，以便使用该例程。</p>
+<p>不应使用此例程，因为尚未实现此特殊标头块。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxfreepool" data-raw-source="[&lt;strong&gt;_RxFreePool&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ifs/-rxfreepool)"><strong>_RxFreePool</strong></a></p></td>
-<td align="left"><p>此例程将释放内存池。</p>
-<p>建议<strong>RxFreePool</strong>宏调用而不是直接使用此例程。</p></td>
+<td align="left"><p>此例程释放内存池。</p>
+<p>建议调用<strong>RxFreePool</strong>宏，而不是直接使用此例程。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-数中定义的宏*ntrxdef.h*标头文件中，调用这些例程。 而不是调用直接在上表中列出的例程，通常使用以下宏。
+*Ntrxdef*头文件中定义了许多宏，它们调用这些例程。 通常使用以下宏，而不是直接调用上表中列出的例程。
 
 <table>
 <colgroup>
@@ -79,19 +79,19 @@ RDBSS 提供大量例程用于池分配。 通常情况下，不是通过直接�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>RxAllocatePoolWithTag</strong> (<em>type</em>, <em>size</em>, <em>tag</em>)</p></td>
-<td align="left"><p>在 checked 版本中，此宏从具有四个字节标记可帮助捕获实例的内存移入垃圾桶块的开始处的池分配内存。</p>
-<p>在零售版本中，此宏将成为直接调用<strong>ExAllocatePoolWithTag</strong>。</p></td>
+<td align="left"><p><strong>RxAllocatePoolWithTag</strong> （<em>类型</em>、<em>大小</em>、<em>标记</em>）</p></td>
+<td align="left"><p>在选中的生成上，此宏从池中分配包含四个字节标记的池中的内存，这可以帮助捕获内存 trashing 的实例。</p>
+<p>在零售版上，此宏会直接调用<strong>ExAllocatePoolWithTag</strong>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxCheckMemoryBlock</strong> (<em>ptr</em>)</p></td>
-<td align="left"><p>在 checked 版本中，此宏会检查特殊的 RX_POOL_HEADER 标头签名的内存块。</p>
-<p>在零售版本，此宏没有任何影响。</p></td>
+<td align="left"><p><strong>RxCheckMemoryBlock</strong> （<em>ptr</em>）</p></td>
+<td align="left"><p>在选中的生成上，此宏会检查内存块中是否有特殊的 RX_POOL_HEADER 标头签名。</p>
+<p>在零售版上，此宏不执行任何操作。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>RxFreePool</strong> (<em>ptr</em>)</p></td>
-<td align="left"><p>在 checked 版本中，此宏可释放的内存池。</p>
-<p>在零售版本中，此宏将成为直接调用<strong>ExFreePool</strong>。</p></td>
+<td align="left"><p><strong>RxFreePool</strong> （<em>ptr</em>）</p></td>
+<td align="left"><p>在选中的生成上，此宏释放内存池。</p>
+<p>在零售版上，此宏会直接调用<strong>ExFreePool</strong>。</p></td>
 </tr>
 </tbody>
 </table>

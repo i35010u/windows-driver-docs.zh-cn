@@ -1,5 +1,5 @@
 ---
-title: 使用 __sdv_save_request 和 __sdv_retrieve_request 延缓的过程调用
+title: 将 __sdv_save_request 和 __sdv_retrieve_request 用于延迟的过程调用
 description: 对延迟的过程调用使用 __sdv_save_request 和 __sdv_retrieve_request
 ms.assetid: 14d3a022-3e74-4526-9bf5-fee1ce36ac9e
 keywords:
@@ -8,22 +8,22 @@ keywords:
 - DeferredRequestCompleted
 - AliasWithinTimerDpc
 - AliasWithinDispatch
-- 分析 dpc 进行标记
+- 分析 Dpc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2f13e5ab001712cf45dd8cee14d4181b923691
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a1d99c50749bacc4cdc4f311a34469bbd7db7ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363785"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839258"
 ---
-# <a name="using-sdvsaverequest-and-sdvretrieverequest-for-deferred-procedure-calls"></a>使用\_ \_sdv\_保存\_请求并\_ \_sdv\_检索\_延迟过程调用的请求
+# <a name="using-__sdv_save_request-and-__sdv_retrieve_request-for-deferred-procedure-calls"></a>使用 \_\_sdv\_save\_请求和 \_\_sdv\_检索延迟过程调用的\_请求
 
 
-延迟过程调用 (Dpc) 存在挑战到 Static Driver Verifier (SDV)，因为很难跟踪框架请求对象。 一个难点是从全局指针，通常从队列的上下文中，或从工作项，必须检索该请求。 为了克服这个困难，Static Driver Verifier 提供了两个函数：  **\_ \_sdv\_保存\_请求**，以及 **\_ \_sdv\_检索\_请求**。 这些函数将延迟的请求映射到 SDV 可以跟踪的请求。
+延迟的过程调用（Dpc）对静态驱动程序验证程序（SDV）存在挑战，因为很难跟踪 framework 请求对象。 一种难点是，必须从全局指针（通常是从队列上下文）或从工作项检索请求。 为了克服这一困难，静态驱动程序验证程序提供了两个函数： **\_\_sdv\_save\_请求**，以及 **\_\_sdv\_检索\_请求**。 这些函数将延迟请求映射到 SDV 可以跟踪的请求。
 
-**\_ \_Sdv\_保存\_请求**，以及 **\_ \_sdv\_检索\_请求**函数具有以下语法：
+**\_\_sdv\_save\_请求**，\_\_**sdv\_检索\_请求**函数具有以下语法：
 
 ```
 __sdv_save_request( request ) 
@@ -33,13 +33,13 @@ __sdv_save_request( request )
 __sdv_retrieve_request( request ) 
 ```
 
-其中*请求*可以是任何 framework 请求对象的句柄。
+其中， *request*可以是任何框架请求对象的句柄。
 
-这些函数仅供静态分析工具。 编译器将忽略函数。
+这些函数仅供静态分析工具使用。 编译器将忽略这些函数。
 
-下面的代码示例演示如何 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**函数用于指导 SDV，以便 SDV 可以映射延迟的请求。 SDV 可以使用此映射来验证[DeferredRequestCompleted](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-deferredrequestcompleted)规则。 DeferredRequestCompleted 规则需要 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**出现在你的代码。 规则有两个驱动程序属性 (**AliasWithinDispatch**， **AliasWithinTimerDpc**)，查看是否存在 **\_ \_sdv\_保存\_请求**并\_  **\_sdv\_检索\_请求**函数。
+下面的代码示例演示如何使用 **\_\_sdv\_save\_请求**和 \_ **\_sdv\_检索\_请求**函数以引导 sdv，以便 sdv 可以映射延迟的请求。 SDV 可以使用此映射来验证[DeferredRequestCompleted](https://docs.microsoft.com/windows-hardware/drivers/devtest/kmdf-deferredrequestcompleted)规则。 DeferredRequestCompleted 规则要求 **\_\_sdv\_save\_请求**和 \_\_**sdv\_检索\_请求**显示在代码中。 有两个驱动程序属性规则（**AliasWithinDispatch**， **AliasWithinTimerDpc**）可查找 **\_\_sdv\_save\_请求**和 \_\_\_检索的存在情况 **\_请求**函数。
 
-在下面的代码示例，该函数*EchoEvtIoRead*是[ *EvtIoRead* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)保存对 framework 请求对象的句柄的事件的回调函数队列的上下文区域。 该函数*EchoEvtTimerFunc*是[ *EvtTimerFunc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdftimer/nc-wdftimer-evt_wdf_timer)检索它的事件的回调函数。
+在下面的代码示例中，函数*EchoEvtIoRead*是[*EvtIoRead*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_read)事件回调函数，它将句柄保存到队列上下文区域中的框架请求对象。 函数*EchoEvtTimerFunc*是用于检索它的[*EvtTimerFunc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdftimer/nc-wdftimer-evt_wdf_timer)事件回调函数。
 
 ```
 VOID
@@ -64,7 +64,7 @@ EchoEvtIoRead(
 }
 ```
 
-下面的代码示例演示了如何 **\_ \_sdv\_检索\_请求**函数将映射现有请求，以便 SDV 可以跟踪它的完成情况。
+下面的代码示例演示了 **\_\_sdv\_检索\_请求**函数如何映射现有请求，以便 sdv 可以跟踪该请求以完成。
 
 ```
 VOID

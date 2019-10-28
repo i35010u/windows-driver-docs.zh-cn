@@ -5,24 +5,24 @@ ms.assetid: 721bf336-1d1d-4677-843d-8af04c6f434d
 keywords:
 - 文件 WDK 内核
 - 文件对象 WDK 内核
-- WDK 文件对象的对象
-- 文件句柄 WDK 内核
+- 对象 WDK 文件对象
+- 文件处理 WDK 内核
 - 文件 WDK 内核的句柄
-- 从文件读取数据
-- 向文件写入数据
-- 读取文件的元数据
-- 写入文件的元数据
+- 从文件中读取数据
+- 将数据写入文件
+- 正在读取文件的元数据
+- 正在写入文件的元数据
 - 驱动程序文件对象 WDK 内核
 - 多个文件对象 WDK 内核
 - 内核模式驱动程序 WDK，文件
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a79e3efb52d8aa1365bdc345d94f7b11c0065ed
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4c7416b6674bf475763624eb45bfba89073fd704
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381651"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838358"
 ---
 # <a name="using-files-in-a-driver"></a>在驱动程序中使用文件
 
@@ -30,23 +30,23 @@ ms.locfileid: "67381651"
 
 
 
-Microsoft Windows 高级管理人员表示按文件*的文件对象*，这是由对象管理器管理的管理层对象。 （目录也表示文件对象。）
+Microsoft Windows executive 按*文件对象*（由对象管理器管理的 executive 对象）表示文件。 （目录也由文件对象表示。）
 
-内核模式组件引用的文件按其对象名称，即 **\\DosDevices**串联到文件的完整路径。 (在 Microsoft Windows 2000 和更高版本的操作系统，  **\\??** 等效于 **\\DosDevices**。)例如，在 c： 驱动器的对象名称\\WINDOWS\\example.txt 文件 **\\DosDevices\\c:\\WINDOWS\\example.txt**。 使用对象名称以打开文件的句柄。 有关对象名称的详细信息，请参阅[对象名称](object-names.md)。
+内核模式组件按其对象名称（ **\\DosDevices**连接到文件的完整路径）引用文件。 （在 Microsoft Windows 2000 和更高版本的操作系统上， **\\？** 等效于 **\\DosDevices**。）例如，C：\\WINDOWS\\example .txt 文件的对象名称 **\\DosDevices\\C：\\windows\\example**。 使用对象名称打开文件的句柄。 有关对象名称的详细信息，请参阅[对象名称](object-names.md)。
 
-### <a name="to-use-a-file"></a>若要使用的文件
+### <a name="to-use-a-file"></a>使用文件
 
 1.  打开文件的句柄。
 
     有关详细信息，请参阅[打开文件的句柄](opening-a-handle-to-a-file.md)。
 
-2.  执行预期的操作通过调用适当**Zw*Xxx*文件**例程。
+2.  通过调用相应的**Zw*Xxx*文件**例程来执行预期的操作。
 
     有关详细信息，请参阅[使用文件句柄](using-a-file-handle.md)。
 
-3.  通过调用关闭句柄[ **ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)。
+3.  通过调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)关闭句柄。
 
-每次打开文件的句柄的 Windows 管理人员所创建的文件对象来表示该文件，并对该对象返回打开的句柄。 因此，单个文件可以存在多个文件对象。 （在用户模式应用程序可以复制句柄，因为多个句柄也可存在相同的文件对象。）关闭所有打开的句柄的文件对象后，Windows 高级管理人员将删除的文件对象。
+每次打开文件的句柄时，Windows executive 都将创建一个表示该文件的文件对象，并将打开的句柄返回到该对象。 因此，单个文件可以有多个文件对象。 （由于用户模式应用程序可以复制句柄，因此同一文件对象也可以有多个句柄。）关闭文件对象的所有打开句柄后，Windows executive 会删除文件对象。
 
  
 

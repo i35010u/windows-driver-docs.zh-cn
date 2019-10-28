@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_CAMERACONTROL\_扩展\_直方图
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_直方图是将用于控制驱动程序产生的直方图元数据的属性 ID。 这是预览针仅 pin 级别控制。
+description: KSPROPERTY\_CAMERACONTROL\_扩展\_直方图是一个属性 ID，将用于控制驱动程序生成的直方图元数据。 这只是针对预览 pin 的 pin 级别控制。
 ms.assetid: 638AA1AA-F8E5-4FD7-9283-CF1F23266474
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_HISTOGRAM 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_HISTOGRAM 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b8d49557c2d767d44bb3e58bc75091be2e2f7719
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 678986809f5efc2152997fa74f602f98a80af3ef
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364097"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841599"
 ---
-# <a name="kspropertycameracontrolextendedhistogram"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_直方图
+# <a name="ksproperty_cameracontrol_extended_histogram"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_直方图
 
 
-**KSPROPERTY\_CAMERACONTROL\_扩展\_直方图**将用于控制驱动程序产生的直方图元数据的属性 id。 这是预览针仅 pin 级别控制。
+**KSPROPERTY\_CAMERACONTROL\_扩展\_直方图**是一个属性 ID，将用于控制驱动程序生成的直方图元数据。 这只是针对预览 pin 的 pin 级别控制。
 
-## <a name="usage-summary-table"></a>使用率摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
 
 <table>
@@ -45,7 +45,7 @@ ms.locfileid: "63364097"
 <tbody>
 <tr class="odd">
 <td><p>版本 1</p></td>
-<td><p>Pin</p></td>
+<td><p>大头针</p></td>
 <td><p>同步</p></td>
 </tr>
 </tbody>
@@ -53,24 +53,24 @@ ms.locfileid: "63364097"
 
  
 
-以下标志可以置于**KSCAMERA\_EXTENDEDPROP\_标头。标志**字段来控制驱动程序中的直方图元数据。 默认值是**直方图\_OFF**。
+以下标志可以放置在**KSCAMERA\_EXTENDEDPROP\_标头中。** 用于控制驱动程序中直方图元数据的标志字段。 默认值为 "**直方图\_OFF**"。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_HISTOGRAM_OFF      0x0000000000000000
 #define KSCAMERA_EXTENDEDPROP_HISTOGRAM_ON       0x0000000000000001
 ```
 
-前，必须使用此控件[ **KSPROPERTY\_CAMERACONTROL\_扩展\_元数据**](ksproperty-cameracontrol-extended-metadata.md)控制以确保适当大小的元数据缓冲区分配。
+此控件必须在[**KSPROPERTY\_CAMERACONTROL\_扩展\_元数据**](ksproperty-cameracontrol-extended-metadata.md)控件之前使用，以确保分配适当大小的元数据缓冲区。
 
-如果设置为**直方图\_OFF**，驱动程序不应在预览针上提供直方图元数据。 该驱动程序不应在其元数据缓冲区大小要求中包括直方图元数据大小。
+如果设置为**直方图\_关闭**，驱动程序不应在预览 pin 上传递直方图元数据。 驱动程序不应在其元数据缓冲区大小要求中包含直方图元数据大小。
 
-如果设置为**直方图\_ON**，驱动程序应在预览针时传递的直方图元数据。 该驱动程序必须在其元数据缓冲区大小要求包括直方图元数据大小。
+如果设置为**直方图\_on**，则驱动程序应在预览 pin 上传递直方图元数据。 驱动程序必须在其元数据缓冲区大小要求中包含直方图元数据大小。
 
-如果该驱动程序没有生成直方图的元数据的功能，该驱动程序不应实现此控件。 如果该驱动程序支持此控件，它必须支持[ **KSPROPERTY\_CAMERACONTROL\_扩展\_元数据**](ksproperty-cameracontrol-extended-metadata.md)控件。
+如果驱动程序没有生成直方图元数据的功能，驱动程序不应实现此控制。 如果驱动程序支持此控件，则它还必须支持[**KSPROPERTY\_CAMERACONTROL\_扩展\_元数据**](ksproperty-cameracontrol-extended-metadata.md)控件。
 
-**设置**调用此控件不起作用时预览针处于任何状态高于 KSSTATE\_停止状态。 该驱动程序应拒绝**设置**调用收到如果预览版未处于停止状态，并返回**状态\_无效\_设备\_状态**。 在中**获取**调用时，驱动程序应返回中的当前设置**标志**字段。
+如果预览 pin 处于任何高于 KSSTATE\_停止状态的状态，则该控件的**设置**调用不起作用。 如果预览不处于停止状态，驱动程序应拒绝收到的**设置**呼叫，并返回**状态\_无效\_设备\_状态**。 在**GET**调用中，驱动程序应返回 "**标志**" 字段中的当前设置。
 
-下表包含的说明和要求[ **KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段时使用的控件。
+下表包含使用控件时[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -85,28 +85,28 @@ ms.locfileid: "63364097"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>这必须是 1。</p></td>
+<td><p>版本</p></td>
+<td><p>这必须为1。</p></td>
 </tr>
 <tr class="even">
 <td><p>PinId</p></td>
-<td><p>必须将 Pin 与关联的 ID 预览针。</p></td>
+<td><p>必须是与预览 pin 关联的 Pin ID。</p></td>
 </tr>
 <tr class="odd">
-<td><p>大小</p></td>
-<td><p>这必须是 sizeof (<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>) + sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>)。</p></td>
+<td><p>Size</p></td>
+<td><p>这必须是 sizeof （<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>） + Sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>）。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
-<td><p>指示最后一个错误结果<strong>设置</strong>操作。 如果没有<strong>设置</strong>操作发生，这必须是 0。</p></td>
+<td><p>指示上一次<strong>设置</strong>操作的错误结果。 如果未执行任何<strong>设置</strong>操作，则此必须为0。</p></td>
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>必须为 0。</p></td>
+<td><p>必须为0。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>这是读/写字段。 这可以是任一<strong>KSCAMERA_EXTENDEDPROP_HISTOGRAM_ *</strong>上面定义的标志。</p></td>
+<td><p>这是一个读/写字段。 这可以是上面定义的<strong>KSCAMERA_EXTENDEDPROP_HISTOGRAM_ *</strong>标志之一。</p></td>
 </tr>
 </tbody>
 </table>
@@ -122,7 +122,7 @@ ms.locfileid: "63364097"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Ksmedia.h</td>
 </tr>
 </tbody>

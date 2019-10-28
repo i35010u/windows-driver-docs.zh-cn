@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_SET_QUOTA
-description: IRP\_MJ\_SET\_QUOTA
+description: IRP\_MJ\_集\_配额
 ms.assetid: 256c349b-48cb-4a9f-a60a-89503d8f3f58
 keywords:
 - IRP_MJ_SET_QUOTA 可安装的文件系统驱动程序
@@ -12,78 +12,78 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aa5ab1ab0e9a7c5c1cc75c332210e701beb047f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b7ddca72cd120d6b698f39d558c9ebfabe7b4ab
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359255"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841147"
 ---
-# <a name="irpmjsetquota"></a>IRP\_MJ\_SET\_QUOTA
+# <a name="irp_mj_set_quota"></a>IRP\_MJ\_集\_配额
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_设置\_配额请求发送的 I/O 管理器。 它可以发送，例如，在用户模式应用程序具有如调用 Microsoft Win32 方法时**IDiskQuotaControl::SetQuotaState**。
+IRP\_MJ\_集\_配额请求由 i/o 管理器发送。 例如，在用户模式应用程序调用了 Microsoft Win32 方法（如**IDiskQuotaControl：： SetQuotaState**）的情况下，可以发送。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-IRP\_MJ\_设置\_配额和 IRP\_MJ\_查询\_配额 Windows NT 4.0 中存在但未由文件系统。 在 Windows 2000 和更高版本的系统，它们用于在 NTFS 磁盘配额支持。 对这些 Irp 通过新的文件系统的支持是可选的。
+IRP\_MJ\_设置\_配额和 IRP\_MJ\_查询\_配额存在于 Windows NT 4.0 中，但未被文件系统使用。 在 Windows 2000 和更高版本的系统上，它们用于 NTFS 中的磁盘配额支持。 新文件系统支持这些 Irp 是可选的。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
-筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序，除非它需要显式重写配额行为。
+筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序，除非它需要显式覆盖配额行为。
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理组配额信息请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。 （IRP 显示为*irp*。）驱动程序可以使用 IRP 的下列成员中设置的信息，以及在处理集配额信息请求中的 IRP 堆栈位置：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
-指向目标设备对象指针。
+指向目标设备对象的指针。
 
 <a href="" id="deviceobject--flags"></a>*DeviceObject-&gt;标志*  
-如果执行操作\_缓冲\_IO 标志设置，调用方已请求方法\_缓冲 I/O。 否则，调用方已请求方法\_既不 I/O。
+如果设置了 DO\_缓冲\_IO 标志，则调用方请求\_缓冲 i/o 的方法。 否则，调用方请求的方法不\_i/o。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp.SystemBuffer*  
-指向要用作中间系统缓冲区，如果系统提供缓冲区的指针是否\_缓冲\_中设置了 IO 标志*DeviceObject-&gt;标志*。 否则，此成员设置为**NULL**。
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp. SystemBuffer*  
+指向系统提供的要用作中间系统缓冲区的缓冲区的指针（如果\_缓冲\_IO 标志是在*DeviceObject-&gt;标记*中设置的。 否则，此成员设置为**NULL**。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
+指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
 
 <a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
-指向包含要添加或修改的卷的配额项的调用方提供的缓冲区的指针。
+指向调用方提供的缓冲区的指针，该缓冲区包含要为卷添加或修改的配额条目。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
-与之关联的文件对象的指针*DeviceObject*。
+指向与*DeviceObject*关联的文件对象的指针。
 
-*IrpSp-&gt;的文件对象*参数包含一个指向**RelatedFileObject**字段中，这也是一个文件\_对象结构。 **RelatedFileObject**字段的文件\_对象结构不是有效的 IRP 处理期间\_MJ\_设置\_配额并不应使用。
+*&gt;IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理 IRP\_MJ\_设置\_配额时无效，不应使用。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
-指定 IRP\_MJ\_设置\_配额。
+指定 IRP\_MJ\_集\_配额。
 
-<a href="" id="irpsp--parameters-setquota-length"></a>*IrpSp-&gt;Parameters.SetQuota.Length*  
-指定的长度，以字节为单位通过指向的缓冲区*Irp-&gt;UserBuffer*。
+<a href="" id="irpsp--parameters-setquota-length"></a>*IrpSp-&gt;参数. SetQuota. 长度*  
+指定由*Irp&gt;* 的缓冲区的长度（以字节为单位）。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**文件\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_file_quota_information)
+[**文件\_配额\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_quota_information)
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iocheckquotabuffervalidity)
+[**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckquotabuffervalidity)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_查询\_配额**](irp-mj-query-quota.md)
+[**IRP\_MJ\_QUERY\_配额**](irp-mj-query-quota.md)
 
  
 

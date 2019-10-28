@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_STREAM\_RATE
-description: KSPROPERTY\_流\_速率属性的工作原理与 KSPROPERTY 结合\_流\_RATECAPABILITY 以及用于查询的功能的 pin 后设置段的速率。
+title: KSPROPERTY\_流\_速率
+description: KSPROPERTY\_流\_速率属性与 KSPROPERTY\_STREAM\_RATECAPABILITY 结合使用，用于设置查询 pin 功能后的段速率。
 ms.assetid: 125dcd39-fb67-4d9f-81af-b7f4c0e566cc
 keywords:
-- KSPROPERTY_STREAM_RATE 流式处理媒体设备
+- KSPROPERTY_STREAM_RATE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e42b606817d8f509635e70a940c9b499d249ad
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8e384b69f27f35b1275ee52efe81228944acc009
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376358"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837941"
 ---
-# <a name="kspropertystreamrate"></a>KSPROPERTY\_STREAM\_RATE
+# <a name="ksproperty_stream_rate"></a>KSPROPERTY\_流\_速率
 
 
-KSPROPERTY\_流\_速率属性的工作原理与结合[ **KSPROPERTY\_流\_RATECAPABILITY** ](ksproperty-stream-ratecapability.md)以及用于设置速率查询的功能的 pin 后的段。
+KSPROPERTY\_流\_速率属性与[**KSPROPERTY\_STREAM\_RATECAPABILITY**](ksproperty-stream-ratecapability.md)结合使用，用于设置查询 pin 功能后的段速率。
 
 ## <span id="ddk_ksproperty_stream_rate_ks"></span><span id="DDK_KSPROPERTY_STREAM_RATE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_流\_速率属性的工作原理与结合[ **KSPROPERTY\_流\_RATECA
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_流\_速率属性的工作原理与结合[ **KSPROPERTY\_流\_RATECA
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,17 +64,17 @@ KSPROPERTY\_流\_速率属性的工作原理与结合[ **KSPROPERTY\_流\_RATECA
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_流\_应实现率，如果 pin 允许速率更改或拓扑结构上相关的插针之间的接口不同，会导致正在使用不同的时间戳格式。
+如果 pin 允许速率改变，或界定闭合相关 pin 之间的接口不同，并且使用的是不同的时间戳格式，则应该实现 KSPROPERTY\_流\_速率。
 
-可以修改的数据来重新采样速率的 pin 支持该属性或时间戳更改，以便可以更接近于 1.0 的名义利率请求的速率。
+此属性由 pin 支持，可以通过重新采样或时间戳更改来修改数据的速率，以使请求的速率更接近标称速率1.0。
 
-读取该属性返回的当前速率和段。 设置新段的速率将替换任何当前速率的设置。 以这种方式，停止快进请求可以通过请求速率设置为 1.0，它始终应接受。 如果指定的速率不可以，pin 可以拒绝该请求而不是尝试最佳的设置。
+读取属性将返回当前速率和段。 设置新段的速率将替换任何当前速率设置。 通过这种方式，可以通过请求1.0 的费率设置来停止快进请求，该设置应始终接受。 如果无法获得指定的速率，则 pin 可以拒绝请求，而不是尝试最佳设置。
 
-率设置和查询都使用[ **KSRATE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)结构，它指定演示文稿开始时间、 持续时间和速率。 速率更改只能在中执行暂停或运行状态，并将更改为任何其他状态后停止。 按百分比或 pin 是调整和相同的格式返回的当前设置的名义 1.0 速率过指定的速率变化。
+Rate 设置和查询都使用[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)结构来指定演示开始、持续时间和速度。 只能在 "暂停" 或 "运行" 状态中执行速率更改，并在更改为任何其他状态后停止。 速率更改是根据 pin 要调整的1.0 标称百分比或下的百分比指定的，当前设置以相同的格式返回。
 
-此属性也应该用于将接口和时间单位在以前的属性中指定，应实现上更改 pin，之间的接口的筛选器中，即使不支持的更改速率。 例如，筛选器支持 KSINTERFACE\_标准\_在一个位置固定，并将转换到 KSINTERFACE\_标准\_流式处理的另一个插针相关的拓扑可能不支持的更改速率。 筛选器应能够接受 pin 和任一接口上的更改请求，并将更改为其自己的接口和单位，尽管速率将保持不变。
+此属性还应用于转换在上一个属性中指定的接口和时间单位，并且应在更改 pin 之间的接口的筛选器上实现，即使不支持速率更改也是如此。 例如，支持 KSINTERFACE\_标准\_位置在一个插针上，并转换为 KSINTERFACE\_标准\_流的筛选器可能不支持速率更改。 筛选器应该能够在任一 pin 上执行更改请求，并可以对其自己的接口和单位进行更改，但是速度会保持不变。
 
-如果 pin 还会生成一个时钟，因为使用时钟速率匹配任何客户端应为斜率为像 1.0 名义上的费率运行基础硬件的速率变化不得更改物理时间的斜率。 这意味着不能确保物理时钟斜率保持一致而无需大量偏差的 pin 不能接受速率调整请求。
+如果 pin 还生成时钟，则速率更改不能更改物理时间的斜率，因为使用时钟进行速率匹配的任何客户端都需要使用时钟进行速率匹配的客户端，就像以名义1.0 费率运行基础硬件一样。 这意味着，无法确保物理时钟斜度保持一致，且不会产生严重偏差的 pin 无法接受速率调整请求。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,18 +86,18 @@ KSPROPERTY\_流\_应实现率，如果 pin 允许速率更改或拓扑结构上�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ks.h （包括 Ks.h）</td>
+<td><p>标头</p></td>
+<td>Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSPROPERTY\_STREAM\_RATECAPABILITY**](ksproperty-stream-ratecapability.md)
 
-[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)
+[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)
 
  
 

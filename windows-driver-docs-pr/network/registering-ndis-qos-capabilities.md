@@ -4,83 +4,83 @@ description: 注册 NDIS QoS 功能
 ms.assetid: 03D70079-37A4-4FAA-BF18-ACED3A9E8267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 38d748c14265f38b9ed35da63dc68827e2811d9d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d94c9506554332df2b99cbaad2ce7e24dc5ef41f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359150"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842075"
 ---
 # <a name="registering-ndis-qos-capabilities"></a>注册 NDIS QoS 功能
 
 
-微型端口驱动程序 regsiter NDIS 与以下服务 (QoS) 功能的质量在网络适配器初始化过程中：
+小型端口驱动程序在网络适配器初始化过程中 regsiter 以下服务质量（QoS）功能：
 
-- 支持的网络适配器的 NDIS QoS 硬件功能。
+- 网络适配器支持的 NDIS QoS 硬件功能。
 
-  **请注意**NDIS 6.30 从开始，微型端口驱动程序必须注册该适配器支持仅当的 NDIS QoS 硬件功能<strong>\*QOS</strong> INF 关键字设置是在注册表中存在。 在这种情况下，该驱动程序必须注册而不考虑这些功能是启用还是禁用的适配器上其 NDIS QoS 硬件功能。
-
-     
-
-- 当前已启用网络适配器的 NDIS QoS 硬件功能。
-
-  **请注意**微型端口驱动程序的 NDIS QoS 硬件功能可以启用或禁用通过 **\*QOS** INF 关键字注册表中的设置。 此设置显示在**高级**网络适配器的属性页。
+  **注意** 从 NDIS 6.30 开始，如果注册表中存在<strong>\*QoS</strong> INF 关键字设置，微型端口驱动程序必须注册该适配器支持的 NDIS QoS 硬件功能。 在这种情况下，无论适配器上启用还是禁用了这些功能，驱动程序都必须注册其 NDIS QoS 硬件功能。
 
      
 
-有关 NDIS QoS INF 关键字设置的详细信息，请参阅[NDIS QoS 的标准化 INF 关键字](standardized-inf-keywords-for-ndis-qos.md)。
+- 当前在网络适配器上启用的 NDIS QoS 硬件功能。
 
-微型端口驱动程序报告通过基础的网络适配器的硬件 NDIS QoS 功能[ **NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)初始化的结构按以下方式：
-
-1.  微型端口驱动程序初始化**标头**成员。 驱动程序集**类型**的成员**标头**到 NDIS\_对象\_类型\_QOS\_功能。
-
-    从开始 NDIS 6.30，微型端口驱动程序设置**修订**的成员**标头**到 NDIS\_QOS\_功能\_修订\_1 和**大小**成员添加到 NDIS\_SIZEOF\_QOS\_功能\_修订\_1。
-
-2.  如果网络适配器支持严格的优先级传输选择算法 (TSA)，微型端口驱动程序设置 NDIS\_QOS\_功能\_STRICT\_TSA\_中的支持标志**标志**成员。 有关此算法的详细信息，请参阅[严格优先级算法](strict-priority-algorithm.md)。
-
-    **请注意**  从 NDIS 6.30，微型端口驱动程序和支持 NDIS QoS 对 IEEE 数据中心桥接 (DCB) 的网络适配器必须支持严格的优先级 TSA。
+  **注意** 可通过注册表中的 " **\*QoS** INF 关键字" 设置来启用或禁用微型端口驱动程序的 NDIS QoS 硬件功能。 此设置显示在网络适配器的 "**高级**" 属性页上。
 
      
 
-3.  如果网络适配器支持绕过媒体访问控制安全 (MACsec) 处理的功能，微型端口驱动程序设置 NDIS\_QOS\_功能\_MACSEC\_绕过\_支持中的标志**标志**成员。 有关 MACsec 的详细信息，请参阅 IEEE 802.1AE-2006 标准。
+有关 NDIS QoS INF 关键字设置的详细信息，请参阅[Ndis qos 的标准化 INF 关键字](standardized-inf-keywords-for-ndis-qos.md)。
 
-    **请注意**  从 NDIS 6.30 开始，网络适配器不需要支持的 MACsec 处理绕过。
+微型端口驱动程序通过通过[**NDIS\_qos\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构，通过以下方式来报告基础网络适配器的硬件 NDIS QoS 功能：
 
-     
+1.  微型端口驱动程序初始化**标头**成员。 驱动程序将**标头**的**类型**成员设置为\_对象\_类型\_QOS\_功能。
 
-4.  微型端口驱动程序集**MaxNumTrafficClasses**成员添加到的网络适配器支持的 NDIS QoS 流量类的最大数量。 流量类定义传输，或*出口*策略的 QoS，例如 IEEE 802.1p 优先级级别和带宽分配。 有关流量类的详细信息，请参阅[NDIS QoS 通信类](ndis-qos-traffic-classes.md)。
+    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 NDIS\_QOS\_功能\_修订版本\_1，将**Size**成员设置为 ndis\_SIZEOF\_qos\_功能\_修订版\_1。
 
-    **请注意**  从 NDIS 6.30，网络适配器必须支持至少三个通信类。
+2.  如果网络适配器支持严格优先级传输选择算法（TSA），微型端口驱动程序会将 NDIS\_QOS\_功能\_STRICT\_\_在**Flags**成员中支持 有关此算法的详细信息，请参阅[Strict 优先级算法](strict-priority-algorithm.md)。
 
-     
-
-5.  微型端口驱动程序集**MaxNumEtsCapableTrafficClasses**成员添加到的网络适配器可用于增强传输选择 (ETS) 算法的 NDIS QoS 流量类的最大数量。 此值必须小于或等于的值**MaxNumTrafficClasses**成员。
-
-    ETS 的详细信息，请参阅[增强传输选择 (ETS) 算法](enhanced-transmission-selection--ets--algorithm.md)。
-
-    **请注意**  为支持 NDIS QoS 使网络适配器，则它必须支持至少两个支持 ETS 的流量类。
+    **注意**  从 NDIS 6.30 开始，支持用于 IEEE 数据中心桥接（DCB）的 NDIS QoS 的微型端口驱动程序和网络适配器必须支持严格优先级的 TSA。
 
      
 
-6.  微型端口驱动程序集**MaxNumPfcEnabledTrafficClasses**成员添加到的网络适配器可以使用基于优先级的流控制 (PFC) 算法与的 NDIS QoS 流量类的最大数量。 此值必须小于或等于的值**MaxNumTrafficClasses**成员。
+3.  如果网络适配器支持绕过媒体访问控制安全性（MACsec）处理的功能，微型端口驱动程序会将 NDIS\_QOS\_功能\_\_绕过**标志**中的\_支持的标志职员. 有关 MACsec 的详细信息，请参阅 IEEE 802.1 AE-2006 标准。
 
-    PFC 的详细信息，请参阅[基于优先级的流控制 (PFC)](priority-based-flow-control--pfc.md)。
-
-    **请注意**  为支持 NDIS QoS 使网络适配器，则它必须支持至少一个支持 PFC 的流量类。
+    **请注意**  从 NDIS 6.30 开始，网络适配器不需要支持绕过 MACsec 处理。
 
      
 
-当 NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数，该驱动程序注册的网络适配器的 NDIS QoS 属性通过执行以下步骤：
+4.  微型端口驱动程序将**MaxNumTrafficClasses**成员设置为网络适配器支持的最大 NDIS QoS 流量类数。 流量类定义 QoS 的传输或*出口*策略，如 IEEE 802.1 p priority level 和带宽分配。 有关流量类的详细信息，请参阅[NDIS QoS 流量类](ndis-qos-traffic-classes.md)。
 
-1.  微型端口驱动程序初始化[ **NDIS\_微型端口\_适配器\_硬件\_协助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
+    **注意**  从 NDIS 6.30 开始，网络适配器必须支持至少三个通信类。
 
-    微型端口驱动程序集**HardwareQOSCapabilities**成员为指向 previouslyinitialized [ **NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构。
+     
 
-    如果的注册表设置 **\*QOS** INF 关键字的一个值，则网络适配器上启用的 NDIS QoS 功能。 微型端口驱动程序集**CurrentQOSCapabilities**指向相同的指针到成员[ **NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构。
+5.  微型端口驱动程序将**MaxNumEtsCapableTrafficClasses**成员设置为网络适配器可用于增强的传输选择（ETS）算法的 NDIS QoS 流量类的最大数目。 此值必须小于或等于**MaxNumTrafficClasses**成员的值。
 
-    如果的注册表设置 **\*QOS** INF 关键字的值为零、 NDIS QoS 功能已禁用网络适配器上。 微型端口驱动程序必须设置**CurrentQOSCapabilities**为 NULL 的成员。
+    有关 ETS 的详细信息，请参阅[增强的传输选择（ETS）算法](enhanced-transmission-selection--ets--algorithm.md)。
 
-2.  驱动程序调用[ **NdisMSetMiniportAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismsetminiportattributes)并设置*MiniportAttributes*参数指向的指针[ **NDIS\_微型端口\_适配器\_硬件\_帮助\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
+    **请注意**，  网络适配器支持 NDIS QoS，则它必须至少支持两个支持 ETS 的通信类。
+
+     
+
+6.  微型端口驱动程序将**MaxNumPfcEnabledTrafficClasses**成员设置为网络适配器可用于基于优先级的流控制（PFC）算法的 NDIS QoS 流量类的最大数目。 此值必须小于或等于**MaxNumTrafficClasses**成员的值。
+
+    有关 PFC 的详细信息，请参阅[基于优先级的流控制（PFC）](priority-based-flow-control--pfc.md)。
+
+    **请注意**，  网络适配器支持 NDIS QoS，则它必须至少支持一个支持 PFC 的通信类。
+
+     
+
+当 NDIS 调用微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时，驱动程序会按照以下步骤注册网络适配器的 NDIS QoS 属性：
+
+1.  微型端口驱动程序初始化[**NDIS\_微型端口\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
+
+    微型端口驱动程序将**HardwareQOSCapabilities**成员设置为指向 previouslyinitialized [**NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构的指针。
+
+    如果 **\*QOS** INF 关键字的注册表设置值为1，则将在网络适配器上启用 NDIS QOS 功能。 微型端口驱动程序将**CurrentQOSCapabilities**成员设置为指向同一[**NDIS\_QOS\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_capabilities)结构的指针。
+
+    如果 **\*QOS** INF 关键字的注册表设置值为零，则将在网络适配器上禁用 NDIS QOS 功能。 微型端口驱动程序必须将**CurrentQOSCapabilities**成员设置为 NULL。
+
+2.  驱动程序调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，并将*MiniportAttributes*参数设置为指向[**NDIS\_微型端口的指针\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
 有关适配器初始化过程的详细信息，请参阅[初始化微型端口适配器](initializing-a-miniport-adapter.md)。
 

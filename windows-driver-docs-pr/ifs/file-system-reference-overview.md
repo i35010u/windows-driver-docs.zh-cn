@@ -4,18 +4,18 @@ description: 文件系统参考资料概述
 ms.assetid: 9dc4a3fa-3ce1-4710-aab2-0658225733a4
 ms.date: 09/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f85ba83583478ae65d1bfc84f30ce1c91e8a44b1
-ms.sourcegitcommit: c23a403b3ebea05bde96067b678a318ca9b0cabe
+ms.openlocfilehash: 099939a97ad5b980f99ae930e2145140d52e443c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955793"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841403"
 ---
 # <a name="file-system-reference-material-overview"></a>文件系统参考资料概述
 
-本部分分类了可用于与文件系统相关的驱动程序开发的各种编程函数、结构、IOCTLs 和枚举。 请参阅[Windows 驱动程序工具包的编程参考-> 可安装的文件系统](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/_ifsk/)，用于实际引用页面，这些页面按 WDK 附带的标头文件进行组织。
+本部分分类了可用于与文件系统相关的驱动程序开发的各种编程函数、结构、IOCTLs 和枚举。 请参阅[Windows 驱动程序工具包的编程参考-> 可安装的文件系统](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/_ifsk/)，用于实际引用页面，这些页面按 WDK 附带的标头文件进行组织。
 
-## <a name="functions"></a>Functions
+## <a name="functions"></a>函数
 
 [缓存管理器支持例程](cache-manager-support-routines.md)
 

@@ -3,32 +3,32 @@ title: 识别第一个调谐请求
 description: 识别第一个调谐请求
 ms.assetid: dc18a056-16f8-4b99-97e3-52c92464a2b2
 keywords:
-- 第一个优化请求 WDK 视频捕获
-- 识别第一次优化请求 WDK 视频捕获
-- 广播调谐器 WDK 视频捕获
+- 首次优化时请求 WDK 视频捕获
+- 识别首次优化请求 WDK 视频捕获
+- 收音机调谐器 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c4cc6b83018a018b53f2fbb524f29985a2ecc62a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a3f728c94ae3286224d5c8725d932ed902c9a3be
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366498"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841660"
 ---
 # <a name="recognizing-the-first-tuning-request"></a>识别第一个调谐请求
 
 
-某些调谐器需要围绕频率来获取有效的信号强度/PLL 信息，因此微型驱动程序可能需要识别何时回转*KsTvTune.ax*进行初始优化请求。
+某些调谐器需要 slewing，以获取有效的信号强度/PLL 信息，因此微型驱动程序可能需要在*KsTvTune.ax*发出初始优化请求时进行识别。
 
-每个优化请求是实际的微型驱动程序的请求的对。 微型驱动程序第一次接收到一组[ **KSPROPERTY\_调谐器\_频率**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-frequency)跟一个或多个 get 请求[ **KSPROPERTY\_调谐器\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-status)请求。
+每个优化请求实际上是一对微型驱动程序的请求。 微型驱动程序首先收到 set [**KSPROPERTY\_调谐器\_FREQUENCY**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-frequency)请求，后跟一个或多个 get [**KSPROPERTY\_调谐器\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-tuner-status)请求。
 
-第一次优化请求，有很集请求与第一个 get 请求之间的延迟。 微型驱动程序设置 （毫秒） 中的延迟长度**SettlingTime**的成员[ **KSPROPERTY\_调谐器\_模式\_CAPS\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)结构。 重复的 get 请求时每隔五个毫秒**忙**的成员[ **KSPROPERTY\_调谐器\_状态\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)结构为非零值，最多 5 次尝试。
+在第一个优化请求中，在设置请求和第一个 get 请求之间存在延迟。 微型驱动程序以毫秒为单位设置[**KSPROPERTY\_调谐器\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)**的延迟**时间长度（以毫秒为单位）\_cap\_S 结构。 Get 请求每隔五毫秒重复一次，而 KSPROPERTY\_调谐器的**繁忙**成员[ **\_状态\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_status_s)结构为非零，最多尝试5次。
 
-*KsTvTune.ax*不考虑优化请求完成直到 nonbusy 状态收到来自该设备，或如果该设备是由指定的时间间隔后仍忙于 20 毫秒**SettlingTime**的成员[ **KSPROPERTY\_调谐器\_模式\_CAPS\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)结构，具体取决于第一个。
+*KsTvTune.ax*在从设备收到 nonbusy 状态之前，或如果设备在\_KSPROPERTY 的**SettlingTime**成员指定的间隔后仍处于繁忙状态，则不会将优化请求视为已完成。 [**调谐器\_模式\_CAP\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)结构，以首先为准。
 
-此后，每个优化请求在微调模式期间，集请求之间将有五个毫秒时间间隔内，而第一个 get 请求。
+此后，在微调模式下，对于每个优化请求，都将在集请求和第一个 get 请求之间出现五毫秒的间隔。
 
-如果你想*KsTvTune.ax*若要重试初始请求后的至少一次，始终返回**PLLOffset** 1 第一次优化请求的值。 *KsTvTune.ax*更高版本，由指定的下一步会立即尝试**TuningGranularity**的成员[ **KSPROPERTY\_调谐器\_模式\_CAPS\_S** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)结构。 此时，你可能会返回**PLLOffset**值大于 1 或小于-1 如果你的微型驱动程序确定没有信号，或**PLLOffset** -1 或 0，如果你的微型驱动程序确定的值信号是很好。
+如果你希望*KsTvTune.ax*在初始请求后至少重试一次，则在第一个优化请求上始终返回**PLLOffset**值1。 *KsTvTune.ax*会立即尝试下一步，如[**KSPROPERTY\_调谐器\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_caps_s)的**TuningGranularity**成员指定\_cap\_S 结构。 此时，如果微型驱动程序确定没有信号，则返回大于1或小于-1 的**PLLOffset**值; 如果微型驱动程序确定信号良好，则返回**PLLOffset**值-1 或0。
 
  
 

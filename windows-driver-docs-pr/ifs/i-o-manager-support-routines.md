@@ -4,22 +4,22 @@ description: I/o 管理器支持例程
 ms.assetid: f0b0099e-f920-4287-9e5d-e0fd4241f100
 ms.date: 09/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae25a05b7f0cd0bc537fbd248ba2a34d564612c
-ms.sourcegitcommit: c23a403b3ebea05bde96067b678a318ca9b0cabe
+ms.openlocfilehash: decd2ec8992bc8432e18d729c0ae1a8d3c1b4902
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955797"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841215"
 ---
 # <a name="io-manager-support-routines"></a>I/o 管理器支持例程
 
 内核模式文件系统和文件系统筛选器（微筛选器或旧筛选器）驱动程序可以调用以下系统提供的 i/o 管理器函数和宏。 设备驱动程序无法使用它们。 它们按字母顺序列出。
 
-除了此处列出的例程，文件系统和筛选器驱动程序还可以调用在*ntifs*中声明的[Windows 内核参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_kernel/)部分中描述的任何 Io*Xxx** * 例程。
+除了此处列出的例程，文件系统和筛选器驱动程序还可以调用在*ntifs*中声明的[Windows 内核参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel/)部分中描述的任何 Io*Xxx** * 例程。
 
 **头文件：** *ntifs*
 
-**Prefix：Io @_no__t，_ **IsReparseTag** xxx
+**前缀： Io**_xxx_、 **IsReparseTag**_xxx_
 
 | 函数或宏 | 描述 |
 | ----------------- | ----------- |

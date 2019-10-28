@@ -1,44 +1,44 @@
 ---
-title: 为什么 UMDF 驱动程序会占用过多的内存
-description: 介绍如何使用 Wudfext.dll 来确定为何 UMDF 版本 1 驱动程序消耗过多的内存。
+title: UMDF 驱动程序为什么会消耗过多内存
+description: 介绍如何使用 Wudfext 来确定 UMDF 版本1驱动程序消耗大量内存的原因。
 ms.assetid: 01316c4e-24e8-467c-af52-900b3fe042db
 keywords:
-- 调试方案 WDK UMDF，UMDF 驱动程序会占用过多的内存
-- UMDF WDK，调试方案，UMDF 驱动程序会占用过多的内存
-- UMDF WDK UMDF 驱动程序会占用过多的内存
+- 调试方案 WDK UMDF，UMDF 驱动程序占用过多内存
+- UMDF WDK，调试方案，UMDF 驱动程序占用过多内存
+- UMDF WDK，UMDF 驱动程序占用过多内存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40ae0ade1c7f959b09d287983bbcc3357b1b301a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0955d276d1cbd51ebec7e8bdd38ea186ba061190
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377447"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840388"
 ---
 # <a name="determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory"></a>确定 UMDF 驱动程序使用过多内存的原因
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
 
-本主题介绍如何结合使用用户模式驱动程序框架 (UMDF) 版本 1 驱动程序中使用 Wudfext.dll 调试器扩展来确定为何 UMDF 驱动程序消耗过多的内存。
+本主题介绍如何将 Wudfext 调试程序扩展与用户模式驱动程序框架（UMDF）版本1驱动程序结合使用，以确定 UMDF 驱动程序消耗大量内存的原因。
 
-从 UMDF 版本 2 开始，应改为使用 Wdfkd.dll 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展 (Wdfkd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
+从 UMDF 版本2开始，你应该改用 Wdfkd 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展（Wdfkd）](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
 
 若要调查内存使用情况，请使用以下步骤：
 
-1.  通过在对象树中查看未完成的对象 **！ wudfext.wudfobject** UMDF 调试器扩展。
+1.  使用 **！ wudfext wudfobject** UMDF 调试器扩展在对象树中查看未完成的对象。
 
-    **！ Wudfext.wudfobject**扩展显示有关 WDF 对象，其中包括其父级和子级关系的信息。 如果您设置位 0 个，共*标志*参数为 1 (0x01) **！ wudfext.wudfobject**执行递归转储的对象树的根节点的您传递的对象。 若要查看完整的对象树，请使用下面的示例命令：
+    **！ Wudfext wudfobject**扩展显示有关 WDF 对象的信息，其中包括其父关系和子关系。 如果将*Flags*参数的位0设置为1（0x01）， **！ wudfext**将对以你传递的对象为根的对象树执行递归转储。 若要查看完整的对象树，请使用下面的示例命令：
 
-    **!wudfext.wudfobject &lt;IWDFDriver\*&gt; 1**
+    **！ wudfext. wudfobject &lt;IWDFDriver\*&gt; 1**
 
-2.  确定是否您将看到与预期的更多未解决对象。
+2.  确定所显示的对象是否比预期更多。
 
-    您的驱动程序可能最终会泄漏这些对象 (泄漏 WDF 对象的详细信息，请参阅[确定是否驱动程序泄漏 Framework 对象](determining-if-a-driver-leaks-framework-objects.md))。
+    你的驱动程序可能最终会泄漏这些对象（有关泄漏 WDF 对象的详细信息，请参阅[确定驱动程序是否泄漏框架对象](determining-if-a-driver-leaks-framework-objects.md)）。
 
-    这些对象可能在对象树中，最终将因此释放。 但是，要累计不必要地。 可能需要这些对象：
+    这些对象可能在对象树中，因此最终会被释放。 但是，它们不需要进行累积。 这些对象可能需要：
 
-    -   更正到其父对象。
-    -   通过使用显式删除[ **IWDFObject::DeleteWdfObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)方法。
+    -   更正其父对象。
+    -   使用[**IWDFObject：:D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)方法的显式删除。
 
  
 

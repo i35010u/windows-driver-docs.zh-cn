@@ -7,15 +7,15 @@ keywords:
 - 编辑启动选项
 - Bootcfg 工具
 - 自定义启动选项 WDK
-- 启动项 WDK
+- 启动条目 WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a2857a69cc88ed1e51836bc85abdeeb2d756b805
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80d23f7ef979cbc36e2382ef9b697b057ad395f8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371386"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840272"
 ---
 # <a name="editing-boot-options"></a>编辑启动选项
 
@@ -23,28 +23,28 @@ ms.locfileid: "67371386"
 ## <span id="ddk_editing_boot_options_tools"></span><span id="DDK_EDITING_BOOT_OPTIONS_TOOLS"></span>
 
 
-本部分是编辑运行 Windows 10、 Windows 8、 Windows Server 2012、 Windows 7 或 Windows Server 2008 的计算机上的启动选项的实践指南。 建议用于自定义启动选项的基本元素的分步过程。
+本部分是在运行 Windows 10、Windows 8、Windows Server 2012、Windows 7 或 Windows Server 2008 的计算机上编辑启动选项的实用指南。 它建议提供自定义启动选项基本元素的分步过程。
 
-本部分介绍使用 BCDEdit，随操作系统附带的工具的方法。 有关 BCDEdit 命令语法的信息，请键入**bcdedit /？** 或**bcdedit /？主题**在命令提示符窗口中。 请参阅[BCD 启动选项参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)有关详细信息。
+本部分介绍使用 BCDEdit （操作系统附带的工具）的方法。 有关 BCDEdit 命令语法的信息，请键入**bcdedit/？** 或**bcdedit/？** 命令提示符窗口中的主题。 有关详细信息，请参阅[BCD 启动选项参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 > [!NOTE]
-> 设置 BCDEdit 选项之前，您可能需要禁用或暂停 BitLocker 和安全启动的计算机上。
+> 设置 BCDEdit 选项之前，你可能需要在计算机上禁用或暂停 BitLocker 和安全启动。
 
-有关编辑引导条目参数来启用和禁用 Windows 功能的帮助，请参阅[使用引导参数](using-boot-parameters.md)。
+有关编辑启动项参数以启用和禁用 Windows 功能的帮助，请参阅[使用启动参数](using-boot-parameters.md)。
 
-在启动选项中配置操作系统功能：
+配置启动选项中的操作系统功能：
 
-- [添加新的启动项](adding-boot-entries.md)通过复制现有的启动项目中相同的操作系统的操作系统。
+- 通过从同一操作系统复制现有启动条目，为操作系统[添加新的启动条目](adding-boot-entries.md)。
 
-- [更改友好名称](changing-the-friendly-name-of-a-boot-entry.md)新创建的启动项，以便您可以在启动菜单中识别它。
+- 更改新创建的启动项的[友好名称](changing-the-friendly-name-of-a-boot-entry.md)，以便可以在启动菜单中识别它。
 
-- [将参数添加到启动条目](changing-boot-parameters.md)的启用和配置 Windows 功能。
+- [向启动项添加参数，以](changing-boot-parameters.md)启用和配置 Windows 功能。
 
-然后，若要使测试更快、 更轻松：
+这样，可以更快、更轻松地进行测试：
 
-- [将新的启动项目的默认条目](changing-the-default-boot-entry.md)。
+- 将[新的启动条目设为默认条目](changing-the-default-boot-entry.md)。
 
--  [更改引导菜单超时](changing-the-boot-menu-time-out.md)。因此，Windows 启动快速，可以缩短引导菜单超时。 或者，延长引导菜单超时，这样您有足够时间选择首选的启动项。
+-  [更改启动菜单](changing-the-boot-menu-time-out.md)超时。可以缩短启动菜单超时，以便 Windows 快速启动。 或者，将延长启动菜单超时，以便有充足的时间来选择首选的启动条目。
 
 > [!CAUTION]
-> 若要使用 BCDEdit 修改 BCD，所需管理权限。 更改某些启动项选项使用**BCDEdit /set**命令可能导致您的计算机无法运行。 或者，使用系统配置实用程序 (MSConfig.exe) 更改启动设置。
+> 使用 BCDEdit 修改 BCD 需要管理权限。 使用**BCDEdit/set**命令更改某些启动项选项可能导致计算机无法操作。 作为替代方法，请使用系统配置实用工具（Msconfig.exe）更改启动设置。

@@ -1,47 +1,47 @@
 ---
-title: Impersonation
-description: Impersonation
+title: 模拟
+description: 模拟
 ms.assetid: 368c6741-b51a-4629-8ae6-a7848c07c0fc
 keywords:
 - 安全 WDK 文件系统，添加安全检查
-- 安全检查 WDK 文件系统中，模拟
-- 模拟 WDK 的文件系统
+- 安全检查 WDK 文件系统，模拟
+- 模拟 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c01fda410e546f57488f0effc9c614e5acd1ce0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e7ec8a6d06b6487c135b49f515eab9afa3226a3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375690"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841207"
 ---
-# <a name="impersonation"></a>Impersonation
+# <a name="impersonation"></a>模拟
 
 
 ## <span id="ddk_impersonation_if"></span><span id="DDK_IMPERSONATION_IF"></span>
 
 
-某些文件系统可能会发现可以代表原始调用方执行操作。 例如，网络文件系统可能需要捕获数据时调用方的安全信息，以便可以使用相应的凭据执行后续操作打开文件。 毫无疑问，有许多其他特殊的情况下此类功能非常有用，同时也与特定的应用程序在文件系统中。
+某些文件系统可能发现代表原始调用方执行操作非常有用。 例如，在打开文件时，网络文件系统可能需要捕获调用方的安全信息，以便可以使用适当的凭据执行后续操作。 毫无疑问，这种类型的功能在文件系统和特定应用程序中都很有用。
 
-对于模拟需要包括关键的例程：
+模拟所需的关键例程包括：
 
--   [**PsImpersonateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)-启动模拟。 指示特定线程，除非是在当前线程上下文中完成模拟。
+-   [**PsImpersonateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seimpersonateclientex)--启动模拟。 除非指示特定的线程，否则将在当前线程上下文中执行模拟。
 
--   **PsRevertToSelf**-终止当前线程上下文中的模拟。
+-   **PsRevertToSelf**--在当前线程上下文中终止模拟。
 
--   [**PsReferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psreferenceprimarytoken)-指定进程的主 （进程） 令牌上保留的引用。 此函数可用于捕获系统上的任何进程的标记。
+-   [**PsReferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psreferenceprimarytoken)--保留对指定进程的主（进程）令牌的引用。 此函数可用于捕获系统上任何进程的标记。
 
--   [**PsDereferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psdereferenceprimarytoken)-释放以前引用的主令牌上的引用。
+-   [**PsDereferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psdereferenceprimarytoken)--释放对以前引用的主要令牌的引用。
 
--   [**SeCreateClientSecurityFromSubjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)-返回客户端用于从使用者上下文的模拟安全上下文 (提供给期间 FSD **IRP\_MJ\_创建**处理，例如)。
+-   [**SeCreateClientSecurityFromSubjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)--返回一个客户端安全上下文，该上下文可用于从主题上下文模拟（例如，在**IRP\_MJ\_创建**处理期间提供给 FSD。
 
--   [**SeCreateClientSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-secreateclientsecurity)-创建客户端安全上下文基于在系统上的现有线程的安全凭据。
+-   [**SeCreateClientSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurity)--基于系统上的现有线程的安全凭据创建客户端安全上下文。
 
--   **ImpersonateSecurityContext**-模拟安全上下文中 ksecdd.sys，内核安全服务。
+-   **ImpersonateSecurityContext**--模拟 ksecdd （内核安全服务）中的安全上下文。
 
--   **RevertSecurityContext**-终止 ksecdd.sys，内核安全服务中的模拟。
+-   **RevertSecurityContext**--在 ksecdd 中终止模拟，即内核安全服务。
 
-模拟是简单直接的实现。 下面的代码示例演示了基本模拟：
+模拟是实现的直接顺序。 下面的代码示例演示了基本模拟：
 
 ```cpp
 NTSTATUS PerformSpecialTask(IN PFSD_CONTEXT Context)
@@ -112,7 +112,7 @@ NTSTATUS PerformSpecialTask(IN PFSD_CONTEXT Context)
 }
 ```
 
-可用于文件系统的开发人员的许多此模拟代码的变体，但这提供了该技术的基本说明。
+文件系统开发人员可以使用此模拟代码的许多变体，但这提供了一种基本的方法说明。
 
  
 

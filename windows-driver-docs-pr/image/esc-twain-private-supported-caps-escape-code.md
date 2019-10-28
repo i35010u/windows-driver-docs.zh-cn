@@ -4,22 +4,22 @@ description: ESC_TWAIN_PRIVATE_SUPPORTED_CAPS 转义码
 ms.assetid: 99b9f180-018b-47c4-ab8d-dc037e3f637a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eee0578916952fdc980935a9ced62dfbfcbf0108
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e20e2a41f4d32013dd212a43cdfda09d96cf6212
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370043"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840849"
 ---
-# <a name="esctwainprivatesupportedcaps-escape-code"></a>ESC\_TWAIN\_专用\_支持\_CAPS 转义代码
+# <a name="esc_twain_private_supported_caps-escape-code"></a>ESC\_TWAIN\_PRIVATE\_支持\_大写转义代码
 
 
 
 
 
-若要确定专用 TWAIN 支持的功能，TWAIN 应用程序通知 TWAIN 兼容性层，后者随后将发送了 esc 键\_TWAIN\_专用\_支持\_CAPS 到 WIA 转义代码驱动程序的[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)方法。 以下伪代码实现**转义**方法演示了如何为 ESC 响应\_TWAIN\_专用\_支持\_CAPS 转义代码到报表专用 TWAIN 支持功能。
+为了确定支持 TWAIN 的私有功能，TWAIN 应用程序将通知 TWAIN 兼容层，然后将 ESC\_TWAIN\_PRIVATE\_支持的\_CAPS escape 代码发送到 WIA 驱动程序的[**IStiUSD：：Escape**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-escape)方法。 以下**转义**方法的伪代码实现演示了应如何响应 ESC\_TWAIN\_PRIVATE\_支持的\_大写转义代码，以报告私有 TWAIN 支持功能。
 
-**请注意**   **转义**此示例中的方法是与中所示相同[ESC\_TWAIN\_功能转义代码](esc-twain-capability-escape-code.md)，尽管的焦点每个示例是其他转义代码。
+**请注意**   此示例中的**转义**方法与[ESC\_TWAIN\_功能转义代码](esc-twain-capability-escape-code.md)中显示的方法相同，但每个示例的重点是不同的转义代码。
 
  
 

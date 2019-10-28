@@ -1,6 +1,6 @@
 ---
-title: MRxQueryEaInfo routine
-description: MRxQueryEaInfo 例程调用 RDBSS 请求网络微型重定向查询扩展文件系统对象的属性信息。
+title: MRxQueryEaInfo 例程
+description: MRxQueryEaInfo 例程由 RDBSS 调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
 ms.assetid: 4471eb82-c176-4976-b722-5a6e067a7e69
 keywords:
 - MRxQueryEaInfo 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5f029e179f6b31d3fa78ed367c68c67a735ad2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75056b9a71e5fa8aba216b0df9297bf05154ba39
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370077"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841089"
 ---
-# <a name="mrxqueryeainfo-routine"></a>MRxQueryEaInfo routine
+# <a name="mrxqueryeainfo-routine"></a>MRxQueryEaInfo 例程
 
 
-*MRxQueryEaInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询扩展文件系统对象的属性信息。
+*MRxQueryEaInfo*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryEaInfo(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQueryEaInfo*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxQueryEaInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,17 +64,17 @@ NTSTATUS MRxQueryEaInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
-<td align="left"><p>要接收扩展的属性信息的缓冲区太小。</p>
-<p>此返回值应被视为成功，并且作为有效得多的数据应该返回在<strong>Info.Buffer</strong> RX_CONTEXT 结构成员指向的<em>RxContext</em>参数。</p></td>
+<td align="left"><p>用于接收扩展属性信息的缓冲区太小。</p>
+<p>应将此返回值视为成功，并且应尽可能多的有效数据返回到由<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>缓冲区是太小，无法接收请求的数据。</p>
-<p>如果返回此值，则<strong>InformationToReturn</strong> RX_CONTEXT 结构成员指向的<em>RxContext</em>参数应设置为调用的预期缓冲区的最小大小会成功。</p></td>
+<td align="left"><p>缓冲区太小，无法接收请求的数据。</p>
+<p>如果返回此值，则<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员应设置为预期缓冲区的最小大小，以便调用成功。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -82,11 +82,11 @@ NTSTATUS MRxQueryEaInfo(
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_EA_CORRUPT_ERROR</strong></td>
-<td align="left"><p>从远程服务器收到了无效的扩展的属性信息。</p></td>
+<td align="left"><p>从远程服务器接收到的扩展属性信息无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -94,11 +94,11 @@ NTSTATUS MRxQueryEaInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NONEXISTENT_EA_ENTRY</strong></td>
-<td align="left"><p>在文件对象上没有任何扩展的属性和用户提供的扩展的属性索引。</p></td>
+<td align="left"><p>文件对象没有扩展属性，用户提供了扩展属性索引。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>不支持扩展的属性。</p></td>
+<td align="left"><p>不支持扩展属性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_ONLY_IF_CONNECTED</strong></td>
@@ -116,27 +116,27 @@ NTSTATUS MRxQueryEaInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxQueryEaInfo*接收响应[ **IRP\_MJ\_查询\_EA** ](irp-mj-query-ea.md)请求。
+RDBSS 发出对*MRxQueryEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-mj-query-ea.md)请求。
 
-然后再调用*MRxQueryEaInfo*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxQueryEaInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**Info.Buffer** I/O 请求数据包从成员设置为用户缓冲区。 如果需要通过 RDBSS 已锁定已此缓冲区。
+**信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.QueryEa.Length**。
+**LengthRemaining**成员设置为**IrpSp-&gt;QueryEa**。
 
-**QueryEa.UserEaList**成员设置为**IrpSp-&gt;Parameters.QueryEa.EaList**。
+**UserEaList**成员设置为**IrpSp&gt;QueryEa. EaList**。
 
-**QueryEa.UserEaListLength**成员设置为**IrpSp-&gt;Parameters.QueryEa.EaListLength**。
+**UserEaListLength**成员设置为**IrpSp&gt;QueryEa. EaListLength**。
 
-**QueryEa.UserEaIndex**成员设置为**IrpSp-&gt;Parameters.QueryEa.EaIndex**。
+**UserEaIndex**成员设置为**IrpSp&gt;QueryEa. EaIndex**。
 
-**QueryEa.RestartScan**成员设置为非零**IrpSp-&gt;标志**具有 SL\_重启\_位上的扫描。
+如果**IrpSp&gt;标志**具有 SL\_RESTART\_扫描位，则将**QueryEa**成员设置为非零值。
 
-**QueryEa.ReturnSingleEntry**成员设置为非零**IrpSp-&gt;标志**具有 SL\_返回\_单一\_位上的条目。
+如果**IrpSp&gt;标志**具有 SL\_返回上\_单一\_项位，则将**QueryEa**成员设置为非零值。
 
-**QueryEa.IndexSpecified**成员设置为非零**IrpSp-&gt;标志**具有 SL\_索引\_指定位。
+如果**IrpSp&gt;标志**的\_索引\_指定的位，则将**QueryEa**成员设置为非零值。
 
-如果成功， *MRxQueryEaInfo*应设置**Info.LengthRemaininging** RX 成员\_上下文结构到返回的扩展的特性信息以及更新的长度**Fobx-&gt;OffsetOfNextEaToReturn**成员。 如果在调用*MRxQueryEaInfo*已成功，RDBSS 集**IoStatus.Information**成员到 IRP **IrpSp-&gt;Parameters.QueryEa.Length**减**Info.LengthRemaining** RX 成员\_上下文。
+成功后， *MRxQueryEaInfo*应将 RX\_上下文结构的**LengthRemaininging**成员设置为返回的扩展属性信息的长度，同时更新**Fobx&gt;OffsetOfNextEaToReturn**职员. 如果对*MRxQueryEaInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 **&gt;IrpSp** ，并将 RX\_**上下文的 QueryEa 成员减**。
 
 <a name="requirements"></a>要求
 ------------
@@ -149,19 +149,19 @@ RDBSS 发出调用*MRxQueryEaInfo*接收响应[ **IRP\_MJ\_查询\_EA** ](irp-mj
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

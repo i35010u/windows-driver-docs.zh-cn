@@ -3,35 +3,35 @@ title: 从提供程序模块分离客户端模块
 description: 从提供程序模块分离客户端模块
 ms.assetid: 148c1a90-0fef-4b22-bf7e-f35285f1bc55
 keywords:
-- 客户端模块 WDK 网络模块注册机构，分离
+- 客户端模块 WDK 网络模块注册器，分离
 - NmrDeregisterClient
-- 网络模块 WDK 网络模块注册机构，分离
-- 取消注册网络模块
-- 网络模块注册机构 WDK，分离网络模块
+- 网络模块 WDK 网络模块注册器，分离
+- 注销网络模块
+- 网络模块注册 WDK，分离网络模块
 - NMR WDK，分离网络模块
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: daff59c87b971336033abe03c47b09dfca84f691
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a4c26fdda7a295f851c9dd23edb8e9cfea8dbc8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374883"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838156"
 ---
 # <a name="detaching-a-client-module-from-a-provider-module"></a>从提供程序模块分离客户端模块
 
 
-当客户端模块注销与网络模块注册机构 (NMR) 通过调用[ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)函数，NMR 调用客户端模块[ *ClientDetachProvider* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数，一次它附加到，以便客户端模块可以从所有提供程序模块本身分离，如客户端模块的一部分的取消注册过程的每个提供程序模块.
+当客户端模块通过调用[**NmrDeregisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient)函数与网络模块注册器（NMR）注销时，NMR 将调用客户端模块的[*ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数，一次针对每个提供程序模块。附加了，以便客户端模块可以在客户端模块的注销过程中将其自身与所有提供程序模块分离。
 
-此外，只要提供程序模块到附加的客户端模块会向 NMR 通过调用[ **NmrDeregisterProvider** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterprovider)函数，NMR 还调用客户端模块[*ClientDetachProvider* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数，以便客户端模块可以分离的提供程序模块如提供程序模块的一部分的取消注册过程。
+此外，每当通过调用[**NmrDeregisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterprovider)函数将客户端模块附加到的提供程序模块与 NMR 注销时，NMR 还会调用客户端模块的[*ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数，以便在提供程序模块的注销过程中，客户端模块可以将自身从提供程序模块中分离出来。
 
-后其[ *ClientDetachProvider* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_detach_provider_fn)调用回调函数中，客户端模块必须不执行任何提供程序模块的任何进一步调用[网络编程接口 (NPI)](network-programming-interface.md)函数。 如果对任何提供程序模块 NPI 函数没有正在进行中的调用时客户端模块*ClientDetachProvider*调用回调函数，则*ClientDetachProvider*回调函数应返回状态\_成功。
+调用[*ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数之后，客户端模块不能对任何提供程序模块的[网络编程接口（NPI）](network-programming-interface.md)函数进行进一步调用。 如果在调用客户端模块的*ClientDetachProvider*回调函数时，未对任何提供程序模块的 NPI 函数进行正在进行的调用，则*ClientDetachProvider*回调函数应返回状态\_辉煌.
 
-如果没有正在进行中的一个或多个提供程序调用模块的 NPI 函数时客户端模块[ *ClientDetachProvider* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_detach_provider_fn)调用回调函数，则*ClientDetachProvider*回调函数应返回状态\_PENDING。 在这种情况下，必须调用客户端模块[ **NmrClientDetachProviderComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientdetachprovidercomplete)函数后对提供程序模块 NPI 函数的所有正在进行中调用已完成。 在调用**NmrClientDetachProviderComplete**通知 NMR 分离的提供程序模块中的客户端模块的已完成。
+如果在调用客户端模块的[*ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数时，正在对一个或多个提供程序模块的 NPI 函数进行正在进行的调用，则*ClientDetachProvider*回调函数应返回状态\_未. 在这种情况下，当对提供程序模块的 NPI 函数的所有正在进行的调用都完成之后，客户端模块必须调用[**NmrClientDetachProviderComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientdetachprovidercomplete)函数。 对**NmrClientDetachProviderComplete**的调用通知 NMR 提供程序模块的客户端模块的分离已完成。
 
-有关如何跟踪提供程序模块的 NPI 函数的正在进行中调用的数量的详细信息，请参阅[编程注意事项](programming-considerations.md)。
+有关如何跟踪对提供程序模块的 NPI 函数的正在进行的调用数的详细信息，请参阅[编程注意事项](programming-considerations.md)。
 
-如果客户端模块实现[ *ClientCleanupBindingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_cleanup_binding_context_fn)回调函数 NMR 调用客户端模块*ClientCleanupBindingContext*回调客户端模块和提供程序模块均已完成从彼此分离后的函数。 客户端模块*ClientCleanupBindingContext*回调函数应执行任何必要的客户端模块的绑定上下文结构中包含的数据的清理。 如果客户端模块动态分配内存结构，它随后应释放绑定上下文结构的内存。
+如果客户端模块实现[*ClientCleanupBindingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_cleanup_binding_context_fn)回调函数，则在客户端模块和提供程序模块完成后，NMR 将调用客户端模块的*ClientCleanupBindingContext*回调函数分离。 客户端模块的*ClientCleanupBindingContext*回调函数应对客户端模块的绑定上下文结构中包含的数据执行任何必要的清理。 如果客户端模块为结构动态分配内存，则它应释放绑定上下文结构的内存。
 
 例如：
 

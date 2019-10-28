@@ -3,17 +3,17 @@ title: 输入缓冲区顺序
 description: 输入缓冲区顺序
 ms.assetid: 99110b1a-1511-44f5-a4bb-a5e38fd41fff
 keywords:
-- 输入缓冲区 WDK DirectX VA
-- 取消隔行扫描 WDK DirectX va，因此输入的缓冲区顺序
+- 输入缓冲 WDK DirectX VA
+- 取消隔行扫描 WDK DirectX VA，输入缓冲区顺序
 - 缓冲 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f35699f8c5c4ceebcabf9273fb7c5329bc957a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e828c0ff5a9312ec4f5868f9275a342dd4ac3ef6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379913"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840359"
 ---
 # <a name="input-buffer-order"></a>输入缓冲区顺序
 
@@ -21,27 +21,27 @@ ms.locfileid: "67379913"
 ## <span id="ddk_input_buffer_order_gg"></span><span id="DDK_INPUT_BUFFER_ORDER_GG"></span>
 
 
-**本部分仅适用于 Windows Server 2003 SP1 和更高版本和 Windows XP SP2 和更高版本。**
+**本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。**
 
-对于每个组合去隔行和子流组合的情况下操作，启动到的驱动程序提供的调用时 VMR [ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调函数。 在中*DdMoCompRender*调用，请**lpBufferInfo**的成员[ **DD\_RENDERMOCOMPDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构指向缓冲区的数组，描述目标面和每个输入视频源示例的图面。 *DdMoCompRender*函数反过来调用驱动程序的[ **DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)函数。 有关详细信息，请参阅[从用户模式组件调用取消隔行扫描 DDI](calling-the-deinterlace-ddi-from-a-user-mode-component.md)。
+对于每个组合取消隔行扫描和子流组合操作，VMR 将启动对驱动程序提供的[*DdMoCompRender*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调函数的调用。 在*DdMoCompRender*调用中， [**DD\_RENDERMOCOMPDATA**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_rendermocompdata)结构的**lpBufferInfo**成员指向一组缓冲区，这些缓冲区描述目标图面和每个输入视频源示例的图面。 *DdMoCompRender*函数反过来调用驱动程序的[**DeinterlaceBltEx**](https://docs.microsoft.com/windows-hardware/drivers/display/dxva-deinterlacebobdeviceclass-deinterlacebltex)函数。 有关详细信息，请参阅[从用户模式组件调用取消隔行扫描 DDI](calling-the-deinterlace-ddi-from-a-user-mode-component.md)。
 
-数组中元素的顺序[ **DXVA\_VideoSample2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_videosample2)中结构**源**隶属[ **DXVA\_DeinterlaceBltEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_deinterlacebltex)结构匹配**lpBufferInfo**数组与目标表面不存在的异常。
+[**DXVA\_DeinterlaceBltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex)结构的**源**成员中[ **\_DXVA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)的数组中元素的顺序与**lpBufferInfo**数组匹配，但目标surface 不存在。
 
-下面的主题介绍用于排列图面中的规则**lpBufferInfo**数组并提供一些示例来解释的图面序列顺序：
+以下主题描述了在**lpBufferInfo**数组中排列图面的规则，并提供了说明曲面序列顺序的示例：
 
-[输入的缓冲区顺序规则](input-buffer-order-rules.md)
+[输入缓冲区顺序规则](input-buffer-order-rules.md)
 
-[输入的缓冲区顺序示例 1](input-buffer-order-example-1.md)
+[输入缓冲区顺序示例1](input-buffer-order-example-1.md)
 
-[输入的缓冲区顺序示例 2](input-buffer-order-example-2.md)
+[输入缓冲区顺序示例2](input-buffer-order-example-2.md)
 
-[输入的缓冲区顺序示例 3](input-buffer-order-example-3.md)
+[输入缓冲区顺序示例3](input-buffer-order-example-3.md)
 
-[输入的缓冲区顺序示例 4](input-buffer-order-example-4.md)
+[输入缓冲区顺序示例4](input-buffer-order-example-4.md)
 
-[输入的缓冲区顺序示例 5](input-buffer-order-example-5.md)
+[输入缓冲区顺序示例5](input-buffer-order-example-5.md)
 
-[输入的缓冲区顺序示例 6](input-buffer-order-example-6.md)
+[输入缓冲区顺序示例6](input-buffer-order-example-6.md)
 
  
 

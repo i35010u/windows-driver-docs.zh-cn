@@ -4,17 +4,17 @@ description: WIA 设备的 INF 文件
 ms.assetid: 65eac8b5-35d2-4537-8646-a35a1cf9aced
 ms.date: 07/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 072cde1e6e71a124032d2e7ec074d7622e91ecfb
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1e488ae4be500658a291107d16475a6eda1c8e94
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391417"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840823"
 ---
 # <a name="inf-files-for-wia-devices"></a>WIA 设备的 INF 文件
 
 
-静止图像设备的默认类安装程序*sti\_ci.dll*，可以识别一组特殊的 INF 文件条目。 在 INF 文件中，这些项必须放置在设备的[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)。 下表所述的条目。
+静态映像设备的默认类安装程序*sti\_ci*可识别一组特殊的 INF 文件条目。 在 INF 文件中，这些条目必须位于设备的[**INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)中。 下表中描述了这些条目。
 
 <table>
 <colgroup>
@@ -25,21 +25,21 @@ ms.locfileid: "67391417"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>值</th>
+<th>Value</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>SubClass</strong></p></td>
+<td><p><strong>类别</strong></p></td>
 <td><p>StillImage</p></td>
 <td><p>必需</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DeviceType</strong></p></td>
-<td><p>扫描程序的 1</p>
-<p>用于相机的 2</p>
-<p>流式处理视频 3</p></td>
+<td><p>1用于扫描仪</p>
+<p>2照相机</p>
+<p>3对于流式处理视频</p></td>
 <td><p>必需</p></td>
 </tr>
 <tr class="odd">
@@ -49,59 +49,59 @@ ms.locfileid: "67391417"
 </tr>
 <tr class="even">
 <td><p><strong>连接</strong></p></td>
-<td><p>对于非即插连接到串行或并行端口设备，这可能是串行或并行在安装过程中限制用户选择的端口。</p></td>
+<td><p>对于连接到串行端口或并行端口的非即插即用设备，这可能是串行或并行的，以限制用户在安装过程中选择的端口。</p></td>
 <td><p>可选</p>
-<p>如果未指定，则用户可以选择任何串行或并行端口。</p></td>
+<p>如果未指定，则用户可以选择任何串行端口或并行端口。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>功能</strong></p></td>
-<td><p>指定一个数字，将转换为位标志识别设备功能。 这些标志在注册表中存储并且通过 STI_DEV_CAPS 结构 STI 组件可用的。</p>
-<p>位 0 − 集/清除 STI_GENCAP_NOTIFICATIONS STI_DEV_CAPS 中。</p>
-<p>位 1 − 集/清除 STI_GENCAP_POLLING_NEEDED STI_DEV_CAPS 中。</p>
-<p>位 2 − 集/清除 STI_GENCAP_GENERATE_ARRIVALEVENT STI_DEV_CAPS 中。</p>
-<p>位 3 − 集/清除 STI_GENCAP_AUTO_PORTSELECT STI_DEV_CAPS 中。</p>
-<p>位 4 − 集/清除 STI_GENCAP_WIA STI_DEV_CAPS 中。</p>
-<p>位 5 − 集/清除 STI_GENCAP_SUBSET STI_DEV_CAPS 中。</p></td>
+<td><p>指定一个数字，该数字将转换为标识设备功能的位标志。 这些标志存储在注册表中，可通过 STI_DEV_CAPS 结构用于 STI 组件。</p>
+<p>位0−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_NOTIFICATIONS。</p>
+<p>第1位−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_POLLING_NEEDED。</p>
+<p>第2位−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_GENERATE_ARRIVALEVENT。</p>
+<p>第3位−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_AUTO_PORTSELECT。</p>
+<p>Bit 4 −设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_WIA。</p>
+<p>位5−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_SUBSET。</p></td>
 <td><p>可选</p>
-<p>当前未使用 5 位。</p>
-<p>将此条目设置为 0x33 以与您的扫描仪支持按钮式事件 INF 文件中。</p></td>
+<p>当前未使用位5。</p>
+<p>将 INF 文件中的此项设置为0x33，以支持通过扫描仪进行推送按钮事件。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>PropertyPages</strong></p></td>
-<td><p>用于 Windows 98 和 Windows 2000 仅</p>
-<p>标识创建为静止图像设备的自定义的属性表页的 DLL 的名称和入口点。</p>
-<p>有关详细信息<strong>属性页</strong>条目，请参阅<a href="inf-files-for-still-image-devices.md" data-raw-source="[INF Files for Still Image Devices](inf-files-for-still-image-devices.md)">仍映像设备 INF 文件</a>。</p></td>
+<td><p>仅适用于 Windows 98 和 Windows 2000</p>
+<p>标识为静态图像设备创建自定义属性页的 DLL 的名称和入口点。</p>
+<p>有关<strong>PropertyPages</strong>条目的详细信息，请参阅<a href="inf-files-for-still-image-devices.md" data-raw-source="[INF Files for Still Image Devices](inf-files-for-still-image-devices.md)">适用于静止图像设备的 INF 文件</a>。</p></td>
 <td><p>可选</p>
-<p>此条目是以仅供 STI 驱动程序和已过时 WIA 的驱动程序。</p>
-<p>有关与 WIA 驱动程序开发人员相关的属性页的信息，请参阅<strong>注意</strong>此表后面的属性页上。</p></td>
+<p>此项仅供 STI 驱动程序使用，并且对于 WIA 驱动程序已过时。</p>
+<p>有关与 WIA 驱动程序开发人员相关的属性页的信息，请参阅此表后面的 PropertyPages 上的<strong>说明</strong>。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>DeviceData</strong></p></td>
-<td><p>标识包含信息存储在注册表中下的供应商提供的数据部分<strong>DeviceData</strong>密钥。 TWAIN 支持的设备，对于数据部分必须包含 TwainDS 条目 (请参阅<a href="registry-entries-for-wia-drivers.md" data-raw-source="[Registry Entries for WIA Drivers](registry-entries-for-wia-drivers.md)">WIA 驱动程序的注册表项</a>)。</p></td>
+<td><p>标识供应商提供的数据部分，其中包含要存储在注册表中的信息，在<strong>DeviceData</strong>项下。 对于 TWAIN 支持的设备，data 部分必须包含 TwainDS 项（请参阅<a href="registry-entries-for-wia-drivers.md" data-raw-source="[Registry Entries for WIA Drivers](registry-entries-for-wia-drivers.md)">WIA 驱动程序的注册表项</a>）。</p></td>
 <td><p>可选</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>事件</strong></p></td>
-<td><p>标识某个供应商提供的数据部分列出了静止图像设备事件。 在本部分中的每个条目必须具有以下格式：</p>
-<p><em>EventName</em><strong>="</strong><em>String</em><strong>",{</strong><em>GUID</em><strong>},</strong>App</p>
-<p><em>EventName</em>是事件的内部名称，<em>字符串</em>是事件的显示字符串<em>GUID</em>是事件的 GUID 和<em>应用</em>指定映像若要在事件发生时启动的应用程序。 若要启动当前已注册的应用程序，请使用星号 (<strong>*</strong>) 用于<em>应用</em>。</p></td>
+<td><p>标识供应商提供的数据部分，其中列出了仍为图像设备事件。 本节中的每个条目都必须采用以下格式：</p>
+<p><em>事件名称</em><strong>= "</strong><em>String</em><strong>"、{</strong><em>GUID</em><strong>}、</strong>应用</p>
+<p><em>事件名称是事件</em>的内部名称， <em>String</em>是事件的显示字符串， <em>guid</em>是事件的 guid，而<em>应用</em>指定发生事件时要启动的图像处理应用程序。 若要启动当前已注册的应用程序，请<strong>*</strong>使用<em>应用</em>程序的星号（）。</p></td>
 <td><p>必需</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>PortSelect</strong></p></td>
-<td><p>如果设备安装不需要端口选择页面，值为"否"将导致跳过该页面。 此值还会导致<strong>CreateFileName</strong>条目值 (请参阅<strong>注意</strong>上<strong>CreateFileName</strong>并<strong>PortSelect</strong>参看此表) 以自动设置为自动。</p>
-<p>要显示 Message1 会导致系统提供消息和设置的值<strong>CreateFileName</strong>条目值为自动。</p>
-<p>适用于扫描仪和照相机需要手动安装。</p></td>
+<td><p>如果设备安装不需要端口选择页，则值为 "否" 会导致跳过此页。 此值还会导致<strong>CreateFileName</strong>条目值（请参阅此表后面的<strong>CreateFileName</strong>和<strong>PortSelect</strong>上的<strong>说明</strong>）自动设置为 AUTO。</p>
+<p>如果值为 Message1，则会显示系统提供的消息，并将<strong>CreateFileName</strong>项值设置为 AUTO。</p>
+<p>适用于需要手动安装的扫描仪和照相机。</p></td>
 <td><p>可选</p>
-<p>请注意，对于插设备<strong>PortSelect</strong>将被忽略，但设备仍必须具有<strong>CreateFileName</strong>项值设置为自动，才能 WIA 加载设备。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)"> <strong>INF AddReg 指令</strong></a>添加到此条目<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)"> <strong>INF DDInstall 部分</strong></a>的设备的 INF 文件。</p></td>
+<p>请注意，对于即插即用设备，将忽略<strong>PortSelect</strong> ，但设备仍必须将<strong>CreateFileName</strong>条目值设置为 "自动"，以便 WIA 加载设备。 使用<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive" data-raw-source="[&lt;strong&gt;INF AddReg Directive&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)"><strong>Inf AddReg 指令</strong></a>将此条目添加到设备 inf 文件的<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section" data-raw-source="[&lt;strong&gt;INF DDInstall Section&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)"><strong>inf DDInstall 部分</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**  用户模式下客户端 （微型驱动程序） 必须以与设备通信，要求设备的文件的名称和一个字符串，指定要创建或打开的对象名称的 WIA 服务。 （文件名没有为磁盘文件的名称。）对此类查询的响应，WIA 服务获取来自设备的文件名**CreateFileName**注册表项。 ( *Usbscan.sys*并*scsiscan.sys*内核模式驱动程序创建此条目中，类安装程序也一样。)微型驱动程序通过调用接收此文件的名称[ **IStiDeviceControl::GetMyDevicePortName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)方法。 调用时，微型驱动程序然后可以使用此文件的名称[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数 （Microsoft Windows SDK 文档中所述） 来打开设备的句柄。
-如果手动安装该设备，类安装程序将创建**CreateFileName**项，将其值设置为一个依赖的端口选择页面上的用户的选项：COM*X*，LPT*X*，或 AUTO。 手动安装某些设备 （例如网络扫描仪） 不需要一个端口。 在这种情况下，生成的端口选择对话框可使用户感到困惑。 可以防止此对话框通过添加以下条目中的出现[ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的设备的 INF 文件：
+**注意**   要与设备进行通信，用户模式客户端（微型驱动程序）必须向 WIA 服务询问设备的文件名以及指定要创建或打开的对象的名称的字符串。 （文件名不必是磁盘文件的名称。）WIA 服务响应此类查询，从**CreateFileName**注册表项中获取设备的文件名。 （ *Usbscan*和*scsiscan*内核模式驱动程序会创建此项，与类安装程序一样。）微型驱动程序通过调用[**IStiDeviceControl：： GetMyDevicePortName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istidevicecontrol-getmydeviceportname)方法接收此文件名。 然后，微型驱动程序可以在调用[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数时使用此文件名（如 Microsoft Windows SDK 文档中所述）来打开设备的句柄。
+如果手动安装了设备，则类安装程序会创建**CreateFileName**条目，并将其值设置为依赖于端口选择页面上用户选择的值： COM*X*、LPT*X*或 AUTO。 手动安装的某些设备（例如网络扫描仪）不需要端口。 在这种情况下，生成的端口选择对话框会使用户感到困惑。 可以通过在设备 INF 文件的 " [**Inf DDInstall" 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)添加以下条目来阻止显示此对话框：
 
  
 
@@ -109,17 +109,17 @@ ms.locfileid: "67391417"
      PortSelect=NO
 ```
 
-**请注意**  此条目值的一个副作用是， **CreateFileName**条目将设置为自动。 请注意，如果微型驱动程序收到自动的文件名称，则它必须能够确定自身应与哪些设备。
+**请注意**  此项值的副作用是**CreateFileName**项设置为 AUTO。 请注意，如果微型驱动程序接收到了文件名的自动，则它必须能够确定应该与之通信的设备。
 
-**请注意**  的属性页，WIA 驱动程序必须使用不同的扩展机制，来添加属性页。 它还必须添加到其自己的 GUID **UI 类 ID**条目中相应的 INF 文件，并且必须提供特定 UI 扩展性注册 (请参阅[用户界面扩展插件注册表项](user-interface-extension-registry-entries.md)) 的 UI 组件正在替换，如公共对话框，或添加，如上下文菜单和属性页。 WIA 驱动程序还必须为组件本身提供 UI 扩展注册。
-
- 
+**请注意**  PROPERTYPAGES，WIA 驱动程序必须使用不同的扩展性机制才能添加属性页。 它还必须将其自己的 GUID 添加到其 INF 文件中的**Ui 类 ID**条目，并且必须为要替换的 ui 组件提供特定的 ui 扩展性注册（请参阅[用户界面扩展注册表项](user-interface-extension-registry-entries.md)）（如通用对话框或添加）。例如上下文菜单和属性页。 WIA 驱动程序还必须为组件本身提供 UI 扩展性注册。
 
  
 
-### <a name="additional-inf-file-entries"></a>其他的 INF 文件条目
+ 
 
-下表中的条目必须指向通过设备的节中放置[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive):
+### <a name="additional-inf-file-entries"></a>其他 INF 文件条目
+
+下表中的条目必须位于设备[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)指向的部分中：
 
 <table>
 <colgroup>
@@ -130,43 +130,43 @@ ms.locfileid: "67391417"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>ReplTest1</th>
+<th>Value</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>HardwareConfig</strong></p></td>
-<td><p>指示使用设备的连接类型。</p>
-<p>1，1 − 通用 WDM 设备</p>
-<p>1，2 − SCSI 设备</p>
-<p>1，4 − USB 设备</p>
-<p>1,8 − 串行设备</p>
-<p>1,16 − 并行设备</p></td>
+<td><p>指示设备使用的连接类型。</p>
+<p>1，1−通用 WDM 设备</p>
+<p>1，2− SCSI 设备</p>
+<p>1，4− USB 设备</p>
+<p>1、8−串行设备</p>
+<p>1，16−并行设备</p></td>
 <td><p>可选</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>USDClass</strong></p></td>
 <td><p>指示微型驱动程序的 GUID。</p></td>
 <td><p>可选。</p>
-<p>中的 GUID <strong>USDClass</strong>并<strong>CLSID</strong>条目必须匹配中使用的 GUID <strong>DllGetClassObject</strong>微型驱动程序的函数。 如果你正在编写 microdriver，值应为 BB6CF8E2-1511年-40bd-91BA-80D43C53064E。 否则，必须生成新的 GUID，使用，例如， <em>genguid.exe</em>。</p></td>
+<p><strong>USDClass</strong>和<strong>CLSID</strong>条目中的 guid 必须与在微型驱动程序的<strong>DLLGETCLASSOBJECT</strong>函数中使用的 guid 匹配。 如果要编写 microdriver，则值应为 BB6CF8E2-1511-40bd-91BA-80D43C53064E。 否则，必须使用<em>genguid</em>生成新的 GUID。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>CLSID</strong></p></td>
 <td><p>指示微型驱动程序的 GUID。</p></td>
 <td><p>可选。</p>
-<p>请参阅前面紧邻的注释<strong>USDClass</strong>条目。</p></td>
+<p>请参阅前面的<strong>USDClass</strong>条目注释。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-静止图像设备的默认类安装程序支持标准[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)。
+静止映像设备的默认类安装程序支持标准[**INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)。
 
-静止图像设备，默认 INF 文件*sti.inf*，定义每个设备类型，两个安装部分，如下所示：
+静态映像设备（ *sti*）的默认 INF 文件为每种设备类型定义了两个安装节，如下所示：
 
--   [ **INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)，其中必须引用内*DDInstall*供应商提供 INF 文件中的以下表所示的部分。
+-   [**INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)，必须在供应商提供的 INF 文件的*DDInstall*部分中引用，如下表所示。
 
     <table>
     <colgroup>
@@ -178,29 +178,29 @@ ms.locfileid: "67391417"
     <tr class="header">
     <th>设备类型</th>
     <th>包括</th>
-    <th>需求</th>
+    <th>需</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td><p>IEEE 1394/SBP2</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>Needs=STI.SBP2Section</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。SBP2Section</p></td>
     </tr>
     <tr class="even">
-    <td><p>USB</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>需要 = STI。USBSection</p></td>
+    <td><p>“USB”</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。USBSection</p></td>
     </tr>
     <tr class="odd">
     <td><p>SCSI</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>需要 = STI。SCSISection</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。SCSISection</p></td>
     </tr>
     <tr class="even">
     <td><p>序列</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>Needs=STI.SerialSection</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。SerialSection</p></td>
     </tr>
     </tbody>
     </table>
@@ -209,7 +209,7 @@ ms.locfileid: "67391417"
 
 <!-- -->
 
--   INF DDInstall 服务部分中，必须在引用[ **INF DDInstall.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)的供应商提供的 INF 文件下, 表中所示。
+-   INF DDInstall Services 部分，必须在供应商提供的 INF 文件的[**Inf DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)中引用，如下表所示。
 
     <table>
     <colgroup>
@@ -221,38 +221,38 @@ ms.locfileid: "67391417"
     <tr class="header">
     <th>设备类型</th>
     <th>包括</th>
-    <th>需求</th>
+    <th>需</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td><p>1394/SBP2</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>Needs=STI.SBP2Section.Services</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。SBP2Section</p></td>
     </tr>
     <tr class="even">
-    <td><p>USB</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>Needs=STI.USBSection.Services</p></td>
+    <td><p>“USB”</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。USBSection</p></td>
     </tr>
     <tr class="odd">
     <td><p>SCSI</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>Needs=STI.SCSISection.Services</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。SCSISection</p></td>
     </tr>
     <tr class="even">
     <td><p>序列</p></td>
-    <td><p>Include=sti.inf</p></td>
-    <td><p>Needs=STI.SerialSection.Services</p></td>
+    <td><p>Include = sti</p></td>
+    <td><p>需求 = STI。SerialSection</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
-有关创建静止图像设备的 INF 文件中的其他指南，你可以查看任何与包含项子类的 Windows 提供的 INF 文件 = StillImage。
+有关为静止图像设备创建 INF 文件的其他指南，你可以查看随 Windows 提供的、包含子类 "StillImage" 的任何 INF 文件。
 
-若要指定设备为 WIA 的设备，微型驱动程序 INF 文件必须包含以下值放在*DeviceData*供应商提供 INF 文件部分。
+若要将设备指定为 WIA 设备，微型驱动程序 INF 文件必须包含位于供应商提供的 INF 文件的*DeviceData*部分中的以下值。
 
 <table>
 <colgroup>
@@ -263,48 +263,48 @@ ms.locfileid: "67391417"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>ReplTest1</th>
+<th>Value</th>
 <th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>Server</strong></p></td>
+<td><p><strong>服务</strong></p></td>
 <td><p>本地</p></td>
-<td><p>将设备指定为本地设备。 这是可选的如果供应商未指定项值，该设备被假定为本地。 也就是说，WIA_DIP_SERVER_NAME 属性设置为本地。</p></td>
+<td><p>将设备指定为本地设备。 这是可选的，如果供应商未指定输入值，则假定设备为本地设备。 也就是说，WIA_DIP_SERVER_NAME 属性设置为 Local。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>MicroDriver</strong></p></td>
-<td><p>供应商提供<em>.dll</em>文件名称</p></td>
-<td><p>此条目应设置为实现 WIA microdriver 的供应商提供的 DLL 的名称。</p></td>
+<td><p>供应商提供的<em>.dll</em>文件名</p></td>
+<td><p>应将此项设置为供应商提供的用于实现 WIA microdriver 的 DLL 的名称。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>UI DLL</strong></p></td>
-<td><p>供应商提供<em>.dll</em>文件名称</p></td>
-<td><p>过时，并永远不会使用。 以前，此条目表示供应商提供的用户界面的 DLL 文件的名称。</p></td>
+<td><p>供应商提供的<em>.dll</em>文件名</p></td>
+<td><p>过时且从未使用过。 以前，此条目指示供应商提供的用户界面 DLL 文件的名称。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>用户界面类 ID</strong></p></td>
+<td><p><strong>UI 类 ID</strong></p></td>
 <td><p>供应商提供的设备类标识符</p></td>
-<td><p>指示设备的供应商提供的类用户界面能够支持。 这是可选的如果供应商未指定项值，WIA 将 WIA_DIP_UI_CLSID 属性设置为 GUID_NULL 和 WIA UI 使用的默认值。</p></td>
+<td><p>指示供应商提供的用户界面支持的设备类。 这是可选的，如果供应商未指定输入值，WIA 会将 WIA_DIP_UI_CLSID 属性设置为 GUID_NULL，并使用默认的 WIA UI。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ICMProfiles</strong></p></td>
 <td><p>供应商提供的颜色配置文件值</p></td>
-<td><p>指定要放入 WIA_IPA_ICM_PROFILE_NAME 属性的值。 如果未不指定任何值，标准 sRGB 配置文件<em>sRGB 颜色空间 Profile.icm</em>使用。</p></td>
+<td><p>指定要放入 WIA_IPA_ICM_PROFILE_NAME 属性中的值。 如果未指定任何值，则使用标准 sRGB 配置文件<em>Srgb 颜色空间配置文件。 icm</em> 。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**MicroDriver**项是必需的仅当由供应商提供 WIA microdriver。
+仅当供应商提供 WIA MicroDriver 时，才需要**MicroDriver**项。
 
-仅当由供应商提供用于图像处理设备的自定义用户界面，用户界面 (UI) 项是必需的。
+仅当供应商为映像设备提供自定义用户界面时，才需要用户界面（UI）条目。
 
-**注释**
+**备注**
 
-当开发用于扫描程序的 INF 文件后时，可以使用[Microsoft OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))启用兼容性 ID 功能。 当执行此操作时，允许一个扫描程序驱动程序与多个扫描程序模型兼容。
+在为扫描仪开发 INF 文件时，可以使用[MICROSOFT OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))来启用兼容 ID 功能。 当你执行此操作时，你允许一个扫描仪驱动程序与多个扫描仪模型兼容。
 
  
 

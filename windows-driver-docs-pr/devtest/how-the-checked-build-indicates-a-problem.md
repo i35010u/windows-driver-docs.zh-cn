@@ -3,21 +3,21 @@ title: 已检验版本如何指出问题
 description: 已检验版本如何指出问题
 ms.assetid: 373519e0-bca9-434e-8cc3-e11c2d4b42a4
 keywords:
-- 检查内部版本号 WDK，问题通知
-- 通知 WDK 检查生成
-- 断言检查 WDK 版本
+- 已检查生成 WDK，问题通知
+- 通知 WDK 检查版本
+- 断言 WDK 检查生成
 - 断点 WDK
 - 调试器消息 WDK
-- 检查生成邮件 WDK
-- 错误 WDK 检查生成
+- 消息 WDK 检查版本
+- 错误 WDK 检查版本
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d1c435766b512fb6af883cf70bf416ef2e6d7e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d29a0a891a6a24a5ae89229f0a86c3a8a39ab82
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372687"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840266"
 ---
 # <a name="how-the-checked-build-indicates-a-problem"></a>已检验版本如何指出问题
 
@@ -25,19 +25,19 @@ ms.locfileid: "67372687"
 ## <span id="ddk_how_the_checked_build_indicates_a_problem_tools"></span><span id="DDK_HOW_THE_CHECKED_BUILD_INDICATES_A_PROBLEM_TOOLS"></span>
 
 
-操作系统已检验的版本使用多种方法来通知你发现的问题。 这些方法包括断言失败、 断点以及调试器消息。 所有这些方法会导致从内核调试程序的输出。 因此，若要很有帮助，必须运行已检验的版本与内核模式调试程序 （如 WinDbg 或 KD） 连接。
+操作系统的检查内部版本使用各种方法来通知您发现的问题。 这些方法包括断言错误、断点和调试器消息。 所有这些方法都将导致内核调试器输出。 因此，若要非常有用，必须在已连接内核模式调试器（例如 WinDbg 或 KD）的情况下运行检查的生成。
 
 有关调试的详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
-### <a name="span-idassertfailuresspanspan-idassertfailuresspanassert-failures"></a><span id="assert_failures"></span><span id="ASSERT_FAILURES"></span>断言失败
+### <a name="span-idassert_failuresspanspan-idassert_failuresspanassert-failures"></a><span id="assert_failures"></span><span id="ASSERT_FAILURES"></span>断言失败
 
-已检验的版本执行的检查的大多数作为实现[ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))语句。 如果断言的表达式的计算结果为**FALSE**，调试器将显示包含的消息：
+检查生成执行的大部分检查都作为[**ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))语句实现。 当断言的表达式的计算结果为**FALSE**时，调试器将显示一条消息，其中包含：
 
 -   失败的代码表达式的文本
 
--   源的代码路径、 文件名和失败的断言例程的行号
+-   失败的 ASSERT 例程的源代码路径、文件名和行号
 
-下面的示例显示了断言失败 I/O 管理器中时，调试器显示的输出：
+下面的示例演示了在 i/o 管理器中断言失败时调试器显示的输出：
 
 ```
 *** Assertion failed: Irp->IoStatus.Status != 0xffffffff
@@ -50,11 +50,11 @@ ntkrnlmp!DbgBreakPoint:
 804a3ce4 cc               int     3
 ```
 
-调试程序输出中所示，为"中断、 忽略、 终止进程或终止线程。"要求用户 用户通过输入"b"，回答导致调试器停止系统执行与断点。 因此，用户现在可以继续调试时发现的问题。
+如调试器输出所示，要求用户 "中断、忽略、终止进程或终止线程"。 用户通过输入 "b" 回答，这会导致调试器停止系统执行并带有断点。 因此，用户现在可以继续调试发现的问题。
 
-在该失败的断言将影响系统的方式取决于多种因素。 在 Windows Vista 之前的 Windows 版本，如果已启用调试的操作系统在系统启动过程中，系统会进入调试器 （如果已连接） 或挂起正在等待调试程序连接。 如果未启用调试，系统将崩溃， [ **Bug 检查 0x1E** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) (KMODE\_异常\_不\_HANDLED) 0x80000003 参数 1 值。 在 Windows Vista 及更高版本，系统将中断到调试器，仅当连接调试器。 如果未启用调试，或如果启用调试，但调试器未连接，（尽管仍会执行断言检查），将不会报告失败的断言。 如果你正在开发一个驱动程序并想要明确地中断调试器，如果启用调试，但未连接到调试器，可以使用[ **DbgBreakPoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgbreakpoint)在代码中的语句。
+失败的断言对系统产生的影响的方式取决于多个因素。 在 Windows Vista 之前的 Windows 版本中，如果在系统启动过程中为操作系统启用了调试，则系统将中断到调试器（如果已连接）或挂起等待调试器连接。 如果未启用调试，系统将崩溃， [**Bug 检查 0x1E**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) （KMODE\_异常\_未\_处理），参数1值为0x80000003。 在 Windows Vista 和更高版本中，只有当调试器连接时，系统才会中断调试器。 如果未启用调试，或启用了调试但未连接调试程序，则不会报告失败的断言（尽管仍将执行断言检查）。 如果正在开发驱动程序，并且希望在启用调试但未连接调试器的情况下，明确中断调试器，则可以在代码中使用[**DbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)语句。
 
-某些[ **ASSERT** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))故障的前面有其他[ **DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)输出。 此类型的断言的一个常见示例是以下[ **PAGED\_代码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) ntddk.h 和 wdm.h 中用于驱动程序的内部版本中定义的宏：
+某些[**断言**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))失败之前有其他[**DbgPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)输出。 此类断言的一个常见示例是以下[**分页\_代码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)宏，它在 ntddk 和 wdm 中定义，以在驱动程序的已检查版本中使用：
 
 ```
 #define PAGED_CODE() \
@@ -64,19 +64,19 @@ KdPrint(( "EX: Pageable code called at IRQL %d\n", KeGetCurrentIrql() )); \
         }
 ```
 
-此宏是经常用于在操作系统中验证仅在适用于 Irql 调用可分页的函数。
+此宏经常用于操作系统中，以验证是否仅在适当的 IRQLs 调用了可分页函数。
 
-通常，你可以检查失败的文本的代码表达式以确定声明，包括驱动程序的操作时，出现了断言和被调用的函数的原因。 **KB （显示堆栈跟踪）** 调试器命令对此分析至关重要。
+通常可以检查失败代码表达式的文本，以确定断言的原因，包括发生断言时驱动程序的操作和调用的函数。 **KB （显示堆栈跟踪）** 调试器命令对于此分析至关重要。
 
-最常见的 ASSERT 调用列表，请参阅[检查生成的 assert 语句](checked-build-asserts.md)。
+有关最常见的断言调用的列表，请参阅[检查的生成断言](checked-build-asserts.md)。
 
-### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>断点
+### <a name="span-idbreakpointsspanspan-idbreakpointsspanbreakpoints"></a><span id="breakpoints"></span><span id="BREAKPOINTS"></span>处
 
-检查内部版本号还可以使用断点表示存在问题。 断点，通常都会骤然[ **DbgPrint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-dbgprint)语句，这会导致调试器中以显示有关所遇到的问题的信息。 如果调试器未连接到系统断点发生时，系统崩溃，并解释性的所有消息都都将丢失。
+选中的生成还可以使用断点指示问题。 断点前面通常带有[**DbgPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)语句，这将导致调试器显示有关遇到的问题的信息。 如果在发生断点时调试器未连接到系统，则系统崩溃并所有解释性消息都将丢失。
 
-中列出了一些最常见的消息已检验版本，在前面的断点和其遇到的驱动程序编写人员[检查生成断点和消息](checked-build-breakpoints-and-messages.md)。
+检查生成中的断点前面的某些最常见消息以及驱动程序编写器遇到的一些最常见消息都列在 "[已检查生成断点和消息](checked-build-breakpoints-and-messages.md)" 中。
 
-下面的示例演示如何**DbgPrint**调用和断点出现在调试器中：
+下面的示例演示了**DbgPrint**调用和断点在调试器中的显示方式：
 
 ```
 *** DPC routine > 1 sec --- This is not a break in KeUpdateSystemTime
@@ -85,11 +85,11 @@ NTOSKRNL!DbgBreakPoint:
 804a3ce4 cc               int     3
 ```
 
-此示例演示调试程序条消息，指示单个延缓的过程调用 (DPC) 正在运行的时间超过一秒，并说明了在调试内部版本中实现的检查的类型。 此断点表示驱动程序所用很长时间在 DPC 例程中，这可能表示有严重的驱动程序问题。 但是，如果驱动程序将在其 DPC 例程，从而将扩展 DPC 运行所需的时间长度中生成大量的调试输出，也可能发生此断点。 若要发现问题的根本原因，检查 DPC 例程执行操作，并继续通过断点一次或两次。
+此示例显示了一条调试器消息，该消息指示单个延迟过程调用（DPC）运行的时间超过一秒，并说明在检查版本中实现的检查的类型。 此断点表示驱动程序在 DPC 例程中花费了很长时间，这可能表示出现了严重的驱动程序问题。 另一方面，如果驱动程序在其 DPC 例程中生成大量调试输出，则也会发生此断点，从而延长了 DPC 运行所需的时间长度。 若要发现此问题的根本原因，请检查 DPC 例程正在执行的操作，并在断点之后的一次或两次继续。
 
-在极少数情况下在遇到断点时不显示任何消息，务必要检查的内核堆栈跟踪 (使用**KB**调试器命令) 来确定遇到断点。 通常情况下，这将提供强线索对断点的原因。
+在极少数情况下，如果遇到断点但未显示消息，则必须检查内核堆栈跟踪（使用**KB**调试器命令）来确定断点的位置。 通常，这将为断点原因提供很强的线索。
 
-下面的示例演示了许多 Windows 驱动程序开发人员，以及堆栈跟踪发生过的常见断点：
+下面的示例演示了许多 Windows 驱动程序开发人员检测到的常见断点以及堆栈跟踪：
 
 ```
 Break instruction exception - code 80000003 (first chance)
@@ -107,13 +107,13 @@ f9f77ddc 8069bece 805f8c04 00000001 00000000 ntkrnlmp!PspSystemThreadStartup+0x4
 00000000 00000000 00000000 00000000 00000000 ntkrnlmp!KiThreadStartup+0x16
 ```
 
-您可以看到此堆栈跟踪中，为调用的结果执行断点**KfAcquireSpinLock**。 检查 wdm.h 中后，您可以看到这是由驱动程序引用的函数的实际名称[ **KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlock)。 即使在断点之前显示了任何消息，可以看到在堆栈的顶部断点的位置 (**ntkrnlmp ！SpinLockSpinningForTooLong**)。 此位置表示该断点的原因：旋转锁具有旋转，等待的时间非常长的购置。
+从此堆栈跟踪中可以看到，断点作为调用**KfAcquireSpinLock**的结果而发生。 检查了 wdm 后，可以看到这是驱动程序所引用的函数的实际名称（ [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)）。 即使断点之前未显示消息，也可以在堆栈顶部看到断点的位置（**ntkrnlmp！SpinLockSpinningForTooLong**）。 此位置指示断点的原因：旋转锁已旋转，等待获取的时间过长。
 
-### <a name="span-iddebuggermessagesspanspan-iddebuggermessagesspandebugger-messages"></a><span id="debugger_messages"></span><span id="DEBUGGER_MESSAGES"></span>调试器消息
+### <a name="span-iddebugger_messagesspanspan-iddebugger_messagesspandebugger-messages"></a><span id="debugger_messages"></span><span id="DEBUGGER_MESSAGES"></span>调试器消息
 
-检查内部版本号还可以使用调试器消息来标识，或提供有关已发生错误的其他信息。 调试器消息的最常见的源是从非内核和非 HAL 组件，或选中 （调试） 用户模式程序产生错误。 输出量因每个操作系统版本而异。
+选中的生成还可以使用调试器消息来标识或提供有关已发生的错误的其他信息。 调试器消息的最常见源是源自非内核和非 HAL 组件的错误，或来自检查（调试）用户模式的程序的错误。 每个操作系统版本的输出量有所不同。
 
-下面的示例显示了完整的调试内部版本的安装可能会显示的输出。 此输出由 Windows XP 的预发布版本生成的因此更加让人望而却步比通常出现在完全调试内部版本。
+下面的示例显示了安装完整的已选中版本可能显示的输出。 此输出是由 Windows XP 的预发布版本生成的，因此甚至比在完全检查的内部版本上通常会出现更多的 voluminous。
 
 ```
 0:Attempting to load winsock
@@ -135,9 +135,9 @@ f9f77ddc 8069bece 805f8c04 00000001 00000000 ntkrnlmp!PspSystemThreadStartup+0x4
 0:(s: 0 0x260.3c4 Explorer.EXE) USER-[Wrn=1400] HMValidateHandle: Invalid:00000000 Type:0x1
 ```
 
-中列出了一些最常见的已检验的版本可以显示在驱动程序调试期间的消息[检查生成断点和消息](checked-build-breakpoints-and-messages.md)。
+在驱动程序调试过程中，检查的生成可以显示的一些最常见消息列在 "[已检查生成断点和消息](checked-build-breakpoints-and-messages.md)" 中。
 
-启用更多跟踪或信息性消息中各种系统组件也会导致调试器没有后续断点或断言失败的消息。
+在各种系统组件中启用其他跟踪或信息性消息也可能导致调试器消息，而不会发生后续断点或断言错误。
 
  
 

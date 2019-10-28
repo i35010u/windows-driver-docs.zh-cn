@@ -3,16 +3,16 @@ title: 启动驱动程序堆栈
 description: 启动驱动程序堆栈
 ms.assetid: 316de69e-38e8-4ac6-83c5-5d13090ee6d5
 keywords:
-- 驱动程序堆栈 WDK 网络启动
+- 驱动程序堆栈 WDK 网络，开始
 - 启动驱动程序堆栈 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37d75c5675fc16e9bcbe390538346cd5e0aa8e71
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5d9b38e466ee2de74d42c7ffa6e88c89b2170396
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377565"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841837"
 ---
 # <a name="starting-a-driver-stack"></a>启动驱动程序堆栈
 
@@ -20,39 +20,39 @@ ms.locfileid: "67377565"
 
 
 
-系统检测到网络设备后，在系统启动设备的 NDIS 驱动程序堆栈。 设备可以是虚拟设备或物理设备。 在任一情况下，驱动程序堆栈开始操作继续进行，如下所示：
+系统检测到网络设备后，系统会启动设备的 NDIS 驱动程序堆栈。 设备可以是虚拟设备或物理设备。 在任一情况下，驱动程序堆栈启动操作都会继续执行，如下所示：
 
-1.  在系统加载和初始化驱动程序，如果它们不是已加载。
+1.  系统加载并初始化驱动程序（如果尚未加载）。
 
-    它不会加载任何特定顺序中的驱动程序。
+    它不会以任何特定顺序加载驱动程序。
 
-2.  系统调用每个驱动程序**DriverEntry**函数。
+2.  系统调用每个驱动程序的**DriverEntry**函数。
 
-    之后**DriverEntry**返回：
+    **DriverEntry**返回后：
 
     -   设备的微型端口适配器处于暂停状态。
-    -   筛选器模块都处于已分离的状态。
+    -   筛选器模块处于分离状态。
     -   协议绑定处于未绑定状态。
 
 3.  系统请求 NDIS 启动微型端口适配器。
 
-    若要初始化的微型端口适配器，NDIS 调用微型端口驱动程序[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数。 如果*MiniportInitializeEx*是成功，微型端口适配器进入暂停状态。
+    为了初始化微型端口适配器，NDIS 调用微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数。 如果*MiniportInitializeEx*成功，微型端口适配器将进入暂停状态。
 
-4.  NDIS 将附加的筛选器模块，开头的模块的最接近的微型端口驱动程序和驱动程序堆栈的顶部的进展情况。
+4.  NDIS 附加筛选器模块，从与微型端口驱动程序最接近的模块开始，到驱动程序堆栈的顶部。
 
-    若要请求驱动程序将筛选器模块附加到驱动程序堆栈，NDIS 调用筛选器驱动程序[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)函数。 如果每个附加操作成功，筛选器模块将进入暂停状态。
+    为了请求驱动程序将筛选器模块附加到驱动程序堆栈，NDIS 调用筛选器驱动程序的[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数。 如果每个附加操作成功，筛选器模块将进入暂停状态。
 
-5.  NDIS 基础的所有驱动程序都处于已暂停状态后，调用协议驱动程序[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)函数。
+5.  所有底层驱动程序都处于暂停状态之后，NDIS 将调用协议驱动程序的[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数。
 
-    然后协议驱动程序绑定将进入打开状态。 协议驱动程序调用[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)函数打开的微型端口适配器绑定。
+    然后，协议驱动程序绑定进入 "正在打开" 状态。 协议驱动程序调用[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)函数来打开具有微型端口适配器的绑定。
 
-6.  NDIS 绑定分配所需的资源，并调用协议驱动程序[ *ProtocolOpenAdapterCompleteEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_open_adapter_complete_ex)函数。
+6.  NDIS 为绑定分配所需的资源，并调用协议驱动程序的[*ProtocolOpenAdapterCompleteEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_open_adapter_complete_ex)函数。
 
-    该绑定将进入暂停状态。
+    绑定进入暂停状态。
 
-7.  若要完成绑定操作，协议驱动程序调用[ **NdisCompleteBindAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscompletebindadapterex)函数。
+7.  若要完成绑定操作，协议驱动程序将调用[**NdisCompleteBindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletebindadapterex)函数。
 
-8.  NDIS 驱动程序堆栈，重新启动。 有关重新启动驱动程序堆栈的详细信息，请参阅[重新启动驱动程序堆栈](restarting-a-driver-stack.md)。
+8.  NDIS 重启驱动程序堆栈。 有关重新启动驱动程序堆栈的详细信息，请参阅[重新启动驱动程序堆栈](restarting-a-driver-stack.md)。
 
  
 

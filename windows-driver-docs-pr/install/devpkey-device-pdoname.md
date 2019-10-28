@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5ccf1b9d5c2192f0df7a46dee688c2168c989046
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: aedddba7d60ff85440098359116f729e2df589aa
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378149"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840647"
 ---
-# <a name="devpkeydevicepdoname"></a>DEVPKEY_Device_PDOName
+# <a name="devpkey_device_pdoname"></a>DEVPKEY_Device_PDOName
 
 
-DEVPKEY_Device_PDOName 设备属性表示的物理设备 (PDO) 对象，该对象表示的设备实例的名称。
+DEVPKEY_Device_PDOName 设备属性表示表示设备实例的物理设备对象（PDO）的名称。
 
 <table>
 <colgroup>
@@ -42,15 +42,15 @@ DEVPKEY_Device_PDOName 设备属性表示的物理设备 (PDO) 对象，该对�
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>相应 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
+<td align="left"><p><strong>对应的 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
 <td align="left"><p>SPDRP_PHYSICAL_DEVICE_OBJECT_NAME</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>本地化？</strong></p></td>
-<td align="left"><p>否</p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
+<td align="left"><p>无</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,11 +60,11 @@ DEVPKEY_Device_PDOName 设备属性表示的物理设备 (PDO) 对象，该对�
 <a name="remarks"></a>备注
 -------
 
-Windows 将 DEVPKEY_Device_PDOName 的值设置为表示设备的物理名称对象 (PDO) 的名称。 有关 PDO 名称的详细信息，请参阅*DeviceName*与一起使用的参数[ **IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)例程。
+Windows 将 DEVPKEY_Device_PDOName 的值设置为表示设备的物理名称对象（PDO）的名称。 有关 PDO 名称的详细信息，请参阅用于[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)例程的*DeviceName*参数。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_PDOName 值。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_PDOName 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_PDOName 属性键。 相反，相应的 SPDRP_PHYSICAL_DEVICE_OBJECT_NAME 标识符可用于访问这些早期版本的 Windows 上的属性的值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备实例 SPDRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_PDOName 属性键。 相反，你可以使用相应的 SPDRP_PHYSICAL_DEVICE_OBJECT_NAME 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[访问 Device Instance SPDRP_Xxx Properties](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,20 +76,20 @@ Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

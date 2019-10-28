@@ -3,19 +3,19 @@ title: 传递电源 IRP
 description: 传递电源 IRP
 ms.assetid: 01473eb0-ae60-4a95-9ae7-97b2b982d3d1
 keywords:
-- power Irp WDK 内核传递
-- 将 Irp 传递下设备堆栈 WDK
+- power Irp WDK 内核，通过
+- 将 Irp 向下传递设备堆栈 WDK
 - DispatchPower 例程
 - 调度例程 WDK 电源管理
 - PoStartNextPowerIrp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37f3b8a27ecb4bfe841504a4c3a96e65a6089be5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: de8f938e955f5f8ef06170009c9ddb71afa36c5a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384743"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838516"
 ---
 # <a name="passing-power-irps"></a>传递电源 IRP
 
@@ -23,67 +23,67 @@ ms.locfileid: "67384743"
 
 
 
-必须将电源 Irp 一直向设备堆栈下传递给 PDO 以确保完全管理电源转换。 驱动程序处理 IRP，从而减少设备电源 IRP 传输时下设备堆栈。 驱动程序处理 IRP 应用中的设备电源[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程作为 IRP 传输到设备堆栈。
+电源 Irp 必须按设备堆栈向下传递到 PDO，以确保能够完全管理电源转换。 驱动程序处理 IRP，该 IRP 可在 IRP 向下传播到设备堆栈时降低设备的电源。 驱动程序处理 IRP，该 IRP 在 IRP 在设备堆栈上传输时，应用[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中的设备功能。
 
-下图显示驱动程序需要通过 Windows 7 和 Windows Vista 中的设备堆栈 IRP 关机所采取的步骤。
+下图显示了在 Windows 7 和 Windows Vista 中，驱动程序需要执行哪些步骤才能将电源 IRP 向下传递到设备堆栈中。
 
-![演示如何关闭 windows vista 中 power irp 传递的关系图](images/passirpvista.png)
+![说明如何通过 windows vista 中的电源 irp](images/passirpvista.png)
 
-上一图所示，在 Windows 7 和 Windows Vista 驱动程序必须执行以下步骤：
+如上图所示，在 Windows 7 和 Windows Vista 中，驱动程序必须执行以下操作：
 
-1.  调用[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)如果设置*IoCompletion*例程，或[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)如果未设置*IoCompletion*例程。
+1.  如果设置*IoCompletion*例程，则调用[**IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) ; 如果未设置*IoCompletion*例程，则调用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) 。
 
-    两个例程将设置下一步低驱动程序的 IRP 堆栈位置。 复制当前的堆栈位置可确保，IRP 堆栈指针设置为正确的位置时*IoCompletion*日常运行。
+    这两个例程设置下一个较低驱动程序的 IRP 堆栈位置。 复制当前堆栈位置可确保在运行*IoCompletion*例程时 IRP 堆栈指针设置为正确的位置。
 
-    如果编写不正确的驱动程序，可以调用错误**IoSkipCurrentIrpStackLocation** ，并设置完成例程，该驱动程序可能会覆盖由其下方的驱动程序设置完成例程。
+    如果编写错误的驱动程序会导致错误调用**IoSkipCurrentIrpStackLocation** ，然后设置完成例程，则此驱动程序可能会覆盖由其下的驱动程序设置的完成例程。
 
-2.  调用[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)若要设置*IoCompletion*例程中，如果完成例程是必需的。
+2.  如果需要完整的例程，请调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)来设置*IoCompletion*例程。
 
-3.  调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)将 IRP 传递到堆栈中的下一步低驱动程序。
+3.  调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将 IRP 传递到堆栈中的下一个较低的驱动程序。
 
-下图显示了驱动程序需要传递在 Windows Server 2003、 Windows XP 和 Windows 2000 中的设备堆栈 IRP 关机所采取的步骤。
+下图显示了在 Windows Server 2003、Windows XP 和 Windows 2000 中，驱动程序需要采取哪些步骤才能将电源 IRP 向下传递到设备堆栈中。
 
-![向下 （windows server 2003、 windows xp 和 windows 2000） power irp 传递](images/passirp.png)
+![传递电源 irp （windows server 2003、windows xp 和 windows 2000）](images/passirp.png)
 
-上图所示，驱动程序必须执行以下步骤：
+如上图所示，驱动程序必须执行以下操作：
 
-1.  具体取决于驱动程序的类型，可能是调用[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)。 有关详细信息，请参阅[调用 PoStartNextPowerIrp](calling-postartnextpowerirp.md)。
+1.  根据驱动程序的类型，可能会调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)。 有关详细信息，请参阅[调用 PoStartNextPowerIrp](calling-postartnextpowerirp.md)。
 
-2.  调用[ **IoCopyCurrentIrpStackLocationToNext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)如果设置*IoCompletion*例程，或[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)如果未设置*IoCompletion*例程。
+2.  如果设置*IoCompletion*例程，则调用[**IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) ; 如果未设置*IoCompletion*例程，则调用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) 。
 
-    两个例程将设置下一步低驱动程序的 IRP 堆栈位置。 复制当前的堆栈位置可确保，IRP 堆栈指针设置为正确的位置时*IoCompletion*日常运行。
+    这两个例程设置下一个较低驱动程序的 IRP 堆栈位置。 复制当前堆栈位置可确保在运行*IoCompletion*例程时 IRP 堆栈指针设置为正确的位置。
 
-3.  调用[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)若要设置*IoCompletion*例程。 在中*IoCompletion*例程，大多数驱动程序[调用 PoStartNextPowerIrp](calling-postartnextpowerirp.md)以指示它已准备好处理 IRP 的下一个幂。
+3.  调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)以设置*IoCompletion*例程。 在*IoCompletion*例程中，大多数驱动程序都[调用 PoStartNextPowerIrp](calling-postartnextpowerirp.md) ，以指示它已准备好处理下一个电源 IRP。
 
-4.  调用[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver)将 IRP 传递到堆栈中的下一步低驱动程序。
+4.  调用[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)将 IRP 传递到堆栈中的下一个较低的驱动程序。
 
-    驱动程序必须使用**PoCallDriver**，而非**IoCallDriver** （与其他 Irp) 以确保系统正确同步 power Irp。 有关详细信息，请参阅[调用 IoCallDriver vs。调用 PoCallDriver](calling-iocalldriver-versus-calling-pocalldriver.md)。
+    驱动程序必须使用**PoCallDriver**，而不是**IoCallDriver** （与其他 irp 相同），以确保系统正确同步 power irp。 有关详细信息，请参阅[调用 IoCallDriver 与调用 PoCallDriver](calling-iocalldriver-versus-calling-pocalldriver.md)。
 
-请记住， *IoCompletion*例程可以调用在 IRQL = 调度\_级别。 因此，如果驱动程序需要进行其他处理在 IRQL = 被动\_级别较低级别的驱动程序已完成与 IRP，驱动程序的后完成例程应将工作项排队，并返回状态\_详细\_处理\_必需。 工作线程必须完成 IRP。
+请记住， *IoCompletion*例程可以在 IRQL = 调度\_级别调用。 因此，如果在较低级别的驱动程序已使用 IRP 完成后，驱动程序需要在 IRQL = 被动\_级别进行额外处理，则驱动程序的完成例程应将工作项排队，然后返回状态\_更多\_处理 @no__需要 t_3_。 工作线程必须完成 IRP。
 
-在 Windows 98 / 驱动程序必须完成我来说，power Irp 在 IRQL = 被动\_级别。
+在 Windows 98/Me 中，驱动程序必须以 IRQL = 被动\_级别完成电源 Irp。
 
 ### <a name="do-not-change-the-function-codes-in-a-power-irp"></a>不要更改 Power IRP 中的函数代码
 
-除了处理 Irp，进行控制的常用规则[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) Irp 具有以下特殊要求：接收电源的驱动程序 IRP 不得更改任何 I/O 堆栈中的位置 IRP，电源管理器或更高级别的驱动程序已设置的主版本号和次函数代码。 电源管理器依赖于这些函数代码，直到完成 IRP 保持不变。 此规则冲突的情况可能会导致难以调试的问题。 例如，操作系统可能会停止响应，或者"挂起"。
+除了控制 Irp 处理的常用规则， [**IRP\_MJ\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)irp 具有以下特殊要求：接收 POWER irp 的驱动程序不得更改中任何 i/o 堆栈位置的主要和次要函数代码由 power manager 或更高级别的驱动程序设置的 IRP。 在完成 IRP 之前，power manager 依赖于这些函数代码保持不变。 违反此规则会导致难以调试的问题。 例如，操作系统可能会停止响应或 "挂起"。
 
-### <a name="do-not-block-while-handling-a-power-irp"></a>不会处理 Power IRP 时阻止
+### <a name="do-not-block-while-handling-a-power-irp"></a>处理 Power IRP 时不阻止
 
-驱动程序必须处理 power Irp 时不会导致长时间的延迟。
+驱动程序在处理电源 Irp 时不得产生长时间的延迟。
 
-传递时关闭电源 IRP，驱动程序应返回从其[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)越早越好后调用例程**IoCallDriver** （在 Windows 7 和 Windows Vista）或**PoCallDriver** （在 Windows Server 2003、 Windows XP 和 Windows 2000）。 驱动程序不得等待内核事件或否则返回之前的延迟。 如果驱动程序不能在很短的时间处理 power IRP，它应返回状态\_PENDING 和直到 IRP 完成的 power 排队所有传入 Irp。 (请注意，此行为是不同的 PnP Irp 和[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程，允许阻止。)
+当传递电源 IRP 时，驱动程序应在调用**IoCallDriver** （在 windows 7 和 windows Vista 中）或**PoCallDriver** （在 Windows SERVER 2003、windows XP 和 windows 2000 中）后，尽快从其[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程返回. 在返回之前，驱动程序不得等待内核事件或延迟。 如果驱动程序无法在短暂的时间内处理 power IRP，它应返回状态\_"挂起"，并将所有传入的 Irp 排队，直到电源 IRP 完成。 （请注意，此行为不同于允许阻止的 PnP Irp 和[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程的行为。）
 
-如果该驱动程序必须等待另一个驱动程序进一步向设备堆栈下的电源操作，则应返回状态\_PENDING 从其*DispatchPower*例程，并且已设置*IoCompletion*用于 power IRP 例程。 该驱动程序可以执行任何任务中它需要*IoCompletion*例程，，然后调用**PoStartNextPowerIrp** （Windows Server 2003、 Windows XP 和 Windows 2000 仅） 和[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)。
+如果驱动程序必须在设备堆栈后面的其他驱动程序等待电源操作，它应返回状态\_" *DispatchPower* " 例程挂起，并为电源 IRP 设置*IoCompletion*例程。 驱动程序可以在*IoCompletion*例程中执行所需的任何任务，然后调用**PoStartNextPowerIrp** （仅限 Windows SERVER 2003、windows XP 和 Windows 2000）和[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)。
 
-例如，设备的电源策略所有者通常将设备电源 IRP 发送以便设置在设备电源状态下适用于请求的系统电源状态的系统电源 IRP 按住。
+例如，设备的电源策略所有者通常会在保留系统电源 IRP 的同时发送设备电源 IRP，以便设置适合于所请求系统电源状态的设备电源状态。
 
-在这种情况下，应设置电源策略所有者*IoCompletion*支持 IRP、 将系统电源 IRP 传递给下一个较低的驱动程序，并返回状态为系统中的例程\_PENDING 从其*DispatchPower*例程。
+在这种情况下，电源策略所有者应在系统电源 IRP 中设置一个*IoCompletion*例程，将系统电源 irp 传递到下一个较低的驱动程序，并从其*DISPATCHPOWER*例程返回状态\_"。
 
-在中*IoCompletion*例程，它将调用**PoRequestPowerIrp**发送设备电源 IRP，将指针传递到请求中的回调例程。 *IoCompletion*例程应返回状态\_详细\_处理\_必需。
+在*IoCompletion*例程中，它调用**PoRequestPowerIrp**来发送设备电源 IRP，并将指针传递到请求中的回调例程。 *IoCompletion*例程应返回状态\_\_需要更多的\_处理。
 
-最后，该驱动程序，关闭系统 IRP 将来自传递回调例程。 驱动程序必须等待中的内核事件及其*DispatchPower*例行事务和使用信号*IoCompletion*例程的 IRP 它当前正在处理; 系统死锁可能会发生。 有关详细信息，请参阅[处理设备电源策略所有者中系统集 Power IRP](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)。
+最后，驱动程序从回调例程向下传递系统 IRP。 驱动程序不得在其*DispatchPower*例程中等待内核事件，并使用*IoCompletion*例程为当前正在处理的 IRP 发出信号;可能会发生系统死锁。 有关详细信息，请参阅[在设备电源策略所有者中处理系统集电源 IRP](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)。
 
-在类似的情况下，当系统即将进入睡眠状态，电源策略所有者可能需要完成一些挂起的 I/O 设备 IRP 发送到其设备关闭电源之前。 而不是 I/O 完成时发生的事件发出信号并等待在其*DispatchPower*例程，该驱动程序应将工作项排队并返回状态\_从 PENDING *DispatchPower*例程。 在工作线程，它等待 I/O 完成并随后将发送设备电源 IRP。 有关详细信息，请参阅[ **IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateworkitem)。
+在类似情况下，当系统进入睡眠状态时，电源策略所有者可能需要先完成一些挂起的 i/o，然后才能将设备 IRP 关闭并关闭其设备。 驱动程序应将工作项排队，并返回状态\_在*DispatchPower*例程中挂起，而不是在 i/o 完成并在其*DispatchPower*例程中等待时发出事件。 在工作线程中，它等待 i/o 完成，然后发送设备电源 IRP。 有关详细信息，请参阅[**IoAllocateWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateworkitem)。
 
  
 

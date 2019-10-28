@@ -1,35 +1,35 @@
 ---
 title: 在视频微型端口驱动程序中注册回调函数
-description: 分别在视频微型端口驱动程序中注册回调函数
+description: 视频微型端口驱动程序中单独注册的回调函数
 ms.assetid: 18469b9b-aca4-4225-97d0-8cafe64b8e1f
 keywords:
-- 微型端口驱动程序 WDK Windows 2000 中，回调函数
-- 回调函数 WDK 微型端口
-- 单独注册的回调函数 WDK 微型端口
-- 注册的回调函数 WDK 微型端口
-- 临时注册 WDK 微型端口
+- 视频微型端口驱动程序 WDK Windows 2000，回调函数
+- 回调函数 WDK 视频微型端口
+- 单独注册的回调函数 WDK 视频微型端口
+- 注册的回调函数 WDK 视频微型端口
+- 临时注册 WDK 视频微型端口
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 263f4321db3524750611cc2ac9e887d9b8b5e7e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 425682003f57d1680e65707c60de08d437b89dbf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385814"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840382"
 ---
 # <a name="registering-callback-functions-in-video-miniport-drivers"></a>在视频微型端口驱动程序中注册回调函数
 
-在某些情况下，供应商提供微型端口驱动程序和系统提供的视频端口驱动程序之间的通信将继续，按如下所示：
+在某些情况下，供应商提供的视频微型端口驱动程序与系统提供的视频端口驱动程序之间的通信将按如下方式进行：
 
-1.  微型端口驱动程序的视频端口驱动程序中调用的函数。
+1.  视频微型端口驱动程序调用视频端口驱动程序中的函数。
 
-2.  视频端口驱动程序函数完成之前，该回调到微型端口驱动程序以获得帮助。
+2.  视频端口驱动程序功能完成前，它会回拨到视频微型端口驱动程序以获得帮助。
 
-当视频微型端口驱动程序调用的视频端口驱动程序函数时，它将指针传递给回调函数。 例如，当微型端口驱动程序调用[ **VideoPortStartDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportstartdma)，它将传递一个指向*HwVidExecuteDma* （由视频实现的回调函数微型端口驱动程序）。
+当视频微型端口驱动程序调用视频端口驱动程序函数时，它会传递一个指向回调函数的指针。 例如，当视频微型端口驱动程序调用[**VideoPortStartDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportstartdma)时，它会传递一个指向*HwVidExecuteDma*回调函数的指针（由视频微型端口驱动程序实现）。
 
-微型端口驱动程序将回调函数的地址传递给视频端口驱动程序函数时它*注册*具有视频端口驱动程序的回调函数。 临时的视频端口驱动程序不会永久存储回调函数指针在意义上注册。 相反，视频端口驱动程序仅在回调函数的执行期间保存函数指针。 这种类型的临时注册的是与很多微型端口驱动程序函数的永久注册。 例如，视频微型端口驱动程序注册过程中起作用的一组**DriverEntry**，和的视频端口驱动程序存储这些函数指针永久设备扩展中。
+当视频微型端口驱动程序将回调函数的地址传递给视频端口驱动程序函数时，它会向视频端口驱动程序*注册*回调函数。 注册是临时性的，因为视频端口驱动程序不会永久存储回调函数指针。 相反，视频端口驱动程序只会在执行回调的函数期间保存函数指针。 这种类型的临时注册与许多视频微型端口驱动程序函数的永久注册相反。 例如，视频微型端口驱动程序在**DriverEntry**期间注册一组函数，视频端口驱动程序会将这些函数指针永久地存储在设备扩展中。
 
-在某些情况下，有意义的微型端口驱动程序实现了多种功能，其中每个可用作特定视频端口驱动程序函数的回调函数。 例如，视频微型端口驱动程序可以实现的多种变体*HwVidQueryDeviceCallback*函数并传递到特定的调用中所选的变体[ **VideoPortGetDeviceData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportgetdevicedata).
+在某些情况下，视频微型端口驱动程序实现多个功能是有意义的，其中每个函数都可以充当特定视频端口驱动程序函数的回调函数。 例如，视频微型端口驱动程序可能会实现*HwVidQueryDeviceCallback*函数的多个变体，并在对[**VideoPortGetDeviceData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportgetdevicedata)的特定调用中传递选择的变体。
 
-可以由微型端口驱动程序实现的回调函数的列表以及有关如何注册这些回调函数的信息，请参阅[单独注册视频微型端口驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+有关可由视频微型端口驱动程序实现的回调函数的列表，以及有关如何注册这些回调函数的信息，请参阅[单独注册的视频微型端口驱动程序函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。

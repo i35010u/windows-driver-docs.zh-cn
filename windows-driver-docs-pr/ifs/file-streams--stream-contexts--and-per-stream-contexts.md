@@ -3,22 +3,22 @@ title: 文件流、流上下文和按流上下文
 description: 文件流、流上下文和按流上下文
 ms.assetid: baea4967-f0d6-4096-aac4-fd38c117b4c6
 keywords:
-- 筛选器驱动程序 WDK 文件系统中，每个流的上下文跟踪
-- 文件系统筛选器驱动程序 WDK，跟踪每个流上下文
-- 每个流上下文跟踪 WDK 文件系统
-- 跟踪每个流上下文 WDK 文件系统
+- 筛选器驱动程序，WDK 文件系统，每流上下文跟踪
+- 文件系统筛选器驱动程序 WDK，每流上下文跟踪
+- 每流上下文跟踪 WDK 文件系统
+- 跟踪每个流的上下文 WDK 文件系统
 - 文件流 WDK
 - 流控制块 WDK 文件系统
 - SCB WDK 文件系统
 - 流上下文 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ca0a1fd9b90ec12a3e0f5e1e66de94507225da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e0d256eea30827f95b7777ff6a18149c5f6d44ee
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385556"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841412"
 ---
 # <a name="file-streams-stream-contexts-and-per-stream-contexts"></a>文件流、流上下文和按流上下文
 
@@ -26,25 +26,25 @@ ms.locfileid: "67385556"
 ## <span id="ddk_file_streams_stream_contexts_and_per_stream_contexts_if"></span><span id="DDK_FILE_STREAMS_STREAM_CONTEXTS_AND_PER_STREAM_CONTEXTS_IF"></span>
 
 
-一个*文件流*是用来保存文件数据的字节序列。 通常一个文件具有只有一个文件流，即该文件的默认数据流。 但是，在支持多个数据流的文件系统，每个文件可以包含多个文件流。 其中之一即是未命名的默认数据流。 其他是已命名备用数据流。 当打开文件时，实际上要打开给定文件的流。
+*文件流*是用于保存文件数据的字节序列。 通常，文件只有一个文件流，即文件的默认数据流。 但是，在支持多个数据流的文件系统上，每个文件可以有多个文件流。 其中一种是未命名的默认数据流。 其他命名为备用数据流。 打开文件时，实际上是打开了给定文件的流。
 
-当文件系统第一次打开一个文件流时，它将创建文件系统特定*流上下文*结构，如文件控制块 (FCB) 或流控制块 (SCB)，并将此结构的地址存储在**FsContext**所生成的文件对象的成员。
+当文件系统首次打开文件流时，它将创建文件系统特定的*流上下文*结构，如文件控制块（FCB）或流控制块（SCB），并将此结构的地址存储在**FsContext**中。生成的文件对象的成员。
 
-对于本地文件系统，如果打开已打开的文件流，则再次 （用于共享读访问，例如），I/O 子系统会创建另一个文件对象，但文件系统不会创建新的流上下文。 这两个文件对象收到相同的流上下文结构的地址。 因此，对于本地文件系统流上下文指针唯一标识文件流。
+对于本地文件系统，如果再次打开已打开的文件流（例如，为共享读取访问），则 i/o 子系统将创建另一个文件对象，但文件系统不会创建新的流上下文。 这两个文件对象均接收相同流上下文结构的地址。 因此，对于本地文件系统，流上下文指针唯一标识文件流。
 
-支持每个流的网络文件系统的上下文中，如果再次使用相同的网络打开已打开的文件流共享名称或 IP 地址，该行为与本地文件系统相同。 I/O 子系统创建新的文件对象，但文件系统不会创建新的流上下文。 相反，它将分配相同**FsContext**到这两个文件对象的指针值。 但是，如果使用不同的路径 （例如，其他的共享名或使用共享名称以前打开的文件的 IP 地址） 打开的文件流，则文件系统的确创建新的流上下文。 因此，对于支持每个流上下文的网络文件系统**FsContext**指针不唯一标识文件流。
+对于支持每个流的上下文的网络文件系统，如果使用相同的网络共享名或 IP 地址再次打开已打开的文件流，则行为与本地文件系统相同。 I/o 子系统会创建一个新的文件对象，但文件系统不会创建新的流上下文。 相反，它会将相同的**FsContext**指针值分配给这两个文件对象。 但是，如果使用不同的路径（例如，不同的共享名，或以前使用共享名打开的文件的 IP 地址）打开文件流，则文件系统将创建一个新的流上下文。 因此，对于支持每个流的上下文的网络文件系统， **FsContext**指针不会唯一标识文件流。
 
-一个*每个流上下文*是筛选器定义的结构，其中包含[ **FSRTL\_每\_流\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff547357)结构作为其成员之一。 筛选器驱动程序使用此结构来跟踪每个打开的文件系统的文件流有关的信息。
+*每个流上下文*是一个筛选器定义的结构，其中包含[**每个\_流的 FSRTL\_，\_上下文**](https://msdn.microsoft.com/library/windows/hardware/ff547357)结构作为其成员之一。 筛选器驱动程序使用此结构跟踪文件系统打开的每个文件流的相关信息。
 
-### <a name="span-idfilesystemsupportforper-streamcontextsspanspan-idfilesystemsupportforper-streamcontextsspanspan-idfilesystemsupportforper-streamcontextsspanfile-system-support-for-per-stream-contexts"></a><span id="File_System_Support_for_Per-Stream_Contexts"></span><span id="file_system_support_for_per-stream_contexts"></span><span id="FILE_SYSTEM_SUPPORT_FOR_PER-STREAM_CONTEXTS"></span>文件系统支持的每个 Stream 上下文
+### <a name="span-idfile_system_support_for_per-stream_contextsspanspan-idfile_system_support_for_per-stream_contextsspanspan-idfile_system_support_for_per-stream_contextsspanfile-system-support-for-per-stream-contexts"></a><span id="File_System_Support_for_Per-Stream_Contexts"></span><span id="file_system_support_for_per-stream_contexts"></span><span id="FILE_SYSTEM_SUPPORT_FOR_PER-STREAM_CONTEXTS"></span>针对每个流的上下文的文件系统支持
 
-Microsoft Windows XP 及更高版本，支持每个流上下文的文件系统必须使用包含的流上下文结构[ **FSRTL\_高级\_FCB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)结构。
+在 Microsoft Windows XP 和更高版本上，支持每个流的上下文的文件系统必须使用包含[**FSRTL\_ADVANCED\_FCB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)结构的流上下文结构。
 
-文件系统为所有与特定文件流关联的每个流上下文的全局列表。 文件系统时创建新的流上下文 (FSRTL\_高级\_FCB\_标头对象) 的文件流，它会调用[ **FsRtlSetupAdvancedHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff547257)到初始化此列表。 当文件系统筛选器驱动程序调用[ **FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)，筛选器创建的每个流上下文添加到全局列表。
+与特定文件流关联的每个流上下文的全局列表由文件系统拥有。 当文件系统为文件流创建新的流上下文（FSRTL\_ADVANCED\_FCB\_标头对象）时，它将调用[**FsRtlSetupAdvancedHeader**](https://msdn.microsoft.com/library/windows/hardware/ff547257)来初始化此列表。 当文件系统筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194)时，会将筛选器创建的每个流的上下文添加到全局列表。
 
-当文件系统中删除文件流及其流上下文时，它将调用[ **FsRtlTeardownPerStreamContexts** ](https://msdn.microsoft.com/library/windows/hardware/ff547295)来释放所有筛选器已将文件流关联的每个流上下文。 此例程调用[ **FreeCallback** ](https://msdn.microsoft.com/library/windows/hardware/ff547357)例行为每个全局列表中的每个流上下文。 请注意， **FreeCallback**例程必须假定已释放的文件流的文件对象。
+当文件系统删除文件流的流上下文时，它会调用[**FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)来释放筛选器与文件流关联的所有每个流的上下文。 此例程为全局列表中的每个流上下文调用[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程。 请注意， **FreeCallback**例程必须假定文件流的文件对象已被释放。
 
-若要查询文件系统是否支持每个流上下文由给定的文件对象表示的文件流，请调用[ **FsRtlSupportsPerStreamContexts** ](https://docs.microsoft.com/previous-versions/ff547285(v=vs.85))上的文件对象。 请注意对于某些类型的文件，但没有为其他文件系统，可能会支持每个流上下文。 例如，NTFS 和 FAT 当前不支持每个流上下文的分页文件。 因此如果**FsRtlSupportsPerStreamContexts**返回**TRUE**对于一个文件流，这并不意味着，它将返回**TRUE**流的所有文件。
+若要查询文件系统是否支持给定文件对象表示的文件流的每个流上下文，请对文件对象调用[**FsRtlSupportsPerStreamContexts**](https://docs.microsoft.com/previous-versions/ff547285(v=vs.85)) 。 请注意，对于某些类型的文件，文件系统可能支持每流上下文，但不适用于其他文件。 例如，NTFS 和 FAT 目前不支持页面文件的每个流的上下文。 因此，如果**FsRtlSupportsPerStreamContexts**对一个文件流返回**true** ，这并不意味着它将为所有文件流返回**true** 。
 
  
 

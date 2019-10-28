@@ -4,31 +4,31 @@ description: MB 微型端口驱动程序初始化
 ms.assetid: cf332eb4-faea-40e3-b313-512f81718267
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 948eb025627d16e75b0014205a0edd773d16240e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5dd22980b7485d815bdd30fdba8c9fc7d8161703
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357820"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844286"
 ---
 # <a name="mb-miniport-driver-initialization"></a>MB 微型端口驱动程序初始化
 
 
-下图表示执行来确定接口是否限定为 MB 接口并收集有关设备功能的信息的过程。 MB 服务启动时，以及与每个新的接口到达服务运行时的每个枚举 MB 接口执行这些步骤。 粗体表示 OID 标识符或事务流控制中的标签和中常规文本的标签表示 OID 结构中的重要标志。
+下图显示了确定接口是否被限定为 MB 接口以及收集有关设备功能的信息所执行的过程。 当启动 MB 服务时，将为每个枚举的 MB 接口执行这些步骤，并在服务运行时针对每个新的接口到达执行这些步骤。 以粗体显示的标签表示 OID 标识符或事务流控制，而常规文本中的标签表示 OID 结构中的重要标志。
 
-![说明建立接口受限定为 mb 接口，并举例说明收集有关设备功能的信息的关系图](images/wwandriverinitproc.png)
+![说明如何在接口被限定为 mb 接口的情况下建立的关系图，并说明如何收集有关设备功能的信息](images/wwandriverinitproc.png)
 
 若要初始化 MB 微型端口驱动程序，请使用以下过程：
 
-1.  MB 服务发送同步 （阻塞） [OID\_代\_物理\_中等](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium)查询请求以确定的 MB 设备类型。 微型端口驱动程序使用响应**NdisPhysicalMediumWirelessWan**以指示 MB 设备是 WWAN 设备。
+1.  MB 服务向[\_物理\_中型](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-physical-medium)查询请求发送同步（阻塞） OID\_来识别 MB 设备的类型。 微型端口驱动程序通过**NdisPhysicalMediumWirelessWan**进行响应，以指示 MB 设备为 WWAN 设备。
 
-2.  MB 服务发送同步 （阻塞） [OID\_代\_媒体\_支持](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-supported)微型端口驱动程序的查询请求以确定哪种中等 MB 设备使用。 微型端口驱动程序使用响应**NdisMedium802\_3**以指示它使用以太网仿真。
+2.  MB 服务向微型端口驱动程序发送同步（阻塞） [OID\_代\_媒体\_支持](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-media-supported)的查询请求，以确定 MB 设备使用的介质类型。 微型端口驱动程序使用**NdisMedium802\_3**进行响应，以指示它使用以太网模拟。
 
-3.  MB 服务发送同步 （阻塞） [OID\_WWAN\_驱动程序\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)查询请求来确定哪些驱动程序模型版本的微型端口驱动程序微型端口驱动程序支持。 微型端口驱动程序会使用 WWAN 进行响应\_版本。
+3.  MB 服务向微型端口驱动程序发送同步（阻塞） [OID\_WWAN\_DRIVER\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)查询请求，以识别微型端口驱动程序支持的驱动程序型号版本。 微型端口驱动程序通过 WWAN\_版本做出响应。
 
-4.  MB 服务发送异步 （非阻塞） [OID\_WWAN\_设备\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)微型端口驱动程序的查询请求来标识 MB 设备的功能。 微型端口驱动程序使用临时确认响应，它已收到请求，并且它将发送包含所需的信息在将来的通知。
+4.  MB 服务向微型端口驱动程序发送异步（非阻塞） [OID\_WWAN\_设备\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)查询请求，以确定 MB 设备的功能。 微型端口驱动程序使用其收到请求的临时确认进行响应，并且它将在将来发送包含所需信息的通知。
 
-5.  微型端口驱动程序发送[ **NDIS\_状态\_WWAN\_设备\_CAPS** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)到指示的功能的 MB 服务通知MB 设备微型端口驱动程序支持。 例如，如果微型端口驱动程序支持基于 GSM 的设备，还应指定**WwanCellularClassGsm**中的值**DeviceCaps.WwanCellularClass**的成员[ **NDIS\_WWAN\_设备\_CAP** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构。 如果微型端口驱动程序支持基于 CDMA 的设备，还应指定**WwanCellularClassCdma**。
+5.  微型端口驱动程序将[**NDIS\_状态\_WWAN\_设备\_cap**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-caps)通知发送到 mb 服务，该服务指示微型端口驱动程序支持的 mb 设备的功能。 例如，如果微型端口驱动程序支持基于 GSM 的设备，则它应在[**NDIS\_WWAN\_设备\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_caps)结构的**WwanCellularClass**成员中指定**WwanCellularClassGsm**值。 如果微型端口驱动程序支持基于 CDMA 的设备，则应指定**WwanCellularClassCdma**。
 
  
 

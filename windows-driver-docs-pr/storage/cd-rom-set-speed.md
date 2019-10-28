@@ -4,39 +4,39 @@ description: CD-ROM 设置速度
 ms.assetid: 25a46b23-f823-4fc7-a370-cab1c9418a94
 keywords:
 - CD-ROM 驱动程序 WDK 存储
-- 存储 CD-ROM 驱动程序 WDK
-- 电源管理 WDK CD-ROM
-- 速度 WDK CD-ROM
-- 电池电量 WDK CD-ROM
+- 存储 cd-rom 驱动程序 WDK
+- 电源管理 WDK cd-rom
+- 加速 WDK CD-ROM
+- 电池电量 WDK cd-rom
 - 播放速度 WDK CD-ROM
-- 主轴转速 WDK CD-ROM
-- 设置 CD 的速度
+- 纺锤速度 WDK 光盘
+- 设置 CD 速度
 - 设置流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 527cbf2b02a93ad47a3f32ca76ec4d1dcf1ad615
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 88eccaddae806250717a2975a984c857185ca6d6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368342"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841627"
 ---
 # <a name="cd-rom-set-speed"></a>CD-ROM 设置速度
 
 
-通常很方便地旋转 CDs 小于最佳主轴转速 CD-ROM 驱动器允许的速度。 例如，便携式计算机在快速启动的 CD-ROM 驱动器消耗电池的速度非常快。 可以将 CD-ROM 驱动器设置为较低的速度，节省电池电量。
+旋转光盘的速度通常比 cd-rom 驱动器所允许的最佳主轴速度要快。 例如，在便携式计算机中，高速旋转的 cd-rom 驱动器的速度很快就会耗尽电池。 可以将 cd-rom 驱动器设置为低速，以节省电池电量。
 
-某些计算机不需要 CD-ROM 驱动器以高的速度运行。 例如，在 media center 计算机 CD-ROM 驱动器主要执行不需要速度高于 1 X 的操作，例如音频播放。 在该数值调节钮的 CD-ROM 驱动器，例如，在播放，16 X 时仅 1 倍的速度是必需的可以生成会导致不良用户体验的大噪音。
+某些计算机不要求 CD-ROM 驱动器的运行速度较高。 例如，media center 计算机中的 CD-ROM 驱动器主要执行无需速度高于1X 的操作，如音频播放。 例如，在播放期间16X 的 CD-ROM 驱动器只需要1X 的速度时，可能会产生很大的干扰，导致用户体验不佳。
 
-版本 2 *scsi-3 多媒体命令*(MMC) 规范定义了用于设置 CD-ROM 速度的两个命令：设置 CD 速度和设置流式处理。 在 Windows Vista 中，应用程序可以通过发送指示 CD-ROM 类驱动程序问题，这两个命令之一[ **IOCTL\_CDROM\_设置\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)对类驱动程序的请求。
+*Scsi-3 多媒体命令*（MMC）规范的第2版定义了用于设置 cd-rom 速度的两个命令：设置 cd 速度和设置流式处理。 在 Windows Vista 中，应用程序可以通过[**将 IOCTL 发送\_CDROM\_将\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ni-ntddcdrm-ioctl_cdrom_set_speed)请求发送到类驱动程序，指示 cd-rom 类驱动程序发出这两个命令之一。
 
-若要发送到 CD-ROM 设备设置 CD 速度命令，调用方指定的请求类型**CdromSetSpeed**中**RequestType**的成员[ **CDROM\_设置\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)，在输入到 IOCTL\_CDROM\_设置\_速度。
+若要将 SET CD 速度命令发送到 CD-ROM 设备，调用方将在 Cdrom 的**RequestType**成员中指定**CdromSetSpeed**的请求类型， [ **\_设置\_速度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_speed)，\_cdrom\_设置\_速度。
 
-若要将设置流式处理命令发送到设备，调用方指定的请求类型**CdromSetStreaming**中**RequestType**的成员[ **CDROM\_设置\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)，在输入到 IOCTL\_CDROM\_设置\_速度。
+若要将设置流命令发送到设备，调用方在[**cdrom\_设置\_流式处理**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddcdrm/ns-ntddcdrm-_cdrom_set_streaming)\_CDROM\_**集的输入**上指定**CdromSetStreaming**的请求类型\_快速.
 
-如果应用程序更改主轴转速使用设置 CD 速度命令，设备会自动返回到其默认速度更改媒体时。 如果应用程序更改主轴转速使用设置流式处理命令，媒体的更改不会影响速度，除非调用方指定的值，否则**FALSE**中**的永久**CDROM 的成员\_设置\_流式处理结构。
+如果应用程序使用 "设置 CD 速度" 命令更改了主轴速度，则当媒体更改时，设备将自动恢复为其默认速度。 如果应用程序使用 "设置流式处理" 命令更改了主轴速度，则介质的更改不会影响速度，除非调用方在 CDROM 的**持久**成员中指定了**FALSE**的值，\_将\_流式处理结构。
 
-设置流式处理请求仅适用于 MMC 合规的设备。 如果应用程序将此请求发送到设备不合规 MMC，CD-ROM 类驱动程序将无法发送请求。
+设置流式处理请求仅在符合 MMC 的设备上运行。 如果应用程序将此请求发送到与 MMC 不兼容的设备，则 cd-rom 类驱动程序将无法请求。
 
  
 

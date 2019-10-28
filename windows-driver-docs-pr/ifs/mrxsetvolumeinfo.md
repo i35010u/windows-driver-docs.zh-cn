@@ -1,6 +1,6 @@
 ---
-title: MRxSetVolumeInfo routine
-description: TheMRxSetVolumeInfo 例程调用 RDBSS 请求网络微型重定向设置卷信息。
+title: MRxSetVolumeInfo 例程
+description: TheMRxSetVolumeInfo 例程由 RDBSS 调用，请求网络小型重定向器设置卷信息。
 ms.assetid: 88a1809f-545a-4822-8fc3-27adf1c94835
 keywords:
 - MRxSetVolumeInfo 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7707f19c8876eb5db9bf1f856b8aa705538be2bf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0fa544c2a60c3906b3a4737df4761c43bff92305
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360872"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841071"
 ---
-# <a name="mrxsetvolumeinfo-routine"></a>MRxSetVolumeInfo routine
+# <a name="mrxsetvolumeinfo-routine"></a>MRxSetVolumeInfo 例程
 
 
-*MRxSetVolumeInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向设置卷信息。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetVolumeInfo*例程来请求网络小型重定向程序设置卷信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetVolumeInfo(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetVolumeInfo*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxSetVolumeInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,7 +64,7 @@ NTSTATUS MRxSetVolumeInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -72,7 +72,7 @@ NTSTATUS MRxSetVolumeInfo(
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
@@ -84,11 +84,11 @@ NTSTATUS MRxSetVolumeInfo(
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_NOT_IMPLEMENTED</strong></td>
-<td align="left"><p>未实现请求的功能。</p></td>
+<td align="left"><p>未实现所请求的功能。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_NOT_SUPPORTED</strong></td>
-<td align="left"><p>在远程共享上不支持请求。</p></td>
+<td align="left"><p>远程共享上不支持该请求。</p></td>
 </tr>
 </tbody>
 </table>
@@ -98,15 +98,15 @@ NTSTATUS MRxSetVolumeInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxSetVolumeInfo*接收响应[ **IRP\_MJ\_设置\_卷\_信息**](irp-mj-set-volume-information.md)请求。
+RDBSS 发出对*MRxSetVolumeInfo*的调用，以响应接收[**IRP\_MJ\_设置\_卷\_信息**](irp-mj-set-volume-information.md)请求。
 
-然后再调用*MRxSetVolumeInfo*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxSetVolumeInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**Info.FsInformationClass**成员设置为**IrpSp-&gt;Parameters.SetVolume.FsInformationClass**。
+**FsInformationClass**成员设置为**IrpSp-&gt;SetVolume. FsInformationClass**。
 
-**Info.Buffer**成员设置为**Irp-&gt;AssociatedIrp.SystemBuffer**。
+**Info. Buffer**成员设置为**Irp-&gt;AssociatedIrp. SystemBuffer**。
 
-**Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.SetVolume.Length**。
+**LengthRemaining**成员设置为**IrpSp-&gt;SetVolume**。
 
 <a name="requirements"></a>要求
 ------------
@@ -119,19 +119,19 @@ RDBSS 发出调用*MRxSetVolumeInfo*接收响应[ **IRP\_MJ\_设置\_卷\_信息
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

@@ -3,20 +3,20 @@ title: FCB 资源同步
 description: FCB 资源同步
 ms.assetid: 8355907e-e313-4e54-a63f-a82d9ce0d31b
 keywords:
-- RDBSS WDK 的文件系统，FCB 资源同步
-- 重定向驱动器缓冲子系统 WDK 的文件系统，FCB 资源同步
+- RDBSS WDK 文件系统，FCB 资源同步
+- 重定向驱动器缓冲子系统 WDK 文件系统，FCB 资源同步
 - FCB 资源同步 WDK RDBSS
-- 分页 I/O WDK RDBSS
+- 分页 i/o WDK RDBSS
 - 同步 WDK RDBSS
 - 文件控制块结构 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 22b081986d13f7aaaebf5683b81ac77481b4f46f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: edcd3d8030a7d23b692edf9ab83472199ca23903
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386088"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841417"
 ---
 # <a name="fcb-resource-synchronization"></a>FCB 资源同步
 
@@ -24,7 +24,7 @@ ms.locfileid: "67386088"
 ## <span id="ddk_fcb_resource_synchronization_if"></span><span id="DDK_FCB_RESOURCE_SYNCHRONIZATION_IF"></span>
 
 
-最小重定向程序驱动程序感兴趣的同步资源主要与相关联 FCB。 都分页 I/O 资源和常规资源。 分页 I/O 资源由 RDBSS 在内部管理。 最小重定向程序驱动程序可以访问的唯一资源是应使用下面提供的例程访问的常规资源：
+最小重定向程序驱动程序所需的同步资源主要与 FCB 关联。 存在分页 i/o 资源和常规资源。 分页 i/o 资源由 RDBSS 在内部进行管理。 最小化重定向程序驱动程序可访问的唯一资源是常规资源，应使用以下提供的例程访问该资源：
 
 <table>
 <colgroup>
@@ -39,33 +39,33 @@ ms.locfileid: "67386088"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireExclusiveFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx)"><strong>RxAcquireExclusiveFcbResourceInMRx</strong></a></p></td>
-<td align="left"><p>此例程将获取独占模式下的 FCB 资源。 此例程将等待 FCB 资源之前获取它; 如果免费此例程不返回控件，直到获取独占资源。 此例程获取 FCB 资源，即使已取消与此 FCB 相关联的 RX_CONTEXT 结构。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireExclusiveFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx)"><strong>RxAcquireExclusiveFcbResourceInMRx</strong></a></p></td>
+<td align="left"><p>此例程获取独占模式下的 FCB 资源。 如果之前已获取 FCB 资源，此例程将等待该资源空闲;在获取独占资源之前，此例程不会返回控制。 即使已取消与此 FCB 关联的 RX_CONTEXT 结构，此例程也会获取 FCB 资源。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx)"><strong>RxAcquireSharedFcbResourceInMRx</strong></a></p></td>
-<td align="left"><p>此例程将获取在共享模式下的 FCB 资源。 此例程将等待要是如果以前以独占方式; 获取免费的 FCB 资源此例程不返回控件，直到获取共享的资源。 此例程获取 FCB 资源，即使已取消与此 FCB 相关联的 RX_CONTEXT 结构。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx)"><strong>RxAcquireSharedFcbResourceInMRx</strong></a></p></td>
+<td align="left"><p>此例程获取共享模式下的 FCB 资源。 如果以前以独占方式获取 FCB 资源，此例程将等待该资源空闲;在获取共享资源之前，此例程不会返回控制。 即使已取消与此 FCB 关联的 RX_CONTEXT 结构，此例程也会获取 FCB 资源。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRxEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex)"><strong>RxAcquireSharedFcbResourceInMRxEx</strong></a></td>
-<td align="left"><p>此例程将获取在共享模式下的 FCB 资源。 此例程将等待要是如果以前以独占方式; 获取免费的 FCB 资源此例程不返回控件，直到获取共享的资源。 此例程获取 FCB 资源，即使已取消与此 FCB 相关联的 RX_CONTEXT 结构。</p>
-<p>Windows Server 2003 Service Pack 1 (SP1) 及更高版本，此例程才可用。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRxEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex)"><strong>RxAcquireSharedFcbResourceInMRxEx</strong></a></td>
+<td align="left"><p>此例程获取共享模式下的 FCB 资源。 如果以前以独占方式获取 FCB 资源，此例程将等待该资源空闲;在获取共享资源之前，此例程不会返回控制。 即使已取消与此 FCB 关联的 RX_CONTEXT 结构，此例程也会获取 FCB 资源。</p>
+<p>此例程仅在 Windows Server 2003 Service Pack 1 （SP1）和更高版本上可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx" data-raw-source="[&lt;strong&gt;RxReleaseFcbResourceForThreadInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)"><strong>RxReleaseFcbResourceForThreadInMRx</strong></a></td>
-<td align="left"><p>此例程释放以前使用获取的 FCB 资源<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRxEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex)"> <strong>RxAcquireSharedFcbResourceInMRxEx</strong></a>。</p>
-<p>此例程才适用于 Windows Server 2003 Service Pack 1 及更高版本。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx" data-raw-source="[&lt;strong&gt;RxReleaseFcbResourceForThreadInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceforthreadinmrx)"><strong>RxReleaseFcbResourceForThreadInMRx</strong></a></td>
+<td align="left"><p>此例程释放以前使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRxEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrxex)"><strong>RxAcquireSharedFcbResourceInMRxEx</strong></a>获取的 FCB 资源。</p>
+<p>此例程仅在 Windows Server 2003 Service Pack 1 和更高版本上可用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxReleaseFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxreleasefcbresourceinmrx)"><strong>RxReleaseFcbResourceInMRx</strong></a></p></td>
-<td align="left"><p>此例程释放以前使用获取的 FCB 资源<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireExclusiveFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx)"> <strong>RxAcquireExclusiveFcbResourceInMRx</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx)"> <strong>RxAcquireSharedFcbResourceInMRx</strong></a>.</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxReleaseFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxreleasefcbresourceinmrx)"><strong>RxReleaseFcbResourceInMRx</strong></a></p></td>
+<td align="left"><p>此例程释放以前使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireExclusiveFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquireexclusivefcbresourceinmrx)"><strong>RxAcquireExclusiveFcbResourceInMRx</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx" data-raw-source="[&lt;strong&gt;RxAcquireSharedFcbResourceInMRx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrxfcb/nf-mrxfcb-rxacquiresharedfcbresourceinmrx)"><strong>RXACQUIRESHAREDFCBRESOURCEINMRX</strong></a>获取的 FCB 资源。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-若要确定当前线程是否有权访问 FCB 常规资源 rxprocs.h 标头文件中定义以下宏。
+以下宏在 rxprocs 头文件中定义，以确定当前线程是否有权访问 FCB 常规资源。
 
 <table>
 <colgroup>
@@ -80,20 +80,20 @@ ms.locfileid: "67386088"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>RxFcbAcquiredShared</strong> (<em>RXCONTEXT</em>, <em>FCB</em>)</p></td>
-<td align="left"><p>此宏检查当前线程是否在共享模式下具有常规资源的访问权限。 此宏将调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>例程。</p></td>
+<td align="left"><p><strong>RxFcbAcquiredShared</strong> （<em>RXCONTEXT</em>， <em>FCB</em>）</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问共享模式下的常规资源。 此宏调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a>例程。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxIsFcbAcquiredShared</strong> (<em>FCB</em>)</p></td>
-<td align="left"><p>此宏检查当前线程是否在共享模式下具有常规资源的访问权限。 此宏将调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>例程。</p></td>
+<td align="left"><p><strong>RxIsFcbAcquiredShared</strong> （<em>FCB</em>）</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问共享模式下的常规资源。 此宏调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a>例程。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>RxIsFcbAcquiredExclusive</strong> (<em>FCB</em>)</p></td>
-<td align="left"><p>此宏检查当前线程具有独占模式下对常规资源的访问。 此宏将调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)"> <strong>ExIsResourceAcquiredExclusiveLite</strong> </a>例程。</p></td>
+<td align="left"><p><strong>RxIsFcbAcquiredExclusive</strong> （<em>FCB</em>）</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问独占模式下的常规资源。 此宏调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)"><strong>ExIsResourceAcquiredExclusiveLite</strong></a>例程。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>RxIsFcbAcquired</strong> (<em>FCB</em>)</p></td>
-<td align="left"><p>此宏检查当前线程是否在共享或排他模式下具有常规资源的访问权限。 此宏将调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)"> <strong>ExIsResourceAcquiredSharedLite</strong> </a>并<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)"> <strong>ExIsResourceAcquiredExclusiveLite</strong> </a>例程。</p></td>
+<td align="left"><p><strong>RxIsFcbAcquired</strong> （<em>FCB</em>）</p></td>
+<td align="left"><p>此宏检查当前线程是否有权访问共享或独占模式下的常规资源。 此宏将调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredSharedLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)"><strong>ExIsResourceAcquiredSharedLite</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite" data-raw-source="[&lt;strong&gt;ExIsResourceAcquiredExclusiveLite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)"><strong>ExIsResourceAcquiredExclusiveLite</strong></a>例程。</p></td>
 </tr>
 </tbody>
 </table>

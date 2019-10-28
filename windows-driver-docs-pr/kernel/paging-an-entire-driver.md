@@ -3,18 +3,18 @@ title: 将整个驱动程序分页
 description: 将整个驱动程序分页
 ms.assetid: d861160f-e429-4ff3-9ca6-4fce4d5d6c1b
 keywords:
-- 可分页的驱动程序 WDK 内核，分页整个驱动程序
+- 可分页驱动程序 WDK 内核，分页整个驱动程序
 - 分页整个驱动程序 WDK
-- 引用计数 WDK 可分页的驱动程序
-- 重写可分页或 nonpageable 特性 WDK
+- 引用计数 WDK 可分页驱动程序
+- 重写可分页或不可分页属性 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30de997a680a554ed1d3b920bfd76c5b00d30c3c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c8055ab798c473c4d82b9dfe8fd4a37ea690e9bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383811"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838520"
 ---
 # <a name="paging-an-entire-driver"></a>将整个驱动程序分页
 
@@ -22,23 +22,23 @@ ms.locfileid: "67383811"
 
 
 
-使用的驱动程序**MmLockPagable * Xxx*** 支持例程，并指定分页和可放弃部分包含非分页的部分、 分页的部分中和驱动程序初始化之后，将放弃 INIT 部分。
+使用**MmLockPagable * Xxx*** 支持例程并指定分页和可放弃部分的驱动程序由未分页的部分、分页部分和初始化驱动程序后放弃的 INIT 部分组成。
 
-设备驱动程序连接中断它所管理的设备后，驱动程序的中断处理路径必须驻留在系统空间中。 在发生中断时的情况下，中断处理代码必须是不能换出，驱动程序部分的一部分。
+设备驱动程序连接它管理的设备的中断后，驱动程序的中断处理路径必须在系统空间中。 中断处理代码必须是无法分页的驱动程序部分的一部分，以防发生中断。
 
-两个额外的内存管理器例程[ **MmPageEntireDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmpageentiredriver)并[ **MmResetDriverPaging**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmresetdriverpaging)，可用于重写可分页或 nonpageable 属性组成的驱动程序映像的所有部分。 这些例程启用分页出整个时它所管理的设备未被使用，无法生成中断的驱动程序。
+另外两个内存管理器例程（ [**MmPageEntireDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmpageentiredriver)和[**MmResetDriverPaging**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmresetdriverpaging)）可用于替代构成驱动程序映像的所有部分的可分页或不可分页属性。 当驱动程序所管理的设备未被使用并且无法生成中断时，这些例程可以使驱动程序完全分页。
 
-完全可分页的系统驱动程序的示例包括 win32k.sys 驱动程序、 串行驱动程序、 邮件槽驱动程序、 提示音驱动程序和 null 的驱动程序。
+完全可分页的系统驱动程序的示例包括 win32k.sys 驱动程序、串行驱动程序、mailslot 驱动程序、蜂鸣驱动程序和 null 驱动程序。
 
-串行驱动程序通常会间歇性地使用。 只有先打开它所管理的端口，串行驱动程序可以出页完全。 一旦打开某个端口时，必须驻留在内存中的串行驱动程序的各个部分必须置于非分页的系统空间。 该驱动程序的其他部分可以保持可分页。
+串行驱动程序通常会间歇地使用。 在打开它管理的端口之前，串行驱动程序可以完全分页。 打开端口后，必须将内存驻留的串行驱动程序的部分置于非分页系统空间。 驱动程序的其他部分可以保持可分页。
 
-可以完全调出的驱动程序应调用**MmPageEntireDriver**驱动程序初始化之前中断连接过程。
+在连接中断之前，可以完全分页的驱动程序应在驱动程序初始化期间调用**MmPageEntireDriver** 。
 
-当调出驱动程序管理的设备收到了打开请求时，该驱动程序中分页。 然后，该驱动程序必须调用[ **MmResetDriverPaging** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmresetdriverpaging)它连接到中断之前。 调用**MmResetDriverPaging**导致内存管理器将驱动程序的部分根据在编译和链接过程中获取的属性。 为非分页，如文本部分中，任何部分将分页到非分页的系统内存;被引用，将在分页可分页的部分。
+当由分页的驱动程序管理的设备收到打开的请求时，驱动程序将在中分页。 然后，驱动程序必须在连接到中断之前调用[**MmResetDriverPaging**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmresetdriverpaging) 。 调用**MmResetDriverPaging**会使内存管理器根据在编译和链接过程中获取的属性来处理驱动程序的部分。 未分页的任何部分（例如文本部分）都将分页到未分页的系统内存中;可分页节将在被引用时分页。
 
-此类驱动程序必须向其设备保持打开的句柄的引用计数。 该驱动程序增加在任何设备和减少每次打开请求的计数在每个关闭的请求计数。 该驱动程序时计数达到零时，应断开连接中断，然后调用**MmPageEntireDriver**。 如果驱动程序管理多台设备，计数必须先为零的所有此类设备驱动程序可以调用**MmPageEntireDriver**。
+此类驱动程序必须在其设备上保留打开句柄的引用计数。 该驱动程序将递增每个打开请求的计数，并在每个关闭请求时减少计数。 当计数达到零时，驱动程序应断开中断，然后调用**MmPageEntireDriver**。 如果驱动程序管理多个设备，则所有此类设备的计数必须为零，驱动程序才能调用**MmPageEntireDriver**。
 
-在驱动程序负责执行任何同步时是必需的更改的引用计数，并以避免引用计数更改时，驱动程序的可分页状态已更改。 即，在 SMP 计算机，该驱动程序必须确保**MmPageEntireDriver**正在一个处理器，在另一个处理器上，对 open 的调用会引起中断连接和引用计数为不能为递增。
+驱动程序的责任是在更改引用计数时执行任何需要的同步，并在驱动程序的可分页状态发生变化时阻止引用计数更改。 也就是说，在 SMP 计算机中，驱动程序必须确保**MmPageEntireDriver**在一个处理器上无法进行，而在另一个处理器上，打开的调用会导致连接中断，并且引用计数将递增。
 
  
 

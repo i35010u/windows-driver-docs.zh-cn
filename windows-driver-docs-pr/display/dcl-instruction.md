@@ -4,12 +4,12 @@ description: DCL 指令格式
 ms.assetid: 2833fe6a-f430-4a34-936f-04e997063671
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0117a883bd9ac1a8bd1090b368768fdfa1d56ff4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff5fd4c0c19bd26072167c252b4a9f1384a3dccd
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358672"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839768"
 ---
 # <a name="dcl-instruction-format"></a>DCL 指令格式
 
@@ -19,163 +19,163 @@ ms.locfileid: "67358672"
 
 DCL 指令声明寄存器。
 
-### <a name="span-idformatspanspan-idformatspanformat"></a><span id="format"></span><span id="FORMAT"></span>格式
+### <a name="span-idformatspanspan-idformatspanformat"></a><span id="format"></span><span id="FORMAT"></span>形式
 
-**像素着色器 2\_0 及更高版本。**
+**象素着色器2仅\_0 和更高版本。**
 
-**采样器状态仅注册。**
+**采样器状态仅寄存器。**
 
-[指令令牌](instruction-token.md)
-
-包含 D3DSIO\_DCL。
-DWORD 标记
-
-具有以下位格式：
-
-**\[26:0\]** 保留。 设为 0x0。
-
-**\[30:27\]** 设置为 D3DSAMPLER\_纹理\_类型 2D、 多维数据集，等等。
-
-**\[31\]** 设置为 0x1。
-
-[目标参数标记](destination-parameter-token.md)
-
-指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_采样器。 这些是使用此令牌中的唯一字段。
-
-**输入或纹理仅注册。**
-
-[指令令牌](instruction-token.md)
+[指令标记](instruction-token.md)
 
 包含 D3DSIO\_DCL。
 DWORD 标记
 
 具有以下位格式：
 
-**\[30:0\]** 保留。 设为 0x0。
+**\[26:0\]** 保护. 设置为0x0。
 
-**\[31\]** 设置为 0x1。
+**\[30:27\]** 设置为 D3DSAMPLER\_纹理\_类型（对于2D、多维数据集等）。
+
+**\[31\]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
-指示输入或纹理寄存器号。 写掩码字段指示声明的组件。
+指示寄存器号和[寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)为 D3DSPR\_采样器。 这是此标记中使用的唯一字段。
 
-**顶点着色器 2\_0 及更高版本。**
+**仅限输入或纹理寄存器。**
 
-**输入的注册。**
-
-[指令令牌](instruction-token.md)
+[指令标记](instruction-token.md)
 
 包含 D3DSIO\_DCL。
 DWORD 标记
 
 具有以下位格式：
 
-**\[4:0\]**  D3DDECLUSAGE 值 (即，D3DDECLUSAGE\_TEXCOORD、 D3DDECLUSAGE\_正常，等等)。
+**\[30:0\]** 保护. 设置为0x0。
 
-**\[15:5\]** 保留。 设为 0x0。
-
-**\[19:16\]** 使用索引值。
-
-**\[30:20\]** 保留。 设为 0x0。
-
-**\[31\]** 设置为 0x1。
+**\[31\]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_输入。 写掩码字段指示声明的组件。
+指示输入或纹理寄存器号。 写入掩码字段指示已声明的组件。
 
-**像素着色器 3\_0 及更高版本。**
+**顶点着色器2仅\_0 和更高版本。**
 
-**纹理寄存器。**
+**仅输入寄存器。**
 
-[指令令牌](instruction-token.md)
+[指令标记](instruction-token.md)
 
 包含 D3DSIO\_DCL。
 DWORD 标记
 
 具有以下位格式：
 
-**\[4:0\]**  D3DDECLUSAGE 值 (必须是 D3DDECLUSAGE\_TEXCOORD 或 D3DDECLUSAGE\_颜色)。
+**\[4:0\]** D3DDECLUSAGE 值（即 D3DDECLUSAGE\_TEXCOORD、D3DDECLUSAGE\_NORMAL，等等）。
 
-**\[15:5\]** 保留。 设为 0x0。
+**\[15:5\]** 保护. 设置为0x0。
 
-**\[19:16\]** 使用索引值。 有关 D3DDECLUSAGE\_TEXCOORD，必须是 0 到 7。 有关 D3DDECLUSAGE\_颜色，必须为 0。
+**\[19:16\]** 使用情况索引值。
 
-**\[30:20\]** 保留。 设为 0x0。
+**\[30:20\]** 保护. 设置为0x0。
 
-**\[31\]** 设置为 0x1。
+**\[31\]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_纹理。 写掩码字段指示声明的组件。
+指示寄存器号和[寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)为 D3DSPR\_输入。 写入掩码字段指示已声明的组件。
 
-**仅注册人脸。**
+**象素着色器3仅\_0 和更高版本。**
 
-[指令令牌](instruction-token.md)
+**仅纹理寄存器。**
+
+[指令标记](instruction-token.md)
 
 包含 D3DSIO\_DCL。
 DWORD 标记
 
 具有以下位格式：
 
-**\[30:0\]** 保留。 设为 0x0。
+**\[4:0\]** D3DDECLUSAGE 值（必须为 D3DDECLUSAGE\_TEXCOORD 或 D3DDECLUSAGE\_颜色）。
 
-**\[31\]** 设置为 0x1。
+**\[15:5\]** 保护. 设置为0x0。
+
+**\[19:16\]** 使用情况索引值。 对于 D3DDECLUSAGE\_TEXCOORD，必须为0-7。 对于 D3DDECLUSAGE\_颜色，必须为0。
+
+**\[30:20\]** 保护. 设置为0x0。
+
+**\[31\]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
-指示人脸注册。 写掩码字段必须完整，尽管它是未使用。 结果修改键和 shift 规模字段必须为 0 （还未使用）。
+指示寄存器号和[寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)为 D3DSPR\_纹理。 写入掩码字段指示已声明的组件。
 
-**仅限于位置注册。**
+**仅面部注册。**
 
-[指令令牌](instruction-token.md)
+[指令标记](instruction-token.md)
 
 包含 D3DSIO\_DCL。
 DWORD 标记
 
 具有以下位格式：
 
-**\[30:0\]** 保留。 设为 0x0。
+**\[30:0\]** 保护. 设置为0x0。
 
-**\[31\]** 设置为 0x1。
+**\[31\]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
-指示位置注册。 写掩码字段指示声明的组件。
+指示人脸登记簿。 写入掩码字段必须是完整的，但它是未使用的。 结果修饰符和转换比例字段必须为0（也未使用）。
 
-**顶点着色器 3\_0 及更高版本。**
+**仅限位置寄存器。**
 
-**仅注册输出。**
-
-[指令令牌](instruction-token.md)
+[指令标记](instruction-token.md)
 
 包含 D3DSIO\_DCL。
 DWORD 标记
 
 具有以下位格式：
 
-**\[4:0\]**  D3DDECLUSAGE 值 (即，D3DDECLUSAGE\_TEXCOORD、 D3DDECLUSAGE\_正常，等等)。
+**\[30:0\]** 保护. 设置为0x0。
 
-**\[15:5\]** 保留。 设为 0x0。
-
-**\[19:16\]** 使用索引值。
-
-**\[30:20\]** 保留。 设为 0x0。
-
-**\[31\]** 设置为 0x1。
+**\[31\]** 设置为0x1。
 
 [目标参数标记](destination-parameter-token.md)
 
-指示寄存器号与[注册类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d9types/ne-d3d9types-_d3dshader_param_register_type)作为 D3DSPR\_输出。 写掩码字段定义哪个组件编写。
+指示位置寄存器。 写入掩码字段指示已声明的组件。
 
-请注意几个 DCL 说明信息，其中描述了输出，可以使用相同的注册偏移量。 但是，每个 DCL 指令的写掩码组件必须不同。 例如，以下是在顶点着色器 3 中有效\_0 和更高版本：
+**顶点着色器 3\_0 和更高版本。**
+
+**仅输出注册。**
+
+[指令标记](instruction-token.md)
+
+包含 D3DSIO\_DCL。
+DWORD 标记
+
+具有以下位格式：
+
+**\[4:0\]** D3DDECLUSAGE 值（即 D3DDECLUSAGE\_TEXCOORD、D3DDECLUSAGE\_NORMAL，等等）。
+
+**\[15:5\]** 保护. 设置为0x0。
+
+**\[19:16\]** 使用情况索引值。
+
+**\[30:20\]** 保护. 设置为0x0。
+
+**\[31\]** 设置为0x1。
+
+[目标参数标记](destination-parameter-token.md)
+
+指示寄存器号和[寄存器类型](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dshader_param_register_type)为 D3DSPR\_输出。 写入掩码字段定义写入哪些组件。
+
+请注意，用于描述输出的多个 DCL 说明可以使用相同的寄存器偏移量。 但是，每个 DCL 指令的写入掩码组件必须不同。 例如，以下在顶点着色器 3\_0 和更高版本中有效：
 
 ```registry
        DCL   o10.xy
        DCL   o10.zw
 ```
 
-输出 DCL 指令必须声明编写的顶点着色器 3 的所有寄存器\_0 和更高版本。
+输出 DCL 指令必须声明由顶点着色器 3\_0 和更高版本写入的所有寄存器。
 
 ## <a name="span-idrequirementsspanspan-idrequirementsspanspan-idrequirementsspanrequirements"></a><span id="Requirements"></span><span id="requirements"></span><span id="REQUIREMENTS"></span>要求
 

@@ -3,26 +3,26 @@ title: 杂项网络微型重定向程序例程
 description: 杂项网络微型重定向程序例程
 ms.assetid: bad5847c-8ac5-4e63-a0a5-3bbf13424928
 keywords:
-- 最小重定向程序 WDK，杂项例程
-- 连接 Id WDK 网络重定向程序
-- 缓冲状态 WDK 网络重定向程序
+- 小型重定向程序 WDK，其他例程
+- 连接 Id WDK 网络重定向器
+- 缓冲状态 WDK 网络重定向器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aec5de46bc7d8e045b5abbbd3009049ff0125639
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0609a811748d009f3420e84a359dc8faf3295b18
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375955"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841127"
 ---
 # <a name="miscellaneous-network-mini-redirector-routines"></a>杂项网络微型重定向程序例程
 
 
-少数其他例程由网络微型重定向处理缓冲状态管理和连接 Id。 缓冲状态管理例程可以使用网络微型重定向来处理各种缓冲方案中重定向程序和服务器实现以及通信中缓冲状态的任何更改。 例如， [ **MRxCompleteBufferingStateChangeRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_change_buffering_state_calldown)例程由 SMB 重定向程序用作的机制的一部分来向服务器发送破坏 oplock。
+网络小型重定向程序实现的一些其他例程处理缓冲状态管理和连接 Id。 缓冲状态管理例程可由网络小型重定向器用于处理在重定向程序和服务器中实现的各种缓冲方案，并传达缓冲状态中的任何更改。 例如，SMB 重定向程序使用[**MRxCompleteBufferingStateChangeRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_change_buffering_state_calldown)例程将 oplock 中断发送到服务器的机制中。
 
-连接 Id 可以用于多路复用多个连接。 网络微型-重定向程序以支持连接 Id，因此，不必[ **MRxGetConnectionId** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_get_connection_id)是可选的。
+连接 Id 可用于多路复用多个连接。 网络小型重定向器不需要支持连接 Id，因此[**MRxGetConnectionId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_get_connection_id)是可选的。
 
-下表列出了可以由网络微型-重定向程序用于执行其他操作的例程。
+下表列出了可由网络小型重定向程序为其他操作实现的例程。
 
 <table>
 <colgroup>
@@ -37,16 +37,16 @@ ms.locfileid: "67375955"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_change_buffering_state_calldown" data-raw-source="[&lt;strong&gt;MRxCompleteBufferingStateChangeRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_change_buffering_state_calldown)"><strong>MRxCompleteBufferingStateChangeRequest</strong></a></td>
-<td align="left"><p>RDBSS 调用以通知网络微型重定向缓冲的状态更改请求已完成此例程。 例如，SMB 重定向程序使用此例程来发送 oplock 中断响应或关闭上破坏 oplock 句柄，如果该文件不再使用。 需要刷新到服务器的字节范围锁传递给网络微型-重定向程序中<strong>LowIoContext.ParamsFor.Locks.LockList</strong> RX_CONTEXT 的成员。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_change_buffering_state_calldown" data-raw-source="[&lt;strong&gt;MRxCompleteBufferingStateChangeRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_change_buffering_state_calldown)"><strong>MRxCompleteBufferingStateChangeRequest</strong></a></td>
+<td align="left"><p>RDBSS 调用此例程，通知网络小型重定向器已完成缓冲状态更改请求。 例如，当文件不再使用时，SMB 重定向程序使用此例程来发送 oplock 中断响应或关闭 oplock 中断的句柄。 需要在服务器上刷新的字节范围锁会传递到 RX_CONTEXT 的<strong>LowIoContext</strong>成员中的网络微重定向程序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_compute_new_buffering_state" data-raw-source="[&lt;strong&gt;MRxComputeNewBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_compute_new_buffering_state)"><strong>MRxComputeNewBufferingState</strong></a></td>
-<td align="left"><p>RDBSS 调用此例程以请求网络微型重定向计算新的缓冲状态更改。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_compute_new_buffering_state" data-raw-source="[&lt;strong&gt;MRxComputeNewBufferingState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_compute_new_buffering_state)"><strong>MRxComputeNewBufferingState</strong></a></td>
+<td align="left"><p>RDBSS 调用此例程，请求网络最小化重定向器计算新的缓冲状态更改。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_get_connection_id" data-raw-source="[&lt;strong&gt;MRxGetConnectionId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_get_connection_id)"><strong>MRxGetConnectionId</strong></a></td>
-<td align="left"><p>RDBSS 调用此例程以请求网络微型重定向返回可用于处理多个会话的连接的连接 ID。 如果网络微型重定向支持连接 Id，则返回的连接 ID 追加到名称表中存储的连接结构。 RDBSS 认为形式的不透明 blob 的连接 ID，并查找具有给定名称的 net 名称表时没有按字节进行比较的连接 ID 的 blob。</p></td>
+<td align="left"><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_get_connection_id" data-raw-source="[&lt;strong&gt;MRxGetConnectionId&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_get_connection_id)"><strong>MRxGetConnectionId</strong></a></td>
+<td align="left"><p>RDBSS 调用此例程来请求网络小型重定向程序为连接返回一个连接 ID，该 ID 可用于处理多个会话。 如果网络微型重定向程序支持连接 Id，则返回的连接 ID 将追加到存储在名称表中的连接结构。 RDBSS 将连接 ID 视为不透明的 blob，并在查找具有给定名称的网络名称表时对连接 ID blob 进行逐字节的比较。</p></td>
 </tr>
 </tbody>
 </table>

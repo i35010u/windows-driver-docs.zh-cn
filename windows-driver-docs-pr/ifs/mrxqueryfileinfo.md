@@ -1,6 +1,6 @@
 ---
-title: MRxQueryFileInfo routine
-description: TheMRxQueryFileInfo 例程由调用 RDBSS 来请求网络微型重定向查询文件信息上的文件系统对象。
+title: MRxQueryFileInfo 例程
+description: TheMRxQueryFileInfo 例程由 RDBSS 调用，以请求在文件系统对象上进行网络微型重定向程序查询文件信息。
 ms.assetid: 201b749c-527b-4c02-a860-d2f54777dc32
 keywords:
 - MRxQueryFileInfo 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51240b38fb8af60facab91e2fb0c6d2586f5056e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 982ad1abf13c3115cf3593b764d96b043eee5013
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375672"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841091"
 ---
-# <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo routine
+# <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo 例程
 
 
-*MRxQueryFileInfo*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)请求网络微型重定向查询文件系统对象的文件信息。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxQueryFileInfo*例程来请求一个有关文件系统对象的网络微重定向程序查询文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryFileInfo(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含 IRP 请求该操作。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQueryFileInfo*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxQueryFileInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -64,30 +64,30 @@ NTSTATUS MRxQueryFileInfo(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_ACCESS_DENIED</strong></td>
-<td align="left"><p>调用方不具备适当的安全，此操作。</p></td>
+<td align="left"><p>调用方缺乏此操作的正确安全性。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
-<td align="left"><p>要接收的文件信息的缓冲区太小。</p>
-<p>此返回值应被视为成功，并且作为有效得多的数据应该返回在<strong>Info.Buffer</strong> RX_CONTEXT 结构成员指向的<em>RxContext</em>参数。</p></td>
+<td align="left"><p>用于接收文件信息的缓冲区太小。</p>
+<p>应将此返回值视为成功，并且应尽可能多的有效数据返回到由<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
-<td align="left"><p>缓冲区是太小，无法接收请求的数据。</p>
-<p>如果返回此值，则<strong>InformationToReturn</strong> RX_CONTEXT 结构成员指向的<em>RxContext</em>参数应设置为调用的预期缓冲区的最小大小会成功。</p></td>
+<td align="left"><p>缓冲区太小，无法接收请求的数据。</p>
+<p>如果返回此值，则<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员应设置为预期缓冲区的最小大小，以便调用成功。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td align="left"><p>没有资源不足，无法完成查询。</p></td>
+<td align="left"><p>资源不足，无法完成查询。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_INVALID_NETWORK_RESPONSE</strong></td>
-<td align="left"><p>从远程服务器收到无效的文件信息缓冲区。</p></td>
+<td align="left"><p>从远程服务器接收到无效的文件信息缓冲区。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
 <td align="left"><p>指定的参数无效。</p>
-<p>如果的值无效，可能会返回此值<strong>FileInformationClass</strong>传递 RX_CONTEXT 中的成员。 如果，也会返回此值<strong>FileInformationClass</strong>指定的成员是有关<strong>FileStreamInformation</strong>和远程文件系统不支持流。</p></td>
+<p>如果传递 RX_CONTEXT 中的<strong>FileInformationClass</strong>成员的值无效，则可以返回此值。 如果指定的<strong>FileInformationClass</strong>成员用于<strong>FileStreamInformation</strong> ，而远程文件系统不支持流，也可以返回此值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
@@ -101,27 +101,27 @@ NTSTATUS MRxQueryFileInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出调用*MRxQueryFileInfo*接收响应[ **IRP\_MJ\_查询\_信息**](irp-mj-query-information.md)请求。
+RDBSS 发出对*MRxQueryFileInfo*的调用，以响应接收[**IRP\_\_MJ\_信息**](irp-mj-query-information.md)请求。
 
-然后再调用*MRxQueryFileInfo*，RDBSS 修改 RX 中的以下成员\_指向上下文结构*RxContext*参数：
+在调用*MRxQueryFileInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
 
-**Info.FileInformationClass**成员设置为**IrpSp-&gt;Parameters.QueryFile.FileInformationClass**，则请求文件\_信息\_类值。
+**FileInformationClass**成员设置为**IrpSp&gt;FileInformationClass**，请求的文件\_信息\_类值。
 
-**Info.Buffer** I/O 请求数据包从成员设置为用户缓冲区。
+**信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。
 
-**Info.LengthRemaining**成员设置为**IrpSp-&gt;Parameters.QueryFile.Length**。
+**LengthRemaining**成员设置为**IrpSp-&gt;QueryFile**。
 
-**QueryDirectory.FileIndex**成员设置为**IrpSp-&gt;Parameters.QueryDirectory.FileIndex**。
+**FileIndex**成员设置为**IrpSp&gt;QueryDirectory. FileIndex**。
 
-**QueryDirectory.RestartScan**成员设置如果**IrpSp-&gt;标志**具有 SL\_重启\_扫描位集。
+如果**IrpSp&gt;标志**具有 SL\_RESTART\_扫描位集，则设置**RestartScan**成员。
 
-**QueryDirectory.ReturnSingleEntry**成员设置如果**IrpSp-&gt;标志**具有 SL\_返回\_单一\_条目位集。
+如果**IrpSp&gt;标志**具有 SL\_返回\_单一\_条目位集，则设置**ReturnSingleEntry**成员。
 
-**QueryDirectory.InitialQuery**成员设置如果**Fobx-&gt;UnicodeQueryTemplate.Buffer**是**NULL**和**Fobx&gt;标志**没有 FOBX\_标志\_匹配\_所有位集。
+如果**Fobx&gt;UnicodeQueryTemplate**为**NULL** ，并且**Fobx&gt;标志**没有 FOBX\_标志\_匹配\_所有位集，则设置**InitialQuery**成员。
 
-如果成功，应设置网络微型重定向**Info.LengthRemaining** RX 成员\_上下文结构到**Info.Length**减去的时间长度文件信息的成员返回。 如果在调用*MRxQueryFileInfo*已成功，RDBSS 集**IoStatus.Information**成员到 IRP **IrpSp-&gt;Parameters.QueryFile.Length**减去**Info.LengthRemaining** RX 成员\_上下文。
+成功时，网络小型重定向程序应将\_RX 的**LengthRemaining**成员设置为**info。 length**成员减去返回的文件信息的长度。 如果对*MRxQueryFileInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 **&gt;IrpSp** ，并将 RX\_**上下文的 QueryFile 成员减**。
 
-RDBSS 不支持请求的 SL\_索引\_的指定位**IrpSp-&gt;标志**设置。 网络微型重定向将不会收到对调用*MRxQueryFileInfo*与 SL\_索引\_的指定位**IrpSp-&gt;标志**设置。
+RDBSS 不支持具有 SL\_索引的请求\_指定的位 **&gt;IrpSp 标记**集。 网络小型重定向程序将不会使用 SL\_索引\_指定的位 **&gt;标志**集接收对*MRxQueryFileInfo*的调用。
 
 <a name="requirements"></a>要求
 ------------
@@ -134,19 +134,19 @@ RDBSS 不支持请求的 SL\_索引\_的指定位**IrpSp-&gt;标志**设置。 �
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 

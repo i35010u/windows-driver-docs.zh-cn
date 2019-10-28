@@ -3,16 +3,16 @@ title: 加速状态管理
 description: 加速状态管理
 ms.assetid: 276d3cdb-34bf-49e8-aae5-94315746c5ff
 keywords:
-- 加速的状态管理 WDK Direct3D
-- 指出 WDK Direct3D
+- 加速状态管理 WDK Direct3D
+- 状态 WDK Direct3D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e30ac6546432d91c9327442b468bcedea0ec161
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c2107b9227b56fe29389241990e5ea69991b6c34
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384434"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839836"
 ---
 # <a name="accelerated-state-management"></a>加速状态管理
 
@@ -20,27 +20,27 @@ ms.locfileid: "67384434"
 ## <span id="ddk_accelerated_state_management_gg"></span><span id="DDK_ACCELERATED_STATE_MANAGEMENT_GG"></span>
 
 
-加速的状态管理是一种机制用于在单个调用跨 API 和 DDI 通信大型状态更改。 此方案允许应用程序定义的状态集调用集合作为状态块定义的一个整数。 将此整数作为呈现状态发送一次调用中执行所有状态更改。
+加速状态管理是一种机制，用于在单个调用中跨 API 和 DDI 传递大状态更改。 此方案允许应用程序将状态集调用的集合定义为单个整数定义的状态块。 作为渲染状态发送此整数将在一次调用中执行所有状态更改。
 
-这可减少 API 开销减少的数量**IDirect3DDevice7::SetRenderState**方法调用必需的并允许用户"预编译"阶段到其自己的更改，从而可以提高效率的驱动程序在状态块时特定于硬件的格式定义，而不是在执行每个状态更改。 **IDirect3DDevice7::SetRenderState** Direct3D SDK 文档中所述
+这会减少 API 开销，因为它减少了所需的**IDirect3DDevice7：： SetRenderState**方法调用的数目，并且可以通过允许它们将状态更改为其自己的特定于硬件的格式来 "预编译"，从而提高驱动程序的效率块定义，而不是在每次状态更改时执行。 Direct3D SDK 文档中介绍了**IDirect3DDevice7：： SetRenderState**
 
-大多数应用程序呈现中只有少量的状态，因此具有细粒度的状态转换很少很重要。 更重要的用于定义块可以互换的状态为常见的呈现方案之间的驱动程序开关。 这是整个点加速的状态管理。
+大多数应用程序只会在少数几种状态下进行呈现，因此不太重要。 更为重要的是，能够定义可在常见呈现方案间进行交换的状态块。 这是加速状态管理的要点。
 
-状态集令牌用于驱动程序中记录了状态。 一个句柄是指状态的集合。 [ **D3DHAL\_DP2STATESET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_d3dhal_dp2stateset)结构通知有关要执行何种状态集操作的驱动程序。
+状态集令牌用于记录驱动程序中的状态。 句柄是指状态的集合。 [**D3DHAL\_DP2STATESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_d3dhal_dp2stateset)结构通知驱动程序要执行哪些状态集操作。
 
-如果**dwOperation** D3DHAL 成员\_DP2STATESET 结构设置为 D3DHAL\_STATESETBEGIN，驱动程序将开始录制中包含的句柄的状态**dwParam**成员。 当驱动程序收到**dwOperation** D3DHAL 的\_STATESETEND，它将停止录制状态。
+如果 D3DHAL\_DP2STATESET 结构的**dwOperation**成员设置为 D3DHAL\_STATESETBEGIN，则驱动程序将开始记录**dwParam**成员中包含的句柄的状态。 当驱动程序收到 D3DHAL\_STATESETEND 的**dwOperation**时，它将停止记录状态。
 
-如果**dwOperation**成员是 D3DHAL\_STATESETDELETE，引用该状态集中**dwParam**应删除句柄。
+如果**dwOperation**成员为 D3DHAL\_STATESETDELETE，则应删除**dwParam**句柄所引用的状态集。
 
-如果**dwOperation**成员是 D3DHAL\_STATESETEXECUTE，由引用状态块**dwParam**句柄应该应用到设备中。
+如果**dwOperation**成员为 D3DHAL\_STATESETEXECUTE，则应在设备中应用**dwParam**句柄所引用的状态块。
 
-如果**dwOperation**成员是 D3DHAL\_STATESETCAPTURE，驱动程序中的当前状态中应捕获特定的方式提供状态块中定义的当前状态的快照。 即，捕获已在状态块中的状态。 因此，状态块是用作一种的掩码，仅记录在其中定义的状态。 例如，如果没有 D3DRENDERSTATE\_ZENABLE 呈现状态块中的状态然后的当前状态 D3DRENDERSTATE\_捕获 ZENABLE 并将其放入状态块。 如果没有 D3DRENDERSTATE\_ZENABLE 处于状态阻止，则不会捕获该状态。
+如果**dwOperation**成员为 D3DHAL\_STATESETCAPTURE，则应以特定方式捕获驱动程序中的当前状态，从而提供状态块中定义的当前状态的快照。 也就是说，只捕获状态块中已经存在的状态。 因此，状态块充当一种掩码，只记录其中定义的记录状态。 例如，如果状态块中有一个 D3DRENDERSTATE\_ZENABLE render 状态，则捕获 D3DRENDERSTATE\_ZENABLE 的当前状态，并将其放入状态块。 如果状态块中没有 D3DRENDERSTATE\_ZENABLE，则不会捕获该状态。
 
-状态分组用于使可针对不同的呈现方案对略有修改的一般状态块。 这些预定义的分组 （D3DSTATEBLOCKTYPE 中枚举 DirectX SDK 文档中） 定义可以随后修改状态更改以容纳预期定期呈现方案的一般状态块。 例如，驱动程序可能会创建 100 泛型预定义的状态块，然后修改每个位置以适应不同的呈现方案。 状态的块类型传入**sbType** D3DHAL 成员\_DP2STATESET 结构。
+状态分组用于生成可对不同呈现方案进行略微修改的通用状态块。 这些预定义的分组（在 DirectX SDK 文档的 D3DSTATEBLOCKTYPE 中枚举）定义一般状态块，随后可以用状态更改进行修改以适应预期的重复呈现方案。 例如，驱动程序可能会创建100一般预定义状态块，然后略微修改它们以适应不同的呈现方案。 在 D3DHAL\_DP2STATESET 结构的**sbType**成员中传递状态块类型。
 
-**SbType**成员时才有效 D3DHAL\_STATESETBEGIN 和 D3DHAL\_STATESETEND 并具有以下 D3DSTATEBLOCKTYPE 枚举类型之一的指定预定义的状态的块类型：**NULL**对于无状态，D3DSBT\_D3DSBT 的所有状态的所有\_像素状态和 D3DSBT PIXELSTATE\_VERTEXSTATE 顶点状态。
+**SbType**成员仅对 D3DHAL\_STATESETBEGIN 和 D3DHAL\_STATESETEND 有效，并指定具有以下 D3DSTATEBLOCKTYPE 枚举类型之一的预定义状态块类型： **NULL**表示无状态，D3DSBT @no__t_所有状态均为4_、D3DSBT\_PIXELSTATE for 象素 state 和 D3DSBT\_VERTEXSTATE for 顶点状态。
 
-该驱动程序应忽略**sbType**成员，除非它实现了呈现状态扩展。 如果扩展该驱动程序实现呈现状态，即，运行时会提供的 Direct3D 呈现之外的状态，它可以使用**sbType**以确定哪种类型的预定义的呈现状态正在使用。 中的信息可以确定如何适当地追加状态块，以支持其扩展。
+驱动程序应忽略**sbType**成员，除非它实现呈现状态扩展。 如果驱动程序实现扩展呈现状态（即，呈现 Direct3D 运行时提供的状态除外），则它可以使用**sbType**来确定所使用的预定义呈现状态的类型。 通过此信息，可以确定如何适当地附加状态块以支持其扩展。
 
  
 

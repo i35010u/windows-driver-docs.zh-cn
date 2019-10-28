@@ -1,67 +1,67 @@
 ---
 title: 驱动程序保护
-description: 视频内存管理器以及每个虚拟地址，允许独立硬件供应商 (Ihv) 可以定义一个驱动程序 / 硬件特定的保护 （即
+description: 除了每个虚拟地址，视频内存管理器还允许独立硬件供应商（Ihv）定义驱动程序/特定于硬件的保护（即
 ms.assetid: 3D636BD1-683D-49B4-A7E5-176853EA11EE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fb9be08be6b35803739c11528c517982c512780
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 99b619713892465b0c2a92d41197f11db1db7314
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380375"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839743"
 ---
 # <a name="driver-protection"></a>驱动程序保护
 
 
-视频内存管理器以及每个虚拟地址，允许独立硬件供应商 (Ihv) 可以定义一个驱动程序 / 硬件特定的保护 （即页表条目编码） 专门与该虚拟地址相关联。 考虑一下作为额外位，但该驱动程序必须控制以便访问内存在图形处理单元 (GPU)，以最佳方式的视频内存管理器不知道的页表条目中的驱动程序保护。
+除了每个虚拟地址，视频内存管理器还允许独立硬件供应商（Ihv）定义与该虚拟地址相关的驱动程序/硬件特定保护（即页面表条目编码）。 请考虑将驱动程序保护视为视频内存管理器不知道的页表条目中的额外位，但驱动程序必须控制以便图形处理单元（GPU）以最佳方式访问内存。
 
-**请注意**  驱动程序保护是可选的可以将其保留为不需要此功能的任意平台上的零。
+**请注意**  驱动程序保护是可选的，可以在任何不需要此功能的平台上将其留空。
 
  
 
-映射或保留 GPU 虚拟地址范围时，驱动程序可能指定的 64 位驱动程序保护值。 初始化与该特定的虚拟地址对应的页表项时，将视频内存管理器使用指定的驱动程序保护。 具体而言，驱动程序保护会送回给该驱动程序的任何[ *BuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)**DXGK\_操作\_更新\_页\_表**对应于指定的虚拟地址。
+映射或保留 GPU 虚拟地址范围时，驱动程序可能会指定64位驱动程序保护值。 指定的驱动程序保护是在初始化与特定虚拟地址相对应的页表项时由视频内存管理器使用的。 具体而言，驱动程序保护将返回到与指定虚拟地址相对应的任何[*BuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)**DXGK\_操作的驱动程序，\_UPDATE\_页\_表**。
 
-多个虚拟地址可以映射到单个分配使用不同的驱动程序保护功能。 将使用相应的驱动程序保护更新的每个这些虚拟地址的页表条目。
+可以使用不同的驱动程序保护将多个虚拟地址映射到单个分配。 将使用适当的驱动程序保护来更新每个虚拟地址的页表项。
 
-驱动程序保护仅适用于级别 0 页表项，且将设置为零的任何其他页表条目级别。
+驱动程序保护仅适用于级别0的页表项，对于任何其他页表项级别，都将设置为零。
 
-## <a name="span-idpaginganduniquedriverprotectionspanspan-idpaginganduniquedriverprotectionspanspan-idpaginganduniquedriverprotectionspanpaging-and-unique-driver-protection"></a><span id="Paging_and_unique_driver_protection"></span><span id="paging_and_unique_driver_protection"></span><span id="PAGING_AND_UNIQUE_DRIVER_PROTECTION"></span>分页和唯一驱动程序保护
+## <a name="span-idpaging_and_unique_driver_protectionspanspan-idpaging_and_unique_driver_protectionspanspan-idpaging_and_unique_driver_protectionspanpaging-and-unique-driver-protection"></a><span id="Paging_and_unique_driver_protection"></span><span id="paging_and_unique_driver_protection"></span><span id="PAGING_AND_UNIQUE_DRIVER_PROTECTION"></span>寻呼和唯一的驱动程序保护
 
 
-时分页入或移出内存段的分配，视频内存管理器将从用于分配的内容传输的系统设备地址空间分配一个临时的虚拟地址。 当创建此映射，分配相关的驱动程序保护是不明确，因为可能存在各种不同的驱动程序保护的进程地址空间中的多个映射。
+当对内存段中的分配进行分页时，视频内存管理器会从系统设备地址空间分配一个临时虚拟地址，以便传输分配的内容。 创建此映射时，与分配相关的驱动程序保护是不明确的，因为可能存在多个具有不同驱动程序保护的进程地址空间中的映射。
 
-正因为如此，视频内存管理器将指定任何系统设备映射，默认情况下用于分页的零的驱动程序的保护。
+因此，默认情况下，对于用于分页的任何系统设备映射，视频内存管理器将指定零的驱动程序保护。
 
-驱动程序可以通过设置更改此行为**唯一**位时指定的虚拟地址与关联的驱动程序保护。
+驱动程序可以通过在指定与虚拟地址相关联的驱动程序保护时设置**唯一**位来更改此行为。
 
 `#define D3DGPU_UNIQUE_DRIVER_PROTECTION 0x8000000000000000ULL`
 
-视频内存管理器时设置此位，则将强制执行任何映射到相同的分配区域使用相同的驱动程序保护值，或映射请求将失败，**状态\_无效\_参数**.
+设置此位后，视频内存管理器将强制对相同分配范围的任何映射使用相同的驱动程序保护值，否则，映射请求将失败，**状态\_无效\_参数**。
 
-使用唯一的驱动程序保护值、 映射的分配范围不能再次映射具有不同的保护值。 在这种情况下更改保护的唯一方法是映射具有无访问权限的范围。
+使用不同的保护值无法再次映射使用唯一的驱动程序保护值映射的分配范围。 在这种情况下，更改保护的唯一方法是映射范围而不进行访问。
 
-可以与任何保护值再次映射具有非唯一的驱动程序保护值映射的分配范围。
+使用不唯一的驱动程序保护值映射的分配范围可以与任何保护值重新映射。
 
-当将逐出已映射到驱动程序保护的虚拟地址范围的分配设置为*唯一*，视频内存管理器将在安装程序用于在对具有相应的驱动程序保护这些范围的分页进程映射无歧义地的值。
+当逐出虚拟地址范围被设置为*unique*的驱动程序保护的分配时，视频内存管理器将使用适当的驱动程序保护值（不明确）设置用于这些范围的分页过程映射。
 
-下图显示了 VA 映射的分配不同的驱动程序保护值。
+下图显示了具有不同的驱动程序保护值的分配的 VA 映射。
 
-![使用不同的驱动程序保护分配的虚拟地址映射](images/driver-protection.1.png)
+![具有不同驱动程序保护的分配的虚拟地址映射](images/driver-protection.1.png)
 
-在分页操作期间分配将被复制以块的形式：
+在分页操作期间，将以区块形式复制分配：
 
-1. 复制分配范围\[0，A1\]与驱动程序保护 0
-2. 复制分配范围\[A1、 A2\]与驱动程序保护 P1
-3. 复制分配范围\[A2、 A4\]与驱动程序保护 0
-4. 复制分配范围\[A4、 A5\]与驱动程序保护 P4
-5. 复制分配范围\[A5、 大小\]使用驱动程序保护 0 就可能的分页进程页表项时，将设置一个驱动程序保护值逐出分配并将其设置为不同的值时将会进行分配已提交。 假定更新的虚拟地址映射后，该驱动程序应刷新分配数据。
-例如，考虑一种情况时将组映射的当前分配是 M1 和用户模式驱动程序调用[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)映射设置 M2。 映射集应用 M2 之前, 的视频内存管理器可以被逐出分配。 M2 应用的映射集和分配会提交回。 现在的本地内存段中的分配内容可能不同于原始。
+1. 复制分配范围 \[0，A1\]，其中包含驱动程序保护0
+2. 将分配范围 \[A1，A2\] 与驱动程序保护 P1 一起复制
+3. 将分配范围 \[A2，A4\] 与驱动程序保护0
+4. 复制分配范围 \[A4、A5\] 与驱动程序保护 P4
+5. 复制分配范围 \[A5，大小\] 使用驱动程序保护0可以在分配被逐出时，使用一个驱动程序保护值设置分页进程页表项，并在提交分配时将其设置为其他值。 假定驱动程序应在更新虚拟地址映射后刷新分配数据。
+例如，当当前分配映射集为 M1 并且用户模式驱动程序名为[*UpdateGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb) ，并且映射设置为 M2 时，请考虑使用这种情况。 就在应用映射集 M2 之前，可以通过视频内存管理器逐出分配。 应用映射集 M2 并提交分配。 现在本地内存段中的分配内容可能不同于原始内容。
 
-## <a name="span-idtiledresourcesspanspan-idtiledresourcesspanspan-idtiledresourcesspantiled-resources"></a><span id="Tiled_Resources"></span><span id="tiled_resources"></span><span id="TILED_RESOURCES"></span>平铺的资源
+## <a name="span-idtiled_resourcesspanspan-idtiled_resourcesspanspan-idtiled_resourcesspantiled-resources"></a><span id="Tiled_Resources"></span><span id="tiled_resources"></span><span id="TILED_RESOURCES"></span>平铺资源
 
 
-平铺资源时保留虚拟地址范围指定驱动程序保护。 用户模式驱动程序调用[ *UpdateGpuVirtualAddress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)将继承虚拟地址的最新驱动程序保护。
+对于平铺资源，在保留虚拟地址范围时指定驱动程序保护。 用户模式驱动程序对[*UpdateGpuVirtualAddress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)的调用将继承虚拟地址当前驱动程序保护。
 
  
 

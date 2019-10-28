@@ -3,26 +3,26 @@ title: 自动检查
 description: 自动检查
 ms.assetid: ec3cb6a4-d990-4830-914c-064f6c79371a
 keywords:
-- 自动检查 WDK Driver Verifier
-- 监视 WDK Driver Verifier 的 IRQL
-- 堆栈切换 WDK Driver Verifier
-- 可用池计时器 WDK Driver Verifier
-- 清理检查 WDK Driver Verifier
-- 切换堆栈 WDK Driver Verifier
-- 驱动程序卸载 WDK Driver Verifier
-- Driver Verifier 选项，监视 IRQL 和内存例程
-- Driver Verifier 选项，监视堆栈切换
-- Driver Verifier 选项检查驱动程序卸载
-- Driver Verifier 选项，监视驱动程序调度例程
-- Driver Verifier 选项，监视内存调度列表 (MDL) 使用情况
+- 自动检查 WDK 驱动程序验证程序
+- IRQL 监视 WDK 驱动程序验证程序
+- 堆栈切换 WDK 驱动程序验证程序
+- 免费池计时器，WDK 驱动程序验证程序
+- 清理检查 WDK 驱动程序验证程序
+- 切换堆栈 WDK 驱动程序验证程序
+- 驱动程序卸载 WDK 驱动程序验证程序
+- 驱动程序验证程序选项，监视 IRQL 和内存例程
+- 驱动程序验证程序选项，监视堆栈切换
+- 驱动程序验证程序选项，检查驱动程序卸载
+- 驱动程序验证程序选项，监视驱动程序调度例程
+- 驱动程序验证程序选项，监视内存调度列表（MDL）使用情况
 ms.date: 10/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62c1b2290be3a3ece44eb2792051d25b03460325
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f7415fca6178920989000a14052c05a7b90a77e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360433"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840306"
 ---
 # <a name="automatic-checks"></a>自动检查
 
@@ -30,102 +30,102 @@ ms.locfileid: "67360433"
 ## <span id="ddk_automatic_checks_tools"></span><span id="DDK_AUTOMATIC_CHECKS_TOOLS"></span>
 
 
-每当它验证一个或多个驱动程序时，驱动程序验证程序将执行以下检查。 无法激活或停用这些检查。 从 Windows 10 版本 1709，开始这些自动检查已移动到相关[标准标志](verifier-command-line.md)。 因此，使用标准标志启用驱动程序验证程序的用户应看到检查应用中的没有减少。
+驱动程序验证程序在验证一个或多个驱动程序时执行以下检查。 不能激活或停用这些检查。 从 Windows 10 版本1709开始，这些自动检查已移动到相关的[标准标志](verifier-command-line.md)。 因此，启用带有标准标志的驱动程序验证程序的用户应该看不到所应用的检查的缩减。
 
-### <a name="span-idddkmonitoringirqlandmemoryroutinestoolsspanspan-idddkmonitoringirqlandmemoryroutinestoolsspanmonitoring-irql-and-memory-routines"></a><span id="ddk_monitoring_irql_and_memory_routines_tools"></span><span id="DDK_MONITORING_IRQL_AND_MEMORY_ROUTINES_TOOLS"></span>监视 IRQL 和内存例程
+### <a name="span-idddk_monitoring_irql_and_memory_routines_toolsspanspan-idddk_monitoring_irql_and_memory_routines_toolsspanmonitoring-irql-and-memory-routines"></a><span id="ddk_monitoring_irql_and_memory_routines_tools"></span><span id="DDK_MONITORING_IRQL_AND_MEMORY_ROUTINES_TOOLS"></span>监视 IRQL 和内存例程
 
-驱动程序验证工具监视以下已被禁止的操作的所选驱动程序：
+驱动程序验证器监视所选的驱动程序以了解以下禁止的操作：
 
--   通过调用引发 IRQL **KeLowerIrql**
+-   通过调用**KeLowerIrql**引发 IRQL
 
--   通过调用降低 IRQL **KeRaiseIrql**
+-   通过调用**KeRaiseIrql**降低 IRQL
 
--   请求大小为零内存分配
+-   请求大小为零的内存分配
 
--   分配或释放页面缓冲的池使用的 IRQL &gt; APC\_级别
+-   分配或释放 &gt; APC\_级别的包含 IRQL 的分页池
 
--   分配或释放非分页缓冲的池使用的 IRQL&gt;调度\_级别
+-   分配或释放具有 IRQL 的非分页池 &gt; 调度\_级别
 
--   尝试释放未返回从以前分配的地址
+-   正在尝试释放以前分配中未返回的地址
 
 -   尝试释放已释放的地址
 
--   获取或释放快速互斥体，IRQL &gt; APC\_级别
+-   使用 IRQL &gt; APC\_级别获取或释放快速 mutex
 
--   获取或释放 IRQL 不等于调度的自旋锁\_级别
+-   获取或释放 IRQL 不等于调度\_级别的自旋锁
 
--   双释放自旋锁。
+-   双释放旋转锁。
 
--   将标记分配请求必须\_SUCCEED。 没有此类请求是曾经允许。
+-   标记分配请求必须\_成功。 不允许此类请求。
 
-如果驱动程序验证程序未处于活动状态，这些冲突可能导致在所有情况下立即在系统发生崩溃。 驱动程序验证工具监视驱动程序的行为，并发出错误检查 0xC4，如果出现任何这些冲突。 请参阅[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突) 的 bug 列表检查参数。
+如果驱动程序验证程序不处于活动状态，则在所有情况下，这些冲突可能不会导致立即发生系统崩溃。 驱动程序验证程序监视驱动程序的行为，并在发生任何这些冲突时发出 bug 检查0xC4。 有关错误检查参数的列表，请参阅[**Bug 检查 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （DRIVER\_VERIFIER\_检测到\_冲突）。
 
-### <a name="span-idddkmonitoringstackswitchingtoolsspanspan-idddkmonitoringstackswitchingtoolsspanmonitoring-stack-switching"></a><span id="ddk_monitoring_stack_switching_tools"></span><span id="DDK_MONITORING_STACK_SWITCHING_TOOLS"></span>监视堆栈切换
+### <a name="span-idddk_monitoring_stack_switching_toolsspanspan-idddk_monitoring_stack_switching_toolsspanmonitoring-stack-switching"></a><span id="ddk_monitoring_stack_switching_tools"></span><span id="DDK_MONITORING_STACK_SWITCHING_TOOLS"></span>监视堆栈切换
 
-驱动程序验证程序通过正在验证的驱动程序来监视堆栈使用。 如果驱动程序将切换其堆栈，并且新的堆栈的线程堆栈和 DPC 堆栈都不，被颁发的 bug 检查。 （这将是与第一个参数等于 0x90 bug 检查 0xC4）。显示堆栈**KB**调试器命令通常会揭示的驱动程序执行此操作。
+驱动程序验证器监视正在验证的驱动程序的堆栈使用情况。 如果驱动程序切换其堆栈，并且新堆栈既不是线程堆栈也不是 DPC 堆栈，则会发出 bug 检查。 （这将是0xC4 的第一个参数等于0x90 的 bug 检查。）由**KB**调试器命令显示的堆栈通常会显示执行此操作的驱动程序。
 
-### <a name="span-idddkcheckingondriverunloadtoolsspanspan-idddkcheckingondriverunloadtoolsspanchecking-on-driver-unload"></a><span id="ddk_checking_on_driver_unload_tools"></span><span id="DDK_CHECKING_ON_DRIVER_UNLOAD_TOOLS"></span>检查驱动程序卸载
+### <a name="span-idddk_checking_on_driver_unload_toolsspanspan-idddk_checking_on_driver_unload_toolsspanchecking-on-driver-unload"></a><span id="ddk_checking_on_driver_unload_tools"></span><span id="DDK_CHECKING_ON_DRIVER_UNLOAD_TOOLS"></span>正在卸载驱动程序
 
-驱动程序正在验证卸载后，驱动程序验证程序执行多个检查以确保该驱动程序已清理。
+在要进行验证的驱动程序卸载之后，驱动程序验证器会执行多个检查以确保驱动程序已清理。
 
-具体而言，驱动程序验证程序中查找：
+具体而言，驱动程序验证程序将查找：
 
--   撤消删除的计时器
+-   删除的计时器
 
--   挂起的延迟过程调用 (Dpc)
+-   挂起的延迟过程调用（Dpc）
 
--   撤消删除后备链列表
+-   未删除的后备链表列表
 
--   撤消删除的工作线程数
+-   未删除的工作线程
 
--   撤消删除的队列
+-   删除的队列
 
--   其他类似的资源
+-   其他类似资源
 
-如这些可能会导致系统的问题的 bug 检查，以驱动程序卸载，并检查可能很难确定这些 bug 的原因后发出一段时间。 当驱动程序验证程序处于活动状态时，此类违规情况将导致 bug 检查 0xc7:sp 驱动程序已卸载后立即发出。 请参阅[ **Bug 检查 0xc7:sp** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc7--timer-or-dpc-invalid) (计时器\_或者\_DPC\_无效) 有关的 bug 列表检查参数。
+此类问题可能会导致系统 bug 检查在驱动程序卸载后发出一段时间，并且可能难以确定这些错误检查的原因。 当驱动程序验证程序处于活动状态时，此类冲突会导致 bug 检查0xC7 在卸载驱动程序后立即发出。 有关错误检查参数的列表，请参阅[**Bug 检查 0xC7**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc7--timer-or-dpc-invalid) （TIMER\_或\_DPC\_无效）。
 
 
-### <a name="span-idmonitoringmemorydescriptorlistmdlusagespanspan-idmonitoringmemorydescriptorlistmdlusagespanspan-idmonitoringmemorydescriptorlistmdlusagespanmonitoring-memory-descriptor-list-mdl-usage"></a><span id="Monitoring__Memory_Descriptor_List__MDL__Usage"></span><span id="monitoring__memory_descriptor_list__mdl__usage"></span><span id="MONITORING__MEMORY_DESCRIPTOR_LIST__MDL__USAGE"></span>监视内存描述符列表 (MDL) 使用情况
+### <a name="span-idmonitoring__memory_descriptor_list__mdl__usagespanspan-idmonitoring__memory_descriptor_list__mdl__usagespanspan-idmonitoring__memory_descriptor_list__mdl__usagespanmonitoring-memory-descriptor-list-mdl-usage"></a><span id="Monitoring__Memory_Descriptor_List__MDL__Usage"></span><span id="monitoring__memory_descriptor_list__mdl__usage"></span><span id="MONITORING__MEMORY_DESCRIPTOR_LIST__MDL__USAGE"></span>监视内存描述符列表（MDL）使用情况
 
-在 Windows Vista 中，驱动程序验证程序还会监视以下已被禁止的操作的所选驱动程序：
+在 Windows Vista 中，驱动程序验证器还会监视选定的驱动程序是否有以下禁止的操作：
 
--   调用[ **MmProbeAndLockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmprobeandlockpages)或 MmProbeAndLockProcessPages MDL 不具有适当的标记上。 例如，不应调用**MmProbeAndLockPages**为已通过创建 MDL [ **MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmbuildmdlfornonpagedpool)。
+-   在没有相应标志的 MDL 上调用[**MmProbeAndLockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)或 MmProbeAndLockProcessPages。 例如，对使用[**MmBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool)创建的 MDL 调用**MmProbeAndLockPages**是不正确的。
 
--   调用[ **MmMapLockedPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmaplockedpages) MDL 不具有适当的标记上。 例如，不应调用**MmMapLockedPages**为已映射到系统地址 MDL 或和 MDL 未锁定。
+-   在没有相应标志的 MDL 上调用[**MmMapLockedPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages) 。 例如，对于已映射到系统地址或未锁定的 MDL 的 MDL，调用**MmMapLockedPages**是不正确的。
 
--   调用[ **MmUnlockPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunlockpages)或[ **MmUnmapLockedPages** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmaplockedpages)部分 MDL，也就是说，和使用创建的 MDL [ **IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)。
+-   对使用[**IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl)创建的部分 MDL 调用[**MmUnlockPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)或[**MmUnmapLockedPages**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages) 。
 
--   调用**MmUnmapLockedPages**上未映射到系统地址 MDL。
+-   对未映射到系统地址的 MDL 调用**MmUnmapLockedPages** 。
 
-如果驱动程序验证程序未处于活动状态，这些冲突可能不会导致系统停止在所有情况下立即响应。 驱动程序验证工具监视驱动程序的行为，并发出错误检查 0xC4，如果出现任何这些冲突。 请参阅[ **Bug 检查 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序\_VERIFIER\_检测到\_冲突) 的 bug 列表检查参数。
+如果驱动程序验证程序不处于活动状态，则在所有情况下，这些冲突可能不会导致系统立即停止响应。 驱动程序验证程序监视驱动程序的行为，并在发生任何这些冲突时发出 bug 检查0xC4。 有关错误检查参数的列表，请参阅[**Bug 检查 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （DRIVER\_VERIFIER\_检测到\_冲突）。
 
-### <a name="span-idsynchronizationobjectallocationfromnonpagedpoolsessionmemoryspanspan-idsynchronizationobjectallocationfromnonpagedpoolsessionmemoryspanspan-idsynchronizationobjectallocationfromnonpagedpoolsessionmemoryspansynchronization-object-allocation-from-nonpagedpoolsession-memory"></a><span id="Synchronization_Object_Allocation_from_NonPagedPoolSession_Memory"></span><span id="synchronization_object_allocation_from_nonpagedpoolsession_memory"></span><span id="SYNCHRONIZATION_OBJECT_ALLOCATION_FROM_NONPAGEDPOOLSESSION_MEMORY"></span>同步从 NonPagedPoolSession 内存对象分配
+### <a name="span-idsynchronization_object_allocation_from_nonpagedpoolsession_memoryspanspan-idsynchronization_object_allocation_from_nonpagedpoolsession_memoryspanspan-idsynchronization_object_allocation_from_nonpagedpoolsession_memoryspansynchronization-object-allocation-from-nonpagedpoolsession-memory"></a><span id="Synchronization_Object_Allocation_from_NonPagedPoolSession_Memory"></span><span id="synchronization_object_allocation_from_nonpagedpoolsession_memory"></span><span id="SYNCHRONIZATION_OBJECT_ALLOCATION_FROM_NONPAGEDPOOLSESSION_MEMORY"></span>从 NonPagedPoolSession 内存分配同步对象
 
-驱动程序验证程序从 Windows 7 中，检查同步对象从会话内存。
+从 Windows 7 开始，驱动程序验证程序将从会话内存中检查同步对象。
 
-同步对象必须是不可分页。 它们还必须存在于此的全局、 系统范围内的虚拟地址空间。
+同步对象必须为不可分页。 它们还必须位于全系统范围内的虚拟地址空间。
 
-图形驱动程序可以如分配通过调用 Api 的会话内存[ **EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)。 与全局地址空间中，不同的会话地址空间是为每个终端服务器会话虚拟化的。 这意味着两个不同的对象引用的两个不同的会话的上下文中使用的相同虚拟地址。 Windows 内核必须能够访问任何终端服务器会话中的同步对象。 尝试从不同的会话引用的会话内存地址具有不可预知的结果，如系统崩溃或无提示的另一个会话的数据损坏。
+图形驱动程序可以通过调用 Api （如[**EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)）分配会话内存。 与全局地址空间不同，每个终端服务器会话的会话地址空间都是虚拟的。 这意味着在两个不同会话的上下文中使用的同一虚拟地址引用了两个不同的对象。 Windows 内核必须能够从任何终端服务器会话访问同步对象。 尝试从其他会话引用会话内存地址具有不可预知的结果，如系统崩溃或其他会话数据的无提示损坏。
 
-从 Windows 7 开始，当已验证的驱动程序初始化同步对象通过调用 Api 如[ **KeInitializeEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)或[ **KeInitializeMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializemutex)，驱动程序验证工具将检查是否将对象的地址范围内的会话虚拟地址空间。 如果驱动程序验证程序检测到这种不正确的地址，则会颁发[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，0xDF 的参数 1 值。
+从 Windows 7 开始，当经过验证的驱动程序通过调用[**KeInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent)或[**KeInitializeMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializemutex)等 api 初始化同步对象时，驱动程序验证器将检查该对象的地址是否落在会话虚拟中地址空间。 如果驱动程序验证器检测到这种错误的地址，则会发出[**错误检查 0xC4\_：\_检测到\_冲突的 Bug 检查**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，并将参数1的值0xDF。
 
-### <a name="span-idobjectreferencecounterchangesfrom0to1spanspan-idobjectreferencecounterchangesfrom0to1spanspan-idobjectreferencecounterchangesfrom0to1spanobject-reference-counter-changes-from-0-to-1"></a><span id="Object_Reference_Counter_Changes_from_0_to_1"></span><span id="object_reference_counter_changes_from_0_to_1"></span><span id="OBJECT_REFERENCE_COUNTER_CHANGES_FROM_0_TO_1"></span>对象引用计数器从 0 更改为 1
+### <a name="span-idobject_reference_counter_changes_from_0_to_1spanspan-idobject_reference_counter_changes_from_0_to_1spanspan-idobject_reference_counter_changes_from_0_to_1spanobject-reference-counter-changes-from-0-to-1"></a><span id="Object_Reference_Counter_Changes_from_0_to_1"></span><span id="object_reference_counter_changes_from_0_to_1"></span><span id="OBJECT_REFERENCE_COUNTER_CHANGES_FROM_0_TO_1"></span>对象引用计数器从0更改为1
 
-从 Windows 7 开始，驱动程序验证工具将检查不正确的对象引用的其他类。
+从 Windows 7 开始，驱动程序验证程序将检查其他类的不正确的对象引用。
 
-当 Windows 内核对象管理器创建一个对象，如文件对象或线程对象，该新对象的引用计数器设置为 1。 如对 Api 的调用通过递增引用计数器[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)或[ **ObReferenceObjectByHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle). 引用计数会通过减少每个[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)同一对象调用。
+当 Windows 内核对象管理器创建对象（如文件对象或线程对象）时，新对象的引用计数器将设置为1。 引用计数器通过对 Api （如[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)或[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)）的调用来递增。 对于同一对象，引用计数器将减少每个[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)调用。
 
-引用计数器值达到 0 的值后，该对象将成为以便释放。 对象管理器可能会立即释放它或更高版本可能会释放。 调用[ **ObReferenceObjectByPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbypointer)或[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)并将引用计数器从 0 更改为 1 表示递增已释放对象的引用计数器。 这是始终不正确，因为这样可能会损坏，其他人的内存分配。
+引用计数器达到0值后，就可以释放对象了。 对象管理器可能会立即释放该对象，否则以后可能会将其释放。 调用[**ObReferenceObjectByPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbypointer)或[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)并将引用计数器从0更改为1意味着会递增已经释放的对象的引用计数器。 这始终不正确，因为这可能会导致其他人的内存分配损坏。
 
-### <a name="span-idsystemshutdownblocksordelaysspanspan-idsystemshutdownblocksordelaysspanspan-idsystemshutdownblocksordelaysspansystem-shutdown-blocks-or-delays"></a><span id="System_Shutdown_Blocks_or_Delays"></span><span id="system_shutdown_blocks_or_delays"></span><span id="SYSTEM_SHUTDOWN_BLOCKS_OR_DELAYS"></span>系统关闭受到阻止或延迟
+### <a name="span-idsystem_shutdown_blocks_or_delaysspanspan-idsystem_shutdown_blocks_or_delaysspanspan-idsystem_shutdown_blocks_or_delaysspansystem-shutdown-blocks-or-delays"></a><span id="System_Shutdown_Blocks_or_Delays"></span><span id="system_shutdown_blocks_or_delays"></span><span id="SYSTEM_SHUTDOWN_BLOCKS_OR_DELAYS"></span>系统关闭块或延迟
 
-从 Windows 7 开始，驱动程序验证程序会发出一个分行符到内核调试程序如果系统关闭未完成 20 分钟后启动它。 驱动程序验证程序将指定的系统关闭开始为 Windows 内核开始其各种子系统，例如注册表、 插即用设备或 I/O manager 子系统正在关闭的时间。
+从 Windows 7 开始，如果系统关闭在启动后的20分钟内未完成，则驱动程序验证器会发出进入内核调试器的中断。 驱动程序验证程序将系统关闭的开始时间指定为 Windows 内核开始关闭其各种子系统（如注册表、即插即用或 i/o 管理器子系统）的时间。
 
-如果内核调试器未附加到系统中，驱动程序验证程序会发出[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，0x115，而不是此断点的参数 1 值。
+如果未将内核调试器连接到系统，则驱动程序验证程序会发出[**Bug 检查 0xC4\_：\_检测到\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，而不是将参数1值为0x115，而不是此断点。
 
-通常情况下，不能在 20 分钟内完成系统关闭表示该系统运行的驱动因素之一运行不正常。 运行 **！ 分析-v**从内核调试器将显示负责关闭系统工作线程的堆栈跟踪。 您应检查该堆栈跟踪并确定是否关闭线程被阻止通过正在测试的驱动因素之一。
+通常在不到20分钟内无法完成的系统关闭表明在该系统上运行的其中一个驱动程序出现故障。 正在运行！从内核调试器**分析-v**会显示负责关闭的系统工作线程的堆栈跟踪。 你应检查该堆栈跟踪，并确定该关闭线程是否被正在测试的某个驱动程序阻止。
 
-有时系统不能关闭，因为它受到超负荷测试-即使所有驱动程序是否正常。 用户可以选择此驱动程序验证程序断点后继续执行并检查系统是否最终关闭。
+有时，系统无法关闭，因为它受到繁重的压力测试，即使所有驱动程序都正常运行。 用户可以选择在此驱动程序验证程序断点后继续执行，并检查系统是否最终会关闭。
 
  
 

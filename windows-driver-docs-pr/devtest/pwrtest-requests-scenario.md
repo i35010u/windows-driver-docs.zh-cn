@@ -1,24 +1,24 @@
 ---
 title: PwrTest 请求方案
-description: PwrTest 请求方案记录电源请求从进程和系统发生时运行的服务。
+description: PwrTest 请求方案记录系统中正在运行的进程和服务的电源请求。
 ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c37c836e0643ef6099b72aa532fbc19e66ca8fd4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64d2d4606985b66b0dc6d5ae4721655881dd4713
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356403"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839332"
 ---
 # <a name="pwrtest-requests-scenario"></a>PwrTest 请求方案
 
 
-PwrTest 请求方案记录电源请求从进程和系统发生时运行的服务。
+PwrTest 请求方案记录系统中正在运行的进程和服务的电源请求。
 
-PwrTest 请求方案可用于诊断计算机不能进入睡眠或为什么监视器都保留在的原因。
+你可以使用 "PwrTest 请求" 方案诊断计算机不会进入睡眠状态的原因或监视器保持打开状态的原因。
 
-也可以使用管理器工具[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568) (powercfg.exe) 实现此目的 (**powercfg.exe /requests**)。 PowerCfg 随 Windows (Windows\\System32 目录)。 但是，Powercfg.exe 仅捕获在运行该工具时处于活动状态的电源请求。 与此相反，PwrTest 请求方案运行指定的时间和日志电源请求被创建并已关闭，因此无需请求时运行该工具时处于活动状态。
+你还可以使用管理员工具[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568) （powercfg）来实现此目的（**powercfg/requests**）。 PowerCfg 包含在 Windows 中（Windows\\System32 目录）。 但是，Powercfg 仅捕获在运行该工具时处于活动状态的电源请求。 与此相反，PwrTest 请求方案在指定时间运行，并在创建和关闭时记录电源请求，因此在运行该工具时，请求无需处于活动状态。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>语法
 
@@ -27,8 +27,8 @@ PwrTest 请求方案可用于诊断计算机不能进入睡眠或为什么监视
 pwrtest /requests [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
-为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
+<span id="_t_n"></span><span id="_T_N"></span> **/t：** <em>n</em>  
+指定应用场景运行的总时间（分钟）（ *n*的默认值为30分钟）。
 
 **示例**
 
@@ -40,7 +40,7 @@ pwrtest /requests
 pwrtest /requests  /t:60
 ```
 
-### <a name="span-idxmllogfileoutputspanspan-idxmllogfileoutputspanspan-idxmllogfileoutputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
+### <a name="span-idxml_log_file_outputspanspan-idxml_log_file_outputspanspan-idxml_log_file_outputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
 
 ```XML
 <PwrTestLog>
@@ -86,7 +86,7 @@ pwrtest /requests  /t:60
 </PwrTestLog> 
 ```
 
-下表介绍日志文件中显示的 XML 元素。
+下表描述了日志文件中显示的 XML 元素。
 
 <table>
 <colgroup>
@@ -102,30 +102,30 @@ pwrtest /requests  /t:60
 <tbody>
 <tr class="odd">
 <td align="left"><strong>&lt;PowerRequests&gt;</strong></td>
-<td align="left"><p>包含所有不同的电源请求事件。 可能只有一个<strong>&lt;PowerRequests&gt;</strong> PwrTest 日志文件中的元素。</p></td>
+<td align="left"><p>包含所有不同的电源请求事件。 PwrTest 日志文件中只能有一个<strong>&lt;PowerRequests&gt;</strong>元素。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;时间戳&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;Caller&gt;</strong></td>
+<td align="left"><strong>&lt;调用方&gt;</strong></td>
 <td align="left"><p>请求者的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;上下文&gt;</strong></td>
-<td align="left"><p>如果适用的设备实例路径</p></td>
+<td align="left"><p>设备实例路径（如果适用）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;RequestObject&gt;</strong></td>
 <td align="left"><p>事件的请求对象。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;Type&gt;</strong></td>
+<td align="left"><strong>&lt;类型&gt;</strong></td>
 <td align="left"><p>调用方的数值类型。</p>
 <p>0 = 驱动程序</p>
 <p>1 = 进程</p>
-<p>2 = 共享的服务</p></td>
+<p>2 = 共享服务</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ProcessID&gt;</strong></td>
@@ -133,31 +133,31 @@ pwrtest /requests  /t:60
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;SessionID&gt;</strong></td>
-<td align="left"><p>如果进程调用方的会话 ID。</p></td>
+<td align="left"><p>调用方的会话 ID （如果为）。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;Legacy&gt;</strong></td>
-<td align="left"><p>报告 True 或 False，如果调用方使用旧版<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"> <strong>SetThreadExecutionState 函数 (Windows)</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemstate)"> <strong>PoSetSystemState</strong> </a> Api 或较新<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)"> <strong>PowerSetRequest 函数 (Windows)</strong> </a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerrequest)"> <strong>PoSetPowerRequest</strong> </a> Api。</p></td>
+<td align="left"><strong>&lt;旧&gt;</strong></td>
+<td align="left"><p>如果调用方使用了旧的<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"><strong>SetThreadExecutionState 函数（windows）</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)"><strong>PoSetSystemState</strong></a> api 或较新的<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)"><strong>PowerSetRequest 函数（windows）</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest)"><strong>PoSetPowerRequest</strong></a> api，则报告 True 或 False。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;SystemAllowed&gt;</strong></td>
-<td align="left"><p>报告的此调用方是否允许系统的请求。</p></td>
+<td align="left"><p>报告此调用方是否允许系统请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;DisplayAllowed&gt;</strong></td>
-<td align="left"><p>报告是否为此调用方允许显示请求。</p></td>
+<td align="left"><p>报告此调用方是否允许显示请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;AwayModeAllowed&gt;</strong></td>
-<td align="left"><p>报告是否为此调用方允许离开模式请求。</p></td>
+<td align="left"><p>报告此调用方是否允许离开模式请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;PerfBoostAllowed&gt;</strong></td>
-<td align="left"><p>报告性能提升请求是否允许为此调用方。</p></td>
+<td align="left"><p>报告此调用方是否允许性能提升请求。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;ExecutionRequiredAllowed&gt;</strong></td>
-<td align="left"><p>报告是否执行所需的此调用方允许的请求。</p></td>
+<td align="left"><p>报告此调用方是否允许执行所需的请求。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;SystemCount&gt;</strong></td>
@@ -169,7 +169,7 @@ pwrtest /requests  /t:60
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AwayModeCount&gt;</strong></td>
-<td align="left"><p>此调用方的离开模式请求数。</p></td>
+<td align="left"><p>此调用方的远离模式请求数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;PerfBoostCount&gt;</strong></td>
@@ -177,7 +177,7 @@ pwrtest /requests  /t:60
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ExecutionRequiredCount&gt;</strong></td>
-<td align="left"><p>执行数所需的此调用方的请求。</p></td>
+<td align="left"><p>此调用方所需的执行请求数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;CreatePowerRequestEvent&gt;</strong></td>
@@ -185,18 +185,18 @@ pwrtest /requests  /t:60
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ChangePowerRequestEvent&gt;</strong></td>
-<td align="left"><p>调用方已更改的请求计数。</p></td>
+<td align="left"><p>调用方已更改请求计数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;ClosePowerRequestEvent&gt;</strong></td>
-<td align="left"><p>调用方已关闭请求。</p></td>
+<td align="left"><p>调用方已关闭该请求。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

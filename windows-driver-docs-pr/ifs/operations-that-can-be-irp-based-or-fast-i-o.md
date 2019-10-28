@@ -3,17 +3,17 @@ title: 操作，可以是基于 IRP 的操作或快速的 I/O 操作
 description: 操作，可以是基于 IRP 的操作或快速的 I/O 操作
 ms.assetid: 768f5744-1aea-4fa8-b81b-d2670d6c878e
 keywords:
-- 快速 I/O 缓冲区 WDK 文件系统
-- 标记成员 WDK 文件系统
+- fast i/o 缓冲 WDK 文件系统
+- 标志成员 WDK 文件系统
 - 设备对象标志 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f70acd3b5008b45b62efd5821504fa5dda5c6f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c0cdb2070bb47306e271fe66ba396d93d0ad696a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384802"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841051"
 ---
 # <a name="operations-that-can-be-irp-based-or-fast-io"></a>操作，可以是基于 IRP 的操作或快速的 I/O 操作
 
@@ -21,21 +21,21 @@ ms.locfileid: "67384802"
 ## <span id="ddk_operations_that_can_be_irp_based_or_fast_io_if"></span><span id="DDK_OPERATIONS_THAT_CAN_BE_IRP_BASED_OR_FAST_IO_IF"></span>
 
 
-以下类型的操作可以是基于 IRP 的或快速 I/O 操作：
+以下类型的操作可以是基于 IRP 的操作，也可以是快速 i/o 操作：
 
--   IRP\_MJ\_设备\_控件。 (请注意该 IRP\_MJ\_内部\_设备\_控件始终是基于 IRP 的。)
+-   IRP\_MJ\_设备\_控件。 （请注意，IRP\_MJ\_内部\_设备\_控件始终基于 IRP。）
 
--   IRP\_MJ\_查询\_信息。 此操作可以是快速的 i/o 操作，如果**FileInformationClass**参数是**FileBasicInformation**， **FileStandardInformation**，或**FileNetworkOpenInformation**。
+-   IRP\_MJ\_查询\_信息。 如果**FileInformationClass**参数为**FileBasicInformation**、 **FileStandardInformation**或**FileNetworkOpenInformation**，此操作可为快速 i/o。
 
--   IRP\_MJ\_READ. 微筛选器驱动程序可以设置 FLTFL\_操作\_注册\_跳过\_缓存\_中的 IO 标志[ **FLT\_操作\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/ns-fltkernel-_flt_operation_registration)结构，以避免接收快速 I/O IRP\_MJ\_读取操作和基于 IRP 的缓存的读取。
+-   IRP\_MJ\_读取。 微筛选器驱动程序可以将 FLTFL\_操作设置\_注册\_跳过[**FLT\_操作\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_operation_registration)结构中\_缓存\_IO 标志，以避免接收快速 i/o IRP\_MJ\_读取操作和缓存的基于 IRP 的读取。
 
--   IRP\_MJ\_WRITE. 微筛选器驱动程序可以设置 FLTFL\_操作\_注册\_跳过\_缓存\_IO 标志中 FLT\_操作\_注册结构，以避免接收快速 I/O IRP\_MJ\_写入操作以及缓存基于 IRP 的写入。
+-   IRP\_MJ\_写入。 微筛选器驱动程序可以将 FLTFL\_操作设置\_注册\_跳过\_注册结构中\_缓存\_IO 标志，以避免接收快速 i/o IRP\_MJ\_写入操作和缓存的基于 IRP 的写入。
 
-上述任何操作时快速 I/O 操作，它始终使用既不缓冲，也不直接 I/O，即使等效基于 IRP 的操作使用不同的缓冲方法。
+当这些操作中的任何一种都是快速 i/o 操作时，它将始终不使用缓冲和直接 i/o，即使等效的基于 IRP 的操作使用不同的缓冲方法。
 
-当 IRP\_MJ\_设备\_控件是一个快速的 I/O 操作，它将始终使用既不缓冲，也不直接 I/O，而不考虑 IOCTL 的传输类型。
+当 IRP\_MJ\_设备\_控件是快速 i/o 操作时，不管 IOCTL 的传输类型如何，它都始终使用未缓冲和直接的 i/o。
 
-尽管 IRP\_MJ\_锁\_控件可以是基于 IRP 的或快速 I/O 操作，它具有无缓冲区。
+尽管 IRP\_MJ\_锁定\_控件可以是基于 IRP 或快速 i/o 操作，但它没有缓冲区。
 
  
 

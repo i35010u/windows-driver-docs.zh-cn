@@ -4,15 +4,15 @@ description: 非 PnP 驱动程序的 Unload 例程
 ms.assetid: 5917648f-1e7e-4b39-9aa6-d6cdaac7a2cd
 keywords:
 - 卸载例程 WDK 内核，非 PnP 驱动程序
-- 非即插即用卸载例程 WDK 内核
+- 非 PnP 卸载例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9169d44f5b38c6eaaa50ad6686336ec039c7f189
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55571112e6ad636197fa93443c16064be2d6763d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365456"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838538"
 ---
 # <a name="non-pnp-drivers-unload-routine"></a>非 PnP 驱动程序的 Unload 例程
 
@@ -20,13 +20,13 @@ ms.locfileid: "67365456"
 
 
 
-早期驱动程序和高级文件系统驱动程序，它不处理即插即用设备删除请求，必须释放资源、 删除设备对象，并从设备堆栈中分离其[ *Unload* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程。
+较早的驱动程序和高级文件系统驱动程序（不处理 PnP 设备删除请求）必须释放资源、删除设备对象，以及在其[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程中分离出设备堆栈。
 
-如果它具有不这样做，首先要做的旧设备驱动程序应在其*Unload*例程是禁用来自设备的中断。 否则，可能会调用其 ISR 以处理时的设备中断*Unload*例程释放 ISR 需要处理中断的设备扩展中的资源。 即使在这些情况下，成功运行其 ISR [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程的 ISR 队列和可能在 IRQL 运行其他驱动程序例程&gt;= 调度\_级别之前, 将执行*卸载*例程重新获得控制，从而提高了的可能性， *卸载*例程已删除的资源的另一个驱动程序例程的引用。 请参阅[管理硬件优先级](managing-hardware-priorities.md)有关详细信息。
+如果尚未执行此操作，那么旧式设备驱动程序在其*卸载*例程中应执行的第一件事是禁用设备的中断。 否则，可以调用其 ISR 来处理设备中断，同时*卸载*例程会释放 isr 需要处理中断的设备扩展中的资源。 即使在这种情况下其 ISR 成功运行， [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或[*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程也可能会在*卸载*之前执行 ISR 队列，以及可能以 IRQL &gt;= 调度\_级别运行的其他驱动程序例程例程重新获得控制，从而增加了*卸载*例程删除了另一驱动程序例程所引用的资源的可能性。 有关详细信息，请参阅[管理硬件优先级](managing-hardware-priorities.md)。
 
-禁用中断之后, 的文件系统和旧驱动程序必须释放资源和对象。 有关详细信息，请参阅以下两个部分：
+禁用中断后，文件系统和旧驱动程序必须释放资源和对象。 有关详细信息，请参阅以下两部分：
 
-[释放驱动程序分配资源](releasing-driver-allocated-resources.md)
+[释放驱动程序分配的资源](releasing-driver-allocated-resources.md)
 
 [释放设备和控制器对象](releasing-device-and-controller-objects.md)
 

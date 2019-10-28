@@ -1,20 +1,20 @@
 ---
-title: ISCSI\_支持\_LB\_策略 WMI 类
-description: ISCSI\_支持\_LB\_策略 WMI 类
+title: 支持 ISCSI\_\_LB\_策略 WMI 类
+description: 支持 ISCSI\_\_LB\_策略 WMI 类
 ms.assetid: c11eebe8-519a-473d-9e9c-8a787333223e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0872ecc38dd0a4e73f4e9279e825dff93b64990d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 31c7798fa92fb10ad5145a3e49b75aaf38b6598a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378394"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841625"
 ---
-# <a name="iscsisupportedlbpolicies-wmi-class"></a>ISCSI\_支持\_LB\_策略 WMI 类
+# <a name="iscsi_supported_lb_policies-wmi-class"></a>支持 ISCSI\_\_LB\_策略 WMI 类
 
 
-ISCSI\_支持\_LB\_策略 WMI 类包含有关支持的负载均衡策略的多个连接 iSCSI 会话的信息。 此类定义，如下所示在*Mgmt.mof。*
+\_LB\_策略支持的 ISCSI\_WMI 类包含有关多连接 iSCSI 会话支持的负载平衡策略的信息。 此类在*管理 mof*中定义为：
 
 ```cpp
 class ISCSI_Supported_LB_Policies {
@@ -62,7 +62,7 @@ class ISCSI_Supported_LB_Policies {
 };
 ```
 
-当 WMI 工具套件编译前面的类定义时，它会生成[ **ISCSI\_支持\_LB\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/iscsimgt/ns-iscsimgt-_iscsi_supported_lb_policies)数据结构。
+当 WMI 工具套件编译上述类定义时，它将生成[**支持的 ISCSI\_\_LB\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_supported_lb_policies)数据结构。
 
  
 

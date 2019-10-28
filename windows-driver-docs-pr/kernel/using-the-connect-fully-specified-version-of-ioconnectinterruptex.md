@@ -7,37 +7,37 @@ keywords:
 - CONNECT_FULLY_SPECIFIED
 - 手动中断检测 WDK 内核
 - 基于行的中断 WDK 内核
-- 消息信号中断 WDK 内核
+- 消息-已发出信号中断 WDK 内核
 - FullySpecified
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa30ba45729a83ae9006a0ff569eae891295ce59
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 770cd0c0c71ffc247c6c0fd06afffec49c8da7d8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355454"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838333"
 ---
-# <a name="using-the-connect_fully_specified-version-of-ioconnectinterruptex"></a>使用 CONNECT\_完全\_IoConnectInterruptEx 指定版本
+# <a name="using-the-connect_fully_specified-version-of-ioconnectinterruptex"></a>使用连接\_完全\_指定版本的 IoConnectInterruptEx
 
 
-驱动程序可以使用 CONNECT\_完全\_SPECIFIED 新版[ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)注册[ *InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)特定中断例程。 驱动程序可以使用 CONNECT\_完全\_从 Windows Vista 开始的指定版本。 通过将链接到 Iointex.lib 库，该驱动程序可以使用 CONNECT\_完全\_Windows 2000，Windows XP 和 Windows Server 2003 中的指定版本。 有关详细信息，请参阅[使用之前为 Windows Vista 的 IoConnectInterruptEx](using-ioconnectinterruptex-prior-to-windows-vista.md)。
+驱动程序可以使用连接\_完全\_指定版本的[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)为特定中断注册[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)例程。 驱动程序可以从 Windows Vista 开始使用完全\_指定版本的连接\_。 通过链接到 Iointex 库，驱动程序可以在 Windows 2000、Windows XP 和 Windows Server 2003 中完全\_指定版本\_使用连接。 有关详细信息，请参阅[Windows Vista 之前的使用 IoConnectInterruptEx](using-ioconnectinterruptex-prior-to-windows-vista.md)。
 
-该驱动程序指定的连接值\_完全\_为指定*参数 * * *-&gt;版本**，并使用的成员*参数 * * *-&gt;FullySpecified** 来指定该操作的其他参数：
+驱动程序指定值 "连接\_完全\_为参数指定 ** * *&gt;版本**，并使用参数的成员 ** * *-&gt;FullySpecified** 来指定操作的其他参数：
 
--   *参数 * * *-&gt;FullySpecified.PhysicalDeviceObject** 指定的设备是 PDO，ISR 服务。
+-   *Parameters * * *-&gt;FullySpecified. PhysicalDeviceObject** 指定 ISR 服务的设备的 PDO。
 
--   *参数*-&gt;**FullySpecified.ServiceRoutine**指向*InterruptService*例程，同时*参数* - &gt; **FullySpecified**。**ServiceContext**指定系统将作为传递的值*ServiceContext*参数*InterruptService*。 该驱动程序可以使用此传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
+-   *参数*-&gt;**ServiceRoutine**指向*InterruptService*例程，而*参数*-&gt;**FullySpecified**。**ServiceContext**指定系统作为*ServiceContext*参数传递到*InterruptService*的值。 驱动程序可以使用它来传递上下文信息。 有关传递上下文信息的详细信息，请参阅[提供 ISR 上下文信息](providing-isr-context-information.md)。
 
--   该驱动程序提供了指向 PKINTERRUPT 变量中的 * 参数 * **-&gt;FullySpecified.InterruptObject**。 **IoConnectInterruptEx**例程将此变量设置为指向中断的中断对象后者可以时要使用[删除 ISR](removing-an-isr.md)。
+-   驱动程序提供指向 * Parameters * **-&gt;FullySpecified InterruptObject**中的 PKINTERRUPT 变量的指针。 **IoConnectInterruptEx**例程将此变量设置为指向中断的中断对象，可在[删除 ISR](removing-an-isr.md)时使用该对象。
 
--   驱动程序可以选择指定在旋转锁*参数 * * *-&gt;FullySpecified.SpinLock** ISR 与同步时要使用的系统 大多数驱动程序可以只需指定**NULL**启用系统分配旋转锁代表该驱动程序。 有关与 ISR 同步的详细信息，请参阅[对设备数据的同步访问](synchronizing-access-to-device-data.md)。
+-   驱动程序可以选择指定参数中的自旋锁 ** * *-&gt;旋转锁** 以便系统在与 ISR 同步时使用。 大多数驱动程序可以仅指定**NULL** ，使系统能够代表驱动程序分配自旋锁。 有关与 ISR 同步的详细信息，请参阅[同步对设备数据的访问](synchronizing-access-to-device-data.md)。
 
-该驱动程序必须指定中断的键属性中的其他成员 * 参数 * **-&gt;FullySpecified**。 系统提供的数组中所需的信息[ **CM\_分部\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_cm_partial_resource_descriptor)结构会在发送时[**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) IRP 到驱动程序。
+驱动程序必须在 * Parameters * **-&gt;FullySpecified**的其他成员中指定中断的键属性。 系统在将[**irp\_MN\_START\_DEVICE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) IRP 发送到驱动程序时，在[**CM\_部分\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构中提供必需的信息。
 
-系统提供的每个中断**CM\_分部\_资源\_描述符**结构**类型**成员等于**CmResourceTypeInterrupt**。 消息信号中断，CM\_资源\_中断\_消息位**标志**成员设置; 否则，清除它。
+系统为每个中断提供**CM\_部分\_资源\_描述符**结构，**类型**成员等于**CmResourceTypeInterrupt**。 对于消息发出信号的中断，设置了**标志**成员的 CM\_资源\_中断\_消息位;否则，它会被清除。
 
-**U.Interrupt**的成员**CM\_分部\_资源\_描述符**包含说明的基于线条的中断，而**u。MessageInterrupt.Translated**成员包含的消息信号中断的说明。 下表中指示的位置， **CM\_分部\_资源\_描述符**结构，以查找所需设置的成员的信息*参数*- &gt; **FullySpecified**两种类型的中断。 有关详细信息，请参阅表后面的代码示例。
+**CM\_分部\_资源\_描述符**的**u. 中断**成员包含基于行的中断的说明，而**MessageInterrupt**成员包含对消息信号中断。 下表指示在**CM\_部分\_资源\_描述符**结构中的位置，以查找设置*参数*的成员所需的信息-&gt;**FullySpecified**中断的类型。 有关详细信息，请参阅表后面的代码示例。
 
 <table>
 <colgroup>
@@ -59,33 +59,33 @@ ms.locfileid: "67355454"
 <td><p><strong>ShareDisposition</strong></p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Vector</strong></p></td>
-<td><p><strong>u.Interrupt.Vector</strong></p></td>
-<td><p><strong>u.MessageInterrupt.Translated.Vector</strong></p></td>
+<td><p><strong>向量</strong></p></td>
+<td><p><strong>手杖形</strong></p></td>
+<td><p><strong>MessageInterrupt 转换</strong></p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Irql</strong></p></td>
-<td><p><strong>u.Interrupt.Level</strong></p></td>
-<td><p><strong>u.MessageInterrupt.Translated.Level</strong></p></td>
+<td><p><strong>手杖</strong></p></td>
+<td><p><strong>MessageInterrupt 级别</strong></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>InterruptMode</strong></p></td>
-<td><p><strong>标志</strong>& CM_RESOURCE_INTERRUPT_LATCHED</p></td>
-<td><p><strong>标志</strong>& CM_RESOURCE_INTERRUPT_LATCHED</p></td>
+<td><p>CM_RESOURCE_INTERRUPT_LATCHED<strong>标志</strong>&</p></td>
+<td><p>CM_RESOURCE_INTERRUPT_LATCHED<strong>标志</strong>&</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ProcessorEnableMask</strong></p></td>
-<td><p><strong>u.Interrupt.Affinity</strong></p></td>
-<td><p><strong>u.MessageInterrupt.Translated.Affinity</strong></p></td>
+<td><p><strong>手杖. 关联</strong></p></td>
+<td><p><strong>MessageInterrupt （& e）</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-驱动程序将仅收到**CM\_分部\_资源\_描述符**消息信号中断在 Windows Vista 和更高版本的 Windows 上的结构。
+在 Windows Vista 和更高版本的 Windows 上，驱动程序将仅接收**CM\_部分\_资源\_描述符**结构。
 
-下面的代码示例演示如何注册*InterruptService*例程使用 CONNECT\_完全\_指定。
+下面的代码示例演示如何使用 CONNECT\_完全\_指定注册*InterruptService*例程。
 
 ```cpp
 IO_CONNECT_INTERRUPT_PARAMETERS params;

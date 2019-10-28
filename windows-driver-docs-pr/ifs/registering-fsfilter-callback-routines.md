@@ -8,12 +8,12 @@ keywords:
 - FsFilter 通知回调例程 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69a4c78f1f1cfd755c4204346e660fc3bc890c2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d2bb0491d0762e5e10983aea14e155d8d0fdc83
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385134"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841006"
 ---
 # <a name="registering-fsfilter-callback-routines"></a>注册 FsFilter 回调例程
 
@@ -21,11 +21,11 @@ ms.locfileid: "67385134"
 ## <span id="ddk_registering_fsfilter_callback_routines_if"></span><span id="DDK_REGISTERING_FSFILTER_CALLBACK_ROUTINES_IF"></span>
 
 
-之前和之后基础文件系统将执行某些操作称为 FsFilter 通知回调例程。 有关 FsFilter 回调例程的详细信息，请参阅[ **FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)。
+在基础文件系统执行特定操作之前和之后，将调用 FsFilter 通知回调例程。 有关 FsFilter 回调例程的详细信息，请参阅[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)。
 
-若要注册 FsFilter 通知回调例程，必须分配并初始化与 FS\_筛选器\_回调结构、 在结构中，存储 FsFilter 回调例程的入口点，将传递的地址结构中*回叫*参数**FsRtlRegisterFileSystemFilterCallbacks**。
+若要注册 FsFilter 通知回调例程，必须分配和初始化 FS\_筛选器\_回调结构，将 FsFilter 回调例程的入口点存储到结构中，并在**FsRtlRegisterFileSystemFilterCallbacks**的*回调*参数。
 
-例如，假设"MyLegacyFilter"驱动程序可以按如下所示注册其 FsFilter 回调例程：
+例如，假设 "MyLegacyFilter" 驱动程序可以注册其 FsFilter 回调例程，如下所示：
 
 ```cpp
 fsFilterCallbacks.SizeOfFsFilterCallbacks = sizeof(FS_FILTER_CALLBACKS);

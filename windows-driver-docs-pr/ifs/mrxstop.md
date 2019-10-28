@@ -1,6 +1,6 @@
 ---
 title: MRxStop 例程
-description: TheMRxStop 例程调用 RDBSS 停止网络微型重定向。
+description: RDBSS 调用 TheMRxStop 例程来停止网络小型重定向程序。
 ms.assetid: 7600335e-ab7c-4993-9e27-18e530496b1c
 keywords:
 - MRxStop 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c333347a3a9354e184efcffb0e7b512c8ef3d53
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8b4d2b12d52c667eb3caf818ec4dbe0dbd6176e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384803"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841067"
 ---
 # <a name="mrxstop-routine"></a>MRxStop 例程
 
 
-*MRxStop*由调用例程[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)停止网络微型重定向。
+[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxStop*例程来停止网络小型重定向程序。
 
 <a name="syntax"></a>语法
 ------
@@ -40,19 +40,19 @@ NTSTATUS MRxStop(
 { ... }
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*RxContext* \[in、 out\]  
-指向 RX\_上下文结构。 此参数包含请求网络微型-重定向程序停止 IRP。
+*RxContext* \[in，out\]  
+指向 RX\_上下文结构的指针。 此参数包含请求网络小型重定向器停止的 IRP。
 
-*RxDeviceObject* \[in、 out\]  
-指向 RDBSS\_设备\_此网络微型重定向的对象结构。
+*RxDeviceObject* \[in，out\]  
+指向 RDBSS\_设备的指针\_此网络小型重定向程序的对象结构。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxStop*将返回状态\_成功的成功或相应 NTSTATUS 值，如以下项之一：
+*MRxStop*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -68,11 +68,11 @@ NTSTATUS MRxStop(
 <tbody>
 <tr class="odd">
 <td align="left"><strong>STATUS_REDIRECTOR_HAS_OPEN_HANDLES</strong></td>
-<td align="left"><p>网络微型重定向已打开的句柄会阻止这一次停止的。</p></td>
+<td align="left"><p>网络小型重定向程序具有打开的句柄，可阻止它在此时停止。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_REDIRECTOR_NOT_STARTED</strong></td>
-<td align="left"><p>未启动网络微型重定向。</p></td>
+<td align="left"><p>网络小型重定向程序未启动。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,25 +82,25 @@ NTSTATUS MRxStop(
 <a name="remarks"></a>备注
 -------
 
-*MRxStop*停止和取消初始化网络微型-重定向程序从 RDBSS 角度来看。 停止网络微型重定向可能需要释放的内存分配和其他系统资源。
+*MRxStop*从 RDBSS 角度停止并取消网络微型重定向程序。 停止网络小型重定向程序可能需要释放内存分配和其他系统资源。
 
-然后再调用*MRxStop*，RDBSS 修改以下值：
+在调用*MRxStop*之前，RDBSS 会修改以下值：
 
-**MajorFunction**成员中 RX\_指向上下文结构*RxContext*将设置为 IRP 主要函数。
+*RxContext*指向的 RX\_上下文结构中的**MajorFunction**成员设置为 IRP 的主要功能。
 
-**LowIoContext.ParamsFor.FsCtl.FsControlCode**成员中 RX\_指向上下文结构*RxContext*设置为 FSCTL 代码 IRP 如果这是用于停止 FSTCL 请求网络微型重定向。
+如果是用于停止网络小型重定向器的 RXCONTEXT 请求，则*FsCtl*指向的 RX\_上下文结构中的**ParamsFor. FsCtl. FsControlCode**成员设置为 IRP 的 FSTCL 代码。
 
-**StartStopContext.State** RDBSS 成员\_设备\_指向对象结构*RxDeviceObject*设置为 RDBSS\_停止\_在\_进度
+*RxDeviceObject*所指向的 RDBSS\_设备\_对象结构的**StartStopContext**成员设置为 RDBSS\_停止\_\_进度
 
-**StartStopContext.pStopContext** RDBSS 成员\_设备\_指向对象结构*RxDeviceObject*设置为*RxContext*参数。
+*RxDeviceObject*所指向的 RDBSS\_设备\_对象结构的**pStopContext**成员设置为*RxContext*参数。
 
-*MRxStop* RDBSS 从调用[ **RxStopMinirdr** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)例程。
+*MRxStop*由 RDBSS 从[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)例程调用。
 
-如果*MRxStop*将返回状态\_成功，则例程是否成功。 任何其他返回值指示错误发生在停止网络微型重定向。
+如果*MRxStop*返回 STATUS\_SUCCESS，则例程成功。 任何其他返回值都表示在停止网络小型重定向程序时出错。
 
-如果*MRxStop*将返回状态\_成功，RDBSS 设置 RDBSS 状态到 RDBSS\_STARTABLE。 此状态存储在**StartStopContext.State** RDBSS 成员\_设备\_指向对象结构*RxDeviceObject*。
+如果*MRxStop*返回 STATUS\_SUCCESS，则 RDBSS 会将 RDBSS 的状态设置为 RDBSS\_可。 此状态存储在*RxDeviceObject*指向的 RDBSS\_设备\_对象结构的 StartStopContext 成员中 **。**
 
-网络微型重定向通常会维护一个内部变量，该值指示是否已启动网络微型重定向。 例如，网络微型重定向可能跟踪已停止，启动，以及当启动操作或停止操作正在进行时。
+通常，网络小型重定向器会保持一个内部变量，指示网络小型重定向程序是否已启动。 例如，网络小型重定向程序可能会跟踪停止、启动的时间，以及启动操作或停止操作正在进行的时间。
 
 <a name="requirements"></a>要求
 ------------
@@ -113,23 +113,23 @@ NTSTATUS MRxStop(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">桌面</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Mrx.h （包括 Mrx.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mrx （包括 Mrx）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**MRxDevFcbXXXControlFile**](mrxdevfcbxxxcontrolfile.md)
 
-[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nc-mrx-pmrx_calldown_ctx)
+[**MrxStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_calldown_ctx)
 
-[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/mrx/nf-mrx-rxstopminirdr)
+[**RxStopMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxstopminirdr)
 
  
 

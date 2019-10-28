@@ -4,20 +4,20 @@ description: ESC_TWAIN_CAPABILITY 转义码
 ms.assetid: 3fd3f03b-ea72-4151-a19c-3e71cf3193fa
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec47185bc0a9332b9662f900a0197e8661d919f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 704de522cbf16ead7cc4016aac3c63eb1e08a6a8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370045"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840846"
 ---
-# <a name="esctwaincapability-escape-code"></a>ESC\_TWAIN\_功能转义码
+# <a name="esc_twain_capability-escape-code"></a>ESC\_TWAIN\_功能转义代码
 
 
 
 
 
-若要执行专用 TWAIN 功能的功能操作，TWAIN 应用程序，向通知 TWAIN 兼容性层，后者随后调用 WIA 驱动程序[ **IStiUSD::Escape** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/stiusd/nf-stiusd-istiusd-escape)方法，传递ESC\_TWAIN\_功能转义码。 在下面的示例的伪代码演示了如何**转义**应实现方法，以及如何为转义码响应。
+若要在私有 TWAIN 功能上执行功能操作，TWAIN 应用程序将通知 TWAIN 兼容层，该层随后会调用 WIA 驱动程序的[**IStiUSD：： escape**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-escape)方法，同时传递 ESC\_TWAIN\_功能转义代码。 以下示例中的伪代码演示了应如何实现**转义**方法，以及应如何响应转义码。
 
 ```cpp
 STDMETHODIMP CWIADevice::Escape(STI_RAW_CONTROL_CODE EscapeFunction,

@@ -3,56 +3,56 @@ title: 锁定重排分配
 description: 锁定重排分配
 ms.assetid: c9be52d9-36b2-4a0f-9629-01b31293af38
 keywords:
-- 锁定 WDK 显示 swizzled 分配
-- 锁定显示 WDK swizzled 分配
-- 孔径取消调配分配 WDK 显示
-- 锁定 swizzled 分配的内存段 WDK 显示
-- 分配 swizzle 锁 WDK 显示
-- 逐出的分配 WDK 显示
+- swizzled 分配锁定 WDK 显示
+- 锁定 swizzled 分配 WDK 显示
+- unswizzled 分配 WDK 显示
+- 内存段 WDK 显示，锁定 swizzled 分配
+- 分配 swizzle 锁定 WDK 显示
+- 逐出分配 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 114256e7cc9f1e6e79ca5b39e45967156f467dcf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0089975bb28eead2e58131df202db298a093f654
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360889"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840599"
 ---
 # <a name="locking-swizzled-allocations"></a>锁定重排分配
 
 
-视频内存管理器提供特殊支持直接 swizzled 分配 CPU 访问 (也就是说，在其中分配显示微型端口驱动程序[ **DxgkDdiCreateAllocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数集**Swizzled**中的标志**标志**的成员[ **DXGK\_ALLOCATIONINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)结构)。
+视频内存管理器提供对 swizzled 分配的直接 CPU 访问的特殊支持（即显示微型端口驱动程序的[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数在**标志**中设置**swizzled**标志[**DXGK\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)结构的成员）。
 
-当视频内存管理器逐出未标记的驱动程序，因为 swizzled 内存段中的可访问 CPU 的分配时，显示微型端口驱动程序必须始终将其存储在以线性格式。 因此，此类分配不能为 swizzled 它们位于 aperture 段，而它们必须始终为 swizzled 或驱动程序的 unswizzled [ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数。
+当视频内存管理器将 CPU 可访问的分配从内存段逐出为 swizzled 时，显示微型端口驱动程序必须始终以线性格式存储它们。 因此，此类分配在 swizzled 时不能被，它们必须始终为驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数 swizzled 或 unswizzled。
 
-但是，标记为 swizzled 的分配不需要始终存储在以线性格式时从内存段中逐出。 对于此类分配的视频内存管理器跟踪 swizzling 状态的那些分配，并仅需要的驱动程序*DxgkDdiBuildPagingBuffer* unswizzle 某些传输操作期间的分配函数。
+另一方面，如果从内存段逐出，则标记为 swizzled 的分配无需始终以线性格式存储。 对于此类分配，视频内存管理器跟踪这些分配的 swizzling 状态，只需要驱动程序的*DxgkDdiBuildPagingBuffer*函数在某些传输操作期间 unswizzle 分配。
 
-用户模式下显示后，驱动程序将调用 Microsoft Direct3D 运行时[ **pfnLockCb** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)函数、 视频内存管理器和显示微型端口驱动程序行为，具体取决于以下的方式分配的状态：
+用户模式显示驱动程序调用了 Microsoft Direct3D 运行时的[**pfnLockCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockcb)函数后，视频内存管理器和显示微型端口驱动程序的行为取决于分配的状态：
 
-1.  分配的内存段中
+1.  内存段中的分配
 
-    视频内存管理器尝试获取 CPU aperture，以提供对分配的线性访问。 视频内存管理器的视频内存管理器无法获取 aperture，如果逐出回系统内存分配 (除非驱动程序设置**DonotEvict**的成员[ **D3DDDICB\_LOCKFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)结构)。 当视频内存管理器调用显示微型端口驱动程序[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数传输分配，显示微型端口驱动程序应 unswizzle 分配。
+    视频内存管理器将尝试获取 CPU 口径以提供对分配的线性访问。 如果视频内存管理器无法获取口径，视频内存管理器会将分配逐出到系统内存（除非驱动程序设置 D3DDDICB 的**DonotEvict**成员[ **\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)结构）。 当视频内存管理器调用显示微型端口驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数来传输分配时，显示微型端口驱动程序应 unswizzle 分配。
 
-2.  分配逐出 (swizzled) 或位于 aperture 段
+2.  分配已收回（swizzled）或位于口径段
 
-    分配必须先孔径取消调配 CPU 都可以访问它。 因此，视频内存管理器首先尝试分配到一个内存段中页上。 分配位于一个内存段后，视频内存管理器和显示微型端口驱动程序的行为如编号 1 中所示。
+    在 CPU 可以访问之前，必须 unswizzled 分配。 因此，视频内存管理器首先尝试将分配页面到内存段。 在内存段中进行分配后，视频内存管理器和显示微型端口驱动程序的行为与数字1中的行为相同。
 
-3.  逐出的分配 （孔径取消调配）
+3.  分配已逐出（unswizzled）
 
-    如果分配已孔径取消调配到系统内存，视频内存管理器返回现有分配指针而不会进一步处理。
+    如果分配已 unswizzled 系统内存，视频内存管理器将返回现有的分配指针，而不进行进一步的处理。
 
-    为了使 GPU 使用以前孔径取消调配的分配，分配必须先 reswizzled GPU 使用它。 因此，图面上出现错误，视频内存管理器和显示微型端口驱动程序的行为在以下方面：
+    为了使 GPU 使用之前 unswizzled 的分配，在 GPU 使用之前，必须先对其进行 reswizzled。 因此，在表面故障中，视频内存管理器和显示微型端口驱动程序的行为方式如下：
 
-    -   内存段 （由 CPU aperture 动态孔径取消调配） 中的分配
+    -   内存段中的分配（通过 CPU 口径动态 unswizzled）
 
-        分配已在 GPU 可以处理的 swizzled 格式。 因此，无需进一步处理需要的视频内存管理器。
+        分配已采用 GPU 可处理的 swizzled 格式。 因此，视频内存管理器不需要进一步的处理。
 
-    -   分配到系统内存 （孔径取消调配） 中逐出
+    -   分配到系统内存（unswizzled）
 
-        分配的页则包含孔径取消调配数据，不能映射到 aperture 段。 因此，必须在一个内存段中分页分配。 当视频内存管理器调用显示微型端口驱动程序[ **DxgkDdiBuildPagingBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数中分配的视频内存管理器页请求显示微型端口驱动程序swizzle 分配。
+        分配页面包含 unswizzled 数据，无法映射到孔径段。 因此，分配必须分页到内存段中。 当视频内存管理器将显示微型端口驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数调用到分配中的页时，视频内存管理器会请求显示的显示微型端口驱动程序 swizzle 分配。
 
-**请注意**   swizzled 分配下通过 CPU aperture CPU 访问后，它可以仍被逐出之前用户模式显示驱动程序终止的 CPU 访问权限。 这种情况下处理如数字 2 所示。 逐出，就可以使用对应用程序和用户模式显示驱动程序不可见的方式执行。
-此外，no-overwrite 锁 (即，通过设置获得的锁**IgnoreSync**的成员[ **D3DDDICB\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)) 上 swizzled 不允许分配。 仅 CPU 还是 GPU 可以访问此类在任何给定时间分配。
+**请注意**   通过 cpu 口径对 swizzled 分配进行 Cpu 访问后，仍可在用户模式显示驱动程序终止 CPU 访问之前将其逐出。 这种情况的处理方式为第2号。 逐出的执行方式类似于应用程序和用户模式显示驱动程序都不可见。
+同时，不允许对 swizzled 分配执行非覆盖锁定（即，通过设置[**D3DDDICB\_LOCKFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddicb_lockflags)）的**IgnoreSync**成员获取的锁。 在任何给定时间，只有 CPU 或 GPU 可以访问此类分配。
 
  
 

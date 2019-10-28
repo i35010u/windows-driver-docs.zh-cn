@@ -3,19 +3,19 @@ title: 加密支持
 description: 加密支持
 ms.assetid: d5ce9c02-7126-4775-bb87-dae45b93b652
 keywords:
-- 视频解码 WDK DirectX VA 加密
-- 解码视频 WDK DirectX VA 加密
-- 图片解码 WDK DirectX VA 加密
+- 视频解码 WDK DirectX VA，加密
+- 解码视频 WDK DirectX VA，加密
+- 图片解码 WDK DirectX VA，加密
 - 加密 WDK DirectX VA
 - 加密 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfda7421910252e004d9ad46718e05bc77017d78
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe5243f7c23db8ab9a16b914be54faa2f4bd77e8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355562"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838952"
 ---
 # <a name="encryption-support"></a>加密支持
 
@@ -23,31 +23,31 @@ ms.locfileid: "67355562"
 ## <span id="ddk_encryption_support_gg"></span><span id="DDK_ENCRYPTION_SUPPORT_GG"></span>
 
 
-视频解码中使用的数据可以为以下结构和类型的数据进行加密：
+对于以下结构和数据类型，可以对视频解码中使用的数据进行加密：
 
--   宏块控制命令结构
+-   宏块控件命令结构
 
--   残差差异块结构
+-   残留差异块结构
 
 -   位流缓冲区
 
-为了使主机解码器使用加密，它必须确定哪些类型的加密快捷键支持。 有关支持的加速器的加密类型的信息包含在视频加速器格式的 Guid 作为到主机提供的加密类型 Guid 列表。 有关视频加速器格式的 Guid 的详细信息，请参阅 Microsoft Windows SDK 文档。
+为了使主机解码器使用加密，必须确定加速器支持的加密类型。 有关加速器支持的加密类型的信息包含在作为视频加速器格式 Guid 提供给主机的加密类型 Guid 列表中。 有关视频加速器格式 Guid 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**请注意**  所有 DirectX VA 加速器必须都都能够运行，无需使用加密。 支持运行没有加密，因此，不需要声明，以及 DXVA\_NoEncrypt"不加密"GUID 必须永远不会发送视频加速器格式 GUID 列表中。
+**请注意**   所有 DirectX VA 加速器都必须能够在不使用加密的情况下运行。 支持不加密，因此不需要声明，并且不能在视频加速器格式 GUID 列表中发送 DXVA\_NoEncrypt "无加密" GUID。
 
  
 
-主机选择要应用的加密协议的类型，并指示此选择通过发送给快捷键的 GUID。 在典型的加密方案中，两个步骤之前进行加密的数据可以成功传输：
+主机选择要应用的加密协议类型，并通过将 GUID 发送到加速器来指示此选择。 在典型的加密方案中，需要执行两个步骤，然后才能成功传输加密数据：
 
-1.  主机解码器可能需要验证快捷键有权接收的数据。 可以通过将已签名的结构传递到主机以证明它保留的已授权的公钥/私钥对的加速器提供此验证。
+1.  主机解码器可能要求验证加速器是否有权接收数据。 可以通过将已签名的结构传递到主机来提供此验证，以证明它持有授权的公钥/私钥对。
 
-2.  然后，主机解码器将加密的内容密钥发送给快捷键。
+2.  然后，主机解码器向加速器发送加密内容密钥。
 
-用于初始化加密协议的步骤的精确数量取决于正在使用的加密类型和实现方式。
+初始化加密协议的准确步骤数取决于所使用的加密类型和实现方式。
 
-每个主机和加速器将初始化参数传递必要的加密之间交换的数据集必须以加密协议类型 GUID 为前缀。 此 GUID 可区分的一种类型的另一种从数据加密的数据。 这是加密的必需的因为无法对一个 DirectX VA 缓冲区，使用一种类型和加密的另一种可以用于对另一个 DirectX VA 缓冲区。
+要传递所需的加密初始化参数的主机和快捷键之间交换的每个数据集都必须以加密协议类型 GUID 为前缀。 此 GUID 将一种类型的加密的数据从另一种类型的数据中区分开来。 这是必需的，因为一种类型的加密可用于一个 DirectX VA 缓冲区，另一种类型的加密可用于另一个 DirectX VA 缓冲区。
 
-[ **DXVA\_EncryptProtocolHeader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_encryptprotocolheader)结构用于指示正在使用加密协议以及正在使用的加密类型。
+[**DXVA\_EncryptProtocolHeader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_encryptprotocolheader)结构用于指示正在使用加密协议以及所使用的加密类型。
 
  
 

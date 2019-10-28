@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_FILE_SYSTEM_CONTROL
-description: IRP\_MJ\_FILE\_SYSTEM\_CONTROL
+description: IRP\_MJ\_文件\_系统\_控件
 ms.assetid: 9df42b58-5820-44fd-8e55-0195807be951
 keywords:
 - IRP_MJ_FILE_SYSTEM_CONTROL 可安装的文件系统驱动程序
@@ -12,25 +12,25 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb251fd01ee2f96b941af63536fec4963d09d27
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee15f03741b6c0c730e4bd387f10306c720f2940
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384832"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841193"
 ---
-# <a name="irpmjfilesystemcontrol"></a>IRP\_MJ\_FILE\_SYSTEM\_CONTROL
+# <a name="irp_mj_file_system_control"></a>IRP\_MJ\_文件\_系统\_控件
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_文件\_系统\_控制请求发送的 I/O 管理器和其他操作系统组件，以及其他内核模式驱动程序。 它可以发送，例如，当用户模式应用程序已调用 Microsoft Win32 [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数来发送文件系统 I/O 控制 (FSCTL) 请求。
+IRP\_MJ\_文件\_系统\_控制请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 例如，可以在用户模式应用程序调用 Microsoft Win32 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数来发送文件系统 i/o 控制（FSCTL）请求时发送。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-文件系统驱动程序或识别器应检查次要函数代码，以确定请求的文件系统控制操作。
+文件系统驱动程序或识别器应检查次要函数代码以确定请求了哪个文件系统控制操作。
 
 文件系统驱动程序应处理以下次要函数代码：
 
@@ -48,27 +48,27 @@ IRP\_MJ\_文件\_系统\_控制请求发送的 I/O 管理器和其他操作系�
 <tbody>
 <tr class="odd">
 <td align="left"><p>IRP_MN_KERNEL_CALL</p></td>
-<td align="left"><p>此请求是 IRP_MN_USER_FS_REQUEST 相同 （介绍以下），只不过请求的源是一个受信任的内核组件。</p></td>
+<td align="left"><p>此请求与 IRP_MN_USER_FS_REQUEST （如下所述）相同，不同之处在于请求的源是可信内核组件。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_MOUNT_VOLUME</p></td>
-<td align="left"><p>指示卷装入请求。 如果文件系统驱动程序收到此 IRP 的格式不匹配的文件系统卷，文件系统驱动程序应返回 STATUS_UNRECOGNIZED_VOLUME。</p></td>
+<td align="left"><p>指示卷装入请求。 如果文件系统驱动程序接收到其格式与文件系统格式不匹配的卷的此 IRP，则文件系统驱动程序应返回 STATUS_UNRECOGNIZED_VOLUME。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
-<td align="left"><p>指示一个 FSCTL 请求，可能是代表已调用 Microsoft Win32 DeviceIoControl 函数的用户模式应用程序或具有名为一个内核模式组件代表<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"> <strong>ZwDeviceIoControlFile</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"> <strong>IoBuildDeviceIoControlRequest</strong></a>。</p>
-<p>有关 FSCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的"设备输入和输出控制代码"。</p></td>
+<td align="left"><p>指示一个 FSCTL 请求，该请求可能代表一个用户模式应用程序，该应用程序调用了 Microsoft Win32 DeviceIoControl 函数或代表一个已调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"><strong>ZwDeviceIoControlFile</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>的内核模式组件IoBuildDeviceIoControlRequest</strong></a>。</p>
+<p>有关 FSCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的 "设备输入和输出控制代码"。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_VERIFY_VOLUME</p></td>
-<td align="left"><p>指示卷验证请求。 对于可移动介质，文件系统必须验证该卷时检测到已删除并返回，以确保它仍然是以前使用文件系统的同一个卷媒体。 如果该卷已更改，文件系统应使所有未完成的句柄无效。 仅在此新的介质上的文件系统已更改时，它也将返回错误。 此请求是最常用于软盘驱动器。</p></td>
+<td align="left"><p>指示卷验证请求。 对于可移动媒体，文件系统在检测到已删除并返回媒体时必须验证卷，以确保它仍与文件系统以前使用的卷相同。 如果卷已更改，则文件系统应使所有未完成的句柄无效。 如果此新介质上的文件系统已更改，它也会返回错误。 此请求最常用于软盘驱动器。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-文件系统的识别器必须处理以下次要函数代码：
+文件系统识别器必须处理以下次要函数代码：
 
 <table>
 <colgroup>
@@ -91,40 +91,40 @@ IRP\_MJ\_文件\_系统\_控制请求发送的 I/O 管理器和其他操作系�
 
  
 
-在执行请求的操作之后, 的文件系统驱动程序或识别器应完成 IRP。
+执行请求的操作后，文件系统驱动程序或识别器应完成 IRP。
 
 ## <a name="operation-files-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
-筛选器驱动程序应在堆栈上传递此 IRP 到下一步低驱动程序。
+筛选器驱动程序应将此 IRP 传递到堆栈上的下一个较低的驱动程序。
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
 
-文件系统或筛选器驱动程序调用[ **IoGetCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)与给定 IRP，若要获取一个指向其自己[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)中，在以下列表中所示*IrpSp*。 (显示为 IRP *Irp*。)该驱动程序可以使用以下成员的 IRP 和在处理文件系统控制请求的 IRP 堆栈位置中设置的信息：
+文件系统或筛选器驱动程序与给定的 IRP 一起调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation) ，以获取指向其自己的*IrpSp*[**堆栈位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)的指针，如以下列表所示。 （IRP 显示为*irp*。）驱动程序可以使用在处理文件系统控制请求中的以下 IRP 成员和 IRP 堆栈位置设置的信息：
 
 <a href="" id="deviceobject"></a>*DeviceObject*  
-指向目标设备对象指针。
+指向目标设备对象的指针。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp.SystemBuffer*  
-指向系统提供输入缓冲区传递到文件系统或文件系统筛选器驱动程序的目标卷。 用于方法\_缓冲或方法\_直接 I/O。 此参数是否需要取决于特定文件系统控制代码。
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp. SystemBuffer*  
+指向系统提供的输入缓冲区的指针，该缓冲区将传递给目标卷的文件系统或文件系统筛选器驱动程序。 用于方法\_\_直接 i/o 的缓冲或方法。 此参数是否是必需的取决于特定的文件系统控制代码。
 
 <a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*  
-指向[ **IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)接收最终完成状态以及有关请求的操作信息的结构。
+指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
 
 <a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
-内存描述符列表 (MDL) 描述要传递到文件系统或文件系统筛选器驱动程序的目标卷的输出缓冲区的地址。 用于方法\_直接 I/O。 此参数是否需要取决于特定的 I/O 控制代码。
+内存描述符列表（MDL）的地址，描述要传递到目标卷的文件系统或文件系统筛选器驱动程序的输出缓冲区。 用于方法\_直接 i/o。 此参数是否是必需的取决于特定的 i/o 控制代码。
 
 <a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
-指向要传递到文件系统或文件系统筛选器驱动程序的目标卷的调用方提供输出缓冲区的指针。 用于方法\_缓冲或方法\_既不 I/O。 此参数是可选的或必需依赖于特定的 I/O 控制代码。
+一个指针，指向要传递给目标卷的文件系统或文件系统筛选器驱动程序的调用方提供的输出缓冲区。 用于方法\_缓冲或方法\_i/o 都不是。 此参数是可选的还是必需的取决于特定的 i/o 控制代码。
 
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
-与之关联的文件对象的指针*DeviceObject*。
+指向与*DeviceObject*关联的文件对象的指针。
 
-*IrpSp-&gt;的文件对象*参数包含一个指向**RelatedFileObject**字段中，这也是一个文件\_对象结构。 **RelatedFileObject**字段的文件\_对象结构不是有效的 IRP 处理期间\_MJ\_文件\_系统\_控件，不应使用。
+*&gt;IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理 IRP\_MJ\_文件\_SYSTEM\_控件期间无效，不应使用。
 
-<a href="" id="irpsp--flags"></a>*IrpSp-&gt;Flags*  
-以下标志可设置为 IRP\_MN\_验证\_卷：
+<a href="" id="irpsp--flags"></a>*IrpSp-&gt;标志*  
+可以为 IRP\_MN\_验证\_卷设置以下标志：
 
 SL\_允许\_RAW\_装载
 
@@ -134,54 +134,54 @@ SL\_允许\_RAW\_装载
 <a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
 下列情况之一：
 
--   IRP\_MN\_KERNEL\_CALL
--   IRP\_MN\_LOAD\_FILE\_SYSTEM
+-   IRP\_MN\_内核\_调用
+-   IRP\_MN\_加载\_文件\_系统
 -   IRP\_MN\_装载\_卷
--   IRP\_MN\_USER\_FS\_REQUEST
+-   IRP\_MN\_用户\_FS\_请求
 -   IRP\_MN\_验证\_卷
 
-<a href="" id="irpsp--parameters-filesystemcontrol-fscontrolcode"></a>*IrpSp-&gt;Parameters.FileSystemControl.FsControlCode*  
-要传递到文件系统或文件系统筛选器驱动程序的目标卷的 FSCTL 函数代码。 用于 IRP\_MN\_用户\_FS\_仅请求。
+<a href="" id="irpsp--parameters-filesystemcontrol-fscontrolcode"></a>*IrpSp-&gt;参数. FileSystemControl. FsControlCode*  
+要传递给目标卷的文件系统或文件系统筛选器驱动程序的 FSCTL 函数代码。 仅适用于 IRP\_MN\_USER\_FS\_请求。
 
-IOCTL 和 FSCTL 请求有关的详细信息，请参阅[使用的 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)中*内核模式体系结构指南*和"设备输入和输出控制代码"Microsoft Windows SDK 中文档。
+有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。
 
-<a href="" id="irpsp--parameters-filesystemcontrol-inputbufferlength"></a>*IrpSp-&gt;Parameters.FileSystemControl.InputBufferLength*  
-指向以字节为单位的缓冲区的大小*Irp-&gt;AssociatedIrp.SystemBuffer*。
+<a href="" id="irpsp--parameters-filesystemcontrol-inputbufferlength"></a>*IrpSp-&gt;参数. FileSystemControl. InputBufferLength*  
+Irp 所指向的缓冲区大小（以字节为单位） *-&gt;AssociatedIrp. SystemBuffer*。
 
-<a href="" id="irpsp--parameters-filesystemcontrol-outputbufferlength"></a>*IrpSp-&gt;Parameters.FileSystemControl.OutputBufferLength*  
-指向以字节为单位的缓冲区的大小*Irp-&gt;UserBuffer*。
+<a href="" id="irpsp--parameters-filesystemcontrol-outputbufferlength"></a>*IrpSp-&gt;参数. FileSystemControl. OutputBufferLength*  
+Irp 所指向的缓冲区大小（以字节为单位） *&gt;UserBuffer*。
 
-<a href="" id="irpsp--parameters-filesystemcontrol-type3inputbuffer"></a>*IrpSp-&gt;Parameters.FileSystemControl.Type3InputBuffer*  
-对于内核模式下使用方法的输入的缓冲区\_NEITHER。
+<a href="" id="irpsp--parameters-filesystemcontrol-type3inputbuffer"></a>*IrpSp-&gt;参数. FileSystemControl. Type3InputBuffer*  
+使用方法\_的内核模式请求的输入缓冲区均不是。
 
-<a href="" id="irpsp--parameters-mountvolume-deviceobject"></a>*IrpSp-&gt;Parameters.MountVolume.DeviceObject*  
-指向实际设备的卷是要装载的设备对象指针。 文件系统筛选器驱动程序不应使用此参数。
+<a href="" id="irpsp--parameters-mountvolume-deviceobject"></a>*IrpSp-&gt;参数. MountVolume. DeviceObject*  
+一个指针，指向要在其上装载卷的实际设备的设备对象。 文件系统筛选器驱动程序不应使用此参数。
 
-<a href="" id="irpsp--parameters-mountvolume-vpb"></a>*IrpSp-&gt;Parameters.MountVolume.Vpb*  
-指向要装载的卷的卷参数块 (VPB)。 支持可移动介质的文件系统可能用此参数中传递的一个以前用过 VPB。 此类文件在系统上，装载卷后，此指针可以被认为有效。 文件系统筛选器驱动程序筛选这些文件系统应使用此参数，如下所示：筛选器应发送到较低级别的驱动程序 IRP 之前, 保存的值*IrpSp-&gt;Parameters.MountVolume.Vpb-&gt;RealDevice*。 已成功装载卷后，筛选器可以使用此指针，指向存储设备对象以获取正确的 VPB 指针。
+<a href="" id="irpsp--parameters-mountvolume-vpb"></a>*IrpSp-&gt;参数. MountVolume. Vpb*  
+一个指针，指向要装入的卷的卷参数块（VPB）。 支持可移动媒体的文件系统可能会将以前使用过的 VPB 替换为此参数中传递的文件系统。 在此类文件系统上，在装入卷后，不能再将此指针视为有效。 筛选这些文件系统的文件系统筛选器驱动程序应使用此参数，如下所示：在将 IRP 发送到较低级别的驱动程序之前，筛选器应将*IrpSp-&gt;参数的值保存&gt;Vpb-RealDevice*。 成功装入卷后，筛选器可以使用指向存储设备对象的指针来获取正确的 VPB 指针。
 
-<a href="" id="irpsp--parameters-verifyvolume-deviceobject"></a>*IrpSp-&gt;Parameters.VerifyVolume.DeviceObject*  
-指向要验证的卷的设备对象指针。
+<a href="" id="irpsp--parameters-verifyvolume-deviceobject"></a>*IrpSp-&gt;参数. VerifyVolume. DeviceObject*  
+一个指针，指向要验证的卷的设备对象。
 
-<a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp-&gt;Parameters.VerifyVolume.Vpb*  
-指向卷 VPB，若要进行验证。
+<a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp-&gt;参数. VerifyVolume. Vpb*  
+指向要验证的卷的 VPB 的指针。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_stack_location)
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_阻止**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)
+[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)
+[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)
 
-[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
+[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
-[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildsynchronousfsdrequest)
+[**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
-[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)
+[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
 [**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)
 

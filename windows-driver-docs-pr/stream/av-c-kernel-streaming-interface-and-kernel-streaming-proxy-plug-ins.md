@@ -1,9 +1,9 @@
 ---
 title: AV/C 内核接口和流式处理代理插件
-description: 介绍有关 AV/C 内核流式处理接口和内核流式处理代理插件
+description: 提供有关 AV/C 内核流式处理接口和内核流式处理代理插件的信息
 ms.assetid: 0831d917-5afc-4c0c-832a-c2b2669b8c22
 keywords:
-- 内核流式处理接口 WDK AV/C
+- 内核流接口 WDK AV/C
 - 内核流式处理代理插件 WDK AV/C
 - AV/C WDK，内核流式处理代理插件
 - AV/C WDK，内核流式处理接口
@@ -12,26 +12,26 @@ keywords:
 - KS 代理 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc02eef75431bd795800b7e95c4b4c0384d839d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5cc33372dfec78326972d926dd7b19d7d119b617
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386762"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843360"
 ---
-# <a name="avc-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins"></a>AV/C 内核流式处理接口和内核流式处理代理插件
+# <a name="avc-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins"></a>AV/C 内核-流式处理接口和内核流式处理代理插件
 
 
 
-供应商应将对等方和/或虚拟子单元驱动程序编写为使用 Stream 类接口的 WDM 驱动程序 (内核流式处理 1.0，它在文件中实现*Stream.sys*) 或 AVStream 接口 (内核流式处理 2.0，这在文件中实现*Ks.sys*)。 AVStream 是首选的接口，因为流类接口已过时，Microsoft 已停止使用它的任何进一步开发。
+供应商应将对等互连驱动程序和/或虚拟子单位驱动程序作为使用 Stream 类接口（内核流式处理1.0，在 file *Stream*中实现）或 AVStream 接口（实现的内核流式处理2。0在文件*Ks*中）。 AVStream 是首选接口，因为 stream 类接口已过时，Microsoft 不再对其进行任何进一步的开发。
 
-使用任一接口的子单元驱动程序可以共存，即使在相同的 AV/C 单元中。 例如，如果子单元驱动程序使用 AVStream，子单元驱动程序将以对应于子单元的 pin 和筛选器描述符的静态结构布局。 子单元驱动程序然后将注册到 AVStream 通过调用[ **KsInitializeDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nf-ks-ksinitializedriver) AVStream 函数。 在这两个接口中使用的概念的详细信息，请参阅[内核流式处理](kernel-streaming.md)。 有关 AVStream 详细信息，请参阅[AVStream 概述](avstream-overview.md)。 Stream 类的详细信息，请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)。
+使用任一接口的子单位驱动程序甚至可以共存于同一 AV/C 单元中。 例如，如果子单位驱动程序使用 AVStream，则子单位驱动程序将布局与子单位的 pin 和筛选器描述符相对应的静态结构。 然后，次级驱动程序通过调用[**KsInitializeDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksinitializedriver) AVStream 函数向 AVStream 注册。 有关这两个接口中使用的概念的详细信息，请参阅[内核流式处理](kernel-streaming.md)。 有关 AVStream 的详细信息，请参阅[AVStream 概述](avstream-overview.md)。 有关 Stream 类的详细信息，请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)。
 
-任一内核流式处理接口提供了相同的标准机制，应用程序用来与之交互和控制子单元驱动程序。 建议的方法来控制应用程序级别的 AV/C 子单元连接是通过 Microsoft DirectShow 筛选器和筛选器关系图。 流式处理 (KS) 代理机制的 DirectShow 内核提供了通用的筛选器 (*ksproxy.ax*) 这样的标准方法来表示的子单元属性以及的标准方式来表示子单元可能的事件触发器。 在实现 AV/C 子单元驱动程序中支持的相关 KS 属性和事件所需的代码。 表示子单元属性的详细信息，请参阅[内核流式处理的属性集](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-property-sets)。 表示子单元事件的详细信息，请参阅[内核流式处理的事件集](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming-event-sets)。
+内核流式处理接口提供的标准机制与应用程序用来与子单位驱动程序交互并控制该驱动程序。 在应用程序级别控制 AV/C 子单元连接的建议方法是使用 Microsoft DirectShow 筛选器和筛选器图。 DirectShow 的内核流式处理（KS）代理机制提供了一个通用筛选器（*ksproxy.ax*），该筛选器启用了一种标准方法来表示次级的属性，并提供了一种标准方法来表示次级单位可能触发的事件。 在 AV/C 子单位驱动程序中实现支持相关的 KS 属性和事件所需的代码。 有关表示次级属性的详细信息，请参阅[内核流式处理属性集](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-property-sets)。 有关表示次级事件的详细信息，请参阅[内核流式处理事件集](https://docs.microsoft.com/windows-hardware/drivers/stream/kernel-streaming-event-sets)。
 
-可以使用代理插件，提供由 Microsoft 或供应商扩展 KS 代理筛选器。 扩展 KS 代理筛选器允许 COM 接口，若要隐藏的 KS 属性和事件集的低级别详细信息。 您对您设备的 INF 文件中的子单元驱动程序关联的插件。
+可以使用由 Microsoft 或供应商提供的代理插件来扩展 KS 代理筛选器。 通过扩展 KS 代理筛选器，COM 接口可以隐藏 KS 属性和事件集的低级别详细信息。 你需要将插件与你的子单位驱动程序关联到设备的 INF 文件中。
 
-用于直接访问的属性和事件的常规方法设置仍然可用。 **IAMExtTransport** （用于磁带子单元连接） 的接口是在代理插件中实现的接口的示例。 该插件还可以包括提供了用于控制设备的用户界面的属性页。 出于测试目的，而不是最终用户设备交互通常使用这些属性页。 GraphEdit 或 AMCap 实用程序可用于测试的即插即用接 KS 属性。 WDK 和 Windows SDK 中包含这些实用程序。
+直接访问属性和事件集的一般方法仍可用。 **IAMExtTransport**接口（用于磁带子单元连接）是在代理插件中实现的接口示例。 此插件还可以包含提供用户界面以控制设备的属性页。 这些属性页通常用于测试目的，而不是用于最终用户设备交互。 可以使用 GraphEdit 或 AMCap 实用程序来测试插件的 KS 属性。 WDK 和 Windows SDK 都包含这些实用程序。
 
  
 

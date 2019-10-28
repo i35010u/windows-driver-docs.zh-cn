@@ -3,21 +3,21 @@ title: PnP 通知概述
 description: PnP 通知概述
 ms.assetid: 134a1ea1-78c2-4bab-b5e9-ae21901772ea
 keywords:
-- 即插即用 WDK 内核通知
-- 即插即用和播放 WDK 内核通知
-- 通知即插即用，有关通知的 WDK
-- 事件通知 WDK 即插即用
+- PnP WDK 内核，通知
+- 即插即用 WDK 内核，通知
+- 通知 WDK PnP，关于通知
+- 事件通知 WDK PnP
 - EventCategoryDeviceInterfaceChange 通知
 - EventCategoryTargetDeviceChange 通知
 - EventCategoryHardwareProfileChange 通知
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a30ae03c7bc62f3f6b1334fb247de09f6e443fef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8bdb8546b87ccc71e4bf5cca3a655dd900ba0d05
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362931"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838505"
 ---
 # <a name="pnp-notification-overview"></a>PnP 通知概述
 
@@ -25,76 +25,76 @@ ms.locfileid: "67362931"
 
 
 
-PnP 管理器提供了一种机制，用于驱动程序和应用程序在发生特定事件的特定设备上或在系统上通常时得到通知。 驱动程序可以注册以下类别的事件的通知：
+PnP 管理器提供了一种机制，使驱动程序和应用程序在特定设备或系统上发生特定事件时获得通知。 驱动程序可以注册以下类别的事件的通知：
 
 -   **EventCategoryDeviceInterfaceChange**
 
-    当驱动程序注册为此类别的设备接口上的事件时，即插即用管理器会通知驱动程序的以下事件：
+    当驱动程序在设备接口上注册此类事件时，PnP 管理器会通知驱动程序以下事件：
 
-    <a href="" id="guid-device-interface-arrival"></a>GUID\_DEVICE\_INTERFACE\_ARRIVAL  
-    指示启用了指定的类的设备接口。 例如，将用户添加到计算机的新磁盘和卷管理器启用新卷 （类"卷"的设备接口）。
+    <a href="" id="guid-device-interface-arrival"></a>GUID\_设备\_接口\_到达  
+    指示已启用指定类的设备接口。 例如，用户将新磁盘添加到计算机，卷管理器启用了新卷（类 "卷" 的设备接口）。
 
-    <a href="" id="guid-device-interface-removal"></a>GUID\_DEVICE\_INTERFACE\_REMOVAL  
-    指示已禁用了指定的类的设备接口。
+    <a href="" id="guid-device-interface-removal"></a>GUID\_设备\_接口\_删除  
+    指示已禁用指定类的设备接口。
 
-    请参阅[ **IoRegisterDeviceInterface** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface)和相关的例程的有关设备接口的详细信息。
+    有关设备接口的详细信息，请参阅[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)和相关的例程。
 
 -   **EventCategoryTargetDeviceChange**
 
-    当驱动程序注册为此类别的设备上的事件时，即插即用管理器会在设备上发生以下事件时通知该驱动程序：
+    当驱动程序在设备上注册此类事件时，PnP 管理器会在设备上发生以下事件时通知驱动程序：
 
     <a href="" id="guid-target-device-query-remove"></a>GUID\_目标\_设备\_查询\_删除  
-    指示要删除的设备驱动程序 PnP 管理器。 多个操作可能会导致此事件，包括： 用户已请求从计算机中删除指定的设备或用户发出的设备的更新驱动程序请求。 此通知请求要批准或否决即将发生的删除操作的设备的驱动程序。
+    指示 PnP 管理器即将删除设备的驱动程序。 若干操作可能导致此事件，包括：用户已请求从计算机中删除指定的设备，或者用户已发出设备的更新驱动程序请求。 此通知请求设备的驱动程序批准或拒绝即将执行的删除操作。
 
     <a href="" id="guid-target-device-remove-complete"></a>GUID\_目标\_设备\_删除\_完成  
-    指示指定的设备已从计算机中删除或用户正在更改设备驱动程序。
+    指示指定的设备已从计算机中删除或用户正在更改设备的驱动程序。
 
     <a href="" id="guid-target-device-remove-cancelled"></a>GUID\_目标\_设备\_删除\_已取消  
-    指示指定的设备上的即将发生删除操作已取消。
+    指示已取消指定设备上即将删除的删除操作。
 
     <a href="" id="guid-xxx---custom-events-"></a>GUID\_*XXX* （自定义事件）  
-    指示指定的设备上已发生的自定义的事件。
+    指示在指定的设备上发生了自定义事件。
 
-    驱动程序编写器可以定义自定义事件的设备。 当驱动程序 （或另一个相关的组件） 通知的自定义事件已发生的即插即用管理器时，即插即用的管理器会通知为目标设备注册的任何组件更改设备上的通知。
+    驱动程序编写器可以为设备定义自定义事件。 当驱动程序（或另一个相关组件）通知 PnP 管理器自定义事件发生时，PnP 管理器将通知在设备上注册了目标设备更改通知的所有组件。
 
-    与注册的设备接口更改，可被视为在界面中的"被动"感兴趣，不同的目标设备更改注册指示设备中的"活动"关注。
+    与注册设备接口更改不同（可将其视为接口的 "被动"），注册目标设备更改表示设备上出现 "活动" 的兴趣。
 
 -   **EventCategoryHardwareProfileChange**
 
     此类别包括以下事件：
 
-    <a href="" id="guid-hwprofile-query-change"></a>GUID\_HWPROFILE\_查询\_更改  
-    指示用户已请求更改计算机的硬件配置文件。 即插即用 manager 使用此通知来让已注册的组件是否可以更改硬件配置文件而不会中断系统操作。 已注册的组件通常会成功这些查询请求。
+    <a href="" id="guid-hwprofile-query-change"></a>GUID\_HWPROFILE 中\_查询\_更改  
+    指示用户已请求更改计算机的硬件配置文件。 PnP 管理器使用此通知来询问注册的组件是否可以更改硬件配置文件而不中断系统操作。 已注册的组件通常会成功执行这些查询请求。
 
-    <a href="" id="guid-hwprofile-change-complete"></a>GUID\_HWPROFILE\_更改\_完成  
-    指示已更改的计算机的硬件配置文件。 如果驱动程序维护特定于配置文件的设置，这样的驱动程序应在硬件配置文件更改后刷新这些设置。
+    <a href="" id="guid-hwprofile-change-complete"></a>GUID\_HWPROFILE 中\_更改\_完成  
+    指示计算机的硬件配置文件已更改。 如果驱动程序维护配置文件特定的设置，则此类驱动程序应在硬件配置文件更改后刷新这些设置。
 
-    <a href="" id="guid-hwprofile-change-cancelled"></a>GUID\_HWPROFILE\_更改\_已取消  
-    指示即将进行的硬件配置文件更改已被取消。
+    <a href="" id="guid-hwprofile-change-cancelled"></a>已取消\_HWPROFILE 中\_GUID\_  
+    指示即将取消即将发生的硬件配置文件更改。
 
-即插即用通知，如下所示适用于内核模式组件：
+对于内核模式组件，PnP 通知的工作原理如下：
 
-1.  驱动程序通过调用注册的事件类别的通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
+1.  驱动程序通过调用[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)来注册事件类别的通知。
 
-    即插即用通知回调例程将保持已注册，直到该驱动程序显式删除的注册。
+    PnP 通知回调例程保持注册状态，直到驱动程序显式删除注册。
 
-2.  PnP 管理器中的已注册的类别的事件发生时调用驱动程序的回调例程。
+2.  当注册的类别中发生事件时，PnP 管理器会调用驱动程序的回调例程。
 
-3.  该驱动程序通过调用来消除回调注册[ **IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)。
+3.  驱动程序通过调用[**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来删除回调注册。
 
-不，驱动程序必须生成同步事件，或者等待要关闭的处理过程中出现的异步事件。
+驱动程序不能生成同步事件，也不能在处理关闭过程中等待异步事件发生。
 
-即插即用通知的详细信息，请参阅以下各节：
+有关 PnP 通知的详细信息，请参阅以下部分：
 
-[编写即插即用通知回调例程准则](guidelines-for-writing-pnp-notification-callback-routines.md)
+[用于编写 PnP 通知回调例程的准则](guidelines-for-writing-pnp-notification-callback-routines.md)
 
-[使用即插即用设备接口更改通知](using-pnp-device-interface-change-notification.md)
+[使用 PnP 设备接口更改通知](using-pnp-device-interface-change-notification.md)
 
-[使用即插即用的目标设备更改通知](using-pnp-target-device-change-notification.md)
+[使用 PnP 目标设备更改通知](using-pnp-target-device-change-notification.md)
 
-[使用即插即用硬件配置文件更改通知](using-pnp-hardware-profile-change-notification.md)
+[使用 PnP 硬件配置文件更改通知](using-pnp-hardware-profile-change-notification.md)
 
-[使用即插即用的自定义通知](using-pnp-custom-notification.md)
+[使用 PnP 自定义通知](using-pnp-custom-notification.md)
 
  
 

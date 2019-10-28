@@ -6,18 +6,18 @@ keywords:
 - CM_PROB_HELD_FOR_EJECT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be2b0c9d11d69a885f4ca447ee78f4235702461a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf4f48bc871f2dbabba36932a4b30f7d8af90ef0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360317"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840653"
 ---
-# <a name="cmprobheldforeject"></a>CM_PROB_HELD_FOR_EJECT
+# <a name="cm_prob_held_for_eject"></a>CM_PROB_HELD_FOR_EJECT
 
 此函数保留供系统使用。
 
-设备已准备好弹出。
+设备已准备好进行弹出。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,12 +25,12 @@ ms.locfileid: "63360317"
 
 ### <a name="display-message"></a>显示消息
 
-"Windows 无法使用这个硬件设备因为它已准备好安全删除，但它具有不已从计算机中删除。 （代码 47）"
+"Windows 无法使用此硬件设备，因为它已为" 安全删除 "做好准备，但尚未从计算机中删除它。 （代码47） "
 
-"若要解决此问题，此设备从计算机中拔出和然后重新插入。
+"若要解决此问题，请将此设备从计算机中拔出，然后再次插上。"
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-拔出设备并将其插入。 或者，选择**重新启动计算机**将重新启动计算机并使设备可用。
+拔出设备并重新插入。 或者，选择 "**重新启动计算机**" 将重新启动计算机并使设备可用。
 
-发生此错误应仅当用户调用热即插即用程序，以准备删除设备 (它调用[ **CM_Request_Device_Eject**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_request_device_ejectw))，或如果用户按下物理弹出按钮 （调用[ **IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdeviceeject))。 用户可以准备当前不可删除，如 CD-ROM 困在便携式计算机和停靠的工作站送纸器之间的设备。
+仅当用户调用热插拔程序来准备要删除的设备时（调用[**CM_Request_Device_Eject**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_request_device_ejectw)）或用户按下物理弹出按钮（这会调用[**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)）时，才会发生此错误。 用户可以准备当前不可删除的设备，例如，光盘在便携式计算机和扩展坞托盘之间补漏白。
