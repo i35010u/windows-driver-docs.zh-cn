@@ -1,10 +1,10 @@
 ---
-title: Init\_RegisterSG 规则 (ndis)
-description: Init\_RegisterSG 规则指定，是否出现问题或过程的微型端口停止初始化过程中，通常发生在初始化期间，分散-集中列表 (SG) 的注册必须是撤消驱动程序。如果 NdisMRegisterScatterGatherDma 调用 MiniportInitializeEx 至少一次，NdisMDeregisterScatterGatherDma 函数应在 MiniportHaltEx 调用至少一次。
+title: Init\_RegisterSG 规则（ndis）
+description: Init\_RegisterSG 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消在初始化过程中出现的散播聚集列表（SG）的注册。如果在 MiniportInitializeEx 期间至少调用了一次 NdisMRegisterScatterGatherDma，则 NdisMDeregisterScatterGatherDma 函数应在 MiniportHaltEx 中至少调用一次。
 ms.assetid: c4d00be1-b44b-4769-bbe6-6128a742d088
 ms.date: 05/21/2018
 keywords:
-- Init_RegisterSG 规则 (ndis)
+- Init_RegisterSG 规则（ndis）
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 13f79af8376ad977854d05d3c64a9c436ee94b2a
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 74eaa4df2927031932ad70201c9164bc6fdafc5a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392362"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840116"
 ---
-# <a name="initregistersg-rule-ndis"></a>Init\_RegisterSG 规则 (ndis)
+# <a name="init_registersg-rule-ndis"></a>Init\_RegisterSG 规则（ndis）
 
 
-Init\_RegisterSG 规则指定，是否出现问题或过程的微型端口停止初始化过程中，通常发生在初始化期间，分散-集中列表 (SG) 的注册必须是撤消驱动程序。
+Init\_RegisterSG 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消在初始化过程中出现的散播聚集列表（SG）的注册。
 
-如果**NdisMRegisterScatterGatherDma**称为至少一次**MiniportInitializeEx**，则**NdisMDeregisterScatterGatherDma**必须在调用函数中的至少一次**MiniportHaltEx**。
+如果在**MiniportInitializeEx**期间至少调用了一次**NdisMRegisterScatterGatherDma** ，则**NdisMDeregisterScatterGatherDma**函数应在**MiniportHaltEx**中至少调用一次。
 
 |              |      |
 |--------------|------|
-| 驱动程序模型 | NDIS |
+| 驱动程序型号 | 以此 |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -44,23 +44,23 @@ Init\_RegisterSG 规则指定，是否出现问题或过程的微型端口停止
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>并指定<strong>Init_RegisterSG</strong>规则。</p>
-使用以下步骤来分析你的代码：
+<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>Init_RegisterSG</strong>规则。</p>
+使用以下步骤来运行代码分析：
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码 （使用角色类型声明）。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行的 Static Driver Verifier。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">查看和分析结果。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">查看并分析结果。</a></li>
 </ol>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">以找到缺陷驱动程序中使用 Static Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">使用静态驱动程序验证器查找驱动程序中的缺陷</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用对象
+<a name="applies-to"></a>适用于
 ----------
 
-[**NdisMDeregisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismderegisterscattergatherdma)
-[**NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterscattergatherdma)
+[**NdisMDeregisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterscattergatherdma)
+[ **NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)
  
 
  

@@ -1,36 +1,36 @@
 ---
-title: MB 驱动程序模型版本控制
-description: MB 驱动程序模型版本控制
+title: MB 驱动程序型号版本控制
+description: MB 驱动程序型号版本控制
 ms.assetid: f5778b36-4f84-4cfe-965c-36af225ac0dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e545f7ca9e8b4a94208fdccfad4e3ba48da0bee8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 063382026e922f56bdb00ebcbdbe83d3c37bda5e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377990"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844291"
 ---
-# <a name="mb-driver-model-versioning"></a>MB 驱动程序模型版本控制
+# <a name="mb-driver-model-versioning"></a>MB 驱动程序型号版本控制
 
 
-MB 驱动程序模型版本控制的驱动程序模型版本和单个 OID 数据结构修订，从而实现同步。 这与在 NDIS 中使用的版本控制模式是一致 6.x。
+MB 驱动程序模型版本控制通过使用驱动程序模型版本和单个 OID 数据结构来完成。 这与 NDIS 1.x 中使用的版本控制相一致。
 
-驱动程序模型版本定义 MB 服务和 MB 微型端口驱动程序之间的接口演变。 各个 OID 修订跟踪的 Oid 不同 MB 驱动程序模型版本中所做的更改。 也就是说，驱动程序模型版本定义一组由特定的修订号标识的数据结构的 Oid。
+驱动程序型号版本定义了 MB 服务和 MB 微型端口驱动程序之间的接口发展。 各个 OID 版本跟踪对不同 MB 驱动程序模型版本中的 Oid 所做的更改。 也就是说，驱动程序模型版本定义一组 Oid，其中的数据结构由特定修订号标识。
 
-与一致*NDIS 规范*，是 MB 驱动程序模型演变*累加性*。 也就是说，新 Oid 和新的成员只能添加到现有的 OID 数据结构。 这可确保 MB 服务可以支持的微型端口驱动程序的向后兼容性。
+与*NDIS 规范*一致，MB 驱动程序模型的演变是*累加*的。 也就是说，只能将新的 Oid 和新成员添加到现有的 OID 数据结构中。 这确保了 MB 服务可以支持微型端口驱动程序的向后兼容性。
 
-**重要**  只有在极少数情况下将现有的 Oid 不推荐使用或的现有 OID 数据结构的成员不能在下一版本。 如果发生这种情况，这些更改，并且它们在向后兼容性的影响应清楚地记录有关 MB 驱动程序模型规范的较新版本的后续文档中。
+**重要**  仅在极少数情况下，将不推荐使用现有的 oid，或在下一个版本中不使用现有 oid 数据结构的成员。 如果发生这种情况，则这些更改及其对向后兼容性的影响应在有关 MB 驱动程序型号规范的较新版本的后续文档中清楚地记录。
 
  
 
-本文档介绍了 Windows 8 版本的 MB 驱动程序模型。 驱动程序模型版本递增到版本 2.0。 某些 OID 修订继续修订号 1，而一些具有已更新到版本 2。 有关使用各自的 Oid 的修订版本的详细信息，请参阅[MB 数据模型](mb-data-model.md)。
+此文档介绍了 MB 驱动程序型号的 Windows 8 版本。 驱动程序型号版本已增加到版本2.0。 某些 OID 修订将继续作为修订号1，而某些 OID 会更新到修订版2。 若要详细了解要用于各个 Oid 的修订版本，请参阅[MB 数据模型](mb-data-model.md)。
 
-本文档介绍了 MB 驱动程序模型的初始版本，因此驱动程序模型版本和各个 OID 修订的修订数字 1 开头。
+本文档介绍了 MB 驱动程序型号的初始版本，因此驱动程序模型版本和单独的 OID 版本都以修订号1开头。
 
-当驱动程序模型移动到下一个版本时，其版本号将增加 1。 添加到驱动程序模型中任何新 Oid 将开始修订版 1;结构已更改其数据在其相应的修订版本将增加 1，任何现有 Oid 并不会更改任何现有 Oid 将保留其各自的修订号。
+当驱动程序模型移到下一个版本时，其版本号将增加1。 添加到驱动程序模型中的任何新 Oid 将从修订版1开始;其数据结构已更改的任何现有 Oid 会将其相应修订版本增加1，并且任何不更改的现有 Oid 都将保留其各自的修订号。
 
-驱动程序模型版本所传达[OID\_WWAN\_驱动程序\_CAPS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)。 MB 服务发送一个 OID\_WWAN\_驱动程序\_CAPS 查询请求期间的微型端口驱动程序[MB 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)。 由描述各个 OID 修订**修订**的成员[ **NDIS\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_object_header)结构，它是作为一部分包含每个单个 OID 的数据结构。
+驱动程序型号版本由[OID\_WWAN\_driver\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)传达。 在[Mb 微型端口驱动程序初始化](mb-miniport-driver-initialization.md)期间，mb 服务向微型端口驱动程序发送 OID\_WWAN\_驱动程序\_cap 查询请求。 单个 OID 修订号由 NDIS\_对象的**修订版**成员描述， [ **\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构作为每个单独 OID 的数据结构的一部分包含。
 
  
 

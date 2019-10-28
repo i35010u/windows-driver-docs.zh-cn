@@ -1,44 +1,44 @@
 ---
-title: 有关管理数据包合并接收筛选器的指导
-description: 有关管理数据包合并接收筛选器的指导
+title: 管理包合并接收筛选器的准则
+description: 管理包合并接收筛选器的准则
 ms.assetid: 7FA44368-1641-478A-927B-020619F39A0D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b610880fa65ed5284accf9967b5efa0b77c3b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b14ec469f154efb5b78181465e97fd7e892c70b8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369628"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842407"
 ---
-# <a name="guidelines-for-managing-packet-coalescing-receive-filters"></a>有关管理数据包合并接收筛选器的指导
+# <a name="guidelines-for-managing-packet-coalescing-receive-filters"></a>管理包合并接收筛选器的准则
 
 
-如果微型端口驱动程序支持 NDIS 数据包合并，它必须遵循这些指导原则，用于管理数据包合并接收筛选器：
+如果微型端口驱动程序支持 NDIS 数据包合并，则必须遵循这些准则来管理包合并接收筛选器：
 
--   必须能够处理设置的微型端口驱动程序和基础网络适配器和交换的接收动态筛选器。 单个接收筛选器可能会设置或清除在任何时间。
+-   微型端口驱动程序和基础网络适配器必须能够动态地处理接收筛选器的设置和清除。 可以随时设置或清除各个接收筛选器。
 
--   微型端口驱动程序必须维护一个合并的数据包的计数器。 此 64 位计数器包含具有匹配的数据包的合并筛选器的接收数据包数的值。 NDIS 查询通过 OID 查询请求的此计数器[OID\_数据包\_COALESCING\_筛选器\_匹配\_计数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-packet-coalescing-filter-match-count)。
+-   微型端口驱动程序必须保留合并的数据包计数器。 此64位计数器包含与数据包合并筛选器匹配的已接收数据包数的值。 NDIS 通过 oid 查询请求来查询此计数器[\_数据包\_合并\_筛选器\_匹配\_计数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-packet-coalescing-filter-match-count)。
 
-    **请注意**  微型端口驱动程序时它将转换为全功率状态处理的一个 OID 集请求通过清除此计数器[OID\_PNP\_设置\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)。 微型端口驱动程序还会清除计数器时其[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)调用函数。
-
-     
-
--   微型端口驱动程序必须放弃数据包时它将转换为低功耗状态合并接收筛选器。 但是，低功耗状态的网络适配器时，它必须仅筛选收到的数据包，基于已卸载到通过 OID 集请求的适配器的唤醒模式[OID\_PNP\_启用\_唤醒\_向上](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)。
-
-    微型端口驱动程序必须配置网络适配器在数据包合并筛选器时接收适配器将转换为全功率状态。
-
--   微型端口驱动程序必须放弃数据包时 NDIS 调用驱动程序的合并接收筛选器[ *MiniportResetEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_reset)函数。 该驱动程序将重置网络适配器后，它必须与数据包合并筛选器来配置适配器。 此外，驱动程序*必须清除*合并的数据包计数器。
-
-    **请注意**  微型端口驱动程序必须执行此操作而不考虑该驱动程序的设置是否*AddressingReset*参数设为 TRUE。
+    **请注意**  微型端口驱动程序通过处理 OID 的 oid 集请求（ [\_PNP\_集\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)）来清除此计数器。 调用[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)函数时，微型端口驱动程序还会清除计数器。
 
      
 
--   如果在本机 802.11 可扩展工作站 (ExtSTA) 模式下运行时的微型端口驱动程序，它必须不丢弃数据包时处理 OID 方法请求的合并接收筛选器[OID\_DOT11\_重置\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)。 微型端口驱动程序执行 802.11 重置操作后，它必须配置网络适配器合并接收数据包与筛选器。 此外，驱动程序*必须清除*合并的数据包计数器。
+-   小型端口驱动程序在转换为低功率状态时不得丢弃数据包合并接收筛选器。 但是，当网络适配器处于低功耗状态时，它必须仅基于唤醒模式筛选收到的数据包，这些模式已通过 OID 设置[oid\_PNP\_启用\_唤醒\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-enable-wake-up)。
 
-    有关本机 802.11 可扩展工作站模式下的详细信息，请参阅[可扩展工作站操作模式下](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-station-operation-mode)。
+    当适配器转换为完全电源状态时，微型端口驱动程序必须将网络适配器配置为具有数据包合并接收筛选器。
 
-    **请注意**  NDIS 不支持数据包合并本机 802.11 微型端口驱动程序操作中可扩展的访问点 (ExtAP) 模式。 有关 ExtAP 操作模式的详细信息，请参阅[可扩展访问点操作模式](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-access-point-operation-mode)。
+-   当 NDIS 调用驱动程序的[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_reset)函数时，微型端口驱动程序不得丢弃数据包合并接收筛选器。 驱动程序重置网络适配器后，必须将该适配器配置为具有数据包合并筛选器。 而且，驱动程序*必须清除*合并的数据包计数器。
+
+    **请注意**  微型端口驱动程序必须执行此操作，而不管驱动程序是否将*AddressingReset*参数设置为 TRUE。
+
+     
+
+-   如果微型端口驱动程序在本机802.11 可扩展工作站（ExtSTA）模式下运行，则它在处理[oid\_DOT11\_RESET\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)的 oid 方法请求时不得丢弃数据包合并接收筛选器。 在微型端口驱动程序执行802.11 重置操作后，必须将网络适配器配置为具有数据包合并接收筛选器。 而且，驱动程序*不能清除*合并的数据包计数器。
+
+    有关本机802.11 可扩展工作站模式的详细信息，请参阅[可扩展工作站操作模式](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-station-operation-mode)。
+
+    **注意**  对于在可扩展访问点（ExtAP）模式下运行的本机802.11 微型端口驱动程序，NDIS 不支持数据包合并。 有关 ExtAP 操作模式的详细信息，请参阅[可扩展访问点操作模式](https://docs.microsoft.com/previous-versions/windows/hardware/wireless/extensible-access-point-operation-mode)。
 
      
 

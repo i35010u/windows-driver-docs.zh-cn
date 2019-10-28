@@ -1,26 +1,26 @@
 ---
-title: 管理 NDIS 选择性挂起的 IRP 资源
-description: 管理 NDIS 选择性挂起的 IRP 资源
+title: 管理用于 NDIS 选择性挂起的 IRP 资源
+description: 管理用于 NDIS 选择性挂起的 IRP 资源
 ms.assetid: 542A96A7-AD6D-4780-8FEF-34730A663C1A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3958b35086b5d884e13a9b8b3776cc9ea5bba5f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 014594e1bafb69003dde7923f6e8715ba68aa840
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356166"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844117"
 ---
-# <a name="managing-irp-resources-for-ndis-selective-suspend"></a>管理 NDIS 选择性挂起的 IRP 资源
+# <a name="managing-irp-resources-for-ndis-selective-suspend"></a>管理用于 NDIS 选择性挂起的 IRP 资源
 
 
-如果微型端口驱动程序支持并启用 NDIS 选择性挂起，NDIS 调用[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)向驱动程序发出的空闲通知，如果网络适配器变为非活动状态。 当微型端口驱动程序处理此通知时，它可能需要向基础总线驱动程序发出 I/O 请求数据包 (Irp)。 这些 Irp 通知有关适配器的空闲状态，适配器可以切换为低功耗状态的请求确认总线驱动程序。
+如果微型端口驱动程序支持并启用 NDIS 选择性挂起，NDIS 将调用[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification) ，以便在网络适配器变为非活动状态时向驱动程序发出空闲通知。 当微型端口驱动程序处理此通知时，可能需要向基础总线驱动程序发出 i/o 请求数据包（Irp）。 这些 Irp 通知总线驱动程序适配器的空闲状态，并请求确认适配器可以转换为低功耗状态。
 
-总线特定于 Irp 颁发的微型端口驱动程序。 例如，当 NDIS 调用[ *MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_idle_notification)，USB 微型端口发出一个 USB 空闲请求 ([**IOCTL\_内部\_USB\_提交\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)) IRP 到基础 USB 总线驱动程序。
+由微型端口驱动程序颁发的 Irp 是特定于总线的。 例如，当 NDIS 调用[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)时，usb 微型端口发出 usb 空闲请求（[**IOCTL\_内部\_usb\_将\_空闲\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification)） IRP 发送到基础 USB 总线驱动程序。
 
-NDIS 可能空闲通知向发出微型端口驱动程序多次初始化后，驱动程序。 因此，我们建议驱动程序分配的资源的 USB 驱动程序的调用的上下文中的空闲请求 IRP [ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数。
+初始化驱动程序之后，NDIS 可能多次向微型端口驱动程序发出空闲通知。 因此，建议驱动程序在调用驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数的上下文中为 USB IDLE 请求 IRP 分配资源。
 
-下面的示例演示微型端口驱动程序将 IRP 资源的分配。
+以下示例演示了微型端口驱动程序如何分配 IRP 资源。
 
 ```C++
 //
@@ -57,9 +57,9 @@ NDIS_STATUS MiniportInitializeEx(
     }
 ```
 
-如果微型端口驱动程序会将 IRP 资源分配到在调用期间[ *MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)，该驱动程序必须在调用释放这些资源[ *MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_halt)。
+如果微型端口驱动程序在对[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)的调用期间分配 IRP 资源，则驱动程序必须在对[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)的调用过程中释放这些资源。
 
-下面的示例演示如何微型端口驱动程序释放的 IRP 资源。
+以下示例演示了微型端口驱动程序如何释放 IRP 资源。
 
 ```C++
 //

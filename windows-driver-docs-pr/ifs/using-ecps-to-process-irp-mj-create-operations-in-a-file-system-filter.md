@@ -1,86 +1,86 @@
 ---
-title: 使用 ECPs 处理 IRP_MJ_CREATE 在文件系统筛选器驱动程序
-description: 在文件系统筛选器驱动程序中使用 ECP 处理 IRP_MJ_CREATE 操作
+title: 使用 ECPs 处理文件系统筛选器驱动程序中的 IRP_MJ_CREATE
+description: 使用 ECPs 在文件系统筛选器驱动程序中处理 IRP_MJ_CREATE 操作
 ms.assetid: 969709a9-cdca-4a1a-95a0-0bb89cd17693
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aaa569fedcdb4857406102fc291780df92e1b53
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 763995726a6553b3a458a8bce1214a37d5ead892
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380300"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840941"
 ---
-# <a name="using-ecps-to-process-irpmjcreate-operations-in-a-file-system-filter-driver"></a>使用 ECPs 处理 IRP\_MJ\_中的文件系统筛选器驱动程序的创建操作
+# <a name="using-ecps-to-process-irp_mj_create-operations-in-a-file-system-filter-driver"></a>使用 ECPs 在文件系统筛选器驱动程序中处理 IRP\_MJ\_创建操作
 
 
-可以在文件系统筛选器驱动程序中使用 ECPs 来处理[ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作。 在文件系统筛选器驱动程序可以调用例程在以下部分来检索、 确认、 添加和删除的 ECPs **IRP\_MJ\_创建**操作。 您还可以确定 ECPs 所源自的操作系统空间。
+您可以使用文件系统筛选器驱动程序中的 ECPs 来处理[**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作。 文件系统筛选器驱动程序可以调用以下部分中的例程，为**IRP\_MJ\_创建**操作检索、确认、添加和删除 ECPs。 还可以确定 ECPs 源自的操作系统空间。
 
-### <a name="span-idretrievingecpsspanspan-idretrievingecpsspanspan-idretrievingecpsspanretrieving-ecps"></a><span id="Retrieving_ECPs"></span><span id="retrieving_ecps"></span><span id="RETRIEVING_ECPS"></span>检索 ECPs
+### <a name="span-idretrieving_ecpsspanspan-idretrieving_ecpsspanspan-idretrieving_ecpsspanretrieving-ecps"></a><span id="Retrieving_ECPs"></span><span id="retrieving_ecps"></span><span id="RETRIEVING_ECPS"></span>正在检索 ECPs
 
-在文件系统筛选器驱动程序可以按照以下步骤检索的 ECPs [ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作：
+文件系统筛选器驱动程序可以按照以下步骤为[**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作检索 ECPs：
 
-1.  调用[ **FltGetEcpListFromCallbackData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetecplistfromcallbackdata)或[ **FsRtlGetEcpListFromIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff546015)例程，以检索一个指向 ECP 上下文结构列表 (ECP\_列表) 创建操作与该键相关联。
+1.  调用[**FltGetEcpListFromCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetecplistfromcallbackdata)或[**FsRtlGetEcpListFromIrp**](https://msdn.microsoft.com/library/windows/hardware/ff546015)例程来检索指向与创建操作相关联的 ecp 上下文结构列表（ecp\_列表）的指针。
 
-2.  执行以下操作之一：
-    -   调用[ **FltGetNextExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetnextextracreateparameter)或[ **FsRtlGetNextExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff546028)例程，以检索指向的指针下一个 （或第一个） ECP 上下文结构 ECP 列表中。
-    -   调用[ **FltFindExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfindextracreateparameter)或[ **FsRtlFindExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff545968)例程，以搜索 ECP ECP 列表上下文将给定类型的结构。 如果找到该结构，任一例程返回指向 ECP 上下文结构的指针。
+2.  执行下列任一操作：
+    -   调用[**FltGetNextExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetnextextracreateparameter)或[**FsRtlGetNextExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546028)例程来检索指向 ecp 列表中的下一个（或第一个） ecp 上下文结构的指针。
+    -   调用[**FltFindExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfindextracreateparameter)或[**FSRTLFINDEXTRACREATEPARAMETER**](https://msdn.microsoft.com/library/windows/hardware/ff545968)例程搜索 ecp 列表，查找给定类型的 ecp 上下文结构。 如果找到结构，则任何一个例程都将返回指向 ECP 上下文结构的指针。
 
-### <a name="span-idsettingecpsspanspan-idsettingecpsspanspan-idsettingecpsspansetting-ecps"></a><span id="Setting_ECPs"></span><span id="setting_ecps"></span><span id="SETTING_ECPS"></span>设置 ECPs
+### <a name="span-idsetting_ecpsspanspan-idsetting_ecpsspanspan-idsetting_ecpsspansetting-ecps"></a><span id="Setting_ECPs"></span><span id="setting_ecps"></span><span id="SETTING_ECPS"></span>设置 ECPs
 
-若要设置为 ECPs [ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作，在文件系统筛选器驱动程序可以首先请检索现有 ECP 上下文结构列表 (ECP\_列出），它是使用创建操作时，关联或分配 ECP\_ECP 上下文和列表结构，并在 ECP 中插入 ECP 上下文结构\_列表。
+若要为[**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作设置 ECPs，您的文件系统筛选器驱动程序可以先检索与创建操作相关联的现有 ECP 上下文结构列表（ECP\_列表），或分配 ECP\_列出和 ECP 上下文结构，并将 ECP 上下文结构插入 ECP\_列表。
 
-在文件系统筛选器驱动程序可以按照以下步骤在现有 ECP 中设置 ECPs\_与创建操作相关联的列表：
+文件系统筛选器驱动程序可以按照以下步骤在与创建操作相关联的现有 ECP\_列表中设置 ECPs：
 
-1.  调用[ **FltGetEcpListFromCallbackData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltgetecplistfromcallbackdata)或[ **FsRtlGetEcpListFromIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff546015)例程，以检索一个指向 ECP 上下文结构列表 (ECP\_列表) 创建操作与该键相关联。
+1.  调用[**FltGetEcpListFromCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltgetecplistfromcallbackdata)或[**FsRtlGetEcpListFromIrp**](https://msdn.microsoft.com/library/windows/hardware/ff546015)例程来检索指向与创建操作相关联的 ecp 上下文结构列表（ecp\_列表）的指针。
 
-2.  调用[ **FltAllocateExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocateextracreateparameter)或[ **FsRtlAllocateExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff545609)例程分配分页的内存池为 ECP 上下文结构，并生成指向该结构的指针。
+2.  调用[**FltAllocateExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocateextracreateparameter)或[**FSRTLALLOCATEEXTRACREATEPARAMETER**](https://msdn.microsoft.com/library/windows/hardware/ff545609)例程为 ECP 上下文结构分配页面内存池，并生成指向该结构的指针。
 
-3.  调用[ **FltInsertExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinsertextracreateparameter)或[ **FsRtlInsertExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff546179)例程，以插入 ECP 上下文结构到[ECP\_列表](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))结构。
+3.  调用[**FltInsertExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltinsertextracreateparameter)或[**FsRtlInsertExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546179)例程，将 Ecp 上下文结构插入[ecp\_列表](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))结构。
 
-在文件系统筛选器驱动程序可以按照以下步骤在新创建的 ECP 中设置 ECPs\_与创建操作相关联的列表：
+文件系统筛选器驱动程序可以按照以下步骤在与创建操作关联的新创建的 ECP\_列表中设置 ECPs：
 
-1.  调用[ **FltAllocateExtraCreateParameterList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocateextracreateparameterlist)或[ **FsRtlAllocateExtraCreateParameterList** ](https://msdn.microsoft.com/library/windows/hardware/ff545632)例程来分配内存有关[ECP\_列表](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))结构。
+1.  调用[**FltAllocateExtraCreateParameterList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocateextracreateparameterlist)或[**FsRtlAllocateExtraCreateParameterList**](https://msdn.microsoft.com/library/windows/hardware/ff545632)例程为[ECP\_列表](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))结构分配内存。
 
-2.  调用[ **FltAllocateExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocateextracreateparameter)或[ **FsRtlAllocateExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff545609)例程分配分页的内存池为 ECP 上下文结构，并生成指向该结构的指针。
+2.  调用[**FltAllocateExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocateextracreateparameter)或[**FSRTLALLOCATEEXTRACREATEPARAMETER**](https://msdn.microsoft.com/library/windows/hardware/ff545609)例程为 ECP 上下文结构分配页面内存池，并生成指向该结构的指针。
 
-3.  调用[ **FltInsertExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinsertextracreateparameter)或[ **FsRtlInsertExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff546179)例程，以插入 ECP 上下文结构到[ECP\_列表](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))结构。
+3.  调用[**FltInsertExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltinsertextracreateparameter)或[**FsRtlInsertExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546179)例程，将 Ecp 上下文结构插入[ecp\_列表](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))结构。
 
-4.  调用[ **FltSetEcpListIntoCallbackData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsetecplistintocallbackdata)或[ **FsRtlSetEcpListIntoIrp** ](https://msdn.microsoft.com/library/windows/hardware/ff547250)例程，以将 ECP 列表附加到创建操作.
+4.  调用[**FltSetEcpListIntoCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetecplistintocallbackdata)或[**FSRTLSETECPLISTINTOIRP**](https://msdn.microsoft.com/library/windows/hardware/ff547250)例程将 ECP 列表附加到创建操作。
 
-### <a name="span-idremovingecpsspanspan-idremovingecpsspanspan-idremovingecpsspanremoving-ecps"></a><span id="Removing_ECPs"></span><span id="removing_ecps"></span><span id="REMOVING_ECPS"></span>删除 ECPs
+### <a name="span-idremoving_ecpsspanspan-idremoving_ecpsspanspan-idremoving_ecpsspanremoving-ecps"></a><span id="Removing_ECPs"></span><span id="removing_ecps"></span><span id="REMOVING_ECPS"></span>删除 ECPs
 
-在文件系统筛选器驱动程序可以按照以下步骤以删除有关 ECPs [ **IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作：
+文件系统筛选器驱动程序可以按照以下步骤删除[**IRP\_MJ\_创建**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作的 ECPs：
 
-1.  调用[ **FltRemoveExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltremoveextracreateparameter)或[ **FsRtlRemoveExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff547203)例程，以搜索 ECP ECP 列表上下文结构。 如果找到 ECP 上下文结构，则例程将分离 ECP 上下文结构从 ECP 列表。
+1.  调用[**FltRemoveExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltremoveextracreateparameter)或[**FsRtlRemoveExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff547203)例程搜索 ECP 上下文结构的 ecp 列表。 如果找到 ECP 上下文结构，例程将从 ECP 列表中分离 ECP 上下文结构。
 
-2.  若要释放的已分离的 ECP 上下文结构的内存，调用[ **FltFreeExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreeextracreateparameter)或[ **FsRtlFreeExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff545989)例程。 您可以调用这些例程来释放内存 ECP 上下文结构，如果你已分配内存中的以下方法之一：
-    -   你调用[ **FltAllocateExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocateextracreateparameter)或[ **FsRtlAllocateExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff545609)例程来分配分页内存池
-    -   你调用[ **FltAllocateExtraCreateParameterFromLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocateextracreateparameterfromlookasidelist)或[ **FsRtlAllocateExtraCreateParameterFromLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545616)例程，以从后备链列表分配内存池
+2.  若要释放分离的 ECP 上下文结构的内存，请调用[**FltFreeExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfreeextracreateparameter)或[**FsRtlFreeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545989)例程。 如果已通过下列方式之一分配内存，则可以调用这些例程来释放 ECP 上下文结构的内存：
+    -   你调用了[**FltAllocateExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocateextracreateparameter)或[**FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)例程来分配分页的内存池
+    -   你调用了[**FltAllocateExtraCreateParameterFromLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocateextracreateparameterfromlookasidelist)或[**FsRtlAllocateExtraCreateParameterFromLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545616)例程来从后备链表列表分配内存池
 
-### <a name="span-idmarkingecpsasacknowledgedordeterminingacknowledgestatusspanspan-idmarkingecpsasacknowledgedordeterminingacknowledgestatusspanspan-idmarkingecpsasacknowledgedordeterminingacknowledgestatusspanmarking-ecps-as-acknowledged-or-determining-acknowledge-status"></a><span id="Marking_ECPs_as_Acknowledged__or_Determining_Acknowledge_Status"></span><span id="marking_ecps_as_acknowledged__or_determining_acknowledge_status"></span><span id="MARKING_ECPS_AS_ACKNOWLEDGED__OR_DETERMINING_ACKNOWLEDGE_STATUS"></span>将 ECPs 标记为已确认，或确定确认状态
+### <a name="span-idmarking_ecps_as_acknowledged__or_determining_acknowledge_statusspanspan-idmarking_ecps_as_acknowledged__or_determining_acknowledge_statusspanspan-idmarking_ecps_as_acknowledged__or_determining_acknowledge_statusspanmarking-ecps-as-acknowledged-or-determining-acknowledge-status"></a><span id="Marking_ECPs_as_Acknowledged__or_Determining_Acknowledge_Status"></span><span id="marking_ecps_as_acknowledged__or_determining_acknowledge_status"></span><span id="MARKING_ECPS_AS_ACKNOWLEDGED__OR_DETERMINING_ACKNOWLEDGE_STATUS"></span>将 ECPs 标记为已确认或确定确认状态
 
-在文件系统筛选器驱动程序可以调用以下例程将 ECPs 标记为已确认或确定 ECPs 是否标记为已确认：
+文件系统筛选器驱动程序可以调用以下例程，将 ECPs 标记为 "已确认" 或确定是否将 ECPs 标记为 "已确认"：
 
--   调用[ **FltAcknowledgeEcp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltacknowledgeecp)或[ **FsRtlAcknowledgeEcp** ](https://msdn.microsoft.com/library/windows/hardware/ff545574)例程，以将 ECP 上下文结构标记为已确认。 在 ECP 可以标记为探讨在 ECP 的使用、 已处理，或任何其他条件。
+-   调用[**FltAcknowledgeEcp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltacknowledgeecp)或[**FSRTLACKNOWLEDGEECP**](https://msdn.microsoft.com/library/windows/hardware/ff545574)例程将 ECP 上下文结构标记为已确认。 可以将 ECP 标记为查看、使用、处理或 ECP 的任何其他条件。
 
--   调用[ **FltIsEcpAcknowledged** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltisecpacknowledged)或[ **FsRtlIsEcpAcknowledged** ](https://msdn.microsoft.com/library/windows/hardware/ff546808)例程，以确定是否为 ECP 上下文结构标记为已确认。
+-   调用[**FltIsEcpAcknowledged**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltisecpacknowledged)或[**FsRtlIsEcpAcknowledged**](https://msdn.microsoft.com/library/windows/hardware/ff546808)例程来确定 ECP 上下文结构是否被标记为已确认。
 
-### <a name="span-iddeterminingoriginationmodespanspan-iddeterminingoriginationmodespanspan-iddeterminingoriginationmodespandetermining-origination-mode"></a><span id="Determining_Origination_Mode"></span><span id="determining_origination_mode"></span><span id="DETERMINING_ORIGINATION_MODE"></span>确定资助创始费模式
+### <a name="span-iddetermining_origination_modespanspan-iddetermining_origination_modespanspan-iddetermining_origination_modespandetermining-origination-mode"></a><span id="Determining_Origination_Mode"></span><span id="determining_origination_mode"></span><span id="DETERMINING_ORIGINATION_MODE"></span>确定始发模式
 
-在文件系统筛选器驱动程序可以调用[ **FltIsEcpFromUserMode** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltisecpfromusermode)或[ **FsRtlIsEcpFromUserMode** ](https://msdn.microsoft.com/library/windows/hardware/ff546813)例程，以确定是否从用户模式下，源自 ECP 上下文结构。 文件系统筛选器驱动程序可以拒绝接受源自用户模式下的 ECP 上下文结构。
+文件系统筛选器驱动程序可以调用[**FltIsEcpFromUserMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltisecpfromusermode)或[**FsRtlIsEcpFromUserMode**](https://msdn.microsoft.com/library/windows/hardware/ff546813)例程来确定 ECP 上下文结构是否源自用户模式。 文件系统筛选器驱动程序可以拒绝接受源自用户模式的 ECP 上下文结构。
 
-### <a name="span-idusinglookasideliststoallocateecpsspanspan-idusinglookasideliststoallocateecpsspanspan-idusinglookasideliststoallocateecpsspanusing-lookaside-lists-to-allocate-ecps"></a><span id="Using_Lookaside_Lists_to_Allocate_ECPs"></span><span id="using_lookaside_lists_to_allocate_ecps"></span><span id="USING_LOOKASIDE_LISTS_TO_ALLOCATE_ECPS"></span>要分配 ECPs 使用后备链列表
+### <a name="span-idusing_lookaside_lists_to_allocate_ecpsspanspan-idusing_lookaside_lists_to_allocate_ecpsspanspan-idusing_lookaside_lists_to_allocate_ecpsspanusing-lookaside-lists-to-allocate-ecps"></a><span id="Using_Lookaside_Lists_to_Allocate_ECPs"></span><span id="using_lookaside_lists_to_allocate_ecps"></span><span id="USING_LOOKASIDE_LISTS_TO_ALLOCATE_ECPS"></span>使用后备链表列表分配 ECPs
 
-在文件系统筛选器驱动程序可以调用以下例程来分配 ECPs 从后备链列表以及管理旁视列表和 ECPs:
+文件系统筛选器驱动程序可以调用以下例程来从后备链表列表分配 ECPs 并管理后备链表列表和 ECPs：
 
--   调用[ **FltInitExtraCreateParameterLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltinitextracreateparameterlookasidelist)或[ **FsRtlInitExtraCreateParameterLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff546102)到例程初始化用于固定大小的一个或多个 ECP 上下文结构分配的分页或非分页池后备链列表。
+-   调用[**FltInitExtraCreateParameterLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltinitextracreateparameterlookasidelist)或[**FsRtlInitExtraCreateParameterLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff546102)例程来初始化分页或非分页池后备链表列表，该列表用于分配已修复的一个或多个 ECP 上下文结构规格.
 
--   调用[ **FltDeleteExtraCreateParameterLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltdeleteextracreateparameterlookasidelist)或[ **FsRtlDeleteExtraCreateParameterLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545849)到例程释放后备链列表。
+-   调用[**FltDeleteExtraCreateParameterLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdeleteextracreateparameterlookasidelist)或[**FsRtlDeleteExtraCreateParameterLookasideList**](https://msdn.microsoft.com/library/windows/hardware/ff545849)例程来释放后备链表列表。
 
--   调用[ **FltAllocateExtraCreateParameterFromLookasideList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltallocateextracreateparameterfromlookasidelist)或[ **FsRtlAllocateExtraCreateParameterFromLookasideList** ](https://msdn.microsoft.com/library/windows/hardware/ff545616)例程内存池分配从后备链列表中为 ECP 上下文结构并生成指向该结构的指针。
+-   调用[**FltAllocateExtraCreateParameterFromLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocateextracreateparameterfromlookasidelist)或[**FSRTLALLOCATEEXTRACREATEPARAMETERFROMLOOKASIDELIST**](https://msdn.microsoft.com/library/windows/hardware/ff545616)例程从 ECP 上下文结构的后备链表列表中分配内存池，并生成指向该构造.
 
--   调用[ **FltFreeExtraCreateParameter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfreeextracreateparameter)或[ **FsRtlFreeExtraCreateParameter** ](https://msdn.microsoft.com/library/windows/hardware/ff545989)例程来释放 ECP 上下文的内存结构。
+-   调用[**FltFreeExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfreeextracreateparameter)或[**FsRtlFreeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545989)例程来释放 ECP 上下文结构的内存。
 
  
 

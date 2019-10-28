@@ -1,15 +1,15 @@
 ---
 title: ExXxxTimer 例程和 EX_TIMER 对象
-description: 从 Windows 8.1 开始，一组全面的 ExXxxTimer 例程是可用于管理计时器。
+description: 从 Windows 8.1 开始，可以使用一组全面的 ExXxxTimer 例程来管理计时器。
 ms.assetid: 5F2622F5-4D1A-48F4-9FF5-27DEC6109266
 keywords:
-- 计时器 WDK 内核
+- 计时器的 WDK 内核
 - 计时器对象 WDK 内核
-- 计时器对象 WDK 内核，有关计时器对象
+- 计时器对象 WDK 内核，关于计时器对象
 - 内核调度程序对象 WDK，计时器对象
 - 调度程序对象 WDK 内核，计时器对象
 - 高分辨率计时器 WDK 内核
-- 没有唤醒计时器 WDK 内核
+- 无唤醒计时器 WDK 内核
 - EX_TIMER
 - ExXxxTimer 例程
 - ExAllocateTimer
@@ -19,37 +19,37 @@ keywords:
 - ExTimerCallback
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2d669547bb7559dad9d1cf69c5c8ecfcc63b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 040ead56fe15c34137ca19cefb627f94d1cf5b97
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386618"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838702"
 ---
-# <a name="exxxxtimer-routines-and-extimer-objects"></a>ExXxxTimer 例程和 EX\_计时器对象
+# <a name="exxxxtimer-routines-and-ex_timer-objects"></a>ExXxxTimer 例程和 EX\_计时器对象
 
 
-从 Windows 8.1 开始，一套综合的**Ex*Xxx*计时器**例程是可用于管理计时器。 这些例程使用计时器对象的基于[ **EX\_计时器**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构。 **Ex*Xxx*计时器**例程是替换**Ke*Xxx*计时器**例程，可从 Windows 2000 开始。 驱动程序用于只能在 Windows 8.1 上运行，并可以使用更高版本的 Windows **Ex*Xxx*计时器**而不是例程**Ke*Xxx*计时器**例程。 继续支持 Windows 8.1 和更高版本的 Windows **Ke*Xxx*计时器**例程。
+从 Windows 8.1 开始，可以使用一组全面的**Ex*Xxx*计时器**例程来管理计时器。 这些例程使用基于[**EX\_timer**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构的计时器对象。 **Ex*xxx*计时器**例程是适用于从 Windows 2000 开始的 " **Ke*xxx*计时器**" 例程的替换项。 仅在 Windows 8.1 和更高版本的 Windows 上运行的驱动程序可以使用**Ex*xxx*计时器**例程，而不是**Ke*xxx*计时器**例程。 Windows 8.1 和更高版本的 Windows 将继续支持**Ke*Xxx*计时器**例程。
 
-**Ex*Xxx*计时器**例程拥有由提供的所有重要的功能**Ke*Xxx*计时器**例程。 此外， **Ex*Xxx*计时器**例程都支持两个计时器类型*高分辨率计时器*并*否唤醒计时器*，不是受**Ke*Xxx*计时器**例程。 高分辨率计时器是其过期时间可以指定与准确性更高的系统时钟的默认分辨率受限于其准确性的计时器的计时器。 没有唤醒计时器是避免不必要地唤醒从低功耗状态的处理器的计时器。 有关详细信息，请参阅下列主题：
+**Ex*xxx*计时器**例程具有由**Ke*xxx*计时器**例程提供的所有重要功能。 此外， **Ex*xxx*计时器**例程支持不受**Ke*xxx*计时器**例程支持的两种计时器类型、*高分辨率计时器*和*无唤醒计时器*。 高分辨率计时器是计时器，其过期时间可指定为具有比系统时钟默认分辨率限制的计时器更高的精度。 无唤醒计时器是避免不必要地从低功耗状态唤醒处理器的计时器。 相关详细信息，请参阅以下主题：
 
 [高分辨率计时器](high-resolution-timers.md)
-[否唤醒计时器](no-wake-timers.md)从 Windows 8.1，以下**Ex*Xxx*计时器**例程都可用：
+从 Windows 8.1 开始的[唤醒计时器](no-wake-timers.md)，可使用以下**Ex*Xxx*计时器**例程：
 
-[**ExAllocateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatetimer)
-[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exsettimer)
-[**ExCancelTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-excanceltimer) 
- [ **ExDeleteTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeletetimer) **ExSetTimer**例程可以使用而不是[ **KeSetTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimer)或[ **KeSetTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesettimerex)例程。 **ExCancelTimer**例程可以使用而不是[ **KeCancelTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kecanceltimer)例程。
+[**ExAllocateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatetimer)
+[**ExSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exsettimer)
+[**ExCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-excanceltimer)
+[**ExDeleteTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletetimer)可以使用**ExSetTimer**例程，而不是[**KeSetTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimer)或[**KeSetTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesettimerex)例程。 可以使用**ExCancelTimer**例程，而不是[**KeCancelTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kecanceltimer)例程。
 
-**ExAllocateTimer**并**ExDeleteTimer**例程具有不能直接**Ke*Xxx*计时器**对应项。 两个例程分配和释放计时器对象。 此计时器对象是系统分配[ **EX\_计时器**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构，其成员是不透明的驱动程序。 与此相反，该计时器对象由**Ke*Xxx*计时器**例程是驱动程序分配[ **KTIMER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构。 驱动程序调用[ **KeInitializeTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimer)或[ **KeInitializeTimerEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializetimerex)例程来初始化此对象。 **ExAllocateTimer**初始化它再分配计时器对象。 有关详细信息**ExDeleteTimer**，请参阅[删除 System-Allocated 计时器对象](deleting-a-system-allocated-timer-object.md)。
+**ExAllocateTimer**和**ExDeleteTimer**例程没有直接的**Ke*Xxx*计时器**对应项。 这两个例程分配并释放计时器对象。 此计时器对象是系统分配的[**EX\_定时器**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构，其成员对于驱动程序是不透明的。 与此相反，" **Ke*Xxx*计时器**" 例程使用的 timer 对象是驱动程序分配的[**KTIMER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构。 驱动程序调用[**KeInitializeTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimer)或[**KeInitializeTimerEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializetimerex)例程来初始化此对象。 **ExAllocateTimer**初始化它分配的计时器对象。 有关**ExDeleteTimer**的详细信息，请参阅[删除系统分配的计时器对象](deleting-a-system-allocated-timer-object.md)。
 
-**EX\_计时器**并**KTIMER**结构是可等待对象。 驱动程序调用后**ExSetTimer**， **KeSetTimer**，或**KeSetTimerEx**若要设置一个计时器，该驱动程序可以调用一个例程如[ **KeWaitForSingleObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitforsingleobject)或[ **KeWaitForMultipleObjects** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kewaitformultipleobjects)等待计时器过期。 在计时器过期时，计时器对象发出信号。 驱动程序可以作为一个选项，提供指向驱动程序实现的指针[ *ExTimerCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ext_callback)或[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)回调例程操作系统将调用计时器过期后。
+**EX\_TIMER**和**KTIMER**结构是可等待对象。 驱动程序调用**ExSetTimer**、 **KeSetTimer**或**KeSetTimerEx**来设置计时器之后，驱动程序可以调用一个例程，如[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)或[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects) ，以等待计时器过期。 计时器过期时，将终止 timer 对象。 作为选项，驱动程序可以提供一个指针，指向在计时器过期后操作系统调用的驱动程序实现的[*ExTimerCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ext_callback)或[*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)回调例程。
 
-**Ke*Xxx*计时器**例程具有不由提供的两个功能**Ex*Xxx*计时器**例程，但这些功能不需要的大多数驱动程序。
+**Ke*xxx*计时器**例程有两个功能，这些功能不由**Ex*xxx*计时器**例程提供，但大多数驱动程序都不需要这些功能。
 
-首先， **KTIMER**用作由计时器对象的结构**Ke*Xxx*计时器**例程是驱动程序分配。 该驱动程序可以预分配此对象，以确保该对象可用于甚至在情况下在其中限制资源和内存分配可能会失败。 与之相反，调用**ExAllocateTimer**分配计时器对象可能会失败在资源受限环境中。 但是，一些驱动程序需要设计为在环境中的内存分配失败，操作和大多数驱动程序受益的便利性**ExAllocateTimer**同时分配并初始化计时器对象的例程。
+首先，由**Ke*Xxx*计时器**例程用作计时器对象的**KTIMER**结构是由驱动程序分配的。 驱动程序可以预分配此对象，以确保即使在资源受到限制并且内存分配可能会失败的情况下，对象也可用。 相反，在资源受限的环境中，对**ExAllocateTimer**的调用来分配计时器对象可能会失败。 但是，很少有驱动程序需要设计为在内存分配失败的环境中运行，而大多数驱动程序都从**ExAllocateTimer**例程的便利性中获益，这两种情况都可以分配和初始化 timer 对象。
 
-其次，还有没有**Ex*Xxx*计时器**等效于[ **KeReadStateTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereadstatetimer)例程，该值指示是否在计时器对象已发出信号的状态。 但是，很少使用此例程。 如有必要，驱动程序，使用**Ex*Xxx*计时器**例程可以检查计时器对象是否处于终止状态通过读取一个布尔值，通过设置*ExTimerCallback*驱动程序提供给的回调例程**ExAllocateTimer**例程。
+其次，没有与[**KeReadStateTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereadstatetimer)例程等效的**Ex*Xxx*计时器**，这指示计时器对象是否处于终止状态。 但是，此例程很少使用。 如有必要，使用**Ex*Xxx*计时器**例程的驱动程序可以通过读取一个布尔值来检查计时器对象是否处于终止状态，该布尔值由驱动程序提供**的 ExTimerCallback 回调例程设置ExAllocateTimer**例程。
 
  
 

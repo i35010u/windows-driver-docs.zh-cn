@@ -4,19 +4,19 @@ description: MS\_SM\_AdapterInformationQuery WMI 类
 ms.assetid: 3a396a73-6ade-455a-ac3f-fd0175cc704e
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7c8b53293aeb4921431e742a25e4752efe00eafb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 03a952a8fab4add0c89e50c40becc8531deade6a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386143"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843564"
 ---
-# <a name="mssmadapterinformationquery-wmi-class"></a>MS\_SM\_AdapterInformationQuery WMI 类
+# <a name="ms_sm_adapterinformationquery-wmi-class"></a>MS\_SM\_AdapterInformationQuery WMI 类
 
 
-支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SM\_AdapterInformationQuery 类来公开与 SAS 适配器相关联的属性信息。
+支持存储管理 API 的 HBA 微型端口驱动程序使用 MS\_SM\_AdapterInformationQuery 类来公开与 SAS 适配器关联的属性信息。
 
-MS\_SM\_AdapterInformationQuery 类定义，如下所示在*Hbaapi.mof*:
+MS\_SM\_AdapterInformationQuery 类在*Hbaapi*中定义如下：
 
 ```cpp
 class MS_SM_AdapterInformationQuery
@@ -102,9 +102,9 @@ class MS_SM_AdapterInformationQuery
 };
 ```
 
-此类定义编译时通过 WMI 工具套件，它会生成以下数据结构：
+当 WMI 工具套件编译此类定义时，它将生成以下数据结构：
 
-[**MS\_SM\_AdapterInformationQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/hbapiwmi/ns-hbapiwmi-_ms_sm_adapterinformationquery)
+[**MS\_SM\_AdapterInformationQuery**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_ms_sm_adapterinformationquery)
 
 没有与此 WMI 类相关联的方法。
 

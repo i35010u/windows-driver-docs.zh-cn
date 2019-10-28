@@ -1,25 +1,25 @@
 ---
-title: 取消注册 Winsock 内核应用程序
-description: 取消注册 Winsock 内核应用程序
+title: 注销 Winsock 内核应用程序
+description: 注销 Winsock 内核应用程序
 ms.assetid: f5d99c10-eeac-499e-8630-6aa188d38d75
 keywords:
-- Winsock 内核 WDK 连接网络、 注册
-- 正在注销 Winsock 内核应用程序
-- WSK WDK 连接网络、 注册
+- Winsock 内核 WDK 网络，注册
+- 注销 Winsock 内核应用程序
+- WSK WDK 网络，注册
 - WskDeregister
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe949c8459828704bdeb9eb6f65b7700870d9b8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 712c802c6c91451981855328010f0d9785a0b3c2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386828"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843004"
 ---
-# <a name="unregistering-a-winsock-kernel-application"></a>取消注册 Winsock 内核应用程序
+# <a name="unregistering-a-winsock-kernel-application"></a>注销 Winsock 内核应用程序
 
 
-已成功注册为 WSK 客户端使用的 Winsock Kernel (WSK) 应用程序[ **WskRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskregister)函数必须确保[ **WskDeregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskderegister)已调用，并调用已返回之前的驱动程序, [**卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数返回。 已调用的 WSK 应用程序**WskRegister**成功应永远不会卸载而无需调用**WskDeregister**，这将等待直到所有捕获实例的注销 WSK 客户端对象在发布时提供程序 WSK NPI [ **WskReleaseProviderNPI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nf-wsk-wskreleaseprovidernpi)和所有套接字关闭 WSK 应用程序。 如果有挂起的已传递到函数中的 Irp [ **WSK\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_provider_dispatch)， **WskDeregister**还将等待，直到这些挂起的 Irp 完成。 WSK 应用程序应永远不会在 WSK 中调用函数\_提供程序\_调度后**WskReleaseProviderNPI**调用。
+已成功注册为具有[**WskRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister)函数的 WSK 客户端的 Winsock 内核（WSK）应用程序必须确保已调用[**WskDeregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskderegister) ，并在驱动程序的[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数返回之前返回调用. 已成功调用**WskRegister**的 WSK 应用程序永远不应在不调用**WskDeregister**的情况下卸载，这将等待取消注册 WSK 客户端对象，直到 WSK 提供程序 NPI 的所有捕获实例都已释放[ **。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskreleaseprovidernpi)WSK 应用程序关闭了 WskReleaseProviderNPI 和所有套接字。 如果有一些挂起的 Irp 已传递到 WSK 中的函数[ **\_提供程序\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)，则**WskDeregister**还会等待这些挂起的 irp 完成。 调用**WskReleaseProviderNPI**后，WSK 应用程序不应\_调度\_调用程序中的函数。
 
 例如：
 
@@ -38,7 +38,7 @@ VOID
 }
 ```
 
-WSK 应用程序不一定需要始终调用**WskDeregister**从其*卸载*函数。 例如，如果 WSK 应用程序是一个复杂的驱动程序，WSK 应用程序的调用的子组件**WskDeregister** WSK 应用程序子组件将停用时可能发生。 在此类方案中之前从驱动程序将返回, 其*Unload*函数，它仍须确保 WSK 应用程序已通过调用已成功注销**WskDeregister**。
+WSK 应用程序不一定需要始终从其*Unload*函数中调用**WskDeregister** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则当停用 WSK 应用程序子组件时，可能会出现 WSK 应用程序对**WskDeregister**的调用。 在这种情况下，驱动程序从其*Unload*函数返回之前，必须确保已使用对**WskDeregister**的调用成功注销 WSK 应用程序。
 
  
 

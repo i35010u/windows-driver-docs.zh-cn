@@ -1,42 +1,42 @@
 ---
 title: OID_NIC_SWITCH_DELETE_VPORT
-description: 基础驱动程序发出的对象标识符 (OID) 组请求的 OID_NIC_SWITCH_DELETE_VPORT 若要删除非默认网络适配器的 NIC 交换机先前创建的虚拟端口 (VPort)。
+description: 过量驱动程序发出 OID_NIC_SWITCH_DELETE_VPORT 的对象标识符（OID）设置请求，以删除以前在网络适配器的 NIC 交换机上创建的非默认虚拟端口（VPort）。
 ms.assetid: D762035C-33AC-4579-8EA0-6A422AE4CA76
 ms.date: 08/08/2017
 keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_DELETE_VPORT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 50293b1c30c2fc003251b77998b45466dd73e611
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 12f18d5992499e64ce090d9e37bf3ae97ce0eed7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380846"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844092"
 ---
-# <a name="oidnicswitchdeletevport"></a>OID\_NIC\_交换机\_删除\_VPORT
+# <a name="oid_nic_switch_delete_vport"></a>OID\_NIC\_交换机\_DELETE\_VPORT
 
 
-基础驱动程序将发出对象标识符 (OID) 组请求的 OID\_NIC\_交换机\_删除\_VPORT 删除先前创建的网络适配器的 NIC 的非默认虚拟端口 (VPort)切换。 基础驱动程序可以删除它以前创建了仅通过发出的 OID 方法请求 VPort [OID\_NIC\_交换机\_创建\_VPORT](oid-nic-switch-create-vport.md)。
+过量驱动程序发出 OID\_NIC 的对象标识符（OID）设置请求\_交换机\_DELETE\_VPORT 删除以前在网络适配器的 NIC 交换机上创建的非默认虚拟端口（VPort）。 过量驱动程序可以删除以前创建的 VPort，该方法仅\_\_NIC 发出 oid 方法请求， [\_CREATE\_VPort](oid-nic-switch-create-vport.md)。
 
-基础驱动程序此 OID 集向发出请求的微型端口驱动程序的网络适配器的 PCIe 物理函数 (PF)。 此 OID 集请求是必需的 PF 微型端口驱动程序支持单个根 I/O 虚拟化 (SR-IOV) 接口。
+过量驱动程序将此 OID 集请求颁发给网络适配器的 PCIe 物理功能（PF）的微型端口驱动程序。 支持单一根 i/o 虚拟化（SR-IOV）接口的 PF 微型端口驱动程序需要此 OID 集请求。
 
-**InformationBuffer**的成员[ **NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)结构包含一个指向[ **NDIS\_NIC\_交换机\_删除\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构。
+[ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向[**NDIS\_NIC 的指针\_交换机\_DELETE\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构。
 
 <a name="remarks"></a>备注
 -------
 
-基础驱动程序，如协议或筛选器驱动程序，只能删除非默认 VPort 以前创建了它。 基础驱动程序通过发出的 OID 方法请求创建 VPort [OID\_NIC\_交换机\_创建\_VPORT](oid-nic-switch-create-vport.md)。
+过量驱动程序（如协议或筛选器驱动程序）只能删除先前创建的非默认 VPort。 过量驱动程序通过\_\_NIC 发出 oid 方法请求， [\_CREATE\_VPort](oid-nic-switch-create-vport.md)，来创建一个 VPort。
 
-当 PF 微型端口驱动程序收到的 OID OID 请求\_NIC\_交换机\_删除\_VPORT，驱动程序必须释放已分配给指定 VPort 的硬件和软件资源。
+当 PF 微型端口驱动程序接收 OID\_NIC\_交换机\_DELETE\_VPORT 的 OID 请求时，驱动程序必须释放为指定的 VPort 分配的硬件和软件资源。
 
 有关详细信息，请参阅[删除虚拟端口](https://docs.microsoft.com/windows-hardware/drivers/network/deleting-a-virtual-port)。
 
-**请注意**  非默认，可以通过 OID 的 OID 请求显式删除 VPorts\_NIC\_交换机\_删除\_VPORT。 PF 微型端口驱动程序删除默认 NIC 交换机时，默认 VPort 是隐式删除。 有关详细信息，请参阅[删除 NIC 交换机](https://docs.microsoft.com/windows-hardware/drivers/network/deleting-a-nic-switch)。
+**请注意**  只能通过 OID\_NIC\_开关\_DELETE\_VPORT 的 oid 请求显式删除非默认 VPorts。 当 PF 微型端口驱动程序删除默认 NIC 交换机时，会隐式删除默认 VPort。 有关详细信息，请参阅[删除 NIC 交换机](https://docs.microsoft.com/windows-hardware/drivers/network/deleting-a-nic-switch)。
 
  
 
 ### <a name="return-status-codes"></a>返回状态代码
 
-PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OID\_NIC\_交换机\_删除\_VPORT。
+PF 多端口驱动程序为 oid\_NIC\_交换机\_DELETE\_VPORT 返回以下状态代码之一。
 
 <table>
 <colgroup>
@@ -46,7 +46,7 @@ PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OI
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -56,19 +56,19 @@ PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OI
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_NOT_SUPPORTED</p></td>
-<td><p>PF 微型端口驱动程序不支持的单个根 I/O 虚拟化 (SR-IOV) 接口，或未启用要使用的界面。</p></td>
+<td><p>PF 微型端口驱动程序不支持单根 i/o 虚拟化（SR-IOV）接口，或者没有启用使用接口。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p>一个或多个的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)"> <strong>NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS</strong> </a>结构具有无效值。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)"><strong>NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS</strong></a>结构中的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度不超过 sizeof (<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)"><strong>NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS</strong></a>)。 PF 微型端口驱动程序必须设置<strong>数据。SET_INFORMATION。BytesNeeded</strong>中的成员<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)"> <strong>NDIS_OID_REQUEST</strong> </a>是必需的最小缓冲区大小的结构。</p></td>
+<td><p>信息缓冲区的长度小于 sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)"><strong>NDIS_NIC_SWITCH_DELETE_VPORT_PARAMETERS</strong></a>）。 PF 微型端口驱动程序必须设置<strong>数据。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>
-<td><p>请求由于其他原因而失败。</p></td>
+<td><p>由于其他原因，请求失败。</p></td>
 </tr>
 </tbody>
 </table>
@@ -85,29 +85,29 @@ PF 微型端口驱动程序返回以下状态代码之一 OID 设置请求的 OI
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Version</p></td>
-<td><p>支持在 NDIS 6.30 和更高版本。</p></td>
+<td><p>版本</p></td>
+<td><p>在 NDIS 6.30 和更高版本中受支持。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 ****
-[**NDIS\_NIC\_SWITCH\_DELETE\_VPORT\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)
+[**NDIS\_NIC\_交换机\_DELETE\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)
 
-[**NDIS\_OID\_REQUEST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_oid_request)
+[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)
 
-[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscloseadapterex)
+[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)
 
-[OID\_NIC\_SWITCH\_CREATE\_VPORT](oid-nic-switch-create-vport.md)
+[OID\_NIC\_交换机\_CREATE\_VPORT](oid-nic-switch-create-vport.md)
 
-[OID\_NIC\_交换机\_删除\_开关](oid-nic-switch-delete-switch.md)
+[OID\_NIC\_交换机\_DELETE\_开关](oid-nic-switch-delete-switch.md)
 
  
 

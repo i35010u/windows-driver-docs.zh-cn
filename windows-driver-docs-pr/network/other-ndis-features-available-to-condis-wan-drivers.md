@@ -1,33 +1,33 @@
 ---
-title: 适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
-description: 适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
+title: 可用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
+description: 可用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
 ms.assetid: eb002029-d7da-45ff-9308-f61d90f751d0
 keywords:
-- WAN 的 CoNDIS 驱动程序 WDK 网络功能
+- CoNDIS WAN 驱动程序 WDK 网络，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be2f70082e161510a950209dd9c62a9dc9073c9f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fa34492b76f08556ecda0779d40177af9f31e4e4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366532"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843752"
 ---
-# <a name="other-ndis-features-available-to-condis-wan-drivers"></a>适用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
+# <a name="other-ndis-features-available-to-condis-wan-drivers"></a>可用于 CoNDIS WAN 驱动程序的其他 NDIS 功能
 
 
 
 
 
-WAN 的 CoNDIS 微型端口驱动程序或 MCMs 可以充分利用以下功能：
+CoNDIS WAN 微型端口驱动程序或 MCMs 可以利用以下功能：
 
--   插即用 (PnP) 事件通知的微型端口驱动程序
+-   小型端口驱动程序的即插即用（PnP）事件通知
 
--   64 位的统计计数器
+-   64位统计计数器
 
 -   取消发送数据包
 
--   注册[ *MiniportShutdownEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_shutdown)函数
+-   注册[*MiniportShutdownEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_shutdown)函数
 
 -   新的微型端口驱动程序属性
 

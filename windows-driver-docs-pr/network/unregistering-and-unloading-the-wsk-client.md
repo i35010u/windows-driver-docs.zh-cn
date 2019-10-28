@@ -1,33 +1,33 @@
 ---
-title: 取消注册和卸载 WSK 客户端
-description: 取消注册和卸载 WSK 客户端
+title: 注销并卸载 WSK 客户端
+description: 注销并卸载 WSK 客户端
 ms.assetid: dd9030b1-271f-46e4-9139-b49903ca8313
 keywords:
-- 网络模块注册机构 WDK Winsock 内核
+- 网络模块注册器 WDK Winsock 内核
 - NMR WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6800f8db8b2e5f05e01837e7675f8a065709cf7d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5723f955787a0e2e73ddb701ee0c3a559aad12e7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380799"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843002"
 ---
-# <a name="unregistering-and-unloading-the-wsk-client"></a>取消注册和卸载 WSK 客户端
+# <a name="unregistering-and-unloading-the-wsk-client"></a>注销并卸载 WSK 客户端
 
 
-使用任何 Winsock Kernel (WSK) 应用程序[网络模块注册机构 (NMR)](network-module-registrar2.md)将附加到 WSK 子系统必须注销 NMR 卸载前倒带。 当 WSK 应用程序中注销使用 NMR 通过调用[ **NmrDeregisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrderegisterclient)函数，NMR 调用应用程序的[ *ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数，以便应用程序可以从 WSK 应用程序的注销过程的一部分的 WSK 子系统中分离本身。
+使用[网络模块注册器（NMR）](network-module-registrar2.md)附加到 WSK 子系统的任何 Winsock 内核（WSK）应用程序都必须在卸载之前取消注册 NMR。 当 WSK 应用程序通过调用[**NmrDeregisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrderegisterclient)函数向 NMR 取消注册时，NMR 将调用应用程序的[*ClientDetachProvider*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_detach_provider_fn)回调函数，以便应用程序可以在WSK 应用程序的注销过程。
 
-此外，在向 NMR 取消注册 WSK 子系统的可能性不大，但也有可能情况下，NMR 还会调用 WSK 应用程序的*ClientDetachProvider*回调函数，以便应用程序可以分离自身WSK 子系统 WSK 子系统的注销过程的一部分。
+此外，在可能的情况下，在 WSK 子系统通过 NMR 进行注销的情况下，NMR 还会调用 WSK 应用程序的*ClientDetachProvider*回调函数，以便应用程序能够作为WSK 子系统的注销过程。
 
-NMR 调用 WSK 应用程序的*ClientDetachProvider*仅一次回调函数。 如果 WSK 应用程序和 WSK 子系统中注销 NMR，NMR 调用 WSK 应用程序的*ClientDetachProvider*仅后启动的第一个注销回调函数。
+NMR 只调用一次 WSK 应用程序的*ClientDetachProvider*回调函数。 如果 WSK 应用程序和 WSK 子系统都取消注册 NMR，则 NMR 仅在第一次注销开始后才调用 WSK 应用程序的*ClientDetachProvider*回调函数。
 
-在向任一中 WSK WSK 函数进行任何调用是否\_提供程序\_NMR 调用 WSK 应用程序的次调度*ClientDetachProvider*回调函数、 WSK 应用程序应返回状态\_成功从其*ClientDetachProvider*回调函数。 否则，WSK 应用程序必须返回状态\_PENDING 从其*ClientDetachProvider*回调函数，并且它必须调用[ **NmrClientDetachProviderComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nf-netioddk-nmrclientdetachprovidercomplete)函数毕竟 WSK 正在进行中，调用的函数中 WSK\_提供程序\_调度已返回。 WSK 应用程序调用**NmrClientDetachProviderComplete**函数，以通知应用程序已从 WSK 子系统分离 NMR。 但是，WSK 子系统将允许所有打开的套接字关闭 WSK 应用程序之前完全完成分离过程。 有关详细信息，请参阅[关闭套接字](closing-a-socket.md)。
+如果在 NMR 调用 WSK 应用程序的*ClientDetachProvider*回调函数时没有对 WSK\_提供\_程序中的任何 WSK 函数进行调用，则 WSK 应用程序应返回状态\_其*ClientDetachProvider*回调函数成功。 否则，WSK 应用程序必须从其*ClientDetachProvider*回调函数返回状态\_"挂起"，并且必须在对 WSK 函数进行的所有调用之后调用[**NmrClientDetachProviderComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nf-netioddk-nmrclientdetachprovidercomplete)函数。已返回 WSK\_提供程序\_调度。 WSK 应用程序调用**NmrClientDetachProviderComplete**函数来通知 NMR 应用程序已与 WSK 子系统分离。 但是，在 WSK 应用程序关闭所有打开的套接字之前，WSK 子系统将不允许完全完成分离过程。 有关详细信息，请参阅[关闭套接字](closing-a-socket.md)。
 
-WSK 应用程序已通知 NMR 无法进行分离，完成后通过返回状态\_成功从其*ClientDetachProvider*回调函数或通过调用**NmrClientDetachProviderComplete**函数，应用程序必须不调用任何进一步的任何 WSK 函数中 WSK\_提供程序\_调度。
+当 WSK 应用程序通过从其*ClientDetachProvider*回调函数返回状态\_成功或通过调用**NMRCLIENTDETACHPROVIDERCOMPLETE**函数向 NMR 通知分离完成后，应用程序不能对 WSK\_提供程序中的任何 WSK 函数进行任何进一步调用\_调度。
 
-如果 WSK 应用程序实现[ *ClientCleanupBindingContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netioddk/nc-netioddk-npi_client_cleanup_binding_context_fn)回调函数 NMR 调用应用程序的*ClientCleanupBindingContext*回调WSK 应用程序和 WSK 子系统完成彼此分离后的函数。 WSK 应用程序的*ClientCleanupBindingContext*回调函数应执行任何必要的应用程序的绑定上下文结构中包含的数据的清理。 如果应用程序动态分配内存结构，它随后应释放绑定上下文结构的内存。
+如果 WSK 应用程序实现[*ClientCleanupBindingContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netioddk/nc-netioddk-npi_client_cleanup_binding_context_fn)回调函数，则 NMR 在 WSK 应用程序和 WSK 子系统完成后调用应用程序的*ClientCleanupBindingContext*回调函数分离。 WSK 应用程序的*ClientCleanupBindingContext*回调函数应对应用程序的绑定上下文结构中包含的数据执行任何必要的清理。 如果应用程序为结构动态分配内存，则它应释放绑定上下文结构的内存。
 
 例如：
 
@@ -94,7 +94,7 @@ VOID
 }
 ```
 
-WSK 应用程序的[ **Unload** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)函数必须确保将从中注销该应用程序[NMR](network-module-registrar2.md)的应用程序是从系统内存中卸载之前。 WSK 应用程序不能返回从其*Unload*函数之前，从 NMR 完全注销之后。 如果在调用**NmrDeregisterClient**将返回状态\_WSK 应用程序必须调用挂起、 **NmrWaitForClientDeregisterComplete**函数等待的注销完成之前它将返回其*Unload*函数。
+在从系统内存中卸载应用程序之前，WSK 应用程序的[**Unload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)函数必须确保从[NMR](network-module-registrar2.md)中注销该应用程序。 WSK 应用程序在从 NMR 完全注销之前，不能从其*Unload*函数返回。 如果对**NmrDeregisterClient**的调用返回状态\_"挂起"，则 WSK 应用程序必须调用**NmrWaitForClientDeregisterComplete**函数以等待注销完成，然后从其*卸载*返回才能.
 
 例如：
 
@@ -127,7 +127,7 @@ VOID
 }
 ```
 
-WSK 应用程序不需要调用**NmrDeregisterClient**从其*卸载*函数。 例如，如果 WSK 程序是一个复杂的驱动程序的子组件，WSK 应用程序子组件停用时，可能会出现 WSK 应用程序的注销。 但是，在这种情况下，驱动程序必须仍确保 WSK 应用程序已得到从 NMR 完全注销之前从返回其*Unload*函数。
+不需要 WSK 应用程序从其*Unload*函数中调用**NmrDeregisterClient** 。 例如，如果 WSK 应用程序是复杂驱动程序的子组件，则在禁用 WSK 应用程序子组件时，可能会注销 WSK 应用程序。 但是，在这种情况下，驱动程序必须确保 WSK 应用程序在从其*Unload*函数返回之前已从 NMR 完全注销。
 
  
 

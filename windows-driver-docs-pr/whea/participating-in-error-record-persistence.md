@@ -4,31 +4,31 @@ description: 参与错误记录持久性
 ms.assetid: 06cbcccf-7cda-468d-aa6e-b8ecf95adf16
 keywords:
 - Windows 硬件错误体系结构 WDK，错误记录持久性
-- WHEA WDK，错误记录持久性
-- 硬件错误 WDK WHEA，错误记录持久性
-- 错误 WDK WHEA，错误记录持久性
-- 特定于平台的硬件错误驱动程序插件 WDK WHEA，错误记录持久性
-- PSHED 插件 WDK WHEA 错误记录持久性
+- WHEA WDK，错误记录暂留
+- 硬件错误 WDK WHEA，错误记录暂留
+- 错误，WDK WHEA，错误记录暂留
+- 平台特定硬件错误驱动程序插件 WDK WHEA，错误记录暂留
+- PSHED 插件 WDK WHEA，错误记录暂留
 - 错误记录持久性 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5b431ca415b565bd505abac48b95dd8dad874cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c3d709cf134f82e3dc25b030cfac5602a489c6b3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386447"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843552"
 ---
 # <a name="participating-in-error-record-persistence"></a>参与错误记录持久性
 
 
 若要参与错误记录持久性，PSHED 插件必须实现以下回调函数：
 
-[*WriteErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_write_error_record)
+[*WriteErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_write_error_record)
 
-[*ReadErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_read_error_record)
+[*ReadErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_read_error_record)
 
-[*ClearErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-pshed_pi_clear_error_record)
+[*ClearErrorRecord*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pshed_pi_clear_error_record)
 
 下面的代码示例演示如何实现这些回调函数。
 
@@ -181,9 +181,9 @@ NTSTATUS
 }
 ```
 
-必须指定插件参与错误记录持久性 PSHED **PshedFAErrorRecordPersistence**标志时它[注册](registering-a-pshed-plug-in.md)与操作系统本身。
+参与错误记录持久性的 PSHED 插件必须在向操作系统[注册](registering-a-pshed-plug-in.md)自身时指定**PshedFAErrorRecordPersistence**标志。
 
-有关错误记录持久性的详细信息，请参阅[错误记录持久性机制](error-record-persistence-mechanism.md)。
+有关错误记录持久性的详细信息，请参阅[错误记录永久性机制](error-record-persistence-mechanism.md)。
 
  
 

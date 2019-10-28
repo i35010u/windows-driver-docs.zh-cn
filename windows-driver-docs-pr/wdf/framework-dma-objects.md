@@ -4,21 +4,21 @@ description: 框架 DMA 对象
 ms.assetid: a5073bb0-a8c9-49fc-b280-e781f9f9c256
 keywords:
 - DMA 操作 WDK KMDF，对象
-- 主总线 DMA WDK KMDF 对象
-- DMA 促成因素对象 WDK KMDF
+- 总线主控 DMA WDK KMDF，对象
+- DMA 启用程序对象 WDK KMDF
 - DMA 事务对象 WDK KMDF
-- 常见的缓冲区对象 WDK KMDF
+- 常见缓冲区对象 WDK KMDF
 - framework 对象 WDK KMDF，DMA 对象
 - 启用程序对象 WDK KMDF
 - 事务对象 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d8c02e326586d098c4e85c2b1b89091c6dc850
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 33892679104e73c60c3e3a1e93dd5621ecf2a74b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368680"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843182"
 ---
 # <a name="framework-dma-objects"></a>框架 DMA 对象
 
@@ -28,22 +28,22 @@ ms.locfileid: "67368680"
 
 
 
-若要处理基于 framework 的驱动程序中的总线 master 和系统模式 DMA 操作，framework 提供了三个对象：
+为了处理基于框架的驱动程序中的总线主控和系统模式 DMA 操作，该框架提供了三个对象：
 
 <a href="" id="dma-enabler-object"></a>**DMA 启用程序对象**  
-框架的 DMA 促成因素对象使框架的 DMA 支持用于特定设备的驱动程序。 该驱动程序必须为每个支持 DMA 操作其设备创建 DMA 推动器对象。
+使用框架的 DMA 启用码对象，驱动程序可以将框架的 DMA 支持用于特定设备。 驱动程序必须为其支持 DMA 操作的每个设备创建 DMA 启用程序对象。
 
-<a href="" id="dma-transaction-object"></a>**DMA 事务对象**  
-框架的 DMA 事务对象表示单个 DMA I/O 操作。 基于框架的驱动程序通常创建接收，每个 I/O 请求的 DMA 事务对象，如果设备使用 DMA 来执行请求的操作。
+<a href="" id="dma-transaction-object"></a>**DMA transaction 对象**  
+框架的 DMA transaction 对象表示单个 DMA i/o 操作。 如果设备使用 DMA 执行请求的操作，则基于框架的驱动程序通常会为它收到的每个 i/o 请求创建 DMA transaction 对象。
 
-<a href="" id="common-buffer-object"></a>**常见的缓冲区对象**  
-框架的常见缓冲区对象表示映射，可同时访问驱动程序和设备的计算机内存的区域。 某些驱动程序[使用常见缓冲区](using-common-buffers.md)时设置 DMA 的设备的 I/O 操作。
+<a href="" id="common-buffer-object"></a>**通用缓冲区对象**  
+框架的通用缓冲区对象表示一种计算机内存区域，该区域由驱动程序和设备进行同时访问。 某些驱动程序在为 DMA 设备设置 i/o 操作时[使用公用缓冲区](using-common-buffers.md)。
 
-有关这些对象将导出的接口的信息，请参阅：
+有关这些对象导出的接口的信息，请参阅：
 
-[Framework DMA 对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmaenabler/)
+[框架 DMA 对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/)
 
-[Framework 常见缓冲区对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfcommonbuffer/)
+[Framework 公用缓冲区对象引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcommonbuffer/)
 
  
 

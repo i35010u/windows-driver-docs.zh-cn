@@ -7,12 +7,12 @@ keywords:
 - 并行设备 WDK，共享
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3713c9975f9142e854da242305f6bc6dc276af
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47f64f3963361036781a4f74c42d4ff54762951a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358506"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844491"
 ---
 # <a name="opening-and-using-a-parallel-device"></a>打开和使用并行设备
 
@@ -20,27 +20,27 @@ ms.locfileid: "67358506"
 
 
 
-并行端口的系统提供的总线驱动程序强制执行到并行设备附加到并行端口的独占访问。 如果并行设备处于打开状态，并行端口总线驱动程序失败，任何后续[ **IRP\_MJ\_创建**](https://docs.microsoft.com/previous-versions/ff544131(v=vs.85))设备在关闭设备之前的请求。 其他输入/输出请求发送到设备或调用之前，必须打开并行设备客户端[并行设备回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。 客户端必须尝试后客户端已关闭其设备上的文件与并行设备进行通信。 客户端必须先关闭设备以允许访问设备的其他客户端。
+系统提供的并行端口总线驱动程序强制对连接到并行端口的并行设备进行独占访问。 如果并行设备已打开，则在关闭设备之前，并行端口总线驱动程序将无法执行任何后续[**IRP\_MJ\_** ](https://docs.microsoft.com/previous-versions/ff544131(v=vs.85))为设备创建请求。 客户端必须在将其他 i/o 请求发送到设备之前打开并行设备，或调用[并行设备回调例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 客户端在设备上关闭其文件后，不能尝试与并行设备通信。 客户端必须关闭设备以允许其他客户端访问设备。
 
-客户端通常执行以下操作：
+客户端通常会执行以下操作：
 
 -   打开并行设备
 
--   连接到并行设备 −，请参阅[连接到并行的设备](connecting-to-a-parallel-device.md)
+-   连接到并行设备-请参阅[连接到并行设备](connecting-to-a-parallel-device.md)
 
--   获取有关并行设备 − 详细信息，参阅信息[获取并行设备信息](obtaining-information-about-a-parallel-device.md)
+-   获取有关并行设备的信息−参阅[获取有关并行设备的信息](obtaining-information-about-a-parallel-device.md)
 
--   锁定设备 − 详细信息，参阅[锁定和解锁并行设备使用的并行端口](locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md)
+-   锁定设备−参阅[锁定和解锁并行端口以供并行设备使用](locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md)
 
--   Does 一系列设备上的操作
+-   在设备上执行一系列操作
 
--   断开并行设备 −，请参阅[连接到并行的设备](connecting-to-a-parallel-device.md)
+-   与并行设备断开连接−参阅[连接到并行设备](connecting-to-a-parallel-device.md)
 
--   解锁设备 − 详细信息，参阅[锁定和解锁并行设备使用的并行端口](locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md)
+-   解锁设备−参阅[锁定和解锁并行端口以供并行设备使用](locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md)
 
 -   关闭设备
 
-请注意，在插环境中，设备可以删除或添加任何打开的文件时。 一般情况下，每次添加并行设备，插分配不同的位置和资源。
+请注意，在即插即用环境中，每当设备上没有打开的文件时，可以删除或添加设备。 通常，每次添加并行设备时，即插即用会分配不同的位置和资源。
 
  
 

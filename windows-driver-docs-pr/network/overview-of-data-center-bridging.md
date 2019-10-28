@@ -4,50 +4,50 @@ description: 数据中心桥接概述
 ms.assetid: FEB3FDBB-8A3C-4907-A6D0-CB5E94BCFEFF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27359c78c088412397a212e696d2e2af73406530
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7b5b7d6562551d0b4f3267d57a60f2a4aacfb4ba
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385724"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843748"
 ---
 # <a name="overview-of-data-center-bridging"></a>数据中心桥接概述
 
 
-IEEE 802.1 数据中心桥接 (DCB) 是一系列定义一个统一的标准 802.3 以太网媒体接口或*fabric*、 局域网 (LAN) 和存储区域网络 (SAN) 技术。 DCB 扩展当前 802.1x 桥接规范，以支持通过数据中心内相同的网络构造基于 LAN 的和基于 SAN 的应用程序共存。 DCB 还支持通过定义链接级别策略防止数据包丢失的技术，例如通过 Ethernet (FCoE) 和 iSCSI、 光纤通道。
+IEEE 802.1 数据中心桥接（DCB）是一系列标准，它为局域网（LAN）和存储区域网络（SAN）技术定义了一个统一的802.3 以太网媒体接口或*构造*。 DCB 扩展了当前802.1 桥接规范，以支持在数据中心内的相同网络结构上共存基于 LAN 和基于 SAN 的应用程序。 DCB 还通过定义阻止数据包丢失的链接级别策略，来支持通过以太网（FCoE）和 iSCSI 的技术（如光纤通道。
 
-DCB 包括指定如何网络设备进行互操作统一的数据中心结构中的以下 802.1 草稿标准：
+DCB 包括以下802.1 草案标准，这些标准指定了网络设备在统一数据中心结构中的交互方式：
 
-<a href="" id="priority-based-flow-control--pfc-"></a>基于优先级的流控制 (PFC)  
-在 IEEE 802.1Qbb 中指定 PFC 草案标准。 此标准是 DCB 接口 framework 的一部分。
+<a href="" id="priority-based-flow-control--pfc-"></a>基于优先级的流控制（PFC）  
+PFC 是在 IEEE 802.1 Q b b 草案标准中指定的。 此标准是 DCB 界面框架的一部分。
 
-PFC 支持通过显著减少由于拥塞的数据包丢失数据的可靠传递。 这允许丢失区分协议，如 FCoE，与传统丢失半协议通过在相同的统一构造共存。
+PFC 支持可靠地传递数据，因为拥塞会显著减少数据包丢失。 这允许丢失敏感的协议（如 FCoE）与相同统一构造上的传统不区分的协议共存。
 
-PFC 指定直接连接的对等方之间的链接级别流量控制机制。 PFC 类似于 IEEE 802.3 暂停帧，但改为在单独的 802.1p 优先级级别上进行操作。 这允许接收端暂停发送器上任何优先级别。
+PFC 指定直接连接的对等方之间的链接级流控制机制。 PFC 类似于 IEEE 802.3 暂停帧，而是对单个 802.1 p 优先级别进行操作。 这允许接收方在任何优先级别暂停发送器。
 
-PFC 的详细信息，请参阅[基于优先级的流控制 (PFC)](priority-based-flow-control--pfc.md)。
+有关 PFC 的详细信息，请参阅[基于优先级的流控制（PFC）](priority-based-flow-control--pfc.md)。
 
-<a href="" id="enhanced-transmission-selection--ets-"></a>增强的传输选择 (ETS)  
-ETS 是传输选择算法 (TSA)，IEEE 802.1Qaz 中指定的草案标准。 此标准是 DCB 接口 framework 的一部分。
+<a href="" id="enhanced-transmission-selection--ets-"></a>增强的传输选择（ETS）  
+ETS 是在 IEEE 802.1 Qaz 草案标准中指定的传输选择算法（TSA）。 此标准是 DCB 界面框架的一部分。
 
-ETS 分配分配给不同的 IEEE 802.1p 优先级级别的流量类之间的带宽。 每个流量类分配 directlyconnected 对等方之间的数据链路上的可用带宽的百分比。 如果流量类不使用其已分配的带宽，ETS 允许其他通信类，以使用流量类未使用的可用带宽。
+ETS 在分配给不同 IEEE 802.1 p 优先级级别的流量类之间分配带宽。 每个流量类在 directlyconnected 对等方之间的数据链路上分配了可用带宽的百分比。 如果流量类不使用其分配的带宽，ETS 允许其他流量类使用流量类未使用的可用带宽。
 
-ETS 的详细信息，请参阅[增强传输选择 (ETS) 算法](enhanced-transmission-selection--ets--algorithm.md)。
+有关 ETS 的详细信息，请参阅[增强的传输选择（ETS）算法](enhanced-transmission-selection--ets--algorithm.md)。
 
-<a href="" id="data-center-bridging-exchange--dcbx--protocol"></a>数据中心桥接交换 (DCBX) 协议  
-IEEE 802.1Qaz 还指定数据中心桥接交换 (DCBX) 协议草案标准。 DCBX 允许两个 directlyconnected 对等方之间交换 DCB 配置参数。 这样，这些对等方可以调整和优化服务质量 (QoS) 参数，以优化通过连接的数据传输。
+<a href="" id="data-center-bridging-exchange--dcbx--protocol"></a>数据中心桥接 Exchange （DCBX）协议  
+还在 IEEE 802.1 Qaz 草案标准中指定了数据中心桥接 Exchange （DCBX）协议。 DCBX 允许在两个 directlyconnected 对等方之间交换 DCB 配置参数。 这允许这些对等方调整和调整服务质量（QoS）参数，以优化通过连接的数据传输。
 
-DCBX 还用于检测冲突之间的网络适配器的 QoS 参数设置 (*本地对等方*) 和远程对等方。 根据本地和远程 QoS 参数设置，微型端口驱动程序，解决这些冲突并派生一组操作的 QoS 参数。 网络适配器按优先顺序排列的远程对等方的数据包传输使用这些操作的参数。 有关驱动程序如何解决其操作的 NDIS QoS 参数设置的详细信息，请参阅[解析操作的 NDIS QoS 参数](resolving-operational-ndis-qos-parameters.md)。
+DCBX 还用于检测网络适配器（*本地对等*）与远程对等节点之间的冲突的 QoS 参数设置。 根据本地和远程 QoS 参数设置，微型端口驱动程序可以解决冲突，并派生一组操作 QoS 参数。 网络适配器使用这些操作参数将数据包的优先级传输到远程对等方。 有关驱动程序如何解析其操作 NDIS QoS 参数设置的详细信息，请参阅[解决操作 Ndis qos](resolving-operational-ndis-qos-parameters.md)参数。
 
-DCBX 包含结转链接层发现协议 (LLDP) 数据包的 DCB 类型-长度-值 (TLV) 设置。 在 IEEE 802.1AB 中指定 LLDP-2005 标准。
+DCBX 包含 DCB 类型-值（TLV）设置，这些设置通过链路层发现协议（LLDP）数据包传输。 在 IEEE 802.1 AB-2005 标准中指定 LLDP。
 
-**请注意**  DCBX 指定本地对等方在任何给定时间维护只有一个远程对等方的配置参数。 因此，网络适配器保留只有一组本地、 远程和操作的 NDIS QoS 参数。
+**请注意**  DCBX 指定本地对等方在任何给定时间都只维护一个远程对等方的配置参数。 因此，网络适配器只维护一组本地、远程和操作 NDIS QoS 参数。
 
  
 
-每个流量类 ETS 和 PFC 配置设置是与 IEEE 802.1p 优先级级别相关联。 优先级别指定为 3 位值的数据包内 802.1Q 标记。 对于 NDIS 的数据包，由指定的 802.1p 优先级级别**UserPriority**的成员[ **NDIS\_NET\_缓冲区\_列表\_8021Q\_INFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)结构，它是与数据包的相关联[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。
+每个 ETS 流量类和 PFC 配置设置都与一个 IEEE 802.1 p 优先级关联。 优先级别指定为数据包的 802.1 Q 标记内的3位值。 对于 NDIS 数据包，802.1 p 优先级由[**NDIS\_NET\_缓冲器\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)的**UserPriority**成员指定，\_8021Q\_INFO 结构与数据包的[**网络关联\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构。
 
-有关优先级级别的详细信息，请参阅[IEEE 802.1p 优先级](ieee-802-1p-priority-levels.md)。
+有关优先级别的详细信息，请参阅[IEEE 802.1 p Priority 级别](ieee-802-1p-priority-levels.md)。
 
  
 

@@ -1,26 +1,26 @@
 ---
-title: Hyper-V 可扩展交换机策略概述
-description: Hyper-V 可扩展交换机策略概述
+title: Hyper-v 可扩展交换机策略概述
+description: Hyper-v 可扩展交换机策略概述
 ms.assetid: 1D0AC55B-60F7-400E-A376-F3E2F7373A92
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03529154bb12011839c48f0daf6cff2ac0ca75fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2243cb0d13640e10393b6a2aabd41cb4dd6f94b8
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385726"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843744"
 ---
-# <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-V 可扩展交换机策略概述
+# <a name="overview-of-hyper-v-extensible-switch-policies"></a>Hyper-v 可扩展交换机策略概述
 
 
-HYPER-V 平台和可扩展交换机接口提供了一个基础结构来管理交换机和端口的可扩展交换机的策略。 通过 PowerShell cmdlet 和基于 WMI 的应用程序，这些策略进行管理。 此基础结构还提供对存储和迁移策略的支持。
+Hyper-v 平台和可扩展交换机接口提供一个基础结构，用于管理可扩展交换机的交换机和端口策略。 这些策略通过 PowerShell cmdlet 和基于 WMI 的应用程序进行管理。 此基础结构还支持策略的存储和迁移。
 
-独立软件供应商 (Isv) 可以使用此基础结构注册其自己的自定义策略。 它们要注册后，可以发现这些策略，并通过内置的 HYPER-V 策略接口进行管理。 每个端口级别或每个交换机级别上，可以配置策略的属性。
+独立软件供应商（Isv）可以使用此基础结构来注册自己的自定义策略。 注册后，可以通过内置的 Hyper-v 策略接口发现和管理这些策略。 可以在每个端口级别或按交换机级别配置策略的属性。
 
-除了自定义策略属性中，HYPER-V 可扩展交换机接口提供用于获取每个端口或在每个交换机的基础上自定义策略属性的状态信息的基础结构。 此状态信息被称为*功能状态*信息。
+除了自定义策略属性以外，Hyper-v 可扩展交换机接口还提供基础结构，以根据每个端口或每个交换机获取自定义策略属性的状态信息。 此状态信息称为*功能状态*信息。
 
-可扩展交换机的自定义策略数据已注册 WMI 管理层使用的托管的对象格式 (MOF) 类定义。 下面演示自定义端口策略属性的 MOF 类的示例。
+可扩展交换机自定义策略数据使用托管对象格式（MOF）类定义注册到 WMI 管理层。 下面显示了一个用于自定义端口策略属性的 MOF 类的示例。
 
 ```C++
 #pragma namespace("\\\\.\\root\\virtualization\\v2")
@@ -81,7 +81,7 @@ class Vendor_SampleFeatureSettingData: Msvm_EthernetSwitchPortFeatureSettingData
 };
 ```
 
-WMI 管理层将 MOF 数据序列化，传输到底层的可扩展交换机扩展的时间。 MOF 类是序列化到 HYPER-V 可扩展交换机扩展可以处理的相应 C 结构。 下面显示了上一示例中的 MOF 类进行序列化的 C 结构的示例。
+当 MOF 数据传输到基础可扩展交换机扩展时，WMI 管理层会序列化这些数据。 MOF 类序列化为可由 Hyper-v 可扩展交换机扩展处理的相应 C 结构。 下面显示了从上一个示例中为 MOF 类序列化的 C 结构的示例。
 
 ```C++
 #pragma pack(8)
@@ -113,19 +113,19 @@ typedef struct _VARIABLE_LENGTH_STRING
 } VARIABLE_LENGTH_STRING;
 ```
 
-此示例重点介绍 MOF 类序列化为可扩展交换机策略属性的相应 C 结构时出现的以下几点：
+此示例突出显示了 MOF 类序列化为可扩展交换机策略属性的相应 C 结构时出现的以下几点：
 
--   在 MOF 文件中的版本定义转换为 USHORT 值，其中高顺序位包含的主要版本和低顺序位包含次要版本。 通过使用下面的代码序列化版本：
+-   MOF 文件中的版本定义将转换为 USHORT 值，其中，高序位包含主要版本，低序位包含次版本。 版本是使用以下代码序列化的：
 
     `  (((MajorVersion) << 8) + (MinorVersion))`
 
-    例如，上述 Version("1") 会序列化为 0x0100 通过值`(((1) << 8) + (0))`。 版本 ("1.1") 将为 0x0101 通过值进行序列化`(((1) << 8) + (1))`。
+    例如，上面的版本（"1"）将通过 `(((1) << 8) + (0))`序列化为值0x0100。 版本（"1.1"）将通过 `(((1) << 8) + (1))`序列化为值0x0101。
 
-    当向扩展名为基础，发出自定义策略属性**PropertyVersion**定义策略的属性的结构的成员包含序列化的版本值。
+    将自定义策略属性颁发给基础扩展时，定义策略属性的结构的**PropertyVersion**成员包含序列化的版本值。
 
-    例如，当可扩展交换机接口发出的对象标识符 (OID) 请求[OID\_切换\_端口\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)，OID 是与相关联[**NDIS\_交换机\_端口\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构。 **PropertyVersion**该结构的成员包含的序列化的版本值。
+    例如，当可扩展交换机接口发出 OID 的对象标识符（OID）请求时[\_switch\_端口\_属性\_"添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)" 时，OID 与[**NDIS\_交换机\_端口关联\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)结构。 该结构的**PropertyVersion**成员包含序列化的版本值。
 
--   所有可变长度字符串会被都序列化为包含序列都化的 C 结构的缓冲区内的偏移量。 每个可变长度字符串的格式设置为**变量\_长度\_字符串**此缓冲区偏移量中的结构。
+-   所有可变长度字符串都序列化为包含序列化 C 结构的缓冲区内的偏移量。 每个可变长度字符串的格式为**变量\_长度**在此缓冲区偏移内\_字符串结构。
 
  
 

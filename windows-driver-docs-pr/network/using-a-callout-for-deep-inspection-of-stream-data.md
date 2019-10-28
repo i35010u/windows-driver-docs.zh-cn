@@ -1,24 +1,24 @@
 ---
-title: 使用标注进行流数据深度检测
-description: 使用标注进行流数据深度检测
+title: 使用标注对流数据进行深度检查
+description: 使用标注对流数据进行深度检查
 ms.assetid: 433d2d9a-c95e-4315-8678-8614791cd529
 keywords:
 - 分类标注 WDK Windows 筛选平台，深度检测
-- 深度检测 WDK Windows 筛选平台
-- 流数据深度检测 WDK Windows 筛选平台
+- 深度检查 WDK Windows 筛选平台
+- 流式传输数据深层检查 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d3391fd639d2b63c62d455ff755ec23ccd4776
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f3ab0281ebb3fe236196ce8947a0d422db860bf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386825"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842997"
 ---
-# <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注进行流数据深度检测
+# <a name="using-a-callout-for-deep-inspection-of-stream-data"></a>使用标注对流数据进行深度检查
 
 
-当一个标注检查流数据，其[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数可以检查固定的数据字段、 元数据字段和传递给它的原始流数据的任意组合，以及已存储在任何相关数据与筛选器或数据相关联的上下文流。
+当标注检查流数据时，它的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) callout 函数可以检查是否有固定数据字段、元数据字段和传递给它的原始流数据的任意组合，以及已存储到上下文中的相关数据带有筛选器或数据流的。
 
 例如：
 
@@ -134,9 +134,9 @@ VOID NTAPI
 }
 ```
 
-中的值*筛选器-&gt;action.type*确定哪些操作的标注[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_netvista/)标注函数应返回在**actionType**成员指向的结构*classifyOut*参数。 有关这些操作的详细信息，请参阅[ **FWPS\_ACTION0** ](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)结构。
+*Filter-&gt;操作*中的值。类型确定标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) Callout 函数应在*classifyOut*参数指向的结构的**actionType**成员中返回的操作。 有关这些操作的详细信息，请参阅[**FWPS\_ACTION0**](https://docs.microsoft.com/windows/desktop/api/fwpstypes/ns-fwpstypes-fwps_action0_)结构。
 
-有关数据包和流数据检查的详细信息，请参阅[检查数据包和 Stream 数据](inspecting-packet-and-stream-data.md)。
+有关数据包和流数据检查的详细信息，请参阅[检查数据包和流数据](inspecting-packet-and-stream-data.md)。
 
  
 
