@@ -1,9 +1,9 @@
 ---
 title: KSPROPERTY\_STREAM\_RATECAPABILITY
-description: KSPROPERTY\_流\_RATECAPABILITY 属性允许图形管理器查询的特定流的流中涉及的所有连接点 (通过 KSPROPERTY\_PIN\_DATAROUTING) 为它们在调整到名义速率的请求的速率的能力。
+description: 使用 KSPROPERTY\_STREAM\_RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点（通过 KSPROPERTY\_PIN\_DATAROUTING）来实现其功能将请求的速率调整为公称费率。
 ms.assetid: 73e3bf4e-2815-4890-ba12-77fbe7a7c589
 keywords:
-- KSPROPERTY_STREAM_RATECAPABILITY 流式处理媒体设备
+- KSPROPERTY_STREAM_RATECAPABILITY 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b93602eb092efeb07a96c978e19ab316e3a83378
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d9afb3e1fe2cce5e2368a56aada07629dd9795b7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368851"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837940"
 ---
-# <a name="kspropertystreamratecapability"></a>KSPROPERTY\_STREAM\_RATECAPABILITY
+# <a name="ksproperty_stream_ratecapability"></a>KSPROPERTY\_STREAM\_RATECAPABILITY
 
 
-KSPROPERTY\_流\_RATECAPABILITY 属性允许图形管理器查询的特定流的流中涉及的所有连接点 (通过 KSPROPERTY\_PIN\_DATAROUTING) 为它们在调整到名义速率的请求的速率的能力。
+使用 KSPROPERTY\_STREAM\_RATECAPABILITY 属性，图形管理器可以查询特定流的流中涉及的所有连接点（通过 KSPROPERTY\_PIN\_DATAROUTING）来实现其功能将请求的速率调整为公称费率。
 
 ## <span id="ddk_ksproperty_stream_ratecapability_ks"></span><span id="DDK_KSPROPERTY_STREAM_RATECAPABILITY_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ KSPROPERTY\_流\_RATECAPABILITY 属性允许图形管理器查询的特定流的
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_流\_RATECAPABILITY 属性允许图形管理器查询的特定流的
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>否</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
+<td><p>“是”</p></td>
+<td><p>无</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate" data-raw-source="[&lt;strong&gt;KSRATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)"><strong>KSRATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability" data-raw-source="[&lt;strong&gt;KSRATE_CAPABILITY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)"><strong>KSRATE_CAPABILITY</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,17 +64,17 @@ KSPROPERTY\_流\_RATECAPABILITY 属性允许图形管理器查询的特定流的
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_流\_应实现 RATECAPABILITY，如果 pin 允许速率更改或拓扑结构上相关的插针之间的接口不同，导致使用了不同的时间戳格式。 此外可以使用属性将时间戳格式一般情况下，如跳下降请求。
+如果 pin 允许速率改变，或者界定闭合相关 pin 之间的接口不同并导致使用不同的时间戳格式，则应该实现 KSPROPERTY\_STREAM\_RATECAPABILITY。 属性还可用于转换一般时间戳格式，如跳过降级请求。
 
-修改的数据来重新采样速率的 pin 支持该属性或时间戳更改。 所有速率更改都涉及请求速率和确定多少特定 pin 可以更正该速率，若要获取的名义 1.0 速率。 例如，pin 请求 2.0 视频的播放速率意味着呈现两次的名义率的视频剪辑; 的请求0.5 的速率请求暗示一半速度呈现。
+通过重新采样或时间戳更改修改数据速率的 pin 支持属性。 所有速率更改都涉及请求费率，并确定特定的 pin 可以纠正该速率以获得标称1.0 速率的程度。 例如，请求视频播放速率为2.0 的 pin 表示请求呈现为视频剪辑的标称速率的两倍;速率为0.5 的速率请求表示半速渲染。
 
-费率请求包含演示文稿开始时间和该速率请求的持续时间。 这样可能适用于数据流要考虑的特定部分的约束。 呈现时间，分子/分母对和持续时间单位以表示指定结构中的接口。 如果未使用的标准接口，无法 pin 发送初始速率更改查询。
+Rate 请求包含表示开始时间和该速率请求的持续时间。 这允许使用可能适用于数据流特定部分的约束。 显示时间、分子/分母对和持续时间单位用结构中指定的接口表示。 如果未使用标准接口，则不能将初始速率更改查询发送到 pin。
 
-Pin 必须能够接受接口标识符使用的任何 pin 类似的拓扑。 它还必须将转换为其自己的相应值的接口标识符和时间单位。 以这种方式，客户端可以从一个已知的接口点遍历图形并且具有单位转换每个步骤的方式连接点。
+Pin 必须能够接受具有类似拓扑的任何 pin 所使用的接口标识符。 它还必须将接口标识符和时间单位转换为其相应的值。 通过这种方式，客户端可以从一个已知的接口点遍历关系图，并在每个步骤中使用连接点来转换单元。
 
-务必要支持此属性，如果接口更改即使率不能进行更改，这样该接口，并进行查询时，可以调整时间单位。 结果可能不会更改返回的速率，但接口、 PresentationStart 和持续时间将会更改。
+如果即使无法更改速率，则支持此属性是很重要的，因此，在进行查询时可以调整接口和时间单位。 结果不会更改返回的速率，但会更改 Interface、PresentationStart 和 Duration。
 
-速率功能请求仅在暂停或运行状态下执行，并将更改为任何其他状态后变为无效。 因为它们通常是只是请求将时间戳格式，应始终成功的查询速率最初是 1.0。
+仅可在 "暂停" 或 "运行" 状态中执行速率功能请求，并在更改为任何其他状态后变为无效。 速度最初为1.0 的查询应始终成功，因为通常只是请求翻译时间戳格式。
 
 <a name="requirements"></a>要求
 ------------
@@ -86,18 +86,18 @@ Pin 必须能够接受接口标识符使用的任何 pin 类似的拓扑。 它�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ks.h （包括 Ks.h）</td>
+<td><p>标头</p></td>
+<td>Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate)
+[**KSRATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate)
 
-[**KSRATE\_CAPABILITY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksrate_capability)
+[**KSRATE\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksrate_capability)
 
  
 

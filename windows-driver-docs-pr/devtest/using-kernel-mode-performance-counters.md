@@ -4,39 +4,39 @@ description: 使用内核模式性能计数器
 ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f302ce1ab595bedb5622be8cb4d7e9c7a438b7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae840dc8c6d5703f4a2a5fe0d36c493499e95a3e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363784"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839994"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>使用内核模式性能计数器
 
 
-内核模式 PCW 是现有的性能计数器版本 2 平台，它允许内核模式组件，可以很容易公开性能计数器的扩展。 若要将合并此新扩展，需要进行最小的新增内容介绍版本 2 计数器的清单并需要使用内核模式性能计数器接口。
+内核模式 PCW 是对现有性能计数器版本2平台的扩展，使内核模式组件可以轻松地公开性能计数器。 若要合并此新扩展，需要对描述版本2计数器的清单进行最小程度的添加，并需要使用内核模式性能计数器接口。
 
-使用以下步骤来开发新的计数器：
+使用以下步骤来开发新计数器：
 
-1.  编写程序清单中描述的提供程序和它的计数器设置。
+1.  编写描述提供程序及其计数器集的清单。
 
-    有关元素和在清单中的属性的详细信息，请参阅[性能计数器架构](https://go.microsoft.com/fwlink/p/?linkid=147029)。 计数器清单是 XML 格式文件，用于定义性能计数器提供程序和它的计数器设置。
+    有关清单中的元素和属性的详细信息，请参阅[性能计数器架构](https://go.microsoft.com/fwlink/p/?linkid=147029)。 计数器清单是一种 XML 格式的文件，用于定义性能计数器提供程序及其计数器集。
 
-    可以手动创建或使用的清单生成工具，Ecmangen.exe 创建的清单。 该工具包含在 WDK 中，目前在生成环境窗口 (类型**ecmangen**在命令提示符下)。
+    可以手动创建或使用清单生成器工具 Ecmangen 创建清单。 该工具包含在 WDK 中，在生成环境窗口中提供（在命令提示符下键入**ecmangen** ）。
 
-2.  使用[CTRPP 工具](https://go.microsoft.com/fwlink/p/?linkid=144441)从清单中生成的注册代码和字符串资源。
+2.  使用[CTRPP 工具](https://go.microsoft.com/fwlink/p/?linkid=144441)从清单生成注册代码和字符串资源。
 
-    计数器预处理器 (CTRPP) 工具包含在 WDK 中，目前在生成环境窗口 (类型**ctrpp**在命令提示符下)。
+    "计数器预处理器（CTRPP）" 工具包含在 WDK 中，在 "生成环境" 窗口（在命令提示符下键入**CTRPP** ）中提供。
 
-3.  添加代码以注册和注销的计数器集。
+3.  添加用于注册和注销计数器集的代码。
 
-    有关详细信息，请参阅[ **PcwRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwregister)并[ **PcwUnregister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pcwunregister)函数。
+    有关详细信息，请参阅[**PcwRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwregister)和[**PcwUnregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pcwunregister)函数。
 
-4.  添加代码以公开实例。
+4.  添加用于公开实例的代码。
 
 5.  生成包含新代码和字符串资源的二进制文件。
 
-内核模式 PCW 提供程序的示例，请参阅[内核计数器样本 (Kcs)](https://go.microsoft.com/fwlink/p/?LinkId=617718)中[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+有关内核模式 PCW 提供程序的示例，请参阅 GitHub 上的[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)存储库中的[内核计数器示例（Kcs）](https://go.microsoft.com/fwlink/p/?LinkId=617718) 。
 
  
 

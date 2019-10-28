@@ -6,10 +6,10 @@ keywords:
 - 功能拓扑 WDK BDA
 - 控制节点 WDK BDA
 - 模板拓扑 WDK BDA
-- 将固定类型 WDK AVStream
+- pin 类型 WDK AVStream
 - 节点 WDK AVStream
 - 节点说明 Guid WDK BDA
-- 实际拓扑 WDK BDA
+- 实际拓扑-WDK BDA
 - Guid WDK BDA
 - 解调器控制节点 WDK BDA
 - 调谐器控制节点 WDK BDA
@@ -17,12 +17,12 @@ keywords:
 - BDA WDK AVStream，控制节点
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e6c7ac00774fd7da8941c8afc4e0a7cad10dab9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd2d3cb3b62986ce7f9b10361fae9d7fea19e909
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384059"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843361"
 ---
 # <a name="functional-topology"></a>功能拓扑
 
@@ -30,17 +30,17 @@ ms.locfileid: "67384059"
 
 
 
-若要启用的适用于所有类型的网络类型，采用了广播的接收器筛选器关系图生成和硬件和软件实现的例如，调谐器和解码器，广播体系结构采用筛选器关系图的熟悉的概念从 DirectShow 和中的概念抽象化*功能拓扑*。 功能的拓扑，像是一个筛选器图形，描述发生的转换的一系列上传入的信号。 但是，与筛选器图形，不同的功能的拓扑不描述任何实际筛选器或软件模块;或操作中的软件或硬件的实现方式。 相反，它描述了抽象的配置*控制节点*，其中每个表示某些常用的离散操作。
+为了能够以一种适用于所有种类的网络类型以及硬件和软件实现的方式（例如，调谐器和解码器）构建广播接收器筛选器图形从 DirectShow 开始，并在*功能拓扑*的概念中抽象化。 功能拓扑（例如筛选器图）描述了传入信号发生的一系列转换。 但是，与筛选器关系图不同的是，功能拓扑不描述任何实际筛选器或软件模块;或如何在软件或硬件中实现操作。 相反，它描述了抽象*控制节点*的配置，其中每个节点都表示一个常见的离散操作。
 
-根据计算机中安装的硬件和软件组件的类型，相同的功能拓扑可能会导致不同的筛选器图形配置或*实际拓扑*。 例如，如果硬件供应商选择实现调谐器和解调器上同一线路张卡，然后[内核流式处理 (KS) 代理模块](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)这个硬件设备筛选器关系图中的表示为具有两个有单个筛选器内部控制节点。 BDA 设备筛选器区分开来本身更传统的 DirectShow 筛选器因为单个 BDA 设备筛选器可以封装为多硬件的函数 （控制节点实现） 内置于单个功能模块 （例如，一条线路卡或芯片）。
+根据计算机上安装的硬件和软件组件的类型，相同的功能拓扑可能会导致不同的筛选器图形配置或*实际拓扑*。 例如，如果硬件供应商选择在同一张卡上实现一个调谐器和一个解调器，则[内核流式处理（KS）代理模块](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)会将筛选器图中的此硬件设备表示为一个具有两个内部控制节点的筛选器。 BDA 设备筛选器将自身与更传统的 DirectShow 筛选器区分开来，因为单个 BDA 设备筛选器可以封装内置于单个功能模块（例如线路卡或芯片）。
 
-由 GUID 唯一地标识控制节点提供的函数。 节点说明的 GUID 的定义，请参阅[BDA 节点类别 Guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-node-category-guids)。 在关系图构建过程中，网络提供程序筛选器使用这些 Guid 来确定哪些节点可支持特定的网络类型或优化空间中。 指示广播的接收器筛选器关系图中的筛选器，通过 COM 接口、 节点类型和它们支持的 pin 类型。 BDA 驱动程序的筛选器指示 KS 属性集通过此相同信息。 筛选器包含数据结构，用于描述其节点类型、 固定类型和 pin 和节点可以连接的方式。 此信息的筛选器称为*模板拓扑*。 下图演示了模板拓扑。
+控制节点提供的函数由 GUID 唯一标识。 有关节点说明 GUID 的定义，请参阅[BDA 节点类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-node-category-guids)。 在图形构建过程中，网络提供程序筛选器使用这些 Guid 来确定哪些节点可用于支持特定网络类型或优化空间。 广播接收方筛选器图中的筛选器通过 COM 接口（节点类型和它们支持的 pin 类型）指示。 用于筛选器的 BDA 驱动程序通过 KS 属性集指出此相同的信息。 筛选器包含描述其节点类型、固定类型和 pin 和节点连接方式的数据结构。 此信息称为筛选器的*模板拓扑*。 下图说明了模板拓扑。
 
-![说明模板拓扑关系图](images/bapinnod.png)
+![阐释模板拓扑的关系图](images/bapinnod.png)
 
-在上图中的模板拓扑包含五个不同的节点类型和四种不同的 pin 类型。 Pin 和节点类型的数字是由筛选器分配的任意标示符。 每个节点类型，但是，是节点说明可以检查网络提供商的 GUID 与相关联。 每个节点类型可以只出现一次在拓扑中，但因为任意方法筛选器将标识符分配到节点类型，相同的控制节点 GUID 可以与多个节点类型关联。 例如，带有数字 1 和 3 的节点类型可以表示具有两个不同的输出路径的相同控制节点 GUID。 模板拓扑必须代表两个单独的节点类型与此方案。 连接这些 pin 和节点类型模板拓扑中的行显示的路径筛选器支持。
+上图中的模板拓扑包含五种不同的节点类型和四种不同的 pin 类型。 Pin 和节点类型的数目是由筛选器分配的任意标识符。 然而，每个节点类型都与网络提供商可以检查的节点说明 GUID 相关联。 每个节点类型在拓扑中只能出现一次，但由于筛选器会将标识符随意分配给节点类型，因此同一个控制节点 GUID 可能与多个节点类型相关联。 例如，用数字1和3标识的节点类型可以表示具有两个不同输出路径的相同控制节点 GUID。 模板拓扑必须使用两个不同的节点类型来表示此方案。 在模板拓扑中连接这些 pin 和节点类型的行显示了筛选器支持的路径。
 
-网络提供商必须检查此拓扑，并确定对任何特定关系图中的信号的筛选器执行的转换。 有关描述模板拓扑的数据结构的详细信息，请参阅[广播驱动程序体系结构微型驱动程序](broadcast-driver-architecture-minidrivers.md)。
+网络提供程序必须检查此拓扑，并确定筛选器对任何特定图形中的信号执行的转换。 有关描述模板拓扑的数据结构的详细信息，请参阅[广播驱动程序体系结构微型驱动程序](broadcast-driver-architecture-minidrivers.md)。
 
  
 

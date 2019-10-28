@@ -1,25 +1,25 @@
 ---
 title: C28110
-description: 警告 C28110 驱动程序必须保护浮点硬件状态。 请参阅使用浮点型。
+description: 警告 C28110 驱动程序必须保护浮点硬件状态。 请参阅使用 float。
 ms.assetid: 2f6045e3-92b2-4773-a8de-3d0ec09c5d31
 keywords:
-- 警告列出 WDK PREfast for Drivers
-- 错误列出 WDK PREfast for Drivers
+- 列出用于驱动程序的 WDK PREfast 的警告
+- 为驱动程序列出的 WDK PREfast 的错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 f1_keywords:
 - C28110
-ms.openlocfilehash: 6a2593b288ad5cb1688c3db0b974ee778a858a24
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 13448082e60bf8a8a33d3b7768039dc4c5df3087
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364153"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839603"
 ---
 # <a name="c28110"></a>C28110
 
 
-警告 C28110:驱动程序必须保护浮点硬件状态。 请参阅使用 float
+警告 C28110：驱动程序必须保护浮点硬件状态。 请参阅使用 float
 
 <table>
 <colgroup>
@@ -28,27 +28,27 @@ ms.locfileid: "67364153"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>其他信息</strong></p></td>
-<td align="left"><p>使用<strong>KeSaveFloatingPointState</strong>并<strong>KeRestoreFloatingPointState</strong>围绕浮点运算。 显示驱动程序应使用相应<strong>eng...</strong>例程。</p></td>
+<td align="left"><p><strong>附加信息</strong></p></td>
+<td align="left"><p>围绕浮点运算使用<strong>KeSaveFloatingPointState</strong>和<strong>KeRestoreFloatingPointState</strong> 。 显示驱动程序应使用相应的<strong>Eng ...</strong>例程。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-此警告才在内核模式下适用。 该驱动程序尝试时要使用的变量或常数浮点类型的代码不受[ **KeSaveFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate)并[ **KeRestoreFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate)，或[ **EngSaveFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)并[ **EngRestoreFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate).
+此警告仅适用于内核模式。 当代码不是由[**KeSaveFloatingPointState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate)和[**KeRestoreFloatingPointState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate)、 [**EngSaveFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)和[**保护时，驱动程序尝试使用 float 类型的变量或常量EngRestoreFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)。
 
-通常情况下，驱动程序运行与最新应用程序和任何使用不受的浮动点的浮点上下文[ **KeSaveFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesavefloatingpointstate)和[ **KeRestoreFloatingPointState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kerestorefloatingpointstate)可以更改其他进程的结果并通常会在驱动程序导致不正确或意外的结果。
+通常，驱动程序使用最新应用程序的浮点上下文运行，并且任何不受[**KeSaveFloatingPointState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesavefloatingpointstate)和[**KeRestoreFloatingPointState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kerestorefloatingpointstate)保护的浮点的使用都可以更改其他处理和通常会导致驱动程序中出现不正确或意外的结果。
 
-显示驱动程序应使用[ **EngSaveFloatingPointState** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)并[ **EngRestoreFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)。
+显示驱动程序应使用[**EngSaveFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engsavefloatingpointstate)和[**EngRestoreFloatingPointState**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engrestorefloatingpointstate)。
 
-此错误的实例检测到任何特定流路径后，代码分析工具会隐藏后续类似错误。 代码分析工具不会报告函数定义的采用浮点类型自变量或返回浮点类型，此错误，因为调用方将报告使用。
+沿任何特定流路径检测到此错误的实例后，代码分析工具将取消后续的类似错误。 对于采用浮点类型参数或返回浮动类型的函数定义，代码分析工具不会报告此错误，因为调用方将报告使用。
 
-程序将保存并还原浮点状态周围函数调用和被调用的函数执行浮点运算时，可以在错误会触发此警告。
+当程序在调用函数时保存和还原浮点状态，并且被调用函数执行浮点运算时，可能会错误地触发此警告。
 
-如果函数有意设计成使用浮点运算，并希望其中浮点数安全的情况下在上下文中调用，应批注与函数 **\_内核\_float\_使用\_** . 此批注将禁止显示警告函数体中的并会导致要检查调用安全地保护浮点操作的调用上下文。 如果浮点运算出现在参数或返回值时，效果等同于使用 **\_内核\_float\_使用\_** 。
+如果函数有意使用浮点运算，并且期望在浮点安全的上下文中调用，则应使用 **\_\_内核\_float\_** 批注该函数。 此批注将禁止显示函数体中的警告，并导致调用上下文检查调用是否安全地受到浮点运算的保护。 如果在参数或返回值中出现浮点运算，则效果与使用 **\_使用\_内核\_float\_** 相同。
 
-通过使用 **\_内核\_float\_使用\_** 上 （或添加相应的保存和还原对的调用） 的所有函数中使用浮动都点直到没有任何警告，驱动程序可以有保证的不恰当使用浮点硬件的免费。 有关详细信息，请参阅[驱动程序的浮动点批注](floating-point-annotations-for-drivers.md)。
+通过使用 **\_内核\_float\_使用\_** on （或添加对的适当的保存和还原调用）所有使用浮点的函数直到不会出现任何警告，可以确保驱动程序无需使用浮点软. 有关详细信息，请参阅[驱动程序的浮点批注](floating-point-annotations-for-drivers.md)。
 
  
 

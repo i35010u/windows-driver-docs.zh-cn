@@ -4,23 +4,23 @@ description: Windows 内核模式配置管理器
 ms.assetid: 0499121b-6f0b-464f-b422-610122fb7d3b
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2d5afb5aa574b1a50f17eda4fb92ed4e03ff59b9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7dbae31bc252300f1e62abdf27b5f869e4cfd42d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358066"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838310"
 ---
 # <a name="windows-kernel-mode-configuration-manager"></a>Windows 内核模式配置管理器
 
 
-在 Microsoft Windows 的早期阶段，应用程序和操作系统存储配置值"INI"（初始化） 文件中。 这提供一种简单的方式来存储状态到下一个可能从一个 Windows 会话中保留的值。 但是，如 Windows 环境变得更复杂，需要存储有关操作系统和应用程序的持久性信息的新系统。 创建 Windows 注册表来存储有关硬件和软件的数据。
+在 Microsoft Windows 的早期几天，应用程序和操作系统将配置值存储在 "INI" （初始化）文件中。 这提供了一种简单的方法来存储可从一个 Windows 会话保存到下一个 Windows 会话的状态值。 但是，随着 Windows 环境变得更加复杂，需要一个新系统来存储有关操作系统和应用程序的持久信息。 创建 Windows 注册表以存储有关硬件和软件的数据。
 
-Windows 内核模式下配置管理器管理注册表。 如果您的驱动程序需要知道在注册表中的更改，它可以使用 configuration manager 的例程的注册特定的注册表数据的回调。 然后，在注册表中的数据更改时，触发回调，并可以运行代码来处理您的驱动程序中的回调信息。
+Windows 内核模式配置管理器管理注册表。 如果你的驱动程序需要了解注册表中的更改，则可以使用配置管理器的例程通过在特定注册表数据上注册回调来实现此目的。 然后，当注册表中的数据更改时，将触发回调，你可以运行代码来处理驱动程序中的回调信息。
 
-提供到 configuration manager 的直接接口的例程都带有前缀字母"**Cm**"; 例如， **CmRegisterCallback**。 配置管理器例程的列表，请参阅[配置管理器例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+向配置管理器提供直接接口的例程带有字母 "**Cm**" 的前缀;例如， **CmRegisterCallback**。 有关 configuration manager 例程的列表，请参阅[Configuration Manager 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-除了直接调用配置管理器，有想要使用的注册表中您的驱动程序的其他方法。 有关使用的注册表中的驱动程序的详细信息，请参阅[使用到的驱动程序注册表](using-the-registry-in-a-driver.md)并[驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)。
+除了直接调用配置管理器之外，还可以通过其他方式使用驱动程序中的注册表。 有关在驱动程序中使用注册表的详细信息，请参阅使用驱动程序[中的注册表](using-the-registry-in-a-driver.md)和驱动程序的[注册表项](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)。
 
  
 

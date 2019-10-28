@@ -6,16 +6,16 @@ keywords:
 - AcceptProcessorNotification 回调
 ms.date: 01/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0de659a59961c532f5ee7ada4232c55496ce6f61
-ms.sourcegitcommit: faa6d153560d96504216df0609ed7c05d7c39b34
+ms.openlocfilehash: 1d2ccfc2fd1da5950a0162148f864f5607e2c6b2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72427590"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838496"
 ---
 # <a name="processor-power-management-ppm-notifications"></a>处理器电源管理 (PPM) 通知
 
-PEP 的[*AcceptProcessorNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)回调例程收到的每个处理器电源管理（PPM）通知都附带了通知参数，该参数指示通知的类型，以及指向数据的数据参数包含指定通知类型信息的结构。
+PEP 的[*AcceptProcessorNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyppm)回调例程收到的每个处理器电源管理（PPM）通知都附带了通知参数，该参数指示通知的类型，以及指向数据的数据参数包含指定通知类型信息的结构。
 
 在此调用中，通知参数设置为指示通知类型的 PEP_NOTIFY_PPM_XXX 常量值。 数据参数指向与此通知类型相关联的 PEP_PPM_XXX 结构类型。
 
@@ -319,7 +319,7 @@ Windows 电源管理框架（PoFx）将此通知发送到处理器初始化，�
  
 此通知告知 PEP 应更改处理器的当前操作性能。
 
-以下描述了[*AcceptProcessorNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)的参数。
+以下描述了[*AcceptProcessorNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyppm)的参数。
 
 *柄*
 
@@ -331,7 +331,7 @@ Windows 电源管理框架（PoFx）将此通知发送到处理器初始化，�
 
 *数据*
 
-指向[**PEP_PPM_PERF_SET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pep_x/ns-pep_x-_pep_ppm_perf_set)结构的指针。
+指向[**PEP_PPM_PERF_SET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/pep_x/ns-pep_x-_pep_ppm_perf_set)结构的指针。
 
 **备注**
 
@@ -883,7 +883,7 @@ DISPATCH_LEVEL
  
 ## <a name="pep_notify_ppm_perf_set_state"></a>PEP_NOTIFY_PPM_PERF_SET_STATE 
 
-以下描述了[*AcceptProcessorNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pepfx/nc-pepfx-pepcallbacknotifyppm)的参数。
+以下描述了[*AcceptProcessorNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/pepfx/nc-pepfx-pepcallbacknotifyppm)的参数。
 
 *柄*
 
@@ -895,7 +895,7 @@ DISPATCH_LEVEL
 
 *数据*
 
-指向[**PEP_PPM_PERF_SET_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/pep_x/ns-pep_x-_pep_ppm_perf_set_state)结构的指针。
+指向[**PEP_PPM_PERF_SET_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/pep_x/ns-pep_x-_pep_ppm_perf_set_state)结构的指针。
 
 **备注**
 

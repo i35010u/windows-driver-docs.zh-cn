@@ -4,21 +4,21 @@ description: 处理多个锁
 ms.assetid: d62b9577-d78f-431d-a5bf-c06c9be345c0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a497b7b1047d99ed757a8cee62b43d852563be02
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4d9a3c2be3abe614cb8b6f8187646bdc84157181
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359337"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839659"
 ---
 # <a name="handling-multiple-locks"></a>处理多个锁
 
 
-使用 Direct3D 的运行时，您可以允许具有多个锁未完成的顶点和索引缓冲区。 用户模式显示驱动程序必须处理多个锁中的运行时一样[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)。
+使用 Direct3D 运行时，可以允许顶点和索引缓冲区有多个未完成的锁。 用户模式显示驱动程序必须与[Windows 2000 显示驱动程序模型](windows-2000-display-driver-model-design-guide.md)中的运行时相同的方式处理多个锁。
 
-用户模式显示驱动程序不得失败调用其[ **LockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)函数已被锁定的资源。 也就是说，驱动程序不能故障对任何调用其*LockAsync*后第一次调用函数的特定资源及其*LockAsync*函数成功锁定该资源。 同样，该驱动程序不能故障对任何调用其[**锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_lock)后第一次调用函数的特定资源及其*锁*函数成功锁定，资源。 在运行时匹配对驱动程序的每次调用*LockAsync*驱动程序的调用函数[ **UnlockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)函数。 在运行时还将匹配对驱动程序的每次调用*锁*驱动程序的调用函数[**解锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)函数。
+对于已锁定的资源，用户模式显示驱动程序不能对其[**LockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lockasync)函数调用失败。 也就是说，在首次调用其*LockAsync*函数后，该驱动程序将无法通过对其*LockAsync*函数的任何调用成功地锁定该资源。 同样，驱动程序在第一次调用其*lock*函数后，对其[**lock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_lock)函数的任何调用在锁定该资源的情况下将无法失败。 运行时通过调用驱动程序的[**UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)函数，使其对驱动程序的*LockAsync*函数进行的每个调用都匹配。 运行时还会将对驱动程序的*锁*函数所做的每个调用与对驱动程序的[**Unlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)函数的调用进行匹配。
 
-用户模式显示驱动程序不能故障调用其[ **UnlockAsync** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)作用，除非该资源的[ **D3DDDIARG\_UNLOCKASYNC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_unlockasync)结构描述实际上未被该驱动程序的以前调用锁定*LockAsync*函数。 同样，该驱动程序不能故障调用其[**解锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)作用，除非该资源的[ **D3DDDIARG\_解锁**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_unlock)结构描述实际上未被该驱动程序的以前调用锁定*锁*函数。 在其中资源被不以前锁定的情况下*UnlockAsync*并*解锁*返回 E\_INVALIDARG。
+用户模式显示驱动程序无法对其[**UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlockasync)函数进行调用，除非[**D3DDDIARG\_UnlockAsync**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_unlockasync)结构描述的资源实际上未被先前对驱动*程序的调用*锁定才能. 同样，驱动程序也不能对[**解除锁定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_unlock)的函数进行调用，除非[ **\_D3DDDIARG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_unlock)的锁定结构所描述的资源实际被先前对驱动程序的*锁定*函数的调用锁定。 在以前未锁定资源的情况下， *UnlockAsync*和*Unlock*返回 E\_INVALIDARG。
 
  
 

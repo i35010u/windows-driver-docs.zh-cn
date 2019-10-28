@@ -1,60 +1,60 @@
 ---
 title: 启用和禁用 NDK 功能
-description: 若要启用或禁用 NDK 功能，NDIS 发出 OID_NDK_SET_STATE OID 请求。 NDK 支持的微型端口驱动程序必须在其 MiniportOidRequest 函数中注册此 OID 的支持。
+description: 若要启用或禁用 NDK 功能，NDIS 会发出 OID_NDK_SET_STATE OID 请求。 支持 NDK 的微型端口驱动程序必须在 MiniportOidRequest 函数中注册此 OID 的支持。
 ms.assetid: A72AD98E-FF84-48FF-B627-5534231244B0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d1da6f3753cd4770e69bdc1567ff13350f7a49
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db6915b5d8aa8d3fc41db792b3e2e1277d94d2b0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378688"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838124"
 ---
 # <a name="enabling-and-disabling-ndk-functionality"></a>启用和禁用 NDK 功能
 
 
-若要启用或禁用 NDK 功能，NDIS 问题[OID\_NDK\_设置\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)OID 请求。 NDK 支持的微型端口驱动程序必须注册支持，使此 OID 中其[ *MiniportOidRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_oid_request)函数。
+若要启用或禁用 NDK 功能，NDIS [\_NDK\_集\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)OID 请求发出 OID。 支持 NDK 的微型端口驱动程序必须在[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数中注册此 OID 的支持。
 
 ## <a name="determining-whether-ndk-functionality-can-be-enabled"></a>确定是否可以启用 NDK 功能
 
 
-**\*NetworkDirect**关键字确定是否可以启用 NDK 微型端口驱动程序的功能。
+**\*NetworkDirect**关键字确定是否可以启用微型端口驱动程序的 NDK 功能。
 
-如果该关键字的值设置为 1 （"已启用"），可以启用 NDK 功能。
+如果此关键字值设置为1（"Enabled"），则可以启用 NDK 功能。
 
-如果设置为 0 ("Disabled")，则不能启用 NDK 功能。
+如果设置为0（"Disabled"），则无法启用 NDK 功能。
 
-安装微型端口驱动程序时，其 INF 文件设置为 1 （"已启用"） 具有默认情况下该关键字的值。 有关详细信息，请参阅[NDKPI INF 要求](inf-requirements-for-ndkpi.md)。
+安装微型端口驱动程序时，默认情况下，其 INF 文件会将此关键字值设置为1（"Enabled"）。 有关详细信息，请参阅[NDKPI 的 INF 要求](inf-requirements-for-ndkpi.md)。
 
-安装微型端口驱动程序后，管理员可以更新 **\*NetworkDirect**中设置新值的关键字值**高级**适配器属性页。 有关高级属性的详细信息，请参阅[的高级属性页指定配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
+安装微型端口驱动程序后，管理员可以通过在适配器的 "**高级**" 属性页中设置新值来更新 **\*NetworkDirect**关键字值。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**请注意**   中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
+**请注意**   在适配器的 "**高级**" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
 
  
 
 ## <a name="when-to-enable-or-disable-ndk-functionality"></a>何时启用或禁用 NDK 功能
 
 
-此状态更改可由触发[OID\_NDK\_设置\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)OID 请求或成功或失败适配器本身。
+此状态更改可由[OID\_NDK\_设置\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-ndk-set-state)OID 请求，或者适配器本身中的成功或失败触发。
 
 ## <a name="enabling-or-disabling-ndk-functionality"></a>启用或禁用 NDK 功能
 
 
-若要启用或禁用其 NDK 功能，微型端口驱动程序必须发送**NetEventNDKEnable**或**NetEventNDKDisable**到 NDIS 插即用 (PnP) 事件。
+若要启用或禁用其 NDK 功能，微型端口驱动程序必须将**NetEventNDKEnable**或**NetEventNDKDisable**即插即用（PnP）事件发送到 NDIS。
 
-若要发送即插即用事件，微型端口驱动程序调用[ **NdisMNetPnPEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismnetpnpevent)函数，设置**NetPnPEvent**隶属[ **NET\_PNP\_事件\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_pnp_event_notification)结构*NetPnPEvent*参数，如下所示指向：
+若要发送 PnP 事件，微型端口驱动程序将调用[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)函数，并设置[**NET\_PnP\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event_notification)的**NetPnPEvent**成员\_通知结构， *NetPnPEvent*参数指向，如下所示：
 
--   **NetEventNDKEnable**如果 NDK 功能才可用。
+-   **NetEventNDKEnable**如果要启用 NDK 功能，则为。
 
--   **NetEventNDKDisable**如果 NDK 功能将被禁用。
+-   **NetEventNDKDisable**如果要禁用 NDK 功能，则为。
 
-**NetEventNDKDisable**即插即用事件触发 NDIS 和上层驱动程序以启动关闭其打开[ **NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndkpi/ns-ndkpi-_ndk_adapter)通过适配器的实例其中的 NDK 功能被禁用。 即插即用事件将保持挂起状态直至将所有打开的**NDK\_适配器**通过适配器的实例闭合。
+**NetEventNDKDisable** PnP 事件触发 NDIS 和上层驱动程序，以便在正在禁用 NDK 功能的适配器上，开始关闭其打开的[**NDK\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/ns-ndkpi-_ndk_adapter)实例。 PnP 事件将保持挂起状态，直到所有打开的**NDK\_** 适配器上的所有打开的 NDK 适配器实例关闭。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[网络直接内核提供程序接口 (NDKPI)](network-direct-kernel-programming-interface--ndkpi-.md)
+[网络直接内核提供程序接口（NDKPI）](network-direct-kernel-programming-interface--ndkpi-.md)
 
  
 

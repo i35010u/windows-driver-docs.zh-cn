@@ -3,16 +3,16 @@ title: PnP 驱动程序设计指导原则
 description: PnP 驱动程序设计指导原则
 ms.assetid: 4e4a6a8e-3c7f-4561-bbe1-a8c06fe22d0a
 keywords:
+- PnP WDK 内核，设计指南
 - 即插即用 WDK 内核，设计指南
-- 插 WDK 内核，设计指南
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd66ec8c5055c10df64245ef73315e0d7deb7ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29ab13bb1d2e1802fcaab057b8c20f04c6f3b200
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383280"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838508"
 ---
 # <a name="pnp-driver-design-guidelines"></a>PnP 驱动程序设计指导原则
 
@@ -20,33 +20,33 @@ ms.locfileid: "67383280"
 
 
 
-插提供：
+即插即用提供：
 
--   自动和动态识别的已安装硬件
+-   自动和动态识别已安装的硬件
 
--   硬件资源分配 （和重新分配）
+-   硬件资源分配（并重新分配）
 
--   正在加载的合适的驱动程序
+-   加载相应的驱动程序
 
--   与即插即用系统进行交互的驱动程序接口
+-   用于与 PnP 系统交互的驱动程序的接口
 
--   驱动程序和应用程序若要了解硬件环境中的更改的机制
+-   驱动程序和应用程序用于了解硬件环境中的更改的机制
 
-若要支持即插即用，驱动程序必须遵循以下准则：
+若要支持 PnP，驱动程序必须遵循以下准则：
 
--   它必须包含[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)例程。
+-   它必须包含[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchpnp-routines#feedback)例程。
 
-    必须处理此调度例程[ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)请求和关联的次要函数代码。 有关详细信息，请参阅[DispatchPnP 例程](dispatchpnp-routines.md)。
+    此调度例程必须处理[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)请求和相关的次要函数代码。 有关详细信息，请参阅[DispatchPnP 例程](dispatchpnp-routines.md)。
 
--   它必须搜索硬件。
+-   它不得搜索硬件。
 
-    PnP 管理器负责确定硬件设备存在。 当 PnP 管理器检测到设备时，它将通知该驱动程序通过调用其[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 启动系统，或任何时候用户添加的设备，或从正在运行的系统中删除时，可以检测到硬件。
+    PnP 管理器负责确定硬件设备是否存在。 当 PnP 管理器检测到设备时，它会通过调用其[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程通知驱动程序。 可在系统启动时或用户将设备添加到正在运行的系统中的任何时间检测到硬件。
 
--   它必须分配硬件资源。
+-   它不能分配硬件资源。
 
-    即插即用驱动程序必须提供的设备有可能使用的资源的列表的即插即用管理器。 PnP 管理器负责将资源分配给每个设备，以及时它将发送通知的每个设备分配驱动程序[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 因此，驱动程序必须能够使用硬件资源的各种配置。
+    PnP 驱动程序必须为 PnP 管理器提供设备可能会使用的资源列表。 PnP 管理器负责将资源分配给每个设备，并在发送[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求时通知每个设备的分配的驱动程序。 因此，该驱动程序必须能够使用各种硬件资源配置。
 
-某些驱动程序可独立的即插即用的详细信息和系统提供的端口或类驱动程序的电源管理。 例如，SCSI 端口驱动程序隔离的 SCSI 微型端口驱动程序由许多的强大功能和即插即用系统的详细信息，因此不需要直接处理能力和 PnP Irp SCSI 微型端口驱动程序。 此类驱动程序，请参阅所需的即插即用支持的详细信息的特定于驱动程序的文档。
+某些驱动程序与系统提供的端口或类驱动程序的 PnP 和电源管理的详细信息分开。 例如，SCSI 端口驱动程序将 SCSI 微型端口驱动程序与电源和 PnP 系统的许多详细信息隔离开来，因此，SCSI 微型端口驱动程序不需要直接处理电源和 PnP Irp。 有关此类驱动程序，请参阅特定于驱动程序的文档以了解所需 PnP 支持的详细信息。
 
  
 

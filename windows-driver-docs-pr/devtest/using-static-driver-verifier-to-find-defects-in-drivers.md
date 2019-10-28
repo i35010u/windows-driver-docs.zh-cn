@@ -1,40 +1,40 @@
 ---
 title: 使用静态驱动程序验证程序查找 Windows 驱动程序中的缺陷
-description: Static Driver Verifier (SDV) 使用一组接口规则和操作系统的模型来确定该驱动程序正确交互与 Windows 操作系统。
+description: Static Driver Verifier （SDV）使用一组接口规则和操作系统模型来确定驱动程序是否与 Windows 操作系统正确交互。
 ms.assetid: 94D4104C-66ED-4C1E-8EE1-4C669EB4EAAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a9611cab2d6e43ab818510abb4bfbe88ebf118
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ddb364809b2669f5fa6ae21b7af0e134f2d6d9f3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363780"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839990"
 ---
 # <a name="using-static-driver-verifier-to-find-defects-in-windows-drivers"></a>使用静态驱动程序验证程序查找 Windows 驱动程序中的缺陷
 
 
-Static Driver Verifier (SDV) 使用一组接口规则和操作系统的模型来确定该驱动程序正确交互与 Windows 操作系统。 SDV 可以指向驱动程序中的潜在错误的驱动程序代码中查找缺陷。
+Static Driver Verifier （SDV）使用一组接口规则和操作系统模型来确定驱动程序是否与 Windows 操作系统正确交互。 SDV 在驱动程序代码中查找一些缺陷，这些缺陷可能指向驱动程序中的潜在 bug。
 
-SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：WDM、 KMDF、 NDIS 或 Storport。 有关详细信息，请参阅[支持的驱动程序](supported-drivers.md)并[确定驱动程序或库是否支持 Static Driver Verifier](determining-if-static-driver-verifier-supports-your-driver-or-library.md)。  此外，SDV 不遵循以上的驱动程序模型的驱动程序提供有限的支持 （严格限制的规则集侧重于常规错误，如 null 取消引用）。
+SDV 可以分析符合以下驱动程序模型之一的内核模式驱动程序： WDM、KMDF、NDIS 或 Storport。 有关详细信息，请参阅[支持的驱动程序](supported-drivers.md)和[确定 Static driver Verifier 是否支持驱动程序或库](determining-if-static-driver-verifier-supports-your-driver-or-library.md)。  此外，对于不遵循以上驱动程序模型的驱动程序，SDV 提供有限支持（重点介绍了对空取消引用等常规错误的严格限制规则集）。
 
 ### <span id="preparing_your_source_code"></span><span id="PREPARING_YOUR_SOURCE_CODE"></span>
 
-| 准备你的源代码 |
+| 准备源代码 |
 |----------------------------|
 |                            |
 
-使用以下步骤来准备用于分析你的代码。
+使用以下步骤准备要分析的代码。
 
 1.  **使用函数角色类型声明驱动程序提供的函数**
 
-    SDV 要求通过使用函数角色类型声明，声明函数。 例如， [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)例程必须使用驱动程序声明\_INITIALIZE 函数角色类型：
+    SDV 要求通过使用函数角色类型声明来声明函数。 例如，必须使用驱动程序\_初始化函数角色类型来声明[*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程：
 
     ```
     DRIVER_INITIALIZE DriverEntry;
     ```
 
-    在声明后你实现 （或定义） 在回调例程按如下所示：
+    在声明后，按如下所示实现（或定义）回调例程：
 
     ```
     /
@@ -50,7 +50,7 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
       }
     ```
 
-    每个支持的驱动程序模型有一组用于驱动程序回调函数和调度例程的函数角色类型。 在 WDK 标头文件中声明这些函数角色类型。 例如，下面是该驱动程序的函数原型\_初始化角色类型，因为它将显示在 wdm.h 中。
+    每个受支持的驱动程序模型都具有一组用于驱动程序回调函数和调度例程的函数角色类型。 这些函数角色类型在 WDK 标头文件中声明。 例如，下面是驱动程序的函数原型\_初始化角色类型，因为它显示在一个
 
     ```
     /
@@ -68,94 +68,94 @@ SDV 可以分析内核模式驱动程序符合以下驱动程序模型之一：W
     typedef DRIVER_INITIALIZE *PDRIVER_INITIALIZE;
     ```
 
-    因为在 WDK 标头文件中已定义的函数角色类型，只需声明回调函数来为该类型。 在这种情况下，声明*DriverEntry*属于类型**驱动程序\_初始化**。 有关驱动程序模型的函数角色类型的完整列表，请参阅[使用函数角色类型声明](using-function-role-type-declarations.md)。
+    由于已在 WDK 标头文件中定义了函数角色类型，因此只需将回调函数声明为该类型。 在这种情况下，可以将*DriverEntry*声明为**驱动程序\_INITIALIZE**类型。 有关驱动程序模型的函数角色类型的完整列表，请参阅[使用函数角色类型声明](using-function-role-type-declarations.md)。
 
-2.  **面向 C 运行代码分析 /C++**
+2.  **对 C/运行代码分析（& C）C++**
 
-    若要帮助您确定是否准备好的源代码，请运行[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)Visual Studio 中。 代码分析工具检查函数角色类型声明，这 SDV 要求。 代码分析工具可以帮助识别可能会遗漏任何函数声明或函数定义的参数不匹配函数角色类型中时向您发出警告。
+    为了帮助您确定是否已准备好源代码，请在 Visual Studio 中运行[代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)。 代码分析工具将检查 SDV 要求的函数角色类型声明。 当函数定义的参数与函数角色类型中的参数不匹配时，代码分析工具可帮助确定任何可能已丢失或发出警告的函数声明。
 
     -   在 Visual Studio 中打开驱动程序项目。
-    -   从**构建**菜单上，单击**对解决方案运行代码分析**。
+    -   在 "**生成**" 菜单中，单击 "**对解决方案运行代码分析**"。
 
-    结果显示在**代码分析**窗口。 解决可能疏漏的任何函数声明。 因此，它能够运行生成你的解决方案时，还可以配置代码分析工具。
+    结果将显示在 "**代码分析**" 窗口中。 修复任何可能丢失的函数声明。 你还可以配置代码分析工具，使其在每次生成解决方案时运行。
 
-    下表显示了一些代码分析工具可能会发现在驱动程序代码中的警告。 若要运行 Static Driver Verifier，您的驱动程序必须是免费的这些缺陷。
+    下表显示了代码分析工具可能在你的驱动程序代码中找到的一些警告。 若要运行静态驱动程序验证程序，你的驱动程序需要没有这些缺陷。
 
-    | 为 C 代码分析 /C++警告 | 描述                                                                                                                         |
+    | C/C++警告的代码分析 | 描述                                                                                                                         |
     |---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-    | C28101                          | 驱动程序模块已推断当前函数，是&lt;函数类型&gt;函数                                       |
-    | C28022                          | 有关该函数的函数类与使用定义它的 typedef 上的函数类不匹配。                       |
-    | C28023                          | 分配或传递的函数应有\_函数\_类\_至少一个类批注                |
-    | C28024                          | 函数指针分配给将批注与函数类，它不包含在函数类的列表。 |
-    | C28169                          | 调度函数&lt;函数&gt;没有任何\_调度\_类型\_批注                                             |
+    | C28101                          | 驱动程序模块已推断出当前函数是 &lt;函数类型&gt; 函数                                       |
+    | C28022                          | 此函数上的函数类与用于定义此函数的 typedef 上的函数类不匹配。                       |
+    | C28023                          | 分配或传递的函数应具有一个 \_函数\_类\_ 至少一个类的批注                |
+    | C28024                          | 向其分配的函数指针是用函数类（不包含在函数类列表中）进行批注的。 |
+    | C28169                          | 调度函数 &lt;函数&gt; 没有任何 \_调度\_类型\_ 批注                                             |
     | C28208                          | 函数签名与函数声明不匹配                                                                     |
 
 
 
 ### <span id="running_static_driver_verifier"></span><span id="RUNNING_STATIC_DRIVER_VERIFIER"></span>
 
-| 运行的 Static Driver Verifier |
+| 运行静态驱动程序验证程序 |
 |--------------------------------|
 |                                |
 
-1.  在 Visual Studio 中打开驱动程序项目 (.vcxProj) 文件。 从**驱动程序**菜单上，单击**启动 Static Driver Verifier...** .
+1.  在 Visual Studio 中打开驱动程序项目（. .Vcxproj）文件。 在 "**驱动程序**" 菜单中，单击 "**启动静态驱动程序验证程序 ...** "。
 
-    这将打开 Static Driver Verifier 应用程序，其中可以控制、 配置和计划时 Static Driver Verifier 执行分析。
+    这会打开静态驱动程序验证程序应用程序，你可以在其中控制、配置和计划静态驱动程序验证程序执行分析的时间。
 
-2.  如果您的驱动程序包含一个库，请单击**库**选项卡，单击**添加库**添加库。
+2.  如果驱动程序包含库，请单击 "**库**" 选项卡，然后单击 "**添加库**" 以添加库。
 
-    浏览到库源代码的目录，并选择项目文件 (.vcxProj)。 添加所有驱动程序包括的库。 SDV 分析您的驱动程序之前，必须添加库。 当你启动您的驱动程序的分析时，SDV 还可以分析尚未处理的库。 处理一个库后，它存储在全局 SDV 缓存。 有关详细信息，请参阅[库处理中 Static Driver Verifier](library-processing-in-static-driver-verifier.md)
+    浏览到库源代码的目录，然后选择项目文件（. .Vcxproj）。 添加驱动程序包含的所有库。 在 SDV 分析驱动程序之前，必须添加这些库。 当你开始分析你的驱动程序时，SDV 还会分析尚未处理的库。 库处理完毕后，将存储在全局 SDV 缓存中。 有关详细信息，请参阅[静态驱动程序验证程序中的库处理](library-processing-in-static-driver-verifier.md)
 
-3.  检查 Static Driver Verifier 的配置设置。 单击**配置**选项卡。
+3.  检查静态驱动程序验证程序的配置设置。 单击**配置**选项卡。
 
-    **项目配置**项目配置显示了配置和你在 Visual Studio 中选择的平台设置。
+    **项目配置**项目配置显示您在 Visual Studio 中选择的配置和平台设置。
 
-    **资源**在大多数情况下，可以使用默认设置。 如果 SDV 报告超时、 放弃、 或 Spaceout，您可以尝试调整这些设置。 有关详细信息，请参阅[建议的故障排除 Static Driver Verifier](recommendations-for-troubleshooting-static-driver-verifier.md)。
+    **资源**在大多数情况下，您可以使用默认设置。 如果 SDV 报告 "超时"、"放弃" 或 "Spaceout"，则可以尝试调整这些设置。 有关详细信息，请参阅[静态驱动程序验证程序疑难解答的建议](recommendations-for-troubleshooting-static-driver-verifier.md)。
 
-    **计划**选择开始时间开始验证。 默认设置是在单击后立即开始分析**启动**上**Main**选项卡。根据该驱动程序和其复杂性的大小，静态分析可能需要很长时间才能运行。 你可能想要计划要为您; 最方便的时候开始分析例如，在一天结束。
+    **计划**选择开始验证的开始时间。 默认设置是在单击**主**选项卡上的 "**启动**" 后立即开始分析。根据驱动程序的大小及其复杂性，静态分析可能需要较长时间才能运行。 你可能希望将分析计划为在最方便的时候开始分析;例如，在一天结束时。
 
-    **请注意**请务必检查您的计算机的电源管理计划，以确保计算机不会进入睡眠状态在分析过程。
+    **注意** 务必检查计算机的电源管理计划，以确保在分析期间计算机不会进入睡眠状态。
 
 
 
-4.  单击**规则**选项卡以选择哪些驱动程序 API 使用规则以验证何时开始分析。
+4.  单击 "**规则**" 选项卡，选择在启动分析时要验证的驱动程序 API 使用规则。
 
-    Static Driver Verifier 检测到类型的驱动程序 （WDF、 WDM、 NDIS 或 Storport） 分析和选择的驱动程序类型的默认规则集。 如果这是首次在您的驱动程序运行 SDV，应运行的默认规则集。
+    静态驱动程序验证程序检测要分析的驱动程序类型（WDF、WDM、NDIS 或 Storport），并为您的驱动程序类型选择默认的规则集。 如果这是你第一次在你的驱动程序上运行 SDV，则应该运行默认规则集。
 
-    有关规则的信息，请参阅[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+    有关规则的信息，请参阅[DDI 合规性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-5.  启动的静态分析。 单击**Main**选项卡，然后单击**启动**。 当您单击**启动**、 显示一条消息，告知你此计划静态分析和分析可能需要很长时间才能运行。 单击“确定”  继续。 在你计划的时间开始分析。
+5.  开始静态分析。 单击 "**主**" 选项卡，然后单击 "**启动**"。 单击 "**启动**" 时，将显示一条消息，告知你计划了静态分析并且分析可能需要较长时间才能运行。 单击“确定” 继续。 分析从你计划的时间开始。
 
 ### <span id="viewing_and_analyzing_the_results"></span><span id="VIEWING_AND_ANALYZING_THE_RESULTS"></span>
 
-| 查看和分析结果 |
+| 查看并分析结果 |
 |-----------------------------------|
 |                                   |
 
-随着进行静态分析，SDV 报告分析的状态。 分析完成后，SDV 报告的结果和统计信息。 如果该驱动程序无法满足 API 使用情况的规则，结果将被报告为一个缺陷。
+在静态分析过程中，SDV 将报告分析的状态。 分析完成后，SDV 会报告结果和统计信息。 如果驱动程序无法满足 API 使用规则，则结果将报告为缺陷。
 
-如果遇到任何问题，SDV 显示那些 on**警告**并**错误**页。 **驱动程序属性**页显示的某些驱动程序属性的测试结果。 驱动程序属性测试用于标识要进一步限定分析的驱动程序功能。 可以使用**驱动程序属性**结果以确认预期的属性，支持您的驱动程序的功能。
+如果遇到任何问题，SDV 将在 "**警告**" 和 "**错误**" 页上显示这些问题。 "**驱动程序属性**" 页显示某些驱动程序属性的测试结果。 驱动程序属性测试用于标识驱动程序功能，以进一步限定分析。 您可以使用**驱动程序属性**结果来确认您的驱动程序所需的属性和支持的功能。
 
-若要查看在特定缺陷[静态驱动程序验证工具报告](static-driver-verifier-report.md)，单击在缺陷**结果**窗格。 这将打开[跟踪查看器](defect-viewer.md)，其中显示的代码路径的跟踪规则发生冲突。 有关详细信息，请参阅[解释静态驱动程序验证工具结果](interpreting-static-driver-verifier-results.md)。
+若要查看[静态驱动程序验证程序报告](static-driver-verifier-report.md)中的特定缺陷，请在**结果**窗格中单击 "缺陷"。 这会打开[跟踪查看器](defect-viewer.md)，其中显示规则冲突的代码路径跟踪。 有关详细信息，请参阅[解释静态驱动程序验证程序结果](interpreting-static-driver-verifier-results.md)。
 
-**请注意**Static Driver Verifier 保留结果和分析设置。 若要清除结果，请单击**清理**。
-
-
-
-### <a name="span-idtroubleshootingsdvresultsspanspan-idtroubleshootingsdvresultsspantroubleshooting-static-driver-verifier-results"></a><span id="troubleshooting_sdv_results"></span><span id="TROUBLESHOOTING_SDV_RESULTS"></span>Static Driver Verifier 结果进行故障排除
-
-如果 SDV 报告未找到任何缺陷，请检查**Main**选项卡，确保已检测到入口点。 如果该驱动程序不通过使用函数角色类型声明函数，SDV 将无法分析和查找驱动程序代码中的缺陷。 有关详细信息，请参阅[使用函数角色类型声明](using-function-role-type-declarations.md)。
-
-如果 SDV 报告超时或失败返回有用的结果，您可能需要更改几个 SDV 配置选项。 有关如何解决 SDV 的详细信息，请参阅[建议的故障排除 Static Driver Verifier](recommendations-for-troubleshooting-static-driver-verifier.md)。
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+**注意** 静态驱动程序验证程序保留分析的结果和设置。 若要清除结果，请单击 "**清除**"。
 
 
-[确定是否 Static Driver Verifier 支持驱动程序或库](determining-if-static-driver-verifier-supports-your-driver-or-library.md)
+
+### <a name="span-idtroubleshooting_sdv_resultsspanspan-idtroubleshooting_sdv_resultsspantroubleshooting-static-driver-verifier-results"></a><span id="troubleshooting_sdv_results"></span><span id="TROUBLESHOOTING_SDV_RESULTS"></span>静态驱动程序验证程序结果疑难解答
+
+如果 SDV 报告未找到缺陷，请检查**主**选项卡以确保检测到入口点。 如果驱动程序没有使用函数角色类型声明函数，则 SDV 将无法分析和查找驱动程序代码中的缺陷。 有关详细信息，请参阅[使用函数角色类型声明](using-function-role-type-declarations.md)。
+
+如果 SDV 报告超时或无法返回有用的结果，则可能需要更改几个 SDV 配置选项。 有关如何对 SDV 进行故障排除的详细信息，请参阅[对静态驱动程序验证程序进行故障排除的建议](recommendations-for-troubleshooting-static-driver-verifier.md)。
+
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
+
+[确定 Static Driver Verifier 是否支持驱动程序或库](determining-if-static-driver-verifier-supports-your-driver-or-library.md)
 
 [使用函数角色类型声明](using-function-role-type-declarations.md)
 
-[Static Driver Verifier 规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[静态驱动程序验证程序规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 [代码分析工具](https://go.microsoft.com/fwlink/p/?linkid=226836)
 

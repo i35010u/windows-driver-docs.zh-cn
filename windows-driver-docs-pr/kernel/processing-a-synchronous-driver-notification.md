@@ -3,28 +3,28 @@ title: 处理同步驱动程序通知
 description: 处理同步驱动程序通知
 ms.assetid: 84e4e05f-1383-4f5f-8fc0-20cd508afa3c
 keywords:
-- 驱动程序通知 WDK 动态硬件分区、 处理
-- 同步的驱动程序通知 WDK 动态硬件分区、 处理
+- 驱动程序通知 WDK 动态硬件分区，处理
+- 同步驱动程序通知 WDK 动态硬件分区，处理
 - 注册驱动程序通知 WDK 动态硬件分区，同步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a13feba21fab6aad5900398cf47a7bf376b664
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df7358ac0a555f22d87c67e2db8baad27a66e088
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378813"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838490"
 ---
 # <a name="processing-a-synchronous-driver-notification"></a>处理同步驱动程序通知
 
 
-当操作系统将调用注册的回调函数时，会传递一个指向[ **KE\_处理器\_更改\_通知\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_ke_processor_change_notify_context)结构中*ChangeContext*参数和一个指向包含 NTSTATUS 的变量中的代码*OperationStatus*参数。 **KE\_处理器\_更改\_通知\_上下文**结构包含处理器状态添加操作，正在添加的新处理器的处理器数和 NTSTATUS 代码与指示的状态相关联。
+当操作系统调用注册的回调函数时，它会将一个指针传递到[**KE\_处理器\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_ke_processor_change_notify_context)在*ChangeContext*参数中\_通知\_上下文结构，并将指针传递到在*OperationStatus*参数中包含一个 NTSTATUS 代码。 **KE\_处理器\_更改\_通知\_上下文**结构包含处理器添加操作的状态、要添加的新处理器的处理器编号以及与相关联的 NTSTATUS 代码指示的状态。
 
-当新处理器添加到硬件分区时，操作系统将调用注册的回调函数两次。 操作系统将首先调用回调函数**KeProcessorAddStartNotify**状态，然后将它启动新的处理器。 如果操作系统已成功添加了新的处理器，它调用的回调函数与第二次**KeProcessorAddCompleteNotify**状态。 否则，它调用的回调函数与第二次**KeProcessorAddFailureNotify**状态。
+将新处理器添加到硬件分区时，操作系统将调用注册的回调函数两次。 操作系统首先调用具有**KeProcessorAddStartNotify**状态的回调函数，然后再启动新的处理器。 如果操作系统成功添加了新的处理器，它将第二次调用回调函数并具有**KeProcessorAddCompleteNotify**状态。 否则，它会第二次调用回调函数并返回**KeProcessorAddFailureNotify**状态。
 
-如果 KE\_处理器\_更改\_添加\_现有标志指定当设备驱动程序已注册的回调函数时，还为每个活动处理器立即调用回调函数，硬件分区中当前不存在。 通常情况下，回调函数不会区分针对现有处理器和适用于新处理器调用时调用它。 当操作系统将调用注册的回调函数的详细信息，请参阅的说明[ **KeRegisterProcessorChangeCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keregisterprocessorchangecallback)函数。
+如果在设备驱动程序注册回调函数时指定了 KE\_处理器\_更改\_添加\_现有标志，则还会为当前存在于中的每个活动处理器立即调用回调函数。硬件分区。 通常情况下，回调函数将不需要区分对现有处理器调用它的时间和为新处理器调用该函数的时间。 有关操作系统何时调用注册的回调函数的详细信息，请参阅[**KeRegisterProcessorChangeCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keregisterprocessorchangecallback)函数的说明。
 
-下面的代码示例显示了处理同步驱动程序通知的回调函数的实现：
+下面的代码示例演示了用于处理同步驱动程序通知的回调函数的实现：
 
 ```cpp
 // Synchronous notification callback function

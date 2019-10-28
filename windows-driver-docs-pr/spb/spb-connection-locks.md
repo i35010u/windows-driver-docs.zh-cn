@@ -1,67 +1,67 @@
 ---
 title: SPB 连接锁
-description: 连接锁可用于使两个客户端可以共享到简单的外围总线 （存储） 上的目标外围设备的访问权限。
+description: 连接锁可用于使两个客户端在简单外围总线（SPB）上共享对目标外围设备的访问。
 ms.assetid: 073D9854-0F51-4518-A22B-0A0546694E30
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ed08374b284243d1ceb21eebdde9e64a78cc5bea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 91beea7673db12540407738cd4f3e8a8dc360ac9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376925"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839628"
 ---
 # <a name="spb-connection-locks"></a>SPB 连接锁
 
 
-连接锁可用于启用两个客户端上共享到目标外围设备的访问权限[简单的外围总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))（存储）。 两个客户端可以打开到相同的目标设备的逻辑连接，并使用连接锁时客户端要求对设备执行一系列 I/O 操作的独占访问。 当一台客户端持有连接锁时，第二个客户端请求来访问设备是自动推迟到第一个客户端释放锁。
+连接锁可用于使两个客户端在[简单外围总线](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))（SPB）上共享对目标外围设备的访问。 这两个客户端都可以打开到同一目标设备的逻辑连接，并在客户端要求对设备进行独占访问时使用连接锁定，以执行一系列 i/o 操作。 当一台客户端持有连接锁时，第二个客户端对该设备的请求会自动延迟，直到第一个客户端释放该锁。
 
-客户端用[ **IOCTL\_存储\_锁\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819324)并[ **IOCTL\_存储\_解锁\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819325)获取和释放连接锁的目标设备上存储的请求。 客户端将这些输入/输出控制 (IOCTL) 请求发送到设备的文件对象。
+客户端使用[**IOCTL\_spb\_锁定\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819324)和[**ioctl\_SPB\_解锁\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819325)请求，以获取和释放 SPB 上目标设备上的连接锁。 客户端将这些 i/o 控制（IOCTL）请求发送到设备的文件对象。
 
-与存储连接的外围设备的驱动程序通常是用户模式驱动程序框架 (UMDF) 驱动程序或内核模式驱动程序框架 (KMDF) 驱动程序。 若要将 IOCTL 请求发送到与存储连接的外围设备，UMDF 驱动程序调用的方法如[ **IWDFIoRequest::Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiorequest-send)。 KMDF 驱动程序调用的方法，如[ **WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)。
+与 SPB 连接的外围设备的驱动程序通常是用户模式驱动程序框架（UMDF）驱动程序或内核模式驱动程序框架（KMDF）驱动程序。 为了将 IOCTL 请求发送到已连接到 SPB 的外围设备，UMDF 驱动程序会调用方法，例如[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)。 KMDF 驱动程序调用诸如[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)的方法。
 
-通常情况下，连接锁是不必要的。 大多数客户端驱动程序始终在存储具有独占访问权的目标设备。 仅在两个客户端必须在其中共享对同一目标设备，访问权限的情况相对很少见的情况下需要连接锁和一个或两个客户端有时必须具有独占访问权的一系列 I/O 操作的设备。
+通常，不需要连接锁。 大多数客户端驱动程序在 SPB 上始终具有对目标设备的独占访问权限。 只有在相对罕见的情况下才需要连接锁，在这种情况下，两个客户端必须共享对同一目标设备的访问权限，并且一个或两个客户端有时必须具有对设备的独占访问权限，才能实现一系列 i/o 操作。
 
-默认情况下，如果两个客户端共享的目标设备，[存储框架扩展](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)(SpbCx) 序列化为 SpbCx 请求队列中到达的顺序根据设备的 I/O 请求。 连接锁重写的默认顺序的请求。 一台客户端获取该锁，连接后，SpbCx 保存回 I/O 请求，它将收到来自第二个客户端直到第一个客户端释放锁。
+默认情况下，如果两个客户端共享目标设备，则[SPB 框架扩展](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)（SpbCx）会根据设备在 SpbCx 请求队列中到达的顺序序列化设备的 i/o 请求。 连接锁将覆盖请求的默认排序顺序。 一台客户端获取连接锁后，SpbCx 会持有从第二个客户端接收到的 i/o 请求，直到第一个客户端释放该锁。
 
-在 SpbCx 当前实现中，连接锁的主要用途是启用要与 ACPI 驱动程序，Acpi.sys 共享到设备的访问权限的目标设备的客户端驱动程序。 Acpi.sys 是一个系统提供驱动程序，用于管理某些核心资源的设备的硬件平台的 ACPI 固件代表。 例如，一个平台，在芯片 (SoC) 上使用系统还可能包含 Acpi.sys 和客户端驱动程序访问的电源管理集成电路 (PMIC)。
+在 SpbCx 的当前实现中，连接锁定的主要用途是使目标设备的客户端驱动程序能够使用 ACPI 驱动程序（Acpi）来共享设备的访问权限。 Acpi 是系统提供的驱动程序，它代表硬件平台的 ACPI 固件来管理某些核心资源设备。 例如，使用芯片（SoC）上的系统的平台可能还包含由 Acpi 和客户端驱动程序访问的电源管理集成线路（PMIC）。
 
-客户端驱动程序负责确定是否需要独占访问的目标设备的 I/O 操作需要连接锁。 如果驱动程序需要连接锁在某些硬件平台或平台配置，但不是在其他用例，则驱动程序开发人员和平台开发人员必须达成用于确定连接锁时要使用的特定于驱动程序的机制。 通常情况下，在平台固件中包含有关是否使用连接锁信息。 例如，设备的 ACPI 资源描述符中的供应商定义的信息块可能包含标志位，以指示驱动程序是否与 Acpi.sys 共享设备。
+客户端驱动程序负责确定是否需要对需要独占访问目标设备的 i/o 操作进行连接锁定。 如果驱动程序在某些硬件平台或平台配置中需要连接锁，但在其他情况下，驱动程序开发人员和平台开发人员必须同意特定于驱动程序的机制来确定何时使用连接锁。 通常，平台固件中是否包含有关是否使用连接锁定的信息。 例如，设备的 ACPI 资源描述符中供应商定义的信息块可能包含一个标志位，用来指示驱动程序是否使用 Acpi 与设备共享。
 
-## <a name="connection-lock-example"></a>锁的连接示例
+## <a name="connection-lock-example"></a>连接锁示例
 
 
-连接锁的典型用途是实现原子读取-修改-写入操作。 如果两个客户端共享相同的简单外围总线 （存储） 上的目标设备的访问权限，或者客户端可以使用连接锁的读的操作和写入操作合并到单个原子读取-修改-写入操作。 连接锁可阻止其他客户端访问之间读取和写入操作的目标设备。
+连接锁的典型用法是实现原子读修改写入操作。 如果两个客户端在简单外围总线（SPB）上共享对同一目标设备的访问，则客户端可以使用连接锁将读取操作和写入操作合并为单个原子读修改写入操作。 连接锁定会阻止其他客户端访问读写操作之间的目标设备。
 
-以下列表描述了 I/O 的一系列请求，客户端可能会发送到已连接存储的目标设备执行在设备上的读取-修改-写入操作：
+以下列表描述了客户端可能发送到连接到 SPB 的目标设备以在设备上执行读修改操作的 i/o 请求系列：
 
-1.  [**IOCTL\_存储\_锁\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819324) – 获取对目标设备的连接锁定。
-2.  [**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read) – 从设备地址读取的数据块，以便客户端可以解释和修改数据。
-3.  [**IRP\_MJ\_编写**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write) – 将修改后的数据块写入到的设备地址。
-4.  [**IOCTL\_存储\_解锁\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819325) – 释放目标设备上的连接锁。
+1.  [**IOCTL\_SPB\_锁定\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819324)–获取目标设备上的连接锁。
+2.  [**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)–从设备地址读取数据块，以便客户端可以解释和修改数据。
+3.  [**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)–将修改后的数据块写入设备地址。
+4.  [**IOCTL\_SPB\_解锁\_连接**](https://msdn.microsoft.com/library/windows/hardware/jj819325)–在目标设备上释放连接锁。
 
-前面的列表可能适用于实现的单个设备函数的简单设备。
+前面的列表可能适用于实现单个设备功能的简单设备。
 
-但是，更复杂的设备可能会实现多个设备函数。 此设备可能包含在客户端加载数据传输开始时的函数地址注册。 对于此设备，请[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求可以组合的函数地址注册的加载和数据传输为单个原子总线操作如下所示。 有关详细信息，请参阅示例 I²C 设备中的说明[总线的原子操作](https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations)。
+但是，更复杂的设备可能会实现多个设备功能。 此设备可能包含客户端在数据传输开始时加载的函数地址注册。 对于此设备， [ **\_SPB 的 IOCTL\_执行\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求可以将函数地址寄存器的加载和接下来的数据传输组合到一个原子总线操作中。 有关详细信息，请参阅[原子总线操作](https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations)中的示例 I i2c 设备的说明。
 
 ## <a name="comparison-with-controller-locks"></a>与控制器锁的比较
 
 
-客户端使用的连接锁获取独占访问的目标设备，但连接锁不会阻止在总线上的数据传输到或从其他设备。
+客户端使用连接锁来获取对目标设备的独占访问权限，但连接锁不会阻止与总线上的其他设备进行数据传输。
 
-若要执行的数据传输一系列原子总线操作的形式，客户端通常使用[ **IOCTL\_存储\_EXECUTE\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求。 执行原子总线操作的不太常见方法是使用控制器锁。 客户端发送[ **IOCTL\_存储\_锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)并[ **IOCTL\_存储\_解锁\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450859)对获取和发布控制器锁的请求。
+若要以原子总线操作的形式执行一系列数据传输，客户端通常使用[**IOCTL\_SPB\_执行\_序列**](https://msdn.microsoft.com/library/windows/hardware/hh450857)请求。 执行原子总线操作的常见方法是使用控制器锁。 客户端[ **\_锁定\_控制器**](https://msdn.microsoft.com/library/windows/hardware/hh450858)和[**ioctl\_SPB**](https://msdn.microsoft.com/library/windows/hardware/hh450859)发送 ioctl\_spb，\_将\_控制器请求解锁为获取和释放控制器锁。
 
-控制器锁是不同于连接的锁。 控制器锁定使 I/O 传输到和从目标设备总线上作为单一的原子总线操作执行一系列。 控制器锁在生效时，控制器锁释放前延迟总线上的传输到或从其他设备。 有关详细信息，请参阅[总线的原子操作](https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations)。
+控制器锁不同于连接锁。 控制器锁允许将一系列 i/o 传输到总线上的目标设备，并将其作为单个原子总线操作执行。 控制器锁定生效时，将延迟传输到总线上的其他设备，直到控制器锁释放。 有关详细信息，请参阅[原子总线操作](https://docs.microsoft.com/windows-hardware/drivers/spb/atomic-bus-operations)。
 
-**请注意**  在某些实现中，连接锁可能会产生了负面影响，防止传输到总线上的其他设备。 但是，此行为是依赖于实现的并且客户端驱动程序不应依赖于它。 与此相反，控制器锁可靠地阻止另一个客户端访问相同的目标设备作为持有控制器锁的客户端和客户端可以安全地依赖于此行为。
+**请注意**  在某些实现中，连接锁可能会导致传输到总线上的其他设备。 但是，此行为是依赖于实现的，并且客户端驱动程序不应依赖于它。 相反，控制器锁定会可靠地阻止其他客户端访问与持有控制器锁定的客户端相同的目标设备，并且客户端可以安全地依赖于此行为。
 
  
 
-客户端可能需要执行的一组目标设备上的 I/O 操作之前获取的连接锁以及控制器锁。 连接锁将阻止第二个客户端共享从执行 I/O 操作在设备上的访问相同的目标设备和控制器锁可防止在总线上的其他设备的客户端执行这些其他设备上的 I/O 操作。 （不能从这些锁都会保持过程中所发生的 I/O 操作都只需延迟，直到锁被释放。）
+在目标设备上执行一组 i/o 操作之前，客户端可能需要获取连接锁和控制器锁定。 连接锁定会阻止第二个客户端共享对同一目标设备的访问，以便在设备上执行 i/o 操作，控制器锁定会阻止总线上其他设备的客户端对这些其他设备执行 i/o 操作。 （保留这些锁时阻止发生的 i/o 操作将只延迟到锁被释放。）
 
-当客户端获取连接锁和目标设备上存储的控制器锁时，客户端必须获取控制器锁之前获取连接锁，并必须释放连接锁之前释放控制器锁。 客户端获取连接锁后，客户端可以如有必要，获取和释放无数次，客户端释放连接锁之前有必要进行控制器锁。
+当客户端为 SPB 上的目标设备同时获取连接锁和控制器锁定时，客户端必须在获取控制器锁之前获取连接锁，并且必须释放控制器锁才能释放连接锁。 在客户端获取连接锁之后，客户端可以根据需要在客户端释放连接锁之前，根据需要获取并释放控制器锁定。
 
-嵌套的收购连接锁是非法的。 客户端已获取了连接锁后，客户端必须不尝试再次获取的锁，直到客户端首先释放锁。 同样，不允许嵌套的收购的控制器锁。
+连接锁的嵌套获取是非法的。 在客户端获取连接锁之后，客户端不能再次尝试获取该锁，直到客户端首先释放该锁。 同样，控制器锁的嵌套获取是不允许的。
 
  
 

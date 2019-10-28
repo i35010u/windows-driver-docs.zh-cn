@@ -4,45 +4,45 @@ description: IStream 数据传输驱动程序更改
 ms.assetid: 1c837e4f-8d53-40ed-8f5b-0d525c7dd758
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c7658c9251d613b86f742639f2bd4a99569f03
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbcee2701620d01d965d8937fc1396573d57e895
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378883"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840805"
 ---
 # <a name="istream-data-transfer-driver-changes"></a>IStream 数据传输驱动程序更改
 
 
-为了尽量减少对 Windows Vista 之前开发的驱动程序的更改，驱动程序无需实现任何新接口以支持**IStream**数据传输。 相反，通过公开新的接口已[IWiaMiniDrvCallBack 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)。 驱动程序可以调用**IWiaMiniDrvCallBack::QueryInterface**新**IWiaTransfer**回调函数，将使他们能够访问的数据的流和状态通知。 **IWiaTransfer** Microsoft Windows SDK 文档中详细介绍了接口。
+为了尽量减少对 Windows Vista 之前开发的驱动程序所做的更改，驱动程序无需实现任何新接口即可支持**IStream**数据传输。 而是通过[IWiaMiniDrvCallBack 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)公开了一个新接口。 驱动程序可以为新的**IWiaTransfer**回调函数调用**IWiaMiniDrvCallBack：： QueryInterface** ，这将向其提供对数据流和状态通知的访问权限。 Microsoft Windows SDK 文档中介绍了**IWiaTransfer**接口。
 
-驱动程序内的数据传输代码现更简单，因为所有传输都处理相同的方式，使用任何文件或内存传输分支逻辑。
+现在，驱动程序中的数据传输代码更简单，因为所有传输的处理方式都相同，没有文件或内存传输分支逻辑。
 
-不支持的驱动程序**IStream**传输模型通常执行以下步骤：
+不支持**IStream**传输模型的驱动程序通常执行以下步骤：
 
-1.  检查以确定请求是否上传或下载的标志。
+1.  检查标志，确定请求是否用于上传或下载。
 
-2.  获取[IWiaMiniDrvCallBack](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)接口。
+2.  获取[IWiaMiniDrvCallBack](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nn-wiamindr_lh-iwiaminidrvcallback)接口。
 
-3.  从回调函数接收的目标流。
+3.  从回调函数接收目标流。
 
 4.  执行数据传输循环：
     1.  从设备接收数据。
-    2.  向流写入数据。
+    2.  将数据写入流。
 
-但是，对于实现新的驱动程序**IStream**传输模型，将不会调用 WIA 服务[ **IWiaMiniDrv::drvWriteItemProperties** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties)因为*文件夹获取*支持。
+但是，对于实现新的**IStream**传输模型的驱动程序，WIA 服务将不会调用[**IWiaMiniDrv：:d rvwriteitemproperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvwriteitemproperties) ，因为支持*文件夹获取*。
 
-在文件夹获取单个传输请求是在父项中，但实际项属性是在每个要传输的子项。 **IWiaMiniDrv::drvWriteItemProperties**不会调用方法的每个子项，因此无法使用此方法进行编程的设备设置。 有关支持的驱动程序**IStream** WIA 服务调用的数据传输[ **IWiaMiniDrv::drvAcquireItemData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)相反。
+在文件夹获取中，单个传输请求位于父项上，但实际项属性位于正在传输的每个子项上。 不会为每个子项调用**IWiaMiniDrv：:D rvwriteitemproperties**方法，因此此方法不能用于对设备设置进行编程。 对于支持**IStream**数据传输的驱动程序，WIA 服务改为调用[**IWiaMiniDrv：:d rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) 。
 
-**请注意**  此更改会影响仅支持将新的数据传输的驱动程序。 旧驱动程序，它不支持**IStream**数据传输，不会受到影响; WIA 服务将继续调用**IWiaMiniDrv::drvWriteItemProperties**为它们的方法。
+**请注意**  此更改仅影响支持新数据传输的驱动程序。 不支持**IStream**数据传输的旧驱动程序不受影响;WIA 服务将继续为它们调用**IWiaMiniDrv：:D rvwriteitemproperties**方法。
 
  
 
-在驱动程序，其中可以对多个调用文件夹收购**IWiaTransferCallback::GetNextStream** （这介绍 Microsoft Windows SDK 文档中），该驱动程序可以有一次只有一个活动流。
+在文件夹收购中，驱动程序对**IWiaTransferCallback：： GetNextStream** （在 Microsoft Windows SDK 文档中进行了介绍）的多次调用，该驱动程序一次只能有一个活动流。
 
-该驱动程序必须调用仅此流的**IStream::Write**， **IStream::Seek**，并**IStream::SetSize**方法 （这 Windows SDK 文档中所述）在下载操作。 此限制，使你更轻松地编写筛选器。 该驱动程序不应期望目标流将实现的任何其他方法。
+在下载操作过程中，驱动程序必须仅调用流的**istream：： Write**、 **Istream：： Seek**和**IStream：： SetSize**方法（在 Windows SDK 文档中进行了介绍）。 此限制使你可以更轻松地编写筛选器。 驱动程序不应预计目标流将实现任何其他方法。
 
-当[ **WIA\_DPS\_页\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)属性设置为 WIA\_页\_自动 （即，自动页大小检测是已启用），该驱动程序应提供有关映像的准确维度信息仅后完成的图像数据传输。 对于基于流的传输模式，该驱动程序应更新映像标头传输结束时将图像尺寸。 在新的会话，WIA 的值开头\_DPS\_页面\_SIZE 属性应始终设置为 WIA 以外的值\_页\_自动。
+当[**wia\_DPS\_页\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)属性设置为 WIA\_页面\_自动（即启用了自动页面大小检测）时，驱动程序应提供有关映像的准确维度信息完成图像数据的传输。 对于基于流的传输，驱动程序应在传输结束时更新图像标头中的图像维度。 在新会话开始时，WIA\_DPS\_页\_大小属性的值应始终设置为 WIA\_页面\_自动值。
 
  
 

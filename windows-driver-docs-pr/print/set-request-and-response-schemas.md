@@ -1,27 +1,27 @@
 ---
 title: 设置请求和响应架构
-description: 下面是集请求架构和相应的响应架构定义和各自的示例。
+description: 下面列出了设置请求架构和相应的响应架构定义以及每个定义的示例。
 ms.assetid: 88E7F06C-3232-48C3-A0D6-2BEFF4ABA188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9fddf9586613f4a19dc42e81e627951ccef7398
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b349c7cba6d0187877b53abc264b5518f33d4c18
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367591"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840411"
 ---
 # <a name="set-request-and-response-schemas"></a>设置请求和响应架构
 
 
-下面是集请求架构和相应的响应架构定义和各自的示例。
+下面列出了设置请求架构和相应的响应架构定义以及每个定义的示例。
 
 ## <a name="set-request-schema"></a>设置请求架构
 
 
-组请求用于写入打印机属性的值。
+Set 请求用于将值写入打印机属性。
 
-在此示例中，请求尝试设置两个属性。 第二个是故意错误： 内存属性不是可写。 对此请求的响应，请参阅下面的设置响应架构。
+在此示例中，请求将尝试设置两个属性。 第二个错误是有意的错误：内存属性不可写。 有关此请求的响应，请参阅下面的设置响应架构。
 
 ```xml
 <bidi:Set xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -34,7 +34,7 @@ ms.locfileid: "63367591"
 </bidi:Set>
 ```
 
-正式定义的集请求架构
+集请求架构的正式定义
 
 ```xml
 <?xml version='1.0'?>
@@ -74,7 +74,7 @@ ms.locfileid: "63367591"
 ## <a name="set-response-schema"></a>设置响应架构
 
 
-这是对上述集请求的响应。 请注意，写入操作成功后，原始查询返回的值是不包含任何值。 如果操作失败，则返回错误代码。
+这是对上述集请求的响应。 请注意，当写操作成功时，将返回不带任何值的原始查询值。 如果操作失败，则返回错误代码。
 
 ```xml
 <bidi:Set xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
@@ -85,7 +85,7 @@ ms.locfileid: "63367591"
 </bidi:Set>
 ```
 
-集响应架构中的正式定义
+设置响应架构的正式定义
 
 ```xml
 <?xml version='1.0'?>
@@ -118,6 +118,6 @@ ms.locfileid: "63367591"
 
 [双向通信架构](bidirectional-communication-schema.md)  
 
-[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
+[SendRecvXMLStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstream)  
 
-[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
+[SendRecvXMLString](https://docs.microsoft.com/windows-hardware/drivers/ddi/bidispl/nf-bidispl-ibidispl2-sendrecvxmlstring)  
