@@ -1,10 +1,10 @@
 ---
-title: PcPropertyRequest 规则 （音频）
-description: PcPropertyRequest 规则指定 PortCls 微型端口驱动程序应永远不会调用与状态的 NtStatus 值 PcCompletePendingPropertyRequest\_PENDING。
+title: PcPropertyRequest 规则（音频）
+description: PcPropertyRequest 规则指定 PortCls 微型端口驱动程序绝不应使用\_挂起状态的 NtStatus 值调用 PcCompletePendingPropertyRequest。
 ms.assetid: 7D06F924-512F-4D21-98CD-B9E60CC8A6AB
 ms.date: 05/21/2018
 keywords:
-- PcPropertyRequest 规则 （音频）
+- PcPropertyRequest 规则（音频）
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 23a2956e6f1eb22ace7a68d2685afc937103d728
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 679a0685714bb8d5fd9e8ba7ea5a33ec46921260
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394024"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839587"
 ---
-# <a name="pcpropertyrequest-rule-audio"></a>PcPropertyRequest 规则 （音频）
+# <a name="pcpropertyrequest-rule-audio"></a>PcPropertyRequest 规则（音频）
 
 
-PcPropertyRequest 规则指定 PortCls 微型端口驱动程序应永远不会调用[ **PcCompletePendingPropertyRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/portcls/nf-portcls-pccompletependingpropertyrequest)与*NtStatus*状态的值\_PENDING。
+PcPropertyRequest 规则指定 PortCls 微型端口驱动程序绝不应使用\_挂起状态的*NtStatus*值调用[**PcCompletePendingPropertyRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pccompletependingpropertyrequest) 。
 
 |              |       |
 |--------------|-------|
@@ -30,7 +30,7 @@ PcPropertyRequest 规则指定 PortCls 微型端口驱动程序应永远不会�
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00071008) |
+| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00071008） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -46,9 +46,9 @@ PcPropertyRequest 规则指定 PortCls 微型端口驱动程序应永远不会�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain 音频</strong>。</p>
+<td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain 音频</strong>。</p>
 <p>例如：</p>
-<p><strong>verifier /domain audio</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
+<p><strong>verifier/domain 音频</strong>[<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
 <p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>

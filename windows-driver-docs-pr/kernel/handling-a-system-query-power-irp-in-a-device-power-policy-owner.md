@@ -3,16 +3,16 @@ title: 处理设备电源策略所有者中的系统 Query-Power IRP
 description: 处理设备电源策略所有者中的系统 Query-Power IRP
 ms.assetid: 680e3be2-63d9-4d79-a7c0-422e852e9347
 keywords:
-- 查询能耗 Irp WDK 电源管理
+- 查询-power Irp WDK 电源管理
 - 设备电源策略所有者 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b93e98942f12f3669e69945c9a19d55c24063b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64773b960d56742137fa923da852d4ebce48355d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387012"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838680"
 ---
 # <a name="handling-a-system-query-power-irp-in-a-device-power-policy-owner"></a>处理设备电源策略所有者中的系统 Query-Power IRP
 
@@ -20,47 +20,47 @@ ms.locfileid: "67387012"
 
 
 
-当设备电源策略所有者收到[ **IRP\_MN\_查询\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)系统电源状态，它响应通过传入下查询，并在[*IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程，发送**IRP\_MN\_查询\_POWER**设备电源状态。 设备查询堆栈中的所有驱动程序完成，设备电源策略所有者完成系统查询。
+当设备电源策略所有者收到[**IRP\_MN\_QUERY\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)系统电源状态的电源时，它会通过传递查询并在[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中发送**irp\_MN\_查询来做出响应 @no__t_** 设备电源状态的10_。 当堆栈中的所有驱动程序都完成了设备查询后，设备电源策略所有者将完成系统查询。
 
-设备电源策略所有者应执行以下步骤其[DispatchPower 例程](dispatchpower-routines.md)响应系统查询：
+设备电源策略所有者应在其[DispatchPower 例程](dispatchpower-routines.md)中执行以下步骤来响应系统查询：
 
-1.  调用[ **IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioacquireremovelock)，并传递当前 IRP，以确保该驱动程序不会接收即插即用[ **IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，而同时处理 IRP 的能力。
+1.  调用[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)，传递当前 IRP，以确保驱动程序未收到 PnP [**IRP\_MN\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)在处理 power IRP 时删除\_设备请求。
 
-    如果**IoAcquireRemoveLock**返回失败状态，该驱动程序不应继续处理 IRP。 相反，从 Windows Vista 开始，驱动程序应调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)完成 IRP 并返回故障状态。 在 Windows Server 2003、 Windows XP 和 Windows 2000 中，该驱动程序应调用[ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)，调用**IoCompleteRequest**完成 IRP，并返回失败状态。
+    如果**IoAcquireRemoveLock**返回失败状态，驱动程序不应继续处理 IRP。 从 Windows Vista 开始，驱动程序应调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)来完成 IRP 并返回失败状态。 在 Windows Server 2003、Windows XP 和 Windows 2000 中，驱动程序应调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)，并调用**IOCOMPLETEREQUEST**来完成 IRP，并返回失败状态。
 
-2.  请确保该驱动程序可以支持查询的系统电源状态，如中所述[失败的系统查询能耗 IRP 中一个筛选器或功能驱动程序](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)。 如果没有，那一节中所述完成 IRP 失败状态。
+2.  请确保驱动程序可以支持查询的系统电源状态，如[筛选器或函数驱动程序中的 "系统查询失败" 中](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)所述。 如果没有，请按照该部分所述，使用失败状态完成 IRP。
 
-    但是，驱动程序不得失败查询的 S4 (**PowerSystemHibernate**) 如果其设备启用了唤醒，但它无法唤醒从休眠状态系统。 在此情况下，该驱动程序的电源策略所有者 (它发送[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)) 必须取消等待/唤醒 IRP 和成功的系统查询。 有关详细信息，请参阅[取消等待/唤醒 IRP](canceling-a-wait-wake-irp.md)。
+    但是，如果为 S4 设备启用了唤醒功能但无法将系统从休眠状态唤醒，则驱动程序不得对 S4 （**PowerSystemHibernate**）的查询失败。 在这种情况下，驱动程序的电源策略所有者（发送[**IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)）必须取消等待/唤醒 IRP，然后成功进行系统查询。 有关详细信息，请参阅[取消等待/唤醒 IRP](canceling-a-wait-wake-irp.md)。
 
-3.  如果该驱动程序可以支持查询的系统电源状态，调用[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)。
+3.  如果驱动程序可以支持查询的系统电源状态，请调用[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)。
 
-4.  通过调用设置下一步低驱动程序的 IRP 堆栈位置[ **IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)。
+4.  通过调用[**IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext)设置下一个较低驱动程序的 IRP 堆栈位置。
 
-5.  设置*IoCompletion*例行系统查询电源 IRP 中。
+5.  在系统查询 power IRP 中设置*IoCompletion*例程。
 
-6.  调用[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) （在 Windows 7 和 Windows Vista） 或[ **PoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-pocalldriver) （在 Windows Server 2003、 Windows XP 和 Windows 2000）若要将 IRP 传递给下一个较低驱动程序。
+6.  调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) （在 windows 7 和 windows Vista 中）或[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) （在 Windows SERVER 2003、windows XP 和 windows 2000 中），将 IRP 传递到下一个较低版本的驱动程序。
 
-7.  返回状态\_PENDING。
+7.  返回状态\_挂起。
 
-[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程应执行以下操作：
+[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程应执行以下操作：
 
-1.  检查**Irp-&gt;IoStatus.Status**以确保较低的驱动程序已成功完成 IRP。 如果非成功 NTSTATUS 值，指定较低的驱动程序，则*IoCompletion*例程应返回 NTSTATUS 值。
+1.  检查**irp-&gt;IoStatus** ，以确保较低版本的驱动程序已成功完成 Irp。 如果较低的驱动程序指定了非成功的 NTSTATUS 值， *IoCompletion*例程应返回 ntstatus 值。
 
-2.  如果较低的驱动程序已成功完成 IRP，调用[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)发送设备是适用于查询的系统的设备电源状态的查询能耗 IRP 电源状态。 如有必要，请查阅设备\_中的状态数组[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)结构，以确定哪些设备的电源状态适用于在查询的系统电源状态。
+2.  如果较低的驱动程序已成功完成 IRP，请调用[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)以发送设备查询-power IRP，使其适用于查询的系统电源状态。 如有必要，请参阅[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)结构中的设备\_状态阵列，以确定哪些设备电源状态对于查询的系统电源状态有效。
 
-3.  指定的回调例程 (*CompletionFunction*参数) 在调用**PoRequestPowerIrp** ，并将传递系统 IRP 中*上下文*区域。
+3.  在对**PoRequestPowerIrp**的调用中指定一个回调例程（*CompletionFunction*参数），并在*上下文*区域中传递系统 IRP。
 
-4.  返回状态\_更多\_处理\_必需，以便该驱动程序可以完成的回调例程中的系统查询 IRP 的处理。
+4.  返回状态\_需要更多\_处理\_，以便驱动程序可以在回调例程中完成系统查询 IRP 的处理。
 
-IRP 已经完成后和全部*IoCompletion* IRP 处理过程中设置的例程已运行，电源管理器，通过 I/O 管理器、 调用电源策略管理器的回调例程 ( *CompletionFunction*参数**PoRequestPowerIrp**)。 回调例程，反过来，必须执行以下操作：
+完成 IRP 并运行 IRP 处理过程中设置的所有*IoCompletion*例程后，电源管理器将通过 i/o 管理器调用电源策略管理器的回调例程（将*CompletionFunction*参数设置为**PoRequestPowerIrp**）。 反过来，回调例程必须执行以下操作：
 
-1.  调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)启动下一个幂 IRP。 （Windows Server 2003、 Windows XP 和 Windows 2000 仅。）
+1.  调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)以启动下一个 power IRP。 （仅限 windows Server 2003、Windows XP 和 Windows 2000。）
 
-2.  完成系统查询能耗 IRP (调用[ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 返回设备的状态与查询能耗 IRP。
+2.  完成系统查询-power IRP （调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)），并返回设备查询-power irp 的状态。
 
-3.  调用[ **IoReleaseRemoveLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioreleaseremovelock)来释放以前获取的锁。
+3.  调用[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)以释放以前获取的锁。
 
-请记住设备电源策略所有者不仅会将设备查询发送但还必须向下设备堆栈上处理它。 有关详细信息，请参阅[处理 IRP\_MN\_查询\_的电源可用于设备的电源状态](handling-irp-mn-query-power-for-device-power-states.md)。
+请记住，设备电源策略所有者不仅发送设备查询，还必须按设备堆栈向下进行处理。 有关详细信息，请参阅[处理 IRP\_MN\_查询\_设备电源状态的电源](handling-irp-mn-query-power-for-device-power-states.md)。
 
  
 

@@ -3,21 +3,21 @@ title: 编写 StartIo 例程
 description: 编写 StartIo 例程
 ms.assetid: b2a380ae-549c-4ca2-9c69-1e20c17ed2e6
 keywords:
-- StartIo 例程，有关 StartIo 例程
-- StartIo 例程编写
-- 启动 I/O 操作
-- I/O 操作起始 WDK 内核
-- Irp WDK 内核队列
-- 队列的 Irp
-- 取消排队的 Irp
+- StartIo 例程，关于 StartIo 例程
+- StartIo 例程，编写
+- 启动 i/o 操作
+- 启动 WDK 内核时的 i/o 操作
+- Irp WDK 内核，队列
+- 队列 Irp
+- 出列的 Irp
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 480a44b015bd461edfd4e82773b87ecb474df0a4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe921472969d1d8bd91b5d5f9e3b7e9c03b77fd7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374153"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835600"
 ---
 # <a name="writing-a-startio-routine"></a>编写 StartIo 例程
 
@@ -25,21 +25,21 @@ ms.locfileid: "67374153"
 
 
 
-顾名思义， [ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程负责启动物理设备上的 I/O 操作。
+顾名思义， [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程负责在物理设备上启动 i/o 操作。
 
-大多数的最低级别驱动程序提供*StartIo*例程和依赖于系统提供的设备队列到队列 Irp I/O 管理器。 某些最低级别驱动程序旨在设置和管理其自己补充的 IRP 队列，但即使这样它们通常还提供*StartIo*例程。 (有关补充队列的详细信息，请参阅[设置和使用设备队列](setting-up-and-using-device-queues.md)并[管理设备队列](managing-device-queues.md)。)
+最底层的驱动程序提供*StartIo*例程，并依赖于 i/o 管理器将 irp 排队到系统提供的设备队列。 某些最低级别的驱动程序旨在设置和管理其自己的补充 IRP 队列，但这通常还提供*StartIo*例程。 （有关补充队列的详细信息，请参阅[设置和使用设备队列](setting-up-and-using-device-queues.md)和[管理设备队列](managing-device-queues.md)。）
 
-更高级别的驱动程序，包括 FSDs 和即插即用函数和筛选器驱动程序，很少需要*StartIo*例程，因为它可能妨碍性能。 相反，大多数文件系统驱动程序设置和维护的 Irp 的内部队列。 其他更高级别的驱动程序内部队列的 Irp，或只需将 Irp 传递到较低的驱动程序，从其调度例程。 请参阅[Driver-Managed IRP 队列](driver-managed-irp-queues.md)有关详细信息。
+较高级别的驱动程序（包括 FSDs 和 PnP 函数和筛选器驱动程序）很少具有*StartIo*例程，因为它可能会妨碍性能。 相反，大多数文件系统驱动程序都设置并维护 Irp 的内部队列。 其他较高级别的驱动程序要么具有用于 Irp 的内部队列，要么只是将 Irp 从其调度例程传递到较低的驱动程序。 有关详细信息，请参阅[驱动程序管理的 IRP 队列](driver-managed-irp-queues.md)。
 
-可以使用[ **IoSetStartIoAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iosetstartioattributes)例程对集属性的修改*StartIo*处理您的驱动程序。
+可以使用[**IoSetStartIoAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes)例程设置用于修改驱动程序的*StartIo*处理的属性。
 
 本部分包含以下主题：
 
-[在最低级别驱动程序中的 StartIo 例程](startio-routines-in-lowest-level-drivers.md)
+[最底层驱动程序中的 StartIo 例程](startio-routines-in-lowest-level-drivers.md)
 
-[在更高级别的驱动程序中的 StartIo 例程](startio-routines-in-higher-level-drivers.md)
+[更高级的驱动程序中的 StartIo 例程](startio-routines-in-higher-level-drivers.md)
 
-[要考虑 StartIo 例程的事项](points-to-consider-for-startio-routines.md)
+[StartIo 例程的注意事项](points-to-consider-for-startio-routines.md)
 
  
 

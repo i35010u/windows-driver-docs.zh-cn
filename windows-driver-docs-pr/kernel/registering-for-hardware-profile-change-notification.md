@@ -3,21 +3,21 @@ title: 注册硬件配置文件更改通知
 description: 注册硬件配置文件更改通知
 ms.assetid: 3aaa09f7-ac63-4b56-917a-74cf344f6dd3
 keywords:
-- 通知 WDK 即插即用，硬件配置文件更改
-- 硬件配置文件更改通知 WDK 即插即用
+- 通知 WDK PnP，硬件配置文件更改
+- 硬件配置文件更改通知 WDK PnP
 - EventCategoryHardwareProfileChange 通知
-- 配置文件更改通知 WDK 即插即用
+- 配置文件更改通知 WDK PnP
 - 注册硬件配置文件更改通知
-- 计算机硬件配置文件更改通知 WDK 即插即用
+- 计算机硬件配置文件更改通知 WDK PnP
 - IoRegisterPlugPlayNotification
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42a9cdf287197f4676f4d0461a685fa80c13645a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e52082e4a23e7b91ffdb78d8bdee048e5419268d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373461"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838464"
 ---
 # <a name="registering-for-hardware-profile-change-notification"></a>注册硬件配置文件更改通知
 
@@ -25,17 +25,17 @@ ms.locfileid: "67373461"
 
 
 
-驱动程序通过调用注册的硬件配置文件更改通知[ **IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)。
+驱动程序通过调用[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)来注册硬件配置文件更改的通知。
 
-以下信息适用于硬件配置文件更改通知才能调用该例程：
+以下信息适用于为硬件配置文件更改通知调用此例程：
 
--   指定*EventCategory*的**EventCategoryHardwareProfileChange**。
+-   指定**EventCategoryHardwareProfileChange**的*EventCategory* 。
 
--   *EventCategoryData*必须是**NULL**。
+-   *EventCategoryData*必须为**NULL**。
 
--   指定驱动程序定义*上下文*，如果合适，即插即用管理器将传递给回调例程。
+-   如果需要，请指定 PnP 管理器将传递到回调例程的驱动程序定义的*上下文*。
 
-驱动程序通过调用来消除通知注册[ **IoUnregisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iounregisterplugplaynotification)与*NotificationEntry*返回的**IoRegisterPlugPlayNotification**。
+驱动程序通过使用**IoRegisterPlugPlayNotification**返回的*NotificationEntry*调用[**IoUnregisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iounregisterplugplaynotification)来删除通知注册。
 
  
 

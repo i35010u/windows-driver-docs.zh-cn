@@ -3,30 +3,30 @@ title: 处理电源 IRP
 description: 处理电源 IRP
 ms.assetid: 0fe4f27a-101d-41af-8f00-fb36da5dc793
 keywords:
-- 电源管理 WDK 内核 Irp
+- 电源管理 WDK 内核，Irp
 - Irp WDK 电源管理
-- 有关 power Irp power Irp WDK 内核
+- power irp WDK 内核，关于 power Irp
 - IRP_MJ_POWER
 - IRP_MN_QUERY_POWER
 - IRP_MN_SET_POWER
 - IRP_MN_WAIT_WAKE
 - IRP_MN_POWER_SEQUENCE
 - 电源状态 WDK 内核
-- 指出 WDK 电源管理
+- 状态 WDK 电源管理
 - 更改电源状态 WDK 内核
-- 节省电源 WDK 内核
+- 保存电源 WDK 内核
 - 睡眠电源管理 WDK 内核
-- 查询能耗状态
-- 睡眠状态的设备 WDK 电源管理
-- I/O 请求数据包 WDK 电源管理
+- 查询电源状态
+- 睡眠设备 WDK 电源管理
+- I/o 请求数据包 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7896440bed422e3348c252e0f8c4d9e5809b45c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec6ae561af2a1a93c1c0c8a1d1b2700f1a8f4de1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371905"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836488"
 ---
 # <a name="handling-power-irps"></a>处理电源 IRP
 
@@ -34,23 +34,23 @@ ms.locfileid: "67371905"
 
 
 
-驱动程序处理中的电源 Irp [ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 所有电源管理都请求具有重大的 IRP 代码[ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)和次要的以下代码之一：
+驱动程序在[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中处理电源 irp。 所有电源管理请求都具有主要 IRP 代码[**irp\_MJ\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)和以下次要代码之一：
 
-[**IRP\_MN\_查询\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power) — 查询以确定是否更改电源状态为可行
+[**IRP\_MN\_QUERY\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power) -查询以确定更改电源状态是否可行
 
-[**IRP\_MN\_设置\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) — 从一个电源状态到另一个请求更改
+[**IRP\_MN\_设置\_电源**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) -请求从一种电源状态更改为另一种电源状态
 
-[**IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) — 请求启用设备唤醒本身或系统
+[**IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) -请求启用设备来唤醒自身或系统
 
-[**IRP\_MN\_电源\_序列**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-power-sequence) — 请求以优化电源还原到特定设备的信息
+[**IRP\_MN\_电源\_序列**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-power-sequence) -请求信息以优化到特定设备的电源恢复
 
-为支持**IRP\_MN\_设置\_POWER**并**IRP\_MN\_查询\_POWER**是必需的。 所有驱动程序必须准备好处理这些 Irp。
+支持**IRP\_MN\_设置\_POWER** and **IRP\_MN\_查询**\_需要满足此要求。 所有驱动程序必须准备好处理这些 Irp。
 
-为支持**IRP\_MN\_等待\_唤醒**是所必需的任何设备都可以被唤醒以响应外部信号的设备堆栈中的所有驱动程序。 驱动程序将发送此 IRP，以允许唤醒设备。
+支持**IRP\_MN\_等待**任何设备的设备堆栈中的所有驱动程序\_唤醒，任何设备都可以唤醒响应外部信号。 驱动程序将发送此 IRP，使设备能够进行唤醒。
 
-为支持**IRP\_MN\_POWER\_序列**是可选的。 此 IRP 为提供了优化需要较长的时间来恢复电源的设备。
+支持**IRP\_MN\_POWER\_序列**是可选的。 此 IRP 为需要很长时间才能恢复电源的设备提供优化。
 
-系统电源操作或设备电源操作，可以指定 power IRP。 [系统电源 Irp](power-irps-for-the-system.md)并[Irp 用于单个设备的电源](power-irps-for-individual-devices.md)需要通过设备堆栈略有不同的路径，如以下各节中所述。
+Power IRP 可以指定系统电源操作或设备电源操作。 适用于单个设备的系统和[电源 irp](power-irps-for-individual-devices.md)的[power irp](power-irps-for-the-system.md)通过设备堆栈获取略微不同的路径，如以下各节中所述。
 
  
 

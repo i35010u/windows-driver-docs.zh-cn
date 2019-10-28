@@ -3,17 +3,17 @@ title: 无法验证对象句柄
 description: 无法验证对象句柄
 ms.assetid: 67d52ca8-4e86-4fe2-a541-f7a0e4040b93
 keywords:
-- 可靠性 WDK 内核对象句柄验证
-- 验证故障 WDK 内核
-- 对象句柄 WDK 内核
+- 可靠性 WDK 内核，对象句柄验证
+- 验证失败的 WDK 内核
+- 对象处理 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 352e771725815de8e4fb81d2ab88466315e56814
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc8f4a028e51bd06407dd6463bc03b91cbfb8909
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386605"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838698"
 ---
 # <a name="failure-to-validate-object-handles"></a>无法验证对象句柄
 
@@ -21,9 +21,9 @@ ms.locfileid: "67386605"
 
 
 
-某些驱动程序必须处理由调用方传递给它们的对象，或必须同时处理两个文件对象。 例如，调制解调器驱动程序可能会收到一个事件对象的句柄或网络驱动程序可能会收到两个不同的文件对象的句柄。 驱动程序必须验证这些句柄。 因为它们的传递由调用方，而不是通过 I/O 管理器，I/O 管理器不能执行任何验证检查。
+某些驱动程序必须操作由调用方传递给它们的对象，或者必须同时处理两个文件对象。 例如，调制解调器驱动程序可能会接收到事件对象的句柄，或者网络驱动程序可能会收到两个不同文件对象的句柄。 驱动程序必须验证这些句柄。 由于它们是由调用方传递的，而不是通过 i/o 管理器传递的，因此，i/o 管理器无法执行任何验证检查。
 
-例如，以下代码段中，驱动程序已传递的句柄**AscInfo-&gt;AddressHandle**，但还没有验证它，然后再调[ **ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obreferenceobjectbyhandle):
+例如，在以下代码段中，驱动程序已通过 **&gt;AscInfo AddressHandle**的句柄，但在调用[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)之前尚未对其进行验证：
 
 ```cpp
    //
@@ -42,9 +42,9 @@ ms.locfileid: "67386605"
             (fileObject->FsContext2 == TRANSPORT_SOCK) ) {
 ```
 
-尽管在调用**ObReferenceObjectByHandle**成功，因此代码无法确保返回的指针引用的文件对象; 它信任调用方传入正确的信息。
+尽管对**ObReferenceObjectByHandle**的调用成功，但代码无法确保返回的指针引用文件对象;它信任调用方来传入正确的信息。
 
-即使为调用的所有参数**ObReferenceObjectByHandle**都正确，并调用成功，则驱动程序仍可以获得意外的结果，如果文件对象不适用于其驱动程序。 在以下代码片段中，驱动程序假定成功调用返回指向其预期的文件对象的指针：
+即使对**ObReferenceObjectByHandle**的调用的所有参数都是正确的，并且调用成功，如果文件对象不用于其驱动程序，驱动程序仍可能会收到意外的结果。 在下面的代码片段中，驱动程序假定成功调用返回了一个指向它所需的文件对象的指针：
 
 ```cpp
    status = ObReferenceObjectByHandle (
@@ -64,19 +64,19 @@ ms.locfileid: "67386605"
    if ( AcpEndpoint->Type != BlockTypeEndpoint ) 
 ```
 
-尽管**ObReferenceObjectByHandle**返回指向文件对象，该驱动程序的指针具有不能保证该指针指向它应为文件对象。 在这种情况下，该驱动程序应访问在特定于驱动程序的数据前验证指针**AcpEndpointFileObject-&gt;FsContext**。
+尽管**ObReferenceObjectByHandle**返回指向文件对象的指针，但驱动程序无法保证指针引用它所需的文件对象。 在这种情况下，驱动程序应在访问 AcpEndpointFileObject 的特定于驱动程序的数据之前验证指针 **&gt;FsContext**。
 
-若要避免此类问题，驱动程序应检查有效的数据，按如下所示：
+若要避免此类问题，驱动程序应检查是否存在有效数据，如下所示：
 
--   检查以确保它是驱动程序的预期的对象类型。
+-   检查对象类型，确保它是驱动程序所需的类型。
 
--   请确保所请求的访问是适用于的对象类型和所需的任务。 如果您的驱动程序执行快速文件复制，例如，请确保该句柄具有读取访问权限。
+-   确保请求的访问适用于对象类型和所需的任务。 例如，如果您的驱动程序执行快速文件复制，请确保该句柄具有读取访问权限。
 
--   请务必指定正确的访问模式 (**UserMode**或**KernelMode**) 和访问模式适用于请求的访问权限。
+-   请确保指定正确的访问模式（**UserMode**或**KernelMode**），并且访问模式与请求的访问权限兼容。
 
--   如果该驱动程序需要的驱动程序本身创建的文件对象的句柄，验证对驱动程序的设备对象的句柄。 但是，请注意不要执行中断发送的奇怪的设备的 I/O 请求的筛选器。
+-   如果驱动程序需要驱动程序自身创建的文件对象的句柄，请根据设备对象或驱动程序验证该句柄。 但是，请注意不要中断发送对奇怪设备的 i/o 请求的筛选器。
 
--   如果您的驱动程序支持多个类型的文件对象 （如控制通道、 地址对象和 TDI 驱动程序的连接或卷、 目录和文件的文件系统的对象），请确保有一种方法来区分它们。
+-   如果你的驱动程序支持多种文件对象（如控制通道、地址对象和 TDI 驱动程序的连接，或者文件系统的卷、目录和文件对象的连接），请确保你有办法区分它们。
 
  
 

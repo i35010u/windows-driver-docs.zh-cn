@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_TUNER\_MODE
-description: 用户模式下客户端使用 KSPROPERTY\_调谐器\_模式属性来获取或设置的设备，如模拟电视、 数字电视、 FM、 AM、 优化模式或 DSS。 必须实现此属性。
+title: KSPROPERTY\_调谐器\_模式
+description: 用户模式客户端使用 KSPROPERTY\_调谐器\_MODE 属性来获取或设置设备的优化模式，如模拟电视、数字电视、FM、AM 或 DSS。 必须实现此属性。
 ms.assetid: 84df4030-3836-48de-be83-ecd749839081
 keywords:
-- KSPROPERTY_TUNER_MODE 流式处理媒体设备
+- KSPROPERTY_TUNER_MODE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b96328c765e52cd5b35e8ec5606aa97be79d0f6a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b7e3e7891b71f706caafd3309ca3a1cc171f841e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355988"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837911"
 ---
-# <a name="kspropertytunermode"></a>KSPROPERTY\_TUNER\_MODE
+# <a name="ksproperty_tuner_mode"></a>KSPROPERTY\_调谐器\_模式
 
 
-用户模式下客户端使用 KSPROPERTY\_调谐器\_模式属性来获取或设置的设备，如模拟电视、 数字电视、 FM、 AM、 优化模式或 DSS。 必须实现此属性。
+用户模式客户端使用 KSPROPERTY\_调谐器\_MODE 属性来获取或设置设备的优化模式，如模拟电视、数字电视、FM、AM 或 DSS。 必须实现此属性。
 
 ## <span id="ddk_ksproperty_tuner_mode_ks"></span><span id="DDK_KSPROPERTY_TUNER_MODE_KS"></span>
 
 
-### <a name="usage-summary-table"></a>使用率摘要表
+### <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -41,7 +41,7 @@ ms.locfileid: "67355988"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Get</th>
+<th>“获取”</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "67355988"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>是</p></td>
-<td><p>是</p></td>
-<td><p>Pin</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)"><strong>KSPROPERTY_TUNER_MODE_S</strong></a></p></td>
+<td><p>“是”</p></td>
+<td><p>“是”</p></td>
+<td><p>大头针</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_TUNER_MODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)"><strong>KSPROPERTY_TUNER_MODE_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ ms.locfileid: "67355988"
 
  
 
-属性值 （操作数据） 为 ULONG，用于指定调谐器的当前优化模式。
+属性值（操作数据）是一个 ULONG，指定调谐器的当前优化模式。
 
 <a name="remarks"></a>备注
 -------
 
-**模式下**KSPROPERTY 成员\_调谐器\_模式\_S 结构指定的当前调谐器模式。
+KSPROPERTY\_调谐器\_\_模式的**模式**成员指定当前调谐器模式。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,18 +78,18 @@ ms.locfileid: "67355988"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h （包括 Ksmedia.h）</td>
+<td><p>标头</p></td>
+<td>Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_调谐器\_模式\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)
+[**KSPROPERTY\_调谐器\_模式\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_tuner_mode_s)
 
  
 

@@ -4,80 +4,80 @@ description: 筛选扩展
 ms.assetid: EDE50213-DFA0-4D8B-9E15-12AED8FDE5CA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6474dd4ba003fd7ae3b991793c58b266e23c6eb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 07b6142848ac3041b641d769632f63de12f4e0db
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353344"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837752"
 ---
 # <a name="filtering-extensions"></a>筛选扩展
 
 
-筛选扩展的 HYPER-V 可扩展交换机可以检查、 修改和可扩展交换机数据路径中插入数据包。 基于可扩展交换机端口和交换机策略设置，该扩展可以丢弃数据包或排除其交付到一个或多个目标端口。
+Hyper-v 可扩展交换机筛选扩展可检查、修改和插入可扩展交换机数据路径中的数据包。 根据可扩展交换机端口和交换机策略设置，扩展可以删除数据包或排除其向一个或多个目标端口的传递。
 
-捕获扩展中的入口数据路径之后和出口数据路径中的转发扩展之后调用筛选扩展。 有关这些数据路径的详细信息，请参阅[HYPER-V 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
+筛选扩展在捕获传入数据路径中的扩展后和传出数据路径中的转发扩展后调用。 有关这些数据路径的详细信息，请参阅[Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 
-筛选扩展可以执行以下命令，并获得入口数据路径的数据包：
+筛选扩展可对在入口数据路径上获取的数据包执行以下操作：
 
--   筛选数据包流量和强制实施自定义端口或切换通过可扩展交换机的数据包传递的策略。 筛选扩展筛选器中的入口数据路径的数据包，它可以应用筛选规则仅根据数据包的起源的源端口和网络适配器连接。 此信息存储在带外 (OOB) 数据的一个数据包[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构并且可以通过使用获取[ **NET\_缓冲区\_列表\_交换机\_转发\_详细**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)宏。
+-   筛选数据包流量，并强制使用自定义端口或交换机策略，通过可扩展交换机进行数据包传送。 当筛选扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的带外（OOB）数据中，可以通过使用[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)获取\_\_\_的详细信息宏定义.
 
-    **请注意**获取入口数据路径上的数据包不包含目标端口。 可以仅在获得出口数据路径上的数据包筛选基于目标端口的数据包。
+    **注意** 在入口数据路径上获取的数据包不包含目标端口。 只能对在出口数据路径上获取的数据包筛选基于目标端口的数据包。
 
-    由独立软件供应商 (ISV) 定义自定义策略。 通过 HYPER-V WMI 管理层管理有关此策略类型的属性设置。 筛选扩展配置的对象标识符 (OID) 请求通过这些属性设置[OID\_交换机\_端口\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)和[OID\_交换机\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)。
+    自定义策略是由独立软件供应商（ISV）定义的。 此策略类型的属性设置通过 Hyper-v WMI 管理层进行管理。 筛选扩展通过 OID 的对象标识符（OID）请求（ [\_switch\_端口\_属性\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)和[OID\_switch\_属性配置了这些属性设置\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)。
 
-    有关自定义可扩展端口或交换机策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
+    有关自定义可扩展端口或交换机策略的详细信息，请参阅[管理 Hyper-v 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
 
-    **请注意**仅转发扩展可强制实施通过可扩展交换机的数据包发送的标准端口策略。
+    **注意** 只有转发扩展可以通过可扩展交换机强制实施标准端口策略来传送数据包。
 
--   将新的、 已修改，或克隆数据包注入到入口数据路径。
+-   将新的、已修改或已克隆的数据包注入入入口数据路径。
 
-    有关详细信息，请参阅[HYPER-V 可扩展交换机发送和接收操作](hyper-v-extensible-switch-send-and-receive-operations.md)。
+    有关详细信息，请参阅[Hyper-v 可扩展交换机发送和接收操作](hyper-v-extensible-switch-send-and-receive-operations.md)。
 
-筛选扩展可以执行以下命令，并获得出口数据路径的数据包：
+筛选扩展可对在出口数据路径上获取的数据包执行以下操作：
 
--   筛选数据包流量和强制实施自定义端口或切换通过可扩展交换机的数据包传递的策略。 筛选扩展筛选器的出口数据路径中的数据包，它可以应用基于数据包的源或目标端口的筛选规则。 目标端口数据存储在数据包的 OOB 数据[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)结构。 扩展插件获取此信息通过调用[ *GetNetBufferListDestinations* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)函数。
+-   筛选数据包流量，并强制使用自定义端口或交换机策略，通过可扩展交换机进行数据包传送。 当筛选扩展筛选出出口数据路径中的数据包时，它可以根据数据包的源或目标端口应用筛选规则。 目标端口数据存储在数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中。 扩展通过调用[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)函数获取此信息。
 
--   排除数据包传递到一个或多个可扩展交换机目标端口。 这允许要排除的数据包传递到可扩展的交换机端口的筛选扩展。
+-   排除将数据包传递到一个或多个可扩展交换机目标端口。 这允许筛选扩展排除数据包到可扩展交换机端口的传送。
 
-    有关如何排除的数据包发送到可扩展交换机端口的详细信息，请参阅[可扩展交换机目标端口不包括数据包传递](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
+    有关如何将数据包传递到可扩展交换机端口的详细信息，请参阅[排除数据包传递到可扩展交换机目标端口](excluding-packet-delivery-to-extensible-switch-destination-ports.md)。
 
--   管理是通过推迟的出口数据路径上的数据包转发到一个或多个目标端口的通信流。
+-   通过延迟传出数据路径上的数据包转发，管理流量流向一个或多个目标端口。
 
-    例如，一个支持质量 (QoS) 服务的功能的筛选扩展插件可能想要立即调用[ **NdisFSendNetBufferLists** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisfsendnetbufferlists)转发指定具有较高的数据包优先级值。 根据具体的流量流，该扩展可能想要在更高版本时转发的数据包，其中的较低的优先级值。
+    例如，支持服务质量（QoS）功能的筛选扩展可能希望立即调用[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)来转发使用较高优先级值指定的数据包。 根据流量的不同，扩展可能需要在以后转发具有较低优先级值的数据包。
 
--   修改数据包数据。 如果需要修改在包中的数据筛选扩展，必须先克隆数据包而无需保留端口的目标。 然后，该扩展必须将修改后的数据包注入到入口数据路径。 这允许修改数据包上强制实施策略的基础扩展并转发扩展可以添加端口的目标。
+-   修改包数据。 如果筛选扩展需要修改数据包中的数据，则必须先克隆数据包，而不保留端口目标。 然后，该扩展插件必须将已修改的数据包注入入入口数据路径。 这允许基础扩展在已修改的数据包上强制实施策略，转发扩展可以添加端口目标。
 
-    有关详细信息，请参阅[克隆数据包流量](cloning-or-duplicating-packet-traffic.md)。
+    有关详细信息，请参阅[克隆数据包通信](cloning-or-duplicating-packet-traffic.md)。
 
-除了检查 OID 请求和 NDIS 状态指示，筛选扩展可以执行以下操作：
+除了检查 OID 请求和 NDIS 状态指示，筛选扩展还可以执行以下操作：
 
--   通过返回状态来禁止创建可扩展交换机端口或网络适配器连接\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，筛选扩展可通过返回状态否决的端口创建请求\_数据\_不\_时，驱动程序收到 OID 集请求的接受[OID\_开关\_端口\_创建](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)。
+-   通过返回适用于适用的可扩展交换机 Oid 的状态\_数据\_不\_接受，拒绝创建可扩展交换机端口或网络适配器连接。 例如，当驱动程序接收 oid [\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-create)的 oid 设置请求时，筛选扩展可以拒绝端口创建\_请求，\_不\_接受该请求。
 
-    **请注意**筛选扩展不要创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘发出 Oid 以通知有关创建或删除的端口或网络适配器连接基础的筛选器驱动程序。 有关详细信息，请参阅[HYPER-V 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
+    **注意** 筛选扩展不会创建或删除端口或网络适配器连接。 可扩展交换机的协议边缘会发出 Oid，通知底层筛选器驱动程序创建或删除端口或网络适配器连接的过程。 有关详细信息，请参阅[Hyper-v 可扩展交换机端口和网络适配器状态](hyper-v-extensible-switch-port-and-network-adapter-states.md)。
 
--   通过返回状态来添加或更新可扩展交换机或端口策略禁止\_数据\_不\_接受适用的可扩展交换机 Oid。 例如，筛选扩展有权添加端口策略决策通过返回状态\_数据\_不\_时在扩展插件接收的 OID 集请求接受[OID\_交换机\_端口\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)。
+-   通过返回适用于适用的可扩展交换机 Oid 的状态\_数据\_\_，拒绝添加或更新可扩展交换机或端口策略。 例如，筛选扩展可以通过返回\_数据\_不\_接受的状态来拒绝端口策略的添加。当扩展接收 oid 的 OID 集请求时， [\_SWITCH\_端口\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)。
 
-    有关可扩展交换机策略的详细信息，请参阅[管理的 HYPER-V 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
+    有关可扩展交换机策略的详细信息，请参阅[管理 Hyper-v 可扩展交换机策略](managing-hyper-v-extensible-switch-extensibility-policies.md)。
 
 筛选扩展具有以下要求：
 
--   筛选扩展必须作为支持可扩展交换机接口的 NDIS 筛选器驱动程序开发。
+-   筛选扩展必须开发为支持可扩展交换机接口的 NDIS 筛选器驱动程序。
 
     有关筛选器驱动程序的详细信息，请参阅[NDIS 筛选器驱动程序](ndis-filter-drivers2.md)。
 
-    有关如何编写筛选扩展的详细信息，请参阅[编写的 HYPER-V 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
+    有关如何编写筛选扩展的详细信息，请参阅[编写 Hyper-v 可扩展交换机扩展](writing-hyper-v-extensible-switch-extensions.md)。
 
-    **请注意**Windows 筛选平台 (WFP) 提供了筛选扩展 (Wfplwfs.sys) 框中可扩展交换机。 该扩展允许 WFP 筛选器或标注驱动程序来截获的 HYPER-V 可扩展交换机数据路径上的数据包。 这允许筛选器或标注驱动程序来执行数据包检查或修改使用 WFP 管理和系统函数。 有关 WFP 的概述，请参阅[Windows 筛选平台](porting-packet-processing-drivers-and-apps-to-wfp.md)。
+    **注意** Windows 筛选平台（WFP）提供内置的可扩展交换机筛选扩展（Wfplwfs）。 此扩展允许 WFP 筛选器或标注驱动程序按照 Hyper-v 可扩展交换机数据路径截获数据包。 这允许筛选器或标注驱动程序使用 WFP 管理和系统函数执行数据包检查或修改。 有关 WFP 的概述，请参阅[Windows 筛选平台](porting-packet-processing-drivers-and-apps-to-wfp.md)。
 
--   筛选扩展的 INF 文件必须为修改的筛选器驱动程序安装该驱动程序。 NDIS 监视筛选器驱动程序不能安装在可扩展交换机驱动程序堆栈。
+-   筛选扩展的 INF 文件必须安装驱动程序作为修改筛选器驱动程序。 NDIS 监视筛选器驱动程序不能安装在可扩展交换机驱动程序堆栈中。
 
-    有关修改筛选器驱动程序的详细信息，请参阅[类型的筛选器驱动程序](types-of-filter-drivers.md)。
+    有关修改筛选器驱动程序的详细信息，请参阅[筛选器驱动程序的类型](types-of-filter-drivers.md)。
 
-    修改筛选器驱动程序的 INF 要求的详细信息，请参阅[配置修改筛选器驱动程序 INF 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
+    有关修改筛选器驱动程序的 INF 要求的详细信息，请参阅[配置修改筛选器驱动程序的 Inf 文件](configuring-an-inf-file-for-a-modifying-filter-driver.md)。
 
--   **FilterClass**值 INF 文件中的筛选器驱动程序必须设置为**ms\_切换\_筛选器**。 有关详细信息，请参阅[INF 的 HYPER-V 可扩展交换机扩展的要求](inf-requirements-for-hyper-v-extensions.md)。
+-   必须将筛选器驱动程序的 INF 文件中的**FilterClass**值设置为**ms\_交换机\_filter**。 有关详细信息，请参阅[Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)。
 
--   可以绑定并启用了可扩展交换机的每个实例在驱动程序堆栈中任意数量的筛选扩展。 默认情况下，多个筛选扩展排序基于安装时。 例如，多个筛选扩展已分层在可扩展交换机驱动程序堆栈中使用最近安装的扩展在堆栈中的其他筛选扩展的上面。
+-   对于可扩展交换机的每个实例，可以在驱动程序堆栈中绑定和启用任意数量的筛选扩展。 默认情况下，多个筛选扩展基于其安装时间进行排序。 例如，多个筛选扩展在可扩展交换机驱动程序堆栈中分层，其中最新安装的扩展位于堆栈中的其他筛选扩展之上。
 
-    它们是绑定，可扩展交换机实例中启用后，可以重新排序筛选扩展可扩展交换机驱动程序堆栈中的分层。 有关详细信息，请参阅[重新排序的 HYPER-V 可扩展交换机扩展](reordering-hyper-v-extensibility-switch-extensions.md)。
+    在可扩展交换机的实例中绑定和启用后，可对可扩展交换机驱动程序堆栈中筛选扩展的分层进行重新排序。 有关详细信息，请参阅对[Hyper-v 可扩展交换机扩展重新排序](reordering-hyper-v-extensibility-switch-extensions.md)。

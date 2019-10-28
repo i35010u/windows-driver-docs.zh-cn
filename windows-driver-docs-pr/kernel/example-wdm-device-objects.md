@@ -3,22 +3,22 @@ title: 示例 WDM 设备对象
 description: 示例 WDM 设备对象
 ms.assetid: 8da56415-5018-468c-99c7-3969e5c00285
 keywords:
-- 设备对象 WDK 内核示例
+- 设备对象 WDK 内核，示例
 - 鼠标 WDK 内核
 - 键盘 WDK 内核
-- 功能的设备对象 WDK 内核
+- 功能设备对象 WDK 内核
 - FDO WDK 内核
 - 物理设备对象 WDK 内核
 - PDOs WDK 内核
-- 筛选器 DOs WDK 内核
+- 筛选 DOs WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afcde6eb20b0a96af34c848fbd8566ae9db7ec3f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5fb50153d4b9d9d1ccf335d49639cad07b28290f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386626"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838703"
 ---
 # <a name="example-wdm-device-objects"></a>示例 WDM 设备对象
 
@@ -26,19 +26,19 @@ ms.locfileid: "67386626"
 
 
 
-下图说明了该设备对象表示在图演示前面所示的键盘和鼠标设备[键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 在图演示所示的键盘和鼠标的驱动程序[键盘和鼠标的驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)创建这些设备对象通过调用 I/O 支持例程 ([**IoCreateDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)).
+下图说明了代表键盘和鼠标设备的设备对象，该图中显示的是键盘和鼠标设备，其中显示了[键盘和鼠标的硬件配置](sample-device-and-driver-configuration.md#keyboard-and-mouse-hardware-configurations)。 图中显示的键盘和鼠标驱动程序说明[键盘和鼠标驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)通过调用 i/o 支持例程（[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)）创建这些设备对象。
 
 ![键盘和鼠标设备对象](images/2sampdos.png)
 
-对于键盘和鼠标的设备，其相应的端口和类驱动程序创建设备对象。 端口驱动程序创建一个物理设备对象 (PDO) 来表示的物理端口。 每个类驱动程序创建其自己的功能的设备对象 (FDO) 来表示为目标的键盘或鼠标设备的 I/O 请求。
+对于键盘和鼠标设备，它们各自的端口和类驱动程序都创建设备对象。 端口驱动程序创建一个物理设备对象（PDO）来表示物理端口。 每个类驱动程序创建自己的功能设备对象（FDO），用于将键盘或鼠标设备表示为 i/o 请求的目标。
 
-每个类驱动程序调用到下一步低级驱动程序的设备对象，获取一个指针，因此类驱动程序可以在上面的驱动程序，可以是端口驱动程序链接本身的 I/O 支持例程。 然后在类驱动程序可以发送到目标 PDO 表示其物理设备的端口驱动程序的 I/O 请求。
+每个类驱动程序都调用 i/o 支持例程，以获取指向下一级驱动程序的设备对象的指针，因此，该类驱动程序可以将自身链接到该驱动程序，这是端口驱动程序。 然后，类驱动程序可以将 i/o 请求发送到表示其物理设备的目标 PDO 的端口驱动程序。
 
-添加到配置中的可选筛选器驱动程序将创建一个筛选器设备对象 （筛选器执行操作）。 类驱动程序，如可选筛选器驱动程序本身链接到设备堆栈中的下一步低驱动程序，并将发送到下一步低驱动程序的目标 PDO 的 I/O 请求。
+添加到配置的可选筛选器驱动程序将创建筛选器设备对象（筛选器）。 与类驱动程序一样，可选筛选器驱动程序将自身链接到设备堆栈中的下一个较低的驱动程序，并将目标 PDO 的 i/o 请求发送到下一个较低版本的驱动程序。
 
-如中所示的以前[键盘和鼠标的驱动程序层](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)图，每个端口驱动程序是总线 （最低级别） 驱动程序，因此每个端口驱动程序的生成中断的设备必须设置中断对象并将注册 ISR.
+如上图所示，每个端口[驱动程序都](sample-device-and-driver-configuration.md#keyboard-and-mouse-driver-layers)是一个总线（最低级别）驱动程序，因此，生成中断的设备的每个端口驱动程序都必须设置中断对象并注册 ISR。
 
-双设备端口驱动程序，如键盘和键盘和鼠标的硬件配置中所示，如果每个设备使用不同的中断向量的辅助设备控制器的 i8042 驱动程序。 编写此类的驱动程序，可以实现为每个设备的单独 Isr 或实现这两种设备单一 ISR。
+双设备端口驱动程序，如键盘和鼠标硬件配置中显示的键盘和辅助设备控制器的 i8042 驱动程序，如果每个设备使用不同的中断矢量。 写入此类驱动程序时，可以为每个设备实现单独的 Isr，或者为这两个设备实施单个 ISR。
 
  
 

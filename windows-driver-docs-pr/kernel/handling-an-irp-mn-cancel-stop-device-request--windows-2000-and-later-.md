@@ -6,52 +6,52 @@ keywords:
 - IRP_MN_CANCEL_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f497229f7a71aa30237073d5a88a315feac62d53
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7f805ca2b2cde39fd0fb20f557e73aced377eb5e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384240"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838670"
 ---
-# <a name="handling-an-irpmncancelstopdevice-request-windows-2000-and-later"></a>处理 IRP\_MN\_取消\_停止\_设备请求 (Windows 2000 及更高版本)
+# <a name="handling-an-irp_mn_cancel_stop_device-request-windows-2000-and-later"></a>处理 IRP\_MN\_取消\_停止\_设备请求（Windows 2000 及更高版本）
 
 
 
 
 
-[ **IRP\_MN\_取消\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)按设备父总线驱动程序，然后按每个下一步必须首先处理请求更高版本设备堆栈中的驱动程序。 驱动程序句柄停止 Irp 中的其[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
+[**IRP\_MN\_CANCEL\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)请求必须首先由设备的父总线驱动程序处理，然后再由设备堆栈中的每个较高的驱动程序处理。 驱动程序处理其[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中的停止 irp。
 
-以响应**IRP\_MN\_取消\_停止\_设备**请求时，驱动程序必须将设备恢复为其已启动状态并继续正常操作。 驱动程序必须成功取消停止 IRP。
+为了响应**IRP\_MN\_CANCEL\_停止\_设备**请求，驱动程序必须将设备恢复到其已启动状态并恢复正常操作。 驱动程序必须成功完成取消-停止 IRP。
 
-驱动程序处理**IRP\_MN\_取消\_停止\_设备**请求的过程如下所示：
+驱动程序处理**IRP\_MN\_CANCEL\_停止\_设备**请求，步骤如下：
 
-1.  推迟重新启动设备，直到低级驱动程序已完成其重启操作。 (请参阅[低级驱动程序完成之前推迟 PnP IRP 处理](postponing-pnp-irp-processing-until-lower-drivers-finish.md)。)
+1.  在较低的驱动程序完成其重新启动操作之前，请推迟重新启动设备。 （请参阅[推迟 PNP IRP 处理，直到驱动程序的驱动程序完成](postponing-pnp-irp-processing-until-lower-drivers-finish.md)。）
 
-2.  较低的驱动程序完成后，将设备恢复为其已启动状态。
+2.  在较低的驱动程序完成后，将设备恢复到其启动状态。
 
     具体操作取决于设备和驱动程序。
 
-3.  启动 Irp IRP 控股队列中。
+3.  在 IRP 中启动 irp-保存队列。
 
-    如果设备处于停止挂起状态时，驱动程序已保存请求，清除保留\_新建\_请求标志和启动 Irp IRP 控股队列中。 请参阅[持有传入 Irp 时设备暂停](holding-incoming-irps-when-a-device-is-paused.md)有关详细信息。
+    如果在设备处于停止挂起状态时驱动程序持有请求，请清除 "保留\_新的\_请求" 标志，并在 IRP 持有的队列中启动 Irp。 有关详细信息，请参阅[在设备暂停时保留传入 irp](holding-incoming-irps-when-a-device-is-paused.md) 。
 
-4.  完成与 IRP [ **IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)。
+4.  完成 IRP with [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)。
 
-    -   在函数或筛选器驱动程序：
+    -   在函数或筛选器驱动程序中：
 
-        在驱动程序[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程返回状态\_详细\_处理\_必需的如中所述[推迟 PnP IRP处理直到较低的驱动程序完成](postponing-pnp-irp-processing-until-lower-drivers-finish.md)，因此驱动程序的*DispatchPnP*例程必须调用**IoCompleteRequest**恢复 I/O 完成处理。
+        驱动程序的[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程返回状态\_\_需要更多的\_处理，如[推迟 PnP IRP 处理直到较低的驱动程序完成](postponing-pnp-irp-processing-until-lower-drivers-finish.md)，因此驱动程序的*DispatchPnP*例程必须调用**IoCompleteRequest**恢复 i/o 完成处理。
 
-        驱动程序集**Irp-&gt;IoStatus.Status**于状态\_成功后，调用**IoCompleteRequest** IO 优先级提升与\_否\_增量，并返回状态\_成功从其*DispatchPnP*例程。
+        驱动程序将**Irp&gt;IoStatus**的状态设置为 STATUS\_SUCCESS，调用**IoCompleteRequest** ，并且优先级提升为 IO\_no\_增量，并从其*DISPATCHPNP*例程返回状态\_SUCCESS。
 
-        驱动程序不得失败此操作。 如果驱动程序失败重启 IRP，设备处于不一致状态，并将无法正常运行。
+        驱动程序不能使此操作失败。 如果驱动程序未能重新启动 IRP，则设备处于不一致状态，并且不会正常运行。
 
-    -   在父总线驱动程序：
+    -   在父总线驱动程序中：
 
-        驱动程序集**Irp-&gt;IoStatus.Status**于状态\_成功和调用**IoCompleteRequest**指定的 IO 优先级提升\_否\_增量。 总线驱动程序将返回状态\_成功从其*DispatchPnP*例程。
+        驱动程序将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS，并调用**IOCOMPLETEREQUEST**来指定 IO\_无\_增量的优先级提升。 总线驱动程序从其*DispatchPnP*例程返回状态\_成功。
 
-        总线驱动程序不得失败此操作。 如果驱动程序失败重启 IRP，设备处于不一致状态，并将无法正常运行。
+        总线驱动程序不能使此操作失败。 如果驱动程序未能重新启动 IRP，则设备处于不一致状态，并且不会正常运行。
 
-当设备启动并处于活动状态时，驱动程序可能会收到虚假取消停止请求。 此问题，例如，如果该驱动程序 （或更高版本设备堆栈中的驱动程序） 故障[ **IRP\_MN\_查询\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)请求。 设备已启动并处于活动状态时，驱动程序可以安全地成功设备的虚假取消停止的请求。
+设备启动并处于活动状态时，驱动程序可能会收到虚假的取消-停止请求。 例如，如果驱动程序（或设备堆栈中较高版本的驱动程序）无法进行[**IRP\_MN\_QUERY\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)请求，则可能会发生这种情况。 设备启动并处于活动状态时，驱动程序可以安全地成功为设备执行虚假的取消停止请求。
 
  
 

@@ -7,12 +7,12 @@ keywords:
 - IoInitializeTimer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 295097a5b7e5d8af76591b0497be86b558a0c535
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0b52cdcd597811f2eb099992df30a41611396b9a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378791"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838484"
 ---
 # <a name="providing-iotimer-context-information"></a>提供 IoTimer 上下文信息
 
@@ -20,15 +20,15 @@ ms.locfileid: "67378791"
 
 
 
-*上下文*指针传递给[**最好**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializetimer)标识上下文区域的其他驱动程序例程，以及[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)例程本身，可以维护有关定时操作的状态。 I/O 管理器传递*上下文*指针时它将调用*IoTimer*例程。
+传递给[**IoInitializeTimer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializetimer)的*上下文*指针会标识一个上下文区域，其中其他驱动程序例程和[*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)例程本身都可以维护有关计时操作的状态。 每次调用*IoTimer*例程时，i/o 管理器都将传递*上下文*指针。
 
-因为*IoTimer*例程运行在 IRQL = 调度\_级别，其上下文区域必须在常驻，系统空间内存中。 具有大多数驱动程序*IoTimer*例程使用[设备扩展](device-extensions.md)形式的关联的设备对象的*上下文*-访问区域中，但上下文可以改为是如果驱动程序使用的控制器扩展[控制器对象](using-controller-objects.md)或非分页缓冲池分配驱动程序中。
+由于*IoTimer*例程是在 IRQL = 调度\_级别运行的，因此其上下文区域必须在常驻的系统空间内存中。 大多数具有*IoTimer*例程的驱动程序使用关联设备对象的[设备扩展](device-extensions.md)作为*上下文*可访问的区域，但如果驱动程序使用[控制器对象](using-controller-objects.md)或驱动程序分配的非分页池中。
 
-**请遵循以下准则，以便** *IoTimer * * * 例程的上下文区域：* *
+对于*IoTimer * * * 例程的上下文区域* **，请遵循以下准则**：*
 
--   如果*IoTimer*例程与驱动程序的 ISR 共享其上下文区域，则必须使用[ **KeSynchronizeExecution** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)调用[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)以包含多个处理器安全的方式访问的上下文区域的例程。 有关详细信息，请参阅[使用临界区](using-critical-sections.md)。
+-   如果*IoTimer*例程与驱动程序的 ISR 共享其上下文区域，则它必须使用[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)来调用[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程，该例程通过多处理器安全的方式访问上下文区。 有关详细信息，请参阅[使用关键部分](using-critical-sections.md)。
 
--   如果*IoTimer*例程不与 ISR 共享其上下文区域，但共享它与另一个驱动程序例程，驱动程序必须保护的共享的上下文区域初始化 executive 数值调节钮锁定后，若要访问上下文以包含多个处理器安全的方式的信息。 有关详细信息，请参阅[旋转锁](spin-locks.md)。
+-   如果*IoTimer*例程不与 ISR 共享其上下文区域，而是与另一个驱动程序例程共享它，则驱动程序必须使用已初始化的执行单元旋转锁来保护共享上下文区域，以便访问多处理器安全的方式。 有关详细信息，请参阅[自旋锁](spin-locks.md)。
 
  
 

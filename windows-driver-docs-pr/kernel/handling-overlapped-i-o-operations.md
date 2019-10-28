@@ -7,15 +7,15 @@ keywords:
 - Dpc WDK 内核
 - DpcForIsr
 - CustomDpc
-- 重叠的 I/O WDK 内核
+- 重叠 i/o WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8899a618b7bc75f4b9f39a831505b286236c22
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0472de766928ce711d81b98c2731281621e4c2df
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375223"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838657"
 ---
 # <a name="handling-overlapped-io-operations"></a>处理重叠的 I/O 操作
 
@@ -23,17 +23,17 @@ ms.locfileid: "67375223"
 
 
 
-[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程的重叠操作在其设备上的驱动程序不能依赖于一对一请求的输入之间的通信[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程和 ISR 调用[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc)或[ **KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinsertqueuedpc)。 此类的驱动程序的*DpcForIsr*或*CustomDpc*一定不能使用的 IRP 和 ISR 提供上下文中，输入的指向或**CurrentIrp**目标中的指针设备对象，若要完成仅该 IRP。
+与设备上的操作重叠的驱动程序的[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或[*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程不能依赖于[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程的请求输入与 ISR 对[**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)的调用或[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)。 此类驱动程序的*DpcForIsr*或*CustomDpc*不一定要使用指向 irp 和 ISR 提供的上下文的输入指针，或目标设备对象中的**CURRENTIRP**指针来仅完成 irp。
 
-在任何给定时刻，不能两次排队相同 DPC 对象。 如果调用了 ISR **IoRequestDpc**或**KeInsertQueueDpc**多次在相应*DpcForIsr*或者*CustomDpc*执行DPC 例程只运行一次当处理器上的 IRQL 低于调度\_级别。 另一方面，如果调用 ISR **IoRequestDpc**或**KeInsertQueueDpc**而相应*DpcForIsr*或者*CustomDpc*是在另一个处理器上运行，DPC 例程可以在两个处理器上同时运行。
+在任意给定时刻，同一个 DPC 对象不能排队两次。 如果某个 ISR 多次调用**IoRequestDpc**或**KeInsertQueueDpc** ，则在执行相应的*DpcForIsr*或*CustomDpc*之前，仅当处理器上的 IRQL 低于\_级别时，DPC 例程才会运行一次。 另一方面，如果 ISR 调用**IoRequestDpc**或**KeInsertQueueDpc** ，而相应的*DpcForIsr*或*CustomDpc*在其他处理器上运行，则 DPC 例程可以同时在两个处理器上运行。
 
-因此，任何重叠的 I/O 操作中断驱动其设备上的驱动程序必须具有以下：
+因此，在其设备上与中断驱动的 i/o 操作重叠的任何驱动程序必须具有以下各项：
 
--   一个*DpcForIsr*或*CustomDpc*例程可以完成一些驱动程序维护调用的每次未完成请求的计数
+-   一个*DpcForIsr*或*CustomDpc*例程，每次调用时都可以完成某个驱动程序维护的未处理请求计数
 
--   永远不会覆盖传递到的上下文信息 ISR *DpcForIsr*或*CustomDpc*例程，直到该例程已使用的上下文信息并完成到 IRP 上下文信息所属
+-   永远不会覆盖传递到*DpcForIsr*或*CustomDpc*例程的上下文信息的 ISR，直到该例程使用上下文信息并完成了上下文信息所属的 IRP
 
--   一个*SynchCritSection*访问代表 ISR 的上下文区域的例程*DpcForIsr*或*CustomDpc*例程
+-   *SynchCritSection*例程，它代表*DpcForIsr*或*CustomDpc*例程访问 ISR 的上下文区域
 
  
 

@@ -4,18 +4,18 @@ description: 如何在 Dispatch 例程中完成 IRP
 ms.assetid: b29da791-e768-4f67-8e85-6cfbeca97220
 keywords:
 - 完成 Irp WDK 内核，调度例程
-- 完成 Irp 的调度例程 WDK 内核
-- WDK Irp 的状态信息
-- I/O 状态块 WDK 内核
-- 状态块 WDK 内核
+- 调度例程 WDK 内核，完成 Irp
+- 状态信息 WDK Irp
+- I/o 状态阻止 WDK 内核
+- 状态阻止 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e53261d4a715fe94d2a63a0964ed84aaee30125
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1176863800cb93ab75e1634d2052fb6ca46cd592
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371887"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838644"
 ---
 # <a name="how-to-complete-an-irp-in-a-dispatch-routine"></a>如何在 Dispatch 例程中完成 IRP
 
@@ -23,31 +23,31 @@ ms.locfileid: "67371887"
 
 
 
-如果可以立即完成输入的 IRP，调度例程执行以下任务：
+如果输入 IRP 可以立即完成，则调度例程会执行以下操作：
 
-1.  集**状态**并**信息**IRP 的 I/O 状态的成员使用适当的值，通常情况下阻止：
+1.  用适当的值设置 IRP 的 i/o 状态块的**状态**和**信息**成员，一般为：
 
-    -   调度例程集**状态**到状态\_成功或相应的错误 (状态\_*XXX*)，可以是对支持例程的调用返回的值或，对于某些同步请求，较低的驱动程序。
+    -   调度例程将**状态**设置为 "成功"\_"状态" 设置为 "成功" 或相应的 "错误" （"状态\_*XXX*"），这可能是通过调用支持例程返回的值或较低的驱动程序对某些同步请求返回的值。
 
-        如果较低级驱动程序将返回状态\_挂起状态，更高级别的驱动程序不应调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)的 IRP，有一个例外：更高级别的驱动程序可以使用某个事件之间的同步其[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程和中这种情况下其调度例程*IoCompletion*例程信号事件并返回状态\_更多\_处理\_必需。 调度例程等待事件，然后调用**IoCompleteRequest**完成 IRP。
+        如果较低级别的驱动程序返回状态\_"挂起"，则较高级别的驱动程序不应为 IRP 调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，但有一种例外情况：较高级别的驱动程序可以使用事件在其[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程和其调度例程，在这种情况下， *IoCompletion*例程向事件发出信号，并返回状态\_\_需要更多的\_处理。 调度例程等待事件，然后调用**IoCompleteRequest**来完成 IRP。
 
-    -   它会设置**信息**到的字节数已成功传输的请求来传输数据，如读取或写入请求，已满足。
+    -   如果满足了传输数据（如读取或写入请求）的请求，则它会将**信息**设置为成功传输的字节数。
 
-    -   它会设置**信息**状态完成其他 Irp 的特定请求而异的值\_成功。
+    -   它将**信息**设置为一个值，该值因特定请求而异，而该 irp 完成时状态\_成功。
 
-    -   它会设置**信息**Irp 完成但出现警告状态的特定请求而异的值\_*XXX*。 例如，它将设置**信息**到的字节数与状态这样的警告的传输\_缓冲区\_溢出。
+    -   它将**信息**设置为一个值，该值根据其完成的特定请求的特定请求而变化，并且警告状态\_*XXX*。 例如，它会将**信息**设置为传输的字节数，作为状态\_缓冲区\_溢出。
 
-    -   通常情况下，它会设置**信息**为零的请求，它完成并显示错误状态\_*XXX*。
+    -   通常情况下，它会将**信息**设置为零，以使其完成并且错误状态\_*XXX*。
 
-2.  调用**IoCompleteRequest** IRP 和*PriorityBoost* = IO\_否\_增量。
+2.  通过 IRP 和*PriorityBoost* = IO 调用**IOCOMPLETEREQUEST** ，\_没有\_递增。
 
-3.  返回的相应状态\_*XXX*它已将设置 I/O 状态块中。 请注意，调用**IoCompleteRequest**使给定的 IRP，调用方，不可访问，因此不能从已完成的 IRP 的 I/O 状态块设置的调度例程的返回值。
+3.  返回在 i/o 状态块中已设置的相应状态\_*XXX* 。 请注意，对**IoCompleteRequest**的调用会使给定的 IRP 无法由调用方访问，因此来自调度例程的返回值不能从已经完成的 irp 的 i/o 状态块设置。
 
-**请按照用于调用与 IRP IoCompleteRequest 本实现原则：**
+**遵循以下实现准则，使用 IRP 调用 IoCompleteRequest：**
 
-请务必发布之前，先在持有任何数值调节钮锁定**IoCompleteRequest**。
+在调用**IoCompleteRequest**之前，始终释放驱动程序所持有的任何自旋锁。
 
-需要确定的时间才能完成 IRP，尤其是在一个链分层驱动程序的进度。 此外，可能发生死锁，如果更高级别的驱动程序的*IoCompletion*例程发送 IRP 到较低的驱动程序持有自旋锁。
+完成 IRP 需要不确定的时间，特别是在一系列分层驱动程序中。 此外，如果较高级别的驱动程序的*IoCompletion*例程将 IRP 向下发送到持有自旋锁的较低驱动程序，则可能会发生死锁。
 
  
 

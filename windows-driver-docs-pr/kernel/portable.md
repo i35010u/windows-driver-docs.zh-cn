@@ -3,16 +3,16 @@ title: 可移植
 description: 可移植
 ms.assetid: 3ce16503-e375-44c1-82a7-796286c1a253
 keywords:
-- 可移植的驱动程序 WDK 内核
-- 依赖于平台的定义 WDK 内核
+- 便携驱动程序 WDK 内核
+- 平台相关的定义 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b81298c56a6cece7f40a60d024fc31ce9d4f1f1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6a00b2d226a90845aa5e472f243e92f577048432
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369694"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838504"
 ---
 # <a name="portable"></a>可移植
 
@@ -20,37 +20,37 @@ ms.locfileid: "67369694"
 
 
 
-所有驱动程序必须跨所有 Windows 支持的硬件平台可移植。 若要实现跨平台可移植性，驱动程序编写人员应：
+所有驱动程序都必须可在所有支持 Windows 的硬件平台上移植。 要实现跨平台可移植性，驱动程序编写人员应：
 
--   C （没有程序集语言） 中的代码。
+-   C 中的代码（无程序集语言）。
 
--   通过仅使用的编程接口和 WDK 中提供的标头与 Windows 进行交互。
+-   仅使用在 WDK 中提供的编程接口和标头与 Windows 交互。
 
-### <a name="coding-drivers-in-c"></a>编码 C 中的驱动程序
+### <a name="coding-drivers-in-c"></a>C 中的编码驱动程序
 
-应在 C 中编写所有内核模式驱动程序，以便他们可以用系统兼容 C 编译器重新编译、 重新链接，并在不同的 Microsoft Windows 平台上运行而无需重写或替换任何代码。 大多数操作系统组件完全在 C 中，编码的以便跨硬件平台的操作系统是随时可移植程序集语言编写的 HAL 和内核组件仅少量使用。 您不能使用许多C++语言中内核模式驱动程序，因此，应该仔细评估使用的此类构造的构造。 有关驱动程序包括时出现的问题详细信息C++功能，请参阅[C++内核模式驱动程序：优点和缺点](https://go.microsoft.com/fwlink/p/?linkid=56294)白皮书。
+所有内核模式驱动程序都应该用 C 编写，以便能够使用与系统兼容的 C 编译器重新编译、重新链接并在不同的 Microsoft Windows 平台上运行，而无需重写或替换任何代码。 大多数操作系统组件都是完全在 C 中进行编码的，只有少量的 HAL 和内核组件以汇编语言编写，才能使操作系统在硬件平台之间随时可以移植。 你不能使用C++内核模式驱动程序中的许多语言构造，因此应使用此类构造进行仔细评估。 有关驱动程序包括C++功能时出现的问题的详细信息，请参阅[ C++ for 内核模式驱动程序：优点和缺点](https://go.microsoft.com/fwlink/p/?linkid=56294)白皮书。
 
-如果不能保证这些功能必须由其他系统兼容编译器支持，驱动程序不应依赖于任何特定的系统兼容 C 编译器或 C 支持库的功能。 一般情况下，驱动程序代码应符合 ANSI C 标准，而依赖于此标准描述为"实现定义。"的任何内容
+如果驱动程序不保证其他系统兼容的编译器支持这些功能，驱动程序不应依赖于任何特定于系统兼容的 C 编译器或 C 支持库的功能。 通常，驱动程序代码应符合 ANSI C 标准，而不依赖于此标准将其描述为 "实现定义的任何内容"。
 
 若要编写可移植的驱动程序，最好避免：
 
--   数据类型可以不同大小或从一个平台到另一个布局中的依赖项。
+-   数据类型依赖于不同平台的大小或布局的依赖项。
 
--   调用对状态进行维护任何标准的 C 运行时库函数。
+-   调用维护状态的任何标准 C 运行时库函数。
 
--   调用的操作系统为其提供一个备用的支持例程的标准 C 运行时库函数。
+-   调用操作系统为其提供备用支持例程的任何标准 C 运行时库函数。
 
-### <a name="using-wdk-supplied-interfaces"></a>使用 WDK 提供接口
+### <a name="using-wdk-supplied-interfaces"></a>使用 WDK 提供的接口
 
-每个 Windows NT executive 组件将内核模式的一组导出[驱动程序支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)驱动程序和所有其他内核模式组件调用。 如果随着时间的推移发生更改的支持例程的底层实现，其调用方保持可移植的因为定义组件的接口不会更改。
+每个 Windows NT executive 组件都将导出一组内核模式[驱动程序支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，驱动程序和所有其他内核模式组件都调用。 如果支持例程的基础实现随时间而变化，则其调用方将保持可移植，因为定义组件的接口不会更改。
 
-WDK 提供了一组标头文件，用于定义特定于系统的数据类型和驱动程序 （和所有其他内核模式组件） 用于帮助维护到另一个从一个平台可移植性的常量。 所有内核模式驱动程序都包括一个主 WDK 内核模式标头文件、 wdm.h 中或 Ntddk.h。 不只系统提供的标头定义基本的内核模式类型，但也相应选择任何特定于处理器的体系结构标头时使用相应的编译器指令编译一个驱动程序中拉取的 master 头文件。
+WDK 提供一组标头文件，用于定义特定于系统的数据类型和常量，驱动程序（以及所有其他内核模式组件）使用这些文件来帮助保持从一个平台到另一个平台的可移植性。 所有内核模式驱动程序都包括一个主 WDK 内核模式标头文件（Wdm .h 或 Ntddk）。 主头文件不仅纳入系统提供的标头，用于定义基本内核模式类型，还提取驱动程序使用相应的编译器指令编译时的任何特定于处理器体系结构的标头。
 
-某些驱动程序，如[SCSI 微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/scsi-miniport-drivers)， [NDIS 驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556938(v=vs.85))，并[微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/display/video-miniport-drivers-in-the-windows-2000-display-driver-model)，包括其他系统提供的标头文件。
+某些驱动程序，如[SCSI 微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/scsi-miniport-drivers)、 [NDIS 驱动](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff556938(v=vs.85))程序和[视频微型端口驱动程序](https://docs.microsoft.com/windows-hardware/drivers/display/video-miniport-drivers-in-the-windows-2000-display-driver-model)，包括其他系统提供的标头文件。
 
-如果驱动程序需要依赖于平台的定义，最好将这些定义中的隔离 **\#ifdef**语句，以便每个驱动程序可以编译并链接为适当的硬件平台。 但是，您几乎总是可以避免在驱动程序中实现的任何特定于平台的、 有条件地编译代码，通过使用支持例程、 宏、 常量和 WDK master 头文件提供的类型。
+如果驱动程序需要与平台相关的定义，最好在 **\#ifdef**语句内隔离这些定义，以便为相应的硬件平台编译和链接每个驱动程序。 不过，您几乎始终可以通过使用 WDK 主头文件提供的支持例程、宏、常量和类型来避免在驱动程序中实现任何特定于平台的、有条件地编译代码。
 
-内核模式驱动程序可以使用内核模式**Rtl * Xxx*** WDK 中所述的例程。 内核模式驱动程序不能调用用户模式下**Rtl * Xxx*** 例程。
+内核模式驱动程序可以使用 WDK 中记录的内核模式**Rtl * Xxx*** 例程。 内核模式驱动程序无法调用用户模式**Rtl * Xxx*** 例程。
 
  
 

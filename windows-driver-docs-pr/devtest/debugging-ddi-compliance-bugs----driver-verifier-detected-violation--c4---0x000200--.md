@@ -1,34 +1,34 @@
 ---
-title: 调试 DRIVER_VERIFIER_DETECTED_VIOLATION (C4) 0x20002-0x20022
-description: 当有 DDI 符合性检查选项处于选中状态，并且驱动程序验证程序检测到驱动程序违反了某个 DDI 符合性规则时，驱动程序验证程序将生成错误检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION (参数 1 等于特定符合性规则的标识符）。
+title: 调试 DRIVER_VERIFIER_DETECTED_VIOLATION （C4） 0x20002-0x20022
+description: 如果选择了 "DDI 相容性检查" 选项，并且驱动程序验证器检测到该驱动程序违反了某个 DDI 符合性规则，则驱动程序验证器会生成 Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION （参数1等于特定符合性规则的标识符）。
 ms.assetid: 9817AC4B-2BE8-44AC-8C9B-DED5EF0A7DD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0768eeced30f61df33e77a794776cab31d6ce26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ec8f7bc380af1b3dc71e157a8e40c447e8d82310
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371561"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839572"
 ---
-# <a name="debugging-ddi-compliance-bugs---driververifierdetectedviolation-c4-0x20002---0x20022"></a>调试 DDI 符合性错误的驱动程序\_VERIFIER\_检测到\_冲突 (C4):0x20002 - 0x20022
+# <a name="debugging-ddi-compliance-bugs---driver_verifier_detected_violation-c4-0x20002---0x20022"></a>调试 DDI 相容性 bug-检测到\_验证程序\_的驱动程序\_冲突（C4）： 0x20002-0x20022
 
 
-当你具有[DDI 符合性检查](ddi-compliance-checking.md)选择选项，并且驱动程序验证程序检测到驱动程序违反了某个 DDI 符合性规则[Driver Verifier](driver-verifier.md)生成[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （参数 1 等于为特定的符合性规则的标识符）。
+如果选择了 " [DDI 相容性检查](ddi-compliance-checking.md)" 选项，并且驱动程序验证器检测到该驱动程序违反了某个 DDI 符合性规则，则[驱动程序验证](driver-verifier.md)器将生成[**BUG 检查0xC4：\_检测到的驱动程序\_验证程序\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（参数1等于特定符合性规则的标识符）。
 
-DDI 符合性规则可确保驱动程序正确地与 Windows 操作系统内核交互。 例如，规则将验证您的驱动程序在所需的 IRQL 对函数进行函数调用或驱动程序正确地获取和释放自旋锁。 本部分介绍调试这些冲突的一些示例策略。
+DDI 符合性规则确保驱动程序正确与 Windows 操作系统内核交互。 例如，这些规则验证驱动程序是否在函数所需的 IRQL 上进行了函数调用，或驱动程序是否正确获取并释放了自旋锁。 本部分介绍用于调试这些冲突的一些示例策略。
 
-## <a name="debugging-ddi-compliance-checking-violations"></a>调试 DDI 符合性检查冲突
+## <a name="debugging-ddi-compliance-checking-violations"></a>调试 DDI 相容性检查冲突
 
 
--   [使用 ！ 分析以显示 bug 检查有关的信息](#use-analyze-to-display-information-about-the-bug-check)
--   [使用 ！ ruleinfo 扩展命令](#use-the-ruleinfo-extension-command)
--   [使用 ！ 分析 – v 命令，以确定在源代码中的冲突的位置](#use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code)
--   [修复 DDI 符合性冲突的原因](#fixing-the-cause-of-the-ddi-compliance-violation)
+-   [使用！分析显示 bug 检查的相关信息](#use-analyze-to-display-information-about-the-bug-check)
+-   [使用！ ruleinfo extension 命令](#use-the-ruleinfo-extension-command)
+-   [使用！分析– v 命令在源代码中标识冲突的位置](#use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code)
+-   [解决 DDI 遵从性冲突的原因](#fixing-the-cause-of-the-ddi-compliance-violation)
 
-### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用 ！ 分析以显示 bug 检查有关的信息
+### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用！分析显示 bug 检查的相关信息
 
-最佳的第一步是运行后可以控制在调试器中出现任何错误检查，与一样[ **！ 分析-v** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)命令。
+与发生的任何 bug 检查一样，在控制调试器后，最好的第一步是运行[ **！分析-v**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)命令。
 
 ```
 *******************************************************************************
@@ -59,21 +59,21 @@ DV_MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=216021
 DV_RULE_INFO: 0x20004
 ```
 
-每当[Driver Verifier](driver-verifier.md)捕获[DDI 符合性检查](ddi-compliance-checking.md)冲突，将在提供有关冲突信息[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)输出。
+只要[驱动程序验证](driver-verifier.md)器捕获[DDI 相容性检查](ddi-compliance-checking.md)冲突，就会在[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)输出中提供有关冲突的信息。
 
-在此示例中， [ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)具有一个参数 1 (Arg1) 0x20004，指示已违反该驱动程序的值[ **IrqlExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)符合性规则。
+在此示例中， [**Bug 检查0xC4：检测到的驱动程序\_验证程序\_检测到\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)的参数1（Arg1）值为0x20004，这表示该驱动程序违反了[**IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)合规性规则。
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)输出包括以下信息：
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)输出包含以下信息：
 
-**DV\_VIOLATED\_条件：** 此字段提供导致规则冲突的原因的说明。 在此示例中，违反的条件时，驱动程序尝试分配内存在非常高的 IRQL 级别，或尝试分配的页面缓冲的池内存在调度\_级别。 例如，这可能已尝试调用的驱动程序[ **ExAllocatePoolWithTagPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtagpriority)中断服务例程 (ISR) 或尝试分配页面缓冲的池内存的驱动程序中同时保留自旋锁。
+**DV\_违反了\_条件：** 此字段提供了导致规则冲突的原因的说明。 在此示例中，违反的条件是驱动程序尝试以非常高的 IRQL 级别分配内存，或在调度\_级别尝试尝试分配页面缓冲池内存。 例如，这可能是一个尝试在中断服务例程（ISR）中调用[**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)的驱动程序，或者是一个在持有自旋锁时尝试分配页面缓冲池内存的驱动程序。
 
-**DV\_MSDN\_链接：** 在 WinDBG 中，这是导致调试器打开 MSDN 页显示的有关详细信息的活动链接[ **IrqlExAllocatePool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)规则。
+**DV\_MSDN\_链接：** 在 WinDBG 中，这是一个实时链接，它会使调试器打开 MSDN 页，其中显示了有关[**IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)规则的详细信息。
 
-**DV\_规则\_信息：** 在 WinDBG 中，这是将显示有关此规则从提供的帮助信息的调试器的活动链接。
+**DV\_规则\_信息：** 在 WinDBG 中，这是一个实时链接，它将从调试器上可用的帮助显示有关此规则的信息。
 
-### <a name="use-the-ruleinfo-extension-command"></a>使用 ！ ruleinfo 扩展命令
+### <a name="use-the-ruleinfo-extension-command"></a>使用！ ruleinfo extension 命令
 
-**DV\_规则\_信息：** 字段 **！ 分析**输出显示了可用于查找有关此规则冲突的详细信息的命令。 对于此示例中，可以使用命令： **！ ruleinfo 0x20004**
+**DV\_规则\_信息：** " **！分析**输出" 的字段显示可用于查找有关此规则冲突的详细信息的命令。 在此示例中，可以使用命令： **！ ruleinfo 0x20004**
 
 ```
 kd> !ruleinfo 0x20004
@@ -97,9 +97,9 @@ specify any POOL_TYPE value.
 MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=216021
 ```
 
-### <a name="use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code"></a>使用 ！ 分析-v 命令，以确定在源代码中的冲突的位置
+### <a name="use-the-analyze-v-command-to-identify-the-location-of-the-violation-in-source-code"></a>使用！分析-v 命令在源代码中标识冲突的位置
 
-当捕获到此冲突时，将 bug 驱动程序验证程序来立即检查系统。 **！ 分析**输出将显示当前 IRQL，当前堆栈，点的位置进行调用来分配内存，以及启用了源代码 **！ 分析 – v** (有关详细) 输出还将显示源在其中生成分配请求的文件和行号：
+捕获到此冲突时，驱动程序验证程序会立即错误检查系统。 **！分析**输出将显示当前的 IRQL、当前堆栈、对分配内存进行调用的点，并且如果启用了源代码的 **！分析– v** （对于详细）输出，还将显示分配的源文件和行号发出请求：
 
 ```
 CURRENT_IRQL:  10
@@ -136,26 +136,26 @@ FAULTING_SOURCE_FILE:  d:\drvsrc\mydriver\isrhandler.c
 FAULTING_SOURCE_LINE_NUMBER:  206
 ```
 
-### <a name="fixing-the-cause-of-the-ddi-compliance-violation"></a>修复 DDI 符合性冲突的原因
+### <a name="fixing-the-cause-of-the-ddi-compliance-violation"></a>解决 DDI 遵从性冲突的原因
 
-修复这些错误检查的具有在范围内 0x00020000 到 0x00020022 Arg1 值，通常包含验证该驱动程序符合相应的文档中所述的 API 和 DDI 使用条件。
+修复这些在0x00020000 到0x00020022 范围内具有 Arg1 值的 bug 检查，通常包括验证驱动程序是否满足相应文档中所述的 API 和 DDI 使用情况。
 
-在我们在此处使用 (0x20004) 示例中，在 ISR 中任何排序的内存分配是否会违反为设置的 IRQL 规则[ **ExAllocatePoolWithTagPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtagpriority)例程。
+在此处使用的示例（0x20004）中，ISR 中任何排序的内存分配将违反[**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)例程的 IRQL 规则集。
 
-一般情况下，应查看有关该例程的 IRQL 和正确的使用情况信息的文档。 查看特定于[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)测试函数。 在这种情况下，该规则是[ **IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)。
+一般情况下，应查看有关此例程的文档，以获取有关 IRQL 和正确用法的信息。 查看测试函数的特定[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 在这种情况下，规则为[**IrqlExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)。
 
-使用[Static Driver Verifier](static-driver-verifier.md)分析驱动程序源代码，使用相同的规则。 Static Driver Verifier 是一个工具，扫描 Windows 驱动程序的源代码并通过模拟的各种代码路径执行报告可能存在的问题。 Static Driver Verifier 是一个很好的开发时间实用程序，以帮助识别这些类型的问题。
+使用[静态驱动程序验证](static-driver-verifier.md)器通过相同的规则来分析驱动程序源代码。 静态驱动程序验证程序是一种工具，它通过模拟各种代码路径的行使来扫描 Windows 驱动程序源代码，并报告可能的问题。 静态驱动程序验证程序是一个出色的开发时实用工具，可帮助确定这些类型的问题。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[DDI 符合性检查](ddi-compliance-checking.md)
+[DDI 相容性检查](ddi-compliance-checking.md)
 
-[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)
+[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 [静态驱动程序验证程序](static-driver-verifier.md)
 
-[**Bug 检查 0xC4:驱动程序\_VERIFIER\_检测到\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
+[**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)
 
  
 

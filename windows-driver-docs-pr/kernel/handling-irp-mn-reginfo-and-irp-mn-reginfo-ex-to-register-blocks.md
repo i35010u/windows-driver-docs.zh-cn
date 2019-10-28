@@ -3,65 +3,65 @@ title: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
 description: 处理 IRP_MN_REGINFO 和 IRP_MN_REGINFO_EX 以注册块
 ms.assetid: 2c17fc63-3c33-4d03-8c46-8d56242556d1
 keywords:
-- WMI WDK 内核，向 WMI 注册
+- WMI WDK 内核，用 WMI 注册
 - 注册 WMI 数据提供程序
-- 数据提供程序 WDK WMI
+- 数据访问接口 WDK WMI
 - 驱动程序注册 WDK WMI
-- 事件阻止 WDK WMI
-- 块 WDK WMI
+- 事件块 WDK WMI
+- 阻止 WDK WMI
 - IRP_MN_REGINFO
 - IRP_MN_REGINFO_EX
 - 注册块
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c94475ba7e2d04083170696d23bae618a3d09495
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 485ce2085cc8c4d5f69dc99ef6ae1ec98d9c4d35
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383326"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836495"
 ---
-# <a name="handling-irpmnreginfo-and-irpmnreginfoex-to-register-blocks"></a>处理 IRP\_MN\_REGINFO 和 IRP\_MN\_REGINFO\_EX 注册块
+# <a name="handling-irp_mn_reginfo-and-irp_mn_reginfo_ex-to-register-blocks"></a>处理 IRP\_MN\_REGINFO 和 IRP\_MN\_REGINFO\_EX 到 Register 块
 
 
 
 
 
-在 Windows 98 和 Windows 2000 上，系统会发送[ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)到驱动程序的请求，以允许注册其 WMI 类的驱动程序。 Windows XP 及更高版本，系统会发送[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)改为请求。 大多数驱动程序可以处理这些请求通过使用[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)可以提供一个回调例程。 请参阅[使用 WMI 库对注册块](using-the-wmi-library-to-register-blocks.md)有关详细信息。
+在 Windows 98 和 Windows 2000 上，系统将[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)请求发送到驱动程序，以允许驱动程序注册其 WMI 类。 在 Windows XP 和更高版本中，系统改为将[**IRP\_MN\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)请求发送。 大多数驱动程序可以通过使用[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)来提供回调例程来处理这些请求。 有关详细信息，请参阅[使用 WMI 库注册块](using-the-wmi-library-to-register-blocks.md)。
 
-驱动程序必须处理**IRP\_MN\_REGINFO**或**IRP\_MN\_REGINFO\_EX**请求，以注册使用动态的块实例名称，或使用一系列驱动程序定义的静态实例名称;它不能调用**WmiSystemControl**注册此类块。 驱动程序可以根据需要处理此请求以便注册使用基于 PDO 或驱动程序定义的基本名称字符串的静态实例名称的块。
+驱动程序必须处理**irp\_MN\_REGINFO**或**irp\_MN\_REGINFO\_EX**请求来注册使用动态实例名称或使用驱动程序定义的静态实例名称列表的块;它无法调用**WmiSystemControl**来注册此类块。 驱动程序可以选择处理此请求，以使用基于 PDO 或驱动程序定义的基名称字符串的静态实例名称注册块。
 
-在此情况下，该驱动程序：
+在这种情况下，驱动程序：
 
-1.  填写[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)结构，在**Parameters.WMI.Buffer** ，它指定：
+1.  在[**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构中填充指定 ：
 
-    -   提供的驱动程序，包括代表另一个驱动程序提供数据的所有注册数据的字节数。
+    -   驱动程序提供的所有注册数据的字节数，包括代表另一驱动程序提供的数据。
 
     -   驱动程序的注册表路径。
 
     -   驱动程序的 MOF 资源的名称。
 
-    -   若要注册的块的数目。
+    -   要注册的块数。
 
-    -   一个数组[ **WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)结构，一个用于每个块。
+    -   [**WMIREGGUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)结构的数组，每个块各有一个。
 
-2.  对于每个块，该驱动程序会填写**WMIREGGUID**结构，它指定：
+2.  对于每个块，驱动程序将填充指定以下内容的**WMIREGGUID**结构：
 
     -   表示块的 GUID。
 
-    -   提供有关实例名称和其他特征的块的信息，如块是否收集成本很高的标志。 有关详细信息，请参阅[WMI 注册标志](wmi-registration-flags.md)。
+    -   提供有关块的实例名称和其他特性的信息的标志，例如是否收集块很昂贵。 有关详细信息，请参阅[WMI 注册标志](wmi-registration-flags.md)。
 
-    如果使用静态实例名称注册了块，驱动程序设置一个要指定静态实例名称数据块的以下成员：
+    如果正在向静态实例名称注册块，驱动程序将设置以下成员之一来指定块的静态实例名称数据：
 
-    -   如果驱动程序设置**标志**与 WMIREG\_标志\_实例\_列表中，设置**InstanceNameList**到一组静态实例名称字符串的偏移量。 WMI 实例在后续请求中通过指定索引到此列表中。
+    -   如果驱动程序使用 WMIREG\_标志设置**标志**\_实例\_列表，则它会将**InstanceNameList**设置为静态实例名称字符串列表的偏移量。 WMI 通过索引向此列表指定后续请求中的实例。
 
-    -   如果驱动程序设置**标志**与 WMIREG\_标志\_实例\_基本名称，它会设置**BaseNameOffset**为偏移量为基名称字符串。 WMI 使用此字符串来生成块的静态实例名称。
+    -   如果驱动程序使用 WMIREG\_标志设置**标志**\_实例\_BASENAME，则它会将**BaseNameOffset**设置为基名称字符串的偏移量。 WMI 使用此字符串生成块的静态实例名称。
 
-    -   如果驱动程序设置**标志**与 WMIREG\_标志\_实例\_PDO，它会设置**Pdo** PDO 到传递给驱动程序的[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)例程。 WMI 使用 PDO 的设备实例路径来生成块的静态实例名称。 在处理时**IRP\_MN\_REGINFO\_EX**请求，驱动程序必须调用[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)例程上传入的物理设备对象**Pdo**。 (系统将自动调用[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)若要取消引用的对象; 该驱动程序必须执行此操作。)
+    -   如果驱动程序通过 WMIREG\_PDO\_\_标志设置**标志**，则会将**pdo**设置为传递给驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的 pdo。 WMI 使用 PDO 的设备实例路径为块生成静态实例名称。 处理**IRP\_MN\_REGINFO\_EX**请求时，驱动程序必须在通过**Pdo**传递的物理设备对象上调用[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)例程。 （系统将自动调用[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)来取消对该对象的引用; 该驱动程序不能执行此操作。）
 
-    该驱动程序将写入实例名称字符串或所指示的偏移量处的基名称的字符串**InstanceNameList**或**BaseName**分别。
+    驱动程序将实例名称字符串或基名称字符串分别写入**InstanceNameList**或**BaseName**所指示的偏移量。
 
-3.  如果驱动程序正在注册块代表另一个驱动程序 （如类驱动程序可能代表 miniclass 驱动程序），该驱动程序在另一个将填充[ **WMIREGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmireginfow)结构和列表[**WMIREGGUID** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-wmiregguidw)结构的其他驱动程序的块的注册信息并设置**NextWmiRegInfo**在第一个**WMIREGINFO**从头到尾的第一个字节的偏移量**WMIREGINFO**到第二个开头**WMIREGINFO**结构。
+3.  如果驱动程序代表另一个驱动程序注册块（作为类驱动程序代表 miniclass 驱动程序），则驱动程序将使用注册信息填充另一[**WMIREGINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmireginfow)结构和[**WMIREGGUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-wmiregguidw)结构列表。其他驱动程序块，并将第一个**WMIREGINFO**中的**NextWmiRegInfo**设置为偏移量（以字节为单位），从第一个**WMIREGINFO**开始，到第二个**WMIREGINFO**结构的开头。
 
  
 

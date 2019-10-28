@@ -1,47 +1,47 @@
 ---
 title: 混合系统 DDI
-description: 从 Windows 8.1 开始，这些用户模式和内核模式的结构和枚举显示设备驱动程序接口 (DDI) 已更新以处理跨适配器 D3D10_DDI_RESOURCE_MISC_FLAGD3DDDI_RESOURCEFLAGS2D3DDDI_ 的混合系统上的资源SYNCHRONIZATIONOBJECT_FLAGSD3DKMDT_GDISURFACEDATAD3DKMDT_GDISURFACETYPEDXGK_DRIVERCAPSDXGK_VIDMMCAPSThis 函数，Windows 8.1 的新增功能由用户模式显示驱动程序 QueryDListForApplication1 实现。
+description: 从 Windows 8.1 开始，会更新显示设备驱动程序接口（DDI）的这些用户模式和内核模式结构和枚举，以处理混合系统上的跨适配器资源 D3D10_DDI_RESOURCE_MISC_FLAGD3DDDI_RESOURCEFLAGS2D3DDDI_SYNCHRONIZATIONOBJECT_FLAGSD3DKMDT_GDISURFACEDATAD3DKMDT_GDISURFACETYPEDXGK_DRIVERCAPSDXGK_VIDMMCAPSThis 函数 new for Windows 8.1，由用户模式显示驱动程序 QueryDListForApplication1 实现。
 ms.assetid: 8AABE677-2C2D-4CFD-AF22-06D65524A158
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ab47c69133bed7a19a67c88923f34fe3d7207e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 700d4731bb251afd5db4a3600fe94fd94432060b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380199"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838893"
 ---
 # <a name="hybrid-system-ddi"></a>混合系统 DDI
 
 
-从 Windows 8.1 开始，这些用户模式和内核模式的结构和枚举显示设备驱动程序接口 (DDI) 已更新以处理[跨适配器资源](using-cross-adapter-resources-in-a-hybrid-system.md)上[混合系统](using-cross-adapter-resources-in-a-hybrid-system.md):
+从 Windows 8.1 开始，会更新显示设备驱动程序接口（DDI）的这些用户模式和内核模式结构和枚举，以处理[混合系统](using-cross-adapter-resources-in-a-hybrid-system.md)上的[跨适配器资源](using-cross-adapter-resources-in-a-hybrid-system.md)：
 
--   [**D3D10\_DDI\_RESOURCE\_MISC\_FLAG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/ne-d3d10umddi-d3d10_ddi_resource_misc_flag)
--   [**D3DDDI\_RESOURCEFLAGS2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_resourceflags2)
--   [**D3DDDI\_SYNCHRONIZATIONOBJECT\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dukmdt/ns-d3dukmdt-_d3dddi_synchronizationobject_flags)
--   [**D3DKMDT\_GDISURFACEDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ns-d3dkmdt-_d3dkmdt_gdisurfacedata)
--   [**D3DKMDT\_GDISURFACETYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmdt/ne-d3dkmdt-_d3dkmdt_gdisurfacetype)
--   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
--   [**DXGK\_VIDMMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)
+-   [**D3D10\_DDI\_资源\_杂项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d10_ddi_resource_misc_flag)
+-   [**D3DDDI\_RESOURCEFLAGS2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_resourceflags2)
+-   [**D3DDDI\_SYNCHRONIZATIONOBJECT\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_synchronizationobject_flags)
+-   [**D3DKMDT\_GDISURFACEDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_d3dkmdt_gdisurfacedata)
+-   [**D3DKMDT\_GDISURFACETYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_gdisurfacetype)
+-   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK\_VIDMMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidmmcaps)
 
-此函数中，Windows 8.1 的新用户模式驱动程序实现：
+此函数是 Windows 8.1 的新功能，由用户模式显示驱动程序实现：
 
--   [*QueryDListForApplication1*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)
+-   [*QueryDListForApplication1*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)
 
-下面介绍了如何设置并将注册的 DLL 的导出此函数。
-## <a name="span-idsettingupthedlistdllspanspan-idsettingupthedlistdllspanspan-idsettingupthedlistdllspansetting-up-the-dlist-dll"></a><span id="Setting_up_the_dList_DLL"></span><span id="setting_up_the_dlist_dll"></span><span id="SETTING_UP_THE_DLIST_DLL"></span>设置能够关闭 dList DLL
-
-
-一个*能够关闭 dList*是分立的 GPU 上的高性能渲染的需要跨适配器共享图面的应用程序的列表。 分立的 GPU 安装一个单独的较小**能够关闭 dList**将导出的 DLL [ **QueryDListForApplication1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)函数。 操作系统本身不会确定应用程序的运行在 GPU。 相反，Microsoft Direct3D 运行时调用**QueryDListForApplication1**在 Direct3D 初始化过程中最多一次。
-
-该驱动程序必须查询进程的信息来确定进程需要是分立的 GPU，而不是集成的 GPU 的增强的性能的最新列表。
-
-为了获得最佳性能的 DLL，应在 200 KB 大小，应保持在最低限度，分配并应该能够从返回[ **QueryDListForApplication1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)低于 4 毫秒中的函数。
-
-## <a name="span-idregisteringthedlistdllspanspan-idregisteringthedlistdllspanspan-idregisteringthedlistdllspanregistering-the-dlist-dll"></a><span id="Registering_the_dList_DLL"></span><span id="registering_the_dlist_dll"></span><span id="REGISTERING_THE_DLIST_DLL"></span>注册能够关闭 dList DLL
+下面介绍如何设置和注册导出此函数的 DLL。
+## <a name="span-idsetting_up_the_dlist_dllspanspan-idsetting_up_the_dlist_dllspanspan-idsetting_up_the_dlist_dllspansetting-up-the-dlist-dll"></a><span id="Setting_up_the_dList_DLL"></span><span id="setting_up_the_dlist_dll"></span><span id="SETTING_UP_THE_DLIST_DLL"></span>设置 dList DLL
 
 
-用户模式显示驱动程序提供的名称的少量**能够关闭 dList**注册表项下其 INF 文件中的 DLL **UserModeDListDriverName**和**UserModeDListDriverNameWow，** 在后一种**Wow64**注册表项。 下面是示例 INF 代码：
+*DList*是一个应用程序列表，这些应用程序需要跨适配器共享图面，以便在离散 GPU 上呈现高性能。 离散 GPU 安装一个单独的小型**dList** DLL，该 DLL 将导出[**QueryDListForApplication1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)函数。 操作系统本身并不确定应用程序应运行的 GPU。 相反，Microsoft Direct3D 运行时在 Direct3D 初始化期间最多调用**QueryDListForApplication1** 。
+
+驱动程序必须查询最新的进程信息列表，以确定进程是否需要离散 GPU 的增强性能，而不是集成 GPU。
+
+为了获得最佳性能，DLL 大小应小于 200 KB，应保持最小分配，并且应能够从[**QueryDListForApplication1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_querydlistforapplication1)函数在4毫秒内返回。
+
+## <a name="span-idregistering_the_dlist_dllspanspan-idregistering_the_dlist_dllspanspan-idregistering_the_dlist_dllspanregistering-the-dlist-dll"></a><span id="Registering_the_dList_DLL"></span><span id="registering_the_dlist_dll"></span><span id="REGISTERING_THE_DLIST_DLL"></span>注册 dList DLL
+
+
+用户模式显示驱动程序在其 INF 文件中的注册表项 " **UserModeDListDriverName** " 和 "UserModeDListDriverNameWow" 下提供了小型**dList** DLL 的名称 **，** 后者位于**Wow64**注册表项下。 下面是示例 INF 代码：
 
 ```inf
 [Xxx_SoftwareDeviceSettings]

@@ -1,10 +1,10 @@
 ---
-title: DoubleCompleteWorkItem 规则 (ndis)
-description: DoubleCompleteWorkItem 规则指定，NDIS 驱动程序必须完成的 OID 请求多个时间时完成延迟为工作项中。
+title: DoubleCompleteWorkItem 规则（ndis）
+description: DoubleCompleteWorkItem 规则指定 NDIS 驱动程序在工作项中延迟完成时不得多次完成 OID 请求。
 ms.assetid: 7add7473-0324-42e9-83bc-8f563410e44f
 ms.date: 05/21/2018
 keywords:
-- DoubleCompleteWorkItem 规则 (ndis)
+- DoubleCompleteWorkItem 规则（ndis）
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7409fc925eae60c715e972bb0344ecd38d7f053d
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: fcc6a785ff6170813f1ee763d5f277c288217220
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392385"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839404"
 ---
-# <a name="doublecompleteworkitem-rule-ndis"></a>DoubleCompleteWorkItem 规则 (ndis)
+# <a name="doublecompleteworkitem-rule-ndis"></a>DoubleCompleteWorkItem 规则（ndis）
 
 
-DoubleCompleteWorkItem 规则指定，NDIS 驱动程序必须完成的 OID 请求多个时间时完成延迟为工作项中。
+DoubleCompleteWorkItem 规则指定 NDIS 驱动程序在工作项中延迟完成时不得多次完成 OID 请求。
 
-此规则跟踪 OID 和验证，该驱动程序将工作项排队，当驱动程序不会调用**NdisMOidRequestComplete**多次上相同的 OID。
+此规则跟踪 OID，并验证当驱动程序对工作项进行排队时，驱动程序不会多次在同一 OID 上调用**NdisMOidRequestComplete** 。
 
 |              |      |
 |--------------|------|
@@ -44,22 +44,22 @@ DoubleCompleteWorkItem 规则指定，NDIS 驱动程序必须完成的 OID 请�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>并指定<strong>DoubleCompleteWorkItem</strong>规则。</p>
+<td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>DoubleCompleteWorkItem</strong>规则。</p>
 使用以下步骤来分析你的代码：
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码 （使用角色类型声明）。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行的 Static Driver Verifier。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">查看和分析结果。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">查看并分析结果。</a></li>
 </ol>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">以找到缺陷驱动程序中使用 Static Driver Verifier</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">使用静态驱动程序验证器查找驱动程序中的缺陷</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用对象
+<a name="applies-to"></a>适用范围
 ----------
 
-[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismoidrequestcomplete)
+[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
  
 
  

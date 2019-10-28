@@ -5,72 +5,72 @@ ms.assetid: ace7f59d-fe9f-4810-91db-2cf20c9591cf
 keywords:
 - 筛选注册表调用 WDK 内核，通知选项
 - 注册表筛选驱动程序 WDK 内核，通知选项
-- 通知 WDK 筛选注册表调用
-- 筛选注册表调用 WDK 内核，监视的调用
-- 注册表筛选驱动程序 WDK 内核，监视的调用
+- 通知 WDK 筛选器注册表调用
+- 筛选注册表调用 WDK 内核，监视调用
+- 注册表筛选驱动程序 WDK 内核，监视调用
 - 筛选注册表调用 WDK 内核，阻止调用
-- 注册表筛选驱动程序 WDK 内核、 阻止调用
+- 注册表筛选驱动程序 WDK 内核，阻止调用
 - 筛选注册表调用 WDK 内核，修改调用
-- 筛选驱动程序 WDK 内核，修改调用注册表
-- 阻止调用 WDK 筛选注册表调用
+- 注册表筛选驱动程序 WDK 内核，修改调用
+- 阻止调用 WDK 筛选器注册表调用
 - 监视注册表调用
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e98ef23feda0dfffa68483d511bcbca3569c7de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b431cb06a25fc8841f81a4e3efc014917ec9c44c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385621"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836490"
 ---
 # <a name="handling-notifications"></a>处理通知
 
 
-[ *RegistryCallback* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ex_callback_function)例程接收指向**REG\_*XXX*\_键\_信息**结构，其中包含有关正在进行的注册表操作的信息。
+[*RegistryCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ex_callback_function)例程接收指向**REG\_*XXX*\_密钥\_信息**结构的指针，该信息结构包含有关所发生注册表操作的信息。
 
-*RegistryCallback*例程可以监视、 阻止或修改注册表操作。
+*RegistryCallback*例程可以监视、阻止或修改注册表操作。
 
 ### <a name="monitoring-registry-calls"></a>监视注册表调用
 
-如果注册表筛选，则驱动程序正在监视注册表操作，其*RegistryCallback*例程可以更新计数器或执行其他簿记操作并返回状态\_成功。 每当*RegistryCallback*例程将返回状态\_成功后，配置管理器仍会执行注册表操作。
+如果注册表筛选驱动程序监视注册表操作，其*RegistryCallback*例程可以更新计数器或执行其他簿记操作，然后返回状态\_SUCCESS。 每当*RegistryCallback*例程返回状态\_"成功" 时，配置管理器将继续执行注册表操作。
 
-在 Windows XP 和更高版本的 Windows 支持监视注册表调用。
+Windows XP 和更高版本的 Windows 支持监视注册表调用。
 
 ### <a name="blocking-registry-calls"></a>阻止注册表调用
 
-筛选驱动程序的注册表可以阻止注册表操作，如果其*RegistryCallback*例程为其返回状态值[NT\_成功](using-ntstatus-values.md)(*状态*) 等于**FALSE** （即，非成功 NTSTATUS 值）。 当配置管理器收到非成功的返回值时，它将立即返回对调用线程具有驱动程序指定的状态值。 因此，注册表筛选驱动程序可以使用预先通知以防止从正在处理的注册表操作。
+如果注册表筛选驱动程序的*RegistryCallback*例程返回一个状态值，而[\_](using-ntstatus-values.md)该状态*值为（* 即，非成功的 NTSTATUS值），则它会阻止注册表操作。 当 configuration manager 收到非成功返回值时，它会立即返回到具有驱动程序指定状态值的调用线程。 因此，注册表筛选驱动程序可以使用前通知来阻止对注册表操作进行处理。
 
-如果*RegistryCallback*例程返回状态值的 NT\_成功 (*状态*) 等于**FALSE**对于预先通知，该操作的后通知回调不会发生。
+如果*RegistryCallback*例程为预先通知返回一个状态值，使 NT\_SUCCESS （*状态*）等于**FALSE** ，则不会发生该操作的后通知回调。
 
-阻止注册表调用在 Windows XP 和更高版本的 Windows 支持。 适用于 Windows Vista 及更高版本，该驱动程序可以修改注册表操作将返回到调用线程的值。 这些值包含在**REG\_*XXX*\_密钥\_信息**结构适用于 Windows Vista 及更高版本。
+Windows XP 和更高版本的 Windows 支持阻止注册表调用。 对于 Windows Vista 和更高版本，驱动程序可以修改注册表操作返回到调用线程的值。 这些值包含在 Windows Vista 和更高版本的**REG\_*XXX*\_密钥\_信息**结构中。
 
 ### <a name="modifying-registry-calls"></a>修改注册表调用
 
-筛选驱动程序的注册表可以修改注册表操作的输出参数或返回值。 此外，驱动程序可以完全处理而不是允许注册表来处理操作的注册表操作。
+注册表筛选驱动程序可以修改注册表操作的输出参数或返回值。 此外，驱动程序还可以完全处理注册表操作，而不是允许注册表处理操作。
 
-当筛选驱动程序的注册表*RegistryCallback*例程收到通知后，它可以：
+注册表筛选驱动程序的*RegistryCallback*例程收到公告后，可以：
 
--   修改输出参数，其**REG\_*XXX*\_密钥\_信息**结构包含，并返回状态\_成功。 配置管理器返回到调用线程的修改后的输出参数。
+-   修改其**REG\_*XXX*\_密钥\_信息**结构包含的输出参数，然后返回\_状态 "成功"。 配置管理器将修改后的输出参数返回给调用线程。
 
-    在 Windows Vista 及更高版本，支持修改输出参数。
+    Windows Vista 和更高版本支持修改输出参数。
 
--   修改注册表操作的返回值，通过提供有关状态值**ReturnStatus**的成员[ **REG\_POST\_操作\_信息** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_reg_post_operation_information)结构并返回状态\_回调\_绕过。 配置管理器将返回指定值返回给调用线程。
+-   通过为[**REG\_POST\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reg_post_operation_information)的**ReturnStatus**成员提供状态值来修改注册表操作的返回值\_信息结构，然后返回\_回叫状态\_开. 配置管理器将指定的返回值返回给调用线程。
 
-    **请注意**如果驱动程序故障，从成功更改状态代码，它可能需要解除分配的配置管理器分配的对象。 或者，如果该驱动程序为成功从失败更改状态代码，它可能需要提供相应的输出参数。
-
-
+    **注意** 如果驱动程序将状态代码从 success 更改为失败，则可能需要解除分配配置管理器分配的对象。 或者，如果驱动程序将状态代码从 "失败" 更改为 "成功"，则可能必须提供相应的输出参数。
 
 
-在 Windows Vista 及更高版本，支持修改返回值。
 
 
-当筛选驱动程序的注册表*RegistryCallback*例程收到前通知后，该例程可以处理注册表操作本身，然后返回状态\_回调\_绕过。 当注册表收到状态\_回调\_跳过从驱动程序，它只是返回状态\_对调用线程的成功和不会处理该操作。 该驱动程序会抢占注册表操作和完全处理，以及驱动程序必须非常谨慎才能返回有效的输出值中**REG\_*XXX*\_密钥\_信息**结构。
+Windows Vista 和更高版本支持修改返回值。
 
-驱动程序可抢占注册表操作 Windows Vista 及更高版本。
 
-如果*RegistryCallback*例程将返回状态\_回调\_绕过预通知，该操作后通知回调不会发生。
+当注册表筛选驱动程序的*RegistryCallback*例程收到预先通知时，例程可以处理注册表操作本身，然后返回状态\_回调\_绕过。 当注册表接收到\_从驱动程序跳过的状态\_回调时，它只会将\_状态返回到调用线程，而不会处理操作。 驱动程序抢先于注册表操作并必须完全处理它，并且驱动程序必须小心地在**REG\_*XXX*\_密钥\_信息**结构中返回有效的输出值。
 
-**请注意**不讨论几个注册表系统调用，因为它们很少使用，并使用它们时，通常以获得在注册表中的一些非常规结果。 修改这些调用执行的操作是非常困难且容易出错。 驱动程序开发人员我们建议您不要尝试修改以下注册表系统调用：
+驱动程序可以在 Windows Vista 和更高版本中抢占注册表操作。
+
+如果*RegistryCallback*例程为预先通知返回状态\_回调\_绕过，则不会发生操作的后通知回调。
+
+**注意** 不会记录多个注册表系统调用，因为它们很少使用，使用这些调用时，通常会在注册表中实现一些非常规结果。 修改由这些调用执行的操作非常困难，而且容易出错。 不建议驱动程序开发人员尝试修改以下注册表系统调用：
 -   **NtRestoreKey**
 -   **NtSaveKey**
 -   **NtSaveKeyEx**

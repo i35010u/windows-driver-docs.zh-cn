@@ -8,15 +8,15 @@ keywords:
 - NDIS 协议驱动程序 WDK，池句柄
 - 微型端口驱动程序 WDK 网络，池句柄
 - NDIS 微型端口驱动程序 WDK，池句柄
-- 中间驱动程序 WDK 网络、 采购订单
+- 中间驱动程序 WDK 网络，po
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 37a2b132d4f371e0461511950017cd60e16a32fa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3afff6a3b6b5f7616f47ca54e080ae917ad8d1ac
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354507"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837743"
 ---
 # <a name="obtaining-pool-handles"></a>获取池句柄
 
@@ -24,28 +24,28 @@ ms.locfileid: "67354507"
 
 
 
-以下 NDIS 池分配函数需要分配资源的句柄：
+以下 NDIS 池分配函数需要一个分配资源的句柄：
 
--   [**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferpool)
+-   [**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferpool)
 
--   [**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocatenetbufferlistpool)
+-   [**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)
 
-NDIS 6.0 驱动程序，如下所示获取句柄：
+NDIS 6.0 驱动程序获取一个句柄，如下所示：
 
 <a href="" id="protocol-drivers"></a>协议驱动程序  
-协议驱动程序调用[ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)函数来获取句柄。
+协议驱动程序调用[**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)函数以获取句柄。
 
 <a href="" id="miniport-drivers"></a>微型端口驱动程序  
-NDIS 调用[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize)函数以将该句柄传递给微型端口驱动程序。
+NDIS 调用[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数将句柄传递给微型端口驱动程序。
 
 <a href="" id="intermediate-drivers"></a>中间驱动程序  
-驱动程序调用的中间[ **NdisRegisterProtocolDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisregisterprotocoldriver)函数中使用的池发送操作和 NDIS 获取句柄调用*MiniportInitializeEx*到将句柄传递给中间驱动程序，用于在中使用的池接收操作。
+中间驱动程序调用[**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)函数，以获取在发送操作中使用的池的句柄，并调用*MiniportInitializeEx*将句柄传递给在接收操作中使用的池的中间驱动程序的句柄。
 
 <a href="" id="filter-drivers"></a>筛选器驱动程序  
-NDIS 调用[ *FilterAttach* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-filter_attach)函数以将该句柄传递给筛选器驱动程序。
+NDIS 调用[*FilterAttach*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_attach)函数将句柄传递给筛选器驱动程序。
 
 <a href="" id="other-drivers"></a>其他驱动程序  
-如果驱动程序无法通过上述方法之一获取句柄，该驱动程序可以调用[ **NdisAllocateGenericObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocategenericobject)函数来获取的句柄。
+如果驱动程序无法通过上述方法之一获得句柄，驱动程序可以调用[**NdisAllocateGenericObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocategenericobject)函数以获取句柄。
 
  
 

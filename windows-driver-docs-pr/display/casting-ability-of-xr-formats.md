@@ -3,26 +3,26 @@ title: XR 格式的强制转换功能
 description: XR 格式的强制转换功能
 ms.assetid: 18f9ce6e-df8e-4e57-b86f-338baadcb1b2
 keywords:
-- Direct3D 版本 10.1 WDK Windows 7 显示 XR 格式转换功能
-- 扩展的格式 WDK Windows 7 显示、 XR 格式转换功能
-- XR 格式转换功能 WDK Windows 7 显示
-- 强制转换功能 WDK Windows 7 显示
-- 强制转换功能 WDK Windows 7 显示，XR 格式
+- Direct3D 版本 10.1 WDK Windows 7 显示，XR 格式强制转换功能
+- 扩展格式 WDK Windows 7 显示，XR 格式强制转换功能
+- XR 格式转换能力 WDK Windows 7 显示
+- 转换能力 WDK Windows 7 显示
+- 转换能力 WDK Windows 7 显示，XR 格式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc7a500b59a9986c5e96ff248c663bae87d3cf3f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bcc99c2cb7b89bf6984424141122839f0171e4a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384596"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839057"
 ---
 # <a name="casting-ability-of-xr-formats"></a>XR 格式的强制转换功能
 
 
-本部分仅适用于 Windows 7 和更高版本的操作系统。
+本部分仅适用于 Windows 7 及更高版本的操作系统。
 
-DXGI\_格式\_R10G10B10\_XR\_偏差\_A2\_UNORM 格式属于 DXGI\_格式\_R10G10B10A2\_TYPELESS系列。 因此，应用程序可以强制转换 DXGI\_格式\_R10G10B10\_XR\_偏差\_A2\_UNORM 格式通过该系列的其他成员"视图"的 API 级别概念。 此过程是应用程序呈现到的资源的预期的方法。 具体而言，运行时仅可以查看扫描的 Direct3D 和复制 (通过驱动程序的[ **BltDXGI** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数) 的资源的格式 XR\_偏置。 因此，若要呈现到的资源，应用程序通常创建的视图格式 DXGI\_格式\_R10G10B10A2\_UNORM。
+DXGI\_格式\_R10G10B10\_XR\_偏移\_A2\_UNORM 格式是 DXGI\_格式的成员\_R10G10B10A2\_无格式系列。 因此，应用程序可以通过 API 级别的 "视图" 概念将 DXGI\_格式转换为该系列的任何其他成员，以\_R10G10B10\_XR\_\_偏向。 此过程是应用程序呈现到资源的预期方式。 具体而言，Direct3D 运行时只能扫描并复制（通过驱动程序的[**BltDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数） XR\_偏向格式的资源。 因此，应用程序通常会创建格式为 DXGI\_格式\_R10G10B10A2\_UNORM 的格式。
 
  
 

@@ -1,47 +1,47 @@
 ---
 title: 上下文分配
-description: 若要为保存的上下文区域的上下文中分配内存，内核模式驱动程序可以使用通过 DxgkCbCreateContextAllocation 上下文分配。
+description: 若要为上下文的上下文保存区分配内存，内核模式驱动程序可以通过 DxgkCbCreateContextAllocation 使用上下文分配。
 ms.assetid: DAD08E7F-13F9-4648-A24C-DD9FBA6D490F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e66b8e13d125e074b93074eb43abb039dfff7ce9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce68ab845f35b1d8cc48ad87cf85ce06af446807
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363065"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839788"
 ---
 # <a name="context-allocation"></a>上下文分配
 
 
-若要为保存的上下文区域的上下文中分配内存，内核模式驱动程序可以使用通过上下文分配[ *DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)。 一些新功能添加到上下文分配以使其适应新的图形处理单元 (GPU) 的虚拟地址模型。
+若要为上下文的上下文保存区分配内存，内核模式驱动程序可以通过[*DxgkCbCreateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_createcontextallocation)使用上下文分配。 添加了一些新功能，以使其适合新的图形处理单元（GPU）虚拟地址模型。
 
 ## <a name="span-idaccessedphysicallyspanspan-idaccessedphysicallyspanspan-idaccessedphysicallyspanaccessedphysically"></a><span id="AccessedPhysically"></span><span id="accessedphysically"></span><span id="ACCESSEDPHYSICALLY"></span>AccessedPhysically
 
 
-可以指定上下文分配**AccessedPhysically**标志以指示应在一个内存段中连续分配或映射的小孔，如果从系统内存访问分配。
+上下文分配可以指定**AccessedPhysically**标志，以指示应在内存段中连续分配分配，或在从系统内存访问时将分配映射到口径。
 
-## <a name="span-idassigningagpuvirtualaddresstoacontextallocationspanspan-idassigningagpuvirtualaddresstoacontextallocationspanspan-idassigningagpuvirtualaddresstoacontextallocationspanassigning-a-gpu-virtual-address-to-a-context-allocation"></a><span id="Assigning_a_GPU_virtual_address_to_a_context_allocation"></span><span id="assigning_a_gpu_virtual_address_to_a_context_allocation"></span><span id="ASSIGNING_A_GPU_VIRTUAL_ADDRESS_TO_A_CONTEXT_ALLOCATION"></span>GPU 虚拟地址分配给上下文分配
+## <a name="span-idassigning_a_gpu_virtual_address_to_a_context_allocationspanspan-idassigning_a_gpu_virtual_address_to_a_context_allocationspanspan-idassigning_a_gpu_virtual_address_to_a_context_allocationspanassigning-a-gpu-virtual-address-to-a-context-allocation"></a><span id="Assigning_a_GPU_virtual_address_to_a_context_allocation"></span><span id="assigning_a_gpu_virtual_address_to_a_context_allocation"></span><span id="ASSIGNING_A_GPU_VIRTUAL_ADDRESS_TO_A_CONTEXT_ALLOCATION"></span>将 GPU 虚拟地址分配给上下文分配
 
 
-视频内存管理器公开的新[ *DxgkCbMapContextAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_mapcontextallocation)服务到内核模式驱动程序分配到上下文分配 GPU 虚拟地址。
+视频内存管理器向内核模式驱动程序公开新的[*DxgkCbMapContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_mapcontextallocation)服务，以便将 GPU 虚拟地址分配给上下文分配。
 
-上下文分配内容映射到与指定的上下文相关联的应用程序 GPU 虚拟地址空间。
+上下文分配将映射到与指定上下文关联的应用程序 GPU 虚拟地址空间。
 
-**请注意**  驱动程序应小心，不要上下文分配时要映射到应用程序 GPU 虚拟地址空间直接公开特权的信息。
+**请注意**  当上下文分配直接映射到应用程序 GPU 虚拟地址空间时，驱动程序应注意不要公开特权信息。
 
  
 
-这些服务行为类似于其用户模式相对应。
+这些服务的行为类似于其用户模式对应项。
 
-## <a name="span-idupdatingthecontentofacontextallocationspanspan-idupdatingthecontentofacontextallocationspanspan-idupdatingthecontentofacontextallocationspanupdating-the-content-of-a-context-allocation"></a><span id="Updating_the_content_of_a_context_allocation"></span><span id="updating_the_content_of_a_context_allocation"></span><span id="UPDATING_THE_CONTENT_OF_A_CONTEXT_ALLOCATION"></span>更新上下文分配的内容
+## <a name="span-idupdating_the_content_of_a_context_allocationspanspan-idupdating_the_content_of_a_context_allocationspanspan-idupdating_the_content_of_a_context_allocationspanupdating-the-content-of-a-context-allocation"></a><span id="Updating_the_content_of_a_context_allocation"></span><span id="updating_the_content_of_a_context_allocation"></span><span id="UPDATING_THE_CONTENT_OF_A_CONTEXT_ALLOCATION"></span>更新上下文分配的内容
 
 
-一段时间可能有必要为内核模式驱动程序更新上下文分配的内容。 例如，特权 (**AccessedPhysically**，没有 GPU 虚拟映射) 上下文分配可能包含对与特定上下文关联的页目录的引用。 当内核模式驱动程序通过页目录重定位的系统通知[ *DxgkDdiSetRootPageTable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_setrootpagetable)，内核模式驱动程序可能需要更新该上下文分配的内容。
+内核模式驱动程序在某些时候可能需要更新上下文分配的内容。 例如，特权（**AccessedPhysically**，无 GPU 虚拟映射）上下文分配可能包含对与特定上下文相关联的页面目录的引用。 当[*DxgkDdiSetRootPageTable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_setrootpagetable)内核模式驱动程序收到页面目录重定位的通知时，内核模式驱动程序可能需要更新该上下文分配的内容。
 
-为此目的的新[ *DxgkCbUpdateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_updatecontextallocation)添加设备驱动程序接口 (DDI)。 此 DDI 排队到视频内存管理器启动上下文分配的更新的请求。 正在更新的上下文分配映射到暂存区域中的视频内存管理器分页过程中，则该驱动程序调用与新*UpdateContextAllocation*分页操作执行上下文的实际更新分配。 从返回的视频内存管理器*DxgkCbUpdateContextAllocation*在更新完成后。
+为此，将添加新的[*DxgkCbUpdateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_updatecontextallocation)设备驱动程序接口（DDI）。 此 DDI 将对视频内存管理器的请求排队，以启动上下文分配的更新。 要更新的上下文分配将映射到视频内存管理器分页过程的空闲区，然后使用新的*UpdateContextAllocation*分页操作调用该驱动程序，以执行上下文分配的实际更新。 更新完成后，视频内存管理器从*DxgkCbUpdateContextAllocation*返回。
 
-内核模式驱动程序可以将某些专用驱动程序数据传递到其调用之间[ *DxgkCbUpdateContextAllocation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkcb_updatecontextallocation)及引发*UpdateContextAllocation*分页操作。
+内核模式驱动程序可在其对[*DxgkCbUpdateContextAllocation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_updatecontextallocation)的调用和生成的*UpdateContextAllocation*分页操作之间传递某些专用驱动程序数据。
 
  
 

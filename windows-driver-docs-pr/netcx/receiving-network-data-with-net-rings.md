@@ -1,60 +1,60 @@
 ---
-title: 使用 net 环接收网络数据
-description: 本主题介绍 NetAdapterCx 客户端驱动程序如何使用 net 环和 net 环迭代器接收网络数据。
+title: 使用净环接收网络数据
+description: 本主题介绍 NetAdapterCx 客户端驱动程序如何使用净环和网络环迭代器来接收网络数据。
 ms.assetid: 78D202E2-4123-4F63-9B86-48400C2CCC38
 keywords:
-- NetAdapterCx Net 环和 net 环迭代器、 NetCx Net 环和 net 环迭代器，NetAdapterCx PCI 设备 net 环 NetAdapterCx 异步 I/O
+- NetAdapterCx 网络环和网络环迭代器、NetCx 网络环和网络环迭代器、NetAdapterCx PCI 设备网络环、NetAdapterCx 异步 i/o
 ms.date: 03/21/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4d01bdddbbf40a4ad1e7d1f687160f762a42b10c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3c25e65e5f8db55661071a07eec3de9e54c2b87a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369991"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838275"
 ---
 # <a name="receiving-network-data-with-net-rings"></a>使用网环接收网络数据
 
 [!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
-NetAdapterCx 客户端驱动程序接收网络数据时框架调用其[ *EvtPacketQueueAdvance* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)接收队列的回调函数。 在此回调期间客户端驱动程序指示通过接收排出收到片段和数据包的操作系统，然后发布到的硬件的新缓冲区。
+当框架为接收队列调用其[*EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)回调函数时，NetAdapterCx 客户端驱动程序将收到网络数据。 在此回调过程中，客户端驱动程序通过将接收到的片段和数据包排出到操作系统中来指示接收，然后将新的缓冲区发布到硬件。
 
-## <a name="receive-rx-post-and-drain-operation-overview"></a>接收 (Rx) 文章和清空操作概述
+## <a name="receive-rx-post-and-drain-operation-overview"></a>接收（Rx） post 和排出操作概述
 
-下面的动画说明了如何简单 PCI 网络接口卡 (NIC) 的客户端驱动程序执行发布和接收 (Rx) 队列的消耗操作。 在此示例方案的片段缓冲区分配，并附加到片段环由操作系统。 此示例假定硬件之间的一对一关系接收队列和 OS 接收队列。
+以下动画说明了简单 PCI 网络接口卡（NIC）的客户端驱动程序如何为接收（Rx）队列执行 post 和排出操作。 在此示例方案中，段缓冲区由 OS 分配并附加到片段循环。 此示例假设硬件接收队列和 OS 接收队列之间具有一对一关系。
 
-![Net 环 post 并释放用于接收 (Rx) 的操作](images/net_ring_post_and_drain_operations_rx.gif "Net 环 post 并释放用于接收 (Rx) 的操作")
+![用于接收的网络环 post 和排出操作（Rx）](images/net_ring_post_and_drain_operations_rx.gif "用于接收的网络环 post 和排出操作（Rx）")
 
-在此动画中，归客户端驱动程序的数据包以浅蓝色和深色突出显示以黄色和橙色突出显示蓝色，并归客户端驱动程序的片段。 更淡的颜色表示*清空*拥有该驱动程序，而较深的颜色表示的元素的子节*发布*驱动程序拥有的元素的子节。
+在此动画中，客户端驱动程序拥有的数据包以浅蓝色和深蓝突出显示，并且客户端驱动程序拥有的片段以黄色和橙色突出显示。 较亮的颜色代表驱动程序拥有的元素的*排水管*子节，而较暗的颜色表示驱动程序所拥有的元素的*post*子节。
 
 ## <a name="receiving-data-in-order"></a>按顺序接收数据
 
-下面是用于接收订单，与每个数据包的一个片段中的数据的驱动程序的典型序列。
+下面是按顺序接收数据的驱动程序的典型序列，每个数据包一个片段。
 
-1. 调用**NetRxQueueGetRingCollection**检索接收队列环集合结构。 可以将此存储在队列的上下文空间，以减少带驱动程序的调用。 
-2. 通过清空 net 环来表示接收到 OS 的数据：
-    1. 使用环集合来检索漏迭代器用于通过调用接收队列片段环[ **NetRingGetDrainFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetdrainfragments)。
-    2. 获取数据包迭代器的所有可用数据包数据包环中通过调用[ **NetRingGetAllPackets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetallpackets)。
-    3. 执行一个循环中的以下操作：
-        1. 检查硬件是否接收片段。 如果没有，中断该循环。
-        2. 通过调用获取片段迭代器的当前片段[ **NetFragmentIteratorGetFragment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)。
-        3. 如填写片段的信息，其**ValidLength**根据其匹配的硬件描述符。
-        4. 调用此片段中获取数据包[ **NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)。
-        5. 绑定到数据包片段，通过设置数据包**FragmentIndex**片段的片段环和适当地设置的片段数中的当前索引 (在此示例中，它设置为**1**). 
-        6. （可选） 填写任何其他数据包信息如校验和信息。
-        7. 调用[ **NetFragmentIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratoradvance)将移动到下一个片段。
-        7. 调用[ **NetPacketIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratoradvance)移动到下一步的数据包。
-    4. 调用[ **NetFragmentIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorset)并[ **NetPacketIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netpacketiteratorset)来完成，该值指示接收到的数据包和到其片段OS。
-3. 接收到下一个硬件 post 片段缓冲区：    
-    1. 使用环集合来检索通过调用 post 迭代器，以供接收队列片段环[ **NetRingGetPostFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netringgetpostfragments)。
-    2. 执行一个循环中的以下操作：
-        1. 通过调用获取片段迭代器的当前索引[ **NetFragmentIteratorGetIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorgetindex)。
-        2. 发布到匹配的硬件描述符的片段的信息。
-        3. 调用[ **NetFragmentIteratorAdvance** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratoradvance)将移动到下一个片段。
-    3. 调用[ **NetFragmentIteratorSet** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netringiterator/nf-netringiterator-netfragmentiteratorset)以完成发布到的硬件的片段。
+1. 调用**NetRxQueueGetRingCollection**可检索接收队列的循环集合结构。 可以将其存储在队列的上下文空间中以减少对驱动程序的调用。 
+2. 通过排出净环指示收到的数据到操作系统：
+    1. 使用 "环" 集合可以通过调用[**NetRingGetDrainFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetdrainfragments)来检索接收队列的碎片循环的排出迭代器。
+    2. 通过调用[**NetRingGetAllPackets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetallpackets)获取数据包循环中所有可用数据包的数据包迭代器。
+    3. 在循环中执行以下操作：
+        1. 检查是否已由硬件接收了片段。 如果不是，则跳出循环。
+        2. 通过调用[**NetFragmentIteratorGetFragment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)获取片段迭代器的当前片段。
+        3. 基于其匹配的硬件描述符填写片段的信息，例如其**ValidLength**。
+        4. 通过调用[**NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)获取此片段的数据包。
+        5. 通过将包的**FragmentIndex**设置为片段中片段的当前索引，并适当地设置段的数量（在本示例中，将其设置为**1**），将该片段绑定到数据包。 
+        6. （可选）填写任何其他数据包信息，如校验和信息。
+        7. 调用[**NetFragmentIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratoradvance)以移到下一个片段。
+        7. 调用[**NetPacketIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratoradvance)以移到下一个数据包。
+    4. 调用[**NetFragmentIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorset)和[**NetPacketIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorset) ，以确定接收的数据包及其对 OS 的碎片。
+3. 对于下一次接收，将段缓冲区发送到硬件：    
+    1. 使用环集合可以通过调用[**NetRingGetPostFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetpostfragments)来检索接收队列的片段循环的 post 迭代器。
+    2. 在循环中执行以下操作：
+        1. 通过调用[**NetFragmentIteratorGetIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorgetindex)获取片段迭代器的当前索引。
+        2. 将片段的信息发布到匹配的硬件描述符。
+        3. 调用[**NetFragmentIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratoradvance)以移到下一个片段。
+    3. 调用[**NetFragmentIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorset)来完成将碎片发送到硬件的情况。
 
-在代码中时，这些步骤可能类似以下形式：
+这些步骤在代码中可能如下所示：
 
 ```cpp
 void
@@ -116,8 +116,8 @@ MyEvtRxQueueAdvance(
 }
 ```
 
-## <a name="receiving-data-out-of-order"></a>无序接收数据
+## <a name="receiving-data-out-of-order"></a>按顺序接收数据
 
-与不同[Tx](sending-network-data-with-net-rings.md)队列，客户端驱动程序通常不接收数据无序如果他们有一个操作系统接收每个硬件队列中接收队列。 这与无关的类型的客户端驱动程序的 nic。 是否设备是基于 PCI 的和操作系统分配并拥有接收缓冲区中，或是否设备是基于 USB 的并 USB 堆栈拥有接收缓冲区，客户端驱动程序初始化每个片段收到数据包以及指示到 OS。 顺序在这种情况下并不重要。
+与[Tx](sending-network-data-with-net-rings.md)队列不同的是，如果客户端驱动程序的每个硬件接收队列都有一个 OS 接收队列，则这些驱动程序通常不会按顺序接收数据。 这与客户端驱动程序的 NIC 类型无关。 无论设备是基于 PCI 的，操作系统分配并拥有接收缓冲区，还是设备是基于 USB 的并且 USB 堆栈拥有接收缓冲区，客户端驱动程序都将为收到的每个片段初始化数据包，并将其指示到操作系统。 在这种情况下，顺序并不重要。
 
-如果您的硬件支持每个硬件接收队列的多个 OS 接收队列，必须同步接收缓冲区的访问。 这样做的作用域因此超出本主题以及什么依赖于硬件的设计。
+如果硬件支持每个硬件接收队列有多个 OS 接收队列，则必须同步对接收缓冲区的访问。 此操作的范围超出了本主题的范围，并取决于您的硬件设计。

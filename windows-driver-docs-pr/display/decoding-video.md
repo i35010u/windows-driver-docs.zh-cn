@@ -3,33 +3,33 @@ title: 解码视频
 description: 解码视频
 ms.assetid: d434469f-1279-47c4-b824-61daeb25b214
 keywords:
-- 有关解码视频解码 WDK DirectX va，因此视频
-- 有关解码视频解码视频 WDK DirectX VA，
+- 视频解码 WDK DirectX VA，关于解码视频
+- 解码视频 WDK DirectX VA，关于解码视频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: caed8d8a1d59ccd271188ee170f0fcd9276d195c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 499a7929ba429ef464bf8dc8a411563270d10f40
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383778"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839018"
 ---
 # <a name="decoding-video"></a>解码视频
 
 
-Microsoft Direct3D 运行时将调用用户模式显示驱动程序[ **DecodeBeginFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodebeginframe)并[ **DecodeEndFrame** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeendframe)到函数指示用户模式显示驱动程序可以对视频进行解码这些函数调用之间的时间段。 用户模式显示驱动程序可以执行任何视频之前解码操作，Microsoft Direct3D 运行时必须调用用户模式显示驱动程序[ **SetDecodeRenderTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_setdecoderendertarget)函数设置对于那些呈现目标图面解码操作。 但是，在调用**SetDecodeRenderTarget**可仅外部出现的开始范围和结束帧时间段。
+Microsoft Direct3D runtime 调用用户模式显示驱动程序的[**DecodeBeginFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_decodebeginframe)和[**DecodeEndFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeendframe)函数，以指示这些函数调用之间的时间段，用户模式显示驱动程序可以解码视频。 在用户模式显示驱动程序可以执行任何视频解码操作之前，Microsoft Direct3D 运行时必须调用用户模式显示驱动程序的[**SetDecodeRenderTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setdecoderendertarget)函数，以便为这些解码操作设置呈现目标图面。 但是，对**SetDecodeRenderTarget**的调用只能出现在开始框架和结束帧时间段之外。
 
-在保护模式下和在调用[ **DecodeBeginFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodebeginframe)，Direct3D 运行时设置或更改的变量中的 DirectX VA 内容密钥的**pPVPSetKey**的成员[ **D3DDDIARG\_DECODEBEGINFRAME** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_decodebeginframe)结构指向。 解码设备使用此密钥的受保护的此压缩的 DirectX VA 缓冲区的传输和后续帧。
+在保护模式和对[**DecodeBeginFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_decodebeginframe)的调用中，Direct3D 运行时设置或更改[**D3DDDIARG\_DecodeBeginFrame**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_decodebeginframe)结构的**pPVPSetKey**成员指向的变量中的 DirectX VA 内容密钥。 解码设备使用此密钥在此和后续帧上传输压缩的 DirectX VA 缓冲区。
 
-**请注意**   Direct3D 运行时集**pPVPSetKey**仅用于更改或设置项的指针。 若要保留以前设置中使用的键，在运行时将指针设置**NULL**以避免可能会花费较长时间重新加载的相同的密钥。 该驱动程序不会消除冗余的设置。 解码器应用程序必须避免冗余设置。
+**请注意**   Direct3D 运行时仅将**pPVPSetKey**指针设置为更改或设置密钥。 为了使以前设置的密钥保持使用，运行时将指针设置为**NULL** ，以避免可能需要重新加载相同键的时间。 该驱动程序不会消除冗余设置。 解码器应用程序必须避免冗余设置。
 
  
 
-呈现目标图面为解码后设置操作，用户模式显示驱动程序可以接收到调用其[ **DecodeExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeexecute)函数来执行视频解码开始帧之间的操作并最终帧时间段。
+设置用于解码操作的呈现目标图面后，用户模式显示驱动程序可以接收对其[**DecodeExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeexecute)函数的调用，以执行开始帧时间和结束帧时间段之间的视频解码操作。
 
-在调用[ **DecodeExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeexecute)，并非所有中指定的缓冲区类型**CompressedBufferType**的成员[ **DXVADDI\_DECODEBUFFERDESC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferdesc)结构**pCompressedBuffers**数组[ **D3DDDIARG\_DECODEEXECUTE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_decodeexecute)结构用于每种解码 GUID 的**hDecode** D3DDDIARG 成员\_DECODEEXECUTE 指定。 例如，切片控件 (D3DDDIFMT\_SLICECONTROLDATA)、 反量化 (D3DDDIFMT\_INVERSEQUANTIZATIONDATA)，和位流 (D3DDDIFMT\_BITSTREAMDATA) 缓冲区所需的仅长度可变的解码 (VLD) 处理和消除马赛克功能控制缓冲区 (D3DDDIFMT\_DEBLOCKINGDATA) 根本不使用 MPEG 2。
+在对[**DecodeExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeexecute)的调用中，不是所有在[ **\_DXVADDI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferdesc)的**CompressedBufferType**成员中指定的缓冲区类型 @no pCompressedBuffers 数组的 D3DDDIARG数组[ **__t_9_ DECODEEXECUTE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_decodeexecute)结构用于 D3DDDIARG\_DECODEEXECUTE 的**hDecode**成员指定的每个解码 GUID。 例如，切片控制（D3DDDIFMT\_SLICECONTROLDATA）、反量化（D3DDDIFMT\_INVERSEQUANTIZATIONDATA）和位流（D3DDDIFMT\_BITSTREAMDATA）缓冲区仅用于可变长度解码（VLD）deblocking （D3DDDIFMT\_DEBLOCKINGDATA）不会在所有情况下都使用。
 
-在受保护模式下，使用内容密钥加密的受保护传输的缓冲区包含指向在其缓冲区描述符的初始的计数器值的指针 (也就是说，在变量的**pCipherCounter** 的成员[**DXVADDI\_DECODEBUFFERDESC** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferdesc)结构指向)。 用户模式显示驱动程序的每次调用[ **DecodeExecute** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeexecute)函数必须执行的此类缓冲区传输到本地的视频内存之前受保护**DecodeExecute**在解码操作中使用的缓冲区的数据。 但是，没有计划存在加密类型之外的剩余差异的 DirectX VA 压缩缓冲区 (D3DDDIFMT\_RESIDUALDIFFERENCEDATA) 和位流 (D3DDDIFMT\_BITSTREAMDATA) 类型。
+在保护模式下，为带有内容密钥的受保护传输加密的缓冲区包含指向其缓冲区描述符中的初始计数器值的指针（即，在**pCipherCounter**成员的 DXVADDI 中的变量[ **\_DECODEBUFFERDESC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferdesc)结构指向）。 每次调用用户模式显示驱动程序的[**DecodeExecute**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_decodeexecute)函数时，都必须在**DecodeExecute**使用缓冲区中的数据进行解码操作之前，执行此类缓冲区的受保护传输。 但是，不存在任何计划来加密除残留差异（D3DDDIFMT\_RESIDUALDIFFERENCEDATA）和位流（D3DDDIFMT\_BITSTREAMDATA）类型之外的 DirectX VA 压缩缓冲区。
 
  
 

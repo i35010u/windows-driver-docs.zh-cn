@@ -5,56 +5,56 @@ ms.assetid: b4a19995-7933-41f7-b951-15ce0e4627da
 keywords:
 - IRP_MN_SET_POWER
 - 设备电源状态 WDK 内核
-- 设置 power Irp WDK 内核
+- 设置-power Irp WDK 内核
 - DispatchPower 例程
-- 将 Irp 传递下设备堆栈 WDK
-- 设备设置 power Irp WDK 的内核
+- 将 Irp 向下传递设备堆栈 WDK
+- 设备设置电源 Irp WDK 内核
 - power Irp WDK 内核，设备更改
 - 调度例程 WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 066a65d457a69e5213e792a85b4b21b54f677d1d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4ea2f4967b03e08ecbb3fdcc3f33b8d85b84ba6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383730"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838656"
 ---
-# <a name="handling-irpmnsetpower-for-device-power-states"></a>处理 IRP\_MN\_设置\_的电源可用于设备的电源状态
+# <a name="handling-irp_mn_set_power-for-device-power-states"></a>处理 IRP\_MN\_设置设备电源状态\_电源
 
 
 
 
 
-一组 power IRP 请求用于单个设备的状态更改和设备发送到堆栈中的所有驱动程序的设备。 指定此类 IRP **DevicePowerState**中**Power.Type** I/O 堆栈位置的成员。
+设备设置-power IRP 请求为单个设备更改状态，并将其发送到设备堆栈中的所有驱动程序。 此类 IRP 在 i/o 堆栈位置的 DevicePowerState**成员中**指定了 。
 
-驱动程序处理电源关闭 Irp，如它们沿堆栈向下移动。 有关强化 Irp，驱动程序集[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)例程作为 Irp 沿堆栈上，向下移动，然后处理在 Irp *IoCompletion*作为 Irp 例程返回旅行堆栈上。 在典型的设备堆栈句柄设备驱动程序集 power IRP 为如下所示：
+驱动程序在关闭后，会处理关闭的 Irp。 对于开机 Irp，驱动程序将[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程设置为 irp 向下传递堆栈，然后处理*IoCompletion*例程中的 irp，因为 irp 将在堆栈上传输。 典型设备堆栈中的驱动程序将处理设备集电源 IRP，如下所示：
 
--   大多数筛选器驱动程序应只需调用[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)，将 IRP 传递给下一个较低驱动程序 (请参阅[传递 Power Irp](passing-power-irps.md))，并返回状态\_从挂起[ *DispatchPower* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。 某些筛选器驱动程序，但是，可能首先需要执行特定于设备的任务，例如队列传入 Irp 或保存设备电源状态。
+-   大多数筛选器驱动程序只需调用[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)，然后将 IRP 传递到下一个较低的驱动程序（请参阅[通过电源 irp](passing-power-irps.md)），并从[*DispatchPower*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程\_挂起的返回状态。 但是，某些筛选器驱动程序可能首先需要执行特定于设备的任务，例如将传入的 Irp 排队或保存设备电源状态。
 
--   功能驱动程序调用**IoMarkIrpPending**、 执行特定于设备的任务 （如完成的挂起 I/O 请求队列的传入 I/O 请求，正在保存设备上下文，或更改设备电源）、 设置*IoCompletion*例程，如有必要，并将设备电源 IRP 传递到下一个较低的驱动程序 (请参阅[传递 Power Irp](passing-power-irps.md))。 它将返回状态\_PENDING 从其*DispatchPower*例程。
+-   函数驱动程序调用**也**，执行特定于设备的任务（例如完成挂起的 i/o 请求、排队传入的 i/o 请求、保存设备上下文或更改设备电源），并根据需要设置*IoCompletion*例程，并将设备电源 IRP 传递到下一个较低的驱动程序（请参阅[通过电源 irp](passing-power-irps.md)）。 它从*DispatchPower*例程返回状态\_"挂起"。
 
--   总线驱动程序如果能够这样做的更改设备电源，然后调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)通知电源管理器的新设备电源状态。 在 Windows Server 2003、 Windows XP 和 Windows 2000 仅，驱动程序还必须调用[ **PoStartNextPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)后它会设置电源状态开始下一个幂 IRP。 该驱动程序，然后完成 IRP，指定 IO\_否\_增量。 如果该驱动程序无法立即完成 IRP，则会调用[ **IoMarkIrpPending**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)，将返回状态\_PENDING 从其*DispatchPower*例程，并完成 IRP 更高版本。
+-   如果总线驱动程序能够执行此操作，则该驱动程序将更改设备电源，并调用[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)通知电源管理器新设备电源状态。 仅在 Windows Server 2003、Windows XP 和 Windows 2000 中，驱动程序还必须调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp) ，以在设置电源状态后启动下一个 power IRP。 然后，该驱动程序完成 IRP，指定 IO\_没有\_增量。 如果驱动程序无法立即完成 IRP，它将调用[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)，并从其*DISPATCHPOWER*例程返回状态\_"挂起"，并在以后完成 irp。
 
-即使目标设备已在请求的电源状态，每个函数或筛选器驱动程序必须将传递到下一步低驱动程序 IRP。 每个集 power IRP 必须一直沿设备堆栈向下移动到总线驱动程序，它完成后，它。
+即使目标设备已处于 "已请求" 电源状态，每个函数或筛选器驱动程序也必须将 IRP 向下传递到下一个较低版本的驱动程序。 每个设置电源 IRP 都必须按设备堆栈向下移动到总线驱动程序，这将完成该过程。
 
-位于上方总线驱动程序的函数和筛选器驱动程序不得失败设备集电源 IRP。 总线驱动程序可能会失败设备强化 IRP 如果删除该设备或正被删除。
+位于总线驱动程序之上的函数和筛选器驱动程序不能使设备集的电源 IRP 失败。 如果设备被删除或正在被删除，则总线驱动程序可以使设备开启 IRP 失败。
 
-驱动程序堆栈中的每个驱动程序 （函数、 筛选和总线驱动程序） 必须调用[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)以通知其相应的设备对象的电源状态更改的电源管理器。
+驱动程序堆栈中的每个驱动程序（函数、筛选器和总线驱动程序）都必须调用[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate) ，以通知 power manager 其相应设备对象的电源状态发生变化。
 
-喜欢与设备强化和电源关闭，将会调用其他驱动程序任务**PoSetPowerState**必须出现在设备上 （如果新的状态是 D0） 为提供的支持后或之前设备关闭 （如果新的状态是任何其他状态） 为提供的支持。
+与与设备开启和关机关联的其他驱动程序任务一样，对**PoSetPowerState**的调用必须在设备接通电源后（如果新状态为 D0）或设备关闭（如果新状态为任何其他状态）。
 
-每个驱动程序应跟踪的其设备的电源状态。 电源管理器不提供此信息来驱动程序。
+每个驱动程序都应跟踪其设备的电源状态。 电源管理器不会将此信息提供给驱动程序。
 
-在处理[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)设备电源状态，驱动程序的请求应返回从*DispatchPower*尽可能快地例程。 驱动程序必须等待中其*DispatchPower*代码处理相同的 IRP 信号的内核事件的例程。 因为 power Irp 整个系统同步的可能会发生死锁。
+处理[**IRP\_MN\_设置**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)设备电源状态\_电源请求时，驱动程序应尽快从*DispatchPower*例程返回。 对于由处理同一 IRP 的代码发出信号的内核事件，驱动程序不得在其*DispatchPower*例程中等待。 由于 power Irp 在整个系统中同步，因此可能会发生死锁。
 
-若要确保最高级别的系统性能，尤其是对于多媒体应用程序，驱动程序应执行耗时级别操作中断请求 (IRQL) 等于被动\_级别。 执行操作在 IRQL = 被动\_级别，可以使用驱动程序[专用线程](device-dedicated-threads.md)或[系统工作线程](system-worker-threads.md)。 有关优化多媒体平台的驱动程序性能的指南，请参阅[流式处理媒体设备设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/index)。
+若要确保最高级别的系统性能（特别是对于多媒体应用程序），驱动程序应在等于被动\_级别的中断请求级别（IRQL）执行耗时的操作。 若要在 IRQL = 被动\_级别执行操作，驱动程序可以使用[专用线程](device-dedicated-threads.md)或[系统工作线程](system-worker-threads.md)。 有关优化多媒体平台驱动程序性能的指南，请参阅[流媒体设备设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/index)。
 
-驱动程序必须采取来处理 power IRP 的确切步骤取决于打开设备电源，如以下各节中所述：
+驱动程序处理 power IRP 所需的确切步骤取决于设备是否通电或断电，如以下部分中所述：
 
 [处理设备电源关闭 Irp](handling-device-power-down-irps.md)
 
-[处理设备强化 Irp](handling-device-power-up-irps.md)
+[处理设备开启 Irp](handling-device-power-up-irps.md)
 
  
 

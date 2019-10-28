@@ -3,24 +3,24 @@ title: 处理异步驱动程序通知
 description: 处理异步驱动程序通知
 ms.assetid: 7e7ed971-5891-4b91-909a-1e140b764fed
 keywords:
-- 驱动程序通知 WDK 动态硬件分区、 处理
-- 异步驱动程序通知 WDK 动态硬件分区、 处理
+- 驱动程序通知 WDK 动态硬件分区，处理
+- 异步驱动程序通知 WDK 动态硬件分区，处理
 - 注册驱动程序通知 WDK 动态硬件分区，异步
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a926e447e2ce368943e3ce6342b20f1a28f145
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef4ced4edbab7e150342cfd600db011b2c187d50
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378816"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838488"
 ---
 # <a name="processing-an-asynchronous-driver-notification"></a>处理异步驱动程序通知
 
 
-当操作系统将调用注册的回调函数时，会传递一个指向[**设备\_界面\_更改\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_interface_change_notification)结构*NotificationStructure*参数。
+当操作系统调用注册的回调函数时，它会将指向[**设备\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_interface_change_notification)的指针传递\_在*NotificationStructure*参数中\_通知结构。
 
-下面的代码示例显示了处理异步驱动程序通知处理器的回调函数的实现：
+下面的代码示例演示了用于处理处理器的异步驱动程序通知的回调函数的实现：
 
 ```cpp
 // Asynchronous processor notification callback function
@@ -75,7 +75,7 @@ NTSTATUS
 }
 ```
 
-下面的代码示例显示了处理内存的异步驱动程序通知的回调函数的实现：
+下面的代码示例演示了用于处理内存的异步驱动程序通知的回调函数的实现：
 
 ```cpp
 // Asynchronous memory notification callback function

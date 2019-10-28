@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c90c965b430d6bb3cb9b2ce1fef711ed62e478b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9a418364c1e2ca4b5e984cf60cb9fb6a49590319
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355014"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837442"
 ---
-# <a name="kscategoryproxy"></a>KSCATEGORY_PROXY
+# <a name="kscategory_proxy"></a>KSCATEGORY_PROXY
 
 
-KSCATEGORY_PROXY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)表示[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 保留供独占使用的功能类别[流式处理代理模块内核](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index).
+KSCATEGORY_PROXY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)[表示内核流式处理（KS](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2) ）功能类别，该类别保留供[内核流式处理代理模块](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)专用使用。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_PROXY[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">属性</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -61,8 +61,8 @@ KSCATEGORY_PROXY[设备接口类](https://docs.microsoft.com/windows-hardware/dr
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>

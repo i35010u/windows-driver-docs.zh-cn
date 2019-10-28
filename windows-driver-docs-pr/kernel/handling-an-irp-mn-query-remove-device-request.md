@@ -6,94 +6,94 @@ keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a581a32ca3a9cc9e6e7bae2cfd7662760251e8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd033b68d4ce3b38d86da4e8f2a02edcf93f8d96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384232"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838668"
 ---
-# <a name="handling-an-irpmnqueryremovedevice-request"></a>处理 IRP\_MN\_查询\_删除\_设备请求
+# <a name="handling-an-irp_mn_query_remove_device-request"></a>处理 IRP\_MN\_查询\_删除\_设备请求
 
 
 
 
 
-PnP 管理器将发送此 IRP，以通知设备是要从计算机中删除并询问是否可以无需中断在计算机中删除该设备驱动程序。 它还会发送此 IRP，当用户请求来更新设备驱动程序。
+PnP 管理器发送此 IRP，以通知驱动程序要从计算机中删除设备，并询问是否可以在不中断计算机的情况下删除设备。 当用户请求更新设备的驱动程序时，它还会发送此 IRP。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文中。
+PnP 管理器以 IRQL 被动\_级别在系统线程的上下文中发送此 IRP。
 
-它执行以下操作之前将此 IRP 发送到设备的驱动程序：
+在将此 IRP 发送到设备的驱动程序之前，它将执行以下操作：
 
--   通知所有用户模式应用程序注册的设备 （或相关的设备） 上的通知。
+-   通知所有用户模式应用程序，这些应用程序在设备（或相关设备）上注册了通知。
 
-    这包括为通知或某个设备的删除关系上设备的后代 （子设备，子节点和等的子级） 之一的设备上注册的应用程序。 应用程序通过调用此类通知注册**RegisterDeviceNotification**。
+    这包括在设备上注册了通知的应用程序、设备的一个子代（子设备、子项的子项等等），或某个设备的删除关系。 应用程序通过调用**RegisterDeviceNotification**注册此类通知。
 
-    在响应此通知，应用程序准备用于设备删除 （设备关闭句柄） 或查询失败。
+    为响应此通知，应用程序将准备设备删除（关闭对设备的句柄）或查询失败。
 
--   通知所有内核模式驱动程序的注册设备 （或相关的设备） 上的通知。
+-   通知所有在设备上注册为通知的内核模式驱动程序（或相关设备）。
 
-    这包括为通知或某个设备的删除关系上设备的后代之一的设备上注册的驱动程序。 驱动程序通过调用注册此通知[ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)事件类别**EventCategoryTargetDeviceChange**。
+    这包括在设备上注册了通知的驱动程序、设备的一个子代或某个设备的删除关系。 驱动程序通过调用事件类别为**EventCategoryTargetDeviceChange**的[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)注册此通知。
 
-    在响应此通知时，驱动程序准备用于设备删除 （设备关闭句柄） 或查询失败。
+    响应此通知时，驱动程序会准备设备删除（关闭设备的句柄）或查询失败。
 
--   将发送[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device) Irp 到设备的后代的驱动程序。
+-   将[**IRP\_MN\_QUERY\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)irp 发送到设备后代的驱动程序。
 
--   （Windows 2000 和更高版本系统）如果在设备上装载文件系统后，即插即用管理器将查询删除请求发送到文件系统和任何文件系统筛选器。 如果有打开的句柄到设备，文件系统通常会失败的查询删除请求。 如果不是，文件系统通常锁定以防止未来的卷创建成功。 如果已装载的文件系统不支持查询和删除请求，即插即用管理器进行故障设备的查询删除请求。
+-   （Windows 2000 及更高版本的系统）如果文件系统已装载到设备上，则 PnP 管理器会将查询-删除请求发送到文件系统和任何文件系统筛选器。 如果设备有打开的句柄，则文件系统通常无法通过查询-删除请求。 如果不是，则文件系统通常会锁定卷，以防以后再进行创建。 如果已装载的文件系统不支持查询删除请求，则 PnP 管理器将无法对设备执行查询删除请求。
 
-如果所有上述步骤成功，即插即用管理器发送**IRP\_MN\_查询\_删除\_设备**到设备的驱动程序。
+如果上述所有步骤都成功，则 PnP 管理器会将**IRP\_MN\_QUERY\_删除\_设备**到设备的驱动程序中。
 
-**IRP\_MN\_查询\_删除\_设备**设备堆栈中顶部驱动程序，然后按每个下一步的较低的驱动程序第一次处理请求。 驱动程序句柄删除 Irp 中的其[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
+**IRP\_MN\_查询\_删除\_设备**请求首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。 驱动程序会在其[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中处理删除 irp。
 
-以响应**IRP\_MN\_查询\_删除\_设备**，驱动程序必须执行以下操作：
+为了响应**IRP\_MN\_QUERY\_删除\_设备**，驱动程序必须执行以下操作：
 
-1.  确定是否在设备可以从计算机中删除无需中断操作。
+1.  确定是否可以从计算机中删除设备而不中断操作。
 
-    如果下列任何条件成立，驱动程序必须失败查询删除 IRP:
+    如果满足以下任一条件，则驱动程序必须使查询删除 IRP 失败：
 
-    -   如果删除该设备可能会导致数据丢失。
+    -   如果删除该设备，可能会导致数据丢失。
 
-    -   如果组件具有设备的打开句柄。 (这是 Windows 98 上的问题 / 只是我。 Windows 2000 和更高版本的 Windows 跟踪打开的句柄和失败查询是否存在后打开的句柄**IRP\_MN\_查询\_删除\_设备**完成。)
+    -   如果组件具有设备的打开句柄，则为。 （这只是 Windows 98/Me 上的问题。 Windows 2000 和更高版本的 Windows 跟踪打开句柄，如果**IRP\_MN\_查询**后存在打开的句柄，则查询将失败，\_删除\_设备完成。）
 
-    -   如果驱动程序通知 (通过[ **IRP\_MN\_设备\_使用情况\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification) IRP) 设备正在分页的路径故障转储或休眠文件。
+    -   如果已收到驱动程序通知（通过[**IRP\_MN\_设备\_使用\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)IRP），则表示设备位于分页、故障转储或休眠文件的路径中。
 
-    -   如果该驱动程序具有对该设备的未完成的接口引用。 也就是说，该驱动程序提供响应的接口[ **IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求和接口不已取消引用。
+    -   如果驱动程序对设备具有未完成的接口引用，则为。 也就是说，驱动程序提供了一个接口，以响应[**IRP\_MN\_QUERY\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求，但未取消引用接口。
 
-2.  如果不能删除该设备，失败查询删除 IRP。
+2.  如果无法删除设备，则查询-删除 IRP 失败。
 
-    设置**Irp-&gt;IoStatus.Status**到相应的错误状态 (通常状态\_未成功)，调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)与IO\_否\_增量和从驱动程序的返回*DispatchPnP*例程。 不将 IRP 传递给下一个较低的驱动程序。
+    将**Irp&gt;IoStatus**设置为适当的错误状态（通常\_状态为 "不成功"），使用 IO\_不\_增量调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) ，并从驱动程序的*DispatchPnP*例程返回。 不要将 IRP 传递到下一个较低版本的驱动程序。
 
-3.  如果该驱动程序以前发送[ **IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)启用唤醒设备，请取消等待唤醒 IRP 的请求。
+3.  如果驱动程序以前发送了[**IRP\_MN\_等待\_唤醒**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)请求启用设备进行唤醒，则取消等待唤醒 IRP。
 
-4.  记录的前一的即插即用设备状态。
+4.  记录设备以前的 PnP 状态。
 
-    驱动程序应记录时驱动程序收到所在设备的即插即用状态[ **IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求因为该驱动程序必须将设备恢复为该状态如果查询已取消 ([**IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)). 以前的状态通常"启动"，这是设备驱动程序已成功完成时将进入的状态[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。
+    当驱动程序收到[**IRP\_MN\_query\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求时，驱动程序应记录设备所在的 PnP 状态，因为如果取消查询，驱动程序必须将设备返回到该状态（[**IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)）。 以前的状态通常为 "已启动"，这是设备在驱动程序成功完成[**IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求时输入的状态。
 
-    但是，其他以前的状态是可能的。 例如，用户可能会禁用设备通过设备管理器。 或者，以响应**IRP\_MN\_查询\_功能**请求时，父总线驱动程序 （或总线驱动程序上的筛选器驱动程序） 可能已报告设备的硬件已禁用。 已禁用的设备的驱动程序可以在任一情况下，接收**IRP\_MN\_查询\_删除\_设备**之前收到请求**IRP\_MN\_启动\_设备**请求。
+    但是，其他以前的状态是可能的。 例如，用户可能已通过设备管理器禁用了该设备。 或者，为了响应**IRP\_MN\_QUERY\_功能**请求，父总线驱动程序（或总线驱动程序上的筛选器驱动程序）可能报告设备的硬件已禁用。 在任一情况下，已禁用设备的驱动程序都可以接收**irp\_MN\_查询，\_** 在收到**irp\_MN\_START\_设备**请求之前，先删除\_设备请求。
 
-5.  完成 IRP:
+5.  完成 IRP：
 
-    在函数或筛选器驱动程序：
+    在函数或筛选器驱动程序中：
 
-    -   设置**Irp-&gt;IoStatus.Status**于状态\_成功。
+    -   将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
 
-    -   设置下一步堆栈位置与[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) ，并将 IRP 传递到下一个较低的驱动程序与[ **IoCallDriver** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
+    -   用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)设置下一个堆栈位置，并将 IRP 传递到下一个带[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的驱动程序。
 
-    -   传播将状态从**IoCallDriver**作为返回的状态*DispatchPnP*例程。
+    -   将状态从**IoCallDriver**作为返回状态从*DispatchPnP*例程传播。
 
-    -   无法完成 IRP。
+    -   不要完成 IRP。
 
-    在总线驱动程序：
+    在总线驱动程序中：
 
-    -   设置**Irp-&gt;IoStatus.Status**于状态\_成功。
+    -   将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
 
-    -   完成 IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) 与 IO\_否\_增量。
+    -   通过 IO\_不\_递增来完成 IRP （[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)）。
 
-    -   返回从*DispatchPnP*例程。
+    -   从*DispatchPnP*例程返回。
 
-如果设备堆栈中的任何驱动程序失败**IRP\_MN\_查询\_删除\_设备**，即插即用管理器将发送**IRP\_MN\_取消\_删除\_设备**到设备堆栈。 这可以防止驱动程序要求[ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)查询删除 IRP，以检测是否较低的驱动程序失败 IRP 的例程。
+如果设备堆栈中的任何驱动程序未能通过**irp\_MN\_QUERY\_删除\_设备**，则 PnP 管理器会发送**IRP\_MN\_取消\_删除\_设备**到设备堆栈。 这可以防止驱动程序要求使用[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程进行查询-删除 irp 来检测低级驱动程序是否失败了 irp。
 
-驱动程序成功后**IRP\_MN\_查询\_删除\_设备**并且它认为设备处于挂起删除状态，该驱动程序必须失败任何后续的创建设备的请求数。 该驱动程序处理所有其他 Irp 像往常一样，直到该驱动程序收到**IRP\_MN\_取消\_删除\_设备**或者**IRP\_MN\_删除\_设备**。
+一旦驱动程序成功， **IRP\_MN\_QUERY\_删除\_设备**，并认为设备处于 "消除挂起" 状态，则驱动程序必须对设备的任何后续创建请求失败。 驱动程序会照常处理所有其他的 Irp，直到驱动程序收到**IRP\_MN\_CANCEL\_删除\_设备**或**IRP\_MN\_删除\_设备**。
 
  
 

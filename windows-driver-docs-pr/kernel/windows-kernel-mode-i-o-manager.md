@@ -4,35 +4,35 @@ description: Windows 内核模式 I/O 管理器
 ms.assetid: 8652f37d-0ece-4c08-9bce-499f0fedb0dd
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9e96566d4fd0d59f5fe539321c0b195d1947defe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8d57f209b66f9c054d6e7d27e7079d6fe1b2492
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358027"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838312"
 ---
 # <a name="windows-kernel-mode-io-manager"></a>Windows 内核模式 I/O 管理器
 
 
-计算机包含提供输入和输出 (I/O) 与外部世界的各种设备。 典型设备是键盘、 鼠标、 音频控制器、 视频控制器、 磁盘驱动器、 网络端口和等等。 设备驱动程序提供的设备和操作系统之间的软件连接。 出于此原因，I/O 是非常重要的设备驱动程序编写器。
+计算机由各种设备组成，它们提供与外部世界之间的输入和输出（i/o）。 典型设备包括键盘、鼠标、音频控制器、视频控制器、磁盘驱动器、网络端口等。 设备驱动程序在设备和操作系统之间提供软件连接。 出于此原因，i/o 对设备驱动程序编写器非常重要。
 
-Windows 内核模式 I/O 管理器管理应用程序和设备驱动程序提供的接口之间的通信。 设备运行速度可能会与操作系统不匹配，因为操作系统和设备驱动程序之间的通信主要是通过 I/O 请求数据包 (Irp)。 这些数据是类似于网络数据包或数据包 Windows 消息。 在传递到特定的驱动程序的操作系统从和到另一个驱动程序。
+Windows 内核模式 i/o 管理器管理应用程序与设备驱动程序提供的接口之间的通信。 由于设备的运行速度可能与操作系统不匹配，因此，操作系统和设备驱动程序之间的通信主要通过 i/o 请求数据包（Irp）来完成。 这些数据包与网络数据包或 Windows 消息数据包类似。 它们从操作系统传递到特定驱动程序，并从一个驱动程序传递到另一个驱动程序。
 
-Windows I/O 系统提供分层驱动程序模型调用堆栈。 通常 Irp 转从一个驱动程序为另一种便于进行通信的同一堆栈。 例如，游戏杆驱动程序需要进行通信的 USB 集线器，又需要与 USB 主控制器，然后将需要通过计算机硬件的其余部分的 PCI 总线进行通信的通信。 堆栈组成游戏杆驱动程序、 USB 集线器、 USB 主控制器和 PCI 总线。 此通信协调将每个驱动程序放在堆栈发送和接收 Irp。
+Windows i/o 系统提供名为 stack 的分层驱动程序模型。 通常，在同一堆栈中，Irp 从一个驱动程序传输到另一个驱动程序，以便进行通信。 例如，游戏杆驱动程序需要与 USB 集线器通信，这反过来需要与 USB 主机控制器通信，然后需要通过 PCI 总线与计算机硬件的其余部分通信。 堆栈包含游戏杆驱动程序、USB 集线器、USB 主机控制器和 PCI 总线。 此通信通过使堆栈发送和接收 Irp 中的每个驱动程序进行协调。
 
-不能要着重强调足够您的驱动程序必须发送和接收 Irp 及时有效地操作整个堆栈。 如果您的驱动程序堆栈的一部分并不未正确接收、 处理和传递的信息，您的驱动程序可能会导致系统崩溃。
+它的意义不大，您的驱动程序必须及时发送和接收 Irp，整个堆栈才能有效地运行。 如果你的驱动程序是堆栈的一部分，并且没有正确接收、处理和传递这些信息，你的驱动程序可能会导致系统崩溃。
 
-有关 Irp 的详细信息，请参阅[处理 Irp](handling-irps.md)。
+有关 Irp 的详细信息，请参阅[处理 irp](handling-irps.md)。
 
 有关驱动程序堆栈的详细信息，请参阅[设备对象和设备堆栈](device-objects-and-device-stacks.md)。
 
-有关编程来与 I/O 管理相关，请参阅[I/O 管理器的编程技术](i-o-programming-techniques.md)。
+有关与 i/o 管理相关的编程能够，请参阅[I/o 管理器编程技术](i-o-programming-techniques.md)。
 
-为 I/O 管理器提供直接的界面的例程都通常带有前缀字母"**Io**"; 例如， **IoCreateDevice**。 I/O 管理器例程的列表，请参阅[I/O 管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))。
+向 i/o 管理器提供直接接口的例程通常以字母 "**Io**" 作为前缀;例如， **IoCreateDevice**。 有关 i/o 管理器例程的列表，请参阅[I/o 管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551797(v=vs.85))。
 
-有关与 IRP 相关的例程的列表，请参阅[Irp](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)。
+有关与 IRP 相关的例程列表，请参阅[irp](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
-I/O 管理器有两个子组件： 插管理器和电源管理器。 他们管理的插和电源管理的技术的 I/O 功能。 有关插管理的详细信息，请参阅[Windows 内核模式插管理器](windows-kernel-mode-plug-and-play-manager.md)和有关电源管理的详细信息，请参阅[Windows 内核模式电源管理器](windows-kernel-mode-power-manager.md)。
+I/o 管理器有两个子组件：即插即用 manager 和电源管理器。 它们针对即插即用和电源管理的技术管理 i/o 功能。 有关即插即用管理的详细信息，请参阅[Windows 内核模式即插即用管理器](windows-kernel-mode-plug-and-play-manager.md)和有关电源管理的详细信息，请参阅[Windows 内核模式电源管理器](windows-kernel-mode-power-manager.md)。
 
  
 

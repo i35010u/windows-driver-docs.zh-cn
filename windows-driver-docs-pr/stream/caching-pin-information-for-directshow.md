@@ -3,20 +3,20 @@ title: 缓存 DirectShow 的引脚信息
 description: 缓存 DirectShow 的引脚信息
 ms.assetid: 1e6a973b-32d2-4ac2-9cd6-f4d3c329cecf
 keywords:
-- pin 数据缓存 WDK BDA
+- 固定数据缓存 WDK BDA
 - 缓存 WDK AVStream
-- DirectShow pin 数据缓存 WDK AVStream
+- DirectShow 固定数据缓存 WDK AVStream
 - 更新 pin 数据缓存 WDK AVStream
-- 广播驱动程序体系结构 WDK AVStream，pin 数据缓存
-- BDA WDK AVStream，pin 数据缓存
+- 广播驱动程序体系结构 WDK AVStream，固定数据缓存
+- BDA WDK AVStream，固定数据缓存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 483eef10387cc0931b853372c240fc5526f47c81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5e4ccb63b02c741f0a4e1d4a15ab142fb8390d6e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386678"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840609"
 ---
 # <a name="caching-pin-information-for-directshow"></a>缓存 DirectShow 的引脚信息
 
@@ -24,25 +24,25 @@ ms.locfileid: "67386678"
 
 
 
-应用程序可以使用 DirectShow **IFilterMapper2**接口来自动搜索满足特定条件的筛选器。 此应用程序可以使用建议的筛选器的列表， **IFilterMapper2**返回自动生成用于接收和呈现电视信号的筛选器的筛选器关系图。 若要快速查找符合指定条件的筛选器**IFilterMapper2**使用以前输入过到缓存中的筛选器，其插针，有关信息。 下面的段落中讨论所涉及到为此缓存*将固定数据缓存*。
+应用程序可以使用 DirectShow **IFilterMapper2**接口自动搜索符合特定条件的筛选器。 此应用程序可使用**IFilterMapper2**返回的建议筛选器列表，自动生成筛选器图形，其中包含接收和呈现电视信号的筛选器。 为了快速查找满足指定条件的筛选器， **IFilterMapper2**使用了有关筛选器及其之前输入缓存的 pin 的信息。 以下段落中的讨论将此缓存称为*pin 数据缓存*。
 
-Pin 数据缓存中包含的信息包括介质和筛选器可以公开每个 pin 的媒体类型的列表。 **IFilterMapper2**使用此缓存信息来确定可能的筛选器可以连接到已在关系图对筛选器的 pin。 在进行此决定消除了创建仅用于确定连接到该筛选器阻止，因为中等或媒体类型不匹配的筛选器的实例的系统开销。 如果筛选器的 pin 数据缓存不是最新的筛选器可能错误地消除作为筛选器关系图中的连接的候选项。
+Pin 数据缓存中包含的信息包括媒体的列表和筛选器可以公开的每个 pin 的媒体类型。 **IFilterMapper2**使用此缓存信息来确定可能的筛选器是否可以连接到已在图形中的筛选器上的 pin。 做出此决定消除了创建筛选器实例的开销，只是为了确定由于介质或介质类型不匹配而阻止连接到筛选器。 如果筛选器的 pin 数据缓存不是最新的，则可能会错误地消除筛选器，作为筛选器关系图中的连接的候选项。
 
-每当 BDA 微型驱动程序确定 DirectShow 使用其 pin 数据缓存不是最新，该微型驱动程序必须更新 pin 数据缓存，以便微型驱动程序的 BDA 组件的 BDA 筛选器实例的 pin 信息准确地公开在筛选器关系图。 BDA 微型驱动程序更新 DirectShow 的 pin 数据缓存在以下方案中所述：
+只要 BDA 微型驱动程序确定 DirectShow 使用的 pin 数据缓存不是最新的，则微型驱动程序必须更新 pin 数据缓存，以便在筛选器中准确地公开微型驱动程序的 BDA 组件的 BDA 筛选器实例的 pin 信息图形. BDA 微型驱动程序会更新 DirectShow 的 pin 数据缓存，如以下方案所述：
 
--   BDA 微型驱动程序可能会或可能不需要更新 DirectShow 的 pin 数据缓存时微型驱动程序最初创建 BDA 筛选器实例，具体取决于该微型驱动程序如何显示，并且在用户模式下的 DirectShow 筛选器的 BDA 筛选器。 BDA 微型驱动程序的信息 (INF) 文件指定微型驱动程序使用来提供其 BDA 筛选器，如 DirectShow 筛选器的机制。
+-   当微型驱动程序最初根据微型驱动程序将 BDA 筛选器以用户模式显示为 DirectShow 筛选器时，微型驱动程序可能需要也可能不需要更新 DirectShow 的 pin 数据缓存。 BDA 微型驱动程序的信息（INF）文件指定了微型驱动程序用来将其 BDA 筛选器显示为 DirectShow 筛选器的机制。
 
-    BDA 微型驱动程序通常使用[内核流式处理 (KS) 代理模块](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_stream/index)(*Ksproxy.ax*) 以显示其 BDA 时，会筛选 DirectShow 筛选器。 KS 代理会自动更新 DirectShow 的 pin 数据缓存，以最初创建这些筛选器的实例时公开 BDA 筛选器的 pin 信息。 因此，不需要执行任何操作来更新 DirectShow 的 pin 数据缓存在最初创建筛选器的实例时使用 KS 代理的 BDA 微型驱动程序。 如果 BDA 筛选器公开为通过 KS 代理的用户模式时，缓存的信息会自动包括介质并立即后筛选器的筛选器实例存在的 pin 工厂的媒体类型创建调度例程返回。
+    BDA 微型驱动程序通常使用[内核流式处理（KS）代理模块](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（*Ksproxy.ax*）将其 BDA 筛选器显示为 DirectShow 筛选器。 当最初创建了这些筛选器的实例时，KS 代理会自动更新 DirectShow 的 pin 数据缓存，以便公开 BDA 筛选器的 pin 信息。 因此，在最初创建筛选器的实例时，不需要使用 KS 代理来执行任何操作来更新 DirectShow 的 pin 数据缓存。 如果通过 KS proxy 向用户模式公开 BDA 筛选器，缓存的信息将自动包括在筛选器的创建调度例程返回后，位于筛选器实例上的 pin 工厂的媒体和媒体类型。
 
-    某些 BDA 微型驱动程序不使用 KS 代理提供其 BDA 将筛选器为 DirectShow 筛选器。 例如，BDA 接收方微型驱动程序实现 BDA 的筛选器以接收或进程模拟电视信号可以使用两种*KSTVTune.ax*或*KSXBar.ax*模块，以便显示作为这些 BDA 筛选器DirectShow 筛选器。 因为这些模块不使用标准 KS 代理接口方法更新 DirectShow 的 pin 数据缓存，对于这些类型的筛选器 BDA BDA 微型驱动程序必须更新 DirectShow 的 pin 数据缓存时这些微型驱动程序最初创建的筛选器实例。 为了确保在创建这些筛选器的实例时，更新 DirectShow 的 pin 数据缓存，BDA 微型驱动程序调用[ **BdaFilterFactoryUpdateCacheData** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)后立即调用的函数[ **BdaInitFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/nf-bdasup-bdainitfilter)筛选器的实现内部函数的 create 调度例程。 在此调用中，微型驱动程序将更新的筛选器上的所有初始 pin 的 pin 信息传递。
+    某些 BDA 微型驱动程序不会使用 KS 代理以 DirectShow 筛选器形式显示其 BDA 筛选器。 例如，用于实现 BDA 筛选器以接收或处理模拟电视信号的 BDA 接收方微型驱动程序使用*KSTVTune.ax*或*KSXBar.ax*模块将这些 BDA 筛选器呈现为 DirectShow 筛选器。 由于这些模块不使用标准 KS 代理接口方法来更新 DirectShow 的 pin 数据缓存，因此这些类型的 BDA 筛选器的 BDA 微型驱动程序必须在微型驱动程序最初创建筛选器实例时更新 DirectShow 的 pin 数据缓存。 若要确保在创建这些筛选器的实例时，将更新 DirectShow 的 pin 数据缓存，则在调用微型驱动程序中的[**BdaInitFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdainitfilter)函数后，将立即调用[**BdaFilterFactoryUpdateCacheData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/nf-bdasup-bdafilterfactoryupdatecachedata)函数筛选器创建调度例程的实现。 在此调用中，微型驱动程序将传递 pin 信息以更新筛选器上的所有初始 pin。
 
--   Pin 可以 BDA 筛选器上动态创建后的筛选器创建调度例程完成。 如果 BDA 筛选器的最初创建的实例不会公开 BDA 筛选器的模板拓扑中列出的所有球瓶实例 ([**BDA\_筛选器\_模板**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/bdasup/ns-bdasup-_bda_filter_template))，然后 BDA 微型驱动程序必须调用**BdaFilterFactoryUpdateCacheData**强制有关筛选器的模板拓扑中列出的所有 pin 信息。
+-   在筛选器的创建调度例程完成后，可在 BDA 筛选器上动态创建 pin。 如果在 "bda 筛选器" 的模板拓扑（[**bda\_筛选器\_模板**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bdasup/ns-bdasup-_bda_filter_template)）中列出的所有 pin 的实例未显示在 "bda 筛选器" 的模板拓扑（bda " **BdaFilterFactoryUpdateCacheData**强制执行有关筛选器模板拓扑中列出的所有 pin 的信息。
 
-**请注意**  更新 DirectShow pin 数据缓存具有很大的开销，因为它涉及并修改注册表。 此外，更新 DirectShow 的 pin 数据缓存会影响所需的 DirectShow 自动生成筛选器关系图的时间量。 因此，BDA 微型驱动程序应调用**BdaFilterFactoryUpdateCacheData**所有可能的 pin 仅当确定使用 DirectShow 其 pin 数据缓存不是最新。
+**请注意**   更新 DirectShow 的 pin 数据缓存会产生很大的开销，因为它涉及并修改注册表。 此外，更新 DirectShow 的 pin 数据缓存会影响 DirectShow 自动生成筛选器关系图所需的时间量。 因此，仅当 BDA 微型驱动程序确定 DirectShow 使用的 pin 数据缓存不是最新时，才应为所有可能的 pin 调用**BdaFilterFactoryUpdateCacheData** 。
 
  
 
-如果可能，应调用 BDA 微型驱动程序**BdaFilterFactoryUpdateCacheData**每当发生驱动程序、 固件或硬件更新。
+如果可能，在出现驱动程序、固件或硬件更新时，BDA 微型驱动程序应调用**BdaFilterFactoryUpdateCacheData** 。
 
  
 

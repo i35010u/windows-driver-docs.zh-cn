@@ -3,16 +3,16 @@ title: 筛选器驱动程序的特征
 description: 筛选器驱动程序的特征
 ms.assetid: 95e302c1-687e-4a30-b3bc-9d272c688cba
 keywords:
-- 筛选器驱动程序 WDK 网络特征
+- 筛选器驱动程序 WDK 网络，特征
 - NDIS 筛选器驱动程序 WDK，特征
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a861c19269826723cf4f3c70340b3f5b07c6d649
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a241d6e1973b4c7d8dc08054b1741136328654c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353738"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838108"
 ---
 # <a name="filter-driver-characteristics"></a>筛选器驱动程序的特征
 
@@ -22,25 +22,25 @@ ms.locfileid: "67353738"
 
 筛选器驱动程序具有以下特征：
 
--   筛选器驱动程序的实例称为*筛选器模块*。 筛选器模块会附加到基础的微型端口适配器。 从同一个筛选器驱动程序或不同的筛选器驱动程序的多个筛选器模块可以通过适配器进行堆叠。
+-   筛选器驱动程序的实例称为*筛选器模块*。 筛选器模块附加到基础微型端口适配器。 来自同一筛选器驱动程序或不同筛选器驱动程序的多个筛选器模块可以通过适配器进行堆叠。
 
--   基础协议驱动程序不需要在筛选器模块均已安装此类驱动程序和基础微型端口驱动程序之间提供替代功能 （否则所述，筛选器模块是透明的过量协议驱动程序）。
+-   当在此类驱动程序和基础微型端口驱动程序之间安装筛选器模块时，不需要过量的协议驱动程序来提供备用功能（否则，筛选器模块对过量的协议驱动程序是透明的）。
 
--   由于筛选器驱动程序未实现中间驱动程序等的虚拟微型端口，筛选器驱动程序不是与设备对象相关联。 具有过量筛选器模块的微型端口适配器作为微型端口适配器的修改版本。 有关驱动程序堆栈的详细信息，请参阅[NDIS 6.0 驱动程序堆栈](ndis-driver-stack.md)。
+-   由于筛选器驱动程序不实现诸如中间驱动程序之类的虚拟微型端口，因此筛选器驱动程序不与设备对象相关联。 带有过量筛选器模块的微型端口适配器充当小型小型端口适配器的修改版本。 有关驱动程序堆栈的详细信息，请参阅[NDIS 6.0 驱动程序堆栈](ndis-driver-stack.md)。
 
--   NDIS 使用配置信息将附加到正确的驱动程序堆栈顺序中的适配器的筛选器模块。 有关筛选器模块的驱动程序堆栈顺序的详细信息，请参阅[筛选器驱动程序的 INF 文件设置](inf-file-settings-for-filter-drivers.md)。
+-   NDIS 使用配置信息按正确的驱动程序堆栈顺序将筛选器模块附加到适配器。 有关筛选器模块的驱动程序堆栈顺序的详细信息，请参阅[筛选器驱动程序的 INF 文件设置](inf-file-settings-for-filter-drivers.md)。
 
--   NDIS 可以动态地插入或删除驱动程序堆栈中的筛选器模块或重新筛选器模块中，配置而无需关闭整个堆栈。 有关详细信息，请参阅[修改运行驱动程序堆栈](modifying-a-running-driver-stack.md)。
+-   NDIS 可以在驱动程序堆栈中动态插入或删除筛选器模块，或重新配置筛选器模块，而无需分解整个堆栈。 有关详细信息，请参阅[修改正在运行的驱动程序堆栈](modifying-a-running-driver-stack.md)。
 
--   NDIS 重新启动驱动程序堆栈时，协议驱动程序可以获取驱动程序堆栈中的筛选器模块的列表。
+-   当 NDIS 重启驱动程序堆栈时，协议驱动程序可以在驱动程序堆栈中获取筛选器模块的列表。
 
-    有关筛选器模块的列表的详细信息，请参阅[ **NDIS\_协议\_重新启动\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_protocol_restart_parameters)。
+    有关筛选器模块列表的详细信息，请参阅[**NDIS\_协议\_RESTART\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_restart_parameters)。
 
--   筛选器驱动程序可以筛选基础的微型端口适配器的大多数通信。 筛选器模块不与任何基础协议驱动程序微型端口适配器之间的特定绑定相关联。 有关筛选的筛选器驱动程序可以提供服务的类型的详细信息，请参阅[筛选器驱动程序服务](filter-driver-services.md)。
+-   筛选器驱动程序可以筛选与基础微型端口适配器之间的大多数通信。 筛选器模块不与过量协议驱动程序和微型端口适配器之间的任何特定绑定相关联。 有关筛选器驱动程序可以提供的筛选服务类型的详细信息，请参阅[筛选器驱动程序服务](filter-driver-services.md)。
 
--   筛选器驱动程序可以选择进行筛选，可以忽略有关未筛选的服务的服务。 选择会绕过的服务和服务进行筛选后的动态重新配置。 有关详细信息，请参阅[数据绕过模式](data-bypass-mode.md)。
+-   筛选器驱动程序可以选择已筛选的服务，并且对于未筛选的服务可以跳过它们。 将绕过对所选服务的选择，并且可以动态地重新配置筛选的服务。 有关详细信息，请参阅[Data 旁路 Mode](data-bypass-mode.md)。
 
--   NDIS 保证上下文空间的可用性 (请参阅[NET\_缓冲区\_列表\_上下文结构](net-buffer-list-context-structure.md)) 的筛选器驱动程序。 因此，不需要将该代码复制缓冲区获取上下文空间包括筛选器驱动程序。 有关如何管理缓冲区的详细信息，请参阅[筛选器驱动程序缓冲区管理](filter-driver-buffer-management.md)。
+-   对于筛选器驱动程序，NDIS 保证上下文空间的可用性（请参阅[NET\_BUFFER\_列表\_上下文结构](net-buffer-list-context-structure.md)）。 因此，筛选器驱动程序不需要包括代码来复制缓冲区以获取上下文空间。 有关如何管理缓冲区的详细信息，请参阅[筛选器驱动程序缓冲区管理](filter-driver-buffer-management.md)。
 
  
 

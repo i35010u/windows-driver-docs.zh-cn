@@ -3,31 +3,31 @@ title: 处理 AVStream 编解码器中的流结尾
 description: 处理 AVStream 编解码器中的流结尾
 ms.assetid: ee57137b-999a-449f-9f9d-50bc19e07ba8
 keywords:
-- 处理流 WDK AVStream 结尾
-- WDK AVStream 流的末尾
-- 硬件编解码器支持 WDK AVStream，流的末尾
-- AVStream 硬件编解码器支持 WDK、 处理流的末尾
+- 处理流终止 WDK AVStream
+- 流终止 WDK AVStream
+- 硬件编解码器支持 WDK AVStream，流结束
+- AVStream 硬件编解码器支持 WDK，处理流的结尾
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f071e544d1e623798d63402a4e6395b0b048e7bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3c98259e9d7399fe611cca46ffb59bfc800bb814
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384038"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838088"
 ---
 # <a name="handling-end-of-stream-in-avstream-codecs"></a>处理 AVStream 编解码器中的流结尾
 
 
-当 HW MFT 接收端流 (EOS) 标志设置的示例时，它会设置 KSSTREAM\_标头\_OPTIONSF\_中的 ENDOFSTREAM **OptionsFlag**隶属[ **KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-ksstream_header)结构，它对应于该示例。
+当 HW MFT 接收到带有流（EOS）标记结尾的示例时，它将在与该示例相对应的[**KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的**OptionsFlag**成员中设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM.
 
-微型驱动程序收到后[ **KSSTREAM\_指针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/ns-ks-_ksstream_pointer)与 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 标志中设置**StreamHeader.OptionsFlag**，输入插针将不会收到任何新输入的流指针，直到微型驱动程序设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 上输出流指针。
+在微型驱动程序收到包含 KSSTREAM\_标头的[**KSSTREAM\_指针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksstream_pointer)\_OPTIONSF 在**ENDOFSTREAM**中设置\_StreamHeader 标志后，在微型驱动程序在输出流指针上将 KSSTREAM\_标头设置\_OPTIONSF\_ENDOFSTREAM。
 
-微型驱动程序设置 KSSTREAM 之前\_标头\_OPTIONSF\_ENDOFSTREAM 上输出流指针，它应生成尽可能使用当前可用的输入输出的帧数。
+在输出流指针上微型驱动程序设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 之前，它应使用当前可用的输入生成尽可能多的输出帧。
 
-微型驱动程序应则清除任何缓存与以前处理过流指针，除了与这些流指针关联的数据相关的信息。 然后微型驱动程序应设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM 的输出插针。
+然后，微型驱动程序应清除与以前处理的流指针相关的任何缓存信息，以及与这些流指针关联的数据。 然后，微型驱动程序应在输出插针上设置 KSSTREAM\_标头\_OPTIONSF\_ENDOFSTREAM。
 
-微型驱动程序应将到达的新输入的流指针随后作为新流的一部分。 例外情况是如果 EOS 时，会出现的媒体流中断。 如果是这样，新到达流指针必须 KSSTREAM\_标头\_OPTIONSF\_DATADISCONTINUITY 或 KSSTREAM\_标头\_OPTIONSF\_TIMEDISCONTINUITY，或KSSTREAM 中设置两个，标志\_标头。**OptionsFlags**。 如果流指针，这些标志集之一到达输入插针，微型驱动程序必须在相应输出插针流指针上设置相同的标记。
+微型驱动程序应将随后到达的新输入流指针视为新流的一部分。 例外情况是由于媒体流中的不连续性导致的 EOS。 如果是这种情况，则新到达的流指针将具有 KSSTREAM\_标头\_OPTIONSF\_DATADISCONTINUITY 或 KSSTREAM\_标头\_OPTIONSF\_TIMEDISCONTINUITY，或者两者都是 KSSTREAM 中的标志集\_标头.**OptionsFlags**。 如果具有其中一个标志集的流指针到达输入插针，则微型驱动程序必须在相应的输出插针的流指针上设置相同的标志。
 
  
 

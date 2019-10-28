@@ -4,15 +4,15 @@ description: 枚举关键字
 ms.assetid: ac1fb871-7720-4497-b9f7-8f592fe19bd0
 keywords:
 - 安装关键字 WDK 网络，枚举关键字
-- 枚举关键字 WDK NDIS 微型端口
+- 枚举关键字 WDK NDIS 小型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7db8feca170edc2f17035b7b46bd9cfee2d19aa9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1cef94a547a7b3724102c9f9fd5ad5b5ba7fcf4d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384564"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838115"
 ---
 # <a name="enumeration-keywords"></a>枚举关键字
 
@@ -20,9 +20,9 @@ ms.locfileid: "67384564"
 
 
 
-NDIS 6.0 和更高版本的 NDIS 网络设备的微型端口驱动程序提供标准化的枚举关键字。 枚举关键字是显示为菜单中的列表的值与相关联。
+Ndis 6.0 和更高版本的 NDIS 为网络设备的微型端口驱动程序提供标准化的枚举关键字。 枚举关键字与显示为菜单中的列表的值相关联。
 
-下面的示例显示了枚举关键字的 INF 文件定义。
+下面的示例演示了枚举关键字的 INF 文件定义。
 
 ```INF
 HKR, Ndi\params\<SubkeyName>, ParamDesc, 0, "%<SubkeyName>%"
@@ -35,83 +35,83 @@ HKR, Ndi\params\<SubkeyName>\enum, "2", 0, "%Rx Enabled%"
 HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 ```
 
-常规枚举关键字是：
+一般的枚举关键字包括：
 
 <a href="" id="-speedduplex"></a> **\*SpeedDuplex**  
-速度和双工设备支持的设置。 设备 INF 文件应列出关联的设备支持的设置。 也就是说，如果对于以太网 10/100 设备可支持仅全双工模式下，，关联的 INF 文件中应不会列出千兆或更高的速度或半双工设置。
+设备支持的速度和双工设置。 设备 INF 文件应仅列出关联设备支持的设置。 也就是说，对于只能支持全双工模式的以太网10/100 设备，不应在关联的 INF 文件中列出千兆位或更高的速度或半双工的设置。
 
-已使用 0 到 10 的枚举值不专门定义速度值可能设置为直接以 mbps 为单位的值的数字。  指示值必须至少为 1,000 Mbps (1 Gbps) 及更高版本。  下面是用于直接指定速度的几个示例：
+对于未明确定义的值，值为0到10的枚举值可能设置为值，该值是直接以 Mbps 为单位的值。  直接值必须至少为 1000 Mbps （1 Gbps）及更高版本。  下面是用于直接指定速度的几个示例：
 
-| SpeedDuplex 值 | 生成的速度 |
+| SpeedDuplex 值 | 最终速度 |
 | ---| ---|
-| 1,000 | 1 Gbps |
+| 1000 | 1 Gbps |
 | 10,000 | 10 Gbps |
-| 25,000 | 25 Gbps |
-| 50,000 | 50 Gbps |
-| 100,000 | 100 Gbps |
+| 25000 | 25 Gbps |
+| 50000 | 50 Gbps |
+| 100000 | 100 Gbps |
 
 <a href="" id="-flowcontrol"></a> **\*FlowControl**  
-控制在发送或接收路径为设备启用或禁用流的功能。
+设备在发送或接收路径中启用或禁用流控制的能力。
 
-**请注意**  以太网设备现在支持流控制和 LAN 的 Windows 8 内置驱动程序具有默认情况下启用的流控制。 当内核调试程序附加到这些 LAN 适配器之一时，NIC 将开始将流控制暂停帧推送到网络。 大多数网络交换机将通过暂时关闭的所有其他计算机连接到相同的中心的网络响应。 这是常见开发方案中，并且最终用户体验是不必要和难以进行诊断。
+**请注意**   以太网设备目前支持流控制，默认情况下，适用于 LAN 的 Windows 8 内置驱动程序已启用流控制。 当内核调试器附加到其中一个 LAN 适配器时，NIC 将开始将流控制暂停帧推送到网络。 大多数网络交换机会通过暂时关闭连接到同一集线器的所有其他计算机的网络来做出反应。 这是一种常见的开发方案，最终用户体验既不需要也不难诊断。
 
-出于此原因，在 Windows 8 和更高版本，NDIS 将禁用流控制，自动在计算机上启用调试时 (例如，通过键入**bcdedit /set 上进行调试**在命令行)。 当启用内核调试和微型端口调用[ **NdisReadConfiguration** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreadconfiguration) ，并将传递"\*FlowControl"对于*关键字*参数，NDIS 将重写的配置的值并返回零。
+出于此原因，在 Windows 8 及更高版本中，当在计算机上启用调试时，NDIS 将自动禁用流控制（例如，通过在命令行中键入**bcdedit/set debug** ）。 启用内核调试并且微型端口调用[**NdisReadConfiguration**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreadconfiguration)并为*关键字*参数传递 "\*FLOWCONTROL" 时，NDIS 将重写配置的值并返回零。
 
-如果您需要调试时启用流控制，提供了 NDIS **AllowFlowControlUnderDebugger**注册表值以允许您执行该操作。 **AllowFlowControlUnderDebugger**注册表值阻止 NDIS 禁用流控制，并允许 Nic 来保持其已配置的行为。 它可以找到以下注册表项下：
+如果需要在调试时启用流控制，NDIS 会提供**AllowFlowControlUnderDebugger**注册表值，以允许执行此操作。 **AllowFlowControlUnderDebugger**注册表值可防止 NDIS 禁用流控制，并允许 nic 保留其配置的行为。 它可在以下注册表项下找到：
 
-**HKEY\_LOCAL\_MACHINE**\\**System**\\**CurrentControlSet**\\**Services**\\**NDIS**\\**Parameters**
+**HKEY\_本地\_计算机**\\**系统**\\**CurrentControlSet**\\**服务**\\**NDIS**\\**参数**
 
-将此注册表值设置为 0x00000001。
+将此注册表值设置为0x00000001。
 
-如果不存在，则可以创建值具有名称**AllowFlowControlUnderDebugger**和类型**REG\_DWORD**并将其设置为 0x00000001。
+如果该名称不存在，可以使用名称**AllowFlowControlUnderDebugger**和类型**REG\_DWORD**创建值并将其设置为0x00000001。
 
  
 
 <a href="" id="-priorityvlantag"></a> **\*PriorityVLANTag**  
-一个值，指示设备是否已启用或禁用插入 802.1Q 标记数据包优先级和虚拟 Lan (Vlan)。 此关键字不指示设备是启用还是禁用数据包优先级或 VLAN 标记。 相反，它介绍了以下任务：
+一个值，该值指示设备是否已启用或禁用插入数据包优先级和虚拟 Lan （Vlan）的 802.1 Q 标记的功能。 此关键字不表明设备启用或禁用数据包优先级或 VLAN 标记。 相反，它描述了以下内容：
 
--   设备是否插入 802.1Q 标记发送操作期间
--   是否 802.1Q 标记信息现已推出[ **NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)带外 (OOB) 的信息
--   设备副本 802.1Q 标记到 OOB 期间是否接收操作
+-   在发送操作过程中，设备是否插入 802.1 Q 标记
+-   [**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)带外（OOB）信息中是否提供了 802.1 q 标记信息
+-   设备在接收操作期间是否将 802.1 Q 标记复制到 OOB
 
-微型端口驱动程序应删除 802.1Q 中所有标头接收数据包而不考虑 **\*PriorityVLANTag**设置。 如果 802.1Q 标头会保留在一个数据包、 其他驱动程序可能无法正确分析数据包。
+不管 **\*PriorityVLANTag**设置如何，微型端口驱动程序都应从所有接收数据包中删除 802.1 q 标头。 如果 802.1 Q 标头保留在包中，则其他驱动程序可能无法正确分析数据包。
 
-如果接收路径上启用了 Rx 标志，微型端口驱动程序应将复制已删除的 802.1Q 到 OOB 标头。
+如果在接收路径上启用 Rx 标志，则微型端口驱动程序应将删除的 802.1 Q 标头复制到 OOB。
 
-否则，如果禁用 Rx 标志，则微型端口驱动程序到 OOB 应不复制删除 802.1Q 标头。
+否则，如果 Rx 标志被禁用，微型端口驱动程序不应将删除的 802.1 Q 标头复制到 OOB。
 
-如果传输路径上启用了 Tx 标志，微型端口驱动程序应执行以下操作：
+如果在传输路径上启用了 Tx 标志，则微型端口驱动程序应执行以下操作：
 
--   插入 802.1Q 标头到每个传出数据包，并填充 OOB 中的数据 （如果 OOB 中存在任何非零值数据）。
--   播发适当**MacOptions**中[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes) (**NDIS\_MAC\_选项\_8021 P\_优先级**并**NDIS\_MAC\_选项\_8021Q\_VLAN**)。
+-   将 802.1 Q 标头插入到每个传出包中，并将其填充到 OOB 中的数据（如果 OOB 中存在任何非零数据）。
+-   在[**NDIS\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)中公布适当的**MacOptions**\_常规\_属性（**NDIS\_mac\_选项\_8021P\_优先级**和**NDIS\_MAC\_选项\_8021Q\_VLAN**）。
 
-否则为如果禁用 Tx 标志，然后：
+否则，如果禁用 Tx 标志，则：
 
--   微型端口筛选器不应接受 802.1Q OOB 中的信息 （并因此不插入任何标记）。
--   微型端口筛选器不应将播发适当**MacOptions**中[ **NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes).
+-   微型端口筛选器不应遵循 OOB 中的 802.1 Q 信息（因此不插入任何标记）。
+-   小型小型筛选器不应在[**NDIS\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)中公布适当的**MacOptions** 。
 
-**请注意**  如果微型端口驱动程序支持 NDIS 服务质量 (QoS)，它还必须读取 **\*QOS**关键字值。 基于 **\*QOS**关键字值 **\*PriorityVLANTag**关键字值将以不同的方式解释。 有关详细信息，请参阅[NDIS QoS 的标准化 INF 关键字](standardized-inf-keywords-for-ndis-qos.md)。
+**请注意**  如果微型端口驱动程序支持 NDIS 服务质量（QoS），则它还必须读取 **\*QoS**关键字值。 基于 **\*QOS**关键字值， **\*PriorityVLANTag**关键字值的解释方式有所不同。 有关详细信息，请参阅[NDIS QoS 的标准化 INF 关键字](standardized-inf-keywords-for-ndis-qos.md)。
 
  
 
 <a href="" id="-interruptmoderation"></a> **\*InterruptModeration**  
-一个值，描述该设备是启用还是禁用中断裁决。 中断裁决算法是依赖于设备的。 设备制造商可以使用非标准化的关键字来支持算法设置。 有关中断裁决的详细信息，请参阅[中断裁决](interrupt-moderation.md)。
+一个值，该值描述设备启用还是禁用中断裁决。 中断裁决算法依赖于设备。 设备制造商可以使用非标准化关键字来支持算法设置。 有关中断裁决的详细信息，请参阅[中断裁决](interrupt-moderation.md)。
 
 <a href="" id="-rss"></a> **\*RSS**  
-一个值，描述该设备是启用还是禁用接收方缩放 (RSS)。 有关 RSS 的详细信息，请参阅[接收方伸缩](ndis-receive-side-scaling2.md)。
+一个值，该值描述设备启用还是禁用接收方缩放（RSS）。 有关 RSS 的详细信息，请参阅[接收方缩放](ndis-receive-side-scaling2.md)。
 
 <a href="" id="-headerdatasplit"></a> **\*HeaderDataSplit**  
-一个值，描述该设备是启用还是禁用标头数据拆分。 标头数据拆分的详细信息，请参阅[标头数据拆分](header-data-split.md)。
+一个值，该值描述是启用还是禁用了设备标头-数据拆分。 有关标头-数据拆分的详细信息，请参阅[标头-数据拆分](header-data-split.md)。
 
-以下关键字是与连接卸载服务相关联：
+以下关键字与连接卸载服务相关联：
 
 **\*TCPConnectionOffloadIPv4**
 
 **\*TCPConnectionOffloadIPv6**
 
-有关连接卸载关键字的详细信息，请参阅[使用注册表值，以启用和禁用连接卸载](using-registry-values-to-enable-and-disable-connection-offloading.md)。
+有关连接卸载关键字的详细信息，请参阅[使用注册表值启用和禁用连接卸载](using-registry-values-to-enable-and-disable-connection-offloading.md)。
 
-以下关键字是任务卸载服务与相关联：
+以下关键字与任务卸载服务相关联：
 
 **\*IPChecksumOffloadIPv4**
 
@@ -127,7 +127,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 **\*LsoV2IPv4**
 
-**请注意**  设备的支持这两个大型发送卸载版本 1 (LSOv1) 和通过仅 IPv4 LSOv2  **\*LsoV2IPv4**应 INF 文件和注册表值中使用关键字。 例如，如果 **\*LsoV2IPv4**关键字出现在 INF 文件中并 **\*LsoV1IPv4**关键字出现在注册表中 （或相反），  **\*LsoV2IPv4**关键字始终优先。
+**请注意**，  适用于支持大型发送卸载版本1（LSOv1）和 LSOv2 over IPv4 的设备，在 INF 文件和注册表值中只应使用 **\*LsoV2IPv4**关键字。 例如，如果 **\*LsoV2IPv4**关键字显示在 INF 文件中，并且 **\*LsoV1IPv4**关键字显示在注册表中（反之亦然），则 **\*LsoV2IPv4**关键字始终优先。
 
  
 
@@ -143,26 +143,26 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 
 **\*TCPUDPChecksumOffloadIPv6**
 
-有关 TCP/IP 卸载关键字的详细信息，请参阅[使用注册表值，以启用和禁用任务卸载](using-registry-values-to-enable-and-disable-task-offloading.md)。
+有关 TCP/IP 卸载关键字的详细信息，请参阅[使用注册表值启用和禁用任务卸载](using-registry-values-to-enable-and-disable-task-offloading.md)。
 
-本主题末尾处表中的列描述枚举关键字的以下属性：
+本主题末尾的表中的列描述了用于枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须指定 INF 文件中的关键字的名称显示在注册表中。
+必须在 INF 文件中指定并且出现在注册表中的关键字的名称。
 
 <a href="" id="paramdesc"></a>ParamDesc  
-与之关联的显示文本**SubkeyName**。
+与**SubkeyName**关联的显示文本。
 
-<a href="" id="value"></a>值  
-在列表中每个选项与关联枚举的整数值。 此值存储在**NDI\\params\\** <em>SubkeyName</em> **\\** <em>值</em>。
+<a href="" id="value"></a>负值  
+与列表中的每个选项关联的枚举整数值。 此值存储在**NDI\\参数\\** <em>SubkeyName</em> **\\** <em>值</em>中。
 
 <a href="" id="enumdesc"></a>EnumDesc  
-与每个菜单中显示的值相关联的显示文本。
+与菜单中显示的每个值相关联的显示文本。
 
-<a href="" id="default"></a>默认值  
-菜单默认值。
+<a href="" id="default"></a>缺省值  
+菜单的默认值。
 
-下表列出的所有关键字，并说明了一个驱动程序必须用于对上述属性的值。 有关关键字的详细信息，搜索 WDK 文档中的关键字。
+下表列出了所有关键字，并说明了驱动程序必须用于前面的特性的值。 有关关键字的详细信息，请在 WDK 文档中搜索关键字。
 
 <table>
 <colgroup>
@@ -175,15 +175,15 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em>SpeedDuplex</strong></p></td>
-<td align="left"><p>速度和双工</p></td>
-<td align="left"><p>0 （默认值）</p></td>
+<td align="left"><p>速度 & 双工</p></td>
+<td align="left"><p>0（默认值）</p></td>
 <td align="left"><p>自动协商</p></td>
 </tr>
 <tr class="even">
@@ -202,7 +202,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>3</p></td>
-<td align="left"><p>100 Mbps Half Duplex</p></td>
+<td align="left"><p>100 Mbps 半双工</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -214,7 +214,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>5</p></td>
-<td align="left"><p>1.0 Gbps Half Duplex</p></td>
+<td align="left"><p>1.0 Gbps 半双工</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -232,7 +232,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>8</p></td>
-<td align="left"><p>为 20 Gbps 全双工</p></td>
+<td align="left"><p>20 Gbps 全双工</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -250,25 +250,25 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>FlowControl</strong></p></td>
 <td align="left"><p>流控制</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx 和 Tx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>Rx & Tx 已启用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -278,9 +278,9 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PriorityVLANTag</strong></p></td>
-<td align="left"><p>数据包优先级和 VLAN</p></td>
+<td align="left"><p>数据包优先级 & VLAN</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>数据包优先级和 VLAN 已禁用</p></td>
+<td align="left"><p>禁用了包优先级 & VLAN</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -297,344 +297,344 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>数据包优先级 （& a) 已启用 VLAN</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>启用了包优先级 & VLAN</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>InterruptModeration</strong></p></td>
 <td align="left"><p>中断调解</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>RSS</strong></p></td>
 <td align="left"><p>接收方缩放</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>HeaderDataSplit</strong></p></td>
 <td align="left"><p>标头数据拆分</p></td>
-<td align="left"><p>0 （默认值）</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>0（默认值）</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPConnectionOffloadIPv4</strong></p></td>
-<td align="left"><p>TCP 连接卸载 (IPv4)</p></td>
+<td align="left"><p>TCP 连接卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPConnectionOffloadIPv6</strong></p></td>
-<td align="left"><p>TCP 连接卸载 (IPv6)</p></td>
+<td align="left"><p>TCP 连接卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>IPv4 校验和卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx 和 Tx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>Rx & Tx 已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>TCP 校验和卸载 (IPv4)</p></td>
+<td align="left"><p>TCP 校验和卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx 和 Tx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>Rx & Tx 已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
-<td align="left"><p>TCP 校验和卸载 (IPv6)</p></td>
+<td align="left"><p>TCP 校验和卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx 和 Tx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>Rx & Tx 已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>UDP 校验和卸载 (IPv4)</p></td>
+<td align="left"><p>UDP 校验和卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx 和 Tx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>Rx & Tx 已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
-<td align="left"><p>UDP 校验和卸载 (IPv6)</p></td>
+<td align="left"><p>UDP 校验和卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Rx 和 Tx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>Rx & Tx 已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
-<td align="left"><p>大量发送卸载版本 1 (IPv4)</p></td>
+<td align="left"><p>大型发送卸载版本1（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>LsoV2IPv4</strong></p></td>
-<td align="left"><p>大量发送卸载版本 2 (IPv4)</p></td>
+<td align="left"><p>大型发送卸载版本2（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV2IPv6</strong></p></td>
-<td align="left"><p>大量发送卸载版本 2 (IPv6)</p></td>
+<td align="left"><p>大型发送卸载版本2（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>1 （默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>1（默认值）</p></td>
+<td align="left"><p>启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV1IPv4</strong></p></td>
-<td align="left"><p>IPsec 卸载版本 1 (IPv4)</p></td>
+<td align="left"><p>IPsec 卸载版本1（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>启用身份验证标头</p></td>
+<td align="left"><p>已启用身份验证标头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>已启用的 ESP</p></td>
+<td align="left"><p>已启用 ESP</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头和 ESP 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>身份验证标头已启用 & ESP</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
 <td align="left"><p>IPsec 卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>启用身份验证标头</p></td>
+<td align="left"><p>已启用身份验证标头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>已启用的 ESP</p></td>
+<td align="left"><p>已启用 ESP</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头和 ESP 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>身份验证标头已启用 & ESP</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV2IPv4</strong></p></td>
-<td align="left"><p>IPsec 卸载 (仅 IPv4)</p></td>
+<td align="left"><p>IPsec 卸载（仅 IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>启用身份验证标头</p></td>
+<td align="left"><p>已启用身份验证标头</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>已启用的 ESP</p></td>
+<td align="left"><p>已启用 ESP</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>身份验证标头和 ESP 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>身份验证标头已启用 & ESP</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv4</strong></p></td>
-<td align="left"><p>TCP/UDP 校验和卸载 (IPv4)</p></td>
+<td align="left"><p>TCP/UDP 校验和卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Tx 和 Rx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>已启用 Tx 和 Rx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*TCPUDPChecksumOffloadIPv6</strong></p></td>
-<td align="left"><p>TCP/UDP 校验和卸载 (IPv6)</p></td>
+<td align="left"><p>TCP/UDP 校验和卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>Disabled</p></td>
+<td align="left"><p>禁用</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>Tx 启用</p></td>
+<td align="left"><p>已启用 Tx</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>2</p></td>
-<td align="left"><p>Rx 启用</p></td>
+<td align="left"><p>已启用 Rx</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>3 （默认值）</p></td>
-<td align="left"><p>Tx 和 Rx 启用</p></td>
+<td align="left"><p>3（默认值）</p></td>
+<td align="left"><p>已启用 Tx 和 Rx</p></td>
 </tr>
 </tbody>
 </table>

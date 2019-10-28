@@ -6,44 +6,44 @@ keywords:
 - IRP_MN_REMOVE_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ce4f40df7c67f63add6af8b88b7ef11b15c02f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff04f4fec994c2c96e8911051c6a1da8748a1a16
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359812"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838662"
 ---
-# <a name="handling-an-irpmnremovedevice-request"></a>处理 IRP\_MN\_删除\_设备请求
+# <a name="handling-an-irp_mn_remove_device-request"></a>处理 IRP\_MN\_删除\_设备请求
 
 
 
 
 
-PnP 管理器使用此 IRP 将驱动程序，以删除设备的软件表示形式 （设备对象等）。 PnP 管理器将发送此 IRP 惊讶 （用户从其槽而不发出警告之前从该设备），已以有序的方式 （例如，在程序中拔出或弹出硬件用户启动的），而删除了设备或用户请求来更新 drivers。
+PnP 管理器使用此 IRP 定向驱动程序以删除设备的软件表示形式（设备对象等）。 当设备以有序的方式（例如，由拔出或弹出硬件程序中的用户启动）出现意外的情况时，PnP 管理器会发送此 IRP （例如，用户在没有前一条警告的情况下从其槽拉取设备），或当用户请求更新 dri 时vers.
 
-在 Windows 2000 和更高版本的系统，即插即用管理器将发送此 IRP 时设备管理器禁用的设备。 在 Windows 98 上 / PnP 管理器发送的而是停止 Irp。 请参阅[停止设备](stopping-a-device.md)有关详细信息。
+在 Windows 2000 和更高版本的系统上，当设备管理器禁用设备时，PnP 管理器会发送此 IRP。 在 Windows 98/Me 上，PnP 管理器改为发送停止 Irp。 有关详细信息，请参阅[停止设备](stopping-a-device.md)。
 
-PnP 管理器执行以下操作之前将此 IRP 发送到设备的驱动程序：
+在将此 IRP 发送到设备的驱动程序之前，PnP 管理器会执行以下操作：
 
--   将发送**IRP\_MN\_删除\_设备**请求到设备的子项，如果有的话。
+-   发送**IRP\_MN\_删除**设备子请求\_设备请求（如果有）。
 
--   任何用户模式组件和内核模式驱动程序注册通知正在删除该设备的通知。 PnP 管理器的句柄在设备上的目标设备通知调用任何已注册的用户模式组件，并调用注册的任何内核模式驱动程序**EventCategoryTargetDeviceChange**。
+-   通知所有用户模式组件和内核模式驱动程序，这些驱动程序已注册为通知删除设备。 PnP 管理器会调用在设备的句柄上注册目标设备通知的任何用户模式组件，并调用任何为**EventCategoryTargetDeviceChange**注册的内核模式驱动程序。
 
--   （在 Windows 2000 和更高版本系统）如果在设备上装载文件系统后，即插即用管理器将删除请求发送到文件系统和任何文件系统筛选器。 在响应中，文件系统通常卸除卷。
+-   （在 Windows 2000 和更高版本的系统上）如果文件系统已装载到设备上，则 PnP 管理器会将删除请求发送到文件系统和任何文件系统筛选器。 作为响应，文件系统通常会卸除卷。
 
-设备堆栈中的顶部驱动程序处理删除 IRP，并将其传递给下一个较低的驱动程序。 设备的父总线驱动程序是最后一个驱动程序来执行其移除设备操作。 驱动程序句柄删除 Irp 中的其[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程。
+设备堆栈中的顶部驱动程序处理删除 IRP，并将其传递给下一个较低的驱动程序。 设备的父总线驱动程序是执行其删除设备操作的最后一个驱动程序。 驱动程序会在其[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中处理删除 irp。
 
-驱动程序返回成功之前**IRP\_MN\_删除\_设备**请求，必须确保设备的所有资源都已都释放。 该驱动程序在卸载之前，此 IRP 可能是最后一次调用。
+在驱动程序为 IRP 返回 success **\_MN\_删除\_设备**请求之前，必须确保已释放设备的所有资源。 在卸载驱动程序之前，此 IRP 可以是最后一次调用。
 
-删除一个设备可以创建一系列的其他设备中删除的需求。 PnP 管理器协调到根设备级别最高级别中的其他设备对象的删除。
+删除一个设备可以创建删除一系列其他设备的需求。 PnP 管理器将其他设备对象从顶部向下移动到根设备级别。
 
 本部分介绍：
 
-[在功能驱动程序中删除设备](removing-a-device-in-a-function-driver.md)
+[在函数驱动程序中删除设备](removing-a-device-in-a-function-driver.md)
 
-[在筛选器驱动程序中删除设备](removing-a-device-in-a-filter-driver.md)
+[删除筛选器驱动程序中的设备](removing-a-device-in-a-filter-driver.md)
 
-[总线驱动程序中删除设备](removing-a-device-in-a-bus-driver.md)
+[在总线驱动程序中删除设备](removing-a-device-in-a-bus-driver.md)
 
  
 

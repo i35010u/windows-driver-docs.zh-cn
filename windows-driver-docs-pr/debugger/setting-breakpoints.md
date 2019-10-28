@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎 API，设置断点
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 348b921af971f02cb4ab56d40dc9aaeb807ceb29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 631649233cdaf864191cf58d2cbaef1639683235
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366393"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838818"
 ---
 # <a name="setting-breakpoints"></a>设置断点
 
@@ -19,19 +19,19 @@ ms.locfileid: "67366393"
 ## <span id="ddk_using_breakpoints_dbx"></span><span id="DDK_USING_BREAKPOINTS_DBX"></span>
 
 
-使用创建的断点[ **AddBreakpoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-addbreakpoint)方法。 此方法创建[IDebugBreakpoint](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugbreakpoint)对象，表示该断点。 它还设置*断点类型*（软件断点或处理器断点）。 一旦创建断点后，不能更改其类型。
+断点是通过[**AddBreakpoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-addbreakpoint)方法创建的。 此方法创建一个[IDebugBreakpoint](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugbreakpoint)对象，该对象表示断点。 它还设置*断点类型*（软件断点或处理器断点）。 创建断点后，将无法更改其类型。
 
-与删除断点[**了 RemoveBreakpoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint)方法。 这还会删除**IDebugBreakpoint**对象; 此对象不能再次使用。
+通过[**了 removebreakpoint 时**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint)方法删除断点。 此操作还会删除**IDebugBreakpoint**对象;此对象不能再次使用。
 
-**请注意**  虽然**IDebugBreakpoint**实现**IUnknown**接口方法**iunknown:: Addref**和**Iunknown:: Release**不用来控制该断点的生存期。 这些方法具有对该断点的生存期没有影响。 相反， **IDebugBreakpoint**的方法后删除对象[**了 RemoveBreakpoint** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint)调用。
+**请注意**   虽然**IDebugBreakpoint**实现**iunknown**接口，但不使用方法**IUnknown：： AddRef**和**IUnknown：： Release**来控制断点的生存期。 这些方法不会影响断点的生存期。 相反，在调用方法[**了 removebreakpoint 时**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-removebreakpoint)后， **IDebugBreakpoint**对象将被删除。
 
  
 
-创建断点时，将为其给定一个唯一*断点 ID*。 此标识符不会更改。 但是，在删除该断点后，其 ID 可能用于另一个断点。 有关如何接收通知的删除断点的详细信息，请参阅[监视事件](monitoring-events.md)。
+创建断点时，将为其提供唯一的*断点 ID*。 此标识符将不会更改。 但是，断点删除后，其 ID 可用于另一个断点。 有关如何接收删除断点的通知的详细信息，请参阅[监视事件](monitoring-events.md)。
 
-创建一个断点时，它最初处于禁用状态;这意味着它不会导致要停止执行的目标。 使用的方法可能会启用此断点[ **AddFlags** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-addflags)若要添加调试\_断点\_的 ENABLED 标志。
+创建断点时，它最初处于禁用状态;这意味着它不会导致目标停止执行。 可以通过使用方法[**AddFlags**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-addflags)将调试\_断点添加\_启用标志来启用此断点。
 
-首先创建一个断点时，它具有 0x00000000 与之关联的内存位置。 可以通过更改该位置[ **SetOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setoffset)地址，或通过使用[ **SetOffsetExpression** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugbreakpoint2-setoffsetexpression)使用符号的表达式. 应从其初始值更改断点的位置，然后使用它。
+第一次创建断点时，它具有与之关联的内存位置0x00000000。 可以通过使用[**SetOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setoffset)和地址来更改该位置，也可以通过将[**SetOffsetExpression**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setoffsetexpression)与符号表达式结合使用来更改该位置。 断点的位置应在使用前更改为其初始值。
 
  
 

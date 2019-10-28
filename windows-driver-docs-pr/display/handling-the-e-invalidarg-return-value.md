@@ -7,17 +7,17 @@ keywords:
 - E_INVALIDARG 返回值 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54da26c839c6d003106f8fa97c1f0aa7ee3fe992
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 646c77a9eb633d7d7bdbaa05b04d19cdd39cebdc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369844"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839662"
 ---
-# <a name="handling-the-einvalidarg-return-value"></a>处理电子\_INVALIDARG 返回值
+# <a name="handling-the-e_invalidarg-return-value"></a>处理 E\_INVALIDARG 返回值
 
 
-通常情况下，用户模式显示驱动程序不能故障的任何其[函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)通过返回 E\_INVALIDARG。 但是，如果用户模式显示驱动程序将收到电子\_INVALIDARG 时它将调用一个返回值[Microsoft Direct3D 运行时提供的函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)（由于中的驱动程序或恶意代码的编程错误运行在操作系统中），则驱动程序必须返回 E\_INVALIDARG 回 Direct3D 运行时后，运行时调用的一个驱动程序的函数。 否则，用户模式显示驱动程序应永远不会返回电子\_INVALIDARG 到 Direct3D 运行时。
+通常，用户模式显示驱动程序无法通过返回 E\_INVALIDARG 来使其所有[功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)失败。 但是，如果用户模式显示驱动程序在调用[Microsoft Direct3D 运行时提供的函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)之一时收到 E\_INVALIDARG 返回值（这是由于驱动程序中的编程错误或操作中运行的恶意代码。系统），则在运行时调用驱动程序的一个函数后，驱动程序必须将 E\_INVALIDARG 返回到 Direct3D 运行时。 否则，用户模式显示驱动程序绝不应将 E\_INVALIDARG 返回到 Direct3D 运行时。
 
  
 

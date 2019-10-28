@@ -3,16 +3,16 @@ title: 为 I/O 操作设备编程
 description: 为 I/O 操作设备编程
 ms.assetid: 952b07d8-81e3-40ec-8acd-be1143a7d2a2
 keywords:
-- 关键节例程 WDK 内核
-- I/O WDK 内核设备编程
+- 关键部分例程 WDK 内核
+- I/o WDK 内核，设备编程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62d4a425124dcdca06df6766ef70c17448edd0e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 52de1a5d3ddc562fb7b97db825d8174442151e04
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378787"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838486"
 ---
 # <a name="programming-a-device-for-an-io-operation"></a>为 I/O 操作设备编程
 
@@ -20,19 +20,19 @@ ms.locfileid: "67378787"
 
 
 
-遵循以下通用原则用于设计、 编写，并调用[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)程序设备的 I/O 操作的例程：
+使用以下常规指导原则来设计、编写和调用为设备提供 i/o 操作的[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程：
 
--   一个*SynchCritSection*程序适用于 I/O 操作的设备的例程必须尽可能快地返回控制。
+-   为设备提供 i/o 操作计划的*SynchCritSection*例程必须尽快返回控制权。
 
-    出于此原因， *SynchCritSection*例程应只能执行必要的操作来设置 I/O 设备。 因此，该驱动程序应执行所有的 IRP 预处理、 初始化、 其他驱动程序例程的状态信息以及调用之前获取的硬件资源*SynchCritSection*例程。
+    出于此原因， *SynchCritSection*例程只应执行为 i/o 设置设备所需的操作。 因此，该驱动程序应执行所有 IRP 预处理，初始化其他驱动程序例程的状态信息，并在调用*SynchCritSection*例程之前获取硬件资源。
 
--   设备驱动程序可以有多个*SynchCritSection*例程进行编程的设备。
+-   设备驱动程序可以有多个*SynchCritSection*例程来对设备进行编程。
 
-    例如，为其设置的读取请求明显不同设置某些设备控制请求设备的驱动程序可能具有单独*SynchCritSection*例程进行编程的每种类型的请求其设备。
+    例如，设置读取请求的设备的驱动程序与设置某些设备控制请求明显不同，可能有单独的*SynchCritSection*例程来针对每种类型的请求对其设备进行编程。
 
--   每个*SynchCritSection*例程必须尽可能快速地返回控制，因为运行任何*SynchCritSection*例程阻止驱动程序的 ISR 执行。
+-   每个*SynchCritSection*例程必须尽快返回控制权，因为运行任何*SynchCritSection*例程会阻止驱动程序的 ISR 执行。
 
-    不应编写单一的大型、 常规用途*SynchCritSection*例程替换**切换**语句或多个嵌套**如果...然后...其他**语句，以确定它将执行哪些操作或要更新的状态信息。 但是，应避免编写大量*SynchCritSection*例程的程序只有单个设备注册。
+    不应使用**switch**语句或使用多个嵌套 if if 来编写单个、大型、通用的*SynchCritSection*例程。 **then。else**语句来确定要执行的操作或要更新的状态信息。 另一方面，应避免编写多个只计划一个设备注册的*SynchCritSection*例程。
 
  
 

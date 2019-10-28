@@ -4,12 +4,12 @@ description: WMI 次要 IRP
 ms.date: 08/12/2017
 ms.assetid: 5788294f-2145-4381-9b06-3b138b2d26df
 ms.localizationpriority: medium
-ms.openlocfilehash: d48d8b56fb1bd07a33eadb22b3847c7a9ff51936
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: abe1f2e0dd4c93a96e204c81b44662afb9876539
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353788"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838304"
 ---
 # <a name="wmi-minor-irps"></a>WMI 次要 IRP
 
@@ -17,39 +17,39 @@ ms.locfileid: "67353788"
 
 
 
-本部分介绍[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) Irp 的 WDM 的 WMI 扩展的一部分。 所有 WMI Irp 使用的主要代码[ **IRP\_MJ\_系统\_控制**](irp-mj-system-control.md)和细微的代码，指示特定的 WMI 请求。 WMI 内核模式组件可以发送 WMI Irp 任何驱动程序的成功注册后作为供应商的 WMI 数据的时间。 通常 WMI Irp 获取发送时的用户模式数据使用者已请求 WMI 数据。
+本部分介绍作为 WDM 的 WMI 扩展的一部分的[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) irp。 所有 WMI Irp 均使用主要的代码[**IRP\_MJ\_系统\_控件**](irp-mj-system-control.md)和指示特定 WMI 请求的次要代码。 在将驱动程序的成功注册作为 WMI 数据的供应商后，WMI 内核模式组件就可以随时发送 WMI Irp。 WMI Irp 通常在用户模式数据使用者请求 WMI 数据时发送。
 
-所有驱动程序必须设置的调度表入口点[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)例程来处理 WMI 请求。
+所有驱动程序都必须设置调度表入口点， [*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程才能处理 WMI 请求。
 
-如果驱动程序将注册为 WMI 数据提供程序通过调用[ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)，则它必须处理使用一种技术中所述的 WMI Irp[处理 WMI 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests).
+如果驱动程序通过调用[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)注册为 wmi 数据提供程序，则必须使用[处理 wmi 请求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)中所述的一种方法来处理 wmi irp。
 
-不将注册为 WMI 数据提供程序的驱动程序必须转发到下一步低驱动程序的所有 WMI 请求。
+未注册为 WMI 数据提供程序的驱动程序必须将所有 WMI 请求转发到下一个较低的驱动程序。
 
-本部分介绍以下系统定义 WMI 次要函数代码：
+本部分介绍以下系统定义的 WMI 次要函数代码：
 
-[**IRP\_MN\_更改\_单个\_实例**](irp-mn-change-single-instance.md)
+[**IRP\_MN\_更改\_单一\_实例**](irp-mn-change-single-instance.md)
 
-[**IRP\_MN\_更改\_单个\_项**](irp-mn-change-single-item.md)
+[**IRP\_MN\_更改\_单一\_项**](irp-mn-change-single-item.md)
 
 [**IRP\_MN\_禁用\_集合**](irp-mn-disable-collection.md)
 
-[**IRP\_MN\_DISABLE\_EVENTS**](irp-mn-disable-events.md)
+[**IRP\_MN\_禁用\_事件**](irp-mn-disable-events.md)
 
-[**IRP\_MN\_ENABLE\_COLLECTION**](irp-mn-enable-collection.md)
+[**IRP\_MN\_启用\_收集**](irp-mn-enable-collection.md)
 
-[**IRP\_MN\_ENABLE\_EVENTS**](irp-mn-enable-events.md)
+[**IRP\_MN\_启用\_事件**](irp-mn-enable-events.md)
 
-[**IRP\_MN\_EXECUTE\_METHOD**](irp-mn-execute-method.md)
+[**IRP\_MN\_EXECUTE\_方法**](irp-mn-execute-method.md)
 
 [**IRP\_MN\_查询\_所有\_数据**](irp-mn-query-all-data.md)
 
-[**IRP\_MN\_查询\_单个\_实例**](irp-mn-query-single-instance.md)
+[**IRP\_MN\_QUERY\_单一\_实例**](irp-mn-query-single-instance.md)
 
 [**IRP\_MN\_REGINFO**](irp-mn-reginfo.md)
 
 [**IRP\_MN\_REGINFO\_EX**](irp-mn-reginfo-ex.md)
 
-如果该驱动程序接收 IRP 包含任何其他 IRP 次要函数代码，它应转发到下一步低驱动程序 IRP。
+如果驱动程序收到一个 IRP，其中包含任何其他 IRP 次要函数代码，则应将 IRP 转发到下一个较低版本的驱动程序。
 
  
 

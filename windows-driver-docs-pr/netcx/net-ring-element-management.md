@@ -1,77 +1,77 @@
 ---
 title: 网环元素管理
-description: 在 Windows 中，从 Windows 10 开始中现在支持 USB 双角色控制器。
+description: 从 Windows 10 开始，Windows 现在支持 USB 双重角色控制器。
 ms.date: 06/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 030ba41a3f62f31c24b7fe66808089eb6d3e0aed
-ms.sourcegitcommit: 280ab1c75f30404c63d2c011549f7af16ad56f31
+ms.openlocfilehash: cc0aa0f00eb41358c37bb7cffc95be022d47e6f7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67235839"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838274"
 ---
 # <a name="net-ring-element-management"></a>网环元素管理
 
-遵循中来管理本主题指导你[ **NET_RING** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ring/ns-ring-_net_ring)结构和其元素期间网络数据传输。 本主题中的规则描述 net 环元素客户端驱动程序的成员才能修改和时间，具体取决于数据路径方案中，以及常规信息客户端驱动程序应记住这些结构。 
+按照本主题中的指导来管理网络数据传输过程中的[**NET_RING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)结构及其元素。 本主题中的规则说明了客户端驱动程序可以修改哪些网络环元素的成员以及何时（具体取决于数据路径方案）以及一般信息客户端驱动程序应记住这些结构。 
 
 > [!IMPORTANT]
-> 客户端驱动程序开发的所有阶段应遵循以下说明操作。 如果客户端驱动程序不符合这些指示与测试时[Driver Verifier](../devtest/driver-verifier.md)，驱动程序验证工具将报告冲突，并触发待测试设备上的 bug 检查。
+> 在开发过程中，客户端驱动程序应遵循这些说明。 如果客户端驱动程序在使用[驱动程序验证](../devtest/driver-verifier.md)器进行测试时不遵循这些说明，则驱动程序验证程序会报告冲突，并在受测设备上触发 bug 检查。
 
-## <a name="netring"></a>NET_RING
+## <a name="net_ring"></a>NET_RING
 
-当[ **NET_RING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ring/ns-ring-_net_ring)的启动父数据包队列，环中的所有索引都初始化为**0**。
+启动[**NET_RING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/ns-ring-_net_ring)的父数据包队列时，环中的所有索引都将初始化为**0**。
 
-下表描述哪些成员 net 环形驱动程序可以修改该客户端。
+下表描述了客户端驱动程序可以修改的网络环的成员。
 
 | 字段 | 允许修改客户端驱动程序 |
 | --- | --- |
-| OSReserved1 | 否 |
-| ElementStride | 否 |
-| NumberOfElements | 否 |
-| ElementIndexMask | 否 |
-| EndIndex | 否 |
-| OSReserved0 | 否 |
-| OSReserved2 | 否 |
-| BeginIndex | 是 （必需） |
-| NextIndex | （可选） 是**注意**:框架永远不会读取**NextIndex**。 |
-| Scratch | （可选） 是**注意**:框架永远不会读取**Scratch**。 |
-| 缓冲区 | 否 |
+| OSReserved1 | 无 |
+| ElementStride | 无 |
+| NumberOfElements | 无 |
+| ElementIndexMask | 无 |
+| EndIndex | 无 |
+| OSReserved0 | 无 |
+| OSReserved2 | 无 |
+| BeginIndex | 是（必需） |
+| NextIndex | 是（可选）**注意**：框架从不读取**NextIndex**。 |
+| Scratch | 是（可选）**注意**：框架永远不会**读取。** |
+| 缓冲区 | 无 |
 
-客户端驱动程序必须修改此结构中，任何读取只有成员也不将它们不断递增**BeginIndex**过去**EndIndex**调用[ *EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)。
+客户端驱动程序不能修改此结构的任何只读成员，也不应在调用[*EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)时，它们是否会将过去的**EndIndex**增加**BeginIndex** 。
 
-有关 net 环中的索引所有权的详细信息，请参阅[Net 环和 net 环迭代器](net-rings-and-net-ring-iterators.md)。
+有关网络环中的索引所有权的详细信息，请参阅[净环和网络环迭代](net-rings-and-net-ring-iterators.md)器。
 
-## <a name="netpacket"></a>NET_PACKET
+## <a name="net_packet"></a>NET_PACKET
 
-中的字段[ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/ns-packet-_net_packet)易不同的上下文的数据路径进行操作。 是否数据包**忽略**字段是组和驱动程序是否正在接收 (Rx) 或传输 （德克萨斯州） 数据包更改应用于该数据包的规则集。
+[**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)中的字段对数据路径操作的不同上下文敏感。 如果设置了数据包的**Ignore**字段以及驱动程序是否正在接收（Rx）或传输（Tx）数据包，则数据包将更改应用于数据包的规则集。
 
-下表提供有关每个方案中的驱动程序说明。
+下表提供了每种方案中的驱动程序的说明。
 
-| Rx 或 Tx | 忽略设置字段... | 说明 |
+| Rx 或 Tx | 忽略字段由设置 。 | 注释 |
 | --- | --- | --- |
-| Rx | 客户端驱动程序 | <ul><li>在 Rx 中，客户端驱动程序设置**忽略**如果有必要和 framework 读取它。 客户端驱动程序不需要读取**忽略**Rx 期间任何时候。</li><li>如果客户端驱动程序设置**忽略**Rx，然后在字段：<ul><li>客户端驱动程序必须将写入**忽略**字段时取消任何未被成功编程到硬件的数据包的 Rx 操作。 有关详细信息，请参阅[取消网络数据使用 net 环](canceling-network-data-with-net-rings.md)。</li><li>因为它们不会释放客户端驱动程序必须将资源关联的数据包。</li></ul></li><li>如果客户端驱动程序不会设置**忽略**Rx，然后在字段：<ul><li>客户端驱动程序必须填充**FragmentIndex**， **FragmentCount**，和中的所有字段**布局**。</li><li>**FragmentIndex**必须介于**BeginIndex**非独占和**EndIndex**片段环中排他。</li><li>**FragmentCount**不能超过的之间的片段计数**BeginIndex**非独占和**EndIndex**片段环中排他。</li><li>客户端驱动程序必须移动的数据包环**BeginIndex**改用相应的片段环**BeginIndex**。</li><li>在调用[ *EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)，如果客户端驱动程序递增数据包环**BeginIndex**然后驱动程序还必须递增片段环**BeginIndex**过去的片段以获取该数据包。 换而言之，片段环**BeginIndex**应迁移到**EndIndex**的上一个数据包片段。</li></ul></ul> |
-| Tx | NetAdapterCx | <ul><li>客户端驱动程序不能修改除外的任何数据包中的任何字段**Scratch**。</li><li>客户端驱动程序可以读取的值**忽略**但必须永远不会将写入到它。</li><li>如果忽略 Tx 数据包，则驱动程序必须读取除可能的任何字段**Scratch**，如果有必要。</li></ul> |
+| Rx | 客户端驱动程序 | <ul><li>在 Rx 期间，如果需要，客户端驱动程序会将其**忽略**，并且框架将读取它。 客户端驱动程序不需要在 Rx 期间的**任何时间点**都不需要读取。</li><li>如果客户端驱动程序在 Rx 期间设置了**Ignore**字段，则：<ul><li>如果为任何未成功编程到硬件的数据包取消 Rx 操作，则客户端驱动程序必须向 "**忽略**" 字段写入。 有关详细信息，请参阅[取消网络数据和网络环](canceling-network-data-with-net-rings.md)。</li><li>客户端驱动程序不能将资源与数据包相关联，因为它们不会被释放。</li></ul></li><li>如果客户端驱动程序未在 Rx 期间设置 "**忽略**" 字段，则：<ul><li>客户端驱动程序必须填充**布局**中的**FragmentIndex**、 **FragmentCount**和所有字段。</li><li>**FragmentIndex**必须在片段环中的**BeginIndex**和**EndIndex**之间。</li><li>在片段环中， **FragmentCount**不能超过**BeginIndex**和**EndIndex**独占的碎片计数。</li><li>如果客户端驱动程序移动了相应的片段环**BeginIndex**，则必须移动该**BeginIndex** 。</li><li>调用[*EvtPacketQueueAdvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)之后，如果客户端驱动程序增加了数据包环**BeginIndex** ，则驱动程序还必须递增片段环**BeginIndex** ，使其超出该数据包的碎片。 换句话说，片段环形**BeginIndex**应移到先前包的片段的**EndIndex** 。</li></ul></ul> |
+| Tx | NetAdapterCx | <ul><li>除**暂存**外，客户端驱动程序不得修改任何数据包中的任何字段。</li><li>客户端驱动程序可以读取**Ignore**的值，但绝不能对其进行写入。</li><li>如果已忽略 Tx 数据包，则驱动程序不得读取除可能这样的任何字段 **（如有**必要）。</li></ul> |
 
-### <a name="netpacketlayout"></a>NET_PACKET_LAYOUT
+### <a name="net_packet_layout"></a>NET_PACKET_LAYOUT
 
-在 Rx 操作期间**布局**字段[ **NET_PACKET** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/packet/ns-packet-_net_packet)时要遵循以下规则：
+在 Rx 操作期间， [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)的 "**布局**" 字段服从以下规则：
 
-- 所有字段除外**Reserved0**必须由客户端驱动程序初始化。
-- 如果**Layer2Type**设置为**NetPacketLayer2TypeEthernet**，然后**Layer2HeaderLength**必须是**14**或更高版本。
-- 如果**Layer2Type**设置为**NetPacketLayer2TypeNull**，然后**Layer2HeaderLength**必须设置为**0**。
-- 如果**Layer3Type**为 IPv4 类型，则**Layer3HeaderLength**必须是**20**或更高版本。
-- 如果**Layer3Type**为 IPv6 类型，则**Layer3HeaderLength**必须是**40**或更高版本。
-- 如果**Layer4Type**设置为**Tcp**，然后**Layer4HeaderLength**必须是**40**或更高版本。
-- 如果**Layer4Type**设置为**Udp**，然后**Layer4HeaderLength**必须是**8**或更高版本。
-- 层类型字段必须在相应枚举范围内。
+- 除**Reserved0**之外的所有字段都必须由客户端驱动程序初始化。
+- 如果**Layer2Type**设置为**NetPacketLayer2TypeEthernet**，则**Layer2HeaderLength**必须为**14**或更大。
+- 如果**Layer2Type**设置为**NetPacketLayer2TypeNull**，则**Layer2HeaderLength**必须设置为**0**。
+- 如果**Layer3Type**是 IPv4 类型，则**Layer3HeaderLength**必须为**20**或更大。
+- 如果**Layer3Type**是 IPv6 类型，则**Layer3HeaderLength**必须是**40**或更高版本。
+- 如果**Layer4Type**设置为**Tcp**，则**Layer4HeaderLength**必须是**40**或更高版本。
+- 如果**Layer4Type**设置为**Udp**，则**Layer4HeaderLength**必须等于或大于**8** 。
+- 层类型字段必须位于适当的枚举范围内。
 
-**布局**Tx 期间不使用。
+在 Tx 期间不使用**布局**。
 
-## <a name="netfragment"></a>NET_FRAGMENT
+## <a name="net_fragment"></a>NET_FRAGMENT
 
-[**NET_FRAGMENT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fragment/ns-fragment-_net_fragment)字段规则依赖于驱动程序是否接收或传输，以及是否片段缓冲区附加到数据包由驱动程序或框架。
+[**NET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment)字段规则依赖于驱动程序是否正在接收或传输，以及碎片缓冲区是由驱动程序还是框架附加到数据包。
 
-| Rx 或 Tx | 说明 |
+| Rx 或 Tx | 注释 |
 | --- | --- |
-| Rx | <ul><li>客户端驱动程序无法写入**OsReserved_Bounced**字段。</li><li>如果未附加驱动程序，请**容量**不能修改，但**ValidLength**并**偏移量**必须进行修改。</li><li>如果附加驱动程序，然后**容量**， **ValidLength**，并**偏移量**必须全都可以修改。</li><li>**偏移量** + **ValidLength**必须是小于**容量**。</li></ul> |
-| Tx | <ul><li>客户端驱动程序不能修改任何字段除外**Scratch**。</li></ul> |
+| Rx | <ul><li>客户端驱动程序无法写入 " **OsReserved_Bounced** " 字段。</li><li>如果驱动程序未附加，则不能修改**容量**，但必须修改**ValidLength**和**Offset** 。</li><li>如果驱动程序正在附加，则必须修改 "**容量**"、" **ValidLength**" 和 "**偏移**"。</li><li> + **ValidLength**的**偏移量**必须小于**容量**。</li></ul> |
+| Tx | <ul><li>除**暂存**外，客户端驱动程序不能修改任何字段。</li></ul> |

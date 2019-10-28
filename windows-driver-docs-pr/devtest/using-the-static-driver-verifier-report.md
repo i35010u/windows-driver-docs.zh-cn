@@ -9,121 +9,121 @@ keywords:
 - 静态驱动程序验证程序 WDK，查找错误
 - StaticDV WDK，查找错误
 - SDV WDK，查找错误
-- 查找错误 WDK Static Driver Verifier
-- 错误 WDK Static Driver Verifier
-- 缺陷的查看器 WDK Static Driver Verifier
+- 查找错误 WDK 静态驱动程序验证程序
+- 错误 WDK 静态驱动程序验证程序
+- 缺陷查看器 WDK 静态驱动程序验证程序
 - 中止例程
-- 跟踪 WDK Static Driver Verifier
-- 规则 WDK Static Driver Verifier
-- 窗格 WDK Static Driver Verifier
-- 静态驱动程序验证工具报表 WDK 窗格
-- Static Driver Verifier 报表 WDK，关于 Static Driver Verifier 报表
-- Static Driver Verifier WDK、 Static Driver Verifier 报表
-- StaticDV WDK、 Static Driver Verifier 报表
-- SDV WDK、 Static Driver Verifier 报表
+- 跟踪 WDK 静态驱动程序验证程序
+- 规则 WDK 静态驱动程序验证程序
+- 面板静态驱动程序验证程序
+- 静态驱动程序验证器报表 WDK，窗格
+- 静态驱动程序验证器报表 WDK，关于静态驱动程序验证器报表
+- 静态驱动程序验证程序 WDK，静态驱动程序验证器报表
+- StaticDV WDK，静态驱动程序验证程序报告
+- SDV WDK，静态驱动程序验证程序报告
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f43dfd3b366ab27c1caa6a0a733164dc7f5188e7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2c4e9b6ac920c67fbd5705016779a2d75d51ff1d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382832"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839992"
 ---
 # <a name="using-the-static-driver-verifier-report"></a>使用静态驱动程序验证程序报告
 
 
-SDV 报表是以交互方式显示的验证结果。 本部分介绍如何使用 SDV 报表要在驱动程序中查找编码错误。 有关报表的详细信息，windows 和 windows 中的元素的功能，请参阅[静态驱动程序验证工具报告](static-driver-verifier-report.md)。
+SDV 报表是验证结果的交互式显示。 本部分介绍如何使用 SDV 报表在驱动程序中查找编码错误。 有关报表、windows 的功能以及 windows 中的元素的详细信息，请参阅[静态驱动程序验证程序报表](static-driver-verifier-report.md)。
 
-### <a name="span-idopenthestaticdriververifierdefectviewerspanspan-idopenthestaticdriververifierdefectviewerspanopen-the-static-driver-verifier-defect-viewer"></a><span id="open_the_static_driver_verifier_defect_viewer"></span><span id="OPEN_THE_STATIC_DRIVER_VERIFIER_DEFECT_VIEWER"></span>打开的 Static Driver Verifier 缺陷查看器
+### <a name="span-idopen_the_static_driver_verifier_defect_viewerspanspan-idopen_the_static_driver_verifier_defect_viewerspanopen-the-static-driver-verifier-defect-viewer"></a><span id="open_the_static_driver_verifier_defect_viewer"></span><span id="OPEN_THE_STATIC_DRIVER_VERIFIER_DEFECT_VIEWER"></span>打开静态驱动程序验证程序缺陷查看器
 
-如果 SDV 中报告任何"缺陷"（规则冲突）**结果**窗格中，您可以查看在冲突中涉及的代码[缺陷查看器](defect-viewer.md)静态驱动程序验证工具报告的窗口。 缺陷查看器窗口显示规则冲突的路径中的代码。 还有一个**缺陷查看器**违反了每个规则的窗口 (您可以查看只有一个**缺陷查看器**窗口一次)。
+如果 SDV 在**结果**窗格中报告了任何 "缺陷" （规则冲突），则可以在 "静态驱动程序验证程序" 报表的 "[缺陷查看器](defect-viewer.md)" 窗口中查看冲突中涉及的代码。 "缺陷查看器" 窗口将显示规则冲突的路径中的代码。 违反的每个规则都有一个**缺陷查看器**窗口（一次只能查看一个**缺陷查看器**窗口）。
 
-若要打开一个缺陷脱离查看器窗口：
+打开缺陷查看器窗口以获取缺陷：
 
--   从下的列表中选择的规则**Defect(s)** 节点 (![带有白色 x，该值指示有缺陷的红色圆圈图标](images/sdv-ico-defect.png)) 中**结果**窗格中，然后双击规则名称。
+-   从 "**缺陷**" 节点下的列表中选择一个规则（![带有白色](images/sdv-ico-defect.png)x 的红色圆圈图标）在**结果**窗格中，然后双击该规则名称。
 
-此过程仅适用于缺陷。 SDV 不会生成**脱离查看器**窗口，如果验证的结果不是缺陷，例如阶段、 超时、 spaceouts，不适用或任何其他非缺陷结果。
+此过程仅适用于缺陷。 如果验证结果不是缺陷，如 pass、超时、spaceouts、不适用或其他任何非缺陷结果，SDV 不会生成**缺陷查看器**窗口。
 
-下面的屏幕截图显示了静态驱动程序验证工具报表页。
+以下屏幕截图显示了 "静态驱动程序验证程序" 报表页。
 
-![静态驱动程序验证工具报表页面的屏幕截图](images/sdv-defectviewer.png)
+![静态驱动程序验证程序报表页的屏幕截图](images/sdv-defectviewer.png)
 
-### <a name="span-idreviewtherulespanspan-idreviewtherulespanreview-the-rule"></a><span id="review_the_rule"></span><span id="REVIEW_THE_RULE"></span>查看规则
+### <a name="span-idreview_the_rulespanspan-idreview_the_rulespanreview-the-rule"></a><span id="review_the_rule"></span><span id="REVIEW_THE_RULE"></span>查看规则
 
-尝试查找之前在代码中，规则冲突熟悉该驱动程序违反的规则。
+尝试在代码中查找规则冲突之前，请熟悉驱动程序违反的规则。
 
-[驱动程序验证程序的静态规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)部分包括本主题介绍每个规则，例如， [CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)。
+[静态驱动程序验证程序规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)部分包括一个说明每个规则的主题，例如， [CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)。
 
-若要查看在该规则的代码**源代码**窗格中的静态驱动程序验证器报表，单击与规则中的代码，例如 CancelSpinLock.slic 选项卡。
+若要查看规则的代码，请在 "静态驱动程序验证程序" 报表的 "**源代码**" 窗格中，单击包含规则代码的选项卡，例如 CancelSpinLock. slic。
 
-例如， **CancelSpinLock**如果驱动程序调用违反规则[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))或者[ **IoReleaseCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))不按顺序，或如果该驱动程序释放自旋锁前退出例程。
+例如，如果驱动程序按顺序调用[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))或[**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) ，或者驱动程序在释放旋转锁之前退出了例程，则会违反**CancelSpinLock**规则。
 
-### <a name="span-idtracethedefectpathspanspan-idtracethedefectpathspantrace-the-defect-path"></a><span id="trace_the_defect_path"></span><span id="TRACE_THE_DEFECT_PATH"></span>跟踪缺陷路径
+### <a name="span-idtrace_the_defect_pathspanspan-idtrace_the_defect_pathspantrace-the-defect-path"></a><span id="trace_the_defect_path"></span><span id="TRACE_THE_DEFECT_PATH"></span>跟踪缺陷路径
 
-当**脱离查看器**窗口将打开中的元素**跟踪树**表示缺陷路径中的第一个必需的驱动程序调用的窗格中选择。 在中**源代码**窗格中，关联的源代码行突出显示为蓝色。
+当 "**缺陷查看器**" 窗口打开时，"**跟踪树**" 窗格中的元素表示 "缺陷路径" 中的第一个关键驱动程序调用。 在 "**源代码**" 窗格中，以蓝色突出显示源代码的相关行。
 
-以下屏幕截图显示打开的视图**静态驱动程序验证程序缺陷查看器**窗口中的冲突[CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)由失败的规则\_Driver1 示例驱动程序。 在此示例中，第一个驱动程序调用路径中发生 CancelSpinLock 规则的冲突是调用[ **IoAcquireCancelSpinLock** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))中的驱动程序**DispatchSystemControl**例程。
+下面的屏幕截图显示**静态驱动程序验证程序缺陷查看器**窗口的打开视图，以使 Fail\_Driver1 示例驱动程序违反[CancelSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-cancelspinlock)规则。 在此示例中，CancelSpinLock 规则的冲突路径中的第一个驱动程序调用是对驱动程序的**DispatchSystemControl**例程中的[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))的调用。
 
-![打开的 static driver verifier 的视图的屏幕截图脱离 cancelspinlock 规则的冲突查看器窗口](images/sdv-tracetree.png)
+![用于违反 cancelspinlock 规则的静态驱动程序验证程序缺陷查看器窗口的打开视图的屏幕截图](images/sdv-tracetree.png)
 
-### <a name="span-idusethesourcecodepanespanspan-idusethesourcecodepanespanuse-the-source-code-pane"></a><span id="use_the_source_code_pane"></span><span id="USE_THE_SOURCE_CODE_PANE"></span>使用源代码窗格
+### <a name="span-iduse_the_source_code_panespanspan-iduse_the_source_code_panespanuse-the-source-code-pane"></a><span id="use_the_source_code_pane"></span><span id="USE_THE_SOURCE_CODE_PANE"></span>使用 "源代码" 窗格
 
-[源代码窗格](source-code-pane.md)显示在验证中使用的源文件。 元素位于**跟踪树**窗格中选择，与元素关联的源的代码文件将显示在相邻文件堆栈顶部**源代码**窗格。 若要查看不同的源代码文件，单击对应的选项卡中的源文件**源代码**窗格。
+"[源代码" 窗格](source-code-pane.md)显示验证中使用的源文件。 如果选择了 "**跟踪树**" 窗格中的某个元素，则与该元素关联的源代码文件将显示在 "相邻**源代码**" 窗格中文件堆栈的顶部。 若要查看其他源文件，请在 "**源代码**" 窗格中单击源文件的选项卡。
 
-下面的屏幕截图显示了源代码窗格。 在此**源代码**窗格中，将以浅蓝色突出显示的代码行是那些与中的所选元素相关联**跟踪树**窗格。
+以下屏幕截图显示 "源代码" 窗格。 在此**源代码**窗格中，以浅蓝色突出显示的代码行是与 "**跟踪树**" 窗格中所选元素关联的代码行。
 
-![源的代码窗格的屏幕截图](images/sdv-sourcecode.png)
+!["源代码" 窗格的屏幕截图](images/sdv-sourcecode.png)
 
-以红色文本显示驱动程序代码中的缺陷的路径中执行的行。 通过只查看行的红色文本，如行 116 和 118 在此示例中，有时可以看到缺陷，尤其是在此示例中使用的类似的简单缺陷。 在这种情况下，驱动程序获取数值调节钮锁，，然后从调度例程返回而不释放自旋锁。
+驱动程序代码中在缺陷路径中执行的行显示为红色文本。 仅在此示例中，通过查看红色文本行（如第116行和第118行），有时可以看到缺陷，尤其是一个简单的缺陷，如本示例中所使用的。 在这种情况下，驱动程序将获取自旋锁，然后从调度例程返回，而不释放旋转锁定。
 
-### <a name="span-idstepthroughthetracespanspan-idstepthroughthetracespanstep-through-the-trace"></a><span id="step_through_the_trace"></span><span id="STEP_THROUGH_THE_TRACE"></span>单步执行跟踪
+### <a name="span-idstep_through_the_tracespanspan-idstep_through_the_tracespanstep-through-the-trace"></a><span id="step_through_the_trace"></span><span id="STEP_THROUGH_THE_TRACE"></span>单步执行跟踪
 
-若要开始跟踪，请选择中的元素**跟踪树**窗格中，然后再按向下箭头键。 每次按向下箭头中的下一个元素**跟踪树**窗格中选择。
+若要开始跟踪，请在**跟踪树**窗格中选择一个元素，然后按向下键。 每次按下箭头时，"**跟踪树**" 窗格中的下一个元素都处于选中状态。
 
-单步执行中的元素**跟踪树**窗格中，观看**源代码**窗格中的驱动程序代码中的元素。 若要展开折叠的代码段，按右箭头键。 若要折叠展开的代码部分，按向左箭头键。 光标将跳过所有已折叠的代码段。
+单步执行**跟踪树**窗格中的元素时，请在 "**源代码**" 窗格中查看驱动程序代码中的元素。 若要展开代码的折叠部分，请按向右箭头键。 若要折叠展开的代码段，请按向左键。 光标将跳过代码的所有折叠部分。
 
-向下滚动查看中的元素**跟踪树**窗格中，所选的元素出自移动到文件中的堆栈顶部的源代码文件**源代码**窗格和关联突出显示的代码行。
+当您向下滚动**跟踪树**窗格中的元素时，所选元素所源自的源代码文件将移动到**源代码**窗格中文件堆栈的顶部，并突出显示关联的代码行。
 
-下面的屏幕截图显示了具有跟踪树和源代码窗格静态驱动程序验证程序缺陷查看器。
+以下屏幕截图显示静态驱动程序验证程序缺陷查看器和跟踪树和源代码窗格。
 
-![静态驱动程序验证工具报表页面的屏幕截图](images/sdv-trace1.png)
+![静态驱动程序验证程序报表页的屏幕截图](images/sdv-trace1.png)
 
-### <a name="span-idusetherulefileandstatepanespanspan-idusetherulefileandstatepanespanuse-the-rule-file-and-state-pane"></a><span id="use_the_rule_file_and_state_pane"></span><span id="USE_THE_RULE_FILE_AND_STATE_PANE"></span>使用规则文件和状态窗格
+### <a name="span-iduse_the_rule_file_and_state_panespanspan-iduse_the_rule_file_and_state_panespanuse-the-rule-file-and-state-pane"></a><span id="use_the_rule_file_and_state_pane"></span><span id="USE_THE_RULE_FILE_AND_STATE_PANE"></span>使用 "规则文件和状态" 窗格
 
-可以使用[状态窗格](state-pane.md)若要查看表示在验证期间跟踪 SDV 的变量的值的布尔表达式的集合。
+您可以使用 "[状态" 窗格](state-pane.md)查看表示 SDV 在验证期间跟踪的变量值的布尔表达式集。
 
-中显示的布尔表达式**状态**窗格中是表达式的计算结果为该集中**TRUE**。 如果在跟踪树窗格中的元素的内容的任何表达式的值更改**状态**窗格中更改显示的表达式的计算结果为新的一组**TRUE**。
+"**状态**" 窗格中显示的布尔表达式是该集合中计算结果为**TRUE**的表达式。 如果跟踪树窗格中的元素更改了任何表达式的值，则 "**状态**" 窗格的内容将发生变化，以显示一组计算结果为**TRUE**的新表达式。
 
-当通过单步**跟踪树**窗格中，您可以观察 SDV 如何使用这些变量的值来计算规则文件中使用的表达式 (\*.slic)。
+在单步执行**跟踪树**窗格时，可以观察 SDV 如何使用这些变量的值来计算规则文件中使用的表达式（\*slic）。
 
-SDV 测试如何指示是否驱动程序以前获取旋转锁静态驱动程序验证工具报表页显示以下屏幕截图。 SDV 测试以查看是否驱动程序以前获取旋转锁，也就是说，如果的值**s**变量是**1**，锁定的含义。 在这种情况下， **s ！ = 1** （已解除锁定） 中, 所示[状态窗格](state-pane.md)，因此 SDV 设置的值**s**到**1**，指示的锁，获取。
+"静态驱动程序验证程序报表" 页的以下屏幕截图显示了 SDV 测试如何指示驱动程序以前是否获取了自旋锁。 SDV 测试，以查看驱动程序先前是否获取了自旋锁，也就是说，如果**s**变量的值为**1**，则表示已锁定。 在这种情况下，在 "[状态" 窗格](state-pane.md)中显示**s！ = 1** （未锁定），因此**SDV 将的值设置为** **1**，表示已获取锁。
 
-![显示如何 sdv 测试静态驱动程序验证工具报表页面的屏幕截图指示是否驱动程序以前获取旋转锁](images/sdv-trace2.png)
+!["静态驱动程序验证程序" 报表页的屏幕截图，显示 sdv 测试如何指示驱动程序以前是否获取了自旋锁](images/sdv-trace2.png)
 
-### <a name="span-idfindtheabortroutinespanspan-idfindtheabortroutinespanfind-the-abort-routine"></a><span id="find_the_abort_routine"></span><span id="FIND_THE_ABORT_ROUTINE"></span>查找中止例程
+### <a name="span-idfind_the_abort_routinespanspan-idfind_the_abort_routinespanfind-the-abort-routine"></a><span id="find_the_abort_routine"></span><span id="FIND_THE_ABORT_ROUTINE"></span>查找中止例程
 
-当驱动程序代码违反规则时**跟踪树**窗格中包含**中止**例程用于报告缺陷。
+当驱动程序代码违反规则时，"**跟踪树**" 窗格包含用于报告缺陷的 "**中止**" 例程。
 
-长而复杂的代码路径与缺陷时，通常很有用来向下滚动**跟踪树**窗格中，直到找到**中止**例程，，然后使用向上键查找的代码，大多数立即触发缺陷报告。
+如果缺陷的代码路径较长而复杂，则在 "**跟踪树**" 窗格中向下滚动会很有用，直到找到 "**中止**" 例程，然后使用向上箭头键查找最能立即触发缺陷报告的代码。
 
-例如，以下屏幕截图中所示，中止例程是与报告测试是否已获取锁后的缺陷 CancelSpinLock.slic 文件中的一行相关联 (**s = = 锁定**)。 测试是子例程的调度例程结束时执行的一部分。 中的信息，您可以推断出该驱动程序无法从调度例程返回前释放自旋锁。
+例如，如以下屏幕截图中所示，该中止例程与 CancelSpinLock. slic 文件中的一行关联，该文件在测试是否获取了锁（**s = = locked**）后报告缺陷。 测试是在调度例程结束时执行的子例程的一部分。 通过此信息，你可以推断驱动程序在从调度例程返回之前未能释放自旋锁。
 
-![显示了如何中止例程与 cancelspinlock.slic 文件中的一行相关联的静态驱动程序验证工具报表页面的屏幕截图](images/sdv-trace3.png)
+!["静态驱动程序验证程序" 报表页的屏幕截图，其中显示了中止例程如何与 cancelspinlock. slic 文件中的一行关联](images/sdv-trace3.png)
 
-### <a name="span-idclosethestaticdriververifierdefectviewerspanspan-idclosethestaticdriververifierdefectviewerspanclose-the-static-driver-verifier-defect-viewer"></a><span id="close_the_static_driver_verifier_defect_viewer"></span><span id="CLOSE_THE_STATIC_DRIVER_VERIFIER_DEFECT_VIEWER"></span>关闭 Static Driver Verifier 缺陷查看器
+### <a name="span-idclose_the_static_driver_verifier_defect_viewerspanspan-idclose_the_static_driver_verifier_defect_viewerspanclose-the-static-driver-verifier-defect-viewer"></a><span id="close_the_static_driver_verifier_defect_viewer"></span><span id="CLOSE_THE_STATIC_DRIVER_VERIFIER_DEFECT_VIEWER"></span>关闭静态驱动程序验证程序缺陷查看器
 
-确定导致缺陷的代码错误之后，你可以关闭**静态驱动程序验证程序脱离 Viewer**窗口当前的规则，然后打开**脱离查看器**不同规则。
+在确定导致缺陷的代码错误后，可以关闭当前规则的 "**静态驱动程序验证程序" 缺陷查看器**窗口，然后为其他规则打开**缺陷查看器**。
 
-若要关闭缺陷查看器的规则：
+若要关闭规则的缺陷查看器：
 
--   从**文件**菜单中，选择**退出**。
+-   从 "**文件**" 菜单中选择 "**退出**"。
 
-此外可以单击**关闭**按钮 (**X**) 的**缺陷查看器**。 它位于正下方**关闭**按钮 (**X**) 为静态的驱动程序验证工具报表。
+还可以单击 "**缺陷查看器**" 的 "**关闭**" 按钮（**X**）。 它位于 "静态驱动程序验证程序" 报表的 "**关闭**" 按钮（**X**）的正下方。
 
-以下屏幕截图演示了如何关闭缺陷查看器。
+以下屏幕截图显示了如何关闭缺陷查看器。
 
-![显示如何关闭一个规则的缺陷查看器的屏幕截图](images/sdv-defectviewerclose.png)
+![显示如何关闭规则的缺陷查看器的屏幕截图](images/sdv-defectviewerclose.png)
 
  
 

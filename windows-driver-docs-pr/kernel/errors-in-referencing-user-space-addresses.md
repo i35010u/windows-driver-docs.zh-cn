@@ -5,16 +5,16 @@ ms.assetid: 87944805-e4ba-431e-b673-b0125dc9ec24
 keywords:
 - 可靠性 WDK 内核，用户空间地址
 - 引用 WDK 内核的用户空间地址
-- 引用用户空间地址
-- 嵌入式的指针 WDK 内核
+- 引用用户-空间地址
+- 嵌入指针 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bdf3ea2d23319a461de5a30ce7a9608946a2912
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6bbfb7269f4aab1f97059fc28a15cb86a2aa975
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385130"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838706"
 ---
 # <a name="errors-in-referencing-user-space-addresses"></a>引用用户空间地址时出错
 
@@ -22,13 +22,13 @@ ms.locfileid: "67385130"
 
 
 
-任何驱动程序是否支持 Irp 或快速 I/O 操作，应在用户空间中的任何地址前验证尝试使用它。 I/O 管理器不会验证此类地址，也不会验证缓冲区传递给驱动程序中嵌入的指针。
+任何驱动程序（无论是支持 Irp 还是快速 i/o 操作）都应该验证用户空间中的任何地址，然后再尝试使用它。 I/o 管理器不会验证此类地址，也不会验证已传递给驱动程序的缓冲区中嵌入的指针。
 
-### <a href="" id="failure-to-validate-addresses-passed-in-method-neither-ioctls-and-fsctls"></a>无法验证地址在方法中传递\_NEITHER Ioctl 和 FSCTLs
+### <a href="" id="failure-to-validate-addresses-passed-in-method-neither-ioctls-and-fsctls"></a>验证传入方法的地址不\_IOCTLs 和 FSCTLs 失败
 
-I/O 管理器会执行任何验证技术方法\_既不 Ioctl 和 FSCTLs。 若要确保用户空间地址都有效，则驱动程序必须使用[ **ProbeForRead** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforread)并[ **ProbeForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-probeforwrite)例程，中的所有缓冲区引用都封闭**试用 / 除外**块。
+对于 IOCTLs 和 FSCTLs 方法\_，i/o 管理器不执行任何验证。 为了确保用户空间地址有效，驱动程序必须使用[**ProbeForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforread)和[**ProbeForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-probeforwrite)例程，并将所有缓冲区引用包含在**try/except**块中。
 
-在以下示例中，驱动程序假定中传递的值**Type3InputBuffer**表示有效的地址。
+在下面的示例中，驱动程序假定在**Type3InputBuffer**中传递的值表示有效地址。
 
 ```cpp
    case IOCTL_GET_HANDLER:
@@ -42,7 +42,7 @@ I/O 管理器会执行任何验证技术方法\_既不 Ioctl 和 FSCTLs。 若�
    }
 ```
 
-下面的代码可避免此问题：
+以下代码可避免此问题：
 
 ```cpp
    case IOCTL_GET_HANDLER:
@@ -70,11 +70,11 @@ I/O 管理器会执行任何验证技术方法\_既不 Ioctl 和 FSCTLs。 若�
    }
 ```
 
-另请注意，正确的代码将强制转换**DriverEntryPoint** ULONG 到\_PTR，而不是 ULONG。 此更改允许在 64 位 Windows 环境中使用。
+另请注意，正确的代码将**DriverEntryPoint**转换为 ULONG\_PTR，而不是 ulong。 此更改允许在64位 Windows 环境中使用。
 
-### <a name="failure-to-validate-pointers-embedded-in-buffered-io-requests"></a>验证指针嵌入在缓冲 I/O 请求失败
+### <a name="failure-to-validate-pointers-embedded-in-buffered-io-requests"></a>未能验证嵌入在缓冲 i/o 请求中的指针
 
-通常的驱动程序嵌入指针中缓冲请求，如以下示例所示：
+通常，驱动程序会在缓冲请求中嵌入指针，如以下示例中所示：
 
 ```cpp
    struct ret_buf
@@ -92,9 +92,9 @@ I/O 管理器会执行任何验证技术方法\_既不 Ioctl 和 FSCTLs。 若�
    RtlMoveMemory(arg, &info, sizeof(info));
 ```
 
-在此示例中，驱动程序应通过使用验证嵌入式的指针**探测 * Xxx*** 例程括在**尝试 / except**中用于该方法的相同方式阻止\_既不 Ioctl前面所述。 尽管嵌入指针允许驱动程序返回额外信息，但驱动程序可以通过使用相对偏移量或可变长度缓冲区更有效地实现相同的结果。
+在此示例中，驱动程序应使用 IOCTLs 中所述的\_方法，通过使用在**try/except**块中包含的**探测器 * Xxx*** 例程来验证嵌入指针。 尽管嵌入指针允许驱动程序返回额外信息，但驱动程序可以通过使用相对偏移量或可变长度缓冲区来更有效地获得相同的结果。
 
-有关使用详细信息**试用 / 除外**块以处理无效的地址，请参阅[处理异常](handling-exceptions.md)。
+有关使用**try/except**块处理无效地址的详细信息，请参阅[处理异常](handling-exceptions.md)。
 
  
 
