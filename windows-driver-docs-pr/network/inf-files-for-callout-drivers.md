@@ -9,17 +9,16 @@ keywords:
 - INF 文件 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc98228033c0baa739a2c507e2c16bf0a029a50
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 585b153026c899a02da817315f43b1613d404746
+ms.sourcegitcommit: 0e0dc5f080df541cbb13b87a49c5eb88f757d4b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385091"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72987836"
 ---
 # <a name="inf-files-for-callout-drivers"></a>标注驱动程序的 INF 文件
 
-
-通过安装程序信息文件 (INF) 文件安装 Windows 筛选平台标注驱动程序。 标注驱动程序的 INF 文件包含仅以下 INF 文件部分：
+Windows 筛选平台标注驱动程序由安装信息文件（INF）文件安装。 标注驱动程序的 INF 文件仅包含以下 INF 文件部分：
 
 [**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
 
@@ -31,7 +30,7 @@ ms.locfileid: "67385091"
 
 [**INF DefaultInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)
 
-[**INF DefaultInstall.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
+[**INF DefaultInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
 
 [**INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section)
 
@@ -83,9 +82,9 @@ ErrorControl = 1 ; SERVICE_ERROR_NORMAL
 ServiceBinary = %12%\ExampleCalloutDriver.sys
 
 [Strings]
-%Msft% = "Microsoft Corporation"
-%DiskName% = "Example Callout Driver Installation Disk"
-%Description% = "Example Callout Driver"
-%ServiceName% = "ExampleCalloutDriver"
-%ServiceDesc% = "Example Callout Driver"
+Msft = "Microsoft Corporation"
+DiskName = "Example Callout Driver Installation Disk"
+Description = "Example Callout Driver"
+ServiceName = "ExampleCalloutDriver"
+ServiceDesc = "Example Callout Driver"
 ```
