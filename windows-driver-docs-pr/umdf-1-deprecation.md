@@ -1,16 +1,18 @@
 ---
-title: UMDF 1 不推荐使用
+title: UMDF 1 弃用
 author: tedhudek
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 924c999aec01677272887aa40c5f30da6e8d71d1
-ms.sourcegitcommit: 3314d9337e41004aed97d5c589e96749a2bcf691
+ms.openlocfilehash: 0752755ca03b343bc4d48164721c25da867f2881
+ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68229613"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445842"
 ---
+# 
+
 > [!WARNING]
-> UMDF 2 是最新版本的 UMDF，取代 UMDF 1。  应使用 UMDF 2 编写所有新 UMDF 驱动程序。  没有新的功能添加到 UMDF 1 并且没有 UMDF 1 较新版本的 Windows 10 上的有限的支持。  通用 Windows 驱动程序必须使用 UMDF 2。
+> UMDF 2 是最新版本的 UMDF，取代了 UMDF 1。  所有新的 UMDF 驱动程序都应使用 UMDF 2 来编写。  新功能不会添加到 UMDF 1，并且在较新版本的 Windows 10 上对 UMDF 1 的支持是有限的。  通用 Windows 驱动程序必须使用 UMDF 2。
 >
-> 有关详细信息，请参阅[入门 UMDF](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)。
+> 有关详细信息，请参阅[具有 UMDF 的入门](https://docs.microsoft.com/windows-hardware/drivers/wdf/getting-started-with-umdf-version-2)。

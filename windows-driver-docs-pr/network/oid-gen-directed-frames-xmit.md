@@ -1,29 +1,29 @@
 ---
 title: OID_GEN_DIRECTED_FRAMES_XMIT
-description: 为查询，OID_GEN_DIRECTED_FRAMES_XMIT OID 指定定向没有错误传输的数据包数。
+description: 作为查询，OID_GEN_DIRECTED_FRAMES_XMIT OID 指定传输的未出现错误的定向数据包的数量。
 ms.assetid: 7863c5c5-618f-4e3c-9a50-3bfdcf00034d
-ms.date: 08/08/2017
+ms.date: 11/01/2019
 keywords: -从 Windows Vista 开始 OID_GEN_DIRECTED_FRAMES_XMIT 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a953c40d52c6001e893153b5cc952e06e5a6d9a9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 372c7fde80d3351bf3f612efc0a30dde1b719190
+ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369129"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442987"
 ---
-# <a name="oidgendirectedframesxmit"></a>OID\_GEN\_定向\_帧\_XMIT
+# <a name="oid_gen_directed_frames_xmit"></a>OID\_代\_定向\_帧\_XMIT
 
 
-为查询，OID\_GEN\_定向\_帧\_XMIT OID 指定定向没有错误传输的数据包数。
+作为查询，OID\_代\_定向\_帧\_XMIT OID 指定传输的未出现错误的定向数据包的数量。
 
 **版本信息**
 
 <a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 和更高版本的 Windows  
 已过时。
 
-<a href="" id="ndis-6-0-and-later-drivers"></a>NDIS 6.0 和更高版本的驱动程序  
-未请求。 使用[OID\_代\_统计信息](oid-gen-statistics.md)相反。
+<a href="" id="ndis-6-0-and-later-drivers"></a>NDIS 6.0 和更高版本驱动程序  
+未请求。 改用[OID\_代\_统计信息](oid-gen-statistics.md)。
 
 <a href="" id="ndis-5-1-drivers"></a>NDIS 5.1 驱动程序  
 可选。
@@ -37,7 +37,9 @@ ms.locfileid: "67369129"
 <a name="remarks"></a>备注
 -------
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
+计数与 RFC 2863 中所述的*ifOutUcastPkts*计数器完全相同。
+
+有关统计信息 Oid 的一般信息，请参阅[常规统计](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,16 +51,16 @@ ms.locfileid: "67369129"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis （包括 Ndis .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_GEN\_STATISTICS](oid-gen-statistics.md)
+[OID\_代\_统计信息](oid-gen-statistics.md)
 
  
 
