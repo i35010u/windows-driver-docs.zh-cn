@@ -16,75 +16,75 @@ ms.locfileid: "73445360"
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 
-本指南将指导你完成在 Windows 开发人员中心硬件仪表板（以前称为 Sysdev （<https://sysdev.microsoft.com>）中创建服务元数据包的过程。 将移动宽带应用连接到硬件设备需要服务元数据。 当用户将移动宽带设备插入到计算机时，将下载关联的服务元数据，然后自动下载移动宽带应用。
+This guide walks you through the process of creating a service metadata package on the Windows Dev Center hardware dashboard, previously known as Sysdev (<https://sysdev.microsoft.com>). Service metadata is required to connect a mobile broadband app to your hardware device. When a user plugs a mobile broadband device into their computer, the associated service metadata is downloaded and then the mobile broadband app is automatically downloaded.
 
-您可以利用服务元数据来创建更深入的 Windows 体验。 利用服务元数据包，可以包括图标和操作员名称等品牌信息，配置用于访问 SIM 硬件和个人热点的设置和权限，以及预配移动宽带应用以使用移动宽带装置.
-
-**注意**  
-即使移动宽带应用自动安装，用户也必须手动将其固定到 "开始" 屏幕。
-
-
-
-## <a name="span-idgetting_startedspanspan-idgetting_startedspanspan-idgetting_startedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>入门
-
-
-若要创建成功的服务元数据包，必须完成本部分中包含的步骤。
-
-### <a name="span-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>向 Windows 开发人员中心硬件仪表板注册公司
-
--   你的公司在 Windows 开发人员中心硬件仪表板上有一个活动帐户。 如果你的公司在 Windows 开发人员中心硬件仪表板上没有帐户，你可以创建一个新帐户，并将你的用户帐户添加到你的公司。 有关详细信息，请参阅 Windows 开发人员中心硬件仪表板帮助中的[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)。
-
--   你的公司有一个 VeriSign 代码签名证书，用于对包进行签名。
-
-### <a name="span-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanservice-metadata-wizard-access-and-service-identifiers-registration"></a><span id="Service_Metadata_wizard_access_and_service_identifiers_registration"></span><span id="service_metadata_wizard_access_and_service_identifiers_registration"></span><span id="SERVICE_METADATA_WIZARD_ACCESS_AND_SERVICE_IDENTIFIERS_REGISTRATION"></span>服务元数据向导访问和服务标识符注册
-
-在创建服务元数据包之前，Mno 和 Mvno 必须完成以下步骤：
-
--   请求访问服务元数据向导
-
--   注册服务标识符
-
-若要完成上述步骤，你必须将电子邮件发送到 sysdev@microsoft.com，其中包含以下信息：
-
--   注册 Windows 开发人员中心硬件仪表板时使用的组织名称。
-
--   你是移动网络操作员还是移动虚拟网络操作员。
-
--   你的网站，并论证你需要创建服务元数据包的原因。
-
-包括以下服务标识符（如果适用）：
-
--   GSM 提供程序 Id 列表
-
--   GSM 提供程序名称列表
-
--   CDMA Sid 列表
-
--   CDMA 提供程序名称的列表
-
-你应收到一封确认电子邮件，其中包含你的请求收到的24小时。 不过，处理请求最多可能需要5个工作日。 如果有冲突，我们将向你发送一封电子邮件，要求提供更多信息。
-
-### <a name="span-idmobile_broadband_appspanspan-idmobile_broadband_appspanspan-idmobile_broadband_appspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>移动宽带应用
-
-在创建服务元数据包之前，请确保已开发移动宽带应用并将其与 Microsoft Store 相关联。 此应用应提供重要的体验，如计划购买、数据使用、帮助和支持，以及从操作员突出显示增值服务。 有关创建移动宽带应用的详细信息，请参阅以下链接：
-
--   [移动宽带 WinRT API 概述](mobile-broadband-winrt-api-overview.md)
-
--   [移动运营商硬件概述](mobile-operator-hardware-overview.md)
-
--   [UWP mobile 宽带应用](uwp-mobile-broadband-apps.md)
+You can leverage service metadata to create a deeply integrated experience with Windows. Service metadata packages allow you to include branding information, such as icons and your operator name, configure settings and permissions for accessing SIM hardware and personal hotspots, and provision mobile broadband apps to work with your mobile broadband device.
 
 **注意**  
-在对服务元数据进行测试并准备好在外部发布之前，移动宽带应用不必发布到 Microsoft Store。 建议仅在服务元数据包经过预览模式测试后才将应用发布到 Microsoft Store。
+Even though the mobile broadband app is automatically installed, the user must pin it to the Start Screen manually.
 
 
 
-## <a name="span-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>创建服务元数据包
+## <a name="span-idgetting_startedspanspan-idgetting_startedspanspan-idgetting_startedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>Getting started
 
 
-从 Windows 开发人员中心硬件仪表板上提供的服务元数据向导开始创建服务元数据包。 有关服务元数据向导的详细信息，请参阅[步骤 2-创建服务元数据包](#2-create-the-service-metadata-package)。 您可以使用服务元数据向导来创建新的或编辑现有的服务元数据包。 当你完成向导并填写值时，向导将验证并通知你任何错误或警告。 此验证包括检查缺失或不正确的字段、服务标识符所有权、移动宽带应用是否存在于 Microsoft Store 中，等等。
+To create a successful service metadata package, you must complete the steps included in this section.
 
-当你在最后确认页面并准备好提交时，你可以选择以**开发人员**模式或**预览**模式提交包。
+### <a name="span-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>Register your company with the Windows Dev Center hardware dashboard
+
+-   Your company has an active account on the Windows Dev Center hardware dashboard. If your company does not have an account on the Windows Dev Center hardware dashboard, you can create a new account and add your user account to you company. For more info, see [Administration](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration) in the Windows Dev Center hardware dashboard help.
+
+-   Your company has a VeriSign code signing certificate to sign the packages.
+
+### <a name="span-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanservice-metadata-wizard-access-and-service-identifiers-registration"></a><span id="Service_Metadata_wizard_access_and_service_identifiers_registration"></span><span id="service_metadata_wizard_access_and_service_identifiers_registration"></span><span id="SERVICE_METADATA_WIZARD_ACCESS_AND_SERVICE_IDENTIFIERS_REGISTRATION"></span>Service Metadata wizard access and service identifiers registration
+
+MNOs and MVNOs must complete the following steps before you can create a service metadata package:
+
+-   Request access to the Service Metadata wizard
+
+-   Register your service identifiers
+
+To complete the steps above, you must send an email to sysdev@microsoft.com with the following info:
+
+-   The organization name used when you registered for the Windows Dev Center hardware dashboard.
+
+-   Whether you are a mobile network operator or a mobile virtual network operator.
+
+-   Your website and justification on why you need to create a service metadata package.
+
+Include the following service identifiers as applicable:
+
+-   List of GSM Provider IDs
+
+-   List of GSM Provider Names
+
+-   List of CDMA SIDs
+
+-   List of CDMA Provider Names
+
+You should receive an acknowledgement emails with 24 hours that your request was received. However, it could take up to 5 business days to process the request. If we have conflicts, we’ll send you an email asking for additional information.
+
+### <a name="span-idmobile_broadband_appspanspan-idmobile_broadband_appspanspan-idmobile_broadband_appspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>Mobile broadband app
+
+Before you create your service metadata package, ensure that your mobile broadband app has been developed and associated with the Microsoft Store. This app should provide key experiences, such as plan purchase, data usage, help and support, as well as highlighting value-added services from the operator. For more info about creating the mobile broadband app, see the following links:
+
+-   [Mobile broadband WinRT API overview](mobile-broadband-winrt-api-overview.md)
+
+-   [Mobile operator hardware overview](mobile-operator-hardware-overview.md)
+
+-   [UWP mobile broadband apps](uwp-mobile-broadband-apps.md)
+
+**注意**  
+The mobile broadband app doesn’t have to be published to the Microsoft Store until the service metadata has been tested and is ready to be published externally. We recommend that the app is published to the Microsoft Store only after the service metadata package passes preview mode testing.
+
+
+
+## <a name="span-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>Creating service metadata packages
+
+
+Creating a service metadata package starts with the Service Metadata wizard that is available on the Windows Dev Center hardware dashboard. For more info on the Service Metadata wizard, see [Step 2- Create the service metadata package](#2-create-the-service-metadata-package). You can use the Service Metadata wizard to create a new or edit an existing service metadata package. As you go through the wizard and fill out the values, the wizard will validate and notify you of any errors or warnings. This validation includes checking for missing or incorrect fields, service identifier ownership, mobile broadband app existence in the Microsoft Store, and so on.
+
+When you are on the final confirmation page and ready to submit, you have the option of submitting your package either in **Developer** mode or **Preview** mode.
 
 -   **开发人员模式**在初始阶段中使用，目的是只创建服务元数据包，并将其用于脱机测试目的。 在此模式下，将不会对包进行签名，必须手动将其下载并安装到测试计算机中，以便进行验证。 可以快速快速地查看此模式，以便创建和验证服务元数据包与设备一起工作。
 
@@ -164,57 +164,57 @@ ms.locfileid: "73445360"
 
 ### <a name="2-create-the-service-metadata-package"></a>2-创建服务元数据包
 
-服务元数据是通过使用 Windows 开发人员中心硬件仪表板中的服务元数据向导创建的。
+Service metadata is created by using the Service Metadata Wizard in the Windows Dev Center hardware dashboard.
 
-**创建服务元数据包**
+**To create a service metadata package**
 
 1.  导航到 <https://sysdev.microsoft.com>。
 
-2.  在**设备元数据**标题下，单击 "**创建移动宽带体验**"。
+2.  Under the **Device metadata** heading, click **Create mobile broadband experience**.
 
-    ![这是仪表板的登录页](images/mbae-sxs81-dashboard.png)
+    ![this is the landing page for the dashboard](images/mbae-sxs81-dashboard.png)
 
-3.  在 "**服务信息**" 页上，填写以下字段，然后单击 "**下一步**"。
+3.  On the **Service info** page, complete the following fields, and then click **Next**.
 
-    -   **输入用于 windows 网络选择 UI 的网络名称**–将在 Windows 连接管理器中向客户显示的网络的名称。
+    -   **Enter the name for your network that is to be used in the Windows network selection UI** – The name of you network that will be displayed to customers in Windows Connection Manager.
 
-    -   **输入服务号码**–必须与预配元数据中的 "运营商 ID" 字段匹配的 GUID。 可以通过使用 Visual Studio 2013 来创建 GUID。 有关如何创建 GUID 的详细信息，请参阅[创建 guid （guidgen.exe）](https://go.microsoft.com/fwlink/p/?linkid=330070)。
+    -   **Enter your service number** – A GUID that must match the carrier ID field in your provisioning metadata. You can create a GUID by using Visual Studio 2013. For more information on how to create a GUID, see [Create GUID (guidgen.exe)](https://go.microsoft.com/fwlink/p/?linkid=330070).
 
-    -   **上传要在 windows 网络选择 UI 中显示的图标**–单击 "**浏览**"，然后选择向 Windows 连接管理器中的客户显示的图标。
+    -   **Upload your icon that is to be shown in the Windows network selection UI** – Click **Browse**, and then select the icon that is shown to customers in Windows Connection Manager.
 
-    -   **在应用中输入 Windows 通知事件处理程序（可选，除非下述要求进行权限检查）** –这是在移动宽带应用中注册的通知处理程序。
+    -   **Enter the Windows notification event handler in your app (optional unless entitlement check is required below)** – This is the notification handler that was registered in your mobile broadband app.
 
-    -   **是否允许用户共享其移动宽带连接（个人热点）？** –可能的选项始终为 "**允许**"，**仅允许与 "权利检查" （需要 Windows 通知事件处理程序）** 和 "**不允许**"。 默认选项为 "始终允许"。
+    -   **Do you want to allow users to share their mobile broadband connection (personal hotspot)?** – The possible options are **Always allow**, **Allow only with entitlement check (Windows notification event handler required)** , and **Never allow**. The default option is to always allow.
 
-    -   **是否需要系统管理员权限才能在 Sim 上执行 PIN 解锁？** –如果你希望需要系统管理员特权来锁定 SIM 卡，请单击 **"是"** 选项。
+    -   **Do you want to require system admin privileges to perform PIN unlock on SIMs?** – If you want to require system administrator privileges to PIN unlock a SIM card, click the **Yes** option.
 
-    ![向导的服务信息步骤](images/mbae-sxs81-serviceinfostep.png)
+    ![the service info step of the wizard](images/mbae-sxs81-serviceinfostep.png)
 
-4.  在 "**硬件信息**" 页上，选择应该用于识别你的体验的信息。 选中某个复选框后，可以添加相应的网络范围。 生成的 ID 应该存在于 Windows APN 数据库中，以便标识正确的订阅服务器。 有关 APN 数据库的详细信息，请参阅[COSA/APN 数据库提交](cosa-apn-database-submission.md)。
+4.  On the **Hardware info** page, select the information that should be used to identify your experience. Once a check box is selected, you can add the appropriate network ranges. The ID generated should exist in the Windows APN database so the right subscriber is identified. For more information about the APN database, see [COSA/APN database submission](cosa-apn-database-submission.md).
 
-    -   如果你是使用国际移动用户标识（IMSI）的 GSM 提供商，请在 " **gsm** " 标题下选择 " **IMSI** " 复选框。 在 "**提供程序 id** " 框中，输入 GSM 服务提供程序 id。 在**IMSI/ICCID 范围**标题下，输入范围，然后单击 "**添加**"。
+    -   If you are a GSM Provider that uses the International Mobile Subscriber Identity (IMSI), select the **IMSI** check box under the **GSM** heading. In the **Provider ID** box, enter the GSM service provider ID. Under the **IMSI/ICCID Ranges** heading, enter the range, and then click **Add**.
 
-    -   如果你是使用集成卡标识符（ICCID）的 GSM 提供程序，请选中 " **GSM** " 标题下的 " **SIM ICC ID** " 复选框。 在 "**输入提供程序 id 和 ICC id 范围**" 标题下，输入范围，然后单击 "**添加**"。
+    -   If you are a GSM provider that uses the integrated circuit card identifier (ICCID), select the **SIM ICC ID** check box under the **GSM** heading. Under the **Enter the Provider ID and ICC ID range** heading, enter the range, and then click **Add**.
 
-    -   如果你是使用 home 提供程序名称的 GSM 提供程序，请选中 " **GSM** " 标题下的 "**主提供商名称**" 复选框。 在 "**输入主提供商名称" 或 "输入提供者 id （MCC + MNC）** " 标题下，输入提供程序 id 和提供程序名称，然后单击 "**添加**"。
+    -   If you are a GSM provider that uses the home provider name, select the **Home provider name** check box under the **GSM** heading. Under the **Enter the Home Provider Name or enter the Provider ID (MCC+MNC)** heading, enter the provider ID and provider name, and then click **Add**.
 
-    -   如果你是使用 SID 的 CDMA 提供程序，请选中 " **CDMA** " 标题下的 " **SID** " 复选框。 在 "**输入 sid** " 框中，输入 CDMA SID。
+    -   If you are a CDMA provider that uses the SID, select the **SID** check box under the **CDMA** heading. In the **Enter the SID** box, enter the CDMA SID.
 
-    -   如果你是使用提供程序名称的 CDMA 提供程序，请选中 " **CDMA** " 标题下的 "**提供程序名称**" 复选框。 在 "**输入提供者名称**" 框中，输入 CDMA 服务提供商名称。
+    -   If you are a CDMA provider that uses the provider name, select the **Provider name** check box under the **CDMA** heading. In the **Enter Provider Name** box, enter the CDMA service provider name.
 
-    -   单击“下一步”。
+    -   单击**下一步**。
 
-    ![这是向导的 "硬件信息" 步骤](images/mbae-sxs81-hardwareinfostep.png)
+    ![this is the hardware info step of the wizard](images/mbae-sxs81-hardwareinfostep.png)
 
-5.  在 "**应用程序信息**" 页上，输入在本主题的步骤1中收集的信息。 如果要添加其他特权应用，请单击 "**添加**"，然后输入最多7个其他应用。 输入所有特权应用后，单击 "**下一步**"。
+5.  On the **App info** page, enter the information you gathered in Step 1 of this topic. If you want to add additional privileged apps, click **Add**, and then enter up to 7 more. When all of the privileged apps are entered, click **Next**.
 
-    ![这是向导的 "应用信息" 步骤](images/mbae-sxs81-appinfostep.png)
+    ![this is the app info step of the wizard](images/mbae-sxs81-appinfostep.png)
 
-6.  在 "**确认**" 页上，验证信息是否正确。 选择 "**开发人员模式**" 或 "**预览模式**" 选项，然后单击 "**提交**"。
+6.  On the **Confirm** page, verify that the information is correct. Select the **Developer Mode** or **Preview Mode** option, and then click **Submit**.
 
-    -   **开发人员模式**–包未签名，并且必须在每台计算机上手动下载和安装。 如果需要保存该程序包以进行脱机开发，请使用此选项。
+    -   **Developer Mode** – The package is not signed and it must be manually downloaded and installed on every computer. 如果需要保存该程序包以进行脱机开发，请使用此选项。
 
-    -   **预览模式**–包经过签名，并自动从 Microsoft 下载，以测试配置了适当注册表设置的计算机。 预览模式不会进行检查以确保将移动宽带应用程序发布到 Microsoft Store。
+    -   **Preview Mode** – The package is signed and automatically downloaded from Microsoft to test computers with the appropriate registry settings configured. 预览模式不会进行检查以确保将移动宽带应用程序发布到 Microsoft Store。
 
     ![这是向导的 "确认" 步骤](images/mbae-sxs81-confirm.png)
 
@@ -531,73 +531,73 @@ Write-Host "END"
 
 ![发布服务元数据包](images/mbae-sxs81-releasetolive.jpg)
 
-## <a name="steps-for-editing-a-service-metadata-package"></a>编辑服务元数据包的步骤
+## <a name="steps-for-editing-a-service-metadata-package"></a>Steps for editing a service metadata package
 
 
-可以使用 Windows 开发人员中心硬件仪表板的 "管理体验" 页来编辑服务元数据包。
+You can edit a service metadata package by using the Manage Experiences page of the Windows Dev Center hardware dashboard.
 
-!["管理体验" 页](images/mbae-sxs81-manageexperience.png)
+![the manage experiences page](images/mbae-sxs81-manageexperience.png)
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>“疑难解答”
 
 
-打开 "网络" 列表，并查找移动宽带网络。 如果使用服务元数据包**ServiceInfo**文件中使用的名称和图标列出了网络，则会正确分析包。 如果要更新的服务元数据包具有相同的名称和图标，或者在大约一分钟后名称或图标未显示在列表中，则应执行其他步骤，如此处所述：
+Open the networks list and look for your mobile broadband network. If the network is listed by using the name and icon that you used in the service metadata package **ServiceInfo.xml** file, the package is correctly parsed. If you are updating a service metadata package that has the same name and icon, or if the name or icon has not appeared in the list after about approximately one minute, you should perform additional steps, as discussed here:
 
--   强制执行元数据刷新
+-   Force a metadata refresh
 
--   检查元数据缓存
+-   Check the metadata cache
 
--   检查注册表
+-   Check the registry
 
--   检查 WWAN 日志
+-   Check the WWAN Logs
 
-### <a name="span-idforcemdrefspanspan-idforcemdrefspanforce-a-metadata-refresh"></a><span id="forcemdref"></span><span id="FORCEMDREF"></span>强制执行元数据刷新
+### <a name="span-idforcemdrefspanspan-idforcemdrefspanforce-a-metadata-refresh"></a><span id="forcemdref"></span><span id="FORCEMDREF"></span>Force a metadata refresh
 
-某些部分的元数据和移动宽带应用系统依赖于网络访问，这可能会失败并使计算机处于不一致的状态。 如果发生这种情况，则可能会遇到以下情况：未安装服务元数据，或者未安装移动宽带应用。 系统会定期尝试纠正这种情况，但为了节省电源，重试次数相当罕见（一天只需几次）。 你可以手动强制进行刷新，而不是等待下一次重试。 要实现这一点，请执行下列操作：
+Some parts of the metadata and mobile broadband app systems rely on network access, which can fail and leave the computer in an inconsistent state. If this happens, you can encounter a situation where service metadata is not installed or the mobile broadband app is not installed. The system periodically tries to remedy the situation, but to conserve power, retries are fairly infrequent (just a few times a day). Instead of waiting for the next retry, you can manually force a refresh to happen immediately. 要实现这一点，请执行下列操作：
 
-1.  打开 "桌面**控制面板"** 。
+1.  Open the desktop **Control Panel**.
 
-2.  打开 "**设备和打印机**"。
+2.  Open **Devices and Printers**.
 
-3.  从 "**视图**" 菜单上，单击 "**刷新**"，或按**F5**键。 此操作会导致元数据被重新分析，并重新注册后台事件。
+3.  From the **View** menu, click **Refresh**, or press the **F5** key. This action causes metadata to be reparsed and background events to be re-registered.
 
 **重要须知**  
-如果已成功分析服务元数据包，系统会将此刷新视为元数据更新。 在这种情况下，元数据包的文件名中必须有不同的 GUID，并在**PackageInfo**的[LastModifiedDate](lastmodifieddate.md)元素中包含更新的时间戳。
+If a service metadata package has already been successfully parsed, the system will treat this refresh as a metadata update. In this case, your metadata package must have a different GUID in its filename and an updated timestamp in the [LastModifiedDate](lastmodifieddate.md) element of **PackageInfo.xml**.
 
 
 
-### <a name="span-idcheckmdcachespanspan-idcheckmdcachespancheck-the-metadata-cache"></a><span id="checkmdcache"></span><span id="CHECKMDCACHE"></span>检查元数据缓存
+### <a name="span-idcheckmdcachespanspan-idcheckmdcachespancheck-the-metadata-cache"></a><span id="checkmdcache"></span><span id="CHECKMDCACHE"></span>Check the metadata cache
 
-如果元数据刷新未解决此问题，请确保服务元数据包有效并且具有正确的硬件 Id。 要实现这一点，请执行下列操作：
+If a metadata refresh did not fix the problem, make sure that the service metadata package is valid and that it has the correct Hardware IDs. 要实现这一点，请执行下列操作：
 
-1. 导航到 **% programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>区域性</em>，其中*culture*是测试计算机的当前区域性的区域性代码（例如，**en-us**或**es**）。
+1. Navigate to **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>culture</em>, where *culture* is the culture code for the current culture of your test computer (for example, **en-us** or **es-es**).
 
-2. 查找与元数据包同名的文件夹（不包含**devicemetadata-ms**扩展）。 如果此目录不存在，则可能表示以下四种情况之一：
+2. Look for a folder that has the same name as your metadata package (without the **.devicemetadata-ms** extension). If this directory does not exist, it can mean one of four things:
 
-   -   服务元数据包已损坏。
+   -   The service metadata package is corrupt.
 
-   -   服务元数据包没有正确的硬件 Id。
+   -   The service metadata package does not have the correct Hardware IDs.
 
-   -   移动宽带设备未处于可下载元数据的状态，或者在复制服务元数据包之前插入设备。
+   -   The mobile broadband device is not in a state where metadata can be downloaded, or you plugged in the device before you copied the service metadata package.
 
-   -   检查元数据包上的数字签名时出现问题。 这通常是由于未在测试计算机上启用测试签名导致的。
+   -   A problem occurred when checking the digital signature on the metadata package. This is usually caused by not having test signing enabled on your test computer.
 
-如果在复制服务元数据包后确定包未损坏并且第一次插入移动宽带设备，请检查 IMSI 范围。 键入太多或太少的0或9非常简单。 如果确认或更正这些项后问题仍然存在，则必须查看注册表。
+If you’re sure that the package is not corrupted and that you first plugged in the mobile broadband device after you copied the service metadata package, check the IMSI ranges. It’s very easy to type in too many or too few 0s or 9s. If the problem persists after confirming or correcting these items, you must look at the registry.
 
-### <a name="span-idcheckregspanspan-idcheckregspancheck-the-registry"></a><span id="checkreg"></span><span id="CHECKREG"></span>检查注册表
+### <a name="span-idcheckregspanspan-idcheckregspancheck-the-registry"></a><span id="checkreg"></span><span id="CHECKREG"></span>Check the registry
 
 **警告**  
-除非绝对必要，否则不应编辑不属于应用程序的注册表数据。 如果注册表中存在错误，则系统可能无法正常运行。 请勿在任何情况下都删除**MobileBroadbandAccounts**注册表项。 Windows 不会重新创建它，并且你将中断此功能。
+You should not edit registry data that does not belong to your application unless it is absolutely necessary. If there is an error in the registry, your system might not function properly. Do not, under any circumstances, delete the **MobileBroadbandAccounts** registry key. Windows 不会重新创建它，并且你将中断此功能。
 
 
 
-执行以下步骤以检查注册表：
+Perform the following steps to check the registry:
 
 1.  打开注册表编辑器。
 
-2.  请参阅**HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**。
+2.  Go to **HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**.
 
-3.  在此注册表项中，查找其他三个密钥： "**帐户**"、" **NetworkInterfaceBindings**" 和 "**数据**"。 默认情况下，这些项不存在;它们是在移动宽带设备首次插入、打开或连接时自动创建的。
+3.  Inside this registry key, look for three other keys: **Accounts**, **NetworkInterfaceBindings**, and **Data**. These keys do not exist by default; they are automatically created the first time that a mobile broadband device is inserted, turned on, or connected.
 
 4.  如果**帐户**或**NetworkInterfaceBindings**密钥不存在，并且已插入或打开移动宽带适配器，请检查 WWAN 日志。
 
