@@ -4,290 +4,290 @@ description: 创建服务元数据的开发人员指南
 ms.assetid: 2d250bce-2dd2-4bd8-aa0f-432dde7783e1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 963dba2a9f72c638d40b216fdb3150cd0deb2614
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 28de135945016ac249a7a0a19951dcb822b72b3a
+ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381542"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445360"
 ---
 # <a name="developer-guide-for-creating-service-metadata"></a>创建服务元数据的开发人员指南
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 
-本指南逐步讲解如何通过在 Windows 开发人员中心硬件仪表板，以前称为 Sysdev 上创建服务元数据包的过程 (<http://sysdev.microsoft.com>)。 若要连接到硬件设备的移动宽带应用，所需服务元数据。 当用户插入其计算机的移动宽带设备时，下载关联的服务元数据，并自动下载的移动宽带应用，然后。
+本指南将指导你完成在 Windows 开发人员中心硬件仪表板（以前称为 Sysdev （<https://sysdev.microsoft.com>）中创建服务元数据包的过程。 将移动宽带应用连接到硬件设备需要服务元数据。 当用户将移动宽带设备插入到计算机时，将下载关联的服务元数据，然后自动下载移动宽带应用。
 
-您可以利用服务元数据以创建具有 Windows 的深度集成的体验。 服务元数据包允许您包括品牌信息，例如图标和操作员姓名、 配置设置和用于访问 SIM 硬件和个人热点的权限和预配移动宽带的应用程序以使用移动宽带设备。
+您可以利用服务元数据来创建更深入的 Windows 体验。 利用服务元数据包，可以包括图标和操作员名称等品牌信息，配置用于访问 SIM 硬件和个人热点的设置和权限，以及预配移动宽带应用以使用移动宽带装置.
 
 **注意**  
-即使移动宽带应用自动安装，用户必须将其固定到开始屏幕手动。
+即使移动宽带应用自动安装，用户也必须手动将其固定到 "开始" 屏幕。
 
 
 
-## <a name="span-idgettingstartedspanspan-idgettingstartedspanspan-idgettingstartedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>入门
+## <a name="span-idgetting_startedspanspan-idgetting_startedspanspan-idgetting_startedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>入门
 
 
-若要创建成功的服务元数据包，必须完成此部分中包含的步骤。
+若要创建成功的服务元数据包，必须完成本部分中包含的步骤。
 
-### <a name="span-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanspan-idregisteryourcompanywiththewindowsdevcenterhardwaredashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>你的公司注册的 Windows 开发人员中心硬件仪表板
+### <a name="span-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanspan-idregister_your_company_with_the_windows_dev_center_hardware_dashboardspanregister-your-company-with-the-windows-dev-center-hardware-dashboard"></a><span id="Register_your_company_with_the_Windows_Dev_Center_hardware_dashboard"></span><span id="register_your_company_with_the_windows_dev_center_hardware_dashboard"></span><span id="REGISTER_YOUR_COMPANY_WITH_THE_WINDOWS_DEV_CENTER_HARDWARE_DASHBOARD"></span>向 Windows 开发人员中心硬件仪表板注册公司
 
--   你的公司有一个有效的 Windows 开发人员中心硬件仪表板上的帐户。 如果你的公司不具有 Windows 开发人员中心硬件仪表板上的帐户，可以创建新帐户并将您的用户帐户添加到你的公司。 有关详细信息，请参阅[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)Windows 开发人员中心硬件仪表板帮助中。
+-   你的公司在 Windows 开发人员中心硬件仪表板上有一个活动帐户。 如果你的公司在 Windows 开发人员中心硬件仪表板上没有帐户，你可以创建一个新帐户，并将你的用户帐户添加到你的公司。 有关详细信息，请参阅 Windows 开发人员中心硬件仪表板帮助中的[管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/administration)。
 
--   你的公司有 VeriSign 代码签名证书进行签名的包。
+-   你的公司有一个 VeriSign 代码签名证书，用于对包进行签名。
 
-### <a name="span-idservicemetadatawizardaccessandserviceidentifiersregistrationspanspan-idservicemetadatawizardaccessandserviceidentifiersregistrationspanspan-idservicemetadatawizardaccessandserviceidentifiersregistrationspanservice-metadata-wizard-access-and-service-identifiers-registration"></a><span id="Service_Metadata_wizard_access_and_service_identifiers_registration"></span><span id="service_metadata_wizard_access_and_service_identifiers_registration"></span><span id="SERVICE_METADATA_WIZARD_ACCESS_AND_SERVICE_IDENTIFIERS_REGISTRATION"></span>服务元数据向导访问和服务的标识符注册
+### <a name="span-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanspan-idservice_metadata_wizard_access_and_service_identifiers_registrationspanservice-metadata-wizard-access-and-service-identifiers-registration"></a><span id="Service_Metadata_wizard_access_and_service_identifiers_registration"></span><span id="service_metadata_wizard_access_and_service_identifiers_registration"></span><span id="SERVICE_METADATA_WIZARD_ACCESS_AND_SERVICE_IDENTIFIERS_REGISTRATION"></span>服务元数据向导访问和服务标识符注册
 
-可以创建服务元数据包之前 Mno 和 Mvno 必须完成以下步骤：
+在创建服务元数据包之前，Mno 和 Mvno 必须完成以下步骤：
 
 -   请求访问服务元数据向导
 
 -   注册服务标识符
 
-若要完成上述步骤，必须将发送一封电子邮件到sysdev@microsoft.com使用以下信息：
+若要完成上述步骤，你必须将电子邮件发送到 sysdev@microsoft.com，其中包含以下信息：
 
--   为 Windows 开发人员中心硬件仪表板注册时使用的组织名称。
+-   注册 Windows 开发人员中心硬件仪表板时使用的组织名称。
 
--   你是移动网络运营商或移动虚拟网络的运算符。
+-   你是移动网络操作员还是移动虚拟网络操作员。
 
--   你的网站和为什么需要创建服务元数据包的理由。
+-   你的网站，并论证你需要创建服务元数据包的原因。
 
-包括以下适用的服务标识符：
+包括以下服务标识符（如果适用）：
 
--   GSM 提供程序 Id 的列表
+-   GSM 提供程序 Id 列表
 
--   GSM 的提供程序名称的列表
+-   GSM 提供程序名称列表
 
 -   CDMA Sid 列表
 
--   CDMA 的提供程序名称的列表
+-   CDMA 提供程序名称的列表
 
-应会收到确认电子邮件的 24 小时内收到你的请求。 但是，可能需要最多 5 个工作日来处理该请求。 如果我们有冲突，我们将向你发送一封电子邮件，要求其他信息。
+你应收到一封确认电子邮件，其中包含你的请求收到的24小时。 不过，处理请求最多可能需要5个工作日。 如果有冲突，我们将向你发送一封电子邮件，要求提供更多信息。
 
-### <a name="span-idmobilebroadbandappspanspan-idmobilebroadbandappspanspan-idmobilebroadbandappspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>移动宽带应用
+### <a name="span-idmobile_broadband_appspanspan-idmobile_broadband_appspanspan-idmobile_broadband_appspanmobile-broadband-app"></a><span id="Mobile_broadband_app"></span><span id="mobile_broadband_app"></span><span id="MOBILE_BROADBAND_APP"></span>移动宽带应用
 
-创建服务元数据包之前，请确保你的移动宽带应用已开发并与 Microsoft Store 相关联。 此应用程序应提供密钥的体验，例如计划购买、 数据使用情况、 帮助和支持，以及突出显示的运算符的增值服务。 有关创建移动宽带应用程序的详细信息，请参阅以下链接：
+在创建服务元数据包之前，请确保已开发移动宽带应用并将其与 Microsoft Store 相关联。 此应用应提供重要的体验，如计划购买、数据使用、帮助和支持，以及从操作员突出显示增值服务。 有关创建移动宽带应用的详细信息，请参阅以下链接：
 
--   [移动宽带的 WinRT API 概述](mobile-broadband-winrt-api-overview.md)
+-   [移动宽带 WinRT API 概述](mobile-broadband-winrt-api-overview.md)
 
 -   [移动运营商硬件概述](mobile-operator-hardware-overview.md)
 
--   [UWP 移动宽带应用程序](uwp-mobile-broadband-apps.md)
+-   [UWP mobile 宽带应用](uwp-mobile-broadband-apps.md)
 
 **注意**  
-移动宽带应用没有服务元数据已经过测试并已准备好从外部发布之前将其发布到 Microsoft Store。 我们建议仅在服务元数据包次预览模式下测试后，应用程序将发布到 Microsoft Store。
+在对服务元数据进行测试并准备好在外部发布之前，移动宽带应用不必发布到 Microsoft Store。 建议仅在服务元数据包经过预览模式测试后才将应用发布到 Microsoft Store。
 
 
 
-## <a name="span-idcreatingservicemetadatapackagesspanspan-idcreatingservicemetadatapackagesspanspan-idcreatingservicemetadatapackagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>创建服务元数据包
+## <a name="span-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspanspan-idcreating_service_metadata_packagesspancreating-service-metadata-packages"></a><span id="Creating_service_metadata_packages"></span><span id="creating_service_metadata_packages"></span><span id="CREATING_SERVICE_METADATA_PACKAGES"></span>创建服务元数据包
 
 
-创建服务元数据包开始，可在 Windows 开发人员中心硬件仪表板的服务元数据向导。 服务元数据向导的详细信息，请参阅[步骤 2-创建服务元数据包](#2-create-the-service-metadata-package)。 服务元数据向导可用于创建新的或编辑现有的服务元数据包。 完成向导并填写以下值时，该向导将验证并通知您的任何错误或警告。 此验证包括检查缺失或不正确的字段、 服务标识符所有权、 Microsoft Store 等中的移动宽带的应用程序存在。
+从 Windows 开发人员中心硬件仪表板上提供的服务元数据向导开始创建服务元数据包。 有关服务元数据向导的详细信息，请参阅[步骤 2-创建服务元数据包](#2-create-the-service-metadata-package)。 您可以使用服务元数据向导来创建新的或编辑现有的服务元数据包。 当你完成向导并填写值时，向导将验证并通知你任何错误或警告。 此验证包括检查缺失或不正确的字段、服务标识符所有权、移动宽带应用是否存在于 Microsoft Store 中，等等。
 
-当已准备好提交最终确认页上，必须要么提交您的包的选项中**开发人员**模式下或**预览**模式。
+当你在最后确认页面并准备好提交时，你可以选择以**开发人员**模式或**预览**模式提交包。
 
--   **开发人员模式**时你的意图就是创建服务元数据包并将其用于脱机测试目的，在初始阶段使用。 在此模式下，包将未签名，但将不得不手动下载并安装到测试计算机以用于验证目的。 此模式可看作是与你的设备工作的快速而快速的方法来创建和验证服务元数据包。
+-   **开发人员模式**在初始阶段中使用，目的是只创建服务元数据包，并将其用于脱机测试目的。 在此模式下，将不会对包进行签名，必须手动将其下载并安装到测试计算机中，以便进行验证。 可以快速快速地查看此模式，以便创建和验证服务元数据包与设备一起工作。
 
--   **预览模式**使用当你确信包编写正确并已准备好提交的端到端测试。 在此模式下，包将签名的 Windows 开发人员中心硬件仪表板，并且将自动获取下载以测试计算机，提供正确地预配测试计算机。
+-   **预览模式**当你确信包已正确编写并且已准备好进行端到端测试时使用。 在此模式下，如果正确设置了测试计算机，则 Windows 开发人员中心硬件仪表板会对包进行签名，并将自动下载到测试计算机。
 
-当完成预览测试，并确认你的包适用于所有方案中，则可以将发布到实时的包。
+完成了预览测试并验证了包适用于所有方案后，便可以将包发布到 live。
 
-下图介绍了工作流：
+下图对工作流进行了讨论：
 
 ![创建服务元数据包](images/mbae-sxs81-createpackageworkflow.png)
 
-若要创建新的服务元数据包，请参阅[用于创建服务元数据包的步骤](#steps-for-creating-a-service-metadata-package)。
+若要创建新的服务元数据包，请参阅[创建服务元数据包的步骤](#steps-for-creating-a-service-metadata-package)。
 
 若要编辑现有的服务元数据包，请参阅[编辑服务元数据包的步骤](#steps-for-editing-a-service-metadata-package)。
 
-## <a name="steps-for-creating-a-service-metadata-package"></a>有关创建服务元数据包的步骤
+## <a name="steps-for-creating-a-service-metadata-package"></a>创建服务元数据包的步骤
 
 
 使用以下步骤在 Windows 开发人员中心硬件仪表板上创建服务元数据包：
 
--   [1-收集所需的信息的服务元数据包](#1-gather-the-required-information-for-the-service-metadata-package)
+-   [1-收集服务元数据包所需的信息](#1-gather-the-required-information-for-the-service-metadata-package)
 
 -   [2-创建服务元数据包](#2-create-the-service-metadata-package)
 
--   [3-插入存储区清单文件到 Microsoft Store 设备应用](#3-insert-the-store-manifest-file-into-the-microsoft-store-device-app)
+-   [3-将商店清单文件插入 Microsoft Store 设备应用](#3-insert-the-store-manifest-file-into-the-microsoft-store-device-app)
 
 -   [4-测试服务元数据包](#4-test-the-service-metadata-package)
 
 -   [5-发布服务元数据包](#5-publish-the-service-metadata-package)
 
-### <a name="1-gather-the-required-information-for-the-service-metadata-package"></a>1-收集所需的信息的服务元数据包
+### <a name="1-gather-the-required-information-for-the-service-metadata-package"></a>1-收集服务元数据包所需的信息
 
-当你完成本主题的第 2 步中的服务元数据向导中的步骤，从你想要与设备关联的移动宽带应用项目在 package.appxmanifest 文件中存储的几个部分是信息的必需的。 使用以下步骤，这样就准备好进行本主题的第 2 步收集的信息。
+在完成本主题的步骤2中的 "服务元数据" 向导中的步骤时，需要从要与设备关联的移动宽带应用程序项目中存储的多个信息片段。 使用以下步骤收集信息，使其可用于本主题中的第2步。
 
 **警告**  
-收集在此步骤中的值之前，移动宽带应用程序必须与 Microsoft Store 相关联。 关联时移动宽带应用程序，包清单文件中的值被更新为使用来自 Microsoft Store 开发人员帐户的信息。 但是，移动宽带应用程序没有要发布到 Microsoft Store。 只有在准备好发布服务元数据包，它可以在本地开发环境。
+在此步骤中收集值之前，移动宽带应用必须与 Microsoft Store 相关联。 关联移动宽带应用时，会更新包清单文件中的值，以使用 Microsoft Store 开发人员帐户中的信息。 但是，移动宽带应用不必发布到 Microsoft Store。 在你准备好发布服务元数据包之前，它可以保留在本地开发环境中。
 
 
 
-**若要收集 UWP 设备应用程序信息**
+**收集 UWP 设备应用信息**
 
-1.  通过使用 Visual Studio 2013 中打开移动宽带的应用程序项目。
+1.  使用 Visual Studio 2013 打开移动宽带应用程序项目。
 
-2.  在右侧窗格中，右键单击**Package.appxmanifest**文件，，然后单击**查看代码**。
+2.  在右侧窗格中，右键单击**appxmanifest.xml**文件，然后单击 "**查看代码**"。
 
-3.  从 package.appxmanifest 文件中收集以下属性：
+3.  从 appxmanifest.xml 文件中收集以下属性：
 
-    -   从**标识**元素，**名称**属性将用于**包名称**字段在服务元数据向导。
+    -   在**Identity**元素中，"**名称**" 属性将用于 "服务元数据" 向导中的 "**包名称**" 字段。
 
-    -   从**标识**元素，**发布者**属性将用于**发布服务器**字段在服务元数据向导。
+    -   在 "**标识**" 元素中，"**发布服务器**" 属性将用于 "服务元数据" 向导中的 "**发布者**" 字段。
 
-    -   从**应用程序**元素， **Id**属性从**应用程序**子元素将用作**应用 ID**字段中服务元数据向导。
+    -   在**应用程序**元素中，**应用程序**子元素的**Id**属性将用于 "服务元数据" 向导中的 "**应用 Id** " 字段。
 
-4.  关闭 package.appxmanifest 文件。
+4.  关闭 appxmanifest.xml 文件。
 
-![代码视图中的 package.appxmanifest 文件](images/mbae-sxs-appxmanifest.png)
+![代码视图中的 appxmanifest.xml 文件](images/mbae-sxs-appxmanifest.png)
 
-你可以完成这而无需使用 Visual Studio 2013 通过执行以下步骤：
+你还可以通过执行以下步骤来完成此操作，而无需使用 Visual Studio 2013：
 
-**若要收集而无需使用 Visual Studio 2013 的移动宽带的应用程序信息**
+**在不使用 Visual Studio 2013 的情况下收集移动宽带应用信息**
 
-1.  导航到移动宽带应用程序的 package.appxmanifest 文件。
+1.  导航到移动宽带应用的 appxmanifest.xml 文件。
 
-2.  右键单击该文件，然后依次**使用打开**。
+2.  右键单击该文件，然后单击 "**打开方式**"。
 
-3.  清除**用于所有.appxmanifest 文件的此应用**复选框，单击**更多选项**，然后单击**记事本**。
+3.  清除 "**对所有 appxmanifest.xml 文件使用此应用程序**" 复选框，单击 "**更多选项**"，然后单击 "**记事本**"。
 
-4.  从 package.appxmanifest 文件中收集以下属性：
+4.  从 appxmanifest.xml 文件中收集以下属性：
 
-    -   从**标识**元素，**名称**属性将用于**包名称**字段在服务元数据向导。
+    -   在**Identity**元素中，"**名称**" 属性将用于 "服务元数据" 向导中的 "**包名称**" 字段。
 
-    -   从**标识**元素，**发布者**属性将用于**发布服务器**字段在服务元数据向导。
+    -   在 "**标识**" 元素中，"**发布服务器**" 属性将用于 "服务元数据" 向导中的 "**发布者**" 字段。
 
-    -   从**应用程序**元素， **Id**属性从**应用程序**子元素将用作**应用 ID**字段中服务元数据向导。
+    -   在**应用程序**元素中，**应用程序**子元素的**Id**属性将用于 "服务元数据" 向导中的 "**应用 Id** " 字段。
 
-5.  保存并关闭 package.appxmanifest 文件。
+5.  保存并关闭 appxmanifest.xml 文件。
 
 ### <a name="2-create-the-service-metadata-package"></a>2-创建服务元数据包
 
-在 Windows 开发人员中心硬件仪表板中使用服务元数据向导创建服务元数据。
+服务元数据是通过使用 Windows 开发人员中心硬件仪表板中的服务元数据向导创建的。
 
-**若要创建服务元数据包**
+**创建服务元数据包**
 
-1.  导航到 <http://sysdev.microsoft.com> 。
+1.  导航到 <https://sysdev.microsoft.com>。
 
-2.  下**设备元数据**标题下方，单击**创建移动宽带体验**。
+2.  在**设备元数据**标题下，单击 "**创建移动宽带体验**"。
 
-    ![这是在仪表板登录页面](images/mbae-sxs81-dashboard.png)
+    ![这是仪表板的登录页](images/mbae-sxs81-dashboard.png)
 
-3.  上**服务信息**页上，需要完成以下字段，然后单击**下一步**。
+3.  在 "**服务信息**" 页上，填写以下字段，然后单击 "**下一步**"。
 
-    -   **输入你要使用 Windows 网络选择 UI 中的网络名称**– 网络的名称，将向客户 Windows 连接管理器中显示。
+    -   **输入用于 windows 网络选择 UI 的网络名称**–将在 Windows 连接管理器中向客户显示的网络的名称。
 
-    -   **输入你的服务号码**– 必须匹配你预配的元数据中的运营商 ID 字段的 GUID。 可以通过使用 Visual Studio 2013 创建一个 GUID。 有关如何创建 GUID 的详细信息，请参阅[创建 GUID (guidgen.exe)](https://go.microsoft.com/fwlink/p/?linkid=330070)。
+    -   **输入服务号码**–必须与预配元数据中的 "运营商 ID" 字段匹配的 GUID。 可以通过使用 Visual Studio 2013 来创建 GUID。 有关如何创建 GUID 的详细信息，请参阅[创建 guid （guidgen.exe）](https://go.microsoft.com/fwlink/p/?linkid=330070)。
 
-    -   **上传您是要在 Windows 网络选择 UI 中显示的图标**– 单击**浏览**，然后选择向客户 Windows 连接管理器中显示的图标。
+    -   **上传要在 windows 网络选择 UI 中显示的图标**–单击 "**浏览**"，然后选择向 Windows 连接管理器中的客户显示的图标。
 
-    -   **（除非权利检查需要以下可选） 在应用中输入 Windows 通知事件处理程序**– 这是在你的移动宽带应用中已注册通知处理程序。
+    -   **在应用中输入 Windows 通知事件处理程序（可选，除非下述要求进行权限检查）** –这是在移动宽带应用中注册的通知处理程序。
 
-    -   **若要允许用户共享其移动宽带连接 （个人热点） 吗？** -可能的选项包括**始终允许**，**只能与权利检查 （Windows 通知事件处理程序所需） 允许**，并**永远不会允许**。 默认选项将始终允许。
+    -   **是否允许用户共享其移动宽带连接（个人热点）？** –可能的选项始终为 "**允许**"，**仅允许与 "权利检查" （需要 Windows 通知事件处理程序）** 和 "**不允许**"。 默认选项为 "始终允许"。
 
-    -   **是否需要系统管理员权限来执行 PIN 解锁 SIMs 上？** – 如果你希望要求系统管理员权限才能 PIN 解锁 SIM 卡，单击**是**选项。
+    -   **是否需要系统管理员权限才能在 Sim 上执行 PIN 解锁？** –如果你希望需要系统管理员特权来锁定 SIM 卡，请单击 **"是"** 选项。
 
     ![向导的服务信息步骤](images/mbae-sxs81-serviceinfostep.png)
 
-4.  上**硬件信息**页上，选择应该用于标识您的体验的信息。 选择复选框后，可以添加相应的网络范围。 生成的 ID 应存在于 Windows APN 数据库，所以标识正确的订阅服务器。 APN 数据库有关的详细信息，请参阅[COSA/APN 数据库提交](cosa-apn-database-submission.md)。
+4.  在 "**硬件信息**" 页上，选择应该用于识别你的体验的信息。 选中某个复选框后，可以添加相应的网络范围。 生成的 ID 应该存在于 Windows APN 数据库中，以便标识正确的订阅服务器。 有关 APN 数据库的详细信息，请参阅[COSA/APN 数据库提交](cosa-apn-database-submission.md)。
 
-    -   如果您使用国际移动订阅服务器上标识 (IMSI) GSM 提供程序，请选择**IMSI**下的复选框**GSM**标题。 在中**提供程序 ID**框中，输入 GSM 服务提供程序 id。 下**IMSI/ICCID 范围**标题下方，输入范围，并单击**添加**。
+    -   如果你是使用国际移动用户标识（IMSI）的 GSM 提供商，请在 " **gsm** " 标题下选择 " **IMSI** " 复选框。 在 "**提供程序 id** " 框中，输入 GSM 服务提供程序 id。 在**IMSI/ICCID 范围**标题下，输入范围，然后单击 "**添加**"。
 
-    -   如果您使用集成电路卡标识符 (ICCID) GSM 提供程序，请选择**SIM ICC ID**下的复选框**GSM**标题。 下**输入提供程序 ID 和 ICC ID 范围**标题下方，输入范围，并单击**添加**。
+    -   如果你是使用集成卡标识符（ICCID）的 GSM 提供程序，请选中 " **GSM** " 标题下的 " **SIM ICC ID** " 复选框。 在 "**输入提供程序 id 和 ICC id 范围**" 标题下，输入范围，然后单击 "**添加**"。
 
-    -   如果您使用的家庭的提供程序名称的 GSM 提供程序，请选择**主页提供程序名称**下的复选框**GSM**标题。 下**输入主页提供程序名称或输入提供程序 ID （MCC + mnc 是否）** 标题下方，输入的提供程序 ID 和提供程序名称，然后单击**添加**。
+    -   如果你是使用 home 提供程序名称的 GSM 提供程序，请选中 " **GSM** " 标题下的 "**主提供商名称**" 复选框。 在 "**输入主提供商名称" 或 "输入提供者 id （MCC + MNC）** " 标题下，输入提供程序 id 和提供程序名称，然后单击 "**添加**"。
 
-    -   如果您使用 SID CDMA 提供程序，请选择**SID**下的复选框**CDMA**标题。 在中**输入 SID**框中，输入 CDMA SID。
+    -   如果你是使用 SID 的 CDMA 提供程序，请选中 " **CDMA** " 标题下的 " **SID** " 复选框。 在 "**输入 sid** " 框中，输入 CDMA SID。
 
-    -   如果您使用的提供程序名称的 CDMA 提供程序，请选择**提供程序名称**下的复选框**CDMA**标题。 在中**输入提供程序名称**框中，输入 CDMA 服务提供程序名称。
+    -   如果你是使用提供程序名称的 CDMA 提供程序，请选中 " **CDMA** " 标题下的 "**提供程序名称**" 复选框。 在 "**输入提供者名称**" 框中，输入 CDMA 服务提供商名称。
 
-    -   单击“下一步”  。
+    -   单击“下一步”。
 
-    ![这是向导的硬件信息步骤](images/mbae-sxs81-hardwareinfostep.png)
+    ![这是向导的 "硬件信息" 步骤](images/mbae-sxs81-hardwareinfostep.png)
 
-5.  上**应用信息**页上，输入在本主题的步骤 1 中收集的信息。 如果你想要添加其他特权的应用，请单击**添加**，然后输入最多 7 的详细信息。 当输入的所有特权的应用程序时，单击**下一步**。
+5.  在 "**应用程序信息**" 页上，输入在本主题的步骤1中收集的信息。 如果要添加其他特权应用，请单击 "**添加**"，然后输入最多7个其他应用。 输入所有特权应用后，单击 "**下一步**"。
 
-    ![这是向导的应用程序信息步骤](images/mbae-sxs81-appinfostep.png)
+    ![这是向导的 "应用信息" 步骤](images/mbae-sxs81-appinfostep.png)
 
-6.  上**确认**页上，验证信息是否正确。 选择**开发人员模式**或**预览模式**选项，并单击**提交**。
+6.  在 "**确认**" 页上，验证信息是否正确。 选择 "**开发人员模式**" 或 "**预览模式**" 选项，然后单击 "**提交**"。
 
-    -   **开发人员模式**– 未签名包和它必须手动下载并安装在每台计算机上。 如果需要保存该程序包以进行脱机开发，请使用此选项。
+    -   **开发人员模式**–包未签名，并且必须在每台计算机上手动下载和安装。 如果需要保存该程序包以进行脱机开发，请使用此选项。
 
-    -   **预览模式**– 签名和从 Microsoft 测试计算机，使用相应的注册表设置配置自动下载包。 预览模式下不会检查以确保移动宽带应用已发布到 Microsoft Store。
+    -   **预览模式**–包经过签名，并自动从 Microsoft 下载，以测试配置了适当注册表设置的计算机。 预览模式不会进行检查以确保将移动宽带应用程序发布到 Microsoft Store。
 
-    ![这是向导的确认步骤](images/mbae-sxs81-confirm.png)
+    ![这是向导的 "确认" 步骤](images/mbae-sxs81-confirm.png)
 
-### <a name="3-insert-the-store-manifest-file-into-the-microsoft-store-device-app"></a>3-插入存储区清单文件到 Microsoft Store 设备应用
+### <a name="3-insert-the-store-manifest-file-into-the-microsoft-store-device-app"></a>3-将商店清单文件插入 Microsoft Store 设备应用
 
-应用商店清单文件必须包含 UWP 设备应用。 使用以下步骤从服务元数据包下载应用商店清单文件并将其插入到移动宽带的应用程序项目。
+应用商店清单文件必须包含在 UWP 设备应用中。 使用以下步骤从服务元数据包下载应用商店清单文件，并将其插入移动宽带应用项目中。
 
-**插入存储区清单文件**
+**插入存储清单文件**
 
-1.  在 Windows 开发人员中心硬件仪表板中，在服务元数据包，管理体验页上单击服务元数据包，然后依次**StoreManifest.xml**若要下载你的应用商店清单文件。
+1.  在 Windows 开发人员中心硬件仪表板上，在服务元数据包的 "管理体验" 页上，单击服务元数据包，然后单击 " **storemanifest.xml** " 下载应用商店清单文件。
 
     ![下载应用商店清单文件](images/mbae-sxs81-storemanifest.png)
 
-2.  通过使用 Visual Studio 2013 中打开移动宽带的应用程序项目。
+2.  使用 Visual Studio 2013 打开移动宽带应用程序项目。
 
-3.  右键单击该项目中，单击**外**，然后单击**现有项**。
+3.  右键单击该项目，单击 "**添加**"，然后单击 "**现有项**"。
 
-4.  浏览到你下载的应用商店清单文件，然后单击**添加**。
+4.  浏览到下载的应用商店清单文件，然后单击 "**添加**"。
 
-5.  重新编译的移动宽带应用并再次将其发布到 Microsoft Store。
+5.  重新编译移动宽带应用并再次将其发布到 Microsoft Store。
 
 ### <a name="4-test-the-service-metadata-package"></a>4-测试服务元数据包
 
-若要测试服务元数据包，必须具有移动宽带设备和服务元数据的包文件。 若要配置你的测试系统和安装的服务元数据包的说明取决于包的模式。
+若要测试服务元数据包，必须有移动宽带设备和服务元数据包文件。 配置测试系统和安装服务元数据包的说明取决于包的模式。
 
-### <a name="span-idtestaservicemetadatapackageindevelopermodespanspan-idtestaservicemetadatapackageindevelopermodespanspan-idtestaservicemetadatapackageindevelopermodespantest-a-service-metadata-package-in-developer-mode"></a><span id="Test_a_service_metadata_package_in_developer_mode"></span><span id="test_a_service_metadata_package_in_developer_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_DEVELOPER_MODE"></span>在开发人员模式下测试服务元数据包
+### <a name="span-idtest_a_service_metadata_package_in_developer_modespanspan-idtest_a_service_metadata_package_in_developer_modespanspan-idtest_a_service_metadata_package_in_developer_modespantest-a-service-metadata-package-in-developer-mode"></a><span id="Test_a_service_metadata_package_in_developer_mode"></span><span id="test_a_service_metadata_package_in_developer_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_DEVELOPER_MODE"></span>在开发人员模式下测试服务元数据包
 
-必须手动下载包并将其安装在正确的位置的情况下才能正常工作。 开发人员模式包将需要从两个不同的入口点，具体取决于您编写的新包或现有的包进行访问。
+您必须手动下载包并将其安装在正确的位置，以使方案正常工作。 需要从两个不同的入口点访问开发人员模式包，具体取决于你是创作新包还是现有包。
 
-在 Windows 开发人员中心硬件仪表板中创建新包，则单击**管理体验**，然后单击**未关联的开发人员包**(中的第一个条目**管理遇到**表)。 下图显示了一个示例：
+如果创建了新的包，请在 Windows 开发人员中心硬件仪表板中，单击 "**管理体验**"，然后单击 "未**关联的开发包**（**管理体验**表中的第一项"）。 下图显示了一个示例：
 
-![下载你的服务元数据包](images/mbae-sxs81-managedevpackages.png)
+![下载服务元数据包](images/mbae-sxs81-managedevpackages.png)
 
-如果编辑已与体验相关联的现有服务元数据包，选择从体验**管理体验**表，您将看到在开发人员模式包**元数据包**表。 单击**下载 MBAE Zip 包编辑**下载它。
+如果你编辑了已与某个经验关联的现有服务元数据包，请从 "**管理体验**" 表中选择该体验，然后你将在 "**元包**" 表中看到 "开发人员模式" 包。 单击 "**下载 MBAE Zip 包编辑**" 以下载它。
 
 ![下载服务元数据包](images/mbae-sxs81-manageassociatedpackages.png)
 
-已下载服务元数据包后，你必须启用测试签名因为未签名的服务元数据包。 若要启用测试签名，**运行 bcdedit – 上设置 testsigning**从提升的命令提示符，然后重新启动计算机。
+下载服务元数据包后，必须启用测试签名，因为服务元数据包未签名。 若要启用测试签名，请**运行 bcdedit –** 从提升的命令提示符中设置 testsigning，然后重新启动计算机。
 
-启用测试签名后，将复制\*.devicemetadata ms 文件服务元数据包到以下位置： **%programdata%\\Microsoft\\Windows\\DeviceMetadataStore\\** <em>区域性</em>，其中*区域性*是您的计算机的当前区域性代码。
+启用测试签名后，\*将 devicemetadata-ms 文件从服务元数据包复制到以下位置： **% ProgramData%\\Microsoft\\Windows\\DeviceMetadataStore\\** <em>区域性</em>，其中*culture*是计算机的当前区域性代码。
 
-### <a name="span-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespanspan-idtestaservicemetadatapackageinpreviewmodespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>在预览模式下测试服务元数据包
+### <a name="span-idtest_a_service_metadata_package_in_preview_modespanspan-idtest_a_service_metadata_package_in_preview_modespanspan-idtest_a_service_metadata_package_in_preview_modespantest-a-service-metadata-package-in-preview-mode"></a><span id="Test_a_service_metadata_package_in_preview_mode"></span><span id="test_a_service_metadata_package_in_preview_mode"></span><span id="TEST_A_SERVICE_METADATA_PACKAGE_IN_PREVIEW_MODE"></span>在预览模式下测试服务元数据包
 
-如果服务元数据包在预览模式下，必须在测试计算机上创建 PreviewKey 注册表项。 有关配置 PreviewKey 注册表项的详细信息，请参阅[创建一个预览包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
-
-**注意**  
-无需启用测试签名来测试服务元数据包的处于预览模式。
-
-
-
-创建 PreviewKey 注册表项后，插入你的移动宽带设备，确保它显示在网络列表中。 如果未显示，请参阅[故障排除](#troubleshooting)部分，了解详细信息。
-
-### <a name="span-idcleartheexistingservicemetadataspanspan-idcleartheexistingservicemetadataspanspan-idcleartheexistingservicemetadataspanclear-the-existing-service-metadata"></a><span id="Clear_the_existing_service_metadata"></span><span id="clear_the_existing_service_metadata"></span><span id="CLEAR_THE_EXISTING_SERVICE_METADATA"></span>清除现有的服务元数据
-
-在 PC 上安装服务元数据时，在许多不同的位置，其中包括注册表、 元数据缓存、 元数据存储区、 WWAN 配置文件和适用于开发人员节点存储的元数据中包含的值。 这使得很难重复使用相同或不同，元数据包的多个测试。 若要确保服务元数据已正确安装，应清除任何现有的服务元数据。 可以通过设置测试计算机以运行 PowerShell 脚本，删除所有跟踪清除现有的服务元数据。 首先，必须在测试计算机上设置环境：
+如果服务元数据包处于预览模式，则必须在测试计算机上创建 PreviewKey 注册表项。 有关配置 PreviewKey 注册表项的详细信息，请参阅[创建预览包](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。
 
 **注意**  
-这将不适用于 Windows RT 设备。 使用中名为"以清除运行 Windows RT 的设备上的服务元数据"的过程的步骤。
+您无需启用测试签名来测试处于预览模式下的服务元数据包。
 
 
 
-**若要设置用于清除服务元数据环境**
+创建 PreviewKey 注册表项后，请插入移动宽带设备，并确保它显示在 "网络" 列表中。 如果没有，请参阅[故障排除](#troubleshooting)部分了解详细信息。
 
-1.  下载 psexec.exe (<https://go.microsoft.com/fwlink/p/?linkid=330071>)，并提取到的文件夹。
+### <a name="span-idclear_the_existing_service_metadataspanspan-idclear_the_existing_service_metadataspanspan-idclear_the_existing_service_metadataspanclear-the-existing-service-metadata"></a><span id="Clear_the_existing_service_metadata"></span><span id="clear_the_existing_service_metadata"></span><span id="CLEAR_THE_EXISTING_SERVICE_METADATA"></span>清除现有的服务元数据
 
-2.  下载并安装 Windows 驱动程序工具包 Windows 8.1 (<https://go.microsoft.com/fwlink/?LinkId=330072>)。
+在 PC 上安装服务元数据时，元数据中包含的值将存储在多个不同的位置，包括注册表、元数据缓存、元数据存储、WWAN 配置文件和开发节点。 这会使重复多个具有相同或不同元数据包的测试变得很困难。 若要确保正确安装服务元数据，应清除任何现有的服务元数据。 可以通过设置测试计算机来运行删除所有跟踪的 PowerShell 脚本，从而清除现有的服务元数据。 首先，必须在测试计算机上设置环境：
 
-3.  导航到安装 WDK 文件。 默认位置是**c:\\Program Files (x86)\\Windows 工具包\\8.1\\工具**。 如果测试计算机运行的 x86，复制 devcon.exe 从 x86 到 psexec.exe 所在的文件夹的文件夹。 如果测试计算机运行的 x64，则将 devcon.exe 复制从 x64 文件夹。
+**注意**  
+这在 Windows RT 设备上不起作用。 使用名为 "在运行 Windows RT 的设备上清除服务元数据" 过程中的步骤。
 
-4.  将以下脚本保存为 MetadataRemovalScript.ps1 Devcon.exe 和 PsExec.exe 所在的文件夹中。
+
+
+**设置用于清除服务元数据的环境**
+
+1.  下载 psexec （<https://go.microsoft.com/fwlink/p/?linkid=330071>），然后将其解压缩到文件夹。
+
+2.  下载并安装 Windows 驱动程序工具包 Windows 8.1 （<https://go.microsoft.com/fwlink/?LinkId=330072>）。
+
+3.  导航到 WDK 文件的安装位置。 默认位置为**C：\\Program Files （x86）\\Windows 工具包\\8.1\\工具**。 如果测试计算机运行的是 x86，请将该 x86 文件夹中的 devcon 复制到与 psexec 相同的文件夹中。 如果测试计算机运行的是 x64，请从 x64 文件夹复制 devcon。
+
+4.  将以下脚本作为 MetadataRemovalScript 保存到与 Devcon 和 PsExec 相同的文件夹中。
 
     **注意**  
-    在中**另存为类型**框中，请务必选择**的所有文件 (\*。\*)** 然后保存文件。
+    在保存文件之前，请在 "**保存类型**" 框中选择 "**所有文件（\*\*）** "。
 
 
 
@@ -467,81 +467,81 @@ Write-Host "END"
 ```
 
 
-设置好环境后，运行以下步骤每次想要清除任何现有的服务元数据：
+设置环境后，每次要清除任何现有服务元数据时，请运行以下步骤：
 
-**若要清除的服务元数据**
+**清除服务元数据**
 
-1.  请确保移动宽带设备插入测试计算机。
+1.  确保将移动宽带设备插入测试计算机。
 
-2.  从提升的命令提示符，导航到 psexec.exe，解压缩的文件夹，然后运行**psexec /s /i powershell**
+2.  在提升的命令提示符下，导航到已提取了 psexec 的文件夹，然后运行**psexec/s/i powershell**
 
-3.  在 PowerShell 命令提示符中，导航到解压缩 psexec.exe 的文件夹。
+3.  在 PowerShell 命令提示符中，导航到已提取 "psexec" 的文件夹。
 
-4.  类型**集-executionpolicy unrestricted** ，然后按 Enter。
+4.  键入**set-executionpolicy 无限制**，然后按 enter。
 
-5.  类型**Y** ，然后输入。
+5.  键入**Y** ，然后输入。
 
-6.  类型 **。\\MetadataRemovalScript.ps1** ，然后按 Enter。
+6.  键入 **.\\MetadataRemovalScript** ，然后按 enter。
 
-7.  出现提示时，移动宽带设备中删除，然后按 Enter。
+7.  出现提示时，请删除移动宽带设备，然后按 Enter。
 
-8.  你想要清除的服务元数据从测试计算机每的次重复这些步骤。
+8.  每次要从测试计算机中清除服务元数据时，请重复这些步骤。
 
-**若要清除运行 Windows RT 的设备上的服务元数据**
+**在运行 Windows RT 的设备上清除服务元数据**
 
-1. 删除软件设备节点。
+1. 删除 "软件设备" 节点。
 
-   1.  在设备管理器中，单击**视图**，然后单击**显示隐藏的设备**。
+   1.  在设备管理器中，单击 "**查看**"，然后单击 "**显示隐藏的设备**"。
 
-   2.  展开软件的设备。
+   2.  展开 "软件设备"。
 
-   3.  右键单击下面的设备节点，然后依次**卸载**:**Windows.Devices.Sms.SmsDevice**和**Windows.Networking/NetworkOperators.MobileBroadbandAccount**
+   3.  右键单击以下设备节点，然后单击 "**卸载**： **SmsDevice** " 和 " **windows.networking.networkoperators"。 MobileBroadbandAccount**
 
-2. 从所有接口中删除所有的移动宽带配置文件。
+2. 从所有接口删除所有移动宽带配置文件。
 
-   1. 从提升的命令提示符，键入**netsh mbn 显示 pro i =\\** *
+   1. 在提升的命令提示符处，键入**netsh mbn sho pro i =\\** *
 
-   2. 对于每个配置文件中，键入 **netsh mbn 删除配置文件名称 = "的配置文件名称下面"我 i=\\** * ，然后按 Enter。
+   2. 对于每个配置文件，键入**netsh mbn delete profile name = "此处的配置文件名" i =\\** *，然后按 enter。
 
-3. 禁用所有的移动宽带适配器。
+3. 禁用所有移动宽带适配器。
 
-   1.  在设备管理器中，展开**网络适配器**。
+   1.  在设备管理器中，展开 "**网络适配器**"。
 
-   2.  右键单击每个移动宽带设备，然后依次**禁用**。
+   2.  右键单击每个移动宽带设备，然后单击 "**禁用**"。
 
-4. 从提升的命令提示符，停止 DSM 服务通过键入**sc stop dsmsvc** ，然后按 Enter。
+4. 在提升的命令提示符下，通过键入**sc stop dsmsvc**停止 DSM 服务，然后按 enter。
 
-5. 正在删除包含在服务元数据包从任何文件夹从设备元数据存储区中删除你的服务元数据包 **%programdata%\\Microsoft\\Windows\\DeviceMetadataStore**. 可以通过查找 MobileBroadbandInfo.xml 文件确定服务元数据包。
+5. 通过从 **% ProgramData%\\Microsoft\\Windows\\DeviceMetadataStore**中删除包含服务元数据包的任何文件夹，从设备元数据存储中删除服务元数据包。 您可以通过查找 MobileBroadbandInfo 文件来标识服务元数据包。
 
 6. 删除所有 WWAN SVC MBAE 注册表项。
 
-   1.  在注册表编辑器中，删除以下注册表项及其所有子项：HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\WwanSvc\\MobileBroadbandAccounts.
+   1.  在注册表编辑器中，删除以下注册表项和所有子项： HKEY\_本地\_计算机\\软件\\Microsoft\\WwanSvc\\MobileBroadbandAccounts。
 
-   2.  如果你没有删除注册表项的访问权限，必须为自己提供完全控制权限。
+   2.  如果没有删除注册表项的权限，则必须为自己授予完全控制权限。
 
-7. 启用所有的移动宽带适配器。
+7. 启用所有移动宽带适配器。
 
-   1.  在设备管理器中，展开**网络适配器**。
+   1.  在设备管理器中，展开 "**网络适配器**"。
 
-   2.  右键单击每个移动宽带设备，然后依次**启用**。
+   2.  右键单击每个移动宽带设备，然后单击 "**启用**"。
 
 ### <a name="5-publish-the-service-metadata-package"></a>5-发布服务元数据包
 
-一旦您已确认服务元数据包工作正常，最后一步是发布包。 可以通过选择附加到特定的体验，通过单击包发布包**释放**按钮，如下所示。
+确认服务元数据包正确工作后，最后一步是发布包。 可以通过单击 "**发布**" 按钮选择附加到特定体验的包来释放包，如下所示。
 
 ![发布服务元数据包](images/mbae-sxs81-releasetolive.jpg)
 
 ## <a name="steps-for-editing-a-service-metadata-package"></a>编辑服务元数据包的步骤
 
 
-可以通过使用 Windows 开发人员中心硬件仪表板的管理体验页编辑服务元数据包。
+可以使用 Windows 开发人员中心硬件仪表板的 "管理体验" 页来编辑服务元数据包。
 
-![管理体验页](images/mbae-sxs81-manageexperience.png)
+!["管理体验" 页](images/mbae-sxs81-manageexperience.png)
 
 ## <a name="troubleshooting"></a>疑难解答
 
 
-打开网络列表，查找你的移动宽带网络。 如果使用的名称和服务元数据包中使用的图标列出网络**ServiceInfo.xml**文件，包的正确分析。 如果要更新服务元数据包的具有相同的名称和图标，或如果名称或图标不出现在列表中之后有关大约一分钟，则应执行其他步骤，此处所述：
+打开 "网络" 列表，并查找移动宽带网络。 如果使用服务元数据包**ServiceInfo**文件中使用的名称和图标列出了网络，则会正确分析包。 如果要更新的服务元数据包具有相同的名称和图标，或者在大约一分钟后名称或图标未显示在列表中，则应执行其他步骤，如此处所述：
 
 -   强制执行元数据刷新
 
@@ -553,84 +553,84 @@ Write-Host "END"
 
 ### <a name="span-idforcemdrefspanspan-idforcemdrefspanforce-a-metadata-refresh"></a><span id="forcemdref"></span><span id="FORCEMDREF"></span>强制执行元数据刷新
 
-元数据和移动宽带应用系统的某些部分依赖于网络访问，这可以失败，并且使计算机处于不一致的状态。 如果发生这种情况，可能会遇到的情况下未安装服务元数据或未安装的移动宽带应用的位置。 系统将定期尝试弥补这种情况，而是省电，重试次数是相当不频繁 （只需几次一天）。 而不是等待下一步的重试，可以手动强制其立即刷新。 要实现这一点，请执行下列操作：
+某些部分的元数据和移动宽带应用系统依赖于网络访问，这可能会失败并使计算机处于不一致的状态。 如果发生这种情况，则可能会遇到以下情况：未安装服务元数据，或者未安装移动宽带应用。 系统会定期尝试纠正这种情况，但为了节省电源，重试次数相当罕见（一天只需几次）。 你可以手动强制进行刷新，而不是等待下一次重试。 要实现这一点，请执行下列操作：
 
-1.  打开桌面**控制面板**。
+1.  打开 "桌面**控制面板"** 。
 
-2.  打开**设备和打印机**。
+2.  打开 "**设备和打印机**"。
 
-3.  从**视图**菜单上，单击**刷新**，或按**F5**密钥。 此操作会导致元数据以进行重新解析和后台事件来重新进行注册。
+3.  从 "**视图**" 菜单上，单击 "**刷新**"，或按**F5**键。 此操作会导致元数据被重新分析，并重新注册后台事件。
 
 **重要须知**  
-如果服务元数据包已成功地分析，系统会将此刷新作为元数据更新。 在这种情况下，元数据包必须具有在其文件名中不同的 GUID 和更新时间戳[LastModifiedDate](lastmodifieddate.md)的元素**PackageInfo.xml**。
+如果已成功分析服务元数据包，系统会将此刷新视为元数据更新。 在这种情况下，元数据包的文件名中必须有不同的 GUID，并在**PackageInfo**的[LastModifiedDate](lastmodifieddate.md)元素中包含更新的时间戳。
 
 
 
 ### <a name="span-idcheckmdcachespanspan-idcheckmdcachespancheck-the-metadata-cache"></a><span id="checkmdcache"></span><span id="CHECKMDCACHE"></span>检查元数据缓存
 
-如果刷新元数据未解决此问题，请确保服务元数据包有效，并且它具有正确的硬件 Id。 要实现这一点，请执行下列操作：
+如果元数据刷新未解决此问题，请确保服务元数据包有效并且具有正确的硬件 Id。 要实现这一点，请执行下列操作：
 
-1. 导航到 **%programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>区域性</em>，其中*区域性*是在测试计算机的当前区域性的区域性代码 (例如， **en-我们**或**es es**)。
+1. 导航到 **% programdata%\\Microsoft\\Windows\\DeviceMetadataCache\\dmrccache\\** <em>区域性</em>，其中*culture*是测试计算机的当前区域性的区域性代码（例如，**en-us**或**es**）。
 
-2. 查找与您的元数据的包同名的文件夹 (而无需 **.devicemetadata ms**扩展)。 如果此目录不存在，并可以表示四个操作之一：
+2. 查找与元数据包同名的文件夹（不包含**devicemetadata-ms**扩展）。 如果此目录不存在，则可能表示以下四种情况之一：
 
    -   服务元数据包已损坏。
 
-   -   服务元数据包不具有正确的硬件 Id。
+   -   服务元数据包没有正确的硬件 Id。
 
-   -   移动宽带设备处于的状态可以下载元数据，或者复制服务元数据包前插入的设备中。
+   -   移动宽带设备未处于可下载元数据的状态，或者在复制服务元数据包之前插入设备。
 
-   -   检查元数据包的数字签名时出现问题。 这通常被由于无测试签名在测试计算机上启用。
+   -   检查元数据包上的数字签名时出现问题。 这通常是由于未在测试计算机上启用测试签名导致的。
 
-如果不确定包损坏和，您第一次插入移动宽带设备中复制的服务元数据包后，检查 IMSI 范围。 它是很容易过多或太少 0 秒或 9 中的类型。 如果问题仍然存在确认或更正这些项后，您必须查看注册表。
+如果在复制服务元数据包后确定包未损坏并且第一次插入移动宽带设备，请检查 IMSI 范围。 键入太多或太少的0或9非常简单。 如果确认或更正这些项后问题仍然存在，则必须查看注册表。
 
 ### <a name="span-idcheckregspanspan-idcheckregspancheck-the-registry"></a><span id="checkreg"></span><span id="CHECKREG"></span>检查注册表
 
 **警告**  
-不应编辑不属于你的应用程序除非绝对必要的注册表数据。 如果在注册表中没有错误，您的系统可能不能正常工作。 不，在任何情况下，删除**MobileBroadbandAccounts**注册表项。 Windows 不会重新创建它，并将中断功能。
+除非绝对必要，否则不应编辑不属于应用程序的注册表数据。 如果注册表中存在错误，则系统可能无法正常运行。 请勿在任何情况下都删除**MobileBroadbandAccounts**注册表项。 Windows 不会重新创建它，并且你将中断此功能。
 
 
 
-执行以下步骤来检查注册表：
+执行以下步骤以检查注册表：
 
 1.  打开注册表编辑器。
 
-2.  转到**HKLM\\软件\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**。
+2.  请参阅**HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**。
 
-3.  在此注册表项，查找三个其他键：**帐户**， **NetworkInterfaceBindings**，和**数据**。 这些密钥不存在默认设置。移动宽带设备是插入、 打开，或连接，它们会自动创建第一次。
+3.  在此注册表项中，查找其他三个密钥： "**帐户**"、" **NetworkInterfaceBindings**" 和 "**数据**"。 默认情况下，这些项不存在;它们是在移动宽带设备首次插入、打开或连接时自动创建的。
 
-4.  如果**帐户**或**NetworkInterfaceBindings**密钥不存在并且具有已接通电源或开启你的移动宽带卡，检查 WWAN 日志。
+4.  如果**帐户**或**NetworkInterfaceBindings**密钥不存在，并且已插入或打开移动宽带适配器，请检查 WWAN 日志。
 
-5.  如果某些或所有这些注册表项存在，依次展开**帐户**中的键**树**视图。 一个或多个注册表项的名称类似于 Guid 应存在于其内部。 注册表树条目应类似于注册表树中，如下所示：
+5.  如果其中的部分或全部项存在，请在**树**视图中展开 "**帐户**" 键。 其中的一个或多个注册表项的名称与 Guid 类似。 注册表树项应类似于如下所示的注册表树：
 
-    ![已分析的帐户的注册表项](images/fig2-registryentries-for-parsedmobilebroadbandaccount.png)
+    ![已分析帐户的注册表项](images/fig2-registryentries-for-parsedmobilebroadbandaccount.png)
 
-    如果注册表项看起来类似于上图中 （值名称将略有不同具体取决于该帐户是否 GSM 或 CDMA 网络上），并且如果您看不到网络列表中的图标，您应查看事件日志。
+    如果注册表项类似于上图（值名称将略有不同，具体取决于该帐户是位于 GSM 还是 CDMA 网络上），并且如果在 "网络" 列表中看不到该图标，则应查看事件日志。
 
-    如果注册表项类似于下图，则意味着移动宽带卡已插入之前服务元数据包复制到设备的元数据存储区中，服务元数据包已损坏或硬件 Id 不正确. 若要更正您接通电源或之前将元数据的包复制到的元数据存储在设备上打开的情况下，执行强制刷新元数据中的步骤。 否则，请按照检查 WWAN 日志中的步骤。
+    如果注册表项类似于下一个图，则意味着移动宽带适配器是在将服务元数据包复制到设备元数据存储区之前插入的，服务元数据包已损坏，或者硬件 Id 不正确. 若要解决在将元数据包复制到元数据存储区之前插入或打开设备的情况，请执行强制执行元数据刷新中的步骤。 否则，请按照检查 WWAN 日志中的步骤进行操作。
 
-    ![未分析的帐户的注册表项](images/fig1-registryentries-for-unparsedmobilebroadbandaccount.png)
+    ![未分析帐户的注册表项](images/fig1-registryentries-for-unparsedmobilebroadbandaccount.png)
 
 ### <a name="span-idcheckwwanlogsspanspan-idcheckwwanlogsspancheck-the-wwan-logs"></a><span id="checkwwanlogs"></span><span id="CHECKWWANLOGS"></span>检查 WWAN 日志
 
-如果有任何**帐户**或**NetworkInterfaceBindings**注册表项下**HKLM\\软件\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**，或如果未完全填充的条目，您必须查看 WWAN 日志。 以下步骤将重置到已知状态计算机：
+如果**HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts**上没有**帐户**或**NetworkInterfaceBindings**注册表项，或者如果有未完全填充的条目，则必须查看 WWAN 日志。 以下步骤会将计算机重置为已知状态：
 
-1.  拔出或关闭你的移动宽带设备 (如果嵌入设备时，将其中禁用**设备管理器**)。
+1.  拔下或关闭移动宽带设备（如果嵌入了设备，请在**设备管理器**中禁用该设备）。
 
 2.  删除以下注册表项：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\Accounts**
+    -   **HKLM\\软件\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\帐户**
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\NetworkInterfaceBindings**
+    -   **HKLM\\软件\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\NetworkInterfaceBindings**
 
     **警告**  
-    不，在任何情况下，删除**HKLM\\软件\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\** 注册表项。 Windows 不会重新创建它，并将中断功能。
+    请勿在任何情况下删除**HKLM\\SOFTWARE\\Microsoft\\WwanSvc\\MobileBroadbandAccounts\\** 注册表项。 Windows 不会重新创建它，并且你将中断此功能。
 
 
 
-有两种类型的日志中的感兴趣的项： 管理 WWAN 服务条目日志条目和分析器任务项的帐户。 第一种类型可帮助调试问题引起的网络硬件的问题和第二个类型可以帮助调试元数据分析问题。
+日志中有两种类型的条目：帐户管理 WWAN 服务条目日志条目和分析器任务条目。 第一种类型可帮助调试由网络硬件问题导致的问题，第二种类型可帮助调试元数据分析问题。
 
-帐户管理 WWAN 服务条目的日志项已成功处理的网络是类似于下面：
+帐户管理 WWAN 服务条目已成功处理的网络的日志条目类似于以下内容：
 
 ```syntax
 [0]02CC.0CD0::‎2012‎-‎01‎-‎04 09:22:26.567 [Microsoft-Windows-WWAN-SVC-EVENTS]Account Management: Account updater started for network interface {7a0a0dce-0a51-471a-8c16-6e767cd0b861. 
@@ -644,9 +644,9 @@ Write-Host "END"
 [0]02CC.0CD0::‎2012‎-‎01‎-‎04 09:22:26.707 [Microsoft-Windows-WWAN-SVC-EVENTS]Account Management: Account updater finished for network interface {7a0a0dce-0a51-471a-8c16-6e767cd0b861}.
 ```
 
-搜索的日志可以找到这些条目**帐户管理**。 在这种情况下，最重要的条目都**数据存储创建/更新启动**并**数据存储创建/更新已完成的**。 如果这些条目存在，并且没有错误的消息，硬件行为正确。 （称为此处包含的注册表项中所述的数据存储区检查注册表）。
+可以通过在日志中搜索**帐户管理**来查找这些条目。 在这种情况下，最重要的项是**数据存储创建/更新已开始**，并且**数据存储创建/更新已完成**。 如果这些条目存在并且没有错误消息，则硬件的行为正常。 （此处提到的数据存储包含检查注册表中讨论的注册表项。）
 
-与此相反，在其中删除 SIM 的设备上的条目通常的外观如下所示：
+与此相反，在删除 SIM 的设备上，条目通常如下所示：
 
 ```syntax
 [0]02CC.03E4::‎2012‎-‎01‎-‎04 09:29:50.309 [Microsoft-Windows-WWAN-SVC-EVENTS]Account Management: Account updater started for network interface {7a0a0dce-0a51-471a-8c16-6e767cd0b861}. 
@@ -657,11 +657,11 @@ Write-Host "END"
 ```
 
 **注意**  
-在后一种示例中，没有为项**数据存储创建/更新启动**或**数据存储创建/更新已完成的**。 由于信息存储在 SIM 中的帐户管理过程的关键，没有 SIM 的设备没有必需的关联元数据。
+在后一示例中，没有用于**数据存储创建/更新**的条目，或者**数据存储创建/更新已完成**。 由于存储在 SIM 中的信息对于帐户管理过程至关重要，因此没有 SIM 的设备将不具有必要的关联元数据。
 
 
 
-如果硬件已成功处理，但你的徽标或名称未显示在网络列表中，可能有元数据程序包有问题。 这可以通过在日志中使用的分析器任务项调查。 若要查找这些条目，请搜索**分析器任务**。 为成功分析日志项通常如下所示：
+如果硬件已成功处理，但你的徽标或名称未显示在 "网络" 列表中，则可能是元数据包有问题。 可以通过在日志中使用分析器任务项来对此进行调查。 若要查找这些条目，请搜索 "**分析器-任务**"。 成功分析的日志条目通常如下所示：
 
 ```syntax
 [0]0DA8.0A2C::‎2012‎-‎01‎-‎04 09:22:32.007 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]Parser task started. 
@@ -689,9 +689,9 @@ Write-Host "END"
 [0]0DA8.0A2C::‎2012‎-‎01‎-‎04 09:22:33.017 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]MbaeParserTask completed successfully. 
 ```
 
-这些日志显示**MobileBroadbandInfo.xml**文件已正确解析的分析器任务应用 WWAN 配置文件 （以及的 WWAN 服务日志记录已成功更新配置文件），并且分析器任务设置受信任的预配证书中所述**MobileBroadbandInfo.xml**。
+这些日志显示**MobileBroadbandInfo**文件已正确分析，分析程序任务应用了 wwan 配置文件（以及成功更新配置文件的 wwan 服务日志记录），并且分析器任务将受信任的预配**MobileBroadbandInfo**中提到的证书。
 
-如果过程的任何部分失败，则记录该故障。 例如，如果数字签名检查失败的服务提供程序图标文件上，日志条目通常看起来如下所示：
+如果进程的任何部分失败，则记录该失败。 例如，如果 "服务提供程序" 图标文件上的数字签名检查失败，日志条目通常如下所示：
 
 ```syntax
 [0]0F24.0C70::‎2012‎-‎01‎-‎04 10:09:49.271 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]Parser task started. 
@@ -706,9 +706,9 @@ Write-Host "END"
 [0]0F24.0C70::‎2012‎-‎01‎-‎04 10:09:49.692 [Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]MbaeParserTask did not complete successfully.  Error is 0x80070306: One or more errors occurred while processing the request. 
 ```
 
-因为它是正常的分析器任务运行一次，可能会看到多个集的`[Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]`日志条目。 在这种情况下，组条目通常都是相同-如果它们不相同，则可以表示间歇性的问题。
+由于分析器任务需要多次运行，因此可能会看到多个 `[Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task]` 日志条目集。 在这种情况下，条目集通常是相同的，如果它们不相同，则可能表示存在间歇问题。
 
-## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
+## <a name="span-idadditional_resourcesspanspan-idadditional_resourcesspanspan-idadditional_resourcesspanadditional-resources"></a><span id="Additional_resources"></span><span id="additional_resources"></span><span id="ADDITIONAL_RESOURCES"></span>其他资源
 
 
 使用以下链接详细了解 Windows 8.1 和 Windows 10 中的移动宽带：
