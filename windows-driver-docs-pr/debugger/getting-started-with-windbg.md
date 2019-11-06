@@ -22,13 +22,13 @@ WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器�
 -   C:\\Program Files (x86)\\Windows 工具包\\8.1\\调试器\\x64
 -   C:\\Program Files (x86)\\Windows 工具包\\8.1\\调试器\\x86
 
-## <a name="span-idlaunchnotepadandattachwindbgspanspan-idlaunchnotepadandattachwindbgspanspan-idlaunchnotepadandattachwindbgspanlaunch-notepad-and-attach-windbg"></a><span id="Launch_Notepad_and_attach_WinDbg"></span><span id="launch_notepad_and_attach_windbg"></span><span id="LAUNCH_NOTEPAD_AND_ATTACH_WINDBG"></span>启动记事本并附加 WinDbg
+## <a name="span-idlaunch_notepad_and_attach_windbgspanspan-idlaunch_notepad_and_attach_windbgspanspan-idlaunch_notepad_and_attach_windbgspanlaunch-notepad-and-attach-windbg"></a><span id="Launch_Notepad_and_attach_WinDbg"></span><span id="launch_notepad_and_attach_windbg"></span><span id="LAUNCH_NOTEPAD_AND_ATTACH_WINDBG"></span>启动记事本并附加 WinDbg
 
 1.  导航到您的安装目录, 然后打开 WinDbg。
 
 2.  [此处](https://go.microsoft.com/fwlink/p?linkid=223405)还提供了调试器文档。
 
-3.  在 "**文件**" 菜单上, 选择 "**打开可执行**文件"。 在 "打开可执行文件" 对话框中, 导航到包含 notepad.exe 的文件夹 (例如, C:\\Windows\\System32)。 对于 "**文件名**", 请输入 notepad.exe。 单击“打开” 。
+3.  在 "**文件**" 菜单上, 选择 "**打开可执行**文件"。 在 "打开可执行文件" 对话框中, 导航到包含 notepad.exe 的文件夹 (例如, C:\\Windows\\System32)。 对于 "**文件名**", 请输入 notepad.exe。 单击“打开”。
 
     ![启动记事本后的 windbg 屏幕截图](images/windbggetstart01.png)
 
@@ -51,13 +51,13 @@ WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器�
 
 5.  若要查看 Notepad.exe 模块的符号, 请输入以下命令:
 
-    [x 记事本! *](https://go.microsoft.com/fwlink/p?linkid=399240)
+    [x notepad!*](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-    **注意如果看**不到任何输出, 请输入[ **。重新加载**](https://go.microsoft.com/fwlink/p?linkid=399239)。  
+    **注意如果看**不到任何输出, 请输入[ **.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)。  
 
     若要查看 Notepad.exe 模块中包含 main 的符号, 请输入以下命令:
 
-    [x 记事本!\*main\*](https://go.microsoft.com/fwlink/p?linkid=399240)
+    [x notepad!\*main\*](https://go.microsoft.com/fwlink/p?linkid=399240)
  
     输出类似于以下内容:
 
@@ -68,7 +68,7 @@ WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器�
 
 6.  在记事本中放置断点!WinMain, 请输入以下命令:
 
-    [bu 记事本!WinMain](https://go.microsoft.com/fwlink/p?linkid=399390)
+    [bu notepad!WinMain](https://go.microsoft.com/fwlink/p?linkid=399390)
 
     若要验证是否已设置断点, 请输入以下命令:
 
@@ -125,7 +125,7 @@ WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器�
 
     若要查看堆栈跟踪, 请输入以下命令:
 
-    [温度](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
 
     输出类似于以下内容:
 
@@ -184,7 +184,7 @@ WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器�
 
     [~ 0](https://go.microsoft.com/fwlink/p?linkid=399393)
 
-    [温度](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
 
     输出类似于以下内容:
 
@@ -207,7 +207,7 @@ WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器�
 
     [qd](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idlaunchyourownapplicationandattachwindbgspanspan-idlaunchyourownapplicationandattachwindbgspanspan-idlaunchyourownapplicationandattachwindbgspanlaunch-your-own-application-and-attach-windbg"></a><span id="Launch_your_own_application_and_attach_WinDbg"></span><span id="launch_your_own_application_and_attach_windbg"></span><span id="LAUNCH_YOUR_OWN_APPLICATION_AND_ATTACH_WINDBG"></span>启动自己的应用程序并附加 WinDbg
+## <a name="span-idlaunch_your_own_application_and_attach_windbgspanspan-idlaunch_your_own_application_and_attach_windbgspanspan-idlaunch_your_own_application_and_attach_windbgspanlaunch-your-own-application-and-attach-windbg"></a><span id="Launch_your_own_application_and_attach_WinDbg"></span><span id="launch_your_own_application_and_attach_windbg"></span><span id="LAUNCH_YOUR_OWN_APPLICATION_AND_ATTACH_WINDBG"></span>启动自己的应用程序并附加 WinDbg
 
 
 假设你已编写并生成此小型控制台应用程序。
@@ -233,7 +233,7 @@ void main ()
 
 1.  打开 WinDbg。
 
-2.  在 "**文件**" 菜单上, 选择 "**打开可执行**文件"。 在 "打开可执行文件" 对话框中, 导航\\到\\C\\: MyApp x64 调试。 对于 "**文件名**", 请输入 myapp.exe。 单击“打开” 。
+2.  在 "**文件**" 菜单上, 选择 "**打开可执行**文件"。 在 "打开可执行文件" 对话框中, 导航\\到\\C\\: MyApp x64 调试。 对于 "**文件名**", 请输入 myapp.exe。 单击“打开”。
 3.  输入以下命令:
 
     [.symfix](https://docs.microsoft.com/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
@@ -317,7 +317,7 @@ void main ()
     ...
     ```
 
-## <a name="span-idsummaryofcommandsspanspan-idsummaryofcommandsspanspan-idsummaryofcommandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>命令摘要
+## <a name="span-idsummary_of_commandsspanspan-idsummary_of_commandsspanspan-idsummary_of_commandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>命令摘要
 
 
 -   "**帮助**" 菜单上的 "**内容**" 命令
@@ -338,7 +338,7 @@ void main ()
 -   [! 分析-v](https://go.microsoft.com/fwlink/p?linkid=399396)
 -   [qd (退出并分离)](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [Getting Started with WinDbg (Kernel-Mode)](getting-started-with-windbg--kernel-mode-.md)（WinDbg 入门（内核模式））
