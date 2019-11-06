@@ -2406,6 +2406,18 @@
           href: about-event-tracing-for-drivers.md
         - name: 将事件跟踪添加到内核模式驱动程序
           href: adding-event-tracing-to-kernel-mode-drivers.md
+    - name: Windows 上的 DTrace
+      items:
+        - name: Windows 上的 DTrace
+          href: dtrace.md
+        - name: DTrace 编程
+          href: dtrace-programming.md
+        - name: DTrace 代码示例
+          href: dtrace-code-samples.md
+        - name: DTrace ETW
+          href: dtrace-etw.md
+        - name: DTrace 实时转储
+          href: dtrace-live-dump.md
     - name: TraceLogging API
       items:
         - name: TraceLogging API
