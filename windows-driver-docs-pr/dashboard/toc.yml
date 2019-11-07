@@ -230,6 +230,8 @@
               href: create-a-new-shipping-label.md
             - name: 更新发货标签
               href: update-a-shipping-label.md
+            - name: 取消发货标签
+              href: cancel-a-shipping-label.md
         - name: 获取受众数据
           href: get-audience-data.md
         - name: 驱动程序包元数据
