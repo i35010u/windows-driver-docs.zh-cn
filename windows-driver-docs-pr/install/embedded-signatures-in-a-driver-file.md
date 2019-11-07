@@ -10,12 +10,12 @@ keywords:
 - 签名 WDK，embedded
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc17d403a7236dc9703a7f386d44e4d185c82a2
-ms.sourcegitcommit: 87975bf11f43410ae113b57a34131778fb9677a0
+ms.openlocfilehash: abefc35277c7657c6271c49aa258ee634e5e86fc
+ms.sourcegitcommit: e1f02bc9a982eefa1e326c95d3aca5ecc68581ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72549759"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73721621"
 ---
 # <a name="embedded-signatures-in-a-driver-file"></a>驱动程序文件中嵌入的签名
 
@@ -23,11 +23,11 @@ ms.locfileid: "72549759"
 在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求必须有嵌入式[软件发行者证书（SPC）](software-publisher-certificate.md)签名。 不是启动驱动程序驱动程序的驱动程序不需要嵌入签名。
 
 > [!NOTE]
-> 适用于桌面版的 windows 10 （家庭版、专业版、企业版和教育版）和 Windows Server 2016 内核模式驱动程序必须由 Windows 硬件开发人员中心仪表板签名，这需要 EV 证书。 有关这些更改的详细信息，请参阅[Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。
+> 适用于桌面版的 windows 10 （家庭版、专业版、企业版和教育版）和 Windows Server 2016 内核模式驱动程序必须由 Windows 硬件开发人员中心仪表板签名，这需要 EV 证书。 有关这些更改的详细信息，请参阅[Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Driver-Signing-changes-in-Windows-10-version-1607/ba-p/364894)。
 
  
 
-由于不需要系统加载程序在系统启动时找到驱动程序的[编录文件](catalog-files.md)，因此在系统启动期间嵌入的签名会节省大量时间。 典型计算机在目录根存储区（ *% System% \\CatRoot*）中可能有许多不同的目录文件。 定位正确的目录文件以验证驱动程序文件的指纹可能需要花费大量时间。
+由于不需要系统加载程序在系统启动时找到驱动程序的[编录文件](catalog-files.md)，因此在系统启动期间嵌入的签名会节省大量时间。 典型的计算机可能在目录根存储区（ *% System%\\CatRoot*）中有很多不同的目录文件。 定位正确的目录文件以验证驱动程序文件的指纹可能需要花费大量时间。
 
 除了由内核模式代码签名策略强制执行的加载时间签名要求外，即插即用（PnP）设备还会强制执行安装时签名要求。 为了符合 Windows Vista 和更高版本的 Windows 的[pnp 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)，pnp 设备的[驱动程序包](driver-packages.md)必须具有签名的目录文件。
 
