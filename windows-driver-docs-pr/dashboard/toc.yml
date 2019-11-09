@@ -236,6 +236,9 @@
           href: get-audience-data.md
         - name: 驱动程序包元数据
           href: driver-package-metadata.md
+          items:
+            - name: 创建发布者驱动程序元数据
+              href: create-publisher-metadata.md
     - name: 文件签名 LSA 插件和 UEFI 固件
       href: lsa-and-uefi-file-signing.md
     - name: 仪表板管理

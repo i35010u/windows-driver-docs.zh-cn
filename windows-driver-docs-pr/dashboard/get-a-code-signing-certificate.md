@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 707d055d55d43bac288758c6ff3c1ff4e9ffb9a7
-ms.sourcegitcommit: 7fc38dedccceadccfbf493f4c66aa6def436f1d5
+ms.openlocfilehash: 57b45861821e33ac7426dedbf3f940adca4bfd4b
+ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896280"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73589235"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -32,7 +32,7 @@ ms.locfileid: "69896280"
 
 - [购买 Certum EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=843061)
 
-- [购买 Entrust EV 代码签名证书](https://go.microsoft.com/fwlink/?linkid=843068)
+- [购买 Entrust EV 代码签名证书](https://www.entrustdatacard.com/products/digital-signing-certificates/code-signing-certificates)
 
 - [购买 GlobalSign EV 代码签名证书](https://go.microsoft.com/fwlink/p/?LinkId=620888)
 
@@ -57,14 +57,15 @@ ms.locfileid: "69896280"
 
 - 如果要设置新的合作伙伴中心帐户，请按照[注册硬件计划](register-for-the-hardware-program.md)中的步骤进行操作。
 
-- 如果已设置合作伙伴中心帐户且需要续订证书，请按照[添加或更新代码签名证书](https://msdn.microsoft.com/library/windows/hardware/update-a-code-signing-certificate)中的步骤进行操作。
+- 如果已设置合作伙伴中心帐户且需要续订证书，请按照[添加或更新代码签名证书](update-a-code-signing-certificate.md)中的步骤进行操作。
 
 ## <a name="code-signing-faq"></a>代码签名常见问题
 
 本部分提供有关 Windows 10 代码签名的常见问题的答案。 其他代码签名信息在 Windows 硬件认证博客上提供。
 
-- [Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
-- [Sysdev EV 证书要求更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+- [Windows 10 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Driver-Signing-changes-in-Windows-10/ba-p/364859)
+- [Windows 10 的版本 1607 中的驱动程序签名更改](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Driver-Signing-changes-in-Windows-10-version-1607/ba-p/364894)
+- [Sysdev EV 证书要求更新](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/Update-on-Sysdev-EV-Certificate-requirement/ba-p/364879)
 
 ### <a name="hlk-tested-and-dashboard-signed-drivers"></a>HLK 测试和仪表板签名的驱动程序
 
@@ -78,7 +79,7 @@ ms.locfileid: "69896280"
 
 ### <a name="windows-10-earlier-certificate-transition-signing"></a>Windows 10 早期证书过渡签名
 
-- 下面的内容仅适用于 Windows 10 1803 及更低版本。  从 Windows 10 1809 开始，这些将不再适用。 
+- 下面的内容仅适用于 Windows 10 1803 及更低版本。  从 Windows 10 1809 开始，这些将不再适用。
 - 不推荐将使用 2015 年 7 月 29 日之后颁发的任何证书进行签名并且带有时间戳的驱动程序用于 Windows 10。
 - 使用在 2015 年 7 月 29 日之后到期的任何证书进行签名并且没有时间戳的驱动程序将在 Windows 10 上运行，直到该证书到期。
 
