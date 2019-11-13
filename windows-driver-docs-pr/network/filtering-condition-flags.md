@@ -6,12 +6,12 @@ keywords:
 - 筛选条件标志网络驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a2e9d66de6685c8a5ed0bf221c600953c8e9c6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0fbc8a4ae58efaa504f66ca6ec4a984d84f057c0
+ms.sourcegitcommit: 9567e4f4f4e97bacc60320770b9d42212b7cba06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823697"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019627"
 ---
 # <a name="filtering-condition-flags"></a>筛选条件标志
 
@@ -385,7 +385,7 @@ ms.locfileid: "72823697"
 <p>0x00100000</p>
 </td>
 <td>
-<p>指示连接被 ALE_CONNECT_REDIRECT 标注函数重定向。</p>
+<p>指示连接被 ALE_CONNECT_REDIRECT callout 函数重定向。</p>
 <p>此标志适用于 Windows Server 2008 R2、Windows 7 和更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
@@ -472,7 +472,7 @@ ms.locfileid: "72823697"
 <p>0x02000000</p>
 </td>
 <td>
-<p>指示正在执行当前分类以服从重定向的通用 Windows 应用程序连接到指定主机的意图。 此类分类包含的 classifiable 字段值相同，就好像应用从未重定向一样。 标志还指示将调用未来的分类来匹配有效的重定向目标。 如果将应用重定向到代理服务进行检查，则这也意味着将对代理连接调用未来分类。 标注驱动程序通常应允许此分类。</p>
+<p>指示正在执行当前分类以服从重定向的通用 Windows 应用程序连接到指定主机的意图。 此类分类包含的 classifiable 字段值相同，就好像应用从未重定向一样。 标志还指示将调用未来的分类来匹配有效的重定向目标。 如果将应用重定向到代理服务进行检查，则这也意味着将对代理连接调用未来分类。 标注应使用 FWPS_FIELD_ALE_AUTH_CONNECT_V4_ALE_ORIGINAL_APP_ID 来查找（原始）重定向连接的 appid。</p>
 <p>此标志适用于 Windows Server 2012、Windows 8 及更高版本的 Windows 中的以下筛选层：<dl>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V4</dd>
 <dd>FWPM_LAYER_ALE_AUTH_CONNECT_V6</dd>
