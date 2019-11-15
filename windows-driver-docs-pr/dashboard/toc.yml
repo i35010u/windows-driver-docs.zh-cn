@@ -82,6 +82,26 @@
                       href: camera-photo-failure-rate.md
                     - name: 相机视频和流故障次数百分比
                       href: camera-video-and-stream-failure-rate.md
+                - name: 固件
+                  items:
+                    - name: 固件度量
+                      href: firmware-measures.md
+                    - name: 从 ESRT 报告成功安装固件的计算机的百分比
+                      href: ESRT-pct-machines-reporting-successful-firmware-installation.md
+                    - name: 超出了 ESRT 的固件最大重试限制的计算机百分比
+                      href: ESRT-pct-machines-exceed-max-retry.md
+                    - name: 固件安装后出现 WHEA 错误的计算机的百分比
+                      href: ESRT-pct-machines-WHEA-error.md
+                    - name: 由于 bug 检查或电源按钮而不正常关闭的计算机的百分比
+                      href: ESRT-pct-machines-ABS.md
+                    - name: 已成功安装固件且 7 天内未报告任何遥测数据的计算机的百分比
+                      href: ESRT-7-day-brick-detector.md
+                    - name: 已成功安装固件且 14 天内未报告任何遥测数据的计算机的百分比
+                      href: ESRT-14-day-brick-detector.md
+                    - name: 由于存在 Bitlocker 风险而具有挂起固件更新的计算机的百分比
+                      href: ESRT-pct-machines-blocked-bitlocker.md
+                    - name: 已更新且已成功解锁 Bitlocker 恢复的计算机的百分比
+                      href: ESRT-pct-machines-entered-bitlocker-recovery.md
                 - name: 显卡
                   items:
                     - name: 显卡度量
@@ -110,6 +130,10 @@
                           href: user-mode-reliability-for-crashes-in-windows-components.md
                         - name: Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
                           href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
+                        - name: UWP 游戏中的崩溃和挂起次数（按使用时间规范化）小于或等于基线目标
+                          href: graphics-game-reliability-uwp-crashes-hangs-by-usage.md
+                        - name: Win32 游戏中的崩溃和挂起次数（按使用时间规范化）小于或等于基线目标
+                          href: graphics-game-reliability-win32-crashes-hangs-by-usage.md
                     - name: 生态系统受众度量
                       items:
                         - name: 由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散式 GPU 的计算机的巨大数量
