@@ -3,11 +3,11 @@ title: 什么决定何时加载驱动程序
 description: 什么决定何时加载驱动程序
 ms.assetid: fe0f27e4-84d4-483e-8b4e-69c39ae332de
 keywords:
-- 筛选器驱动程序 WDK 文件系统，加载的驱动程序
-- 文件系统筛选器驱动程序 WDK，加载的驱动程序
-- 正在加载 WDK 文件系统驱动程序
-- 加载驱动程序 WDK 文件系统
-- 驱动程序开始类型 WDK 文件系统
+- 筛选器驱动程序 WDK 文件系统，驱动程序加载
+- 文件系统筛选器驱动程序 WDK，驱动程序加载
+- 驱动程序加载 WDK 文件系统
+- 正在加载驱动程序 WDK 文件系统
+- 驱动程序启动类型 WDK 文件系统
 - 启动类型 WDK 文件系统
 - 加载顺序组 WDK 文件系统
 - SERVICE_BOOT_START
@@ -16,83 +16,71 @@ keywords:
 - SERVICE_DEMAND_START
 - SERVICE_DISABLED
 - 启动驱动程序 WDK 文件系统
-- 引导启动驱动程序 WDK 文件系统
-ms.date: 04/20/2017
+- 启动驱动程序 WDK 文件系统
+ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 65617157d8ff04db9dc73a6fd06b0121cf1b0bc2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eaab9ad4ffc1ecd107dade126a9fa3b13152fee6
+ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380266"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74128466"
 ---
 # <a name="what-determines-when-a-driver-is-loaded"></a>什么决定何时加载驱动程序
 
+> [!NOTE]
+> 为了获得最佳的可靠性和性能，请使用[文件系统筛选器驱动程序](filter-manager-and-minifilter-driver-architecture.md)，而不是旧的文件系统筛选器驱动程序 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
-## <span id="ddk_what_determines_when_a_driver_is_loaded_if"></span><span id="DDK_WHAT_DETERMINES_WHEN_A_DRIVER_IS_LOADED_IF"></span>
+在浏览系统启动顺序中的文件系统驱动程序的加载时间和方式之前，必须了解驱动程序启动类型和加载顺序组。
 
+## <a name="driver-start-types"></a>驱动程序启动类型
 
-浏览之前何时以及如何在系统启动过程中，加载文件系统驱动程序就需要了解驱动程序启动类型和组的加载顺序。
+内核模式驱动程序的*启动类型*指定是在系统启动期间还是之后加载驱动程序。 有五种可能的启动类型：
 
-### <a name="span-idddkdriverstarttypesifspanspan-idddkdriverstarttypesifspandriver-start-types"></a><span id="ddk_driver_start_types_if"></span><span id="DDK_DRIVER_START_TYPES_IF"></span>驱动程序启动类型
+- SERVICE_BOOT_START （0x00000000）  
+  指示由操作系统（OS）加载程序启动的驱动程序。 文件系统筛选器驱动程序通常使用此开始类型或 SERVICE_DEMAND_START。 在 Microsoft Windows XP 和更高版本的系统上，筛选器必须使用此启动类型才能利用新的[文件系统筛选器加载顺序组](load-order-groups-for-file-system-filter-drivers.md)。
 
-内核模式驱动程序*启动类型*指定是否要加载期间或之后系统启动驱动程序。 有五种可能的启动类型：
+- SERVICE_SYSTEM_START （0x00000001）  
+  指示在 OS 初始化期间启动了驱动程序。 此启动类型由文件系统识别器使用。 除了下面列出的 "SERVICE_DISABLED" 文件系统（包括网络文件系统组件）以外的文件系统，通常使用此开始类型或 SERVICE_DEMAND_START。 此启动类型还由设备驱动程序使用，用于在系统初始化期间枚举的 PnP 设备，但不需要加载系统。
 
-<span id="SERVICE_BOOT_START__0x00000000_"></span><span id="service_boot_start__0x00000000_"></span><span id="SERVICE_BOOT_START__0X00000000_"></span>服务\_启动\_开始 (0x00000000)  
-指示由操作系统 (OS) 加载程序启动的驱动程序。 文件系统筛选器驱动程序通常使用此启动类型或服务\_需\_开始。 在 Microsoft Windows XP 和更高版本的系统，筛选器必须使用此启动类型才能充分利用新[文件系统筛选器加载顺序组](load-order-groups-for-file-system-filter-drivers.md)。
+- SERVICE_AUTO_START （0x00000002）  
+  指示在系统启动期间由服务控制管理器启动的驱动程序。 很少使用。
 
-<span id="SERVICE_SYSTEM_START__0x00000001_"></span><span id="service_system_start__0x00000001_"></span><span id="SERVICE_SYSTEM_START__0X00000001_"></span>服务\_系统\_开始 (0x00000001)  
-指示操作系统初始化过程中启动了驱动程序。 此启动类型可供文件系统识别器。 除了下下面列出的文件系统"服务\_禁用，"文件系统 （包括网络文件系统组件） 通常使用此启动类型或服务\_需\_开始。 此启动类型还用于设备驱动程序通过枚举在系统初始化过程但不是需要加载系统的即插即用设备。
+- SERVICE_DEMAND_START （0x00000003）  
+  指示由 PnP 管理器（对于设备驱动程序）或服务控制管理器（对于文件系统和文件系统筛选器驱动程序），按需启动驱动程序。
 
-<span id="SERVICE_AUTO_START__0x00000002_"></span><span id="service_auto_start__0x00000002_"></span><span id="SERVICE_AUTO_START__0X00000002_"></span>服务\_自动\_开始 (0x00000002)  
-指示在系统启动期间启动服务控制管理器的驱动程序。 很少使用。
+- SERVICE_DISABLED （0x00000004）  
+  指示 OS 加载程序、服务控制管理器或 PnP 管理器未启动的驱动程序。 由文件系统识别器（它们是启动文件系统时除外）或其他文件系统（EFS）加载的文件系统使用。 此类文件系统包括 CDFS、EFS、FastFat、NTFS 和 UDF。 还用于在调试过程中临时禁用驱动程序。
 
-<span id="SERVICE_DEMAND_START__0x00000003_"></span><span id="service_demand_start__0x00000003_"></span><span id="SERVICE_DEMAND_START__0X00000003_"></span>服务\_需\_开始 (0x00000003)  
-指示启动按需、 即插即用管理器 （适用于设备驱动程序） 或由服务控制管理器 （适用于文件系统和文件系统筛选器驱动程序） 的驱动程序。
+## <a name="specifying-start-type"></a>指定开始类型
 
-<span id="SERVICE_DISABLED__0x00000004_"></span><span id="service_disabled__0x00000004_"></span><span id="SERVICE_DISABLED__0X00000004_"></span>服务\_已禁用 (0x00000004)  
-指示由操作系统加载程序，即插即用管理器或服务控制管理器，未启动的驱动程序。 使用的文件系统加载的文件系统识别程序 （除非它们启动文件系统） 或 （对于 EFS) 被另一个文件系统。 此类文件系统包含 CDFS、 EFS、 FastFat、 NTFS 和 UDF。 此外用于在调试期间暂时禁用驱动程序。
+驱动程序编写器可以通过以下任一方式在安装时指定驱动程序的启动类型：
 
-### <a name="span-idddkspecifyingstarttypeifspanspan-idddkspecifyingstarttypeifspanspecifying-start-type"></a><span id="ddk_specifying_start_type_if"></span><span id="DDK_SPECIFYING_START_TYPE_IF"></span>指定的启动类型
+- 通过在驱动程序的 INF 文件中，在[**AddService**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)指令所引用的*服务安装部分*中为**StartType**条目指定所需的启动类型。 此方法在 ServiceInstall 部分中进行了介绍。
 
-驱动程序编写器可以指定在安装时，在以下两种方式中的驱动程序的启动类型：
+- 通过用户模式安装程序调用**CreateService**或**ChangeServiceConfig**时，为*dwStartType*参数传递所需的启动类型。 Microsoft Windows SDK 文档中的**CreateService**和**ChangeServiceConfig**的参考条目中介绍了此方法。
 
--   通过指定的所需的启动类型**StartType**中的条目*服务安装部分*引用[ **AddService** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)驱动程序的 INF 文件中的指令。 ServiceInstall 部分中介绍了这些方法。
+## <a name="driver-load-order-groups"></a>驱动程序加载顺序组
 
--   通过传递所需启动类型为*dwStartType*参数调用时**CreateService**或**执行 ChangeServiceConfig**从用户模式下安装程序。 此方法所述的引用项**CreateService**并**执行 ChangeServiceConfig** Microsoft Windows SDK 文档中。
+在 SERVICE_BOOT_START 和 SERVICE_SYSTEM_START 启动类型中，每个驱动程序的*加载顺序组*都指定了加载驱动程序的相对顺序。
 
-### <a name="span-idddkdriverloadordergroupsifspanspan-idddkdriverloadordergroupsifspandriver-load-order-groups"></a><span id="ddk_driver_load_order_groups_if"></span><span id="DDK_DRIVER_LOAD_ORDER_GROUPS_IF"></span>驱动程序加载顺序组
+启动类型为 SERVICE_BOOT_START 的驱动程序称为*启动（或启动）驱动程序*。 在 Microsoft Windows 2000 及更早版本的系统上，许多启动驱动程序的筛选器属于 "筛选器" 组。 在 Microsoft Windows XP 和更高版本的系统上，作为启动驱动程序的筛选器通常属于一个新的 FSFilter 加载顺序组。 [文件系统筛选器驱动程序的加载顺序组](load-order-groups-for-file-system-filter-drivers.md)中详细介绍了这些加载顺序组。
 
-在服务中\_引导\_开始和服务\_系统\_START 启动类型，在其中加载驱动程序的相对顺序指定的每个驱动程序*加载顺序组*。
+其启动类型为 SERVICE_SYSTEM_START 的驱动程序也按其所属的加载顺序组的顺序进行加载。 但是，在加载所有启动驱动程序之前，不会加载任何系统启动驱动程序。
 
-驱动程序的启动类型是服务\_引导\_称为开始*启动 （或引导启动） 驱动程序*。 在 Microsoft Windows 2000 和更早的系统，会启动驱动程序的大多数筛选器都属于"筛选器"组。 在 Microsoft Windows XP 和更高版本的系统的筛选器会启动驱动程序通常属于新 FSFilter 之一加载顺序组。 中详细介绍了这些加载顺序组[文件系统筛选器驱动程序的加载顺序组](load-order-groups-for-file-system-filter-drivers.md)。
+> [!NOTE]
+> 对于其启动类型为 SERVICE_AUTO_START、SERVICE_DEMAND_START 或 SERVICE_DISABLED 的驱动程序，将忽略加载顺序组。
 
-驱动程序的启动类型是服务\_系统\_开始也会加载按照加载顺序组到其所属的顺序。 但是，任何系统启动驱动程序不加载之前后已加载所有启动驱动程序。
+可在**HKEY_LOCAL_MACHINE \system\currentcontrolset\control**注册表项的**ServiceGroupOrder**子项下找到完整的、有序的加载顺序组列表。
 
-**请注意**  加载顺序组对于其启动类型是服务的驱动程序将忽略\_自动\_开始，服务\_需\_开始或服务\_已禁用。
+相同的负载组排序用于 SERVICE_BOOT_START 和 SERVICE_SYSTEM_START 驱动程序。 但是，在加载任何 SERVICE_SYSTEM_START 驱动程序之前，将加载并启动所有 SERVICE_BOOT_START 驱动程序。
 
- 
+## <a name="specifying-load-order-group"></a>指定加载顺序组
 
-可以下找到完整的有序的加载顺序组列表**ServiceGroupOrder**以下注册表项的子项：
+在安装时，驱动程序编写器可以通过以下任一方式来指定驱动程序的加载顺序组：
 
-**HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control**
+- 通过在驱动程序的 INF 文件中，为**AddService**指令所引用的*服务安装部分*中的**LoadOrderGroup**条目指定所需的加载顺序组。 此方法在 ServiceInstall 部分中进行了介绍。
 
-相同的负载组顺序用于 SERVICE\_引导\_开始和服务\_系统\_启动的驱动程序。 但是，在所有 SERVICE\_引导\_启动的驱动程序加载和任何服务之前启动\_系统\_加载启动的驱动程序。
+- 通过用户模式安装程序调用**CreateService**或**ChangeServiceConfig**时，为*lpLoadOrderGroup*参数传递所需的启动类型。 Microsoft Windows SDK 文档中的**CreateService**和**ChangeServiceConfig**的参考条目中介绍了此方法。
 
-### <a name="span-idddkspecifyingloadordergroupifspanspan-idddkspecifyingloadordergroupifspanspecifying-load-order-group"></a><span id="ddk_specifying_load_order_group_if"></span><span id="DDK_SPECIFYING_LOAD_ORDER_GROUP_IF"></span>指定加载顺序组
-
-驱动程序编写器可以指定在安装时，在以下两种方式中的驱动程序的加载顺序组：
-
--   通过指定的所需的加载顺序组**LoadOrderGroup**中的条目*服务安装部分*引用**AddService**指令中的驱动程序 INF文件。 ServiceInstall 部分中介绍了这些方法。
-
--   通过传递所需启动类型为*lpLoadOrderGroup*参数调用时**CreateService**或**执行 ChangeServiceConfig**从用户模式下安装程序。 此方法所述的引用项**CreateService**并**执行 ChangeServiceConfig** Microsoft Windows SDK 文档中。
-
-有关驱动程序的更多常规信息加载顺序并加载顺序组，请参阅[指定驱动程序加载顺序](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)。
-
- 
-
- 
-
-
-
-
+有关驱动程序加载顺序和加载顺序组的更多常规信息，请参阅[指定驱动程序加载顺序](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)。

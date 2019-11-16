@@ -11,14 +11,14 @@ keywords:
 - 软件跟踪 WDK，设置消息格式
 - 跟踪 WDK，DTrace
 - 跟踪消息格式化文件 WDK
-ms.date: 11/04/2019
+ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 74f7c163c2fff8077d9d152f8c8950db14692baa
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: 33c0c4c513d3c1a65db4da128850bd33256ddc80
+ms.sourcegitcommit: 79490c5067a50727f928f213c16c5f8f62898b60
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592436"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74119514"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -72,7 +72,6 @@ Illumos[动态跟踪指南](http://dtrace.org/guide/bookinfo.html)介绍了如�
 ### <a name="syscall"></a>SYSCALL
 
 SYSCALL 为每个系统调用提供一对探测：输入系统调用之前触发的入口探测，以及在系统调用完成后，但在控制转移回用户级别之前触发的 return 探测器。 对于所有 SYSCALL 探测，函数名称设置为已检测系统调用的名称，模块名称是该函数所在的模块。 可以通过在命令提示符下键入命令 `dtrace.exe -l -P syscall` 来找到 SYSCALL 提供程序提供的系统调用的名称。 请注意，探测名称为小写。 命令 `dtrace -ln syscall:::` 还将列出 syscall 提供程序中提供的所有探测及其参数。
-
 
 ```dtrace
 C:\> dtrace -ln syscall:::
@@ -177,7 +176,13 @@ Traceext （跟踪扩展）是 Windows 内核扩展驱动程序，它允许 Wind
 
 ## <a name="installing-dtrace-under-windows"></a>在 Windows 下安装 DTrace
 
-1. 从 Microsoft 下载中心安装 MSI 安装文件-[在 Windows 上下载 DTrace](https://www.microsoft.com/download/details.aspx?id=100441)。
+1. 检查是否正在运行受支持的 Windows 版本。 版本18980和 Windows Server 有问必答 Preview 版本18975后，20H1 Windows 的内部版本支持 DTrace 的当前下载。 *在较早版本的 Windows 上安装此版本的 DTrace 可能导致系统不稳定，不建议这样做。*
+
+   适用于19H1 的 DTrace 存档版本适用于[Windows 上存档的下载 dtrace](https://www.microsoft.com/en-us/download/58091)。 请注意，不再支持此版本的 DTrace。
+
+
+1. 从 Microsoft 下载中心下载 MSI 安装文件-[在 Windows 上下载 DTrace](https://www.microsoft.com/download/details.aspx?id=100441)。
+
 
 2. 选择 "完全安装"。
 
@@ -196,22 +201,22 @@ bcdedit /set dtrace ON
 > [!NOTE]
 > 如果你使用的是 BitLocker，请在对启动值进行更改时将其禁用。 如果不这样做，系统可能会提示你输入 BitLocker 恢复密钥。 从此情况恢复的一种方法是启动到恢复控制台并还原 bcdedit 值 `bcdedit /set {default} dtrace on`。 如果操作系统更新移除了值并将其添加到中，则若要恢复操作系统，请使用 bcdedit 来删除值，`bcdedit /deletevalue {default} dtrace`。 然后，禁用 BitLocker 并重新启用 dtrace，`bcdedit /set dtrace ON`。
 
-通过将 "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" 设置为1，在计算机上配置 VSM （虚拟安全模式），以启用 VSM 和安全壳.
+通过将 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" 设置为1，在计算机上配置 VSM （虚拟安全模式），以启用 VSM 和安全壳.
 
 为此，请使用 REG Add 命令，如下所示：
 
 ```cmd
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\ /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 1 
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\ /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 1
 ```
 
-一些 DTrace 命令使用 Windows 符号。 若要使用这些符号，请创建符号目录并设置符号路径：  
+一些 DTrace 命令使用 Windows 符号。 若要使用 Windows 符号，请创建符号目录并设置符号路径：  
 
 ```cmd
 mkdir c:\symbols
 set _NT_SYMBOL_PATH=srv*C:\symbols*https://msdl.microsoft.com/download/symbols 
 ```
 
-有关符号路径的详细信息，请参阅[Windows 调试器的符号路径](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)
+有关符号路径的详细信息，请参阅[Windows 调试器的符号路径](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)。
 
 ### <a name="using-dtrace-inside-of-a-virtual-machine"></a>在虚拟机内使用 DTrace
 
@@ -229,7 +234,7 @@ Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 
 以管理员身份打开 Windows 命令提示符以输入 DTrace 命令。
 
-```dtrace 
+```dtrace
 C:\> dtrace -l
 
 ...
