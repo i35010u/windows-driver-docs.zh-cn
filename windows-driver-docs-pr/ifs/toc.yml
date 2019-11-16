@@ -1,121 +1,88 @@
 - name: 文件系统驱动程序设计指南
+  href: index.md
   items:
-    - name: 文件系统驱动程序设计指南
-      href: index.md
     - name: 文件系统驱动程序
       items:
-        - name: 文件系统驱动程序
-          href: file-system-drivers.md
+        - name: 关于文件系统驱动程序
+          href: about-file-system-drivers.md
         - name: 安装文件系统驱动程序
-          items:
-            - name: 安装文件系统驱动程序
-              href: installing-a-file-system-driver.md
-            - name: 为文件系统驱动程序创建 INF 文件
-              href: creating-an-inf-file-for-a-file-system-driver.md
-        - name: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
-          items:
-            - name: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
-              href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
-            - name: 将 ECP 附加到产生内核模式驱动程序的 IRP_MJ_CREATE 操作
-              href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
-            - name: 在文件系统筛选器驱动程序中使用 ECP 处理 IRP_MJ_CREATE 操作
-              href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-filter.md
-            - name: 用户定义的 ECP
-              href: user-defined-ecps.md
-            - name: 系统定义的 ECP
-              href: system-defined-ecps.md
+          href: installing-a-file-system-driver.md
     - name: 文件系统筛选器驱动程序
       items:
-        - name: 文件系统筛选器驱动程序
-          href: file-system-filter-drivers.md
-        - name: 文件系统基础知识
+        - name: 关于文件系统筛选器驱动程序
+          href: about-file-system-filter-drivers.md
+        - name: 文件系统筛选器驱动程序与设备驱动程序的类似程度如何
+          href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
+        - name: 文件系统筛选器驱动程序与设备驱动程序的差异在哪里
+          href: how-file-system-filter-drivers-are-different-from-device-drivers.md
+    - name: 文件系统旧版筛选器驱动程序
+      items:
+        - name: 关于文件系统旧版筛选器驱动程序
+          href: about-file-system-legacy-filter-drivers.md
+        - name: 旧版筛选器驱动程序的文件系统驱动程序概念
           items:
-            - name: 文件系统基础知识
-              href: file-system-fundamentals.md
             - name: 什么决定何时加载驱动程序
               href: what-determines-when-a-driver-is-loaded.md
             - name: 文件系统在系统启动期间会发生什么情况
               href: what-happens-to-file-systems-during-system-boot.md
             - name: 存储设备堆栈、存储卷和文件系统堆栈
-              items:
-                - name: 存储设备堆栈、存储卷和文件系统堆栈
-                  href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
-                - name: 存储设备堆栈
-                  href: storage-device-stacks.md
-                - name: 存储卷
-                  href: storage-volumes.md
-                - name: 文件系统堆栈
-                  href: file-system-stacks.md
+              href: storage-device-stacks--storage-volumes--and-file-system-stacks.md
             - name: 装载卷
               items:
-                - name: 装载卷
-                  href: mounting-a-volume.md
+                - name: 如何识别卷
+                  href: how-the-volume-is-recognized.md
                 - name: 如何装载卷
                   href: how-the-volume-is-mounted.md
                 - name: 卷装载示例
                   href: volume-mount-example.md
-        - name: 文件系统筛选器驱动程序简介
+        - name: 安装旧版筛选器驱动程序
           items:
-            - name: 文件系统筛选器驱动程序简介
-              href: introduction-to-file-system-filter-drivers.md
-            - name: 什么是文件系统筛选器驱动程序？
-              href: what-is-a-file-system-filter-driver-.md
-            - name: 文件系统筛选器驱动程序不是设备驱动程序
-              items:
-                - name: 文件系统筛选器驱动程序不是设备驱动程序
-                  href: file-system-filter-drivers-are-not-device-drivers.md
-                - name: 文件系统筛选器驱动程序与设备驱动程序的类似程度如何
-                  href: how-file-system-filter-drivers-are-similar-to-device-drivers.md
-                - name: 文件系统筛选器驱动程序与设备驱动程序的差异在哪里
-                  href: how-file-system-filter-drivers-are-different-from-device-drivers.md
             - name: 安装文件系统筛选器驱动程序
-              items:
-                - name: 安装文件系统筛选器驱动程序
-                  href: installing-a-file-system-filter-driver.md
-                - name: 为文件系统筛选器驱动程序创建 INF 文件
-                  href: creating-an-inf-file-for-a-file-system-filter-driver.md
-                - name: '文件系统筛选器驱动程序的加载顺序组 '
-                  href: load-order-groups-for-file-system-filter-drivers.md
-                - name: 文件系统筛选器驱动程序类和类 GUID
-                  href: file-system-filter-driver-classes-and-class-guids.md
-                - name: 使用 INF 文件安装文件系统筛选器驱动程序
-                  href: using-an-inf-file-to-install-a-file-system-filter-driver.md
-                - name: 使用 INF 文件卸载文件系统筛选器驱动程序
-                  href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
+              href: installing-a-file-system-filter-driver.md
+            - name: 为文件系统筛选器驱动程序创建 INF 文件
+              href: creating-an-inf-file-for-a-file-system-filter-driver.md
+            - name: '文件系统筛选器驱动程序的加载顺序组 '
+              href: load-order-groups-for-file-system-filter-drivers.md
+            - name: 文件系统筛选器驱动程序类和类 GUID
+              href: file-system-filter-driver-classes-and-class-guids.md
+            - name: 使用 INF 文件安装文件系统筛选器驱动程序
+              href: using-an-inf-file-to-install-a-file-system-filter-driver.md
+            - name: 使用 INF 文件卸载文件系统筛选器驱动程序
+              href: using-an-inf-file-to-uninstall-a-file-system-filter-driver.md
+        - name: 初始化文件系统筛选器驱动程序
+          items:
             - name: 初始化文件系统筛选器驱动程序
-              items:
-                - name: 初始化文件系统筛选器驱动程序
-                  href: initializing-a-file-system-filter-driver.md
-                - name: 创建控制设备对象
-                  href: creating-the-control-device-object.md
-                - name: 注册 IRP 调度例程
-                  href: registering-irp-dispatch-routines.md
-                - name: 注册快速 I/O 调度例程
-                  href: registering-fast-i-o-dispatch-routines.md
-                - name: 注册 FsFilter 回调例程
-                  href: registering-fsfilter-callback-routines.md
-                - name: 执行任何其他必需的初始化
-                  href: performing-any-other-needed-initialization.md
-                - name: '可选] 注册回调例程'
-                  href: '-optional--registering-callback-routines.md'
-                - name: '可选] 保存注册表路径字符串的副本'
-                  href: '-optional--saving-a-copy-of-the-registry-path-string.md'
-                - name: 返回状态
-                  href: returning-status.md
+              href: initializing-a-file-system-filter-driver.md
+            - name: 创建控制设备对象
+              href: creating-the-control-device-object.md
+            - name: 注册 IRP 调度例程
+              href: registering-irp-dispatch-routines.md
+            - name: 注册快速 I/O 调度例程
+              href: registering-fast-i-o-dispatch-routines.md
+            - name: 注册 FsFilter 回调例程
+              href: registering-fsfilter-callback-routines.md
+            - name: 执行任何其他必需的初始化
+              href: performing-any-other-needed-initialization.md
+            - name: '可选] 注册回调例程'
+              href: '-optional--registering-callback-routines.md'
+            - name: '可选] 保存注册表路径字符串的副本'
+              href: '-optional--saving-a-copy-of-the-registry-path-string.md'
+            - name: 返回状态
+              href: returning-status.md
+        - name: 将筛选器附加到文件系统或卷
+          items:
             - name: 将筛选器附加到文件系统或卷
-              items:
-                - name: 将筛选器附加到文件系统或卷
-                  href: attaching-a-filter-to-a-file-system-or-volume.md
-                - name: 创建筛选器设备对象
-                  href: creating-the-filter-device-object.md
-                - name: 将筛选设备对象附加到目标设备对象
-                  href: attaching-the-filter-device-object-to-the-target-device-object.md
-                - name: 传播 DO_BUFFERED_IO 和 DO_DIRECT_IO 标志
-                  href: propagating-the-do-buffered-io-and-do-direct-io-flags.md
-                - name: 传播 FILE_DEVICE_SECURE_OPEN 标志
-                  href: propagating-the-file-device-secure-open-flag.md
-                - name: 清除 DO_DEVICE_INITIALIZING 标志
-                  href: clearing-the-do-device-initializing-flag.md
+              href: attaching-a-filter-to-a-file-system-or-volume.md
+            - name: 创建筛选器设备对象
+              href: creating-the-filter-device-object.md
+            - name: 将筛选设备对象附加到目标设备对象
+              href: attaching-the-filter-device-object-to-the-target-device-object.md
+            - name: 传播 DO_BUFFERED_IO 和 DO_DIRECT_IO 标志
+              href: propagating-the-do-buffered-io-and-do-direct-io-flags.md
+            - name: 传播 FILE_DEVICE_SECURE_OPEN 标志
+              href: propagating-the-file-device-secure-open-flag.md
+            - name: 清除 DO_DEVICE_INITIALIZING 标志
+              href: clearing-the-do-device-initializing-flag.md
         - name: 筛选 IRP 和快速 I/O
           items:
             - name: 筛选 IRP 和快速 I/O
@@ -334,28 +301,16 @@
                   href: accessing-user-buffers-in-a-postoperation-callback-routine.md
         - name: 管理微筛选器驱动程序中的上下文
           items:
-            - name: 管理微筛选器驱动程序中的上下文
-              href: managing-contexts-in-a-minifilter-driver.md
-            - name: 注册上下文类型
-              href: registering-context-types.md
-            - name: 创建上下文
-              href: creating-contexts.md
-            - name: 设置上下文
-              href: setting-contexts.md
-            - name: 获取上下文
-              href: getting-contexts.md
-            - name: 引用上下文
-              href: referencing-contexts.md
-            - name: 释放上下文
-              href: releasing-contexts.md
-            - name: 删除上下文
-              href: deleting-contexts.md
-            - name: 释放上下文
-              href: freeing-contexts.md
-            - name: 用于上下文的文件系统支持
-              href: file-system-support-for-contexts.md
-            - name: 最佳方案
-              href: best-practices.md
+            - name: 将额外的 Create 参数与 IRP_MJ_CREATE 操作配合使用
+              href: using-extra-create-parameters-with-an-irp-mj-create-operation.md
+            - name: 将 ECP 附加到产生内核模式驱动程序的 IRP_MJ_CREATE 操作
+              href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
+            - name: 在文件系统微驱动程序中使用 ECP 处理 IRP_MJ_CREATE 操作
+              href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-minifilter.md
+            - name: 用户定义的 ECP
+              href: user-defined-ecps.md
+            - name: 系统定义的 ECP
+              href: system-defined-ecps.md
     - name: 网络重定向程序驱动程序
       items:
         - name: 网络重定向程序驱动程序
@@ -664,7 +619,7 @@
           href: understanding-volume-enumerations-with-duplicate-volume-names.md
     - name: 参考
       items:
-        - name: 其他参考
+        - name: 参考概述
           href: ifs-reference.md
         - name: CcIsThereDirtyLoggedPages
           href: ccistheredirtyloggedpages.md
