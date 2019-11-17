@@ -1,3 +1,16 @@
+---
+title: 取消发货标签
+description: 在 Microsoft 硬件 API 中使用此方法可请求取消处于“Microsoft 审批或逐步推出”状态的发货标签。
+ms.topic: article
+ms.date: 11/13/2019
+ms.localizationpriority: medium
+ms.openlocfilehash: 6be0ee5bc80f1258f5ddf278a9b63f346740796f
+ms.sourcegitcommit: 67335434c02f122f29468420ce2e076b51b493ad
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74056056"
+---
 # <a name="cancel-a-shipping-label"></a>取消发货标签
 
 在 *Microsoft 硬件 API* 中使用此方法可请求取消处于“Microsoft 审批或逐步推出”状态的发货标签。 使用此方法之前，请确保你的发货标签处于“Microsoft 审批或逐步推出”状态。 有关获取发货标签的详细信息，请参阅[获取新的发货标签](get-a-shipping-label.md)。
