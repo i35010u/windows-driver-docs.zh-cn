@@ -1,31 +1,31 @@
 ---
 title: Nmake2MsBuild
-description: Nmake2MsBuild 实用程序生成的驱动程序，使用以前版本的 WDK 驱动程序的源代码文件中，从和源、 目录和 makefile.inc 文件生成的 Visual Studio 项目。
+description: The Nmake2MsBuild utility generates a Visual Studio project for a driver that was built using a previous version of the WDK from your driver's source code files, and from the sources, dirs, and makefile.inc files.
 ms.assetid: D6E1C124-9A5F-486B-865E-45A0BC58A5A3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5f2a375228b58ede3c61a27ed920ff2b79a883a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 633294c2ae1067ed3a5c597b9fcbb42d7d4c9b04
+ms.sourcegitcommit: fc7e9b273277a91076b914095f4ee6f1eef7014a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355028"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74196986"
 ---
 # <a name="nmake2msbuild"></a>Nmake2MsBuild
 
 
-**请注意**Nmake2MsBuild 工具已从 WDK 从 Windows 10，版本 1511年开始。
+**Note**  The Nmake2MsBuild tool was removed from the WDK starting in Windows 10, version 1511.
 
 
 
-Nmake2MsBuild 实用程序生成的驱动程序，使用以前版本的 WDK 从驱动程序的源代码文件，并从生成的 Visual Studio 项目*源*，*目录*，和*makefile.inc*文件。 该实用程序与现有的相同目录中创建 Visual Studio 项目文件*源*文件。 该实用工具不会更改你的源代码或更早的生成文件。
+The Nmake2MsBuild utility generates a Visual Studio project for a driver that was built using a previous version of the WDK from your driver's source code files, and from the *sources*, *dirs*, and *makefile.inc* files. The utility creates the Visual Studio project file in the same directory as your existing *sources* files. The utility does not alter your source code or your earlier build files.
 
-有关使用该实用工具的信息，请参阅[转换 WDK 源到 Visual Studio 项目文件](converting-a-wdk-sources-file-to-a-visual-studio-project.md)。
+For information about using the utility, see [Converting a WDK sources file to a Visual Studio project](converting-a-wdk-sources-file-to-a-visual-studio-project.md).
 
-## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>语法
+## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>Syntax
 
 
-Nmake2MsBuild.exe 实用程序具有以下语法：
+The Nmake2MsBuild.exe utility has the following syntax:
 
 ```
 NMake2MSBuild.exe  < sources [<sources>...] | dirs >
@@ -39,7 +39,7 @@ NMake2MSBuild.exe  < sources [<sources>...] | dirs >
                           [-SafeMode]
 ```
 
-转换工具位于 %PROGRAMFILES%\\Windows 工具包\\8.0\\工具\\x86\\目录。
+The conversion tool is located in the %PROGRAMFILES%\\Windows Kits\\8.0\\tools\\x86\\ directory.
 
 <table>
 <colgroup>
@@ -49,70 +49,70 @@ NMake2MSBuild.exe  < sources [<sources>...] | dirs >
 <tbody>
 <tr class="odd">
 <td align="left"><em>sources</em></td>
-<td align="left"><p>指定的路径<em>源</em>驱动程序使用以前版本的 WDK 构建的文件。 如果指定<em>源</em>文件，该实用工具将它解析<em>源</em>文件和相应<em>makefile.inc</em>并生成 Visual Studio 项目文件。 Visual Studio 项目文件所在的同一目录中放置<em>源</em>文件。</p>
-<p>您可以指定多个<em>源</em>文件一次。 生成的所有项目将都共享相同的解决方案和包项目。</p></td>
+<td align="left"><p>Specifies the path to the <em>sources</em> file for a driver built with the previous version of the WDK. If you specify a <em>sources</em> file, the utility parses that <em>sources</em> file and the corresponding <em>makefile.inc</em> and generates a Visual Studio project file. The Visual Studio project file is placed in the same directory as the <em>sources</em> file.</p>
+<p>You can specify more than one <em>sources</em> files at a time. All resulting projects will share the same Solution and Package Project.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><em>dirs</em></td>
-<td align="left"><p>指定的路径<em>目录</em>驱动程序使用以前版本的 WDK 构建的文件。 如果指定<em>目录</em>文件，该实用程序看起来在目录树中的所有<em>源</em>文件和相应 makefile.inc 文件并生成每个 Visual Studio 项目文件。</p></td>
+<td align="left"><p>Specifies the path to the <em>dirs</em> file for a driver built with the previous version of the WDK. If you specify a <em>dirs</em> file, the utility looks in the directory tree for all <em>sources</em> files and the corresponding makefile.inc files and generates a Visual Studio project files for each one.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>包：</strong><em>&lt;包文件的路径来生成&gt;</em></td>
-<td align="left">指定驱动程序包项目文件的自定义名称。</td>
+<td align="left"><strong>-Package:</strong><em>&lt;Path to Package file to generate&gt;</em></td>
+<td align="left">Specifies a custom name for the driver package project file.</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>解决方案：</strong><em>&lt;生成解决方案文件路径&gt;</em></td>
-<td align="left">指定驱动程序的解决方案文件 (.sln) 的自定义名称。</td>
+<td align="left"><strong>-Solution:</strong><em>&lt;Path to Solution file to generate&gt;</em></td>
+<td align="left">Specifies a custom name for the driver solution file (.sln).</td>
 </tr>
 <tr class="odd">
 <td align="left">-<strong>Log:[</strong><em>&lt;LogFile&gt;</em><strong>]:[</strong><em>&lt;Verbosity&gt;</em><strong>]</strong></td>
-<td align="left">指定日志文件的名称和指定的日志记录级别 (请参阅<em>详细级别</em>)。</td>
+<td align="left">Specifies a name for the Log file, and specifies the level of logging (see <em>Verbosity</em>).</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>-ConsoleLog:</strong><em>&lt;详细级别&gt;</em></td>
-<td align="left">指定控制台日志文件的名称和指定的日志记录级别 (请参阅<em>详细级别</em>)。</td>
+<td align="left"><strong>-ConsoleLog:</strong><em>&lt;Verbosity&gt;</em></td>
+<td align="left">Specifies a name for the Console log file, and specifies the level of logging (see <em>Verbosity</em>).</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>名称：</strong><em>&lt;输出项目的名称&gt;</em></p></td>
-<td align="left"><p>指定将生成的 VcxProj 文件的自定义名称。 或者，如果<em>目录</em>正在转换文件，此参数用于指定生成的解决方案的名称。</p></td>
+<td align="left"><p><strong>-Name:</strong><em>&lt;Name of output project&gt;</em></p></td>
+<td align="left"><p>Specifies a custom name for the VcxProj file that will be generated. Alternatively, if a <em>dirs</em> file is being converted, this parameter is used to specify the name of the generated solution.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><em>详细级别</em></td>
-<td align="left">默认日志记录级别的日志文件和控制台日志记录<strong>Verbose</strong>并<strong>信息</strong>分别。 <em>详细程度</em>是之一<strong>System.Diagnostics.SourceLevels</strong>。</td>
+<td align="left"><em>Verbosity</em></td>
+<td align="left">The default logging levels for Log file and Console logging are <strong>Verbose</strong> and <strong>Information</strong> respectively. <em>Verbosity</em> is one of <strong>System.Diagnostics.SourceLevels</strong>.</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>-SafeMode</strong></td>
-<td align="left">安全模式的 NMAKE 目标，不提供 IDE/UI 支持，但可以提供更准确地转换为 NMAKE 目标。 如果在项目的 NMAKE 目标中之前执行的生成步骤过程中出现问题，请仅指定-安全模式。</td>
+<td align="left">SafeMode does not provide IDE/UI support for NMAKE targets, but could provide a more accurate conversion for NMAKE targets. Only specify -SafeMode if you experience issues during build steps that were previously performed in your project's NMAKE targets.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>注释
+## <a name="span-idcommentsspanspan-idcommentsspanspan-idcommentsspancomments"></a><span id="Comments"></span><span id="comments"></span><span id="COMMENTS"></span>Comments
 
 
-转换工具位于 %PROGRAMFILES%\\Windows 工具包\\8.0\\工具\\x86\\目录。
+The conversion tool is located in the %PROGRAMFILES%\\Windows Kits\\8.0\\tools\\x86\\ directory.
 
-响应 (。用于指定命令行参数支持 Rsp) 文件。 应在单独的行上指定每个参数。
+Response (.Rsp) files are supported for specifying command line parameters. Each parameters should be specified on a separate line.
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example
 
 
-若要生成已生成与以前版本的 WDK （使用 Build.exe 和源和目录文件） 的驱动程序项目，您必须首先将其转换为。VcxProj 使用 Nmake2MsBuild.exe 转换实用工具项目。
+To build a driver project that was built with a previous version of the WDK (using Build.exe and a sources and dirs file), you must first convert it to a .VcxProj project using Nmake2MsBuild.exe conversion utility.
 
-例如，要转换的驱动程序，以前使用 Windows 7 WDK，名为 MyDriver，生成首次打开**Visual Studio 命令提示符**窗口。 浏览到目录或提供包含的目录的路径*源*或*目录*生成配置文件。 例如，下面的命令相同的文件夹中生成 MyDriver.Vcxproj 文件*源*文件。
+For example, to convert a driver that was previously built with the Windows 7 WDK, called MyDriver, you first open a **Visual Studio Command Prompt** window. Browse to the directory or supply the path to the directory that contains the *sources* or *dirs* build configuration file. For example, the following command generates the MyDriver.Vcxproj file in the same folder as the *sources* file.
 
 ```
 nmake2msbuild.exe  .\myDriver\sources
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[将 WDK 源文件转换为 Visual Studio 项目](converting-a-wdk-sources-file-to-a-visual-studio-project.md)
+[Converting a WDK sources file to a Visual Studio project](converting-a-wdk-sources-file-to-a-visual-studio-project.md)
 
-[从现有源文件创建驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
+[从现有源文件创建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-from-existing-source-files)
 
 
 

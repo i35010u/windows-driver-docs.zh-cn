@@ -398,8 +398,8 @@
               href: error-handling-in-storport-miniport-drivers.md
             - name: Storport 微型端口驱动程序中的互锁的操作
               href: interlocked-operations-in-storport-miniport-drivers.md
-            - name: NVMe 存储驱动程序
-              href: nvme-storage-driver.md
+            - name: StorNVMe 支持的 NVMe 功能
+              href: nvme-features-supported-by-stornvme.md
             - name: 升级为 NVMe 设备的固件
               href: upgrading-firmware-for-an-nvme-device.md
             - name: StorPort 微型端口驱动程序的注册表项
