@@ -49,7 +49,7 @@ ms.locfileid: "72021054"
 
 这些参数适用于段和 NT 堆。
 
-<span id="_______-s______"></span><span id="_______-S______"></span> **-s**   
+<span id="_______-s______"></span><span id="_______-S______"></span> **-s**@no__t  
 指定正在请求摘要信息。 如果省略了*SummaryOptions*和*StatHeapAddress* ，则将显示与当前进程关联的所有堆的摘要信息。
 
 <span id="_______SummaryOptions______"></span><span id="_______summaryoptions______"></span><span id="_______SUMMARYOPTIONS______"></span>*SummaryOptions*   
@@ -92,19 +92,19 @@ ms.locfileid: "72021054"
 
  
 
-<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-会审 \[** <em>处理</em> **|** <em>地址</em> **\]**    
+<span id="_______-triage__Handle___Address___"></span><span id="_______-triage__handle___address___"></span><span id="_______-TRIAGE__HANDLE___ADDRESS___"></span> **-会审 \[** <em>句柄</em> **|** <em>地址</em>**0**1  
 使调试器自动搜索进程堆中的失败。 如果将堆句柄指定为参数，则将检查该堆;否则，会搜索包含给定地址的所有堆，如果找到，将检查该地址。 使用 **-会审**是验证低碎片堆（LFH）损坏的唯一方法。
 
-<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** \[ **-v**\]   
+<span id="_______-x_-v_"></span><span id="_______-X_-V_"></span> **-x** @no__t **-@no__t-** 5   
 使调试器搜索包含指定地址的堆块。 如果添加了-v，则该命令将在当前进程的整个虚拟内存空间中搜索指向此堆块的指针。
 
 <span id="_______-l______"></span><span id="_______-L______"></span> **-l**   
 使调试器检测泄漏的堆块。
 
 <span id="_______-i________Address______-h_HeapAddress______"></span><span id="_______-i________address______-h_heapaddress______"></span><span id="_______-I________ADDRESS______-H_HEAPADDRESS______"></span> **-i** *Address* **-h** *HeapAddress*   
-显示有关指定*堆*的信息。
+显示有关指定 *堆* 的信息。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
 指定要搜索的地址。
 
 <span id="_______-_______"></span> **-?**    
@@ -134,7 +134,7 @@ ms.locfileid: "72021054"
 <td align="left"><p><strong>-v</strong></p></td>
 <td align="left"><p>使调试器验证指定的堆。</p>
 <div class="alert">
-<strong>请注意</strong>  此选项未检测到低碎片堆（LFH）损坏。 改用<strong>-会审</strong>。
+<strong>Note @ no__t-1 @ no__t-2This 选项未检测到低碎片堆（LFH）损坏。 改用<strong>-会审</strong>。
 </div>
 <div>
  
@@ -221,8 +221,8 @@ ms.locfileid: "72021054"
 
  
 
-<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i** *堆* *地址***或** *HeapAddress*   
-显示有关指定*堆*的信息。
+<span id="_______-i________Heap_Address______or_HeapAddress______"></span><span id="_______-i________heap_address______or_heapaddress______"></span><span id="_______-I________HEAP_ADDRESS______OR_HEAPADDRESS______"></span> **-i** *堆* *地址* **或** *HeapAddress*   
+显示有关指定 *堆* 的信息。
 
 <span id="_______BreakAddress______"></span><span id="_______breakaddress______"></span><span id="_______BREAKADDRESS______"></span>*BreakAddress*   
 指定要在其中设置或删除断点的块的地址。
@@ -424,13 +424,13 @@ Ext .dll Exts</td>
 
 有关堆的信息，请参阅以下资源：
 
-书籍： Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。
+通讯*Microsoft Windows 内部*的 Russinovich 和 David 所罗门群岛。
 
-[示例11：启用页堆验证](example-11---enabling-page-heap-verification.md)
+[Example 11：启用页堆验证 @ no__t-0
 
-[示例12：使用页堆验证查找 Bug](example-12---using-page-heap-verification-to-find-a-bug.md)
+[Example 12：使用页堆验证查找 Bug @ no__t
 
-有关使用堆内存处理记录器的信息，请参阅[示例11：启动专用跟踪会话](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-11--starting-a-private-trace-session)
+有关使用堆内存处理记录器的信息，请参阅 [Example 11：启动专用跟踪会话 @ no__t-0
 
 <a name="remarks"></a>备注
 -------
@@ -447,7 +447,7 @@ Ext .dll Exts</td>
 
 **！堆-p**命令显示了各种形式的页堆信息。 使用 **！堆-p**之前，必须为目标进程启用页堆。 这是通过全局标志（gflags）实用程序来完成的。 为此，请启动实用工具，在 "**映像文件**" 文本框中填写目标应用程序的名称，选择 "**图像文件选项**" 并**启用页堆**，并单击 "**应用**"。 或者，你可以通过键入**gflags/i** *xxx* **+ hpa**（其中， *xxx*是目标应用程序的名称）从命令提示符窗口启动全局标志实用程序。
 
-Windows XP 外不支持 **\[c | s\]命令的！堆-p-t** 。 使用随调试器包一起提供的[UMDH](umdh.md)工具来获取类似的结果。
+不支持在 Windows XP 以外的情况 **！堆-p-t @ no__t-1c | s @ no__t**命令。 使用随调试器包一起提供的[UMDH](umdh.md)工具来获取类似的结果。
 
 **！ Srch**命令显示包含某个指定模式的堆条目。
 
@@ -720,4 +720,4 @@ Search VM for address range 002057a8 - 002057ff : 00205990 (002057d0),
     Block header (starts with 0xABCDBBA and ends with 0xDCBABBBA) 
 ```
 
-若要查看分配的堆栈跟踪或释放堆块或完整页面堆块，请使用[**DT DPH\_块**](dt--display-type-.md)，并使用标头地址\_信息，[**然后使用块**](dds--dps--dqs--display-words-and-symbols-.md)的**StackTrace**字段。
+若要查看分配的堆栈跟踪或释放堆块或完整页面堆块，请使用带有标头地址的[**DT DPH @ no__t-2BLOCK @ no__t-3INFORMATION**](dt--display-type-.md) ，后面跟有块**StackTrace**字段的[**dds**](dds--dps--dqs--display-words-and-symbols-.md) 。
