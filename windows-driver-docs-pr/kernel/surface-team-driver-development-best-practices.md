@@ -6,12 +6,12 @@ keywords:
 - 驱动程序开发最佳做法
 ms.date: 08/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6be9e8980f754dcf8623597fb5373a33e1e3d2e5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 31961b6f47067d7c5702d65de5b6212821677e54
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838400"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261431"
 ---
 # <a name="surface-team-driver-development-best-practices"></a>Surface 团队驱动程序开发最佳实践
 
@@ -61,7 +61,7 @@ ms.locfileid: "72838400"
 7. 设计一个解决方案，该解决方案会导致大量工作项排队。 如果攻击者可以控制此操作（例如，将中的 i/o 进给为每个 i/o 排队新工作项的驱动程序），则可能会导致系统或 DOS 攻击无响应。 请参阅[使用框架工作项](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-framework-work-items)。
 8. 在删除对象之前，不会执行工作项 DPC 回调已经完成运行。 请参阅[编写 DPC 例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/guidelines-for-writing-dpc-routines)和[WdfDpcCancel 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpccancel)的准则。
 9. 创建线程，而不是将工作项用于短持续时间/非轮询任务。 请参阅[系统工作线程](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-worker-threads)。
-10. 删除或卸载驱动程序之前，不确保线程已完成运行。 有关线程断开同步的详细信息，请查看与驱动程序模块 Framework （DMF）项目 https://github.com/Microsoft/DMF 中与[DMF_Thread](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_Thread.md)模块关联的代码。 
+10. 删除或卸载驱动程序之前，不确保线程已完成运行。 有关线程断开同步的详细信息，请查看与查看 Driver Module Framework （DMF）项目中与[DMF_Thread](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_Thread.md)模块关联的代码- https://github.com/Microsoft/DMF。 
 11. 使用单个驱动程序管理不同但相互依赖并使用全局变量来共享信息的设备。
 
 ### <a name="memory"></a>内存
@@ -79,7 +79,7 @@ ms.locfileid: "72838400"
 5. 使用注册表作为进程间通知机制或邮箱。 有关替代方法，请参阅 DMF [\_NotifyUserWithEvent](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_NotifyUserWithEvent.md)和 dmf\_在 dmf 项目 <https://github.com/Microsoft/DMF>中可用的[NotifyUserWithRequest](https://github.com/Microsoft/DMF/blob/master/Dmf/Modules.Library/Dmf_NotifyUserWithRequest.md)模块。
 6. 假定注册表的所有部分在系统的早期启动阶段都可用于访问。
 7. 依赖于另一驱动程序或服务的加载顺序。 由于可以在您的驱动程序控制外更改加载顺序，因此这可能会导致驱动程序最初有效，但稍后将无法预测的模式。
-8. 重新创建已可用的驱动程序库，如 WDF 提供在[驱动程序中支持 pnp 和电源管理中](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver)所述的 pnp，或在总线接口中提供的驱动程序库，如[使用用于驱动的总线接口的 OSR 一文中所述。到驱动程序通信](https://www.osr.com/nt-insider/2014-issue2/using-bus-interfaces-driver-driver-communication/)。
+8. 重新创建已可用的驱动程序库，如 WDF 为在[驱动程序中支持 pnp 和电源管理中](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-pnp-and-power-management-in-your-driver)所述的 Pnp 提供支持或在总线接口中提供的驱动程序库，如[使用用于驱动程序到驱动程序通信的总线接口](https://www.osr.com/nt-insider/2014-issue2/using-bus-interfaces-driver-driver-communication/)OSR 一文中所述。
 
 ### <a name="pnppower"></a>PnP/Power
 
@@ -117,7 +117,7 @@ ms.locfileid: "72838400"
 3. 不使用 NTSTATUS 宏来检查系统函数的返回状态。
 4. 不在需要时断言状态变量或标志。
 5. 检查指针是否有效，然后再访问它以解决争用情况。
-6. 对 NULL 指针进行断言。 如果尝试使用 NULL 指针访问内存窗口，将会检查错误。 Bug 检查的参数将提供修复 null 指针所需的信息。 加班，当多个不需要的 ASSERT 语句添加到代码中时，它们会消耗内存，使系统变慢并使检查的生成二进制文件不可用。 请注意，不会在免费零售版本中包含断言。
+6. 对 NULL 指针进行断言。 如果尝试使用 NULL 指针访问内存窗口，将会检查错误。 Bug 检查的参数将提供修复 null 指针所需的信息。 加班，当多个不需要的 ASSERT 语句添加到代码中时，它们会消耗内存并使系统变慢。
 7. 对对象上下文指针进行断言。 驱动程序框架保证对象将始终通过上下文进行分配。
 
 ### <a name="tracing"></a>跟踪

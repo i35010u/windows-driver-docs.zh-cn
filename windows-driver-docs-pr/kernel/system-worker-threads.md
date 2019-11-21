@@ -13,12 +13,12 @@ keywords:
 - 回调例程 WDK 工作线程
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ae05f02067fe6097b1cf0b95f9935b78fab2624
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df678188abc431fe7ce9de7aa567173c9bff41b5
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838391"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261434"
 ---
 # <a name="system-worker-threads"></a>系统工作线程
 
@@ -52,7 +52,7 @@ ms.locfileid: "72838391"
 
 因为系统工作线程池是有限的资源，所以*工作*项和*WorkItemEx*例程仅可用于需要较短时间的操作。 如果其中一个例程运行的时间太长（例如，它包含一个无限循环）或等待时间太长，则系统可能会死锁。 因此，如果驱动程序需要长时间的延迟处理，则应改为调用[**PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)创建自己的系统线程。
 
-请勿调用**IoQueueWorkItem**或**IoQueueWorkItemEx**来对队列中已存在的工作项进行排队。 在选中的生成中，此错误会导致 bug 检查。 在零售版本中，不会检测到错误，但可能会导致系统数据结构损坏。 如果在每次运行特定的驱动程序例程时，驱动程序都会将同一工作项排队，则可以使用以下方法来避免第二次将工作项排队：
+请勿调用**IoQueueWorkItem**或**IoQueueWorkItemEx**来对队列中已存在的工作项进行排队。 这样做可能会导致系统数据结构损坏。 如果在每次运行特定的驱动程序例程时，驱动程序都会将同一工作项排队，则可以使用以下方法来避免第二次将工作项排队：
 
 -   驱动程序为辅助角色维护一系列任务。
 -   此任务列表在提供给 worker 例程的上下文中可用。 用于修改任务列表的辅助角色例程和任何驱动程序例程会将其访问权限同步到列表。

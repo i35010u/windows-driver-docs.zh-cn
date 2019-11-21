@@ -7,12 +7,12 @@ keywords:
 - 中断调试器 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dfcd119c25ef6dd25ff6fb94e62cc9159beeea0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c883264ea99f46048cc65b118ebc0308210cb692
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845509"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261442"
 ---
 # <a name="breaking-into-a-debugger-from-kmdf-drivers"></a>从 KMDF 驱动程序突入调试程序
 
@@ -31,7 +31,7 @@ ms.locfileid: "72845509"
 
 -   [**DbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)和[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)函数向调试器提供可显示的文本消息。
 
-在发布或调试配置中构建驱动程序时，"WDFVERIFY" 和 "验证\_" 的代码为 "\_IRQL\_被动\_级别宏包括在您的驱动程序中。在 Windows 7 和更早版本中）。 仅当你在调试配置中构建驱动程序时，才会将 ASSERT 和 ASSERTMSG 宏的代码包含在你的驱动程序中。
+当你在发布或调试配置中构建驱动程序时，WDFVERIFY 的代码和验证\_是\_IRQL\_被动\_级别的宏包含在你的驱动程序中。 仅当你在调试配置中构建驱动程序时，才会将 ASSERT 和 ASSERTMSG 宏的代码包含在你的驱动程序中。
 
 有关项目配置的详细信息，请参阅[构建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 

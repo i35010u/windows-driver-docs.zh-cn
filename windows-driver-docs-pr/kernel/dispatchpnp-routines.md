@@ -11,12 +11,12 @@ keywords:
 - IRP_MJ_PNP i/o 函数代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba19c14b474574161fc5f48db3dc90b418679fad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 251f5d5b45a037b91b3c88ec47b18bb4054bfef9
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836850"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261430"
 ---
 # <a name="dispatchpnp-routines"></a>DispatchPnP 例程
 
@@ -66,7 +66,6 @@ ms.locfileid: "72836850"
 
     大多数 PnP Irp 由 PnP 管理器发送，但某些可由驱动程序发送（例如， [**IRP\_MN\_QUERY\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)）。 驱动程序必须将 PnP IRP 发送到设备堆栈顶部的驱动程序。 调用[**IoGetAttachedDeviceReference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iogetattacheddevicereference)可获取指向设备堆栈顶部驱动程序的设备对象的指针。
 
-你应该使用操作系统的已检查版本来测试驱动程序。 系统的检查内部版本验证驱动程序是否遵循上面列出的许多 PnP 规则。
 
  
 

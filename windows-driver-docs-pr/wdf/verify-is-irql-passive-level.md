@@ -1,24 +1,24 @@
 ---
 title: VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
-description: VERIFY_IS_IRQL_PASSIVE_LEVEL 宏进入内核调试器，如果该驱动程序不在 IRQL passive_level 调用执行。
+description: 如果驱动程序未以 IRQL PASSIVE_LEVEL 执行，VERIFY_IS_IRQL_PASSIVE_LEVEL 宏将进入内核调试器。
 ms.assetid: 7f1e25af-df66-46a2-8d27-7924677e4d5d
 keywords:
 - VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8e51cd166ee5c3156c52cdede3d6cac60bcb33
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5c71abe1e418f6429a500c88e334767764d9e06c
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372143"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261436"
 ---
-# <a name="verifyisirqlpassivelevel-macro"></a>VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
+# <a name="verify_is_irql_passive_level-macro"></a>VERIFY_IS_IRQL_PASSIVE_LEVEL 宏
 
 
 [仅适用于 KMDF]
 
-**VERIFY_IS_IRQL_PASSIVE_LEVEL**宏进入内核调试器如果驱动程序不执行在 IRQL = passive_level 调用。
+如果驱动程序未以 IRQL = PASSIVE_LEVEL 执行，则**VERIFY_IS_IRQL_PASSIVE_LEVEL**宏将进入内核调试器。
 
 <a name="syntax"></a>语法
 ------
@@ -27,10 +27,10 @@ ms.locfileid: "67372143"
 VOID VERIFY_IS_IRQL_PASSIVE_LEVEL(void);
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-此宏没有任何参数。
+此宏没有参数。
 
 <a name="return-value"></a>返回值
 ------------
@@ -40,22 +40,22 @@ VOID VERIFY_IS_IRQL_PASSIVE_LEVEL(void);
 <a name="remarks"></a>备注
 -------
 
-代码**VERIFY_IS_IRQL_PASSIVE_LEVEL**生成您在发布配置或调试配置中的驱动程序时，宏包含驱动程序的二进制文件中。 如果您的驱动程序的二进制包括**VERIFY_IS_IRQL_PASSIVE_LEVEL**代码，代码将运行时检查内部版本号或免费版本的 Microsoft Windows 操作系统运行您的驱动程序。
+在发布配置或调试配置中构建驱动程序时，将在驱动程序的二进制文件中包含**VERIFY_IS_IRQL_PASSIVE_LEVEL**宏的代码。 
 
-**VERIFY_IS_IRQL_PASSIVE_LEVEL**代码中断到内核调试程序中，如果以下项之一为 true:
+如果满足以下条件之一，则**VERIFY_IS_IRQL_PASSIVE_LEVEL**代码将进入内核调试器：
 
--   **DbgBreakOnError**在注册表中设置为非零值。
--   **VerifierOn**设置为非零值和**DbgBreakOnError**未设置。
--   启用驱动程序验证程序，该驱动程序生成框架版本 1.9 或更高版本，以及两者都**VerifierOn**也不**DbgBreakOnError**设置。
+-   在注册表中， **DbgBreakOnError**设置为非零值。
+-   **VerifierOn**设置为一个非零值，并且未设置**DbgBreakOnError** 。
+-   驱动程序验证程序已启用，驱动程序是用 framework 1.9 或更高版本生成的，并且不设置**VerifierOn**和**DbgBreakOnError** 。
 
-有关可用于调试您的驱动程序的注册表项的详细信息，请参阅[Debugging Framework-Based 驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)。
+有关可用于调试驱动程序的注册表项的详细信息，请参阅[用于调试基于框架的驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)。
 
-有关调试您的驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
+有关调试驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例进入内核调试器如果驱动程序不执行在 IRQL = passive_level 调用。
+如果驱动程序未在 IRQL = PASSIVE_LEVEL 上执行，则下面的代码示例将中断内核调试器。
 
 ```cpp
 VERIFY_IS_IRQL_PASSIVE_LEVEL();
@@ -72,20 +72,20 @@ VERIFY_IS_IRQL_PASSIVE_LEVEL();
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">全局</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.0</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdfassert.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfassert （包含 Wdf .h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WDFVERIFY**](wdfverify.md)
