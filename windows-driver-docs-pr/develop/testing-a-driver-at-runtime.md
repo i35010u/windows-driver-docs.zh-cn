@@ -4,12 +4,12 @@ title: 如何使用 Visual Studio 在运行时测试驱动程序
 description: 你可以在 Visual Studio 中使用 WDK 扩展，在网络中的测试计算机上方便地生成、部署、安装和测试驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6cad70926d45baf1d07436d86a26448ec1b1db5
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.openlocfilehash: e4f024d689ef60087d854418cb247c8ff28e0265
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020628"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261418"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>如何使用 Visual Studio 在运行时测试驱动程序
 
@@ -19,7 +19,7 @@ Visual Studio 的 WDK 扩展提供设备测试接口，可让你在网络中的�
 
 -   就绪可安装的驱动程序包。 必须先创建并生成驱动程序，然后再创建用于安装的驱动程序包。 有关详细信息，请参阅[生成驱动程序](building-a-driver.md)和[创建驱动程序包](creating-a-driver-package.md)。
 -   驱动程序必须经过测试签名。 有关详细信息，请参阅[为驱动程序签名](signing-a-driver.md)。
--   一台测试计算机（或多台）。 测试计算机必须与你用于开发的计算机位于同一个网络。 这两台计算机必须连接到同一个域，或者都在同一工作组下连接到网络。 测试计算机应该运行你想要定位测试目标的 Windows 版本。 你还可以[安装 Windows 已检验版本](https://docs.microsoft.com/windows-hardware/drivers/devtest/installing-the-checked-build)或部分已检验版本来用于测试和调试。
+-   一台测试计算机（或多台）。 测试计算机必须与你用于开发的计算机位于同一个网络。 这两台计算机必须连接到同一个域，或者都在同一工作组下连接到网络。 测试计算机应该运行你想要定位测试目标的 Windows 版本。 
 -   要测试的设备。
 -   （*建议*）设置与测试计算机的内核模式调试连接。 若要使用用于内核模式调试的网络连接，目标计算机必须运行 Windows 8。 在运行 Windows 7 或 Windows Vista 的计算机上，你可以设置 USB、1394 或串行连接以用于内核模式调试。 有关详细信息，请参阅[预配计算机以便进行驱动程序部署和测试 (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 

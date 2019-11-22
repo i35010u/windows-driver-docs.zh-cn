@@ -4,12 +4,12 @@ title: 测试驱动程序代码和驱动程序包的相关建议。
 description: 应在何时开始测试？ 了解驱动程序的要求后，便可以立即开始设计测试用例来测试是否已实现了这些关键要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d87219f107954890359a79e613281d014498edd7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a0964ab68748c3a9af7fdcf21aa0f0eccda0e534
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840322"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261419"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧
 
@@ -53,7 +53,6 @@ ms.locfileid: "72840322"
 -   在用于部署的测试计算机上启用驱动程序验证程序，请参阅[驱动程序项目的驱动程序验证程序属性](driver-verifier-properties-for--driver-projects.md)。 选择 [DDI 符合性检查](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)选项。 如果你的驱动程序未通过 DDI 符合性检查，请运行[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)，并指定导致失败的规则。 静态驱动程序验证程序可以帮助你找到源文件中存在的 Bug 的原因。
 -   在尽可能多的不同硬件配置上测试你的驱动程序和设备。 改变硬件可以帮助你找到设备交互中出现的设备错误与其他错误之间的冲突。 例如，你应该在具有不同处理器体系结构的计算机以及运行 32 位和 64 位 Windows 版本的计算机上测试驱动程序和设备。
 
--   使用 [Windows 已检验版本](https://docs.microsoft.com/windows-hardware/drivers/devtest/checked-build-of-windows)测试驱动程序和设备。 在 Windows 已检验版本上运行驱动程序（或只是使用已检验的操作系统和 HAL），可以帮助你检测出使用其他工具测试时未明显呈现的错误。 通过将已检验版本与内核调试程序结合来运行，应该是开发和测试驱动程序的一个标准部分。
 -   在多处理器系统上测试驱动程序和设备。 以其他方式无法找到的争用条件及其他计时问题会出现在多处理器系统中。 请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)和[用于测试驱动程序的多处理器组支持的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)。
 
 -   测试驱动程序的特定系统和硬件条件，特别是边界条件。 例如，这些条件可能包括“D3 hot”和“D3 cold”。 确保你的驱动程序和设备可以从设备电源状态“D3 hot”（不消耗功率）和“D3 cold”（从设备中移除电源时）正确返回。 有关详细信息，请参阅[如何选择和配置设备基础功能测试](how-to-select-and-configure-the-device-fundamental-tests.md)。

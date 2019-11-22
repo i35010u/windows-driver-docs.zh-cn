@@ -4,12 +4,12 @@ title: 使用 WDK 生成驱动程序
 description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 生成驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b6c010104bb893610e4c6bbce365f65da098fa
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1db6f4fa3a257c04f317ad5569b3d9c444dc1dc0
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393327"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261421"
 ---
 # <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>使用 Visual Studio 和 WDK 生成驱动程序
 
@@ -36,7 +36,7 @@ ms.locfileid: "67393327"
 
 有关管理和编辑生成配置的信息，请参阅[在 Visual Studio 中生成](https://go.microsoft.com/fwlink/p/?linkid=227872)。
 
-默认的解决方案生成配置为**调试**和 **Win32**。 在 Windows 8 之前的 WDK 版本中，此生成配置与使用 **x86 已检验生成环境**生成驱动程序相对应。
+默认的解决方案生成配置为**调试**和 **Win32**。 
 
 **如何选择配置并生成驱动程序**
 
