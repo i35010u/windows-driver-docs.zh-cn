@@ -7,38 +7,38 @@ keywords:
 - 覆盖 DDI WDK Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7053e1dc7e10045e4883f532c11483837f8ba59a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7276ccced91896f2dc537ec616955f38b148e128
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354703"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72826067"
 ---
 # <a name="overlay-ddi"></a>覆盖 DDI
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-覆盖 DDI 是扩展[Direct3D 版本 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/index)验证覆盖的支持。 覆盖 DDI 包括以下入口点：
+覆盖 DDI 是[Direct3D 版本 9 DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/index)的扩展，用于验证覆盖支持。 覆盖 DDI 包含以下入口点：
 
--   D3DDDICAPS\_CHECKOVERLAYSUPPORT 取值[ **D3DDDICAPS\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ne-d3dumddi-_d3dddicaps_type)枚举由 Direct3D 运行时用来验证是否显示设备支持特定覆盖。 运行时设置 D3DDDICAPS\_中的 CHECKOVERLAYSUPPORT**类型**的成员[ **D3DDDIARG\_GETCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)结构的*pData*驱动程序的参数[ **GetCaps** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数运行时调用的时点**GetCaps**。 运行时还会设置**pInfo** D3DDDIARG 成员\_GETCAPS 为指针[ **DDICHECKOVERLAYSUPPORTINPUT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_ddicheckoverlaysupportinput)描述结构覆盖。 如果该驱动程序支持在覆盖区上，驱动程序设置 D3DOVERLAYCAPS 结构的成员，并返回指向此结构中的指针**pData**的成员**D3DDDIARG\_GETCAPS**。 否则，如果驱动程序不支持在覆盖区上，该驱动程序将失败调用其**GetCaps**函数与任一 D3DDDIERR\_UNSUPPORTEDOVERLAYFORMAT 或 D3DDDIERR\_UNSUPPORTEDOVERLAY 具体于上是否不支持基于覆盖格式。 D3DOVERLAYCAPS 是 DirectX SDK 文档中所述。
+-   Direct3D 运行时使用[**D3DDDICAPS\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type)枚举中的 D3DDDICAPS\_CHECKOVERLAYSUPPORT 值来验证显示设备是否支持特定覆盖。 运行时在[**D3DDDIARG\_GETCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)结构的**类型**成员中设置 D3DDDICAPS\_CHECKOVERLAYSUPPORT，在运行时调用**pData**时，驱动程序的[**GETCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps) *函数的 GETCAPS 参数指向*此结构。 运行时还会将 D3DDDIARG\_GETCAPS 的**pInfo**成员设置为指向描述覆盖的[**DDICHECKOVERLAYSUPPORTINPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_ddicheckoverlaysupportinput)结构的指针。 如果驱动程序支持覆盖，则驱动程序将设置 D3DOVERLAYCAPS 结构的成员，并在**D3DDDIARG\_GETCAPS**的**pData**成员中返回指向此结构的指针。 否则，如果驱动程序不支持覆盖，驱动程序将无法通过 D3DDDIERR\_UNSUPPORTEDOVERLAYFORMAT 或 D3DDDIERR\_UNSUPPORTEDOVERLAY 调用其**GetCaps**函数，具体取决于是否缺少支持基于覆盖格式。 DirectX SDK 文档中介绍了 D3DOVERLAYCAPS。
 
-    驱动程序集**MaxOverlayDisplayWidth**并**MaxOverlayDisplayHeight** D3DOVERLAYCAPS 以指示驱动程序和硬件可能有，这涉及最终任何限制的成员覆盖 （后拉伸覆盖数据） 的大小。
+    驱动程序将 D3DOVERLAYCAPS 的**MaxOverlayDisplayWidth**和**MaxOverlayDisplayHeight**成员设置为指示驱动程序和硬件可能具有的任何限制，这涉及最终覆盖大小（延伸覆盖数据后）).
 
-    驱动程序设置 D3DOVERLAYCAPS\_STRETCHX (0x00000040) 和 D3DOVERLAYCAPS\_STRETCHY (0x00000080) 功能中的位**Caps** D3DOVERLAYCAPS 以指示是覆盖硬件的成员能够随意拉伸和收缩的覆盖数据。 驱动程序不应尝试模拟覆盖通过 GPU 拉伸和应仅设置这些上限，如果覆盖硬件支持拉伸。 更少的开销是通常所必需的应用程序执行 GPU 的视频处理一部分拉伸和组合阶段不是为要执行一个单独的驱动程序在最后，若要模拟传递覆盖拉伸。
+    驱动程序在伸缩的**cap**成员中设置 D3DOVERLAYCAPS\_STRETCHX （0x00000040）和 D3DOVERLAYCAPS\_0x00000080 （D3DOVERLAYCAPS）功能位，以指示覆盖硬件能够任意拉伸收缩覆盖数据。 驱动程序不应尝试通过 GPU 模拟覆盖拉伸，只应在重叠硬件支持拉伸时设置这些上限。 通常，应用程序需要较少的开销，才能将 GPU 拉伸作为视频处理和组合阶段的一部分执行，而不是让驱动程序在最一端执行单独的传递来模拟覆盖拉伸。
 
--   该驱动程序应处理从以下新的位域标志[ **D3DDDI\_OVERLAYINFOFLAGS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfoflags)结构。 D3DDDI\_OVERLAYINFOFLAGS 结构标识覆盖要执行的操作类型。 D3DDDI\_中指定 OVERLAYINFOFLAGS 结构**标志**的成员[ **D3DDDI\_OVERLAYINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfo)对的调用中的结构驱动程序[ **CreateOverlay** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_createoverlay)或[ **UpdateOverlay** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/nc-d3dumddi-pfnd3dddi_updateoverlay)函数。
+-   驱动程序应处理来自[**D3DDDI\_OVERLAYINFOFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfoflags)结构的以下新的位域标志。 D3DDDI\_OVERLAYINFOFLAGS 结构标识要执行的覆盖操作的类型。 在调用驱动程序的[**CreateOverlay**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createoverlay)或[**UpdateOverlay**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updateoverlay)函数的[**D3DDDI\_OVERLAYINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfo)结构的**FLAGS**成员中指定了 D3DDDI\_OVERLAYINFOFLAGS 结构。
 
     <span id="LimitedRGB"></span><span id="limitedrgb"></span><span id="LIMITEDRGB"></span>**LimitedRGB**  
-    在覆盖区上是有限的范围 RGB 而不是完整范围 RGB。 在有限范围内 RGB，RGB 范围进行压缩 16:16:16 为黑色并 235:235:235 为白色。
+    覆盖范围 RGB 有限，而不是全范围 RGB。 在 RGB 有限范围内，RGB 范围已压缩，因此16:16:16 为黑色，235:235:235 为白色。
 
     <span id="YCbCrBT709"></span><span id="ycbcrbt709"></span><span id="YCBCRBT709"></span>**YCbCrBT709**  
-    在覆盖区上是 BT.709，指示高清晰电视 (HDTV)，而不是 BT.601。
+    覆盖为为709，表示高清晰电视（HDTV），而不是 BT. 601。
 
     <span id="YCbCrxvYCC"></span><span id="ycbcrxvycc"></span><span id="YCBCRXVYCC"></span>**YCbCrxvYCC**  
-    在覆盖区上而不是传统 YCbCr 扩展 YCbCr (xvYCC)。
+    覆盖是扩展 YCbCr （xvYCC），而不是传统的 YCbCr。
 
--   64 位而不是 32 位的显示格式时 (例如，当桌面 Windows 管理器 (DWM) 使用 D3DFMT\_A16B16G16R16F 的显示模式)，运行时将放置在覆盖 colorkey 低 32 位**DstColorKeyLow**的成员[ **D3DDDI\_OVERLAYINFO** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfo)结构和在高 32 位**DstColorKeyHigh**的成员D3DDDI\_OVERLAYINFO。
+-   当显示格式为64位而不是32位时（例如，当桌面窗口管理器（DWM）使用 D3DFMT\_A16B16G16R16F 作为显示模式）时，运行时将覆盖 colorkey 中的较低32位置于**DstColorKeyLow**成员在 D3DDDI\_OVERLAYINFO 的**DstColorKeyHigh**成员中， [**D3DDDI\_OVERLAYINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_overlayinfo)结构和上限32位。
 
  
 

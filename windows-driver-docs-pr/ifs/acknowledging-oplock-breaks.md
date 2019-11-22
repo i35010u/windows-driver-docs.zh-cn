@@ -4,12 +4,12 @@ description: 确认 Oplock 突破
 ms.assetid: ea5bcd1e-d22c-4f80-89e4-1a61e43959dd
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3603a6bda469762262ef24b6cb0722756f6c45
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 990be83f5b82e089aabc7304df4ff82cacee51d0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379353"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841497"
 ---
 # <a name="acknowledging-oplock-breaks"></a>确认 Oplock 突破
 
@@ -17,32 +17,32 @@ ms.locfileid: "67379353"
 ## <span id="oplock_break_conditions"></span><span id="OPLOCK_BREAK_CONDITIONS"></span>
 
 
-有不同类型的机会锁的所有者可以返回的确认。 类似于[授予请求](granting-oplocks.md)，作为文件系统控制代码发送这些确认 (即[FSCTL](https://go.microsoft.com/fwlink/p/?linkid=124238)s)。 它们分别是：
+Oplock 的所有者可以返回不同类型的确认。 与[grant 请求](granting-oplocks.md)类似，这些确认作为文件系统控制代码（即[FSCTL](https://go.microsoft.com/fwlink/p/?linkid=124238)）发送。 它们是：
 
 -   FSCTL\_OPLOCK\_中断\_确认
-    -   此 FSCTL 指示 oplock 所有者已完成流同步，并且它们接受的级别 （级别 2 或无） 向其断开 oplock。
--   FSCTL\_OPLOCK\_BREAK\_ACK\_NO\_2
-    -   此 FSCTL 指示 oplock 所有者已完成流同步，但不是希望级别 2 oplock。 相反，oplock 应为无中断 （即，oplock 是被放弃，完全）。
--   FSCTL\_OPBATCH\_ACK\_关闭\_PENDING
-    -   对于级别 1 oplock，此 FSCTL 指示 oplock 所有者已完成流同步和完全释放适配器的 oplock （没有第二级 oplock，可能会导致这种确认）。
+    -   此 FSCTL 指示 oplock 所有者已完成流同步，并接受 oplock 中断的级别（级别2或无）。
+-   FSCTL\_OPLOCK\_中断\_ACK\_NO\_2
+    -   此 FSCTL 指示 oplock 所有者已完成流同步，但不需要2级 oplock。 相反，oplock 应断开为 "无" （即，oplock 要完全释放）。
+-   FSCTL\_OPBATCH\_ACK\_关闭\_挂起
+    -   对于第1级 oplock，此 FSCTL 表示 oplock 所有者已完成流同步，并已完全放弃 oplock （此确认不会导致第2级 oplock）。
 
     <!-- -->
 
-    -   对于批处理或筛选器的机会锁，此 FSCTL 指示 oplock 所有者想要关闭流句柄对授予 oplock。 操作被阻止，正在等待确认破坏 oplock，继续等待，直到关闭的机会锁所有者的句柄。
--   FSCTL\_REQUEST\_OPLOCK
-    -   通过指定请求\_OPLOCK\_输入\_标志\_中的 ACK**标志**成员的请求\_OPLOCK\_输入\_缓冲区作为结构传递*lpInBuffer*的参数[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)，此 FSCTL 用于确认的 Windows 7 oplock 的分页符。 确认是必需的仅当请求\_OPLOCK\_输出\_标志\_ACK\_中设置了必需标志**标志**成员请求\_OPLOCK\_输出\_缓冲区结构作为传递*lpOutBuffer*参数的[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)。 以类似方式[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)并[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)可用于确认从内核模式的 Windows 7 oplock。 有关详细信息，请参阅[ **FSCTL\_请求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)。
+    -   对于批处理或筛选器 oplock，此 FSCTL 指示 oplock 所有者要关闭被授权者的流句柄。 操作被阻止，正在等待 oplock 中断的确认，继续等待，直到 oplock 所有者的句柄结束。
+-   FSCTL\_请求\_OPLOCK
+    -   通过在请求的**Flags**成员中指定请求\_OPLOCK\_输入\_标志\_确认\_OPLOCK\_输入\_传递为[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)的*lpInBuffer*参数的缓冲结构，则此 FSCTL 用于确认 Windows 7 oplock 的中断。 仅当请求\_OPLOCK\_OUTPUT\_标志在请求的**Flags**成员中设置\_ACK\_"请求的标志"\_输出\_[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)的*lpOutBuffer*参数。\_ 同样， [**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)和[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)可用于从内核模式确认 Windows 7 oplock。 有关详细信息，请参阅[**FSCTL\_REQUEST\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)。
 
-一个相关 FSCTL 代码是 FSCTL\_OPLOCK\_中断\_通知。 当调用方想要在给定的流上破坏 oplock 完成时通知时使用此代码。 此调用可能会阻止。 当 FSCTL\_OPLOCK\_中断\_通知调用将返回状态\_成功时，这表示以下值之一：
+相关的 FSCTL 代码是 FSCTL\_OPLOCK\_中断\_通知。 如果调用方想要在给定流上的 oplock 中断完成时收到通知，则使用此代码。 此调用可能会阻止。 当 FSCTL\_OPLOCK\_BREAK\_通知调用返回状态\_成功时，这表示下列内容之一：
 
--   没有授予 oplock。
+-   未授予 oplock。
 
--   在调用时，进度时没有破坏 oplock。
+-   调用时没有正在进行的 oplock 中断。
 
--   任何正在进行的破坏 oplock 现已完成。
+-   现在已完成任何正在进行的 oplock 中断。
 
-发送的确认时应不发送任何确认是一个错误，并确认 FSCTL IRP 失败，状态\_无效\_OPLOCK\_协议。
+若要在不需要确认时发送确认，则为错误，确认 FSCTL IRP 失败，状态\_无效的\_OPLOCK\_协议。
 
-关闭该文件为其请求需要破坏 oplock 句柄将隐式确认中断。 对于共享冲突 oplock，机会锁持有者可以关闭文件句柄，确认破坏 oplock，并阻止其他用户共享冲突的文件。
+如果关闭请求 oplock 中断的文件的句柄，则会隐式确认中断。 对于共享冲突的 oplock 中断，oplock 持有者可以关闭文件句柄，该句柄可确认 oplock 中断，并防止文件的其他用户发生共享冲突。
 
  
 

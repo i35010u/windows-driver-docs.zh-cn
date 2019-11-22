@@ -1,24 +1,24 @@
 ---
 title: OID_WWAN_LTE_ATTACH_STATUS
-description: OID_WWAN_LTE_ATTACH_STATUS 用于通知的最后一个使用 LTE OS 附加上下文。
+description: OID_WWAN_LTE_ATTACH_STATUS 用于通知操作系统上次使用的 LTE 附加上下文。
 ms.assetid: 394650CF-5410-40C6-8749-D941DF68D303
 ms.date: 08/23/2018
-keywords: -OID_WWAN_LTE_ATTACH_STATUS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_LTE_ATTACH_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a1355569f886c606cbf9c5e3cef5710a81a8303
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ba8296f592e77cd98f1a7b64ba09fd80446345a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353713"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843838"
 ---
-# <a name="oidwwanlteattachstatus"></a>OID_WWAN_LTE_ATTACH_STATUS
+# <a name="oid_wwan_lte_attach_status"></a>OID_WWAN_LTE_ATTACH_STATUS
 
-OID_WWAN_LTE_ATTACH_STATUS 用于通知的最后一个使用默认 OS LTE 附加上下文。
+OID_WWAN_LTE_ATTACH_STATUS 用于通知操作系统上次使用的默认 LTE 附加上下文。
 
-微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS_STATUS_INDICATION_REQUIRED 到原始请求更高版本发送前[NDIS_STATUS_WWAN_LTE_ATTACH_STATUS](ndis-status-wwan-lte-attach-status.md)通知包含[ **NDIS_WWAN_LTE_ATTACH_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)结构，它描述了最后一个使用的默认 LTE 附加上下文。
+微型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回到原始请求，然后再发送[NDIS_STATUS_WWAN_LTE_ATTACH_STATUS](ndis-status-wwan-lte-attach-status.md)通知，其中包含描述上次使用的默认 LTE 附加上下文的[**NDIS_WWAN_LTE_ATTACH_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)结构。
 
-不适用集发出的请求。
+设置请求不适用。
 
 ## <a name="remarks"></a>备注
 
@@ -28,13 +28,13 @@ OID_WWAN_LTE_ATTACH_STATUS 用于通知的最后一个使用默认 OS LTE 附加
 
 |   |   |
 | --- | --- |
-| Version | Windows 10 版本 1703 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows 10 版本 1703 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 
 [NDIS_STATUS_WWAN_LTE_ATTACH_STATUS](ndis-status-wwan-lte-attach-status.md)
 
-[**NDIS_WWAN_LTE_ATTACH_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)
+[**NDIS_WWAN_LTE_ATTACH_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_lte_attach_status)

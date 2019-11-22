@@ -9,12 +9,12 @@ keywords:
 - CustomDpc
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a957d8888e3730e39f10264f734f6111491b4e9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b13fe14e4e891198ece076914c961f0f1754dd98
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385256"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838681"
 ---
 # <a name="guidelines-for-writing-dpc-routines"></a>有关编写 DPC 例程的指导原则
 
@@ -22,45 +22,45 @@ ms.locfileid: "67385256"
 
 
 
-编写时记住以下几点[ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)或[ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine)例程：
+编写[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)或[*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程时，请记住以下几点：
 
--   一个*DpcForIsr*或*CustomDpc*例程必须同步到物理设备时，其访问权限和对共享的状态的任何信息或资源维护驱动程序，但使用驱动程序的其他例程的访问相同的设备或内存位置。
+-   *DpcForIsr*或*CustomDpc*例程必须将其访问权限同步到物理设备、驱动程序维护的任何共享状态信息或资源，以及访问同一设备或内存位置的驱动程序的其他例程。
 
-    如果*DpcForIsr*或*CustomDpc*例程与 ISR 共享设备或状态时，必须调用[ **KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesynchronizeexecution)提供驱动程序提供的地址[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程的程序在设备或访问共享的状态。 有关详细信息，请参阅[使用临界区](using-critical-sections.md)。
+    如果*DpcForIsr*或*CUSTOMDPC*例程与 ISR 共享设备或状态，则它必须调用[**KeSynchronizeExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesynchronizeexecution)，提供驱动程序提供的、用于对设备进行访问的[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程的地址共享状态。 有关详细信息，请参阅[使用关键部分](using-critical-sections.md)。
 
-    如果*DpcForIsr*或*CustomDpc*例程共享状态或资源，例如联锁的队列或具有 ISR 以外的例程的计时器对象，它必须保护共享的状态或使用的资源驱动程序初始化 executive 自旋锁。 有关详细信息，请参阅[旋转锁](spin-locks.md)。
+    如果 " *DpcForIsr* " 或 " *CustomDpc* " 例程共享状态或资源（例如联锁队列或计时器对象，而不是 ISR 除外），则它必须使用驱动程序初始化的执行旋转锁来保护共享状态或资源。 有关详细信息，请参阅[自旋锁](spin-locks.md)。
 
--   *DpcForIsr*并*CustomDpc*例程运行在 IRQL = 调度\_级别，限制可以调用的支持例程集。
+-   *DpcForIsr*和*CUSTOMDPC*例程以 IRQL = 调度\_级别运行，这会限制它们可调用的支持例程集。
 
-    例如， *DpcForIsr*并*CustomDpc*例程不能访问或分配可分页内存，并且不能等待[内核调度程序对象](kernel-dispatcher-objects.md)设置为发出信号状态。 但是，它们可以获取和释放使用的驱动程序的执行数值调节钮锁[ **KeAcquireSpinLockAtDpcLevel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keacquirespinlockatdpclevel)并[ **KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleasespinlockfromdpclevel)，它运行速度更快比**KeAcquireSpinLock**并**KeReleaseSpinLock**。
+    例如， *DpcForIsr*和*CustomDpc*例程既无法访问也不分配可分页内存，并且它们无法等待将[内核调度程序对象](kernel-dispatcher-objects.md)设置为已终止状态。 另一方面，他们可以使用[**KeAcquireSpinLockAtDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel)和[**KeReleaseSpinLockFromDpcLevel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)获取和释放驱动程序的 executive 旋转锁，这比**KeAcquireSpinLock**和**KeReleaseSpinLock**运行得更快。
 
-    尽管 DPC 例程不能进行阻塞调用，但可以在中运行的工作项进行排队[系统工作线程](system-worker-threads.md)运行在 IRQL = 被动\_级别。 工作项可以等待调度程序对象的阻止调用。 若要将工作项，排队*DpcForIsr*例程通常如调用例程[ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem)，和一个*CustomDpc*例程通常会调用[ **ExQueueWorkItem** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exqueueworkitem)例程。
+    尽管 DPC 例程无法进行阻止调用，但它可以将工作项排队，使其在以 IRQL = 被动\_级别运行的[系统工作线程](system-worker-threads.md)中运行。 工作项可以发出等待调度程序对象的阻止调用。 若要将工作项排队， *DpcForIsr*例程通常会调用例程（如[**IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)），而*CustomDpc*例程通常会调用[**ExQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exqueueworkitem)例程。
 
--   *DpcForIsr*并*CustomDpc*例程是通常负责启动下一步的 I/O 操作在设备上。
+-   *DpcForIsr*和*CustomDpc*例程通常负责在设备上启动下一次 i/o 操作。
 
-    使用直接 I/O 的最低级别的物理设备驱动程序，此职责可能包括将[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程进行编程设备将传输更多的数据才能符合要求驱动程序调用之前的当前 IRP [ **IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostartnextpacket)。
+    对于使用直接 i/o 的最低级别物理设备驱动程序，这种责任可以包括使用[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程来对设备进行编程，以便在驱动程序调用[**IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)之前，满足当前 IRP 的要求。
 
--   *DpcForIsr*并*CustomDpc*例程的短暂期间内，只应运行，并且应委托以尽可能接近工作线程太多处理。
+-   *DpcForIsr*和*CustomDpc*例程只应运行一小段时间，并将尽可能多的处理委托给工作线程。
 
-    上一个处理器的 DPC 例程时，会阻止所有线程在同一个处理器上运行。 排队并准备好运行的其他 DPC 例程可以阻止执行，直到完成当前的 DPC 例程。 若要避免降低系统的响应能力，典型的 DPC 例程应运行不超过 100 个微秒次调用时。 如果任务需要超过 100 微秒为单位，并且必须执行在 IRQL = 调度\_级别，DPC 例程后，应该结束 100 微秒以下且一个或多个计划[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)若要在以后完成任务的例程。 有关详细信息*CustomTimerDpc*例程，请参阅[计时器对象和 dpc 进行标记](timer-objects-and-dpcs.md)。
+    当 DPC 例程在处理器上运行时，会阻止所有线程在同一处理器上运行。 在当前 DPC 例程结束之前，已排队且可运行的其他 DPC 例程可以被阻止执行。 为避免降级系统响应能力，每次调用一个典型的 DPC 例程时，其运行时间不会超过100微秒。 如果任务需要的时间超过100微秒，并且必须以 IRQL = 调度\_级别执行，则 DPC 例程应在100微秒后结束，并计划一个或多个[*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程以便以后完成该任务。 有关*CustomTimerDpc*例程的详细信息，请参阅[Timer 对象和 dpc](timer-objects-and-dpcs.md)。
 
-    DPC 例程应仅执行的任务，都必须运行在调度\_级别，然后委托所有剩余中断相关的工作线程运行的 IRQL = 被动\_级别。 例如，一个 DPC 例程可以排入队列要在中运行的工作项[系统工作线程](system-worker-threads.md)。
+    DPC 例程只应执行必须在调度\_级别运行的任务，然后将任何剩余中断相关的工作委托给以 IRQL = 被动\_级别运行的线程。 例如，DPC 例程可将工作项排队，使其在[系统工作线程](system-worker-threads.md)中运行。
 
-    DPC 调用的例程[ **KeStallExecutionProcessor** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-kestallexecutionprocessor)来延迟执行的例程不能指定多个 100 微秒为单位的延迟。
+    调用[**KeStallExecutionProcessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestallexecutionprocessor)例程以延迟执行的 DPC 例程不得指定超过100毫秒的延迟。
 
-    使用在 WDK 中的性能分析工具来评估 DPC 例程的执行时间。 有关使用示例[Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)工具来监视 DPC 执行时间，请参阅[示例 15:测量 DPC/ISR 时间](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-15--measuring-dpc-isr-time)。
+    使用 WDK 中的性能分析工具来评估 DPC 例程的执行时间。 有关使用[Tracelog](https://docs.microsoft.com/windows-hardware/drivers/devtest/tracelog)工具监视 dpc 执行时间的示例，请参阅[示例15：度量 Dpc/ISR Time](https://docs.microsoft.com/windows-hardware/drivers/devtest/example-15--measuring-dpc-isr-time)。
 
--   如果驱动程序使用 DMA 并将其[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程返回**KeepObject**或者**DeallocateObjectKeepRegisters** （从而保留系统 DMA 控制器通道或其他传输操作的主机总线适配器）， *DpcForIsr*或*CustomDpc*例程会释放适配器对象或映射中注册[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)或[ **FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)完成当前之前IRP，并返回控件。
+-   如果驱动程序使用 DMA 并且其[*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程返回**KeepObject**或**DEALLOCATEOBJECTKEEPREGISTERS** （从而保留系统 DMA 控制器通道或用于其他传输操作的总线主适配器），则*DpcForIsr*或*CustomDpc*例程负责在完成当前 IRP 并返回控制权之前释放适配器对象或映射到[**FreeAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel)或[**FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers) 。
 
--   如果最低级别的物理设备驱动程序设置了[控制器对象](using-controller-objects.md)同步 I/O 操作通过控制器到连接的设备，其*DpcForIsr*或*CustomDpc*例程会释放控制器对象使用[ **IoFreeController** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iofreecontroller)完成当前的 IRP，并将控件返回之前。
+-   如果最低级别的物理设备驱动程序设置[控制器对象](using-controller-objects.md)，以便通过控制器将 i/o 操作同步到连接的设备，则其*DpcForIsr*或*CustomDpc*例程负责释放控制器对象在完成当前 IRP 并返回 control 之前，使用[**IoFreeController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iofreecontroller) 。
 
--   *DpcForIsr*并*CustomDpc*例程是通常负责给定请求，如果有必要，并且有可能，以及重试当前请求的处理过程中出现的任何设备错误日志记录设置 I/O 状态块以及调用[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)当前 IRP 的。
+-   *DpcForIsr*和*CustomDpc*例程通常负责记录处理给定请求期间发生的任何设备错误、在必要时重试当前请求，以及设置 i/o 状态块和为当前 IRP 调用[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest) 。
 
--   如果驱动程序和设备支持重叠的 I/O 操作，该驱动程序必须遵循的规则[处理重叠的 I/O 操作](handling-overlapped-i-o-operations.md)。
+-   如果驱动程序和设备支持重叠的 i/o 操作，则驱动程序必须遵循用于[处理重叠 i/o 操作](handling-overlapped-i-o-operations.md)的规则。
 
--   *DpcForIsr*或*CustomDpc*的任何驱动程序例程通常完成 I/O 处理，仅为子集公共的 I/O 控制代码的驱动程序必须支持。 具体而言，DPC 例程完成操作的设备控制请求具有以下特征：
-    -   将物理设备的状态更改的请求
-    -   要求返回有关物理设备本身不稳定信息请求
+-   任何驱动程序的*DpcForIsr*或*CustomDpc*例程通常只为驱动程序必须支持的公共 i/o 控制代码子集完成 i/o 处理。 特别是，DPC 例程完成了具有以下特征的设备控制请求操作：
+    -   更改物理设备状态的请求
+    -   要求返回有关物理设备的固有可变信息的请求
 
  
 

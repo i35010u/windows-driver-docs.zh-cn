@@ -4,18 +4,18 @@ description: 使用分散/聚合 DMA
 ms.assetid: dacc618f-d4d4-4c3c-a18c-baeef779e931
 keywords:
 - AdapterListControl 例程
-- 散播-聚集 DMA WDK I/O
+- 散播/聚集 DMA WDK i/o
 - PutScatterGatherList
 - GetScatterGatherList
-- DMA 传输 WDK 内核，散播-聚集 DMA
+- DMA 传输 WDK 内核、散播/聚集 DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c50cb5d5789f48b1cc96b8540f47c729496c3f63
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf5cadf5c8f33c6af38f4d30a497a0ffaa100ade
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387004"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72835872"
 ---
 # <a name="using-scattergather-dma"></a>使用分散/聚合 DMA
 
@@ -23,63 +23,63 @@ ms.locfileid: "67387004"
 
 
 
-执行系统的驱动程序或总线 master、 基于数据包的 DMA 可以使用专门设计用于分散/聚拢 DMA 支持例程。 而不是调用的一系列中所述的例程[Using Packet-Based 系统 DMA](using-packet-based-system-dma.md)并[基于数据包的总线-Master DMA](using-packet-based-bus-master-dma.md)，驱动程序可以使用[ **GetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_scatter_gather_list)并[ **PutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_scatter_gather_list)。
+执行系统或总线主机的驱动程序，基于数据包的 DMA 可以使用专为散播/聚集 DMA 设计的支持例程。 驱动程序可以使用[**GetScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pget_scatter_gather_list)和[**PutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pput_scatter_gather_list)，而不是调用[使用基于数据包的系统 Dma](using-packet-based-system-dma.md)和[基于数据包的总线主机 dma](using-packet-based-bus-master-dma.md)中所述的例程序列。
 
-设备不需要具有其驱动程序使用这些例程的内置散播-聚集支持。
+设备不需要为其驱动程序提供内置的散播/聚集支持即可使用这些例程。
 
-使用基于数据包的 DMA 的驱动程序调用散播-聚集操作支持例程的以下一般规则：
+使用基于数据包的 DMA 的驱动程序将调用以下常规的支持例程序列来实现散点/收集操作：
 
-1.  [**MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)进入 MDL，用作对的调用中的参数所需索引**GetScatterGatherList**
+1.  [**MmGetMdlVirtualAddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)获取 MDL 的索引，需要在调用**GetScatterGatherList**时作为参数
 
-2.  [**GetScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pget_scatter_gather_list)时驱动程序已准备好编程 DMA 其设备，并且需要系统 DMA 控制器或主机总线适配器
+2.  当驱动程序准备好将其设备用于 DMA 并且需要系统 DMA 控制器或主线-主适配器时， [**GetScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pget_scatter_gather_list)
 
-    **GetScatterGatherList**分配系统 DMA 控制器或主机总线适配器，确定多少映射注册所需和分配它们，填充在散播-聚集列表中，并调用驱动程序的[ *AdapterListControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_list_control)例程 DMA 控制器或适配器和映射寄存器不可用时。
+    **GetScatterGatherList**分配系统 dma 控制器或主线主机适配器，确定需要多少个映射寄存器，并在其中填充散点/集合列表，并在 DMA 控制器或适配器和映射寄存器可用时调用驱动程序的[*AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)例程。
 
-3.  [**PutScatterGatherList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pput_scatter_gather_list)只要所请求的所有数据已都传输或驱动程序将 IRP 因设备 I/O 错误而失败
+3.  一旦传输了所有请求的数据，或由于出现设备 i/o 错误， [**PutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pput_scatter_gather_list)将导致 IRP 失败
 
-    **PutScatterGatherList**刷新适配器缓冲区、 释放映射寄存器中，并释放分散/集中列表。 该驱动程序必须调用**PutScatterGatherList**它可以访问缓冲区中的数据之前。
+    **PutScatterGatherList**刷新适配器缓冲区，释放映射寄存器，并释放散点/集合列表。 驱动程序必须先调用**PutScatterGatherList** ，然后才能访问缓冲区中的数据。
 
-所返回的适配器对象指针**IoGetDmaAdapter**是必需的参数，为每个例程除**MmGetMdlVirtualAddress**，这需要一个指向在 MDL *Irp* - &gt; **MdlAddress**。
+**IoGetDmaAdapter**返回的适配器对象指针是上述每个例程的必需参数（ **MmGetMdlVirtualAddress**除外），这需要指向*Irp*-的 MDL &gt;**MdlAddress**。
 
-**GetScatterGatherList**例程包括对调用**AllocateAdapterChannel**并**MapTransfer**，因此驱动程序不需要进行这些调用。 例程将执行以下内容作为参数：
+**GetScatterGatherList**例程包括对**AllocateAdapterChannel**和**MapTransfer**的调用，因此，驱动程序不必进行这些调用。 例程采用以下参数：
 
--   一个指向[ **DMA\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_dma_adapter)返回的结构[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
+-   一个指针，指向由[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)返回的[**DMA\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_dma_adapter)结构
 
--   指向 DMA 操作的目标设备对象的指针
+-   一个指针，指向 DMA 操作的目标设备对象
 
--   指向描述在缓冲区 MDL *Irp*-&gt;**MdlAddress**
+-   指向 MDL 的指针，该 MDL 描述*Irp*-的缓冲区 &gt;**MdlAddress**
 
--   指向描述 Mdl 缓冲区中的当前虚拟地址的指针
+-   一个指针，指向由 Mdl 描述的缓冲区中的当前虚拟地址
 
 -   要映射的字节数
 
--   一个指向[ *AdapterListControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_list_control)执行传输例程
+-   指向执行传输的[*AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)例程的指针
 
--   指向要传递给驱动程序定义的上下文区域的指针*AdapterListControl*例程
+-   指向要传递到*AdapterListControl*例程的驱动程序定义的上下文区域的指针
 
--   一个布尔值：**TRUE**传输给设备;**FALSE**否则为
+-   布尔值：对于到设备的传输，为**TRUE** ;否则**为 FALSE**
 
-确定所需的映射寄存器的数目之后, 分配适配器通道和映射寄存器，散播-聚集列表中填充并准备进行传输， **GetScatterGatherList**调用驱动程序提供*AdapterListControl*例程。 *AdapterListControl*例程将 IRQL 在任意线程上下文中运行 = 调度\_级别。
+确定所需的映射寄存器的数目后，分配适配器通道和映射寄存器，填写散点/集合列表并准备传输， **GetScatterGatherList**将调用驱动程序提供的*AdapterListControl*例程。 *AdapterListControl*例程以 IRQL = 调度\_级别的任意线程上下文中运行。
 
-*AdapterListControl*例程在调用中的驱动程序提供**GetScatterGatherList**不同于[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)传递给例程**AllocateAdapterChannel**中以下重要尊重：
+在对**GetScatterGatherList**的调用中，驱动程序提供的*AdapterListControl*例程不同于在以下重要方面传递给**AllocateAdapterChannel**的[*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程：
 
--   *AdapterListControl*例程采用没有返回值，而*AdapterControl*例程返回[ **IO\_分配\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_io_allocation_action).
+-   *AdapterListControl*例程没有返回值，而*AdapterControl*例程返回[ **\_操作的 IO\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_io_allocation_action)。
 
--   而不是一个指向*MapRegisterBase*系统分配的映射寄存器，到第三个参数为*AdapterListControl*例程改为指向[ **散点图\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_scatter_gather_list)驱动程序可以通过它执行 DMA 的结构。
+-   *AdapterListControl*例程的第三个参数而不是指向系统分配的映射寄存器的*MapRegisterBase*的指针，而是指向[ **\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_scatter_gather_list)结构驱动程序可以执行 DMA。
 
--   *AdapterListControl*例程执行中所需的任务的一小部分*AdapterControl*例程。
+-   *AdapterListControl*例程执行*AdapterControl*例程中所需的部分任务。
 
-    *AdapterListControl*例程不会调用**AllocateAdapterChannel**或**MapTransfer**。 其唯一职责是保存输入的散播-聚集列表指针，设置其设备，并使用散播-聚集列表来执行 DMA。
+    *AdapterListControl*例程不调用**AllocateAdapterChannel**或**MapTransfer**。 其唯一职责是保存输入散播/聚集列表指针，设置其设备，并使用散点/集合列表执行 DMA。
 
-散播-聚集列表结构包括**散点图\_收集\_元素**数组和数组中的元素数。 数组的每个元素提供的长度和从物理上连续散播-聚集区域的物理地址。 驱动程序使用在数据传输中的长度和地址。
+散点图/集合列表结构包含**散点图\_\_元素**数组和数组中元素的数目。 数组的每个元素都提供物理上邻接的分散/收集区域的长度和起始物理地址。 驱动程序在数据传输中使用长度和地址。
 
-驱动程序可以使用**GetScatterGatherList**而不考虑其设备支持散播-聚集 DMA 的是否。 设备不支持散播-聚集 DMA，散播-聚集列表将包含仅有一个元素。
+无论设备是否支持散播/聚集 DMA，驱动程序都可以使用**GetScatterGatherList** 。 对于不支持散点/集合 DMA 的设备，散点/集合列表将仅包含一个元素。
 
-使用散播-聚集例程通过调用可以提高性能**AllocateAdapterChannel** (如前面所述[Using Packet-Based 系统 DMA](using-packet-based-system-dma.md)和[基于使用的数据包的Bus-Master DMA](using-packet-based-bus-master-dma.md))。 与对的调用不同**AllocateAdapterChannel**，对多个调用**GetScatterGatherList**可以将排队以进行设备对象一次。 驱动程序可以调用**GetScatterGatherList**再次用于在之前的相同驱动程序对象上的另一 DMA 操作其*AdapterListControl*例程已完成执行。
+使用散点/收集例程可以提高调用**AllocateAdapterChannel**的性能（如前面[使用基于数据包的系统 Dma](using-packet-based-system-dma.md)和[使用基于数据包的总线主机 dma](using-packet-based-bus-master-dma.md)中所述）。 不同于对**AllocateAdapterChannel**的调用，可以在任何一**次为设备**对象将多个调用排入队列。 当驱动程序的*AdapterListControl*例程执行完毕之前，驱动程序可以再次为同一驱动程序对象上的另一个 DMA 操作调用**GetScatterGatherList** 。
 
-在从驱动程序提供返回*AdapterListControl*例程**GetScatterGatherList**保留映射注册但释放 DMA 适配器结构。
+当从驱动程序提供的*AdapterListControl*例程返回时， **GetScatterGatherList**将保留映射寄存器，但会释放 DMA 适配器结构。
 
-当驱动程序已满足当前 IRP 的传输请求，或者必须失败由于设备或总线 I/O 错误 IRP 时，它必须调用**PutScatterGatherList**它可以访问缓冲区中传输的数据之前。 **PutScatterGatherList**刷新适配器缓冲区并释放映射寄存器和分散/集中列表。
+当驱动程序已满足当前 IRP 的传输请求或由于设备或总线 i/o 错误而导致 IRP 失败时，它必须先调用**PutScatterGatherList** ，然后才能访问缓冲区中传输的数据。 **PutScatterGatherList**刷新适配器缓冲区并释放 "映射寄存器" 和 "散点/集合" 列表。
 
  
 

@@ -3,41 +3,41 @@ title: OID_WWAN_UICC_FILE_STATUS
 description: OID_WWAN_UICC_FILE_STATUS 检索有关指定 UICC 文件的信息。
 ms.assetid: 1FD3E140-1CE3-416C-8CB4-27012363B60B
 ms.date: 04/09/2019
-keywords: -OID_WWAN_UICC_FILE_STATUS 网络与 Windows Vista 一起启动的驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_UICC_FILE_STATUS 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 62c39aa0f07d354ea2bfec8e350dfb4568889ad8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d0d247384205d1d439e77bf86224ece343ce9c17
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387344"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843770"
 ---
-# <a name="oidwwanuiccfilestatus"></a>OID_WWAN_UICC_FILE_STATUS
+# <a name="oid_wwan_uicc_file_status"></a>OID_WWAN_UICC_FILE_STATUS
 
 OID_WWAN_UICC_FILE_STATUS 检索有关指定 UICC 文件的信息。 
 
-查询有效负载包含[ **NDIS_WWAN_UICC_FILE_PATH** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_path)结构，它包含有关目标文件的信息。 微型端口驱动程序必须处理查询请求，一开始以异步方式返回 NDIS_STATUS_INDICATION_REQUIRED 到原始请求更高版本发送前[NDIS_STATUS_WWAN_UICC_FILE_STATUS](ndis-status-wwan-uicc-file-status.md)状态通知包含[ **NDIS_WWAN_UICC_FILE_STATUS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)结构，它描述指定的文件。 
+查询负载包含包含目标文件相关信息的[**NDIS_WWAN_UICC_FILE_PATH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_path)结构。 微型端口驱动程序必须异步处理查询请求，最初将 NDIS_STATUS_INDICATION_REQUIRED 返回到原始请求，然后再发送[NDIS_STATUS_WWAN_UICC_FILE_STATUS](ndis-status-wwan-uicc-file-status.md)状态通知，其中包含描述指定文件的[**NDIS_WWAN_UICC_FILE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)结构。 
 
-不适用集发出的请求。
+设置请求不适用。
 
 ## <a name="remarks"></a>备注
 
-有关此 OID 的使用情况的详细信息，请参阅[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)。
+有关此 OID 的用法的详细信息，请参阅[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)。
 
 ## <a name="requirements"></a>要求
 
 |   |   |
 | --- | --- |
-| Version | Windows 10 版本 1903 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+| 版本 | Windows 10 版本 1903 |
+| 标头 | Ntddndis （包括 Ndis .h） |
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
+[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_UICC_UICC_FILE_STATUS](ndis-status-wwan-uicc-file-status.md)
 
-[**NDIS_WWAN_UICC_FILE_PATH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_path) 
+[**NDIS_WWAN_UICC_FILE_PATH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_path) 
 
-[**NDIS_WWAN_UICC_FILE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)
+[**NDIS_WWAN_UICC_FILE_STATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_uicc_file_status)

@@ -3,122 +3,122 @@ title: 保证向前推进 I/O 操作
 description: 保证向前推进 I/O 操作
 ms.assetid: e230eb3b-54ac-43b1-ac2b-8fa137cee43e
 keywords:
-- 保证向前推进 WDK KMDF
-- 取得进展，保证 WDK KMDF
-- 内存不足的情况下 WDK KMDF
-- I/O 队列 WDK KMDF，保证向前推进
+- 保证前进进度 WDK KMDF
+- 前进进度，保证 WDK KMDF
+- 低内存情况 WDK KMDF
+- I/o 队列 WDK KMDF，保证前进进度
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a14ea003fbd2bc4235983bd7d9a445667204eb4e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55986d5528de4cfcbb385e8c0c98aba0e35d3fa1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382854"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844433"
 ---
 # <a name="guaranteeing-forward-progress-of-io-operations"></a>保证向前推进 I/O 操作
 
 
-某些驱动程序，例如存储驱动程序对于系统的分页设备，必须至少执行某些支持 I/O 操作而不会失败，若要避免丢失重要的系统数据。 驱动程序故障的一个潜在的原因是内存不足的情况。 如果框架或驱动程序无法分配足够的内存来处理 I/O 请求，一个或另一个可能失败的 I/O 请求[完成](completing-i-o-requests.md)它并显示错误状态的值。
+某些驱动程序，如系统的分页设备的存储驱动程序，必须至少执行其部分受支持的 i/o 操作，以避免丢失关键系统数据。 驱动程序故障的一个可能原因是内存不足的情况。 如果框架或驱动程序无法分配足够的内存来处理 i/o 请求，则一个或另一个可能必须通过使用错误状态值完成 i/o 请求，才能[完成](completing-i-o-requests.md)i/o 请求。
 
-在之前版本 1.9 KMDF 的版本，框架为总是失败的 I/O 请求如果它不能为 I/O 管理器已发送到驱动程序到 I/O 请求数据包 (IRP) 分配一个框架请求对象。 若要提供的驱动程序期间内存不足的情况下处理 I/O 请求的功能，版本 1.9 及更高版本的 framework 提供*保证向前推进*I/O 队列的功能。
+在版本1.9 之前的 KMDF 版本中，如果不能为 i/o 管理器发送到驱动程序的 i/o 请求数据包（IRP）分配框架请求对象，则该框架始终会失败。 为了使驱动程序能够在内存不足的情况下处理 i/o 请求，版本1.9 和更高版本的框架为 i/o 队列提供了一个可*保证的前进进度*功能。
 
-此功能使框架和预分配的内存的驱动程序的请求对象和与请求相关的驱动程序的上下文缓冲区，分别设置。 框架和驱动程序使用此预先分配的内存的系统内存量较低时仅。
+此功能可让框架和驱动程序分别为请求对象集和请求相关的驱动程序上下文缓冲区预分配内存。 仅当系统内存量很低时，框架和驱动程序才使用此预分配内存。
 
-### <a name="features-of-guaranteed-forward-progress"></a>有保证的向前推进的功能
+### <a name="features-of-guaranteed-forward-progress"></a>保证前进进度的功能
 
-通过使用 I/O 队列框架的有保证的向前推进，驱动程序可以：
+通过使用框架的 i/o 队列的可保证前进进度，驱动程序可以：
 
--   让 framework 预分配的请求对象期间内存不足的情况下使用与特定的 I/O 队列集。
+-   要求框架在内存不足的情况下预先分配一组要用于特定 i/o 队列的请求对象。
 
--   提供预分配期间内存不足的情况下从框架接收预分配的请求对象时，可以使用该驱动程序的特定于请求的资源的回调函数。
+-   提供一个回调函数，该函数预先分配在低内存情况下，驱动程序在从框架接收预分配请求对象时可以使用的特定于请求的资源。
 
--   提供的 I/O 请求分配特定于驱动程序的资源时内存不足的情况下具有另一个回调函数*不*已检测到。 如果此回调函数的分配失败由于内存不足的情况下，它可以指示是否在框架应使用的一个预分配的请求对象。
+-   当*未*检测到内存不足的情况时，提供另一个回调函数，该函数为 i/o 请求分配特定于驱动程序的资源。 如果此回调函数的分配由于内存不足而失败，则它可以指示框架是否应使用其预分配请求对象之一。
 
--   指定的 I/O 请求都需要使用预先分配的请求对象。 选项包括使用所有 Irp，分页 I/O 操作正在进行，或具有一个其他驱动程序的回调函数检查每个 IRP，以确定是否使用预分配的对象，才都使用这些预分配的对象。
+-   指定哪些 i/o 请求需要使用预先分配的请求对象。 选项包括对所有 Irp 使用预先分配的对象，仅在分页 i/o 操作正在进行时使用这些对象，或让每个 IRP 检查每个 IRP 来确定是否使用预先分配的对象。
 
-如果驱动程序实现保证向前推进的一个或多个其 I/O 队列，该驱动程序将会更好能够成功[处理 I/O 请求](processing-i-o-requests.md)期间内存不足的情况。 可以实现有保证的向前推进，对于设备的默认 I/O 队列，并通过调用任何 I/O 队列用于配置您的驱动程序[ **WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)。
+如果驱动程序为其一个或多个 i/o 队列实现了保证前进进度，则驱动程序将能够更好地在内存不足的情况下成功[处理 i/o 请求](processing-i-o-requests.md)。 可以通过调用[**WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)来实现设备的默认 i/o 队列和驱动程序配置的任何 i/o 队列的可保证前进进度。
 
-该框架的保证您的驱动程序和驱动程序的向前推进功能适用的驱动程序才[I/O 目标](using-i-o-targets.md)实现能保证向前推进。 换而言之，如果驱动程序实现有保证向前推进的设备，设备的驱动程序堆栈中的所有低级驱动程序还必须都实现有保证的向前推进。
+只有当驱动程序和驱动程序的[i/o 目标](using-i-o-targets.md)都实现了保证前进进度时，框架的保证前进进度功能才适用于你的驱动程序。 换句话说，如果驱动程序实现了设备的保证前进进度，则设备的驱动程序堆栈中的所有较低级别的驱动程序还必须实施保证的前进进度。
 
-### <a name="enabling-guaranteed-forward-progress-for-an-io-queue"></a>启用保证向前推进的 I/O 队列
+### <a name="enabling-guaranteed-forward-progress-for-an-io-queue"></a>启用 i/o 队列的保证前进进度
 
-若要启用的 I/O 队列保证向前推进，您的驱动程序初始化[ **WDF\_IO\_队列\_向前\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构，然后调用[ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)方法。 如果该驱动程序调用[ **WdfDeviceConfigureRequestDispatching** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)若要配置的 I/O 队列，它必须这样做之前，它调用**WdfIoQueueAssignForwardProgressPolicy**。
+若要为 i/o 队列启用有保证的前进进度，你的驱动程序将初始化[**WDF\_IO\_queue\_向前\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构，然后调用[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)付款方式. 如果驱动程序调用[**WdfDeviceConfigureRequestDispatching**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurerequestdispatching)来配置 i/o 队列，则必须在调用**WdfIoQueueAssignForwardProgressPolicy**之前执行此操作。
 
-当驱动程序调用[ **WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)，它可以指定以下三个事件回调函数，所有这些都是可选：
+当驱动程序调用[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)时，它可以指定以下三个事件回调函数，它们都是可选的：
 
-<a href="" id="evtioallocateresourcesforreservedrequest"></a>[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)  
-驱动程序的[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数分配，并存储特定于请求的资源的请求对象的框架保留的内存不足情况。
+<a href="" id="evtioallocateresourcesforreservedrequest"></a>[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)  
+驱动程序的[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数为框架为低内存情况保留的请求对象分配和存储特定于请求的资源。
 
-框架调用此回调函数每次时，它创建一个保留的请求对象。 该驱动程序应特定于请求的资源为分配一个 I/O 请求，通常通过使用保留的请求对象的[上下文空间](framework-object-context-space.md)。
+每次创建保留请求对象时，框架都会调用此回调函数。 驱动程序应为一个 i/o 请求分配特定于请求的资源，通常使用保留的请求对象的[上下文空间](framework-object-context-space.md)。
 
-<a href="" id="evtioallocaterequestresources"></a>[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)  
-驱动程序的[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数会立即使用分配特定于请求的资源。 该框架已接收 IRP 和 IRP 为创建一个请求对象后，立即调用它。
+<a href="" id="evtioallocaterequestresources"></a>[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)  
+驱动程序的[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数将分配特定于请求的资源以便立即使用。 在框架收到 IRP 并为 IRP 创建请求对象之后立即调用此方法。
 
-如果回调函数尝试将资源分配失败，回调函数将返回一个错误状态的值。 然后，框架删除新创建的请求对象，并使用其中一个保留的请求对象。 接下来，驱动程序的[请求处理程序](request-handlers.md)使用的特定于请求的资源，其[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)以前分配的回调函数。
+如果回调函数尝试分配资源失败，则回调函数将返回错误状态值。 然后，框架会删除新创建的请求对象并使用其保留的请求对象之一。 进而，驱动程序的[请求处理程序](request-handlers.md)使用其[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数之前分配的特定于请求的资源。
 
-<a href="" id="evtiowdmirpforforwardprogress"></a>[*EvtIoWdmIrpForForwardProgress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)  
-驱动程序的[ *EvtIoWdmIrpForForwardProgress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)回调函数检查 IRP，并指示框架是否要保留的请求对象用于 IRP，或通过完成其与失败的 I/O 请求错误状态的值。
+<a href="" id="evtiowdmirpforforwardprogress"></a>[*EvtIoWdmIrpForForwardProgress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)  
+驱动程序的[*EvtIoWdmIrpForForwardProgress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)回调函数检查 irp，并告诉 framework 是为 irp 使用保留的请求对象，还是通过使用错误状态值完成 i/o 请求来使 i/o 请求失败。
 
-框架调用此回调函数，仅当该框架是无法创建新的请求对象，指示 (通过在驱动程序中设置一个标志[ **WDF\_IO\_队列\_转发\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构) 想要检查期间内存不足的情况下 Irp 的驱动程序。 换而言之，您的驱动程序可以评估每个 IRP，并确定它是否其中一个必须甚至期间内存不足的情况下处理。
+此框架仅在以下情况下调用此回调函数：框架无法创建新的请求对象并且已指示（通过在驱动程序的 WDF 中设置标志[ **\_IO\_QUEUE\_向前\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构），您希望驱动程序在内存不足的情况下检查 Irp。 换句话说，你的驱动程序可以评估每个 IRP，并决定是否在内存不足的情况下进行处理。
 
-当您的驱动程序调用[ **WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)，它还指定你想要预先分配的内存不足的情况下的框架保留请求数对象。 可以选择适合你的设备和驱动程序的请求对象的数目。 若要防止性能降低的情况，您的驱动程序通常应指定一个近似于驱动程序和设备可以并行处理的 I/O 请求数的数字。
+当你的驱动程序调用[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)时，它还指定你希望框架为低内存情况预先分配的保留请求对象的数量。 你可以选择适用于你的设备和驱动程序的请求对象的数量。 若要防止性能降低，驱动程序通常应指定一个数字，该数字应接近驱动程序和设备可以并行处理的 i/o 请求数。
 
-但是，如果您的驱动程序调用[ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)并将其[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数预分配保留的请求对象太多或过多特定于请求的资源的内存，尝试处理内存不足的情况下可以实际参与您的驱动程序。 应测试驱动程序和设备的性能，并包括内存不足的模拟，以确定最佳的编号，以选择。
+但是，如果驱动程序对[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)及其[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数的调用预先分配过多的保留请求对象或过多的请求特定的资源内存，您的驱动程序实际上可能会导致您尝试处理的低内存情况。 你应该测试驱动程序和设备的性能，并包括低内存模拟，以确定要选择的最佳数字。
 
-之前[ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)返回时，框架将创建和保留已指定驱动程序的请求对象的数目。 每次它保留了一个请求对象时，框架将立即调用的驱动程序[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数，以便该驱动程序可以分配并保存特定于请求的资源，在用例 framework 实际上使用保留的请求对象。
+在[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)返回之前，框架创建并保留驱动程序指定的请求对象数。 每次它保留一个请求对象时，框架会立即调用驱动程序的[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数，以便驱动程序可以分配并保存特定于请求的资源，以防框架实际使用保留的请求对象。
 
-当一个驱动程序的[请求处理程序](request-handlers.md)接收的 I/O 请求从 I/O 队列，它可以调用[ **WdfRequestIsReserved** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisreserved)方法，以确定是否请求对象是一个框架预分配的内存不足的情况。 如果此方法返回 **，则返回 TRUE**，则驱动程序应使用的资源，其[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)保留的回调函数。
+当某个驱动程序的[请求处理程序](request-handlers.md)收到 i/o 队列的 i/o 请求时，它可以调用[**WdfRequestIsReserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved)方法来确定该请求对象是否为框架为低内存情况预先分配的对象。 如果此方法返回**TRUE**，则驱动程序应使用其[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数所保留的资源。
 
-如果框架使用的一个保留的请求对象，它返回的对象为其保留对象的集后，驱动程序完成请求。 该框架将请求对象和驱动程序通过调用创建的任何上下文空间保存[ **WdfDeviceInitSetRequestAttributes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)或[ **WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectallocatecontext)，以供重复使用另一个内存不足的情况下发生。
+如果框架使用其保留的请求对象之一，则在驱动程序完成请求后，它会将对象返回到其保留对象集。 框架保存 request 对象，并保存驱动程序通过调用[**WdfDeviceInitSetRequestAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)或[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)创建的任何上下文空间，以便在发生另一个低内存情况时重用。
 
-### <a name="how-the-framework-and-driver-support-guaranteed-forward-progress"></a>框架和驱动程序如何支持保证向前推进
+### <a name="how-the-framework-and-driver-support-guaranteed-forward-progress"></a>框架和驱动程序支持如何保证前进进度
 
-下面是为 I/O 队列支持保证向前推进的驱动程序和框架执行的步骤：
+下面是驱动程序和框架为支持 i/o 队列保证前进进度而执行的步骤：
 
-1.  驱动程序调用[ **WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)。
+1.  驱动程序调用[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)。
 
-    在响应中，框架会分配并将存储驱动程序指定的请求对象的数目。 如果该驱动程序之前调用[ **WdfDeviceInitSetRequestAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)，每个分配包括上下文的空间， **WdfDeviceInitSetRequestAttributes**指定。
+    在响应中，框架分配并存储驱动程序指定的请求对象数。 如果驱动程序之前调用了[**WdfDeviceInitSetRequestAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetrequestattributes)，则每个分配都包含**WdfDeviceInitSetRequestAttributes**指定的上下文空间。
 
-    此外，如果提供了驱动程序[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数，该框架调用的回调函数每次它会分配并将存储请求对象。
+    此外，如果驱动程序提供了[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数，则在每次分配和存储请求对象时，框架都会调用回调函数。
 
-2.  框架接收到的 I/O 管理器将发送到该驱动程序的 I/O 请求数据包 (IRP)。
+2.  框架接收 i/o 管理器发送到驱动程序的 i/o 请求数据包（IRP）。
 
-    框架尝试为 IRP 分配请求对象。 如果为请求类型创建的驱动程序支持的 I/O 队列保证向前推进下, 一步取决于分配是否成功或失败时：
+    框架尝试为 IRP 分配请求对象。 如果 i/o 队列由为请求类型创建的驱动程序支持保证向前进度，则下一步将取决于分配是成功还是失败：
 
     -   请求对象分配成功。
 
-        如果该驱动程序提供[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，框架调用它。 如果回调函数将返回状态\_成功，则框架会将请求添加到 I/O 队列。 如果回调函数返回一个错误状态值，框架会删除它只需创建并使用其预先分配的请求对象之一的请求对象。 当驱动程序的请求处理程序收到的请求对象时，它确定是否请求对象是预分配，因此它是使用驱动程序的预分配资源。
+        如果驱动程序提供了[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，则框架将调用它。 如果回调函数返回状态\_成功，则框架会将请求添加到 i/o 队列。 如果回调函数返回错误状态值，则框架将删除刚刚创建的请求对象，并使用其预分配请求对象之一。 当驱动程序的请求处理程序收到 request 对象时，它将确定请求对象是否已预先分配，并因此是否应使用驱动程序的预分配资源。
 
-        如果该驱动程序这样做*不*提供[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，则框架会将请求添加到 I/O 队列，就像该驱动程序并没有启用有保证的向前推进。
+        如果驱动程序未提供[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，则该框架*会*将该请求添加到 i/o 队列，就好像驱动程序没有启用保证的前进进度一样。
 
-    -   请求对象分配将失败。
+    -   请求对象分配失败。
 
-        框架执行下一步取决于为该驱动程序提供的值**ForwardProgressReservedPolicy**的成员[ **WDF\_IO\_队列\_前滚\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构。 此成员告知框架何时使用保留的请求： 往常一样，仅当 I/O 请求是分页 I/O 操作，或仅当[ *EvtIoWdmIrpForForwardProgress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)指示回调函数应使用保留的请求。
+        框架接下来要执行的操作取决于为 WDF 的**ForwardProgressReservedPolicy**成员提供的值[ **\_IO\_QUEUE\_向前\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构。 此成员通知框架何时使用保留的请求：总是，仅当 i/o 请求为分页 i/o 操作时，或仅当[*EvtIoWdmIrpForForwardProgress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)回调函数指示应使用保留的请求时。
 
-    在所有情况下，驱动程序的请求处理程序可以调用[ **WdfRequestIsReserved** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisreserved)确定框架是否具有使用保留的请求对象。 如果该驱动程序因此，应使用的请求资源，其[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)分配回调函数。
+    在所有情况下，驱动程序的请求处理程序都可以调用[**WdfRequestIsReserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved)来确定框架是否使用了保留的请求对象。 如果是这样，则驱动程序应使用[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数分配的请求资源。
 
-### <a name="guaranteed-forward-progress-scenario"></a>保证向前推进方案
+### <a name="guaranteed-forward-progress-scenario"></a>保证前进进度情况
 
-你正在编写可能包含系统的分页文件的存储设备的驱动程序。 它很重要，它读取从操作和写入到分页文件的操作会成功。
+正在为可能包含系统页面文件的存储设备编写驱动程序。 对分页文件执行读操作和写入操作非常重要。
 
-你决定创建单独的 I/O 队列进行读取和写入操作，而若要启用保证向前推进这两个这些 I/O 队列。 您决定创建其他所有请求类型的第三个 I/O 队列而不启用保证向前推进。
+您决定为读写操作创建单独的 i/o 队列，并为这两个 i/o 队列启用有保证的前进进度。 您决定为所有其他请求类型创建第三个 i/o 队列，而无需保证前进进度。
 
-您的驱动程序堆栈和设备是否能够处理并行情况下，四个写入操作，因此您设置**TotalForwardProgressRequests**的成员[ **WDF\_IO\_队列\_向前\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构到 4 之前，调用[ **WdfIoQueueAssignForwardProgressPolicy** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy).
+你的驱动程序堆栈和设备能够并行处理四个写入操作，因此，在调用[**WdfIoQueueAssignForwardProgressPolicy**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueassignforwardprogresspolicy)之前，将[**WDF\_IO\_队列\_向前\_进度\_策略**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_forward_progress_policy)结构**设置为 4** 。
 
-您决定，保证向前推进才是必要的驱动程序的设备是否分页设备，因此您的驱动程序设置**ForwardProgressReservedPolicy** WDF 成员\_IO\_队列\_前滚\_进度\_策略结构[ **WdfIoForwardProgressReservedPolicyPagingIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/ne-wdfio-_wdf_io_forward_progress_reserved_policy)。
+如果你的驱动程序的设备是寻呼设备，你决定只有驱动程序的设备设置了 WDF\_IO\_\_\_队列中的**ForwardProgressReservedPolicy**成员，然后才能进行保证前进进度 @no将策略结构 __t_5_ 到[**WdfIoForwardProgressReservedPolicyPagingIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ne-wdfio-_wdf_io_forward_progress_reserved_policy)。\_
 
-由于您的驱动程序要求的 framework 内存对象为每次读请求和每个写入请求，你可以决定您的驱动程序应预先分配要用于对其调用某些内存对象[ **WdfIoTargetFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)并[ **WdfIoTargetFormatRequestForWrite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite)在内存不足的情况下。
+由于你的驱动程序需要每个读取请求和每个写入请求都有一个 framework memory 对象，因此你决定驱动程序应预先分配一些内存对象，以便在内存不足的情况下对[**WdfIoTargetFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)和[**WdfIoTargetFormatRequestForWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite)调用。
 
-因此，该驱动程序提供了[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)读取的队列，另一个用于写入队列的回调函数。 框架将调用以上任何一个回调函数，每次该回调函数将调用[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate) ，并将保存内存不足的情况下返回的对象句柄。 由于回调函数接收预分配的请求对象的句柄，因此它可以对请求对象的内存对象的父级。 (DMA 设备的驱动程序还可能会预分配[framework DMA 对象](framework-dma-objects.md)。)
+因此，驱动程序为读取队列提供了一个[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数，并为写入队列提供另一个。 此框架每次调用其中一个回调函数时，回调函数都会调用[**WdfMemoryCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate) ，并保存返回的对象句柄以减少内存不足的情况。 由于回调函数接收预分配请求对象的句柄，因此它可以将内存对象作为该请求对象的父级。 （DMA 设备的驱动程序也可能预先分配[框架 DMA 对象](framework-dma-objects.md)。）
 
-[请求处理程序](request-handlers.md)的读取和写入队列必须确定每个收到的请求对象是一个框架内存不足的情况下为保留的。 请求处理程序可以调用[ **WdfRequestIsReserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestisreserved)，或者它可以将与所请求对象句柄进行比较的[ *EvtIoAllocateResourcesForReservedRequest* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)先前收到的回调函数。
+读取和写入队列的[请求处理程序](request-handlers.md)必须确定每个接收的请求对象是否是框架为低内存情况保留的对象。 请求处理程序可以调用[**WdfRequestIsReserved**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestisreserved)，也可以将请求对象句柄与[*EvtIoAllocateResourcesForReservedRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_resources_for_reserved_request)回调函数之前接收的句柄进行比较。
 
-该驱动程序还提供了[ *EvtIoAllocateRequestResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)读取的队列，另一个用于写入队列的回调函数。 当它收到来自 I/O 管理器的读取或写入请求并已成功创建一个请求对象时，框架将调用这些回调函数之一。 每个回调函数调用[ **WdfMemoryCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfmemory/nf-wdfmemory-wdfmemorycreate)为请求分配的内存对象。 如果分配失败，回调函数将返回错误状态值以通知框架只是发生内存不足的情况。 Framework 中，检测错误返回值，删除它只需创建并使用其预先分配的对象之一的请求对象。
+驱动程序还为读取队列提供一个[*EvtIoAllocateRequestResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_allocate_request_resources)回调函数，并为写入队列提供另一个。 框架在从 i/o 管理器接收读取或写入请求时调用其中一个回调函数，并成功创建请求对象。 其中每个回调函数都调用[**WdfMemoryCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycreate)为请求分配内存对象。 如果分配失败，回调函数将返回一个错误状态值，通知框架发生了内存不足的情况。 框架（检测错误返回值）将删除刚刚创建的请求对象，并使用它的一个预分配对象。
 
-此驱动程序不提供[ *EvtIoWdmIrpForForwardProgress* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)回调函数，因为它不需要检查各个读取或写入 Irp，框架将它们添加到的 I/O 队列之前。
+此驱动程序不提供[*EvtIoWdmIrpForForwardProgress*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_wdm_irp_for_forward_progress)回调函数，因为它不需要在框架将其添加到 i/o 队列之前检查各个读取或写入 irp。
 
-请记住，当驱动程序实现有保证向前推进的设备，设备的驱动程序堆栈中的所有低级驱动程序还必须都实现有保证的向前推进。
+请记住，当驱动程序为设备实现了保证的转发进度时，设备的驱动程序堆栈中的所有较低级别的驱动程序还必须实施保证的前进进度。
 
  
 

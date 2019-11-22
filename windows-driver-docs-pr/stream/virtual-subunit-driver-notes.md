@@ -3,49 +3,49 @@ title: 虚拟子单元驱动程序说明
 description: 虚拟子单元驱动程序说明
 ms.assetid: e484f815-73a8-46f1-956e-ee16b1856bd0
 keywords:
-- Avc.sys 功能驱动程序 WDK，虚拟子单元驱动程序
-- 虚拟子单元驱动程序 WDK AV/C
+- Avc 函数驱动程序 WDK，虚拟子单位驱动程序
+- 虚拟子单位驱动程序 WDK AV/C
 - 外部设备 WDK AV/C
 - IOCTL_AVC_CLASS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 513d35a946b564ed616b822b69850e7333981d80
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca049d36082fae78fa7ef090595053b578446caf
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385364"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845280"
 ---
 # <a name="virtual-subunit-driver-notes"></a>虚拟子单元驱动程序说明
 
 
-虚拟子单元驱动程序对控件、 状态和通知 AV/C 请求和响应命令从外部 AV/C 设备通过使用[ **IOCTL\_AVC\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)与进行交互*Avc.sys*。
+虚拟子源驱动程序通过使用具有*AVC*的[**IOCTL\_AVC\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)接口，响应来自外部 AV/c 设备的控制、状态和通知 AV/c 请求和命令。
 
-IOCTL\_AVC\_类子函数代码[ **AVC\_函数\_获取\_请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)和[ **AVC\_函数\_发送\_响应**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-send-response)是依据虚拟子单元驱动程序与虚拟驱动程序堆栈的其余部分进行交互的主要机制。 虚拟子单元驱动程序提交**AVC\_函数\_获取\_请求**IRP 到*Avc.sys*中其[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)例程 (之后 IRP\_MN\_启动\_设备完成堆栈中的基础驱动程序)。 对于 I/O 完成例程**AVC\_函数\_获取\_请求**IRP 称为每次收到虚拟子单元的请求。 I/O 完成例程必须发送响应 (通过**AVC\_函数\_发送\_响应**与异步 IRP) 内 100 毫秒 （根据 AV/C 协议规则）; 它可能会使用[ **AVC\_命令\_IRB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ns-avc-_avc_command_irb)要发送响应的请求中包含的结构。 然后必须重新提交**AVC\_函数\_获取\_请求**IRP 最后从响应的 I/O 完成例程返回之前。
+IOCTL\_AVC\_类 subfunction 代码[**AVC\_函数\_获取\_请求**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-get-request)和[**AVC\_函数\_发送\_响应**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-send-response)是虚拟子单位驱动程序的关键机制与虚拟驱动程序堆栈的其余部分交互。 虚拟子单位驱动程序提交**AVC\_函数\_** 在其 IRP\_MN 中获取\_请求 Irp 到*AVC* [ **\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)例程（IRP\_MN\_启动\_设备已由堆栈中的基础驱动程序完成。 每次收到虚拟子单位的请求时，都将调用**AVC\_函数\_获取\_请求**IRP 的 i/o 完成例程。 I/o 完成例程必须发送响应（通过**AVC\_函数\_通过异步 IRP 发送\_响应**）在 100 ms 内（根据 AV/C 协议规则）;它可以使用请求中包含的[**AVC\_命令\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)结构来发送响应。 然后，它必须重新提交**AVC\_函数，\_获取\_请求**IRP，然后最后从响应的 i/o 完成例程返回。
 
-中的虚拟驱动程序堆栈的子单元驱动程序不能直接向外部设备发送命令。 对等方驱动程序堆栈提供此功能。 但是，可以使用虚拟子单元驱动程序[ **AVC\_函数\_查找\_对等方\_执行**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-find-peer-do)并[ **AVC\_函数\_对等方\_做\_列表**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-peer-do-list)的 subfunctions [ **IOCTL\_AVC\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_class)发现和引用的对等实例*Avc.sys* ，然后与外部 AV/C 子单元连接进行交互。
+虚拟驱动程序堆栈中的子单元驱动程序无法直接将命令发送到外部设备。 对等驱动程序堆栈提供此功能。 不过，虚拟子单位驱动程序可以使用[**AVC\_函数\_FIND\_对等\_do**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-find-peer-do) and [**AVC\_函数\_对等\_执行**](https://docs.microsoft.com/windows-hardware/drivers/stream/avc-function-peer-do-list) [**IOCTL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_class)的 subfunctions\_LIST，以发现和引用*AVC*的对等实例，然后与外部 AV/C 子单元连接交互。\_\_
 
-为枚举，每个虚拟子单元*Avc.sys*创建相应的设备对象。 因此，添加和删除，虚拟子单元*Avc.sys*触发器 IEEE 1394 总线重置。 此重置允许其他设备上的 IEEE 1394 总线来检测所公开的计算机上的新功能。 虚拟子单元驱动程序已加载根据*Avc.sys*实例的注册表设置并可以添加和删除在运行时通过 IOCTL 代码请求。 请注意， *Avc.sys*无法区分相同类型，因此添加和删除这些子单元连接加载和卸载相应的虚拟子单元驱动程序具有最高的子单元标识符的多个虚拟子单元连接。
+对于枚举的每个虚拟子单位， *Avc*会创建相应的设备对象。 因此，在添加和删除虚拟子单位后， *Avc*会触发 IEEE 1394 总线重置。 此重置允许 IEEE 1394 总线上的其他设备检测正在计算机上公开的新功能。 虚拟子单位驱动程序基于*Avc*实例的注册表设置进行加载，并且可在运行时通过 IOCTL 代码请求进行添加和删除。 请注意， *Avc*不能区分同一类型的多个虚拟子单元连接，因此添加和删除这些子单元连接将加载并卸载具有最高子单位标识符的相应虚拟子驱动器驱动程序。
 
-虚拟子单元驱动程序可以是胖或瘦。 唯一要求是它会写为 WDM 驱动程序。 胖驱动程序实现大多数，如果不是全部，虚拟设备的功能。 精简的驱动程序提供了虚拟设备功能，它可以是另一个驱动程序或用户模式组件的代理界面。 用户模式和虚拟子单元驱动程序之间的接口是特定于实现的并可通过 IOCTL 代码，专用设备接口实现 (请参阅[ **IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterdeviceinterface))或通过[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) (WMI)。
+虚拟子单位驱动程序可以是厚或精简。 唯一的要求是将其编写为 WDM 驱动程序。 厚驱动程序实现了虚拟设备的大多数（如果不是全部）功能。 瘦驱动程序提供了虚拟设备功能的代理接口，可以是其他驱动程序或用户模式组件。 用户模式与虚拟子单位驱动程序之间的接口是特定于实现的，并且可以通过 IOCTL 代码、专用设备接口（请参阅[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)）或[Windows Management Instrumentation](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-wmi) （WMI）来实现。
 
-即使\_和 MOD\_导致虚拟实例中的 INF 文件中的值为与指定相同*是 61883.sys*加载。 TYP\_和 ID\_时指定的值*Avc.sys*枚举虚拟子单元。
+即使\_ 和 MOD\_ 值与 INF 文件中指定的值相同，后者导致*61883*的虚拟实例加载。 当*Avc*枚举虚拟子单位时，可以指定 TYP\_ 和 ID\_ 值。
 
-通过实现的虚拟子单元枚举[ **IOCTL\_AVC\_更新\_虚拟\_子单元\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)， [ **IOCTL\_AVC\_删除\_虚拟\_子单元\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)，和[ **IOCTL\_AVC\_总线\_重置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/avc/ni-avc-ioctl_avc_bus_reset) IOCTL 代码。
+虚拟子单位的枚举通过使用[**IOCTL\_AVC 来完成：\_更新\_虚拟\_子虚拟**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)\_[**信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)和[**IOCTL\_AVC\_总线\_重置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset)IOCTL 代码。\_\_\_\_\_
 
-必须将正确的 IEEE 1394 Ioctl，发送**IEEE1394\_API\_添加\_虚拟\_设备**并**IEEE1394\_API\_删除\_虚拟\_设备**开始枚举过程。 有关详细信息 (子命令的 IOCTL\_IEEE1394\_API\_请求)。 *61883.inf*文件已包含的设备标识符 (ID) 实现此目的：V1394\\A02D & 10001; 不过，其他标识符，可能会提供自定义的 INF 文件中。
+有必要发送正确的 IEEE 1394 IOCTLs、 **IEEE1394\_api\_添加\_虚拟\_设备**和**IEEE1394\_api\_删除\_虚拟\_设备**以开始枚举过程。 有关详细信息（IOCTL 的子命令\_IEEE1394\_API\_请求）。 *61883*文件已包含用于此目的的设备标识符（ID）： V1394\\A02D & 10001，但自定义 inf 文件中可能会提供不同的标识符。
 
-以静态方式枚举虚拟子单元的替代方法可以通过使用 INF 文件。
+可以通过使用 INF 文件来静态枚举虚拟子单位的替代方法。
 
-虚拟设备列表项下的每个值都已打包的子单元地址 （结合使用，如 AV/C 常规规范中所述的子单元类型和最大值标识符）。 与子单元地址关联的名称并不重要，尽管它必须是唯一的该实例。 以编程方式创建，值名称将被赋予顺序编号，以避免冲突。
+虚拟设备列表键下的每个值都是一个打包的子地址（子类型和最大标识符组合在一起，如 AV/C 常规规范中所述）。 与子单位地址相关联的名称并不重要，但它对于该实例必须是唯一的。 以编程方式创建时，将为值名称提供序列号以避免冲突。
 
-例如，若要通过 INF 文件创建单个虚拟调谐器子单元，可使用以下**AddReg**指令：
+例如，若要通过 INF 文件创建单个虚拟调谐器子单位，请使用以下**AddReg**指令：
 
 ```INF
 [Subunit_Device.NT.HW.AddReg]
 HKR,%VirtualAvc.DeviceList%,Tuner,0x00000001,0x28 ;0x00000001 = Binary value, 0x28 = Registry key value
 ```
 
-此指令将添加 REG\_0x28 的二进制值 （子单元类型 0x5 打包到五个最高有效位和最大标识符 0x0 打包到最不明显的三位）。 0x0 此处的最大标识符意味着，将该类型的单个子单元。
+此指令将 REG\_二进制值的0x28 （子类型0x5 打包到最重要的5位，并将最大的0x0 标识符打包到最不重要的三位）。 此处的最大标识符为0x0，表示将有该类型的单个子单位。
 
-**请注意**  :它也是需要定义`%VirtualAvc.DeviceList%`令牌在`[Strings]`子单元的 INF 文件部分。
+**请注意**  ：还必须在子区域的 INF 文件的 `[Strings]` 部分中定义 `%VirtualAvc.DeviceList%` 令牌。

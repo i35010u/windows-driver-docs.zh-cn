@@ -3,18 +3,18 @@ title: 将筛选设备对象附加到目标设备对象
 description: 将筛选设备对象附加到目标设备对象
 ms.assetid: 1df293db-417a-4fee-afb8-06ab527331fb
 keywords:
-- 筛选器驱动程序 WDK 文件系统，将附加筛选器
+- 筛选器驱动程序 WDK 文件系统，附加筛选器
 - 文件系统筛选器驱动程序 WDK，附加筛选器
-- 附加到文件系统卷的筛选器
-- WDK 卷文件系统，将附加筛选器
+- 将筛选器附加到文件系统或卷
+- 卷 WDK 文件系统，附加筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 632edab4f8ae70809e4ab42e31f9a62dd1d23282
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8407979851e70b765bc771becd8eda59804eba72
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385317"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841486"
 ---
 # <a name="attaching-the-filter-device-object-to-the-target-device-object"></a>将筛选设备对象附加到目标设备对象
 
@@ -22,7 +22,7 @@ ms.locfileid: "67385317"
 ## <span id="ddk_attaching_the_filter_device_object_to_the_target_device_object_if"></span><span id="DDK_ATTACHING_THE_FILTER_DEVICE_OBJECT_TO_THE_TARGET_DEVICE_OBJECT_IF"></span>
 
 
-调用[ **IoAttachDeviceToDeviceStackSafe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)将筛选器设备对象附加到的目标文件系统或卷的筛选器驱动程序堆栈。
+调用[**IoAttachDeviceToDeviceStackSafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)将筛选器设备对象附加到目标文件系统或卷的筛选器驱动程序堆栈。
 
 ```cpp
 devExt = myLegacyFilterDeviceObject->DeviceExtension;
@@ -33,11 +33,11 @@ status = IoAttachDeviceToDeviceStackSafe(
            &devext->AttachedToDeviceObject);  //AttachedToDeviceObject
 ```
 
-请注意，由接收设备对象指针*AttachedToDeviceObject*输出参数可能不同于*目标设备*如果任何其他筛选器已链接在上面的设备对象指向*目标设备*。
+请注意，如果其他任何筛选器已链接到*目标设备*指向的设备对象，则*AttachedToDeviceObject*输出参数收到的设备对象指针可能与*目标设备*不同。
 
-### <a name="span-idattachingtoafilesystembynamespanspan-idattachingtoafilesystembynamespanspan-idattachingtoafilesystembynamespanattaching-to-a-file-system-by-name"></a><span id="Attaching_to_a_File_System_by_Name"></span><span id="attaching_to_a_file_system_by_name"></span><span id="ATTACHING_TO_A_FILE_SYSTEM_BY_NAME"></span>将附加到通过名称的文件系统
+### <a name="span-idattaching_to_a_file_system_by_namespanspan-idattaching_to_a_file_system_by_namespanspan-idattaching_to_a_file_system_by_namespanattaching-to-a-file-system-by-name"></a><span id="Attaching_to_a_File_System_by_Name"></span><span id="attaching_to_a_file_system_by_name"></span><span id="ATTACHING_TO_A_FILE_SYSTEM_BY_NAME"></span>按名称附加到文件系统
 
-每个文件系统需要创建一个或多个命名控件的设备对象。 若要附加到特定的文件系统直接，文件系统筛选器驱动程序，将传递到相应的文件系统控制设备对象的名称[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)若要获取的设备对象指针。 下面的代码段演示如何获取此类指针到两个控制设备对象之一的原始文件系统：
+每个文件系统都需要创建一个或多个命名控制设备对象。 为了直接附加到特定的文件系统，文件系统筛选器驱动程序将相应的文件系统控制设备对象的名称传递到[**plxntb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer) ，以获取设备对象指针。 下面的代码段演示如何获取一个指向原始文件系统的两个控制设备对象之一的指针：
 
 ```cpp
 RtlInitUnicodeString(&nameString, L"\\Device\\RawDisk");
@@ -53,9 +53,9 @@ if (NT_SUCCESS(status)) {
 }
 ```
 
-如果在调用[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)成功，文件系统筛选器驱动程序然后可以调用[ **IoAttachDeviceToDeviceStackSafe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)将附加到返回的控件设备对象。
+如果对[**plxntb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)的调用成功，则文件系统筛选器驱动程序可以调用[**IoAttachDeviceToDeviceStackSafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioattachdevicetodevicestacksafe)以附加到返回的控制设备对象。
 
-**请注意**  除了控制设备对象指针 (*rawDeviceObject*)， [ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)返回指向的指针文件对象 (*的文件对象*)，表示在用户模式下的设备对象。 在上面的代码段中，文件对象不需要因此通过调用关闭[ **ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)。 务必要注意返回的文件对象的引用计数的递减**IoGetDeviceObjectPointer**导致设备对象也是递减引用计数。 从而*的文件对象*并*rawDeviceObject*指针应同时考虑无效上述调用后**ObDereferenceObject**，除非的引用计数设备对象就会递增额外调用[ **ObReferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obfreferenceobject)之前**ObDereferenceObject**称为文件对象。
+**请注意**   除了控制设备对象指针（*rawDeviceObject*）外， [**plxntb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)还会返回指向以用户模式表示设备对象的文件对象（*fileObject*）的指针。 在上述代码片段中，不需要文件对象，因此可通过调用[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)将其关闭。 需要特别注意的是，减少**plxntb**返回的文件对象上的引用计数也会导致设备对象上的引用计数也减少。 因此，在上述对**ObDereferenceObject**的调用之后， *fileObject*和*rawDeviceObject*指针应被视为无效，除非在为文件对象调用**ObDereferenceObject**之前，设备对象上的引用计数增加了对[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)的调用。
 
  
 

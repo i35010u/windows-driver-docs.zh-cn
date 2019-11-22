@@ -3,19 +3,19 @@ title: 声明旧资源
 description: 声明旧资源
 ms.assetid: f3e573a1-0e7a-422b-8bed-db3ba7712a2f
 keywords:
-- 微型端口驱动程序 WDK Windows 2000 中，旧的资源
+- 视频微型端口驱动程序 WDK Windows 2000，旧版资源
 - 旧资源 WDK 视频微型端口
-- 微型端口驱动程序 WDK Windows 2000 中，初始化
-- 初始化微型端口驱动程序
+- 视频微型端口驱动程序 WDK Windows 2000，初始化
+- 初始化视频微型端口驱动程序
 - VIDEO_HW_INITIALIZATION_DATA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f5fa4670dee6cd357783448429fe79edd46e1b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 46f106d5ec972e4095db89b7bb1fa69fb42adc0f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370707"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839054"
 ---
 # <a name="claiming-legacy-resources"></a>声明旧资源
 
@@ -23,11 +23,11 @@ ms.locfileid: "67370707"
 ## <span id="ddk_claiming_legacy_resources_gg"></span><span id="DDK_CLAIMING_LEGACY_RESOURCES_GG"></span>
 
 
-微型端口驱动程序必须声明并报告中的所有旧资源及其[**视频\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)在驱动程序初始化过程中的结构. 旧资源是设备的 PCI 配置空间中未列出这些资源但的解码设备。 电源管理和停靠在遇到此部分中所述的方式不会报告的旧的资源时，将禁用基于 NT 的操作系统。
+视频微型端口驱动程序必须声明并报告其视频中的所有旧资源[ **\_硬件\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)在驱动程序初始化期间\_数据结构。 旧资源是指未列出在设备 PCI 配置空间中的资源，但被设备解码。 基于 NT 的操作系统会在遇到此部分中所述的情况下，禁用未报告的旧资源。
 
-微型端口驱动程序必须执行以下操作以报告此类的旧的资源：
+微型端口驱动程序必须执行以下操作来报告此类旧资源：
 
-- 如果旧的资源列表中在编译时已知的设备填充以下两个字段的[**视频\_HW\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_hw_initialization_data)结构，它是创建和初始化[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)例程：
+- 如果设备的旧版资源列表在编译时已知，请在[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)例程中填写创建和初始化\_数据结构的以下两个字段[ **\_HW\_初始化**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_hw_initialization_data)：
 
   <table>
   <colgroup>
@@ -43,11 +43,11 @@ ms.locfileid: "67370707"
   <tbody>
   <tr class="odd">
   <td align="left"><p><strong>HwLegacyResourceList</strong></p></td>
-  <td align="left"><p>指向数组<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_access_range" data-raw-source="[&lt;strong&gt;VIDEO_ACCESS_RANGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/ns-video-_video_access_range)"> <strong>VIDEO_ACCESS_RANGE</strong> </a>结构。 每个结构描述设备 I/O 端口或 PCI 配置空间中未列出的视频适配器的内存范围。</p></td>
+  <td align="left"><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_access_range" data-raw-source="[&lt;strong&gt;VIDEO_ACCESS_RANGE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_access_range)"><strong>VIDEO_ACCESS_RANGE</strong></a>结构的数组。 每个结构都描述了 PCI 配置空间中未列出的视频适配器的设备 i/o 端口或内存范围。</p></td>
   </tr>
   <tr class="even">
   <td align="left"><p><strong>HwLegacyResourceCount</strong></p></td>
-  <td align="left"><p>是，数组中的元素数目<strong>HwLegacyResourceList</strong>点。</p></td>
+  <td align="left"><p><strong>HwLegacyResourceList</strong>指向的数组中的元素数。</p></td>
   </tr>
   </tbody>
   </table>
@@ -56,11 +56,11 @@ ms.locfileid: "67370707"
 
 <!-- -->
 
--   如果在编译时不知道旧的设备的资源列表，实现[ *HwVidLegacyResources* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_legacyresources)函数，并初始化**HwGetLegacyResources**视频的成员\_HW\_初始化\_数据以指向此函数。 例如，支持使用不同的旧资源组的两个设备的微型端口驱动程序将实现*HwVidLegacyResources*若要在运行时报告的旧的资源。 视频端口驱动程序将忽略**HwLegacyResourceList**并**HwLegacyResourceCount**视频成员\_HW\_初始化\_数据时微型端口驱动程序实现*HwVidLegacyResources*。
+-   如果设备的旧资源列表在编译时未知，则实现[*HwVidLegacyResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_legacyresources)函数，并将视频\_硬件\_初始化中的**HwGetLegacyResources**成员初始化为指向此的\_数据才能. 例如，如果某个微型端口驱动程序支持具有不同的旧式资源集的两个设备，则会在运行时实现*HwVidLegacyResources*来报告旧资源。 当微型端口驱动程序实现*HwVidLegacyResources*时，视频端口驱动程序将忽略视频\_硬件\_初始化\_数据的**HwLegacyResourceList**和**HwLegacyResourceCount**成员。
 
--   填写**RangePassive**字段中为每个视频\_访问\_相应地微型端口驱动程序中定义的范围结构。 设置**RangePassive**视频\_范围\_被动\_解码指示区域进行解码的硬件，但显示和视频微型端口驱动程序将永远不会接触它。 设置**RangePassive**视频\_范围\_10\_位\_解码指示设备解码十位区域的端口地址。
+-   为每个视频填写 " **RangePassive** " 字段，\_访问在微型端口驱动程序中定义\_范围结构。 将**RangePassive**设置为视频\_范围\_被动\_解码表示该区域由硬件解码，但显示器和视频微型端口驱动程序将永远不会接触到该区域。 将**RangePassive**设置为视频\_范围\_10\_位\_解码表明设备对该区域的端口地址的10位进行解码。
 
-同样，驱动程序只应包括硬件解码但 PCI 不会占用的资源。 代码中的驱动程序，需要声明最小的旧的资源可能看起来如下所示：
+同样，驱动程序应该只包含硬件解码但不由 PCI 声明的资源。 需要声明最少旧资源的驱动程序中的代码可能如下所示：
 
 ```cpp
 //              RangeStart        RangeLength
@@ -84,7 +84,7 @@ hwInitData.HwLegacyResourceList = AccessRanges;
 hwInitData.HwLegacyResourceCount = 3;
 ```
 
-微型端口驱动程序可以"回收"旧资源到后续调用中再次[ **VideoPortVerifyAccessRanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nf-video-videoportverifyaccessranges); 但是，视频端口驱动程序将直接忽略请求针对任何以前已声明的资源。 如果尝试声明中的旧的访问范围微型端口驱动程序将在系统中禁用电源管理和停靠**VideoPortVerifyAccessRanges** ，不以前认领中**HwLegacyResourceList**期间[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)或在中返回*LegacyResourceList*参数[ *HwVidLegacyResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/video/nc-video-pvideo_hw_legacyresources)。
+小型端口驱动程序可以在后续调用中再次 "回收" 旧资源到[**VideoPortVerifyAccessRanges**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportverifyaccessranges);但是，视频端口驱动程序将忽略对以前声明的任何资源的请求。 如果微型端口驱动程序尝试在**VideoPortVerifyAccessRanges** [**中声明**](https://docs.microsoft.com/windows-hardware/drivers/display/driverentry-of-video-miniport-driver)以前未在**HwLegacyResourceList**期间声明的旧访问范围，或在[*HwVidLegacyResources*](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_hw_legacyresources)的*LegacyResourceList*参数中返回，则系统将禁用电源管理和停靠。
 
  
 

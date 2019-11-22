@@ -3,89 +3,78 @@ title: 节能与 VSync 控制
 description: 节能与 VSync 控制
 ms.assetid: d7ee7461-0d2a-4103-9225-57ca10a75a7a
 keywords:
-- 显示器驱动程序模型 WDK Windows Vista，节约了能源
-- Windows Vista 显示器驱动程序模型 WDK，节约了能源
-- 显示驱动程序模型 WDK Windows Vista 的 VSync 控制
-- Windows Vista 显示器驱动程序模型 WDK 的 VSync 控制
-ms.date: 04/20/2017
+- 显示驱动程序模型 WDK Windows Vista，节能
+- Windows Vista 显示器驱动程序模型 WDK，节能
+- 显示驱动程序模型 WDK Windows Vista，VSync 控件
+- Windows Vista 显示器驱动程序模型 WDK，VSync 控件
+ms.date: 10/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f713b413cd37f7b9d716d9b392b81ffe62268da
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 262fb190a782b5b42606a00d47a02f7cb6951161
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365585"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829522"
 ---
 # <a name="saving-energy-with-vsync-control"></a>节能与 VSync 控制
 
+为了节省计算机上的电源，内核模式显示驱动程序可以减少发生的 VSync 监视器刷新中断数。
 
-若要保存的计算机上的电源，内核模式显示驱动程序可以减少发生的 VSync 监视器刷新中断的数量。
+当计算机系统空闲时，较新的处理器和平台通常与操作系统结合使用，以节省能源。 但定期发生的系统活动（例如中断中断）将导致高峰功率消耗，并可防止计算机系统进入暂时睡眠状态，从而节省能源。
 
-较新的处理器和平台通常使用操作系统以计算机系统处于空闲状态时节约能源。 但是，定期系统活动，例如，触发中断，导致峰值电源使用情况，并且可以防止计算机系统输入将节约能源的暂时性睡眠状态。
+从带有 Service Pack 1 （SP1）的 Windows Vista 和 Windows Server 2008 开始，如果未从新图形或鼠标活动刷新屏幕，操作系统可以关闭周期性 VSync 中断计数。 通过控制 VSync 中断间隔，驱动程序可以节省大量能源。
 
-从 Windows Vista Service Pack 1 (SP1) 和 Windows Server 2008 开始，操作系统可以关闭计数时刷新屏幕时不被从新的图形或鼠标活动的定期 VSync 中断。 通过控制 VSync 中断时间间隔，您的驱动程序可以节省大量能源。
+可以通过使用 windows Server 2008 或更高版本的 Windows 驱动程序工具包（WDK）来重建 Windows 显示驱动程序模型（WDDM）驱动程序来利用此功能。
 
-您可以通过使用 Windows Server 2008 或更高版本 Windows 驱动程序工具包 (WDK) 的重建 Windows 显示器驱动程序模型 (WDDM) 驱动程序充分利用此功能。
+## <a name="windowsvista-with-sp1-driver-changes-for-vsync-control"></a>Windows Vista SP1 驱动程序更改 VSync 控件
 
-### <a name="span-iddriverchangesforvsynccontrolspanspan-iddriverchangesforvsynccontrolspanwindowsvista-with-sp1-driver-changes-for-vsync-control"></a><span id="driver_changes_for_vsync_control"></span><span id="DRIVER_CHANGES_FOR_VSYNC_CONTROL"></span>Windows Vista SP1 驱动程序更改的 VSync 控制
+为了使驱动程序能够利用此功能，这些驱动程序必须支持 Windows Vista SP1 中引入的[DXGK_VIDSCHCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)结构中的**VSyncPowerSaveAware**成员。 必须使用**VSyncPowerSaveAware**成员通过使用 Windows Server 2008 或更高版本的 WDK 重新编译遵循 WDDM 的现有驱动程序。
 
-有关驱动程序以充分利用此功能，它们必须支持**VSyncPowerSaveAware**中的成员[ **DXGK\_VIDSCHCAPS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/ns-d3dkmddi-_dxgk_vidschcaps)结构，它是在 Windows Vista SP1 中引入。 请按照 WDDM 的现有驱动程序必须使用重新编译**VSyncPowerSaveAware**通过使用 Windows Server 2008 或更高版本的 WDK 的成员。
+如果 Windows Vista SP1 或更高版本的驱动程序的驱动程序遵循 WDDM 并且支持此功能，则将关闭 VSync 中断的计数功能，前提是10个连续的 1/Vsync （其中 VSync 是监视器的刷新频率）。 如果 VSync 速率为60赫兹（Hz），则 VSync 中断每16毫秒出现一次。 因此，在没有屏幕更新时，VSync 中断将在160毫秒后关闭。 如果 GPU 活动恢复，VSync 中断将再次打开以刷新屏幕。
 
-Windows Vista sp1 或更高版本系统与遵循 WDDM 和支持此功能的驱动程序将关闭计数功能的 VSync 中断发生任何 GPU 活动 10 个连续时间段内 1/Vsync，其中 VSync 是监视器的刷新频率。 如果垂直同步速率是 60 赫兹 (Hz)，VSync 中断发生一次每隔 16 毫秒。 因此，如果没有屏幕更新，VSync 中断处于关闭状态后 160 毫秒。 GPU 活动继续时，如果 VSync 中断再次打开来刷新屏幕。
+## <a name="display-only-vsync-requirements-for-windows-8-and-later-versions"></a>仅显示 Windows 8 及更高版本的 VSync 要求
 
-### <a name="span-idwindows8display-onlyvsyncrequirementsspanspan-idwindows8display-onlyvsyncrequirementsspanspan-idwindows8display-onlyvsyncrequirementsspanwindows8-display-only-vsync-requirements"></a><span id="Windows_8_Display-Only_VSync_Requirements"></span><span id="windows_8_display-only_vsync_requirements"></span><span id="WINDOWS_8_DISPLAY-ONLY_VSYNC_REQUIREMENTS"></span>Windows 8 仅显示垂直同步要求
+在 windows 8 及更高版本的 Windows 操作系统中，可选择[仅限内核模式显示驱动程序（KMDOD）](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)来支持 VSync 功能，如下所示：
 
-从 Windows 8 中，是可选的[内核模式仅显示驱动程序 (KMDOD)](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)以支持垂直同步功能，按如下所示：
+- **仅显示驱动程序支持 VSync 控件**
 
-<span id="Display-only_driver_supports_VSync_control"></span><span id="display-only_driver_supports_vsync_control"></span><span id="DISPLAY-ONLY_DRIVER_SUPPORTS_VSYNC_CONTROL"></span>仅显示驱动程序支持的 VSync 控制  
-如果 KMDOD 支持的 VSync 控制功能，它必须实现两者[ *DxgkDdiControlInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)并[ *DxgkDdiGetScanLine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)函数，而必须提供有效的函数指针，指向这两个函数中[ **KMDDOD\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_kmddod_initialization_data)结构。
+  如果 KMDOD 支持 VSync 控件功能，则它必须实现[*DxgkDdiControlInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)和[*DxgkDdiGetScanLine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)函数，并且必须在[KMDDOD_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_kmddod_initialization_data)结构中提供这两个函数的有效函数指针。
 
-在这种情况下还必须实现 KMDOD [ *DxgkDdiInterruptRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)并[ *DxgkDdiDpcRoutine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/nc-dispmprt-dxgkddi_dpc_routine)以便函数向操作系统报告的垂直同步中断。
+  在这种情况下，KMDOD 还必须实现[*DxgkDdiInterruptRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_interrupt_routine)和[*DxgkDdiDpcRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_dpc_routine)函数以便向操作系统报告 VSync 中断。
 
-此外，值**PixelRate**， **hSyncFreq**，并**vSyncFreq**的成员[ **DISPLAYCONFIG\_视频\_信号\_信息**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构不能为**D3DKMDT\_频率\_NOTSPECIFIED**。
+  此外，不能**D3DKMDT_FREQUENCY_NOTSPECIFIED** [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构的**PixelRate**、 **hSyncFreq**和**vSyncFreq**成员的值。
 
-<span id="Display-only_driver_does_not_support_VSync_control"></span><span id="display-only_driver_does_not_support_vsync_control"></span><span id="DISPLAY-ONLY_DRIVER_DOES_NOT_SUPPORT_VSYNC_CONTROL"></span>仅显示驱动程序不支持的 VSync 控制  
-如果 KMDOD 不支持的 VSync 控制功能，它不必须实现[ *DxgkDdiControlInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)或[ *DxgkDdiGetScanLine* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)函数，必须提供有效的函数指针中的这些函数的任一[ **KMDDOD\_初始化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dispmprt/ns-dispmprt-_kmddod_initialization_data)结构。
+- **仅显示驱动程序不支持 VSync 控件**
 
-在这种情况下 Microsoft DirectX 图形内核子系统模拟 VSync 中断和基于当前的模式和最后一个的模拟垂直同步时扫描行的值。
+  如果 KMDOD 不支持 VSync 控件功能，则它不能实现[*DxgkDdiControlInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_controlinterrupt)或[*DxgkDdiGetScanLine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_getscanline)函数，并且不能在[KMDDOD_INITIALIZATION_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_kmddod_initialization_data)结构中提供任何这些函数的有效函数指针。
 
-此外，值**PixelRate**， **hSyncFreq**，并**vSyncFreq**的成员[ **DISPLAYCONFIG\_视频\_信号\_信息**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构必须设置为**D3DKMDT\_频率\_NOTSPECIFIED**。
+  在这种情况下，Microsoft DirectX 图形内核子系统模拟 VSync 中断的值，并基于当前模式和最后一次模拟 VSync 的时间扫描行。
 
-如果不满足这些条件，DirectX 图形内核子系统将加载 KMDOD。
+  此外， [DISPLAYCONFIG_VIDEO_SIGNAL_INFO](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-displayconfig_video_signal_info)结构的**PixelRate**、 **hSyncFreq**和**vSyncFreq**成员的值必须设置为**D3DKMDT_FREQUENCY_NOTSPECIFIED**。
 
-### <a name="span-idregistrycontrolspanspan-idregistrycontrolspan-registry-control"></a><span id="registry_control"></span><span id="REGISTRY_CONTROL"></span> 注册表控件
+如果未满足这些条件，DirectX 图形内核子系统将不会加载 KMDOD。
 
-对于 Windows Vista SP1 和更高版本的 Windows 操作系统中，默认 VSync 空闲超时值是 10 个 VSync 句点。 （可选） 对于测试目的，可通过使用注册表设置控制超时值。
+## <a name="registry-control"></a>注册表控件
 
-**重要**  以避免应用程序兼容性问题，请不要更改生产驱动程序中的默认注册表设置。
+对于 Windows Vista SP1 及更高版本的 Windows 操作系统，默认的 VSync 空闲超时值为 10 VSync。 （可选）出于测试目的，可以使用注册表设置来控制超时。
 
- 
+> [!IMPORTANT]
+> 若要避免应用程序兼容性问题，请不要更改生产驱动程序中的默认注册表设置。
 
-<span id="Key_Path_"></span><span id="key_path_"></span><span id="KEY_PATH_"></span>项路径：  
-**RTL\_REGISTRY\_CONTROL\\GraphicsDrivers\\Scheduler**
+密钥路径：  
+**RTL_REGISTRY_CONTROL \GraphicsDrivers\Scheduler**
 
 完整路径：  
-**[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\\Scheduler]**
+**[HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Scheduler]**
 
-<span id="Key_Value_"></span><span id="key_value_"></span><span id="KEY_VALUE_"></span>密钥值：  
+项值：  
 **VsyncIdleTimeout**
 
-<span id="ValueType_"></span><span id="valuetype_"></span><span id="VALUETYPE_"></span>ValueType:  
-**REG\_DWORD**
+ValueType  
+**REG_DWORD**
 
-<span id="Value_"></span><span id="value_"></span><span id="VALUE_"></span>值：  
+值：  
 10 = 默认值
 
-<span id="Value_"></span><span id="value_"></span><span id="VALUE_"></span>值：  
-0 = 禁用 VSync 控制 (会产生相同的行为与 Windows Vista 相同)
-
-
-
- 
-
- 
-
-
-
-
-
+值：  
+0 = 禁用 VSync 控件（生成与 Windows Vista 相同的行为）

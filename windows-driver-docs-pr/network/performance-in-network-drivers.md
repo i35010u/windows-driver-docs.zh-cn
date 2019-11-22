@@ -1,120 +1,120 @@
 ---
-title: 中的网络驱动程序的性能
-description: 本部分介绍在网络驱动程序提高性能的方法
+title: 网络驱动程序的性能
+description: 本部分介绍提高网络驱动程序性能的方法
 ms.assetid: 7EA23AA6-7673-4D88-91CA-BDDD8FBB2A4F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c37a1f0b958850fc53ccd956a7f0e4e9878b8e25
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a0c6969026a82a98bc7ecc95ef11d04b96c2e159
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377060"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843694"
 ---
 # <a name="performance-in-network-drivers"></a>网络驱动程序中的性能
 
 
 -   [最小化发送和接收路径长度](#minimizing-send-and-receive-path-length)
--   [若要最大程度减少跨处理器共享的代码和数据分区](#partitioning-data-and-code-to-minimize-sharing-across-processors)
+-   [对数据和代码进行分区以最大程度地减少跨处理器的共享](#partitioning-data-and-code-to-minimize-sharing-across-processors)
 -   [避免错误共享](#avoiding-false-sharing)
 -   [正确使用锁定机制](#using-locking-mechanisms-properly)
--   [使用 64 位 DMA](#using-64-bit-dma)
--   [确保适当的缓冲区的一致性](#ensuring-proper-buffer-alignment)
+-   [使用64位 DMA](#using-64-bit-dma)
+-   [确保缓冲区对齐正确](#ensuring-proper-buffer-alignment)
 -   [使用散播-聚集 DMA](#using-scatter-gather-dma)
 -   [支持接收端限制](#supporting-receive-side-throttle)
 
 ## <a name="minimizing-send-and-receive-path-length"></a>最小化发送和接收路径长度
 
 
-尽管发送和接收路径不同驱动程序到驱动程序，有一些常规规则，用于性能优化：
+尽管发送和接收路径不同于驱动程序的路径，但对于性能优化，还有一些通用规则：
 
--   优化的公共路径。 Kernprof.exe 工具提供与开发人员和 IDW 版本的 Windows 中提取所需的信息。 开发人员应在使用大多数 CPU 周期，并尝试减少被调用这些例程的频率的例程或这些例程花费的时间。
+-   优化通用路径。 Kernprof 工具随开发人员和 IDW 的 Windows 版本提供，用于提取所需的信息。 开发人员应查看消耗最多 CPU 周期的例程，并尝试减少调用这些例程的频率或这些例程所用的时间。
 
--   减少所用的时间 DPC，以便网络适配器驱动程序不使用过多的系统资源，这可能导致总体系统性能下降。
+-   减少 DPC 中花费的时间，使网络适配器驱动程序不会使用过多的系统资源，这将导致总体系统性能下降。
 
--   请确保不到驱动程序; 的最终发布版本编译调试代码这样可避免执行过多的代码。
+-   请确保调试代码不编译到驱动程序的最终发布版本中;这样可以避免执行多余的代码。
 
-## <a name="partitioning-data-and-code-to-minimize-sharing-across-processors"></a>若要最大程度减少跨处理器共享的代码和数据分区
+## <a name="partitioning-data-and-code-to-minimize-sharing-across-processors"></a>对数据和代码进行分区以最大程度地减少跨处理器的共享
 
 
-分区需要尽量在处理器上的共享的数据和代码。 分区有助于减少系统总线利用率并提高处理器缓存的效率。 为了尽量减少共享，驱动程序编写人员应考虑以下方面：
+需要进行分区以最大程度地减少跨处理器的共享数据和代码。 分区有助于减少系统总线使用率，并提高处理器缓存的效率。 为了最小化共享，驱动程序编写人员应考虑以下事项：
 
--   实施为反序列化的微型端口驱动程序，如中所述[反序列化的 NDIS 微型端口驱动程序](deserialized-ndis-miniport-drivers.md)。
+-   按照反序列化[NDIS 微型端口驱动程序](deserialized-ndis-miniport-drivers.md)中所述，将驱动程序实现为反序列化的
 
--   使用每个处理器的数据结构来减少全局和共享数据访问。 这可将保留而不进行同步，这将减少代码路径长度并提高性能的统计信息计数器。 重要的统计数据，具有在查询时加在一起的每个处理器计数器。 如果您必须具有一个全局计数器，而不是数值调节钮锁使用互锁的操作来操作该计数器。 有关如何避免使用自旋锁的信息，请参阅使用锁定机制正确下面。
+-   使用每个处理器的数据结构来减少全局和共享数据访问。 这样，便可以在不同步的情况下保留统计信息计数器，这会减少代码路径长度并提高性能。 对于关键统计信息，请在查询时将每个处理器的计数器一起添加。 如果必须有全局计数器，请使用联锁操作，而不要使用自旋锁来操作计数器。 有关如何避免使用自旋锁的信息，请参阅下面的使用锁定机制。
 
-    若要简化此操作，请[ **KeGetCurrentProcessorNumberEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kegetcurrentprocessornumberex)可用于确定当前的处理器。 若要确定何时分配数据结构的每个处理器的处理器数[ **KeQueryGroupAffinity** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kequerygroupaffinity)可用。
+    为此，可以使用[**KeGetCurrentProcessorNumberEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kegetcurrentprocessornumberex)来确定当前处理器。 若要确定分配每个处理器的数据结构时的处理器数量，可以使用[**KeQueryGroupAffinity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kequerygroupaffinity) 。
 
-    设置关联掩码中的位数总数表明系统中的活动的处理器数。 驱动程序不应假定因为处理器可能会不连续编号在将来版本的操作系统，将导致掩码中的所有集位连续。 SMP 计算机中的处理器数是从零开始的值。
+    关联掩码中设置的总位数指示系统中活动处理器的数量。 驱动程序不应假定掩码中的所有设置位都是连续的，因为在操作系统的未来版本中，处理器可能不连续编号。 SMP 计算机中的处理器数是从零开始的值。
 
-    如果您的驱动程序维护每个处理器的数据，可以使用[ **KeQueryGroupAffinity** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-kequerygroupaffinity)函数以减少缓存行争用。
+    如果驱动程序维护每处理器数据，则可以使用[**KeQueryGroupAffinity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-kequerygroupaffinity)函数来减少缓存行争用。
 
 ## <a name="avoiding-false-sharing"></a>避免错误共享
 
 
-处理器请求是彼此独立的共享的变量时发生错误共享。 但是，变量是同一缓存行的因为它们是在处理器之间共享。 在这种情况下，缓存行的任何变量，在缓存刷新数导致增加每次访问的处理器之间来回传送，然后重新加载。 这提高了系统总线利用率并降低总体系统性能。
+如果处理器请求彼此独立的共享变量，则会发生错误共享。 但是，因为这些变量在同一缓存行上，它们会在处理器之间共享。 在这种情况下，缓存行将在处理器之间来回移动，以便每次访问其中的任何变量，导致缓存刷新和重新加载增加。 这会增加系统总线利用率并降低整体系统性能。
 
-若要避免错误共享，重要的数据结构 （如自旋锁、 缓冲区队列标头、 单独链接的列表） 高速缓存线边界通过使用对齐[ **NdisGetSharedDataAlignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetshareddataalignment)。
+若要避免错误共享，请使用[**NdisGetSharedDataAlignment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetshareddataalignment)将重要数据结构（如自旋锁、buffer queue 标头和单链接列表）与缓存行边界对齐。
 
 ## <a name="using-locking-mechanisms-properly"></a>正确使用锁定机制
 
 
-如果未正确使用，则自旋锁可能会降低性能。 通过使用互锁的操作，只要有可能，驱动程序应尽量少自旋锁的使用。 但是，在某些情况下，旋转锁可能是最佳选择出于某些目的。 例如，如果驱动程序处理不返回到该驱动程序所指示的数据包数的引用计数时获取的数值调节钮锁定，不需要使用互锁的操作。 有关详细信息，请参阅[同步和网络驱动程序中的通知](synchronization-and-notification-in-network-drivers.md)。
+如果未正确使用，则旋转锁会降低性能。 驱动程序应尽可能最大程度地使用联锁操作来最大程度地降低自旋锁的使用。 但是，在某些情况下，旋转锁定可能是最佳选择。 例如，如果驱动程序在处理未指明回驱动程序的数据包数目的引用计数时获得自旋锁，则无需使用联锁操作。 有关详细信息，请参阅[网络驱动程序中的同步和通知](synchronization-and-notification-in-network-drivers.md)。
 
-下面是有效地使用锁定机制的一些提示：
+下面是有效使用锁定机制的一些提示：
 
--   用于管理资源池使用 NDIS 单向链接列表函数如下所示：
+-   使用 NDIS 单向链接列表函数（如下所示）来管理资源池：
 
-    [**NdisInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinitializeslisthead)
+    [**NdisInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinitializeslisthead)
 
-    [**NdisInterlockedPushEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinterlockedpushentryslist)
+    [**NdisInterlockedPushEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinterlockedpushentryslist)
 
-    [**NdisInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisinterlockedpopentryslist)
+    [**NdisInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisinterlockedpopentryslist)
 
-    [**NdisQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisquerydepthslist)
+    [**NdisQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisquerydepthslist)
 
--   如果需要使用自旋锁，则可使用它们来仅保护数据，不是代码。 不要使用一个锁来保护在常见路径中使用的所有数据。 例如，独立中使用的数据的发送和接收路径到两个数据结构，以便当发送路径需要锁定其数据，接收路径不受影响。
+-   如果需要使用自旋锁，请使用它来仅保护数据，而不是代码。 不要使用一个锁来保护公用路径中使用的所有数据。 例如，将发送和接收路径中使用的数据分隔成两个数据结构，以便发送路径需要锁定其数据时，接收路径不受影响。
 
--   如果您使用自旋锁，并且该路径已在 DPC 级别，使用[ **NdisDprAcquireSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdpracquirespinlock)并[ **NdisDprReleaseSpinLock** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisdprreleasespinlock)函数，避免产生额外的代码时获取和释放锁。
+-   如果使用的是自旋锁，并且该路径已位于 DPC 级别，请使用[**NdisDprAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock)和[**NdisDprReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdprreleasespinlock)函数，以避免在获取和释放锁时产生额外代码。
 
--   若要旋转锁的数量降至最低获取和版本中，使用这些 NDIS RWLock 函数：
+-   若要最大程度地减少自旋锁获取和释放的数量，请使用以下 NDIS RWLock 函数：
 
-    [**NdisAllocateRWLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisallocaterwlock)
+    [**NdisAllocateRWLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocaterwlock)
 
-    [**NdisAcquireRWLockRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirerwlockread)
+    [**NdisAcquireRWLockRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirerwlockread)
 
-    [**NdisAcquireRWLockWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisacquirerwlockwrite)
+    [**NdisAcquireRWLockWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirerwlockwrite)
 
-    [**NdisReleaseRWLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisreleaserwlock)
+    [**NdisReleaseRWLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreleaserwlock)
 
-## <a name="using-64-bit-dma"></a>使用 64 位 DMA
-
-
-64 位 DMA 如果网络适配器支持 64 位 DMA，必须采取步骤来避免额外的地址超过 4 GB 范围的副本。 当驱动程序调用[ **NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterscattergatherdma)，则**NDIS\_SG\_DMA\_64\_位\_地址**必须设置标志*标志*参数。
-
-## <a name="ensuring-proper-buffer-alignment"></a>确保适当的缓冲区的一致性
+## <a name="using-64-bit-dma"></a>使用64位 DMA
 
 
-将数据从一个缓冲区复制到另一个时，缓冲区高速缓存线边界上的对齐方式可以提高性能。 大多数网络适配器的接收缓冲区时首次分配，但最终必须复制到应用程序缓冲区的用户数据是由于使用的标头空间未对齐的正确对齐。 对于 TCP 数据 （最常见的方案），由于 TCP、 IP 和以太网标头 shift 会导致 0x36 字节的转变。 若要解决此问题，我们建议驱动程序分配略大于缓冲区和 0xA 字节的偏移量位置处插入数据包数据。 这将确保，由 0x36 字节标头向缓冲区后，用户数据正确地对齐。 有关高速缓存线边界的详细信息，请参阅备注部分[ **NdisMAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismallocatesharedmemory)。
+64位 DMA 如果网络适配器支持64位 DMA，则必须采取步骤来避免 4 GB 范围以上的地址产生额外的副本。 当驱动程序调用[**NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)时，必须在*Flags*参数中设置**NDIS\_SG\_DMA\_64\_位\_地址**标志。
+
+## <a name="ensuring-proper-buffer-alignment"></a>确保缓冲区对齐正确
+
+
+缓存行边界上的缓冲区对齐可提高将数据从一个缓冲区复制到另一个缓冲区时的性能。 大多数网络适配器接收缓冲区在首次分配时均正确对齐，但必须最终复制到应用程序缓冲区的用户数据未对齐，因为使用了标头空间。 对于 TCP 数据（最常见的方案），由于 TCP、IP 和以太网标头导致移位，导致0x36 字节的变化。 为了解决此问题，我们建议驱动程序分配一个略大的缓冲区，并以0xA 字节的偏移量插入数据包数据。 这将确保在为标头的0x36 字节移动缓冲区后，用户数据已正确对齐。 有关缓存行边界的详细信息，请参阅[**NdisMAllocateSharedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemory)的 "备注" 部分。
 
 ## <a name="using-scatter-gather-dma"></a>使用散播-聚集 DMA
 
 
-[NDIS 散播-聚集 DMA](ndis-scatter-gather-dma.md)提供硬件，并支持将数据传入和传出非连续范围的物理内存。 使用散播-聚集 DMA [**散点图\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_scatter_gather_list)结构，它包含一系列的**散点图\_收集\_元素**结构和数组中的元素数。 从数据包描述符传递给驱动程序的 send 函数检索此结构。 数组的每个元素提供的长度和从物理上连续的分散-集中区域的物理地址。 驱动程序使用的数据传输的长度和地址信息。
+[NDIS 散播/聚集 DMA](ndis-scatter-gather-dma.md)为硬件提供了支持，以便在物理内存的非连续范围之间传输数据。 散播-聚集 DMA 使用[**散点\_收集\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_scatter_gather_list)结构，其中包括一个**散点数组\_集合\_元素**结构和数组中元素的数目。 此结构是从传递给驱动程序的 send 函数的数据包描述符中检索的。 数组的每个元素都提供物理上邻接的分散收集区域的长度和起始物理地址。 驱动程序使用长度和地址信息传输数据。
 
-DMA 操作使用散播-聚集例程可以提高的系统使用了不锁定这些资源以静态方式，如果映射注册的资源的利用率。 有关详细信息，请参阅[NDIS 散播-聚集 DMA](ndis-scatter-gather-dma.md)。
+使用用于 DMA 操作的分散收集例程可以通过静态锁定这些资源来提高系统资源的利用率，如使用映射寄存器时的情况。 有关详细信息，请参阅[NDIS 散播/聚集 DMA](ndis-scatter-gather-dma.md)。
 
-如果网络适配器支持 TCP 分段卸载 （大量发送卸载），则该驱动程序将需要它是否能够获得到 TCP/IP 的最大缓冲区大小传入*MaximumPhysicalMapping*中的参数[ **NdisMRegisterScatterGatherDma** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterscattergatherdma)函数。 这将保证该驱动程序有足够的映射寄存器生成散播-聚集列表并消除任何可能的缓冲区的分配和复制。 有关详细信息，请参阅以下主题：
+如果网络适配器支持 TCP 分段卸载（大型发送卸载），则驱动程序将需要传入它可从 tcp/ip 获取的最大缓冲区大小，并将其从 tcp/ip 获取到[**NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)函数中的*MaximumPhysicalMapping*参数。 这将保证驱动程序具有足够的映射寄存器来构建分散收集列表，并消除任何可能的缓冲分配和复制。 有关详细信息，请参阅以下主题：
 
 - [确定任务卸载功能](determining-task-offload-capabilities.md)
-- [卸载大型 TCP 数据包的分段](offloading-the-segmentation-of-large-tcp-packets.md)
+- [卸载大 TCP 数据包的细分](offloading-the-segmentation-of-large-tcp-packets.md)
 
 ## <a name="supporting-receive-side-throttle"></a>支持接收端限制
 
 
-若要最大程度减少中断，多媒体应用程序、 NDIS 6.20 和更高版本的驱动程序中的媒体播放期间必须支持在处理过程中的接收端限制 (RST) 接收中断。 有关详细信息，请参阅：
+为了最大限度地减少多媒体应用程序中媒体播放过程中的中断，NDIS 6.20 和更高版本的驱动程序必须在处理接收中断时支持接收端限制（RST）。 有关详细信息，请参阅：
 
-[在 NDIS 6.20 接收端调节](receive-side-throttle-in-ndis-6-20.md)"发送和接收的代码路径"中[移植到 NDIS 6.20 的微型端口驱动程序所需的更改摘要](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-20.md)
+[NDIS 6.20 中的接收方限制](receive-side-throttle-in-ndis-6-20.md)将[微型端口驱动程序移植到 NDIS 6.20 所需的更改摘要中的](summary-of-changes-required-to-port-a-miniport-driver-to-ndis-6-20.md)"发送和接收代码路径"
  
 
  

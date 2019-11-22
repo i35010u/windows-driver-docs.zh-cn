@@ -3,17 +3,17 @@ title: 转发 I/O 请求
 description: 转发 I/O 请求
 ms.assetid: 75e007e3-1b97-44db-ac86-56aab78222a6
 keywords:
-- 转发 I/O 请求 WDK KMDF
-- I/O 请求 WDK KMDF，转发
-- 请求处理 WDK KMDF、 转发 I/O 请求
+- 转发 i/o 请求 WDK KMDF
+- I/o 请求 WDK KMDF，转发
+- 请求处理 WDK KMDF、转发 i/o 请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da55f1c8597185481afadc5e61cce80bde5281d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ceca9fd5f7be2392c41c50f1cffd8be560e7f46
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368695"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842852"
 ---
 # <a name="forwarding-io-requests"></a>转发 I/O 请求
 
@@ -21,33 +21,33 @@ ms.locfileid: "67368695"
 
 
 
-当驱动程序收到它无法处理的 I/O 请求时，它通常执行以下任一操作：
+当驱动程序收到无法处理的 i/o 请求时，通常会执行以下操作之一：
 
--   它会转发到另一个驱动程序收到的请求。
+-   它将接收的请求转发到另一个驱动程序。
 
--   它创建额外的请求，并将其发送到另一个驱动程序。
+-   它会创建其他请求并将其发送到另一个驱动程序。
 
-基于框架的驱动程序将通过请求转发[使用 I/O 目标](using-i-o-targets.md)，表示系统上的其他驱动程序。 驱动程序可以使用任何以下方法将请求转发给 I/O 目标：
+基于框架的驱动程序通过[使用 i/o 目标](using-i-o-targets.md)转发请求，这些目标表示系统上的其他驱动程序。 驱动程序可以使用以下任一方法将请求转发到 i/o 目标：
 
--   驱动程序可以通过调用转发到下一步低驱动程序的 I/O 请求[ **WdfDeviceGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicegetiotarget)后, 跟[ **WdfRequestFormatRequestUsingCurrentType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestformatrequestusingcurrenttype)，并最后[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)。
+-   驱动程序可以通过调用[**WdfDeviceGetIoTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetiotarget)，后跟[**WdfRequestFormatRequestUsingCurrentType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestformatrequestusingcurrenttype)，最后[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)，将 i/o 请求转发到下一个较低的驱动程序。
 
-    此方法很有用，仅当该驱动程序收到不需要修改，然后再转发的请求。
+    仅当驱动程序接收到不需要在转发之前修改的请求时，此方法才有用。
 
--   驱动程序可以调用[ **WdfFdoInitSetFilter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdffdo/nf-wdffdo-wdffdoinitsetfilter)将自身注册为筛选器驱动程序。
+-   驱动程序可以调用[**WdfFdoInitSetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetfilter) ，将自身注册为筛选器驱动程序。
 
-    如果筛选器驱动程序不提供有关特定类型的 I/O 请求的 I/O 队列，框架会自动将转发到下一步低驱动程序的该类型的请求。
+    如果筛选器驱动程序未提供特定类型的 i/o 请求的 i/o 队列，框架会自动将该类型的请求转发到下一个较低的驱动程序。
 
--   通常情况下，功能驱动程序将检查每个 I/O 请求的内容。 如果功能驱动程序无法处理请求，它可能修改请求，并将其转发到 I/O 目标。 或者，它可能会创建一个或多个新的请求并将其发送到的 I/O 目标。
+-   通常，函数驱动程序会检查每个 i/o 请求的内容。 如果函数驱动程序无法处理请求，则它可能会修改请求并将其转发到 i/o 目标。 或者，它可能会创建一个或多个新请求，并将它们发送到 i/o 目标。
 
-    框架的 I/O 目标对象定义用于将输入/输出请求发送到其他驱动程序的几种方法。 例如，驱动程序可以调用[ **WdfIoTargetFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)后, 跟[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)、 发送到的读取的请求I/O 目标。 有关 I/O 目标的详细信息，请参阅[使用 I/O 目标](using-i-o-targets.md)。
+    框架的 i/o 目标对象定义了用于将 i/o 请求发送到其他驱动程序的几种方法。 例如，驱动程序可以调用[**WdfIoTargetFormatRequestForRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)，然后调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)来向 i/o 目标发送读取请求。 有关 i/o 目标的详细信息，请参阅[使用 I/o 目标](using-i-o-targets.md)。
 
-    很少，驱动程序编写者可能想要指定的内容的请求的基础 WDM [I/O 堆栈位置](https://docs.microsoft.com/windows-hardware/drivers/kernel/i-o-stack-locations)之前将请求发送到 I/O 的目标。 对于这些情况下，该驱动程序可调用[ **WdfRequestWdmFormatUsingStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestwdmformatusingstacklocation)调用之前[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)。
+    通常，驱动程序编写器可能需要在向 i/o 目标发送请求之前指定请求的基础 WDM [i/o 堆栈位置](https://docs.microsoft.com/windows-hardware/drivers/kernel/i-o-stack-locations)的内容。 对于这些情况，驱动程序可以在调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)之前调用[**WdfRequestWdmFormatUsingStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestwdmformatusingstacklocation) 。
 
-有时，驱动程序必须将发送同一请求到多个 I/O 目标，通常因为驱动程序必须将单个命令发送到所有其设备。 在将请求发送到的 I/O 目标之前, 驱动程序可以调用[ **WdfRequestChangeTarget** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestchangetarget)若要验证的 I/O 目标是否可访问。
+有时，驱动程序必须向多个 i/o 目标发送相同的请求，通常是因为驱动程序必须将单个命令发送到其所有设备。 在向 i/o 目标发送请求之前，驱动程序可以调用[**WdfRequestChangeTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestchangetarget)来验证 i/o 目标是否可访问。
 
-该驱动程序必须最终[完整](completing-i-o-requests.md)每个请求都转发到 I/O 的目标，除非它设置[ **WDF\_请求\_发送\_选项\_发送\_AND\_忘记**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志时调用[ **WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend)。
+驱动程序必须最终[完成](completing-i-o-requests.md)转发到 i/o 目标的每个请求，除非它在调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)时，它会将[**WDF\_请求\_发送\_选项\_发送\_并\_忘记**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)标志。
 
-请注意，当驱动程序将转发请求，框架不会不按原义 framework 请求对象从传输发送驱动程序到接收驱动程序。 相反，该框架在收到请求的驱动程序中创建一个新的请求对象。 仅在请求的基本 I/O 请求数据包 ([**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_irp)) 从一个驱动程序传输到另一个。
+请注意，当驱动程序转发请求时，框架不会将 framework 请求对象从发送驱动程序传输到接收驱动程序。 而是在接收请求的驱动程序中创建新的请求对象。 仅请求的基础 i/o 请求数据包（[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)）从一个驱动程序传输到另一个驱动程序。
 
  
 

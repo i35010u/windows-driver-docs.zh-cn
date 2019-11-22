@@ -3,27 +3,27 @@ title: 断开套接字与目标的连接
 description: 断开套接字与目标的连接
 ms.assetid: 83755eb4-a24e-4fef-858d-d58318227dc0
 keywords:
-- Winsock 内核 WDK 连接网络、 断开连接
-- WSK WDK 连接网络、 断开连接
-- 已建立套接字连接 WDK Winsock 内核
+- Winsock 内核 WDK 网络，断开连接
+- WSK WDK 网络，断开连接
+- 建立的套接字连接 WDK Winsock 内核
 - 连接 WDK Winsock 内核
-- WDK Winsock 内核的断开连接
+- 断开 WDK Winsock 内核
 - 目标连接 WDK Winsock 内核
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82572ed424d9f3f1a9645f49689754591bf6cb14
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 361908d2e31a633fd4436d09c1c874499b5ba04d
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386568"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72834886"
 ---
 # <a name="disconnecting-a-socket-from-a-destination"></a>断开套接字与目标的连接
 
 
-Winsock Kernel (WSK) 应用程序完成后发送和接收数据，通过建立套接字连接，它可以断开面向连接的套接字与连接到的远程传输地址的连接。 WSK 应用程序断开与远程传输地址通过调用连接套接字[ **WskDisconnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect)函数。 WSK 应用程序可以执行*硬性断开*或*正常断开连接*套接字。 放弃性断开连接并正常断开连接之间的差异的详细信息，请参阅**WskDisconnect**。
+当 Winsock 内核（WSK）应用程序完成通过建立的套接字连接发送和接收数据时，它可以断开面向连接的套接字与连接到的远程传输地址的连接。 WSK 应用程序通过调用[**WskDisconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect)函数将套接字与远程传输地址断开连接。 WSK 应用程序可以执行*异常断开连接*或插座的*正常断开连接*。 有关异常断开连接与正常断开连接之间的差异的详细信息，请参阅**WskDisconnect**。
 
-下面的代码示例演示如何 WSK 应用程序可以正常断开面向连接的套接字与远程传输地址。
+下面的代码示例演示 WSK 应用程序如何将面向连接的套接字与远程传输地址正确断开连接。
 
 ```C++
 // Prototype for the disconnect IoCompletion routine
@@ -123,9 +123,9 @@ NTSTATUS
 }
 ```
 
-如果 WSK 程序执行的套接字正常断开连接，应用程序可以发送数据的最终缓冲区指向远程传输地址之前通过传递一个指向断开连接的套接字[ **WSK\_BUF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_buf)结构[ **WskDisconnect** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_disconnect)函数。
+如果 WSK 应用程序执行套接字的正常断开连接，则在通过将指向[**WSK\_BUF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_buf)结构的指针传递到[**WskDisconnect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect)函数之前，应用程序可以将数据的最终缓冲区发送到远程传输地址。
 
-如果 WSK 应用程序关闭而第一个从断开连接的套接字连接到的远程传输地址不面向连接的套接字，WSK 子系统将自动执行之前关闭套接字的套接字硬性断开连接。 有关关闭套接字的详细信息，请参阅[关闭套接字](closing-a-socket.md)。
+如果 WSK 应用程序关闭面向连接的套接字，而不先将套接字从其连接到的远程传输地址断开连接，则在关闭套接字之前，WSK 子系统会自动执行套接字的异常断开连接。 有关关闭套接字的详细信息，请参阅[关闭套接字](closing-a-socket.md)。
 
  
 

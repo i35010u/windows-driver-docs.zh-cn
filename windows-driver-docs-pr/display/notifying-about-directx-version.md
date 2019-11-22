@@ -3,16 +3,16 @@ title: DirectX 版本通知
 description: DirectX 版本通知
 ms.assetid: 62c030cf-8eb6-4a94-bd15-730b9219291c
 keywords:
-- 版本号 WDK DirectX 9.0
-- 通知 DirectX 版本 WDK DirectX 9.0
+- 版本号 WDK DirectX 9。0
+- 通知 DirectX 版本 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d9c5f7be466e5b130b8f056b4aeef3e9e396b3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a77e920b79746aec760ea8ed0e157b742034d8c3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372795"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840527"
 ---
 # <a name="notifying-about-directx-version"></a>DirectX 版本通知
 
@@ -20,13 +20,13 @@ ms.locfileid: "67372795"
 ## <span id="ddk_notifying_about_directx_version_gg"></span><span id="DDK_NOTIFYING_ABOUT_DIRECTX_VERSION_GG"></span>
 
 
-DirectX 8.0 和更高版本的驱动程序始终通知有关 D3DGDI2 中的应用程序正在使用的 DirectX 运行时版本\_类型\_DXVERSION 中请求，以便它们可以报告设备功能的版本。 此外，应用程序请求具有不同的像素格式的曲面上的操作，因为 DirectX 9.0 和更高版本的驱动程序还得到有关通知的应用程序在 D3DGDI2 中支持的 DirectX 运行时版本\_类型\_GETFORMATCOUNT 和 D3DGDI2\_类型\_GETFORMAT 查询以便这些驱动程序可以适当地处理的版本的操作。
+DirectX 8.0 和更高版本的驱动程序始终会收到有关\_D3DGDI2 中的应用程序使用的 DirectX 运行时版本\_DXVERSION 请求的通知，以便他们能够报告版本的设备功能。 此外，由于应用程序请求具有各种像素格式的图面上的操作，因此还会通知 DirectX 9.0 和更高版本的驱动程序，了解应用程序在\_D3DGDI2 中支持的 DirectX 运行时版本\_GETFORMATCOUNTD3DGDI2\_键入\_IFORMATPROVIDER.GETFORMAT 查询，以便这些驱动程序可以适当地处理版本的操作。
 
-有关示例中，为 8.0 版本的 DirectX 运行时，DirectX 9.0 或更高版本的驱动程序可以设置使用 D3DMULTISAMPLE 元素的多个采样表面的样本数\_类型枚举类型，而不管是否驱动程序支持屏蔽多重采样。 但是，对于 9.0 版的 DirectX 运行时，DirectX 9.0 或更高版本的驱动程序必须不设置 D3DMULTISAMPLE\_DDSCAPS3 中的类型位\_MULTISAMPLE\_掩码屏蔽，除非该驱动程序支持为屏蔽的位。 详细了解 D3DMULTISAMPLE\_类型，请参阅 DirectX SDK 文档。
+例如，对于 DirectX 运行时版本8.0，DirectX 9.0 或更高版本的驱动程序可以使用 D3DMULTISAMPLE\_类型枚举类型的元素来设置多抽样面的样本数，无论驱动程序是否支持屏蔽取样. 但对于 DirectX 运行时版本9.0，DirectX 9.0 或更高版本的驱动程序不得在 DDSCAPS3\_多级采样\_掩码掩码中设置 D3DMULTISAMPLE\_类型位，除非该驱动程序支持将这些位作为屏蔽。 有关 D3DMULTISAMPLE\_类型的详细信息，请参阅 DirectX SDK 文档。
 
-在 D3DGDI2\_类型\_GETFORMATCOUNT 查询中，驱动程序通知中的运行时版本的 DirectX 9.0 **dwReserved**的成员[ **DD\_GETFORMATCOUNTDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatcountdata)结构。 **DwReserved**成员设置为 DD\_运行时\_版本，即为 DirectX 9.0 0x00000900。
+在 D3DGDI2 中\_键入\_GETFORMATCOUNT 查询，将在[**DD\_GETFORMATCOUNTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getformatcountdata)结构的**dwReserved**成员中通知 DirectX 9.0 驱动程序的运行时版本。 **DwReserved**成员设置为 DD\_运行时\_版本，这是0X00000900 的 DirectX 9.0。
 
-在 D3DGDI2\_类型\_GETFORMAT 查询中，驱动程序通知中的运行时版本的 DirectX 9.0 **dwSize** DDPIXELFORMAT 结构中指定的成员**格式**的成员[ **DD\_GETFORMATDATA** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/ns-d3dhal-_dd_getformatdata)结构。 **DwSize**成员也设置为 DD\_运行时\_版本。
+在 D3DGDI2 中\_键入\_IFORMATPROVIDER.GETFORMAT 查询，将在[**DD\_GETFORMATDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ns-d3dhal-_dd_getformatdata)结构的**format**成员中指定的 DDPIXELFORMAT 结构的**dwSize**成员中通知 DirectX 9.0 驱动程序的运行时版本。 **DwSize**成员还设置为 DD\_运行时\_版本。
 
  
 
