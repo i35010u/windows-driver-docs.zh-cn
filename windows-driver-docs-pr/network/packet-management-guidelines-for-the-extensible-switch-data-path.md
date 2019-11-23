@@ -32,7 +32,7 @@ ms.locfileid: "72843709"
 
 -   在可扩展交换机入口数据路径上，筛选和转发扩展可以执行以下操作：
 
-    -   筛选扩展可以筛选数据包流量，并仅强制使用自定义端口或交换机策略来通过可扩展交换机进行数据包传送。 当扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中，可以通过使用[**NET\_缓冲区\_列表\_SWITCH**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)\_
+    -   筛选扩展可以筛选数据包流量，并仅强制使用自定义端口或交换机策略来通过可扩展交换机进行数据包传送。 当扩展筛选入站数据路径中的数据包时，它只能基于源端口和数据包来源的网络适配器连接应用筛选规则。 此信息存储在包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的 OOB 数据中，可以通过使用[**NET\_缓冲区\_列表\_SWITCH**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)\_\_
 
         **注意**  在入口数据路径上获取的数据包不包含目标端口。 只能对在出口数据路径上获取的数据包进行基于目标端口的筛选包的筛选。
 

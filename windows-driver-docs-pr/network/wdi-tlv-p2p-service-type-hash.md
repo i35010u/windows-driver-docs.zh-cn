@@ -1,10 +1,10 @@
 ---
 title: WDI_TLV_P2P_SERVICE_TYPE_HASH
-description: WDI_TLV_P2P_SERVICE_TYPE_HASH 是一个 TLV，其中包含服务类型的哈希。
+description: WDI_TLV_P2P_SERVICE_TYPE_HASH 为 TLV，其中包含服务类型的哈希。
 ms.assetid: A475C2E3-F558-47EC-9708-87887AE2D8AF
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_SERVICE_TYPE_HASH 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_P2P_SERVICE_TYPE_HASH 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cd2c6d3ef612cbe57dcced5bd5d06422ea87ea23
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -52,7 +52,7 @@ WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](http
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

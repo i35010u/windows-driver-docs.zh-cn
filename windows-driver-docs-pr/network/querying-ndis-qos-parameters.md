@@ -28,19 +28,19 @@ ms.locfileid: "72844892"
 
 NDIS 处理微型端口驱动程序的这些 OID 请求，并返回[**NDIS\_qos\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构内请求的 QoS 参数。 NDIS 按以下方式处理这些 OID 请求：
 
--   当 NDIS 处理[\_QOS\_operation\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)的 OID 的 oid 查询请求时，它将返回已从上一个 NDIS\_状态缓存的操作 NDIS QOS 参数[ **\_qos\_操作\_参数\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)由微型端口驱动程序颁发的更改状态指示。 当驱动程序的操作 QoS 参数首次解析或稍后更改时，驱动程序会发出此状态指示。
+-   当 NDIS 处理[\_QOS\_operation\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-operational-parameters)的 OID 的 oid 查询请求时，它将返回它已从上一个 NDIS 缓存的操作 NDIS QOS 参数[ **\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)了微型端口驱动程序发出的状态指示。 当驱动程序的操作 QoS 参数首次解析或稍后更改时，驱动程序会发出此状态指示。
 
-    如果过量驱动程序发出 OID 查询请求，在微型端口驱动程序发出[ **\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)状态指示之前，ndis 会返回[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，其中的所有成员（**标头**成员除外）均设置为零。
+    如果过量驱动程序在微型[ **\_状态\_QOS\_运行\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)之前发出 OID 查询请求，\_更改状态指示，ndis 将返回[**NDIS\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，其中所有成员（**标头**成员除外）均设置为零。
 
-    **请注意**，如果微型端口驱动程序使用 NDIS\_QOS [ **\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)状态指示，则  ndis 还会返回此结构[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)其成员（**标头**成员除外）设置为零的参数结构。
+    **请注意**，如果微型端口驱动程序发出[**ndis\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)状态指示（其成员（**标头**成员除外））设置为零[ **，则  ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) ndis 还会返回此结构。\_\_
 
      
 
--   当 NDIS\_QOS 处理 Oid 的 OID 查询请求时[\_远程\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-remote-parameters)时，它将返回从以前的 NDIS 缓存的远程 ndis QOS 参数， [ **\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)由微型端口驱动程序颁发的状态指示。 当驱动程序的远程 QoS 参数首次解析或稍后更改时，驱动程序会发出此状态指示。
+-   当 NDIS\_QOS 处理 Oid 的 OID 查询请求时[\_远程\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-remote-parameters)时，它将返回它已从以前的 NDIS 缓存的远程 ndis QOS 参数[ **\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)了微型端口驱动程序发出的状态指示。 当驱动程序的远程 QoS 参数首次解析或稍后更改时，驱动程序会发出此状态指示。
 
-    如果在微型端口驱动程序发出[ **\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态指示之前，过量驱动程序发出 OID 查询请求，ndis 将返回[**ndis\_QOS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)所有成员（**标头**成员除外）均设置为零的参数结构。
+    如果过量驱动程序在微型[ **\_状态\_QOS\_远程\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)之后发出 OID 查询请求，\_更改状态指示，ndis 将返回[**NDIS\_qos\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，其中所有成员（**标头**成员除外）均设置为零。
 
-    **请注意**，如果微型端口驱动程序使用 NDIS\_QOS [ **\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)状态指示，则  ndis 还会返回此结构[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)其成员（**标头**成员除外）设置为零的参数结构。
+    **请注意**，如果微型端口驱动程序发出[**ndis\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)状态指示（其成员（**标头**成员除外））设置为零[ **，则  ** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters) ndis 还会返回此结构。\_\_
 
      
 

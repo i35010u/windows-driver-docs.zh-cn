@@ -1,9 +1,9 @@
 ---
 title: SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 控制代码
-description: SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 套接字 i/o 控制操作允许 Winsock 客户端指定用于连接到最终目标的新 TCP 套接字的重定向记录。
+description: SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 套接字 i/o 控制操作允许 Winsock 客户端指定重定向记录到用于连接到最终目标的新 TCP 套接字。
 ms.assetid: 51FC55BB-FD7A-4FDE-B1FC-02745AC03E33
 ms.date: 08/08/2017
-keywords: -SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 控制从 Windows Vista 开始的代码网络驱动程序
+keywords: -从 Windows Vista 开始 SIO_SET_WFP_CONNECTION_REDIRECT_RECORDS 控制代码网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b3617d012cff3a28638a0c8991ba039b5c3f7a14
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -31,7 +31,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

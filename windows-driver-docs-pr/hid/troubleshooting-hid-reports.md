@@ -57,7 +57,7 @@ ms.locfileid: "72841551"
 
 当[Hid 客户端驱动程序](hid-client-drivers.md)从 hid 集合获取输入报告时，报告存储在由 hid 类驱动程序维护的环形缓冲区中。 此机制可降低应用程序或驱动程序丢失所需的输入报告的可能性。
 
-默认情况下，HID 类驱动程序维护一个包含32报告的输入报告环形缓冲区。 如果集合将数据传输到 HID 类驱动程序的速度比用户模式应用程序或内核模式驱动程序更快，则会因为缓冲区溢出而导致输入报告丢失。 为了降低缓冲区溢出的可能性，应用程序或驱动程序可以重新配置缓冲区的大小（以报表数为限）。 驱动程序使用 IOCTL 检索和更改缓冲区的大小[ **\_获取\_NUM\_设备\_输入\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_get_num_device_input_buffers)请求和 IOCTL\_\_\_[ **\_@no__t_ 输入13_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_set_num_device_input_buffers)请求。 应用程序通过调用[**HidD\_GetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getnuminputbuffers)和[**HidD\_SetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setnuminputbuffers)来执行相同的操作。
+默认情况下，HID 类驱动程序维护一个包含32报告的输入报告环形缓冲区。 如果集合将数据传输到 HID 类驱动程序的速度比用户模式应用程序或内核模式驱动程序更快，则会因为缓冲区溢出而导致输入报告丢失。 为了降低缓冲区溢出的可能性，应用程序或驱动程序可以重新配置缓冲区的大小（以报表数为限）。 驱动程序通过使用 IOCTL 检索和更改缓冲区的大小[ **\_获取\_NUM\_设备\_输入\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_get_num_device_input_buffers)请求和[**IOCTL\_\_\_\_输入**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidclass/ni-hidclass-ioctl_set_num_device_input_buffers)\_的输入个缓冲区请求。 应用程序通过调用[**HidD\_GetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_getnuminputbuffers)和[**HidD\_SetNumInputBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidsdi/nf-hidsdi-hidd_setnuminputbuffers)来执行相同的操作。
 
  
 

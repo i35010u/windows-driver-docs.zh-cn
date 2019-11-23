@@ -1,9 +1,9 @@
 ---
 title: OID_SRIOV_WRITE_VF_CONFIG_SPACE
-description: 过量驱动程序发出 OID_SRIOV_WRITE_VF_CONFIG_SPACE 的对象标识符（OID）设置请求，将数据写入到网络适配器上指定 PCIe 虚拟功能（VF）的 PCI Express （PCIe）配置空间。
+description: 过量驱动程序发出 OID_SRIOV_WRITE_VF_CONFIG_SPACE 的对象标识符（OID）设置请求，以将数据写入到网络适配器上指定 PCIe 虚拟功能（VF）的 PCI Express （PCIe）配置空间。
 ms.assetid: 0D9866A6-A8C6-4B0A-8D17-A632E1AE37BF
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SRIOV_WRITE_VF_CONFIG_SPACE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SRIOV_WRITE_VF_CONFIG_SPACE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 5745d1c52d5763e7cdacefec65101fba0f99ec8f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843968"
 # <a name="oid_sriov_write_vf_config_space"></a>OID\_SRIOV\_写入\_VF\_配置\_空间
 
 
-过量驱动程序发出 OID\_的对象标识符（OID）设置请求\_写入\_VF\_配置\_空间，将数据写入指定 PCIe 虚拟函数（VF）的 PCI Express （PCIe）配置空间网络适配器。
+过量驱动程序发出 OID\_的对象标识符（OID）设置请求\_写入\_VF\_配置\_空间，将数据写入到网络适配器上指定 PCIe 虚拟功能（VF）的 PCI Express （PCIe）配置空间。
 
 过量驱动程序将此 OID 集请求颁发给网络适配器的 PCIe 物理功能（PF）的微型端口驱动程序。 对于支持单个根 i/o 虚拟化（SR-IOV）接口的 PF 小型端口驱动程序，此 OID 方法请求是必需的。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72843968"
 
 VF 微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行。 因此，VF 微型端口驱动程序无法直接访问硬件资源，如 VF 的 PCI 配置空间。 只有在 Hyper-v 父分区的管理操作系统中运行的 "PF" 微型端口驱动程序才能访问 VF 的 PCI 配置空间。
 
-占用的驱动程序（例如虚拟化堆栈）发出 oid\_SRIOV 的 OID 集请求\_\_在 VF 微型端口驱动程序调用[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)写入其 PCI 配置时\_配置\_空间空间.
+占用大量的驱动程序（例如虚拟化堆栈）发出 oid\_SRIOV 的 OID 集请求\_在 VF 微型端口驱动程序调用[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)写入其 PCI 配置空间时，\_配置\_空间写入\_vf。
 
 当处理 OID\_SRIOV 的 OID 方法请求时\_写入\_VF\_配置\_空间，则 PF 微型端口驱动程序必须遵循以下准则：
 
@@ -74,11 +74,11 @@ PF 多端口驱动程序返回 OID\_SRIOV 的 OID 集的以下状态代码之一
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)"><strong>NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS</strong></a>结构中的一个或多个成员的值无效。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)"><strong>NDIS_SRIOV_WRITE_VF_CONFIG_SPACE_PARAMETERS</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 设置<strong>数据。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置<strong>数据。SET_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

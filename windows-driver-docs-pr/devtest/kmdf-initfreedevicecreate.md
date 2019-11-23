@@ -1,6 +1,6 @@
 ---
 title: InitFreeDeviceCreate 规则（kmdf）
-description: InitFreeDeviceCreate 规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序已收到调用中的 WDFDEVICE\_INIT 结构，则驱动程序必须调用 WdfDeviceInitFree 而不是 WdfDeviceCreate。WdfControlDeviceInitAllocate.
+description: InitFreeDeviceCreate 规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序已收到调用 WdfControlDeviceInitAllocate 的 WDFDEVICE\_INIT 结构，则驱动程序必须调用 WdfDeviceInitFree 而不是 WdfDeviceCreate。
 ms.assetid: 9d33bd42-8781-442e-9c7d-00b6f04b1634
 ms.date: 05/21/2018
 keywords:
@@ -22,7 +22,7 @@ ms.locfileid: "72840218"
 # <a name="initfreedevicecreate-rule-kmdf"></a>InitFreeDeviceCreate 规则（kmdf）
 
 
-**InitFreeDeviceCreate**规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序收到 WDFDEVICE，则驱动程序必须调用[**WdfDeviceInitFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)而不是[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) [ **@no__t**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)从对[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用 _7_ INIT 结构。
+**InitFreeDeviceCreate**规则指定如果某个设备对象初始化方法中出现错误，并且驱动程序已收到调用[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的[**WDFDEVICE\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构，则驱动程序必须调用[**WdfDeviceInitFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)而不是[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 。
 
 |              |      |
 |--------------|------|
@@ -54,7 +54,7 @@ ms.locfileid: "72840218"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)
@@ -71,7 +71,7 @@ ms.locfileid: "72840218"
 [**WdfPdoInitAddHardwareID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitaddhardwareid)
 [**WdfPdoInitAssignDeviceID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassigndeviceid)
 [**WdfPdoInitAssignInstanceID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassigninstanceid)
-[**WdfPdoInitAssignRawDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)的另请参阅
+[**WdfPdoInitAssignRawDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)另请参阅
 --------
 
 [**InitFreeDeviceCallback**](kmdf-initfreedevicecallback.md)

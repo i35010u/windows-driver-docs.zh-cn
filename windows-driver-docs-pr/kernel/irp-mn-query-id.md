@@ -86,15 +86,15 @@ PnP 管理器和驱动程序以 IRQL 被动\_级别将此 IRP 发送到任意线
 
 **指定 BusQueryDeviceID 和 BusQueryInstanceID**
 
-总线驱动程序为 BusQueryDeviceID 和 BusQueryInstanceID 提供的值允许操作系统将设备与计算机上的其他设备区分开来。 操作系统使用 Irp 中返回的设备 ID 和实例 ID **\_MN\_QUERY\_ID** Irp 和[**irp\_MN\_query\_功能**](irp-mn-query-capabilities.md)irp 中返回的唯一 ID 字段，以查找设备的注册表信息。
+总线驱动程序为 BusQueryDeviceID 和 BusQueryInstanceID 提供的值允许操作系统将设备与计算机上的其他设备区分开来。 操作系统使用**irp\_MN\_QUERY\_id** IRP 中返回的设备 id 和实例 id，并在[**irp\_MN\_query\_功能**](irp-mn-query-capabilities.md)IRP 中返回，以定位设备的注册表信息。
 
-对于**BusQueryDeviceID**，总线驱动程序提供设备的*设备 ID*。 设备 ID 应该包含设备的最特定说明，其中包含用于标识制造商、设备、修订、包装器和封装产品的枚举器名称和字符串（如果可能）。 例如，PCI 总线驱动程序以 PCI\\即使\_xxxx & 开发\_xxxx & 子系统\_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx & 的设备 Id 来响应以上提到的所有五项。 不过，设备 ID 不应包含足够的信息来区分两个相同的设备。 此信息应在实例 ID 中进行编码。
+对于**BusQueryDeviceID**，总线驱动程序提供设备的*设备 ID*。 设备 ID 应该包含设备的最特定说明，其中包含用于标识制造商、设备、修订、包装器和封装产品的枚举器名称和字符串（如果可能）。 例如，PCI 总线驱动程序以 PCI\\即使\_xxxx & 开发\_xxxx & 子系统\_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx & 的设备 Id 来响应以上提到的所有五项。\_ 不过，设备 ID 不应包含足够的信息来区分两个相同的设备。 此信息应在实例 ID 中进行编码。
 
 对于 BusQueryInstanceID，总线驱动程序应提供包含设备*实例 ID*的字符串。 安装程序和总线驱动程序使用实例 ID 和其他信息来区分计算机上两个相同的设备。 实例 ID 在整个计算机中是唯一的，或者只在设备的父总线上是唯一的。
 
-如果实例 ID 只在总线上是唯一的，则总线驱动程序会为 BusQueryInstanceID 指定 string，还会在响应[**IRP\_MN\_查询的\_功能**](irp-mn-query-capabilities.md)请求时指定**UniqueID**值**FALSE**设备。 如果**UniqueID**为**FALSE**，则 PnP 管理器会通过添加有关设备父节点的信息来增强实例 ID，从而使 id 在计算机上是唯一的。 在这种情况下，总线驱动程序不应执行额外的步骤来使其设备的实例 Id 全局唯一;只需返回相应的功能信息，操作系统就会对其进行处理。
+如果实例 ID 只在总线上是唯一的，则总线驱动程序会为 BusQueryInstanceID 指定 string，还会**将 MN 值指定** **为响应** [**IRP\_\_查询\_功能**](irp-mn-query-capabilities.md)请求。 如果**UniqueID**为**FALSE**，则 PnP 管理器会通过添加有关设备父节点的信息来增强实例 ID，从而使 id 在计算机上是唯一的。 在这种情况下，总线驱动程序不应执行额外的步骤来使其设备的实例 Id 全局唯一;只需返回相应的功能信息，操作系统就会对其进行处理。
 
-如果总线驱动程序可以为每个子设备提供全局唯一 ID （如序列号），则总线驱动程序会为 BusQueryInstanceID 指定这些字符串，并在响应 IRP\_MN 时指定**UniqueID**值为**TRUE** [ **\_查询**](irp-mn-query-capabilities.md)每个设备\_功能请求。
+如果总线驱动程序可以为每个子设备提供全局唯一 ID （如序列号），则总线驱动程序会为 BusQueryInstanceID 指定这些字符串，并为响应[**IRP\_MN\_查询\_** ](irp-mn-query-capabilities.md)每个设备请求功能请求指定**UniqueID**值为**TRUE** 。
 
 **指定 BusQueryHardwareIDs 和 BusQueryCompatibleIDs**
 
@@ -132,7 +132,7 @@ PnP 管理器和驱动程序以 IRQL 被动\_级别将此 IRP 发送到任意线
 
 有关发送 Irp 的信息，请参阅[处理 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps) 。 以下步骤专门适用于此 IRP：
 
--   在 IRP 的下一个 i/o 堆栈位置设置值：将**MajorFunction**设置为[**irp\_MJ\_PNP**](irp-mj-pnp.md)，将 MinorFunction**设置为 irp**\_MN\_查询\_ID，并将设置为**BusQueryInstanceID**。
+-   在 IRP 的下一个 i/o 堆栈位置设置值：将**MajorFunction**设置为[**irp\_MJ\_PNP**](irp-mj-pnp.md)，将**MINORFUNCTION**设置为 IRP\_MN\_查询\_ID，并将**QueryId**设置为**IdType**。
 
 -   将**IoStatus**设置为\_不\_支持的状态。
 
@@ -151,7 +151,7 @@ PnP 管理器和驱动程序以 IRQL 被动\_级别将此 IRP 发送到任意线
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>

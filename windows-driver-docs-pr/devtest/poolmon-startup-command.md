@@ -38,23 +38,23 @@ ms.locfileid: "72038077"
 从显示中排除具有指定标记的分配。 在 PoolMon 命令中可以有多个 **/x**参数。 不要键入 **/x**和*Tag*参数之间的空格。
 
 <span id="_______Tag______"></span><span id="_______tag______"></span><span id="_______TAG______"></span>*标记*   
-指定池标记或池标记模式。 池标记区分大小写。 *标记*参数可以包含星号（ **@no__t**）来表示任何字符的零个或多个实例，或包含一个问号（ *<em>？</em>* ）来表示任何字符的一个实例。 不要以星号开始标记。
+指定池标记或池标记模式。 池标记区分大小写。 *标记*参数可以包含星号（ **\*** ）来表示任何字符的零个或多个实例，或包含一个问号（ *<em>？</em>* ）来表示任何字符的一个实例。 不要以星号开始标记。
 
 <span id="________c______"></span><span id="________C______"></span> **/c**   
-将列添加到显示（映射的 @ no__t-0Driver），其中列出了使用每个池标记的本地计算机上的驱动程序。 此功能仅在32位版本的 Windows 上受支持。
+将列添加到显示（映射\_驱动程序）列出本地计算机上使用每个池标记的驱动程序。 此功能仅在32位版本的 Windows 上受支持。
 
 <span id="_______LocalTagFile______"></span><span id="_______localtagfile______"></span><span id="_______LOCALTAGFILE______"></span>*LocalTagFile*   
-指定本地标记文件的路径和文件名、带格式的文本文件（其中包含本地计算机上的驱动程序列表）以及它们分配的标记值。 此文件是在使用 **/c**参数时显示的映射 @ No__t-0Driver 列的数据源。 默认值为 localtag。
+指定本地标记文件的路径和文件名、带格式的文本文件（其中包含本地计算机上的驱动程序列表）以及它们分配的标记值。 此文件是在使用 **/c**参数时所显示的映射\_驱动程序列的数据源。 默认值为 localtag。
 
-如果使用 **/c**参数，但未指定*LocalTagFile*的值，并且 poolmon 在当前目录中找不到 Localtag 文件，则 poolmon 会通过扫描本地计算机上的驱动程序（% SystemRoot% \\System32 @ no__t-3Drivers @ no__t-4\*.sys）。
+如果使用 **/c**参数，但未指定*LocalTagFile*的值，并且 poolmon 在当前目录中找不到 Localtag 文件，则 poolmon 会通过扫描本地计算机上的驱动程序（% SystemRoot%\\\\System32\\\*.sys）来生成 localtag 文件。
 
 <span id="________g______"></span><span id="________G______"></span> **/g**   
-将列添加到显示（映射的 @ no__t-0Driver）列出的 Windows 组件和用于分配每个标记的常用驱动程序。
+向显示（映射\_驱动程序）添加一列，其中列出了用于分配每个标记的 Windows 组件和常用的驱动程序。
 
 <span id="_______PoolTagFile______"></span><span id="_______pooltagfile______"></span><span id="_______POOLTAGFILE______"></span>*PoolTagFile*   
-指定带格式的文本文件的路径和文件名，该文件列出 Windows 组件的名称以及常用驱动程序的名称和它们分配的标记值。 此文件是在使用 **/g**参数时显示的映射 @ No__t-0Driver 列的数据源。
+指定带格式的文本文件的路径和文件名，该文件列出 Windows 组件的名称以及常用驱动程序的名称和它们分配的标记值。 此文件是在使用 **/g**参数时所显示的映射\_驱动程序列的数据源。
 
-默认值为 pooltag，它是由 Microsoft 提供的文件。 *Pooltag*包含在 Windows 驱动程序工具包（WDK）的 Tools @ No__t-1Other 子目录中。
+默认值为 pooltag，它是由 Microsoft 提供的文件。 *Pooltag*包含在 Windows 驱动程序工具包（WDK）\\其他子目录的工具中。
 
 <span id="________s______"></span><span id="________S______"></span> **/s**   
 显示来自终端服务会话池的分配。
@@ -62,10 +62,10 @@ ms.locfileid: "72038077"
 <span id="_______TSSessionID______"></span><span id="_______tssessionid______"></span><span id="_______TSSESSIONID______"></span>*TSSessionID*   
 只显示指定会话池中的分配。 不要键入 **/s**参数与*TSSessionID*参数之间的空格。
 
-<span id="________p______"></span><span id="________P______"></span> **/p**@no__t  
+<span id="________p______"></span><span id="________P______"></span> **/p**   
 仅显示非分页池的分配。
 
-<span id="________p__p_______"></span><span id="________P__P_______"></span> **/p/p**@no__t  
+<span id="________p__p_______"></span><span id="________P__P_______"></span> **/p/p**   
 仅显示分页池的分配。
 
 <span id="________e_______"></span><span id="________E_______"></span> **/e**   
@@ -87,7 +87,7 @@ ms.locfileid: "72038077"
 <span id="________f_______"></span><span id="________F_______"></span> **/f**   
 按可用操作数对标记排序。
 
-<span id="________d______"></span><span id="________D______"></span> **/d**@no__t  
+<span id="________d______"></span><span id="________D______"></span> **/d**   
 按字节分配和释放的字节数之间的差异对标记排序。
 
 <span id="________b_______"></span><span id="________B_______"></span> **/b**   
@@ -114,9 +114,9 @@ ms.locfileid: "72038077"
 
 PoolMon 无法在64位版本的 Windows Server 2003 上生成 localtag 文件。 因此， **/c**参数及其功能仅在32位版本的 Windows 上可用。
 
-可以在同一命令中使用 **/c**和 **/g**参数。 如果这样做，则映射的 @ no__t-0Driver 列将显示本地标记和池标记文件中的数据。
+可以在同一命令中使用 **/c**和 **/g**参数。 如果执行此操作，映射的\_驱动程序列将显示本地标记和池标记文件中的数据。
 
-你还可以使用 **/c**和 **/G**来显示映射 @ no__t-2Driver 列中的其他文件中的数据，方法是使用参数-- **poolmon/c** *filename*或**poolcom/g** *filename*指定文件名和位置。 在这种情况下， **/c**和 **/g**参数的行为相同，并且可以互换使用。
+你还可以使用 **/c**和 **/G**来显示映射\_驱动程序列中其他文件的数据，方法是使用参数-- **poolmon/c** *filename*或**poolcom/g** *filename*指定文件名和位置。 在这种情况下， **/c**和 **/g**参数的行为相同，并且可以互换使用。
 
 终端服务会话池监视仅在 Windows Server 2003 和更高版本的 Windows 上可用。
 

@@ -24,7 +24,7 @@ ms.locfileid: "72842073"
 
 当代理驱动程序收到来自其关联的 SAN 服务提供商的请求以提供分配给驱动程序控件下的 Nic 的 IP 地址列表时，驱动程序将确定此列表并将其传递给提供程序。
 
-为了获取这些 IP 地址，代理驱动程序必须注册传输驱动程序接口（TDI）才能接收地址更改通知。 代理驱动程序调用[**TdiRegisterPnPHandlers**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565062(v=vs.85))函数。 在此调用中，此代理驱动程序将指向 TDI\_客户端\_接口\_信息结构的回调**函数的指针**传递到解决添加和删除操作。 成功返回**TdiRegisterPnPHandlers**函数后，TDI 会使用地址添加回调立即指示所有当前处于活动状态的代理驱动程序的网络地址。 指示包含这些地址所绑定到的设备的网络地址和标识符。
+为了获取这些 IP 地址，代理驱动程序必须注册传输驱动程序接口（TDI）才能接收地址更改通知。 代理驱动程序调用[**TdiRegisterPnPHandlers**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565062(v=vs.85))函数。 在此调用中，此代理驱动程序将指针传递到 TDI\_CLIENT\_INTERFACE\_INFO 结构的**AddAddressHandlerV2**和**DelAddressHandlerV2**成员中的回调函数，以指定用于添加和删除地址的回调函数。 成功返回**TdiRegisterPnPHandlers**函数后，TDI 会使用地址添加回调立即指示所有当前处于活动状态的代理驱动程序的网络地址。 指示包含这些地址所绑定到的设备的网络地址和标识符。
 
 当 TDI 调用这些回调函数中的任何一个来指示地址添加或删除时，代理驱动程序需要以下参数：
 

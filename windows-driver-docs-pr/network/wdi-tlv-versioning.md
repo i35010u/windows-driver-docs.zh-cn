@@ -35,7 +35,7 @@ typedef const TLV_CONTEXT * PCTLV_CONTEXT;
 
 已对 XML 进行了补充，以支持 containerRefs 上允许使用两个属性的此版本控制： *versionAdded*和*versionRemoved*。 这会使分析器和生成器根据对等端版本调整字节流。
 
-**请注意**  分析器和生成器会假设它们始终与 WDI\_版本\_最新的链接。 在调用[**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)时，小型端口应始终将[**NDIS\_微\_端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)的 WDI\_版本\_的最新版本传递给\_WDI\_特性：：**WdiVersion**比使用特定版本（如 WDI\_版本\_1\_0），因为它们将过期并导致 TLV 分析器生成器出现问题，因为其他端可能会发送意外的字节流。
+**请注意**  分析器和生成器会假设它们始终与 WDI\_版本\_最新的链接。 在调用[**NdisMRegisterWdiMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismregisterwdiminiportdriver)而不是使用特定版本（如 WDI\_版本\_1\_0 **）时，** 小型端口应始终将[**NDIS\_\_微**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_ndis_miniport_driver_wdi_characteristics)端口的 WDI\_版本传递\_最新版本，而不是使用特定版本，例如\_版本\_1 0，因为其他端可能会发送意外的字节流。
 
  
 

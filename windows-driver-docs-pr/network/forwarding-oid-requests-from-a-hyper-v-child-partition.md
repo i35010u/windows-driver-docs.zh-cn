@@ -14,7 +14,7 @@ ms.locfileid: "72841751"
 # <a name="forwarding-oid-requests-from-a-hyper-v-child-partition"></a>从 Hyper-V 子分区转发 OID 请求
 
 
-多路广播对象标识符（OID）请求，包括[OID\_802\_3\_添加\_多播\_地址](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-add-multicast-address)和[OID\_802\_3\_删除\_多播\_地址](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-delete-multicast-address)由过量协议和筛选器驱动程序（在以下各项中运行）发出：
+多路广播对象标识符（OID）请求（包括[OID\_802\_3\_添加\_多播\_地址](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-add-multicast-address)和[OID\_802\_3\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-delete-multicast-address)\_\_
 
 -   在 Hyper-v 父分区中运行的管理操作系统。
 

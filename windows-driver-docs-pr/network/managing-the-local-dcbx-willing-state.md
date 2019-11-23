@@ -48,7 +48,7 @@ ETS 和 PFC 的 TLVs 定义了一个称为 "*愿意*位" 的位。 如果网络�
 
 有关本地 DCBX 适用于 bits 和 TLVs 的详细信息，请参阅 IEEE 802.1 Qaz 草案标准。
 
-**请注意**  从 Windows Server 2012 开始，可以通过 PowerShell CMDLET 配置 DCB 组件，以便设置或清除**NDIS\_qos\_参数\_** 在向[OID 发出 OID\_qos 时使用8_ 参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)请求。 这会导致微型端口驱动程序分别启用或禁用本地 DCBX。
+**请注意**  从 Windows Server 2012 开始，可以通过 PowerShell CMDLET 配置 DCB 组件，以便设置或清除**NDIS\_qos\_参数\_** 在发出[OID\_qos\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-qos-parameters)请求时使用。 这会导致微型端口驱动程序分别启用或禁用本地 DCBX。
 
  
 

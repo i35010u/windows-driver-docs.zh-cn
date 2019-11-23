@@ -34,7 +34,7 @@ ms.locfileid: "72842199"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>

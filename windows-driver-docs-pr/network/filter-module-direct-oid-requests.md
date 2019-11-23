@@ -20,11 +20,11 @@ ms.locfileid: "72834687"
 
 
 
-为了支持直接 OID 请求路径，筛选器驱动程序在 NDIS\_筛选器中提供了*FilterXxx*函数入口点[ **\_DRIVER\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构，NDIS 为 Filter 提供**NdisF * Xxx*** 函数因素.
+为了支持直接 OID 请求路径，筛选器驱动程序在 NDIS\_筛选器中提供了*FilterXxx*函数入口点[ **\_DRIVER\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_driver_characteristics)结构，NDIS 为筛选器驱动程序提供了**NdisF * Xxx*** 函数。
 
 *直接 OID 请求接口*类似于标准 OID 请求接口。 例如， [**NdisFDirectOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfdirectoidrequest)和[*FilterDirectOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_direct_oid_request)函数类似于[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)和[*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)函数。
 
-**请注意**  NDIS 6.1 和更高版本支持用于直接 OID 请求接口的特定 oid。 不支持在 NDIS 6.1 和某些 NDIS 6.1 Oid 之前存在的 Oid。 若要确定 OID 是否可用于直接 Oid 接口，请参阅 "OID 引用" 页。 例如，请参阅[OID\_TCP\_任务\_IPSEC\_卸载\_V2](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)中的注释。
+**请注意**  NDIS 6.1 和更高版本支持用于直接 OID 请求接口的特定 oid。 不支持在 NDIS 6.1 和某些 NDIS 6.1 Oid 之前存在的 Oid。 若要确定 OID 是否可用于直接 Oid 接口，请参阅 "OID 引用" 页。 例如，请参阅[OID\_TCP\_任务\_IPSEC\_卸载\_V2](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)中的注释。\_\_
 
  
 

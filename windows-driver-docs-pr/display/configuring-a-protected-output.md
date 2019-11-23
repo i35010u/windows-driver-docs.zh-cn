@@ -18,7 +18,7 @@ ms.locfileid: "72839796"
 
 显示微型端口驱动程序可以接收请求，以配置与图形适配器的物理输出连接器关联的受保护的输出。 显示微型端口驱动程序的[**DxgkDdiOPMConfigureProtectedOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_configure_protected_output)函数会将一个指针传递到[**DXGKMDT\_OPM\_配置\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ns-d3dkmdt-_dxgkmdt_opm_configure_parameters)结构，该结构指定如何配置受保护的输出。 DXGKMDT\_OPM\_配置\_参数的**guidSetting**和**abParameters**成员指定配置请求。
 
-**请注意**   在**DxgkDdiOPMConfigureProtectedOutput**返回之前，显示微型端口驱动程序必须验证**OMAC**中指定的单密钥密码块链（CBC）模式消息身份验证代码（OMAC）DXGKMDT\_OPM 的成员\_配置\_参数是正确的。 有关验证 OMAC 的详细信息，请参阅[OMAC 算法](https://go.microsoft.com/fwlink/p/?linkid=70417)。 驱动程序还必须验证在 DXGKMDT\_OPM 的**ulSequenceNumber**成员中指定的序列号是否\_配置\_参数与驱动程序当前已存储的序列号匹配。 然后，该驱动程序必须递增存储的序列号。
+**注意**   在**DxgkDdiOPMConfigureProtectedOutput**返回之前，显示微型端口驱动程序必须验证在 DXGKMDT\_\_\_OPM 的**OMAC**成员中指定的单密钥密码块链（CBC）模式消息身份验证代码（OMAC）是否正确。 有关验证 OMAC 的详细信息，请参阅[OMAC 算法](https://go.microsoft.com/fwlink/p/?linkid=70417)。 驱动程序还必须验证在 DXGKMDT\_OPM 的**ulSequenceNumber**成员中指定的序列号是否\_配置\_参数与驱动程序当前已存储的序列号匹配。 然后，该驱动程序必须递增存储的序列号。
 
  
 

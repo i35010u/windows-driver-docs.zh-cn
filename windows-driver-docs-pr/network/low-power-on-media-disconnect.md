@@ -81,7 +81,7 @@ ms.locfileid: "72844136"
 
 有关详细信息，请参阅[NDIS 唤醒原因状态指示](ndis-wake-reason-status-indications.md)。
 
-**请注意**  如果微型端口驱动程序发出[**ndis\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状态指示，则必须在发出[**ndis\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)之前执行此操作\_链接\_状态状态指示。
+**请注意**  如果微型端口驱动程序发出[**ndis\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状态指示，则必须在发出[**ndis\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)之前执行此操作，\_状态状态指示。\_
 
  
 

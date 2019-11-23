@@ -3,7 +3,7 @@ title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA
 description: 作为集，TCP/IP 传输使用 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA OID 来请求微型端口驱动程序将指定的安全关联（SAs）添加到 NIC。
 ms.assetid: bd1d0cf2-234d-4c06-904e-fe2de6022981
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_ADD_SA 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cbe156d3c4aeaaf86dd146852ad83529114fb8a4
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -34,7 +34,7 @@ ms.locfileid: "72843888"
 
 TCP/IP 传输确定 NIC 可以执行 IPsecOV2 操作后，TCP/IP 传输请求微型端口驱动程序以添加 SAs。 传输添加 SA 之前，传输无法将 IPsecOV2 操作卸载到 NIC。
 
-微型端口驱动程序接收[**IPSEC\_卸载\_v2\_添加\_sa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa)结构，该结构包含指向下一个 IPSEC\_卸载\_V2\_在链接列表中添加\_SA 结构的指针。 微型端口驱动程序将 NIC 配置为针对 SAs 的 IPsecOV2 处理。 成功设置到 OID 后\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA，微型端口驱动程序提供了用于标识 IPSEC 的**OffloadHandle**成员中已卸载的 SAs 的句柄\_卸载\_V2\_添加\_SA。 （例如，传输使用发送路径中的句柄来指示要使用的卸载 SA）。 如果链接列表中的任何 SAs 已卸载，则该设置请求成功。
+微型端口驱动程序接收[**IPSEC\_卸载\_v2\_添加\_sa**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_add_sa)结构，该结构包含指向下一个 IPSEC\_卸载\_V2\_在链接列表中添加\_SA 结构的指针。 微型端口驱动程序将 NIC 配置为针对 SAs 的 IPsecOV2 处理。 成功设置到 OID 后\_TCP\_任务\_IPSEC\_卸载\_V2\_添加\_SA，微型端口驱动程序**提供了用于**标识 IPSEC\_\_\_\_ （例如，传输使用发送路径中的句柄来指示要使用的卸载 SA）。 如果链接列表中的任何 SAs 已卸载，则该设置请求成功。
 
 小型端口驱动程序可能会返回 OID 请求的失败状态，例如，当 NIC 用尽容量来卸载更多 SAs 时。 此外，微型端口驱动程序可能会返回失败状态，因为它需要避免争用条件。 在这种情况下，NIC 配置会更改，并排除特定的算法。
 

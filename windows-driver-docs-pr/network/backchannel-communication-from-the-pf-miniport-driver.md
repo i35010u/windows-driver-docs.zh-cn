@@ -39,7 +39,7 @@ VF 配置块用于 backchannel 和 VF 微型端口驱动程序之间的通信。
 
 3.  在 Hyper-v 子分区中运行的来宾操作系统中，将执行以下步骤：
 
-    1.  VPCI 驱动程序将缓存的*BlockMask*参数数据保存在 VPCI\_的**BlockMask**成员中会[**使\_块\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)与 IOCTL\_VPCI 关联的输出结构[ **\_使\_块请求无效**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)。
+    1.  VPCI 驱动程序将缓存的*BlockMask*参数数据保存在 VPCI\_的**BlockMask**成员中会使与[**IOCTL\_VPCI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block) [ **\_块\_输出结构的输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)结构无效\_块请求无效。\_
 
     2.  VPCI 驱动程序已成功完成[**IOCTL\_VPCI\_使\_块请求无效**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)。 发生这种情况时，NDIS\_SRIOV\_VF 发出 OID 的对象标识符（OID）方法请求， [\_将\_配置\_块无效](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-vf-invalidate-config-block)到 VF 微型端口驱动程序。 [**NDIS\_SRIOV\_VF\_使\_配置\_块无效，\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)将在 OID 请求中传递。 此结构包含缓存的*BlockMask*参数数据。
 

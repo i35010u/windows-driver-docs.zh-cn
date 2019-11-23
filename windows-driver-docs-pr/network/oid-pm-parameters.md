@@ -3,7 +3,7 @@ title: OID_PM_PARAMETERS
 description: 作为查询，协议驱动程序可以使用 OID_PM_PARAMETERS OID 来查询当前启用的网络适配器的电源管理硬件功能。
 ms.assetid: c3431724-1b5f-4634-8b1e-27fed9031f01
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PM_PARAMETERS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PM_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ecb2b2704a3e8c92f8b5d6882b3eda2fb3c3169
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ ms.locfileid: "72844054"
 
 当前启用的功能可以是硬件支持的功能的子集。 有关硬件支持的功能的详细信息，请参阅[OID\_PM\_硬件\_功能](oid-pm-hardware-capabilities.md)。
 
-**请注意**  如果 NDIS 将 NDIS\_pm 设置为\_选择性\_在[**NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的**WakeUpFlags**成员中挂起启用标志\_t_11_ PM 直接将参数\_到微型端口驱动程序。 这允许 NDIS 通过网络驱动程序堆栈中的筛选器驱动程序绕过处理。
+**请注意**  如果 ndis 在 NDIS [ **\_pm\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)结构的**WakeUpFlags**成员中设置 NDIS\_PM\_选择性\_挂起\_ENABLED 标志，则它会直接向微型端口驱动程序发出 oid\_pm 的 oid 设置请求。\_ 这允许 NDIS 通过网络驱动程序堆栈中的筛选器驱动程序绕过处理。
 
  
 

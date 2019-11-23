@@ -25,7 +25,7 @@ ms.locfileid: "72837817"
 
 ### <a name="span-idimplicit_threads_and_processesspanspan-idimplicit_threads_and_processesspanimplicit-threads-and-processes"></a><span id="implicit_threads_and_processes"></span><span id="IMPLICIT_THREADS_AND_PROCESSES"></span>隐式线程和进程
 
-在内核模式调试中，调试器引擎将使用*隐式进程*来确定执行虚拟到物理地址转换时要使用的虚拟地址空间，例如，在方法[**VirtualToPhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-virtualtophysical)和[**ReadVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtual)。 事件发生时，隐式进程将设置为当前进程。
+在内核模式调试中，调试器引擎将使用*隐式进程*来确定执行虚拟到物理地址转换时要使用的虚拟地址空间，例如，在方法[**VirtualToPhysical**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-virtualtophysical)和[**ReadVirtual**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugdataspaces4-readvirtual)中。 事件发生时，隐式进程将设置为当前进程。
 
 可以使用[**SetImplicitProcessDataOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-setimplicitprocessdataoffset)更改隐式进程。 若要确定隐式进程，请使用[**GetImplicitProcessDataOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsystemobjects4-getimplicitprocessdataoffset)。
 

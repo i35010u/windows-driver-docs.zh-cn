@@ -27,9 +27,9 @@ ms.locfileid: "72841698"
 
 在转发层指示的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构可以描述完整的 IP 数据包、ip 数据包片段或 ip 数据包片段组。 当 IP 数据包片段遍历转发层时，它将被指定两次标注：第一次为片段，并再次显示为片段组内的片段。
 
-当指示分段组时， **\_\_标志的 .fwp 条件\_是\_片段\_组**标志作为传入值传递到标注驱动程序的[*classifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数。 在这种情况下， *NetBufferList*参数指向的[**net\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构是**网络\_\_缓冲区**的第一个节点，其中每个**net\_缓冲区\_列表**描述数据包片段。
+当指示分段组时， **\_\_标志的 .fwp 条件\_是\_片段\_组**标志作为传入值传递到标注驱动程序的[*classifyFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数。 在这种情况下， *NetBufferList*参数指向的[**net\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构是**网络\_缓冲区\_列表**链的第一个节点，其中每个**net\_缓冲区\_列表**描述了数据包片段。
 
-正向注入的数据包将不会显示在任何 WFP 层上。 可以再次向标注驱动程序指示插入的数据包。 若要防止无限循环，驱动程序应首先调用[**FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)函数，然后再调用*classifyFn* callout 函数，驱动程序应该允许具有注入状态[**的数据包FWPS\_数据包\_注入\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_packet_injection_state_)设置为**FWPS\_数据包\_通过**\_self 或**FWPS\_数据包\_注入\_** 如果未经过修改，则为。
+正向注入的数据包将不会显示在任何 WFP 层上。 可以再次向标注驱动程序指示插入的数据包。 若要防止无限循环，驱动程序应首先调用[**FwpsQueryPacketInjectionState0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsquerypacketinjectionstate0)函数，然后再调用*classifyFn* callout 函数，驱动程序应该允许具有注入状态的数据包[**FWPS\_数据包\_注入\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_packet_injection_state_)设置为**FWPS\_数据包\_通过**\_自或 FWPS\_注入\_注入\_如果未经过修改，则为。\_\_\_
 
 你可以使用以下命令来查看 system： **netsh interface {ipv4 | ipv6} show global**的当前 "组转发片段" 设置。
 
@@ -45,7 +45,7 @@ ms.locfileid: "72841698"
 添加筛选条件时， **\_匹配\_标志\_NONE\_集**可与 **.fwp\_条件一起使用\_标志**\_\_片段标志，以避免第二次指示。 这些条件标志旨在防止标注驱动程序所关心的分类。 如果标注只需要检查完整的数据包（未进行碎片整理和重新组合），则必须分析 IP 标头以避免处理显示为 IP 数据包的片段。 标注可能执行以下步骤来实现此目的：
 
 1. 通过检查是否设置了更多片段（MF）标志，并/或 "片段偏移量" 字段不为0，跳过第一个指示。
-2. 编写允许在其中设置**FWP_CONDITION_FLAG_IS_FRAGMENT**的所有分类的筛选器。
+2. 编写一个筛选器，该筛选器允许设置**FWP_CONDITION_FLAG_IS_FRAGMENT**的所有分类。
 3. 执行重新组合的数据包上所需的任何处理。
 
  或者，标注可以在传输层检查数据包。
@@ -77,7 +77,7 @@ ms.locfileid: "72841698"
 <td align="left"><p>不适用</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>“连接”</p></td>
+<td align="left"><p>连接</p></td>
 <td align="left"><p>无数据包</p></td>
 <td align="left"><p>第一个 UDP 数据包（传出）</p></td>
 </tr>

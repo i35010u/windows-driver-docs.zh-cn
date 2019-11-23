@@ -3,7 +3,7 @@ title: OID_RECEIVE_FILTER_ALLOCATE_QUEUE
 description: 过量驱动程序发出 OID_RECEIVE_FILTER_ALLOCATE_QUEUE 的对象标识符（OID）方法请求，以分配具有一组初始配置参数的队列。
 ms.assetid: 8dd7ab91-b752-46fd-ae1b-014dc0fb0157
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_ALLOCATE_QUEUE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_ALLOCATE_QUEUE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 523504240dbf551be331bceccd6c8d8e4ff851a4
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -17,7 +17,7 @@ ms.locfileid: "72844022"
 
 过量驱动程序发出 OID\_接收\_FILTER 的对象标识符（OID）方法请求，\_分配\_队列来分配具有一组初始配置参数的队列。
 
-[ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis\_OID\_请求**结构的**InformationBuffer**成员包含指向**ndis\_接收\_队列的指针\_参数**具有新队列标识符的结构。
+[ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis\_OID\_请求**结构中的**InformationBuffer**成员包含一个指向**NDIS\_接收\_队列**的指针，\_参数结构具有新的队列标识符。
 
 <a name="remarks"></a>备注
 -------
@@ -26,7 +26,7 @@ Oid\_接收\_筛选器的 OID 方法请求\_分配\_队列对于 NDIS 6.20 和�
 
 过量驱动程序初始化[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构及其请求的队列配置。 NDIS 在**ndis\_接收\_queue\_参数**结构的**QueueId**成员中分配队列标识符，并将方法请求传递给微型端口驱动程序。
 
-**请注意**  过量驱动程序可以设置**NDIS\_接收\_队列\_参数\_每个\_队列\_接收\_指示**， **NDIS\_接收\_队列\_参数\_预测先行\_** 在[**NDIS\_接收\_QUEUE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**FLAGS**成员中\_必需的标志。 其他标志不用于队列分配。
+**请注意**  过量驱动程序可以设置**ndis\_接收\_队列\_参数\_每个\_队列\_接收\_指示**， **ndis\_接收\_队列\_参数\_** \_\_\_\_[**参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**flags**成员中拆分\_必需的标志。 其他标志不用于队列分配。
 
  
 
@@ -40,7 +40,7 @@ Oid\_接收\_筛选器的 OID 方法请求\_分配\_队列对于 NDIS 6.20 和�
 
 微型端口驱动程序必须保留已分配接收队列的队列标识符。 对于对微型端口驱动程序的后续调用，NDIS 使用接收队列的队列标识符，以便在接收队列上设置接收筛选器、更改接收队列参数或释放接收队列。
 
-当过量驱动程序分配一个或多个接收队列并（可选）设置初始筛选器后，它必须颁发[OID\_接收\_筛选器\_队列\_分配\_完成](oid-receive-filter-queue-allocation-complete.md)设置 oid 请求以通知小型端口驱动程序：当前接收队列的分配已完成。
+当覆盖的驱动程序分配一个或多个接收队列并选择性地设置初始筛选器后，它必须颁发[OID\_接收\_筛选器\_队列\_分配\_完整](oid-receive-filter-queue-allocation-complete.md)的设置 OID 请求，通知小型端口驱动程序分配已完成，当前批次接收队列。
 
 如果没有对该队列设置任何筛选器，则微型端口驱动程序不得保留接收队列中的任何数据包。 如果队列中的任何筛选器均未设置或清除了所有筛选器，则队列应为空，并且应丢弃所有数据包。 也就是说，数据包不会指明驱动程序堆栈或保留在队列中。
 
@@ -64,7 +64,7 @@ NDIS 或微型端口驱动程序为 oid 的 OID 方法请求返回以下状态�
 <tbody>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_SUCCESS</strong></p></td>
-<td><p>已成功分配队列。 信息缓冲区包含更新后的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)"><strong>NDIS_RECEIVE_QUEUE_PARAMETERS</strong></a>结构。</p></td>
+<td><p>已成功分配队列。 信息缓冲区包含更新的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters" data-raw-source="[&lt;strong&gt;NDIS_RECEIVE_QUEUE_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)"><strong>NDIS_RECEIVE_QUEUE_PARAMETERS</strong></a>结构。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
@@ -76,7 +76,7 @@ NDIS 或微型端口驱动程序为 oid 的 OID 方法请求返回以下状态�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_INVALID_LENGTH</strong></p></td>
-<td><p>信息缓冲区太短。 NDIS 设置<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的<strong>BytesNeeded</strong>成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置<strong>数据</strong>。<strong>METHOD_INFORMATION</strong>。将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员<strong>BytesNeeded</strong>为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_SUPPORTED</strong></p></td>

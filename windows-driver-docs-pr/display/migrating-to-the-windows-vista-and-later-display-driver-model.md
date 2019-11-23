@@ -33,7 +33,7 @@ WDDM 支持根据 XDDM 编写的显示和视频微型端口驱动程序。 但�
 
 -   处理大多数视频 i/o 控制代码（IOCTL）不再需要显示微型端口驱动程序。 在 XDDM 中，内核模式显示驱动程序使用以下代码与视频微型端口驱动程序通信。 在 WDDM 中，用户模式显示驱动程序与 Direct3D 运行时通信;WDDM 图形内核子系统又与显示微型端口驱动程序通信。
     **请注意**   在 WDDM 中仍使用以下 IOCTLs，并且显示微型端口驱动程序必须处理它们： [**ioctl\_视频\_查询\_颜色\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_color_capabilities)
-    [**ioctl\_视频\_处理\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)
+    [**IOCTL\_视频\_\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)
 
      
 
@@ -41,7 +41,7 @@ WDDM 支持根据 XDDM 编写的显示和视频微型端口驱动程序。 但�
 
 -   用户模式显示驱动程序必须实现和导出[**OpenAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)函数，该函数将打开图形适配器的实例。 用户模式显示驱动程序还必须实现一个[**CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)函数，该函数可创建显示设备的表示形式，这些表示处理呈现状态的集合。
 
--   用户模式显示驱动程序的[**CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)函数，以及显示微型端口驱动程序的[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数，替换[*DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))、 [*DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))和[**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)XDDM 中的函数。
+-   用户模式显示驱动程序的[**CreateResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource)函数，以及显示微型端口驱动程序的[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数，替换 D3dCreateSurfaceEx 中的[*DdCanCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549213(v=vs.85))、 [*DdCreateSurface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))和[**XDDM**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)函数。
 
 -   大多数其余的用户模式显示驱动程序函数实现的功能与 XDDM 的内核模式显示驱动程序实现的功能相同：
     -   [**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数和[**DP2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/ne-d3dhal-_d3dhal_dp2operation)操作代码

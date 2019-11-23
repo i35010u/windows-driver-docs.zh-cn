@@ -28,39 +28,39 @@ MB 驱动程序模型使用一种数据模型，此模型包含一组定义为 M
 
 | OID 和对应的数据结构 | 设置操作 |   | 查询操作 |   | GSM/CDMA |
 | ---                                  | ---       | ---       | ---       | ---       |--- |
-|                                      | Windows 7 | Windows 8 | Windows 7 | Windows 8 |    |
+|                                      | Windows 7 | Windows 8 | Windows 7 | Windows 8 |    |
 | [OID\_wwan\_驱动程序\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)使用[ **NDIS\_WWAN\_驱动程序\_cap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_driver_caps) | 不支持 | 不支持 |S | S | GSM，CDMA |
-| [OID\_WWAN\_设备\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)没有对应的结构 | 不支持 | 不支持 | 一个 | 一个 | GSM，CDMA |
-| [OID\_WWAN\_就绪\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)没有对应的结构 | 不支持 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_service\_ACTIVATION](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-service-activation)†使用[ **NDIS\_WWAN\_服务\_激活**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation) | 一个 | 一个 | 不支持 | 不支持 | GSM，CDMA |
-| [OID\_wwan\_无线电\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)使用[ **NDIS\_WWAN\_集\_广播\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_radio_state) | 一个 | 一个 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_pin](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin)使用[ **NDIS\_WWAN\_集\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin) | 一个 | 不支持 | 一个 | 不支持 | GSM，CDMA |
-| [OID\_WWAN\_PIN\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin-list)没有对应的结构 | 不支持 | 不支持 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_PIN\_ex](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin-ex)使用[ **NDIS\_WWAN\_集\_PIN\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin_ex) | 不支持 | 一个 | 不支持 | 一个 | GSM，CDMA |
-| [OID\_WWAN\_HOME\_提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-home-provider)没有相应的结构 | 不支持 | 不支持 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_首选\_提供者](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-providers)†使用[ **NDIS\_WWAN\_集\_首选\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_preferred_providers) | 一个 | 一个 | 一个 | 一个 | 仅 GSM |
-| [OID\_WWAN\_可见\_提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-visible-providers)没有相应的结构 | 不支持 | 不支持 | 一个 | 一个 | GSM |
-| [OID\_wwan\_REGISTER\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-register-state)使用[ **NDIS\_WWAN\_集\_注册\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_register_state) | 一个 | 一个 | 一个 | 一个 | CDMA |
-| [OID\_wwan\_信号\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-signal-state)使用[ **NDIS\_WWAN\_集\_信号\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication) | 一个 | 一个 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_数据包\_服务](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-packet-service)使用[ **NDIS\_WWAN\_集\_包\_服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service) | 一个 | 一个 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_预配\_上下文](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)††使用[ **NDIS\_WWAN\_集\_预配\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_provisioned_context) | 一个 | 一个 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect)使用[ **NDIS\_WWAN\_集\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state) | 一个 | 一个 | 一个 | 一个 | GSM，CDMA |
-| [OID\_wwan\_SMS\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-configuration)使用[ **NDIS\_WWAN\_设置\_SMS\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sms_configuration) | 一个 | 一个 | 一个 | 一个 | GSM，CDMA | 
-| [OID\_wwan\_sms\_read](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-read)使用[ **NDIS\_WWAN\_SMS\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read) | 不支持 | 一个 | 一个 | 一个 |GSM，CDMA | 
-| [OID\_wwan\_sms\_send](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-send)使用[ **NDIS\_WWAN\_SMS\_发送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send) | 一个 | 一个 | 不支持 | 不支持 | GSM，CDMA |
-| [OID\_wwan\_sms\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-delete)使用[ **NDIS\_WWAN\_SMS\_删除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete) | 一个 | 一个 | 不支持 | 不支持 |  GSM，CDMA |
-| [OID\_wwan\_sms\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-status)使用[ **NDIS\_WWAN\_sms\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status) | 不支持 | 不支持 | 一个 | 一个 | GSM，CDMA |
-| [OID\_WWAN\_供应商\_特定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-vendor-specific)†使用供应商定义的结构 | 一个 | 一个 | 不支持 | 不支持 | GSM，CDMA |
-| [OID\_WWAN\_设备\_服务](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-services)没有相应的结构 | 不支持 | 不支持 | 不支持 | 一个 | GSM，CDMA |
-| [OID\_wwan\_订阅\_设备\_服务\_事件](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-subscribe-device-service-events)使用[ **NDIS\_WWAN\_订阅\_\_SERVICE\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_subscribe_device_service_events) | 不支持 | 一个 | 不支持 | 不支持 | GSM，CDMA |
-| [OID\_wwan\_身份验证\_质询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-auth-challenge)使用[ **NDIS\_WWAN\_身份验证\_质询**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_auth_challenge) | 不支持 | 不支持 | 不支持 | 一个 | GSM，CDMA |
-| [OID\_wwan\_USSD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ussd)使用[ **NDIS\_WWAN\_USSD\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_request) | 不支持 | 一个 | 不支持 | 不支持 | GSM |
-| [OID\_wwan\_设备\_服务\_命令](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command)使用[ **NDIS\_WWAN\_设备\_SERVICE\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command) | 不支持 | 一个 | 不支持 | 一个| GSM，CDMA |
+| [OID\_WWAN\_设备\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-caps)没有对应的结构 | 不支持 | 不支持 | A | A | GSM，CDMA |
+| [OID\_WWAN\_就绪\_信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ready-info)没有对应的结构 | 不支持 | A | A | GSM，CDMA |
+| [OID\_wwan\_service\_ACTIVATION](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-service-activation)†使用[ **NDIS\_WWAN\_服务\_激活**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_service_activation) | A | A | 不支持 | 不支持 | GSM，CDMA |
+| [OID\_wwan\_无线电\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-radio-state)使用[ **NDIS\_WWAN\_集\_广播\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_radio_state) | A | A | A | A | GSM，CDMA |
+| [OID\_wwan\_pin](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin)使用[ **NDIS\_WWAN\_集\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin) | A | 不支持 | A | 不支持 | GSM，CDMA |
+| [OID\_WWAN\_PIN\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin-list)没有对应的结构 | 不支持 | 不支持 | A | A | GSM，CDMA |
+| [OID\_wwan\_PIN\_ex](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-pin-ex)使用[ **NDIS\_WWAN\_集\_PIN\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_pin_ex) | 不支持 | A | 不支持 | A | GSM，CDMA |
+| [OID\_WWAN\_HOME\_提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-home-provider)没有相应的结构 | 不支持 | 不支持 | A | A | GSM，CDMA |
+| [OID\_wwan\_首选\_提供者](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-providers)†使用[ **NDIS\_WWAN\_集\_首选\_提供程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_preferred_providers) | A | A | A | A | 仅 GSM |
+| [OID\_WWAN\_可见\_提供程序](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-visible-providers)没有相应的结构 | 不支持 | 不支持 | A | A | GSM |
+| [OID\_wwan\_REGISTER\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-register-state)使用[ **NDIS\_WWAN\_集\_注册\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_register_state) | A | A | A | A | CDMA |
+| [OID\_wwan\_信号\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-signal-state)使用[ **NDIS\_WWAN\_集\_信号\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_signal_indication) | A | A | A | A | GSM，CDMA |
+| [OID\_wwan\_数据包\_服务](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-packet-service)使用[ **NDIS\_WWAN\_集\_包\_服务**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_packet_service) | A | A | A | A | GSM，CDMA |
+| [OID\_wwan\_预配\_上下文](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)††使用[ **NDIS\_WWAN\_集\_预配\_上下文**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_provisioned_context) | A | A | A | A | GSM，CDMA |
+| [OID\_wwan\_CONNECT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-connect)使用[ **NDIS\_WWAN\_集\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state) | A | A | A | A | GSM，CDMA |
+| [OID\_wwan\_SMS\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-configuration)使用[ **NDIS\_WWAN\_设置\_SMS\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_sms_configuration) | A | A | A | A | GSM，CDMA | 
+| [OID\_wwan\_sms\_read](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-read)使用[ **NDIS\_WWAN\_SMS\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_read) | 不支持 | A | A | A |GSM，CDMA | 
+| [OID\_wwan\_sms\_send](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-send)使用[ **NDIS\_WWAN\_SMS\_发送**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_send) | A | A | 不支持 | 不支持 | GSM，CDMA |
+| [OID\_wwan\_sms\_删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-delete)使用[ **NDIS\_WWAN\_SMS\_删除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_delete) | A | A | 不支持 | 不支持 |  GSM，CDMA |
+| [OID\_wwan\_sms\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-sms-status)使用[ **NDIS\_WWAN\_sms\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_sms_status) | 不支持 | 不支持 | A | A | GSM，CDMA |
+| [OID\_WWAN\_供应商\_特定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-vendor-specific)†使用供应商定义的结构 | A | A | 不支持 | 不支持 | GSM，CDMA |
+| [OID\_WWAN\_设备\_服务](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-services)没有相应的结构 | 不支持 | 不支持 | 不支持 | A | GSM，CDMA |
+| [OID\_wwan\_订阅\_设备\_服务\_事件](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-subscribe-device-service-events)使用[ **NDIS\_WWAN\_订阅\_\_SERVICE\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_subscribe_device_service_events) | 不支持 | A | 不支持 | 不支持 | GSM，CDMA |
+| [OID\_wwan\_身份验证\_质询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-auth-challenge)使用[ **NDIS\_WWAN\_身份验证\_质询**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_auth_challenge) | 不支持 | 不支持 | 不支持 | A | GSM，CDMA |
+| [OID\_wwan\_USSD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-ussd)使用[ **NDIS\_WWAN\_USSD\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_ussd_request) | 不支持 | A | 不支持 | 不支持 | GSM |
+| [OID\_wwan\_设备\_服务\_命令](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command)使用[ **NDIS\_WWAN\_设备\_SERVICE\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command) | 不支持 | A | 不支持 | A| GSM，CDMA |
 
 > [!NOTE]
 > 以下说明适用于上表：†表示微型端口驱动程序可以支持的可选 Oid。 不支持可选 Oid 的微型端口驱动程序不得以 OID 方式返回它们\_代\_支持\_列表。
 >
-> †表示支持基于 GSM 的设备的微型端口驱动程序，这些设备可以选择支持 OID\_WWAN\_预配\_上下文集和查询操作。 支持基于 CDMA 的设备的微型端口驱动程序可以选择支持\_WWAN\_预配\_上下文查询操作的上下文查询\_\_操作。简单\_IP）。
+> †表示支持基于 GSM 的设备的微型端口驱动程序，这些设备可以选择支持 OID\_WWAN\_预配\_上下文集和查询操作。 支持基于 CDMA 的设备的微型端口驱动程序可以选择支持\_预配\_WWAN 预配\_上下文查询操作的上下文查询\_\_操作。\_\_\_
 >
 > 微型端口驱动程序必须支持所有非可选 Oid。 MB 服务可能会忽略不报告所有必需 Oid 的任何微型端口驱动程序。
 > 
@@ -461,15 +461,15 @@ MB 驱动程序模型使用一种数据模型，此模型包含一组定义为 M
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-home-provider" data-raw-source="[OID_WWAN_HOME_PROVIDER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-home-provider)">OID_WWAN_HOME_PROVIDER</a></p>
 <p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_home_provider" data-raw-source="[&lt;strong&gt;NDIS_WWAN_SET_HOME_PROVIDER&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_home_provider)"> <strong>NDIS_WWAN_SET_HOME_PROVIDER</strong></a></p></td>
-<td align="left"><p>一个</p></td>
-<td align="left"><p>一个</p></td>
+<td align="left"><p>A</p></td>
+<td align="left"><p>A</p></td>
 <td align="left"><p>GSM，CDMA</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-providers" data-raw-source="[OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-preferred-providers)">OID_WWAN_PREFERRED_MULTICARRIER_PROVIDERS</a></p>
-<p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_preferred_multicarrier_providers" data-raw-source="[&lt;strong&gt;NDIS_WWAN_SET_PREFERRED_MULTICARRIER_PROVIDERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_preferred_multicarrier_providers)"><strong>NDIS_WWAN_SET_PREFERRED_MULTICARRIER_PROVIDERS</strong></a>。 应将<strong>PreferredListHeader</strong>设置为<strong>WwanStructProvider2</strong> ，并将结构设置为 WWAN_PROVIDER2。</p></td>
-<td align="left"><p>一个</p></td>
-<td align="left"><p>一个</p></td>
+<p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_preferred_multicarrier_providers" data-raw-source="[&lt;strong&gt;NDIS_WWAN_SET_PREFERRED_MULTICARRIER_PROVIDERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_preferred_multicarrier_providers)"><strong>NDIS_WWAN_SET_PREFERRED_MULTICARRIER_PROVIDERS</strong></a>。 应将<strong>PreferredListHeader</strong>设置为<strong>WwanStructProvider2</strong> ，并 WWAN_PROVIDER2 结构。</p></td>
+<td align="left"><p>A</p></td>
+<td align="left"><p>A</p></td>
 <td align="left"><p>GSM，CDMA</p></td>
 </tr>
 </tbody>
@@ -495,12 +495,12 @@ MB 驱动程序模型使用一种数据模型，此模型包含一组定义为 M
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers" data-raw-source="[&lt;strong&gt;NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-preferred-multicarrier-providers)"><strong>NDIS_STATUS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS</strong></a></p>
 <p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers" data-raw-source="[&lt;strong&gt;NDIS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_preferred_multicarrier_providers)"> <strong>NDIS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS</strong></a></p></td>
-<td align="left"><p>NDIS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS_REVISION_1. 应将<strong>PreferredListHeader</strong>设置为<strong>WwanStructProvider2</strong> ，并且列表应包含 WWAN_PROVIDER2 结构。</p></td>
+<td align="left"><p>NDIS_WWAN_PREFERRED_MULTICARRIER_PROVIDERS_REVISION_1。 应将<strong>PreferredListHeader</strong>设置为<strong>WwanStructProvider2</strong> ，并且列表应包含 WWAN_PROVIDER2 结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-visible-providers" data-raw-source="[&lt;strong&gt;NDIS_STATUS_WWAN_VISIBLE_PROVIDERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-visible-providers)"><strong>NDIS_STATUS_WWAN_VISIBLE_PROVIDERS</strong></a></p>
 <p>使用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers" data-raw-source="[&lt;strong&gt;NDIS_WWAN_VISIBLE_PROVIDERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_visible_providers)"> <strong>NDIS_WWAN_VISIBLE_PROVIDERS</strong></a></p></td>
-<td align="left"><p>NDIS_WWAN_VISIBLE_PROVIDERS_REVISION_1. 应将<strong>VisibleListHeader</strong>设置为<strong>WwanStructProvider2</strong> ，并且列表应包含 WWAN_PROVIDER2 结构。</p></td>
+<td align="left"><p>NDIS_WWAN_VISIBLE_PROVIDERS_REVISION_1。 应将<strong>VisibleListHeader</strong>设置为<strong>WwanStructProvider2</strong> ，并且列表应包含 WWAN_PROVIDER2 结构。</p></td>
 </tr>
 </tbody>
 </table> 

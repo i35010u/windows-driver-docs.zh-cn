@@ -23,7 +23,7 @@ ms.locfileid: "72833419"
 
  
 
-应用程序可以通过调用**IDirectSound：： SetSpeakerConfig**方法，并将扬声器配置参数设置为 DSSPEAKER\_DIRECTOUT，将 DirectSound 扬声器配置更改为直接输出模式（请参阅 Microsoft WindowsSDK 文档）。 这将指定一个 speakerless 配置，其中应用程序的播放流中的通道直接输出到音频适配器，而不会被解释为发言人位置。 但是，输入流仍可通过采样率转换、衰减、筛选和其他类型的处理进行修改，这些处理不需要将扬声器分配给频道。
+应用程序可以通过调用**IDirectSound：： SetSpeakerConfig**方法，并将扬声器配置参数设置为 DSSPEAKER\_DIRECTOUT，将 DirectSound 扬声器配置更改为直接传出模式（请参阅 Microsoft Windows SDK 文档）。 这将指定一个 speakerless 配置，其中应用程序的播放流中的通道直接输出到音频适配器，而不会被解释为发言人位置。 但是，输入流仍可通过采样率转换、衰减、筛选和其他类型的处理进行修改，这些处理不需要将扬声器分配给频道。
 
 一旦生效，DSSPEAKER\_DIRECTOUT 扬声器配置设置是全局性的，并影响音频设备作为整体。 随后运行的所有音频应用程序都将受新设置的限制，直到 DirectSound 再次更改设置。
 
@@ -55,9 +55,9 @@ ms.locfileid: "72833419"
 
 对于这种原始音频数据，发言人位置毫无意义，为输入流和输出流指定扬声器位置可能会导致意外的副作用。 例如，如果某个组件（如 KMixer）通过应用特定于扬声器的效果（例如，3D 虚拟化或对流环绕 Pro 逻辑编码），则可能无法正确地进行干预。 请注意，原始数据通道数不受通道掩码中的位数限制。
 
-即使是不是专门针对音频编辑设计的设备，也应接受[**KSPROPERTY\_音频\_通道\_配置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)设置属性请求，将其扬声器配置更改为 KSAUDIO\_发言人\_DIRECTOUT. 通常，设备应避免失败请求，除非它可以通过某种方式验证其输出是否已连接到扬声器，并且不能在外部用于任何其他用途（例如，作为外部混音器的输入）。
+即使是不是专门针对音频编辑设计的设备，也应接受[**KSPROPERTY\_音频\_通道\_配置**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-channel-config)设置属性请求，将其扬声器配置更改为 KSAUDIO\_发言人\_DIRECTOUT。 通常，设备应避免失败请求，除非它可以通过某种方式验证其输出是否已连接到扬声器，并且不能在外部用于任何其他用途（例如，作为外部混音器的输入）。
 
-使用直接输出模式的应用程序通常是针对特定硬件设备编写的。 这使应用程序能够事先知道设备支持的直接输出数据格式，包括通道数量以及应如何解释这些通道中的数据。 此知识是必需的，因为当应用程序在以直接扩展模式配置的设备上调用**IDirectSound：： GetSpeakerConfig**时，设备只需确认它处于此模式下;它不提供有关在直接输出模式下支持的流格式的通道数的附加信息。 （但是，可以通过将[**KSPROPERTY\_音频\_混合\_级别\_cap**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mix-level-caps)获取-属性请求发送到设备的混合器 pin 上的 supermixer 节点获取此信息; 请参阅[DirectSound 节点顺序要求](directsound-node-ordering-requirements.md).)
+使用直接输出模式的应用程序通常是针对特定硬件设备编写的。 这使应用程序能够事先知道设备支持的直接输出数据格式，包括通道数量以及应如何解释这些通道中的数据。 此知识是必需的，因为当应用程序在以直接扩展模式配置的设备上调用**IDirectSound：： GetSpeakerConfig**时，设备只需确认它处于此模式下;它不提供有关在直接输出模式下支持的流格式的通道数的附加信息。 （但是，可以通过将[**KSPROPERTY\_音频\_混合\_级别\_cap**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-mix-level-caps)获取-属性请求发送到设备的混合器 pin 上的 supermixer 节点获取此信息; 请参阅[DirectSound 节点顺序要求](directsound-node-ordering-requirements.md)。）
 
 为直接流指定波形格式时，应用程序应将[**WAVEFORMATEXTENSIBLE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-waveformatextensible)结构的**dwChannelMask**成员设置为值 KSAUDIO\_发言人\_DIRECTOUT，该值为零。 通道掩码为零表示未定义发言人位置。 与往常一样，流中的通道数以**nChannels**成员的形式指定。
 

@@ -24,7 +24,7 @@ ms.locfileid: "72840833"
 
 WIA 驱动程序*不*应释放此方法调用中的任何驱动程序资源，除非它能够安全地确定当前*没有任何*应用程序在连接。
 
-为了确定当前应用程序连接计数，WIA 驱动程序应将类成员变量作为引用计数器递增，以跟踪对**IWiaMiniDrv：:D rvinitializewia** （递增计数器）和**IWiaMiniDrv：：drvUnInitializeWia** （递减计数器）。
+为了确定当前应用程序连接计数，WIA 驱动程序应将类成员变量作为引用计数器递增，以跟踪对**IWiaMiniDrv：:D rvinitializewia** （递增计数器）和**IWiaMiniDrv：:d rvuninitializewia** （递减计数器）的方法调用。
 
  
 

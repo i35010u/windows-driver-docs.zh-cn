@@ -18,7 +18,7 @@ ms.locfileid: "72007644"
 - 对于复合设备，请使用创建每个函数的物理设备对象（PDOs）的[USB 通用父驱动程序（Usbccgp）](usb-common-class-generic-parent-driver.md) 。
 - 对于非复合设备或复合设备的函数，请使用[WinUSB （WinUSB）](winusb.md)。
 
-**如果要安装 USB 驱动程序：** 不需要下载 USB 设备类驱动程序。 它们将自动安装。 这些驱动程序及其安装文件包含在 Windows 中。 它们在 \\Windows @ no__t-1System32 @ no__t-2DriverStore @ no__t 文件夹中提供。 通过 Windows 更新更新驱动程序。
+**如果要安装 USB 驱动程序：** 不需要下载 USB 设备类驱动程序。 它们将自动安装。 这些驱动程序及其安装文件包含在 Windows 中。 它们在 \\Windows\\System32\\DriverStore\\FileRepository 文件夹中提供。 通过 Windows 更新更新驱动程序。
 
 **如果要编写自定义驱动程序：** 在为 USB 设备编写驱动程序之前，请确定 Microsoft 提供的驱动程序是否满足设备要求。 如果 Microsoft 提供的驱动程序不可用于设备所属的 USB 设备类，请考虑使用通用驱动程序 Winusb 或 Usbccgp。 仅在必要时才编写驱动程序。 [选择用于开发 USB 客户端驱动程序的驱动程序模型](winusb-considerations.md)中提供了更多指南。
 
@@ -40,9 +40,9 @@ Microsoft 为大多数设备定义安装程序类。 Ihv 和 Oem 可以定义新
 
 USB 设备的两个重要设备安装程序类如下所示：
 
-- **USBDevice** {88BAE032-5A81-49f0-BC3D-A4FF138216D6}：对于不属于其他类的自定义设备，Ihv 必须使用此类。 此类不用于 USB 主机控制器和中心。
+- **USBDevice** {88BAE032-5A81-49f0-BC3D-A4FF138216D6}： ihv 必须对不属于其他类的自定义设备使用此类。 此类不用于 USB 主机控制器和中心。
 
-- **USB** {36fc9e60-c465-11cf-8056-444553540000}：Ihv 不得将此类用于其自定义设备。 此为 USB 主机控制器和 USB 集线器预留。
+- **USB** {36fc9e60-c465-11cf-8056-444553540000}： ihv 不得将此类用于其自定义设备。 此为 USB 主机控制器和 USB 集线器预留。
 
 设备安装程序类与前面讨论的 USB 设备类不同。 例如，音频设备的描述符中有一个 USB 设备类代码01h。 当连接到系统时，Windows 将加载 Microsoft 提供的类驱动程序 Usbaudio。 在设备管理器中，设备显示在 "**声音、视频和游戏控制器**" 下，表示设备安装程序类为 "媒体"。
 
@@ -63,7 +63,7 @@ USB 设备的两个重要设备安装程序类如下所示：
       <td>音频（01h）</td>
       <td><strong>媒体</strong></br>
 {4d36e96c-e325-11ce-bfc1-08002be10318}</td>
-      <td>Usbaudio<p>Wdma\_usb.inf</p></td>
+      <td>Usbaudio<p>Wdma\_</p></td>
       <td>Windows 10 桌面版（家庭版、专业版、企业版和教育版）</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
       <td>Microsoft 通过 Usbaudio 驱动程序提供 USB 音频设备类支持。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/audio/kernel-mode-wdm-audio-components">内核模式 WDM 音频组件</a>中的 "USBAudio 类系统驱动程序"。 有关 Windows 音频支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8751">适用于 windows 的音频设备技术</a>网站。</td>
     </tr>
@@ -77,10 +77,10 @@ USB 设备的两个重要设备安装程序类如下所示：
       </tr>
       <tr>
         <td><strong>R</strong></br>{4D36E96D-E325-11CE-BFC1-08002BE10318}<p>
-        <strong>Note @ no__t-1 支持子类02h （项类别）</td>
+        <strong>注意</strong>  支持子类02h （）</td>
         <td>Usbser</br>引用 mdmcpq 的自定义 INF</td>
         <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
-        <td>在 Windows 8.1 及更早版本中，不会自动加载 Usbser。 若要加载该驱动程序，需要编写引用调制解调器 INF （mdmcpq）的 INF，并包括 \[Install @ no__t 和 \[Needs @ no__t 部分。<p>从 Windows Vista 开始，你可以通过设置注册表值来启用 CDC 和无线移动 CDC （WMCDC）支持，如对<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md">无线移动通信设备类的支持</a>中所述。<p>启用 CDC 支持后， <a href="usb-common-class-generic-parent-driver.md">USB 公共类通用父驱动程序</a>会枚举与 CDC 和 WMCDC 控制模型相对应的接口集合，并将物理设备对象（PDO）分配给这些集合。</td>
+        <td>在 Windows 8.1 及更早版本中，不会自动加载 Usbser。 若要加载该驱动程序，需要编写引用调制解调器 INF （mdmcpq）的 INF，并包括 \[安装\] 和 \[需要\] 部分。<p>从 Windows Vista 开始，你可以通过设置注册表值来启用 CDC 和无线移动 CDC （WMCDC）支持，如对<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md">无线移动通信设备类的支持</a>中所述。<p>启用 CDC 支持后， <a href="usb-common-class-generic-parent-driver.md">USB 公共类通用父驱动程序</a>会枚举与 CDC 和 WMCDC 控制模型相对应的接口集合，并将物理设备对象（PDO）分配给这些集合。</td>
       </tr>
       <tr>
         <td><strong>Net</strong></br>{4d36e972-e325-11ce-bfc1-08002be10318}</br><strong>注意</strong>  支持子类0Eh （MBIM）</td>
@@ -101,19 +101,19 @@ USB 设备的两个重要设备安装程序类如下所示：
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>推荐的驱动程序：<a href="winusb.md">WinUSB （WinUSB）</a>
+        <td>推荐的驱动程序： <a href="winusb.md">WinUSB （WinUSB）</a>
 </td>
       </tr>
     <tr>
       <td>Image （06h）</td>
-      <td><strong>Image</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
+      <td><strong>映像</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
       <td>Usbscan</br>Sti .inf</td>
       <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
       <td>Microsoft 提供了 Usbscan 驱动程序，用于管理适用于 Windows XP 和更高版本操作系统的 USB 数字照相机和扫描仪。 此驱动程序实现 Windows 映像体系结构（WIA）的 USB 组件。 有关 WIA 的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers">Windows 映像获取驱动程序</a>和<a href="https://go.microsoft.com/fwlink/p/?linkid=8768">windows 映像组件</a>网站。 有关 Usbscan 在 WIA 中扮演的角色的说明，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/image/wia-core-components">Wia Core 组件</a>。</td>
     </tr>
     <tr>
       <td>打印机（07h）</td>
-      <td><strong>USB</strong><p><strong>请注意</strong>   Usbprint 在设备设置类下枚举打印机设备：<strong>打印机</strong><p> {4d36e979-e325-11ce-bfc1-08002be10318}.</td>
+      <td><strong>USB</strong><p><strong>请注意</strong>   Usbprint 在设备设置类：<strong>打印机</strong>下枚举打印机设备<p> {4d36e979-e325-11ce-bfc1-08002be10318}.</td>
       <td>Usbprint</br>Usbprint .inf</td>
       <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
       <td>Microsoft 提供了管理 USB 打印机的 Usbprint 类驱动程序。 有关在 Windows 中实现 printer 类的信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8764">打印体系结构和驱动程序支持</a>网站。</td>
@@ -131,11 +131,11 @@ USB 设备的两个重要设备安装程序类如下所示：
          <td>子类（06）和协议（62）</br>Uaspstor</br>Uaspstor .inf</td>
          <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</td>
          <td>Uaspstor 是支持大容量流终结点的 SuperSpeed USB 设备的类驱动程序。 有关详细信息，请参阅： <ul>
-           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">在 xHCI 上将 UASP 存储驱动程序加载为类驱动程序</a></li><li>适用于 Windows 8 的0USB 连接 SCSI （UAS）最佳方案 @no__t</li></ul></td>
+           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">在 xHCI 上将 UASP 存储驱动程序加载为类驱动程序</a></li><li>适用于 Windows 8 的 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642113(v=vs.85)">USB 连接 SCSI （UAS）最佳方案</li></ul></td>
         </tr>
     </tr>
     <tr>
-      <td rowspan="3">Hub （09h）</td>
+      <td rowspan="3">中心（09h）</td>
       <td rowspan="3"><strong>USB</strong><p>{36fc9e60-c465-11cf-8056-444553540000}</td>
       <tr>
       <td>Usbhub</br>Usb .inf</td>
@@ -154,7 +154,7 @@ USB 设备的两个重要设备安装程序类如下所示：
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推荐的驱动程序：<a href="winusb.md">WinUSB （Winusb）</a></td>
+      <td>推荐的驱动程序： <a href="winusb.md">WinUSB （WinUSB）</a></td>
     </tr>
      <tr>
       <td rowspan="3">智能卡（0Bh）</td>
@@ -164,7 +164,7 @@ USB 设备的两个重要设备安装程序类如下所示：
           <td>Windows 10 桌面版</br>Windows 7</br>Windows Server 2008</br>Windows Vista</td>
           <td>Microsoft 提供 Usbccid 迷你类驱动程序来管理 USB 智能卡读卡器。 有关 Windows 中智能卡驱动程序的详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/smartcard/index">智能卡设计指南</a>。
           <p>请注意，对于 Windows Server 2003、Windows XP 和 Windows 2000，加载此驱动程序需要特别说明，因为它可能已发布到操作系统之后。<p>
-          <strong>Note @ no__t-1 Usbccid 驱动程序已替换为 UMDF 驱动程序，WUDFUsbccidDriver。</td>
+          <strong>注意</strong>  Usbccid 驱动程序已替换为 UMDF 驱动程序 WUDFUsbccidDriver。</td>
           </tr>
          <tr>
            <td>WUDFUsbccidDriver</br>WUDFUsbccidDriver .inf</td>
@@ -177,12 +177,12 @@ USB 设备的两个重要设备安装程序类如下所示：
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推荐的驱动程序：<a href="usb-common-class-generic-parent-driver.md">USB 通用父驱动程序（Usbccgp）</a>。 某些内容安全功能是在 Usbccgp 中实现的。 请参阅<a href="content-security-features-in-the-composite-client-generic-parent-drive.md">Usbccgp 中的内容安全功能</a>。</td>
+      <td>推荐的驱动程序： <a href="usb-common-class-generic-parent-driver.md">USB 泛型父驱动程序（Usbccgp）</a>。 某些内容安全功能是在 Usbccgp 中实现的。 请参阅<a href="content-security-features-in-the-composite-client-generic-parent-drive.md">Usbccgp 中的内容安全功能</a>。</td>
         </tr>
     </tr>
      <tr>
       <td>视频（0Eh）</td>
-      <td><strong>Image</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
+      <td><strong>映像</strong></br>{6bdd1fc6-810f-11d0-bec7-08002be2092f}</td>
       <td>Usbvideo<p>
 Usbvideo .inf</td>
       <td>Windows 10 桌面版<p>Windows Vista</td>
@@ -194,7 +194,7 @@ Usbvideo .inf</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推荐的驱动程序：<a href="winusb.md">WinUSB （Winusb）</a></td>
+      <td>推荐的驱动程序： <a href="winusb.md">WinUSB （WinUSB）</a></td>
      </tr>
      <tr>
       <td>音频/视频设备（10h）</td>
@@ -207,9 +207,9 @@ Usbvideo .inf</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推荐的驱动程序：<a href="winusb.md">WinUSB （Winusb）</a></td>
+      <td>推荐的驱动程序： <a href="winusb.md">WinUSB （WinUSB）</a></td>
     </tr>     <tr>
-      <td>无线控制器（E0h） <p><strong>请注意</strong>  Supports 子类01H 和协议01h</td>
+      <td>无线控制器（E0h） <p><strong>请注意</strong>  支持子类01H 和协议01h</td>
       <td>蓝牙<p>{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}</td>
       <td>Bthusb<p>Bth .inf</td>
       <td>Windows 10 桌面版</br>Windows 10 移动版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
@@ -217,7 +217,7 @@ Usbvideo .inf</td>
     </tr>     <tr>
       <td>其他（EFh）</td>
       <td><strong>Net</strong><p>
-{4d36e972-e325-11ce-bfc1-08002be10318}<p><strong>请注意</strong>  Supports 子类04H 和协议01h</td>
+{4d36e972-e325-11ce-bfc1-08002be10318}<p><strong>请注意</strong>  支持子类04H 和协议01h</td>
       <td>Rndismp</br>Rndismp .inf</td>
       <td>Windows 10 桌面版</br>Windows 8.1</br>Windows 8</br>Windows 7</br>Windows Vista</td>
       <td>在 Windows Vista 之前，对 CDC 的支持仅限于使用特定于供应商唯一协议（<strong>bInterfaceProtocol</strong>）值0Xff 的抽象控件模型（RNDIS）的特定于的实现。 RNDIS 工具将所有802式网卡的管理集中在单一类驱动程序 Rndismp 中。 有关远程 NDIS 的详细讨论，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">远程 Ndis 概述</a>。 在 Usb8023 驱动程序中实现了远程 NDIS 到 USB 的映射。 有关 Windows 中的网络支持的详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=8759">网络和无线技术</a>网站。</td>
@@ -227,14 +227,14 @@ Usbvideo .inf</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>推荐的驱动程序：<a href="winusb.md">WinUSB （Winusb）</a></td>
+      <td>推荐的驱动程序： <a href="winusb.md">WinUSB （WinUSB）</a></td>
     </tr>
      <tr>
       <td>特定于供应商（FFh）</td>
       <td>-</td>
       <td>-</td>
       <td>Windows 10 桌面版</br>Windows 10 移动版</td>
-      <td>推荐的驱动程序：<a href="winusb.md">WinUSB （Winusb）</a></td>
+      <td>推荐的驱动程序： <a href="winusb.md">WinUSB （WinUSB）</a></td>
     </tr>
   </tbody>
 </table>

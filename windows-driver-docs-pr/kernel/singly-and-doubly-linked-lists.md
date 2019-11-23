@@ -141,7 +141,7 @@ typedef struct {
 
 系统还提供了 list 操作、 [**ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)、 [**ExInterlockedInsertTailList**](https://msdn.microsoft.com/library/windows/hardware/ff545402)和[**ExInterlockedRemoveHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545427)的原子版本。 （请注意，没有**RemoveTailList**或**RemoveEntryList**的原子版本。）每个例程使用额外的自旋锁参数。 例程在更新列表之前获取旋转锁，然后在操作完成后释放自旋锁。 持有锁时，中断处于禁用状态。 列表上的每个操作都必须使用相同的自旋锁来确保列表中的每个此类操作相互同步。 只能将自旋锁用于这些**ExInterlocked*Xxx*列表**例程。 不要将自旋锁用于任何其他目的。 驱动程序可以对多个列表使用同一个锁，但这种行为会增加锁争用，因此驱动程序应避免出现此问题。
 
-例如， **ExInterlockedInsertHeadList**、 **ExInterlockedInsertTailList**和**EXINTERLOCKEDREMOVEHEADLIST**例程可以通过以 IRQL = 被动\_级别运行的驱动程序线程支持双重链接列表的共享，在 DIRQL 运行的 ISR。 这些例程在持有旋转锁时禁用中断。 因此，ISR 和 driver 线程可以安全地在其对这些**ExInterlocked*Xxx*列表**例程的调用中使用相同的自旋锁，而不会导致死锁。
+例如， **ExInterlockedInsertHeadList**、 **ExInterlockedInsertTailList**和**EXINTERLOCKEDREMOVEHEADLIST**例程可以通过以 IRQL = 被动\_级别运行的驱动程序线程和在 DIRQL 运行的 ISR 来支持双重链接列表的共享。 这些例程在持有旋转锁时禁用中断。 因此，ISR 和 driver 线程可以安全地在其对这些**ExInterlocked*Xxx*列表**例程的调用中使用相同的自旋锁，而不会导致死锁。
 
 不要在同一列表中混合对列表操作的原子和非原子版本的调用。 如果原子和非原子版本在同一列表上同时运行，则数据结构可能会损坏，并且计算机可能会停止响应或 bug 检查（即，*崩溃*）。 （在调用非原子例程时无法获取旋转锁，以避免混合对列表操作的原子和非原子版本的调用。 不支持以这种方式使用旋转锁定，这可能仍会导致列表损坏。）
 

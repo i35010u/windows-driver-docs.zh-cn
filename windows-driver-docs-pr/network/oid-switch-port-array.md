@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PORT_ARRAY
-description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PORT_ARRAY 的对象标识符（OID）查询请求，以获取一个数组。 数组中的每个元素都指定可扩展交换机端口的配置参数。
+description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PORT_ARRAY 获取数组的对象标识符（OID）查询请求。 数组中的每个元素都指定可扩展交换机端口的配置参数。
 ms.assetid: 9ED5E7A5-A23E-48E7-B8A2-9089C81851A1
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_ARRAY 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_ARRAY 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 62726f7a73eb82ccb946462f6343c73858830c47
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ Hyper-v 可扩展交换机扩展发出 OID\_SWITCH\_端口\_数组的对象标�
 
 -   [**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构的数组。 其中每个结构都包含有关可扩展交换机上的端口的信息。
 
-    **注意**  如果未在可扩展交换机上创建任何端口，驱动程序会将[**ndis\_switch\_端口\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_array)结构的**NumElements**成员设置为零，且不会[ **\_的 ndis\_返回端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构。
+    **注意**  如果未在可扩展交换机上创建任何端口，驱动程序会将[**ndis\_switch\_端口\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_array)结构的**NumElements**成员设置为零，且不会返回[**ndis\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构。
 
      
 
@@ -32,7 +32,7 @@ Hyper-v 可扩展交换机扩展发出 OID\_SWITCH\_端口\_数组的对象标�
 
 仅当 Hyper-v 可扩展交换机完成激活时，才必须发出 OID\_SWITCH\_端口\_ARRAY OID。 有关更多详细信息，请参阅[查询 Hyper-v 可扩展交换机配置](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-hyper-v-extensible-switch-configuration)。
 
-当扩展处理返回的[**ndis\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构时，它不能假定 NDIS\_交换机的各个字符串成员 **\_端口\_参数**结构，如as **portvalue**，以 null 结尾。 [**如果\_计数\_字符串**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)结构，则这些字符串成员的数据类型由类型定义。 驱动程序必须根据此结构的**length**成员的值确定字符串长度。
+当扩展处理返回的[**ndis\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构时，它不能假定 NDIS\_交换机的各个字符串成员 **\_端口\_参数**结构（如**portvalue**）以 null 结尾。 [**如果\_计数\_字符串**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)结构，则这些字符串成员的数据类型由类型定义。 驱动程序必须根据此结构的**length**成员的值确定字符串长度。
 
 **请注意**  如果字符串以 null 结尾，则**长度**成员不能包含终止 null 字符。
 
@@ -60,7 +60,7 @@ Hyper-v 可扩展交换机扩展发出 OID\_SWITCH\_端口\_数组的对象标�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度太小，无法返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_array" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_array)"><strong>NDIS_SWITCH_PORT_ARRAY</strong></a>及其<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)"><strong>NDIS_SWITCH_PORT_PARAMETERS</strong></a>元素数组。 可扩展交换机的基础微型端口边缘设置<strong>数据。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_array" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_ARRAY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_array)"><strong>NDIS_SWITCH_PORT_ARRAY</strong></a>及其<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)"><strong>NDIS_SWITCH_PORT_PARAMETERS</strong></a>元素数组。 可扩展交换机的基础微型端口边缘设置<strong>数据。QUERY_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

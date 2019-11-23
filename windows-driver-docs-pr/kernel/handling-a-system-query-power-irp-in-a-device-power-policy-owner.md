@@ -20,7 +20,7 @@ ms.locfileid: "72838680"
 
 
 
-当设备电源策略所有者收到[**IRP\_MN\_QUERY\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)系统电源状态的电源时，它会通过传递查询并在[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中发送**irp\_MN\_查询来做出响应 @no__t_** 设备电源状态的10_。 当堆栈中的所有驱动程序都完成了设备查询后，设备电源策略所有者将完成系统查询。
+当设备电源策略所有者收到[**IRP\_MN\_QUERY\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)系统电源状态的电源时，它会通过传递查询来做出响应，并在[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程中发送**IRP\_MN\_查询\_** 设备电源状态。 当堆栈中的所有驱动程序都完成了设备查询后，设备电源策略所有者将完成系统查询。
 
 设备电源策略所有者应在其[DispatchPower 例程](dispatchpower-routines.md)中执行以下步骤来响应系统查询：
 
@@ -52,7 +52,7 @@ ms.locfileid: "72838680"
 
 4.  返回状态\_需要更多\_处理\_，以便驱动程序可以在回调例程中完成系统查询 IRP 的处理。
 
-完成 IRP 并运行 IRP 处理过程中设置的所有*IoCompletion*例程后，电源管理器将通过 i/o 管理器调用电源策略管理器的回调例程（将*CompletionFunction*参数设置为**PoRequestPowerIrp**）。 反过来，回调例程必须执行以下操作：
+完成 IRP 并运行 IRP 处理过程中设置的所有*IoCompletion*例程后，通过 i/o 管理器，电源管理器将调用电源策略管理器的回调例程（将*CompletionFunction*参数设置为**PoRequestPowerIrp**）。 反过来，回调例程必须执行以下操作：
 
 1.  调用[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)以启动下一个 power IRP。 （仅限 windows Server 2003、Windows XP 和 Windows 2000。）
 

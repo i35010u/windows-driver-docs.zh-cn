@@ -3,7 +3,7 @@ title: OID_RECEIVE_FILTER_CLEAR_FILTER
 description: 过量驱动程序发出 OID 设置 OID_RECEIVE_FILTER_CLEAR_FILTER 的请求，以清除网络适配器上的接收筛选器。
 ms.assetid: 5e92a11a-468e-431d-b4e5-7b0da3847e8a
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_CLEAR_FILTER 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_CLEAR_FILTER 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f9791eca2fbabaac7db3b92aa75fc49a9dcdf3
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -88,7 +88,7 @@ Oid\_接收\_筛选器的 OID 集请求\_清除\_筛选器是支持 NDIS 数据�
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>函数（为<em>STATUS</em>参数传递<strong>NDIS_STATUS_SUCCESS</strong> ）成功执行请求。</p></td>
+<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>函数来成功请求，同时传递<strong>NDIS_STATUS_SUCCESS</strong>的<em>状态</em>参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>

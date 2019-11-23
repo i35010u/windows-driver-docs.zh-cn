@@ -22,13 +22,13 @@ AudioEndpointBuilder 服务使用一种算法来发现和枚举终结点。 算�
 
 使用 Windows Vista 中的两个新 Api、 [MMDEVICE API](https://go.microsoft.com/fwlink/p/?linkid=130863)和[WASAPI](https://go.microsoft.com/fwlink/p/?linkid=130864)，你可以访问和操作这些新的音频设备。 MMDevice API 是指作为终结点的新音频设备。
 
-AudioEndpointBuilder 服务监视[**KSCATEGORY\_音频**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)类，以便进行设备接口到达和删除。 当音频设备驱动程序注册 KSCATEGORY\_音频设备接口类的新实例时，AudioEndpointBuilder 服务会检测设备接口通知，并使用算法检查音频设备在系统并采取适当的措施。
+AudioEndpointBuilder 服务监视[**KSCATEGORY\_音频**](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-audio)类，以便进行设备接口到达和删除。 当音频设备驱动程序注册 KSCATEGORY\_音频设备接口类的新实例时，AudioEndpointBuilder 服务会检测设备接口通知，并使用算法检查系统中音频设备的拓扑并采取适当的措施。
 
 下面的列表总结了 AudioEndpointBuilder 使用的算法的工作原理：
 
 1.  查找任何未连接的桥接 pin。
 
-2.  为任何未连接的桥接 pin 创建终结点。 例如，当 AudioEndpointBuilder 使用 KSNODETYPE\_扬声器的 pin 类别 GUID 查找未连接的桥接 pin 时，它将为此桥接创建一个扬声器终结点。 有关 KSNODETYPE\_扬声器和其他 pin 类别 GUID 的详细信息，请参阅 WinDDK\\中的 Ksmedia&lt;&gt;\\inc.\\api 中生成编号。
+2.  为任何未连接的桥接 pin 创建终结点。 例如，当 AudioEndpointBuilder 使用 KSNODETYPE\_扬声器的 pin 类别 GUID 查找未连接的桥接 pin 时，它将为此桥接创建一个扬声器终结点。 有关 KSNODETYPE\_扬声器和其他 pin 类别 GUID 的详细信息，请参阅 WinDDK\\中的 Ksmedia &lt;&gt;\\inc.\\api 中生成编号。
 
 3.  设置终结点的默认属性。 例如，AudioEndpointBuilder 设置名称、图标和外形规格。
 

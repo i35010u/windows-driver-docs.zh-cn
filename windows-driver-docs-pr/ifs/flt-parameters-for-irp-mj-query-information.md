@@ -1,10 +1,10 @@
 ---
-title: FLT_PARAMETERS for IRP_MJ_QUERY_INFORMATION union
+title: IRP_MJ_QUERY_INFORMATION 联合的 FLT_PARAMETERS
 description: 在 FLT 的 MajorFunction 字段\_IO\_参数\_操作的块结构时使用的联合组件是 IRP\_MJ\_查询\_信息。
 ms.assetid: 7fcd6881-1b6e-46eb-8476-d766f6fea7ef
 keywords:
-- FLT_PARAMETERS for IRP_MJ_QUERY_INFORMATION union 可安装的文件系统驱动程序
-- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- IRP_MJ_QUERY_INFORMATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
+- FLT_PARAMETERS 联合可安装文件系统驱动程序
 - PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
@@ -62,7 +62,7 @@ typedef union _FLT_PARAMETERS {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -126,7 +126,7 @@ typedef union _FLT_PARAMETERS {
 <a name="remarks"></a>备注
 -------
 
-IRP\_MJ\_查询\_信息操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含回调数据表示的查询信息操作的参数（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）构造. 它包含在 FLT\_IO\_参数\_块结构。
+IRP\_MJ\_查询\_信息操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据（[**FLT\_回调\_data**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构表示的查询信息操作的参数。 它包含在 FLT\_IO\_参数\_块结构。
 
 IRP\_MJ\_查询\_信息可以是基于 IRP 的操作，也可以是快速的 i/o 操作。
 

@@ -20,16 +20,16 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/08/2019
 ms.locfileid: "72038002"
 ---
-# <a name="bug-check-0xdc-driver_invalid_stack_access"></a>Bug 检查 0xDC：DRIVER @ NO__T-0INVALID @ NO__T-1STACK @ NO__T-2ACCESS
+# <a name="bug-check-0xdc-driver_invalid_stack_access"></a>Bug 检查0xDC：驱动程序\_无效\_STACK\_访问
 
 
-DRIVER @ no__t-0INVALID @ no__t-1STACK @ no__t-2ACCESS bug 检查的值为0x000000DC。 这表明驱动程序已访问堆栈地址，堆栈地址位于堆栈线程的堆栈指针的下方。
+驱动程序\_\_堆栈无效，\_访问 bug 检查的值为0x000000DC。 这表明驱动程序已访问堆栈地址，堆栈地址位于堆栈线程的堆栈指针的下方。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_invalid_stack_access-parameters"></a>DRIVER @ no__t-0INVALID @ no__t-1STACK @ no__t-2ACCESS 参数
+## <a name="driver_invalid_stack_access-parameters"></a>驱动程序\_无效\_堆栈\_访问参数
 
 
 无

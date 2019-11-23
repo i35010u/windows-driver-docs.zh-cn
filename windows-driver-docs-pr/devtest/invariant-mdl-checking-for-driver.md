@@ -1,5 +1,5 @@
 ---
-title: 针对驱动程序的固定 MDL 检查
+title: 面向驱动程序的固定 MDL 检查
 description: "\"对驱动程序进行固定 MDL 检查\" 选项监视驱动程序如何处理基于每个驱动程序的固定 MDL 缓冲区。"
 ms.assetid: 2FA69B7C-3EF4-4660-84D4-5108C97E395F
 ms.date: 04/20/2017
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72839554"
 ---
-# <a name="invariant-mdl-checking-for-driver"></a>针对驱动程序的固定 MDL 检查
+# <a name="invariant-mdl-checking-for-driver"></a>面向驱动程序的固定 MDL 检查
 
 
 "对驱动程序进行固定 MDL 检查" 选项监视驱动程序如何处理基于每个驱动程序的固定 MDL 缓冲区。 此选项可检测是否对固定 MDL 缓冲区进行了非法修改。 若要使用此选项，你必须在至少一个驱动程序上启用 I/O 验证。

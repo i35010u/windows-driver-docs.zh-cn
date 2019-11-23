@@ -1,5 +1,5 @@
 ---
-title: Vmnetwork
+title: vmnetwork
 description: Vm 扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
 ms.assetid: 25e4f80c-d4ca-407c-991d-e8ee5dfbb309
 keywords:

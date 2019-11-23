@@ -65,10 +65,10 @@ ms.locfileid: "70063911"
 
 以下子主题中进一步描述了 MB 接口模型：
 
-[Mb 接口术语](mb-interface-terms.md)
-[mb 联合函数描述符](mb-union-function-descriptors.md)
-[mb 标识变形](mb-identity-morphing.md)
-[MB 接口型号补充](mb-interface-model-supplement.md)
+[Mb 接口条款](mb-interface-terms.md)
+[Mb 联合函数描述符](mb-union-function-descriptors.md)
+[Mb 标识变形](mb-identity-morphing.md)
+[mb 接口型号补充](mb-interface-model-supplement.md)
  
 
  

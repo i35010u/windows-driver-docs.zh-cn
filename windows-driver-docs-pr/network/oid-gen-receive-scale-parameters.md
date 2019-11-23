@@ -3,7 +3,7 @@ title: OID_GEN_RECEIVE_SCALE_PARAMETERS
 description: 作为查询，NDIS 和过量驱动程序可以使用 OID_GEN_RECEIVE_SCALE_PARAMETERS OID 来查询 NIC 的当前接收方缩放（RSS）参数。
 ms.assetid: a54190f7-0d2e-4f85-84c2-05fc9ec4994a
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_SCALE_PARAMETERS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_SCALE_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d1a045daf09cf3cf5804aa12871f29b83871335a
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -20,7 +20,7 @@ ms.locfileid: "72844606"
 作为集，NDIS 和过量驱动程序使用 OID\_GEN\_接收\_SCALE\_参数 OID 来设置 NIC 的当前 RSS 参数。 微型端口驱动程序接收 NDIS\_接收\_缩放\_参数结构，该结构定义 RSS 参数。
 
 > [!NOTE]
-> 在 RSSv2 中，此 OID 仅用于查询给定缩放实体的当前 RSS 参数。 对于支持 RSSv2 的微型端口驱动程序，请参阅[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)以设置除间接表之外的 RSS 参数。
+> 在 RSSv2 中，此 OID 仅用于查询给定缩放实体的当前 RSS 参数。 对于支持 RSSv2 的微型端口驱动程序，请参阅设置除间接表之外的 RSS 参数[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) 。
 
 <a name="remarks"></a>备注
 -------
@@ -35,7 +35,7 @@ TCP/IP 驱动程序使用 OID 的单个 OID 集请求来配置 IPv4 和 IPv6\_�
 
  
 
-**请注意**  协议驱动程序必须在启用 RSS 计算之前禁用接收哈希计算（[OID\_GEN\_接收\_哈希](oid-gen-receive-hash.md)）。 如果启用了 RSS，则协议驱动程序会在启用接收哈希计算之前禁用 RSS。 微型端口驱动程序应使具有 NDIS\_状态的 set 请求失败 **\_无效的\_OID**或**ndis\_状态\_未\_支持**，以启用 RSS。能够.
+**请注意**  协议驱动程序必须在启用 RSS 计算之前禁用接收哈希计算（[OID\_GEN\_接收\_哈希](oid-gen-receive-hash.md)）。 如果启用了 RSS，则协议驱动程序会在启用接收哈希计算之前禁用 RSS。 微型端口驱动程序应使具有 NDIS\_状态的 set 请求失败 **\_无效的\_OID**或**ndis\_状态\_不\_支持**，以便在当前启用了 OID\_生成\_的情况时启用 RSS。\_
 
  
 

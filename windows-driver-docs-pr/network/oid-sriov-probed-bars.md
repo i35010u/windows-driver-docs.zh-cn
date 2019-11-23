@@ -3,7 +3,7 @@ title: OID_SRIOV_PROBED_BARS
 description: NDIS 发出 OID_SRIOV_PROBED_BARS 的对象标识符（OID）查询请求，以获取网络适配器 PCI Express （PCIe）基址寄存器（条）的值。
 ms.assetid: 81C3A5B5-58D5-41F4-A000-79F3F4E00DAD
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SRIOV_PROBED_BARS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SRIOV_PROBED_BARS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: fc31e0c4e6696ca67e74b1736cdb2b6002811865
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -44,7 +44,7 @@ PCI 总线驱动程序在 Hyper-v 父分区的管理操作系统中运行，它�
 
  
 
-\_探测的 OID\_SRIOV 探测的\_条查询请求包含\_INFO 结构\_探测到的[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 。 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须在由 NDIS\_SRIOV 的**BaseRegisterValuesOffset**成员引用的数组中返回 PCI BAR 值， **\_探测的\_条\_信息**结构。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
+\_探测的 OID\_SRIOV 探测的\_条查询请求包含\_INFO 结构\_探测到的[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 。\_ 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须在由 NDIS\_SRIOV 的**BaseRegisterValuesOffset**成员引用的数组中返回 PCI BAR 值， **\_探测的\_条\_信息**结构。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
 
 驱动程序返回的每个条形值的值都必须与在管理操作系统中运行的 PCI 驱动程序执行的 PCI BAR 查询遵循的值相同。 PF 微型端口驱动程序可以调用[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars)来确定此信息。
 
@@ -78,11 +78,11 @@ PF 多端口驱动程序为 OID\_SRIOV\_探测的\_条返回以下状态代码�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>结构中的一个或多个成员的值无效。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区小于（sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>） + PCI_TYPE0_ADDRESSES）。 PF 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区小于（sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_PROBED_BARS_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info)"><strong>NDIS_SRIOV_PROBED_BARS_INFO</strong></a>） + PCI_TYPE0_ADDRESSES）。 PF 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

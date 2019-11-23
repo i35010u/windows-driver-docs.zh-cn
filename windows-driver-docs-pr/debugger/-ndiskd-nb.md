@@ -1,6 +1,6 @@
 ---
 title: ndiskd
-description: Ndiskd 扩展显示有关 NET_BUFFER （NB）结构的信息。
+description: Ndiskd 扩展显示 NET_BUFFER （NB）结构的相关信息。
 ms.assetid: 7351264c-4adc-43ac-9eca-41deb3d35983
 keywords:
 - ndiskd Windows 调试

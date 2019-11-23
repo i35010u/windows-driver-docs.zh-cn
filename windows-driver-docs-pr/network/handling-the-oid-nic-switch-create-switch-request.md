@@ -24,7 +24,7 @@ NDIS 发出 OID\_NIC 的对象标识符（OID）方法请求[\_交换机\_创建
 
     如果 PF 微型端口驱动程序不支持静态 NIC 交换机创建，微型端口驱动程序将根据在 OID 请求中指定的参数分配资源并创建开关。
 
-当 NDIS 调用驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时，PF 微型端口驱动程序会公布其 sr-iov 接口支持。 如果 PF 微型端口驱动程序支持 SR-IOV，NDIS 将从注册表中读取 NIC 交换机配置。 在 NDIS\_NIC 发出 oid 的 OID 方法请求之前[\_交换机\_创建\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)到 PF 微型端口驱动程序，ndis 使用注册表将[**ndis\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)\_信息采用以下方式：
+当 NDIS 调用驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时，PF 微型端口驱动程序会公布其 sr-iov 接口支持。 如果 PF 微型端口驱动程序支持 SR-IOV，NDIS 将从注册表中读取 NIC 交换机配置。 在 NDIS\_NIC 发出 oid 的 OID 方法请求之前[\_交换机\_创建\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)到 PF 微型端口驱动程序，ndis 使用以下方式设置[**ndis\_NIC\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构：
 
 -   NDIS 将**SwitchType**成员设置为 NIC 交换机的类型。
 
@@ -52,7 +52,7 @@ NDIS 发出 OID\_NIC 的对象标识符（OID）方法请求[\_交换机\_创建
 
 3.  PF 小型端口驱动程序必须为 NIC 交换机上的默认 VPort 分配必要的硬件和软件资源。
 
-    **请注意**  默认 VPort 始终通过 OID 的 oid 请求[\_NIC\_SWITCH\_创建\_交换机](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)，并通过 oid\_\_\_[\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)。 [Oid\_nic 的 oid 请求\_交换机\_CREATE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)和[OID\_nic\_交换机\_DELETE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)用于在 nic 交换机上创建和删除非默认 VPorts。
+    **请注意**  默认 VPort 始终通过 oid 的 oid 请求[\_NIC\_SWITCH\_创建\_交换机](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)，并通过 oid\_\_\_\_[DELETE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)交换机的 oid 请求删除。 [Oid\_nic 的 oid 请求\_交换机\_CREATE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)和[OID\_nic\_交换机\_DELETE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)用于在 nic 交换机上创建和删除非默认 VPorts。
 
      
 

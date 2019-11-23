@@ -66,7 +66,7 @@ HBAFC3MgmtInfo 类型的结构，用于保存与光纤通道适配器关联的 F
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

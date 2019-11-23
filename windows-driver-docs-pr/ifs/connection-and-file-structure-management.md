@@ -33,7 +33,7 @@ RDBSS 使用六种基本数据结构来管理连接和文件结构。 这些数�
 
 -   NET\_根--net root。 此结构将抽象到共享的连接。
 
--   V @ no__t_0_ NET\_根--net ROOT （也称为 virtual netroots）的视图。
+-   \_net\_net--net ROOT （也称为虚拟 netroots）的视图。
 
 -   FCB--file control block。 此结构表示共享上打开的文件。
 
@@ -69,7 +69,7 @@ RDBSS 使用六种基本数据结构来管理连接和文件结构。 这些数�
 <tbody>
 <tr class="odd">
 <td align="left"><p>SRV_CALL</p></td>
-<td align="left"><p>指向 SRV_CALL 的 NET_ROOT 项的数目，加上一些动态值。</p></td>
+<td align="left"><p>指向 SRV_CALL NET_ROOT 项的数目，以及一些动态值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>NET_ROOT</p></td>
@@ -77,15 +77,15 @@ RDBSS 使用六种基本数据结构来管理连接和文件结构。 这些数�
 </tr>
 <tr class="odd">
 <td align="left"><p>V_NET_ROOT</p></td>
-<td align="left"><p>指向 V_NET_ROOT 的 SRV_OPEN 项的数目，加上一些动态值。</p></td>
+<td align="left"><p>指向 V_NET_ROOT SRV_OPEN 项的数目，以及一些动态值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>FCB</p></td>
-<td align="left"><p>指向 FCB 的 SRV_OPEN 项的数目，加上一些动态值。</p></td>
+<td align="left"><p>指向 FCB 的 SRV_OPEN 项的数目以及一些动态值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SRV_OPEN</p></td>
-<td align="left"><p>指向 SRV_OPEN 的 FOBX 项的数目，加上一些动态值。</p></td>
+<td align="left"><p>指向 SRV_OPEN 的 FOBX 项的数目以及一些动态值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>FOBX</p></td>
@@ -104,7 +104,7 @@ RDBSS 使用六种基本数据结构来管理连接和文件结构。 这些数�
 
 这些限制可确保不能完成任何给定级别的数据结构（已释放并释放关联的内存块），直到下一级别的所有数据结构均已完成或已释放其引用。 例如，如果包含对 FCB 的引用，则可以安全地访问与之关联的 V\_NET\_ROOT、NET\_ROOT 和 SRV\_调用结构。
 
-网络微重定向程序与 RDBSS 之间的接口中使用的两个重要抽象是 SRV\_调用和 NET\_根结构。 SRV\_调用结构对应于与已建立连接的服务器关联的上下文，并且 NET\_根结构对应于服务器上的共享（这也可以作为命名空间的一部分来查看）已由网络小型重定向程序声明。
+网络微重定向程序与 RDBSS 之间的接口中使用的两个重要抽象是 SRV\_调用和 NET\_根结构。 SRV\_调用结构对应于与已建立连接的服务器关联的上下文，并且 NET\_根结构对应于服务器上的共享（这也可以作为命名空间的一部分来查看，该部分已由网络小型重定向程序声明）。
 
 创建 SRV\_调用和 NET\_根结构通常至少涉及到一次网络往返。 为了使异步操作继续进行，这些操作将建模为一个两阶段的活动。 每个向下调用一个网络微型重定向程序来创建 SRV\_调用和一个网络\_根结构，接下来是从网络微型重定向程序到 RDBSS 的调用，通知请求的完成状态。 此类当前是同步的。
 

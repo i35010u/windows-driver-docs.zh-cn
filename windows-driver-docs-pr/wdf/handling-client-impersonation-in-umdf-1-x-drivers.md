@@ -55,7 +55,7 @@ UMDF 不允许驱动程序的**OnImpersonate**回调函数调用框架的任何�
 
 当你的驱动程序收到[**WdfRequestCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_type)类型的 i/o 请求时，驱动程序可能会将该驱动程序堆栈向下移动 i/o 请求。 内核模式驱动程序没有模拟功能， **IWDFIoRequest：：模拟**可提供给基于 UMDF 的驱动程序。
 
-因此，如果你希望内核模式驱动程序接收客户端的用户凭据（而不是[驱动程序主机进程](umdf-driver-host-process.md)的凭据），则驱动程序必须设置[**WDF\_请求\_发送\_选项\_模拟\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)在调用[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)以将创建请求发送到 i/o 目标时的客户端标志。 如果模拟尝试失败， **Send**方法将返回错误代码，除非该驱动程序还将**WDF\_请求\_发送\_选项\_模拟\_忽略\_失败**标志。
+因此，如果你希望内核模式驱动程序接收客户端的用户凭据（而不是[驱动程序主机进程](umdf-driver-host-process.md)的凭据），则驱动程序必须在调用[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)以将创建请求发送到 i/o 目标时，设置[**WDF\_请求\_发送\_选项\_模拟\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_request_send_options_flags)标志。 如果模拟尝试失败， **Send**方法将返回错误代码，除非该驱动程序还将**WDF\_请求\_发送\_选项\_模拟\_忽略\_失败**标志。
 
 在向 i/o 目标发送请求之前，驱动程序不必调用**IWDFIoRequest：：模拟**。
 

@@ -53,7 +53,7 @@ ms.locfileid: "72838473"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ ms.locfileid: "72838473"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -159,7 +159,7 @@ ms.locfileid: "72838473"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -214,7 +214,7 @@ ms.locfileid: "72838473"
 <thead>
 <tr class="header">
 <th>参数名称</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

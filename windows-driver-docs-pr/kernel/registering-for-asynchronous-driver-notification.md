@@ -38,7 +38,7 @@ NTSTATUS
     );
 ```
 
-设备驱动程序通过为每个设备驱动程序的回调函数调用[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)函数来注册异步通知，同时为每个设备驱动程序的回调函数指定一个指向以下 guid*的指针：EventCategoryData*参数：
+设备驱动程序通过对每个设备驱动程序的回调函数调用[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)函数来注册异步通知，同时为*EventCategoryData*参数指定一个指向以下 guid 的指针：
 
 <a href="" id="guid-device-processor"></a>\_设备\_处理器 GUID  
 注册以便在将处理器动态添加到硬件分区时获得通知。

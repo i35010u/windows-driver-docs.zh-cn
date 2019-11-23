@@ -94,7 +94,7 @@ Kbdclass 和 Mouclass 可支持两种不同模式下的多个设备。 在*一�
 
 -   Grandmaster 维护一个全局设备状态。
 
-如果将 "Kbdclass" 和 "Mouclass" 的注册表项值 " **ConnectMultiplePorts** " 设置为0x00 （在密钥**HKLM\\Services\\CurrentControlSet\\***&lt;类服务&gt;*** ，则该模式将在 "单对一" 模式下运行\\参数**，其中*类服务*是 Kbdclass 或 Mouclass）。 否则，Kbdclass 和 Mouclass 将在 grandmaster 模式下运行。
+如果 "Kbdclass" 和 "Mouclass" 的注册表项值 " **ConnectMultiplePorts** " 设置为0x00 （在 key **HKLM\\Services\\CurrentControlSet\\***&lt;类服务&gt;***\\参数**，其中，*类服务*是 Kbdclass 或 Mouclass），则此模式将在一对一模式下运行。 否则，Kbdclass 和 Mouclass 将在 grandmaster 模式下运行。
 
 ## <a name="open-and-close-via-the-class-driver"></a>通过类驱动程序打开和关闭
 
@@ -170,7 +170,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 |                         |                 |                              |
 |-------------------------|-----------------|------------------------------|
-| 起始偏移量（以字节为单位） | 大小（以字节为单位） | 数据                         |
+| 起始偏移量（以字节为单位） | 大小（以字节为单位） | Data                         |
 | 0                       | 4               | 标头：版本信息  |
 | 4                       | 4               | 标头：标志                |
 | 8                       | 4               | 标头：映射的数目   |
@@ -198,7 +198,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 |            |                                                    |
 |------------|----------------------------------------------------|
-| Value      | 解释                                     |
+| 值      | 解释                                     |
 | 0x00000000 | 标头：版本。 设置为全零。                |
 | 0x00000000 | 标头：标志。 设置为全零。                  |
 | 0x00000003 | 映射中有三个条目（包括 null 条目）。   |
@@ -220,7 +220,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 |            |                                                       |
 |------------|-------------------------------------------------------|
-| Value      | 解释                                        |
+| 值      | 解释                                        |
 | 0x00000000 | 标头：版本。 设置为全零。                   |
 | 0x00000000 | 标头：标志。 设置为全零。                     |
 | 0x00000003 | 映射中有三个条目（包括 null 条目）。      |

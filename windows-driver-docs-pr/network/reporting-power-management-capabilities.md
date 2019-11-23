@@ -25,7 +25,7 @@ ms.locfileid: "72842041"
 
 可在 INF 文件设置中启用或禁用微型端口驱动程序报告的硬件功能。 有关电源管理 INF 文件设置的详细信息，请参阅[电源管理的标准化 INF 关键字](standardized-inf-keywords-for-power-management.md)。
 
-在微型端口初始化期间，微型端口驱动程序使用基础硬件的电源管理功能初始化[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。 微型端口驱动程序将[**ndis\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)的**PowerManagementCapabilitiesEx**成员设置为指向**ndis\_PM\_功能**\_常规\_属性结构构造.
+在微型端口初始化期间，微型端口驱动程序使用基础硬件的电源管理功能初始化[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。 微型端口驱动程序将 [**NDIS\_微型端口\_适配器的 PowerManagementCapabilitiesEx 成员设置\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，以指向**ndis\_PM\_功能**结构。
 
 [**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构包含以下信息：
 

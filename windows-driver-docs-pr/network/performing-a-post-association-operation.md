@@ -20,7 +20,7 @@ ms.locfileid: "72843692"
 
  
 
-当无线 LAN （WLAN）适配器使用访问点（AP）成功完成802.11 关联操作时，本机802.11 微型端口驱动程序通过使[NDIS\_状态\_DOT11\_关联来通知操作系统\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-completion)指示。 有关关联操作的详细信息，请参阅[关联运算](association-operations.md)。
+当无线 LAN （WLAN）适配器使用访问点（AP）成功完成802.11 关联操作时，本机802.11 微型端口驱动程序通过使[NDIS\_状态\_DOT11\_关联\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-completion)指示来通知操作系统。 有关关联操作的详细信息，请参阅[关联运算](association-operations.md)。
 
 **注意**  对于 Windows VISTA，IHV 扩展 DLL 仅支持基础结构基本服务集（BSS）网络。
 
@@ -50,7 +50,7 @@ ms.locfileid: "72843692"
 
 -   从 AP 接收安全数据包。 操作系统为 WLAN 适配器接收的每个安全数据包调用[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)函数。
 
-    每个接收到的安全数据包都按从 WLAN 适配器接收到的顺序进行序列化和指示。 操作系统只调用[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)函数来指示接收到的安全数据包，这些数据包与 IEEE EtherTypes 列表中的条目相匹配，这些数据包由 IHV 扩展 DLL 通过调用[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)函数。
+    每个接收到的安全数据包都按从 WLAN 适配器接收到的顺序进行序列化和指示。 操作系统只调用[*Dot11ExtIhvReceivePacket*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_receive_packet)函数来指示接收到的安全数据包，这些数据包与 IEEE EtherTypes 列表中的条目相匹配，后者由 IHV 扩展 DLL 通过调用[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)函数指定。
 
     有关接收安全数据包的详细信息，请参阅[接收操作](receive-operations.md)。
 

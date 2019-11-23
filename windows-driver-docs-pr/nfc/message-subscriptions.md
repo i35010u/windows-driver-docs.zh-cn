@@ -5,7 +5,7 @@ ms.assetid: ECE9C495-978F-4BD7-95BC-B68432F9B81E
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017
@@ -86,11 +86,11 @@ ms.locfileid: "72832120"
 ## <a name="unresponsive-or-misbehaving-clients"></a>客户端无响应或异常
 
 
-如果客户端由于无法将所需的 IOCTL 发送\_NFP 而停止排出 "接收" 队列，则[ **\_获取\_下一\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)在10到20秒的时间段内订阅\_消息请求 \[10-20sec\]，驱动程序应假定客户端已消失。 在正常情况下，客户端应在1秒 \[1\]中正常刷新请求。 如果出现这种情况，驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，且在客户端唤醒并发送所需的 IRP 之前，不能递增计数器。
+如果客户端由于无法将所需的 IOCTL 发送\_NFP 来停止排出 "接收的" 队列， [ **\_获取\_下一\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)在10到20秒的时间段内\_的消息请求 \[，则驱动程序应假定客户端已断开。\] 在正常情况下，客户端应在1秒 \[1\]中正常刷新请求。 如果出现这种情况，驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，且在客户端唤醒并发送所需的 IRP 之前，不能递增计数器。
 
 ### <a name="required-actions"></a>必需的措施
 
-如果客户端尚未\_NFP 发送替换 IOCTL，则驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，且不能递增计数器[ **\_获取\_下一\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)在 10-20 秒内订阅\_消息之前的 IOCTL 完成。
+如果客户端尚未发送替换 IOCTL\_NFP，则驱动程序必须将 "CompleteEventImmediately" 计数器设置为零，且不能递增计数器[ **\_获取\_下一个\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/nfpdev/ni-nfpdev-ioctl_nfp_get_next_subscribed_message)在之前的 IOCTL 完成 10-20 秒内已订阅\_消息。
 
 ## <a name="malformed-messages"></a>消息格式不正确
 

@@ -46,14 +46,14 @@ WIA\_IPS\_PAGES "属性包含要从自动文档送纸器中获取的当前页数
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>值</th>
 <th>定义</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>ALL_PAGES</p></td>
-<td><p>连续扫描，直到不能将更多文档送入 ADF。 此值与将 WIA_PROP_RANGE 设置为零（0）相同。</p></td>
+<td><p>连续扫描，直到不能将更多文档送入 ADF。 此值等同于将 WIA_PROP_RANGE 设置为零（0）。</p></td>
 </tr>
 </tbody>
 </table>
@@ -78,7 +78,7 @@ WIA\_IPS\_PAGES "属性包含要从自动文档送纸器中获取的当前页数
 <tbody>
 <tr class="odd">
 <td><p>版本</p></td>
-<td><p>在 Windows Vista 和更高版本的操作系统中可用。 对于 Windows XP，请改为使用 WIA_DPS_PAGES 属性。</p></td>
+<td><p>在 Windows Vista 和更高版本的操作系统中可用。 对于 Windows XP，请改用 WIA_DPS_PAGES 属性。</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>

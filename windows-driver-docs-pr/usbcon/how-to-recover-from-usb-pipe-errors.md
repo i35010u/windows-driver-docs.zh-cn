@@ -55,9 +55,9 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 
 -   客户端驱动程序必须已创建框架 USB 目标设备对象。
 
-    如果使用的是随 Microsoft Visual Studio Professional 2012 一起提供的 USB 模板，则模板代码将执行这些任务。 模板代码获取目标设备对象的句柄，并将其存储在设备上下文中。
+    如果使用的是随 Microsoft Visual Studio Professional 2012 一起提供的 USB 模板，则模板代码将执行这些任务。 模板代码会获取目标设备对象的句柄并将其存储在设备上下文中。
 
-    KMDF 客户端驱动程序必须通过调用[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法获取 WDFUSBDEVICE 句柄。 有关详细信息，请参阅[了解 USB 客户端驱动程序代码结构（KMDF）中的](understanding-the-kmdf-template-code-for-usb.md)"设备源代码"。
+    KMDF 客户端驱动程序必须调用 [**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) 方法来获取 WDFUSBDEVICE 句柄。 有关详细信息，请参阅[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md) 中的“设备源代码”。
 
 -   客户端驱动程序必须具有框架目标管道对象的句柄。 有关详细信息，请参阅[如何枚举 USB 管道](how-to-get-usb-pipe-handles.md)。
 
@@ -69,9 +69,9 @@ USB 客户端驱动程序通过将控制传输发送到默认终结点来与其�
 客户端驱动程序使用 USB 请求块（URB）启动数据传输。 请求完成后，USB 驱动程序堆栈返回一个 USBD 状态代码，指示传输是成功还是失败。 在失败的情况下，USBD 代码指示失败的原因。
 
 -   如果通过调用[**WdfUsbTargetDeviceSendUrbSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicesendurbsynchronously)方法提交了 URB，请在方法返回后检查[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的 "Hdr" 成员 **。**
--   如果通过调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法以异步方式提交 URB，请检查[*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)中的 URB 状态。 *Params*参数指向[**WDF\_请求\_完成\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构。 若要检查 USBD 状态代码，请&gt;检查**UsbdStatus**成员。 有关代码的信息，请参阅[USBD\_状态](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。
+-   如果通过调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)方法以异步方式提交 URB，请在[*EVT_WDF_REQUEST_COMPLETION_ROUTINE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)中检查 URB 状态。 *Params*参数指向[**WDF\_请求\_完成\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_completion_params)结构。 若要检查 USBD 状态代码，请&gt;检查**UsbdStatus**成员。 有关代码的信息，请参阅[USBD\_状态](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff539136(v=vs.85))。
 
-传输失败可能由设备错误导致，例如 USBD\_状态\_延迟\_PID 或 USBD\_状态\_检测到干扰。 它们还可能是由于主机控制器报告了错误引起的，例如 USBD\_状态\_事务\_错误。
+传输失败可能由设备错误导致，例如 USBD\_状态\_延迟\_PID 或 USBD\_状态\_检测到干扰。\_ 它们还可能是由于主机控制器报告了错误引起的，例如 USBD\_状态\_事务\_错误。
 
 ### <a href="" id="determine-whether-the-device-is-connected-to-the-port"></a>步骤2：确定设备是否已连接到端口
 

@@ -69,7 +69,7 @@ UMDF 版本1.11 及更高版本支持**UmdfHostProcessSharing**指令。
 
 **注意**   从 umdf 版本2.15 开始，umdf 驱动程序无需指定**AllowDirectHardwareAccess**即可在其[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程中接收硬件资源列表。 如果未指定此项，则该驱动程序不具有使用这些资源的访问权限，但有一个例外：
 
-如果将一个或多个连接资源（**CmResourceTypeConnection**）和一个或多个中断资源（**CmResourceTypeInterrupt**）分配给设备，则驱动程序[**可以从其**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) [*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程（但不是从[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)）。
+如果将一个或多个连接资源（**CmResourceTypeConnection**）和一个或多个中断资源（**CmResourceTypeInterrupt**）分配给设备，则驱动程序可以从其[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)回调例程（而不是从[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)）调用[**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate) 。
 
  
 
@@ -147,7 +147,7 @@ UmdfDispatcher=NativeUSB
 UMDF 版本1.9 及更高版本支持**UmdfKernelModeClientPolicy**指令。 若要允许将内核模式驱动程序加载到早期 UMDF 版本中的用户模式驱动程序之上，请参阅[早期 Umdf 版本中的内核模式客户端支持](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-kernel-mode-clients-in-umdf-1-x-drivers#kernel-mode-client-support-in-earlier-umdf-versions)。
 
 <a href="" id="umdffileobjectpolicy----rejectnullandunknownfileobjects---allownullandunknownfileobjects--"></a>**UmdfFileObjectPolicy** = &lt;**RejectNullAndUnknownFileObjects** | **AllowNullAndUnknownFileObjects**&gt;   
-指示框架是否应允许处理未与文件对象（[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)）关联或与未知文件对象（驱动程序未为其进行的文件对象）关联的 i/o 请求（[IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)）。先前已查看创建请求）。
+指示框架是否应允许处理未与文件对象（[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)）相关联的 i/o 请求（[IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)）或与未知文件对象（驱动程序以前未发现创建请求的文件对象）关联。
 
 如果**UmdfFileObjectPolicy**设置为**RejectNullAndUnknownFileObjects**，则框架不允许处理与 NULL 或未知文件对象关联的请求。
 
@@ -201,9 +201,9 @@ DriverCLSID={d4112073-d09b-458f-a5aa-35ef21eef5de}
 
 <a href="" id=" umdfextensions-----cxservicename--"></a>**UmdfExtensions** = &lt;与 Microsoft 提供的类扩展驱动程序通信的驱动程序所需的 cxServiceName&gt;。  CxServiceName 参数对应于与类扩展驱动程序二进制文件关联的服务。
 
-类扩展驱动程序的服务名称可位于以下注册表项下的子项： **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services**
+类扩展驱动程序的服务名称可位于以下注册表项下的子项中： **HKEY_LOCAL_MACHINE \Software\microsoft\windows NT\CurrentVersion\WUDF\Services**
 
-在 Windows 8.1 及更早版本中，若要在更新 UMDF 驱动程序时避免必要的重新启动，请在驱动程序的 INF 文件中的[**CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)中指定**COPYFLG\_，\_使用\_RENAME**标志，如以下示例中所示:
+在 Windows 8.1 及更早版本中，若要在更新 UMDF 驱动程序时避免必要的重新启动，请在驱动程序的 INF 文件的[**CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)中 **\_指定\_使用\_RENAME**标志，如以下示例中所示：
 
 ```cpp
 [VirtualSerial_Install.NT]

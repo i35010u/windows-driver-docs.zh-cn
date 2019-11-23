@@ -132,7 +132,7 @@ ms.locfileid: "72828673"
 
         如果**功能**为**IRP\_MN\_QUERY\_功能**，则为 " **TRUE** "，该设备的唯一 ID 在整个系统中是唯一的。 如果不是，则 PnP 管理器会修改 ID，使其在整个系统范围内是唯一的。
 
-        PnP 管理器会创建一个名为 HKLM\\的子项 **\\CurrentControlSet\\Enum\\** &lt;&gt;\\*deviceID*&lt;&gt;&lt;*instanceID*&gt;。
+        PnP 管理器会创建一个名为**HKLM\\的子项\\CurrentControlSet\\Enum\\** &lt;*枚举器* **&gt;\\** &lt;*deviceID* **&gt;\\&lt;** *instanceID*&gt;。
 
     -   PnP 管理器将有关设备的信息写入设备实例的子项。
 
@@ -231,7 +231,7 @@ ms.locfileid: "72828673"
 
 GUID_PNP_LOCATION_INTERFACE 接口提供设备的 SPDRP_LOCATION_PATHS 即插即用（PnP）设备属性。
 
-若要在驱动程序中实现此接口，请用 InterfaceType = GUID_PNP_LOCATION_INTERFACE 处理 IRP_MN_QUERY_INTERFACE IRP。 驱动程序提供一个指向 PNP_LOCATION_INTERFACE 结构的指针，该结构包含指向接口的各个例程的指针。 [PnpGetLocationString 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pget_location_string)提供设备的 SPDRP_LOCATION_PATHS 属性的设备特定部分。
+若要在你的驱动程序中实现此接口，请处理 IRP_MN_QUERY_INTERFACE IRP，其中 InterfaceType = GUID_PNP_LOCATION_INTERFACE。 驱动程序提供一个指向 PNP_LOCATION_INTERFACE 结构的指针，该结构包含指向接口的各个例程的指针。 [PnpGetLocationString 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-pget_location_string)提供设备 SPDRP_LOCATION_PATHS 属性的设备特定部分。
 
 
 

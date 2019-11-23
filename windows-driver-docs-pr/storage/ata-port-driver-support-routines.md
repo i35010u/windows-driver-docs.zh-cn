@@ -49,7 +49,7 @@ ATA 端口驱动程序提供了以下 i/o 请求处理支持例程。
 | **AtaPortGetPhysicalAddress** | 将虚拟地址范围转换为物理地址范围。 |
 | **AtaPortGetDeviceBase** | 返回一个映射的逻辑基址，该地址用于与主机总线适配器（HBA）进行通信。 |
 | **AtaPortGetUncachedExtension** | 分配由 CPU 和设备共享的未缓存的公共缓冲区。 |
-| **AtaPortBuildRequestSenseIrb** | 生成并返回操作代码 SCSIOP_REQUEST_SENSE 的 IRB。 |
+| **AtaPortBuildRequestSenseIrb** | 生成并返回 SCSIOP_REQUEST_SENSE 操作代码的 IRB。 |
 | **AtaPortReleaseRequestSenseIrb** | 释放使用**AtaPortBuildRequestSenseIrb**分配的请求 IRB。 |
 | **AtaPortCompleteAllActiveRequests** | 完成指定设备的所有活动 IRBs。 |
 | **AtaPortCompleteRequest** | 完成指示的 IRB。 |
@@ -91,8 +91,8 @@ ATA 端口驱动程序提供了以下 i/o 请求处理支持例程。
 | ------- | ----------- |
 | **AtaPortCopyMemory** | 将数据从一个位置复制到另一个位置。 |
 | \* * AtaPortMoveMemory 例程 | 将数据从一个位置复制到另一个位置。 |
-| **AtaPortConvertUlongToPhysicalAddress** | 将给定的 ULONG 地址转换为 IDE_PHYSICAL_ADDRESS 类型的值。 |
-| **AtaPortConvertPhysicalAddressToUlong** | 将类型为 IDE_PHYSICAL_ADDRESS 的地址截断为 ULONG。 |
+| **AtaPortConvertUlongToPhysicalAddress** | 将给定的 ULONG 地址转换为类型 IDE_PHYSICAL_ADDRESS 的值。 |
+| **AtaPortConvertPhysicalAddressToUlong** | 将 IDE_PHYSICAL_ADDRESS 类型的地址截断到 ULONG。 |
 | **AtaPortStallExecution** | 微型端口驱动程序中的停止。 |
 | **AtaPortInitializeQueueTag** | 初始化指定设备的队列标记列表。 |
 | **AtaPortAllocateQueueTag** | 返回指定设备的队列标记。 |
@@ -145,9 +145,9 @@ ATA 端口驱动程序提供以下端口并注册访问支持例程。
 | ------- | ----------- |
 | **AtaPortRegistryAllocateBuffer** | 为注册表操作分配缓冲区。 |
 | **AtaPortRegistryFreeBuffer** | 释放使用**AtaPortRegistryAllocateBuffer**分配的注册表缓冲区。 |
-| **AtaPortRegistryControllerKeyRead** | 在注册表项 HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*上读取与指示的值名称关联的数据，其中*N*是控制器的编号。 |
-| **AtaPortRegistryContrlollerKeyWrite** | 将数据写入注册表项 HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*下指定的值名称，其中*N*是控制器的编号。 |
-| **AtaPortRegistryControllerKeyWriteDeferred** | 以异步方式将数据写入到注册表项 HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*n*下的指示值名称，其中*N*是控制器的编号。 |
-| **AtaPortRegistryChannelSubKeyRead** | 在注册表项 HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*\Channel*M*下读取与所指示的值名称关联的数据，其中*N*是控制器和*M*是通道的编号。 |
-| **AtaPortRegistryChannelSubKeyWrite** | 在注册表项 HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*\Channel*M*下将数据写入指定的值名称，其中*N*是控制器和 M 的编号通道的编号。 |
-| **AtaPortRegistryChannelSubKeyWriteDeferred** | 将数据异步写入注册表项 HKLM @ no__t-0CurrentControlSet @ no__t-1Services @ no__t-2 @ no__t-3service name @ no__t-4\Controller*N*\Channel*M*下的指示值名称，其中*N*是控制器和*M*是通道的编号。 |
+| **AtaPortRegistryControllerKeyRead** | 读取与注册表项 HKLM 上指定的值名称关联的数据\\CurrentControlSet\\Services\\&lt;服务名称&gt;\Controller*n*，其中*N*是控制器的编号。 |
+| **AtaPortRegistryContrlollerKeyWrite** | 将数据写入到注册表项 HKLM\\CurrentControlSet\\Services\\&lt;服务名称&gt;\Controller*n*的指定值名称，其中*N*是控制器的编号。 |
+| **AtaPortRegistryControllerKeyWriteDeferred** | 以异步方式将数据写入到注册表项 HKLM\\CurrentControlSet\\Services\\&lt;服务名称&gt;\Controller*n*，其中*N*是控制器的编号。 |
+| **AtaPortRegistryChannelSubKeyRead** | 读取与注册表项 HKLM 上指定的值名称关联的数据\\CurrentControlSet\\Services\\&lt;服务名称&gt;\Controller*n*\Channel*M*，其中*N*是控制器的编号， *M*是通道的编号。 |
+| **AtaPortRegistryChannelSubKeyWrite** | 将数据写入到注册表项 HKLM\\CurrentControlSet\\Services\\&lt;服务名称&gt;\Controller*N*\Channel*M*下指定的值名称，其中*N*是控制器的编号， *M*是通道的编号。 |
+| **AtaPortRegistryChannelSubKeyWriteDeferred** | 将数据异步写入到注册表项 HKLM\\CurrentControlSet\\Services\\&lt;服务名称&gt;\Controller*N*\Channel*M*下的指定值名称，其中*N*是控制器的编号， *M*是通道的编号。 |

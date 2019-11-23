@@ -20,7 +20,7 @@ NDIS 6.30 （Windows Server 2012）[使用通用路由封装（NVGRE）引入网
 
  
 
-如果[**NDIS\_TCP\_发送\_卸载\_补充\_NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)\_\_的信息。**IsEncapsulatedPacket**为**TRUE** ，并且**TcpIpChecksumNetBufferListInfo**带外（OOB）信息有效，这表示需要 NVGRE 支持，而 NIC 必须在 NVGRE 格式的数据包，条件如下：
+如果[**NDIS\_TCP\_发送\_卸载\_补充\_NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)\_\_的信息。**IsEncapsulatedPacket**为**TRUE** ，并且**TcpIpChecksumNetBufferListInfo**带外（OOB）信息有效，这表示需要 NVGRE 支持，而 NIC 必须在 NVGRE 格式的数据包上执行 LSOV2 卸载，条件如下：
 
 -   只有[**NDIS\_TCP\_大\_发送\_卸载\_NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)\_\_的信息。**LsoV2Transmit**结构有效。 NIC 和微型端口驱动程序不得引用**NDIS\_TCP\_大型\_发送\_卸载\_NET\_** \_\_的信息。**LsoV1Transmit**结构。
 -   [**NDIS\_TCP\_大型\_发送\_卸载\_NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)\_\_的信息。**LsoV2Transmit**。**TcpHeaderOffset**成员没有正确的偏移值，且不能由 NIC 或微型端口驱动程序使用。
@@ -29,9 +29,9 @@ NDIS 6.30 （Windows Server 2012）[使用通用路由封装（NVGRE）引入网
 
 -   减小[**NDIS\_TCP\_大型\_发送\_卸载\_NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_large_send_offload_net_buffer_list_info)\_\_的信息。要用于新的 GRE 标头的**LsoV2Transmit**结构。
 -   发送一个 TCP 负载长度，该长度可能不是已减少的**MSS**值的准确倍数。
--   调整 NDIS 中的**InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**和**TCPHEADERRELATIVEOFFSET**值[ **\_TCP\_发送\_卸载\_补充\_NET\_缓存\_列出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)了要为 GRE 标头帐户\_信息结构。
+-   调整 NDIS 中的**InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**和**TCPHEADERRELATIVEOFFSET**值[ **\_TCP\_发送\_卸载\_补充\_NET\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)\_\_INFO 结构，以考虑 GRE 标头。
 
-Nic 和微型端口驱动程序可以使用 NDIS\_TCP\_中提供的**InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**和**TcpHeaderRelativeOffset**值[**发送\_卸载\_补充\_NET\_缓冲器\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)结构。 NIC 或微型端口驱动程序可以对隧道（外部） IP 标头或后续标头执行任何所需的标头检查来验证这些偏移量。
+Nic 和微型端口驱动程序可以使用 NDIS\_TCP\_中提供的**InnerFrameOffset**、 **TransportIpHeaderRelativeOffset**和**TcpHeaderRelativeOffset**值[**发送\_卸载\_补充\_网络\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)\_\_信息结构。 NIC 或微型端口驱动程序可以对隧道（外部） IP 标头或后续标头执行任何所需的标头检查来验证这些偏移量。
 
 微型端口驱动程序必须处理[**NDIS\_TCP\_发送\_卸载\_补充\_NET\_\_\_列表信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_send_offloads_supplemental_net_buffer_list_info)的情况。**InnerFrameOffset**可能在不同于数据包开头的分散列表列表中。 协议驱动程序将保证所有预置的封装标头（ETH、IP、GRE）在物理上是连续的，并将位于数据包的第一 MDL。
 

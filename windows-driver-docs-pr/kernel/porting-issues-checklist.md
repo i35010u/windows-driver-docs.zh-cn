@@ -20,7 +20,7 @@ ms.locfileid: "72827661"
 
 
 
-### <a name="general"></a>“常规”
+### <a name="general"></a>常规
 
 -   使用新的64位安全 Windows 数据类型。
 

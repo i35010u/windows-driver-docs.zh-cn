@@ -63,7 +63,7 @@ WOL 模式通过[**NDIS\_PM\_参数**](https://docs.microsoft.com/windows-hardwa
 
 -   在发出与唤醒事件相关的状态指示之前，微型端口驱动程序必须[ **\_PM 发出 NDIS\_状态\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状态指示。 例如，如果唤醒事件是因为媒体连接状态发生了变化，则微型端口驱动程序必须[ **\_链接发出 ndis\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)，然后在其发出**NDIS\_\_状态之后\_状态状态指示\_唤醒\_原因**状态指示。
 
--   微型端口驱动程序必须将[**NDIS\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状态指示仅用于先前通过 OID 的 oid 集请求启用的电源管理事件\_[PM\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters).
+-   微型端口驱动程序必须将[**NDIS\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状态指示仅用于通过 oid 的 oid 集请求\_[PM\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)启用。
 
 -   微型端口驱动程序必须将[**NDIS\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状态指示仅用于基础网络适配器生成的唤醒事件。
 

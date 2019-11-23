@@ -31,7 +31,7 @@ ms.locfileid: "72823921"
 ## <a name="flow-of-nvgre-and-non-nvgre-packets-through-the-switch"></a>通过交换机的 NVGRE 和非 NVGRE 数据包流
 
 
-在入口数据路径中，在捕获和筛选扩展之后但在转发扩展之前，如果数据包为 NVGRE 数据包，则可扩展交换机会在 NDIS\_交换机中设置**NativeForwardingRequired**标志[ **\_转发\_详细信息\_NET\_缓冲区\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)结构。 此结构包含在数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NetBufferListInfo**成员中。
+在入口数据路径中，在捕获和筛选扩展之后但在转发扩展之前，如果数据包为 NVGRE 数据包，则可扩展交换机会在 NDIS\_交换机中设置**NativeForwardingRequired**标志[ **\_详细\_网络\_\_转发详细信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)。\_\_ 此结构包含在数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的**NetBufferListInfo**成员中。
 
 **请注意**  [**NET\_缓冲器\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的**NetBufferListInfo**成员通常称为数据包的 "带外（OOB）数据"。
 

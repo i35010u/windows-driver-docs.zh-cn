@@ -17,7 +17,7 @@ ms.locfileid: "70750042"
 
 ModelID 元素指定物理设备的 GUID。
 
-**请注意**   ，服务元数据包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用[HardwareIDList](hardwareidlist.md)和[HardwareID](hardwareid.md)元素。
+**警告**   服务元包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用[HardwareIDList](hardwareidlist.md)和[HardwareID](hardwareid.md)元素。
 
  
 
@@ -77,7 +77,7 @@ ModelID 元素指定物理设备的 GUID。
 
 ModelID 元素指定设备支持的硬件型号的模型 ID。 每个模型 ID 都通过 GUID 来指定。
 
-**请注意**   ，服务元数据包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用[HardwareIDList](hardwareidlist.md)和[HardwareID](hardwareid.md)元素。
+**警告**   服务元包不支持[ModelIDList](modelidlist.md)和 ModelID 元素。 您必须改用[HardwareIDList](hardwareidlist.md)和[HardwareID](hardwareid.md)元素。
 
  
 

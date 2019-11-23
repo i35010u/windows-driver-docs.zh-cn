@@ -20,16 +20,16 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72313782"
 ---
-# <a name="bug-check-0xd6-driver_page_fault_beyond_end_of_allocation"></a>Bug 检查 0xD6：DRIVER @ NO__T-0PAGE @ NO__T-1FAULT @ NO__T-2BEYOND @ NO__T-3END @ NO__T-4OF @ NO__T-5ALLOCATION
+# <a name="bug-check-0xd6-driver_page_fault_beyond_end_of_allocation"></a>Bug 检查0xD6：驱动\_页面\_错误\_超过\_分配\_结束\_
 
 
-DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2BEYOND @ no__t-3END @ no__t-4OF @ no__t-5ALLOCATION bug 检查的值为0x000000D6。 这表明驱动程序访问的内存超出了其池分配的结尾。
+\_分配 bug 检查\_\_的 "驱动程序" 页错误\_超过\_结束\_的值为 "0x000000D6"。 这表明驱动程序访问的内存超出了其池分配的结尾。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_page_fault_beyond_end_of_allocation-parameters"></a>DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2BEYOND @ no__t-3END @ no__t-4OF @ no__t-5ALLOCATION 参数
+## <a name="driver_page_fault_beyond_end_of_allocation-parameters"></a>驱动\_页面\_错误\_超过\_分配参数\_结束\_
 
 
 <table>
@@ -50,8 +50,8 @@ DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2BEYOND @ no__t-3END @ no__t-4OF @ n
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p><strong>0</strong>Read</p>
-<p><strong>2</strong>写入</p></td>
+<td align="left"><p><strong>0：</strong>读取</p>
+<p><strong>1：</strong>写入</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -66,7 +66,7 @@ DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2BEYOND @ no__t-3END @ no__t-4OF @ n
 
  
 [ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
-如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE @ no__t-0STRING） *KiBugCheckDriver*。
+如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE\_STRING） *KiBugCheckDriver*。
 
 <a name="cause"></a>原因
 -----

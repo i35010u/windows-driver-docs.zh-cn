@@ -14,7 +14,7 @@ ms.locfileid: "72840852"
 # <a name="driver-behavior-during-multipage-transfers"></a>在多页传输过程中的驱动程序行为
 
 
-驱动程序无需直接支持文件夹获取。 如果驱动程序不支持驱动程序，WIA 服务将以递归方式遍历项树，并对在[**WIA\_IPA\_项**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)中设置**WiaItemTypeTransfer**位的所有项调用[**IWIAMINIDRV：:d rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata)\_标志知识产权.
+驱动程序无需直接支持文件夹获取。 如果驱动程序不支持，WIA 服务将以递归方式遍历项树，并对在[**WIA\_IPA\_项\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-flags)属性中设置**WiaItemTypeTransfer**位的所有项调用[**IWiaMiniDrv：:d rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) 。
 
 支持文件夹获取的驱动程序必须向文件夹项公开[**WIA\_ip\_传输\_功能**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-transfer-capabilities)属性。 此属性是一个标志属性，应将 WIA\_传输\_获取\_\_子级，以指示它直接支持文件夹获取功能。 此支持意味着，驱动程序本身会遍历树以传输相关项，WIA 服务只会对文件夹调用**IWiaMiniDrv：:D rvacquireitemdata** 。 驱动程序可以通过测试 WIA\_传输的*lFlags*参数\_获取\_子位，来区分普通传输请求和文件夹获取请求。
 

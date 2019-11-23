@@ -26,11 +26,11 @@ ms.locfileid: "72843718"
 
      
 
--   PF 微型端口驱动程序调用[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists) ，以指示从 VPort 接收的数据包。 在 PF 微型端口驱动程序调用**NdisMIndicateReceiveNetBufferLists**之前，必须在[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的带外（OOB）数据中设置 VPort 标识符，\_包的列表结构。 驱动程序通过使用[**NET\_BUFFER\_列表\_接收\_FILTER\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)宏来实现此功能。
+-   PF 微型端口驱动程序调用[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists) ，以指示从 VPort 接收的数据包。 在 PF 微型端口驱动程序调用**NdisMIndicateReceiveNetBufferLists**之前，必须在[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的带外（OOB）数据中设置 VPort 标识符，\_包的列表结构。 驱动程序通过使用[**NET\_BUFFER\_列表\_接收\_FILTER\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)宏来实现此功能。\_
 
 -   虚拟化堆栈调用[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)将数据包传输到 VPort。 在虚拟化堆栈调用**NdisSendNetBufferLists**之前，它会在[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构中为数据包设置 VPort 标识符。
 
-    微型端口驱动程序使用[**NET\_缓冲区\_列表获取 VPort 标识符，\_接收\_FILTER\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)宏。
+    微型端口驱动程序使用[**NET\_缓冲区\_列表获取 VPort 标识符，\_接收\_FILTER\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-filter-vport-id)宏。\_
 
     微型端口驱动程序必须在指定 VPort 的硬件传输队列中对传输数据包进行排队。
 

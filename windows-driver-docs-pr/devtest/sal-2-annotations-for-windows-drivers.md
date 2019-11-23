@@ -30,7 +30,7 @@ Microsoft 源代码注释语言（SAL）包含特定于分析 Windows 驱动程�
 <tr class="header">
 <th align="left">驱动程序批注</th>
 <th align="left">类别</th>
-<th align="left">可使用</th>
+<th align="left">将</th>
 </tr>
 </thead>
 <tbody>
@@ -65,27 +65,27 @@ Microsoft 源代码注释语言（SAL）包含特定于分析 Windows 驱动程�
 <tr class="even">
 <td align="left"><p><strong><em>Kernel_clear_do_init</em></strong></p></td>
 <td align="left"><a href="do-device-initializing-annotation-for-drivers.md" data-raw-source="[DO_DEVICE_INITIALIZING annotation](do-device-initializing-annotation-for-drivers.md)">DO_DEVICE_INITIALIZING 批注</a></td>
-<td align="left"><p>使用<em>Kernel_clear_do_init</em>批注指定是否应在设备对象的 "标志" 字段中清除带批注的函数。</p></td>
+<td align="left"><p>使用<em>Kernel_clear_do_init</em>批注指定是否应使用批注的函数清除设备对象的 "标志" 字段中的 DO_DEVICE_INITIALIZING 位。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>Kernel_IoGetDmaAdapter</em></strong></p></td>
 <td align="left"><a href="-kernel-iogetdmaadapter--annotation-for-drivers.md" data-raw-source="[_Kernel_IoGetDmaAdapter_ Annotation](-kernel-iogetdmaadapter--annotation-for-drivers.md)"><em>Kernel_IoGetDmaAdapter</em>绘图</a></td>
-<td align="left"><p>使用<em>Kernel_IoGetDmaAdapter</em>批注指示代码分析工具查找 DMA 指针的误用。</p></td>
+<td align="left"><p>使用<em>Kernel_IoGetDmaAdapter</em>注释指示代码分析工具查找是否误用 DMA 指针。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong><em>Interlocked_operand</em></strong></p></td>
 <td align="left"><a href="driver-annotations-for-interlocked-operands.md" data-raw-source="[Annotations for interlocked operands](driver-annotations-for-interlocked-operands.md)">联锁操作数的批注</a></td>
-<td align="left"><p>使用函数参数的<em>Interlocked_operand</em>批注将它们标识为互锁操作数。 许多函数作为其参数之一，这是一个变量的地址，该变量应使用联锁处理器指令进行访问。 这些是缓存读取原子说明，如果未正确使用操作数，则会产生非常微妙的 bug。</p></td>
+<td align="left"><p>使用函数参数<em>Interlocked_operand</em>批注将它们标识为互锁操作数。 许多函数作为其参数之一，这是一个变量的地址，该变量应使用联锁处理器指令进行访问。 这些是缓存读取原子说明，如果未正确使用操作数，则会产生非常微妙的 bug。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>Dispatch_type</em></strong></p></td>
 <td align="left"><a href="declaring-functions-using-function-role-types-for-wdm-drivers.md#annotating_driver_dispatch_routines" data-raw-source="[Annotations for Driver Dispatch Routines](declaring-functions-using-function-role-types-for-wdm-drivers.md#annotating_driver_dispatch_routines)">驱动程序调度例程的注释</a>。</td>
-<td align="left"><p>使用声明 WDM 驱动程序调度例程时使用的<em>Dispatch_type</em>批注。 请参阅<a href="declaring-functions-using-function-role-types-for-wdm-drivers.md" data-raw-source="[Declaring Functions Using Function Role Types for WDM Drivers](declaring-functions-using-function-role-types-for-wdm-drivers.md)">使用 WDM 驱动程序的函数角色类型声明函数</a>和<a href="declaring-functions-using-function-role-types-for-wdm-drivers.md#annotating_driver_dispatch_routines" data-raw-source="[Annotating Driver Dispatch Routines](declaring-functions-using-function-role-types-for-wdm-drivers.md#annotating_driver_dispatch_routines)">批注驱动程序调度例程</a></p></td>
+<td align="left"><p>使用声明 WDM 驱动程序调度例程时使用的<em>Dispatch_type</em>注释。 请参阅<a href="declaring-functions-using-function-role-types-for-wdm-drivers.md" data-raw-source="[Declaring Functions Using Function Role Types for WDM Drivers](declaring-functions-using-function-role-types-for-wdm-drivers.md)">使用 WDM 驱动程序的函数角色类型声明函数</a>和<a href="declaring-functions-using-function-role-types-for-wdm-drivers.md#annotating_driver_dispatch_routines" data-raw-source="[Annotating Driver Dispatch Routines](declaring-functions-using-function-role-types-for-wdm-drivers.md#annotating_driver_dispatch_routines)">批注驱动程序调度例程</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong><em>Flt_CompletionContext_Outptr</em></strong></p></td>
 <td align="left"><a href="-flt-completioncontext-outptr--annotation.md" data-raw-source="[_Flt_CompletionContext_Outptr_ Annotation](-flt-completioncontext-outptr--annotation.md)"><em>Flt_CompletionContext_Outptr</em>绘图</a></td>
-<td align="left"><p>声明文件系统微筛选器预操作回调函数（<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>）时，请使用<strong><em>Flt_CompletionContext_Outptr</em></strong>批注。 将此批注放置在<em>CompletionContext</em>参数上。 此批注指示代码分析工具检查<em>CompletionContext</em>是否适用于 FLT_PREOP_CALLBACK_STATUS 返回值。</p></td>
+<td align="left"><p>声明文件系统微筛选器预操作回调函数（<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback" data-raw-source="[&lt;strong&gt;PFLT_PRE_OPERATION_CALLBACK&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)"><strong>PFLT_PRE_OPERATION_CALLBACK</strong></a>）时，请使用<strong><em>Flt_CompletionContext_Outptr</em></strong>注释。 将此批注放置在<em>CompletionContext</em>参数上。 此批注指示代码分析工具检查<em>CompletionContext</em>是否适用于 FLT_PREOP_CALLBACK_STATUS 返回值。</p></td>
 </tr>
 </tbody>
 </table>

@@ -99,7 +99,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 有关存储在**HKEY_LOCAL_MACHINE**根下的驱动程序信息的详细信息，请参阅[设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 
 <a href="" id="subkey"></a>*键值*  
-此可选值可以是在 INF 的[**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌，也可以是给定的注册表*项*下的注册表路径（<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...），指定以下项之一：
+此可选值（格式为在 INF 的[**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌）*或给定的注册表项（* <em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...）下的注册表路径，指定以下项之一：
 
 -   要添加到注册表中给定注册表路径末尾的新子项。
 -   其中写入此项中指定的其他值（可能替换给定子项的现有命名值项的值）的现有子项。
@@ -116,7 +116,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 其中每个标志的位掩码值如下所示：
 
 <a href="" id="0x00000001--flg-addreg-binvaluetype---"></a>**0x00000001** （FLG_ADDREG_BINVALUETYPE）   
-给定值为 "原始" 数据。 （此值等同于 FLG_ADDREG_TYPE_BINARY。）
+给定值为 "原始" 数据。 （此值与 FLG_ADDREG_TYPE_BINARY 相同。）
 
 <a href="" id="0x00000002--flg-addreg-noclobber---"></a>**0x00000002** （FLG_ADDREG_NOCLOBBER）   
 防止给定值替换现有值项的值。
@@ -162,7 +162,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 给定的*值输入名称*和/或*值*为注册表类型[REG_NONE](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)。
 
 <a href="" id="value"></a>*负值*  
-这可以选择指定要添加到给定注册表项中的指定*值输入名称*的新值。 此类*值*可以是现有键中现有命名值条目的 "替换" 值，要追加的值（"*标志*值**0x00010008**"）到现有键中现有的已命名的[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)类型值条目（新值）要写入现有密钥的条目，或要添加到注册表中的新*子项*的初始值条目。
+这可以选择指定要添加到给定注册表项中的指定*值输入名称*的新值。 此类*值*可以是现有密钥中现有命名值条目的 "替换" 值、要追加的值（"*标志*值**0x00010008**"）、现有密钥中现有[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)已命名的值条目、要写入现有密钥的新值条目或要添加到注册表中的新*子项*的初始值条目。
 
 此类*值*的表达式取决于为*标志*指定的注册表类型，如下所示：
 
@@ -200,7 +200,7 @@ reg-root, [subkey],[value-entry-name],[flags],[value][,[value]]
 
  
 
-若要表示非预定义的 REG_*XXX*类型中的某个注册表类型，请在该*标志*的高位字中指定一个新类型号，其中运算包含 FLG_ADDREG_BINVALUETYPE。 此类*值*的数据必须以二进制格式指定为以逗号分隔的字节序列。 例如，若要存储作为值项的新注册表数据类型的16个字节的数据（如0x38），则 "添加注册表" 一节条目应如下所示：
+若要表示不属于预定义的 REG_*XXX*类型之一的其他注册表类型，请在*标志*运算的高位字中指定一个新的类型号，其中 FLG_ADDREG_BINVALUETYPE 在其低字中。 此类*值*的数据必须以二进制格式指定为以逗号分隔的字节序列。 例如，若要存储作为值项的新注册表数据类型的16个字节的数据（如0x38），则 "添加注册表" 一节条目应如下所示：
 
 ```ini
 HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
@@ -228,7 +228,7 @@ HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
 下面介绍了使用以下特殊关键字的 HKR **AddReg**条目：
 
 <a href="" id="devicecharacteristics"></a>**DeviceCharacteristics**  
-**DeviceCharacteristics** HKR **AddReg**项指定设备的特性。 *特性*值是一个数值，它是在 FILE_ 和*Ntddk*中*定义的一个*或多个\* 文件特征值上使用或的结果。
+**DeviceCharacteristics** HKR **AddReg**项指定设备的特性。 *特性*值是一个数值，它是在*Ntddk 和*中*定义的一个*或多个 FILE_\* 文件特征值上使用或的结果。
 
 只能在 INF 中指定以下值：
 
@@ -249,7 +249,7 @@ HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
 有关设备特征的详细信息，请参阅[指定设备特征](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-characteristics)。
 
 <a href="" id="devicetype"></a>**DeviceType**  
-**DeviceType** HKR **AddReg**项指定设备的设备类型。 设备类型是在*Wdm .h*或*Ntddk*中定义的 FILE_DEVICE_*XXX*常量的数值。 0x10001 的标志值指定设备类型值为[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)。 有关详细信息，请参阅[指定设备类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)。
+**DeviceType** HKR **AddReg**项指定设备的设备类型。 设备类型是*Wdm*或*Ntddk*中定义的 FILE_DEVICE_*XXX*常量的数值。 0x10001 的标志值指定设备类型值为[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)。 有关详细信息，请参阅[指定设备类型](https://docs.microsoft.com/windows-hardware/drivers/kernel/specifying-device-types)。
 
 类安装程序 INF 应该指定适用于类中所有设备或几乎所有设备的设备类型。 例如，如果类中的设备的类型为 FILE_DEVICE_CD_ROM，请指定一种*设备类型*的0x02。 如果设备 INF 为**DeviceType**指定了值，则它将覆盖类安装程序设置的值（如果有）。 如果类或设备 INF 指定了**DeviceType**值，则 PnP 管理器会将该类型应用于设备的总线驱动程序创建的*物理设备对象（PDO）* 。
 
@@ -290,7 +290,7 @@ HKR,,MYValue,0x00380001,1,0,2,3,4,5,6,7,8,9,A,B,C,D,E,F
 <a name="examples"></a>示例
 --------
 
-在此示例中， **AddReg**指令引用了由<em>DDInstall</em>中的**ADDSERVICE**指令引用的由 INF 编写器定义的部分 **。服务**部分。
+**AddReg**指令在本示例中引用了由<em>DDInstall</em>中**ADDSERVICE**指令引用的由 INF 编写器定义的部分（SCSI） Miniport_EventLog_AddReg 部分 **。服务**部分。
 
 ```ini
 [Miniport_EventLog_AddReg]

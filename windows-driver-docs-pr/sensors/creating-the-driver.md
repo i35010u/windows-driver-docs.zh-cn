@@ -43,7 +43,7 @@ ms.locfileid: "72837624"
 
 2.  将驱动程序的 DLL 和 INF 文件复制到一个单独的文件夹中。
 
-3.  从你安装了 WDK 的 " *\_类型*" 文件夹中找到两个共同安装程序 DLL 文件（选中或免费）。 将这些文件复制到你在步骤3中创建的文件夹。 例如，如果在驱动器 C 上安装了 WDK，则可以将 WUDFUpdate\_01009 从 C：\\WinDDK\\*生成\#* \\
+3.  从你安装了 WDK 的 " *\_类型*" 文件夹中找到两个共同安装程序 DLL 文件（选中或免费）。 将这些文件复制到你在步骤3中创建的文件夹。 例如，如果在驱动器 C 上安装了 WDK，则可以将 WUDFUpdate\_01009 从 C：\\WinDDK\\*生成\#* \\\\\\
 
 4.  运行 Devcon。 可以在安装 WDK 的工具\\devcon 文件夹中找到此程序。 例如，对于名为 WDKExample 的传感器，你可以键入：
 
@@ -75,7 +75,7 @@ ms.locfileid: "72837624"
 
 4.  选择 **"删除此设备的驱动程序软件"** 。
 
-5.  单击**确定**。
+5.  单击“确定”。
 
 ## <a name="related-topics"></a>相关主题
 [传感器地理位置驱动程序示例](https://docs.microsoft.com/windows-hardware/drivers/gnss/sensors-geolocation-driver-sample)

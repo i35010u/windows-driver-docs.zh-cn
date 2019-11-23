@@ -1,6 +1,6 @@
 ---
-title: 使用 Bind 或 Connect 重定向
-description: 使用 Bind 或 Connect 重定向
+title: 使用绑定或连接重定向
+description: 使用绑定或连接重定向
 ms.assetid: 6b27a9ad-53e9-4e80-bf03-79665f8a82a0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72842994"
 ---
-# <a name="using-bind-or-connect-redirection"></a>使用 Bind 或 Connect 重定向
+# <a name="using-bind-or-connect-redirection"></a>使用绑定或连接重定向
 
 
 通过 Windows 筛选平台（WFP）的连接/绑定重定向功能，应用程序层强制（ALE）标注驱动程序可以检查和（如果需要）重定向连接。
@@ -176,7 +176,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在 FWPM\_层上�
 
 8.  根据需要对层数据进行更改。
 
-9.  调用[**FwpsApplyModifiedLayerData0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsapplymodifiedlayerdata0)以应用对数据所做的更改。 如果要在另一个标注进一步修改数据时重新获得授权，请设置**FWPS_CLASSIFY_FLAG_REAUTHORIZE_IF_MODIFIED_BY_OTHERS**标志。
+9.  调用[**FwpsApplyModifiedLayerData0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsapplymodifiedlayerdata0)以应用对数据所做的更改。 如果希望在其他标注进一步修改数据时重新获得授权，请设置**FWPS_CLASSIFY_FLAG_REAUTHORIZE_IF_MODIFIED_BY_OTHERS**标志。
 
 10. 如以下示例中所示，通过异步方式调用[**FwpsCompleteClassify0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscompleteclassify0)来完成分类操作：
 

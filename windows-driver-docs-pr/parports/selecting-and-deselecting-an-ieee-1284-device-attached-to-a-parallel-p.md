@@ -34,7 +34,7 @@ ms.locfileid: "72842325"
 
 Select 请求需要客户端的最低处理方式，因为系统提供的并行端口的函数驱动程序会将客户端的选择请求排队，前提是并行端口由另一个客户端分配。 并行端口函数驱动程序取消排队 select 请求后，它会尝试分配端口并选择 IEEE 1284.3 设备。 由于可接受的超时延迟或其他特定于设备的状态，客户端可以随时取消选择请求。
 
-**请注意**   如果客户端仅使用[**PPARALLEL\_尝试\_选择 "\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_try_select_routine)回拨"，尝试选择并行设备，其他客户端正在对付并行端口，即系统提供的函数驱动程序对于并行端口，可能永远不会将端口分配给客户端。 若要确保成功，客户端必须使用[**IOCTL\_内部\_选择\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_select_device)请求。 （并行端口功能驱动程序将按接收选择设备请求的顺序，对端口分配请求和设备选择请求进行排队。）
+**请注意**   如果客户端仅使用[**PPARALLEL\_尝试\_选择 "\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_try_select_routine)回拨"，尝试选择并行的设备，而其他客户端正在对付并行端口，则系统提供的并行端口的函数驱动程序可能永远不会将该端口分配给客户端。 若要确保成功，客户端必须使用[**IOCTL\_内部\_选择\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_select_device)请求。 （并行端口功能驱动程序将按接收选择设备请求的顺序，对端口分配请求和设备选择请求进行排队。）
 
  
 

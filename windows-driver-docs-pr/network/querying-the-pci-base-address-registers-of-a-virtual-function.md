@@ -37,7 +37,7 @@ PCI 驱动程序通过以下方式执行此 PCI BAR 查询：
 
  
 
-\_探测的 OID\_SRIOV 探测的\_条查询请求包含\_INFO 结构\_探测到的[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 。 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须在由 NDIS\_SRIOV 的**BaseRegisterValuesOffset**成员引用的数组中返回 PCI BAR 值， **\_探测的\_条\_信息**结构。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理网络适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
+\_探测的 OID\_SRIOV 探测的\_条查询请求包含\_INFO 结构\_探测到的[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_probed_bars_info) 。\_ 当 PF 微型端口驱动程序处理此 OID 时，驱动程序必须在由 NDIS\_SRIOV 的**BaseRegisterValuesOffset**成员引用的数组中返回 PCI BAR 值， **\_探测的\_条\_信息**结构。 对于数组中的每个偏移量，PF 微型端口驱动程序必须将数组元素设置为位于物理网络适配器 PCI 配置空间内相同偏移量的条的 ULONG 值。
 
 驱动程序返回的每个条形值的值都必须与在管理操作系统中运行的 PCI 驱动程序执行的 PCI BAR 查询遵循的值相同。 PF 微型端口驱动程序可以调用[**NdisMQueryProbedBars**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismqueryprobedbars)来确定此信息。
 

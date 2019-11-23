@@ -30,7 +30,7 @@ be Breakpoints
 ## <a name="span-idddk_cmd_breakpoint_enable_dbgspanspan-idddk_cmd_breakpoint_enable_dbgspanparameters"></a><span id="ddk_cmd_breakpoint_enable_dbg"></span><span id="DDK_CMD_BREAKPOINT_ENABLE_DBG"></span>Parameters
 
 <span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span>*断点*   
-指定要启用的断点的 ID 号。 可以指定任意数量的断点。 必须用空格或逗号分隔多个 Id。 您可以通过使用连字符（-）指定断点 Id 的范围。 可以使用星号（\*）来指示所有断点。 如果要对 ID 使用[数值表达式](numerical-expression-syntax.md)，请将其括在方括号（\[ \]）中。 如果要使用[带有通配符的字符串](string-wildcard-syntax.md)来匹配断点的符号名称，请将其括在引号（""）中。
+指定要启用的断点的 ID 号。 可以指定任意数量的断点。 必须用空格或逗号分隔多个 Id。 您可以通过使用连字符（-）指定断点 Id 的范围。 可以使用星号（\*）来指示所有断点。 如果要对 ID 使用[数值表达式](numerical-expression-syntax.md)，请将其括在括号中（\[ \]）。 如果要使用[带有通配符的字符串](string-wildcard-syntax.md)来匹配断点的符号名称，请将其括在引号（""）中。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 

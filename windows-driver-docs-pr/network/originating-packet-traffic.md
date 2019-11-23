@@ -48,7 +48,7 @@ ms.locfileid: "72843758"
 
 -   当扩展创建新数据包时，数据包数据位于 Hyper-v 父分区的父操作系统中的 "本地" 或 "*受信任*的内存" 中。 子分区无法访问此内存。 因此，在该分区中运行的来宾操作系统不同步更新将其视为 "安全"。
 
-    该扩展必须获取[**NDIS\_交换机\_转发\_详细信息\_net\_buffer\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)使用[**net\_buffer\_list\_\_转发\_详细**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)的宏。 扩展必须将**IsPacketDataSafe**成员设置为 TRUE。 这指定所有数据包数据都位于受信任的内存中。
+    该扩展必须获取[**NDIS\_交换机\_转发\_详细信息\_net\_buffer\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_detail_net_buffer_list_info)使用[**net\_buffer**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-switch-forwarding-detail)\_list\_\_INFO\_\_ 扩展必须将**IsPacketDataSafe**成员设置为 TRUE。 这指定所有数据包数据都位于受信任的内存中。
 
 -   当扩展调用[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)将数据包注入入入口数据路径时，它必须设置*标志*参数和相应的可扩展开关标志设置。 有关这些标志设置的详细信息，请参阅[Hyper-v 可扩展交换机发送和接收标志](hyper-v-extensible-switch-send-and-receive-flags.md)。
 

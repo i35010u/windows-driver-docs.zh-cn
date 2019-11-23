@@ -4,7 +4,7 @@ description: SIO_WSK_SET_TCP_SILENT_MODE 套接字 i/o 控制操作允许 WSK �
 ms.assetid: 8ADC7FF4-86AC-4424-B763-8B62BF440D9F
 ms.date: 07/18/2017
 keywords:
-- SIO_WSK_SET_TCP_SILENT_MODE 控制从 Windows Vista 开始的代码网络驱动程序
+- 从 Windows Vista 开始 SIO_WSK_SET_TCP_SILENT_MODE 控制代码网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f248203b403a85776d04fdc6fab64db6d58cc
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

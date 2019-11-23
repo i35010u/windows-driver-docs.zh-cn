@@ -1,6 +1,6 @@
 ---
 title: ndiskd.netpacketfragment
-description: Ndiskd. netpacketfragment 扩展显示有关 NET_PACKET_FRAGMENT 结构的信息。
+description: Ndiskd. netpacketfragment 扩展显示 NET_PACKET_FRAGMENT 结构的相关信息。
 ms.assetid: 2075D682-45F5-414D-A8ED-0494B3550C77
 keywords:
 - ndiskd netpacketfragment Windows 调试
@@ -75,7 +75,7 @@ Ndiskd
     Dump data payload
 ```
 
-通过单击第一个片段的句柄，或在命令行上输入 **！ ndiskd**命令，可以查看此网络\_数据包\_片段的详细信息，包括其虚拟地址、容量以及是否或者，它不是\_网络数据包片段中的最后一个数据包。
+通过单击第一个片段的句柄，或在命令行上输入 **！ ndiskd**命令，你可以查看此网络\_数据包\_片段的详细信息，包括其虚拟地址、容量以及是否是网络\_数据包链中的最后一个数据包。
 
 ```console
 0: kd> !ndiskd.netpacketfragment ffffd1022d000040

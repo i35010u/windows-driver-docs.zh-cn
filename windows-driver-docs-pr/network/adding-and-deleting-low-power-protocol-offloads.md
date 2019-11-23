@@ -39,7 +39,7 @@ ms.locfileid: "72838246"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>大事</strong></p></td>
-<td align="left"><p>包含协议卸载的优先级。 如果过量驱动程序在没有可用于更多协议卸载的资源时添加更高优先级的协议卸载，NDIS 可能会删除较低优先级的协议卸载以释放资源。 微型端口驱动程序应忽略此成员。 协议驱动程序可以提供从 NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_LOWEST 到 NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_HIGHEST 的预定义范围内的任何值。</p></td>
+<td align="left"><p>包含协议卸载的优先级。 如果过量驱动程序在没有可用于更多协议卸载的资源时添加更高优先级的协议卸载，NDIS 可能会删除较低优先级的协议卸载以释放资源。 微型端口驱动程序应忽略此成员。 协议驱动程序可提供从 NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_LOWEST 到 NDIS_PM_PROTOCOL_OFFLOAD_PRIORITY_HIGHEST 的预定义范围内的任何值。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadType</strong></p></td>
@@ -47,15 +47,15 @@ ms.locfileid: "72838246"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>友好</strong></p></td>
-<td align="left"><p>包含<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string" data-raw-source="[&lt;strong&gt;NDIS_PM_COUNTED_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)"><strong>NDIS_PM_COUNTED_STRING</strong></a>结构，该结构包含用户可读的低功率协议卸载说明。</p></td>
+<td align="left"><p>包含一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string" data-raw-source="[&lt;strong&gt;NDIS_PM_COUNTED_STRING&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_counted_string)"><strong>NDIS_PM_COUNTED_STRING</strong></a>结构，它包含用户可读的低功率协议卸载说明。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadId</strong></p></td>
-<td align="left"><p>包含一个用于标识卸载协议的 NDIS 提供的值。 在 NDIS 将<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload" data-raw-source="[OID_PM_ADD_PROTOCOL_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)">OID_PM_ADD_PROTOCOL_OFFLOAD</a>的 OID 请求发送到基础 NDIS 驱动程序或完成对过量驱动程序的请求之前，ndis 会将<strong>ProtocolOffloadId</strong>设置为一个值，该值在协议卸载网络适配器。</p></td>
+<td align="left"><p>包含一个用于标识卸载协议的 NDIS 提供的值。 在 NDIS 将<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload" data-raw-source="[OID_PM_ADD_PROTOCOL_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)">OID_PM_ADD_PROTOCOL_OFFLOAD</a>的 OID 请求发送到基础 NDIS 驱动程序或完成对过量驱动程序的请求之前，ndis 会将<strong>ProtocolOffloadId</strong>设置为在网络适配器上的协议卸载之间唯一的值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>NextProtocolOffloadOffset</strong></p></td>
-<td align="left"><p>包含<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list)">OID_PM_PROTOCOL_OFFLOAD_LIST</a> oid 列表中的下一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)"><strong>NDIS_PM_PROTOCOL_OFFLOAD</strong></a>结构的偏移量，即 OID 请求<em>InformationBuffer</em>的起始位置。 有关 OID_PM_PROTOCOL_OFFLOAD_LIST 的详细信息，请参阅<a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">获取低功率协议卸载的当前参数设置</a>。</p></td>
+<td align="left"><p>包含<em>InformationBuffer</em>oid <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list" data-raw-source="[OID_PM_PROTOCOL_OFFLOAD_LIST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-protocol-offload-list)">OID_PM_PROTOCOL_OFFLOAD_LIST</a>列表中的下一个<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload" data-raw-source="[&lt;strong&gt;NDIS_PM_PROTOCOL_OFFLOAD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)"><strong>NDIS_PM_PROTOCOL_OFFLOAD</strong></a>结构的偏移量，即 oid 请求的起始位置。 有关 OID_PM_PROTOCOL_OFFLOAD_LIST 的详细信息，请参阅<a href="obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md" data-raw-source="[Obtaining the Current Parameter Settings of Low Power Protocol Offloads](obtaining-the-current-parameter-settings-of-low-power-protocol-offload.md)">获取低功率协议卸载的当前参数设置</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ProtocolOffloadParameters</strong></p></td>
@@ -100,11 +100,11 @@ NDIS 为每个卸载的协议的网络适配器分配一个唯一的标识符。
 
 NDIS 允许多个 NDIS 协议驱动程序将协议卸载添加到同一个网络适配器。 为了确保在请求的卸载协议数高于网络适配器可支持的数目时，已将正确的一组协议卸载到网络适配器，协议驱动程序将优先级分配给每个卸载的协议。 当由于网络适配器资源不足而导致 NDIS 无法卸载新的高优先级协议时，NDIS 将删除低优先级的已卸载协议（如果有），并尝试再次卸载高优先级协议。
 
-**请注意**  微型端口驱动程序应使低功耗协议卸载添加请求失败并返回状态\_NDIS\_PM\_协议\_卸载\_LIST\_完整状态代码，以允许 NDIS 重新设置优先级协议卸载。
+**请注意**  微型端口驱动程序应使低功耗协议卸载添加请求失败并返回状态\_NDIS\_PM\_协议\_卸载\_列表\_完整状态代码，以允许 NDIS 重新设置协议卸载的优先级。
 
  
 
-由于卸载了高优先级的协议，因此删除了优先级较低的一个协议，NDIS 会将[**ndis\_状态\_PM 发送\_卸载\_拒绝**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-offload-rejected)的状态指示，通知过量驱动程序设置删除的协议卸载。 [**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含被拒绝的协议卸载的协议卸载标识符。 NDIS 在 Ndis\_PM 的**ProtocolOffloadId**成员中提供了协议卸载标识符[ **\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构。
+由于卸载了高优先级的协议，因此删除了一个优先级较低的已卸载协议，NDIS 会将[**ndis\_状态\_PM 发送\_卸载\_拒绝**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-offload-rejected)的状态指示，通知过量驱动程序设置已删除的协议卸载。 [**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员包含被拒绝的协议卸载的协议卸载标识符。 NDIS 在 Ndis\_PM 的**ProtocolOffloadId**成员中提供了协议卸载标识符[ **\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构。
 
  
 

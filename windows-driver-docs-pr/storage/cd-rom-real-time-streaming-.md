@@ -30,7 +30,7 @@ ms.locfileid: "72841629"
 
 此外，对于内核模式组件，Cdrom 处理[**IRP\_mj\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)和[**IRP\_mj\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)请求。 类驱动程序验证实时流式处理请求是否符合设备的功能。 为实现此功能，Windows 7 在驱动程序的[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)引入了一个流式处理标志， **SL\_实时\_流**。 对于所有流式处理读取或写入请求，将对此标志进行断言，为所有非流式处理请求清除此标志。
 
-存储驱动程序堆栈中的这些更改允许更高的层（特别是文件系统驱动程序和应用程序）以有保证的速度为包含实时数据的文件执行读/写操作。 从 Windows 7 开始，可以通过使用[**FSCTL\_标记\_处理**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)控制代码并通过在 @no__t_ 标记中设置 "**标记"\_"句柄"\_实时**标志来指定流模式，从而将文件标记为实时流式处理。 [**9_ 处理\_信息**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)结构。
+存储驱动程序堆栈中的这些更改允许更高的层（特别是文件系统驱动程序和应用程序）以有保证的速度为包含实时数据的文件执行读/写操作。 从 Windows 7 开始，可以通过使用[**FSCTL\_标记\_处理**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)控制代码，并通过在[**标记\_处理\_信息**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)结构中设置**mark\_handle\_实时**标志，将文件标记为实时流式处理。
 
 图1说明了常规与流式处理读取和写入请求以及 UDF 文件系统和 CDROM 类驱动程序之间的关系。
 
@@ -53,14 +53,14 @@ DVD 播放应用程序和文件系统驱动程序可以选择使用 IOCTLs 访�
 ## <a name="span-idspecifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requestsspanspan-idspecifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requestsspanspan-idspecifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requestsspanspecifying-real-time-streaming-for-irp_mj_read-and-irp_mj_write-requests"></a><span id="Specifying_real-time_streaming_for_IRP_MJ_READ_and_IRP_MJ_WRITE_requests"></span><span id="specifying_real-time_streaming_for_irp_mj_read_and_irp_mj_write_requests"></span><span id="SPECIFYING_REAL-TIME_STREAMING_FOR_IRP_MJ_READ_AND_IRP_MJ_WRITE_REQUESTS"></span>为 IRP\_MJ 指定实时流式处理\_读取和 IRP\_MJ\_写入请求
 
 
--   [**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)（Irp）中的 SL\_实时\_流标志-&gt;"标志" 字段控制读取和写入流式处理请求（[**irp\_mj\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)和 irp\_[**写入**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write). 标志设置为所有流式处理读取和写入请求，并清除所有非流式处理请求。 如果设置了 SL\_实时\_流标志，则 Cdrom .sys 将使用 READ12 和 WRITE12 SCSI 命令而不是 READ10 或 WRITE10 SCSI 命令来执行流式处理请求。 如果在 IRP 中设置了 SL\_实时\_流标志，但该设备不支持对当前插入的媒体进行流式处理，则将拒绝 IRP，状态代码状态为 "\_无效\_设备\_请求"。
+-   [**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)（Irp）中的 SL\_实时\_流标志，&gt;的 "标志" 字段控制读写流式处理请求（[**irp\_mj\_读取**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-read)和 irp\_[**写入**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-write)）。\_ 标志设置为所有流式处理读取和写入请求，并清除所有非流式处理请求。 如果设置了 SL\_实时\_流标志，则 Cdrom .sys 将使用 READ12 和 WRITE12 SCSI 命令而不是 READ10 或 WRITE10 SCSI 命令来执行流式处理请求。 如果在 IRP 中设置了 SL\_实时\_流标志，但该设备不支持对当前插入的媒体进行流式处理，则将拒绝 IRP，状态代码状态为 "\_无效\_设备\_请求"。
 
 ## <a name="span-idspecifying_real-time_streaming_for_a_file_using_fsctlsspanspan-idspecifying_real-time_streaming_for_a_file_using_fsctlsspanspan-idspecifying_real-time_streaming_for_a_file_using_fsctlsspanspecifying-real-time-streaming-for-a-file-using-fsctls"></a><span id="Specifying_real-time_streaming_for_a_file_using_FSCTLs"></span><span id="specifying_real-time_streaming_for_a_file_using_fsctls"></span><span id="SPECIFYING_REAL-TIME_STREAMING_FOR_A_FILE_USING_FSCTLS"></span>使用 FSCTLs 为文件指定实时流式处理
 
 
 -   可以将任何文件标记为实时读取行为，而不考虑文件类型。 为此，请在[**标记\_处理\_信息**](https://docs.microsoft.com/windows/desktop/api/winioctl/ns-winioctl-mark_handle_info)结构中将 "**标记\_句柄"\_实时**标志，然后将[**FSCTL\_MARK**](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle)发送\_处理控制代码。 必须为未缓冲的 i/o 打开用此标志标记的文件。
 -   应用程序可以取消标记先前标记为实时行为的文件，方法是将**标记\_句柄设置\_不\_实时**\_\_标志。
--   如果 FSCTL\_标记\_句柄控制代码随标记\_句柄一起发送\_实时，而 cd-rom/DVD 驱动器或媒体指示不支持实时流式处理功能，则 IOCTL 返回状态\_无效\_设备\_请求。 如果在没有缓冲的情况下打开句柄，则状态\_无效\_设备\_请求也将返回。
+-   如果 FSCTL\_标记\_句柄控制代码随标记\_句柄一起发送\_实时，而 cd-rom/DVD 驱动器或媒体指示不支持实时流式处理功能，则 IOCTL 返回状态\_\_设备\_请求无效。 如果在没有缓冲的情况下打开句柄，则状态\_无效\_设备\_请求也将返回。
 
 ## <a name="span-idperforming_optimum_power_calibration__opc__before_writingspanspan-idperforming_optimum_power_calibration__opc__before_writingspanspan-idperforming_optimum_power_calibration__opc__before_writingspanperforming-optimum-power-calibration-opc-before-writing"></a><span id="Performing_Optimum_Power_Calibration__OPC__before_writing"></span><span id="performing_optimum_power_calibration__opc__before_writing"></span><span id="PERFORMING_OPTIMUM_POWER_CALIBRATION__OPC__BEFORE_WRITING"></span>在写入之前执行最佳电源校准（OPC）
 

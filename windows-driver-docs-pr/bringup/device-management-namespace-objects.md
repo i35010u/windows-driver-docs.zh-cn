@@ -40,7 +40,7 @@ ACPI\vvv[v]dddd
 
 ### <a name="hardware-id-_hid"></a>硬件 ID （\_HID）
 
-在 ACPI 中标识设备的最低要求是硬件 ID （\_HID）对象。 \_HID 返回格式为 "ABC\[D\]*xxxx*" 的字符串，其中 "Abc\[D\]" 是用于标识设备制造商的3个或4个字符的字符串（"供应商 ID"）和*xxxx*是一个十六进制数字，用于标识该供应商制造的特定设备（"设备 ID"）。 供应商 Id 在整个行业中必须是唯一的。 Microsoft 会分配这些字符串以确保它们是唯一的。 可以从[即插即用 ID-PNPID 请求](https://go.microsoft.com/fwlink/p/?linkid=330999)中获取供应商 id。
+在 ACPI 中标识设备的最低要求是硬件 ID （\_HID）对象。 \_HID 返回格式为 "ABC\[D\]*xxxx*" 的字符串，其中 "Abc\[D\]" 是一个由三个或四个字符组成的字符串，用于标识设备的制造商（"供应商 id"）， *xxxx*是标识供应商制造的特定设备的十六进制数字（"设备 id"）。 供应商 Id 在整个行业中必须是唯一的。 Microsoft 会分配这些字符串以确保它们是唯一的。 可以从[即插即用 ID-PNPID 请求](https://go.microsoft.com/fwlink/p/?linkid=330999)中获取供应商 id。
 
 **注意**  ACPI 5.0 还支持在 \_HID 和其他标识对象中使用 PCI 分配的供应商 id，因此你可能不需要从 Microsoft 获取供应商 ID。 有关硬件标识要求的详细信息，请参阅[ACPI 5.0 规范](https://uefi.org/specifications)的 "\_HID （硬件 ID）" 部分。
 
@@ -67,7 +67,7 @@ ACPI\vvv[v]dddd
 
 ### <a name="subsystem-id-_sub-hardware-revision-_hrv-and-class-_cls"></a>子系统 ID （\_SUB）、硬件修订版本（\_HRV）和类（\_CLS）
 
-ACPI 5.0 定义了 \_SUB、\_HRV 和 \_CLS 对象，这些对象可与 \_HID 一起使用，以创建更唯一地标识设备的特定版本、集成或硬件修订版的标识符，或指示 PCI 定义的设备类中的成员身份。 这些对象通常是可选的，但可能是 Windows 中某些设备类所必需的。 有关这些对象的详细信息，请参阅[ACPI 5.0 规范](https://uefi.org/specifications)的 "设备识别对象" 6.1 一节。
+ACPI 5.0 定义 \_SUB、\_HRV 和 \_CLS 对象，这些对象可与 \_HID 一起使用，以创建更多地唯一标识设备的特定版本、集成或硬件修订版的标识符，或指示 PCI 定义的设备类中的成员身份。 这些对象通常是可选的，但可能是 Windows 中某些设备类所必需的。 有关这些对象的详细信息，请参阅[ACPI 5.0 规范](https://uefi.org/specifications)的 "设备识别对象" 6.1 一节。
 
 对于可维护性，有一个 Windows 硬件认证工具包（HCK）要求，OEM 系统上的设备 Id 是 "四部分" Id。 这四个部分分别是供应商 ID、设备 ID、子系统供应商（OEM） ID 和子系统（OEM）设备 ID。 因此，对于 OEM 平台，需要子系统 ID （\_SUB）对象。
 

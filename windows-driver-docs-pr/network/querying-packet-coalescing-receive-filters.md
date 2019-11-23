@@ -45,7 +45,7 @@ NDIS 处理[OID\_接收\_筛选器\_枚举\_筛选器](https://docs.microsoft.co
 
 为了获取已下载到微型端口驱动程序的特定包合并接收筛选器的参数，过量驱动程序或应用程序会发出 oid 的 OID 方法请求[\_接收\_filter\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-parameters)。 [ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的指针。 过量驱动程序或应用程序通过将**FilterId**成员设置为要返回其参数的筛选器的非零 ID 值，来初始化**NDIS\_接收\_筛选器\_参数**结构。
 
-**请注意**  过量驱动程序从 oid 的早期 oid 方法请求中获取了筛选器 ID [\_接收\_筛选器\_设置\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)器或 OID\_\_[枚举接收\_筛选器\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)。 应用程序只能从 OID 的早期 OID 方法请求中获取筛选器 ID\_接收\_FILTER\_枚举\_筛选器。
+**请注意**  过量驱动程序从 oid 的早期 oid 方法请求中获取了筛选器 ID [\_接收\_筛选器\_设置\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)器或[OID\_\_枚举\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)筛选器。\_ 应用程序只能从 OID 的早期 OID 方法请求中获取筛选器 ID\_接收\_FILTER\_枚举\_筛选器。
 
  
 

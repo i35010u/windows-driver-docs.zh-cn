@@ -150,7 +150,7 @@ Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。 
 
-|IOCTL 缓冲区类型 | 摘要                                    | 有关详细信息 |  
+|IOCTL 缓冲区类型 | 摘要                                    | 更多相关信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
@@ -168,7 +168,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 - 正确验证长度可变的缓冲区。 有关详细信息，请参阅[验证可变长度缓冲区失败](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-variable-length-buffers)。
 
-- 使用缓冲 i/o 时，请确保并在[IO_STATUS_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构信息字段中返回 OutputBuffer 的正确长度。  不要直接从读取请求直接返回长度。  例如，假设有这样一种情况：用户空间返回的数据指示存在4K 缓冲区。  如果驱动程序实际只应返回200字节，而只是在信息字段中返回4K，则会出现信息泄漏漏洞。 出现此问题的原因在于，在 Windows 的早期版本中，i/o 管理器用于缓冲 i/o 的缓冲区未归零。  这样，用户应用将返回原始的200字节的数据，以及缓冲区中的数据的 4K-200 字节（非分页池内容）。 这种情况可能发生在所有使用缓冲 i/o 的情况下，而不只是与 IOCTLs 一起使用。
+- 使用缓冲 i/o 时，请确保并在[IO_STATUS_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构信息字段中为 OutputBuffer 返回正确的长度。  不要直接从读取请求直接返回长度。  例如，假设有这样一种情况：用户空间返回的数据指示存在4K 缓冲区。  如果驱动程序实际只应返回200字节，而只是在信息字段中返回4K，则会出现信息泄漏漏洞。 出现此问题的原因在于，在 Windows 的早期版本中，i/o 管理器用于缓冲 i/o 的缓冲区未归零。  这样，用户应用将返回原始的200字节的数据，以及缓冲区中的数据的 4K-200 字节（非分页池内容）。 这种情况可能发生在所有使用缓冲 i/o 的情况下，而不只是与 IOCTLs 一起使用。
 
 **IOCTL 直接 i/o 中的错误**
 
@@ -193,7 +193,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 若要允许驱动程序支持要求 HVCI 虚拟化，需要额外的内存。 有关详细信息，请参阅本文后面的[Device Guard 兼容性](#dgc)。
 
-**手柄**
+**Handles**
 
 - 验证在用户模式和内核模式内存之间传递的句柄。 有关详细信息，请参阅[处理管理](https://docs.microsoft.com/windows-hardware/drivers/ifs/handle-management)和[验证对象句柄失败](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-object-handles)。
 
@@ -338,7 +338,7 @@ AC (Application Container)
 
 **WDM 精细 IOCTL 安全控制**
 
-为了进一步管理用户模式调用方发送 IOCTLs 时的安全性，驱动程序代码可以包括[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)函数。 此函数允许驱动程序检查访问权限。 接收 IOCTL 后，驱动程序可以调用[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)，并指定 FILE_READ_ACCESS 和/或 FILE_WRITE_ACCESS。 
+为了进一步管理用户模式调用方发送 IOCTLs 时的安全性，驱动程序代码可以包括[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)函数。 此函数允许驱动程序检查访问权限。 接收 IOCTL 后，驱动程序可以调用[IoValidateDeviceIoControlAccess](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iovalidatedeviceiocontrolaccess)，同时指定 FILE_READ_ACCESS、FILE_WRITE_ACCESS 或两者。 
 
 实现精细的 IOCTL 安全控制不会取代使用上述技术来管理驱动程序访问的需要。
 
@@ -394,7 +394,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 有关 NDIS 驱动程序安全的信息，请参阅[网络驱动程序的安全问题](https://docs.microsoft.com/windows-hardware/drivers/network/security-issues-for-network-drivers)。
 
-*Display*
+*显示器*
 
 有关显示驱动程序安全性的信息，请参阅 &lt;内容挂起&gt;。
 
@@ -480,7 +480,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅[使用 SAL 注释减少 C/C++代码缺陷](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)和[用于 Windows 驱动程序的 SAL 2.0 批注](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)。
 
 有关 SAL 的一般信息，请参阅 OSR 中的这篇文章。
-[https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/ )
+https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/
 
 ## <a name="span-idsdvspanspan-idsdvspanuse-static-driver-verifier-to-check-for-vulnerabilities"></a><span id="SDV"></span><span id="sdv"></span>使用静态驱动程序验证程序检查是否存在漏洞
 
@@ -732,7 +732,7 @@ SAFECode- [https://safecode.org/](https://safecode.org/)
 
 可从各种源获取安全编码在线培训。 例如，可以从 coursera 获取此课程：
 
-[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security)。
+[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security)：
 
 SAFECode 还提供免费的培训：
 

@@ -67,9 +67,9 @@ ms.locfileid: "72844246"
 <th align="left">中断</th>
 <th align="left">关机</th>
 <th align="left">初始化</th>
-<th align="left">暂停</th>
+<th align="left">已暂停</th>
 <th align="left">重新</th>
-<th align="left">Running</th>
+<th align="left">正在运行</th>
 <th align="left">暂停</th>
 </tr>
 </thead>
@@ -88,7 +88,7 @@ ms.locfileid: "72844246"
 <td align="left"><p>初始化已完成</p></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>暂停</p></td>
+<td align="left"><p>已暂停</p></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -130,7 +130,7 @@ ms.locfileid: "72844246"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -152,7 +152,7 @@ ms.locfileid: "72844246"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>暂停</p></td>
+<td align="left"><p>已暂停</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>初始化失败</p></td>
@@ -170,7 +170,7 @@ ms.locfileid: "72844246"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>暂停</p></td>
+<td align="left"><p>已暂停</p></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -181,7 +181,7 @@ ms.locfileid: "72844246"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"><p>暂停</p></td>
 </tr>
 <tr class="even">
@@ -189,9 +189,9 @@ ms.locfileid: "72844246"
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"><p>暂停</p></td>
+<td align="left"><p>已暂停</p></td>
 <td align="left"><p>重新</p></td>
-<td align="left"><p>Running</p></td>
+<td align="left"><p>正在运行</p></td>
 <td align="left"><p>暂停</p></td>
 </tr>
 </tbody>

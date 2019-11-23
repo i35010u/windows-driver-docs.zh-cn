@@ -67,7 +67,7 @@ ms.locfileid: "72038090"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **@no__t**<em>指定设备</em>的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>类</em>指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
 
@@ -89,6 +89,6 @@ devcon /r disable =printer
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-[Example 30：按 ID 模式禁用设备 @ no__t-0
+[示例30：按 ID 模式禁用设备](devcon-examples.md#ddk_example_30_disable_devices_by_an_id_pattern_tools)
 
-[Example 31：按设备实例 ID @ no__t 禁用设备
+[示例31：按设备实例 ID 禁用设备](devcon-examples.md#ddk_example_31_disable_devices_by_device_instance_id_tools)

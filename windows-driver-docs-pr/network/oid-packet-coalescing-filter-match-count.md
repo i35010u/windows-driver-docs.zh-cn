@@ -3,7 +3,7 @@ title: OID_PACKET_COALESCING_FILTER_MATCH_COUNT
 description: NDIS 发出 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 的 OID 查询请求，以获取网络适配器上缓存或合并的数据包数。
 ms.assetid: 3325865D-A329-4562-8270-CC2F42043D48
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PACKET_COALESCING_FILTER_MATCH_COUNT 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e3cee607f632cebe14ac4b508106e2de71cc88d
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

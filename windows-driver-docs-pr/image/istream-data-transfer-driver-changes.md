@@ -42,7 +42,7 @@ ms.locfileid: "72840805"
 
 在下载操作过程中，驱动程序必须仅调用流的**istream：： Write**、 **Istream：： Seek**和**IStream：： SetSize**方法（在 Windows SDK 文档中进行了介绍）。 此限制使你可以更轻松地编写筛选器。 驱动程序不应预计目标流将实现任何其他方法。
 
-当[**wia\_DPS\_页\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)属性设置为 WIA\_页面\_自动（即启用了自动页面大小检测）时，驱动程序应提供有关映像的准确维度信息完成图像数据的传输。 对于基于流的传输，驱动程序应在传输结束时更新图像标头中的图像维度。 在新会话开始时，WIA\_DPS\_页\_大小属性的值应始终设置为 WIA\_页面\_自动值。
+当[**wia\_DPS\_页\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)属性设置为 WIA\_页面\_自动（即启用了自动页面大小检测）时，驱动程序应仅在完成图像数据传输后，提供有关映像的准确维度信息。 对于基于流的传输，驱动程序应在传输结束时更新图像标头中的图像维度。 在新会话开始时，WIA\_DPS\_页\_大小属性的值应始终设置为 WIA\_页面\_自动值。
 
  
 

@@ -80,8 +80,8 @@ ms.locfileid: "72845493"
 <td><p><strong>VT_UNKNOWN</strong></p>
 <p>读/写。 包含传感器数据类型名称及其关联的更改敏感度值的<strong>IPortableDeviceValues</strong>对象。 更改敏感度值提供有关数据字段在引发 SENSOR_EVENT_DATA_UPDATED 事件之前应更改的量的请求。</p>
 <p>通过使用与数据字段相同的单位来表示敏感度值，但在其他情况下也是如此。</p>
-<p>对于某些传感器，更改敏感度会解释为实际值。 例如，SENSOR_DATA_TYPE_TEMPERATURE_CELSIUS 的更改敏感度值为2，表示对加号或减号2度的灵敏度。</p>
-<p>对于其他传感器，如环境光线传感器（ALS），更改敏感度会解释为百分比。 因此，SENSOR_DATA_TYPE_LIGHT_LEVEL_LUX 的更改敏感度为2的 LUX 的更改。</p>
+<p>对于某些传感器，更改敏感度会解释为实际值。 例如，SENSOR_DATA_TYPE_TEMPERATURE_CELSIUS 的更改敏感度值为2，表示对加或减2度摄氏的灵敏度。</p>
+<p>对于其他传感器，如环境光线传感器（ALS），更改敏感度会解释为百分比。 因此，SENSOR_DATA_TYPE_LIGHT_LEVEL_LUX 的更改敏感度为2，则表示加上或减2% 的 LUX。</p>
 <p>您可以将此值设置为请求特定的更改敏感度，但多个应用程序可能使用同一传感器。 因此，传感器基于其内部逻辑来确定真正的更改敏感度。 例如，传感器可能始终使用任何应用程序所请求的最小更改敏感度。</p>
 <p>如果应用程序将此属性设置为 VT_NULL，则设备驱动程序应将 SENSOR_PROPERTY_CHANGE_SENSITIVITY 重置为其默认值。</p></td>
 </tr>
@@ -132,7 +132,7 @@ ms.locfileid: "72845493"
 <td><p><strong>VT_UI4</strong></p>
 <p>读/写。 <a href="https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85)" data-raw-source="[&lt;strong&gt;LOCATION_DESIRED_ACCURACY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/dd756639(v=vs.85))"><strong>LOCATION_DESIRED_ACCURACY</strong></a>枚举中的一个值，该值指示客户端应用程序请求的准确性处理的类型。</p>
 <p><strong>LOCATION_DESIRED_ACCURACY_DEFAULT</strong> （0）指示传感器应使用其可优化电源使用情况和其他成本注意事项的准确性。</p>
-<p><strong>LOCATION_DESIRED_ACCURACY_HIGH</strong> （1）指示传感器应提供可能最准确的报告。 这包括使用可能会产生费用的服务，或消耗较高级别的电池电量或连接带宽。</p></td>
+<p><strong>LOCATION_DESIRED_ACCURACY_HIGH</strong> （1）表示传感器应提供最准确的报告。 这包括使用可能会产生费用的服务，或消耗较高级别的电池电量或连接带宽。</p></td>
 </tr>
 <tr class="even">
 <td><span id="SENSOR_PROPERTY_MANUFACTURER"></span><span id="sensor_property_manufacturer"></span>

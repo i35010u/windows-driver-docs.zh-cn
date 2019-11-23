@@ -46,7 +46,7 @@ ms.locfileid: "72828546"
 
 若要检索硬件分区中活动处理器的当前数量，设备驱动程序应调用[**KeQueryActiveProcessorCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessorcount)函数。 若要检索当前的处理器关联值，设备驱动程序可调用[**KeQueryActiveProcessors**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequeryactiveprocessors)函数或**KeQueryActiveProcessorCount**函数。
 
-**请注意**  如果设备驱动程序为硬件分区中的每个活动处理器分配数据结构，并且如果为新处理器的数据结构分配内存失败，则设备驱动程序将失败，并且设备驱动程序可以分配驱动程序初始化过程中的这些数据结构足以处理操作系统支持的处理器的最大数量。 在这种情况下，在将新处理器添加到硬件分区时，设备驱动程序将不必分配新的数据结构。 但是，除非这些数据结构的大小非常小，否则内存资源的使用效率会降低。 设备驱动程序可以通过调用[**KeQueryMaximumProcessorCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerymaximumprocessorcount)函数来查询操作系统支持的处理器的最大数量。
+**请注意**  如果设备驱动程序为硬件分区中的每个活动处理器分配数据结构，并且如果为新处理器的数据结构分配内存失败，则设备驱动程序将会失败，并且设备驱动程序在驱动程序初始化期间可以分配足够的这些数据结构来处理操作系统支持的处理器的最大数量。 在这种情况下，在将新处理器添加到硬件分区时，设备驱动程序将不必分配新的数据结构。 但是，除非这些数据结构的大小非常小，否则内存资源的使用效率会降低。 设备驱动程序可以通过调用[**KeQueryMaximumProcessorCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerymaximumprocessorcount)函数来查询操作系统支持的处理器的最大数量。
 
  
 

@@ -19,7 +19,7 @@ ms.locfileid: "72840759"
 
 驱动程序开发人员应该知道他们需要访问的注册表项的权限。 许多注册表都可供驱动程序读取。 但是，WIA 驱动程序只应写入在[**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法中传递给它们的注册表项。
 
-虽然在 Windows XP 中可以写入到其他注册表项，但由于 WIA 服务在**高特权** **LocalSystem**帐户下运行，因此在 Microsoft Windows Server2003及更高版本。
+虽然在 Windows XP 中可以写入到其他注册表项，但由于 WIA 服务在高特权**LocalSystem**帐户下运行，因此在 Microsoft Windows Server 2003 和更高版本中，这种情况下，不可能在低特权**LocalService**帐户下运行。
 
 驱动程序通常需要对其注册表项（ **IStiUSD：： Initialize**之外）的写入访问权限。 由于大多数驱动程序将数据存储在**DeviceData**子项中，因此可以轻松地打开**DeviceData**子项，并将句柄存储到打开的密钥，以备稍后使用。 仅当驱动程序不再需要此注册表项时，才应将其关闭。
 

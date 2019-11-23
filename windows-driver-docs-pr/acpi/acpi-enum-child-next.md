@@ -1,6 +1,6 @@
 ---
 title: ACPI_ENUM_CHILD_NEXT 宏
-description: ACPI_ENUM_CHILD_NEXT 宏计算一个指针，该指针指向一个可变长度 ACPI_ENUM_CHILD 结构数组中的下一个 ACPI_ENUM_CHILD 结构。
+description: ACPI_ENUM_CHILD_NEXT 宏将计算指向 ACPI_ENUM_CHILD 结构的可变长度数组中的下一个 ACPI_ENUM_CHILD 结构的指针。
 ms.assetid: 1ff37770-b0ea-4275-9568-611ec125a0b6
 keywords:
 - ACPI_ENUM_CHILD_NEXT 宏 ACPI 设备
@@ -41,7 +41,7 @@ void ACPI_ENUM_CHILD_NEXT(
 <a name="remarks"></a>备注
 -------
 
-驱动程序使用[**IOCTL\_acpi\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求，以检索[**ACPI\_枚举\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)子集中的子设备名称的数组\_输出\_缓冲区请求，驱动程序可以使用此宏确定指向输出缓冲区包含的**子**数组中的可变长度 ACPI\_枚举\_子结构的一系列指针。
+当驱动程序使用[**IOCTL\_acpi\_枚举\_子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ni-acpiioct-ioctl_acpi_enum_children)请求，以检索[**ACPI\_枚举\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_enum_children_output_buffer)子集中的子设备名称的数组\_输出\_缓冲区请求，驱动程序可以使用此宏确定指向输出缓冲区包含的**子**数组中的可变长度 ACPI\_枚举\_子结构的指针序列。
 
 <a name="requirements"></a>要求
 ------------
@@ -54,7 +54,7 @@ void ACPI_ENUM_CHILD_NEXT(
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面</td>
+<td>桌面设备</td>
 </tr>
 <tr>
 <td><p>标头</p></td>

@@ -24,7 +24,7 @@ ms.locfileid: "72839764"
 
 下面是两种不同类型的 deblocking 筛选器命令缓冲区：
 
--   需要访问和修改当前 deblocking 筛选器命令缓冲区（DXVA 的 BPicDeblockConfined 成员[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的成员）的 macroblocks 的值。结构为零）。
+-   需要访问和修改当前 deblocking 筛选器命令缓冲区（ [ **\_DXVA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bPicDeblockConfined**成员为零时）的 macroblocks 的的值的缓冲区。
 
 -   不需要访问和修改当前 deblocking 筛选器命令缓冲区（ **bPicDeblockConfined**为1）以外的 macroblocks 的值。
 

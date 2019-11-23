@@ -3,7 +3,7 @@ title: OID_GEN_MAC_OPTIONS
 description: 作为查询，OID_GEN_MAC_OPTIONS OID 指定了一个位掩码，用于定义基础驱动程序或 NIC 的可选属性。
 ms.assetid: 2a093bcb-ae6f-491c-a596-03e6f47b0b86
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_MAC_OPTIONS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_MAC_OPTIONS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e3435c5e38f4196af19ff364a3e6abb8ce947ac4
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

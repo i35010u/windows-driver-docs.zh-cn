@@ -1,10 +1,10 @@
 ---
 title: OID_WDI_SET_CONNECTION_QUALITY
-description: OID_WDI_SET_CONNECTION_QUALITY 向 IHV 组件提供提示，以强制实施给定虚拟化端口的连接质量。 此提示允许端口优化不同方案中的通道使用情况。
+description: OID_WDI_SET_CONNECTION_QUALITY 向 IHV 组件提供了对给定虚拟化端口强制实现连接质量的提示。 此提示允许端口优化不同方案中的通道使用情况。
 ms.assetid: 753e25c5-44b5-4afa-8769-49f693472aa9
 ms.date: 07/18/2017
 keywords:
-- OID_WDI_SET_CONNECTION_QUALITY 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 OID_WDI_SET_CONNECTION_QUALITY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 55b26e6ee5a8045d395845570bb6eb9af8f82bf4
@@ -21,7 +21,7 @@ OID\_WDI\_集\_连接\_质量向 IHV 组件提供提示，以强制实施给定�
 
 | 范围 | 设置序列化任务 | 正常执行时间（秒） |
 |-------|--------------------------|---------------------------------|
-| 端口  | “是”                      | 1                               |
+| 端口  | 是                      | 1                               |
 
  
 
@@ -55,7 +55,7 @@ OID\_WDI\_集\_连接\_质量向 IHV 组件提供提示，以强制实施给定�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

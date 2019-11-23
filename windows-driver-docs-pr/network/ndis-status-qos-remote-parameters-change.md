@@ -1,10 +1,10 @@
 ---
 title: NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE
-description: 当首次从对等机接收到或稍后更改时，支持 NDIS 服务质量（QoS）的微型端口驱动程序会发出 NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 状态指示。
+description: 当首次从对等端接收或更改其远程 NDIS QoS 参数时，支持 NDIS 服务质量（QoS）的微型端口驱动程序会发出 NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 状态指示。
 ms.assetid: 3DA5F4FA-193F-4716-8678-7B6FB833E68E
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_QOS_REMOTE_PARAMETERS_CHANGE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 80746117e4c132f9af3598438a4c273f11dbbf48
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -16,7 +16,7 @@ ms.locfileid: "72843528"
 # <a name="ndis_status_qos_remote_parameters_change"></a>NDIS\_状态\_QOS\_远程\_参数\_更改
 
 
-支持 NDIS 服务质量（QoS）的微型端口驱动程序会在 **\_QoS\_远程\_参数时发出 ndis\_状态，\_** 在对等方收到其远程 NDIS QoS 参数时，更改状态指示第一次或以后更改。 微型端口驱动程序通过 IEEE 802.1 Qaz 数据中心桥接交换（DCBX）协议从远程对等机接收这些 QoS 参数。
+支持 NDIS 服务质量（QoS）的微型端口驱动程序会在以下情况中发出**ndis\_状态\_QoS\_远程\_参数\_** 在第一次从对等方接收或更改其远程 NDIS QoS 参数时进行更改。 微型端口驱动程序通过 IEEE 802.1 Qaz 数据中心桥接交换（DCBX）协议从远程对等机接收这些 QoS 参数。
 
 当微型端口驱动程序发出此状态指示时，它会将[**ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员设置为指向[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。 驱动程序用其远程 NDIS QoS 参数初始化此结构。
 

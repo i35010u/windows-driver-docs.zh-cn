@@ -1,9 +1,9 @@
 ---
 title: NDIS_STATUS_WWAN_PIN_INFO
-description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PIN_INFO 通知响应 OID 查询并设置 OID_WWAN_PIN 的请求。 微型端口驱动程序无法使用此通知发送未经请求的事件。此通知使用 NDIS_WWAN_PIN_INFO 结构。
+description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PIN_INFO 通知来响应 OID 查询并设置 OID_WWAN_PIN 的请求。 微型端口驱动程序无法使用此通知发送未经请求的事件。此通知使用 NDIS_WWAN_PIN_INFO 结构。
 ms.assetid: fa3c2467-2240-423b-b91b-f7e19d5be353
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PIN_INFO 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PIN_INFO 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: dce91e3403f90a928cb65706bea5409108c6257b
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -52,9 +52,9 @@ ms.locfileid: "72844788"
 
 **响应 WwanPinOperationEnable、WwanPinOperationDisable 或 WwanPinOperationChange 请求**
 
-当微型端口驱动程序使用 NDIS\_状态\_WWAN\_PIN\_信息通知以响应**WwanPinOperationEnable**、 **WwanPinOperationDisable**和**WwanPinOperationChange**时，它们应该实现以下操作：
+当微型端口驱动程序使用 NDIS\_状态\_WWAN\_PIN\_信息通知来响应**WwanPinOperationEnable**、 **WwanPinOperationDisable**和**WwanPinOperationChange**时，它们应该实现以下操作：
 
--   对于成功的请求，微型端口驱动程序必须将**uStatus**设置为 WWAN\_状态\_成功。 对于 WWAN_PIN_INFO 中的其他成员，请参阅以下情况。
+-   对于成功的请求，微型端口驱动程序必须将**uStatus**设置为 WWAN\_状态\_成功。 有关 WWAN_PIN_INFO 中的其他成员，请参阅下列情况。
 
 -   小型端口驱动程序必须将**uStatus**设置为 WWAN\_状态，以便 pin 启用和 pin 禁用操作在已处于请求状态时\_成功。 微型端口驱动程序必须将**PinType**设置为**WwanPinTypeNone**。 忽略其他成员。
 
@@ -78,7 +78,7 @@ ms.locfileid: "72844788"
 
      
 
--   解除锁定 PIN：当**AttemptsRemaining**为零时，会阻止 pin。 若要解除锁定 PIN，MB 设备可能会请求相应的 PUK （如果适用）。 在这种情况下，微型端口驱动程序必须将**uStatus**设置为 WWAN\_状态\_失败，将**PinType**设置为相应的 WwanPinType*Xxx*PUK、 **PinState**到**WwanPinStateEnter**和**AttemptsRemaining**应该允许尝试输入有效的 PUK 号。
+-   解除锁定 PIN：当**AttemptsRemaining**为零时，会阻止 pin。 若要解除锁定 PIN，MB 设备可能会请求相应的 PUK （如果适用）。 在这种情况下，微型端口驱动程序必须将**uStatus**设置为 WWAN\_状态\_失败，将**PinType**设置为相应的 WwanPinType*Xxx*PUK，将**PinState**设置为**WwanPinStateEnter**， **AttemptsRemaining**应具有允许输入有效 PUK 的次数。
 
     如果在 MB 设备或 SIM 被阻止的情况下出现 PIN 阻止结果，微型端口驱动程序必须发送事件通知，并将**ReadyState**设置为**WwanReadyStateDeviceLocked**。
 

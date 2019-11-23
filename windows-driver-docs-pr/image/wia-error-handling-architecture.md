@@ -56,7 +56,7 @@ WIA 代理不处理错误消息本身。 相反，WIA 代理使错误处理程�
 
 错误处理程序提供用户界面，使用户可以尝试将系统置于可以继续或取消数据传输的状态。
 
-接收 WIA\_传输\_MSG\_设备\_状态消息时，WIA 代理首先调用应用程序错误处理程序的**IWiaAppErrorHandler：： ReportStatus**方法。 如果应用程序回调例程未处理设备状态代码，WIA 代理将调用驱动程序错误处理程序的[**IWiaErrorHandler：： ReportStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiaerrorhandler-reportstatus)实现，最后，wia 代理将调用默认的错误处理程序**IWiaErrorHandler：： ReportStatus**实现。 如果给定的处理程序不存在（例如，驱动程序可能不带有错误处理扩展插件），或者如果驱动程序的设备状态处理程序返回 WIA\_状态\_未\_处理，则表明驱动程序的处理程序不支持设备代码中，将会给出链中的下一个处理程序。 一旦成功或未成功处理设备状态消息，WIA 代理回调就会返回。 因此，如果驱动程序错误处理程序的**ReportStatus**方法为每条消息返回\_OK，则默认错误处理程序将永远不会有机会处理任何设备状态消息。
+接收 WIA\_传输\_MSG\_设备\_状态消息时，WIA 代理首先调用应用程序错误处理程序的**IWiaAppErrorHandler：： ReportStatus**方法。 如果应用程序回调例程不处理设备状态代码，WIA 代理将调用驱动程序错误处理程序的[**IWiaErrorHandler：： ReportStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wia_lh/nf-wia_lh-iwiaerrorhandler-reportstatus)实现，最后，wia 代理将调用默认错误处理程序的**IWiaErrorHandler：： ReportStatus**实现。 如果给定的处理程序不存在（例如，驱动程序可能不带有错误处理扩展插件），或者如果驱动程序的设备状态处理程序返回 WIA\_状态\_未\_处理，则表明驱动程序的处理程序不支持设备代码，则会向链中的下一个处理程序提供机会。 一旦成功或未成功处理设备状态消息，WIA 代理回调就会返回。 因此，如果驱动程序错误处理程序的**ReportStatus**方法为每条消息返回\_OK，则默认错误处理程序将永远不会有机会处理任何设备状态消息。
 
 如果没有错误处理程序支持具有严重性\_错误（错误消息）的设备状态消息，WIA 代理会将状态错误返回给驱动程序，进而停止传输。 驱动程序应从 IWiaMiniDrv 中返回此 HRESULT 值[ **：:D rvacquireitemdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvacquireitemdata) ，应用程序将从**IWiaTransfer：:D o)** 或**IWiaTransfer：：上载**接收此 hresult。
 

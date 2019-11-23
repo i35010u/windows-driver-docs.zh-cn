@@ -34,17 +34,17 @@ ms.locfileid: "72837542"
 <tbody>
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_SDP_NODE_INTERFACE</p></td>
-<td align="left"><p>对 GUID_BTHDDI_SDP_NODE_INTERFACE 的配置文件驱动程序查询，以获取指向允许它们创建服务发现协议（SDP）记录的函数的指针。</p>
+<td align="left"><p>配置文件驱动程序查询 GUID_BTHDDI_SDP_NODE_INTERFACE 获取指向允许它们创建服务发现协议（SDP）记录的函数的指针。</p>
 <p>此接口与<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_NODE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_node_interface)"><strong>BTHDDI_SDP_NODE_INTERFACE</strong></a>结构相对应。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE</p></td>
-<td align="left"><p>GUID_BTHDDI_SDP_PARSE_INTERFACE 的配置文件驱动程序查询，以获取指向允许其分析 SDP 记录的函数的指针。</p>
+<td align="left"><p>配置文件驱动程序查询 GUID_BTHDDI_SDP_PARSE_INTERFACE 以获取指向允许其分析 SDP 记录的函数的指针。</p>
 <p>此接口与<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface" data-raw-source="[&lt;strong&gt;BTHDDI_SDP_PARSE_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthsdpddi/ns-bthsdpddi-_bthddi_sdp_parse_interface)"><strong>BTHDDI_SDP_PARSE_INTERFACE</strong></a>结构相对应。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>GUID_BTHDDI_PROFILE_DRIVER_INTERFACE</p></td>
-<td align="left"><p>配置文件驱动程序查询 BTHDDI_PROFILE_DRIVER_INTERFACE，以获取指向允许其创建、分配、重用和免费 BRBs 的函数的指针。</p>
+<td align="left"><p>配置文件驱动程序查询 BTHDDI_PROFILE_DRIVER_INTERFACE 以获取指向允许其创建、分配、重用和免费 BRBs 的函数的指针。</p>
 <p>此接口与<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_profile_driver_interface" data-raw-source="[&lt;strong&gt;BTH_PROFILE_DRIVER_INTERFACE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthddi/ns-bthddi-_bth_profile_driver_interface)"><strong>BTH_PROFILE_DRIVER_INTERFACE</strong></a>结构相对应。</p></td>
 </tr>
 </tbody>

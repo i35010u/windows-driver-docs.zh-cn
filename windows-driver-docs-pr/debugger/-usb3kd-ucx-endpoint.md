@@ -1,9 +1,9 @@
 ---
-title: usb3kd.ucx_endpoint
-description: Usb3kd. ucx _endpoint 命令显示有关 USB 3.0 树中 USB 设备上的终结点的信息。 显示基于 UcxVersion 维护的数据。
+title: usb3kd ucx_endpoint
+description: Ucx_endpoint usb3kd 命令显示有关 USB 3.0 树中 USB 设备上的终结点的信息。 显示基于 UcxVersion 维护的数据。
 ms.assetid: 37667665-ACA1-48D3-B79E-5B9BBD689034
 keywords:
-- usb3kd. ucx _endpoint Windows 调试
+- usb3kd ucx_endpoint Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref

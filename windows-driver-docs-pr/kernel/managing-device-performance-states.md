@@ -35,11 +35,11 @@ Windows Vista 的功能增强了电源管理基础结构，使驱动程序堆栈
 
 -   系统管理员也可以选择创建管理模板（。ADM）文件，可对新电源设置启用基于组策略的配置。
 
-单个电源设置包含唯一标识、命名、描述和提供电源设置的值所需的所有信息。 每个电源设置都定义了 GUID、设置名称、描述和 AC 和 DC 电源方案的默认设置。 可以通过使用[**INF AddPowerSetting 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addpowersetting-directive)静态地为设备创建自定义电源设置，也可以通过调用随 Microsoft 提供的电源管理引用中包含的 Win32 电源管理函数动态地创建自定义电源设置Windows SDK 文档。
+单个电源设置包含唯一标识、命名、描述和提供电源设置的值所需的所有信息。 每个电源设置都定义了 GUID、设置名称、描述和 AC 和 DC 电源方案的默认设置。 可以通过使用[**INF AddPowerSetting 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addpowersetting-directive)或动态地为设备创建自定义电源设置，方法是调用随 Microsoft Windows SDK 文档提供的电源管理引用中包含的 Win32 电源管理功能。
 
 驱动程序调用[**PoRegisterPowerSettingCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterpowersettingcallback)来注册一个回调例程，该例程由电源管理器调用以通知驱动程序电源设置的更改。 设置更改时，电源管理器将调用回调例程并传递新的设置值。 然后，驱动程序可以执行适用于电源设置的操作。 每个设置由电源设置的 GUID 标识。 在 Wdm .h 和 Ntpoapi 中定义了系统定义的电源设置 Guid。
 
-例如，要在打开或关闭监视器电源时获得通知，驱动程序将调用**PoRegisterPowerSettingCallback**，并提供标识监视器电源设置的 GUID （GUID\_监视器\_power\_）和指向当监视器电源设置的值更改时，电源管理器调用的回调例程。
+例如，要在打开或关闭监视器电源时获得通知，驱动程序将调用**PoRegisterPowerSettingCallback**，并提供标识监视器电源设置（GUID\_监视器\_power\_）的 GUID 和一个指针，该指针指向当监视器电源设置的值更改时，电源管理器调用的回调例程。
 
 ### <a href="" id="registering-to-be-notified-of-a-change-to-the-active-power-scheme"></a>注册以通知对活动电源方案、电源方案个人或电源的更改
 
@@ -56,7 +56,7 @@ Windows Vista 的功能增强了电源管理基础结构，使驱动程序堆栈
 
 电源可以是交流或直流电电源。
 
-设备电源策略所有者可以使用有关活动电源方案、电源方案个性和电源的信息来调整设备电源策略。 例如，如果电源方案的个人设置更改为**最大节能**，则设备电源策略所有者可能会主动关闭设备电源。 但是，如果电源方案的 "个人" 设置更改为 "**最大性能**"，则设备电源策略所有者可能会保持其设备的性能级别，而不是降低功率消耗，并可能始终保持设备的电源状态，以确保性能的最高级别。
+设备电源策略所有者可以使用有关活动电源方案、电源方案个性和电源的信息来调整设备电源策略。 例如，如果电源方案的个人设置更改为**最大节能**，则设备电源策略所有者可能会主动关闭设备电源。 但是，如果电源方案的 "个人" 设置更改为 "**最大性能**"，则设备电源策略所有者可能会保持其设备的性能级别，而不是减少功率消耗，并可能始终保持设备的电源状态，以确保最高的性能级别。
 
 可以注册一个驱动程序，以便在发生更改时通知活动电源方案、电源方案的个性或电源。 驱动程序调用**PoRegisterPowerSettingCallback**来注册电源管理器调用的回调例程，以通知驱动程序此类更改，如下所示：
 

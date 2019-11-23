@@ -21,7 +21,7 @@ ms.locfileid: "72323730"
 
 MBAE:0:L9@E}} DT2。\*F65MQA57Y + L
 
-**请    注意**，PackageInfo 中包含的硬件 id 必须添加 "DOID：" 前缀。
+**请   注意**，PackageInfo 中包含的硬件 id 必须添加 "DOID：" 前缀。
 
  
 

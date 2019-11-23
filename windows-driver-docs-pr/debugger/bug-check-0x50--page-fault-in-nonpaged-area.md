@@ -20,16 +20,16 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025326"
 ---
-# <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查 0x50：PAGE @ NO__T-0FAULT @ NO__T-1IN @ NO__T-2NONPAGED @ NO__T-3AREA
+# <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查0x50：\_\_非分页\_区域中的页\_错误
 
 
-页面 @ no__t-0FAULT @ no__t-1IN @ no__t-2NONPAGED @ no__t-3AREA bug 检查的值为0x00000050。 这表明引用了无效的系统内存。 通常，内存地址错误或内存地址指向已释放的内存。
+\_非分页\_区域 bug 检查中\_错误\_的页的值为0x00000050。 这表明引用了无效的系统内存。 通常，内存地址错误或内存地址指向已释放的内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="page_fault_in_nonpaged_area-parameters"></a>PAGE @ no__t-0FAULT @ no__t-1IN @ no__t-2NONPAGED @ no__t-3AREA 参数
+## <a name="page_fault_in_nonpaged_area-parameters"></a>\_非分页\_区域参数中的页面\_错误\_
 
 
 <table>
@@ -51,24 +51,24 @@ ms.locfileid: "70025326"
 <tr class="even">
 <td align="left"><p>2</p></td>
 <td align="left">
-<p><i>Windows 1507 （TH1）版本之后-x64 </i> </p>
-<p><strong>0</strong>读取操作</p>
-<p><strong>2：10</strong>写入操作</p>
-<p><strong>万</strong>执行操作</p>
+<p><i>Windows 1507 （TH1）版本-x64</i> </p>
+<p><strong>0：</strong>读取操作</p>
+<p><strong>2：</strong>写入操作</p>
+<p><strong>10：</strong>执行操作</p>
 
 <p><i>Windows 1507 （TH1）版本-x86 之后</i></p>
-<p><strong>0</strong>读取操作</p>
-<p><strong>2：10</strong>写入操作</p>
-<p><strong>万</strong>执行操作</p>
+<p><strong>0：</strong>读取操作</p>
+<p><strong>2：</strong>写入操作</p>
+<p><strong>10：</strong>执行操作</p>
 
 <p><i>Windows 1507 （TH1）版本-ARM 之后</i></p>
-<p><strong>0</strong>读取操作</p>
-<p><strong>2</strong>写入操作</p>
-<p><strong>8</strong>执行操作</p>
+<p><strong>0：</strong>读取操作</p>
+<p><strong>1：</strong>写入操作</p>
+<p><strong>8：</strong>执行操作</p>
 
 <p><i>在 Windows 1507 （TH1）版本 x64/x86 之前</i></p>
-<p><strong>0</strong>读取操作</p>
-<p><strong>2</strong>写入操作</p>
+<p><strong>0：</strong>读取操作</p>
+<p><strong>1：</strong>写入操作</p>
 </td>
 </tr>
 <tr class="odd">
@@ -79,14 +79,14 @@ ms.locfileid: "70025326"
 <td align="left"><p>4</p></td>
 <td align="left"><p>页错误类型</p>
 <p>0x03-NONPAGED_BUGCHECK_WRONG_SESSION-尝试引用会话空间地址在没有会话的进程上下文中进行。  通常，这意味着调用方不会正确地尝试访问会话地址，而无需正确获取到正确进程的对象引用并首先附加到该地址。 此错误检查 & 子类型上次在 Windows 10 RS3 中使用。  在 Windows 10 RS4 及更高版本中，此错误改为显示为0x02 （NONPAGED_BUGCHECK_NOT_PRESENT_PAGE_TABLE）。</p>
-<p>0x04-NONPAGED_BUGCHECK_VA_NOT_CANONICAL-尝试引用非规范（非法）虚拟地址（参数1）。  调用方决不会尝试访问此地址。</p>
+<p>NONPAGED_BUGCHECK_VA_NOT_CANONICAL 0x04-尝试引用非规范（非法）虚拟地址（参数1）。  调用方决不会尝试访问此地址。</p>
 </td>
 </tr>
 </tbody>
 </table>
 
  
-如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE @ no__t-0STRING） **KiBugCheckDriver**。 可以使用调试程序 dx 命令显示此 `dx KiBugCheckDriver`。
+如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE\_STRING） **KiBugCheckDriver**。 可以使用调试器 dx 命令显示此 `dx KiBugCheckDriver`。
 
 <a name="cause"></a>原因
 -----
@@ -143,7 +143,7 @@ Arg4: 000000000000000c, (reserved)
 
 在此示例中，参数2指示在读取内存区域时发生 bug 检查。
 
-查看所有！分析输出，以获取有关 bug 检查发生时正在进行的操作的信息。 检查 MODULE_NAME：和 FAULTING_MODULE：以查看引用无效系统内存时涉及哪些代码。
+查看所有！分析输出，以获取有关 bug 检查发生时正在进行的操作的信息。 检查 MODULE_NAME：和 FAULTING_MODULE：查看涉及引用无效系统内存的代码。
 
 查看堆栈文本，以获取发生故障时正在运行的内容的线索。 如果有多个转储文件可用，则比较信息以查找堆栈中的通用代码。
 
@@ -155,7 +155,7 @@ TRAP_FRAME:  fffff98112e8b3d0 -- (.trap 0xfffff98112e8b3d0)
 
  使用诸如使用[**kb （显示 Stack Backtrace）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)之类的调试器命令调查错误代码。
 
-使用 `lm t n` 列出在内存中加载的模块。
+使用 `lm t n` 列出加载到内存中的模块。
 
 使用[d，da，db，dc，dd，dd，df，dp，dq，du，dw （显示内存）](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令调查参数1和参数3引用的内存区域。
 
@@ -219,11 +219,11 @@ nt!RtlSubtreePredecessor+0x9:
 fffff802`40d322f9 488b4810        mov     rcx,qword ptr [rax+10h] ds:ffffffff`00000090=????????????????
 ```
 
-在这种情况下 `fffff80240d322f9` 位于指令指针 register，即 rip 中。
+在这种情况下 `fffff80240d322f9` 位于指令指针 register。
 
-@No__t （0）和 @no__t 1 命令也可用于检查内存。
+`!pte` 和 `!pool` 命令也可用于检查内存。
 
-使用 @no__t 和来检查系统内存的一般状态。 
+使用 `!memusage` 和检查系统内存的一般状态。 
 
 **驱动程序验证程序**
 

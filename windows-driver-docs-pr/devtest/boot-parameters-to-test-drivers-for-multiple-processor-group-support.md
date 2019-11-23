@@ -107,7 +107,7 @@ bcdedit.exe /set maxgroup off
 
 Windows 7 和 Windows Server 2008 R2 引入了一个新的 BCD 选项（**groupaware**），它强制驱动程序和组件识别多个处理器组环境中的多个组。 **Groupaware**选项更改一组设备驱动程序功能的行为，以帮助在驱动程序和组件中公开跨组不兼容问题。 可以结合使用**groupaware** boot 选项和**groupsize**和**maxgroup**选项，在计算机具有64或更低的活动逻辑处理器时，与多个组测试驱动程序的兼容性。
 
-设置**groupaware** boot 选项后，操作系统将确保在组0以外的组中启动进程。 这增加了驱动程序与组件之间的跨组交互的机会。 选项还修改了不能识别组、 **KeSetTargetProcessorDpc**、 **KeSetSystemAffinityThreadEx**和**KeRevertToUserAffinityThreadEx**的旧函数的行为，以便它们始终在最高包含活动的逻辑处理器的编号组。 调用这些旧函数的驱动程序的驱动程序应更改为调用其组感知对应项（**KeSetTargetProcessorDpcEx**、 **KeSetSystemGroupAffinityThread**和**KeRevertToUserGroupAffinityThread**），
+设置**groupaware** boot 选项后，操作系统将确保在组0以外的组中启动进程。 这增加了驱动程序与组件之间的跨组交互的机会。 选项还会修改不是组感知、 **KeSetTargetProcessorDpc**、 **KeSetSystemAffinityThreadEx**和**KeRevertToUserAffinityThreadEx**的旧函数的行为，以便它们始终对包含活动逻辑处理器的最高编号组进行操作。 调用这些旧函数的驱动程序的驱动程序应更改为调用其组感知对应项（**KeSetTargetProcessorDpcEx**、 **KeSetSystemGroupAffinityThread**和**KeRevertToUserGroupAffinityThread**），
 
 若要测试兼容性，请使用以下[**BCDEdit/set**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)命令。
 

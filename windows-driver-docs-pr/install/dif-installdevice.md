@@ -64,7 +64,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 在设备信息集中提供设备的[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)结构的指针。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-存在与*DeviceInfoData*关联的设备安装参数（[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)）。
+与*DeviceInfoData*关联的设备安装参数（[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)）。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -78,9 +78,9 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 共同安装程序通常返回 NO_ERROR 或 ERROR_DI_POSTPROCESSING_REQUIRED。 共同安装程序也可能返回 Win32 错误代码。
 
-如果类安装程序成功处理此请求，而[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
-如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR，并且**SetupDiCallClassInstaller**随后不会再次调用默认处理程序。
+如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且**SetupDiCallClassInstaller**将不会再次调用默认处理程序。
 
 **请注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。 有关调用默认的 DIF 代码处理程序的详细信息，请参阅[调用默认的 Dif 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
 
@@ -94,9 +94,9 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 ### <a name="installer-operation"></a>安装程序操作
 
-为了响应 DIF_INSTALLDEVICE 请求，安装程序通常会在默认的处理程序安装设备之前执行任何最终安装操作。 例如，安装程序可以检查注册表中所列设备的筛选器驱动程序和筛选器驱动程序和筛选器驱动程序和筛选器的筛选器。
+在响应 DIF_INSTALLDEVICE 请求时，安装程序通常会在默认的处理程序安装设备之前执行任何最终安装操作。 例如，安装程序可以检查注册表中所列设备的筛选器驱动程序和筛选器驱动程序和筛选器驱动程序和筛选器的筛选器。
 
-除非在设备安装参数中设置 DI_NOFILECOPY 标志，否则处理此 DIF 请求的安装程序应复制设备所需的文件，如驱动程序文件和控制面板文件。
+除非在设备安装参数中设置了 DI_NOFILECOPY 标志，否则处理此 DIF 请求的安装程序应复制设备所需的文件，如驱动程序文件和控制面板文件。
 
 如果 DI_NOFILECOPY 标志清晰但设置了 DI_NOVCP 标志，则安装程序必须将任何文件操作排队到提供的文件队列中，但不得提交队列。
 
@@ -106,9 +106,9 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 如果安装程序返回 Win32 错误代码，Windows 会放弃安装。
 
-如果 Windows 无法找到新设备的 INF 文件，它将发送 DIF_INSTALLDEVICE，尝试安装*null 驱动程序*。 默认处理程序（**SetupDiInstallDevice**或为非 PnP 设备（由[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)报告），在后一种情况下，Windows 将为设备安装 null 驱动程序。
+如果 Windows 无法找到新设备的 INF 文件，则会发送 DIF_INSTALLDEVICE，尝试安装*null 驱动程序*。 默认处理程序（**SetupDiInstallDevice**或为非 PnP 设备（由[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)报告），在后一种情况下，Windows 将为设备安装 null 驱动程序。
 
-如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的**ConfigFlags**注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT，并且共同安装程序必须返回 NO_ERROR。
+如果此尝试失败，则 Windows 将再次发送 DIF_INSTALLDEVICE，这次在[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构中设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志。 在这种情况下，默认处理程序只是在设备的**ConfigFlags**注册表值中设置 FAILEDINSTALL 标志。 如果设置了 DI_FLAGSEX_SETFAILEDINSTALL 标志，则类安装程序必须返回 NO_ERROR 或 ERROR_DI_DO_DEFAULT 并且共同安装程序必须返回 NO_ERROR。
 
 有关 DIF 代码的详细信息，请参阅[处理 Dif 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
 
@@ -120,7 +120,7 @@ DIF_INSTALLDEVICE 请求允许安装程序在安装设备之前和/或之后执�
 
 1.  在调用**SetupDiInstallDevice**之前，请执行必须完成的操作。
 
-2.  在 SP_DEVINSTALL_PARAMS 中设置 DI_DONOTCALLCONFIGMGR 标志。设备的**标志**成员。 如果设置了此标志，则**SetupDiInstallDevice**将执行除启动设备之外的所有默认安装操作。
+2.  设置 SP_DEVINSTALL_PARAMS 中的 DI_DONOTCALLCONFIGMGR 标志。设备的**标志**成员。 如果设置了此标志，则**SetupDiInstallDevice**将执行除启动设备之外的所有默认安装操作。
 
 3.  调用**SetupDiInstallDevice**以执行除启动设备之外的所有默认安装操作。
 

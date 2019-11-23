@@ -66,7 +66,7 @@ ms.locfileid: "72841845"
 <tr class="header">  
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -75,97 +75,97 @@ ms.locfileid: "72841845"
 <td align="left"><p><strong><em>WakeOnPattern</strong></p></td>
 <td align="left"><p>模式匹配时唤醒</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>WakeOnMagicPacket</strong></p></td>
 <td align="left"><p>幻数据包唤醒</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>ModernStandbyWoLMagicPacket</strong></p></td>
 <td align="left"><p>当系统处于<i>S0ix</i>电源状态时唤醒幻数据包</p></td>
 <td align="left"><p>0（默认值）</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>DeviceSleepOnDisconnect</strong></p></td>
 <td align="left"><p>断开连接时设备睡眠</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMARPOffload</strong></p></td>
 <td align="left"><p>ARP 卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>PMNSOffload</strong></p></td>
 <td align="left"><p>NS 卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>PMWiFiRekeyOffload</strong></p></td>
 <td align="left"><p>WiFi 重新生成密钥卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>*EEE</strong></p></td>
 <td align="left"><p>高能效以太网</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 </tbody>
 </table>

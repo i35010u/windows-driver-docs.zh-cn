@@ -39,7 +39,7 @@ ms.locfileid: "72842549"
 
 微型端口驱动程序负责还原设备的硬件状态（多播地址、数据包筛选器、任务卸载设置和唤醒模式除外）。 这些设置由微型端口驱动程序或 NDIS 还原。 微型端口驱动程序通过在*AddressingReset*参数中返回一个布尔值，来确定负责还原这些设置的人员。
 
-如果微型端口驱动程序在*AddressingReset*参数中返回**FALSE** ，微型端口驱动程序会将其多播地址、数据包筛选器、任务卸载设置和唤醒模式还原到初始状态。 如果微型端口驱动程序在*AddressingReset*中返回**TRUE** ，NDIS 将调用无连接微型端口驱动程序的[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数或面向连接的微型端口驱动程序的[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数，以设置以下配置设置：
+如果微型端口驱动程序在*AddressingReset*参数中返回**FALSE** ，微型端口驱动程序会将其多播地址、数据包筛选器、任务卸载设置和唤醒模式还原到初始状态。 如果微型端口驱动程序在*AddressingReset*中返回**TRUE** ，NDIS 将调用无连接微型端口驱动程序的[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数或面向连接的微型端口驱动程序的[**MiniportCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_co_oid_request)函数来设置以下配置设置：
 
 -   通过 OID 的 set 请求来进行网络数据包筛选[\_代\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)。
 

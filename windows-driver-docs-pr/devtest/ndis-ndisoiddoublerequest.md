@@ -28,11 +28,11 @@ ms.locfileid: "72840086"
 
 |              |      |
 |--------------|------|
-| 驱动程序型号 | 以此 |
+| 驱动程序模型 | NDIS |
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x0009100E） |
+| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x0009100E） |
 
 <a name="how-to-test"></a>如何测试
 -----------

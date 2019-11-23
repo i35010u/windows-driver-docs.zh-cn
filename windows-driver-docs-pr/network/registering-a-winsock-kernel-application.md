@@ -24,7 +24,7 @@ ms.locfileid: "72842096"
 
 ### <a name="wsk-client-object-registration"></a>WSK 客户端对象注册
 
-Winsock 内核（WSK）应用程序必须通过调用[**WskRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister)函数注册为 WSK 客户端。 **WskRegister**要求 WSK 应用程序进行初始化，并将指针传递到其 WSK 客户端的[网络编程接口（NPI）](network-programming-interface.md)（ [**WSK\_客户端\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_npi)结构）和 WSK 注册对象（ [**WSK\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_registration)结构），该结构将在成功返回时通过**WskRegister**进行初始化。
+Winsock 内核（WSK）应用程序必须通过调用[**WskRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskregister)函数注册为 WSK 客户端。 **WskRegister**要求 WSK 应用程序进行初始化，并向其传递一个指向其 WSK 客户端的[网络编程接口（NPI）](network-programming-interface.md)的指针（ [**WSK\_客户端\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_npi)结构）和一个 WSK 注册对象（ [**WSK\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_registration)结构），该对象将在成功返回时由**WskRegister**初始化。
 
 下面的代码示例演示 WSK 应用程序如何注册为 WSK 客户端。
 
@@ -98,7 +98,7 @@ WSK 应用程序必须将传递给 WskRegister 的[**WSK\_客户端\_调度**](h
 
 如果对**WskCaptureProviderNPI**的调用失败，状态\_NOINTERFACE，则 WSK 应用程序可以使用[**WskQueryProviderCharacteristics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskqueryprovidercharacteristics)函数来发现 WSK 子系统支持的 NPI WSK 版本的范围。 WSK 应用程序可以调用**WskDeregister**来取消注册其当前注册实例，然后使用不同的[**WSK\_客户端\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_dispatch)使用受支持 WSK NPI 版本的调度实例再次注册。
 
-当**WskCaptureProviderNPI**成功返回时，其*WskProviderNpi*参数将指向 WSK 提供程序 NPI （ [**WSK\_提供程序\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_npi)），供 WSK 应用程序使用。 NPI 结构中的 WSK\_提供\_程序包含指向 WSK 客户端对象（ [**WSK\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)）的指针\_，以及 WSK 应用程序可用于创建的 WSK 函数[ **\_调度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)调度表WSK 套接字，并对 WSK 客户端对象执行其他操作。 使用 WSK\_提供程序\_调度函数完成 WSK 应用程序后，必须通过调用[**WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskreleaseprovidernpi)释放 WSK 提供程序 NPI。
+当**WskCaptureProviderNPI**成功返回时，其*WskProviderNpi*参数将指向 WSK 提供程序 NPI （ [**WSK\_提供程序\_NPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_npi)），供 WSK 应用程序使用。 NPI 结构中的 WSK\_提供程序包含指向 WSK 客户端对象（ [**WSK\_客户端**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-client)）和[**WSK\_提供\_程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)的\_调度调度表的链接，WSK 应用程序可用于创建 WSK 套接字并对 WSK 客户端对象执行其他操作。 使用 WSK\_提供程序\_调度函数完成 WSK 应用程序后，必须通过调用[**WskReleaseProviderNPI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskreleaseprovidernpi)释放 WSK 提供程序 NPI。
 
 下面的代码示例演示 WSK 应用程序如何捕获 WSK 提供程序 NPI，如何使用它来创建套接字，然后将其释放。
 

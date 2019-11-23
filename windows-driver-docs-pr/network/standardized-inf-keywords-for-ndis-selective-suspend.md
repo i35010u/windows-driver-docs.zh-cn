@@ -1,6 +1,6 @@
 ---
-title: 用于 NDIS 选择性挂起的标准化 INF 关键字
-description: 用于 NDIS 选择性挂起的标准化 INF 关键字
+title: NDIS 选择性挂起的标准化 INF 关键字
+description: NDIS 选择性挂起的标准化 INF 关键字
 ms.assetid: A45EE23D-1C60-4DA4-82A5-89DB5CE48E21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841849"
 ---
-# <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>用于 NDIS 选择性挂起的标准化 INF 关键字
+# <a name="standardized-inf-keywords-for-ndis-selective-suspend"></a>NDIS 选择性挂起的标准化 INF 关键字
 
 
 定义了以下标准化 INF 关键字，以便在微型端口驱动程序上为 NDIS 选择性挂起启用、禁用和配置参数：
@@ -28,21 +28,21 @@ ms.locfileid: "72841849"
 ## <a name="selectivesuspend-inf-keyword"></a>\*SelectiveSuspend INF 关键字
 
 
-支持 NDIS 选择性挂起的微型端口驱动程序的 INF 文件必须指定 **\*SelectiveSuspend**标准化 INF 关键字。 安装驱动程序后，管理员可以在网络适配器的 "**高级**" 属性页中更新 **\*SelectiveSuspend**关键字值。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
+必须指定的支持 NDIS 选择性挂起的微型端口驱动程序的 INF 文件 **\*SelectiveSuspend** 标准化 INF 关键字。 安装该驱动程序后，管理员可以更新 **\*SelectiveSuspend** 中的关键字值**高级**网络适配器的属性页。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**请注意**   在适配器的 "**高级**" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
+**请注意**   中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
 
  
 
-**\*SelectiveSuspend** INF 关键字是一个枚举关键字。 下表描述了 **\*SelectiveSuspend** inf 关键字的可能 inf 条目。 此表中的列描述了用于枚举关键字的以下属性：
+**\*SelectiveSuspend** INF 关键字是一个枚举的关键字。 下表描述了可能 INF 条目 **\*SelectiveSuspend** INF 关键字。 此表中的列描述了用于枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在网络适配器的**NDI\\参数\\** 键下的注册表中。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName 关联的显示文本。
 
-**请注意**  独立硬件供应商（IHV）可以定义 SubkeyName 的任何说明性文本。
+**请注意**   独立硬件供应商 (IHV) 可以为 SubkeyName 定义描述性文本。
 
  
 
@@ -72,41 +72,41 @@ ms.locfileid: "72841849"
 <td align="left"><p><strong>*SelectiveSuspend</strong></p></td>
 <td align="left"><p>选择性挂起</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>已禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>Enabled</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-微型端口驱动程序必须检查注册表中的 **\*SelectiveSuspend**关键字值，然后才会公布其对 NDIS 选择性挂起的支持。 如果 **\*SelectiveSuspend**关键字的值为零，则小型端口不得为任何选择性挂起功能公布支持。 有关详细信息，请参阅[报告 NDIS 选择性挂起功能](reporting-ndis-selective-suspend-capabilities.md)。
+微型端口驱动程序必须检查 **\*SelectiveSuspend** 之前的 NDIS 选择性挂起，也会公布其支持在注册表中的关键字值。 如果 **\*SelectiveSuspend** 关键字的值为零、 微型端口必须不播发任何支持选择性挂起功能。 有关详细信息，请参阅[报告 NDIS 选择性挂起功能](reporting-ndis-selective-suspend-capabilities.md)。
 
 ## <a name="ssidletimeout-inf-keyword"></a>\*SSIdleTimeout INF 关键字
 
 
-支持 NDIS 选择性挂起的微型端口驱动程序的 INF 文件应指定可选的 **\*SSIdleTimeout**标准化 INF 关键字。 此关键字指定空闲超时期限（以秒为单位）。 如果 NDIS 在网络适配器上检测不到超过 **\*SSIdleTimeout**值的任何活动，ndis 会通过调用微型端口驱动程序的[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数来启动选择性挂起操作。
+INF 文件微型端口驱动程序支持 NDIS 选择性挂起，应指定可选 **\*SSIdleTimeout** 标准化 INF 关键字。 此关键字指定空闲超时期限（以秒为单位）。 如果 NDIS 超过一段不检测网络适配器上的任何活动 **\*SSIdleTimeout** 值、 NDIS 启动选择性，则挂起通过调用微型端口驱动程序的操作[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数。
 
-安装驱动程序后，管理员可以在网络适配器的 "**高级**" 属性页中更新 **\*SSIdleTimeout**关键字值。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
+安装该驱动程序后，管理员可以更新 **\*SSIdleTimeout** 中的关键字值**高级**网络适配器的属性页。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
 **请注意**   在适配器的 "高级" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
 
  
 
-**\*SSIdleTimeout** INF 关键字为数值（**Int**）关键字。 下表描述了 **\*SSIdleTimeout** inf 关键字的可能 inf 条目。 表中的列描述**Int**关键字的以下属性：
+**\*SSIdleTimeout** INF 关键字是一个数值 (**Int**) 关键字。 下表描述了可能 INF 条目 **\*SSIdleTimeout** INF 关键字。 表中的列描述**Int**关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在网络适配器的**NDI\\参数\\** 键下的注册表中。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName 关联的显示文本。
 
-**请注意**  独立硬件供应商（IHV）可以定义 SubkeyName 的任何说明性文本。
+**请注意**   独立硬件供应商 (IHV) 可以为 SubkeyName 定义描述性文本。
 
  
 
@@ -149,28 +149,28 @@ ms.locfileid: "72841849"
 
  
 
-**请注意**  ndis 读取其驱动程序支持 NDIS 选择性挂起的每个网络适配器实例 **\*SSIdleTimeout**标准化 INF 关键字的值。 微型端口驱动程序不应读取此关键字。
+**请注意**   NDIS 读取的值 **\*SSIdleTimeout** 其驱动程序支持 NDIS 选择性的网络适配器的每个实例的标准化的 INF 关键字挂起。 微型端口驱动程序不应读取此关键字。
 
  
 
-NDIS 通过使用精确到 **\*SSIdleTimeout**值的30% 范围内的计时器来度量空闲超时。 例如，如果 **\*SSIdleTimeout**值为10，则在 NDIS 首次检测到适配器处于空闲状态后，该适配器将在10到13秒之间暂停。
+NDIS 通过使用精确到 **\*SSIdleTimeout**值的30% 范围内的计时器来度量空闲超时。 例如，如果 **\*SSIdleTimeout** 值为 10，适配器挂起 NDIS 首先检测适配器处于空闲状态后 10 到 13 秒之间。
 
 
 ## <a name="ssidletimeoutscreenoff-inf-keyword"></a>\*SSIdleTimeoutScreenOff INF 关键字
 
 
-支持 NDIS 选择性挂起的微型端口驱动程序的 INF 文件应指定可选的 **\*SSIdleTimeoutScreenOff**标准化 INF 关键字。 此关键字指定空闲超时期限（以秒为单位），仅当屏幕关闭时才适用。 如果在屏幕关闭之后，NDIS 未检测到超过 **\*SSIdleTimeoutScreenOff**值的网络适配器上的任何活动，ndis 会通过调用微型端口驱动程序的[*MiniportIdleNotification*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数。
+INF 文件微型端口驱动程序支持 NDIS 选择性挂起，应指定可选 **\*SSIdleTimeoutScreenOff** 标准化 INF 关键字。 此关键字指定空闲超时期限（以秒为单位），仅当屏幕关闭时才适用。 如果 NDIS 超过一段不检测网络适配器上的任何活动 **\*SSIdleTimeoutScreenOff** 屏幕处于关闭状态后值、 NDIS 启动选择性，则挂起通过调用微型端口操作驱动程序的[ *MiniportIdleNotification* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_idle_notification)处理程序函数。
 
-安装驱动程序后，管理员可以在网络适配器的 "**高级**" 属性页中更新 **\*SSIdleTimeoutScreenOff**关键字值。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
+安装该驱动程序后，管理员可以更新 **\*SSIdleTimeoutScreenOff** 中的关键字值**高级**网络适配器的属性页。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
 **注意**  在适配器的 "高级" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
 
  
 
-**\*SSIdleTimeoutScreenOff** INF 关键字为数值（**Int**）关键字。 下表描述了 **\*SSIdleTimeoutScreenOff** inf 关键字的可能 inf 条目。 表中的列描述**Int**关键字的以下属性：
+**\*SSIdleTimeoutScreenOff** INF 关键字是一个数值 (**Int**) 关键字。 下表描述了可能 INF 条目 **\*SSIdleTimeoutScreenOff** INF 关键字。 表中的列描述**Int**关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在网络适配器的**NDI\\参数\\** 键下的注册表中。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName 关联的显示文本。
@@ -218,12 +218,12 @@ NDIS 通过使用精确到 **\*SSIdleTimeout**值的30% 范围内的计时器来
 
  
 
-**注意** 对于其驱动程序支持 NDIS 选择性挂起的每个网络适配器实例，NDIS 读取 **\*SSIdleTimeoutScreenOff**标准化 INF 关键字的值。 微型端口驱动程序不应读取此关键字。
+**请注意**NDIS 读取的值 **\*SSIdleTimeoutScreenOff** 其驱动程序支持 NDIS 选择性的网络适配器的每个实例的标准化的 INF 关键字挂起。 微型端口驱动程序不应读取此关键字。
 
 **注意** 最大值仅用于测试目的。 如果值超过5，则 HLK 认证测试将显式检查并失败。
 
  
-NDIS 通过使用精确到 **\*SSIdleTimeoutScreenOff**值的30% 范围内的计时器来度量空闲超时。 例如，如果 **\*SSIdleTimeoutScreenOff**值为5，则在 NDIS 首次检测到适配器处于空闲状态后，适配器将在5到6.5 秒之间暂停。
+NDIS 测量使用计时器是精确到 30%的空闲超时 **\*SSIdleTimeoutScreenOff** 值。 例如，如果 **\*SSIdleTimeoutScreenOff** 值为 5，适配器挂起 NDIS 首先检测适配器处于空闲状态后的 5 到 6.5 秒之间。
 
 
  

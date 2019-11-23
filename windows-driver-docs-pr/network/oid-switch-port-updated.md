@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PORT_UPDATED
-description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_UPDATED 的对象标识符（OID）设置请求，通知有关可扩展交换机端口更新的可扩展交换机扩展。
+description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_UPDATED 的对象标识符（OID）设置请求，通知可扩展交换机扩展有关更新可扩展交换机端口的信息。
 ms.assetid: 7FDC963A-92E4-49B2-AB77-FA9C92EEBC25
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_UPDATED 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_UPDATED 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 85ca05120af6b5e93967db03b59fad6a1613684c
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

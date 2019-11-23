@@ -51,11 +51,11 @@ ms.locfileid: "72007589"
 2.  使用 guidgen.exe 等工具生成设备的设备接口 GUID。
 3.  查找此项下的设备的注册表项：
 
-    **HKEY @ no__t-1LOCAL @ no__t-2MACHINE @ no__t-3SYSTEM @ no__t-4CurrentControlSet @ no__t-5Enum @ no__t-6USB @ no__t-7 @ no__t-8VID @ no__t-9vvvv & PID @ no__t-10pppp @ no__t-11**
+    **HKEY\_本地\_计算机\\系统\\CurrentControlSet\\枚举\\USB\\&lt;VID\_vvvv & PID\_pppp&gt;**
 
 4.  在**Device Parameters**项下，添加名为**DeviceInterfaceGUID**的字符串注册表项或名为**DeviceInterfaceGUIDs**的多字符串项。 将值设置为在步骤2中生成的 GUID。
 5.  断开设备与系统的连接，并将其重新连接到同一个物理端口。
-    **请注意**  If 更改物理端口后，必须重复步骤1到4。
+    **请注意**  如果更改物理端口，则必须重复步骤1到4。
 
      
 
@@ -64,11 +64,11 @@ ms.locfileid: "72007589"
 
 作为驱动程序包的一部分，你提供了一个 .inf 文件，该文件将 Winusb 安装为 USB 设备的函数驱动程序。
 
-下面的示例 .inf 文件显示了 WinUSB 安装，其中包含一些修改，例如将部分名称中的**USB @ No__t 1Install**更改为相应的*DDInstall*值。 如果需要，还应更改版本、制造商和型号部分。 例如，提供适当制造商的名称、签名的目录文件的名称、正确的设备类以及设备的供应商标识符（VID）和产品标识符（PID）。
+以下示例 .inf 文件显示了 WinUSB 安装，其中包含一些修改，例如将**usb\_安装**在节名称中，更改为相应的*DDInstall*值。 如果需要，还应更改版本、制造商和型号部分。 例如，提供适当制造商的名称、签名的目录文件的名称、正确的设备类以及设备的供应商标识符（VID）和产品标识符（PID）。
 
 另请注意，安装程序类设置为 "USBDevice"。 对于不属于其他类且不是 USB 主机控制器或集线器的设备，供应商可以使用 "USBDevice" 安装程序类。
 
-如果要将 WinUSB 安装为 USB 复合设备中某个函数的函数驱动程序，则必须在 INF 中提供与该函数关联的硬件 ID。 可以从**设备管理器**中的 devnode 的属性获取该函数的硬件 ID。 硬件 ID 字符串格式为 "USB @ no__t-0VID @ no__t-1vvvv & PID @ no__t-2pppp"。
+如果要将 WinUSB 安装为 USB 复合设备中某个函数的函数驱动程序，则必须在 INF 中提供与该函数关联的硬件 ID。 可以从**设备管理器**中的 devnode 的属性获取该函数的硬件 ID。 硬件 ID 字符串格式为 "USB\\VID\_vvvv & PID\_pppp"。
 
 以下 INF 在基于 x64 的系统上将 WinUSB 安装为 OSR USB FX2 板的函数驱动程序。
 
@@ -148,15 +148,15 @@ REG_MULTI_SZ = 0x00010000
 
 除了特定于设备的值以及以下列表中所述的几个问题之外，你可以使用这些部分和指令来安装适用于任何 USB 设备的 WinUSB。 这些列表项描述了前面的 .inf 文件中的**包含**和**指令**。
 
--   **USB @ no__t-1Install**：要安装 WinUSB，需要在**USB @ no__t-3Install**部分中**包含**和**需要**指令。 不应修改这些指令。
--   **USB @ no__t-1Install**：**USB @ no__t-2Install**部分中的**Include**指令包括系统提供的 WinUSB （WinUSB） .inf。 此 .inf 文件由 WinUSB 联安装程序安装（如果它尚未在目标系统上）。 Required**指令指定 WinUSB 中的部分**，其中包含安装 WinUSB 作为设备的函数驱动程序所需的信息。 不应修改这些指令。
-    **请注意**  BECAUSE Windows XP 不提供 WinUSB，则该文件必须由共同安装程序复制到 windows xp 系统，否则，你应该为 windows xp 提供单独的经过修饰的部分。
+-   **Usb\_安装**：在安装 WinUSB 时，需要在**usb\_安装**部分中**包含**和**需要**指令。 不应修改这些指令。
+-   **Usb\_install**： WinUSB **\_** 中的 Include 指令包括 WinUSB （）的系统提供的 .inf 中的**Include**指令。 此 .inf 文件由 WinUSB 联安装程序安装（如果它尚未在目标系统上）。 Required**指令指定 WinUSB 中的部分**，其中包含安装 WinUSB 作为设备的函数驱动程序所需的信息。 不应修改这些指令。
+    **请注意**  由于 windows xp 不提供 WinUSB，因此，必须由共同安装程序将文件复制到 windows xp 系统，否则，你应该为 windows xp 提供单独的经过修饰的部分。
 
      
 
--   **USB\_Install.HW**：本部分是 .inf 文件中的密钥。 它指定设备的设备接口全局唯一标识符（GUID）。 **AddReg**指令将指定的接口 GUID 设置为标准的注册表值。 当 Winusb 作为设备的函数驱动程序加载时，它将读取注册表值 DeviceInterfaceGUIDs 键，并使用指定的 GUID 来表示设备接口。 应将此示例中的 GUID 替换为专用于设备创建的 GUID。 如果设备的协议发生更改，请创建新的设备接口 GUID。
+-   **USB\_安装。 HW**：此部分是 .inf 文件中的密钥。 它指定设备的设备接口全局唯一标识符（GUID）。 **AddReg**指令将指定的接口 GUID 设置为标准的注册表值。 当 Winusb 作为设备的函数驱动程序加载时，它将读取注册表值 DeviceInterfaceGUIDs 键，并使用指定的 GUID 来表示设备接口。 应将此示例中的 GUID 替换为专用于设备创建的 GUID。 如果设备的协议发生更改，请创建新的设备接口 GUID。
 
-    **请注意**  User software 必须调用[**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) ，以枚举与 DeviceInterfaceGUIDs 项下指定的某个设备接口类相关联的已注册设备接口。 **SetupDiGetClassDevs**返回设备的设备句柄，用户模式软件随后必须将该设备传递到[**WinUsb @ no__t-3Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)例程，才能获取设备接口的 WinUsb 句柄。 有关这些例程的详细信息，请参阅[如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    **请注意**  用户模式软件必须调用[**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) ，以枚举与 DeviceInterfaceGUIDs 密钥下指定的某个设备接口类相关联的已注册设备接口。 **SetupDiGetClassDevs**返回设备的设备句柄，用户模式软件随后必须将其传递到[**WinUsb\_初始化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)例程以获取设备接口的 WinUsb 句柄。 有关这些例程的详细信息，请参阅[如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 以下 INF 在基于 x64 的系统上将 WinUSB 安装为 OSR USB FX2 板的函数驱动程序。 该示例显示了具有 WDF coinstallers 的 INF。
 
@@ -243,10 +243,10 @@ DiskName="MyDisk"
 REG_MULTI_SZ = 0x00010000
 ```
 
--   **USB @ no__t-1Install. CoInstallers**：本部分包括引用的**AddReg**和**CopyFiles**节，其中包含用于安装 WinUSB 和 KMDF 共同安装程序并将其与设备关联的数据和说明。 大多数 USB 设备无需修改即可使用这些部分和指令。
+-   **USB\_CoInstallers**：此部分包含引用的**AddReg**和**CopyFiles**节，其中包含用于安装 WinUSB 和 KMDF 共同安装程序并将其与设备关联的数据和说明。 大多数 USB 设备无需修改即可使用这些部分和指令。
 -   基于 x86 和 x64 的 Windows 版本具有单独的共同安装程序。
 
-    **请注意**  Each 联安装程序有免费和已检查的版本。 使用免费版本在 Windows 免费版本（包括所有零售版）上安装 WinUSB。 使用 checked 版本（使用 @no__t "0chk" 后缀）在已选中的 Windows 版本上安装 WinUSB。
+    **请注意**  每个共同安装程序都有免费和已检查的版本。 使用免费版本在 Windows 免费版本（包括所有零售版）上安装 WinUSB。 使用 checked 版本（带有 "\_.chk" 后缀）在 Windows 的已选择版本上安装 WinUSB。
 
 每次 Winusb 加载时，它都会注册一个设备接口，该接口具有在**DeviceInterfaceGUIDs**项下的注册表中指定的设备接口类。
 
@@ -254,7 +254,7 @@ REG_MULTI_SZ = 0x00010000
 HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 ```
 
-**请注意**  If 你使用 windows XP 或 windows Server 2003 的可再发行组件 WinUSB 包，请确保不要在卸载包中卸载 WinUSB。 其他 USB 设备可能正在使用 WinUSB，因此其二进制文件必须保留在共享文件夹中。
+**请注意**  如果你使用适用于 windows XP 或 windows Server 2003 的可再发行 WinUSB 包，请确保不要在卸载包中卸载 WinUSB。 其他 USB 设备可能正在使用 WinUSB，因此其二进制文件必须保留在共享文件夹中。
 
  
 
@@ -270,7 +270,7 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 
 ![winusb 安装包](images/winusb-package.jpg)
 
-**请注意**  Make 确保驱动程序包内容满足以下要求：
+**请注意**  确保驱动程序包内容满足以下要求：
 -   必须从同一版本的 Windows 驱动程序工具包（WDK）获取 KMDF 和 WinUSB 共同安装程序文件。
 -   必须从最新版本的 WDK 获取共同安装程序文件，以便驱动程序支持所有最新的 Windows 版本。
 -   必须使用 Winqual 版本签名对驱动程序包的内容进行数字签名。 有关如何创建和测试签名目录文件的详细信息，请参阅 Windows 开发人员中心-硬件站点上的[内核模式代码签名演练](https://go.microsoft.com/fwlink/p/?linkid=129409)。
@@ -278,14 +278,14 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
  
 
 1. [下载并安装 Windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) 。
-2. 在 USB 设备连接到的计算机上创建一个驱动程序包文件夹。 例如，c： \\UsbDevice。
-3. 将 WinUSB 共同安装程序（WinusbcoinstallerX）从**WinDDK @ no__t**<em>BuildNumber</em> **\\redist @ no__t**文件夹复制到驱动程序包文件夹。
+2. 在 USB 设备连接到的计算机上创建一个驱动程序包文件夹。 例如，c：\\UsbDevice。
+3. 将 WinUSB 共同安装程序（WinusbcoinstallerX）从**WinDDK\\** <em>BuildNumber</em> **\\\\WinUSB**文件夹复制到驱动程序包文件夹。
 
-   WinUSB 安装程序（Winusbcoinstaller）在目标系统上安装 WinUSB （如有必要）。 WDK 包括三个版本的共同安装程序，具体取决于系统体系结构：基于 x86、基于 x64 和基于 Itanium 的系统。 它们都命名为 WinusbcoinstallerX，位于**WinDDK @ no__t-1**<em>BuildNumber</em> **\\redist @ no__t**文件夹中的相应子目录中。
+   WinUSB 安装程序（Winusbcoinstaller）在目标系统上安装 WinUSB （如有必要）。 WDK 包括三个版本的共同安装程序，具体取决于系统体系结构：基于 x86、基于 x64 和基于 Itanium 的系统。 它们都命名为 WinusbcoinstallerX，位于**WinDDK\\** <em>BuildNumber</em> **\\\\winusb**文件夹的相应子目录中。
 
-4. 将 KMDF 共同安装程序（WdfcoinstallerXXX）从**WinDDK @ no__t**<em>BuildNumber</em> **\\redist @ no__t**文件夹复制到驱动程序包文件夹。
+4. 将 KMDF 共同安装程序（WdfcoinstallerXXX）从**WinDDK\\** <em>BuildNumber</em> **\\\\wdf**文件夹复制到驱动程序包文件夹。
 
-   KMDF 共同安装程序（WdfcoinstallerXXX）在目标系统上安装正确的 KMDF 版本（如有必要）。 WinUSB 共同安装程序的版本必须与 KMDF 共同安装程序匹配，因为基于 KMDF 的客户端驱动程序（如 Winusb）要求在系统上正确安装相应版本的 KMDF framework。 例如，Winusbcoinstaller2 需要 KMDF 版本1.9，该版本由 Wdfcoinstaller01009 安装。 WdfcoinstallerXXX 的 x86 和 x64 版本包含在 WDK 下的**WinDDK @ no__t-1**<em>BuildNumber</em> **\\redist @ no__t**文件夹中。 下表显示了要在目标系统上使用的 WinUSB 共同安装程序和关联的 KMDF 共同安装程序。
+   KMDF 共同安装程序（WdfcoinstallerXXX）在目标系统上安装正确的 KMDF 版本（如有必要）。 WinUSB 共同安装程序的版本必须与 KMDF 共同安装程序匹配，因为基于 KMDF 的客户端驱动程序（如 Winusb）要求在系统上正确安装相应版本的 KMDF framework。 例如，Winusbcoinstaller2 需要 KMDF 版本1.9，该版本由 Wdfcoinstaller01009 安装。 WdfcoinstallerXXX 的 x86 和 x64 版本包含在 WDK 下的**WinDDK\\** <em>BuildNumber</em> **\\\\wdf**文件夹中。 下表显示了要在目标系统上使用的 WinUSB 共同安装程序和关联的 KMDF 共同安装程序。
 
    使用此表来确定 WinUSB 共同安装程序和关联的 KMDF 共同安装程序。
 
@@ -335,7 +335,7 @@ HKR,,DeviceInterfaceGUIDs, 0x10000,"{D696BFEB-1734-417d-8A04-86D01071C512}"
 [选择用于开发 USB 客户端驱动程序的驱动程序型号](winusb-considerations.md)  
 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)  
 [WinUSB 电源管理](winusb-power-management.md)  
-[管道策略修改的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
+[用于修改管道策略的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)  
 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)  
 [WinUSB](winusb.md)  
 

@@ -26,7 +26,7 @@ ms.locfileid: "72841835"
 
 如果驱动程序提供了[*FilterSetModuleOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)的入口点，则驱动程序可以更改筛选器模块的部分特性。 有关详细信息，请参阅[Data 旁路 Mode](data-bypass-mode.md)。
 
-当它调用筛选器驱动程序的[*FilterRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)函数时，ndis 会将指针传递到[**NDIS\_重启\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)结构以在 [**ndis\_筛选器的 RestartAttributes 成员中筛选驱动程序\_重新启动\_的参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_restart_parameters)结构。 筛选器驱动程序可以修改底层驱动程序指定的重新启动属性。 有关如何修改 restart 特性的详细信息，请参阅*FilterRestart*。
+当它调用筛选器驱动程序的[*FilterRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)函数时，ndis 会将指针传递到[**NDIS\_重启\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_restart_attributes)结构，以在 ndis\_筛选器的**RestartAttributes**成员中筛选驱动程序[ **\_重新启动\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_restart_parameters)结构。 筛选器驱动程序可以修改底层驱动程序指定的重新启动属性。 有关如何修改 restart 特性的详细信息，请参阅*FilterRestart*。
 
 **请注意**，在 ndis 为堆栈中的任何筛选器模块调用[*FilterRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_restart)函数之前，  ndis 为堆栈中的所有筛选器模块调用[*FilterSetModuleOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options) 。
 

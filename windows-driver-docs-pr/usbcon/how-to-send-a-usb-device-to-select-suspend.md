@@ -72,7 +72,7 @@ HKEY_LOCAL_MACHINE
                   <USB client driver verifier setting> (DWORD)
 ```
 
-&gt;注册表项的 *&lt;USB 客户端驱动程序验证程序设置*使用 DWORD 值。
+*&lt;USB 客户端驱动程序验证工具设置&gt;* 注册表条目采用 DWORD 值。
 如果添加、修改或删除任何设置，则必须在系统中重新枚举设备以应用设置。
 
 此表显示了 *&gt;&lt;USB 客户端驱动程序验证程序设置*的可能值。 这些设置应用于 "**服务**" 项下指定的客户端驱动程序。
@@ -115,7 +115,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="even">
 <td><p><strong>UsbVerifierFailChainedMdlSupport</strong></p>
-<p>如果调用方在<em>CapabilityType</em>参数中传递 GUID_USB_CAPABILITY_CHAINED_MDLS，则客户端驱动程序对这些例程的调用将失败。</p>
+<p>如果调用方将 GUID_USB_CAPABILITY_CHAINED_MDLS 传入<em>CapabilityType</em>参数，则客户端驱动程序对这些例程的调用将失败。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>
@@ -137,7 +137,7 @@ HKEY_LOCAL_MACHINE
 </tr>
 <tr class="odd">
 <td><p><strong>UsbVerifierFailStaticStreamsSupport</strong></p>
-<p>如果调用方在<em>CapabilityType</em>参数中传递 GUID_USB_CAPABILITY_STATIC_STREAMS，则客户端驱动程序对这些例程的调用将失败。</p>
+<p>如果调用方将 GUID_USB_CAPABILITY_STATIC_STREAMS 传入<em>CapabilityType</em>参数，则客户端驱动程序对这些例程的调用将失败。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85)" data-raw-source="[&lt;strong&gt;USBD_QueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))"><strong>USBD_QueryUsbCapability</strong></a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability" data-raw-source="[&lt;strong&gt;WdfUsbTargetDeviceQueryUsbCapability&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)"><strong>WdfUsbTargetDeviceQueryUsbCapability</strong></a></li>

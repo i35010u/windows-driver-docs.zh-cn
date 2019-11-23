@@ -28,7 +28,7 @@ ms.locfileid: "72842471"
 
 使用 IP 帮助程序 API 设置的 IP 地址和默认网关将保留网络连接或断开连接事件，或同时保留两者。 因此，如果新的 IP 地址或默认网关的值不同于当前设置的值，微型端口驱动程序应该首先清除以前的值，然后再设置网络连接事件的新值。
 
-**注意**  微型端口驱动程序可以从 NDIS\_微型端口的**NetLuid**或**IfIndex**成员中找到 MB 接口的**LUID**和**索引**， [ **\_INIT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)结构传递给微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数。
+**请注意**  微型端口驱动程序可以从[**NDIS\_微型端口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)的**NetLuid**或**IfIndex**成员中找到 MB 接口的**LUID**和**索引**，\_\_初始化传递到微型端口驱动程序[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数的参数结构。
 
  
 
@@ -40,14 +40,14 @@ ms.locfileid: "72842471"
 
 1.  在**驱动程序初始化**期间，微型端口驱动程序应指定一个回调函数，以便使用[**NotifyIpInterfaceChange**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568805(v=vs.85))注册 IP 接口更改通知。 Windows 将调用 wheneven 函数，以添加、删除或更改 IP 接口。
 
-2.  在**适配器初始化**期间，小型端口驱动程序应保存在微型端口驱动程序的本地适配器上下文中从[**NDIS\_微型端口的 LUID 值\_INIT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)传递到小型端口的参数结构驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数。 此值包含标识适配器接口的*NetLuid* ，用于通知回调。
+2.  在**适配器初始化**期间，微型端口驱动程序应保存在微型端口驱动程序的本地适配器上下文中从[**NDIS\_微型端口的 LUID 值\_INIT\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_init_parameters)传递到微型端口驱动程序[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数的参数结构。 此值包含标识适配器接口的*NetLuid* ，用于通知回调。
 
 3.  在**通知回调**中，Windows 将以下参数传递给注册到[**NotifyIpInterfaceChange**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff568805(v=vs.85))的通知函数：
 
     -   指向[**MIB\_IPINTERFACE\_行**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))结构的指针，该结构包含微型端口适配器接口的*NetLuid* 。
     -   通知的类型，可以是**MibAddInstance**、 **MibDeleteInstance**或**MibParameterNotification**。
 
-    当适配器处于连接状态，并且通知类型为**MibAddInstance**，并且[**MIB\_IPINTERFACE\_** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))中的*NetLuid*与以下其中一项相对应时，微型端口驱动程序应重置 IP 和网关地址。小型端口驱动程序的适配器，它是在适配器初始化期间保存的。
+    当适配器处于连接状态且通知类型为 " **MibAddInstance**" 时，微型端口驱动程序应重置 IP 和网关地址，并且[**MIB\_IPINTERFACE\_行**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559254(v=vs.85))对应*于在适配器*初始化期间保存的某个微型端口驱动程序适配器。
 
     然后，小型端口驱动程序应遵循设置 MB 接口的 IP 地址，并设置默认的网关地址过程来重置相应的地址。
 
@@ -79,7 +79,7 @@ ms.locfileid: "72842471"
 
 1.  使用[**GetIpForwardTable2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff552536(v=vs.85)) IP Helper 函数获取系统中的所有路由条目。
 
-2.  对于其**InterfaceLuid**值与 MB 接口的**InterfaceLuid**值匹配的每个条目，并且**DestinationPrefix**为 "0.0.0.0/0"，请调用[**DeleteIpForwardEntry2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546365(v=vs.85)) IP Helper 函数以删除该路由（如果是**NextHop）** 不等于新的网关地址。 否则，该路由条目已在系统中。
+2.  对于其**InterfaceLuid**值与 MB 接口的**InterfaceLuid**值匹配的每个项，如果**DestinationPrefix**为 "0.0.0.0/0"，请调用[**DeleteIpForwardEntry2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546365(v=vs.85)) IP Helper 函数以删除路由（如果**NextHop**不等于新的网关地址）。 否则，该路由条目已在系统中。
 
 3.  如果微型端口驱动程序在上一循环中找不到所需的路由条目，则应通过使用[**InitializeIpForwardEntry**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff554882(v=vs.85)) IP Helper 函数初始化[**MIB\_IPFORWARD\_table2.row2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff559245(v=vs.85))结构来添加新条目。 初始化结构的以下成员：
 

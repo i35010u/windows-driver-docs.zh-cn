@@ -37,36 +37,36 @@ GPD 文件可以包含预处理器指令，这些指令可用于控制 GPD 文�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><em><strong>定义</strong>：<em>SymbolName</em></p></td>
+<td><p><em><strong>定义</strong>： <em>SymbolName</em></p></td>
 <td><p>定义一个符号。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>Undefine @ no__t-1：<em>SymbolName</em></p></td>
+<td><p></em><strong>取消定义</strong>： <em>SymbolName</em></p></td>
 <td><p>删除以前定义的符号。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em><strong>Ifdef</strong> ：<em>SymbolName</em></p></td>
+<td><p><em><strong>Ifdef</strong> ： <em>SymbolName</em></p></td>
 <td><p>指示 GPD 文件条目块的开头。</p>
 <p>如果定义了指定的符号，则 GPD 分析器处理此指令和下一个 *<strong>Ifdef</strong>、*<strong>Elseifdef</strong>、*<strong>Else</strong>或 *<strong>Endif</strong>指令之间的 GPD 文件项。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>Elseifdef @ no__t-1：<em>SymbolName</em></p></td>
-<td><p>如果定义了指定的符号，并且以前的 <em><strong>Ifdef</strong>或 *<strong>Elseifdef</strong>指令指定的符号未定义，则此指令与下一个 *<strong>Ifdef</strong>之间的 GPD 文件项，*<strong>Elseifdef</strong>，*<strong>Else</strong>或 *<strong>Endif</strong>指令由 GPD 分析器处理。</p></td>
+<td><p></em><strong>Elseifdef</strong>： <em>SymbolName</em></p></td>
+<td><p>如果定义了指定的符号并且先前 <em><strong>Ifdef</strong>或 *<strong>Elseifdef</strong>指令指定的符号未定义，则此指令与下一个 *<strong>Ifdef</strong>、*<strong>Elseifdef</strong>、*<strong>Else</strong>或 *<strong>Endif</strong>指令之间的 GPD 文件项由 GPD 分析器处理。</p></td>
 </tr>
 <tr class="odd">
-<td><p></em><strong>Else @ no__t-1：</p></td>
-<td><p>如果上一个 <em><strong>Ifdef</strong>或 *<strong>Elseifdef</strong>指令指定的符号未定义，则 GPD 分析器将处理此指令和下一个 *<strong>Ifdef</strong>或 *<strong>Endif</strong>指令之间的 GPD 文件项。</p></td>
+<td><p></em><strong>Else</strong>：</p></td>
+<td><p>如果前面 <em><strong>Ifdef</strong>或 *<strong>Elseifdef</strong>指令指定的符号未定义，则 GPD 分析器将处理此指令和下一个 *<strong>Ifdef</strong>或 *<strong>Endif</strong>指令之间的 GPD 文件项。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>Endif @ no__t-1：</p></td>
+<td><p></em><strong>Endif</strong>：</p></td>
 <td><p>指示 GPD 文件条目块的结束。</p></td>
 </tr>
 <tr class="odd">
-<td><p><em><strong>包括</strong>："<em>FileName</em>"</p></td>
+<td><p><em><strong>包括</strong>： "<em>FileName</em>"</p></td>
 <td><p>指定其他 GPD 文件的名称。 请参阅<a href="using-multiple-gpd-files-in-a-minidriver.md" data-raw-source="[Using Multiple GPD Files in a Minidriver](using-multiple-gpd-files-in-a-minidriver.md)">在微型驱动程序中使用多个 GPD 文件</a>。</p></td>
 </tr>
 <tr class="even">
-<td><p></em><strong>SetPPPrefix @ no__t-1：<em>PrefixString</em></p></td>
+<td><p></em><strong>SetPPPrefix</strong>： <em>PrefixString</em></p></td>
 <td><p>更改预先为预处理器指令的前缀字符串。 请参阅<strong>更改预处理器指令前缀</strong>部分。</p></td>
 </tr>
 </tbody>
@@ -76,31 +76,31 @@ GPD 文件可以包含预处理器指令，这些指令可用于控制 GPD 文�
 
 条件预处理器指令可以嵌套。 在每个嵌套级别，使用条件预处理器指令的顺序如下所示：
 
-\***Ifdef**：*Symbol1*GPD 文件部分
+\***Ifdef**： *Symbol1* GPD file 部分
 
-\***Elseifdef**：*Symbol2*GPD 文件部分
+\***Elseifdef**： *Symbol2* GPD file 部分
 
-\***Elseifdef**：*Symbol3*GPD 文件部分
+\***Elseifdef**： *Symbol3* GPD file 部分
 
-\***Elseifdef**：*Symbol4*GPD 文件部分
+\***Elseifdef**： *Symbol4* GPD file 部分
 
 ...
 
-\***Else**：GPD 文件部分
+\***Else**： GPD file 部分
 
 \***Endif**：
 
-对于使用的每个 @no__t 0**Ifdef**指令，都需要 \***Endif** 。 @No__t-0**Elseifdef**和 \***Else**指令是可选的。 每个 GPD 文件部分都可以包含 GPD 文件项，还可以包含一组嵌套的条件预处理器指令。
+对于使用的每个 \***Ifdef**指令，都需要 \***Endif** 。 \***Elseifdef**和 \***Else**指令是可选的。 每个 GPD 文件部分都可以包含 GPD 文件项，还可以包含一组嵌套的条件预处理器指令。
 
-使用 \* 定义的所有**符号都将**保持定义，直到使用 **@no__t 2 取消定义显式**定义。
+使用 \***定义**定义的所有符号将保持定义，直到使用 \***取消定义显式**定义。
 
-@No__t-0**Include**指令允许您指定其他 GPD 文件的名称。 有关详细信息，请参阅[在微型驱动程序中使用多个 GPD 文件](using-multiple-gpd-files-in-a-minidriver.md)。
+\***Include**指令允许您指定其他 GPD 文件的名称。 有关详细信息，请参阅[在微型驱动程序中使用多个 GPD 文件](using-multiple-gpd-files-in-a-minidriver.md)。
 
-请注意，@no__t 0IgnoreBlock GPD 项不影响预处理器指令，因为预处理器在 GPD 分析器之前执行。
+请注意，\*IgnoreBlock GPD 项不影响预处理器指令，因为预处理器在 GPD 分析器之前执行。
 
 ### <a href="" id="ddk-changing-the-preprocessor-directive-prefix-gg"></a>更改预处理器指令前缀
 
-@No__t-0**SetPPPrefix**指令允许您更改与预处理器指令一起使用的前缀。 也就是说，您可以使用此指令替换前面带有其他字符或字符串的预处理器指令前面的星号（\*）字符。
+\***SetPPPrefix**指令允许您更改与预处理器指令一起使用的前缀。 也就是说，您可以使用此指令替换前面带有其他字符或字符串的预处理器指令前面的星号（\*）字符。
 
 例如，如果 GPD 文件包含以下指令：
 
@@ -108,7 +108,7 @@ GPD 文件可以包含预处理器指令，这些指令可用于控制 GPD 文�
 *SetPPPrefix: #SpecialPrefix#
 ```
 
-然后，预处理器将停止搜索以 **\*** 开头的预处理器指令，而是查找以 **\#SpecialPrefix @ no__t-4**开头的指令。 以下顺序将预处理器前缀暂时更改为 **\#SpecialPrefix @ no__t-2**，然后将其还原到 **\*** 。
+然后，预处理器将停止搜索以 **\*** 开头的预处理器指令，而是查找以 **\#SpecialPrefix\#** 开头的指令。 以下序列会暂时将预处理器前缀更改为 **\#SpecialPrefix\#** ，然后将其还原为 **\*** 。
 
 ```cpp
 *SetPPPrefix: #SpecialPrefix#
@@ -166,7 +166,7 @@ Microsoft 定义以下预处理器符号。
 <td><p>环境为 Windows NT 4.0。</p></td>
 </tr>
 <tr class="even">
-<td><p>PARSER_VER_ 1。0</p></td>
+<td><p>PARSER_VER_1 0</p></td>
 <td><p>适用于 Windows NT 4.0、Windows 2000 和 Windows XP 的 GPD 预处理器</p></td>
 <td><p>GPD 分析器版本1。0</p></td>
 </tr>
@@ -175,7 +175,7 @@ Microsoft 定义以下预处理器符号。
 
  
 
-WINNT @ no__t-040、WINNT @ no__t-150 和 WINNT @ no__t-251 符号适用于创建与 Windows NT 4.0、Windows 2000 和 Windows XP 兼容的 GPD 文件。 例如，如果 Windows XP 支持 Windows 2000 不支持的打印机功能，则可在 GPD 文件部分中指定该功能，该文件由 \***Ifdef**界定：WINNT @ no__t-051 和 \***Endif**指令。
+WINNT\_40、WINNT\_50 和 WINNT\_51 符号可用于创建与 Windows NT 4.0、Windows 2000 和 Windows XP 兼容的 GPD 文件。 例如，如果 Windows XP 支持 Windows 2000 不支持的打印机功能，则可在 GPD 文件部分中指定该功能，该文件由 \***Ifdef**： WINNT\_51 和 \***Endif**指令进行绑定。
 
  
 

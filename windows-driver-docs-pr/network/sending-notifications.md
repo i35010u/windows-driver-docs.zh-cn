@@ -22,7 +22,7 @@ ms.locfileid: "72841959"
 
 IHV 扩展 DLL 调用[**Dot11ExtSendNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_notification)函数将通知发送到已注册了通知的任何服务或应用程序。 若要接收通知，服务或应用程序必须通过调用 WlanRegisterNotification 函数注册到自动 Configuration Manager （ ）。 有关此功能的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-**请注意**  服务或应用程序必须注册源值为 L2\_通知\_源\_WLAN\_IHV 的通知，以便通过调用来[**接收通知。Dot11ExtSendNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_notification)函数。
+**请注意**  服务或应用程序必须注册源值为 L2\_通知\_源\_WLAN\_IHV 的通知，以便通过调用[**Dot11ExtSendNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_send_notification)函数接收通知。
 
  
 

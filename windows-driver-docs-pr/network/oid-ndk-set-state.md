@@ -3,7 +3,7 @@ title: OID_NDK_SET_STATE
 description: 作为一个集请求，NDIS 和过量驱动程序使用 OID_NDK_SET_STATE OID 来设置微型端口适配器的 NDK 功能的状态。
 ms.assetid: 5BA49F42-FE37-4860-B68F-92A7F4007639
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_NDK_SET_STATE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_NDK_SET_STATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 017e0e4a059b37e0e9b0470366b510ea34af4650
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

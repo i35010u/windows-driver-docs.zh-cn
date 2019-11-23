@@ -38,7 +38,7 @@ Hyper-v 可扩展交换机接口使用以下对象标识符（Oid）来预配具
 
 -   一组[**NDIS\_交换机\_属性\_枚举\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。 其中每个结构都包含有关交换机策略的属性的信息。
 
-    **请注意**  如果[**ndis\_SWITCH\_\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)的**NumProperties**成员设置为0，则不会将[**ndis\_\_\_枚举\__ 返回信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。
+    **请注意**  如果[**ndis\_SWITCH\_\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)的**NumProperties**成员设置为0，则不会返回[**ndis\_交换机\_属性\_枚举\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。\_
 
      
 
@@ -46,15 +46,15 @@ Hyper-v 可扩展交换机接口使用以下对象标识符（Oid）来预配具
 
  
 
-可扩展交换机扩展在处理 Oid 的 OID 集请求时必须遵循这些准则[\_switch\_属性\_ADD](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)、 [oid\_switch\_属性\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)或[oid\_switch\_删除\_属性](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)：
+可扩展交换机扩展在处理 Oid 的 OID 集请求时必须遵循这些准则[\_switch\_属性\_添加](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-add)、 [oid\_开关\_属性\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)或 OID\_\_[删除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)：\_
 
--   扩展不能修改[**ndis\_交换机\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)或[**ndis\_交换机\_删除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)与 OID 请求关联\_参数结构。
+-   扩展不能修改[**ndis\_交换机\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_parameters)或[**ndis\_交换机\_删除**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)与 OID 请求关联\_参数结构。\_
 
--   如果以前已使用开关属性预配了一个开关属性，则扩展必须处理[OID\_switch\_属性\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)或[oid\_switch\_DELETE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete) set 请求将以下[**NDIS\_switch\_属性的成员与属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)或[**ndis\_switch\_属性匹配\_DELETE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构：
+-   如果以前已设置了一个开关属性，且该扩展以前已设置了一个开关属性，而该扩展已设置了与[**ndis\_开关\_属性\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)\_\_属性\_参数或[**ndis\_switch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)\_属性\_\_参数结构相同的 switch 属性，则该扩展必须处理[OID\_switch 属性\_UPDATE](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-update)或[oid\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-property-delete)
 
     -   指定开关属性类型的**PropertyType**成员。
 
-        **注意**  从 Ndis 6.30 开始，仅**NdisSwitchPropertyTypeCustom**的 switch 属性由[**NDIS\_switch\_属性\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)或[**NDIS\_switch 指定\_属性\_删除\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。
+        **请注意**  从 Ndis 6.30 开始，仅**NdisSwitchPropertyTypeCustom**的 switch 属性由[**NDIS\_switch\_属性指定，\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)或[**ndis\_\_DELETE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_delete_parameters)结构。\_
 
          
 

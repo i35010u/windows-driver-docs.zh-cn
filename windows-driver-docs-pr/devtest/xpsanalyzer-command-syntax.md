@@ -53,23 +53,23 @@ ms.locfileid: "72378616"
 
 当 XpsAnalyzer 分析 XML 文件时，它将创建包含分析报告的以下两个文件。
 
-<span id="xpsanalyzer_result.htm_______"></span><span id="XPSANALYZER_RESULT.HTM_______"></span>**XpsAnalyzer \_Result .htm**    
+<span id="xpsanalyzer_result.htm_______"></span><span id="XPSANALYZER_RESULT.HTM_______"></span>**XpsAnalyzer\_.htm**   
 超文本标记（HTM）格式的 XPS 分析报表。
 
-<span id="xpsanalyzer_result.xml_______"></span><span id="XPSANALYZER_RESULT.XML_______"></span>**XpsAnalyzer \_Result .xml**    
+<span id="xpsanalyzer_result.xml_______"></span><span id="XPSANALYZER_RESULT.XML_______"></span>**XpsAnalyzer\_Result**   
 可扩展标记语言（XML）格式的 XPS 分析报表。
 
 在这些文件中，已分析的 XPS 文件的名称后跟分析报告。
 
 如果指定了 **/目录：** 参数，则文件包含对位于指定目录中的每个 XPS 文件的分析。 每个文件的名称后跟该文件的 XPS 分析。
 
-如果指定了 **/FlushSql：** 参数，则 XpsAnalyzer 将创建两个 SQL 文件以及 XpsAnalyzer \_Result .Htm 和 XpsAnalyzer \_Result .xml 文件。 SQL 文件的详细信息如下所示：
+如果指定了 **/FlushSql：** 参数，则 XpsAnalyzer 将创建两个 SQL 文件以及 XpsAnalyzer\_Result 和 XpsAnalyzer\_result .xml 文件。 SQL 文件的详细信息如下所示：
 
-<span id="setup_sqlserver.sql_______"></span><span id="SETUP_SQLSERVER.SQL_______"></span>**设置 \_SqlServer .sql**    
+<span id="setup_sqlserver.sql_______"></span><span id="SETUP_SQLSERVER.SQL_______"></span>**安装程序\_SqlServer**   
 此文件包含一个脚本，用于准备可用于在 XPS 分析上搜索的 SQL 数据库。
 
-<span id="update_sqlserver.sql_______"></span><span id="UPDATE_SQLSERVER.SQL_______"></span>**更新 \_SqlServer .sql**    
-此文件包含一个脚本，用于将 XPS 分析结果插入通过安装 \_SqlServer .sql 脚本创建的 SQL 数据库。
+<span id="update_sqlserver.sql_______"></span><span id="UPDATE_SQLSERVER.SQL_______"></span>**更新\_SqlServer**   
+此文件包含一个脚本，用于将 XPS 分析结果插入到通过安装\_SqlServer 脚本创建的 SQL 数据库。
 
 有关 XPS 分析报表的示例，请参阅[XpsAnalyzer Output](xpsanalyzer-output.md)。
 

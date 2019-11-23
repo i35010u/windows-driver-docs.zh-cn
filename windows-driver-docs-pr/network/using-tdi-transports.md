@@ -16,7 +16,7 @@ ms.locfileid: "72842972"
 # <a name="using-tdi-transports"></a>使用 TDI 传输
 
 
-Winsock 内核（WSK）子系统为使用[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))传输提供支持。 为了通过 WSK[网络编程接口（NPI）](network-programming-interface.md)使用 TDI 传输，WSK 应用程序必须将每个 tdi 传输所使用的每个 tdi 传输的地址族、套接字类型和协议的组合映射到每个 tdi 的关联设备名称。运输. WSK 应用程序使用[**WSK\_tdi\_DEVICENAME\_映射**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)客户端控制操作，将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称。
+Winsock 内核（WSK）子系统为使用[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565094(v=vs.85))传输提供支持。 为了通过 WSK[网络编程接口（NPI）](network-programming-interface.md)使用 TDI 传输，WSK 应用程序必须将每个 tdi 传输所使用的每个 tdi 传输的地址族、套接字类型和协议的组合映射到每个 tdi 传输的关联设备名称。 WSK 应用程序使用[**WSK\_tdi\_DEVICENAME\_映射**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-tdi-devicename-mapping)客户端控制操作，将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称。
 
 下面的代码示例演示 WSK 应用程序如何将地址族、套接字类型和协议的组合映射到 TDI 传输的设备名称。
 

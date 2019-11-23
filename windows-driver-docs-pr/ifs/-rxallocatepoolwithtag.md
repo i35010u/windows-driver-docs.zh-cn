@@ -3,7 +3,7 @@ title: '\_RxAllocatePoolWithTag 函数'
 description: '\_RxAllocatePoolWithTag 从池中分配内存，在块开头有一个四字节标记，可用于帮助捕获内存 trashing 的实例。'
 ms.assetid: 5e999d06-ebcf-433a-a714-f340a1c74be1
 keywords:
-- _RxAllocatePoolWithTag 函数可安装的文件系统驱动程序
+- _RxAllocatePoolWithTag 功能可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -94,7 +94,7 @@ VOID* _RxAllocatePoolWithTag(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

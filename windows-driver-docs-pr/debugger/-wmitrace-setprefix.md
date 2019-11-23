@@ -33,12 +33,12 @@ ms.locfileid: "71164785"
 
 
 <span id="______________"></span> **+**    
-导致*PrefixVariables*追加到跟踪消息前缀。 如果未 **+** 使用该令牌，则*PrefixVariables*将替换现有的跟踪消息前缀。
+导致*PrefixVariables*追加到跟踪消息前缀。 如果未使用 **+** 令牌， *PrefixVariables*将替换现有的跟踪消息前缀。
 
 <span id="_______PrefixVariables______"></span><span id="_______prefixvariables______"></span><span id="_______PREFIXVARIABLES______"></span>*PrefixVariables*   
 指定跟踪消息前缀中的格式和数据的一组变量。
 
-变量的格式为% n！ x！，其中% n 表示数据字段，！ x！ 表示数据类型。 还可以包括分隔字符，如冒号（:)、分号（;)、括号（（））、大括号（{}）和方括号（ \[ \] ），以分隔字段。
+变量的格式为% n！ x！，其中% n 表示数据字段，！ x！ 表示数据类型。 你还可以包括分隔字符，如冒号（:)、分号（;)、括号（（））、大括号（{}）和方括号（\[ \]）来分隔字段。
 
 每个% n 变量都表示一个参数，下表对此进行了说明。
 
@@ -58,12 +58,12 @@ ms.locfileid: "71164785"
 <tbody>
 <tr class="odd">
 <td align="left"><p>%1</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>跟踪消息的消息 GUID 的友好名称。 默认情况下，消息 GUID 的友好名称是在其中生成跟踪提供程序的目录的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%2</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>源文件和行号。</p>
 <p>此变量表示跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称是源文件的名称和生成跟踪消息的代码的行号。</p></td>
 </tr>
@@ -75,18 +75,18 @@ ms.locfileid: "71164785"
 </tr>
 <tr class="even">
 <td align="left"><p>%4</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>生成跟踪消息的时间的时间戳。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>% 5</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>%5</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>内核时间。</p>
 <p>显示生成跟踪消息时内核模式指令的已用执行时间（以 CPU 刻度为单位）。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%6</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>用户时间。</p>
 <p>显示生成跟踪消息时用户模式指令的已用执行时间（以 CPU 刻度为单位）。</p></td>
 </tr>
@@ -110,29 +110,29 @@ ms.locfileid: "71164785"
 </tr>
 <tr class="even">
 <td align="left"><p>%!求!</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>函数名称。</p>
 <p>显示生成跟踪消息的函数的名称。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>%!随意</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>显示启用跟踪消息的跟踪标志的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%!调配!</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>显示启用跟踪消息的跟踪级别的值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>%!COMPNAME!</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>组件名称。</p>
 <p>显示生成跟踪消息的提供程序组件的名称。 仅当在跟踪代码中指定组件名称时，才会显示该组件名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>%!SUBCOMP!</p></td>
-<td align="left"><p>string</p></td>
+<td align="left"><p>字符串</p></td>
 <td align="left"><p>子组件名称。</p>
 <p>显示生成跟踪消息的提供程序的子组件的名称。 仅当在跟踪代码中指定子组件名称时，才会显示子组件名称。</p></td>
 </tr>
@@ -141,7 +141,7 @@ ms.locfileid: "71164785"
 
  
 
-感叹号内的符号是一个转换字符，用于指定变量的格式和精度。 例如，% 8！04X！ 指定格式化为四位数、无符号十六进制数的进程 ID。
+感叹号内的符号是一个转换字符，用于指定变量的格式和精度。 例如，%8！04X！ 指定格式化为四位数、无符号十六进制数的进程 ID。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -153,11 +153,11 @@ ms.locfileid: "71164785"
 
 以下命令将调试器输出中的跟踪消息前缀更改为以下格式：
 
-**！ wmitrace. setprefix% 2！ s！：%！FUNC！：% 8！04x！。% 3！04x！：% 4！ s！：**
+**！ wmitrace. setprefix %2！ s！：%！FUNC！： %8！04x！。%3！04x！： %4！ s！：**
 
 此扩展命令将跟踪消息前缀设置为以下格式：
 
-*SourceFile\_LineNumber：FunctionNameProcessID. ThreadID：SystemTime*
+*SourceFile\_LineNumber： FunctionName： ProcessID. ThreadID： SystemTime：*
 
 因此，将使用指定的格式为跟踪消息预置指定的信息。 下面的代码示例取自 WDK 中 Tracedrv 示例驱动程序的跟踪。
 
@@ -188,9 +188,9 @@ tracedrv_c258: TracedrvDispatchDeviceControl: 0af4.0c64: 07/25/2003-13:55:39.998
 [CPUNumber]ProcessID.ThreadID::SystemTime [ProviderDirectory] 
 ```
 
-可以通过设置% trace\_format\_prefix% 环境变量来更改调试器外部跟踪消息前缀中的格式和数据。 有关演示如何在调试器外设置跟踪消息前缀的示例，请参阅 "示例7：在 Windows 驱动程序工具包（WDK）文档中自定义跟踪消息前缀。 如果消息的跟踪消息前缀不同于默认值，则可能会在计算机上设置此环境变量。
+您可以通过设置% TRACE\_格式\_PREFIX% 环境变量来更改调试器外部跟踪消息前缀中的格式和数据。 有关演示如何在调试器外设置跟踪消息前缀的示例，请参阅 Windows 驱动程序工具包（WDK）文档中的 "示例7：自定义跟踪消息前缀"。 如果消息的跟踪消息前缀不同于默认值，则可能会在计算机上设置此环境变量。
 
-使用此扩展命令设置的前缀仅影响调试器输出。 跟踪日志中显示的跟踪消息前缀由默认值和% 跟踪\_格式\_前缀% 环境变量的值确定。
+使用此扩展命令设置的前缀仅影响调试器输出。 跟踪日志中显示的跟踪消息前缀由默认值和% TRACE\_格式\_PREFIX% 环境变量的值确定。
 
 此扩展仅适用于 WPP 软件跟踪和 Windows 事件跟踪的早期（旧）方法。 其他类提供程序生成的跟踪事件不使用跟踪消息格式（TMF）文件，因此此扩展不会影响它们。
 

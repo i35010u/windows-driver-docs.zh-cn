@@ -53,7 +53,7 @@ ms.locfileid: "72839350"
 
  
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
@@ -61,9 +61,9 @@ ms.locfileid: "72839350"
 --------
 
 [常规连接操作指导原则](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
-[ndis\_STATUS\_DOT11\_连接\_启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start)
-[OID\_DOT11\_RESET\_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
-[NDIS\_\_漫游\_开始\_状态](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)
+[NDIS\_STATUS\_DOT11\_连接\_启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start)
+[OID\_DOT11\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)\_
+\_[\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)\_
  
 
  

@@ -27,7 +27,7 @@ ms.locfileid: "72843480"
 
      
 
-3.  在对其[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的调用上下文中，筛选器驱动程序必须调用[**NdisFNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfnetpnpevent) ，将**NetEventQueryRemoveDevice**事件向上转发到驱动程序堆栈中的下一个筛选器驱动程序。 这会导致 NDIS 使用 NetEventQueryRemoveDevice 的事件代码调用该筛选器驱动程序的*FilterNetPnPEvent*函数 **。**
+3.  在对其[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的调用上下文中，筛选器驱动程序必须调用[**NdisFNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfnetpnpevent) ，将**NetEventQueryRemoveDevice**事件向上转发到驱动程序堆栈中的下一个筛选器驱动程序。 这将导致调用该筛选器驱动程序的 NDIS *FilterNetPnPEvent*函数的事件代码**NetEventQueryRemoveDevice**。
 
     **请注意**  NDIS 只为驱动程序堆栈中的下一个筛选器驱动程序执行此步骤，该驱动程序堆栈会公布[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数的入口点。
 
@@ -35,11 +35,11 @@ ms.locfileid: "72843480"
 
 4.  驱动程序堆栈中的每个筛选器驱动程序重复上一步，直到堆栈中的最高筛选器驱动程序转发**NetEventQueryRemoveDevice。** 引发.
 
-    发生这种情况时，NDIS 会调用绑定到 NIC 的所有协议驱动程序的[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数。 在此调用中，NDIS 指定了 NetEventQueryRemoveDevice 的事件代码 **。**
+    发生这种情况时，NDIS 会调用绑定到 NIC 的所有协议驱动程序的[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数。 NDIS 此调用中指定的事件代码**NetEventQueryRemoveDevice**。
 
 5.  如果已成功初始化微型端口驱动程序，NDIS 将使用**NdisDevicePnPEventSurpriseRemoved**的事件代码调用[*MiniportDevicePnPEventNotify*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)函数。 微型端口驱动程序应注意到设备已被物理删除。 如果微型端口驱动程序是 NDIS WDM 驱动程序，则应取消它向下发送到基础总线驱动程序的任何挂起的 Irp。 如果未成功初始化微型端口驱动程序，则继续处理。
 
-6.  NDIS 将 IRP\_MN\_意外\_删除请求发送到堆栈中的下一个较低设备对象。 接收到返回的 IRP 之后\_MN\_从堆栈中的下一个较低设备对象意外\_删除请求，NDIS 将完成 IRP\_MN\_删除请求。
+6.  NDIS 将 IRP\_MN\_意外\_删除请求发送到堆栈中的下一个较低设备对象。 接收到返回的 IRP 之后\_MN\_从堆栈中的下一个较低设备对象意外\_删除请求，NDIS 将完成 IRP\_MN\_删除请求。\_
 
 7.  PnP 管理器颁发[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，删除 NIC 的软件表示（设备对象等）。
 

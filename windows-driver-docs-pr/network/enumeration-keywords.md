@@ -47,7 +47,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 | 1000 | 1 Gbps |
 | 10,000 | 10 Gbps |
 | 25000 | 25 Gbps |
-| 50000 | 50 Gbps |
+| 50,000 | 50 Gbps |
 | 100000 | 100 Gbps |
 
 <a href="" id="-flowcontrol"></a> **\*FlowControl**  
@@ -83,7 +83,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 如果在传输路径上启用了 Tx 标志，则微型端口驱动程序应执行以下操作：
 
 -   将 802.1 Q 标头插入到每个传出包中，并将其填充到 OOB 中的数据（如果 OOB 中存在任何非零数据）。
--   在[**NDIS\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)中公布适当的**MacOptions**\_常规\_属性（**NDIS\_mac\_选项\_8021P\_优先级**和**NDIS\_MAC\_选项\_8021Q\_VLAN**）。
+-   在[**NDIS\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)中播发适当的**MacOptions**\_常规\_属性（**NDIS\_mac\_选项\_8021P\_优先级**和**NDIS\_mac\_\_8021Q\_VLAN**）。
 
 否则，如果禁用 Tx 标志，则：
 
@@ -175,7 +175,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -250,7 +250,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>FlowControl</strong></p></td>
 <td align="left"><p>流控制</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -304,67 +304,67 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>InterruptModeration</strong></p></td>
 <td align="left"><p>中断调解</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>RSS</strong></p></td>
 <td align="left"><p>接收方缩放</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>HeaderDataSplit</strong></p></td>
 <td align="left"><p>标头数据拆分</p></td>
 <td align="left"><p>0（默认值）</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>TCPConnectionOffloadIPv4</strong></p></td>
 <td align="left"><p>TCP 连接卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>TCPConnectionOffloadIPv6</strong></p></td>
 <td align="left"><p>TCP 连接卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>IPv4 校验和卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -388,7 +388,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>TCPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>TCP 校验和卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -412,7 +412,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong><em>TCPChecksumOffloadIPv6</strong></p></td>
 <td align="left"><p>TCP 校验和卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -436,7 +436,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>UDPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>UDP 校验和卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -460,7 +460,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong><em>UDPChecksumOffloadIPv6</strong></p></td>
 <td align="left"><p>UDP 校验和卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -484,43 +484,43 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>LsoV1IPv4</strong></p></td>
 <td align="left"><p>大型发送卸载版本1（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>LsoV2IPv4</strong></p></td>
 <td align="left"><p>大型发送卸载版本2（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>LsoV2IPv6</strong></p></td>
 <td align="left"><p>大型发送卸载版本2（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong><em>IPsecOffloadV1IPv4</strong></p></td>
 <td align="left"><p>IPsec 卸载版本1（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -544,7 +544,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>IPsecOffloadV2</strong></p></td>
 <td align="left"><p>IPsec 卸载</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -568,7 +568,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong><em>IPsecOffloadV2IPv4</strong></p></td>
 <td align="left"><p>IPsec 卸载（仅 IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -592,7 +592,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong></em>TCPUDPChecksumOffloadIPv4</strong></p></td>
 <td align="left"><p>TCP/UDP 校验和卸载（IPv4）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -616,7 +616,7 @@ HKR, Ndi\params\<SubkeyName>\enum, "3", 0, "%Rx & Tx Enabled%"
 <td align="left"><p><strong>*TCPUDPChecksumOffloadIPv6</strong></p></td>
 <td align="left"><p>TCP/UDP 校验和卸载（IPv6）</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>

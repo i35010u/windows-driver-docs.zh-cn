@@ -88,7 +88,7 @@ ms.locfileid: "72841983"
     </tr>
     <tr class="odd">
     <td align="left"><p>框架控件</p></td>
-    <td align="left"><p>后</p></td>
+    <td align="left"><p>重试</p></td>
     <td align="left"></td>
     <td align="left"><p>X</p></td>
     </tr>

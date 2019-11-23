@@ -17,13 +17,13 @@ ms.locfileid: "72842940"
 
 
 
-对于传输请求，过量驱动程序使用[**NET\_缓冲区\_列表\_接收\_队列\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)宏，以将传出数据**中传出队列的队列标识符设置为NetBufferListFilteringInfo** OOB 信息。 **NetBufferListFilteringInfo**信息在[**NDIS\_NET\_缓冲器\_列表中指定\_筛选\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)结构。
+对于传输请求，过量驱动程序使用[**NET\_缓冲区\_列表\_接收\_队列\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)宏使用**NetBufferListFilteringInfo** OOB 信息设置传出数据中传出队列的队列标识符。 **NetBufferListFilteringInfo**信息在[**NDIS\_NET\_缓冲器\_列表中指定\_筛选\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)结构。
 
 NDIS 驱动程序可以使用[**net\_buffer\_list\_接收\_队列\_ID**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-receive-queue-id)宏来设置或获取[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构的队列标识符。 如果一个队列组包含多个 VM 队列，则可以将传输数据包的队列标识符设置为该组中任何 VM 队列的队列标识符。
 
-协议驱动程序在[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的*SendFlags*参数上将 NDIS\_发送\_标志\_单一\_队列位，以指示所有传输网络\_缓冲区\_列表调用中的结构用于同一传输队列。
+协议驱动程序在[**NdisSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissendnetbufferlists)函数的*SendFlags*参数上将 NDIS\_发送\_标志\_单一\_队列位，以指示调用中的所有传输网络\_缓冲区\_列表结构用于同一传输队列。
 
-微型端口驱动程序设置 NDIS\_在[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数的*SendCompleteFlags*参数上\_SINGLE\_QUEUE 位发送\_完整\_标志，以指示所有网络\_调用中的缓冲区\_列表在同一传输队列中发送。
+微型端口驱动程序设置 NDIS\_在[**NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)函数的*SendCompleteFlags*参数上将\_完成\_标志\_单个\_QUEUE 位，以指示调用中的所有网络\_缓存\_列表在同一传输队列中发送。
 
 有关筛选器测试的详细信息，请参阅[VMQ 筛选器操作](vmq-filter-operations.md)。
 

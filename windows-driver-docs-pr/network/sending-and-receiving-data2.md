@@ -33,7 +33,7 @@ CoNDIS 发送和接收函数类似于无连接发送和接收功能。 CoNDIS �
 
 支持 NDIS 5。*x*及更早版本的驱动程序，CoNDIS 在旧版[**NDIS\_数据包**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff557086(v=vs.85))结构和基于网络\_缓冲区的结构之间提供转换层。 CoNDIS 在 NET\_缓冲区结构与 NDIS\_数据包结构之间执行必要的转换。 为了避免由于转换而导致性能下降，必须更新 CoNDIS 驱动程序以支持 NET\_缓冲区结构，并且应支持所有数据路径中的多个 NET\_缓冲器\_列表结构。
 
-本部分包括下列主题：
+本部分包括以下主题：
 
 [从 CoNDIS 驱动程序发送 NET\_缓冲区结构](sending-net-buffer-structures-from-condis-drivers.md)
 

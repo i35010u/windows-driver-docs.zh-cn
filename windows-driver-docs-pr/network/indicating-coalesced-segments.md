@@ -28,9 +28,9 @@ SCU 必须：
 
      
 
-NIC 或微型端口驱动程序应在指示合并段之前重新计算 TCP 和 IPv4 校验和（如果适用）。 如果 NIC 或微型端口驱动程序对 TCP 和 IPv4 校验和进行验证，但不为合并段重新计算，则必须在\_TCP\_IP 的 NDIS 中设置 TcpChecksumValueInvalid 和**IpChecksumValueInvalid**标志[ **\_CHECKSUM\_NET\_缓冲器\_列表\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构。 此外，在这种情况下，NIC 或微型端口驱动程序可能会在段中选择性地将 TCP 和 IPv4 标头校验值为零。
+NIC 或微型端口驱动程序应在指示合并段之前重新计算 TCP 和 IPv4 校验和（如果适用）。 如果 NIC 或微型端口驱动程序验证 TCP 和 IPv4 校验和，但不为合并段重新计算它们，则它必须在[ **\_TCP\_IP\_\_\_检查**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)器中设置**TcpChecksumValueInvalid**和**IpChecksumValueInvalid**标志。\_\_ 此外，在这种情况下，NIC 或微型端口驱动程序可能会在段中选择性地将 TCP 和 IPv4 标头校验值为零。
 
-NIC 和微型端口驱动程序必须始终在 NDIS 中设置**IpChecksumSucceeded**和**TCPCHECKSUMSUCCEEDED**标志[ **\_TCP\_IP\_校验和\_NET\_BUFFER\_列表\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构，然后再指示合并段。
+NIC 和微型端口驱动程序必须始终在 NDIS 中设置**IpChecksumSucceeded**和**TCPCHECKSUMSUCCEEDED**标志[ **\_TCP\_IP\_校验和\_NET\_BUFFER\_列表\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_tcp_ip_checksum_net_buffer_list_info)结构，然后才能指示合并段。
 
 有关合并规则的详细信息，请参阅[合并 Tcp/ip 段的规则](rules-for-coalescing-tcp-ip-packets.md)。
 

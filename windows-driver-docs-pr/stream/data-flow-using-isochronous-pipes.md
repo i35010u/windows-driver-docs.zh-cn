@@ -42,7 +42,7 @@ USBCAMD2 通过请求两次传输32数据包，开始对同步管道进行流式
 
 1.  对于 USBCAMD2 从 USB 总线驱动程序接收的每个数据包，USBCAMD2 会调用摄像微型驱动程序的[*CamProcessUSBPacketEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_packet_routine_ex)回调函数（为 IRQL = 调度\_级别）。 在出现错误情况时，照相机微型驱动程序必须设置相应的错误标志。 如果使用**CamProcessUSBPacketEx**的*FrameComplete*参数检测到新视频帧的开头，则微型驱动程序还必须设置新的视频帧标志。
 
-2.  在照相机微型驱动程序确定了视频帧完成后，如果需要执行，则 USBCAMD2 将从工作线程的上下文中调用相机微型驱动程序的[*CamProcessRawVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)回调函数来处理视频帧。颜色空间转换或解压缩。 USBCAMD2 将完成的原始帧返回到要由相机微型驱动程序处理的*sys.databases*类驱动程序，以 IRQL = 被动\_级别。 如果没有足够的帧数据或由于数据错误而在解压缩期间出现错误，例如， **CamProcessRawVideoFrameEx**的*BytesReturned*参数必须设置为0。
+2.  在照相机微型驱动程序确定了视频帧完成后，如果需要执行颜色空间转换或解压缩，USBCAMD2 将调用相机微型驱动程序的[*CamProcessRawVideoFrameEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbcamdi/nc-usbcamdi-pcam_process_raw_frame_routine_ex)回调函数（从工作线程的上下文）来处理视频帧。 USBCAMD2 将完成的原始帧返回到要由相机微型驱动程序处理的*sys.databases*类驱动程序，以 IRQL = 被动\_级别。 如果没有足够的帧数据或由于数据错误而在解压缩期间出现错误，例如， **CamProcessRawVideoFrameEx**的*BytesReturned*参数必须设置为0。
 
  
 

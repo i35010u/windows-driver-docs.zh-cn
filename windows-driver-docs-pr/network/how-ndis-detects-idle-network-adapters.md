@@ -16,7 +16,7 @@ ms.locfileid: "72842542"
 
 在微型端口驱动程序启用 NDIS 选择性挂起并注册其处理程序函数后，NDIS 会按以下方式监视网络适配器的 i/o 活动：
 
--   NDIS 监视对 i/o 处理程序函数的调用，微型端口驱动程序通过[**NDIS\_微型端口\_驱动程序注册\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)和[**NDIS\_微型端口\_PNP\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_pnp_characteristics)构造. 例如，NDIS 监视对微型端口驱动程序的[*MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)或[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)的调用，以确定是否在任何数据包 i/o 活动中涉及该驱动程序。
+-   NDIS 监视对 i/o 处理程序函数的调用，微型端口驱动程序通过[**NDIS\_微型端口\_驱动程序\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)和[**NDIS\_微型端口\_PNP\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_pnp_characteristics)结构来注册。 例如，NDIS 监视对微型端口驱动程序的[*MiniportSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)或[*MiniportReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)的调用，以确定是否在任何数据包 i/o 活动中涉及该驱动程序。
 
 -   NDIS 还监视过量协议驱动程序发出的[**NdisOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisoidrequest)和[**NdisDirectOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdirectoidrequest)调用。
 

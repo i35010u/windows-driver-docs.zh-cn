@@ -104,7 +104,7 @@ Hyper-v 可扩展交换机接口管理以下组件的生存期：
  
 
 <a href="" id="network-adapter-connection-deleted"></a>*已删除网络适配器连接*  
-在所有针对网络适配器连接的数据包流量和 OID 请求都完成之后，可扩展交换机接口会发出 oid [\_switch\_NIC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)的 oid 集请求，\_delete 从可扩展交换机。
+在所有针对网络适配器连接的数据包流量和 OID 请求都完成之后，可扩展交换机接口会发出 oid [\_switch\_NIC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)的 oid 集请求，\_delete 从可扩展交换机中删除连接。
 
 在此状态下，可扩展交换机接口将不再发出以连接为目标的数据包或 OID 请求。
 
@@ -143,38 +143,38 @@ Hyper-v 可扩展交换机接口管理以下组件的生存期：
 <tbody>
 <tr class="odd">
 <td align="left"><p>未创建端口</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>端口已创建</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>已创建网络适配器连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>网络适配器已连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>网络适配器已断开连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>已删除网络适配器连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>端口撕裂</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 </tbody>
 </table>
@@ -205,66 +205,66 @@ Hyper-v 可扩展交换机接口管理以下组件的生存期：
 <tbody>
 <tr class="odd">
 <td align="left"><p>未创建端口</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>端口已创建</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>已创建网络适配器连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>网络适配器已连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>网络适配器已断开连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>已删除网络适配器连接</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>端口撕裂</p></td>
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 </tbody>
 </table>

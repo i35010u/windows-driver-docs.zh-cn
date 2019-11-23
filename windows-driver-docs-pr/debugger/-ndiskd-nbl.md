@@ -1,6 +1,6 @@
 ---
 title: ndiskd. nbl
-description: Ndiskd. nbl 扩展显示有关 NET_BUFFER_LIST （NBL）结构的信息。
+description: Ndiskd. nbl 扩展显示 NET_BUFFER_LIST （NBL）结构的相关信息。
 ms.assetid: 1806ac7c-b438-4c28-bab0-1b65dba651ea
 keywords:
 - ndiskd nbl Windows 调试

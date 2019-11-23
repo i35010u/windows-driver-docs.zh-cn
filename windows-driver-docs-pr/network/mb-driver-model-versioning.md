@@ -1,6 +1,6 @@
 ---
-title: MB 驱动程序型号版本控制
-description: MB 驱动程序型号版本控制
+title: MB 驱动程序模型版本控制
+description: MB 驱动程序模型版本控制
 ms.assetid: f5778b36-4f84-4cfe-965c-36af225ac0dc
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72844291"
 ---
-# <a name="mb-driver-model-versioning"></a>MB 驱动程序型号版本控制
+# <a name="mb-driver-model-versioning"></a>MB 驱动程序模型版本控制
 
 
 MB 驱动程序模型版本控制通过使用驱动程序模型版本和单个 OID 数据结构来完成。 这与 NDIS 1.x 中使用的版本控制相一致。

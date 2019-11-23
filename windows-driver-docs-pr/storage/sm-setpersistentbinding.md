@@ -86,7 +86,7 @@ SM\_GetPersistentBinding 方法检索的永久绑定的总数。 此值将小于
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

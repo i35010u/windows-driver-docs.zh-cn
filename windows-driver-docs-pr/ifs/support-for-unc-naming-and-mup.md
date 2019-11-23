@@ -164,9 +164,9 @@ typedef struct _QUERY_PATH_RESPONSE {
 
 请注意，IOCTL\_REDIR\_查询\_路径是\_两个 IOCTL 的方法。 这意味着输入缓冲区和输出缓冲区可能不在同一地址。 UNC 提供程序的一个常见错误是假定输入缓冲区和输出缓冲区相同，并使用输入缓冲区指针来提供响应。
 
-当 UNC 提供程序收到 IOCTL\_REDIR\_QUERY\_PATH 请求时，它必须确定该提供程序是否可以处理\_路径\_请求结构的查询的**FilePathName**成员中指定的 UNC 路径。 如果是这样，则必须将查询\_路径\_响应结构的**LengthAccepted**成员更新为它所声明的前缀的长度（以字节为单位），并完成状态为\_SUCCESS 的 IRP。 如果提供程序无法处理指定的 UNC 路径，则它必须使 IOCTL\_使用适当的 NTSTATUS 错误代码\_查询\_路径请求，且不得更新\_路径的查询的**LengthAccepted**成员\_响应结构。 提供程序不能修改任何其他成员或任何条件下的**FilePathName**字符串。
+当 UNC 提供程序收到 IOCTL\_REDIR\_QUERY\_PATH 请求时，它必须确定该提供程序是否可以处理\_路径\_请求结构的查询的**FilePathName**成员中指定的 UNC 路径。 如果是这样，则必须将查询\_路径\_响应结构的**LengthAccepted**成员更新为它所声明的前缀的长度（以字节为单位），并完成状态为\_SUCCESS 的 IRP。 如果提供程序无法处理指定的 UNC 路径，则它必须使 IOCTL\_REDIR\_QUERY\_PATH 请求与相应的 NTSTATUS 错误代码，并且不得更新\_路径的查询的**LengthAccepted**成员\_响应结构。 提供程序不能修改任何其他成员或任何条件下的**FilePathName**字符串。
 
-如果在响应 IRP\_MJ\_创建或其他使用 UNC 名称的 Irp 时无法识别 \\\\服务器\\共享前缀名称，建议返回的 NTSTATUS 代码是以下各项之一:
+如果在响应 IRP\_MJ\_创建或其他使用 UNC 名称的 Irp 时无法识别 \\\\服务器\\共享前缀名称，建议返回的 NTSTATUS 代码是以下各项之一：
 
 <span id="STATUS_BAD_NETWORK_PATH"></span><span id="status_bad_network_path"></span>状态\_错误\_网络\_路径  
 找不到网络路径。 虚拟机名称（例如\\\\服务器）无效或网络重定向程序无法解析计算机名称（使用任何可用的名称解析机制）。
@@ -188,7 +188,7 @@ IOCTL\_REDIR\_查询\_路径请求应仅来自 MUP，而 IRP 的请求者模式�
 
 如果网络重定向程序无法解析前缀，则它必须返回与上述建议的 NTSTATUS 代码列表中的预期语义最为匹配的 NTSTATUS 代码。 如果不是上述列表中的 NTSTATUS 代码，网络重定向程序不能将实际遇到的错误（例如\_连接\_拒绝）直接返回到 MUP。
 
-提供程序声明的前缀长度取决于单个 UNC 提供程序。 大多数提供商通常会声明 \\\\&lt;服务器名称&gt;\\&lt;共享 &gt; \\\\&lt;servername&gt;\\&lt;&gt;&lt;路径\\&gt;。 例如，如果提供程序在给定 \\路径 \\\\server\\公共公开\\server\\public\\dir1\\dir2，则前缀的所有基于名称的操作 \\\\server\\公开（例如\\server\\公用\\file1）会自动路由到该提供程序，而不会进行任何前缀解析，因为前缀已在前缀缓存中。 不过，\\server\\行销\\演示的前缀路径将通过前缀解析。
+提供程序声明的前缀长度取决于单个 UNC 提供程序。 大多数提供商通常会声明 \\\\&lt;servername&gt;\\&lt;&gt; \\\\&lt;&gt;服务器名称 \\&lt;&gt;\\&lt;&gt; 例如，如果提供程序在给定路径 \\\\\\server\\公共公开 \\server\\public\\dir1\\dir2，则前缀的所有基于名称的操作将自动路由到该提供程序，而无需任何前缀解析，因为前缀已在前缀缓存中。\\\\\\\\\\\\ 不过，\\server\\行销\\演示的前缀路径将通过前缀解析。
 
 如果网络重定向程序声明服务器名称（例如\\\\服务器），则此服务器上的所有共享请求都将发送到此网络重定向程序。 仅当其他网络重定向程序无法访问同一服务器上的另一个共享时，此行为才是可接受的。 例如，声明 UNC 路径 \\\\服务器的网络重定向器将阻止其他网络重定向程序访问此服务器上的其他共享（例如，WebDAV 访问 \\\\server\\web）。
 
@@ -210,7 +210,7 @@ IOCTL\_REDIR\_查询\_路径请求应仅来自 MUP，而 IRP 的请求者模式�
 
 如果网络小型重定向程序想要查看前缀声明的详细信息，则可以读取 RX 中的这些成员\_传递给**MRxCreateSrvCall**的上下文。 否则，它只会尝试连接到服务器共享，并在**MRxCreateSrvCall**调用成功时返回状态\_成功。 RDBSS 将代表网络小型重定向器发出前缀声明。
 
-在这种情况下，网络小型重定向器可以直接接收此 IOCTL。 网络小型重定向程序可以在初始化并注册到 RDBSS 之前保存其驱动程序调度表的副本。 在调用[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)以向 RDBSS 注册后，网络小型重定向程序可以保存由 RDBSS 安装的新驱动程序调度表入口点的副本，并还原其原始驱动程序调度表。 需要对还原的驱动程序调度表进行修改，以便在为网络微型重定向程序所需的目标检查收到的 IRP 后，调用将转发到 RDBSS 驱动程序调度入口点。 当驱动程序初始化 RDBSS 并调用**RxRegisterMinrdr**时，RDBSS 将复制网络小型重定向程序的驱动程序调度表。 链接到*rdbsslib*的网络微型重定向程序必须先保存其原始驱动程序调度表，然后再从其**DriverEntry**例程调用[**RxDriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry) ，以初始化 RDBSS 静态库并还原其驱动程序调用**RxRegisterMinrdr**之后调度表。 这是因为 RDBSS 会在**RxDriverEntry**和**RxRegisterMinrdr**例程中通过网络小型重定向器发送表进行复制。
+在这种情况下，网络小型重定向器可以直接接收此 IOCTL。 网络小型重定向程序可以在初始化并注册到 RDBSS 之前保存其驱动程序调度表的副本。 在调用[**RxRegisterMinirdr**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nf-mrx-rxregisterminirdr)以向 RDBSS 注册后，网络小型重定向程序可以保存由 RDBSS 安装的新驱动程序调度表入口点的副本，并还原其原始驱动程序调度表。 需要对还原的驱动程序调度表进行修改，以便在为网络微型重定向程序所需的目标检查收到的 IRP 后，调用将转发到 RDBSS 驱动程序调度入口点。 当驱动程序初始化 RDBSS 并调用**RxRegisterMinrdr**时，RDBSS 将复制网络小型重定向程序的驱动程序调度表。 链接到*rdbsslib*的网络微重定向程序必须先保存其原始驱动程序调度表，然后再从其**DriverEntry**例程调用[**RxDriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxdriverentry) ，以便在调用**RxRegisterMinrdr**后初始化 RDBSS 静态库并还原其驱动程序调度表。 这是因为 RDBSS 会在**RxDriverEntry**和**RxRegisterMinrdr**例程中通过网络小型重定向器发送表进行复制。
 
 前缀解析期间查询提供程序的顺序由存储在以下注册表项下的 REG\_SZ ProviderOrder 注册表值控制：
 
@@ -226,7 +226,7 @@ ProviderOrder 注册表值中的单个提供程序名称以逗号分隔，不包
 RDPNP,LanmanWorkstation,WebClient
 ```
 
-给定 UNC 路径 \\\\&lt;server&gt;\\&lt;共享&gt;\\&lt;&gt;\\，MUP 发出前缀解析请求（如果前缀为\\@no__t_例如，在 MUP 前缀缓存中找不到12_ 共享或 \\\\服务器）。 MUP 按以下顺序向每个提供程序发送前缀解析请求，直到提供程序声明前缀（或已查询所有提供程序）：
+给定 UNC 路径 \\\\&lt;server&gt;\\&lt;共享&gt;\\&lt;&gt;路径\\，如果在 MUP 前缀缓存中找不到前缀（例如 \\\\server \\共享或 \\服务器），则 MUP 发出前缀解析请求。 MUP 按以下顺序向每个提供程序发送前缀解析请求，直到提供程序声明前缀（或已查询所有提供程序）：
 
 1.  TS 客户端（RDPNP）
 

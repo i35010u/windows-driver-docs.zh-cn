@@ -26,7 +26,7 @@ ms.locfileid: "70930377"
 -   模块/模块
 -   实用程序
 -   状态
--   设置
+-   “设置”
 
 例如，ExecuteCommand 对象可用于将 u 命令发送到带有以下两行 JavaScript 代码的调试程序中的。
 
@@ -148,7 +148,7 @@ JavaScript 扩展可以修改进程和线程的概念，而不是使用一组难
 
 回到我们的示例，我们可以定义一个 prototype 或 ES6 类， *comProcessExtension* ，其中包含我们要添加到 process 对象的一组对象。
 
-**重要的是**，子命名空间的目的是创建一个逻辑结构化的、自然的可探索对象范例。   例如，避免将无关项转储到相同的子命名空间中。 在创建子命名空间之前，请仔细查看[JavaScript 扩展中的本机调试器对象中讨论的信息-设计和测试注意事项](native-objects-in-javascript-extensions-design-considerations.md)。
+**重要**的是，使用子命名空间   目的是创建逻辑结构化和自然可探索对象范例。 例如，避免将无关项转储到相同的子命名空间中。 在创建子命名空间之前，请仔细查看[JavaScript 扩展中的本机调试器对象中讨论的信息-设计和测试注意事项](native-objects-in-javascript-extensions-design-considerations.md)。
 
 在此代码片段中，我们将在现有的进程调试器对象上创建名为 "COM" 的子命名空间。
 
@@ -174,7 +174,7 @@ var comProcessExtension =
 
 接下来，在进程上创建实现子命名空间 COM 的对象。
 
-**重要的是**，可以有多个进程（无论是附加到用户模式还是 KD 下）。   此扩展无法假定调试器的当前状态为用户预期的状态。 有人可以在&lt;变量&gt;中捕获 someProcess 并对其进行修改，这可能会导致显示错误的进程上下文中的信息。 解决方法是在扩展中添加代码，以便每个实例化将跟踪它附加到的进程。 对于此代码示例，通过属性的 "this" 指针传递此信息。
+**重要**   可以有多个进程（无论是附加到用户模式还是 KD 下）。 此扩展无法假定调试器的当前状态为用户预期的状态。 有人可以在变量中捕获 &lt;someProcess&gt;并对其进行修改，这可能会导致从错误的进程上下文中呈现信息。 解决方法是在扩展中添加代码，以便每个实例化将跟踪它附加到的进程。 对于此代码示例，通过属性的 "this" 指针传递此信息。
 
 `this.__process = process;`
 
@@ -202,7 +202,7 @@ class comNamespace
 
 **COM 全局接口表的实现逻辑**
 
-为了更清晰地分离出 COM 全局接口表的实现逻辑，我们将定义一个 ES6 类， *gipTable* ，它将抽象掉 com GIP 表，另一个*globalObjects*是从上面所示的命名空间实现代码段中定义了 GlobalObjects （） getter。 所有这些详细信息都可以隐藏在 initializeScript 的闭包中，以避免将其中的任何内部详细信息发布到调试器命名空间中。
+为了更清晰地分离出 COM 全局接口表的实现逻辑，我们将定义一个 ES6 类， *gipTable* ，它将抽象掉 com GIP 表和另一个*globalObjects*，这是从上面所示的命名空间实现代码段中定义的 globalObjects （） getter 返回的内容。 所有这些详细信息都可以隐藏在 initializeScript 的闭包中，以避免将其中的任何内部详细信息发布到调试器命名空间中。
 
 ```javascript
 // gipTable:

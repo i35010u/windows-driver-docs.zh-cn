@@ -25,7 +25,7 @@ ms.locfileid: "72841517"
 
  
 
-保存作为输入传递给**DriverEntry**的*RegistryPath*字符串的副本。 此参数指向一个计数的 Unicode 字符串，该字符串指定驱动程序的注册表项的路径， **\\注册表\\Machine\\System\\CurrentControlSet\\Services\\** <em>DriverName</em>，其中*DriverName*是驱动程序的名称。 如果稍后需要*RegistryPath*字符串，则**DriverEntry**必须保存该字符串的副本，而不只是指向它的指针，因为在**DriverEntry**例程返回后指针不再有效。 可以使用[**RtlCopyUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopyunicodestring)例程将*RegistryPath*源字符串复制到目标字符串。
+保存作为输入传递给**DriverEntry**的*RegistryPath*字符串的副本。 此参数指向一个计数的 Unicode 字符串，指定驱动程序的注册表项的路径 **\\注册表\\机\\系统\\CurrentControlSet\\Services\\** <em>DriverName</em>，其中*DriverName*是驱动程序的名称。 如果稍后需要*RegistryPath*字符串，则**DriverEntry**必须保存该字符串的副本，而不只是指向它的指针，因为在**DriverEntry**例程返回后指针不再有效。 可以使用[**RtlCopyUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlcopyunicodestring)例程将*RegistryPath*源字符串复制到目标字符串。
 
  
 

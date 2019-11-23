@@ -25,7 +25,7 @@ ms.locfileid: "72840823"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>Value</th>
+<th>值</th>
 <th>备注</th>
 </tr>
 </thead>
@@ -55,7 +55,7 @@ ms.locfileid: "72840823"
 </tr>
 <tr class="odd">
 <td><p><strong>功能</strong></p></td>
-<td><p>指定一个数字，该数字将转换为标识设备功能的位标志。 这些标志存储在注册表中，可通过 STI_DEV_CAPS 结构用于 STI 组件。</p>
+<td><p>指定一个数字，该数字将转换为标识设备功能的位标志。 这些标志存储在注册表中，可通过 STI_DEV_CAPS 结构通过 STI 组件使用。</p>
 <p>位0−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_NOTIFICATIONS。</p>
 <p>第1位−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_POLLING_NEEDED。</p>
 <p>第2位−设置/清除 STI_DEV_CAPS 中的 STI_GENCAP_GENERATE_ARRIVALEVENT。</p>
@@ -111,7 +111,7 @@ ms.locfileid: "72840823"
 
 **请注意**  此项值的副作用是**CreateFileName**项设置为 AUTO。 请注意，如果微型驱动程序接收到了文件名的自动，则它必须能够确定应该与之通信的设备。
 
-**请注意**  PROPERTYPAGES，WIA 驱动程序必须使用不同的扩展性机制才能添加属性页。 它还必须将其自己的 GUID 添加到其 INF 文件中的**Ui 类 ID**条目，并且必须为要替换的 ui 组件提供特定的 ui 扩展性注册（请参阅[用户界面扩展注册表项](user-interface-extension-registry-entries.md)）（如通用对话框或添加）。例如上下文菜单和属性页。 WIA 驱动程序还必须为组件本身提供 UI 扩展性注册。
+**请注意**  PROPERTYPAGES，WIA 驱动程序必须使用不同的扩展性机制才能添加属性页。 它还必须将其自己的 GUID 添加到其 INF 文件中的**Ui 类 ID**条目，并且必须为要替换的 ui 组件（如公用对话框）或添加（如上下文菜单和属性页面）提供特定的 ui 扩展性注册（请参阅[用户界面扩展注册表项](user-interface-extension-registry-entries.md)）。 WIA 驱动程序还必须为组件本身提供 UI 扩展性注册。
 
  
 
@@ -130,7 +130,7 @@ ms.locfileid: "72840823"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>Value</th>
+<th>值</th>
 <th>备注</th>
 </tr>
 </thead>
@@ -188,7 +188,7 @@ ms.locfileid: "72840823"
     <td><p>需求 = STI。SBP2Section</p></td>
     </tr>
     <tr class="even">
-    <td><p>“USB”</p></td>
+    <td><p>USB</p></td>
     <td><p>Include = sti</p></td>
     <td><p>需求 = STI。USBSection</p></td>
     </tr>
@@ -231,7 +231,7 @@ ms.locfileid: "72840823"
     <td><p>需求 = STI。SBP2Section</p></td>
     </tr>
     <tr class="even">
-    <td><p>“USB”</p></td>
+    <td><p>USB</p></td>
     <td><p>Include = sti</p></td>
     <td><p>需求 = STI。USBSection</p></td>
     </tr>
@@ -263,7 +263,7 @@ ms.locfileid: "72840823"
 <thead>
 <tr class="header">
 <th>INF 文件条目</th>
-<th>Value</th>
+<th>值</th>
 <th>备注</th>
 </tr>
 </thead>
@@ -286,12 +286,12 @@ ms.locfileid: "72840823"
 <tr class="even">
 <td><p><strong>UI 类 ID</strong></p></td>
 <td><p>供应商提供的设备类标识符</p></td>
-<td><p>指示供应商提供的用户界面支持的设备类。 这是可选的，如果供应商未指定输入值，WIA 会将 WIA_DIP_UI_CLSID 属性设置为 GUID_NULL，并使用默认的 WIA UI。</p></td>
+<td><p>指示供应商提供的用户界面支持的设备类。 这是可选的，如果供应商未指定输入值，WIA 会将 WIA_DIP_UI_CLSID 属性设置为 GUID_NULL 并使用默认的 WIA UI。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ICMProfiles</strong></p></td>
 <td><p>供应商提供的颜色配置文件值</p></td>
-<td><p>指定要放入 WIA_IPA_ICM_PROFILE_NAME 属性中的值。 如果未指定任何值，则使用标准 sRGB 配置文件<em>Srgb 颜色空间配置文件。 icm</em> 。</p></td>
+<td><p>指定要置于 WIA_IPA_ICM_PROFILE_NAME 属性中的值。 如果未指定任何值，则使用标准 sRGB 配置文件<em>Srgb 颜色空间配置文件。 icm</em> 。</p></td>
 </tr>
 </tbody>
 </table>
@@ -302,7 +302,7 @@ ms.locfileid: "72840823"
 
 仅当供应商为映像设备提供自定义用户界面时，才需要用户界面（UI）条目。
 
-**备注**
+**注释**
 
 在为扫描仪开发 INF 文件时，可以使用[MICROSOFT OS 描述符](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))来启用兼容 ID 功能。 当你执行此操作时，你允许一个扫描仪驱动程序与多个扫描仪模型兼容。
 

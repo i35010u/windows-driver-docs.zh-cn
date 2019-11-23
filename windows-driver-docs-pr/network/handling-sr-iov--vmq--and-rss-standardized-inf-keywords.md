@@ -48,7 +48,7 @@ ms.locfileid: "72842563"
 
     有关 SR-IOV 关键字的详细信息，请参阅[sr-iov 的标准化 INF 关键字](standardized-inf-keywords-for-sr-iov.md)。
 
-    **请注意**  如果将微型端口驱动程序配置为 sr-iov 首选项，则它不能读取任何 RSS 标准化关键字。 但是，驱动程序必须读取 VMQ **\*VMQVlanFiltering**标准化关键字。 此关键字指定是否启用微型端口驱动程序以使用媒体访问控制（MAC）标头中的虚拟 VLAN （VLAN）标识符来筛选网络数据包。 微型端口驱动程序通过在 Ndis 的**SupportedMacHeaderFields**成员中设置 NDIS\_接收\_FILTER\_MAC\_标头\_支持的标志来报告此功能[ **\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。 有关 **\*VMQVlanFiltering**标准化关键字的详细信息，请参阅[VMQ 的标准化 INF 关键字](standardized-inf-keywords-for-vmq.md)。
+    **请注意**  如果将微型端口驱动程序配置为 sr-iov 首选项，则它不能读取任何 RSS 标准化关键字。 但是，驱动程序必须读取 VMQ **\*VMQVlanFiltering**标准化关键字。 此关键字指定是否启用微型端口驱动程序以使用媒体访问控制（MAC）标头中的虚拟 VLAN （VLAN）标识符来筛选网络数据包。 微型端口驱动程序通过以下方法报告此功能：在[**ndis\_接收\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的**SupportedMacHeaderFields**成员中设置 NDIS\_接收\_FILTER\_MAC\_标头\_支持的标志。\_\_\_ 有关 **\*VMQVlanFiltering**标准化关键字的详细信息，请参阅[VMQ 的标准化 INF 关键字](standardized-inf-keywords-for-vmq.md)。
 
      
 

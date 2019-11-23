@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_DELETE
 description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_DELETE 的对象标识符（OID）设置请求，通知有关如何删除可扩展交换机端口的可扩展交换机扩展。
 ms.assetid: D8893395-3D33-4777-B8F0-4DD6BE9B8A37
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_DELETE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_DELETE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: cc6a6dc81687bc9eb29d8b2b27c26e751c312c67
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 
 -   协议边缘发出 oid [\_SWITCH\_NIC](oid-switch-nic-disconnect.md)的 oid 集请求\_"断开连接"，通知扩展网络适配器与可扩展交换机端口之间的连接将被删除。
 
--   在已取消或完成指定的可扩展交换机端口的所有挂起数据包后，协议边缘会发出 oid [\_switch\_NIC](oid-switch-nic-delete.md)的 oid 集请求\_"删除"，通知扩展网络适配器和可扩展交换机端口已删除。
+-   在已取消或完成指定的可扩展交换机端口的所有挂起数据包后，协议边缘会发出 oid [\_switch\_NIC](oid-switch-nic-delete.md)的 oid 集请求\_"删除"，通知扩展网络适配器与可扩展交换机端口之间的连接已被删除。
 
     此时，协议边缘可以开始删除该端口。
 
@@ -38,7 +38,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 
 2.  协议边缘发出 oid\_SWITCH\_端口的 OID 集请求，在对可扩展交换机端口的所有 OID 请求都完成之后，\_删除。
 
-    **请注意**  如果扩展之前已调用[*ReferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)来递增端口的引用计数器，则它必须先调用[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port) ，然后协议边缘[\_交换机\_NIC 发出 OID\_删除](oid-switch-nic-delete.md)请求。
+    **请注意**  扩展之前是否调用了[*ReferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)来递增端口的引用计数器，则必须先调用[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port) ，然后协议边缘[\_交换机\_NIC\_删除](oid-switch-nic-delete.md)请求。
 
      
 

@@ -148,7 +148,7 @@ DriverEntry(
 
 驱动程序可以注册的其他事件回调为[*EvtDriverUnload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_unload)、 [*EvtCleanupCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)和[*EvtDestroyCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_destroy)。
 
-在模板代码中，客户端驱动程序将注册以下两个事件： [*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)和[*EvtCleanupCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)。 驱动程序在[**wdf\_驱动程序\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)结构中指定其*EvtDriverDeviceAdd*实现的指针，并在 [**Wdf\_对象\_特性中指定 EvtCleanupCallback 事件回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构。
+在模板代码中，客户端驱动程序将注册以下两个事件： [*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)和[*EvtCleanupCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)。 驱动程序在[**wdf\_驱动程序\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)结构中指定其*EvtDriverDeviceAdd*实现的指针，并在[**wdf\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构中指定*EvtCleanupCallback*事件回调。
 
 当 Windows 准备好释放[**驱动程序\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_driver_object)结构并卸载驱动程序时，框架会通过调用驱动程序的[*EvtCleanupCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nc-wdfobject-evt_wdf_object_context_cleanup)实现，将该事件报告给客户端驱动程序。 框架在删除框架驱动程序对象之前，将调用该回调。 客户端驱动程序可以释放它在[*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)中分配的所有全局资源。 例如，在模板代码中，客户端驱动程序将停止在*DriverEntry*中激活的 WPP 跟踪。
 
@@ -284,7 +284,7 @@ MyUSBDriver_CreateDevice(
 
         客户端驱动程序必须实现的 PnP 电源事件回调例程之一是[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)。 当 PnP 管理器启动设备时，将调用该事件回调。 下一节将讨论*EvtDevicePrepareHardware*的实现。
 
-    -   指定指向驱动程序的设备上下文结构的指针。 指针必须在[**WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构中进行设置，该结构是通过调用[**wdf\_对象\_特性特性\_\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff552400_init_context_type)宏来初始化的。
+    -   指定指向驱动程序的设备上下文结构的指针。 指针必须在[**WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构中进行设置，该结构是通过调用[**wdf\_对象\_特性特性\_\_类型**](https://msdn.microsoft.com/library/windows/hardware/ff552400_init_context_type)宏来初始化的。\_
 
         设备上下文（有时称为设备扩展）是用于存储有关特定设备对象的信息的数据结构（由客户端驱动程序定义）。 客户端驱动程序将指向其设备上下文的指针传递到框架。 框架根据结构的大小分配内存块，并在框架设备对象中存储指向该内存位置的指针。 客户端驱动程序可以使用指针在设备上下文的成员中访问和存储信息。 有关设备上下文的详细信息，请参阅[框架对象上下文空间](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)。
 
@@ -438,7 +438,7 @@ MyUSBDriver_EvtDevicePrepareHardware(
 
     根据 USB 设备连接到的主机控制器，Windows 可以加载 USB 3.0 或 USB 2.0 驱动程序堆栈。 USB 3.0 驱动程序堆栈是 Windows 8 中的新增功能，并且支持 USB 3.0 规范定义的多个新功能，例如流功能。 新的驱动程序堆栈还实现了几项改进，例如更好地跟踪和处理 USB 请求块（URBs），这些改进可通过一组新的 URB 例程获得。 打算使用这些功能或调用新例程的客户端驱动程序必须指定 USBD\_客户端\_协定\_版本\_602 协定版本。 USBD\_客户端\_协定\_版本\_602 客户端驱动程序必须遵循一组特定的规则。 有关这些规则的详细信息，请参阅[最佳做法：使用 URBs](usb-client-driver-contract-in-windows-8.md)。
 
-    若要指定协定版本，客户端驱动程序必须初始化[**wdf\_usb\_设备\_使用协定版本创建\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_create_config)结构，方法是调用[**WDF\_USB\_\_\_CONFIG\_INIT**](https://msdn.microsoft.com/library/windows/hardware/hh406503_init)宏。
+    若要指定协定版本，客户端驱动程序必须使用约定版本初始化[**wdf\_usb\_设备\_使用约定版本创建\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_create_config)结构，方法是调用[**WDF\_USB\_设备\_创建\_CONFIG\_INIT**](https://msdn.microsoft.com/library/windows/hardware/hh406503_init)宏。
 
 2.  调用[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。 此方法需要一个指向客户端驱动程序的框架设备对象的句柄，该对象是在驱动程序的[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)实现中调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)之前获取的。 **WdfUsbTargetDeviceCreateWithParameters**方法：
     -   将客户端驱动程序注册到基础 USB 驱动程序堆栈。
@@ -461,9 +461,9 @@ MyUSBDriver_EvtDevicePrepareHardware(
 
     在模板代码中，客户端驱动程序会选择 USB 设备中的*默认配置*。 默认配置包括设备的配置0和该配置内每个接口的备用设置0。
 
-    若要选择默认配置，客户端驱动程序会将[**wdf\_usb\_设备配置为\_选择\_配置\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_select_config_params)结构，方法是调用[**WDF\_usb\__ CONFIG\_参数\_INIT\_多个\_接口**](https://msdn.microsoft.com/library/windows/hardware/ff552600_init_multiple_interfaces)函数。 函数将**类型**成员初始化为**WdfUsbTargetDeviceSelectConfigTypeMultiInterface** ，以指示如果有多个接口可用，则必须选择每个接口中的备用设置。 由于调用必须选择默认配置，因此客户端驱动程序在*SettingPairs*参数中指定 NULL，在*NumberInterfaces*参数中指定0。 完成后， **MultiInterface 的 NumberOfConfiguredInterfaces**成员 **\_USB\_设备\_选择\_CONFIG\_PARAMS**指示备用设置0所属的接口数选择. 不会修改其他成员。
+    若要选择默认配置，客户端驱动程序会将[**wdf\_usb\_设备\_选择\_config\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_select_config_params)结构，方法是调用[**WDF\_usb\_** ](https://msdn.microsoft.com/library/windows/hardware/ff552600_init_multiple_interfaces)\_\_\_\_\_\_ 函数将**类型**成员初始化为**WdfUsbTargetDeviceSelectConfigTypeMultiInterface** ，以指示如果有多个接口可用，则必须选择每个接口中的备用设置。 由于调用必须选择默认配置，因此客户端驱动程序在*SettingPairs*参数中指定 NULL，在*NumberInterfaces*参数中指定0。 完成后，WDF\_的**NumberOfConfiguredInterfaces**成员**USB\_设备\_选择\_CONFIG\_PARAMS**指示选择了备用设置0的接口数。 不会修改其他成员。
 
-    **注意**  如果客户端驱动程序要选择默认设置以外的其他设置，则驱动程序必须创建一个[**WDF\_USB\_接口的数组，\_设置\_对**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_interface_setting_pair)结构。 数组中的每个元素都指定设备定义的接口编号以及要选择的替代设置的索引。 该信息存储在设备的配置和接口描述符中，可以通过调用[**WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)方法来获取这些信息。 然后，客户端驱动程序必须调用[**WDF\_USB\_设备\_选择\_配置\_参数\_INIT\_多个\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_device_select_config_params_init_multiple_interfaces)，并传递**WDF\_USB\_接口\_将\_对数组设置**为框架。
+    **注意**  如果客户端驱动程序要选择默认设置以外的其他设置，则驱动程序必须创建一个[**WDF\_USB\_接口的数组，\_设置\_对**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_interface_setting_pair)结构。 数组中的每个元素都指定设备定义的接口编号以及要选择的替代设置的索引。 该信息存储在设备的配置和接口描述符中，可以通过调用[**WdfUsbTargetDeviceRetrieveConfigDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceretrieveconfigdescriptor)方法来获取这些信息。 然后，客户端驱动程序必须调用[**WDF\_USB\_设备\_选择\_配置\_参数\_INIT\_多个\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_device_select_config_params_init_multiple_interfaces)并将**WDF 传递\_USB\_接口\_将\_**
 
      
 

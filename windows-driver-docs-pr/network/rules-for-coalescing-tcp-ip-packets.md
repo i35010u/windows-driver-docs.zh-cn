@@ -175,7 +175,7 @@ TCP 时间戳选项是可以进行合法合并的唯一选项。 使用此选项
 
 -   重复的确认计数必须存储到**NetBufferListInfo**\[**TcpRecvSegCoalesceInfo**\]中。**DupAckCount**成员。 上面的第一个流程图说明了如何计算此值。
 
--   如果合并了 TCP 时间戳选项的段，则必须在**NetBufferListInfo**\[**RscTcpTimestampDelta**\] 的最早和最新 TCP 时间戳值之间进行填充，构成 SCU 的合并段。 SCU 本身应包含合并段序列中看到的最新 TCP 时间戳值。
+-   如果合并了 TCP 时间戳选项的段，则必须在**NetBufferListInfo**\[**RscTcpTimestampDelta**\] 中填充最早和最晚 TCP 时间戳值之间的绝对增量，其中包含 SCU 的合并段的序列。 SCU 本身应包含合并段序列中看到的最新 TCP 时间戳值。
 
 当且仅当**CoalescedSegCount**成员大于零时，才会解释**DupAckCount**和**RscTcpTimestampDelta**成员。 如果**CoalescedSegCount**为零，则会将段视为未合并的非 RSC 段。
 

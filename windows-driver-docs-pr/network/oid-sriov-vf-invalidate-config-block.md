@@ -1,9 +1,9 @@
 ---
 title: OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK
-description: NDIS 发出 OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK 的对象标识符（OID）方法请求，通知一个或多个配置块中的数据已更改，PCI Express （PCIe）虚拟函数（VF）的微型端口驱动程序已更改。
+description: NDIS 发出 OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK 的对象标识符（OID）方法请求，通知一个或多个配置块中的数据已更改，通知 PCI Express （PCIe）虚拟函数（VF）的微型端口驱动程序已更改。
 ms.assetid: CF73E0DA-20DA-49A0-80B0-0F5A56DCEF5D
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SRIOV_VF_INVALIDATE_CONFIG_BLOCK 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 54838ce21ac6c3a5a1007429ce026109b6d79c33
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843976"
 # <a name="oid_sriov_vf_invalidate_config_block"></a>OID\_SRIOV\_VF\_无效\_配置\_块
 
 
-NDIS 发出 OID\_的对象标识符（OID）方法请求\_VF\_使\_配置\_块无效，以通知一个或多个配置中数据的 PCI Express （PCIe）虚函数（VF）的微型端口驱动程序。块已更改。 当 PCIe 物理功能（PF）的微型端口驱动程序调用[**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)时，NDIS 会发出此 OID。
+NDIS\_SRIOV\_VF 发出 OID 的对象标识符（OID）方法请求\_使\_CONFIG\_块无效，以通知一个或多个配置块中的数据已更改。 当 PCIe 物理功能（PF）的微型端口驱动程序调用[**NdisMInvalidateConfigBlock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisminvalidateconfigblock)时，NDIS 会发出此 OID。
 
 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_SRIOV\_VF 的指针\_使\_配置\_块\_INFO 结构无效**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)。 此结构指定一个或多个虚拟函数（VF）配置块，这些配置块的数据已由 PF 微型端口驱动程序更改（*失效*）。
 
@@ -51,7 +51,7 @@ VF 配置数据在以下驱动程序之间交换：
 
 3.  在来宾操作系统中，将执行以下步骤：
 
-    1.  VPCI 驱动程序将缓存的*BlockMask*参数数据保存在 VPCI\_的**BlockMask**成员中会[**使\_块\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)与 IOCTL\_VPCI 关联的输出结构[ **\_使\_块请求无效**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)。
+    1.  VPCI 驱动程序将缓存的*BlockMask*参数数据保存在 VPCI\_的**BlockMask**成员中会使与[**IOCTL\_VPCI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block) [ **\_块\_输出结构的输出**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ns-vpci-_vpci_invalidate_block_output)结构无效\_块请求无效。\_
 
     2.  VPCI 驱动程序已成功完成[**IOCTL\_VPCI\_使\_块请求无效**](https://docs.microsoft.com/windows-hardware/drivers/ddi/vpci/ni-vpci-ioctl_vpci_invalidate_block)。 发生这种情况时，NDIS\_SRIOV\_VF 发出 oid 方法请求，\_将\_配置\_块无效到 VF 微型端口驱动程序。 [**NDIS\_SRIOV\_VF\_使\_配置\_块无效，\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)将在 OID 请求中传递。 此结构包含缓存的*BlockMask*参数数据。
 
@@ -87,11 +87,11 @@ VF 配置数据在以下驱动程序之间交换：
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"><strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>结构中的一个或多个成员的值无效。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"><strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 设置<strong>数据。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"><strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>结构的大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 设置<strong>数据。SET_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 到<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_vf_invalidate_config_block_info)"><strong>NDIS_SRIOV_VF_INVALIDATE_CONFIG_BLOCK_INFO</strong></a>结构的大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

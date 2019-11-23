@@ -32,7 +32,7 @@ PF 微型端口驱动程序（在 Hyper-v 父分区的管理操作系统中运�
 
 过量驱动程序可以通过\_\_NIC 发出 oid 方法请求为 VF 请求分配软件资源， [\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 \_oid 的[**ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_NIC 的指针\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。
 
-成功从 OID 请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向[**NDIS\_NIC 的指针\_交换机\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)构造. 此结构具有适配器唯一的 VF 标识符和 PCI 请求程序标识符（RID）。 这些标识符通过以下方式使用：
+成功从 OID 请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_\_NIC 的指针，\_VF\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vf_parameters)结构。 此结构具有适配器唯一的 VF 标识符和 PCI 请求程序标识符（RID）。 这些标识符通过以下方式使用：
 
 -   过量驱动程序在与 VF 相关的操作中使用 VF 标识符，如下所示：
 
@@ -44,7 +44,7 @@ PF 微型端口驱动程序（在 Hyper-v 父分区的管理操作系统中运�
 
 -   虚拟化堆栈使用 RID 来重新映射 PF 和 VF 之间的 DMA 和中断。 RID 还允许硬件输入/输出内存管理单元（IOMMU）将来宾物理地址转换为主机物理地址。
 
-有关过量驱动程序如何[\_\_nic 发出 oid 的详细信息\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)方法请求的详细信息，请参阅的[网络\_交换机颁发 oid\_分配\_VF 请求](issuing-oid-nic-switch-allocate-vf-requests.md)。
+有关过量驱动程序如何[\_\_nic 发出 oid 的详细信息\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)方法请求的详细信息，请参阅的[网络\_交换机颁发 oid\_分配\_VF 请求](issuing-oid-nic-switch-allocate-vf-requests.md)。\_
 
 有关 PF 微型端口驱动程序如何处理[OID\_NIC 的详细信息\_交换机\_分配\_vf](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)方法请求的详细信息，请参阅[处理 oid\_NIC\_SWITCH\_分配\_VF 请求](handling-oid-nic-switch-allocate-vf-requests.md)。
 

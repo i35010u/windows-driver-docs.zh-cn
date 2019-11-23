@@ -1,6 +1,6 @@
 ---
 title: fileobj
-description: Fileobj 扩展显示有关 FILE_OBJECT 结构的详细信息。
+description: Fileobj 扩展显示 FILE_OBJECT 结构的详细信息。
 ms.assetid: ee9237e7-8a1f-473c-9e30-f2b0731a7519
 keywords:
 - FILE_OBJECT

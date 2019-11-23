@@ -59,7 +59,7 @@ NDIS 调用[*MiniportResetEx*](https://docs.microsoft.com/windows-hardware/drive
 <a href="" id="initializing"></a>出错  
 NDIS 调用微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数来初始化适配器。 在适配器初始化期间，微型端口驱动程序必须遵循以下准则：
 
--   如果微型端口驱动程序没有在从*MiniportInitializeEx*返回后显示媒体连接状态，ndis 将使用 [**ndis\_微型端口\_\_适配器的 MediaConnectState 成员的值\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构来确定媒体连接状态。 当驱动程序从其*MiniportInitializeEx*函数调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)时，微型端口驱动程序为 NDIS 提供此结构。
+-   如果在从*MiniportInitializeEx*返回后，微型端口驱动程序未指示媒体连接状态，ndis 将使用[**NDIS\_微型端口\_适配器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)的**MEDIACONNECTSTATE**成员的值\_常规\_属性结构来确定媒体连接状态。 当驱动程序从其*MiniportInitializeEx*函数调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)时，微型端口驱动程序为 NDIS 提供此结构。
 
     **请注意**  如果将**MediaConnectState**成员设置为 MediaConnectStateUnknown，则在断开适配器连接时，NDIS 将继续。
 

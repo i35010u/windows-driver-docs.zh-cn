@@ -22,7 +22,7 @@ ms.locfileid: "72839836"
 
 加速状态管理是一种机制，用于在单个调用中跨 API 和 DDI 传递大状态更改。 此方案允许应用程序将状态集调用的集合定义为单个整数定义的状态块。 作为渲染状态发送此整数将在一次调用中执行所有状态更改。
 
-这会减少 API 开销，因为它减少了所需的**IDirect3DDevice7：： SetRenderState**方法调用的数目，并且可以通过允许它们将状态更改为其自己的特定于硬件的格式来 "预编译"，从而提高驱动程序的效率块定义，而不是在每次状态更改时执行。 Direct3D SDK 文档中介绍了**IDirect3DDevice7：： SetRenderState**
+这会减少 API 开销，因为它减少了所需的**IDirect3DDevice7：： SetRenderState**方法调用的数目，并且可以通过在状态块定义时允许它们将更改为其自己的特定于硬件的格式，而不是每次状态更改的执行来改善驱动程序的效率。 Direct3D SDK 文档中介绍了**IDirect3DDevice7：： SetRenderState**
 
 大多数应用程序只会在少数几种状态下进行呈现，因此不太重要。 更为重要的是，能够定义可在常见呈现方案间进行交换的状态块。 这是加速状态管理的要点。
 
@@ -38,7 +38,7 @@ ms.locfileid: "72839836"
 
 状态分组用于生成可对不同呈现方案进行略微修改的通用状态块。 这些预定义的分组（在 DirectX SDK 文档的 D3DSTATEBLOCKTYPE 中枚举）定义一般状态块，随后可以用状态更改进行修改以适应预期的重复呈现方案。 例如，驱动程序可能会创建100一般预定义状态块，然后略微修改它们以适应不同的呈现方案。 在 D3DHAL\_DP2STATESET 结构的**sbType**成员中传递状态块类型。
 
-**SbType**成员仅对 D3DHAL\_STATESETBEGIN 和 D3DHAL\_STATESETEND 有效，并指定具有以下 D3DSTATEBLOCKTYPE 枚举类型之一的预定义状态块类型： **NULL**表示无状态，D3DSBT @no__t_所有状态均为4_、D3DSBT\_PIXELSTATE for 象素 state 和 D3DSBT\_VERTEXSTATE for 顶点状态。
+**SbType**成员仅适用于 D3DHAL\_STATESETBEGIN 和 D3DHAL\_STATESETEND，并指定具有以下 D3DSTATEBLOCKTYPE 枚举类型之一的预定义状态块类型： **NULL**表示无状态，D3DSBT\_所有状态的所有状态，D3DSBT\_PIXELSTATE 用于像素状态，D3DSBT\_VERTEXSTATE 用于顶点状态。
 
 驱动程序应忽略**sbType**成员，除非它实现呈现状态扩展。 如果驱动程序实现扩展呈现状态（即，呈现 Direct3D 运行时提供的状态除外），则它可以使用**sbType**来确定所使用的预定义呈现状态的类型。 通过此信息，可以确定如何适当地附加状态块以支持其扩展。
 

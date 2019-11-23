@@ -17,7 +17,7 @@ ms.locfileid: "72842121"
 
 
 
-为了释放接收队列，过量驱动程序[会发出 OID\_接收\_FILTER\_可用\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)集 OID 请求。 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_队列的指针\_免费\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构，队列标识符类型为**NDIS\_接收\_队列\_ID**。
+为了释放接收队列，过量驱动程序[会发出 OID\_接收\_FILTER\_可用\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)集 OID 请求。 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis\_接收\_队列的指针\_免费\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_free_parameters)结构，其队列标识符类型为**NDIS\_接收\_queue\_ID**。
 
 [OID\_接收\_筛选器\_可用的\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)释放接收队列，该队列由使用 OID 分配的过量驱动程序\_[接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)OID。 有关分配接收队列的详细信息，请参阅[分配 VM 队列](allocating-a-vm-queue.md)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "72842121"
 
 -   释放关联的共享内存和硬件资源。
 
-当微型端口驱动程序收到[OID\_接收\_FILTER\_可用的\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)集请求时，队列必须输入停止 dma 状态，停止队列上的 dma，微型端口驱动程序必须通过使用[ **\_接收\_队列\_状态状态指示，NDIS\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)。 有关队列状态的详细信息，请参阅[队列状态和操作](queue-states-and-operations.md)。
+当微型端口驱动程序收到[OID\_接收\_FILTER\_可用的\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)集请求时，该队列必须进入 "停止 dma" 状态，它将停止队列上的 dma，而微型端口驱动程序必须通过使用[**NDIS\_状态\_"接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状态指示" 来指示状态更改。 有关队列状态的详细信息，请参阅[队列状态和操作](queue-states-and-operations.md)。
 
 小型端口驱动程序发出后， [**NDIS\_状态\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状态指示，则它必须等待所有挂起的接收指示完成，然后才能释放关联的共享内存。 有关释放共享内存的详细信息，请参阅[共享内存资源分配](shared-memory-resource-allocation.md)。
 

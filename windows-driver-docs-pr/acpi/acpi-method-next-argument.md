@@ -16,7 +16,7 @@ ms.locfileid: "72824063"
 # <a name="acpi_method_next_argument-macro"></a>ACPI\_方法\_下一个\_参数宏
 
 
-ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中返回指向下一个[**acpi\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)的指针。
+ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中返回指向下一个[**acpi\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v1)的指针。\_
 
 <a name="syntax"></a>语法
 ------
@@ -54,7 +54,7 @@ ACPI\_方法\_下一个\_参数结构在 ACPI\_方法\_参数结构的数组中�
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面</td>
+<td>桌面设备</td>
 </tr>
 <tr>
 <td><p>标头</p></td>

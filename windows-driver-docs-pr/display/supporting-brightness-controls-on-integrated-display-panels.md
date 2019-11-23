@@ -22,13 +22,13 @@ ms.locfileid: "72829401"
 
 亮度控件在由操作系统提供的监视驱动程序中实现。 监视驱动程序实现 Windows Management Instrumentation （WMI）接口，以允许应用程序（如操作系统的亮度滑块）与亮度级别交互。 监视驱动程序将注册到设备电源策略引擎（DPPE），以便亮度级别响应电源策略中的更改。 监视驱动程序将注册到高级配置和电源接口（ACPI）以处理基于 ACPI 的亮度快捷键。 为了与[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)兼容，监视驱动程序实现了基于 IOCTL 的亮度控件。
 
-系统基本输入/输出系统（BIOS）公开的显示微型端口驱动程序或 ACPI 方法可以支持更改集成显示面板的亮度。 对于标记为具有在计算机内部连接的输出技术（[**D3DKMDT\_VOT\_INTERNAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology)）的第一个视频目标，监视器驱动程序将调用显示微型端口驱动程序的[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数查询由 GUID 标识的[亮度控制接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)\_DEVINTERFACE\_亮度\_2 和 DXGK\_亮度\_接口\_版本\_1 和[亮度控件由 GUID 标识的接口 node.js （自适应和平滑亮度控制）](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)\_DEVINTERFACE\_亮度和 DXGK\_亮度\_接口\_\_版本2。 如果显示微型端口驱动程序不支持至少亮度控制接口，则监视驱动程序将使用 ACPI 查询 \_BCL，\_BCM，并在子设备上 \_的 BQC 方法。 有关这些方法的详细信息，请参阅[acpi 网站](https://go.microsoft.com/fwlink/p/?linkid=57185)上的 acpi 规范。
+系统基本输入/输出系统（BIOS）公开的显示微型端口驱动程序或 ACPI 方法可以支持更改集成显示面板的亮度。 对于标记为具有在计算机内部连接的输出技术（[**D3DKMDT\_VOT\_INTERNAL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_d3dkmdt_video_output_technology)）的第一个视频目标，监视器驱动程序将调用显示微型端口驱动程序的[**DxgkDdiQueryInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_interface)函数以查询 GUID\_DEVINTERFACE\_亮度\_2 和 DXGK [\_亮度\_](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)\_\_1 和[亮度控件由 GUID 标识的接口 node.js （自适应和平滑亮度控制）](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)\_DEVINTERFACE\_亮度和 DXGK\_亮度\_接口\_\_版本2。 如果显示微型端口驱动程序不支持至少亮度控制接口，则监视驱动程序将使用 ACPI 查询 \_BCL，\_BCM，并在子设备上 \_的 BQC 方法。 有关这些方法的详细信息，请参阅[acpi 网站](https://go.microsoft.com/fwlink/p/?linkid=57185)上的 acpi 规范。
 
 **请注意**，在 Windows 显示驱动程序模型（WDDM）中  ，ACPI 标识符不用于标识集成显示面板。 这不同于[Windows 2000 显示器驱动程序模型](windows-2000-display-driver-model-design-guide.md)，后者仅支持标识符为0x0110 的显示面板。
 
  
 
-如果显示微型端口驱动程序或 BIOS 公开的 ACPI 方法支持亮度控件，则监视驱动程序将注册亮度快捷键的 ACPI 通知。 不存在用于向监视器驱动程序指示快捷键通知的备用机制。 如果监视器驱动程序无法使用任何亮度控制机制，或者显示微型端口驱动程序提供[亮度控制接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，但未能调用[**DxgkDdiGetPossibleBrightness**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)函数，则监视驱动程序不会支持亮度控件。
+如果显示微型端口驱动程序或 BIOS 公开的 ACPI 方法支持亮度控件，则监视驱动程序将注册亮度快捷键的 ACPI 通知。 不存在用于向监视器驱动程序指示快捷键通知的备用机制。 如果监视器驱动程序无法使用亮度控制机制，或者显示微型端口驱动程序提供[亮度控制接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，但未能调用[**DxgkDdiGetPossibleBrightness**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgk_brightness_get_possible)函数，则监视器驱动程序不支持亮度控件。
 
 ### <a name="span-idbrightness_levelsspanspan-idbrightness_levelsspanspan-idbrightness_levelsspanbrightness-levels"></a><span id="Brightness_Levels"></span><span id="brightness_levels"></span><span id="BRIGHTNESS_LEVELS"></span>亮度级别
 
@@ -72,7 +72,7 @@ ms.locfileid: "72829401"
 
     这些快捷键通知是 ACPI 3.0 规范的新手，详见第7部分。 通常，便携式计算机不支持所有这些快捷键通知。
 
-    用于 ACPI\_的监视驱动程序的默认行为通知\_INC.\_亮度\_热键和 ACPI\_通知\_DEC\_亮度\_热键通知是递增（或递减）亮度比之前的亮度级别至少5% （或更少），直到达到下一个可用的5% 步骤级别（5，10，15，...，95，100）。 用快捷键递增或递减可以在亮度级别中创建非对称模式，如以下示例中所示。
+    用于 ACPI\_的监视驱动程序的默认行为通知\_INC.\_亮度\_热键和 ACPI\_通知\_年12月\_亮度\_热键通知是增加（或减少）亮度至少比以前的亮度级别更少5% （或更少）直到达到下一个可用的5% 步骤级别（5，10，15，...，95，100）。 用快捷键递增或递减可以在亮度级别中创建非对称模式，如以下示例中所示。
 
     -   可用 \_BCL 亮度控制级别指定为0、1、5、10、...、95、100
 

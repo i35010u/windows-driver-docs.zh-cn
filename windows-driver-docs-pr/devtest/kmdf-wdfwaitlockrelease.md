@@ -54,7 +54,7 @@ ms.locfileid: "72839427"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**WdfWaitLockAcquire**](https://msdn.microsoft.com/library/windows/hardware/ff551168)

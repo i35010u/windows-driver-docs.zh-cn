@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PORT_PROPERTY_ENUM
-description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PORT_PROPERTY_ENUM 的对象标识符（OID）方法请求，以获取一个数组。
+description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PORT_PROPERTY_ENUM 获取数组的对象标识符（OID）方法请求。
 ms.assetid: 5C391B82-FCA6-4A95-992F-EDB5DF6183C7
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ENUM 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ENUM 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 801b7a5116d7dad1280ba71368abc363da8f3e4e
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -32,7 +32,7 @@ Hyper-v 可扩展交换机扩展发出 OID\_SWITCH\_端口\_\_属性的对象标
 
 在发出 OID 的 OID 方法请求之前\_SWITCH\_端口\_属性\_枚举，可扩展交换机扩展必须遵循以下准则：
 
--   扩展只能在可扩展交换机的协议边缘发出 Oid 时，\_交换机\_端口\_属性\_枚举请求，然后才会发出[oid](oid-switch-port-create.md)\_[OID\_交换机\_端口\_拆卸](oid-switch-port-teardown.md)请求。
+-   扩展只能在可扩展交换机的协议边缘发出[oid](oid-switch-port-create.md)时，\_交换机\_端口\_属性\_枚举请求，然后才会发出 oid\_switch\_\_请求，并在发出[oid\_交换机\_拆卸](oid-switch-port-teardown.md)请求之前。\_
 
 -   扩展必须先调用[*ReferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) ，然后才能调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)\_端口\_属性\_枚举请求来发出 OID\_。 这可确保在完成 OID 请求之前，不会删除指定的端口。
 

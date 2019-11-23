@@ -36,7 +36,7 @@ Microsoft Windows 2000 和更高版本支持终端服务，这是允许多个用
 
 -   在 Windows Vista 中，必须设计要在用户模式下执行的打印机图形 DLL。 请参阅[选择用户模式或内核模式](choosing-user-mode-or-kernel-mode.md)。
 
--   如果自定义驱动程序必须支持您的设备，则您的驱动程序必须完全符合 Microsoft 的[打印机驱动程序体系结构](printer-driver-architecture.md)。 特别是：
+-   如果自定义驱动程序必须支持您的设备，则您的驱动程序必须完全符合 Microsoft 的[打印机驱动程序体系结构](printer-driver-architecture.md)。 尤其是在下列情况下：
     1.  您必须创建一个[打印机接口 DLL](printer-interface-dll.md)。
     2.  必须创建[打印机图形 DLL](printer-graphics-dll.md)。 此 DLL 可以在用户模式或内核模式下执行，但首选用户模式。
     3.  如果创建内核模式代码，则必须使用[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)来测试代码。

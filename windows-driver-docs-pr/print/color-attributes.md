@@ -56,7 +56,7 @@ ms.locfileid: "72837982"
 <tr class="even">
 <td><p><strong></em>EnableGDIColorMapping</strong></p></td>
 <td><p><strong>TRUE</strong>或<strong>FALSE</strong>。 指示 GDI 是否应执行从显示到打印机颜色空间的 gamut 映射。</p></td>
-<td><p>可选。 如果未指定，则默认值为<strong>FALSE</strong>。 如果<strong>为 TRUE</strong>，则 Unidrv 将在<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)"><strong>GDIINFO</strong></a>结构中设置 HT_FLAG_DO_DEVCLR_XFORM 标志。</p></td>
+<td><p>可选。 如果未指定，则默认值为<strong>FALSE</strong>。 如果<strong>为 TRUE</strong>，则 Unidrv 设置<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo" data-raw-source="[&lt;strong&gt;GDIINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)"><strong>GDIINFO</strong></a>结构中的 HT_FLAG_DO_DEVCLR_XFORM 标志。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong><em>MagentaInCyanDye</strong></p></td>
@@ -86,7 +86,7 @@ ms.locfileid: "72837982"
 **请注意**   当 **\*ChangeColorModeOnDoc？** Color 特性设置为**TRUE**时，会启用颜色优化。 如果此属性设置为**FALSE**，则不执行任何优化。 启用颜色优化后，假脱机文件中的颜色将导致以彩色播放假脱机文件;假脱机文件中缺少颜色会导致后台处理文件以单色播放。
 如果要创建 Unidrv 呈现插件来生成颜色水印，请注意，当颜色水印打印在黑白文档上时，将会导致彩色水印打印为黑白。 若要确保颜色水印正确地打印彩色和黑白文档，请禁用颜色优化。
 
-还可以通过设置\_属性的**dwColorOptimization**成员来控制 **\*ChangeColorModeOnDoc？** color 特性控制的颜色优化[ **\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_2)或[**属性\_信息\_3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_3)结构。 还可以通过使用[**GdiEndPageEMF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winppi/nf-winppi-gdiendpageemf)函数来控制颜色优化。
+还可以通过设置\_属性的**dwColorOptimization**成员来控制 **\*ChangeColorModeOnDoc？** color 特性控制的颜色优化， [ **\_2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_2)或[**属性\_信息\_3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/ns-winddiui-_attribute_info_3)结构。 还可以通过使用[**GdiEndPageEMF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winppi/nf-winppi-gdiendpageemf)函数来控制颜色优化。
 
  
 

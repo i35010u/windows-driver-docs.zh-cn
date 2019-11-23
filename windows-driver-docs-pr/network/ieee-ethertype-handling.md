@@ -46,7 +46,7 @@ IHV 扩展 DLL 通过调用[**Dot11ExtSetEtherTypeHandling**](https://docs.micro
 
     如果 IHV 扩展 DLL 未调用[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)，则操作系统将默认为任何802.11 与 AP 关联的已注册 EtherTypes 的空列表。
 
--   在 IHV 扩展 DLL 通过调用[**Dot11ExtPreAssociateCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_pre_associate_completion)完成了预关联操作后，通过对[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)的调用指定的隐私免除和 EtherType 注册的列表是已应用于 WLAN 适配器在连接到基本服务集（BSS）网络时所建立的每个802.11 关联。
+-   在 IHV 扩展 DLL 通过调用[**Dot11ExtPreAssociateCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_pre_associate_completion)完成了预关联操作后，通过对[**Dot11ExtSetEtherTypeHandling**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11ext_set_ethertype_handling)的调用指定的隐私免除和 EtherType 注册的列表将应用于 WLAN 适配器在连接到基本服务集（BSS）网络时所做的每个802.11 关联。
 
 -   在调用[*Dot11ExtIhvAdapterReset*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_adapter_reset)之前，操作系统会清除隐私例外和 EtherType 注册列表。
 

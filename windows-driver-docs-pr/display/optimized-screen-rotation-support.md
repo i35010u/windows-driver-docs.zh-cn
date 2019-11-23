@@ -24,7 +24,7 @@ Windows 8 通过确保图形适配器的输出在旋转模式发生变化时保�
 |------------------------------------------------------|-----------|
 | 最小 WDDM 版本                                 | 1.2       |
 | 最大 Windows 版本                              | 8         |
-| 驱动程序实现-完整图形和仅显示 | Mandatory |
+| 驱动程序实现-完整图形和仅显示 | 强制 |
 
  
 
@@ -36,7 +36,7 @@ Windows 8 通过确保图形适配器的输出在旋转模式发生变化时保�
 -   [*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)
 -   [*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)
 
-驱动程序必须通过设置[**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)结构的**SupportSmoothRotation**成员（从 Windows 开始提供），为对[*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)的调用支持平滑旋转。8.
+驱动程序必须通过设置[**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)结构的**SupportSmoothRotation**成员（从 Windows 8 开始提供），为对[*DxgkDdiUpdateActiveVidPnPresentPath*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_updateactivevidpnpresentpath)的调用支持平滑旋转。
 在对[*DxgkDdiCommitVidPn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_commitvidpn)的调用过程中，驱动程序必须始终能够设置路径旋转。
 
 ## <a name="span-idsmooth_rotation_scenariosspanspan-idsmooth_rotation_scenariosspanspan-idsmooth_rotation_scenariosspansmooth-rotation-scenarios"></a><span id="Smooth_rotation_scenarios"></span><span id="smooth_rotation_scenarios"></span><span id="SMOOTH_ROTATION_SCENARIOS"></span>平滑旋转方案

@@ -16,7 +16,7 @@ ms.locfileid: "72823836"
 
 当 Hyper-v 子分区在停止或实时迁移后重新启动时，将还原该分区的运行时状态。 在还原操作过程中，Hyper-v 可扩展交换机扩展驱动程序可以还原有关可扩展交换机网络适配器（NIC）的运行时数据。
 
-在 Hyper-v 子分区上执行还原操作时，可扩展交换机接口会向可扩展交换机的协议边缘发出信号，以便[\_交换机\_NIC\_restore](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)发出 OID 的 oid 集请求。 \_oid 的[**ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 NDIS\_交换机的**INFORMATIONBUFFER**成员\_nic\_RESTORE 请求包含指向[**NDIS\_交换机\_\_保存\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构。
+在 Hyper-v 子分区上执行还原操作时，可扩展交换机接口会向可扩展交换机的协议边缘发出信号，以便[\_交换机\_NIC\_restore](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)发出 OID 的 oid 集请求。 \_oid 的[**ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 NDIS\_交换机的**INFORMATIONBUFFER**成员\_nic\_RESTORE 请求包含指向[**NDIS\_switch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)\_\_\_状态结构的指针的指针。
 
 当它处理此 OID 请求时，扩展会恢复网络适配器的运行时数据。 之前，此运行时数据是通过 oid [\_switch\_nic\_保存](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-save)和 OID\_交换机\_\_\_
 
@@ -41,7 +41,7 @@ ms.locfileid: "72823836"
 
 有关此 OID 请求的详细信息，请参阅[oid\_交换机\_NIC\_还原\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore-complete)。
 
-在运行时数据的还原操作期间，可扩展交换机的协议边缘[\_交换机\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)上发出 oid 请求\_还原和[OID\_交换机\_\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore-complete)hyper-v 子分区的网络接口已连接。 如果还原多个 Hyper-v 子分区，则协议边缘会发出不同的 OID 集\_交换机\_NIC\_还原和 OID\_切换\_NIC\_RESTORE\_每个网络接口的完整请求连接.
+在运行时数据的还原操作过程中，可扩展交换机的协议边缘[\_交换机\_nic](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore)上发出 oid 请求\_还原和[OID\_交换机\_nic\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-restore-complete)为 hyper-v 子分区连接的网络接口完成\_还原。 如果还原了多个 Hyper-v 子分区，则协议边缘\_\_NIC\_交换机 NIC 上发出不同的 OID 集\_交换机\_NIC\_RESTORE\_每个网络接口连接的完整请求。
 
 **请注意**  可扩展交换机的协议边缘不会为同一 NIC 的运行时数据交错执行还原操作。 仅当上一次还原操作在同一 NIC 上完成后，协议边缘才会为 NIC 启动运行时数据还原操作。 但是，当另一个 NIC 正在进行另一个还原操作时，协议边缘可以为 NIC 启动还原操作。 因此，我们强烈建议扩展以非交错方式执行还原操作。 例如，扩展不应假定在针对其他 NIC 执行正在进行的还原操作之前，新的还原操作无法在另一个 NIC 上启动。
 

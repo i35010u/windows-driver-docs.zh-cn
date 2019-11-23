@@ -38,7 +38,7 @@ ms.locfileid: "72841143"
 
 若要设置内核 EA，调用方还必须在 IRP （i/o 请求数据包）的 MinorFunction 字段中设置**IRP_MN_KERNEL_CALL**值。 由于设置此字段的唯一方法是生成自定义 IRP，因此从 FsRtl 包中将例程[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)导出为设置内核 EA 的支持函数。
 
-你不能将普通 EA 和内核 EA 的设置与[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)的同一调用混合。  如果执行此操作，操作将失败，并出现**STATUS_INTERMIXED_KERNEL_EA_OPERATION**。    设置内核 EA 不会生成**USN_REASON_EA_CHANGE**记录到 USN 日志;因此，不能在同一操作中使用内核 EA 和常规 EA。  
+你不能将普通 EA 和内核 EA 的设置与[FsRtlSetKernelEaFile](https://msdn.microsoft.com/library/windows/hardware/mt807493)的同一调用混合。  如果执行此操作，操作将失败，并**STATUS_INTERMIXED_KERNEL_EA_OPERATION**。    设置内核 EA 不会生成到 USN 日志的**USN_REASON_EA_CHANGE**记录;因此，不能在同一操作中使用内核 EA 和常规 EA。  
 
 
 ## <a name="querying-an-extended-attribute"></a>查询扩展属性
@@ -48,7 +48,7 @@ ms.locfileid: "72841143"
 
 
 ## <a name="querying-update-sequence-number-journal-information"></a>查询更新序列号日志信息
-[FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作需要**SE_MANAGE_VOLUME_PRIVILEGE** ，即使是从内核模式发出的，除非在 IRP 的 MinorFunction 字段中设置了**IRP_MN_KERNEL_CALL**值。 例程**FsRtlKernelFsControlFile**已从内核中的 FsRtl 包导出，以便轻松地允许内核模式组件发出此 USN 请求。
+即使在 IRP 的 MinorFunction 字段中设置了**IRP_MN_KERNEL_CALL**值， [FSCTL_QUERY_USN_JOURNAL](https://docs.microsoft.com/windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal)操作也需要**SE_MANAGE_VOLUME_PRIVILEGE** ，即使在从内核模式发出时也是如此。 例程**FsRtlKernelFsControlFile**已从内核中的 FsRtl 包导出，以便轻松地允许内核模式组件发出此 USN 请求。
 
 **注意**从 Windows 10 开始，版本1703及更高版本，此操作不再需要 SE_MANAGE_VOLUME_PRIVILEGE。  
 

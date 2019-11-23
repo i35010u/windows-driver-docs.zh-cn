@@ -30,7 +30,7 @@ ms.locfileid: "72844874"
 
     -   \_\_NIC 的上一个 OID 方法请求[\_枚举\_VPORTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)。
 
-成功从此 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis\_NIC 的指针\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构。 此结构包含指定 VPort 的参数。
+成功从此 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向 NDIS\_\_NIC 的指针，该指针[ **\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构。 此结构包含指定 VPort 的参数。
 
 NDIS 处理[\_NIC 的 OID\_交换机\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)请求以获得微型端口驱动程序。 NDIS 从检查以下源中返回的数据的内部缓存返回信息：
 

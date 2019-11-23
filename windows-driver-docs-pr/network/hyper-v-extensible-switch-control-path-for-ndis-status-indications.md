@@ -42,9 +42,9 @@ ms.locfileid: "72823928"
 
     当转发扩展接收到此指示时，它可以重复指示以更改封装的数据。 这允许转发扩展更改所指示的基础可扩展交换机团队状态。
 
--   作为组合提供程序进行操作的转发扩展可以通过启动[**NDIS\_状态\_交换机\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status) （与相关的\_状态指示卸载技术。
+-   作为组合提供程序运行的转发扩展可以通过启动[**NDIS\_状态\_交换机\_NIC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)指示（与卸载技术相关）来参与适配器组的配置。
 
-    例如，提供程序可以使用封装的 Ndis\_状态[ **\_\_交换机\_\_NIC 启动 NDIS 状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)指示\_[**接收\_筛选器\_当前\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)用于修改适配器组上虚拟机队列（VMQ）的卸载功能的功能指示。
+    例如，提供程序可以启动[**NDIS\_状态\_交换机\_NIC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)指示与封装的[**NDIS\_状态\_接收\_筛选器\_当前\_功能**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-filter-current-capabilities)指示来修改适配器组上的虚拟机队列（VMQ）的卸载功能。
 
 -   组合提供程序还可以启动[**NDIS\_状态\_交换机\_NIC\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)指示来修改可扩展交换机团队以外的其他网络适配器配置。
 

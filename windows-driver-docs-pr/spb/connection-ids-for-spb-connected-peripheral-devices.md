@@ -37,8 +37,8 @@ PnP 管理器将标识符（称为*连接 ID*）分配给连接到 SPB 的外围
 
 有关使用连接 Id 打开与 SPB 连接的外围设备的逻辑连接的 UMDF 和 KMDF 代码示例，请参阅以下主题：
 
-[用于用户模式 Spb 外围设备驱动程序的硬件资源](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)
-[内核模式 spb 外围设备的硬件资源](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-kernel-mode-spb-peripheral-drivers)用户模式应用程序无法打开到 SPB 连接的外围设备的逻辑连接，并且无法发送 i/o直接请求发送到这些设备。
+[适用于用户模式 Spb 外围设备驱动程序的硬件资源](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-user-mode-spb-peripheral-drivers)
+[内核模式 Spb 外围设备驱动程序的硬件资源](https://docs.microsoft.com/windows-hardware/drivers/spb/hardware-resources-for-kernel-mode-spb-peripheral-drivers)用户模式应用程序无法打开到 SPB 连接的外围设备的逻辑连接，并且无法将 i/o 请求直接发送到这些设备。
 
 一次只能有一个驱动程序可以对连接到 SPB 的外围设备保持开放的逻辑连接。 另一个驱动程序尝试打开与同一设备的第二个连接失败。
 

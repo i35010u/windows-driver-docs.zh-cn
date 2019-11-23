@@ -22,7 +22,7 @@ USB 复合设备包含一个 USB 设备内的多个功能（功能设备）。 �
 
 但是，在 Windows Vista 和更高版本的 Windows 中，你可以添加以下注册表值，以指定要选择的配置：
 
-| 注册表项               | 在任务栏的搜索框中键入       | Value                                                                                                          | 默认值 |
+| 注册表项               | 在任务栏的搜索框中键入       | 值                                                                                                          | Default Value |
 |----------------------------|------------|----------------------------------------------------------------------------------------------------------------|---------------|
 | OriginalConfigurationValue | REG\_DWORD | USB 配置索引。 Usbccgp 对选择配置请求使用 OriginalConfigurationValue。 | 0             |
 | AltConfigurationValue      | REG\_DWORD | 在 OriginalConfigurationValue 的选择配置请求失败时要使用的配置索引。      | 0             |
@@ -35,7 +35,7 @@ USB 复合设备包含一个 USB 设备内的多个功能（功能设备）。 �
 
 注册表设置允许 CCGP 驱动程序选择其他配置。
 
-上表中描述的注册表值对应于 USB 定义的配置索引，由配置描述符的**bConfigurationValue**成员（[**USB\_配置\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)）*指示不*是在设备的配置描述符中报告的**bConfigurationNum**值。 首先，Usbccgp 使用 OriginalConfigurationValue 指定的 USB 配置索引将选择配置请求发送到父 USB 总线驱动程序（Usbhub）。 如果该请求失败，Usbccgp 将尝试使用 AlternateConfigurationValue 中指定的值。 如果 AlternateConfigurationValue 或 OriginalConfigurationValue 无效，Usbccgp 将使用默认值。
+上表中描述的注册表值对应于 USB 定义的配置索引，由配置描述符（[**USB\_配置\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)）的**bConfigurationValue**成员指示，而*不*是由设备配置描述符中报告的**bConfigurationNum**值指示。 首先，Usbccgp 使用 OriginalConfigurationValue 指定的 USB 配置索引将选择配置请求发送到父 USB 总线驱动程序（Usbhub）。 如果该请求失败，Usbccgp 将尝试使用 AlternateConfigurationValue 中指定的值。 如果 AlternateConfigurationValue 或 OriginalConfigurationValue 无效，Usbccgp 将使用默认值。
 
 由于许多原因，选择配置请求可能会失败。 如果设备未正确响应请求或**bMaxPower**值（请求的配置所需的电源）超过集线器端口支持的功率值，则会出现最常见的故障。 例如，特定配置的**bMaxPower** （由 OriginalConfigurationValue 指定）为 100 milliamperes，但集线器端口只能提供 50 milliamperes。 当 Usbccgp 发送对该配置的选择配置请求时，USB 驱动程序堆栈（具体而言，是 USB 端口驱动程序）将无法请求。 然后，Usbccgp 通过指定 AltConfigurationValue 指示的配置发送另一个选择配置请求。 如果备用配置要求 50 milliamperes 或更少，且未出现其他问题，则选择-配置请求会成功完成。
 
@@ -44,7 +44,7 @@ USB 复合设备包含一个 USB 设备内的多个功能（功能设备）。 �
 即使复合设备中某个函数的客户端驱动程序无法选择复合设备的配置，客户端驱动程序仍可以向 Usbccgp 发送选择-配置请求。 有关如何生成该请求的信息，请参阅[如何为 USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)。 Usbccgp 在接收来自客户端驱动程序的选择配置请求后执行以下任务：
 
 1.  使用 USB 端口驱动程序用于验证任何选择配置请求的相同条件来验证收到的请求。
-2.  如果请求指定了不同于当前设置的接口或管道设置，Usbccgp 将通过发送 URB\_函数类型的 URB 发出一个选择接口请求\_选择\_接口以更改现有新接口和管道设置的设置。
+2.  如果请求指定了不同于当前设置的接口或管道设置，Usbccgp 将通过发送 URB\_函数类型的 URB 发出一个选择接口请求\_选择\_接口以将现有设置更改为新的接口和管道设置。
 3.  将[**USBD\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)的缓存内容复制到 URB 中\_信息和[**USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构。
 4.  完成 URB。
 

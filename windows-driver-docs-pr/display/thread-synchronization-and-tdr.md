@@ -30,9 +30,9 @@ ms.locfileid: "72825502"
 
 -   调用该驱动程序，通知即将逐出分配。
 
-    例如，如果分配在内存段中分页，则会调用驱动程序的[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，并将[**DXGKARG\_BUILDPAGINGBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构的**操作**成员设置为 DXGK\_操作\_传输并将**传输. Size**成员设置为零，以通知驱动程序逐出。 请注意，不涉及任何内容传输，因为内容在重置过程中丢失。
+    例如，如果分配在内存段中分页，则会调用驱动程序的[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，并将[**DXGKARG\_BUILDPAGINGBUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_buildpagingbuffer)结构的**operation**成员设置为 DXGK\_Operation\_Transfer，并将**传输. Size**成员设置为零，以通知驱动程序逐出。 请注意，不涉及任何内容传输，因为内容在重置过程中丢失。
 
-    如果分配在口径段内分页，则使用 DXGKARG\_BUILDPAGINGBUFFER 设置为 DXGK\_操作的**操作**成员调用驱动程序的[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，\_取消映射\_口径\_段，通知驱动程序从口径取消分配。
+    如果分配在口径段内分页，则使用 DXGKARG\_BUILDPAGINGBUFFER 设置为 DXGK\_操作的**操作**成员调用驱动程序的[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数，\_取消映射\_口径\_段，以通知驱动程序取消从口径到分配的映射。
 
 -   调用驱动程序的[*DxgkDdiReleaseSwizzlingRange*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_releaseswizzlingrange)函数以释放 unswizzling 口径和分段口径范围。
 

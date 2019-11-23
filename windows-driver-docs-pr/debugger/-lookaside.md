@@ -36,7 +36,7 @@ ms.locfileid: "72826682"
 ## <a name="span-idddk__lookaside_dbgspanspan-idddk__lookaside_dbgspanparameters"></a><span id="ddk__lookaside_dbg"></span><span id="DDK__LOOKASIDE_DBG"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
 指定要显示或修改的外观列表的十六进制地址。
 
 如果省略了*Address* （或0），并且未指定 **-all**选项，则会显示一组众所周知的标准系统的 "查找" 列表。 列表集并非详尽;也就是说，它不包含所有系统旁的列表。 此外，该集不包含通过调用[**ExInitializePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializepagedlookasidelist)或[**ExInitializeNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializenpagedlookasidelist)创建的自定义外观列表。

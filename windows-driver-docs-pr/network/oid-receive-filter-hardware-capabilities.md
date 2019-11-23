@@ -1,9 +1,9 @@
 ---
 title: OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES
-description: 过量驱动程序发出 OID 查询请求 OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES，以获取网络适配器的接收筛选硬件功能。
+description: 过量驱动程序发出 OID 查询请求，OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES 获取网络适配器的接收筛选硬件功能。
 ms.assetid: 2b80944e-5309-4cb0-a69a-331f8fd3f7a4
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_RECEIVE_FILTER_HARDWARE_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 596f198e3252a7a365d07a436dabd1cc1ce893c5
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -17,7 +17,7 @@ ms.locfileid: "72844008"
 
 过量驱动程序发出 oid 查询请求，\_接收\_FILTER\_硬件\_功能，以获取网络适配器的接收筛选硬件功能。
 
-成功从 OID 查询请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的指针构造.
+成功从 OID 查询请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。
 
 <a name="remarks"></a>备注
 -------
@@ -32,7 +32,7 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 
 [**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构包含有关网络适配器的接收筛选硬件功能的信息。 这些功能可能包括 INF 文件设置或**高级**属性页当前禁用的硬件功能。
 
-**请注意**  网络适配器的所有接收筛选硬件功能都是通过 OID 的 oid 查询请求返回的，\_接收\_筛选器\_硬件\_功能，不管功能是否已启用或已禁用。
+**请注意**  网络适配器的所有接收筛选硬件功能都是通过 OID 的 oid 查询请求返回的，\_接收\_筛选器\_硬件\_功能，不管是启用还是禁用功能。
 
  
 
@@ -40,9 +40,9 @@ NDIS 接收筛选器在以下 NDIS 接口中使用：
 
 1.  驱动程序使用接收筛选硬件功能初始化[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。
 
-2.  驱动程序初始化[**NDIS\_微型端口\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构，并将**CurrentReceiveFilterCapabilities**成员设置为指向[**NDIS\_接收的指针\_筛选\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。
+2.  驱动程序[ **\_适配器初始化 NDIS\_微型端口，\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构，并将**CurrentReceiveFilterCapabilities**成员设置为指向[**NDIS\_接收\_筛选\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。
 
-3.  微型端口驱动程序调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数，并将*MiniportAttributes*参数设置为指向[**NDIS\_微型端口的指针\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)构造.
+3.  微型端口驱动程序调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数，并将*MiniportAttributes*参数设置为指向[**NDIS\_微型端口的指针\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
 ### <a name="return-status-codes"></a>返回状态代码
 

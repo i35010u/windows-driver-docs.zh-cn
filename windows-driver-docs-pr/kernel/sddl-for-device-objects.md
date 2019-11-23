@@ -128,7 +128,7 @@ ms.locfileid: "72836392"
 <tbody>
 <tr class="odd">
 <td><p>SY</p></td>
-<td><p>“系统”</p>
+<td><p>系统</p>
 <p>表示操作系统本身，其中包括其用户模式组件。</p></td>
 </tr>
 <tr class="even">
@@ -235,7 +235,7 @@ ms.locfileid: "72836392"
 </tr>
 <tr class="odd">
 <td><p>WD</p></td>
-<td><p>世界</p>
+<td><p>World</p>
 <p>在 Windows XP 之前，此 SID 涵盖每个会话，无论是经过身份验证的用户、匿名用户还是内置来宾帐户。</p>
 <p>从 Windows XP 开始，此 SID 不涵盖匿名登录会话;它仅包括经过身份验证的用户和内置来宾帐户。</p>
 <p>请注意，世界 SID 还不包含不受信任或 "受限" 的代码。 有关详细信息，请参阅下表中的限制代码（RC） SID 的说明。</p></td>
@@ -317,7 +317,7 @@ SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_R 允许内核和系统完全控制�
 
 另请注意，不会向普通用户授予遍历访问权限。 因此，对于具有命名空间的设备，这可能不是合适的描述符。
 
-SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_R\_
+SDDL\_DEVOBJ\_SYS\_所有\_ADM\_RWX\_WORLD\_R\_\_
 
 **"D:P （A;;GA;;;SY）（A;;GRGWGX;;;BA）（A;;GR;;;WD）（A;;GR;;;RC） "**
 

@@ -29,7 +29,7 @@ ms.locfileid: "72842185"
 
 若要同步完成， [**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)会返回 NDIS\_状态\_成功或错误状态。 若要异步完成， **NdisFOidRequest**将\_状态返回 NDIS 状态\_"挂起"。
 
-若要确定基础驱动程序成功处理的信息，则发出 OID 请求的筛选器驱动程序必须在 SupportedRevision 成员中的成员中检查\_请求结构\_中的值。返回. 有关 NDIS 版本信息的详细信息，请参阅[指定 Ndis 版本信息](specifying-ndis-version-information.md)。
+若要确定基础驱动程序成功处理的信息，则发出 OID 请求的筛选器驱动程序必须在 OID 请求返回后，在 NDIS\_OID\_请求结构中检查**SupportedRevision**成员中的值。 有关 NDIS 版本信息的详细信息，请参阅[指定 Ndis 版本信息](specifying-ndis-version-information.md)。
 
 如果[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)返回 NDIS\_状态\_挂起，则在基础驱动程序完成 OID 请求后，ndis 将调用[*FilterOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete)函数。 在这种情况下，NDIS 会将请求的结果传递到*FilterOidRequestComplete*的*OidRequest*参数。 NDIS 在*FilterOidRequestComplete*的*status*参数传递请求的最终状态。
 

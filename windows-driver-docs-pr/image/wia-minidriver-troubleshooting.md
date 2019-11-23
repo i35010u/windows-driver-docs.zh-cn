@@ -63,7 +63,7 @@ wiasUpdateScanRect, CheckXResAndUpdate failed (0x80070057)
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>值</th>
 <th>含义</th>
 </tr>
 </thead>

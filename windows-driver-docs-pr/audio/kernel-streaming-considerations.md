@@ -55,7 +55,7 @@ DAC 和 ADC 节点表示模拟/数字转换，但不支持任何 KS 属性。
 **KSPROPERTY\_插孔\_说明**
 
 此属性返回[**KSJACK\_说明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)结构。 音频驱动程序应按如下所示设置[**KSPROPERTY\_插孔\_描述**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)字段。
-ChannelMapping = KSAUDIO\_音箱\_MONO Color = 0 ConnectionType = eConnTypeOtherDigital 地理位置 = eGeoLocNotApplicable GenLocation = eGenLocOther PortConnection = ePortConnUnknown Connectionmultiplexer.isconnected =*当前 &lt;布尔值连接状态*&gt; **KSPROPERTY\_插孔\_DESCRIPTION2**
+ChannelMapping = KSAUDIO\_音箱\_MONO Color = 0 ConnectionType = eConnTypeOtherDigital 地理位置 = eGeoLocNotApplicable GenLocation = eGenLocOther PortConnection = ePortConnUnknown Connectionmultiplexer.isconnected =*当前连接状态的 &lt;布尔*值&gt; **KSPROPERTY\_插孔\_DESCRIPTION2**
 
 此属性返回[**KSJACK\_DESCRIPTION2**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)结构。 音频驱动程序应按如下所示将[**KSPROPERTY\_插孔\_DESCRIPTION2**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description2)字段。
 DeviceStateInfo = 0 JackCapabilities = JACKDESC2\_状态\_检测\_功能**KSPROPERTY\_ONESHOT\_重新连接**

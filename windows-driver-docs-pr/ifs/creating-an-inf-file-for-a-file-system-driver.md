@@ -88,7 +88,7 @@ CatalogFile =
 
 下表显示文件系统筛选器驱动程序在 "[**版本**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)" 部分中应指定的值。
 
-| 条目 | Value |
+| 条目 | 值 |
 | ----- | ----- |
 | **信号** | "$WINDOWS NT $" |
 | **程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
@@ -186,7 +186,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**条目指定服务的类型。 下表列出了**ServiceType**的可能值及其相应的服务类型。
 
-| Value | 描述 |
+| 值 | 描述 |
 | ----- | ----------- |
 | 0x00000001 | SERVICE_KERNEL_DRIVER （设备驱动程序服务） |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER （文件系统或文件系统筛选器驱动程序服务） |
@@ -197,7 +197,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **StartType**项指定启动服务的时间。 下表列出了**StartType**的可能值及其相应的启动类型。
 
-| Value | 描述 |
+| 值 | 描述 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -213,7 +213,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了**ErrorControl**的可能值及其相应的错误控制值。
 
-| Value | 描述 |
+| 值 | 描述 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_ERROR_IGNORE （记录错误并继续系统启动。） |
 | 0x00000001 | SERVICE_ERROR_NORMAL （记录错误、向用户显示一条消息，然后继续系统启动。） |

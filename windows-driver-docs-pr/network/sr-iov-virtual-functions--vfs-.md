@@ -28,11 +28,11 @@ VF 微型端口驱动程序是 VM 中安装的用于管理 VF 的 NDIS 微型端
 
 VF 微型端口驱动程序可以像任何 PCI 设备驱动程序一样工作。 它可以读取和写入 VF 的 PCI 配置空间。 但是，对虚拟 PCI 设备的访问权限是一项特权操作，由 PF 微型端口驱动程序通过以下方式进行管理：
 
--   当 VF 微型端口驱动程序调用[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)从 VF 网络适配器的 PCI 配置空间读取数据时，会通知虚拟化堆栈。 此堆栈在 Hyper-v 父分区的管理操作系统中运行。 当通知堆栈读取请求时，它会发出 OID 的对象标识符（OID）方法请求[\_SRIOV\_读取\_VF\_CONFIG\_空间](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)到 PF 微型端口驱动程序。 要读取的数据在[**NDIS\_SRIOV 中指定\_读取\_VF\_配置\_空格**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)请求中包含的参数结构。
+-   当 VF 微型端口驱动程序调用[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)从 VF 网络适配器的 PCI 配置空间读取数据时，会通知虚拟化堆栈。 此堆栈在 Hyper-v 父分区的管理操作系统中运行。 当通知堆栈读取请求时，它会发出 OID 的对象标识符（OID）方法请求[\_SRIOV\_读取\_VF\_CONFIG\_空间](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)到 PF 微型端口驱动程序。 要读取的数据在[**NDIS\_SRIOV 中指定\_读取\_VF\_配置\_空格**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)请求中包含的参数结构。\_
 
     该驱动程序从 VF PCI 配置空间读取请求的数据，并通过完成 OID 请求来返回数据。 在对[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)的调用完成时，此数据将返回到 VF 微型端口驱动程序。
 
--   当 VF 微型端口驱动程序调用[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)将数据写入 VF 网络适配器的 PCI 配置空间时，虚拟化堆栈会收到写入请求的通知。 它发出 oid\_SRIOV 的 OID 方法请求[\_将\_VF\_配置\_空间写入](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-write-vf-config-space)到 PF 微型端口驱动程序。 要写入的数据是在[**NDIS\_SRIOV 中指定的\_写入\_VF\_配置\_空格**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)请求中包含的参数结构。
+-   当 VF 微型端口驱动程序调用[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)将数据写入 VF 网络适配器的 PCI 配置空间时，虚拟化堆栈会收到写入请求的通知。 它发出 oid\_SRIOV 的 OID 方法请求[\_将\_VF\_配置\_空间写入](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-write-vf-config-space)到 PF 微型端口驱动程序。 要写入的数据是在[**NDIS\_SRIOV 中指定的\_写入\_VF\_配置\_空格**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_write_vf_config_space_parameters)请求中包含的参数结构。\_
 
     驱动程序将数据写入 VF PCI 配置空间，并在完成 OID 请求时返回请求的状态。 调用[**NdisMSetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetbusdata)完成后，此状态将返回到 VF 微型端口驱动程序。
 

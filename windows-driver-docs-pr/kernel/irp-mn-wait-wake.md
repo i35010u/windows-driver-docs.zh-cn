@@ -86,7 +86,7 @@ IRP 必须按设备堆栈向下传递到设备的总线驱动程序，这将调�
 
 当驱动程序发送 wait/唤醒 IRP 时，它应在**PoRequestPowerIrp**调用中指定一个回调例程。 在回调例程中，驱动程序通常会为设备服务。 例如，设备的电源策略所有者必须调用**PoRequestPowerIrp** ，以便发送[**IRP\_MN\_设置**](irp-mn-set-power.md)设备状态 D0\_电源。
 
-作为一个设备的总线驱动程序的驱动程序和父设备的策略所有者请求**IRP\_MN\_** 在收到**irp\_MN\_等待时，为父级的设备堆栈等待\_唤醒 IRP @no__t_** 从子 PDO 7_ 唤醒请求。 如果驱动程序枚举了多个子 PDO，无论有多少个子 PDOs 发送等待/唤醒请求，它都应该只为父设备堆栈请求一个等待/唤醒 IRP。 相反，此类驱动程序应保留等待/唤醒 Irp 的内部计数，每次收到请求时递增计数，并在每次完成请求时递减计数。 如果在完成等待/唤醒 IRP 后，计数为非零，则驱动程序应将另一个等待/唤醒 IRP 发送到其设备堆栈，以便 "重置" 自身进行唤醒。 有关详细信息，请参阅[通过设备树了解等待/唤醒 irp 的路径](https://docs.microsoft.com/windows-hardware/drivers/kernel/understanding-the-path-of-wait-wake-irps-through-a-device-tree)。
+作为一个设备的总线驱动程序的驱动程序和父设备的策略所有者请求**irp\_MN\_** 在收到**irp\_MN\_等待**子 PDO 的请求\_唤醒请求时，为父级的设备堆栈等待\_唤醒 IRP。 如果驱动程序枚举了多个子 PDO，无论有多少个子 PDOs 发送等待/唤醒请求，它都应该只为父设备堆栈请求一个等待/唤醒 IRP。 相反，此类驱动程序应保留等待/唤醒 Irp 的内部计数，每次收到请求时递增计数，并在每次完成请求时递减计数。 如果在完成等待/唤醒 IRP 后，计数为非零，则驱动程序应将另一个等待/唤醒 IRP 发送到其设备堆栈，以便 "重置" 自身进行唤醒。 有关详细信息，请参阅[通过设备树了解等待/唤醒 irp 的路径](https://docs.microsoft.com/windows-hardware/drivers/kernel/understanding-the-path-of-wait-wake-irps-through-a-device-tree)。
 
 若要取消**IRP\_MN\_等待\_唤醒**，驱动程序将调用[**IoCancelIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)。 只有源自 IRP 的驱动程序才能取消它。 如果发生以下任何情况，驱动程序将取消挂起的**IRP\_MN\_等待\_唤醒**：
 
@@ -105,7 +105,7 @@ IRP 必须按设备堆栈向下传递到设备的总线驱动程序，这将调�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>

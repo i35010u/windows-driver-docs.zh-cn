@@ -5,7 +5,7 @@ ms.assetid: 6C95CA57-A226-4252-91E2-FAD8F1A0432B
 keywords:
 - NFC
 - 近场通信
-- proximity
+- 近程
 - 近场邻近感应
 - NFP
 ms.date: 04/20/2017

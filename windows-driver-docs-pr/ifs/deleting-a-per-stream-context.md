@@ -41,7 +41,7 @@ ms.locfileid: "72841443"
 
 当文件流被关闭或删除时，文件系统会为文件流释放自己的流上下文。 此时，文件系统还将调用[**FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)，后者又会调用为该文件流的上下文的全局列表中包含的所有每个流的上下文注册的[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程。 （当筛选器驱动程序调用[**FsRtlInitPerStreamContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlinitperstreamcontext)来初始化每个流的上下文结构时，将注册**FreeCallback**例程。 有关详细信息，请参阅**FSRTL\_PER\_STREAM\_CONTEXT**。）
 
-**请注意**   筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194) ，以便将每个流的上下文结构与文件流相关联[ **，则文件**](https://msdn.microsoft.com/library/windows/hardware/ff547357)系统负责确保当不再存在对流的任何打开的引用时，将调用筛选器的每流上下文。
+**请注意**   筛选器驱动程序调用[**FsRtlInsertPerStreamContext**](https://msdn.microsoft.com/library/windows/hardware/ff546194) ，以便将每个流的上下文结构与文件流相关联，则文件系统负责确保在不再存在对流的任何打开的引用时，将调用筛选器的每个流上下文的[**FreeCallback**](https://msdn.microsoft.com/library/windows/hardware/ff547357)例程。
 
  
 

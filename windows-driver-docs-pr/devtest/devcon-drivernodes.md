@@ -46,7 +46,7 @@ ms.locfileid: "72038062"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>匹配任何字符或不匹配任何字符。 使用通配符（<strong> @ no__t）创建 ID 模式，例如<strong><em>disk</em></strong>。</p></td>
+<td align="left"><p>匹配任何字符或不匹配任何字符。 使用通配符（<strong></em></strong>）创建 ID 模式，例如<strong><em>磁盘</em></strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
@@ -60,7 +60,7 @@ ms.locfileid: "72038062"
 </tbody>
 </table>
 
-<span id="________class______"></span><span id="________CLASS______"></span> **@no__t 3**_类_指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** _类_指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
 
@@ -80,6 +80,6 @@ devcon drivernodes =usb pci* usb*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-[Example 10：按硬件 ID 模式列出驱动程序包 @ no__t-0
+[示例10：按硬件 ID 模式列出驱动程序包](devcon-examples.md#ddk_example_10_list_driver_packages_by_hardware_id_pattern_tools)
 
-[Example 11：按设备实例 ID 模式列出驱动程序包 @ no__t-0
+[示例11：按设备实例 ID 模式列出驱动程序包](devcon-examples.md#ddk_example_11_list_driver_packages_by_device_instance_id_pattern_tool)

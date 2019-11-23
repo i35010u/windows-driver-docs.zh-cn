@@ -43,7 +43,7 @@ ms.locfileid: "72839329"
 
 2.  设置相应的 "*组件筛选器掩码*" 的值。 每个组件都有不同的掩码。 掩码值指示将显示该组件的哪些消息。 可以使用注册表编辑器或使用内核调试器在内存中设置组件筛选器掩码。
 
-3.  将内核调试器附加到计算机。 每次你的驱动程序将消息*传递到*DbgPrintEx、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**或**KdPrintEx**时，传递给和*Level*的值将与对应的组件筛选器掩码。 如果这些值满足特定条件，则会将消息发送到内核调试器并显示。 否则，不会发送消息。
+3.  将内核调试器附加到计算机。 每次你的驱动程序将消息传递到**DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**或**KdPrintEx**时，传递到组件*id*和*级别*的值将与相应的组件筛选器掩码的值进行比较。 如果这些值满足特定条件，则会将消息发送到内核调试器并显示。 否则，不会发送消息。
 
 有关完整说明，请参阅下一节。
 
@@ -109,7 +109,7 @@ Windows 驱动程序工具包（WDK）中的 Dpfilter 标头文件中包含组�
 
  
 
-例如，如果您正在编写视频驱动程序，将使用 DPFLTR\_IHVVIDEO\_ID 作为**DbgPrintEx**的项*id 参数，* 使用注册表中的值名称 IHVVIDEO，并参阅**Kd\_IHVVIDEO\_掩码**在调试器中。
+例如，如果你正在编写视频驱动程序，你将使用 DPFLTR\_IHVVIDEO\_ID 作为**DbgPrintEx**的项*id 参数，* 使用注册表中的值名称 IHVVIDEO，并在调试器中引用**Kd\_IHVVIDEO\_掩码**。
 
 在 Windows Vista 和更高版本的 Windows 中， **DbgPrint**和**KdPrint**发送的所有消息都与默认组件（DPFLTR\_默认\_ID）相关联。
 

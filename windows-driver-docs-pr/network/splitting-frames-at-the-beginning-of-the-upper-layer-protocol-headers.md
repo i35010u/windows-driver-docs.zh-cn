@@ -32,7 +32,7 @@ ms.locfileid: "72841869"
 
  
 
-如果标头-数据拆分提供程序拆分位于上层协议标头开头的帧，则指示的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_在\_拆分\_\_层\_在**NblFlags**成员中设置的协议\_标头标志。 有关设置标头-数据拆分 NET\_BUFFER\_列表标志的详细信息，请参阅[设置 NET\_BUFFER\_列表信息](setting-net-buffer-list-information.md)。
+如果标头-数据拆分提供程序拆分位于上层协议标头开头的帧，则所指示的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志，\_在**NblFlags**成员中设置\_\_\_\_的协议\_标头标志。 有关设置标头-数据拆分 NET\_BUFFER\_列表标志的详细信息，请参阅[设置 NET\_BUFFER\_列表信息](setting-net-buffer-list-information.md)。
 
 如果生成的标头缓冲区的长度大于最大标头大小，则 NIC 不得拆分帧。 有关超出最大标头大小时拆分框架的详细信息，请参阅[分配标头缓冲区](allocating-the-header-buffer.md)。
 

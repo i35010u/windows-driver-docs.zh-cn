@@ -1,9 +1,9 @@
 ---
 title: OID_PM_ADD_WOL_PATTERN
-description: 作为一组，NDIS 协议驱动程序使用 OID_PM_ADD_WOL_PATTERN OID 将 LAN 唤醒模式添加到网络适配器。 NDIS_OID_REQUEST 结构的 InformationBuffer 成员包含指向 NDIS_PM_WOL_PATTERN 结构的指针。
+description: 作为集，NDIS 协议驱动程序使用 OID_PM_ADD_WOL_PATTERN OID 将 LAN 唤醒模式添加到网络适配器。 NDIS_OID_REQUEST 结构的 InformationBuffer 成员包含指向 NDIS_PM_WOL_PATTERN 结构的指针。
 ms.assetid: 1005cebb-8ead-4d16-b3ea-5a74da0b054f
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PM_ADD_WOL_PATTERN 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PM_ADD_WOL_PATTERN 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b3b9c374da2a89a2260fb72f6b766afdbecf935
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -42,7 +42,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID\_PM\_添加\_WOL\_模�
 <a href="" id="ndis-status-pending"></a>NDIS\_状态\_挂起  
 请求正在等待完成。 请求完成后，NDIS 会将最终状态代码和结果传递给调用方的 OID 请求完成处理程序。
 
-<a href="" id="ndis-status-pm-wol-pattern-list-full"></a>NDIS\_状态\_PM\_WOL\_模式\_完全  
+<a href="" id="ndis-status-pm-wol-pattern-list-full"></a>NDIS\_状态\_PM\_WOL\_模式\_完全\_  
 请求失败，因为模式列表已满，网络适配器无法添加另一种模式。
 
 <a href="" id="ndis-status-resources"></a>NDIS\_状态\_资源  

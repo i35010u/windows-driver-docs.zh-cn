@@ -3,7 +3,7 @@ title: OID_SRIOV_BAR_RESOURCES
 description: NDIS 发出 OID_SRIOV_BAR_RESOURCES 的对象标识符（OID）方法请求，以确定分配给 PCIe 虚拟功能（VF）的 PCI Express （PCIe）基址寄存器（BAR）的内存资源。
 ms.assetid: CA29591B-EBFB-4B12-A980-F3FAD65207E2
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SRIOV_BAR_RESOURCES 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SRIOV_BAR_RESOURCES 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bfa71685bdb8017777d131ea2ac46656a68674f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -34,13 +34,13 @@ NDIS 发出 oid\_SRIOV\_BAR\_资源的 OID 方法请求，以获取分配给 VF 
 
 -   NDIS 将[**ndis\_SRIOV\_栏\_资源\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的**BarIndex**成员设置为指定 VF 的栏索引。 条形索引是 PCI 配置空间中的栏表内寄存器的偏移量。
 
--   NDIS 将[**ndis\_SRIOV\_栏\_资源\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的**BarResourcesOffset**成员设置为以字节为单位的偏移量（以字节为单位），从**NDIS\_SRIOV\_条形\_资源\_信息**结构到[**CM\_部分\_资源\_说明符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构。
+-   NDIS 将[**ndis\_SRIOV\_栏\_资源\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)结构的**BarResourcesOffset**成员设置为以字节为单位的偏移量（以字节为单位），从 NDIS\_\_\_\_[ **\_的**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)**资源**\_\_
 
 **请注意**  过量驱动程序（如协议或筛选器驱动程序）无法向 PF 小型端口驱动程序\_SRIOV\_BAR\_资源发出 oid 方法请求。
 
  
 
-当 PF 微型端口驱动程序接收到 OID 方法请求时，驱动程序将通过在**InformationBuffer**成员中设置[**CM\_PARTIAL\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)结构的格式来返回指定条的资源\_的[**NDIS\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构。 驱动程序将**CM\_部分\_资源\_描述符**结构的格式设置为与指定的 VF 栏关联的系统硬件资源。
+当 PF 微型端口驱动程序接收到 OID 方法请求时，驱动程序会通过将[ **\_部分\_资源\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)**结构的格式**设置为[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的成员，来返回指定条的资源。 驱动程序将**CM\_部分\_资源\_描述符**结构的格式设置为与指定的 VF 栏关联的系统硬件资源。
 
 **请注意**  驱动程序必须为**CmResourceTypeMemory**的资源类型设置结构格式。
 
@@ -72,11 +72,11 @@ PF 多端口驱动程序为 OID\_SRIOV\_BAR\_资源的方法请求返回以下�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>结构中的一个或多个成员的值无效。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区小于（sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>） + Sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor" data-raw-source="[&lt;strong&gt;CM_PARTIAL_RESOURCE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)"><strong>CM_PARTIAL_RESOURCE_DESCRIPTOR</strong></a>）。 PF 微型端口驱动程序必须设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区小于（sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info" data-raw-source="[&lt;strong&gt;NDIS_SRIOV_BAR_RESOURCES_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_bar_resources_info)"><strong>NDIS_SRIOV_BAR_RESOURCES_INFO</strong></a>） + sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor" data-raw-source="[&lt;strong&gt;CM_PARTIAL_RESOURCE_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_partial_resource_descriptor)"><strong>CM_PARTIAL_RESOURCE_DESCRIPTOR</strong></a>）。 PF 微型端口驱动程序必须设置<strong>数据。METHOD_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

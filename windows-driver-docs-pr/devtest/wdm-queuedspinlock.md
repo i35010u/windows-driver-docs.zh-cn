@@ -22,7 +22,7 @@ ms.locfileid: "72839884"
 # <a name="queuedspinlock-rule-wdm"></a>QueuedSpinLock 规则（wdm）
 
 
-**QueuedSpinLock**规则指定在调用[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)之前，驱动程序调用[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) ，并且驱动程序先调用**KeReleaseInStackQueuedSpinLock** ，然后再对**KeAcquireInStackQueuedSpinLock**的后续调用。
+**QueuedSpinLock**规则指定在调用[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)之前，驱动程序调用[**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85)) ，并且驱动程序会在对**KeAcquireInStackQueuedSpinLock**的任何后续调用之前调用**KeReleaseInStackQueuedSpinLock** 。
 
 如果它们正在获取和释放不同的资源，则允许嵌套调用。 用于获取或释放相同资源的嵌套调用违反了此规则。
 
@@ -80,7 +80,7 @@ ms.locfileid: "72839884"
 
  
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**KeAcquireInStackQueuedSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551899(v=vs.85))

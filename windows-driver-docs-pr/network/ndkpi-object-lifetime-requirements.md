@@ -23,7 +23,7 @@ NDK 使用者通过调用 ndk 提供程序对该对象的 create 函数来启动
 
 使用者通过在对象的调度表中调用 provider 函数，将*NdkRequestCompletion* （[*NDK\_FN\_请求\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_request_completion)）完成回调作为参数传递，来发起各种请求。
 
-当不再需要某个对象时，使用者将调用提供程序的*NdkCloseObject* （[*NDK\_FN\_CLOSE\_object*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)）函数来启动对该对象的关闭请求，同时传递*NdkCloseCompletion* （[*ndk\_FN\_关闭\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_completion)）回调作为参数。
+当不再需要某个对象时，使用者将调用提供程序的*NdkCloseObject* （[*NDK\_FN\_CLOSE\_object*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)）函数来启动对该对象的关闭请求，同时将*NdkCloseCompletion* （[*ndk\_FN\_CLOSE\_完成*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_completion)）回调作为参数传递。
 
 对于所有此类函数，提供程序将调用使用者的回调函数来完成请求。 此调用向使用者指示提供程序已完成操作（例如，关闭对象），并向使用者返回控制权。
 
@@ -68,7 +68,7 @@ NDK 使用者通过调用 ndk 提供程序对该对象的 create 函数来启动
 
 提供程序必须准备好，以便使用者可以调用*NdkCloseObject*函数来关闭前面的对象，然后使用者为后续对象调用*NdkCloseObject* 。 如果使用者执行此操作，则提供程序必须执行以下操作：
 
--   在关闭所有后续对象（即，提供程序必须返回状态\_挂起的关闭请求并完成它（通过调用已注册的*NdkCloseCompletion*函数进行关闭）之前，提供程序不得关闭前面的对象请求） "。
+-   在关闭所有后续对象之前，提供程序不能关闭前面的对象，即，提供程序必须返回状态\_挂起的关闭请求，并在所有后续对象关闭后完成（通过调用已注册的*NdkCloseCompletion*函数进行关闭请求）。
 -   使用者在对其调用*NdkCloseObject*后将不使用 antecedent 对象，因此，提供程序无需添加对 antecedent 对象上其他失败的提供程序函数的任何处理（如果它选择了）。
 -   除非需要，否则提供程序可以处理 close 请求，如只是在最后一个后续任务对象关闭之前没有任何副作用的简单取消引用（请参阅下面的 "NDK 侦听器关闭大小写"）。
 
@@ -96,7 +96,7 @@ NDK 使用者不会从使用者回调函数内调用[**ndk\_适配器**](https:/
 访问接口不能完成对对象的关闭请求，直到：
 
 -   已完成对对象的所有挂起的异步请求（换言之，其完成回调返回给提供程序）。
--   CQ、 *NdkConnectEventCallback* （NDK\_fn\_上的所有使用者事件回调（例如， *NdkCqNotificationCallback* （[*ndk\_FN\_CQ\_通知\_回调*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_cq_notification_callback)）[*在侦听器上连接\_事件\_回调*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_event_callback)）已返回到提供程序。
+-   侦听器上的 CQ 上的所有使用者事件回调（例如， *NdkCqNotificationCallback* （[*ndk\_FN\_CQ\_通知\_回叫*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_cq_notification_callback)）都已返回到该提供程序[ *\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_event_callback)*中。* \_\_\_
 
 提供程序必须保证在调用关闭完成回调之后或在关闭请求返回状态\_成功后，不会再进行回调。 请注意，关闭请求还必须启动挂起的异步请求所需的任何刷新或取消操作。
 

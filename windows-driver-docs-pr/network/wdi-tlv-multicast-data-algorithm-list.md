@@ -1,10 +1,10 @@
 ---
 title: WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST
-description: WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST 是一个 TLV，其中包含一个多播数据算法对数组。
+description: WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST 是包含多播数据算法对数组的 TLV。
 ms.assetid: BF07170E-CF4E-4E93-85E1-3276E414BDD9
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: ff3bd22e3b5848d0e4d3d6730fe1b97cee60063f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -61,7 +61,7 @@ WDI\_算法\_对包含以下元素。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

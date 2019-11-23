@@ -37,7 +37,7 @@ ms.locfileid: "72838143"
 
 1.  微型端口驱动程序初始化**标头**成员。 驱动程序将**标头**的**类型**成员设置为\_对象\_类型\_默认值。
 
-    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 ndis\_接收\_筛选器\_功能\_修订版本\_2，并将**Size**成员设置为 ndis\_SIZEOF\_接收\_筛选器\_功能\_修订版本\_2。
+    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 ndis\_接收\_筛选器\_功能\_修订版本\_2，并将**Size**成员设置为 ndis\_SIZEOF\_\_\_\_\_
 
 2.  微型端口驱动程序将[**NDIS\_接收\_筛选\_器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的其他成员设置为 sr-iov 网络适配器接收筛选功能的值范围。 例如，微型端口驱动程序在**SupportedFilterTests**中设置相应的标志，以指定微型端口驱动程序支持的筛选器测试操作。
 
@@ -47,13 +47,13 @@ ms.locfileid: "72838143"
 
     -   [虚拟机队列 (VMQ)](virtual-machine-queue--vmq--in-ndis-6-20.md)。 有关如何在此接口中使用接收筛选器的详细信息，请参阅[设置和清除 VMQ 筛选器](setting-and-clearing-vmq-filters.md)。
 
-    如果微型端口驱动程序支持这些接口中的任何一个，则它还必须将[**NDIS\_接收\_筛选\_器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的成员设置为特定于该接口的接收筛选功能值范围。 例如，如果驱动程序支持 NDIS 数据包合并和 SR-IOV，则必须将 NDIS\_接收\_筛选器\_数据包\_合并\_\_默认\_队列标志**SupportedQueueProperties**成员。
+    如果微型端口驱动程序支持这些接口中的任何一个，则它还必须将[**NDIS\_接收\_筛选\_器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的成员设置为特定于该接口的接收筛选功能值范围。 例如，如果驱动程序支持 NDIS 数据包合并和 SR-IOV，则必须将 NDIS\_接收\_筛选器\_数据包\_合并，\_在**SupportedQueueProperties**成员中\_默认\_QUEUE 标志。\_
 
 微型端口驱动程序通过[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构，通过以下方式来报告当前启用的基础网络适配器的接收筛选功能：
 
 1.  微型端口驱动程序初始化**标头**成员。 驱动程序将**标头**的**类型**成员设置为\_对象\_类型\_默认值。
 
-    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 ndis\_接收\_筛选器\_功能\_修订版本\_2，并将**Size**成员设置为 ndis\_SIZEOF\_接收\_筛选器\_功能\_修订版本\_2。
+    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 ndis\_接收\_筛选器\_功能\_修订版本\_2，并将**Size**成员设置为 ndis\_SIZEOF\_\_\_\_\_
 
 2.  微型端口驱动程序将[**NDIS\_接收\_\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的其他成员设置为已启用的接口的接收筛选功能的值范围。 例如，如果启用了 NDIS 数据包合并，则驱动程序必须仅设置特定于此技术的成员。
 
@@ -75,9 +75,9 @@ ms.locfileid: "72838143"
 
         例如，如果启用了 VMQ 或 SR-IOV 接口，微型端口驱动程序必须在**EnabledFilterTypes**成员中设置 NDIS\_接收\_FILTER\_VMQ\_筛选器\_启用标志。 但是，如果启用了 SR-IOV 接口，则微型端口驱动程序必须将**NumQueues**成员设置为零; 如果启用 VMQ 接口，则必须将其设置为非零值。
 
-    -   微型端口驱动程序将**CurrentReceiveFilterCapabilities**成员设置为[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的地址，\_功能结构包含的当前接收筛选功能当前支持的接口。
+    -   微型端口驱动程序将**CurrentReceiveFilterCapabilities**成员设置为[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)的地址，\_功能结构包含当前启用的接口的当前接收筛选功能。
 
-4.  如果当前在网络适配器上启用了 VMQ、SR-IOV 或 NDIS 数据包合并，微型端口驱动程序会将**HardwareReceiveFilterCapabilities**成员设置为[**NDIS\_接收\_筛选器的地址\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构。 之前已通过网络适配器的当前启用的接收筛选功能对此结构进行了初始化。
+4.  如果当前在网络适配器上启用了 VMQ、SR-IOV 或 NDIS 数据包合并，微型端口驱动程序会将**HardwareReceiveFilterCapabilities**成员设置为[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的地址。 之前已通过网络适配器的当前启用的接收筛选功能对此结构进行了初始化。
 
 5.  驱动程序调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes) ，并将*MiniportAttributes*参数设置为指向[**NDIS\_微型端口的指针\_适配器\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构。
 
@@ -92,7 +92,7 @@ NDIS 通过以下方式将网络适配器的当前启用的接收筛选功能传
 
 -   当 NDIS 调用过量协议驱动程序的[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，Ndis 通过*BindParameters*参数传递网络适配器的 NIC 交换机功能。 此参数包含指向[**NDIS\_筛选器的指针\_ATTACH\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。 此结构的**ReceiveFilterCapabilities**成员包含指向[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构的指针。
 
-在处理 OID 的对象标识符（OID）查询请求时，NDIS 还[**会返回 ndis\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构[\_接收\_筛选器\_当前\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)和OID\_接收由过量协议或筛选器驱动程序颁发[\_硬件\_功能\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)。
+在处理 OID 的对象标识符（OID）查询请求时，NDIS 还[**会返回 ndis\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构[\_接收\_筛选器\_当前\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-current-capabilities)和 OID\_接收由过量协议或筛选器驱动程序颁发\_[硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-hardware-capabilities)。\_
 
  
 

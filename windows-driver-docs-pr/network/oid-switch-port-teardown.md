@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_TEARDOWN
 description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_TEARDOWN 的对象标识符（OID）设置请求，通知底层的可扩展交换机扩展，可扩展交换机端口将开始删除过程。
 ms.assetid: 94FA23AC-2064-40C8-B99C-D8D3DC10BFF9
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_TEARDOWN 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_TEARDOWN 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 34e0375582c8ca1193cc19515985d1b8d77da67f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -70,7 +70,7 @@ Hyper-v 可扩展交换机的协议边缘发出 OID\_交换机的对象标识符
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

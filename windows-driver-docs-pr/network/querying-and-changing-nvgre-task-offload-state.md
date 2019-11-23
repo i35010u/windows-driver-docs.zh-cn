@@ -19,9 +19,9 @@ ms.locfileid: "72844900"
 ## <a name="querying-nvgre-task-offload-state"></a>查询 NVGRE 任务卸载状态
 
 
-为了查询微型端口驱动程序的当前 NVGRE 任务卸载状态，NDIS 协议或筛选器驱动程序使用[OID\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 请求。 这会返回[**ndis\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_offload_handle)结构，该结构的**ENCAPSULATEDPACKETTASKOFFLOADGRE**成员是[**封装\_数据包\_任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构中包含 ndis 的 ndis\_ **@no__t_** 如果当前已为 GRE 封装的数据包启用了这些卸载，则11_ 卸载\_受支持，否则**不\_支持的 NDIS\_卸载\_** 。 NDIS 处理此 OID，但不将其向下传递到小型端口。
+为了查询微型端口驱动程序的当前 NVGRE 任务卸载状态，NDIS 协议或筛选器驱动程序使用[OID\_TCP\_卸载\_当前\_CONFIG](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config) OID 请求。 这会返回[**ndis\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndischimney/ns-ndischimney-_ndis_offload_handle)结构，该结构的**ENCAPSULATEDPACKETTASKOFFLOADGRE**成员是[**封装\_数据包\_任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构中的 ndis\_，它包含在当前为 GRE 封装的数据包启用了这些卸载，并且**未\_支持**的情况下支持的**ndis\_** 卸载\_\_\_ NDIS 处理此 OID，但不将其向下传递到小型端口。
 
-**请注意**  若要确定微型端口驱动程序是否支持 NVGRE 任务卸载，请使用[oid\_TCP\_卸载\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)OID 请求，如[确定 NVGRE 任务卸载中所述。网络适配器的功能](determining-the-nvgre-task-offload-capabilities-of-a-network-adapter.md)。
+**请注意**  若要确定微型端口驱动程序是否支持 NVGRE 任务卸载，请使用[oid\_TCP\_卸载\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)OID 请求，如[确定网络适配器的 NVGRE 任务卸载功能](determining-the-nvgre-task-offload-capabilities-of-a-network-adapter.md)中所述。
 
  
 
@@ -59,9 +59,9 @@ NDIS 协议或筛选器驱动程序可以通过[\_TCP\_卸载\_参数](https://d
 
  
 
-在微型端口驱动程序处理[oid 后\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，它必须将[**NDIS\_状态\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)\_\_已更新的卸载状态。
+当微型端口驱动程序处理[oid\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求后，它必须使用更新的卸载状态\_当前\_的配置状态指示发出[**NDIS\_状态\_的任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-task-offload-current-config)。
 
-当微型端口驱动程序收到[OID\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，在该请求中， **NDIS\_卸载\_设置\_OFF**标志，则驱动程序应指示已封装的任何现有在完成 OID 请求之前，部分处理的用于任务的数据包将在堆栈中上移。
+当微型端口驱动程序接收到[oid\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求（其中，已指定**NDIS\_卸载\_设置\_OFF**标志），驱动程序应指示在完成 OID 请求之前部分处理的任何现有封装的数据包，以使任务在堆栈中上移。
 
 常规数据包的基本任务卸载由现有 Oid （如 Oid）启用， [\_卸载\_封装](https://docs.microsoft.com/windows-hardware/drivers/network/oid-offload-encapsulation)和[oid\_接收\_FILTER\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)。 **EncapsulatedPacketTaskOffload**成员设置补充了这些 oid，并指示 NIC 还对封装的数据包执行了这些卸载。
 

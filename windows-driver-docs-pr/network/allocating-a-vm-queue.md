@@ -17,9 +17,9 @@ ms.locfileid: "72835390"
 
 
 
-如果要使用一组初始配置参数分配队列，则过量驱动程序会发出[OID\_接收\_FILTER\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)方法 OID 请求。 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员最初包含指向[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis\_OID\_请求**结构的**InformationBuffer**成员包含指向**ndis\_接收\_队列的指针\_参数**具有新队列标识符和 MSI-X 表项的结构。
+如果要使用一组初始配置参数分配队列，则过量驱动程序会发出[OID\_接收\_FILTER\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)方法 OID 请求。 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员最初包含指向[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的指针。 成功从 OID 方法请求返回后， **ndis\_OID\_请求**结构包含一个指向**ndis\_接收\_\_队列**的指针，该指针包含一个新队列标识符和一个 MSI-X 表项。
 
-[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构用于[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)OID 和 OID\_\_\_[队列\_的参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters)OID。 有关 VM 队列参数的详细信息，请参阅[获取和更新 Vm 队列参数](obtaining-and-updating-vm-queue-parameters.md)。
+[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构用于[OID\_接收\_筛选器\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)OID 和[OID\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-parameters)\_\_\_ 有关 VM 队列参数的详细信息，请参阅[获取和更新 Vm 队列参数](obtaining-and-updating-vm-queue-parameters.md)。
 
 上层驱动程序初始化[**NDIS\_接收\_queue\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构，并具有以下队列配置参数：
 
@@ -35,7 +35,7 @@ ms.locfileid: "72835390"
 
      
 
-**请注意**  过量驱动程序可以设置 NDIS\_接收\_队列\_参数\_每个\_队列\_接收\_指示，NDIS\_接收\_队列\_参数\_预测先行\_在[**NDIS\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**FLAGS**成员中拆分\_必需标志。 其他标志不用于队列分配。
+**请注意**  过量驱动程序可以设置 NDIS\_接收\_队列\_参数\_每个\_队列\_接收\_指示，NDIS\_接收\_队列\_参数\_\_\_\_\_[**参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构的**FLAGS**成员中拆分\_必需的标志。 其他标志不用于队列分配。
 
  
 
@@ -61,7 +61,7 @@ ms.locfileid: "72835390"
 
 在微型端口驱动程序接收 OID 后\_接收\_筛选器\_队列\_分配 OID 请求并成功处理该请求，队列处于已*分配*状态。 有关队列状态的详细信息，请参阅[队列状态和操作](queue-states-and-operations.md)。
 
-当过量驱动程序分配一个或多个接收队列（并根据需要设置初始筛选器）后，它必须颁发[OID\_接收\_筛选器\_队列\_分配\_完成](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)设置 OID 请求，通知小型端口驱动程序，为当前批次接收队列分配完成。
+在覆盖后的驱动程序分配一个或多个接收队列（并且可以选择设置初始筛选器）后，它必须[\_筛选\_器发出 OID\_接收筛选器\_分配\_完整](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-queue-allocation-complete)的设置 OID 请求，通知微型端口驱动程序分配已完成，当前批次接收队列。
 
 如果没有对该队列设置任何筛选器，则微型端口驱动程序不得保留接收队列中的任何数据包。 如果队列从未设置任何筛选器或清除了所有筛选器，则队列应为空，并且应丢弃所有数据包。 也就是说，它们不会显示在驱动程序堆栈上，也不会保留在队列中。
 

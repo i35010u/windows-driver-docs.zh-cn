@@ -4,7 +4,7 @@ description: WDI_TLV_PHY_DATA_RATE_LIST 是包含数据速率列表的 TLV。
 ms.assetid: FFD28866-4983-4C0B-A74D-4EF9A819571E
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_PHY_DATA_RATE_LIST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_PHY_DATA_RATE_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b91d79caa6614493e4a67f2f6b530a6e6bdcd60
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -61,7 +61,7 @@ WDI\_数据\_速率\_列表包含以下元素。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

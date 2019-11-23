@@ -22,7 +22,7 @@ ms.locfileid: "72836710"
 
 
 
-在某些平台中，处理器和系统 DMA 控制器（或总线主机 DMA 适配器）显示缓存一致性异常。 以下准则启用使用第1版或第2版 DMA 操作界面的驱动程序（请参阅[**dma\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_dma_operations)），在所有支持的处理器体系结构中维护一致的缓存状态，包括不包含自动强制缓存一致性的硬件。
+在某些平台中，处理器和系统 DMA 控制器（或总线主机 DMA 适配器）显示缓存一致性异常。 以下准则启用使用第1版或第2版 DMA 操作接口的驱动程序（请参阅[**dma\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_dma_operations)）来维护所有受支持的处理器体系结构中一致的缓存状态，包括不包含硬件以自动强制执行缓存一致性的体系结构。
 
 **请注意**  本主题中的准则仅适用于使用 DMA 操作接口版本1和版本2的驱动程序。 使用此接口版本3的驱动程序必须遵循一组不同的准则。 有关详细信息，请参阅[DMA 操作界面的版本 3](version-3-of-the-dma-operations-interface.md)。
 

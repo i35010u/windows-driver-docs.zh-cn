@@ -68,7 +68,7 @@ ms.locfileid: "72840611"
     AvcIrb->Operand[0] = Operand;
     ```
 
-3. 子单位驱动程序必须指定 IRP 的**MajorFunction**和**DeviceIoControl IoControlCode**成员，以及指向在步骤2中分配的 IRB 的指针。 在从操作系统分配 IRP 后，为相应的 IRB 分配非分页内存，然后设置 IRB 的参数，必须将 IRB 与 IRP 关联。 根据 IRB 的函数代码，必须在 IRP 中指定正确的调度例程。 对于对应于 IOCTL\_AVC\_类（即**IoControlCode**成员设置为 IOCTL\_AVC\_类）、IRP\_MN\_内部\_设备的 AV/C 函数代码 @no__t必须将 _8_ 控件指定为分配的 IRP 的**MajorFunction**值。 *Avc*支持的所有其他 AV/C 函数代码（如[**IOCTL\_Avc\_更新\_虚拟\_子单位\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)， [**IOCTL\_Avc\_删除\_虚拟\_子\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)和[**IOCTL\_AVC\_总线\_重置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset)，必须将 IRP\_MJ\_设备\_控件指定为分配的 IRP 的**MajorFunction**值。
+3. 子单位驱动程序必须指定 IRP 的**MajorFunction**和**DeviceIoControl IoControlCode**成员，以及指向在步骤2中分配的 IRB 的指针。 在从操作系统分配 IRP 后，为相应的 IRB 分配非分页内存，然后设置 IRB 的参数，必须将 IRB 与 IRP 关联。 根据 IRB 的函数代码，必须在 IRP 中指定正确的调度例程。 对于与 IOCTL\_AVC\_类对应的 AV/C 函数代码（即**IoControlCode**成员设置为 IOCTL\_AVC\_类），IRP\_MN\_内部\_设备\_控制必须指定为分配的 IRP 的**MajorFunction**值。 *Avc*支持的所有其他 AV/C 函数代码（如[**IOCTL\_Avc\_更新\_虚拟\_子虚拟子\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_update_virtual_subunit_info)， [**IOCTL\_Avc\_删除\_虚拟\_子单位\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_remove_virtual_subunit_info)和[**IOCTL\_Avc\_总线\_RESET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ni-avc-ioctl_avc_bus_reset)，必须将 IRP\_MJ\_设备\_控件指定为分配的 IRP 的**MajorFunction**值。
 
     下面的代码示例演示如何设置 IRP 以便*Avc*处理：
 
@@ -114,14 +114,14 @@ ms.locfileid: "72840611"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>值</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>STATUS_SUCCESS</p></td>
-<td><p>发出了请求，并且在 AV/C 规范的超时和重试参数的界限内收到最终响应。 仍必须检查子单位的响应代码（ <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)"><strong>AVC_COMMAND_IRB</strong></a>结构的<strong>ResponseCode</strong>成员），以确定操作的实际结果。 STATUS_SUCCESS 只表示往返请求和响应周期在100毫秒内完成（假设默认超时值未更改为100毫秒）。</p></td>
+<td><p>发出了请求，并且在 AV/C 规范的超时和重试参数的界限内收到最终响应。 仍必须检查子单位的响应代码（ <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb" data-raw-source="[&lt;strong&gt;AVC_COMMAND_IRB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_command_irb)"><strong>AVC_COMMAND_IRB</strong></a>结构的<strong>ResponseCode</strong>成员），以确定操作的实际结果。 STATUS_SUCCESS 只是意味着往返请求和响应周期在100毫秒内完成（假设默认超时值未更改为100毫秒）。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_TIMEOUT</p></td>
@@ -151,7 +151,7 @@ ms.locfileid: "72840611"
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th>值</th>
 <th>描述</th>
 </tr>
 </thead>

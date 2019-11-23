@@ -16,9 +16,9 @@ ms.locfileid: "72830126"
 
 设置友好名称（注册）主题介绍 Port 类蓝牙 sideband audio 驱动程序如何为设备接口设置友好名称，以及注册蓝牙设备使用的任何音频处理对象（APO）。
 
-对于每个已启用的 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口，端口类音频驱动程序（PortCls）通常会调用 PcRegisterSubdevice 函数，该函数将注册 PnP 设备接口，表示音频适配器上的子设备。 在典型的音频驱动程序设计中，音频驱动程序对 "wave" 和 "拓扑" 子设备调用 PcRegisterSubdevice，然后通过调用其他端口类函数连接。
+对于每个已启用的 GUID\_DEVINTERFACE\_蓝牙\_HFP\_SCO\_HCIBYPASS 接口，端口类音频驱动程序（PortCls）通常会调用 PcRegisterSubdevice 函数，该函数在音频适配器上注册代表子设备的 PnP 设备接口。 在典型的音频驱动程序设计中，音频驱动程序对 "wave" 和 "拓扑" 子设备调用 PcRegisterSubdevice，然后通过调用其他端口类函数连接。
 
-在为 "拓扑" 子设备调用 PcRegisterSubdevice 之前，驱动程序按照[设置属性和注册表值](setting-properties-and-registry-values.md)中所述的过程，在 KSCATEGORY\_音频接口中的接口上设置属性和注册表值班级. 以下各节介绍了具体的属性和注册表值。
+在为 "拓扑" 子设备调用 PcRegisterSubdevice 之前，驱动程序按照[设置属性和注册表值](setting-properties-and-registry-values.md)中所述的过程，在 KSCATEGORY\_音频接口类的接口上设置属性和注册表值。 以下各节介绍了具体的属性和注册表值。
 
 ## <a name="span-iddevpkey_deviceinterface_friendlynamespanspan-iddevpkey_deviceinterface_friendlynamespanspan-iddevpkey_deviceinterface_friendlynamespandevpkey_deviceinterface_friendlyname"></a><span id="DEVPKEY_DeviceInterface_FriendlyName"></span><span id="devpkey_deviceinterface_friendlyname"></span><span id="DEVPKEY_DEVICEINTERFACE_FRIENDLYNAME"></span>DEVPKEY\_DeviceInterface\_FriendlyName
 

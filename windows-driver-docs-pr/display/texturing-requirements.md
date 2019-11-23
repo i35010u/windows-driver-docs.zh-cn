@@ -30,11 +30,11 @@ ms.locfileid: "72829329"
 
 2.  如果硬件在其纹理上具有纵横比限制，则该比率必须存在于 D3DDEVICEDESC7 结构的**dwMaxTextureAspectRatio**成员中。
 
-3.  如果设备仅支持作为2的幂的纹理维度，则必须将[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwTextureCaps**成员设置为包含相应基元类型的 D3DPTEXTURECAPS\_POW2 标志（行或三角形）。
+3.  如果设备仅支持作为2的幂的纹理维度，则必须将[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwTextureCaps**成员设置为包含相应基元类型（线条或三角形）的 D3DPTEXTURECAPS\_POW2 标志。
 
-4.  如果纹理阶段的纹理寻址模式设置为 D3DTADDRESS\_夹具时，设备可以支持任意大小的二维（二维）纹理（即，不是音量或多维数据集纹理），则将禁用纹理贴图的纹理换行（D3DRENDERSTATE\_将*n*设置为0），并且未使用 MIP 映射，则它必须设置 D3DPTEXTURECAPS\_NONPOW2CONDITIONAL 标志。
+4.  如果设备可以支持二维（2D）纹理（即 "不是卷" 或 "多维数据集纹理"）的任意大小当纹理阶段的纹理寻址模式设置为 D3DTADDRESS\_夹具时，将禁用纹理阶段的纹理环绕（D3DRENDERSTATE\_将 ""*设置为*0），并且未使用 MIP 映射，则必须设置 D3DPTEXTURECAPS\_NONPOW2CONDITIONAL 标志。
 
-5.  如果设备仅支持其维度相等的纹理，则必须将[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwTextureCaps**成员设置为包含相应基元类型的 D3DPTEXTURECAPS\_SQUAREONLY 标志（行或三角形）。
+5.  如果设备仅支持维度相等的纹理，则必须将[**D3DPRIMCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dcaps/ns-d3dcaps-_d3dprimcaps)结构的**dwTextureCaps**成员设置为包含相应基元类型（线条或三角形）的 D3DPTEXTURECAPS\_SQUAREONLY 标志。
 
 如果设备支持任意大小的纹理而不受第一次和第二次要求中描述的限制，则不能设置第三、第四和第五个要求中所述的任何标志。
 
@@ -54,9 +54,9 @@ ms.locfileid: "72829329"
 
 ### <a name="span-ididirect3ddevice7_validatedevicespanspan-ididirect3ddevice7_validatedevicespanidirect3ddevice7validatedevice"></a><span id="idirect3ddevice7_validatedevice"></span><span id="IDIRECT3DDEVICE7_VALIDATEDEVICE"></span>IDirect3DDevice7::ValidateDevice
 
-如果设备在单个传递中支持纹理阶段状态混合操作和操作数的特定组合，则设备必须从对**IDirect3DDevice7：： ValidateDevice**方法的调用返回 DD\_确定（在 Direct3D SDK 中进行了介绍）。文档）。
+如果设备在单个传递中支持纹理阶段状态混合操作和操作数的特定组合，则设备必须从每个此类组合的 IDirect3DDevice7：： ValidateDevice 方法（在 Direct3D SDK 文档中介绍）调用 **：：** 方法返回 DD\_确定。
 
-如果设备不支持单个传递中的纹理阶段状态混合操作的特定组合，或者不支持一个或多个混合操作或操作数，则它必须返回允许用于 IDirect3DDevice7 的错误代码之一 **：： ValidateDevice**方法。 无效的混合操作无法以无提示方式将**IDirect3DDevice7：： ValidateDevice**方法失败。
+如果设备不支持单个传递中的纹理阶段状态混合操作的特定组合，或者不支持一个或多个混合操作或操作数，则它必须返回允许用于**IDirect3DDevice7：： ValidateDevice**方法的错误代码之一。 无效的混合操作无法以无提示方式将**IDirect3DDevice7：： ValidateDevice**方法失败。
 
  
 

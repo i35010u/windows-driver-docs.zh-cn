@@ -47,7 +47,7 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 ## <a name="enabling-and-disabling-umdf-verifier"></a>启用和禁用 UMDF 验证程序
 
 
-可以通过将**VerifierOn**的 **\\参数**设置为非零值，来手动启用 UMDF 验证程序，方法是将**HKEY\_本地\_机\\软件\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\Services\\&lt;驱动程序名称&gt;** 注册表项。
+你可以通过将**VerifierOn**设置为驱动程序的 **\\参数**中的非零值来手动启用 UMDF 验证程序： **HKEY\_本地\_机\\软件\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\\\&lt;&gt;**
 
 **请注意**，  **VerifierOn**值是否存在，甚至设置为零，都将覆盖应用程序验证工具的链接。 因此，如果不强制执行此值，建议删除该值，而不是将其设置为零。
 
@@ -69,23 +69,23 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 <a href="" id="verifydownlevel--------------reg-dword-"></a>**VerifyDownLevel** （**REG\_DWORD**）  
 如果将**VerifyDownLevel**设置为非零值，并且该驱动程序是使用比当前版本旧的 framework 版本生成的，则该框架的验证程序将包含在生成驱动程序之后添加的测试。 如果此值不存在或设置为零，则框架的验证器将仅包含生成驱动程序时存在的测试。
 
-例如，如果你的驱动程序是用 framework 1.7 版构建的，并且如果计算机上安装了 framework 版本1.9，则将**VerifyDownLevel**设置为非零会导致验证程序包含已添加到 verifier 版本1.9 的测试当驱动程序运行时。
+例如，如果你的驱动程序是用 framework 1.7 版构建的，并且如果计算机上安装了 framework 版本1.9，则将**VerifyDownLevel**设置为非零会导致该验证程序包含在你的驱动程序运行时添加到 verifier 版本1.9 的测试。
 
-此值位于 HKEY 的**参数\\Wdf**子项 **\_本地\_机\\软件\\MICROSOFT\\Windows NT\\CurrentVersion\\WUDF\\Services\\*DriverName*** 注册表项。
+此值位于 HKEY 的**参数\\Wdf**子项 **\_本地\_机\\软件\\MICROSOFT\\Windows NT\\CurrentVersion\\WUDF\\Services\\* DriverName*** 注册表项。
 
 <a href="" id="trackobjects-----------------------------reg-dword-"></a>**TrackObjects** （**REG\_DWORD**）  
 如果将**TrackObjects**设置为非零值，则当卸载驱动程序时，框架将进入调试器，如果任何基于框架的对象[泄漏](determining-if-a-driver-leaks-framework-objects.md)（未删除）。
 
 在常规测试过程中，应启用**TrackObjects**而不是**TrackRefCounts**。 如果验证程序报告驱动程序正在泄漏框架对象，请使用 control 应用程序启用**TrackRefCounts** verifier 选项。
 
-此值位于**HKEY\_本地\_计算机\\软件\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services**注册表项的*DefaultHostProcessGuid*子项，其中*DefaultHostProcessGuid*是可在**HKEY\_本地\_计算机\\软件\\MICROSOFT\\Windows NT\\CurrentVersion\\WUDF**子项中查找的值。
+此值位于**HKEY\_本地\_计算机\\软件\\Microsoft\\WINDOWS nt\\CurrentVersion\\WUDF\\Services**注册表项中的*DefaultHostProcessGuid*子项中，其中*DefaultHostProcessGuid*是一个值，可在**HKEY\_本地\_机\\SOFTWARE\\MICROSOFT\\windows nt\\CurrentVersion\\WUDF**子项中查找。
 
 <a href="" id="trackrefcounts-----------------------------reg-dword-"></a>**TrackRefCounts** （**REG\_DWORD**）  
 如果**TrackRefCounts**设置为非零值，则框架将维护对每个基于框架的对象的引用数的计数。 您可以使用[！ wudfrefhist](using-umdf-debugger-extensions.md)调试器扩展来查看对象的引用计数的更改。
 
 将**TrackRefCounts**设置为非零值将降低驱动程序的性能，因此应将值保留为零，除非正在调试对象删除 bug。
 
-此值位于**HKEY\_本地\_计算机\\软件\\Microsoft\\WINDOWS NT\\CurrentVersion\\WUDF\\Services**注册表项的*DefaultHostProcessGuid*子项，其中*DefaultHostProcessGuid*是可在**HKEY\_本地\_计算机\\软件\\MICROSOFT\\Windows NT\\CurrentVersion\\WUDF**子项中查找的值。
+此值位于**HKEY\_本地\_计算机\\软件\\Microsoft\\WINDOWS nt\\CurrentVersion\\WUDF\\Services**注册表项中的*DefaultHostProcessGuid*子项中，其中*DefaultHostProcessGuid*是一个值，可在**HKEY\_本地\_机\\SOFTWARE\\MICROSOFT\\windows nt\\CurrentVersion\\WUDF**子项中查找。
 
 除了上面列出的注册表值，UMDF 2.0 和更高版本的驱动程序还可以使用[使用 KMDF Verifier](using-kmdf-verifier.md)中列出的许多注册表值。
 

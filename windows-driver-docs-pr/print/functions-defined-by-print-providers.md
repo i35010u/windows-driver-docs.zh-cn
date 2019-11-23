@@ -135,7 +135,7 @@ ms.locfileid: "72845300"
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/previous-versions/ff561930(v=vs.85)" data-raw-source="[&lt;strong&gt;RefreshPrinterChangeNotification&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff561930(v=vs.85))"><strong>RefreshPrinterChangeNotification</strong></a></p></td>
-<td><p>如果客户端调用<strong>FindNextPrinterChangeNotification</strong> （请参阅 Microsoft Windows SDK 文档），并设置 PRINTER_NOTIFY_OPTIONS_REFRESH 标志，则由路由器调用。</p></td>
+<td><p>如果客户端使用 PRINTER_NOTIFY_OPTIONS_REFRESH 标志集调用<strong>FindNextPrinterChangeNotification</strong> （请参阅 Microsoft Windows SDK 文档），则由路由器调用。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>ResetPrinter</strong></p></td>

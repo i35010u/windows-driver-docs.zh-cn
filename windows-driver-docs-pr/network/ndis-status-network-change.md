@@ -1,10 +1,10 @@
 ---
 title: NDIS_STATUS_NETWORK_CHANGE
-description: NDIS_STATUS_NETWORK_CHANGE 状态表示一个网络更改，以允许过量驱动程序启动网络地址的重新协商。
+description: "\"NDIS_STATUS_NETWORK_CHANGE 状态\" 指示网络更改，以允许过量驱动程序启动网络地址的重新协商。"
 ms.assetid: feb6bb71-7147-43dd-b09d-cb41404164eb
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_NETWORK_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_NETWORK_CHANGE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 89616ed87053ec21377793efa7dffa6ce1a4baf5
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ ms.locfileid: "72842785"
 
 NDIS 微型端口驱动程序可以生成此状态指示，请求过量的协议驱动程序以重新协商层三个地址。
 
-NDIS\_状态\_网络\_更改模拟802.3 的旧版 802.1 X 无线微型端口驱动程序的状态指示来生成 NDIS 状态。 这些微型端口驱动程序报告 **\_NdisMedium802**为**NdisPhysicalMediumWirelessLan**的媒体类型。 当这样的微型端口驱动程序生成[**ndis\_状态时\_MEDIA\_连接**](ndis-status-media-connect.md)状态指示，并且关联的微型端口适配器处于连接状态，ndis 将生成 NDIS\_状态\_网络\_更改微型端口适配器的状态指示。
+NDIS\_状态\_网络\_更改模拟802.3 的旧版 802.1 X 无线微型端口驱动程序的状态指示来生成 NDIS 状态。 这些微型端口驱动程序报告 **\_NdisMedium802**为**NdisPhysicalMediumWirelessLan**的媒体类型。 当这样的微型端口驱动程序生成[**ndis\_状态时\_MEDIA\_连接**](ndis-status-media-connect.md)状态指示，并且关联的微型端口适配器处于连接状态，ndis 将为微型端口适配器生成 NDIS\_状态\_网络\_更改状态指示。
 
 只有在已准备好处理网络数据后，NDIS 6.0 和更高版本的小型端口驱动程序才会\_网络\_更改状态指示生成 NDIS\_状态。 例如，在本机802.11 中，此状态指示在成功完成身份验证并实现完全第2层连接后生成。
 

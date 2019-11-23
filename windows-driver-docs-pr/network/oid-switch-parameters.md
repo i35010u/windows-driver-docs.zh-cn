@@ -3,7 +3,7 @@ title: OID_SWITCH_PARAMETERS
 description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PARAMETERS 的对象标识符（OID）查询请求，以获取可扩展交换机的配置数据。
 ms.assetid: F2CA0BE5-ED21-4ACF-B26A-4F512D4B15C7
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PARAMETERS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d14c6e4dcdb57d21ecab84906d566232c70021be
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -22,7 +22,7 @@ Hyper-v 可扩展交换机扩展发出 OID 的对象标识符（OID）查询请�
 <a name="remarks"></a>备注
 -------
 
-当扩展处理返回的[**ndis\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，它不能假定 NDIS\_的各个字符串成员 **\_参数**结构（如**SwitchName**）。以 null 结尾。 [**如果\_计数\_字符串**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)结构，则这些字符串成员的数据类型由类型定义。 该扩展必须确定此结构的**length**成员值中的字符串长度。
+当扩展处理返回的[**ndis\_switch\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_parameters)结构时，它不得假设**NDIS\_开关\_参数**结构（如**SwitchName**）的各个字符串成员均以 null 结尾。 [**如果\_计数\_字符串**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_if_counted_string_lh)结构，则这些字符串成员的数据类型由类型定义。 该扩展必须确定此结构的**length**成员值中的字符串长度。
 
 **请注意**  如果字符串以 null 结尾，则**长度**成员不能包含终止 null 字符。
 
@@ -50,7 +50,7 @@ Hyper-v 可扩展交换机扩展发出 OID 的对象标识符（OID）查询请�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度太小，无法返回 OID 查询请求的 OID_SWITCH_PARAMETERS 结构。 可扩展交换机的基础微型端口边缘设置<strong>数据。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回 OID 查询请求的 OID_SWITCH_PARAMETERS 结构。 可扩展交换机的基础微型端口边缘设置<strong>数据。QUERY_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

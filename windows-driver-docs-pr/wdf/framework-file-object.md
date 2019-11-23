@@ -1,6 +1,6 @@
 ---
-title: Framework 文件对象
-description: Framework 文件对象
+title: 框架文件对象
+description: 框架文件对象
 ms.assetid: dd8215ee-2c10-4e49-9d7f-d2295bf219da
 keywords:
 - UMDF 对象 WDK，文件对象
@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72843178"
 ---
-# <a name="framework-file-object"></a>Framework 文件对象
+# <a name="framework-file-object"></a>框架文件对象
 
 
 [!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]

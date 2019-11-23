@@ -31,7 +31,7 @@ ms.locfileid: "72842018"
 
 如果中间驱动程序自行处理 OID 的设置，而不是将设置请求传递到基础微型端口，则应验证要设置的值。 如果中间驱动程序确定要设置的值超出界限，则它应使集请求失败。
 
-**请注意**  如果中间驱动程序修改了向下移动到基础微型端口驱动程序的 tcp 网络数据的内容，以便无法对网络数据执行 tcp 卸载功能，则中间驱动程序应响应[OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)查询，状态为 NDIS\_状态\_不支持\_，而不是向下传递请求到底层微型端口。
+**请注意**  如果中间驱动程序修改了 tcp 网络数据的内容，这些数据会向下传递到基础微型端口驱动程序，以便无法对网络数据执行 tcp 卸载功能，则中间驱动程序应响应[OID\_TCP\_卸载\_当前\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)状态为 NDIS\_状态的\_配置查询\_不支持，而不是向下传递请求。
 
  
 

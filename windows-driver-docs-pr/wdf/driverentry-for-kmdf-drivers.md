@@ -75,7 +75,7 @@ NTSTATUS DriverEntry(
 
 -   提供[DriverEntry 返回值](https://docs.microsoft.com/windows-hardware/drivers/kernel/driverentry-return-values)。
 
-**请注意**  UMDF 驱动程序在用户模式主机进程中运行，而 KMDF 驱动程序在系统进程的内核模式下运行。 此框架可能会将 UMDF 驱动程序的多个实例加载到主机进程的单独实例中。 结果如下：
+**请注意**  UMDF 驱动程序在用户模式主机进程中运行，而 KMDF 驱动程序在系统进程的内核模式下运行。 此框架可能会将 UMDF 驱动程序的多个实例加载到主机进程的单独实例中。 因此：
 
  
 

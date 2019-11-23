@@ -39,7 +39,7 @@ ms.locfileid: "72840398"
 <td><p>可有可无一个布尔值，指示端口监视器是否向驱动程序发送通知。 <strong>TRUE</strong>值指示端口监视器向驱动程序发送通知;<strong>FALSE</strong>表示端口监视器不向驱动程序发送通知。</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>名称</strong></p></td>
+<td><p><strong>name</strong></p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
@@ -52,7 +52,7 @@ ms.locfileid: "72840398"
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p><code> Value</code> 构造中的数据类型（ <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值）。</p></td>
+<td><p><code> Value</code> 构造中的数据类型， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
 </tr>
 </tbody>
 </table>

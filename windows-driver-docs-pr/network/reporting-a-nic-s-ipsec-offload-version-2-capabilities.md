@@ -28,7 +28,7 @@ ms.locfileid: "72842050"
 
  
 
-为了响应[OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)，ndis 在 NDIS [ **\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构中包含 NDIS\_IPSEC\_卸载，该结构在[ **\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员。 NDIS 使用微型端口驱动程序提供的信息。
+为了响应[OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)，ndis 在 NDIS\_[**卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构中包含 ndis\_IPSEC\_卸载，NDIS\_[**OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员中返回。\_ NDIS 使用微型端口驱动程序提供的信息。
 
  
 

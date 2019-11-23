@@ -115,7 +115,7 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 如前面的示例值数组所示，当系统处于系统电源状态 S1 时，NIC 可以在设备电源状态 D1、D2 或 D3 中。 当系统处于系统电源状态 S2 或 S3 时，NIC 可以位于设备电源状态 D2 或 D3 中。
 
-为了确定系统和 NIC 是否支持 LAN 唤醒，NDIS 同时检查**SystemWake**和**DeviceWake**成员。 如果将**SystemWake**和**DeviceWake**都设置为**POWERSYSTEMUNSPECIFIED**，NDIS 会将 NIC 视为支持电源管理。 在这种情况下，或者如果微型端口驱动程序将 NDIS\_属性设置\_在初始化期间\_暂停标志上不\_停止\_，NDIS 随后会向微型端口驱动程序颁发[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)请求获取有关 NIC 的唤醒功能的详细信息。
+为了确定系统和 NIC 是否支持 LAN 唤醒，NDIS 同时检查**SystemWake**和**DeviceWake**成员。 如果将**SystemWake**和**DeviceWake**都设置为**POWERSYSTEMUNSPECIFIED**，NDIS 会将 NIC 视为支持电源管理。 在这种情况下，或者如果微型端口驱动程序将 NDIS\_属性设置\_在初始化期间\_暂停标志上不\_停止\_，NDIS 会向该驱动程序发出[OID\_PNP\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-capabilities)请求，以获取有关 NIC 的唤醒功能的详细信息。
 
 ### <a href="" id="using-oid-pnp-capabilities"></a>使用 OID\_PNP\_功能
 
@@ -135,7 +135,7 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 -   设备在收到包含协议驱动程序指定模式的网络帧时，可从中唤醒系统的最小设备电源状态。
 
-当 NDIS 获取此信息后，它会确定每个系统电源状态的设备电源状态，如果用户在 UI 中启用了 LAN 唤醒，则可以将其设置为 NIC。 如果没有可供 NIC 从中生成唤醒信号的低功率设备状态（即，如果在\_设备的**DeviceState**数组中指定的所有低功耗设备电源状态都低于最低NIC 可从其唤醒系统的设备电源状态，NDIS 使设备在 "**电源管理**" 选项卡中无法使用 nic 时，使**设备进入待机**状态。 然后，用户无法启用 LAN 唤醒。
+当 NDIS 获取此信息后，它会确定每个系统电源状态的设备电源状态，如果用户在 UI 中启用了 LAN 唤醒，则可以将其设置为 NIC。 如果没有可供 NIC 从中生成唤醒信号的低功率设备状态（即如果在设备的**DeviceState**阵列中指定的所有低功耗设备电源状态\_功能结构低于 nic 可从中唤醒系统的最小设备电源状态），NDIS 会使设备在 "**电源管理**" 选项卡中无法使用 nic 时，使**设备进入待机**状态。 然后，用户无法启用 LAN 唤醒。
 
 **请注意**，只有在 NIC 和系统都支持电源管理的情况下，  LAN 唤醒才能实现。 如果系统不支持电源管理，NDIS 将不会查询 NIC 的电源管理功能。
 
@@ -151,7 +151,7 @@ DeviceState[PowerSystemShutdown] PowerDeviceD3
 
 默认情况下，选择第一个选项以启用 NIC 的电源管理。 如果用户清除选项，NDIS 会将 NIC 视为与电源管理有关的旧 NIC。 有关详细信息，请参阅[旧微型端口驱动程序的电源管理](power-management-for-old-miniport-drivers.md)。
 
-默认情况下，第二个选项是清除的。 如果 NDIS 确定不允许 NIC 从其生成唤醒信号的低功率状态，NDIS 将使第二个选项不可用。 例如，如果设备的**DeviceState**阵列成员\_功能结构指示 nic 必须在 D3 中适用于所有低功耗系统状态，并且**DeviceWake**指示 nic 的最小设备状态可以唤醒系统为 D2，而 NDIS 暗色使第二个复选框不可用。
+默认情况下，第二个选项是清除的。 如果 NDIS 确定不允许 NIC 从其生成唤醒信号的低功率状态，NDIS 将使第二个选项不可用。 例如，如果设备的**DeviceState**阵列成员\_功能结构指示 nic 必须在 D3 中适用于所有低功耗系统状态，并且如果**DeviceWake**指示 nic 可以唤醒系统的最低功率设备状态为 D2，则 NDIS 深浅使第二个复选框不可用。
 
 除了上述两个选项以外，Windows XP 和 Windows Vista 还在 NIC 的 "**电源管理**" 选项卡中提供了第三个选项：
 

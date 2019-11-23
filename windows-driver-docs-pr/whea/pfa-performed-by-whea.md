@@ -43,7 +43,7 @@ ms.locfileid: "72845634"
 
 7.  如果安装了 PSHED 插件并注册了以检索有关错误的信息，则 PSHED 将调入 PSHED 插件，以便插件可以修改错误记录中的信息。
 
-    **请注意**  如果 PSHED 插件未执行 PFA，则它不能将\_WHEA 中的**PlatformPfaControl**位设置为[WHEA\_错误\_数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85)) [ **\_数据包\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员构造.
+    **请注意**  如果 PSHED 插件未执行 PFA，则它不能在 WHEA**的** [**WHEA\_错误\_数据包\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_packet_flags)成员\_[数据包](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff560465(v=vs.85))结构。\_
 
      
 

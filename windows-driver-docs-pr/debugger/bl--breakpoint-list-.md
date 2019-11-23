@@ -35,7 +35,7 @@ bl [/L] [Breakpoints]
 强制**bl**始终显示断点地址，而不是显示源文件和行号。
 
 <span id="_______Breakpoints______"></span><span id="_______breakpoints______"></span><span id="_______BREAKPOINTS______"></span>*断点*   
-指定要列出的断点的 ID 号。 如果省略*断点*，调试器会列出所有断点。 可以指定任意数量的断点。 必须用空格或逗号分隔多个 Id。 您可以通过使用连字符（-）指定断点 Id 的范围。 可以使用星号（\*）来指示所有断点。 如果要对 ID 使用[数值表达式](numerical-expression-syntax.md)，请将其括在方括号（\[\]）中。 如果要使用[带有通配符的字符串](string-wildcard-syntax.md)来匹配断点的符号名称，请将其括在引号（\"\"）中。
+指定要列出的断点的 ID 号。 如果省略*断点*，调试器会列出所有断点。 可以指定任意数量的断点。 必须用空格或逗号分隔多个 Id。 您可以通过使用连字符（-）指定断点 Id 的范围。 可以使用星号（\*）来指示所有断点。 如果要对 ID 使用[数值表达式](numerical-expression-syntax.md)，请将其括在括号中（\[\]）。 如果要使用[带有通配符的字符串](string-wildcard-syntax.md)来匹配断点的符号名称，请将其括在引号中（\"\"）。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -83,7 +83,7 @@ bl [/L] [Breakpoints]
 
 - 在断点被激活之前剩余的传递数，后跟用括号括起的初始数目。 有关此类*断点的详细*信息，请参阅[**bp、bu、Bm.exe （设置断点）** ](bp--bu--bm--set-breakpoint-.md)中 pass 参数的描述。
 
-- 关联的进程和线程。 如果将线程指定为三个星号\*（\*\*），则此断点不是线程特定的断点。
+- 关联的进程和线程。 如果将线程指定为三个星号（\*\*\*），则此断点不是线程特定的断点。
 
 - 与断点地址相对应的模块和函数，具有偏移量。 如果未解析断点，则在此处显示断点地址，而不是括号。 如果对有效地址设置了断点，但缺少符号信息，则此字段为空。
 

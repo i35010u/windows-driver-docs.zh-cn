@@ -20,7 +20,7 @@ ms.locfileid: "72838166"
 
  
 
-在停止 PF 微型端口驱动程序之前，NDIS 会通过发出一个对象标识符（OID）\_\_NIC 的对象标识符（OID）集请求来删除 NIC 交换机[\_DELETE\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)。 [ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_NIC 的指针\_交换机\_DELETE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构，用于指定正在删除的交换机的标识符。
+在停止 PF 微型端口驱动程序之前，NDIS 会通过发出一个对象标识符（OID）\_\_NIC 的对象标识符（OID）集请求来删除 NIC 交换机[\_DELETE\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)。 [ **\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向[**NDIS\_NIC 的指针\_交换机\_DELETE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_switch_parameters)结构（指定要删除的交换机的标识符）。\_
 
 NDIS 在发出 oid\_NIC 的 OID 集请求之前强制执行以下策略[\_交换机\_DELETE\_切换](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-switch)到 PF 微型端口驱动程序：
 

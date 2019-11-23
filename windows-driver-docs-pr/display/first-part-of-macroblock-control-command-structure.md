@@ -113,8 +113,8 @@ ms.locfileid: "72839694"
 <tbody>
 <tr class="odd">
 <td align="left"><p>15到12</p></td>
-<td align="left"><p><em>MvertFieldSel_3</em> （第15位，最重要）到<em>MvertFieldSel</em>_0 （bit 12）</p>
-<p>为稍后在宏块控件命令中发送的相应运动向量指定垂直字段选择，如下表所示。 对于带有帧图片结构（例如，261和 .H）的基于帧的动画，这些位必须全部为零。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2</em>和<em>MvertFieldSel_3</em>中的位对应于 mpeg-2 第 motion_vertical_field_select 节中的 6.3.17.2 [r] [s] 位。</p></td>
+<td align="left"><p>通过<em>MvertFieldSel</em>_0 （第12位） <em>MvertFieldSel_3</em> （位15，最重要）</p>
+<p>为稍后在宏块控件命令中发送的相应运动向量指定垂直字段选择，如下表所示。 对于带有帧图片结构（例如，261和 .H）的基于帧的动画，这些位必须全部为零。 <em>MvertFieldSel_0、MvertFieldSel_1、MvertFieldSel_2</em>和<em>MvertFieldSel_3</em>中的位对应于 mpeg-2 第6.3.17.2 部分中的 motion_vertical_field_select [r] [s] 位。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>11</p></td>
@@ -129,7 +129,7 @@ ms.locfileid: "72839694"
 <td align="left"><p>9和8</p></td>
 <td align="left"><p><em>MotionType</em></p>
 <p>指定图片中的运动类型。 例如，对于具有帧图片结构的基于帧的动画（如261），位9必须为1，位8必须为零。</p>
-<p>如果在 MPEG-2 位流中存在 MPEG-2 视频标准中的 frame_motion_type 或 field_motion_type 位，则使用这些位直接对应于使用 6.3.17.1 6-18 6-17 和中的或位。 此表后面会进一步说明这些位的使用情况。</p></td>
+<p>如果在 mpeg-2 位流中存在 MPEG-2 视频标准的6.3.17.1 和表6-17 和6-18，则使用这些位直接对应于使用该<em>frame_motion_type</em>或<em>field_motion_type</em>位。 此表后面会进一步说明这些位的使用情况。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>7和6</p></td>
@@ -165,12 +165,12 @@ ms.locfileid: "72839694"
 <tr class="odd">
 <td align="left"><p>2</p></td>
 <td align="left"><p><em>MotionBackward</em></p>
-<p>此变量用于在 MPEG-2 中为相应的<em>macroblock_motion_backward</em>参数指定。 如果 DXVA_PictureParameters 结构的<strong>bPicBackwardPrediction</strong>成员为零，则<em>MotionBackward</em>必须为零。</p></td>
+<p>此变量用于在 MPEG-2 中的相应<em>macroblock_motion_backward</em>参数中指定。 如果 DXVA_PictureParameters 结构的<strong>bPicBackwardPrediction</strong>成员为零，则<em>MotionBackward</em>必须为零。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
 <td align="left"><p><em>MotionForward</em></p>
-<p>此变量用于在 MPEG-2 中为相应的<em>macroblock_motion_forward</em>指定。 此表后面的文本中进一步说明了使用此位。</p></td>
+<p>对于 MPEG-2 中的相应<em>macroblock_motion_forward</em> ，将使用此变量。 此表后面的文本中进一步说明了使用此位。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0</p></td>
@@ -185,7 +185,7 @@ ms.locfileid: "72839694"
 
 如果 macroblocks 是预先编码的，则它们具有关联的运动矢量值。 这些值基于是否将 macroblocks 用于字段编码或框架编码图片而生成。 任何实现都应该正确地考虑每个使用的宏块类型（尤其是对于字段结构化图片或双重主要运动），这一点非常重要。
 
-本部分中的以下两个表指示了*IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*和**MVector**的有效组合，适用于帧编码和字段编码拍照. **MVector**包含运动向量的水平和垂直分量。 其余的变量和标志指定运动矢量运算。 这取决于处理的宏块类型，以及是否将 macroblocks 用于框架编码或字段编码图片。
+本部分中的以下两个表说明了*IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*和**MVector**的有效组合。 **MVector**包含运动向量的水平和垂直分量。 其余的变量和标志指定运动矢量运算。 这取决于处理的宏块类型，以及是否将 macroblocks 用于框架编码或字段编码图片。
 
 下面的表（在此部分中）中显示的值在以下情况下发生：
 
@@ -193,7 +193,7 @@ ms.locfileid: "72839694"
 
 -   除非**bPicStructure**为2（底部字段），否则*PicCurrentField*标志为零。 在这种情况下， *PicCurrentField*为1。
 
-**MVector**是[**DXVA\_MBctrl\_p\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)和[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)结构的成员。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*和*Motion4MV*标志和变量都包含在**位域**中。DXVA\_MBctrl\_P\_HostResidDiff\_1 和 DXVA\_MBctrl\_P\_OffHostIDCT\_1 结构的成员。 **bPicOBMC**是[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 *PicCurrentField*标志派生自 DXVA\_PictureParameters 的**bPicStructure**成员。
+**MVector**是[**DXVA\_MBctrl\_p\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)和[**DXVA\_MBctrl\_P\_OffHostIDCT\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_offhostidct_1)结构的成员。 *IntraMacroblock*、 *MotionForward*、 *MotionBackward*、 *MotionType*、 *MvertFieldSel*、 *H261LoopFilter*和*Motion4MV*标志和变量都包含在位域\_WMBtype\_P\_DXVA\_1 和 MBctrl\_HostResidDiff\_P\_DXVA\_1**结构的 MBctrl 成员中**。 **bPicOBMC**是[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的成员。 *PicCurrentField*标志派生自 DXVA\_PictureParameters 的**bPicStructure**成员。
 
 查看本部分中的下表时，请注意以下事项：
 
@@ -226,8 +226,8 @@ ms.locfileid: "72839694"
 <th align="left">MotionType （表示取决于图片类型）</th>
 <th align="left">MVector [0] MvertFieldSel_0 （1st，dir1）</th>
 <th align="left">MVector [1] MvertFieldSel_1 （1st，dir2）</th>
-<th align="left">MVector [2] MvertFieldSel_2 （第二个、dir1）</th>
-<th align="left">MVector [3] MvertFieldSel_3 （第二个、dir2）</th>
+<th align="left">MVector [2] MvertFieldSel_2 （dir1）</th>
+<th align="left">MVector [3] MvertFieldSel_3 （dir2）</th>
 </tr>
 </thead>
 <tbody>
@@ -377,8 +377,8 @@ vector "[3] [0] [1]&lt;&lt;1
 <th align="left">MotionType （表示取决于图片类型）</th>
 <th align="left">MVector [0] MvertFieldSel_0 （1st，dir1）</th>
 <th align="left">MVector [1] MvertFieldSel_1 （1st，dir2）</th>
-<th align="left">MVector [2] MvertFieldSel_2 （第二个、dir1）</th>
-<th align="left">MVector [3] MvertFieldSel_3 （第二个、dir2）</th>
+<th align="left">MVector [2] MvertFieldSel_2 （dir1）</th>
+<th align="left">MVector [3] MvertFieldSel_3 （dir2）</th>
 </tr>
 </thead>
 <tbody>

@@ -68,7 +68,7 @@ NDIS 和过量协议以及筛选器驱动程序可以向底层物理网络适配
 
 -   [OID\_接收\_筛选器\_移动\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)
 
-转发扩展可以拒绝[oid\_nic 的 oid 请求\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)和 OID\_nic\_通过完成请求并使用状态代码其他来[创建\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)与 NDIS\_状态\_成功。 但是，扩展不能否决其他 SR-IOV OID 请求。
+转发扩展可以拒绝[oid\_nic 的 oid 请求\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)和[OID\_nic\_交换机\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)使用 NDIS\_状态的状态代码来完成请求，\_\_状态。 但是，扩展不能否决其他 SR-IOV OID 请求。
 
 有关 SR-IOV 硬件卸载技术的详细信息，请参阅[单一根 I/o 虚拟化（sr-iov）](single-root-i-o-virtualization--sr-iov-.md)。
 
@@ -85,7 +85,7 @@ NDIS 和过量协议以及筛选器驱动程序可以向底层物理网络适配
 
 -   [OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)
 
-转发扩展可以拒绝[oid\_接收\_筛选器的 oid 请求\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)和[OID\_接收\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)\_通过完成状态的请求来设置\_筛选器除 NDIS\_状态\_成功。 但是，扩展不能否决其他 VMQ OID 请求。
+转发扩展可以拒绝[oid\_接收\_筛选器的 oid 请求\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)和[OID\_接收\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)\_通过以除 NDIS\_状态\_成功的状态代码来完成请求来设置\_筛选器。 但是，扩展不能否决其他 VMQ OID 请求。
 
 有关 VMQ 硬件卸载技术的详细信息，请参阅[虚拟机队列（VMQ）](virtual-machine-queue--vmq-.md)。
 
@@ -101,25 +101,25 @@ NDIS 和过量协议以及筛选器驱动程序可以向底层物理网络适配
 
 -   扩展不能修改或失败硬件卸载 OID 请求以清除、释放或完成卸载资源的分配。 例如，扩展不能[\_接收\_筛选器的 oid 请求失败，\_清除\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter)或[oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)\_\_\_\_删除。 可扩展交换机接口必须处理这些 OID 请求，才能清理这些资源的状态信息。
 
-    扩展可以修改或失败硬件卸载 OID 请求，以分配、移动或设置卸载资源。 例如，扩展可能会失败或修改[oid\_NIC 的 oid 请求\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)或 oid\_\_\_IPSEC\_\_\_@no__ [t_12_ SA](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)。
+    扩展可以修改或失败硬件卸载 OID 请求，以分配、移动或设置卸载资源。 例如，扩展可能会失败或修改[oid\_NIC 的 oid 请求\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)或[oid\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-task-ipsec-offload-v2-add-sa)\_\_\_IPSEC\_\_\_
 
 -   此扩展可以从任何硬件卸载 Oid 到基础物理网络适配器。 但是，扩展不能产生清除或释放扩展未分配的卸载资源的硬件卸载 OID。
 
-    例如，扩展不能产生 Oid 的硬件卸载 OID 请求[\_接收\_筛选器\_可用\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)，前提是该请求不是筛选器\_\_[\_\_对同一队列的请求。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)
+    例如，扩展不得产生 Oid 的硬件卸载 OID 请求[\_接收\_筛选器\_可用的\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-free-queue)，前提是它不产生[oid\_接收\_筛选器\_为同一队列分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)请求。
 
     **请注意**  扩展在筛选过量驱动程序发出的同一 OID 请求时，只能产生自己的封装硬件卸载 OID 请求。 在这种情况下，扩展不能转发原始 OID 请求。 相反，该扩展插件必须调用[**NdisFOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequestcomplete) ，以便在 NDIS 调用其[*FilterOidRequestComplete*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request_complete)来完成发起的 OID 请求时完成此请求。
 
      
 
--   如果扩展插件将硬件卸载 OID 请求转发到基础物理网络适配器， [**NDIS\_交换机\_NIC\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构必须设置为适配器的非零索引值。 有关这些索引值的详细信息，请参阅[网络适配器索引值](network-adapter-index-values.md)。
+-   如果扩展插件将硬件卸载 OID 请求转发到基础物理网络适配器 **，则** [**NDIS\_交换机\_NIC\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构必须设置为该适配器的非零索引值。 有关这些索引值的详细信息，请参阅[网络适配器索引值](network-adapter-index-values.md)。
 
     此外， **DestinationPortId**成员必须设置为外部网络适配器连接到的可扩展交换机端口的标识符。
 
--   如果扩展插件正在为 Hyper-v 子分区分配资源，则必须将[**NDIS\_交换机\_NIC\_oid\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的**SourcePortId**成员设置为分区连接到的可扩展交换机端口的标识符。
+-   如果扩展插件正在为 Hyper-v 子分区分配资源，则必须将[**NDIS\_交换机\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)的**SourcePortId**成员设置为该分区连接到的可扩展交换机端口的标识符，然后才能将\_请求结构。
 
     必须将**SourceNicIndex**成员设置为**NDIS\_交换机\_默认\_NIC\_索引**。
 
--   当扩展调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)来转发 OID 请求时，它必须将*OidRequest*参数设置为指向[ **\_的 NDIS\_oid 请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 NDIS [\_交换机\_NIC 的\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)OID 请求。
+-   当扩展调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)来转发 OID 请求时，它必须将*OidRequest*参数设置为指向[ **\_的 NDIS\_oid 请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 NDIS [\_\_NIC\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-request)oid 请求的请求结构。
 
 有关扩展如何筛选 OID 请求的详细信息，请参阅[在 NDIS 筛选器驱动程序中筛选 Oid 请求](filtering-oid-requests-in-an-ndis-filter-driver.md)。
 

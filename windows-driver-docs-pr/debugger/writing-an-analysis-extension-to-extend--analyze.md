@@ -33,7 +33,7 @@ BugCheckCode   0xA
 BugCheckCode   0xE2
 ```
 
-条目 `BugCheckCode  0x0A` 指定此插件要参与 Bug 检查0xA 分析，以便分析引擎加载 MyAnalyzer （它必须位于与 MyAnalyzer 相同的目录中，并调用其[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)才能.
+条目 `BugCheckCode  0x0A` 指定此插件要参与 Bug 检查0xA 分析，以便分析引擎加载 MyAnalyzer （它必须位于与 MyAnalyzer 相同的目录中，并调用其[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)函数。
 
 **请注意**  元数据文件的最后一行必须以换行符结尾。
 

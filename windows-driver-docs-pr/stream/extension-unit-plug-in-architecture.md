@@ -26,7 +26,7 @@ USB 视频类驱动程序将扩展单元显示为 USB 视频 KS 代理筛选器�
 
 单个扩展单元控件应连续编号为1到一些最大值*n*。 这些控件直接映射到扩展单元属性集上的属性标识符（Id），并且可以通过使用标准 KSPROPERTY 请求通过[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nn-ksproxy-ikscontrol)进行访问。
 
-为了响应来自应用程序的属性请求，UVC 驱动程序将返回属性值，这些属性值具有[ **\_KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)的**MembersFlags**成员专门设置为 KSPROPERTY\_成员\_单元. UVC 不支持按任意长度的分级范围或扩展单元的默认值。
+为了响应来自应用程序的属性请求，UVC 驱动程序将返回属性值，这些属性值具有[ **\_KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)的**MembersFlags**成员专门设置为 KSPROPERTY\_成员\_范围。 UVC 不支持按任意长度的分级范围或扩展单元的默认值。
 
 若要向应用程序公开扩展单元属性，可以编写公开 COM API 的用户模式插件 DLL。 可以通过使用**IKsControl**接口向 KS 属性集发出请求来实现此 API。 *Vidcap.ax*根据某些注册表项自动加载节点接口插件。 应用程序可以通过使用**IKsTopologyInfo：： CreateNodeInstance** ，然后调用节点对象上的**QueryInterface**以获取所需的 COM API 来访问接口。
 

@@ -1,9 +1,9 @@
 ---
-title: usb3kd.ucx_controller
-description: Usb3kd. ucx _controller 命令显示有关 USB 3.0 主机控制器的信息。 显示基于 UcxVersion 维护的数据结构。
+title: usb3kd ucx_controller
+description: Ucx_controller usb3kd 命令显示有关 USB 3.0 主机控制器的信息。 显示基于 UcxVersion 维护的数据结构。
 ms.assetid: A2768E47-C8D7-4A01-80AC-98FB5AAA17BD
 keywords:
-- usb3kd. ucx _controller Windows 调试
+- usb3kd ucx_controller Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref

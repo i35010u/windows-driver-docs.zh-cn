@@ -99,14 +99,14 @@ Scsi 读取容量命令生成的 SCSI 探测数据。 微型端口驱动程序�
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
 <td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>库</p></td>
+<td align="left"><p>Library</p></td>
 <td align="left">Hbaapi</td>
 </tr>
 </tbody>

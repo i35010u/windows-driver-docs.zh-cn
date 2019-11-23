@@ -22,7 +22,7 @@ ms.locfileid: "72839095"
 # <a name="startiorecursion-rule-wdm"></a>StartIoRecursion 规则（wdm）
 
 
-**StartIoRecursion**规则指定如果驱动程序的[**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程包括对[**IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)的调用，则驱动程序必须先调用[**IoSetStartIoAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes) ，并将*DeferredStartIo*特性设置为**TRUE**。 否则，可能会导致无限递归。
+**StartIoRecursion**规则指定如果驱动程序的[**StartIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程包括对[**IoStartNextPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartnextpacket)的调用，则驱动程序必须先调用[**IoSetStartIoAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes) ，并将*DeferredStartIo*属性设置为**TRUE**。 否则，可能会导致无限递归。
 
 |              |     |
 |--------------|-----|
@@ -54,7 +54,7 @@ ms.locfileid: "72839095"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**IoSetStartIoAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iosetstartioattributes)

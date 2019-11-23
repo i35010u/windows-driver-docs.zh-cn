@@ -37,7 +37,7 @@ ms.locfileid: "72823910"
 <a href="" id="ndis-switch-port-destination"></a>[**NDIS\_交换机\_端口\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)  
 此结构定义数据包的目标端口。 对于具有单个目标端口的数据包，目标端口数组中只有一个[**NDIS\_交换机\_端口\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)元素。 对于包含多个目标端口的数据包，数组中有一个或多个此类元素。
 
-在可扩展交换机扩展已调用[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)以获取数据包的目标端口数组后，可以使用[**NDIS\_交换机\_端口\_目标来访问数组中的单个元素\_数组\_INDEX 宏\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-switch-port-destination-at-array-index) 。
+在可扩展交换机扩展已调用[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)以获取数据包的目标端口数组后，可以使用[**NDIS\_交换机\_端口\_目标\_\_array\_INDEX**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-switch-port-destination-at-array-index)宏来访问数组中的单个元素。
 
  
 

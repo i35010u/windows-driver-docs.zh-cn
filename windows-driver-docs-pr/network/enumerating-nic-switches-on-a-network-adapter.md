@@ -22,7 +22,7 @@ ms.locfileid: "72838120"
 
 -   [**NDIS\_NIC 的数组\_交换机\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构。 其中每个结构都包含有关在网络适配器上创建的单个 NIC 交换机的信息。
 
-    **请注意**  如果网络适配器没有 nic 交换机，则驱动程序将 NDIS\_\_NIC 的**NumElements**成员设置为[ **\_信息\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构设置为零，而不将[**ndis\_NIC\_返回\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构的开关。
+    **请注意**  如果网络适配器没有 nic 交换机，则驱动程序将 NDIS\_\_NIC 的**NumElements**成员设置为[ **\_信息\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构设置为零，且不会返回[**ndis\_NIC\_交换机\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_info)结构。
 
      
 
@@ -36,7 +36,7 @@ NDIS 处理[\_NIC 的 OID\_交换机\_\_ENUM](https://docs.microsoft.com/windows
 
 -   Oid\_NIC 的 OID 请求[\_交换机\_创建\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-switch)和[OID\_nic\_SWITCH\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)。
 
-**请注意**  ndis 还在[**ndis\_BIND\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)和[**ndis\_FILTER\_附加\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)的**NicSwitchArray**成员中提供开关的枚举构造. 因此，过量协议和筛选器驱动程序不必[\_开关\_NIC 发出 OID，\_ENUM\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-switches)请求来获取此信息。
+**请注意**  ndis 还在[**ndis\_BIND\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_bind_parameters)和[**ndis\_FILTER\_附加\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构中提供了**NicSwitchArray**成员中的开关的枚举。 因此，过量协议和筛选器驱动程序不必[\_开关\_NIC 发出 OID，\_ENUM\_开关](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-switches)请求来获取此信息。
 
  
 

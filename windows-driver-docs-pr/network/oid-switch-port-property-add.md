@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_PROPERTY_ADD
 description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_PROPERTY_ADD 的对象标识符（OID）设置请求，通知有关为可扩展交换机端口添加策略属性的可扩展交换机扩展。
 ms.assetid: 6F246E5A-A02A-4303-9DB0-51E2FD4DC9E7
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ADD 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_PROPERTY_ADD 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b89e5fdbc4015a974669c2976ce49da8ad6aa427
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -50,13 +50,13 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度太小，无法处理<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PROPERTY_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)"><strong>NDIS_SWITCH_PORT_PROPERTY_PARAMETERS</strong></a>结构和结构的属性缓冲区中的数据。 扩展将设置<strong>数据。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度太小，无法处理<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PORT_PROPERTY_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_property_parameters)"><strong>NDIS_SWITCH_PORT_PROPERTY_PARAMETERS</strong></a>结构和结构的属性缓冲区中的数据。 扩展将设置<strong>数据。SET_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_DATA_NOT_ACCEPTED</p></td>
@@ -85,7 +85,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

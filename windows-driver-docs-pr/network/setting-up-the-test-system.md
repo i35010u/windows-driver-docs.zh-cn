@@ -20,7 +20,7 @@ ms.locfileid: "70750046"
 
 
 
-**请注意**  ，在 microsoft windows XP （SP1 及更高版本）、microsoft windows Server 2003 和更高版本的操作系统中不支持供应商提供的网络升级。
+**注意**  在 MICROSOFT windows XP （SP1 及更高版本）、Microsoft windows Server 2003 和更高版本的操作系统中不支持供应商提供的网络升级。
 
  
 
@@ -29,7 +29,7 @@ ms.locfileid: "70750046"
 **设置测试系统**
 
 1.  为 preupgrade 操作系统创建一个分区，为 Microsoft Windows 2000 或更高版本的操作系统创建另一个分区。
-    **注意不要在**同一分区中安装preupgrade操作系统和升级操作系统  。 如果在同一分区中安装了 preupgrade 操作系统和 Windows 2000 或更高版本，则它们将共享同一程序文件目录。
+    **请注意**  不要在同一分区中安装 preupgrade 操作系统和升级操作系统。 如果在同一分区中安装了 preupgrade 操作系统和 Windows 2000 或更高版本，则它们将共享同一程序文件目录。
 
      
 
@@ -41,13 +41,13 @@ ms.locfileid: "70750046"
 
 4.  创建另一个目录，用于存储 Winnt32.exe 升级阶段所需的 Windows 2000 或更高版本的文件。
 
-5.  插入 Windows 2000 或更高版本的驱动程序开发工具包（DDK）光盘，其中包含 Windows 2000 或更高版本的已选中版本。 从 cd-rom \\上的 i386 目录中，将以下文件复制到备份目录（步骤2）：
+5.  插入 Windows 2000 或更高版本的驱动程序开发工具包（DDK）光盘，其中包含 Windows 2000 或更高版本的已选中版本。 从 cd-rom 上的 \\i386 目录中，将以下文件复制到备份目录（步骤2）：
     -   winnt32.exe
     -   winnt32u
     -   pidgen.dll
     -   wetuplog.\*
 
-6.  创建名为 winntupg 的升级目录。 将 cd-rom 上的\\i386\\winntupg 目录中的文件复制到测试系统上的 winntupg 目录。
+6.  创建名为 winntupg 的升级目录。 将 cd-rom 上 \\i386\\winntupg 目录中的文件复制到测试系统上的 winntupg 目录。
 
 7.  在文本系统上启用调试器，或启动 debugmon，它包含在适用于 Windows 2000 或更高版本的操作系统的资源工具包中。 然后，将 netcfg 文件复制到% windir%。 Netcfg 文件启用调试跟踪。
 

@@ -29,7 +29,7 @@ ms.locfileid: "72838178"
 
  
 
-面向连接的协议驱动程序可以调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)来查询面向连接的微型端口驱动程序的本地计时功能，或使用[OID\_GEN\_CO\_获取\_时间\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-get-time-caps). 为响应此类查询，微型端口驱动程序或 MCM 驱动程序将返回以下信息：
+面向连接的协议驱动程序可以调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)来查询面向连接的微型端口驱动程序的本地计时功能，或使用[OID\_GEN\_CO\_获取\_时间\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-co-get-time-caps)。 为响应此类查询，微型端口驱动程序或 MCM 驱动程序将返回以下信息：
 
 -   NIC 上是否有可读的时钟。
 

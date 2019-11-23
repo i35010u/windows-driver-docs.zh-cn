@@ -21,7 +21,7 @@ ms.locfileid: "72834296"
 ## <span id="ddk_ndis_extensions_ndiskd_dll__dbg"></span><span id="DDK_NDIS_EXTENSIONS_NDISKD_DLL__DBG"></span>
 
 
-本部分介绍！ ndiskd 中可用的命令，它是一种可用于调试 NDIS （网络设备接口规范）驱动程序的调试器扩展。 网络驱动程序开发人员可以使用这些命令来查看 Windows 网络堆栈的更大的图片以及其驱动程序与之进行交互的方式。 使用！ ndiskd，你可以查看所有网络适配器（[ **！ ndiskd**](-ndiskd-netadapter.md)）的状态、计算机网络堆栈的可视化关系图（[ **！ ndiskd**](-ndiskd-netreport.md)）、网络适配器上的流量日志（[ **！ netreport**](-ndiskd-nbllog.md)）或所有的列表挂起的 OID 请求（[ **！ ndiskd**](-ndiskd-oid.md)）。
+本部分介绍！ ndiskd 中可用的命令，它是一种可用于调试 NDIS （网络设备接口规范）驱动程序的调试器扩展。 网络驱动程序开发人员可以使用这些命令来查看 Windows 网络堆栈的更大的图片以及其驱动程序与之进行交互的方式。 使用！ ndiskd，你可以查看所有网络适配器（[ **！ ndiskd**](-ndiskd-netadapter.md)）的状态、计算机网络堆栈的可视化关系图（[ **！ ndiskd**](-ndiskd-netreport.md)）、网络适配器上的流量日志（[ **！ netreport**](-ndiskd-nbllog.md)）或所有挂起的 OID 请求（[ **！ ndiskd**](-ndiskd-oid.md)）的列表。
 
 可以在 Ndiskd 中找到命令。 若要加载符号，请在调试器命令窗口中输入 **。** 若要确认符号是否已成功加载，请使用[ **！ lmi ndis**](-lmi.md)扩展，并在底部查找 "已成功加载的符号" 字样。 输出应类似于以下示例：
 
@@ -113,7 +113,7 @@ All！ ndiskd 命令支持以下泛型参数。
 ## <a name="span-idnetadaptercx_commandsspanspan-idnetadaptercx_commandsspanspan-idnetadaptercx_commandsspannetadaptercx-commands"></a><span id="NetAdapterCx_Commands"></span><span id="netadaptercx_commands"></span><span id="NETADAPTERCX_COMMANDS"></span>NetAdapterCx 命令
 
 
-以下命令显示与网络适配器 WDF 类扩展（NetAdapterCx）相关的信息，\[LINK TBD\] 及其关联结构，NET\_环形\_缓冲区 \[LINK TBD\] 和 NET\_数据包\[LINK TBD\]。
+以下命令显示与网络适配器 WDF 类扩展（NetAdapterCx）相关的信息，\[LINK TBD\] 及其关联结构，NET\_环形\_缓冲区 \[LINK TBD\] 和 NET\_PACKET \[LINK TBD\]。
 
 -   [ **!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
 -   [ **!ndiskd.netqueue**](-ndiskd-netqueue.md)

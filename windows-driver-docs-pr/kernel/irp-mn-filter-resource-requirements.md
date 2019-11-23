@@ -49,7 +49,7 @@ PnP 管理器在任意线程的上下文中以 IRQL 被动\_级别发送此 IRP�
 ## <a name="io-status-block"></a>I/O 状态块
 
 
-如果函数驱动程序处理此 IRP，则它会按照 IRP 的方式备份堆栈。 如果函数驱动程序成功处理 IRP，则它会将**irp&gt;IoStatus**设置为 STATUS\_SUCCESS，并将**irp&gt;IoStatus**设置为指向[**IO\_资源\_要求的指针 @no__t**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)包含筛选的资源要求的 _9_ 列表。 有关设置筛选的资源列表的详细信息，请参阅下面的 "操作" 部分。 如果函数驱动程序在处理此 IRP 时遇到错误，则会在**irp&gt;IoStatus**中设置错误。 如果函数驱动程序不处理此 IRP，它将使用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)将 irp 向下传递到不变的堆栈。
+如果函数驱动程序处理此 IRP，则它会按照 IRP 的方式备份堆栈。 如果函数驱动程序成功处理 IRP，则它会将**irp&gt;IoStatus**设置为 STATUS\_SUCCESS，并将**irp&gt;IoStatus**设置为指向[**IO\_资源的指针\_要求\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)包含已筛选资源要求的列表。 有关设置筛选的资源列表的详细信息，请参阅下面的 "操作" 部分。 如果函数驱动程序在处理此 IRP 时遇到错误，则会在**irp&gt;IoStatus**中设置错误。 如果函数驱动程序不处理此 IRP，它将使用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)将 irp 向下传递到不变的堆栈。
 
 上限和小写筛选器驱动程序不处理此 IRP。 此类驱动程序调用**IoSkipCurrentIrpStackLocation**，将 irp 向下传递到下一个驱动程序，不能修改**irp&gt;IoStatus**，且不能完成 irp。
 
@@ -74,7 +74,7 @@ PnP 管理器将[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requ
 
 如果函数驱动程序未更改 Irp 所指向的当前列表的大小 **&gt;IoStatus**，则驱动程序可以就地修改列表。 如果驱动程序需要更改需求列表的大小，则驱动程序必须分配新的[**IO\_资源\_需求\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_resource_requirements_list)从分页内存中列表，并释放以前的列表。 当不再需要返回的结构时，PnP 管理器会将其释放。
 
-函数驱动程序必须保留由**Irp&gt;** 的列表中资源的顺序，而不能更改它不处理的资源标记。 驱动程序必须小心调整设备的父总线支持的方法列表。 如果函数驱动程序向需求列表中添加了新资源，并且该资源已分配给设备，则函数驱动程序应在将启动 IRP 向下传递到之前从[**irp\_MN\_启动\_设备**](irp-mn-start-device.md)总线驱动程序。
+函数驱动程序必须保留由**Irp&gt;** 的列表中资源的顺序，而不能更改它不处理的资源标记。 驱动程序必须小心调整设备的父总线支持的方法列表。 如果函数驱动程序向需求列表中添加了新资源，并且该资源已分配给设备，则函数驱动程序应在将启动 IRP 向下传递到总线驱动程序之前，筛选[**IRP\_MN\_启动\_设备**](irp-mn-start-device.md)的资源。
 
 如果设备的函数驱动程序未处理此 IRP，则 PnP 管理器将使用父总线驱动程序指定的资源要求来响应[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求。
 
@@ -97,7 +97,7 @@ PnP 管理器将[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requ
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>

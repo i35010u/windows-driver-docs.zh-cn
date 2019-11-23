@@ -84,4 +84,4 @@ devcon restart =printer *desk*
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>实例
 
-[Example 38：重新启动设备 @ no__t-0
+[示例38：重新启动设备](devcon-examples.md#ddk_example_38_restart_a_device_tools)

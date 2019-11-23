@@ -39,7 +39,7 @@ ms.locfileid: "72833401"
 
 [**KSNODETYPE\_音**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-tone)
 
-特别是，没有任何机制可用于在节点上显式查询它支持的通道数。 尽管存在此问题的解决方法，但存在一些缺点。 例如，客户端可以使用[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)属性以迭代方式查询每个通道（0，1）的卷级别的卷节点（[**KSNODETYPE\_卷**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)），直到请求返回指示不存在更多通道的错误。 但是，这种方法需要多个查询，并且太低效，无法处理更新的多通道音频设备。 在 Windows XP 和更高版本的操作系统中，通过在[**KSPROPERTY\_MEMBERSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)结构的**Flags**成员中定义两个附加的标志位来解决此限制，属性处理程序将为响应基本-支持查询：
+特别是，没有任何机制可用于在节点上显式查询它支持的通道数。 尽管存在此问题的解决方法，但存在一些缺点。 例如，客户端可以使用[**KSPROPERTY\_音频\_VOLUMELEVEL**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audio-volumelevel)属性以迭代方式查询每个通道（0，1）的卷级别的卷节点（[**KSNODETYPE\_卷**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-volume)），直到请求返回一个错误，指示不存在更多通道。 但是，这种方法需要多个查询，并且太低效，无法处理更新的多通道音频设备。 在 Windows XP 和更高版本的操作系统中，通过在[**KSPROPERTY\_MEMBERSHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_membersheader)结构的**Flags**成员中定义两个附加的标志位来解决此限制，属性处理程序会输出该标志以响应基本支持查询：
 
 -   KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道
 
@@ -47,13 +47,13 @@ ms.locfileid: "72833401"
 
 -   KSPROPERTY\_MEMBER\_标志\_BASICSUPPORT\_统一
 
-    处理程序在此标志位和 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道标志位之间执行位或运算，以指示单个属性值在节点中的所有通道之间统一应用。 例如，如果硬件仅提供适用于所有通道的单个卷级控制，则卷节点的基本支持处理程序会将 KSPROPERTY\_成员设置\_标志\_BASICSUPPORT\_统一标志以指示这一点传入. 如果未设置此标志，则每个通道的卷级别可以独立于其他通道的卷级别进行控制。
+    处理程序在此标志位和 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道标志位之间执行位或运算，以指示单个属性值在节点中的所有通道之间统一应用。 例如，如果硬件仅提供适用于所有通道的单个卷级控制，则卷节点的基本支持处理程序会将 KSPROPERTY\_成员设置\_标志\_BASICSUPPORT\_统一标志以指示此限制。 如果未设置此标志，则每个通道的卷级别可以独立于其他通道的卷级别进行控制。
 
     **请注意**   Windows Vista 操作系统未使用\_成员\_标志\_BASICSUPPORT\_统一标志。
 
      
 
-在适用于 Windows XP 和更高版本的微型端口驱动程序中，多通道卷节点的属性处理程序应将 KSPROPERTY\_成员设置\_标志\_BASICSUPPORT\_多通道位，以响应 KSPROPERTY\_音频\_VOLUMELEVEL 基本-支持查询。 处理程序返回一个 KSPROPERTY 数组， [ **\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)结构-每个节点公开一个通道，并将**MembersSize**设置为**sizeof**（KSPROPERTY\_步进\_长）。 每个数组元素都描述了一个通道的最小和最大音量级别以及该范围内连续值之间的差异。 可以为每个单独的通道指定不同的范围，以便能够正确地公开具有非统一范围的通道。 例如，低音炮频道的范围可能不同于其他通道的范围。
+在适用于 Windows XP 和更高版本的微型端口驱动程序中，多通道卷节点的属性处理程序应将 KSPROPERTY\_成员设置\_标志\_BASICSUPPORT\_多通道位，以响应 KSPROPERTY\_音频\_VOLUMELEVEL 基本支持查询。 处理程序返回一个 KSPROPERTY 数组， [ **\_单步执行\_长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)结构-每个节点公开一个通道，并将**MembersSize**设置为**sizeof**（KSPROPERTY\_步进\_长）。 每个数组元素都描述了一个通道的最小和最大音量级别以及该范围内连续值之间的差异。 可以为每个单独的通道指定不同的范围，以便能够正确地公开具有非统一范围的通道。 例如，低音炮频道的范围可能不同于其他通道的范围。
 
 下面的代码示例演示如何处理具有非统一属性值的[音频属性的基本支持查询](basic-support-queries-for-audio-properties.md)。 下面第一行代码中的变量 pDescription 指向数据缓冲区开头的[**KSPROPERTY\_说明**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_description)结构，处理程序将基本支持信息写入其中：
 
@@ -133,11 +133,11 @@ ms.locfileid: "72833401"
 
 请注意，在上面的代码示例中，FOR 循环使用零（0）和一（1）来设置每个通道范围的最小值和最大值。 这是因为我们要使用 BOOL 类型的每个通道属性值配置多通道节点。
 
-如果通道属性是统一的，则可以在 KSPROPERTY\_成员\_标志之间执行位或运算，\_BASICSUPPORT\_统一标志和 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道标志和分配给&gt;pMembers 标志成员的结果。 此值用于指示硬件在节点中的所有通道之间统一应用相同的属性值。
+如果通道属性是统一的，则可以在 KSPROPERTY\_成员\_标志之间执行位或运算，\_BASICSUPPORT\_统一标志和 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道标志和分配给 pMembers-&gt;标志成员的结果。 此值用于指示硬件在节点中的所有通道之间统一应用相同的属性值。
 
-使用 KSPROPERTY\_MEMBER\_标志\_均匀和 KSPROPERTY\_成员\_标志\_多通道标志，无需将通道分组到配对，并为每对通道，在 Windows 驱动程序工具包（WDK）中的 Ac97 示例驱动程序中完成。 由于 windows XP 之前的 Windows 版本不支持这些标志，因此，驱动程序的基本支持处理程序必须使用[IPortClsVersion](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsversion)接口来查询 Portcls 版本，才能确定是否使用这些标志。
+使用 KSPROPERTY\_MEMBER\_标志\_均匀和 KSPROPERTY\_成员\_标志\_多通道标志无需将通道分组到配对，并为每对通道公开单独的立体声卷节点，就像在 Windows 驱动程序工具包（WDK）中的 Ac97 示例驱动程序中所做的那样。 由于 windows XP 之前的 Windows 版本不支持这些标志，因此，驱动程序的基本支持处理程序必须使用[IPortClsVersion](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsversion)接口来查询 Portcls 版本，才能确定是否使用这些标志。
 
-拓扑分析器（内核模式[WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)，WDMAud）从其 WDM 音频驱动程序获取音频设备的拓扑。 分析器通过旧的 Windows 多媒体**混音**器 API 将该设备作为传统混音器设备公开。 在 Windows XP 和更高版本中，WDMAud 使用 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道标志来确定要在 MIXERLINE 结构的**cChannels**成员中报告的通道数。 此外，如果节点的基本支持处理程序指定了 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_统一标志，则 WDMAud 将 MIXERCONTROL\_CONTROLF\_统一标志置于相应的MIXERCONTROL 结构。 通过此标志，应用程序可以确定它们是否可以通过主控件单独调整每个通道或所有通道。 有关 MIXERCONTROL、MIXERLINE 和**混音**器 API 的详细信息，请参阅 Microsoft Windows SDK 文档。
+拓扑分析器（内核模式[WDMAud 系统驱动程序](user-mode-wdm-audio-components.md#wdmaud_system_driver)，WDMAud）从其 WDM 音频驱动程序获取音频设备的拓扑。 分析器通过旧的 Windows 多媒体**混音**器 API 将该设备作为传统混音器设备公开。 在 Windows XP 和更高版本中，WDMAud 使用 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_多通道标志来确定要在 MIXERLINE 结构的**cChannels**成员中报告的通道数。 此外，如果节点的基本支持处理程序指定了 KSPROPERTY\_成员\_标志\_BASICSUPPORT\_统一标志，则 WDMAud 将在相应的 CONTROLF 结构中设置 MIXERCONTROL\_MIXERCONTROL\_统一标志。 通过此标志，应用程序可以确定它们是否可以通过主控件单独调整每个通道或所有通道。 有关 MIXERCONTROL、MIXERLINE 和**混音**器 API 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 在 Windows XP 和更高版本中，SndVol32 卷控制程序（请参阅[托盘和 SndVol32](systray-and-sndvol32.md)）显示多通道设备的控件，如下图所示。
 
@@ -151,7 +151,7 @@ ms.locfileid: "72833401"
 
 例如，如果设备在线路上公开四个通道，并且用户选择了 "Quadraphonic 扬声器"，通道名称将是 "左" （通道0）、"右" （通道1）、"左移" （通道2）和 "后右" （通道3），如上图所示。 将扬声器配置更改为 "环绕声扬声器" 将导致通道映射 "左" （通道0）、"右" （通道1）、"前端中心" （通道2）和 "后中心" （通道3）。
 
-在驱动程序级别，KSPROPERTY\_音频\_通道\_CONFIG 属性使用 KSAUDIO\_扬声器的掩码值\_四或 KSAUDIO\_扬声器\_配置。 标头文件 Ksmedia 定义这些值，如下所示：
+在驱动程序级别，KSPROPERTY\_音频\_通道\_CONFIG 属性使用 KSAUDIO\_扬声器的掩码值\_四个或 KSAUDIO\_扬声器\_"环绕" 来分别表示 quadraphonic 或环绕发言人配置。 标头文件 Ksmedia 定义这些值，如下所示：
 
 ```cpp
   #define KSAUDIO_SPEAKER_QUAD      (SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | \

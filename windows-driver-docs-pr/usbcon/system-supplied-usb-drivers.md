@@ -96,7 +96,7 @@ Microsoft 提供了这些驱动程序集：
 ## <a name="microsoft-provided-usb-device-class-drivers"></a>Microsoft 提供的 USB 设备类驱动程序
 
 
-Microsoft 为 USB 提供批准的几个 USB 设备类提供驱动程序。 这些驱动程序及其安装文件包含在 Windows 中。 它们在 \\Windows @ no__t-1System32 @ no__t-2DriverStore @ no__t 文件夹中提供。
+Microsoft 为 USB 提供批准的几个 USB 设备类提供驱动程序。 这些驱动程序及其安装文件包含在 Windows 中。 它们在 \\Windows\\System32\\DriverStore\\FileRepository 文件夹中提供。
 
 请参阅[Windows 附带的 USB 设备类驱动程序](supported-usb-classes.md)。
 

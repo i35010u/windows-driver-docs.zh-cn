@@ -41,9 +41,9 @@ ms.locfileid: "72834914"
 
 1.  微型端口驱动程序初始化**标头**成员。 驱动程序将**标头**的**类型**成员设置为\_对象\_类型\_默认值。
 
-    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 NDIS\_NIC\_交换机\_功能\_修订版\_2，并将**Size**成员设置为 ndis\_SIZEOF\_\_2\_交换机\_功能\_修订版本。
+    从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 NDIS\_NIC\_交换机\_功能\_修订\_2，将**大小**成员设置为 ndis\_SIZEOF\_\_\_\_\_
 
-2.  微型端口驱动程序在[**NDIS\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)的**NicSwitchCapabilities**成员中设置相应的标记\_将\_功能结构转换为 SR-IOV 网络适配器的 NIC 交换机功能。 例如，如果 NIC 交换机支持每个虚拟端口上的中断裁决，微型端口驱动程序会将 NDIS\_NIC\_交换机\_CAP\_每个\_VPORT\_中断\_仲裁\_支持的标志。VPort）在交换机上创建的。
+2.  微型端口驱动程序在[**NDIS\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)的**NicSwitchCapabilities**成员中设置相应的标记\_将\_功能结构转换为 SR-IOV 网络适配器的 NIC 交换机功能。 例如，如果 NIC 交换机支持在交换机上创建的每个虚拟端口（VPort）上的中断裁决，微型端口驱动程序会将 NDIS\_\_\_\_NIC 设置为每\_VPORT\_中断\_仲裁\_支持的标志。
 
 3.  微型端口驱动程序将[**NDIS\_\_nic**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)的其他成员设置为 sr-iov 网络适配器的 nic 交换机功能的值范围\_功能结构。 例如，微型端口驱动程序将**MaxNumVFs**和**MaxNumVPorts**成员设置为适配器可支持的最大 VFs 和 VPorts 数。
 
@@ -78,7 +78,7 @@ ms.locfileid: "72834914"
         - 如果首先创建 VMQ 队列，微型端口驱动程序会成功执行 VMQ 队列分配，并使任何 NIC 交换机分配调用失败。
     - 如果删除了 NIC 交换机，或者删除了所有 VMQ 队列，则微型端口驱动程序将返回到初始状态，并准备好进入这两种模式。
 
-若要播发可以在不使用 SR-IOV 的情况下创建 NIC 交换机，微型端口驱动程序在 NDIS\_NIC 的**NicSwitchCapabilities**成员中设置**NDIS_NIC_SWITCH_CAPS_NIC_SWITCH_WITHOUT_IOV_SUPPORTED**标志[ **\_切换\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
+若要播发可以在不使用 SR-IOV 的情况下创建 NIC 交换机，微型端口驱动程序在 NDIS\_NIC 的**NicSwitchCapabilities**成员中设置**NDIS_NIC_SWITCH_CAPS_NIC_SWITCH_WITHOUT_IOV_SUPPORTED**标志[ **\_开关\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
 
 ## <a name="querying-nic-switch-capabilities-by-overlying-drivers"></a>查询过量驱动程序的 NIC 交换机功能
 
@@ -89,7 +89,7 @@ NDIS 通过以下方式将网络适配器的当前启用的 NIC 交换机功能�
 
 -   当 NDIS 调用过量协议驱动程序的[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，Ndis 通过*BindParameters*参数传递网络适配器的 NIC 交换机功能。 此参数包含指向[**NDIS\_筛选器的指针\_ATTACH\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。 此结构的**NicSwitchCapabilities**成员包含指向[**NDIS\_NIC 的指针\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构。
 
-在处理\_OID 的对象标识符（OID）查询请求时，NDIS 还会返回[**ndis\_nic\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构\_[交换机\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-hardware-capabilities)和[OID\_NIC\_交换机\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-current-capabilities)由过量协议或筛选器驱动程序颁发的当前\_功能。
+NDIS 在处理 OID 的对象标识符（OID）查询请求时，还会返回[**ndis\_nic\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构[\_nic\_交换机\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-hardware-capabilities)和[OID\_nic\_交换机\_当前](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-current-capabilities)由过量协议或筛选器驱动程序发出的\_功能。
 
  
 

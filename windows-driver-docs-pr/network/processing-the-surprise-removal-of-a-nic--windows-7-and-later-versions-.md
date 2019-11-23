@@ -61,7 +61,7 @@ ms.locfileid: "72843482"
 
 7.  在所有协议和筛选器驱动程序未绑定并从 NIC 分离后，NDIS 将调用微型端口驱动程序的[*MiniportHaltEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)函数。 NDIS 将*MiniportHaltEx*的*HaltAction*参数设置为**NdisHaltDeviceSurpriseRemoved**。
 
-8.  NDIS 将 IRP\_MN\_意外\_删除请求发送到堆栈中的下一个较低设备对象。 接收到返回的 IRP 之后\_MN\_从堆栈中的下一个较低设备对象意外\_删除请求，NDIS 将完成 IRP\_MN\_删除请求。
+8.  NDIS 将 IRP\_MN\_意外\_删除请求发送到堆栈中的下一个较低设备对象。 接收到返回的 IRP 之后\_MN\_从堆栈中的下一个较低设备对象意外\_删除请求，NDIS 将完成 IRP\_MN\_删除请求。\_
 
 9.  PnP 管理器颁发[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，删除 NIC 的软件表示（设备对象等）。
 

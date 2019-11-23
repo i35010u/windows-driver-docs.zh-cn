@@ -32,12 +32,12 @@ l{+|-}
 ## <a name="span-idddk_cmd_set_source_options_dbgspanspan-idddk_cmd_set_source_options_dbgspanparameters"></a><span id="ddk_cmd_set_source_options_dbg"></span><span id="DDK_CMD_SET_SOURCE_OPTIONS_DBG"></span>Parameters
 
 <span id="_________or_-"></span><span id="_________OR_-"></span> **+** 或 **-**  
-指定是否启用给定选项（加号 \[ @ no__t-1 @ no__t-2）或关闭（减号 \[ @ no__t @ no__t）。
+指定是否启用给定选项（加号 \[+\]）或关闭（减号 \[-\]）。
 
 <span id="_______Option______"></span><span id="_______option______"></span><span id="_______OPTION______"></span>*选项*以下选项之一。 选项必须采用小写字母。
 
 <span id="l"></span><span id="L"></span>**l**  
-在命令提示符处显示源行号。 可以通过 l-ls 或. prompt @ no__t-0allow-src 禁用源行显示。 若要使源行号可见，必须通过这两种机制启用源行显示。
+在命令提示符处显示源行号。 可以通过 l-ls 或 prompt\_允许-src 禁用源行显示。 若要使源行号可见，必须通过这两种机制启用源行显示。
 
 <span id="o"></span><span id="O"></span>**i/o**  
 单步执行代码时，隐藏所有消息（源行和行号除外）。 （ **S**选项必须也处于活动状态，以使**o**选项有任何效果。）

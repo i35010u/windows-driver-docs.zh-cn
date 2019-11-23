@@ -3,7 +3,7 @@ title: OID_SRIOV_HARDWARE_CAPABILITIES
 description: 过量驱动程序发出 OID_SRIOV_HARDWARE_CAPABILITIES 的对象标识符（OID）查询请求，以获取网络适配器的单个根 i/o 虚拟化（SR-IOV）硬件功能。
 ms.assetid: EEF99105-BBDC-4093-8B11-D27F13B1A3D0
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SRIOV_HARDWARE_CAPABILITIES 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SRIOV_HARDWARE_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 14574a9f973f2e5036f74977e1c87ebcd36c1e3f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -22,13 +22,13 @@ ms.locfileid: "72843990"
 <a name="remarks"></a>备注
 -------
 
-[**NDIS\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构包含有关网络适配器的硬件功能的信息，例如适配器是否支持 sr-iov 以及微型端口驱动程序是否正在管理适配器的 PCI Express （PCIe）物理函数（PF）或虚函数（VF）。 这些功能可能包括 INF 文件设置当前禁用的硬件功能，或通过 "**高级**属性" 页当前禁用的硬件功能。
+[**NDIS\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构包含有关网络适配器的硬件功能的信息，例如适配器是否支持 sr-iov 以及微型端口驱动程序是否正在管理适配器的 PCI Express （PCIe）物理功能（PF）或虚拟功能（VF）。 这些功能可能包括 INF 文件设置当前禁用的硬件功能，或通过 "**高级**属性" 页当前禁用的硬件功能。
 
 **请注意**  网络适配器的所有 sr-iov 功能\_SRIOV\_硬件\_功能的 oid 查询请求返回，而不考虑是否启用或禁用功能。
 
  
 
-从 NDIS 6.30 开始，微型端口驱动程序会在调用[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时提供 sr-iov 硬件功能。 驱动程序使用 SR-IOV 硬件功能初始化[**ndis\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构，并设置 [**ndis\_端口\_适配器的 HardwareSriovCapabilities 成员\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构指向**NDIS\_SRIOV\_功能**结构的指针。 然后，微型端口驱动程序将调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数，并将*MiniportAttributes*参数设置为指向**NDIS\_微型端口的指针\_适配器\_硬件\_帮助\_属性**结构。
+从 NDIS 6.30 开始，微型端口驱动程序会在调用[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时提供 sr-iov 硬件功能。 驱动程序使用 SR-IOV 硬件功能初始化[**ndis\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构，并设置[**NDIS\_微型端口\_适配器的 HARDWARESRIOVCAPABILITIES 成员\_硬件\_帮助\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_hardware_assist_attributes)结构指向**NDIS\_SRIOV\_功能**结构的指针。 然后，小型端口驱动程序将调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数，并将*MiniportAttributes*参数设置为指向**NDIS\_微型端口的指针\_适配器\_硬件\_帮助\_属性**结构。
 
 ### <a name="return-status-codes"></a>返回状态代码
 
@@ -58,7 +58,7 @@ NDIS 处理 OID\_SRIOV 的 OID 查询请求，\_微型端口驱动程序的硬�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>

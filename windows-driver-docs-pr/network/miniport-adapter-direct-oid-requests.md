@@ -20,7 +20,7 @@ ms.locfileid: "72844254"
 
 
 
-为了支持直接 OID 请求路径，小型端口驱动程序在 NDIS\_微型端口中**提供了** *MiniportXxx*函数入口点[ **\_驱动程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)结构，ndis 为微型端口驱动程序。
+为了支持直接 OID 请求路径，小型端口驱动程序在 NDIS\_微型端口中提供了*MiniportXxx*函数入口点[ **\_驱动程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_driver_characteristics)结构，NDIS 为微型端口驱动程序提供**NdisM * Xxx*** 函数。
 
 *直接 OID 请求接口*类似于标准 OID 请求接口。 例如， [**NdisMDirectOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismdirectoidrequestcomplete)和[*MiniportDirectOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_direct_oid_request)函数类似于[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)和[*MiniportOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)函数。
 

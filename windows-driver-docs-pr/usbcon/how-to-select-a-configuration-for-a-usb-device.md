@@ -25,7 +25,7 @@ ms.locfileid: "72844368"
 
 -   在 Windows 8 中， [**USBD\_SelectConfigUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectconfigurballocateandbuild)替换[**USBD\_CreateConfigurationRequestEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex)。
 -   在发送选择配置请求之前，必须为客户端驱动程序的注册 USBD 句柄，并使用 USB 驱动程序堆栈。 若要创建 USBD 句柄，请调用[**USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)。
--   请确保已获得要选择的配置的配置描述符（[**USB\_配置\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)结构）。 通常，你\_从\_设备获取\_描述符\_来提交类型为 URB\_函数的 URB （请参阅[ **\_URB\_CONTROL\_描述符\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)），以检索有关设备的信息configuration. 有关详细信息，请参阅[USB 配置描述符](usb-configuration-descriptors.md)。
+-   请确保已获得要选择的配置的配置描述符（[**USB\_配置\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_configuration_descriptor)结构）。 通常情况下，你会提交类型为 URB\_函数的 URB，\_从\_设备获取\_描述符\_（请参阅[ **\_URB\_控制\_描述符\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_control_descriptor_request)），以检索有关设备配置的信息。 有关详细信息，请参阅[USB 配置描述符](usb-configuration-descriptors.md)。
 
 <a name="instructions"></a>说明
 ------------
@@ -48,7 +48,7 @@ ms.locfileid: "72844368"
 
     在发送该请求之前，客户端驱动程序必须提交 URB\_函数\_从\_设备请求获取\_描述符\_。 在响应中，Usbccgp 检索*部分配置描述符*，其中仅包含与要为其加载客户端驱动程序的特定函数相关的接口描述符和其他说明符。 部分配置描述符的**bNumInterfaces**字段中报告的接口数小于为整个 USB 复合设备定义的接口总数。 此外，在部分配置描述符中，接口描述符的**bInterfaceNumber**指示相对于整个设备的实际接口号。 例如，Usbccgp 可能会报告第一个接口的**bNumInterfaces**值为2且**bInterfaceNumber**值为4的部分配置描述符。 请注意，接口号大于所报告的接口数。
 
-    枚举部分配置中的接口时，请避免通过基于接口数量计算接口号来搜索接口。 在前面的示例中，如果在从零开始的循环中调用[**USBD\_ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex) ，则在每次迭代中以 `(bNumInterfaces - 1)`结束，并递增接口索引（在*InterfaceNumber*参数中指定），例程无法获取正确的接口。 相反，请确保在*InterfaceNumber*中通过传递-1 搜索配置描述符中的所有接口。 有关实现的详细信息，请参阅本节中的代码示例。
+    枚举部分配置中的接口时，请避免通过基于接口数量计算接口号来搜索接口。 在前面的示例中，如果在从零开始的循环中调用[**USBD\_ParseConfigurationDescriptorEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_parseconfigurationdescriptorex) ，则在每次迭代中以 `(bNumInterfaces - 1)`结束，并递增接口索引（在*InterfaceNumber*参数中指定），从而无法获取正确的接口。 相反，请确保在*InterfaceNumber*中通过传递-1 搜索配置描述符中的所有接口。 有关实现的详细信息，请参阅本节中的代码示例。
 
     有关 Usbccgp 如何处理客户端驱动程序发送的选择配置请求的信息，请参阅[配置 Usbccgp 以选择非默认的 USB 配置](selecting-the-configuration-for-a-multiple-interface--composite--usb-d.md)。
 
@@ -61,7 +61,7 @@ ms.locfileid: "72844368"
 
 -   创建 URB 并使用有关指定配置、其接口和终结点的信息进行填充，并将请求类型设置为 URB\_函数\_选择\_配置。
 -   在该 URB 中，为客户端驱动程序指定的每个接口描述符\_信息结构分配一个[**USBD\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)。
--   将调用方提供的 USBD\_接口的第 n 个元素中的第*n*个元素的**接口**成员设置[ **\_列表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)数组设置为相应[**USBD\_接口的地址\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)URB 中的结构。
+-   将调用方提供的[**USBD\_接口\_列表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)数组的第*n*个元素的**接口**成员设置为 URB 中的相应[**USBD\_\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)的地址。
 -   初始化\]的**InterfaceNumber**、 **AlternateSetting**、 **NumberOfPipes**、 **Pipes\[。MaximumTransferSize**和**管道\[我\]。PipeFlags**成员。
 
     **请注意**  在 Windows 7 和早中，客户端驱动程序通过调用[**USBD\_CreateConfigurationRequestEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createconfigurationrequestex)为选择配置请求创建了 URB。 在 Windows 2000 **USBD 中\_CreateConfigurationRequestEx** **\[\]初始化管道。MaximumTransferSize**为单个 URB 读/写请求的默认最大传输大小。 客户端驱动程序可以在\]的管道\[中指定不同的最大传输大小 **。MaximumTransferSize**。 在 Windows XP、Windows Server 2003 和更高版本的操作系统中，USB stack 将忽略此值。 有关**MaximumTransferSize**的详细信息，请参阅 " [usb 带宽分配](usb-bandwidth-allocation.md)" 中的 "设置 Usb 传输和数据包大小"。
@@ -76,9 +76,9 @@ ms.locfileid: "72844368"
 
 USB 驱动程序堆栈完成请求的 IRP 后，堆栈返回[**USBD\_接口\_列表\_条目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_usbd_interface_list_entry)数组中的备用设置和相关接口的列表。
 
-1.  每个[**USBD\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)的**管道**成员\_信息结构指向一组[**USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构，其中包含与每个终结点相关联的管道的相关信息。 客户端驱动程序可以从管道获取管道句柄 **，\[我\]。PipeHandle**并使用它们向特定管道发送 i/o 请求。 **\]\[管道。PipeType**成员指定该管道支持的终结点和传输的类型。
+1.  每个[**USBD\_接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_interface_information)的**管道**成员\_信息结构指向一组[**USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构，其中包含与特定接口的每个终结点相关联的管道的相关信息。 客户端驱动程序可以从管道获取管道句柄 **，\[我\]。PipeHandle**并使用它们向特定管道发送 i/o 请求。 **\]\[管道。PipeType**成员指定该管道支持的终结点和传输的类型。
 
-2.  在 URB 的**UrbSelectConfiguration**成员中，USB 驱动程序堆栈返回一个句柄，可使用该句柄通过提交类型 URB\_函数的另一个 URB\_选择\_接口来选择备用接口设置（*select-interface 请求*）。 若要分配并生成该请求的 URB 结构，请调用[**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)。
+2.  在 URB 的**UrbSelectConfiguration**成员中，USB 驱动程序堆栈返回一个句柄，可使用该句柄通过提交类型 URB\_函数的另一个 URB\_选择\_接口（*select-interface request*）来选择备用接口设置。 若要分配并生成该请求的 URB 结构，请调用[**USBD\_SelectInterfaceUrbAllocateAndBuild**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_selectinterfaceurballocateandbuild)。
 
     如果带宽不足，无法支持启用的接口中的同步、控制和中断端点，则选择配置请求和选择接口请求可能会失败。 在这种情况下，USB 总线驱动程序将 URB 标头的**status**成员设置为 USBD\_状态\_无\_带宽。
 

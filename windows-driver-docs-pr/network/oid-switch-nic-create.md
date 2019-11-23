@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_NIC_CREATE
-description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_NIC_CREATE 的对象标识符（OID）设置请求，通知底层的可扩展交换机扩展在可扩展交换机端口与之间建立新连接外部或虚拟网络适配器。 完全建立连接后，可扩展交换机的协议边缘会发出 OID_SWITCH_NIC_CONNECT 的 OID 设置请求。
+description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_NIC_CREATE 的对象标识符（OID）设置请求，通知底层的可扩展交换机扩展在可扩展交换机端口与之间建立新连接外部或虚拟网络适配器。 完全建立连接后，可扩展交换机的协议边缘发出 OID_SWITCH_NIC_CONNECT 的 OID 设置请求。
 ms.assetid: 1D6B2C6B-A63E-4A20-B534-AF12714F5FB5
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CREATE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CREATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bbb07902faf3d85eefd456f0cd7c814af03a372
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843960"
 # <a name="oid_switch_nic_create"></a>OID\_交换机\_NIC\_创建
 
 
-Hyper-v 可扩展交换机的协议边缘发出 OID\_SWITCH\_NIC 的对象标识符（OID）设置请求，\_创建通知底层的可扩展交换机扩展在可扩展交换机端口和外部或虚拟网络适配器。 完全建立连接后，可扩展交换机的协议边缘会发出 oid [\_switch\_NIC\_连接](oid-switch-nic-connect.md)的 oid 集请求。
+Hyper-v 可扩展交换机的协议边缘发出 OID\_SWITCH\_NIC 的对象标识符（OID）设置请求，\_创建通知底层可扩展交换机扩展在可扩展交换机端口与外部或虚拟网络适配器之间建立了新连接。 完全建立连接后，可扩展交换机的协议边缘会发出 oid [\_switch\_NIC\_连接](oid-switch-nic-connect.md)的 oid 集请求。
 
 [ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_SWITCH\_NIC\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 
@@ -34,13 +34,13 @@ NDIS\_交换机的**索引**成员[ **\_NIC\_参数**](https://docs.microsoft.co
 
     -   为发出 OID\_交换机\_NIC\_CREATE OID 请求的可扩展交换机端口上的网络适配器连接生成任何数据包流量。
 
-    -   转发或发起 oid [\_交换机\_nic\_请求请求发送到请求](oid-switch-nic-request.md)的基础网络\_\_适配器请求。
+    -   转发或发起 oid [\_交换机\_nic\_请求请求发送到请求](oid-switch-nic-request.md)的基础网络\_\_适配器请求。\_
 
     -   转发或产生 Ndis\_状态的 NDIS 状态指示[ **\_交换机\_nic\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-nic-status)来自基础网络适配器，该适配器为其发出 OID\_交换机\_NIC\_CREATE OID 请求。
 
     -   调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) ，以在可扩展交换机端口上为指定网络适配器连接递增可扩展交换机引用计数器。
 
-    **请注意**  扩展可能会截获 OID 的 oid 请求之间的指定端口的发送或接收数据包\_交换机\_NIC\_CREATE 和[OID\_nic\_连接](oid-switch-nic-connect.md)。 在这种情况下，扩展应转发发送或接收数据包请求，而不是将其取消。
+    **请注意**  扩展可能会截获 OID 的 oid 请求之间的指定端口的发送或接收数据包\_交换机\_NIC\_CREATE 和[OID\_nic\_连接](oid-switch-nic-connect.md)。\_ 在这种情况下，扩展应转发发送或接收数据包请求，而不是将其取消。
 
      
 

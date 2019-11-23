@@ -21,7 +21,7 @@ WIA 允许您向系统提供的对话框添加属性页、提供自定义图标�
 
 如果实现了**IWiaUIExtension**接口，并且不希望替换系统 UI，则必须为[**IWiaUIExtension：:D Evicedialog**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545069(v=vs.85))方法返回 E\_NOTIMPL。 任何其他返回值都禁止设备的设备对话框。
 
-必须在进程内 COM 服务器中将 "设备" 对话框作为模式对话框实现，将父级的*pDeviceDialogData* -&gt;*HwndParent*传递给**DialogBoxParam**函数（如中所述 Windows SDK文档）。 "设备" 对话框必须返回\_"正常"\_，如果用户取消对话框，则返回 FALSE; 对于其他错误，返回 COM 错误 HRESULT。
+必须在进程内 COM 服务器中将 "设备" 对话框作为模式对话框实现，将父级的*pDeviceDialogData* -&gt;*HwndParent*传递给**DialogBoxParam**函数（如 Windows SDK 文档中所述）。 "设备" 对话框必须返回\_"正常"\_，如果用户取消对话框，则返回 FALSE; 对于其他错误，返回 COM 错误 HRESULT。
 
 [**DEVICEDIALOGDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiadevd/ns-wiadevd-tagdevicedialogdata)结构包含实现自定义设备对话框所需的所有数据。
 

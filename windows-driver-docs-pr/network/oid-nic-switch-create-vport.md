@@ -1,9 +1,9 @@
 ---
 title: OID_NIC_SWITCH_CREATE_VPORT
-description: 过量驱动程序发出 OID_NIC_SWITCH_CREATE_VPORT 的对象标识符（OID）方法请求，以便在网络适配器的 NIC 交换机上创建非默认的虚拟端口（VPort）。
+description: 过量驱动程序发出 OID_NIC_SWITCH_CREATE_VPORT 的对象标识符（OID）方法请求，以在网络适配器的 NIC 交换机上创建非默认的虚拟端口（VPort）。
 ms.assetid: 31109117-2242-40E0-B215-0FAE014B2035
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_CREATE_VPORT 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_CREATE_VPORT 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: f525f3da17bb5316f06db571c1de70a9329818f1
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -30,7 +30,7 @@ ms.locfileid: "72844097"
 
 如果 OID\_NIC\_交换机\_CREATE\_VPORT 请求成功完成，则 PF 微型端口驱动程序和过量驱动程序必须保留非默认 VPort 的**VPortId**值才能执行后续操作。 在以下操作过程中将使用**VPortId**值：
 
--   NDIS 和过量驱动程序使用**VPortId**值标识与此 VPort 相关的后续 OID 请求中的非默认 VPort，如[oid\_nic\_SWITCH\_VPort\_参数](oid-nic-switch-vport-parameters.md)和[OID\_NIC\_交换机\_DELETE\_VPORT](oid-nic-switch-delete-vport.md)。
+-   NDIS 和过量驱动程序使用**VPortId**值标识与此 VPort 相关的后续 OID 请求中的非默认 VPort，如[oid\_nic\_switch\_VPort\_参数](oid-nic-switch-vport-parameters.md)和[OID\_nic\_VPort\_DELETE\_](oid-nic-switch-delete-vport.md)。
 
 -   在发送操作期间，NDIS 指定**VPortId**值以标识从中发送数据包的 VPort。 此值在带外（OOB） [**NDIS\_NET\_buffer\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_filtering_info)中指定，\_筛选[网络\_缓冲区\_列表](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)结构的\_信息数据。
 
@@ -68,11 +68,11 @@ NDIS 或 PF 微型端口驱动程序返回 OID 的 OID 方法请求之一的以�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>结构中的一个或多个成员的值无效。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度小于 sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>）。 PF 微型端口驱动程序必须设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度小于 sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_VPORT_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)"><strong>NDIS_NIC_SWITCH_VPORT_PARAMETERS</strong></a>）。 PF 微型端口驱动程序必须设置<strong>数据。METHOD_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

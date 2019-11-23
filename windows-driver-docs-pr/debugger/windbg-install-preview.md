@@ -17,7 +17,8 @@ ms.locfileid: "72007565"
 
 本部分介绍如何安装 WinDbg 预览调试器。
 
-Microsoft Store 中提供了 WinDbg 预览调试器。 它需要安装 Windows 10 周年更新。 若要安装它，请打开 Microsoft Store 并搜索 "WinDbg Preview"，或单击 [here @ no__t-1。
+Microsoft Store 中提供了 WinDbg 预览调试器。 它需要安装 Windows 10 周年更新。 若要安装它，请打开 Microsoft Store 并搜索 "WinDbg Preview"，或单击[此处](
+https://www.microsoft.com/store/apps/9pgjgd53tn86)。
 
 在应用程序处于找到后，单击它以下载并安装。
 
@@ -38,7 +39,7 @@ Microsoft Store 中提供了 WinDbg 预览调试器。 它需要安装 Windows 1
 
 ---
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
 

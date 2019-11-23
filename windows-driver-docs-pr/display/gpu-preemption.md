@@ -32,7 +32,7 @@ ms.locfileid: "72839674"
 </tr>
 <tr class="odd">
 <td align="left">驱动程序实现-仅限完整图形和呈现</td>
-<td align="left">Mandatory</td>
+<td align="left">强制</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a>要求和测试</td>

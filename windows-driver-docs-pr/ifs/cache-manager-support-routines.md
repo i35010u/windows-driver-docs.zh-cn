@@ -17,7 +17,7 @@ ms.locfileid: "71955779"
 
 **头文件：** *ntifs*
 
-**Prefix：Cc * Xxx @ no__t-0 @ no__t-1
+**前缀： Cc * Xxx***
 
 | 函数或宏 | 描述 |
 | ----------------- | ----------- |
@@ -35,7 +35,7 @@ ms.locfileid: "71955779"
 | **CcGetDirtyPages** | 搜索与给定日志句柄匹配的所有文件中的脏页。 |
 | **CcGetFileObjectFromBcb** | 如果有一个指针指向某个文件的固定缓冲区控制块（BCB），则将返回一个指针，该指针指向缓存管理器为该文件使用的文件对象。 |
 | **CcGetFileObjectFromSectionPtrs** | 如果有指向缓存文件的节对象指针的指针，则返回指向缓存管理器用于文件的文件对象的指针。 |
-| **CcGetFileObjectFromSectionPtrsRef** | 向缓存的文件传递指向 SECTION_OBJECT_POINTERS 结构的指针时，将返回一个指针，该指针指向缓存管理器用于缓存文件的文件对象。 |
+| **CcGetFileObjectFromSectionPtrsRef** | 当向缓存文件的 SECTION_OBJECT_POINTERS 结构传递指针时，将返回一个指针，该指针指向缓存管理器用于缓存文件的文件对象。 |
 | **CcGetFileSizePointer** | 如果文件的文件对象有指针，则返回该文件的大小。 |
 | **CcGetFlushedValidData** | 确定缓存文件中已刷新到磁盘的数量。 |
 | **CcInitializeCacheMap** | 文件系统调用此例程来缓存文件。 |
@@ -68,7 +68,7 @@ ms.locfileid: "71955779"
 
 以下**Cc * Xxx*** 例程提供用于传输到缓存的内存描述符列表（MDL）接口。 这些例程主要用于文件服务器。 其他任何人都应使用 FSRTL 和 FASTIO 接口。
 
-| Functions | 描述 |
+| 函数 | 描述 |
 | -------- | ----------- |
 | **CcPrepareMdlWrite** | 提供对缓存的文件内存的直接访问，以便调用方可以将数据写入文件。 |
 | **CcMdlRead** | 提供对缓存的文件内存的直接访问，以便调用方可以从文件读取数据。 |

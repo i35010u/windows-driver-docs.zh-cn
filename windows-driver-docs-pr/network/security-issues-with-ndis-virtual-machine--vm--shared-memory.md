@@ -83,7 +83,7 @@ VMQ 共享内存的摘要要求如下所示：
 
 以下几点适用于在 Windows Server 2012 和更高版本的 Windows 上运行的 VMQ 微型端口驱动程序：
 
--   对于 NDIS 6.20 VMQ 微型端口驱动程序，无需更改。 但是，当 VSP 通过发出 oid 的 OID （对象标识符）方法请求（ [\_接收\_FILTER\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)来分配 VM 队列时，它将设置 NDIS 的**LookaheadSize**成员[ **\_接收\_队列\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构到零。 这会强制微型端口驱动程序不会将数据包拆分为预先预测前和预测后缓冲区。
+-   对于 NDIS 6.20 VMQ 微型端口驱动程序，无需更改。 但是，当 VSP 通过发出 oid （对象标识符）的 oid （对象标识符）方法请求（ [\_接收\_FILTER\_分配\_队列](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-allocate-queue)）来分配 VM 队列时，它会将[**NDIS\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)的**LookaheadSize**成员设置为零。\_\_ 这会强制微型端口驱动程序不会将数据包拆分为预先预测前和预测后缓冲区。
 
 -   从 NDIS 6.30 开始，VMQ 微型端口驱动程序不得公布对将数据包数据拆分为预先预测和后先行缓冲区的支持。 当微型端口驱动程序注册其 VMQ 功能时，它必须在初始化[**NDIS\_接收\_筛选器\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_capabilities)结构时遵循这些规则：
 

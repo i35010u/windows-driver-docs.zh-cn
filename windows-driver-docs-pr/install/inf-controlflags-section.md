@@ -22,7 +22,7 @@ ms.locfileid: "72038006"
 # <a name="inf-controlflags-section"></a>INF ControlFlags 节
 
 
-**请注意**  If 你正在构建通用或移动驱动程序包，本节无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
+**请注意**  如果你要构建通用或移动驱动程序包，此部分无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
@@ -53,7 +53,7 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 标识在 "每个制造商的[**INF 模型" 部分**](inf-models-section.md)中指定的[硬件 ID](hardware-ids.md)或[兼容 ID](compatible-ids.md) 。 每个字符串必须与下一个逗号（，）分隔。
 
 <a href="" id="excludefromselect"></a>**ExcludeFromSelect**  
-删除所有（如果指定了 @no__t），或显示特定用户界面中的指定设备列表，用户从该列表中选择要安装的特定设备。
+删除所有（如果指定了 \*）或从特定用户界面显示的设备的指定列表，其中用户需要从中选择特定设备进行安装。
 
 对于 Windows 2000 和更高版本的 Windows，"查找新硬件向导" 和 "硬件更新向导" 会显示指定的设备。
 
@@ -79,7 +79,7 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 
 
 
-有关如何使用**系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和**Ntarm64**扩展的详细信息，请参阅[为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md).
+有关如何使用**系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和**Ntarm64**扩展的详细信息，请参阅[为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 <a href="" id="copyfilesonly"></a>**CopyFilesOnly**  
 仅为给定设备安装 INF 指定的文件，因为设备硬件不可访问或尚未提供。
@@ -92,7 +92,7 @@ ExcludeFromSelect=device-identification-string[,device-identification-string] ..
 此项是可选的。 安装设备的首选方法是省略此项，并允许 Windows 在受信任的系统线程的上下文中安装设备（如果可能）。 但是，如果设备在安装设备时确实要求用户登录，请在设备 INF 中包含此项。
 
 <a href="" id="requestadditionalsoftware"></a>**RequestAdditionalSoftware**  
-指定所有（如果指定了 **@no__t** ）或指定的设备列表可能需要比通过设备的[驱动程序包](driver-packages.md)安装的软件更多的软件。 例如， **RequestAdditionalSoftware**项可用于安装驱动程序包中未包含的新的或更新的特定于设备的软件。
+指定所有（如果指定了 **\*** ）或指定的设备列表可能需要比通过设备的[驱动程序包](driver-packages.md)安装的软件更多的软件。 例如， **RequestAdditionalSoftware**项可用于安装驱动程序包中未包含的新的或更新的特定于设备的软件。
 
 **注意** 如果未指定 **\*** ，则必须在 " [**INF 模型" 部分**](inf-models-section.md)中定义**RequestAdditionalSoftware**条目指定的每个设备。
 
@@ -105,7 +105,7 @@ Windows 安装设备的[驱动程序包](driver-packages.md)后，如果在 INF 
 1.  PnP 管理器使用**RequestAddtionalSoftware**类型生成问题报告和解决方案（pr）错误报告。 此报表包含有关设备的特定硬件 ID 和计算机的系统体系结构的信息。
 2.  如果有独立硬件供应商（IHV）提供的用于特定于设备的软件的解决方案，则该解决方案将下载到计算机。
 
-    **请注意**  The 下载解决方案不会安装软件本身。
+    **请注意**  下载解决方案不会安装软件本身。
 
      
 
@@ -114,7 +114,7 @@ Windows 安装设备的[驱动程序包](driver-packages.md)后，如果在 INF 
 <a name="remarks"></a>备注
 -------
 
-通常， **ControlFlags**节包含一个或多个**ExcludeFromSelect**条目用于标识 "每个制造商的[**INF 模型" 部分**](inf-models-section.md)中列出的设备，但不应在手动过程中将其作为选项显示给最终用户成千上万.
+通常， **ControlFlags**节有一个或多个**ExcludeFromSelect**条目用于标识 "每个制造商的[**INF 模型" 部分**](inf-models-section.md)中列出的设备，但不应在手动安装过程中将其作为选项显示给最终用户。
 
 在**ExcludeFromSelect**项中列出设备的[硬件 ID](hardware-ids.md)或[兼容 ID](compatible-ids.md)会将其从显示给最终用户的显示中移除。 如果为**ExcludeFromSelect**值指定星号（\*），将从此用户可见列表中删除 INF 文件中定义的所有设备/模型。
 
@@ -123,7 +123,7 @@ INF 编写器应慎用并仅在以下情况下使用**InteractiveInstall**指令
 -   为已损坏或错误定义了硬件 Id 的设备安装驱动程序。 例如，当两个或多个不同的设备共享相同的硬件 ID 时。 即插即用标准严格禁止这种情况，但一些硬件供应商在硬件中发生了此错误。
 -   为需要其自己的驱动程序的设备安装驱动程序，并且绝对不能使用泛型类驱动程序或操作系统提供的另一个驱动程序。 **InteractiveInstall**项强制设备管理器要求用户确认兼容 ID 匹配。
 
-**请注意**  In 将来，WHQL 可能不会将 Windows 徽标授予其 INF 文件包含**InteractiveInstall**条目的设备。
+**请注意**  将来，WHQL 可能不会向其 INF 文件包含**InteractiveInstall**条目的设备授予 Windows 徽标。
 
  
 
@@ -162,7 +162,7 @@ InteractiveInstall = \
 ; ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)

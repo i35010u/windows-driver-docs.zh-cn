@@ -44,7 +44,7 @@ NDIS 6.20 保持与早期的 NDIS 版本的向后兼容性。 有关向后兼容
     有关支持超过64个处理器的详细信息，请参阅[NDIS 6.20 中对超过64个处理器的支持](support-for-more-than-64-processors-in-ndis-6-20.md)。
 
 <a href="" id="driver-initialization-------"></a>**驱动程序初始化**   
--   将 ndis 版本设置为6.20 在 Ndis\_协议的**MajorNdisVersion**和**MinorNdisVersion**成员中，将传递给[**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)的[ **\_驱动程序\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)结构。才能.
+-   将 ndis 版本设置为**6.20，** [ **\_协议\_驱动程序\_特性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_protocol_driver_characteristics)结构传递到[**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)函数。
 
 -   将 NDIS\_协议\_驱动程序\_特征结构的**MajorDriverVersion**和**MinorDriverVersion**成员中的协议驱动程序版本设置为合适的特定于驱动程序的值。
 

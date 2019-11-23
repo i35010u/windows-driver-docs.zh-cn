@@ -1,6 +1,6 @@
 ---
-title: Hyper-v 可扩展交换机网络适配器概述
-description: Hyper-v 可扩展交换机网络适配器概述
+title: Hyper-V 可扩展交换机网络适配器概述
+description: Hyper-V 可扩展交换机网络适配器概述
 ms.assetid: 61403FDE-90BF-4D0A-83E1-5AF8ADBD37A5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72843746"
 ---
-# <a name="overview-of-hyper-v-extensible-switch-network-adapters"></a>Hyper-v 可扩展交换机网络适配器概述
+# <a name="overview-of-hyper-v-extensible-switch-network-adapters"></a>Hyper-V 可扩展交换机网络适配器概述
 
 
 Hyper-v 可扩展交换机支持来自各种类型的虚拟或物理网络适配器的连接。 通过可扩展交换机端口建立与这些类型的网络适配器的连接。 端口是在建立虚拟网络适配器之前创建的，并且在网络适配器连接断开后被删除。

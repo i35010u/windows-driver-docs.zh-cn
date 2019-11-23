@@ -3,7 +3,7 @@ title: FILE_LOCK 结构
 description: 操作系统使用不透明文件\_锁定结构来支持文件锁定。
 ms.assetid: 89df2075-c542-4105-847f-9bc7ae4dab50
 keywords:
-- FILE_LOCK 结构可安装的文件系统驱动程序
+- FILE_LOCK 结构可安装文件系统驱动程序
 - PFILE_LOCK 结构指针可安装的文件系统驱动程序
 topic_type:
 - apiref

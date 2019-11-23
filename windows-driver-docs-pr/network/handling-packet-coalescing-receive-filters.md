@@ -22,11 +22,11 @@ ms.locfileid: "72842573"
 
 -   对于所接收的数据包，特定筛选器的所有标头字段测试参数必须匹配，以便合并合并缓冲区中的数据包。
 
-    网络适配器将接收筛选器的所有标头字段测试的结果与逻辑 AND 运算组合在一起。 也就是说，如果在[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)的数组中包含的任何标头字段测试\_字段\_接收筛选器的参数结构失败，则接收的数据包不满足指定的筛选条件，必须不合并。
+    网络适配器将接收筛选器的所有标头字段测试的结果与逻辑 AND 运算组合在一起。 也就是说，如果在 NDIS 的数组中包含的任何标头字段测试[ **\_接收\_筛选器\_字段\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)接收筛选器的参数结构失败，则接收的数据包不满足指定的筛选条件，并且不能合并。
 
 -   网络适配器仅根据指定的标头字段测试参数检查数据包数据。 适配器必须忽略未指定标头字段测试的数据包中的所有标头字段。
 
--   如果接收的数据包匹配任何接收筛选器的所有标头字段测试，则网络适配器必须在硬件合并缓冲区中合并数据包。 合并第一个数据包后，网络适配器必须启动硬件计时器，并将过期时间设置为[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)的**MaxCoalescingDelay**成员的值\_参数匹配接收筛选器的结构。
+-   如果接收的数据包匹配任何接收筛选器的所有标头字段测试，则网络适配器必须在硬件合并缓冲区中合并数据包。 合并第一个数据包后，网络适配器必须启动硬件计时器，并将过期时间设置为**MaxCoalescingDelay**成员的[**NDIS\_接收\_FILTER\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构，以便匹配接收筛选器。
 
 -   随着接收到与数据包合并接收筛选器匹配的数据包，网络适配器将其放入合并缓冲区。
 

@@ -25,7 +25,7 @@ ms.locfileid: "72825928"
 
 由于用户模式显示驱动程序在引用资源的调用中接收驱动程序定义的资源句柄，因此，驱动程序不需要执行开销较高的句柄查找来查找驱动程序定义的资源对象。 同样，如果运行时也无需执行句柄查找，则用户模式显示驱动程序会在用户模式显示驱动程序调用运行时时使用 Direct3D 运行时定义的资源句柄。
 
-用户模式显示驱动程序调用[**pfnAllocateCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数为曲面分配内存。 在**pfnAllocateCb**调用中，用户模式显示驱动程序可以为[**D3DDDICB\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)和 D3DDDI 的**pPrivateDriverData**成员中的图面列表和每个单独表面传递专用数据[ **\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构。 但是，用户模式显示驱动程序无法接收来自**pPrivateDriverData**成员的私有数据。 用户模式显示驱动程序可以为此私有数据分配内存，并且可以在**pfnAllocateCb**调用返回后释放内存，也可以使用堆栈内存传递此私有数据。 **PfnAllocateCb**函数将向用户模式显示驱动程序返回每个分配的图面的每个分配的句柄。
+用户模式显示驱动程序调用[**pfnAllocateCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)函数为曲面分配内存。 在**pfnAllocateCb**调用中，用户模式显示驱动程序可以分别为[**D3DDDICB\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_allocate)和[**D3DDDI\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationinfo)结构的**pPrivateDriverData**成员中的图面列表和每个单独的图面传递专用数据。 但是，用户模式显示驱动程序无法接收来自**pPrivateDriverData**成员的私有数据。 用户模式显示驱动程序可以为此私有数据分配内存，并且可以在**pfnAllocateCb**调用返回后释放内存，也可以使用堆栈内存传递此私有数据。 **PfnAllocateCb**函数将向用户模式显示驱动程序返回每个分配的图面的每个分配的句柄。
 
 **请注意**   用户模式显示驱动程序必须为每个设备的每个共享表面调用一次**pfnAllocateCb**函数。 例如，如果设备1创建一个同时由设备2、3和4使用的共享图面，则设备2、3和4还必须为共享表面调用**pfnAllocateCb**一次，以便检索分配句柄。
 

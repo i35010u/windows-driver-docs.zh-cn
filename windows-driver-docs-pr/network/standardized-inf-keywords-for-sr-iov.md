@@ -32,7 +32,7 @@ ms.locfileid: "72841843"
 
 安装驱动程序后，管理员可以在网络适配器的 "**高级**" 属性页中更新 **\*SRIOV**关键字值。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**请注意**   在适配器的 "**高级**" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
+**请注意**   中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
 
  
 
@@ -46,12 +46,12 @@ ms.locfileid: "72841843"
 SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明。 此表中的列描述了用于枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在网络适配器的**NDI\\参数\\** 键下的注册表中。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与**SubkeyName**关键字关联的显示文本。
 
-**请注意**  独立硬件供应商（IHV）可以定义 SubkeyName 的任何说明性文本。
+**请注意**   独立硬件供应商 (IHV) 可以为 SubkeyName 定义描述性文本。
 
  
 
@@ -72,7 +72,7 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -81,13 +81,13 @@ SR-IOV 标准化 INF 关键字是枚举关键字，下表对此进行了说明�
 <td align="left"><p><strong><em>SRIOV</strong></p></td>
 <td align="left"><p>SR-IOV</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>SriovPreferred</strong></p></td>

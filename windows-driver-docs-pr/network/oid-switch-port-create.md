@@ -3,7 +3,7 @@ title: OID_SWITCH_PORT_CREATE
 description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PORT_CREATE 的对象标识符（OID）设置请求，通知有关创建可扩展交换机端口的可扩展交换机扩展。
 ms.assetid: 579D51CD-0594-4A06-998E-3886E7325D97
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_CREATE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PORT_CREATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c72c4e09af8f2bc6aa2de2319a69fa111cd9d13
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -38,9 +38,9 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设
 
 -   如果扩展调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)来转发此 oid 集请求，则扩展应监视此 oid 请求的完成状态。 此扩展用于检测可扩展交换机驱动程序堆栈中的基础扩展是否否决了端口创建通知。
 
--   在转发 OID 请求并成功完成后，扩展可以为端口发出 Oid 请求，如[oid\_交换机\_端口\_属性\_枚举](oid-switch-port-property-enum.md)，直到 OID 的 oid 请求[\_SWITCH\_端口\_拆卸](oid-switch-port-teardown.md)。 此 OID 请求通知扩展端口将从可扩展交换机开始删除过程。
+-   在转发 OID 请求并成功完成后，扩展可以为端口发出 Oid 请求，如[oid\_交换机\_端口\_属性\_枚举](oid-switch-port-property-enum.md)，直到 oid 请求，\_[端口\_拆卸](oid-switch-port-teardown.md)。\_ 此 OID 请求通知扩展端口将从可扩展交换机开始删除过程。
 
--   扩展不能将数据包转发到[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构中的指定端口，直到 OID 参数结构的 oid\_请求在发出和完成[连接\_](oid-switch-nic-connect.md)顺利.
+-   扩展不能将数据包转发到[**NDIS\_交换机\_端口\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_parameters)结构中的指定端口，直到 OID 参数结构的 OID [\_交换机\_NIC\_CONNECT](oid-switch-nic-connect.md)发出并成功完成。
 
 **请注意**  扩展不能\_SWITCH\_端口\_CREATE 中发出 oid set 请求。
 

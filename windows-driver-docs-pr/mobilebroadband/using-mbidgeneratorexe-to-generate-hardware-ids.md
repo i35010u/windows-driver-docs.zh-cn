@@ -17,7 +17,7 @@ ms.locfileid: "72323653"
 
 若要为服务元数据包生成硬件 ID 值，可以使用 MBIDGenerator 命令行工具，该工具是 SDK Windows 8.1 和 Windows 10 中的一部分。
 
-**请    注意**，在 MBIDGenerator 中包含的是在 WDK 中包含的 Windows 8。
+**请   注意**，在 MBIDGenerator 中包含的是在 WDK 中包含的 Windows 8。
 
  
 

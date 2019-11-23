@@ -35,7 +35,7 @@ ms.locfileid: "72834908"
 
 1. 微型端口驱动程序初始化**标头**成员。 驱动程序将**标头**的**类型**成员设置为\_对象\_类型\_默认值。
 
-   从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 NDIS\_SRIOV\_功能 \_修订版本\_1，将**Size**成员设置为 ndis\_SIZEOF\_SRIOV\_功能\_修订版\_1。
+   从 NDIS 6.30 开始，微型端口驱动程序会将**标头**的**修订**成员设置为 NDIS\_SRIOV\_功能 \_修订版本\_1，将**Size**成员设置为 ndis\_SIZEOF\_\_\_\_
 
 2. 微型端口驱动程序在**SriovCapabilities**成员中设置相应的标志，以报告 sr-iov 功能。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72834908"
    -   NDIS\_SRIOV\_CAP\_PF\_微型端口
 
    > [!NOTE]
-   > 网络适配器的 PCIe 虚拟功能（VF）的微型端口驱动程序必须将 NDIS\_SRIOV\_CAP\_VF\_微型端口标志和 NDIS\_SRIOV\_\_\_支持的标志。    
+   > 网络适配器的 PCIe 虚拟功能（VF）的微型端口驱动程序必须同时将 NDIS\_SRIOV\_\_CAP 设置为 "VF\_微型端口" 标志，并将 NDIS\_SRIOV\_CAP\_SRIOV\_支持的标志。    
 
 当 NDIS 调用微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数时，驱动程序会按照以下步骤注册网络适配器的 sr-iov 功能：
 
@@ -73,7 +73,7 @@ NDIS 通过以下方式将网络适配器当前启用的 SR-IOV 功能传递到�
 
 -   当 NDIS 调用过量协议驱动程序的[*ProtocolBindAdapterEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)函数时，Ndis 通过*BindParameters*参数传递网络适配器的 sr-iov 功能。 此参数包含指向[**NDIS\_筛选器的指针\_ATTACH\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_attach_parameters)结构。 此结构的**SriovCapabilities**成员包含指向[**NDIS\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构的指针。
 
-在处理\_OID 的对象标识符（OID）查询请求时，NDIS 还会返回[**ndis\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构[\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-hardware-capabilities)和[oid\_SRIOV\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-current-capabilities)由过量协议或筛选器驱动程序颁发的当前\_功能。
+在处理\_OID 的对象标识符（OID）查询请求时，NDIS 还会返回[**ndis\_SRIOV\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_capabilities)结构[\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-hardware-capabilities)，以及由过量协议或筛选器驱动程序发出的[SRIOV\_当前\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-current-capabilities)。\_
 
  
 

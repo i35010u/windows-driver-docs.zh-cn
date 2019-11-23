@@ -50,7 +50,7 @@ ms.locfileid: "72838811"
 
 ### <a name="span-idtarget_versionsspanspan-idtarget_versionsspantarget-versions"></a><span id="target_versions"></span><span id="TARGET_VERSIONS"></span>目标版本
 
-在目标计算机上运行的 Windows 版本由[**GetSystemVersionValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionvalues)和[**请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**调试\_请求\_获取\_WIN32\_主要\_次要\_版本**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-request-get-win32-major-minor-versions)，[**GetSystemVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionstring)返回 Windows 版本的说明。 此信息也由[**GetSystemVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getsystemversion)返回。
+在目标计算机上运行的 Windows 版本由[**GetSystemVersionValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionvalues)和[**请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**调试\_请求\_获取\_WIN32\_主要\_次要\_版本**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-request-get-win32-major-minor-versions)，并由[**GetSystemVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionstring)返回 Windows 版本的说明。 此信息也由[**GetSystemVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getsystemversion)返回。
 
  
 

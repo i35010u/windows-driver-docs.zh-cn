@@ -26,11 +26,11 @@ ms.locfileid: "72837233"
 
 驱动程序可以在其[设备扩展](device-extensions.md)中使用系统分配的空间，作为特定于设备的信息的全局存储区。 驱动程序只能使用内核堆栈向其内部例程传递少量数据。 某些驱动程序必须分配更多的系统空间内存，通常用于 i/o 缓冲区。
 
-若要分配 i/o 缓冲空间，要使用的最佳内存分配例程为[**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**AllocateCommonBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) （如果驱动程序的设备使用的是 bus 主机 dma 或系统 dma控制器的自动初始化模式）或[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)。
+若要分配 i/o 缓冲空间，最佳的内存分配例程为[**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)、 [**MmAllocateContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemoryspecifycache)、 [**AllocateCommonBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer) （如果驱动程序的设备使用的是 bus 主机 dma 或系统 dma 控制器的自动初始化模式）或[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)。
 
 在系统运行时，非分页池通常会成为碎片，因此驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程应调用这些例程来设置驱动程序所需的任何长期 i/o 缓冲区。 其中的每个例程（ [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)除外）都分配与处理器特定边界（由处理器的数据缓存行大小确定）对齐的内存，以提供最佳性能。
 
-驱动程序应尽可能经济地分配 i/o 缓冲区，因为非分页池内存是有限的系统资源。 通常，驱动程序应避免重复调用这些支持例程来请求小于页\_大小的分配，因为每个小于页\_大小的分配还附带了一个池标头，该标头用于内部管理分区.
+驱动程序应尽可能经济地分配 i/o 缓冲区，因为非分页池内存是有限的系统资源。 通常情况下，驱动程序应避免重复调用这些支持例程来请求小于页\_大小的分配，因为每个小于页\_大小的分配也附带了用于内部管理分配的池标头。
 
 ### <a name="tips-for-allocating-driver-buffer-space-economically"></a>经济实惠地分配驱动程序缓冲区空间的提示
 

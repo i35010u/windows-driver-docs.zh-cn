@@ -33,7 +33,7 @@ MdlAfterReqCompletedIntIoctl 规则指定在[*EvtIoInternalDeviceControl*](https
 
 |              |      |
 |--------------|------|
-| 驱动程序型号 | KMDF |
+| 驱动程序模型 | KMDF |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -50,7 +50,7 @@ MdlAfterReqCompletedIntIoctl 规则指定在[*EvtIoInternalDeviceControl*](https
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>MdlAfterReqCompletedIntIoctl</strong>规则。</p>
-使用以下步骤来运行代码分析：
+使用以下步骤来分析你的代码：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>

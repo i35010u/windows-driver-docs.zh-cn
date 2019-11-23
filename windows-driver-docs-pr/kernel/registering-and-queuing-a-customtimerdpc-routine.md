@@ -64,7 +64,7 @@ ms.locfileid: "72838475"
 
      
 
-可以指定为**KeSetTimer**和**KeSetTimerEx**的最小时间间隔大约为10毫秒，因此，当时间间隔比[*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)例程更小时，驱动程序可以使用*CustomTimerDpc*例程，这每秒运行一次可处理。
+可以指定为**KeSetTimer**和**KeSetTimerEx**的最小时间间隔大约为10毫秒，因此，当时间间隔比[*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)例程（每秒运行一次）可以处理时，驱动程序可以使用*CustomTimerDpc*例程。
 
 在任何时刻，只能对特定计时器对象的一个实例化进行排队。 再次调用具有相同*计时器*对象指针的**KeSetTimer**或**KeSetTimerEx**会取消排队计时器对象并将其重置。
 

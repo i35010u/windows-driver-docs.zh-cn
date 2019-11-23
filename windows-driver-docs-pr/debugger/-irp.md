@@ -34,7 +34,7 @@ ms.locfileid: "72837602"
 ## <a name="span-idddk__irp_dbgspanspan-idddk__irp_dbgspanparameters"></a><span id="ddk__irp_dbg"></span><span id="DDK__IRP_DBG"></span>Parameters
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
 指定 IRP 的十六进制地址。
 
 <span id="_______Detail______"></span><span id="_______detail______"></span><span id="_______DETAIL______"></span>*详细信息*   
@@ -139,7 +139,7 @@ Irp is active with 8 stacks 5 is current (= 0x831f4b00)
                         Args: 00007000 00000000 00018400 00000000
 ```
 
-请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **ntfs！ NtfsMasterIrpSyncCompletionRoutine**由 **\\FileSystem\\ntfs**设置。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到 Ntfs 的上下文 **！NtfsMasterIrpSyncCompletionRoutine**。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的地址为**847eeed0**，并且在调用时将传递给此例程的上下文为**829e2ba8**。
+请注意，驱动程序名称旁边的完成例程是在该堆栈位置上设置的，它是由驱动程序在下面的行中设置的。 在前面的示例中， **Ntfs ！ NtfsMasterIrpSyncCompletionRoutine** 由设置 **\\文件系统\\Ntfs**。 **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**， **847eeed0-829E2ba8**以上的**完成上下文**项指示完成例程的地址以及将传递到**Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的上下文。 从这里可以看到， **Ntfs！ NtfsMasterIrpSyncCompletionRoutine**的地址为**847eeed0**，并且在调用时将传递给此例程的上下文为**829e2ba8**。
 
 **IRP 主要功能代码**
 

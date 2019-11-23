@@ -50,7 +50,7 @@ NDIS\_状态\_指示结构的**StatusBuffer**成员是一个[**NDIS\_链接\_状
 
 MB 微型端口驱动程序必须报告当前连接的数据类的最大数据速率。 当连接时，数据类中的更改必须使用报告的相应数据速率来指示连接状态。 下面是此规则的推荐实现：
 
-1.  符合此规范的 MB 微型端口驱动程序必须使用[**ndis\_状态\_LINK\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)，以指示连接状态更改，而不是\_状态\_媒体\_连接，NDIS\_状态\_MEDIA\_断开连接，或 NDIS\_状态\_链接\_速度\_更改（在 NDIS 5.1 中）用于连接状态指示。
+1.  符合此规范的 MB 微型端口驱动程序必须使用[**ndis\_状态\_LINK\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)，以指示连接状态更改，而不是\_状态\_媒体\_连接，NDIS\_状态\_媒体\_断开连接，或 NDIS\_状态\_链接\_速度更改（如在 NDIS 5.1 中）以获取连接状态指示。\_
 
 2.  [ **\_状态结构的 ndis\_链接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_link_state)的**XmitLinkSpeed**和**RCVLINKSPEED**成员不能报告 NDIS\_链接\_速度\_未知。 微型端口驱动程序必须通过使用下表中的信息来报告速度。
 

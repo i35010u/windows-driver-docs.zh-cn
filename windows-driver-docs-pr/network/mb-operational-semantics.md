@@ -30,7 +30,7 @@ MB 服务使用的许多*设置*和*查询*OID 请求都是异步处理的。 �
 
 对于*查询*和*设置*请求，三向握手都是相同的。
 
-除[OID\_WWAN\_DRIVER\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)以外，其他所有 MB 特定的 OID 请求都遵循小型端口驱动程序和 mb 服务之间的信息交换的异步事务机制，还提供以下附加说明:
+除了[OID\_WWAN\_DRIVER\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-driver-caps)以外，其他所有 MB 特定的 OID 请求都遵循用于微端口驱动程序和 MB 服务之间的信息交换的异步事务机制，还提供以下附加说明：
 
 -   小型端口驱动程序应立即对任何错误条件（如无效的 OID 请求）进行 OID 请求失败。
 
@@ -48,7 +48,7 @@ MB 服务使用的许多*设置*和*查询*OID 请求都是异步处理的。 �
 
 ### <a name="asynchronous-response"></a>异步响应
 
-*Ndis 6.0 规范*（随 Windows Vista 一起发布）引入了新的状态代码，NDIS\_状态\_指示\_需要，对于微型端口驱动程序，将事务的异步性质传递到小型小型服务中的 MB 服务驱动程序对 OID 请求的临时响应。
+*Ndis 6.0 规范*（随 Windows Vista 一起发布）引入了新的状态代码，NDIS\_状态\_指示\_需要，对于微型端口驱动程序，将事务的异步性质传达给微型端口驱动程序对 OID 请求的临时响应中的 MB 服务。
 
 如[Mb 接口概述](mb-interface-overview.md)中所述，mb 服务不能直接访问由 mb 微型端口驱动程序分配的内核模式内存。 假定内核模式内存中存储的执行结果被复制并可由某些中介（如 WMI 或[NDIS 筛选器驱动程序](ndis-filter-drivers2.md)）提供给 MB 服务。 因此，小型端口驱动程序可以在事务指示中返回[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)函数调用后释放已分配的内核模式内存。
 
@@ -157,7 +157,7 @@ MB 服务需要事务性通知，以便它可以关闭打开的事务。 它是�
 
 ### <a name="status-indication-structure"></a>状态指示结构
 
-给定 OID 请求和未经请求的事件通知结构的异步响应都将*StatusIndication*参数的**StatusBuffer**成员指向的以下结构成员共享到[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)：
+给定 OID 请求和未经请求的事件通知结构的异步响应会将*StatusIndication*参数的**StatusBuffer**成员指向的以下结构成员共享到[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)：
 
 ```C++
 typedef struct _NDIS_WWAN_XXX {
@@ -245,7 +245,7 @@ typedef struct _NDIS_WWAN_XXX {
 
 类似的逻辑也应该应用于基于 CDMA 的网络。 但是，基于 CDMA 的网络错误代码没有标准。 基于 CDMA 的设备应使用特定于网络或特定于设备的错误代码。
 
-在微型端口驱动程序对 OID 请求的异步响应的情况下，NDIS\_状态\_指示结构的**RequestId**成员是一个非零数字，作为*集*或查询的一部分传递给微型端口驱动程序请求。 微型端口驱动程序必须根据需要填充**uStatus**成员。 例如，WWAN\_状态\_SUCCESS，或者下一节中列出的任何适当的错误值。 除此之外，微型端口驱动程序必须在适当的和可用的位置填写**uNwError**成员。
+在微型端口驱动程序对 OID 请求的异步响应的情况下，NDIS\_状态\_指示结构的**RequestId**成员是一个非零数字，作为*集*或*查询*请求的一部分传递到微型端口驱动程序。 微型端口驱动程序必须根据需要填充**uStatus**成员。 例如，WWAN\_状态\_SUCCESS，或者下一节中列出的任何适当的错误值。 除此之外，微型端口驱动程序必须在适当的和可用的位置填写**uNwError**成员。
 
 ### <a name="event-notification-status"></a>事件通知状态
 
@@ -258,7 +258,7 @@ typedef struct _NDIS_WWAN_XXX {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -373,7 +373,7 @@ typedef struct _NDIS_WWAN_XXX {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -388,7 +388,7 @@ typedef struct _NDIS_WWAN_XXX {
 </tr>
 <tr class="odd">
 <td align="left"><p>WWAN_STATUS_SMS_INVALID_MEMORY_INDEX</p></td>
-<td align="left"><p>由于内存索引无效--OID_WWAN_SMS_READ 的<em>WwanSmsFlagIndex</em> ，SMS 操作失败。</p></td>
+<td align="left"><p>由于<em>OID_WWAN_SMS_READ 的内存</em>索引无效，SMS 操作失败。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WWAN_STATUS_SMS_UNKNOWN_SMSC_ADDRESS</p></td>

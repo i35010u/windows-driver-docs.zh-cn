@@ -29,7 +29,7 @@ VMQ 接口支持：
 
 -   通过处理不同处理器上不同虚拟机的数据包，缩放到多个处理器。
 
-本部分包括下列主题：
+本部分包括以下主题：
 
 -   [虚拟机队列体系结构](virtual-machine-queue-architecture.md)
 -   [写入 VMQ 驱动程序](writing-vmq-drivers.md)

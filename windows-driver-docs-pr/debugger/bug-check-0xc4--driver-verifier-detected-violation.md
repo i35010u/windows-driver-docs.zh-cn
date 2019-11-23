@@ -41,54 +41,54 @@ ms.locfileid: "72837989"
 |参数 1|参数2|参数3|参数4|错误的原因|
 |--- |--- |--- |--- |--- |
 |0x00|当前 IRQL|池类型|0|驱动程序请求了零字节的池分配。|
-|0x01|当前 IRQL|池类型|分配大小（以字节为单位）|驱动程序尝试分配分页内存，并 > APC_LEVEL。|
-|0x02|当前 IRQL|池类型|分配大小（以字节为单位）|驱动程序尝试以 IRQL > DISPATCH_LEVEL 分配非分页内存。|
+|0x01|当前 IRQL|池类型|分配大小（以字节为单位）|驱动程序尝试 APC_LEVEL > 分配分页内存。|
+|0x02|当前 IRQL|池类型|分配大小（以字节为单位）|驱动程序尝试以 IRQL > DISPATCH_LEVEL 分配未分页的内存。|
 |0x10|地址错误|0|0|驱动程序尝试释放未从分配调用返回的地址。|
 |0x11|当前 IRQL|池类型|池地址|驱动程序尝试将 > APC_LEVEL 的 IRQL 释放页面缓冲池。|
-|0x12|当前 IRQL|池类型|池地址|驱动程序尝试 > DISPATCH_LEVEL 的 IRQL 释放非分页池。|
+|0x12|当前 IRQL|池类型|池地址|驱动程序尝试 DISPATCH_LEVEL > 具有 IRQL 的非分页池。|
 |0x13 或0x14|保留|指向池标头的指针|池标头内容|驱动程序尝试释放已释放的内存池。|
 |0x16|保留|池地址|0|驱动程序尝试在错误的地址释放池，或驱动程序将无效参数传递给了内存例程。|
 |0x30|当前 IRQL|请求的 IRQL|0|驱动程序向[KeRaiseIrql](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)传递了无效参数。 （参数的值低于当前 IRQL，或大于 HIGH_LEVEL 的值。 这可能是使用未初始化的参数的结果。）|
 |0x31|当前 IRQL|请求的 IRQL|0：新的 IRQL 错误1：新的 IRQL 在 DPC 例程内无效|驱动程序向[KeLowerIrql](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql~r1)传递了无效参数。 （参数的值大于当前的 IRQL，或大于 HIGH_LEVEL 的值。 这可能是使用未初始化的参数的结果。）|
-|0x32|当前 IRQL|旋转锁地址|0|该驱动程序在 DISPATCH_LEVEL 以外的 IRQL 处调用[KeReleaseSpinLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock) 。 （这可能是由于旋转锁的双释放导致的。）|
-|0x33|当前 IRQL|快速 mutex 地址|0|驱动程序尝试以 IRQL > APC_LEVEL 获取 fast mutex。|
-|0x34 赋|当前 IRQL|快速 mutex 地址|0|驱动程序尝试以 APC_LEVEL 之外的 IRQL 释放快速 mutex。|
-|0x35|当前 IRQL|旋转锁地址|旧 IRQL|内核释放的自旋锁的 IRQL 不等于 DISPATCH_LEVEL。|
-|0x36|当前 IRQL|旋转锁定号|旧 IRQL|内核释放的排队自旋锁的 IRQL 不等于 DISPATCH_LEVEL。|
+|0x32|当前 IRQL|旋转锁地址|0|驱动程序调用[KeReleaseSpinLock 的](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)不是 DISPATCH_LEVEL。 （这可能是由于旋转锁的双释放导致的。）|
+|0x33|当前 IRQL|快速 mutex 地址|0|驱动程序尝试 APC_LEVEL > 获取快速 mutex，并提供 IRQL。|
+|0x34 赋|当前 IRQL|快速 mutex 地址|0|驱动程序尝试以不同于 APC_LEVEL 的 IRQL 释放快速 mutex。|
+|0x35|当前 IRQL|旋转锁地址|旧 IRQL|内核释放了一个不等于 DISPATCH_LEVEL 的自旋锁。|
+|0x36|当前 IRQL|旋转锁定号|旧 IRQL|内核释放了一个不等于 DISPATCH_LEVEL 的排队自旋锁。|
 |0x37|当前 IRQL|线程 APC 禁用计数|资源|驱动程序试图获取资源，但 Apc 未被禁用。|
 |0x38|当前 IRQL|线程 APC 禁用计数|资源|驱动程序尝试释放资源，但 Apc 未被禁用。|
-|0x39|当前 IRQL|线程 APC 禁用计数|终端|驱动程序尝试获取互斥体 "unsafe"，它在输入时不等于 APC_LEVEL。|
-|0x3A|当前 IRQL|线程 APC 禁用计数|终端|驱动程序尝试释放不等于 APC_LEVEL on entry 的互斥体 "unsafe"。|
+|0x39|当前 IRQL|线程 APC 禁用计数|终端|驱动程序尝试获取互斥体 "unsafe"，其中 IRQL 不等于 APC_LEVEL 输入。|
+|0x3A|当前 IRQL|线程 APC 禁用计数|终端|驱动程序尝试发布一个互斥体 "unsafe"，其中 IRQL 不等于 APC_LEVEL 输入。|
 |0x3C|传递给例程的句柄|对象类型|0|驱动程序调用[ObReferenceObjectByHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)时使用了错误的句柄。|
 |0x3D|0|0|错误资源的地址|驱动程序将错误（未对齐）资源传递到[ExAcquireResourceExclusive](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)。|
 |0x3E|0|0|0|对于当前不在关键区域中的线程，驱动程序调用[KeLeaveCriticalRegion](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 。|
 |0x3F|对象地址|新的对象引用计数。 -1：取消引用 case 1：引用大小写|0|驱动程序将[ObReferenceObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)应用到引用计数为零的对象，[或者将该驱动程序应用到](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)引用计数为零的对象。|
-|0x40|当前 IRQL|旋转锁地址|0|驱动程序名为[KeAcquireSpinLockAtDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel) ，其名称为 IRQL < DISPATCH_LEVEL。|
-|0x41 向|当前 IRQL|旋转锁地址|0|驱动程序名为[KeReleaseSpinLockFromDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel) ，其名称为 IRQL < DISPATCH_LEVEL。|
-|0x42|当前 IRQL|旋转锁地址|0|驱动程序名为[KeAcquireSpinLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock) ，其名称为 IRQL > DISPATCH_LEVEL。|
+|0x40|当前 IRQL|旋转锁地址|0|名为[KeAcquireSpinLockAtDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel)的驱动程序 DISPATCH_LEVEL <。|
+|0x41 向|当前 IRQL|旋转锁地址|0|名为[KeReleaseSpinLockFromDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)的驱动程序 DISPATCH_LEVEL <。|
+|0x42|当前 IRQL|旋转锁地址|0|名为[KeAcquireSpinLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)的驱动程序 DISPATCH_LEVEL >。|
 |0x51|分配的基址|超出分配的引用的地址|收费字节数|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x52|分配的基址|保留|收费字节数|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x53、0x54 或0x59|分配的基址|保留|保留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x60|从分页池分配的字节数|从非分页池分配的字节数|未释放的分配总数|卸载驱动程序时，不首先释放其池分配。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x61|从分页池分配的字节数|从非分页池分配的字节数|未释放的分配总数|驱动程序正在卸载时，驱动程序线程正在尝试分配池内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x62|驱动程序名称|保留|未释放的总分配数，包括分页池和非分页池|卸载驱动程序时，不首先释放其池分配。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
-|0x70|当前 IRQL|MDL 地址|访问模式|驱动程序名为[MmProbeAndLockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages) ，其名称为 IRQL > DISPATCH_LEVEL。|
-|0x71|当前 IRQL|MDL 地址|进程地址|驱动程序名为 MmProbeAndLockProcessPages，其名称为 IRQL > DISPATCH_LEVEL。|
-|0x72|当前 IRQL|MDL 地址|进程地址|驱动程序名为 MmProbeAndLockSelectedPages，其名称为 IRQL > DISPATCH_LEVEL。|
-|0x73|当前 IRQL|在32位 Windows 中：64位 Windows 中物理地址的低32位：64位物理地址|字节数|驱动程序名为[MmMapIoSpace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace) ，其名称为 IRQL > DISPATCH_LEVEL。|
-|0x74|当前 IRQL|MDL 地址|访问模式|在内核模式下名为[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)的驱动程序 > DISPATCH_LEVEL 的内核模式。|
-|0x75|当前 IRQL|MDL 地址|访问模式|在用户模式下名为[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)的驱动程序以 IRQL > APC_LEVEL 为依据。|
-|0x76|当前 IRQL|MDL 地址|访问模式|在内核模式下名为[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)的驱动程序 > DISPATCH_LEVEL 的内核模式。|
-|0x77|当前 IRQL|MDL 地址|访问模式|在用户模式下名为[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)的驱动程序以 IRQL > APC_LEVEL 为依据。|
-|0x78|当前 IRQL|MDL 地址|0|驱动程序名为[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages) ，其名称为 IRQL > DISPATCH_LEVEL。|
-|0x79|当前 IRQL|正在取消映射的虚拟地址|MDL 地址|在内核模式下名为[MmUnmapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages)的驱动程序 > DISPATCH_LEVEL 的内核模式。|
-|0x7A|当前 IRQL|正在取消映射的虚拟地址|MDL 地址|在用户模式下名为[MmUnmapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages)的驱动程序以 IRQL > APC_LEVEL 为依据。|
-|0x7B|当前 IRQL|正在取消映射的虚拟地址|字节数|驱动程序名为[MmUnmapIoSpace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace) ，其名称为 IRQL > APC_LEVEL。|
+|0x70|当前 IRQL|MDL 地址|访问模式|名为[MmProbeAndLockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)的驱动程序 DISPATCH_LEVEL >。|
+|0x71|当前 IRQL|MDL 地址|进程地址|名为 MmProbeAndLockProcessPages 的驱动程序 DISPATCH_LEVEL >。|
+|0x72|当前 IRQL|MDL 地址|进程地址|名为 MmProbeAndLockSelectedPages 的驱动程序 DISPATCH_LEVEL >。|
+|0x73|当前 IRQL|在32位 Windows 中：64位 Windows 中物理地址的低32位：64位物理地址|字节数|名为[MmMapIoSpace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)的驱动程序 DISPATCH_LEVEL >。|
+|0x74|当前 IRQL|MDL 地址|访问模式|在内核模式下，名为[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)的驱动程序 DISPATCH_LEVEL >。|
+|0x75|当前 IRQL|MDL 地址|访问模式|在用户模式下名为[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)的驱动程序 APC_LEVEL >。|
+|0x76|当前 IRQL|MDL 地址|访问模式|在内核模式下，名为[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)的驱动程序 DISPATCH_LEVEL >。|
+|0x77|当前 IRQL|MDL 地址|访问模式|在用户模式下名为[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)的驱动程序 APC_LEVEL >。|
+|0x78|当前 IRQL|MDL 地址|0|名为[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)的驱动程序 DISPATCH_LEVEL >。|
+|0x79|当前 IRQL|正在取消映射的虚拟地址|MDL 地址|在内核模式下，名为[MmUnmapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages)的驱动程序 DISPATCH_LEVEL >。|
+|0x7A|当前 IRQL|正在取消映射的虚拟地址|MDL 地址|在用户模式下名为[MmUnmapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages)的驱动程序 APC_LEVEL >。|
+|0x7B|当前 IRQL|正在取消映射的虚拟地址|字节数|名为[MmUnmapIoSpace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace)的驱动程序 APC_LEVEL >。|
 |0x7C|MDL 地址|MDL 标志|0|驱动程序调用[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)，并通过其页从未成功锁定的 MDL。|
 |0x7D|MDL 地址|MDL 标志|0|驱动程序调用[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)，并通过其页面来自非分页池的 MDL。 （这些应永远不会解除锁定。）|
-|0x7E|当前 IRQL|DISPATCH_LEVEL|0|名为[MmAllocatePagesForMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdl)、 [MmAllocatePagesForMdlEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdlex)或[MMFREEPAGESFROMMDL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreepagesfrommdl)的驱动程序 > DISPATCH_LEVEL。|
+|0x7E|当前 IRQL|DISPATCH_LEVEL|0|名为[MmAllocatePagesForMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdl)、 [MmAllocatePagesForMdlEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdlex)或[MmFreePagesFromMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreepagesfrommdl)的驱动程序 > DISPATCH_LEVEL。|
 |0x7F|当前 IRQL|MDL 地址|MDL 标志|该驱动程序调用[BuildMdlForNonPagedPool](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmbuildmdlfornonpagedpool) ，并传递其页面来自页面缓冲池的 MDL。|
-|0x80|当前 IRQL|事件地址|0|驱动程序名为[KeSetEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) ，其名称为 IRQL > DISPATCH_LEVEL。|
+|0x80|当前 IRQL|事件地址|0|名为[KeSetEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)的驱动程序 DISPATCH_LEVEL >。|
 |0x81|MDL 地址|MDL 标志|0|称为[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)的驱动程序。 （应改用[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache) ，并将 BugCheckOnFailure 参数设置为 FALSE。）|
 |0x82|MDL 地址|MDL 标志|0|驱动程序调用[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache) ，BugCheckOnFailure 参数等于 TRUE。 （此参数应设置为 FALSE。）|
 |0x83|要映射的物理地址范围的开头|要映射的字节数|未锁定的第一个页面框架编号|驱动程序调用[MmMapIoSpace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace) ，但未锁定 MDL 页面。 在进行此调用之前，必须锁定由要映射的物理地址范围表示的物理页面。|
@@ -117,8 +117,8 @@ ms.locfileid: "72837989"
 |0xD0 （仅适用于 Windows Vista 和更高版本的操作系统）|ERESOURCE 结构的地址|保留|保留|驱动程序已尝试重新初始化 ERESOURCE 结构。|
 |0xD1 （仅适用于 Windows Vista 和更高版本的操作系统）|ERESOURCE 结构的地址|保留|保留|驱动程序已尝试删除未初始化的 ERESOURCE 结构。|
 |0xD2 （仅适用于 Windows Vista 和更高版本的操作系统）|ERESOURCE 结构的地址|池分配的起始地址|池分配的大小|驱动程序已尝试释放包含活动 ERESOURCE 结构的池分配。|
-|0xD5 （仅适用于 Windows Vista 和更高版本的操作系统）|由所选版本的驱动程序创建的 IO_REMOVE_LOCK 结构的地址|当前[IoReleaseRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)标记|保留|当前[IoReleaseRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)标记与上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记不匹配。 如果调用 IoReleaseRemoveLock 的驱动程序不在已检查的内部版本中，则参数2为驱动程序验证程序代表驱动程序创建的阴影 IO_REMOVE_LOCK 结构的地址。 在这种情况下，驱动程序使用的 IO_REMOVE_LOCK 结构的地址根本不使用，因为驱动程序验证器将替换所有删除锁定 Api 的锁定地址。 仅当驱动程序验证程序的 i/o 验证选项处于活动状态时，才会发生带有此参数的 bug 检查。|
-|0xD6 （仅适用于 Windows Vista 和更高版本的操作系统）|由所选版本的驱动程序创建的 IO_REMOVE_LOCK 结构的地址|与上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记不匹配的标记|上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记|当前[IoReleaseRemoveLockAndWait](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)标记与上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记不匹配。 如果调用[IoReleaseRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的驱动程序不是已检查的生成，则参数2为驱动程序验证器代表驱动程序创建的阴影 IO_REMOVE_LOCK 结构的地址。 在这种情况下，驱动程序使用的 IO_REMOVE_LOCK 结构的地址根本不使用，因为驱动程序验证器将替换所有删除锁定 Api 的锁定地址。 仅当驱动程序验证程序的 i/o 验证选项处于活动状态时，才会发生带有此参数的 bug 检查。|
+|0xD5 （仅适用于 Windows Vista 和更高版本的操作系统）|由该驱动程序的已检查内部版本创建的 IO_REMOVE_LOCK 结构的地址|当前[IoReleaseRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)标记|保留|当前[IoReleaseRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)标记与上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记不匹配。 如果调用 IoReleaseRemoveLock 的驱动程序不在已检查的内部版本中，则参数2为驱动程序验证程序代表驱动程序创建的卷影 IO_REMOVE_LOCK 结构的地址。 在这种情况下，驱动程序使用的 IO_REMOVE_LOCK 结构的地址根本不使用，因为驱动程序验证器将替换所有删除锁定 Api 的锁定地址。 仅当驱动程序验证程序的 i/o 验证选项处于活动状态时，才会发生带有此参数的 bug 检查。|
+|0xD6 （仅适用于 Windows Vista 和更高版本的操作系统）|由该驱动程序的已检查内部版本创建的 IO_REMOVE_LOCK 结构的地址|与上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记不匹配的标记|上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记|当前[IoReleaseRemoveLockAndWait](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)标记与上一个[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)标记不匹配。 如果调用[IoReleaseRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)的驱动程序不是已检查的生成，则参数2是由驱动程序验证程序代表驱动程序创建的卷影 IO_REMOVE_LOCK 结构的地址。 在这种情况下，驱动程序使用的 IO_REMOVE_LOCK 结构的地址根本不使用，因为驱动程序验证器将替换所有删除锁定 Api 的锁定地址。 仅当驱动程序验证程序的 i/o 验证选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0xD7 （仅适用于 Windows 7 操作系统和更高版本）|驱动程序验证程序内部使用的已检查生成删除锁定结构的地址|驱动程序指定的移除锁结构的地址|保留|即使删除锁调用了[IoReleaseRemoveLockAndWait](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)，也不能对其重新初始化，因为其他线程可能仍在使用该锁（通过调用[IoAcquireRemoveLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)）。 驱动程序应在其设备扩展内分配删除锁定，并对其进行一次初始化。 锁定将与设备扩展一起删除。|
 |0xDA （仅适用于 Windows Vista 和更高版本的操作系统）|驱动程序的起始地址|驱动程序中的 WMI 回调地址|保留|尝试卸载未取消注册其 WMI 回调函数的驱动程序。|
 |0xDB （仅适用于 Windows Vista 和更高版本的操作系统）|设备对象的地址|保留|保留|尝试删除未从 WMI 取消注册的设备对象。|
@@ -129,7 +129,7 @@ ms.locfileid: "72837989"
 |0xE1 （仅适用于 Windows Vista 和更高版本的操作系统）|同步对象的地址|保留|保留|发现同步对象具有无效或可分页的地址。|
 |0xE2 （仅适用于 Windows Vista 和更高版本的操作系统）|IRP 的地址|IRP 中存在的用户模式地址|保留|发现使用 Irp > Irp->requestormode 设置为 KernelMode 的 IRP 将用户模式地址作为其成员之一。|
 |0xE3 （仅适用于 Windows Vista 和更高版本的操作系统）|对 API 的调用的地址|用作 API 中的参数的用户模式地址|保留|驱动程序已调用使用用户模式地址作为参数的内核模式 ZwXxx 例程。|
-|0xE4 （仅适用于 Windows Vista 和更高版本的操作系统）|对 API 的调用的地址|格式错误的 UNICODE_STRING 结构的地址|保留|驱动程序已调用将格式不正确的 UNICODE_STRING 结构作为参数的内核模式 ZwXxx 例程。|
+|0xE4 （仅适用于 Windows Vista 和更高版本的操作系统）|对 API 的调用的地址|格式不正确的 UNICODE_STRING 结构的地址|保留|驱动程序调用了具有格式不正确的 UNICODE_STRING 结构作为参数的内核模式 ZwXxx 例程。|
 |0xE5 （仅适用于 Windows Vista 和更高版本的操作系统）|当前 IRQL|保留|保留|对内核 API 进行的调用出现错误的 IRQL。|
 |0xE6 （仅适用于 Windows Vista 和更高版本的操作系统）|发出 Zw API 调用的驱动程序中的地址|当前 IRQL|特殊内核 Apc。|未在 IRQL = PASSIVE_LEVEL 和启用了特殊内核 Apc 的情况调用内核 Zw API。|
 |0xEA （仅适用于 Windows Vista 和更高版本的操作系统）|当前 IRQL|线程的 APC 禁用计数|Pushlock 的地址|当启用 Apc 时，驱动程序已尝试获取 pushlock。|
@@ -146,14 +146,14 @@ ms.locfileid: "72837989"
 |0x110 （Windows 7 操作系统和更高版本）|中断服务例程的地址|在执行 ISR 之前保存的扩展上下文的地址|扩展上下文的地址在执行 ISR 后保存|驱动程序的中断服务例程（ISR）已损坏扩展线程上下文。|
 |0x111 （Windows 7 操作系统和更高版本）|中断服务例程的地址|执行 ISR 之前的 IRQL|执行 ISR 后的 IRQL|中断服务例程返回了已更改的 IRQL。|
 |0x115 （Windows 7 操作系统和更高版本）|负责关闭的线程的地址，可能是死锁|驱动程序验证程序检测到系统已超过20分钟并且关闭未完成。|
-|0x11A （Windows 7 操作系统和更高版本）|当前 IRQL|驱动程序调用 KeEnterCriticalRegion，APC_LEVEL >。|
-|0x11B （Windows 7 操作系统和更高版本）|当前 IRQL|驱动程序调用 KeLeaveCriticalRegion，APC_LEVEL >。|
-|0x120 （Windows 7 操作系统和更高版本）|IRQL 值的地址|要等待的对象的地址|超时值的地址|线程 > DISPATCH_LEVEL 以 IRQL 进行等待。 KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方必须以 IRQL < = DISPATCH_LEVEL 运行。|
-|0x121 （Windows 7 操作系统和更高版本）|IRQL 值的地址|要等待的对象的地址|超时值的地址|线程等待 IRQL 等于 DISPATCH_LEVEL，超时值为 NULL。 KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方可以在 IRQL < = DISPATCH_LEVEL 上运行。 如果为超时提供了空指针，则调用线程将保持等待状态，直到终止对象。|
-|0x122 （Windows 7 操作系统和更高版本）|IRQL 值的地址|要等待的对象的地址|超时值的地址|线程等待 DISPATCH_LEVEL，超时值不等于零（0）。 如果 Timeout！ = 0，则 KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方必须以 IRQL < = APC_LEVEL 运行。|
+|0x11A （Windows 7 操作系统和更高版本）|当前 IRQL|驱动程序在 APC_LEVEL 的 IRQL > 调用 KeEnterCriticalRegion。|
+|0x11B （Windows 7 操作系统和更高版本）|当前 IRQL|驱动程序在 APC_LEVEL 的 IRQL > 调用 KeLeaveCriticalRegion。|
+|0x120 （Windows 7 操作系统和更高版本）|IRQL 值的地址|要等待的对象的地址|超时值的地址|线程 DISPATCH_LEVEL > 以 IRQL 为间隔。 KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方必须以 IRQL < = DISPATCH_LEVEL 运行。|
+|0x121 （Windows 7 操作系统和更高版本）|IRQL 值的地址|要等待的对象的地址|超时值的地址|线程等待 IRQL 等于 DISPATCH_LEVEL，超时值为 NULL。 KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方可以 < = DISPATCH_LEVEL 运行。 如果为超时提供了空指针，则调用线程将保持等待状态，直到终止对象。|
+|0x122 （Windows 7 操作系统和更高版本）|IRQL 值的地址|要等待的对象的地址|超时值的地址|线程 DISPATCH_LEVEL 等待，超时值不等于零（0）。 如果 Timeout！ = 0，则 KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方必须以 IRQL < = APC_LEVEL 运行。|
 |0x123 （Windows 7 操作系统和更高版本）|要等待的对象的地址|KeWaitForSingleObject 或 KeWaitForMultipleObjects 的调用方将 wait 指定为 UserMode，但该对象在内核堆栈上。|
 |0x130 （Windows 7 操作系统和更高版本）|工作项的地址|工作项在会话地址空间中。 会话地址空间中不允许使用工作项，因为它们可以从其他会话或没有会话虚拟地址空间的系统线程进行操作。|
-|0x131 （Windows 7 操作系统和更高版本）|工作项的地址|工作项位于可分页内存中。 工作项必须位于不可分页的内存中，因为内核在 DISPATCH_LEVEL 中使用它们。|
+|0x131 （Windows 7 操作系统和更高版本）|工作项的地址|工作项位于可分页内存中。 工作项必须位于不可分页的内存中，因为内核在 DISPATCH_LEVEL 使用它们。|
 |0x135|IRP 的地址|[IoCancelIrp](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)调用与此 IRP 的完成之间允许的毫秒数|在预期时间内，已取消的 IRP 未完成，驱动程序所用时间比预期时间长，无法完成取消的 IRP。|
 |0x13A|正在释放的池块的地址|值不正确|不正确的值的地址|驱动程序调用了[ExFreePool](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool) ，驱动程序验证器在用于跟踪池使用情况的某个内部值中检测到错误。|
 |0x13B|正在释放的池块的地址|不正确的值的地址|指向错误内存页的指针的地址|驱动程序调用了[ExFreePool](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool) ，驱动程序验证器在用于跟踪池使用情况的某个内部值中检测到错误。|
@@ -183,14 +183,14 @@ ms.locfileid: "72837989"
 |0xA008 （Windows 8.1 操作系统及更高版本）|父 NIC 对象|NIC 索引|指向虚拟交换机对象的指针（如果非 NULL）。|VM 交换机：尝试引用不允许的 NIC。 请参阅[Hyper-v 可扩展交换机端口和网络适配器状态](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)。|
 |0xA009 （Windows 8.1 操作系统及更高版本）|正在引用的端口|指向虚拟交换机对象的指针（如果非 NULL）|已保留（未使用）|VM 交换机：不允许时，尝试引用端口。 请参阅[Hyper-v 可扩展交换机端口和网络适配器状态](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-port-and-network-adapter-states)。|
 |0xA00A （Windows 8.1 操作系统及更高版本）|指向 NetBufferList 对象的指针|ContextTypeInfo 对象|已保留（未使用）|VM 交换机：故障上下文已设置。 请参阅[SetNetBufferListSwitchContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_set_net_buffer_list_switch_context)。|
-|0xA00B （Windows 8.1 操作系统及更高版本）|指向 NetBufferList 对象的指针|NDIS_SWITCH_REPORT_FILTERED_NBL_FLAGS_*|指向虚拟交换机对象的指针（如果非 NULL）|VM 交换机：为删除的 NetBufferList 提供的方向无效。 请参阅[ReportFilteredNetBufferLists](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)。|
+|0xA00B （Windows 8.1 操作系统及更高版本）|指向 NetBufferList 对象的指针|NDIS_SWITCH_REPORT_FILTERED_NBL_FLAGS_ *|指向虚拟交换机对象的指针（如果非 NULL）|VM 交换机：为删除的 NetBufferList 提供的方向无效。 请参阅[ReportFilteredNetBufferLists](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_report_filtered_net_buffer_lists)。|
 |0xA00C （Windows 8.1 操作系统及更高版本）|指向 NetBufferList 对象的指针|发送标志值|指向虚拟交换机对象的指针（如果非 NULL）|VM 交换机：设置 NDIS_SEND_FLAGS_SWITCH_SINGLE_SOURCE 标志时，NetBufferList 链具有多个源端口。 请参阅[Hyper-v 可扩展交换机发送和接收标志](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-send-and-receive-flags)。|
 |0xA00D （Windows 8.1 操作系统及更高版本）|指向 NetBufferList 对象的指针|指向虚拟交换机上下文的指针|指向虚拟交换机对象的指针（如果非 NULL）|VM 交换机：设置 NDIS_RECEIVE_FLAGS_SWITCH_DESTINATION_GROUP 标志时，链中的一个或多个 NetBufferLists 的目标无效。 请参阅[Hyper-v 可扩展交换机发送和接收标志](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-send-and-receive-flags)。|
 |0x2000 （Windows 7 操作系统和更高版本）|传递到[StorPortInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize)例程的第一个参数。 此参数是一个指针，指向在微型端口驱动程序的[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程的第一个参数中传递给微型端口驱动程序的驱动程序对象。|传递到[StorPortInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize)例程的第二个参数。 此参数是一个指针，指向在微型端口驱动程序的[DriverEntry](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程的第二个参数中传递给微型端口驱动程序的操作系统的上下文信息。|保留|Storport 微型端口驱动程序向[StorPortInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportinitialize)例程传递了错误的参数（空指针）。|
 |0x00020002 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlApcLte](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlapclte)。 规则指定只有当 IRQL < = APC_LEVEL 时，驱动程序才能调用[ObGetObjectSecurity](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obgetobjectsecurity)和[ObReleaseObjectSecurity](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreleaseobjectsecurity) 。|
-|0x00020003 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlDispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqldispatch)。 IrqlDispatch 规则指定只有当 IRQL = DISPATCH_LEVEL 时，驱动程序才能调用特定例程|
+|0x00020003 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlDispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqldispatch)。 IrqlDispatch 规则指定只有当 IRQL = 时，驱动程序才能调用特定例程 DISPATCH_LEVEL|
 |0x00020004 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlExAllocatePool](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexallocatepool)。 IrqlExAllocatePool 规则指定，仅当 < = DISPATCH_LEVEL 时，驱动程序才调用[ExAllocatePoolWithTag](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)和[ExAllocatePoolWithTagPriority](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) 。|
-|0x00020005 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlExApcLte1](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1)。 IrqlExApcLte1 规则指定该驱动程序仅调用 ExAcquireFastMutex 和 ExTryToAcquireFastMutex，< = APC_LEVEL。|
+|0x00020005 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlExApcLte1](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1)。 IrqlExApcLte1 规则指定驱动程序仅调用 ExAcquireFastMutex 和 ExTryToAcquireFastMutex，< = APC_LEVEL。|
 |0x00020006 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlExApcLte2](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 IrqlExApcLte2 规则指定只有当 IRQL < = APC_LEVEL 时，驱动程序才调用特定例程。|
 |0x00020007 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlExApcLte3](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte3)。 IrqlExApcLte3 规则指定只有当 IRQL < = APC_LEVEL 时，驱动程序才能调用特定的执行程序支持例程。|
 |0x00020008 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlExPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexpassive)。 IrqlExPassive 规则指定只有当 IRQL = PASSIVE_LEVEL 时，驱动程序才能调用特定的执行程序支持例程。|
@@ -204,7 +204,7 @@ ms.locfileid: "72837989"
 |0x00020010 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlKeApcLte2](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkeapclte2)。 IrqlKeApcLte2 规则指定只有当 IRQL < = APC_LEVEL 时，驱动程序才能调用某些内核例程。|
 |0x00020011 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlKeDispatchLte](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkedispatchlte)。 IrqlKeDispatchLte 规则指定只有当 IRQL < = DISPATCH_LEVEL 时，驱动程序才能调用某些内核例程。|
 |0x00020015 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlKeReleaseSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkereleasespinlock)。 IrqlKeReleaseSpinLock 规则指定只有当 IRQL = DISPATCH_LEVEL 时，驱动程序才能调用 KeReleaseSpinLock。|
-|0x00020016 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlKeSetEvent](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkesetevent)。 IrqlKeSetEvent 规则指定，当 Wait 设置为 FALSE 时， [KeSetEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)例程仅在 irql < = DISPATCH_LEVEL 上调用，而在 irql 设置为 TRUE 时则 < = APC_LEVEL。|
+|0x00020016 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlKeSetEvent](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkesetevent)。 IrqlKeSetEvent 规则指定在设置为 FALSE 时， [KeSetEvent](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)例程仅以 irql < = DISPATCH_LEVEL 调用，当 wait 设置为 TRUE 时，将在 irql < = APC_LEVEL。|
 |0x00020019 （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlMmApcLte](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlmmapclte)。 IrqlMmApcLte 规则指定只有当 IRQL < = APC_LEVEL 时，驱动程序才能调用特定的内存管理器例程。|
 |0x0002001A （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlMmDispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlmmdispatch)。 IrqlMmDispatch 规则指定只有当 IRQL = DISPATCH_LEVEL 时，驱动程序才能调用[MmFreeContiguousMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreecontiguousmemory) 。|
 |0x0002001B （Windows 8 操作系统及更高版本）|指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlObPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlobpassive)。 IrqlObPassive 规则指定只有当 IRQL = PASSIVE_LEVEL 时，驱动程序才能调用[ObReferenceObjectByHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle) 。|

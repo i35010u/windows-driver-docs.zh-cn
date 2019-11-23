@@ -21,7 +21,7 @@ ms.locfileid: "72844190"
 
  
 
-在操作系统接收到 NDIS\_状态\_DOT11\_关联\_本机802.11 微型端口驱动程序中的完成指示后，它将调用[*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)函数来启动由 IHV 扩展 DLL 进行的关联后操作。
+在操作系统接收到 NDIS\_状态\_DOT11\_关联\_来自本机802.11 微型端口驱动程序的完成指示后，它将调用[*Dot11ExtIhvPerformPostAssociate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_perform_post_associate)函数以通过 IHV 扩展 DLL 启动关联后操作。
 
 当执行后关联操作或操作完成后，IHV 扩展 DLL 可以使用操作系统支持的可扩展身份验证协议（EAP）算法对用户使用访问点进行身份验证（AP）。 在这种情况下，IHV 扩展 DLL 使用本机 802.11 framework 的 802.1 X 模块进行处理，以处理由 EAP over LAN （EAPOL）格式的 AP 发送的 EAP 数据包。
 
@@ -58,7 +58,7 @@ ms.locfileid: "72844190"
 
 -   802.1 X authentication 操作完成后，操作系统将调用[*Dot11ExtIhvOneXIndicateResult*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result) IHV 处理程序函数。 调用此函数后，IHV 扩展 DLL 负责处理从该 AP 接收的所有 EAPOL 数据包，如用于派生密码密钥的 EAPOL 密钥包。
 
--   如果 802.1 X authentication 操作已成功完成，则操作系统会将 MPPE 发送键值传递到[**DOT11\_MSONEX\_结果\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_msonex_result_params)由*PDOT11MSONEXRESULTPARAMS*指向的参数结构。[*Dot11ExtIhvOneXIndicateResult*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)的参数。 DOT11\_MSONEX\_RESULT\_参数的**pbMPPESendKey**成员指向的 MPPE 发送密钥值是通过身份验证过程派生的，并且在将 EAPOL 密钥发送到 AP 时，由 IHV 扩展 DLL 使用。 此密钥已加密，应通过调用 Windows SDK 中所述的**CryptUnprotectData**函数进行解密。
+-   如果 802.1 X authentication 操作已成功完成，则操作系统会将 MPPE 发送键值传递到[**DOT11\_MSONEX\_RESULT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/ns-wlanihv-_dot11_msonex_result_params)结构，由[*Dot11ExtIhvOneXIndicateResult*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wlanihv/nc-wlanihv-dot11extihv_onex_indicate_result)的*pDot11MsOneXResultParams*参数指向。 DOT11\_MSONEX\_RESULT\_参数的**pbMPPESendKey**成员指向的 MPPE 发送密钥值是通过身份验证过程派生的，并且在将 EAPOL 密钥发送到 AP 时，由 IHV 扩展 DLL 使用。 此密钥已加密，应通过调用 Windows SDK 中所述的**CryptUnprotectData**函数进行解密。
 
 -   用于派生密码密钥的算法依赖于独立硬件供应商（IHV）的实现。 IHV 扩展 DLL 可支持标准密钥派生算法，如 IEEE 802.11 i-2004 标准的子句8.5 中定义的算法，还可以支持专用密钥派生算法。
 

@@ -33,7 +33,7 @@ ms.locfileid: "72834644"
 
 1.  网络适配器停止数据的 DMA 传输以接收与接收队列关联的缓冲区，在此之后，队列必须进入 DMA 停止状态。 网络适配器在收到[oid\_接收\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-clear-filter)时可能停止 DMA 活动，\_清除\_筛选 OID 请求以清除接收队列中的最后一个 set 筛选器。
 
-2.  微型端口驱动程序生成[**ndis\_状态\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状态指示与[**NDIS\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构集的**QueueState**成员**NdisReceiveQueueOperationalStateDmaStopped**以通知 NDIS 已停止 DMA 传输。
+2.  微型端口驱动程序生成[**ndis\_状态\_接收\_队列\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-receive-queue-state)状态指示，并**将** [**ndis\_接收\_queue\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_receive_queue_state)结构设置为**NDISRECEIVEQUEUEOPERATIONALSTATEDMASTOPPED** ，以通知 NDIS 已停止 DMA 传输。
 
 3.  微型端口驱动程序等待该队列的所有指示接收数据包返回到微型端口驱动程序。
 

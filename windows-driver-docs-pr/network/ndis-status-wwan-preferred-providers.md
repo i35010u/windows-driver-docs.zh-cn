@@ -3,7 +3,7 @@ title: NDIS_STATUS_WWAN_PREFERRED_PROVIDERS
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 通知来通知 MB 服务，首选提供程序列表（PPL）已更改。
 ms.assetid: b0c06db9-82ca-4f94-80e6-3cf13197abf5
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_PREFERRED_PROVIDERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: ef3a982061a1ddd75c3aca9d7d669c3bd091e766
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

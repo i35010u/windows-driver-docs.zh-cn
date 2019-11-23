@@ -99,9 +99,9 @@ ms.locfileid: "72840303"
 
 2.  定义 WPP 宏以启用 trace 函数。
 
-    你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常会定义一对宏、 **wpp\_ *&lt;条件&gt;* \_记录器**和 wpp\_&lt;&gt;\_\_@no__t ***条件*下启用**_13_ ENABLED 和 WPP\_LEVEL\_记录器宏。
+    你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常，您可以定义一对宏、 **wpp\_ *&lt;条件&gt;* \_记录器**和**wpp\_&lt;&gt;\_\_启用的默认 WPP *\_*** \_\_
 
-你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常会定义一对宏、 **wpp\_ *&lt;条件&gt;* \_记录器**和 wpp\_&lt;&gt;\_\_@no__t ***条件*下启用**_13_ ENABLED 和 WPP\_LEVEL\_记录器宏。
+你使用的每个跟踪消息函数都必须具有相应的宏对。 这些宏标识跟踪提供程序并指定生成消息的条件。 通常，您可以定义一对宏、 **wpp\_ *&lt;条件&gt;* \_记录器**和**wpp\_&lt;&gt;\_\_启用的默认 WPP *\_*** \_\_
 
 <table>
 <colgroup>
@@ -146,7 +146,7 @@ ms.locfileid: "72840303"
            (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >= lvl)
 ```
 
-接下来，需要在 WPP 配置块中指定自定义跟踪函数（**开始\_wpp config**并**结束\_wpp**）。例如，如果在 VISUAL Studio 中使用 UMDF 或 KMDF 驱动程序项目模板，则该模板将定义称为**TraceEvents**的自定义跟踪消息函数的 WPP 宏。 **TraceEvents**宏函数使用[跟踪级别](trace-level.md)和跟踪标志作为生成消息的条件。 如果在 Trace .h 头文件中定义了**WPP\_级别\_标志\_启用**的宏，则可以添加以下宏定义。
+接下来，需要在 WPP 配置块中指定自定义跟踪函数（**开始\_wpp config**并**结束\_wpp**）。例如，如果在 VISUAL Studio 中使用 UMDF 或 KMDF 驱动程序项目模板，则该模板将为名为**TraceEvents**的自定义跟踪消息函数定义 WPP 宏。 **TraceEvents**宏函数使用[跟踪级别](trace-level.md)和跟踪标志作为生成消息的条件。 如果在 Trace .h 头文件中定义了**WPP\_级别\_标志\_启用**的宏，则可以添加以下宏定义。
 
 ```ManagedCPlusPlus
 //
@@ -173,7 +173,7 @@ ms.locfileid: "72840303"
 //
 ```
 
-**注意** 如果要将[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)转换为跟踪消息函数，则需要执行一些额外的步骤。 与[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)相比， **KdPrintEx**函数采用两个附加参数。 若要转换**KdPrintEx**函数，需要定义一个 WPP\_为*组件 ID***定义\_位**，并定义自定义**WPP\_ *&lt;条件&gt;* \_记录器**和**WPP\_ *&lt;条件&gt;* \_启用**的宏。 **KdPrintEx**的第二个参数指定的级别与[跟踪级别](trace-level.md)值相似，因此你不一定需要重新定义它们。
+**注意** 如果要将[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)转换为跟踪消息函数，则需要执行一些额外的步骤。 与[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)相比， **KdPrintEx**函数采用两个附加参数。 若要转换**KdPrintEx**函数，需要定义一个 WPP\_为该*组件***定义\_位**，  ***&lt;* \_** 并将&gt;记录器和 WPP\_\_&lt;&gt;\_的宏。 **KdPrintEx**的第二个参数指定的级别与[跟踪级别](trace-level.md)值相似，因此你不一定需要重新定义它们。
 
 
 
@@ -378,7 +378,7 @@ DllMain(
 <thead>
 <tr class="header">
 <th align="left">跟踪消息函数示例</th>
-<th align="left">使用时间</th>
+<th align="left">何时使用</th>
 </tr>
 </thead>
 <tbody>
@@ -409,7 +409,7 @@ DllMain(
     DoTraceMessage(TraceFlagName, Message, [VariableList... ]
     ```
 
-    例如，当为跟踪启用了 WPP\_控件\_GUID 中定义的跟踪\_驱动程序标志时，以下[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句将写入包含**DoTraceMessage**语句的函数的名称。会议.
+    例如，当为跟踪会话启用了\_控件\_GUID 中定义的跟踪\_驱动程序标志时，以下[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句将写入包含**DoTraceMessage**语句的函数的名称。
 
     ```ManagedCPlusPlus
          DoTraceMessage( TRACE_DRIVER, "\nEntering %!FUNC!" );

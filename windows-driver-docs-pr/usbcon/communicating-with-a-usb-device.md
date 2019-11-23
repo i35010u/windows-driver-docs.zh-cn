@@ -17,9 +17,9 @@ ms.locfileid: "72831804"
 
 通用串行总线（USB）客户端驱动程序无法直接与其设备通信。 相反，客户端驱动程序创建请求并将其提交到 USB 驱动程序堆栈进行处理。 在每个请求中，客户端驱动程序提供了一个称为*USB 请求块（URB）* 的可变长度的数据结构。 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构描述请求的详细信息，还包含有关已完成请求的状态的信息。 客户端驱动程序通过 URBs 执行所有设备特定的操作，包括数据传输。 在将 URB 提交到 USB 驱动程序堆栈之前，客户端驱动程序必须用该请求的相关信息对其进行初始化。 对于某些类型的请求，Microsoft 提供了 helper 例程和宏，用于分配**URB**结构并使用客户端驱动程序提供的详细信息填充**URB**结构的必要成员。
 
-每个 URB 都从标准固定大小的标头（[ **\_URB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_header)）开始，其目的是标识所请求操作的类型。 **\_URB\_标头**的**LENGTH**成员指定 URB 的大小（以字节为单位）。 **函数**成员（必须是一系列系统定义的 URB\_函数\_XXX 常量）确定请求的操作的类型。 例如，在进行数据传输的情况下，此成员指示传输类型。 函数代码 URB\_函数\_控制\_传输，URB\_函数\_批量\_或\_中断\_传输，URB\_函数\_ISOCH\_传输指示控件、大容量/中断和同步传输。 USB 驱动程序堆栈使用**Status**成员返回 USB 特定状态代码。
+每个 URB 都从标准固定大小的标头（[ **\_URB\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb_header)）开始，其目的是标识所请求操作的类型。 **\_URB\_标头**的**LENGTH**成员指定 URB 的大小（以字节为单位）。 **函数**成员（必须是一系列系统定义的 URB\_函数\_XXX 常量）确定请求的操作的类型。 例如，在进行数据传输的情况下，此成员指示传输类型。 函数代码 URB\_函数\_控制\_传输，URB\_函数\_批量\_或\_中断\_传输，URB\_函数\_ISOCH\_传输表示控制、大容量/中断和同步传输。 USB 驱动程序堆栈使用**Status**成员返回 USB 特定状态代码。
 
-若要提交 URB，客户端驱动程序将使用[**IOCTL\_内部\_USB\_提交\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)请求，该请求通过类型为 IRP\_MJ 的 i/o 请求数据包（IRP） [ **\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)。
+若要提交 URB，客户端驱动程序使用[**IOCTL\_内部\_USB\_提交\_URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)请求，该请求通过类型为 IRP\_的 i/o 请求数据包（IRP）\_[**内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)传递到设备。
 
 USB 驱动程序堆栈处理完 URB 后，驱动程序堆栈会使用[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)结构的**Status**成员返回特定于 USB 的状态代码。
 

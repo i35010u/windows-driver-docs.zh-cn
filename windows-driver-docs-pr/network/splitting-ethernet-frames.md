@@ -25,7 +25,7 @@ ms.locfileid: "72841866"
 
  
 
-如果标头-数据拆分提供程序根据标头数据拆分要求拆分框架，则所指示的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_HD\_split 标志集在**NblFlags**成员中。 如果标头-数据拆分提供程序不拆分帧，则必须在**NblFlags**中清除以下标志：
+如果标头-数据拆分提供程序根据标头-数据拆分要求拆分了一个帧，则指定的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有**NblFlags**成员中设置的 NDIS\_NBL\_标志\_HD\_split 标志。 如果标头-数据拆分提供程序不拆分帧，则必须在**NblFlags**中清除以下标志：
 
 -   NDIS\_NBL\_标志\_HD\_SPLIT
 

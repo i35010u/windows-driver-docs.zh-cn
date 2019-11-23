@@ -23,9 +23,9 @@ ms.locfileid: "72834787"
 
 Winsock 内核（WSK）应用程序可以实现事件回调函数，当套接字上发生特定[事件](winsock-kernel-events.md)时，WSK 子系统将异步调用该函数以通知应用程序。 WSK 应用程序可以在创建套接字或接受侦听套接字上的套接字时，向 WSK 子系统提供客户端[调度表](winsock-kernel-dispatch-tables.md)结构。 此调度表包含指向新套接字的 WSK 应用程序的事件回调函数的指针。 如果 WSK 应用程序未实现特定套接字的任何事件回调函数，则不需要为该套接字的 WSK 子系统提供客户端调度表结构。
 
-除了侦听套接字的[*WskInspectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)和[*WskAbortEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)事件回调函数外，所有套接字事件回调函数都可以通过使用[ **\_WSK\_事件\_回调**](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-event-callback)来启用或禁用套接字选项。 WSK 应用程序可以在一个套接字上同时启用多个事件回调函数。 但是，WSK 应用程序必须分别禁用每个事件回调函数。
+除了侦听套接字的[*WskInspectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_inspect_event)和[*WskAbortEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_abort_event)事件回调函数外，所有套接字事件回调函数都可以通过使用[ **\_WSK\_事件\_回调**](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-event-callback)套接字选项启用或禁用。 WSK 应用程序可以在一个套接字上同时启用多个事件回调函数。 但是，WSK 应用程序必须分别禁用每个事件回调函数。
 
-下面的代码示例演示 WSK 应用程序如何使用\_WSK\_事件\_回调套接字选项在面向连接的连接上启用[*WskDisconnectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)和[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数片.
+下面的代码示例演示 WSK 应用程序如何使用\_WSK\_事件\_回调套接字选项在面向连接的套接字上启用[*WskDisconnectEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_disconnect_event)和[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。
 
 ```C++
 // Function to enable the WskDisconnectEvent and WskReceiveEvent
@@ -196,9 +196,9 @@ NTSTATUS
 
 侦听套接字可以在面向连接的套接字上自动启用事件回调函数，该接口由侦听套接字的[*WskAcceptEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)事件回调函数接受。 WSK 应用程序通过在侦听套接字上启用面向连接的套接字事件回调函数，自动启用这些回调函数。 有关此过程的详细信息，请参阅[ **\_WSK\_EVENT\_回叫**](https://docs.microsoft.com/windows-hardware/drivers/network/so-wsk-event-callback)。
 
-如果 WSK 应用程序在其创建的每个套接字上始终启用特定的事件回调函数，应用程序可以将 WSK 子系统配置为使用[**WSK\_设置\_静态 @no__t 来自动启用这些事件回调函数。_4_ 事件\_回调**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-set-static-event-callbacks)客户端控制操作。 以这种方式启用的事件回调函数始终处于启用状态，并且不能在以后由 WSK 应用程序禁用或重新启用。 如果 WSK 应用程序在其创建的每个套接字上始终启用特定的事件回调函数，应用程序应使用此方法来自动启用这些事件回调函数，因为它将产生更好的性能。
+如果 WSK 应用程序在其创建的每个套接字上始终启用特定的事件回调函数，则该应用程序可以将 WSK 子系统配置为使用[**WSK\_设置\_静态\_事件\_回调**](https://docs.microsoft.com/windows-hardware/drivers/network/wsk-set-static-event-callbacks)客户端控制操作来自动启用这些事件回调函数。 以这种方式启用的事件回调函数始终处于启用状态，并且不能在以后由 WSK 应用程序禁用或重新启用。 如果 WSK 应用程序在其创建的每个套接字上始终启用特定的事件回调函数，应用程序应使用此方法来自动启用这些事件回调函数，因为它将产生更好的性能。
 
-下面的代码示例演示 WSK 应用程序如何使用 WSK\_设置\_静态\_事件\_回调客户端控制操作，以便在数据报上自动启用[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)事件回调函数套接字和面向连接的套接字上的[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。
+下面的代码示例演示 WSK 应用程序如何使用 WSK\_设置\_静态\_事件\_回拨客户端控制操作，以便在数据报套接字上自动启用[*WskReceiveFromEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_from_event)事件回调函数和面向连接的套接字上的[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。
 
 ```C++
 // Function to set static event callbacks

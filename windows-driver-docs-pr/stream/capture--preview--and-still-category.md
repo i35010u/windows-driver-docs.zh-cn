@@ -54,7 +54,7 @@ ms.locfileid: "72844742"
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -83,11 +83,11 @@ ms.locfileid: "72844742"
 <tr class="odd">
 <td><p><strong>说明符 GUID</strong></p></td>
 <td><p>KSDATAFORMAT_SPECIFIER_VIDEOINFO （仅限帧）</p>
-<p>KSDATAFORMAT_SPECIFIER_VIDEOINFO2 （字段或帧）</p></td>
+<p>KSDATAFORMAT_SPECIFIER_VIDEOINFO2 （字段或框架）</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>扩展的标头大小</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a> （如果不是 MPEG 格式）。 如果为 MPEG 格式，则为零。</p></td>
+<td><p>如果不是 MPEG 格式，则<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info" data-raw-source="[&lt;strong&gt;KS_FRAME_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)"><strong>KS_FRAME_INFO</strong></a> 。 如果为 MPEG 格式，则为零。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>必需的属性集</strong></p></td>
@@ -105,7 +105,7 @@ ms.locfileid: "72844742"
 <tr class="even">
 <td><p><strong>DirectShow formattype</strong></p></td>
 <td><p>FORMAT_VideoInfo （仅限帧）</p>
-<p>FORMAT_VideoInfo2 （字段或帧）</p></td>
+<p>FORMAT_VideoInfo2 （字段或框架）</p></td>
 </tr>
 </tbody>
 </table>

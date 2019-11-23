@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_NIC_CONNECT
-description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_NIC_CONNECT 的对象标识符（OID）设置请求，通知底层可扩展交换机端口与网络适配器之间的网络连接完全建立。 协议边缘以前通知了此连接在其发出 OID set 请求 OID_SWITCH_NIC_CREATE 时正在建立。
+description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_NIC_CONNECT 的对象标识符（OID）设置请求，通知底层可扩展交换机端口与网络适配器之间的网络连接完全建立。 协议边缘以前通知的扩展，此连接在发出 OID_SWITCH_NIC_CREATE 的 OID 集请求时正在建立。
 ms.assetid: 98A4AD28-2716-40DD-AE46-70969A23FAB7
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CONNECT 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_CONNECT 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: fda275d602e5de033400735e8079c9c8d9692002
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843961"
 # <a name="oid_switch_nic_connect"></a>OID\_交换机\_NIC\_连接
 
 
-Hyper-v 可扩展交换机的协议边缘发出\_交换机\_NIC 的对象标识符（OID）设置请求，\_"连接"，通知基础可扩展交换机端口之间的网络连接并完全建立了一个网络适配器。 协议边缘以前通知了此连接在其发出 OID [\_SWITCH\_NIC\_CREATE](oid-switch-nic-create.md)的 oid 集请求时所建立的扩展。
+Hyper-v 可扩展交换机的协议边缘发出\_交换机\_NIC 的对象标识符（OID）设置请求，\_"连接"，通知底层可扩展交换机端口与网络适配器之间的网络连接是完全建立的。 协议边缘以前通知了此连接在其发出 OID [\_SWITCH\_NIC\_CREATE](oid-switch-nic-create.md)的 oid 集请求时所建立的扩展。
 
 [ **\_OID 的 ndis\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_SWITCH\_NIC\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_parameters)结构的指针。
 

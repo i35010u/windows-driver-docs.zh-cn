@@ -89,8 +89,8 @@ KSPROPERTY\_CAMERACONTROL 中定义的**KSPROPERTY\_CAMERACONTROL\_扩展\_FOCUS
 <td><p>这必须是 KSCAMERA_EXTENDEDPROP_FILTERSCOPE （0xFFFFFFFF），</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>这必须是 sizeof （<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>） + Sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>），</p></td>
+<td><p>尺寸</p></td>
+<td><p>这必须是 sizeof （<strong>KSCAMERA_EXTENDEDPROP_HEADER</strong>） + sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value" data-raw-source="[&lt;strong&gt;KSCAMERA_EXTENDEDPROP_VALUE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)"><strong>KSCAMERA_EXTENDEDPROP_VALUE</strong></a>），</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -102,7 +102,7 @@ KSPROPERTY\_CAMERACONTROL 中定义的**KSPROPERTY\_CAMERACONTROL\_扩展\_FOCUS
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>这是一个读/写字段。 这可以是上面定义的任何一个 KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_Xxx 标志。</p></td>
+<td><p>这是一个读/写字段。 这可以是上面定义的 KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_Xxx 标志之一。</p></td>
 </tr>
 </tbody>
 </table>

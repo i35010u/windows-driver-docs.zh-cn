@@ -36,7 +36,7 @@ ms.locfileid: "72837696"
 <tbody>
 <tr class="odd">
 <td><p>停止以暂停</p></td>
-<td><p>分配资源。 完成到<strong>KSSTATE_PAUSE</strong>的转换后，读取 SRBs 将排队。</p></td>
+<td><p>分配资源。 完成转换到<strong>KSSTATE_PAUSE</strong>后，读取的 SRBs 将排队。</p></td>
 </tr>
 <tr class="even">
 <td><p>暂停以运行</p></td>
@@ -65,7 +65,7 @@ KSSTATE\_STOP-&gt; **KSSTATE\_获取** -&gt; **KSSTATE\_暂停** -&gt; **KSSTATE
 
 由于用户模式应用程序在流式传输过程中可能会意外结束，因此所有 Stream 类微型驱动程序都必须接受并处理[**SRB\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-close-stream)来自 stream 类接口\_流请求。 在 Stream 类接口发送 SRB\_关闭\_流到微型驱动程序之前，它会通过微型驱动程序的**HwCancelPacket**例程取消所有未完成的缓冲区。 请注意，在应用程序终止之前，不能将流状态设置为**KSSTATE\_停止**。
 
-请勿更新 KS 的**PictureNumber**或**DROPCOUNT**成员[ **\_帧\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)、 [**KS\_VBI\_帧\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)或[**KSPROPERTY\_DROPPEDFRAMES\_当前\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)从 KSSTATE 到 KSSTATE 的转换时 **\_暂停**到 **\_运行**或**KSSTATE\_运行**到 KSSTATE\_暂停。 有关详细信息，请参阅[捕获视频](capturing-video.md)。
+请勿更新[**KS\_帧\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_frame_info)， [**KS\_\_VBI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_vbi_frame_info)的**PICTURENUMBER**或**DropCount**成员\_信息，或[**KSPROPERTY\_DROPPEDFRAMES\_当前**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_droppedframes_current_s)从**KSSTATE**转换到 KSSTATE\_暂停到**KSSTATE\_运行**或**KSSTATE\_运行**到\_暂停。\_ 有关详细信息，请参阅[捕获视频](capturing-video.md)。
 
  
 

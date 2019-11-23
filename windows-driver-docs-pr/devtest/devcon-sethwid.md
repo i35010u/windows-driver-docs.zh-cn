@@ -29,7 +29,7 @@ ms.locfileid: "72038046"
 
 ## <a name="span-idddk_devcon_sethwid_toolsspanspan-idddk_devcon_sethwid_toolsspanparameters"></a><span id="ddk_devcon_sethwid_tools"></span><span id="DDK_DEVCON_SETHWID_TOOLS"></span>Parameters
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m： \\ @ no__t**<em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m：\\\\** <em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
 
 **注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问不可用。
 
@@ -67,13 +67,13 @@ ms.locfileid: "72038046"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **@no__t**<em>指定根</em>枚举设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>类</em>指定根枚举设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
 
 <span id="_______HardwareIDs______"></span><span id="_______hardwareids______"></span><span id="_______HARDWAREIDS______"></span>*HardwareIDs*指定一个或多个硬件 Id。
 
-如果硬件 id 前面没有符号参数（ **+** ， **-** ， **=** ， **！** ），则 DevCon 会按指定顺序将指定的硬件 id 添加或移动到设备硬件 id 列表的末尾。 这等效于-参数。
+如果硬件 id 前面没有符号参数（ **+** 、 **-** 、 **=** 、 **！** ），则 DevCon 会按指定顺序将指定的硬件 id 添加或移动到设备硬件 id 列表的末尾。 这等效于-参数。
 
 <span id="_"></span>=  
 按指定顺序将设备的硬件 Id 列表替换为指定的硬件 Id。
@@ -87,7 +87,7 @@ ms.locfileid: "72038046"
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
-*根枚举*设备是出现在根注册表子项中的设备（HKEY @ NO__T-1LOCAL @ NO__T-2MACHINE @ No__t-3System @ no__t-4*ControlSet*\\ENUM @ no__t-7ROOT）。
+*根枚举*设备是出现在根注册表子项中的设备（HKEY\_本地\_计算机\\系统\\*ControlSet*\\Enum\\root）。
 
 可以在每个命令中指定多个硬件 Id。 **！** （删除）参数仅适用于其前缀的硬件 ID。 其他符号参数适用于在命令中的下一个符号参数之前跟随的所有硬件 Id。
 
@@ -107,12 +107,12 @@ devcon sethwid @ROOT\LEGACY_BEEP\0000 := !beep legacy
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-[Example 40：将硬件 ID 分配给旧设备 @ no__t-0
+[示例40：向旧设备分配硬件 ID](devcon-examples.md#ddk_example_40_assign_a_hardware_id_to_a_legacy_device_tools)
 
-[Example 41：将硬件 ID 添加到远程计算机上的所有旧设备 @ no__t-0
+[示例41：向远程计算机上的所有旧设备添加硬件 ID](devcon-examples.md#ddk_example_41_add_a_hardware_id_to_all_legacy_devices_on_a_remote_com)
 
-[Example 42：从远程计算机上的所有旧设备中删除硬件 ID @ no__t-0
+[示例42：从远程计算机上的所有旧设备中删除硬件 ID](devcon-examples.md#ddk_example_42_delete_a_hardware_id_from_all_legacy_devices_on_a_remot)
 
-[Example 43：添加、删除和替换硬件 Id @ no__t-0
+[示例43：添加、删除和替换硬件 Id](devcon-examples.md#ddk_example_43_add_delete_and_replace_hardwareids_tools)
 
-[Example 44：强制更新 HAL @ no__t-0
+[示例44：强制更新 HAL](devcon-examples.md#ddk_example_44_forcibly_update_the_hal_tools)

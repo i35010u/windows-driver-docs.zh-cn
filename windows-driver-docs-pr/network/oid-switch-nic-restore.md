@@ -3,7 +3,7 @@ title: OID_SWITCH_NIC_RESTORE
 description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_NIC_RESTORE 的对象标识符（OID）设置请求，通知可扩展交换机扩展关于可为可扩展交换机端口及其网络适配器还原的运行时数据连接.
 ms.assetid: 252FB1D2-932F-4FB8-83D6-2690171D746D
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_RESTORE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_RESTORE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 224a73a8433f4dbc84b34d9ed499678e429438e2
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843950"
 # <a name="oid_switch_nic_restore"></a>OID\_交换机\_NIC\_还原
 
 
-Hyper-v 可扩展交换机的协议边缘发出 OID\_SWITCH\_NIC 的对象标识符（OID）设置请求\_RESTORE，以通知可扩展交换机扩展有关可为可扩展交换机端口还原的运行时数据及其网络适配器连接。
+Hyper-v 可扩展交换机的协议边缘发出 OID\_SWITCH\_NIC 的对象标识符（OID）设置请求，\_RESTORE，通知可扩展交换机扩展有关可为可扩展交换机端口及其网络适配器连接还原的运行时数据。
 
 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_SWITCH\_NIC 的指针\_保存\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构。 此结构由可扩展交换机的协议边缘分配。
 

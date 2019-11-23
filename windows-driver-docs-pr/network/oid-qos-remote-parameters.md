@@ -3,7 +3,7 @@ title: OID_QOS_REMOTE_PARAMETERS
 description: 过量驱动程序发出 OID_QOS_REMOTE_PARAMETERS 的对象标识符（OID）查询请求，以获取远程对等方的 NDIS 服务质量（QoS）参数。
 ms.assetid: F9DA87FF-577F-4E06-929B-4AD65105B2F0
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_QOS_REMOTE_PARAMETERS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_QOS_REMOTE_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b2ded1c4f44ccea3969828ff7aa0138e6d53724
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -26,13 +26,13 @@ ms.locfileid: "72844023"
 <a name="remarks"></a>备注
 -------
 
-当 NDIS\_QOS 处理 OID 的 OID 请求时，将会成功地\_远程\_参数，它将返回从上一个 NDIS 缓存的远程 NDIS QoS 参数[ **\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)由微型端口驱动程序颁发的状态指示。 驱动程序发出此状态指示来报告初始远程 NDIS QoS 参数集。 每当远程 NDIS QoS 参数发生更改时，驱动程序还会发出此状态指示。
+当 NDIS\_QOS 处理 OID 的 OID 请求时，将会成功地\_远程\_参数，它将返回从以前的 NDIS 缓存的远程 NDIS QoS 参数[ **\_状态\_qos\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)由小型端口驱动程序颁发的状态指示。 驱动程序发出此状态指示来报告初始远程 NDIS QoS 参数集。 每当远程 NDIS QoS 参数发生更改时，驱动程序还会发出此状态指示。
 
 NDIS 按以下方式返回[ **\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构进行初始化：
 
--   如果微型端口驱动程序先前已将[**ndis\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态指示，ndis 会缓存[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)数据并返回此数据对于 OID\_QOS 查询请求\_远程\_参数。
+-   如果微型端口驱动程序先前已将[**ndis\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态指示，ndis 会将[**ndis\_qos\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)数据缓存，并为 OID\_QOS\_远程\_参数返回此数据。
 
--   如果微型端口驱动程序未发出[**ndis\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态指示，ndis 将返回具有所有成员的[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构（**标头**成员除外）设置为零。
+-   如果微型端口驱动程序未发出[**ndis\_状态\_QOS\_远程\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)状态指示，ndis 将返回[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构，其中所有成员（**标头**成员除外）均设置为零。
 
 有关远程 NDIS QoS 参数的详细信息，请参阅 " [Ndis Qos 参数概述](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-ndis-qos-parameters)"。
 
@@ -62,7 +62,7 @@ NDIS 返回以下状态代码之一。
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度小于 sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>）。 NDIS 设置<strong>数据。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度小于 sizeof （<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters" data-raw-source="[&lt;strong&gt;NDIS_QOS_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)"><strong>NDIS_QOS_PARAMETERS</strong></a>）。 NDIS 设置<strong>数据。QUERY_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>

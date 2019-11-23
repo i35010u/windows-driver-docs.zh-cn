@@ -73,7 +73,7 @@ OID 请求（如硬件卸载请求）由过量协议或筛选器驱动程序（�
 
 1.  如果转发扩展插件是由 OID 请求引起的，则它必须使用与请求相关的信息来初始化扩展分配的[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构。
 
-    如果扩展插件转发 OID 请求，则不能更改[*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)函数的*OidRequest*参数所引用的现有[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构。 相反，扩展必须调用[**NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)为新的**ndis\_OID\_请求**结构分配内存，并复制现有**ndis\_OID\_请求**中的所有信息构造.
+    如果扩展插件转发 OID 请求，则不能更改[*FilterOidRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_oid_request)函数的*OidRequest*参数所引用的现有[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构。 相反，扩展必须调用[**NdisAllocateCloneOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatecloneoidrequest)为新的**ndis\_OID\_请求**结构分配内存，并将现有**ndis\_OID**中的所有信息复制\_请求结构。
 
 2.  该扩展将扩展分配的[**NDIS\_交换机\_NIC\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_oid_request)结构的成员设置为以下值：
 
@@ -109,7 +109,7 @@ OID 请求（如硬件卸载请求）由过量协议或筛选器驱动程序（�
 
      
 
-5.  如果转发扩展插件产生了对 Hyper-v 子分区的硬件卸载 OID 请求，它还会调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic) ，以便为与关联的源网络适配器连接的索引递增引用计数器依据. 这可确保在其引用计数器为非零的情况下，可扩展交换机接口将不会删除物理网络适配器连接。
+5.  如果转发扩展插件产生了对 Hyper-v 子分区的硬件卸载 OID 请求，它还会调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)来递增与分区关联的源网络适配器连接的索引的引用计数器。 这可确保在其引用计数器为非零的情况下，可扩展交换机接口将不会删除物理网络适配器连接。
 
     当扩展调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)时，它会将*SwitchPortId*参数设置为为**SourcePortId**成员指定的值。 扩展还将*SwitchNicIndex*参数设置为为**SourceNicIndex**成员指定的值。
 

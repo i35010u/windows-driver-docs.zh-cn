@@ -26,13 +26,13 @@ ms.locfileid: "72841865"
 
 Nic 还必须支持仅通过 timestamp 选项拆分 TCP 标头。 也就是说，timestamp 选项是必需的唯一 TCP 选项。 否则，支持 tcp 标头和 TCP 选项是可选的。 如果某个帧的 TCP 标头包含无法识别的 TCP 选项，则 NIC 必须将该帧拆分为 TCP 标头的开头（即，位于上层协议标头）或不拆分该帧。
 
-**请注意**，  支持 IPv4 选项、IPv6 扩展标头或 TCP 选项，目的是为了满足标头数据要求，这意味着 NIC 识别元素的能力，确定其长度，将其包含在标头 MDL 中并找到其结尾和下一个元素的开头。
+**请注意**，  支持 IPv4 选项（一个 IPv6 扩展标头或 TCP 选项，用于标头数据要求），这意味着 NIC 识别元素的能力，确定其长度，将其包含在标头 MDL 中，并找到其端和帧中下一个元素的开头。
 
  
 
 有关在上层协议标头开头拆分框架的详细信息，请参阅[在上层协议标头的开头拆分帧](splitting-frames-at-the-beginning-of-the-upper-layer-protocol-headers.md)。
 
-如果标头-数据拆分提供程序在 TCP 负载处拆分了帧，则所指示的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_\_TCP，NDIS\_NBL\_标志\_在**NblFlags**成员中设置\_协议\_负载标志的\_层\_上，拆分\_。 有关设置标头-数据拆分 NET\_BUFFER\_列表标志的详细信息，请参阅[设置 NET\_BUFFER\_列表信息](setting-net-buffer-list-information.md)。
+如果标头-数据拆分提供程序在 TCP 负载处拆分帧，则指示的[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构必须具有 NDIS\_NBL\_标志\_\_\_\_\_\_\_\_\_\_ 有关设置标头-数据拆分 NET\_BUFFER\_列表标志的详细信息，请参阅[设置 NET\_BUFFER\_列表信息](setting-net-buffer-list-information.md)。
 
  
 

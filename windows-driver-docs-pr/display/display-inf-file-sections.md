@@ -81,7 +81,7 @@ HKR,, CapabilityOverride
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">旗帜</th>
+<th align="left">Flag</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -100,7 +100,7 @@ HKR,, CapabilityOverride
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
-<td align="left"><p>禁用对 OpenGL 可安装客户端驱动程序（ICD）和 miniclient driver （MCD）的所有支持。 阻止对<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>和<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a>的调用到达驱动程序。 还会阻止 OPENGL_GETINFO、OPENGL_CMD 和 MCDFUNCS 转义到达驱动程序。</p></td>
+<td align="left"><p>禁用对 OpenGL 可安装客户端驱动程序（ICD）和 miniclient driver （MCD）的所有支持。 阻止对<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat" data-raw-source="[&lt;strong&gt;DrvSetPixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpixelformat)"><strong>DrvSetPixelFormat</strong></a>、 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat" data-raw-source="[&lt;strong&gt;DrvDescribePixelFormat&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvdescribepixelformat)"><strong>DrvDescribePixelFormat</strong></a>和<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers" data-raw-source="[&lt;strong&gt;DrvSwapBuffers&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvswapbuffers)"><strong>DrvSwapBuffers</strong></a>的调用到达驱动程序。 还禁止 OPENGL_GETINFO、OPENGL_CMD 和 MCDFUNCS 的转义到达驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
@@ -113,7 +113,7 @@ HKR,, CapabilityOverride
 
 对于随 Windows 提供的显示驱动程序， **CapabilityOverride**通常设置为0x8，这将禁用 OpenGL。 请注意，不需要设置0x10 标志来禁用 OpenGL，除非要禁用所有转义，否则不应设置0x10 标志。
 
-更新显示驱动程序时，Microsoft Windows XP 和更早版本的操作系统不会删除**CapabilityOverride**注册表项，例如，从随 Windows 提供的驱动程序到独立硬件提供的最新驱动程序。供应商（IHV）。 永久性**CapabilityOverride**条目禁用在旧驱动程序中禁用的更新驱动程序中的相同功能。 因此，对于 Windows XP 和更早版本，请在 INF 文件中包含显式删除现有**CapabilityOverride**条目的**DelReg**指令。 更新驱动程序时，Windows XP SP1 和更高版本的操作系统会自动删除**CapabilityOverride**条目，因此，在这些系统中，无需删除**CapabilityOverride**条目。
+更新显示驱动程序时，Microsoft Windows XP 和更早版本的操作系统不会删除**CapabilityOverride**注册表项，例如，从随 Windows 提供的驱动程序到独立硬件供应商（IHV）提供的最新驱动程序。 永久性**CapabilityOverride**条目禁用在旧驱动程序中禁用的更新驱动程序中的相同功能。 因此，对于 Windows XP 和更早版本，请在 INF 文件中包含显式删除现有**CapabilityOverride**条目的**DelReg**指令。 更新驱动程序时，Windows XP SP1 和更高版本的操作系统会自动删除**CapabilityOverride**条目，因此，在这些系统中，无需删除**CapabilityOverride**条目。
 
 ### <a name="span-iddisabling_agp_transfer_rates_and_sideband_addressingspanspan-iddisabling_agp_transfer_rates_and_sideband_addressingspanspan-iddisabling_agp_transfer_rates_and_sideband_addressingspandisabling-agp-transfer-rates-and-sideband-addressing"></a><span id="Disabling_AGP_Transfer_Rates_and_Sideband_Addressing"></span><span id="disabling_agp_transfer_rates_and_sideband_addressing"></span><span id="DISABLING_AGP_TRANSFER_RATES_AND_SIDEBAND_ADDRESSING"></span>禁用 AGP 传输速率和 Sideband 寻址
 
@@ -129,8 +129,8 @@ Windows 驱动程序工具包（WDK）附带的*regstr*头文件定义了以下�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">旗帜</th>
-<th align="left">Value</th>
+<th align="left">Flag</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>

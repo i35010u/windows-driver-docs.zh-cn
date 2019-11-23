@@ -1,6 +1,6 @@
 ---
 title: ndiskd.ndisrwlock
-description: Ndiskd. ndisrwlock 扩展显示有关 NDIS_RW_LOCK_EX 锁结构的信息。
+description: Ndiskd. ndisrwlock 扩展显示 NDIS_RW_LOCK_EX 锁结构的相关信息。
 ms.assetid: 853CBAFE-3899-4983-BFC7-933D3BC7ADA1
 keywords:
 - ndiskd ndisrwlock Windows 调试

@@ -22,7 +22,7 @@ ms.locfileid: "72834928"
 
 在发出 oid\_NIC 的 OID 集请求之前[\_交换机\_DELETE\_VPORT](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)，过量驱动程序必须执行以下操作：
 
--   在删除 VPort 之前，过量驱动程序必须清除或移动驱动程序以前在 VPort 上设置的所有接收筛选器。 接收筛选器是通过 oid\_接收\_筛选器的 OID 请求设置的， [\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)，并通过 OID [\_接收\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)的 oid 请求移动\_筛选器进行移动。
+-   在删除 VPort 之前，过量驱动程序必须清除或移动驱动程序以前在 VPort 上设置的所有接收筛选器。 接收筛选器是通过 oid\_接收\_筛选器的 OID 请求设置的， [\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)，并通过 OID [\_接收\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)的 oid 请求移动\_筛选器进行移动。\_
 
 -   过量驱动程序将 NDIS\_NIC 的**VPortId**成员设置[ **\_交换机\_DELETE\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_delete_vport_parameters)结构设置为要删除的非默认 VPORT 的标识符。
 

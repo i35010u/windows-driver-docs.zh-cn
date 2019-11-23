@@ -25,7 +25,7 @@ NDIS 协议驱动程序以 OID\_PM 的形式发送 IPv6 邻居请求（NS）卸�
 
  
 
-**请注意**，  一些 Windows 硬件认证要求，如**PowMgmtNDIS**和**WoWLAN。 ImplementWakeOnWLAN**，请指定微型端口适配器必须至少支持2个 NS。卸载请求。 （也就是说，若要满足这些要求， **NumNSOffloadIPv6Addresses**的值必须至少为2。）有关详细信息，请参阅[Windows 8 硬件认证要求](https://go.microsoft.com/fwlink/p/?linkid=268621)。
+**请注意**，  一些 Windows 硬件认证要求，如**PowMgmtNDIS**和**WoWLAN。 ImplementWakeOnWLAN**，请指定微型端口适配器必须支持至少2个 NS 卸载请求。 （也就是说，若要满足这些要求， **NumNSOffloadIPv6Addresses**的值必须至少为2。）有关详细信息，请参阅[Windows 8 硬件认证要求](https://go.microsoft.com/fwlink/p/?linkid=268621)。
 
  
 
@@ -35,7 +35,7 @@ NDIS 协议驱动程序以 OID\_PM 的形式发送 IPv6 邻居请求（NS）卸�
 
 ### <a name="example"></a>示例
 
-如果微型端口驱动程序将**NumNSOffloadIPv6Addresses**结构的[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)成员设置为3，则 ndis 最多可以向3个[\_\_PM 发送\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload)键入**NdisPMProtocolOffloadIdIPv6NS**。 每个 OID\_PM\_添加\_协议\_卸载请求在[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的**TargetIPv6Addresses**成员中可能正好有1或2个地址。 因此，小型端口必须支持 3 x 2 = 6 目标地址。
+如果微型端口驱动程序将**NumNSOffloadIPv6Addresses**结构的[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)成员设置为3，则 ndis 最多可以将3个 OID 发送到[\_PM\_添加\_协议\_卸载](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-protocol-offload) **NdisPMProtocolOffloadIdIPv6NS**类型的请求。 每个 OID\_PM\_添加\_协议\_卸载请求在[**NDIS\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构的**TargetIPv6Addresses**成员中可能正好有1或2个地址。 因此，小型端口必须支持 3 x 2 = 6 目标地址。
 
 由于微型端口必须匹配每个目标地址的单播和多播 NS 消息，因此，微型端口应能匹配总共 6 x 2 = 12 个 NS 消息模式。
 
@@ -125,7 +125,7 @@ NS 消息格式在[RFC 4861](https://go.microsoft.com/fwlink/p/?linkid=268370)�
 <thead>
 <tr class="header">
 <th align="left">字段</th>
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">注释</th>
 </tr>
 </thead>

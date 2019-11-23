@@ -114,11 +114,11 @@ NTSTATUS MRxQueryDirectory(
 
 如果**IrpSp&gt;标志**的\_索引\_指定的位，则将**QueryDirectory**成员设置为非零值。
 
-如果关联 FOBX 的**UnicodeQueryTemplate**成员为 NULL，并且 FOBX 的**FLAGS**成员没有 FOBX\_标志\_匹配，则将**QueryDirectory**设置为非零**值**@no__t_6全部为。
+如果关联 FOBX 的**UnicodeQueryTemplate**成员为**NULL** ，并且 FOBX 的**FLAGS**成员没有 FOBX\_标志\_匹配\_所有位，则将**QueryDirectory**成员设置为非零。
 
 对于通配符查询（"\*。例如\*"，RDBSS 会将关联的 FOBX 的**UnicodeQueryTemplate**成员设置为通过的通配符查询。
 
-如果 RX\_上下文结构的**PostRequest**成员在从*MRxQueryDirectory*返回时为**TRUE** ，则 RDBSS 将调用[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)将 RX\_上下文结构传递到辅助角色队列进行处理文件系统进程（FSP）。
+如果 RX\_上下文结构的**PostRequest**成员在从*MRxQueryDirectory*返回时为**TRUE** ，则 RDBSS 将调用[**RxFsdPostRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rxprocs/nf-rxprocs-rxfsdpostrequest)将 RX\_上下文结构传递到辅助队列，以供文件系统进程（FSP）处理。
 
 <a name="requirements"></a>要求
 ------------
@@ -131,7 +131,7 @@ NTSTATUS MRxQueryDirectory(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

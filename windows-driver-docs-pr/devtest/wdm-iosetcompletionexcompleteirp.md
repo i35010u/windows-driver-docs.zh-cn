@@ -22,7 +22,7 @@ ms.locfileid: "72839944"
 # <a name="iosetcompletionexcompleteirp-rule-wdm"></a>IoSetCompletionExCompleteIrp 规则（wdm）
 
 
-**IoSetCompletionExCompleteIrp**规则指定[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程返回一个 NTSTATUS 值。 驱动程序必须检查此值以确定在调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前是否已成功注册[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，如果**IoSetCompletionRoutineEx**失败，则应完成 IRP调度例程应返回。
+**IoSetCompletionExCompleteIrp**规则指定[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程返回一个 NTSTATUS 值。 驱动程序必须检查此值以确定在调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)或[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)之前是否已成功注册[*IoCompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程，如果**IoSetCompletionRoutineEx**失败，则应完成 IRP 并返回调度例程。
 
 |              |     |
 |--------------|-----|
@@ -76,7 +76,7 @@ ms.locfileid: "72839944"
 
  
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)

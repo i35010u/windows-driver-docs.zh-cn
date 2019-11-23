@@ -17,7 +17,7 @@ ms.locfileid: "71955785"
 
 **头文件：** *fltkernel*
 
-**Prefix：Flt @ no__t-0_Xxx_
+**前缀： Flt**_Xxx_
 
 | 函数或宏 | 描述 |
 | ----------------- | ----------- |
@@ -116,7 +116,7 @@ ms.locfileid: "71955785"
 | **FltFreeDeferredIoWorkItem** | 释放由**FltAllocateDeferredIoWorkItem**例程分配的工作项。 |
 | **FltFreeExtraCreateParameter** | 释放 ECP 上下文结构的内存。 |
 | **FltFreeExtraCreateParameterList** | 释放额外的 create parameter （ECP）列表结构。 |
-| **FltFreeFileLock** | 取消并释放已初始化的 FILE_LOCK 结构。 |
+| **FltFreeFileLock** | 取消和释放已初始化的 FILE_LOCK 结构。 |
 | **FltFreeGenericWorkItem** | 释放由**FltAllocateGenericWorkItem**例程分配的工作项。 |
 | **FltFreePoolAlignedWithTag** | 释放由先前对**FltAllocatePoolAlignedWithTag**的调用分配的缓存对齐缓冲区。 |
 | **FltFreeSecurityDescriptor** | 释放由**FltBuildDefaultSecurityDescriptor**例程分配的安全描述符。 |
@@ -184,13 +184,13 @@ ms.locfileid: "71955785"
 | **FltIsFltMgrVolumeDeviceObject** | 确定给定设备对象是否属于筛选器管理器以及设备对象是否为卷设备对象。 |
 | **FltIsIoCanceled** | 检查是否已取消基于 IRP 的操作。 |
 | **FltIsIoRedirectionAllowed** | 确定是否可以将 i/o 从指定的源筛选器实例重定向到另一个指定的筛选器实例。 |
-| **FltIsIoRedirectionAllowedForOperation** | 确定是否可以将 i/o 从与指定的 FLT_CALLBACK_DATA 结构关联的筛选器实例重定向到指定的筛选器实例。 |
+| **FltIsIoRedirectionAllowedForOperation** | 确定是否可以将 i/o 从与指定 FLT_CALLBACK_DATA 结构关联的筛选器实例重定向到指定的筛选器实例。 |
 | **FltIsOperationSynchronous** | 确定给定的回调数据结构（FLT_CALLBACK_DATA）是否表示同步或异步 i/o 操作。 |
 | **FltIsVolumeSnapshot** | 确定卷或微筛选器驱动程序实例是否连接到快照卷。 |
 | **FltIsVolumeWritable** | 确定与卷或微筛选器驱动程序实例相对应的磁盘设备是否可写。 |
 | **FltLoadFilter** | 将微筛选器驱动程序动态加载到当前正在运行的系统。 |
 | **FltLockUserBuffer** | 锁定给定 i/o 操作的用户缓冲区。 |
-| **FltNotifyFilterChangeDirectory** | 为 IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作创建通知结构，并将其添加到指定的通知列表。 |
+| **FltNotifyFilterChangeDirectory** | 创建 IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作的通知结构，并将其添加到指定的通知列表。 |
 | **FltObjectDereference** | 从不透明的筛选器、实例或卷指针中删除断开引用。 |
 | **FltObjectReference** | 向不透明的筛选器、实例或卷指针添加断开引用。 |
 | **FltOpenVolume** | 返回给定的微筛选器驱动程序实例所附加到的文件系统卷的句柄和文件对象指针。 |

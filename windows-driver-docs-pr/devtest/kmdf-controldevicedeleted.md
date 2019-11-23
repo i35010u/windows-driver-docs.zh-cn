@@ -24,7 +24,7 @@ ms.locfileid: "72839528"
 
 ControDeviceDeleted 规则指定如果 PnP 驱动程序创建控制设备对象，则驱动程序必须在卸载该驱动程序之前，在某个清除回调函数中删除该控制设备对象。
 
-如果 FDO 或筛选器驱动程序为控制设备对象调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，则驱动程序必须从 WDFDEVICE 对象的驱动程序清理回调函数中为控件设备对象调用[**WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) ，销毁回调WDFDEVICE 对象或[*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)事件回调函数的函数。
+如果 FDO 或筛选器驱动程序为控制设备对象调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) ，则驱动程序必须从 WDFDEVICE 对象的驱动程序清理回调函数、WDFDEVICE 对象的销毁回调函数或[*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)事件回调函数调用[**WdfObjectDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete) 。
 
 |              |      |
 |--------------|------|
@@ -56,7 +56,7 @@ ControDeviceDeleted 规则指定如果 PnP 驱动程序创建控制设备对象�
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)

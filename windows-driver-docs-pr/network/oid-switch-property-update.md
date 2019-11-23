@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PROPERTY_UPDATE
-description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PROPERTY_UPDATE 的对象标识符（OID）设置请求，以通知可扩展交换机扩展有关可扩展交换机策略属性的参数更新。
+description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PROPERTY_UPDATE 的对象标识符（OID）设置请求，通知有关可扩展交换机策略属性的参数更新的可扩展交换机扩展。
 ms.assetid: AEC32AD8-B353-4D58-9111-D70C2FFA9F66
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_UPDATE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_UPDATE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: e589054fa32875e03584576fe66f0316c9a80f45
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -15,7 +15,7 @@ ms.locfileid: "72843914"
 # <a name="oid_switch_property_update"></a>OID\_SWITCH\_属性\_更新
 
 
-Hyper-v 可扩展交换机的协议边缘发出 OID 的对象标识符（OID）设置请求\_SWITCH\_属性\_UPDATE，通知有关可扩展交换机策略的参数更新的可扩展交换机扩展知识产权.
+Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）设置 OID\_SWITCH\_属性\_UPDATE，以通知可扩展交换机扩展有关可扩展交换机策略属性的参数更新。
 
 [ **\_OID 的 NDIS\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向缓冲区的指针。 此缓冲区包含以下数据：
 

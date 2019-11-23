@@ -1,6 +1,6 @@
 ---
-title: 管理 Hyper-v 可扩展交换机运行时数据
-description: 管理 Hyper-v 可扩展交换机运行时数据
+title: 管理 Hyper-V 可扩展交换机运行时数据
+description: 管理 Hyper-V 可扩展交换机运行时数据
 ms.assetid: 08A353F5-D8CB-4645-9337-8169D302F6F2
 ms.date: 12/04/2018
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72844120"
 ---
-# <a name="managing-hyper-v-extensible-switch-run-time-data"></a>管理 Hyper-v 可扩展交换机运行时数据
+# <a name="managing-hyper-v-extensible-switch-run-time-data"></a>管理 Hyper-V 可扩展交换机运行时数据
 
 本主题介绍 Hyper-v 可扩展交换机扩展的保存和还原操作。 这些操作允许扩展插件保存和还原单个可扩展交换机网络适配器（Nic）的运行时数据。 当将网络适配器连接到可扩展交换机端口的 Hyper-v 子分区正在停止或启动时，将执行这些操作。
 
@@ -35,7 +35,7 @@ ms.locfileid: "72844120"
 
 2.  如果扩展具有为指定 NIC 保存的运行时数据，则它会将其数据保存在[**NDIS\_交换机\_NIC\_保存**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)从结构开始开始*SaveDataOffset*字节开始的\_状态结构。 然后，扩展完成 OID 方法请求，并将 NDIS\_状态\_SUCCESS。
 
-3.  如果[**NDIS\_交换机\_NIC\_SAVE\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构没有提供足够的缓冲区来保存运行时状态，扩展会将方法结构的*BytesNeeded*字段设置为**NDIS\_SIZEOF\_NDIS\_交换机\_NIC\_保存\_状态\_1**加上保存数据所需的缓冲区量，并通过**NDIS\_状态\_缓冲区来完成 OID\_太小了\_** 。\_ 将用所需大小重新发出 OID。
+3.  如果[**NDIS\_交换机\_NIC\_SAVE\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_nic_save_state)结构没有提供足够的缓冲区来保存运行时状态，扩展会将方法结构的*BytesNeeded*字段设置为 ndis\_SIZEOF\_\_\_\_\_\_\_\_\_1 加上保存数据所需的缓冲区的**保存状态** **\_太小了\_** 。 将用所需大小重新发出 OID。
 
 4.  如果该扩展没有要为指定的 NIC 保存的运行时数据，则必须调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)。 这会将 OID 方法请求转发到可扩展交换机驱动程序堆栈中的底层驱动程序。 有关此过程的详细信息，请参阅[在 NDIS 筛选器驱动程序中筛选 OID 请求](filtering-oid-requests-in-an-ndis-filter-driver.md)。
 

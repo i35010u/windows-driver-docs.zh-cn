@@ -3,7 +3,7 @@ title: OID_NIC_SWITCH_PARAMETERS
 description: 过量驱动程序发出 OID_NIC_SWITCH_PARAMETERS 的对象标识符（OID）方法请求，以获取网络适配器上指定 NIC 交换机的当前配置参数。
 ms.assetid: 3F2FF2C0-8710-4243-8583-CD80F244FCFB
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_PARAMETERS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_NIC_SWITCH_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f0b640dae8975c188fd0a0b6dd82076dbb7b58
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -76,11 +76,11 @@ NDIS 或 PF 微型端口驱动程序返回 OID\_NIC 的以下状态代码\_交�
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_PARAMETER</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)"><strong>NDIS_NIC_SWITCH_PARAMETERS</strong></a>结构中的一个或多个成员的值无效。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters" data-raw-source="[&lt;strong&gt;NDIS_NIC_SWITCH_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)"><strong>NDIS_NIC_SWITCH_PARAMETERS</strong></a>结构的一个或多个成员的值无效。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置<strong>数据。METHOD_INFORMATION.BytesNeeded</strong>成员（用于 OID 方法请求）或<strong>数据。SET_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员（用于 OID 设置的请求）是所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 NDIS 或 PF 微型端口驱动程序设置<strong>数据。METHOD_INFORMATION。BytesNeeded</strong>成员（用于 OID 方法请求）或<strong>数据。SET_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员（用于 OID 设置请求）设置为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_REINIT_REQUIRED</p></td>

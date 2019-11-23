@@ -1,9 +1,9 @@
 ---
 title: OID_SWITCH_PROPERTY_ENUM
-description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PROPERTY_ENUM 的对象标识符（OID）方法请求，以获取一个数组。
+description: Hyper-v 可扩展交换机扩展发出 OID_SWITCH_PROPERTY_ENUM 获取数组的对象标识符（OID）方法请求。
 ms.assetid: 45277355-4486-4CE0-ACBF-68D6BC6B79E7
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_ENUM 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_ENUM 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 220b0885b9393d13853bd363bcfe93b529fdde4d
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -23,7 +23,7 @@ Hyper-v 可扩展交换机扩展发出 OID 的对象标识符（OID）方法请�
 
 -   一组[**NDIS\_交换机\_属性\_枚举\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。 其中每个结构都包含有关可扩展交换机策略的信息。
 
-    **请注意**  如果尚未通过指定的可扩展交换机策略的实例来预配扩展，则扩展会将 [**NDIS\_switch\_属性的 NumProperties 成员设置\_枚举\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)结构为零，且不会返回[**NDIS\_SWITCH\_属性\_枚举\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。
+    **请注意**  如果尚未通过指定的可扩展交换机策略的实例对扩展进行预配，则扩展会将[**NDIS\_SWITCH\_\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)的**NumProperties**成员设置为零，且不会返回[**ndis\_switch\_属性\_枚举\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)结构。\_
 
      
 
@@ -32,7 +32,7 @@ Hyper-v 可扩展交换机扩展发出 OID 的对象标识符（OID）方法请�
 
 仅当 Hyper-v 可扩展交换机完成激活时，才必须发出 OID\_SWITCH\_属性\_ENUM OID。 有关更多详细信息，请参阅[查询 Hyper-v 可扩展交换机配置](https://docs.microsoft.com/windows-hardware/drivers/network/querying-the-hyper-v-extensible-switch-configuration)。
 
-与 oid [\_SWITCH\_端口\_属性\_枚举](oid-switch-port-property-enum.md)的 oid 查询请求不同，扩展在发出 oid 时无需调用任何*ReferenceSwitchXxx*或*DereferenceSwitchXxx*函数\_\_枚举请求\_属性切换到可扩展交换机驱动程序堆栈。
+与[oid\_switch\_端口\_属性\_枚举](oid-switch-port-property-enum.md)的 oid 查询请求不同，在发出 oid 时无需调用任何*ReferenceSwitchXxx*或*DereferenceSwitchXxx*函数\_在可扩展交换机驱动程序堆栈中\_枚举请求。\_
 
 **请注意**  如果扩展接收 OID 的 oid 方法请求\_SWITCH\_属性\_枚举，则它不能完成 oid 请求。 相反，它必须调用[**NdisFOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfoidrequest)将 OID 请求向下转发到可扩展交换机驱动程序堆栈。
 
@@ -60,7 +60,7 @@ Hyper-v 可扩展交换机扩展发出 OID 的对象标识符（OID）方法请�
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区的长度太小，无法返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)"><strong>NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS</strong></a>结构及其<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)"><strong>NDIS_SWITCH_PROPERTY_ENUM_INFO</strong></a>元素数组。 可扩展交换机的基础微型端口边缘设置<strong>数据。METHOD_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区的长度太小，无法返回<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_parameters)"><strong>NDIS_SWITCH_PROPERTY_ENUM_PARAMETERS</strong></a>结构及其<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info" data-raw-source="[&lt;strong&gt;NDIS_SWITCH_PROPERTY_ENUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_property_enum_info)"><strong>NDIS_SWITCH_PROPERTY_ENUM_INFO</strong></a>元素数组。 可扩展交换机的基础微型端口边缘设置<strong>数据。METHOD_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_FAILURE</p></td>

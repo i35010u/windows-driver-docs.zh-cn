@@ -318,7 +318,7 @@ FWPS_LAYER_ALE_BIND_REDIRECT_V4</p>
 <dl>
 <dt><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ne-fwpsk-fwps_fields_ale_bind_redirect_v4_"><b>FWPS_FIELDS_ALE_BIND_REDIRECT_V4</b></a></dt>
 <dt>
-<div class="alert"><b>注意</b>在 windows 7 和更高版本的 windows 中  支持。</div>
+<div class="alert"><b>注意</b>，windows 7 和更高版本的 windows 中支持  。</div>
 <div> </div>
 </dt>
 </dl>

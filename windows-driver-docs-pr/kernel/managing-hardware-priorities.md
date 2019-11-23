@@ -44,7 +44,7 @@ ms.locfileid: "72838550"
 <a href="" id="dispatch-level"></a>**调度\_级别**  
 **屏蔽的中断** —调度\_级别和 APC\_级别中断被屏蔽。 可能会发生设备、时钟和电源故障中断。
 
-**调用的驱动程序例程**调度\_级别- [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)、 [*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)、 [*AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)、 [*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)、 [*cancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) （按住 Cancel 自旋锁定）、 [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine) [*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、 [*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程。
+**调用的驱动程序例程**调度\_级别- [*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)、 [*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)、 [*AdapterListControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_list_control)、 [*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)、 [*IoTimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)、 [*cancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) （保存 Cancel 自旋锁时）、 [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)、 [*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)、 [*CustomDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)例程。
 
 <a href="" id="dirql"></a>**DIRQL**  
 **屏蔽** 的中断-以 IRQL&lt;= DIRQL 驱动程序中断对象的所有中断。 可能会出现带有较高 DIRQL 值的设备中断，以及时钟和电源故障中断。
@@ -61,7 +61,7 @@ APC\_级别与被动\_级别之间唯一的区别在于，在 APC\_级别执行�
 
 -   调度\_级别，调度\_级别和 APC\_级别中断在处理器上在*StartIo*例程中屏蔽
 
-    *AdapterControl*、 *AdapterListControl*、 *ControllerControl*、 *IoTimer*、 *cancel* （当它持有 CANCEL 自旋锁时）和*CustomTimerDpc*例程也按调度\_级别运行，如下所*示DpcForIsr*和*CustomDpc*例程。
+    *AdapterControl*、 *AdapterListControl*、 *ControllerControl*、 *IoTimer*、 *cancel* （当它持有 Cancel 自旋锁时）和*CustomTimerDpc*例程还会在调度\_级别运行，就像*DpcForIsr*和*CustomDpc*例程一样。
 
 -   设备 IRQL （DIRQL），其中所有中断都小于或等于驱动器上在 ISR 和*SynchCritSection*例程中屏蔽的中断对象的*SynchronizeIrql*
 
@@ -79,7 +79,7 @@ APC\_级别与被动\_级别之间唯一的区别在于，在 APC\_级别执行�
 
 大多数标准驱动程序例程以 IRQL 运行，这使它们只需调用适当的支持例程即可。 例如，设备驱动程序在以 IRQL 调度\_级别运行时必须调用[**AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。 由于大多数设备驱动程序从*StartIo*例程调用这些例程，因此它们通常在调度\_级别上运行。
 
-请注意，没有*StartIo*例程的设备驱动程序，因为它会设置和管理其自己的 irp 队列，因此，如果它应调用**AllocateAdapterChannel**，则不一定会在调度\_级别 IRQL 时运行。 此类驱动程序必须将对**AllocateAdapterChannel**的调用嵌套在对[**KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)和[**KeLowerIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)的调用之间，使其在调用**AllocateAdapterChannel**时在所需的 irql 运行，并在调用例程重新获得控制。
+请注意，没有*StartIo*例程的设备驱动程序，因为它会设置和管理其自己的 irp 队列，因此，如果它应调用**AllocateAdapterChannel**，则不一定会在调度\_级别 IRQL 时运行。 此类驱动程序必须将对**AllocateAdapterChannel**的调用嵌套在对[**KeRaiseIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keraiseirql)和[**KeLowerIrql**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql)的调用之间，以便在调用**AllocateAdapterChannel**时，它在所需的 irql 处运行，并在调用例程重新获得控制时还原原始的 irql。
 
 调用驱动程序支持例程时，请注意以下各项。
 
@@ -87,7 +87,7 @@ APC\_级别与被动\_级别之间唯一的区别在于，在 APC\_级别执行�
 
 - 在 IRQL &gt;= 调度\_级别运行时，为内核定义的调度程序对象调用[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)或[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects)以等待非零间隔将导致严重错误。
 
-- 可安全等待事件、信号量、互斥体或计时器设置为 "已终止" 状态的唯一驱动程序例程是在 nonarbitrary 线程上下文中以 IRQL 被动\_级别（如驱动程序创建的线程、 **DriverEntry**和重新*初始化*例程，或为原本同步 i/o 操作（例如大多数设备 i/o 控制请求）调度例程。
+- 可安全等待事件、信号量、互斥体或计时器设置为 "已终止" 状态的唯一驱动程序例程是：在 IRQL 被动\_级别的 nonarbitrary 线程上下文中运行的驱动程序例程，如驱动程序创建的线程、 **DriverEntry**和重新*初始化*例程，或用于原本同步 i/o 操作（如大多数设备 i/o 控制请求）的调度例程。
 
 - 即使以 IRQL 被动\_级别运行，可分页驱动程序代码也不得调用[**KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)、 [**KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)或[**KeReleaseMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex) ，并将输入*Wait*参数设置为**TRUE**。 此类调用可能会导致严重页错误。
 

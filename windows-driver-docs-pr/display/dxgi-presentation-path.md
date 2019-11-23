@@ -24,7 +24,7 @@ DXGI 为应用程序提供了 "只工作" 的演示方法。 例如，应用程�
 
 ### <a name="span-idwindowed_mode_with_dwm_offspanspan-idwindowed_mode_with_dwm_offspanwindowed-mode-with-dwm-off"></a><span id="windowed_mode_with_dwm_off"></span><span id="WINDOWED_MODE_WITH_DWM_OFF"></span>具有 DWM 关闭的窗口模式
 
-在具有 DWM 关闭大小写功能的开窗模式下，DXGI 会调用驱动程序的[**PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数，并在\_DXGI 的 FLAGS [ **\_ARG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)的**Flags**成员中设置**Blt**标志\_存在*pPresentData*参数指向。 在此*PresentDXGI*调用中，dxgi 可以指定**hSurfaceToPresent**的**SrcSubResourceIndex**成员中任何应用程序创建的后台缓冲区，并\_DDI\_ARG\_存在。 没有其他共享图面。
+在具有 DWM 关闭大小写功能的开窗模式下，DXGI 会调用驱动程序的[**PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数，并在\_DXGI 的 FLAGS [ **\_ARG\_提供**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present) *pPresentData*参数所指向的结构的**标志**成员中设置**Blt**标志。 在此*PresentDXGI*调用中，dxgi 可以指定**hSurfaceToPresent**的**SrcSubResourceIndex**成员中任何应用程序创建的后台缓冲区，并\_DDI\_ARG\_存在。 没有其他共享图面。
 
 ### <a name="span-idfull_screen_modespanspan-idfull_screen_modespanfull-screen-mode"></a><span id="full_screen_mode"></span><span id="FULL_SCREEN_MODE"></span>全屏模式
 
@@ -38,15 +38,15 @@ DXGI 为应用程序提供了 "只工作" 的演示方法。 例如，应用程�
 
 -   应用程序指定它不能接受 Direct3D 运行时丢弃后台缓冲区的内容，并且只请求链中有一个缓冲区（总计）。 （在这种情况下，DXGI 分配一个后表面和一个主表面; 但是，DXGI 使用驱动程序的*PresentDXGI*函数，并设置**Blt**标志。）
 
-如果出现上述某个情况，则会阻止执行翻转操作，并且不会对驱动程序的[**PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数调用**Blt**标志集，因为后台缓冲区与前台缓冲区完全匹配）。DXGI 分配*代理图面*。 此代理图面与前台缓冲区匹配。 因此，可以在代理表面和前台缓冲区之间进行切换。 如果存在代理表面，DXGI 将使用驱动程序的[**BltDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数，并清除（0）**当前**标志，将应用程序的后台缓冲区复制到代理图面。 在此*BltDXGI*调用中，DXGI 可能会请求转换、拉伸和解析。 然后，DXGI 将调用驱动程序的*PresentDXGI*函数，并在 DXGI 的**FLAGS**标记[ **\_DDI\_ARG\_存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)的结构中设置**翻转**标志，以将代理图面位移动到 scan out。
+如果出现上述情况之一而导致无法进行翻转操作，并且对驱动程序的[**PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数的调用具有**Blt**标志集也不合适（因为后台缓冲区与前台缓冲区完全匹配），DXGI 将分配*代理图面*。 此代理图面与前台缓冲区匹配。 因此，可以在代理表面和前台缓冲区之间进行切换。 如果存在代理表面，DXGI 将使用驱动程序的[**BltDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数，并清除（0）**当前**标志，将应用程序的后台缓冲区复制到代理图面。 在此*BltDXGI*调用中，DXGI 可能会请求转换、拉伸和解析。 然后，DXGI 将调用驱动程序的*PresentDXGI*函数，并在 DXGI 的**FLAGS**标记[ **\_DDI\_ARG\_存在**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_arg_present)的结构中设置**翻转**标志，以将代理图面位移动到 scan out。
 
 为了通知用户模式显示驱动程序，驱动程序可以退出扫描，驱动程序将接收对可选的和非可选的扫描表面类的资源创建调用。 可选的扫描图面由 DXGI 指定\_DDI\_主要\_可选标志。 非可选的扫描表面没有 DXGI\_DDI\_主要\_可选标志。 有关这些类型的资源创建调用的详细信息，请参阅[在资源创建时传递 DXGI 信息](passing-dxgi-information-at-resource-creation-time.md)。
 
 DXGI 将 DXGI\_DDI\_主要\_可选标志，用于创建所有后台缓冲区表面（即，可选的表面），并且不会设置任何前台缓冲区或代理表面（即，非可选图面）的标志。
 
-如果已为后台缓冲区设置了 DXGI\_DDI\_PRIMARY\_可选，则驱动程序可以将 DXGI\_DDI\_主\_驱动程序\_标志\_无\_SCANOUT 标志。 有关设置此标志的详细信息，请参阅[在资源创建时传递 DXGI 信息](passing-dxgi-information-at-resource-creation-time.md)。 如果驱动程序将 DXGI\_DDI\_PRIMARY\_驱动程序\_标志\_没有\_的可选缓冲区，则除了导致 DXGI 使用**Blt**标志调用驱动程序的[**PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数外，它不起作用。设置，而不是设置**翻转**标志。
+如果已为后台缓冲区设置了 DXGI\_DDI\_PRIMARY\_可选，则驱动程序可以将 DXGI\_DDI\_主\_驱动程序\_标志\_无\_SCANOUT 标志。 有关设置此标志的详细信息，请参阅[在资源创建时传递 DXGI 信息](passing-dxgi-information-at-resource-creation-time.md)。 如果驱动程序将 DXGI\_DDI\_PRIMARY\_驱动程序\_标志\_没有\_的可选缓冲区，则除了导致 DXGI 使用**Blt**标志（而不是设置了**翻转**标志）调用驱动程序的[**PresentDXGI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi_ddi_base_functions)函数之外。
 
-如果未对前台缓冲区或代理图面设置 DXGI\_DDI\_PRIMARY\_可选的，则驱动程序仍可以通过使用错误代码 DXGI 停止资源创建调用来退出扫描，\_DDI\_ERR\_不受支持和设置 DXGI\_DDI\_PRIMARY\_驱动程序\_标志\_无\_SCANOUT。
+如果未对前台缓冲区或代理图面设置 DXGI\_DDI\_PRIMARY\_可选的，则驱动程序仍可以通过使用错误代码 DXGI 停止资源创建调用来退出扫描，\_DDI\_ERR\_不受支持，并将 DXGI\_\_\_\_\_\_
 
 **请注意**   无法在不设置 DXGI\_DDI\_主\_驱动程序\_标志的情况下创建调用失败，\_不会为真正的故障情况（如内存不足）保留任何\_的 SCANOUT。
 

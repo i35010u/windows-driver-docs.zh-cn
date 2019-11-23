@@ -27,17 +27,17 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 
 你的驱动程序可以使用以下内核模式函数、MIB 结构和 MIB 和网络层（NL）枚举来检索和修改本地计算机上传输控制协议/internet 协议（TCP/IP）传输的配置设置。
 
-**请注意**  ，在开发驱动程序代码时，请按照[包括头文件](including-header-files-for-ip-helper.md)的说明进行操作。
+**请注意**  在开发驱动程序代码时，请按照[包括头文件](including-header-files-for-ip-helper.md)的说明进行操作。
 
  
 
 ### <a name="interface-conversion-functions"></a>接口转换函数
 
 <table>  
-<colgroup><col width="50%" /> <col width="50%" /></colgroup>  
+<colgroup> <col width="50%" /> <col width="50%" /> </colgroup>  
 <thead>  
 <tr class="header">  
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -104,7 +104,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -159,7 +159,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -234,7 +234,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -281,7 +281,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -312,7 +312,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -359,7 +359,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -382,7 +382,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>
@@ -417,7 +417,7 @@ IP 帮助程序文档广泛使用术语 "适配器" 和 "接口"。 *适配器*�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Functions</th>
+<th align="left">函数</th>
 <th align="left">描述</th>
 </tr>
 </thead>

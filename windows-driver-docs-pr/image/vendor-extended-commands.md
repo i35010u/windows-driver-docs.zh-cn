@@ -1,6 +1,6 @@
 ---
-title: 供应商扩展命令
-description: 供应商扩展命令
+title: 供应商扩展的命令
+description: 供应商扩展的命令
 ms.assetid: 3d360a9f-5a65-452b-a8ad-080dc7d8c8f5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72840725"
 ---
-# <a name="vendor-extended-commands"></a>供应商扩展命令
+# <a name="vendor-extended-commands"></a>供应商扩展的命令
 
 
 

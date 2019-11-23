@@ -20,7 +20,7 @@ ms.locfileid: "72841045"
 ## <span id="ddk_passing_an_io_operation_down_the_minifilter_instance_stack_if"></span><span id="DDK_PASSING_AN_IO_OPERATION_DOWN_THE_MINIFILTER_INSTANCE_STACK_IF"></span>
 
 
-当微筛选器驱动程序的[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)或工作例程向筛选器管理器返回 i/o 操作时，筛选器管理器会将该操作发送到微筛选器驱动程序实例中当前微微筛选器驱动程序下的微筛选器驱动程序堆栈和到旧筛选器以及文件系统以进行进一步处理。
+当微筛选器驱动程序的[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)或工作例程向筛选器管理器返回 i/o 操作时，筛选器管理器会将该操作发送到微筛选器驱动程序实例堆栈中当前微筛选器驱动程序下的微筛选器驱动程序，并发送到旧筛选器和文件系统以进行进一步处理。
 
 微筛选器驱动程序的 preoperation 回调例程返回筛选器管理器的 i/o 操作，以便进一步处理，方法是返回以下状态值之一：
 
@@ -34,7 +34,7 @@ ms.locfileid: "72841045"
 
  
 
-或者，在 preoperation 回调例程中挂起的操作的工作例程会在调用 [**时通过在 CallbackStatus 参数中传递其中一个状态值来向筛选器管理器返回 i/o 操作FltCompletePendedPreOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)恢复挂起的 i/o 操作的处理。
+或者，在 preoperation 回调例程中挂起的操作的工作例程会在调用[**FltCompletePendedPreOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)以恢复处理挂起的 i/o 操作时，通过在*CallbackStatus*参数中传递上述状态值之一来返回对筛选器管理器的 i/o 操作。
 
 本部分包括：
 

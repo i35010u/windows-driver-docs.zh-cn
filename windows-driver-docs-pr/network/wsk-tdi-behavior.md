@@ -4,7 +4,7 @@ description: WSK_TDI_BEHAVIOR
 ms.assetid: 84e4c8c3-2c31-4db5-bb25-309c6bb176ff
 ms.date: 07/18/2017
 keywords:
-- WSK_TDI_BEHAVIOR 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WSK_TDI_BEHAVIOR 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c18ae7179a59379c3e1e04a20682c392a67f438
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -34,7 +34,7 @@ WSK 应用程序使用 WSK\_TDI\_行为客户端控制操作控制 WSK 子系统
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>

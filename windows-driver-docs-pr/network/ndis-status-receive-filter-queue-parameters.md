@@ -3,7 +3,7 @@ title: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS
 description: NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS 状态向 NDIS 和过量驱动程序表明，当前虚拟机（VM）队列参数在网络适配器上已更改。
 ms.assetid: 30782C77-578F-4533-8B6B-9D2F64EE6189
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_RECEIVE_FILTER_QUEUE_PARAMETERS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fda407edcca4ff5814de5cabc0891694784505
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,14 +28,14 @@ ms.locfileid: "72843521"
 
 如果微型端口驱动程序发出**NDIS\_状态\_接收\_筛选器\_队列\_参数**状态指示，则必须执行以下步骤：
 
-1.  微型端口驱动程序使用网络适配器上的当前 VM 队列参数初始化[**NDIS\_接收\_QUEUE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构。 驱动程序还必须将此结构的**Flags**成员设置为相应的 NDIS\_接收\_队列\_参数\_*XXX*\_已更改的标志发送到**NDIS\_接收\_队列 @no__t**已更改的 _10_ 参数成员值。
+1.  微型端口驱动程序使用网络适配器上的当前 VM 队列参数初始化[**NDIS\_接收\_QUEUE\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_queue_parameters)结构。 驱动程序还必须使用相应的 NDIS 设置此结构的**标志**成员，\_接收\_队列\_参数\_*Xxx*\_已更改的用于 NDIS 的标志\_**接收\_的参数**成员值已更改。\_
 
     **注意** 从 NDIS 6.30 开始，微型端口驱动程序只能发出**ndis\_状态\_接收\_筛选器\_队列\_参数**状态指示报告对**InterruptCoalescingDomainId**成员所做的更改。
 
 
 
 
-当微型端口驱动程序初始化此结构的**标头**成员时，它会将**标头**的**类型**成员设置为 NDIS\_对象\_类型\_默认值。 微型端口驱动程序将**标头**的**修订**成员设置为 NDIS\_接收\_队列\_参数\_修订版本\_2，并将**Size**成员设置为 NDIS\_SIZEOF\_RECEIVE\_QUEUE\_\_版本\_2 的参数。
+当微型端口驱动程序初始化此结构的**标头**成员时，它会将**标头**的**类型**成员设置为 NDIS\_对象\_类型\_默认值。 微型端口驱动程序将**标头**的**修订**成员设置为 NDIS\_接收\_QUEUE\_参数\_修订版本\_2，并将**Size**成员设置为 ndis\_\_\_\_\_\_参数。
 
 
 2.  微型端口驱动程序通过以下方式初始化[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构：

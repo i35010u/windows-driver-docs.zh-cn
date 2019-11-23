@@ -29,7 +29,7 @@ ms.locfileid: "72839652"
 
 ### <a name="span-id16-bit_host-based_idct_processingspanspan-id16-bit_host-based_idct_processingspanspan-id16-bit_host-based_idct_processingspan16-bit-host-based-idct-processing"></a><span id="16-bit_Host-Based_IDCT_Processing"></span><span id="16-bit_host-based_idct_processing"></span><span id="16-BIT_HOST-BASED_IDCT_PROCESSING"></span>基于主机的16位 IDCT 处理
 
-与基于主机的16位残留差别解码一起使用的宏块控制结构为[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)和[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1).
+与基于主机的16位残留差别解码一起使用的宏块控制结构为[**DXVA\_MBctrl\_I\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_i_hostresiddiff_1)和[**DXVA\_MBctrl\_P\_HostResidDiff\_1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_mbctrl_p_hostresiddiff_1)。
 
 使用16位方法发送空间域残留差异数据时，会按顺序发送16位数据块。 空间域数据的每个块都包含 64 16 位整数。
 
@@ -53,9 +53,9 @@ ms.locfileid: "72839652"
 
 如果从[**DXVA\_PictureParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构派生的*BPP*变量是8，则可以使用8-8 溢出空间-域剩余差方法。 如果此结构的**bPicIntra**成员为1，并且*BPP*为8，则需要使用此成员。 在这种情况下，每个空间域差异值仅使用8位表示。 使用8-8 溢出方法发送数据时，将按顺序发送8位数据块。 每个8位空间为域残留差异数据块包含64字节，其中包含传统光栅扫描顺序中数据的值（顺序中第一行的元素，后跟第二行的元素等）。
 
-如果宏块控制命令中的*IntraMacroblock*为零，则8位空间为域残留差异示例是要添加或减去的签名差异（从 DXVA 的**bConfigResid8Subtraction**成员确定[ **\_ConfigPictureDecode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构，以及该样本是在第一个传递块还是溢出块中，相对于运动补偿预测值。
+如果宏块控制命令中的*IntraMacroblock*为零，则8位空间为域残留差异样本为要添加或减去的签名差异（从[**DXVA\_ConfigPictureDecode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_configpicturedecode)结构的**bConfigResid8Subtraction**成员确定，以及该样本是位于第一个传递块还是溢出块中）（与运动补偿预测值相关）。
 
-如果*IntraMacroblock* （宏块结构的**wMBtype**成员中的位0）为零，并且要在块中为某一像素表示的差异太大，只使用8位，第二个溢出块会出现8位空间域已发送残差样本。
+如果宏块结构的**wMBtype**成员中的*IntraMacroblock* （位0）为零，并且要为块中的某个像素表示的差异太大，只使用8位，则会发送第二个溢出块，即8位空间域残留差异示例。
 
 如果*IntraMacroblock* （宏块结构的**wMBtype**成员中的位0）为1，则会按如下所示设置8位空间-域残差样本：
 
@@ -75,7 +75,7 @@ ms.locfileid: "72839652"
 
 这些规则允许在两次传递后将示例添加到具有结果的8位剪辑的预测图片中。
 
-**请注意**   在**bConfigResid8Subtraction**等于零（这会导致每个溢出块增加两个8位差异255）的情况*下使用8位差异，并且在IntraMacroblock*为零。 （以这种方式表示的最大差值值为 127 + 127 = 254。）当**bConfigResid8Subtraction**为零时，这使得基于主机的8-8 溢出 IDCT 方法不会与视频编码标准完全兼容。 但是，这种格式受支持，因为它在某些现有的实现中使用，比16位示例使用的更高效，而不是表示图片所需的数据量，并且通常不会导致视频质量下降。
+**请注意**   在*IntraMacroblock*为零的情况下，使用**bConfigResid8Subtraction**等于零（这会导致为每个溢出块增加两个8位差异）255的溢出块使用8位差异。 （以这种方式表示的最大差值值为 127 + 127 = 254。）当**bConfigResid8Subtraction**为零时，这使得基于主机的8-8 溢出 IDCT 方法不会与视频编码标准完全兼容。 但是，这种格式受支持，因为它在某些现有的实现中使用，比16位示例使用的更高效，而不是表示图片所需的数据量，并且通常不会导致视频质量下降。
 
  
 

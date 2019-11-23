@@ -64,7 +64,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 提供一个指向[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-存在与*DeviceInfoData*关联的设备安装参数（[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)）。
+与*DeviceInfoData*关联的设备安装参数（[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)）。
 
 <a href="" id="class-installation-parameters"></a>类安装参数  
 无
@@ -78,9 +78,9 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 
 共同安装程序可以返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序成功处理此请求，而[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
-如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR，并且**SetupDiCallClassInstaller**随后不会再次调用默认处理程序。
+如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且**SetupDiCallClassInstaller**将不会再次调用默认处理程序。
 
 **请注意**  类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
@@ -96,7 +96,7 @@ DIF_INSTALLINTERFACES 请求允许安装程序参与设备的设备接口注册�
 
 ### <a name="installer-operation"></a>安装程序操作
 
-为响应 DIF_INSTALLINTERFACES 请求，安装程序可能以编程方式注册设备接口，而不是通过 INF 文件注册接口。 通常，供应商提供的安装程序不会处理此 DIF 请求。
+为了响应 DIF_INSTALLINTERFACES 请求，安装程序可能以编程方式注册设备接口，而不是通过 INF 文件注册接口。 通常，供应商提供的安装程序不会处理此 DIF 请求。
 
 除非设置了 DI_NOFILECOPY 标志，否则处理此 DIF 请求的安装程序应复制设备接口所需的文件。
 

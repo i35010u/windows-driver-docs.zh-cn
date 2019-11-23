@@ -1,10 +1,10 @@
 ---
 title: WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY
-description: WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY 是包含 ASP2 播发服务项的 TLV。
+description: WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY 为 TLV，其中包含 ASP2 播发服务项。
 ms.assetid: CF7ED750-1987-4784-9E61-516EBBA22B9B
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_P2P_ASP2_ADVERTISED_SERVICE_ENTRY 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: f62ba25ea795025f3bdda4345e008e76da3c5823
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -44,7 +44,7 @@ WDI\_TLV\_P2P\_ASP2\_播发\_SERVICE\_项是包含 ASP2 播发服务项的 TLV�
 | [**WDI\_TLV\_P2P\_服务\_信息**](wdi-tlv-p2p-service-information.md) |                                | X        | 服务的服务信息。                                                                                                                                                                                                                                                     |
 | [**WDI\_TLV\_P2P\_服务\_状态**](wdi-tlv-p2p-service-status.md)           |                                |          | 服务的服务状态。                                                                                                                                                                                                                                                           |
 | [**WDI\_TLV\_P2P\_播发\_ID**](wdi-tlv-p2p-advertisement-id.md)       |                                |          | 唯一标识服务实例的 ID。                                                                                                                                                                                                                                     |
-| [**WDI\_TLV\_P2P\_CONFIG\_方法**](wdi-tlv-p2p-config-methods.md)           |                                |          | WDI 中定义的配置方法[ **\_WPS\_配置\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)。 仅**WDI\_WPS\_配置\_方法\_显示**、 **WDI\_wps\_** \_\_\_\_\_@no **__t_14_ WFDS\_默认值**适用。 |
+| [**WDI\_TLV\_P2P\_CONFIG\_方法**](wdi-tlv-p2p-config-methods.md)           |                                |          | WDI 中定义的配置方法[ **\_WPS\_配置\_方法**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_wps_configuration_method)。 仅**WDI\_WPS\_配置\_方法\_显示**、 **WDI\_wps\_** \_\_\_\_\_\_\_ |
 
  
 
@@ -59,7 +59,7 @@ WDI\_TLV\_P2P\_ASP2\_播发\_SERVICE\_项是包含 ASP2 播发服务项的 TLV�
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

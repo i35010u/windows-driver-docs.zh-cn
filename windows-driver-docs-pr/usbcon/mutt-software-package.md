@@ -30,11 +30,11 @@ MUTT 软件包包含多个工具，可用于[MUTT 设备](microsoft-usb-test-too
 
 Microsoft USB 测试工具（MUTT）软件包包含测试工具，可供硬件测试工程师通过 Microsoft USB 驱动程序堆栈测试其 USB 控制器或集线器的互操作性。 随附的文档简要概述了不同类型的 MUTT 硬件，并为控制器、集线器、设备和 BIOS/UEFI 测试建议了拓扑。 该文档还包含有关如何运行测试、跟踪 USB 驱动程序堆栈中的事件以及在内核调试器中捕获信息的过程信息。
 
-文件名： mutt2_94
+文件名： mutt2_94 .msi
 
 9.3 MB
 
-[1download mutt 软件包 @no__t](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)
+[![下载 mutt 软件包](images/download.png)](https://go.microsoft.com/fwlink/p/?LinkId=786621)
 
 ## <a name="version-updates"></a>版本更新
 

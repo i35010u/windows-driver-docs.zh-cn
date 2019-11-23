@@ -14,7 +14,7 @@ ms.locfileid: "72831896"
 # <a name="ndkpi-listeners-connectors-and-endpoints"></a>NDKPI 侦听器、连接器和终结点
 
 
-NDK 使用者通过调用*NdkConnect* （[*ndk\_fn\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)）或*NdkConnectWithSharedEndpoint* （[*ndk\_FN\_使用\_共享\_连接\_来连接 ndk 连接器终结点*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)）函数。
+NDK 使用者通过调用*NdkConnect* （[*ndk\_fn\_CONNECT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect)）或*NdkConnectWithSharedEndpoint* （[*ndk\_FN\_CONNECT\_与\_SHARED\_ENDPOINT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_connect_with_shared_endpoint)）函数连接 ndk 连接器。
 
 处于连接状态的每个连接器还具有一个基础终结点，该终结点表示已建立的 NDK 连接的本地端：
 

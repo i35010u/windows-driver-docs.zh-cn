@@ -1,10 +1,10 @@
 ---
 title: WDI_TLV_P2P_INSTANCE_NAME_HASH
-description: WDI_TLV_P2P_INSTANCE_NAME_HASH 是一个 TLV，其中包含 "Instance Name，Service Type" 的哈希值。
+description: WDI_TLV_P2P_INSTANCE_NAME_HASH 是包含 "Instance Name，Service Type" 的哈希值的 TLV。
 ms.assetid: A29D0339-93A8-43EB-8C22-DD7A7DC2147C
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_P2P_INSTANCE_NAME_HASH 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_P2P_INSTANCE_NAME_HASH 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d09bd603504b959b4d640a26dc4c29a40488493
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -52,7 +52,7 @@ WDI 的大小（以字节为单位） [ **\_P2P\_SERVICE\_名称\_哈希**](http
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

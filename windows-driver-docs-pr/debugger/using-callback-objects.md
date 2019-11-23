@@ -23,7 +23,7 @@ ms.locfileid: "72834252"
 # <a name="using-callback-objects"></a>使用回调对象
 
 
-有三种回调 COM，如引擎所使用的接口： [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) ，用于通知[调试器扩展](debugger-extensions.md)和应用程序更改引擎或目标、 [IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks)请求输入以及用于发送输出的[IDebugOutputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks) 。
+有三个回调 COM，如引擎所使用的接口： [IDebugEventCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks) ，用于通知[调试器扩展](debugger-extensions.md)和应用程序更改引擎或目标、 [IDebugInputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebuginputcallbacks)用于请求输入，以及用于发送输出的[IDebugOutputCallbacks](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugoutputcallbacks) 。
 
 向客户端注册回调对象。 最多可以向每个客户端注册这三个回调接口中的每个实例（接口的 Unicode 和 ASCII 版本作为相同的接口）。
 

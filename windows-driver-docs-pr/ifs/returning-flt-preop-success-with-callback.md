@@ -19,9 +19,9 @@ ms.locfileid: "72840995"
 ## <span id="ddk_returning_flt_preop_success_with_callback_if"></span><span id="DDK_RETURNING_FLT_PREOP_SUCCESS_WITH_CALLBACK_IF"></span>
 
 
-如果微筛选器驱动程序的[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)使用\_回调返回 FLT\_PREOP\_SUCCESS\_，则筛选器管理器将在 i/o 过程中调用微筛选器驱动程序的[**postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)直到.
+如果微筛选器驱动程序的[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)使用\_回调返回 FLT\_PREOP\_SUCCESS\_，则筛选器管理器将在 i/o 完成期间调用微筛选器驱动程序的[**postoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)。
 
-**请注意**   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT\_PREOP\_成功\_与\_回调，但微筛选器驱动程序未为操作注册 postoperation 回调例程，系统在选中的生成上断言。
+**请注意**   如果微筛选器驱动程序的 preoperation 回调例程返回 FLT\_PREOP\_成功\_与\_回调，但微筛选器驱动程序未为操作注册 postoperation 回调例程，则系统会在已检查的内部版本中断言。
 
  
 

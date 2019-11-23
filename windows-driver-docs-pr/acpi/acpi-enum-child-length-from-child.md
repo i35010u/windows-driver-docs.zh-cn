@@ -1,6 +1,6 @@
 ---
 title: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏
-description: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏计算可变长度 ACPI_ENUM_CHILD 结构的大小（以字节为单位）。
+description: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏将计算可变长度 ACPI_ENUM_CHILD 结构的大小（以字节为单位）。
 ms.assetid: 62be7cb5-4b71-4b8e-bad5-807623cd812a
 keywords:
 - ACPI_ENUM_CHILD_LENGTH_FROM_CHILD 宏 ACPI 设备
@@ -54,7 +54,7 @@ ACPI\_枚举 *\_子结构的子*结构的大小（以字节为单位）。
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面</td>
+<td>桌面设备</td>
 </tr>
 <tr>
 <td><p>标头</p></td>

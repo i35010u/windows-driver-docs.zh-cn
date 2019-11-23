@@ -3,7 +3,7 @@ title: SIO_LOOPBACK_FAST_PATH 控制代码
 description: SIO_LOOPBACK_FAST_PATH 套接字 i/o 控制代码允许 WSK 应用程序配置 TCP 套接字，以便更快地在环回接口上操作。
 ms.assetid: 5A5AD945-9EFD-4157-AFA4-F9C3995B7C43
 ms.date: 08/08/2017
-keywords: -SIO_LOOPBACK_FAST_PATH 控制从 Windows Vista 开始的代码网络驱动程序
+keywords: -从 Windows Vista 开始 SIO_LOOPBACK_FAST_PATH 控制代码网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 4362a8a503cb4b8cd314c936e46421ee36fb51d6
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -31,7 +31,7 @@ ms.locfileid: "72841913"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -108,7 +108,7 @@ ms.locfileid: "72841913"
 
 有关 WSK IRP 处理的详细信息，请参阅将[irp 与 Winsock 内核函数配合使用](https://docs.microsoft.com/windows-hardware/drivers/network/using-irps-with-winsock-kernel-functions)。
 
-完成 IRP 后，如果请求成功，子系统会将*IRP&gt;IoStatus*设置为**status\_SUCCESS** 。 否则， *Irp&gt;IoStatus*将设置为 "**状态\_无效的\_缓冲区\_大小**或状态，如果调用不成功，则**不\_支持**。
+完成 IRP 后，如果请求成功，子系统会将*IRP&gt;IoStatus*设置为**status\_SUCCESS** 。 否则， *Irp&gt;IoStatus*将设置为 "**状态\_无效的\_缓冲区\_大小**或状态，如果调用不成功，则**不\_支持**。\_
 
 ## <a name="return-value"></a>返回值
 

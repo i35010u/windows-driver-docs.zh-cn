@@ -17,11 +17,11 @@ ms.locfileid: "72844871"
 
 PCI Express （PCIe）虚拟功能（VF）的微型端口驱动程序在 Hyper-v 子分区的来宾操作系统中运行。 因此，VF 微型端口驱动程序无法直接访问硬件资源，如 VF 的 PCIe 配置空间。 只有 PCIe 物理功能（PF）的微型端口驱动程序可以访问 VF 的 PCIe 配置空间。 PF 微型端口驱动程序在 Hyper-v 父分区的管理操作系统中运行，并具有对 VF 资源的特权访问权限。
 
-在管理操作系统中运行的过量驱动程序会发出 OID 的对象标识符（OID）方法请求[\_SRIOV\_读取\_VF\_配置\_空间](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)从 PCIe 配置空间读取数据网络适配器上指定的 VF。
+在管理操作系统中运行的过量驱动程序会发出 OID 的对象标识符（OID）方法请求[\_SRIOV\_读取\_VF\_配置\_空间](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)，以便从网络适配器上指定的 Vf 读取 PCIe 配置空间中的数据。
 
-例如，在管理操作系统中运行的虚拟化堆栈发出 oid 的 OID 方法请求[\_SRIOV\_读取\_vf\_配置\_空间](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)（当 VF 微型端口驱动程序调用[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)从其 VF PCIe 配置空间读取。
+例如，在管理操作系统中运行的虚拟化堆栈发出 oid 的 OID 方法请求\_SRIOV\_在 VF 微型端口驱动程序调用[**NdisMGetBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetbusdata)从其 VF PCIe 配置空间读取时[\_配置\_空间读取\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space) 。
 
-在发出此 OID 方法请求之前，过量驱动程序必须将[**NDIS\_SRIOV**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)的成员设置\_\_通过以下方式\_配置\_:
+在发出此 OID 方法请求之前，过量驱动程序必须将 NDIS\_SRIOV 的成员设置\_通过以下方式[ **\_配置\_参数结构读取\_VF**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters) ：\_
 
 -   **VFId**成员必须设置为要从中读取信息的 VF 的标识符。
 
@@ -33,7 +33,7 @@ PCI Express （PCIe）虚拟功能（VF）的微型端口驱动程序在 Hyper-v
 
 当它处理 Oid\_SRIOV 的 OID 方法请求时[\_读取\_VF\_配置\_空间](https://docs.microsoft.com/windows-hardware/drivers/network/oid-sriov-read-vf-config-space)，PF 微型端口驱动程序必须遵循以下准则：
 
--   微型端口驱动程序必须验证由 NDIS\_SRIOV 的**VFId**成员指定的 VF [ **\_读取\_vf\_配置\_空间\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构，是否有以前的资源分配. 微型端口驱动程序通过 oid 的 oid 方法请求为 VF 分配资源[\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 如果没有为指定的 VF 分配资源，则驱动程序必须使 OID 请求失败。
+-   微型端口驱动程序必须验证由 NDIS\_SRIOV 的**VFId**成员指定的 VF [ **\_读取\_vf\_配置\_空间\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_sriov_read_vf_config_space_parameters)结构是否包含之前已分配的资源。 微型端口驱动程序通过 oid 的 oid 方法请求为 VF 分配资源[\_NIC\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)。 如果没有为指定的 VF 分配资源，则驱动程序必须使 OID 请求失败。
 
 -   微型端口驱动程序必须验证缓冲区（由[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员引用）足够大，可以返回请求的 PCIe 配置空间数据。 如果不是这样，则驱动程序必须使 OID 请求失败。
 -   小型端口驱动程序通常会调用[**NdisMGetVirtualFunctionBusData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismgetvirtualfunctionbusdata)来查询请求的 PCIe 配置空间。 但是，微型端口驱动程序还可以返回该程序已缓存的 VF 配置空间的配置空间数据。

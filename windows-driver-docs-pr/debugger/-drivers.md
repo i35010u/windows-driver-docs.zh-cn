@@ -1,5 +1,5 @@
 ---
-title: “驱动程序”
+title: 驱动程序
 description: 在 Windows XP 和更高版本的 Windows 中，驱动程序扩展已过时。 改为使用 lm 命令。
 ms.assetid: 48b69af3-bf00-43d3-ac1a-e9513ead8647
 keywords:

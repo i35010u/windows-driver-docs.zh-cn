@@ -26,11 +26,11 @@ ms.locfileid: "72844218"
 
 若要将接收筛选器从一个 VPort 移到另一个 VPort，则过量驱动程序会发出 oid 的 oid 集请求， [\_接收\_filter\_move\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)。 [**Ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_clear_parameters)的指针\_\_参数结构移动\_筛选器。
 
-在过量驱动程序发出[OID\_接收\_FILTER\_MOVE\_filter](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)请求之前，它必须\_[ **\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)结构：
+在过量驱动程序发出[OID\_接收\_FILTER\_MOVE\_filter](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-move-filter)请求之前，它必须使用以下方法初始化[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_move_filter_parameters)\_\_参数结构移动：\_
 
 -   驱动程序将**FilterId**成员设置为先前分配的接收筛选器的标识符的标识符。
 
-    **请注意**  过量驱动程序从 oid 的早期 oid 方法请求中获取了筛选器标识符[\_接收\_筛选器\_设置\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)器或 OID\_\_[枚举接收\_筛选器\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)。
+    **请注意**  过量驱动程序从 oid 的早期 oid 方法请求中获取了筛选器标识符[\_接收\_筛选器\_设置\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)器或[OID\_\_枚举\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-enum-filters)筛选器。\_
 
      
 

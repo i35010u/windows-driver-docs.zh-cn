@@ -18,8 +18,8 @@ GPIO framework 扩展（GpioClx）提供了一个灵活的设备驱动程序接�
 
 例如，如果 GPIO 控制器驱动程序支持读取和写入 GPIO i/o 引脚，开发人员可以选择实现以下一对回调函数：
 
-客户端[ *\_ReadGpioPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins)和[*客户端\_WriteGpioPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins)
-[*客户端\_ReadGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)和[*客户端\_WriteGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins_mask) *客户端\_ReadGpioPins*和*客户端\_WriteGpioPins*函数接收银行号码、GPIO pin 编号的数组和要从这些 pin 读取或写入的位值的数据缓冲区。 如果在读或写操作中通常只访问少量的 GPIO pin，则这对回调可能会产生最佳实现。 此实现通常用于其硬件寄存器未进行内存映射的 GPIO 控制器。 但是，如果在读取或写入操作过程中可能会访问多个 GPIO pin，或者如果 GPIO 控制器硬件能够有效地以并行方式访问多个 GPIO pin，则另一对回调函数可能会产生更好的实现。
+[*客户端\_ReadGpioPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins)和[*客户端\_WriteGpioPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins)
+[*客户端\_ReadGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)和[*客户端\_WriteGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins_mask) *客户端\_ReadGpioPins*和*客户端*\_WriteGpioPins 函数接收银行号码、GPIO pin 编号的数组和用于读取或写入到这些 pin 的位值的数据缓冲区。 如果在读或写操作中通常只访问少量的 GPIO pin，则这对回调可能会产生最佳实现。 此实现通常用于其硬件寄存器未进行内存映射的 GPIO 控制器。 但是，如果在读取或写入操作过程中可能会访问多个 GPIO pin，或者如果 GPIO 控制器硬件能够有效地以并行方式访问多个 GPIO pin，则另一对回调函数可能会产生更好的实现。
 
 *客户端\_ReadGpioPinsUsingMask*和*客户端\_WriteGpioPinsUsingMask*回调函数可以在一次调用中读取或写入最多64针的银行。 *客户端\_ReadGpioPinsUsingMask*函数将 GPIO pin 值读入64位掩码。 *客户端\_WriteGpioPinsUsingMask*函数使用 2 64 位掩码。 一个掩码指示要设置的 GPIO pin，另一个掩码指示要清除的 GPIO pin。 此实现通常用于内存映射的 GPIO 控制器。
 

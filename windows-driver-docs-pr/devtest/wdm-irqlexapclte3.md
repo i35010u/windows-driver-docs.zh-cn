@@ -1,6 +1,6 @@
 ---
 title: IrqlExApcLte3 规则（wdm）
-description: IrqlExApcLte3 规则指定该驱动程序只调用 IRQL APC_LEVEL 的以下执行程序支持例程。
+description: IrqlExApcLte3 规则指定驱动程序只调用以下执行程序支持例程，APC_LEVEL。
 ms.assetid: 80668699-dfca-4fb9-8ffe-d20be00542dc
 ms.date: 05/21/2018
 keywords:
@@ -40,11 +40,11 @@ ms.locfileid: "72839932"
 
 |              |     |
 |--------------|-----|
-| 驱动程序型号 | WDM |
+| 驱动程序模型 | WDM |
 
 |                                   |                                                                                                                                                                                                                                     |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：检测到\_冲突（0x20007）的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) ， [ **BUG 检查0XA： IRQL\_没有\_或\_相等**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal)\_ |
+| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突（0x20007）的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) ， [ **BUG 检查0XA： IRQL\_没有\_或\_相等**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal)\_ |
 
 <a name="example"></a>示例
 -------
@@ -125,7 +125,7 @@ ProcessRequest (
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>IrqlExApcLte3</strong>规则。</p>
-使用以下步骤来运行代码分析：
+使用以下步骤来分析你的代码：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>

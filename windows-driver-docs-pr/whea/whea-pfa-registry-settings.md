@@ -33,7 +33,7 @@ WHEA PFA 配置设置位于以下注册表项中：
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WHEA\Policy
 ```
 
-**请注意**  如果**HKEY\_本地\_机\\SYSTEM\\CurrentControlSet\\控件中不存在 PFA 注册表值的默认设置，则 WHEA\\\\** .
+**请注意**  如果**HKEY\_本地\_机\\SYSTEM\\CurrentControlSet\\控件\\WHEA\\策略**中不存在值，则 WHEA 将采用 PFA 注册表值的默认设置。
 
  
 

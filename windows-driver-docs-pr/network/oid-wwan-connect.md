@@ -3,7 +3,7 @@ title: OID_WWAN_CONNECT
 description: OID_WWAN_CONNECT 激活或停用特定的数据包上下文并读取上下文的激活状态。
 ms.assetid: 51be35fe-750b-4c2b-aab3-a9df59711f7d
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_CONNECT 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_CONNECT 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c00e90cf4058f577f9e47a8cd9cd3e53fe94c0db
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -17,7 +17,7 @@ ms.locfileid: "72843870"
 
 OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文，并读取上下文的激活状态。
 
-微型端口驱动程序必须异步处理集和查询请求，最初返回 NDIS\_状态\_指示\_需要原始请求，稍后再发送[**ndis\_状态\_WWAN\_上下文\_状态**](ndis-status-wwan-context-state.md)通知，包含[**NDIS\_WWAN\_上下文\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)结构，该结构指示 MB 设备的数据包数据协议（PDP）上下文状态，而不考虑完成的集或查询请求。
+微型端口驱动程序必须异步处理 set 和 query 请求，最初返回 NDIS\_状态\_指示\_要求原始请求，稍后发送[**ndis\_状态\_wwan\_上下文**](ndis-status-wwan-context-state.md)\_状态 "通知"，其中包含一个 NDIS\_wwan\_上下文状态，其中包含一个[**ndis\_wwan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_context_state)上下文状态。
 
 请求设置 MB 设备的数据包数据协议（PDP）上下文状态的调用方提供[**NDIS\_WWAN\_使用适当的信息将\_上下文\_状态结构设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_context_state)为微型端口驱动程序。
 
@@ -44,7 +44,7 @@ OID\_WWAN\_CONNECT 激活或停用特定的数据包上下文，并读取上下�
 
 由于此版本中仅支持一个激活的上下文，因此激活或停用特定的上下文数量，以设置或撕裂第2层连接。
 
-在设置请求中，MB 服务将 furnishes\_状态数据结构\_中的**ConnectionId**和**ActivationCommand**参数。 它基于**ActivationCommand**参数值*WwanActivationCommandActivate*或 WwanActivationCommandDeactivate 指示微型端口驱动程序激活或停用**ConnectionId**标识的数据包上下文.
+在设置请求中，MB 服务将 furnishes\_状态数据结构\_中的**ConnectionId**和**ActivationCommand**参数。 基于**ActivationCommand**参数值*WwanActivationCommandActivate*或*WwanActivationCommandDeactivate*，它指示微型端口驱动程序激活或停用**ConnectionId**标识的数据包上下文。
 
 -   如果服务或订阅需要激活，微型端口驱动程序应返回错误代码 WWAN\_状态\_服务\_未\_激活。 在激活服务或订阅之前，可能不会发生 PDP 激活。 所有紧急服务都可能受设备和操作员提供的支持的限制。 操作系统可能会调用\_WWAN\_\_服务的 OID，以响应此错误代码。
 

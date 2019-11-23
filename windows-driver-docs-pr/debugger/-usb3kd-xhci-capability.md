@@ -1,6 +1,6 @@
 ---
-title: usb3kd.xhci_capability
-description: Usb3kd. xhci_capability 扩展显示 USB 3.0 主机控制器的功能。
+title: usb3kd xhci_capability
+description: Xhci_capability usb3kd 扩展显示 USB 3.0 主机控制器的功能。
 ms.assetid: 72D3919A-C111-4B16-8A52-B439429DFFCC
 keywords:
 - usb3kd xhci_capability Windows 调试

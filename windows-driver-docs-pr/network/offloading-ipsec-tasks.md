@@ -31,7 +31,7 @@ ms.locfileid: "72834606"
 
 在 NDIS 6.0 和更高版本中支持[IPsec 卸载版本 1](ipsec-offload-version-1.md) 。
 
-本部分包括下列主题：
+本部分包括以下主题：
 
 -   [IPsec 卸载版本1](ipsec-offload-version-1.md)
 -   [IPsec 卸载版本2](ipsec-offload-version-2.md)

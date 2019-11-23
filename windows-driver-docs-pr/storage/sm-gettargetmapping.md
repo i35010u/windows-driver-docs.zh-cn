@@ -86,7 +86,7 @@ SM\_GetTargetMapping 方法检索到的映射总数。 此值将小于或等于 
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

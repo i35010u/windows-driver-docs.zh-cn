@@ -18,14 +18,14 @@ ms.locfileid: "72841851"
 
 支持 NDIS QoS 的适配器的微型端口驱动程序的 INF 文件必须指定 **\*QoS**标准化 INF 关键字。 安装驱动程序后，管理员可以在适配器的 "**高级**" 属性页中更新 **\*QOS**关键字值。 有关高级属性的详细信息，请参阅[指定高级属性页的配置参数](specifying-configuration-parameters-for-the-advanced-properties-page.md)。
 
-**请注意**   在适配器的 "**高级**" 属性页中进行更改后，会自动重新启动微型端口驱动程序。
+**请注意**   中进行更改后的微型端口驱动程序将自动重启**高级**适配器属性页。
 
  
 
 **\*QOS** INF 关键字是一个枚举关键字。 下表描述了 **\*QOS** INF 关键字的可能 INF 条目。 此表中的列描述了用于枚举关键字的以下属性：
 
 <a href="" id="subkeyname"></a>SubkeyName  
-必须在 INF 文件中指定的关键字的名称。 此名称还会显示在网络适配器的**NDI\\参数\\** 键下的注册表中。
+必须在 INF 文件中指定的关键字的名称。 此名称也会出现在注册表 **NDI\\params\\** 关键网络适配器。
 
 <a href="" id="paramdesc"></a>ParamDesc  
 与 SubkeyName 关联的显示文本。
@@ -51,7 +51,7 @@ ms.locfileid: "72841851"
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -89,7 +89,7 @@ ms.locfileid: "72841851"
 
     有关如何注册 QoS 硬件和当前功能的详细信息，请参阅[注册 NDIS QoS 功能](registering-ndis-qos-capabilities.md)。
 
-    **请注意**  微型端口驱动程序必须始终发出[**NDIS\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)， [**NDIS\_状态\_QOS\_远程\_参数**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)如果当前启用了其 NDIS QoS 硬件功能，则\_更改状态指示。 从 Windows Server 2012 开始，这些状态指示分别报告了当前操作和远程 QoS 参数设置。 不管是否安装了 Microsoft DCB 服务器功能，这些指示都允许系统管理员查看 NDIS QoS 和 DCB 设置。 有关详细信息，请参阅[指示 NDIS QoS 参数状态](indicating-ndis-qos-parameter-status.md)。
+    **请注意**  微型端口驱动程序必须始终发出[**NDIS\_状态\_QOS\_操作\_参数\_更改**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-operational-parameters-change)， [**ndis\_状态\_QOS\_远程\_参数\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-qos-remote-parameters-change)在当前启用了其 NDIS QOS 硬件功能的情况下更改状态指示。 从 Windows Server 2012 开始，这些状态指示分别报告了当前操作和远程 QoS 参数设置。 不管是否安装了 Microsoft DCB 服务器功能，这些指示都允许系统管理员查看 NDIS QoS 和 DCB 设置。 有关详细信息，请参阅[指示 NDIS QoS 参数状态](indicating-ndis-qos-parameter-status.md)。
 
      
 

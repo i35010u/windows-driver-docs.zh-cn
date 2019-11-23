@@ -29,7 +29,7 @@ ms.locfileid: "72841224"
 
 -   FSCTL\_请求\_OPLOCK
 
-列表中的前四个 FSCTLs 用于请求旧版 oplock。 最后一个 FSCTL 用于请求 Windows 7 oplock 请求\_OPLOCK\_输入\_标志在请求的**Flags**成员中指定\_请求标志\_oplock\_，作为[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)的*lpInBuffer*参数进行传递。 同样，可以使用[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)从内核模式请求 Windows 7 oplock。 文件系统微筛选器必须使用[**FltAllocateCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecallbackdata)和[**FltPerformAsynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltperformasynchronousio)来请求 Windows 7 oplock。 若要指定所需的四个 Windows 7 oplock 中的一个，\_缓存中的一个或多个标志 OPLOCK\_级别缓存\_读取、OPLOCK\_级别\_缓存\_句柄或 OPLOCK\_\_缓存\_写入是在请求的**RequestedOplockLevel**成员中设置的，\_OPLOCK\_输入\_缓冲结构。 有关详细信息，请参阅[**FSCTL\_REQUEST\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)。
+列表中的前四个 FSCTLs 用于请求旧版 oplock。 最后一个 FSCTL 用于请求 Windows 7 oplock，请求\_OPLOCK\_输入\_标志在请求的**Flags**成员中指定\_请求标志，\_对作为[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)的*lpInBuffer*参数传递\_传入\_缓冲区结构。 同样，可以使用[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)从内核模式请求 Windows 7 oplock。 文件系统微筛选器必须使用[**FltAllocateCallbackData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatecallbackdata)和[**FltPerformAsynchronousIo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltperformasynchronousio)来请求 Windows 7 oplock。 若要指定所需的四个 Windows 7 oplock 中的一个或多个标志 OPLOCK\_级别\_缓存\_"读取"、"执行锁定\_级别\_缓存\_句柄" 或 "OPLOCK\_级别\_缓存"\_在请求的**RequestedOplockLevel**成员中设置\_缓存\_的请求。\_ 有关详细信息，请参阅[**FSCTL\_REQUEST\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)。
 
 当向 oplock 发出请求，并且可授予 oplock 时，文件系统将返回状态\_"挂起" （因此，绝不会为同步 i/o 授予 oplock）。 在 oplock 中断之前，FSCTL IRP 不会完成。 如果无法授予 oplock，则返回相应的错误代码。 最常返回的错误代码是状态\_OPLOCK\_未\_授予，状态\_无效\_参数（及其等效的用户模式模拟）。
 
@@ -67,7 +67,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <ul>
 <li>请求适用于给定的文件流。
 <ul>
-<li>如果目录，则返回 STATUS_INVALID_PARAMETER。</li>
+<li>如果目录 STATUS_INVALID_PARAMETER，则返回。</li>
 </ul></li>
 <li>打开流以进行异步访问。
 <ul>
@@ -95,7 +95,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <ul>
 <li>请求适用于给定的文件流。
 <ul>
-<li>如果目录，则返回 STATUS_INVALID_PARAMETER。</li>
+<li>如果目录 STATUS_INVALID_PARAMETER，则返回。</li>
 </ul></li>
 <li>打开流以进行异步访问。
 <ul>
@@ -116,18 +116,18 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <li><p>无 Oplock：已授予请求。</p></li>
 <li>级别2和/或读取：已授予请求。 可以同时在同一个流上授予多个级别 2/读取 oplock。 多个级别2（但不是读取） oplock 甚至可以存在于同一个句柄。
 <ul>
-<li>如果对已向其授予读取 oplock 的句柄请求读取 oplock，则第一个读取 oplock 的 IRP 将在第二个读取 oplock 被授予之前通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成。</li>
+<li>如果对已向其授予读取 oplock 的句柄请求读取 oplock，则第一个读取 oplock 的 IRP 会在第二次读取 oplock 被授予之前以 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成。</li>
 </ul></li>
-<li><p>级别1、批处理、筛选器、读取句柄、读写、读写句柄： STATUS_OPLOCK_NOT_GRANTED。</p></li>
+<li><p>返回级别1，批处理，筛选器，读取句柄，读写，读写句柄： STATUS_OPLOCK_NOT_GRANTED。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>已阅读</p></td>
+<td align="left"><p>Read</p></td>
 <td align="left"><p>仅当满足以下所有条件时才授予：</p>
 <ul>
 <li>请求适用于给定的文件流。
 <ul>
-<li>如果目录，则返回 STATUS_INVALID_PARAMETER。</li>
+<li>如果目录 STATUS_INVALID_PARAMETER，则返回。</li>
 </ul></li>
 <li>打开流以进行异步访问。
 <ul>
@@ -162,7 +162,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <ul>
 <li>请求适用于给定的文件流。
 <ul>
-<li>如果目录，则返回 STATUS_INVALID_PARAMETER。</li>
+<li>如果目录 STATUS_INVALID_PARAMETER，则返回。</li>
 </ul></li>
 <li>打开流以进行异步访问。
 <ul>
@@ -185,7 +185,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <li>如果现有读取 oplock 与新请求具有相同的 oplock 密钥，则其 IRP 将使用 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成。 这意味着，oplock 将从读取升级到读取句柄。</li>
 <li>与新请求不具有相同 oplock 密钥的任何现有读取 oplock 均保持不变。</li>
 </ul></li>
-<li><p>级别2，级别1，批处理，筛选器，读写，读写-处理：返回 STATUS_OPLOCK_NOT_GRANTED。</p></li>
+<li><p>级别2，级别1，批处理，筛选器，读写，读写-处理： STATUS_OPLOCK_NOT_GRANTED。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -194,7 +194,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <ul>
 <li>请求适用于给定的文件流。
 <ul>
-<li>如果目录，则返回 STATUS_INVALID_PARAMETER。</li>
+<li>如果目录 STATUS_INVALID_PARAMETER，则返回。</li>
 </ul></li>
 <li>打开流以进行异步访问。
 <ul>
@@ -212,11 +212,11 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <p>请注意，如果当前 oplock 状态为：</p>
 <ul>
 <li><p>无 Oplock：已授予请求。</p></li>
-<li>读取或读/写，并且现有 oplock 与请求具有相同的 oplock 密钥：现有 oplock 的 IRP 是通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成的，但会授予请求。
+<li>读取或读/写，并且现有 oplock 与请求具有相同的 oplock 密钥：现有 oplock 的 IRP 已通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成，并授予请求。
 <ul>
 <li>否则，将返回 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>
-<li><p>级别2、级别1、批处理、筛选器、读取句柄、读写句柄： STATUS_OPLOCK_NOT_GRANTED。</p></li>
+<li><p>级别2、级别1、批处理、筛选器、读取句柄、读写句柄：返回 STATUS_OPLOCK_NOT_GRANTED。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -225,7 +225,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <ul>
 <li>请求适用于给定的文件流。
 <ul>
-<li>如果目录，则返回 STATUS_INVALID_PARAMETER。</li>
+<li>如果目录 STATUS_INVALID_PARAMETER，则返回。</li>
 </ul></li>
 <li>打开流以进行异步访问。
 <ul>
@@ -243,7 +243,7 @@ NTFS 文件系统通过文件\_保留\_OPFILTER 创建选项标志为此过程�
 <p>请注意，如果当前 oplock 状态为：</p>
 <ul>
 <li><p>无 Oplock：已授予请求。</p></li>
-<li>读取、读取句柄、读写或读写句柄和现有 oplock 与请求具有相同的 oplock 密钥：现有 oplock 的 IRP 是通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成的，但会授予请求。
+<li>读取、读取句柄、读写或读写句柄和现有 oplock 与请求具有相同的 oplock 密钥：现有 oplock 的 IRP 已通过 STATUS_OPLOCK_SWITCHED_TO_NEW_HANDLE 完成，并授予请求。
 <ul>
 <li>否则，将返回 STATUS_OPLOCK_NOT_GRANTED。</li>
 </ul></li>

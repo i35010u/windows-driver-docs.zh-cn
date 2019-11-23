@@ -3,7 +3,7 @@ title: OID_PNP_CAPABILITIES
 description: OID_PNP_CAPABILITIES OID 请求微型端口驱动程序返回其网络适配器的唤醒功能，或请求中间驱动程序返回中间驱动程序的唤醒功能。
 ms.assetid: f2e3a867-d7d2-4d09-b84b-e8f8610b8535
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PNP_CAPABILITIES 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PNP_CAPABILITIES 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e74bb683c85ca09deecb9190bfd741c459b663
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -96,17 +96,17 @@ typedef struct _NDIS_PM_WAKE_UP_CAPABILITIES {
 
 如果微型端口驱动程序将**NDIS\_状态\_SUCCESS**返回到\_PNP\_功能的 OID 查询成功，ndis 会将微型端口驱动程序视为可识别 PM。 如果微型端口驱动程序返回**NDIS\_状态\_不\_支持**，ndis 会将微型端口驱动程序视为不能识别 PM 的旧版微型端口驱动程序。
 
-当调用[**NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))时，不支持唤醒功能但可以在电源状态转换中保存和还原其网络适配器状态的微型端口驱动程序可以将**NDIS\_属性设置\_no\_暂停\_暂停标志\_** 。 设置此标志可防止 NDIS 在系统转换到低功耗（睡眠）状态之前调用驱动程序的*MiniportHalt*函数。 但是，如果微型端口驱动程序返回**NDIS\_状态\_不\_** 为响应查询 OID 而支持\_PNP\_功能，ndis 将忽略**ndis\_属性，\_** 如果系统进入低功耗状态，\_挂起标志并停止网络适配器。
+在调用[**NdisMSetAttributesEx**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553623(v=vs.85))时，不支持唤醒功能但可以在电源状态转换中保存和还原其网络适配器状态的微型端口驱动程序可以将**NDIS\_属性设置\_\_挂起标志上的\_停止\_** 。 设置此标志可防止 NDIS 在系统转换到低功耗（睡眠）状态之前调用驱动程序的*MiniportHalt*函数。 但是，如果微型端口驱动程序返回**NDIS\_状态\_不\_支持**\_PNP\_功能的查询 OID，ndis 将忽略\_暂停标志\_不\_暂停的**ndis\_属性**，并在系统进入低功耗状态时停止网络适配器。\_
 
 微型端口驱动程序的网络适配器可以支持唤醒事件的任意组合，包括无唤醒事件。 即使其网络适配器无法对唤醒事件发出信号，微型端口驱动程序仍可以支持电源管理。 在这种情况下，除了\_PNP\_功能的 OID 以外，微型端口驱动程序支持的唯一电源管理 Oid 是[oid\_pnp\_查询\_电源](oid-pnp-query-power.md)和[OID\_pnp\_\_电源](oid-pnp-set-power.md)。
 
-如果微型端口驱动程序的网络适配器不支持特定的唤醒事件，微型端口驱动程序应指示[**NDIS\_设备\_POWER\_STATE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)值为**NdisDeviceStateUnspecified**的唤醒事件**NDIS\_PM\_唤醒\_\_功能**结构。
+如果微型端口驱动程序的网络适配器不支持特定的唤醒事件，微型端口驱动程序应指示[**ndis\_设备\_电源\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_device_power_state)值为 NDIS\_PM**中的唤醒**事件 **\_唤醒\_up\_功能**结构。
 
 OID\_PNP\_功能仅指示微型端口驱动程序的网络适配器的唤醒功能;它不启用此类功能。 [OID\_PNP\_启用\_唤醒\_](oid-pnp-enable-wake-up.md)用于启用网络适配器的唤醒功能。
 
 **用于中间驱动程序**
 
-如果基础网络适配器是 PM 可识别的，则中间驱动程序应将**NDIS\_状态**返回到\_PNP\_功能的 OID 查询成功\_。 在**NDIS\_PM\_唤醒\_** 此 OID 返回的\_功能结构，中间驱动程序应为每个唤醒功能指定**NdisDeviceStateUnspecified**的设备电源状态（ **MinMagicPacketWakeUp**或**MinPatternWakeUp**）。 此类响应表示中间驱动程序可感知，但不管理物理设备。
+如果基础网络适配器是 PM 可识别的，则中间驱动程序应将**NDIS\_状态**返回到\_PNP\_功能的 OID 查询成功\_。 在**NDIS\_PM\_唤醒\_** 此 OID 返回的\_功能结构，中间驱动程序应为每个唤醒功能（ **MinMagicPacketWakeUp**或**MinPatternWakeUp**）指定**NdisDeviceStateUnspecified**的设备电源状态。 此类响应表示中间驱动程序可感知，但不管理物理设备。
 
 如果基础网络适配器不能识别 PM，中间驱动程序应将**NDIS\_状态返回\_不\_支持**\_PNP\_功能的 OID 查询。
 

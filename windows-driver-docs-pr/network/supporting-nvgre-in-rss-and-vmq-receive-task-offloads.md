@@ -20,7 +20,7 @@ NDIS 6.30 （Windows Server 2012）[使用通用路由封装（NVGRE）引入网
 
  
 
-如果微型端口驱动程序支持封装包的 RSS 和 VMQ，则必须在\_封装\_数据包\_任务的 NDIS 和**VmqSupported**成员中公布这些功能[ **\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构。 如果微型端口播发了这些功能，则接收到[\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，并成功执行 OID，NIC 必须在播发的封装的数据包类型上执行 RSS 和 VMQ。
+如果微型端口驱动程序支持封装包的 RSS 和 VMQ，则它必须在[ **\_数据包\_任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构的**RssSupported**和**VmqSupported**\_成员中公布这些功能。 如果微型端口播发了这些功能，则接收到[\_TCP\_卸载\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-parameters)OID 请求，并成功执行 OID，NIC 必须在播发的封装的数据包类型上执行 RSS 和 VMQ。
 
 对于能够分析的支持的封装的数据包，NIC 必须在传输（内部） IP 标头的负载和内部 MAC 标头上的 VMQ 的 TCP 或 UDP 标头上执行 RSS。
 

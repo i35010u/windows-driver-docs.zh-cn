@@ -40,13 +40,13 @@ ms.locfileid: "72007574"
 
 为通信和 CDC 控制设备加载 Microsoft 提供的内置驱动程序（Usbser）。
 
-**请注意**@no__t 1If 你尝试安装 Windows 中包含的 USB 设备类驱动程序，则无需下载驱动程序。 它们将自动安装。 如果未自动安装，请与设备制造商联系。 有关 Windows 中包含的 USB 设备类驱动程序的列表，请参阅[windows 附带的 usb 设备类驱动程序](supported-usb-classes.md)。
+**请注意**  如果你尝试安装 Windows 中包含的 USB 设备类驱动程序，则无需下载驱动程序。 它们将自动安装。 如果未自动安装，请与设备制造商联系。 有关 Windows 中包含的 USB 设备类驱动程序的列表，请参阅[windows 附带的 usb 设备类驱动程序](supported-usb-classes.md)。
 
  
 
 **Windows 10**
 
-在 Windows 10 中，已将一个新的 INF Usbser 添加到% Systemroot% \\Inf，它将 Usbser 作为函数设备对象（FDO）加载到设备堆栈中。 如果设备属于通信和 CDC 控制设备类，则会自动加载 Usbser。你无需编写自己的 INF 即可引用该驱动程序。 该驱动程序是基于与[Windows 中包含的其他 USB 设备类驱动程序](supported-usb-classes.md)匹配的兼容 ID。
+在 Windows 10 中，已将一个新的 INF Usbser 添加到% Systemroot%\\Inf，该 Inf 将 Usbser 作为设备堆栈中的函数设备对象（FDO）进行加载。 如果设备属于通信和 CDC 控制设备类，则会自动加载 Usbser。你无需编写自己的 INF 即可引用该驱动程序。 该驱动程序是基于与[Windows 中包含的其他 USB 设备类驱动程序](supported-usb-classes.md)匹配的兼容 ID。
 
 `USB\Class_02`
 
@@ -56,7 +56,7 @@ ms.locfileid: "72007574"
 -   如果设备指定的是类代码02，而不是02以外的子类代码值，则 Usbser 不会自动加载。 Pnp 管理器尝试查找驱动程序。 如果找不到合适的驱动程序，则设备可能未加载驱动程序。 在这种情况下，你可能需要加载自己的驱动程序或编写引用另一个内置驱动程序的 INF。
 -   如果你的设备将类和子类代码指定为02，并且你想要加载另一个驱动程序而不是 Usbser，则必须编写一个 INF 来指定要安装的设备的硬件 ID 和驱动程序。 有关示例，请查看[示例驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=534087)随附的 INF 文件，查找与设备类似的设备。 有关 INF 部分的信息，请参阅[Inf 文件概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)。
 
-**请注意**  Microsoft 建议尽可能使用机箱内驱动程序。 在 Windows 移动版（如 Windows 10 移动版）上，只会加载作为操作系统一部分的驱动程序。 与桌面版不同，不能通过外部驱动程序包加载驱动程序。 使用新的内置 INF，如果在移动设备上检测到 USB 到串行设备，则会自动加载 Usbser。
+**请注意**  Microsoft 鼓励您尽可能使用机箱内驱动程序。 在 Windows 移动版（如 Windows 10 移动版）上，只会加载作为操作系统一部分的驱动程序。 与桌面版不同，不能通过外部驱动程序包加载驱动程序。 使用新的内置 INF，如果在移动设备上检测到 USB 到串行设备，则会自动加载 Usbser。
 
  
 
@@ -87,7 +87,7 @@ AddReg=LowerFilterAddReg
 
 从 Windows 10 开始，Usbser 支持[USB 选择性挂起](usb-selective-suspend.md)。 它允许连接的 USB 到串行设备进入低功耗状态（未使用时），而系统仍处于 S0 状态。 当与设备的通信恢复时，设备可能会退出挂起状态并恢复工作状态。 此功能在默认情况下处于禁用状态，可以通过设置此注册表项下的**IdleUsbSelectiveSuspendPolicy**项来启用和配置：
 
-**HKEY @ no__t-1LOCAL @ no__t-2MACHINE @ no__t-3SYSTEM @ no__t-4CurrentControlSet @ no__t-5Enum @ no__t-6USB @ no__t-7 @ no__t-8hardware id @ no__t-9 @ no__t-10 @ no__t-11instance id @ no__t-12 @ no__t-13Device Parameters**
+**HKEY\_本地\_计算机\\系统\\CurrentControlSet\\枚举\\\\&lt;&gt;\\&lt;&gt;\\**
 
 若要配置 Usbser 的电源管理功能，可以将**IdleUsbSelectiveSuspendPolicy**设置为：
 

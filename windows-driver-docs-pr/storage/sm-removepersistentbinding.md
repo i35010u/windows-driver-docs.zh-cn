@@ -78,7 +78,7 @@ WMI 提供程序可在 Entry 参数中报告的绑定项的数目。
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

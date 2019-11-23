@@ -7,7 +7,7 @@ keywords:
 - SAN 代理驱动程序 WDK，本机地址转换
 - 本机地址转换 WDK San
 - 翻译本机地址 WDK San
-- AF_INET
+- AF_INET 解决 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0720b6679dbc66ecbb2e017a3ed6769359d6cde6

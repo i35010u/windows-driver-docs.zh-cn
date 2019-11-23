@@ -26,11 +26,11 @@ ms.locfileid: "72841933"
 
      
 
--   在**flags**成员中设置相应的 NDIS\_NIC\_交换机\_参数\_*Xxx*\_更改的标志。 仅当在 Ntddndis 中定义了相应的 NDIS\_NIC 时，才能更改[**NDIS\_NIC\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构\_\_*Xxx*\_changed 标志.
+-   在**flags**成员中设置相应的 NDIS\_NIC\_交换机\_参数\_*Xxx*\_更改的标志。 仅当在 Ntddndis 中定义了相应的 NDIS\_NIC\_\_\_\_参数时，才可以更改[**NDIS\_NIC\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的成员。
 
--   [**Ndis\_nic 的成员\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构，该结构对应于 NDIS\_NIC\_switch\_ *\_\_* member，用要更改的 NIC 交换机配置参数进行设置。
+-   [**Ndis\_NIC 的成员\_交换机\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构，该结构对应于在**flags**成员中设置的、nic 交换机配置参数\_*Xxx*\_NIC\_交换机\_\_参数。
 
-    **请注意**  从 Windows Server 2012 开始，只能通过 OID\_NIC 的 oid 集请求来更改\_Nic 的**SWITCHNAME**成员[ **\_开关\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构[\_开关\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)。
+    **注意**  从 Windows Server 2012 开始，只能通过 OID\_[nic\_switch\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)的 Oid 集请求更改[**NDIS\_NIC\_开关\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构的**SwitchName**成员。
 
      
 

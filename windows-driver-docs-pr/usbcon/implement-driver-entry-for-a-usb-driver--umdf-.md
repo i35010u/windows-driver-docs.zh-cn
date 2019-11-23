@@ -67,7 +67,7 @@ UMDF （在本主题中称为框架）基于组件对象模型（COM）。 默�
 
 1.  在 "**新建项目**" 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2.  在中间窗格中，选择 "**用户模式驱动程序，USB （UMDF V2）** "。
-3.  单击**下一步**。
+3.  单击“下一步”。
 4.  输入项目名称，选择 "保存位置"，然后单击 "**创建**"。
 
 以下屏幕截图显示了**USB 用户模式驱动程序**模板的 "**新建项目**" 对话框。
@@ -148,9 +148,9 @@ UMDF （在本主题中称为框架）基于组件对象模型（COM）。 默�
 
 1.  在 Visual Studio 2019 中打开驱动程序项目或解决方案。
 2.  右键单击 "**解决方案资源管理器**中的解决方案，然后选择" **Configuration Manager**"。
-3.  从 " **Configuration Manager**中，选择与生成类型相对应的**活动解决方案配置**（例如，"**调试**"或"**发布**"）和**活动解决方案平台**（例如**Win32**）你感兴趣。
+3.  从 " **Configuration Manager**中，选择**活动解决方案配置**（例如"**调试**"或"**发布**"）以及与你感兴趣的生成类型相对应的**活动解决方案平台**（例如， **Win32**）。
 4.  在整个项目中验证你的设备接口 GUID 是否准确。 
-    - 设备接口 GUID 是在 node.js 中定义的，并且从设备的 `MyUSBDriverUMDFCreateDevice` 中引用。 创建名为 "MyUSBDriver\_UMDF\_" 的项目时，Visual Studio 2019 将定义具有名称 `GUID_DEVINTERFACE_MyUSBDriver_UMDF_` 的设备接口 GUID，但会调用具有错误参数 "GUID_DEVINTERFACE_MyUSBDriverUMDF" 的 `WdfDeviceCreateDeviceInterface`。 将不正确的参数替换为在 Trace .h 中定义的名称，以确保正确生成驱动程序。 
+    - 设备接口 GUID 是在 node.js 中定义的，并且从设备的 `MyUSBDriverUMDFCreateDevice` 中引用。 创建名为 "MyUSBDriver\_UMDF\_" 的项目时，Visual Studio 2019 将定义具有名称 `GUID_DEVINTERFACE_MyUSBDriver_UMDF_` 的设备接口 GUID，但会调用具有错误参数 "GUID_DEVINTERFACE_MyUSBDriverUMDF" `WdfDeviceCreateDeviceInterface`。 将不正确的参数替换为在 Trace .h 中定义的名称，以确保正确生成驱动程序。 
 4.  在 "**生成**" 菜单中，单击 "**生成解决方案**"。
 
 有关详细信息，请参阅[构建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。

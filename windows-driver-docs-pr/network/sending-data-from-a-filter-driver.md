@@ -41,7 +41,7 @@ NDIS 调用[*FilterSendNetBufferListsComplete*](https://docs.microsoft.com/windo
 
 *FilterSendNetBufferListsComplete*执行完成发送操作所需的任何后处理操作。
 
-当 NDIS 调用*FilterSendNetBufferListsComplete*时，筛选器驱动程序会重新获得*NetBufferLists*参数指定的与 NET\_缓冲区关联的所有资源的所有权\_列表结构。 *FilterSendNetBufferListsComplete*可以释放这些资源（例如，通过调用[**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)和[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)函数），或准备它们以便在后续调用**中重用NdisFSendNetBufferLists**。
+当 NDIS 调用*FilterSendNetBufferListsComplete*时，筛选器驱动程序会重新获得*NetBufferLists*参数指定的与 NET\_缓冲区关联的所有资源的所有权\_列表结构。 *FilterSendNetBufferListsComplete*可以释放这些资源（例如，通过调用[**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)和[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)函数），或准备它们以便在对**NdisFSendNetBufferLists**的后续调用中重复使用。
 
 NDIS 始终将筛选器提供的网络数据提交到由筛选器驱动程序确定的顺序，传递给**NdisFSendNetBufferLists**。 但是，在按指定顺序发送数据后，基础驱动程序可以按任意顺序返回缓冲区。
 
@@ -83,7 +83,7 @@ NDIS 调用筛选器驱动程序的[*FilterSendNetBufferLists*](https://docs.mic
 
 不提供*FilterSendNetBufferLists*函数的筛选器驱动程序仍可以启动发送请求。 如果此类驱动程序启动发送请求，则必须提供*FilterSendNetBufferListsComplete*函数，并且它不能在驱动程序堆栈上传递完整事件。
 
-筛选器驱动程序可以通过或筛选过量驱动程序的环回请求。 若要在环回请求上传递，请在*FilterSendNetBufferLists*的*SendFlags*参数中，如果 NDIS set NDIS\_发送\_标志\_检查\_环回的\_\_标志\_在调用**NdisFSendNetBufferLists**时，在*SENDFLAGS*参数中检查\_环回的\_。 NDIS 指示收到的包含发送数据的数据包。
+筛选器驱动程序可以通过或筛选过量驱动程序的环回请求。 若要传递环回请求，如果 NDIS set NDIS\_发送\_标志\_检查*FilterSendNetBufferLists*的*SendFlags*参数中\_环回的\_，则筛选器驱动程序会在调用**NdisFSendNetBufferLists**时，为*SendFlags*参数中\_环回设置 NDIS\_发送\_标志。\_\_ NDIS 指示收到的包含发送数据的数据包。
 
 通常，如果筛选器驱动程序以不能提供标准服务的方式（如环回）修改任何行为，则筛选器驱动程序必须为 NDIS 提供该服务。 例如，修改硬件地址请求的筛选器驱动程序（请参阅[OID\_802\_3\_当前\_地址](https://docs.microsoft.com/windows-hardware/drivers/network/oid-802-3-current-address)）应处理定向到新硬件地址的缓冲区环回。 在这种情况下，NDIS 无法提供它通常提供的环回服务，因为筛选器已更改地址。 此外，如果筛选器驱动程序设置了混杂模式（请参阅[OID\_GEN\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)），则不应将其收到的额外数据传递给过量驱动程序。
 

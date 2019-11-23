@@ -34,7 +34,7 @@ ms.locfileid: "72829335"
 </tr>
 <tr class="odd">
 <td align="left">驱动程序实现-仅限完整图形和呈现</td>
-<td align="left">Mandatory</td>
+<td align="left">强制</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit" data-raw-source="[WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)">WHCK</a>要求和测试</td>
@@ -145,7 +145,7 @@ GPU 上最后完成的防护 ID 值必须始终由驱动程序维护，因为还
 
 如果驱动程序无法执行重置操作，原因是硬件处于无效状态，或硬件无法重置节点，则驱动程序应返回失败状态代码。 如果 GPU 计划程序收到故障状态代码，则它会按照 Windows 8 之前的[TDR 行为](timeout-detection-and-recovery.md)执行适配器范围的重置和重启操作。
 
-即使驱动程序已选择进入 Windows 8 TDR 行为，在某些情况下，GPU 计划程序会请求重置并重新启动整个逻辑适配器。 因此，驱动程序仍必须实现[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)和[*DxgkDdiRestartFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)函数，并且它们的语义与 Windows 8 之前的语义保持不变。 当尝试使用[*DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)重置物理适配器时，会导致逻辑适配器重置，Windows 调试器的 " **！分析**" 命令显示 TDR 恢复上下文的 " **TdrReason** " 值设置为新值**TdrEngineTimeoutPromotedToAdapterReset** = 9。
+即使驱动程序已选择进入 Windows 8 TDR 行为，在某些情况下，GPU 计划程序会请求重置并重新启动整个逻辑适配器。 因此，驱动程序仍必须实现[*DxgkDdiResetFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetfromtimeout)和[*DxgkDdiRestartFromTimeout*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restartfromtimeout)函数，并且它们的语义与 Windows 8 之前的语义保持不变。 当尝试使用[*DxgkDdiResetEngine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_resetengine)重置物理适配器时，会导致逻辑适配器重置，Windows 调试器的 " **！分析**" 命令显示 TDR 恢复上下文的**TdrReason**值设置为新值**TdrEngineTimeoutPromotedToAdapterReset** = 9。
 
 ## <a name="span-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanspan-idhardware_certification_requirementsspanhardware-certification-requirements"></a><span id="Hardware_certification_requirements"></span><span id="hardware_certification_requirements"></span><span id="HARDWARE_CERTIFICATION_REQUIREMENTS"></span>硬件认证要求
 

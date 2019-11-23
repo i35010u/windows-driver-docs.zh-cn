@@ -20,15 +20,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/10/2019
 ms.locfileid: "72258413"
 ---
-# <a name="bug-check-0x93-invalid_kernel_handle"></a>Bug 检查 0x93：@ NO__T-0KERNEL @ NO__T-1HANDLE 无效
+# <a name="bug-check-0x93-invalid_kernel_handle"></a>Bug 检查0x93：内核\_句柄\_无效
 
 
-"无效 @ no__t-0KERNEL @ no__t-1HANDLE bug 检查" 的值为 "0x00000093"。 此 bug 检查表明传递到**NtClose**的句柄无效或受保护。
+无效的\_内核\_句柄 bug 检查的值为0x00000093。 此 bug 检查表明传递到**NtClose**的句柄无效或受保护。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="invalid_kernel_handle-parameters"></a>@ No__t-0KERNEL @ no__t-1HANDLE 参数无效
+## <a name="invalid_kernel_handle-parameters"></a>\_处理参数\_内核无效
 
 |参数 1|参数2|参数3|参数4|错误的原因|
 |--- |--- |--- |--- |--- |
@@ -38,7 +38,7 @@ ms.locfileid: "72258413"
 
 ## <a name="cause"></a>原因
 
-INVALID_KERNEL_HANDLE bug 检查指示某些内核代码（例如，服务器、重定向程序或另一驱动程序）尝试关闭无效句柄或受保护的句柄。
+INVALID_KERNEL_HANDLE bug 检查指示某些内核代码（例如，服务器、重定向程序或另一驱动程序）尝试关闭无效的句柄或受保护的句柄。
 
 如果参数4的值为1，则表示发生了引用无效内核句柄的错误，并且启用了错误的句柄检测。
 

@@ -29,13 +29,13 @@ SAN 服务提供程序可以缓存为本地或远程访问而公开的 RDMA 缓�
 
 ### <a name="caching-rdma-buffers-exposed-for-local-access"></a>缓存为本地访问公开的 RDMA 缓冲区
 
-Windows 套接字交换机代表应用程序调用 SAN 服务提供程序的[**WSPRegisterMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 函数，以便在调用[**WSPRdmaRead**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566304(v=vs.85))扩展时注册用作本地接收 RDMA 缓冲区的所有数据缓冲区函数或本地 RDMA 源以调用[**WSPRdmaWrite**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566306(v=vs.85))扩展函数。 作为此注册过程的一部分，SAN 服务提供程序必须将这些缓冲区锁定到物理内存区域，并将其注册到 SAN NIC。 这两个操作都消耗大量资源。 因此，SAN 服务提供商应使用缓存来减少这些注册的开销。 如果 SAN 服务提供商使用缓存，则为数据传输重复使用缓冲区的应用程序的性能将提高。
+Windows 套接字开关代表应用程序调用 SAN 服务提供程序的[**WSPRegisterMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566311(v=vs.85)) extension 函数，以便在调用[**WSPRdmaWrite**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566306(v=vs.85))扩展函数时，将充当本地接收 rdma 缓冲区的所有数据缓冲区注册到[**WSPRDMAREAD**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566304(v=vs.85))扩展函数或本地 RDMA 源。 作为此注册过程的一部分，SAN 服务提供程序必须将这些缓冲区锁定到物理内存区域，并将其注册到 SAN NIC。 这两个操作都消耗大量资源。 因此，SAN 服务提供商应使用缓存来减少这些注册的开销。 如果 SAN 服务提供商使用缓存，则为数据传输重复使用缓冲区的应用程序的性能将提高。
 
 SAN 服务提供商应缓存并释放为本地访问公开的 RDMA 缓冲区，如以下列表中所述：
 
 1.  当开关调用[**WSPDeregisterMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566279(v=vs.85))扩展函数以释放缓冲区时，san 服务提供程序应将已向 san NIC 注册的缓冲区，并将其锁定到物理内存区域。 SAN 服务提供程序还应将缓冲区添加到已注册的缓冲区的缓存，以防在后续 RDMA 操作中再次使用该缓冲区，并按下一个列表项中所述的方式保护缓冲区。
 
-2.  SAN 服务提供程序基于虚拟地址缓存内存注册。 当 SAN 服务提供程序缓存缓冲区的注册时，SAN 服务提供程序的代理驱动程序必须调用[**MmSecureVirtualMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmsecurevirtualmemory)函数来保护已注册的缓冲区的所有权，以便操作系统在已释放缓冲区（例如，如果应用程序调用**VirtualFree**函数将虚拟地址范围释放回操作系统）。
+2.  SAN 服务提供程序基于虚拟地址缓存内存注册。 当 SAN 服务提供程序缓存缓冲区的注册时，SAN 服务提供程序的代理驱动程序必须调用[**MmSecureVirtualMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmsecurevirtualmemory)函数来保护已注册的缓冲区的所有权，使操作系统在缓冲区发布时通知开关（例如，如果应用程序调用**VirtualFree**函数将虚拟地址范围释放回操作系统）。
 
 3.  当交换机随后调用**WSPRegisterMemory**来注册缓冲区时，SAN 服务提供程序应检查其缓存，以确定是否已注册了缓冲区。 如果 SAN 服务提供程序在其缓存中查找缓冲区，则 SAN 服务提供程序不应执行任何进一步的注册操作。
 
@@ -49,7 +49,7 @@ SAN 服务提供商应缓存并释放为本地访问公开的 RDMA 缓冲区，�
 
 ### <a name="caching-rdma-buffers-exposed-for-remote-access"></a>缓存公开用于远程访问的 RDMA 缓冲区
 
-Windows 套接字交换机调用 SAN 服务提供程序的[**WSPRegisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566313(v=vs.85))扩展函数来注册所有数据缓冲区，这些数据缓冲区充当远程**WSPRdmaWrite**调用的远程 RDMA 目标或远程**rdma 的远程 rdma 源WSPRdmaRead**调用。 也就是说，该开关公开了这些缓冲区以便远程对等方进行访问。 在这些缓冲区中的数据传输完成后，开关会调用 SAN 服务提供程序的[**WSPDeregisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566281(v=vs.85))扩展函数来释放这些缓冲区，以便不再从远程对等节点访问它们。
+Windows 套接交换机调用 SAN 服务提供程序的[**WSPRegisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566313(v=vs.85))扩展函数来注册所有数据缓冲区，这些数据缓冲区充当远程**WSPRdmaWrite**调用的远程 Rdma 目标或远程**WSPRdmaRead**调用的远程 rdma 源。 也就是说，该开关公开了这些缓冲区以便远程对等方进行访问。 在这些缓冲区中的数据传输完成后，开关会调用 SAN 服务提供程序的[**WSPDeregisterRdmaMemory**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff566281(v=vs.85))扩展函数来释放这些缓冲区，以便不再从远程对等节点访问它们。
 
 SAN 服务提供商应缓存为远程访问公开的 RDMA 缓冲区，如以下列表中所述：
 

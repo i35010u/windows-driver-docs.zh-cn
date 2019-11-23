@@ -33,14 +33,14 @@ NDIS 可支持比*当前版本的 ndis*支持更高或更低的 ndis 版本的�
 
 -   对于较早版本的结构（即，版本号低于与驱动程序支持的 NDIS 版本关联的数字的结构）：
     -   驱动程序必须验证标头的**大小**是否正确。**修订**值。 例如，NDIS\_SIZEOF\_Xxx\_修订版本的值\_1 对于 Xxx\_修订版是正确的1，但对于 Xxx\_\_\_，此值太小。
-    -   **标头**的值必须等于或大于 NDIS\_SIZEOF\_XXX\_修订版本\_Nn （其中*Nn*是驱动程序所使用的结构的修订号），驱动程序必须正确地处理结构中的信息适用于该修订版本。
+    -   **标头**值必须等于或大于 NDIS\_SIZEOF\_XXX\_修订版本\_Nn （其中*Nn*是驱动程序所使用的结构的修订号），并且驱动程序必须正确地处理结构中的信息，这是适合于该修订版本的。
 -   对于更高版本的结构（即版本号比驱动程序支持的 NDIS 版本关联的编号更高的结构），驱动程序可以使用结构，就像它是该结构的较旧版本一样。 更高版本的结构始终与较旧的版本兼容。
 
--   驱动程序必须对已注册的 NDIS 版本的驱动程序使用正确的结构版本。 例如，NDIS 6.1 驱动程序必须通过将[**ndis\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构中的成员设置为指示 NDIS\_卸载\_修订版来在[**ndis\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构中报告其卸载功能\_2。 但是，驱动程序不必支持 NDIS\_卸载\_版本\_2 中包含的所有功能。
+-   驱动程序必须对已注册的 NDIS 版本的驱动程序使用正确的结构版本。 例如，NDIS 6.1 驱动程序必须通过将[**ndis\_对象\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_object_header)结构中的成员设置为指示 NDIS\_卸载\_\_，来报告其在[**ndis\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构中卸载功能。 但是，驱动程序不必支持 NDIS\_卸载\_版本\_2 中包含的所有功能。
 
 -   成功处理 OID 集请求的驱动程序必须在从 OID 集请求返回时在[**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中设置**SupportedRevision**成员。 **SupportedRevision**成员向发起方通知驱动程序所支持的修订版本。 例如，微型端口驱动程序可以创建 Xxx\_修订版\_2 结构，提供适用于 Xxx\_修订版\_1 结构的值，并使用零填充结构的其余部分。 小型端口驱动程序会在**SupportedRevision**成员中报告 XXX\_修订版\_1。 在这种情况下，可以支持\_修订版\_2 的协议驱动程序将使用支持微型端口驱动程序的 Xxx\_修订版\_1 信息。
 
--   若要确定基础驱动程序成功处理的信息，发出 OID 请求的过量驱动程序必须在 SupportedRevision 成员中的成员\_中检查\_请求结构中的值，然后再执行 oid 请求返回.
+-   若要确定基础驱动程序已成功处理的信息，发出 OID 请求的过量驱动程序必须在 OID 请求返回后，在 NDIS\_OID\_请求结构中检查**SupportedRevision**成员中的值。
 
 ## <a name="related-topics"></a>相关主题
 

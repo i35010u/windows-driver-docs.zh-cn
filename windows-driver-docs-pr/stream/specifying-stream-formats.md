@@ -43,7 +43,7 @@ typedef struct  _AMMediaType    {
 
 尽管命名约定不同，但内核模式 KSDATARANGE/KSDATAFORMAT 和用户模式 AM 中使用的 Guid\_媒体\_类型结构相同。
 
-**请注意**  ： KSDATAFORMAT 结构的**SubFormat**成员（类似于 AM\_媒体\_类型用户模式结构的**子类型**成员）的低序位四字节应与使用的 FOURCC 值匹配在[**KS\_BITMAPINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)结构的**biCompression**成员中。 这些字节以相反顺序保存描述格式的十六进制 ASCII 字符。
+**请注意**  ： KSDATAFORMAT 结构的**SubFormat**成员（类似于 AM\_媒体\_类型用户模式结构的**子类型**成员）的低序位四个字节应与[**KS\_BITMAPINFOHEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_bitmapinfoheader)结构的**biCompression**成员中使用的 FOURCC 值相匹配。 这些字节以相反顺序保存描述格式的十六进制 ASCII 字符。
 
 例如，以下 GUID 对应于 YVU9 FOURCC 视频格式：
 

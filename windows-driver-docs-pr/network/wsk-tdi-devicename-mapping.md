@@ -4,7 +4,7 @@ description: WSK_TDI_DEVICENAME_MAPPING
 ms.assetid: 7636fa80-3908-4808-8fb8-6227ec6e023b
 ms.date: 07/18/2017
 keywords:
-- WSK_TDI_DEVICENAME_MAPPING 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WSK_TDI_DEVICENAME_MAPPING 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 60fc5c3785c25c0e58b60f504bde2680c0489525
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -30,7 +30,7 @@ WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端控制操作，将�
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -44,7 +44,7 @@ WSK 应用程序使用 WSK\_TDI\_DEVICENAME\_映射客户端控制操作，将�
 </tr>
 <tr class="odd">
 <td><p><em>InputBuffer</em></p></td>
-<td><p>指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info)"><strong>WSK_TDI_MAP_INFO</strong></a>结构的指针，该结构包含地址族、套接字类型和协议到<a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85)" data-raw-source="[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85))">TDI</a>设备名称的组合的映射列表。</p></td>
+<td><p>一个指向<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info" data-raw-source="[&lt;strong&gt;WSK_TDI_MAP_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_tdi_map_info)"><strong>WSK_TDI_MAP_INFO</strong></a>结构的指针，该结构包含地址族、套接字类型和协议到<a href="https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85)" data-raw-source="[TDI](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565091(v=vs.85))">TDI</a>设备名称的组合的映射列表。</p></td>
 </tr>
 <tr class="even">
 <td><p><em>OutputSize</em></p></td>

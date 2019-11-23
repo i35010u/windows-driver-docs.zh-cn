@@ -70,7 +70,7 @@ ms.locfileid: "72841874"
 
 小型端口驱动程序在处理 Oid 的 OID 方法请求时必须遵循这些准则[\_接收\_filter\_集\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)：
 
--   如果**ndis\_接收\_筛选器\_字段\_MAC\_标头\_VLAN**\_在 NDIS\_接收的**Flags**成员中设置\_或\_零标志 @no__t_ [**14_ 筛选器\_字段\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)结构，网络适配器必须仅指示具有匹配的 MAC 地址的接收数据包和未标记的数据包或 VLAN 标识符为零的数据包。\_ 也就是说，网络适配器不能指示具有匹配 MAC 地址和非零 VLAN 标识符的数据包。
+-   如果**ndis\_接收\_筛选器\_字段\_MAC\_标头\_vlan\_未标记\_或\_0**标志是在[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)\_的**Flags**成员\_参数结构中设置的，则该网络适配器必须仅指示具有匹配的 MAC 地址的接收数据包和未标记的数据包或 VLAN 标识符为零的数据包。 也就是说，网络适配器不能指示具有匹配 MAC 地址和非零 VLAN 标识符的数据包。
 
 -   如果**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_未标记\_或\_零**标志未设置，并且没有 OID 集配置的 VLAN 标识符筛选器[\_接收\_筛选器的 OID 请求\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)，微型端口驱动程序必须执行下列操作之一：
 

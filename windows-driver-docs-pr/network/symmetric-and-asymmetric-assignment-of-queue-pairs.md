@@ -18,7 +18,7 @@ ms.locfileid: "72841789"
 
 每个非默认 VPort 可以配置为具有不同的队列对数。 这称为队列对的*非对称分配*。 如果微型端口驱动程序不支持非对称分配，则每个非默认 VPort 将配置为具有相同数量的队列对。 这称为队列对的*对称分配*。
 
-微型端口驱动程序使用[**NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构在[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)期间公布其 VPort 和队列对功能。 该驱动程序通过将 NDIS\_NIC\_交换机\_\_CAP 设置为\_非默认\_\_\_\_\_此结构的**NicSwitchCapabilities**成员中支持的标志。
+微型端口驱动程序使用[**NDIS\_NIC\_交换机\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构在[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)期间公布其 VPort 和队列对功能。 该驱动程序通过将 NDIS\_NIC\_交换机\_\_CAP 设置为在此结构的**NicSwitchCapabilities**成员中\_非默认\_支持的标志，来公布其对队列对的非对称分配的支持。\_\_\_\_
 
 如果微型端口驱动程序支持非对称队列对分配，则虚拟化堆栈会将每个非默认 VPort 配置为具有不同的队列对数。 如果微型端口驱动程序支持对称队列对分配，则虚拟化堆栈会将每个 VPort 配置为具有相同数量的队列对。
 
@@ -26,7 +26,7 @@ ms.locfileid: "72841789"
 
  
 
-队列对配置是在默认的 VPort 创建时指定的，或通过 oid [\_NIC\_交换机\_创建\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport)和[OID\_\_\_VPort\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)。 配置参数在[**NDIS\_NIC\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构（与两个 OID 请求关联）中指定。
+队列对配置是在默认的 VPort 创建时指定的，或通过 oid [\_NIC\_交换机\_CREATE\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-create-vport) and [oid](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)\_\_\_\_ 配置参数在[**NDIS\_NIC\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构（与两个 OID 请求关联）中指定。
 
 例如，假定微型端口驱动程序通过将[**NDIS\_nic 的以下成员\_开关\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)结构，在 nic 交换机上公布 VPorts 和 queue 对的配置：
 

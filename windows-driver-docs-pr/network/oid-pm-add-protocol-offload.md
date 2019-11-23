@@ -1,9 +1,9 @@
 ---
 title: OID_PM_ADD_PROTOCOL_OFFLOAD
-description: 作为一组，NDIS 协议驱动程序使用 OID_PM_ADD_PROTOCOL_OFFLOAD OID 将电源管理的协议卸载添加到网络适配器。
+description: 作为一组，NDIS 协议驱动程序使用 OID_PM_ADD_PROTOCOL_OFFLOAD OID 向网络适配器添加用于电源管理的协议卸载。
 ms.assetid: 418f4ce8-64af-4e1e-877a-4cc606f63747
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PM_ADD_PROTOCOL_OFFLOAD 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PM_ADD_PROTOCOL_OFFLOAD 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 71afaee5046ece17be585c6ba55b434577d85db7
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -26,7 +26,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID\_PM\_将\_协议添加\
 
 若要避免 NDIS 中的争用条件以及绑定到相同微型端口适配器的其他协议驱动程序，在 NDIS 开始将网络适配器设置为低功率状态之后，将无法尝试将其他协议卸载到该网络适配器。 例如，如果 NDIS 协议驱动程序尝试在处理该网络适配器的**NetEventSetPower**事件通知的上下文中卸载协议，则 ndis 将导致请求失败。
 
-在 NDIS 将此 OID 请求发送到基础 NDIS 驱动程序或完成对过量驱动程序的请求之前，它会将[**NDIS\_PM\_\_协议**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)的 ULONG **ProtocolOffloadId**成员设置为唯一值。 协议驱动程序和 NDIS 将此协议卸载标识符与[OID\_PM 一起使用\_删除\_协议\_卸载](oid-pm-remove-protocol-offload.md)OID 请求，以从基础网络适配器中删除协议卸载。
+在 NDIS 将此 OID 请求发送到基础 NDIS 驱动程序或完成对过量驱动程序的请求之前，它会将[**NDIS\_PM\_协议**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)的 ULONG **ProtocolOffloadId**成员设置为唯一值\_卸载结构。 协议驱动程序和 NDIS 将此协议卸载标识符与[OID\_PM 一起使用\_删除\_协议\_卸载](oid-pm-remove-protocol-offload.md)OID 请求，以从基础网络适配器中删除协议卸载。
 
 **请注意**  协议卸载标识符是网络适配器上设置的每个协议卸载的唯一值。 但是，协议卸载标识符在所有网络适配器之间不是全局唯一的。
 
@@ -44,7 +44,7 @@ NDIS 6.20 和更高版本的协议驱动程序使用 OID\_PM\_将\_协议添加\
 <a href="" id="ndis-status-pending"></a>NDIS\_状态\_挂起  
 请求正在等待完成。 请求完成后，NDIS 会将最终状态代码和结果传递给调用方的 OID 请求完成处理程序。
 
-<a href="" id="ndis-status-pm-protocol-offload-list-full"></a>NDIS\_状态\_PM\_协议\_卸载\_完全  
+<a href="" id="ndis-status-pm-protocol-offload-list-full"></a>NDIS\_状态\_PM\_协议\_卸载\_完全\_  
 请求失败，因为协议卸载列表已满，网络适配器无法添加另一个协议卸载。
 
 <a href="" id="ndis-status-resources"></a>NDIS\_状态\_资源  

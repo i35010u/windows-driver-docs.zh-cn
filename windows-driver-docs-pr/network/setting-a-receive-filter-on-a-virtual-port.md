@@ -59,7 +59,7 @@ ms.locfileid: "72841953"
 
      
 
--   必须设置[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)的**FieldParametersArrayOffset**、 **FIELDPARAMETERSARRAYNUMELEMENTS**和**FieldParametersArrayElementSize**成员\_参数结构适当地定义[**NDIS\_接收\_筛选器的数组\_参数结构\_字段**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)。 每个**NDIS\_接收\_筛选器\_字段\_参数**结构在数组中为网络标头中的一个字段设置筛选器测试条件。
+-   必须适当地设置[**ndis\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的**FieldParametersArrayOffset**、 **FieldParametersArrayNumElements**和**FIELDPARAMETERSARRAYELEMENTSIZE**成员，才能定义[**NDIS\_接收\_筛选器\_字段\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)结构的数组。 每个**NDIS\_接收\_筛选器\_字段\_参数**结构在数组中为网络标头中的一个字段设置筛选器测试条件。
 
     对于 SR-IOV 接口，定义了以下字段测试参数：
 
@@ -67,37 +67,37 @@ ms.locfileid: "72841953"
 
     -   数据包中的虚拟 LAN （VLAN）标识符与指定的 VLAN 标识符相等。
 
-成功从 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**NDIS\_接收\_筛选器的指针\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)带有新筛选器标识符的结构。
+成功从 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构中的**InformationBuffer**成员包含指向[**NDIS\_接收\_筛选器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)的指针，\_使用新筛选器标识符的参数结构。
 
 ## <a name="using-the-ndis_receive_filter_field_mac_header_vlan_untagged_or_zero-flag"></a>使用 NDIS\_接收\_筛选器\_字段\_MAC\_标题\_VLAN\_未标记\_或\_零标志
 
 
 [**NDIS\_接收\_FILTER\_字段**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_field_parameters)的**FLAGS**成员\_参数结构指定要为接收筛选器执行的操作。 以下几点适用于**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_未标记\_或\_零**标志：
 
--   如果**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_** 在**Flags**成员中设置\_或\_零标志，网络适配器必须仅指示接收的与以下所有测试标准匹配的数据包：
+-   如果**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_** 在**Flags**成员中设置\_未标记\_或\_零标志，则网络适配器必须仅指示接收的与以下所有测试标准匹配的数据包：
 
     -   具有匹配 MAC 地址的数据包。
 
     -   没有 VLAN 标记或 VLAN 标识符为零的数据包。
 
-    如果**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_未标记\_或\_零**标记，则网络适配器不能指示具有匹配 MAC 地址的数据包和非零 VLAN 标识符。
+    如果**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_** 设置为 "未标记"\_或\_零标志，则网络适配器不能指示具有匹配 MAC 地址和非零 VLAN 标识符的数据包。\_
 
-    **请注意**  如果虚拟化堆栈设置 MAC 地址筛选器，并且 OID\_接收\_筛选器未配置任何 VLAN 标识符筛选器[\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)集请求，则该开关还会设置**NDIS\_接收\_筛选器\_字段\_MAC\_标头\_VLAN\_未标记\_或\_零**标志。
+    **请注意**  如果虚拟化堆栈设置 MAC 地址筛选器，但没有通过[OID\_接收\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)器配置任何 VLAN 标识符筛选器\_设置\_筛选器设置请求，则此开关还会将**NDIS\_接收\_筛选器\_\_MAC\_** \_\_\_\_
 
      
 
--   从 NDIS 6.30 开始，如果**ndis\_接收\_筛选器\_字段\_MAC\_标题\_VLAN\_未标记\_或\_零**标志未设置且未配置 VLAN 标识符筛选器通过[OID\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)方法请求，微型端口驱动程序必须执行下列操作之一：
+-   从 NDIS 6.30 开始，如果**ndis\_接收\_筛选器\_字段\_MAC\_标头\_** 不会设置未标记\_或\_零标志，并且[OID\_接收\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)器未配置任何 VLAN 标识符筛选器\_\_\_筛选器方法请求，微型端口驱动程序必须执行下列操作之一：
 
     -   微型端口驱动程序必须返回[\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)方法请求的失败状态。
 
     -   微型端口驱动程序必须将网络适配器配置为检查和筛选指定的 MAC 地址字段。 如果已接收的数据包中有 VLAN 标记，则网络适配器必须将其从数据包数据中删除。 微型端口驱动程序必须将 VLAN 标记放在[**NDIS\_NET\_缓冲器\_列表\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_net_buffer_list_8021q_info)与数据包的[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构相关联的 8021Q\_INFO。
 
--   如果协议驱动程序使用 OID 设置 MAC 地址筛选器和 VLAN 标识符筛选器[\_接收\_筛选器\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)方法请求，则不会将**NDIS\_接收\_筛选器\_"字段设置\_MAC\_标头\_VLAN\_无标记\_或**在任一筛选器字段中\_零标志。 在这种情况下，微型端口驱动程序应指示与指定的 MAC 地址和 VLAN 标识符相匹配的数据包。 也就是说，微型端口驱动程序不应指示具有具有零 VLAN 标识符或未标记数据包的匹配 MAC 地址的数据包。
+-   如果协议驱动程序使用 OID\_接收\_筛选器设置 MAC 地址筛选器和 VLAN 标识符筛选器[\_设置\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)方法请求，则它不会将**NDIS\_接收\_筛选器\_字段\_MAC\_标头**\_\_\_\_ 在这种情况下，微型端口驱动程序应指示与指定的 MAC 地址和 VLAN 标识符相匹配的数据包。 也就是说，微型端口驱动程序不应指示具有具有零 VLAN 标识符或未标记数据包的匹配 MAC 地址的数据包。
 
 ## <a name="using-the-filter-identifier"></a>使用筛选器标识符
 
 
-NDIS 在[**ndis\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的**FilterId**成员中分配筛选器标识符，并传递 oid 的 OID 方法请求[\_接收\_筛选器\_集\_筛选](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)到基础微型端口驱动程序。 在 VPort 上设置的每个筛选器都有一个用于网络适配器的唯一筛选器标识符。 也就是说，筛选器标识符不会复制到网络适配器管理的不同队列。
+NDIS 在[**ndis\_接收\_筛选器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_filter_parameters)结构的**FilterId**成员中分配筛选器标识符，并将 oid 的 oid 方法请求传递给[\_接收\_筛选器\_将\_筛选器设置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-receive-filter-set-filter)为基础微型端口驱动程序。 在 VPort 上设置的每个筛选器都有一个用于网络适配器的唯一筛选器标识符。 也就是说，筛选器标识符不会复制到网络适配器管理的不同队列。
 
 过量驱动程序必须使用 NDIS 在以后 OID 请求中提供的筛选器标识符来更改筛选器参数或释放筛选器。
 

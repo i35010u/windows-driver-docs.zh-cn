@@ -31,7 +31,7 @@ ms.locfileid: "72842012"
 
 NDIS 处理 OID\_GEN\_在将其传递给微型端口驱动程序之前接收\_缩放\_参数，并根据需要更新微型端口适配器的 \*RSS 标准化关键字。 有关 **\*rss**关键字的详细信息，请参阅[RSS 的标准化 INF 关键字](standardized-inf-keywords-for-rss.md)。
 
-接收 OID 后[\_代\_接收\_比例\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)使用 NDIS\_rss 设置请求\_参数\_，微型端口驱动程序应在初始化后将 NIC 的 RSS 状态设置为 NIC 的初始状态。 因此，如果微型端口驱动程序收到后续 OID\_代\_接收\_缩放\_参数使用 NDIS\_RSS\_参数设置请求\_，所有参数的值都应与微型端口驱动程序收到 OID 后设置的值相同，\_第一次\_接收\_\_缩放。
+接收到[OID 后\_代\_接收\_SCALE\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-scale-parameters)使用 NDIS\_RSS\_参数设置的请求\_参数\_标志\_禁用 rss 标志，则微型端口驱动程序应在初始化后将 NIC 的 RSS 状态设置为 nic 的初始状态。 因此，如果微型端口驱动程序接收到后续 OID\_代\_接收\_SCALE\_参数使用 NDIS\_RSS 的参数设置请求\_的参数\_标志\_禁用已清除\_RSS 标志，则所有参数的值都应与在微型端口适配器接收到 OID\_第一次时设置的值相同\_第一次\_第一次。\_
 
 过量驱动程序可以使用[OID\_GEN\_接收\_哈希](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-receive-hash)OID）在收到的帧上启用和配置哈希计算，而无需启用 RSS。 过量驱动程序还可以查询此 OID 以获取当前的接收哈希设置。
 

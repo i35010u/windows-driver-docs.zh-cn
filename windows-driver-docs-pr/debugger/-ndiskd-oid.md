@@ -52,7 +52,7 @@ Ndiskd
 <a name="remarks"></a>备注
 -------
 
-**！ ndiskd**每次显示系统上所有挂起的 oid 的列表，因此它有助于调试系统挂起或[0x9F bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)情况（驱动程序\_POWER\_状态\_故障）。 例如，假设分析了一个虚构的 0x9F bug 检查，其中显示系统在 IRP 上挂起并等待 NDIS。 在 NDIS 中，将操作系统中的 Irp 转换为 Oid （包括电源转换），因此通过运行 **！ ndiskd** ，可以看到，在此示例中，堆栈底部的设备可能已 Clinging 到[oid\_PNP\_集\_打开](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)并挂起堆栈的其余部分。 NDIS 驱动程序不应挂起 OID 超过一秒，因此，您可以在此之后调查为什么该设备保留 OID 的时间太长而无法尝试解决问题。
+**！ ndiskd**每次显示系统上所有挂起的 oid 的列表，因此它有助于调试系统挂起或[0x9F bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)情况（驱动程序\_POWER\_状态\_故障）。 例如，假设分析了一个虚构的 0x9F bug 检查，其中显示系统在 IRP 上挂起并等待 NDIS。 在 NDIS 中，将操作系统中的 Irp 转换为 Oid （包括电源转换），因此通过运行 **！ ndiskd** ，可以看到，在此示例中，堆栈底部的设备可能已 Clinging 到[oid\_PNP\_设置\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)并挂起堆栈的其余部分。 NDIS 驱动程序不应挂起 OID 超过一秒，因此，您可以在此之后调查为什么该设备保留 OID 的时间太长而无法尝试解决问题。
 
 <a name="examples"></a>示例
 --------

@@ -61,7 +61,7 @@ HBA 及其小型小型驱动程序的功能，提供与永久性绑定相关的�
 <a name="remarks"></a>备注
 -------
 
-SM\_GetBindingSupport 方法返回当前启用的绑定功能，而 SM\_GetBindingCapability 方法指示该端口的绑定功能，而无需引用是否启用特定的绑定。否则为。 此 WMI 方法属于 MS\_SM\_TargetInformationMethods WMI 类。
+SM\_GetBindingSupport 方法返回当前启用的绑定功能，而 SM\_GetBindingCapability 方法指示该端口的绑定功能，而无需引用是否启用特定的绑定。 此 WMI 方法属于 MS\_SM\_TargetInformationMethods WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ SM\_GetBindingSupport 方法返回当前启用的绑定功能，而 SM\_GetBindi
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面设备</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>

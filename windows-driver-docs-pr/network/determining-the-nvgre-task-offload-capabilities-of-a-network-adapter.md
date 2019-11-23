@@ -14,7 +14,7 @@ ms.locfileid: "72834900"
 # <a name="determining-the-nvgre-task-offload-capabilities-of-a-network-adapter"></a>确定网络适配器的 NVGRE 任务卸载功能
 
 
-支持[使用通用路由封装（NVGRE）任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)的微型端口驱动程序使用[**NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构来报告此功能[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数传递到[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)。
+支持[使用通用路由封装（NVGRE）任务卸载的网络虚拟化](network-virtualization-using-generic-routing-encapsulation--nvgre--task-offload.md)的微型端口驱动程序使用其[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数传递到[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的[**NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构来报告此功能。
 
 ## <a name="reporting-nvgre-task-offload-capability"></a>报告 NVGRE 任务卸载功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "72834900"
 -   **修订版**成员必须设置为**NDIS\_卸载\_修订版\_3**。
 -   **大小**成员必须设置为**ndis\_SIZEOF\_ndis\_卸载\_修订版本\_3**。
 
-若要报告其对 NVGRE 任务卸载的支持，微型端口驱动程序将 NDIS\_中的以下成员设置为[**封装\_数据包\_任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构，该结构存储在 EncapsulatedPacketTaskOffloadGre 中。NDIS 驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数传递给[**NDISMSETMINIPORTATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)的[**NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构的成员：
+若要报告其对 NVGRE 任务卸载的支持，微型端口驱动程序在[**ndis\_封装\_数据包\_任务\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_encapsulated_packet_task_offload)结构中设置以下成员，该结构存储**在 EncapsulatedPacketTaskOffloadGre**成员中，这是存储在成员的[**ndis\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构中，该结构存储在微型端口驱动程序的[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)函数传递给[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)：
 
 -   将**MaxHeaderSizeSupported**成员设置为所有这些任务卸载的 NIC 必须支持的最大标头大小（tcp 或 udp 有效负载的最大字节数，即 TCP 或 udp 内部标头的最后一个字节）。 协议驱动程序应不会卸载其组合的封装标头超过此大小的数据包的处理。
 
@@ -39,7 +39,7 @@ ms.locfileid: "72834900"
 
 若要确定微型端口驱动程序是否支持 NVGRE 任务卸载，协议和筛选器驱动程序可以[\_TCP\_卸载\_硬件\_功能](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-hardware-capabilities)OID 请求，后者将返回[**NDIS\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。
 
-**请注意**  若要确定微型端口驱动程序的 NVGRE 功能当前是否已启用，请按照查询和更改 NVGRE 任务中所述，使用[OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)OID 请求[卸载状态](querying-and-changing-nvgre-task-offload-state.md)。
+**请注意**  若要确定微型端口驱动程序的 NVGRE 功能当前是否已启用，请按照[查询和更改 NVGRE 任务卸载状态](querying-and-changing-nvgre-task-offload-state.md)中所述，使用[OID\_TCP\_卸载\_当前\_配置](https://docs.microsoft.com/windows-hardware/drivers/network/oid-tcp-offload-current-config)OID 请求。
 
  
 

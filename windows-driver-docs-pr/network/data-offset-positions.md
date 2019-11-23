@@ -26,7 +26,7 @@ ms.locfileid: "72838164"
 > [!NOTE]
 > *LayerData*参数可能为 NULL，具体取决于正在筛选的层以及用于调用驱动程序的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0) callout 函数的条件。
  
-[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构包含[NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的链接列表。 在每个**NET_BUFFER**结构的[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)结构中，**数据偏移量**成员指向数据包数据中的特定位置。 **数据偏移量**成员指向的位置取决于筛选器引擎调用标注驱动程序的*classifyFn*标注函数的筛选层。 
+[NET_BUFFER_LIST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)结构包含[NET_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer)结构的链接列表。 在每个**NET_BUFFER**结构的[NET_BUFFER_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_data)结构内，**数据偏移量**成员指向数据包数据中的特定位置。 **数据偏移量**成员指向的位置取决于筛选器引擎调用标注驱动程序的*classifyFn*标注函数的筛选层。 
 
 对于每个筛选层，由**数据偏移量**成员指定的数据包数据中的位置定义如下：
 

@@ -29,7 +29,7 @@ ms.locfileid: "72038081"
 
 ## <a name="span-idddk_devcon_stack_toolsspanspan-idddk_devcon_stack_toolsspanparameters"></a><span id="ddk_devcon_stack_tools"></span><span id="DDK_DEVCON_STACK_TOOLS"></span>Parameters
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m： \\ @ no__t**<em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m：\\\\** <em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
 
 **注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问不可用。
 
@@ -67,7 +67,7 @@ ms.locfileid: "72038081"
 </tbody>
 </table>  
 
-<span id="________class______"></span><span id="________CLASS______"></span> **@no__t 3**<em>类</em>指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>类</em>指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
 
 ### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>提出
 
@@ -88,8 +88,8 @@ devcon stack =multifunction
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-[Example 14：显示存储设备的驱动程序堆栈 @ no__t-0
+[示例14：显示存储设备的驱动程序堆栈](devcon-examples.md#ddk_example_14_display_the_driver_stack_for_storage_devices_tools)
 
-[Example 15：查找设备的安装类 @ no__t-0
+[示例15：查找设备的安装程序类](devcon-examples.md#ddk_example_15_find_the_setup_class_of_a_device_tools)
 
-[Example 16：显示远程计算机 @ no__t 上相关设备的堆栈
+[示例16：在远程计算机上显示相关设备的堆栈](devcon-examples.md#ddk_example_16_display_the_stack_for_related_devices_on_a_remote_compu)

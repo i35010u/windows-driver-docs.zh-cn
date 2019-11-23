@@ -4,7 +4,7 @@ description: 支持 NDIS 服务质量（QoS）的微型端口驱动程序会在�
 ms.assetid: 15D2B139-1AEA-4252-8599-0EA4ED2E3733
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 NDIS_STATUS_QOS_OPERATIONAL_PARAMETERS_CHANGE 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e537e9f05b1705aa252503b880e5ec670e1a7e1
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -16,7 +16,7 @@ ms.locfileid: "72843530"
 # <a name="ndis_status_qos_operational_parameters_change"></a>NDIS\_状态\_QOS\_操作\_参数\_更改
 
 
-支持 NDIS 服务质量（QoS）的微型端口驱动程序发出**ndis\_状态\_QoS\_操作\_参数**，在解析其操作 NDIS QoS 参数时\_更改状态指示第一次或以后更改。 微型端口驱动程序用这些操作参数配置网络适配器，以执行 QoS 数据包传输。
+支持 NDIS 服务质量（QoS）的微型端口驱动程序会在以下情况中发出**ndis\_状态\_QoS\_运行\_参数\_更改**状态指示。 微型端口驱动程序用这些操作参数配置网络适配器，以执行 QoS 数据包传输。
 
 当微型端口驱动程序发出此状态指示时，它会将[**ndis\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的**StatusBuffer**成员设置为指向[**ndis\_QOS\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_qos_parameters)结构的指针。 驱动程序用其操作的 NDIS QoS 参数初始化此结构。
 
@@ -29,7 +29,7 @@ ms.locfileid: "72843530"
 
 在以下条件下，微型端口驱动程序会在 **\_QOS\_操作\_参数\_更改**状态指示中发出 NDIS\_状态：
 
--   微型端口驱动程序必须在 **\_QOS\_运行\_参数时发出 NDIS\_状态，\_更改**状态指示，之后它最初解析了其操作 NDIS QOS 参数并配置了网络与它们一起进行适配器。
+-   微型端口驱动程序必须在 **\_QOS\_运行\_参数时发出 NDIS\_状态，\_更改**状态指示，然后在其最初解析其操作 NDIS QOS 参数并配置网络适配器。
 
 -   在此初始状态指示后，微型端口驱动程序必须在运行的 NDIS QoS 参数发生更改时 **\_QOS\_操作\_\_参数发出 NDIS\_状态**。 如果更改了本地或远程 NDIS QoS 参数，就会发生这种情况。
 

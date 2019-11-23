@@ -3,7 +3,7 @@ title: OID_PNP_SET_POWER
 description: OID_PNP_SET_POWER
 ms.assetid: 21232db2-7484-4878-a2f9-5131c18ecf57
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PNP_SET_POWER 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PNP_SET_POWER 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bfd40a8c88918d5fe2c29a84b657dfc03f8ee0
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -29,7 +29,7 @@ OID\_PNP\_集\_POWER request 前面可能有[oid\_PNP\_查询\_POWER](oid-pnp-qu
 
 从 NDIS 6.30 开始，如果满足以下条件，NDIS 将不会在驱动程序堆栈中暂停和重新启动 NDIS 驱动程序：
 
--   基础微型端口驱动程序将 ndis **\_微型端口设置为\_属性\_不\_暂停\_** [**ndis\_端口\_适配器\_注册\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)结构。 驱动程序在其对[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的调用中传递指向此结构的指针。
+-   基础微型端口驱动程序将 ndis **\_微型端口设置为\_属性\_不\_暂停\_** [**ndis\_端口\_适配器\_注册\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_registration_attributes)\_ 驱动程序在其对[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数的调用中传递指向此结构的指针。
 
 -   附加到微型端口驱动程序的所有过量筛选器驱动程序都支持 NDIS 6.30 或更高版本的 NDIS。
 
@@ -71,7 +71,7 @@ OID\_PNP\_集\_POWER request 前面可能有[oid\_PNP\_查询\_POWER](oid-pnp-qu
 
 ### <a name="transitioning-to-the-full-power-state-d0"></a>过渡到完整电源状态（D0）
 
-当微型端口驱动程序处理 OID\_PNP\_集的请求时，必须\_将网络适配器的接收引擎还原到接收引擎在适配器之前所处的相同状态，然后转换为低功耗状态。
+当微型端口驱动程序处理 OID\_PNP\_设置的请求时，必须\_将网络适配器的接收引擎还原到接收引擎在将适配器转换为低功耗状态之前所处的相同状态，才能恢复到该状态。
 
 **请注意**  微型端口驱动程序不得访问或更改与挂起的接收指示关联的任何接收缓冲区。
 
@@ -106,7 +106,7 @@ OID\_PNP\_集\_POWER request 前面可能有[oid\_PNP\_查询\_POWER](oid-pnp-qu
 </tr>
 <tr class="even">
 <td><p><strong>NDIS_STATUS_PENDING</strong></p></td>
-<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>函数（为<em>STATUS</em>参数传递 NDIS_STATUS_SUCCESS）成功执行请求。</p></td>
+<td><p>微型端口驱动程序将异步完成请求。 当微型端口驱动程序完成所有处理后，它必须通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete" data-raw-source="[&lt;strong&gt;NdisMOidRequestComplete&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)"><strong>NdisMOidRequestComplete</strong></a>函数来成功请求，同时传递 NDIS_STATUS_SUCCESS 的<em>状态</em>参数。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>NDIS_STATUS_NOT_ACCEPTED</strong></p></td>

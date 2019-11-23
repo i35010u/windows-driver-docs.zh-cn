@@ -83,7 +83,7 @@ AddService = ,2.
 <a href="" id="0x00000800--spsvcsinst-startservice---windows-vista-and-later-versions-of-windows--"></a>**0x00000800** （SPSVCSINST_STARTSERVICE）（windows Vista 和更高版本的 windows）   
 安装服务后，启动服务。 此标志不能用于启动为设备实现即插即用（PnP）函数驱动程序或筛选器驱动程序的服务。 否则，此标志可用于启动由服务控制管理器（SCM）管理的用户模式或内核模式服务。
 
-<a href="" id="0x00001000--spsvcinst-noclobber-requiredprivileges---windows-7-and-later-versions-of-windows-"></a>**0x00001000** （SPSVCINST_NOCLOBBER_REQUIREDPRIVILEGES）（windows 7 及更高版本的 windows）  
+<a href="" id="0x00001000--spsvcinst-noclobber-requiredprivileges---windows-7-and-later-versions-of-windows-"></a>**0x00001000** （SPSVCINST_NOCLOBBER_REQUIREDPRIVILEGES）（windows 7 和更高版本的 windows）  
 如果系统中已存在该服务，则不会覆盖给定服务的权限。
 
 <a href="" id="service-install-section"></a>*服务-安装-部分*  
@@ -144,11 +144,11 @@ ServiceBinary=path-to-service
 <a href="" id="servicetype-type-code"></a>**ServiceType**=*类型代码*  
 内核模式设备驱动程序的类型代码必须设置为0x00000001 （SERVICE_KERNEL_DRIVER）。
 
-为设备安装的 Microsoft Win32 服务的*类型代码*应设置为**0x00000010** （SERVICE_WIN32_OWN_PROCESS）或**0x00000020** （SERVICE_WIN32_SHARE_PROCESS）。 如果 Win32 服务可与桌面交互，则应将类型代码值与**0x00000100** （SERVICE_INTERACTIVE_PROCESS）组合。
+为设备安装的 Microsoft Win32 服务的*类型代码*应该设置为**0x00000010** （SERVICE_WIN32_OWN_PROCESS）或**0x00000020** （SERVICE_WIN32_SHARE_PROCESS）。 如果 Win32 服务可与桌面交互，则应将类型代码值与**0x00000100** （SERVICE_INTERACTIVE_PROCESS）组合在一起。
 
 最高级别网络驱动程序的*类型代码*（例如，重定向程序或文件系统驱动程序）应设置为**0x00000002** （SERVICE_FILE_SYSTEM_DRIVER）。
 
-SERVICE_xxxx 常量是在*Wdm .h*和*Ntddk*中定义的。
+在*Wdm .h*和*Ntddk*中定义 SERVICE_xxxx 常量。
 
 <a href="" id="starttype-start-code"></a>**StartType**=*开始代码*  
 指定何时启动驱动程序作为以下数值之一（用 decimal 或表示），如下面的列表所示，采用十六进制表示法。
@@ -246,7 +246,7 @@ SERVICE_xxxx 常量是在*Wdm .h*和*Ntddk*中定义的。
 操作系统根据  **StartType**值加载驱动程序，*如下所示*：
 
 -   在系统启动开始阶段，操作系统加载所有**0x0** （SERVICE_BOOT_START）驱动程序。
--   在系统启动阶段，操作系统首先加载 PnP 管理器在注册表中查找设备节点（devnodes）的所有 WDM 和 PnP 驱动程序（） **\\。** SERVICE_DEMAND_START 的 SYSTEM_START 或**0x03** ）。然后，操作系统会加载所有剩余的 SERVICE_SYSTEM_START 驱动程序。
+-   在系统启动阶段，操作系统首先加载 PnP 管理器在注册表中查找设备节点（*devnodes*）的所有 WDM 和 PnP 驱动程序。 **\\枚举**树（无论其 INF 文件是否为 SERVICE_SYSTEM_START 指定**0x01**或 SERVICE_DEMAND_START 的**0x03** ）。然后，操作系统会加载所有剩余的 SERVICE_SYSTEM_START 驱动程序。
 -   在系统自动启动阶段，操作系统会加载所有剩余的 SERVICE_AUTO_START 驱动程序。
 
 有关**依赖关系**的详细信息，请参阅[指定驱动程序加载顺序](specifying-driver-load-order.md)。
@@ -257,17 +257,17 @@ SERVICE_xxxx 常量是在*Wdm .h*和*Ntddk*中定义的。
 
 -   0x1 （CM_SERVICE_NETWORK_BOOT_LOAD）表示从网络启动时应升级的驱动程序。
 
--   0x2 （CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD）表示从 VHD 启动时应升级的驱动程序。
+-   0x2 （CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD）指示从 VHD 启动时应升级的驱动程序。
 
--   0x4 （CM_SERVICE_USB_DISK_BOOT_LOAD）表示从 USB 磁盘启动时应将驱动程序升级到。
+-   0x4 （CM_SERVICE_USB_DISK_BOOT_LOAD）指示从 USB 磁盘启动时应将驱动程序升级到。
 
 -   0x8 （CM_SERVICE_SD_DISK_BOOT_LOAD）表示从 SD 存储启动时应升级的驱动程序。
 
 -   0x10 （CM_SERVICE_USB3_DISK_BOOT_LOAD）表示从 USB 3.0 控制器上的磁盘启动时应升级的驱动程序。
 
--   0x20 （CM_SERVICE_MEASURED_BOOT_LOAD）表示在启用标准启动时启动时应升级驱动程序。
+-   0x20 （CM_SERVICE_MEASURED_BOOT_LOAD）表示当启用标准启动时启动时应升级驱动程序。
 
--   0x40 （CM_SERVICE_VERIFIER_BOOT_LOAD）表示当启用了验证程序启动时，应升级驱动程序。
+-   0x40 （CM_SERVICE_VERIFIER_BOOT_LOAD）表示当启用了验证程序启动时应升级的驱动程序。
 
 -   0x80 （CM_SERVICE_WINPE_BOOT_LOAD）表示在启动到 WinPE 时应升级驱动程序。
 
@@ -295,7 +295,7 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-对于典型的设备/驱动程序 INF 文件，*事件日志-安装部分*仅使用**AddReg**指令为驱动程序设置事件日志记录文件。 **HKR**规范在 "*添加注册表" 部分*指定**HKLM\\System\\CurrentControlSet\\服务\\EventLog\\** <em>EventLogType</em> **\\** <em>事件名称</em>注册表项。 此事件日志记录*添加注册表部分*具有以下常规形式：
+对于典型的设备/驱动程序 INF 文件，*事件日志-安装部分*仅使用**AddReg**指令为驱动程序设置事件日志记录文件。 **HKR**规范在 "*添加注册表" 一节*中指定**HKLM\\System\\CurrentControlSet\\服务\\EventLog\\** <em>EventLogType</em> **\\** <em>事件名称</em>注册表项。 此事件日志记录*添加注册表部分*具有以下常规形式：
 
 ```ini
 [drivername_EventLog_AddReg]
@@ -313,9 +313,9 @@ HKR,,TypesSupported,0x00010001,7
 
 -   名为**TypesSupported**的值项的类型为[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)，由 FLG_ADDREG_TYPE_DWORD 值**0x00010001**指定。
 
-    对于驱动程序，此值应为**7**。 此值等效于 EVENTLOG_SUCCESS、EVENTLOG_ERROR_TYPE、EVENTLOG_WARNING_TYPE 和 EVENTLOG_INFORMATION_TYPE 的按位 OR。
+    对于驱动程序，此值应为**7**。 此值等效于 EVENTLOG_SUCCESS、EVENTLOG_ERROR_TYPE、EVENTLOG_WARNING_TYPE 和 EVENTLOG_INFORMATION_TYPE 的按位 "或"，而不设置 EVENTLOG_AUDIT_*XXX*位。
 
-此外，还可以使用[**DelReg**](inf-delreg-directive.md)指令删除以前安装的*事件日志消息*文件，方法是显式删除现有的**EventMessageFile**和**TypesSupported**值项（如果驱动程序二进制文件被新安装的驱动程序取代。 （另请参阅[**INF DelService 指令**](inf-delservice-directive.md)。）
+如果新安装的驱动程序正在取代驱动程序二进制文件 *，则还可以使用* [**DelReg**](inf-delreg-directive.md)指令删除以前安装的事件日志消息文件，方法是显式删除现有的**EventMessageFile**和**TypesSupported**值项。 （另请参阅[**INF DelService 指令**](inf-delservice-directive.md)。）
 
 尽管[**BitReg**](inf-bitreg-directive.md)指令在 INF-编写器定义的*事件日志安装*-*部分*中是有效的，但它几乎从未使用过，因为设备驱动程序事件日志记录的标准值项不是位掩码。
 

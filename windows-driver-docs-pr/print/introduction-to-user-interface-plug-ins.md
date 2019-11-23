@@ -20,7 +20,7 @@ ms.locfileid: "72839638"
 
 
 
-当你向[Microsoft 通用打印机驱动程序](microsoft-universal-printer-driver.md)（Unidrv）或[microsoft PostScript 打印机驱动程序](microsoft-postscript-printer-driver.md)（Pscript）添加对新打印机设备的支持时，你可以通过修改打印机属性表来自定义驱动程序的用户界面或打印机的文档属性表。
+当你向[Microsoft 通用打印机驱动程序](microsoft-universal-printer-driver.md)（Unidrv）或[microsoft PostScript 打印机驱动程序](microsoft-postscript-printer-driver.md)（Pscript）添加对新打印机设备的支持时，你可以通过修改打印机属性表或打印机的文档属性表来自定义驱动程序的用户界面。
 
 可以通过提供用户模式 DLL 完成此自定义。 此 DLL 称为*用户界面插件*或仅限*UI 插件*。
 

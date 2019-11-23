@@ -26,7 +26,7 @@ Windows Vista 驱动程序可以通过两种不同的方式获得通知：应用
 
 -   驱动程序将使用 WIA\_事件接收对其[**IWiaMiniDrv：:D rvnotifypnpevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvnotifypnpevent)的调用，\_CANCEL\_IO 事件。 建议所有内核模式读取或写入操作都使用重叠 i/o。 只有与此过程一起才能保证*立即*取消。
 
--   从两个回调函数返回了 S @ no__t_0_ FALSE： **IWiaMiniDrvTransferCallback：： GetNextStream**和[**IWiaMiniDrvTransferCallback：： SendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-sendmessage)。
+-   S\_从两个回调函数返回 FALSE： **IWiaMiniDrvTransferCallback：： GetNextStream**和[**IWiaMiniDrvTransferCallback：： SendMessage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-sendmessage)。
 
 当应用程序调用**IWiaTransfer：： Cancel**时，应使用 WIA\_事件将**IWiaMiniDrv：:d rvnotifypnpevent**方法调用到驱动程序中\_取消\_IO。 此外，在取消传输后， [**IWiaMiniDrvTransferCallback：： GetNextStream**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrvtransfercallback-getnextstream)和**IWiaMiniDrvTransferCallback：： SendMessage**回调函数必须始终返回\_FALSE。
 

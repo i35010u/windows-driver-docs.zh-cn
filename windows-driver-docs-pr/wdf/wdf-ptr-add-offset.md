@@ -1,6 +1,6 @@
 ---
 title: WDF_PTR_ADD_OFFSET 宏
-description: WDF_PTR_ADD_OFFSET 宏将偏移值添加到地址，并返回得到的地址。
+description: WDF_PTR_ADD_OFFSET 宏将偏移值添加到地址，并返回生成的地址。
 ms.assetid: 21402be4-ef71-4828-b588-d178d66472e5
 keywords:
 - WDF_PTR_ADD_OFFSET 宏
@@ -16,7 +16,7 @@ ms.locfileid: "72845413"
 # <a name="wdf_ptr_add_offset-macro"></a>WDF_PTR_ADD_OFFSET 宏
 
 
-**WDF_PTR_ADD_OFFSET**宏将偏移值添加到地址，并返回得到的地址。
+**WDF_PTR_ADD_OFFSET**宏将偏移值添加到地址，并返回生成的地址。
 
 <a name="syntax"></a>语法
 ------
@@ -45,7 +45,7 @@ PVOID WDF_PTR_ADD_OFFSET(
 <a name="remarks"></a>备注
 -------
 
-此宏将调用[**WDF_PTR_ADD_OFFSET_TYPE**](wdf-ptr-add-offset-type.md) ，并将 *_type*参数设置为 PVOID。
+此宏调用[**WDF_PTR_ADD_OFFSET_TYPE**](wdf-ptr-add-offset-type.md) ，并将 *_type*参数设置为 PVOID。
 
 宏的定义如下：
 
@@ -54,7 +54,7 @@ PVOID WDF_PTR_ADD_OFFSET(
         WDF_PTR_ADD_OFFSET_TYPE(_ptr, _offset, PVOID)
 ```
 
-下面是 Toaster 示例（Toaster\\func\\\\）的示例。 在此示例中，驱动程序调用**WDF_PTR_ADD_OFFSET**来添加地址的偏移量，以确定要传递给[**WDF_WMI_BUFFER_APPEND_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string)函数的目标缓冲区地址。
+下面是 Toaster 示例（Toaster\\func\\\\）的示例。 在此示例中，驱动程序调用**WDF_PTR_ADD_OFFSET**以添加地址的偏移量，以确定要传递到[**WDF_WMI_BUFFER_APPEND_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string)函数的目标缓冲区地址。
 
 ```cpp
         //

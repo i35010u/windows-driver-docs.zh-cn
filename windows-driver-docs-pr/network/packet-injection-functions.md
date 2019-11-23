@@ -89,7 +89,7 @@ NDIS_TCP_IP_CHECKSUM_PACKET_INFO ChecksumInfo;
 
 如果 NdisPacketTcpChecksum 为**TRUE**，则将卸载 TCP 发送操作 ChecksumInfo。 如果 NdisPacketUdpChecksum 为**TRUE**，则将卸载 UDP 发送操作。 ChecksumInfo
 
-在 Windows Vista Service Pack 1 （SP1）和 Windows Server 2008 中，如果 inMetaValues-&gt;headerIncludeHeaderLength 大于0，则传出数据包是包含 IP 标头的原始发送 reinjection。 若要执行包含 Windows Vista SP1 和 Windows Server 2008 的 IP 标头的原始发送 reinjections，必须使用 inMetaValues&gt;headerIncludeHeaderLength 中的数量撤回克隆的数据包，并复制 inMetaValues&gt;headerIncludeHeader 新的扩展空间。 然后，将 FwpsInjectTransportSendAsync0 用于数据包的网络缓冲区列表，并将 FWPS\_\_传输\_PARAMS0 参数设置为**NULL**。 有关网络缓冲区列表的撤回操作的详细信息，请参阅[撤回和高级操作](retreat-and-advance-operations.md)。
+在 Windows Vista Service Pack 1 （SP1）和 Windows Server 2008 中，如果 inMetaValues-&gt;headerIncludeHeaderLength 大于0，则传出数据包是包含 IP 标头的原始发送 reinjection。 若要执行包含 Windows Vista SP1 和 Windows Server 2008 的 IP 标头的原始发送 reinjections，必须通过 inMetaValues-&gt;headerIncludeHeaderLength 中的数量撤回克隆的数据包，并将 inMetaValues&gt;headerIncludeHeader 复制到新的扩展空间。 然后，将 FwpsInjectTransportSendAsync0 用于数据包的网络缓冲区列表，并将 FWPS\_\_传输\_PARAMS0 参数设置为**NULL**。 有关网络缓冲区列表的撤回操作的详细信息，请参阅[撤回和高级操作](retreat-and-advance-operations.md)。
 
 **注意**  对于原始发送操作，net buffer 列表必须只包含一个网络缓冲区。 如果网络缓冲区列表包含多个网络缓冲区，则必须将网络缓冲区列表转换为一系列网络缓冲区列表，而且序列中的每个都必须包含一个网络缓冲区。 有关网络缓冲区列表管理的详细信息，请参阅[net\_Buffer 体系结构](net-buffer-architecture.md)。
 

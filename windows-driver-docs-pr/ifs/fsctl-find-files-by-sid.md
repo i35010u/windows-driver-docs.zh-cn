@@ -47,7 +47,7 @@ typedef struct {
 } FIND_BY_SID_DATA, *PFIND_BY_SID_DATA;
 ```
 
-**组员**
+**成员**
 
 <a href="" id="restart"></a>**重新启动**  
 指示是否要重新启动搜索。 第一次调用时，此成员应设置为1，以便从根开始搜索。 对于后续调用，应将此成员设置为零，以便搜索将在停止时恢复。
@@ -70,7 +70,7 @@ typedef struct _FIND_BY_SID_OUTPUT {
 } FIND_BY_SID_OUTPUT, *PFIND_BY_SID_OUTPUT;
 ```
 
-**组员**
+**成员**
 
 <a href="" id="nextentryoffset"></a>**NextEntryOffset**  
 要转到下一条记录必须跳过的字节数。 如果值为零，则表示这是最后一条记录。

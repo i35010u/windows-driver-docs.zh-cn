@@ -54,7 +54,7 @@ NTSTATUS WdfObjectAddCustomTypeWithData(
 <a name="return-value"></a>返回值
 ------------
 
-如果操作成功， **WdfObjectAddCustomTypeWithData**将返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
+如果操作成功，则**WdfObjectAddCustomTypeWithData**返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
 
 <table>
 <colgroup>

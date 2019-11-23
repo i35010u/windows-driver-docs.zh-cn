@@ -1,6 +1,6 @@
 ---
-title: 管理 IPsec 卸载版本2中的安全关联
-description: 管理 IPsec 卸载版本2中的安全关联
+title: 管理 IPsec 卸载版本 2 中的安全关联
+description: 管理 IPsec 卸载版本 2 中的安全关联
 ms.assetid: aaa352c1-fb70-4c96-adda-9710347e2442
 keywords:
 - IPsecOV2 WDK TCP/IP 传输，安全关联
@@ -15,7 +15,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72844113"
 ---
-# <a name="managing-security-associations-in-ipsec-offload-version-2"></a>管理 IPsec 卸载版本2中的安全关联
+# <a name="managing-security-associations-in-ipsec-offload-version-2"></a>管理 IPsec 卸载版本 2 中的安全关联
 
 \[IPsec 任务卸载功能已弃用，不应使用。\]
 

@@ -20,7 +20,7 @@ ms.locfileid: "72512078"
 
 -   以便于和自动执行安装。
 
-    如果未对驱动程序进行签名，则 Windows Vista 和更高版本的 Windows 的[即插即用（PnP）驱动程序安装策略](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)要求系统管理员手动授权安装未签名的驱动程序，将额外步骤添加到安装过程。 这一额外步骤可能会对开发人员和测试人员的工作效率产生负面影响。 此要求不能被重写。
+    如果未对驱动程序进行签名，Windows Vista 和更高版本的 Windows 的[即插即用（PnP）驱动程序安装策略](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)要求系统管理员手动授权安装未签名的驱动程序，并在安装过程中添加额外的步骤。 这一额外步骤可能会对开发人员和测试人员的工作效率产生负面影响。 此要求不能被重写。
 
 -   在64位版本的 windows Vista 和更高版本的 Windows 上加载内核模式驱动程序。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72512078"
 
 由于这些原因，Windows Vista 和更高版本的 Windows 的驱动程序应使用通过使用 Microsoft Authenticode 创建的数字证书进行测试签名。 此类数字证书称为*测试证书*，使用测试证书生成的签名被称为*测试签名*。
 
-**请注意**  Windows Vista 和更高版本的 Windows 支持测试签名的驱动程序，仅用于开发和测试目的。 测试签名不得用于生产目的或向客户发布。
+**请注意**  windows Vista 和更高版本的 windows 支持测试签名的驱动程序，仅用于开发和测试目的。 测试签名不得用于生产目的或向客户发布。
 
  
 
@@ -50,7 +50,7 @@ ms.locfileid: "72512078"
 
 有关用于测试签名驱动程序包的最合适工具的信息，请参阅[用于签署驱动程序的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)。
 
-**请注意**  To 更好地了解测试签名驱动程序包中涉及的步骤，请参阅如何对[驱动程序包进行测试签名](how-to-test-sign-a-driver-package.md)。 本主题提供了测试签名过程的摘要，并通过使用 Windows 驱动程序工具包（WDK）中的*toastpkg.inf*示例[驱动程序包](driver-packages.md)，逐步完成了几个测试签名示例。
+**请注意**  要更好地了解测试签名驱动程序包中涉及的步骤，请参阅如何对[驱动程序包进行测试签名](how-to-test-sign-a-driver-package.md)。 本主题提供了测试签名过程的摘要，并通过使用 Windows 驱动程序工具包（WDK）中的*toastpkg.inf*示例[驱动程序包](driver-packages.md)，逐步完成了几个测试签名示例。
 
  
 

@@ -75,7 +75,7 @@ ms.locfileid: "72838525"
 
 你还可以调用[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)和[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) ，以打开特定于设备特定和设备接口的注册表项的句柄。 有关详细信息，请参阅[即插即用注册表例程](plug-and-play-registry-routines.md)。
 
-**请注意**，  调用**ZwCreateKey**、 **ZwOpenKey**、 **IoOpenDeviceRegistryKey**和**IoOpenDeviceInterfaceRegistryKey**，一般访问权限、泛型\_读取和泛型\_写入等效于特定于密钥的访问权限，密钥\_读取和密钥\_，并可用作这些特定于密钥的访问权限的替代项。
+**请注意**，  调用**ZwCreateKey**、 **ZwOpenKey**、 **IoOpenDeviceRegistryKey**和**IoOpenDeviceInterfaceRegistryKey**，一般访问权限、泛型\_读取和通用\_写入）都等效于特定于密钥的访问权限、密钥\_读取和密钥\_写入，并可用作这些特定于密钥的访问权限。
 
  
 

@@ -21,7 +21,7 @@ ms.locfileid: "72840603"
 
 OpenGL 运行时访问注册表，以确定要加载的 OpenGL 可安装客户端驱动程序（ICD）。 若要加载 OpenGL ICD，OpenGL 运行时：
 
--   确定与 OpenGL ICD 关联的名称、版本和标志，方法是调用[**D3DKMTQueryAdapterInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数，并在 D3DKMT 的**Type**成员中设置 KMTQAITYPE\_UMOPENGLINFO 值[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo) *PData*参数指向的 QUERYADAPTERINFO 结构。
+-   确定与 OpenGL ICD 关联的名称、版本和标志，方法是调用[**D3DKMTQueryAdapterInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/nf-d3dkmthk-d3dkmtqueryadapterinfo)函数，并在*QUERYADAPTERINFO*参数指向的[**D3DKMT\_pData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmthk/ns-d3dkmthk-_d3dkmt_queryadapterinfo)结构的**类型**成员中设置 KMTQAITYPE\_UMOPENGLINFO 值。
 
 -   检查**D3DKMTQueryAdapterInfo**返回的 opengl icd 的版本号，以验证 opengl icd 的版本。
 

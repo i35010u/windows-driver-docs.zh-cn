@@ -37,11 +37,11 @@ ms.locfileid: "72842122"
 
 调用转发扩展的[*FilterSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)函数时， *NetBufferList*参数包含指向[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表的指针\_列表结构。 其中每个结构都指定从入口数据路径获取的数据包。 在每个数据包的**网络\_缓冲区\_列表**结构的 OOB 数据中，目标端口的数据包含在[**NDIS\_交换机\_转发\_目标\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构。 扩展通过调用[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)来获取**NDIS\_交换机\_转发\_目标\_数组**结构及其元素。
 
-**请注意**  要提高性能，转发扩展可以调用[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)函数而不是[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations)来获取指向[**NDIS\_开关的指针\_\_数组结构转发\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)。 如果扩展确定它需要数据包的 OOB 数据中的目标端口的其他数组元素，则扩展将执行此项。 有关详细信息，请参阅[将可扩展交换机目标端口数据添加到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
+  **请注意**，为了提高性能，转发扩展可以调用[*GrowNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_grow_net_buffer_list_destinations)函数而不是[*GetNetBufferListDestinations*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_get_net_buffer_list_destinations) ，以获取指向[**NDIS\_交换机\_转发\_目标\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)结构的指针。 如果扩展确定它需要数据包的 OOB 数据中的目标端口的其他数组元素，则扩展将执行此项。 有关详细信息，请参阅[将可扩展交换机目标端口数据添加到数据包](adding-extensible-switch-destination-port-data-to-a-packet.md)。
 
  
 
-NDIS\_中的每个元素都[ **\_转发\_目标\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)数组定义一个目标端口，并将其格式设置为[**NDIS\_交换机\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构。 此结构包含以下成员：
+NDIS\_中的每个元素都[ **\_转发\_目标\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_forwarding_destination_array)数组定义一个目标端口，并将其格式设置为[**NDIS\_交换机\_目标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_port_destination)结构。\_ 此结构包含以下成员：
 
 -   **PortId**成员包含一个值，该值指定可扩展交换机上的目标端口。
 

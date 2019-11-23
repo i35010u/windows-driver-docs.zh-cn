@@ -3,7 +3,7 @@ title: OID_PM_REMOVE_PROTOCOL_OFFLOAD
 description: 作为一个集请求，NDIS 和协议驱动程序使用 OID_PM_REMOVE_PROTOCOL_OFFLOAD OID 从网络适配器中删除电源管理协议卸载。
 ms.assetid: efca3018-28bf-4d91-b698-4b1c9e02f6e3
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_PM_REMOVE_PROTOCOL_OFFLOAD 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_PM_REMOVE_PROTOCOL_OFFLOAD 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3d78133e8d79eb2b42824a3cade7658545068f
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -22,7 +22,7 @@ ms.locfileid: "72844050"
 
 NDIS 和协议驱动程序使用 OID\_PM\_删除\_协议\_卸载 OID，以从基础网络适配器中删除协议卸载。
 
-**数据。设置\_信息。** [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 InformationBuffer 成员必须指向以前添加的协议卸载标识符的**ULONG**值。 当 NDIS 发送以前的 OID\_PM\_添加\_协议时，NDIS 在 Ndis\_PM 的**ProtocolOffloadId**成员中设置此协议卸载标识符[ **\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构[\_](oid-pm-add-protocol-offload.md)将 OID 请求卸载到基础网络适配器。
+**数据。设置\_信息。** [**NDIS\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的 InformationBuffer 成员必须指向以前添加的协议卸载标识符的**ULONG**值。 Ndis 在**ProtocolOffloadId**成员中设置此协议卸载标识符在 NDIS [ **\_PM\_协议\_卸载**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_protocol_offload)结构中，ndis 将之前的\_OID 发送到基础网络适配器\_[添加\_协议\_卸载](oid-pm-add-protocol-offload.md)OID 请求。
 
 ### <a name="remarks-for-miniport-driver-writers"></a>微型端口驱动程序编写器的备注
 

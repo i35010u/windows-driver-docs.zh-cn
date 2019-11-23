@@ -55,14 +55,14 @@ ms.locfileid: "72824337"
 <td><p></em><strong>OutputOrderReversed？</strong></p></td>
 <td><p><strong>TRUE</strong>或<strong>FALSE</strong>，指示是否从最后一页向第一页排序多页文档。</p></td>
 <td><p>可选。 如果未指定，则默认值为<strong>FALSE</strong>。</p>
-<p>不应将 EXTERN_GLOBAL 符号与 <em><strong>OutputOrderReversed？</strong>一起使用。</p></td>
+<p>EXTERN_GLOBAL 符号不应用于 <em><strong>OutputOrderReversed？</strong>。</p></td>
 </tr>
 <tr class="even">
 <td><p></em><strong>ReselectFont</strong></p></td>
 <td><p></p>
-常量列表，指示操作之后 Unidrv 必须重新选择当前字体。 可以为以下内容： AFTER_GRXDATA-在任何 CmdSend<em>Xxxx</em>数据的<a href="raster-data-emission-commands.md" data-raw-source="[raster data emission commands](raster-data-emission-commands.md)">光栅数据发射命令</a>之后。
-AFTER_XMOVE-在任何 x 移动<a href="cursor-commands.md" data-raw-source="[cursor commands](cursor-commands.md)">游标命令</a>之后。
-AFTER_FF-在 CmdFF 命令后。</td>
+常量列表，指示操作之后 Unidrv 必须重新选择当前字体。 可以是以下内容： AFTER_GRXDATA-CmdSend<em>Xxxx</em><a href="raster-data-emission-commands.md" data-raw-source="[raster data emission commands](raster-data-emission-commands.md)">数据的任何数据的</a>
+AFTER_XMOVE 在任何 x 移动<a href="cursor-commands.md" data-raw-source="[cursor commands](cursor-commands.md)">游标命令</a>之后。
+AFTER_FF CmdFF 命令后。</td>
 <td><p>可选。 如果未指定，则 Unidrv 不会重新选择字体。</p></td>
 </tr>
 <tr class="odd">
@@ -89,7 +89,7 @@ AFTER_FF-在 CmdFF 命令后。</td>
 </tr>
 <tr class="odd">
 <td><p></em><strong>TextCaps</strong></p></td>
-<td><p>指示打印机文本功能的常数列表。 可包含 Microosft Windows SDK 文档的<strong>GetDeviceCaps</strong>说明中描述的一个或多个 TC_<em>xxx</em>标志。</p></td>
+<td><p>指示打印机文本功能的常数列表。 可以包含 Microosft Windows SDK 文档的<strong>GetDeviceCaps</strong>说明中描述的一个或多个 TC_<em>xxx</em>标志。</p></td>
 <td><p>可选。 如果未指定，Unidrv 将假定不支持任何文本功能。</p></td>
 </tr>
 </tbody>

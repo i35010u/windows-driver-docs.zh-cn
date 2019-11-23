@@ -17,7 +17,7 @@ ms.locfileid: "71955783"
 
 **头文件：** *ntifs*
 
-**Prefix：FsRtl * Xxx @ no__t-0 @ no__t-1
+**前缀： FsRtl * Xxx***
 
 | 函数或宏 | 描述 |
 | ----------------- | ----------- |
@@ -78,7 +78,7 @@ ms.locfileid: "71955783"
 | **FsRtlFreeExtraCreateParameter** | 释放 ECP 上下文结构的内存。 |
 | **FsRtlFreeExtraCreateParameterList** | 释放额外的 create parameter （ECP）列表结构。 |
 | **FsRtlFreeFileLock** | 取消和释放文件锁结构。 |
-| **FsRtlGetEcpListFromIrp** | 返回一个指针，该指针指向与给定的 IRP_MJ_CREATE 操作关联的额外 create parameter （ECP）上下文结构列表。 |
+| **FsRtlGetEcpListFromIrp** | 返回一个指针，该指针指向与给定 IRP_MJ_CREATE 操作关联的额外创建参数（ECP）上下文结构列表。 |
 | **FsRtlGetFileSize** | 用于获取文件的大小。 |
 | **FsRtlGetNextExtraCreateParameter** | 返回一个指针，该指针指向给定 ECP 列表中的下一个（或第一个）额外 create 参数（ECP）上下文结构。 |
 | **FsRtlGetNextFileLock** | 用于枚举指定文件当前存在的字节范围锁。 |
@@ -133,7 +133,7 @@ ms.locfileid: "71955783"
 | **FsRtlLookupLastLargeMcbEntryAndIndex** | 检索存储在给定地图控制块（MCB）中的最后一个映射条目。 |
 | **FsRtlLookupLastMcbEntry** | 已过时。 |
 | **FsRtlLookupMcbEntry** | 已过时。 |
-| **FsRtlLookupPerFileContext** | 返回指向与指定文件关联的 FSRTL_PER_FILE_CONTEXT 对象的指针。 |
+| **FsRtlLookupPerFileContext** | 返回一个指向与指定文件关联的 FSRTL_PER_FILE_CONTEXT 对象的指针。 |
 | **FsRtlLookupPerFileObjectContext** | 对于 "旧式" 文件系统筛选器驱动程序，此函数检索以前与 file 对象关联的上下文信息。 |
 | **FsRtlLookupPerStreamContext** | 检索文件流的每个流的上下文结构。 |
 | **FsRtlLookupPerStreamContextInternal** | 保留供系统使用。 |
@@ -147,7 +147,7 @@ ms.locfileid: "71955783"
 | **FsRtlNotifyCleanup** | 当释放文件对象的最后一个句柄时，此例程将从指定的通知列表中删除该文件对象的通知结构（如果存在）。 |
 | **FsRtlNotifyCleanupAll** | Temoves 指定通知列表的所有成员。 |
 | **FsRtlNotifyFilterChangeDirectory** | 为 IRP_MN_NOTIFY_CHANGE_DIRECTORY 请求创建通知结构，并将其添加到指定的通知列表。 |
-| **Fsrtlnotifyfilterreportchange 并且** | 完成指定通知列表中挂起的 IRP_MN_NOTIFY_CHANGE_DIRECTORY 请求。 |
+| **Fsrtlnotifyfilterreportchange 并且** | 完成指定通知列表中挂起 IRP_MN_NOTIFY_CHANGE_DIRECTORY 请求。 |
 | **FsRtlNotifyFullChangeDirectory** | 为通知请求创建通知结构，并将其添加到指定的通知列表。 |
 | **FsRtlNotifyFullReportChange** | 完成挂起的通知更改 Irp。 |
 | **FsRtlNotifyInitializeSync** | 分配并初始化通知列表的同步对象。 |
@@ -180,12 +180,12 @@ ms.locfileid: "71955783"
 | **FsRtlRemoveExtraCreateParameter** | 在 ECP 列表中搜索 ECP 上下文结构，如果找到，则将其从 ECP 列表中分离。 |
 | **FsRtlRemoveLargeMcbEntry** | 从地图控制块（MCB）中删除一个或多个映射。 |
 | **FsRtlRemoveMcbEntry** | 已过时。 |
-| **FsRtlRemovePerFileContext** | 返回一个指向与文件关联的**FSRTL_PER_FILE_CONTEXT 对象**的指针。 **FsRtlRemovePerFileContext**将从它所占用的列表中删除**FSRTL_PER_FILE_CONTEXT**对象，以及关联的驱动程序特定的上下文信息。 |
+| **FsRtlRemovePerFileContext** | 返回一个指向与文件关联的**FSRTL_PER_FILE_CONTEXT 对象**的指针。 **FsRtlRemovePerFileContext**将从它所占用的列表中删除**FSRTL_PER_FILE_CONTEXT**对象以及关联的特定于驱动程序的上下文信息。 |
 | **FsRtlRemovePerFileObjectContext** | 对于 "旧式" 文件系统筛选器驱动程序，此函数将从以前与 file 对象关联的每个文件对象上下文的列表中断开每个文件对象的上下文信息结构。 |
 | **FsRtlRemovePerStreamContext** | 从与文件流关联的每个流的上下文列表中删除每个流的上下文结构。 |
 | **FsRtlResetLargeMcb** | 截断地图控制块（MCB）结构，使其包含零个映射对。 它不会收缩映射对数组。 |
 | **FsRtlSetEcpListIntoIrp** | 将额外的 create parameter （ECP）上下文列表附加到 IRP_MJ_CREATE 操作。 |
-| **FsRtlSetupAdvancedHeader** | 由文件系统用来初始化 * * FSRTL_ADVANCED_FCB_HEADER 结构，以便与筛选器上下文一起使用。 |
+| **FsRtlSetupAdvancedHeader** | 由文件系统用来初始化用于筛选上下文的 * * FSRTL_ADVANCED_FCB_HEADER 结构。 |
 | **FsRtlSetupAdvancedHeaderEx** | 由文件系统用来初始化 | 用于流和文件上下文的**FSRTL_ADVANCED_FCB_HEADER**结构。 |
 | **FsRtlSplitLargeMcb** | 将一个洞插入地图控制块（MCB）中的映射。 |
 | **FsRtlSupportsPerFileContexts** | 检查与指定 FILE_OBJECT 关联的文件系统是否支持每个文件上下文信息。 |

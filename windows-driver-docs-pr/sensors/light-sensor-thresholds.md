@@ -28,20 +28,20 @@ ms.locfileid: "72842455"
 
 光源传感器必须*仅在 LUX 值更改时*报告新数据示例。 此建议的报表模型可确保光线传感器不会在完全暗、零（0） LUX 环境中重复报告新数据样本。
 
-如果未提供 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，环境光线传感器驱动程序必须在 PKEY_SensorData_LightLevel_ 时调用[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensordataready)来报告对传感器类扩展的示例读取满足 Lux 阈值。 PKEY_SensorData_LightLevel_Lux 阈值表示为 Lux 中的差异百分比。 例如，如果此阈值设置为 0.25 f，并且向传感器类扩展报告的最后一个样本为 40 lux，则报告的下一个示例应低于 30 lux 或大于 50 lux （+/-25%/40）。
-如果除了 PKEY_SensorData_LightLevel_Lux 以外，还提供了 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，环境光线传感器必须报告对传感器类扩展的示例读取（如果__同时满足这两个__阈值）。 例如，如果将 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 设置为 4.0 Lux，并将 PKEY_SensorData_LightLevel_Lux 设置为0.25 （即25%）如果报告给传感器类扩展的最后一个样本读数值为 4 lux，则最严格的阈值为 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference。 因此，要报告的下一个样本读数应为 0 lux 或 8 lux。
-相对来说，如果将 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 设置为 4.0 Lux，并将 PKEY_SensorData_LightLevel_Lux 设置为0.25 （即25%）但报告给传感器类扩展的最后一个示例读数的值是 40 lux，最严格的阈值是 PKEY_SensorData_LightLevel_Lux。 在这种情况下，要报告的下一个样本读数应为 30 lux 或 50 lux。
-PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 永远不会设置 PKEY_SensorData_LightLevel_Lux。
+如果未提供 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，环境光线传感器驱动程序必须在满足 PKEY_SensorData_LightLevel_Lux 阈值时，通过调用[SensorsCxSensorDataReady](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/nf-sensorscx-sensorscxsensordataready)来报告对传感器类扩展的示例读取。 PKEY_SensorData_LightLevel_Lux 阈值表示为 Lux 中的差异百分比。 例如，如果此阈值设置为 0.25 f，并且向传感器类扩展报告的最后一个样本为 40 lux，则报告的下一个示例应低于 30 lux 或大于 50 lux （+/-25%/40）。
+如果除了 PKEY_SensorData_LightLevel_Lux 之外还提供了 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，环境光线传感器必须报告对传感器类扩展的示例读取（如果__同时满足这两个__阈值）。 例如，如果 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 设置为 4.0 Lux 并且 PKEY_SensorData_LightLevel_Lux 设置为0.25 （即25%）如果报告给传感器类扩展的最后一个样本读数值为 4 lux，则 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 最严格的阈值。 因此，要报告的下一个样本读数应为 0 lux 或 8 lux。
+相对来说，如果 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 设置为 4.0 Lux 并且 PKEY_SensorData_LightLevel_Lux 设置为0.25 （即25%）但报告给传感器类扩展的最后一个样本读数值为 40 lux，则 PKEY_SensorData_LightLevel_Lux 最严格的阈值。 在这种情况下，要报告的下一个样本读数应为 30 lux 或 50 lux。
+永远不会设置 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference，PKEY_SensorData_LightLevel_Lux。
 
 当传感器驱动程序报告 Chromaticity x 和 Chromaticity y 颜色组件时，环境光线传感器驱动程序还必须支持 PKEY_SensorData_LightChromaticityX、PKEY_SensorData_LightChromaticityY 和 PKEY_SensorData_LightTemperature_Kelvins01b.
-环境光线传感器驱动程序报告在满足 PKEY_SensorData_LightChromaticityX、PKEY_SensorData_LightChromaticityY 或 PKEY_SensorData_LightTemperature_Kelvins 阈值时读取到传感器类扩展的示例。
+环境光线传感器驱动程序会在满足 PKEY_SensorData_LightChromaticityX、PKEY_SensorData_LightChromaticityY 或 PKEY_SensorData_LightTemperature_Kelvins 阈值时报告对传感器类扩展的示例。
 
 环境光线传感器驱动程序必须始终在传感器类扩展调用[EvtSensorStart](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorscx/ns-sensorscx-_sensor_controller_config)回调之后报告一个示例读取，而不考虑阈值。 此示例称为初始示例读取。
 
 >**注意**   当 IsValid 数据字段发生更改时，环境光线传感器驱动程序还必须报告对传感器类扩展的示例读取，而不考虑所设置的阈值。
 
-如果将 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 和 PKEY_SensorData_LightLevel_Lux 设置为 0.0 f，则驱动程序必须在每个间隔中向传感器类扩展报告样本读数。
-当 PKEY_SensorData_LightChromaticityX__或__PKEY_SensorData_LightChromaticityY__或__PKEY_SensorData_LightTemperature_Kelvins 设置为 0.0 f 时，驱动程序必须在每个间隔向传感器类扩展报告样本读数。
+当 PKEY_SensorData_LightLevel_Lux_Threshold_AbsoluteDifference 和 PKEY_SensorData_LightLevel_Lux 设置为 0.0 f 时，驱动程序必须在每个间隔中向传感器类扩展报告样本读数。
+如果 PKEY_SensorData_LightChromaticityX__或__PKEY_SensorData_LightChromaticityY__或__PKEY_SensorData_LightTemperature_Kelvins 设置为 0.0 f，则驱动程序必须在每个间隔将示例读取报告给传感器类扩展。
 报告每个间隔的传感器示例称为*传感器示例流式处理*。
 
 >[!NOTE]

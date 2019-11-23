@@ -50,9 +50,9 @@ ms.locfileid: "72843760"
 
 -   单根 I/O 虚拟化 (SR-IOV)。
 
-转发扩展还可以发起封装的 NDIS 状态指示，以更改为 Hyper-v 子分区分配的硬件卸载资源。 从 NDIS 6.30 开始，扩展可以[ **\_交换机\_端口发出封装的 NDIS\_状态\_删除\_VF**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)指示，以删除 VM 网络适配器与 PCI Express （PCIe）虚拟功能之间的绑定（VF）。 VF 由支持[单根 i/o 虚拟化（sr-iov）](single-root-i-o-virtualization--sr-iov-.md)接口的底层物理网络适配器公开和支持。
+转发扩展还可以发起封装的 NDIS 状态指示，以更改为 Hyper-v 子分区分配的硬件卸载资源。 从 NDIS 6.30 开始，扩展可以[ **\_交换机\_端口发出封装的 NDIS\_状态，\_删除\_VF**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-switch-port-remove-vf)指示，以删除 VM 网络适配器与 PCI Express （PCIe）虚拟功能（VF）之间的绑定。 VF 由支持[单根 i/o 虚拟化（sr-iov）](single-root-i-o-virtualization--sr-iov-.md)接口的底层物理网络适配器公开和支持。
 
-如果转发扩展插件为基础物理适配器的硬件卸载资源产生了一个封装的 NDIS 状态指示，则必须将[**NDIS\_交换机的成员设置\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构：
+如果转发扩展插件为基础物理适配器的硬件卸载资源发出了一个封装的 NDIS 状态指示，则必须按以下方式将[**NDIS\_交换机\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的成员设置为：
 
 -   必须将**DestinationPortId**成员设置为**NDIS\_交换机\_默认\_端口\_ID**。
 -   **DestinationNicIndex**成员必须设置为**NDIS\_交换机\_默认\_NIC\_索引**
@@ -67,7 +67,7 @@ ms.locfileid: "72843760"
 
 -   **StatusIndication**成员必须设置为指向[**NDIS\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)结构的指针。 此结构包含封装的 NDIS 状态指示的数据。
 
-如果转发扩展插件为 Hyper-v 子分区的硬件卸载资源提供 NDIS 状态指示，则必须在中设置[**ndis\_交换机的成员\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构以下方式：
+如果转发扩展插件为 Hyper-v 子分区的硬件卸载资源发起了 NDIS 状态指示，则必须按以下方式将[**ndis\_交换机\_NIC\_状态\_指示**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_switch_nic_status_indication)结构的成员设置为：
 
 -   必须将**DestinationPortId**和**DestinationNicIndex**成员设置为分区所使用的网络连接的端口和网络适配器索引的相应值。
 

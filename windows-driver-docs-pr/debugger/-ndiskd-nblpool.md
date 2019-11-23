@@ -1,6 +1,6 @@
 ---
 title: ndiskd.nblpool
-description: Ndiskd. nblpool 扩展显示有关 NET_BUFFER_LIST （NBL）池的信息。 如果运行不带任何参数的此扩展，则 ndiskd 会在系统中显示所有已分配的 NBL 池的列表。
+description: Ndiskd. nblpool 扩展显示 NET_BUFFER_LIST （NBL）池的相关信息。 如果运行不带任何参数的此扩展，则 ndiskd 会在系统中显示所有已分配的 NBL 池的列表。
 ms.assetid: 78F8E45C-D13D-4628-A387-529291B4C50C
 keywords:
 - ndiskd nblpool Windows 调试

@@ -3,7 +3,7 @@ title: OID_SWITCH_PROPERTY_ADD
 description: Hyper-v 可扩展交换机的协议边缘发出 OID_SWITCH_PROPERTY_ADD 的对象标识符（OID）设置请求，以通知有关添加开关策略属性的可扩展交换机扩展。
 ms.assetid: 63A6D2BE-81F4-4D27-B5DF-68466EFF306E
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_ADD 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_PROPERTY_ADD 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a84d1816bacbc067de057c1e4e51e8c04caee65
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -54,7 +54,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）\_S
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -81,7 +81,7 @@ Hyper-v 可扩展交换机的协议边缘发出一个对象标识符（OID）\_S
 <thead>
 <tr class="header">
 <th>状态代码</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>

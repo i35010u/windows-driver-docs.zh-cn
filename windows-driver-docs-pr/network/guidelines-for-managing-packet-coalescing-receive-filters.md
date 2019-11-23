@@ -1,6 +1,6 @@
 ---
-title: 管理包合并接收筛选器的准则
-description: 管理包合并接收筛选器的准则
+title: 有关管理数据包合并接收筛选器的指导
+description: 有关管理数据包合并接收筛选器的指导
 ms.assetid: 7FA44368-1641-478A-927B-020619F39A0D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72842407"
 ---
-# <a name="guidelines-for-managing-packet-coalescing-receive-filters"></a>管理包合并接收筛选器的准则
+# <a name="guidelines-for-managing-packet-coalescing-receive-filters"></a>有关管理数据包合并接收筛选器的指导
 
 
 如果微型端口驱动程序支持 NDIS 数据包合并，则必须遵循这些准则来管理包合并接收筛选器：

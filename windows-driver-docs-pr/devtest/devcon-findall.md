@@ -29,7 +29,7 @@ ms.locfileid: "72038045"
 
 ## <a name="span-idddk_devcon_findall_toolsspanspan-idddk_devcon_findall_toolsspanparameters"></a><span id="ddk_devcon_findall_tools"></span><span id="DDK_DEVCON_FINDALL_TOOLS"></span>Parameters
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m： \\ @ no__t**<em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m：\\\\** <em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
 
 **注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。
 
@@ -67,7 +67,7 @@ ms.locfileid: "72038045"
 </tbody>
 </table>  
 
-<span id="________class______"></span><span id="________CLASS______"></span> **@no__t 3**<em>类</em>指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>类</em>指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
 
@@ -87,4 +87,4 @@ devcon resources @pci*
 
 ### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>实例
 
-[Example 22：在安装程序类中查找（和查找所有）设备 @ no__t-0
+[示例22：在安装程序类中查找（和查找所有）设备](devcon-examples.md#ddk_example_22_find_and_find_all_devices_in_a_setup_class_tools)

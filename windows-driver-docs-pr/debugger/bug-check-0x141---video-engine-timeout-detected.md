@@ -20,21 +20,21 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/08/2019
 ms.locfileid: "72038101"
 ---
-# <a name="bug-check-0x141-video_engine_timeout_detected"></a>Bug 检查 0x141：VIDEO @ NO__T-0ENGINE @ NO__T-1TIMEOUT @ NO__T-2DETECTED
+# <a name="bug-check-0x141-video_engine_timeout_detected"></a>Bug 检查0x141：检测到视频\_引擎\_超时\_
 
 
-视频 @ no__t-0ENGINE @ no__t-1TIMEOUT @ no__t-2DETECTED bug 检查的值为0x00000141。 这表明其中一个显示引擎无法及时响应。
+\_检测到的 bug 检查\_超时，视频\_引擎的值为0x00000141。 这表明其中一个显示引擎无法及时响应。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="video_engine_timeout_detected-parameters"></a>VIDEO @ no__t-0ENGINE @ no__t-1TIMEOUT @ no__t-2DETECTED 参数
+## <a name="video_engine_timeout_detected-parameters"></a>视频\_引擎\_检测到的参数\_超时
 
 
 | 参数 | 描述                                                                 |
 |-----------|-----------------------------------------------------------------------------|
-| 1         | 指向内部 TDR 恢复上下文的可选指针（TDR @ no__t-0RECOVERY @ no__t-1CONTEXT）。 |
+| 1         | 指向内部 TDR 恢复上下文的可选指针（TDR\_恢复\_上下文）。 |
 | 2         | 指向 "负责的设备驱动程序" 模块（例如 "所有者" 标记）的指针。          |
 | 3         | 辅助驱动程序特定的存储桶键。                                |
 | 4         | 可选的内部上下文相关数据。                                   |

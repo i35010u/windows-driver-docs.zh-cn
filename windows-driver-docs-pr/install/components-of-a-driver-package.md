@@ -45,7 +45,7 @@ ms.locfileid: "72007573"
 
 ### <a name="driver-files"></a>驱动程序文件
 
-驱动程序是包的一部分，它为设备提供 i/o 接口。 通常，驱动程序是带有的动态链接库（DLL）。*sys*文件扩展名。 允许使用长文件名，但*启动启动驱动程序*除外。 安装设备后，Windows 会将 *.sys*文件复制到 *% SystemRoot% \\system32 @ no__t-3drivers*目录。
+驱动程序是包的一部分，它为设备提供 i/o 接口。 通常，驱动程序是带有的动态链接库（DLL）。*sys*文件扩展名。 允许使用长文件名，但*启动启动驱动程序*除外。 安装设备后，Windows 会将 *.sys*文件复制到 *% SystemRoot%\\system32\\驱动程序*目录。
 
 支持特定设备所需的软件取决于设备的功能以及它所连接到的总线或端口。 Microsoft 提供了许多常用设备的驱动程序，几乎所有的总线都适用于操作系统。 如果你的设备可以通过其中一个驱动程序提供服务，则可能必须仅写入特定于设备的*微型驱动程序*。 微型驱动程序代表系统提供的驱动程序处理特定于设备的功能。 对于某些类型的设备，甚至不需要微型驱动程序。 例如，通常可以仅通过安装文件来支持调制解调器。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72007573"
 
 -   设备安装信息（INF）文件
 
-    INF 文件包含[系统提供的设备安装组件](system-provided-device-installation-components.md)用于安装设备支持的信息。 Windows 在安装设备时，会将此文件复制到%*SystemRoot*% @ no__t-2*inf*目录。 每个设备都必须有一个 INF 文件。
+    INF 文件包含[系统提供的设备安装组件](system-provided-device-installation-components.md)用于安装设备支持的信息。 Windows 在安装设备时，会将此文件复制到%*SystemRoot*%\\*inf*目录。 每个设备都必须有一个 INF 文件。
 
     有关详细信息，请参阅[提供 INF 文件](supplying-an-inf-file.md)。
 
@@ -67,7 +67,7 @@ ms.locfileid: "72007573"
 
 ### <a name="other-files"></a>其他文件
 
-驱动程序包还可以包含其他文件，如设备安装应用程序、设备图标、设备属性页等。 有关详细信息，请参阅下列主题：
+驱动程序包还可以包含其他文件，如设备安装应用程序、设备图标、设备属性页等。 有关详情，请参阅以下主题：
 
 [提供设备属性页](providing-device-property-pages.md)
 

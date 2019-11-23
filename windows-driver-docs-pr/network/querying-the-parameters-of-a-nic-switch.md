@@ -22,7 +22,7 @@ ms.locfileid: "72844878"
 
  
 
-成功从此 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含指向[**ndis\_\_NIC 的指针\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构. 此结构包含指定开关的参数。
+成功从此 OID 方法请求返回后， [**ndis\_OID\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含一个指向[**NDIS\_NIC 的指针\_SWITCH\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_parameters)结构。 此结构包含指定开关的参数。
 
 NDIS 处理[\_NIC 的 OID\_交换机\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-parameters)请求以获得微型端口驱动程序。 NDIS 从以下源中返回的数据的内部缓存返回信息：
 

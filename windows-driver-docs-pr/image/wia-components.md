@@ -100,7 +100,7 @@ WIA 服务是系统提供的组件，可与图像处理应用程序和 WIA 微�
 
 ### <a name="wia-utility-library"></a>WIA 实用程序库
 
-[WIA 实用工具库](wia-utility-library.md)包括一组调试函数（**wiauDbg * * * Xxx*）、一个常规实用工具 helper 函数的集合以及三个类： **CWiauDbgFn**类、 **CWiauFormatConverter**类和**CWiauPropertyList**类。
+[WIA 实用工具库](wia-utility-library.md)包括一组调试函数（**wiauDbg * ** ）、一个常规实用工具 helper 函数集合和三个类： **CWiauDbgFn**类、 **CWiauFormatConverter**类和**CWiauPropertyList**类。
 
 ### <a name="wia-minidrivers"></a>WIA 微型驱动程序
 

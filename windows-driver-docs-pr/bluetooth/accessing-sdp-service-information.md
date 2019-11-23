@@ -34,9 +34,9 @@ ms.locfileid: "72833878"
 
 -   [**IOCTL\_BTH\_SDP\_服务\_搜索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_service_search)向远程设备发出 sdp 请求，请求处理特定服务类或类的 sdp 记录。
 
--   [**Ioctl\_BTH\_SDP\_服务\_特性\_搜索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_service_attribute_search)将 IOCTL\_BTH\_SDP\_特性\_搜索和 IOCTL\_BTH\_\_14_ 特性\_搜索，并在单个操作中返回可用的 SDP 记录流。
+-   [**IOCTL\_BTH\_SDP\_服务\_特性\_搜索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/bthioctl/ni-bthioctl-ioctl_bth_sdp_service_attribute_search)将 IOCTL\_BTH\_SDP\_特性\_搜索和 IOCTL\_BTH\_SDP\_SERVICE\_特性\_搜索，并在单个操作中返回可用的 SDP 记录流。
 
-配置文件驱动程序可以使用 IOCTL\_BTH\_SDP\_服务\_搜索和 IOCTL\_BTH\_SDP\_属性\_搜索以减少通过蓝牙链接传输的 SDP 流量，并可提取使用少量最大传输单位（Mtu）所需的信息。 如果这两个问题都不太重要，则配置文件驱动程序可以更方便地调用 IOCTL\_BTH\_SDP\_服务\_属性\_搜索。
+配置文件驱动程序可以使用 IOCTL\_BTH\_SDP\_服务\_搜索和 IOCTL\_BTH\_SDP\_特性\_搜索，以减少通过蓝牙链接传输的 SDP 流量，并通过使用少量的最大传输单位（Mtu）来提取必要的信息。 如果这两个问题都不太重要，则配置文件驱动程序可以更方便地调用 IOCTL\_BTH\_SDP\_服务\_属性\_搜索。
 
 在配置文件驱动程序已获取所需服务的*动态*协议/服务多路复用器（PSM）后，它可以使用**BRB\_L2CA\_打开\_通道**BRB 连接到远程服务。
 

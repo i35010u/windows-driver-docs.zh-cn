@@ -27,7 +27,7 @@ ms.locfileid: "72837399"
 
 -   若要打开现有硬件密钥，请使用[**SetupDiOpenDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendevregkey)。 若要创建硬件密钥，请使用[**SetupDiCreateDevRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)。 在任一情况下，都必须将*KeyType*参数设置为 DIREG_DEV。
 
-    **请注意**  必须将*samDesired*参数设置为所需的最小访问权限。 不得将此参数设置为 KEY_ALL_ACCESS。 有关如何为注册表访问指定访问权限的详细信息，请参阅[安全地访问注册表项](accessing-registry-keys-safely.md)。
+    **请注意**  必须将*samDesired*参数设置为所需的最小访问权限。 不能将此参数设置为 KEY_ALL_ACCESS。 有关如何为注册表访问指定访问权限的详细信息，请参阅[安全地访问注册表项](accessing-registry-keys-safely.md)。
 
      
 

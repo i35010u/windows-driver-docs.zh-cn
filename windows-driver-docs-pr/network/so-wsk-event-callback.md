@@ -4,7 +4,7 @@ description: SO_WSK_EVENT_CALLBACK
 ms.assetid: cb697103-20ef-4667-8823-060a68d904c8
 ms.date: 07/18/2017
 keywords:
-- SO_WSK_EVENT_CALLBACK 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 SO_WSK_EVENT_CALLBACK 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 8630f6f4c041dadae0874f22a2f81f54246bc2b7
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -32,7 +32,7 @@ ms.locfileid: "72841879"
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -78,19 +78,19 @@ ms.locfileid: "72841879"
 
 当 WSK 应用程序调用**WskControlSocket**来禁用事件回调函数时，WSK 子系统的行为如下所示：
 
--   如果在 WSK 应用程序调用**WskControlSocket**函数时，对正在禁用的事件回调函数进行正在进行的调用，则会禁用事件回调函数，并且**WSKCONTROLSOCKET**函数返回状态\_成功。 如果 WSK 应用程序指定了 IRP，则 IRP 已成功完成。
+-   如果在 WSK 应用程序调用**WskControlSocket**函数时，对正在禁用的事件回调函数进行正在进行的调用，则会禁用事件回调函数，并且**WSKCONTROLSOCKET**函数返回状态\_SUCCESS。 如果 WSK 应用程序指定了 IRP，则 IRP 已成功完成。
 
--   如果正在对事件回调函数进行正在进行的调用，而当 WSK 应用程序调用**WskControlSocket**函数，并且 WSK 应用程序指定了 IRP，则**WskControlSocket**函数将返回状态 @no__t_2未. 在对事件回调函数的所有正在进行的调用都返回后，WSK 子系统将禁用事件回调函数并完成 IRP。
+-   如果正在对事件回调函数进行正在进行的调用，而当 WSK 应用程序调用**WskControlSocket**函数而 WSK 应用程序指定了 IRP 时， **WskControlSocket**函数将返回状态\_"挂起"。 在对事件回调函数的所有正在进行的调用都返回后，WSK 子系统将禁用事件回调函数并完成 IRP。
 
--   如果在 WSK 应用程序调用**WskControlSocket**函数但 WSK 应用程序未指定 IRP 时要禁用事件回调函数的正在进行的调用，则**WSKCONTROLSOCKET**函数返回状态\_事件\_挂起。 在对事件回调函数进行的所有调用都返回后，WSK 子系统将禁用事件回调函数。
+-   如果正在对事件回调函数进行正在进行的调用，而当 WSK 应用程序调用**WskControlSocket**函数但 WSK 应用程序未指定 IRP 时， **WskControlSocket**函数将返回状态\_事件\_"挂起"。 在对事件回调函数进行的所有调用都返回后，WSK 子系统将禁用事件回调函数。
 
-启用或禁用任何标准 WSK 事件回调函数时，WSK 应用程序会将 WSK\_事件的**NpiId**成员设置为指向 WSK 网络编程的指针[ **\_回调\_控制**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)结构[Interface （NPI）](https://docs.microsoft.com/windows-hardware/drivers/network/network-programming-interface) identifier、NPI\_WSK\_interface\_ID。
+启用或禁用任何标准 WSK 事件回调函数时，WSK 应用程序会将[**WSK\_\_\_事件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_event_callback_control)的**NpiId**成员设置为指向 WSK[网络编程接口（NPI）](https://docs.microsoft.com/windows-hardware/drivers/network/network-programming-interface)标识符的指针，NPI\_WSK\_Interface\_ID。
 
-启用或禁用扩展接口的任何回调函数时，WSK 应用程序会将 WSK\_\_\_事件的**NpiId**成员设置为指向该扩展的 NPI 标识符的指针交互.
+启用或禁用扩展接口的任何回调函数时，WSK 应用程序会将 WSK\_\_\_事件的**NpiId**成员设置为指向该扩展接口的 NPI 标识符的指针。
 
-启用事件回调函数时，WSK 应用程序可以同时启用对特定[类别](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)的 WSK 套接字有效的事件回调函数的任意组合。 WSK 应用程序可通过将 WSK\_事件\_回调\_控制结构的**EventMask**成员设置为所有事件回调函数的按位 "或"，来同时启用这些组合。正在启用。
+启用事件回调函数时，WSK 应用程序可以同时启用对特定[类别](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)的 WSK 套接字有效的事件回调函数的任意组合。 WSK 应用程序通过将 WSK\_事件\_回调\_控制结构的**EventMask**成员设置为所有正在启用的事件回调函数的按位 "或"，来同时启用这些组合。
 
-禁用事件回调函数时，WSK 应用程序必须独立禁用每个事件回调函数。 WSK 应用程序通过将 WSK\_事件\_回调\_控制结构的**EventMask**成员设置为事件回调函数的按位 "或" （作为已禁用并且 WSK\_事件\_禁用标志。
+禁用事件回调函数时，WSK 应用程序必须独立禁用每个事件回调函数。 WSK 应用程序通过将 WSK\_事件\_回调\_控制结构的**EventMask**成员设置为要禁用的事件回调函数的按位 "或" （\_禁用标志）\_，来独立禁用事件回调函数。
 
 下表显示了侦听套接字的有效事件标志。
 
@@ -169,7 +169,7 @@ ms.locfileid: "72841879"
 
 在侦听套接字接受的面向连接的套接字上，侦听套接字可以自动启用事件回调函数。 WSK 应用程序通过在侦听套接字上启用面向连接的套接字事件回调函数，自动启用这些回调函数。 仅当侦听套接字的[*WskAcceptEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept_event)事件回调函数接受套接字时，才会在已接受的面向连接的套接字上自动启用事件回调函数。 如果侦听套接字的[**WskAccept**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_accept)函数接受面向连接的套接字，则不会自动启用接受的套接字的事件回调函数。
 
-在侦听套接字上启用任何面向连接的事件回调函数后，将无法在侦听套接字上禁用它们。 如果在侦听套接字上禁用并重新启用*WskAcceptEvent*事件回调函数，则在该侦听套接字上最初启用的任何面向连接的事件回调函数都将继续应用于所有*WskAcceptEvent*事件回调函数接受的面向连接的套接字。
+在侦听套接字上启用任何面向连接的事件回调函数后，将无法在侦听套接字上禁用它们。 如果在侦听套接字上禁用并重新启用*WskAcceptEvent*事件回调函数，则在该侦听套接字上最初启用的任何面向连接的事件回调函数将继续应用于*WskAcceptEvent*事件回调函数接受的所有面向连接的套接字。
 
 有关启用和禁用套接字的事件回调函数的详细信息，请参阅[启用和禁用事件回调函数](https://docs.microsoft.com/windows-hardware/drivers/network/enabling-and-disabling-event-callback-functions)。
 

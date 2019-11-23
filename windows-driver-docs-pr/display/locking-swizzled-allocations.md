@@ -21,7 +21,7 @@ ms.locfileid: "72840599"
 # <a name="locking-swizzled-allocations"></a>锁定重排分配
 
 
-视频内存管理器提供对 swizzled 分配的直接 CPU 访问的特殊支持（即显示微型端口驱动程序的[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数在**标志**中设置**swizzled**标志[**DXGK\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)结构的成员）。
+视频内存管理器提供对 swizzled 分配的直接 CPU 访问（即，显示微型端口驱动程序的[**DxgkDdiCreateAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_createallocation)函数在[**DXGK\_ALLOCATIONINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_allocationinfo)结构的**Flags**成员中设置**swizzled**标志）的特殊支持。
 
 当视频内存管理器将 CPU 可访问的分配从内存段逐出为 swizzled 时，显示微型端口驱动程序必须始终以线性格式存储它们。 因此，此类分配在 swizzled 时不能被，它们必须始终为驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数 swizzled 或 unswizzled。
 

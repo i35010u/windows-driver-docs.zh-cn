@@ -3,7 +3,7 @@ title: OID_SWITCH_NIC_DELETE
 description: Hyper-v 可扩展交换机的协议边缘向可扩展交换机驱动程序堆栈发出 OID_SWITCH_NIC_DELETE 的对象标识符（OID）设置请求。
 ms.assetid: 7564EA39-09F5-45A3-81A0-F8DD2B23B639
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_DELETE 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SWITCH_NIC_DELETE 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: b192b27fecb423aa450be4de6323f082fc517f6b
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ NDIS\_交换机的**索引**成员[ **\_NIC\_参数**](https://docs.microsoft.co
 
 在可扩展交换机的协议边缘发出 OID\_交换机\_NIC\_DELETE 请求，保证指定的网络适配器连接的所有挂起的发送或接收数据包请求均已完成。 协议边缘还保证适配器连接的所有挂起 OID 请求已完成，并且适配器连接的可扩展交换机引用计数器的值为零。
 
-**请注意**  如果扩展插件已通过调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)增加网络适配器的可扩展交换机引用计数器，则不会\_\_\_在引用计数器为非零值。 该扩展通过调用[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)来递减可扩展的 switch 引用计数器。
+**请注意**  如果扩展插件已通过调用[*ReferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)增加了网络适配器的可扩展交换机引用计数器，则不会在引用计数器为非零的情况下发出 OID\_交换机\_NIC\_删除请求。 该扩展通过调用[*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic)来递减可扩展的 switch 引用计数器。
 
  
 

@@ -28,7 +28,7 @@ ms.locfileid: "72845428"
 -   确定给定回调的哪个实例花费了较长时间。 然后检查抽样 CPU 使用率以了解原因。
 -   检查设备是否正在进行电源转换，并使其脱离 D0 电源状态。
 
-## <a name="getting-started"></a>即刻体验
+## <a name="getting-started"></a>入门
 
 
 WPT 是 Windows 评估和部署工具包（ADK）的一部分。 你可以从[Windows 硬件工具](https://developer.microsoft.com/windows/featured/hardware/windows-10-hardware-preview-tools)站点安装 ADK。

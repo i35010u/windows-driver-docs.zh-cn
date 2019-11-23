@@ -33,12 +33,12 @@ ms.locfileid: "72829427"
 
 2.  用户模式显示驱动程序调用 Direct3D 运行时的[**pfnRenderCb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_rendercb)函数来向运行时提交命令缓冲区。
 
-3.  DirectX 图形内核子系统调用显示微型端口驱动程序的[**DxgkDdiRender**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render)或[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)函数来验证命令缓冲区，以硬件的格式写入 DMA 缓冲区，并生成一个分配列表，其中描述了使用的图面。 请注意，DMA 缓冲区尚未进行修补（即分配的物理地址）。
+3.  DirectX 图形内核子系统调用显示微型端口驱动程序的[**DxgkDdiRender**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render)或[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)函数来验证命令缓冲区，以硬件的格式写入 DMA 缓冲区，并生成一个描述所使用的表面的分配列表。 请注意，DMA 缓冲区尚未进行修补（即分配的物理地址）。
     **请注意**   如果运行时通过调用用户模式显示驱动程序的[**当前**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_present)函数来启动命令缓冲区提交，图形子系统将调用显示微型端口驱动程序的[**DxgkDdiPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_present)函数，而不是[**DxgkDdiRender**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_render)或[**DxgkDdiRenderKm**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_renderkm)。
 
      
 
-4.  视频内存管理器调用显示微型端口驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数来创建特殊用途的 DMA 缓冲区（称为分页缓冲区），该缓冲区用于移动 DMA 缓冲区随附的分配列表中指定的分配和从 GPU 可访问的内存。 有关详细信息，请参阅[分页视频内存资源](paging-video-memory-resources.md)。
+4.  视频内存管理器调用显示微型端口驱动程序的[**DxgkDdiBuildPagingBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)函数来创建特殊用途的 DMA 缓冲区，这些缓冲区称为分页缓冲区，将 dma 缓冲区随附的分配列表中指定的分配移到和移出 GPU 可访问的内存。 有关详细信息，请参阅[分页视频内存资源](paging-video-memory-resources.md)。
 
 5.  GPU 计划程序调用显示微型端口驱动程序的[**DxgkDdiPatch**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_patch)函数，以将物理地址分配给 DMA 缓冲区中的资源。 不过，计划程序不需要调用**DxgkDdiPatch**来将物理地址分配给分页缓冲区，因为分页缓冲区的物理地址是在[*DxgkDdiBuildPagingBuffer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_buildpagingbuffer)调用期间传入和分配的。
 

@@ -30,7 +30,7 @@ ms.locfileid: "72844152"
 
 在过量驱动程序为 VF 请求分配资源后，该驱动程序是唯一可请求为同一 VF 释放资源的组件。 过量驱动程序必须发出 oid\_NIC 的 OID 集请求[\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)来释放 VF 资源。 在可以停止过量驱动程序之前，它必须释放由驱动程序的 OID\_NIC 分配的每个 VF 的资源[\_交换机\_分配\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)请求。
 
-**请注意**   如果过量驱动程序\_NIC 发出 oid 方法请求[NIC\_开关\_分配\_vf](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)为 VF 分配资源，则该驱动程序是可以请求释放相同 VF 的资源。 过量驱动程序必须发出 oid\_NIC 的 OID 集请求[\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)来释放 VF 资源。 在可以停止过量驱动程序之前，它必须释放由驱动程序的 OID\_NIC 分配的每个 VF 的资源\_交换机\_分配\_VF 请求。
+**请注意**   如果过量驱动程序发出 OID 的 oid 方法请求[\_NIC\_SWITCH\_分配\_vf](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-allocate-vf)为 VF 分配资源，则该驱动程序是可以请求为同一 vf 释放资源的唯一组件。 过量驱动程序必须发出 oid\_NIC 的 OID 集请求[\_交换机\_免费\_VF](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-free-vf)来释放 VF 资源。 在可以停止过量驱动程序之前，它必须释放由驱动程序的 OID\_NIC 分配的每个 VF 的资源\_交换机\_分配\_VF 请求。
 
  
 

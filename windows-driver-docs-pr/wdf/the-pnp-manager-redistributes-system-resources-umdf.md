@@ -23,7 +23,7 @@ ms.locfileid: "72831616"
 
 在此过程中，PnP 管理器会停止设备并使其进入工作（D0）状态。 然后，它将新的资源列表传递到设备，以便它们可以使用新资源重新启动。
 
-重新分发资源时，如果设备的一个基于 UMDF 的驱动程序提供了[**IPnpCallback：： OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)回调函数，并且回调函数否决了重新分配，则 PnP 管理器将不会更改设备的资源分配.
+重新分发资源时，如果某个设备的基于 UMDF 的驱动程序提供了[**IPnpCallback：： OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)回调函数，并且回调函数拒绝了重新分配，则 PnP 管理器将不会更改设备的资源分配。
 
 <a href="" id="power-down-sequence"></a>**关机顺序**  
 对于支持正在停止的设备的每个基于 UMDF 的函数和筛选器驱动程序，框架按顺序执行以下操作，一次一个驱动程序，从驱动程序堆栈最高的驱动程序开始：

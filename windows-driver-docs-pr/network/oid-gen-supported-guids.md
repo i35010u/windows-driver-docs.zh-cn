@@ -3,7 +3,7 @@ title: OID_GEN_SUPPORTED_GUIDS
 description: 作为查询，OID_GEN_SUPPORTED_GUIDS OID 请求微型端口驱动程序返回 NDIS_GUID 类型的结构的数组。
 ms.assetid: 6985727e-50f8-4dbf-b8cd-ce31d49e8294
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_GUIDS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_SUPPORTED_GUIDS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: d3c119c128f511a4c749aa374a9ef6d85279006d
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -65,7 +65,7 @@ typedef struct _NDIS_GUID {
 指定**Guid**映射到的 NDIS\_状态。
 
 <a href="" id="size"></a>**规格**  
-指定微型端口驱动程序返回的数组中的每个数据项的大小（以字节为单位）。 如果 fNDIS\_GUID\_ANSI\_STRING 或 fNDIS\_\_GUID，则设置 " **Size** " 设置为-1。 否则， **size**指定 GUID 表示的数据项的大小（以字节为单位）。 仅当设置了 fNDIS\_GUID\_ARRAY 标志时，才指定此成员。
+指定微型端口驱动程序返回的数组中的每个数据项的大小（以字节为单位）。 如果 fNDIS\_GUID\_ANSI\_STRING 或 fNDIS\_\_GUID，则设置 " **Size** " 设置为-1。\_ 否则， **size**指定 GUID 表示的数据项的大小（以字节为单位）。 仅当设置了 fNDIS\_GUID\_ARRAY 标志时，才指定此成员。
 
 <a href="" id="flags"></a>**随意**  
 可以通过 OR 运算符组合下列标志，以指示 GUID 是映射到 OID 还是映射到 NDIS\_状态字符串，并指示为 GUID 提供的数据类型：

@@ -26,7 +26,7 @@ ms.locfileid: "72838174"
 
 筛选器驱动程序在调用[**NdisFRegisterFilterDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfregisterfilterdriver)函数时，为可以绕过的函数指定默认入口点。 默认情况下，这些入口点对于被绕过的函数是**NULL** 。 有关初始化的详细信息，请参阅[初始化筛选器驱动程序](initializing-a-filter-driver.md)。
 
-若要在运行时更改绕过状态，驱动程序必须在驱动程序初始化过程中为[*FilterSetModuleOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)函数指定入口点。 驱动程序可以初始化[**NDIS\_筛选器\_部分\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_partial_characteristics)结构，并从 FilterSetModuleOptions 的上下文中将新特征传递到[**NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)函数.
+若要在运行时更改绕过状态，驱动程序必须在驱动程序初始化过程中为[*FilterSetModuleOptions*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_set_module_options)函数指定入口点。 驱动程序可以初始化[**NDIS\_筛选器\_部分\_特征**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_filter_partial_characteristics)结构，并从*FilterSetModuleOptions*的上下文中将新特征传递到[**NdisSetOptionalHandlers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissetoptionalhandlers)函数。
 
 在重启操作开始时，NDIS 将调用*FilterSetModuleOptions*函数（如果有）。 筛选器驱动程序可以独立地为每个筛选器模块设置旁路模式。 有关详细信息，请参阅[启动筛选器模块](starting-a-filter-module.md)。
 

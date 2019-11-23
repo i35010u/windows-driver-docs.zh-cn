@@ -28,6 +28,6 @@ ms.locfileid: "72283736"
 
 **DrvSetPalette**函数向驱动程序提供*PDEV*的句柄，并请求驱动程序实现该设备的调色板。 驱动程序应设置硬件调色板，使其与给定调色板中的条目尽可能匹配。
 
-如果设备支持可以设置的调色板，则此入口点是必需的，否则不应提供此入口点。 显示驱动程序通过在[**lnk-devinfo**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)返回的[DrvEnablePDEV](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps**字段中设置 GCAPS @ no__t-0PALMANAGED 位，指定其设备具有可设置的调色板。
+如果设备支持可以设置的调色板，则此入口点是必需的，否则不应提供此入口点。 显示驱动程序通过在[**DrvEnablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)返回的[Lnk-devinfo](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-devinfo)结构的**flGraphicsCaps**字段中设置 GCAPS\_PALMANAGED 位，来指定其设备具有可设置的调色板。
 
 服务例程[PALOBJ_cGetColors](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors)可用于显示驱动程序。 此函数从索引调色板下载 RGB 颜色，应从*DrvSetPalette*的实现中调用。

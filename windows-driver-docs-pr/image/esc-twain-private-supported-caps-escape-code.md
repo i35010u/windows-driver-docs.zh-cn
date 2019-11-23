@@ -17,7 +17,7 @@ ms.locfileid: "72840849"
 
 
 
-为了确定支持 TWAIN 的私有功能，TWAIN 应用程序将通知 TWAIN 兼容层，然后将 ESC\_TWAIN\_PRIVATE\_支持的\_CAPS escape 代码发送到 WIA 驱动程序的[**IStiUSD：：Escape**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-escape)方法。 以下**转义**方法的伪代码实现演示了应如何响应 ESC\_TWAIN\_PRIVATE\_支持的\_大写转义代码，以报告私有 TWAIN 支持功能。
+为了确定支持 TWAIN 的私有功能，TWAIN 应用程序将通知 TWAIN 兼容层，然后将 ESC\_TWAIN\_PRIVATE\_支持的\_CAPS escape 代码发送到 WIA 驱动程序的[**IStiUSD：： escape**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-escape)方法。 以下**转义**方法的伪代码实现演示了应如何响应 ESC\_TWAIN\_PRIVATE\_支持的\_大写转义代码，以报告私有 TWAIN 支持功能。
 
 **请注意**   此示例中的**转义**方法与[ESC\_TWAIN\_功能转义代码](esc-twain-capability-escape-code.md)中显示的方法相同，但每个示例的重点是不同的转义代码。
 

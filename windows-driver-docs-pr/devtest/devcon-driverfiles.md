@@ -49,7 +49,7 @@ ms.locfileid: "72038093"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>匹配任何字符或不匹配任何字符。 使用通配符（<strong> @ no__t）创建 ID 模式，例如<strong><em>disk</em></strong>。</p></td>
+<td align="left"><p>匹配任何字符或不匹配任何字符。 使用通配符（<strong></em></strong>）创建 ID 模式，例如<strong><em>磁盘</em></strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
@@ -63,7 +63,7 @@ ms.locfileid: "72038093"
 </tbody>
 </table>
 
-<span id="________class______"> @ no__t-1<span id="________CLASS______"> </span> **@no__t**<em>指定设备</em>的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
+<span id="________class______"></span><span id="________CLASS______"></span> **=** <em>类</em>指定设备的设备安装程序类。 等号 ( **=** ) 标识作为类名称的字符串。
 
 你还可以在类名称后指定硬件 Id、兼容 Id、设备实例 Id 或 ID 模式。 键入每个 ID 或模式之间的空格。 DevCon 在类中查找与指定 Id 相匹配的设备。
 
@@ -82,6 +82,6 @@ devcon driverfiles =media isapnp*
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-[Example 8：列出所有驱动程序文件 @ no__t-0
+[示例8：列出所有驱动程序文件](devcon-examples.md#ddk_example_8_list_all_driver_files_tools)
 
-[Example 9：列出特定设备的驱动程序文件 @ no__t
+[示例9：列出特定设备的驱动程序文件](devcon-examples.md#ddk_example_9_list_the_driver_files_of_a_particular_device_tools)

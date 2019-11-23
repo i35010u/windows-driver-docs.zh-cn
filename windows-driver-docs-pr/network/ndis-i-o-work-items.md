@@ -1,6 +1,6 @@
 ---
-title: NDIS i/o 工作项
-description: NDIS i/o 工作项
+title: NDIS I/O 工作项
+description: NDIS I/O 工作项
 ms.assetid: 4f966ff3-2092-495f-863f-50f079085fa6
 keywords:
 - I/o 工作项 WDK NDIS
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72843548"
 ---
-# <a name="ndis-io-work-items"></a>NDIS i/o 工作项
+# <a name="ndis-io-work-items"></a>NDIS I/O 工作项
 
 
 

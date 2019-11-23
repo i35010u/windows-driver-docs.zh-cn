@@ -30,7 +30,7 @@ ms.locfileid: "72840294"
 
 -   如果使用 release （免费）生成配置创建驱动程序，则**DBG**将等于0（如果不包括 wdm 和 ntddk，则不会定义）。
 
-调试例程[**ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))、 [**ASSERTMSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-assertmsg)、 [**KdBreakPoint**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff548063(v=vs.85))、 [**KdBreakPointWithStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdbreakpointwithstatus)、 [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)和[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)实际上是根据 DBG 的值按条件定义的宏. 如果为0，则这些宏为非 ops。 因此，这些宏仅在驱动程序的调试（已检查）版本中处于活动状态。
+调试例程[**ASSERT**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))、 [**ASSERTMSG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-assertmsg)、 [**KdBreakPoint**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff548063(v=vs.85))、 [**KdBreakPointWithStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdbreakpointwithstatus)、 [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)和[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)实际上是根据**DBG**的值有条件地定义的宏。 如果为0，则这些宏为非 ops。 因此，这些宏仅在驱动程序的调试（已检查）版本中处于活动状态。
 
 **请注意**   以字母 "Kd" 开头的所有调试例程在驱动程序的自由版本中不起作用， **KdRefreshDebuggerNotPresent**除外。
 

@@ -25,15 +25,15 @@ ms.locfileid: "72841655"
 
 -   对于用户模式应用程序，请执行以下步骤：
 
-    1.  从 Windows Vista 开始，使用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索设备属性，并使用[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)和 DEVPKEY_Xxx 属性代码设置设备属性。
+    1.  从 Windows Vista 开始，使用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索设备属性，并使用具有 DEVPKEY_Xxx 属性代码的[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)设置设备属性。
 
         有关 Windows Vista 和更高版本的 Windows 上的设备实例属性的详细信息，请参阅[访问设备实例属性（Windows vista 和更高版本）](accessing-device-instance-properties--windows-vista-and-later-.md)。
 
         **注意**  从 Windows Vista 开始，某些设备属性由操作系统保留。 有关详细信息，请参阅[修改设备属性](modifying-device-properties.md)。
 
-    2.  在 Windows 2000、Windows XP 和 Windows Server 2003 上，使用[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)检索设备属性，并使用[**SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)和 SPDRP_Xxx 属性代码设置设备属性。
+    2.  在 Windows 2000、Windows XP 和 Windows Server 2003 上，使用[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)检索设备属性，并使用具有 SPDRP_Xxx 属性代码的[**SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置设备属性。
 
-        有关 Windows 2000、Windows XP 和 Windows Server 2003 上的设备实例属性的详细信息，请参阅[访问 Device Instance SPDRP_Xxx properties](accessing-device-instance-spdrp-xxx-properties.md)。
+        有关 Windows 2000、Windows XP 和 Windows Server 2003 上的设备实例属性的详细信息，请参阅[SPDRP_Xxx 属性访问设备实例](accessing-device-instance-spdrp-xxx-properties.md)。
 
     3.  在注册表中使用持久性存储，用于实际存在的设备的自定义设置和不是这些设置的设备。 在这种情况下，必须创建自己的注册表项和值集。 为此，请使用设备的**SetupDiCreateDevRegKey** （DIREG_DEV）或*软件密钥*（DIREG_DRV）。
 

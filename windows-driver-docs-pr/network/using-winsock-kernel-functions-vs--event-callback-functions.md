@@ -22,7 +22,7 @@ ms.locfileid: "72842962"
 # <a name="using-winsock-kernel-functions-vs-event-callback-functions"></a>使用 Winsock 内核函数与事件回调函数
 
 
-对于某些套接字操作，Winsock 内核（WSK）应用程序可以调用某个套接字的 WSK 函数来执行操作，或在该[事件发生](winsock-kernel-events.md)时 WSK 子系统调用的套接字上实现和启用事件回调函数。发生与操作关联的。 例如，在面向连接的套接字上接收数据时，WSK 应用程序可以调用套接字的[**WskReceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)函数，或在套接字上实现和启用[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。 WSK 应用程序的要求规定了应用程序应该使用哪种方法。 WSK 文档中提供了有关如何使用这两种方法的示例。
+对于某些套接字操作，Winsock 内核（WSK）应用程序可以调用套接字的 WSK 函数之一来执行操作，或者在与操作相关联的[事件](winsock-kernel-events.md)发生时，在 WSK 子系统调用的套接字上实现和启用事件回调函数。 例如，在面向连接的套接字上接收数据时，WSK 应用程序可以调用套接字的[**WskReceive**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive)函数，或在套接字上实现和启用[*WskReceiveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_receive_event)事件回调函数。 WSK 应用程序的要求规定了应用程序应该使用哪种方法。 WSK 文档中提供了有关如何使用这两种方法的示例。
 
 下面的列表总结了每种方法的一些要点。
 

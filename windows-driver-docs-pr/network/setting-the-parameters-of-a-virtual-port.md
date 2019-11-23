@@ -16,7 +16,7 @@ ms.locfileid: "72841929"
 
 过量驱动程序可以在支持单一根 i/o 虚拟化（SR-IOV）的网络适配器上的 NIC 交换机上更改虚拟端口（VPort）的参数。 驱动程序发出 OID\_NIC 的对象标识符（OID）设置请求[\_SWITCH\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)更改这些参数。
 
-在过量驱动程序发出此 OID 集请求之前，它必须使用 VPort 上要更改的参数来初始化[**NDIS\_NIC\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构。 然后，该驱动程序将为 OID 请求初始化[**NDIS\_oid\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构，并将**InformationBuffer**成员设置为指向**NDIS\_NIC 的指针\_SWITCH\_VPORT\_参数**构造.
+在过量驱动程序发出此 OID 集请求之前，它必须使用 VPort 上要更改的参数来初始化[**NDIS\_NIC\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构。 然后，该驱动程序将为 OID 请求初始化[**NDIS\_oid\_请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构，并将**InformationBuffer**成员设置为指向**NDIS\_NIC\_SWITCH\_VPORT\_参数**结构的指针。
 
 只能更改 VPort 的配置参数的有限子集。 过量驱动程序通过设置 NDIS\_NIC 的以下成员来指定要更改的参数[ **\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构：
 
@@ -32,11 +32,11 @@ ms.locfileid: "72841929"
 
     -   \_\_NIC 的上一个 OID 方法请求[\_枚举\_VPORTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)。
 
--   必须在**flags**成员中设置相应的 NDIS\_NIC\_交换机\_VPORT\_参数\_*XXX*\_的更改标志。 仅当相应的 NDIS\_NIC\_[ **\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)\_\_ *\_\_* \_更改标志在 Ntddndis 中定义。
+-   必须在**flags**成员中设置相应的 NDIS\_NIC\_交换机\_VPORT\_参数\_*XXX*\_的更改标志。 仅当在 Ntddndis 中定义了相应的 NDIS\_NIC\_\_\_\_\_ *\_* 参数时，NDIS\_nic 的成员才能更改[ **\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构。
 
--   [**Ndis\_nic 的成员\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构，该结构对应于 NDIS\_NIC\_\_\_\_\_在**Flags**成员中设置，由要更改的 VPort 配置参数设置。
+-   [**Ndis\_nic 的成员\_交换机\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构，该结构对应于在**Flags**成员的 VPORT 配置参数设置的 NDIS\_NIC\_交换机\_VPORT\_*参数\_\_*
 
-从 Windows Server 2012 开始，只能通过 oid [ **\_nic\_开关\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构中的以下成员进行更改参数结构\_[VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)：
+从 Windows Server 2012 开始，只能通过 oid [ **\_nic\_开关\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构中的以下成员进行更改参数结构\_[VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)：\_\_
 
 <a href="" id="portname"></a>**Portvalue**  
 此成员包含 VPort 的用户友好说明。
@@ -72,7 +72,7 @@ ms.locfileid: "72841929"
 
 -   当 VPort 处于激活状态时，无法将其停用。 仅当 VPort 处于激活状态，并且在 VPort 上设置相应的 MAC 筛选器时，PF 微型端口驱动程序才能接收和传输来自该的数据包。 但是，在通过 oid [\_NIC\_交换机\_DELETE\_VPort](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-delete-vport)删除 VPort 之后，驱动程序必须释放为 VPort 分配的资源。 驱动程序还必须在 VPort 上取消包的所有挂起的传输或接收操作。
 
-在 PF 微型端口驱动程序接收[oid\_NIC\_开关\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)后，该驱动程序将用配置参数配置硬件。 驱动程序只能更改由 NDIS\_NIC 标识的配置参数，\_交换机\_VPORT\_参数\_*Xxx*\_\_Nic 的**FLAGS**成员中更改的标志 @no__t [ **_11_ 开关\_VPORT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构。
+在 PF 微型端口驱动程序接收[oid\_NIC\_开关\_VPORT\_参数](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-vport-parameters)后，该驱动程序将用配置参数配置硬件。 该驱动程序只能更改由 NDIS\_NIC 标识的配置参数，\_交换机\_VPORT\_参数\_*Xxx*\_\_\_\_ [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)
 
  
 

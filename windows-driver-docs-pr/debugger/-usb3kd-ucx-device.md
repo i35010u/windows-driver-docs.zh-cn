@@ -1,9 +1,9 @@
 ---
-title: usb3kd.ucx_device
-description: Usb3kd. ucx _device 扩展显示有关 usb 3.0 树中 USB 设备的信息。 显示基于 UcxVersion 维护的数据结构。
+title: usb3kd ucx_device
+description: Ucx_device usb3kd 扩展在 USB 3.0 树中显示有关 USB 设备的信息。 显示基于 UcxVersion 维护的数据结构。
 ms.assetid: 7AC3DBBF-1D62-492E-B46E-C193579DE1E3
 keywords:
-- usb3kd. ucx _device Windows 调试
+- usb3kd ucx_device Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref

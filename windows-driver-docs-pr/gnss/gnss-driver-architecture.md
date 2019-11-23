@@ -34,9 +34,9 @@ ms.locfileid: "72825125"
 -   **GNSS 适配器：** 这是实现**IGnssAdapter** com 接口的单独 com 对象。 测试应用程序和位置服务的内部组件实例化此对象，并通过**IGnssAdapter**接口使用 GNSS 设备。 位置服务的 GNSS 定位引擎组件实现公开**IGnssAdapter**接口的 COM 类。 位置服务公开工厂机制来测试和其他进程外应用程序，以便在位置服务中实例化 GNSS 适配器 COM 类的单一 COM 对象。 进程外应用程序使用 COM 接口指针针对 GNSS 驱动程序进行编程。
 
     > [!NOTE]
-    > COM 处理代理指向进程外应用程序的接口指针，以使应用程序将**IGnssAdapter**接口指针视为进程内 COM 对象，但这些调用实际上是由定位服务。
+    > COM 处理代理指向进程外应用程序的接口指针，以便应用程序将**IGnssAdapter**接口指针视为进程内 COM 对象，但调用实际上由位置服务中的单一 GNSS 适配器对象处理。
 
-    GNSS 定位引擎使用内部 GNSS 适配器对象向位置服务提供特定于位置的功能。 GNSS 适配器使用**CreateFile** API 打开 GNSS 驱动程序的文件句柄，然后将 GNSS 本机 api 调用包装到适当的**DeviceIoControl**调用，使用 GNSS driver 对象维护状态机，并保持来自上层的各种传入请求。 此组件通过本文档中定义的 public GNSS IOCTL 接口直接与基础 GNSS 设备堆栈交互。 GNSS 设备以逻辑方式被视为独占资源，因此 singleton GNSS 适配器控制对 GNSS 设备的所有访问。
+    GNSS 定位引擎使用内部 GNSS 适配器对象向位置服务提供特定于位置的功能。 GNSS 适配器使用**CreateFile** API 打开 GNSS 驱动程序的文件句柄，然后将 GNSS 本机 api 调用包装到适当的**DeviceIoControl**调用，使用 GNSS driver 对象维护状态机，并维持来自上层的各种传入请求的状态。 此组件通过本文档中定义的 public GNSS IOCTL 接口直接与基础 GNSS 设备堆栈交互。 GNSS 设备以逻辑方式被视为独占资源，因此 singleton GNSS 适配器控制对 GNSS 设备的所有访问。
 
     > [!NOTE]
     > 某些白屏驱动程序测试应用程序还可以直接在非生产环境中使用 GNSS 驱动程序 IOCTL 接口，而不是通过 GNSS 专用 Api 使用 GNSS 适配器。 但是，这些测试应用程序将必须实现其自己的状态机并进行处理，以模拟 GNSS 适配器的某些功能。
@@ -194,7 +194,7 @@ GNSS 引擎还必须公开已记录的特定于 IHV 的优化参数，以便能�
 
 来自驱动程序的通知通过公共事件模型进行处理。 例如，对于 GNSS 协助，GNSS 适配器使用控制代码[**IOCTL\_GNSS\_侦听\_AGNSS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_agnss)接收来自 AGNSS 驱动程序的 GNSS 请求。 然后，GNSS 适配器将获取 AGNSS 协助数据，并[ **\_GNSS 发出 IOCTL\_注入\_AGNSS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_inject_agnss) ，将数据推送到 GNSS 驱动程序中。
 
-此通知机制还用于接收与地域隔离区内相关的警报数据和状态更新。 适配器使用控制代码[**IOCTL\_GNSS\_侦听\_地域隔离区内\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)接收单个地域隔离区内警报的警报，以及[**IOCTL\_GNSS\_侦听\_现成\_TRACKINGSTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)用于接收地域隔离区内跟踪总体状态的更改。
+此通知机制还用于接收与地域隔离区内相关的警报数据和状态更新。 适配器使用控制代码[**IOCTL\_GNSS\_侦听\_地域隔离区内\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)接收单个地域隔离区内警报的警报，并使用[**IOCTL\_GNSS\_侦听\_现成\_TRACKINGSTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)接收有关地域隔离区内跟踪总体状态的更改。
 
 ### <a name="gnss-driver-logging"></a>GNSS 驱动程序日志记录
 
@@ -616,15 +616,15 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <tr class="odd">
 <td><p>情况3</p></td>
 <td><p>中/低--&gt; 高</p></td>
-<td><p>“高”</p></td>
-<td><p>“高”</p></td>
+<td><p>高</p></td>
+<td><p>高</p></td>
 <td><p><strong>SS 会话行为：</strong>假设 DBT 或 TBT 会话已经存在高准确性会话，则 SS 会话仅提供对 HLOS 的中间进一步修复，直到获取所需的最终准确性或获取最终的修补程序。</p></td>
 </tr>
 <tr class="even">
 <td><p>情况4</p></td>
 <td><p>高--&gt; 中/低</p></td>
-<td><p>“高”</p></td>
-<td><p>“高”</p></td>
+<td><p>高</p></td>
+<td><p>高</p></td>
 <td><p><strong>SS 会话行为：</strong>假设 DBT 或 TBT 会话已经存在高准确性会话，则 SS 会话仅提供对 HLOS 的中间进一步修复，直到获取所需的最终准确性或获取最终的修补程序。</p></td>
 </tr>
 <tr class="odd">
@@ -658,14 +658,14 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 </tr>
 <tr class="odd">
 <td><p>案例9</p></td>
-<td><p>“高”</p></td>
+<td><p>高</p></td>
 <td><p>中/低--&gt; 高</p></td>
-<td><p>“高”</p></td>
+<td><p>高</p></td>
 <td><p><strong>DBT 或 TBT 会话行为：</strong>会话已获取高准确性修补程序或中间修补程序，因此没有任何更改。</p></td>
 </tr>
 <tr class="even">
 <td><p>情况10</p></td>
-<td><p>“高”</p></td>
+<td><p>高</p></td>
 <td><p>高--&gt; 中/低</p></td>
 <td><p>在 SS 会话完成后，"高" 更改为 "中/低"</p></td>
 <td><p><strong>DBT 或 TBT 会话行为：</strong>在 SS 会话完成之前，会话可以继续获取高准确性修复或中间修复。 然后，它应更改为中等/低准确性修复。</p></td>

@@ -98,7 +98,7 @@ dt -h
 <td align="left"><p>以递归方式转储子类型字段。 如果给出了<em>深度</em>，此递归将停止<em>深度</em>级别。 <em>深度</em>必须为1到9之间的数字，并且在<strong>r</strong>和<em>深度</em>之间一定不能有空格。 <strong>-R</strong>[<em>depth</em>] 开关应紧靠在地址之前。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>-s</strong><em>大小</em></p></td>
+<td align="left"><p><strong>-s</strong> <em>大小</em></p></td>
 <td align="left"><p>仅枚举大小以字节为单位的类型等于<em>大小</em>的值。 <strong>-S</strong>选项仅在枚举类型时才有用。 如果指定<strong>-s</strong> ，则也始终隐含<strong>-e</strong> 。</p></td>
 </tr>
 <tr class="odd">
@@ -146,17 +146,17 @@ dt -h
 指定定义此结构的模块的可选参数。 如果存在与全局变量或类型同名的局部变量或类型，则应包含*module*来指定全局变量。 否则， **dt**命令将显示局部变量，即使本地变量是不区分大小写的匹配并且全局变量是区分大小写的匹配项。
 
 <span id="_______Name______"></span><span id="_______name______"></span><span id="_______NAME______"></span>*名称*   
-指定类型或全局变量的名称。 如果*名称*以星号（\*）结尾，则显示所有匹配项的列表。 因此， **dt A\\** * 会列出所有数据类型、globals 和静态值（以 "A" 开头），但不会显示这些类型的实际实例。 （如果同时使用了 **-v**显示选项，则将显示所有符号，而不仅仅是具有关联类型信息的符号。）你还可以使用句点（ **.** ）替换*name* ，以表示你要重复最近使用的*name*值。
+指定类型或全局变量的名称。 如果*名称*以星号（\*）结尾，则显示所有匹配项的列表。 因此， **Dt A\\** * 将列出所有数据类型、globals 和静态值以 "A" 开头，但不会显示这些类型的实际实例。 （如果同时使用了 **-v**显示选项，则将显示所有符号，而不仅仅是具有关联类型信息的符号。）你还可以使用句点（ **.** ）替换*name* ，以表示你要重复最近使用的*name*值。
 
 如果*名称*包含空格，则应将其括在括号中。
 
 <span id="_______Field______"></span><span id="_______field______"></span><span id="_______FIELD______"></span>*字段*   
 指定要显示的字段。 如果省略*字段*，将显示所有字段。 如果*字段*后跟一个句点（ **.** ），则此字段的第一级子字段也将显示。 如果*字段*后跟一系列期间，子字段将显示为与周期数相等的深度。 如果使用了 **-y**搜索选项，则后面跟一个句点的任何字段名称将被视为前缀匹配。 如果*字段*后跟星号（\*），则将其视为只是字段的开头，而不一定是整个字段，并显示所有匹配字段。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
-指定要显示的结构的地址。 如果省略*Name* ，则必须包含*address*并且必须指定全局变量的地址。 除非另行指定，否则*地址*被视为虚拟地址。 使用 **-p**选项来指定物理地址。 使用 "at" 符号（ **@** ）来指定寄存器（ <strong>@eax</strong>例如）。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
+指定要显示的结构的地址。 如果省略*Name* ，则必须包含*address*并且必须指定全局变量的地址。 除非另行指定，否则*地址*被视为虚拟地址。 使用 **-p**选项来指定物理地址。 使用 "at" 符号（ **@** ）来指定寄存器（例如， <strong>@eax</strong>）。
 
-<span id="_______List______"></span><span id="_______list______"></span><span id="_______LIST______"></span>*列表*   
+<span id="_______List______"></span><span id="_______list______"></span><span id="_______LIST______"></span>*列出*   
 指定链接列表链接的字段名称。 *Address*参数必须包括在内。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
@@ -199,13 +199,13 @@ dt -h
 
 如果*Name*表示结构，则将显示所有字段（例如， **dt mystruct>)** ）。 如果只需要一个特定字段，可以执行**Dt Mystruct>) myField**。 这将显示 C 调用**myField**的成员。 但请注意，命令**Dt Mystruct>) MyField1 myField2**显示**mystruct>). myField1**和**mystruct>)** 。 它不显示**mystruct>). myField1. myField2**。
 
-如果结构名称或字段后跟下标，则它指定数组的单个实例。 例如， **dt mystruct>) myFieldArray\[3\]** 将显示相关数组的第四个元素。 但如果类型名称后跟下标，则会指定整个数组。 例如， **dt CHAR\[8\] myPtr**将显示八个字符的字符串。 无论当前基数如何，下标始终采用 decimal 形式;**0x**前缀将导致错误。
+如果结构名称或字段后跟下标，则它指定数组的单个实例。 例如， **Dt Mystruct>) myFieldArray\[3\]** 将显示相关数组的第四个元素。 但如果类型名称后跟下标，则会指定整个数组。 例如， **DT CHAR\[8\] myPtr**将显示八个字符的字符串。 无论当前基数如何，下标始终采用 decimal 形式;**0x**前缀将导致错误。
 
 由于该命令使用中的类型信息。*pdb*文件，可以自由地用于调试任何 CPU 平台。
 
 **Dt**使用的类型信息包括使用**typedef**创建的所有类型名称，包括所有 Windows 定义的类型。 例如，**无符号长**字符**和字符**不是有效的类型名称，但**ULONG**和**char**是。 有关所有 Windows 类型名称的完整列表，请参阅 Microsoft Windows SDK。
 
-只要你的程序中实际使用了这些类型，则你自己的代码中的**typedef**所创建的所有类型都将存在。 但是，在标头中定义但从不实际使用的类型不会存储在 .pdb 符号文件中，并且调试器将无法访问这些类型。 若要使此类类型可用于调试器，请将其用作**typedef**语句的*输入*。 例如，如果代码中显示以下内容，则我\_的数据的结构将存储在 .pdb 符号文件中，并且可以通过**dt**命令显示：
+只要你的程序中实际使用了这些类型，则你自己的代码中的**typedef**所创建的所有类型都将存在。 但是，在标头中定义但从不实际使用的类型不会存储在 .pdb 符号文件中，并且调试器将无法访问这些类型。 若要使此类类型可用于调试器，请将其用作**typedef**语句的*输入*。 例如，如果你的代码中显示以下内容，则结构\_的数据将存储在 .pdb 符号文件中，并且可以通过**dt**命令显示：
 
 ```dbgcmd
 typedef struct _MY_DATA {
@@ -214,7 +214,7 @@ typedef struct _MY_DATA {
 typedef  MY_DATA *PMY_DATA; 
 ```
 
-另一方面，以下代码将无法满足需要\_，因为我的数据和 PMY\_数据都是由初始**typedef**定义的，因此，我\_的数据本身并不是用作任何**typedef**的输入损益
+另一方面，以下代码无法满足这一要求，因为我\_的数据和 PMY\_数据都是由初始**typedef**定义的，因此，我的\_数据本身并未用作任何**typedef**语句的输入：
 
 ```dbgcmd
 typedef struct _MY_DATA {
@@ -224,7 +224,7 @@ typedef struct _MY_DATA {
 
 在任何情况下，类型信息仅包含在完整的符号文件中，而不是已去除所有私有符号信息的符号文件中。 有关详细信息，请参阅[公共和私有符号](public-and-private-symbols.md)。
 
-如果要显示 unicode 字符串，则需要使用[ **。先启用\_unicode （启用 unicode 显示）** ](-enable-unicode--enable-unicode-display-.md)命令。 您可以使用来控制长整数的显示[ **。 "启用\_长\_状态（启用长整数显示）** ](-enable-long-status--enable-long-integer-display-.md) " 命令。
+如果要显示 unicode 字符串，则需先使用[ **。 enable\_unicode （启用 Unicode 显示）** ](-enable-unicode--enable-unicode-display-.md)命令。 您可以使用来控制长整数的显示[ **。 "启用\_long\_status （启用长整数显示）** ](-enable-long-status--enable-long-integer-display-.md)命令。
 
 在下面的示例中， **dt**显示了一个全局变量：
 
@@ -259,7 +259,7 @@ typedef struct _MY_DATA {
    +0x070 m_t1 : MYTYPE1 
 ```
 
-以下命令显示字段**m\_t1**的子字段。 由于句点会自动导致前缀匹配，因此还会显示以 "m\_t1" 开头的任何字段的子字段：
+以下命令显示字段**m\_t1**的子字段。 因为句点会自动导致前缀匹配，所以这还会显示以 "m\_t1" 开头的任何字段的子字段：
 
 ```dbgcmd
 0:000> dt mcl1 m_t1. 

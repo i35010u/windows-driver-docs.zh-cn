@@ -29,7 +29,7 @@ ms.locfileid: "72038024"
 
 ## <a name="span-idddk_devcon_hwids_toolsspanspan-idddk_devcon_hwids_toolsspanparameters"></a><span id="ddk_devcon_hwids_tools"></span><span id="DDK_DEVCON_HWIDS_TOOLS"></span>Parameters
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m： \\ @ no__t**<em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m：\\\\** <em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
 
 **注意**  若要在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和 Windows 7 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问不可用。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72038024"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong><em></strong></p></td>
-<td align="left"><p>匹配任何字符或不匹配任何字符。 使用通配符（<strong> @ no__t）创建 ID 模式，例如<strong><em>disk</em></strong>。</p></td>
+<td align="left"><p>匹配任何字符或不匹配任何字符。 使用通配符（<strong></em></strong>）创建 ID 模式，例如<strong><em>磁盘</em></strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>@</strong></p></td>
@@ -92,8 +92,8 @@ devcon hwids =usb
 
 ### <a name="span-idexamplesspanspan-idexamplesspanexamples"></a><span id="examples"></span><span id="EXAMPLES"></span>示例
 
-@no__t 0Example 1：查找所有硬件 Id @ no__t-0
+[示例1：查找所有硬件 Id](devcon-examples.md#ddk_example_1_find_all_hardware_ids_tools)
 
-[Example 2：使用模式 @ no__t 查找硬件 Id
+[示例2：使用模式查找硬件 Id](devcon-examples.md#ddk_example_2_find_hardware_ids_by_using_a_pattern_tools)
 
-[Example 3：使用类 @ no__t 查找硬件 Id
+[示例3：使用类查找硬件 Id](devcon-examples.md#ddk_example_3_find_hardware_ids_by_using_a_class_tools)

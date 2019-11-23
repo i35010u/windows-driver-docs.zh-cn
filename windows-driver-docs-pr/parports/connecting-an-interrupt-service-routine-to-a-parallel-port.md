@@ -21,7 +21,7 @@ ms.locfileid: "72844804"
 
 
 
-内核模式客户端可以使用[**IOCTL\_内部\_并行\_连接\_中断**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_connect_interrupt)请求，将中断服务例程和*延迟端口检查例程*连接到并行端口函数的操作驱动器.
+内核模式客户端可以使用[**IOCTL\_内部\_并行\_连接\_中断**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_connect_interrupt)请求，将中断服务例程和*延迟端口检查例程*连接到并行端口功能驱动程序的操作。
 
 **请注意**   Microsoft 不建议使用客户端提供的中断例程。 中断的使用可能会导致系统不稳定。 默认情况下，IOCTL\_内部\_并行\_连接\_中断请求处于禁用状态。
 

@@ -1,10 +1,10 @@
 ---
 title: WDI_TLV_UNICAST_ALGORITHM_LIST
-description: WDI_TLV_UNICAST_ALGORITHM_LIST 是一个 TLV，其中包含单播数据算法对的数组。
+description: WDI_TLV_UNICAST_ALGORITHM_LIST 是包含单播数据算法对的数组的 TLV。
 ms.assetid: E216BE6A-5425-498F-ABDE-1229170DA5DB
 ms.date: 07/18/2017
 keywords:
-- WDI_TLV_UNICAST_ALGORITHM_LIST 从 Windows Vista 开始的网络驱动程序
+- 从 Windows Vista 开始 WDI_TLV_UNICAST_ALGORITHM_LIST 网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 0614e6502e48b3e9a8c36b956a8724644783a577
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -61,7 +61,7 @@ WDI\_算法\_对包含以下元素。
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 10</p></td>
+<td><p>Windows 10</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

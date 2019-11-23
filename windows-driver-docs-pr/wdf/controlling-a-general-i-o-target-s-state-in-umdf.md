@@ -33,7 +33,7 @@ ms.locfileid: "72843643"
 I/o 目标已打开（即，可用于 UMDF 驱动程序），驱动程序可向其发送 i/o 请求。 框架将请求传递给相应的驱动程序。
 
 <a href="" id="stopped"></a>**停下**  
-I/o 目标已打开，但 UMDF 驱动程序无法向 i/o 目标发送 i/o 请求，除非该驱动程序将 WDF\_请求\_发送\_选项\_忽略对*Flags*参数的\_目标\_状态标志调用[**IWDFIoRequest：： Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)方法。
+I/o 目标处于打开状态，但是 UMDF 驱动程序无法向 i/o 目标发送 i/o 请求，除非该驱动程序将 WDF\_请求\_发送\_选项\_在对[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)方法的调用中将\_目标\_状态标志忽略到*Flags*参数。
 
 框架停止向相应的驱动程序传递请求。
 

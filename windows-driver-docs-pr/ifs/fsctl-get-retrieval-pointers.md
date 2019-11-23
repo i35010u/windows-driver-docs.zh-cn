@@ -50,12 +50,12 @@ typedef struct {
 } STARTING_VCN_INPUT_BUFFER, *PSTARTING_VCN_INPUT_BUFFER;
 ```
 
-**组员**
+**成员**
 
 <a href="" id="startingvcn"></a>**StartingVcn**  
 FSCTL\_获取\_检索的 VCN，\_指针开始枚举区和关联的虚拟和逻辑群集号。 在第一次调用[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)时，文件系统控制代码为 FSCTL\_获取\_指针\_检索， **StartingVcn**应设置为零。
 
-如果*OutputBuffer*的大小不足以保存文件的 VCNs 和区的整个映射，则调用方必须使用检索\_指针的**NextVcn**成员中返回的值来请求更多的映射数据，\_缓冲区结构为正在启动 VCN。
+如果*OutputBuffer*的大小不足以保存文件的 VCNs 和区的整个映射，则调用方必须使用检索\_指针的**NextVcn**成员中返回的值来请求更多的映射数据，\_缓冲区结构作为起始 VCN。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
 位于 InputBuffer 的输入缓冲区的长度（以字节为单位） *。*
@@ -74,7 +74,7 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 } RETRIEVAL_POINTERS_BUFFER, *PRETRIEVAL_POINTERS_BUFFER;
 ```
 
-**组员**
+**成员**
 
 <a href="" id="extentcount"></a>**ExtentCount**  
 **区**数组中的元素计数。
@@ -99,7 +99,7 @@ typedef struct RETRIEVAL_POINTERS_BUFFER {
 
 [**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)和[**ZWFSCONTROLFILE**](https://msdn.microsoft.com/library/windows/hardware/ff566462)都返回状态\_SUCCESS 或适当的 NTSTATUS 错误值。
 
-如果 VCN/区映射不能容纳在*OutputBuffer*中，则两个例程\_溢出返回状态\_缓冲区的值，并且调用方必须使用检索的**NextVcn**成员中返回的值请求更多的映射数据\_在下一次调用[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZWFSCONTROLFILE**](https://msdn.microsoft.com/library/windows/hardware/ff566462)时，指针\_缓冲区结构作为起始 VCN （**StartingVcn**）。
+如果 VCN/区映射不能容纳在*OutputBuffer*中，则两个例程\_溢出返回状态\_的值，并且调用方必须使用检索\_指针的**NextVcn**成员中返回的值请求更多的映射数据，并在下一次调用[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)时，\_缓冲区结构作为起始 VCN （**StartingVcn**）。
 
 如果**StartingVcn**中指定的值超出了文件的末尾，则返回\_文件\_结束\_的状态。
 

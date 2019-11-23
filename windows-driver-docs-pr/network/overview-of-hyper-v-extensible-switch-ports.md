@@ -112,7 +112,7 @@ ms.locfileid: "72843741"
 <a href="" id="dereferenceswitchport"></a>[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)  
 可扩展交换机扩展调用此函数来减小端口的引用计数器。
 
-在对端口执行的操作完成后，扩展必须调用[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。 例如，如果在[\_端口\_属性\_枚举](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-enum)请求之前，调用*ReferenceSwitchPort*\_之前调用了该扩展，则扩展必须在 OID 请求后调用*DereferenceSwitchPort*完成.
+在对端口执行的操作完成后，扩展必须调用[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port) 。 例如，如果在[\_端口\_属性\_枚举请求\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-enum)之前调用了*ReferenceSwitchPort*的扩展，则扩展必须在完成 Oid 请求后调用*DereferenceSwitchPort* 。
 
 **请注意**  NDIS 端口和可扩展交换机端口都是不同的对象。 在可扩展交换机数据路径间移动的数据包始终分配给 ndis 端口号， **\_默认\_端口\_号**。 但是，数据包的源和目标可扩展交换机端口号可以是**NDIS\_交换机\_默认\_端口\_ID**或更高版本的值。 有关详细信息，请参阅[Hyper-v 可扩展交换机数据路径](hyper-v-extensible-switch-data-path.md)。
 

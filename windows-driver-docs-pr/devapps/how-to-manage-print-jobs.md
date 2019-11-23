@@ -93,7 +93,7 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 ## <a name="span-idstep_2__get_printer_queuespanspan-idstep_2__get_printer_queuespanspan-idstep_2__get_printer_queuespanstep-2-get-printer-queue"></a><span id="Step_2__Get_printer_queue"></span><span id="step_2__get_printer_queue"></span><span id="STEP_2__GET_PRINTER_QUEUE"></span>步骤2：获取打印机队列
 
 
-确定包含要管理的打印作业的打印机后，创建打印作业的*视图*，其中包含基于 `IPrinterQueueView` 接口的对象（在 PrinterExtensionLibrary 的**PrinterExtensionTypes.cs**文件中定义）。项目）。 在[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例中，此对象名为 `currentPrinterQueueView`，并在每次打印机选择更改时重新创建。
+确定包含要管理的打印作业的打印机后，创建打印作业的*视图*，其中包含基于 `IPrinterQueueView` 接口的对象（在**PrinterExtensionLibrary**项目的**PrinterExtensionTypes.cs**文件中定义）。 在[打印作业管理和打印机维护](https://go.microsoft.com/fwlink/p/?LinkID=299829)示例中，此对象名为 `currentPrinterQueueView`，并在每次打印机选择更改时重新创建。
 
 在 `Printer_SelectionChanged` 方法中，示例首先使用 `PrinterInfo` 对象创建名为 `context`的打印机扩展上下文对象。 然后，它使用 `context` 上的 `GetPrinterQueueView` 方法来创建 `currentPrinterQueueView` 对象。 最后，添加一个事件处理程序来处理 `currentPrinterQueueView`的 `OnChanged` 事件。
 

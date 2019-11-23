@@ -20,15 +20,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/30/2019
 ms.locfileid: "70025325"
 ---
-# <a name="bug-check-0x74-bad_system_config_info"></a>Bug 检查 0x74：错误 @ NO__T-0SYSTEM @ NO__T-1CONFIG @ NO__T-2INFO
+# <a name="bug-check-0x74-bad_system_config_info"></a>Bug 检查0x74：\_配置\_系统错误\_信息
 
-错误的 @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO bug 检查的值为0x00000074。 此错误检查表示注册表中存在错误。
+错误的\_系统\_CONFIG\_信息 bug 检查的值为0x00000074。 此错误检查表示注册表中存在错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户, 请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bad_system_config_info-parameters"></a>错误 @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO 参数
+## <a name="bad_system_config_info-parameters"></a>错误的\_系统\_CONFIG\_信息参数
 
 
 <table>
@@ -67,7 +67,7 @@ ms.locfileid: "70025325"
 <a name="cause"></a>原因
 -----
 
-如果系统配置单元已损坏，则会发生错误的 @ no__t-0SYSTEM @ no__t-1CONFIG @ no__t-2INFO bug 检查。 但是，这种损坏的可能性不大，因为启动加载程序会在加载 hive 时检查 hive 是否损坏。
+如果系统配置单元已损坏，则会发生错误的\_系统\_CONFIG\_信息 bug 检查。 但是，这种损坏的可能性不大，因为启动加载程序会在加载 hive 时检查 hive 是否损坏。
 
 如果缺少某些关键的注册表项和值，也会发生此 bug 检查。 如果用户手动编辑了注册表，或者应用程序或服务损坏了注册表，则可能缺少键和值。
 
@@ -153,4 +153,4 @@ Index 5:     e9dd6ce5 kcb=ffffd805e4180e48 cell=00812970 f=00200000 \REGISTRY\MA
 
 有关详细信息，请参阅[Windows 10 中的恢复选项](https://support.microsoft.com/help/12415/windows-10-recovery-options#)。
 
-此支持文章讨论了此错误检查代码：[Error 0x74：Bad_system_config_info @ no__t-0
+此支持文章讨论了此错误检查代码：[错误0x74： Bad_system_config_info](https://support.microsoft.com/help/4028653/windows-error-0x74-badsystemconfiginfo)

@@ -29,11 +29,11 @@ Hyper-v 可扩展交换机接口使用以下对象标识符（OID）来查询可
 
 -   [**NDIS\_交换机\_端口\_功能\_状态\_自定义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_custom)结构，其中包含有关分配给可扩展交换机端口的自定义属性的状态信息。
 
-    当可扩展交换机的协议边缘发出[OID\_交换机\_端口\_功能\_状态\_查询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-feature-status-query)请求时，它会将**FeatureStatusCustomBufferLength**和**FeatureStatusCustomBufferOffset**成员到**InformationBuffer**成员中的某个位置，扩展可使用该位置返回功能状态信息。
+    当可扩展交换机的协议边缘[\_交换机\_端口\_功能\_状态\_查询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-feature-status-query)请求时，它会将**FeatureStatusCustomBufferLength**和**FeatureStatusCustomBufferOffset**成员设置为**InformationBuffer**成员中的一个位置，扩展可使用该位置返回功能状态信息。
 
 可扩展交换机扩展在收到 Oid 的 OID 方法请求时必须遵循这些准则[\_交换机\_端口\_功能\_状态\_查询](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-feature-status-query)：
 
--   如果扩展插件管理的自定义可扩展交换机端口属性与[**NDIS\_交换机\_端口\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)**匹配，则**必须处理 OID 请求构造.
+-   如果扩展插件管理的自定义可扩展交换机端口属性与[**NDIS\_交换机\_端口\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)结构相**匹配，则**必须处理 OID 请求。
 
 -   如果扩展处理 OID 方法请求，则它必须返回与 NDIS 指定的参数匹配的功能状态信息[ **\_交换机\_端口\_功能\_状态\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_switch_port_feature_status_parameters)结构。
 

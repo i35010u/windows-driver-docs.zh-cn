@@ -21,17 +21,17 @@ Windows USB （WinUSB）是一种适用于 USB 设备的通用驱动程序，该
 
 Winusb 也是 UMDF 函数驱动程序与关联设备之间链接的关键部分。 Winusb 作为上方筛选器驱动程序安装在设备的内核模式堆栈中。 应用程序与设备的 UMDF 函数驱动程序通信，以发出读取、写入或设备 i/o 控制请求。 驱动程序与框架交互，后者将请求传递到 Winusb。 然后，Winusb 处理请求并将其传递给协议驱动程序并最终传递到设备。 反向路径返回的任何响应。 Winusb 还充当设备堆栈的即插即用和电源所有者。
 
-**请注意**  WinUSB 函数需要 Windows XP 或更高版本。 你可以在 C/C++应用程序中使用这些函数与 USB 设备通信。 Microsoft 不提供 WinUSB 的托管 API。
+**注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C/C++应用程序中使用这些函数与 USB 设备通信。 Microsoft 不为 WinUSB 提供托管 API。
 
 本部分介绍如何使用 WinUSB 与 USB 设备进行通信。 本节中的主题提供了有关为设备选择正确的驱动程序的指南、有关将 Winusb 安装为 USB 设备的功能驱动程序的信息，以及包含代码示例的详细演练，其中显示了应用程序和 USB 设备相互通信。
 
 本部分包括以下主题：
 
 -   [WinUSB 体系结构和模块](winusb-architecture.md)
--   [WinUSB （Winusb）安装](winusb-installation.md)
+-   [WinUSB (Winusb.sys) 安装](winusb-installation.md)
 -   [WinUSB 设备](automatic-installation-of-winusb.md)
 -   [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)
--   [管道策略修改的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)
+-   [用于修改管道策略的 WinUSB 函数](winusb-functions-for-pipe-policy-modification.md)
 -   [WinUSB 电源管理](winusb-power-management.md)
 
 ## <a name="windows-support-for-winusb"></a>Windows 对 WinUSB 的支持
@@ -51,13 +51,13 @@ Winusb 也是 UMDF 函数驱动程序与关联设备之间链接的关键部分�
 
  
 
-**请注意**   是¹：此版本 Windows 的所有 Sku 都支持在基于 x86、基于 x64 和基于 Itanium 的系统上 WinUSB。
+**请注意**   是¹：此版本 Windows 的所有 sku 都支持基于 x86、基于 x64 和基于 Itanium 的系统上的 WinUSB。
 
 是²：此版本 Windows 的所有 Sku 都支持在基于 x86 和基于 x64 的系统上 WinUSB。
 
 是³：带有 SP2 服务包的 Windows XP 的所有客户端 Sku 都支持 WinUSB。 WinUSB 不是 Windows XP 的本机的;它必须与 WinUSB 共同安装程序一起安装。
 
-不：此版本的 Windows 不支持 WinUSB。
+否：此版本的 Windows 不支持 WinUSB。
 
  
 

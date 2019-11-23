@@ -3,7 +3,7 @@ title: OID_NDK_STATISTICS
 description: 作为查询，NDIS 和过量驱动程序或用户模式应用程序使用 OID_NDK_STATISTICS OID 来获取微型端口适配器的 NDK 统计信息。
 ms.assetid: 30F16DEC-AEE6-49D4-8599-95374ACBD446
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_NDK_STATISTICS 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_NDK_STATISTICS 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 24373920041a5b176ec6036f37458e07582d95b1
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748

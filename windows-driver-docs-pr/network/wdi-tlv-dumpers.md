@@ -58,7 +58,7 @@ ms.locfileid: "72834104"
 
 与分析 Api 一样， *pBuffer*指针和*BufferLength*参数应该排除任何标头，直接在第一个 TLV 上指向。
 
-Api 的消息变体包括消息 ID 和消息方向，以更好地消除 TLV 的歧义。 这很有用，因为可以根据上下文以不同的方式对同一 TLV ID 进行解码。 例如， [**WDI\_TLV\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)可以直接包含[**WDI\_mac\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)（当 OID 的一部分[\_WDI\_TASK\_扫描](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-scan)时），或者它可以包含**WDI\_MAC 的列表\_** 当 WDI 的一部分[ **\_TLV\_P2P\_属性**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)时进行寻址。
+Api 的消息变体包括消息 ID 和消息方向，以更好地消除 TLV 的歧义。 这很有用，因为可以根据上下文以不同的方式对同一 TLV ID 进行解码。 例如， [**WDI\_tlv\_BSSID**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-bssid)可以直接包含[**WDI\_mac\_地址**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address)，当 OID 的一部分[\_WDI\_TASK\_扫描](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-task-scan)时，它可以包含[**WDI\_TLV**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-attributes)\_**的一部分**\_\_\_
 
  
 

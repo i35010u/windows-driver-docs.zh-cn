@@ -11,7 +11,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72844385"
 ---
-# <a name="how-to-customize-io-for-your-device-using-the-wdtf-simple-io-action-plug-in"></a>如何使用 WDTF 简单 I/O 操作插件为设备自定义 I/O
+# <a name="how-to-customize-io-for-your-device-using-the-wdtf-simple-io-action-plug-in"></a>如何使用 WDTF 简单 I/O 操作插件为你的设备自定义 I/O
 
 
 若要从使用 Visual Studio 测试模板编写的设备基础测试和测试中获得最大好处，你的设备应由简单的 i/o 插件支持。 若要查看设备类型是否受支持，并确定是否有特定的测试要求，请参阅[提供的 WDTF 简单 i/o 插件](provided-wdtf-simpleio-plug-ins.md)。如果你的设备不受支持，则可以使用**WDTF 简单的 I/o 操作插件**模板在 Microsoft Visual Studio 中创建插件。
@@ -27,8 +27,8 @@ ms.locfileid: "72844385"
 
 ### <a href="" id="create-a-project-for-a-wdtf-simple-i-o-action-plug-in-"></a>步骤1：为 WDTF 简单 i/o 操作插件创建项目
 
-1. 从“文件”菜单中，单击“新建”&gt;“项目”。
-2. 从 "**新建项目**" 对话框的已安装模板列表中，选择 **" C++ Visual&gt;Windows 驱动程序&gt;测试"&gt;WDTF Simple i/o 操作插件**。
+1. 从**文件**菜单中，单击**新建&gt;项目**。
+2. 从 "**新建项目**" 对话框的已安装模板列表中，选择 **" C++ Visual &gt; Windows 驱动程序 &gt; 测试" &gt; WDTF Simple i/o 操作插件**。
 3. 提供简单的 i/o 项目和位置的名称（或使用默认值）。
 4. 项目模板生成 Visual Studio 解决方案。 此解决方案包含为设备创建简单的 i/o 插件所需的所有文件。 这些文件的名称采用 WDTF&gt;SimpleIoAction\*<em>&lt;项目</em>格式。 简单 i/o 项目的默认名称为 DeviceType。
 5. 模板为你的项目创建 WDTF 简单 i/o 操作接口。 接口作用于 IWDTFTarget2 接口的实例。

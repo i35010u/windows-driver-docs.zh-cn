@@ -62,7 +62,7 @@ RSS 接口支持显示在注册表中并在 INF 文件中指定的[标准化 INF
 <tr class="header">
 <th align="left">SubkeyName</th>
 <th align="left">ParamDesc</th>
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">EnumDesc</th>
 </tr>
 </thead>
@@ -71,13 +71,13 @@ RSS 接口支持显示在注册表中并在 INF 文件中指定的[标准化 INF
 <td align="left"><p><strong><em>RSS</strong></p></td>
 <td align="left"><p>接收方缩放</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>禁用</p></td>
+<td align="left"><p>Disabled</p></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"><p>1（默认值）</p></td>
-<td align="left"><p>启用</p></td>
+<td align="left"><p>已启用</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong></em>RSSProfile</strong></p></td>

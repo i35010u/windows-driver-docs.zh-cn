@@ -3,7 +3,7 @@ title: OID_SRIOV_PF_LUID
 description: 过量驱动程序发出 OID_SRIOV_PF_LUID 的对象标识符（OID）查询请求，接收与网络适配器的 PCI Express （PCIe）物理功能（PF）关联的本地唯一标识符（LUID）。
 ms.assetid: 363D308D-CE88-4F3B-81FF-37A2D86CB7BC
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_SRIOV_PF_LUID 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_SRIOV_PF_LUID 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c796a33f2597068cb385af660a68a960dcf8e5
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -56,7 +56,7 @@ NDIS 处理 OID\_SRIOV\_PF 的 OID 查询请求，\_微型端口驱动程序的 
 </tr>
 <tr class="odd">
 <td><p>NDIS_STATUS_INVALID_LENGTH</p></td>
-<td><p>信息缓冲区太短。 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION.</strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的 BytesNeeded 成员到所需的最小缓冲区大小。</p></td>
+<td><p>信息缓冲区太短。 微型端口驱动程序必须设置<strong>数据。QUERY_INFORMATION。</strong>将<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a>结构中的成员 BytesNeeded 为所需的最小缓冲区大小。</p></td>
 </tr>
 <tr class="even">
 <td><p>NDIS_STATUS_FAILURE</p></td>

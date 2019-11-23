@@ -154,7 +154,7 @@ srv**\\interim\store*https://internetsite
 
 **示例 HTTP 和 SMB 共享符号服务器方案**
 
-仅限仅限 UNC 的部署涉及承载所有文件（\\\\MainOffice\\符号）的中央办公室、分支机构缓存子集（\\\\BranchOfficeA\\符号）和台式机（C：\\符号）缓存它们引用的文件。
+仅限仅限 UNC 的部署涉及承载所有文件（\\\\MainOffice\\符号）的中央办公室、分支机构缓存子集（\\\\BranchOfficeA\\符号），而桌面（C：\\符号）缓存它们引用的文件。
 
 ```console
 srv*C:\Symbols*\\BranchOfficeA\Symbols*\\MainOffice\Symbols
@@ -191,7 +191,7 @@ srv*C:\Symbols*\\Machine1\Symbols*https://SymProxyName/Symbols;srv*C:\WebSymbols
 
 创建符号的本地缓存的另一种方法是使用符号路径中的**cache\\** <em>* localsymbolcache</em>字符串。 这不是符号服务器元素的一部分，而是符号路径中单独的元素。 调试器将使用指定的目录*localsymbolcache*来存储从显示在此字符串右侧符号路径中的任何元素加载的任何符号。 这使你可以对从任何位置下载的符号（而不仅仅是符号服务器下载的符号）使用本地缓存。
 
-例如，以下符号路径将不缓存从 *\\\\someshare*中获取的符号。 它将使用 c：\\mysymbols 缓存从 *\\\\anothershare*中获取的符号，因为以 *\\\\anothershare*开头的元素出现在缓存的右侧 **\*c：\\mysymbols**元素。 它还将使用 c：\\mysymbols 缓存来自 Microsoft 公共符号存储区的符号，因为符号服务器使用的是常用语法（具有两个或多个星号的**srv** ）。 此外，如果你随后使用[ **. sympath +** ](-sympath--set-symbol-path-.md)命令将其他位置添加到此路径，则还将缓存这些新元素，因为它们将追加到路径的右侧。
+例如，以下符号路径将不缓存从 *\\\\someshare*中获取的符号。 它将使用 c：\\mysymbols 缓存从 *\\\\anothershare*中获取的符号，因为以 *\\\\anothershare*开头的元素出现在**缓存\*c：\\mysymbols**元素的右边。 它还将使用 c：\\mysymbols 缓存来自 Microsoft 公共符号存储区的符号，因为符号服务器使用的是常用语法（具有两个或多个星号的**srv** ）。 此外，如果你随后使用[ **. sympath +** ](-sympath--set-symbol-path-.md)命令将其他位置添加到此路径，则还将缓存这些新元素，因为它们将追加到路径的右侧。
 
 ```console
 _NT_SYMBOL_PATH=\\someshare\that\cachestar\ignores;srv*c:\mysymbols*https://msdl.microsoft.com/download/symbols;cache*c:\mysymbols;\\anothershare\that\gets\cached

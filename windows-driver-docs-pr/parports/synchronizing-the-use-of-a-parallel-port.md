@@ -38,7 +38,7 @@ ms.locfileid: "72842317"
 
 -   **FreePort**成员是指向[*PPARALLEL\_免费\_例程*](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_free_routine)回调的指针，它可释放并行端口。
 
-[**IOCTL\_内部\_并行\_端口\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)请求需要客户端的最低处理，因为系统提供的并行端口的函数驱动程序在并行端口已分配。 函数驱动程序在将端口分配给客户端之后，完成状态为 "状态"\_"分配" 请求。 由于无法接受的超时延迟或一些其他特定于设备的情况，客户端可以随时取消挂起的分配请求。
+[**IOCTL\_内部\_并行\_端口\_分配**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/ni-parallel-ioctl_internal_parallel_port_allocate)请求需要客户端的最小处理，因为系统提供的并行端口的函数驱动程序会将客户端的请求排队，前提是已分配了并行端口。 函数驱动程序在将端口分配给客户端之后，完成状态为 "状态"\_"分配" 请求。 由于无法接受的超时延迟或一些其他特定于设备的情况，客户端可以随时取消挂起的分配请求。
 
 **请注意**   [**PPARALLEL\_尝试\_分配\_例程**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544550(v=vs.85))回调立即返回。 如果客户端仅使用**PPARALLEL\_尝试\_分配\_例程**回调来尝试分配其他客户端正在争用的并行端口，则并行端口函数驱动程序可能永远不会将该端口分配给客户端。 若要确保成功，客户端必须使用并行端口分配请求。 （并行端口功能驱动程序会按照收到请求的顺序，对端口分配和设备选择请求进行排队。）
 
@@ -46,7 +46,7 @@ ms.locfileid: "72842317"
 
 并行端口功能驱动程序向客户端分配并行端口之后，客户端将具有对端口的独占访问权限。 客户端必须调用[**PPARALLEL\_免费\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_free_routine)回调以释放端口。 客户端释放端口后，并行端口函数驱动程序将从端口的工作队列中删除下一个请求（端口分配或设备选择请求）（如果有），并完成请求。
 
-客户端应使用[**PPARALLEL\_查询\_等待进程\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_query_waiters_routine)回调来确定是否有其他客户端正在等待并行端口。 需要为长时间分配一个端口的客户端应定期调用**PPARALLEL\_查询\_等待进程\_例程**回调来确定其他客户端是否正在等待获取端口，如果客户端等待，尽快释放端口。
+客户端应使用[**PPARALLEL\_查询\_等待进程\_例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/parallel/nc-parallel-pparallel_query_waiters_routine)回调来确定是否有其他客户端正在等待并行端口。 需要为长时间分配端口的客户端应定期调用**PPARALLEL\_查询\_等待进程\_例程**回调来确定其他客户端正在等待获取端口，如果客户端正在等待，请尽快释放端口。
 
  
 

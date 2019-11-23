@@ -1,6 +1,6 @@
 ---
 title: ndiskd.netrb
-description: Ndiskd. netrb 扩展显示有关 NET_RING 结构的信息。
+description: Ndiskd. netrb 扩展显示 NET_RING 结构的相关信息。
 ms.assetid: 2D749E7E-00A5-422B-B785-B8DB3393A74F
 keywords:
 - ndiskd netrb Windows 调试
@@ -82,7 +82,7 @@ Ndiskd
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-通过单击环形缓冲区的句柄，或在命令行上输入 **！ ndiskd**命令，你可以查看此 NET\_环形\_缓冲区的详细信息，包括它包含多少个元素以及其开始和结束的地址索引.
+通过单击环形缓冲区的句柄，或在命令行上输入 **！ ndiskd**命令，可以查看此 NET\_环形\_缓冲区的详细信息，包括它包含的元素数以及其开始和结束索引的地址。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000

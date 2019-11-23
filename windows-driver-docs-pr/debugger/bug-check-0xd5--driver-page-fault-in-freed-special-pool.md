@@ -20,16 +20,16 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72313784"
 ---
-# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>Bug 检查 0xD5：DRIVER @ NO__T-0PAGE @ NO__T-1FAULT @ NO__T-2IN @ NO__T-3FREED @ NO__T-4SPECIAL @ NO__T-5POOL
+# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>Bug 检查0xD5：驱动程序\_页面\_错误\_\_释放\_特殊\_池
 
 
-DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2IN @ no__t-3FREED @ no__t-4SPECIAL @ no__t-5POOL bug 检查的值为0x000000D5。 这表明驱动程序已引用先前释放的内存。
+\_释放的 "驱动程序"\_页面\_错误\_，\_特殊\_池 bug 检查的值为 "0x000000D5"。 这表明驱动程序已引用先前释放的内存。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2IN @ no__t-3FREED @ no__t-4SPECIAL @ no__t-5POOL 参数
+## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>驱动程序\_页面\_错误\_\_释放\_特殊\_池参数
 
 
 <table>
@@ -50,8 +50,8 @@ DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2IN @ no__t-3FREED @ no__t-4SPECIAL 
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p><strong>0</strong>Read</p>
-<p><strong>2</strong>写入</p></td>
+<td align="left"><p><strong>0：</strong>读取</p>
+<p><strong>1：</strong>写入</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -66,7 +66,7 @@ DRIVER @ no__t-0PAGE @ no__t-1FAULT @ no__t-2IN @ no__t-3FREED @ no__t-4SPECIAL 
 
  
 [ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
-如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE @ no__t-0STRING） **KiBugCheckDriver**。
+如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE\_STRING） **KiBugCheckDriver**。
 
 <a name="cause"></a>原因
 -----

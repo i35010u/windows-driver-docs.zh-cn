@@ -1,6 +1,6 @@
 ---
-title: USBCAMD2 照相机配置
-description: USBCAMD2 照相机配置
+title: USBCAMD2 相机配置
+description: USBCAMD2 相机配置
 ms.assetid: 9a0dd6f9-aefb-4134-8bd5-31420a16db4a
 keywords:
 - Windows 2000 内核流式处理模型 WDK，USBCAMD2 微型驱动程序库
@@ -18,7 +18,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72841659"
 ---
-# <a name="usbcamd2-camera-configurations"></a>USBCAMD2 照相机配置
+# <a name="usbcamd2-camera-configurations"></a>USBCAMD2 相机配置
 
 
 支持 USB 摄像机的微型驱动程序可以是其前端和 USB 总线驱动程序上的*sys.databases*类驱动程序的客户端，如下图所示。

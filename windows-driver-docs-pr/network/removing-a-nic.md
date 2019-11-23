@@ -42,9 +42,9 @@ ms.locfileid: "72842069"
 
     发生这种情况时，NDIS 会调用绑定到 NIC 的所有协议驱动程序的[*ProtocolNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_net_pnp_event)函数。 在此调用中，NDIS 指定了**NetEventQueryRemoveDevice**的事件代码。
 
-5.  如果协议驱动程序在**NetEventQueryRemoveDevice**事件失败的情况下返回失败代码 NDIS\_状态\_从*ProtocolNetPnPEvent*失败，ndis 或 PnP 管理器可能会忽略该错误，并随后成功[**IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求。 因此，协议驱动程序必须准备好处理 NIC 的删除操作，即使协议驱动程序无法**NetEventQueryRemoveDevice**事件。
+5.  如果协议驱动程序在**NetEventQueryRemoveDevice**事件失败的情况下返回失败代码 NDIS\_状态\_从*ProtocolNetPnPEvent*失败，ndis 或 PnP 管理器可能会忽略该错误，并随后成功[ **\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)请求。 因此，协议驱动程序必须准备好处理 NIC 的删除操作，即使协议驱动程序无法**NetEventQueryRemoveDevice**事件。
 
-6.  PnP 管理器发出[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求以删除 NIC 或[**IRP\_MN\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)的软件表示（设备对象等）请求取消挂起的删除。 请注意，IRP\_MN\_删除\_设备请求并非始终以 IRP\_MN\_查询为前缀，\_删除\_设备请求。
+6.  PnP 管理器发出[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，以删除 NIC 或 IRP\_MN 的软件表示（设备对象等）， [ **\_取消\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)请求以取消挂起的删除。 请注意，IRP\_MN\_删除\_设备请求并非始终以 IRP\_MN\_查询为前缀，\_删除\_设备请求。
 
 7.  如果 PnP 管理器颁发 IRP\_MN\_CANCEL\_删除\_设备请求，NDIS 将调用连接到驱动程序堆栈中的 NIC 的最低筛选器驱动程序的[*FilterNetPnPEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_net_pnp_event)函数。 在此调用中，NDIS 指定了**NetEventCancelRemoveDevice**的事件代码。
 

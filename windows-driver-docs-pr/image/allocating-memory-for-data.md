@@ -29,7 +29,7 @@ WIA 服务依赖于 MINIDRV 中提供的信息[ **\_传输\_上下文**](https:/
 
 微型驱动程序应使用**CoTaskMemAlloc**函数（如 Microsoft Windows SDK 文档中所述）分配内存。 然后，微型驱动程序应将指针存储在**pTransferBuffer**中的内存位置，并将内存大小存储在**lBufferSize**中的内存大小（以字节为单位）。
 
-仅当[**wia\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)属性设置为 TYMED\_FILE or TYMED\_多页\_文件，并且 WIA\_IPA\_项时，才将**bClassDrvAllocBuff**成员设置为**FALSE** [ **\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)属性设置为零。
+仅当[**wia\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)属性设置为 TYMED\_FILE or TYMED\_多页\_文件，并且[**WIA\_IPA\_ITEM\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)属性设置为零时，才将**bClassDrvAllocBuff**成员设置为**FALSE** 。
 
 微型驱动程序必须注意不要 overfill **pTransferBuffer**成员指向的缓冲区。 可以通过写入小于或等于**lBufferSize**成员中存储的值的数据来避免这种情况。
 
@@ -37,7 +37,7 @@ WIA 服务依赖于 MINIDRV 中提供的信息[ **\_传输\_上下文**](https:/
 
 WIA 微型驱动程序可以通过设置[**WIA\_IPA\_项\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)和[**WIA\_IPA\_缓存\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)属性，来控制数据传输期间使用的内存量。
 
-WIA 应用程序使用 WIA\_IPA\_BUFFER\_大小属性来确定内存传输期间请求的最小传输缓冲区大小。 此值越大，请求的带区大小就越大。 如果 WIA 应用程序请求的缓冲区大小小于 WIA\_IPA\_BUFFER\_SIZE 属性中的值，则 WIA 服务将忽略此请求的大小并向 WIA\_微型驱动程序请求 IPA\_BUFFER\_大小的字节大小。 WIA 服务始终为至少为 WIA\_IPA\_缓冲区的缓冲区请求 WIA，\_大小为字节。
+WIA 应用程序使用 WIA\_IPA\_BUFFER\_大小属性来确定内存传输期间请求的最小传输缓冲区大小。 此值越大，请求的带区大小就越大。 如果 WIA 应用程序请求的缓冲区大小小于 WIA\_IPA\_BUFFER\_SIZE 属性中的值，则 WIA 服务将忽略此请求的大小并向 wia 微型驱动程序请求 IPA\_缓冲区大小为\_缓冲区大小的\_缓冲区。 WIA 服务始终为至少为 WIA\_IPA\_缓冲区的缓冲区请求 WIA，\_大小为字节。
 
 **请注意**   WIA\_IPA\_BUFFER\_SIZE 属性包含的值为应用程序可以在任何给定时间请求的最小数据量。 缓冲区大小越大，请求的数量越大。 太小的缓冲区大小会降低数据传输的性能。
 

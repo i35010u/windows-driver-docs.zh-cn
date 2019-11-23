@@ -43,7 +43,7 @@ SDEL 使用特性标记执行匹配和检索数据。 所有 SDEL 令牌只能�
 
 ### <a name="comparison-operations"></a>比较运算
 
-SDEL 允许各种比较运算符遵循属性标记。 在进行比较时，运算符左侧属性中的实际值将通过**VariantChangeType**方法，使其与运算符右侧的测试值类型相同（如 Microsoft Windows SDK 中所述。文档）。 下表显示了 SDEL 支持的不同比较运算符。
+SDEL 允许各种比较运算符遵循属性标记。 在进行比较时，运算符左侧的特性中的实际值将通过**VariantChangeType**方法（在 Microsoft Windows SDK 文档中介绍），将其与运算符右侧的测试值的类型相同。 下表显示了 SDEL 支持的不同比较运算符。
 
 比较运算符含义相等（=）
 
@@ -157,7 +157,7 @@ Next
 
 ### <a name="boolean-logic-in-sdel"></a>SDEL 中的布尔逻辑
 
-[**IWDTFTarget2：： GetRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)方法只能接受布尔值**或**运算符，但对[**IWDTFTargets2：： Query**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)、 [**IWDTFTarget2：： Eval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)和[**IWDTFTarget2：： GetValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getvalue)方法的调用可以使用布尔值**和**和**OR**运算符。 对于**查询**方法和**Eval**方法，运算符的作用类似于常规布尔运算符，并按预期返回结果。 但是，对于**GetValue**方法，**并**将在其自身的两侧组合值，**或**将仅返回找到的第一个值（从左侧开始）。
+[**IWDTFTarget2：： GetRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getrelations)方法只能接受布尔值**或**运算符，但对[**IWDTFTargets2：： Query**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftargets2-query)、 [**IWDTFTarget2：： Eval**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-eval)和[**IWDTFTarget2：： GetValue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdtf/nf-wdtf-iwdtftarget2-getvalue)方法的调用可以使用 boolean**和**and **OR**运算符。 对于**查询**方法和**Eval**方法，运算符的作用类似于常规布尔运算符，并按预期返回结果。 但是，对于**GetValue**方法，**并**将在其自身的两侧组合值，**或**将仅返回找到的第一个值（从左侧开始）。
 
 ### <a name="parentheses-in-sdel"></a>SDEL 中的括号
 

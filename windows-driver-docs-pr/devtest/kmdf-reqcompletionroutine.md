@@ -24,7 +24,7 @@ ms.locfileid: "72840180"
 
 **ReqCompletionRoutine**规则指定在向 i/o 目标发送请求之前必须设置完成例程。
 
-如果请求未同步发送，或者不是发送并忘记，（由**WDF\_请求\_发送\_选项\_发送\_并\_忘记**标志），则驱动程序应设置完成例程，使 I/O target 可以在请求完成时通知驱动程序。
+如果请求未同步发送，或者不是发送并忘记，（由**WDF\_请求\_发送\_选项\_发送\_和\_忘记**标志），则驱动程序应设置完成例程，以便在请求完成时，i/o 目标可以通知驱动程序。
 
 |              |      |
 |--------------|------|
@@ -56,7 +56,7 @@ ms.locfileid: "72840180"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)
@@ -65,8 +65,8 @@ ms.locfileid: "72840180"
 
 [完成 I/o 请求](https://docs.microsoft.com/windows-hardware/drivers/wdf/completing-i-o-requests)
 [同步取消和完成代码](https://docs.microsoft.com/windows-hardware/drivers/wdf/synchronizing-cancel-and-completion-code)
-[**WDF\_请求\_请求发送\_选项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)
-[**请求\_发送\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)
+[**WDF\_请求\_发送\_选项\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ne-wdfrequest-_wdf_request_send_options_flags)
+WDF\_[**请求\_发送\_选项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/ns-wdfrequest-_wdf_request_send_options)
  
 
  

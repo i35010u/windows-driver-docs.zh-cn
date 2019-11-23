@@ -63,7 +63,7 @@ ms.locfileid: "72591004"
 
 - 自定义的不能公开 IAudioProcessingObjectVBR 接口。
 
-**请注意**  For 有关所需接口的详细信息，请参阅 Windows 工具包中的 Audioenginebaseapo 和 Audioenginebaseapo 文件 \\ &lt;build 号 &gt; \\Include \\um 文件夹。
+**请注意**  有关所需接口的详细信息，请参阅 Windows 工具包中的 Audioenginebaseapo 和 Audioenginebaseapo 文件\\&lt;生成号&gt;\\包括\\um 文件夹。
 
  
 
@@ -88,15 +88,15 @@ a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动�
 
 b. 将主 .zip 文件下载到本地硬盘驱动器。
 
-c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\DriverSamples \\* 作为要将文件提取到其中的新文件夹。
+c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C：\\DriverSamples\\* 作为要将文件提取到其中的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹。
 
-*C： \\DriverSamples \\Audio \\Sysvad*
+*C：\\DriverSamples\\音频\\Sysvad*
 
 **在 Visual Studio 中打开驱动程序解决方案**
 
-在 Microsoft Visual Studio 中，单击 "**文件**" &gt; "**打开**&gt;**项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C： \\DriverSamples \\Audio \\Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
+在 Microsoft Visual Studio 中，单击 "**文件**" &gt; "**打开**&gt;**项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C：\\DriverSamples\\音频\\Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
 
 在 Visual Studio 中找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，你可以看到一个包含六个项目的解决方案。
 
@@ -197,7 +197,7 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 }
 ```
 
-**请   The 注意**，在 Audioenginebaseapo 文件中详细介绍了类继承自**CBaseAudioProcessingObject**的剩余接口和方法。
+**请  注意**，在 Audioenginebaseapo 文件中详细介绍了类继承自**CBaseAudioProcessingObject**的剩余接口和方法。
 
  
 
@@ -248,7 +248,7 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 面向 Windows 10 的驱动程序应动态地链接到通用 CRT。
 
-如果需要支持 Windows 8，1，请通过在 C/C++，代码生成中设置项目属性来启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd*设置为用于调试版本。 进行此更改是因为，对于驱动程序，很难将 MSVCRT.LIB &lt;n 重新分发 &gt; 的二进制文件。 解决方案是静态链接 libcmt.lib。 有关详细信息，请参阅[/md、/mt、/ld （使用运行时库）](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 。
+如果需要支持 Windows 8，1，请通过在 C/C++，代码生成中设置项目属性来启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd*设置为用于调试版本。 进行此更改是因为，对于驱动程序，很难将 MSVCRT.LIB&lt;n&gt;.dll 二进制文件重新发布。 解决方案是静态链接 libcmt.lib。 有关详细信息，请参阅[/md、/mt、/ld （使用运行时库）](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 。
 
 **禁止使用嵌入清单**
 
@@ -272,28 +272,28 @@ Sysvad 示例附带的 tabletaudiosample 和 phoneaudiosample 文件说明了 Sw
 
 请参阅以下参考主题，了解有关每个 APO INF 文件设置的信息。
 
-[PKEY \_FX \_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
+[PKEY\_FX\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
 
-[PKEY \_FX \_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
+[PKEY\_FX\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
 
-[PKEY \_FX \_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
+[PKEY\_FX\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
 
-[PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
+[PKEY\_SFX\_ProcessingModes\_支持的\_流式处理\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
 
-[PKEY \_MFX \_ProcessingModes \_Supported \_For \_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
+[PKEY\_MFX\_ProcessingModes\_支持的\_流式处理\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
 
-[PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
+[PKEY\_EFX\_ProcessingModes\_支持的\_流式处理\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
 
 以下 INF 文件示例说明了如何为特定模式注册音频处理对象（中）。 它们说明了此列表中可用的可能组合。
 
--   PKEY \_FX \_StreamEffectClsid 与 PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
--   PKEY \_FX \_ModeEffectClsid 与 PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
--   PKEY \_FX \_ModeEffectClsid \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
--   PKEY \_FX \_EndpointEffectClsid \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
+-   PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
+-   PKEY\_FX\_ModeEffectClsid 无 PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
+-   PKEY\_FX\_EndpointEffectClsid 无 PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
 
 这两个示例中未显示一种附加的有效组合。
 
--   PKEY \_FX \_EndpointEffectClsid 与 PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_EndpointEffectClsid with PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
 
 **SYSVAD Tablet 多模式流式处理效果 APO INF 示例**
 
@@ -303,9 +303,9 @@ Sysvad 示例附带的 tabletaudiosample 和 phoneaudiosample 文件说明了 Sw
 
 此示例演示了这种系统效果组合：
 
--   PKEY \_FX \_StreamEffectClsid 与 PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
 
--   PKEY \_FX \_ModeEffectClsid 与 PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
+-   PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
 
 ```inf
 [SWAPAPO.I.Association0.AddReg]
@@ -329,7 +329,7 @@ HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDI
 ;HKR,FX\0,%PKEY_EFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 ```
 
-请注意，在示例 INF 文件中，EFX \_Streaming 属性被注释掉，因为音频处理已转换为该层之上的内核模式，因此不需要使用流式处理属性，因此不会使用此属性。 为发现目的指定 PKEY \_FX \_EndpointEffectClsid 是有效的，但指定 PKEY \_EFX \_ProcessingModes \_Supported \_For \_Streaming 时，会出现错误。 这是因为模式混合/t 会在堆栈中较低，因此无法插入终结点 APO。
+请注意，在示例 INF 文件中，EFX\_流式处理属性被注释掉，因为音频处理已转换为该层之上的内核模式，因此不需要使用流式处理属性，因此不会使用此属性。 为发现目的指定 PKEY\_FX\_EndpointEffectClsid 是有效的，但指定 PKEY\_EFX\_ProcessingModes\_\_流支持的\_时，会出现错误。 这是因为模式混合/t 会在堆栈中较低，因此无法插入终结点 APO。
 
 **组件化 APO 安装**
 
@@ -380,9 +380,9 @@ HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%S
 
 此示例演示了这种系统效果组合：
 
--   PKEY \_FX \_StreamEffectClsid 与 PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
 
--   PKEY \_FX \_ModeEffectClsid 与 PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
+-   PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
 
 此示例代码支持蓝牙免提和立体声设备。
 
@@ -416,11 +416,11 @@ AUDIO_SIGNALPROCESSINGMODE_DEFAULT = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
 
 此示例 INF 文件说明了以下系统效果组合：
 
--   PKEY \_FX \_StreamEffectClsid 与 PKEY \_SFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
 
--   PKEY \_FX \_ModeEffectClsid 与 PKEY \_MFX \_ProcessingModes \_Suppoted \_For \_Streaming
+-   PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
 
--   PKEY \_FX \_EndpointEffectClsid \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_EndpointEffectClsid 无 PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
 
 ```inf
 [MyDevice.Interfaces]
@@ -444,13 +444,13 @@ HKR,"FX\\0",%PKEY_MFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNA
 
 **定义自定义 APO 和 CLSID APO INF 示例**
 
-此示例演示如何为自定义 APO 定义自己的 CLSID。 此示例使用 MsApoFxProxy CLSID {889C03C8-ABAD-4004-BF0A-BC7BB825E166}。 共同 iopalisserverextension-此 GUID 在 MsApoFxProxy 中实例化一个类，该类实现 IAudioProcessingObject 接口，并通过 KSPROPSETID \_AudioEffectsDiscovery 属性集查询基础驱动程序。
+此示例演示如何为自定义 APO 定义自己的 CLSID。 此示例使用 MsApoFxProxy CLSID {889C03C8-ABAD-4004-BF0A-BC7BB825E166}。 共同 iopalisserverextension-此 GUID 在 MsApoFxProxy 中实例化一个类，该类实现 IAudioProcessingObject 接口，并通过 KSPROPSETID\_AudioEffectsDiscovery 属性集查询基础驱动程序。
 
-此 INF 文件示例显示了 \[BthHfAud \] 部分，该部分从 wdmaudio \] \[MsApoFxProxy 注册，该 \[BthHfAud 然后注册 PKEY \] \_FX7EndpointEffectClsid 作为 MsApoFxProxy 的知名 CLSID。
+此 INF 文件示例显示了 \[的 BthHfAud\] 部分，该部分从 wdmaudio \[BthHfAud 中提取 \[MsApoFxProxy\]，然后将 ANLGACAPTURE\]FX\_AddReg 注册为 PKEY 的已知 CLSID。\_
 
 此 INF 文件示例还演示了此系统效果组合的用法：
 
--   PKEY \_FX \_EndpointEffectClsid \_EFX \_ProcessingModes \_Supported \_For \_Streaming
+-   PKEY\_FX\_EndpointEffectClsid 无 PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
 
 ```inf
 ;wdma_bt.inf
@@ -471,7 +471,7 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 #endif
 ```
 
-此示例 INF 文件显示了 \[MsApoFxProxy \] 并 \[MsApoFxProxy AddReg \] 部分。 这会使用 \[MsApoFxProxy 的 CopyList \] 部分向 COM 注册众所周知的 GUID。 本节将 MsApoFxProxy 复制到 C： \\Windows \\system32。
+此示例 INF 文件显示 \[MsApoFxProxy\] 和 \[AddReg\] 部分。 这会使用 \[CopyList\] 部分向 COM 注册众所周知的 GUID。 本节将 MsApoFxProxy 复制到 C：\\Windows\\system32 中。
 
 ```inf
 ; wdmaudio.inf – this is where WmaLfxGfxDsp.dll is registered
@@ -515,26 +515,26 @@ APO 注册用于支持使用加权计算动态匹配终结点效果的进程。 
 终结点属性存储权重
 
 1. 具有特定 KSNODETYPE 的 FX
-2. FX 与 KSNODETYPE \_ANY
+2. FX with KSNODETYPE\_
 3. 具有特定 KSNODETYPE 的 MSFX
-4. MSFX with KSNODETYPE \_ANY
+4. MSFX with KSNODETYPE\_
 
 效果属性存储权重
 
 1. 具有特定 KSNODETYPE 的 EP
-2. 具有 KSNODETYPE 的 EP \_ANY
+2. 具有 KSNODETYPE 的 EP\_任意
 3. 具有特定 KSNODETYPE 的 MSEP
-4. MSEP with KSNODETYPE \_ANY
+4. MSEP with KSNODETYPE\_
 
-数字必须从0开始，并按顺序递增： MSEP \\0，MSEP \\1，...，MSEP \\n 如果缺少 EP \\3，则 Windows 将停止查找 EP \\n，而不会看到 EP \\4（即使它已存在）
+数字必须从0开始并按顺序递增： MSEP\\0，MSEP\\1，...，MSEP\\n 如果（例如）缺少 EP\\3，则 Windows 将停止查找 EP\\n，而不会看到 EP\\4，即使存在
 
-将 PKEY \_FX \_Association （对于效果属性存储）或 PKEY \_EP \_Association （对于终结点属性存储）的值与 KSPINDESCRIPTOR 进行比较。信号路径的硬件端的固定工厂的类别值（由内核流公开）。
+PKEY 的值\_FX\_Association （适用于效果属性存储）或 PKEY\_EP\_关联（对于终结点属性存储）与 KSPINDESCRIPTOR 进行比较。信号路径的硬件端的固定工厂的类别值（由内核流公开）。
 
 只有 Microsoft 收件箱类驱动程序（可以由第三方开发人员包装）应使用 MSEP 和 MSFX;所有第三方驱动程序应使用 EP 和 FX。
 
 **APO 节点类型的兼容性**
 
-以下 INF 文件示例说明了如何将 PKEY \_FX \_Association 密钥设置为与 APO 关联的 GUID。
+以下 INF 文件示例说明了如何将 PKEY\_FX\_关联密钥设置为与 APO 关联的 GUID。
 
 ```inf
 ;; Property Keys
@@ -547,7 +547,7 @@ PKEY_FX_Association = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
 HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_ANY%
 ```
 
-由于音频适配器能够支持多个输入和输出，因此必须显式指示与自定义 APO 兼容的内核流式处理（KS）节点类型。 在上述 INF 文件片段中，APO 显示为与 KS 节点类型% KSNODETYPE \_ANY% 关联。 稍后在本 INF 文件中，KSNODETYPE \_ANY 定义如下：
+由于音频适配器能够支持多个输入和输出，因此必须显式指示与自定义 APO 兼容的内核流式处理（KS）节点类型。 在上述 INF 文件片段中，APO 显示为与 KS 节点类型% KSNODETYPE\_任意% 关联。 稍后在本 INF 文件中，KSNODETYPE\_ANY 定义如下：
 
 ```inf
 [Strings]
@@ -558,7 +558,7 @@ KSNODETYPE_SPEAKER  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
 ...
 ```
 
-如果 KSNODETYPE 的值为**NULL** \_ANY 表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE \_SPEAKER 的 KS 节点类型兼容，则 INF 文件会显示 KS 节点类型和 APO 关联，如下所示：
+如果 KSNODETYPE 的值为**NULL**\_则表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE\_嘉宾的 KS 节点类型兼容，则 INF 文件会显示 KS 节点类型和 APO 关联，如下所示：
 
 ```inf
 ;; Key value pairs
@@ -596,7 +596,7 @@ HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
 
 -   APO 已被重命名或篡改。
 
-此外，如果 SFX、MFX 或 EFX APO 的失败计数值达到系统指定的限制，则会通过将 PKEY \_Endpoint \_Disable \_SysFx 注册表项设置为 "1" 来禁用 "MFX" 和 "EFX"。 系统指定的限制当前为值10。
+此外，如果 SFX、MFX 或 EFX APO 的失败计数值达到系统指定的限制，则会通过将 PKEY\_终结\_点设置为 ""，禁用\_SysFx 注册表项来禁用 MFX 和 EFX。 系统指定的限制当前为值10。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

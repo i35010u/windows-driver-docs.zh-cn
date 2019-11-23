@@ -81,7 +81,7 @@ DATAPATH QUEUES
     NETRXQUEUE         ffffd1022cc7b0d0
 ```
 
-通过单击 NETTXQUEUE 的句柄或在命令行中输入 **！ ndiskd**命令，你可以查看此队列的详细信息，包括其伴生 WDF 对象的句柄、其环形缓冲区的句柄和其已注册的回调。
+通过单击 NETTXQUEUE 的句柄或在命令行中输入 **！ ndiskd**命令，你可以查看此队列的详细信息，包括其伴生 WDF 对象的句柄、其环形缓冲区的句柄和其已注册回调的函数指针。
 
 ```console
 0: kd> !ndiskd.netqueue ffffd1022f512700

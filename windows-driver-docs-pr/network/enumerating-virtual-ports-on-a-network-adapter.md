@@ -22,19 +22,19 @@ ms.locfileid: "72834768"
 
 -   [**NDIS\_NIC 的数组\_交换机\_VPORT\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构。 其中每个结构都包含有关网络适配器的 NIC 交换机上的 VPort 的信息。
 
-    **注意**  如果未在网络适配器上创建 VPorts，则驱动程序会将[**NDIS\_\_NIC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)的**NumElements**成员设置\_VPORT\_[**返回\_NIC\_交换机\_VPORT\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构。
+    **注意**  如果未在网络适配器上创建 VPorts，则驱动程序会将 NDIS\_\_NIC 的**NumElements**成员设置[ **\_VPORT\_info\_数组**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)结构设置为零，且不会返回[**ndis\_NIC\_交换机\_VPORT\_info**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info)结构。
 
      
 
-在过量的驱动程序或用户应用程序[\_交换机\_枚举\_VPORTS 请求发出\_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)之前，它必须[ **\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)与请求一起传递的结构。 在初始化 NDIS\_NIC 时，驱动程序或应用程序必须遵循以下准则 **\_交换机\_VPORT\_信息\_数组**结构：
+在上层的驱动程序或用户应用程序[\_交换机\_枚举\_VPORTS 请求发出\_OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-nic-switch-enum-vports)之前，它必须初始化[**NDIS\_nic\_交换机\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_info_array)与请求一起传递\_\_的数组结构。 在初始化 NDIS\_NIC 时，驱动程序或应用程序必须遵循以下准则 **\_交换机\_VPORT\_信息\_数组**结构：
 
--   如果 NDIS\_NIC\_交换机\_VPORT\_信息\_数组\_在**Flags**成员中设置\_特定\_交换机标志，将返回在指定 NIC 交换机上创建的所有 VPorts 的信息。 NIC 交换机由该结构的**SwitchId**成员指定。
+-   如果在**Flags**成员中设置\_特定\_交换机标志上的 NDIS\_NIC\_交换机\_VPORT\_信息\_数组\_枚举\_，则会为指定 NIC 交换机上创建的所有 VPorts 返回信息。 NIC 交换机由该结构的**SwitchId**成员指定。
 
     **注意**  从 Windows Server 2012 开始，sr-iov 接口仅支持网络适配器上的一个 NIC 交换机。 此开关称为*默认 NIC 交换机*，由 NDIS\_默认\_交换机\_ID 标识符引用。 不管**flags**成员中设置了哪些标志，都必须将**SwitchId**成员设置为 NDIS\_默认\_交换机\_ID。
 
      
 
--   如果 NDIS\_NIC\_交换机\_VPORT\_信息\_数组\_在**Flags**成员中设置\_特定\_函数标志，将返回连接到网络适配器上指定 PCI Express （PCIe）物理功能（PF）或虚拟功能（VF）的所有 VPorts 的信息。 PF 或 VF 由该结构的**AttachedFunctionId**成员指定。
+-   如果在**Flags**成员中设置\_特定\_函数标志上的 NDIS\_NIC\_交换机\_VPORT\_信息\_ARRAY\_枚举\_，则将返回连接到网络适配器上指定 PCI Express （PCIe）物理功能（PF）或虚拟功能（VF）的所有 VPorts 的信息。 PF 或 VF 由该结构的**AttachedFunctionId**成员指定。
 
     如果**AttachedFunctionId**成员设置为 NDIS\_PF\_函数\_ID，则返回所有 VPorts 的信息。 这包括附加到 PF 的默认 VPort。 如果**AttachedFunctionId**成员设置为有效的 VF 标识符，则将返回附加到指定 VF 的所有 VPorts 的信息。
 

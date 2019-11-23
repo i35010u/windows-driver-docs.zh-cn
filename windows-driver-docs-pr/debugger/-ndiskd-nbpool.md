@@ -1,6 +1,6 @@
 ---
 title: ndiskd.nbpool
-description: Ndiskd. nbpool 扩展显示有关 NET_BUFFER （NB）池的信息。
+description: Ndiskd. nbpool 扩展显示 NET_BUFFER （NB）池的相关信息。
 ms.assetid: 4FCD48B7-C469-4057-A279-20522B00E80B
 keywords:
 - ndiskd nbpool Windows 调试

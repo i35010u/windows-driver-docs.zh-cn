@@ -117,7 +117,7 @@ ms.locfileid: "72825084"
 <tbody>
 <tr class="odd">
 <td><p>准确报告 GNSS_DEVICE_CAPABILITIES</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td><p>最小功能要求。</p></td>
 </tr>
@@ -136,7 +136,7 @@ ms.locfileid: "72825084"
 <tr class="even">
 <td><p>GNSS 协助支持（特定于 IHV）</p></td>
 <td><p>推荐</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -146,14 +146,14 @@ ms.locfileid: "72825084"
 <td></td>
 </tr>
 <tr class="even">
-<td><p>支持完整的 GNSS_FixData 结构</p></td>
-<td><p>Mandatory</p></td>
+<td><p>支持完整 GNSS_FixData 结构</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>单次拍摄会话</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -183,7 +183,7 @@ ms.locfileid: "72825084"
 </tr>
 <tr class="even">
 <td><p>提供 ChipsetInfo</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td><p>使用 GNSS_ChipsetInfo。</p></td>
 </tr>
@@ -208,7 +208,7 @@ ms.locfileid: "72825084"
 <tr class="even">
 <td><p>与 MBB 的集成的控制平面位置</p></td>
 <td><p>只有移动运营商要求时才是必需的</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td><p>通常，移动运营商需要语音支持的设备。 手机几乎始终需要。</p></td>
 </tr>
 <tr class="odd">
@@ -221,7 +221,7 @@ ms.locfileid: "72825084"
 <tr class="even">
 <td><p>SUPL 2。x</p></td>
 <td><p>只有移动运营商要求时才是必需的</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td><p>通常，移动运营商需要语音支持的设备。 手机几乎始终需要。</p>
 <p>包括实现完整的客户端会议移动运营商要求，通过 DDI 进行配置，通过 DDI 将 NI 事件报告给操作系统，并与 MBB 集成。</p></td>
 </tr>
@@ -234,7 +234,7 @@ ms.locfileid: "72825084"
 </tr>
 <tr class="even">
 <td><p>GNSS_SetLocationServiceEnabled 驱动程序命令</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -258,13 +258,13 @@ ms.locfileid: "72825084"
 </tr>
 <tr class="even">
 <td><p>GNSS_ResetEngine 驱动程序命令</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td><p>用于测试目的。</p></td>
 </tr>
 <tr class="odd">
 <td><p>GNSS_ClearAgnssData 驱动程序命令</p></td>
-<td><p>Mandatory</p></td>
+<td><p>强制</p></td>
 <td></td>
 <td><p>用于测试目的。</p></td>
 </tr>

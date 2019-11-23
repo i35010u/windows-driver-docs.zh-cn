@@ -31,7 +31,7 @@ ms.locfileid: "72823827"
 
 当 NDIS 调用[*FilterSendNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_send_net_buffer_lists)时，如果可扩展交换机可扩展接口已将来自同一源端口的多个数据包分组，则会设置此标志。 为了获得最佳性能，扩展应保留这一分组，并在调用[**NdisFSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlists)时设置此标志。 如果扩展使用与列表中其他数据包相同的源端口，则扩展还可以将任何来源或克隆的数据包添加到[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表中\_列表结构。
 
-**请注意**，  如果[**网络\_\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表中的每个数据包都使用相同的源端口，则扩展应将**NDIS\_发送\_\_\_\_标志**完成发送请求时， [**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete)的*SENDCOMPLETEFLAGS*参数中的单个\_源标志。
+**请注意**，  如果[**网络\_\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表中的每个数据包都使用相同的源端口，则在完成发送请求*时，该*扩展应将**NDIS\_发送\_\_\_** \_\_标志发送到[**NdisFSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfsendnetbufferlistscomplete) 。
 
  
 
@@ -59,7 +59,7 @@ ms.locfileid: "72823827"
 
 当 NDIS 调用[*FilterReceiveNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_receive_net_buffer_lists)时，如果可扩展交换机已将来自同一源端口的多个数据包分组，则会设置此标志。 为了获得最佳性能，扩展应保留这一分组，并在调用[**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)时设置此标志。 如果数据包与列表中的其他数据包具有相同的源端口，还应将任何来源或克隆的数据包添加到[**网络\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表中\_列表结构。
 
-**请注意**，  如果[**网络\_\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表中的每个数据包都使用相同的源端口，则扩展应将**NDIS\_返回\_\_\_\_标志**接收请求完成时， [*FilterReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_return_net_buffer_lists)的*RETURNFLAGS*参数中的源标志。 如果扩展插件调用[**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)来返回它未发起或克隆的数据包，则必须在*ReturnFlags*参数中设置此标志。
+**请注意**，  如果[**网络\_\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)的链接列表中的每个数据包都使用相同的源端口，则在接收请求完成时，该扩展应将 NDIS\_返回\_在[*FilterReturnNetBufferLists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-filter_return_net_buffer_lists)的*ReturnFlags*参数中\_**单个\_source**标志。\_ 如果扩展插件调用[**NdisFReturnNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreturnnetbufferlists)来返回它未发起或克隆的数据包，则必须在*ReturnFlags*参数中设置此标志。
 
  
 

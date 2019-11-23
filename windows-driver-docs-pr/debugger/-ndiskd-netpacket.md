@@ -1,6 +1,6 @@
 ---
 title: ndiskd.netpacket
-description: Ndiskd. netpacket 扩展显示有关 NET_PACKET 结构的信息。
+description: Ndiskd. netpacket 扩展显示 NET_PACKET 结构的相关信息。
 ms.assetid: 304BA2CF-B6BC-452C-8543-9B872054AA9E
 keywords:
 - ndiskd netpacket Windows 调试
@@ -91,7 +91,7 @@ Ndiskd
     [07f] ffffd1022d003fc0 - NET_PACKET
 ```
 
-通过单击此 NET\_包的句柄，或在命令行上输入 **！ ndiskd** ，可以查看此网络\_数据包的详细信息，包括包含它的环形缓冲区、包含其环的数据路径队列缓冲区，以及其第一个片段的句柄。
+通过单击此 NET\_数据包的句柄，或在命令行上输入 **！ ndiskd** ，可以查看此网络\_数据包的详细信息，包括包含它的环形缓冲区、包含其环形缓冲区的数据路径队列，以及其第一个片段的句柄。
 
 ```console
 0: kd> !ndiskd.netpacket ffffd1022d000040

@@ -31,16 +31,16 @@ devcon [/m:\\computer] [/r] command [arguments]
 ## <a name="span-idddk_devcon_general_commands_toolsspanspan-idddk_devcon_general_commands_toolsspanparameters"></a><span id="ddk_devcon_general_commands_tools"></span><span id="DDK_DEVCON_GENERAL_COMMANDS_TOOLS"></span>Parameters
 
 
-**注意若要**更改设备的状态或配置，您必须是计算机上 Administrators 组的成员。  
+**注意**  要更改设备的状态或配置，您必须是计算机上 Administrators 组的成员。
 
  
 
 DevCon 命令中的参数必须按语法中所示的顺序出现。 如果参数不按顺序排列，则 DevCon 将忽略这些参数，但不显示语法错误。 相反，它会处理包含剩余参数的命令。
 
-有关命令语法的帮助，可以在命令提示符窗口中使用以下命令：**Devcon help**或**DevCon help** *命令*。
+有关命令语法的帮助，可以在命令提示符窗口中使用以下命令： **DevCon help**或**DevCon help** *命令*。
 
-<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m：\\计算机在指定的远程计算机上运行命令。\\** 反斜杠是必需的。
-**注意若要**在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。   在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
+<span id="________m___computer______"></span><span id="________M___COMPUTER______"></span> **/m：\\\\** <em>计算机</em>在指定的远程计算机上运行命令。 反斜杠是必需的。
+**请注意**   在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
 
  
 
@@ -102,9 +102,9 @@ DevCon 命令中的参数必须按语法中所示的顺序出现。 如果参数
 
 [**DevCon ClassFilter**](devcon-classfilter.md)
 
-[**DevCon Dp\_add**](devcon-dp-add.md)
+[**DevCon Dp\_添加**](devcon-dp-add.md)
 
-[**DevCon Dp\_删除**](devcon-dp-delete.md)
+[**删除 DevCon Dp\_** ](devcon-dp-delete.md)
 
 <span id="_______arguments______"></span><span id="_______ARGUMENTS______"></span>*参数*指定 DevCon 命令的参数。
 
@@ -120,15 +120,15 @@ DevCon 命令中的参数必须按语法中所示的顺序出现。 如果参数
 
 DevCon 按计算机名称、硬件 ID、兼容 ID、设备实例 ID 和/或设备安装程序类来标识设备。
 
-如果命令包含多个 id 或 id 模式（一个包含通配符（\*）的 id），则 DevCon 将返回其 id 与任何 id 或 ID 模式匹配的设备。 也就是说，它在 ID 参数之间假定为 "or"。
+如果命令包括多个 ID 或 ID 模式（一个包含通配符（\*）的 ID），则 DevCon 返回其 Id 与任何 Id 或 ID 模式匹配的设备。 也就是说，它在 ID 参数之间假定为 "or"。
 
-例如， **\*devcon hwid pnp\* \*mou\*** 返回其硬件 ID 或兼容 ID 中包含 "pnp" 或 "mou" 的设备。
+例如， **devcon hwid \*pnp\* \*mou\*** 返回在其硬件 ID 或兼容 ID 中包含 "pnp" 或 "mou" 的设备。
 
 如果命令包括设备安装程序类，则 DevCon 首先将搜索限制为安装类，然后返回类中与任何 ID 模式匹配的设备，也就是说，它在类和 Id 之间采用 "and"，在每个 ID 参数之间使用 "or"。
 
-例如， **devcon hwid \*= media pnp\* \*microsoft\*** 返回 media 设备安装程序类中的设备，这些设备在其硬件 ID 或兼容 ID 中包含 "pnp" 或 "microsoft"。
+例如， **devcon hwid = media \*pnp\* \*microsoft\*** 返回 media 设备安装程序类中的设备，该设备在其硬件 ID 或兼容 ID 中包含 "pnp" 或 "microsoft"。
 
-**注意若要**在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。   在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
+**请注意**   在远程计算机上运行 DevCon 命令，组策略设置必须允许即插即用服务在远程计算机上运行。 在运行 Windows Vista 和更高版本的 Windows 的计算机上，默认情况下组策略禁用对服务的远程访问。 在运行 WDK 8.1 和 WDK 8 的计算机上，远程访问功能不可用。
 
  
 
@@ -144,7 +144,7 @@ DevCon 提供了两种方法来重新启动操作系统，还提供了一种方�
 
 ### <a name="span-idddk_devcon_return_codes_toolsspanspan-idddk_devcon_return_codes_toolsspandevcon-return-codes"></a><span id="ddk_devcon_return_codes_tools"></span><span id="DDK_DEVCON_RETURN_CODES_TOOLS"></span>DevCon 返回代码
 
-DevCon 返回一个整数，该整数可在程序和脚本中用于确定 DevCon 命令是否成功（例如， **return = DevCon hwid \*** ）。
+DevCon 返回一个整数，该整数可在程序和脚本中用于确定 DevCon 命令是否成功（例如， **return = devcon hwid \*** ）。
 
 下表列出并说明了返回代码。
 

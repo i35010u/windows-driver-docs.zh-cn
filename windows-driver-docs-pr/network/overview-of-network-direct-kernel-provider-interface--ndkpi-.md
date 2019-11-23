@@ -50,7 +50,7 @@ NDK 使用者是内核模式的 Windows 组件，例如 SMB 服务器和客户�
 
  
 
-NDK 使用者调用提供程序的*NdkOpenAdapter* （[*打开\_NDK\_适配器\_处理程序*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler)）回调函数以创建适配器对象， *NdkCloseAdapter* （[*NDK\_FN\_关闭\_对象*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)）将其关闭。 在提供程序创建适配器对象之后，使用者将调用其他提供程序回调函数来创建其他 NDK 对象。
+NDK 使用者调用提供程序的*NdkOpenAdapter* （[*打开\_NDK\_适配器\_处理程序*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndisndk/nc-ndisndk-open_ndk_adapter_handler)）回调函数以创建适配器对象，并使用*NdkCloseAdapter* （[*NDK\_FN\_关闭\_对象*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndkpi/nc-ndkpi-ndk_fn_close_object)）来关闭它。 在提供程序创建适配器对象之后，使用者将调用其他提供程序回调函数来创建其他 NDK 对象。
 
 NDK 使用者实现了由 NDK 提供程序调用的[NDKPI 使用者回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)。
 

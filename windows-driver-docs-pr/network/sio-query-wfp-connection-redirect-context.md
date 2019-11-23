@@ -3,7 +3,7 @@ title: SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 控制代码
 description: SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 套接字 i/o 控制操作允许 Winsock 客户端检索重定向连接的重定向记录的重定向上下文。
 ms.assetid: D23971FC-D75F-4C39-BE6A-F0E17F7C1804
 ms.date: 08/08/2017
-keywords: -SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 控制从 Windows Vista 开始的代码网络驱动程序
+keywords: -从 Windows Vista 开始 SIO_QUERY_WFP_CONNECTION_REDIRECT_CONTEXT 控制代码网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: 838630273811f8130d00702af44e153e00acde69
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -19,7 +19,7 @@ ms.locfileid: "72841909"
 
 WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连接上设置，以便重定向的连接和原始连接在逻辑上是相关的。
 
-**请注意**  [**SIO\_query\_WFP\_连接\_重定向\_** ](sio-query-wfp-connection-redirect-records.md)仅当连接在**FWPS\_层重定向\_ALE\_连接时才能使用\_重定向\_V4**或**FWPS\_层\_ALE\_将\_\_重定向到**WFP 客户端。
+**请注意**  [**SIO\_QUERY\_wfp\_连接\_重定向\_** ](sio-query-wfp-connection-redirect-records.md)仅当连接在 FWPS\_层重定向时才可使用\_**Ale\_连接\_\_V4**或**FWPS\_层\_ale\_\_V6**层由 WFP 客户端连接。\_
 
  
 
@@ -35,7 +35,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 <thead>
 <tr class="header">
 <th>参数</th>
-<th>Value</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -83,9 +83,9 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 调用方可以通过以下两种方式之一执行此查询：
 
 -   它可以将*OutputBuffer*设置为大小大约为 1 KB 的大缓冲区。 如果输出缓冲区大小不够大，则[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)将返回**状态\_缓冲区\_\_太小**并且*OutputSizeReturned*将包含所需的缓冲区大小。 然后，可以分配更大的缓冲区，并使用 SIO\_查询再次调用**WskControlSocket** **\_WFP\_连接\_重定向\_上下文**请求，并将*OutputBuffer*设置为更大的缓冲区。
--   也可以将*OutputSize*参数设置为0，将*OUTPUTBUFFER*设置为 NULL，然后调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)。 完成后， **WskControlSocket**函数将检索*OutputSizeReturned*参数中的输出缓冲区大小（以字节为单位）。 然后，可以分配适当大小的缓冲区，并使用 SIO\_查询再次调用**WskControlSocket** **\_WFP\_连接\_重定向\_上下文**请求，并将*OutputBuffer*设置为缓冲区.
+-   也可以将*OutputSize*参数设置为0，将*OUTPUTBUFFER*设置为 NULL，然后调用[**WskControlSocket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_socket)。 完成后， **WskControlSocket**函数将检索*OutputSizeReturned*参数中的输出缓冲区大小（以字节为单位）。 然后，可以分配适当大小的缓冲区，并使用 SIO\_查询再次调用**WskControlSocket** **\_WFP\_连接\_重定向\_上下文**请求，并将*OutputBuffer*设置为缓冲区。
 
-**请注意**  在用户模式应用程序中，也可以使用[**SIO\_query\_WFP\_连接\_上下文（SDK）** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859712(v=vs.85))来执行此查询。
+**请注意**  在用户模式应用程序中，也可以使用[**SIO\_query\_WFP\_连接\_上下文（SDK）** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh859712(v=vs.85))来执行此查询。\_
 
  
 
@@ -93,7 +93,7 @@ WFP 重定向记录是不透明数据的缓冲区，WFP 必须在出站代理连
 
 在 WSK 子系统完成 IRP 之前，Winsock 客户端不能释放已分配的缓冲区。 WSK 子系统完成 IRP 后，它会通过调用完成例程通知客户端。 该缓冲区的引用通过完成例程的*上下文*参数中的 WSK 子系统传递给客户端。 缓冲区的大小存储在*Irp&gt;IoStatus*中。
 
-客户端可以通过检查*irp-&gt;IoStatus*来获取 irp 的状态。 如果请求成功，则*Irp&gt;IoStatus*将设置为 " **\_状态**"。 否则，它将包含**状态\_整数\_溢出**、**状态\_\_未找到**、**状态\_缓冲区\_太小**，或**状态\_拒绝访问\_拒绝**调用不成功。
+客户端可以通过检查*irp-&gt;IoStatus*来获取 irp 的状态。 如果请求成功，则*Irp&gt;IoStatus*将设置为 " **\_状态**"。 否则，它将包含**状态\_整数\_溢出**、**状态\_\_未找到**、**状态\_缓冲区\_太小**，或**状态\_拒绝访问\_** 如果调用失败，则拒绝访问。\_
 
 <a name="requirements"></a>要求
 ------------

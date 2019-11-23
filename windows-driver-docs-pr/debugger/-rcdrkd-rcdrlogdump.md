@@ -35,7 +35,7 @@ ms.locfileid: "71959204"
 <span id="_______DriverName______"></span><span id="_______drivername______"></span><span id="_______DRIVERNAME______"></span>*DriverName*   
 驱动程序的名称，不包括 .sys 扩展。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*@no__t  
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*Address*   
 如果指定 Address，则此命令将显示指定地址处的日志缓冲区中的跟踪消息。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
