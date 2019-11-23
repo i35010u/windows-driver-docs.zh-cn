@@ -62,7 +62,7 @@ void ACPI_METHOD_SET_ARGUMENT_BUFFER(
 <tbody>
 <tr>
 <td><p>目标平台</p></td>
-<td>桌面</td>
+<td>桌面设备</td>
 </tr>
 <tr>
 <td><p>标头</p></td>

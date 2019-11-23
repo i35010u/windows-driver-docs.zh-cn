@@ -1,6 +1,6 @@
 ---
-title: 针对标头版本的 NDIS 支持概述
-description: 针对标头版本的 NDIS 支持概述
+title: 标头版本的 NDIS 支持概述
+description: 标头版本的 NDIS 支持概述
 ms.assetid: f73baf8d-f6da-486c-b0e2-c3c57aeab269
 keywords:
 - NDIS 版本信息 WDK，结构要求
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/24/2019
 ms.locfileid: "72843736"
 ---
-# <a name="overview-of-ndis-support-for-header-versions"></a>针对标头版本的 NDIS 支持概述
+# <a name="overview-of-ndis-support-for-header-versions"></a>标头版本的 NDIS 支持概述
 
 
 

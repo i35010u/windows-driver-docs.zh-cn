@@ -1,6 +1,6 @@
 ---
 title: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
-description: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏初始化驱动程序的 WDF_OBJECT_ATTRIBUTES 结构，并将对象的驱动程序定义的上下文信息插入到结构中。
+description: WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏可初始化驱动程序的 WDF_OBJECT_ATTRIBUTES 结构，并将对象的驱动程序定义的上下文信息插入到结构中。
 ms.assetid: 83e397b1-e37d-451d-9007-3b34993187c3
 keywords:
 - WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE 宏
@@ -18,7 +18,7 @@ ms.locfileid: "72845420"
 
 \[适用于 KMDF 和 UMDF\]
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏初始化驱动程序的[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，并将对象的驱动程序定义的上下文信息插入到结构中。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏可初始化驱动程序的[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，并将对象的驱动程序定义的上下文信息插入到结构中。
 
 <a name="syntax"></a>语法
 ------
@@ -49,12 +49,12 @@ void WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE(
 
 在调用**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**之前，必须全局调用[**WDF_DECLARE_CONTEXT_TYPE**](wdf-declare-context-type.md)或[**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md) （不在函数内）。
 
-**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏将[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数和[**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)宏结合起来。
+**WDF_OBJECT_ATTRIBUTES_INIT_CONTEXT_TYPE**宏结合了[**WDF_OBJECT_ATTRIBUTES_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdf_object_attributes_init)函数和[**WDF_OBJECT_ATTRIBUTES_SET_CONTEXT_TYPE**](wdf-object-attributes-set-context-type.md)的宏。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例定义了一个 WDM_NDIS_REQUEST 的上下文结构。 然后，该示例调用[**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md)宏来注册结构，并指定上下文访问器方法将命名为**RequestGetMyContext**。 然后，在函数中，该示例分配一个[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，然后初始化**WDF_OBJECT_ATTRIBUTES**结构。
+下面的代码示例定义 WDM_NDIS_REQUEST 的上下文结构。 然后，该示例调用[**WDF_DECLARE_CONTEXT_TYPE_WITH_NAME**](wdf-declare-context-type-with-name.md)宏来注册结构，并指定上下文访问器方法将命名为**RequestGetMyContext**。 然后，在函数中，该示例分配一个[**WDF_OBJECT_ATTRIBUTES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构，然后初始化**WDF_OBJECT_ATTRIBUTES**结构。
 
 ```cpp
 typedef struct _WDM_NDIS_REQUEST

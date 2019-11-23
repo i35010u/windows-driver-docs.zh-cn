@@ -76,7 +76,7 @@ ModelIDList 元素指定一个或多个 Guid。 每个 GUID 都通过[ModelID](m
 <tbody>
 <tr class="odd">
 <td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a></p></td>
-<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 这包括：</p>
+<td><p><a href="metadatakey.md" data-raw-source="[MetadataKey](metadatakey.md)">MetadataKey</a>元素指定设备元数据包的属性。 例如：</p>
 <ul>
 <li><p>设备支持的每个硬件功能的标识符。</p></li>
 <li><p>包中的文本字符串的语言特定区域设置。</p></li>

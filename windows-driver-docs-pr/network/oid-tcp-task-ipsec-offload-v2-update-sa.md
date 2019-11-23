@@ -3,7 +3,7 @@ title: OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA
 description: 作为集，TCP/IP 传输使用 OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA OID 来请求微型端口驱动程序更新 NIC 上的指定安全关联（Sa）。
 ms.assetid: 22849103-9148-4621-b78f-b9f34f2c7ac1
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_TCP_TASK_IPSEC_OFFLOAD_V2_UPDATE_SA 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: a11b334360a2028f0d6342b2097e96750f0fbad0
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -30,7 +30,7 @@ ms.locfileid: "72843884"
 
 当微型端口驱动程序收到此请求时，驱动程序应更新 NIC 上指定的 SAs。 如果找不到 SA 或不支持 ESN，微型端口驱动程序可能会导致此请求失败。 在这种情况下，返回的状态应为 NDIS\_状态\_无效\_参数。
 
-微型端口驱动程序接收[**IPSEC\_卸载\_V2\_UPDATE\_SA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)结构，该结构包含有关更新的信息，以及指向下一个 IPSEC\_卸载\_V2\_链接列表中的结构。
+微型端口驱动程序接收[**IPSEC\_卸载\_V2\_UPDATE\_SA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ipsec_offload_v2_update_sa)结构，该结构包含有关更新的信息，以及指向下一个 IPSEC\_卸载\_V2\_更新链接列表中\_SA 结构的指针。
 
 <a name="requirements"></a>要求
 ------------

@@ -24,7 +24,7 @@ ms.locfileid: "72839828"
 
 Microsoft DirectX 图形内核子系统（*Dxgkrnl*）可对显示微型端口驱动程序的[**DxgkDdiOPMCreateProtectedOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_opm_create_protected_output)函数进行多个调用，以为特定物理输出创建多个受保护的输出。 此外，其中每个受保护的输出对于同一输出保护类型可能有不同的保护级别。
 
-例如，假设图形适配器具有一个具有 CGMS 保护类型的复合输出，并且受保护的输出 A 和 B 均与该复合输出相关联。 接下来，假定受保护的输出 A 的[**CGMS-A 保护级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)设置为 DXGKMDT\_OPM\_CGMSA\_在受保护的输出 B 的 CGMS 时，\_no\_; 保护级别设置为 DXGKMDT\_OPM\_CGMSA\_复制\_一个\_代。 在这种情况下，物理输出不能同时使用这两种保护级别。 因此，因为物理输出每次只能输出一 CGMS 保护级别，所以物理输出必须使用具有较高优先级的 CGMS 保护级别。
+例如，假设图形适配器具有一个具有 CGMS 保护类型的复合输出，并且受保护的输出 A 和 B 均与该复合输出相关联。 接下来，假定受保护的输出 A 的[**CGMS-A 保护级别**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmdt/ne-d3dkmdt-_dxgkmdt_opm_cgmsa)设置为 DXGKMDT\_OPM\_CGMSA\_在受保护的输出 B 的 CGMS 时，\_no\_; 保护级别设置为 DXGKMDT\_OPM\_COPY\_\_一代。\_ 在这种情况下，物理输出不能同时使用这两种保护级别。 因此，因为物理输出每次只能输出一 CGMS 保护级别，所以物理输出必须使用具有较高优先级的 CGMS 保护级别。
 
 以下各节说明了当不同的受保护的输出指示物理输出使用不同的保护级别时，物理输出应使用哪种保护级别（从最高到最低的优先级）。 请注意，这些表适用于具有 COPP 或 OPM 语义的受保护的输出。
 
