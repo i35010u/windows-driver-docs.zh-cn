@@ -1,9 +1,9 @@
 ---
-title: Bug 检查 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
-description: DRIVER_PORTION_MUST_BE_NONPAGED bug 检查具有 0x000000D3 值。 这表示系统尝试访问在过程 IRQL 过高的可分页内存。
+title: Bug Check 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
+description: The DRIVER_PORTION_MUST_BE_NONPAGED bug check has a value of 0x000000D3. This indicates that the system attempted to access pageable memory at a process IRQL that was too high.
 ms.assetid: 8b33dd20-9faa-4c02-96b7-89f55e69aeec
 keywords:
-- Bug 检查 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
+- Bug Check 0xD3 DRIVER_PORTION_MUST_BE_NONPAGED
 - DRIVER_PORTION_MUST_BE_NONPAGED
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f46421d0ec1a557dd43267541f12662070161b7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: fc8576fb13e085fa76a031f57bee0902f365cebd
+ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518883"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74411168"
 ---
-# <a name="bug-check-0xd3-driverportionmustbenonpaged"></a>Bug 检查 0xD3：驱动程序\_部分\_必须\_BE\_未分页
+# <a name="bug-check-0xd3-driver_portion_must_be_nonpaged"></a>Bug Check 0xD3: DRIVER\_PORTION\_MUST\_BE\_NONPAGED
 
 
-该驱动程序\_部分\_必须\_BE\_非分页的错误检查的值为 0x000000D3。 这表示系统尝试访问在过程 IRQL 过高的可分页内存。
+The DRIVER\_PORTION\_MUST\_BE\_NONPAGED bug check has a value of 0x000000D3. This indicates that the system attempted to access pageable memory at a process IRQL that was too high.
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
-## <a name="driverportionmustbenonpaged-parameters"></a>驱动程序\_部分\_必须\_BE\_非分页的参数
+## <a name="driver_portion_must_be_nonpaged-parameters"></a>DRIVER\_PORTION\_MUST\_BE\_NONPAGED Parameters
 
 
 <table>
@@ -46,37 +46,37 @@ ms.locfileid: "67518883"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>引用的内存</p></td>
+<td align="left"><p>Memory referenced</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>在引用的时间的 IRQL</p></td>
+<td align="left"><p>IRQL at time of reference</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p><strong>0:</strong>Read</p>
-<p><strong>1:</strong>写入</p></td>
+<td align="left"><p><strong>0:</strong> Read</p>
+<p><strong>1:</strong> Write</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>引用内存的地址</p></td>
+<td align="left"><p>Address that referenced memory</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。
+If the driver responsible for the error can be identified, its name is printed on the blue screen and stored in memory at the location (PUNICODE\_STRING) **KiBugCheckDriver**.
 
 <a name="cause"></a>原因
 -----
 
-检查此错误通常是由其自己的代码或数据作为可分页错误地标记驱动程序引起的。
+This bug check is usually caused by drivers that have incorrectly marked their own code or data as pageable.
 
 <a name="resolution"></a>分辨率
 ----------
 
-若要开始调试，请使用内核调试程序获取堆栈跟踪。
+To begin debugging, use a kernel debugger to get a stack trace: the [ **!analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) debug extension displays information about the bug check and can be helpful in determining the root cause, then use the [**kb (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-) command to get a stack trace.
 
  
 
