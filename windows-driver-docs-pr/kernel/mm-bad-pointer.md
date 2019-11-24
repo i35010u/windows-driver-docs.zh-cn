@@ -4,12 +4,12 @@ description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 3b242a3fa79a07ae3c5a0332ef54ac287ebf79ac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0f94bf92abf3fbc300ce0cf0362b5b9d47743503
+ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827846"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74261438"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -448,7 +448,7 @@ _Mdl [in]_
 
 对 [**IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 例程调用中的 _TargetMdl_ 参数重复使用同一分配 MDL 的驱动程序使用此宏。 如果在 **MmPrepareMdlForReuse** 调用中，指定的部分 MDL 具有与系统地址空间之间的关联映射，则 **MmPrepareMdlForReuse** 将释放该映射，以便可以重复使用该 MDL。
 
-**MmPrepareMdlForReuse** 仅接受 **IoBuildPartialMdl** 生成的部分 MDL。 如果 **MmPrepareMdlForReuse** 收到一个已映射到系统地址空间、但不是由 **IoBuildPartialMdl** 生成的 MDL，则 **MmPrepareMdlForReuse** 不会释放该映射，从而在检查的生成中导致断言失败。
+**MmPrepareMdlForReuse** 仅接受 **IoBuildPartialMdl** 生成的部分 MDL。 如果 **MmPrepareMdlForReuse** 收到一个已映射到系统地址空间但并非由 **IoBuildPartialMdl** 生成的 MDL，则 **MmPrepareMdlForReuse** 不会释放该映射。
 
 有关部分 MDL 的详细信息，请参阅[使用 MDL](using-mdls.md)。
 
