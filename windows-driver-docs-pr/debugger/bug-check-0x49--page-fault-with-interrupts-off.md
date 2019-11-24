@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x49 PAGE_FAULT_WITH_INTERRUPTS_OFF
-description: PAGE_FAULT_WITH_INTERRUPTS_OFF bug 检查具有 0x00000049 值。检查此错误极少出现。
+description: PAGE_FAULT_WITH_INTERRUPTS_OFF bug 检查的值为0x00000049。此 bug 检查很少出现。
 ms.assetid: c7fa7d00-7702-4f2b-9c71-886861259092
 keywords:
 - Bug 检查 0x49 PAGE_FAULT_WITH_INTERRUPTS_OFF
@@ -13,27 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0871907f914c5869c26c516dc867909194177c0b
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: eb76a4472dafa970ed4f27aca2f9a057f14f9f6f
+ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519418"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74411173"
 ---
-# <a name="bug-check-0x49-pagefaultwithinterruptsoff"></a>Bug 检查 0x49：页\_容错\_WITH\_中断\_OFF
+# <a name="bug-check-0x49-page_fault_with_interrupts_off"></a>Bug 检查0x49：页\_故障\_，\_中断\_关闭
 
 
-页面\_容错\_WITH\_中断\_关闭 bug 检查的值为 0x00000049。
+\_中断\_\_错误\_的页的值为 "0x00000049"。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
- 
-
- 
+## <a name="resolution"></a>分辨率 
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 
 
