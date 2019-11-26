@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x56 INSTRUCTION_COHERENCY_EXCEPTION
-description: The INSTRUCTION_COHERENCY_EXCEPTION bug check has a value of 0x00000056.This bug check appears very infrequently.
+title: Bug 检查 0x56 INSTRUCTION_COHERENCY_EXCEPTION
+description: INSTRUCTION_COHERENCY_EXCEPTION bug 检查的值为0x00000056。此 bug 检查很少出现。
 ms.assetid: 70fea630-9fb2-47e8-a099-9eee8c41b334
 keywords:
-- Bug Check 0x56 INSTRUCTION_COHERENCY_EXCEPTION
+- Bug 检查 0x56 INSTRUCTION_COHERENCY_EXCEPTION
 - INSTRUCTION_COHERENCY_EXCEPTION
 ms.date: 05/23/2017
 topic_type:
@@ -20,19 +20,19 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74411172"
 ---
-# <a name="bug-check-0x56-instruction_coherency_exception"></a>Bug Check 0x56: INSTRUCTION\_COHERENCY\_EXCEPTION
+# <a name="bug-check-0x56-instruction_coherency_exception"></a>Bug 检查0x56：指令\_一致性\_异常
 
 
-The INSTRUCTION\_COHERENCY\_EXCEPTION bug check has a value of 0x00000056.
+\_一致性\_异常 bug 检查的指令的值为0x00000056。
 
-This bug check appears very infrequently.
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="resolution"></a>分辨率 
-The [ **!analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) debug extension displays information about the bug check and can be helpful in determining the root cause.
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
 
