@@ -1,62 +1,28 @@
 ---
-title: 正在检查 IRP_MJ_CLEANUP 操作 Oplock 状态
-description: 正在检查 IRP_MJ_CLEANUP 操作 Oplock 状态
+title: 检查 IRP_MJ_CLEANUP 操作的 Oplock 状态
+description: 检查 IRP_MJ_CLEANUP 操作的 Oplock 状态
 ms.assetid: 5e078575-cbb8-4460-9986-4c546b8c20be
-ms.date: 04/20/2017
+ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b2b8e6065d57a947162f4a893ff64bdef81416d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c6a7b81a4908a90b1c2860e5f02edcb4c63dcd5
+ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379711"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543038"
 ---
-# <a name="checking-the-oplock-state-of-an-irpmjcleanup-operation"></a>正在检查 IRP_MJ_CLEANUP 操作 Oplock 状态
+# <a name="checking-the-oplock-state-of-an-irp_mj_cleanup-operation"></a>检查 IRP_MJ_CLEANUP 操作的 Oplock 状态
 
+以下[oplock 中断](https://docs.microsoft.com/windows-hardware/drivers/ifs/breaking-oplocks)条件仅适用于关闭*流*的时间。
 
-时，以下才适用*流*正在关闭。
+### <a name="conditions-for-level-2-and-read-request-types"></a>级别2和读取请求类型的条件
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">请求类型</th>
-<th align="left">条件</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>级别 1</p>
-<p>Batch</p>
-<p>Filter</p>
-<p>读取句柄</p>
-<p>读写</p>
-<p>读写句柄</p></td>
-<td align="left"><ul>
-<li><p>为无始终中断。</p></li>
-<li><p>不发送任何确认是必需的可以立即继续操作。 请注意，等待来自挂起的分行符请求确认任何 I/O 操作 (Irp) 立即完成。</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left"><p>级别 2</p>
-<p>Read</p></td>
-<td align="left"><ul>
-<li><p>为无始终中断。 请注意，不会影响同一个流其他级别 2 或读取 oplock;仅与此 FILE_OBJECT 关联级别 2 或读取 oplock 已断开。</p></li>
-<li><p>不发送任何确认是必需的可以立即继续操作。</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+- 始终中断到无。 请注意，不会影响同一流上的其他第2级或读取 oplock。只有与此 FILE_OBJECT 关联的第2级或读取 oplock 才会断开。
 
- 
+- 不需要确认;操作会立即继续。
 
- 
+### <a name="conditions-for-level-1-batch-filter-read-handle-read-write-and-read-write-handle-request-types"></a>级别1、批处理、筛选器、读取句柄、读写和读写句柄请求类型的条件
 
- 
+- 始终中断到无。
 
-
-
-
+- 不需要确认;操作会立即继续。 请注意，等待挂起中断请求确认的任何 i/o 操作（Irp）都将立即完成。

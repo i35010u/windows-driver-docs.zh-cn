@@ -1,117 +1,40 @@
 ---
-title: 正在检查 IRP_MJ_LOCK_CONTROL 操作 Oplock 状态
-description: 正在检查 IRP_MJ_LOCK_CONTROL 操作 Oplock 状态
+title: 检查 IRP_MJ_LOCK_CONTROL 操作的 Oplock 状态
+description: 检查 IRP_MJ_LOCK_CONTROL 操作的 Oplock 状态
 ms.assetid: 6e0a5287-9a22-465f-b345-c9af556e6cdb
-ms.date: 04/20/2017
+ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cf870352b31e9e894d07f60cd8c3ba9aec8562cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 425dd95dd2e1635a88431a98723216c7d8411a84
+ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324241"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543039"
 ---
-# <a name="checking-the-oplock-state-of-an-irpmjlockcontrol-operation"></a>正在检查 IRP_MJ_LOCK_CONTROL 操作 Oplock 状态
+# <a name="checking-the-oplock-state-of-an-irp_mj_lock_control-operation"></a>检查 IRP_MJ_LOCK_CONTROL 操作的 Oplock 状态
 
+以下[oplock 中断](https://docs.microsoft.com/windows-hardware/drivers/ifs/breaking-oplocks)条件适用于给定流上的每个字节范围锁操作。
 
-以下应用给定的流上每个字节范围锁定操作。
-<table>
-<tr>
-<th>请求类型</th>
-<th>条件</th>
-</tr>
-<tr>
-<td rowspan="2">
-<p>级别 1</p>
-<p>Batch</p>
-<p>读取句柄</p>
-<p>读写</p>
-<p>读写句柄</p>
-</td>
-<td>
-<p>IRP_MJ_LOCK_CONTROL 上中断时：</p>
-<ul>
-<li>
-<p> 锁定操作发生 FILE_OBJECT 具有不同 oplock 键 FILE_OBJECT 拥有 oplock。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>如果 oplock 已损坏：</p>
-<ul>
-<li>
-<p> 中断为无。</p>
-</li>
-<li>
-<p>句柄请求：尽管需要确认该中断，则操作将继续立即 （例如，而无需等待确认）。</p>
-</li>
-<li>
-<p> 对于所有其他请求类型：继续操作之前必须收到确认。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td rowspan="2">
-<p>Read</p>
-</td>
-<td>
-<p>IIRP_MJ_LOCK_CONTROL 上中断时：</p>
-<ul>
-<li>
-<p> 锁定操作发生 FILE_OBJECT 具有不同 oplock 键 FILE_OBJECT 拥有 oplock。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>如果 oplock 已损坏：</p>
-<ul>
-<li>
-<p> 中断为无。</p>
-</li>
-<li>
-<p> 不发送任何确认是必需的可以立即继续操作。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>Filter</p>
-</td>
-<td>
-<ul>
-<li>
-<p> 就不会破坏 oplock，不发送任何确认是必需的可以立即继续操作。</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p>级别 2</p>
-</td>
-<td>
-<ul>
-<li>
-<p> 为无始终中断。</p>
-</li>
-<li>
-<p> 不发送任何确认是必需的可以立即继续操作。</p>
-</li>
-</ul>
-</td>
-</tr>
-</table>
+### <a name="conditions-for-a-level-2-request-type"></a>第2级请求类型的条件
 
- 
+- 始终中断到无。
 
- 
+- 不需要确认;操作会立即继续。
 
+### <a name="conditions-for-a-filter-request-type"></a>筛选器请求类型的条件
 
+- Oplock 不会中断。
 
+- 不需要确认，操作会立即继续。
 
+### <a name="conditions-for-level-1-batch-read-read-handle-read-write-and-read-write-handle-request-types"></a>级别1、批处理、读取、读取句柄、读写和读写句柄请求类型的条件
+
+- 当锁定操作发生在具有 oplock 键的 FILE_OBJECT 上，而该操作与拥有 oplock 的 FILE_OBJECT 的键不同时，中断 IRP_MJ_LOCK_CONTROL。 如果 oplock 中断，则中断到无。
+
+- 确认要求不同如下：
+
+  - 读取请求：不需要确认;操作会立即继续。
+
+  - 读取句柄和读写句柄请求：尽管需要确认中断，但操作会立即继续进行（例如，无需等待确认）。
+
+  - 级别1、批处理和读写请求：必须先收到确认，然后才能继续操作。

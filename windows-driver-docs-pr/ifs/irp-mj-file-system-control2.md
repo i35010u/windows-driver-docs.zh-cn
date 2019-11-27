@@ -1,28 +1,38 @@
 ---
-title: 正在检查 IRP_MJ_FILE_SYSTEM_CONTROL Oplock 状态
-description: 正在检查 IRP_MJ_FILE_SYSTEM_CONTROL 操作 Oplock 状态
+title: 正在检查 Oplock 状态 IRP_MJ_FILE_SYSTEM_CONTROL
+description: 检查 IRP_MJ_FILE_SYSTEM_CONTROL 操作的 Oplock 状态
 ms.assetid: 3651d9ed-6b6f-4b60-9dfa-1c5c0c78b1a1
-ms.date: 04/20/2017
+ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 146acf363d8c9cc363a135f88ab98efb4a69532d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 907018a1f5a007611cb66ee977486f372b942135
+ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324318"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543044"
 ---
-# <a name="checking-the-oplock-state-of-irpmjfilesystemcontrol"></a>正在检查 IRP_MJ_FILE_SYSTEM_CONTROL Oplock 状态
+# <a name="checking-the-oplock-state-of-irp_mj_file_system_control"></a>正在检查 Oplock 状态 IRP_MJ_FILE_SYSTEM_CONTROL
 
-某些 IRP_MJ_FILE_SYSTEM_CONTROL 操作检查 oplock 状态。 以下操作执行此检查：
+以下 IRP_MJ_FILE_SYSTEM_CONTROL 操作检查 oplock 状态：
+
 - **FSCTL_SET_ZERO_DATA**
 
-此信息适用于调用方想要零给定流的当前内容。
+当调用方希望使给定流的当前内容为零时，将应用此信息。
 
-|请求类型|条件|
-|---|---|
-|级别 1<br>Batch<br>Filter<br>读取句柄<br>读写<br>读写句柄|上中断 IRP_MJ_FILE_SYSTEM_CONTROL （适用于 FSCTL_SET_ZERO_DATA) 时：<ul><li>该操作发生 FILE_OBJECT 具有不同 oplock 键 FILE_OBJECT 拥有 oplock。</ul></li><hr>如果 oplock 已损坏：<ul><li>为无中断</li><li>读取句柄请求：尽管需要确认该中断，则操作将继续立即 （例如，而无需等待确认）。</li><li>对于所有其他请求类型：继续操作之前必须收到确认。</li></ul>|
-|Read|上中断 IRP_MJ_FILE_SYSTEM_CONTROL （适用于 FSCTL_SET_ZERO_DATA) 时：<ul><li>该操作发生 FILE_OBJECT 具有不同 oplock 键 FILE_OBJECT 拥有 oplock。</ul></li><hr>如果 oplock 已损坏：<ul><li>为无中断</li><li>不发送任何确认是必需的可以立即继续操作。</li></ul>|
-|级别 2|<ul><li>为无始终中断。</li><li>不发送任何确认是必需的可以立即继续操作。</li></ul>|
+### <a name="conditions-for-a-level-2-request-type"></a>第2级请求类型的条件：
 
+- 始终中断到无。
 
+- 不需要确认;操作会立即继续。
 
+### <a name="conditions-for-all-other-request-types"></a>所有其他请求类型的条件：
+
+- 当操作发生在带有 oplock 密钥的 FILE_OBJECT 上时中断 IRP_MJ_FILE_SYSTEM_CONTROL （对于 FSCTL_SET_ZERO_DATA），该操作与拥有 oplock 的 FILE_OBJECT 的密钥不同。 如果 oplock 中断，则中断到无。
+
+- 确认要求不同如下：
+
+  - 读取请求：不需要确认;操作会立即继续。
+  
+  - 读取句柄请求：尽管需要确认中断，但操作会立即继续进行（例如，无需等待确认）。
+  
+  - 级别1、批处理、筛选器、读写和读写处理请求：必须先收到确认，然后才能继续操作。
