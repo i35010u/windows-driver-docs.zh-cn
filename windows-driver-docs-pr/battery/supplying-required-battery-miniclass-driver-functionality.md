@@ -8,12 +8,12 @@ keywords:
 - 电池 miniclass 驱动程序 WDK，功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e42ab0d8d273fd18246bdc84432b3366f3ef888b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dfb9b8412006ea94828fc5a034a805eeeaf258a4
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364723"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72832217"
 ---
 # <a name="supplying-required-battery-miniclass-driver-functionality"></a>提供所需的电池微型类驱动程序功能
 
@@ -21,7 +21,7 @@ ms.locfileid: "67364723"
 ## <span id="ddk_supplying_required_battery_miniclass_driver_functionality_dg"></span><span id="DDK_SUPPLYING_REQUIRED_BATTERY_MINICLASS_DRIVER_FUNCTIONALITY_DG"></span>
 
 
-除了支持所需的例程[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，电池 miniclass 驱动程序必须具有以下例程：
+除了支持[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)所需的例程以外，电池 miniclass 驱动程序必须具有以下例程：
 
 [DriverEntry](driverentry-routine-of-a-battery-miniclass-driver.md)
 
@@ -43,17 +43,17 @@ ms.locfileid: "67364723"
 
 [*BatteryMiniDisableStatusNotify*](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_disable_status_notify_callback)
 
-[卸载](unload-routine-of-a-battery-miniclass-driver.md)
+[](unload-routine-of-a-battery-miniclass-driver.md)
 
-[DriverEntry](driverentry-routine-of-a-battery-miniclass-driver.md)， [Unload](unload-routine-of-a-battery-miniclass-driver.md)， [DispatchDeviceControl](dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md)，并且[AddDevice](adddevice-routine-of-a-battery-miniclass-driver.md)是标准的驱动程序例程。 DriverEntry 的名称是必需的以便操作系统可以启动驱动程序时调用它。 可以选用其地址已经正确加载相应的数据结构中的其他驱动程序例程名称您自行决定。
+[DriverEntry](driverentry-routine-of-a-battery-miniclass-driver.md)、 [Unload](unload-routine-of-a-battery-miniclass-driver.md)、 [DispatchDeviceControl](dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md)和[AddDevice](adddevice-routine-of-a-battery-miniclass-driver.md)是标准的驱动程序例程。 需要名称 DriverEntry，以便操作系统可以在启动驱动程序时调用它。 您可以自行选择其他驱动程序例程的名称，前提是在相应的数据结构中正确加载了其地址。
 
-[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_battery/)例程都是由 miniclass 驱动程序提供，通过电池类驱动程序调用。 在编写 miniclass 驱动程序时，你可以选择不实现任何这些例程; 的功能但是，不过必须提供该例程的入口点，并且该例程必须返回状态\_不\_受支持。 这些例程的原型出现在 Batclass.h。
+[BatteryMini*Xxx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/_battery/)例程由 miniclass 驱动程序提供，由电池类驱动程序调用。 编写 miniclass 驱动程序时，可以选择不实现任何这些例程的功能;但是，仍必须提供例程的入口点，并且例程必须返回状态\_不\_支持。 这些例程的原型出现在 Batclass 中。
 
-电池 miniclass 驱动程序必须包含以下标头文件：
+电池 miniclass 驱动程序必须包含以下头文件：
 
--   Batclass.h
+-   Batclass
 
--   Ntddk.h 或 wdm.h 中
+-   Ntddk 或 Wdm
 
  
 

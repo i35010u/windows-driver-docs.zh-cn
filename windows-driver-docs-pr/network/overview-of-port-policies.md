@@ -26,9 +26,9 @@ ms.locfileid: "72843726"
 <a href="" id="standard-port-policies"></a>标准端口策略  
 标准端口策略指定安全性、配置文件或虚拟 LAN （VLAN）属性。 这些属性由可扩展交换机的协议边缘发出的对象标识符（OID）请求进行设置。 如果未在可扩展交换机数据路径中安装和启用转发扩展，则会通过基础可扩展交换机的小型端口边缘来强制执行这些策略。 否则，如果转发扩展允许设置策略，则会强制执行这些策略。
 
-标准端口属性由[**NDIS\_交换机\_端口指定\_属性\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)枚举值（ **NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan**）和**NdisSwitchPortPropertyTypeProfile**。
+标准端口属性由[**NDIS\_交换机\_端口\_属性\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_switch_port_property_type)枚举值指定为**NdisSwitchPortPropertyTypeSecurity**、 **NdisSwitchPortPropertyTypeVlan**和**NdisSwitchPortPropertyTypeProfile**。
 
-**请注意**  如果转发扩展不管理或强制执行 VLAN 端口属性，则它必须返回\_不\_\_数据的状态为[OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)\_\_\_[OID\_交换机\_端口\_属性\_更新](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update)请求以添加或更新属性。 VLAN 端口属性的属性类型为**NdisSwitchPortPropertyTypeVlan**。
+**请注意**  如果转发扩展不管理或强制执行 VLAN 端口属性，则它必须返回\_不\_[OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-add)的\_数据的状态\_\_\_\_\_\_\_\_[](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-port-property-update) VLAN 端口属性的属性类型为**NdisSwitchPortPropertyTypeVlan**。
 
  
 

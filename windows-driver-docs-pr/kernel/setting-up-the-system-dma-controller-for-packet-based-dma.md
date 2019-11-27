@@ -3,19 +3,19 @@ title: 为基于数据包的 DMA 设置系统 DMA 控制器
 description: 为基于数据包的 DMA 设置系统 DMA 控制器
 ms.assetid: 3a646169-1ea3-4844-b771-d08f4ddec460
 keywords:
-- DMA WDK 内核，基于数据包的系统
+- 系统 DMA WDK 内核，基于数据包
 - 基于数据包的 DMA WDK 内核
-- DMA 传输 WDK 内核，基于数据包的
+- DMA 传输 WDK 内核，基于数据包
 - AllocateAdapterChannel
 - MapTransfer
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d6a2ce4d257115744d0acf1c773ba35bbc0b83
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 87946c145368ad58f3122b76b86265d3252a28ea
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371232"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836336"
 ---
 # <a name="setting-up-the-system-dma-controller-for-packet-based-dma"></a>为基于数据包的 DMA 设置系统 DMA 控制器
 
@@ -23,59 +23,59 @@ ms.locfileid: "67371232"
 
 
 
-当[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)将控制转移到的驱动程序[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control)例程，该驱动程序"拥有"系统 DMA控制器和一组映射寄存器。 然后，该驱动程序必须设置传输操作中，DMA 控制器，如下图中所示。
+当[**AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)将控制权移交给驱动程序的[*AdapterControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)例程时，驱动程序 "拥有" 系统 DMA 控制器和一组映射寄存器。 然后，驱动程序必须为传输操作设置 DMA 控制器，如下图所示。
 
-![说明编程系统 dma 控制器的关系图](images/3dmaptsf.png)
+![阐释系统 dma 控制器编程的关系图](images/3dmaptsf.png)
 
-如果该驱动程序有[ *StartIo* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_startio)例程， [ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)将传递一个指向**DeviceObject&gt;CurrentIrp**中*PIrp*参数*AdapterControl*例程。 如果，但是，该驱动程序管理其自身的 Irp 的队列，该驱动程序应作为上下文的一部分传递到包含指向当前 IRP *AdapterControl*。
+如果驱动程序具有[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程，则[**AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)会将*PIrp*参数中 **&gt;DeviceObject CurrentIrp**的指针传递到*AdapterControl*例程。 然而，如果驱动程序管理自己的 Irp 队列，则驱动程序应在其传递到*AdapterControl*的上下文中包含一个指向当前 IRP 的指针。
 
-上一图所示，该驱动程序的*AdapterControl*例程将 DMA 传输设置，如下所示：
+如上图所示，驱动程序的*AdapterControl*例程将设置 DMA 传输，如下所示：
 
-1.  *AdapterControl*例程获取开始传输地址。 将满足 IRP，所需的初始传输*AdapterControl*例程调用[ **MmGetMdlVirtualAddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)，将指针传递到在 MDL **Irp-&gt;MdlAddress**，这对于此 DMA 传输描述缓冲区。
+1.  *AdapterControl*例程获取开始传输的地址。 为了满足 IRP 的初始传输要求， *AdapterControl*例程会调用[**MmGetMdlVirtualAddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)，并将一个指针传递到 MDL **&gt;MdlAddress**上的 MDL，后者描述了此 DMA 传输的缓冲区。
 
-    **MmGetMdlVirtualAddress**返回驱动程序可用作索引的系统的物理地址传输应开始的位置的虚拟地址。
+    **MmGetMdlVirtualAddress**返回一个虚拟地址，驱动程序可以使用该地址作为要开始传输的系统物理地址的索引。
 
-    如果 IRP 需要多个传输操作，该驱动程序将计算的已更新的起始地址，如在本部分后面所述。
+    如果 IRP 需要多个传输操作，则驱动程序将计算更新的起始地址，如本节后面部分所述。
 
-2.  *AdapterControl*例程将返回的地址保存**MmGetMdlVirtualAddress**或在步骤 1 中计算。 此地址是必需的参数 (*CurrentVa*) 到[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)。
+2.  *AdapterControl*例程保存**MmGetMdlVirtualAddress**返回的地址，或在步骤1中计算的地址。 此地址是[**MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)的必需参数（*CurrentVa*）。
 
-3.  *AdapterControl*例程调用**MapTransfer**若要设置系统 DMA 控制器，提供以下参数：
+3.  *AdapterControl*例程调用**MapTransfer**来设置系统 DMA 控制器，同时提供以下参数：
 
-    -   所返回的适配器对象指针[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
+    -   IoGetDmaAdapter 返回的适配器对象指针[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)
 
-    -   一个指针 (*Mdl*) 到在 MDL **Irp-&gt;MdlAddress**为当前的 IRP
+    -   当前 IRP **&gt;MdlAddress**的 MDL 到 Mdl 的指针（*Mdl*）
 
-    -   *MapRegisterBase*句柄传递给驱动程序的*AdapterControl*例程通过**AllocateAdapterChannel**
+    -   通过**AllocateAdapterChannel**传递到驱动程序的*AdapterControl*例程的*MapRegisterBase*句柄
 
-    -   值 (*CurrentVa*) 返回由**MmGetMdlVirtualAddress**如果这是首次调用**MapTransfer**的 IRP
+    -   如果这是第一次调用 IRP 的**MapTransfer** ，则为**MmGetMdlVirtualAddress**返回的值（*CurrentVa*）
 
-        否则，该驱动程序将提供的已更新*CurrentVa*值，指示缓冲区下一个传输中操作应开始的位置。
+        否则，驱动程序将提供更新的*CurrentVa*值，指示下一次传输操作应在缓冲区中的哪个位置启动。
 
-    -   指向一个变量 (*长度*)，说明此传输的字节数
+    -   指向变量的指针（*长度*），指示此传输的字节数
 
-        如果驱动程序可以所有请求使用传输数据调用一次**MapTransfer**和其 DMA 操作，没有特定于设备的约束*长度*可以设置的值为**长度**在驱动程序的 I/O 堆栈 IRP 的位置。 以字节为单位的长度最多可以是 (页\_大小\* *NumberOfMapRegisters*返回[ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter))。 否则，该驱动程序必须拆分请求中所述[拆分传输请求](splitting-dma-transfer-requests.md)，并且必须更新的值*长度*在后续调用**MapTransfer**的当前 IRP。
+        如果驱动程序可以通过单个调用**MapTransfer**传输所有请求的数据，并且对其 DMA 操作没有特定于设备的约束，则可以将*LENGTH*设置为 IRP 的驱动程序 i/o 堆栈位置中的**长度**值。 在大多数情况下，长度（以字节为单位）可以是（页\_大小 \* 由[**IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)返回的*NumberOfMapRegisters* ）。 否则，驱动程序必须拆分请求（如[拆分传输请求](splitting-dma-transfer-requests.md)中所述），并且必须更新当前 IRP 对**MapTransfer**的后续调用中的*长度*值。
 
-    -   一个布尔值 (*WriteToDevice*)，指示在传输操作 （为 true，则传输系统内存中的数据复制到设备） 的方向
+    -   布尔值（*WriteToDevice*），指示传输操作的方向（将数据从系统内存传输到设备时为 TRUE）
 
-    **MapTransfer**返回逻辑地址。 使用系统 DMA 的驱动程序必须忽略此值。
+    **MapTransfer**返回一个逻辑地址。 使用系统 DMA 的驱动程序必须忽略此值。
 
-4.  *AdapterControl*例程将设置为 DMA 操作设备。
+4.  *AdapterControl*例程为 DMA 操作设置设备。
 
 5.  *AdapterControl*例程返回**KeepObject**。
 
-该驱动程序时设备将指示其当前的 DMA 操作已完成，应调用[ **FlushAdapterBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)，通常来自驱动程序的[ *DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)例程。
+当设备指示其当前 DMA 操作已完成时，驱动程序应调用[**FlushAdapterBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)，通常从驱动程序的[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程调用。
 
-*DpcForIsr*例程或完成 DMA 操作的另一个驱动程序例程调用**FlushAdapterBuffers**要确保任何数据缓存在系统 DMA 控制器不读取到系统内存或写出到设备。 此外必须调用的相同例程**MapTransfer**再次如有必要对系统的 DMA 控制器当前 IRP 的传输更多的数据。 同样，它必须调用**FlushAdapterBuffers**再次按照每个传输操作。
+完成 DMA 操作的*DpcForIsr*例程或其他驱动程序例程会调用**FlushAdapterBuffers** ，以确保将系统 DMA 控制器中缓存的所有数据读入系统内存或写出到设备。 如果需要重新编程系统 DMA 控制器为当前 IRP 传输更多数据，则同一例程还必须再次调用**MapTransfer** 。 同样，它必须在每次传输操作之后再次调用**FlushAdapterBuffers** 。
 
-如果驱动程序必须调用**MapTransfer**不止一次为当前的 IRP，它提供了相同的适配器对象指针*Mdl*指针*MapRegisterBase*处理，并传输中的每个调用的方向。 但是，必须更新该驱动程序*CurrentVa*并*长度*之前第二个和任何后续调用的参数**MapTransfer**。 若要计算这些参数的每个更新的值，请使用以下公式：
+如果对于当前 IRP，驱动程序必须多次调用**MapTransfer** ，则它会在每次调用中提供相同的适配器对象指针、 *Mdl*指针、 *MapRegisterBase*句柄和传输方向。 但是，驱动程序必须先更新*CurrentVa*和*Length*参数，然后再进行第二次调用和对**MapTransfer**的后续调用。 若要计算每个参数的更新值，请使用以下公式：
 
--   *CurrentVa* = *CurrentVa* + (*长度*在前面的调用中请求**MapTransfer**)
+-   *CurrentVa* = *CurrentVa* + （在前面对**MapTransfer**的调用中请求的*长度*）
 
--   *长度*= 最小值 (剩余**长度**要传输 (页\_大小\* *NumberOfMapRegisters*返回**IoGetDmaAdapter**))
+-   *长度*= 最小值（要传输的剩余**长度**，（页\_大小 \* 由**IoGetDmaAdapter**返回的*NumberOfMapRegisters* ））
 
-每个驱动程序应保持其 DMA 传输有关的上下文信息取决于其特定设备的需求。 典型的上下文可能包括 MDL 中当前的虚拟地址 (*CurrentVa*)，传输到目前为止，要传输，可能是一个指向当前 IRP 和任何其他信息的剩余字节数的字节数。驱动程序编写者认为有用。
+每个驱动程序应保持其 DMA 传输的上下文信息取决于其特定设备的需求。 典型上下文可能包括 MDL 中的当前虚拟地址（*CurrentVa*）、目前传输的字节数、传输的剩余字节数、可能是指向当前 IRP 的指针，以及驱动程序编写器认为的任何其他信息有利于.
 
-当请求的传输已完成，或如果该驱动程序必须为 IRP 返回的错误状态，该驱动程序应调用[ **FreeAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_adapter_channel)立即以发布适用于其他系统 DMA 控制器驱动程序和要使用此驱动程序。
+请求的传输完成后，或者如果驱动程序必须返回 IRP 的错误状态，则驱动程序应立即调用[**FreeAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_adapter_channel) ，以释放系统 DMA 控制器以使其他驱动程序和此驱动程序可供使用。
 
  
 

@@ -3,19 +3,19 @@ title: 下载队列特定的文件
 description: 下载队列特定的文件
 ms.assetid: b6aad46a-2934-461a-ad11-6ad699687fc1
 keywords:
-- 下载特定于队列的打印机文件
-- 点和打印 WDK，特定于队列的文件
-- 特定于队列的文件 WDK 打印机
-- 打印队列 WDK 中，指向并打印
-- 队列 WDK 打印机，指向并打印
+- 下载队列特定的打印机文件
+- 指向和打印 WDK，特定队列的文件
+- 队列特定文件 WDK 打印机
+- 打印队列-WDK，点和打印
+- 队列 WDK 打印机，指向和打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ebe081e71302f8d9e556b4e962c137c77893aa
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9bb235322a128a1ab66a7623eb13c8494554e952
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383544"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837724"
 ---
 # <a name="downloading-queue-specific-files"></a>下载队列特定的文件
 
@@ -23,45 +23,45 @@ ms.locfileid: "67383544"
 
 
 
-如果用户决定从他或她的客户端系统创建的打印机连接连接到打印服务器，并安装应用程序已创建的注册表项中所述[支持点和打印打印机安装期间](supporting-point-and-print-during-printer-installations.md)将发生以下事件：
+如果用户决定创建一个从其客户端系统到打印服务器的打印机连接，并且如果安装应用程序已创建在安装安装过程中所述的注册表项[并在打印机安装过程中打印](supporting-point-and-print-during-printer-installations.md)，则以下事件就
 
-1.  用户应用程序调用**AddPrinterConnection**，Microsoft Windows SDK 文档中所述。
+1.  用户应用程序调用**AddPrinterConnection**，如 Microsoft Windows SDK 文档中所述。
 
-2.  客户端的远程打印提供程序 (Win32spl.dll) 创建到服务器的连接。
+2.  客户端的远程打印提供程序（Win32spl.dll）创建与服务器的连接。
 
-3.  服务器的后台处理程序将发送到客户端的驱动程序文件。
+3.  服务器的后台处理程序将驱动程序文件发送到客户端。
 
-4.  客户端的 Win32spl.dll 调用 EnumPrinterKey 和 EnumPrinterDataEx 将打印机的注册表条目复制在服务器上。
+4.  客户端的 Win32spl.dll 在服务器上调用 EnumPrinterKey 和 EnumPrinterDataEx，以复制打印机的注册表项。
 
-5.  服务器的后台处理程序处理 EnumPrinterDataEx 期间枚举注册表值，它执行以下操作遇到的子项的打印机的每次**CopyFiles**键，如**CopyFiles\\ICM**:
-    -   加载[点和打印 DLL](point-and-print-dlls.md)，如果指定，并调用其[ **GenerateCopyFilePaths** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths)函数，可以修改源和/或目标路径。
-    -   创建**SourceDir**并**TargetDir**键，基于返回的源和目标路径**GenerateCopyFilePaths**，并将它们返回到作为客户端后台处理程序EnumPrinterDataEx 数据。 （这些密钥不真正存在的服务器上。）
+5.  当服务器的后台处理程序在处理 EnumPrinterDataEx 的过程中枚举注册表值时，它会在每次遇到打印机的**CopyFiles**密钥子项时执行以下操作，例如**CopyFiles\\ICM**：
+    -   加载[点和打印 DLL](point-and-print-dlls.md)（如果已指定），并调用它的[**GenerateCopyFilePaths**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-generatecopyfilepaths)函数，该函数可以修改源路径和/或目标路径。
+    -   基于**GenerateCopyFilePaths**返回的源路径和目标路径创建**SourceDir**和**TargetDir**键，并将它们作为 EnumPrinterDataEx 数据返回到客户端后台处理程序。 （这些密钥并不真正存在于服务器上。）
 
-6.  客户端的 Win32spl.dll 缓存收到响应 EnumPrinterData 打印机密钥和 EnumPrinterDataEx 调用。
+6.  客户端的 Win32spl.dll 会缓存接收的打印机密钥，以响应 EnumPrinterData 和 EnumPrinterDataEx 调用。
 
-7.  打印机的每个子项**CopyFiles**键，如**CopyFiles\\ICM**，客户端的 Win32spl.dll 执行以下操作：
-    -   加载本地点和打印 DLL，如果提供，并调用其**GenerateCopyFilePaths**函数，可以修改源和/或目标路径。 (输入**SourceDir**并**TargetDir**从服务器收到的密钥。)
-    -   将下载所有文件与相关联**文件**密钥服务器。
-    -   记录的事件，指示已下载指向并打印文件。
-    -   调用点和打印 DLL [ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent)函数，如果提供一个 DLL，则指定 COPYFILE\_事件\_文件\_CHANGED 事件。
+7.  对于打印机的**CopyFiles**键的每个子项（如**CopyFiles\\ICM**），客户端的 win32spl.dll 执行以下操作：
+    -   如果提供了本地点和打印 DLL，则加载它们，并调用它的**GenerateCopyFilePaths**函数，该函数可以修改源路径和/或目标路径。 （输入是从服务器接收的**SourceDir**和**TargetDir**键。）
+    -   从服务器下载所有与**files**密钥关联的文件。
+    -   记录事件，指示下载了点和打印文件。
+    -   如果提供了 DLL，则调用点和打印 DLL 的[**SpoolerCopyFileEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-spoolercopyfileevent)函数，指定 COPYFILE\_\_事件\_CHANGED 事件。
 
-8.  客户端后台处理程序调用的驱动程序[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)函数，并指定打印机\_事件\_缓存\_刷新事件。
+8.  客户端后台处理程序调用驱动程序的[**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)函数，并指定打印机\_事件\_缓存\_刷新事件。
 
-9.  客户端后台处理程序调用的驱动程序[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)函数，指定打印机\_事件\_添加\_连接事件。
+9.  客户端后台处理程序再次调用驱动程序的[**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)函数，并指定打印机\_事件\_添加\_连接事件。
 
-10. 如果提供的点和打印 DLL，则客户端后台处理程序调用其[ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent)函数，并指定 COPYFILE\_事件\_添加\_打印机\_连接事件。
+10. 如果提供了 Point 和打印 DLL，则客户端后台处理程序将调用其[**SpoolerCopyFileEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-spoolercopyfileevent)函数，指定 COPYFILE\_事件，\_添加\_打印机\_连接事件。
 
 ### <a name="connection-example"></a>连接示例
 
-例如，假设安装应用程序定义了服务器注册表项安装示例中所述。 此外，假定服务器名为 NTPRINT 和客户端名为 MyClient。
+例如，假定安装应用程序已定义安装示例中所述的服务器注册表项。 此外，假定服务器命名为 NTPRINT.INF，并且客户端名为 MyClient。
 
-若要连接到名为 HpColor NTPRINT，MyClient 调用上的用户应用程序上的打印队列**AddPrinterConnection** ，如下所示：
+若要在 NTPRINT.INF 上连接到名为 HpColor 的打印队列，MyClient 上的用户应用程序会调用**AddPrinterConnection** ，如下所示：
 
 ```cpp
 AddPrinterConnection("\\NTPRINT\HpColor")
 ```
 
-在服务器上，后台处理程序加载 Mscms.dll 并调用[ **GenerateCopyFilePaths** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths) ，如下所示：
+在服务器上，后台处理程序加载 Mscms 并调用[**GenerateCopyFilePaths**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-generatecopyfilepaths) ，如下所示：
 
 ```cpp
 GenerateCopyFilePaths(
@@ -76,20 +76,20 @@ GenerateCopyFilePaths(
     COPYFILE_FLAG_SERVER_SPOOLER)
 ```
 
-Microsoft ICM Mscms.dll 模块不会修改源或目标路径，因此它只是返回错误\_成功。
+Microsoft ICM 的 Mscms .dll 模块不会修改源路径或目标路径，因此它只会返回错误\_成功。
 
-服务器后台处理程序返回 MyClient 以下项：
+服务器后台处理程序将以下项返回到 MyClient：
 
 ```cpp
 SourceDir: \\NTPRINT\PRINT$\Color
 TargetDir: "Color"
 ```
 
-在客户端的值**TargetDir**扩展到 c:\\Winnt\\System32\\Spool\\驱动程序\\颜色。
+在客户端上， **TargetDir**的值扩展到 C：\\Winnt\\System32\\假脱机\\驱动程序\\颜色。
 
 MyClient 上的后台处理程序执行以下操作：
 
--   下载 Mscms.dll 并调用[ **GenerateCopyFilePaths** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-generatecopyfilepaths) ，如下所示：
+-   下载 Mscms 并调用[**GenerateCopyFilePaths**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-generatecopyfilepaths) ，如下所示：
 
     ```cpp
     GenerateCopyFilePaths(
@@ -104,19 +104,19 @@ MyClient 上的后台处理程序执行以下操作：
         COPYFILE_FLAG_CLIENT_SPOOLER)
     ```
 
-    Microsoft ICM Mscms.dll 模块不会修改源或目标路径，因此它只是返回错误\_成功。
+    Microsoft ICM 的 Mscms .dll 模块不会修改源路径或目标路径，因此它只会返回错误\_成功。
 
--   下载到 c: Hpclrlsr.icm\\Winnt\\System32\\假脱机\\驱动程序\\颜色。
+-   将 Hpclrlsr 下载到 C：\\Winnt\\System32\\假脱机\\驱动程序\\颜色。
 
--   记录的事件，指示已下载指向并打印文件。
+-   记录事件，指示下载了点和打印文件。
 
--   调用[ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent) Mscms.dll，指定 COPYFILE 中的函数\_事件\_文件\_CHANGED 事件。
+-   调用 SpoolerCopyFileEvent 中的[](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-spoolercopyfileevent)函数，并指定 COPYFILE\_\_事件\_CHANGED 事件。
 
--   打印机驱动程序将调用[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)函数，并指定打印机\_事件\_缓存\_刷新事件。
+-   调用打印机驱动程序的[**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)函数，并指定打印机\_事件\_缓存\_刷新事件。
 
--   打印机驱动程序将调用[ **DrvPrinterEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winddiui/nf-winddiui-drvprinterevent)函数，指定打印机\_事件\_添加\_连接事件。
+-   再次调用打印机驱动程序的[**DrvPrinterEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvprinterevent)函数，指定打印机\_事件\_添加\_连接事件。
 
--   调用[ **SpoolerCopyFileEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-spoolercopyfileevent) Mscms.dll，指定 COPYFILE 中的函数\_事件\_添加\_打印机\_连接事件。
+-   调用 SpoolerCopyFileEvent 中的[](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-spoolercopyfileevent)函数，指定 COPYFILE\_事件，\_添加\_打印机\_连接事件。
 
  
 

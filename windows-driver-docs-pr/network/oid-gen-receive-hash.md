@@ -3,7 +3,7 @@ title: OID_GEN_RECEIVE_HASH
 description: 作为查询，NDIS 和过量驱动程序使用 OID_GEN_RECEIVE_HASH OID 来获取微型端口适配器的当前接收哈希计算设置。
 ms.assetid: be120dab-c98d-418f-8777-e2fb37b774a1
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_HASH 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_RECEIVE_HASH 的网络驱动程序
 ms.localizationpriority: medium
 ms.openlocfilehash: c2d5d3c6fc63a37d3fcd552855d81e243e392158
 ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
@@ -28,7 +28,7 @@ ms.locfileid: "72840474"
 
 过量驱动程序可以使用 OID\_GEN\_接收\_哈希 OID）在收到的帧上启用和配置哈希计算，而无需启用 RSS。
 
-**请注意**  协议驱动程序必须在启用 RSS 计算之前禁用它们。 如果启用了 RSS，则协议驱动程序会在启用接收哈希计算之前禁用 RSS。 微型端口驱动程序应使具有 NDIS\_状态的 set 请求失败 **\_无效的\_OID**或**ndis\_状态\_不\_支持**，以在[OID\_代\_接收时启用接收哈希计算\_缩放\_参数](oid-gen-receive-scale-parameters.md)当前已启用。
+**请注意**  协议驱动程序必须在启用 RSS 计算之前禁用它们。 如果启用了 RSS，则协议驱动程序会在启用接收哈希计算之前禁用 RSS。 小型端口驱动程序应使具有 NDIS\_状态的 set 请求失败 **\_无效的\_OID**或[](oid-gen-receive-scale-parameters.md) **NDIS\_状态\_不支持状态\_不支持状态**。\_\_\_\_
 
  
 

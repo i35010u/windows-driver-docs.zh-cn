@@ -9,17 +9,17 @@ keywords:
 - flowDeleteFn
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36fa9f32eacb042d91c44ff8578f8af89011fcc8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f0c5ca8806306a7a680ec2b1d71fa9fc10a38e16
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385474"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843488"
 ---
 # <a name="processing-flow-delete-callouts"></a>处理流删除标注
 
 
-当停止标注正在处理的数据流时，筛选器引擎会调用的标注[ *flowDeleteFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)标注函数如果标注驱动程序以前与数据关联上下文流。 一个标注*flowDeleteFn*标注函数执行任何必要清理之前停止数据流，则标注驱动程序与数据流相关联的上下文。
+当标注正在处理的数据流停止时，如果标注驱动程序以前将上下文与数据流相关联，则筛选器引擎将调用标注的[*flowDeleteFn*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)标注函数。 标注的*flowDeleteFn* callout 函数在数据流停止之前，对标注驱动程序与数据流相关联的上下文执行任何必要的清理。
 
 例如：
 
@@ -55,7 +55,7 @@ VOID NTAPI
 }
 ```
 
-筛选器引擎将自动删除时停止数据流，则一个标注与数据流相关联的上下文。 因此，一个标注不需要调用[ **FwpsFlowRemoveContext0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsflowremovecontext0)函数从其[ *flowDeleteFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)标注函数若要从数据流删除上下文。
+当数据流停止时，筛选器引擎会自动删除与数据流关联的标注的上下文。 因此，在从数据流中删除上下文的[**FwpsFlowRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowremovecontext0)函数时，不[](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_flow_delete_notify_fn0)需要使用标注。
 
  
 

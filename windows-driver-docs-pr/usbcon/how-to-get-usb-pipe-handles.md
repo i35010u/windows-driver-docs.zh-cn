@@ -1,29 +1,29 @@
 ---
-Description: 本主题概述了 USB 管道，并介绍了通过 USB 客户端驱动程序从 USB 驱动程序堆栈获取管道句柄所必需的步骤。
+Description: 本主题概述了 USB 管道，并介绍了 USB 客户端驱动程序从 USB 驱动程序堆栈获取管道句柄所需的步骤。
 title: 如何枚举 USB 管道
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789c7f5416592b7a5af94e2b5b98e29eaf95ff5e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d574a4ac44297d62edf158c0915b4644768a38c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386264"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844372"
 ---
 # <a name="how-to-enumerate-usb-pipes"></a>如何枚举 USB 管道
 
 
-本主题概述了 USB 管道，并介绍了通过 USB 客户端驱动程序从 USB 驱动程序堆栈获取管道句柄所必需的步骤。
+本主题概述了 USB 管道，并介绍了 USB 客户端驱动程序从 USB 驱动程序堆栈获取管道句柄所需的步骤。
 
-一个*USB 终结点*是中的设备的客户端驱动程序将数据发送到或接收中的数据的缓冲区。 若要发送或接收数据，客户端驱动程序 I/O 传输会将请求提交到 USB 驱动程序堆栈提供了到主控制器的数据。 主机控制器然后遵循特定协议 (具体取决于终结点的类型： 大容量、 中断，或同步) 来构建到或从设备传输数据的请求。 客户端驱动程序提取的数据传输的所有详细信息。 只要客户端驱动程序提交格式正确的请求时，USB 驱动程序堆栈处理请求，并将数据传输到设备。
+*USB 终结点*是设备中客户端驱动程序向其发送数据或从中接收数据的缓冲区。 若要发送或接收数据，客户端驱动程序会将 i/o 传输请求提交到 USB 驱动程序堆栈，该堆栈会向主机控制器提供数据。 然后，主机控制器遵循某些协议（具体取决于终结点类型： bulk、中断或同步），以生成将数据传入或传出设备的请求。 数据传输的所有详细信息都是从客户端驱动程序中提取的。 只要客户端驱动程序提交格式正确的请求，USB 驱动程序堆栈就会处理请求，并将数据传输到设备。
 
-设备在配置期间，USB 驱动程序堆栈创建*USB 管道*（在主机端） 的每个 USB 接口和其活动的备用设置中定义的设备的终结点。 USB 管道是主控制器和终结点之间的通信通道。 对于客户端驱动程序，一个管道是终结点的逻辑抽象。 若要发送的数据传输，该驱动程序必须获取与所传输的目标的终结点相关联的管道句柄。 当驱动程序想中止传输或重置的管道，发生错误情况时，还有所需管道句柄。
+在设备配置过程中，USB 驱动程序堆栈会为 USB 接口中定义的每个设备终结点和其活动备用设置创建一个*usb 管道*（在主机端）。 USB 管道是主机控制器与终结点之间的信道。 对于客户端驱动程序，管道是端点的逻辑抽象。 为了发送数据传输，驱动程序必须获取与作为传输目标的终结点关联的管道句柄。 当驱动程序希望在出现错误情况时中止传输或重置管道时，还需要管道句柄。
 
-管道的所有属性均都来自关联的终结点描述符。 例如，具体取决于终结点的类型，USB 驱动程序堆栈分配对管道的类型。 对于大容量端点，USB 驱动程序堆栈创建大容量管道;同步终结点，同步管道创建后，依次类推。 另一重要属性是主控制器可以将发送到的终结点点在请求中的数据量。 根据该值，客户端驱动程序必须确定传输缓冲区的布局。
+管道的所有属性都是从关联的终结点描述符派生的。 例如，根据终结点的类型，USB 驱动程序堆栈为管道分配一个类型。 对于大容量终结点，USB 驱动程序堆栈会创建大容量管道;对于同步终结点，将创建一个同步管道，依此类推。 另一个重要属性是指主机控制器可以发送到请求中的终结点的数据量。 根据相应的值，客户端驱动程序必须确定传输缓冲区的布局。
 
-Windows Driver Foundation (WDF) 中提供了专用的 I/O 目标对象[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)并[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)，客户端简化许多配置任务驱动程序。 通过使用这些对象，客户端驱动程序可以检索有关的当前配置，如数量的接口的信息，备用内每个接口，并为其终结点设置。 调用这些对象之一*目标管道对象*，执行与终结点相关的任务。 本主题介绍如何通过使用目标管道对象获取管道的信息。
+Windows Driver Foundation （WDF）在[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)和[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)中提供专用 i/o 目标对象，以简化客户端驱动程序的多个配置任务。 通过使用这些对象，客户端驱动程序可以检索有关当前配置的信息，如接口数、每个接口内的备用设置及其终结点。 其中一个对象（称为*目标管道对象*）执行与终结点相关的任务。 本主题说明如何使用目标管道对象获取管道信息。
 
-有关 Windows 驱动程序模型 (WDM) 客户端驱动程序，USB 驱动程序堆栈返回的数组[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构。 数组中元素的数目取决于所选的配置中的接口的活动备用设置定义的终结点的数目。 每个元素包含有关针对特定终结点创建的管道信息。 有关选择一个配置和获取管道的信息的数组的信息，请参阅[如何选择一种配置 USB 设备](how-to-select-a-configuration-for-a-usb-device.md)。
+对于 Windows 驱动模型（WDM）客户端驱动程序，USB 驱动程序堆栈返回一组[**USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构。 数组中的元素数取决于为所选配置中接口的活动备用设置定义的终结点的数量。 每个元素都包含有关为特定终结点创建的管道的信息。 有关选择配置和获取管道信息阵列的信息，请参阅如何为[USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)。
 
 ## <a name="what-you-need-to-know"></a>你需要了解的内容
 
@@ -33,51 +33,51 @@ Windows Driver Foundation (WDF) 中提供了专用的 I/O 目标对象[内核模
 -   [内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 -   [用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>必备条件
 
-客户端驱动程序可以枚举管道之前，请确保满足这些要求：
+在客户端驱动程序可以枚举管道之前，请确保满足以下要求：
 
--   客户端驱动程序必须已创建的 framework USB 目标设备对象。
+-   客户端驱动程序必须已创建框架 USB 目标设备对象。
 
-    如果使用 Microsoft Visual Studio Professional 2012 使用提供的 USB 模板，模板代码执行这些任务。 模板代码获取目标设备对象的句柄，并将存储在设备上下文中。
+    如果使用 Microsoft Visual Studio Professional 2012 随附的 USB 模板，则模板代码会执行这些任务。 模板代码会获取目标设备对象的句柄并将其存储在设备上下文中。
 
-    \* * KMDF 客户端驱动程序: * *
+    **KMDF 客户端驱动程序：**
 
-    KMDF 客户端驱动程序必须通过调用获取 WDFUSBDEVICE 句柄[ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)方法。 详细信息，请参阅"设备源代码"中[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md)。
+    KMDF 客户端驱动程序必须调用 [**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) 方法来获取 WDFUSBDEVICE 句柄。 有关详细信息，请参阅[了解 USB 客户端驱动程序代码结构 (KMDF)](understanding-the-kmdf-template-code-for-usb.md) 中的“设备源代码”。
 
-    \* * UMDF 客户端驱动程序: * *
+    **UMDF 客户端驱动程序：**
 
-    UMDF 客户端驱动程序必须获取[ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)通过查询框架目标设备对象的指针。 有关详细信息，请参阅"[**IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)实现和特定于 USB 的任务"中[了解 USB 客户端驱动程序代码结构 (UMDF)](understanding-the-umdf-template-code-for-usb.md)。
+    UMDF 客户端驱动程序必须通过查询框架目标设备对象获取 [**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) 指针。 有关详细信息，请参阅[了解 USB 客户端驱动程序代码结构 (UMDF) **中的“** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)IPnpCallbackHardware[](understanding-the-umdf-template-code-for-usb.md) 实现和特定于 USB 的任务”。
 
--   设备必须具有活动的配置。
+-   设备必须具有活动配置。
 
-    如果使用的 USB 模板，该代码将在每个接口中选择的第一个配置和默认值替代设置。 有关如何更改该默认设置的信息，请参阅[如何在 USB 界面中选择一项备用设置](select-a-usb-alternate-setting.md)。
+    如果使用的是 USB 模板，则代码将选择每个接口中的第一个配置和默认备用设置。 有关如何更改此默认设置的信息，请参阅[如何在 USB 接口中选择替代设置](select-a-usb-alternate-setting.md)。
 
-    \* * KMDF 客户端驱动程序: * *
+    **KMDF 客户端驱动程序：**
 
-    KMDF 客户端驱动程序必须调用[ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)方法。
+    KMDF 客户端驱动程序必须调用[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)方法。
 
-    \* * UMDF 客户端驱动程序: * *
+    **UMDF 客户端驱动程序：**
 
-    UMDF 客户端驱动程序，该框架选择该配置中的第一个配置和每个接口的默认备用设置。
+    对于 UMDF 客户端驱动程序，框架为该配置中的每个接口选择第一个配置和默认备用设置。
 
 <a name="instructions"></a>说明
 ------------
 
-### <a name="getting-usb-pipe-handles---kmdf-client-driver"></a>获取 USB 管道句柄的 KMDF 客户端驱动程序
+### <a name="getting-usb-pipe-handles---kmdf-client-driver"></a>获取 USB 管道句柄-KMDF 客户端驱动程序
 
-框架表示每个管道，打开的 USB 驱动程序堆栈，为 USB 目标管道对象。 KMDF 客户端驱动程序可以访问目标管道对象，若要获取有关管道的信息的方法。 若要执行数据传输，客户端驱动程序必须具有 WDFUSBPIPE 管道句柄。 若要获取管道句柄，该驱动程序必须枚举活动配置的接口和备用设置，以及然后枚举中的每个设置定义的终结点。 执行枚举操作，为每次数据传输，可能很昂贵。 因此，一种方法是在设备配置后，获取管道句柄并将其存储在驱动程序定义的设备上下文中。 当驱动程序收到的数据传输请求时，该驱动程序可以从设备上下文中，检索所需的管道句柄并使用它们来发送请求。 如果客户端驱动程序更改设备的配置，例如，选择备用设置，该驱动程序必须还刷新具有新的管道句柄的设备上下文。 否则，驱动程序错误地可以对过时的管道句柄发送传输请求。
+此框架表示由 USB 驱动程序堆栈打开的每个管道，作为 USB 目标管道对象。 KMDF 客户端驱动程序可以访问目标管道对象的方法，以获取有关管道的信息。 若要执行数据传输，客户端驱动程序必须具有 WDFUSBPIPE 管道句柄。 若要获取管道句柄，驱动程序必须枚举活动配置的接口和备用设置，然后枚举每个设置中定义的终结点。 对于每个数据传输，执行枚举操作可能很昂贵。 因此，一种方法是在配置设备后获取管道句柄，并将其存储在驱动程序定义的设备上下文中。 当驱动程序收到数据传输请求时，驱动程序可以从设备上下文中检索所需的管道句柄，并使用它们来发送请求。 如果客户端驱动程序更改了设备的配置，例如，选择备用设置，则驱动程序还必须使用新的管道句柄刷新设备上下文。 否则，驱动程序可能会错误地将传输请求发送到陈旧的管道句柄。
 
-**请注意**管道句柄不需要的控制转移。
-若要发送控制传输请求，WDF 客户端驱动程序调用**WdfUsbDevicexxxx**公开 framework 设备对象的方法。 这些方法需要 WDFUSBDEVICE 句柄来启动控制传输该目标的默认终结点。 对于此类传输，请求的 I/O 目标是默认终结点，并且由 WDFIOTARGET 控点，它抽象 WDFUSBPIPE 句柄。 在设备级别 WDFUSBDEVICE 句柄是默认终结点的 WDFUSBPIPE 句柄的抽象。
+**注意** 控制传输不需要管道句柄。
+若要发送控制传输请求，WDF 客户端驱动程序将调用由框架设备对象公开的**WdfUsbDevicexxxx**方法。 这些方法需要 WDFUSBDEVICE 句柄来启动面向默认终结点的控制传输。 对于此类传输，请求的 i/o 目标是默认终结点，由 WDFUSBPIPE 句柄抽象的 WDFIOTARGET 句柄表示。 在设备级别，WDFUSBDEVICE 句柄是对默认终结点的 WDFUSBPIPE 句柄的抽象。
 
-有关将控件传输和 KMDF 方法发送的信息，请参阅[如何发送 USB 控制传输](usb-control-transfer.md)。
+有关发送控制传输和 KMDF 方法的信息，请参阅[如何发送 USB 控件传输](usb-control-transfer.md)。
 
 
 
-1.  扩展您的设备上下文结构来存储管道句柄。
+1.  扩展设备上下文结构以存储管道句柄。
 
-    如果您知道在你的设备中的终结点，通过添加要存储相关联的 USB 管道句柄的 WDFUSBPIPE 成员扩展您的设备上下文结构。 例如，你可以扩展设备上下文结构如下所示：
+    如果知道设备中的终结点，请添加 WDFUSBPIPE 成员来存储关联的 USB 管道句柄，从而扩展设备上下文结构。 例如，可以扩展设备上下文结构，如下所示：
 
     ```cpp
     typedef struct _DEVICE_CONTEXT {  
@@ -97,7 +97,7 @@ Windows Driver Foundation (WDF) 中提供了专用的 I/O 目标对象[内核模
 
 2.  声明管道上下文结构。
 
-    每个管道可以在调用另一个结构中存储终结点相关的特征*管道上下文*。 类似于设备上下文，管道上下文是数据定义的结构 （由客户端驱动程序） 用于存储有关 pipes 与终结点关联的信息。 设备在配置期间，客户端驱动程序将指针传递给其管道上下文框架。 框架中分配的基础结构的大小的内存块，并存储到该 framework USB 目标管道对象使用的内存位置的指针。 客户端驱动程序可以使用指针来访问和管道上下文的成员中存储的管道信息。
+    每个管道都可以在另一个称为*管道上下文*的结构中存储终结点相关的特征。 与设备上下文类似，管道上下文是数据结构（由客户端驱动程序定义），用于存储与终结点关联的管道的相关信息。 在设备配置过程中，客户端驱动程序会将其管道上下文的指针传递到框架。 框架根据结构的大小分配内存块，并使用框架 USB 目标管道对象存储指向该内存位置的指针。 客户端驱动程序可以使用指针在管道上下文的成员中访问和存储管道信息。
 
     ```cpp
     typedef struct _PIPE_CONTEXT {  
@@ -111,23 +111,23 @@ Windows Driver Foundation (WDF) 中提供了专用的 I/O 目标对象[内核模
 
     ```
 
-    在此示例中，管道上下文存储的最大可以在一次传输发送的字节数。 客户端驱动程序可以使用该值来确定传输缓冲区的大小。 声明还包括[ **WDF\_DECLARE\_上下文\_类型\_WITH\_名称**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)宏，生成内联函数，GetPipeContext。 客户端驱动程序可以调用该函数可检索到的存储的管道上下文的内存块的指针。
+    在此示例中，管道上下文存储可以在一次传输中发送的最大字节数。 客户端驱动程序可以使用该值来确定传输缓冲区的大小。 声明还包括[**WDF\_使用\_NAME 宏声明\_CONTEXT\_类型\_** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name) ，这将生成内联函数 GetPipeContext。 客户端驱动程序可调用该函数来检索指向存储管道上下文的内存块的指针。
 
     有关上下文的详细信息，请参阅[框架对象上下文空间](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)。
 
-    若要将指针传递到框架中，客户端驱动程序先初始化其管道上下文通过调用[ **WDF\_对象\_特性\_INIT\_上下文\_类型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-object-attributes-init-context-type). 然后，将指针传递给管道上下文，而调用[ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig) （用于选择一种配置） 或[ **WdfUsbInterfaceSelectSetting** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting) （用于选择一项备用设置）。
+    若要将指针传递到框架，客户端驱动程序首先通过调用[**WDF\_对象\_特性来初始化其管道上下文\_INIT\_上下文\_类型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-object-attributes-init-context-type)。 然后，在调用[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig) （用于选择配置）或[**WdfUsbInterfaceSelectSetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting) （用于选择备用设置）时，传递指向管道上下文的指针。
 
-3.  设备配置请求完成后，枚举接口，并获取用于配置管道的管道句柄。 你将需要此集的信息：
+3.  设备配置请求完成后，枚举接口并获取已配置管道的管道句柄。 你将需要以下信息集：
 
-    -   包含当前设置的接口 WDFUSBINTERFACE 句柄。 可以通过枚举在活动配置中的接口来获取该句柄。 或者，如果提供一个指向[ **WDF\_USB\_设备\_选择\_配置\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_device_select_config_params)中结构[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)，就可以从该句柄**Type.SingleInterface.ConfiguredUsbInterface** （适用于单个接口设备） 的成员或**Type.MultiInterface.Pairs.UsbInterface** （适用于多个接口设备） 的成员。
-    -   管道中的当前设置的终结点可供使用的数。 可以通过调用特定接口上获取该数字[ **WdfUsbInterfaceGetNumConfiguredPipes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetnumconfiguredpipes)方法。
-    -   所有已配置管道的 WDFUSBPIPE 句柄。 可以通过调用获取的句柄[ **WdfUsbInterfaceGetConfiguredPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)方法。
+    -   包含当前设置的接口的 WDFUSBINTERFACE 句柄。 可以通过在活动配置中枚举接口来获取该句柄。 或者，如果提供了指向[**WDF\_USB\_设备的指针\_选择 WdfUsbTargetDeviceSelectConfig 中的\_CONFIG\_PARAMS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_select_config_params)结构，则可以从**SingleInterface ConfiguredUsbInterface**成员（对于单接口设备）或**MultiInterface. UsbInterface**成员（对于多接口设备）获取该句柄。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)
+    -   为当前设置中的终结点打开的管道的数目。 可以通过调用[**WdfUsbInterfaceGetNumConfiguredPipes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetnumconfiguredpipes)方法在特定接口上获取该数字。
+    -   所有已配置管道的 WDFUSBPIPE 句柄。 可以通过调用[**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)方法获取该句柄。
 
-    获取管道句柄后, 客户端驱动程序可以调用方法来确定类型和方向的管道。 该驱动程序可以获取有关终结点，信息[ **WDF\_USB\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)结构。 该驱动程序可以通过调用获取填充的结构[ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)方法。 或者，驱动程序可以提供指向中结构的指针[ **WdfUsbInterfaceGetConfiguredPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)调用。
+    获取管道句柄之后，客户端驱动程序可以调用方法来确定管道的类型和方向。 驱动程序可以在[**WDF\_USB\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)结构中获取有关端点的信息。 驱动程序可以通过调用[**WdfUsbTargetPipeGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)方法来获取填充的结构。 或者，驱动程序可以在[**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)调用中提供指向结构的指针。
 
-下面的代码示例枚举通过管道传入的当前设置。 它获取为设备的大容量和中断终结点的管道句柄，并将其存储在驱动程序的设备上下文结构。 它将在关联的管道上下文中存储每个终结点的最大数据包大小。 如果终结点支持流，它会通过调用 OpenStreams 例程打开静态流。 在显示的 OpenStreams 实现[如何打开和关闭 USB 大容量终结点中的静态流](how-to-open-streams-in-a-usb-endpoint.md)。
+下面的代码示例枚举当前设置中的管道。 它获取设备的大容量和中断终结点的管道句柄，并将其存储在驱动程序的设备上下文结构中。 它将每个终结点的最大数据包大小存储在关联的管道上下文中。 如果终结点支持流，它将通过调用 OpenStreams 例程打开静态流。 OpenStreams 的实现显示在如何在[USB 大容量终结点中打开和关闭静态流](how-to-open-streams-in-a-usb-endpoint.md)中。
 
-若要确定特定的大容量终结点是否支持静态流，客户端驱动程序将检查终结点描述符。 该代码是名为 RetrieveStreamInfoFromEndpointDesc 下, 一步的代码块中所示的帮助器例程中实现的。
+若要确定特定大容量终结点是否支持静态流，客户端驱动程序将检查终结点描述符。 在名为 RetrieveStreamInfoFromEndpointDesc 的 helper 例程中实现该代码，如以下代码块中所示。
 
 ```cpp
 NTSTATUS  
@@ -293,9 +293,9 @@ Exit:
 }
 ```
 
-下面的代码示例显示了帮助器例程名为 RetrieveStreamInfoFromEndpointDesc，枚举管道时，调用客户端驱动程序。
+下面的代码示例演示一个名为 RetrieveStreamInfoFromEndpointDesc 的 helper 例程，该例程在枚举管道时调用。
 
-在以下代码示例中，客户端驱动程序调用上述帮助器例程 RetrieveStreamInfoFromEndpointDesc，枚举管道时。 例程将检查第一次获得配置描述符和对其检索终结点的描述符进行分析。 如果管道的终结点描述符包含 USB\_SUPERSPEED\_终结点\_配套\_描述符\_类型描述符，驱动程序检索流支持的最大数目终结点。
+在下面的代码示例中，客户端驱动程序将调用前面的 helper 例程 RetrieveStreamInfoFromEndpointDesc，同时枚举管道。 例程首先检查获取配置描述符，并将其分析为检索终结点描述符。 如果管道的终结点描述符包含 USB\_SUPERSPEED\_终结点\_伴随\_描述符\_类型描述符，则驱动程序将检索终结点支持的最大流数。
 
 ```cpp
 /*++
@@ -490,15 +490,15 @@ Exit:
 }
 ```
 
-### <a name="getting-pipe-handles---umdf-client-driver"></a>获取管道句柄的 UMDF 客户端驱动程序
+### <a name="getting-pipe-handles---umdf-client-driver"></a>获取管道句柄-UMDF 客户端驱动程序
 
-UMDF 客户端驱动程序使用 COM 基础结构，并实现 COM 回调类 framework 设备对象与配对的。 类似于 KMDF 驱动程序，UMDF 客户端驱动程序之后，可以仅获取管道的信息配置该设备。 若要获取客户端的管道信息驱动程序必须获取一个指向[ **IWDFUsbTargetPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)框架接口对象包含的活动设置的接口。 通过使用接口指针，该驱动程序可以枚举通过管道传入该设置，以获取**IWDFUsbTargetPipe**接口公开的 framework 目标管道对象的指针。
+UMDF 客户端驱动程序使用 COM 基础结构并实现与框架设备对象配对的 COM 回调类。 与 KMDF 驱动程序类似，UMDF 客户端驱动程序在配置设备后只能获取管道信息。 若要获取管道信息，客户端驱动程序必须获取指向包含活动设置的 framework interface 对象的[**IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)接口的指针。 使用接口指针，驱动程序可以枚举该设置中的管道，以获取框架目标管道对象公开的**IWDFUsbTargetPipe**接口指针。
 
-该驱动程序开始枚举管道之前，该驱动程序必须知道有关设备配置和受支持的端点。 根据该信息，该驱动程序可以将管道对象存储为类成员变量。
+驱动程序开始枚举管道之前，驱动程序必须知道设备配置和支持的终结点。 根据该信息，驱动程序可以将管道对象存储为类成员变量。
 
-下面的代码示例扩展了随 Visual Studio Professional 2012 一起提供的 USB UMDF 模板。 起始代码的说明，请参阅"[**IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)实现和特定于 USB 的任务"中[了解 USB 客户端驱动程序代码结构 (UMDF)](understanding-the-umdf-template-code-for-usb.md).
+下面的代码示例扩展了随 Visual Studio Professional 2012 一起提供的 USB UMDF 模板。 有关起始代码的说明，请参阅[了解 USB 客户端驱动程序代码结构（UMDF）](understanding-the-umdf-template-code-for-usb.md)中的 "[**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)实现和特定于 USB 的任务"。
 
-扩展 CDevice 类声明，如下所示。 此示例代码假定该设备是 OSR FX2 板。 有关其描述符布局的信息，请参阅[USB 设备布局](usb-device-layout.md)。
+扩展 CDevice 类声明，如下所示。 此代码示例假定设备是 OSR FX2 板。 有关描述符布局的信息，请参阅[USB 设备布局](usb-device-layout.md)。
 
 ```cpp
 class CMyDevice :
@@ -588,7 +588,7 @@ public:
 };
 ```
 
-在 CDevice 类定义中，实现一个名为 CreateUsbIoTargets 的帮助器方法。 该驱动程序已获取指向目标设备对象的指针后，将从 IPnpCallbackHardware::OnPrepareHardware 实现调用此方法。
+在 CDevice 类定义中，实现名为 CreateUsbIoTargets 的帮助器方法。 当驱动程序获取指向目标设备对象的指针后，将从 IPnpCallbackHardware：： OnPrepareHardware 实现调用此方法。
 
 ```cpp
 
@@ -702,31 +702,31 @@ HRESULT  CMyDevice::CreateUsbIoTargets()
 }  
 ```
 
-在 UMDF，客户端驱动程序使用管道索引以将数据传输请求发送。 管道索引是在设置中打开的终结点的管道时，USB 驱动程序堆栈分配的数字。 若要获取管道索引，请调用[**IWDFUsbTargetPipe::GetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)方法。 该方法填充[ **WINUSB\_管道\_信息**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information)结构。 **PipeId**值指示管道索引。
+在 UMDF 中，客户端驱动程序使用管道索引发送数据传输请求。 当管道索引为设置中的终结点打开管道时，它由 USB 驱动程序堆栈分配。 若要获取管道索引，请调用[**IWDFUsbTargetPipe：： GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)方法。 方法填充[**WINUSB\_管道\_信息**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information)结构。 **PipeId**值指示管道索引。
 
-一种方法执行的读取和写入目标管道上的操作是调用[ **IWDFUsbInterface::GetWinUsbHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle)若要获取 WinUSB 句柄，然后调用[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb). 例如，驱动程序可以调用[ **WinUsb\_ReadPipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)或[ **WinUsb\_WritePipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)函数。 在这些函数调用，该驱动程序必须指定管道索引。 有关详细信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+在目标管道上执行读取和写入操作的一种方法是调用[**IWDFUsbInterface：： GetWinUsbHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle)以获取 WinUSB 句柄，然后调用[WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)。 例如，驱动程序可以调用[**WinUsb\_ReadPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)或[**WinUsb\_WritePipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)函数。 在这些函数调用中，驱动程序必须指定管道索引。 有关详细信息，请参阅[如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 <a name="remarks"></a>备注
 -------
 
-### <a name="pipe-handles-for-wdm-based-client-drivers"></a>WDM 基于客户端驱动程序的管道句柄
+### <a name="pipe-handles-for-wdm-based-client-drivers"></a>基于 WDM 的客户端驱动程序的管道句柄
 
-选择一种配置后，USB 驱动程序堆栈设置为每个设备的终结点的管道。 USB 驱动程序堆栈返回的数组[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)结构。 数组中元素的数目取决于所选的配置中的接口的活动备用设置定义的终结点的数目。 每个元素包含有关针对特定终结点创建的管道信息。 有关获取管道句柄的详细信息，请参阅[如何选择一种配置 USB 设备](how-to-select-a-configuration-for-a-usb-device.md)。
+选择配置后，USB 驱动程序堆栈会将管道设置为设备的每个终结点。 USB 驱动程序堆栈返回[**USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)结构的数组。 数组中的元素数取决于为所选配置中接口的活动备用设置定义的终结点的数量。 每个元素都包含有关为特定终结点创建的管道的信息。 有关获取管道句柄的详细信息，请参阅[如何为 USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)。
 
-若要生成的 I/O 传输请求，客户端驱动程序必须具有与该终结点相关联的管道的句柄。 客户端驱动程序可以获取从管道句柄**PipeHandle**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)数组中。
+若要生成 i/o 传输请求，客户端驱动程序必须具有与该终结点关联的管道的句柄。 客户端驱动程序可以从数组中的**PipeHandle**成员[**USBD\_pipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)获取管道句柄，\_信息。
 
-除了管道句柄，客户端驱动程序还需要管道类型。 客户端驱动程序可以通过检查来确定管道类型**PipeType**成员。
+除了管道句柄外，客户端驱动程序还需要管道类型。 客户端驱动程序可以通过检查**PipeType**成员来确定管道类型。
 
-根据终结点类型，USB 驱动程序堆栈支持不同类型的管道。 客户端驱动程序可以通过检查来确定管道类型**PipeType**的成员[ **USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)。 不同的管道类型需要不同类型的 USB 请求块 (URBs) 来执行 I/O 事务。
+基于终结点类型，USB 驱动程序堆栈支持不同类型的管道。 客户端驱动程序可以通过检查[**USBD\_管道\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)的**PipeType**成员来确定管道类型。 不同的管道类型需要不同类型的 USB 请求块（URBs）来执行 i/o 事务。
 
-然后，客户端驱动程序将提交到 USB 驱动程序堆栈 URB。 USB 驱动程序堆栈处理请求，并将指定的数据发送到请求的目标管道。
+然后，客户端驱动程序将 URB 提交到 USB 驱动程序堆栈。 USB 驱动程序堆栈处理请求，并将指定数据发送到请求的目标管道。
 
-URB 包含有关目标的管道句柄、 传输缓冲区和其长度等请求的信息。 中的每个结构[ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)联合共享某些成员：**TransferFlags**， **TransferBuffer**， **TransferBufferLength**，并且**TransferBufferMDL**。 有在特定于类型的标志**TransferFlags**对应于每个 URB 类型的成员。 所有数据将都传输 URBs，USBD\_都传输\_方向\_中的 IN 标志**TransferFlags**指定都传输的方向。 客户端驱动程序设置 USBD\_传输\_方向\_中标志，用于从设备读取数据。 驱动程序，请清除此标志，以将数据发送到设备。 数据可能会读取或写入到驻留在内存中的任一的缓冲区或 MDL。 在任一情况下，该驱动程序指定的缓冲区的大小**TransferBufferLength**成员。 该驱动程序提供了中的常驻缓冲区**TransferBuffer**成员和在 MDL **TransferBufferMDL**成员。 无论哪一个驱动程序提供了另一个必须为 NULL。
+URB 包含请求的相关信息，例如目标管道句柄、传输缓冲区和长度。 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)联合中的每个结构共享某些成员： **TransferFlags**、 **TransferBuffer**、 **TransferBufferLength**和**TransferBufferMDL**。 **TransferFlags**成员中存在与每个 URB 类型相对应的类型特定标志。 对于所有数据传输 URBs， **TransferFlags**中的 USBD\_传输\_方向\_指定传输方向。 客户端驱动程序将 USBD\_传输\_\_方向设置为 "标记"，以便从设备读取数据。 驱动程序清除此标志，将数据发送到设备。 数据可以从驻留在内存中的缓冲区中读取数据或将数据写入该缓冲区。 在任一情况下，驱动程序都会在**TransferBufferLength**成员中指定缓冲区的大小。 驱动程序在**TransferBuffer**成员中提供常驻缓冲区，并在**TransferBufferMDL**成员中提供 MDL。 驱动程序提供的任何一个，另一个必须为 NULL。
 
 ## <a name="related-topics"></a>相关主题
-[USB I/O 传输](usb-device-i-o.md)  
-[如何选择一种配置 USB 设备](how-to-select-a-configuration-for-a-usb-device.md)  
-[如何在 USB 界面中选择一项备用设置](select-a-usb-alternate-setting.md)  
+[USB i/o 传输](usb-device-i-o.md)  
+[如何为 USB 设备选择配置](how-to-select-a-configuration-for-a-usb-device.md)  
+[如何在 USB 接口中选择备用设置](select-a-usb-alternate-setting.md)  
 [USB 客户端驱动程序的常见任务](wdk-resources-for-usb-driver-development.md)  
 
 

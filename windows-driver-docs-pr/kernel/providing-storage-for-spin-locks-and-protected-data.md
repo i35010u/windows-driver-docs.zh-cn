@@ -3,17 +3,17 @@ title: 为自旋锁和受保护数据提供存储
 description: 为自旋锁和受保护数据提供存储
 ms.assetid: bde18474-10c3-4d9a-b120-6cbd5fc675cc
 keywords:
-- 存储 WDK 自旋锁
-- 存储数值调节钮锁定受保护的数据
-- 数值调节钮锁 WDK 内核
+- 存储 WDK 旋转锁
+- 存储旋转锁定保护的数据
+- 旋转锁定 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 707fc887e3e0a631ffc3cac0777b8cc2e2b20321
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b0b4a837bcaf50a2256c278b468ac35a288f8263
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378773"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838482"
 ---
 # <a name="providing-storage-for-spin-locks-and-protected-data"></a>为自旋锁和受保护数据提供存储
 
@@ -21,27 +21,27 @@ ms.locfileid: "67378773"
 
 
 
-作为设备启动时的一部分，驱动程序必须分配驻留的存储的任何数值调节钮锁定受保护的数据或资源并在以下位置之一中的相应自旋锁的：
+在设备启动过程中，驱动程序必须为任何旋转锁定保护的数据或资源分配驻留存储，并在以下任一位置为相应的自旋锁分配存储：
 
--   该驱动程序通过调用来设置的设备对象的设备扩展[ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatedevice)
+-   驱动程序通过调用 IoCreateDevice 设置的设备对象的设备扩展[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
 
--   该驱动程序通过调用来设置控制器对象的控制器扩展[ **IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller)
+-   驱动程序通过调用 IoCreateController 设置的控制器对象的控制器扩展[](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatecontroller)
 
--   非分页缓冲，驱动程序将获取通过调用的系统空间内存[ **ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)
+-   未分页，驱动程序通过调用 ExAllocatePoolWithTag 获取的系统空间[内存](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
 
-尝试访问可分页的数据，同时保留数值调节钮锁定会导致严重的页面错误，如果该页面不存在。 引用 （因为它已存储在可分页内存和当前换出时） 是无效的数值调节钮锁还会导致严重的页面错误。
+如果尝试在持有自旋锁时访问可分页数据，则会导致出现严重页面错误（如果该页不存在）。 引用无效的自旋锁（因为它存储在可分页内存中并且当前已分页）还会导致严重的页错误。
 
-驱动程序必须提供存储为每个 executive 自旋锁也可能会使用以下几种：
+驱动程序必须为其可能使用的以下各种类型的执行旋转锁定提供存储：
 
-- 任何旋转锁的驱动程序显式获取和释放使用任一**Ke * Xxx*** 旋转锁例程。
+- 驱动程序使用任何**Ke * Xxx*** 自旋锁例程显式获取和释放的任何自旋锁。
 
-- 任何旋转锁用作参数的任何**ExInterlocked * Xxx*** 例程。
+- 任何用作**ExInterlocked * Xxx*** 例程的参数的自旋锁。
 
-尽管驱动程序可以调用**ExInterlocked * Xxx*** 从其 ISR 的例程或[ *SynchCritSection* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-ksynchronize_routine)例程，它不能使用任何**Ke * Xxx*** 例程来获取和释放调节锁大于调度任何 IRQL\_级别。 因此，重复使用旋转锁之间的任何驱动程序调用**Ke*Xxx*旋转锁**并**ExInterlocked * Xxx*** 例程必须使每次调用在 IRQL 运行时&lt;= 调度\_级别。
+尽管驱动程序可以调用其 ISR 或[*SynchCritSection*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-ksynchronize_routine)例程中的**ExInterlocked * xxx*** 例程，但它不能使用任何**Ke * xxx*** 例程获取和释放大于调度\_级别的任何 IRQL 处的自旋锁。 因此，在对 " **Ke*Xxx*旋转锁**" 和 " **ExInterlocked * Xxx***" 例程的调用之间重复使用自旋锁的任何驱动程序都必须在以 IRQL &lt;= 调度\_级别运行时进行每个调用。
 
-驱动程序可以将传递到同一个数值调节钮锁**ExInterlockedInsertHeadList**到另一个一样**ExInterlocked * Xxx*** 例程，只要这两个例程在相同的 IRQL 使用自旋锁。 有关数值调节钮锁使用情况如何影响性能的详细信息，请参阅[使用数值调节钮锁定：示例](using-spin-locks--an-example.md)。
+只要两个例程在相同的 IRQL 上使用自旋锁，驱动程序就可以将相同的旋转锁定传递到**ExInterlockedInsertHeadList** ，就像处理另一**ExInterlocked * Xxx*** 例程一样。 有关自旋锁使用如何影响性能的详细信息，请参阅[使用自旋锁：一个示例](using-spin-locks--an-example.md)。
 
-除了其 executive 自旋锁的存储设备驱动程序必须提供另一个旋转锁，如果它具有 multivector ISR 或多个 ISR.要与它中断的对象相关联的存储
+除了对其执行单元旋转锁的存储之外，设备驱动程序还必须为要与其中断对象关联的另一个自旋锁（如果它具有 multivector ISR 或多个 ISR）提供存储。
 
  
 

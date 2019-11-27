@@ -14,7 +14,7 @@ ms.locfileid: "72842037"
 # <a name="reporting-wake-reason-status-indication-capabilities"></a>报告唤醒原因状态指示功能
 
 
-从 NDIS 6.30 开始，微型端口驱动程序必须报告它是否可以发出 NDIS 唤醒原因状态指示（[**ndis\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)），以报告以下其中一项导致的唤醒事件:
+从 NDIS 6.30 开始，微型端口驱动程序必须报告它是否可以发出 NDIS 唤醒原因状态指示（[**ndis\_状态\_PM\_唤醒\_原因**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)），以报告以下其中一项导致的唤醒事件：
 
 -   网络适配器接收到与 LAN 唤醒（WOL）模式匹配的数据包。 这包括接收与通过对象标识符（OID）设置的 OID 指定的接收筛选器的数据包， [\_代\_当前\_数据包\_筛选器](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)。
 
@@ -36,8 +36,8 @@ ms.locfileid: "72842037"
 
     若要启用对唤醒原因状态指示的支持，微型端口驱动程序必须将 NDIS 的成员设置[ **\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构，如下所示：
 
-    -   微型端口驱动程序必须指定 NDIS\_PM\_功能\_修订版本\_2，NDIS\_SIZEOF [ **\_\_\_\_NDIS\_PM\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的**标头**成员内的功能结构。
-    -   如果网络适配器可以存储导致系统唤醒事件的接收数据包，则微型端口驱动程序会将 NDIS\_PM\_唤醒\_数据包\_\_指示此构造.
+    -   微型端口驱动程序必须指定 NDIS\_PM\_功能\_修订版本\_2，NDIS\_SIZEOF\_\_\_\_\_\_\_[](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)
+    -   如果网络适配器可以存储导致系统唤醒事件的接收数据包，则微型端口驱动程序会将 NDIS\_PM\_唤醒\_数据包\_指示在此结构的**Flags**成员内\_支持的标志。
 
         如果设置了此标志，网络适配器必须能够保存收到的数据包，该数据包导致适配器生成唤醒事件。 此外，小型端口驱动程序必须能够在网络适配器转换为完全电源状态之后，在此数据包中执行以下操作：
 
@@ -53,7 +53,7 @@ ms.locfileid: "72842037"
 
     -   微型端口驱动程序将**MediaSpecificWakeUpEvents**设置为网络适配器所支持的特定于媒体的唤醒事件。 这些事件包括在802.11 适配器与 AP 解除关联时生成唤醒事件。
 
-2.  微型端口驱动程序初始化[**ndis\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，并将**PowerManagementCapabilitiesEx**成员设置为已初始化的[**NDIS\_PM 的地址\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构。
+2.  微型端口驱动程序初始化[**ndis\_微型端口\_适配器\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构，并将**PowerManagementCapabilitiesEx**成员设置为已初始化的[**NDIS\_PM\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)结构的地址。
 
 3.  微型端口驱动程序调用[**NdisMSetMiniportAttributes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsetminiportattributes)函数以注册其电源管理功能。 当微型端口驱动程序调用此函数时，它会将*MiniportAttributes*参数设置为[**NDIS\_微型端口\_适配器的地址\_常规\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_miniport_adapter_general_attributes)结构。
 

@@ -4,19 +4,19 @@ description: 释放设备和控制器对象
 ms.assetid: 35404401-d3a8-4257-b1a3-b16ebe42b181
 keywords:
 - 卸载例程 WDK 内核，非 PnP 驱动程序
-- 非即插即用卸载例程 WDK 内核
-- 发布设备
+- 非 PnP 卸载例程 WDK 内核
+- 正在释放设备
 - 释放控制器对象
-- 设备版本 WDK 内核
-- 控制器对象 WDK 内核，发布
+- 设备释放 WDK 内核
+- 控制器对象 WDK 内核，释放
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 179975775388ccc51c8f340e74c4f52df0ff9ce6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a66feeaffc0f75c3f2f7f1bacee8670dfdd6d2dc
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373442"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838457"
 ---
 # <a name="releasing-device-and-controller-objects"></a>释放设备和控制器对象
 
@@ -24,15 +24,15 @@ ms.locfileid: "67373442"
 
 
 
-驱动程序中删除的设备或控制器对象之前，它必须释放对外部资源，如指针其他驱动程序的对象和/或中断的对象，它存储在相应的设备或控制器扩展到其引用。 然后，它可以调用[ **IoDeleteDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)为每个驱动程序创建的设备对象。 一个非 WDM 驱动程序，以前称为[ **IoCreateController** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iocreatecontroller)还必须调用[ **IoDeleteController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iodeletecontroller)。
+驱动程序在删除设备或控制器对象之前，必须释放对外部资源（如指向其他驱动程序的对象的指针和/或中断对象）的引用，并将其存储在相应的设备或控制器扩展中。 然后，它可以为驱动程序创建的每个设备对象调用[**IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice) 。 之前调用[**IoCreateController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatecontroller)的非 WDM 驱动程序也必须调用[**IoDeleteController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iodeletecontroller)。
 
-自动为任何内核定义的对象，该驱动程序为其提供设备扩展中的存储时释放[*卸载*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)例程调用**IoDeleteDevice**与相应的设备对象。 一般情况下，所有对象[ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)或[*重新初始化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize)例程通过调用设置**KeInitialize *Xxx*** 可以通过调用释放**IoDeleteDevice**如果驱动程序为该对象在其设备扩展中提供存储。 例如，如果驱动程序包含[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程和已提供存储在其设备扩展中，调用的必要 DPC 和计时器对象**IoDeleteDevice**释放这些系统资源。
+当[*Unload*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)例程使用相应的设备对象调用**IoDeleteDevice**时，驱动程序在设备扩展中提供存储的任何内核定义的对象都将自动释放。 通常，如果驱动程序为其设备扩展[](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)中的对象提供存储，则通过调用**KeInitialize * Xxx***[**设置的任何**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)对象都可以通过调用**IoDeleteDevice**释放。 例如，如果驱动程序具有[*CustomTimerDpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)例程，并且为其设备扩展中的必需 DPC 和定时器对象提供了存储，则调用**IoDeleteDevice**会释放这些系统资源。
 
-同样，任何内核定义的对象，该驱动程序为其提供存储在控制器扩展将自动释放时*Unload*例程调用**IoDeleteController**与相应的控制器对象。
+同样，当*Unload*例程使用相应的控制器对象调用**IoDeleteController**时，驱动程序在控制器扩展中提供存储的任何内核定义的对象都将自动释放。
 
-如果**DriverEntry**或*重新初始化*调用的例程[ **IoGetConfigurationInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iogetconfigurationinformation)要递增的计数特定类型的设备*Unload*例程还必须调用**IoGetConfigurationInformation**和递减中适用于其设备的 I/O 管理器的全局配置的计数因为它的信息结构中删除相应的设备对象。
+如果名为[**IoGetConfigurationInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iogetconfigurationinformation)的**DriverEntry**或重新*初始化*例程递增特定类型的设备的计数，则*卸载*例程还必须调用**IoGetConfigurationInformation**和当 i/o 管理器的全局配置信息结构中删除相应的设备对象时，减小其设备的计数。
 
-它将控制权，返回前*Unload*例程还负责释放的任何其他驱动程序分配资源尚未释放由其他驱动程序例程。
+在返回 control 之前， *Unload*例程还负责释放其他驱动程序例程尚未释放的任何其他由驱动程序分配的资源。
 
  
 
