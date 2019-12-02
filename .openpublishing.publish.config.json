@@ -63,9 +63,13 @@
     ],
     "live": [
       "Publish"
+    ],
+   "live-sxs": [
+      "Publish",
+      "PDF"
     ]
   },
-  "need_generate_pdf_url_template": false,
+  "need_generate_pdf_url_template": true,
   "targets": {
     "Pdf": {
       "template_folder": "_themes.pdf"
