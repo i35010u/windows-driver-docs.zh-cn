@@ -1,37 +1,23 @@
 ---
 title: 人机接口设备 (HID) 驱动程序示例
-description: 此目录中的驱动程序示例用于编写自定义你的设备的 HID 驱动程序提供一个起始点。
+description: 此目录中的驱动程序示例提供了为设备编写自定义 HID 驱动程序的起点。
 ms.assetid: 38C52EAD-9DC6-4575-A9FF-1472FDDC2702
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e57fee93bed6df65f70880218801673980d87812
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2f4a0f7d636ae025281da12b703d136439fa02f
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345219"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735259"
 ---
 # <a name="human-interface-devices-hid-driver-samples"></a>人机接口设备 (HID) 驱动程序示例
 
+此目录中的驱动程序示例提供了为设备编写自定义 HID 驱动程序的起点。
 
-此目录中的驱动程序示例用于编写自定义你的设备的 HID 驱动程序提供一个起始点。
-
-## <a name="human-interface-devices-hid"></a>人机接口设备 (HID)
-
-
-| 示例名称         | 解决方案                                                     | 描述                                                                                                                                                                                                                                                                                                                                 |
-|---------------------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| KMDF HID 筛选器     | [firefly](https://go.microsoft.com/fwlink/p/?LinkId=620192)   | HID 设备的筛选器驱动程序。 演示如何编写筛选器驱动程序，以及此示例演示如何使用远程 I/O 目标接口在内核模式下打开 HID 集合并发送 IOCTL 请求，以设置和获取功能的报表，以及如何应用程序可以使用 WMI 接口发送为筛选器驱动程序的命令。 |
-| HClient 应用程序 | [hclient](https://go.microsoft.com/fwlink/p/?LinkId=617730)   | 演示如何编写与符合 HID 设备类规范的 HID 设备通信的用户模式下客户端应用程序。                                                                                                                                                                                               |
-| HIDUSBFX2           | [hidusbfx2](https://go.microsoft.com/fwlink/p/?LinkId=620190) | 演示映射到 HID 设备的非-HID USB 设备。                                                                                                                                                                                                                                                                               |
-| UMDF HID 微型驱动程序 | [vhidmini2](https://go.microsoft.com/fwlink/p/?LinkId=617731) | 演示如何编写使用用户模式驱动程序框架 (UMDF) HID 微型驱动程序的示例。                                                                                                                                                                                                                                           |
-
- 
-
- 
-
- 
-
-
-
-
+| 示例 | 描述 |
+| --- | --- |
+| [KMDF HID 筛选器](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/kmdf-filter-driver-for-a-hid-device) | HID 设备的筛选器驱动程序。 除了说明如何编写筛选器驱动程序外，此示例还演示如何使用远程 i/o 目标接口以内核模式打开 HID 集合，并发送 IOCTL 请求来设置和获取功能报告，以及应用程序如何使用 WMI 接口将命令发送到筛选器驱动程序。 |
+| [HClient 应用程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/hclient-sample-application) | 演示如何编写与 HID 设备（符合 HID 设备类规范）进行通信的用户模式客户端应用程序。 |
+| [HIDUSBFX2](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/hidusbfx2-sample-driver) | 说明如何将非 HID USB 设备映射到 HID 设备。 |
+| [UMDF HID 微型驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/hid-minidriver-sample-umdf-version-2) | 演示如何使用用户模式驱动程序框架（UMDF）编写 HID 微型驱动程序的示例。

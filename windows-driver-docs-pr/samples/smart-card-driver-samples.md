@@ -1,34 +1,20 @@
 ---
 title: 智能卡驱动程序示例
-description: 此目录中的驱动程序示例提供了有关编写你的设备的自定义智能卡驱动程序的起点。
+description: 此目录中的驱动程序示例提供了为设备编写自定义智能卡驱动程序的起点。
 ms.assetid: 8AFF3553-B70D-4784-A309-2C741D86B362
-ms.date: 04/20/2017
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 208f330a44e308b568e2b0e86afc17ded15a37b5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2df950b91657fe01f44c163600983a9b6f914240
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366286"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735179"
 ---
 # <a name="smart-card-driver-samples"></a>智能卡驱动程序示例
 
+此目录中的驱动程序示例提供了为设备编写自定义智能卡驱动程序的起点。
 
-此目录中的驱动程序示例提供了有关编写你的设备的自定义智能卡驱动程序的起点。
-
-## <a name="smart-card"></a>智能卡
-
-
-| 示例名称              | 解决方案                                                    | 描述                                                                                |
-|--------------------------|-------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| PCMCIA 智能卡驱动程序 | [smartcrd](https://go.microsoft.com/fwlink/p/?LinkId=617968) | 演示如何为 SCM Microsystems PCMCIA 智能卡读卡器编写 KMDF 驱动程序。 |
-
- 
-
- 
-
- 
-
-
-
-
+| 示例 | 描述 |
+| --- | --- |
+| [PCMCIA 智能卡驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/pcmcia-smart-card-driver) | 演示如何为 SCM Microsystems PCMCIA 智能卡读卡器编写 KMDF 驱动程序。 |

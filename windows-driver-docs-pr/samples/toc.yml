@@ -12,8 +12,6 @@
       href: biometrics-driver-samples.md
     - name: 蓝牙驱动程序示例
       href: bluetooth-driver-samples.md
-    - name: 相机驱动程序示例
-      href: camera-driver-samples.md
     - name: 文件系统驱动程序示例
       href: file-system-driver-samples.md
     - name: 相机驱动程序示例
@@ -54,10 +52,14 @@
       href: thermal-driver-samples.md
     - name: 工具示例
       href: driver-tools-samples.md
+    - name: 受信任的执行环境 (TrEE) 驱动程序示例
+      href: tree-driver-samples.md
     - name: 通用串行总线 (USB) 驱动程序示例
       href: universal-serial-bus--usb--driver-samples.md
     - name: 视频驱动程序示例
       href: video-driver-samples.md
+    - name: Windows 图像采集 (WIA) 驱动程序示例
+      href: wia-driver-samples.md
     - name: Windows Management Instrumentation (WMI) 驱动程序示例
       href: windows-management-instrumentation--wmi--driver-samples.md
     - name: Windows 便携设备 (WPD) 驱动程序示例

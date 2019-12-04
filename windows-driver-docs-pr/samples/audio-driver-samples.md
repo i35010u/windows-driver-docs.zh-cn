@@ -1,34 +1,20 @@
 ---
 title: 音频驱动程序示例
-description: 此目录中的音频驱动程序示例提供了有关编写你的设备的自定义音频驱动程序的起点。
+description: 此目录中的音频驱动程序示例提供了为设备编写自定义音频驱动程序的起点。
 ms.assetid: 12A4A0F6-292D-4976-ACCC-12AEAF853D74
-ms.date: 04/20/2017
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ded19f9ee2048da16d85be3fdd2b18eb1a9e36cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: da240d35c66e1af29af9ce3b3ab0bd79d28f16d0
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355635"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735271"
 ---
 # <a name="audio-driver-samples"></a>音频驱动程序示例
 
+此目录中的音频驱动程序示例提供了为设备编写自定义音频驱动程序的起点。
 
-此目录中的音频驱动程序示例提供了有关编写你的设备的自定义音频驱动程序的起点。
-
-## <a name="audio"></a>Audio
-
-
-| 示例名称                              | 解决方案                                                  | 描述                                                                                                                             |
-|------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| 虚拟的音频设备驱动程序示例 | [sysvad](https://go.microsoft.com/fwlink/p/?LinkId=620183) | 虚拟的音频设备驱动程序 (SYSVAD) 显示了如何开发 WDM 音频驱动程序公开的多个音频设备的支持。 |
-
- 
-
- 
-
- 
-
-
-
-
+| 示例 | 描述 |
+| --- | --- |
+| [SysVAD 虚拟音频设备驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/sysvad-virtual-audio-device-driver-sample/) | 虚拟音频设备驱动程序（SYSVAD）演示如何开发一个公开支持多个音频设备的 WDM 音频驱动程序。 |

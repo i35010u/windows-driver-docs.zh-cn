@@ -1,34 +1,20 @@
 ---
 title: 安全数字 (SD) 驱动程序示例
-description: 此目录中的驱动程序示例用于编写自定义设备的 SD 驱动程序提供一个起始点。
+description: 此目录中的驱动程序示例提供了为设备编写自定义 SD 驱动程序的起点。
 ms.assetid: F0B407B5-D49A-434F-9A35-D4F62BE36F5F
-ms.date: 04/20/2017
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d55af715dc601b160d8249d24996c2060c1f6264
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 32f603ec6fe4d5c8560ebefd34edaba9476a4ff8
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366526"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735227"
 ---
 # <a name="secure-digital-sd-driver-samples"></a>安全数字 (SD) 驱动程序示例
 
+此目录中的驱动程序示例提供了为设备编写自定义 SD 驱动程序的起点。
 
-此目录中的驱动程序示例用于编写自定义设备的 SD 驱动程序提供一个起始点。
-
-## <a name="secure-digital-sd"></a>安全数字 (SD)
-
-
-| 示例名称                          | 解决方案                                                    | 描述                                                                                                                                                              |
-|--------------------------------------|-------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 标准 SD 主机控制器微型端口 | [sdhc](https://go.microsoft.com/fwlink/p/?LinkId=617952)     | 提供标准的 SD 主控制器的功能的微型端口实现。                                                                                         |
-
- 
-
- 
-
- 
-
-
-
-
+| 示例 | 描述 |
+| --- | --- |
+| [标准 SD 主机控制器微型端口](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/standard-sd-host-controller-miniport) | 提供标准 SD 主机控制器的功能微型端口实现。 |

@@ -1,36 +1,22 @@
 ---
 title: Power 框架 (PoFx) 驱动程序示例
-description: 此目录中的驱动程序示例编写你的设备的自定义 PoFx 驱动程序提供一个起始点。
+description: 此目录中的驱动程序示例提供了为设备编写自定义 PoFx 驱动程序的起点。
 ms.assetid: BA2CC8F0-E337-4A5E-987F-1B40213F5983
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d8ea71095c832d78c0f47e9dab8cb6e434169402
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dddb23a78991d09cc098b8ec66dd0e049a8ed5fd
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366323"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735231"
 ---
 # <a name="power-framework-pofx-driver-samples"></a>Power 框架 (PoFx) 驱动程序示例
 
+此目录中的驱动程序示例提供了为设备编写自定义 PoFx 驱动程序的起点。
 
-此目录中的驱动程序示例编写你的设备的自定义 PoFx 驱动程序提供一个起始点。
-
-## <a name="power-framework-pofx"></a>电源框架 (PoFx)
-
-
-| 示例名称       | 解决方案                                                      | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|-------------------|---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| PEP ACPI 示例   | [pepsamples](https://go.microsoft.com/fwlink/p/?LinkId=620311) | 演示了接口，允许实现 ACPI 运行时方法本身可以通过 Windows 驱动程序，而不是固件 Power 引擎插件 (PEP)。                                                                                                                                                                                                                                                                                               |
-| UMDF2 PoFx 驱动程序 | [pofx](https://go.microsoft.com/fwlink/p/?LinkId=617936)       | UMDF 2 SingleComp 示例演示如何 UMDF2 驱动程序可以实现具有单个组件的设备的基于 F 状态的电源管理。                                                                                                                                                                                                                                                                                               |
-| WDF PoFx 驱动程序   | [pofx](https://go.microsoft.com/fwlink/p/?LinkId=617937)       | 包含演示如何 KMDF 驱动程序可以实现基于 F 状态的电源管理的两个示例。 SingleComp 示例演示如何 KMDF 驱动程序可以实现具有单个组件的设备的基于 F 状态的电源管理。 MultiComp 示例演示如何 KMDF 驱动程序可以实现具有任意数量的组件可以是单独的电源管理的设备的基于 F 状态的电源管理 |
-
- 
-
- 
-
- 
-
-
-
-
+| 示例 | 描述 |
+| --- | --- |
+| [PEP ACPI 示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/pep-acpi-sample) | 演示一个接口，该接口允许 Power Engine 插件（PEP）通过 Windows 驱动程序而不是固件来实现 ACPI 运行时方法。 |
+| [UMDF2 PoFx 驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/power-framework-pofx-sample-umdf-version-2) | UMDF 2 SingleComp 示例演示了 UMDF2 驱动程序如何为只有单个组件的设备实现基于 F 状态的电源管理。 |
+| [WDF PoFx 驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/kmdf-power-framework-pofx-sample) | 包含两个示例，演示 KMDF 驱动程序如何实现基于 F 状态的电源管理。 SingleComp 示例演示了 KMDF 驱动程序如何为只有单个组件的设备实现基于 F 状态的电源管理。 MultiComp 示例演示了 KMDF 驱动程序如何为具有任意数量的组件（可以单独进行电源管理）的设备实现基于 F 状态的电源管理 |
