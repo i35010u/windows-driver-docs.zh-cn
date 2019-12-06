@@ -4,12 +4,12 @@ description: 本部分提供有关 Windows 显示驱动程序模型（WDDM）版
 ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 48d26ccd1a79c3c149cd95795f10aea241953dd9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4c579c6bfc9a3ded30a9212a828827b26adb3ef0
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829179"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862972"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 功能
 
@@ -34,7 +34,7 @@ WDDM 2.1 支持以下 D3D 版本： D3D9、D3D10、D3D 10.1、D3D11、D3D11、D3
 
 ## <a name="offer-and-reclaim-improvements"></a>提供和回收改进
 
-创建了新的 DDI [PFND3DDDI_RECLAIMALLOCATIONS3CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocations3cb) ，以减少后台模式下运行的应用程序的内存占用。 当进入后台时，此接口将使应用程序能够提供完全取消提交可接受的资源。 因此，进程生存期管理器将能够从使用 DirectX 的后台应用回收更多的内存，从而导致在内存压力下的后台应用程序终止更少。
+为了减少后台模式下运行的应用程序的内存占用，创建了一个新的 DDI [PFND3DDDI_RECLAIMALLOCATIONS3CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_reclaimallocations3cb) 。 当进入后台时，此接口将使应用程序能够提供完全取消提交可接受的资源。 因此，进程生存期管理器将能够从使用 DirectX 的后台应用回收更多的内存，从而导致在内存压力下的后台应用程序终止更少。
 
 其他 DDI 更改：
 
@@ -130,7 +130,7 @@ WDDM 2.1 介绍如何将 GPU 着色器编译器堆栈从 DirectX 字节代码（
 
 ### <a name="wddm-21-caps"></a>WDDM 2.1 Cap
 
-驱动程序将通过[DXGK_DRIVERCAPS：： WDDMVersion](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)报告 WDDM 2.1 支持，并提供新的版本常量：
+驱动程序将使用新版本常量[DXGK_DRIVERCAPS：： WDDMVersion](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)报告 WDDM 2.1 支持：
 
 `DXGK_WDDMVERSION::DXGKDDI_WDDMv2_1 = 0x2100`
 
@@ -139,7 +139,7 @@ Dxgkrnl 不会使用**WDDMVersion** cap 来确定受支持的新功能，而是�
 > [!NOTE]
 > 应用程序（现有或较新）必须不需要查询驱动程序模型，才能利用通过平台改进（如此处所述的平台）启用的任何 Windows 10 周年纪念版功能。 必须通过各自的运行时显示任何功能更改。
 
-已添加一个新的常量来匹配 KMT_DRIVERVERSION_WDDM_2_1：
+添加了一个新常量，以匹配 KMT_DRIVERVERSION_WDDM_2_1：
 
 ```cpp
 typedef enum _DXGIDRIVERMODELVERSION
@@ -312,34 +312,34 @@ D3D9 DDI|14
 
     * D3D9 DDI 驱动程序可以使用8.14.0000.0000 来8.14.9999.9999
     * D3D10 DDI 驱动程序可以使用8.15.0000.0000 来8.15.9999.9999
-    * D3D11 DDI with FL_10_0 驱动程序可以使用 8.16.0000.0000 8.16.9999.9999
-    * D3D11 DDI with FL_11_0 驱动程序可以使用 8.17.0000.0000 8.17.9999.9999
+    * 使用 FL_10_0 驱动程序的 D3D11 DDI 可以使用8.16.0000.0000 来8.16.9999.9999
+    * 使用 FL_11_0 驱动程序的 D3D11 DDI 可以使用8.17.0000.0000 来8.17.9999.9999
 
 * Windows 8 WDDM 1.2：
 
-    * FL_10_0 HW 可以使用9.15.0000.0000 来9.15.9999.9999
-    * FL_10_1 HW 可以使用9.16.0000.0000 来9.16.9999.9999
-    * FL_11_0 HW 可以使用9.17.0000.0000 来9.17.9999.9999
-    * FL_11_1 HW 可以使用9.18.0000.0000 来9.18.9999.9999
+    * FL_10_0 硬件可以使用9.15.0000.0000 来9.15.9999.9999
+    * FL_10_1 硬件可以使用9.16.0000.0000 来9.16.9999.9999
+    * FL_11_0 硬件可以使用9.17.0000.0000 来9.17.9999.9999
+    * FL_11_1 硬件可以使用9.18.0000.0000 来9.18.9999.9999
 
 * Windows 8.1 WDDM 1.3：
 
-    * FL_10_0 HW 可以使用10.15.0000.0000 来10.15.9999.9999
-    * FL_10_1 HW 可以使用10.16.0000.0000 来10.16.9999.9999
-    * FL_11_0 HW 可以使用10.17.0000.0000 来10.17.9999.9999
-    * FL_11_1 HW 可以使用10.18.0000.0000 来10.18.9999.9999
+    * FL_10_0 硬件可以使用10.15.0000.0000 来10.15.9999.9999
+    * FL_10_1 硬件可以使用10.16.0000.0000 来10.16.9999.9999
+    * FL_11_0 硬件可以使用10.17.0000.0000 来10.17.9999.9999
+    * FL_11_1 硬件可以使用10.18.0000.0000 来10.18.9999.9999
 
 * Windows 10 WDDM 2.0：
 
-    * FL_11_1 HW 可以使用20.18.0000.0000 来20.18.65535.65535
-    * FL_12_0 HW 可以使用20.19.0000.0000 来20.19.65535.65535
-    * FL_12_1 HW 可以使用20.20.0000.0000 来20.20.65535.65535
+    * FL_11_1 硬件可以使用20.18.0000.0000 来20.18.65535.65535
+    * FL_12_0 硬件可以使用20.19.0000.0000 来20.19.65535.65535
+    * FL_12_1 硬件可以使用20.20.0000.0000 来20.20.65535.65535
 
 * Windows 10 WDDM 2.1：
 
-    * FL_11_1 HW 可以使用20.18.0000.0000 来21.18.65535.65535
-    * FL_12_0 HW 可以使用20.19.0000.0000 来21.19.65535.65535
-    * FL_12_1 HW 可以使用20.20.0000.0000 来21.20.65535.65535
+    * FL_11_1 硬件可以使用20.18.0000.0000 来21.18.65535.65535
+    * FL_12_0 硬件可以使用20.19.0000.0000 来21.19.65535.65535
+    * FL_12_1 硬件可以使用20.20.0000.0000 来21.20.65535.65535
 
 
 #### <a name="enforcement"></a>强制性
