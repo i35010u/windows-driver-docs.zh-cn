@@ -13,12 +13,12 @@ ms.date: 02/22/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: c8b2392b931e9babed5f07ba4bbab54bc64ff960
-ms.sourcegitcommit: 21eb29567c7b9ae2801a4f5b002cf0a6daef3cf5
+ms.openlocfilehash: 982379cd73e2949bdcd7d0bc46ff53e1fce55f2d
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796930"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861423"
 ---
 # <a name="debugging-tools-for-windows-windbg-kd-cdb-ntsd"></a>Windows 调试工具（WinDbg、KD、CDB、NTSD）
 
@@ -58,7 +58,7 @@ ms.locfileid: "68796930"
 所有这些调试环境都提供适用于同一基础调试引擎（在 Windows 符号调试程序引擎 (Dbgeng.dll) 中实现）的用户界面。 该调试引擎也称为  “Windows 调试程序”，这六个调试环境统称为  “Windows 调试程序”。
 
 > [!NOTE]
->  Visual Studio 包含自己的调试环境和调试引擎，它们统称为“Visual Studio 调试程序”。 若要了解如何在 Visual Studio 中进行调试，请参阅[在 Visual Studio 中调试](https://docs.microsoft.com/en-us/visualstudio/debugger/)。 对于调试托管代码（例如 C#）而言，使用 Visual Studio 调试程序通常是最容易的入门方法。
+>  Visual Studio 包含自己的调试环境和调试引擎，它们统称为“Visual Studio 调试程序”。 若要了解如何在 Visual Studio 中进行调试，请参阅[在 Visual Studio 中调试](https://docs.microsoft.com/visualstudio/debugger/)。 对于调试托管代码（例如 C#）而言，使用 Visual Studio 调试程序通常是最容易的入门方法。
 
 
 ## <a name="span-idwindows_debuggersspanspan-idwindows_debuggersspanspan-idwindows_debuggersspanwindows-debuggers"></a><span id="Windows_debuggers"></span><span id="windows_debuggers"></span><span id="WINDOWS_DEBUGGERS"></span>Windows 调试程序

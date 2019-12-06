@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3db8d0129bc520fe43bc9a5e27950fa50e9b356e
-ms.sourcegitcommit: 44f09d983954f27fd90b737a2dd142aad7dffd9d
+ms.openlocfilehash: 4182d6940c016b1fca116f95fdc641b6b8d113ca
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70059184"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862227"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -85,7 +85,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 * 转到 [GitHub](https://github.com/Microsoft/Windows-driver-samples) 上的驱动程序示例页面，然后单击该页面右侧的“克隆”或“下载”>“下载 ZIP”  。
 * 下载[适用于 Visual Studio 的 GitHub 扩展](https://visualstudio.github.com/)以连接到 GitHub 存储库。
-* [浏览 Microsoft 示例门户中的驱动程序示例。](https://docs.microsoft.com/en-us/samples/browse/?products=windows-wdk)
+* [浏览 Microsoft 示例门户中的驱动程序示例。](https://docs.microsoft.com/samples/browse/?products=windows-wdk)
 
 ## <a name="related-downloads"></a>相关下载
 

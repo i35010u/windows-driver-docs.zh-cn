@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 185b2598c332c828495065ab43a3b312e83c3a20
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e55cb4a09b3f9d2d7c5b8a4171a7ac170cfca3bf
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844796"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860891"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能
 
@@ -71,7 +71,7 @@ ms.locfileid: "72844796"
 
 ### <a name="wdk-supports-visual-studio-2019"></a>WDK 支持 Visual Studio 2019。
 
-适用于 Windows 10 版本 1903 的 Windows 驱动程序工具包 (WDK) 已更新，可以支持先前已[宣布](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)推出的 Visual Studio 2019。 但是，此 WDK 版本与 Visual Studio 2017 不兼容，开发人员可以通过旧版 WDK（在[此处](https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads)可以找到版本 1709 至 1809）继续使用 Visual Studio 2017。 若要了解 Visual Studio 2019 的新增功能，请查看[此处](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)的信息。
+适用于 Windows 10 版本 1903 的 Windows 驱动程序工具包 (WDK) 已更新，可以支持先前已[宣布](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)推出的 Visual Studio 2019。 但是，此 WDK 版本与 Visual Studio 2017 不兼容，开发人员可以通过旧版 WDK（在[此处](https://docs.microsoft.com/windows-hardware/drivers/other-wdk-downloads)可以找到版本 1709 至 1809）继续使用 Visual Studio 2017。 若要了解 Visual Studio 2019 的新增功能，请查看[此处](https://docs.microsoft.com/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)的信息。
 
 下面是 Windows 驱动程序开发人员在 Visual Studio 2019 中可以看到的几处显著更改。
 

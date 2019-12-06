@@ -148,8 +148,6 @@
       items:
         - name: Windows 调试工具中包含的工具
           href: extra-tools.md
-        - name: ADPlus
-          href: adplus.md
         - name: DumpChk
           href: dumpchk.md
         - name: GFlags

@@ -4,12 +4,12 @@ description: 音频度量定义
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 50956d9fda24b7d055a687b633deba14b9b22b9e
-ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
+ms.openlocfilehash: 91afcac656d5be6fba78b8b1b61df1e4dd6394e3
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71195760"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860817"
 ---
 # <a name="audio-measures"></a>音频度量
 
@@ -17,7 +17,7 @@ ms.locfileid: "71195760"
 
 每当应用程序（或 Windows 组件）需要播放或录制音频时，它都会使用多种音频 API 中的一种。
 
-所有音频 API 最终都调用核心音频 API 调用 [IAudioClient::Initialize](https://docs.microsoft.com/en-us/windows/win32/api/audioclient/nf-audioclient-iaudioclient-initialize)。 这会在应用程序和 Windows 音频引擎之间建立连接，并在 Windows 音频引擎与音频驱动程序之间建立连接。
+所有音频 API 最终都调用核心音频 API 调用 [IAudioClient::Initialize](https://docs.microsoft.com/windows/win32/api/audioclient/nf-audioclient-iaudioclient-initialize)。 这会在应用程序和 Windows 音频引擎之间建立连接，并在 Windows 音频引擎与音频驱动程序之间建立连接。
 
 如果 IAudioClient::Initialize 调用失败，则应用程序将无法使用音频，但有一些例外。 有些 IAudioClient::Initialize 错误是良性的，将被忽略；[附录](measure-appendix.md)中提供了这些错误的列表。
 

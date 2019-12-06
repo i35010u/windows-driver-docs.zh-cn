@@ -4,12 +4,12 @@ title: 通用 Windows 驱动程序入门
 description: 使用通用 Windows 驱动程序，可以创建一个在多种设备类型（从嵌入式系统到平板电脑和电脑）上运行的驱动程序。
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e09e700906f5fc86f6e100d5ab1c6a60fc0a69c3
-ms.sourcegitcommit: 0b38c5075d85ede328bf9901b0d36e84ec0e3d66
+ms.openlocfilehash: f54d52ae032ef66a7d48c0c08e6502ac556f7a84
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71826520"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861260"
 ---
 # <a name="getting-started-with-universal-windows-drivers"></a>通用 Windows 驱动程序入门
 
@@ -81,7 +81,7 @@ OEM 仅验证它为 OEM 系统提供的可选自定义项。
     
 *  如果 INF 执行依赖于目标平台的任何自定义设置操作，请考虑将其分离形成一个扩展 INF。 可以独立于基础驱动程序包更新扩展 INF，以提高稳健性和可用性。 有关详细信息，请参阅[使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
 *  如果想要提供一个与你的设备兼容的应用程序，请包括 UWP 应用。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。  OEM 可以使用 [DISM - 部署映像服务和管理](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)预加载此类应用。 或者，用户可以从 Microsoft Store 手动下载此应用。
-*  在 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)中，将目标目录设为 [dirid 13](../install/using-dirids.md)，使驱动程序可从[驱动程序存储](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/driver-store)运行。 此设置不适用于某些设备。
+*  在 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)中，将目标目录设为 [dirid 13](../install/using-dirids.md)，使驱动程序可从[驱动程序存储](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)运行。 此设置不适用于某些设备。
 *  提交通用驱动程序包用于在 Windows 硬件兼容性计划中进行认证。 有关详细信息，请参阅以下主题：
 
    *  [创建新硬件提交](../dashboard/create-a-new-hardware-submission.md)

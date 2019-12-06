@@ -4,16 +4,16 @@ title: 创建驱动程序验证日志
 description: Windows Server 2012 硬件认证计划需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f01f04912ab214dc178817e350d382d5faf0dae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af3dc6e4e9d98fedb0ecf714206728e4f5b5582e
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370787"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861279"
 ---
 # <a name="creating-a-driver-verification-log"></a>创建驱动程序验证日志
 
-Windows Server [硬件认证计划](https://docs.microsoft.com/en-us/windows-hardware/design/compatibility/)需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。 DVL 包含代码分析 (CA) 的结果和静态驱动程序验证程序 (SDV) 日志文件的摘要。 DVL 不包含任何源信息。 在为驱动程序创建 DVL 之前，必须先运行代码分析工具和静态驱动程序验证程序。
+Windows Server [硬件认证计划](https://docs.microsoft.com/windows-hardware/design/compatibility/)需要所有驱动程序在正当提交时提供驱动程序验证日志 (DVL)。 DVL 包含代码分析 (CA) 的结果和静态驱动程序验证程序 (SDV) 日志文件的摘要。 DVL 不包含任何源信息。 在为驱动程序创建 DVL 之前，必须先运行代码分析工具和静态驱动程序验证程序。
 
 **如何创建驱动程序验证日志**
 

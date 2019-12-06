@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 44158f2c619b4ede0cb4edfccdfe01e4669aa861
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db74e0710a473254d22b6541bda0ba3802e49a62
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385992"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735163"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -68,8 +68,8 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 | Windows 10 版本 1709 | [适用于 Windows 10 版本 1709 的 WDK](https://go.microsoft.com/fwlink/p/?linkid=859232) |
 | Windows 10 版本 1703 | [适用于 Windows 10 版本 1703 的 WDK](https://go.microsoft.com/fwlink/p/?LinkID=845980) |
 | Windows 10 版本 1607 | [适用于 Windows 10 版本 1607 的 WDK](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
-| Windows 8.1 更新       | [WDK 8.1 更新](https://go.microsoft.com/fwlink/p/?LinkId=393659)（仅英语） <br/>[WDK 8.1 更新测试包](https://go.microsoft.com/fwlink/p/?LinkID=393660)（仅英语） <br/>[WDK 8.1 示例](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-81-cf35e953) |
-| Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284)（仅英语） <br/>[WDK 8 可再发行组件](https://go.microsoft.com/fwlink/p/?LinkID=253170)（仅英语） <br/>[WDK 8 示例](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-80-e3161626) |
+| Windows 8.1 更新       | [WDK 8.1 更新](https://go.microsoft.com/fwlink/p/?LinkId=393659)（仅英语） <br/>[WDK 8.1 更新测试包](https://go.microsoft.com/fwlink/p/?LinkID=393660)（仅英语） <br/>[WDK 8.1 示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) |
+| Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284)（仅英语） <br/>[WDK 8 可再发行组件](https://go.microsoft.com/fwlink/p/?LinkID=253170)（仅英语） <br/>[WDK 8 示例](https://go.microsoft.com/fwlink/p/?LinkId=616509) |
 | Windows XP <br/>Windows Server 2003 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
 
 
@@ -84,9 +84,9 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 企业版 WDK (EWDK) 是一种独立的自包含命令行环境，用于生成驱动程序和基本的 Win32 测试应用程序。 其中包括 Visual Studio 生成工具、SDK 和 WDK。 此环境不包含在 Visual Studio 中可用的所有功能，例如集成开发环境 (IDE)。
 
-使用 EWDK 需要 .NET Framework 4.6.1。 若要详细了解哪些系统运行此版本的框架，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/en-us/dotnet/framework/get-started/system-requirements)。 如需用于下载 .NET Framework 的链接，请参阅[安装面向开发人员的 .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers)。
+使用 EWDK 需要 .NET Framework 4.6.1。 若要详细了解哪些系统运行此版本的框架，请参阅 [.NET Framework 系统要求](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)。 如需用于下载 .NET Framework 的链接，请参阅[安装面向开发人员的 .NET Framework](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers)。
 
-有关 EWDK 的详细信息，请参阅[使用企业版 WDK 10](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/using-the-enterprise-wdk)。
+有关 EWDK 的详细信息，请参阅[使用企业版 WDK 10](https://docs.microsoft.com/windows-hardware/drivers/develop/using-the-enterprise-wdk)。
 
 | Windows 版本               | EWDK                              |
 |-----------------------------------|-----------------------------------|
@@ -115,7 +115,7 @@ WinDbg Preview 是 WinDbg 的新版本，在重要位置构建有可扩展的调
 如果你要调试 Windows XP、Windows Server 2003、Windows Vista 或 Windows Server 2008（或者使用这些操作系统之一来运行 Windows 调试工具），则需要使用这些调试工具的 Windows 7 版本。 它包含在适用于 Windows 7 和 .NET Framework 4.0 的 SDK 中。
 
 > [!IMPORTANT]
-> 在安装适用于 Windows 7 的 SDK 时，更高版本的 Visual C++ 2010 可再发行组件可能会引发问题。 有关详细信息，请参阅 Microsoft 支持上的 [Windows SDK Fails to Install with Return Code 5100](https://support.microsoft.com/en-us/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)（Windows SDK 无法安装，返回代码为 5100）。
+> 在安装适用于 Windows 7 的 SDK 时，更高版本的 Visual C++ 2010 可再发行组件可能会引发问题。 有关详细信息，请参阅 Microsoft 支持上的 [Windows SDK Fails to Install with Return Code 5100](https://support.microsoft.com/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)（Windows SDK 无法安装，返回代码为 5100）。
 
 获取适用于 Windows XP 的独立调试工具的方法是先下载 Windows 7 SDK：[适用于 Windows 7 和 .NET Framework 4 的 Microsoft Windows SDK](https://www.microsoft.com/download/confirmation.aspx?id=8279)。
 

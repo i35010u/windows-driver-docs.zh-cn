@@ -5,10 +5,10 @@ description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 186461bfda62753dd3e9e5998e8dd257d476df1e
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 2c8c13ed8d8f11eccf4c4ffb492c64099003b6a9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 12/03/2019
 ms.locfileid: "70020670"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件
@@ -140,7 +140,7 @@ ms.locfileid: "70020670"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">HCK Tests.Basic.Device.Device Fundamentals Test Suite</th>
+<th align="left">HCK Tests.Basic.Device.Device Fundamentals 测试套件</th>
 <th align="left"></th>
 </tr>
 </thead>
@@ -177,7 +177,7 @@ ms.locfileid: "70020670"
 <tbody>
 <tr class="odd">
 <td align="left"><strong>硬件、软件和测试要求</strong></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309671)">图形适配器或芯片组测试先决条件</a></td>
+<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=309671" data-raw-source="[Graphic Adapter or Chipset Testing Prerequisites](https://go.microsoft.com/fwlink/p/?linkid=309671)">图形适配器或芯片集测试先决条件</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>测试描述</strong></td>
