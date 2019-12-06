@@ -1,85 +1,83 @@
 ---
 title: 用于打印的基于设备的 Web 服务 (WS-Print)
-description: 有关在 Windows Vista 中，以提供用于打印和扫描外围设备的连接协议引入了打印 （WS-打印） 的 web 服务在设备上。
+description: 在 Windows Vista 中引入了用于打印的设备上的 Web 服务（WS 打印），以提供用于打印和扫描外围设备的连接协议。
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee41e6eab8af7458791bf96cf770abdae6b81131
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6231bc8dadeae49a12d2880620b99b8b8606f054
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356989"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881929"
 ---
 # <a name="web-services-on-devices-for-printing-ws-print"></a>用于打印的基于设备的 Web 服务 (WS-Print)
 
-
-有关在 Windows Vista 中，以提供用于打印和扫描外围设备的连接协议引入了打印 （WS-打印） 的 web 服务在设备上。
+在 Windows Vista 中引入了用于打印的设备上的 Web 服务（WS 打印），以提供用于打印和扫描外围设备的连接协议。
 
 ## <a name="overview"></a>概述
 
+Web 服务技术为描述和共享信息提供了通用框架。 因此，Windows 附带了一组用于在网络连接设备上使用和控制服务的协议。
 
-Web 服务技术提供了用于描述和共享信息的通用框架。 因此，Windows 附带了一组的使用和控制网络连接的设备上的服务的协议。
+对于打印和扫描存在四个 Web 服务规范，以帮助设备制造商利用改进的客户体验来连接、安装和使用 Windows 设备。
 
-四个 Web 服务规范存在用于打印和扫描，以帮助充分利用连接、 安装和使用 Windows 设备时的改进的客户体验的设备制造商。
+## <a name="ws-print-v11"></a>WS 打印1.1 版
 
-## <a name="ws-print-v11"></a>WS-Print v1.1
+对于 Windows 8，在设备上启用 web 服务的打印架构（WSD）已更新到1.1 版。 此版本的架构（称为 WS 打印1.1 版）已更新，以支持增强的驱动程序配置、更好的墨迹/墨粉颜色表示形式和设备型号 Id。
 
+## <a name="ws-print-v12"></a>WS 打印版本1。2
 
-对于 Windows 8，web 服务 (WSD) 的设备上的打印架构已更新到 v1.1。 此版本的架构 （称为 Ws-print v1.1） 已更新为支持增强的驱动程序配置、 更好地颜色墨迹/墨粉量和设备的表示形式模型 Id。
+对于 Windows 8.1，WS 打印包含 WS 打印1.1 版中使用的所有操作和架构元素，但已更新设备上 web 服务的打印服务定义。 并且生成的用于打印的新 Web 服务为 WS 打印版。
 
-## <a name="ws-print-v12"></a>WS-Print v1.2
+在 WS Print v1.0 中，支持新架构元素，并已添加新操作。 新架构元素 "SupportsWSPrintV12" 用于识别 WS 打印版本1.2 的支持。 新操作 "SetPrinterElements" 使客户端能够在打印机上设置架构元素的值。 例如，客户端可以设置一个名为 "InkHeadAlignmentValue" 的自定义元素，打印机将使用该元素重新调整喷墨打印头。
 
+为方便起见，此处的 "下载" 部分提供了规范，其中包括 "完整"、"独立" 和 "关联的 Web 服务描述语言（WSDLs）" 和 "XML 架构定义" （Xsd）。 这四个基于设备的 Web 服务规范包含在参考 Windows 驱动程序开发工具包（WDK）的技术文档许可协议中。
 
-对于 Windows 8.1 WS 打印包含所有操作和 Ws-print v1.1 中所用的架构元素，但已更新设备上的 web 服务的打印服务定义。 和用于打印的设备上生成新的 Web 服务是 WS 打印 v1.2。
-
-在新的架构的 WS-打印 v1.2 支持已添加元素和新的操作。 新的架构元素"SupportsWSPrintV12"用于标识对 WS-打印 V1.2 的支持。 新的操作，"SetPrinterElements"允许客户端设置在打印机上的架构元素的值。 例如，客户端可以设置名为打印机将使用要重新对齐喷墨头的"InkHeadAlignmentValue"的自定义元素。
-
-为方便起见，这些规范此处提供了在下载部分中，在完整的独立的窗体，以及其关联 Web 服务描述语言 (WSDLs) 和 XML 架构定义 (Xsd)。 包含的技术文档许可协议，即在引用 Windows 驱动程序开发工具包 (WDK) 包含在这些设备规范的四个 Web 服务。
-
-以下部分提供有关的各个方面的 WS-打印的更多详细的信息。
+以下各节提供有关 WS 打印的各个方面的更多详细信息。
 
 ## <a name="sequence-diagrams"></a>序列图
 
+下面的序列图演示了客户端和打印机之间的交互，以确定支持的 WS 打印命名空间的版本，然后检索扩展的架构元素。
 
-以下序列图演示客户端与打印机之间的交互以确定 WS 打印命名空间所支持的版本，然后检索扩展的架构元素。
+### <a name="ws-print-v11-sequence-diagram"></a>WS 打印 v1.1 序列图
 
-**Ws-print v1.1**。 下面是支持 Ws-print v1.1 的打印机的交互序列图：
+下面是支持 WS 打印版本的打印机的交互序列图：
 
-![有关 ws 打印 1.1 版支持的交互和为打印机说明和配置的后续查询显示客户端打印机的序列关系图。](images/wsprint-diagv11.png)
+![显示有关 ws 打印 v1.1 支持的客户端打印机交互，以及用于打印机说明和配置的后续查询的序列图。](images/wsprint-diagv11.png)
 
-如果打印机支持 Ws-print v1.1，然后 GetPrinterElements(wprt:PrinterDescription) 查询响应来自客户端，打印机将发送后的信息，以指示它执行。
+如果打印机支持 WS 打印1.1 版，则在响应来自客户端的 GetPrinterElements （wprt： PrinterDescription）查询时，打印机将发送回信息以指示它的作用。
 
-打印机确认，它支持 Ws-print v1.1 后，客户端发送 GetPrinterElements(wprt11:DriverConfiguration) 查询，并且打印机的响应的请求驱动程序配置信息。
+在打印机确认它支持 WS 打印1.1 版后，客户端将发送 GetPrinterElements （wprt11： DriverConfiguration）查询，打印机将使用请求的驱动程序配置信息进行响应。
 
-**WS 打印 v1.2**。 下面是支持 WS-打印 v1.2 的打印机的交互序列图：
+### <a name="ws-print-v12-sequence-diagram"></a>WS 打印 v2.0 序列图
 
-![有关 ws 打印 v1.2 支持的交互和为打印机说明和配置的后续查询显示客户端打印机的序列关系图。](images/wsprint-diagv12.png)
+下面是支持 WS 打印的打印机的交互序列图：
 
-如果打印机支持 WS-打印 v1.2，然后 GetPrinterElements(wprt:PrinterDescription) 查询响应来自客户端，打印机将发送后的信息，以指示它执行。
+![显示有关 ws 打印 v1.0 支持的客户端打印机交互，以及用于打印机说明和配置的后续查询的序列图。](images/wsprint-diagv12.png)
 
-此外打印机应在响应 GetPrinterElements(wprt:PrinterDescription) 调用返回 wprt12:SupportsWSPrintV12。 然后，客户端可以调用 SetPrinterElements 操作 WS 打印设备支持的架构中设置一个或多个数据元素。
+如果打印机支持 WS 打印版1.2，则在响应来自客户端的 GetPrinterElements （wprt： PrinterDescription）查询时，打印机将发送回信息以指示它的作用。
 
-打印机确认，它支持 WS-打印 v1.2 后，客户端发送 GetPrinterElements(wprt12:DriverConfiguration) 查询，并且打印机的响应的请求驱动程序配置信息。
+此外，打印机应返回 wprt12： SupportsWSPrintV12 以响应 GetPrinterElements （wprt： PrinterDescription）调用。 之后，客户端可以调用 SetPrinterElements 操作来设置 WS 打印设备支持的架构中的一个或多个数据元素。
+
+在打印机确认它支持 WS 打印版本1.2 之后，客户端将发送 GetPrinterElements （wprt12： DriverConfiguration）查询，打印机将使用请求的驱动程序配置信息进行响应。
 
 ## <a name="namespaces"></a>命名空间
 
+### <a name="ws-print-v11-namespace"></a>WS 打印 v1.1 命名空间
 
-**WS-Print v1.1**
+**命名空间：** `<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>`
+**XML 命名空间定义：** `xmlns:wprt12="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"`
 
-**命名空间：** <http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
-**XML Namespace 定义：** xmlns:wprt12 ="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"
+### <a name="ws-print-v12-namespace"></a>WS 打印 v1.0 命名空间
 
-**WS-Print v1.2**
+**命名空间：** `<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>`
+**XML 命名空间定义：** `xmlns:wprt11="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"`
 
-**命名空间：** <http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
-**XML Namespace 定义：** xmlns:wprt11 ="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"
-## <a name="specifying-ws-print-11-support"></a>指定 WS 打印 1.1 支持
+## <a name="specifying-ws-print-11-support"></a>指定 WS 打印1.1 支持
 
+支持 WS 打印1.1 元素的打印机必须将其 PrinterDescription 更新为包含 wprt11： SupportsWSPrintv11。 如果未指定 wprt11： SupportsWSPrintv11 并将其设置为 true，则 WSDMon 不会从打印机请求任何 WS 打印1.1 元素。
 
-支持 WS-打印 1.1 元素的打印机必须更新其 PrinterDescription 包括 wprt11:SupportsWSPrintv11。 如果 wprt11:SupportsWSPrintv11 不是指定并且已设置为 true，WSDMon 将不从打印机请求任何 WS 打印 1.1 元素。
-
-支持 Ws-print v1.1 的打印设备必须在其 PrinterDescription 为了使 Windows 为该命名空间中的任何其他元素的查询中包括以下内容。
+支持 WS Print v1.1 的打印设备必须在其 PrinterDescription 中包含以下内容，Windows 才能查询该命名空间中的任何其他元素。
 
 ```xml
 <soap:Envelope
@@ -90,7 +88,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 ...
 ```
 
-以下 XML 代码段派生自 WSD 打印服务规范 v1.0 中，并且上一节中显示正确地使用了内容。
+以下 XML 代码段派生自 WSD 打印服务规范 v1.0，它显示了上一节中内容的正确用法。
 
 ```xml
 <soap:Envelope
@@ -134,7 +132,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 </soap:Envelope>
 ```
 
-以下 XML 代码段显示了支持 Ws-print v1.1 的打印设备的架构。
+以下 XML 代码片段显示了支持 WS 打印 v1.1 的打印设备的架构。
 
 ```xml
 <xs:schema targetNamespace="http://schemas.microsoft.com/windows/2010/06/wdp/printv11"
@@ -157,12 +155,11 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 <xs:element name="SupportsWSPrintv11" type="xs:boolean"/>
 ```
 
-## <a name="specifying-ws-print-12-support"></a>指定 WS 打印 1.2 支持
+## <a name="specifying-ws-print-12-support"></a>指定 WS 打印1.2 支持
 
+支持 WS 打印1.2 元素的打印机必须将其 PrinterDescription 更新为包含 wprtV12： SupportsWSPrintV12。 如果未指定 wprtV12： SupportsWSPrintV12 并将其设置为 true，则 WSDMon 不会从打印机请求任何 WS 打印1.2 元素。
 
-支持 WS-打印 1.2 元素的打印机必须更新其 PrinterDescription 包括 wprtV12:SupportsWSPrintV12。 如果 wprtV12:SupportsWSPrintV12 不是指定并且已设置为 true，WSDMon 将不从打印机请求任何 WS 打印 1.2 元素。
-
-支持 WS-打印 v1.2 的打印设备必须在其 PrinterDescription 为了使 Windows 为该命名空间中的任何其他元素的查询中包括以下内容。
+支持 WS 打印版1.2 的打印设备必须在其 PrinterDescription 中包含以下内容，Windows 才能查询该命名空间中的任何其他元素。
 
 ```xml
 <soap:Envelope
@@ -174,7 +171,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 </soap:Envelope>
 ```
 
-以下 XML 片段派生自 WSD 打印服务规范 v1.2，并显示内容的正确用法了上一节中。
+以下 XML 代码段派生自 WSD 打印服务规范版本1.2，并显示了上一节中内容的正确用法。
 
 ```xml
 <soap:Envelope
@@ -205,7 +202,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
                          <wprt:PrinterInfo xml:lang="en-AU, en-CA, en-GB, en-US">
                              Printer for use of Accounting only</wprt:PrinterInfo>
                          <wprt:PrinterLocation xml:lang="en-AU, en-CA, en-GB, en-US">
-                             LA Campus – Building 3</wprt:PrinterLocation>                      
+                             LA Campus – Building 3</wprt:PrinterLocation>
                          <wprtV12:SupportsWSPrintV12>true</wprtV12:SupportsWSPrintV12>
                     </wprt:PrinterDescription>
              </wprt:ElementData>
@@ -215,12 +212,11 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
 </soap:Envelope>
 ```
 
-以下三个部分中中的架构示例演示如何使用某些引入的新元素与 Ws-print V1.1。 引入了 Ws-print V1.1 命名空间的所有元素的详细信息，请参阅 WS 打印 1.0 版的支持文件 – v1.2 中列出**下载**部分。
+以下三个部分中的架构示例说明了如何使用 WS Print v1.1 引入的一些新元素。 有关随 WS Print v1.1 命名空间引入的所有元素的详细信息，请参阅下面 "**下载**" 部分中列出的 "ws 打印" 的支持文件。
 
 ## <a name="enhanced-driver-configuration"></a>增强的驱动程序配置
 
-
-此架构提供了此设备的特定于设备的 GPD 或 PPD 配置文件。
+此架构为此设备提供特定于设备的 GPD 或 PPD 配置文件。
 
 ```xml
    <xs:annotation>
@@ -237,10 +233,9 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
     </xs:complexType>
 ```
 
-## <a name="device-model-id"></a>设备模型 ID
+## <a name="device-model-id"></a>设备型号 ID
 
-
-下面的架构描述的设备，ModelID 和用于进行设备元数据检索。 ModelIDs 的详细信息，请参阅[ModelID 元素](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
+以下架构描述了设备的 ModelID，用于设备元数据检索。 有关 ModelIDs 的详细信息，请参阅[ModelID 元素](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
 
 ```xml
     <xs:annotation>
@@ -255,10 +250,9 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
     </xs:simpleType>
 ```
 
-## <a name="inktoner-color-representation-value"></a>墨迹/墨粉颜色表示形式值
+## <a name="inktoner-color-representation-value"></a>墨迹/墨粉颜色表示值
 
-
-以下架构检索表示特定墨迹缺墨类型的颜色 RGB 三元组。 此值应为任何墨迹缺墨消费品，若要启用要在应用 UI 中显示的颜色的更好地表示形式指定。
+以下架构检索表示特定墨迹或碳粉类型的颜色的 RGB 三个。 应为任何墨盒或碳粉补充指定此值，以便能够更好地表示应用 UI 中显示的颜色。
 
 ```xml
     <xs:annotation>
@@ -267,7 +261,7 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
             A 6-digit hex representation of the RGB color value this Consumable entry represents.
             Examples of these values are:
                 Black – 000000
-                Red – FF0000 
+                Red – FF0000
                 White – FFFFFF
                 Magenta – FF00FF
                 Cyan – 00FFFF
@@ -282,37 +276,34 @@ Web 服务技术提供了用于描述和共享信息的通用框架。 因此，
     </xs:simpleType>
 ```
 
-在 WS 打印 v1.2 部分中，本主题中前面所述使用 WS 打印 V1.2 命名空间已引入以下新的操作。
+如本主题前面所述，在 "WS 打印版 1.2" 部分，已通过 WS 打印版命名空间引入了以下新操作。
 
 ## <a name="setprinterelements"></a>SetPrinterElements
 
+**SetPrinterElements**操作是新操作，可让客户端在打印机上设置架构元素的值。 SetPrinterElements 操作包含八个请求元素和四个响应元素。 Request 和 response 元素使客户端能够在与 WS 打印设备架构连接时对数据插入和检索进行精细控制。
 
-"SetPrinterElements"操作新建一个，它允许客户端设置在打印机上的架构元素的值。 SetPrinterElements 操作具有八个请求元素和响应的四个元素。 请求和响应元素提供对数据插入和检索与 WS 打印设备架构进行精细控制的客户端。
+例如，ElementPath 数据元素（SetPrinterElements 操作的一部分）是一个 XPath 字符串，它表示要设置的数据元素的打印机架构内的位置。
 
-例如，ElementPath 数据元素 （SetPrinterElements 操作的一部分） 是一个 XPath 字符串，表示要设置的数据元素内的打印机架构的位置。
-
-有关 SetPrinterElements 操作的更多详细信息，请参阅 WS 打印 v1.0 – v1.2 中的下载部分列出的支持文件。
+有关 SetPrinterElements 操作的更多详细信息，请参阅下面 "**下载**" 部分中列出的 "WS 打印" 的支持文件。
 
 ## <a name="downloads"></a>下载
 
+### <a name="specification-and-supporting-files-for-ws-print-v10--v12"></a>WS 打印 v1.0-1.2 版的规范和支持文件
 
-**规范和支持文件 WS 打印 v1.0 – v1.2**
+**文件：** [设备上 Web 服务的打印设备定义](https://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
+**说明：** 包含 Microsoft Word 文档和支持文件的 2.64 MB zip 文件;2013年9月16日
 
-**文件：** [在设备上打印的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
-**说明：** 2.64 MB zip 文件包含 Microsoft Word 文档和支持文件;2013 年 9 月 16日日
+### <a name="specification-and-supporting-files"></a>规范和支持文件
 
-**规范和支持文件**
+**文件：** [设备上的 Web 服务的打印设备定义](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
+**说明：** 76 KB 自解压文件，其中包含 Microsoft Word 文档和支持文件;2007年1月29日
 
-**文件：** [在设备上打印的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
-**说明：** 自解压文件包含 Microsoft Word 文档和支持文件; 76 KB2007 年 1 月 29日日
+**文件：** [在设备上扫描 Web 服务的服务定义](https://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)v1.0
+**说明：** （1.5 MB Zip 文件，其中包含 Microsoft Word 文档和支持文件;2012年2月9日）
 
-**文件：** [扫描设备上的 Web 服务的服务定义 V1.0](http://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
-**说明：** （1.5 MB zip 文件包含 Microsoft Word 文档和支持文件;2012 年 2 月 9 日)
+**文件：** [在设备上扫描设备定义](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)v1.0
+**说明：** （76 KB 自解压文件，其中包含 Microsoft Word 文档和支持文件;2007年1月29日）
 
-**文件：** [扫描的设备上的 Web 服务的设备定义 V1.0](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
-**说明：** (76 KB 自解压文件包含 Microsoft Word 文档和支持文件的文件。2007 年 1 月 29 日)
 ## <a name="related-topics"></a>相关主题
+
 [V4 打印机驱动程序连接](v4-printer-driver-connectivity.md)  
-
-
-

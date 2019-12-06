@@ -6,19 +6,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bcc1b10c5454ef894563c2306b52e421b47d25c
-ms.sourcegitcommit: 06f357860a18d28ee875f33f89a5a0ac2ff02b3f
+ms.openlocfilehash: c5a3f1f13e8a8980a7a4f03b1b11b1ff4939056a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225340"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861349"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
 本主题提供有关 WinDbg 预览调试器中的新增功能的信息。
 
 ## <a name="10190830002"></a>1.0.1908.30002
-**TTD 调用对象** - 的改进现在会[调用查询](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
+**TTD 调用对象的改进** - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
 
 **支持 Open Enclave** -WinDbg 预览版现在可以调试打开的 ENCLAVE （OE）应用程序，你可以在[打开的 Enclave 文档](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/GettingStarted.Windows.md)中找到如何执行此操作的说明。
 
@@ -35,7 +35,7 @@ ms.locfileid: "70225340"
 * 在没有任何参数的情况下运行 "dx" 现在会显示根命名空间，以便更轻松 browsability。
 * 现在可以通过 "设置" 菜单修改默认符号和源缓存位置。
 * 改善了对录制 AVX-512 的支持（AVX-512 的记录将导致比正常的缓慢关闭）
-* 已启用[脱机授权](https://docs.microsoft.com/en-us/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)
+* 已启用[脱机授权](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)
 
 ## <a name="10190512001"></a>1.0.1905.12001
 **对 SymSetDiaSession 错误缓解功能的改进**-我们的第一个月修复了此错误，以减少在某些情况下将 dbghelp.dll 注入到进程中的应用程序造成的错误。 我们已对其进行了改进，并将继续监视有关此错误的反馈。
@@ -76,7 +76,7 @@ ms.locfileid: "70225340"
 
 **调试器数据模型C++标头**-有一个新C++的标头 DbgModel，它作为 Windows SDK 的一部分包含，以便通过C++扩展调试器数据模型。 有关详细信息，请查看[调试器数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过[调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
 
-**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 存储库中提供了一个新示例。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
+**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
 
 其他更改和 bug 修复：
 
@@ -90,7 +90,7 @@ ms.locfileid: "70225340"
 
 - 可从 "文件" 菜单或 Home 功能区访问的 "新建设置" 对话框。 
 - "事件和异常设置" 对话框。 此菜单更改调试器处理事件和异常的方式，等效于 "sx" 命令或 WinDbg 的事件筛选器对话框。 选择 "主页" 功能区上的 "设置"，然后点击左侧的 "事件和异常" 来管理这些**设置**。
-- 提高了 TTD 索引器的性能。 这会提高索引 TTD 跟踪文件的性能，使索引过程的速度快得多（在2倍之间），同时使索引文件更小（约 50%）。 对于大小超过4GB 的跟踪，或使用具有多个 CPU 核心（8 +）的计算机，性能改进最明显。 新的索引器使调试非常大的跟踪（50GB +）变得更可行。
+- 提高了 TTD 索引器的性能。 这会提高索引 TTD 跟踪文件的性能，使索引过程的速度快得多（在2倍之间），同时使索引文件更小（约50%）。 对于大小超过4GB 的跟踪，或使用具有多个 CPU 核心（8 +）的计算机，性能改进最明显。 新的索引器使调试非常大的跟踪（50GB +）变得更可行。
 - 用于指定体系结构的 New *debugArch*启动标志。 WinDbg 预览版尝试将具有正确位数的调试器引擎启动到目标，以更好地支持调试托管代码。 在某些情况下，它不能确定正确的位数，或者您可能想要重写它所决定的位数。 使用-debugArch x86 | amd64 控制调试器引擎的体系结构。
 
 其他更改和 bug 修复：
@@ -102,7 +102,7 @@ ms.locfileid: "70225340"
 -  现在，未编制索引的 TTD 跟踪将更清楚地表明它们未编入索引。
 -  提高了 "局部变量" 窗口的性能
 -  添加了 "功能区" 按钮，用于将命令窗口日志保存到文件。
--  已. 将 SelectMany<projection>（）设置为默认的 LINQ 方法集。
+-  。 SelectMany （<projection>）设置为默认的 LINQ 方法集。
 
 ## <a name="10180711002"></a>1.0.1807.11002 
 
@@ -152,8 +152,8 @@ ms.locfileid: "70225340"
 
 **JSPROVIDER api 版本 1.2** -适用于声明支持 API 版本1.2 的 JavaScript 扩展：
 
-- 如果任何对象的 compareTo 方法退出脚本，则该对象的自定义比较运算符（比较运算符将在 DX 计算器和其他地方工作）：IModelObject：： Compare）
-- 如果任何对象的. equals 方法退出脚本，则该对象的自定义相等运算符（= = 和！ = 将在 DX 计算器和其他地方工作：IModelObject::IsEqualTo)
+- 如果任何对象的 compareTo 方法退出脚本，则该对象的自定义比较运算符（比较运算符将在 DX 计算器和其他地方工作：例如： IModelObject：： Compare）
+- 如果任何对象的. equals 方法退出脚本，则该对象的自定义相等运算符（= = 和！ = 将在 DX 计算器和其他地方工作：例如： IModelObject：： IsEqualTo）
 - 输入脚本的本机或数据模型对象将对其使用 compareTo 和. equals，以允许访问任何自定义比较运算符或自定义相等实现。
  
 少量更改和 bug 修复：
@@ -163,7 +163,7 @@ ms.locfileid: "70225340"
 - 已将地址栏添加到 "反汇编" 窗口。
 - WinDbg Preview 现在会按预期方式处理 _NT_SYMBOL_PATH。
 - 添加了-服务器命令行选项。
-- TTD 数据模型查询现在可以渐进式显示，因此，如果您中断它，仍会看到一些结果。 此功能仍是实验性的，可选。 运行`dx @$cursession.TTD.AsyncQueryEnabled = 1`以启用它。
+- TTD 数据模型查询现在可以渐进式显示，因此，如果您中断它，仍会看到一些结果。 此功能仍是实验性的，可选。 运行 `dx @$cursession.TTD.AsyncQueryEnabled = 1` 以启用它。
 - "Dps" 命令现在包含指向它引用的源文件的链接。
 
 ## <a name="11801190010"></a>1.1801.19001.0
@@ -174,7 +174,7 @@ ms.locfileid: "70225340"
 
 如果更喜欢使用命令，可以使用 "$hl" 命令：
 
-`$hl ["someValueHere"]`-突出显示 "给文本（或突出显示，如果已突出显示）"
+`$hl ["someValueHere"]`-突出显示文本（如果已突出显示，则取消突出显示）
 
 `$hl clearAll`-清除所有突出显示的条目
 
@@ -189,9 +189,9 @@ ms.locfileid: "70225340"
 
 **TTD 内存查询**-现在可以查询 TTD 的内存访问，就像现在查询调用的方式一样。 这允许你查找访问特定内存范围的所有读取、写入和执行操作。
 
-读写示例：`dx @$cursession.TTD.Memory(startAddress, endAddress, "rw")`
+读取和写入示例： `dx @$cursession.TTD.Memory(startAddress, endAddress, "rw")`
 
-唯一的执行示例：`dx @$cursession.TTD.Memory(startAddress, endAddress, "ec")`
+唯一执行示例： `dx @$cursession.TTD.Memory(startAddress, endAddress, "ec")`
 
 **设置更改**-WinDbg Preview 现在会自动保存会话之间的设置，包括符号路径和源路径。
 
@@ -256,7 +256,7 @@ API 版本1.1 中的更改包括：
 
 ## <a name="10130"></a>1.0.13.0
 
-此版本添加了时间行程跟踪。 使用行程调试，可以记录进程，然后在以后向前和向后重播。 旅行调试（TTD）可让您通过 "倒带" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。 有关详细信息，请参阅[行程调试-概述](time-travel-debugging-overview.md)。
+此版本添加了时间行程跟踪。 使用行程调试，可以记录进程，然后在以后向前和向后重播。 旅行调试（TTD）可让您通过 "倒带" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。 有关详细信息，请参阅[时间行程调试 - 概述](time-travel-debugging-overview.md)。
 
 ## <a name="10120"></a>1.0.12.0
 
@@ -264,6 +264,6 @@ API 版本1.1 中的更改包括：
 
 ---
  
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)

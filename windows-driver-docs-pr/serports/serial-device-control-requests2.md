@@ -8,12 +8,12 @@ keywords:
 - 串行驱动程序 WDK，设备控制请求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e55a2fe562876c41ddc1ff34dab7732f278cad0d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 605032f179573fdba04303027f5ee87c5ed41767
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845393"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863025"
 ---
 # <a name="serial-device-control-requests"></a>串行设备控制请求
 
@@ -51,4 +51,4 @@ ms.locfileid: "72845393"
 
 有关串行 i/o 请求的详细信息，请参阅[串行端口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_serports/)参考主题。
 
-若要详细了解 IOCTL\_串行\_XXX 和 IOCTL\_串行\_内部\_XXX 请求，请参阅[ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)标头。
+若要详细了解 IOCTL\_串行\_XXX 和 IOCTL\_串行\_内部\_XXX 请求，请参阅[ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)标头。

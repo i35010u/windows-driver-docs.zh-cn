@@ -4,12 +4,12 @@ description: 若要控制连接到串行控制器上某个端口的外围设备�
 ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce989c4fc56687995620926e66700d6f8747763c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e81217407aeff075436b8bf673dcae18923a2899
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844940"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862208"
 ---
 # <a name="serial-io-request-interface"></a>串行 I/O 请求接口
 
@@ -49,7 +49,7 @@ SerCx2、SerCx 和 sys.databases 支持许多相同的串行 IOCTLs。 但是，
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_clr_dtr" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_CLR_DTR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_clr_dtr)"><strong>IOCTL_SERIAL_CLR_DTR</strong></a></p></td>
-<td><p>请参阅备注1。</p></td>
+<td><p>见第 1 条注释。</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
 </tr>
@@ -91,7 +91,7 @@ SerCx2、SerCx 和 sys.databases 支持许多相同的串行 IOCTLs。 但是，
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_handflow" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_GET_HANDFLOW&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_handflow)"><strong>IOCTL_SERIAL_GET_HANDFLOW</strong></a></p></td>
-<td><p>请参阅备注1。</p></td>
+<td><p>见第 1 条注释。</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
 </tr>
@@ -102,7 +102,7 @@ SerCx2、SerCx 和 sys.databases 支持许多相同的串行 IOCTLs。 但是，
 <td><p>“是”</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_GET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control)"><strong>IOCTL_SERIAL_GET_MODEM_CONTROL</strong></a> （请参阅备注4）</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_GET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control)"><strong>IOCTL_SERIAL_GET_MODEM_CONTROL</strong></a> （请参阅备注4）。</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
@@ -187,13 +187,13 @@ SerCx2、SerCx 和 sys.databases 支持许多相同的串行 IOCTLs。 但是，
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_dtr" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_DTR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_dtr)"><strong>IOCTL_SERIAL_SET_DTR</strong></a></p></td>
-<td><p>请参阅备注1。</p></td>
+<td><p>见第 1 条注释。</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_fifo_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_FIFO_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_fifo_control)"><strong>IOCTL_SERIAL_SET_FIFO_CONTROL</strong></a></p></td>
-<td><p>请参阅备注1。</p></td>
+<td><p>见第 1 条注释。</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
 </tr>
@@ -210,7 +210,7 @@ SerCx2、SerCx 和 sys.databases 支持许多相同的串行 IOCTLs。 但是，
 <td><p>“是”</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control)"><strong>IOCTL_SERIAL_SET_MODEM_CONTROL</strong></a> （请参阅备注4）</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control)"><strong>IOCTL_SERIAL_SET_MODEM_CONTROL</strong></a> （请参阅备注4）。</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
 <td><p>“是”</p></td>
@@ -279,4 +279,4 @@ SerCx2、SerCx 和 sys.databases 支持许多相同的串行 IOCTLs。 但是，
 
 5. Serial 驱动程序始终完成**IOCTL\_串行\_重置\_设备**请求，状态\_成功，但不执行任何操作来响应此请求。 SerCx2 和 SerCx 不支持**IOCTL\_串行\_重置\_设备**请求，并始终完成这些请求，状态\_未实现\_。
 
-有关**IOCTL\_串行\_<em>XXX</em>** 请求以及串行控制器的读取和写入请求的详细信息，请参阅[ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)标头。
+有关**IOCTL\_串行\_<em>XXX</em>** 请求以及串行控制器的读取和写入请求的详细信息，请参阅[ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)标头。

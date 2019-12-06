@@ -1,14 +1,14 @@
 ---
 title: 在音频资源重新平衡和意外删除操作期间管理内存缓冲区
 description: 对于需要重新分配内存资源的某些 PCI 方案，将使用 PnP 重新平衡。 需要正确管理内存缓冲区以避免出现问题。
-ms.date: 04/10/2019
+ms.date: 12/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f20a301ebb183ad92a66641bf7b6f88ed51dad2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2d8291114dd3c6f175cf2154d88adb55cfd63317
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832658"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860569"
 ---
 # <a name="managing-memory-buffers-during-audio-resource-rebalance-and-surprise-removal-operations"></a>在音频资源重新平衡和意外删除操作期间管理内存缓冲区
 
@@ -35,22 +35,21 @@ ms.locfileid: "72832658"
 
 *设置流状态*（如果流尚未处于停止状态）。
 
-[IMiniportWaveRTStream：： SetState](https://msdn.microsoft.com/en-us/library/windows/hardware/ff536756(v=vs.85).aspx)
+[IMiniportWaveRTStream：： SetState](https://msdn.microsoft.com/library/windows/hardware/ff536756(v=vs.85).aspx)
 
 *版本缓冲区*  
 
-[IMiniportWaveRTStream：： FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
+[IMiniportWaveRTStream::FreeAudioBuffer]（[IMiniportWaveRTStream：： SetState](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 
-请注意，当驱动程序在 SR/STOP 操作期间已由驱动程序停止时，portcls 微型端口驱动程序应成功地将状态转换从较高的值转换为较小的值（RUN = = 3，PAUSE = = 2，获取 = = 1，STOP = = 0）。关闭句柄请求）。
+请注意，当驱动程序在 SR/STOP 操作期间已由驱动程序停止时，portcls 微型端口驱动程序应成功将状态转换从较高的值转换为较小值（RUN = = 3，PAUSE = = 2，获取 = = 1，STOP = = 0）。
 
 **缓冲区处理**
 
-
 当在正常操作过程中关闭流时，portcls 会调用波形 RT 的回调，使驱动程序停止其 DMA 操作并释放其关联的缓冲区：
 
-[IMiniportWaveRTStream：： SetState](https://msdn.microsoft.com/en-us/library/windows/hardware/ff536756(v=vs.85).aspx) -> SETDMAENGINESTATE （HD 音频总线 DDI）。 采取操作来启动/暂停 DMA。
+[IMiniportWaveRTStream：： SetState](https://msdn.microsoft.com/library/windows/hardware/ff536756(v=vs.85).aspx) -> SETDMAENGINESTATE （HD 音频总线 DDI）。 采取操作来启动/暂停 DMA。
 
-[IMiniportWaveRTStream：： FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer （HD 音频总线 DDI）。
+[IMiniportWaveRTStream：： FreeAudioBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-freeaudiobuffer)或[IMiniportWaveRTStreamNotification：： FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer （HD 音频总线 DDI）。
 
 IMiniportWaveRTStream [Notification] 的析构函数-> FreeDmaEngine （HD 音频总线 DDI）。 
 
@@ -116,13 +115,13 @@ DMAEngineAllocated=false
 
 [PSET_DMA_ENGINE_STATE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[HDAUDIO_STREAM_STATE 枚举](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/hdaudio/ne-hdaudio-_hdaudio_stream_state)
+[HDAUDIO_STREAM_STATE 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ne-hdaudio-_hdaudio_stream_state)
 
 [PFREE_DMA_ENGINE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pfree_dma_engine)
 
 [PSET_DMA_ENGINE_STATE 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[IMiniportWaveRTStreamNotification 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstreamnotification) 
+[IMiniportWaveRTStreamNotification 接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstreamnotification)
 
 [IMiniportWaveRTStreamNotification：： FreeBufferWithNotification 方法](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 

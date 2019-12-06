@@ -1,19 +1,19 @@
 ---
-title: 蓝牙无线电重置和恢复
+title: 蓝牙无线收发器重置和恢复
 description: 蓝牙无线电自动错误恢复机制
 keywords:
 - 蓝牙无线电错误恢复
 - 蓝牙 PLDR
 ms.date: 09/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef87ac6b295d32a1c47dffefb70909fafa5d1d99
-ms.sourcegitcommit: 37ec8aa998c7be7c5892c6e7fa1b761733dabc05
+ms.openlocfilehash: 1def050b43664789bb89ba8e765e4371b959650f
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316821"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860761"
 ---
-# <a name="bluetooth-radio-reset-and-recovery"></a>蓝牙无线电重置和恢复
+# <a name="bluetooth-radio-reset-and-recovery"></a>蓝牙无线收发器重置和恢复
 
 蓝牙无线电重置和恢复是 Windows 10 版本1803及更高版本中的一项技术，为蓝牙无线电收发器引入了强大的重置和恢复机制。 此机制使蓝牙无线收发器能够从导致故障、失去连接或无响应操作命令的硬件故障中恢复。 目标是自动恢复广播，使用户体验无缝，同时降低需要系统重新启动的可能性。
 
@@ -49,9 +49,9 @@ ms.locfileid: "71316821"
 | 功能级设备重置（FLDR） | 重置操作仅限于特定设备，不适用于其他设备。 没有重新枚举。 函数驱动程序必须假设硬件在操作后恢复为其原始状态。  不保留中间状态。
 | 平台级别的设备重置（PLDR） | Reset 操作会影响特定设备以及通过相同的电源导轨或重置线路连接到该设备的所有其他设备。 Reset 操作导致从总线中将设备报告为缺失，并重新枚举设备。 这种类型的重置对系统的影响最大，因为共享资源的所有设备都将恢复到其原始状态。|
 
-- **若要支持 FLDR** ，必须在 "_ADR_ " 命名空间内定义一个 __RST 方法， [如 ACPI 固件中所述：函数级重置](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-function-level-reset)。
+- **若要支持 FLDR** ，必须在_ADR_命名空间中定义一个 __RST 方法，如[ACPI 固件：功能级重置](https://docs.microsoft.com/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-function-level-reset)中所述。
 
-- **若要支持 PLDR** ，必须在_ADR_命名空间中定义 _RST 或 _PR3 方法，如 ACPI 固件[中所述：平台级重置](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-platform-level-reset)。 请注意，如果使用的是 __PR3_方法，ACPI 将使用 D3Cold 电源周期机制重置。 这会模拟设备断电，并随后将其还原。 如果任何其他设备共享相同的电源导轨，则它们也会重置。 如果 __PRR_ （PowerResource）定义了 __RST_方法并对其进行了引用，则使用该 PowerResource 的所有设备将受到影响。
+- **若要支持 PLDR** ，必须在_ADR_命名空间中定义 _RST 或 _PR3 方法，如[ACPI 固件：平台级重置](https://docs.microsoft.com/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-platform-level-reset)。 请注意，如果使用的是 __PR3_方法，ACPI 将使用 D3Cold 电源周期机制重置。 这会模拟设备断电，并随后将其还原。 如果任何其他设备共享相同的电源导轨，则它们也会重置。 如果 __PRR_ （PowerResource）定义了 __RST_方法并对其进行了引用，则使用该 PowerResource 的所有设备将受到影响。
 
   - 由于 PLDR 仅适用于内部设备，因此必须在 ACPI 中将其声明为。 对于 USB 设备，若要指定内部端口（而不是用户可见），并可以连接到集成设备，请设置 __UPC。PortIsConnectable_ byte 到0xff 和 __PLD。UserVisible_位到0。
 
@@ -65,4 +65,4 @@ ms.locfileid: "71316821"
 
 ### <a name="related-links"></a>相关链接
 
-[重置和恢复设备](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/resetting-and-recovering-a-device)
+[重置和恢复设备](https://docs.microsoft.com/windows-hardware/drivers/kernel/resetting-and-recovering-a-device)

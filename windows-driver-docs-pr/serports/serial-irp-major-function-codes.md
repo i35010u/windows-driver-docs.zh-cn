@@ -7,12 +7,12 @@ keywords:
 - 串行 IRP 代码
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f539716ade660a4b4d08583c4b1860541a8c2cd9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2c6742c5c9e50dd212fce83387f6cb27c0451a0a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845390"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862590"
 ---
 # <a name="serial-irp-major-function-codes"></a>串行 IRP 主要函数代码
 本主题介绍串行 IRP 主要功能代码。
@@ -21,7 +21,7 @@ ms.locfileid: "72845390"
 
 ## <a name="irp_mj_create"></a>IRP_MJ_CREATE
 
-[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求打开串行设备。
+[IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)请求将打开一个串行设备。
 
 ### <a name="when-sent"></a>发送时间
 
@@ -57,7 +57,7 @@ ms.locfileid: "72845390"
 
 ## <a name="irp_mj_device_control"></a>IRP_MJ_DEVICE_CONTROL
 
-IRP_MJ_DEVICE_CONTROL 请求操作串行端口。
+IRP_MJ_DEVICE_CONTROL 请求将运行串行端口。
 
 ### <a name="when-sent"></a>发送时间
 
@@ -67,7 +67,7 @@ IRP_MJ_DEVICE_CONTROL 请求操作串行端口。
 * 获取并设置寄存器
 * 获取和设置运行模式
 
-有关串行支持的设备控制请求的说明，请参阅[ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)标头。
+有关串行支持的设备控制请求的说明，请参阅[ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)标头。
 
 ### <a name="input-parameters"></a>输入参数
 
@@ -152,7 +152,7 @@ IRP_MJ_DEVICE_CONTROL 请求操作串行端口。
 
 ### <a name="when-sent"></a>发送时间
 
-PnP 管理器将 IRP_MJ_PNP 请求发送到查询设备，并启动、停止和删除设备。
+PnP 管理器将 IRP_MJ_PNP 请求发送到查询设备以及启动、停止和删除设备。
 
 ### <a name="input-parameters"></a>输入参数
 
@@ -189,7 +189,7 @@ PnP 管理器将 IRP_MJ_PNP 请求发送到查询设备，并启动、停止和�
 
 串行对即插即用请求执行以下特定于串行的处理：
 
-**IRP_MN_QUERY_ID** （类型 BusQueryHardwardIDs）
+**IRP_MN_QUERY_ID** （键入 BusQueryHardwardIDs）
 
 如果串行设备在多端口 ISA 卡上，则串行会将宽字符 "* PNP0502" 追加到硬件 Id 字符串。
 
@@ -248,8 +248,8 @@ Power manager 使用 power 请求来查询和设置电源状态。
 
 |参数|描述|
 |----|----|
-|**FileStandardInformation**|**AssociatedIrp SystemBuffer**成员指向由串行用于输出标准信息的客户端分配的 FILE_STANDARD_INFORMATION 结构。|
-|**FilePositionInformation**|**AssociatedIrp SystemBuffer**成员指向由串行用来输出位置信息的客户端分配的 FILE_POSITION_INFORMATION 结构。|
+|**FileStandardInformation**|**AssociatedIrp SystemBuffer**成员指向由串行用于输出标准信息的客户端分配 FILE_STANDARD_INFORMATION 结构。|
+|**FilePositionInformation**|**AssociatedIrp SystemBuffer**成员指向客户端分配 FILE_POSITION_INFORMATION 结构，串行使用该结构来输出位置信息。|
 
 ### <a name="io-status-block"></a>I/o 状态块
 
@@ -426,7 +426,7 @@ Power manager 使用 power 请求来查询和设置电源状态。
 
 ### <a name="operation"></a>操作
 
-客户端可以使用超时事件终止写入请求。 但请注意，当串行设备打开时，在设备上设置的超时事件未定义。 内核模式客户端可以使用[IOCTL_SERIAL_INTERNAL_BASIC_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_internal_basic_settings)将超时参数设置为零（没有使用超时事件）和[IOCTL_SERIAL_SET_TIMEOUTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)请求来设置超时参数。 有关读写超时的详细信息，请参阅[设置串行设备的读取和写入超时](https://docs.microsoft.com/previous-versions/ff547486(v=vs.85))。
+客户端可以使用超时事件终止写入请求。 但请注意，当串行设备打开时，在设备上设置的超时事件未定义。 内核模式客户端可以使用[IOCTL_SERIAL_INTERNAL_BASIC_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_internal_basic_settings)将超时参数设置为零（没有使用超时事件）和[IOCTL_SERIAL_SET_TIMEOUTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)请求设置超时参数。 有关读写超时的详细信息，请参阅[设置串行设备的读取和写入超时](https://docs.microsoft.com/previous-versions/ff547486(v=vs.85))。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -434,4 +434,4 @@ Power manager 使用 power 请求来查询和设置电源状态。
 
 [用于处理电源 Irp 的规则](https://docs.microsoft.com/windows-hardware/drivers/kernel/rules-for-handling-power-irps)
 
-[串行控制器驱动程序设计指南](https://docs.microsoft.com/en-us/windows-hardware/drivers/serports/)
+[串行控制器驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/serports/)

@@ -1,6 +1,6 @@
 ---
 title: balloonUI 元素
-description: 可选 balloonUI 元素用于在客户端计算机上显示消息气泡。
+description: 可选的 balloonUI 元素用于在客户端计算机上显示消息气球。
 ms.assetid: 8db15dcb-26ed-429e-ad4c-e5dc59f9bbca
 keywords:
 - balloonUI 元素打印设备
@@ -12,22 +12,20 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9fa4cc0554f0d6569eb9c8b35cfa95a8964db1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7003092cfca1e01f4e706536443c99da0eebc749
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349262"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881907"
 ---
 # <a name="balloonui-element"></a>balloonUI 元素
 
+可选的**balloonUI**元素用于在客户端计算机上显示消息气球。
 
-可选**balloonUI**元素用于在客户端计算机上显示消息气泡。
+**BalloonUI**元素在*asyncui*命名空间中定义，此 URI 为： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request) （此资源可能在某些语言和国家/地区不可用。）
 
-**BalloonUI**中定义元素*asyncui*此 URI 处的命名空间： http://schemas.microsoft.com/2003/print/asyncui/v1/request。 （此资源可能不会在某些语言和国家/地区中可用。）
-
-<a name="usage"></a>用法
------
+## <a name="usage"></a>Usage
 
 ```xml
 <balloonUI
@@ -37,8 +35,7 @@ ms.locfileid: "63349262"
 </balloonUI>
 ```
 
-<a name="attributes"></a>特性
-----------
+## <a name="attributes"></a>属性
 
 <table>
 <colgroup>
@@ -49,7 +46,7 @@ ms.locfileid: "63349262"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
+<th>属性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -59,22 +56,21 @@ ms.locfileid: "63349262"
 <tr class="odd">
 <td><p><strong>iconID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>否</p></td>
+<td><p>无</p></td>
 <td><p></p>
-<p>一个可选属性，指定打印机图标以显示在事件通知消息。 属性值指定的资源 DLL 中的图标的位置。 图标必须是 32 x 32 像素的大小，任何颜色深度。</p></td>
+<p>可选属性，指定在事件通知消息中显示的打印机图标。 特性值指定资源 DLL 中的图标的位置。 图标的大小必须为 32 x 32 像素，并具有任何颜色深度。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>resourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>否</p></td>
+<td><p>无</p></td>
 <td><p></p>
-<p>一个可选属性，指定的资源 DLL，其中包含要显示在事件通知消息的打印机图标。 此 DLL 应是打印机驱动程序的依赖文件和驱动程序资源文件夹 （例如，%systemroot%\system32\spool\drivers\w32x86\3) 中必须存在。</p></td>
+<p>一个可选属性，指定包含要在事件通知消息中显示的打印机图标的资源 DLL。 此 DLL 应是打印机驱动程序的依赖文件，并且必须位于驱动程序资源文件夹中（例如，%SYSTEMROOT%\system32\spool\drivers\w32x86\3）。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="child-elements"></a>子元素
-
 
 <table>
 <colgroup>
@@ -91,18 +87,17 @@ ms.locfileid: "63349262"
 <tr class="odd">
 <td><p><a href="body.md" data-raw-source="[&lt;strong&gt;body&lt;/strong&gt;](body.md)"><strong>body</strong></a></p></td>
 <td><p></p>
-<p>提供的文本的所需的元素显示在事件通知消息。 此文本应提供用户有关打印机事件的特定详细信息。</p></td>
+<p>一个必需的元素，它提供在事件通知消息中显示的文本。 此文本应提供有关打印机事件的用户特定详细信息。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>title</strong></a></p></td>
+<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>词首</strong></a></p></td>
 <td><p></p>
-<p>提供事件通知消息的标题中显示的文本所必需的元素。</p></td>
+<p>一个必需的元素，该元素提供在事件通知消息标题中显示的文本。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="parent-elements"></a>父元素
-
 
 <table>
 <colgroup>
@@ -119,20 +114,18 @@ ms.locfileid: "63349262"
 <tr class="odd">
 <td><p><a href="requestopen.md" data-raw-source="[&lt;strong&gt;requestOpen&lt;/strong&gt;](requestopen.md)"><strong>requestOpen</strong></a></p></td>
 <td><p></p>
-<p>一个用于打开客户端计算机上的事件通知消息的元素。</p></td>
+<p>用于在客户端计算机上打开事件通知消息的元素。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>备注
--------
+## <a name="remarks"></a>备注
 
-如果特性**iconID**并**项 resourceDll**未指定，通用打印机图标将显示在气球消息。 若要显示自定义打印机图标，指定这两个属性的值。
+如果未指定属性**iconID**和**resourceDll** ，则会在气球消息中显示一般的打印机图标。 若要显示自定义打印机图标，请指定这两个属性的值。
 
-<a name="examples"></a>示例
---------
+## <a name="examples"></a>示例
 
-下面的代码示例演示如何使用交互式气球将传递**CDATA**类型到 DLL 的数据。
+下面的代码示例演示如何使用交互式气球将**CDATA**类型数据传递到 DLL。
 
 ```xml
 <?xml version="1.0" ?> 
@@ -155,8 +148,7 @@ ms.locfileid: "63349262"
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [**action**](action.md)
 
@@ -164,12 +156,4 @@ ms.locfileid: "63349262"
 
 [**requestOpen**](requestopen.md)
 
-[**title**](title.md)
-
- 
-
- 
-
-
-
-
+[**词首**](title.md)

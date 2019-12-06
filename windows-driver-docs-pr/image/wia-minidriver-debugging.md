@@ -4,12 +4,12 @@ description: WIA 微型驱动程序调试
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61711f0f18e4bf4a3855dca36ecfd83dfbb3c0cf
-ms.sourcegitcommit: 1585a52e762226b01c7369371727746487cc57bf
+ms.openlocfilehash: 427ddcec5bd86533701ed7ed28b515332d324f41
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74796667"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881879"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA 微型驱动程序调试
 
@@ -53,7 +53,7 @@ WIA 服务启动后，服务控制管理器（SCM）将查看服务控制数据�
 
 大多数调试器都需要正在运行的进程的 PID，才能在该进程已启动之后附加到该进程。 由于 WIA 在名为*svchost.exe*的泛型宿主进程下运行，因此查找正确的*svchost.exe*实例是必不可少的。
 
-如果从 Microsoft 站点（www.microsoft.com）下载了调试程序包，该程序包将包含一个名为*tlist.exe*的实用程序。 *Tlist.exe*显示所有正在运行的进程。 如果使用 s 开关执行*tlist.exe* ，此实用工具还会显示哪些进程正在托管哪些服务。 例如，运行*tlist.exe*会生成类似于以下内容的输出：
+如果从 Microsoft 站点下载了调试程序包，该程序包将包含一个名为*tlist.exe*的实用程序。 *Tlist.exe*显示所有正在运行的进程。 如果使用 s 开关执行*tlist.exe* ，此实用工具还会显示哪些进程正在托管哪些服务。 例如，运行*tlist.exe*会生成类似于以下内容的输出：
 
 ```cmd
    0 System Process

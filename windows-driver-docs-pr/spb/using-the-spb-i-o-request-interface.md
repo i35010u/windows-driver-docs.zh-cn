@@ -4,16 +4,16 @@ description: 从 Windows 8 开始，SPB 框架扩展（SpbCx）是系统提供�
 ms.assetid: 0A752413-FA0B-4C26-BF6D-19033E07095E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc24f24649156dc8f1cc6d9f711bf5c3ce18e9fd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fd69866107e540e7267ba65375d2f20e3bc8a5b9
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839622"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862885"
 ---
 # <a name="using-the-spb-io-request-interface"></a>使用 SPB I/O 请求接口
 
-从 Windows 8 开始， [SPB 框架扩展](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)（SpbCx）是系统提供的组件，它支持[SPB i/o 请求接口](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))。 SPB 外围设备驱动程序使用此接口将 i/o 请求发送到连接到 i2c、SPI 和其他[简单外围](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))网络（SPBs）的设备。 通过使标准化 i/o 请求接口可用于各种总线类型，SpbCx 简化了在不同硬件上跨各种硬件平台和 SPB 控制器为一系列外围设备提供驱动程序支持的任务供应商.
+从 Windows 8 开始， [SPB 框架扩展](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension)（SpbCx）是系统提供的组件，它支持[SPB i/o 请求接口](https://docs.microsoft.com/previous-versions/hh698224(v=vs.85))。 SPB 外围设备驱动程序使用此接口将 i/o 请求发送到连接到 i2c、SPI 和其他[简单外围](https://docs.microsoft.com/previous-versions/hh450903(v=vs.85))网络（SPBs）的设备。 通过使标准化 i/o 请求接口可用于各种总线类型，SpbCx 简化了在不同硬件供应商的各种硬件平台和 SPB 控制器中提供对一系列外围设备的驱动程序支持的任务。
 
 如果满足以下条件，则连接到 SPB 的外围设备的硬件供应商可以开发可跨多个总线类型运行的一个设备驱动程序：
 
@@ -30,7 +30,7 @@ SpbCx 会 with SPB 控制器驱动程序，用于处理来自驱动程序的 i/o
 
 在驱动程序可以将 i/o 请求发送到使用 SPB 连接的外围设备之前，驱动程序必须打开与设备建立的逻辑连接。 若要打开此连接，驱动程序将使用从即插即用管理器接收为硬件资源的连接 ID。 有关详细信息，请参阅[SPB 外围设备的连接 id](https://docs.microsoft.com/windows-hardware/drivers/spb/connection-ids-for-spb-connected-peripheral-devices)。
 
-SpbCx 和 SPB 控制器驱动程序共同处理与 SPB 连接的外围设备的读取和写入请求。 为了响应[**IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))请求，SPB 控制器将指定数量的字节从外围设备传输到驱动程序提供的缓冲区。 为了响应[**IRP\_MJ\_写入**](https://docs.microsoft.com/en-us/previous-versions//ff546904(v=vs.85))请求，SPB 控制器会将指定数量的字节从驱动程序提供的缓冲区传输到外围设备。
+SpbCx 和 SPB 控制器驱动程序共同处理与 SPB 连接的外围设备的读取和写入请求。 为了响应[**IRP\_MJ\_读取**](https://docs.microsoft.com/previous-versions/ff546883(v=vs.85))请求，SPB 控制器将指定数量的字节从外围设备传输到驱动程序提供的缓冲区。 为了响应[**IRP\_MJ\_写入**](https://docs.microsoft.com/previous-versions//ff546904(v=vs.85))请求，SPB 控制器会将指定数量的字节从驱动程序提供的缓冲区传输到外围设备。
 
 对于**IRP\_mj\_READ**或**IRP\_MJ\_写入**零字节传输请求，SpbCx 完成\_状态为 "成功" 的请求，但不执行任何操作。
 
@@ -44,7 +44,7 @@ SPB 外设驱动程序使用这些 IOCTLs 执行*i/o 传输顺序*。 I/o 传输
 
 特定 SPB 控制器的 SPB 控制器驱动程序可能支持执行特定于硬件的函数的自定义 IOCTLs。 这些 IOCTLs 是 SpbCx 不处理的，而 SPB 控制器的硬件供应商却支持需要执行特定于硬件操作的 SPB 外设驱动程序的优点。 如果 SPB 外围设备驱动程序发送的 IOCTL 既不 SpbCx，也不能识别 SPB 控制器驱动程序，则不会执行任何操作，并且 i/o 请求的 "状态" 状态值为 "状态"\_不\_支持。
 
-与 SPB 连接的外围设备的驱动程序通常是[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)（UMDF）驱动程序或[内核模式驱动程序框架](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/index)（KMDF）驱动程序。 若要将读取、写入或 IOCTL 请求发送到已连接到 SPB 的外围设备，UMDF 驱动程序会调用方法，例如[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)。 KMDF 驱动程序调用方法，例如[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)、 [**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)或[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)。
+与 SPB 连接的外围设备的驱动程序通常是[用户模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)（UMDF）驱动程序或[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/index)（KMDF）驱动程序。 若要将读取、写入或 IOCTL 请求发送到已连接到 SPB 的外围设备，UMDF 驱动程序会调用方法，例如[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)。 KMDF 驱动程序调用方法，例如[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)、 [**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)或[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)。
 
 有关演示如何将 i/o 请求发送到 SPB 连接外围设备的代码示例，请参阅以下主题：
 

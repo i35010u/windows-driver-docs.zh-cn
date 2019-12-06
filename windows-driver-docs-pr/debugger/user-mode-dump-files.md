@@ -4,14 +4,14 @@ description: 用户模式转储文件
 ms.assetid: bef29d75-6620-4219-b402-36fbddc4fe1f
 keywords:
 - 转储文件，用户模式
-ms.date: 10/04/2019
+ms.date: 12/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f97674802693100fd426d77e06420e3a6c66d0
-ms.sourcegitcommit: bff7fdcac628f8b62bd9df2658ca56301d1f8b07
+ms.openlocfilehash: a0d2f9e217d5d33331924d6f6619335eed8a0371
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72030802"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861926"
 ---
 # <a name="user-mode-dump-files"></a>用户模式转储文件
 
@@ -22,7 +22,6 @@ ms.locfileid: "72030802"
 - [创建用户模式转储文件](#creating)
 
 有关分析转储文件的信息，请参阅[分析用户模式转储文件](analyzing-a-user-mode-dump-file.md)。
-
 
 ## <a name="span-idvarietiesspanspan-idvarietiesspan-varieties-of-user-mode-dump-files"></a><span id="varieties"></span><span id="VARIETIES"></span>各种用户模式转储文件
 
@@ -36,7 +35,6 @@ ms.locfileid: "72030802"
 
 **请注意**，可以通过分析转储文件来获取   多的信息。 但是，任何转储文件都不能提供与实际使用调试器直接调试故障一样多的信息。
 
-
 ## <a name="span-idfullspanspan-idfullspanfull-user-mode-dumps"></a><span id="full"></span><span id="FULL"></span>完全用户模式转储
 
 完整的用户*模式转储*是基本用户模式转储文件。
@@ -47,10 +45,7 @@ ms.locfileid: "72030802"
 
   **请注意**，尽管名称相同，但最大的 "小型转储" 文件实际上包含了比完整用户模式转储更多的信息。 例如， **dump/mf**或 **/ma**将创建比**dump/f**更大、更完整的文件。
 
-
 在用户模式下， **\[** <em>MiniOptions</em> **\]** 是最佳选择。 用此开关创建的转储文件的大小可能会很小到非常大。 通过指定正确的*MiniOptions* ，你可以精确控制所包含的信息。
-
-
 
 ## <a name="span-idminidumpsspanspan-idminidumpsspanminidumps"></a><span id="minidumps"></span><span id="MINIDUMPS"></span>小型转储
 
@@ -111,7 +106,7 @@ ms.locfileid: "72030802"
 <td align="left"><p>将所有提交的读写专用页面添加到小型转储。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>/md</strong></p></td>
+<td align="left"><p>/md</p></td>
 <td align="left"><p>将可执行映像内的所有读写数据段添加到小型转储。</p></td>
 </tr>
 <tr class="odd">
@@ -133,91 +128,19 @@ ms.locfileid: "72030802"
 </tbody>
 </table>
 
-
 这些选项可以组合在一起。 例如， **/mfiu**可用于创建相当大的小型转储，或命令 **。转储/mrR**可用于创建保留用户隐私的小型转储。 有关完整的语法详细信息，请参阅[**dump （创建转储文件）** ](-dump--create-dump-file-.md)。
-
 
 ## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>创建用户模式转储文件
 
-有多种不同的工具可用于创建用户模式转储文件： CDB、WinDbg、Windows 错误报告（WER）、UserDump 和 ADPlus。
+有多种不同的工具可用于创建用户模式转储文件： CDB、WinDbg 和 Procdump。
 
-有关通过 ADPlus 创建用户模式转储文件的信息，请参阅[adplus](adplus.md)。
+## <a name="span-idprocdumpspanspan-idprocdumpspanprocdump"></a><span id="procdump"></span><span id="Procdump"></span>ProcDump
 
-有关通过 WER 创建用户模式转储文件的信息，请参阅[Windows 错误报告](windows-error-reporting.md)。
+ProcDump 是一个命令行实用程序，其主要用途是监视应用程序的 CPU 峰值，并在高峰期间生成故障转储，管理员或开发人员可以使用这些功能来确定高峰的原因。 ProcDump 还包括挂起的窗口监视（使用 Windows 和任务管理器使用的窗口挂起定义）、未经处理的异常监视，并可基于系统性能计数器的值生成转储。 它还可以用作可嵌入到其他脚本中的常规进程转储实用工具。
 
+有关使用 Sysinternals ProcDump 实用工具创建用户模式转储文件的信息，请参阅[ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)。
 
-## <a name="span-idddk_choosing_the_best_tool_dbgspanspan-idddk_choosing_the_best_tool_dbgspanchoosing-the-best-tool"></a><span id="ddk_choosing_the_best_tool_dbg"></span><span id="DDK_CHOOSING_THE_BEST_TOOL_DBG"></span>选择最佳工具
-
-可以通过几种不同的工具来创建用户模式转储文件。 在大多数情况下，ADPlus 是使用的最佳工具。
-
-下表显示了每个工具的功能。
-
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">功能</th>
-<th align="left"><a href="adplus.md" data-raw-source="[ADPlus](adplus.md)">ADPlus</a></th>
-<th align="left"><a href="windows-error-reporting.md" data-raw-source="[Windows Error Reporting](windows-error-reporting.md)">Windows 错误报告</a></th>
-<th align="left"><a href="#cdb-windbg" data-raw-source="[CDB and WinDbg](#cdb-windbg)">CDB 和 WinDbg</a></th>
-<th align="left"><a href="#userdump" data-raw-source="[UserDump](#userdump)">UserDump</a></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>在应用程序崩溃时创建转储文件（事后调试）</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>在应用程序 "挂起" 时创建转储文件（停止响应但实际上不会崩溃）</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>在应用程序遇到异常时创建转储文件</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>在应用程序正常运行时创建转储文件</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>从在启动过程中失败的应用程序创建转储文件</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>是</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>收缩现有转储文件</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>否</p></td>
-<td align="left"><p>是</p></td>
-<td align="left"><p>否</p></td>
-</tr>
-</tbody>
-</table>
-
- 
 ## <a name="span-idcdb-windbgspanspan-idcdb-windbgspancdb-and-windbg"></a><span id="cdb-windbg"></span><span id="CDB-WINDBG"></span>CDB 和 WinDbg
-
 
 CDB 和 WinDbg 可以通过多种方式创建用户模式转储文件。
 
@@ -235,21 +158,12 @@ CDB 和 WinDbg 可以通过多种方式创建用户模式转储文件。
 
 CDB 和 WinDbg 还可用于*收缩*转储文件。 为此，请开始调试现有转储文件，然后使用**dump**命令创建大小较小的转储文件。
 
+## <a name="span-idcdb-windbgspanspan-idcdb-windbgspan-time-travel-debugging-ttd"></a><span id="cdb-windbg"></span><span id="CDB-WINDBG"></span>行程调试（TTD）
 
-## <a name="span-iduserdumpspanspan-iduserdumpspanuserdump"></a><span id="userdump"></span><span id="USERDUMP"></span>UserDump
+除了 CDB、WinDbg 和 Procdump 以外，调试用户模式应用程序的另一个选项是时间旅行调试（TTD）。 时间行程调试是一种工具，可让你记录正在运行的进程的执行，然后在以后向前和向后重播。 旅行调试（TTD）可让您通过 "倒带" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。
 
-UserDump 工具（Userdump）（也称为用户模式进程转储）可以创建用户模式转储文件。
+TTD 可让你返回时间，以便更好地了解导致错误的条件并多次重播，以了解如何最好地解决问题。
 
-UserDump 及其文档是 OEM 支持工具包的一部分。
+与故障转储文件相比，TTD 具有更多优点，这通常会导致最终失败导致的代码执行。
 
-有关详细信息和下载这些工具，请参阅[如何使用 Userdump 工具创建转储文件](https://go.microsoft.com/fwlink/p/?LinkId=241339)并按照该页上的说明进行操作。 此外，当 CDB 或 WinDbg 正在调试用户模式应用程序时，还可以使用[dump （创建转储文件）命令](-dump--create-dump-file-.md)创建转储文件。
-
-
-
-
- 
-
-
-
-
-
+有关时间行程调试（TTD）的详细信息，请参阅[行程调试-概述](time-travel-debugging-overview.md)。

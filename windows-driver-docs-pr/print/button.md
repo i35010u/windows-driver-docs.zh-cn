@@ -1,9 +1,9 @@
 ---
-title: Button 元素
-description: 所需的按钮元素在客户端计算机显示一个消息框中指定的一个按钮的特征。
+title: button 元素
+description: "\"必需\" 按钮元素指定客户端计算机上显示的消息框中按钮的特征。"
 ms.assetid: 3e210599-9412-4eea-a024-338e39852199
 keywords:
-- 打印设备的 button 元素
+- button 元素打印设备
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,21 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8abffb192f94b44696a93db9cb7c8e0e6a794be3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bb842dae8326970537c49e3162f193d2c11426f
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330349"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881917"
 ---
-# <a name="button-element"></a>Button 元素
+# <a name="button-element"></a>button 元素
 
 
-所需**按钮**元素在客户端计算机显示一个消息框中指定的一个按钮的特征。
+"必需"**按钮**元素指定客户端计算机上显示的消息框中按钮的特征。
 
-**按钮**中定义元素*asyncui*此 URI 处的命名空间： http://schemas.microsoft.com/2003/print/asyncui/v1/request。 （此资源可能不会在某些语言和国家/地区中可用。）
+在*asyncui*命名空间中的此 URI 处定义了**button**元素： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -36,7 +36,7 @@ ms.locfileid: "63330349"
   buttonID = "xs:string"/>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 <table>
@@ -48,7 +48,7 @@ ms.locfileid: "63330349"
 </colgroup>
 <thead>
 <tr class="header">
-<th>特性</th>
+<th>属性</th>
 <th>在任务栏的搜索框中键入</th>
 <th>必需</th>
 <th>描述</th>
@@ -58,25 +58,25 @@ ms.locfileid: "63330349"
 <tr class="odd">
 <td><p><strong>buttonID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
 <td><p></p>
-<p>必需的属性，指定当用户单击按钮时将返回到的打印机驱动程序的字符串。 此特性可以采用以下值之一：</p>
-IDOK 一个按钮具有名称"确定"将显示在消息框中。 当用户单击按钮时，消息框将返回字符串"IDOK"。
-IDCANCEL 一个具有名称"取消"按钮将显示在消息框中。 当用户单击按钮时，消息框将返回字符串"IDCANCEL"。</td>
+<p>一个必需的属性，该属性指定当用户单击按钮时将返回到打印机驱动程序的字符串。 此属性可以采用下列值之一：</p>
+IDOK 将在消息框中显示一个名为 "确定" 的按钮。 当用户单击该按钮时，消息框返回字符串 "IDOK"。
+IDCANCEL 将在消息框中显示一个名为 "CANCEL" 的按钮。 当用户单击该按钮时，消息框返回字符串 "IDCANCEL"。</td>
 </tr>
 <tr class="even">
 <td><p><strong>resourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>否</p></td>
+<td><p>无</p></td>
 <td><p></p>
-<p>一个可选属性，指定的资源 DLL，其中包含要在按钮上显示的文本。 此 DLL 应是打印机驱动程序的依赖文件和驱动程序资源文件夹 （例如，%systemroot%\system32\spool\drivers\w32x86\3) 中必须存在。</p></td>
+<p>一个可选属性，该属性指定包含要在按钮上显示的文本的资源 DLL。 此 DLL 应是打印机驱动程序的依赖文件，并且必须位于驱动程序资源文件夹中（例如，%SYSTEMROOT%\system32\spool\drivers\w32x86\3）。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>是</p></td>
+<td><p>“是”</p></td>
 <td><p></p>
-<p>指定要在按钮上显示的文本的所需的属性。 属性值的资源 DLL 中指定的文本字符串的位置。</p></td>
+<p>一个必需的属性，指定要在按钮上显示的文本。 属性值指定资源 DLL 中文本字符串的位置。</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,9 +102,9 @@ IDCANCEL 一个具有名称"取消"按钮将显示在消息框中。 当用户�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="buttons.md" data-raw-source="[&lt;strong&gt;buttons&lt;/strong&gt;](buttons.md)"><strong>buttons</strong></a></p></td>
+<td><p><a href="buttons.md" data-raw-source="[&lt;strong&gt;buttons&lt;/strong&gt;](buttons.md)"><strong>按钮</strong></a></p></td>
 <td><p></p>
-<p>必需的元素，用于指定一个或多个按钮的显示客户端计算机上的事件中的通知消息框。</p></td>
+<p>一个必需的元素，该元素指定客户端计算机上的事件通知消息框中显示的一个或多个按钮。</p></td>
 </tr>
 </tbody>
 </table>
@@ -117,7 +117,7 @@ IDCANCEL 一个具有名称"取消"按钮将显示在消息框中。 当用户�
 <a name="examples"></a>示例
 --------
 
-下面的代码示例演示如何使用**按钮**元素以显示**确定**并**取消**彼此的按钮。
+下面的代码示例演示如何使用**button**元素显示彼此相邻的 **"确定" 和 "** **取消**" 按钮。
 
 ```xml
 <?xml version="1.0" ?>
@@ -141,6 +141,6 @@ IDCANCEL 一个具有名称"取消"按钮将显示在消息框中。 当用户�
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [buttons](buttons.md)

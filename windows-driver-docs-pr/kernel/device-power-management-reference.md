@@ -6,12 +6,12 @@ keywords:
 ms.date: 12/17/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 309070d60180569bbccecc1d805c3a96da6827d0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9ddd586e4d302b1994ae118582e429d4a5fda90a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838746"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860567"
 ---
 # <a name="device-power-management-reference"></a>设备电源管理参考
 
@@ -41,7 +41,7 @@ ms.locfileid: "72838746"
 |[**PoFxSetComponentLatency**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsetcomponentlatency)|**PoFxSetComponentLatency**例程指定在从空闲条件转换到指定组件中的活动条件时可容忍的最大延迟。|
 |[**PoFxSetComponentResidency**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsetcomponentresidency)|**PoFxSetComponentResidency**例程设置组件进入空闲状态后，组件可能保持空闲状态的估计时间。|
 |[**PoFxSetComponentWake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsetcomponentwake)|**PoFxSetComponentWake**例程指示当组件进入空闲状态时，驱动程序是否会将指定的组件带到指定组件的唤醒状态。|
-|[**PoFxSetDeviceIdleTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsetdeviceidletimeout)|**PoFxSetDeviceIdleTimeout**例程指定当电源管理框架（PoFx）调用驱动程序的[*DevicePowerNotRequiredCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_device_power_not_required_callback)时，从设备的最后一个组件进入空闲状态的最小时间间隔。回调例程。|
+|[**PoFxSetDeviceIdleTimeout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsetdeviceidletimeout)|**PoFxSetDeviceIdleTimeout**例程指定当电源管理框架（PoFx）调用驱动程序的[*DevicePowerNotRequiredCallback*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_device_power_not_required_callback)回调例程时，从设备的最后一个组件进入空闲状态的最小时间间隔。|
 |[**PoFxStartDevicePowerManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxstartdevicepowermanagement)|**PoFxStartDevicePowerManagement**例程使用电源管理框架（PoFx）完成设备注册，并启动设备电源管理。|
 |[**PoFxUnregisterDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxunregisterdevice)|**PoFxUnregisterDevice**例程从电源管理框架（PoFx）中删除设备注册。|
 
@@ -57,7 +57,7 @@ ms.locfileid: "72838746"
 |[ComponentPerfStateCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_component_perf_state_callback)|*ComponentPerfStateCallback*回调例程通知驱动程序其更改组件的性能状态的请求已完成。|
 |[DevicePowerNotRequiredCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_device_power_not_required_callback)|*DevicePowerNotRequiredCallback*回调例程通知设备驱动程序，设备不需要保持 D0 电源状态。|
 |[DevicePowerRequiredCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_device_power_required_callback)|*DevicePowerRequiredCallback*回调例程通知设备驱动程序，设备必须进入并保持 D0 电源状态。|
-|[PowerControlCallback](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_power_control_callback)|*PowerControlCallback*回调例程执行电源管理框架（PoFx）请求的电源控制操作。|
+|[PowerControlCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_power_control_callback)|*PowerControlCallback*回调例程执行电源管理框架（PoFx）请求的电源控制操作。|
 
 ## <a name="device-power-management-structures"></a>设备电源管理结构
 
@@ -69,9 +69,9 @@ ms.locfileid: "72838746"
 |[PO_FX_COMPONENT_IDLE_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_component_idle_state)|**PO_FX_COMPONENT_IDLE_STATE**结构指定设备中组件的 FX 电源状态的属性。|
 |[PO_FX_COMPONENT_PERF_INFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_component_perf_info)|**PO_FX_COMPONENT_PERF_INFO**结构描述设备中单个组件的所有性能状态集。|
 |[PO_FX_COMPONENT_PERF_SET](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_component_perf_set)|**PO_FX_COMPONENT_PERF_SET**结构表示设备中单个组件的一组性能状态。|
-|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_device_v2)   [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)|**PO_FX_DEVICE**结构描述了电源管理框架（PoFx）设备的电源特性。|
+|[PO_FX_DEVICE_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_device_v1)   [PO_FX_DEVICE_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_device_v2)   [PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)|**PO_FX_DEVICE**结构描述了设备到电源管理框架（PoFx）的电源特性。|
 |[PO_FX_PERF_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_perf_state)|**PO_FX_PERF_STATE**结构表示设备中单个组件的性能状态。|
-|[PO_FX_PERF_STATE_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_perf_state_change)|**PO_FX_PERF_STATE_CHANGE**结构包含有关通过调用[PoFxIssueComponentPerfStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxissuecomponentperfstatechange)或[PoFxIssueComponentPerfStateChangeMultiple](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)请求的性能状态更改的信息例程.
+|[PO_FX_PERF_STATE_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_po_fx_perf_state_change)|**PO_FX_PERF_STATE_CHANGE**结构包含有关通过调用[PoFxIssueComponentPerfStateChange](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxissuecomponentperfstatechange)或[PoFxIssueComponentPerfStateChangeMultiple](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxissuecomponentperfstatechangemultiple)例程请求的性能状态的更改的信息。
 
 ## <a name="device-power-management-enumerations"></a>设备电源管理枚举
 
@@ -97,10 +97,10 @@ ms.locfileid: "72838746"
 
 |Constant|描述|
 |----|----|
-|PO_FX_FLAG_BLOCKING|使条件更改同步。 如果设置了此标志，则在组件硬件完成转换为新的条件之前，请求条件更改的例程不会将控制返回给调用驱动程序。 仅当调用方 < 在 DISPATCH_LEVEL 上运行时，才可以使用此标志。|
+|PO_FX_FLAG_BLOCKING|使条件更改同步。 如果设置了此标志，则在组件硬件完成转换为新的条件之前，请求条件更改的例程不会将控制返回给调用驱动程序。 仅当调用方 < DISPATCH_LEVEL 上运行时，才可以使用此标志。|
 |PO_FX_FLAG_ASYNC_ONLY|将条件更改为完全异步。 如果设置了此标志，则调用驱动程序的回调例程将从线程（其中调用用于请求条件更改的例程）以外的线程调用。 因此，请求条件更改的例程始终以异步方式返回，而不等待回调完成。|
 
-#### <a name="po_fx_flag_xxx-remarks"></a>PO_FX_FLAG_XXX 备注
+#### <a name="po_fx_flag_xxx-remarks"></a>PO_FX_FLAG_XXX 的备注
 
 可以将以下例程的 Flags 参数设置为**PO_FX_FLAG_XXX**常数：
 
@@ -115,11 +115,11 @@ ms.locfileid: "72838746"
 
 |版本|标头|
 |----|----|
-|从 Windows 8 开始支持。|Wdm。h|
+|从 Windows 8 开始支持。|Wdm.h|
 
 ### <a name="po_fx_flag_perf_xxx-flag-bits"></a>PO_FX_FLAG_PERF_XXX 标志位
 
-**PO_FX_FLAG_PERF_XXX**常量是用于定义电源管理框架（PoFx）如何管理设备组件的性能状态的标志位。
+**PO_FX_FLAG_PERF_XXX**常量是用于定义电源管理框架（PoFx）管理设备组件的性能状态的方式的标志位。
 
 ```c++
 #define PO_FX_FLAG_PERF_PEP_OPTIONAL   0x1
@@ -133,7 +133,7 @@ ms.locfileid: "72838746"
 |**PO_FX_FLAG_PERF_QUERY_ON_F0**|2（0x2）|对于某些设备，PEP 可能需要在空闲组件时，将组件的性能状态设置为特定的性能状态（称为 "*标称性能状态*"）。 如果组件包含标称性能状态，则驱动程序将设置此标志，在这种情况下，PoFx 将在组件转换为 F0 时查询 PEP 来确定当前性能状态。|
 |**PO_FX_FLAG_PERF_QUERY_ON_ALL_IDLE_STATES**|4（0x4）|对于某些设备，在将组件转换为空闲状态时，PEP 可能需要将组件的性能状态集设置为特定的性能状态（称为*标称性能状态*）。 驱动程序如果此组件包含标称性能状态，则会设置此标志，在这种情况下，PoFx 将在该组件在空闲状态之间转换时查询 PEP 来确定当前性能状态。|
 
-#### <a name="po_fx_flag_perf_xxx-remarks"></a>PO_FX_FLAG_PERF_XXX 备注
+#### <a name="po_fx_flag_perf_xxx-remarks"></a>PO_FX_FLAG_PERF_XXX 的备注
 
 [PoFxRegisterComponentPerfStates](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregistercomponentperfstates)例程的 Flags 参数可以设置为**PO_FX_FLAG_PERF_XXX**常量。
 
@@ -141,4 +141,4 @@ ms.locfileid: "72838746"
 
 |要求|版本|
 |----|----|
-|从 Windows 10 开始支持。|Wdm。h|
+|从 Windows 10 开始支持。|Wdm.h|

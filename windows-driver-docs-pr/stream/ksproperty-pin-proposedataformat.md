@@ -14,22 +14,18 @@ api_type:
 - HeaderDef
 ms.date: 12/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8335ad13571e10391acc240298eba3e597b9b0c3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: eabb47c31cfae10f60962a74ce70e42f81bfd602
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838841"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881893"
 ---
 # <a name="ksproperty_pin_proposedataformat"></a>KSPROPERTY\_PIN\_PROPOSEDATAFORMAT
 
-
 客户端使用 KSPROPERTY\_PIN\_PROPOSEDATAFORMAT 属性来确定 pin 工厂实例化的 pin 是否支持特定的数据格式。
 
-## <span id="ddk_ksproperty_pin_proposedataformat_ks"></span><span id="DDK_KSPROPERTY_PIN_PROPOSEDATAFORMAT_KS"></span>
-
-
-### <a name="usage-summary-table"></a>使用情况摘要表
+## <a name="usage-summary-table"></a>使用情况摘要表
 
 <table>
 <colgroup>
@@ -59,28 +55,21 @@ ms.locfileid: "72838841"
 </tbody>
 </table>
 
- 
+## <a name="remarks"></a>备注
 
-<a name="remarks"></a>备注
--------
-
-KSPROPERTY_PIN_PROPOSEDATAFORMAT 包括 KSDATAFORMAT 类型的结构，指定建议的数据格式。 使用 KSP_PIN 指定此属性，其中成员指定相关的 PIN 工厂。
+KSPROPERTY_PIN_PROPOSEDATAFORMAT 包括 KSDATAFORMAT 类型的结构，并指定建议的数据格式。 使用 KSP_PIN 指定此属性，其中成员指定相关的 PIN 工厂。
 
 KSPROPERTY\_PIN\_PROPOSEDATAFORMAT 包含[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)类型的结构，指定建议的数据格式。
 
-Windows 7 和更高版本的 Windows 支持[**KSPROPERTY\_类型\_GET**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier) 。 在 Windows Vista KSPROPERTY 中，*不支持* **\_GET\_类型**。 
+Windows 7 和更高版本的 Windows 支持[**KSPROPERTY\_类型\_GET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier) 。 在 Windows Vista KSPROPERTY 中，*不支持* **\_GET\_类型**。
 
-使用此属性的**KSPROPERTY_TYPE_GET**允许音频驱动程序提供有关 pin 的默认数据格式的信息。 **KSPROPERTY_TYPE_GET**对于此属性是可选的，除非该驱动程序支持[**KSEVENT_PINCAPS_FORMATCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-formatchange)。 
- 
+使用此属性**KSPROPERTY_TYPE_GET**允许音频驱动程序提供有关 pin 的默认数据格式的信息。 **KSPROPERTY_TYPE_GET**对于此属性是可选的，除非该驱动程序支持[**KSEVENT_PINCAPS_FORMATCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-formatchange)。
 
-如果可以将 pin 设置为或使用建议的数据格式打开，则在 KSPROPERTY_TYPE_SET 中使用此属性时，KS 筛选器将返回状态\_成功。 如果无法将 pin 设置为建议的数据格式，则返回 STATUS_NO_MATCH。 对于其他任何失败，将返回相应的错误。 如果驱动程序支持[**KSPROPERTY_AUDIOSIGNALPROCESSING_MODES**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiosignalprocessing-modes)，则此属性应返回 STATUS_SUCCESS，前提是任何音频信号处理模式都支持该格式。 
+如果可以将 pin 设置为或使用建议的数据格式打开，则 KS 筛选器将返回状态\_KSPROPERTY_TYPE_SET 成功。 如果无法将 pin 设置为建议的数据格式，则它将返回 STATUS_NO_MATCH。 对于其他任何失败，将返回相应的错误。 如果驱动程序支持[**KSPROPERTY_AUDIOSIGNALPROCESSING_MODES**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiosignalprocessing-modes)，则此属性应返回 STATUS_SUCCESS 如果任何音频信号处理模式支持该格式。
 
+使用带有此属性的 KSPROPERTY_TYPE_SET 实际上不会更改数据格式。 客户端使用[**KSPROPERTY\_连接\_DATAFORMAT**](ksproperty-connection-dataformat.md)来更改数据格式。 对于此属性， **KSPROPERTY_TYPE_SET**是可选的。
 
-对此属性使用 KSPROPERTY_TYPE_SET 并不会实际更改数据格式。 客户端使用[**KSPROPERTY\_连接\_DATAFORMAT**](ksproperty-connection-dataformat.md)来更改数据格式。 对于此属性， **KSPROPERTY_TYPE_SET**是可选的。
-
-
-<a name="requirements"></a>要求
-------------
+## <a name="requirements"></a>要求
 
 <table>
 <colgroup>
@@ -97,20 +86,14 @@ Windows 7 和更高版本的 Windows 支持[**KSPROPERTY\_类型\_GET**](https:/
 
 ## <a name="see-also"></a>另请参阅
 
-
 [**KSP\_PIN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)
 
 [**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)
- 
+
 [**KSEVENT_PINCAPS_FORMATCHANGE**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-pincaps-formatchange)
 
-[**KS 属性**](https://docs.microsoft.com/en-us/windows-hardware/drivers/stream/ks-properties)
+[**KS 属性**](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-properties)
 
 [**KSPROPERTY\_类型\_GET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
- 
+
 [**KSPROPERTY_AUDIOSIGNALPROCESSING_MODES**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiosignalprocessing-modes)
-
-
-
-
-

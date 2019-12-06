@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 04/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ed3caac09ef16e303f09a560e41593b542884b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e77b10574ff74e44afa604235cb5a8761df554a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829273"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862206"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -125,7 +125,7 @@ Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 
 
 ![假设内核模式驱动程序的示例数据流图表](images/sampledataflowdiagramkernelmodedriver.gif)
 
-Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关工具来提高产品的安全性。 有关详细信息，请参阅[适用于 oem 的 SDL 建议](https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/security-overview#sdl-recommendations-for-oems)。
+Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关工具来提高产品的安全性。 有关详细信息，请参阅[适用于 oem 的 SDL 建议](https://docs.microsoft.com/windows-hardware/drivers/bringup/security-overview#sdl-recommendations-for-oems)。
 
 
 ## <a name="span-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanfollow-driver-secure-coding-guidelines"></a><span id="DriverSecurityCodePractices"></span><span id="driversecuritycodepractices"></span><span id="DRIVERSECURITYCODEPRACTICES"></span>遵循驱动程序安全编码准则
@@ -150,7 +150,7 @@ Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。 
 
-|IOCTL 缓冲区类型 | 摘要                                    | 更多相关信息 |  
+|IOCTL 缓冲区类型 | 摘要                                    | 有关详细信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
@@ -369,7 +369,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 有关 Device Guard 的一般信息，请参阅[Windows 10 中与设备保护的驱动程序兼容性](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。
 
-有关相关系统基础安全测试的详细信息，请参阅[设备保护性测试](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)和[与设备保护的驱动程序兼容性](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)。
+有关相关系统基础安全测试的详细信息，请参阅[设备保护性测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)和[与设备保护的驱动程序兼容性](https://docs.microsoft.com/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)。
 
 
 
@@ -394,7 +394,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 有关 NDIS 驱动程序安全的信息，请参阅[网络驱动程序的安全问题](https://docs.microsoft.com/windows-hardware/drivers/network/security-issues-for-network-drivers)。
 
-*显示器*
+*Display*
 
 有关显示驱动程序安全性的信息，请参阅 &lt;内容挂起&gt;。
 
@@ -480,7 +480,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅[使用 SAL 注释减少 C/C++代码缺陷](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)和[用于 Windows 驱动程序的 SAL 2.0 批注](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)。
 
 有关 SAL 的一般信息，请参阅 OSR 中的这篇文章。
-https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/
+[https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/ )
 
 ## <a name="span-idsdvspanspan-idsdvspanuse-static-driver-verifier-to-check-for-vulnerabilities"></a><span id="SDV"></span><span id="sdv"></span>使用静态驱动程序验证程序检查是否存在漏洞
 
@@ -623,11 +623,11 @@ All Scanned Items
 
  你还可以使用驱动程序验证程序附带的[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)处理。
 
-混乱（并发硬件和操作系统）测试会同时运行各种 PnP 驱动程序测试、设备驱动程序模糊测试和电源系统测试。 有关详细信息，请参阅[混乱的测试（设备基础）](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/chaos-tests--device-fundamentals-)。
+混乱（并发硬件和操作系统）测试会同时运行各种 PnP 驱动程序测试、设备驱动程序模糊测试和电源系统测试。 有关详细信息，请参阅[混乱的测试（设备基础）](https://docs.microsoft.com/windows-hardware/drivers/devtest/chaos-tests--device-fundamentals-)。
 
-设备基础的渗透测试执行各种形式的输入攻击，这是安全测试的关键组成部分。 攻击和渗透测试可帮助识别软件接口中的漏洞。 有关详细信息，请参阅[渗透测试（设备基础）](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)。
+设备基础的渗透测试执行各种形式的输入攻击，这是安全测试的关键组成部分。 攻击和渗透测试可帮助识别软件接口中的漏洞。 有关详细信息，请参阅[渗透测试（设备基础）](https://docs.microsoft.com/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)。
 
-使用[Device Guard 合规性测试](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)以及本文中所述的其他工具，以确认您的驱动程序与 Device Guard 兼容。
+使用[Device Guard 合规性测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)以及本文中所述的其他工具，以确认您的驱动程序与 Device Guard 兼容。
 
 
 **自定义和域特定的测试工具**
@@ -722,7 +722,7 @@ SAFECode- [https://safecode.org/](https://safecode.org/)
 *开发包含 Windows Driver Foundation （开发人员参考）* 、Orwick 和专家 Smith 的驱动程序 
 
 
-**方面**
+**培训**
 
 可从以下供应商获取 Windows 驱动程序课堂培训：
 

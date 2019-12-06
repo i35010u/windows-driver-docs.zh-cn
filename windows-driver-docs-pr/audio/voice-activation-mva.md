@@ -4,12 +4,12 @@ description: 多个语音助手平台为除 Cortana 以外的其他语音助手�
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f9aadf0546915e0eab08aeeecee3d0ef470896
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c595ae582994d2aff2d8f8a6d0acaa4b824473ca
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829996"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860563"
 ---
 # <a name="multiple-voice-assistant"></a>多语音助手
 
@@ -61,7 +61,7 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 
 若要实现硬件关键字 spotter （HW KWS） SoC 供应商，必须完成以下任务。
 
-- 根据本主题后面所述的 SYSVAD 示例创建自定义关键字检测器。 你将在 COM DLL 中实现这些方法，如[IEvent 检测器 OEM 适配器接口](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)中所述。
+- 根据本主题后面所述的 SYSVAD 示例创建自定义关键字检测器。 你将在 COM DLL 中实现这些方法，如[IEvent 检测器 OEM 适配器接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)中所述。
 - 实现[WAVERT 增强](#wavert_enhancements)中所述的声波 RT 增强功能。
 - 提供 INF 文件项来描述用于关键字检测的任何自定义项。
     - [PKEY\_FX\_KeywordDetector\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-streameffectclsid)
@@ -76,7 +76,7 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 - 中（音频处理对象）必须提供以下效果： 
     -   AEC
     -   AGC
-    -   N
+    -   NS
 -   语音处理模式的效果必须由 MFX APO 报告。
 -   APO 可以将格式转换作为 MFX 执行。   
 -   APO 必须输出以下格式： 
@@ -89,17 +89,17 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 
 **AEC**
 
-在捕获突发音频时，它可以由 DSP 执行，也可以在以后通过软件 APO 来完成。 若要使用 KWS 突发数据执行软件 AEC，需要在捕获突发数据时具有相应的环回音频。 为此，会为突发输出创建自定义音频格式，这会将环回音频交错为突发音频数据。 Microsoft AEC APO 知道这一交错格式，可以使用它来执行 AEC。 有关详细信息，请参阅[KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)。 
+在捕获突发音频时，它可以由 DSP 执行，也可以在以后通过软件 APO 来完成。 若要使用 KWS 突发数据执行软件 AEC，需要在捕获突发数据时具有相应的环回音频。 为此，会为突发输出创建自定义音频格式，这会将环回音频交错为突发音频数据。 Microsoft AEC APO 知道这一交错格式，可以使用它来执行 AEC。 有关详细信息，请参阅[KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)。 
 
-**检查**
+**验证**
 
-通过[语音激活管理器2测试](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)来验证[KSPROPSETID_SOUNDDETECTOR2](kspropsetid-sounddetector2.md)属性的硬件支持。
+通过[语音激活管理器2测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)来验证[KSPROPSETID_SOUNDDETECTOR2](kspropsetid-sounddetector2.md)属性的硬件支持。
 
 ## <a name="span-idsample_code_overviewspansample-code-overview"></a><span id="sample_code_overview"></span>示例代码概述
 
 在 GitHub 上实现语音激活的音频驱动程序的示例代码是 SYSVAD 虚拟音频适配器示例的一部分。 建议使用[此代码](https://github.com/Microsoft/Windows-driver-samples/blob/master/audio/sysvad/)作为起点。 
 
-有关 SYSVAD 示例音频驱动程序的详细信息，请参阅[示例音频驱动程序](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/sample-audio-drivers)。
+有关 SYSVAD 示例音频驱动程序的详细信息，请参阅[示例音频驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/sample-audio-drivers)。
 
 ## <a name="span-idkeyword_recognition_system_informationspankeyword-recognition-system-information"></a><span id="keyword_recognition_system_information"></span>关键字识别系统信息
 
@@ -107,8 +107,8 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 
 用于启用语音激活的音频堆栈外部接口用作语音平台和音频驱动程序的通信管道。 外部接口分为三部分。
 
-- [*事件检测程序设备驱动程序接口（DDI）* ](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 事件检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter （KWS）。  它还可由驱动程序用来通知系统检测事件。
-- [*IEvent 检测到 OEM 适配器 DLL*](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 此 DLL 实现了一个 COM 接口，用于改编驱动程序特定的不透明数据以供 OS 用于帮助进行关键字检测。
+- [*事件检测程序设备驱动程序接口（DDI）* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 事件检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter （KWS）。  它还可由驱动程序用来通知系统检测事件。
+- [*IEvent 检测到 OEM 适配器 DLL*](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nn-eventdetectoroemadapter-ieventdetectoroemadapter)。 此 DLL 实现了一个 COM 接口，用于改编驱动程序特定的不透明数据以供 OS 用于帮助进行关键字检测。
 -  *WaveRT 流增强功能*。 增强功能使得音频驱动程序能够突发地流式传输来自关键字检测的缓冲音频数据。
 
 **音频终结点属性**
@@ -121,14 +121,14 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 
 属性为： [ **KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)
 
-使用[KSSOUNDDETECTORPROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)数据结构调用所有[**KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)属性。 此数据结构包含 KSPROPERTY 以及要识别、重置、检测到的关键字的事件 id。
+所有[**KSPROPSETID_SoundDetector2**](kspropsetid-sounddetector2.md)属性都是使用[KSSOUNDDETECTORPROPERTY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-kssounddetectorproperty)数据结构调用的。 此数据结构包含 KSPROPERTY 以及要识别、重置、检测到的关键字的事件 id。
 
-- 支持的关键字类型- [**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此属性由操作系统设置，用于配置要检测的关键字。
--   关键字模式 Guid 列表- [**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
-- [**KSPROPERTY\_SOUNDDETECTOR\_** ](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。 （操作系统必须进行重置。）
+- 支持的关键字类型- [**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此属性由操作系统设置，用于配置要检测的关键字。
+-   关键字模式 Guid 列表- [**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
+- [**KSPROPERTY\_SOUNDDETECTOR\_** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。 （操作系统必须进行重置。）
 - 匹配结果- [**KSPROPERTY\_SOUNDDETECTOR\_reset**](ksproperty-sounddetector-reset.md)用于在启动时重置声音检测程序。
 
-在关键字检测时，会发送包含 KSNOTIFICATIONID_SoundDetector 的 PNP 通知。 注意：这不是 KSEvent，而是使用负载通过 IoReportTargetDeviceChangeAsynchronous 发送的 PNP 事件。
+在关键字检测时，将发送包含 KSNOTIFICATIONID_SoundDetector 的 PNP 通知。 注意：这不是 KSEvent，而是使用负载通过 IoReportTargetDeviceChangeAsynchronous 发送的 PNP 事件。
 
 KSNOTIFICATIONID_SoundDetector 在 ksmedia 中定义，如下所示。
 
@@ -145,7 +145,7 @@ DEFINE_GUIDSTRUCT("6389D844-BB32-4C4C-A802-F4B4B77AFEAD", KSNOTIFICATIONID_Sound
 *系统启动*
 
 1. OS 将发送[**KSPROPERTY\_SOUNDDETECTOR\_RESET**](ksproperty-sounddetector-reset.md) ，以清除任何以前的检测状态，将所有检测程序重置为已卸下并清除以前的模式集。
-2. OS 查询[**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/ksproperty-sounddetector)以检索事件检测器 OEM 适配器的 clsid。
+2. OS 查询[**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector)以检索事件检测器 OEM 适配器的 clsid。
 3. 操作系统使用事件检测到 oem 适配器来检索支持的关键字和语言的列表。
 4. 操作系统注册驱动程序发送的自定义 PNP 通知
 5. OS 设置必需的关键字模式。
@@ -166,7 +166,7 @@ DEFINE_GUIDSTRUCT("6389D844-BB32-4C4C-A802-F4B4B77AFEAD", KSNOTIFICATIONID_Sound
 
 ## <a name="span-idievent_detectorspanievent-detector-oem-adapter-interface"></a><span id="ievent_detector"></span>IEvent 检测器 OEM 适配器接口
 
-OEM 提供一个 COM 对象实现，它充当 OS 和驱动程序之间的中介，有助于计算或分析通过[**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)写入和读取到音频驱动程序的不透明数据。和[**KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)。
+OEM 提供一个 COM 对象实现，它充当 OS 和驱动程序的中介，有助于计算或分析通过[**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)和[**KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)写入和读取到音频驱动程序的不透明数据。
 
 COM 对象的 CLSID 是[**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)返回的检测程序模式类型 GUID。 OS 调用 CoCreateInstance，传递模式类型 GUID 来实例化与关键字模式类型兼容的适当 COM 对象，并调用对象的 IEventDetectorOemAdapter 接口上的方法。
 
@@ -182,13 +182,13 @@ OEM 的实现可以选择任何 COM 线程模型。
 
 实现以下方法。
 
--   [**IEventDetectorOemAdapter::BuildArmingPatternData**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-buildarmingpatterndata)
--   [**IEventDetectorOemAdapter::ComputeAndAddUserModelData**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-computeandaddusermodeldata)
--   [**IEventDetectorOemAdapter：： GetCapabilities**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-getcapabilities)
--   [**IEventDetectorOemAdapter::GetCapabilitiesForLanguage**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-getcapabilitiesforlanguage)
--   [**IEventDetectorOemAdapter：:P arseDetectionResultData**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-parsedetectionresultdata)
--   [**IEventDetectorOemAdapter::ReportOSDetectionResult**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-parsedetectionresultdata)
--   [**IEventDetectorOemAdapter::VerifyUserEventData**](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-verifyusereventdata)
+-   [**IEventDetectorOemAdapter::BuildArmingPatternData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-buildarmingpatterndata)
+-   [**IEventDetectorOemAdapter::ComputeAndAddUserModelData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-computeandaddusermodeldata)
+-   [**IEventDetectorOemAdapter：： GetCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-getcapabilities)
+-   [**IEventDetectorOemAdapter::GetCapabilitiesForLanguage**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-getcapabilitiesforlanguage)
+-   [**IEventDetectorOemAdapter：:P arseDetectionResultData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-parsedetectionresultdata)
+-   [**IEventDetectorOemAdapter::ReportOSDetectionResult**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-parsedetectionresultdata)
+-   [**IEventDetectorOemAdapter::VerifyUserEventData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/eventdetectoroemadapter/nf-eventdetectoroemadapter-ieventdetectoroemadapter-verifyusereventdata)
 
 ## <a name="span-idwavert_enhancementsspanspan-idwavert_enhancementsspanspan-idwavert_enhancementsspanwavert-enhancements"></a><span id="WAVERT_Enhancements"></span><span id="wavert_enhancements"></span><span id="WAVERT_ENHANCEMENTS"></span>WAVERT 增强功能
 
@@ -204,7 +204,7 @@ OEM 的实现可以选择任何 COM 线程模型。
 
 **DEVPKEY\_KsAudio\_PacketSize\_约束**
 
-DEVPKEY\_KsAudio\_PacketSize\_约束属性值包含一个[**KsAudio\_PacketSize\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)用于描述物理硬件约束的约束结构（即由于将数据从 WaveRT 缓冲区传输到音频硬件）。 该结构包含0个或多个[**KSAUDIO\_PACKETSIZE\_\_PROCESSINGMODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)的数组，这些结构描述特定于任何信号处理模式的约束。 驱动程序在调用[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
+DEVPKEY\_KsAudio\_PacketSize\_约束属性值包含一个[**KsAudio\_PacketSize\_约束**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)结构，用于描述物理硬件约束（例如，由于将数据从 WaveRT 缓冲区传输到音频硬件的机制）。 该结构包含0个或多个[**KSAUDIO\_PACKETSIZE\_\_PROCESSINGMODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)的数组，这些结构描述特定于任何信号处理模式的约束。 驱动程序在调用[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
 
 **IMiniportWaveRTInputStream**
 
@@ -235,7 +235,7 @@ WaveRT 微型端口可以选择实现此接口，以便建议从 OS 写入进度
 1. 在流转换到 KSSTATE\_运行后，驱动程序会立即设置缓冲区通知事件，因为它已经有可用数据。
 2. 在此事件中，操作系统将调用 GetReadPacket （）来获取有关可用数据的信息。
 
-    a. 驱动程序将返回有效捕获的数据的数据包编号（0表示从\_KSSTATE 转换到 KSSTATE\_运行后的第一个数据包），操作系统可以在 WaveRT 缓冲区内派生数据包位置以及数据包位置相对于流的开头。
+    a. 驱动程序将返回有效捕获的数据的数据包编号（0表示从\_KSSTATE 转换到 KSSTATE\_运行后的第一个数据包），操作系统可从该位置派生 WaveRT 缓冲区内的数据包位置以及相对于流开始的数据包位置。
 
     b. 驱动程序还会返回性能计数器值，该值对应于数据包中第一个样本的采样瞬时。 请注意，此性能计数器值可能相对较旧，这取决于在硬件或驱动程序（WaveRT 缓冲区之外）缓冲捕获数据的程度。
 

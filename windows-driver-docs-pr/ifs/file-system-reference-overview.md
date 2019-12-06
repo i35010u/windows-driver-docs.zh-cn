@@ -4,16 +4,16 @@ description: 文件系统参考资料概述
 ms.assetid: 9dc4a3fa-3ce1-4710-aab2-0658225733a4
 ms.date: 09/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 099939a97ad5b980f99ae930e2145140d52e443c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bd2e6701aec97b65bd55ac95b27c9aad1371a822
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841403"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863137"
 ---
 # <a name="file-system-reference-material-overview"></a>文件系统参考资料概述
 
-本部分分类了可用于与文件系统相关的驱动程序开发的各种编程函数、结构、IOCTLs 和枚举。 请参阅[Windows 驱动程序工具包的编程参考-> 可安装的文件系统](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/_ifsk/)，用于实际引用页面，这些页面按 WDK 附带的标头文件进行组织。
+本部分分类了可用于与文件系统相关的驱动程序开发的各种编程函数、结构、IOCTLs 和枚举。 请参阅[Windows 驱动程序工具包的编程参考-> 可安装的文件系统](https://docs.microsoft.com/windows-hardware/drivers/ddi/_ifsk/)，用于实际引用页面，这些页面按 WDK 附带的标头文件进行组织。
 
 ## <a name="functions"></a>函数
 
@@ -41,7 +41,7 @@ ms.locfileid: "72841403"
 
 [安全参考监视器支持例程](security-reference-monitor-support-routines.md)
 
-## <a name="callbacks"></a>回电
+## <a name="callbacks"></a>回调
 
 微筛选器驱动程序回调例程
 

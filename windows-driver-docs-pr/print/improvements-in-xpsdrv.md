@@ -4,12 +4,12 @@ description: 本主题提供有关对 XPSDrv 呈现体系结构进行的更新�
 ms.assetid: 5D76ECA2-C5F6-47E4-BC05-B5137AD4196B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ff7a5d3cec465f7e850937d20b4aa57940f22a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb8e4d193c6638a321bfc49e9034e6b7f581a324
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842311"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881882"
 ---
 # <a name="improvements-in-xpsdrv"></a>XPSDrv 的改进
 
@@ -17,7 +17,7 @@ ms.locfileid: "72842311"
 
 ## <a name="xps-format"></a>XPS 格式
 
-XPS 打印 API 和/或打印筛选器管道将在[Microsoft Xml 纸张规范 1.0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85)) （MS xp）和[OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm) （ECMA-388）之间无缝转换。 除非另行指定，否则 v4 打印驱动程序默认使用 MS XP。 使用清单指令 XpsFormat，驱动程序可能会选择支持一种或两种可用的 XPS 格式。 有关 OpenXPS 支持的详细信息，请参阅[Windows 中的 OpenXPS 支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)。
+XPS 打印 API 和/或打印筛选器管道将在[MICROSOFT XML 纸张规范 1.0](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614032(v=vs.85)) （MS xp）和[OpenXPS](https://www.ecma-international.org/publications/standards/Ecma-388.htm) （ECMA-388）之间无缝转换。 除非另行指定，否则 v4 打印驱动程序默认使用 MS XP。 使用清单指令 XpsFormat，驱动程序可能会选择支持一种或两种可用的 XPS 格式。 有关 OpenXPS 支持的详细信息，请参阅[Windows 中的 OpenXPS 支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)。
 
 ## <a name="xps-rasterization-service-improvements"></a>XPS 光栅化服务改进
 
@@ -41,11 +41,11 @@ Windows 8 中引入了[IPrintCoreHelperUni2](https://docs.microsoft.com/windows-
 
 [IPrintCoreHelperUni2](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni2)  
 
-[Microsoft Xml 纸张规范1。0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85))  
+[Microsoft XML 纸张规范1。0](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614032(v=vs.85))  
 
 [本机像素格式概述](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)  
 
-[OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm)  
+[OpenXPS](https://www.ecma-international.org/publications/standards/Ecma-388.htm)  
 
 [Windows 中的 OpenXPS 支持](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)  
 

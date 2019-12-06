@@ -1,501 +1,466 @@
 ---
 title: 支持的 PrintTicket 功能
-description: 本部分提供有关支持的标准 XPS 筛选器 PrintTicket 功能的信息。
+description: 本部分提供有关标准 XPS 筛选器支持的 PrintTicket 功能的信息。
 ms.assetid: 6D1AD770-D4BA-4BDC-886A-C5C36A09BB0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3390095e14b175eb411bce8c4de07a490e727ed5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20ef6c4698a744ad8efe77655fac2c05854f04e1
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331759"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881902"
 ---
 # <a name="supported-printticket-features"></a>支持的 PrintTicket 功能
 
+本部分提供有关标准 XPS 筛选器支持的 PrintTicket 功能的信息。
 
-本部分提供有关支持的标准 XPS 筛选器 PrintTicket 功能的信息。
-
-所有这些功能有导致 XPS 筛选器来改变所生成的 PDL 命令的效果。 PDL 命令都由筛选器本身也由设备 GPD/PPD，这些功能仍会导致 XPS 筛选器，以改变 PDL 命令。 可以打印架构 (psk) 的关键字命名空间中找到的所有元素 （功能、 选项、 ScoredProperties、 参数） 的以下各节中引用。
+所有这些功能都可以使 XPS 筛选器改变生成的 PDL 命令。 无论 PDL 命令是由筛选器本身生成还是由设备 GPD/PPD 指定，这些功能仍会导致 XPS 筛选器改变 PDL 命令。 以下各节中引用的所有元素（功能、选项、ScoredProperties、参数）都可在打印架构关键字（psk）命名空间中找到。
 
 ## <a name="pagemediasize"></a>PageMediaSize
 
+此功能描述用于打印输出的媒体表的尺寸。 除了名称，每个选项还可以包含两个评分属性： MediaSizeWidth 和 MediaSizeHeight。 它们描述媒体的物理大小。 支持的选项是包含相应 GPD/PPD 文件项的任何选项。
 
-此功能描述用于打印输出媒体表的维度。 除了名称以外，每个选项可以包含两个评分属性：MediaSizeWidth 和 MediaSizeHeight。 这些过程描述媒体的物理大小。 支持的选项为带有相应 GPD/PPD 文件条目的任何选项。
+对于 PCL6/GPD，如果 PrintTicket 选项为 CustomMediaSize，则使用 PageMediaSizeMediaSizeWith 和 PageMediaSizeMediaSizeHeight 参数获取媒体的尺寸。
 
-为 PCL6/GPD，如果 PrintTicket 选项为 CustomMediaSize，然后 PageMediaSizeMediaSizeWith 和 PageMediaSizeMediaSizeHeight 参数用于获取媒体的维度。
+对于 PostScript/PPD，如果 PrintTicket 选项为 PSCustomMediaSize，则使用 PageMediaSizePSWith 和 PageMediaSizePSHeight 参数获取介质的尺寸。 为所选媒体类型生成的 PCL6 由 GPD PageSize 功能值指定。 以下列表显示了检查 GPD 以确定要使用的 PageMediaSize 选项的顺序：
 
-对于 PostScript/PPD，如果 PrintTicket 选项为 PSCustomMediaSize 然后 PageMediaSizePSWith 和 PageMediaSizePSHeight 参数用于获取媒体的维度。 由 GPD PageSize 功能值指定为所选的媒体类型生成 PCL6。 以下列表显示 GPD 检查以确定要使用的 PageMediaSize 选项的顺序：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageMediaSize 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageMediaSize 选项的 name 属性。
+1. 使用以下[默认 PageMediaSize 映射](default-pagemediasize-mappings.md)。
 
-2. 以下[默认 PageMediaSize 映射](default-pagemediasize-mappings.md)使用。
+1. PageSize 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-3. PageSize 选项的 name 属性匹配 GPD 中选项的名称。
+在呈现过程中，筛选器会将任何 GPD 命令中的 PhysPaperWidth 替换为 MediaSizeWidth ScoredProperty 或 PageMediaSizeMediaSizeWidth 参数指定的纸张宽度。
 
-在呈现过程中，筛选器将替换为 PhysPaperWidth 在任何 GPD 命令 MediaSizeWidth ScoredProperty 或 PageMediaSizeMediaSizeWidth 参数指定的纸张的宽度。
+筛选器还会将任何 GPD 命令中的 PhysPaperLength 替换为 MediaSizeHeight ScoredProperty 或 PageMediaSizeMediaSizeHeight 参数指定的纸张长度。
 
-筛选器会还 PhysPaperLength 任何 GPD 命令中将替换为 MediaSizeHeight ScoredProperty 或 PageMediaSizeMediaSizeHeight 参数指定的纸张的长度。
+为所选媒体类型生成的 PostScript 由 PPD PageSize 功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选的媒体类型生成 PostScript PPD PageSize 功能由指定。 按以下顺序选择 PPD 中的使用选项：
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageMediaSize 选项的 name 属性匹配，则为。
 
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageMediaSize 选项的 name 属性。
-
-2. PageSize 选项的 name 属性匹配 PPD.中选项的名称
+1. PageSize 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="pagemediatype"></a>PageMediaType
 
+此功能描述了可用于设备的媒体表的特征，例如 coatings、媒体材料和媒体重量。 支持的选项有对应的 GPD/PPD 条目。
 
-此功能描述媒体表可用于设备，如涂层处理、 媒体材料和媒体权重的特征。 支持的选项为任何与相应的 GPD/PPD 条目。
+为所选媒体类型生成的 PCL6 由 GPD 媒体类型功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的媒体类型生成 PCL6 GPD MediaType 功能由指定。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageMediaType 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageMediaType 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | PageMediaType 值            | GPD/PPD 文件输入 |
+    |--------------------------------|--------------------|
+    | PrintTicket PhotographicGlossy | GPD 光泽         |
+    | PrintTicket 普通              | GPD 标准       |
+    | PrintTicket 透明度       | GPD 透明度   |
 
-| PageMediaType 值            | GPD/PPD 文件条目 |
-|--------------------------------|--------------------|
-| PrintTicket PhotographicGlossy | GPD 抛光         |
-| PrintTicket 纯              | GPD 标准       |
-| PrintTicket 透明度       | GPD 透明度   |
+1. PageMediaType 选项的 name 属性与 GPD 中选项的名称相匹配。
 
- 
+为所选媒体类型生成的 PostScript 由 PPD 媒体类型功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-3. PageMediaType 选项的 name 属性匹配 GPD 中选项的名称。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageMediaType 选项的 name 属性匹配，则为。
 
-为所选的媒体类型生成 PostScript PPD MediaType 功能由指定。 按以下顺序选择 PPD 中的使用选项：
-
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageMediaType 选项的 name 属性。
-
-2. PageMediaType 选项的 name 属性匹配 PPD.中选项的名称
+1. PageMediaType 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="pagemediacolor"></a>PageMediaColor
 
+此功能描述介质工作表的颜色。 支持的选项有对应的 GPD/PPD 条目。
 
-此功能描述媒体表的颜色。 支持的选项为任何与相应的 GPD/PPD 条目。
+为所选媒体颜色生成的 PCL6 是由包含 \*PrintSchemaKeywordMap： "PageMediaColor" 的 GPD 功能指定的。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的媒体颜色由 GPD 功能指定生成 PCL6 包含\*PrintSchemaKeywordMap:"PageMediaColor"。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageMediaColor 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageMediaColor 选项的 name 属性。
+1. PageMediaColor 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. PageMediaColor 选项的 name 属性匹配 GPD 中选项的名称。
+为所选媒体颜色生成的 PostScript 是通过 PPD MediaColor 功能指定的。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选的媒体颜色生成 PostScript PPD MediaColor 功能由指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageMediaColor 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageMediaColor 选项的 name 属性匹配，则为。
 
-2. PageMediaColor 选项的 name 属性匹配 PPD.中选项的名称
+1. PageMediaColor 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="jobinputbin"></a>JobInputBin
 
+此功能描述了将媒体拉入打印设备的输入位置。 支持的选项为具有相应 GPD/PPD 条目的选项。
 
-此功能介绍到打印设备的输入的位置提取媒体的位置。 支持的选项为具有一个对应的 GPD/PPD 条目。
+为选定输入送纸器生成的 PCL6 由 GPD InputBin 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的送纸器生成 PCL6 GPD InputBin 功能由指定。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 JobInputBin 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 JobInputBin 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | JobInputBin 值      | GPD/PPD 文件输入                  |
+    |------------------------|-------------------------------------|
+    | PrintTicket 卡带   | GPD AUTO、卡带、ENVFEED、ENVMANUAL |
+    | PrintTicket 自动 | GPD FORMSOURCE                      |
+    | PrintTicket 高       | GPD LARGECAPACITY、LARGEFMT、LOWER    |
+    | PrintTicket 手册     | GPD MANUAL，中间，SMALLFMT          |
+    | PrintTicket 牵引车    | GPD 牵引车，上部                   |
 
-| JobInputBin value      | GPD/PPD 文件条目                  |
-|------------------------|-------------------------------------|
-| PrintTicket 盒式   | GPD 自动，磁带的一半，ENVFEED ENVMANUAL |
-| PrintTicket 自动选择 | GPD FORMSOURCE                      |
-| PrintTicket 高       | GPD LARGECAPACITY、 LARGEFMT，降低    |
-| PrintTicket 手动     | GPD MANUAL,MIDDLE,SMALLFMT          |
-| PrintTicket 牵引器送    | GPD 牵引上限                   |
+1. PageMediaType 选项的 name 属性与 GPD 中选项的名称相匹配。
 
- 
+为选定输入送纸器生成的 PostScript 由 PPD InputSlot 功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-3. PageMediaType 选项的 name 属性匹配 GPD 中选项的名称。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 JobInputBin 选项的 name 属性匹配，则为。
 
-为所选的送纸器生成 PostScript PPD InputSlot 功能由指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 JobInputBin 选项的 name 属性。
-
-2. JobInputBin 选项的 name 属性匹配 PPD.中选项的名称
+1. JobInputBin 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="pageorientation"></a>PageOrientation
 
+此功能指示从内容坐标空间转换到工作表的媒体坐标空间时要使用的旋转转换。 支持的选项包括纵向、横向、ReversePortrait 和 ReverseLandscape。
 
-此功能指示要从内容的坐标空间转换到工作表的媒体坐标空间时使用的旋转转换。 支持的选项为纵向、 横向、 ReversePortrait 和 ReverseLandscape。
+为选定方向生成的 PCL6 由 "GPD 方向" 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为选定的方向生成 PCL6 指定 GPD 定向功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageOrientation 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageOrientation 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | PageOrientation 值        | GPD/PPD 文件输入   |
+    |------------------------------|----------------------|
+    | PrintTicket 纵向         | GPD 纵向         |
+    | PrintTicket 横向        | GPD 横向\_CC90  |
+    | PrintTicket ReverseLandscape | GPD 横向\_CC 1。0 |
 
-| PageOrientation 值        | GPD/PPD 文件条目   |
-|------------------------------|----------------------|
-| PrintTicket 纵向         | GPD 纵向         |
-| PrintTicket 横向        | GPD 横向\_CC90  |
-| PrintTicket ReverseLandscape | GPD 横向\_CC270 |
+1. PageOrientation 选项的 name 属性与 GPD 中选项的名称相匹配。
 
- 
+为选定方向生成的 PostScript 由筛选器决定。
 
-3. PageOrientation 选项的 name 属性匹配 GPD 中选项的名称。
-
-为选定的方向生成 PostScript 取决于筛选器。
 ## <a name="pageoutputcolor"></a>PageOutputColor
 
+此功能控制目标文档页的打印输出的颜色特征（颜色、单色）。 支持的选项为彩色、灰度和单色。
 
-此功能控制目标文档页的打印输出的颜色特征 （颜色，单色）。 支持的选项为颜色、 灰度和单色。
+为所选输出颜色生成的 PCL6 由 GPD ColorMode 特性指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的输出颜色生成 PCL6 GPD ColorMode 功能由指定。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageOutputColor 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageOutputColor 选项的 name 属性。
+1. PageOutputColor 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. PageOutputColor 选项的 name 属性匹配 GPD 中选项的名称。
+为所选输出颜色生成的 PostScript 由筛选器决定。
 
-为所选的输出颜色生成 PostScript 取决于筛选器。
 ## <a name="pageresolution"></a>PageResolution
 
+此功能定义设备可用于生成输出的可用分辨率（以每英寸点数为单位）。 打印架构未为此功能的选项指定任何标准名称;但是，无论选项名称是什么，我们都支持两个 ScoredProperties： ResolutionX 和 ResolutionY。 支持的选项有对应的 GPD/PPD 条目。
 
-此功能所定义的设备可以生成输出可用分辨率 （以每英寸点数为单位）。 打印架构未指定选项，此功能; 所有标准的名称但是，我们支持两个 ScoredProperties 而不考虑的选项名称：ResolutionX，和 ResolutionY。 支持的选项为任何与相应的 GPD/PPD 条目。
+为所选解析生成的 PCL6 由 GPD 分辨率功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选解析生成 PCL6 指定 GPD 解析功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageResolution 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageResolution 选项的 name 属性。
+1. PageResolution 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. PageResolution 选项的 name 属性匹配 GPD 中选项的名称。
+在呈现期间，筛选器会将任何 GPD 命令中的 GraphicsXRes 和 TextXRes 替换为 ResolutionX 指定的水平分辨率。
+筛选器还会将任何 GPD 命令中的 GraphicsYRes 和 TextYRes 替换为 ResolutionY 指定的垂直分辨率。
 
-在呈现期间，该筛选器将 GraphicsXRes 和 TextXRes 任何 GPD 命令中将替换为 ResolutionX 由指定的水平分辨率。
-筛选器将还 GraphicsYRes 和 TextYRes 任何 GPD 命令中将替换为 ResolutionY 由指定的垂直分辨率。
+为所选解决方案生成的 PostScript 是通过 PPD 分辨率或 JCLResolution 功能指定的。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选解析生成 PostScript 指定 PPD 解析或 JCLResolution 功能。 按以下顺序选择 PPD 中的使用选项：
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageResolution 选项的 name 属性匹配，则为。
 
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageResolution 选项的 name 属性。
-
-2. PageResolution 选项的 name 属性匹配 PPD.中选项的名称
+1. PageResolution 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="pageoutputquality"></a>PageOutputQuality
 
+此功能定义文档页面的打印质量。 支持的选项为具有相应 GPD/PPD 条目的选项。
 
-此功能所定义的文档页的打印质量。 支持的选项为具有一个对应的 GPD/PPD 条目。
+为所选质量生成的 PCL6 由 GPD 功能指定，PrintSchemaKeywordMap 值为 PageOutputQuality。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选质量生成 PCL6 指定 PrintSchemaKeywordMap 值为 PageOutputQuality gpd 分析功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageOutputQuality 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageOutputQuality 选项的 name 属性。
+1. PageOutputQuality 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. PageOutputQuality 选项的 name 属性匹配 GPD 中选项的名称。
+为所选质量生成的 PostScript 是通过 MSPrintSchemaKeywordMap 值为 PageOutputQuality 的 PPD 功能指定的。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选质量生成 PostScript PPD 功能以及 PageOutputQuality MSPrintSchemaKeywordMap 值指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageOutputQuality 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageOutputQuality 选项的 name 属性匹配，则为。
 
-2. PageOutputQuality 选项的 name 属性匹配 PPD.中选项的名称
+1. PageOutputQuality 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="jobcopiesalldocuments"></a>JobCopiesAllDocuments
 
+此参数指定打印作业中的所有文档输出的次数。
 
-此参数指定的输出中打印作业的所有文档的次数。
+为选定副本生成的 PCL6 由筛选器决定。 请参阅 JobCollateAllDocuments 功能以与此参数交互。
 
-为所选副本生成 PCL6 取决于筛选器。 请参阅与此参数的交互的 JobCollateAllDocuments 功能。
-
-为所选副本生成 PostScript 取决于筛选器。 请参阅与此参数的交互的 JobCollateAllDocuments 功能。
+为选定副本生成的 PostScript 由筛选器决定。 请参阅 JobCollateAllDocuments 功能以与此参数交互。
 
 ## <a name="documentcopiesallpages"></a>DocumentCopiesAllPages
 
+此参数指定打印作业中的关联文档应输出的页面副本数。
 
-此参数指定页副本应在输出中打印作业关联的文档的数。
+为选定副本生成的 PCL6 由筛选器决定。 请参阅 DocumentCollate 功能以与此参数交互。
 
-为所选副本生成 PCL6 取决于筛选器。 请参阅与此参数的交互的 DocumentCollate 功能。
-
-为所选副本生成 PostScript 取决于筛选器。 请参阅与此参数的交互的 DocumentCollate 功能。
+为选定副本生成的 PostScript 由筛选器决定。 请参阅 DocumentCollate 功能以与此参数交互。
 
 ## <a name="pagecopies"></a>PageCopies
 
+此参数指定文档内单个源文档页的副本数。 由于复制计数仅适用于当前页面，因此没有排序规则。
 
-此参数指定文档内的各个源文档页的副本数量应输出。 由于副本计数仅适用于当前页没有任何排序规则。
+为选定副本生成的 PCL6 由筛选器决定。
 
-为所选副本生成 PCL6 取决于筛选器。
-
-为所选副本生成 PostScript 取决于筛选器。
+为选定副本生成的 PostScript 由筛选器决定。
 
 ## <a name="documentcollate"></a>DocumentCollate
 
+此功能指定打印作业中关联文档的页面在打印输出中的显示顺序。 支持的选项逐份打印和逐份打印。
 
-此功能在打印输出中指定的打印作业中关联的文档页的显示的顺序。 受支持的选项包括逐份打印和未逐份打印。
+为所选排序规则生成的 PCL6 由 "GPD 排序" 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的排序规则生成 PCL6 指定 GPD 逐份打印功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 DocumentCollate 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 DocumentCollate 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | DocumentCollate 值  | GPD/PPD 文件输入 |
+    |------------------------|--------------------|
+    | PrintTicket | 关闭 GPD            |
+    | PrintTicket 排序   | GPD             |
 
-| DocumentCollate 值  | GPD/PPD 文件条目 |
-|------------------------|--------------------|
-| PrintTicket 非逐份打印 | 关闭 GPD            |
-| PrintTicket 逐份打印   | GPD 上             |
+1. DocumentCollate 选项的 name 属性与 GPD 中选项的名称相匹配。
 
- 
+> [!NOTE]
+> 如果将 DocumentCollate 设置为逐份打印并且 GPD Collate 选项包含一个命令，则假定设备可以生成逐份打印的副本。 *PCL6*筛选器将仅生成作业的1个副本，并使用 GPD 命令指示设备生成逐份打印副本。 然后，筛选器会将 GPD 命令中的 NumOfCopies 替换为 JobCopiesAllDocuments 指定的副本数。
 
-3. DocumentCollate 选项的 name 属性匹配 GPD 中选项的名称。
+为所选排序规则生成的 PostScript 由 PPD 逐份打印功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-**请注意**  时 DocumentCollate 设置为逐份打印并且 GPD 逐份打印选项包含一个命令，则假定设备可以生成已设置排序规则的副本。 *XPS.PCL6*筛选器将仅生成 1 份作业并使用 GPD 命令来指示设备来生成已设置排序规则的副本。 筛选器然后替换 NumOfCopies GPD 命令中指定的 JobCopiesAllDocuments 的份数。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 DocumentCollate 选项的 name 属性匹配，则为。
 
- 
+1. 使用以下默认映射：
 
-为所选的排序规则生成 PostScript 指定 PPD 逐份打印功能。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 DocumentCollate 选项的 name 属性。
+    | DocumentCollate 值  | GPD/PPD 文件输入 |
+    |------------------------|--------------------|
+    | PrintTicket | PPD False          |
+    | PrintTicket 排序   | PPD True           |
 
-2. 使用以下默认映射：
+1. DocumentCollate 选项的 name 属性与 PPD 中选项的名称相匹配。
 
-| DocumentCollate 值  | GPD/PPD 文件条目 |
-|------------------------|--------------------|
-| PrintTicket 非逐份打印 | PPD False          |
-| PrintTicket 逐份打印   | PPD True           |
-
- 
-
-3. DocumentCollate 选项的 name 属性匹配 PPD.中选项的名称
-
-**请注意**  时 DocumentCollate 设置为逐份打印和 PPD 包含逐份打印功能或功能，这是关键字映射到 DocumentCollate，则假定设备可以生成已设置排序规则的副本。 XPS.PS 筛选器仅将生成 1 份作业并使用 PPD 命令来指示设备来生成已设置排序规则的副本。
-
- 
+> [!NOTE]
+> 当 DocumentCollate 设置为逐份打印并且 PPD 包含逐份打印功能或映射到 DocumentCollate 的关键字时，假定设备可以生成逐份打印副本。 XPS.PS 筛选器将仅生成作业的1个副本，并使用 PPD 命令指示设备生成逐份打印副本。
 
 ## <a name="jobduplexalldocumentscontiguously"></a>JobDuplexAllDocumentsContiguously
 
+此功能指定打印作业的双面打印，而不考虑文档边界。 如果指定了双面打印，则打印作业中所有文档的所有页面都将连续打印，而不会在文档之间插入空白页面。 支持的选项包括 OneSided、TwoSidedShortEdge 和 TwoSidedLongEdge。
 
-此功能指定打印作业而无需考虑文档边界的双面打印。 如果指定双面打印，则所有页面的打印作业中的所有文档都是双工而无需插入文档之间的空白页连续打印。 支持的选项为 OneSided、 TwoSidedShortEdge 和 TwoSidedLongEdge。
+为选定的双工生成的 PCL6 由 GPD 双工功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选双工生成 PCL6 GPD 双工功能由指定。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 JobDuplexAllDocumentsContiguously 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 JobDuplexAllDocumentsContiguously 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | JobDuplexAllDocumentsContiguously 值 | GPD/PPD 文件输入 |
+    |-----------------------------------------|--------------------|
+    | PrintTicket OneSided                    | 无 GPD           |
+    | PrintTicket TwoSidedShortEdge           | 水平 GPD     |
+    | PrintTicket TwoSidedLongEdge            | 垂直 GPD       |
 
-| JobDuplexAllDocumentsContiguously value | GPD/PPD 文件条目 |
-|-----------------------------------------|--------------------|
-| PrintTicket OneSided                    | GPD NONE           |
-| PrintTicket TwoSidedShortEdge           | GPD 水平     |
-| PrintTicket TwoSidedLongEdge            | GPD 垂直       |
+1. JobDuplexAllDocumentsContiguously 选项的 name 属性与 GPD 中选项的名称相匹配。
 
- 
+为所选双工生成的 PostScript 由 PPD 双工功能指定，将使用 PPD 中的选项按以下顺序选择：
 
-3. JobDuplexAllDocumentsContiguously 选项的 name 属性匹配 GPD 中选项的名称。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 JobDuplexAllDocumentsContiguously 选项的 name 属性匹配，则为。
 
-为所选双工生成 PostScript 指定 PPD 中使用的选项选择按以下顺序 PPD 双工功能：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 JobDuplexAllDocumentsContiguously 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | JobDuplexAllDocumentsContiguously 值 | GPD/PPD 文件输入 |
+    |-----------------------------------------|--------------------|
+    | PrintTicket OneSided                    | PPD 无           |
+    | PrintTicket TwoSidedShortEdge           | PPD DuplexTumble   |
+    | PrintTicket TwoSidedLongEdge            | PPD DuplexNoTumble |
 
-| JobDuplexAllDocumentsContiguously value | GPD/PPD 文件条目 |
-|-----------------------------------------|--------------------|
-| PrintTicket OneSided                    | PPD None           |
-| PrintTicket TwoSidedShortEdge           | PPD DuplexTumble   |
-| PrintTicket TwoSidedLongEdge            | PPD DuplexNoTumble |
-
- 
-
-3. JobDuplexAllDocumentsContiguously 选项的 name 属性匹配 PPD.中选项的名称
+1. JobDuplexAllDocumentsContiguously 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="documentduplex"></a>DocumentDuplex
 
+此功能控制打印作业中的关联文档的双工打印。 如果指定了此，则打印输出将从新的媒体工作表的正面开始。 支持的选项包括 OneSided、TwoSidedShortEdge 和 TwoSidedLongEdge。
 
-此功能控制双面打印的打印作业中关联的文档。 如果指定此选项，将从前方的媒体的新工作表开始打印的输出。 支持的选项为 OneSided、 TwoSidedShortEdge 和 TwoSidedLongEdge。
+为选定的双工生成的 PCL6 由 GPD 双工功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选双工生成 PCL6 GPD 双工功能由指定。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 DocumentDuplex 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 DocumentDuplex 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | DocumentDuplex 值          | GPD/PPD 文件输入 |
+    |-------------------------------|--------------------|
+    | PrintTicket OneSided          | 无 GPD           |
+    | PrintTicket TwoSidedShortEdge | 水平 GPD     |
+    | PrintTicket TwoSidedLongEdge  | 垂直 GPD       |
 
-| DocumentDuplex value          | GPD/PPD 文件条目 |
-|-------------------------------|--------------------|
-| PrintTicket OneSided          | GPD NONE           |
-| PrintTicket TwoSidedShortEdge | GPD 水平     |
-| PrintTicket TwoSidedLongEdge  | GPD 垂直       |
+1. DocumentDuplex 选项的 name 属性与 GPD 中选项的名称相匹配。
 
- 
+为选定的双工生成的 PostScript 由 PPD 双工功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-3. DocumentDuplex 选项的 name 属性匹配 GPD 中选项的名称。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 DocumentDuplex 选项的 name 属性匹配，则为。
 
-为所选双工生成 PostScript PPD 双工功能由指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 DocumentDuplex 选项的 name 属性。
+1. 使用以下默认映射：
 
-2. 使用以下默认映射：
+    | DocumentDuplex 值          | GPD/PPD 文件输入 |
+    |-------------------------------|--------------------|
+    | PrintTicket OneSided          | PPD 无           |
+    | PrintTicket TwoSidedShortEdge | PPD DuplexTumble   |
+    | PrintTicket TwoSidedLongEdge  | PPD DuplexNoTumble |
 
-| DocumentDuplex value          | GPD/PPD 文件条目 |
-|-------------------------------|--------------------|
-| PrintTicket OneSided          | PPD None           |
-| PrintTicket TwoSidedShortEdge | PPD DuplexTumble   |
-| PrintTicket TwoSidedLongEdge  | PPD DuplexNoTumble |
-
- 
-
-3. DocumentDuplex 选项的 name 属性匹配 PPD.中选项的名称
+1. DocumentDuplex 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="documentnup"></a>DocumentNUp
 
+此功能指定应将多个页面的内容打印到物理介质的每个纸张上。 打印应以这样一种方式进行：不同文档中的内容不会打印到相同的工作表中。 打印架构规范未指定此选项的名称;不过，此选项支持指定将放在物理介质一侧的页面数的 ScoredProperty 和 PagesPerSheet 值。 PagesPerSheet 支持的值为1、2、4、6、8、9、12、16、25和32，其中物理页面方向为2、6、8、12和32旋转。
 
-此功能指定多个页面的内容应打印到的物理介质的每个工作表上。 而应在一种不同的文档中的内容不会打印到的同一个表上的方法中完成打印。 打印架构规范未指定此选项; 的名称但是选项支持指定将放在物理介质的一侧的页面数的 ScoredProperty 和 PagesPerSheet 值。 PagesPerSheet 的支持的值为 1、 2、 4、 6、 8、 9、 12、 16、 25 和 32 与物理页方向旋转为 2、 6、 8、 12 和 32。
+为所选的 "N" 生成的 PCL6 由筛选器决定。
 
-为所选的每张生成 PCL6 取决于筛选器。
+为所选的 "单向后" 生成的 PostScript 由筛选器决定。
 
-为所选的每张生成 PostScript 取决于筛选器。
+### <a name="joboutputbin"></a>JobOutputBin
 
-**JobOutputBin**
+此功能描述打印设备打印后介质的位置。 支持的选项为具有相应 GPD/PPD 条目的选项。
 
-此功能已打印后其中存放媒体在打印设备上描述的位置。 支持的选项为具有一个对应的 GPD/PPD 条目。
+为所选的输出 bin 生成的 PCL6 由 GPD OutputBin 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的输出 bin 生成 PCL6 GPD OutputBin 功能由指定。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 \[作业的 name 属性匹配 |文档 |页\]OutputBin 选项。
 
-1. 如果 PrintSchemaKeywordMap 指定且与相匹配的 name 属性\[作业 |文档 |页\]OutputBin 选项。
+1. \[作业的名称属性 |文档 |Page\]OutputBin 选项与 GPD 中选项的名称相匹配。
 
-2. Name 属性\[作业 |文档 |页\]OutputBin 选项与 GPD 中选项的名称相匹配。
+为选定的双工生成的 PostScript 由 PPD OutputBin 功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选双工生成 PostScript PPD OutputBin 功能由指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定且与相匹配的 name 属性\[作业 |文档 |页\]OutputBin 选项。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 \[作业的 name 属性匹配 |文档 |页\]OutputBin 选项。
 
-2. Name 属性\[作业 |文档 |页\]OutputBin 选项与 PPD.中选项的名称相匹配
+1. \[作业的名称属性 |文档 |Page\]OutputBin 选项与 PPD 中的选项名称匹配。
 
 ## <a name="jobbindalldocuments"></a>JobBindAllDocuments
 
+此功能描述打印作业中打印的工作表的绑定方法。 打印作业中的所有文档都应该绑定在一起。 支持的选项包括： None、BindBottom、BindLeft、BindRight、BindTop、手册、EdgeStitchBottom、EdgeStitchLeft、EdgeStitchRight 和 EdgeStitchTop。
 
-此功能介绍中打印作业已打印的纸张的绑定的方法。 打印作业中的所有文档应都绑定到一起。 支持的选项包括：None、 BindBottom、 BindLeft、 BindRight、 BindTop、 手册、 EdgeStitchBottom、 EdgeStitchLeft、 EdgeStitchRight 和 EdgeStitchTop。
+选择 "手册" 时，筛选器输出的格式设置为 "2"，页面将重新排序，以便在将作业的工作表的一半折叠为同一书籍的正确顺序。
 
-选择手册时筛选器输出的格式为 2 向上使用的页重新排序，以便一半页面折叠表的作业的堆栈时的一本书的正确顺序。
+如果为手册指定了 BindingGutter ScoredProperty，则筛选器会强制将中心边距（从纸张的中心到缩放的可打印区域的边缘），其中至少与 JobBindAllDocumentsGutter 参数指定的大小相同。
 
-当 BindingGutter ScoredProperty 指定手册时，筛选器强制实施至少 JobBindAllDocumentsGutter 参数指定的一样大的中心边距 （从缩放的可打印区域的边缘到纸张的中心）。
+如果为 BindLeft 指定了 BindingGutter ScoredProperty，或 EdgeStitchLeft 筛选器将工作表的正面向右移动 JobBindAllDocumentsGutter 参数指定的位置。 现在，位于可打印区域外的内容会被剪切。 工作表背面的内容将在右边缘上按 JobBindAllDocumentsGutter 参数指定的方式进行裁剪。
 
-当为 BindLeft，指定 BindingGutter ScoredProperty 或 EdgeStitchLeft 筛选器将在工作表的正面 JobBindAllDocumentsGutter 参数指定的右移。 将剪切内容现在超出了可打印区域的右侧。 在工作表的后端上的内容将剪辑 JobBindAllDocumentsGutter 参数指定的右边缘上。
+如果为 BindTop 指定了 BindingGutter ScoredProperty，则筛选器会将纸张的正面和背面的内容沿 JobBindAllDocumentsGutter 参数指定的底部向下移动。 底部的内容将在可打印区域外进行剪辑。
 
-BindTop 指定 BindingGutter ScoredProperty，EdgeStitchTop 筛选器会转而底部 JobBindAllDocumentsGutter 参数指定的表的前端和后端方面的内容。 将剪切内容现在超出了可打印区域的底部。
+如果为 BindRight 或 EdgeStitchRight 指定了 BindingGutter ScoredProperty，则筛选器将在右侧按 JobBindAllDocumentsGutter 参数指定的位置剪切页面正面的内容。 工作表背面的内容将移动到 JobBindAllDocumentsGutter 参数指定的左侧。 当前位于可打印区域外的内容会被剪切。
 
-当为 BindRight 指定 BindingGutter ScoredProperty 或 EdgeStitchRight 筛选器剪辑内容右侧 JobBindAllDocumentsGutter 参数指定的表的前端。 在工作表的后端上的内容将转移到 JobBindAllDocumentsGutter 参数指定的左侧。 将剪切内容现在超出了可打印区域的左侧。
+如果为 BindBottom 或 EdgeStitchBottom 指定了 BindingGutter ScoredProperty，则筛选器会将纸张的正面和背面沿 JobBindAllDocumentsGutter 参数指定的顶部向顶部移动。 顶部内容位于可打印区域外的内容将被剪裁掉。
 
-BindingGutter ScoredProperty 指定 BindBottom 或 EdgeStitchBottom，筛选器会转而前端和后端的两面顶部附近的 JobBindAllDocumentsGutter 参数指定的表的内容。 将剪切内容现在超出了可打印区域的顶部。
+> [!NOTE]
+> 绑定边缘是指定的边缘，它基于作业中第一个文档的第一页的方向。 对于所有其他选项，将忽略 BindingGutter。
 
-**请注意**  绑定 edge 是基于作业中的第一个文档的第一页的方向将指定的边缘。 对于所有其他选项，将忽略 BindingGutter。
+如果 GPD 文件未为所选选项指定命令，则为所选绑定生成的 PCL6 由筛选器决定。
 
- 
-
-如果 GPD 文件未指定所选的选项的命令，为所选的绑定生成 PCL6 由筛选器。
-
-如果 PPD 文件未指定所选的选项是调用命令，为所选的绑定生成 PostScript 由筛选器。
+如果 PPD 文件未指定所选选项的调用命令，则为所选绑定生成的 PostScript 由筛选器决定。
 
 ## <a name="documentbinding"></a>DocumentBinding
 
+此功能描述在将关联文档的打印工作表绑定到打印作业时使用的方法。 文档中的所有页面都应绑定在一起。 支持的选项包括： None、BindBottom、BindLeft、BindRight、BindTop、手册、EdgeStitchBottom、EdgeStitchLeft、EdgeStitchRight 和 EdgeStitchTop。
 
-此功能介绍中打印作业的绑定关联的文档的打印工作表时要使用的方法。 文档中的所有页面应都绑定到一起。 支持的选项包括：None、 BindBottom、 BindLeft、 BindRight、 BindTop、 手册、 EdgeStitchBottom、 EdgeStitchLeft、 EdgeStitchRight 和 EdgeStitchTop。
+选择 "手册" 时，筛选器输出的格式将设置为 "2"，页面将重新排序，以便在文档的工作表的一半以书籍的正确顺序折叠。
 
-选择手册时您将筛选器输出的格式为 2 向上使用的页重新排序，以便一半页面时的工作表文档堆栈折叠的一本书的正确顺序。
+如果为手册指定了 BindingGutter ScoredProperty，则筛选器会强制将中心边距（从纸张的中心到缩放的可打印区域的边缘），其中至少与 DocumentBindingGutter 参数指定的大小相同。
 
-当 BindingGutter ScoredProperty 指定手册时，筛选器强制实施至少 DocumentBindingGutter 参数指定的一样大的中心边距 （从缩放的可打印区域的边缘到纸张的中心）。
+如果为 BindLeft 或 EdgeStitchLeft 指定了 BindingGutter ScoredProperty，则筛选器会将工作表的正面向右移动 DocumentBindingGutter 参数指定的位置。 现在，位于可打印区域外的内容会被剪切。 工作表背面的内容将在右边缘上按 DocumentBindingGutter 参数指定的方式进行裁剪。
 
-为 BindLeft 或 EdgeStitchLeft 指定 BindingGutter ScoredProperty 筛选器会转而工作表的正面 DocumentBindingGutter 参数指定的右侧。 将剪切内容现在超出了可打印区域的右侧。 在工作表的后端上的内容将剪辑 DocumentBindingGutter 参数指定的右边缘上。
+如果为 BindTop 或 EdgeStitchTop 指定了 BindingGutter ScoredProperty，则筛选器会将纸张的正面和背面都沿 DocumentBindingGutter 参数指定的底部向下移动。 底部的内容将在可打印区域外进行剪辑。
 
-BindingGutter ScoredProperty 指定 BindTop 或 EdgeStitchTop，筛选器会转而底部 DocumentBindingGutter 参数指定的表的前端和后端方面的内容。 将剪切内容现在超出了可打印区域的底部。
+如果为 BindRight 或 EdgeStitchRight 指定了 BindingGutter ScoredProperty，则筛选器将在右侧通过 DocumentBindingGutter 参数指定的内容来剪裁工作表正面的内容。 工作表背面的内容将移动到 DocumentBindingGutter 参数指定的左侧。 当前位于可打印区域外的内容会被剪切。
 
-当为 BindRight 指定 BindingGutter ScoredProperty 或 EdgeStitchRight 筛选器将右侧 DocumentBindingGutter 参数指定的表的前端上的剪辑内容。 在工作表的后端上的内容将转移到 DocumentBindingGutter 参数指定的左侧。 将剪切内容现在超出了可打印区域的左侧。
+如果为 BindBottom 或 EdgeStitchBottom 指定了 BindingGutter ScoredProperty，则筛选器会将纸张的正面和背面沿 DocumentBindingGutter 参数指定的顶部向顶部移动。 顶部内容位于可打印区域外的内容将被剪裁掉。
 
-BindingGutter ScoredProperty 指定 BindBottom 或 EdgeStitchBottom，筛选器会转而前端和后端的两面顶部附近的 DocumentBindingGutter 参数指定的表的内容。 将剪切内容现在超出了可打印区域的顶部。
+> [!NOTE]
+> 绑定边缘是根据文档首页方向指定的边缘。 对于所有其他选项，将忽略 BindingGutter。
 
-**请注意**  绑定 edge 是基于文档的第一页的方向将指定的边缘。 对于所有其他选项，将忽略 BindingGutter。
+如果 GPD 文件未为所选选项指定命令，则为所选绑定生成的 PCL6 由筛选器决定。
 
- 
-
-如果 GPD 文件未指定所选的选项的命令，为所选的绑定生成 PCL6 由筛选器。
-
-如果 PPD 文件未指定所选的选项是调用命令，为所选的绑定生成 PostScript 由筛选器。
+如果 PPD 文件未指定所选选项的调用命令，则为所选绑定生成的 PostScript 由筛选器决定。
 
 ## <a name="jobstaplealldocuments"></a>JobStapleAllDocuments
 
+此功能描述了在打印作业中装订打印纸张时使用的方法。 应将该作业中的所有文档一起装订。 支持的选项有对应的 GPD/PPD 条目。
 
-此功能介绍中打印作业已打印的纸张的装订时要使用的方法。 作业中的所有文档应一起都装订。 支持的选项为任何与相应的 GPD/PPD 条目。
+为所选装订生成的 PCL6 由 "GPD 装订" 功能指定。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的装订生成 PCL6 指定 GPD 处装订功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 JobStapleAllDocuments 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 JobStapleAllDocuments 选项的 name 属性。
+1. JobStapleAllDocuments 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. JobStapleAllDocuments 选项的 name 属性匹配 GPD 中选项的名称。
+为所选装订生成的 PostScript 是通过 MSPrintSchemaKeywordMap 值为 JobStapleAllDocuments 或 DocumentStaple 的 PPD 功能指定的。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选的装订生成 PostScript PPD 功能以及 JobStapleAllDocuments 或 DocumentStaple MSPrintSchemaKeywordMap 值指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 JobStapleAllDocuments 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 JobStapleAllDocuments 选项的 name 属性匹配，则为。
 
-2. JobStapleAllDocuments 选项的 name 属性匹配 PPD.中选项的名称
+1. JobStapleAllDocuments 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="jobholepunch"></a>JobHolePunch
 
+此功能描述当打孔在打印作业中使用打印的纸张时使用的方法。 作业中的所有文档应同时打孔。 支持的选项有对应的 GPD/PPD 条目。
 
-此功能介绍的方法时要使用打孔打印作业中打印的纸张。 作业中的所有文档应都为打孔在一起。 支持的选项为任何与相应的 GPD/PPD 条目。
+为选定的打孔指定的 PCL6 由 GPD 功能指定，PrintSchemaKeywordMap 值为 JobHolePunch 或 DocumentHolePunch。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的打孔生成 PCL6 指定 PrintSchemaKeywordMap 值为 JobHolePunch 或 DocumentHolePunch gpd 分析功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 JobHolePunch 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 JobHolePunch 选项的 name 属性。
+1. JobHolePunch 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. JobHolePunch 选项的 name 属性匹配 GPD 中选项的名称。
+为选定的打孔指定的 PostScript 是由 PPD 功能指定的，其 MSPrintSchemaKeywordMap 值为 JobHolePunch 或 DocumentHolePunch。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选的打孔生成 PostScript PPD 功能以及 JobHolePunch 或 DocumentHolePunch MSPrintSchemaKeywordMap 值指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 JobHolePunch 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 JobHolePunch 选项的 name 属性匹配，则为。
 
-2. JobHolePunch 选项的 name 属性匹配 PPD.中选项的名称
+1. JobHolePunch 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="documentholepunch"></a>DocumentHolePunch
 
+此功能描述当打孔在打印作业中的关联文档的打印页上打孔时使用的方法。 文档中的所有页面都应打孔。 支持的选项有对应的 GPD/PPD 条目。
 
-此功能介绍的方法时要使用的打印作业中关联的文档已打印的纸张打孔。 文档中的所有页面应都进行打孔在一起。 支持的选项为任何与相应的 GPD/PPD 条目。
+为选定的打孔指定的 PCL6 由 GPD 功能指定，PrintSchemaKeywordMap 值为 JobHolePunch 或 DocumentHolePunch。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的打孔生成 PCL6 指定 PrintSchemaKeywordMap 值为 JobHolePunch 或 DocumentHolePunch gpd 分析功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 DocumentHolePunch 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 DocumentHolePunch 选项的 name 属性。
+1. DocumentHolePunch 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. DocumentHolePunch 选项的 name 属性匹配 GPD 中选项的名称。
+为选定的打孔指定的 PostScript 是由 PPD 功能指定的，其 MSPrintSchemaKeywordMap 值为 JobHolePunch 或 DocumentHolePunch。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选的打孔生成 PostScript PPD 功能以及 JobHolePunch 或 DocumentHolePunch MSPrintSchemaKeywordMap 值指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 DocumentHolePunch 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 DocumentHolePunch 选项的 name 属性匹配，则为。
 
-2. DocumentHolePunch 选项的 name 属性匹配 PPD.中选项的名称
+1. DocumentHolePunch 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="pagemirrorimage"></a>PageMirrorImage
 
+此功能指定是否应镜像页面内容。 支持的选项为 None 和 MirrorImageWidth。
 
-此功能指定的页面内容应进行镜像。 支持的选项为 None 和 MirrorImageWidth。
+为所选镜像生成的 PCL6 由 GPD 功能指定，PrintSchemaKeywordMap 值为 PageMirrorImage。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选镜像生成 PCL6 指定 PrintSchemaKeywordMap 值为 PageMirrorImage gpd 分析功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageMirrorImage 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageMirrorImage 选项的 name 属性。
+1. PageMirrorImage 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. PageMirrorImage 选项的 name 属性匹配 GPD 中选项的名称。
+为所选镜像生成的 PostScript 由 PPD MirrorPrint 功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选镜像生成 PostScript PPD MirrorPrint 功能由指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageMirrorImage 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageMirrorImage 选项的 name 属性匹配，则为。
 
-2. 使用以下默认映射：
+1. 使用以下默认映射：
 
-| PageMirrorImage 值        | GPD/PPD 文件条目 |
-|------------------------------|--------------------|
-| PrintTicket None             | PPD False          |
-| PrintTicket MirrorImageWidth | PPD True           |
+    | PageMirrorImage 值        | GPD/PPD 文件输入 |
+    |------------------------------|--------------------|
+    | PrintTicket 无             | PPD False          |
+    | PrintTicket MirrorImageWidth | PPD True           |
 
- 
-
-3. PageMirrorImage 选项的 name 属性匹配 PPD.中选项的名称
+1. PageMirrorImage 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="pagenegativeimage"></a>PageNegativeImage
 
+此功能指定页面内容是否应为负片图像。 支持的选项为 "无" 和 "负数"。
 
-此功能指定的页面内容应为底片图像。 支持的选项包括无，并为负。
+为所选负打印生成的 PCL6 由 GPD 功能指定，PrintSchemaKeywordMap 值为 PageNegativeImage。 将按以下顺序选择要使用的 GPD 中的选项：
 
-为所选的负打印生成 PCL6 指定 PrintSchemaKeywordMap 值为 PageNegativeImage gpd 分析功能。 按以下顺序选择 GPD 中的使用选项：
+1. 如果指定了 PrintSchemaKeywordMap 并且与 PageNegativeImage 选项的 name 属性匹配，则为。
 
-1. 如果 PrintSchemaKeywordMap 指定，并且匹配 PageNegativeImage 选项的 name 属性。
+1. PageNegativeImage 选项的 name 属性与 GPD 中选项的名称相匹配。
 
-2. PageNegativeImage 选项的 name 属性匹配 GPD 中选项的名称。
+为所选负打印生成的 PostScript 由 PPD NegativePrint 功能指定。 将按以下顺序选择使用 PPD 中的选项：
 
-为所选的负打印生成 PostScript PPD NegativePrint 功能由指定。 按以下顺序选择 PPD 中的使用选项：
-1. 如果 MSPrintSchemaKeywordMap 指定，并且匹配 PageNegativeImage 选项的 name 属性。
+1. 如果指定了 MSPrintSchemaKeywordMap 并且与 PageNegativeImage 选项的 name 属性匹配，则为。
 
-2. 使用以下默认映射：
+1. 使用以下默认映射：
 
-| PageNegativeImage value | GPD/PPD 文件条目 |
-|-------------------------|--------------------|
-| PrintTicket None        | PPD False          |
-| PrintTicket 负    | PPD True           |
+    | PageNegativeImage 值 | GPD/PPD 文件输入 |
+    |-------------------------|--------------------|
+    | PrintTicket 无        | PPD False          |
+    | PrintTicket 负数    | PPD True           |
 
- 
-
-3. PageNegativeImage 选项的 name 属性匹配 PPD.中选项的名称
+1. PageNegativeImage 选项的 name 属性与 PPD 中选项的名称相匹配。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -503,10 +468,8 @@ BindingGutter ScoredProperty 指定 BindBottom 或 EdgeStitchBottom，筛选器�
 
 [标准 XPS 筛选器](standard-xps-filters.md)  
 
-打印架构规范可以在此处下载：
+可在此处下载打印架构规范：
 
-[打印架构规范 1.1](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/print-schema-spec-1-1.zip)
+[打印架构规范1。1](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/print-schema-spec-1-1.zip)
 
-[打印架构规范 2.0](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
-
-
+[打印架构规范2。0](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)

@@ -12,21 +12,21 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 109dbaff5b4ed89287c4370378fa004ed3fb89fb
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
+ms.openlocfilehash: 116555381b93b997e460e95cfc2d766a75cd8297
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164797"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881933"
 ---
 # <a name="buttons-element"></a>按钮元素
 
 
 必需的**按钮**元素指定客户端计算机上的事件通知消息框中显示的一个或多个按钮。
 
-在*asyncui*命名空间中的此 URI 处定义了**按钮**元素 http://schemas.microsoft.com/2003/print/asyncui/v1/request ：。 （此资源可能在某些语言和国家/地区不可用。）
+在*asyncui*命名空间中的此 URI 处定义了 "**按钮**" 元素： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -35,7 +35,7 @@ ms.locfileid: "71164797"
 </buttons>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -91,8 +91,8 @@ ms.locfileid: "71164797"
 
 有关演示如何使用 button 元素将显示 **"确定" 和 "** **取消**" 按钮的两个**按钮**元素括**起来的代码**示例，请参阅[**按钮**](button.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[鼠标](button.md)
+[按钮](button.md)
 
 [messageBoxUI](messageboxui.md)
