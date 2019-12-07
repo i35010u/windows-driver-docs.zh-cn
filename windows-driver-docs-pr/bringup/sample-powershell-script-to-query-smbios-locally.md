@@ -3,17 +3,17 @@ title: 用于在本地查询 SMBIOS 的示例 PowerShell 脚本
 description: 用于在本地查询 SMBIOS 的示例 PowerShell 脚本
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ea4fbe0b1c6273c9b3288bbe75e2f821a920e39c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 391c0cdaf4d472bc0eca41464f075afc14f31a26
+ms.sourcegitcommit: 69df2a54164dfd6621bf909632f8ddaa6f05e5ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337410"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74897431"
 ---
 # <a name="sample-powershell-script-to-query-smbios-locally"></a>用于在本地查询 SMBIOS 的示例 PowerShell 脚本
 
 
-下面列出的 ChassisTypes 最新的 DMTF SMBIOS 规范中的复制。
+以下 ChassisTypes 列表已从最新的 DMTF SMBIOS 规范复制。
 
 ```powershell
 # Set-ExecutionPolicy or Script Signing documentation needs to be reviewed
@@ -79,7 +79,7 @@ foreach ($machine in $machines)
     $obj.Manufacturer = Get-WmiObject -class Win32_Bios -computername $machine -namespace $namespace | Select-Object -ExpandProperty Manufacturer
     $obj.UUID = Get-WmiObject Win32_ComputerSystemProduct | Select-Object -ExpandProperty UUID
     $obj.BaseBoardProduct = Get-WmiObject Win32_BaseBoard | Select-Object -ExpandProperty Product
-    $obj.ChassisTypes = Get-WmiObject Win32_SystemEnclosure | Select-Object -ExpandProperty ChassisType
+    $obj.ChassisTypes = Get-WmiObject Win32_SystemEnclosure | Select-Object -ExpandProperty ChassisTypes
     $obj.Chassis = $ChassisTypes[[int]$obj.ChassisTypes]
     $obj.SystemFamily = Get-WmiObject Win32_ComputerSystem | Select-Object -ExpandProperty SystemFamily
     $obj.SystemSKUNumber = Get-WmiObject Win32_ComputerSystem | Select-Object -ExpandProperty SystemSKUNumber

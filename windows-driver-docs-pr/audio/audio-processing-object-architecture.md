@@ -4,12 +4,12 @@ description: 音频处理对象（即）为 Windows 音频流提供可自定义�
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b69cb56c80ec3f9be2c66bc4e880d01b17848f
-ms.sourcegitcommit: 36b7db40d5a91d8726feb2e2d9d4ece1fb484051
+ms.openlocfilehash: 5f89a0c8a87f4f071610eec6021c0016decdd4c0
+ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591013"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898494"
 ---
 # <a name="audio-processing-object-architecture"></a>音频处理对象体系结构
 
@@ -76,7 +76,7 @@ Microsoft HLK 提供可用于的测试。 有关音频测试的详细信息，�
 
 您可以使用 "音频效果发现示例" 来浏览可用的音频效果。 此示例演示如何在呈现和捕获音频设备上查询音频效果，以及如何监视音频效果的变化。 它作为 SDK 示例的一部分提供，可以使用以下链接下载：
 
-[音频效果发现示例](https://code.msdn.microsoft.com/windowsapps/Audio-effects-discovery-5fd65c15)
+[音频效果发现示例](https://go.microsoft.com/fwlink/p/?linkid=2112597)
 
 **应用程序音频效果感知**
 
