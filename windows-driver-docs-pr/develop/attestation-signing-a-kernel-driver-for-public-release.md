@@ -4,12 +4,12 @@ author: DOMARS
 redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b22ffc8bdcdf93783c2e7b68f2ff2845027bbaf5
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: b8ce89f77d3cba335aac24272226fed959a1e5bf
+ms.sourcegitcommit: 4184cb3bb6737762b2768cd8b9b2233297fc64cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025146"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74820390"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -19,7 +19,7 @@ ms.locfileid: "70025146"
 
  - 证明签名支持 Windows 10 桌面版内核模式和用户模式驱动程序。 尽管用户模式驱动程序无需由适用于 Windows 10 的 Microsoft 进行签名，但相同的证明过程可以同时用于用户和内核模式驱动程序。
  - 证明签名需要使用 EV 证书，才能将驱动程序提交到硬件开发人员中心仪表板。
- - 证明签名的驱动程序仅适用于 Windows 10 桌面版；它不适用于其他版本的 Windows，例如 Windows Server 2016、Windows 8.1 或 Windows 7。
+ - 已进行证明签名的驱动程序适用于 Windows 10 和 Windows Server 2016 及更高版本。 它不适用于早期版本的 Windows，例如 Windows 8.1 和 Windows 7。
 
 
 
