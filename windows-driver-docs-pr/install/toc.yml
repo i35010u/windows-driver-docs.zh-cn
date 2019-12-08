@@ -413,7 +413,7 @@
         - name: 基本安装操作
           href: basic-installation-operations.md
         - name: 用于简化驱动程序安装的函数
-          href: setupapi-functions-that-simplify-driver-installation.md
+          href: functions-that-simplify-driver-installation.md
         - name: 使用 SetupAPI 验证驱动程序验证码签名
           href: using-setupapi-to-verify-driver-authenticode-signatures.md
         - name: 确定设备的父设备
