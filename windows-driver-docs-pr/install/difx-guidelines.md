@@ -4,18 +4,18 @@ description: DIFx 指南
 ms.assetid: de34f810-0e90-4626-b84d-160ac61541ad
 ms.date: 05/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 265ef1ed226aeeb4ab0727a16676e8740b5f4e51
-ms.sourcegitcommit: a97a623d64ddf573c760664be17778606e156cf5
+ms.openlocfilehash: ff0210d32624188043fb7f4a93e06f408ce62b31
+ms.sourcegitcommit: cb3443285ce085f17dd1750467845f0e551a6844
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74907117"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955058"
 ---
 # <a name="difx-guidelines"></a>DIFx 指南
 
 从 Windows 10 版本1607（Redstone 1）开始，驱动程序安装框架（DIFx）工具（`Difxapi.dll`、`Difxapp.dll`、`Difxappa.dll`和 `DPInst.exe`）已弃用，并且不再包含在 WDK 中。
 
-相反，我们建议将[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)作为独立驱动程序包提供，不需要安装程序。  这是一个自包含包，它会添加其自己的设置或配置，而不是根据安装程序来修改系统状态。  需要单独的驱动程序包，才能可靠地支持所有驱动程序包方案。  发布独立驱动程序包的推荐方式是通过 Windows 更新。  执行此操作的第一步是向[Windows 硬件开发人员中心](https://partner.microsoft.com/dashboard)提交驱动程序包。
+相反，我们建议将[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)作为独立驱动程序包提供，不需要安装程序。  这是一个自包含包，它会添加其自己的设置或配置，而不是根据安装程序来修改系统状态。  需要单独驱动程序包才能支持驱动程序包方案，例如通过将驱动程序包分发到 Windows 更新并将驱动程序包添加到脱机映像。  发布独立驱动程序包的推荐方式是通过 Windows 更新。  执行此操作的第一步是向[Windows 硬件开发人员中心](https://partner.microsoft.com/dashboard)提交驱动程序包。
 
 如果选择使用 DIFx，则必须使用较旧的 WDK 才能获得正确的工具。 以下注意事项适用：
 

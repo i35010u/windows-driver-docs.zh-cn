@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 1132dfa045e74df4c3771e597fd11f5227c107c4
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: f2b81859bb82a05c0d7e2cd0d211c4da4744a41b
+ms.sourcegitcommit: 631cd4a65d49a071596920d764eeb660ad25ce7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473402"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74953967"
 ---
 # <a name="partner-center-for-windows-hardware"></a>Windows 硬件合作伙伴中心
 
@@ -97,7 +97,7 @@ ms.locfileid: "68473402"
                         <ul>
                             <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/register-for-the-hardware-program">注册硬件计划</a></li>
                             <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/adding-or-removing-users">添加或删除用户</a></li>
-                            <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/driver-failure-reporting">报告驱动程序故障</a></li>
+                            <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-code-signing-certificate">添加代码签名证书</a></li>
                         </ul>
                     </div>
                 </div>
