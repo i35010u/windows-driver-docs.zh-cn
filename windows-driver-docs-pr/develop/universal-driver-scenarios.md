@@ -3,12 +3,12 @@ title: 通用驱动程序方案
 description: 介绍了 DCHU 通用驱动程序示例如何应用 DCHU 设计原则（声明性、组件化、硬件支持应用 [HSA]，以及通用 API 合规性）。
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a868e73ff14234fea0cc4721fc0a7ed7e1be8765
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a0f5ad4427ea0bb33332c7cc061dfbbc2e00b32f
+ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839608"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898500"
 ---
 # <a name="universal-driver-scenarios"></a>通用驱动程序方案
 
@@ -149,7 +149,7 @@ Fabrikam 希望在通用驱动程序包中提供基于 GUI 的伴侣应用。  �
 
 ## <a name="registering-a-com-component-in-an-inf-file"></a>在 INF 文件中注册 COM 组件
 
-Fabrikam 需要在不使用辅助安装程序的情况下注册 COM 组件。  为了在通用 INF 文件中实现此目的，他们使用了 WDK 中分发的 [Reg2inf 工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/reg2inf)。  生成 COM 服务器项目（取自[进程内 ATL COM 服务器示例](https://code.msdn.microsoft.com/ATLDllCOMServer-b52a7d5d)）后，他们提供 COM.dll 作为 Reg2inf 工具的输入。  然后，此工具生成 Fabrikam 在其基准 INF ([`osrfx2_DCHU_base.inx`]) 中包含的以下 INF 指令：
+Fabrikam 需要在不使用辅助安装程序的情况下注册 COM 组件。  为了在通用 INF 文件中实现此目的，他们使用了 WDK 中分发的 [Reg2inf 工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/reg2inf)。  生成 COM 服务器项目（取自[进程内 ATL COM 服务器示例](https://go.microsoft.com/fwlink/p/?linkid=2112596)）后，他们提供 COM.dll 作为 Reg2inf 工具的输入。  然后，此工具生成 Fabrikam 在其基准 INF ([`osrfx2_DCHU_base.inx`]) 中包含的以下 INF 指令：
 
 ```cpp
 ; Add all registry keys to successfully register the
