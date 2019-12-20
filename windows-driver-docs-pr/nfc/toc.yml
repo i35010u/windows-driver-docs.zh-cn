@@ -1,162 +1,160 @@
 - name: NFC 设计指南
+  href: index.md
+- name: NFC 设备驱动程序中的新增功能
+  href: what-s-new-in-nfc-device-drivers.md
+- name: NFC 体系结构
+  href: nfc-architecture.md
+- name: Wi-Fi direct 配对实现
+  href: wi-fi-direct-paring-implementation.md
+- name: 近场邻近感应设计指南
   items:
-    - name: NFC 设计指南
-      href: index.md
-    - name: NFC 设备驱动程序中的新增功能
-      href: what-s-new-in-nfc-device-drivers.md
-    - name: NFC 体系结构
-      href: nfc-architecture.md
-    - name: Wi-Fi direct 配对实现
-      href: wi-fi-direct-paring-implementation.md
     - name: 近场邻近感应设计指南
+      href: nfp-design-guide.md
+    - name: 点击和执行
       items:
-        - name: 近场邻近感应设计指南
-          href: nfp-design-guide.md
         - name: 点击和执行
-          items:
-            - name: 点击和执行
-              href: tap-and-do.md
-            - name: 点击和执行方案
-              href: tap-and-do-scenarios.md
-            - name: 点击和执行用例
-              href: tap-and-do-use-cases.md
+          href: tap-and-do.md
+        - name: 点击和执行方案
+          href: tap-and-do-scenarios.md
+        - name: 点击和执行用例
+          href: tap-and-do-use-cases.md
+    - name: NFP 提供程序模型
+      items:
         - name: NFP 提供程序模型
-          items:
-            - name: NFP 提供程序模型
-              href: nfp-provider-model.md
-            - name: 物理传感器模型
-              href: physical-sensor-model.md
-            - name: 消息类型
-              href: message-type.md
-            - name: 发布消息
-              href: publishing-messages.md
-            - name: 订阅消息
-              href: subscribing-for-messages.md
-            - name: 消息传输
-              href: message-transmission.md
-            - name: 邻近感应设备存在事件
-              href: proximity-device-presence-events.md
-            - name: NFP 推动的外设无线设备配对
-              href: nfp-facilitated-peripheral-wireless-device-pairing.md
+          href: nfp-provider-model.md
+        - name: 物理传感器模型
+          href: physical-sensor-model.md
+        - name: 消息类型
+          href: message-type.md
+        - name: 发布消息
+          href: publishing-messages.md
+        - name: 订阅消息
+          href: subscribing-for-messages.md
+        - name: 消息传输
+          href: message-transmission.md
+        - name: 邻近感应设备存在事件
+          href: proximity-device-presence-events.md
+        - name: NFP 推动的外设无线设备配对
+          href: nfp-facilitated-peripheral-wireless-device-pairing.md
+    - name: NFP 设备驱动程序要求
+      items:
         - name: NFP 设备驱动程序要求
-          items:
-            - name: NFP 设备驱动程序要求
-              href: nfp-device-driver-requirements.md
-            - name: 设备标识符
-              href: device-identifiers.md
-            - name: 设备接口
-              href: device-interface.md
-            - name: 发布消息
-              href: publication.md
-            - name: 消息订阅
-              href: message-subscriptions.md
-            - name: 订阅存在事件
-              href: subscribing-for-presence-events.md
-            - name: 启用
-              href: enabling.md
-            - name: 禁用
-              href: disabling.md
-            - name: 最大消息大小
-              href: maximum-message-size.md
-            - name: 传输速率
-              href: transmission-rate.md
-            - name: 标记写入
-              href: tag-writing.md
-            - name: 保留的 IOCTL 代码
-              href: reserved-ioctl-codes.md
-            - name: 电源管理
-              href: power-management.md
-            - name: 协议支持
-              items:
-                - name: 协议支持
-                  href: protocol-support.md
-                - name: NDEF 协议
-                  href: ndef-protocol.md
-                - name: 配对：蓝牙协议
-                  href: pairing-bluetooth-protocol.md
-                - name: WindowsUri 协议
-                  href: windowsuri-protocol.md
-                - name: WindowsMime 协议
-                  href: windowsmime-protocol.md
-                - name: WriteableTag 协议
-                  href: writeabletag-protocol.md
-                - name: Windows 协议
-                  href: windows-protocol.md
-                - name: 对等
-                  href: peer-to-peer.md
-    - name: 智能卡设计指南
-      items:
-        - name: 智能卡设计指南
-          href: design-guide-smart-card.md
-        - name: 功能流
-          href: functional-flow.md
-        - name: 示例序列
-          href: example-sequence.md
-        - name: 存储卡要求
-          href: storage-card-requirements.md
-        - name: 支持的智能卡属性
-          href: smart-card-attributes.md
-        - name: PC/SC 接口
-          href: pc-sc-interface.md
-    - name: 电源管理
-      items:
+          href: nfp-device-driver-requirements.md
+        - name: 设备标识符
+          href: device-identifiers.md
+        - name: 设备接口
+          href: device-interface.md
+        - name: 发布消息
+          href: publication.md
+        - name: 消息订阅
+          href: message-subscriptions.md
+        - name: 订阅存在事件
+          href: subscribing-for-presence-events.md
+        - name: 启用
+          href: enabling.md
+        - name: 禁用
+          href: disabling.md
+        - name: 最大消息大小
+          href: maximum-message-size.md
+        - name: 传输速率
+          href: transmission-rate.md
+        - name: 标记写入
+          href: tag-writing.md
+        - name: 保留的 IOCTL 代码
+          href: reserved-ioctl-codes.md
         - name: 电源管理
-          href: nfc-power-management.md
-        - name: 轮询
-          href: polling.md
-    - name: NFC 类扩展 (CX) 设计指南
-      items:
-        - name: NFC 类扩展 (CX) 设计指南
-          href: nfc-class-extension-.md
-        - name: 术语表
-          href: glossary.md
-        - name: NFC CX 快速入门指南
-          href: nfc-class-extension-quickstart.md
-        - name: 体系结构
-          href: architecture.md
-        - name: NFC 堆栈体系结构
-          href: nfc-stack-architecture.md
-        - name: 驱动程序加载顺序
-          href: driver-load-order.md
-        - name: 类扩展接口
-          href: nfc-class-extension-interface.md
-        - name: 类扩展状态机
-          href: nfc-class-extension-state-machine.md
-        - name: 扩展性模型
+          href: power-management.md
+        - name: 协议支持
           items:
-            - name: 扩展性模型
-              href: extensibility-model.md
+            - name: 协议支持
+              href: protocol-support.md
+            - name: NDEF 协议
+              href: ndef-protocol.md
+            - name: 配对：蓝牙协议
+              href: pairing-bluetooth-protocol.md
+            - name: WindowsUri 协议
+              href: windowsuri-protocol.md
+            - name: WindowsMime 协议
+              href: windowsmime-protocol.md
+            - name: WriteableTag 协议
+              href: writeabletag-protocol.md
+            - name: Windows 协议
+              href: windows-protocol.md
+            - name: 对等
+              href: peer-to-peer.md
+- name: 智能卡设计指南
+  items:
+    - name: 智能卡设计指南
+      href: design-guide-smart-card.md
+    - name: 功能流
+      href: functional-flow.md
+    - name: 示例序列
+      href: example-sequence.md
+    - name: 存储卡要求
+      href: storage-card-requirements.md
+    - name: 支持的智能卡属性
+      href: smart-card-attributes.md
+    - name: PC/SC 接口
+      href: pc-sc-interface.md
+- name: 电源管理
+  items:
+    - name: 电源管理
+      href: nfc-power-management.md
+    - name: 轮询
+      href: polling.md
+- name: NFC 类扩展 (CX) 设计指南
+  items:
+    - name: NFC 类扩展 (CX) 设计指南
+      href: nfc-class-extension-.md
+    - name: 术语表
+      href: glossary.md
+    - name: NFC CX 快速入门指南
+      href: nfc-class-extension-quickstart.md
+    - name: 体系结构
+      href: architecture.md
+    - name: NFC 堆栈体系结构
+      href: nfc-stack-architecture.md
+    - name: 驱动程序加载顺序
+      href: driver-load-order.md
+    - name: 类扩展接口
+      href: nfc-class-extension-interface.md
+    - name: 类扩展状态机
+      href: nfc-class-extension-state-machine.md
+    - name: 扩展性模型
+      items:
+        - name: 扩展性模型
+          href: extensibility-model.md
+        - name: 序列处理
+          items:
             - name: 序列处理
-              items:
-                - name: 序列处理
-                  href: sequence-handling.md
-                - name: 序列
-                  href: sequences.md
-                - name: 序列标志
-                  href: sequence-flags.md
-                - name: 初始化序列
-                  href: initialization-sequence.md
-                - name: NFCEE 发现序列
-                  href: nfcee-discovery-sequence.md
-                - name: RF 发现序列
-                  href: rf-discovery-sequence.md
-                - name: 标记 RF 数据交换序列
-                  href: tag-rf-data-exchange-sequence.md
-                - name: P2P RF 数据交换序列
-                  href: p2p-rf-data-exchange-sequence.md
-                - name: 卡仿真 RF 序列
-                  href: card-emulation-rf-sequence.md
-            - name: NCI 数据包处理
-              href: packet-handling.md
-        - name: 可配置性
-          href: configurability.md
-        - name: 错误处理
-          href: error-handling.md
-        - name: 电源状态
-          href: power-states.md
-        - name: NFC 客户端驱动程序电源管理要求
-          href: nfc-client-driver-power-management-requirements.md
-        - name: 日志记录
-          href: logging.md
-        - name: 持久保留的数据
-          href: persisted-data.md
+              href: sequence-handling.md
+            - name: 序列
+              href: sequences.md
+            - name: 序列标志
+              href: sequence-flags.md
+            - name: 初始化序列
+              href: initialization-sequence.md
+            - name: NFCEE 发现序列
+              href: nfcee-discovery-sequence.md
+            - name: RF 发现序列
+              href: rf-discovery-sequence.md
+            - name: 标记 RF 数据交换序列
+              href: tag-rf-data-exchange-sequence.md
+            - name: P2P RF 数据交换序列
+              href: p2p-rf-data-exchange-sequence.md
+            - name: 卡仿真 RF 序列
+              href: card-emulation-rf-sequence.md
+        - name: NCI 数据包处理
+          href: packet-handling.md
+    - name: 可配置性
+      href: configurability.md
+    - name: 错误处理
+      href: error-handling.md
+    - name: 电源状态
+      href: power-states.md
+    - name: NFC 客户端驱动程序电源管理要求
+      href: nfc-client-driver-power-management-requirements.md
+    - name: 日志记录
+      href: logging.md
+    - name: 持久保留的数据
+      href: persisted-data.md

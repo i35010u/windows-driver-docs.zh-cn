@@ -1,15 +1,13 @@
 - name: 音频驱动程序设计指南
-  items:
-    - name: 音频驱动程序设计指南
-      href: index.md
-    - name: Windows 10：音频的新增功能
-      href: windows-threshold--what-s-new-for-audio.md
-    - name: Windows 音频体系结构
-      href: windows-audio-architecture.md
-    - name: 开发 WDM 音频驱动程序的路线图
-      href: roadmap-for-developing-wdm-audio-drivers.md
-    - name: 自定义音频驱动程序类型决策树
-      href: custom-audio-driver-type-decision-tree.md
+  href: index.md
+- name: Windows 10：音频的新增功能
+  href: windows-threshold--what-s-new-for-audio.md
+- name: Windows 音频体系结构
+  href: windows-audio-architecture.md
+- name: 开发 WDM 音频驱动程序的路线图
+  href: roadmap-for-developing-wdm-audio-drivers.md
+- name: 自定义音频驱动程序类型决策树
+  href: custom-audio-driver-type-decision-tree.md
 - name: WDM 音频驱动程序概述
   items:
     - name: WDM 音频驱动程序概述

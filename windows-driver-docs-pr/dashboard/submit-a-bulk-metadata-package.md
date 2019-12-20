@@ -5,12 +5,12 @@ ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c789f0b204b1752d652073e463989eb4575a7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 852fcca8b1f2b0601172a7babd9b05cb5d033459
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364431"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209163"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>提交批量元数据包
 
@@ -142,7 +142,7 @@ BulkMetadataSubmission.xml 文档中的数据基于 BulkMetadataSubmission XML �
 
 **BulkMetadataSubmission XML 架构命名空间**
 
-以下是 PcMetadataSubmission XML 架构的命名空间： http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/BulkMetadataSubmission
+以下是 PcMetadataSubmission XML 架构的命名空间：`http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/BulkMetadataSubmission`
 
 **BulkMetadataSubmission XML 元素/属性概述**
 

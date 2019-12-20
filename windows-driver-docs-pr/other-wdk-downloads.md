@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: db74e0710a473254d22b6541bda0ba3802e49a62
-ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
+ms.openlocfilehash: c328c2aca85819449910d3334d6870b95096abb1
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735163"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210847"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
@@ -90,10 +90,10 @@ WDK 与 Visual Studio 和 Windows 调试工具 (WinDbg) 集成在一起。 此�
 
 | Windows 版本               | EWDK                              |
 |-----------------------------------|-----------------------------------|
-| Windows 10 版本 1809          | [适用于 Windows 10 版本 1809 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 版本 1803          | [适用于 Windows 10 版本 1803 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk) |
+| Windows 10 版本 1809          | [适用于 Windows 10 版本 1809 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 版本 1803          | [适用于 Windows 10 版本 1803 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 版本 1709          | [适用于 Visual Studio 与生成工具 15.6 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017)（推荐） <br/>[适用于 Visual Studio 与生成工具 15.4 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) <br/>[适用于 Visual Studio 与生成工具 15.2 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 版本 1703          | [适用于 Windows 10 版本 1703 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2015) |
 
 > [!Note]
 > 从 Windows 10 版本 1709 开始，EWDK 基于 ISO。 若要开始使用，请下载并装载 ISO，然后运行 **LaunchBuildEnv**。

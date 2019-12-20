@@ -1,46 +1,44 @@
 - name: PCMCIA 总线驱动程序设计指南
+  href: index.md
+- name: 访问 PCMCIA 设备的属性内存
   items:
-    - name: PCMCIA 总线驱动程序设计指南
-      href: index.md
     - name: 访问 PCMCIA 设备的属性内存
-      items:
-        - name: 访问 PCMCIA 设备的属性内存
-          href: access-attribute-memory-of-a-pcmcia-device.md
-        - name: 访问 PCMCIA 设备的属性内存的要求
-          href: requirements-for-accessing-attribute-memory-of-a-pcmcia-device.md
-        - name: 使用即插即用 I/O 请求访问 PCMCIA 属性内存
-          href: access-pcmcia-attribute-memory-by-using-a-plug-and-play-i-o-request.md
-        - name: 使用 BUS_INTERFACE_STANDARD 访问 PCMCIA 属性内存
-          href: access-pcmcia-attribute-memory-by-using-a-bus-interface-standard-inter.md
-        - name: 通过永久内存窗口访问 PCMCIA 属性内存
-          href: access-pcmcia-attribute-memory-through-a-permanent-memory-window.md
-        - name: 使用 PCMCIA_INTERFACE_STANDARD 访问 PCMCIA 属性内存
-          href: access-pcmcia-attribute-memory-by-using-a-pcmcia-interface-standard-in.md
+      href: access-attribute-memory-of-a-pcmcia-device.md
+    - name: 访问 PCMCIA 设备的属性内存的要求
+      href: requirements-for-accessing-attribute-memory-of-a-pcmcia-device.md
+    - name: 使用即插即用 I/O 请求访问 PCMCIA 属性内存
+      href: access-pcmcia-attribute-memory-by-using-a-plug-and-play-i-o-request.md
+    - name: 使用 BUS_INTERFACE_STANDARD 访问 PCMCIA 属性内存
+      href: access-pcmcia-attribute-memory-by-using-a-bus-interface-standard-inter.md
+    - name: 通过永久内存窗口访问 PCMCIA 属性内存
+      href: access-pcmcia-attribute-memory-through-a-permanent-memory-window.md
+    - name: 使用 PCMCIA_INTERFACE_STANDARD 访问 PCMCIA 属性内存
+      href: access-pcmcia-attribute-memory-by-using-a-pcmcia-interface-standard-in.md
+- name: 内存卡的 PCMCIA_INTERFACE_STANDARD 接口
+  items:
     - name: 内存卡的 PCMCIA_INTERFACE_STANDARD 接口
+      href: pcmcia-interface-standard-interface-for-memory-cards.md
+    - name: PCMCIA_INTERFACE_STANDARD 接口的功能
+      href: functionality-of-the-pcmcia-interface-standard-interface.md
+    - name: 获取 PCMCIA_INTERFACE_STANDARD 接口
+      href: obtaining-a-pcmcia-interface-standard-interface.md
+    - name: 调用 PCMCIA_INTERFACE_STANDARD 接口例程
+      href: calling-a-pcmcia-interface-standard-interface-routine.md
+    - name: PCMCIA 内存卡驱动程序的特殊注意事项
       items:
-        - name: 内存卡的 PCMCIA_INTERFACE_STANDARD 接口
-          href: pcmcia-interface-standard-interface-for-memory-cards.md
-        - name: PCMCIA_INTERFACE_STANDARD 接口的功能
-          href: functionality-of-the-pcmcia-interface-standard-interface.md
-        - name: 获取 PCMCIA_INTERFACE_STANDARD 接口
-          href: obtaining-a-pcmcia-interface-standard-interface.md
-        - name: 调用 PCMCIA_INTERFACE_STANDARD 接口例程
-          href: calling-a-pcmcia-interface-standard-interface-routine.md
         - name: PCMCIA 内存卡驱动程序的特殊注意事项
-          items:
-            - name: PCMCIA 内存卡驱动程序的特殊注意事项
-              href: special-considerations-for-pcmcia-memory-card-drivers.md
-            - name: Windows 上的内存限制
-              href: restrictions-on-memory-windows.md
-            - name: 读取和写入属性内存
-              href: read-and-write-attribute-memory.md
+          href: special-considerations-for-pcmcia-memory-card-drivers.md
+        - name: Windows 上的内存限制
+          href: restrictions-on-memory-windows.md
+        - name: 读取和写入属性内存
+          href: read-and-write-attribute-memory.md
+- name: Windows XP 上的 PCMCIA IRQ 路由
+  items:
     - name: Windows XP 上的 PCMCIA IRQ 路由
-      items:
-        - name: Windows XP 上的 PCMCIA IRQ 路由
-          href: pcmcia-irq-routing-on-windows-xp.md
-        - name: 路由电脑卡中断要求
-          href: requirements-for-routing-pc-card-interrupts.md
-        - name: 用于配置电脑卡中断的 INF 替代
-          href: inf-override-for-configuring-pc-card-interrupts.md
-        - name: 电脑卡和卡驱动程序的设计最佳做法
-          href: best-practices-for-the-design-of-pc-cards-and-card-drivers.md
+      href: pcmcia-irq-routing-on-windows-xp.md
+    - name: 路由电脑卡中断要求
+      href: requirements-for-routing-pc-card-interrupts.md
+    - name: 用于配置电脑卡中断的 INF 替代
+      href: inf-override-for-configuring-pc-card-interrupts.md
+    - name: 电脑卡和卡驱动程序的设计最佳做法
+      href: best-practices-for-the-design-of-pc-cards-and-card-drivers.md

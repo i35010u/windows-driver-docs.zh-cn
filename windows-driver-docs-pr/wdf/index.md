@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 5cb46404fc7381d07ebc02943e0f453ffe2b1c1b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d2a7da20e127757192cc0dd88fd0c70cb213b5dc
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842800"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210817"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
@@ -85,11 +85,11 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 ## <a name="wdf-source-code-is-publicly-available"></a>WDF 源代码已公开发布
 
 
--   WDF 源代码现在位于 GitHub 上，以开源方式提供。 Windows 10 中提供的 WDF 运行时库是根据此源代码生成的。 如果能够按照驱动程序和 WDF 之间的交互步骤进行操作，则可更有效地调试驱动程序。 从 <http://github.com/Microsoft/Windows-Driver-Frameworks> 下载它。
+-   WDF 源代码现在位于 GitHub 上，以开源方式提供。 Windows 10 中提供的 WDF 运行时库是根据此源代码生成的。 如果能够按照驱动程序和 WDF 之间的交互步骤进行操作，则可更有效地调试驱动程序。 从 <https://github.com/Microsoft/Windows-Driver-Frameworks> 下载它。
 
 -   Windows 10 上的 WDF 的专用符号文件现在可以通 Microsoft 符号服务器获取。
 
--   Windows 驱动程序工具包 (WDK) 10 示例现在也发布到 GitHub。 从 <http://github.com/Microsoft/Windows-Driver-Samples> 下载它们。
+-   Windows 驱动程序工具包 (WDK) 10 示例现在也发布到 GitHub。 从 <https://github.com/Microsoft/Windows-Driver-Samples> 下载它们。
 
 ## <a name="automatic-source-level-debugging-of-framework-code"></a>自动对框架代码进行源级别调试
 

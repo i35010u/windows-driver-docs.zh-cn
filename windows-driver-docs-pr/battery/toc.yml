@@ -1,74 +1,72 @@
 - name: 电池设备设计指南
+  href: index.md
+- name: 编写电池微型类驱动程序
   items:
-    - name: 电池设备设计指南
-      href: index.md
     - name: 编写电池微型类驱动程序
+      href: writing-battery-miniclass-drivers.md
+    - name: 系统电池管理概述
+      href: overview-of-system-battery-management.md
+    - name: 电池类和微型类驱动程序的交互
       items:
-        - name: 编写电池微型类驱动程序
-          href: writing-battery-miniclass-drivers.md
-        - name: 系统电池管理概述
-          href: overview-of-system-battery-management.md
         - name: 电池类和微型类驱动程序的交互
-          items:
-            - name: 电池类和微型类驱动程序的交互
-              href: interaction-of-battery-class-and-miniclass-drivers.md
-            - name: 电池类驱动程序功能
-              href: battery-class-driver-functionality.md
-            - name: 电池微型类驱动程序功能
-              href: battery-miniclass-driver-functionality.md
-        - name: 提供所需的电池微型类驱动程序功能
-          href: supplying-required-battery-miniclass-driver-functionality.md
-        - name: 电池微型类驱动程序的 DriverEntry 例程
-          href: driverentry-routine-of-a-battery-miniclass-driver.md
-        - name: 电池微型类驱动程序的 AddDevice 例程
-          items:
-            - name: 电池微型类驱动程序的 AddDevice 例程
-              href: adddevice-routine-of-a-battery-miniclass-driver.md
-            - name: 在电池微型类驱动程序中创建 FDO
-              href: creating-an-fdo-in-the-battery-miniclass-driver.md
-            - name: 初始化电池类设备
-              href: initializing-the-battery-class-device.md
-        - name: 电池微型类驱动程序的 DispatchDeviceControl 例程
-          href: dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md
-        - name: 电池微型类驱动程序的 DispatchSystemControl 例程
-          href: dispatchsystemcontrol-routine-of-a-battery-miniclass-driver.md
-        - name: 响应电池类驱动程序查询
-          items:
-            - name: 响应电池类驱动程序查询
-              href: responding-to-battery-class-driver-queries.md
-            - name: 响应电池标记查询
-              href: responding-to-battery-tag-queries.md
-            - name: 响应电池信息查询
-              href: responding-to-battery-information-queries.md
-            - name: 响应电池状态查询
-              href: responding-to-battery-status-queries.md
-        - name: 提供电池设备通知
-          items:
-            - name: 提供电池设备通知
-              href: supplying-battery-device-notification.md
-            - name: 电池状态和通知例程的交互
-              href: interaction-of-battery-status-and-notification-routines.md
-            - name: 设置和取消电池通知
-              href: setting-and-canceling-battery-notification.md
-        - name: 电池微型类驱动程序的 Unload 例程
-          href: unload-routine-of-a-battery-miniclass-driver.md
-        - name: 安装电池驱动程序
-          href: installing-a-battery-driver.md
-    - name: 编写 UPS 微型驱动程序
+          href: interaction-of-battery-class-and-miniclass-drivers.md
+        - name: 电池类驱动程序功能
+          href: battery-class-driver-functionality.md
+        - name: 电池微型类驱动程序功能
+          href: battery-miniclass-driver-functionality.md
+    - name: 提供所需的电池微型类驱动程序功能
+      href: supplying-required-battery-miniclass-driver-functionality.md
+    - name: 电池微型类驱动程序的 DriverEntry 例程
+      href: driverentry-routine-of-a-battery-miniclass-driver.md
+    - name: 电池微型类驱动程序的 AddDevice 例程
       items:
-        - name: 编写 UPS 微型驱动程序
-          href: writing-ups-minidrivers.md
-        - name: UPS 微型驱动程序功能
-          href: ups-minidriver-functionality.md
+        - name: 电池微型类驱动程序的 AddDevice 例程
+          href: adddevice-routine-of-a-battery-miniclass-driver.md
+        - name: 在电池微型类驱动程序中创建 FDO
+          href: creating-an-fdo-in-the-battery-miniclass-driver.md
+        - name: 初始化电池类设备
+          href: initializing-the-battery-class-device.md
+    - name: 电池微型类驱动程序的 DispatchDeviceControl 例程
+      href: dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md
+    - name: 电池微型类驱动程序的 DispatchSystemControl 例程
+      href: dispatchsystemcontrol-routine-of-a-battery-miniclass-driver.md
+    - name: 响应电池类驱动程序查询
+      items:
+        - name: 响应电池类驱动程序查询
+          href: responding-to-battery-class-driver-queries.md
+        - name: 响应电池标记查询
+          href: responding-to-battery-tag-queries.md
+        - name: 响应电池信息查询
+          href: responding-to-battery-information-queries.md
+        - name: 响应电池状态查询
+          href: responding-to-battery-status-queries.md
+    - name: 提供电池设备通知
+      items:
+        - name: 提供电池设备通知
+          href: supplying-battery-device-notification.md
+        - name: 电池状态和通知例程的交互
+          href: interaction-of-battery-status-and-notification-routines.md
+        - name: 设置和取消电池通知
+          href: setting-and-canceling-battery-notification.md
+    - name: 电池微型类驱动程序的 Unload 例程
+      href: unload-routine-of-a-battery-miniclass-driver.md
+    - name: 安装电池驱动程序
+      href: installing-a-battery-driver.md
+- name: 编写 UPS 微型驱动程序
+  items:
+    - name: 编写 UPS 微型驱动程序
+      href: writing-ups-minidrivers.md
+    - name: UPS 微型驱动程序功能
+      href: ups-minidriver-functionality.md
+    - name: UPS 注册表项
+      items:
         - name: UPS 注册表项
-          items:
-            - name: UPS 注册表项
-              href: ups-registry-entries.md
-            - name: UPS\Status 注册表项
-              href: ups-status-registry-entries.md
-            - name: UPS\ServiceProviders 注册表项
-              href: ups-serviceproviders-registry-entries.md
-        - name: 示例 UPS 微型驱动程序
-          href: sample-ups-minidriver.md
-        - name: 安装 UPS 微型驱动程序
-          href: installing-ups-minidrivers.md
+          href: ups-registry-entries.md
+        - name: UPS\Status 注册表项
+          href: ups-status-registry-entries.md
+        - name: UPS\ServiceProviders 注册表项
+          href: ups-serviceproviders-registry-entries.md
+    - name: 示例 UPS 微型驱动程序
+      href: sample-ups-minidriver.md
+    - name: 安装 UPS 微型驱动程序
+      href: installing-ups-minidrivers.md

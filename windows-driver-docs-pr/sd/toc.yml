@@ -1,12 +1,10 @@
 - name: SD 总线驱动程序设计指南
-  items:
-    - name: SD 总线驱动程序设计指南
-      href: index.md
-    - name: SD 卡驱动程序堆栈
-      href: sd-card-driver-stack.md
-    - name: 打开、初始化和关闭 SD 卡总线接口
-      href: opening--initializing-and-closing-an-sd-card-bus-interface.md
-    - name: 处理 SD 卡中断
-      href: handling-sd-card-interrupts.md
-    - name: SD 卡请求
-      href: sd-card-requests.md
+  href: index.md
+- name: SD 卡驱动程序堆栈
+  href: sd-card-driver-stack.md
+- name: 打开、初始化和关闭 SD 卡总线接口
+  href: opening--initializing-and-closing-an-sd-card-bus-interface.md
+- name: 处理 SD 卡中断
+  href: handling-sd-card-interrupts.md
+- name: SD 卡请求
+  href: sd-card-requests.md

@@ -1,56 +1,54 @@
 - name: 3D 打印机驱动程序设计指南
+  href: index.md
+- name: 3D 打印合作伙伴加入指南
+  href: 3d-partner-onboarding-guide.md
+- name: 3D 打印机的 Microsoft 标准驱动程序
+  href: microsoft-standard-driver-for-3d-printers-.md
+- name: MS3DPrint 标准 G-Code 驱动程序
   items:
-    - name: 3D 打印机驱动程序设计指南
-      href: index.md
-    - name: 3D 打印合作伙伴加入指南
-      href: 3d-partner-onboarding-guide.md
-    - name: 3D 打印机的 Microsoft 标准驱动程序
-      href: microsoft-standard-driver-for-3d-printers-.md
     - name: MS3DPrint 标准 G-Code 驱动程序
-      items:
-        - name: MS3DPrint 标准 G-Code 驱动程序
-          href: ms3dprint-standard-g-code-driver.md
-        - name: 驱动程序安装
-          href: driver-installation.md
-        - name: 配置设备
-          href: configuring-the-device.md
-        - name: 切片器设置
-          href: slicer-settings.md
-        - name: 示例配置 XML
-          href: sample-configuration-xml.md
-    - name: 3D 打印机自定义 USB 接口支持
-      href: 3d-printer-custom-usb-interface.md
+      href: ms3dprint-standard-g-code-driver.md
+    - name: 驱动程序安装
+      href: driver-installation.md
+    - name: 配置设备
+      href: configuring-the-device.md
+    - name: 切片器设置
+      href: slicer-settings.md
+    - name: 示例配置 XML
+      href: sample-configuration-xml.md
+- name: 3D 打印机自定义 USB 接口支持
+  href: 3d-printer-custom-usb-interface.md
+- name: 3D 打印示例 WSD 应用
+  items:
     - name: 3D 打印示例 WSD 应用
-      items:
-        - name: 3D 打印示例 WSD 应用
-          href: 3d-printing-sample-wsd-app.md
-        - name: 安装驱动程序和示例应用
-          href: install-the-driver-and-sample-app.md
-        - name: 将文件打印到 WSD 示例
-          href: print-files-to-the-wsd-sample.md
-        - name: 对驱动程序包进行测试签名
-          href: test-sign-a-driver-package.md
-    - name: 在设备上启用 WSPrint 2.0
-      href: enabling-wsprint-on-a-device.md
+      href: 3d-printing-sample-wsd-app.md
+    - name: 安装驱动程序和示例应用
+      href: install-the-driver-and-sample-app.md
+    - name: 将文件打印到 WSD 示例
+      href: print-files-to-the-wsd-sample.md
+    - name: 对驱动程序包进行测试签名
+      href: test-sign-a-driver-package.md
+- name: 在设备上启用 WSPrint 2.0
+  href: enabling-wsprint-on-a-device.md
+- name: 3D 制造的打印架构关键字
+  items:
     - name: 3D 制造的打印架构关键字
-      items:
-        - name: 3D 制造的打印架构关键字
-          href: print-schema-keywords-for-3d-manufacturing.md
-        - name: 3D 制造关键字概述
-          href: 3d-manufacturing-keywords-overview.md
-        - name: 设备控制关键字
-          href: device-control-keywords.md
-        - name: 材料关键字
-          href: material-keywords.md
-        - name: 输出关键字
-          href: output-keywords.md
-        - name: 打印架构术语表
-          href: print-schema-glossary.md
-        - name: PrintCapabilities 文档示例
-          href: example-printcapabilities-document.md
-        - name: PrintTicket 文档示例
-          href: example-printticket-document.md
-        - name: 打印架构参考
-          href: print-schema-references.md
-    - name: 3D 硬件合作伙伴
-      href: 3d-printing-partners.md
+      href: print-schema-keywords-for-3d-manufacturing.md
+    - name: 3D 制造关键字概述
+      href: 3d-manufacturing-keywords-overview.md
+    - name: 设备控制关键字
+      href: device-control-keywords.md
+    - name: 材料关键字
+      href: material-keywords.md
+    - name: 输出关键字
+      href: output-keywords.md
+    - name: 打印架构术语表
+      href: print-schema-glossary.md
+    - name: PrintCapabilities 文档示例
+      href: example-printcapabilities-document.md
+    - name: PrintTicket 文档示例
+      href: example-printticket-document.md
+    - name: 打印架构参考
+      href: print-schema-references.md
+- name: 3D 硬件合作伙伴
+  href: 3d-printing-partners.md

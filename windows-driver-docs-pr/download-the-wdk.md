@@ -10,12 +10,12 @@ keywords:
 ms.date: 08/06/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4182d6940c016b1fca116f95fdc641b6b8d113ca
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: fa610abc6762a27b34b54b1f8c9994755aca10d2
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74862227"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210803"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -60,7 +60,7 @@ EWDK 是一种用于生成驱动程序的独立自包含命令行环境。 其�
 
 ### <a name="download-iconimagesdownload-installpng-ewdk-with-visual-studio-build-tools"></a>![“下载”图标](images/download-install.png) 包含 Visual Studio 生成工具的 EWDK
 
-* [下载适用于 Windows 10 版本 1903 的 EWDK](https://developer.microsoft.com/windows/hardware/license-terms-EWDK-2)
+* [下载适用于 Windows 10 版本 1903 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019)
 
 ## <a name="additional-information"></a>其他信息
 

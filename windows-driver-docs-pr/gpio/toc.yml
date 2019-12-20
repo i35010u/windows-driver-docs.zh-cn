@@ -1,46 +1,44 @@
 - name: 通用 I/O (GPIO) 驱动程序设计指南
+  href: index.md
+- name: GPIO 驱动程序支持概述
+  href: gpio-driver-support-overview.md
+- name: GpioClx I/O 和中断接口
+  href: gpioclx-i-o-and-interrupt-interfaces.md
+- name: 基于 GPIO 的硬件资源
   items:
-    - name: 通用 I/O (GPIO) 驱动程序设计指南
-      href: index.md
-    - name: GPIO 驱动程序支持概述
-      href: gpio-driver-support-overview.md
-    - name: GpioClx I/O 和中断接口
-      href: gpioclx-i-o-and-interrupt-interfaces.md
     - name: 基于 GPIO 的硬件资源
-      items:
-        - name: 基于 GPIO 的硬件资源
-          href: gpio-based-hardware-resources.md
-        - name: 将 KMDF 驱动程序连接到 GPIO I/O 管脚
-          href: connecting-a-kmdf-driver-to-gpio-i-o-pins.md
+      href: gpio-based-hardware-resources.md
+    - name: 将 KMDF 驱动程序连接到 GPIO I/O 管脚
+      href: connecting-a-kmdf-driver-to-gpio-i-o-pins.md
+- name: GPIO 中断
+  items:
     - name: GPIO 中断
-      items:
-        - name: GPIO 中断
-          href: gpio-interrupts.md
-        - name: 主要和次要中断
-          href: primary-and-secondary-interrupts.md
-        - name: 基于 GPIO 的中断资源
-          href: gpio-based-interrupt-resources.md
-        - name: 被动级别 ISR
-          href: passive-level-isrs.md
-        - name: 与中断相关的回调
-          href: interrupt-related-callbacks.md
-        - name: GPIO 控制器驱动程序的中断同步
-          href: interrupt-synchronization-for-gpio-controller-drivers.md
-        - name: 启用和禁用共享 GPIO 中断
-          href: enabling-and-disabling-shared-gpio-interrupts.md
-        - name: GPIO 中断掩码
-          href: gpio-interrupt-masks.md
+      href: gpio-interrupts.md
+    - name: 主要和次要中断
+      href: primary-and-secondary-interrupts.md
+    - name: 基于 GPIO 的中断资源
+      href: gpio-based-interrupt-resources.md
+    - name: 被动级别 ISR
+      href: passive-level-isrs.md
+    - name: 与中断相关的回调
+      href: interrupt-related-callbacks.md
+    - name: GPIO 控制器驱动程序的中断同步
+      href: interrupt-synchronization-for-gpio-controller-drivers.md
+    - name: 启用和禁用共享 GPIO 中断
+      href: enabling-and-disabling-shared-gpio-interrupts.md
+    - name: GPIO 中断掩码
+      href: gpio-interrupt-masks.md
+- name: GpioClx DDI
+  items:
     - name: GpioClx DDI
-      items:
-        - name: GpioClx DDI
-          href: gpioclx-ddi.md
-        - name: GpioClx DDI 中的驱动程序支持方法
-          href: driver-support-methods-in-the-gpioclx-ddi.md
-        - name: 可选和必需的 GPIO 回调函数
-          href: optional-and-required-gpio-callback-functions.md
-        - name: GPIO 设备上下文
-          href: gpio-device-contexts.md
-        - name: 将 GPIO 控制器分区为管脚库
-          href: partitioning-a-gpio-controller-into-banks-of-pins.md
-        - name: GPIO 控制器驱动程序的实现问题
-          href: implementation-issues-for-gpio-controller-drivers.md
+      href: gpioclx-ddi.md
+    - name: GpioClx DDI 中的驱动程序支持方法
+      href: driver-support-methods-in-the-gpioclx-ddi.md
+    - name: 可选和必需的 GPIO 回调函数
+      href: optional-and-required-gpio-callback-functions.md
+    - name: GPIO 设备上下文
+      href: gpio-device-contexts.md
+    - name: 将 GPIO 控制器分区为管脚库
+      href: partitioning-a-gpio-controller-into-banks-of-pins.md
+    - name: GPIO 控制器驱动程序的实现问题
+      href: implementation-issues-for-gpio-controller-drivers.md

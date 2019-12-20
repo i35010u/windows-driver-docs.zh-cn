@@ -1,20 +1,18 @@
 - name: PCI 驱动程序编程指南
-  items:
-    - name: PCI 驱动程序编程指南
-      href: index.md
-    - name: PCI 电源管理和设备驱动程序
-      href: pci-power-management-and-device-drivers.md
-    - name: 在 Windows 中启用 PCI Express 原生控制
-      href: enabling-pci-express-native-control.md
-    - name: PCIe 根端口的设备特定数据 (_DSD)
-      href: dsd-for-pcie-root-ports.md
-    - name: 访问 PCI 设备配置空间
-      href: accessing-pci-device-configuration-space.md
-    - name: 减少 I/O 资源使用
-      href: i-o-resource-usage-reduction.md
-    - name: 启动设备 IRP 中的资源顺序
-      href: order-of-resources-in-start-device-irp.md
-    - name: 有关图形的 PCI Express 常见问题解答
-      href: pci-express-faq-for-graphics.md
-    - name: PCI 示例
-      href: pci-sample.md
+  href: index.md
+- name: PCI 电源管理和设备驱动程序
+  href: pci-power-management-and-device-drivers.md
+- name: 在 Windows 中启用 PCI Express 原生控制
+  href: enabling-pci-express-native-control.md
+- name: PCIe 根端口的设备特定数据 (_DSD)
+  href: dsd-for-pcie-root-ports.md
+- name: 访问 PCI 设备配置空间
+  href: accessing-pci-device-configuration-space.md
+- name: 减少 I/O 资源使用
+  href: i-o-resource-usage-reduction.md
+- name: 启动设备 IRP 中的资源顺序
+  href: order-of-resources-in-start-device-irp.md
+- name: 有关图形的 PCI Express 常见问题解答
+  href: pci-express-faq-for-graphics.md
+- name: PCI 示例
+  href: pci-sample.md

@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 976eaeaa857826b7c896d3944c1f782103a1da8f
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 6cf4935ac0532d4db9b0e603a6707e5201e0720a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863135"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210649"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -102,7 +102,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <a href="https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog" data-raw-source="[Microsoft Windows USB Core Team Blog](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog)">Microsoft Windows USB 核心团队博客</a>
 <p>查看 Microsoft USB 团队撰写的博文。 此博客重点介绍 Windows USB 驱动程序堆栈，该堆栈适用于 Windows 电脑中的各种 USB 主控制器和 USB 集线器。 适用于 USB 客户端驱动程序开发人员和 USB 硬件设计人员的资源，方便他们了解驱动程序堆栈实现、解决常见问题以及如何使用工具来收集跟踪和日志文件。</p>
 <a href="https://community.osr.com/categories/ntdev" data-raw-source="[OSR Online Lists - ntdev](https://community.osr.com/categories/ntdev)">OSR Online 列表 - ntdev</a>
-<p>由 <a href="http://www.osronline.com/index.cfm" data-raw-source="[OSR Online](http://www.osronline.com/index.cfm)">OSR Online</a> 管理的讨论列表，适用于内核模式驱动程序开发人员。</p>
+<p>由 <a href="https://www.osronline.com/index.cfm" data-raw-source="[OSR Online](https://www.osronline.com/index.cfm)">OSR Online</a> 管理的讨论列表，适用于内核模式驱动程序开发人员。</p>
 <a href="https://msdn.microsoft.com/windows/hardware/" data-raw-source="[Windows Dev-Center for Hardware Development](https://msdn.microsoft.com/windows/hardware/)">专注硬件开发的 Windows 开发人员中心</a>
 <p>各种基于常见问题的资源，这些问题由不熟悉 Windows 操作系统的 USB 设备和驱动程序开发的开发人员提出。</p>
 <p></p>
@@ -114,7 +114,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
 <p><strong>适合学习的 USB 硬件</strong></p>
 <a href="microsoft-usb-test-tool--mutt--devices.md" data-raw-source="[MUTT devices](microsoft-usb-test-tool--mutt--devices.md)">MUTT 设备</a>
 <p>MUTT 和 SuperMUTT 设备以及伴随的软件包已集成到包含 USB 测试的 HCK 套件中。 它们提供的自动化测试可以在 USB 控制器、设备和系统的开发周期中使用，尤其是在进行压力测试时使用。</p>
-<a href="http://www.osronline.com/index.cfm" data-raw-source="[OSR USB FX2 Learning Kit](http://www.osronline.com/index.cfm)">OSR USB FX2 学习工具包</a>
+<a href="https://www.osronline.com/index.cfm" data-raw-source="[OSR USB FX2 Learning Kit](https://www.osronline.com/index.cfm)">OSR USB FX2 学习工具包</a>
 <p>前提是你不熟悉 USB 驱动程序开发。 此工具包最适合学习本文档集中包括的 USB 示例。 可以从 OSR Online 商店获取学习工具包。</p></td>
 <td><strong>编写 USB 客户端驱动程序（KMDF、UMDF）</strong>
 <p>USB 驱动程序开发简介。 介绍在为设备提供 USB 驱动程序时如何选择最适合的模型。 此部分还包括一些教程，介绍如何使用 Microsoft Visual Studio 随附的 USB 模板编写第一个用户模式的 USB 驱动程序和内核模式的 USB 驱动程序。</p>

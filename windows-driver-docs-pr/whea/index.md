@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: af2d98f959ee24bb734a898cf52075b898b7cf5b
-ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
+ms.openlocfilehash: 5a72e96de0677e80657a37a45edc50ffa7654e88
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72021051"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210157"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南
 
@@ -52,7 +52,7 @@ ms.locfileid: "72021051"
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 硬件错误体系结构 ACPI 表规范](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/WHEA_ACPI-tables.docx)  
+[Windows 硬件错误体系结构 ACPI 表规范](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/WHEA_ACPI-tables.docx)  
 
 [Hardware Management and Security](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614601(v=vs.85))（硬件管理和安全性）  
 

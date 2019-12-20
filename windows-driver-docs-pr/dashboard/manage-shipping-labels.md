@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: 77685442d72be8a397e18d6215386d0495c2a222
-ms.sourcegitcommit: e1f02bc9a982eefa1e326c95d3aca5ecc68581ed
+ms.openlocfilehash: a4d0997b27979c32c2c19fecb0edab550f6ab553
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721619"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209215"
 ---
 # <a name="manage-shipping-labels"></a>管理发货标签
 
@@ -47,7 +47,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/sub
 
 以下代码示例演示了如何使用 Microsoft 硬件 API：
 
-* [C# 示例](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
+* [C# 示例](https://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 ## <a name="data-resources"></a>数据资源
 

@@ -3,12 +3,12 @@ title: 通用驱动程序方案
 description: 介绍了 DCHU 通用驱动程序示例如何应用 DCHU 设计原则（声明性、组件化、硬件支持应用 [HSA]，以及通用 API 合规性）。
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0f5ad4427ea0bb33332c7cc061dfbbc2e00b32f
-ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
+ms.openlocfilehash: 8db7ae14129e2c7253c8c258896449a484f0d57e
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898500"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209501"
 ---
 # <a name="universal-driver-scenarios"></a>通用驱动程序方案
 
@@ -24,7 +24,7 @@ ms.locfileid: "74898500"
 
 ## <a name="overview"></a>概述
 
-DCHU 示例提供了示例情境，其中 Contoso（系统组装商或 OEM）和 Fabrikam（设备制造商或 IHV）这两个硬件合作伙伴合作为 Contoso 即将推出的系统中的设备创建通用 Windows 驱动程序。  有关设备是 [OSR USB FX2 学习工具包](https://store.osr.com/product/osr-usb-fx2-learning-kit-v2/)。  在过去，Fabrikam 会编写针对特定 Contoso 产品线定制的非通用驱动程序包，然后将其交给 OEM 处理服务事宜。  这带来了巨大的维护开销，因此，Fabrikam 决定重构代码，改为创建一个通用驱动程序包。
+DCHU 示例提供了示例情境，其中 Contoso（系统组装商或 OEM）和 Fabrikam（设备制造商或 IHV）这两个硬件合作伙伴合作为 Contoso 即将推出的系统中的设备创建通用 Windows 驱动程序。  有关设备是 [OSR USB FX2 学习工具包](https://go.microsoft.com/fwlink/p/?linkid=2113717)。  在过去，Fabrikam 会编写针对特定 Contoso 产品线定制的非通用驱动程序包，然后将其交给 OEM 处理服务事宜。  这带来了巨大的维护开销，因此，Fabrikam 决定重构代码，改为创建一个通用驱动程序包。
 
 ## <a name="use-only-declarative-sections-and-directives"></a>只使用声明部分和指令
 
@@ -61,7 +61,7 @@ HKR, OSR, "OperatingParams",, "None" ; FLG_ADDREG_TYPE_SZ
 ```cpp
 [OsrUsbFx2Extension_AddReg]
 HKR, OSR, "OperatingParams",, "-Extended"
-HKR, OSR, "OperatingExceptions",, "x86" 
+HKR, OSR, "OperatingExceptions",, "x86"
 ```
 
 请注意，在没有明确顺序时，扩展将始终在基准 INF 后进行处理。 如果基准 INF 更新到较新版本，那么扩展仍将在安装新的基准 INF 后重新应用。
@@ -76,7 +76,7 @@ CopyFiles = OsrFx2_UserSvcCopyFiles
 
 [OsrFx2_Install.NT.Services]
 AddService = osrfx2_DCHU_usersvc, 0x00000800, UserSvc_ServiceInstall
-    
+
 [UserSvc_ServiceInstall]
 DisplayName = %UserSvcDisplayName%
 ServiceType = 0x00000010
@@ -87,6 +87,7 @@ ServiceBinary = %13%\osrfx2_DCHU_usersvc.exe
 [OsrFx2_UserSvcCopyFiles]
 osrfx2_DCHU_usersvc.exe
 ```
+
 请注意，这项服务还可以安装在组件或扩展 INF 中，具体取决于所用方案。
 
 ## <a name="use-a-component-to-install-legacy-software-from-a-driver-package"></a>使用组件从驱动程序包安装旧软件
@@ -109,12 +110,12 @@ ComponentIds=VID_045e&PID_94ab
 ```cpp
 [OsrFx2Component_Install.NT.Software]
 AddSoftware = osrfx2_DCHU_componentsoftware,, OsrFx2Component_SoftwareInstall
-    
+
 [OsrFx2Component_SoftwareInstall]
 SoftwareType = 1
 SoftwareBinary = osrfx2_DCHU_componentsoftware.exe
 SoftwareArguments = <<DeviceInstanceId>>
-SoftwareVersion = 1.0.0.0 
+SoftwareVersion = 1.0.0.0
 
 [OsrFx2Component_CopyFiles]
 osrfx2_DCHU_componentsoftware.exe
@@ -177,7 +178,7 @@ HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084}\VersionIndependentProgID,,,"AT
 
 * [DCHU_Sample\osrfx2_DCHU_extension_loose](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_loose)
 * [DCHU_Sample\osrfx2_DCHU_extension_tight](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_tight)
- 
+
   如果扩展和组件位于同一个驱动程序包中（“紧密耦合”），则扩展 INF 指定 [CopyINF 指令](../install/inf-copyinf-directive.md)以便将组件 INF 复制到目标系统。  这在 [DCHU_Sample\osrfx2_DCHU_extension_tight\osrfx2_DCHU_extension\osrfx2_DCHU_extension.inx](https://github.com/Microsoft/Windows-driver-samples/blob/master/general/DCHU/osrfx2_DCHU_extension_tight/osrfx2_DCHU_extension/osrfx2_DCHU_extension.inx) 中进行了演示：
 
 ```cpp
@@ -185,7 +186,7 @@ HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084}\VersionIndependentProgID,,,"AT
 CopyInf=osrfx2_DCHU_component.inf
 ```
 
-该指令还可用于协调在多功能设备上安装 INF 文件。  有关更多详细信息，请参阅[复制 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)。 
+该指令还可用于协调在多功能设备上安装 INF 文件。  有关更多详细信息，请参阅[复制 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)。
 
 > [!NOTE]
 > 虽然基本驱动程序可以装载一个扩展（并以发货标签中的基本驱动程序为目标），但是无法将与另一个驱动程序捆绑的扩展发布到扩展硬件 ID。
@@ -198,15 +199,16 @@ CopyInf=osrfx2_DCHU_component.inf
 [DestinationDirs]
 OsrFx2_UserSvcCopyFiles = 13 ; copy to Driver Store
 ```
-从驱动程序存储运行的内核模式驱动程序可以调用 [**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 并使用该路径来查找与之相对应的配置文件。  如果内核模式驱动程序是 KMDF 驱动程序，则它可以使用 [**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) 来检索要传递到 IoQueryFullDriverPath 的 WDM 驱动程序对象。 UMDF 驱动程序可以使用 [**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) 和 [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) 来确定驱动程序是从何处加载的。  例如： 
+
+从驱动程序存储运行的内核模式驱动程序可以调用 [**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) 并使用该路径来查找与之相对应的配置文件。  如果内核模式驱动程序是 KMDF 驱动程序，则它可以使用 [**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) 来检索要传递到 IoQueryFullDriverPath 的 WDM 驱动程序对象。 UMDF 驱动程序可以使用 [**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) 和 [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) 来确定驱动程序是从何处加载的。  例如：
 
 ```cpp
 bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
                          (PCWSTR)&DriverEntry,
                          &handleModule);
 if (bRet) {
-   winErr = GetModuleFileNameW(handleModule, 
-                               path, 
+   winErr = GetModuleFileNameW(handleModule,
+                               path,
                                pathLength);
      …
 ```
@@ -234,7 +236,7 @@ AddReg = Example_DDInstall.AddReg
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
 
-演示如何将其设置为设备接口状态的 INF 示例则为： 
+演示如何将其设置为设备接口状态的 INF 示例则为：
 
 ```cpp
 [ExampleDDInstall.Interfaces]
@@ -246,15 +248,16 @@ AddReg = Example_Add_Interface_Section.AddReg
 [Example_Add_Interface_Section.AddReg]
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
-以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，该变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) 来解析路径中的环境变量。 
 
-如果此值需由内核模式组件读取，则此值应该是 REG_SZ 值。 内核模式组件在读取该值时应该在其前面预置 `\??\`，然后再将其传递给 [**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) 之类的 API。 
+以上示例使用空的标志值，该值会生成 REG_SZ 注册表值。 这样就会将 **%13%** 转换成完全限定的用户模式文件路径。 在许多情况下，最好是将路径设置为某个环境变量的相对值。 如果使用标志值 **0x20000**，则注册表值为类型 REG_EXPAND_SZ，而 **%13%** 则会转换为一个包含相应环境变量的路径，该变量用于抽象路径的位置。 检索此注册表值时，请调用 [**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) 来解析路径中的环境变量。
+
+如果此值需由内核模式组件读取，则此值应该是 REG_SZ 值。 内核模式组件在读取该值时应该在其前面预置 `\??\`，然后再将其传递给 [**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) 之类的 API。
 
 当此设置成为设备状态的一部分时，如果要访问它，则应用程序必须先找到设备的标识。  用户模式代码可以使用 [**CM_Get_Device_ID_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) 和 [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 获取设备的列表（按需筛选）。 该设备列表可能包含多个设备，因此请先搜索相应的设备，然后再从设备读取状态。 例如，在查找符合特定条件的设备时，请调用 [**CM_Get_DevNode_Property**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw) 来检索设备的属性。
 
-找到正确的设备以后，请调用 [**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) 来获取存储设备状态的注册表位置的句柄。 
+找到正确的设备以后，请调用 [**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) 来获取存储设备状态的注册表位置的句柄。
 
-内核模式代码应该检索 PDO（Physical Device Object，物理设备对象）并调用 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)。 
+内核模式代码应该检索 PDO（Physical Device Object，物理设备对象）并调用 [**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey)。
 
 若要在此设置是设备接口状态时访问它，可以通过用户模式代码来调用 [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizea) 和 [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista)。
 
@@ -264,10 +267,10 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 内核模式代码可以检索从其获取状态的设备接口的符号链接名称。 为此，请调用 [**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)，以便注册获取相应设备接口类的设备接口通知。  也可调用 [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)，获取系统中当前设备接口的列表。  在设备接口类（在上述 API 中使用）中可能有多个设备接口。  检查这些接口，确定哪个接口是应该读取设置的正确接口。
 
-找到适当的符号链接名称以后，请调用 [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)，以便检索在其中存储了设备接口状态的注册表位置的句柄。 
+找到适当的符号链接名称以后，请调用 [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey)，以便检索在其中存储了设备接口状态的注册表位置的句柄。
 
 > [!NOTE]
-> 将 **CM_GETIDLIST_FILTER_PRESENT** 标志与 [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) 和 [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 配合使用，或者将 **CM_GET_DEVICE_INTERFACE_LIST_PRESENT** 标志与 [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) 和 [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) 配合使用。 这样可确保硬件存在并已做好通信准备。 
+> 将 **CM_GETIDLIST_FILTER_PRESENT** 标志与 [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) 和 [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) 配合使用，或者将 **CM_GET_DEVICE_INTERFACE_LIST_PRESENT** 标志与 [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) 和 [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) 配合使用。 这样可确保硬件存在并已做好通信准备。
 
 ## <a name="summary"></a>摘要
 

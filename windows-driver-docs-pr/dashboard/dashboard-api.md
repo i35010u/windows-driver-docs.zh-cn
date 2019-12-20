@@ -4,12 +4,12 @@ description: “Microsoft 硬件 API”以编程方式在组织的合作伙伴�
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e996a8ae33dc4e491eef281398f65e6e31c7a00
-ms.sourcegitcommit: 202a9dd161090af3e3815e3fbf3da0bcad993e0e
+ms.openlocfilehash: 7cec191850f774186b0c564eecd36137881217e7
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685591"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209249"
 ---
 # <a name="hardware-dashboard-api"></a>硬件仪表板 API
 
@@ -82,7 +82,7 @@ grant_type=client_credentials
 
 以下示例提供了详细的代码，演示如何结合 Microsoft Surface 和设备团队创建的完整端到端预生成解决方案使用 Microsoft 硬件 API：
 
-* [C# 示例](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
+* [C# 示例](https://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)
 
