@@ -3,12 +3,12 @@ Description: 适用于硬件供应商和设备制造商的指南，用于为 Win
 title: USB-IF 认证测试
 ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc2ac3be6ea1d3dbf0b74e15590091e73e17387
-ms.sourcegitcommit: 0660c8d6d374298f3246fdb91661360610f8c846
+ms.openlocfilehash: 9577c09b317b4a632101764e1de35c0124c51b7c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72889650"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210601"
 ---
 # <a name="usb-if-certification"></a>USB-IF 证书
 
@@ -33,7 +33,7 @@ USB 硬件（特别是 USB 设备或主机控制器）必须满足 USB 的电气
 
 ## <a name="windows-hlk-requirements-for-usb-if-tests"></a>适用于 USB 的 Windows HLK 要求-IF 测试
 
-- 设备（**UsbDevices. UsbifCertification）** ：
+- 设备（**UsbDevices. UsbifCertification）**：
 
     强烈建议采用 USB-IF 认证;但是，Windows HLK 要求**UsbDevices。 UsbifCertification**不再需要 usb 设备的 usb 证书。 要求表明设备可以是 USB 设备，也可以是 usb （如果已经过认证），也可以在设备上运行 USB 假设的认证测试的子集。
 
@@ -95,7 +95,7 @@ USB 硬件（特别是 USB 设备或主机控制器）必须满足 USB 的电气
 
   | USB 版本 | USB-IF 测试 |
   | --- | --- |
-  | USB 2.0 | 在 xHCI 主机控制器后面附加设备，并在 USB 3.0 命令验证器测试工具（USB3CV）中运行第9章测试 [USB 2.0 设备]。 <br><br> 按照[Ehci 测试过程](http://compliance.usb.org/resources/GoldSuite%20Test%20Procedure.pdf)的 "互操作性" 部分的 "ehci 部分" 中所述运行互操作性测试。 运行这些测试两次：一次用于连接到 EHCI 主机控制器后面的设备，然后连接到 xHCI 主机控制器后面的设备。 |
+  | USB 2.0 | 在 xHCI 主机控制器后面附加设备，并在 USB 3.0 命令验证器测试工具（USB3CV）中运行第9章测试 [USB 2.0 设备]。 <br><br> 按照[Ehci 测试过程](https://compliance.usb.org/resources/GoldSuite%20Test%20Procedure.pdf)的 "互操作性" 部分的 "ehci 部分" 中所述运行互操作性测试。 运行这些测试两次：一次用于连接到 EHCI 主机控制器后面的设备，然后连接到 xHCI 主机控制器后面的设备。 |
   | USB 3.0 | 在 xHCI 主机控制器后面附加设备，并在 USB 3.0 命令验证器测试工具（USB3CV）中运行第9章测试 [USB 3.0 设备]。 <br><br> 运行[XHCI 互操作性测试过程](https://www.usb.org/document-library/xhci-interoperability-test-procedures-peripherals-hubs-and-hosts-version-096)文档中所述的互操作性测试。 两次运行以下测试：一次将设备连接到 EHCI 主机控制器之后，一次将设备连接到 xHCI 主机控制器。 |
   
   3. 如果测试通过，则在 HLK 中输入字符串 "SELFTEST" 作为 "USB-IF" 认证验证测试的 "测试 ID （TID）" 输入。

@@ -1,15 +1,15 @@
 ---
-title: MBAE deprecation warning
+title: MBAE 弃用警告
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 07587bc6e3ff3002af15cd1faa0f3985b8ceb1b6
-ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
+ms.openlocfilehash: 1c8c2c5fcab22f2c2ddb1516ed7e2d70150d60b9
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445358"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75297209"
 ---
-# 
+# <a name="mbae-deprecation-warning"></a>MBAE 弃用警告
 
 > [!IMPORTANT]
-> Starting in Windows 10, version 1803, the MBAE app experience is replaced by an MO UWP app. For more information about MO UWP apps, see [UWP mobile broadband apps](uwp-mobile-broadband-apps.md).
+> 从 Windows 10 版本1803开始，MBAE 应用体验会替换为 MO UWP 应用。 有关 MO UWP 应用的详细信息，请参阅[UWP mobile 宽带应用](uwp-mobile-broadband-apps.md)。

@@ -4,17 +4,17 @@ description: 创建中断对象
 ms.assetid: D281F2E8-3ADA-4F4E-B345-CE72FA3C69EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dce34ac5d365a953b9d8811461ced870f477d8e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6d21db1b9d8553012243c5af85d8825b5d0cea01
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845613"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210223"
 ---
 # <a name="creating-an-interrupt-object"></a>创建中断对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 处理设备硬件中断的 UMDF 驱动程序必须为每个设备可以支持的每个中断创建一个框架中断对象。
 

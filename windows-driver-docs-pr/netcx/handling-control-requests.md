@@ -6,16 +6,14 @@ keywords:
 - NetAdapterCx 处理控制请求，NetCx 处理控制请求
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fb5c56cd0154ab2c319621a08926057c1c9775
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e30d1259789909aeb36206ed2b2880e167e93523
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838281"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210781"
 ---
 # <a name="handling-control-requests"></a>处理控制请求
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 在 NetAdapterCx 模型中，客户端驱动程序接收作为 NETREQUEST 对象的大多数控制请求，其中每个对象都表示 OID （对象标识符）请求。 客户端驱动程序通常设置一个或两个 WDF 队列（称为 NETREQUESTQUEUEs）来管理控制请求。
 
@@ -84,7 +82,7 @@ config.EvtRequestDefault = MyDefault;
 * [**NET_REQUEST_QUEUE_CONFIG_ADD_SET_DATA_HANDLER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nf-netrequestqueue-net_request_queue_config_add_set_data_handler)
 * [**NET_REQUEST_QUEUE_CONFIG_ADD_METHOD_HANDLER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nf-netrequestqueue-net_request_queue_config_add_method_handler)
 
-下面的示例使用指向客户端的[*EVT_NET_REQUEST_QUERY_DATA*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_query_data)事件回调函数的指针调用[**NET_REQUEST_QUEUE_CONFIG_ADD_QUERY_DATA_HANDLER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nf-netrequestqueue-net_request_queue_config_add_query_data_handler) ，以注册特定 OID 的处理程序：
+下面的示例使用指向客户端[*EVT_NET_REQUEST_QUERY_DATA*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_query_data)事件回调函数的指针调用[**NET_REQUEST_QUEUE_CONFIG_ADD_QUERY_DATA_HANDLER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nf-netrequestqueue-net_request_queue_config_add_query_data_handler) ，以注册特定 OID 的处理程序：
 
 ```C++
 NET_REQUEST_QUEUE_CONFIG_ADD_QUERY_DATA_HANDLER(
@@ -105,7 +103,7 @@ if(!NT_SUCCESS(status))
 }
 ```
 
-NetAdapterCx 可以在[*EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)返回到[*EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)时立即调用客户端驱动程序的控制请求处理程序。
+NetAdapterCx 可以在[*EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)返回[*EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)之前立即调用客户端驱动程序的控制请求处理程序。
 
 ## <a name="completing-requests"></a>完成请求
 

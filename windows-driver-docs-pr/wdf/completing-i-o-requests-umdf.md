@@ -8,17 +8,17 @@ keywords:
 - 完成 i/o 请求 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c60331a9d7ca87f9865357cd53237b16c53e0ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 96b3c35aaa7e0a1d0227e5eac6d017a08fffeb20
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842260"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210233"
 ---
 # <a name="completing-io-requests-in-umdf"></a>在 UMDF 中完成 i/o 请求
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 每个 i/o 请求最终必须由 UMDF 驱动程序完成。 若要完成请求，驱动程序必须调用[**IWDFIoRequest：： complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)方法。 当驱动程序完成请求时，它表示下列方案之一：
 

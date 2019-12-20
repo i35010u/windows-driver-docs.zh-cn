@@ -11,17 +11,17 @@ keywords:
 - 用户模式驱动程序 WDK UMDF，处理 i/o、驱动程序创建与应用程序创建的文件对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7bf13dbd1b5f1049894eb121499cc70a53389e9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a48a31aabb5051704ee1ca7b1472bd4298fccc71
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845594"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210461"
 ---
 # <a name="driver-created-versus-application-created-file-objects"></a>驱动程序创建的文件对象与应用程序创建的文件对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当应用程序打开设备的句柄时，框架会调用驱动程序的[**IQueueCallbackCreate：： OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)方法，并为与设备关联的文件对象提供指向[**IWDFFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)接口的指针。 应用程序发送到打开的句柄的任何 i/o 请求都与创建的文件对象相关联。 当此类请求到达时，框架从驱动程序提供的一个[UMDF 队列对象接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/)调用适当的方法。 然后，驱动程序可以调用[**IWDFIoRequest：： GetFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getfileobject)来确定与请求关联的文件对象。 驱动程序可以对文件对象调用[**AssignContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-assigncontext) ，以关联特定于 i/o 会话的上下文。
 
@@ -64,7 +64,7 @@ ms.locfileid: "72845594"
 ## <a name="driver-created-file-objects"></a>驱动程序创建的文件对象
 
 
-如果驱动程序需要创建独立于应用程序的 i/o 请求并将其发送到堆栈中的下一个驱动程序（默认 i/o 目标），则驱动程序必须调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)来检索指向[**IWDFDriverCreatedFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)的指针交互. 在这种情况下，下一个驱动程序收到的通知与应用程序生成请求时的驱动程序收到的通知相同。
+如果驱动程序需要创建独立于应用程序的 i/o 请求并将其发送到堆栈中的下一个驱动程序（默认 i/o 目标），则驱动程序必须调用[**IWDFDevice：： CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)来检索指向[**IWDFDriverCreatedFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)接口的指针。 在这种情况下，下一个驱动程序收到的通知与应用程序生成请求时的驱动程序收到的通知相同。
 
 下表显示了驱动程序的调用，以及向堆栈中的下一个驱动程序发出的通知。
 

@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 706f6931b69b29ffa645bfeafe3cee4347ff1318
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 5802e44f69697b8846c28c54df03efacecfcdca8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025229"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209103"
 ---
 # <a name="logonsession"></a>!logonsession
 
 
-**! Logonsession**扩展显示有关指定登录会话的信息。
+**！ Logonsession**扩展显示有关指定登录会话的信息。
 
 免费生成语法
 
@@ -41,12 +41,12 @@ Checked Build 语法
 
 
 <span id="_______LUID______"></span><span id="_______luid______"></span>*LUID*   
-指定要显示的登录会话的本地唯一标识符 (LUID)。 如果*LUID*为 0, 则显示有关所有登录会话的信息。
+指定要显示的登录会话的本地唯一标识符（LUID）。 如果*LUID*为0，则显示有关所有登录会话的信息。
 
-若要显示有关已检查生成中的系统会话和所有系统令牌的信息, 请输入 **! logonsession 3e7 1**。
+若要显示有关已检查生成中的系统会话和所有系统令牌的信息，请输入 **！ logonsession 3e7 1**。 在 Windows 10 版本1803之前，已检查的生成在 windows 的早期版本上可用。
 
 <span id="_______InfoLevel______"></span><span id="_______infolevel______"></span><span id="_______INFOLEVEL______"></span>*InfoLevel*   
-(仅限检查的生成)指定显示多少标记信息。 *InfoLevel*参数可采用0到4之间的值, 0 表示最小信息, 4 表示最多信息。
+（仅限检查的生成）指定显示多少标记信息。 *InfoLevel*参数可采用0到4之间的值，0表示最小信息，4表示最多信息。 在 Windows 10 版本1803之前，已检查的生成在 windows 的早期版本上可用。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
@@ -71,12 +71,12 @@ Checked Build 语法
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关登录会话的信息, Microsoft Windows SDK 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*, 并标记和 David 所罗门群岛。 
+有关登录会话的信息，Microsoft Windows SDK 请参阅 Russinovich 文档和*Microsoft Windows 内部机制*，并标记和 David 所罗门群岛。 
 
 <a name="remarks"></a>备注
 -------
 
-下面是一个免费版本中此扩展的输出示例:
+下面是一个免费版本中此扩展的输出示例：
 
 ```dbgcmd
 kd> !logonsession 0
@@ -128,7 +128,7 @@ Dumping all logon sessions.
 14 sessions in the system.
 ```
 
-您可以通过按 CTRL + BREAK (在 WinDbg 中) 或按 CTRL + C (在 KD 中) 随时停止执行。
+您可以通过按 CTRL + BREAK （在 WinDbg 中）或按 CTRL + C （在 KD 中）随时停止执行。
 
  
 

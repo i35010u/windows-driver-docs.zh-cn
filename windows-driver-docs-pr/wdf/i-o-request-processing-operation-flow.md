@@ -4,31 +4,31 @@ description: I/O 请求处理操作流
 ms.assetid: 3a7162d2-0a8c-4748-b320-bfe64ec93c9d
 keywords:
 - 操作流 WDK UMDF
-- I/O 请求 WDK UMDF，操作流
+- I/o 请求 WDK UMDF，操作流
 - 请求处理 WDK UMDF，操作流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d7dfce927375098095d3db692bb67405203f93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6bc896e4aa505a703345e375290d461bac2b349
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382826"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209893"
 ---
 # <a name="io-request-processing-operation-flow"></a>I/O 请求处理操作流
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-文件对象的上下文中发生的所有 I/O 操作 (即，所有 I/O 操作都都出现到 Microsoft Win32 应用程序进行的调用之间[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)和**CloseHandle**函数)。 I/O 操作都是对做的调用应用程序，例如，Win32 **ReadFileEx**， **writefileex 只写入**，并[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数。
+所有 i/o 操作都在文件对象的上下文中发生（也就是说，应用程序对 Microsoft Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)和**CloseHandle**函数进行的调用之间发生所有 i/o 操作）。 I/o 操作是应用程序所做的调用，例如 Win32 **ReadFileEx**、 **WriteFileEx**和[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)函数。
 
-以下主题可显示的时间与 UMDF 驱动程序执行用户 I/O 事务开始时，进程，并结束和 double 设备堆栈中的单个设备堆栈操作的流：
+以下主题显示的是在单设备堆栈和双设备堆栈中，在 UMDF 驱动程序中和从 UMDF 驱动程序开始、处理和结束的操作流：
 
--   [与单个设备堆栈操作流](operation-flow-with-single-device-stack.md)
+-   [单个设备堆栈的操作流](operation-flow-with-single-device-stack.md)
 
--   [与 Double 设备堆栈操作流](operation-flow-with-double-device-stack.md)
+-   [双设备堆栈的操作流](operation-flow-with-double-device-stack.md)
 
-**请注意**  启动的应用程序的所有 I/O 都经过内核模式下，图形中所示[体系结构的 UMDF](https://docs.microsoft.com/previous-versions/ff554461(v=vs.85))部分，即使图形中 I/O 请求处理操作流部分不会显示这种情况。
+**请注意**  ，由应用程序启动的所有 i/o 都通过内核模式路由，如 UMDF 部分的[体系结构](https://docs.microsoft.com/previous-versions/ff554461(v=vs.85))中所示，即使 I/o 请求处理操作流部分中的数字未显示这种情况。
 
  
 

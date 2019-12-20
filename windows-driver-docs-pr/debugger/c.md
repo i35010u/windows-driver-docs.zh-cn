@@ -1,15 +1,15 @@
 ---
 title: C （Windows 调试器术语表）
 description: 词汇表页-C
-ms.assetid: 295b05a3-e27f-4761-a562-7e87e25bfd3b
-ms.date: 11/28/2017
+ms.asseti: 295b05a3-e27f-4761-a562-7e87e25bfd3b
+ms.date: 12/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be749372b5e312bc87995f4e25a9fd9ec3e99f4
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: 59a373ee3195d2717d7b6577894a99104355693e
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387082"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209453"
 ---
 # <a name="c"></a>C
 
@@ -29,10 +29,10 @@ ms.locfileid: "70387082"
 请参阅事件回调、输入回调和输出回调。
 
 <span id="checked_build"></span><span id="CHECKED_BUILD"></span>**已检查生成**  
-每个基于 NT 的操作系统存在两个不同的版本：
 
--   Windows 的（或）是操作系统的最终用户版本。 有关详细信息，请参阅免费构建。
--   Windows （或）是开发操作系统和内核模式驱动程序的测试和调试帮助。 Checked 版本包含在免费版本中不可用的额外错误检查、参数验证和调试信息。 ，因此可以更轻松地跟踪系统软件问题的原因。 选中的系统或驱动程序可以帮助隔离和跟踪可能导致不可预知的行为的驱动程序问题，导致内存泄漏，或导致设备配置不正确。
+不再为 Windows 提供已检查的生成。 使用驱动程序验证程序和 GFlags 等工具检查驱动程序代码。
+
+选中版本包含了额外的错误检查、参数验证和不能用于免费生成的调试信息。
 
 尽管该检查生成提供额外的保护，但它消耗的内存和磁盘空间超出了免费版本。 系统和驱动程序性能较慢，因为附加的代码路径由于诊断消息的参数检查和输出而执行，并使用内核函数的一些替代实现。
 

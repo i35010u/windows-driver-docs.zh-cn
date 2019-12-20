@@ -7,17 +7,17 @@ keywords:
 - framework 对象 WDK UMDF，已列出
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf20a2e5c73a3e2412b35e43173bda253738d31b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8f4102c03ac4697cb929a7511dc5164d4ef49d29
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845132"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210767"
 ---
 # <a name="framework-objects"></a>框架对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 下表提供了有关每个框架对象的基本信息，链接到对象的接口，并链接到有关核心框架对象的详细信息。
 

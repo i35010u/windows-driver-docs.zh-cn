@@ -13,12 +13,12 @@ keywords:
 - ASSERTMSG 宏
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41543377ccf3255e50ec96d7025bc86cbbe57698
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bbeeec83d71201a4c58be5d507477d2c72b32b45
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362393"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209093"
 ---
 # <a name="breaking-into-the-debugger"></a>突入调试器
 
@@ -27,41 +27,39 @@ ms.locfileid: "67362393"
 
 用户模式和内核模式代码使用不同的例程来中断调试器。
 
-### <a name="span-idusermodebreakroutinesspanspan-idusermodebreakroutinesspanuser-mode-break-routines"></a><span id="user_mode_break_routines"></span><span id="USER_MODE_BREAK_ROUTINES"></span>用户模式下中断例程
+### <a name="span-iduser_mode_break_routinesspanspan-iduser_mode_break_routinesspanuser-mode-break-routines"></a><span id="user_mode_break_routines"></span><span id="USER_MODE_BREAK_ROUTINES"></span>用户模式中断例程
 
-中断例程会导致异常发生在当前的过程中，以便调用线程可以指示调试器调用进程与相关联。
+中断例程导致在当前进程中发生异常，以便调用线程可以向与调用进程关联的调试器发出信号。
 
-若要在用户模式程序从调试器中中断，请使用[DebugBreak 函数](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-debugbreak)。 
+若要从用户模式程序中断到调试器，请使用[DebugBreak 函数](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-debugbreak)。 
 
-当用户模式程序调用**DebugBreak**，将发生以下可能的操作：
+当用户模式程序调用**DebugBreak**时，将发生以下可能的操作：
 
-1.  如果用户模式下调试器已附加，程序将进入调试器。 这意味着该程序将暂停，并成为活动部署调试器。
+1.  如果附加了用户模式调试器，程序将中断调试器。 这意味着程序将暂停，调试程序将变为活动状态。
 
-2.  如果没有任何用户模式下调试程序附加，但在启动时启用了内核模式调试，整个计算机将进入内核调试器。 如果没有内核调试器已附加，计算机将冻结并等待内核调试程序。
+2.  如果未附加用户模式调试器，但在启动时启用了内核模式调试，则整个计算机将进入内核调试器。 如果未连接内核调试器，计算机将冻结并等待内核调试器。
 
-3.  如果没有任何用户模式下调试程序附加，并且未启用内核模式调试，则程序将终止与未经处理的异常，并将激活的事后 （实时） 调试器。 有关详细信息，请参阅[启用事后调试](enabling-postmortem-debugging.md)。
+3.  如果没有附加用户模式调试器，并且未启用内核模式调试，则程序将终止，并出现未经处理的异常，并将激活事后（实时）调试程序。 有关详细信息，请参阅[启用事后调试](enabling-postmortem-debugging.md)。
 
-### <a name="span-idkernelmodebreakroutinesspanspan-idkernelmodebreakroutinesspankernel-mode-break-routines"></a><span id="kernel_mode_break_routines"></span><span id="KERNEL_MODE_BREAK_ROUTINES"></span>内核模式下中断例程
+### <a name="span-idkernel_mode_break_routinesspanspan-idkernel_mode_break_routinesspankernel-mode-break-routines"></a><span id="kernel_mode_break_routines"></span><span id="KERNEL_MODE_BREAK_ROUTINES"></span>内核模式中断例程
 
-当内核模式程序中断到调试器时，整个操作系统会冻结，直到内核调试程序允许执行继续。 如果没有内核调试程序存在，则将此视为 bug 检查。
+当内核模式程序中断调试器时，整个操作系统会冻结，直到内核调试器允许执行继续执行为止。 如果没有内核调试器，则将其视为 bug 检查。
 
-**DbgBreakPoint**例程可在内核模式代码中，但在其他方面类似于**DebugBreak**用户模式下例程。
+**DbgBreakPoint**例程在内核模式代码中运行，但与**DebugBreak**用户模式例程类似。
 
-**DbgBreakPointWithStatus**还会导致中断，但它另外 32 位的状态将代码发送到调试器。
+**DbgBreakPointWithStatus**也会导致中断，但它还会将32位状态代码发送到调试器。
 
-**KdBreakPoint**和**KdBreakPointWithStatus**等于**DbgBreakPoint**并**DbgBreakPointWithStatus**分别在编译时已检验的版本环境。 编译时可用的生成环境中，它们会产生任何影响。
+在已检查的生成环境中编译时， **KdBreakPoint**和**KdBreakPointWithStatus**分别与**DbgBreakPoint**和**DbgBreakPointWithStatus**相同。 在免费生成环境中进行编译时，它们不起作用。
 
-这些例程，以及生成环境的完整文档，请参阅 Windows 驱动程序工具包。
+### <a name="span-idkernel_mode_conditional_break_routinesspanspan-idkernel_mode_conditional_break_routinesspankernel-mode-conditional-break-routines"></a><span id="kernel_mode_conditional_break_routines"></span><span id="KERNEL_MODE_CONDITIONAL_BREAK_ROUTINES"></span>内核模式条件中断例程
 
-### <a name="span-idkernelmodeconditionalbreakroutinesspanspan-idkernelmodeconditionalbreakroutinesspankernel-mode-conditional-break-routines"></a><span id="kernel_mode_conditional_break_routines"></span><span id="KERNEL_MODE_CONDITIONAL_BREAK_ROUTINES"></span>内核模式条件中断例程
+内核模式代码有两个条件中断例程。 这些例程测试逻辑表达式。 如果表达式为 false，则执行将停止，并且调试器将变为活动状态。
 
-两个条件中断例程是适用于内核模式代码。 这些例程测试的逻辑表达式。 如果表达式为 false，中止程序执行和调试程序将变为活动状态。
+**ASSERT**宏使调试器显示失败的表达式及其在程序中的位置。 **ASSERTMSG**宏类似，但允许向调试器发送额外的消息。
 
-**ASSERT**宏会导致调试器在程序中显示失败的表达式和其位置。 **ASSERTMSG**宏非常相似，但是允许的其他消息发送到调试器。
+仅当在已检查的生成环境中编译时， **ASSERT**和**ASSERTMSG**才处于活动状态。 在免费生成环境中进行编译时，它们不起作用。
 
-**断言**并**ASSERTMSG**是仅在已检验的版本环境中编译时为活动状态。 编译时可用的生成环境中，它们会产生任何影响。
-
-这些例程，以及生成环境的完整文档，请参阅 Windows 驱动程序工具包。
+有关这些例程以及生成环境的完整文档，请参阅 Windows 驱动程序工具包。
 
  
 

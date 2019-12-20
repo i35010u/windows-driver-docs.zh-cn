@@ -12,17 +12,17 @@ keywords:
 - 密钥 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb7d3efdb734110a86b0c5a3f50d40e09b2b27fc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4503c3fff3ff2c9fbcc6b2a5cc34740629dd57c8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845430"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210239"
 ---
 # <a name="using-the-registry-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用注册表
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 基于 UMDF 的驱动程序可以通过使用属性存储对象的接口来读取和写入注册表中的值。
 
@@ -43,9 +43,9 @@ ms.locfileid: "72845430"
   获取指向[**IWDFNamedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore)接口的指针。
 
   <a href="" id="iwdfpropertystorefactory--retrievedevicepropertystore"></a>[**IWDFPropertyStoreFactory::RetrieveDevicePropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfpropertystorefactory-retrievedevicepropertystore)  
-  获取指向[**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)接口的指针。 你可以使用*SubkeyPath*参数来指定驱动程序创建的子项下的值，例如 **\\设备参数\\** <em>DriverServiceName\\子项</em>。
+  获取指向[**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)接口的指针。 你可以使用*SubkeyPath*参数来指定驱动程序创建的子项下的值，例如**\\设备参数\\** <em>DriverServiceName\\子项</em>。
 
-  驱动程序对 **\\设备参数**子项内的值具有只读访问权限，并且不能\\WDF 或 **\\设备参数\\WUDF**访问 **\\设备参数**。
+  驱动程序对**\\设备参数**子项内的值具有只读访问权限，并且不能\\WDF 或**\\设备参数\\WUDF**访问**\\设备参数**。
 
   使用统一设备属性模型创建的属性值存储在 " **\\属性**" 子项中的 "硬件" 项下。
 
@@ -67,7 +67,7 @@ ms.locfileid: "72845430"
 
   注册表包含一个**HKEY\_本地\_计算机\\硬件\\DEVICEMAP**密钥，某些旧技术的驱动程序（例如串行和并行端口）使用。 如果你的驱动程序支持使用**DEVICEMAP**键的技术，则驱动程序可以通过调用[**IWDFPropertyStoreFactory：： RetrieveDevicePropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfpropertystorefactory-retrievedevicepropertystore)访问该键下的子项和值。
 
-驱动程序调用**RetrieveDevicePropertyStore**方法之一来打开注册表子项后，该驱动程序可以使用由[**IWDFNamedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore)、 [**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)或[**IWDFUnifiedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfunifiedpropertystore)公开的方法。在子项下创建、读取和写入值。 **IWDFNamedPropertyStore2**接口还允许驱动程序删除值。
+驱动程序调用**RetrieveDevicePropertyStore**方法之一来打开注册表子项之后，驱动程序可以使用由[**IWDFNamedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore)、 [**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)或[**IWDFUnifiedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfunifiedpropertystore)公开的方法来创建、读取和写入子项下的值。 **IWDFNamedPropertyStore2**接口还允许驱动程序删除值。
 
 有关驱动程序的注册表项的详细信息，请参阅[注册表树和密钥概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)。
 

@@ -7,17 +7,17 @@ keywords:
 - 设备返回到工作状态方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41570e738284f46d13187655592cb0f5501151e3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9218d9f1a874175c9cefc70cc01a9fe131a2314c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843655"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210129"
 ---
 # <a name="a-device-returns-to-its-working-state"></a>设备回到工作状态
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 如果发生以下情况之一，则处于低功耗状态的设备将恢复为其工作状态：
 

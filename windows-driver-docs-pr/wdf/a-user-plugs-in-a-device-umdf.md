@@ -7,17 +7,17 @@ keywords:
 - 插入设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d0ad4027762471205acf6ad6656fb6c3ac5645
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1a5c2b8336d3763cb5e11d0fb87f267d5113f323
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841678"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210077"
 ---
 # <a name="a-user-plugs-in-a-device"></a>用户插入设备
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当用户插入设备时，框架会按以下顺序调用 UMDF 驱动程序的 PnP 和电源管理回拨方法，从图底部的设备到达状态开始：
 

@@ -5,24 +5,24 @@ ms.assetid: 192CAA41-0D17-4C06-8F13-68EA7C26D023
 keywords: 接收方缩放版本2，RSSv2，接收方缩放版本 2 WDK，RSSv2 网络驱动程序
 ms.date: 10/12/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f87f7ff282891fead1912f8815a8692ddc72ccbd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9a2632ebc681493ef29a8b99587dcef7506223c4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844860"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210809"
 ---
 # <a name="receive-side-scaling-version-2-rssv2"></a>接收端缩放版本 2 (RSSv2)
 
-[!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 [接收方缩放](ndis-receive-side-scaling2.md)改善了与处理多处理器系统上的网络数据相关的系统性能。 NDIS 6.80 和更高版本支持 RSS 版本2（RSSv2），该版本通过提供动态、按 VPort 分配的队列来扩展 RSS。
 
 ## <a name="overview"></a>概述
 
-与 RSSv1 相比，RSSv2 缩短了 CPU 负载度量值与间接表更新之间的时间。 这可以避免在高流量情况下出现缓慢。 若要实现此目的，RSSv2 将在处理请求的处理器上下文中以 IRQL = DISPATCH_LEVEL 执行其操作，并且仅对指向当前处理器的间接表条目的子集执行操作。 这意味着，RSSv2 可通过多个处理器动态分散接收队列，对象比 RSSv1 多。
+与 RSSv1 相比，RSSv2 缩短了 CPU 负载度量值与间接表更新之间的时间。 这可以避免在高流量情况下出现缓慢。 若要完成此操作，RSSv2 将在处理请求的处理器上下文中以 IRQL = DISPATCH_LEVEL 执行其操作，并且仅对指向当前处理器的间接表条目的子集执行操作。 这意味着，RSSv2 可通过多个处理器动态分散接收队列，对象比 RSSv1 多。
 
-RSSv2 中引入了两个 Oid， [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)和[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)，用于设置正确的 RSS 功能并分别控制间接寻址表。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 是常规 OID，而 OID_GEN_RSS_SET_INDIRECTION_ENTRIES 是无法返回 NDIS_STATUS_PENDING 的同步 OID。 有关这些 Oid 的详细信息，请参阅各自的参考页。 有关同步 Oid 的详细信息，请参阅[NDIS 6.80 中的同步 oid 请求接口](synchronous-oid-request-interface-in-ndis-6-80.md)。
+RSSv2 中引入了两个 Oid （ [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)和[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)），它们可用于设置正确的 RSS 功能并分别控制间接寻址表。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 是常规 OID，而 OID_GEN_RSS_SET_INDIRECTION_ENTRIES 是无法返回 NDIS_STATUS_PENDING 的同步 OID。 有关这些 Oid 的详细信息，请参阅各自的参考页。 有关同步 Oid 的详细信息，请参阅[NDIS 6.80 中的同步 oid 请求接口](synchronous-oid-request-interface-in-ndis-6-80.md)。
 
 ## <a name="rssv2-terminology"></a>RSSv2 术语
 
@@ -37,33 +37,33 @@ RSSv2 中引入了两个 Oid， [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-re
 | 缩放模式 | VPort vmswitch 策略，用于控制在运行时如何处理其 ITEs。 这可以是静态的（由于负载变化而无 I) 移动）或动态（扩展和合并取决于当前的流量负载）。 |
 | 使 | 用于支持 I) 的基础硬件对象（队列）。 根据硬件和间接寻址表，配置队列可能会返回多个 ITEs。 队列的总数，包括默认队列使用的队列总数，不能超过通常由管理员设置的预配置限制。 |
 | 默认处理器 | 接收无法为其计算哈希的数据包的处理器。 每个 VPort 都有一个默认处理器。
-| 主处理器 | VPort 创建期间指定为[NDIS_NIC_SWITCH_VPORT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的**ProcessorAffinity**成员的处理器。 此处理器可在运行时进行更新，并指定要定向到 VMQ 流量的位置。 |
+| 主处理器 | 在 VPort 创建期间指定为[NDIS_NIC_SWITCH_VPORT_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_vport_parameters)结构的**ProcessorAffinity**成员的处理器。 此处理器可在运行时进行更新，并指定要定向到 VMQ 流量的位置。 |
 | 源 CPU | I) 当前映射到的处理器。 |
 | 目标 CPU | 要将 I) 重新映射到的处理器（使用 RSSv2）。 |
 | 执行组件 CPU | 发出 RSSv2 请求的处理器。 |
 
 ## <a name="advertising-rssv2-capability-in-a-miniport-driver"></a>在微型端口驱动程序中公布 RSSv2 功能
 
-微型端口驱动程序通过使用*NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE*标志设置[NDIS_RECEIVE_SCALE_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)结构的**CapabilitiesFlags**成员播发 RSSv2 支持。 启用 RSSv2's CPU 负载平衡功能需要使用此功能，同时提供*NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED*标志，为非默认 VPorts （vmq）启用 RSSv1 动态平衡。
+微型端口驱动程序通过使用*NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE*标志设置[NDIS_RECEIVE_SCALE_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_capabilities)结构的**CapabilitiesFlags**成员播发 RSSv2 支持。 此功能是启用 RSSv2's CPU 负载平衡功能所必需的功能，以及为非默认 VPorts （Vmq）启用 RSSv1 动态平衡的*NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_SUPPORTED*标志。
 
 > [!NOTE]
 > 上层协议假设可为 RSSv2 微型端口驱动程序移动默认 VPort 的主处理器。
 
-如果微型端口适配器未播发 RSSv2 功能，则即使这些 VPorts 请求执行动态传播，所有启用 VMQ 的 VPorts 仍保持静态分配模式。 用于配置 RSS 参数[OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)的 RSSv1 OID 适用于仍处于静态扩散模式下的这些 VPorts。
+如果微型端口适配器未播发 RSSv2 功能，则即使这些 VPorts 请求执行动态传播，所有启用 VMQ 的 VPorts 仍保持静态分配模式。 用于配置 RSS 参数[OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)的 RSSv1 OID 用于仍处于静态扩散模式下的这些 VPorts。
 
 微型端口驱动程序只需实现一种 RSS 控制机制，即 RSSv1 或 RSSv2。 如果驱动程序公布 RSSv2 支持，则在需要时，NDIS 会将 RSSv1 Oid 转换为 RSSv2 Oid，以 congifure 每个 VPort 的传播。 微型端口驱动程序必须支持两个新的 Oid，并按如下所示修改 RSSv1 OID_GEN_RECEIVE_SCALE_PARAMETERS OID 的行为：
 
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)仅用于 RSSv2 中的查询请求，而不用于设置 RSS 参数。
-- [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)是一种用于配置缩放实体的参数的查询和集 OID，如队列数、ITEs 数、RSS 启用/禁用和哈希密钥更新。
-- [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)是用于执行间接表项修改的方法 OID。
+- [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)是一种用于配置缩放实体的参数（例如队列数、ITEs 数、RSS 启用/禁用和哈希密钥更新）的查询和集 OID。
+- [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)是用于对间接表项进行修改的方法 OID。
 
 ## <a name="handling-rssv2-oids"></a>处理 RSSv2 Oid
 
 [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)仅用于查询给定缩放实体的当前 RSS 参数。 在 RSSv1 中，此 OID 用于设置参数。 对于支持 RSSv2 的微型端口驱动程序，NDIS 会自动为驱动程序执行此角色转换，并发出以下两个 Oid 来改为设置参数。
 
-[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)是一个常规 OID，其处理方式与 OID_GEN_RECEIVE_SCALE_PARAMETERS OID 在 RSSv1 中的处理方式相同。 在 NDIS 6.80 之前，此 OID 对于 NDIS 轻型筛选器驱动程序（LWFs）不可见。
+[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)是一个常规 oid，并与在 RSSv1 中处理 OID_GEN_RECEIVE_SCALE_PARAMETERS OID 的处理方式相同。 在 NDIS 6.80 之前，此 OID 对于 NDIS 轻型筛选器驱动程序（LWFs）不可见。
 
-然而， [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)是无法返回 NDIS_STATUS_PENDING 的[同步 OID](synchronous-oid-request-interface-in-ndis-6-80.md) 。 必须在生成 OID 的处理器上下文中执行并完成此 OID。 与 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 一样，ndis 6.80 之前的 NDIS LWFs 也不可见。 不允许在 NDIS 6.80 和更高版本中使用 LWFs 将此 OID 延迟或移动到另一个处理器。 其负载包含简单的 "move I)" 操作的数组，其中每个操作都包含一个命令，用于将缩放实体的单个 I) 移动到不同的目标 CPU。 数组元素可以引用不同的缩放实体（VPorts）。
+但[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md)是无法返回 NDIS_STATUS_PENDING 的[同步 OID](synchronous-oid-request-interface-in-ndis-6-80.md) 。 必须在生成 OID 的处理器上下文中执行并完成此 OID。 与 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 一样，在 NDIS 6.80 之前，它也不会对 NDIS LWFs 可见。 不允许在 NDIS 6.80 和更高版本中使用 LWFs 将此 OID 延迟或移动到另一个处理器。 其负载包含简单的 "move I)" 操作的数组，其中每个操作都包含一个命令，用于将缩放实体的单个 I) 移动到不同的目标 CPU。 数组元素可以引用不同的缩放实体（VPorts）。
 
 每种类型的 NDIS 驱动程序、微型端口、筛选器和协议都具有支持同步 OID 请求接口的入口点：
 
@@ -97,20 +97,20 @@ RSSv2 中引入了两个 Oid， [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-re
 
 | 参数 | 描述 |
 | --- | --- |
-| 主处理器 | <ul><li>用 VPort 创建期间指定的**关联**处理器进行了初始化。</li><li>可使用**NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_PRIMARY_PROCESSOR**标志设置的[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID 进行更新。</li><li>可使用**NDIS_NIC_SWITCH_VPORT_PARAMS_PROCESSOR_AFFINITY_CHANGED**标志设置的[OID_NIC_SWITCH_VPORT_PARAMETERS](oid-nic-switch-vport-parameters.md) OID （这是现有 cmdlet 的兼容性路径）进行更新。</li><li>可以使用[OID_NIC_SWITCH_VPORT_PARAMETERS](oid-nic-switch-vport-parameters.md) OID 和**NDIS_NIC_SWITCH_VPORT_PARAMS_PROCESSOR_AFFINITY_CHANGED**标志（这是现有 cmdlet 的兼容路径）进行读取。</li><li>主处理器的初始化后移动不会影响默认处理器或间接表的内容。</li></ul> |
-| 默认处理器 | <ul><li>用 VPort 创建期间指定的**关联**处理器进行了初始化。</li><li>可使用**NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_DEFAULT_PROCESSOR**标志设置的[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID 进行更新。</li></ul> |
+| 主处理器 | <ul><li>用 VPort 创建期间指定的**关联**处理器进行了初始化。</li><li>可以使用[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID，并设置**NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_PRIMARY_PROCESSOR**标志。</li><li>可以使用设置了**NDIS_NIC_SWITCH_VPORT_PARAMS_PROCESSOR_AFFINITY_CHANGED**标志的[OID_NIC_SWITCH_VPORT_PARAMETERS](oid-nic-switch-vport-parameters.md) OID （这是现有 cmdlet 的兼容路径）进行更新。</li><li>可使用带有**NDIS_NIC_SWITCH_VPORT_PARAMS_PROCESSOR_AFFINITY_CHANGED**标志的[OID_NIC_SWITCH_VPORT_PARAMETERS](oid-nic-switch-vport-parameters.md) OID 读取（这是现有 cmdlet 的兼容性路径）。</li><li>主处理器的初始化后移动不会影响默认处理器或间接表的内容。</li></ul> |
+| 默认处理器 | <ul><li>用 VPort 创建期间指定的**关联**处理器进行了初始化。</li><li>可以使用[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID，并设置**NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_DEFAULT_PROCESSOR**标志。</li></ul> |
 | 间接寻址表 | <ul><li>**NumberOfIndirectionTableEntries**设置为**1**。</li><li>只有在创建 VPort 的过程中指定的**关联**处理器才会初始化该条目。</li><li>可以使用[OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen-rss-set-indirection-table-entries.md) OID 进行更新。</li></ul> |
 
-对 ITEs 和主/默认处理器（使用 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES）的更新将从相应条目当前指向的处理器调用。 对于给定的 VPort，上层确保在这些情况下不会发出 ITEs 或 SET 主/默认处理器的 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES Oid：
+将从相应条目当前指向的处理器调用 ITEs 的更新和主/默认处理器（使用 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES）。 对于给定的 VPort，上层确保在这些情况下不会发出用于移动 ITEs 或设置主/默认处理器的 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES Oid：
 
-1. 正在进行[OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md) 。
+1. [OID_GEN_RECEIVE_SCALE_PARAMETERS_V2](oid-gen-receive-scale-parameters-v2.md)正在进行。
 2. 启动 VPort 删除序列之后。 例如，上层仅在完成最后一个要移动 ITEs 的 OID 后发出集筛选器 OID。
 
 ### <a name="rss-disablement"></a>RSS 禁用
 
 在 RSS 禁用期间，上层协议可能会选择将所有 ITEs 指向主处理器，然后发出 OID 来禁用 RSS，或者可能选择将间接表保持原样并禁用 RSS。 在任一情况下，接收流量应以主处理器为目标。
 
-RSSv2 维持了 RSSv1 的要求，该要求允许上层协议删除 VPort，而无需首先禁用 RSS。 上层可以将 VPort 上的接收筛选器设置为零，从而确保没有任何接收流量流过 VPort，然后继续进行 VPort 删除而不禁用 RSS。 上层可保证在 VPort 删除期间或之后不会发出任何 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES Oid。
+RSSv2 维持了 RSSv1 的要求，该要求允许上层协议删除 VPort，而无需首先禁用 RSS。 上层可以将 VPort 上的接收筛选器设置为零，从而确保没有任何接收流量流过 VPort，然后继续进行 VPort 删除而不禁用 RSS。 上层保证在 VPort 删除期间或之后不会发出任何 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES Oid。
 
 在 RSS 禁用和 VPort 的删除过程中，微型端口驱动程序应负责处理由于上一队列移动而可能存在的任何挂起的内部操作。
 

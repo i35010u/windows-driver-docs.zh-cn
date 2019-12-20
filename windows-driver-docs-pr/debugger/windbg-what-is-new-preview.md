@@ -1,28 +1,45 @@
 ---
 title: WinDbg 预览版 - 新增功能
 description: 本主题提供有关 WinDbg 预览调试器的新增功能的 inofmration。
-ms.date: 04/04/2019
+ms.date: 12/12/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: c5a3f1f13e8a8980a7a4f03b1b11b1ff4939056a
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: cbb1ae4707d04432b180c89166fcbdfbf5d03815
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861349"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209505"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
 本主题提供有关 WinDbg 预览调试器中的新增功能的信息。
 
+## <a name="10191211001"></a>1.0.1912.11001
+
+**TTD 时间线**-我们添加了一个新窗口，该窗口显示跟踪中重要事件的可视化表示形式：异常、断点、函数调用和内存访问。 时间线将自动打开并显示异常（如果存在）和断点。 有关详细信息，请参阅[WinDbg 预览-时间线](windbg-timeline-preview.md)。
+
+**切换到默认窗口镶边**-我们使用的自定义窗口 chrome，尽管外观会导致某些规模的用户缩放并调整其大小，因此我们已选择在此时间删除它。
+
+"**文件" 菜单改善了键盘导航**-"文件" 菜单现在更易于只使用键盘进行导航。
+
+**其他更改和 bug 修补程序**
+
+* 当目标正在运行时，"堆栈" 和 "局部变量" 窗口将处于禁用状态，并且不会在没有目标时显示 "未指定的错误"。
+* 向附加对话框添加了 "服务" 列，以便轻松地查找正在运行的服务。
+* 修复了在使用参数启动应用程序时导致体系结构检测不起作用的 bug。
+* 在加载私有符号时，"反汇编" 窗口已改进了反汇编。
+* jsprovider 现已自动加载，因此我们从脚本功能区删除了 "Load JSProvider" 按钮。
+
 ## <a name="10190830002"></a>1.0.1908.30002
+
 **TTD 调用对象的改进** - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
 
 **支持 Open Enclave** -WinDbg 预览版现在可以调试打开的 ENCLAVE （OE）应用程序，你可以在[打开的 Enclave 文档](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/GettingStarted.Windows.md)中找到如何执行此操作的说明。
 
-**VS Code 扩展**-为了更轻松地为开放式 Enclave 进行开发，我们发布了一个基本的 VS Code 扩展，以实现更快的内部循环。 "变量"、"监视" 和 "调用堆栈" 窗口所有工作以及断点和源窗口，任何更深入的调试都需要使用控制台窗口。 
+**VS Code 扩展**-为了更轻松地为开放式 Enclave 进行开发，我们发布了一个基本的 VS Code 扩展，以实现更快的内部循环。 "变量"、"监视" 和 "调用堆栈" 窗口所有工作以及断点和源窗口，任何更深入的调试都需要使用控制台窗口。
  
 可以在[VS Code Marketplace](https://aka.ms/CDBVSCode)中找到该扩展，并向我们的[WinDbg 反馈 GitHub](https://aka.ms/dexex)报告任何问题。 请注意，虽然扩展可能适用于其他方案，但我们只是在此时解决与 OE 方案相关的问题。
 
@@ -31,13 +48,15 @@ ms.locfileid: "74861349"
 **TTD 文件格式更改**-对于中断向前兼容性的 TTD 跟踪，我们已对文件格式进行了重大更新。 以前版本的 WinDbg Preview 将无法打开此（以及将来）版本的 WinDbg Preview 记录的跟踪，但此（和更未来）版本将能够打开新的和旧的跟踪。
 
 **其他更改**
+
 * TTD 现在将使用64位引擎进行索引编制，并使用相应的调试器引擎位重放来最大程度地减少在重播时索引和 SOS 问题时可能出现的内存问题。
 * 在没有任何参数的情况下运行 "dx" 现在会显示根命名空间，以便更轻松 browsability。
 * 现在可以通过 "设置" 菜单修改默认符号和源缓存位置。
-* 改善了对录制 AVX-512 的支持（AVX-512 的记录将导致比正常的缓慢关闭）
-* 已启用[脱机授权](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)
+* 改善了对录制 AVX-512 的支持（AVX-512 的记录将导致比正常的慢）。
+* 已启用[脱机许可](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)。
 
 ## <a name="10190512001"></a>1.0.1905.12001
+
 **对 SymSetDiaSession 错误缓解功能的改进**-我们的第一个月修复了此错误，以减少在某些情况下将 dbghelp.dll 注入到进程中的应用程序造成的错误。 我们已对其进行了改进，并将继续监视有关此错误的反馈。
 
 **自定义颜色自定义**-很多情况下都需要使用 WinDbg 的几个实例，在这两个实例之间来回移动可能会造成混淆，并花一些时间来找出哪一项是 "右"。 我们添加了更改蓝色强调颜色的功能，以帮助用户直观地区分会话，并使它们之间的交换变得更容易。
@@ -63,6 +82,7 @@ ms.locfileid: "74861349"
 **源加载改进**-我们已更改加载源文件工作的方式。 以前在打开源文件时，无法运行或无法预测的引擎操作，如运行其他命令。 我们更改了加载的位置，以实现更好的并行，并更可靠地取消源打开操作。
 
 其他更改和 bug 修复：
+
 * 已将 "转向反汇编" 添加到源窗口的上下文菜单中。
 * 在 "反汇编" 窗口中添加了 "跟踪当前指令" 的复选框。
 * 修复了一个 bug，该 bug 导致命令窗口在输出大量文本时执行缓慢。
@@ -76,7 +96,7 @@ ms.locfileid: "74861349"
 
 **调试器数据模型C++标头**-有一个新C++的标头 DbgModel，它作为 Windows SDK 的一部分包含，以便通过C++扩展调试器数据模型。 有关详细信息，请查看[调试器数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过[调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
 
-**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
+**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例-https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
 
 其他更改和 bug 修复：
 
@@ -84,7 +104,7 @@ ms.locfileid: "74861349"
 - 重新排列 WinDbgNext 的窗口标题，以便在启动内核调试时获得更重要的信息。
 - "命令" 窗口中的 "交替背景对比度" 应该稍微明显一些。
 
-## <a name="1018102001"></a>1.0.1810.2001 
+## <a name="1018102001"></a>1.0.1810.2001
 
 此版本包含这些更新。
 
@@ -102,9 +122,9 @@ ms.locfileid: "74861349"
 -  现在，未编制索引的 TTD 跟踪将更清楚地表明它们未编入索引。
 -  提高了 "局部变量" 窗口的性能
 -  添加了 "功能区" 按钮，用于将命令窗口日志保存到文件。
--  。 SelectMany （<projection>）设置为默认的 LINQ 方法集。
+-  已. SelectMany （<projection>）设置为默认的 LINQ 方法集。
 
-## <a name="10180711002"></a>1.0.1807.11002 
+## <a name="10180711002"></a>1.0.1807.11002
 
 此版本包含这些更新。
 
@@ -132,7 +152,7 @@ ms.locfileid: "74861349"
 
 **更快的源窗口**-已更新源窗口，以提高资源效率。
 
-少量更改和 bug 修复
+少量更改和 bug 修复：
 
 - 修复了有关符号缓存的问题
 - 解决了某些情况下，当目标未损坏时，切换初始中断不可用

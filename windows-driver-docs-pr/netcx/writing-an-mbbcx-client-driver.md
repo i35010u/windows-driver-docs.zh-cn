@@ -6,16 +6,14 @@ keywords:
 - Mobile 宽带（MBB） WDF 类扩展，MBBCx，Mobile 宽带 NetAdapterCx
 ms.date: 03/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac24ff1b5112d158c8a5405055b9144c0ab636c5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fc98feda0b608ca5dff32664e392454912bcdefb
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838266"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208941"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>编写 MBBCx 客户端驱动程序
-
-[!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
 >[!WARNING]
 >本主题中的序列图仅用于说明目的。 它们不是公共协定，将来可能会更改。
@@ -81,7 +79,7 @@ MBBCx 使用在 MBIM 规范 Rev 1.0 中定义的标准 MBIM 控制命令，第8�
 
 MBBCx 框架始终将调用序列化为客户端驱动程序的*EvtMbbDeviceSendMbimFragment*和*EvtMbbDeviceReceiveMbimFragment*回调函数。 在客户端驱动程序调用**MbbRequestComplete**或**MbbRequestCompleteWithInformation**之前，框架不会进行任何新的调用。
 
-虽然保证客户端驱动程序不会收到重叠的*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*回调，但它可能会在对前一个命令的响应之前连续收到对它们的多次调用可从设备上获取。
+虽然保证客户端驱动程序不会收到重叠的*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*回调，但它可能会在设备上提供上一个命令的响应之前连续收到对它们的多个调用。
 
 如果设备未处于*d0*状态，则在调用*EvtMbbDeviceSendMbimFragment*或*EvtMbbDeviceReceiveMbimFragment*之前，MBBCx 框架将首先使设备到 D0 （换言之，它调用[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)）。 MBBCx 框架还保证设备处于 D0 状态，这意味着它将不会调用[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)，直到客户端调用**MbbRequestComplete**或**MbbRequestCompleteWithInformation**。
 
@@ -174,7 +172,7 @@ MBBCx 至少调用此回调函数一次，因此主 PDP 上下文/默认 EPS 持
 
 有关设置数据路径功能的代码示例，请参阅[网络数据缓冲区管理](network-data-buffer-management.md)。
 
-MBBCx 保证在向具有相同会话 ID 的**MBIM_CID_CONNECT**请求之前调用*EvtMbbDeviceCreateAdapter* 。 以下流程图显示了客户端驱动程序和类扩展在创建 GET-NETADAPTER 对象中的交互。  
+MBBCx 保证在请求具有相同会话 ID 的**MBIM_CID_CONNECT**之前调用*EvtMbbDeviceCreateAdapter* 。 以下流程图显示了客户端驱动程序和类扩展在创建 GET-NETADAPTER 对象中的交互。  
 
 ![GET-NETADAPTER MBB 客户端驱动程序的创建和激活](images/activation.png)
 

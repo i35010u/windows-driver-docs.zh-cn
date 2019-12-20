@@ -4,19 +4,17 @@ description: 数据包描述符和扩展
 ms.assetid: 7B2357AE-F446-4AE8-A873-E13DF04D8D71
 keywords:
 - WDF 网络适配器类扩展数据包描述符和扩展，NetAdapterCx 数据路径描述符，多环缓冲区，NetAdapterCx 数据包描述符，NetAdapterCx 数据包扩展
-ms.date: 01/30/2019
+ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.custom: 19H1
-ms.openlocfilehash: caaf4961c269527a667cbdc55e0f7816b8ac77f6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.custom: Vib
+ms.openlocfilehash: c34a3f491f7c16c315c24455bc984f77e9025035
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838280"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209034"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 在 NetAdapterCx 中，*数据包描述符*是用于描述网络数据包的小型、精简、运行时可扩展的结构。 每个数据包都需要以下各项：
 
@@ -24,11 +22,11 @@ ms.locfileid: "72838280"
 - 一个或多个片段说明符
 - 零个或多个数据包扩展 
 
-数据包的*核心描述符*是[**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet)结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
+数据包的*核心描述符*是[**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
 
-每个数据包还必须有一个或多个*片段描述符*或[**NET_PACKET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet_fragment)结构，它们描述数据包数据所在的系统内存中的位置。
+每个数据包还必须有一个或多个*片段描述符*或[**NET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment)结构，它们描述数据包数据所在的系统内存中的位置。
 
-*数据包扩展名*是可选的，并保存特定于方案的功能的每个数据包的元数据。 例如，扩展可以保存校验和的卸载信息、大型发送卸载（LSO）和接收段合并（RSC），也可以保存特定于应用程序的详细信息。
+*扩展名*是可选的，可为特定于方案的功能保留每个数据包或每个片段的元数据。 例如，数据包扩展可以保存校验和的卸载信息、大型发送卸载（LSO）和接收段合并（RSC），也可以保存特定于应用程序的详细信息。 片段扩展可以保存虚拟地址信息、逻辑 DMA 地址信息或片段的其他信息。
 
 这些描述符和扩展共同保存了有关网络数据包的所有元数据。 下面是两个示例，说明了如何描述数据包。 第一张图显示了这样一种情况：整个数据包存储在单个内存片段内，并已启用校验和卸载。
 
@@ -43,7 +41,7 @@ ms.locfileid: "72838280"
 
 数据包描述符和片段描述符均存储在**NET_RING**结构中。 NIC 客户端驱动程序通过调入网络环迭代器接口来访问网络环并对其执行操作，从而使驱动程序可以使用 NetAdapterCx 将网络数据发布到硬件，并将已完成的数据排出回操作系统。 
 
-有关网络环和 Net 环形迭代器接口的详细信息，请参阅[网络环和网络环迭代](net-rings-and-net-ring-iterators.md)器。
+有关网络环和 Net 环形迭代器接口的详细信息，请参阅[净环简介](introduction-to-net-rings.md)。
 
 ## <a name="packet-descriptor-extensibility"></a>数据包描述符扩展性
 
@@ -135,5 +133,5 @@ NetAdapterCx 提供已知包扩展常量的定义。
 | 方法 | 结构 |
 | --- | --- |
 | [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
-| [**NetExtensionGetLargeSendSegmentation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlargesendsegmentation) | [**NET_PACKET_LARGE_SEND_SEGMENTATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_large_send_segmentation)
-| [**NetExtensionGetPacketReceiveSegmentCoalescence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketreceivesegmentcoalescence) | [**NET_PACKET_RECEIVE_SEGMENT_COALESCENCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_receive_segment_coalescence) |
+| [**NetExtensionGetLso**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlso) | [**NET_PACKET_LSO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_lso)
+| [**NetExtensionGetPacketRsc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketrsc) | [**NET_PACKET_RSC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_rsc) |

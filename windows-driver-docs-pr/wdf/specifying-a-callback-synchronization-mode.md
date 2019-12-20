@@ -11,17 +11,17 @@ keywords:
 - 锁定 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58546459818257e2104754e2857caa77c9973b7d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b8a461ffece59f2890abab078372a938d551b243
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842199"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209949"
 ---
 # <a name="specifying-a-callback-synchronization-mode"></a>指定回调同步模式
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 驱动程序可以指定框架如何调用回调函数。 在调用[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)方法为设备创建[设备对象](framework-device-object.md)之前，驱动程序为设备指定同步（或锁定）模式。 若要指定同步模式，驱动程序应调用[**IWDFDeviceInitialize：： SetLockingConstraint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)方法。 当调用[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法将设备添加到系统时，驱动程序将收到指向[IWDFDeviceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)接口的指针。
 
@@ -34,7 +34,7 @@ ms.locfileid: "72842199"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">Value</th>
 <th align="left">含义</th>
 </tr>
 </thead>

@@ -15,17 +15,17 @@ keywords:
 - 重新启动 i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f51efc9445a154592db73216cc495b858565f1e7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c639d411b3454ee70490bcb95ed80b2cf884588a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843643"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210041"
 ---
 # <a name="controlling-a-general-io-targets-state-in-umdf"></a>在 UMDF 中控制常规 I/O 目标的状态
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 框架定义一般 i/o 目标的以下状态：
 

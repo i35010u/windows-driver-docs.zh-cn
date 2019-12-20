@@ -7,17 +7,17 @@ keywords:
 - 低功耗状态方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80ada1d6a6e60c070e71518caee149e24bbdc093
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 393aed47b83ff5689122eb47125c8bab84b4746c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843660"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210883"
 ---
 # <a name="a-device-enters-a-low-power-state"></a>设备进入低功耗状态
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 如果发生以下情况之一，则设备将保持其工作（D0）状态并进入低功耗状态：
 

@@ -6,19 +6,18 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 236029136134c27eaa6e00b6d764db09dc99ea19
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 8f4ab5fda7d962f3a289d3ad6024f088154922af
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313788"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209613"
 ---
 # <a name="windbg-preview---command-line-startup-options"></a>WinDbg 预览版 - 命令行启动选项
 
-## <a name="starting-windbg-preview"></a>正在启动 WinDbg 预览版
+**正在启动 WinDbg 预览版** 
 
-安装 WinDbg Preview 后，WinDbgX 可从任何目录位置运行。 
-
+安装 WinDbg Preview 后，WinDbgX 可从任何目录位置运行。
 
 ## <a name="command-line-startup-options"></a>命令行启动选项
 
@@ -29,7 +28,6 @@ WinDbgX [options]
 下表总结了可用的命令行选项。
 
 **常规选项**
-
 
 |     选项      |                                                                          描述                                                                          |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,7 +83,7 @@ WinDbgX [options]
 
 选项 | 描述
 |------ | -----------|
--y *SymbolPath* | 指定要使用的符号路径。 使用分号（ **;** ）分隔多个路径。 如果路径包含空格，则应该用引号将其引起来。 有关详细信息和更改此路径的其他方式，请参阅[符号路径](symbol-path.md)。
+-y *SymbolPath* | 指定要使用的符号路径。 使用分号（**;**）分隔多个路径。 如果路径包含空格，则应该用引号将其引起来。 有关详细信息和更改此路径的其他方式，请参阅[符号路径](symbol-path.md)。
 -n | 干扰符号加载。 从符号处理程序启用详细输出。
 -i *ImagePath* | 设置要使用的图像搜索路径。
 -sdce | 使调试器在符号加载过程中显示 "文件访问错误" 消息。 
@@ -103,17 +101,8 @@ WinDbgX [options]
 
 ![命令行帮助的屏幕截图有关50选项的输出列表](images/windbgx-start-up-options.png)
 
-
-
 ---
 
 ## <a name="see-also"></a>另请参阅
 
 [使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
-
-
-
-
-
-
-

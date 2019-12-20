@@ -12,17 +12,17 @@ keywords:
 - 用户模式驱动程序 WDK UMDF，处理 i/o 的文件对象，创建和使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b14670c7a8ca5d1ccc34a641f330852aea777d6e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a5f2534fe60a6ce7d9137986a8e4ee1c2733d0e4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845607"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210227"
 ---
 # <a name="creating-and-using-driver-created-file-objects"></a>创建和使用驱动程序创建的文件对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 如果驱动程序需要创建独立于应用程序的 i/o 请求并将其发送到堆栈中的下一个驱动程序（默认 i/o 目标），则驱动程序必须创建并关闭其自己的文件对象。
 
@@ -65,7 +65,7 @@ ms.locfileid: "72845607"
 
 在框架调用[**OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)后，它会销毁表示 file 对象的[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)接口。
 
-如果在驱动程序的设备删除方法（例如[**IPnpCallbackHardware：： OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)和[**IPnpCallbackSelfManagedIo：： OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)）返回之后，驱动程序创建的文件对象仍然存在，则该框架将生成一个驱动程序停止。 有关解决此问题的信息，请参阅[确定 UMDF 在设备删除时指示未完成文件的原因](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)。
+如果在驱动程序的设备删除方法（例如[**IPnpCallbackHardware：： OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)和[**IPnpCallbackSelfManagedIo：： OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)）返回之后，驱动程序创建的文件对象仍然存在，则框架将生成驱动程序停止。 有关解决此问题的信息，请参阅[确定 UMDF 在设备删除时指示未完成文件的原因](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)。
 
  
 

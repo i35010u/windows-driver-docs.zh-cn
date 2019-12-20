@@ -9,17 +9,17 @@ keywords:
 - USB 接口 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9182e90910e774d9c66f87ff4095eb2b4d286795
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 25d7d82d8c063c66c4e1519d63efa2283548604c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823515"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210831"
 ---
 # <a name="working-with-usb-interfaces-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用 USB 接口
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 框架将每个 USB 接口表示为框架 USB 接口对象。 当 UMDF 驱动程序创建框架 USB 设备对象时，框架会为设备支持的每个 USB 接口创建一个框架 USB 接口对象。
 

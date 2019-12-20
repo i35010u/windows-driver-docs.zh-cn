@@ -1,6 +1,6 @@
 ---
-title: 正在初始化 UMDF 驱动程序
-description: 正在初始化 UMDF 驱动程序
+title: 初始化 UMDF 驱动程序
+description: 初始化 UMDF 驱动程序
 ms.assetid: b21ec019-1a80-4219-8aa8-3545ec3383b9
 keywords:
 - 用户模式驱动程序框架 WDK，初始化驱动程序
@@ -12,17 +12,17 @@ keywords:
 - 驱动程序主机进程 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23ee06a7dc89aaa400774b549de33a4da4a8f5be
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6cc52ae8cbb8632056be8ab806be1742f9451a28
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842803"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210043"
 ---
-# <a name="initializing-umdf-drivers"></a>正在初始化 UMDF 驱动程序
+# <a name="initializing-umdf-drivers"></a>初始化 UMDF 驱动程序
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 在初始化设备的 UMDF 驱动程序之前，会通过操作系统加载驱动程序管理器和反射器，并创建驱动程序主机进程。 若要确保设备成功启动，则会在反射器初始化时加载并完全初始化驱动程序管理器。
 

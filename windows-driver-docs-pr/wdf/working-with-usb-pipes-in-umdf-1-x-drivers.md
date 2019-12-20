@@ -9,17 +9,17 @@ keywords:
 - USB 管道 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a3ffc5b5bfae081a6e7f06e6da35a94812bbc2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b04c01d51b5321b53a3349392449722938e76d57
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823500"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210832"
 ---
 # <a name="working-with-usb-pipes-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用 USB 管道
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 框架将 USB 接口中的每个管道表示为框架 USB 管道对象。 当驱动程序配置 USB 设备时，框架会为每个选定接口中的每个管道创建一个框架 USB 管道对象。 通过管道对象方法，驱动程序可以：
 
@@ -37,7 +37,7 @@ ms.locfileid: "72823500"
 
 ### <a name="obtaining-umdf-usb-pipe-information"></a>获取 UMDF-USB 管道信息
 
-在 UMDF 驱动程序调用[**IWDFUsbInterface：： RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)方法以获取指向 usb 管道对象的[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)接口的指针后，驱动程序可以调用 usb 管道对象定义的以下方法获取有关 USB 管道的信息：
+在 UMDF 驱动程序调用[**IWDFUsbInterface：： RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)方法以获取指向 usb 管道对象的[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)接口的指针后，驱动程序可以调用 usb 管道对象定义的以下方法来获取有关 usb 管道的信息：
 
 <a href="" id="iwdfusbtargetpipe--getinformation"></a>[**IWDFUsbTargetPipe：： GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)  
 检索有关 USB 管道及其终结点的信息。
@@ -72,11 +72,11 @@ ms.locfileid: "72823500"
 
     若要为输入管道配置连续读取器，驱动程序的[**IPnpCallbackHardware：： OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)回调函数必须调用[**IWDFUsbTargetPipe2：： ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)方法。 此方法将一组读取请求排队给设备的 i/o 目标。
 
-    此外，驱动程序的[**IPnpCallback：： OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)回调函数必须调用[**IWDFIoTargetStateManagement：： start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)来启动持续读取器，驱动程序的[**IPnpCallback：： OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)回调函数必须调用[**IWDFIoTargetStateManagement：： Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)停止连续读取器。
+    此外，驱动程序的[**IPnpCallback：： OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)回调函数必须调用[**IWDFIoTargetStateManagement：： start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)来启动持续读取器，驱动程序的[**IPnpCallback：： OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)回调函数必须调用[**IWDFIoTargetStateManagement：： stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)来停止连续读取器。
 
-    每次在设备上提供数据时，i/o 目标将完成读取请求，框架将调用以下两个回调函数之一： [**IUsbTargetPipeContinuousReaderCallbackReadComplete：： OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) （如果 i/o 目标如果 i/o 目标报告错误，则成功读取数据或[**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure) 。
+    每次从设备获取数据时，i/o 目标将完成读取请求，并且框架将调用以下两个回调函数之一： [**IUsbTargetPipeContinuousReaderCallbackReadComplete：： OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) （如果 i/o 目标成功读取数据）或[**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure) （如果 i/o 目标报告错误）。
 
-    在驱动程序调用[**IWDFUsbTargetPipe2：： ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)之后，驱动程序无法使用[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)将 i/o 请求发送到管道，除非该驱动程序的[**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： O调用 nReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)回调函数并返回**FALSE**。
+    驱动程序调用[**IWDFUsbTargetPipe2：： ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)后，除非调用了驱动程序的[**IUsbTargetPipeContinuousReaderCallbackReadersFailed：： OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)回调函数并返回**FALSE**，否则驱动程序无法使用[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)向管道发送 i/o 请求。
 
     在 UMDF 版本1.9 及更高版本中支持连续读取器。
 

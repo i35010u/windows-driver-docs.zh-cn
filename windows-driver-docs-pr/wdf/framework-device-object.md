@@ -9,17 +9,17 @@ keywords:
 - IWDFDevice
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0008ec6cc16be804627815954684d443a7faeb35
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df0c337c5e074d1b8f5bb7e2802789245c4f0b66
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843184"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210731"
 ---
 # <a name="framework-device-object"></a>框架设备对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 通过[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口向驱动程序公开框架设备对象。 框架设备对象是系统上的设备的框架表示形式。 每个设备对象都有一个父驱动程序对象。
 

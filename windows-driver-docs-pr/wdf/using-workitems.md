@@ -4,17 +4,17 @@ description: 使用工作项
 ms.assetid: 4617A33F-9026-45FF-9CC2-7215423E6D35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f430d389ec7586312a94b1399273be6b212283a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b0384d57951ba61cdbdb1a6d6a9f9e62a8f67d02
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842591"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210853"
 ---
 # <a name="using-work-items"></a>使用工作项
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 工作项是驱动程序在[*OnWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)事件回调函数中执行的任务。 这些函数以异步方式运行。
 
@@ -52,7 +52,7 @@ ms.locfileid: "72842591"
 2.  执行指定的任务。 如有必要，回调函数可以调用[**IWDFWorkItem：： GetParentObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-getparentobject)来确定工作项的父对象。
 3.  如果驱动程序将重新排队工作项，则指示工作项的句柄现在可用于重用。
 
-几个驱动程序可能需要调用[**IWDFWorkItem：： flush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-flush)来刷新工作项队列中的工作项。 如果驱动程序调用了**Flush**方法，则该方法不返回，直到工作线程从工作项队列中删除了指定的工作项，并调用了驱动程序的[*OnWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)回调函数和*OnWorkItem*回调函数随后在处理工作项后返回。
+几个驱动程序可能需要调用[**IWDFWorkItem：： flush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-flush)来刷新工作项队列中的工作项。 如果驱动程序调用了**Flush**方法，则该方法不会返回，直到工作线程已从工作项队列中删除指定的工作项，并调用了驱动程序的[*OnWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)回调函数，并且*OnWorkItem*回调函数随后在处理工作项后返回。
 
  
 

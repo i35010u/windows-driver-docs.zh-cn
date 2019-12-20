@@ -3,12 +3,12 @@ Description: USB 设备通过配置、接口、备用设置和终结点定义其
 title: USB 设备布局
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc7014cc2efdff685b8fbcb3c375ce03575eab95
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 22f40da2b61c645d3ff328798b9088249a7b23c8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844824"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210615"
 ---
 # <a name="usb-device-layout"></a>USB 设备布局
 
@@ -21,7 +21,7 @@ ms.locfileid: "72844824"
 
 每个接口都包含一个或多个*终结点，这些终结点*用于将数据传入和传出设备。 此外，接口还包含*替代设置*，用于定义与接口关联的函数的带宽要求。 若要求和，一组终结点构成一个接口，一组接口构成设备中的配置。
 
-那么，选择活动配置是什么意思？ 在设备初始化过程中，USB 设备的设备驱动程序必须选择配置、此配置中的一个或多个或接口，以及每个接口的备用设置。 大多数 USB 设备不提供多个接口或多个备用设置。 例如，OSR USB FX2 Learning 工具包设备有一个接口，其中包含一个备用设置和三个终结点。 有关学习工具包的详细信息，请参阅[OSR Online （联机](http://www.osronline.com/)）。
+那么，选择活动配置是什么意思？ 在设备初始化过程中，USB 设备的设备驱动程序必须选择配置、此配置中的一个或多个或接口，以及每个接口的备用设置。 大多数 USB 设备不提供多个接口或多个备用设置。 例如，OSR USB FX2 Learning 工具包设备有一个接口，其中包含一个备用设置和三个终结点。 有关学习工具包的详细信息，请参阅[OSR Online （联机](https://www.osronline.com/)）。
 
 **单接口设备**
 

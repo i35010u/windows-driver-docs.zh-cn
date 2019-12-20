@@ -10,16 +10,16 @@ keywords:
 - 用户模式驱动程序框架 WDK，内核模式客户端
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfdeaa7dfc49feb1c6c6660606aef7bd15c5ef0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 590fbd04a9ec26df8dab1a1992acdac1df3bc90d
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831795"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210819"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-1x-drivers"></a>支持 UMDF 1.x 驱动程序中的内核模式客户端
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 >[!WARNING]
 >另请参阅[在 UMDF 2.x 中支持内核模式客户端](supporting-kernel-mode-clients-in-umdf-drivers.md)。
@@ -72,7 +72,7 @@ UMDF 版本1.9 及更高版本允许 UMDF 驱动程序支持*内核模式客户�
 
 将返回状态值从用户模式传递到内核模式需要特别注意，如下所示：
 
--   UMDF 版本1驱动程序通常会接收 HRESULT 类型的返回值，而基于 KMDF 和 WDM 的内核模式驱动程序通常会接收 NTSTATUS 类型的值。 如果为1，则为。*x*驱动程序完成 i/o 请求，如果驱动程序具有内核模式客户端，则驱动程序对[**IWDFIoRequest：： Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的调用应指定驱动程序生成的 HRESULT 值一个 NTSTATUS 值。 通常，为 UMDF 1。*x*驱动程序应使用\_NT 宏（在*winerror.h*中定义）的 HRESULT\_将状态返回到内核模式客户端。 下面的示例演示如何在完成请求时使用此宏。
+-   UMDF 版本1驱动程序通常会接收 HRESULT 类型的返回值，而基于 KMDF 和 WDM 的内核模式驱动程序通常会接收 NTSTATUS 类型的值。 如果为1，则为。*x*驱动程序完成 i/o 请求，如果驱动程序具有内核模式客户端，则驱动程序对[**IWDFIoRequest：： Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)的调用应指定驱动程序从 NTSTATUS 值生成的 HRESULT 值。 通常，为 UMDF 1。*x*驱动程序应使用\_NT 宏（在*winerror.h*中定义）的 HRESULT\_将状态返回到内核模式客户端。 下面的示例演示如何在完成请求时使用此宏。
 
     ```cpp
     hr = HRESULT_FROM_NT(STATUS_BUFFER_OVERFLOW)

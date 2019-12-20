@@ -7,17 +7,17 @@ keywords:
 - 请求处理 WDK UMDF，获取参数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47247a5c5d8aa9064763b2abea8e5741de420ab3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a7f6f8cb1ee6c0c9ec8e9e3aed92a1de937f7061
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843135"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208919"
 ---
 # <a name="obtaining-parameters-for-io-requests"></a>获取 I/O 请求的参数
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当驱动程序收到 i/o 请求时，驱动程序可以使用[IWDFIoRequest](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiorequest)接口的以下方法来获取与请求相关的参数：
 

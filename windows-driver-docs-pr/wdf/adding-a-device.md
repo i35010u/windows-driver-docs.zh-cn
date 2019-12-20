@@ -10,17 +10,17 @@ keywords:
 - 添加设备 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5edafcef9186c99483faeb4654d641be4c5cfce7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 50a8fbb37db5bf3a8f6b9a65e6d8e79d1a4bbde2
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845511"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210049"
 ---
 # <a name="adding-a-device"></a>添加设备
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 框架为驱动程序主机进程中加载的每个设备添加一个设备对象。 为了添加设备，框架将调用驱动程序的[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法，并在调用中传递[IWDFDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver)和[IWDFDeviceInitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)接口。 仅当驱动程序调用[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)后，提供的**IWDFDeviceInitialize**接口才有效。 驱动程序可以调用**IWDFDeviceInitialize**的以下方法来执行以下操作：
 

@@ -4,17 +4,17 @@ description: 同步中断代码
 ms.assetid: 5E2D0063-2251-40B3-8982-46001E67EB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a82eea2a4c9e051724943da2b4573960804f2e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: da2931c7e1e4756c71adb79e5686980386bd1561
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831642"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210829"
 ---
 # <a name="synchronizing-interrupt-code"></a>同步中断代码
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 所有访问中断数据缓冲区的驱动程序代码都必须进行同步，以便一次只有一个例程访问数据。
 

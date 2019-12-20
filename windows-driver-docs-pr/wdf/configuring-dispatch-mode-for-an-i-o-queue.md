@@ -13,17 +13,17 @@ keywords:
 - 手动调度模式 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f09c0c4bda351144b1469778101523896b8ba907
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 65a16843b128cd8a40623533018fb68fd6fabcae
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843646"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210229"
 ---
 # <a name="configuring-dispatch-mode-for-an-io-queue"></a>为 I/O 队列配置调度模式
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当应用程序的 i/o 请求到达时，框架会将每个请求放入相应的 i/o 队列。 请求传递到驱动程序的方式和时间取决于驱动程序如何为 i/o 队列配置调度以及驱动程序如何[指定回叫功能同步](specifying-a-callback-synchronization-mode.md)。 I/o 队列还与 UMDF 的 PnP 和电源管理子系统交互，以便在设备达到正确状态之前在队列中保存 i/o 请求。
 

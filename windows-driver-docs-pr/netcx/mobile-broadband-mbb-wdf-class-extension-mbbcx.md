@@ -6,16 +6,14 @@ keywords:
 - Mobile 宽带（MBB） WDF 类扩展，MBBCx，Mobile 宽带 NetAdapterCx
 ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ae8376e181e11a966d3bb5ab25c0dea7794214
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a4b530ebfadb77f929541345a952c52ba08f77fd
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835536"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210815"
 ---
 # <a name="introduction-to-the-mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>移动宽带 (MBB) WDF 类扩展 (MBBCx) 的简介
-
-[!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
 从 Windows 10 的下一版本开始，Windows 驱动程序工具包（WDK）包含一个适用于 NetAdapterCx 的移动宽带（MBB） WDF 类扩展。 MBB Get-netadapter 客户端驱动程序是最先和最重要的 WDF 客户端驱动程序，那么它们就像其他 NIC 驱动程序一样 NetAdapterCx 客户端驱动程序，最后是 MBB 类扩展（MBBCx）的客户端驱动程序，该驱动程序提供特定于 MBB 媒体的性能. 以下块图说明了 MBBCx 的体系结构：
 

@@ -7,17 +7,17 @@ keywords:
 - 发送 i/o 请求 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e45fbe38439079598e888883db116a0a09fe1c0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1923744538f2dbbb40a266b07d68b95fb0889543
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845203"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209947"
 ---
 # <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>在 UMDF 中将 I/O 请求发送到常规 I/O 目标
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF 驱动程序可以以同步或异步方式向一般 i/o 目标发送 i/o 请求。
 
@@ -74,7 +74,7 @@ UMDF 驱动程序可以以同步或异步方式向一般 i/o 目标发送 i/o �
 
 若要向 i/o 目标发送 i/o 请求，驱动程序将调用[**IWDFIoRequest：： send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)方法。 为了同步发送 i/o 请求，驱动程序会将 WDF\_请求\_发送\_选项\_同步标志传递到*Flags*参数。 否则，驱动程序会以异步方式发送 i/o 请求。 如果驱动程序以异步方式发送 i/o 请求，则驱动程序通常需要在其他驱动程序完成请求时发出通知。 驱动程序应定义[**IRequestCallbackRequestCompletion：： OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)回调函数并通过调用[**IWDFIoRequest：： SetCompletionCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-setcompletioncallback)方法进行注册。 有关详细信息，请参阅[完成 I/o 请求](completing-i-o-requests.md)。
 
-调用**IWDFIoRequest：： send**发送 i/o 请求的驱动程序稍后可通过调用[**IWDFIoRequest：： CancelSentRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-cancelsentrequest)方法尝试取消请求。 如果驱动程序取消了驱动程序从框架收到的 i/o 请求，则驱动程序必须始终通过调用[**IWDFIoRequest：： complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)方法来完成请求，方法是 *：CompletionStatus*参数设置为 STATUS\_取消。 如果驱动程序创建了 request 对象，则驱动程序将调用[**IWDFObject：:D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) ，而不是完成请求。
+调用**IWDFIoRequest：： send**发送 i/o 请求的驱动程序稍后可通过调用[**IWDFIoRequest：： CancelSentRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-cancelsentrequest)方法尝试取消请求。 如果驱动程序取消了驱动程序从框架收到的 i/o 请求，则驱动程序必须始终通过调用[**IWDFIoRequest：： complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)或[**IWDFIoRequest：： CompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)方法来完成请求，并将*CompletionStatus*参数设置为状态\_"已取消"。 如果驱动程序创建了 request 对象，则驱动程序将调用[**IWDFObject：:D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) ，而不是完成请求。
 
  
 

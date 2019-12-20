@@ -11,12 +11,12 @@ keywords:
 - KdPrintEx 函数
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f36b17bc543213ccb01cb8f985d4be42e8086b5e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f0aa10a13187565ff7cedf9e407a58b3e7a0aa80
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381980"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209789"
 ---
 # <a name="sending-output-to-the-debugger"></a>将输出发送到调试器
 
@@ -26,31 +26,19 @@ ms.locfileid: "63381980"
 
 用户模式和内核模式代码使用不同的例程将输出发送到调试器。
 
-### <a name="span-idusermodeoutputroutinesspanspan-idusermodeoutputroutinesspanuser-mode-output-routines"></a><span id="user_mode_output_routines"></span><span id="USER_MODE_OUTPUT_ROUTINES"></span>用户模式下输出例程
+### <a name="span-iduser_mode_output_routinesspanspan-iduser_mode_output_routinesspanuser-mode-output-routines"></a><span id="user_mode_output_routines"></span><span id="USER_MODE_OUTPUT_ROUTINES"></span>用户模式输出例程
 
-**OutputDebugString**将以 null 结尾的字符串发送到调用进程的调试器。 在用户模式驱动程序， **OutputDebugString**调试器命令窗口中显示的字符串。 如果调试器未运行，则此例程无效。 **OutputDebugString**不支持的变量自变量**printf**格式的字符串。
+**OutputDebugString**将以 null 结尾的字符串发送到调用进程的调试器。 在用户模式驱动程序中， **OutputDebugString**在调试器命令窗口中显示字符串。 如果调试器未运行，则此例程不起作用。 **OutputDebugString**不支持**printf**格式字符串的变量参数。
 
-此例程的完整文档，请参阅 Microsoft Windows SDK。
+有关此例程的完整文档，请参阅 Microsoft Windows SDK。
 
-### <a name="span-idkernelmodeoutputroutinesspanspan-idkernelmodeoutputroutinesspankernel-mode-output-routines"></a><span id="kernel_mode_output_routines"></span><span id="KERNEL_MODE_OUTPUT_ROUTINES"></span>内核模式输出例程
+### <a name="span-idkernel_mode_output_routinesspanspan-idkernel_mode_output_routinesspankernel-mode-output-routines"></a><span id="kernel_mode_output_routines"></span><span id="KERNEL_MODE_OUTPUT_ROUTINES"></span>内核模式输出例程
 
-**DbgPrint**调试器窗口中显示输出。 此例程支持 basic **printf**设置参数的格式。 仅内核模式代码可以调用**DbgPrint**。
+**DbgPrint**在调试器窗口中显示输出。 此例程支持基本**printf**格式参数。 只有内核模式代码可以调用**DbgPrint**。
 
-**DbgPrintEx**类似于**DbgPrint**，但它允许您以"标记"消息。 当运行调试器，可以允许仅这些具有某些标记要发送的消息。 这样，您可以查看你感兴趣的那些消息。 有关详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)。
+**DbgPrintEx**类似于**DbgPrint**，但它允许你 "标记" 你的消息。 运行调试器时，只能允许发送具有特定标记的消息。 这允许你仅查看你感兴趣的那些消息。 有关详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)。
 
-**请注意**  在 Windows Vista 和更高版本的 Windows， **DbgPrint**生成标记的消息以及。 这是从早期版本 Windows 的更改。
+**请注意**，在 windows Vista 和更高版本的 windows 中  ， **DbgPrint**也会生成标记的消息。 这是对以前版本的 Windows 的一项更改。
+在已检查的生成环境中编译时， **KdPrint**和**KdPrintEx**分别与**DbgPrint**和**DbgPrintEx**相同。 在免费生成环境中进行编译时，它们不起作用。
 
- 
-
-**KdPrint**和**KdPrintEx**等于**DbgPrint**并**DbgPrintEx**分别在已检验的版本环境中编译时。 编译时可用的生成环境中，它们会产生任何影响。
-
-这些例程，以及生成环境的完整文档，请参阅 Windows 驱动程序工具包。
-
- 
-
- 
-
-
-
-
-
+有关这些例程以及生成环境的完整文档，请参阅 Windows 驱动程序工具包。

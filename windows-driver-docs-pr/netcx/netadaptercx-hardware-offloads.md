@@ -6,16 +6,14 @@ keywords:
 - WDF 网络适配器类扩展卸载，NetAdapterCx 硬件卸载，NetAdapterCx 卸载，Get-netadapter 卸载
 ms.date: 01/18/2019
 ms.custom: 19H1
-ms.openlocfilehash: c84c858e33a3b7affaa5ce416b19688ddfc603aa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4d54e71ea5ab04b9525d7443faa5affa003b0769
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838278"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209055"
 ---
 # <a name="netadaptercx-hardware-offloads"></a>NetAdapterCx 硬件卸载
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 为了提高性能，Windows TCP/IP 堆栈可以将一些任务卸载到具有适当任务卸载功能的网络接口卡（NIC）。
 
@@ -44,7 +42,7 @@ NetAdapterCx 和 Windows TCP/IP 堆栈支持以下卸载：
 
 ## <a name="configuring-hardware-offloads"></a>配置硬件卸载
 
-客户端驱动程序首先在网络适配器初始化期间公布其硬件的校验和卸载功能。 启动网络适配器时，可能会出现在[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)的上下文中。 若要开始，客户端驱动程序将为每个受支持的卸载分配功能结构，对其进行初始化，并调用适当的**NetAdapterOffloadSetXxxCapabilities**方法将其注册到 NetAdapterCx。 在调用**NET_ADAPTER_OFFLOAD_XxX_CAPABILITIES_INIT**的过程中，驱动程序提供一个指向回调函数的指针，系统稍后会在活动硬件卸载功能发生更改时调用该函数。
+客户端驱动程序首先在网络适配器初始化期间公布其硬件的校验和卸载功能。 启动网络适配器时，可能会出现在[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)的上下文中。 若要开始，客户端驱动程序将为每个受支持的卸载分配功能结构，对其进行初始化，并调用适当的**NetAdapterOffloadSetXxxCapabilities**方法将其注册到 NetAdapterCx。 在对**NET_ADAPTER_OFFLOAD_XxX_CAPABILITIES_INIT**的调用过程中，驱动程序将提供一个指向回调函数的指针，系统稍后会在活动硬件卸载功能发生更改时调用该函数。
 
 此示例演示客户端驱动程序如何设置其硬件卸载功能。
 
@@ -83,7 +81,7 @@ MyAdapterSetOffloadCapabilities(
 
 ## <a name="updating-hardware-offloads"></a>更新硬件卸载
 
-如果 TCP/IP 堆栈或过量协议驱动程序请求网络适配器的活动功能更改，NetAdapterCx 会调用以前在中注册的客户端驱动程序的*EVT_NET_ADAPTER_OFFLOAD_SET_XxX*回调函数。适配器初始化。 在此函数中，系统在 NETOFFLOAD obbject 中提供更新的功能，客户端驱动程序可以查询该功能并使用它来更新其卸载功能。
+如果 TCP/IP 堆栈或过量协议驱动程序请求网络适配器的活动功能的更改，则 NetAdapterCx 将调用客户端驱动程序的*EVT_NET_ADAPTER_OFFLOAD_SET_XxX*回调函数，该函数之前在适配器初始化期间注册的。 在此函数中，系统在 NETOFFLOAD obbject 中提供更新的功能，客户端驱动程序可以查询该功能并使用它来更新其卸载功能。
 
 下面的示例演示客户端驱动程序可能如何更新其校验和卸载功能：
 

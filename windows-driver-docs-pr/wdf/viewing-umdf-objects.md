@@ -1,86 +1,86 @@
 ---
 title: 查看 UMDF 对象
-description: 本主题介绍如何使用 Wudfext.dll 调试器扩展，若要查看有关用户模式驱动程序框架 (UMDF) 版本 1 驱动程序使用的对象的信息。
+description: 本主题介绍如何使用 Wudfext 调试器扩展来查看有关用户模式驱动程序框架（UMDF）版本1驱动程序所使用的对象的信息。
 ms.assetid: 36d0d604-3ed1-4ca7-b5bd-207942ecfc1e
 keywords:
-- WDK UMDF，查看 UMDF 对象的调试方案
-- UMDF WDK，调试方案中，查看 UMDF 对象
+- 调试方案 WDK UMDF，查看 UMDF 对象
+- UMDF WDK，调试方案，查看 UMDF 对象
 - UMDF WDK，查看 UMDF 对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f723e30d418385b7f51bb8fdf3c619ce3507d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef76bb5911a3c447150025eef1158b594d1502e6
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372157"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210855"
 ---
 # <a name="viewing-umdf-objects"></a>查看 UMDF 对象
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-本主题介绍如何使用 Wudfext.dll 调试器扩展，若要查看有关用户模式驱动程序框架 (UMDF) 版本 1 驱动程序使用的对象的信息。
+本主题介绍如何使用 Wudfext 调试器扩展来查看有关用户模式驱动程序框架（UMDF）版本1驱动程序所使用的对象的信息。
 
-从 UMDF 版本 2 开始，应改为使用 Wdfkd.dll 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展 (Wdfkd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
+从 UMDF 版本2开始，你应该改用 Wdfkd 调试器扩展。 有关详细信息，请参阅[Windows 驱动程序框架扩展（Wdfkd）](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)。
 
-您可以执行以下步骤来查看有关 UMDF 版本 1 对象的信息：
+你可以执行以下步骤来查看有关 UMDF 版本1对象的信息：
 
-1.  使用以下 UMDF 调试器扩展插件之一来查看在主机进程的设备堆栈：
+1.  使用下列 UMDF 调试器扩展之一来查看主机进程中的设备堆栈：
     -   **!wudfext.umdevstacks**
-    -   **！ wudfext.umdevstack**如下面的示例中所示：
+    -   **！ wudfext umdevstack** ，如以下示例中所示：
 
-        **!wudfext.umdevstack &lt;dev-stack-addr&gt;**
+        **！ wudfext&gt; &lt;开发堆栈-地址**
 
-        这些信息包括驱动程序对象和每个驱动程序的设备对象。 目前，UMDF 允许只有一个设备堆栈在主机进程中没有这两个扩展的输出之间没有差异。
+        此信息包括每个驱动程序的驱动程序对象和设备对象。 目前，UMDF 只允许在一个主机进程中使用一个设备堆栈，因此这两个扩展的输出没有任何区别。
 
-2.  通过查看完整的对象树 **！ wudfext.wudfobject** UMDF 调试器扩展，如以下示例所示：
+2.  使用 **！ wudfext** ，查看完整的对象树，如以下示例中所示：
 
-    **!wudfext.wudfobject &lt;IWDFDriver\*&gt; 1**
+    **！ wudfext. wudfobject &lt;IWDFDriver\*&gt; 1**
 
-3.  使用 **！ wudfext.wudfdevice** UMDF 调试器扩展，如下面的示例以确定 Plug and Play (PnP) 和电源管理的设备状态中所示：
+3.  如以下示例中所示，使用 **！ wudfext wudfdevice** UMDF 调试器扩展来确定设备的即插即用（PnP）和电源管理状态：
 
-    **!wudfext.wudfdevice &lt;IWDFDevice\*&gt;**
+    **！ wudfext. wudfdevice &lt;IWDFDevice\*&gt;**
 
-4.  执行以下步骤来确定与设备关联的队列：
-    1.  使用 **！ wudfext.wudfdevicequeues** UMDF 调试器扩展，以查看与设备相关联的队列。 此扩展会显示队列属性、 队列状态和驱动程序拥有的请求。
-    2.  使用 **！ wudfext.wudfqueue** UMDF 调试器扩展，以获取有关每个队列的信息在下面的示例所示：
+4.  执行以下步骤以确定与设备关联的队列：
+    1.  使用 **！ wudfext wudfdevicequeues** UMDF 调试器扩展来查看与设备关联的队列。 此扩展显示队列属性、队列状态和驱动程序拥有的请求。
+    2.  如以下示例中所示，使用 **！ wudfext wudfqueue** UMDF 调试器扩展来获取有关每个队列的信息：
 
-        **!wudfext.wudfqueue &lt;IWDFIoQueue\*&gt;**
+        **！ wudfext. wudfqueue &lt;IWDFIoQueue\*&gt;**
 
-5.  使用 **！ wudfext.wudfrequest** UMDF 调试器扩展，以获取有关特定请求的信息。 此信息包括基础用户模式下 I/O 请求数据包 (IRP)。 从用户模式下 IRP 信息，可以确定在其中请求当前正在处理在堆栈中。 此外可以使用 **！ wudfext.umirp** UMDF 调试器扩展来获取此用户模式下 IRP 信息。
+5.  使用 **！ wudfext wudfrequest** UMDF 调试器扩展来获取有关特定请求的信息。 此信息包括基础用户模式 i/o 请求数据包（IRP）。 通过用户模式 IRP 信息，你可以确定当前在堆栈中处理请求的位置。 你还可以使用 **！ wudfext umirp** UMDF 调试器扩展来获取此用户模式的 IRP 信息。
 
-6.  确定由所有 I/O 目标：
+6.  通过以下方式确定所有 i/o 目标：
 
-    1.  使用 **！ wudfext.wudfobject** UMDF 调试器扩展，若要查看的设备对象的子对象。 I/O 目标对象是设备对象的子对象。
-    2.  使用 **！ wudfext.wudfiotarget** UMDF 调试器扩展，若要查看有关每个 I/O 目标对象的信息在下面的示例所示：
+    1.  使用 **！ wudfext. wudfobject** UMDF 调试器扩展来查看 device 对象的子对象。 I/o 目标对象是 device 对象的子对象。
+    2.  如以下示例中所示，使用 **！ wudfext wudfiotarget** UMDF 调试器扩展来查看有关每个 i/o 目标对象的信息：
 
-        **!wudfext.wudfiotarget &lt;IWDFTarget\*&gt;**
+        **！ wudfext. wudfiotarget &lt;IWDFTarget\*&gt;**
 
-        此扩展显示的目标的状态和发送的请求数的列表。
+        此扩展显示目标的状态和已发送请求的列表。
 
-    目前，可查看所有 I/O 目标没有 UMDF 调试器扩展。
+    当前没有可用于查看所有 i/o 目标的 UMDF 调试器扩展。
 
-7.  使用以下 UMDF 调试器扩展查看文件对象的信息：
+7.  使用以下 UMDF 调试器扩展查看有关文件对象的信息：
 
-    <a href="" id="-wudfext-wudfrequest-or--wudfext-umirp"></a> **！ wudfext.wudfrequest**或 **！ wudfext.umirp**  
-    使用 **！ wudfext.wudfrequest**或 **！ wudfext.umirp** UMDF 调试器扩展是设备对象的子对象的视图文件。
+    <a href="" id="-wudfext-wudfrequest-or--wudfext-umirp"></a>**！ wudfext. wudfrequest**或 **！ wudfext umirp**  
+    使用 **！ wudfext; wudfrequest**或**umirp** UMDF 调试器扩展来查看作为设备对象的子对象的文件。
 
-    <a href="" id="-wudfext-wudffile"></a> **!wudfext.wudffile**  
-    使用 **！ wudfext.wudffile** UMDF 调试器扩展，若要查看有关 framework 文件的信息在下面的示例所示：
+    <a href="" id="-wudfext-wudffile"></a>**!wudfext.wudffile**  
+    如以下示例中所示，使用 **！ wudfext wudffile** UMDF 调试器扩展来查看有关框架文件的信息：
 
-    **!wudfext.wudffile &lt;IWDFFile\*&gt;**
+    **！ wudfext. wudffile &lt;IWDFFile\*&gt;**
 
-    <a href="" id="-wudfext-umfile"></a> **!wudfext.umfile**  
-    使用 **！ wudfext.umfile** UMDF 调试器扩展，如下面的示例中所示若要查看有关 UMDF 内部堆栈文件 （即文件堆栈中的驱动程序创建对象而不是由创建的文件对象的信息应用程序或由另一个堆栈中的驱动程序):
+    <a href="" id="-wudfext-umfile"></a>**!wudfext.umfile**  
+    如以下示例中所示，使用 **！ wudfext umfile** UMDF 调试器扩展来查看有关 UMDF 堆栈内文件（即，堆栈中的驱动程序所创建的文件对象，而不是由应用程序创建的文件对象或另一堆栈中的驱动程序所创建的文件对象）的信息：
 
-    **!wudfext.umfile &lt;addr&gt;**
+    **！ wudfext. umfile &lt;地址&gt;**
 
-    在某些情况下，可能不会有相应的框架文件，并且用户模式 IRP 信息可能包括 UMDF 内部堆栈文件。
+    在某些情况下，可能没有对应的框架文件，并且用户模式 IRP 信息可能包含 UMDF 堆栈内文件。
 
-    信息的 **！ wudfext.umfile**显示包括要排队发送至 UMDF 内部堆栈文件任何 Irp。 仅驱动程序创建的文件，跟踪对这些文件会排入队列的用户模式下 Irp。 对于应用程序创建的文件 I/O 管理器跟踪内核模式 Irp。
+    **！ Wudfext umfile**显示的信息包含排队到 UMDF 堆栈内文件的任何 irp。 只有驱动程序创建的文件跟踪排队到这些文件的用户模式 Irp。 对于应用程序创建的文件，i/o 管理器跟踪内核模式 Irp。
 
-    <a href="" id="-wudfext-umdevstacks-and--wudfext-umdevstack"></a> **！ wudfext.umdevstacks**和 **！ wudfext.umdevstack**  
-    使用的输出 **！ wudfext.umdevstacks**并 **！ wudfext.umdevstack** UMDF 调试器扩展，若要查看与驱动程序创建文件相对应的未完成 UMDF 内部堆栈文件。
+    <a href="" id="-wudfext-umdevstacks-and--wudfext-umdevstack"></a>**！ wudfext. umdevstacks** and **！ wudfext. umdevstack**  
+    使用 **！ wudfext**和 **！ wudfext. umdevstack** UMDF 调试器扩展的输出来查看与驱动程序创建的文件相对应的未处理 UMDF 堆栈内文件。
 
  
 

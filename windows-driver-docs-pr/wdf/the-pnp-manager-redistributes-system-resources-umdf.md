@@ -7,17 +7,17 @@ keywords:
 - 重新分发系统资源方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ab0d6a3bbfe4e93dd7dd1d3054eb98c3dea39a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df830c62538799d67c7faafd66e19e71a494f892
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831616"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210825"
 ---
 # <a name="the-pnp-manager-redistributes-system-resources"></a>PnP 管理器重新分发系统资源
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 如果用户将设备添加到系统，并且设备需要 PnP 管理器已分配给另一个设备的系统资源，则 PnP 管理器会尝试重新分配资源。
 

@@ -7,17 +7,17 @@ keywords:
 - 空闲的关闭 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36071fec92a4e9845411afad5c39d59f011afda2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e50c1eacf39891cf6607c8d360c8866dfabc4295
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831798"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210763"
 ---
 # <a name="supporting-idle-power-down-in-umdf-drivers"></a>在 UMDF 驱动程序中支持空闲时关闭电源
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 某些设备可能进入睡眠状态，而系统仍处于正常工作状态。 对于此类设备，框架在设备处于空闲（未使用）状态的情况下启动降低设备的电量。
 

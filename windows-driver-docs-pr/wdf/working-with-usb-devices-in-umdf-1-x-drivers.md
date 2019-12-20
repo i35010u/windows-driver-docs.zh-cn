@@ -9,17 +9,17 @@ keywords:
 - USB 设备 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f7eeee25f2866d41d88d0dbcb78b8b260e50e9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 099486de52e0fba166c2d5eea174c8881780e39f
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842787"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210837"
 ---
 # <a name="working-with-usb-devices-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中使用 USB 设备
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 该框架将每个 USB 设备表示为框架 USB 设备对象。 UMDF 驱动程序必须创建一个框架 USB 设备对象，驱动程序才能访问该框架对 USB i/o 目标的支持。 UMDF 提供了 USB 设备对象方法，使 UMDF 驱动程序能够：
 
@@ -45,7 +45,7 @@ hr = pdevice->QueryInterface(IID_IWDFUsbTargetFactory, (LPVOID*)&ppUsbTargetFact
 
 ### <a name="obtaining-umdf-usb-device-information"></a>获取 UMDF-USB 设备信息
 
-在 UMDF 驱动程序调用[**IWDFUsbTargetFactory：： CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)方法来创建一个 umdf USB 目标设备对象之后，驱动程序可以调用以下方法，usb 目标设备对象定义这些方法来获取有关 usb 的信息装置
+在 UMDF 驱动程序调用[**IWDFUsbTargetFactory：： CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)方法来创建一个 umdf usb 目标设备对象之后，驱动程序可以调用 usb 目标设备对象为获取有关 usb 设备的信息定义的以下方法：
 
 <a href="" id="iwdfusbtargetdevice--retrievedescriptor"></a>[**IWDFUsbTargetDevice::RetrieveDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)  
 获取设备的 USB 设备描述符。

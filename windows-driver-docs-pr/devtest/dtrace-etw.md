@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9fbbac12d49e2ee4657689398ef67d938973d9
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: cf77440157fa3cad5f7e4acf2cbb42bdab02119d
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592432"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209477"
 ---
 # <a name="dtrace-etw"></a>DTrace ETW
 
@@ -39,7 +39,7 @@ Probename = etw
 
 Modname = 以 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 形式使用所有小写字符的提供程序 guid。
 
-Funcname = Level_Keyword 形式的0x00_0x0000000000000000。 若要匹配所有内容，请将其设置为0xff_0xffffffffffffffff。
+Funcname = 0x00_0x0000000000000000 格式的 Level_Keyword。 若要匹配，请将此项设置为0xff_0xffffffffffffffff。
 
 Probename = 整数事件 ID 或 "generic_event"，以匹配所有事件 Id。
 
@@ -94,7 +94,7 @@ Etw\_trace 宏支持基本数据类型，如 int8、uint8、int16、uint16、int
 
 **示例 ETW\_跟踪宏：**
 
-当 syscall 例程返回 0xc0000001-STATUS_UNSUCCESSFUL 时，此脚本会生成一个自定义 ETW 事件。
+当 syscall 例程返回 STATUS_UNSUCCESSFUL 0xc0000001 时，此脚本会生成一个自定义 ETW 事件。
 
 您可以更改 `this->status` 值，以使用不同的[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)记录不同的 syscall 返回值。
 
@@ -304,7 +304,7 @@ etw:d1d93ef7-e1f2-4f45-9943-03d245fe6c00:0xff_0xffffffffffffffff:12
 在客户端 Windows 电脑上运行时，将显示单个 NUMA 节点。
 
 ```dtrace
-C:\> dtrace -s etwnumamemstats.d 
+C:\> dtrace -s etwnumamemstats.d
 trace: script 'etwnumamemstats.d' matched 36 probes
 CPU     ID                    FUNCTION:NAME
   0  42735       0xff_0xffffffffffffffff:12

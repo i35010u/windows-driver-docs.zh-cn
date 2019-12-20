@@ -1,6 +1,6 @@
 ---
 title: DevCon Dp_delete
-description: 从本地计算机上的驱动程序存储中删除第三方 (OEM) 驱动程序包。 此命令删除 INF 文件、 PNF 文件和关联的目录文件 (.cat)。
+description: 从本地计算机上的驱动程序存储区中删除第三方（OEM）驱动程序包。 此命令删除 INF 文件、PNF 文件和关联的目录文件（.cat）。
 ms.assetid: bc9d8d66-4aa1-423b-b907-40a8c0194eb1
 keywords:
 - DevCon Dp_delete 驱动程序开发工具
@@ -12,26 +12,26 @@ api_type:
 - NA
 ms.date: 04/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 240d2eed9fe8f4fe56f6236d586768c12cf90b08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3536a1a96fc305cfb7000dfda020d7beaab21255
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347694"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209483"
 ---
-# <a name="devcon-dpdelete"></a>DevCon Dp\_删除
+# <a name="devcon-dp_delete"></a>删除 DevCon Dp\_
 
-从本地计算机上的驱动程序存储中删除第三方 (OEM) 驱动程序包。 此命令删除 INF 文件、 PNF 文件和关联的目录文件 (.cat)。
+从本地计算机上的驱动程序存储区中删除第三方（OEM）驱动程序包。 此命令删除 INF 文件、PNF 文件和关联的目录文件（.cat）。
 
 ```command
     devcon [-f] dp_delete inf
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>参数
 
-**-f**即使设备正在使用它时，此参数将删除驱动程序包。
+**-f**即使设备正在使用驱动程序包，此参数也会将其删除。
 
-*inf* OEM\*.inf 文件名的 INF 文件。 Windows 将使用此格式的文件名称分配给 INF 文件时您将添加驱动程序包到驱动程序存储区，例如通过使用[ **DevCon dp\_添加**](devcon-dp-add.md)。
+*inf*INF 文件的 OEM\*.inf 文件名。 将驱动程序包添加到驱动程序存储区时，Windows 会将具有此格式的文件名分配给 INF 文件，例如通过使用[**DevCon dp\_add**](devcon-dp-add.md)。
 
 ## <a name="comments"></a>备注
 
@@ -39,5 +39,5 @@ ms.locfileid: "63347694"
 
 ```command
 devcon dp_delete oem2.inf
-devcon dp_delete oem0.inf -f
+devcon -f dp_delete oem0.inf
 ```

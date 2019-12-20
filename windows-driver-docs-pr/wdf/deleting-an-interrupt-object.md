@@ -4,17 +4,17 @@ description: 删除中断对象
 ms.assetid: B72DA452-B22F-47CD-8C5D-E741F09F556E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9625d41546177ad6d6dc8ed49d0a97ea75284d32
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 659ac2e58b4cd1a9536eb179d459e46cfabf979a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841759"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210475"
 ---
 # <a name="deleting-an-interrupt-object"></a>删除中断对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 如果驱动程序通过调用[**IWDFDevice3：： CreateInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)创建中断对象，则驱动程序无需删除中断对象。 框架自动删除中断对象，因为中断对象是框架设备对象的子对象。
 

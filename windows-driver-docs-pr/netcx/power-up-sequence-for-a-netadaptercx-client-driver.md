@@ -6,16 +6,14 @@ keywords:
 - NetAdapterCx 客户端驱动程序的通电顺序，NetAdapterCx 客户端驱动程序的通电顺序，NetCx 客户端驱动程序的开机序列
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bac2adbf13381a25cb229709dbe5271e11ac9d10
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 338fdff71b81c017161d4715b6cccec54eb0dc6b
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835466"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209009"
 ---
 # <a name="power-up-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx 客户端驱动程序的启动顺序
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 下图显示了当设备到完全操作状态时，NetAdapterCx 调用客户端驱动程序的事件回调函数的顺序，从图底部的设备到达状态开始：
 

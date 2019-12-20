@@ -9,17 +9,17 @@ keywords:
 - IWDFFile
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98017974962a436901f1c84c1bf9806b87d5f7eb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 254d85ff50115524ace7e6baf3979a362e05a283
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843178"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210909"
 ---
 # <a name="framework-file-object"></a>框架文件对象
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 框架文件对象通过[IWDFFile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)接口向驱动程序公开。 它是已打开设备的框架表示形式。 当应用程序通过 Microsoft Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数打开设备时，框架会创建一个文件对象来表示打开的设备实例。 因此，框架文件对象在概念上等效于从应用程序调用**CreateFile**返回的 Win32 句柄。 框架可创建多个与单个设备关联的文件对象。 每次成功调用**CreateFile**时都会创建每个文件对象。 所有 i/o 操作（如读取和写入）以特定的文件对象实例为目标。
 

@@ -9,17 +9,17 @@ keywords:
 - 设备接口 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a49e61f629efd5ab961c12eeada26e476f8327c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7e882d43204ffae3e77ff51c4d40dea24c8e0b2b
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843098"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210777"
 ---
 # <a name="using-device-interfaces-in-umdf-drivers"></a>在 UMDF 驱动程序中使用设备接口
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 *设备接口*是应用程序可用于访问设备的即插即用（PnP）设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用**SetupDi**函数。 有关 SetupDi 函数的详细信息，请参阅 SetupDi 设备接口函数。
 
@@ -41,7 +41,7 @@ ms.locfileid: "72843098"
 
 ### <a name="creating-device-events"></a>创建设备事件
 
-基于 UMDF 的驱动程序可以通过调用 IWDFDevice 来创建设备特定的自定义事件（称为*设备事件*） [ **：:P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)。 已注册为使用任何设备接口的驱动程序可以接收设备自定义事件的通知。 基于 UMDF 的驱动程序通过提供[**IRemoteInterfaceCallbackEvent：： OnRemoteInterfaceEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent)回调函数来接收此类通知。
+基于 UMDF 的驱动程序可以通过调用 IWDFDevice 来创建设备特定的自定义事件（称为*设备事件*） [**：:P ostevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-postevent)。 已注册为使用任何设备接口的驱动程序可以接收设备自定义事件的通知。 基于 UMDF 的驱动程序通过提供[**IRemoteInterfaceCallbackEvent：： OnRemoteInterfaceEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremoteinterfacecallbackevent-onremoteinterfaceevent)回调函数来接收此类通知。
 
 自定义事件对于设备是唯一的。 创建事件的驱动程序开发人员和接收事件的驱动程序的开发人员必须了解事件的含义。
 

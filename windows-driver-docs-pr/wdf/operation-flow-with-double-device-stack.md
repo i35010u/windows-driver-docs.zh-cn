@@ -9,17 +9,17 @@ keywords:
 - 双设备堆栈流 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58b0cc2021c1870f46c4e078eae7d00c59ab97cc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: aaa439033553356082f5b8bf4f670151e6c56988
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840394"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210877"
 ---
 # <a name="operation-flow-with-double-device-stack"></a>使用双设备堆栈的操作流
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 下图显示了与一个双设备堆栈中的 UMDF 筛选器和功能驱动程序之间发生的操作流。
 

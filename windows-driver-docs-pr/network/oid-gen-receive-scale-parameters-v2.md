@@ -2,21 +2,21 @@
 title: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 description: 本主题介绍 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
-keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2, OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
+keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2，OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee26b386076c8a489638e1d32beb3405f234a3a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b11da5dced57bb7240b713eeb7d79cb27a6a7ddf
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844607"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210859"
 ---
-[!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 # <a name="oid_gen_receive_scale_parameters_v2"></a>OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 
-将 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID 发送到支持[RSSv2](receive-side-scaling-version-2-rssv2-.md)的微型端口驱动程序，为缩放实体设置除间接表之外的运行时参数。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 将[OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md) OID 替换为 RSSv1，在 ndis 6.80 之前，它对 Ndis 轻型筛选器（LWFs）不可见。 此 OID 为常规 OID，可以作为查询或设置请求发出。 它以 IRQL = = PASSIVE_LEVEL 发出。 当在 NIC 交换机创建时设置*NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*标志时，它可以针对给定的 VPort。 否则，在本机 RSS 案例中，它以物理 NIC 为目标。
+OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID 发送到支持[RSSv2](receive-side-scaling-version-2-rssv2-.md)的微型端口驱动程序，以设置缩放实体的运行时参数，而不是间接表。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 替换 RSSv1 中的[OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md) OID，在 ndis 6.80 之前不会对 Ndis 轻型筛选器（LWFs）显示。 此 OID 为常规 OID，可以作为查询或设置请求发出。 它以 IRQL = = PASSIVE_LEVEL 颁发。 如果在 NIC 交换机创建时设置了*NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*标志，则它可以针对给定的 VPort。 否则，在本机 RSS 案例中，它以物理 NIC 为目标。
 
 作为查询，NDIS 和过量驱动程序可以使用 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 来查询 NIC 的 RSS 参数。 NDIS 返回定义当前 RSS 参数的[NDIS_RECEIVE_SCALE_PARAMETERS_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_receive_scale_parameters_v2)结构。
 

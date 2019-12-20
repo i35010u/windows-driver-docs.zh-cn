@@ -10,19 +10,19 @@ keywords:
 - 通知 WDK UMDF，阻止创建和关闭不平衡
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de3fa6aef4ade16a26f2640a1d8eb576da3ddfac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4a033dd6fed2ca2e06d44e4fae8b8026eb4c06d4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842237"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210729"
 ---
 # <a name="preventing-an-imbalance-of-create-and-close-notifications-to-a-driver"></a>防止创建和关闭通知对驱动程序造成的不平衡
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-高版本的 UMDF 驱动程序可以使用[**IWDFDeviceInitialize：： AutoForwardCreateCleanupClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-autoforwardcreatecleanupclose)方法控制框架何时自动将创建文件、清理文件和关闭文件通知转发到设备堆栈中的下一个较低的驱动程序. 但是，由于上部驱动程序将**AutoForwardCreateCleanupClose**设置为仅在设备级别上自动转发，而不是在每个文件级别上自动转发，因此对于设备的所有文件，转发必须相同。 框架可确保清除文件和关闭文件通知的这种转发行为。 如果上面的驱动程序实现了[**IQueueCallbackCreate：： OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数，则它必须确保其转发行为对于所有创建文件请求都是相同的，并且与清除文件的转发行为一致。关闭文件通知。 如果不这样做，可能会导致较低的驱动程序收到对其**IQueueCallbackCreate：： OnCreateFile**方法和[**IFileCallbackCleanup：： OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)和[**IFileCallbackClose：： OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)方法的不相等的调用。
+高版本的 UMDF 驱动程序可以使用[**IWDFDeviceInitialize：： AutoForwardCreateCleanupClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-autoforwardcreatecleanupclose)方法控制框架自动将创建文件、清理文件和关闭文件通知转发到设备堆栈中下一个较低的驱动程序的时间。 但是，由于上部驱动程序将**AutoForwardCreateCleanupClose**设置为仅在设备级别上自动转发，而不是在每个文件级别上自动转发，因此对于设备的所有文件，转发必须相同。 框架可确保清除文件和关闭文件通知的这种转发行为。 如果上面的驱动程序实现了[**IQueueCallbackCreate：： OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数，则它必须确保其转发行为对于所有创建文件请求都是相同的，并且与清除文件和关闭文件通知的转发行为一致。 如果不这样做，可能会导致较低的驱动程序收到对其**IQueueCallbackCreate：： OnCreateFile**方法和[**IFileCallbackCleanup：： OnCleanupFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)和[**IFileCallbackClose：： OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)方法的不相等的调用。
 
 若要防止驱动程序收到不等的创建文件和关闭文件通知的数量，则上层驱动程序必须确保在其[**IQueueCallbackCreate：： OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)回调函数中执行以下操作：
 

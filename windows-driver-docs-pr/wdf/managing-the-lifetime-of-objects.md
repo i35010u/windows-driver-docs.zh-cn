@@ -9,17 +9,17 @@ keywords:
 - 回叫对象 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30404ae8f5753755131690d4a58e179066febaf9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ce73d2aaf8a156471d2d89d5642445c70a3cba28
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843150"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210769"
 ---
 # <a name="managing-the-lifetime-of-objects"></a>管理对象的生存期
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF 使用引用计数方案来管理[回调对象](creating-callback-objects.md)和[框架对象](framework-objects.md)的生存期。
 

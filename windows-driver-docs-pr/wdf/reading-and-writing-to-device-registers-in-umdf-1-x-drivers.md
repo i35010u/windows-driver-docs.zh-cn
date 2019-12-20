@@ -4,17 +4,17 @@ description: 在 UMDF 1.x 驱动程序中读取设备注册表和写入到设备
 ms.assetid: A0640E60-B0DF-4CAD-B292-CC1875EF7F7D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2070778a2e61c2065ace8c129abcb54fd2a495ad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7e4803eb751b22c26475d62868515d37641faa8a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842229"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210867"
 ---
 # <a name="reading-and-writing-to-device-registers-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中读取设备注册表和写入到设备注册表
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 从 UMDF 版本1.11 开始，该框架提供了一组用于访问内存空间和 i/o 端口空间中的寄存器的例程。 [UMDF 寄存器/端口访问例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/)非常类似于内核模式驱动程序使用的 HAL 例程。 当驱动程序具有在[UMDF 驱动程序中查找和映射硬件资源](https://docs.microsoft.com/windows-hardware/drivers/wdf/finding-and-mapping-hardware-resources-in-umdf-1-x-drivers)中所述的映射寄存器后，驱动程序将使用读/写\_将\_XXX 例程注册到各个寄存器。 对于 i/o 端口，驱动程序会将读/写\_端口称为\_Xxx 例程。
 

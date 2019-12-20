@@ -4,17 +4,17 @@ description: 在 UMDF 1.x 驱动程序中查找和映射硬件资源
 ms.assetid: 51CB254D-1B2C-43F5-925A-209810E2F5FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41b05f64dd99141d113cec06befefab18b1edd06
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3ed315f412178cf4530f989fcfe63baed1a0c33a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842863"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210743"
 ---
 # <a name="finding-and-mapping-hardware-resources-in-umdf-1x-drivers"></a>在 UMDF 1.x 驱动程序中查找和映射硬件资源
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 如果使用的是 UMDF 版本2.0 或更高版本，请参阅[查找和映射硬件资源](finding-and-mapping-hardware-resources.md)。
 

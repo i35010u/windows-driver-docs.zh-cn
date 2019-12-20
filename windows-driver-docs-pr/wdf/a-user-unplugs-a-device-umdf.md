@@ -7,17 +7,17 @@ keywords:
 - 拔出设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1e4636acdab4039935101b75b047655ad3f08c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d0ffa7cf9423150f26e81593ba97b490000f75ac
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841677"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210075"
 ---
 # <a name="a-user-unplugs-a-device"></a>用户拔出设备
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当系统正在运行时，用户可以通过以下两种方式之一删除设备：通过*顺序删除*，这意味着用户通知系统将删除设备（例如，使用拔出或弹出硬件程序）;或者是*意外删除*，这意味着用户断开了设备，而无需通知系统。 如果总线支持意外删除（例如 USB），则设备的驱动程序必须能够处理设备突然消失。
 

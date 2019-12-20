@@ -8,16 +8,16 @@ keywords:
 - UMDF WDK，UMDF 驱动程序占用过多内存
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0955d276d1cbd51ebec7e8bdd38ea186ba061190
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c4e98dd23a2328cd459773600f38ce16b88cf7df
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840388"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210473"
 ---
 # <a name="determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory"></a>确定 UMDF 驱动程序使用过多内存的原因
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 本主题介绍如何将 Wudfext 调试程序扩展与用户模式驱动程序框架（UMDF）版本1驱动程序结合使用，以确定 UMDF 驱动程序消耗大量内存的原因。
 

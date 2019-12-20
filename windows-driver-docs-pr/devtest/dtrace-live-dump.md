@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cb08888529dda9234e01e30bf765e1dca9c3f46d
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: 18fb9b1539cd693b044cd0faa228c66191bc27ae
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592427"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209459"
 ---
 # <a name="dtrace-live-dump"></a>DTrace 实时转储
 
@@ -111,7 +111,7 @@ Triggering LiveDump
 
 ### <a name="enabling-full-live-dumps"></a>启用完整实时转储
 
-下面的示例设置显示了在任意给定时间将磁盘上的最大完整实时转储数设置为10，并存储完整内存转储，而不只是小型转储。
+下面的示例设置显示了在任意给定时间将磁盘上的最大完整实时转储数设置为10，并存储完整内存转储，而不仅仅是小型转储。
 
 `reg add "HKLM\System\CurrentControlSet\Control\CrashControl\FullLiveKernelReports" /f /t REG_DWORD /v FullLiveReportsMax /d 10`
 
@@ -132,7 +132,7 @@ reg add "HKLM\System\CurrentControlSet\Control\CrashControl\FullLiveKernelReport
 
 ### <a name="disk-space-issues-event-id-202--error-text-live-dump-write-deferred-dump-data-api-ended-nt-status-0xc000007f"></a>磁盘空间问题（事件 ID 202-错误文本：实时转储写入延迟转储数据 API 已结束。 NT 状态：0xC000007F。）
 
-这意味着磁盘空间不足。 更新下面显示的注册表项，将实时转储的路径（在本示例中为驱动器 d：）更改为具有更多可用存储空间的驱动器 d：。
+这意味着磁盘空间不足。 更新下面显示的注册表项，将实时转储的路径（在本示例中为驱动器 d：）更改为可用的额外存储空间。
 
 `reg add hklm\system\currentcontrolset\control\crashcontrol\livekernelreports /v "LiveKernelReportsPath" /t reg_sz /d "\??\d:\livedumps"`
 

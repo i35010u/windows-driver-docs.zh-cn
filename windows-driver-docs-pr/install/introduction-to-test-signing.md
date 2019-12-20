@@ -6,12 +6,12 @@ keywords:
 - 测试签名驱动程序包 WDK，关于测试签名驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 724b495dc8a96537cdc22b025d8f8e11678bf403
-ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
+ms.openlocfilehash: cbacd155de77a2f3f9c5bf1d8d3463ffa6b903b8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72512078"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210603"
 ---
 # <a name="introduction-to-test-signing"></a>测试签名简介
 
@@ -26,7 +26,7 @@ ms.locfileid: "72512078"
 
     默认情况下，Windows Vista 和更高版本的 windows 版本的[内核模式代码签名64策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)要求对内核模式驱动程序进行签名，以便加载驱动程序。 可以暂时重写此要求，以便于开发或调试驱动程序。
 
--   若要播放特定类型的下一代高级内容，Windows Vista 和更高版本的 Windows 中的所有内核模式组件都必须进行签名。 此外，受保护媒体路径（PMP）中的所有用户模式和内核模式组件必须符合 PMP 签名策略。 有关 PMP 签名策略的信息，请参阅[Windows Vista 中的针对受保护媒体组件的白皮书代码签名](http://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)。
+-   若要播放特定类型的下一代高级内容，Windows Vista 和更高版本的 Windows 中的所有内核模式组件都必须进行签名。 此外，受保护媒体路径（PMP）中的所有用户模式和内核模式组件必须符合 PMP 签名策略。 有关 PMP 签名策略的信息，请参阅[Windows Vista 中的针对受保护媒体组件的白皮书代码签名](https://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)。
 
 由于这些原因，Windows Vista 和更高版本的 Windows 的驱动程序应使用通过使用 Microsoft Authenticode 创建的数字证书进行测试签名。 此类数字证书称为*测试证书*，使用测试证书生成的签名被称为*测试签名*。
 

@@ -9,17 +9,17 @@ keywords:
 - 请求处理 WDK UMDF，操作流
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 844dc17ef34f793661ab809f5c00ef78b544cc61
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9cff476c6177d879e00438a1e57e6196e03cd47f
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827259"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210875"
 ---
 # <a name="operation-flow-with-single-device-stack"></a>使用单设备堆栈的操作流
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 下图显示了在单个设备堆栈中与 UMDF 功能驱动程序之间发生的操作流。
 

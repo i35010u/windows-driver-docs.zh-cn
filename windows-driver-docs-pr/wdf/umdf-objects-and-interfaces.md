@@ -11,17 +11,17 @@ keywords:
 - 框架对象 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93df7600ffc684859cdccdfe87d7d5d1c04c8a3d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b7f60445bcf90e2d9ccbf3209187e5eb4a92dc11
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845542"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210723"
 ---
 # <a name="umdf-objects-and-interfaces"></a>UMDF 对象和接口
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 用户模式驱动程序框架（UMDF）由一组协同对象组成。 UMDF 创建并管理一系列向用户模式设备驱动程序公开的对象。 其中一些对象是由 UMDF 为响应应用程序触发的操作而创建的，例如 i/o 请求，而当驱动程序调用 UMDF 接口方法时，则会创建其他 UMDF 对象。 例如，若要创建 i/o 队列对象，驱动程序将调用[**IWDFDevice：： CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)方法。
 

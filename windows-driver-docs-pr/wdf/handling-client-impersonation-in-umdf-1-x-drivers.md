@@ -9,17 +9,17 @@ keywords:
 - 模拟 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fc53b3d055f7efc784be844f94513821b6becad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0c598fb1ff090f7a62b47f643218ca89de123901
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843640"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209929"
 ---
 # <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>处理 UMDF 1.x 驱动程序中的客户端模拟
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF 驱动程序通常在 LocalService 帐户下运行，并且无法访问需要用户凭据的文件或资源，如受保护的文件或其他受保护的资源。 UMDF 驱动程序通常对在客户端应用程序和设备之间流动的命令和数据进行操作。 因此，大多数 UMDF 驱动程序不会访问受保护的资源。
 

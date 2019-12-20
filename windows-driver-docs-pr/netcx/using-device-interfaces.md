@@ -2,16 +2,14 @@
 title: 使用设备接口
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8fbe1ef5d1051c3e59f9fbafe7ab117864cb08a8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6cd0f66e44cbb7eb33c067d3d0a7128147e4a744
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838268"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208935"
 ---
 # <a name="using-device-interfaces"></a>使用设备接口
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 若要从用户模式接收 IOCTLs，客户端驱动程序将使用引用字符串调用[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface) ，如下所示：
 

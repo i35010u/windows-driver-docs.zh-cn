@@ -8,12 +8,12 @@ keywords:
 - 从内核调试器控制用户模式调试器，调试 CSRSS
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31633db9444afb04f1c285a00204f0188377a2c0
-ms.sourcegitcommit: f91a0fd22f46be44839d2a22a21f59fad900ce90
+ms.openlocfilehash: 71e74710deca5e6cfc83f6771e2ca6157b1a1828
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020996"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209381"
 ---
 # <a name="debugging-csrss"></a>调试 CSRSS
 
@@ -23,7 +23,7 @@ ms.locfileid: "71020996"
 
 客户端服务器运行时子系统（CSRSS）是控制 Windows 环境的基础层的用户模式进程。 有很多问题需要调试 CSRSS 本身。
 
-如果 Windows 子系统意外终止并引发[**Bug 检查 0xc000021a**](bug-check-0xc000021a--winlogin-fatal-error.md) （WINLOGON\_严重\_错误），则调试 CSRSS 也很有用。 在这种情况下，调试 CSRSS 将捕获到 "意外" 点之前出现的故障。
+如果 Windows 子系统意外终止，并引发[**Bug 检查 0xc000021a**](bug-check-0xc000021a--winlogin-fatal-error.md) （WINLOGON\_严重\_错误），则调试 CSRSS 也很有用。 在这种情况下，调试 CSRSS 将捕获到 "意外" 点之前出现的故障。
 
 ### <a name="span-idcontrolling_ntsd_from_the_kernel_debuggerspanspan-idcontrolling_ntsd_from_the_kernel_debuggerspancontrolling-ntsd-from-the-kernel-debugger"></a><span id="controlling_ntsd_from_the_kernel_debugger"></span><span id="CONTROLLING_NTSD_FROM_THE_KERNEL_DEBUGGER"></span>从内核调试器控制 NTSD
 
@@ -31,7 +31,7 @@ ms.locfileid: "71020996"
 
 ### <a name="span-idenabling_csrss_debuggingspanspan-idenabling_csrss_debuggingspanenabling-csrss-debugging"></a><span id="enabling_csrss_debugging"></span><span id="ENABLING_CSRSS_DEBUGGING"></span>启用 CSRSS 调试
 
-必须先启用 CSRSS 调试，然后才能继续。 如果目标计算机运行的是 Windows 的*已检查内部版本*，则始终启用 CSRSS 调试。 如果目标计算机正在运行 Windows 的*免费版本*，则必须通过全局标志实用程序（GFlags）启用 CSRSS 调试。
+必须先启用 CSRSS 调试，然后才能继续。 如果目标计算机正在运行 Windows 的*免费版本*，则必须通过全局标志实用程序（GFlags）启用 CSRSS 调试。
 
 为此，请启动 GFlags 实用工具，选择**系统注册表**单选按钮，然后选择 "**启用 Win32 子系统调试**"。
 

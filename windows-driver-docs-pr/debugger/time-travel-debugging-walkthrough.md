@@ -1,14 +1,14 @@
 ---
 title: 时光穿越调试 - 示例应用演练
 description: 本部分包含一个小型C++应用程序的演练。
-ms.date: 09/17/2018
+ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9799911fdfcfeedb507df63ac8de8cd39458b360
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: a4ff564acc5b48764818abfcf738051169eb94ea
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916146"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209771"
 ---
 # <a name="time-travel-debugging---sample-app-walkthrough"></a>时光穿越调试 - 示例应用演练
 
@@ -65,7 +65,7 @@ ms.locfileid: "72916146"
     
     选择 "Win32 控制台应用程序"。
 
-    提供项目名称 " *DisplayGreeting* "，并单击 **"确定"** 。
+    提供项目名称 " *DisplayGreeting* "，并单击 **"确定"**。
 
 2. 取消选中 "安全开发生命周期（SDL）检查"。
 
@@ -73,7 +73,7 @@ ms.locfileid: "72916146"
 
 3. 单击 "**完成**"。
 
-3. 将以下文本粘贴到 Visual Studio 中的 DisplayGreeting 窗格。
+4. 将以下文本粘贴到 Visual Studio 中的 DisplayGreeting 窗格。
 
     ```cpp
     // DisplayGreeting.cpp : Defines the entry point for the console application.
@@ -102,7 +102,7 @@ ms.locfileid: "72916146"
     }
     ```
 
-4.  在 Visual Studio 中，单击 "**项目**&gt; **DisplayGreeting" 属性**"。 然后单击 " **C/C++**  " 和 "**代码生成**"。
+6. 在 Visual Studio 中，单击 "**项目**&gt; **DisplayGreeting" 属性**"。 然后单击 " **C/C++ ** " 和 "**代码生成**"。
 
     设置以下属性。
 
@@ -116,17 +116,17 @@ ms.locfileid: "72916146"
    > 尽管不建议使用这些设置，但也可以想象出这样一种情况：有人建议使用这些设置来加速编码或促进某些测试环境。
    >  
 
-5.  在 Visual Studio 中，单击 "**生成**&gt;**生成解决方案**"。
+7. 在 Visual Studio 中，单击 "**生成**&gt;**生成解决方案**"。
 
     如果一切顺利，生成窗口应显示一条消息，指示生成已成功。
 
-6.  **找到生成的示例应用文件**
+8. **找到生成的示例应用文件**
 
     在解决方案资源管理器中，右键单击*DisplayGreeting*项目，然后选择 "**在文件资源管理器中打开文件夹**"。
-    
+
     导航到包含该示例的编译后的 exe 和符号 pdb 文件的 Debug 文件夹。 例如，如果您的项目存储在*C:\Projects\DisplayGreeting\Debug*中，则可以导航到该文件夹。 
 
-7. **运行具有代码缺陷的示例应用程序**
+9. **运行具有代码缺陷的示例应用程序**
 
     双击 exe 文件以运行示例应用。
 
@@ -147,7 +147,7 @@ ms.locfileid: "72916146"
 
 1. 以管理员身份运行 WinDbg Preview，以便能够记录时间行程跟踪。
 
-2. 在 WinDbg Preview 中，选择 "**文件**" > **启动调试** > **启动可执行文件（高级）** 。
+2. 在 WinDbg Preview 中，选择 "**文件**" > **启动调试** > **启动可执行文件（高级）**。
 
 3. 输入要记录的用户模式可执行文件的路径，或选择 "**浏览**" 以导航到可执行文件。 有关使用 WinDbg Preview 中的 "启动可执行文件" 菜单的信息，请参阅[Windbg preview-启动用户模式会话](windbg-user-mode-preview.md)。
 
@@ -236,7 +236,6 @@ ms.locfileid: "72916146"
    > 在本演练中，三个期间用于指示已移除无关的输出。 
    >
 
-
 3. 单击 "异常" 事件以显示有关该 TTD 事件的信息。 
 
     ```dbgcmd
@@ -289,8 +288,7 @@ ms.locfileid: "72916146"
 
 **检查局部变量并设置代码断点**
 
-跟踪失败时，通常会在错误处理代码的真正原因后最终 fews 的步骤。 使用时间段，我们可以一次返回一条指令，查找真正的根本原因。
-
+跟踪失败时，通常会在错误处理代码的真正原因后结束几个步骤。 使用时间段，我们可以一次返回一条指令，找出真正的根本原因。
 
 1. 从 "**主页**" 功能区中，使用 "**单步**执行" 命令返回三个指令。 执行此操作时，请继续检查堆栈和内存窗口。
 
@@ -427,14 +425,14 @@ ba <access> <size> <address> {options}
     ![WinDbg 预览堆栈窗口的屏幕截图](images/ttd-time-travel-walkthrough-stack-window.png)
 
 
-由于 Microsoft 提供的 wscpy_s （）函数不太可能出现类似于下面的代码 bug，因此我们将在堆栈中进一步进行查找。 此堆栈显示问候语！ main 拨打问候语！GetCppConGreeting. 在我们非常小的代码示例中，现在可以打开代码，这可能会非常容易地发现错误。 但为了阐释可用于更大、更复杂的程序的技术，我们将设置一个新的断点以进行进一步调查。 
+由于 Microsoft 提供的 wscpy_s （）函数不太可能出现类似于下面的代码 bug，我们将在堆栈中进一步进行查找。 此堆栈显示问候语！ main 拨打问候语！GetCppConGreeting. 在我们非常小的代码示例中，现在可以打开代码，这可能会非常容易地发现错误。 但为了阐释可用于更大、更复杂的程序的技术，我们将设置一个新的断点以进行进一步调查。 
 
 
 **设置 GetCppConGreeting 函数的访问断点中断**        
 
 1. 使用 "断点" 窗口通过右键单击现有断点并选择 "**删除**" 来清除现有断点。
 
-2. 确定 DisplayGreeting 的地址！DetermineStringSize 函数。 
+2. 确定 DisplayGreeting 的地址！GetCppConGreeting 函数。 
 
     ```dbgcmd
     0:000> dx &DisplayGreeting!GetCppConGreeting
@@ -453,7 +451,7 @@ ba <access> <size> <address> {options}
     ![WinDbg 预览显示带有一个硬件读取断点的 "断点" 窗口](images/ttd-time-travel-walkthrough-hardware-write-breakpoint.png)
 
 
-5. 当我们想知道问候语字符串的大小时，我们将设置一个 "监视" 窗口来显示 "sizeof" （问候语）的值。 从 "视图" 功能区中，选择 "**观看**并提供*sizeof （问候语）* "。
+5. 当我们想知道问候语字符串的大小时，我们将设置一个 "监视" 窗口来显示 "sizeof" （问候语）的值。 从 "视图" 功能区中，选择 "**观看**并提供*sizeof （问候语）*"。
 
     ![显示 "监视局部变量" 窗口的 WinDbg 预览](images/ttd-time-travel-watch-locals.png)
 
@@ -559,16 +557,15 @@ ba <access> <size> <address> {options}
     013a17c1 8bf4            mov     esi,esp
     ```
 
-
-**为*问候语*变量设置访问断点中断**    
+**为*问候语*变量设置访问断点中断**
 
 执行此调查的另一种方法是，在置疑变量上设置断点，并检查哪些代码正在更改它们。 例如，若要在 GetCppConGreeting 方法中的问候语变量上设置一个断点，请使用此过程。
 
 本部分演练假设你仍位于上一部分的断点处。 
 
-1. 从 "**视图**" 和 "**局部变量**"。 在 "局部变量" 窗口中，*问候*在当前上下文中可用，因此，我们将能够确定其内存位置。 
+1. 从 "**视图**" 和 "**局部变量**"。 在 "局部变量" 窗口中，*问候*在当前上下文中可用，因此，我们将能够确定其内存位置。
 
-2.  使用**dx**命令检查*问候语*数组。 
+2. 使用**dx**命令检查*问候语*数组。 
 
     ```dbgcmd
     0:000> dx &greeting
@@ -579,16 +576,16 @@ ba <access> <size> <address> {options}
     在此跟踪中，*问候语*位于 ddf800 的内存中。 
 
 
-2. 使用 "断点" 窗口可以通过右键单击现有断点并选择 "**删除**" 来清除任何现有断点。
+3. 使用 "断点" 窗口可以通过右键单击现有断点并选择 "**删除**" 来清除任何现有断点。
 
 
-3.  使用用于监视写入访问的内存地址的**ba**命令设置断点。 
+4.  使用用于监视写入访问的内存地址的**ba**命令设置断点。 
 
     ```dbgcmd
     ba w4 ddf800
     ```
 
-4. 在 "时间段" 菜单中，使用 "**时间段启动**" 命令移动到跟踪开始处。
+5. 在 "时间段" 菜单中，使用 "**时间段启动**" 命令移动到跟踪开始处。
 
     ```dbgcmd
     0:000> !tt 0
@@ -603,7 +600,7 @@ ba <access> <size> <address> {options}
     77a266ac 83bdbcfeffff00  cmp     dword ptr [ebp-144h],0 ss:002b:00ddf4c4=00000000
     ```
 
-5. 在 "主文件夹" 菜单上，选择 "**转**到"，使其前进到问候语数组的第一个内存访问点。 
+6. 在 "主文件夹" 菜单上，选择 "**转**到"，使其前进到问候语数组的第一个内存访问点。 
 
     ```dbgcmd
     0:000> g-
@@ -612,18 +609,17 @@ ba <access> <size> <address> {options}
     eax=cccccccc ebx=002b1000 ecx=00000000 edx=68d51a6c esi=013a1046 edi=001bf7d8
     eip=013a1735 esp=001bf6b8 ebp=001bf7d8 iopl=0         nv up ei pl nz na po nc
     cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000202
-    DisplayGreeting!DetermineStringSize+0x25:
+    DisplayGreeting!GetCppConGreeting+0x25:
     013a1735 c745ec04000000  mov     dword ptr [ebp-14h],4 ss:002b:001bf7c4=cccccccc
     ```
 
    另外，我们还可以将旅行到跟踪的末尾，并在代码中反向工作，以查找已写入数组内存位置的跟踪中的最后一个点。
-      
 
-**请使用 TTD。用于查看内存访问的内存对象**    
+**请使用 TTD。用于查看内存访问的内存对象**
 
 确定跟踪内存中的哪些点被访问的另一种方法是使用 TTD。内存对象和 dx 命令。
 
-1.  使用**dx**命令检查*问候语*数组。 
+1. 使用**dx**命令检查*问候语*数组。
 
     ```dbgcmd
     0:000> dx &greeting
@@ -704,7 +700,7 @@ ba <access> <size> <address> {options}
 
 有关 TTD 的详细信息。内存对象，请参阅[TTD。内存对象](time-travel-debugging-object-model.md)。
 
-**摘要**  
+## <a name="summary"></a>摘要
 
 在这个非常小的示例中，此问题可能是通过查看几行代码来确定的，但是在大型程序中，此处提供的方法可用于缩短查找问题所需的时间。 
 

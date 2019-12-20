@@ -7,17 +7,17 @@ keywords:
 - 状态信息 WDK i/o 目标
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 120ce721f04ff66234e88eabc42db17a2226b0da
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 62398f46235f45c14acf3c1c4f720630a8a48307
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843144"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208913"
 ---
 # <a name="obtaining-information-about-a-general-io-target-in-umdf"></a>在 UMDF 中获取有关常规 I/O 目标的信息
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 若要获取有关 i/o 目标的信息，UMDF 驱动程序可以调用 i/o 目标对象定义的以下方法：
 

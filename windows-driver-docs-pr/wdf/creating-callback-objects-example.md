@@ -6,19 +6,19 @@ keywords:
 - 回叫对象 WDK UMDF，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 327c02d71a27bbe41851883dfced880ca614470e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 826efa4bca1593569ac46755fb74a0b06178727f
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845603"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210221"
 ---
 # <a name="creating-callback-objects-example"></a>创建回调对象示例
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-下面的代码示例演示了驱动程序如何在其[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法的实现中创建设备回调对象，然后在调用[**IWDFDriver：： CreateDevice 的情况下将该指针传递到设备回调接口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)用于创建设备的方法。
+下面的代码示例演示驱动程序如何在其[**IDriverEntry：： OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)方法的实现中创建设备回调对象，然后在其对[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)方法的调用中将指针传递到设备回调接口，以创建设备。
 
 ```cpp
    HRESULT CMyDriver::OnDeviceAdd(

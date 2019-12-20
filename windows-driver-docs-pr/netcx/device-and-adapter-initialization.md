@@ -4,32 +4,30 @@ description: 设备和适配器初始化
 ms.assetid: EBBEF0FB-6CDB-4899-AAE9-71812EE20AFB
 keywords:
 - NetAdapterCx 设备初始化，NetCx 设备初始化，NetAdapterCx 适配器初始化，NetCx 适配器初始化
-ms.date: 01/18/2019
+ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.custom: 19H1
-ms.openlocfilehash: 8e10b5f8f2f23a5bd2555fb57c8a63d64146e7f8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.custom: Vib
+ms.openlocfilehash: fa223b69e656015ff82bcdaebc79283eb52df292
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835534"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210887"
 ---
 # <a name="device-and-adapter-initialization"></a>设备和适配器初始化
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 本主题介绍 NetAdapterCx 客户端驱动程序初始化和启动 WDFDEVICE 和 GET-NETADAPTER 对象的步骤。 有关这些对象及其关系的详细信息，请参阅[NetAdapterCx 对象的摘要](summary-of-netadaptercx-objects.md)。
 
 ## <a name="evt_wdf_driver_device_add"></a>EVT_WDF_DRIVER_DEVICE_ADD
 
-当 NetAdapterCx 客户端驱动程序从其[*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程调用[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时，它将注册其[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
+NetAdapterCx 客户端驱动程序在从其[*DriverEntry*](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)例程调用[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)时，会注册其[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数。
 
 在[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)中，NetAdapterCx 客户端驱动程序应按顺序执行以下操作：
 
-1. 调用[**NetAdapterDeviceInitConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterdeviceinitconfig)。
+1. 调用[**NetDeviceInitConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netdevice/nf-netdevice-netdeviceinitconfig)。
 
     ```C++
-    status = NetAdapterDeviceInitConfig(DeviceInit);
+    status = NetDeviceInitConfig(DeviceInit);
     if (!NT_SUCCESS(status)) 
     {
         return status;
@@ -62,21 +60,12 @@ ms.locfileid: "72835534"
     //
 
     // Datapath callbacks for creating packet queues
-    PNET_ADAPTER_DATAPATH_CALLBACKS datapathCallbacks;
-    NET_ADAPTER_DATAPATH_CALLBACKS_INIT(datapathCallbacks,
+    NET_ADAPTER_DATAPATH_CALLBACKS datapathCallbacks;
+    NET_ADAPTER_DATAPATH_CALLBACKS_INIT(&datapathCallbacks,
                                         MyEvtAdapterCreateTxQueue,
                                         MyEvtAdapterCreateRxQueue);
     NetAdapterInitSetDatapathCallbacks(adapterInit,
                                        datapathCallbacks);
-
-    // Power settings attributes
-    NetAdapterInitSetNetPowerSettingsAttributes(adapterInit,
-                                                attribs);
-
-    // Net request attributes
-    NetAdapterInitSetNetRequestAttributes(adapterInit,
-                                            attribs);
-
     // 
     // Required: create the adapter
     //
@@ -157,11 +146,6 @@ NetAdapterSetDatapathCapabilities(netAdapter,
                                   &txCapabilities,
                                   &rxCapabilities);
 
-// Power capabilities
-...
-NetAdapterSetPowerCapabilities(netAdapter,
-                               &powerCapabilities);
-
 // Receive scaling capabilities
 ...
 NetAdapterSetReceiveScalingCapabilities(netAdapter,
@@ -174,6 +158,9 @@ NetAdapterOffloadSetChecksumCapabilities(netAdapter,
 ...
 NetAdapterOffloadSetLsoCapabilities(netAdapter,
                                     &lsoCapabilities);
+                                    ...
+NetAdapterOffloadSetRscCapabilities(netAdapter,
+                                    &rscCapabilities);
 
 //
 // Required: start the adapter

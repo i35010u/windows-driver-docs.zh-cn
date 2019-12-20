@@ -9,17 +9,17 @@ keywords:
 - UMDF-USB 对象模型 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a00d7f4403b1e429013a766f86f96193cb6c176
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8c5d9acc49518fbbfe7edf37ab4ae6e118cd2d80
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843109"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210899"
 ---
 # <a name="usb-specific-umdf-1x-interfaces"></a>特定于 USB 的 UMDF 1.x 接口
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 USB 设备可以有一个或多个配置。 每个配置可以有一个或多个接口。 每个接口都与一个或多个备用设置相关联，并且每个替代设置定义一个或多个终结点。 终结点表示设备硬件上的缓冲区。
 

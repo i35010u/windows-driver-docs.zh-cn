@@ -1,10 +1,10 @@
 ---
 title: BCDEdit /emssettings
-description: /Emssettings 选项设置为计算机的全局紧急管理服务 (EMS) 设置。 若要启用或禁用 EMS，请使用 /ems 选项。 /Emssettings 选项不启用或禁用的任何启动项的 EMS。
+description: /Emssettings 选项设置计算机的全局紧急管理服务（EMS）设置。 若要启用或禁用 EMS，请使用/ems 选项。 对于任何启动项，/emssettings 选项不会启用或禁用 EMS。
 ms.assetid: 010e852d-ff97-4280-b35b-f1881e249e42
 ms.date: 07/03/2018
 keywords:
-- BCDEdit /emssettings 驱动程序开发工具
+- BCDEdit/emssettings 驱动程序开发工具
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: af92340222bfd1f6e5baab39bda2de06af81bdd3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a3809bd9ae6c129ab8654a1d29144d11ba593c8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371668"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209485"
 ---
 # <a name="bcdedit-emssettings"></a>BCDEdit /emssettings
 
 
-**/Emssettings**选项设置为计算机的全局紧急管理服务 (EMS) 设置。 若要启用或禁用 EMS，请使用 **/ems**选项。 **/Emssettings**选项不会启用或禁用的任何启动项的 EMS。
+**/Emssettings**选项设置计算机的全局紧急管理服务（EMS）设置。 若要启用或禁用 EMS，请使用 **/ems**选项。 对于任何启动项， **/emssettings**选项不会启用或禁用 EMS。
 
 语法 
 
@@ -30,31 +30,31 @@ ms.locfileid: "67371668"
     bcdedit /emssettings [ BIOS ] | [ EMSPORT: port | [EMSBAUDRATE: baudrate] ] 
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
 **BIOS**   
-指定系统将为 EMS 配置中使用 BIOS 设置。 这仅适用于具有提供的 BIOS 的 EMS 支持的系统。
+指定系统将对 EMS 配置使用 BIOS 设置。 这仅适用于具有 BIOS 提供 EMS 支持的系统。
 
- **EMSPORT:** *端口*   
-指定要作为 EMS 端口使用的串行端口。 此参数不应指定与**BIOS**选项。
+ **EMSPORT：** *端口*   
+指定要用作 EMS 端口的串行端口。 不应将此参数与**BIOS**选项一起指定。
 
-**EMSBAUDRATE:** *baudrate*   
-指定要用于 EMS 的串行波特率。 此命令不应指定通过 BIOS。 *Baudrate*是可选的默认值为 9600 bps。
+**EMSBAUDRATE：** *波特率*   
+指定用于 EMS 的串行波特率。 不应将此命令与 BIOS 一起指定。 *波特率*是可选的，默认值为 9600 bps。
 
 ### <a name="comments"></a>备注
 
-若要正确启用 EMS 控制台重定向，安装 Windows 后，Windows 需要知道计算机使用的带外通信的端口和传输速率。 Windows 使用这些相同的设置的 EMS 控制台重定向。
+若要在安装 Windows 后正确启用 EMS 控制台重定向，Windows 需要知道计算机用于带外通信的端口和传输速率。 Windows 将这些相同的设置用于 EMS 控制台重定向。
 
-在使用 BIOS 固件和 ACPI 串行端口控制台重定向 (SPCR) 表的计算机，Windows 可以找到通过读取 SPCR 表中的条目来建立在 BIOS 中的带外设置。 在这些系统中，您可以使用**BIOS**参数指示 Windows 在端口设置，或者你 SPCR 表中进行查找可以使用**emsport:** <em>端口</em>和**emsbaudrate:** <em>baudrate</em>参数来替代 SPCR 表中的设置。
+在带有 BIOS 固件和 ACPI 串行端口控制台重定向（SPCR）表的计算机上，Windows 可以通过读取 SPCR 表中的条目来查找在 BIOS 中建立的带外设置。 在这些系统中，可以使用**BIOS**参数来指示 WINDOWS 在 SPCR 表中查找端口设置，也可以使用**emsport：**<em>port</em>和**emsbaudrate：**<em>波特率</em>参数覆盖 SPCR 表中的设置。
 
-计算机上具有 BIOS 固件，但不是具有 SPCR 表，使用 BCDEdit 并 **/emssettings**命令**emsport:** <em>端口</em>参数来指定的端口和与**emsbaudrate:** <em>baudrate</em>参数指定的传输速率。
+在具有 BIOS 固件但没有 SPCR 表的计算机上，使用 BCDEdit 和 **/emssettings**命令和**emsport：**<em>port</em>参数指定端口，并使用**emsbaudrate：**<em>波特率</em>参数指定传输速率。
 
-在所有系统上使用[ **BCDEdit /ems** ](bcdedit--ems.md)命令并指定要启用 EMS 控制台重定向的启动项目加载的操作系统上的启动项。
+在所有系统上，使用[**BCDEdit/ems**](bcdedit--ems.md)命令并指定启动项，以在启动项加载的操作系统上启用 ems 控制台重定向。
 
-安装 Windows 之后，在本部分中所述的启动参数启用 EMS 控制台重定向。 有关全新安装或升级 Windows 过程中启用 EMS，"启用紧急管理服务"上搜索[Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=10111)网站。
+此部分中所述的启动参数在安装 Windows 后启用 EMS 控制台重定向。 
 
-有关详细示例，请参阅[启用 EMS 重定向的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-ems-redirection)。
+有关详细示例，请参阅用于[启用 EMS 重定向的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-ems-redirection)。
 
  
 

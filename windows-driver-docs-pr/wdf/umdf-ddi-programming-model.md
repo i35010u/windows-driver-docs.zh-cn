@@ -9,17 +9,17 @@ keywords:
 - DDI WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c4c8981385b75875ab44db2715834d03e2c7c6d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e91e356650727c870cd8fb6c88bb8787d82733a9
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831602"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209851"
 ---
 # <a name="umdf-ddi-programming-model"></a>UMDF DDI 编程模型
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 框架和 UMDF 驱动程序通过 UMDF DDI 进行通信。 UMDF DDI 类似于 KMDF DDI，只不过 UMDF DDI 基于 COM。 因此，熟悉 KMDF 的驱动程序编写器将了解 UMDF。
 

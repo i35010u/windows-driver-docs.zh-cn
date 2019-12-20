@@ -1,11 +1,11 @@
 ---
 title: btb
-description: Btb 扩展显示分支跟踪缓冲区 (BTB) 配置的基于 Itanium 的处理器，并跟踪注册为当前的处理器。
+description: Btb 扩展显示当前处理器的基于 Itanium 的处理器、分支跟踪缓冲区（BTB）配置和跟踪寄存器。
 ms.assetid: ca09198a-3c3e-4a1b-90be-158d4ecac7c4
 keywords:
 - 分支树缓冲区
 - btb Windows 调试
-ms.date: 05/23/2017
+ms.date: 12/17/2019
 topic_type:
 - apiref
 api_name:
@@ -13,54 +13,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: be18ee7b432f15ec4142b48bedaf8c92b27da7a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef57056ba268bb92c27842271017851cd2b6c786
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336999"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209139"
 ---
 # <a name="btb"></a>!btb
 
 
-**！ Btb**扩展插件都会显示在基于 Itanium 的处理器、 分支跟踪缓冲区 (BTB) 配置和跟踪注册为当前的处理器。
+**！ Btb** extension 显示当前处理器的基于 Itanium 的处理器、分支跟踪缓冲区（btb）配置和跟踪寄存器。
 
 ```dbgcmd
 !btb
 ```
 
-**重要**  此命令已被 Windows 调试器版本 10.0.14257 中不推荐使用和更高版本，并不再可用。
+**重要**  在 Windows 调试器版本10.0.14257 和更高版本中已弃用此命令，且不再可用。
 
  
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>不可用</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
-</tr>
-</tbody>
-</table>
+<p><strong>Windows XP 和更高版本</strong></p>
+<p>Kdexts</p></td>
 
- 
-
-此扩展命令仅用于基于 Itanium 的目标计算机。
-
- 
-
- 
-
-
-
-
-
+此扩展命令只能与基于 Itanium 的目标计算机一起使用。

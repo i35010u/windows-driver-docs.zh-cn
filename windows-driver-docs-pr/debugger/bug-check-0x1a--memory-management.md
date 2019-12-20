@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1A MEMORY_MANAGEMENT
-description: MEMORY_MANAGEMENT bug 检查具有 0x0000001A 值。 这表明发生了严重的内存管理错误。
+description: MEMORY_MANAGEMENT bug 检查的值为0x0000001A。 这表明出现了严重的内存管理错误。
 ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - Bug 检查 0x1A MEMORY_MANAGEMENT
@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 350b89d22c03990cddf0171d60bbb924b746e7cf
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 37a621a1f25f0581ec8bd5da84381209026d77f1
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519768"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209319"
 ---
-# <a name="bug-check-0x1a-memorymanagement"></a>Bug 检查 0x1A：内存\_管理
+# <a name="bug-check-0x1a-memory_management"></a>Bug 检查0x1A：内存\_管理
 
 
-内存\_管理 bug 检查的值为 0x0000001A。 这表明发生了严重的内存管理错误。
+内存\_管理 bug 检查的值为0x0000001A。 这表明出现了严重的内存管理错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="memorymanagement-parameters"></a>内存\_管理参数
+## <a name="memory_management-parameters"></a>内存\_管理参数
 
-参数 1 标识了确切的冲突。
+参数1标识完全冲突。
 
 <table>
 <colgroup>
@@ -47,52 +47,52 @@ ms.locfileid: "67519768"
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>分叉克隆块引用计数已损坏。 （这仅出现在已检查的 Windows 版本上。）</p></td>
+<td align="left"><p>分叉克隆块引用计数已损坏。 这仅在已选中的 Windows 版本上发生。 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x31</p></td>
-<td align="left"><p>映像重定位链接地址表或代码流已损坏。 这可能是硬件错误。</p></td>
+<td align="left"><p>映像重定位修复表或代码流已损坏。 这可能是硬件错误。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3f</p></td>
-<td align="left"><p>页内操作失败，出现 CRC 错误。 参数 2 包含页面文件偏移量。 参数 3 包含页 CRC 值。 参数 4 包含预期的 CRC 值。</p></td>
+<td align="left"><p>Inpage 操作失败，出现 CRC 错误。 参数2包含页面文件偏移量。 参数3包含页 CRC 值。 参数4包含预期的 CRC 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x403</p></td>
-<td align="left"><p>页表和 PFNs 不同步。 这可能是硬件错误，尤其是当参数 3 和 4 上仅有一个位存在差异。</p></td>
+<td align="left"><p>页面表和 PFNs 不同步。 这可能是硬件错误，尤其是在参数 3 & 4 只是一位不同的情况下。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x404</p></td>
-<td align="left"><p>正在删除系统页时页帧数 (PFN) 和当前的页表项 (PTE) 指针之间的不一致。 参数 2 是预期的 PTE。 参数 3 为 PTE 内容且参数 4 为 PFN PTE。</p></td>
+<td align="left"><p>在删除系统页的过程中，页面框架编号（PFN）与当前页表条目（PTE）指针之间存在不一致。 参数2是所需的 PTE。 参数3是 PTE 内容，参数4是 PFN 的 PTE。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x411</p></td>
-<td align="left"><p>页表项 (PTE) 已损坏。 参数 2 是 PTE 的地址。</p></td>
+<td align="left"><p>页表项（PTE）已损坏。 参数2是 PTE 的地址。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x777</p></td>
-<td align="left"><p>调用方解锁当前未被锁定的系统缓存地址。 （此地址或者永远不会映射或正在解锁两次。）</p></td>
+<td align="left"><p>调用方正在解锁当前未锁定的系统缓存地址。 （此地址永远不会映射或解锁两次。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x778</p></td>
-<td align="left"><p>系统正在使用最后一个系统缓存的视图地址，而不保留它。</p></td>
+<td align="left"><p>系统使用的是最新的系统缓存视图地址，而不是保留它。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x780</p>
 <p>0x781</p></td>
-<td align="left"><p>映射参数系统缓存视图 Pte 已损坏。</p></td>
+<td align="left"><p>映射参数系统缓存视图的 Pte 已损坏。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1000</p></td>
-<td align="left"><p>调用方<strong>MmGetSystemAddressForMdl *</strong>尝试映射完全缓存物理页的非缓存。 此操作将导致冲突的硬件转换缓冲区条目，并因此由操作系统被拒绝。 由于调用方请求 MDL 中指定"失败的 bug 检查"，系统必须以颁发在此实例中的 bug 检查，别无选择。</p></td>
+<td align="left"><p><strong>MmGetSystemAddressForMdl *</strong>的调用方尝试将完全缓存的物理页映射为未缓存。 此操作会导致硬件转换缓冲区出现冲突，因此它被操作系统拒绝。 由于调用方在请求 MDL 中指定了 "失败时 bug 检查"，系统不能选择，而是在此实例中发出 bug 检查。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1010</p></td>
-<td align="left"><p>调用方解锁当前未被锁定的可分页部分。 （本部分或者永远不会锁定或正在解锁两次。）</p></td>
+<td align="left"><p>调用方正在解锁当前未锁定的可分页部分。 （此部分从未锁定或解锁两次。）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1233</p></td>
-<td align="left"><p>驱动程序尝试映射未锁定的物理内存页面。 这是非法的因为可以在任何时候更改的内容或属性页。 这是进行调用的映射代码中的 bug。 参数 2 是框架驱动程序试图映射的物理页的页码。</p></td>
+<td align="left"><p>驱动程序尝试映射未锁定的物理内存页。 这是非法的，因为页面的内容或属性随时可能会更改。 这是执行映射调用的代码中的一个 bug。 参数2是驱动程序尝试映射的物理页的页面帧号。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1234</p></td>
@@ -100,19 +100,19 @@ ms.locfileid: "67519768"
 </tr>
 <tr class="even">
 <td align="left"><p>0x1235</p></td>
-<td align="left"><p>调用方尝试保护 MDL 具有无效的映射。</p></td>
+<td align="left"><p>调用方尝试使用无效的映射来保护 MDL。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1236</p></td>
-<td align="left"><p>调用方指定 MDL 包含未锁定 （或无效） 的物理页。 参数 2 包含 MDL 的指针。 参数 3 包含无效的 PFN 的指针。 参数 4 包含 PFN 值无效。</p></td>
+<td align="left"><p>调用方指定的 MDL 包含未锁定（或无效）的物理页。 参数2包含指向 MDL 的指针。 参数3包含指向无效 PFN 的指针。 参数4包含无效的 PFN 值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3300</p></td>
-<td align="left"><p>过程中执行写入，被引用的虚拟地址被错误地标记为副本在写入。 参数 2 是 FaultingAddress。  参数 3 是 PTE 内容。 参数 4 表示虚拟地址空间类型。</p></td>
+<td align="left"><p>在执行写入的过程中，被引用的虚拟地址在写入时被错误地标记为副本。 参数2是 FaultingAddress。  参数3是 PTE 内容。 参数4表示虚拟地址空间类型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3451</p></td>
-<td align="left"><p>已被换出了内核线程堆栈的 Pte 已损坏。</p></td>
+<td align="left"><p>已交换的内核线程堆栈的 Pte 已损坏。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3453</p></td>
@@ -120,27 +120,27 @@ ms.locfileid: "67519768"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4477</p></td>
-<td align="left"><p>驱动程序尝试写入到系统进程的用户空间中的未分配地址。 参数 2 包含尝试的写入的地址。</p></td>
+<td align="left"><p>驱动程序尝试写入系统进程的用户空间中的未分配地址。 参数2包含尝试写入的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x5003</p></td>
-<td align="left"><p>工作集释放列表已损坏。 这可能是硬件错误。</p></td>
+<td align="left"><p>工作集可用列表已损坏。 这可能是硬件错误。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x5100</p></td>
-<td align="left"><p>分配位图已损坏。 内存管理器是以覆盖已使用的虚拟地址。</p></td>
+<td align="left"><p>分配位图已损坏。 内存管理器即将覆盖已在使用中的虚拟地址。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x5200</p></td>
-<td align="left"><p>可用池 SLIST 的页面已损坏。 这可以是驱动程序或从上一页面溢出中写入后无 bug 的结果。 参数 2 包含可用池块的地址。 参数 4 包含应为在该地址的值。 参数 3 包含找到的实际值。</p></td>
+<td align="left"><p>免费池 SLIST 上的页面已损坏。 这可能是驱动程序中的 "无可用" 错误的结果，也可能是上一页的溢出。 参数2包含可用池块的地址。 参数4包含应位于该地址的值。 参数3包含找到的实际值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6001</p></td>
-<td align="left"><p>内存存储组件的专用内存范围已损坏，使其变得不可访问。 参数 2 是返回的状态。  参数 3 是在应用商店的专用内存范围内的虚拟地址。 参数 4 是 MemoryDescriptorList。</p></td>
+<td align="left"><p>内存存储区组件的专用内存范围已损坏，导致其不可访问。 参数2是返回的状态。  参数3是存储区专用内存范围内的虚拟地址。 参数4为 MemoryDescriptorList。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8884</p></td>
-<td align="left"><p>(仅在 Windows 7 中)。 已假定具有相同的页面优先级值的两个页面在待机列表不是，实际上，有相同的页面优先级值。 在参数 4 中捕获的不同值。</p></td>
+<td align="left"><p>（仅适用于 Windows 7）。 备用列表上的两页应该具有相同的页优先级值，实际上并没有相同的页面优先级值。 参数4中捕获了不同的值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8888</p>
@@ -149,23 +149,23 @@ ms.locfileid: "67519768"
 </tr>
 <tr class="even">
 <td align="left"><p>0x888A</p></td>
-<td align="left"><p>内部内存管理结构 （可能 PTE 或 PFN） 已损坏。</p></td>
+<td align="left"><p>内部内存管理结构（可能是 PTE 或 PFN）已损坏。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x9696</p></td>
-<td align="left"><p>PFN （参数 2） 遇到带不再连接到其最高级别进程损坏链接。  这表示 PFN 结构中的损坏。</p></td>
+<td align="left"><p>遇到 PFN （参数2），损坏的链接不再连接到其顶层进程。  这表示 PFN 结构中的损坏。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x15001</p></td>
-<td align="left"><p>以前受保护的未保护内存的过程中出错。  这可以调用方会错误地调用 MmUnsecureVirtualMemory 错误进程上下文中。</p></td>
+<td align="left"><p>在取消保护以前所保护的内存的过程中出错。  如果调用方错误地在错误的进程上下文中调用 MmUnsecureVirtualMemory，则可能会发生这种情况。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41201</p></td>
-<td align="left"><p>查询的虚拟地址的过程中出现页框架 Number(PFN) 和当前的页表项 (PTE) 指针之间的不一致。 参数 2 是相应 PTE。 参数 3 是 PTE 内容和参数 4 是虚拟地址描述符。</p></td>
+<td align="left"><p>在查询虚拟地址的过程中，页面框架编号（PFN）与当前页表条目（PTE）指针之间存在不一致。 参数2是对应的 PTE。 参数3是 PTE 内容，参数4是虚拟地址描述符。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
-<td align="left"><p>在将 PTE 中编码的工作集索引已损坏。</p></td>
+<td align="left"><p>在 PTE 中编码的工作集索引已损坏。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x41284</p></td>
@@ -173,7 +173,7 @@ ms.locfileid: "67519768"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41286</p></td>
-<td align="left"><p>调用方尝试释放无效池地址。</p></td>
+<td align="left"><p>调用方正在尝试释放无效的池地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x41785</p></td>
@@ -181,51 +181,51 @@ ms.locfileid: "67519768"
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41287</p></td>
-<td align="left"><p>保存工作集同步时出现非法页面错误。 参数 2 包含被引用的虚拟地址。</p></td>
+<td align="left"><p>保存工作集同步时出现非法的页错误。 参数2包含引用的虚拟地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x41790</p></td>
-<td align="left"><p>页表页已损坏。 Windows 的 64 位版本，参数 2 包含损坏的页表页 PFN 的地址。 Windows 的 32 位版本，参数 2 包含指向使用 Pte 数的指针，参数 3 包含使用 Pte 数。</p></td>
+<td align="left"><p>页表页已损坏。 在64位版本的 Windows 上，参数2包含损坏的页表页的 PFN 地址。 在32位版本的 Windows 上，参数2包含指向使用的 Pte 数的指针，参数3包含使用的 Pte 数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41792</p></td>
-<td align="left"><p>已检测到损坏的 PTE。 参数 2 包含 PTE 的地址。 参数 3/4 包含 PTE 低/高部分。</p></td>
+<td align="left"><p>检测到损坏的 PTE。 参数2包含 PTE 的地址。 参数3/4 包含 PTE 的低/高部分。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41793</p></td>
-<td align="left"><p> 页表页已损坏。 参数 2 包含最后一个处理 PTE 的指针。 参数 3 包含找到的非零值 Pte 数。 参数 4 包含预期的页表中的非零值 Pte 数。</p><p>此内存参数已弃用，并在 Windows 10 版本 1803年之后将不再可用。</p></td>
+<td align="left"><p> 页表页已损坏。 参数2包含指向最后处理的 PTE 的指针。 参数3包含找到的非零 Pte 的数目。 参数4包含页表中的预期非零 Pte 数。</p><p>此内存参数已不推荐使用，在 Windows 10 版本1803后不再可用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x61940</p></td>
-<td align="left"><p>PDE 已意外失效。</p></td>
+<td align="left"><p>PDE 意外失效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x61941</p></td>
-<td align="left"><p>分页的层次结构已损坏。 参数 2 是导致错误的虚拟地址的指针。</p></td>
+<td align="left"><p>分页层次结构已损坏。 参数2是指向导致错误的虚拟地址的指针。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x61946</p></td>
-<td align="left"><p>正在创建 MDL 有缺陷。 这几乎总是意味着存在驱动程序调用<strong>MmProbeAndLockPages</strong>出现故障。 通常，驱动程序正在尝试创建编写 MDL 时要求它处理分页读取。</p></td>
+<td align="left"><p>正在创建的 MDL 有缺陷。 这几乎始终意味着调用<strong>MmProbeAndLockPages</strong>的驱动程序出错。 通常，驱动程序在要求处理分页读取时尝试创建写入 MDL。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x61948</p></td>
-<td align="left"><p>在 I/O 空间区域的引用计数的递减，过程中无法找到其记帐节点。  通常，这意味着自变量范围永远不会锁定或已经解锁。  参数 2 为基础的 I/O 帧。 参数 3 是在区域中的页数，参数 4 是找不到的节点的特定 I/O 帧。</p></td>
+<td align="left"><p>在递减 i/o 空间区域的引用计数的过程中，找不到其会计节点。  通常，这意味着参数范围从未锁定或已解锁。  参数2是基本 i/o 帧。 参数3是区域中的页数，而参数4是找不到其节点的特定 i/o 帧。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x61949</p></td>
-<td align="left"><p>IoPageFrameNode 为 null。 参数 2 是 PageFrameIndex。</p></td>
+<td align="left"><p>IoPageFrameNode 为 null。 参数2为 PageFrameIndex。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6194A</p></td>
-<td align="left"><p>递减引用计数在 I/O 空间物理页的正在取消映射时出错。 正在取消引用当前未引用的项。  参数 2 和 3 描述正在取消映射，调用方的 I/O 空间范围和参数 4 是 I/O 空间物理页预计将引用，但不是。 </p></td>
+<td align="left"><p>在对正在取消映射的 i/o 空间物理页上的引用计数进行递减时出错。 正在取消引用当前未引用的项。  参数2和3描述了正在取消映射的调用方的 i/o 空间范围，而参数4是 i/o 空间物理页，它应被引用，但不是。 </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x03030303</p></td>
-<td align="left"><p>启动加载器已断开。 （此值仅适用于 Intel Itanium 计算机。）</p></td>
+<td align="left"><p>启动加载程序中断。 （此值仅适用于 Intel Itanium 计算机。）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x03030308</p></td>
-<td align="left"><p>要删除 （或截断） 的范围正在使用由加载程序以便它不能安全地删除，因此系统必须发出停止代码。  参数 2 是 HighestPhysicalPage。</p></td>
+<td align="left"><p>要删除（或截断）的范围正在由加载程序使用，因此无法安全地将其删除，因此系统必须发出 stop 代码。  参数2为 HighestPhysicalPage。</p></td>
 </tr>
 </tbody>
 </table>
@@ -234,6 +234,6 @@ ms.locfileid: "67519768"
 <a name="resolution"></a>分辨率
 ----------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。 
+[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
 
-运行[ **Windows 内存诊断**](https://social.technet.microsoft.com/wiki/contents/articles/29343.windows-10-technical-preview-running-windows-memory-diagnostics-tool.aspx)工具可能很有用，以排除任何类型的问题影响的物理内存模块。
+运行 Windows 内存诊断工具也可用于排除影响物理内存模块的任何类型的问题。

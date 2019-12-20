@@ -8,17 +8,17 @@ keywords:
 - 请求处理 WDK UMDF，数据缓冲区
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ef43e1f944a9310e3f85cbc67120236c3991bb6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ddadcaa1e564a7399cbd58ab6180ead3e620c393
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843446"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210071"
 ---
 # <a name="accessing-data-buffers-in-umdf-1x-drivers"></a>访问 UMDF 1.x 驱动程序中的数据缓冲区
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当驱动程序接收到读取、写入或设备 i/o 控制请求时，请求对象将同时包含输入缓冲区或输出缓冲区。 （几个设备 i/o 控制请求提供两个输入/输出缓冲区。）
 
@@ -30,7 +30,7 @@ ms.locfileid: "72843446"
 
 -   版本1.9 之前的 UMDF 版本仅支持[缓冲 i/o](#using-buffered-i-o-in-umdf-drivers)访问方法。 使用这些版本的 UMDF 运行的基于 UMDF 的驱动程序只能对所有读取、写入和设备 i/o 控制请求使用缓冲 i/o 方法。 若要访问 i/o 请求的数据缓冲区，基于 UMDF 的驱动程序必须使用[**IWDFIoRequest：： GetInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getinputmemory)和[**IWDFIoRequest：： GetOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getoutputmemory)对象方法。
 
--   从 UMDF 版本1.9 开始，有两种访问方法：[缓冲 i/o](#using-buffered-i-o-in-umdf-drivers)和[直接 i/o](#using-direct-i-o-in-umdf-drivers)，可用于基于 UMDF 的驱动程序。 为 UMDF 版本1.9 及更高版本编写的 UMDF 驱动程序应使用[**IWDFIoRequest2：： RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2：： RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2：： RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)或[**IWDFIoRequest2：：RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)对象方法来访问数据缓冲区。
+-   从 UMDF 版本1.9 开始，有两种访问方法：[缓冲 i/o](#using-buffered-i-o-in-umdf-drivers)和[直接 i/o](#using-direct-i-o-in-umdf-drivers)，可用于基于 UMDF 的驱动程序。 为 UMDF 版本1.9 及更高版本编写的 UMDF 驱动程序应使用[**IWDFIoRequest2：： RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2：： RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2：： RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)或[**IWDFIoRequest2：： RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)对象方法来访问数据缓冲区。
 
 第三种访问方法（既称[缓冲还是直接 i/o](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)）对基于 umdf 的驱动程序不可用，但 umdf 可以将从 "两者都" 方法到的 i/o 请求转换为 umdf 版本支持的方法。
 
@@ -48,7 +48,7 @@ ms.locfileid: "72843446"
 
 ### <a href="" id="specifying-a-preferred-buffer-access-method"></a>指定首选的缓冲区访问方法
 
-UMDF 版本1.9 及更高版本支持缓冲和直接 i/o 访问方法。 驱动程序可以通过在调用[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)之前调用[**IWDFDeviceInitialize2：： SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)来指定你想要用于设备的所有读取、写入和设备 i/o 控制请求的访问方法，以创建设备对象。 例如，如果驱动程序只为其某个设备的读取和写入请求指定一个首选项，则该驱动程序[主机进程](umdf-driver-host-process.md)会在将读取和写入请求传递到该设备的驱动程序时使用该缓冲 i/o 方法。 如果驱动程序为直接 i/o 指定首选项，则 UMDF 可以（但可能不）使用直接 i/o。 有关 UMDF 何时使用直接 i/o 的详细信息，请参阅[Umdf 如何为 I/o 请求选择缓冲区访问方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)。
+UMDF 版本1.9 及更高版本支持缓冲和直接 i/o 访问方法。 在调用[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)创建设备对象之前，驱动程序可以通过调用[**IWDFDeviceInitialize2：： SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)来指定想要用于设备的所有读、写和设备 i/o 控制请求的访问方法。 例如，如果驱动程序只为其某个设备的读取和写入请求指定一个首选项，则该驱动程序[主机进程](umdf-driver-host-process.md)会在将读取和写入请求传递到该设备的驱动程序时使用该缓冲 i/o 方法。 如果驱动程序为直接 i/o 指定首选项，则 UMDF 可以（但可能不）使用直接 i/o。 有关 UMDF 何时使用直接 i/o 的详细信息，请参阅[Umdf 如何为 I/o 请求选择缓冲区访问方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)。
 
 对于驱动程序支持的每个设备，驱动程序可以指定缓冲 i/o 的首选项、直接 i/o 或设备的缓冲或直接 i/o。 驱动程序可以为读取和写入请求指定一种类型的访问方法，并为设备 i/o 控制请求指定另一种类型的访问方法。 如果驱动程序未指定访问方法首选项，则 UMDF 使用缓冲方法。
 
@@ -56,7 +56,7 @@ UMDF 版本1.9 及更高版本支持缓冲和直接 i/o 访问方法。 驱动�
 
 -   在版本1.9 之前的 UMDF 版本中，UMDF 始终对所有 i/o 控制请求使用缓冲访问方法。
 
--   当 IOCTL 指定缓冲 i/o 时，UMDF 版本1.9 和更高版本使用缓冲 i/o 访问方法。 如果 IOCTL 指定直接 i/o，并且如果驱动程序调用[**IWDFDeviceInitialize2：： SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)来指示直接 i/o 的首选项，则 umdf 可能使用直接 i/o，或者它可能使用缓冲 i/o，如[UMDF 如何选择缓冲区中所述。I/o 请求的访问方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)。 有关 UMDF 如何支持指定 "非缓冲 i/o 和直接 i/o" 方法的 IOCTLs 的信息，请参阅[在 UMDF 驱动程序中使用非缓冲 i/o 或直接 i/o](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
+-   当 IOCTL 指定缓冲 i/o 时，UMDF 版本1.9 和更高版本使用缓冲 i/o 访问方法。 如果 IOCTL 指定直接 i/o，并且如果驱动程序调用[**IWDFDeviceInitialize2：： SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)来指示直接 i/o 的首选项，则 umdf 可能使用直接 i/o，或者它可能使用缓冲 i/o，如[UMDF 如何为 I/o 请求选择缓冲区访问方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)中所述。 有关 UMDF 如何支持指定 "非缓冲 i/o 和直接 i/o" 方法的 IOCTLs 的信息，请参阅[在 UMDF 驱动程序中使用非缓冲 i/o 或直接 i/o](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)。
 
 ### <a href="" id="specifying-a-buffer-retrieval-mode"></a>指定缓冲区检索模式
 
@@ -88,13 +88,13 @@ UMDF 版本1.9 及更高版本支持直接检索和*延迟检索*模式。 延�
 
     此框架使用以下规则根据在**DirectTransferThreshold**中提供的值确定阈值。 提供的数字假定**页\_大小**为4096，这在基于 Itanium 的系统上是有效的。
 
-    -   如果将**DirectTransferThreshold**设置为小于或等于8192的任何值（或 **\_大小**的 2 \* 页），则框架会将阈值设置为8192。 此框架对小于8192个字节的缓冲区使用缓冲 i/o，对等于或大于8192字节的缓冲区使用直接 i/o。
+    -   如果将**DirectTransferThreshold**设置为小于或等于8192的任何值（或**\_大小**的 2 \* 页），则框架会将阈值设置为8192。 此框架对小于8192个字节的缓冲区使用缓冲 i/o，对等于或大于8192字节的缓冲区使用直接 i/o。
 
     -   如果将**DirectTransferThreshold**设置为大于8192的任何值，则该框架将向上舍入到**页面\_大小**的下一个精确倍数。 同样，框架对小于阈值的缓冲区使用缓冲 i/o，并对等于或大于阈值的缓冲区使用直接 i/o。
 
 -   对于在内存页边界上开始和结束的缓冲区空间，UMDF 只使用直接 i/o。 如果缓冲区的开头或结尾不在页面边界上，则将对该部分缓冲区使用缓冲 i/o。 换句话说，对于包含多个 i/o 请求的大型数据传输，UMDF 可能会同时使用缓冲 i/o 和直接 i/o。
 
--   对于设备 i/o 控制请求，如果 i/o 控制代码（IOCTL）仅指定直接 i/o，且仅当设备的所有基于 UMDF 的驱动程序都调用了**IWDFDeviceInitialize2：： SetIoTypePreference**来指定直接访问付款方式.
+-   对于设备 i/o 控制请求，如果 i/o 控制代码（IOCTL）仅指定直接 i/o，并且仅当设备的所有基于 UMDF 的驱动程序都调用了**IWDFDeviceInitialize2：： SetIoTypePreference**来指定直接访问方法，则该请求仅使用直接 i/o。
 
 无论使用哪种缓冲区访问方法，驱动程序都使用相同的一组请求对象方法来访问数据缓冲区。 因此，大多数驱动程序通常不需要知道 UMDF 是对 i/o 请求使用缓冲 i/o 还是直接 i/o。
 
@@ -122,11 +122,11 @@ UMDF 版本1.9 及更高版本可支持即时或延迟的请求缓冲区检索�
 
 使用即时缓冲区检索模式的驱动程序必须使用[**IWDFIoRequest：： GetInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getinputmemory)和[**IWDFIoRequest：： GetOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getoutputmemory)来访问缓冲区。
 
-使用延迟缓冲区检索模式的驱动程序可以通过调用[**IWDFIoRequest2：： RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2：： RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2：： RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)或[**IWDFIoRequest2：： RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)。
+使用延迟缓冲区检索模式的驱动程序可以通过调用[**IWDFIoRequest2：： RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2：： RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2：： RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)或[**IWDFIoRequest2：： RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)来访问缓冲区。
 
 ### <a href="" id="using-direct-i-o-in-umdf-drivers"></a>在 UMDF 驱动程序中使用直接 i/o
 
-如果你的驱动程序使用的是直接 i/o，则驱动程序主机进程将验证指定的 i/o 请求（通常为用户模式应用程序）的发起方的缓冲空间的可访问性，将缓冲区空间锁定为物理内存，然后提供驱动程序可以直接访问缓冲区空间。
+如果你的驱动程序使用直接 i/o，则驱动程序主机进程将验证指定的 i/o 请求（通常为用户模式应用程序）的发起方的缓冲空间的可访问性，将缓冲区空间锁定为物理内存，然后为该驱动程序提供对缓冲区空间的直接访问。
 
 有关何时选择直接 i/o 的指导原则，请参阅[**WDF\_设备\_IO\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_device_io_type)。
 

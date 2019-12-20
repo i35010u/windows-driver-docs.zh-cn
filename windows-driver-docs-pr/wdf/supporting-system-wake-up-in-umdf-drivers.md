@@ -7,17 +7,17 @@ keywords:
 - 系统唤醒 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f86802fe49deeba3b9c7f52aeaa2bf42b70c1595
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7397965fce7c1774300af8c0372b4f8e4dcefe38
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831687"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210834"
 ---
 # <a name="supporting-system-wake-up-in-umdf-drivers"></a>在 UMDF 驱动程序中支持系统唤醒
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 当系统处于低功耗状态时，某些设备可以检测到外部事件，例如传入网络数据包，并唤醒系统。 例如，如果 PCI 设备具有系统唤醒功能（如设备的电源管理功能（PMC）寄存器中所示），则它会通过在 PCI 总线上引发电源管理事件（PME）信号来唤醒系统。
 

@@ -7,17 +7,17 @@ keywords:
 - 初始化常规 i/o 目标 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ae8b9fe69f008eeb9ad4de20793d1b0bfee238
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8b09f4b7219a814c14533d98132d573097df519a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845446"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210599"
 ---
 # <a name="initializing-a-general-io-target-in-umdf"></a>初始化 UMDF 中的常规 I/O 目标
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 驱动程序用来初始化一般 i/o 目标的步骤取决于 i/o 目标是[本地](general-i-o-targets-in-umdf.md)还是远程。
 
@@ -37,7 +37,7 @@ ms.locfileid: "72845446"
 
 3.  调用[**IWDFFileHandleTargetFactory：： CreateFileHandleTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)方法为文件、管道或套接字创建基于文件句柄的 i/o 目标对象。
 
-有关演示如何检索[IWDFFileHandleTargetFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)接口，获取 Win32 句柄并创建基于文件句柄的 i/o 目标对象的代码示例，请参阅[**IWDFFileHandleTargetFactory：： CreateFileHandleTarget 上的代码示例**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget).
+有关演示如何检索[IWDFFileHandleTargetFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)接口，获取 Win32 句柄并创建基于文件句柄的 i/o 目标对象的代码示例，请参阅[**IWDFFileHandleTargetFactory：： CreateFileHandleTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)中的代码示例。
 
 驱动程序创建基于文件句柄的 i/o 目标后，该驱动程序可以向 i/o 目标发送 i/o 请求。
 

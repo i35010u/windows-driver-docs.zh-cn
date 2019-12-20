@@ -4,12 +4,12 @@ description: 传感器和位置平台中的隐私和安全
 ms.assetid: 9defb163-4de6-46cc-b817-d3e6291137be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 240648fb548181304853fb8520158750cebbfaf6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a168a743469b2ecfd45d66f34fd2f8c777334a28
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825060"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210797"
 ---
 # <a name="privacy-and-security-in-the-sensor-and-location-platform"></a>传感器和位置平台中的隐私和安全
 
@@ -30,14 +30,6 @@ Windows 中的传感器和位置平台提供以下功能，以帮助确保位置
 ## <a name="keeping-user-data-private"></a>使用户数据保持私密
 
 编写传感器驱动程序时，必须考虑用户隐私。 必须确保不会绕过传感器类扩展强制的隐私控制。 由于在用户授予权限之前可以检索某些属性，因此你必须确保你的驱动程序不会通过这些属性显示个人身份信息。 有关用户授予权限之前可用的属性的列表，请参阅[**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)。
-
-## <a name="additional-resources"></a>其他资源
-
-查看以下资源以帮助你开发保护用户隐私的软件。
-
-[用于开发软件产品和服务的隐私准则](https://go.microsoft.com/fwlink/p/?linkid=2085300)
-
-[TechNet 安全开发人员中心](https://go.microsoft.com/fwlink/p/?linkid=237150)
 
 ## <a name="related-topics"></a>相关主题
 

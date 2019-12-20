@@ -3,21 +3,19 @@ title: 设备和适配器初始化
 description: 设备和适配器初始化
 ms.assetid: 394BDE67-2667-4672-896A-2407F3A54725
 keywords:
-- NetAdapterCx 设备初始化、 NetCx 设备初始化、 NetAdapterCx 适配器初始化、 NetCx 适配器初始化
+- NetAdapterCx 设备初始化，NetCx 设备初始化，NetAdapterCx 适配器初始化，NetCx 适配器初始化
 ms.date: 08/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf7ab0288c3b399b7e884d3f934bb8f19a2011d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f01841277202d0ae4c76c2f6d8d24c877f9713cf
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369975"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210813"
 ---
 # <a name="managing-the-lifetime-of-objects-in-netadaptercx"></a>管理 NetAdapterCx 中对象的生存期
 
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
-
-本部分介绍 framework 对象和它们的生存期中 NetAdapterCx。 通过这些主题可以了解有关特定于网络的对象，除了标准的详细信息[WDF 对象](../wdf/wdf-objects.md)，以及如何以初始化、 启动、 停止和销毁它们。
+本部分介绍了 NetAdapterCx 中的框架对象及其生存期。 使用这些主题可了解有关特定于网络的对象以及标准[WDF 对象](../wdf/wdf-objects.md)的详细信息，以及如何初始化、启动、停止和销毁这些对象。
 
 本节内容：
 

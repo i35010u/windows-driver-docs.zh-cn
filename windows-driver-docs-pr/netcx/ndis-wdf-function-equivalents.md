@@ -6,16 +6,14 @@ keywords:
 - NetAdapterCx NDIS-WDF 函数等效项，NetCx NDIS-WDF 函数等效项
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73af2e05a8440c9d6d582d61a3bdc03519b044c5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0401c17459ce3b745d33cf64084c88deae86dbb4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835527"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210807"
 ---
 # <a name="ndis-wdf-function-equivalents"></a>NDIS-WDF 函数等效项
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 下表列出了 NDIS 函数及其 WDF 等效项：
 
