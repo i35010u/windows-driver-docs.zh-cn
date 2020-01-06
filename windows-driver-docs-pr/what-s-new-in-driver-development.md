@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e55cb4a09b3f9d2d7c5b8a4171a7ac170cfca3bf
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 2b72381e9d255c911160b73736342344e332e438
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74860891"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210827"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能
 
@@ -333,7 +333,7 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 在 NetAdapter WDF 类扩展 (NetAdapterCx) 中，网环缓冲区已由网环取代，后者提供新的接口用于通过网环迭代器发送和接收网络数据。 下面是新主题的列表：
 
-* [网环和网环迭代器](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-rings-and-net-ring-iterators)
+* [网环简介](https://docs.microsoft.com/windows-hardware/drivers/netcx/introduction-to-net-rings)
 * [使用网环发送网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/sending-network-data-with-net-rings)，其中提供了演示如何发送数据的新动画
 * [使用网环接收网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/receiving-network-data-with-net-rings)，其中提供了演示如何接收数据的新动画
 * [使用网环取消网络数据](https://docs.microsoft.com/windows-hardware/drivers/netcx/canceling-network-data-with-net-rings)

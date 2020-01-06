@@ -4,25 +4,23 @@ description: 网络适配器 WDF 类扩展 (NetAdapterCx)
 ms.assetid: 74719A80-AE66-410F-85B7-31B6F455A818
 keywords:
 - 网络适配器类扩展, 网络适配器 WDF 类扩展, NetAdapterCx, NetCx
-ms.date: 03/21/2019
+ms.date: 08/27/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 41184d69be8382429ae6b59e8606afb49c729c0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 373b90f326408e36dbd4fb92b7380fb92aea60fb
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375392"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210895"
 ---
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>网络适配器 WDF 类扩展 (NetAdapterCx)
 
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
-
 ## <a name="overview"></a>概述
 
-从 Windows 10 版本 1703 开始，Windows 驱动程序工具包 (WDK) 包含一个网络适配器 WDF 类扩展模块 (NetAdapterCx)，用于为网络接口控制器 (NIC) 编写基于 KMDF 的客户端驱动程序。 NetAdapterCx 提供 WDF 的强大功能和灵活性以及 NDIS 的网络性能，可以轻松地为 NIC 编写驱动程序。
+从 Windows 10 版本 2004 开始，Windows 驱动程序工具包 (WDK) 包含一个网络适配器 WDF 类扩展模块 (NetAdapterCx)，用于为网络接口控制器 (NIC) 编写基于 KMDF 的客户端驱动程序。 NetAdapterCx 提供 WDF 的强大功能和灵活性以及 NDIS 的网络性能，可以轻松地为 NIC 编写驱动程序。
 
 在旧版 Windows 中，WDF 和 NDIS 各有优点，但互操作性不好。 在过去，编写 NIC 驱动程序的唯一方法是编写 NDIS 微型端口驱动程序。 若要在 NDIS 微型端口驱动程序中使用 WDF，必须在驱动程序中编写额外代码。即使这样，也只能访问 WDF 功能的一小部分。
 

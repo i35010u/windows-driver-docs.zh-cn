@@ -68,6 +68,8 @@
       href: windbg-what-is-new-preview.md
     - name: WinDbg 预览版 - 安装
       href: windbg-install-preview.md
+    - name: WinDbg 预览版 - 时间线
+      href: windbg-timeline-preview.md
     - name: WinDbg 预览版 - 命令行启动选项
       href: windbg-command-line-preview.md
     - name: WinDbg 预览版 - 设置和工作区

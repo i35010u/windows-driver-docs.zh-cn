@@ -1,5 +1,9 @@
 - name: 网络适配器 WDF 类扩展 (NetAdapterCx)
   href: index.md
+- name: NetAdapterCx 中的新增功能
+  items:
+    - name: NetAdapterCx 版本概述
+      href: netadaptercx-version-overview.md
 - name: 将 NDIS 微型端口驱动程序移植到 NetAdapterCx
   href: porting-ndis-miniport-drivers-to-netadaptercx.md
 - name: 生成 NetAdapterCx 客户端驱动程序
@@ -34,10 +38,10 @@
       href: transmit-and-receive-queues.md
     - name: 网络数据缓冲区管理
       href: network-data-buffer-management.md
-    - name: 网环和网环迭代器
+    - name: 网环
       items:
-        - name: 网环和网环迭代器的简介
-          href: net-rings-and-net-ring-iterators.md
+        - name: 网环简介
+          href: introduction-to-net-rings.md
         - name: 使用网环发送网络数据
           href: sending-network-data-with-net-rings.md
         - name: 使用网环接收网络数据
