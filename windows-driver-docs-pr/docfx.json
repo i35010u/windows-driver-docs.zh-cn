@@ -23,14 +23,19 @@
         "exclude": [
           "docfx.json",
           "**/obj/**",
-         "**/README.md"
+          "**/README.md"
         ]
       }
     ],
     "globalMetadata": {
       "Search.Product": "eADQiWindows 10XVcnh",
       "uhfHeaderId": "MSDocsHeader-WinHW",
-      "disable_contribution_on_translation_quality": ["MT"],
+      "disable_contribution_on_translation_quality": [
+        "MT",
+        "MTE75",
+        "MTE95",
+        "Blank"
+      ],
       "breadcrumb_path": "/windows-hardware/drivers/breadcrumbs/toc.json",
       "searchScope": [
         "Drivers"
@@ -57,8 +62,7 @@
       }
     },
     "fileMetadata": {
-      "author":
-      {
+      "author": {
         "**/3dprint/*.md": "barrygolden",
         "**/acpi/*.md": "barrygolden",
         "**/audio/*.md": "DOMARS",
@@ -108,9 +112,9 @@
         "**/usbcon/*.md": "billlattimer",
         "**/wdf/*.md": "tedhudek",
         "**/wdtf/*.md": "EliotSeattle",
-        "**/whea/*.md": "EliotSeattle"      },
-      "ms.author":
-      {
+        "**/whea/*.md": "EliotSeattle"
+      },
+      "ms.author": {
         "**/3dprint/*.md": "bagold",
         "**/acpi/*.md": "bagold",
         "**/audio/*.md": "domars",
@@ -160,7 +164,8 @@
         "**/usbcon/*.md": "billla",
         "**/wdf/*.md": "tedhudek",
         "**/wdtf/*.md": "eliotgra",
-        "**/whea/*.md": "eliotgra"      }
+        "**/whea/*.md": "eliotgra"
+      }
     },
     "externalReference": [],
     "template": "op.html",
