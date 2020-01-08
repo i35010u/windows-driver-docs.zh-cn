@@ -1,32 +1,32 @@
 ---
 title: 示例配置 XML
-description: 使用本主题中的示例配置 XML 开发你的设备的配置文件。
+description: 使用本主题中的示例配置 XML 来开发设备的配置文件。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ca0656fcbb960050c5f5a63f2c723ac36429edd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8bdd8bfdf817d31b7e0e839ed3735210d8516277
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324711"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652755"
 ---
 # <a name="sample-configuration-xml"></a>示例配置 XML
 
-下面的示例配置 XML 可用于开发适用于你的设备配置文件。
+您可以使用以下示例配置 XML 来开发您的设备的配置文件。
 
 ```xml
 <?xml version="1.0"?>
 <PrintDeviceCapabilities
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
-    xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
-    xmlns:psk3d="http://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d"
-    xmlns:psk3dx="http://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywords3dextended"
-    xmlns:pskv="http://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywordsvendor"
-    xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework"
-    xmlns:psf2="http://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
-    xmlns="http://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+    xmlns:xml="https://www.w3.org/XML/1998/namespace"
+    xmlns:psk="https://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
+    xmlns:psk3d="https://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d"
+    xmlns:psk3dx="https://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywords3dextended"
+    xmlns:pskv="https://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywordsvendor"
+    xmlns:psf="https://schemas.microsoft.com/windows/2003/08/printing/printschemaframework"
+    xmlns:psf2="https://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
+    xmlns="https://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
     version="2">
     <CapabilitiesChangeID xsi:type="xsd:string">{9F58AF07-DCB6-4865-8CA3-A52EA5DCB05F}</CapabilitiesChangeID>
 

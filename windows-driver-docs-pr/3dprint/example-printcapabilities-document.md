@@ -1,31 +1,31 @@
 ---
 title: PrintCapabilities 文档示例
-description: 下面的示例中使用的关键字是仅用于演示，虽然它们通常遵循 3D 制造的打印架构关键字。
+description: 下面的示例中使用的关键字仅用于说明，不过它们通常符合3D 制造的打印架构关键字。
 ms.assetid: 0FCEFC25-C22F-44BD-9693-B3DBE6F6D314
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f26649f3d38363e4ce4c3c36ddfb8df279d5d228
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4d17fcf00c019f7240648a1188b1328cc95a8ab5
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325417"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652751"
 ---
 # <a name="printcapabilities-document-example"></a>PrintCapabilities 文档示例
 
 
-下面的示例中使用的关键字是仅用于演示，虽然它们通常遵循 3D 制造的打印架构关键字。
+下面的示例中使用的关键字仅用于说明，不过它们通常符合3D 制造的打印架构关键字。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <psf:PrintCapabilities
-    xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1"
-    xmlns:ns0000="http://schemas.microsoft.com/windows/printing/oemdriverpt/3dprinter"
-    xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
-    xmlns:psk3d="http://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d"
-    xmlns:vnd="http://foo">
+    xmlns:psf="https://schemas.microsoft.com/windows/2003/08/printing/printschemaframework"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="https://www.w3.org/2001/XMLSchema" version="1"
+    xmlns:ns0000="https://schemas.microsoft.com/windows/printing/oemdriverpt/3dprinter"
+    xmlns:psk="https://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
+    xmlns:psk3d="https://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d"
+    xmlns:vnd="https://foo">
 
     <psf:Property name="psk3d:Job3DOutputArea">
         <psf:Property name="psk3d:Job3DOutputAreaWidth">

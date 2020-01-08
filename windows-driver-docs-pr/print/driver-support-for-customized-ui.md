@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型是使用打印机扩展或 UWP 设备�
 ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f84396268e051b0fcadd7748df95070f965b8ac7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 25e12ce41e6b9c1edb31191c403edbebf4ff7bf6
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845054"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652815"
 ---
 # <a name="driver-support-for-customized-ui"></a>自定义 UI 的驱动程序支持
 
@@ -47,7 +47,7 @@ V4 打印驱动程序模型是使用打印机扩展或 UWP 设备应用程序的
 **驱动程序事件 XML 示例**。 以下 XML 代码段指定一个驱动程序事件。 事件检查黄色墨迹是否小于双向所报告的总容量的21%。 如果发生这种情况，将使用 resourceID 132 引用的字符串创建 AsyncUIBalloon 消息。 换句话说，消息会说 "%1" 的墨粉/墨不足。 其中，将替换 %1 的资源2002（"黄色"）。
 
 ```xml
-<de:DriverEvents xmlns:de="http://schemas.microsoft.com/windows/2011/08/printing/driverevents" schemaVersion="4.0">
+<de:DriverEvents xmlns:de="https://schemas.microsoft.com/windows/2011/08/printing/driverevents" schemaVersion="4.0">
   <DriverEvent eventId="{A04CF0FC-1CEB-4C62-B967-6F0AE5C5F81E}">
     <Transport>USB</Transport>
     <Transport>WSD</Transport>

@@ -6,12 +6,12 @@ keywords:
 - 值构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c445047f91a382d2e9779db6ba52c770c59041cd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f93fd1e12ad8d22ec5daa8b5322c1971421f8772
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826994"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652854"
 ---
 # <a name="value-wsd"></a>Value (WSD)
 
@@ -35,7 +35,7 @@ ms.locfileid: "72826994"
 <td><p>可有可无一个布尔值，指示端口监视器是否向驱动程序发送通知。 <strong>TRUE</strong>值指示端口监视器向驱动程序发送通知;<strong>FALSE</strong>表示端口监视器不向驱动程序发送通知。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>筛选器</strong></p></td>
+<td><p><strong>filter</strong></p></td>
 <td><p>WSD 监视器将应用于查询所指定的 XML 文档的 XPath 查询。 请参阅本主题后面的讨论。</p></td>
 </tr>
 <tr class="odd">
@@ -48,7 +48,7 @@ ms.locfileid: "72826994"
 </tr>
 <tr class="odd">
 <td><p><strong>type</strong></p></td>
-<td><p>中的数据类型 <code>Value</code> 构造， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
+<td><p>中的数据类型 <code>Value</code> 构造， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的一个值。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>xmllang</strong></p></td>
@@ -65,12 +65,12 @@ XPath 语言是在 Windows 中实现的，提供了一种方便的方法来指�
 
 `Value` 构造是在 WsdBidi 中定义的。
 
-### <a href="" id="example"></a>实例
+### <a href="" id="example"></a> 示例
 
 在下面的代码示例中，WSD 监视器确定 RAM 内存的大小（以整数值的形式）。
 
 ```cpp
-<Schema xmlns:nprt='http://schemas.microsoft.com/windows/2005/05/wdp/print'>
+<Schema xmlns:nprt='https://schemas.microsoft.com/windows/2005/05/wdp/print'>
   <Property name='Printer'>
     <Property name='DeviceInfo'>
       <Value name='PrinterString' 

@@ -3,28 +3,28 @@ title: WSD 端口监视器的双向扩展示例
 description: WSD 端口监视器的双向扩展示例
 ms.assetid: a04f16d5-ae99-4df5-bb55-aef95bd03588
 keywords:
-- bidi 扩展文件 WDK 打印机自动配置
-- 框中自动配置支持 WDK 打印机，bidi 扩展名为的文件
+- 双向扩展文件 WDK 打印机自动配置
+- 内置自动配置支持 WDK 打印机，双向扩展文件
 - WSD 架构扩展 WDK 打印机
 - 架构扩展 WDK WSD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0738fc4f183ee29829f3b650e41347c04951d757
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89e70f6eb1bda920791cf0d67181c9a9367ebaee
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387274"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652911"
 ---
 # <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD 端口监视器的双向扩展示例
 
-下面的代码示例是为 Web Services for Devices (WSD) 端口监视器扩展 bidi 通信架构的示例 XML 文件：
+下面的代码示例是一个示例 XML 文件，它扩展了 Web 服务设备（WSD）端口监视器的双向通信架构：
 
 ```xml
 <?xml version='1.0'?>
-<bidi:Definition xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'>
+<bidi:Definition xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'>
 
-  <Schema xmlns:nprt='http://schemas.microsoft.com/windows/2006/08/wdp/print'>
+  <Schema xmlns:nprt='https://schemas.microsoft.com/windows/2006/08/wdp/print'>
     <Property name='Printer'>
       <Property name='DeviceInfo'>
         <Value name='FriendlyName' query='nprt:PrinterDescription' filter='nprt:PrinterDescription/nprt:PrinterName' type='BIDI_STRING' xmllang='true'/>
@@ -205,9 +205,9 @@ ms.locfileid: "63387274"
 
 ### <a name="description-of-schema-extension"></a>架构扩展的说明
 
-上面的示例 bidi 扩展文件包含的根元素&lt;定义&gt;，与两个主要部分：&lt;架构&gt;，其中放置 bidi 架构扩展，并&lt;PortStatus&gt;、 驱动程序将 WSD 状态映射到端口\_信息\_3 端口 （在 Windows SDK 中所述的状态结构文档）。
+前面的示例双向扩展文件包含 &lt;定义&gt;的根元素，其中包含两个主要部分： &lt;架构&gt;，其中放置双向架构扩展，&lt;PortStatus&gt;，其中，驱动程序将 WSD 状态映射到端口\_
 
-架构扩展中使用任何命名空间必须在架构元素中定义。 扩展处理将无法识别较低级别元素中定义的命名空间。 在较低级别元素中定义一个命名空间将导致验证失败的扩展文件。
+架构扩展中使用的所有命名空间都必须在 Schema 元素中定义。 扩展处理将不会识别在较低级别元素中定义的命名空间。 在较低级别元素中定义命名空间会导致扩展文件验证失败。
 
 ```xml
 <Definition>
@@ -216,23 +216,23 @@ ms.locfileid: "63387274"
 </Definition>
 ```
 
-此扩展插件文件中的每个 bidi 查询包括：
+此扩展文件中的每个双向查询包括：
 
--   描述如何编写 bidi 数据从 WSD; 算法可以使用四个构造定义算法[常量](const.md)，[已安装](installed.md)，[列表](list.md)，以及[值](value.md)。
+-   描述如何从 WSD 数据撰写双向数据的算法;可以用四个构造[常量](const.md)、[已安装](installed.md)、[列表](list.md)和[值](value.md)来定义算法。
 
--   介绍如何获取 WSD 数据 WSD 查询参数。
+-   用于描述如何获取 WSD 数据的 WSD 查询参数。
 
--   XPath 筛选器的筛选器可用于撰写 bidi 结果的 WSD 架构中的特定 XML 元素。
+-   XPath 筛选器，用于筛选要用于撰写双向结果的 WSD 架构中的特定 XML 元素。
 
 ### <a name="parameter-construct"></a>参数构造
 
-&lt;参数&gt;前面的示例 bidi 扩展文件中使用的元素定义一个变量的属性，可以采用不同值 （例如，TopBin 或 BottomBin），以便可使用以下形式的查询：
+前面的示例中使用的 &lt;参数&gt; 元素定义了一个变量属性，该属性可以采用不同的值（例如，TopBin 或 BottomBin），因此可以使用以下形式的查询：
 
 -   `\Printer.Layout.InputBins.TopBin:Installed`
 
 -   `\Printer.Layout.InputBins.BottomBin:Installed`
 
-下面的示例查询演示如何使用在前面的 bidi 扩展中定义的自定义属性：
+下面的示例查询演示如何使用在前面的双向扩展中定义的自定义属性：
 
 ```xml
 <Property name='Printer'>
@@ -252,6 +252,6 @@ ms.locfileid: "63387274"
 </Property>
 ```
 
-前面的示例生成以下查询：
+前面的示例将生成以下查询：
 
 `\Printer.Layout.InputBins.[TrayName]:Installed`

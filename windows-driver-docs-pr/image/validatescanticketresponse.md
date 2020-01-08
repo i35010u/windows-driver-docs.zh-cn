@@ -1,9 +1,9 @@
 ---
 title: ValidateScanTicketResponse 元素
-description: 所需的 ValidateScanTicketResponse 操作通知客户端是否提交 ScanTicket 是有效的客户端。
+description: 所需的 ValidateScanTicketResponse 操作将通知客户端客户端提交的 ScanTicket 是否有效。
 ms.assetid: 7eea7d33-45de-45bf-8e89-de06f5710073
 keywords:
-- ValidateScanTicketResponse 元素成像设备
+- ValidateScanTicketResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2009f01a1ad98b1b2ef9d4484094a9fdb91c5b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5d211fd8faaa260e774bbd810d667cfda2a42f3
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356185"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652939"
 ---
 # <a name="validatescanticketresponse-element"></a>ValidateScanTicketResponse 元素
 
 
-所需**ValidateScanTicketResponse**操作通知客户端是否在客户端的提交[ **ScanTicket** ](scanticket.md)有效。
+所需的**ValidateScanTicketResponse**操作将通知客户端客户端提交的[**ScanTicket**](scanticket.md)是否有效。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63356185"
 </wscn:ValidateScanTicketResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,29 +65,29 @@ ms.locfileid: "63356185"
 <a name="remarks"></a>备注
 -------
 
-客户端提交[ **ScanTicket** ](scanticket.md)元素被签入[ **ValidateScanTicketRequest** ](validatescanticketrequest.md)操作。 WSD 扫描服务必须响应**ValidateScanTicketResponse**元素，其中包含已成功处理后的所有验证信息**ValidateScanTicketRequest**。
+客户端提交要在[**ValidateScanTicketRequest**](validatescanticketrequest.md)操作中检查的[**ScanTicket**](scanticket.md)元素。 在成功处理**ValidateScanTicketRequest**后，WSD 扫描服务必须响应包含所有验证信息的**ValidateScanTicketResponse**元素。
 
 <a name="examples"></a>示例
 --------
 
-它已提交的有效扫描票证时，下面的代码示例显示了对客户端的响应。
+下面的代码示例演示了在客户端提交有效扫描票证后对客户端的响应。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:xop="http://www.w3.org/2003/12/xop/include"
-  xmlns:xop-mime="http://www.w3.org/2003/12/xop/mime"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:xop="https://www.w3.org/2003/12/xop/include"
+  xmlns:xop-mime="https://www.w3.org/2003/12/xop/mime"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheValidateScanTicketRequest</wsa:RelatesTo>
@@ -110,24 +110,24 @@ ms.locfileid: "63356185"
 </soap:Envelope>
 ```
 
-它已提交无效的扫描票证时，下面的代码示例显示了对客户端的响应。
+下面的代码示例演示了当客户端提交了无效的扫描票证时对客户端的响应。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:xop="http://www.w3.org/2003/12/xop/include"
-  xmlns:xop-mime="http://www.w3.org/2003/12/xop/mime"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:xop="https://www.w3.org/2003/12/xop/include"
+  xmlns:xop-mime="https://www.w3.org/2003/12/xop/mime"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheValidateScanTicketRequest</wsa:RelatesTo>
@@ -176,7 +176,7 @@ ms.locfileid: "63356185"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [**ScanTicket**](scanticket.md)
 

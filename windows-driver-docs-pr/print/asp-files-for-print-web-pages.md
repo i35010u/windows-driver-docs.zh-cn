@@ -3,18 +3,18 @@ title: 打印网页的 ASP 文件
 description: 打印网页的 ASP 文件
 ms.assetid: 01ca39ed-be16-41fb-b432-1cbd0908358d
 keywords:
-- 自定义打印网页 WDK、 ASP 文件
+- 自定义的打印网页 WDK、ASP 文件
 - ASP 文件 WDK 打印机
-- 打印网页 WDK、 ASP 文件
+- 打印网页 WDK，ASP 文件
 - 网页 WDK 打印机，ASP 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 842227883a534b96507975e210f077872a904ec2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 94d2cde131c51750450536684a7af752de72ec04
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363245"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652931"
 ---
 # <a name="asp-files-for-print-web-pages"></a>打印网页的 ASP 文件
 
@@ -22,15 +22,15 @@ ms.locfileid: "63363245"
 
 
 
-打印网页使用创建的 ASP 文件。 Microsoft 提供了创建以下的 ASP 文件打印网页：
+打印网页是使用 ASP 文件创建的。 Microsoft 提供了创建以下打印网页的 ASP 文件：
 
-- 打印服务器页上的引用的 URL http://<em>&lt;ServerName&gt;</em>/printers，其中 *&lt;ServerName&gt;* 表示 DNS 或 WINS打印服务器的名称。 此页包含用于在服务器上安装每个打印机的页面的链接。
+- URL https://引用的打印服务器页面<em>&lt;servername&gt;</em>/printers，其中 *&lt;ServerName&gt;* 代表打印服务器的 DNS 或 WINS 名称。 此页包含指向服务器上安装的每个打印机的页面的链接。
 
-- 用于每个服务器的打印队列的打印队列页面。 可通过打印服务器页中的链接访问这些页面也可以直接从浏览器中使用 URL http:// 中引用<em>&lt;ServerName&gt;</em>  /  *&lt;ShareName&gt;* 。
+- 每个服务器的打印队列的打印队列页。 可以通过 "打印服务器" 页中的链接访问这些页，也可以使用 URL https://<em>&lt;ServerName&gt;</em>/ *&lt;共享名&gt;* ，直接从浏览器引用这些页。
 
-- 队列的文档、 打印机属性和特定于打印机的详细信息的其他页。 这些页面的打印队列页范围内显示。
+- 排队文档的其他页、打印机属性和打印机特定的详细信息。 这些页面显示在 "打印队列" 页的帧中。
 
-可以通过将其 ASP 文件替换为自定义特定于打印机的详细信息页。 有关详细信息，请参阅[自定义打印机的详细信息网页](customizing-the-printer-details-web-page.md)。
+可以通过替换其 ASP 文件来自定义打印机特定的详细信息页。 有关详细信息，请参阅[自定义打印机详细信息](customizing-the-printer-details-web-page.md)网页。
 
  
 

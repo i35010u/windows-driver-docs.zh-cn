@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54792d59ab1ff153f8954608a245ba34b34c2212
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: e92b1075380b43a8031d94ac9c67f14a51e19fed
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881935"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652821"
 ---
 # <a name="customdata-element"></a>customData 元素
 
 
 可选的**customData**元素为此异步通知 XML 架构指定自定义数据源。
 
-**CustomData**元素在*asyncui*命名空间中的此 URI 上定义： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+**CustomData**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
 <a name="usage"></a>Usage
 -----
@@ -139,8 +139,8 @@ ms.locfileid: "74881935"
 
 ```xml
 <?xml version="1.0"?>
-  <asyncPrintUIRequest xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request"
-      xmlns:myco="http://www.myprintercompany.com">
+  <asyncPrintUIRequest xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request"
+      xmlns:myco="https://www.myprintercompany.com">
     <requestOpen>
       <customData dll="abc.dll" entrypoint="IHVFunction" bidi="true">
         <IHV:anyXMLData />

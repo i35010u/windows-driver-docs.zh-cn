@@ -7,12 +7,12 @@ keywords:
 - 双向通信架构 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d51b0188dbdf1e064d831e006c1942f909589a96
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f14581e557728897d1d7cdfa5e43962271a598df
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831822"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652856"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>构造双向通信架构查询
 
@@ -30,7 +30,7 @@ ms.locfileid: "72831822"
 下面是[双向通信接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)所需的 XML 查询和响应格式的示例，尤其是 IBidiSpl2 COM 接口。 第一个示例是包含两个架构的请求。 第一个架构确定是否安装了双面打印单元。 第二个架构确定与硬盘相关联的值。
 
 ```cpp
-<bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema="\Printer.Configuration.DuplexUnit:Installed"/>
   <Query schema="\Printer.Configuration.HardDisk"/>
 </bidi:Get>
@@ -39,7 +39,7 @@ ms.locfileid: "72831822"
 下一个示例是第一个示例中的架构的一组典型响应。 第一个响应表明已安装双面打印单元。 剩余的响应表示硬盘已安装，其容量为 20 MB，其中未使用 10 MB。
 
 ```cpp
-<bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema="\Printer.Configuration.DuplexUnit:Installed">
     <Schema name="\Printer.Configuration.DuplexUnit:Installed">
       <BIDI_BOOL>true</BIDI_BOOL>

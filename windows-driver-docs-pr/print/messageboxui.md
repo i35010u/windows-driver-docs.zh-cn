@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32db744d852cc8966a88b9e8b242f50c4bd3383
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: e58f0806bbd16ead88d6486bb679c6ed0902ad76
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881916"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652850"
 ---
 # <a name="messageboxui-element"></a>messageBoxUI 元素
 
 可选的**messageBoxUI**元素用于在客户端计算机上显示消息框。
 
-**MessageBoxUI**元素在*asyncui*命名空间中的此 URI 上定义： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+**MessageBoxUI**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
 ## <a name="usage"></a>Usage
 
@@ -106,7 +106,7 @@ ms.locfileid: "74881916"
 
 ```xml
 <?xml version="1.0" ?> 
-  <asyncPrintUIResponse xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/response">
+  <asyncPrintUIResponse xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/response">
     <v1>
       <requestClose>
         <messageBoxUI>
@@ -123,7 +123,7 @@ ms.locfileid: "74881916"
 
 [body](body.md)
 
-[按钮](button.md)
+[button](button.md)
 
 [buttons](buttons.md)
 

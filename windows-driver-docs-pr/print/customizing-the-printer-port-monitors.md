@@ -13,12 +13,12 @@ keywords:
 - 双向通信 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23ea83d16f04cb2295c8e895a8b67ff52b672285
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f96107191274be66401a1d94355d0aa97472e002
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843376"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652817"
 ---
 # <a name="customizing-the-printer-port-monitors"></a>自定义打印机端口监视器
 
@@ -53,7 +53,7 @@ ms.locfileid: "72843376"
 
 ```cpp
 <?xml version="1.0" encoding="US-ASCII"?>
-<bidi:Schema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Schema xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Schema>
     <Property name="Printer">
       <Property name="Configuration">

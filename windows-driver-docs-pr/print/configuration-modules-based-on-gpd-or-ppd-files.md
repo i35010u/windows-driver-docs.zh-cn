@@ -3,55 +3,55 @@ title: 基于 GPD 或 PPD 文件的配置模块
 description: 基于 GPD 或 PPD 文件的配置模块
 ms.assetid: b0aeea58-1c58-475e-8d4a-597778e42a7c
 keywords:
-- 版本 3 的 XPS 驱动程序 WDK XPSDrv，GPD 文件
-- 版本 3 的 XPS 驱动程序 WDK XPSDrv，PPD 文件
+- 版本 3 XPS 驱动程序 WDK XPSDrv，GPD 文件
+- 版本 3 XPS 驱动程序 WDK XPSDrv、PPD 文件
 - GPD 文件 WDK XPSDrv
 - PPD 文件 WDK XPSDrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cd79dada49ce41896df9ddb766fd63a10b6e478
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7bc56ecf70727b06d8c17e3f556fbe8496a4eb4
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360579"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652852"
 ---
 # <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>基于 GPD 或 PPD 文件的配置模块
 
 
-适用于 Windows Vista GPD 和 PPD 文件包含打印架构映射和特定于 XPSDrv 的新条目的打印驱动程序。 可用于创建仅 GPD 或仅 PPD 配置模块和配置模块 Unidrv 或 Pscript5 打印驱动程序插件，这些更改适用于 GPD 和 PPD 文件。
+对于 Windows Vista，GPD 和 PPD 文件包含特定于 XPSDrv 打印驱动程序的打印架构映射和新条目。 这些更改适用于 GPD 和 PPD 文件，这些文件可用于创建仅限 GPD 或 PPD 的配置模块和 Unidrv 或 Pscript5 打印驱动程序插件的配置模块。
 
-### <a name="xpsdrv-specific-gpd-and-ppd-entries"></a>特定于 XPSDrv 的 GPD 和 PPD 条目
+### <a name="xpsdrv-specific-gpd-and-ppd-entries"></a>XPSDrv 特定的 GPD 和 PPD 条目
 
-若要使用 GPD 或 PPD 文件创建 XPSDrv 打印机驱动程序的版本 3 打印驱动程序配置模块，必须执行下列任一操作：
+若要使用 GPD 或 PPD 文件为 XPSDrv 打印驱动程序创建版本3打印驱动程序配置模块，必须执行以下操作之一：
 
--   创建或编辑 GPD 或 PPD 文件。 文件必须包含描述打印机支持的功能的配置关键字。 标准 GPD 或 PPD 关键字将自动映射到公共打印架构关键字，但使用了非标准关键字映射到专用的命名空间，默认情况下。
+-   创建或编辑 GPD 或 PPD 文件。 文件必须包含用于描述打印机支持的功能的配置关键字。 标准 GPD 或 PPD 关键字自动映射到公共打印架构关键字，但默认情况下，非标准关键字映射到专用命名空间。
 
--   如果要创建 GPD 文件或 Msxpsinc.ppd 文件中，如果要创建 PPD 文件，包括 Msxpsinc.gpd 文件。 这些文件包括以下关键字，指示生成的配置文件将在 XPSDrv 打印驱动程序的一部分。
+-   如果创建的是 GPD 文件或 Msxpsinc 文件（如果要创建 PPD 文件），请包含 Msxpsinc. gpd 文件。 这些文件包括以下关键字，它们指示生成的配置文件将是 XPSDrv 打印驱动程序的一部分。
 
-    对于 Msxpsinc.gpd，它包含：
+    对于 Msxpsinc gpd，它包含：
 
     ```cpp
     IsXPSDriver?: TRUE
     ```
 
-    对于 Msxpsinc.ppd，它包含：
+    对于 Msxpsinc，它包含：
 
     ```cpp
     *MSIsXPSDriver: True
     ```
 
-包括 Msxpsinc.gpd 或 Msxpsinc.ppd 文件是一种首选的方法，而不是无需将这些属性添加到 GPD 或 PPD 文件。 Microsoft 无法将 XPSDrv 驱动程序的未来属性添加到相应的包含文件。 如果 Microsoft 将新属性添加到包含文件和 GPD 或 PPD 文件中使用包含文件，不需要编辑打印驱动程序 GPD 或 PPD 文件。
+包括 Msxpsinc. gpd 或 Msxpsinc 文件是首选方法，而不是将这些属性添加到 GPD 或 PPD 文件中。 Microsoft 可能会将 XPSDrv 驱动程序的属性添加到相应的包含文件。 如果 Microsoft 将这些新属性添加到包含文件中，并在 GPD 或 PPD 文件中使用包含文件，则不需要编辑打印驱动程序的 GPD 或 PPD 文件。
 
-根 GPD 或 PPD 文件 (作为驱动程序的 INF 文件中指定`DataFile`) 所有 Microsoft Unidrv 或 PScript5 驱动程序基于 XPSDrv 驱动程序必须包括相应的 Msxpsinc.gpd 或 Msxpsinc.ppd 文件。
+对于所有 Microsoft Unidrv 或基于 PScript5 驱动程序的 XPSDrv 驱动程序，根 GPD 或 PPD 文件（在 INF 文件中指定为驱动程序的 `DataFile`）必须包含相应的 Msxpsinc. GPD 或 Msxpsinc 文件。
 
-例如，对于模型 foo.gpd，包括：
+例如，对于 Model-foo. gpd，包括：
 
 ```cpp
 *Include: "msxpsinc.gpd"
 ```
 
-对于模型 foo.ppd，包括：
+对于 Model-foo，包括：
 
 ```cpp
 *Include: "msxpinc.ppd"
@@ -59,15 +59,15 @@ ms.locfileid: "63360579"
 
 ### <a name="print-schema-mapping"></a>打印架构映射
 
-打印架构映射是 Unidrv 和 PScript5 配置模块的功能，它将转换为其等效的公共打印架构关键字 GPD 和 PPD 关键字。 默认情况下，所有标准 GPD 和 PPD 关键字映射到其等效的公共打印架构关键字。 使用了非标准关键字在 GPD 或 PPD 文件中，但是，映射到一个专用的特定于设备的命名空间默认情况下。 可以通过执行一个或两项操作来提高此映射：
+打印架构映射是 Unidrv 和 PScript5 配置模块的一项功能，它将 GPD 和 PPD 关键字转换为其等效的公共打印架构关键字。 默认情况下，所有标准 GPD 和 PPD 关键字都映射到其等效的公共打印架构关键字。 但是，GPD 或 PPD 文件中的非标准关键字默认映射到特定于设备的专用命名空间。 可以通过执行以下一项或两项操作来改进此映射：
 
--   指定了非标准关键字的专用命名空间。
+-   为非标准关键字指定专用命名空间。
 
--   将从公共 GPD 或 PPD 文件中的打印架构及其等效关键字与关联 GPD 或 PPD 文件中使用了非标准功能和选项的关键字。 这种关联，配置模块生成 PrintTicket 和 PrintCapabilities 数据作为公共打印架构功能。
+-   使用 GPD 或 PPD 文件中公共打印架构的等效关键字将 GPD 或 PPD 文件中的非标准功能和选项关键字关联起来。 此关联使配置模块可以将 PrintTicket 和 PrintCapabilities 数据生成为公共打印架构功能。
 
 ### <a name="gpd-file-example"></a>GPD 文件示例
 
-下面的代码示例演示说明了条目 GPD 文件和关键字为 XPSDrv 创建版本 3 配置模块打印驱动程序。
+下面的代码示例演示了一个 GPD 文件，该文件阐释了用于为 XPSDrv 打印驱动程序创建版本3配置模块的项和关键字。
 
 ```cpp
 *%
@@ -91,7 +91,7 @@ ms.locfileid: "63360579"
 *%
 *% IHV Private Namespace
 *%
-*PrintSchemaPrivateNamespaceURI:"http://www.ihv.com/schema/2006"
+*PrintSchemaPrivateNamespaceURI:"https://www.ihv.com/schema/2006"
 *%
 *% IHV Private Feature
 *%

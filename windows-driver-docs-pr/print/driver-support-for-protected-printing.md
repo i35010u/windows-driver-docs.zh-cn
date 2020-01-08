@@ -4,12 +4,12 @@ description: Windows 8.1 包括对受保护打印的支持，它允许用户指�
 ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e94b32d7dd4f0e1595c158b52235c5be3f20f710
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 0e9e154311553c3f4fd7f8e545b8203a66247d38
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881918"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652805"
 ---
 # <a name="driver-support-for-protected-printing"></a>受保护打印的驱动程序支持
 
@@ -19,7 +19,7 @@ Windows 8.1 还允许管理员指定默认 PIN，以减少与打印出来但用�
 
 ## <a name="print-schema-changes"></a>打印架构更改
 
-Windows 8.1 引入了新的打印架构关键字，你可以在 PrintTicket 和 PrintCapabilities 文档中使用这些关键字来指定受保护的打印。 这些关键字是在新的*printschemakeywordsv11*命名空间中定义的。 下面是此命名空间的 URI： [http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11](https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11)。
+Windows 8.1 引入了新的打印架构关键字，你可以在 PrintTicket 和 PrintCapabilities 文档中使用这些关键字来指定受保护的打印。 这些关键字是在新的*printschemakeywordsv11*命名空间中定义的。 下面是此命名空间的 URI： [https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11](https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11)。
 
 若要查看如何在 PrintTicket 文件中指定受保护的打印，请参阅[用于固定打印的示例 PrintTicket 文件](sample-printticket-file-for-pin-printing.md)。 若要了解如何在 PrintCapabilities 文件中指定受保护的打印，请参阅[用于 PIN 打印的示例 PrintCapabilities 文件](sample-printcapabilities-file-for-pin-printing.md)。
 
@@ -63,7 +63,7 @@ Windows 8.1 引入了新的打印架构关键字，你可以在 PrintTicket 和 
 <tr class="header">
 <th>关键字</th>
 <th>描述</th>
-<th>级别</th>
+<th>层次</th>
 <th>允许的值</th>
 <th>示例</th>
 </tr>
@@ -104,7 +104,7 @@ Windows 8.1 引入了新的打印架构关键字，你可以在 PrintTicket 和 
 <tr class="header">
 <th>关键字</th>
 <th>描述</th>
-<th>级别</th>
+<th>层次</th>
 <th>允许的值</th>
 <th>示例</th>
 </tr>

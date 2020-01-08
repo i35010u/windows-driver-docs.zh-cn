@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb842dae8326970537c49e3162f193d2c11426f
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 511debe97b341575154d14fc1f4ab40ffdb8bc2a
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881917"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652862"
 ---
 # <a name="button-element"></a>button 元素
 
 
 "必需"**按钮**元素指定客户端计算机上显示的消息框中按钮的特征。
 
-在*asyncui*命名空间中的此 URI 处定义了**button**元素： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+在*asyncui*命名空间中的此 URI 处定义了**button**元素： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
 <a name="usage"></a>Usage
 -----
@@ -122,7 +122,7 @@ IDCANCEL 将在消息框中显示一个名为 "CANCEL" 的按钮。 当用户单
 ```xml
 <?xml version="1.0" ?>
   <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <messageBoxUI>

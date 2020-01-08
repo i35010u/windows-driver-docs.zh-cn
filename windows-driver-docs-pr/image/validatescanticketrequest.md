@@ -1,9 +1,9 @@
 ---
 title: ValidateScanTicketRequest 元素
-description: 所需的 ValidateScanTicketRequest 操作元素使客户端以确定将来扫描操作的设置是否有效。
+description: 所需的 ValidateScanTicketRequest 操作元素使客户端能够确定未来扫描操作的设置是否有效。
 ms.assetid: 366b0d71-1494-48fa-94f5-1832d7f119a4
 keywords:
-- ValidateScanTicketRequest 元素成像设备
+- ValidateScanTicketRequest 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dda1f11b6123105b0f2c5abfce44704d3d3fd38b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e8ae7777343f12162de5f37a4d203b99181244c
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356149"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652929"
 ---
 # <a name="validatescanticketrequest-element"></a>ValidateScanTicketRequest 元素
 
 
-所需**ValidateScanTicketRequest**操作元素使客户端以确定将来扫描操作的设置是否有效。
+所需的**ValidateScanTicketRequest**操作元素使客户端能够确定未来扫描操作的设置是否有效。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63356149"
 </wscn:ValidateScanTicketRequest>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,25 +65,25 @@ ms.locfileid: "63356149"
 <a name="remarks"></a>备注
 -------
 
-可以使用客户端**ValidateScanTicketRequest**要验证各种设置的更改和组合元素。
+客户端可以使用**ValidateScanTicketRequest**元素来验证各种设置更改和组合。
 
-[**ScanTicket** ](scanticket.md)包含所有客户端想要在将来扫描操作中提交的设置。 **ScanTicket**可以包含仅处理元素的客户端想要重写中扫描程序，也可以包含在 WSD 扫描服务中支持的每个可能元素。
+[**ScanTicket**](scanticket.md)包含客户端在将来的扫描操作中要提交的所有设置。 **ScanTicket**只能包含客户端要在扫描程序中替代的处理元素，也可以包含 WSD 扫描服务支持的每个可能的元素。
 
-如果已成功处理了 WSD 扫描服务**ValidateScanTicketRequest**，它将返回其验证信息中的[ **ValidateScanTicketResponse** ](validatescanticketresponse.md)操作。 否则，扫描服务应返回相应的错误代码。
+如果 WSD 扫描服务成功处理**ValidateScanTicketRequest**，它将在[**ValidateScanTicketResponse**](validatescanticketresponse.md)操作中返回其验证信息。 否则，扫描服务应返回相应的错误代码。
 
-此操作可以返回的所有[**常见 WSD 扫描服务操作的错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何对报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
-此操作可能也会返回以下错误代码：
+此操作还可能会返回以下错误代码：
 
 -   **ClientErrorConflictingRequiredParameters**
 
-    则会发生冲突之间两个或多个 DocumentParameters 元素，每个包含 MustHonor 属性设置为 true。 使用所有随附 MustHonor 设置为 true 的设置会导致设备冲突。 扫描服务无法解决此冲突，因此 ScanTicket 被视为无效。
+    两个或多个 DocumentParameters 元素之间存在冲突，每个元素都将 MustHonor 属性设置为 true。 使用 MustHonor set true 提供的所有设置都将导致设备冲突。 扫描服务无法解决此冲突，因此 ScanTicket 被视为无效。
 
-    | Fault 属性 | 定义                                                                                                                                                     |
+    | 错误属性 | 定义                                                                                                                                                     |
     |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | \[Code\]       | soap:Sender                                                                                                                                                    |
-    | \[Subcode\]    | wscn:ClientErrorConflictingRequiredParameters                                                                                                                  |
-    | \[Reason\]     | DocumentParameters 元素中的多个元素具有 MustHonor 设置为 true，但应用所有设置设置为 true 则冲突中扫描程序设备。 |
+    | 代码\[\]       | soap：发送方                                                                                                                                                    |
+    | \[子代码\]    | wscn:ClientErrorConflictingRequiredParameters                                                                                                                  |
+    | \[原因\]     | DocumentParameters 元素中的多个元素的 MustHonor 设置为 true，但将设置为 true 的所有设置都将导致扫描器设备冲突。 |
     | \[详细信息\]     | 无                                                                                                                                                           |
 
      
@@ -91,20 +91,20 @@ ms.locfileid: "63356149"
 <a name="examples"></a>示例
 --------
 
-下面的代码示例显示了有效扫描票证验证请求。
+下面的代码示例演示对有效扫描票证的验证请求。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -146,20 +146,20 @@ ms.locfileid: "63356149"
   </soap:Envelope>
 ```
 
-下面的代码示例显示了一个无效的扫描票证验证请求。
+下面的代码示例演示对无效扫描票证的验证请求。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -197,7 +197,7 @@ ms.locfileid: "63356149"
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [**ScanTicket**](scanticket.md)
 

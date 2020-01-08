@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 629d7d8b753e74981206b7edd581750714d23015
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 55b88c74c27bba4f9fb1426129609cb39b24ecb3
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881922"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652935"
 ---
 # <a name="asyncprintuirequest-element"></a>asyncPrintUIRequest 元素
 
 必需的**asyncPrintUIRequest**元素描述由打印机驱动程序发出的请求，以在客户端计算机上创建消息。
 
-**AsyncPrintUIRequest**元素在*asyncui*命名空间中的此 URI 上定义： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。
+**AsyncPrintUIRequest**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。
 
 ## <a name="usage"></a>Usage
 
@@ -75,7 +75,7 @@ ms.locfileid: "74881922"
 ```xml
 <?xml version="1.0" ?>
    <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <balloonUI iconID="1" resourceDll="IHV.dll">

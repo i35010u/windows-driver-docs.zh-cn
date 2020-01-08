@@ -1,42 +1,30 @@
 ---
-title: 规划器微型类驱动程序简介
-description: 规划器微型类驱动程序简介
+title: 关于转换器 Miniclass 驱动程序
+description: 关于转换器 Miniclass 驱动程序
 ms.assetid: ce0f78a3-69ae-4ca7-b2e1-f4892e35a230
 keywords:
-- 更换器驱动程序 WDK 存储，miniclass 驱动程序
-- 存储更换器驱动程序 WDK，miniclass 驱动程序
-- miniclass 驱动程序 WDK 换带机
-ms.date: 04/20/2017
+- 转换器驱动程序 WDK 存储，miniclass 驱动程序
+- 存储更换器驱动程序 WDK、miniclass 驱动程序
+- miniclass 驱动程序 WDK 转换器
+ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a5dea73e27243821da5ee8c8de3501b91b33052b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 290eef3135d095147fc5e2d27e3f8331a186eea6
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368733"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606561"
 ---
-# <a name="introduction-to-changer-miniclass-drivers"></a>规划器微型类驱动程序简介
+# <a name="about-changer-miniclass-drivers"></a>关于转换器 Miniclass 驱动程序
 
+为了支持新的转换器，驱动程序编写器实现了一个链接到系统提供的变换器类驱动程序的转换器 miniclass 驱动程序。 必须仅编写一个新的转换器 miniclass 驱动程序，以支持系统尚未提供驱动程序的转换器。
 
-## <span id="ddk_introduction_to_changer_miniclass_drivers_kg"></span><span id="DDK_INTRODUCTION_TO_CHANGER_MINICLASS_DRIVERS_KG"></span>
+在开始实现新的 miniclass 驱动程序之前，应确保：
 
+- 设备是真正的更换器，而不是串行存取堆栈器。 使用更换器，可以按随机顺序（而不是固定顺序）在其驱动器中装载媒体，就像在原纸器中一样。
 
-若要支持新的转换器，驱动程序编写器实现换带机 miniclass 驱动程序链接到的系统提供的转换器类驱动程序。 必须编写新的转换器 miniclass 驱动程序只是为了支持系统不会不已提供相关的驱动程序换带机。
+- 设备的驱动器不是写入一次光驱，如 WORM、CD-R 或 DVD-R。
 
-在开始之前实现新的 miniclass 驱动程序，您应确保：
+- 设备的驱动器是相同的类型，而不是类型（如 cd-rom 和 CD-R）的混合。
 
--   设备是 true 转换器和集不串行访问纸器。 换带机允许在随机顺序，而不是固定的序列，如集纸器中所示其驱动器中装入媒体。
-
--   设备的驱动器不是写入-一旦光学介质驱动器，如蠕虫病毒爆发、 CD R 或 DVD-R。
-
--   设备的驱动器的所有相同类型，因为使用的类型，如 CD-ROM 和 CD。
-
-Microsoft 操作系统不支持写入-一次光学介质驱动器或更换器使用多个驱动器的类型。
-
- 
-
- 
-
-
-
-
+Microsoft 操作系统不支持写入一次光盘驱动器或更换有多种类型的驱动器。

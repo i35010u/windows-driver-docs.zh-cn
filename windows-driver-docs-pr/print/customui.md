@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 907b2be97ce48a34b688ac6e6e17b8a216bf0079
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: de6e33920d2613ac218f460869af6cac9389dd2d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881913"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652813"
 ---
 # <a name="customui-element"></a>customUI 元素
 
 
 可选的**customUI**元素指定要在客户端计算机上显示的自定义用户界面。
 
-**CustomUI**元素在*asyncui*命名空间中的此 URI 上定义： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+**CustomUI**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
 <a name="usage"></a>Usage
 -----
@@ -139,8 +139,8 @@ ms.locfileid: "74881913"
 
 ```cpp
 <?xml version="1.0"?>
-  <asyncPrintUIRequest xmlns="http://schemas.microsoft.com/2003/print/asyncui/1.0"
-      xmlns:myco="http://www.myprintercompany.com">
+  <asyncPrintUIRequest xmlns="https://schemas.microsoft.com/2003/print/asyncui/1.0"
+      xmlns:myco="https://www.myprintercompany.com">
     <requestOpen>
       <customUI dll="abc.dll" entrypoint="IHVFunction" bidi="true">
         <IHV:anyXMLData />

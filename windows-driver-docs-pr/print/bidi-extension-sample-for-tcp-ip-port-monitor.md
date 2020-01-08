@@ -3,25 +3,25 @@ title: TCP/IP 端口监视器的双向扩展示例
 description: TCP/IP 端口监视器的双向扩展示例
 ms.assetid: 76454b0c-0e02-4372-97ed-2401a785cef8
 keywords:
-- bidi 扩展文件 WDK 打印机自动配置
-- 框中自动配置支持 WDK 打印机，bidi 扩展名为的文件
+- 双向扩展文件 WDK 打印机自动配置
+- 内置自动配置支持 WDK 打印机，双向扩展文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbcadbc5803c82c622f728ebbf3e390b8c602b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c9f56681bb515ef57b391a69a28b8898ac9ed7d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379265"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652879"
 ---
 # <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>TCP/IP 端口监视器的双向扩展示例
 
 
-下面的代码示例是为标准 TCP/IP 端口监视器扩展 bidi 通信架构的示例 XML 文件。
+下面的代码示例是一个示例 XML 文件，它扩展了标准 TCP/IP 端口监视器的双向通信架构。
 
 ```xml
 <?xml version="1.0" encoding="US-ASCII"?>
-<bidi:Schema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Schema xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
     <Property name="Printer">
       <Property name="Layout">
         <Property name="InputBins">
@@ -61,7 +61,7 @@ ms.locfileid: "63379265"
 </bidi:Schema>
 ```
 
-上面的代码示例会导致以下查询：
+前面的代码示例将生成以下查询：
 
 ```cpp
 \Printer.Layout.InputBins.TopBin:Installed

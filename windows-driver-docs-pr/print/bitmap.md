@@ -12,12 +12,12 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd9ca4a4ab395dd22765cf832a793fded54201eb
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: c3db726107f7fa07f0ebf0fe8858ecda69091cc7
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881937"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652866"
 ---
 # <a name="bitmap-element"></a>bitmap 元素
 
@@ -100,7 +100,7 @@ ms.locfileid: "74881937"
 
 ```xml
 <?xml version="1.0" ?>
-   <asyncPrintUIRequest xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+   <asyncPrintUIRequest xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <messageBoxUI>
