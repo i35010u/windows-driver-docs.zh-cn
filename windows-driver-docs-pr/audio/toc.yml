@@ -4,10 +4,6 @@
   href: windows-threshold--what-s-new-for-audio.md
 - name: Windows 音频体系结构
   href: windows-audio-architecture.md
-- name: 开发 WDM 音频驱动程序的路线图
-  href: roadmap-for-developing-wdm-audio-drivers.md
-- name: 自定义音频驱动程序类型决策树
-  href: custom-audio-driver-type-decision-tree.md
 - name: WDM 音频驱动程序概述
   items:
     - name: WDM 音频驱动程序概述
@@ -16,6 +12,10 @@
       href: audio-universal-drivers.md
     - name: 通用音频体系结构
       href: universal-audio-architecture.md
+    - name: 开发 WDM 音频驱动程序的路线图
+      href: roadmap-for-developing-wdm-audio-drivers.md
+    - name: 自定义音频驱动程序类型决策树
+      href: custom-audio-driver-type-decision-tree.md
     - name: 音频信号处理模式
       href: audio-signal-processing-modes.md
     - name: 自定义音频驱动程序
@@ -799,6 +799,12 @@
               href: obtaining-a-device-interface-name.md
             - name: 音乐技术 GUID
               href: music-technology-guids.md
+- name: 音频设备故障排除
+  items:
+    - name: 音频设备故障排除概述
+      href: audio-devices-troubleshooting.md
+    - name: USB 音频设备无法播放
+      href: usb-audio-not-playing.md
 - name: 音频设备 DDI 参考概述
   items:
     - name: 音频设备 DDI 参考概述
