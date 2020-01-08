@@ -1,55 +1,25 @@
 ---
-title: Storport I/O 模型
-description: Storport I/O 模型
+title: Storport i/o 模型概述
+description: Storport i/o 模型概述
 ms.assetid: 9220b01e-725f-4a03-87f1-402c0686cccd
 keywords:
-- Storport 驱动程序 WDK I/O
-- I/O WDK Storport
+- Storport 驱动程序 WDK，i/o
+- I/o WDK Storport
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07360d804cf18580db8865f880fc966c44ffe261
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ee4cd96f3c8d5e294ab1e1f261b4ddcbccc9dec
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374511"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606429"
 ---
-# <a name="storport-io-model"></a>Storport I/O 模型
+# <a name="storport-io-model-overview"></a>Storport i/o 模型概述
 
+本部分介绍 Storport 驱动程序的 i/o 模型，并将此模型与 SCSI 端口驱动程序的模型进行比较。 Storport i/o 模型包含多个功能，旨在充分利用高速总线和存储设备的性能潜能。
 
-## <span id="ddk_storport_i_o_model_kg"></span><span id="DDK_STORPORT_I_O_MODEL_KG"></span>
+Storport 驱动程序使用 i/o 的推送模式。 这意味着，驱动程序会将 i/o 请求异步转发到其微型端口驱动程序，直到达到最大数量的重叠数据包，而无需等待微型端口驱动程序请求输入。 在推送模型中，端口驱动程序控制 i/o 请求的流动，并将请求推送到微型端口驱动程序。
 
+另一方面，SCSI 端口驱动程序使用 i/o 的请求模型。 在 i/o 的请求模型中，SCSI 端口驱动程序会以同步方式将 i/o 请求转发到其微型端口驱动程序，并等待微型端口驱动程序在发送下一个 i/o 请求之前请求新输入。 此外，微型端口驱动程序控制 i/o 请求的流，并从端口驱动程序中取出请求。
 
-本部分介绍 Storport 驱动程序的 I/O 模型并对此模型中使用的 SCSI 端口驱动程序进行了对比。 Storport I/O 模型包含多个功能旨在使性能最充分地利用潜在的高速总线和存储设备。
-
-Storport 驱动程序使用推送模型的 I/O。 这意味着该驱动程序将以异步方式对其微型端口驱动程序，最大数量的重叠数据包的 I/O 请求转发而无需等待微型端口驱动程序请求的输入。 在推送模型中，端口驱动程序控制的 I/O 请求流，并将推送到微型端口驱动程序的请求。
-
-另一方面，SCSI 端口驱动程序使用 I/O 请求的模型。 在请求模型中的 I/O，SCSI 端口驱动程序以同步方式将转发到其微型端口驱动程序的 I/O 请求并等待微型端口驱动程序，以请求新的输入，再发送下一步的 I/O 请求。 此外，微型端口驱动程序控制的 I/O 请求流和端口驱动程序中向下拉取请求。
-
-SCSI 端口驱动程序的 I/O 模型的详细信息，请参阅[SCSI 端口 I/O 模型](scsi-port-i-o-model.md)。
-
-在本部分中所涉及的主题如下所示：
-
-[Full-Duplex Mode](full-duplex-mode.md)
-
-[半双工模式：不适合于已发布产品](half-duplex-mode--not-appropriate-for-shipped-products.md)
-
-[未同步的 HwStorBuildIo 例程](unsynchronized-hwstorbuildio-routine.md)
-
-[未同步的微型端口驱动程序例程中的同步的访问](synchronized-access-within-unsynchronized-miniport-driver-routines.md)
-
-[访问 Storport I/O 模型中的分散/收集列表](access-to-scatter-gather-lists-in-the-storport-i-o-model.md)
-
-[Storport I/O 模型中的映射缓冲区的使用](use-of-mapping-buffers-in-the-storport-i-o-model.md)
-
-[性能提示：在 HwStartIo 期间完成的请求](performance-tip--completing-requests-during-hwstartio.md)
-
-[预处理和后处理的 Cdb 和探测代码](pre--and-post-processing-of-cdbs-and-sense-codes.md)
-
- 
-
- 
-
-
-
-
+有关 SCSI 端口驱动程序的 i/o 模型的详细信息，请参阅[Scsi 端口 I/o 型号](scsi-port-i-o-model.md)。

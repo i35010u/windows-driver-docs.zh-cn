@@ -6,18 +6,16 @@ keywords:
 - 存储类驱动程序 WDK，关于存储类驱动程序
 - 类驱动程序 WDK 存储，关于存储类驱动程序
 - HBA WDK 存储
-ms.date: 10/21/2019
+ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 94049848af080157b95f778f6eb7190f7a56cca2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 21229a8955192cbf8bb39ad6875f58c2f62b0370
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838092"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606385"
 ---
 # <a name="introduction-to-storage-class-drivers"></a>存储类驱动程序简介
-
-## <span id="ddk_introduction_to_storage_class_drivers_kg"></span><span id="DDK_INTRODUCTION_TO_STORAGE_CLASS_DRIVERS_KG"></span>
 
 *存储类驱动程序*使用已建立良好的 SCSI 类/端口接口，在系统提供存储端口驱动程序（当前为 SCSI、IDE、USB 和 IEEE 1394）的任何总线上控制其类型的大容量存储设备。 存储设备连接到的特定总线对于存储类驱动程序是透明的。
 
@@ -31,4 +29,5 @@ ms.locfileid: "72838092"
 
 对于 PnP 管理器，存储类驱动程序是一种[功能驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)，即驱动单个设备的驱动程序。 存储类驱动程序还可以充当[总线驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)，枚举其设备的子设备。 例如，分区媒体设备（如磁盘）的类驱动程序会返回表示其分区的 PDOs 的列表。 每个此类 PDO 都可以作为目标设备进行寻址，并由其自己的类驱动程序提供服务。
 
-**请注意**   应按照本部分中所述来实现 SCSI 设备（如打印机）的驱动程序或扫描仪。 此类 SCSI 设备的驱动程序利用相同的 SCSI 类/端口接口控制其设备，并具有相同的责任来处理 Irp，生成 SRBs，并将其作为存储设备的驱动程序发送到基础端口驱动程序。
+> [!NOTE]
+> 如本部分中所述，应实现 SCSI 设备（如打印机）的驱动程序或扫描仪。 此类 SCSI 设备的驱动程序利用相同的 SCSI 类/端口接口控制其设备，并具有相同的责任来处理 Irp，生成 SRBs，并将其作为存储设备的驱动程序发送到基础端口驱动程序。

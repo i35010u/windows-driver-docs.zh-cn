@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b046ff169db86578684c12ae37f4c8b106e18dba
-ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
+ms.openlocfilehash: 035f96ee192e9f654c4e07e4e554402f99e1c1b6
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "70025326"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606449"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查0x50：\_\_非分页\_区域中的页\_错误
 
@@ -227,5 +227,5 @@ fffff802`40d322f9 488b4810        mov     rcx,qword ptr [rax+10h] ds:ffffffff`00
 
 **驱动程序验证程序**
 
-驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源的使用情况，例如内存池。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符处键入*Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源的使用情况，例如内存池。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符下键入*verifier* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 

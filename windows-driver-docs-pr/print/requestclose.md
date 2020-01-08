@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82b40ae17284b90f874ea0cfd47d9d964c0014eb
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: c9541b545622da30f54c10438a6b54e3d2868849
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881890"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652997"
 ---
 # <a name="requestclose-element"></a>requestClose 元素
 
 可选的**requestClose**元素用于在客户端计算机上关闭事件通知消息。
 
-**RequestClose**元素在*asyncui*命名空间中的此 URI 上定义： [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
+**RequestClose**元素在*asyncui*命名空间中的此 URI 上定义： [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)。 （此资源可能在某些语言和国家/地区不可用。）
 
 ## <a name="usage"></a>Usage
 
@@ -68,7 +68,7 @@ ms.locfileid: "74881890"
 ```cpp
 <?xml version="1.0" ?>
    <asyncPrintUIResponse
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/response">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/response">
     <v1>
       <requestClose>
         <messageBoxUI>

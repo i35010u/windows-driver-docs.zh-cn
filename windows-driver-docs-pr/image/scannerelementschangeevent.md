@@ -1,9 +1,9 @@
 ---
 title: ScannerElementsChangeEvent 元素
-description: 所需的 ScannerElementsChangeEvent 元素告知客户端在扫描仪中已发生更改。
+description: 必需的 ScannerElementsChangeEvent 元素将通知客户端已在扫描仪中发生了更改。
 ms.assetid: 5a3eb934-631d-432b-befa-c67360fe68d1
 keywords:
-- ScannerElementsChangeEvent 元素成像设备
+- ScannerElementsChangeEvent 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a89411a3bef5f92972c580ce41e37911e3531d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10d89a5b510c6204bbad13fefb1b12b674a6d9b2
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370058"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653007"
 ---
 # <a name="scannerelementschangeevent-element"></a>ScannerElementsChangeEvent 元素
 
 
-所需**ScannerElementsChangeEvent**元素告知客户端的扫描程序中发生了更改。
+必需的**ScannerElementsChangeEvent**元素将通知客户端已在扫描仪中发生了更改。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63370058"
 </wscn:ScannerElementsChangeEvent>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,27 +65,27 @@ ms.locfileid: "63370058"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务应发送**ScannerElementsChangeEvent**向客户端时元素内已更改的元素[ **ScannerDescription**](scannerdescription.md)， [**ScannerConfiguration**](scannerconfiguration.md)， [ **DefaultScanTicket**](defaultscanticket.md)，或在扫描程序供应商扩展。
+当某个元素在扫描仪中的[**ScannerDescription**](scannerdescription.md)、 [**ScannerConfiguration**](scannerconfiguration.md)、 [**DefaultScanTicket**](defaultscanticket.md)或供应商扩展中发生更改时，WSD 扫描服务应将**ScannerElementsChangeEvent**元素发送到客户端。
 
-正文**ScannerElementsChangeEvent**必须包含[ **ElementChanges** ](elementchanges.md)具有已更新元素的完整 XML 元素。 如果返回的 XML 中缺少可选元素，WSD 扫描服务表示向客户端中，该服务不再支持该元素。 中支持此更改可能引起的一个选项，如电影扫描选项或双工扫描模式的删除。 客户端必须比较中的信息**ElementChanges**针对以前的数据来确定哪些值已更改，必须更新其内部数据存储。
+**ScannerElementsChangeEvent**的主体必须包含一个[**ElementChanges**](elementchanges.md)元素，该元素具有更新的元素的完整 XML。 如果返回的 XML 中缺少一个可选元素，则 WSD 扫描服务将向客户端指示该服务不再支持该元素。 此支持更改可能是由于删除了某个选项（如胶卷扫描选项或双工扫描模式）引起的。 客户端必须对**ElementChanges**中的信息与以前的数据进行比较，以确定哪些值已更改并且必须更新其内部数据存储。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例演示如何将设备报告由于扫描选项电影胶片安装更新扫描程序配置信息。
+下面的代码示例演示设备如何报告更新的扫描程序配置信息，因为安装了胶片扫描选项。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerElementsChangeEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerElementsChangeEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -274,7 +274,7 @@ WSD 扫描服务应发送**ScannerElementsChangeEvent**向客户端时元素内�
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DefaultScanTicket**](defaultscanticket.md)

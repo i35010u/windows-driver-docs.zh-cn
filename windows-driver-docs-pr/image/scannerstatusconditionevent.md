@@ -1,9 +1,9 @@
 ---
 title: ScannerStatusConditionEvent 元素
-description: 所需的 ScannerStatusConditionEvent 元素提供有关中扫描设备的单个状态更改的详细信息的客户端。
+description: 必需的 ScannerStatusConditionEvent 元素为客户端提供有关扫描设备中单个状态更改的详细信息。
 ms.assetid: 0a61fe67-ea1e-4143-afb8-edcdf50ee7c4
 keywords:
-- ScannerStatusConditionEvent 元素成像设备
+- ScannerStatusConditionEvent 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f017efb6e15d450f79c169d21ecffde4be19fee2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a2cdfc945ab0b909affd44dc71ab407becbc0da
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386300"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653005"
 ---
 # <a name="scannerstatusconditionevent-element"></a>ScannerStatusConditionEvent 元素
 
 
-所需**ScannerStatusConditionEvent**元素提供有关中扫描设备的单个状态更改的详细信息的客户端。
+必需的**ScannerStatusConditionEvent**元素为客户端提供有关扫描设备中单个状态更改的详细信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63386300"
 </wscn:ScannerStatusConditionEvent>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,27 +65,27 @@ ms.locfileid: "63386300"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务发送**ScannerStatusConditionEvent**向客户端的元素时[ **DeviceCondition** ](devicecondition.md)元素已添加或更改在[ **ActiveConditions** ](activeconditions.md)元素表。 正文**ScannerStatusConditionEvent**包含新的或已更改**DeviceCondition**元素。
+当在[**ActiveConditions**](activeconditions.md)元素表中添加或更改[**DeviceCondition**](devicecondition.md)元素时，WSD 扫描服务会向客户端发送一个**ScannerStatusConditionEvent**元素。 **ScannerStatusConditionEvent**的主体包含新的或已更改的**DeviceCondition**元素。
 
-WSD 扫描服务应发送[ **ScannerStatusConditionClearedEvent** ](scannerstatusconditionclearedevent.md)到客户端的元素时报告**DeviceCondition**已被清除。
+清除报告的**DeviceCondition**时，WSD 扫描服务应将[**ScannerStatusConditionClearedEvent**](scannerstatusconditionclearedevent.md)元素发送到客户端。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例显示了扫描设备通知有关扫描 lamp 失败的客户端的方式。
+下面的代码示例演示扫描设备如何向客户端通知扫描灯泡故障。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -103,7 +103,7 @@ WSD 扫描服务应发送[ **ScannerStatusConditionClearedEvent** ](scannerstatu
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [**ActiveConditions**](activeconditions.md)
 

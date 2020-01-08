@@ -9,27 +9,15 @@ keywords:
 - AddDevice 例程 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f09b05eb5a77fbe3029ed982721d4827055da297
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 158c53a70c2e24eaec63d795d5a91776c5b21ee7
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844482"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606469"
 ---
 # <a name="storage-filter-drivers-adddevice-routine"></a>存储筛选器驱动程序的 AddDevice 例程
 
+PnP 管理器会在检测到由该驱动程序控制的设备时调用存储筛选器驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程。 存储筛选器驱动程序（SFD）的*AddDevice*例程与存储类驱动程序的相同，不同之处在于，它不能尝试声明设备（SRB_FUNCTION_CLAIM_DEVICE）。
 
-## <span id="ddk_storage_filter_driver_s_adddevice_routine_kg"></span><span id="DDK_STORAGE_FILTER_DRIVER_S_ADDDEVICE_ROUTINE_KG"></span>
-
-
-PnP 管理器会在检测到由该驱动程序控制的设备时调用存储筛选器驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程。 存储筛选器驱动程序（SFD）的*AddDevice*例程与存储类驱动程序的相同，不同之处在于，它不能尝试声明设备（SRB\_功能\_声明\_设备）。
-
-有关存储类驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的信息，请参阅[存储类驱动程序](storage-class-drivers.md)。 有关 PnP 驱动程序的*AddDevice*例程的一般信息，请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。
-
- 
-
- 
-
-
-
-
+有关存储类驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程的信息，请参阅[存储类驱动程序](introduction-to-storage-class-drivers.md)。 有关 PnP 驱动程序的*AddDevice*例程的一般信息，请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)。

@@ -4,12 +4,12 @@ description: 当用户在 Windows 桌面上运行现有应用程序时，打印�
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a37d3c2e695cd3da0a3ebe306d08d1b595d4f674
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d9aa65c8f54186b1287527a14af9ac5cf4a2acc1
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840431"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606433"
 ---
 # <a name="printer-extensions"></a>打印机扩展
 
@@ -19,9 +19,9 @@ ms.locfileid: "72840431"
 
 打印机扩展可以采用任何支持 COM 的语言构建，但会经过优化，可使用 Microsoft .NET Framework 4 构建。 打印机扩展可以与打印驱动程序包一起分发，如果它们具有 XCopy 功能且不依赖于操作系统附带的外部运行时，如 .NET。 如果打印机扩展应用程序不满足这些条件，则可以将其分发到 setup.exe 或 MSI 包，并使用 v4 清单中指定的 PrinterExtensionUrl 指令在打印机的设备阶段体验中公布。 当使用 MSI 包分发打印机扩展应用程序时，可以选择将打印驱动程序添加到包，或者将其保留并单独分发驱动程序。 PrinterExtensionUrl 显示在打印机首选项的体验上。
 
-IT 管理员有几个选项可用于管理打印机扩展的分发。 如果在 setup.exe 或 MSI 中打包应用程序，则 IT 管理员可以使用标准的软件分发工具（如 System Center Configuration Manager （SCCM）），也可以将应用程序包括在其标准操作系统映像中。 IT 管理员还可以覆盖 v4 清单中指定的 PrinterExtensionUrl （如果它们编辑 HKEY\_本地\_计算机\\软件\\Microsoft\\Windows NT\\CurrentVersion\\打印\\打印机\\&lt;打印队列名称&gt;\\PrinterDriverData\\PrinterExtensionUrl。
+IT 管理员有几个选项可用于管理打印机扩展的分发。 如果在 setup.exe 或 MSI 中打包应用程序，则 IT 管理员可以使用标准的软件分发工具（如 Microsoft Endpoint Configuration Manager），也可以将应用程序包括在其标准操作系统映像中。 IT 管理员还可以覆盖 v4 清单中指定的 PrinterExtensionUrl （如果它们编辑 HKEY\_本地\_计算机\\软件\\Microsoft\\Windows NT\\CurrentVersion\\\\\\&lt;打印队列名称&gt;\\\\PrinterExtensionUrl。
 
-如果企业选择完全阻止打印机扩展，则可以通过名为 "计算机配置\\管理模板\\打印机的组策略来完成此操作\\不允许 v4 打印机驱动程序显示打印机扩展应用程序 "。
+如果企业选择阻止打印机扩展，则可以通过名为 "计算机配置\\\\管理模板的组策略来完成，\\不允许 v4 打印机驱动程序显示打印机扩展应用程序"。
 
 ## <a name="building-a-printer-extension"></a>生成打印机扩展
 
@@ -83,7 +83,7 @@ PrintNotify 服务启动后，它将检查 \[OfflineRoot\] 路径下的注册表
     \[PrinterExtensionIdT]
 ```
 
-例如，下面的一组密钥将向 {*PrinterExtensionIDGuid*} PrinterExtensionID 注册一个打印机扩展，并将一个完全限定路径注册到 "C：\\Program Files\\Fabrikam\\setup.exe" 可执行文件的*PrinterDriverID1Guid*}和 {*PrinterDriverID2Guid*} PrinterDriverIDs，具有打印机首选项和打印机通知原因。
+例如，下面的一组密钥将使用 {*PrinterExtensionIDGuid*} PrinterExtensionID 和一个完全限定的路径\\为 {PrinterDriverID1Guid} 和 {PrinterDriverID2Guid} PrinterDriverIDs 注册一个打印机扩展，并为 {} 和 {} 注册一个可执行\\\\文件。
 
 ```Registry
 [OfflineRoot]

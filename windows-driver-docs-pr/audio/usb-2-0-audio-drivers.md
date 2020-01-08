@@ -1,18 +1,18 @@
 ---
 title: USB 音频 2.0 驱动程序
 description: 从 Windows 10 开始，版本1703，Windows 附带了一个 USB 音频2.0 驱动程序。 此驱动程序提供基本功能。
-ms.date: 12/18/2019
+ms.date: 12/19/2019
 ms.localizationpriority: medium
 ms.topic: article
 ms.custom:
 - CI 111498
 - CSSTroubleshooting
-ms.openlocfilehash: 0d78b2ff61609f85f33d06b64947b611292a8cbd
-ms.sourcegitcommit: 4d0c56aca2236eb3271072c8381bb6834c96d133
+ms.openlocfilehash: a8989f52c9b5f6b4223c6c5ee60bac692df97474
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303403"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606383"
 ---
 # <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
@@ -121,7 +121,7 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 有关此规范的详细信息，请参阅 BCP.FMT-2 2.3.1.6。
 
-以下限制适用：
+存在以下限制：
 
 |                            |                        |                               |
 |----------------------------|------------------------|-------------------------------|
@@ -160,7 +160,7 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 以下子节提供了有关控件和请求的其他信息。
 
-### <a name="clock-source-entity"></a>时钟源实体 
+### <a name="clock-source-entity"></a>时钟源实体
 
 有关此规范的详细信息，请参阅 ADC-2 5.2.5.1。
 
@@ -170,7 +170,7 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 仅实现一个固定频率的时钟源实体无需实现采样频率控制集。 它实现了 "获取"，它将返回固定的频率，并实现报告单一离散频率的 "获取范围"。
 
-### <a name="clock-selector-entity"></a>时钟选择器实体 
+### <a name="clock-selector-entity"></a>时钟选择器实体
 
 有关此规范的详细信息，请参阅 ADC-2 5.2.5。2
 
@@ -197,6 +197,7 @@ Oem 和 Ihv 应根据提供的内置驱动程序来测试其现有的和新的�
 ```inf
 GenericDriverInstalled,,,,1
 ```
+
 内置驱动程序向 usbaudio2 注册以下兼容 Id。
 
 ```inf
@@ -329,48 +330,11 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 
 ## <a name="troubleshooting"></a>“疑难解答”
 
-如果驱动程序未启动，则应检查系统事件日志。 驱动程序记录指示失败原因的事件。 同样，可以按照[此博客文章](https://blogs.msdn.microsoft.com/matthew_van_eerde/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)中所述的步骤手动收集音频日志。 如果失败可能表示驱动程序出现问题，请使用下面所述的反馈中心进行报告，并包含日志。
+如果驱动程序未启动，则应检查系统事件日志。 驱动程序记录指示失败原因的事件。 同样，可以按照[此博客文章](https://matthewvaneerde.wordpress.com/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)中所述的步骤手动收集音频日志。 如果失败可能表示驱动程序出现问题，请使用下面所述的反馈中心进行报告，并包含日志。
 
-有关如何使用补充 TMF 文件读取 USB 音频2.0 类驱动程序的日志的信息，请参阅[此博客文章](https://blogs.msdn.microsoft.com/matthew_van_eerde/2017/10/23/how-to-gather-and-read-logs-for-microsofts-usb-audio-2-0-class-driver/)。 有关使用 TMF 文件的常规信息，请参阅[使用 TMF 文件显示跟踪日志](https://docs.microsoft.com/windows-hardware/drivers/devtest/displaying-a-trace-log-with-a-tmf-file)。
+有关如何使用补充 TMF 文件读取 USB 音频2.0 类驱动程序的日志的信息，请参阅[此博客文章](https://matthewvaneerde.wordpress.com/2016/09/26/report-problems-with-logs-and-suggest-features-with-the-feedback-hub//)。 有关使用 TMF 文件的常规信息，请参阅[使用 TMF 文件显示跟踪日志](https://docs.microsoft.com/windows-hardware/drivers/devtest/displaying-a-trace-log-with-a-tmf-file)。
 
-### <a name="audio-services-not-responding-error-and-usb-audio-device-does-not-work-in-windows-10-version-1703"></a>Windows 10 版本1703中的 "音频服务未响应" 错误和 USB 音频设备无法正常工作
-
-请考虑以下方案：
-
-1. 首次将通用串行总线（USB）音频设备（如音频适配器或 USB 数字到模拟转换器（DAC））连接到基于 Windows 10 版本1703的计算机。
-1. 操作系统检测设备并加载标准 USB 音频2.0 驱动程序（usbaudio2）。
-1. 然后，Windows 从 Windows 更新下载设备特定驱动程序。  
-1. 下载的设备驱动程序将替换 usbaudio2 驱动程序。
-
-在这种情况下，不能使用设备，并且计算机没有声音。 任务栏上的扬声器图标标记有一个 X 标记。 选择图标时，会收到以下消息：
-
-> 音频服务未响应。 要使音频正常工作，必须运行 Windows 音频和 Windows 音频终结点生成器服务。
-
-#### <a name="cause"></a>原因
-
-之所以出现这种 "音频未播放" 问题，是因为默认的 USB 音频2.0 驱动程序（usbaudio2）使用 WaveRT 端口进行操作，但设备特定的驱动程序并不是这样。 但是，在注册设备接口后，这两个驱动程序都使用 "波形" 引用字符串。
-当设备特定的驱动程序替换默认驱动程序时，仍使用 usbaudio2 创建的设备接口，因为引用字符串重叠。 因此，操作系统假定新驱动程序还支持 WaveRT 端口。 由于新的驱动程序不支持 WaveRT 端口，系统无法访问驱动程序。
-
-#### <a name="resolution"></a>分辨率
-
-若要解决此问题，请使用以下方法之一。
-
-**方法1**
-
-卸载设备。 要实现此目的，请执行下列步骤：
-
-1. 打开“设备管理器”。
-1. 右键单击（或点击并按住）设备的名称，然后选择 "**卸载**"。
-
-> 注意：在步骤2中，不要选中 "**删除此设备的驱动程序软件**" 复选框。
-
-**方法2**
-
-将设备连接到其他 USB 端口。 如果设备连接到其他 USB 端口，则可能不会出现此问题。
-
-**方法3**
-
-如果设备尚未连接，请先安装设备特定驱动程序。 为此，可以使用适用于设备的安装程序。 然后，连接设备。 Windows 现在选择特定于设备的驱动程序，而不是默认的 USB 音频2.0 驱动程序。 此方法适用于这种情况，这是因为仅当设备连接后设备特定驱动程序替换默认驱动程序时，才会出现此问题。
+有关 "音频服务未响应" 错误和 USB 音频设备在 Windows 10 版本1703中不起作用的信息，请参阅[Usb 音频未播放](usb-audio-not-playing.md)
 
 ## <a name="feedback-hub"></a>反馈中心
 
