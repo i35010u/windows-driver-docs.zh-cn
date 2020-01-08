@@ -1,21 +1,21 @@
 ---
-title: 存储端口驱动程序
+title: 存储端口驱动程序简介
 description: 存储端口驱动程序
 ms.assetid: 5ff4916c-7d1f-4b61-a332-6ed89df9db56
 keywords:
 - 存储端口驱动程序 WDK
 - 存储端口驱动程序 WDK，关于存储端口驱动程序
 - 端口驱动程序 WDK 存储
-ms.date: 10/08/2019
+ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 509f43e2d823626664ee956eb71cecbeb4591ba1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fa1abb10a3b2b5bdf52bb67784db291d824aa4aa
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844464"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606515"
 ---
-# <a name="storage-port-drivers"></a>存储端口驱动程序
+# <a name="introduction-to-storage-port-drivers"></a>存储端口驱动程序简介
 
 Microsoft Windows 包含三个系统提供的存储端口驱动程序：
 

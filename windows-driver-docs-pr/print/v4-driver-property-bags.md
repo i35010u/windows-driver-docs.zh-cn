@@ -4,12 +4,12 @@ description: V4 打印驱动程序模型提供了许多属性包，便于从自�
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aaa3f520cf05f14bf59aeeccd219afd461aeb94
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 51919d93e288268d3456903eaac287b4ffeeb4a9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844194"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653001"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 打印机驱动程序属性包
 
@@ -58,9 +58,9 @@ PrinterQueue. GetProperties （）–引用 queue 属性包</td>
 </tr>
 <tr class="odd">
 <td>XPS 呈现筛选器</td>
-<td><p>XPS 筛选器可以使用属性名称 "DriverPropertyBag" 从 "<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>打印筛选器管道" 属性包</strong></a>内访问驱动程序属性包，也可以从<em>filterpipeline</em>访问定义的值 XPS_FP_PROPERTY_BAG。 下面是有关 DriverPropertyBag 的信息：</p>
+<td><p>XPS 筛选器可以使用属性名称 "DriverPropertyBag" 从 "<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>打印筛选器管道" 属性包</strong></a>内访问驱动程序属性包，也可以从<em>filterpipeline</em>中 XPS_FP_PROPERTY_BAG 定义的值。 下面是有关 DriverPropertyBag 的信息：</p>
 <strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 以获取指向驱动程序属性包的 IPrinterPropertyBag 接口的指针。
-<p>和 XPS 筛选器可以使用属性名称 "QueuePropertyBag" 从 "打印筛选器管道" 属性包内或从<em>filterpipeline</em>中 XPS_FP_QUEUE_PROPERTY_BAG 定义的值来访问队列属性包。 下面是有关 QueuePropertyBag 的信息：</p>
+<p>和 XPS 筛选器可以使用属性名称 "QueuePropertyBag" 从 "打印筛选器管道" 属性包中访问队列属性包，或者从<em>filterpipeline</em>中 XPS_FP_QUEUE_PROPERTY_BAG 定义的值。 下面是有关 QueuePropertyBag 的信息：</p>
 <strong>属性类型：</strong>VT_UNKNOWN<strong>说明：</strong>指向 IUnknown 接口的指针。 调用 QueryInterface 以获取指向 queue 属性包的 IPrinterPropertyBag 接口的指针。</td>
 </tr>
 </tbody>
@@ -101,7 +101,7 @@ DEVMODE 属性包使用 XML 文件来指定属性包的成员，并使用 conver
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Properties xmlns="http://schemas.microsoft.com/windows/2011/08/printing/devmodemap">
+<Properties xmlns="https://schemas.microsoft.com/windows/2011/08/printing/devmodemap">
   <Property Name="FabrikamAccountCode">
     <String Length="32"></String>
   </Property>  
@@ -179,7 +179,7 @@ Config：&lt;名称&gt;
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Properties xmlns= "http://schemas.microsoft.com/windows/2011/08/printing/queueproperties">
+<Properties xmlns= "https://schemas.microsoft.com/windows/2011/08/printing/queueproperties">
   <Property Name="Name1">
     <String>String1</String>
   </Property>

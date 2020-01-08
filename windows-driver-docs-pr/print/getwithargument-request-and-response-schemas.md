@@ -4,12 +4,12 @@ description: 下面是 GetWithArgument 请求架构和相应的响应架构定�
 ms.assetid: F68731BC-2907-4FA2-B5A4-0FAC0A9F663A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d197342049aa9e50188e06736f033c8a12d671e2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fbc16419aeb0a032d12711a10eef37a74ef820b9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844584"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652989"
 ---
 # <a name="getwithargument-request-and-response-schemas"></a>GetWithArgument 请求和响应架构
 
@@ -24,7 +24,7 @@ GetWithArgument 请求用于查询打印机的一个或多个当前值。
 对此请求的响应位于以下[GetWithArgument 响应架构](#getwithargument-response-schema)部分。
 
 ```xml
-<bidi:GetWithArgument xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'>
+<bidi:GetWithArgument xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'>
   <Query schema='\Printer.Resources:Data'>
     <BIDI_STRING>en-us</BIDI_STRING>
   </Query>
@@ -35,9 +35,9 @@ GetWithArgument 请求架构的正式定义
 
 ```xml
 <?xml version='1.0'?>  
-<schema targetNamespace='http://schemas.microsoft.com/windows/2005/03/printing/bidi'  
-    xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'   
-    xmlns ='http://www.w3.org/2001/XMLSchema'>  
+<schema targetNamespace='https://schemas.microsoft.com/windows/2005/03/printing/bidi'  
+    xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'   
+    xmlns ='https://www.w3.org/2001/XMLSchema'>  
     <element name='GetWithArgument'>  
         <complexType>  
             <sequence maxOccurs='unbounded'>  
@@ -78,7 +78,7 @@ GetWithArgument 请求架构的正式定义
 此示例是对上述 GetWithArgument 请求的响应。 对于成功的查询，结果为特定架构的值。 如果查询失败，则结果为错误代码。
 
 ```xml
-<bidi:GetWithArgumentResponse xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:GetWithArgumentResponse xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema="\Printer.Data:GetWithArgument">
     <Schema name="\Printer.Data:GetWithArgument">
       <BIDI_BLOB>Base64 Encoded XML resource file data to be used by Print Config<BIDI_BLOB>
@@ -91,9 +91,9 @@ GetWithArgument 响应架构的正式定义
 
 ```xml
 <?xml version='1.0'?>  
-<schema targetNamespace='http://schemas.microsoft.com/windows/2005/03/printing/bidi'  
-    xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'   
-    xmlns ='http://www.w3.org/2001/XMLSchema'>  
+<schema targetNamespace='https://schemas.microsoft.com/windows/2005/03/printing/bidi'  
+    xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'   
+    xmlns ='https://www.w3.org/2001/XMLSchema'>  
     <element name='GetWithArgumentResponse'>  
         <complexType>  
             <sequence maxOccurs='unbounded'>  

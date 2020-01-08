@@ -11,12 +11,12 @@ keywords:
 - GDL WDK，错误
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e19438b6320c0ed66083690cfb425d5d7656ecea
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 141bda331dc507d7e0c94b7cbc98b616bdfcbe0d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881897"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652955"
 ---
 # <a name="troubleshooting-gdl-parsing"></a>排查 GDL 分析问题
 
@@ -61,10 +61,10 @@ ms.locfileid: "74881897"
 <a href="" id="symptom--dom-interface---xpath-query-cannot-find-any-elements-in-the-snapshot---for-example--selectsinglenode---snapshotroot-gdl-attribute----returns-nothing--"></a>症状： DOM 接口： Xpath 查询在快照中找不到任何元素（例如，selectSingleNode （"/SnapshotRoot/GDL\_属性"）不返回任何内容）。  
 解决方案： Xpath 假定不带命名空间前缀的元素名称引用 null 或空命名空间，而不是默认命名空间。 快照定义默认命名空间，大多数元素属于默认命名空间。
 
-若要使用 Xpath 访问这些元素，客户端必须首先将此默认命名空间映射到显式前缀。 若要以这种方式映射默认命名空间，请使用 document pbjects setProperty 方法。 需要设置的属性为 SelectionNamespaces。 使用此属性可为默认命名空间分配显式前缀。 在快照中[http://schemas.microsoft.com/2002/print/gdl/1.0](https://schemas.microsoft.com/2002/print/gdl/1.0)默认命名空间，因此，对 setProperty 的调用可能类似于下面的代码示例。
+若要使用 Xpath 访问这些元素，客户端必须首先将此默认命名空间映射到显式前缀。 若要以这种方式映射默认命名空间，请使用 document pbjects setProperty 方法。 需要设置的属性为 SelectionNamespaces。 使用此属性可为默认命名空间分配显式前缀。 在快照中[https://schemas.microsoft.com/2002/print/gdl/1.0](https://schemas.microsoft.com/2002/print/gdl/1.0)默认命名空间，因此，对 setProperty 的调用可能类似于下面的代码示例。
 
 ```cpp
-XMLDoc->setProperty(L"SelectionNamespaces", "xmlns:gdl=\"http://schemas.microsoft.com/2002/print/gdl/1.0\"");
+XMLDoc->setProperty(L"SelectionNamespaces", "xmlns:gdl=\"https://schemas.microsoft.com/2002/print/gdl/1.0\"");
 ```
 
 上面示例中的第二个参数实际上是一个变体，但为了简单起见，省略了这一增加的复杂性。 Xpath 查询现在必须显式引用命名空间前缀 gdl，并引用默认命名空间中的元素。 然后，该查询将成为下面的代码示例。

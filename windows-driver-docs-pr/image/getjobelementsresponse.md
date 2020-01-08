@@ -1,9 +1,9 @@
 ---
-title: GetJobElementsResponse element
-description: 所需的 GetJobElementsResponse 元素返回的客户端请求的作业相关信息。
+title: GetJobElementsResponse 元素
+description: 必需的 GetJobElementsResponse 元素返回客户端请求的与作业相关的信息。
 ms.assetid: b27c1aba-eb5f-4446-ab34-c03a969e954f
 keywords:
-- GetJobElementsResponse 元素成像设备
+- GetJobElementsResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f702c3e0b8182ca84ff0317de778fd02a22f0c2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2db1cd742c000d209ad6f82f86d389970e01d44a
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357000"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652975"
 ---
-# <a name="getjobelementsresponse-element"></a>GetJobElementsResponse element
+# <a name="getjobelementsresponse-element"></a>GetJobElementsResponse 元素
 
 
-所需**GetJobElementsResponse**元素返回的客户端请求的作业相关信息。
+必需的**GetJobElementsResponse**元素返回客户端请求的与作业相关的信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63357000"
 </wscn:GetJobElementsResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -67,27 +67,27 @@ ms.locfileid: "63357000"
 
 WSD 扫描服务必须支持**GetJobElementsResponse**操作。
 
-在客户端调用**GetJobElementsRequest**来确定作业与作业相关的元素的值的[ **JobId** ](jobid.md)标识。 WSD 扫描服务必须响应**GetJobElementsResponse**元素，其中包含所需的信息。 扫描服务返回的信息必须完全符合架构的扫描作业相关部分。
+客户端调用**GetJobElementsRequest**来确定[**JobId**](jobid.md)标识的作业的与作业相关的元素的值。 WSD 扫描服务必须通过包含所需信息的**GetJobElementsResponse**元素来做出响应。 扫描服务返回的信息必须完全符合与扫描作业相关的架构部分。
 
 <a name="examples"></a>示例
 --------
 
-在下面的代码示例中，扫描服务将返回 JobId 1 标识作业的作业状态。
+在下面的代码示例中，扫描服务为 JobId 1 标识的作业返回作业状态。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetJobElementsRequest</wsa:RelatesTo>
@@ -112,7 +112,7 @@ WSD 扫描服务必须支持**GetJobElementsResponse**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GetJobElementsRequest**](getjobelementsrequest.md)

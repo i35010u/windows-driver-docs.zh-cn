@@ -1,22 +1,21 @@
 ---
-title: IPM 配置和使用情况
-description: IPM 配置和使用情况
+title: 空闲电源管理配置和使用情况
+description: 空闲电源管理配置和使用情况
 ms.assetid: 95057785-e5b5-40ae-86e4-50bbf0014cef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ffeb42fb0ff4439e984281f1d3cb90bb475f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15eaff4268d8cb30dfe8d827bbce7dfe75092785
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368755"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606519"
 ---
-# <a name="ipm-configuration-and-usage"></a>IPM 配置和使用情况
+# <a name="idle-power-management-configuration-and-usage"></a>空闲电源管理配置和使用情况
 
+默认情况下不启用 Storport 空闲电源管理（IPM）。 可以通过将设备硬件密钥的 "StorPort" 子项中的 "EnableIdlePowerManagement" 值设置为任何非零值，在注册表中启用此功能。 这可以通过使用设备 INF 文件或使用注册表编辑器手动完成。
 
-默认情况下不启用 Storport 空闲电源管理 (IPM)。 它可以启用在注册表中的"EnableIdlePowerManagement"值设置为任何非零值的设备的硬件密钥的"StorPort"子项中。 这可以通过使用设备 INF 文件或手动使用注册表编辑器。
-
-下面的示例文本显示了所要添加到你的设备的 INF 文件以启用 Storport 空闲电源管理功能。
+以下示例文本显示了需要添加到设备的 INF 文件以启用 Storport IPM 功能的内容。
 
 ```cpp
           [DDInstall.HW]
@@ -24,18 +23,10 @@ ms.locfileid: "63368755"
           HKR, "StorPort", "EnableIdlePowerManagement", 0x00010001, 0x01
 ```
 
-这可以仅从 INF 文件 DDInstall.HW 部分 HKR 指向到硬件密钥而不是服务密钥的位置中。 有关如何更改 INF 文件的详细信息，请参阅[简介驱动程序的注册表项](https://go.microsoft.com/fwlink/p/?linkid=144533)。
+这只能在 INF 文件的 DDInstall 节中完成，其中 HKR 指向硬件密钥，而不是服务密钥。 有关如何更改 INF 文件的详细信息，请参阅[驱动程序的注册表项简介](https://go.microsoft.com/fwlink/p/?linkid=144533)。
 
-电源选项控制面板小程序的以下屏幕截图显示用于配置系统电源策略和磁盘空闲超时值。 就可以从**启动** &gt; **控制面板** &gt; **电源选项**。
+下面屏幕截图中显示的 "电源选项" 控制面板小程序用于配置系统电源策略和磁盘空闲超时值。 可以从 "**开始**&gt;**控制面板"** &gt;**电源选项**访问它。
 
-![演示如何 ipm 电源选项的屏幕截图](images/ipm-power-options.png)
+![阐释 ipm 电源选项的屏幕截图](images/ipm-power-options.png)
 
-命令行工具 (*Powercfg.exe*) 也可用。 类型**powercfg /？** 在命令提示符下使用情况信息。
-
- 
-
- 
-
-
-
-
+还可以使用命令行工具（*Powercfg*）。 键入**powercfg/？** 用于命令提示符下的使用情况信息。

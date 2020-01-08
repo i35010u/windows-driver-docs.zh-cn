@@ -7,12 +7,12 @@ keywords:
 - SCSI 端口驱动程序 WDK 存储
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 88254f5cdf7a673358d9b140fbe49d7ddc5634ae
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: 61aaac571d5d8b06466f2001716903d2804cf3fa
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262390"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606501"
 ---
 # <a name="scsi-port-driver-overview"></a>SCSI 端口驱动程序概述
 
@@ -28,7 +28,7 @@ SCSI 端口驱动程序的模拟功能还允许开发比单一端口驱动程序
 
 - [SCSI 端口驱动程序支持例程](scsi-port-driver-support-routines.md)
 
-- [带有存储类驱动程序的 SCSI 端口接口](scsi-port-s-interface-with-the-storage-class-driver.md)
+- [带有存储类驱动程序的 SCSI 端口接口](scsi-port-s-srb-interface-with-the-storage-class-driver.md)
 
 - [SCSI 端口具有 SCSI 端口微型端口驱动程序的接口](scsi-port-s-interface-with-scsi-port-miniport-drivers.md)
 

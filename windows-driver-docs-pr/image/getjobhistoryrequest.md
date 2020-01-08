@@ -1,9 +1,9 @@
 ---
-title: GetJobHistoryRequest element
-description: 所需的 GetJobHistoryRequest 元素请求与作业相关的变量之前已完成作业的摘要。
+title: GetJobHistoryRequest 元素
+description: 必需的 GetJobHistoryRequest 元素为先前完成的作业请求与作业相关的变量的摘要。
 ms.assetid: 679a2256-2b3f-4a54-be06-8b414acab679
 keywords:
-- GetJobHistoryRequest 元素成像设备
+- GetJobHistoryRequest 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d76f49c102a7756f109d077fb517d6182712d33d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbf8e434786b3917bf67f17f87d4247d7b3dab1e
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379379"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652973"
 ---
-# <a name="getjobhistoryrequest-element"></a>GetJobHistoryRequest element
+# <a name="getjobhistoryrequest-element"></a>GetJobHistoryRequest 元素
 
 
-所需**GetJobHistoryRequest**元素请求与作业相关的变量之前已完成作业的摘要。
+必需的**GetJobHistoryRequest**元素为先前完成的作业请求与作业相关的变量的摘要。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
 <wscn:GetJobHistoryRequest/>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -51,11 +51,11 @@ ms.locfileid: "63379379"
 
 WSD 扫描服务必须支持**GetJobHistoryRequest**操作元素。
 
-客户端可以调用**GetJobHistoryRequest**检索一个列表，其中包含以前已完成作业与作业相关的变量的摘要。 WSD 扫描服务必须响应[ **GetJobHistoryResponse** ](getjobhistoryresponse.md)操作元素，其中包含客户端要求的信息或相应的错误代码。
+客户端可以调用**GetJobHistoryRequest**来检索列表，其中包含之前完成的作业的与作业相关的变量的摘要。 WSD 扫描服务必须使用包含客户端请求的信息的[**GetJobHistoryResponse**](getjobhistoryresponse.md)操作元素或适当的错误代码进行响应。
 
-WSD 扫描服务保留的作业历史记录量是特定于实现的。
+WSD 扫描服务所保留的作业历史记录量是特定于实现的。
 
-此操作可以返回的所有[**常见 WSD 扫描服务操作的错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何对报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
 <a name="examples"></a>示例
 --------
@@ -65,15 +65,15 @@ WSD 扫描服务保留的作业历史记录量是特定于实现的。
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -84,7 +84,7 @@ WSD 扫描服务保留的作业历史记录量是特定于实现的。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GetJobHistoryResponse**](getjobhistoryresponse.md)

@@ -4,12 +4,12 @@ description: 为 Windows 8.1 编写位置传感器驱动程序
 ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fee589000db17ad5e520199f01559a013bdf6547
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2a0d90d2facc45448a788626675869304b062ade
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825061"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652961"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>为 Windows 8.1 编写位置传感器驱动程序
 
@@ -25,7 +25,7 @@ Windows 硬件认证计划允许硬件制造商接收其设备符合使用 Windo
 
 -   位置传感器必须支持至少一个内置数据报表类型所需的数据字段。
 
-通常，此 WDK 文档中的建议与认证计划要求相匹配。 但是，在创建要提交以供审批的传感器驱动程序时，必须查看官方认证计划文档。 有关 Windows 硬件认证计划的详细信息，请参阅[Windows 硬件开发人员中心](https://developer.microsoft.com/en-us/windows/hardware)网站。
+通常，此 WDK 文档中的建议与认证计划要求相匹配。 但是，在创建要提交以供审批的传感器驱动程序时，必须查看官方认证计划文档。 有关 Windows 硬件认证计划的详细信息，请参阅[Windows 硬件开发人员中心](https://developer.microsoft.com/windows/hardware)网站。
 
 ## <a name="location-api-requirements"></a>位置 API 要求
 
@@ -241,7 +241,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 </tr>
 <tr class="even">
 <td><p>SENSOR_STATE_INITIALIZING</p></td>
-<td><p>传感器驱动程序正在尝试获取修补程序。 锁定并跟踪修复后，传感器驱动程序应使此状态转换为 SENSOR_STATE_READY。</p>
+<td><p>传感器驱动程序正在尝试获取修补程序。 传感器驱动程序应在修补程序被锁定并跟踪后将此状态转换为 SENSOR_STATE_READY。</p>
 <p>例如，Wi-fi 提供商正在寻找 Internet 连接，移动电话提供商正在寻找无线电，或 GPS 传感器正在获取修补程序。</p>
 <p>当 GPS 传感器尝试重新获取修复时，应重新进入此状态。</p></td>
 <td><p>REPORT_INITIALIZING</p></td>

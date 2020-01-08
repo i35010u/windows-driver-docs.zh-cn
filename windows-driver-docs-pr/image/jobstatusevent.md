@@ -1,9 +1,9 @@
 ---
 title: JobStatusEvent 元素
-description: 所需的 JobStatusEvent 元素告知客户端作业的状态已更改。
+description: 必需的 JobStatusEvent 元素通知客户端作业的状态已更改。
 ms.assetid: 8cb510ef-9622-48d0-859d-e52c9b5b8190
 keywords:
-- JobStatusEvent 元素成像设备
+- JobStatusEvent 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d24694e35bc5ce8863c62f4401a481097df495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33ffd91141af72f57158b1a6181706369d28299e
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348765"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652981"
 ---
 # <a name="jobstatusevent-element"></a>JobStatusEvent 元素
 
 
-所需**JobStatusEvent**元素告知作业的状态已更改的客户端。
+必需的**JobStatusEvent**元素通知客户端作业的状态已更改。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63348765"
 </wscn:JobStatusEvent>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,25 +65,25 @@ ms.locfileid: "63348765"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务发送**JobStatusEvent**到客户端时作业的状态已更改的元素。 **JobStatusEvent**包含[ **JobStatus** ](jobstatus.md)元素，用于定义所有作业的当前状态有关的信息。 第一个**JobStatusEvent**消息通常将包括[ **JobId** ](jobid.md)元素和一个[ **JobState** ](jobstate.md)的**启动**。
+当作业的状态发生更改时，WSD 扫描服务会向客户端发送一个**JobStatusEvent**元素。 **JobStatusEvent**包含一个[**JobStatus**](jobstatus.md)元素，该元素定义有关作业当前状态的所有信息。 第一条**JobStatusEvent**消息通常包含[**JobId**](jobid.md)元素， [**JobState**](jobstate.md)为 "**已启动**"。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例显示了扫描设备通知有关作业 253 的当前状态的客户端的方式。
+下面的代码示例演示扫描设备如何向客户端通知作业253的当前状态。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/JobStatusEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/JobStatusEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -104,7 +104,7 @@ WSD 扫描服务发送**JobStatusEvent**到客户端时作业的状态已更改�
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**JobId**](jobid.md)

@@ -4,12 +4,12 @@ description: 下面列出了设置请求架构和相应的响应架构定义以�
 ms.assetid: 88E7F06C-3232-48C3-A0D6-2BEFF4ABA188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b349c7cba6d0187877b53abc264b5518f33d4c18
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53c1b87b5da29438077e6dc92f0b55ae602ca221
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840411"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652959"
 ---
 # <a name="set-request-and-response-schemas"></a>设置请求和响应架构
 
@@ -24,7 +24,7 @@ Set 请求用于将值写入打印机属性。
 在此示例中，请求将尝试设置两个属性。 第二个错误是有意的错误：内存属性不可写。 有关此请求的响应，请参阅下面的设置响应架构。
 
 ```xml
-<bidi:Set xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Set xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema='\Printer.DeviceInfo:Location'>
     <BIDI_STRING>supply room</BIDI_STRING>
   </Query>
@@ -38,9 +38,9 @@ Set 请求用于将值写入打印机属性。
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='Set'>
     <complexType>
       <sequence maxOccurs='unbounded'>
@@ -77,7 +77,7 @@ Set 请求用于将值写入打印机属性。
 这是对上述集请求的响应。 请注意，当写操作成功时，将返回不带任何值的原始查询值。 如果操作失败，则返回错误代码。
 
 ```xml
-<bidi:Set xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Set xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema='\Printer.DeviceInfo:Location'/>
   <Query schema='\Printer.Configuration.Memory:Size'>
     <Error>ERROR_BIDI_SCHEMA_READ_ONLY</Error>
@@ -89,9 +89,9 @@ Set 请求用于将值写入打印机属性。
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='Set'>
     <complexType>
       <sequence maxOccurs='unbounded'>

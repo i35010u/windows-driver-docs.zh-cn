@@ -1,9 +1,9 @@
 ---
 title: GetScannerElementsResponse 元素
-description: 所需的 GetScannerElementsResponse 元素包含对扫描程序有关的信息的客户端的请求的 WSD 扫描服务的响应。
+description: 必需的 GetScannerElementsResponse 元素包含 WSD 扫描服务对有关扫描程序的信息的客户端请求的响应。
 ms.assetid: da3cded6-6aa9-4fe6-ad02-9a02d2219075
 keywords:
-- GetScannerElementsResponse 元素成像设备
+- GetScannerElementsResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea5031172bf4368c685659885bd74c64a156b2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7c811aabdd510a18f90bffc3252fae5e4fa9536
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330278"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652967"
 ---
 # <a name="getscannerelementsresponse-element"></a>GetScannerElementsResponse 元素
 
 
-所需**GetScannerElementsResponse**元素包含对扫描程序有关的信息的客户端的请求的 WSD 扫描服务的响应。
+必需的**GetScannerElementsResponse**元素包含 WSD 扫描服务对有关扫描程序的信息的客户端请求的响应。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63330278"
 </wscn:GetScannerElementsResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -67,7 +67,7 @@ ms.locfileid: "63330278"
 
 WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
 
-当客户端已成功查询以获取通过扫描程序信息[ **GetScannerElementsRequest** ](getscannerelementsrequest.md)扫描服务必须响应操作， **GetScannerElementsResponse**操作元素，其中包含所需的信息。
+当客户端通过[**GetScannerElementsRequest**](getscannerelementsrequest.md)操作成功查询扫描程序信息时，扫描服务必须通过包含请求信息的**GetScannerElementsResponse**操作元素进行响应。
 
 <a name="examples"></a>示例
 --------
@@ -77,17 +77,17 @@ WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetScannerElementsRequest</wsa:RelatesTo>
@@ -115,22 +115,22 @@ WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
 </soap:Envelope>
 ```
 
-下面的代码示例显示了对扫描程序状态请求的响应。
+下面的代码示例演示对扫描程序状态请求的响应。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetScannerElementsRequest</wsa:RelatesTo>
@@ -171,23 +171,23 @@ WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
 </soap:Envelope>
 ```
 
-下面的代码示例演示的响应都包含一个 GetScannerElementsRequest 操作扫描程序配置请求和存在无效条目。
+下面的代码示例演示对 GetScannerElementsRequest 操作的响应，该操作包含两个 scanner 配置请求和一个无效条目。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  xmlns:ihv="http://www.example.com/extension"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  xmlns:ihv="https://www.example.com/extension"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetScannerElementsRequest</wsa:RelatesTo>
@@ -380,7 +380,7 @@ WSD 扫描服务必须支持**GetScannerElementsResponse**操作元素。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GetScannerElementsRequest**](getscannerelementsrequest.md)

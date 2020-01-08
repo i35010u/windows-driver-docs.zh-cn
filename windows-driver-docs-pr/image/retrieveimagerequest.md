@@ -1,9 +1,9 @@
 ---
 title: RetrieveImageRequest 元素
-description: 所需的 RetrieveImageRequest 操作元素包含用于创建扫描作业后从设备检索扫描数据的客户端的请求。
+description: 必需的 RetrieveImageRequest 操作元素包含客户端在创建扫描作业之后从设备检索扫描数据的请求。
 ms.assetid: 4f6d6bd0-b323-4f95-b380-2be9cec1ee6e
 keywords:
-- RetrieveImageRequest 元素成像设备
+- RetrieveImageRequest 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0023e7ca3f8211e5d626455ae634e983b79145c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf1c5900fce4ef892f9ba129f182c9dc04cecf01
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381615"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652945"
 ---
 # <a name="retrieveimagerequest-element"></a>RetrieveImageRequest 元素
 
 
-所需**RetrieveImageRequest**操作元素包含用于创建扫描作业后从设备检索扫描数据的客户端的请求。
+必需的**RetrieveImageRequest**操作元素包含客户端在创建扫描作业之后从设备检索扫描数据的请求。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63381615"
 </wscn:RetrieveImageRequest>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -73,52 +73,52 @@ ms.locfileid: "63381615"
 
 WSD 扫描服务必须支持**RetrieveImageRequest**操作元素。
 
-扫描服务必须验证[ **JobId** ](jobid.md)并[ **JobToken** ](jobtoken.md)客户端提供以确保该作业是有效的元素和已通过为请求检索的客户端。 如果请求是有效的扫描服务必须响应[ **RetrieveImageResponse** ](retrieveimageresponse.md)操作元素。
+扫描服务必须验证客户端提供的[**JobId**](jobid.md)和[**JobToken**](jobtoken.md)元素，以确保作业有效并且由请求检索的客户端创建。 如果请求有效，则扫描服务必须使用[**RetrieveImageResponse**](retrieveimageresponse.md)操作元素进行响应。
 
-此操作可以返回的所有[**常见 WSD 扫描服务操作的错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何对报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
-此操作可能也会返回以下错误：
+此操作还可能会返回以下错误：
 
--   **ClientErrorJobIdNotFound**扫描程序找不到 JobId 值相匹配的作业或作业 Id 值不在定义的范围内。
+-   **ClientErrorJobIdNotFound**扫描仪找不到与 JobId 值匹配的作业，或 JobId 值不在定义的范围内。
 
-    | Fault 属性 | 定义                         |
+    | 错误属性 | 定义                         |
     |----------------|------------------------------------|
-    | \[Code\]       | soap:Sender                        |
-    | \[Subcode\]    | wscn:ClientErrorJobIdNotFound      |
-    | \[Reason\]     | 找不到指定的 JobId。 |
-    | \[详细信息\]     | JobId:不正确的作业 Id             |
+    | 代码\[\]       | soap：发送方                        |
+    | \[子代码\]    | wscn:ClientErrorJobIdNotFound      |
+    | \[原因\]     | 找不到指定的 JobId。 |
+    | \[详细信息\]     | JobId： JobId 不正确             |
 
      
 
--   **ClientErrorNoImagesAvailable**扫描程序不具有可用于客户端来检索任何更多映像。
+-   **ClientErrorNoImagesAvailable**扫描仪没有更多可供客户端检索的映像。
 
-    | Fault 属性 | 定义                                     |
+    | 错误属性 | 定义                                     |
     |----------------|------------------------------------------------|
-    | \[Code\]       | soap:Sender                                    |
-    | \[Subcode\]    | wscn:ClientErrorNoImagesAvailable              |
-    | \[Reason\]     | 在服务器具有可用来获取任何映像。 |
+    | 代码\[\]       | soap：发送方                                    |
+    | \[子代码\]    | wscn:ClientErrorNoImagesAvailable              |
+    | \[原因\]     | 服务器没有可获取的映像。 |
     | \[详细信息\]     | 无                                           |
 
      
 
--   **ClientErrorInvalidJobToken**提供的 JobToken 值不能用于指定扫描作业 Id。
+-   **ClientErrorInvalidJobToken**对于指定的扫描 JobId，提供的 JobToken 值无效。
 
-    | Fault 属性 | 定义                                                          |
+    | 错误属性 | 定义                                                          |
     |----------------|---------------------------------------------------------------------|
-    | \[Code\]       | soap:Sender                                                         |
-    | \[Subcode\]    | wscn:ClientErrorInvalidJobToken                                     |
-    | \[Reason\]     | JobToken 参数值使用 JobId 参数无效。 |
+    | 代码\[\]       | soap：发送方                                                         |
+    | \[子代码\]    | wscn:ClientErrorInvalidJobToken                                     |
+    | \[原因\]     | JobToken 参数值对于 JobId 参数无效。 |
     | \[详细信息\]     | 无                                                                |
 
      
 
 -   **ClientErrorJobCancelled**
 
-    | Fault 属性 | 定义                              |
+    | 错误属性 | 定义                              |
     |----------------|-----------------------------------------|
-    | \[Code\]       | soap:Sender                             |
-    | \[Subcode\]    | wscn:ClientErrorJobCancelled            |
-    | \[Reason\]     | 当前扫描作业已取消。 |
+    | 代码\[\]       | soap：发送方                             |
+    | \[子代码\]    | wscn:ClientErrorJobCancelled            |
+    | \[原因\]     | 当前扫描作业已取消。 |
     | \[详细信息\]     | 无                                    |
 
      
@@ -126,20 +126,20 @@ WSD 扫描服务必须支持**RetrieveImageRequest**操作元素。
 <a name="examples"></a>示例
 --------
 
-下面的代码示例显示了客户端请求来检索标识 JobId 1 的作业的图像数据。
+下面的代码示例演示了一个客户端请求，以检索由 JobId 1 标识的作业的图像数据。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/RetrieveImage
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/RetrieveImage
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -156,7 +156,7 @@ WSD 扫描服务必须支持**RetrieveImageRequest**操作元素。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DocumentDescription**](documentdescription.md)

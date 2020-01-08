@@ -1,38 +1,28 @@
 ---
-title: ATA 端口 I/O 模型
-description: ATA 端口 I/O 模型
+title: ATA 端口 i/o 模型概述
+description: ATA 端口 i/o 模型概述
 ms.assetid: 6feaf2c4-63b2-4ab2-9d4d-7259406be652
 keywords:
-- ATA 端口驱动程序 WDK I/O
-- I/O WDK ATA 端口驱动程序
+- ATA 端口驱动程序 WDK，i/o
+- I/o WDK ATA 端口驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 402b4a219759dd92d834ce0fdb2debab27dc9e7c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f62ba5d199613ebc663315c53a2e8e2e9acea45
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368399"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606493"
 ---
-# <a name="ata-port-io-model"></a>ATA 端口 I/O 模型
+# <a name="ata-port-io-model-overview"></a>ATA 端口 i/o 模型概述
 
+> [!NOTE]
+> ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用[storport 驱动](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)程序和[storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
 
-## <span id="ddk_ata_port_i_o_model_kg"></span><span id="DDK_ATA_PORT_I_O_MODEL_KG"></span>
+与 Storport 驱动程序一样，ATA 端口驱动程序使用 i/o 的推送模式。 这意味着，驱动程序会将 i/o 请求异步转发到其微型端口驱动程序，直到达到最大数量的重叠数据包，而无需等待微型端口驱动程序请求输入。 在推送模型中，端口驱动程序控制 i/o 请求的流动，并将请求推送到微型端口驱动程序。
 
-**请注意**ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能被修改或不可用在将来。 相反，我们建议使用[Storport 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-driver)并[Storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
+另一方面，SCSI 端口驱动程序使用 i/o 的请求模型。 在 i/o 的请求模型中，SCSI 端口驱动程序会以同步方式将 i/o 请求转发到其微型端口驱动程序，并等待微型端口驱动程序在发送下一个 i/o 请求之前请求新输入。 此外，微型端口驱动程序控制 i/o 请求的流，并从端口驱动程序中取出请求。
 
+有关 Storport 驱动程序的 i/o 模型的详细信息，请参阅[storport I/o 型号](storport-i-o-model.md)。
 
-
-ATA 端口驱动程序，就像 Storport 驱动程序，使用 I/O 的推送模型。 这意味着该驱动程序将以异步方式对其微型端口驱动程序，最大数量的重叠数据包的 I/O 请求转发而无需等待微型端口驱动程序请求的输入。 在推送模型中，端口驱动程序控制的 I/O 请求流，并将推送到微型端口驱动程序的请求。
-
-另一方面，SCSI 端口驱动程序使用 I/O 请求的模型。 在请求模型中的 I/O，SCSI 端口驱动程序以同步方式将转发到其微型端口驱动程序的 I/O 请求并等待微型端口驱动程序，以请求新的输入，再发送下一步的 I/O 请求。 此外，微型端口驱动程序控制的 I/O 请求流和端口驱动程序中向下拉取请求。
-
-Storport 驱动程序的 I/O 模型的详细信息，请参阅[Storport I/O 模型](storport-i-o-model.md)。
-
-SCSI 端口驱动程序的 I/O 模型的详细信息，请参阅[SCSI 端口 I/O 模型](scsi-port-i-o-model.md)。
-
- 
-
- 
-
-
+有关 SCSI 端口驱动程序的 i/o 模型的详细信息，请参阅[Scsi 端口 I/o 型号](scsi-port-i-o-model.md)。

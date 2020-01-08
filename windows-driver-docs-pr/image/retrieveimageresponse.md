@@ -1,9 +1,9 @@
 ---
 title: RetrieveImageResponse 元素
-description: 所需的 RetrieveImageResponse 操作元素返回到客户端扫描数据。
+description: 必需的 RetrieveImageResponse 操作元素将扫描数据返回到客户端。
 ms.assetid: f63398c4-bbae-42ca-94c5-059b066c65cb
 keywords:
-- RetrieveImageResponse 元素成像设备
+- RetrieveImageResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 225908d15af4b9e1c0e37427e82e8b5d76e8aece
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 393e5aef3fc9883f8cf196b9e70391de1ef5df29
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381585"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652943"
 ---
 # <a name="retrieveimageresponse-element"></a>RetrieveImageResponse 元素
 
 
-所需**RetrieveImageResponse**操作元素将扫描数据返回到客户端。
+必需的**RetrieveImageResponse**操作元素将扫描数据返回到客户端。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63381585"
 </wscn:RetrieveImageResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,23 +65,23 @@ ms.locfileid: "63381585"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务必须支持**RetrieveImageResponse**操作元素。 扫描服务会发送此元素时客户端成功发送[ **RetrieveImageRequest** ](retrieveimagerequest.md)元素。
+WSD 扫描服务必须支持**RetrieveImageResponse**操作元素。 当客户端成功发送[**RetrieveImageRequest**](retrieveimagerequest.md)元素时，扫描服务将发送此元素。
 
-扫描服务返回的扫描数据以与二进制附件**RetrieveImageResponse**数据包。 响应必须打包为 MIME 多部分相关的内容类型并使用的 SOAP 消息传输优化机制\[MTOM\]高效地发送二进制图像数据。
+扫描服务使用**RetrieveImageResponse**数据包将扫描数据返回为二进制附件。 必须将响应打包为与 MIME 多部分相关的内容类型，并 \[MTOM\] 使用 SOAP 消息传输优化机制，以便有效地发送二进制图像数据。
 
-扫描服务返回的结果文件中的映像数量取决于的组合[ **ImagesToTransfer** ](imagestotransfer.md)元素[ **ScanTicket**](scanticket.md)和图像文件[**格式**](format.md)元素，如下所示：
+扫描服务在生成的文件中返回的图像数取决于[**ScanTicket**](scanticket.md)的[**ImagesToTransfer**](imagestotransfer.md)元素和 image file [**Format**](format.md)元素的组合，如下所示：
 
--   如果**格式**指定单个映像格式，则返回的文件将始终包含的单一映像。
--   如果**格式**指定的多页格式，则返回的文件将包含最多的值可以扫描输入的源的尽可能多的映像**ImagesToTransfer**。
+-   如果**format**指定了单一图像格式，则返回的文件将始终包含一个图像。
+-   如果**Format**指定了多页格式，则返回的文件将包含任意数量的图像，因为输入源可以扫描到**ImagesToTransfer**的值。
 
-如果[**格式**](format.md)单个图像格式的值指定[ **ImagesToTransfer** ](imagestotransfer.md)是 0 或大于 1，客户端将发送重复[ **RetrieveImageRequest** ](retrieveimagerequest.md)之前使用的扫描服务回复的 operation 元素**ClientErrorNoImagesAvailable**容错或直到**ImagesToTransfer**满足值。
+如果[**format**](format.md)指定单个图像格式，且[**ImagesToTransfer**](imagestotransfer.md)的值为0或大于1，则客户端将发送重复的[**RetrieveImageRequest**](retrieveimagerequest.md)操作元素，直到扫描服务使用**ClientErrorNoImagesAvailable**错误答复或满足**ImagesToTransfer**值为止。
 
-扫描服务应中止与作业[ **JobStateReason** ](jobstatereason.md)的**ImageTransferError**图像数据传输过程中如果有通信错误。
+如果在传输图像数据的过程中发生通信错误，扫描服务应中止[**JobStateReason**](jobstatereason.md)为**ImageTransferError**的作业。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例演示如何 WSD 扫描服务将图像数据发送给客户端。
+下面的代码示例演示了 WSD 扫描服务如何向客户端发送图像数据。
 
 ```xml
 mime-version: 1.0
@@ -100,16 +100,16 @@ Content-ID: <14629f74-2047-436c-8046-5cac76d280fc@uuid>
 
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:xop="http://www.w3.org/2003/12/xop/include"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:xop="https://www.w3.org/2003/12/xop/include"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
-    <wsa:To>http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous</wsa:To>
+    <wsa:To>https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/RetrieveImage
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/RetrieveImage
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheRetrieveImageRequest</wsa:RelatesTo>
@@ -134,9 +134,9 @@ Binary Scan Data
 --4aa7d814-adc1-47a2-8e1c-07585b9892a4--
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[**Format**](format.md)
+[**形式**](format.md)
 
 [**ImagesToTransfer**](imagestotransfer.md)
 

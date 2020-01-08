@@ -1,29 +1,29 @@
 ---
 title: PIN 打印的示例 PrintCapabilities 文件
-description: 下面是示例 PrintCapabilities 文件以演示如何指定个人标识号 (PIN) 受保护的打印。
+description: 下面是一个示例 PrintCapabilities 文件，用于说明如何指定个人 ID 号（PIN）受保护的打印。
 ms.assetid: 4C3BBEF1-C0DB-48F7-B4EC-BBB5D3699692
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1c674cdd09328183a57ede8759c07e46ea6f622
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fcf0ee3b823fbdbf5f960683f3c03adde3ef56d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354940"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652965"
 ---
 # <a name="sample-printcapabilities-file-for-pin-printing"></a>PIN 打印的示例 PrintCapabilities 文件
 
 
-下面是示例 PrintCapabilities 文件以演示如何指定个人标识号 (PIN) 受保护的打印。
+下面是一个示例 PrintCapabilities 文件，用于说明如何指定个人 ID 号（PIN）受保护的打印。
 
 ```xml
 <?xml version="1.0"?>
 <psf:PrintCapabilities
-   xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" 
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1"
-   xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
-   xmlns:pskv11=" http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11">
+   xmlns:psf="https://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" 
+   xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:xsd="https://www.w3.org/2001/XMLSchema" version="1"
+   xmlns:psk="https://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
+   xmlns:pskv11=" https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11">
    <psf:ParameterDef name="pskv11:JobPasscodeString">
       <psf:Property name="psf:DataType">
            <psf:Value xsi:type="xsd:QName">xsd:string</psf:Value>
@@ -60,7 +60,7 @@ ms.locfileid: "63354940"
 </psf:PrintCapabilities>
 ```
 
-有关受保护的打印的详细信息，请参阅[驱动程序支持的受保护的打印](driver-support-for-protected-printing.md)。
+有关受保护打印的详细信息，请参阅[受保护打印的驱动程序支持](driver-support-for-protected-printing.md)。
 
  
 

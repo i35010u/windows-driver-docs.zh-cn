@@ -1,9 +1,9 @@
 ---
 title: GetJobHistoryResponse 元素
-description: 所需的 GetJobHistoryResponse 元素返回的已完成的作业的摘要。
+description: 必需的 GetJobHistoryResponse 元素返回已完成作业的摘要。
 ms.assetid: 85c9edb4-fe6c-49a7-899a-71ce65e38852
 keywords:
-- GetJobHistoryResponse 元素成像设备
+- GetJobHistoryResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e04a3256ed576a77e70ca853278675f3f550791b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df3d4b5ae3fe43b640fb49565773d8d81fbb5931
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346197"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652971"
 ---
 # <a name="getjobhistoryresponse-element"></a>GetJobHistoryResponse 元素
 
 
-所需**GetJobHistoryResponse**元素返回的已完成的作业的摘要。
+必需的**GetJobHistoryResponse**元素返回已完成作业的摘要。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63346197"
 </wscn:GetJobHistoryResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -67,29 +67,29 @@ ms.locfileid: "63346197"
 
 WSD 扫描服务必须支持**GetJobHistoryResponse**操作元素。
 
-客户端可以调用[ **GetJobHistoryRequest** ](getjobhistoryrequest.md)来确定以前已完成作业与作业相关的变量的值。 WSD 扫描服务必须响应**GetJobHistoryResponse**操作元素，其中包含客户端要求的信息或相应的错误代码。
+客户端可以调用[**GetJobHistoryRequest**](getjobhistoryrequest.md)来确定先前完成的作业的与作业相关的变量的值。 WSD 扫描服务必须使用包含客户端请求的信息的**GetJobHistoryResponse**操作元素或适当的错误代码进行响应。
 
 WSD 扫描服务维护的作业历史记录量是特定于实现的。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例演示如何在作业历史记录的客户端的请求的响应中返回任何作业历史记录。
+下面的代码示例演示如何返回无作业历史记录，以响应客户端对作业历史记录的请求。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetJobHistoryRequest</wsa:RelatesTo>
@@ -103,22 +103,22 @@ WSD 扫描服务维护的作业历史记录量是特定于实现的。
 </soap:Envelope>
 ```
 
-下面的代码示例返回的作业和关联的数据，最后两个已完成作业的列表。
+下面的代码示例返回最后两个已完成作业的作业和关联数据的列表。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetJobHistoryRequest</wsa:RelatesTo>
@@ -153,7 +153,7 @@ WSD 扫描服务维护的作业历史记录量是特定于实现的。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GetJobHistoryRequest**](getjobhistoryrequest.md)

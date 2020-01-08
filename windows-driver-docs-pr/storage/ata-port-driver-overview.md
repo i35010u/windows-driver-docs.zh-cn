@@ -9,19 +9,19 @@ keywords:
 - IDE 控制器 WDK ATA 端口驱动程序
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6b3844806a19cf223cc29eb79d335198dfa441
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9e57e9325aba73063b3a18ee99afe19e6b6c2943
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842869"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606495"
 ---
 # <a name="ata-port-driver-overview"></a>ATA 端口驱动程序概述
 
->[!NOTE]
+> [!NOTE]
 > ATA 端口驱动程序和 ATA 微型端口驱动程序模型可能会在将来更改或不可用。 相反，我们建议使用[storport 驱动](storport-driver-overview.md)程序和[storport 微型端口](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)驱动程序模型。
 
-除了[SCSI 端口驱动程序](scsi-port-driver-overview.md)和[Storport 驱动程序](storport-driver-overview.md)以外，windows Vista 和更高版本的 WINDOWS 操作系统还提供 ATA 端口驱动程序（Ataport），这是一个特别适合与 IDE 一起使用的存储端口驱动程序 *。* 控制器.
+除了[SCSI 端口驱动程序](scsi-port-driver-overview.md)和[Storport 驱动程序](storport-driver-overview.md)以外，windows Vista 和更高版本的 WINDOWS 操作系统还提供 ATA 端口驱动程序（*Ataport*），这是一个特别适用于 IDE 控制器的存储端口驱动程序。
 
 ATA 端口驱动程序和其他系统提供的存储端口驱动程序之间的最大差别在于 ATA 端口驱动程序用来与其他驱动程序通信的协议。 所有其他系统提供的存储端口驱动程序都使用 SCSI 请求块（SRBs）与较高级别的驱动程序（如存储类驱动程序）和微型端口驱动程序通信。 ATA 端口驱动程序使用 SRBs 仅与更高级别驱动程序通信。 ATA 端口使用称为 IDE 请求块（IRB）的数据包进行通信，该数据包由[IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_request_block)结构定义。 IRBs 比 SRBs ATA 设备特征更好。
 

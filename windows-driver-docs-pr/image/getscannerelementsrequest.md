@@ -1,9 +1,9 @@
 ---
 title: GetScannerElementsRequest 元素
-description: 所需的 GetScannerElementsRequest 元素使客户端请求有关扫描程序的信息。
+description: 必需的 GetScannerElementsRequest 元素使客户端能够请求有关扫描仪的信息。
 ms.assetid: 9b5baed9-0950-4fbd-9e5b-4ad58dedb87e
 keywords:
-- GetScannerElementsRequest 元素成像设备
+- GetScannerElementsRequest 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c6865d6dde3f9981cced1e2e3b9a466010636d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1ec8fe032a4ce2a8501204491e9d11715787b3c
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330277"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652969"
 ---
 # <a name="getscannerelementsrequest-element"></a>GetScannerElementsRequest 元素
 
 
-所需**GetScannerElementsRequest**元素启用的客户端的请求，扫描程序的相关信息。
+必需的**GetScannerElementsRequest**元素使客户端能够请求有关扫描仪的信息。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63330277"
 </wscn:GetScannerElementsRequest>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -67,29 +67,29 @@ ms.locfileid: "63330277"
 
 WSD 扫描服务必须支持**GetScannerElementsRequest**操作。
 
-客户端可以调用**GetScannerElementsRequest**发现的扫描服务的架构的标准和供应商扩展元素。 可供客户端的信息包括设备根级别可访问的扫描程序数据的任何部分。 此信息包括说明、 配置、 状态、 默认扫描票证和扫描服务的任何供应商扩展。
+客户端可以调用**GetScannerElementsRequest**来发现扫描服务架构的标准和供应商扩展元素。 可供客户端使用的信息包括可在设备根级别访问的扫描程序数据的任何部分。 此信息包括说明、配置、状态、默认扫描票证和扫描服务的任何供应商扩展。
 
-如果扫描服务成功处理了**GetScannerElementsRequest**，它将返回[ **GetScannerElementsResponse** ](getscannerelementsresponse.md)操作请求的信息。 否则，扫描服务应返回相应的错误代码。
+如果扫描服务成功处理**GetScannerElementsRequest**，它将返回包含所请求信息的[**GetScannerElementsResponse**](getscannerelementsresponse.md)操作。 否则，扫描服务应返回相应的错误代码。
 
-此操作可以返回的所有[**常见 WSD 扫描服务操作的错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何对报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
+此操作可以返回所有常见的[**WSD 扫描服务操作错误代码**](common-wsd-scan-service-operation-error-codes.md)。 有关如何报告错误的详细信息，请参阅[WSD 扫描服务操作错误报告](wsd-scan-service-operation-error-reporting.md)。
 
 <a name="examples"></a>示例
 --------
 
-在下面的代码示例中，客户端指定单个 QName 值 (wscn:ScannerDescription) 来查询有关扫描程序的说明。
+在下面的代码示例中，客户端指定一个 QName 值（wscn： ScannerDescription）来查询扫描程序的说明。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -104,20 +104,20 @@ WSD 扫描服务必须支持**GetScannerElementsRequest**操作。
 </soap:Envelope>
 ```
 
-下面的代码示例显示了客户端的请求的扫描程序的状态。
+下面的代码示例演示客户端对扫描程序状态的请求。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -132,21 +132,21 @@ WSD 扫描服务必须支持**GetScannerElementsRequest**操作。
 </soap:Envelope>
 ```
 
-在下面的代码示例中，客户端指定两个 QName 值。 第一个 QName 是 wscn:ScannerConfiguration，并且第二个 QName 无效。
+在下面的代码示例中，客户端指定两个 QName 值。 第一个 QName 是 wscn： ScannerConfiguration，第二个 QName 无效。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  xmlns:ihv="http://www.example.com/extension"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  xmlns:ihv="https://www.example.com/extension"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -162,7 +162,7 @@ WSD 扫描服务必须支持**GetScannerElementsRequest**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GetScannerElementsResponse**](getscannerelementsresponse.md)

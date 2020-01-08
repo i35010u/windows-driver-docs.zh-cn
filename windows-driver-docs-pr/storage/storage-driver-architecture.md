@@ -7,12 +7,12 @@ keywords:
 - 存储驱动程序 WDK，类型
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bd53a3abd336ddabd3fbe9dc225fd5263011312
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: d3dac620c556b587fef571d3a3542f51c456f215
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262394"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606481"
 ---
 # <a name="windows-storage-driver-architecture"></a>Windows 存储驱动程序体系结构
 
@@ -30,18 +30,18 @@ ms.locfileid: "72262394"
 
     存储端口驱动程序从下一个更高的驱动程序（存储类驱动程序或干预筛选器驱动程序）接收 SRBs，并按如下所示处理它们：
 
-    - SCSI 或其他总线的存储端口驱动程序将 SRBs 与 CDBs 一起传递到与操作系统无关的、特定于 HBA 的*Storport 端口驱动程序，该驱动程序*动态链接到相应的端口驱动程序并提供特定于硬件的支持对于特定 HBA，为。 有关实现 SCSI 微型端口驱动程序的信息，请参阅[Storport 微型端口驱动程序](storport-miniport-drivers.md)。
-    - 旧 IDE/ATAPI 或 IEEE 1394 总线的存储端口驱动程序将从存储类驱动程序收到的 SRBs 转换为基础适配器所需的格式-例如，根据特定于总线的传输协议重新打包 CDBs，或将它们转换为不同的格式，从而将上层驱动程序与基础总线的 peculiarities 断开。
+    - SCSI 或其他总线的存储端口驱动程序将 SRBs 与 CDBs 一起传递到与操作系统无关的、特定于 HBA 的*Storport 端口驱动程序，该驱动程序*动态链接到相应的端口驱动程序，并为特定 HBA 提供特定于硬件的支持。 有关实现 SCSI 微型端口驱动程序的信息，请参阅[Storport 微型端口驱动程序](storport-miniport-drivers.md)。
+    - 旧 IDE/ATAPI 或 IEEE 1394 总线的存储端口驱动程序将从存储类驱动程序收到的 SRBs 转换为基础适配器所需的格式-例如，根据特定于总线的传输协议重新打包 CDBs，或将其转换为不同的格式，从而将上层驱动程序与基础总线的 peculiarities 分开。
 
 2. 上限或下限*存储筛选器驱动程序*支持特定于设备的功能，而不是由系统提供的存储类驱动程序提供的。 较低版本的筛选器存储驱动程序监视存储类驱动程序所颁发的 SRBs 和/或 Irp，并在将其传递到下一个较低的驱动程序（存储端口驱动程序或其他存储筛选器驱动程序）之前，根据需要进行修改。
 
     有关实现存储筛选器驱动程序的信息，请参阅[存储筛选器驱动程序](storage-filter-drivers.md)。
 
-3. *存储类驱动程序*使用 SCSI 端口/类接口在系统提供存储端口驱动程序的任何总线上控制其类型的设备。 类驱动程序特定于特定的设备类--例如，一个类驱动程序可以在任何支持的总线上运行所有的 CD-ROM 设备;其他可以控制所有磁盘设备。 存储类驱动程序通过构建包含 CDBs 的 SRBs，并向下一个较低版本的驱动程序（存储端口驱动程序或干预筛选器驱动程序）发出这些 SRBs，处理从存储堆栈中的用户应用程序或驱动程序发出的 i/o 请求，就像设备是 SCSI 设备。
+3. *存储类驱动程序*使用 SCSI 端口/类接口在系统提供存储端口驱动程序的任何总线上控制其类型的设备。 类驱动程序特定于特定的设备类--例如，一个类驱动程序可以在任何支持的总线上运行所有的 CD-ROM 设备;其他可以控制所有磁盘设备。 存储类驱动程序通过构建包含 CDBs 的 SRBs 处理来自更高存储堆栈中的用户应用程序或驱动程序的 i/o 请求，并将这些 SRBs 发出到下一个较低的驱动程序（存储端口驱动程序或干预筛选器驱动程序），就像设备是 SCSI 设备一样。
 
     存储类驱动程序的实现对于上层驱动程序是透明的。 磁带或介质转换器设备的类驱动程序实现为设备特定的 miniclass 驱动程序，该驱动程序链接到系统提供的类驱动程序。 系统为其他存储设备提供的类驱动程序，如磁盘和 CD-ROM/DVD，作为单一单一驱动程序实现。
 
-    有关实现存储类驱动程序的信息，请参阅[存储类驱动程序](storage-class-drivers.md)。 有关实现磁带或转换器 miniclass 驱动程序的信息，请分别参阅[磁带驱动](tape-drivers-overview.md)程序和[更换器驱动程序](changer-drivers.md)。
+    有关实现存储类驱动程序的信息，请参阅[存储类驱动程序](introduction-to-storage-class-drivers.md)。 有关实现磁带或转换器 miniclass 驱动程序的信息，请分别参阅[磁带驱动](tape-drivers-overview.md)程序和[更换器驱动程序](changer-drivers.md)。
 
 4. 上层筛选器存储驱动程序会从存储堆栈中较高的用户应用程序和驱动程序中截取 Irp，然后在将其传递到下一个较低版本的驱动程序（存储类驱动程序或其他存储筛选器驱动程序）之前对其进行修改。 筛选器驱动程序通常监视基础设备的性能。
 

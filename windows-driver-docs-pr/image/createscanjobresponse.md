@@ -1,9 +1,9 @@
 ---
 title: CreateScanJobResponse 元素
-description: 必需的 CreateScanJobResponse 元素包含对客户端的扫描请求的 WSD 扫描服务的响应。
+description: 必需的 CreateScanJobResponse 元素包含 WSD 扫描服务对客户端扫描请求的响应。
 ms.assetid: a832bdc2-9c47-41da-ac78-a844b8f84ec1
 keywords:
-- CreateScanJobResponse 元素成像设备
+- CreateScanJobResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd61b561afd387dc7cf0c9a6d16d01996a15beb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8aa2db14d95976c4f47c68b53cf5f60ea6593648
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370975"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652985"
 ---
 # <a name="createscanjobresponse-element"></a>CreateScanJobResponse 元素
 
 
-所需**CreateScanJobResponse**元素包含对客户端的扫描请求的 WSD 扫描服务的响应。
+必需的**CreateScanJobResponse**元素包含 WSD 扫描服务对客户端扫描请求的响应。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63370975"
 </wscn:CreateScanJobResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -76,36 +76,36 @@ ms.locfileid: "63370975"
 
 WSD 扫描服务必须支持**CreateScanJobResponse**操作元素。
 
-WSD 扫描服务发送**CreateScanJobResponse**到客户端的响应中的客户端的操作元素[ **CreateScanJobRequest**](createscanjobrequest.md)。
+WSD 扫描服务会向客户端发送**CreateScanJobResponse**操作元素，以响应客户端的[**CreateScanJobRequest**](createscanjobrequest.md)。
 
-如果客户端进行有效的扫描请求，WSD 扫描服务必须返回以下信息：
+如果客户端发出了有效的扫描请求，则 WSD 扫描服务必须返回以下信息：
 
--   一个唯一[ **JobId** ](jobid.md)来标识作业。 扫描程序将生成**JobId**的方式实现定义中定义的范围。 扫描服务不重复使用，以便客户端将具有较早的作业的作业不混淆最近分配的值。
--   JobToken 中的唯一标识符。 与作业 Id 来唯一地表示扫描作业配对 JobToken。 JobToken 传递给扫描中的服务 RetrieveImageRequest 操作元素以启用扫描设备，若要验证扫描请求者实际创建扫描作业。
--   ImageInformation，其中包含有关从与当前正在验证 ScanTicket 进行扫描生成的图像数据的信息。
--   DocumentFinalParameters，其中包含此扫描作业的扫描服务使用的实际 DocumentParameters 元素。
+-   用于标识作业的唯一[**JobId**](jobid.md) 。 扫描程序在定义的范围内以实现定义的方式生成**JobId** 。 扫描服务不能重复使用最近分配的值，因此客户端不会将作业与较旧的作业混淆。
+-   JobToken 中的唯一标识符。 JobToken 与 JobId 配对，以唯一表示扫描作业。 JobToken 传递给 RetrieveImageRequest 操作元素中的扫描服务，以使扫描设备能够验证扫描请求者是否确实创建了扫描作业。
+-   ImageInformation，其中包含与当前正在验证的 ScanTicket 进行的扫描有关得到的图像数据有关的信息。
+-   DocumentFinalParameters，其中包含扫描服务用于此扫描作业的实际 DocumentParameters 元素。
 
-客户端必须检索实际的图像数据从扫描服务发送一个或多个[ **RetrieveImageRequest** ](retrieveimagerequest.md)操作元素。 客户端有 60 秒发送**RetrieveImageRequest**扫描服务已答复了客户端的操作元素[ **CreateScanJobRequest**](createscanjobrequest.md)。 如果扫描服务不会收到**RetrieveImageRequest**在此时间内，它应中止与作业[ **JobStateReason** ](jobstatereason.md)的**JobTimedOut**. 如果作业包含多个文档，此超时适用之间每个连续**RetrieveImageRequest/响应**操作。
+客户端必须通过发送一个或多个[**RetrieveImageRequest**](retrieveimagerequest.md)操作元素，从扫描服务检索实际图像数据。 在扫描服务响应客户端的[**CreateScanJobRequest**](createscanjobrequest.md)之后，客户端有60秒的时间来发送**RetrieveImageRequest**操作元素。 如果扫描服务在这段时间内没有收到**RetrieveImageRequest** ，它应中止[**JobStateReason**](jobstatereason.md)为**JobTimedOut**的作业。 如果作业包含多个文档，则此超时适用于每个连续的**RetrieveImageRequest/响应**操作。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例说明了对 CreateScanJobRequest 的 WSD 扫描服务响应。
+下面的代码示例演示对 CreateScanJobRequest 的 WSD 扫描服务响应。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheCreateScanJobRequest</wsa:RelatesTo>
@@ -177,7 +177,7 @@ WSD 扫描服务发送**CreateScanJobResponse**到客户端的响应中的客户
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**CreateScanJobRequest**](createscanjobrequest.md)

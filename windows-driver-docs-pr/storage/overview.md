@@ -1,31 +1,22 @@
 ---
-title: 概述
-description: 概述
+title: 关于存储接收器驱动程序
+description: 关于存储接收器驱动程序
 ms.assetid: e150228e-820f-49ac-bc3f-644e77f3d544
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11882e9b5b4634cbc993d5d575df9b292213245c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eae47543610473920c9deb799ef6a34e28089a7e
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389412"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606521"
 ---
-# <a name="overview"></a>概述
+# <a name="about-storage-silo-drivers"></a>关于存储接收器驱动程序
 
+本部分介绍存储接收器驱动程序系统组件的基础设计和体系结构，这些组件启用以下事件序列：
 
-本主题介绍的基础的设计和体系结构存储接收器驱动程序系统组件，使以下事件序列：
+1. 用户将符合 IEEE 1667 的存储设备连接到其系统。
 
-1.  用户连接到他们的系统 IEEE 1667 合规的存储设备。
+2. 设备已被识别。 安装并配置了相应的驱动程序、系统组件和第三方组件。
 
-2.  识别设备。 安装和配置合适的驱动程序、 系统组件和第三方组件。
-
-3.  Windows shell 和任何已安装的第三方应用程序可以发现、 访问、 管理和与根据 IEEE 1667 规范设备进行交互。
-
- 
-
- 
-
-
-
-
+3. Windows shell 和任何已安装的第三方应用程序都可以根据 IEEE 1667 规范来发现、访问和管理设备并与之交互。
