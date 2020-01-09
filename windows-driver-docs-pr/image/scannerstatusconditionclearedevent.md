@@ -1,9 +1,9 @@
 ---
 title: ScannerStatusConditionClearedEvent 元素
-description: 所需的 ScannerStatusConditionClearedEvent 元素通知客户端已在扫描仪上中清除先前报告的 DeviceCondition 条件。
+description: 必需的 ScannerStatusConditionClearedEvent 元素通知客户端在扫描程序中清除了之前报告的 DeviceCondition 条件。
 ms.assetid: c849caba-d77b-441b-a5e1-94f9285cef3f
 keywords:
-- ScannerStatusConditionClearedEvent 元素成像设备
+- ScannerStatusConditionClearedEvent 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bee70559ed044dd9fd3a566e9d74c222f5daf3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84e2d28c03d35c8f81c245dc1a8fbe584fec0cc7
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386304"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653009"
 ---
 # <a name="scannerstatusconditionclearedevent-element"></a>ScannerStatusConditionClearedEvent 元素
 
 
-所需**ScannerStatusConditionClearedEvent**元素将告知客户端的先前报告[ **DeviceCondition** ](devicecondition.md)条件已清除在扫描程序。
+必需的**ScannerStatusConditionClearedEvent**元素通知客户端在扫描程序中清除了之前报告的[**DeviceCondition**](devicecondition.md)条件。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63386304"
 </wscn:ScannerStatusConditionClearedEvent>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -65,25 +65,25 @@ ms.locfileid: "63386304"
 <a name="remarks"></a>备注
 -------
 
-WSD 扫描服务发送**ScannerStatusConditionClearedEvent**中标识元素时设备条件[ **ScannerStatusConditionEvent** ](scannerstatusconditionevent.md)已清除。 **ScannerStatusConditionClearedEvent**包含[ **DeviceConditionCleared** ](deviceconditioncleared.md)元素，其中包含已清除的条件并从该处清除它的时间。
+当[**ScannerStatusConditionEvent**](scannerstatusconditionevent.md)中标识的设备条件已清除时，WSD 扫描服务将发送**ScannerStatusConditionClearedEvent**元素。 **ScannerStatusConditionClearedEvent**包含一个[**DeviceConditionCleared**](deviceconditioncleared.md)元素，该元素包含清除的条件和清除它的时间。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例显示了设备通知前面所有条件 ConditionId 1543 标识已都清除的客户端的方式：
+下面的代码示例演示设备如何通知客户端： ConditionId 1543 标识的上一个条件已清除：
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionClearedEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionClearedEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -101,7 +101,7 @@ WSD 扫描服务发送**ScannerStatusConditionClearedEvent**中标识元素时�
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [**ConditionId**](conditionid.md)
 

@@ -1,9 +1,9 @@
 ---
 title: GetActiveJobsResponse 元素
-description: 所需的 GetActiveJobsResponse 元素返回的所有当前处于活动状态的扫描作业与作业相关的变量的摘要。
+description: 必需的 GetActiveJobsResponse 元素返回所有当前活动扫描作业的与作业相关的变量的摘要。
 ms.assetid: 77efef7f-451d-49f8-80c1-6ab12c98ee7b
 keywords:
-- GetActiveJobsResponse 元素成像设备
+- GetActiveJobsResponse 元素图像设备
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e42d915720be7b96214a9fc098c53c97e4aaa0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02e604cc11af151776ea059e2102abc8c0439d1d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353013"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652977"
 ---
 # <a name="getactivejobsresponse-element"></a>GetActiveJobsResponse 元素
 
 
-所需**GetActiveJobsResponse**元素返回的所有当前处于活动状态的扫描作业与作业相关的变量的摘要。
+必需的**GetActiveJobsResponse**元素返回所有当前活动扫描作业的与作业相关的变量的摘要。
 
-<a name="usage"></a>用法
+<a name="usage"></a>Usage
 -----
 
 ```xml
@@ -33,7 +33,7 @@ ms.locfileid: "63353013"
 </wscn:GetActiveJobsResponse>
 ```
 
-<a name="attributes"></a>特性
+<a name="attributes"></a>属性
 ----------
 
 没有特性。
@@ -67,29 +67,29 @@ ms.locfileid: "63353013"
 
 WSD 扫描服务必须支持**GetActiveJobsResponse**操作。
 
-客户端可以调用[ **GetActiveJobsRequest** ](getactivejobsrequest.md)以确定所有当前处于活动状态的扫描作业与作业相关的变量的值。 WSD 扫描服务必须响应**GetActiveJobsResponse**元素，其中包含客户端要求的信息或相应的错误代码。
+客户端可以调用[**GetActiveJobsRequest**](getactivejobsrequest.md)来确定所有当前活动扫描作业的与作业相关的变量的值。 WSD 扫描服务必须使用包含客户端请求的信息的**GetActiveJobsResponse**元素或适当的错误代码进行响应。
 
-**GetActiveJobsResponse**包含[ **ActiveJobs** ](activejobs.md)元素，其中包含的所有作业的摘要。
+**GetActiveJobsResponse**包含一个[**ActiveJobs**](activejobs.md)元素，该元素包含所有作业的摘要。
 
 <a name="examples"></a>示例
 --------
 
-下面的代码示例演示如何返回没有活动的扫描作业的事实。
+下面的代码示例演示如何返回没有活动扫描作业的事实。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetActiveJobsRequest</wsa:RelatesTo>
@@ -103,22 +103,22 @@ WSD 扫描服务必须支持**GetActiveJobsResponse**操作。
 </soap:Envelope>
 ```
 
-下面的代码示例将报告两个活动的扫描作业。
+下面的代码示例报告了两个活动扫描作业。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetActiveJobsRequest</wsa:RelatesTo>
@@ -153,7 +153,7 @@ WSD 扫描服务必须支持**GetActiveJobsResponse**操作。
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**ActiveJobs**](activejobs.md)

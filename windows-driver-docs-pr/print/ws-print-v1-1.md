@@ -4,12 +4,12 @@ description: 在 Windows Vista 中引入了用于打印的设备上的 Web 服�
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6231bc8dadeae49a12d2880620b99b8b8606f054
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 160da94a9d9fb5431c4ad0adaab9650782ee81b3
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881929"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653017"
 ---
 # <a name="web-services-on-devices-for-printing-ws-print"></a>用于打印的基于设备的 Web 服务 (WS-Print)
 
@@ -65,13 +65,13 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 
 ### <a name="ws-print-v11-namespace"></a>WS 打印 v1.1 命名空间
 
-**命名空间：** `<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>`
-**XML 命名空间定义：** `xmlns:wprt12="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"`
+**命名空间：** `<https://schemas.microsoft.com/windows/2010/06/wdp/printv11>`
+**XML 命名空间定义：** `xmlns:wprt12="<https://schemas.microsoft.com/windows/2012/10/wdp/printV12>"`
 
 ### <a name="ws-print-v12-namespace"></a>WS 打印 v1.0 命名空间
 
-**命名空间：** `<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>`
-**XML 命名空间定义：** `xmlns:wprt11="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"`
+**命名空间：** `<https://schemas.microsoft.com/windows/2012/10/wdp/printV12>`
+**XML 命名空间定义：** `xmlns:wprt11="<https://schemas.microsoft.com/windows/2010/06/wdp/printv11>"`
 
 ## <a name="specifying-ws-print-11-support"></a>指定 WS 打印1.1 支持
 
@@ -82,7 +82,7 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 ```xml
 <soap:Envelope
 ...
-  xmlns:wprt11="http://schemas.microsoft.com/windows/2010/06/wdp/printv11">"
+  xmlns:wprt11="https://schemas.microsoft.com/windows/2010/06/wdp/printv11">"
 ...
   <wprt11:SupportsWSPrintv11>true</wprt11:SupportsWSPrintv11>
 ...
@@ -92,14 +92,14 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 
 ```xml
 <soap:Envelope
-        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-        xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-        xmlns:wprt="http://schemas.microsoft.com/windows/2006/08/wdp/print"
-        xmlns:wprt11="http://schemas.microsoft.com/windows/2010/06/wdp/printv11">"
+        xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+        xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+        xmlns:wprt="https://schemas.microsoft.com/windows/2006/08/wdp/print"
+        xmlns:wprt11="https://schemas.microsoft.com/windows/2010/06/wdp/printv11">"
   <soap:Header>
-    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsa:To>https://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/08/wdp/print/GetPrinterElementsResponse
+      https://schemas.microsoft.com/windows/2006/08/wdp/print/GetPrinterElementsResponse
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetPrinterElementsRequest</wsa:RelatesTo>
@@ -135,9 +135,9 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 以下 XML 代码片段显示了支持 WS 打印 v1.1 的打印设备的架构。
 
 ```xml
-<xs:schema targetNamespace="http://schemas.microsoft.com/windows/2010/06/wdp/printv11"
-           xmlns:wprt11="http://schemas.microsoft.com/windows/2010/06/wdp/printv11"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema targetNamespace="https://schemas.microsoft.com/windows/2010/06/wdp/printv11"
+           xmlns:wprt11="https://schemas.microsoft.com/windows/2010/06/wdp/printv11"
+           xmlns:xs="https://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
 
 <xs:annotation>
@@ -164,7 +164,7 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 ```xml
 <soap:Envelope
 …
-    xmlns:wprtV12="http://schemas.microsoft.com/windows/2012/10/wdp/printV12">
+    xmlns:wprtV12="https://schemas.microsoft.com/windows/2012/10/wdp/printV12">
 …
     <wprtV12:SupportsWSPrintV12>true</wprtV12:SupportsWSPrintV12>
 …
@@ -175,14 +175,14 @@ Web 服务技术为描述和共享信息提供了通用框架。 因此，Window
 
 ```xml
 <soap:Envelope
-     xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-     xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-     xmlns:wprt="http://schemas.microsoft.com/windows/2006/08/wdp/print"
-     xmlns:wprtV12="http://schemas.microsoft.com/windows/2012/10/wdp/printV12">
+     xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+     xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+     xmlns:wprt="https://schemas.microsoft.com/windows/2006/08/wdp/print"
+     xmlns:wprtV12="https://schemas.microsoft.com/windows/2012/10/wdp/printV12">
      <soap:Header>
-          <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+          <wsa:To>https://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
           <wsa:Action>
-               http://schemas.microsoft.com/windows/2006/08/wdp/print/GetPrinterElementsResponse
+               https://schemas.microsoft.com/windows/2006/08/wdp/print/GetPrinterElementsResponse
           </wsa:Action>
           <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
           <wsa:RelatesTo>uuid:MsgIdOfTheGetPrinterElementsRequest</wsa:RelatesTo>

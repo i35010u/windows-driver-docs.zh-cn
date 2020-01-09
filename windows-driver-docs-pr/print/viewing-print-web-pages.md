@@ -3,22 +3,22 @@ title: 查看打印网页
 description: 查看打印网页
 ms.assetid: c2cf782c-0f53-47e1-8c5e-1e2aa87613c4
 keywords:
-- Internet 打印 WDK，并查看打印网页
+- Internet 打印 WDK，查看打印网页
 - 查看打印网页
 - 显示打印网页
-- 打印网页 WDK 中查看
-- 网页 WDK 打印机、 查看
-- WDK 中的打印服务器页
-- 查看打印服务器页
+- 打印网页 WDK，查看
+- 网页 WDK 打印机，查看
+- 打印服务器页 WDK
+- 查看打印服务器页面
 - 打印 Url WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 706b189efd5834df0f3246d32407ff65de6b8292
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 489bf59109547b89cc3c12118dc55d12202ca6e9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345286"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653013"
 ---
 # <a name="viewing-print-web-pages"></a>查看打印网页
 
@@ -26,45 +26,45 @@ ms.locfileid: "63345286"
 
 
 
-与任何类型的客户端平台上执行任何 Internet 浏览器中，用户可以查看网页的显示状态的 Microsoft Windows 2000 或更高版本打印服务器和其连接的打印机。 Microsoft 提供了一组-驻留在服务器上生成这些网页的 HTML 文件。 使用 Url 的客户端浏览器，可以引用网页打印服务器和每个服务器安装打印机。 从这些页面的链接，可以引用其他页。
+对于任何类型的客户端平台上执行的任何 Internet 浏览器，用户都可以查看显示 Microsoft Windows 2000 或更高版本打印服务器及其连接的打印机状态的网页。 Microsoft 提供了一组用于生成这些网页的服务器驻留 HTML 文件。 使用 Url 的客户端浏览器可以引用打印服务器和每个服务器安装的打印机的网页。 可以通过这些页面中的链接引用其他页面。
 
-对于以支持 Web 页的 Windows 2000 打印服务器，它必须运行任一 Windows 2000 Server 的软件与 Microsoft Internet 信息服务器 (IIS) 或与 Microsoft 对等 Web 服务器的 Windows 2000 Professional 软件。
+对于支持网页的 Windows 2000 打印服务器，该服务器必须运行带有 Microsoft Internet Information Server （IIS）的 Windows 2000 服务器软件或 Windows 2000 Professional software with Microsoft 对等 Web 服务器。
 
-为了使 Windows XP 的打印服务器能支持 Web 页面，它必须运行任一 Microsoft Windows Server 2003 的软件与 Microsoft Internet 信息服务器 (IIS) 或与 Microsoft 对等 Web 服务器的 Windows XP Professional 软件。 请注意，在 Windows XP Home Edition 中的打印服务器不支持 Web 页。
+为了使 Windows XP 打印服务器支持网页，它必须运行 Microsoft Windows Server 2003 software with Microsoft Internet Information Server （IIS）或 Windows XP Professional software with Microsoft 对等 Web 服务器。 请注意，Windows XP Home Edition 中的打印服务器不支持网页。
 
-若要查看打印服务器页上，用户指定以下 URL 格式：
+若要查看打印服务器页面，用户需要指定以下 URL 格式：
 
-http://&lt;ServerName&gt;/printers
+https://&lt;ServerName&gt;/printers
 
-其中&lt;ServerName&gt;是服务器名称 （Internet 连接的 DNS 名称），或者 intranet 连接的 WINS 名称。 该 URL 指向生成的打印服务器的页面的 HTML 文件。
+其中 &lt;ServerName&gt; 是服务器名称（Internet 连接的 DNS 名称或 intranet 连接的 WINS 名称）。 URL 指向用于生成打印服务器页面的 HTML 文件。
 
-服务器页提供了为每个服务器上可用的打印队列的打印队列页面的链接。 可以通过所有用户访问共享的打印队列。 用户还可以通过使用以下格式指定 URL 引用的共享打印机的打印队列页：
+服务器页为服务器上提供的每个打印队列提供了一个指向打印队列页面的链接。 所有用户都可以访问共享打印队列。 用户还可以通过使用以下格式指定 URL 来引用共享打印机的打印队列页面：
 
-http://&lt;ServerName&gt;/&lt;ShareName&gt;
+https://&lt;ServerName&gt;/&lt;共享名&gt;
 
-其中&lt;ShareName&gt;是打印队列的共享名称，其属性表中指定。
+其中 &lt;共享名&gt; 是打印队列的共享名，如其属性表中所指定。
 
-如果用户选择打印机的打印文件夹中的链接，自动启动 Windows Internet Explorer 并访问打印队列页面的 URL。 或者，如前面所述，用户可以查看打印服务器页面或打印队列页面通过指定的任何 HTML 浏览器的页面的 URL。
+如果用户在打印文件夹中选择打印机的链接，则将自动启动 Windows Internet Explorer 并访问打印队列页的 URL。 或者，正如前面所述，用户可以通过指定页面的 URL 来查看 "打印服务器" 页或 "打印队列" 页。
 
-从可以解释通过 Microsoft Active Server Pages (ASP) 的模板文件生成打印网页。 这些模板 （称为 ASP 文件） 包含标准的 HTML 标记和 ASP 脚本标记 (&lt;%和 %&gt;)。
+打印网页是通过 Microsoft Active Server Pages （ASP）可以解释的模板文件生成的。 这些模板（称为 ASP 文件）包含标准 HTML 标记和 ASP 脚本标记（&lt;% 和%&gt;）。
 
-当 Active Server Pages 解释器遇到 ASP 脚本标记中的文本时，它将调用相应脚本语言解释器 （如 JScript 或 VBScript） 以处理文本。 生成的 HTML 数据流然后发送到客户端浏览器。
+当 Active Server Pages 解释器在 ASP script 标记中遇到文本时，它将调用相应的脚本语言解释器（如 JScript 或 VBScript）来处理文本。 然后，将生成的 HTML 数据流发送到客户端浏览器。
 
-有关 Microsoft Active Server Pages 的详细信息，请参阅 Microsoft Windows SDK 文档。
+有关 Microsoft Active Server 页面的详细信息，请参阅 Microsoft Windows SDK 文档。
 
-基于 COM 的一套[打印网页的 ActiveX 对象](activex-objects-for-print-web-pages.md)，与关联的自动化界面，用于获取打印机属性和 SNMP 信息提供 （在 Oleprn.dll)。
+提供了一组基于 COM 的[ActiveX 对象](activex-objects-for-print-web-pages.md)，其中包含关联的自动化接口，为获取打印机属性和 SNMP 信息提供（在 Oleprn 中）。
 
-当用户想要查看特定服务器或打印机的 Web 页面时，将执行以下步骤：
+当用户想要查看特定服务器或打印机的网页时，将执行以下步骤：
 
-1.  用户使用浏览器来指定适当的 URL。 URL 指向一个指定的打印服务器上的模板文件。
+1.  用户使用浏览器指定适当的 URL。 该 URL 指向指定打印服务器上的一个模板文件。
 
-2.  驻留在服务器中的 Active Server Pages 解释程序，它是 IIS 的一部分，搜索 ASP 脚本标记，调用相应脚本语言解释器解释脚本文本，并将返回的结果放置在 HTML 数据流。
+2.  服务器驻留的 Active Server Pages 解释器是 IIS 的一部分，搜索 ASP 脚本标记，调用相应的脚本语言解释器来解释脚本文本，并将返回的结果放入 HTML 数据流。
 
-3.  ASP 解释器，在服务器上，将生成的 HTML 流发送到客户端浏览器。
+3.  服务器上的 ASP 解释器将生成的 HTML 流发送到客户端的浏览器。
 
-下图说明了按其打印机 URL 从客户端发送到打印服务器，以及如何将其关联的 HTML 流返回到客户端的过程。
+下图说明了将打印机 URL 从客户端发送到打印服务器的过程，以及如何将其关联的 HTML 流返回到客户端。
 
-![说明将打印 url 从客户端发送到打印服务器的关系图](images/prnturl.png)
+![说明如何将打印 url 从客户端发送到打印服务器的关系图](images/prnturl.png)
 
  
 

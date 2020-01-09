@@ -10,36 +10,36 @@ keywords:
 - 命名空间 WDK GDL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dcc840e67d0a1d348d9ab1fe64ad6364ee42e3c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4c8c997a78288cad82da9d32179559ef71ee77b
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355193"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653015"
 ---
 # <a name="xml-snapshot-namespaces"></a>XML 快照命名空间
 
 
-&lt;SnapshotRoot&gt; XML 快照中的元素定义快照命名空间，并将它们与 xsd、 xsi 和默认前缀关联。
+XML 快照中的 &lt;SnapshotRoot&gt; 元素定义快照命名空间，并将它们与 xsd、xsi 和 default 前缀关联。
 
 ```cpp
-<SnapshotRoot xmlns="http://schemas.microsoft.com/2002/print/gdl/1.0"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SnapshotRoot xmlns="https://schemas.microsoft.com/2002/print/gdl/1.0"
+    xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
 ```
 
-下面的代码示例演示&lt;架构&gt;由 GDL 分析器生成的 XSD 架构中的元素的开始标记。
+下面的代码示例演示了 GDL 分析器生成的 XSD 架构中的 &lt;架构&gt; 元素的开始标记。
 
 ```cpp
 <schema
-    xmlns="http://www.w3.org/2001/XMLSchema"
-    xmlns:gdl="http://schemas.microsoft.com/2002/print/gdl/1.0"
-    targetNamespace="http://schemas.microsoft.com/2002/print/gdl/1.0"
+    xmlns="https://www.w3.org/2001/XMLSchema"
+    xmlns:gdl="https://schemas.microsoft.com/2002/print/gdl/1.0"
+    targetNamespace="https://schemas.microsoft.com/2002/print/gdl/1.0"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified">
 ```
 
-这些定义最小化使用的架构和快照中显式命名空间前缀的需求。 典型的用户不需要再也不用担心这些定义的含义。 您需要了解这些命名空间约定仅当你选择要使用\*数据类型：XSD\_定义。 有关模板作者的数据类型由使用提供的定义\*XSDTypeDefinition 指令应遵循的命名空间和中定义的默认值&lt;架构&gt;元素。 这些 XSD 的实例数据\_定义数据类型需要遵循的命名空间中定义的&lt;SnapshotRoot&gt;。
+这些定义最大限度地减少了在架构和快照中使用显式命名空间前缀的需求。 典型用户无需担心这些定义的含意。 仅当选择使用 \*数据类型： XSD\_定义时，才需要注意这些命名空间约定。 对于模板作者，使用 \*XSDTypeDefinition 指令提供的数据类型定义应遵循 &lt;schema&gt; 元素中定义的命名空间和默认值。 这些 XSD\_定义数据类型的实例数据需要遵循 &lt;SnapshotRoot&gt;中定义的命名空间。
 
  
 
