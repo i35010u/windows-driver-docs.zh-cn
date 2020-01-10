@@ -4,12 +4,12 @@ description: V4 驱动程序体系结构的高级设计目标是为 Microsoft St
 ms.assetid: 6318E480-C567-4866-8E88-B19904408C59
 ms.date: 09/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a449bf0f6fe1c95e18ff2013ede74abc234749e7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8419a777f40fb5dbfa2db76e6d5d93faecd55861
+ms.sourcegitcommit: 3fbf71b2bd92abca0bfb3c373f57af9a0eb67c93
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838780"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75775731"
 ---
 # <a name="v4-driver-ui-architecture"></a>V4 驱动程序 UI 体系结构
 
@@ -19,7 +19,7 @@ V4 驱动程序体系结构的高级设计目标是为 Microsoft Store 应用用
 
 当用户在 Windows 桌面上运行现有应用程序时，打印机扩展应用程序支持打印首选项和打印机通知。 虽然这些应用程序的 Ui 差别很大，但每个 ui 针对鼠标和键盘用户进行了优化，但不管 UI 如何，业务逻辑和 v4 打印驱动程序的连接仍然可以类似。
 
-下图显示了在 GitHub 上提供的[v4 打印机驱动程序和打印机扩展示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)的 Microsoft Store 设备应用程序的高级体系结构。
+下图显示了在 GitHub 上提供的[V4 打印驱动程序和打印机扩展示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)的 Microsoft Store 设备应用程序的高级体系结构。
 
 ![自定义 ui 体系结构概述](images/v4custuiarch.png)
 
@@ -33,7 +33,7 @@ V4 驱动程序体系结构的高级设计目标是为 Microsoft Store 应用用
 
 Microsoft Store 设备应用和打印机扩展示例附带的 PrinterExtensionLibrary 项目使用相同的源代码，但生成代码，使其可在项目之间移植，而无需为每个项目单独生成投影. 若要使 PrinterExtensionLibrary 项目的代码可移植，你必须将该项目转换为可移植类库。 执行以下步骤以进行转换。
 
-1. 在 Microsoft Visual Studio 中，单击 "**文件**" &gt; "**新建**" &gt;**项目**，然后在 "**搜索已安装的模板**" 框中搜索 "可移植的"。
+1. 在 Microsoft Visual Studio 中，单击 "**文件**" > "**新建**" > **项目**，然后在 "**搜索已安装的模板**" 框中搜索 "可移植的"。
 
 2. 选择 "可移植类库C#视觉对象"，然后在 "**名称**" 文本框中提供项目的名称，然后单击 **"确定"。**
 
@@ -41,21 +41,21 @@ Microsoft Store 设备应用和打印机扩展示例附带的 PrinterExtensionLi
 
 4. 右键单击可移植类库项目，然后选择 "**卸载**"。 然后打开 .csproj 文件，并将以下部分添加到文件中，就在文档中的最后一个标记之前。
 
-```xml
-  <ItemGroup>
-    <COMReference Include="PrinterExtensionLib">
-      <Guid>{91CE54EE-C67C-4B46-A4FF-99416F27A8BF}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-```
+    ```xml
+      <ItemGroup>
+        <COMReference Include="PrinterExtensionLib">
+          <Guid>{91CE54EE-C67C-4B46-A4FF-99416F27A8BF}</Guid>
+          <VersionMajor>1</VersionMajor>
+          <VersionMinor>0</VersionMinor>
+          <Lcid>0</Lcid>
+          <WrapperTool>tlbimp</WrapperTool>
+          <Isolated>False</Isolated>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+        </COMReference>
+      </ItemGroup>
+    ```
 
-5. 如果由于 COM 引用而看到警告，请将以下内容添加到 &lt;PropertyGroup&gt; 标记：
+5. 如果由于 COM 引用而看到警告，请将以下内容添加到 \<PropertyGroup\> 标记：
 
 ```xml
 <ResolveComReferenceSilent>true</ResolveComReferenceSilent>
@@ -72,6 +72,3 @@ Microsoft Store 设备应用和打印机扩展示例附带的 PrinterExtensionLi
 [打印机扩展接口](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/#interfaces)
 
 [GitHub 上的 v4 打印驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)
-
-
-

@@ -4,15 +4,14 @@ description: 描述对 USB 设备的双向支持，结合使用双向 XML 文件
 ms.assetid: C4012369-F1C6-4EBC-8DAE-F4E551DE782D
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfe05a522576ec1f572460bd1771d367841687d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cf0b03ad984b6c99f0006be1b8ac929a9f063a63
+ms.sourcegitcommit: 3fbf71b2bd92abca0bfb3c373f57af9a0eb67c93
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843620"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75775727"
 ---
 # <a name="usb-bidi-extender"></a>USB 双向扩展程序
-
 
 Windows 允许制造商通过结合使用双向 XML 文件和称为 USB 双向扩展器的 Javascript 文件，为 USB 设备支持双向通信（双向）。
 
@@ -38,35 +37,33 @@ USB 双向扩展器允许应用程序将双向与 USB 结合使用作为传输�
 
 ## <a name="usb-bidi-extender-api-reference"></a>USB 双向扩展器 API 参考
 
-
 USB 双向扩展器中的 JavaScript 代码使用以下功能与打印设备通信：
 
--   **getSchemas**
+- **getSchemas**
 
--   **setSchema**
+- **setSchema**
 
--   **getStatus**
+- **getStatus**
 
--   **requestStatus**
+- **requestStatus**
 
--   **startPrintJob**
+- **startPrintJob**
 
--   **writePrintData**
+- **writePrintData**
 
--   **endPrintJob**
+- **endPrintJob**
 
 有关这些 Api 的详细信息，请参阅[JAVASCRIPT API 参考](javascript-api-reference-.md)。
 
 ## <a name="usbmon-bidi-extension-xml-schema"></a>USBMon 双向扩展 XML 架构
 
-
 USBMon 双向扩展文件使用与 SNMP 双向扩展文件和 WSDMon 双向扩展文件相同的基本结构。 XML 架构文件在 Windows 驱动程序工具包中发布，USBMon 双向扩展文件将在 INFGate WHCK 测试过程中自动进行架构验证。 如果要开发双向扩展架构并使用 USB 总线，请注意以下信息：
 
--   值可以指定 Get、Set 或 GetSet 的 accessType。 这指示在双向 Get 或 Set 操作类型中支持所述架构元素的位置。
+- 值可以指定 Get、Set 或 GetSet 的 accessType。 这指示在双向 Get 或 Set 操作类型中支持所述架构元素的位置。
 
--   值可以指定查询密钥。 这应该用于表示用于从设备获取数据的物理操作。 [打印驱动程序 USB 监视器和双向示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)演示了支持两个不同 QUERYKEYS 的 usb 设备。 同一查询密钥下的所有属性都应该可在一个 USB 读/写操作中进行检索。
+- 值可以指定查询密钥。 这应该用于表示用于从设备获取数据的物理操作。 [打印驱动程序 USB 监视器和双向示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)演示了支持两个不同 QUERYKEYS 的 usb 设备。 同一查询密钥下的所有属性都应该可在一个 USB 读/写操作中进行检索。
 
--   如果双向 API 调用中请求了双向值，则会立即对它们进行轮询。 RefreshInterval 值为初始值，该值指示何时轮询设备以获取特定双向架构值上的更新。 每次轮询后，refreshInterval 将增加，直到我们停止轮询。 以下公式显示了 refreshInterval 的递增方式：
+- 如果双向 API 调用中请求了双向值，则会立即对它们进行轮询。 RefreshInterval 值为初始值，该值指示何时轮询设备以获取特定双向架构值上的更新。 每次轮询后，refreshInterval 将增加，直到我们停止轮询。 以下公式显示了 refreshInterval 的递增方式：
 
     ```javascript
     currentRefreshInterval = refreshInterval * (3 * numPolls);
@@ -74,17 +71,15 @@ USBMon 双向扩展文件使用与 SNMP 双向扩展文件和 WSDMon 双向扩�
 
 ## <a name="usbmon-and-usb-bidi-extension-file-interaction"></a>USBMon 和 USB 双向扩展文件交互
 
-
 创建或打开每个新的 USB 端口后，USBMon 将确定附加的设备和关联的驱动程序是否包括新的双向扩展文件和双向扩展 JavaScriptfile。 USBMon 搜索 v4 驱动程序清单或驱动程序 INI 文件，并检索文件的名称。 如果 USBMon 找到相关文件，则会使用它们来确定此设备支持的扩展双向架构值的列表，然后与设备进行通信以查询其值。 此时，USBMon 通过现有的打印后台处理程序 Api 支持 IHV 指定的双向架构操作。
 
 ## <a name="windows-driver-samples-on-github"></a>GitHub 上的 Windows 驱动程序示例
 
+**USBMon 双向 XML 文件示例**-这提供了 USBMon 双向扩展 XML 文件的示例。 它使用标准的双向架构属性 DeviceInfo、Configuration 和 Memory，还定义了一些自定义扩展。 有关详细信息，请参阅[打印驱动程序 USB 监视器和双向示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)。
 
-**USBMon 双向 XML 文件示例**-这提供了 USBMon 双向扩展 XML 文件的示例。 它使用标准的双向架构属性 DeviceInfo、Configuration 和 Memory，还定义了一些自定义扩展。 有关详细信息，请参阅[打印驱动程序 USB 监视器和双向示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)。
+有关双向扩展文件的详细信息，请参阅[双向通信架构](bidirectional-communication-schema.md)。
 
-有关 Bibi 扩展文件的详细信息，请参阅[双向通信架构](bidirectional-communication-schema.md)。
-
-**USBMon 双向 JavaScript 文件示例**。 此示例包括 USBMon 双向扩展程序 JavaScript 文件。 它演示如何支持双向的设置和获取操作，以及如何在打印机打印时侦听事件。 有关详细信息，请参阅[打印驱动程序 USB 监视器和双向示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)。
+**USBMon 双向 JavaScript 文件示例**。 此示例包括 USBMon 双向扩展程序 JavaScript 文件。 它演示了如何支持双向设置和获取操作，以及如何在打印机打印时侦听事件。 有关详细信息，请参阅[打印驱动程序 USB 监视器和双向示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)。
 
 调试
 
@@ -104,7 +99,7 @@ USBMon 双向扩展文件使用与 SNMP 双向扩展文件和 WSDMon 双向扩�
 
 2. 将调试器设置为脚本调试模式。
 
-3. 选择 "全部中断" （Ctrl + Alt + Break）以在下一次运行脚本时中断进程。
+3. 选择 "**全部中断**" （Ctrl + Alt + Break）以在下一次运行脚本时中断进程。
 
 4. 运行方案来重现你的问题。
 
@@ -122,11 +117,8 @@ USBMon 双向扩展文件使用与 SNMP 双向扩展文件和 WSDMon 双向扩�
 
 [JavaScript API 参考](javascript-api-reference-.md)  
 
-[打印驱动程序 USB 监视器和双向示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)  
+[打印驱动程序 USB 监视器和双向示例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)  
 
 [USB 打印](usb-printing.md)  
 
 [V4 打印机驱动程序连接](v4-printer-driver-connectivity.md)
-
-
-
