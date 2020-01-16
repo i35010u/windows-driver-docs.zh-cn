@@ -2,23 +2,22 @@
 title: PKEY\_AudioDevice\_EnableEndpointByDefault
 description: PKEY\_AudioDevice\_EnableEndpointByDefault
 ms.assetid: bde2c06d-9418-4f6d-960a-0ebec83bf397
-ms.date: 11/28/2017
+ms.date: 01/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 35db8b33a882f7a61ddc7046dc1ee1971a0fe769
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 27218a0a235286887158f16e273132fc6b1a6826
+ms.sourcegitcommit: 1addd14b2063aba321f5428a23393f22f59c02b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332219"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035723"
 ---
-# <a name="pkeyaudiodeviceenableendpointbydefault"></a>PKEY\_AudioDevice\_EnableEndpointByDefault
+# <a name="pkey_audiodevice_enableendpointbydefault"></a>PKEY\_AudioDevice\_EnableEndpointByDefault
 
+在 windows 7 和更高版本的 Windows 中，终结点生成器将终结点分为外形规格。 这些外形规格基于内核流式处理（KS）筛选器上连接到的终结点的 KSNODETYPE GUID。 当音频终结点生成器枚举某些终结点（例如，其形式因素类型如 UnknownFormFactor）时，终结点生成器会将这些终结点创建为禁用和隐藏状态。 因此，你必须使用控制面板中的声音程序来启用此类终结点，然后才能使用这些终结点。
 
-在 Windows 7 和更高版本的 Windows 中，终结点生成器对终结点进行分类为窗体因素。 这些外形规格为基础的流式处理终结点连接到的 (KS) 筛选器的内核上 pin KSNODETYPE GUID。 时音频的终结点生成器枚举特定终结点，例如那些使用 UnknownFormFactor，如外观类型终结点生成器将创建为已禁用或隐藏这些终结点。 因此必须使用声音程序控制面板中启用此类终结点，然后才能使用它们。
+如果要重写此行为，以便在默认情况下将终结点创建为启用或禁用，Windows 7 将提供**PKEY\_AudioDevice\_EnableEndpointByDefault**注册表项，以便你可以执行此操作。
 
-如果你想要重写此行为，以便你的终结点创建为启用或禁用默认情况下，Windows 7 提供了**主键\_AudioDevice\_EnableEndpointByDefault**允许您的注册表项若要执行该操作。
-
-终结点生成器为已禁用或隐藏任何以下 KSNODETYPE 值创建终结点。
+终结点生成器会创建具有以下任意 KSNODETYPE 值的终结点，并将其禁用并隐藏。
 
 <table>
 <colgroup>
@@ -75,9 +74,7 @@ ms.locfileid: "63332219"
 </tbody>
 </table>
 
- 
-
-在 Windows 7 和更高版本的 Windows 中，终结点具有 LineLevel 外形规格、 但是 KSNODETYPE 不等于 KSNODETYPE\_行\_连接器也创建为已禁用和隐藏。 以下终结点属于此类别。
+在 windows 7 和更高版本的 Windows 中，外观为 LineLevel 但 KSNODETYPE 不等于 KSNODETYPE\_LINE\_连接器的终结点也创建为禁用和隐藏。 以下终结点属于此类别。
 
 <table>
 <colgroup>
@@ -174,9 +171,7 @@ ms.locfileid: "63332219"
 </tbody>
 </table>
 
- 
-
-下面的 INF 文件片段演示如何使用**主键\_AudioDevice\_EnableEndpointByDefault**启用或禁用终结点，默认情况下。
+以下 INF 文件片段演示了如何使用**PKEY\_AudioDevice\_EnableEndpointByDefault**默认启用或禁用终结点。
 
 ```inf
 [Version]
@@ -189,7 +184,7 @@ ClassGuid= {4d36e96c-e325-11ce-bfc1-08002be10318}
 ...
 
 [USBAudio.Interfaces]
-AddInterface=%KSCATEGORY_AUDIO%,”GLOBAL”,USBAudio.Interface
+AddInterface=%KSCATEGORY_AUDIO%,"GLOBAL",USBAudio.Interface
 ...
 
 [USBAudio.Interface]
@@ -203,15 +198,15 @@ HKR,"EP\\n",%PKEY_AudioDevice_EnableEndpointByDefault%,0x00010001,EnableEndpoint
 ...
 
 [Strings]
-KSCATEGORY_AUDIO=” {6994AD04-93EF-11D0-A3CC-00A0C9223196}”
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
 PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
-PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},4”
+PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},4"
 ...
 ```
 
-在前面的示例中，EnableEndpointByDefaultMaskValue 表示 DWORD 掩码值启用或禁用标志的组合 (标志\_启用或标志\_禁用) 和流标志的数据 (流\_掩码\_呈现器或 FLOW\_掩码\_捕获)。
+在前面的示例中，EnableEndpointByDefaultMaskValue 表示 DWORD 掩码值，它是 "启用" 或 "禁用" 标志（标记\_"启用" 或 "标志"\_"禁用"）和 "数据流" 标志（FLOW\_掩码\_呈现或流\_掩码\_捕获）组合。
 
-下面的 INF 文件片段演示 CD 播放机的设置方式，以便它默认处于启用状态并被配置为输入设备 (流\_掩码\_捕获)。
+以下 INF 文件片段显示了如何设置 CD 播放机，以便在默认情况下启用它并将其配置为输入设备（FLOW\_掩码\_捕获）。
 
 ```inf
 [Version]
@@ -224,7 +219,7 @@ ClassGuid= {4d36e96c-e325-11ce-bfc1-08002be10318}
 ...
 
 [USBAudio.Interfaces]
-AddInterface=%KSCATEGORY_AUDIO%,”GLOBAL”,USBAudio.Interface
+AddInterface=%KSCATEGORY_AUDIO%,"GLOBAL",USBAudio.Interface
 ...
 
 [USBAudio.Interface]
@@ -232,21 +227,21 @@ AddReg=MDVAD.EPProperties.AddReg
 ...
 
 ;; AddReg section is used to set default behavior of endpoint for CD player.
-;; Enable by default for KSNODETYPE_CD_PLAYER 
+;; Enable by default for KSNODETYPE_CD_PLAYER
 [MDVAD.EPProperties.AddReg]
 HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_CD_PLAYER%
 HKR,"EP\\0",%PKEY_AudioDevice_EnableEndpointByDefault%,0x00010001,0x00000201
 ...
 
 [Strings]
-KSCATEGORY_AUDIO=” {6994AD04-93EF-11D0-A3CC-00A0C9223196}”
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
 KSNODETYPE_CD_PLAYER="{DFF220E3-F70F-11D0-B917-00A0C9223196}"
 PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
-PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},4”
+PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},4"
 …
 ```
 
-在前面的示例中，流的按位 OR 组合\_掩码\_捕获和标志\_启用相当于按位 OR 组合 0x00000200 和 0x00000001 0x00000201 的结果。 下表显示的标志和可用于的掩码值**主键\_AudioDevice\_EnableEndpointByDefault**。
+在前面的示例中，流\_掩码的按位 "或" 组合\_捕获和标志\_ENABLE 等效于0x00000201 的0x00000200 和0x00000001 的按位 OR 组合。 下表显示了可用于**PKEY\_AudioDevice\_EnableEndpointByDefault**的标志和掩码值。
 
 <table>
 <colgroup>
@@ -255,8 +250,8 @@ PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">标志或终结点的掩码</th>
-<th align="left">ReplTest1</th>
+<th align="left">标志或终结点掩码</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -278,14 +273,3 @@ PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4}
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-
-

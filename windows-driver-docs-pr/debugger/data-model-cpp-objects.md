@@ -1,13 +1,13 @@
 ---
 title: 调试器数据模型 C++ 对象
 description: 本主题介绍如何使用调试器数据模型C++对象，以及如何扩展调试器的功能。
-ms.date: 09/12/2019
-ms.openlocfilehash: 6566036d51b4150a96e01fbca845967a7ce01015
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.date: 01/13/2020
+ms.openlocfilehash: 0ccc842300ab4f28792f32df7b128a76f8fba6dd
+ms.sourcegitcommit: 1addd14b2063aba321f5428a23393f22f59c02b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837806"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035725"
 ---
 # <a name="debugger-data-model-c-objects"></a>调试器数据模型 C++ 对象
 
@@ -15,19 +15,19 @@ ms.locfileid: "72837806"
 
 ## <a name="span-idcore--the-core-debugger-object-model"></a><span id="core"> 核心调试器对象模型
 
-数据模型的最基本但功能最强大的功能之一是，它标准化对象的定义以及一个对象与对象交互的方式。 *IModelObject*接口封装对象的概念，无论对象是整数、浮点值、字符串、调试器的目标地址空间中的某些复杂类型还是某些调试器概念（如进程的概念或模块.
+数据模型的最基本但功能最强大的功能之一是，它标准化对象的定义以及一个对象与对象交互的方式。 *IModelObject*接口封装对象的概念，无论对象是整数、浮点值、字符串、调试器的目标地址空间中的某些复杂类型还是某些调试器概念（如进程或模块的概念）。
 
 有几个不同的内容可以保留在*IModelObject*中（或装箱入）：
 
--   **内部值**- *IModelObject*可以是多个基本类型的容器：8、16、32或64位有符号或无符号整数、布尔值、字符串、错误或空概念。
+- **内部值**- *IModelObject*可以是多个基本类型的容器：8、16、32或64位有符号或无符号整数、布尔值、字符串、错误或空概念。
 
--   **本机对象**- *IModelObject*可以表示调试器的类型系统所定义的复杂类型（如调试器的类型系统所定义），无论调试器的目标是什么 
-    
--   **合成对象**- *IModelObject*可以是动态对象--字典（如果要执行此操作）：一个键/值/元组和一组概念，这些**概念**定义不只由键/值对表示的行为。
+- **本机对象**- *IModelObject*可以表示调试器的类型系统所定义的复杂类型（如调试器的类型系统所定义），无论调试器的目标是什么 
 
--   **Properties** - *IModelObject*可表示属性：可以使用方法调用来检索或更改其值的某些内容。 *IModelObject*中的属性实际上是封装为*IModelObject*的*IModelPropertyAccessor*接口。
+- **合成对象**- *IModelObject*可以是动态对象--字典（如果要执行此操作）：一个键/值/元组和一组概念，这些**概念**定义不只由键/值对表示的行为。
 
--   **方法**- *IModelObject*可表示方法：可以使用一组参数调用的某些内容并获取返回值。 *IModelObject*中的方法实际上是封装为*IModelObject*的*IModelMethod*接口。
+- **Properties** - *IModelObject*可表示属性：可以使用方法调用来检索或更改其值的某些内容。 *IModelObject*中的属性实际上是封装为*IModelObject*的*IModelPropertyAccessor*接口。
+
+- **方法**- *IModelObject*可表示方法：可以使用一组参数调用的某些内容并获取返回值。 *IModelObject*中的方法实际上是封装为*IModelObject*的*IModelMethod*接口。
 
 ### <a name="extensibility-within-the-object-model"></a>对象模型中的扩展性
 
@@ -42,11 +42,11 @@ ms.locfileid: "72837806"
 
 #### <a name="context-the-this-pointer"></a>上下文： **this**指针
 
-由于给定的属性或方法可能在数据模型树的任何级别实现，因此，实现方法或属性必须能够访问原始对象（您可能会在或此中C++调用**this**指针**JavaScript 中的 c2 > 对象。** 在所述的方法中，将该实例对象传递到各种方法，作为名为**上下文**的第一个参数。
+由于给定的属性或方法可能在数据模型树的任何级别实现，因此该方法或属性的实现必须能够访问原始对象（您可能会在中C++调用**This**指针或 JavaScript 中的**this**对象）。 在所述的方法中，将该实例对象传递到各种方法，作为名为**上下文**的第一个参数。
 
 #### <a name="context-the-address-space"></a>上下文：地址空间
 
-需要注意的一点是，与先前的扩展模型不同的是，**上下文**（目标、进程、您正在查看的线程）的 UI 概念与所有 api 相对于当前 ui 状态，数据模型接口通常显式采用此上下文或隐式为*IDebugHostContext*接口。 数据模型中的每个*IModelObject*都附带此类型的上下文信息，并可以将该上下文传播到它返回的对象。 这意味着，当你从*IModelObject*读取本机值或键值时，它将从最初从中获取对象的目标和进程中读出。
+需要注意的一点是，与先前的扩展模型不同的是，**上下文**（目标、进程、您正在查看的线程）的 UI 概念与所有 api 相对于当前 ui 状态，数据模型接口通常以显式或隐式方式将此上下文视为*IDebugHostContext*接口。 数据模型中的每个*IModelObject*都附带此类型的上下文信息，并可以将该上下文传播到它返回的对象。 这意味着，当你从*IModelObject*读取本机值或键值时，它将从最初从中获取对象的目标和进程中读出。
 
 有一个显式常数值，**使用\_当前\_主机\_上下文**，该上下文可传递到采用*IDebugHostContext*参数的方法。 此值指示上下文确实是调试器的当前 UI 状态。 但这种概念需要是显式的。
 
@@ -56,9 +56,6 @@ ms.locfileid: "72837806"
 其中的每个父模型（可在许多不同对象的链中链接）可以将私有实现数据与任何实例对象相关联。 在概念上创建的每个*IModelObject*都有一个哈希表，该表将特定父模型映射到*IUnknown*接口定义的专用实例数据。 这允许父模型缓存每个实例上的信息，或者有其他任意关联的数据。
 
 通过*IModelObject*上的*GetContextForDataModel*和*SetContextForDataModel*方法访问此类型的上下文。
-
-
-
 
 ## <a name="span-idimodelobjectspan-the-core-debugger-object-interface-imodelobject"></a><span id="imodelobject"></span>核心调试器对象接口： **IModelObject**
 
@@ -138,7 +135,7 @@ GetIntrinsicValue 方法返回在 IModelObject 内装箱的内容。 此方法�
 
 IsEqualTo 方法比较两个模型对象，并返回值中是否相等。 对于具有排序的对象，此方法返回 true 等效于比较方法返回0。 对于没有排序但是可相等的对象，Compare 方法将失败，但这不会失败。 基于值的比较的含义由对象的类型定义。 目前只为内部类型和错误对象定义了这种情况。 没有适用于 equatability 的当前数据模型概念。 
 
-[取消引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-dereference)
+[Dereference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-dereference)
 
 取消引用方法取消引用对象。 此方法可用于取消引用基于数据模型的引用（ObjectTargetObjectReference、ObjectKeyReference）或本机语言引用（指针或语言引用）。 请务必注意，此方法会在对象上删除单个级别的引用语义。 例如，完全可以对语言引用进行数据模型引用。 在这种情况下，第一次调用取消引用方法将删除数据模型引用并保留语言引用。 对此生成的对象调用取消引用后，将删除语言引用并返回该引用下的本机值。 
 
@@ -201,8 +198,7 @@ GetKeyReference 方法将在对象（或其父模型链）上搜索给定名称�
 
 [EnumerateKeyReferences](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-enumeratekeyreferences)
 
-EnumerateKeyReferences 方法的行为类似于 EnumerateKeyValues 方法只不过，该方法返回对它所枚举的键的引用（由装箱到 IModelObject 中的 IModelKeyReference 接口提供），而不是键的值。 此类引用可用于获取或设置密钥的基础值。 
-
+EnumerateKeyReferences 方法的行为类似于 EnumerateKeyValues 方法只不过，该方法返回对它所枚举的键的引用（由装箱到 IModelObject 中的 IModelKeyReference 接口提供），而不是键的值。 此类引用可用于获取或设置密钥的基础值。
 
 **概念操作方法**
 
@@ -238,10 +234,9 @@ SetConcept 方法将在由 this 指针指定的对象实例上放置指定的概
 
 ClearConcepts 方法将从此指定的对象的实例中删除所有概念。 
 
-
 **本机对象方法**
 
-尽管许多模型对象引用内部函数（例如：整数、字符串）或综合构造（键/值/元组和概念的字典），但模型对象也可能引用本机构造（例如：调试地址空间中的用户定义类型目标）。 IModelObject 接口具有一系列方法，可访问此类本机对象的相关信息。 这些方法包括： 
+尽管许多模型对象引用内部函数（例如：整数、字符串）或综合构造（键/值/元组和概念的字典），但模型对象也可能引用本机构造（例如：调试目标的地址空间中的用户定义类型）。 IModelObject 接口具有一系列方法，可访问此类本机对象的相关信息。 这些方法包括： 
 
 ```cpp
 STDMETHOD(GetRawValue)(_In_ SymbolKind kind, _In_ PCWSTR name, _In_ ULONG searchFlags, _COM_Errorptr_ IModelObject** object) PURE;
@@ -256,7 +251,7 @@ STDMETHOD(EnumerateRawReferences)(_In_ SymbolKind kind, _In_ ULONG searchFlags, 
 
 [GetRawValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-getrawvalue)
 
-GetRawValue 方法查找给定对象内的本机构造。 此类构造可以是字段、基类、基类中的字段、成员函数等。 
+GetRawValue 方法查找给定对象内的本机构造。 此类构造可以是字段、基类、基类中的字段、成员函数等。
 
 [EnumerateRawValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-enumeraterawvalues)
 
@@ -265,7 +260,7 @@ EnumerateRawValues 方法枚举给定对象的所有本机子对象（例如：�
 
 [TryCastToRuntimeType](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-trycasttoruntimetype)
 
-TryCastToRuntimeType 方法将要求调试宿主执行分析并确定给定对象的实际运行时类型（如：最派生类）。 确切的分析利用特定于调试宿主，可能包括 RTTI （C++运行时类型信息）、对对象的 "V-表" （虚拟函数表）结构的检查，或者主机可用于可靠地确定动态/静态类型中的运行时类型。 转换为运行时类型失败并不意味着此方法调用将失败。 在这种情况下，方法将在输出参数中返回给定的对象（this 指针）。 
+TryCastToRuntimeType 方法将要求调试宿主执行分析并确定给定对象的实际运行时类型（如：最派生类）。 确切的分析利用特定于调试宿主，可能包括 RTTI （C++运行时类型信息）、对象的 "V-表（虚拟函数表）" 结构检查或任何其他方法，宿主可以使用该方法来可靠地从静态类型确定动态/运行时类型。 转换为运行时类型失败并不意味着此方法调用将失败。 在这种情况下，方法将在输出参数中返回给定的对象（this 指针）。 
 
 [GetLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelobject-getlocation) 
 
@@ -290,7 +285,7 @@ EnumerateRawReferences 方法枚举给定对象的所有本机子对象（例如
 
 **扩展性方法**
 
-如前文所述，模型对象的行为与 JavaScript 对象及其原型链的行为非常类似。 除了指定的 IModelObject 接口所表示的实例外，可能还会有任意数目的父模型附加到该对象（反过来，每个模型都可以附加任意数量的父模型）。 这是数据模型中的可扩展性的主要方法。 如果在给定的实例中不能找到给定的属性或概念，则执行实例上以根为根的对象树的深度首次搜索。 
+如前文所述，模型对象的行为与 JavaScript 对象及其原型链的行为非常类似。 除了指定的 IModelObject 接口所表示的实例外，可能还会有任意数目的父模型附加到该对象（反过来，每个模型都可以附加任意数量的父模型）。 这是数据模型中的可扩展性的主要方法。 如果在给定的实例中不能找到给定的属性或概念，则执行实例上以根为根的对象树的深度首次搜索。
 
 下面的方法操作与给定 IModelObject 实例关联的父模型链： 
 
@@ -327,23 +322,19 @@ RemoveParentModel 将从给定对象的父搜索链中移除指定的父模型�
 
 GetContextForDataModel 方法用于检索通过对 SetContextForDataModel 的先前调用设置的上下文信息。 这会检索在实例对象的父模型层次结构中进一步的数据模型设置的状态信息。 有关此上下文/状态及其含义的更多详细信息，请参阅 SetContextForDataModel 的文档。 
 
-
-
-
 ## <a name="span-idobjecttypesspan-debugger-data-model-core-object-types"></a><span id="objecttypes"></span>调试器数据模型核心对象类型
-
 
 数据模型中的对象类似于 .NET 中的对象的概念。 它是可以将数据模型理解的构造装箱到的泛型容器。 除了本机对象和综合（动态）对象之外，还可以将一系列核心对象类型放置（或装箱）到 IModelObject 的容器中。 其中大部分值放置在其中的容器是标准的 COM/OLE 变体，其中有许多附加限制会置于该变量可以包含的内容上。 最基本的类型包括：
 
 - 8位无符号值和有符号值（VT_UI1、VT_I1）
-- 16位无符号值和有符号值（VT_UI2，VT_UI2）
+- 16位无符号值和有符号值（VT_UI2、VT_UI2）
 - 32位无符号值和有符号值（VT_UI4，VT_I4）
 - 64位无符号值和有符号值（VT_UI8，VT_I8）
-- 单精度和双精度浮点值（VT_R4，VT_R8）
+- 单精度和双精度浮点值（VT_R4、VT_R8）
 - 字符串（VT_BSTR）
 - 布尔值（VT_BOOL）
 
-除了这些基本类型外，许多核心数据模型对象还放置在由 VT_UNKNOWN 定义的 IModelObject 中，其中存储的 IUnknown 可保证实现特定接口。 这些类型包括： 
+除了这些基本类型外，还会将大量核心数据模型对象放入由 VT_UNKNOWN 定义的 IModelObject 中，其中存储的 IUnknown 可保证实现特定接口。 这些类型包括： 
 
 - 属性访问器（IModelPropertyAccessor）
 - 方法对象（IModelMethod）
@@ -352,7 +343,7 @@ GetContextForDataModel 方法用于检索通过对 SetContextForDataModel 的先
 
 **属性访问器： *IModelPropertyAccessor***
 
-数据模型中的属性访问器是封装到 IModelObject 中的 IModelPropertyAccessor 接口的实现。 查询时，模型对象将返回一种类型的 ObjectPropertyAccessor，而内部值为 VT_UNKNOWN，这是保证可用于 IModelPropertyAccessor 的查询。 在处理过程中，保证静态可转换 IModelPropertyAccessor。 
+数据模型中的属性访问器是封装到 IModelObject 中的 IModelPropertyAccessor 接口的实现。 在查询时，模型对象将返回一种类型的 ObjectPropertyAccessor，而内部值 VT_UNKNOWN 为保证可用于 IModelPropertyAccessor 的查询。 在处理过程中，保证静态可转换 IModelPropertyAccessor。 
 
 属性访问器是获取方法调用的间接方法，用于获取和设置数据模型中的键值。 如果给定键的值为属性访问器，则 GetKeyValue 和 SetKeyValue 方法将自动注意到这一点，并根据需要调用属性访问器的基础 GetValue 或 SetValue 方法。 
 
@@ -372,12 +363,11 @@ GetValue 方法是属性访问器的 getter。 每当客户端希望提取属性
 
 [SetValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelpropertyaccessor-setvalue)
 
-SetValue 方法是属性访问器的资源库。 每当客户端希望向基础属性分配值时，就会调用此方法。 许多属性是只读的。 在这种情况下，调用 SetValue 方法将返回 E_NOTIMPL。 请注意，直接获取属性访问器的任何调用方负责将密钥名称和准确的实例对象（this 指针）传递给属性访问器的 SetValue 方法。 
-
+SetValue 方法是属性访问器的资源库。 每当客户端希望向基础属性分配值时，就会调用此方法。 许多属性是只读属性。 在这种情况下，调用 SetValue 方法将返回 E_NOTIMPL。 请注意，直接获取属性访问器的任何调用方负责将密钥名称和准确的实例对象（this 指针）传递给属性访问器的 SetValue 方法。 
 
 **方法： *IModelMethod***
 
-数据模型中的方法是封装到 IModelObject 中的 IModelMethod 接口的实现。 查询时，模型对象将返回一种类型的 ObjectMethod，而内部值为 VT_UNKNOWN，这是保证可用于 IModelMethod 的查询。 在处理过程中，保证静态可转换 IModelMethod。 数据模型中的所有方法都是动态的。 它们将一组0个或多个参数作为输入，并返回一个输出值。 没有重载决策，并且没有与参数名称、类型或预期有关的元数据。 
+数据模型中的方法是封装到 IModelObject 中的 IModelMethod 接口的实现。 在查询时，模型对象将返回一种类型的 ObjectMethod，而内部值 VT_UNKNOWN 为保证可用于 IModelMethod 的查询。 在处理过程中，保证静态可转换 IModelMethod。 数据模型中的所有方法都是动态的。 它们将一组0个或多个参数作为输入，并返回一个输出值。 没有重载决策，并且没有与参数名称、类型或预期有关的元数据。 
 
 IModelMethod 接口定义如下： 
 
@@ -388,14 +378,13 @@ DECLARE_INTERFACE_(IModelMethod, IUnknown)
 }
 ```
 
-[拨](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelmethod-call)
+[Call](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelmethod-call)
 
 Call 方法用于调用数据模型中定义的任何方法。 调用方负责传递准确的实例对象（this 指针）和任意一组参数。 返回方法和与该结果关联的任何可选元数据的结果。 不以逻辑方式返回值的方法仍必须返回有效的 IModelObject。 在这种情况下，IModelObject 是未装箱的值。 当某个方法失败时，它可能会在输入参数中返回可选的扩展错误信息（即使返回的 HRESULT 是失败）。 调用方必须检查此情况。 
 
-
 **关键引用： *IModelKeyReference 或 IModelKeyReference2***
 
-实质上，键引用是特定对象上的键的句柄。 客户端可以通过方法（如 GetKeyReference）检索此类句柄，并使用该句柄在以后获取或设置键的值，而无需保留在原始对象上。 这种类型的对象是封装到 IModelObject 的 IModelKeyReference 或 IModelKeyReference2 接口的实现。 查询后，模型对象将返回一种类型的 ObjectKeyReference，而内部值是 VT_UNKNOWN，这保证可用于 IModelKeyReference。 在处理过程中，保证静态可转换 IModelKeyReference。 
+实质上，键引用是特定对象上的键的句柄。 客户端可以通过方法（如 GetKeyReference）检索此类句柄，并使用该句柄在以后获取或设置键的值，而无需保留在原始对象上。 这种类型的对象是封装到 IModelObject 的 IModelKeyReference 或 IModelKeyReference2 接口的实现。 查询后，模型对象将返回一种类型的 ObjectKeyReference，而内部值是一 VT_UNKNOWN 保证可用于 IModelKeyReference 的查询。 在处理过程中，保证静态可转换 IModelKeyReference。 
 
 密钥引用接口定义如下： 
 
@@ -433,7 +422,6 @@ GetOriginalObject 方法返回从中创建键引用的实例对象。 请注意�
 
 键引用上的 GetKeyValue 方法的行为与 IModelObject 上的 GetKeyValue 方法相同。 它将返回基础键的值以及与该键关联的任何元数据。 如果键的值恰好为属性访问器，则这将自动调用属性访问器上的基础 GetValue 方法。 
 
-
 [SetKey](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelkeyreference-setkey)
 
 键引用上的 SetKey 方法的行为与 IModelObject 上的 SetKey 方法相同。 它将分配密钥的值。 如果原始键是属性访问器，则将替换属性访问器。 它不会调用属性访问器上的 SetValue 方法。 
@@ -441,7 +429,7 @@ GetOriginalObject 方法返回从中创建键引用的实例对象。 请注意�
 
 [SetKeyValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelkeyreference-setkeyvalue)
 
-键引用上的 SetKeyValue 方法的行为与 IModelObject 上的 SetKeyValue 方法相同。 它将分配密钥的值。 如果原始键为属性访问器，则此方法将在属性访问器上调用基础 SetValue 方法，而不是替换属性访问器本身。 
+键引用上的 SetKeyValue 方法的行为与 IModelObject 上的 SetKeyValue 方法相同。 它将分配密钥的值。 如果原始键为属性访问器，则此方法将在属性访问器上调用基础 SetValue 方法，而不是替换属性访问器本身。
 
 [OverrideContextObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-imodelkeyreference2-overridecontextobject)
 
@@ -453,7 +441,6 @@ OverrideContextObject 方法（仅在 IModelKeyReference2 中提供）是一个�
 上下文对象是调试宿主（与数据模型合作）关联的信息的不透明 blob。 它可能包含信息的处理上下文或地址空间等内容，等等。上下文对象是 IDebugHostContext 在 IModelObject 内的实现。 请注意，IDebugHostContext 是一个主机定义的接口。 客户端永远不会实现此接口。 
 
 有关上下文对象的详细信息，请参阅调试器数据模型C++接口中的[调试器数据模型C++主机接口](data-model-cpp-interfaces.md#hostinterface)。 
-
 
 ## <a name="span-idmodelmanager-the-data-model-manager"></a><span id="modelmanager"> 数据模型管理器  
 
@@ -557,11 +544,11 @@ CreateDataModelObject 方法是一个简单的帮助程序包装器，用于创�
 
 [CreateIntrinsicObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-createintrinsicobject)
 
-CreateIntrinsicObject 方法是将内部值装箱到 IModelObject 的方法。 调用方将值放入 COM 变量并调用此方法。 数据模型管理器返回表示对象的 IModelObject。 请注意，此方法还用于表示基于 IUnknown 的基本类型：属性访问器、方法、上下文等。在这种情况下，objectKind 方法指示对象表示的基于 IUnknown 的构造类型，而所传递变量的 punkVal 字段是 IUnknown 派生类型。 类型必须静态地可转换到进程中的相应模型接口（例如： IModelPropertyAccessor、IModelMethod、IDebugHostContext 等）。 此方法支持的变体类型包括 VT_UI1、VT_I1、VT_UI2、VT_I2、VT_UI4、VT_I4、VT_UI8、VT_I8、VT_R4、VT_R8、VT_BOOL、VT_BSTR 和 VT_UNKNOWN （适用于枚举 ModelObjectKind 所指示的一组专用 IUnknown 派生类型）。 
+CreateIntrinsicObject 方法是将内部值装箱到 IModelObject 的方法。 调用方将值放入 COM 变量并调用此方法。 数据模型管理器返回表示对象的 IModelObject。 请注意，此方法还用于表示基于 IUnknown 的基本类型：属性访问器、方法、上下文等。在这种情况下，objectKind 方法指示对象表示的基于 IUnknown 的构造类型，而所传递变量的 punkVal 字段是 IUnknown 派生类型。 类型必须静态地可转换到进程中的相应模型接口（例如： IModelPropertyAccessor、IModelMethod、IDebugHostContext 等）。 此方法支持的变量类型为 VT_UI1、VT_I1、VT_UI2、VT_I2、VT_UI4、VT_I4、VT_UI8、VT_I8、VT_R4、VT_R8、VT_BOOL、VT_BSTR 和 VT_UNKNOWN （对于特定的 IUnknown 派生类型集，由枚举 ModelObjectKind 指示。 
 
 [CreateTypedIntrinsicObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-createtypedintrinsicobject)
 
-CreateTypedintrinsicObject 方法类似于 CreateIntrinsicObject 方法只不过，这种方法允许将本机/语言类型与数据相关联，并与装箱值一起使用。 这允许数据模型表示构造，如本机枚举类型（只是 VT_UI * 或 VT_I * 值）。 此方法也会创建指针类型。 数据模型中的本机指针是0个扩展64位的数量，表示调试目标的虚拟地址空间的偏移量。 它在 VT_UI8 内装箱，并使用此方法和一个指示本机/语言指针的类型创建。 
+CreateTypedintrinsicObject 方法类似于 CreateIntrinsicObject 方法只不过，这种方法允许将本机/语言类型与数据相关联，并与装箱值一起使用。 这允许数据模型表示构造，如本机枚举类型（只 VT_UI * 或 VT_I * 值）。 此方法也会创建指针类型。 数据模型中的本机指针是0个扩展64位的数量，表示调试目标的虚拟地址空间的偏移量。 它在 VT_UI8 中装箱，并使用此方法和一个指示本机/语言指针的类型创建。 
 
 [CreateMetadataStore](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-createmetadatastore)
 
@@ -613,20 +600,19 @@ UnregisterExtensionForTypeSignature 方法撤消之前对 RegisterExtensionForTy
 
 [GetRootNamespace](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-getrootnamespace)
 
-GetRootNamespace 方法返回数据模型的根命名空间。 这是数据模型管理的对象，调试宿主将在其中放置某些对象。 
+GetRootNamespace 方法返回数据模型的根命名空间。 这是数据模型管理的对象，调试宿主将在其中放置某些对象。
 
-[RegisterNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-getrootnamespace)
+[RegisterNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager2-registernamedmodel)
 
 RegisterNamedModel 方法在众所周知的名称下注册给定的数据模型，以便客户端可以找到它。 这是 API 的主要用途-将数据模型发布为可通过检索在此众所周知的名称下注册的模型并向其添加父模型来扩展的内容。 
 
-[UnregisterNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-unregisternamedmodel)
+[UnregisterNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager2-unregisternamedmodel)
 
-UnregisterNamedModel 方法撤消之前对 RegisterNamedModel 的调用。 它删除了数据模型与可在其中进行查找的名称之间的关联。 
+UnregisterNamedModel 方法撤消之前对 RegisterNamedModel 的调用。 它删除了数据模型与可在其中进行查找的名称之间的关联。
 
 [AcquireNamedModel](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nf-dbgmodel-idatamodelmanager-acquirenamedmodel)
 
 如果调用方想要扩展在给定名称下注册的数据模型，则会调用 AcquireNamedModel 方法，以检索要扩展的数据模型的对象。 此方法将返回通过以前对 RegisterNamedModel 方法的调用注册的任何数据模型。 作为 AcquireNamedModel 方法的主要目的是扩展模型，如果尚未在给定名称下注册任何模型，则此方法具有特殊行为。 如果尚未在给定名称下注册任何模型，则将创建一个存根对象，并在给定的名称下临时注册该对象，并将其返回给调用方。 当通过调用 RegisterNamedModel 方法来注册真实数据模型时，对存根对象所做的任何更改实际上是对实际模型进行的任何更改。 这将从互相扩展的组件中删除许多加载顺序依赖关系问题。 
-
 
 **Helper 方法**
 
@@ -642,7 +628,7 @@ AcquireSubNamespace 方法有助于构造一些类似于动态语言中的新对
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-本主题是一系列文章的一部分，其中描述了可C++从其访问的接口，如何使用C++它们来生成基于的调试器扩展，以及如何从C++数据模型扩展使用其他数据模型构造（例如： JavaScript 或 NatVis）.
+本主题是一系列文章的一部分，其中描述了可C++从其访问的接口，如何使用C++它们来生成基于的调试器扩展，以及如何从C++数据模型扩展使用其他数据模型构造（例如： JavaScript 或 NatVis）。
 
 [调试器数据模型C++概述](data-model-cpp-overview.md)
 

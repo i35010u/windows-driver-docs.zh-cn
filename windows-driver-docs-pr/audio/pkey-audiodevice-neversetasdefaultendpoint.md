@@ -4,19 +4,19 @@ description: PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
 ms.assetid: cb619972-d9d9-4f33-bb4a-720bfc29e3e8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dcdea96e8c08e213814d6b505b268eccd65864
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ebed7e76f697f3d42ea7291595fae9108162b23
+ms.sourcegitcommit: 1addd14b2063aba321f5428a23393f22f59c02b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332215"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035719"
 ---
-# <a name="pkeyaudiodeviceneversetasdefaultendpoint"></a>PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
+# <a name="pkey_audiodevice_neversetasdefaultendpoint"></a>PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
 
 
-您可能会决定设置某些设备，以便永远不会为默认设备被选定。 其中包括，例如，调制解调器线路和医疗音频设备。Windows 7 和更高版本的 Windows 提供了**主键\_AudioDevice\_NeverSetAsDefaultEndpoint**注册表项以允许您阻止设备的终结点的默认终结点作为所选内容。
+您可以决定设置某些设备，以便永远不能将其选作默认设备。 例如，调制解调器线路和医疗音频设备。Windows 7 和更高版本的 Windows 提供了**PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**注册表项，以允许你阻止将设备终结点选作默认终结点。
 
-以下的 INF 文件摘录显示了如何使用**主键\_AudioDevice\_NeverSetAsDefaultEndpoint**来设置终结点，以便它永远不会被选定为默认值。
+以下 INF 文件摘录演示了如何使用**PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**设置终结点，以便永远不能将其选择为默认值。
 
 ```inf
 [Version]
@@ -29,7 +29,7 @@ ClassGuid= {4d36e96c-e325-11ce-bfc1-08002be10318}
 ...
 
 [USBAudio.Interfaces]
-AddInterface=%KSCATEGORY_AUDIO%,”GLOBAL”,USBAudio.Interface
+AddInterface=%KSCATEGORY_AUDIO%,"GLOBAL",USBAudio.Interface
 ...
 
 [USBAudio.Interface]
@@ -44,15 +44,15 @@ HKR,"EP\\n",%PKEY_AudioDevice_NeverSetAsDefaultEndpoint%,0x00010001,NeverSetAsDe
 ...
 
 [Strings]
-KSCATEGORY_AUDIO=” {6994AD04-93EF-11D0-A3CC-00A0C9223196}”
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
 PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
 PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},3"
 ...
 ```
 
-在前面的示例中，NeverSetAsDefaultEndpointMaskValue 表示是设备角色标志以及数据的流标志的组合的 DWORD 掩码值。
+在前面的示例中，NeverSetAsDefaultEndpointMaskValue 表示一个 DWORD 掩码值，它是设备角色标志和数据流标志的组合。
 
-下面的 INF 文件片段演示如何将未定义的输出设备 (KSNODETYPE\_输出\_未定义)，以便在其终结点永远不会选择为默认值，而不考虑设备角色和数据流方向设置。
+以下 INF 文件片段显示了如何设置未定义的输出设备（KSNODETYPE\_输出\_未定义），以便不会将其终结点选为默认值，而不管设备角色和数据流方向。
 
 ```inf
 [Version]
@@ -65,7 +65,7 @@ ClassGuid= {4d36e96c-e325-11ce-bfc1-08002be10318}
 ...
 
 [USBAudio.Interfaces]
-AddInterface=%KSCATEGORY_AUDIO%,”GLOBAL”,USBAudio.Interface
+AddInterface=%KSCATEGORY_AUDIO%,"GLOBAL",USBAudio.Interface
 ...
 
 [USBAudio.Interface]
@@ -80,13 +80,13 @@ HKR,"EP\\0",%PKEY_AudioDevice_NeverSetAsDefaultEndpoint%,0x00010001,0x00000305
 ...
 
 [Strings]
-KSCATEGORY_AUDIO=” {6994AD04-93EF-11D0-A3CC-00A0C9223196}”
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
 KSNODETYPE_OUTPUT_UNDEFINED="{DFF21CE0-F70F-11D0-B917-00A0C9223196}"
 PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
 PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},3"
 ```
 
-在上述示例中，0x00000305 是所有标志和适用于掩码的按位 OR 组合**主键\_AudioDevice\_NeverSetAsDefaultEndpoint**。 下表显示了标志和掩码以及其值。
+在前面的示例中，0x00000305 是可用于**PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**的所有标志和掩码的按位 "或" 组合。 下表显示了标志和掩码及其值。
 
 <table>
 <colgroup>
@@ -95,8 +95,8 @@ PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E4
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">标志或终结点的掩码</th>
-<th align="left">ReplTest1</th>
+<th align="left">标志或终结点掩码</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
