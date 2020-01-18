@@ -1,34 +1,33 @@
 ---
 title: WinDbg 预览-脚本菜单
 description: 本部分介绍如何在 WinDbg 预览调试器中使用脚本。
-ms.date: 04/10/2017
+ms.date: 01/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e905612da91fc55e187f99d0d6d98df198452f
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: baa6478da0d8cd1d0ff3c0a74c3fc24fa6ce67c2
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916117"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256665"
 ---
-# <a name="windbg-preview---scripting"></a>WinDbg 预览-脚本 
+# <a name="windbg-preview---scripting-menu"></a>WinDbg 预览-脚本菜单
 
 本部分介绍如何使用 WinDbg 预览版中的脚本支持。
 
-![调试器中脚本菜单的屏幕截图](images/windbgx-javascript-new-script.png)
+![调试程序中的脚本菜单的屏幕截图](images/windbgx-javascript-new-script.png)
 
 "WinDbg 预览脚本" 窗口功能基本语法突出显示、IntelliSense 和错误识别。 
 
 使用功能区按钮可以：
-- 创建新脚本 
+- 创建新脚本
 - 打开现有脚本
 - 执行脚本
 - 保存脚本 
 - 取消链接脚本
-- 加载 JavaScript 提供程序
 
 还可以通过在脚本窗口中右键单击并选择 *"保存时执行脚本"* 来自动执行脚本。 成功加载脚本后，会在脚本标题栏中显示一个绿色的复选框。 如果脚本中出现错误，则会显示一个红色的 x。
 
-## <a name="javascript-scripting"></a>JavaScript 脚本编写 
+## <a name="javascript-scripting"></a>JavaScript 脚本编写
 
 若要开始使用 JavaScript，必须首先调试目标。 准备好开始处理 JavaScript 时，请单击 "加载 JavaScript 提供程序"。 之后，你可以通过在这两种类型的脚本模板之间进行选取，来创建新的 JavaScript。
 

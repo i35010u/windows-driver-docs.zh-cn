@@ -6,14 +6,16 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb1ae4707d04432b180c89166fcbdfbf5d03815
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: cc6c0e84b91a791e23674fc35fda72a5c6774552
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209505"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256727"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
+
+![windbg 预览版上的小徽标](images/windbgx-preview-logo.png)
 
 本主题提供有关 WinDbg 预览调试器中的新增功能的信息。
 
@@ -96,7 +98,7 @@ ms.locfileid: "75209505"
 
 **调试器数据模型C++标头**-有一个新C++的标头 DbgModel，它作为 Windows SDK 的一部分包含，以便通过C++扩展调试器数据模型。 有关详细信息，请查看[调试器数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过[调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
 
-**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例-https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
+**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
 
 其他更改和 bug 修复：
 
@@ -122,7 +124,7 @@ ms.locfileid: "75209505"
 -  现在，未编制索引的 TTD 跟踪将更清楚地表明它们未编入索引。
 -  提高了 "局部变量" 窗口的性能
 -  添加了 "功能区" 按钮，用于将命令窗口日志保存到文件。
--  已. SelectMany （<projection>）设置为默认的 LINQ 方法集。
+-  。 SelectMany （<projection>）设置为默认的 LINQ 方法集。
 
 ## <a name="10180711002"></a>1.0.1807.11002
 
@@ -282,8 +284,8 @@ API 版本1.1 中的更改包括：
 
 此版本是 WinDbg Preview 的第一版。 有关 WinDbg Preview 中提供的功能的一般信息，请[使用 Windbg preview 进行调试](debugging-using-windbg-preview.md)。
 
----
- 
 ## <a name="see-also"></a>另请参阅
 
-[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
+[WinDbg 预览版 - 安装](windbg-install-preview.md)
+
+[WinDbg 预览版 - 命令行启动选项](windbg-command-line-preview.md)

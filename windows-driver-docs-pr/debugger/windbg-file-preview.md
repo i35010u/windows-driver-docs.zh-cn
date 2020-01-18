@@ -1,73 +1,71 @@
 ---
-title: WinDbg 预览版-文件菜单
-description: 本部分介绍如何在 WinDbg 预览调试程序中使用文件菜单。
-ms.date: 08/04/2017
+title: WinDbg 预览-"文件" 菜单
+description: 本部分介绍如何使用 WinDbg 预览调试器中的 "文件" 菜单。
+ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cba9d8ab2c98735dd78be50bfa78b07e3a979a82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e5e4e33e13ea8de20f8b6fb04a0dbf3f7cb9c496
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56562384"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256752"
 ---
-# <a name="windbg-preview---file-menu"></a>WinDbg 预览版-文件菜单 
+# <a name="windbg-preview---file-menu"></a>WinDbg 预览-"文件" 菜单
 
-本主题介绍如何使用文件菜单。
+![带有位模式的 windbg 预览的小徽标](images/windbgx-preview-logo.png)
 
-### <a name="start-debugging"></a>开始调试
+本主题介绍如何使用 "文件" 菜单。
 
-当你首次打开文件菜单时，您将看到*开始调试*和最新的调试器目标。 使用*开始调试*新配置并打开前几个调试器会话。
+### <a name="start-debugging"></a>“启动调试”
 
-#### <a name="recent"></a>Recent
+当你首次打开 "文件" 菜单时，你将看到 "*启动调试*" 和最近使用的调试器目标。 使用 "*启动调试*" 配置新的和打开的以前的调试器会话。
 
-最近列表包含你的新工作区和调试器连接的列表。 工作区的工作设置的详细信息请参阅[WinDbg 预览版安装程序-设置和工作区](windbg-setup-preview.md)。
+#### <a name="recent"></a>最近使用的项目
 
-右键单击菜单可用于管理工作区，如固定、 重命名和移动它们。 以及记事本中编辑这些实体。
+"最近" 列表包含最近使用的工作区和调试器连接的列表。 有关工作设置工作区的详细信息，请参阅[WinDbg 预览设置–设置和工作区](windbg-setup-preview.md)。
 
-![工作区文件右键单击打开重命名编辑显示在记事本 pin 菜单并从列表中删除，以及清除已取消固定的目标](images/windbgx-workspace-right-click.png)
+您可以使用右键单击菜单来管理工作区，例如固定、重命名和移动工作区。 并在记事本中进行编辑。
 
-#### <a name="start-a-new-session"></a>启动新的会话
+![工作区文件右键单击菜单，显示 "在记事本中打开重命名" "pin" 和 "从列表中删除"，以及清除取消固定目标](images/windbgx-workspace-right-click.png)
 
-使用中的其他选项卡*开始调试*部分以启动新的调试程序会话，连接或启动的进程。 启动新会话的详细信息请参阅[WinDbg 预览的启动模式下的用户会话](windbg-user-mode-preview.md)和[WinDbg 预览版-启动内核模式会话](windbg-kernel-mode-preview.md)
+#### <a name="start-a-new-session"></a>启动新会话
 
+使用 "*启动调试*" 部分中的 "其他" 选项卡可启动新的调试器会话，例如附加或启动进程。 有关启动新会话的详细信息，请参阅[Windbg preview-启动用户模式会话](windbg-user-mode-preview.md)和[WinDbg preview-启动内核模式会话](windbg-kernel-mode-preview.md)
 
 ### <a name="save-workspace"></a>保存工作区
 
-使用*保存工作区*保存当前工作区。
+使用 "*保存工作区*" 保存当前工作区。
 
-会话的连接信息存储在工作区配置文件。 工作区文件都会保存.debugTarget 文件扩展名。 
+会话连接信息存储在工作区配置文件中。 工作区文件以 debugTarget 文件扩展名存储。
 
-工作区文件的默认位置为： 
+工作区文件的默认位置为：
 
 ```console
 C:\Users\*UserName*\AppData\Local\DBG\targets
 ```
 
-### <a name="open-source-file"></a>开放源代码文件
+### <a name="open-source-file"></a>打开源文件
 
-使用*开放源代码文件*若要打开的源文件。 如果想要使用的其他源尚未加载由于执行代码的文件执行此操作。 有关如何使用源代码文件的详细信息，请参阅[在 WinDbg 中源代码调试](source-window.md)
-
+使用 "*打开源文件*" 打开源文件。 如果要使用因代码执行而未加载的其他源文件，请执行此操作。 有关使用源文件的详细信息，请参阅[WinDbg 中的源代码调试](source-window.md)
 
 ### <a name="open-script"></a>打开脚本
 
-使用*打开脚本*若要打开现有的 Javascript 或 NatVis 脚本。 有关使用脚本的详细信息请参阅[WinDbg 预览版-脚本菜单](windbg-scripting-preview.md)。
+使用 "*打开脚本*" 打开现有 Javascript 或 NatVis 脚本。 有关使用脚本的详细信息，请参阅[WinDbg 预览-脚本菜单](windbg-scripting-preview.md)。
 
-### <a name="settings"></a>设置
+### <a name="settings"></a>“设置”
 
-使用设置菜单来设置源和符号路径，以及为调试器选择浅色和深色主题。 有关详细信息设置，请参阅[WinDbg 预览版安装程序-设置和工作区](windbg-setup-preview.md)。
-
+使用 "设置" 菜单可设置源和符号路径，以及选择调试器的浅色和深色主题。 有关设置的详细信息，请参阅[WinDbg 预览设置-设置和工作区](windbg-setup-preview.md)。
 
 ### <a name="about"></a>关于
-使用*有关*要显示调试程序的生成版本信息。 您可以使用也使用此屏幕可以查看 Microsoft 隐私声明。
+
+使用 "*关于*" 显示调试器的生成版本信息。 你还可以使用此屏幕查看 Microsoft 隐私声明。
+
+### <a name="exit"></a>退出
+
+使用*exit*退出调试器。
 
 ---
- 
-## <a name="see-also"></a>请参阅
 
-[调试使用 WinDbg 预览](debugging-using-windbg-preview.md)
- 
+## <a name="see-also"></a>另请参阅
 
-
-
-
-
+[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)

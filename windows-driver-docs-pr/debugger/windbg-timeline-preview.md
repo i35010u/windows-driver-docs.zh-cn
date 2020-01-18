@@ -1,16 +1,18 @@
 ---
 title: WinDbg 预览-时间线
-description: 本部分介绍如何使用 WinDbg Preview 中的 "旅行时间线" 功能。
-ms.date: 12/06/2019
+description: 本部分介绍如何在 WinDbg Preview 中使用时间段功能。
+ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0903b47dc34bae20da988eb27b37ea66bc73b6e0
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 2b20ec4a45d59d8197a7f369d86f13364ecc60df
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75252054"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256741"
 ---
-# <a name="windbg-preview---timeline"></a>WinDbg 预览-时间线
+# <a name="windbg-preview---timelines"></a>WinDbg 预览-时间线
+
+![带有位模式的 windbg 预览的小徽标](images/windbgx-preview-logo.png)
 
 行程调试（TTD）允许用户记录跟踪，这是程序的执行记录。 时间线是执行过程中发生的事件的直观表示形式。 这些事件可以是以下位置：断点、内存读取/写入、函数调用和返回以及异常。
 
@@ -33,7 +35,7 @@ ms.locfileid: "75252054"
 
 将鼠标悬停在每个事件上，以通过工具提示获取详细信息。 单击某个事件将对该事件运行查询并显示详细信息。 双击某个事件将跳转到 TTD 跟踪文件中的该位置。
 
-### <a name="exceptions"></a>例外
+### <a name="exceptions"></a>异常
 
 当您加载跟踪文件并且时间线处于活动状态时，它会自动显示记录中的任何异常。
 

@@ -1,85 +1,93 @@
 ---
-title: WinDbg 预览版-设置和工作区
+title: WinDbg 预览-设置和工作区
 description: 本部分介绍如何设置 WinDbg 预览调试器。
-ms.date: 08/17/2017
+ms.date: 01/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 64cf7cc9d215afc29e332ea6ee5b5a4fa10ab199
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8f7b6a4d0987326e509aa20a5c82d3d51400f5f4
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340495"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256737"
 ---
-# <a name="windbg-preview---settings-and-workspaces"></a>WinDbg 预览版-设置和工作区
+# <a name="windbg-preview---settings-and-workspaces"></a>WinDbg 预览-设置和工作区
 
-本部分介绍如何设置和配置 WinDbg 预览调试程序。
+![带有位模式的 windbg 预览的小徽标](images/windbgx-preview-logo.png)
 
+本部分介绍如何设置和配置 WinDbg 预览调试器。
 
-## <a name="settings"></a>设置
+## <a name="settings"></a>“设置”
 
-使用设置菜单来设置源和符号路径，以及为调试器选择浅色和深色主题。 
+使用 "设置" 菜单设置源和符号路径等项，并为调试器选择浅和深色主题。 
 
-![反馈中心显示反馈选项包括添加新的反馈按钮的屏幕截图](images/windbgx-settings-menu.png)
+![显示 "常规" 选项卡的设置的屏幕截图](images/windbgx-settings-menu.png)
 
-设置路径的详细信息，请参阅[访问以便进行调试的符号](accessing-symbols-for-debugging.md)并[源代码调试在 WinDbg 中](source-window.md)。
+目前有六个设置对话框面板：
+
+- “常规”
+- “命令”窗口
+- 调试设置
+- 反汇编窗口
+- 事件 & 异常
+- 源窗口
+
+有关设置路径的详细信息，请参阅[在 WinDbg 中](source-window.md)[访问用于调试的符号](accessing-symbols-for-debugging.md)和源代码调试。
 
 ## <a name="workspaces"></a>工作区
 
-工作区允许您将配置信息保存在目标连接信息文件。
+工作区允许您将配置信息保存在目标连接信息文件中。
 
-工作区中的选项时关闭调试程序保存或可以使用手动保存*文件* -> *保存工作区*。 
+工作区中的选项在关闭调试器时保存，或者可以使用*文件* -> *保存工作区*手动保存。 
 
-从最近的目标列表启动时，会自动加载工作区或可以在文件菜单手动加载它们。 
+从 "最近的目标" 列表启动时，将自动加载工作区，也可以在 "文件" 菜单中手动加载工作区。 
 
-除了目标连接信息，以下设置存储在工作区文件。
+除目标连接信息外，以下设置还存储在工作区文件中。
 
-#### <a name="general-settings"></a>常规设置 
+#### <a name="general-settings"></a>常规设置
+
 > [!NOTE]
-> 此列表和格式还没有结束，并且可能会更改。
+> 此列表和格式不是最终的，可能会发生更改。
 
-设置 | 默认 | 描述
+设置 | 默认值 | 描述
 --- | --- | ---
-FinalBreak |true | 如果为 true，将忽略最终断点 (-g 命令行选项)。
-SourceDebugging |true  | 源或程序集模式之间切换。
-DebugChildProcesses | false| （仅限用户模式）如果为 true 将调试启动目标应用程序的子进程。 (-o 命令行选项)。
-非侵入 | false  |  指定非入侵性附加 (-pv 命令行选项)。
-NoDebugHeap | false  |  指定不应使用调试堆 (-hd 命令行选项)。
-Verbose | false  | 启用详细模式后，某些显示的命令 （例如注册转储） 生成更详细的输出。 (-v 命令行选项)。
-提升 | - |  在内部使用 WinDbg-不要修改。
-可重新启动 | - |  在内部使用 WinDbg-不要修改。
-UseImplicitCommandLine | false | 隐式使用命令行 (-cimp 命令行选项)。 这将使用隐式的命令行，而不是一个显式的过程以运行启动调试器。
+FinalBreak |true | 如果为 true，则忽略最后一个断点（-g 命令行选项）。
+SourceDebugging |true  | 在源或程序集模式间切换。
+DebugChildProcesses | 否| （仅用户模式）如果为 true，则调试由目标应用程序启动的子进程。 （-o 命令行选项）。
+Noninvasive | 否  |  指定非侵害性附加（-pv 命令行选项）。
+NoDebugHeap | 否  |  指定不应使用调试堆（-hd 命令行选项）。
+Verbose | 否  | 当启用详细模式时，某些显示命令（如寄存器转储）会生成更详细的输出。 （-v 命令行选项）。
+提升 | - |  WinDbg 在内部使用-不修改。
+可重新启动 | - |  WinDbg 在内部使用-不修改。
+UseImplicitCommandLine | 否 | 使用隐式命令行（-cimp 命令行选项）。 这将使用隐式命令行（而不是显式进程）来启动调试器。
 
 有关命令行选项的详细信息，请参阅[WinDbg 命令行选项](windbg-command-line-options.md)。
 
+#### <a name="symbol-settings"></a>符号设置
 
-#### <a name="symbol-settings"></a>符号设置 
-
-设置 | 默认 | 描述
+设置 | 默认值 | 描述
 --- | --- | ---
-SymbolOptionsOverride | 0 | 显式符号选项掩码，一个十六进制数字的形式。
-ShouldOverrideSymbolOptions | false | 如果设置为 *，则返回 true*替代所有符号选项下面列出了提供的符号选项掩码，上面所述。
-SymOptExactSymbols | false | 此选项会导致调试器执行的所有符号文件严格评估。
-SymOptFailCriticalErrors | false | 此符号选项将导致文件访问错误对话框来禁止显示。
-SymOptIgnoreCvRec | false | 此选项会导致要搜索的符号时忽略 CV 记录加载的映像标头中的符号处理程序。 
-SymOptIgnoreNtSympath | false | 此选项会导致调试器忽略符号路径和可执行映像路径的环境变量设置。 
-SymOptNoCpp | false | 此符号选项将关闭C++转换。 当设置此符号选项时，:: 替换为 __ 中的所有符号。 
-SymOptNoUnqualifiedLoads | false | 此符号选项禁用符号处理程序的自动加载模块。 如果设置此选项，调试器会尝试匹配一个符号，它将仅搜索已加载的模块。 
-SymOptAutoPublics | false | 此符号选项将导致 DbgHelp 公共符号表中仅作为最后的手段的.pdb 文件中搜索。 如果找到任何匹配项搜索中的私有符号数据时，将不搜索公共符号。 这提高了符号搜索速度。 
-SymOptDebug | false | 此符号选项开启干扰符号加载。 这会指示调试器以显示有关其搜索符号信息。
+SymbolOptionsOverride | 0 | 显式符号选项掩码，采用单个十六进制数的形式。
+ShouldOverrideSymbolOptions | 否 | 如果设置为*true* ，则用提供的符号选项掩码替代下面列出的所有符号选项，如上所述。
+SymOptExactSymbols | 否 | 此选项使调试器对所有符号文件执行严格的计算。
+SymOptFailCriticalErrors | 否 | 此符号选项导致禁止显示文件访问错误对话框。
+SymOptIgnoreCvRec | 否 | 在搜索符号时，此选项会导致符号处理程序忽略加载的图像标头中的 CV 记录。 
+SymOptIgnoreNtSympath | 否 | 此选项使调试器忽略符号路径和可执行映像路径的环境变量设置。 
+SymOptNoCpp | 否 | 此符号选项用于关闭C++转换。 设置此符号选项后，所有符号中的：：替换为 __。 
+SymOptNoUnqualifiedLoads | 否 | 此符号选项禁用符号处理程序的自动加载模块。 如果设置了此选项，并且调试器尝试匹配符号，则它将只搜索已加载的模块。 
+SymOptAutoPublics | 否 | 此符号选项会使 Dbghelp.dll 仅搜索 .pdb 文件中的公共符号表，作为最后的手段。 如果在搜索私有符号数据时找到任何匹配项，则不会搜索公共符号。 这可提高符号搜索速度。 
+SymOptDebug | 否 | 此符号选项用于打开干扰符号加载。 这会指示调试器显示有关其符号搜索的信息。
 
-符号选项的详细信息，请参阅[符号选项](symbol-options.md)。
-
+有关符号选项的详细信息，请参阅[符号选项](symbol-options.md)。
 
 #### <a name="window-layout-settings"></a>窗口布局设置
 
- 窗口布局全局保存，并且不会保存在工作区文件。 
-
+ 窗口布局是全局保存的，不保存在工作区文件中。 
 
 #### <a name="workspaces-xml-file"></a>工作区 XML 文件
 
-工作区和目标连接信息存储在 XML 格式。 
+工作区和目标连接信息以 XML 格式存储。
 
-以下文件中，显示的示例工作区配置文件。
+以下文件显示了一个示例工作区配置文件。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -114,17 +122,10 @@ SymOptDebug | false | 此符号选项开启干扰符号加载。 这会指示调
 </TargetConfig>
 ```
 
-请注意，这种文件格式将继续发展更多的功能添加到 WinDbg 预览调试程序。
-
+请注意，在将更多功能添加到 WinDbg 预览调试器时，此文件格式将继续演化。
 
 ---
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[调试使用 WinDbg 预览](debugging-using-windbg-preview.md)
-
-
-
-
-
-
+[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)

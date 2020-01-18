@@ -1,19 +1,19 @@
 ---
 title: 调试资源
-description: 使用 Windows 调试工具调试 Windows 系统上的驱动程序、应用程序和服务。
+description: 使用 Windows 调试工具可以调试 Windows 系统上的驱动程序、应用程序和服务。
 ms.assetid: F2111416-EC6C-4967-B123-9A6101040561
-ms.date: 12/03/2019
+ms.date: 12/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b5d9331601fa6c93387427a1c8bfecc42a6f3f
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 974b271597591e64164f34e5760c53e2e4e52ac2
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209293"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256725"
 ---
 # <a name="debugging-resources"></a>调试资源
 
-使用 Windows 调试工具调试 Windows 系统上的驱动程序、应用程序和服务。 工具集中的核心调试引擎称为 Windows 调试器。 你可以使用传统接口（WinDbg、CDB 和 NTSD），这些接口包括在适用于 Windows 的调试工具中。
+使用 Windows 调试工具可以调试 Windows 系统上的驱动程序、应用程序和服务。 该工具集内的核心调试引擎称为“Windows 调试器”。 你可以使用传统接口（WinDbg、CDB 和 NTSD），这些接口包括在适用于 Windows 的调试工具中。
 
 ## <a name="span-idgetting_started_with_debugging_tools_for_windowsspanspan-idgetting_started_with_debugging_tools_for_windowsspanspan-idgetting_started_with_debugging_tools_for_windowsspangetting-started-with-debugging-tools-for-windows"></a><span id="Getting_Started_with_Debugging_Tools_for_Windows"></span><span id="getting_started_with_debugging_tools_for_windows"></span><span id="GETTING_STARTED_WITH_DEBUGGING_TOOLS_FOR_WINDOWS"></span>适用于 Windows 调试工具的入门
 

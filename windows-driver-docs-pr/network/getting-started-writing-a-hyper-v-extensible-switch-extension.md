@@ -4,15 +4,14 @@ description: 本部分介绍如何开始编写 Hyper-v 可扩展交换机扩展
 ms.assetid: 91C6ED75-1057-4520-8E8E-28817D8F3C81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc7405f8b0cc19b4c2bf8ce9a2067e8ac47a2097
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bfcebe72493e14faaa821e4d39e619816146104a
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842180"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256761"
 ---
 # <a name="getting-started-writing-a-hyper-v-extensible-switch-extension"></a>开始编写 Hyper-V 可扩展交换机扩展
-
 
 Hyper-v 可扩展交换机扩展是一个 NDIS 筛选器或 Windows 筛选平台（WFP）筛选器，可在 Hyper-v 可扩展交换机（也称为 "Hyper-v 虚拟交换机"）中运行。
 
@@ -22,14 +21,14 @@ Hyper-v 可扩展交换机扩展是一个 NDIS 筛选器或 Windows 筛选平台
 
 若要创建 Hyper-v 可扩展交换机扩展，请执行以下步骤：
 
-1.  了解扩展体系结构和编程模型。
+1. 了解扩展体系结构和编程模型。
     -   从[Hyper-v 可扩展交换机](hyper-v-extensible-switch.md)开始，阅读有关基于 NDIS 的扩展的联机文档。 捕获、筛选和转发扩展使用标准 NDIS 筛选 API。 已增强 NDIS 接口以提供虚拟交换机和虚拟机的配置、通知和标识。
-        [Hyper-v 可扩展交换机功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-        hyper-v 可扩展交换机的
-        [枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)和[hyper-v 可扩展](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-oids)交换机[的联合
-        的联合](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-        [hyper-v可扩展交换机状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications)
-        [Hyper-v 可扩展交换机宏](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-macros)
+        [Hyper-v 可扩展交换机功能](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) [
+        
+        hyper-v 可扩展交换机](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/index)[的结构和联合](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+        hyper-v 可扩展交换机[oid](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-oids)
+        hyper-v 可扩展交换机状态指示
+        hyper-v 可扩展交换机[宏](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-macros)的[状态指示](https://docs.microsoft.com/windows-hardware/drivers/network/hyper-v-extensible-switch-status-indications)
     -   从[使用虚拟交换机筛选](using-virtual-switch-filtering.md)开始，阅读基于 WFP 的扩展的联机文档。
     -   观看以下有关扩展的指导性视频。
         -   [Hyper-v 可扩展交换机上的 TechEd 会话](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2012/VIR307)
@@ -39,8 +38,8 @@ Hyper-v 可扩展交换机扩展是一个 NDIS 筛选器或 Windows 筛选平台
     -   可以使用多个 PowerShell 命令来管理扩展。 这些列在[管理安装的 Hyper-v 可扩展交换机扩展](managing-installed-hyper-v-extensions.md)中列出。
 
 2.  设置开发环境。
-    -   安装 2012 Microsoft Visual Studio Professional。
-    -   下载并安装[Windows 驱动程序工具包 8](https://developer.microsoft.com/windows/hardware)。
+    -   安装 Microsoft Visual Studio Professional。
+    -   下载并安装[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 
 3.  研究示例扩展。
     -   下载[NDIS 转发扩展示例](https://go.microsoft.com/fwlink/p/?LinkId=618935)。
@@ -51,11 +50,11 @@ Hyper-v 可扩展交换机扩展是一个 NDIS 筛选器或 Windows 筛选平台
     -   如果要开发 NDIS 扩展，则可以使用标准 NDIS INF，其中有一些更改，如[Hyper-v 可扩展交换机扩展的 INF 要求](inf-requirements-for-hyper-v-extensions.md)中所述。
 
 5.  构建扩展并对其进行单元测试。
-    -   必须[使用 Visual Studio 生成扩展](https://msdn.microsoft.com/library/windows/hardware/ff554644.aspx)。
+    -   必须[使用 Visual Studio 生成扩展](https://visualstudio.microsoft.com/vs/)。
     -   你可以通过使用 Visual Studio 编译和运行示例扩展，熟悉扩展生成过程。
 
 6.  了解用于获取扩展签名的 Windows 认证（徽标）过程。
-    -   扩展必须通过[Windows 硬件认证包（HCK）](https://go.microsoft.com/fwlink/p/?LinkId=733613)中的测试。
+    -   扩展必须通过[Windows 硬件认证包（HCK）](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/)中的测试。
     -   扩展的要求列在[Windows 硬件认证要求-筛选器驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/cert-program/windows-hardware-certification-requirements---filter-driver)的 VSwitchExtension. ExtensionRequirements 下。
 
 7.  设置 Windows 硬件认证工具包环境。
@@ -72,12 +71,3 @@ Hyper-v 可扩展交换机扩展是一个 NDIS 筛选器或 Windows 筛选平台
 10. 在 WindowsServerCatalog.com 上列出你的扩展。
     -   在 WindowsServerCatalog.com 上列出扩展的简短说明。
     -   稍后将提供有关在 WindowsServerCatalog.com 上列出已验证扩展的信息。
-
- 
-
- 
-
-
-
-
-

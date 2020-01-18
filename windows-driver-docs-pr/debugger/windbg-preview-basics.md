@@ -3,21 +3,20 @@ title: WinDbg 预览版基础知识
 description: 本部分介绍 WinDbg 预览调试器的基本功能。
 ms.date: 05/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a5cf7b6664ceb787c306ead239fe332dc96e8de5
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 6467c8157e361aebdb5a8204ddd9dcabb5283b8e
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916116"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256683"
 ---
 # <a name="windbg-preview-basics"></a>WinDbg 预览版基础知识
 
-![Windbg 预览版中的小徽标](images/windbgx-preview-logo.png) 
+![windbg 预览版上的小徽标](images/windbgx-preview-logo.png) 
 
 | Title               | 描述        |
 | ------------------- | -------------------|
 |[WinDbg 预览版-新增功能](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-using-windbg-preview)|WinDbg 预览版的新增功能 |
-
 
 ## <a name="the-debugger-data-model"></a>调试器数据模型
 
@@ -36,7 +35,6 @@ ms.locfileid: "72916116"
 | [WinDbg 预览-脚本](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-scripting-preview) |使用在脚本中内置的 WinDbg Preview  |
 | https://github.com/Microsoft/WinDbg-Samples |调试器团队 GitHub 站点，其中共享最新的 JavaScript （和C++）示例代码。 |
 |[JavaScript 扩展中的本机调试器对象](https://docs.microsoft.com/windows-hardware/drivers/debugger/native-objects-in-javascript-extensions) | 介绍如何使用常见对象并提供有关其属性和行为的参考信息。|
-
 
 ## <a name="ttd-basics"></a>TTD 基础知识
 
@@ -68,6 +66,6 @@ ms.locfileid: "72916116"
 
 | Title               | 描述        |
 | ------------------- | -------------------|
-| [WinDbg 预览版–安装](windbg-install-preview.md) | 安装说明 |
-| [WinDbg 预览版–启动用户模式会话](windbg-user-mode-preview.md) | 用户模式  |
-| [WinDbg 预览版–启动内核模式会话](windbg-kernel-mode-preview.md) | 内核模式 |
+| [WinDbg 预览版 - 安装](windbg-install-preview.md) | 安装说明 |
+| [WinDbg 预览版 - 启动用户模式会话](windbg-user-mode-preview.md) | 用户模式  |
+| [WinDbg 预览版 - 启动内核模式会话](windbg-kernel-mode-preview.md) | 内核模式 |
