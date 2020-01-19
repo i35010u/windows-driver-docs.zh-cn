@@ -60,7 +60,7 @@
       href: debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md
     - name: 调试驱动程序 - 分步实验（Sysvad 内核模式）
       href: debug-universal-drivers--kernel-mode-.md
-- name: 使用 WinDbg 预览版进行调试
+- name: WinDbg 预览版
   items:
     - name: 使用 WinDbg 预览版进行调试
       href: debugging-using-windbg-preview.md
@@ -68,8 +68,6 @@
       href: windbg-what-is-new-preview.md
     - name: WinDbg 预览版 - 安装
       href: windbg-install-preview.md
-    - name: WinDbg 预览版 - 时间线
-      href: windbg-timeline-preview.md
     - name: WinDbg 预览版 - 命令行启动选项
       href: windbg-command-line-preview.md
     - name: WinDbg 预览版 - 设置和工作区
@@ -80,65 +78,73 @@
       href: windbg-user-mode-preview.md
     - name: WinDbg 预览版 - 启动内核模式会话
       href: windbg-kernel-mode-preview.md
+    - name: WinDbg 预览版 - 启动远程会话、进程服务器会话或转储文件会话
+      href: windbg-remote-preview.md
     - name: WinDbg 预览版 – 文件菜单
       href: windbg-file-preview.md
     - name: WinDbg 预览版 – 主菜单
       href: windbg-home-preview.md
     - name: WinDbg 预览版 – 视图菜单
       href: windbg-view-preview.md
-    - name: WinDbg 预览版 – 断点
+    - name: WinDbg 预览版 - 断点菜单
       href: windbg-breakpoints-preview.md
-    - name: WinDbg 预览版 – 数据模型
+    - name: WinDbg 预览版 - 时间旅行菜单
+      href: windbg-timetravel-preview.md
+    - name: WinDbg 预览版 - 数据模型菜单
       href: windbg-data-model-preview.md
-    - name: WinDbg 预览版 – 脚本
+    - name: WinDbg 预览版 - 脚本菜单
       href: windbg-scripting-preview.md
-    - name: 时光穿越调试 - 概述
+    - name: WinDbg 预览版 - 说明、命令、存储和源菜单
+      href: windbg-notes-etc-preview.md
+    - name: 时间旅行调试
       items:
-        - name: 时光穿越调试 - 概述
+        - name: 时间旅行调试 - 概述
           href: time-travel-debugging-overview.md
-        - name: 时光穿越调试 - 记录
+        - name: 时间旅行调试 - 记录跟踪
           href: time-travel-debugging-record.md
         - name: 时光穿越调试 - 重放跟踪
           href: time-travel-debugging-replay.md
-        - name: 时光穿越调试 - 使用跟踪文件
+        - name: WinDbg 预览版 - 时间线
+          href: windbg-timeline-preview.md
+        - name: 时间旅行调试 - 使用跟踪文件
           href: time-travel-debugging-trace-file-information.md
-        - name: 时光穿越调试 - 故障排除
+        - name: 时间旅行调试 - 故障排除
           href: time-travel-debugging-troubleshooting.md
-        - name: 时光穿越调试 - 导航命令
+        - name: 时间旅行调试 - 导航命令
           href: time-travel-debugging-navigation-commands.md
-        - name: 时光穿越调试 - 扩展命令
+        - name: 时间旅行调试 - 命令
           items:
-            - name: 时光穿越调试 - 扩展命令
+            - name: 时间旅行调试 - 扩展命令概述
               href: time-travel-debugging-extension-commands.md
-            - name: 时光穿越调试 - !tt（时光穿越）
+            - name: 时间旅行调试 - !tt（时光穿越）
               href: time-travel-debugging-extension-tt.md
-            - name: 时光穿越调试 - !index（时光穿越）
+            - name: 时间旅行调试 - !index（时光穿越）
               href: time-travel-debugging-extension-index.md
-            - name: 时光穿越调试 - !positions（时光穿越）
+            - name: 时间旅行调试 - !positions（时光穿越）
               href: time-travel-debugging-extension-positions.md
-        - name: 时光穿越调试 - 示例应用演练
+        - name: 时间旅行调试 - 演练
           href: time-travel-debugging-walkthrough.md
-        - name: 时光穿越调试 - 时光穿越调试对象简介
+        - name: 时间旅行调试 - 时间旅行调试对象
           items:
-            - name: 时光穿越调试 - 时光穿越调试对象简介
+            - name: 时间旅行调试 - 时光穿越调试对象简介
               href: time-travel-debugging-object-model.md
-            - name: 时光穿越调试 - 调用对象
+            - name: 时间旅行调试 - 调用对象
               href: time-travel-debugging-calls-objects.md
-            - name: 时光穿越调试 - 堆对象
+            - name: 时间旅行调试 - 堆对象
               href: time-travel-debugging-heap-objects.md
-            - name: 时光穿越调试 - 内存对象
+            - name: 时间旅行调试 - 内存对象
               href: time-travel-debugging-memory-objects.md
-            - name: 时光穿越调试 - 事件对象
+            - name: 时间旅行调试 - 事件对象
               href: time-travel-debugging-event-objects.md
-            - name: 时光穿越调试 - 异常对象
+            - name: 时间旅行调试 - 异常对象
               href: time-travel-debugging-exception-objects.md
-            - name: 时光穿越调试 - 位置对象
+            - name: 时间旅行调试 - 位置对象
               href: time-travel-debugging-position-objects.md
-            - name: 时光穿越调试 - 范围对象
+            - name: 时间旅行调试 - 范围对象
               href: time-travel-debugging-range-objects.md
-            - name: 时光穿越调试 - 线程对象
+            - name: 时间旅行调试 - 线程对象
               href: time-travel-debugging-thread-objects.md
-        - name: 时光穿越调试 - JavaScript 自动化
+        - name: 时间旅行调试 - JavaScript 自动化
           href: time-travel-debugging-javascript-automation.md
 - name: 调试资源
   items:
@@ -912,7 +918,7 @@
           href: e.md
         - name: F
           href: f.md
-        - name: H
+        - name: H 上执行碎片合并
           href: h.md
         - name: I
           href: i.md
