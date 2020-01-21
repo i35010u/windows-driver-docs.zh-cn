@@ -15,7 +15,7 @@ ms.locfileid: "63328329"
 
 本部分包含 Microsoft 定义蓝牙 HCI 扩展插件的示例和关系图。
 
-## <a name="example-matching-patterns-for-hcivsmsftlemonitoradvertisement"></a>例如：有关 HCI_VS_MSFT_LE_Monitor_Advertisement 匹配模式
+## <a name="example-matching-patterns-for-hci_vs_msft_le_monitor_advertisement"></a>例如：有关 HCI_VS_MSFT_LE_Monitor_Advertisement 匹配模式
 此示例演示已接收的 HCI_VS_MSFT_LE_Monitor_Advertisement 命令，并根据命令参数的 3 个不同的通告数据包的评估。
 
 接收到的 HCI_VS_MSFT_LE_Monitor_Advertisement 命令 HCI_VS_MSFT_LE_Monitor_Advertisement 命令控制器收到并包含以下参数。
@@ -501,9 +501,9 @@ ms.locfileid: "63328329"
 
 当 RSSI_threshold_low_time_interval 过期即时 15 时，播发将传播到具有的-85dB RSSI 的主机。 没有更多的播发发送到在此示例中的主机。
 
- ## <a name="flowchart-advertisement-and-white-list-filtering"></a>流程图：播发和白名单筛选
+ ## <a name="flowchart-advertisement-and-white-list-filtering"></a>流程图：播发和允许列表筛选
 
-此流程图提供了播发筛选和白名单筛选收到播发时的示例控制器实现。
+此流程图提供了播发筛选和允许列表筛选收到播发时的示例控制器实现。
 
 控制器可以只要在播发通知宿主，以不同方式，实现此逻辑或 < MSHelp:link tabindex ="0"keywords="bltooth.hci_vs_msft_le_monitor_device_event"><b>HCI_VS_MSFT_LE_Monitor_Device_Event</b>< / MSHelp:link > 所指定的流程图。
 

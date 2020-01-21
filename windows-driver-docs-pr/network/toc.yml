@@ -2702,7 +2702,7 @@
           href: mb-multi-sim-operations.md
         - name: MB 预配上下文操作
           href: mb-provisioned-context-operations.md
-        - name: MB 网络黑名单操作
+        - name: MB 网络阻止列表操作
           href: mb-network-blacklist-operations.md
         - name: MB LTE 附加操作
           href: mb-lte-attach-operations.md

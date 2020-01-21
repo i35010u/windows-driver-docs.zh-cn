@@ -1,6 +1,6 @@
 ---
-title: MB 网络黑名单操作
-description: MB 网络黑名单操作
+title: MB 网络阻止列表操作
+description: MB 网络阻止列表操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f8b839edae59e50126b399cb0018573180281ba5
@@ -10,11 +10,11 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "63343292"
 ---
-# <a name="mb-network-blacklist-operations"></a>MB 网络黑名单操作
+# <a name="mb-network-blacklist-operations"></a>MB 网络阻止列表操作
 
 设备可能需要注册到下各种方案，例如当插入特定的 SIM 卡，或如果设备不想注册到特定网络的网络。 若要解决这些情况下，Windows 10 版本 1703年添加调制解调器接口，以使 OS 配置 SIM 卡和网络提供商的阻止列表。
 
-在任何时候，操作系统可以在调制解调器，若要指定 SIM 或向其设备不允许注册的网络中配置的 MCC/mnc 对。  该接口的灵活程度足以允许两个不同的列表，一个用于 SIM 提供程序，另一个网络提供商。  如果设备未尝试注册，因为特定 SIM 或网络提供商已列入黑名单，调制解调器必须报告注册状态为被拒绝。
+在任何时候，操作系统可以在调制解调器，若要指定 SIM 或向其设备不允许注册的网络中配置的 MCC/mnc 对。  该接口的灵活程度足以允许两个不同的列表，一个用于 SIM 提供程序，另一个网络提供商。  如果设备未尝试注册，因为特定 SIM 或网络提供商已列入阻止列表，调制解调器必须报告注册状态为被拒绝。
 
 ## <a name="mb-interface-update-for-network-blacklist-operations"></a>有关网络方块列表操作 MB 界面更新
 
@@ -30,18 +30,18 @@ UUID Value = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 | --- | --- | --- |
 | MBIM_CID_MS_NETWORK_BLACKLIST | 2 | Windows 10 版本 1703 |
 
-## <a name="mbimcidmsnetworkblacklist"></a>MBIM_CID_MS_NETWORK_BLACKLIST
+## <a name="mbim_cid_ms_network_blacklist"></a>MBIM_CID_MS_NETWORK_BLACKLIST
 
 ### <a name="description"></a>描述
 
 企业、 用户或移动运营商可能指定 SIM 卡和网络的管理员不想要注册的调制解调器。 此命令用于为操作系统能够查询和设置的调制解调器上的阻止列表。 有两个阻止列表：
 
-1.  SIM 卡黑名单 – SIM 卡的提供程序是方块列表的成员应不允许在任何网络上注册。
-2.  网络提供程序黑名单 – 方块列表上的网络应不允许注册而不考虑哪些 SIM 卡是设备上存在。
+1.  SIM 卡阻止列表 – SIM 卡的提供程序是方块列表的成员应不允许在任何网络上注册。
+2.  网络提供程序阻止列表 – 方块列表上的网络应不允许注册而不考虑哪些 SIM 卡是设备上存在。
 
 调制解调器必须维护每个调制解调器这两个阻止列表和在 SIM 交换中保持原样，电源周期。 可以使用查询或一组访问这两个阻止列表在任何时候，而不考虑 SIM 状态。
 
-为一组命令它应覆盖现有项列入黑名单，在使用 Set 命令的有效负载的调制解调器。
+为一组命令它应覆盖现有项列入阻止列表，在使用 Set 命令的有效负载的调制解调器。
 
 #### <a name="query"></a>查询
 
@@ -86,8 +86,8 @@ MBIM_MS_NETWORK_BLACKLIST_STATE 描述了可能的状态的两个不同的阻止
 | 在任务栏的搜索框中键入 | 掩码 | 描述 |
 | --- | --- | --- |
 | MbimMsNetworkBlacklistStateNotActuated | 0h | 不满足这两个方块列表条件。 |
-| MbimMsNetworkBlacklistSIMProviderActuated | 1h | 为其提供程序 ID 匹配 SIM 提供程序 id 方块列表插入的 SIM 已被列入黑名单 |
-| MbimMsNetworkBlacklistNetworkProviderActuated | 2h | 由于其提供程序 Id 是为网络提供程序 id。 方块列表中的所有可用网络都已列入黑名单 |
+| MbimMsNetworkBlacklistSIMProviderActuated | 1h | 为其提供程序 ID 匹配 SIM 提供程序 id 方块列表插入的 SIM 已被列入阻止列表 |
+| MbimMsNetworkBlacklistNetworkProviderActuated | 2h | 由于其提供程序 Id 是为网络提供程序 id。 方块列表中的所有可用网络都已列入阻止列表 |
 
 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 指定方块列表的提供程序。
 

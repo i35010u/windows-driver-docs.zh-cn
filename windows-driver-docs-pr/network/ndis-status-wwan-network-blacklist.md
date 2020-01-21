@@ -16,7 +16,7 @@ ms.locfileid: "72844667"
 
 微型端口驱动程序使用**NDIS_STATUS_WWAN_NETWORK_BLACKLIST**通知来通知移动宽带（MB）服务完成了上一个[OID_WWAN_NETWORK_BLACKLIST](oid-wwan-network-blacklist.md)查询或设置请求。
 
-如果任何黑名单状态已从 "开始" 改为 "未开始"，则发送未经请求的事件，反之亦然。 例如，如果插入的 SIM 与 SIM 提供程序黑名单匹配，则为。
+如果任何阻止列表状态已从 "开始" 改为 "未开始"，则发送未经请求的事件，反之亦然。 例如，如果插入的 SIM 与 SIM 提供程序阻止列表匹配，则为。
 
 此通知使用[**NDIS_WWAN_NETWORK_BLACKLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_network_blacklist)结构。
 
@@ -29,7 +29,7 @@ ms.locfileid: "72844667"
 
 ## <a name="see-also"></a>另请参阅
 
-[MB 网络黑名单操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
+[MB 网络阻止列表操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
 
 [OID_WWAN_NETWORK_BLACKLIST](oid-wwan-network-blacklist.md)
 

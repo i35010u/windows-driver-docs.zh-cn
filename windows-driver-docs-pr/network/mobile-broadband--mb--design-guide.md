@@ -60,7 +60,7 @@ ms.locfileid: "72844227"
 
 [MB 预配上下文操作](mb-provisioned-context-operations.md)
 
-[MB 网络黑名单操作](mb-network-blacklist-operations.md)
+[MB 网络阻止列表操作](mb-network-blacklist-operations.md)
 
 [MB LTE 附加操作](mb-lte-attach-operations.md)
 

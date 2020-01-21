@@ -541,7 +541,7 @@ Subcommand_opcode (1 个八进制):
 
 | ReplTest1  |  参数说明 |
 |---|---|
-|0x00| 恢复为当前的白名单行为, 但根据[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)命令中的 _Condition_s 继续监视设备。|
+|0x00| 恢复为当前的允许列表行为, 但根据[HCI_VS_MSFT_LE_Monitor_Advertisement](#hci_vs_msft_le_monitor_advertisement)命令中的 _Condition_s 继续监视设备。|
 |0x01|在控制器上启用所有发出的 HCI_VS_MSFT_LE_Monitor_Advertisement 命令。|
 
 #### <a name="return_parameter"></a>Return_parameter
