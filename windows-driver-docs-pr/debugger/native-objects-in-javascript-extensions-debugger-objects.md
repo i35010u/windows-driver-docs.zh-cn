@@ -2,14 +2,14 @@
 title: JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 description: 本机调试器对象表示调试器环境的各种构造。 本主题介绍 JavaScript 扩展中的本机调试器对象的其他详细信息。
 ms.assetid: A8E12564-D083-43A7-920E-22C4D627FEE9
-ms.date: 09/07/2019
+ms.date: 01/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c7024353413f64393c2b0be0b181cedfc947ce8b
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: a96d0222a5715394edbdf924ab2dda506f53922d
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861387"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76315111"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---debugger-object-details"></a>JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 
@@ -59,11 +59,10 @@ JavaScript 中的属性访问的常规方法--对象. propertyName 和 object\[p
 | hostContext        | 属性                   | 返回一个对象，它表示对象中的上下文 (地址空间、 调试目标，等等...)                              |
 | targetLocation     | 属性                   | 返回一个对象是一个抽象概念的其中对象是在地址空间内 (虚拟地址、 注册、 子寄存器，等等...) |
 | targetSize         | 属性                   | 返回对象的大小（有效： sizeof （&lt;类型的对象&gt;）                                                                |
-| addParentModel     | . addParentModel （object）    | 向对象添加新的父模型（类似于 JavaScript 原型，但位于数据型号端）                                          |
+| addParentModel     | . addParentModel （object）    | 向对象添加新的父模型（类似于数据模型端的 JavaScript 原型）                                          |
 | removeParentModel  | . removeParentModel （object） | 从对象中移除给定的父模型                                                                                               |
 | runtimeTypedObject | 属性                   | 对对象执行分析，并尝试将其转换为运行时（最常派生的）类型                                                 |
-
- 
+| targetType         | 属性                   | JavaScript 扩展可以直接访问基础语言的类型系统。 此访问通过类型对象的概念来表示。 有关详细信息，请参阅[JavaScript 扩展中的本机调试器对象-类型对象](native-objects-in-javascript-extensions-type-objects.md)  |
 
 如果对象是指针，则将以下属性（和方法）投影到用于输入 JavaScript 的指针：
 
@@ -73,8 +72,6 @@ JavaScript 中的属性访问的常规方法--对象. propertyName 和 object\[p
 | 地址       | 属性       | 将指针的地址作为64位序号对象返回（库类型） |
 | 取消引用   | 。取消引用（） | 取消引用指针并返回基础对象                     |
 | isNull        | 属性       | 返回指针值是否为 nullptr （0）                        |
-
- 
 
 **与本机调试器对象相关的特殊类型**
 
@@ -86,8 +83,6 @@ JavaScript 中的属性访问的常规方法--对象. propertyName 和 object\[p
 |---------------|------------------|------------------------------------------------------|
 | 添加           | 。添加（值）      | 向位置添加绝对字节偏移量。        |
 | 减 (subtract)      | . 减法（值） | 从位置减去绝对字节偏移量。 |
-
- 
 
 **其他属性**
 
@@ -173,10 +168,7 @@ function stringifyNative(nativeObject)
 </tbody>
 </table>
 
- 
-
 ## <a name="span-idhost-apisspanspan-idhost-apisspanspan-idhost-apisspanhost-apis-for-javascript-extensions"></a><span id="Host-APIs"></span><span id="host-apis"></span><span id="HOST-APIS"></span>JavaScript 扩展的宿主 Api
-
 
 JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个脚本的全局命名空间中。 此对象提供对脚本的关键功能的访问权限，并提供对调试器的命名空间的访问权限。 它分两个阶段进行设置。
 
@@ -192,8 +184,6 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 |-------------|--------------------------------------------------------------------------|
 | 诊断 | 有助于诊断和调试脚本代码的功能    |
 | memory      | 用于在调试目标内启用内存读写功能的功能 |
-
- 
 
 **根级别**
 
@@ -364,8 +354,6 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 |----------|---------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | debugLog | debugLog （对象 ...） | 1             | 这为脚本扩展提供了 printf 样式的调试。 目前，debugLog 的输出将路由到调试器的输出控制台。 在以后的某个时间点，还提供了一些计划以灵活地路由此输出。 注意：不应将其用作将用户输出打印到控制台的方法。 将来可能不会将其路由。 |
 
- 
-
 **内存功能**
 
 宿主对象的内存子命名空间包含以下各项。
@@ -409,10 +397,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 </tbody>
 </table>
 
- 
-
 ## <a name="span-iddata-modelspanspan-iddata-modelspanspan-iddata-modelspandata-model-concepts-in-javascript"></a><span id="Data-Model"></span><span id="data-model"></span><span id="DATA-MODEL"></span>JavaScript 中的数据模型概念
-
 
 **数据模型映射**
 
@@ -424,8 +409,6 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 | Iterability             | IIterableConcept             | 标准： \[符号. iterator\]（） {...}                                 |
 | 可索引性            | IIndexableConcept            | protocol： getDimensionality （...）/getValueAt （...）/setValueAt （...） |
 | 运行时类型转换 | IPreferredRuntimeTypeConcept | protocol： getPreferredRuntimeTypedObject （...）                        |
-
- 
 
 **字符串转换**
 
