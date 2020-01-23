@@ -8,15 +8,15 @@ keywords:
 - nonarbitrary 线程上下文 WDK 文件系统
 - 线程上下文 WDK 文件系统
 - 任意线程上下文 WDK 文件系统
-- 于 Irql WDK 文件系统
-ms.date: 04/20/2017
+- IRQLs WDK 文件系统
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f9489bbd8c9b792a88dba89fe164452de7fac798
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b00508f65d19bb0f46776781a84ebc8a9e32ae28
+ms.sourcegitcommit: 8dd886d4be2c21c6b19ace5ff0521b1bcaf5b383
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359501"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76521801"
 ---
 # <a name="dispatch-routine-irql-and-thread-context"></a>调度例程 IRQL 和线程上下文
 
@@ -35,7 +35,7 @@ ms.locfileid: "63359501"
 <thead>
 <tr class="header">
 <th align="left">调度例程</th>
-<th align="left">调用方的 IRQL:</th>
+<th align="left">调用方的最大 IRQL：</th>
 <th align="left">调用方的线程上下文：</th>
 </tr>
 </thead>
@@ -46,29 +46,29 @@ ms.locfileid: "63359501"
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>关闭</p></td>
+<td align="left"><p>Close</p></td>
 <td align="left"><p>APC_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>创建</p></td>
+<td align="left"><p>“创建”</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>DeviceControl （除分页 I/O）</p></td>
+<td align="left"><p>DeviceControl （分页 i/o 除外）</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>DeviceControl （分页 I/O 路径）</p></td>
+<td align="left"><p>DeviceControl （分页 i/o 路径）</p></td>
 <td align="left"><p>APC_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DirectoryControl</p></td>
 <td align="left"><p>APC_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FlushBuffers</p></td>
@@ -76,14 +76,14 @@ ms.locfileid: "63359501"
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>FsControl （除分页 I/O）</p></td>
+<td align="left"><p>FsControl （分页 i/o 除外）</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>FsControl （分页 I/O 路径）</p></td>
+<td align="left"><p>FsControl （分页 i/o 路径）</p></td>
 <td align="left"><p>APC_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>LockControl</p></td>
@@ -91,9 +91,9 @@ ms.locfileid: "63359501"
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>PnP</p></td>
+<td align="left"><p>Pnp-x</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>QueryEa</p></td>
@@ -121,14 +121,14 @@ ms.locfileid: "63359501"
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>读取 （除分页 I/O）</p></td>
+<td align="left"><p>Read （分页 i/o 除外）</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>读取 （分页 I/O 路径）</p></td>
+<td align="left"><p>读取（分页 i/o 路径）</p></td>
 <td align="left"><p>APC_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>SetEa</p></td>
@@ -158,17 +158,17 @@ ms.locfileid: "63359501"
 <tr class="even">
 <td align="left"><p>关机</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>写入 （除分页 I/O）</p></td>
+<td align="left"><p>写入（分页 i/o 除外）</p></td>
 <td align="left"><p>PASSIVE_LEVEL</p></td>
 <td align="left"><p>Nonarbitrary</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>写入 （分页 I/O 路径）</p></td>
+<td align="left"><p>写入（分页 i/o 路径）</p></td>
 <td align="left"><p>APC_LEVEL</p></td>
-<td align="left"><p>任意</p></td>
+<td align="left"><p>任一</p></td>
 </tr>
 </tbody>
 </table>
