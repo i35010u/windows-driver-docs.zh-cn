@@ -1,14 +1,14 @@
 ---
 title: 时光穿越调试 - 示例应用演练
 description: 本部分包含一个小型C++应用程序的演练。
-ms.date: 11/25/2019
+ms.date: 01/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a4ff564acc5b48764818abfcf738051169eb94ea
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 4945f708ed5e8389af683d638b61e8b239c7e5de
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209771"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706971"
 ---
 # <a name="time-travel-debugging---sample-app-walkthrough"></a>时光穿越调试 - 示例应用演练
 
@@ -36,24 +36,22 @@ ms.locfileid: "75209771"
 
 完成此实验后，您将能够使用带有时间行程跟踪的常规过程来找出代码中的问题。 
 
-
 ## <a name="span-idlab_setupspanspan-idlab_setupspanspan-idlab_setupspanlab-setup"></a><span id="Lab_setup"></span><span id="lab_setup"></span><span id="LAB_SETUP"></span>实验室设置
 
 你将需要以下硬件才能完成实验室。
 
--   运行 Windows 10 的便携式计算机或台式计算机（主机） 
+- 运行 Windows 10 的便携式计算机或台式计算机（主机） 
 
 你将需要以下软件才能完成实验室。
 
--   WinDbg 预览。 有关安装 WinDbg Preview 的信息，请参阅[WinDbg 预览版-安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)
--   Visual Studio 生成示例C++代码。 
+- WinDbg 预览。 有关安装 WinDbg Preview 的信息，请参阅[WinDbg 预览版-安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)
+- Visual Studio 生成示例C++代码。
 
 实验室包含以下三个部分。
 
--   [第1节：生成示例代码](#build)
--   [第2部分：记录 "DisplayGreeting" 示例的跟踪](#record)
--   [第3部分：分析跟踪文件记录以确定代码问题](#analyze)
-
+- [第1节：生成示例代码](#build)
+- [第2部分：记录 "DisplayGreeting" 示例的跟踪](#record)
+- [第3部分：分析跟踪文件记录以确定代码问题](#analyze)
 
 ## <a name="span-idbuildspansection-1-build-the-sample-code"></a><span id="build"></span>第1节：生成示例代码
 
@@ -61,11 +59,11 @@ ms.locfileid: "75209771"
 
 **在 Visual Studio 中创建示例应用**
 
-1.  在 Microsoft Visual Studio 中，单击 "**文件**" &gt;**新建**&gt;**项目/解决方案 ...** "，然后单击**C++** 视觉对象模板。 
-    
+1. 在 Microsoft Visual Studio 中，单击 "**文件**" &gt;**新建**&gt;**项目/解决方案 ...** "，然后单击**C++** 视觉对象模板。
+
     选择 "Win32 控制台应用程序"。
 
-    提供项目名称 " *DisplayGreeting* "，并单击 **"确定"**。
+    提供项目名称 " *DisplayGreeting* "，并单击 **"确定"** 。
 
 2. 取消选中 "安全开发生命周期（SDL）检查"。
 
@@ -87,7 +85,7 @@ ms.locfileid: "75209771"
     void GetCppConGreeting(wchar_t* buffer, size_t size)
     {
        wchar_t const* const message = L"HELLO FROM THE WINDBG TEAM. GOOD LUCK IN ALL OF YOUR TIME TRAVEL DEBUGGING!";
- 
+
        wcscpy_s(buffer, size, message);
     }
 
@@ -102,14 +100,14 @@ ms.locfileid: "75209771"
     }
     ```
 
-6. 在 Visual Studio 中，单击 "**项目**&gt; **DisplayGreeting" 属性**"。 然后单击 " **C/C++ ** " 和 "**代码生成**"。
+6. 在 Visual Studio 中，单击 "**项目**&gt; **DisplayGreeting" 属性**"。 然后单击 " **C/C++**  " 和 "**代码生成**"。
 
-    设置以下属性。
+    设置以下属性：
 
     | 设置              |  Value                        |
     |----------------------|-------------------------------|
     | 安全检查       | 禁用安全检查（/GS-） |
-    | 基本运行时检查 |  Default                      |
+    | 基本运行时检查 |  默认值                      |
 
  
    > [!NOTE]
@@ -130,14 +128,13 @@ ms.locfileid: "75209771"
 
     双击 exe 文件以运行示例应用。
 
-    !["错误应用" 对话框](images/ttd-time-travel-walkthrough-faulting-app-dialog-box.png) 
+    !["错误应用" 对话框](images/ttd-time-travel-walkthrough-faulting-app-dialog-box.png)
 
     如果出现此对话框，请选择 "**关闭程序**"
 
-    !["错误应用" 对话框](images/ttd-time-travel-walkthrough-program-not-working-dialog-box.png) 
-    
-    在本演练的下一部分中，我们将记录示例应用程序的执行情况，以确定是否可以确定发生此异常的原因。 
+    !["错误应用" 对话框](images/ttd-time-travel-walkthrough-program-not-working-dialog-box.png)
 
+    在本演练的下一部分中，我们将记录示例应用程序的执行情况，以确定是否可以确定发生此异常的原因。
 
 ## <a name="span-idrecordspansection-2-record-a-trace-of-the-displaygreeting-sample"></a><span id="record"></span>第2部分：记录 "DisplayGreeting" 示例的跟踪
 
@@ -147,42 +144,51 @@ ms.locfileid: "75209771"
 
 1. 以管理员身份运行 WinDbg Preview，以便能够记录时间行程跟踪。
 
-2. 在 WinDbg Preview 中，选择 "**文件**" > **启动调试** > **启动可执行文件（高级）**。
+2. 在 WinDbg Preview 中，选择 "**文件**" > **启动调试** > **启动可执行文件（高级）** 。
 
 3. 输入要记录的用户模式可执行文件的路径，或选择 "**浏览**" 以导航到可执行文件。 有关使用 WinDbg Preview 中的 "启动可执行文件" 菜单的信息，请参阅[Windbg preview-启动用户模式会话](windbg-user-mode-preview.md)。
 
     ![显示 "启动可执行（高级）" 屏幕上的 "开始记录" 复选框的 WinDbg 预览屏幕截图](images/ttd-time-travel-walkthrough-recording-app.png)
 
-4. 使用 "**时间段调试**" 框检查记录过程，以便在启动可执行文件时记录跟踪。 
+4. 选中 "**带时间的记录**" 复选框，以便在启动可执行文件时记录跟踪。
 
-5. 单击 **"确定"** 以启动可执行文件并开始记录。 
+5. 单击 "**配置和录制**" 开始记录。
 
-6. 此时将显示 "记录" 对话框，指示正在记录跟踪。 不久之后，应用程序就会崩溃。
+6. 出现 "配置录制" 对话框时，单击 "**记录**" 以启动可执行文件并开始记录。
 
-7. 单击 "**重试**" 以允许代码尝试并运行。
+    ![WinDbg 预览的屏幕截图，其中显示 "配置录制" 对话框，并将 apath 设置为 temp](images/ttd-time-travel-walkthrough-recording-configure.png)
 
-8. 程序崩溃，跟踪文件将关闭并写出到磁盘。 
+7. 此时将显示 "记录" 对话框，指示正在记录跟踪。 不久之后，应用程序就会崩溃。
+
+8. 单击 "**关闭程序**" 以关闭 "DisplayGreeting 已停止工作" 对话框。
+
+   !["错误应用" 对话框](images/ttd-time-travel-walkthrough-program-not-working-dialog-box.png)
+
+9. 当程序崩溃时，跟踪文件将关闭并写出到磁盘。
 
     ![显示带1/1 关键帧索引输出的 WinDbg 预览的屏幕截图](images/ttd-time-travel-walkthrough-windbg-indexed-frames.png)
 
-9. 调试器将自动打开并为跟踪文件编制索引。 索引是一种能够有效调试跟踪文件的过程。 对于较大的跟踪文件，此索引过程需要更长的时间。
+10. 调试器将自动打开并为跟踪文件编制索引。 索引是一种能够有效调试跟踪文件的过程。 对于较大的跟踪文件，此索引过程需要更长的时间。
 
     ```dbgcmd
-    0:000> !index
-    Indexed 1/1 keyframes
-    Successfully created the index in 95ms.
+    (5120.2540): Break instruction exception - code 80000003 (first/second chance not available)
+    Time Travel Position: D:0 [Unindexed] Index
+    !index
+    Indexed 10/22 keyframes
+    Indexed 20/22 keyframes
+    Indexed 22/22 keyframes
+    Successfully created the index in 755ms.
     ```
-   
+
    > [!NOTE]
-   > 关键帧是跟踪中用于索引的位置。 自动生成关键帧。 较大的跟踪将包含更多关键帧。 
-   >   
- 
-10. 此时，你处于跟踪文件的开头，并且已准备好向前和向后移动。
+   > 关键帧是跟踪中用于索引的位置。 自动生成关键帧。 较大的跟踪将包含更多关键帧。
+   >
+
+11. 此时，你处于跟踪文件的开头，并且已准备好向前和向后移动。
 
     现在已经记录了 TTD 跟踪，你可以重播该跟踪或使用跟踪文件，例如，将其与同事共享。 有关使用跟踪文件的详细信息，请参阅[行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)
 
 在此实验的下一部分中，我们将分析跟踪文件，以找出我们的代码问题。
-
 
 ## <a name="span-idanalyzespansection-3-analyze-the-trace-file-recording-to-identify-the-code-issue"></a><span id="analyze"></span>第3部分：分析跟踪文件记录以确定代码问题
 
@@ -193,14 +199,14 @@ ms.locfileid: "75209771"
 1.  键入以下命令，将本地符号位置添加到符号路径中，并重新加载符号。
 
     ```dbgcmd
-    .sympath+ C:\Projects\DisplayGreeting\Debug
-    .reload 
+    .sympath+ C:\MyProjects\DisplayGreeting\Debug
+    .reload
     ```
 
 2.  键入以下命令，将本地代码位置添加到源路径。
 
     ```dbgcmd
-    .srcpath C:\Projects\DisplayGreeting\DisplayGreeting
+    .srcpath+ C:\MyProjects\DisplayGreeting\DisplayGreeting
     ```
 
 3. 若要能够查看堆栈和局部变量的状态，请在 WinDbg 预览功能区中选择 "**视图**" 和 "**局部变量**" 和 "**视图**和**堆栈**"。 组织窗口，使您可以同时查看它们、源代码和命令窗口。
@@ -209,7 +215,7 @@ ms.locfileid: "75209771"
 
 **检查异常**
 
-1. 加载跟踪文件后，它会显示发生异常的信息。 
+1. 加载跟踪文件后，它会显示发生异常的信息。
 
     ```dbgcmd
     2fa8.1fdc): Break instruction exception - code 80000003 (first/second chance not available)
@@ -229,11 +235,11 @@ ms.locfileid: "75209771"
     [0x2d]           : Exception at 9BDC:0
     [0x2e]           : Thread terminated at 9C43:0
     ...
-    
+
     ```
 
    > [!NOTE]
-   > 在本演练中，三个期间用于指示已移除无关的输出。 
+   > 在本演练中，三个期间用于指示已移除无关的输出。
    >
 
 3. 单击 "异常" 事件以显示有关该 TTD 事件的信息。 
@@ -245,7 +251,6 @@ ms.locfileid: "75209771"
         Position         : 68:0 [Time Travel]
         Exception        : Exception of type Hardware at PC: 0X540020
     ```
-
 
 4. 单击 "异常" 字段，进一步向下钻取异常数据。 
 
@@ -274,9 +279,9 @@ ms.locfileid: "75209771"
     eax=00000000 ebx=00cf8000 ecx=99da9203 edx=69cf1a6c esi=00191046 edi=00191046
     eip=00540020 esp=00effe4c ebp=00520055 iopl=0         nv up ei pl zr na pe nc
     cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000246
-    00540020 ??              
+    00540020 ??
     ```
-    
+
     注意，在此输出中，堆栈和基指针指向两个不同的地址。
 
     ```dbgcmd
@@ -284,7 +289,6 @@ ms.locfileid: "75209771"
     ```
 
     这可能表示堆栈损坏，可能是因为函数返回，然后损坏堆栈。 若要对此进行验证，需要在 CPU 状态损坏之前返回到，并查看是否可以确定发生堆栈损坏的时间。
-
 
 **检查局部变量并设置代码断点**
 
@@ -308,7 +312,7 @@ ms.locfileid: "75209771"
     eip=0019193d esp=00effe48 ebp=00520055 iopl=0         nv up ei pl zr na pe nc
     cs=0023  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000246
     DisplayGreeting!main+0x4d:
-    0019193d c3    
+    0019193d c3
 
     0:000> t-
     Time Travel Position: 67:39
@@ -320,7 +324,7 @@ ms.locfileid: "75209771"
 
    > [!NOTE]
    > 在本演练中，命令输出显示可用于代替 UI 菜单选项的命令，以允许具有命令行使用首选项的用户使用命令行命令。
-   > 
+   >
 
 2. 此时，在跟踪中，堆栈和基指针的值会更有意义，因此，我们似乎已更接近发生损坏的代码中的点。
 
@@ -338,13 +342,11 @@ ms.locfileid: "75209771"
 
     ![显示 "内存 ascii 输出和源代码" 窗口的 winbbg 预览屏幕截图](images/ttd-time-travel-walkthrough-memory-ascii.png)
 
-5. 它不是指向说明消息文本的基指针。 这里不是这样，这可能接近于损坏堆栈的时间点。 若要进一步调查，请设置一个断点。 
-
+5. 它不是指向说明消息文本的基指针。 这里不是这样，这可能接近于损坏堆栈的时间点。 若要进一步调查，请设置一个断点。
 
 > [!NOTE]
 > 在这个非常小的示例中，只需查看代码，就可以很容易地查找代码，但如果有数百行代码和几十个子例程，则可以使用此处所述的技术来缩短查找问题所需的时间。
 >
-
 
 **TTD 和断点**
 
@@ -371,7 +373,7 @@ ba <access> <size> <address> {options}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>电邮</p></td>
+<td align="left"><p>E</p></td>
 <td align="left"><p>execute （当 CPU 从地址提取指令时）</p></td>
 </tr>
 <tr class="even">
@@ -379,15 +381,14 @@ ba <access> <size> <address> {options}
 <td align="left"><p>读/写（CPU 读取或写入地址时）</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>水平</p></td>
+<td align="left"><p>w</p></td>
 <td align="left"><p>写入（CPU 写入地址时）</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-请注意，在任何给定时间，只能设置四个数据断点，并由您确保正确对齐数据或不触发断点（单词必须以2为界限的地址结束，dword 必须可被4整除），并按0或 8 quadwords）。
 
+请注意，在任何给定时间，只能设置四个数据断点，并由您确保正确对齐数据或不触发断点（单词必须以2为界限的地址结束，dword 必须可被4整除），并按0或 8 quadwords）。
 
 **设置基指针的内存访问断点中断**    
 
@@ -432,7 +433,7 @@ ba <access> <size> <address> {options}
 
 1. 使用 "断点" 窗口通过右键单击现有断点并选择 "**删除**" 来清除现有断点。
 
-2. 确定 DisplayGreeting 的地址！GetCppConGreeting 函数。 
+2. 确定 DisplayGreeting 的地址！GetCppConGreeting 函数。
 
     ```dbgcmd
     0:000> dx &DisplayGreeting!GetCppConGreeting
@@ -450,12 +451,11 @@ ba <access> <size> <address> {options}
 
     ![WinDbg 预览显示带有一个硬件读取断点的 "断点" 窗口](images/ttd-time-travel-walkthrough-hardware-write-breakpoint.png)
 
-
-5. 当我们想知道问候语字符串的大小时，我们将设置一个 "监视" 窗口来显示 "sizeof" （问候语）的值。 从 "视图" 功能区中，选择 "**观看**并提供*sizeof （问候语）*"。
+5. 当我们想知道问候语字符串的大小时，我们将设置一个 "监视" 窗口来显示 "sizeof" （问候语）的值。 从 "视图" 功能区中，选择 "**观看**并提供*sizeof （问候语）* "。
 
     ![显示 "监视局部变量" 窗口的 WinDbg 预览](images/ttd-time-travel-watch-locals.png)
 
-6. 在 "时间段" 菜单中，使用 "**时间段启动**" 命令移动到跟踪开始处。
+6. 在 "时间段" 菜单中，使用 "**时间段" 启动**，或使用 "`!tt 0`" 命令移动到跟踪开头。
 
     ```dbgcmd
     0:000> !tt 0
@@ -470,7 +470,7 @@ ba <access> <size> <address> {options}
     77a266ac 83bdbcfeffff00  cmp     dword ptr [ebp-144h],0 ss:002b:00ddf4c4=00000000
     ```
 
-7.  在主菜单上，选择 "**转**到" 以在代码中向前移动，直到命中断点。
+7. 在 "主文件夹" 菜单上，选择 "**转**到" 或使用 `g` 命令在代码中向前移动，直到命中断点。
 
     ```dbgcmd
     0:000> g
@@ -483,8 +483,7 @@ ba <access> <size> <address> {options}
     00b61721 8bec            mov     ebp,esp
     ```
 
-
-8.  在 "主文件夹" 菜单上，选择 "**跳出**一步"。
+8. 在主菜单上，选择 "**跳出**" 或使用 `g-u` 命令返回一个步骤。
 
     ```dbgcmd
     0:000> g-u
@@ -496,7 +495,6 @@ ba <access> <size> <address> {options}
     00b61917 e8def7ffff      call    DisplayGreeting!ILT+245(?GetCppConGreetingYAXPA_WIZ) (00b610fa)
     ```
 
-
 9. 这似乎是我们找到根本原因。 我们声明的*问候语*数组的长度为50个字符，而传入 GetCppConGreeting 的 sizeof （问候）为0x64，100）。  
 
     ![WinDbg 预览版显示显示问候语代码，并显示 "监视" "局部变量" 窗口显示 X64](images/ttd-time-travel-walkthrough-code-with-watch-locals.png)
@@ -506,7 +504,6 @@ ba <access> <size> <address> {options}
     ```dbgcmd
     HELLO FROM THE WINDBG TEAM. GOOD LUCK IN ALL OF YOUR TIME TRAVEL DEBUGGING!
     ```
-
 
 10. 修复代码的一种方法是将字符数组的大小扩展为100。
 
@@ -522,9 +519,7 @@ ba <access> <size> <address> {options}
 
 11. 若要验证这些修复程序，我们可以重新编译代码并确认它运行不会出错。
 
-
 **使用源窗口设置断点**
-
 
 1. 执行此调查的另一种方法是通过单击任意代码行来设置断点。 例如，单击 "源" 窗口中 "std： array" 定义行的右侧将设置一个断点。
 
@@ -565,7 +560,7 @@ ba <access> <size> <address> {options}
 
 1. 从 "**视图**" 和 "**局部变量**"。 在 "局部变量" 窗口中，*问候*在当前上下文中可用，因此，我们将能够确定其内存位置。
 
-2. 使用**dx**命令检查*问候语*数组。 
+2. 使用**dx**命令检查*问候语*数组。
 
     ```dbgcmd
     0:000> dx &greeting
@@ -573,13 +568,11 @@ ba <access> <size> <address> {options}
        [+0x000] _Elems           : "꽘棶檙瞝???" [Type: wchar_t [50]]
     ```
 
-    在此跟踪中，*问候语*位于 ddf800 的内存中。 
-
+    在此跟踪中，*问候语*位于 ddf800 的内存中。
 
 3. 使用 "断点" 窗口可以通过右键单击现有断点并选择 "**删除**" 来清除任何现有断点。
 
-
-4.  使用用于监视写入访问的内存地址的**ba**命令设置断点。 
+4. 使用用于监视写入访问的内存地址的**ba**命令设置断点。
 
     ```dbgcmd
     ba w4 ddf800
@@ -702,11 +695,9 @@ ba <access> <size> <address> {options}
 
 ## <a name="summary"></a>摘要
 
-在这个非常小的示例中，此问题可能是通过查看几行代码来确定的，但是在大型程序中，此处提供的方法可用于缩短查找问题所需的时间。 
+在这个非常小的示例中，此问题可能是通过查看几行代码来确定的，但是在大型程序中，此处提供的方法可用于缩短查找问题所需的时间。
 
 记录跟踪后，可以共享跟踪和重现步骤，并且在任何电脑上，此问题都可以按需重现。  
-
----
 
 ## <a name="see-also"></a>另请参阅
 

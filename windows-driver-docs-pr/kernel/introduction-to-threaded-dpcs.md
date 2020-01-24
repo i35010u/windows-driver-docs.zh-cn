@@ -6,20 +6,16 @@ keywords:
 - 线程 Dpc WDK 内核
 - 实时线程 WDK 内核
 - 已抢占 Dpc WDK 内核
-ms.date: 06/16/2017
+ms.date: 01/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 66466f956f520d0e381263b42c9900cd1bc01f57
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3439949fa7c858f835b17f2b82b2247da9e80bb8
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838617"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706986"
 ---
 # <a name="introduction-to-threaded-dpcs"></a>线程 DPC 简介
-
-
-
-
 
 线程 Dpc 适用于 Windows Vista 和更高版本的 Windows。
 
@@ -33,14 +29,6 @@ ms.locfileid: "72838617"
 
 由于*CustomThreadedDpc*例程可以在被动\_级别执行或调度\_级别，因此必须确保*CustomThreadedDpc*例程在两个 IRQLs 上正确同步。 有关如何执行此操作的详细信息，请参阅[同步和线程 dpc](synchronization-and-threaded-dpcs.md)。
 
-此外，还必须确保*CustomThreadedDpc*例程服从调度\_级别代码的所有限制。 如果启用了线程 Dpc，它们会以 IRQL = 被动\_级别运行，但仍受与普通 Dpc 相同的限制。 在线程 DPC 中执行的所有代码（包括*CustomThreadedDpc*例程调用的所有函数）必须符合 DPC 环境的限制。 例如，代码不得在被动级同步对象（如[KEVENT 对象](defining-and-using-an-event-object.md)）上阻塞。 大多数现有的设备堆栈（如网络、存储和 USB）不支持线程 DPC 处理，如果检测到它们在被动\_级别调用，它们可能会被阻止。 由于类似的原因，[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)（KMDF）不支持线程化 dpc 处理，KMDF 驱动程序不应尝试使用线程 dpc。 有关 DPC 环境的详细信息，请参阅[编写 DPC 例程](writing-dpc-routines.md)。
+此外，还必须确保*CustomThreadedDpc*例程服从调度\_级别代码的所有限制。 如果启用了线程 Dpc，它们会以 IRQL = 被动\_级别运行，但仍受与普通 Dpc 相同的限制。 在线程 DPC 中执行的所有代码（包括*CustomThreadedDpc*例程调用的所有函数）必须符合 DPC 环境的限制。 例如，代码不得在被动级同步对象（如[KEVENT 对象](defining-and-using-an-event-object.md)）上阻塞。 许多现有的设备堆栈（如网络和 USB）不支持线程化 DPC 处理，如果检测到它们在被动\_级别调用，它们可能会被阻止。 由于类似的原因，[内核模式驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)（KMDF）不支持线程化 dpc 处理，KMDF 驱动程序不应尝试使用线程 dpc。 有关 DPC 环境的详细信息，请参阅[编写 DPC 例程](writing-dpc-routines.md)。
 
 若要将线程 DPC 添加到 DPC 队列，请调用[**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)。 若要从队列中删除线程化 DPC，请调用[**KeRemoveQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovequeuedpc)。
-
- 
-
- 
-
-
-
-

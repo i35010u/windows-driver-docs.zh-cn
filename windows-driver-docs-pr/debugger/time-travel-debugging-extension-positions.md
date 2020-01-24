@@ -3,14 +3,14 @@ title: 时间行程调试扩展！位置命令
 description: ！位置扩展显示所有活动线程，包括它们的当前位置。
 keywords:
 - 定位 Windows 调试
-ms.date: 09/21/2017
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c04651c8a9c416982720a15b7b3aa2d10bef3396
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 8e93a42646d0fb6c22901607f3dba4eed0a692ed
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916210"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706968"
 ---
 # <a name="positions"></a>！位置
 
@@ -19,7 +19,7 @@ ms.locfileid: "72916210"
 **！位置**扩展显示所有活动线程，包括其在时间行程跟踪中的当前位置。
 
 ```dbgcmd
-!positions 
+!positions
 ```
 
 ## <a name="span-idddk__analyze_dbgspanspan-idddk__analyze_dbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>Parameters
@@ -28,14 +28,16 @@ ms.locfileid: "72916210"
 
 ## <a name="example"></a>示例
 
-此输出显示四个线程。 线程3824是由左栏中 **>** 指示的当前线程。
+此输出显示5个线程。 线程1660是由左栏中 **>** 指示的当前线程。
 
 ```dbgcmd
 0:000> !positions
->Thread ID=0x3824 - Position: F:0
- Thread ID=0x2684 - Position: A5:0
- Thread ID=0x2478 - Position: 200:0
- Thread ID=0x2DC4 - Position: 401:0
+>*Thread ID=0x1660 - Position: 724:0
+  Thread ID=0x3E6C - Position: A8B:0
+  Thread ID=0x30EC - Position: A8A:0
+  Thread ID=0x1F40 - Position: A8E:0
+  Thread ID=0x4170 - Position: C44:0
+* indicates an actively running thread
 ```
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL

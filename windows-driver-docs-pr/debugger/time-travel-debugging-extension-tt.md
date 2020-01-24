@@ -1,14 +1,14 @@
 ---
 title: 时间行程调试扩展！ tt 命令
 description: 允许您在时间中向前和向后导航的！ tt 时间旅行调试器扩展。
-ms.date: 09/22/2017
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 29b678ba0c8dd73b105bd9f6f9ab7ab69710d648
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 6af058ee25e25ee1875beb3a94005d526f895860
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916208"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706945"
 ---
 # <a name="tt-time-travel"></a>！ tt （行程）
 
@@ -21,25 +21,25 @@ ms.locfileid: "72916208"
 使用！ tt 扩展，通过前往跟踪中的给定位置，向前或向后导航。 
 
 ```dbgcmd
-!tt [position] 
+!tt [position]
 ```
 
 ## <a name="span-idddk__analyze_dbgspanspan-idddk__analyze_dbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>Parameters
 
-**置于**
+**position**
 
 提供以下任意格式的时间位置以在该时间点旅行。
            
 - 如果 {position} 是一个介于0到100之间的十进制数字，则它会在跟踪中大约向其传递百分比。 例如：
-    - ！ ttdext.tt 0-时间到达跟踪开始处
-    - ！ ttdext.tt 50-经历跟踪的一半时间
-    - ！ ttdext.tt 100-时间到达跟踪结尾
+    - ！ tt 0-到跟踪开头的时间
+    - ！ tt 50-时间通过跟踪的一半时间
+    - ！ tt 100-时间到达跟踪结尾
  
 
 - 如果 {position} 为 #： #，其中 # 是十六进制数字，则将其移动到该位置。 如果省略了 after：，则默认为零。
-    - ！ ttdext.tt 1A0：-生存时间到位置1A0：0
-    - ！ ttdext.tt 1A0： 0-时间到位置1A0：0
-    - ！ ttdext.tt 1A0： 12F-Time to position 1A0：12F
+    - ！ tt 1A0：-Time 旅行到1A0：0
+    - ！ tt 1A0： 0-时间走到位置1A0：0
+    - ！ tt 1A0：12F 旅行到位置1A0：12F
 
 
    > [!NOTE]
@@ -50,7 +50,6 @@ ms.locfileid: "72916208"
    > xx-第一个元素是对应于序列化事件的序列号。
    >
    > yy-第二个元素是一个步骤计数，它大致对应于自排序事件之后的指令计数。
-
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 

@@ -1,23 +1,23 @@
 ---
 title: 时间行程调试扩展！索引命令
 description: ！索引扩展索引时间段跟踪或显示索引状态信息。
-ms.date: 10/12/2018
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 044410ba9e7ac93c2f27c589a8f30bfb00d95d9a
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: efde351e74b6ea40b3b27c8872459ff0adc9ca32
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916213"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706944"
 ---
-#  <a name="index"></a>！索引
+# <a name="index"></a>！索引
 
 ![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png)
 
 **！索引**扩展索引时间段跟踪或显示索引状态信息。
 
 ```dbgsyntax
-!index [-status] [-force] 
+!index [-status] [-force]
 ```
 
 
@@ -46,7 +46,7 @@ Successfully created the index in 0ms.
 使用 `!index -status` 报告跟踪索引的状态。
 
 ```dbgcmd
-0:000> !tt.index -status
+0:000> index -status
 Index file loaded.
 ```
 **-force**
@@ -54,7 +54,7 @@ Index file loaded.
 即使磁盘上存在无法加载的索引文件，也可以使用 `!index -force` 来重新索引跟踪。
 
 ```dbgcmd
-0:000> !tt.index -force
+0:000> index -force
 Successfully created the index in 152ms.
 ```
 

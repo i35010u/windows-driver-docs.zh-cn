@@ -1,18 +1,18 @@
 ---
 title: 时光穿越调试 - 重放跟踪
 description: 本部分介绍如何重播时间行程跟踪。
-ms.date: 10/12/2018
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2639b5e4654a2e52554295243aa0ada484b8b1a3
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: cace40ee102215a920653af28f0310dd7dc002da
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916140"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706948"
 ---
 # <a name="time-travel-debugging---replay-a-trace"></a>时光穿越调试 - 重放跟踪
 
-![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png) 
+![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png)
 
 本部分介绍如何重播时间行程跟踪，并在时间前后导航。
 
@@ -20,10 +20,10 @@ ms.locfileid: "72916140"
 
 使用尾随负号，并使用以下命令及时返回。
 
-| 命令  | 
+| 命令  |
 |----------------|
-| p-（后退） | 
-| t-（Trace Back）| 
+| p-（后退） |
+| t-（Trace Back）|
 | g-（返回）   |
 
 有关详细信息，请参阅[行程调试-导航命令](time-travel-debugging-navigation-commands.md)。 
@@ -34,11 +34,9 @@ ms.locfileid: "72916140"
 
 ![显示 "开始记录" 复选框的 WinDbg 预览屏幕截图](images/ttd-ribbon-buttons.png)
 
-
 ## <a name="example-ttd-trace-replay"></a>示例 TTD 跟踪重播
 
 使用 g-command 来向后执行，直到到达事件或 TTD 跟踪的开头。 可以停止向后执行的事件与停止执行的事件相同。 在此示例中，已达到跟踪的开头。
-
 
 ```dbgcmd
 0:000> g-
@@ -94,7 +92,6 @@ ntdll!LdrpInitializeProcess+0x431:
 7774e094 e9f5170000      jmp     ntdll!LdrpInitializeProcess+0x1c2b (7774f88e)
 ```
 
-
 使用 p-command 在 TTD 跟踪中向后单步执行。 
 
 ```dbgcmd
@@ -116,7 +113,6 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 你还可以使用 t-命令来及时向后导航。
 
-
 ## <a name="tt-navigation-commands"></a>！ tt 导航命令
 
 使用！！命令向前或向后导航，方法是跳到跟踪中的给定位置。 
@@ -124,7 +120,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 ！ tt [position]
 
 提供以下任意格式的时间位置以在该时间点旅行。
-           
+
 - 如果 [position] 为介于0到100之间的十进制数字，则它会在跟踪中接近该百分比。 例如 `!tt 50` 向跟踪的一半。
 
 - 如果 {position} 为 #： #，其中 # 是十六进制数字，则将其移动到该位置。 例如，`!tt 1A0:12F` 传播到跟踪中的位置1A0：12F。
@@ -138,7 +134,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 ```dbgcmd
 0:000> !positions
->Thread ID=0x1C74 - Position: F:2
+>*Thread ID=0x1C74 - Position: F:2
  Thread ID=0x1750 - Position: A5:0
  Thread ID=0x3FFC - Position: 200:0
  Thread ID=0x36B8 - Position: 403:0
@@ -146,10 +142,12 @@ ntdll!LdrpInitializeProcess+0x1bd9:
  Thread ID=0x392C - Position: B45:0
  Thread ID=0x32B4 - Position: C87:0
  Thread ID=0x337C - Position: DF1:0
+* indicates an actively running thread
 ```
+
 此示例显示当前位置有8个线程。 当前线程为3604，标记为 ">"。  
 
-> [!TIP] 
+> [!TIP]
 > 显示当前线程及其位置列表的另一种方法是使用数据模型 dx 命令：
 >
 > `dx -g @$curprocess.Threads.Select(t => new { IsCurrent = t.Id == @$curthread.Id, ThreadId = t.Id, Position = t.TTD.Position })`
@@ -169,10 +167,10 @@ ntdll!LdrpInitializeProcess+0x1bd9:
    7  Id: 954.337c Suspend: 4096 Teb: 00ff3000 Unfrozen
 ```
 
-单击 "！位置" 输出中第三个线程（3FFC）旁边的链接，以便在跟踪中的该位置到达此位置（200:0）。
+在！ position 命令输出中，单击第三个线程（3FFC）旁边的链接，使其在跟踪200:0 中到达该位置的时间。
 
 ```dbgcmd
-0:002> !ttdext.tt 200:0
+0:002> !tt 200:0
 Setting position: 200:0
 (954.3ffc): Break instruction exception - code 80000003 (first/second chance not available)
 Time Travel Position: 200:0
@@ -197,16 +195,13 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
    7  Id: 954.337c Suspend: 4096 Teb: 00ff3000 Unfrozen
 ```
 
-
 > [!NOTE]
 > *~ S #* ，其中 *#* 是一个线程号，还切换到给定线程，但它不会更改跟踪中的当前位置。  当使用 *！ tt*来使到达另一个线程的位置时，将在该位置查找您（和调试器）从内存中读取的任何值。 当使用 *~ s #* 切换线程时，调试器不会内部更改当前位置，这用于所有内存查询。 这主要以这种方式运行，因此 *~ s #* 不必重置调试器的内部循环。
-
 
 ## <a name="time-travel-debugging-extension-commands"></a>行程调试扩展命令
 
 有关 `!tt`的信息，[请参阅 `!positions` 和 `!index` 命令。](time-travel-debugging-extension-commands.md)
 
- 
 ## <a name="see-also"></a>另请参阅
 
 [行程调试-概述](time-travel-debugging-overview.md)
@@ -216,4 +211,3 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 [时间行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)
 
 [旅行调试-示例应用演练](time-travel-debugging-walkthrough.md)
-

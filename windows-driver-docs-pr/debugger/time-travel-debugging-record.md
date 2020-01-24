@@ -1,16 +1,16 @@
 ---
-title: 旅行调试-记录跟踪
+title: 时间旅行调试 - 记录跟踪
 description: 本部分介绍如何记录时间行程跟踪。
-ms.date: 09/22/2017
+ms.date: 01/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fd00b081d108c7473c70dd63e7ef88a52d1d8d5a
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 30d4e06410e2958e39e351af855776b21f3dc190
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916168"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706958"
 ---
-#  <a name="time-travel-debugging---record-a-trace"></a>旅行调试-记录跟踪 
+#  <a name="time-travel-debugging---record-a-trace"></a>时间旅行调试 - 记录跟踪
 
 ![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png)
 
@@ -24,19 +24,21 @@ ms.locfileid: "72916168"
 
 2. 输入要记录的用户模式可执行文件的路径，或选择 "**浏览**" 以导航到可执行文件。 有关使用 WinDbg Preview 中的 "启动可执行文件" 菜单的信息，请参阅[Windbg preview-启动用户模式会话](windbg-user-mode-preview.md)。
 
-    ![显示 "启动可执行（高级）" 屏幕上的 "开始记录" 复选框的 WinDbg 预览屏幕截图](images/ttd-start-recording.png)
+    ![显示 "启动可执行（高级）" 屏幕上的 "开始记录" 复选框的 WinDbg 预览屏幕截图](images/ttd-windbgx-configure-recording.png)
 
+3. 使用 "**时间段调试**" 框检查记录过程，以便在启动可执行文件时记录跟踪。
 
-3. 使用 "**时间段调试**" 框检查记录过程，以便在启动可执行文件时记录跟踪。 
+4. 如果你选择 "**配置" 和 "记录**"，你将能够配置跟踪文件的位置。
 
-4. 单击 **"确定"** 以启动可执行文件并开始记录。 
+    ![显示浏览按钮和列出路径的 "配置录制" 对话框的屏幕截图](images/ttd-start-recording-dialog.png)
 
-5. 此时将显示 "记录" 对话框，指示正在记录跟踪。
+5. 单击 **"确定"** 以启动可执行文件并开始记录。
 
-    ![显示停止和调试以及取消选项的 TTD 录制弹出窗口](images/ttd-recording-pop-up.png)
+6. 此时将显示 "记录" 对话框，指示正在记录跟踪。
 
-6. 有关记录的信息，请参阅[如何记录](#HOWTORECORD)。
+    ![显示停止和调试以及取消选项的 TTD 录制弹出窗口](images/ttd-recording-pop-up-dialog.png)
 
+7. 有关记录的信息，请参阅[如何记录](#HOWTORECORD)。
 
 ## <a name="attach-to-a-process"></a>附加到进程
 
@@ -51,7 +53,7 @@ ms.locfileid: "72916168"
 
 3. 使用 "**时间段调试**" 框检查记录过程，以便在启动可执行文件时创建跟踪。 
 
-4. 单击 "**附加**" 开始录制。 
+4. 单击 "**附加**" 开始录制。
 
 5. 此时将显示 "记录" 对话框，指示正在记录跟踪。
 
@@ -67,12 +69,12 @@ ms.locfileid: "72916168"
 
     - **停止和调试**-选择此项将停止记录，创建跟踪文件并打开跟踪文件，以便您可以开始调试。 
     - **取消**-选择此项将停止记录并创建跟踪文件。 稍后可以打开跟踪文件。 
-   
+
 3. 录制完成后，请关闭应用或**停止和调试**。
 
    > [!NOTE]
    > *停止和调试* *都将终止关联的进程*。 
-   >   
+   >
 
 4. 当记录的应用程序终止时，跟踪文件将关闭并写出到磁盘。 如果程序崩溃，就会出现这种情况。
 
@@ -85,10 +87,11 @@ ms.locfileid: "72916168"
     Indexed 1/1 keyframes
     Successfully created the index in 96ms.
     ```
+
    > [!NOTE]
-   > 关键帧是跟踪中用于索引的位置。 自动生成关键帧。 较大的跟踪将包含更多关键帧。 对跟踪进行索引后，将显示关键帧的数量。 
-   >   
- 
+   > 关键帧是跟踪中用于索引的位置。 自动生成关键帧。 较大的跟踪将包含更多关键帧。 对跟踪进行索引后，将显示关键帧的数量。
+   >
+
 6. 此时，你处于跟踪文件的开头，并且已准备好向前和向后移动。
 
     > [!TIP]

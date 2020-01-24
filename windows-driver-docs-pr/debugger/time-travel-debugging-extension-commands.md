@@ -3,22 +3,20 @@ title: 行程调试扩展
 description: 本部分介绍如何使用行程调试器扩展命令。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2733796d41c77354eba462f36827e8a76f232993
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 838337a0fc9db255097d190ee383f6e0cc252c20
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916212"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706980"
 ---
-#  <a name="time-travel-debugging-extension-commands"></a>行程调试扩展命令
+# <a name="time-travel-debugging-extension-commands"></a>行程调试扩展命令
 
 ![显示时钟的小时间旅行徽标](images/ttd-time-travel-debugging-logo.png)
 
 本部分介绍了旅行调试器扩展命令。
 
-
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分内容
-
 
 <table>
 <colgroup>
