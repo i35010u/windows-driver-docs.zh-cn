@@ -1,12 +1,12 @@
 ---
 title: 驱动程序包隔离
 ms.date: 10/01/2019
-ms.openlocfilehash: 1da8fc165779b46c9bbbb05466cb9442ef0095f9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7c6c8824e143ffa893d79977bdd424263939ca16
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839616"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706982"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离
 
@@ -99,7 +99,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 若要读取和写入设备接口注册表状态，请根据使用的平台使用以下选项之一：
 
 * [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) (WDM)
-* [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keya)（用户模式代码）
+* [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw)（用户模式代码）
 * [INF AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) 指令，使用引用自 [add-interface-section](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive) 部分的 add-registry-section 中的 HKR reg-root 条目  
 
 ### <a name="service-registry-state"></a>服务注册表状态
@@ -124,7 +124,7 @@ HKR, Parameters, ExampleValue, 0x00010001, 1
 
 若要访问该状态的位置，请根据平台使用下列函数之一：
 
-* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
+* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendriverregistrykey) (WDM)
 * [**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
 * **GetServiceRegistryStateKey**（Win32 服务）
 
@@ -141,8 +141,7 @@ Win32 和驱动程序服务均读取和写入关于本身的状态。
 
 若要访问服务自己的内部状态值，该服务需使用下列选项之一： 
 
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (WDM)
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
+* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory)（WDM 和 KMDF）
 * [**WdfDriverRetrieveDriverDataDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
 * **GetServiceDirectory**（Win32 服务）
 
