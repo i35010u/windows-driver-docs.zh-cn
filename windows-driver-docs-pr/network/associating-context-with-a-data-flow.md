@@ -9,12 +9,12 @@ keywords:
 - 将上下文与数据流 WDK Windows 筛选平台相关联
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 92dda65f7dce594d8e7bc0535a5b115a80ae3326
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 59476e85f694924ef77aa5d3eb2475fa4ca08e63
+ms.sourcegitcommit: 05c2f94fa2fe77276ca7000c1ff8e1bbe7a67b6a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838234"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76892192"
 ---
 # <a name="associating-context-with-a-data-flow"></a>将上下文与数据流相关联
 
@@ -137,7 +137,7 @@ VOID NTAPI
      flowHandle = inMetaValues->flowHandle;
 
     // Check whether there is a context associated with the data flow
-     if (flowContext != 0) 
+     if (flowHandle != 0) 
      {
         // Get a pointer to the flow context structure
         context = (PFLOW_CONTEXT)flowContext;

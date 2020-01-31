@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c0c4c513d3c1a65db4da128850bd33256ddc80
-ms.sourcegitcommit: 79490c5067a50727f928f213c16c5f8f62898b60
+ms.openlocfilehash: a4bc59edb1a22e863a2cc68a4fb8a3523395b3b9
+ms.sourcegitcommit: 6997fcbd0ad57e189c4b7c6b490632d1d53b6b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74119514"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822819"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -39,7 +39,7 @@ Windows Github 站点上的 DTrace 位于此处：
 
 [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit)提供一组有用的脚本。
 
-[DTrace.Org](https://dtrace.org)是一个网站，其中许多原始开发人员提供了提示和技巧。
+[DTrace.Org](http://dtrace.org)是一个网站，其中许多原始开发人员提供了提示和技巧。
 
 Illumos[动态跟踪指南](http://dtrace.org/guide/bookinfo.html)介绍了如何使用 DTrace 观察、调试和调整系统行为。
 
