@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x7 INVALID_SOFTWARE_INTERRUPT
-description: INVALID_SOFTWARE_INTERRUPT bug 检查具有值为 0x00000007。检查此错误极少出现。
+description: INVALID_SOFTWARE_INTERRUPT bug 检查的值为0x00000007。此 bug 检查很少出现。
 ms.assetid: ceba1694-ed12-4e7a-85c9-9ad73a046bf3
 keywords:
 - Bug 检查 0x7 INVALID_SOFTWARE_INTERRUPT
@@ -13,22 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83256a660a1cd9b9359c1b51d5dd76bab4074632
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 848ceabbdb7a3b505bb1a78091de8bdaf9972a93
+ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519235"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76910355"
 ---
-# <a name="bug-check-0x7-invalidsoftwareinterrupt"></a>Bug 检查 0x7：无效\_软件\_中断
+# <a name="bug-check-0x7-invalid_software_interrupt"></a>Bug 检查0x7：\_中断的\_软件无效
 
 
-无效\_软件\_中断错误检查的值为 0x00000007。
+无效的\_软件\_中断 bug 检查的值为0x00000007。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
+
+
+## <a name="resolution"></a>分辨率
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
  
