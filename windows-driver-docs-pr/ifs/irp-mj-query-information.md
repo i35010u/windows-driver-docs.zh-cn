@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e609c432fc71b552b51b5059cd292867f6836a0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 010131afbfb16e8bc325417cfacbe7ee0d7158e7
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841166"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977672"
 ---
 # <a name="irp_mj_query_information"></a>IRP\_MJ\_QUERY\_INFORMATION
 
@@ -34,18 +34,18 @@ IRP\_MJ\_查询\_信息请求由 i/o 管理器和其他操作系统组件以及�
 
 可以查询的文件和目录信息的类型与文件系统相关，但通常包括：
 
-FileAllInformation FileAlternateNameInformation FileAttributeTagInformation FileBasicInformation FileCompressionInformation FileEaInformation FileInternalInformation FileNameInformation FileNetworkOpenInformationFilePositionInformation FileStandardInformation FileStreamInformation FileHardLinkInformation 尽管 FileAccessInformation、FileAlignmentInformation 和 FileModeInformation 信息类型也可以作为参数传递给[**ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)，此信息独立于文件系统。 因此， **ZwQueryInformationFile**直接提供此信息，而无需将 IRP\_MJ\_查询\_信息请求发送到文件系统。
+FileAllInformation FileAlternateNameInformation FileAttributeTagInformation FileBasicInformation FileCompressionInformation FileEaInformation FileInternalInformation FileNameInformation FileNetworkOpenInformation FilePositionInformation FileStandardInformation FileStreamInformation FileHardLinkInformation，尽管 FileAccessInformation、FileAlignmentInformation 和 FileModeInformation 信息类型也可以作为参数传递给[**ZwQueryInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryinformationfile)，此信息独立于文件系统。 因此， **ZwQueryInformationFile**直接提供此信息，而无需将 IRP\_MJ\_查询\_信息请求发送到文件系统。
 
 有关这些信息类型的详细信息，请参阅下面的链接。 有关所有可能的信息类型的列表，请参阅 ntifs 中的文件\_信息\_类枚举。
 
 ## <a name="operation-network-redirector-drivers"></a>操作：网络重定向程序驱动程序
 
 
-网络重定向程序驱动程序不基于接收 IRP\_MJ\_查询\_信息请求的 FileAllInformation 或 FileNameInformation 的网络重定向程序驱动程序，必须使用完整的 "\\服务器\\共享\\[文件来做出](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)响应服务器名称前面带有单个前导反斜杠的文件名的路径。 对于作为通用命名约定（UNC）名称（例如 *\\\\服务器\\共享\\文件夹\\filename*）或位于映射驱动器（x）的文件，必须返回此格式的名称信息 *：\\文件夹\\例如 .txt*）。
+网络重定向程序驱动程序不基于接收 IRP\_MJ\_查询\_信息请求的 FileAllInformation 或[FileNameInformation 的网络](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)重定向程序驱动程序，必须在服务器名称前使用单个前导反斜杠来响应该文件名的完整 "\\服务器\\共享\\文件" 路径。 对于作为通用命名约定（UNC）名称（例如 *\\\\server\\共享\\文件夹\\filename .txt*）或位于映射的驱动器上的文件（例如，\\*filename .txt*）的文件，必须返回此格式的名称信息。
 
-对于网络微重定向程序驱动程序（使用 rdbss 动态链接的驱动程序或使用 rdbsslib 静态链接的驱动程序），IRP\_MJ\_查询 FileNameInformation 的\_信息请求由 RDBSS 和返回正确的名称信息。 对于网络最小化重定向程序驱动程序，FileAllInformation 的\_IRP\_查询\_信息请求由 RDBSS 为请求的名称信息部分在内部进行处理。 FileAllInformation 请求的其他部分作为单独的请求发送到网络微型重定向程序驱动程序以进行解析。
+对于网络微重定向程序驱动程序（使用 rdbss 动态链接的驱动程序，或者使用 rdbsslib 静态链接的驱动程序），IRP\_MJ\_查询 FileNameInformation 的\_信息请求由 RDBSS 在内部进行处理，并返回正确的名称信息。 对于网络最小化重定向程序驱动程序，FileAllInformation 的\_IRP\_查询\_信息请求由 RDBSS 为请求的名称信息部分在内部进行处理。 FileAllInformation 请求的其他部分作为单独的请求发送到网络微型重定向程序驱动程序以进行解析。
 
-接收 IRP\_MJ\_QUERY\_信息请求的网络重定向程序应使用不包含任何路径信息的文件的短名称（8.3 字符）进行响应（如果文件.
+如果该文件存在短名称，则接收 IRP\_MJ\_QUERY\_信息请求的网络重定向器应以不含任何路径信息的文件的短名称（8.3 字符）进行响应。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 

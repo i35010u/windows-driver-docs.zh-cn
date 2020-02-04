@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a098b7f6a72aee0bd55bf2ceb84ee937c82e0c9b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c0d27d227cd3567c553d78cc552bf547b7dcc8ef
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841197"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977678"
 ---
 # <a name="irp_mj_flush_buffers"></a>IRP\_MJ\_刷新\_缓冲区
 

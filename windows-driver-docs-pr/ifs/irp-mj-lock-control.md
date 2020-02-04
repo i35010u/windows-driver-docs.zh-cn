@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ca722f75691d1c2092e5b6d34831b09864d607d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 18f82f19c414c57f90247857dde941c5334f452f
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841191"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977668"
 ---
 # <a name="irp_mj_lock_control"></a>IRP\_MJ\_锁定\_控件
 

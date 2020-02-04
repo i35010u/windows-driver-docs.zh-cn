@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee15f03741b6c0c730e4bd387f10306c720f2940
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c25545db49d9ca3f3bd6a0721473c2c75cd14cfd
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841193"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977680"
 ---
 # <a name="irp_mj_file_system_control"></a>IRP\_MJ\_文件\_系统\_控件
 
@@ -48,7 +48,7 @@ IRP\_MJ\_文件\_系统\_控制请求由 i/o 管理器和其他操作系统组�
 <tbody>
 <tr class="odd">
 <td align="left"><p>IRP_MN_KERNEL_CALL</p></td>
-<td align="left"><p>此请求与 IRP_MN_USER_FS_REQUEST （如下所述）相同，不同之处在于请求的源是可信内核组件。</p></td>
+<td align="left"><p>此请求与 IRP_MN_USER_FS_REQUEST （如下所述）相同，不同之处在于请求源是可信内核组件。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_MOUNT_VOLUME</p></td>
@@ -56,7 +56,7 @@ IRP\_MJ\_文件\_系统\_控制请求由 i/o 管理器和其他操作系统组�
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
-<td align="left"><p>指示一个 FSCTL 请求，该请求可能代表一个用户模式应用程序，该应用程序调用了 Microsoft Win32 DeviceIoControl 函数或代表一个已调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"><strong>ZwDeviceIoControlFile</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>的内核模式组件IoBuildDeviceIoControlRequest</strong></a>。</p>
+<td align="left"><p>指示一个 FSCTL 请求，该请求可能代表一个用户模式应用程序，该应用程序调用了 Microsoft Win32 DeviceIoControl 函数或代表一个已调用<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"><strong>ZwDeviceIoControlFile</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>IoBuildDeviceIoControlRequest</strong></a>的内核模式组件。</p>
 <p>有关 FSCTL 请求的详细信息，请参阅 Microsoft Windows SDK 文档中的 "设备输入和输出控制代码"。</p></td>
 </tr>
 <tr class="even">

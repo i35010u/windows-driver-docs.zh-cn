@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d782cdcb2eeb8921912f3e4375c0492fb922b2ad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 30f6d9682a343737cb3d2fb0a90cf11be066afb3
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841179"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977684"
 ---
 # <a name="irp_mj_device_control"></a>IRP\_MJ\_DEVICE\_CONTROL
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3381954c99c37221f4c6a8e096a395676ec4a28b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c6868912a794cf12e53a2842bc1044c8892c4bff
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841173"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977664"
 ---
 # <a name="irp_mj_query_volume_information"></a>IRP\_MJ\_查询\_卷\_信息
 
@@ -108,7 +108,7 @@ Windows Vista 和更高版本中提供了 FileFsVolumeFlagsInformation 类和关
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">Value</th>
 <th align="left">含义</th>
 </tr>
 </thead>

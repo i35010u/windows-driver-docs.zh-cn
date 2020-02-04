@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a72d3cc14faa756523c5872ba00bb89460bf08
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e3266ab828dda5dca6c64fba84e99c96ee6a2f4
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841165"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977644"
 ---
 # <a name="irp_mj_query_quota"></a>IRP\_MJ\_QUERY\_配额
 

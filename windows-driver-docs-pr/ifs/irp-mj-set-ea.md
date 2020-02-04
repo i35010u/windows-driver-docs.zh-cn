@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 156e45f78295dd5b1c42cbee234c92bdb7f3f6fd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 05172f6ce568cd12b94996b8eff5e6326474af12
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841153"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977646"
 ---
 # <a name="irp_mj_set_ea"></a>IRP\_MJ\_集\_EA
 

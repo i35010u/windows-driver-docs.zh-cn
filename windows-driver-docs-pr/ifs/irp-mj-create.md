@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d4e6bed0438b5d3627a11f59f721cb07b8e508
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b6626a0bc3a480b6bef4cfb98ad0bf4a970d581
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841181"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977688"
 ---
 # <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
 
@@ -25,19 +25,19 @@ ms.locfileid: "72841181"
 ## <a name="when-sent"></a>发送时间
 
 
-创建新文件或目录时，或在打开现有文件、设备、目录或卷时，i/o 管理器会将 IRP\_MJ 发送\_创建请求。 通常，此 IRP 是代表用户模式应用程序发送的，该应用程序已调用 Microsoft Win32 函数，例如[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)或代表已调用[**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的内核模式组件。、 [**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)或[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)。 如果创建请求成功完成，则应用程序或内核模式组件会接收文件对象的句柄。
+创建新文件或目录时，或在打开现有文件、设备、目录或卷时，i/o 管理器会将 IRP\_MJ 发送\_创建请求。 通常，此 IRP 是代表用户模式应用程序发送的，该应用程序已调用 Microsoft Win32 函数（如[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea) ）或代表已调用[**IoCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatefile)、 [**IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)、 [**ZwCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntcreatefile)或[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntopenfile)的内核模式组件。 如果创建请求成功完成，则应用程序或内核模式组件会接收文件对象的句柄。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
 
-如果目标设备对象是文件系统的控制设备对象，则在设置*irp&gt;IoStatus*和 IRP 后，文件系统驱动程序的调度例程必须完成 irp 并返回相应的 NTSTATUS 值 *&gt;IoStatus*为适当的值。
+如果目标设备对象是文件系统的控制设备对象，则在将*irp&gt;IoStatus*和*IRP&gt;IoStatus*设置为合适的值后，文件系统驱动程序的调度例程必须完成 irp 并返回相应的 NTSTATUS 值。
 
 否则，文件系统驱动程序应处理创建请求。
 
 ## <a name="operation-file-system-filter-drivers"></a>操作：文件系统筛选器驱动程序
 
 
-如果目标设备对象是筛选器驱动程序的控制设备对象，则在设置*irp&gt;IoStatus*和 IRP 后，筛选器驱动程序的调度例程必须完成 irp 并返回相应的 NTSTATUS 值 *&gt;IoStatus*为适当的值。
+如果目标设备对象是筛选器驱动程序的控制设备对象，则筛选器驱动程序的调度例程必须完成 IRP 并返回相应的 NTSTATUS 值，然后将 IoStatus 设置为相应的值，然后再 *&gt;* 将 Irp *&gt;IoStatus。*
 
 否则，筛选器驱动程序应执行任何所需的处理，并根据筛选器的性质，完成 IRP，或将其向下传递到堆栈上的下一个较低的驱动程序。
 
@@ -142,9 +142,9 @@ IRP\_同步\_API
 
 如果文件\_完成\_如果在预创建（创建调度）路径中设置\_OPLOCKED 标志，则筛选器不能启动以下任何类型的操作，因为它们可能会导致 oplock 中断：
 
-IRP\_MJ\_清除 IRP\_MJ\_CREATE IRP\_MJ\_FILE\_SYSTEM\_CONTROL IRP\_MJ\_FLUSH\_缓冲 IRP\_12_ LOCK\_CONTROL IRP\_MJ\_读取 IRP\_MJ\_设置\_信息 IRP\_; 如果筛选器或微筛选器不能遵循文件\_完成\_\_t_23_ OPLOCKED 标志，必须完成 IRP\_MJ\_CREATE 请求，状态\_共享\_冲突。
+IRP\_MJ\_清除 IRP\_MJ\_CREATE IRP\_MJ\_FILE\_SYSTEM\_CONTROL IRP\_MJ\_FLUSH\_缓冲 IRP\_mj\_"锁定"\_控件 IRP\_MJ\_读取 IRP\_MJ\_设置\_信息 IRP\_t_23_ OPLOCKED 标志，必须完成 IRP\_MJ\_创建请求，状态\_共享\_冲突。
 
-如果文件\_完成\_如果在完成（创建后）路径中设置\_OPLOCKED 标志，则筛选器应检查文件系统是否已将*Irp-&gt;IoStatus*的状态设置为\_OPLOCK\_中断\_\_进度状态值。 如果未设置此状态值，筛选器将对该文件启动上述一项操作是安全的。 如果设置此状态值，则 oplock 尚未中断，筛选器不能启动可能导致 oplock 中断的任何操作。 因此，在满足以下条件之一之前，筛选器必须将上述所有操作推迟到该文件中：
+如果在完成（创建后）路径中设置了\_OPLOCKED 标志，则该文件\_\_完成，筛选器应检查文件系统是否已将*Irp-&gt;IoStatus*状态设置为\_进度状态值\_中断\_的状态。 如果未设置此状态值，筛选器将对该文件启动上述一项操作是安全的。 如果设置此状态值，则 oplock 尚未中断，筛选器不能启动可能导致 oplock 中断的任何操作。 因此，在满足以下条件之一之前，筛选器必须将上述所有操作推迟到该文件中：
 
 -   Oplock 的所有者将发送 FSCTL\_OPLOCK\_BREAK\_确认请求发送到文件系统。
 -   除筛选器或微筛选器外的系统组件会向文件系统发送必须等待 oplock 中断完成的 i/o 请求（如 IRP\_MJ\_READ 或 IRP\_MJ\_WRITE）。 筛选器或微筛选器可以为此新操作从其调度（或 preoperation 回调）例程启动上述操作之一，因为调度或 preoperation 回调例程将进入等待状态，直到 oplock 中断完成。

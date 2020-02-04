@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a67023be7034846d67cbe78055e5910f281f2b8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6d5445f23119142ce222be4fefd7aa7da0ffc904
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841182"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977690"
 ---
 # <a name="irp_mj_cleanup"></a>IRP\_MJ\_CLEANUP
 
