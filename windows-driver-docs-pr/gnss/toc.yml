@@ -1,8 +1,8 @@
-- name: GNSS 驱动程序设计指南
+- name: 全球导航卫星系统 (GNSS) 驱动程序设计指南
   href: index.md
-- name: 适用于 Windows 8.1 的 GNSS 驱动程序设计指南
+- name: 适用于 Windows 8.1 的全球导航卫星系统 (GNSS) 驱动程序设计指南
   items:
-    - name: 适用于 Windows 8.1 的 GNSS 驱动程序设计指南
+    - name: 适用于 Windows 8.1 的全球导航卫星系统 (GNSS) 驱动程序设计指南
       href: gnss-driver-design-guide-for-windows-8-1.md
     - name: 为 Windows 8.1 编写位置传感器驱动程序
       items:
@@ -42,15 +42,15 @@
           href: the-sample-driver-file-list.md
         - name: 无线电管理器文件列表
           href: the-radio-manager-file-list.md
-- name: 适用于 Windows 10 的 GNSS 驱动程序设计指南
+- name: 适用于 Windows 10 的全球导航卫星系统 (GNSS) 驱动程序设计指南
   items:
-    - name: 适用于 Windows 10 的 GNSS 驱动程序设计指南
+    - name: 适用于 Windows 10 的全球导航卫星系统 (GNSS) 驱动程序设计指南
       href: gnss-driver-design-guide-for-windows-10.md
-    - name: GNSS 驱动程序概述
+    - name: 全球导航卫星系统 (GNSS) 驱动程序概述
       href: gnss-driver-overview.md
-    - name: GNSS 驱动程序要求
+    - name: 全球导航卫星系统 (GNSS) 驱动程序需求
       href: gnss-driver-requirements.md
-    - name: GNSS 驱动程序体系结构
+    - name: 全球导航卫星系统 (GNSS) 驱动程序体系结构
       href: gnss-driver-architecture.md
-    - name: GNSS 驱动程序设计
+    - name: 全球导航卫星系统 (GNSS) 驱动程序设计
       href: gnss-driver-design.md
