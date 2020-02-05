@@ -1,35 +1,32 @@
 ---
-title: GNSS 驱动程序概述
-description: 使用本指南，了解如何实现 DeviceIoControl Api 使用 GNSS 驱动程序，以便像 GNSS 适配器 HLOS 可以访问 GNSS 功能。
+title: 全局导航卫星系统（GNSS）驱动程序概述
+description: 使用本指南了解如何通过全局导航卫星系统（GNSS）驱动程序实现 DeviceIoControl Api，以便 HLOS 如 GNSS 适配器可以访问 GNSS 功能。
 ms.assetid: 1887097A-C495-4295-9904-B2964F46A81D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f5ef80389d7bbb88c9e5c2496439e6a015727a2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3bd3e46849d1e4b760d56562e7b2fc262fc1d7b9
+ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371111"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980686"
 ---
-# <a name="gnss-driver-overview"></a>GNSS 驱动程序概述
+# <a name="global-navigation-satellite-system-gnss-driver-overview"></a>全局导航卫星系统（GNSS）驱动程序概述
 
+使用全球导航卫星系统（GNSS）驱动程序设计指南，可以了解如何使用 GNSS 驱动程序实现**DeviceIoControl** api，以便类似于 GNSS 适配器的高级操作系统组件（HLOS）可以访问所需的 GNSS 功能。
 
-使用 GNSS 驱动程序设计指南，了解如何实现**DeviceIoControl** GNSS 驱动程序的 Api，以便像 GNSS 适配器的高级别的操作系统组件 (HLOS) 可以访问所需的 GNSS 功能。
+可通过 IHV 增强 GNSS 功能，以更低的功率成本提供位置，或在需要时提供更好的性能。
 
-GNSS 功能可以通过 IHV 提供较低的电源成本的位置或提供更好的性能在需要时进行扩充。
+新的 GNSS 驱动程序由 Ihv 完全拥有和提供，不会在内核模式下运行任何 Microsoft 自有代码。
 
-新的 GNSS 驱动程序完全拥有和 Ihv，随在内核模式下运行任何 Microsoft 所有的代码。
+> [!NOTE]
+> Ihv 不能将筛选器驱动程序添加到 GNSS/Location 堆栈。 筛选器驱动程序很难进行调试和维护，因此，一般不建议使用它们。 除此之外，在未来，Microsoft 可能还需要在 GNSS 设备堆栈中添加筛选器驱动程序，以便扩展功能，并将其他筛选器驱动程序用于 Ihv，使体系结构更复杂。
 
-**请注意**  Ihv 必须将筛选器驱动程序添加到 GNSS/位置堆栈。 筛选器驱动程序很难调试和维护中通常不建议这样。 除此之外，在将来，Microsoft 可能需要添加用于扩展功能并附加的筛选器驱动程序从 Ihv GNSS 设备堆栈中的筛选器驱动程序将使体系结构更复杂不必要地。
-
- 
-
-该驱动程序遵循功能的驱动程序的泛型 UMDF 2.0 模型 （用户模式驱动程序框架）。 无法使用 KMDF （内核模式驱动程序框架） 驱动程序，但当其返回给该平台不稳定的风险更高时，就越难以调试，并无法进行直接使用用户模式下 OS 组件，它们是强烈建议不要使用。
-此设计指南假定你基本熟悉 UMDF 2.0 中，Windows 内核模式编程、 内核 I/O 管理、 电源管理和即插即用设备堆栈。
+驱动程序遵循适用于函数驱动程序的通用 UMDF 2.0 模型（用户模式驱动程序框架）。 可以使用 KMDF （内核模式驱动程序框架）驱动程序，但强烈建议不要这样做，因为它们增加了平台不稳定的风险，因而更难进行调试，而且不能直接使用用户模式操作系统组件。
+本设计指南假定你基本熟悉 UMDF 2.0、Windows 内核模式编程、内核 i/o 管理、电源管理和 PnP 设备堆栈。
 
 ## <a name="related-topics"></a>相关主题
-[GNSS 驱动程序要求](gnss-driver-requirements.md)  
-[GNSS 驱动程序体系结构](gnss-driver-architecture.md)  
 
+[全局导航卫星系统（GNSS）驱动程序要求](gnss-driver-requirements.md)  
 
-
+[全局导航卫星系统（GNSS）驱动程序体系结构](gnss-driver-architecture.md)  

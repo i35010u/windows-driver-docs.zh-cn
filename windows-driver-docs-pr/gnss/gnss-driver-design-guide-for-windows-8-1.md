@@ -1,31 +1,22 @@
 ---
-title: 适用于 Windows 8.1 的 GNSS 驱动程序设计指南
-description: 本指南介绍了 Windows 8.1 的设计要求和 GNSS 设备驱动程序体系结构。
+title: 适用于 Windows 8.1 的全球导航卫星系统（GNSS）驱动程序设计指南
+description: 本指南介绍 Windows 8.1 的全局导航卫星系统（GNSS）设备驱动程序的设计要求和体系结构。
 ms.assetid: E43BE011-45AB-4AC5-8F6C-C1B29A60DB11
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b85922d6139757dc11adb6e6922091fa1b50546b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 48561330cd11b56c8abadc242f0c28b030794788
+ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371209"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980682"
 ---
-# <a name="gnss-driver-design-guide-for-windows-81"></a>适用于 Windows 8.1 的 GNSS 驱动程序设计指南
+# <a name="global-navigation-satellite-system-gnss-driver-design-guide-for-windows-81"></a>适用于 Windows 8.1 的全球导航卫星系统（GNSS）驱动程序设计指南
 
+本指南介绍 Windows 8.1 的全局导航卫星系统（GNSS）设备驱动程序的设计要求和体系结构。
 
-本指南介绍了 Windows 8.1 的设计要求和 GNSS 设备驱动程序体系结构。
+## <a name="in-this-section"></a>本部分内容
 
-## <a name="in-this-section"></a>本节内容
+- [为 Windows 8.1 写入位置传感器驱动程序](writing-a-location-sensor-driver.md)
 
-
--   [为 Windows 8.1 编写位置传感器驱动程序](writing-a-location-sensor-driver.md)
--   [Windows 8.1 的地理位置驱动程序示例](sensors-geolocation-driver-sample.md)
-
- 
-
- 
-
-
-
-
+- [Windows 8.1 的地理位置驱动程序示例](sensors-geolocation-driver-sample.md)
