@@ -5,7 +5,7 @@ ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - Bug 检查 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
-ms.date: 06/29/2019
+ms.date: 02/04/2020
 topic_type:
 - apiref
 api_name:
@@ -13,21 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 37a621a1f25f0581ec8bd5da84381209026d77f1
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 32f77bc9713f16345c07aa4b1fc9880b537caf10
+ms.sourcegitcommit: bf18e0a9c16784ebb45b5e0a567f16721b5f1c8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209319"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036776"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>Bug 检查0x1A：内存\_管理
-
 
 内存\_管理 bug 检查的值为0x0000001A。 这表明出现了严重的内存管理错误。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
-
 
 ## <a name="memory_management-parameters"></a>内存\_管理参数
 
@@ -106,6 +104,14 @@ ms.locfileid: "75209319"
 <td align="left"><p>0x1236</p></td>
 <td align="left"><p>调用方指定的 MDL 包含未锁定（或无效）的物理页。 参数2包含指向 MDL 的指针。 参数3包含指向无效 PFN 的指针。 参数4包含无效的 PFN 值。</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>0x1240</p></td>
+<td align="left"><p>对于不是常驻的虚拟地址范围，调用方无法构建 MDL。 参数2是内存描述符列表（MDL），参数3是 PTE 指针。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x1241</p></td>
+<td align="left"><p>在调用以生成 MDL 之前，MDL 的虚拟地址意外地异步取消映射。 参数2是 MDL，参数3是 PTE 指针。</p></td>
+</tr>
 <tr class="odd">
 <td align="left"><p>0x3300</p></td>
 <td align="left"><p>在执行写入的过程中，被引用的虚拟地址在写入时被错误地标记为副本。 参数2是 FaultingAddress。  参数3是 PTE 内容。 参数4表示虚拟地址空间类型。</p></td>
@@ -117,6 +123,10 @@ ms.locfileid: "75209319"
 <tr class="even">
 <td align="left"><p>0x3453</p></td>
 <td align="left"><p>由于未完成的引用，无法删除已退出进程的所有页表页。  这通常表示进程的页表结构中的损坏。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x3470</p></td>
+<td align="left"><p>在 freelist 上，缓存的内核堆栈已损坏–此内存损坏表示调用堆栈可能成为受害者或问题的严重问题。 参数2是虚拟地址（VA），参数3是 VA Cookie。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4477</p></td>
@@ -133,6 +143,10 @@ ms.locfileid: "75209319"
 <tr class="odd">
 <td align="left"><p>0x5200</p></td>
 <td align="left"><p>免费池 SLIST 上的页面已损坏。 这可能是驱动程序中的 "无可用" 错误的结果，也可能是上一页的溢出。 参数2包含可用池块的地址。 参数4包含应位于该地址的值。 参数3包含找到的实际值。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x5305</p></td>
+<td align="left"><p>调用方正在指定一个无效的池地址（参数2）来释放。 参数2为虚拟地址（VA），参数3为区域大小。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6001</p></td>
@@ -156,12 +170,20 @@ ms.locfileid: "75209319"
 <td align="left"><p>遇到 PFN （参数2），损坏的链接不再连接到其顶层进程。  这表示 PFN 结构中的损坏。</p></td>
 </tr>
 <tr class="even">
+<td align="left"><p>0x15000</p></td>
+<td align="left"><p>调用方提供错误的地址，或者正在错误的进程上下文中调用此例程。  这两者都是非法的，因为我们无法对由于此错误而找不到的范围进行了安全。 参数2是要评估的虚拟地址。</p></td>
+</tr>
+<tr class="even">
 <td align="left"><p>0x15001</p></td>
 <td align="left"><p>在取消保护以前所保护的内存的过程中出错。  如果调用方错误地在错误的进程上下文中调用 MmUnsecureVirtualMemory，则可能会发生这种情况。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41201</p></td>
 <td align="left"><p>在查询虚拟地址的过程中，页面框架编号（PFN）与当前页表条目（PTE）指针之间存在不一致。 参数2是对应的 PTE。 参数3是 PTE 内容，参数4是虚拟地址描述符。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x41202</p></td>
+<td align="left"><p>在确定非零 PTE 的页面保护的过程中，已确定 PTE 已损坏。  参数2是 PTE 指针，参数3是 PTE 内容，参数4是虚拟地址描述符（VAD）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
@@ -230,10 +252,9 @@ ms.locfileid: "75209319"
 </tbody>
 </table>
 
-
 <a name="resolution"></a>分辨率
 ----------
 
-[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
+[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
 
 运行 Windows 内存诊断工具也可用于排除影响物理内存模块的任何类型的问题。

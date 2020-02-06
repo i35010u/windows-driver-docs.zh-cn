@@ -4,18 +4,18 @@ description: 此目录中的驱动程序示例提供了为设备编写自定义�
 ms.assetid: 9F2F995E-EA20-4877-B96C-5FF082CE886D
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ec42afa31f558dc36c5d8bb100bdb4b858c1fe8b
-ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
+ms.openlocfilehash: fb2a5fac17f27e7e51f27158f93577ee8feef25f
+ms.sourcegitcommit: bf18e0a9c16784ebb45b5e0a567f16721b5f1c8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735241"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036778"
 ---
 # <a name="file-system-driver-samples"></a>文件系统驱动程序示例
 
 此目录中的驱动程序示例提供了为设备编写自定义文件系统驱动程序的起点。
 
-| 示例 | 描述 |
+| 示例 | 说明 |
 | --- | --- |
 | [CDFS 文件系统驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/cdfs-file-system-driver) | Cd-rom 文件系统驱动程序（cdfs）示例是适用于可移动媒体的文件系统驱动程序。 |
 | [fastfat 文件系统驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/fastfat-file-system-driver) | 基于 Windows 收件箱 FastFAT 文件系统的文件系统驱动程序，用作新文件系统的模型。 |
@@ -29,7 +29,7 @@ ms.locfileid: "74735241"
 | [Minispy 文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/minispy-file-system-minifilter-driver) | 用于监视和记录系统中发生的任何 i/o 和事务活动的工具。 |
 | [NameChanger 文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/namechanger-file-system-minifilter-driver) | 使用映射将目录从卷命名空间的一个部分 Grafts 到另一部分。 微筛选器通过充当名称提供程序来维护这种错觉，将条目注入到目录枚举和转发目录更改通知。 |
 | [NullFilter 文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/nullfilter-file-system-minifilter-driver) | 仅演示使用筛选器管理器注册的微筛选器。 |
-| [传递文件系统微筛选器驱动程序](h https://docs.microsoft.com/samples/microsoft/windows-driver-samples/passthrough-file-system-minifilter-driver) | 演示如何为不同类型的 i/o 请求指定回调函数。 |
+| [传递文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/passthrough-file-system-minifilter-driver) | 演示如何为不同类型的 i/o 请求指定回调函数。 |
 | [扫描仪文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/scanner-file-system-minifilter-driver) | 文件数据扫描程序示例。 通常，防病毒筛选器属于这种类型。 |
 | [SimRep 文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/simrep-file-system-minifilter-driver) | 演示文件系统筛选器如何模拟文件系统（如重新分析点行为），以将打开的文件重定向到备用路径。 |
 [SwapBuffer 文件系统微筛选器驱动程序](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/swapbuffer-file-system-minifilter-driver) | 演示如何在数据的读取和写入之间切换缓冲区。 此方法对于加密筛选器特别有用。 |
