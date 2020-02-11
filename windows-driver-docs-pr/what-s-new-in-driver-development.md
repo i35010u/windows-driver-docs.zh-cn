@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b72381e9d255c911160b73736342344e332e438
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 0d75b697082a08b8c7b87c25586e1b058dd24c17
+ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210827"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980706"
 ---
 # <a name="top"></a>驱动程序开发中的新增功能
 
@@ -35,14 +35,14 @@ ms.locfileid: "75210827"
 
 | 驱动程序  |[1903](#whats-new-in-windows-10-version-1903-latest)| [1809](#whats-new-in-windows-10-version-1809) |   [1803](#whats-new-in-windows-10-version-1803)    | [1709](#whats-new-in-windows-10-version-1709) |  [1703](#whats-new-in-windows-10-version-1703)  | [1607](#whats-new-in-windows-10-version-1607) |  [1507](#whats-new-in-windows-10-version-1507)  |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Audio  |  [![详细信息](checkmark.png)](#audio-1903) |      [![详细信息](checkmark.png)](#audio-1809)       |      [![详细信息](checkmark.png)](#audio-1803)      |         [![详细信息](checkmark.png)](#audio-1709)          |      [![详细信息](checkmark.png)](#audio-1703)      |      [![详细信息](checkmark.png)](#audio-1607)      |                   ![不可用](minus.png)                   |
+| 音频  |  [![详细信息](checkmark.png)](#audio-1903) |      [![详细信息](checkmark.png)](#audio-1809)       |      [![详细信息](checkmark.png)](#audio-1803)      |         [![详细信息](checkmark.png)](#audio-1709)          |      [![详细信息](checkmark.png)](#audio-1703)      |      [![详细信息](checkmark.png)](#audio-1607)      |                   ![不可用](minus.png)                   |
 |               ACPI         |   ![不可用](minus.png)    |             ![不可用](minus.png)              |      [![详细信息](checkmark.png)](#acpi-1803)       |          [![详细信息](checkmark.png)](#acpi-1709)          |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |             生物识别    |     ![不可用](minus.png)   |             ![不可用](minus.png)              |            ![不可用](minus.png)             |       [![详细信息](checkmark.png)](#biometric-1709)        |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
-|             蓝牙     |   ![不可用](minus.png)     |     [![详细信息](checkmark.png)](#bluetooth-1809)     |    [![详细信息](checkmark.png)](#bluetooth-1803)    |                ![不可用](minus.png)                |    [![详细信息](checkmark.png)](#bluetooth-1703)    |          ![不可用](minus.png)          |             [![详细信息](checkmark.png)](#bluetooth-1507)             |
+|             Bluetooth     |   ![不可用](minus.png)     |     [![详细信息](checkmark.png)](#bluetooth-1809)     |    [![详细信息](checkmark.png)](#bluetooth-1803)    |                ![不可用](minus.png)                |    [![详细信息](checkmark.png)](#bluetooth-1703)    |          ![不可用](minus.png)          |             [![详细信息](checkmark.png)](#bluetooth-1507)             |
 |          总线和端口          |   ![不可用](minus.png)   |       ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |          [![详细信息](checkmark.png)](#buses-and-ports)          |
-|              相机       |    [![详细信息](checkmark.png)](#camera-1903)    |             ![不可用](minus.png)              |     [![详细信息](checkmark.png)](#camera-1803)      |                ![不可用](minus.png)                |     [![详细信息](checkmark.png)](#camera-1703)      |   [![详细信息](checkmark.png)](#camera-1607)   |            [![详细信息](checkmark.png)](#camera-1507)            |
-|             手机网络              |   ![不可用](minus.png)   |       ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |             [![详细信息](checkmark.png)](#cellular)              |
-|              显示          |  [![详细信息](checkmark.png)](#display-1903) |      [![详细信息](checkmark.png)](#display-1809)      |     [![详细信息](checkmark.png)](#display-1803)     |        [![详细信息](checkmark.png)](#display-1709)         |            ![不可用](minus.png)             |          ![不可用](minus.png)          |              [![详细信息](checkmark.png)](#display-1507)              |
+|              照相机       |    [![详细信息](checkmark.png)](#camera-1903)    |             ![不可用](minus.png)              |     [![详细信息](checkmark.png)](#camera-1803)      |                ![不可用](minus.png)                |     [![详细信息](checkmark.png)](#camera-1703)      |   [![详细信息](checkmark.png)](#camera-1607)   |            [![详细信息](checkmark.png)](#camera-1507)            |
+|             移动电话              |   ![不可用](minus.png)   |       ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |             [![详细信息](checkmark.png)](#cellular)              |
+|              显示器          |  [![详细信息](checkmark.png)](#display-1903) |      [![详细信息](checkmark.png)](#display-1809)      |     [![详细信息](checkmark.png)](#display-1803)     |        [![详细信息](checkmark.png)](#display-1709)         |            ![不可用](minus.png)             |          ![不可用](minus.png)          |              [![详细信息](checkmark.png)](#display-1507)              |
 |          驱动程序安全性      |  ![不可用](minus.png)  |             ![不可用](minus.png)              |    [![详细信息](checkmark.png)](#security-1803)     |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |              ![不可用](minus.png)              |
 |      硬件通知    | ![不可用](minus.png)  |             ![不可用](minus.png)              |            ![不可用](minus.png)             | [![详细信息](checkmark.png)](#hardware-notifications-1709) |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |   人体学接口设备 (HID)    |    ![不可用](minus.png)    |     ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |      [![详细信息](checkmark.png)](#human-interface-device)       |
@@ -53,7 +53,7 @@ ms.locfileid: "75210827"
 |            网络     |    [![详细信息](checkmark.png)](#networking-1903)    |    [![详细信息](checkmark.png)](#networking-1809)     |   [![详细信息](checkmark.png)](#networking-1803)    |       [![详细信息](checkmark.png)](#networking-1709)       |   [![详细信息](checkmark.png)](#networking-1703)    |          ![不可用](minus.png)          |          [![详细信息](checkmark.png)](#networking-1507)          |
 |                POS          |   ![不可用](minus.png)   |             ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |       [![详细信息](checkmark.png)](#pos-1703)       |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |                PCI        |    ![不可用](minus.png)    |             ![不可用](minus.png)              |       [![详细信息](checkmark.png)](#pci-1803)       |          [![详细信息](checkmark.png)](#pci-1709)           |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
-|               Print     |      [![详细信息](checkmark.png)](#print-1903)    |             ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |   [![详细信息](checkmark.png)](#print-1607)    |            [![详细信息](checkmark.png)](#print-1507)             |
+|               打印     |      [![详细信息](checkmark.png)](#print-1903)    |             ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |   [![详细信息](checkmark.png)](#print-1607)    |            [![详细信息](checkmark.png)](#print-1507)             |
 |      脉宽调制       |   ![不可用](minus.png)  |        ![不可用](minus.png)              |            ![不可用](minus.png)             |          [![详细信息](checkmark.png)](#pwm-1709)           |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |              传感器        |  [![详细信息](checkmark.png)](#sensors-1903)    |      [![详细信息](checkmark.png)](#sensors-1809)      |     [![详细信息](checkmark.png)](#sensors-1803)     |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |                   ![不可用](minus.png)                   |
 |            智能卡     |    ![不可用](minus.png)    |             ![不可用](minus.png)              |            ![不可用](minus.png)             |                ![不可用](minus.png)                |            ![不可用](minus.png)             |          ![不可用](minus.png)          |            [![详细信息](checkmark.png)](#smart-card)             |
@@ -110,7 +110,7 @@ Visual Studio 2017 中的 WDK 驱动程序菜单位于顶部菜单选项中，�
 
 ### <a name="open-publishing"></a>开放发布
 
-我们正在努力使文档与社区活动更加相关。 在 Windows 驱动程序文档的许多页面上，你可以直接提出更改建议。 在页面的右上角可以找到“参与”按钮。  它如下所示：
+我们正在努力使文档与社区活动更加相关。 在 Windows 驱动程序文档的许多页面上，你可以直接提出更改建议。 在页面的右上角可以找到“参与”按钮。  它的外观如下所示：
 
 ![“参与”按钮的屏幕截图](contribute-button.png)
 
@@ -611,7 +611,7 @@ Windows 10 版本 1803 包含 ACPI DDI 的更新，支持平台功能和物理�
 
 ### <a name="bluetooth-1803"></a>蓝牙
 
-Windows 10 版本 1803 引入了迅速配对的支持。 用户不再需要在设置应用中导航并查找外设即可配对。 Windows 可以自动为用户完成配对。当附近出现新的外设并且该设备准备就绪时，Windows 会弹出一条通知。 确保外设进行迅速配对需要满足两套要求。 一套要求与外设的行为相关，另一套要求与 Microsoft 定义的供应商播发部分中的结构和值相关。 有关详细信息，请参阅：
+Windows 10 版本 1803 引入了迅速配对的支持。 用户不再需要在设置应用中导航并查找外设即可配对。 Windows 可以自动为用户完成配对。当附近出现新的外设并且该设备准备就绪时，Windows 会弹出一条通知。 确保外设进行迅速配对需要满足两套要求。 一套要求与外设的行为相关，另一套要求与 Microsoft 定义的供应商播发部分中的结构和值相关。 有关更多信息，请参阅：
 
 * [蓝牙迅速配对](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth-swift-pair)
 * [蓝牙功能和建议](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)
@@ -810,7 +810,7 @@ Windows 生物识别驱动程序有新的签名要求。 有关详细信息，�
 
 ### <a name="hardware-notifications-1709"></a>硬件通知
 
-Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬件的支持。 有关详细信息，请参阅：
+Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬件的支持。 有关更多信息，请参阅：
 
 * [硬件通知支持](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/hardware-notifications-support)
 * [硬件通知参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gpiobtn/)
@@ -821,7 +821,7 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
 
 * ExGetFirmwareType 和 ExIsSoftBoot &ndash; 执行库支持例程。
 * [PsSetLoadImageNotifyRoutineEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-pssetloadimagenotifyroutineex) &ndash; 针对所有可执行映像的扩展映像通知例程，包括其体系结构与操作系统本机体系结构不同的映像。
-* [MmMapMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapmdl) &ndash; [内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)例程，用于将内存描述符列表 (MDL) 描述的物理页面映射到系统虚拟地址空间。
+* [MmMapMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapmdl) &ndash;[内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)例程，用于将内存描述符列表 (MDL) 描述的物理页面映射到系统虚拟地址空间。
 * [PoFxSetTargetDripsDevicePowerState ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxsettargetdripsdevicepowerstate) &ndash; 一个 PoFx 例程，用于向电源管理器告知 DRIPS 的设备目标电源状态。
 * 下面是 [ZwSetInformationThread](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwsetinformationthread) 例程的与处理策略相关的新选项列表：
 
@@ -1052,7 +1052,7 @@ Windows 10 版本 1607 中的相机驱动程序开发包括新的和更新的主
 
 ### <a name="location-1607"></a>定位
 
-Windows 10 版本 1607 中的定位驱动程序开发包括以下新的 GNSS 痕迹导航 DDI：
+Windows 10 版本 1607 中的定位驱动程序开发包括以下新的全球导航卫星系统 (GNSS) 痕迹导航 DDI：
 
 * [**GNSS\_BREADCRUMB\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumb_list)
 * [**GNSS\_BREADCRUMB\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumb_v1)
@@ -1100,7 +1100,7 @@ Windows 的基于 OneCoreUAP 的版本包含适用于简单外设总线 (SPB)（
 * [硬件优化提示](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-optimizationhint-)
 * [相机配置文件](https://docs.microsoft.com/windows-hardware/drivers/stream/camera-driver-functions)
 
-### <a name="cellular"></a>手机网络
+### <a name="cellular"></a>移动电话
 
 Windows 10 的[手机网络体系结构和实现](https://docs.microsoft.com/windows-hardware/drivers/network/cellular-architecture-and-driver-model)已更新。
 

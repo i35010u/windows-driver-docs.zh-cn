@@ -4,12 +4,12 @@ title: 适用于 Windows 10 的驱动程序融合模型
 description: 若要使设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0195d6ebc13009f06de34fe78fda4606b020f65c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: ad62d7c13888eaf8210f0d3f2b8d1315662def93
+ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63357591"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980702"
 ---
 # <a name="driver-convergence-model-for-windows10"></a>适用于 Windows 10 的驱动程序融合模型
 
@@ -33,7 +33,7 @@ ms.locfileid: "63357591"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Audio</td>
+<td align="left">音频</td>
 <td align="left">是</td>
 <td align="left"><p>从 Windows 10 开始，可以为 PnP、电源管理和空闲管理编写调用 KMDF 接口的内核模式驱动程序框架 (KMDF) 音频驱动程序。 对于 I/O 处理，KMDF 音频驱动程序不应使用 WDF 中的 I/O 队列功能，而应使用 PortClass 提供的现有 COM 接口。 但是，驱动程序可以使用计时器、中断、DMA 和远程 I/O 目标的框架支持。 KMDF 音频驱动程序可在 Windows 10 桌面版和 Windows 10 移动版上运行。</p>
 <p>链接到 PortClass 的现有 Windows 8.1 驱动程序将继续在 Windows 10 桌面版和 Windows 10 移动版上运行。</p></td>
@@ -45,7 +45,7 @@ ms.locfileid: "63357591"
 <p>如果你在为 Windows 10 移动版开发新的生物识别驱动程序，则可从 Windows 8.1 WBF 驱动程序着手。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">蓝牙</td>
+<td align="left">Bluetooth</td>
 <td align="left">是</td>
 <td align="left"><p>在 Windows 10 中，所有设备的蓝牙传输驱动程序接口聚合，并使用通用的蓝牙驱动程序模型。 可以编写在所有 Windows 设备平台上运行的单一驱动程序。</p>
 <p>蓝牙音频驱动程序接口区域针对 Windows 10 划分，并允许以下两个选项：</p>
@@ -55,26 +55,26 @@ ms.locfileid: "63357591"
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">相机</td>
+<td align="left">照相机</td>
 <td align="left">是</td>
 <td align="left"><p>Windows Phone 8.1 中以前提供的功能（如自动对焦和 HFR）在 Windows 10 桌面版和 Windows 10 移动版中均可用。 Windows 8.1 的旧相机驱动程序需要加以修改才能利用这些功能。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">手机网络</td>
+<td align="left">移动电话</td>
 <td align="left">是</td>
 <td align="left"><p>Windows 10 将继续在电脑上支持数据卡的 MBIM 1.0（移动宽带接口模型）。</p>
 <p>使用聚合堆栈等效管理手机网络和 WLAN 连接。 移动运营商可以在 Windows 10 桌面版和 Windows 10 移动版中使用手机网络设置的开放移动联盟设备管理 (OMA DM) 配置。 此外，OEM 将有权访问 Windows 10 桌面版和 Windows 10 移动版中的多变量预配，移动宽带帐户体验 (MBAE) 在 Windows 10 桌面版中仍然可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left">显示</td>
+<td align="left">显示器</td>
 <td align="left">是</td>
 <td align="left"><p>已聚合。 Windows 显示驱动程序模型 (WDDM) 1.3 在 Windows 8.1 和 Windows Phone 8.1 上运行。 Windows 10 继续支持 WDDM 1.3。 WDDM 2.0 是 Windows 10 的新增功能。 若要使用 Direct3D (D3D) 12 运行时和功能，必须有 WDDM 2.0 驱动程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">位置</td>
 <td align="left">是</td>
-<td align="left"><p>适用于 Windows 10 的新 GNSS（全球导航卫星系统）适配器 DDI。</p>
-<p>Windows 8.1 传感器由 GNSS 旧 PE 提供支持。</p></td>
+<td align="left"><p>适用于 Windows 10 的新全球导航卫星系统 (GNSS) 适配器 DDI。</p>
+<p>Windows 8.1 传感器由全球导航卫星系统 (GNSS) 旧 PE 提供支持。</p></td>
 </tr>
 <tr class="even">
 <td align="left">NFC</td>
@@ -83,7 +83,7 @@ ms.locfileid: "63357591"
 <p>Windows 8.1 NFC 驱动程序会继续运行，但无法利用新功能。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">Sensor</td>
+<td align="left">传感器</td>
 <td align="left">是</td>
 <td align="left"><p>Windows 10 的新驱动程序可以编写用户模式驱动程序框架 (UMDF) 2。使用常见传感器堆栈（类似于 Windows Phone 8.1 模型）的 <em>x</em> 驱动程序与同一驱动程序包在 Windows 10 桌面版和 Windows 10 移动版上运行。</p>
 <p>Windows 8.1 传感器类扩展使用 UMDF 1。 Windows Phone 8.1 传感器类扩展使用 UMDF 2。 对于 Windows 10，新传感器类扩展使用 Windows Phone 8.1 这样的 UMDF 2。 若要使用 Windows 10 工具包生成，则必须使用后者。 Windows 8.1 的驱动程序二进制文件仍然在 Windows 10 上运行。 仍然为 Windows 10 内置 HID 类驱动程序，如果你使用 Windows 8.1 已定义的现有 HID 类型，则无需供应商提供的驱动程序和固件更改。</p></td>
