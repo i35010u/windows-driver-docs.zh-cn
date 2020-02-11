@@ -12,12 +12,12 @@ keywords:
 - 固定精度数据类型 WDK 64 位
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d95f4c2392b5025e61037eec27687c304577d8d
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
-ms.translationtype: HT
+ms.openlocfilehash: 37a2b47ddd1ed4bd94345fa7128cd518e6aa103c
+ms.sourcegitcommit: f6aebb32c045b9da7da4bf9b3fd8d6fad05e9deb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072222"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114479"
 ---
 # <a name="why-thunking-is-necessary"></a>为何需要进行形实转换
 
@@ -61,7 +61,7 @@ typedef struct _DRIVER_DATA32
 
 由于它只包含固定精度的数据类型，因此在32位 Windows 和64位 Windows 上，此新结构的大小相同。
 
-|指针\_32**事件**|UNICODE\_STRING32 **ObjectName**|||
+|指针\_32 事件|UNICODE\_STRING32 ObjectName|||
 |----|----|----|----|
 ||**USHORT 长度**|**USHORT 最大长度**|**ULONG 缓冲区**|
 |32位|16位|16位|32位|

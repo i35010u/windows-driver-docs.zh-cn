@@ -13,12 +13,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfee7045135387e53438ea53119ac75dad8c9e8b
-ms.sourcegitcommit: 15217d1d11a4d43048ff42e5aa3b7f37da7f28ff
+ms.openlocfilehash: 8aa60068e0cca799467ad4fa2148dc44c3a98cd0
+ms.sourcegitcommit: f6aebb32c045b9da7da4bf9b3fd8d6fad05e9deb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73753872"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114632"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -27,7 +27,7 @@ ms.locfileid: "73753872"
 
 可以通过多种不同的方式将驱动程序提交到门户。  对于生产驱动程序，应按如下所述提交 HLK/HCK 测试日志。  对于仅限 Windows 10 客户端的系统进行测试，你可以提交用于[证明签名](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)的驱动程序，这不需要进行 HLK 测试。  或者，你可以提交你的驱动程序以进行测试签名，如[创建新的硬件提交](../dashboard/create-a-new-hardware-submission.md)页中所述。
 
-## <a name="exceptions"></a>例外
+## <a name="exceptions"></a>异常
 
 如果满足以下任一条件，则仍允许交叉签名的驱动程序：
 
@@ -43,7 +43,7 @@ ms.locfileid: "73753872"
 
 1. 对于想要在其上验证的每个版本的 Windows 10，下载适用于该版本的 Windows HLK （硬件实验室工具包），并对该版本的客户端运行完整的证书传递。 每个版本都有一个日志。
 2. 如果有多个日志，请使用最新的 HLK 将它们合并到单个日志中。
-3. 将驱动程序和合并的 HLK 测试结果提交给[Windows 硬件开发人员中心仪表板门户](../dashboard/index.md)。
+3. 将驱动程序和合并的 HLK 测试结果提交给[Windows 硬件开发人员中心仪表板门户](../dashboard/index.yml)。
 
 有关特定于版本的详细信息，请查看要作为目标的 Windows 版本的[WHCP （Windows 硬件兼容性计划）策略](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-specifications-policies)。
 
