@@ -9,12 +9,12 @@ keywords:
 - KDNET
 ms.date: 09/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f19ba1317c838ff41af99a391d44b85fff85f05
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
+ms.openlocfilehash: 76f5bb9dd746a6dbd2d926cff72a1bc816fc2cc0
+ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164787"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144699"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>自动设置 KDNET 网络内核调试
 
@@ -72,7 +72,7 @@ ms.locfileid: "71164787"
 5. 在目标计算机上，以管理员身份打开命令提示符窗口。 输入此命令以验证目标计算机是否具有支持的网络适配器。
 
    ```console
-   C:\KDNET>kdnet
+   C:\KDNET>kdnet.exe
    Network debugging is supported on the following NICs:
    busparams=1.0.0, Broadcom NetXtreme Gigabit Ethernet, Plugged in.  
    This Microsoft hypervisor supports using KDNET in guest VMs.
@@ -80,10 +80,10 @@ ms.locfileid: "71164787"
 
 6. 由于 kdnet 的输出指示支持目标上的网络适配器，因此可以继续。
 
-7. 键入此命令可设置主机系统的 IP 地址并生成唯一的连接密钥。 使用主机系统的 IP 地址或名称。 为使用的每个目标/主机对选择唯一的端口地址，并在建议范围内使用50000-50039。
+7. 键入此命令可设置主机系统的 IP 地址并生成唯一的连接密钥。 使用主机系统的 IP 地址或名称。 在建议的50000-50039 范围内，为你使用的每个目标/主机对选择唯一的端口地址。
 
    ```console
-   C:\>kdnet <HostComputerIPAddress> <YourDebugPort> 
+   C:\>kdnet.exe <HostComputerIPAddress> <YourDebugPort> 
    
    Enabling network debugging on Intel(R) 82577LM Gigabit Network Connection.
    Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
@@ -96,7 +96,7 @@ ms.locfileid: "71164787"
 
 在主计算机上，打开 WinDbg。 在 "**文件**" 菜单上，选择 "**内核调试**"。 在 "内核调试" 对话框中，打开 "**网络**" 选项卡。将保存的端口号和密钥粘贴到前面的 notepad.exe 文件中。 单击“确定”。
 
-你还可以通过打开命令提示符窗口并输入以下命令来启动 WinDbg 会话，其中 <YourPort> 是上面所选的端口，<YourKey> 是上述 kdnet 返回的键。 将上保存的项粘贴到前面的 notepad.exe 文件中。
+你还可以通过打开命令提示符窗口并输入以下命令来启动 WinDbg 会话，其中 <YourPort> 是上面选择的端口，<YourKey> 是上述 kdnet 返回的键。 将上保存的项粘贴到前面的 notepad.exe 文件中。
 
    ```console
   windbg -k net:port=<YourDebugPort>,key=<YourKey> 
@@ -119,7 +119,7 @@ ms.locfileid: "71164787"
 
 ## <a name="span-idrestarting_targetspanspan-idrestarting_targetspanspan-idrestarting_targetspan-restarting-the-target-pc"></a><span id="Restarting_Target"></span><span id="restarting_target"></span><span id="RESTARTING_TARGET"></span>重新启动目标 PC
 
-连接调试器后，请重新启动目标计算机。 重新启动计算机的一种方法是在管理员的命令提示符下使用此命令。
+调试器进入 "正在等待重新连接 ..."阶段，重新启动目标计算机。 重新启动计算机的一种方法是在管理员的命令提示符下使用此命令。
 
    ```console
    shutdown -r -t 0 

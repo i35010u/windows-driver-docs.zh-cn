@@ -5,12 +5,12 @@ keywords:
 - 将 LINQ 与调试器对象配合使用
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 14e3adaee50d25d283513cc3befef4c6ad8658a6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e0db367cdb6636212407b3aef0643217c2dfd59c
+ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834204"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144696"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
@@ -28,15 +28,15 @@ LINQ 命令（如下所示）可与调试器对象一起使用。 All、。Any�
 
 本机调试器对象表示调试器环境的各种构造和行为。 示例调试器对象包括以下各项。
 
-- 会议
+- 会话
 - 线程/线程
 - 进程/进程
 - 堆栈帧/堆栈帧
 - 局部变量
 - 模块/模块
 - 实用程序
-- 省/市/自治区
-- “设置”
+- State
+- 设置
 
 还可以使用 NatVis 处理调试器对象。 有关详细信息，请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。 有关将调试器对象与 JavaScript 一起使用的信息，请参阅[Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。 有关使用C++和驱动程序对象的信息，请参阅[调试器数据模型C++概述](data-model-cpp-overview.md)。
 
@@ -554,7 +554,7 @@ Take 方法
 
 |                      |                                                                                                                                                                                                                  |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .ToDisplayString ( ) | 返回对象的字符串转换。 这是将在对象的 dx 调用中显示的字符串转换。 可以提供格式设置说明符来设置 ToDisplayString 的输出格式。 |
+| .ToDisplayString ( ) | 返回对象的字符串转换。 这是将在对象的 dx 调用中显示的字符串转换。 可以提供格式设置说明符来设置 ToDisplayString 的输出格式。 有关详细信息，请参阅[Visual Studio C++调试器中的格式说明符](https://docs.microsoft.com/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2019) |
 
 
 
@@ -572,6 +572,13 @@ kd> dx (10).ToDisplayString("o")
 
 kd> dx (10).ToDisplayString("b") 
 (10).ToDisplayString("b")  : 0y1010
+
+kd> dx ("some wchar string here").ToDisplayString("su") 
+("some wchar string here").ToDisplayString("su")  : "some wchar string here"
+
+kd> dx ("some wchar string here").ToDisplayString("sub") 
+("some wchar string here").ToDisplayString("sub")  : some wchar string here
+
 ```
 
 ## <a name="span-iddebugging_plug_and_playspanspan-iddebugging_plug_and_playspanspan-iddebugging_plug_and_playspandebugging-plug-and-play-example"></a><span id="Debugging_Plug_and_Play"></span><span id="debugging_plug_and_play"></span><span id="DEBUGGING_PLUG_AND_PLAY"></span>调试即插即用示例
@@ -770,7 +777,7 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">去除</td>
+<td align="left">可移动</td>
 <td align="left"><div class="code">
 
 <code>dbgcmd
