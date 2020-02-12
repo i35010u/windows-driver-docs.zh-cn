@@ -13,7 +13,7 @@
 - name: 开发、测试以及部署驱动程序
   href: develop/index.md
 - name: Windows 硬件开发人员中心仪表板
-  href: dashboard/index.md
+  href: dashboard/index.yml
 - name: 设备和驱动程序安装
   href: install/index.md
 - name: 内核模式驱动程序体系结构设计指南
@@ -34,7 +34,7 @@
       href: 3dprint/index.md
     - name: ACPI
       href: acpi/index.md
-    - name: Audio
+    - name: 音频
       href: audio/index.md
     - name: 电池驱动程序
       href: battery/index.md
