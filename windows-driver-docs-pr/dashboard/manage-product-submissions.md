@@ -4,30 +4,30 @@ description: 管理产品的硬件仪表板提交，并让 Microsoft 对产品�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b831612540ecae02d14dde15bbbbb8627f9ba0
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 9ca915ec2ee7a1f73622d222a7d029be6338c474
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209225"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072170"
 ---
 # <a name="manage-product-submissions"></a>管理产品提交
 
 使用 *Microsoft 硬件 API* 中的以下方法管理产品提交并让 Microsoft 对产品签名。 有关 Microsoft 硬件 API 的简介，包括使用该 API 的先决条件，请参阅[硬件仪表板 API](dashboard-api.md)。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 ```
 
 管理产品提交的方法
 
-| 方法 | URI | 描述 |
+| 方法 | URI | 说明 |
 |:--|:--|:--|
-| GET | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}` | [获取某个特定产品的状态/数据](get-a-product.md)  |
-| GET | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}` |[获取产品的特定提交的状态/数据](get-a-submission.md)   |
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products` | [创建新产品](create-a-new-product.md)   |
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/` | [为产品创建新的提交](create-a-new-submission-for-a-product.md)  |
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/commit` |[确认产品提交](commit-a-product-submission.md)  |
+| GET | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}` | [获取某个特定产品的状态/数据](get-a-product.md)  |
+| GET | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}` |[获取产品的特定提交的状态/数据](get-a-submission.md)   |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products` | [创建新产品](create-a-new-product.md)   |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/` | [为产品创建新的提交](create-a-new-submission-for-a-product.md)  |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/commit` |[确认产品提交](commit-a-product-submission.md)  |
 
 ## <a name="create-and-submit-a-product-for-signing"></a>创建并提交产品以进行签名
 
@@ -38,7 +38,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 3. 通过执行 Microsoft 硬件 API 中的以下方法[创建新产品](create-a-new-product.md)。 这会创建一个新的在建产品，并允许你提交该产品的程序包。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
     ```
 
     响应正文包含[产品资源](get-product-data.md#product-resource)，此资源包括此产品的 ID。
@@ -46,7 +46,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 4. 通过执行 Microsoft 硬件 API 中的以下方法为此产品[创建新提交](create-a-new-submission-for-a-product.md)。  使用上述步骤中创建的 ProductID。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/
     ```
 
     响应正文包含[提交资源](get-product-data.md#submission-resource)，此资源包括提交 ID、用于上传产品（驱动程序）包以提交到 Azure Blob 存储的共享访问签名 (SAS) URI。 [!NOTE] > SAS URI 提供对 Azure 存储中的安全资源的访问权限（无需帐户密钥）。 有关 SAS URI 及其与 Azure Blob 存储一起使用的背景信息，请参阅[共享访问签名（第 1 部分）：了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[共享访问签名（第 2 部分）：创建 SAS 并将其与 Blob 存储一起使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
@@ -64,13 +64,13 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 6. 通过执行以下方法[确认产品提交](commit-a-product-submission.md)。 这将通知硬件开发人员中心你已完成产品提交并且将开始对提交进行验证。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/commit
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/commit
     ```
 
 7. 通过执行以下方法来检查提交状态以[获取产品提交的状态](get-a-submission.md)。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}
     ```
 
     若要确认提交状态，请查看响应正文中的 *commitStatus* 值。 如果请求成功，此值应该从 commitReceived  更改为 commitCompleted  ；如果请求中存在错误，此值应该更改为 commitFailed  。 如果存在错误，error  字段将包含有关错误的更多详细信息。

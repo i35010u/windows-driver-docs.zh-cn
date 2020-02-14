@@ -5,28 +5,28 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: a4d0997b27979c32c2c19fecb0edab550f6ab553
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 37b268df879ad4d591fcaab034699fd45096d86d
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209215"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072156"
 ---
 # <a name="manage-shipping-labels"></a>管理发货标签
 
 使用以下方法管理 Windows 硬件仪表板提交的发货标签。 有关 Microsoft 硬件仪表板 API 的简介，包括使用该 API 的先决条件，请参阅[硬件仪表板 API](dashboard-api.md)。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
 ```
 
 管理发货标签的方法
 
-|描述|方法 |URI|
+|说明|方法 |URI|
 |:--|:--|:--|
-|[创建新的发货标签](create-a-new-shipping-label.md)|POST|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels`|
-|[更新发货标签](update-a-shipping-label.md)|修补程序|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId}`|
-|[取消发货标签](cancel-a-shipping-label.md)|PUT|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId/cancel}`|
+|[创建新的发货标签](create-a-new-shipping-label.md)|POST|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels`|
+|[更新发货标签](update-a-shipping-label.md)|修补程序|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId}`|
+|[取消发货标签](cancel-a-shipping-label.md)|PUT|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId/cancel}`|
 
 ## <a name="create-a-new-shipping-label"></a>创建新的发货标签
 
@@ -39,7 +39,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/sub
 4. 通过执行以下方法为此提交[创建新的发货标签](create-a-new-shipping-label.md)。  使用在上一步中在[管理产品提交](manage-product-submissions.md)中创建的 ProductID 和 SubmissionID。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
     ```
     响应正文包含[发货标签资源](get-shipping-labels.md#shippinglabel-resource)，其中包含新创建的发货标签的 ID 和其他详细信息。
 

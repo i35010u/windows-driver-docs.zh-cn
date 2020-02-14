@@ -4,29 +4,29 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f6414d39670cb29c5561df3459a2ef8852b95f92
-ms.sourcegitcommit: 62729233228955089d872d8010c99d48ad50f01e
+ms.openlocfilehash: 3d881ea71051ac1c65c2c06207cef7ebab7953b1
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570820"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072162"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
 使用  Microsoft 硬件 API 中的以下方法可获取注册到开发人员中心帐户的硬件产品的数据。 有关 Microsoft 硬件 API 的简介，包括关于使用 API 的先决条件的简介，请参阅[使用 API 管理硬件提交](dashboard-api.md)。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 ```
 
 在使用这些方法之前，产品必须已存在于你的开发人员中心帐户中。 若要创建或管理产品提交，请参阅[管理产品提交](manage-product-submissions.md)中的方法。
 
-| 方法 | URI | 描述 |
+| 方法 | URI | 说明 |
 |-|-|-|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/`|[获取所有产品的数据](get-all-products.md)|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}`|[获取某个特定产品的数据](get-a-product.md)|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions`|[获取产品的所有提交的数据](get-all-submissions.md)|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions/{submissionId}`|[获取产品的特定提交的数据](get-a-submission.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/`|[获取所有产品的数据](get-all-products.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/{productID}`|[获取某个特定产品的数据](get-a-product.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/{productID}/submissions`|[获取产品的所有提交的数据](get-all-submissions.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/{productID}/submissions/{submissionId}`|[获取产品的特定提交的数据](get-a-submission.md)|
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -46,12 +46,12 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
   “sharedProductId”: 1152921504606971100,
   “links”: [
     {
-      “href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/9007199267351834",
+      “href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/9007199267351834/submissions",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834/submissions",
       "rel": "get_submissions",
       "method": "GET"
     }
@@ -83,7 +83,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此资源具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | ID | Long | 产品的专用产品 ID |
 | sharedProductId | Long | 产品的共享产品 ID |
@@ -111,13 +111,13 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
   "id": 1152921504621442000,
   "productId": 13635057453741328,
    "workflowStatus": {
-      “currentStep": " finalizeIngestion",
+      "currentStep": " finalizeIngestion",
       " state": " completed",
       " messages": []
     },
   "links": [
     {
-      "href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/13635057453741329/submissions/1152921504621441944",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/13635057453741329/submissions/1152921504621441944",
       "rel": "self",
       "method": "GET"
     }
@@ -133,13 +133,13 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此资源具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | ID | 长整型 | 提交的 ID |
 | Productid | 长整型 | 与此提交关联的专用产品 ID |
 | 链接 | 对象数组 | 有关更多详细信息，请参阅[链接对象](#link-object) |
 | 名称 | 字符串 | 提交的名称 |
-| 在任务栏的搜索框中键入 | 字符串 | 指示提交是初始提交还是派生的提交。 可能的值为 <ul><li>initial</li><li>derived</li></ul> |
+| 类型 | 字符串 | 指示提交是初始提交还是派生的提交。 可能的值为 <ul><li>initial</li><li>derived</li></ul> |
 | isExtensionInf | 布尔 | 指示提交是否为扩展驱动程序 |
 | isUniversal | 布尔 | 指示提交是否通过通用 API 测试。 如果驱动程序是声明性的并且可以通用，则表明它符合 DCHU 的标准 |
 | isDeclarativeInf | 布尔 | 指示提交是否通过声明性 INVerif 测试。 如果驱动程序是声明性的并且可以通用，则表明它符合 DCHU 的标准 |
@@ -152,7 +152,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 ```json
 {
-      “currentStep": " finalizeIngestion",
+      "currentStep": " finalizeIngestion",
       " state": " completed",
       " messages": []
     }
@@ -160,10 +160,10 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此对象具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | currentStep | 字符串 | 此实体的整个工作流中的当前步骤名称。 <br>对于引入/程序包提交，可能的值为（括号中的内容为说明）：<ul><li>packageInfoValidation（验证程序包元数据和内容  ）</li><li>preparation（准备好程序包以便进行处理  ）</li><li>scanning（扫描程序包内容中是否有恶意软件  ）</li><li>validation（验证测试结果  ）</li><li>catalogCreation（为程序包创建安全目录  ）</li><li>manualReview（进行手动审查  ）</li><li>signing（对二进制文件签名  ）</li><li>finalizeIngestion（完成引入并获取可以下载或发布的签名文件  ）</li></ul>|
-| 状态 | 字符串 | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
+| State | 字符串 | 当前步骤的状态。 可能的值为：<ul><li>notStarted</li><li>started</li><li>失败</li><li>completed</li></ul> |
 | Messages | 数组 | 一个字符串数组，用于提供有关当前步骤的消息（尤其是在失败的情况下） |
 
 ### <a name="download-object"></a>下载对象
@@ -196,10 +196,10 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此对象具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | 项目 | 数组 | 下载类型和每种类型的 URL 的数组。 有关详细信息，请参阅下文 |
-| 在任务栏的搜索框中键入 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的 Shell</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
+| 类型 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的 Shell</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
 | Messages | 数组 | 一个字符串数组，用于提供有关可下载文件的消息 |
 
 ### <a name="link-object"></a>链接对象
@@ -208,7 +208,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 ```json
 {
-      “href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/9007199267351834",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
       "rel": "self",
       "method": "GET"
     }
@@ -216,7 +216,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 此对象具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | Href | 字符串 | 通过 API 访问资源的 URL |
 | Rel | 字符串 | 资源的类型。 可能的值为：<ul><li>self - 链接指向自身</li><li>next_link - 链接指向通常用于分页的下一个资源</li><li>get_submissions - 链接指向产品的所有提交</li><li>commit_submission - 链接指向提交的确认 </li><li>update_submission - 链接指向提交的更新 </li><li>update_shippinglabel - 链接指向发货标签的更新  </li><li>driverMetadata - 链接指向用于下载驱动程序元数据的文件。 有关更多详细信息，请参阅[驱动程序包元数据](driver-package-metadata.md)。</li></ul>|
@@ -228,7 +228,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 #### <a name="storagecontroller-object"></a>StorageController 对象
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | biosVersion | 字符串 | ROM Bios 版本 |
 | firmwareVersion | 字符串 | 固件版本 |
@@ -252,7 +252,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 #### <a name="raidcontroller-object"></a>RaidController 对象
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | firmwareVersion | 字符串 | 固件版本 |
 | filterVersion | 字符串 | 驱动程序版本 |
@@ -270,11 +270,11 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 #### <a name="svvp-object"></a>SVVP 对象
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | productVersion | 字符串 | 产品版本 |
 | supportLink | 字符串 | 支持 URL |
-| guestOs | 字符串 | 来宾操作系统。 可能的值为：<ul><li>Windows Server 2008</li><li>Windows Server 2008 Release 2</li><li>Windows Server 2012</li><li>Windows Server 2012 R2 </li></ul>|
+| guestOs | 字符串 | 来宾操作系统。 可能的值为：<ul><li>Windows 2008 Server</li><li>Windows Server 2008 Release 2</li><li>Windows Server 2012</li><li>Windows Server 2012 R2 </li></ul>|
 | processorArchitecture | 字符串 | 硬件处理器体系结构。 可能的值为：<ul><li>Xeon</li><li>Opteron</li><li>Itanium 2</li></ul>|
 | maxProcessors | 整数 | 虚拟机中的最大处理器数 |
 | maxMemory | 整数 | 虚拟机中的最大内存（以 GB 为单位） |
@@ -289,7 +289,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 * 蓝牙控制器
 * 蓝牙控制器（非 USB）
 * 可变式平板电脑
-* 桌面设备
+* 台式机
 * 数字媒体呈现器
 * 数字媒体服务器
 * 数码相机
@@ -307,7 +307,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 * 图形适配器 WDDM1.2 RenderOnly
 * 图形平板电脑
 * 硬盘驱动器
-* 键盘
+* Keyboard
 * 键盘、视频、鼠标开关
 * LAN
 * LAN（服务器）
@@ -333,22 +333,22 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 * 指向绘图
 * 存在传感器
 * 打印机
-* Projector
+* 投影仪
 * 可移动存储
 * 路由器
 * 扫描仪
 * SDIO 控制器
-* Server
+* Server (服务器)
 * 服务器虚拟化验证计划
 * 签名平板电脑
-* 智能卡
+* Smart Cards
 * 智能卡读卡器
 * 存储阵列
 * 存储控制器
 * 存储空间适配器
 * 存储空间驱动器
-* Tablet
-* 触控
+* 平板电脑
+* 触摸
 * 触控监视器
 * 超级移动电脑
 * 触控式超级移动电脑
@@ -365,7 +365,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 下表列出了操作系统系列代码及其说明。
 
-| 操作系统系列代码 | 描述 |
+| 操作系统系列代码 | 说明 |
 |:--|:--|
 | WindowsMe | Windows Me |
 | Windows2000 | Windows 2000 |
@@ -374,7 +374,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 | WindowsXP | Windows XP |
 | WindowsServer2003 | Windows Server 2003 |
 | WindowsVista | Windows Vista |
-| Windows2008Server | Windows Server 2008 |
+| Windows2008Server | Windows 2008 Server |
 | WindowsHomeServer | Windows Home Server |
 | Windows7 | Windows 7 |
 | Windows2008ServerR2 | Windows Server 2008 Release 2 |
@@ -392,7 +392,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 | Windows_v100_RS3 | Windows 10 RS3 更新 |
 | Windows_v100Server_RS3 | Windows Server RS3 |
 | Windows_v100_RS4 | Windows 10 RS4 更新 |
-| Windows_v100Server_RS5 | Windows Server 2019 |
+| Windows_v100Server_RS5 | Windows Server Standard 2012 R2 |
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
 | Windows_v100_19H1 | Windows 10 19H1 更新 |
@@ -401,7 +401,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 下表列出了操作系统代码及其说明。
 
-| 操作系统代码 | 描述 |
+| 操作系统代码 | 说明 |
 |:--|:--|
 |WINDOWS_ME|Windows Me|
 |WINDOWS_98|Windows 98|
@@ -416,7 +416,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 |WINDOWS_2003_X64|Windows Server 2003 X64|
 |WINDOWS_VISTA|Windows Vista 客户端|
 |WINDOWS_VISTA_X64|Windows Vista 客户端 X64|
-|WINDOWS_2008_SERVER|Windows Server 2008|
+|WINDOWS_2008_SERVER|Windows 2008 Server|
 |WINDOWS_2008_SERVER_IA64|Windows Server 2008 IA64|
 |WINDOWS_2008_SERVER_X64|Windows Server 2008 X64|
 |WINDOWS_HOME_SERVER|Windows Home Server|
@@ -450,7 +450,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 |WINDOWS_v100_RS4_FULL|Windows 10 RS4 客户端|
 |WINDOWS_v100_X64_RS4_FULL|Windows 10 RS4 客户端 x64|
 |WINDOWS_v100_ARM64_RS4_FULL|Windows 10 RS4 客户端 ARM64|
-|WINDOWS_v100_SERVER_X64_RS5_FULL | Windows Server 2019 |
+|WINDOWS_v100_SERVER_X64_RS5_FULL | Windows Server Standard 2012 R2 |
 |WINDOWS_v100_RS5_FULL | Windows 10 RS5 x86 |
 |WINDOWS_v100_X64_RS5_FULL | Windows 10 RS5 客户端 x64 |
 |WINDOWS_v100_19H1_FULL |Windows 19H1 客户端 x86 |
@@ -461,7 +461,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 错误代码适用于 API 的所有 Web 方法。 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| HTTP 状态 | 描述 |
+| HTTP 状态 | 说明 |
 |:--|:--|
 | 400 - 错误请求 | 请求格式不正确（例如，请求语法格式错误、请求消息帧无效或请求路由具有欺骗性） |
 | 401 - 未授权 | 身份验证失败或未提供 |
@@ -471,10 +471,9 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 | 422 - 无法处理的实体 | 验证失败。 |
 | 500 - 内部服务器错误 | API 服务器中出现无法恢复的错误。 |
 
-
 如果功能验证失败，则响应正文将包含以下其中一个功能错误代码。
 
-| 错误代码 | 错误消息 | 描述 |
+| 错误代码 | 错误消息 | 说明 |
 |:--|:--|:--|
 | InvalidInput |  | 输入验证失败时返回此项 |
 | RequestInvalidForCurrentState | 只能确认待定提交 | 对未处于待定状态的提交应用确认时返回此项 |
@@ -497,4 +496,4 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 ## <a name="see-also"></a>另请参阅
 
-- [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)
+* [硬件仪表板 API 示例 (GitHub)](https://aka.ms/hpc_async_api_samples)
