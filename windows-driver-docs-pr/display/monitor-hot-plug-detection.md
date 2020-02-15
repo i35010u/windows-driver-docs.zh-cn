@@ -17,15 +17,16 @@ keywords:
 - 监视热插拔检测 WDK 视频呈现网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbfee78fb3f00814680280b773fbf868df8f2b2f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8e4a860843c291128f4ae280c0af889ac0430b97
+ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840555"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77260508"
 ---
 # <a name="monitor-hot-plug-detection"></a>监视器热插拔检测
 
+此页上的信息适用于使用 WDDM 版本2.2 之前的版本实现的图形驱动程序。
 
 显示适配器上的视频输出被视为显示适配器的子设备。 连接到输出的监视器或其他外部显示设备不被视为子设备。 在初始化期间，显示微型端口驱动程序的[**DxgkDdiQueryChildRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_child_relations)函数为每个子设备指定一个类型和一个 HPD 感知值。 该类型是[**DXGK\_子\_设备\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ne-dispmprt-_dxgk_child_device_type)枚举器之一：
 
@@ -43,15 +44,15 @@ HPD 感知值是[**DXGK\_子\_设备\_HPD\_感知**](https://docs.microsoft.com/
 
 类型为**TypeVideoOutput**的子设备和除**HpdAwarenessAlwaysConnected**以外的任何 HPD 感知值称为*视频输出连接器*。
 
-如果显示微型端口驱动程序无法确定监视器是否连接到视频输出，驱动程序应模拟可中断设备的行为，并将 HPD 知晓值设置为**HpdAwarenessInterruptible**。 如果显示微型端口驱动程序需要指示可中断的监视器应连接到视频输出，例如当用户输入键盘快捷方式切换到电视视图时，驱动程序应调用[**DxgkCbIndicateChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_indicate_child_status)与*ChildStatus*一起工作。**热插拔**。**已连接**设置为**TRUE**。
+如果显示微型端口驱动程序无法确定监视器是否连接到视频输出，驱动程序应模拟可中断设备的行为，并将 HPD 知晓值设置为**HpdAwarenessInterruptible**。 如果显示微型端口驱动程序需要指示可中断的监视器应连接到视频输出，例如当用户输入键盘快捷方式切换到电视视图时，驱动程序应使用*ChildStatus*调用[**DxgkCbIndicateChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_indicate_child_status)函数。**热插拔**。**已连接**设置为**TRUE**。
 
 在某些情况下，操作系统会请求显示微型端口驱动程序报告 HPD 知晓值为**HpdAwarenessPolled**的所有视频输出连接器的状态。 没有常规轮询间隔;相反，当有特定需要更新可用显示设备和模式的列表时，将发出请求。 例如，当插接便携式计算机时，操作系统需要知道监视器是否连接到扩展坞的视频输出。 操作系统通过为 HPD 感知值为**HpdAwarenessPolled**的每个子设备调用显示微型端口驱动程序的[**DxgkDdiQueryChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_child_status)函数来发出请求。
 
-对于 "HPD 感知" 值为 " **HpdAwarenessInterruptible**" 的视频输出连接器，显示微型端口驱动程序负责在热插拔或拔出外部显示设备时，通知操作系统。 显示微型端口驱动程序的中断处理代码将调用显示端口驱动程序的[**DxgkCbIndicateChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_indicate_child_status)函数，以报告外部显示设备已连接到或已与特定视频输出断开连接。 当插接便携式计算机时，显示微型端口驱动程序的[*DxgkDdiNotifyAcpiEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数必须为具有 HPD 知晓值的**扩展坞上的每个视频输出调用 DxgkCbIndicateChildStatusHpdAwarenessInterruptible**。
+对于 "HPD 感知" 值为 " **HpdAwarenessInterruptible**" 的视频输出连接器，显示微型端口驱动程序负责在热插拔或拔出外部显示设备时，通知操作系统。 显示微型端口驱动程序的中断处理代码将调用显示端口驱动程序的[**DxgkCbIndicateChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_indicate_child_status)函数，以报告外部显示设备已连接到或已与特定视频输出断开连接。 当插接便携式计算机时，显示微型端口驱动程序的[*DxgkDdiNotifyAcpiEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数必须为插接工作站上具有 HPD 感知值**HpdAwarenessInterruptible**的每个视频输出调用**DxgkCbIndicateChildStatus** 。
 
-如果在插接便携式计算机时，HPD 感知值为 " **HpdAwarenessPolled** " 的连接器变为不可用（即已涵盖），则显示微型端口驱动程序的*DxgkDdiNotifyAcpiEvent*函数必须调用**DxgkCbIndicateChildStatus**报告连接器已断开连接。
+如果在插接便携式计算机时，HPD 感知值为 " **HpdAwarenessPolled** " 的连接器变为不可用（即已涵盖），则显示微型端口驱动程序的*DxgkDdiNotifyAcpiEvent*函数必须调用**DxgkCbIndicateChildStatus**以报告连接器已断开连接。
 
-与便携式计算机上的集成显示面板相关联的视频输出是一个不寻常的情况。 操作系统需要知道便携式计算机的盖子是处于打开还是关闭状态，因此，"*连接*" 的思路用于表示开放，"*未连接*" 的思路用于表示闭合。 与便携计算机上的集成显示器关联的视频输出的 HPD 感知值为**HpdAwarenessInterruptible**。 但这并不意味着显示适配器在盖子处于打开或关闭状态时生成中断。 相反，在打开或关闭盖子时，ACPI BIOS 会生成一个中断。 此中断会导致调用显示微型端口驱动程序的[*DxgkDdiNotifyAcpiEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数，该函数将调用**DxgkCbIndicateChildStatus**来报告盖子的状态（打开或关闭）。 显示微型端口驱动程序通过将[ **\_\_DXGK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_child_status)的**已连接**成员设置为**TRUE** （开放式）或**FALSE** （已关闭）并传递 DXGK\_子 @no 来报告盖子的状态将状态结构 __t_8_ 到**DxgkCbIndicateChildStatus**。
+与便携式计算机上的集成显示面板相关联的视频输出是一个不寻常的情况。 操作系统需要知道便携式计算机的盖子是处于打开还是关闭状态，因此，"*连接*" 的思路用于表示开放，"*未连接*" 的思路用于表示闭合。 与便携计算机上的集成显示器关联的视频输出的 HPD 感知值为**HpdAwarenessInterruptible**。 但这并不意味着显示适配器在盖子处于打开或关闭状态时生成中断。 相反，在打开或关闭盖子时，ACPI BIOS 会生成一个中断。 此中断会导致调用显示微型端口驱动程序的[*DxgkDdiNotifyAcpiEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_notify_acpi_event)函数，该函数将调用**DxgkCbIndicateChildStatus**来报告盖子的状态（打开或关闭）。 显示微型端口驱动程序通过将[ **\_\_DXGK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_child_status)的**已连接**成员设置为**TRUE** （开放式）或**FALSE** （已关闭）并将 DXGK\_子\_状态结构传递到**DxgkCbIndicateChildStatus**，来报告盖子的状态。
 
 下面的列表介绍了在监视器连接到 HD15 连接器时遵循的步骤，假设连接器的 HPD 感知值为**HpdAwarenessPolled**。
 
@@ -59,7 +60,7 @@ HPD 感知值是[**DXGK\_子\_设备\_HPD\_感知**](https://docs.microsoft.com/
 
 2.  在将来的某个时间，用户模式应用程序会请求显示设备的列表。
 
-3.  对于显示适配器上 HPD 感知值为**HpdAwarenessPolled**的每个视频输出连接器，VidPN 管理器会调用显示微型端口驱动程序的[**DxgkDdiQueryChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_child_status)函数来确定外部显示设备已连接。 为 HD15 连接器调用*DxgkDdiQueryChildStatus*时，它会报告外部监视器确实已连接。
+3.  对于显示适配器上 HPD 感知值为**HpdAwarenessPolled**的每个视频输出连接器，VidPN 管理器会调用显示微型端口驱动程序的[**DxgkDdiQueryChildStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_query_child_status)函数来确定外部显示设备是否已连接。 为 HD15 连接器调用*DxgkDdiQueryChildStatus*时，它会报告外部监视器确实已连接。
 
 以下列表描述了在监视器连接到 DVI 连接器时遵循的步骤，假设连接器的 HPD 感知值为**HpdAwarenessInterruptible**。
 

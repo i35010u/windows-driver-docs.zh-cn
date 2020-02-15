@@ -13,15 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f287c0daeaa4026d85343f0276dfc66bdd003b2
-ms.sourcegitcommit: c33b45c9e1e3121c52b6758f30865f4c14b0a350
+ms.openlocfilehash: 09fef2b03617e44de3f335d158b955a667f3d088
+ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72258413"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77260504"
 ---
 # <a name="bug-check-0x93-invalid_kernel_handle"></a>Bug 检查0x93：内核\_句柄\_无效
-
 
 无效的\_内核\_句柄 bug 检查的值为0x00000093。 此 bug 检查表明传递到**NtClose**的句柄无效或受保护。
 
