@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinDevCenter
-  ms.openlocfilehash: db539d17accf0461db402ad9850e3df605e33212
-  ms.sourcegitcommit: 0fda09661b467aca3f54378c16d297ee00f7905c
+  ms.openlocfilehash: 3261dc9cf4f03a4c4ffc2574ac07aa4fbe3f7700
+  ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 02/13/2020
-  ms.locfileid: "77179235"
+  ms.lasthandoff: 02/15/2020
+  ms.locfileid: "77260505"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -117,9 +117,9 @@ additionalContent:
     - title: 新功能和更新
       summary: 了解 Windows 10 中的最新驱动程序开发功能。
       url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
-    - title: 什么是驱动程序？
-      summary: 介绍用户了解 Windows 驱动程序所需的基本概念。
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
+    - title: 驱动程序技术概述
+      summary: 开始了解特定 Windows 驱动程序模型，从蓝牙到 USB 等。
+      url: https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies
     - title: Windows 符号程序包
       summary: 符号文件使调试代码更加容易。
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
