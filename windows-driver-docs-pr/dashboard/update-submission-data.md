@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8bb7598480e7c98802afc8b42e4e5aa4ed65cb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9303d6b4df89a80259b447e68eb7247c91ba1b90
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334886"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072150"
 ---
 # <a name="update-submission-data"></a>更新提交数据 
 
@@ -19,20 +19,20 @@ ms.locfileid: "63334886"
 
 
 ## <a name="prerequisites"></a>必备条件
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
 | 方法 | 请求 URI |
 |:--|:--|
-| 修补程序 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}`
+| 修补程序 | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}`
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
-|授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+|Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数
@@ -55,7 +55,7 @@ ms.locfileid: "63334886"
 以下示例演示了如何更新产品。
 
 ```json 
-PATCH https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504627422408 HTTP/1.1
+PATCH https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504627422408 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 

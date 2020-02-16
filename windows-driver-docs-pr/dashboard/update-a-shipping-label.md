@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: e7f4c90ad508e7c2270621da289133375c5e98e0
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 65cd448a3ed862f61cbe7fb894c19b3e87d40b96
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334888"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072154"
 ---
 # <a name="update-a-shipping-label"></a>更新发货标签
 
@@ -26,15 +26,15 @@ ms.locfileid: "63334888"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| 修补程序 | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}` |
+| 修补程序 | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}` |
 
 方法中的 productID  、submissionID  和 shippingLabelId  表示要更新的产品、提交和发货标签。
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数
@@ -112,7 +112,7 @@ ms.locfileid: "63334888"
 以下示例演示了如何更新产品。
 
 ```json
-PATCH https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
+PATCH https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 

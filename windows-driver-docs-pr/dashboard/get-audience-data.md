@@ -5,26 +5,26 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 2fc033ca64fded4d2cc8a3fe00082d1e3a635d92
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1e9aefd492d82db21cb8d1f851aedf5d8402c336
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335030"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072188"
 ---
 # <a name="get-audience-data"></a>获取受众数据
 
 在 *Microsoft 硬件 API* 中使用以下方法，获取适用于组织的受众。 受众允许你将发布限制为具有特定配置的计算机。 例如，测试部署只能传递给安装了特定注册表项的客户端。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/audiences
 ```
 
 在使用这些方法之前，产品和提交必须已存在于你的开发人员中心帐户中。 若要创建或管理产品的提交内容，请参阅[管理产品提交内容](manage-product-submissions.md)中的方法。
 
-|描述|方法|URI|
+|说明|方法|URI|
 |-|-|-|
-|获取适用于组织的受众列表。|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences`|
+|获取适用于组织的受众列表。|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/audiences`|
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -49,9 +49,9 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
 
 此资源具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
-|id|字符串|受众的 ID。 这是将在发货标签中接收或发送的值。|
+|ID|字符串|受众的 ID。 这是将在发货标签中接收或发送的值。|
 |name|字符串|受众的友好名称|
 |description|字符串|受众的说明|
 |audienceName|字符串|受众的名称|
@@ -62,13 +62,13 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
 
 |方法|请求 URI|
 |--|--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/audience`|
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/audience`|
 
 ### <a name="request-header"></a>请求头
 
-|标头|在任务栏的搜索框中键入|描述|
+|Header|类型|说明|
 |--|--|--|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>  。|
+|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** *\<token\>* 。|
 |accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数
@@ -84,7 +84,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
 以下示例演示了如何检索适用于组织的受众的相关信息。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/audience HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/audience HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -120,7 +120,7 @@ Authorization: Bearer <your access token>
 
 此资源具有以下值
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | value | 数组 | 一个对象数组，其中包含有关每个受众的信息。 有关每个对象中的数据的详细信息，请参阅[受众资源](#audience-resource)。 |
 | links | 数组 | 一个对象数组，其中包含有关包含实体的有用链接。 有关更多详细信息，请参阅[链接对象](get-product-data.md#link-object)。|

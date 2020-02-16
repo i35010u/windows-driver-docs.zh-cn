@@ -4,12 +4,12 @@ description: 检索产品的特定提交的数据，该提交在 Microsoft 合�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e94fc186e6302964e147b8c3232457ce411702
-ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
+ms.openlocfilehash: f89411c7f9d2eb9c4f2f63b907bd17b6188f5b0b
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223984"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072210"
 ---
 # <a name="get-a-submission"></a>获取一个提交
 
@@ -17,7 +17,7 @@ ms.locfileid: "68223984"
 
 ## <a name="prerequisites"></a>必备条件
 
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 
@@ -25,13 +25,13 @@ ms.locfileid: "68223984"
 
 |方法|请求 URI|
 |:--|:--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionID}` |
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}` |
 
 ### <a name="request-header"></a>请求头
 
-|标头|在任务栏的搜索框中键入|描述|
+|Header|类型|说明|
 |:--|:--|:--|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
+|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
 |accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数
@@ -48,7 +48,7 @@ ms.locfileid: "68223984"
 
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/13635057453741329/submissions/1152921504621441930 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/13635057453741329/submissions/1152921504621441930 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -88,12 +88,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
       "rel": "update_submission",
       "method": "PATCH"
     }

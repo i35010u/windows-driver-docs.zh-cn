@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c3eed99484bce4192f398221dd408e01c717ab85
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: fd5afc9a5a04ac5468e0f001143150ea08c1e568
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813574"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072208"
 ---
 # <a name="get-all-products"></a>获取所有产品
 
@@ -19,7 +19,7 @@ ms.locfileid: "66813574"
 
 ## <a name="prerequisites"></a>必备条件
 
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 
@@ -27,13 +27,13 @@ ms.locfileid: "66813574"
 
 |方法|请求 URI|
 |--|--|
-|GET| `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/` |
+|GET| `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/` |
 
 ### <a name="request-header"></a>请求头
 
-|标头|在任务栏的搜索框中键入|描述|
+|Header|类型|说明|
 |--|--|--|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
+|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。|
 |accept|字符串|可选。 指定内容的类型。 允许的值是“application/json”|
 
 ### <a name="request-parameters"></a>请求参数
@@ -49,7 +49,7 @@ ms.locfileid: "66813574"
 以下示例演示了如何检索注册到帐户的所有产品的相关信息。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/ HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/ HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | value | 数组 | 一个对象数组，其中包含注册到你帐户的每个产品的相关信息。 有关每个对象中的数据的详细信息，请参阅[产品资源](get-product-data.md#product-resource)。 |
 | links | 数组 | 一个对象数组，其中包含有关包含实体的有用链接。 有关更多详细信息，请参阅[链接对象](get-product-data.md#link-object)  |

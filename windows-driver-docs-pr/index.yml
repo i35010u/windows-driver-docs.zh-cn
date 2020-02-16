@@ -1,97 +1,138 @@
-### YamlMime:Landing
-title: Windows 驱动程序工具包文档
-summary: Windows 驱动程序工具包 (WDK) 10 与 Microsoft Visual Studio 和 Windows 调试工具集成在一起。 此集成环境提供了开发、生成、打包、部署、测试和调试驱动程序所需的工具。 可以在此集成环境中运行许多基本认证测试。 WDK 针对多种技术和驱动程序模型都提供了模板，这包括 Windows 驱动程序框架 (WDF)、通用串行总线 (USB)、打印、网络和文件系统筛选器。
+### YamlMime:Hub
+title: Windows 硬件开发人员文档
+summary: 了解如何设计、开发和部署适用于 Windows 电脑和其他设备的硬件和设备驱动程序。
+brand: windows
 metadata:
+  title: Windows 开发人员文档
+  description: 设计、开发和部署适用于 Windows 电脑和其他设备的硬件和设备驱动程序。
   author: tedhudek
-  description: 本部分介绍了如何获取 WDK 和示例，以及如何开始构建 Windows 驱动程序。
   ms.author: tedhudek
-  ms.date: 09/18/2019
-  ms.topic: landing-page
-  ms.prod: windows-hardware
-  ms.technology: windows-devices
-  services: wdk
-  ms.openlocfilehash: b48b3a492da4b7d4ab18421945e8729fa8aece6b
-  ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+  ms.topic: hub-page
+  ms.date: 01/14/2020
+  ms.localizationpriority: medium
+  uhfHeaderId: MSDocsHeader-WinDevCenter
+  ms.openlocfilehash: db539d17accf0461db402ad9850e3df605e33212
+  ms.sourcegitcommit: 0fda09661b467aca3f54378c16d297ee00f7905c
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/24/2019
-  ms.locfileid: "72840655"
-landingContent:
-- title: 关于该工具包
-  linkLists:
-  - linkListType: whats-new
+  ms.lasthandoff: 02/13/2020
+  ms.locfileid: "77179235"
+highlightedContent:
+  items:
+  - title: 获取 Windows 驱动程序工具包
+    itemType: download
+    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+  - title: 设备和驱动程序安装
+    itemType: overview
+    url: https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation
+  - title: 加入预览体验计划
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: 面向 Windows 开发人员的在线培训
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=windows
+conceptualContent:
+  items:
+  - title: 获取工具
     links:
-    - text: 新功能和更新
-      url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
-    - text: WDF 驱动程序新增功能
-      url: https://docs.microsoft.com/windows-hardware/drivers/wdf/
-  - linkListType: reference
-    links:
-    - text: Windows 驱动程序 API 参考
-      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/
-- title: 获取工具
-  linkLists:
-  - linkListType: download
-    links:
-    - text: Windows 驱动程序工具包 (WDK)
-      url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
     - text: Visual Studio 2019
       url: https://go.microsoft.com/fwlink/p/?LinkId=698539
+      itemType: download
     - text: Windows 调试工具
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/
+      itemType: download
     - text: Windows 驱动程序示例
       url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+      itemType: download
     - text: 安装预览版 WDK
       url: https://docs.microsoft.com/windows-hardware/drivers/installing-preview-versions-wdk
-- title: 立即开始行动
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: 什么是驱动程序？
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
-    - text: 通用 Windows 驱动程序入门
-      url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
-  - linkListType: tutorial
-    links:
-    - text: 编写通用 Hello World 驱动程序
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
-- title: 安装
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: 设备和驱动程序安装
-      url: https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation
-    - text: 添加启动项
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-boot-entries
-    - text: 编辑启动选项
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/editing-boot-options
-    - text: 使用设备管理器卸载设备和驱动程序包
-      url: https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager-to-uninstall-devices-and-driver-packages
-- title: 调试
-  linkLists:
-  - linkListType: overview
+      itemType: overview
+  - title: 调试
     links:
     - text: WinDbg 入门
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg
+      itemType: get-started
     - text: 设置 KDNET 调试
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically
-    - text: Windows 符号程序包
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
-  - linkListType: tutorial
-    links:
+      itemType: overview
+    - text: 下载 Windows 调试工具 - WinDbg
+      url: https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools
+      itemType: download
     - text: 调试通用驱动程序
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-
-- title: 为驱动程序签名
-  linkLists:
-  - linkListType: overview
+      itemType: tutorial
+  - title: API 参考
     links:
-    - text: Windows 硬件合作伙伴中心
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
-    - text: 创建新的发货标签
+    - text: Windows 驱动程序 API 参考
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/
+      itemType: reference
+    - text: WDF API 参考
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf
+      itemType: reference
+    - text: 核心内核 API 参考
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel
+      itemType: reference
+tools:
+  title: 驱动程序平台和框架
+  items:
+  - title: 内核/Windows 驱动程序模型
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows-hardware/drivers/kernel
+  - title: Windows 驱动程序框架
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows-hardware/drivers/wdf
+additionalContent:
+  sections:
+  - title: 任务
+    items:
+    - title: 编写通用 Hello World 驱动程序
+      summary: 了解如何使用 KMDF 编写很小的通用 Windows 驱动程序。
+      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
+    - title: 通用 Windows 驱动程序入门
+      summary: 编写可以跨多个设备类型运行的单一驱动程序包。
+      url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
+    - title: 添加启动项
+      summary: 启动项是一组选项，用于为操作系统或可启动程序定义加载配置。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-boot-entries
+    - title: 编辑启动选项
+      summary: 了解如何自定义启动选项。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/editing-boot-options
+    - title: 使用设备管理器卸载设备和驱动程序包
+      summary: 设备管理器是一个控制面板应用程序，用于管理设备和驱动程序。
+      url: https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager-to-uninstall-devices-and-driver-packages
+    - title: 创建新的发货标签
+      summary: 在 Microsoft 硬件API 中使用此方法创建新的发货标签。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-new-shipping-label
-    - text: 管理发货标签
+    - title: 管理发货标签
+      summary: 了解如何管理用于 Windows 硬件仪表板提交的发货标签。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-shipping-labels
-    - text: 更新发货标签
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-shipping-label
-    - text: 获取代码签名证书
+    - title: 获取代码签名证书
+      summary: 了解如何获取代码签名证书以保护数字信息。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate
+  - title: 资源
+    items:
+    - title: Windows 硬件合作伙伴中心
+      summary: 了解如何轻松快捷地创建和管理系统和驱动程序提交。
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
+    - title: 新功能和更新
+      summary: 了解 Windows 10 中的最新驱动程序开发功能。
+      url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
+    - title: 什么是驱动程序？
+      summary: 介绍用户了解 Windows 驱动程序所需的基本概念。
+      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
+    - title: Windows 符号程序包
+      summary: 符号文件使调试代码更加容易。
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
+    - title: Bug 检查代码参考
+      summary: 本部分包含常见 Bug 检查代码的说明，包括在蓝色 Bug 检查屏幕上通过错误代码显示的参数。
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2
+    - title: 驱动程序验证程序
+      summary: 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier
+    - title: Windows 设备控制台 (Devcon.exe)
+      summary: DevCon 是一个命令行工具，用于显示运行 Windows 的计算机上的设备的详细信息。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon
+    - title: WinUSB (Winusb.sys)
+      summary: 此部分介绍 Microsoft 为所有 USB 设备提供的通用 WinUSB 驱动程序 (Winusb.sys) 及其用户模式组件 (Winusb.dll)。
+      url: https://docs.microsoft.com/windows-hardware/drivers/usbcon/winusb
+  footer: '[@WindowsDocs在 Twitter 上](https://twitter.com/WindowsDocs) - [YouTube 上的 OneDevMinute](https://aka.ms/OneDevMinute) - [Windows 开发人员支持](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'

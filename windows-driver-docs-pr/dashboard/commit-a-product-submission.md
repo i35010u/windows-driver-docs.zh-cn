@@ -6,12 +6,12 @@ ms.author: balapv
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f7cc124bd47eff2d298c98e9cb477039699fc898
-ms.sourcegitcommit: f8ef49aa583f63edeab42001af8dfb41031ab622
+ms.openlocfilehash: 342b8c0f53a5bc38771dc29816384ef46c21938f
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72998638"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072224"
 ---
 # <a name="commit-a-product-submission"></a>确认产品提交
 
@@ -30,15 +30,15 @@ ms.locfileid: "72998638"
 
 | 方法 | 请求 URI                                                                                                    |
 |:-------|:---------------------------------------------------------------------------------------------------------------|
-| POST   | https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionID}/commit |
+| POST   | https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}/commit |
 
 此方法中的 productId 是提交所适用于的产品。 此方法中的 submssionID 是正在确认的提交。
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数
@@ -54,7 +54,7 @@ ms.locfileid: "72998638"
 以下示例演示了如何确认提交。
 
 ```cpp
-POST https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504621465124/commit HTTP/1.1
+POST https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504621465124/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -70,7 +70,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>响应正文
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 | commitStatus | 字符串 | 提交的状态。 返回的值将是 CommitStarted |
 

@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: ab23c215ff9314138938d748f7d8792a714ec531
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 6febf7bad14ccb343c45c81ed23abc09ddbb57f1
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335032"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072218"
 ---
 # <a name="create-a-new-shipping-label"></a>创建新的发货标签
 
@@ -26,15 +26,15 @@ ms.locfileid: "63335032"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels` | 
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels` | 
 
 方法中的 productID 和 submissionID 表示要为其创建发货标签的提交。
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 
@@ -56,6 +56,7 @@ ms.locfileid: "63335032"
     ],
     "isAutoInstallDuringOSUpgrade": true,
     "isAutoInstallOnApplicableSystems": false,
+    "manualAcquisition": false,
     "isDisclosureRestricted": false,
     "publishToWindows10s": true,
     "additionalInfoForMsApproval": {
@@ -88,8 +89,8 @@ ms.locfileid: "63335032"
       }
     ],
     "restrictedToAudiences": [
-      "00000000-0000-0000-0000-000000000000",
-      "00000000-0000-0000-0000-000000000001"
+      "00000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000002"
       ],
     "inServicePublishInfo": {
       "flooring": "RS1",
@@ -106,7 +107,8 @@ ms.locfileid: "63335032"
 #### <a name="points-to-remember-when-creating-shipping-labels"></a>创建发货标签时要记住的要点
 
 - 发布到 Windows 更新时（*destination* 为 **windowsUpdate**），必须包括 [publishingSpecifications](get-shipping-labels.md#publishing-specifications-object) 对象。 对于自动安装（*isAutoInstallDuringOSUpgrade* 或 *isAutoInstallOnApplicableSystems* 为 true），必须设置 *additionalInfoForMsApproval*。
-- 如果在发货标签中 *isAutoInstallDuringOSUpgrade* 或 *isAutoInstallOnApplicableSystems* 为真，则将发布驱动程序，并将“可以请求用户输入”设置为 false。
+- 如果在发货标签中 *isAutoInstallDuringOSUpgrade* 或 *isAutoInstallOnApplicableSystems* 为 true，则 *manualAcquisition* 必须为 false，并且必须在发布驱动程序时将“可以请求用户输入”设置为 false。
+- 如果在发货标签中 *isAutoInstallDuringOSUpgrade* 和 *isAutoInstallOnApplicableSystems* 为 false，则 *manualAcquisition* 必须为 true，并且必须在发布驱动程序时将“可以请求用户输入”设置为 true。
 - 与其他合作伙伴共享时（*destination* 为 **anotherPartner**），必须包括 [recipientSpecifications](get-shipping-labels.md#recipient-specifications-object) 对象。
 
 #### <a name="populating-targeting-information"></a>填充目标信息
@@ -124,7 +126,7 @@ ms.locfileid: "63335032"
 以下示例演示了如何创建新产品。
 
 ```cpp
-POST https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels HTTP/1.1
+POST https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -159,7 +161,8 @@ Authorization: Bearer <your access token>
       "isForUnreleasedHardware": false,
       "hasUiSoftware": false,
       "businessJustification": "This is a business justification"
-    }
+    },
+    "manualAcquisition": false
   },
   "workflowStatus": {
     "currentStep": "preProcessShippingLabel",
@@ -168,12 +171,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606997603",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606997603",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606997603",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606997603",
       "rel": "update_shippinglabel",
       "method": "PATCH"
     }

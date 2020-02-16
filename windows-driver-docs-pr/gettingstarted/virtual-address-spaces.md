@@ -4,12 +4,12 @@ description: 虚拟地址空间
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 778e9a60127f2dfc852aca940cd5faf153fa6f1d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f945bd59b717c7e242ce46398ea33f2ae76f1582
+ms.sourcegitcommit: 8fce8b22c7437f0aa322c40625d5163e8812ea01
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358666"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77146509"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间
 
@@ -22,7 +22,7 @@ ms.locfileid: "67358666"
 
 -   不同进程使用的虚拟地址彼此隔离。 一个进程中的代码无法更改正在由另一进程或操作系统使用的物理内存。
 
-进程可用的虚拟地址范围称为该进程的“虚拟地址空间”  。 每个用户模式进程都有其各自的专用虚拟地址空间。 对于 32 位进程，虚拟地址空间通常为 2 GB，范围从 0x00000000 至 0x7FFFFFFF。 对于 64 位进程，虚拟地址空间为 8 TB，范围从 0x000'00000000 至 0x7FF'FFFFFFFF。 一系列虚拟地址有时称为一系列“虚拟内存”  。
+进程可用的虚拟地址范围称为该进程的“虚拟地址空间”  。 每个用户模式进程都有其各自的专用虚拟地址空间。 对于 32 位进程，虚拟地址空间通常为 2 GB，范围从 0x00000000 至 0x7FFFFFFF。 对于 64 位 Windows 上的 64 位进程，虚拟地址空间为 128 TB，范围从 0x000'00000000 至 0x7FFF'FFFFFFFF。 一系列虚拟地址有时称为一系列“虚拟内存”  。 有关详细信息，请参阅[内存和地址空间限制](https://docs.microsoft.com/windows/win32/memory/memory-limits-for-windows-releases#memory-and-address-space-limits)。
 
 此图说明了虚拟地址空间的一些重要功能。
 

@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 2b34be22c944b18f0c519941881dea2d7727d4b5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: d14bc2ed0b3a291062c1af4e83ca0d409a595d4c
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335054"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072212"
 ---
 # <a name="get-a-shipping-label"></a>获取发货标签
 
@@ -26,11 +26,11 @@ ms.locfileid: "63335054"
 
 |方法|请求 URI|
 |--|--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/{shippingLabelId}`|
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/{shippingLabelId}`|
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \*<token\>*。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
@@ -39,7 +39,7 @@ ms.locfileid: "63335054"
 
 此方法的请求参数为可选项。
 
-|名称|在任务栏的搜索框中键入|描述|
+|名称|类型|说明|
 |:--|:--|:--|
 | includeTargetingInfo | 布尔值 | 可选。 如果此参数设置为 true，则发货标签会返回发货标签的目标详细信息，例如硬件 ID 和 CHID。 有关详细信息，请参阅[目标对象](get-shipping-labels.md#targeting-object)。|
 
@@ -52,7 +52,7 @@ ms.locfileid: "63335054"
 以下示例演示了如何检索注册到帐户的特定产品的相关信息。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -132,12 +132,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
       "rel": "update_shippinglabel",
       "method": "PATCH"
     }

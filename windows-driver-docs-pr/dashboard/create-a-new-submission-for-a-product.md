@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a68793cda9761a1982f69f1da62e329a6e3a0b73
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: e153d22e6fcd54eb9706e150f8547eb89d74f1a2
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813579"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072158"
 ---
 # <a name="create-a-new-submission-for-a-product"></a>为产品创建新的提交
 
@@ -19,7 +19,7 @@ ms.locfileid: "66813579"
 
 ## <a name="prerequisites"></a>必备条件
 
-如果尚未开始操作，请先完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)，然后再尝试使用其中任何方法。
+完成 Microsoft 硬件 API 的所有[先决条件](dashboard-api.md)（如果尚未这样做），然后尝试使用这其中的任何方法。
 
 ## <a name="request"></a>请求
 
@@ -27,16 +27,16 @@ ms.locfileid: "66813579"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions` |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions` |
 
 
 此方法中的 productId 是提交所适用于的产品。
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 
@@ -62,7 +62,7 @@ ms.locfileid: "66813579"
 以下示例演示如何创建新提交。
 
 ```cpp
-POST https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions HTTP/1.1
+POST https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -85,12 +85,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
       "rel": "update_submission",
       "method": "PATCH"
     }

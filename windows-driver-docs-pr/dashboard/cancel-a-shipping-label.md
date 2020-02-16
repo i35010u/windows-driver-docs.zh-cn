@@ -4,12 +4,12 @@ description: 在 Microsoft 硬件 API 中使用此方法可请求取消处于“
 ms.topic: article
 ms.date: 11/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6be0ee5bc80f1258f5ddf278a9b63f346740796f
-ms.sourcegitcommit: 67335434c02f122f29468420ce2e076b51b493ad
+ms.openlocfilehash: 7532f0275676300aa320449823c62dd70db21333
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74056056"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072168"
 ---
 # <a name="cancel-a-shipping-label"></a>取消发货标签
 
@@ -25,15 +25,15 @@ ms.locfileid: "74056056"
 
 | 方法 | 请求 URI |
 |:--|:--|
-| PUT | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}/cancel` |
+| PUT | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}/cancel` |
 
 该方法中的 *productID*、*submissionID* 和 *shippingLabelId* 表示要取消的产品、提交和发货标签。
 
 ### <a name="request-header"></a>请求头
 
-| 标头 | 在任务栏的搜索框中键入 | 描述 |
+| Header | 类型 | 说明 |
 |:--|:--|:--|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数
@@ -49,7 +49,7 @@ ms.locfileid: "74056056"
 以下示例演示如何请求取消发货标签。
 
 ```json
-PUT https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300/cancel HTTP/1.1
+PUT https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300/cancel HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
