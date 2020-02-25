@@ -1,122 +1,89 @@
 ---
 title: 调试环境
-description: 从开始使用 Windows Driver Kit (WDK) 8.0，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio。
+description: 从 Windows 驱动程序工具包（WDK）8.0 开始，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio 中。
 ms.assetid: 13F9D82A-4C04-425A-A063-B349DB5C8E08
 keywords:
 - WinDbg
 - KD
 - CDB
 - NTSD
-ms.date: 05/23/2017
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc765998bf763ac189ab9ddd3618c2b64f30a22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5bbaf80898d2007c2b898fa8a4c5db0a2da7f80b
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324637"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528963"
 ---
 # <a name="debugging-environments"></a>调试环境
 
+有六种可用的调试环境：
 
-从开始使用 Windows Driver Kit (WDK) 8.0，驱动程序开发环境和 Windows 调试器集成到 Microsoft Visual Studio。
+- WinDbg Preview
+- Windows Debugger (WinDbg)
+- 内核调试器（KD）
+- NTKD
+- 控制台调试器（CDB）
+- NT 符号调试器（NTSD）
 
-安装 Visual Studio 和 WDK 后，你会具有六个可用的调试环境：
+以下各节介绍了调试环境。
 
--   Visual Studio 中使用集成 Windows 调试器
--   Microsoft Windows 调试器 (WinDbg)
--   Microsoft 内核调试程序 (KD)
--   NTKD
--   Microsoft Console Debugger (CDB)
--   Microsoft NT 符号调试器 (NTSD)
+### <a name="span-idwindbgpreviewspanspan-idwindbgpreviewspanspan-idwindbgpreviewspanwindbg-preview"></a><span id="WinDbgPreview"></span><span id="windbgpreview"></span><span id="WINDBGPREVIEW"></span>WinDbg 预览
 
-以下部分介绍调试环境。
+WinDbg 预览版是最新版本的 WinDbg，具有更多新式视觉对象、更快的 windows，以及使用可扩展调试器数据模型前端和中心构建的完整的脚本编写体验。 现在，WinDbg 预览版使用与 WinDbg 相同的基础引擎，因此你所习惯的所有命令、扩展和工作流的仍然与以前一样使用。
 
-### <a name="span-idvisualstudiowithintegratedwindowsdebuggerspanspan-idvisualstudiowithintegratedwindowsdebuggerspanspan-idvisualstudiowithintegratedwindowsdebuggerspanvisual-studio-with-integrated-windows-debugger"></a><span id="Visual_Studio_with_integrated_Windows_debugger"></span><span id="visual_studio_with_integrated_windows_debugger"></span><span id="VISUAL_STUDIO_WITH_INTEGRATED_WINDOWS_DEBUGGER"></span>Visual Studio 中使用集成 Windows 调试器
-
-从开始使用 WDK 8.0，驱动程序开发环境和 Windows 调试器集成到 Visual Studio。 在此集成环境中，大多数工具所需的编码、 构建、 打包、 测试、 调试和部署驱动程序中提供了 Visual Studio 用户界面。
-
-通常内核模式调试需要两台计算机。 在运行调试程序*主机计算机*和代码正在上调试运行*目标计算机*。 使用 Windows 调试器集成到 Visual Studio，可以执行各种调试任务，包括以下列表中，从主计算机中所示。
-
--   配置一组用于调试的目标计算机。
--   配置到一组目标计算机的调试连接。
--   启动主计算机和目标计算机之间的内核模式调试会话。
--   调试主机计算机上的用户模式进程。
--   调试目标计算机上的用户模式进程。
--   连接到远程调试会话。
--   查看程序集代码和源代码。
--   查看和操作本地变量、 参数和其他符号。
--   查看和操作的内存。
--   导航的调用堆栈。
--   设置断点。
--   执行调试器命令。
-
-此外可以生成驱动程序、 部署驱动程序和驱动程序从运行的测试在 Visual Studio 用户界面中。 如果要使用的 Visual Studio 集成，提供通过 WDK 和调试工具的 Windows 上，你可以执行几乎所有的驱动程序开发、 打包、 部署、 测试和调试任务从 Visual Studio 中的在主计算机上。 以下是一些已集成到 Visual Studio 的 WDK 功能。
-
--   配置一组用于驱动程序测试的目标计算机。
--   创建并签署驱动程序包。
--   将驱动程序包部署到目标计算机。
--   安装并加载驱动程序在目标计算机上。
--   测试目标计算机上的驱动程序。
+有关详细信息，请参阅[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
 
 ### <a name="span-idwindbgspanspan-idwindbgspanspan-idwindbgspanwindbg"></a><span id="WinDbg"></span><span id="windbg"></span><span id="WINDBG"></span>WinDbg
 
-Microsoft Windows 调试器 (WinDbg) 是一个能够用户模式和内核模式调试的功能强大的基于 Windows 的调试器。 WinDbg 提供了调试的 Windows 内核、 内核模式驱动程序和系统服务，以及用户模式应用程序和驱动程序。
+Microsoft Windows 调试器（WinDbg）是一种基于 Windows 的调试器，它支持用户模式和内核模式调试。 WinDbg 为 Windows 内核、内核模式驱动程序和系统服务以及用户模式应用程序和驱动程序提供调试。
 
-WinDbg 使用 Visual Studio 调试源代码级别调试符号格式。 它可以访问任何符号或变量从模块的 PDB 符号文件，并可以访问由与 COFF 符号文件 （如 Windows.dbg 文件） 编译的模块公开的任何公共函数的名称。
+WinDbg 使用 Visual Studio 调试符号格式进行源级别调试。 它可以从包含 PDB 符号文件的模块访问任何符号或变量，并且可以访问由使用 COFF 符号文件（如 Windows dbg 文件）编译的模块公开的任何公共函数名称。
 
-WinDbg 可以查看源代码，设置断点、 查看变量 (包括C++对象)，堆栈跟踪和内存。 其调试器命令窗口中，用户可以发出各种命令。
+WinDbg 可以查看源代码、设置断点、查看变量（包括C++对象）、堆栈跟踪和内存。 它的调试器命令窗口允许用户发出多种命令。
 
-内核模式调试，WinDbg 通常需要两台计算机 （主机计算机和目标计算机）。 WinDbg 还支持用于用户模式和内核模式目标的各种远程调试选项。
+对于内核模式调试，WinDbg 通常需要两台计算机（主计算机和目标计算机）。 WinDbg 还支持用户模式和内核模式目标的各种远程调试选项。
 
-WinDbg 是图形界面对应到 CDB/NTSD 和 KD/NTKD。
+WinDbg 是与 CDB/NTSD 和 KD/NTKD 对应的图形接口。
 
 ### <a name="span-idkdspanspan-idkdspankd"></a><span id="KD"></span><span id="kd"></span>KD
 
-Microsoft Kernel Debugger (KD) 是活动的基于字符的控制台程序，可以深入分析中的内核模式下在所有基于 NT 的操作系统上。 可以使用 KD 可以调试内核模式组件和驱动程序，或监视操作系统本身的行为。 KD 还支持多处理器进行调试。
+Microsoft 内核调试器（KD）是一种基于字符的控制台程序，可对所有基于 NT 的操作系统上的内核模式活动进行深入分析。 你可以使用 KD 来调试内核模式组件和驱动程序，或监视操作系统本身的行为。 KD 还支持多处理器调试。
 
-通常情况下，KD 不运行正在调试的计算机上。 需要两台计算机 (*主机计算机*并*目标计算机*) 内核模式调试。
+通常，KD 不会在正在调试的计算机上运行。 对于内核模式调试，需要两台计算机（*主计算机*和*目标计算机*）。
 
 ### <a name="span-idntkdspanspan-idntkdspanntkd"></a><span id="NTKD"></span><span id="ntkd"></span>NTKD
 
-没有名为 NTKD KD 调试器的一种变体。 它等同于 KD 每种方式，不同之处在于它会生成一个新的文本窗口已启动，而 KD 继承命令提示符窗口中调用它。
+存在名为 NTKD 的 KD 调试器的变体。 它与 KD 的方式完全相同，不同之处在于它在启动时生成新的文本窗口，而 KD 继承从中调用它的命令提示符窗口。
 
 ### <a name="span-idcdbspanspan-idcdbspancdb"></a><span id="CDB"></span><span id="cdb"></span>CDB
 
-Microsoft Console Debugger (CDB) 是一个基于字符的控制台程序，使低级别的 Windows 用户模式内存和构造的分析。 名称*Console Debugger*用于指示这一事实，CDB 分类为一个控制台应用程序; 它并不表示目标应用程序必须是一个控制台应用程序。 事实上，CDB 是完全能够调试控制台应用程序和图形的 Windows 程序。
+Microsoft 控制台调试器（CDB）是一个基于字符的控制台程序，可实现对 Windows 用户模式内存和构造的低级别分析。 名称*控制台调试器*用来指示 CDB 分类为控制台应用程序的事实，这并不意味着目标应用程序必须为控制台应用程序。 事实上，CDB 完全能够同时调试控制台应用程序和图形 Windows 程序。
 
-CDB 是非常强大的调试程序当前正在运行或具有最近崩溃 （实时分析），但简单的设置。 它可用于调查的工作应用程序的行为。 对于失败的应用程序，可以使用 CDB，若要获取堆栈跟踪，或查看犯过参数。 它可以也在 （使用远程访问服务器） 的网络，因为它是基于字符的不同而不同。
+CDB 非常强大，可用于调试当前正在运行或最近崩溃的程序（实时分析），但设置简单。 它可用于调查正在运行的应用程序的行为。 对于发生故障的应用程序，可以使用 CDB 来获取堆栈跟踪，或查看投机取巧参数。 它在网络上非常适合（使用远程访问服务器），因为它是基于字符的。
 
-使用 CDB，可以显示和执行程序代码、 设置断点，并检查和更改值位于内存中。 CDB 可以通过拆装它并显示程序集指令分析的二进制代码。 它还可以直接分析源代码。
+通过 CDB，你可以显示和执行程序代码、设置断点以及在内存中检查和更改值。 CDB 可以通过对二进制代码进行反汇编并显示程序集说明来对其进行分析。 它还可以直接分析源代码。
 
-由于 CDB 可以通过地址或全局符号来访问内存位置，你可以引用数据和说明通过名称而不是地址，使其易于查找和调试代码的特定部分。 CDB 支持调试多个线程和进程。 它是可扩展的并可以读取和写入都分页的和非分页内存。
+由于 CDB 可以通过地址或全局符号访问内存位置，因此可以通过名称而不是按地址来引用数据和说明，从而可以轻松地查找和调试代码的特定部分。 CDB 支持调试多个线程和进程。 它是可扩展的，并且可以读取和写入分页和非分页内存。
 
-如果目标应用程序本身是一个控制台应用程序，目标将使用 CDB 共享控制台窗口。 若要生成单独的控制台窗口为目标的控制台应用程序，请使用 *-2*命令行选项。
+如果目标应用程序本身是一个控制台应用程序，则目标将与 CDB 共享控制台窗口。 若要为目标控制台应用程序生成单独的控制台窗口，请使用 *-2*命令行选项。
 
 ### <a name="span-idntsdspanspan-idntsdspanntsd"></a><span id="NTSD"></span><span id="ntsd"></span>NTSD
 
-没有名为 Microsoft NT 符号调试器 (NTSD) CDB 调试器的一种变体。 它等同于 CDB 每种方式，不同之处在于它会生成一个新的文本窗口已启动，而 CDB 继承命令提示符窗口中调用它。
+CDB 调试程序有一个名为 "Microsoft NT 符号调试器（NTSD）" 的变体。 它与 CDB 完全相同，不同之处在于它在启动时生成新的文本窗口，而 CDB 继承从中调用该窗口的命令提示符窗口。
 
-由于**启动**还可以使用命令来生成新的控制台窗口中，以下两个构造将提供相同的结果：
+由于 "**启动**" 命令还可用于生成新的控制台窗口，因此以下两个构造将产生相同的结果：
 
 ```console
-start cdb parameters 
+start cdb parameters
 ntsd parameters
 ```
 
-则可以重定向输入和输出进行 NTSD （或 CDB），以便它可以控制从内核调试程序 （Visual Studio、 的 WinDbg 中或 KD）。 如果没有控制台窗口将会出现在与 NTSD，则使用此技术。 从内核调试器控制 NTSD 是因此特别有用，因为它产生的使用将几乎没有负担放在包含目标应用程序的计算机的极轻型调试器。 此组合可以用于调试系统进程、 关闭和启动的后面阶段。 请参阅[控制用户模式下调试程序与内核调试程序](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)有关详细信息。
+可以从 NTSD （或 CDB）重定向输入和输出，以便可以从内核调试器（Visual Studio、WinDbg 或 KD）对其进行控制。 如果此方法与 NTSD 一起使用，则不会显示任何控制台窗口。 因此，从内核调试器控制 NTSD 会特别有用，因为它会导致极轻量的调试程序，这在包含目标应用程序的计算机上几乎没有任何负担。 这种组合可用于调试系统进程、关闭和更高的启动阶段。 有关详细信息，请参阅[从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 [Windows 调试](index.md)
 
- 
-
- 
-
-
-
-
-
-
+[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)

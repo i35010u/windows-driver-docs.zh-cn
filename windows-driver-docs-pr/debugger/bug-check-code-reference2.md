@@ -4,16 +4,16 @@ description: 本部分包含常见错误检查的说明，包括传递到蓝屏�
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 02/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a5afbc115331b6b2e8ff726bfa2806c19e278a
-ms.sourcegitcommit: f931a1bad4132c07be5966b428c77745c96bcba4
+ms.openlocfilehash: 61adb0d567024bae0425a104cef9b1802fd5d3a0
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77248034"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528973"
 ---
 # <a name="bug-check-code-reference"></a>Bug 检查代码参考
 
-本部分包含常见 bug 检查代码的说明，包括在蓝色 bug 检查屏幕上用错误代码显示的参数。 本节还介绍如何诊断导致错误检查的错误，以及处理错误的可能方法。
+本部分包含常见 Bug 检查代码的说明，包括在蓝色 Bug 检查屏幕上通过错误代码显示的参数。 本节还介绍如何诊断导致错误检查的错误，以及处理错误的可能方法。
 
 > [!NOTE] 
 > 本主题面向程序员。 如果你是其系统显示了带有 bug 检查代码的蓝屏的客户，请参阅[排查蓝屏错误](https://go.microsoft.com/fwlink/p/?linkid=183646)。
@@ -388,16 +388,17 @@ ms.locfileid: "77248034"
 | 0x0000019B | [**TTM\_致命\_错误**](bug-check-0x19b--ttm-fatal-error.md)                                                                                      |
 | 0x0000019C | [**WIN32K.SYS\_POWER\_监视器\_超时**](bug-check-0x19c--win32k-power-watchdog-timeout.md)                                                         |
 | 0x0000019D | [**群集\_SVHDX\_LIVEDUMP**](bug-check-0x19d--cluster-svhdx-livedump.md)                                                                        |
-| 0x000001A0 | [**TTM\_监视器\_超时**](bug-check-0x1a0--ttm-watchdog-timeout.md)
-| 0x000001A1 | [**WIN32K.SYS\_标注\_监视器\_LIVEDUMP**](bug-check-0x1a1--win32k-callout-watchdog-livedump.md)
-| 0x000001A2 | [**WIN32K.SYS\_标注\_监视器\_检测错误**](bug-check-0x1a2--win32k-callout-watchdog-bugcheck.md)
+| 0x000001A0 | [**TTM\_监视器\_超时**](bug-check-0x1a0--ttm-watchdog-timeout.md)                                                                            |
+| 0x000001A1 | [**WIN32K.SYS\_标注\_监视器\_LIVEDUMP**](bug-check-0x1a1--win32k-callout-watchdog-livedump.md)                                                   |
+| 0x000001A2 | [**WIN32K.SYS\_标注\_监视器\_检测错误**](bug-check-0x1a2--win32k-callout-watchdog-bugcheck.md)                                                   |
 | 0x000001A3 | [**调用\_\_未\_返回\_监视器\_超时\_LIVEDUMP**](bug-check-0x1a3--call-has-not-returned-watchdog-timeout-livedump.md)                  |
 | 0x000001A4 | [**DRIPS\_SW\_HW\_分歧\_LIVEDUMP**](bug-check-0x1a4--drips-sw-hw-divergence-livedump.md)                                                    |
 | 0x000001A5 | [**USB\_DRIPS\_阻止\_意外\_删除\_LIVEDUMP**](bug-check-0x1a5--usb-drips-blocker-surprise-removal-livedump.md)                           |
 | 0x000001A6 | [**蓝牙\_错误\_恢复\_LIVEDUMP**](bug-check-0x1a6--bluetooth-error-recovery-livedump.md)                                                 |
-| 0x000001A7 | [**SMB\_重定向程序\_LIVEDUMP**](bug-check-0x1A7--smb-redirector-livedump.md)                                                                       |
+| 0x000001A7 | [**SMB\_重定向程序\_LIVEDUMP**](bug-check-0x1A7--smb-redirector-livedump.md)                                                                      |
 | 0x000001A8 | [**视频\_DXGKRNL\_黑色\_屏幕\_LIVEDUMP**](bug-check-0x1a8--video-dxgkrnl-black-screen-livedump.md)                                            |
 | 0x000001B0 | [**VIDEO_MINIPORT_FAILED_LIVEDUMP**](bug-check-0x1b0--video-miniport-failed-livedump.md)                                                          |
+| 0x000001B8 | [**VIDEO_MINIPORT_BLACK_SCREEN_LIVEDUMP**](bug-check-0x1b8--video-miniport-black-screen-livedump.md)                                              |
 | 0x000001C4 | [**检测到\_验证程序\_检测到\_冲突\_LIVEDUMP**](bug-check-0x1c4--driver-verifier-detected-violation-livedump.md)                            |
 | 0x000001C5 | [**IO\_THREADPOOL\_死锁\_LIVEDUMP**](bug-check-0x1c5--io-threadpool-deadlock-livedump.md)                                                     |
 | 0x000001C6 | [**快速\_ERESOURCE\_前置条件\_冲突**](bug-check-0x1c6--fast-eresource-precondition-violation.md)                                         |
@@ -419,7 +420,8 @@ ms.locfileid: "77248034"
 | 0x000001D6 | [**辅助\_线程\_返回\_，\_非\_默认\_工作负荷\_类**](bug-check-0x1d6--worker-thread-returned-with-non-default-workload-class.md)   |
 | 0x000001D7 | [**EFS\_严重\_错误**](bug-check-0x1d7--efs-fatal-error.md)                                                                                      |
 | 0x000001D8 | [**UCMUCSI\_故障**](bug-check-0x1d8--ucmucsi-failure.md)                                                                                       |
-| 0x000001D9 | [**HAL\_IOMMU\_内部\_错误**](bug-check-0x1d8--ucmucsi-failure.md)                                                                            |
+| 0x000001D9 | [**HAL\_IOMMU\_内部\_错误**](bug-check-0x1d8--ucmucsi-failure.md)                                                                            |  
+| 0x000001DA | [* * HAL\_阻止\_处理器\_内部\_错误 * *](bug-check-0x1da--hal-blocked-processor-internal-error.md)                                         |
 | 0x000001DB | [**IPI\_监视器\_超时**](bug-check-0x1db--ipi-watchdog-timeout.md)                                                                            |
 | 0x000001DC | [**DMA_COMMON_BUFFER_VECTOR_ERROR**](bug-check-0x1dc--dma-common-buffer-vector-error.md)                                                          |
 | 0x00000356 | [**XBOX\_ERACTRL\_CS\_超时**](bug-check-0x356--xbox-eractrl-cs-timeout.md)                                                                     |

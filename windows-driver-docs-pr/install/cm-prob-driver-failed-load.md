@@ -6,14 +6,14 @@ keywords:
 - CM_PROB_DRIVER_FAILED_LOAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4475a6a03a90d34ed1a8af2fe862f42021bfebb3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef92d58401433ea83bf25600dd2cbb15e20156f1
+ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391487"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77558413"
 ---
-# <a name="cmprobdriverfailedload"></a>CM_PROB_DRIVER_FAILED_LOAD
+# <a name="cm_prob_driver_failed_load"></a>CM_PROB_DRIVER_FAILED_LOAD
 
 此函数保留供系统使用。
 
@@ -25,14 +25,15 @@ ms.locfileid: "63391487"
 
 ### <a name="display-message"></a>显示消息
 
-"Windows 无法加载这个硬件设备驱动程序。 该驱动程序可能已损坏或丢失。 （代码 39）"
+"Windows 无法加载此硬件的设备驱动程序。 驱动程序可能已损坏或丢失。 （代码39） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-重新安装或获取新的驱动程序。
+重新安装或获取新驱动程序。
 
 此错误的原因包括：
 
-- 不存在的驱动程序文件、 已损坏的二进制文件、 文件 I/O 问题或引用中无法加载的另一个二进制文件的入口点的驱动程序。
+- 某个驱动程序文件不存在、一个已损坏的二进制文件、一个文件 i/o 问题或引用另一个二进制文件中的入口点的驱动程序无法加载。
 
-- 该驱动程序不符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)。
+- 该驱动程序不符合[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)。
+

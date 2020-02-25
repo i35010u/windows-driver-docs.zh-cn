@@ -4,15 +4,15 @@ description: 访问全局变量
 ms.assetid: 81daf418-d3cf-413a-8ee0-790b0c0f86c0
 keywords:
 - 全局变量
-- 全局变量访问
-ms.date: 05/23/2017
+- 全局变量，访问
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f7e736328bc8e355ea75b6da5a87985fa3a48606
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ce50b8367571ea03e4ee718c64b79a112ed71d9
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351499"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528929"
 ---
 # <a name="accessing-global-variables"></a>访问全局变量
 
@@ -20,15 +20,15 @@ ms.locfileid: "63351499"
 ## <span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>
 
 
-在编译应用程序时创建的符号文件中存储的全局变量的名称。 调试器将解释为一个虚拟地址的全局变量的名称。 此外接受一个地址作为参数的任何命令接受变量的名称。 因此，可以使用的所有命令中所述[访问内存的虚拟地址](accessing-memory-by-virtual-address.md)读取或写入全局变量。
+全局变量的名称存储在编译应用程序时创建的符号文件中。 调试器将全局变量的名称解释为虚拟地址。 接受地址作为参数的任何命令也接受变量的名称。 因此，你可以使用 "[按虚拟地址访问内存](accessing-memory-by-virtual-address.md)" 中所述的所有命令来读取或写入全局变量。
 
-此外，还可以使用[ **？（计算表达式）** ](---evaluate-expression-.md)命令以显示与任何符号相关联的地址。
+此外，还可以使用[ **？（计算表达式）** ](---evaluate-expression-.md)命令显示与任何符号关联的地址。
 
-Visual Studio 和 WinDbg 提供用户界面元素，可以使用 （除了命令） 来查看和编辑全局变量。 请参阅[查看和编辑内存和 Visual Studio 中的寄存器](viewing-memory--variables--and-registers-in-visual-studio.md)并[查看和编辑在 WinDbg 中的全局变量](viewing-and-editing-global-variables-in-windbg.md)。
+WinDbg 提供用户界面元素，你可以使用这些元素来查看和编辑全局变量，还可以使用命令。 请参阅[在 WinDbg 中查看和编辑全局变量](viewing-and-editing-global-variables-in-windbg.md)。
 
-请考虑下面的示例。 假设你想要检查`MyCounter`全局变量，它是一个 32 位整数。 此外假设默认基数为 10。
+请考虑以下示例。 假设要检查 `MyCounter` 全局变量，该变量为32位整数。 还假定默认基数为10。
 
-可以获取此变量的地址，然后将其显示，如下所示。
+可以获取此变量的地址，然后按如下所示显示它。
 
 ```dbgcmd
 0:000> ? MyCounter 
@@ -37,22 +37,22 @@ Evaluate expression: 1244892 = 0012fedc
 0012fedc  00000052
 ```
 
-第一个命令输出让你知道的地址`MyCounter`是 0x0012FEDC。 然后，可以使用[ **d\* （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令以在此地址显示一个双字。 （您也可以使用 1244892，这是此地址的十进制版本。 但是，大多数 C 程序员更喜欢使用 0x0012FEDC。）第二个命令告知 MyCounter 的值是 0x52 (十进制 82)。
+第一个命令输出会告诉您 `MyCounter` 的地址0x0012FEDC。 然后，可以使用[**d\* （显示内存）** ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令在此地址显示一个双字。 （也可以使用1244892，这是此地址的十进制版本。 但是，大多数 C 程序员喜欢使用0x0012FEDC。）第二个命令告诉您 MyCounter 的值为0x52 （decimal 82）。
 
-此外可以在以下命令来执行这些步骤。
+你还可以在下面的命令中执行这些步骤。
 
 ```dbgcmd
 0:000> dd MyCounter L1 
 0012fedc  00000052
 ```
 
-若要更改的值`MyCounter`为十进制 83，使用以下命令。
+若要将 `MyCounter` 的值更改为十进制83，请使用以下命令。
 
 ```dbgcmd
 0:000> ed MyCounter 83 
 ```
 
-此示例使用十进制输入，因为该格式看起来更为自然的整数。 但是的输出[ **d\\**  * ](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令仍采用十六进制格式。
+此示例使用 decimal 输入，因为这种格式似乎更适合整数。 但是， [ **d\\** *](d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor.md)命令的输出仍采用十六进制格式。
 
 ```dbgcmd
 0:000> dd MyCounter L1 0012fedc  00000053

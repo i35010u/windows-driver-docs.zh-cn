@@ -1,86 +1,86 @@
 ---
 title: WinDbg 入门（内核模式）
-description: 本主题提供了实际操作相关的练习，将帮助你开始使用 WinDbg 作为内核模式调试程序。
+description: 本主题提供的动手练习将帮助你开始使用 WinDbg 作为内核模式调试器。
 ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
-ms.date: 05/21/2018
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c119aa1994b53ce79b7983bbee559455084b464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f87672476bca81ec688877dd90e35d84092ad732
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362183"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528975"
 ---
-# <a name="span-iddebuggergettingstartedwithwindbgkernel-modespangetting-started-with-windbg-kernel-mode"></a><span id="debugger.getting_started_with_windbg__kernel-mode_"></span>开始使用 WinDbg （内核模式）
+# <a name="span-iddebuggergetting_started_with_windbg__kernel-mode_spangetting-started-with-windbg-kernel-mode"></a><span id="debugger.getting_started_with_windbg__kernel-mode_"></span>与 WinDbg 入门（内核模式）
+
+WinDbg 是 Windows 调试工具中包含的内核模式和用户模式调试器。 在这里，我们将提供实践练习，帮助你开始使用 WinDbg 作为内核模式调试器。
+
+有关如何获取 Windows 调试工具的信息，请参阅[适用于 windows 的调试工具（WinDbg、KD、CDB、NTSD）](index.md)。 安装调试工具后，找到64位（x64）和32位（x86）版本的工具的安装目录。 例如：
+
+- C：\\Program Files （x86）\\Windows 工具包\\10\\调试器\\x64
+- C：\\Program Files （x86）\\Windows 工具包\\10\\调试器\\x86
+
+## <a name="span-idset_up_a_kernel-mode_debuggingspanspan-idset_up_a_kernel-mode_debuggingspanspan-idset_up_a_kernel-mode_debuggingspanset-up-a-kernel-mode-debugging"></a><span id="Set_up_a_kernel-mode_debugging"></span><span id="set_up_a_kernel-mode_debugging"></span><span id="SET_UP_A_KERNEL-MODE_DEBUGGING"></span>设置内核模式调试
+
+内核模式调试环境通常具有两台计算机：*主计算机*和*目标计算机*。 调试器在主计算机上运行，要调试的代码在目标计算机上运行。 主机和目标由调试电缆进行连接。
+
+Windows 调试器支持以下类型的缆线用于调试：
+
+- 以太网
+- USB 2.0/USB 3。0
+- 串行（也称为空调制解调器）
+
+为实现速度和可靠性，建议结合使用以太网和本地网络中心。 此图说明了已连接以便通过以太网电缆进行调试的主机和目标计算机。
+
+![通过以太网连接的主机和目标示意图](images/configfortest01.png)
+
+Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接电缆。 
+
+![带有调试电缆的主机和目标示意图](images/configfortest02.png)
+
+有关如何设置主机和目标计算机的详细信息，请参阅[手动设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
+
+### <a name="virtual-machine---vms"></a>虚拟机-Vm
+
+有关将调试程序连接到 Hyper-v 虚拟机的信息，请参阅[设置虚拟机的网络调试-KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)。
+
+## <a name="span-idestablish_a_kernel-mode_debugging_sessionspanspan-idestablish_a_kernel-mode_debugging_sessionspanspan-idestablish_a_kernel-mode_debugging_sessionspanestablish-a-kernel-mode-debugging-session"></a><span id="Establish_a_kernel-mode_debugging_session"></span><span id="establish_a_kernel-mode_debugging_session"></span><span id="ESTABLISH_A_KERNEL-MODE_DEBUGGING_SESSION"></span>建立内核模式调试会话
 
 
-WinDbg 是一个内核模式和用户模式下的调试器所包含的 Windows 调试工具。 此处我们提供了实际操作相关的练习，将帮助你开始使用 WinDbg 作为内核模式调试程序。
+设置好主机和目标计算机并将其与调试电缆连接后，可以按照用于设置的同一主题中的说明建立内核模式调试会话。 例如，如果决定将主机和目标计算机设置为通过以太网进行调试，则可以在本主题中找到有关建立内核模式调试会话的说明：
 
-有关如何获取有关 Windows 调试工具的信息，请参阅[调试工具的 Windows （WinDbg、 KD、 CDB、 NTSD）](index.md)。 已安装调试工具后，找到 (x64) 64 位和 32 位 (x86) 版本的工具的安装目录。 例如：
-
--   C:\\程序文件 (x86)\\Windows 工具包\\8.1\\调试器\\x64
--   C:\\程序文件 (x86)\\Windows 工具包\\8.1\\调试器\\x86
-
-## <a name="span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging"></a><span id="Set_up_a_kernel-mode_debugging"></span><span id="set_up_a_kernel-mode_debugging"></span><span id="SET_UP_A_KERNEL-MODE_DEBUGGING"></span>设置内核模式调试
+-  [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)
 
 
-内核模式调试环境通常具有两台计算机：*主机计算机*并*目标计算机*。 在主计算机上运行调试器和正在调试的代码在目标计算机上运行。 主机和目标通过调试电缆进行连接。
-
-Windows 调试器支持这些类型的电缆，用于调试的：
-
--   Ethernet
--   USB 2.0
--   USB 3.0
--   1394
--   序列 （也称为 null 调制解调器）
-
-如果目标计算机运行的 Windows 8 或更高版本，可以使用任何类型的调试缆线，包括以太网。 此图描述了用于调试通过以太网电缆连接的主机和目标计算机。
-
-![主机和目标使用以太网连接的关系图](images/configfortest01.png)
-
-如果目标计算机正在运行早于 Window 8 的 Windows 版本，则不能用于调试; 使用以太网必须使用 USB、 1394，或串行。 此图描述了通过 USB、 1394，或串行调试电缆连接的主机和目标计算机。
-
-![主机和目标使用调试电缆的关系图](images/configfortest02.png)
-
-有关如何设置主机和目标计算机的详细信息，请参阅[设置了内核模式调试手动](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)。
-
-## <a name="span-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanestablish-a-kernel-mode-debugging-session"></a><span id="Establish_a_kernel-mode_debugging_session"></span><span id="establish_a_kernel-mode_debugging_session"></span><span id="ESTABLISH_A_KERNEL-MODE_DEBUGGING_SESSION"></span>建立内核模式调试会话
+## <a name="span-idget_started_using_windbgspanspan-idget_started_using_windbgspanspan-idget_started_using_windbgspanget-started-using-windbg"></a><span id="Get_started_using_WinDbg"></span><span id="get_started_using_windbg"></span><span id="GET_STARTED_USING_WINDBG"></span>使用 WinDbg 开始使用
 
 
-你已设置了主机和目标计算机而使用调试电缆连接它们后，可以按照如何设置使用同一主题中的说明建立内核模式调试会话。 例如，如果您决定将主机和目标计算机通过以太网进行调试设置，您可以找到建立内核模式调试会话是本主题说明：
+1. 在主计算机上，打开 WinDbg 并建立与目标计算机的内核模式调试会话。
+2. 在 WinDbg 的 "**帮助**" 菜单中选择 "**内容**"。 这会打开调试器文档 CHM 文件。 [此处](index.md)还提供了调试器文档。
+3. 建立内核模式调试会话时，WinDbg 可能会自动中断目标计算机。 如果 WinDbg 尚未在中出现，请从 "**调试**" 菜单中选择 "**中断**"。
 
--   [KDNET 网络内核调试会自动设置](setting-up-a-network-debugging-connection-automatically.md)
+4. 在 "WinDbg" 窗口底部附近的命令行中，输入以下命令：
 
+   [ **。 sympath srv\\** *](https://go.microsoft.com/fwlink/p?linkid=399238)
 
-## <a name="span-idgetstartedusingwindbgspanspan-idgetstartedusingwindbgspanspan-idgetstartedusingwindbgspanget-started-using-windbg"></a><span id="Get_started_using_WinDbg"></span><span id="get_started_using_windbg"></span><span id="GET_STARTED_USING_WINDBG"></span>开始使用 WinDbg
-
-
-1. 主计算机上打开 WinDbg 和建立与目标计算机的内核模式调试会话。
-2. 在 WinDbg 中，选择**内容**从**帮助**菜单。 这将打开调试器文档 CHM 文件。 调试程序文档，还可以在行[此处](index.md)。
-3. 建立时内核模式调试会话，WinDbg 可能会中断到目标计算机自动。 如果不已损坏 WinDbg，请选择**中断**从**调试**菜单。
-
-4. 靠近底部 WinDbg 窗口中，在命令行中，输入以下命令：
-
-   [**.sympath srv\\***](https://go.microsoft.com/fwlink/p?linkid=399238)
-
-   输出结果类似于此：
+   输出类似于以下内容：
 
    ```dbgcmd
    Symbol search path is: srv*
    Expanded Symbol search path is: cache*;SRV*https://msdl.microsoft.com/download/symbols
    ```
 
-   符号搜索路径告知 WinDbg 查找符号 (PDB) 文件的位置。 调试器需要符号文件，以了解有关代码模块 （函数名称、 变量名称等） 的信息。
+   符号搜索路径指示 WinDbg 查找符号（PDB）文件的位置。 调试器需要符号文件来获取有关代码模块的信息（函数名、变量名和 like）。
 
-   请输入以下命令，它会告知 WinDbg，执行其初始查找和加载的符号文件：
+   输入此命令，该命令会告诉 WinDbg 完成符号文件的初始查找和加载：
 
-   [**.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)
+   [ **。重装**](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-5. 若要查看的已加载的模块列表，请输入以下命令：
+5. 若要查看已加载的模块的列表，请输入以下命令：
 
    [**lm**](https://go.microsoft.com/fwlink/p?linkid=399237)
 
-   输出结果类似于此：
+   输出类似于以下内容：
 
    ```dbgcmd
    0:000>3: kd> lm
@@ -95,17 +95,17 @@ Windows 调试器支持这些类型的电缆，用于调试的：
    ...
    ```
 
-6. 若要开始运行的目标计算机，请输入以下命令：
+6. 若要启动运行的目标计算机，请输入以下命令：
 
    [**g**](https://go.microsoft.com/fwlink/p?linkid=399388)
 
-7. 若要再次中断，选择**中断**从**调试**菜单。
+7. 若要再次中断，请选择 "**调试**" 菜单中的 "**中断**"。
 
-8. 输入以下命令来检查\_文件\_nt 模块中的对象数据类型：
+8. 输入以下命令以检查 nt 模块中 \_文件\_对象数据类型：
 
-   [**dt nt ！\_文件\_对象**](https://go.microsoft.com/fwlink/p?linkid=399397)
+   [**dt nt！\_文件\_对象**](https://go.microsoft.com/fwlink/p?linkid=399397)
 
-   输出结果类似于此：
+   输出类似于以下内容：
 
    ```dbgcmd
    0:000>0: kd> dt nt!_FILE_OBJECT
@@ -118,11 +118,11 @@ Windows 调试器支持这些类型的电缆，用于调试的：
       +0x0d0 FileObjectExtension : Ptr64 Void
    ```
 
-9. 输入以下命令来检查一些 nt 模块中的符号：
+9. 输入以下命令以检查 nt 模块中的某些符号：
 
-   [**x nt ！\*CreateProcess\\***](https://go.microsoft.com/fwlink/p?linkid=399240)
+   [**x nt！\\\*CreateProcess***](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-   输出结果类似于此：
+   输出类似于以下内容：
 
    ```dbgcmd
    0:000>0: kd> x nt!*CreateProcess*
@@ -133,15 +133,15 @@ Windows 调试器支持这些类型的电缆，用于调试的：
    ...
    ```
 
-10. 输入以下命令，将在断点放**MmCreateProcessAddressSpace**:
+10. 输入以下命令，在**MmCreateProcessAddressSpace**放置断点：
 
-    [**bu nt!MmCreateProcessAddressSpace**](https://go.microsoft.com/fwlink/p?linkid=399390)
+    [**bu nt！MmCreateProcessAddressSpace**](https://go.microsoft.com/fwlink/p?linkid=399390)
 
-    若要验证设置了断点，请输入以下命令：
+    若要验证是否已设置断点，请输入以下命令：
 
     [**bl**](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-    输出结果类似于此：
+    输出类似于以下内容：
 
     ```dbgcmd
     0:000>0: kd> bu nt!MmCreateProcessAddressSpace
@@ -149,15 +149,15 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     0 e fffff800`02e03904     0001 (0001) nt!MmCreateProcessAddressSpace
     ```
 
-    输入[ **g** ](https://go.microsoft.com/fwlink/p?linkid=399388)让运行在目标计算机。
+    输入[**g**](https://go.microsoft.com/fwlink/p?linkid=399388)允许目标计算机运行。
 
-11. 如果目标计算机不会向调试器立即中断，在目标计算机 （例如，打开记事本) 上执行一些操作。 目标计算机将中断到调试器时**MmCreateProcessAddressSpace**调用。 若要查看堆栈跟踪，请输入以下命令：
+11. 如果目标计算机不立即进入调试器，请在目标计算机上执行几项操作（例如，打开记事本）。 调用**MmCreateProcessAddressSpace**时，目标计算机将中断到调试器。 若要查看堆栈跟踪，请输入以下命令：
 
-    [**.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)
+    [ **。重装**](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-    [**k**](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [**温度**](https://go.microsoft.com/fwlink/p?linkid=399389)
 
-    输出结果类似于此：
+    输出类似于以下内容：
 
     ```dbgcmd
     0:000>2: kd> k
@@ -170,21 +170,21 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     000000d7`4167fbe0 00000000`00000000 ntdll!RtlUserThreadStart+0x1d
     ```
 
-12. 上**视图**菜单中，选择**反汇编**。
+12. 在 "**视图**" 菜单上，选择 "**反汇编**"。
 
-    上**调试**菜单中，选择**单步跳过**(或按**F10**)。 输入单步执行命令几个更多时间在您观看反汇编窗口。
+    在 "**调试**" 菜单上，选择 "**逐过程**" （或按**F10**）。 在观看 "反汇编" 窗口时，多次输入步骤命令。
 
-13. 通过输入此命令，清除断点：
+13. 输入以下命令以清除断点：
 
-    [**bc \\***](https://go.microsoft.com/fwlink/p?linkid=399401)
+    [**bc \\** *](https://go.microsoft.com/fwlink/p?linkid=399401)
 
-    输入[ **g** ](https://go.microsoft.com/fwlink/p?linkid=399388)让运行在目标计算机。 通过选择再次中断**中断**从**调试**菜单或按下**ctrl + Break**。
+    输入[**g**](https://go.microsoft.com/fwlink/p?linkid=399388)允许目标计算机运行。 通过选择 "**调试**" 菜单中的 "**中断**" 或按**CTRL break**再次中断。
 
-14. 若要查看的所有进程的列表，请输入以下命令：
+14. 若要查看所有进程的列表，请输入以下命令：
 
-    [**!process 0 0**](https://go.microsoft.com/fwlink/p?linkid=399241)
+    [ **！进程 0 0**](https://go.microsoft.com/fwlink/p?linkid=399241)
 
-    输出结果类似于此：
+    输出类似于以下内容：
 
     ```dbgcmd
     0:000>0: kd> !process 0 0
@@ -205,13 +205,13 @@ Windows 调试器支持这些类型的电缆，用于调试的：
         Image: explorer.exe
     ```
 
-15. 复制一个进程的地址并输入以下命令：
+15. 复制一个进程的地址，然后输入以下命令：
 
-    [**!process** *Address* **2**](https://go.microsoft.com/fwlink/p?linkid=399241)
+    [ **！进程***地址* **2**](https://go.microsoft.com/fwlink/p?linkid=399241)
 
-    例如： **！ 过程 ffffe00000d5290 2**
+    例如： **！ process ffffe00000d5290 2**
 
-    该输出显示在过程中的线程。
+    输出显示进程中的线程。
 
     ```dbgcmd
     0:000>0:000>0: kd> !process ffffe00000d52900 2
@@ -232,13 +232,13 @@ Windows 调试器支持这些类型的电缆，用于调试的：
                 ffffe0000089a300  QueueObject
     ```
 
-16. 复制一个线程的地址并输入以下命令：
+16. 复制一个线程的地址，然后输入以下命令：
 
-    [**！ 线程***地址*](https://go.microsoft.com/fwlink/p?linkid=399244)
+    [ **！线程***地址*](https://go.microsoft.com/fwlink/p?linkid=399244)
 
-    例如： **！ 线程 ffffe00000e6d080**
+    例如： **！ thread ffffe00000e6d080**
 
-    该输出显示有关各个线程的信息。
+    输出显示有关各个线程的信息。
 
     ```dbgcmd
     0: kd> !thread ffffe00000e6d080
@@ -259,9 +259,9 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     ...
     ```
 
-17. 若要查看插设备树中的所有设备节点，输入以下命令：
+17. 若要查看即插即用设备树中的所有设备节点，请输入以下命令：
 
-    [**!devnode 0 1**](https://go.microsoft.com/fwlink/p?linkid=399242)
+    [ **！ devnode 0 1**](https://go.microsoft.com/fwlink/p?linkid=399242)
 
     ```dbgcmd
     0:000>0: kd> !devnode 0 1
@@ -284,9 +284,9 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     ...
     ```
 
-18. 若要查看其硬件资源以及设备节点，请输入以下命令：
+18. 若要查看设备节点及其硬件资源，请输入以下命令：
 
-    [**!devnode 0 9**](https://go.microsoft.com/fwlink/p?linkid=399242)
+    [ **！ devnode 0 9**](https://go.microsoft.com/fwlink/p?linkid=399242)
 
     ```dbgcmd
     0:000>...
@@ -308,9 +308,9 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     ...
     ```
 
-19. 若要查看的服务名称为磁盘的设备节点，输入以下命令：
+19. 若要查看具有磁盘服务名称的设备节点，请输入以下命令：
 
-    [**!devnode 0 1 disk**](https://go.microsoft.com/fwlink/p?linkid=399242)
+    [ **！ devnode 0 1 磁盘**](https://go.microsoft.com/fwlink/p?linkid=399242)
 
     ```dbgcmd
     0: kd> !devnode 0 1 disk
@@ -323,11 +323,11 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     ...
     ```
 
-20. 输出[ **！ devnode 0 1** ](https://go.microsoft.com/fwlink/p?linkid=399242)显示节点的物理设备对象 (PDO) 的地址。 复制物理设备对象 (PDO) 的地址并输入以下命令：
+20. [ **！ Devnode 0 1**](https://go.microsoft.com/fwlink/p?linkid=399242)的输出显示节点的物理设备对象（PDO）的地址。 复制物理设备对象（PDO）的地址，然后输入以下命令：
 
-    [**!devstack** *PdoAddress*](https://go.microsoft.com/fwlink/p?linkid=399245)
+    [ **！ devstack** *PdoAddress*](https://go.microsoft.com/fwlink/p?linkid=399245)
 
-    例如：<em>PdoAddress</em>**!devstack 0xffffe00001159610**
+    例如： <em>PdoAddress</em> **！ devstack 0xffffe00001159610**
 
     ```dbgcmd
     0:000>0: kd> !devstack 0xffffe00001159610
@@ -337,9 +337,9 @@ Windows 调试器支持这些类型的电缆，用于调试的：
       ffffe00001156e50  \Driver\ACPI       ffffe000010d8bf0  
     ```
 
-21. 若要获取有关驱动程序 disk.sys 的信息，请输入以下命令：
+21. 若要获取有关驱动程序 disk .sys 的信息，请输入以下命令：
 
-    [**!drvobj disk 2**](https://go.microsoft.com/fwlink/p?linkid=399246)
+    [ **！ drvobj disk 2**](https://go.microsoft.com/fwlink/p?linkid=399246)
 
     ```dbgcmd
     0:000>0: kd> !drvobj disk 2
@@ -359,21 +359,21 @@ Windows 调试器支持这些类型的电缆，用于调试的：
     [1b] IRP_MJ_PNP                         fffff8000106d160    CLASSPNP!ClassGlobalDispatch
     ```
 
-22. 输出 ！ drvobj 显示的调度例程的地址： 例如，classpnp 会 ！ClassGlobalDispatch。 若要设置并验证在 ClassGlobalDispatch 断点，请输入以下命令：
+22. ！ Drvobj 的输出显示调度例程的地址：例如，CLASSPNP！ClassGlobalDispatch. 若要在 ClassGlobalDispatch 上设置和验证断点，请输入以下命令：
 
-    [**bu CLASSPNP!ClassGlobalDispatch**](https://go.microsoft.com/fwlink/p?linkid=399390)
+    [**bu CLASSPNP！ClassGlobalDispatch**](https://go.microsoft.com/fwlink/p?linkid=399390)
 
     [**bl**](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-    输入 g 让运行在目标计算机。
+    输入 g 允许目标计算机运行。
 
-    如果目标计算机不会向调试器立即中断，在目标计算机上执行一些操作 （例如，打开记事本并保存文件）。 目标计算机将中断到调试器时**ClassGlobalDispatch**调用。 若要查看堆栈跟踪，请输入以下命令：
+    如果目标计算机不立即进入调试器，请在目标计算机上执行几项操作（例如，打开记事本并保存文件）。 调用**ClassGlobalDispatch**时，目标计算机将中断到调试器。 若要查看堆栈跟踪，请输入以下命令：
 
-    [**.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)
+    [ **。重装**](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-    [**k**](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [**温度**](https://go.microsoft.com/fwlink/p?linkid=399389)
 
-    输出结果类似于此：
+    输出类似于以下内容：
 
     ```dbgcmd
     2: kd> k
@@ -392,48 +392,39 @@ Windows 调试器支持这些类型的电缆，用于调试的：
 
     [**qd**](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idsummaryofcommandsspanspan-idsummaryofcommandsspanspan-idsummaryofcommandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>命令摘要
+## <a name="span-idsummary_of_commandsspanspan-idsummary_of_commandsspanspan-idsummary_of_commandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>命令摘要
 
 
--   **内容**命令**帮助**菜单
--   [.sympath （设置符号路径）](https://go.microsoft.com/fwlink/p?linkid=399238)
--   [.reload （重新加载模块）](https://go.microsoft.com/fwlink/p?linkid=399239)
+-   "**帮助**" 菜单上的 "**内容**" 命令
+-   [. sympath （设置符号路径）](https://go.microsoft.com/fwlink/p?linkid=399238)
+-   [。重载（重载模块）](https://go.microsoft.com/fwlink/p?linkid=399239)
 -   [x （检查符号）](https://go.microsoft.com/fwlink/p?linkid=399240)
--   [g (Go)](https://go.microsoft.com/fwlink/p?linkid=399388)
+-   [g （走）](https://go.microsoft.com/fwlink/p?linkid=399388)
 -   [dt （显示类型）](https://go.microsoft.com/fwlink/p?linkid=399397)
--   **中断**命令**调试**菜单
--   [lm （列出已加载的模块）](https://go.microsoft.com/fwlink/p?linkid=399237)
--   [k （显示堆栈回溯）](https://go.microsoft.com/fwlink/p?linkid=399389)
--   [bu (Set Breakpoint)](https://go.microsoft.com/fwlink/p?linkid=399390)
+-   "**调试**" 菜单上的 "**中断**" 命令
+-   [lm （列出加载的模块）](https://go.microsoft.com/fwlink/p?linkid=399237)
+-   [k （显示 Stack Backtrace）](https://go.microsoft.com/fwlink/p?linkid=399389)
+-   [bu （设置断点）](https://go.microsoft.com/fwlink/p?linkid=399390)
 -   [bl （断点列表）](https://go.microsoft.com/fwlink/p?linkid=399391)
--   [bc (断点清除)](https://go.microsoft.com/fwlink/p?linkid=399401)
--   **单步执行**命令**调试**菜单 (**F11**)
--   [!process](https://go.microsoft.com/fwlink/p?linkid=399241)
--   [!thread](https://go.microsoft.com/fwlink/p?linkid=399244)
+-   [bc （中断清除）](https://go.microsoft.com/fwlink/p?linkid=399401)
+-   "**调试**" 菜单上的 "**单步**执行" 命令（**F11**）
+-   [！进程](https://go.microsoft.com/fwlink/p?linkid=399241)
+-   [！ thread](https://go.microsoft.com/fwlink/p?linkid=399244)
 -   [!devnode](https://go.microsoft.com/fwlink/p?linkid=399242)
 -   [!devstack](https://go.microsoft.com/fwlink/p?linkid=399245)
 -   [!drvobj](https://go.microsoft.com/fwlink/p?linkid=399246)
--   [qd （Quit 和分离）](https://go.microsoft.com/fwlink/p?linkid=399394)
+-   [qd （退出并分离）](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 [Getting Started with WinDbg (User-Mode)](getting-started-with-windbg.md)（WinDbg 入门（用户模式））
 
-[内核模式调试手动设置](https://go.microsoft.com/fwlink/p?linkid=272138)
+[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)
 
-[调试程序操作](https://go.microsoft.com/fwlink/p?linkid=399247)
+[调试程序操作](debugger-operation-win8.md)
 
-[调试方法](https://go.microsoft.com/fwlink/p?linkid=399248)
+[调试方法](debugging-techniques.md)
 
-[（WinDbg、 KD、 CDB、 NTSD） 的 Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)
+[适用于 Windows 的调试工具（WinDbg、KD、CDB、NTSD）](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
 
- 
-
- 
-
-
-
-
-
-
+[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)

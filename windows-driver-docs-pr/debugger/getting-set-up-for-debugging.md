@@ -1,6 +1,6 @@
 ---
 title: 设置调试（内核模式和用户模式）
-description: 有两种方法可以设置使用 Windows 调试器进行调试。
+description: 可以通过两种方式设置 Windows 调试器调试。
 ms.assetid: 3575B850-A0F9-4AAE-9432-E970D40069D2
 keywords:
 - 安装程序调试
@@ -9,41 +9,34 @@ keywords:
 - WinDbg
 - Visual Studio 调试
 - 内核模式调试
-ms.date: 05/23/2017
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c5da0b40de3c66b1d3711218749503bef2ce3ac2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b458ffbd5dba5c45dfa61acd396b836fc555b42
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356673"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528961"
 ---
 # <a name="setting-up-debugging-kernel-mode-and-user-mode"></a>设置调试（内核模式和用户模式）
 
+设置内核模式调试后，可以使用 WinDbg 或 KD 建立调试会话。 设置用户模式调试后，可以使用 WinDbg、CDB 或 NTSD 建立调试会话。
 
-有两种方法可以设置使用 Windows 调试器进行调试。 可以使用 Microsoft Visual Studio （集成使用 Windows Driver Kit (WDK)），也可以手动执行安装程序。 设置内核模式调试后，可以使用 Visual Studio、 的 WinDbg 中或 KD 建立调试会话。 设置用户模式下调试后，可以使用 Visual Studio、 WinDbg、 CDB 或 NTSD 来建立调试会话。
+**请注意**  windows 调试器包含在适用于 Windows 的调试工具中。 这些调试器不同于 visual studio 调试器，后者包含在 Visual Studio 中。 有关详细信息，请参阅[Windows 调试](index.md)。
 
-**请注意**  中的 Windows 调试工具包含 Windows 调试器。 以下这些调试器是不同于 Visual Studio 调试器中，这是包含在 Visual Studio。 有关详细信息，请参阅[Windows 调试](index.md)。
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
- 
+### <a name="configuring-transports"></a>配置传输
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+- [设置内核模式调试](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)
 
+### <a name="supported-target-pc-nics"></a>支持的目标 PC Nic
 
--   [内核模式调试手动设置](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)
--   [支持的网络内核调试在 Windows 10 中的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
--   [支持的网络内核调试在 Windows 8.1 中的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)
--   [支持的网络内核调试 Windows 8 中的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)
--   [设置 Visual Studio 中的用户模式下调试](setting-up-user-mode-debugging-in-visual-studio.md)
--   [设置网络调试的虚拟机主机](setting-up-network-debugging-of-a-virtual-machine-host.md)
--   [配置 tools.ini](configuring-tools-ini.md)
--   [使用 KDbgCtrl](using-kdbgctrl.md)
+- [Windows 10 中的网络内核调试支持的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
+- [Windows 8.1 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)
+- [Windows 8 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md)
 
- 
+### <a name="additional-configuration-tools"></a>其他配置工具
 
- 
-
-
-
-
-
+- [配置 tools .ini](configuring-tools-ini.md)
+- [使用 KDbgCtrl](using-kdbgctrl.md)

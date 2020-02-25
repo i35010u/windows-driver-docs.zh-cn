@@ -1,80 +1,76 @@
 ---
 title: Windows 8 中的网络内核调试支持的以太网 NIC
-description: 您可以执行操作时目标计算机正在运行 Windows 8 内核调试通过以太网网络电缆。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
+description: 当目标计算机运行 Windows 8 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡（NIC）或网络适配器。
 ms.assetid: 92FEEBAF-9978-4BDE-BB4F-81454D84A7E7
-ms.date: 11/28/2017
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e1973d4d39270d6a9ac25f9badfedc45b1adfccb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 07b9e6ec4ba7b12a3cc2681861dd204d290cb88b
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335486"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528951"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-8"></a>Windows 8 中的网络内核调试支持的以太网 NIC
 
+当目标计算机运行 Windows 8 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡（NIC）或网络适配器。
 
-您可以执行操作时目标计算机正在运行 Windows 8 内核调试通过以太网网络电缆。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
+在内核调试过程中，运行调试器的计算机称为*主机计算机*，被调试的计算机称为*目标计算机*。 有关详细信息，请参阅[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
-在内核调试，期间调用运行调试器的计算机*主机计算机*，和正在调试的计算机称为*目标计算机*。 若要执行操作[内核调试通过网络电缆](setting-up-a-network-debugging-connection.md)，目标计算机必须具有支持的网络适配器。 当目标计算机正在运行 Windows 8 时，此处列出的网络适配器支持内核调试。
+若要通过网络电缆进行内核调试，目标计算机必须具有支持的网络适配器。 当目标计算机运行 Windows 8 时，此处列出的网络适配器支持内核调试。
 
-**请注意**  支持的 Windows 8.1 的内核调试网络适配器的列表，请参阅[对于 Windows 8.1 中的网络内核调试支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)。
+**请注意**  Windows 8.1 用于内核调试的网络适配器列表，请参阅[Windows 8.1 中的网络内核调试支持的以太网 nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)。
 
- 
+## <a name="span-idsystem_requirementsspanspan-idsystem_requirementsspanspan-idsystem_requirementsspansystem-requirements"></a><span id="System_Requirements"></span><span id="system_requirements"></span><span id="SYSTEM_REQUIREMENTS"></span>系统要求
 
-## <a name="span-idsystemrequirementsspanspan-idsystemrequirementsspanspan-idsystemrequirementsspansystem-requirements"></a><span id="System_Requirements"></span><span id="system_requirements"></span><span id="SYSTEM_REQUIREMENTS"></span>系统要求
+通过以太网 Nic 进行内核调试需要某些低级别平台支持。 Windows 要求通过 PCI/PCIe 附加这些 Nic 才能实现此调试解决方案。 在大多数情况下，只需插入其中一个受支持的 Nic 即可实现可靠的内核调试体验。 但是，可能存在 BIOS 配置详细信息阻碍 Windows 调试路径的情况。 应考虑以下平台要求：
 
+- 系统固件应发现并配置 NIC 设备，使其资源不与 BIOS 配置的任何其他设备冲突。
+- 系统固件应将 NIC 的资源置于未标记为 prefetchable 的地址窗口下。
 
-内核调试通过以太网 Nic 需要某些低级别平台的支持。 Windows 需要两个 Nic 通过 PCI/PCIe 附加此调试解决方案。 在大多数情况下，只需插入这些受支持的 Nic 之一将允许功能强大的内核调试体验。 但是，可能有其中 BIOS 配置详细信息会影响 Windows 调试路径的情况。 应考虑以下一组平台要求：
+## <a name="span-idfinding_the_vendor_id_and_device_idspanspan-idfinding_the_vendor_id_and_device_idspanspan-idfinding_the_vendor_id_and_device_idspanfinding-the-vendor-id-and-device-id"></a><span id="Finding_the_vendor_ID_and_device_ID"></span><span id="finding_the_vendor_id_and_device_id"></span><span id="FINDING_THE_VENDOR_ID_AND_DEVICE_ID"></span>查找供应商 ID 和设备 ID
 
--   系统固件应发现和配置 NIC 设备，使其资源不与任何其他设备，已进行 BIOS 配置冲突。
--   系统固件应放置在未标记为 prefetchable 地址 windows 下的 NIC 的资源。
+首先查找目标计算机上的网络适配器的供应商 ID 和设备 ID。
 
-## <a name="span-idfindingthevendoridanddeviceidspanspan-idfindingthevendoridanddeviceidspanspan-idfindingthevendoridanddeviceidspanfinding-the-vendor-id-and-device-id"></a><span id="Finding_the_vendor_ID_and_device_ID"></span><span id="finding_the_vendor_id_and_device_id"></span><span id="FINDING_THE_VENDOR_ID_AND_DEVICE_ID"></span>查找供应商 ID 和设备 ID
+-  在目标计算机上，打开设备管理器（在命令提示符窗口中输入**devmgmt.msc** ）。
+-  在设备管理器中，找到要用于调试的网络适配器。
+-  右键单击网络适配器节点，然后选择 "**属性**"。
+-  在 "**详细信息**" 选项卡的 "**属性**" 下，选择 "**硬件 id**"。
 
+供应商和设备 Id 显示为即使\_*VendorID*和 DEV\_*DeviceID*。 例如，如果你看到 PCI\\即使\_8086 & 开发\_104B，则供应商 ID 为8086，并且设备 ID 为104B。
 
-首先在目标计算机上找到的供应商 ID 和设备 ID 的网络适配器。
+## <a name="span-idvendor_id_8086__intel_corporationspanspan-idvendor_id_8086__intel_corporationspanspan-idvendor_id_8086__intel_corporationspanvendor-id-8086-intel-corporation"></a><span id="Vendor_ID_8086__Intel_Corporation"></span><span id="vendor_id_8086__intel_corporation"></span><span id="VENDOR_ID_8086__INTEL_CORPORATION"></span>供应商 ID 8086，Intel Corporation
 
--   在目标计算机上打开设备管理器 (输入**devmgmt**在命令提示符窗口中)。
--   在设备管理器中，找到你想要用于调试的网络适配器。
--   右键单击网络适配器节点，然后选择**属性**。
--   在中**详细信息**选项卡上，在**属性**，选择**硬件 Id**。
+对于供应商 ID 8086，支持以下设备 Id：
 
-也执行如下所示的供应商和设备 Id\_*VendorID*和 DEV\_*DeviceID*。 例如，如果您看到 PCI\\即使\_8086 & 开发\_104B，供应商 ID 是 8086，而设备 ID 是 104B。
-
-## <a name="span-idvendorid8086intelcorporationspanspan-idvendorid8086intelcorporationspanspan-idvendorid8086intelcorporationspanvendor-id-8086-intel-corporation"></a><span id="Vendor_ID_8086__Intel_Corporation"></span><span id="vendor_id_8086__intel_corporation"></span><span id="VENDOR_ID_8086__INTEL_CORPORATION"></span>Vendor ID 8086, Intel Corporation
-
-
-对于供应商 ID 8086，支持下列设备 Id:
-
-1000 1001年 1004年 1008年 1009年 100C 100 D 100E 100F 1010年 1011年 1012年 1013年 1014年 1015年 1016年 1017年 1018年 1019年 101A 101 D 101E 1026年 1027年 1028年 1049年 104A 104B 104C 104 D 105E 105F 1060年 1075年 1076年 1077年 1078年 1079年 107A 107B 107C 107 D 107E 107F 108A 108B 108C 1096年 1098年 1099年 109A 10A4 10A5 10A7 10A910B5 10B9 10BA 10BB 10BC 10BD 10BF 10C 9 10CB 10CC 10 CD 10CE 10 个 D 3 10 个 D 5 10 个 D 6 10D 9 10DA 10E5 10E6 10E7 10E8 10EA 10EB 10EF 10F0 10F5 10F6 1501年 1502年 1503年 150A 150 C 150 D 150E 150F 1510年 1511年 1516年 1518年 1521年 1522年 1523年 1524年 1526年 294C
-## <a name="span-idvendorid10ecrealteksemiconductorcorpspanspan-idvendorid10ecrealteksemiconductorcorpspanvendor-id-10ec-realtek-semiconductor-corp"></a><span id="vendor_id_10ec__realtek_semiconductor_corp."></span><span id="VENDOR_ID_10EC__REALTEK_SEMICONDUCTOR_CORP."></span>供应商 ID 10EC，Realtek 半导体 corp.
+1000 1001 1004 1008 1009 100C 100D 100E 100F 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 101A 101D 101E 1026 1027 1028 1049 104A 104B 104C 104D 105E 105F 1060 1075 1076 1077 1078 1079 107A 107B 107C 107D 107E 107F 108A 108B 108C 1096 1098 1099 109A 10A4 10A5 10A7 10A910B5 10B9 10BA 10BB 10BC 10BD 10BF 10C9 10CB 10CC 10CD 10CE 10D3 10D5 10D6 10D9 10DA 10E5 10E6 10E7 10E8 10EA 10EB 10EF 10F0 10F5 10F6 1501 1502 1503 150A 150C 150D 150E 150F 1510 1511 1516 1518 1521 1522 1523 1524 1526 294C
+## <a name="span-idvendor_id_10ec__realtek_semiconductor_corpspanspan-idvendor_id_10ec__realtek_semiconductor_corpspanvendor-id-10ec-realtek-semiconductor-corp"></a><span id="vendor_id_10ec__realtek_semiconductor_corp."></span><span id="VENDOR_ID_10EC__REALTEK_SEMICONDUCTOR_CORP."></span>供应商 ID 10EC，Realtek 半导体公司。
 
 
-对于供应商 ID 10EC，支持下列设备 Id:
+对于供应商 ID 10EC，支持以下设备 Id：
 
 8136 8137 8167 8168 8169
-## <a name="span-idvendorid14e4broadcomspanspan-idvendorid14e4broadcomspanspan-idvendorid14e4broadcomspanvendor-id-14e4-broadcom"></a><span id="Vendor_ID_14E4__Broadcom"></span><span id="vendor_id_14e4__broadcom"></span><span id="VENDOR_ID_14E4__BROADCOM"></span>供应商 ID 14E4 Broadcom
+## <a name="span-idvendor_id_14e4__broadcomspanspan-idvendor_id_14e4__broadcomspanspan-idvendor_id_14e4__broadcomspanvendor-id-14e4-broadcom"></a><span id="Vendor_ID_14E4__Broadcom"></span><span id="vendor_id_14e4__broadcom"></span><span id="VENDOR_ID_14E4__BROADCOM"></span>供应商 ID 14E4，Broadcom
 
 
-对于供应商 ID 14E4，支持下列设备 Id:
+对于供应商 ID 14E4，支持以下设备 Id：
 
-1600 1601年 1639年 163A 163B 163C 1644年 1645年 1646年 1647年 1648年 164A 164 C 164D 1653年 1654年 1655年 1656年 1657年 1658年 1659年 165A 165B 165C 165 D 165E 165F 1668 1669年 166A 166B 166 D 166E 1672年 1673年 1674年 1676年 1677年 1678年 1679年 167A 167B 167 C 167 D 167F 1680年 1681年 1684年 1688年 1690年 1691年 1692年 1693年 1694年 1696年1698 1699 169A 169B 169 D 16A0 16A6 16A7 16A8 16AA 16AC 16B0 16B1 16B2 16B4 16B5 16B6 16C 6 16C 7 16DD 16F7 16FD 16FE 16FF 170 D 170E 170F
-## <a name="span-idvendorid1969atheroscommunicationsspanspan-idvendorid1969atheroscommunicationsspanspan-idvendorid1969atheroscommunicationsspanvendor-id-1969-atheros-communications"></a><span id="Vendor_ID_1969__Atheros_Communications"></span><span id="vendor_id_1969__atheros_communications"></span><span id="VENDOR_ID_1969__ATHEROS_COMMUNICATIONS"></span>供应商 ID 1969，Atheros 通信
+1600 1601 1639 163A 163B 163C 1644 1645 1646 1647 1648 164A 164C 164D 1653 1654 1655 1656 1657 1658 1659 165A 165B 165C 165D 165E 165F 1668 1669 166A 166B 166D 166E 1672 1673 1674 1676 1677 1678 1679 167A 167B 167C 167D 167F 1680 1681 1684 1688 1690 1691 1692 1693 1694 16961698 1699 169A 169B 169D 16A0 16A6 16A7 16A8 16AA 16AC 16B0 16B1 16B2 16B4 16B5 16B6 16C6 16C7 16DD 16F7 16FD 16FE 16FF 170D 170E 170F
+## <a name="span-idvendor_id_1969__atheros_communicationsspanspan-idvendor_id_1969__atheros_communicationsspanspan-idvendor_id_1969__atheros_communicationsspanvendor-id-1969-atheros-communications"></a><span id="Vendor_ID_1969__Atheros_Communications"></span><span id="vendor_id_1969__atheros_communications"></span><span id="VENDOR_ID_1969__ATHEROS_COMMUNICATIONS"></span>供应商 ID 1969，Atheros 通信
 
 
-由单独的模块，可从 Qualcomm 提供 Atheros 网络适配器的支持。 支持下列设备 Id。
+对 Atheros 网络适配器的支持由一个可从 Qualcomm 提供的单独模块提供。 支持这些设备 Id。
 
 1062 1063 1073 1083 1090 1091 10A0 10A1 10B0 10B1 10C0 10C1 10D0 10D1 10E0 10E1 10F0 10F1 2060 2062 E091 E0A1 E0B1 E0C1 E0D1 E0E1 E0F1
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 
-[KDNET 网络内核调试会自动设置](setting-up-a-network-debugging-connection-automatically.md)
+[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)
 
-[支持的网络内核调试在 Windows 8.1 中的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)
+[Windows 8.1 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md)
 
-[支持的网络内核调试在 Windows 10 中的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
+[Windows 10 中的网络内核调试支持的以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md)
 
  
 
