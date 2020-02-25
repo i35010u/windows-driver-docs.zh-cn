@@ -90,5 +90,33 @@
       href: bluetooth-proximity-profile.md
     - name: 邻近感应配置文件实现详细信息
       href: proximity-profile-implementation-details.md
+- name: 蓝牙驱动程序测试
+  items:
+    - name: 蓝牙驱动程序测试资源
+      href: testing-Bluetooth-main.md
+    - name: 蓝牙测试平台 (BTP)
+      items:
+        - name: 蓝牙测试平台概述
+          href: testing-BTP-Overview.md
+        - name: 设置 BTP
+          href: testing-BTP-setup.md
+        - name: BTP 软件
+          href: testing-BTP-software-package.md
+        - name: BTP 硬件
+          items:
+            - name: Traduci 板
+              href: testing-BTP-hw.md
+            - name: 支持 HID 的无线电收发器
+              href: testing-BTP-hw-hid.md
+            - name: 支持音频的无线电收发器
+              href: testing-BTP-hw-audio.md
+        - name: BTP 测试
+          items:
+            - name: 当前可用的 BTP 测试
+              href: testing-BTP-Tests.md
+            - name: 测试蓝牙配对
+              href: testing-BTP-tests-pairing.md
+            - name: 测试蓝牙 HID
+              href: testing-BTP-tests-hid.md
 - name: 蓝牙无线收发器重置和恢复
   href: bluetooth-radio-error-recovery.md
