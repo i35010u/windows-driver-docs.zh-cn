@@ -11,12 +11,12 @@ keywords:
 - 遍历动态子列表 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0fbeebb921c6d99b2d0e5f45fadaf603251410
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5cd974a90c06dc9e3ff447acd4c30b96e9d45eff
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845590"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601721"
 ---
 # <a name="dynamic-enumeration"></a>动态枚举
 
@@ -33,7 +33,7 @@ ms.locfileid: "72845590"
 
 每当驱动程序创建一个表示设备的 FDO 的框架设备对象时，框架都会为该设备创建一个空的默认子列表。 你的驱动程序可以通过调用[**WdfFdoGetDefaultChildList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)来获取设备的默认子列表的句柄。 通常，如果您正在编写枚举设备子项的总线驱动程序，则您的驱动程序可以将子项添加到默认子列表中。 如果需要创建其他子列表，则驱动程序可以调用[**WdfChildListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)。
 
-在驱动程序可以使用子列表之前，它必须通过初始化[**WDF\_子\_列表\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_list_config)配置结构并将该结构传递给[**WdfFdoInitSetDefaultChildListConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)（对于对于其他子列表，则为默认子列表，或为[**WdfChildListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)。
+在驱动程序可以使用子列表之前，它必须通过初始化[**WDF\_子\_列表\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_list_config)配置结构，并将该结构传递给默认子列表的[**WdfFdoInitSetDefaultChildListConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)或[**WdfChildListCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)，为其他子列表配置子列表对象。
 
 ### <a name="dynamic-child-descriptions"></a>动态子说明
 
@@ -91,7 +91,7 @@ ms.locfileid: "72845590"
 
 3.  调用[**WdfChildListEndScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)。
 
-如果你在驱动程序的动态枚举中包含对[**WdfChildListBeginScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)和[**WdfChildListEndScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)的调用，则该框架会将所有更改存储到子列表，并在驱动程序调用**时向 PnP 经理通知更改WdfChildListEndScan**。 稍后，框架将为子列表中的每个设备调用总线驱动程序的[*EvtChildListCreateDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)回调函数。 此回调函数调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)为每个新设备创建一个 PDO。
+如果你在驱动程序的动态枚举中包含对[**WdfChildListBeginScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)和[**WdfChildListEndScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)的调用，则该框架会将所有更改存储到子列表，并在驱动程序调用**WdfChildListEndScan**时，通知 PnP 经理发生的更改。 稍后，框架将为子列表中的每个设备调用总线驱动程序的[*EvtChildListCreateDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device)回调函数。 此回调函数调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)为每个新设备创建一个 PDO。
 
 当驱动程序调用[**WdfChildListBeginScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)时，框架会将以前报告的所有设备标记为不再存在。 因此，驱动程序必须为驱动程序可以检测到的所有子级（而不只是新发现的子项）调用[**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) 。 若要向子列表添加单个子级，驱动程序可以对[**WdfChildListUpdateAllChildDescriptionsAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent)进行单一调用，而无需先调用**WdfChildListBeginScan**。
 
@@ -101,7 +101,7 @@ ms.locfileid: "72845590"
 
 1.  当父设备收到指示到达或移除某个子节点的中断时，如果设备已接通电源，驱动程序的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数会调用[**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) ，如果设备已拔出，则会调用[**WdfChildListUpdateChildDescriptionAsMissing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdatechilddescriptionasmissing) 。
 
-2.  驱动程序可以提供一个[*EvtChildListScanForChildren*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children)回调函数，框架将在每次父设备进入其工作（D0）状态时调用该函数。 此回调函数应通过调用[**WdfChildListBeginScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)、 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) （或[**WdfChildListUpdateAllChildDescriptionsAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent)）来枚举所有子设备，并[**WdfChildListEndScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)。
+2.  驱动程序可以提供一个[*EvtChildListScanForChildren*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children)回调函数，框架将在每次父设备进入其工作（D0）状态时调用该函数。 此回调函数应通过调用[**WdfChildListBeginScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)、 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) （或[**WdfChildListUpdateAllChildDescriptionsAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent)）和[**WdfChildListEndScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)枚举所有子设备。
 
 您可以在您的驱动程序中使用这两种方法中的一种或两种。
 
@@ -131,9 +131,10 @@ ms.locfileid: "72845590"
 
 -   [**WdfPdoUpdateAddressDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoupdateaddressdescription)，用于更新与 PDO 关联的地址说明。
 
- 
+### <a name="handling-re-enumeration-requests"></a>处理重新枚举请求
 
- 
+支持动态枚举的基于框架的总线驱动程序可以接收通过[**REENUMERATE_SELF_INTERFACE_STANDARD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reenumerate_self_interface_standard)接口对特定子设备进行 reenumerate 的请求。 有关详细信息，请参阅[处理枚举请求](https://docs.microsoft.com/windows-hardware/drivers/wdf/handling-enumeration-requests)
+
 
 
 

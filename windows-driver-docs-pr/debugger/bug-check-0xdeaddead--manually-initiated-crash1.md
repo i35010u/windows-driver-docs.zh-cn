@@ -1,11 +1,11 @@
 ---
 title: Bug 检查 0xDEADDEAD MANUALLY_INITIATED_CRASH1
-description: MANUALLY_INITIATED_CRASH1 bug 检查具有 0xDEADDEAD 值。 这表示用户谨慎地启动内核调试程序或键盘的故障转储。
+description: MANUALLY_INITIATED_CRASH1 bug 检查的值为0xDEADDEAD。 这表示用户特意从内核调试器或键盘启动了故障转储。
 ms.assetid: b7439fc7-3146-48c9-b44e-dddea2d84769
 keywords:
 - Bug 检查 0xDEADDEAD MANUALLY_INITIATED_CRASH1
 - MANUALLY_INITIATED_CRASH1
-ms.date: 05/23/2017
+ms.date: 02/24/2020
 topic_type:
 - apiref
 api_name:
@@ -13,36 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b91772022846a2ea263c60f63daa13ab6de555d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d32c35a169417157197bb28c08a22f460da71909
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518826"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601723"
 ---
-# <a name="bug-check-0xdeaddead-manuallyinitiatedcrash1"></a>Bug 检查 0xDEADDEAD：手动\_启动\_CRASH1
+# <a name="bug-check-0xdeaddead-manually_initiated_crash1"></a>Bug 检查0xDEADDEAD：手动\_启动\_CRASH1
 
-
-手动\_启动\_CRASH1 bug 检查的值为 0xDEADDEAD。 这表示用户谨慎地启动内核调试程序或键盘的故障转储。
+手动\_启动\_CRASH1 bug 检查的值为0xDEADDEAD。 这表明发生了手动启动的崩溃。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
+## <a name="manually_initiated_crash1-parameters"></a>手动\_启动\_的 CRASH1 参数
 
-## <a name="manuallyinitiatedcrash1-parameters"></a>手动\_启动\_CRASH1 参数
-
-
-无
-
-<a name="remarks"></a>备注
--------
-
-手动启动故障转储的详细信息，请参阅[强制系统崩溃](forcing-a-system-crash.md)。
-
- 
-
- 
-
-
-
-
+| 参数 | 说明 |
+|-----------|-------------|
+|     1     | 保留    |
+|     2     | 保留    |
+|     3     | 保留    |
+|     4     | 保留    |

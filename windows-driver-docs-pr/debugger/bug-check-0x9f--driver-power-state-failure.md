@@ -3,7 +3,7 @@ title: Bug 检查 0x9F DRIVER_POWER_STATE_FAILURE
 description: 此 bug 检查的值为0x0000009F。 此 bug 检查表明驱动程序处于不一致或处于无效状态。
 ms.assetid: f767fe80-0ec0-45e4-9949-467f50ac601c
 keywords:
-- （开发人员内容）Bug 检查 0x9F DRIVER_POWER_STATE_FAILURE
+- Bug 检查 0x9F DRIVER_POWER_STATE_FAILURE
 - DRIVER_POWER_STATE_FAILURE
 ms.date: 05/23/2017
 topic_type:
@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9754dd7117a745e3d290a29fb54246db49390a
-ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
+ms.openlocfilehash: df50ead9a8bd9398c3df5b3b97cec400bc1b13ce
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "70025314"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601715"
 ---
-# <a name="developer-content-bug-check-0x9f-driver_power_state_failure"></a>（开发人员内容）Bug 检查0x9F：驱动程序\_电源\_状态\_故障
+# <a name="bug-check-0x9f-driver_power_state_failure"></a>Bug 检查0x9F：驱动程序\_电源\_状态\_故障
 
 驱动程序\_POWER\_状态\_故障 bug 检查的值为0x0000009F。 此 bug 检查表明驱动程序处于不一致或处于无效状态。
 
@@ -66,7 +66,7 @@ ms.locfileid: "70025314"
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>堆栈的物理设备对象（PDO）</p></td>
-<td align="left"><p>堆栈的功能设备对象（FDO）。 在 Windows 7 和更高版本中，nt！TRIAGE_9F_POWER。</p></td>
+<td align="left"><p>nt!TRIAGE_9F_POWER。</p></td>
 <td align="left"><p>阻止的 IRP</p></td>
 <td align="left"><p>设备对象已阻止 IRP 太长时间。</p></td>
 </tr>
@@ -74,8 +74,22 @@ ms.locfileid: "70025314"
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>超时值（以秒为单位）。</p></td>
 <td align="left"><p>当前持有即插即用（PnP）锁的线程。</p></td>
-<td align="left"><p>在 Windows 7 和更高版本中，nt！TRIAGE_9F_POWER。</p></td>
+<td align="left"><p>nt!TRIAGE_9F_POWER。</p></td>
 <td align="left"><p>等待与 PnP 子系统同步时，电源状态转换超时。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x5</p></td>
+<td align="left"><p>堆栈的物理设备对象</p></td>
+<td align="left"><p></p>POP_FX_DEVICE 对象</td>
+<td align="left"><p>保留-0</p></td>
+<td align="left"><p>设备在所需的时间段内未能完成定向的电源转换。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x6</p></td>
+<td align="left"><p>POP_FX_DEVICE 对象</p></td>
+<td align="left"><p>指示此电源关闭（1）还是通电（0）完成。</p></td>
+<td align="left"><p>保留-0</p></td>
+<td align="left"><p></p>设备未成功完成其定向的电源转换回拨。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x500</p></td>
@@ -88,12 +102,10 @@ ms.locfileid: "70025314"
 </table>
 
 ## <a name="cause"></a>原因
------
 
 有关可能的原因的说明，请参阅 Parameters 部分中每个代码的说明。
 
 ## <a name="resolution"></a>分辨率
-----------
 
 **当参数1等于0x3 时，调试 bug 检查0x9F**
 
