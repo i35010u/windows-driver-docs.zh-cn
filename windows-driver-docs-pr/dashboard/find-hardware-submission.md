@@ -2,16 +2,15 @@
 title: 查找和管理硬件提交内容
 author: dimanjar
 description: 了解如何通过搜索文本或选择关键字搜索中的驱动程序属性来查找特定的 Windows 硬件提交内容。
-ms.author: dimanjar
 ms.topic: article
 ms.date: 09/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48dd2f115aa4d5c8cfad6e9e9e56842fd64e7a80
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 77c5d52709ce09bd674de5dba00a2700674863fe
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337262"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601712"
 ---
 # <a name="find-a-hardware-submission"></a>查找硬件提交
 
@@ -51,7 +50,7 @@ ms.locfileid: "63337262"
 
 **@OperatingSystemCode:"Windows 10 RS4 Client x64"** 
 
-或者
+、
 
 **@OperatingSystemCode:"Windows 10 RS4"**
 
@@ -61,7 +60,7 @@ ms.locfileid: "63337262"
 
 可使用以下驱动程序属性执行关键字搜索：
 
-|参数|在任务栏的搜索框中键入|可能值|
+|参数|类型|可能值|
 |----|----|----|
 |ProductID |数字|17 位专用产品 ID|
 |SharedProductID |数字|19 位共享产品 ID|

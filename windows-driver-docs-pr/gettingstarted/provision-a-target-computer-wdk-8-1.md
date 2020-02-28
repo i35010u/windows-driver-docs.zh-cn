@@ -2,14 +2,14 @@
 title: 预配计算机以便进行驱动程序部署和测试 (WDK 10)
 description: 预配目标计算机或测试计算机是配置计算机以自动部署、测试和调试驱动程序的过程。 若要预配计算机，请使用 Microsoft Visual Studio。
 ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
-ms.date: 01/29/2020
+ms.date: 02/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e9d311908c7c26b7b4061cd4f7630c16fe1f3d
-ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
+ms.openlocfilehash: 5201f216036949b968d2c5b162bd1e7a602f808d
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76910360"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601733"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>预配计算机以便进行驱动程序部署和测试 (WDK 10)
 
@@ -20,7 +20,7 @@ ms.locfileid: "76910360"
 主计算机和目标计算机必须能够彼此按名称 ping 通。 如果两台计算机已加入到同一工作组或同一网络域，则此操作可能更容易。 如果你的计算机位于工作组中，我们建议你使用路由器（而非集线器或交换机）连接计算机。 
 
 > [!TIP]
-> 有关 WDK 和已知问题的最新信息，请查看 [WDK 支持论坛](https://social.msdn.microsoft.com/Forums/home?forum=wdk)。
+> 有关 WDK 和已知问题的最新信息，请查看 [WDK 支持论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wdk)。
 
 ## <a name="span-idpreparing_the_target_computer_for_provisioningspanspan-idpreparing_the_target_computer_for_provisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>准备要预配的目标计算机
 
