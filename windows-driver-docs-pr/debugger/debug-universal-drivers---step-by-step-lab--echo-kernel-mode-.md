@@ -6,35 +6,33 @@ keywords:
 - 调试实验室
 - 循序渐进
 - 传回
-ms.date: 03/28/2019
+ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b15d006868171ec2e0e2e8bcee2013e46316de5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ed666748964750f240334a662f1c18b1ba78eb63
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837788"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166685"
 ---
 # <a name="span-iddebuggerdebug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_spandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>调试通用驱动程序-逐步骤实验室（回显内核模式）
-
 
 此实验室引入了 WinDbg 内核调试器。 WinDbg 用于调试回显内核模式示例驱动程序代码。
 
 ## <a name="span-idlab_objectivesspanspan-idlab_objectivesspanspan-idlab_objectivesspanlab-objectives"></a><span id="Lab_objectives"></span><span id="lab_objectives"></span><span id="LAB_OBJECTIVES"></span>实验室目标
 
-
 此实验室包括一些练习，其中引入了调试工具、讲授常见的调试命令、阐释了断点的使用，并演示了调试扩展的使用。
 
 在此实验室中，使用实时内核调试连接来浏览以下内容：
 
--   使用 Windows 调试器命令
--   使用标准命令（调用堆栈、变量、线程、IRQL）
--   使用高级驱动程序调试命令（！命令）
--   使用符号
--   在实时调试中设置断点
--   查看调用堆栈
--   显示即插即用设备树
--   使用线程和进程上下文
+- 使用 Windows 调试器命令
+- 使用标准命令（调用堆栈、变量、线程、IRQL）
+- 使用高级驱动程序调试命令（！命令）
+- 使用符号
+- 在实时调试中设置断点
+- 查看调用堆栈
+- 显示即插即用设备树
+- 使用线程和进程上下文
 
 **注意** 使用 Windows 调试器时，可以执行两种类型的调试：用户或内核模式调试。
 
@@ -44,42 +42,39 @@ ms.locfileid: "72837788"
 
 此实验室将重点介绍内核模式调试，就像用于调试多个设备驱动程序的方法一样。
 
-
 此练习涉及在用户模式和内核模式调试过程中经常使用的调试命令。 本练习还介绍了用于内核模式调试的调试扩展（有时称为 "！命令"）。
 
 ## <a name="span-idlab_setupspanspan-idlab_setupspanspan-idlab_setupspanlab-setup"></a><span id="Lab_setup"></span><span id="lab_setup"></span><span id="LAB_SETUP"></span>实验室设置
 
-
 你将需要以下硬件才能完成实验室。
 
--   运行 Windows 10 的便携式计算机或台式计算机（主机）
--   运行 Windows 10 的便携式计算机或台式计算机（目标）
--   用于连接两台电脑的网络集线器/路由器和网络电缆
--   访问 internet 以下载符号文件
+- 运行 Windows 10 的便携式计算机或台式计算机（主机）
+- 运行 Windows 10 的便携式计算机或台式计算机（目标）
+- 用于连接两台电脑的网络集线器/路由器和网络电缆
+- 访问 internet 以下载符号文件
 
 你将需要以下软件才能完成实验室。
 
--   Visual Studio 2017
--   适用于 Windows 10 的 Windows 软件开发工具包 (SDK)
--   适用于 Windows 10 的 windows 驱动程序工具包（WDK）
--   适用于 Windows 10 的示例回显驱动程序
+- Visual Studio 
+- 适用于 Windows 10 的 Windows 软件开发工具包 (SDK)
+- 适用于 Windows 10 的 windows 驱动程序工具包（WDK）
+- 适用于 Windows 10 的示例回显驱动程序
 
 实验室有以下11个部分。
 
--   [第1节：连接到内核模式 WinDbg 会话](#connectto)
--   [第2部分：内核模式调试命令和技术](#kernelmodedebuggingcommandsandtechniques)
--   [第3部分：下载并构建 KMDF 通用回送驱动程序](#download)
--   [第4部分：在目标系统上安装 KMDF Echo 驱动程序示例](#install)
--   [第5节：使用 WinDbg 显示有关驱动程序的信息](#usewindbgtodisplayinformation)
--   [第6部分：显示即插即用设备树信息](#displayingtheplugandplaydevicetree)
--   [第7部分：处理断点和源代码](#workingwithbreakpoints)
--   [第8节：查看变量和调用堆栈](#viewingvariables)
--   [第9部分：显示进程和线程](#displayingprocessesandthreads)
--   [第10部分： IRQL、注册和结束 WinDbg 会话](#irqlregistersmemory)
--   [第11节： Windows 调试资源](#windowsdebuggingresources)
+- [第1节：连接到内核模式 WinDbg 会话](#connectto)
+- [第2部分：内核模式调试命令和技术](#kernelmodedebuggingcommandsandtechniques)
+- [第3部分：下载并构建 KMDF 通用回送驱动程序](#download)
+- [第4部分：在目标系统上安装 KMDF Echo 驱动程序示例](#install)
+- [第5节：使用 WinDbg 显示有关驱动程序的信息](#usewindbgtodisplayinformation)
+- [第6部分：显示即插即用设备树信息](#displayingtheplugandplaydevicetree)
+- [第7部分：处理断点和源代码](#workingwithbreakpoints)
+- [第8节：查看变量和调用堆栈](#viewingvariables)
+- [第9部分：显示进程和线程](#displayingprocessesandthreads)
+- [第10部分： IRQL、注册和结束 WinDbg 会话](#irqlregistersmemory)
+- [第11节： Windows 调试资源](#windowsdebuggingresources)
 
 ## <a name="span-idconnecttospanspan-idconnecttospansection-1-connect-to-a-kernel-mode-windbg-session"></a><span id="connectto"></span><span id="CONNECTTO"></span>第1节：连接到内核模式 WinDbg 会话
-
 
 *在第1部分中，你将在主机和目标系统上配置网络调试。*
 
@@ -139,7 +134,7 @@ Approximate round trip times in milli-seconds:
 > 使用 BCDEdit 更改启动信息之前，您可能需要在测试电脑上暂时挂起 Windows 安全功能，例如 BitLocker 和安全启动。
 > 当安全功能处于禁用状态时，在测试完成后重新启用这些安全功能，并对测试 PC 进行适当的管理。
 
-1. 在目标计算机上，以管理员身份打开命令提示符窗口。 输入此命令以启用调试。
+1. 在目标计算机上，以管理员身份打开“命令提示符”窗口。 输入此命令以启用调试。
 
     ```console
     C:\> bcdedit /set {default} DEBUG YES
@@ -179,8 +174,6 @@ Approximate round trip times in milli-seconds:
 
 ![windows 安全警报-windows 防火墙阻止了此应用的某些功能 ](images/debuglab-image-firewall-dialog-box.png)
 
-
-
 **&lt;-主机系统上**
 
 1. 在主计算机上，以管理员身份打开命令提示符窗口。 我们将使用 Windows 驱动程序工具包（WDK）中的 x64 版本，该版本已作为 Windows 工具包安装的一部分进行安装。 默认情况下，它位于此处。
@@ -190,8 +183,10 @@ Approximate round trip times in milli-seconds:
     ```
 
 > [!NOTE]
-> 此实验室假定两台 Pc 同时在目标和主机上运行64位版本的 Windows。 如果不是这种情况，最好的方法是在目标正在运行的主机上运行相同的工具 "位数"。 例如，如果目标运行的是32位 Windows，请在主机上运行调试器的32版本。 有关详细信息，请参阅[选择32位或64位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
-> 
+> 此实验室假定两台 Pc 同时在目标和主机上运行64位版本的 Windows。
+> 如果不是这种情况，最好的方法是在目标正在运行的主机上运行相同的工具 "位数"。
+例如，如果目标运行的是32位 Windows，请在主机上运行调试器的32版本。 有关详细信息，请参阅[选择32位或64位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
+>
 
 2. 使用以下命令通过远程用户调试启动 WinDbg。 此键和端口的值与我们以前在目标上使用 BCDEdit 时所设置的值匹配。
 
@@ -472,15 +467,15 @@ f. 重新启动目标计算机。
 
 下面的说明演示了如何安装和测试示例驱动程序。 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
-*devcon install &lt;INF file&gt; &lt;hardware ID&gt;*
+*devcon 安装 &lt;INF 文件&gt; &lt;硬件 ID&gt;*
 
 安装此驱动程序所需的 INF 文件为 " *echo*"。 Inf 文件包含用于安装*echo*的硬件 ID。 对于回显示例，硬件 ID 是**根\\echo**。
 
-在目标计算机上，以管理员身份打开命令提示符窗口。 导航到驱动程序包文件夹，然后输入以下命令：
+在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到驱动程序包文件夹，然后输入以下命令：
 
 **devcon install echo root\\echo**如果收到有关无法识别的*devcon*的错误消息，请尝试将路径添加到*devcon*工具。 例如，如果将该文件复制到名为*C：\\Tools*的文件夹，请尝试使用以下命令：
 
-**c：\\工具\\devcon 安装 echo root\\echo**将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 单击**仍然安装此驱动程序**以继续。
+**c：\\工具\\devcon 安装 echo root\\echo**将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 单击“仍然安装此驱动程序”以继续。
 
 ![windows 安全警告-windows 无法验证此驱动程序软件的发布者](images/debuglab-image-install-security-warning.png)
 
@@ -598,7 +593,7 @@ set ENABLE_OPTIMIZER=0
    0: kd> x /D Echo!a*
    ```
 
-3. 事实证明，echo 示例中不包含以字母 "a" 开头的任何符号，因此，若要显示与 echo 驱动程序相关联的所有符号的相关信息，以 Echo 开头，请键入 * * x ECHO！回显\\* * *。
+3. 事实证明，echo 示例不包含以字母 "a" 开头的任何符号，因此键入 `x ECHO!Echo*` 显示与 echo 驱动程序相关联的所有与 echo 驱动程序相关的符号信息。
 
    ```dbgcmd
    0: kd> x ECHO!Echo*
@@ -737,7 +732,7 @@ set ENABLE_OPTIMIZER=0
 
 输出显示我们有一个相当简单的设备驱动程序堆栈。 Echo 驱动程序是 PnPManager 节点的子节点。 PnPManager 是根节点。
 
-\Driver\ECHO      
+\Driver\ECHO
 
 \Driver\PnpManager
 
@@ -746,8 +741,6 @@ set ENABLE_OPTIMIZER=0
 ![包含大约20个节点的设备节点树](images/debuglab-image-device-node-tree.png)
 
 **注意** 有关更复杂的驱动程序堆栈的详细信息，请参阅[驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)和[设备节点和设备堆栈](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)。
-
-
 
 ## <a name="span-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspansection-7-working-with-breakpoints-and-source-code"></a><span id="WorkingWithBreakpoints"></span><span id="workingwithbreakpoints"></span><span id="WORKINGWITHBREAKPOINTS"></span>第7部分：使用断点和源代码
 
@@ -782,10 +775,6 @@ set ENABLE_OPTIMIZER=0
 </tr>
 </tbody>
 </table>
-
-
-
-
 
 有关详细信息，请参阅调试参考文档[中的 WinDbg 中的源代码调试](source-window.md)。
 
@@ -923,7 +912,7 @@ ba <access> <size> <address> {options}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>电邮</p></td>
+<td align="left"><p>e</p></td>
 <td align="left"><p>execute （当 CPU 从地址提取指令时）</p></td>
 </tr>
 <tr class="even">
@@ -931,7 +920,7 @@ ba <access> <size> <address> {options}
 <td align="left"><p>读/写（CPU 读取或写入地址时）</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>水平</p></td>
+<td align="left"><p>w</p></td>
 <td align="left"><p>写入（CPU 写入地址时）</p></td>
 </tr>
 </tbody>
@@ -1075,7 +1064,7 @@ ba r 4 0x0003f7bf0
    ECHO!EchoEvtIoRead         
    ```
 
-2. 使用 * * bc \\* * * 清除前面的断点。
+2. 使用**bc \*** 清除以前的断点。
 
    ```dbgcmd
    0: kd> bc *  
@@ -1480,7 +1469,7 @@ fffff803`bb757020 cc              int     3
 
 若要结束用户模式调试会话，请将调试器返回到休眠模式，然后将目标应用程序设置为再次运行，请输入**qd** （Quit 并分离）命令。
 
-请确保并使用**g**命令让目标计算机运行代码，使其可以使用。 使用 * * bc \\* * * 来清除任何断点也是一个不错的做法，这样，目标计算机将不会中断，而会尝试连接到主机计算机调试器。
+请确保并使用**g**命令让目标计算机运行代码，使其可以使用。 使用**bc \*** 清除任何断点也是一种很好的做法，这样一来，目标计算机将不会中断，而会尝试连接到主机计算机调试器。
 
 ```dbgcmd
 0: kd> qd

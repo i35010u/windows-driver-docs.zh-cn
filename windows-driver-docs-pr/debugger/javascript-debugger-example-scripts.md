@@ -1,42 +1,41 @@
 ---
 title: JavaScript 调试器示例脚本
-description: 本主题介绍用户和内核模式 JavaScript 代码示例，如数据筛选即插即用和播放设备树示例。
+description: 本主题提供有关用户和内核模式 JavaScript 代码示例的信息，如数据筛选即插即用设备树示例。
 ms.assetid: F477430B-10C7-4039-9C5F-25556C306643
-ms.date: 04/10/2019
+ms.date: 02/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e5e27226292aefcf50508285021f5adaa5bdbf4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c58f8382cf8b3790a53d06642ee5caa18bf698ec
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367223"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166667"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript 调试器示例脚本
 
 本主题提供了以下用户和内核模式 JavaScript 代码示例。
 
 - [确定进程体系结构](#processarchitecture)
-- [筛选的数据：Plug and Play 设备树中 KD （内核模式）](#filter)
-- [将设备特定于扩展到多媒体 （内核模式）](#multimedia)
-- [添加到总线信息\_设备\_对象 （内核模式）](#bus)
-- [查找应用程序标题 （用户模式）](#title)
+- [数据筛选即插即用： KD 中的设备树（内核模式）](#filter)
+- [扩展特定于多媒体的设备（内核模式）](#multimedia)
+- [\_设备\_对象添加总线信息（内核模式）](#bus)
+- [查找应用程序标题（用户模式）](#title)
 
-## <a name="microsoft-github-repo-example-scripts"></a>Microsoft GitHub 存储库的示例脚本
+## <a name="microsoft-github-repo-example-scripts"></a>Microsoft GitHub 存储库示例脚本
 
-调试器团队承载包含的示例 JavaScript 脚本和扩展的 GitHub 存储库。
+调试器团队承载包含 JavaScript 脚本和扩展示例的 GitHub 存储库。
 
-你可以找到它在- https://github.com/Microsoft/WinDbg-Samples
+可以在 https://github.com/Microsoft/WinDbg-Samples
 
 自述文件介绍了当前可用的示例代码。
 
-## <a name="span-idworkingwithsamplesspanspan-idworkingwithsamplesspanspan-idworkingwithsamplesspanworking-with-samples"></a><span id="Working_with_Samples"></span><span id="working_with_samples"></span><span id="WORKING_WITH_SAMPLES"></span>使用示例
+## <a name="span-idworking_with_samplesspanspan-idworking_with_samplesspanspan-idworking_with_samplesspanworking-with-samples"></a><span id="Working_with_Samples"></span><span id="working_with_samples"></span><span id="WORKING_WITH_SAMPLES"></span>使用示例
 
+使用常规过程来测试任何示例。
 
-使用的一般过程来测试任何示例。
+1. 确定示例 JavaScript 是否用于内核模式或用户模式调试。 然后加载相应的转储文件或建立与目标系统的实时连接。
 
-1. 确定是否 JavaScript 的示例适用于内核或用户模式调试。 然后加载相应的转储文件，或建立实时连接到目标系统。
-
-2. 使用记事本等文本编辑器创建一个名为文本文件，并将其保存带.js 文件扩展名，例如*HelloWorld.js*
+2. 使用文本编辑器（如记事本）创建一个名为的文本文件，并使用 .js 文件扩展名保存该文件（例如*HelloWorld）。*
 
 ```javascript
 // WinDbg JavaScript sample
@@ -52,13 +51,13 @@ function sayHi()
 }
 ```
 
-3. 使用[ **.load (加载扩展 DLL)** ](-load---loadby--load-extension-dll-.md)命令，可以加载 JavaScript 提供程序。
+3. 使用[**load （Load EXTENSION DLL）** ](-load---loadby--load-extension-dll-.md)命令加载 JavaScript 提供程序。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-4. 使用[ **.scriptrun （运行脚本）**](-scriptrun--run-script-.md)命令加载和执行脚本。 将根/top 和函数名称下的代码运行代码.scriptrun 命令*initializeScript*并*invokeScript*。
+4. 使用[**scriptrun （运行脚本）** ](-scriptrun--run-script-.md)命令加载和执行脚本。 Scriptrun 命令将在 root/top 和函数名称*initializeScript*和*invokeScript*下运行代码。
 
 ```dbgcmd
 0:000> .scriptrun c:\WinDbg\Scripts\HelloWorld.js
@@ -66,7 +65,7 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\HelloWorld.js'
 ***> Hello World! 
 ```
 
-5. 如果脚本包含一个唯一的命名函数，使用 dx 命令执行该函数，在 Debugger.State.Scripts 中找到。*ScriptName*。内容。*FunctionName*。
+5. 如果脚本包含唯一命名的函数，请使用 dx 命令执行该函数，该函数位于调试程序中。*ScriptName*。目录.*FunctionName*。
 
 ```dbgcmd
 0:001> dx Debugger.State.Scripts.HelloWorld.Contents.sayHi()
@@ -74,17 +73,17 @@ Hi from JavaScript!
 Debugger.State.Scripts.HelloWorld.Contents.sayHi()
 ```
 
-请参阅[JavaScript 调试器脚本](javascript-debugger-scripting.md)有关使用 JavaScript 的其他信息。
+有关使用 JavaScript 的其他信息，请参阅[JavaScript 调试器脚本](javascript-debugger-scripting.md)。
 
 ## <a name="span-idprocessarchitecturespanspan-idprocessarchitecturespanspan-idprocessarhcitecturespandetermining-process-architecture"></a><span id="Processarchitecture"></span><span id="processarchitecture"></span><span id="PROCESSARHCITECTURE"></span>确定进程体系结构
 
-此 JavaScript 代码添加到调试器对象模型进程对象来指示进程是否为 x86 或 x64 名为 ProcessArchitecture 的属性。
+此 JavaScript 代码将在上向调试器对象模型进程对象添加一个名为 "ProcessArchitecture" 的属性，以指示该过程是 x86 还是 x64。
 
 此脚本旨在支持内核模式调试。
 
 ```JavaScript
 "use strict";
- 
+
 class __CheckArchitecture
 {
 //
@@ -110,7 +109,7 @@ return [new host.namedModelParent(__CheckArchitecture, "Debugger.Models.Process"
 }
 ```
 
-加载内核转储文件，或建立与目标系统的内核模式连接。 然后加载的 JavaScript 提供程序和示例脚本。
+加载内核转储文件或建立与目标系统的内核模式连接。 然后加载 JavaScript 提供程序和示例脚本。
 
 ```dbgcmd
 0: kd> !load jsprovider.dll
@@ -121,7 +120,7 @@ return [new host.namedModelParent(__CheckArchitecture, "Debugger.Models.Process"
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\processarchitecture.js'
 ```
 
-使用[dx](dx--display-visualizer-variables-.md)命令以显示当前进程的进程架构。
+使用[dx](dx--display-visualizer-variables-.md)命令显示当前进程的进程体系结构。
 
 ```dbgcmd
 2: kd> dx @$curprocess
@@ -138,15 +137,15 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\processarchitectur
     ProcessArchitecture : x64
 ```
 
-请注意，此示例代码可能始终无法确定正确的体系结构。 例如在某些情况下，使用 32 位调试器时，可使用转储文件。
+请注意，此示例代码可能并不总是能够正确确定体系结构。 例如，在某些情况下，使用32位调试器时使用转储文件。
 
-## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>筛选的数据：Plug and Play 设备树中 KD （内核模式）
+## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>数据筛选即插即用： KD 中的设备树（内核模式）
 
-此示例代码筛选要显示只是包含 PCI 的路径的启动设备的设备节点树。
+此示例代码筛选设备节点树，只显示包含已启动的 PCI 路径的设备。
 
-此脚本旨在支持内核模式调试。
+此脚本旨在支持实时内核模式调试。
 
-可以使用 ！ devnode 0 1 命令来显示有关设备树的信息。 有关详细信息，请参阅[ **！ devnode**](-devnode.md)。
+可以使用！ devnode 0 1 命令显示有关设备树的信息。 有关详细信息，请参阅[ **！ devnode**](-devnode.md)。
 
 ```javascript
 // PlugAndPlayDeviceTree.js
@@ -180,18 +179,18 @@ function filterAllDevices()
 }
 ```
 
-加载内核转储文件，或建立与目标系统的内核模式连接。
+建立与目标系统的内核模式连接。
 
 ```dbgcmd
 0: kd> !load jsprovider.dll
 ```
 
 ```dbgcmd
-0: kd> .scriptload c:\WinDbg\Scripts\deviceFilter.js
-JavaScript script successfully loaded from 'c:\WinDbg\Scripts\deviceFilter.js'
+0: kd> .scriptload c:\WinDbg\Scripts\PlugAndPlayDeviceTree.js
+JavaScript script successfully loaded from 'c:\WinDbg\Scripts\PlugAndPlayDeviceTree.js'
 ```
 
-调用 filterAllDevices() 函数。
+调用 filterAllDevices （）函数。
 
 ```dbgcmd
 0: kd> dx Debugger.State.Scripts.PlugAndPlayDeviceTree.Contents.filterAllDevices()
@@ -205,9 +204,9 @@ Debugger.State.Scripts.PlugAndPlayDeviceTree.Contents.filterAllDevices()        
 ...
 ```
 
-每个对象提供更高版本，会自动支持 DML，并可通过单击就像使用任何其他 dx 查询一样。
+以上提供的每个对象都将自动支持 DML，并可通过与任何其他 dx 查询一样单击。
 
-或者使用此脚本，则可以使用 LINQ 查询来实现类似结果。
+或者，若要使用此脚本，可以使用 LINQ 查询来实现类似的结果。
 
 ```dbgcmd
 0: kd> dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.InstancePath.Contains("PCI") && n.State == 776)
@@ -221,14 +220,13 @@ Debugger.State.Scripts.PlugAndPlayDeviceTree.Contents.filterAllDevices()        
 ...
 ```
 
-## <a name="span-idmultimediaspanspan-idmultimediaspanspan-idmultimediaspanextend-devices-specific-to-multimedia-kernel-mode"></a><span id="Multimedia"></span><span id="multimedia"></span><span id="MULTIMEDIA"></span>将设备特定于扩展到多媒体 （内核模式）
+## <a name="span-idmultimediaspanspan-idmultimediaspanspan-idmultimediaspanextend-devices-specific-to-multimedia-kernel-mode"></a><span id="Multimedia"></span><span id="multimedia"></span><span id="MULTIMEDIA"></span>扩展特定于多媒体的设备（内核模式）
 
-
-此较大的 JavaScript 示例扩展了内核\_设备\_有关特定于多媒体信息的对象，并将 StreamingDevices 添加到调试器会话。
+此较大的 JavaScript 示例扩展了内核 \_设备\_对象，以获取特定于多媒体的信息并将 StreamingDevices 添加到调试器会话。
 
 此脚本旨在支持内核模式调试。
 
-请注意扩展 StreamingDevices 与会话的选择例如完成目的。 这应该可以留给\_设备\_对象只有或更深入地在现有命名空间内。设备。\*层次结构。
+请注意，将会话扩展到 StreamingDevices 的选项仅用于示例目的。 这应为 "仅 \_设备\_对象" 或 "在现有的命名空间内更深层"。装置.\* 层次结构。
 
 ```javascript
 // StreamingFinder.js
@@ -433,14 +431,14 @@ function initializeScript()
 }
 ```
 
-第一次加载脚本提供程序，如前面所述。 然后加载脚本。
+首先加载脚本提供程序，如前文所述。 然后加载脚本。
 
 ```dbgcmd
 0: kd> .scriptload c:\WinDbg\Scripts\StreamingFinder.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\StreamingFinder.js'
 ```
 
-然后使用 dx 命令访问此脚本提供的新 StreamingDevices 功能。
+然后，使用 dx 命令访问脚本提供的新的 StreamingDevices 功能。
 
 ```dbgcmd
 0: kd> dx -r3 @$cursession.StreamingDevices.Select(d => d->StreamingState.CreateEntries)
@@ -477,10 +475,10 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\StreamingFinder.js
             CreateContext    [Type: IUnknown]
 ```
 
-## <a name="span-idbusspanspan-idbusspanspan-idbusspanadding-bus-information-to-deviceobject-kernel-mode"></a><span id="Bus"></span><span id="bus"></span><span id="BUS"></span>添加到总线信息\_设备\_对象 （内核模式）
+## <a name="span-idbusspanspan-idbusspanspan-idbusspanadding-bus-information-to-_device_object-kernel-mode"></a><span id="Bus"></span><span id="bus"></span><span id="BUS"></span>\_设备\_对象添加总线信息（内核模式）
 
 
-此脚本将扩展的可视化效果\_设备\_对象以添加 BusInformation 字段中具有 PCI 其下的特定信息。 仍正在讨论的方式和 namespacing 此示例。 它应被视为 JavaScript 提供程序的功能的示例。
+此脚本扩展了 \_设备\_对象的视觉对象，以添加一个 BusInformation 字段，该字段下有 PCI 特定信息。 本示例的方式和 namespacing 仍在讨论。 它应被视为 JavaScript 提供程序功能的一个示例。
 
 此脚本旨在支持内核模式调试。
 
@@ -651,14 +649,14 @@ function initializeScript()
 }
 ```
 
-第一次加载脚本提供程序，如前面所述。 然后加载脚本。
+首先加载脚本提供程序，如前文所述。 然后加载脚本。
 
 ```dbgcmd
 0: kd> .scriptload c:\WinDbg\Scripts\DeviceExtensionInformation.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\DeviceExtensionInformation.js'
 ```
 
-我们需要找到我们感兴趣的设备对象的地址。 在此示例中，我们将说明音频 HDAudBus 驱动程序。
+我们需要找到感兴趣的设备对象的地址。 在此示例中，我们将检查音频 HDAudBus 驱动程序。
 
 ```dbgcmd
 0: kd>  !drvobj HDAudBus
@@ -670,7 +668,7 @@ Device Object list:
 ffffb60758e21810  ffffb60757a67c60
 ```
 
-加载脚本之后使用 dx 命令显示有关设备对象的总线信息。
+加载脚本后，使用 dx 命令显示设备对象的总线信息。
 
 ```dbgcmd
 0: kd> dx -r1 (*((ntkrnlmp!_DEVICE_OBJECT *)0xffffe00001b567c0))
@@ -707,12 +705,12 @@ ffffb60758e21810  ffffb60757a67c60
     [0x0]            : Memory Resource: 0xf0340000 of length 0x4000 [Type: _CM_PARTIAL_RESOURCE_DESCRIPTOR]
 ```
 
-## <a name="span-idtitlespanspan-idtitlespanspan-idtitlespanfind-an-application-title-user-mode"></a><span id="Title"></span><span id="title"></span><span id="TITLE"></span>查找应用程序标题 （用户模式）
+## <a name="span-idtitlespanspan-idtitlespanspan-idtitlespanfind-an-application-title-user-mode"></a><span id="Title"></span><span id="title"></span><span id="TITLE"></span>查找应用程序标题（用户模式）
 
 
-此示例将循环执行调试器的当前进程中的所有线程查找一个帧，其中包括 *\_ \_mainCRTStartup* ，然后从 StartupInfo.lpTitle 内返回字符串CRT 的启动。 此脚本显示了示例迭代、 字符串操作和 JavaScript 中的 LINQ 查询。
+此示例将循环访问调试器的当前进程中的所有线程，查找包括 *\_\_mainCRTStartup*的帧，然后在 CRT 启动内返回 StartupInfo 中的字符串。 此脚本显示 JavaScript 中的迭代、字符串操作和 LINQ 查询的示例。
 
-此脚本用于支持用户模式调试。
+此脚本旨在支持用户模式调试。
 
 ```javascript
 // TitleFinder.js
@@ -768,21 +766,21 @@ function findTitleWithLINQ()
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\TitleFinder.js'
 ```
 
-调用 findTitle() 函数返回 notepad.exe
+调用 findTitle （）函数将返回 notepad.exe
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts.TitleFinder.Contents.findTitle()
 Debugger.State.Scripts.TitleFinder.Contents.findTitle() : C:\Windows\System32\notepad.exe
 ```
 
-调用 LINQ 版本，findTitleWithLINQ() 也会返回 notepad.exe
+调用 LINQ 版本时，findTitleWithLINQ （）还会返回 notepad.exe
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts.TitleFinder.Contents.findTitleWithLINQ()
 Debugger.State.Scripts.titleFinder.Contents.findTitleWithLINQ() : C:\Windows\System32\notepad.exe
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [JavaScript 调试器脚本](javascript-debugger-scripting.md)

@@ -5,7 +5,7 @@ ms.assetid: caa18221-6128-4d77-ab61-ef3c28cfba38
 keywords:
 - Bug 检查 0xEF CRITICAL_PROCESS_DIED
 - CRITICAL_PROCESS_DIED
-ms.date: 09/17/2018
+ms.date: 02/25/2020
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d7c9573742134c2f5ff9ed5a654229f193fa0f
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: 657ff1747b3830370b2ba5a976425cdd5dd1386b
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601714"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166669"
 ---
 # <a name="bug-check-0xef-critical_process_died"></a>Bug 检查0xEF：严重\_进程\_终止
 
@@ -41,7 +41,7 @@ CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -73,8 +73,6 @@ CRITICAL_PROCESS_DIED bug 检查的值为0x000000EF。 这表明关键系统进�
 在许多情况下，还会在系统错误检查之前创建用户转储。  通常，当用户转储可用时，应该首先检查它的根本原因。 这是因为从内核转储调试用户模式代码有一些限制，包括取出/丢失数据。 有关详细信息，请参阅[用户模式转储文件](user-mode-dump-files.md)。 
 
 请考虑使用事件日志来查看是否存在导致此停止代码的错误。 如果有，则可以使用这些错误来检查要调查的特定服务或其他代码。
-
-如果可以根据需要重现 bug 检查，请考虑使用时间段跟踪来记录导致 bug 检查的事件。 有关详细信息，请参阅[行程调试-概述](time-travel-debugging-overview.md)。
 
 如果有相关代码的信息可用，则在执行此代码之前，请在相关代码中设置一个断点，然后在代码中执行一步操作，以查看用于控制代码流的关键变量的值。  仔细检查代码区域，查找错误假设或其他错误。 
 

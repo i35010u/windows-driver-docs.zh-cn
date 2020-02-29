@@ -3,17 +3,17 @@ title: 更改组件的绑定
 description: 更改组件的绑定
 ms.assetid: 2e59a160-d8d9-4739-a8fa-919760f8eb05
 keywords:
-- 通知对象 WDK 网络绑定的更改
-- 网络通知对象 WDK，绑定的更改
+- 通知对象 WDK 网络，绑定更改
+- 网络通知对象 WDK，绑定更改
 - 绑定更改 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a224e33b0e7742cb6b97d650acc181696170852
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c25c990da302101854b146c60b493f6878643ef8
+ms.sourcegitcommit: 69939496f6d5cb535aad2bd426ab2baa8d7b9051
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382780"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78178060"
 ---
 # <a name="changing-bindings-for-a-component"></a>更改组件的绑定
 
@@ -21,7 +21,7 @@ ms.locfileid: "67382780"
 
 
 
-网络配置子系统始终影响通知对象的网络组件绑定中的更改通知的通知对象。 子系统调用通知对象的[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547731(v=vs.85))方法，并将传递一个值，指定并提供了一个指向**INetCfgBindingPath**绑定路径更改中涉及的接口。 如果子系统通过 NCN\_禁用禁用与特定的网络卡的通知对象的网络组件共享的绑定路径，请使用另一个网卡通知对象激活绑定中的以下代码所示。
+网络配置子系统始终向通知对象通知有关绑定中影响通知对象的网络组件的更改。 子系统调用 notify 对象的[**INetCfgComponentNotifyBinding：： NotifyBindingPath**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547731(v=vs.85))方法并传递一个值，该值指定更改以及指向更改所涉及的绑定路径的**INetCfgBindingPath**接口的指针。 如果子系统通过了 NCN\_DISABLE 禁用通知对象的网络组件与特定网卡共享的绑定路径，则通知对象可以与另一网卡一起激活绑定，如下面的代码所示。
 
 ```C++
 HRESULT CSample::NotifyBindingPath(DWORD dwChangeFlag,
@@ -52,7 +52,7 @@ HRESULT CSample::NotifyBindingPath(DWORD dwChangeFlag,
    hr = penumncbp->Skip(celt); // skip one element
             hr = penumncbp->Next(celt, &pncbp2, NULL);
         } while (SUCCEEDED(hr));
-        if (SUCCEEDED(hr) {
+        if (SUCCEEDED(hr)) {
             // Retrieve enumerator for interfaces of the binding path.
             hr = pncbp2->EnumBindingInterfaces(&penumncbi);
             // Retrieve a binding interface for the binding path.
