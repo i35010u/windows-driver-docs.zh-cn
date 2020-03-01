@@ -1,15 +1,9 @@
-- name: HID 驱动程序
+- name: 人体学接口设备 (HID) 简介
   href: index.md
-- name: HID 中的新增功能
-  href: what-s-new-in-hid.md
-- name: HID 概念简介
-  href: introduction-to-hid-concepts.md
 - name: HID 体系结构
   href: hid-architecture.md
-- name: Windows 中支持的 HID 客户端
-  href: hid-clients-supported-in-windows.md
-- name: Windows 中支持的 HID 传输方式
-  href: hid-transports-supported-in-windows.md
+- name: HID 应用程序编程接口 (API)
+  href: introduction-to-hid-concepts.md
 - name: HID 客户端
   items:
     - name: HID 客户端概述
@@ -110,8 +104,6 @@
           href: power-management.md
         - name: 基于 USB 的 HID 设备的选择性挂起
           href: selective-suspend-for-hid-over-usb-devices.md
-        - name: 基于 USB 的 HID 的资源
-          href: reference-and-additional-details.md
     - name: 基于 I2C 的 HID
       items:
         - name: 基于 I2C 的 HID 简介
@@ -126,8 +118,6 @@
           href: troubleshooting-common-errors.md
         - name: 事件跟踪
           href: event-tracing.md
-        - name: 基于 I2C 的 HID 的资源
-          href: reference-and-additional-details2.md
 - name: 非 HID 旧设备和驱动程序
   items:
     - name: 非 HID 旧设备
