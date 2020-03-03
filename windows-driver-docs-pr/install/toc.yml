@@ -8,7 +8,7 @@
       href: overview-of-device-and-driver-installation.md
     - name: Windows 如何安装设备
       items:
-        - name: 第 1 步：标识新设备
+        - name: 步骤 1：标识新设备
           href: step-1--the-new-device-is-identified.md
         - name: 步骤 2：选择设备的驱动程序
           href: step-2--a-driver-for-the-device-is-selected.md
@@ -36,8 +36,8 @@
       items:
         - name: 驱动程序选择过程概述
           href: overview-of-the-driver-selection-process.md
-        - name: Windows 搜索驱动程序的位置
-          href: where-setup-searches-for-drivers.md
+        - name: Windows 如何为设备选择驱动程序
+          href: how-windows-selects-a-driver-for-a-device.md
     - name: Windows 如何对驱动程序分级
       items:
         - name: Windows 如何对驱动程序分级
@@ -1112,7 +1112,7 @@
       href: elam-driver-requirements.md
     - name: ELAM 驱动程序提交
       href: elam-driver-submission.md
-- name: 参考
+- name: 引用
   items:
     - name: BUS1394_CLASS_GUID
       href: bus1394-class-guid.md
