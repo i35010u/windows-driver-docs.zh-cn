@@ -2,19 +2,19 @@
 title: 检索设备实例的状态和问题代码
 description: 检索设备实例的状态和问题代码
 ms.assetid: 22ca9ac2-fe67-427d-a6e4-f1d9cbbede52
-ms.date: 04/20/2017
+ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 64149e27e36ac13ef09df63b4545069a39f1865f
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.openlocfilehash: 4bf288c1068969048b7da09aadc8998855d7c4a2
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558406"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279450"
 ---
 # <a name="retrieving-the-status-and-problem-code-for-a-device-instance"></a>检索设备实例的状态和问题代码
 
 
-在 Windows Vista 和更高版本的 Windows 中，[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括[设备状态属性和问题代码属性](https://docs.microsoft.com/previous-versions/ff542254(v=vs.85))。 统一设备属性模型使用[属性键](property-keys.md)来表示这些属性。
+在 Windows Vista 和更高版本的 Windows 中，[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)包括设备状态属性和问题代码属性。 统一设备属性模型使用[属性键](property-keys.md)来表示这些属性。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不支持统一属性模型的属性键，也不支持表示这些属性的相应注册表项值。 但是，可以通过调用[**CM_Get_DevNode_Status**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)函数来检索相应的信息。 为了保持与早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持**CM_Get_DevNode_Status**。 但是，你应该使用统一设备属性模型的属性键来访问设备驱动程序属性。
 
@@ -33,6 +33,41 @@ Windows Server 2003、Windows XP 和 Windows 2000 不支持统一属性模型的
 -   将*ulFlags*设置为零。
 
 如果对**CM_Get_DevNode_Status**的调用成功，则**CM_Get_DevNode_Status**会检索设备实例的请求状态和问题代码，并返回 CR_SUCCESS。 如果函数调用失败， **CM_Get_DevNode_Status**将返回一个错误代码，其中包含*Cfgmgr32*中定义的前缀 "CR_"。
+
+## <a name="using-device-manager-to-find-problem-code-and-problem-status-for-a-device"></a>使用设备管理器查找设备的问题代码和问题状态
+
+当 devnode 出现问题时，"**设备状态**" 字段中的 "**常规**" 选项卡上将显示问题代码。
+
+在设备管理器中设备的 "**详细信息**" 选项卡上的**属性**下拉列表中，"**问题状态**" 属性出现。
+
+## <a name="using-the-debugger-to-find-problem-code-and-problem-status-for-a-device"></a>使用调试器查找设备的问题代码和问题状态
+
+若要查看内核调试器中有问题代码的所有设备，请使用[ **！ devnode 0 21**](../debugger/-devnode.md)扩展。 这也会显示设备上的 ProblemStatus。 例如：
+
+```
+0: kd> !devnode 0 21
+Dumping IopRootDeviceNode (= 0x85d37e30)
+DevNode 0x8ad6ab78 for PDO 0x81635c30
+  InstancePath is "ROOT\DIINSTALLDRIVER\0003"
+  ServiceName is "isolated"
+  State = DeviceNodeRemoved (0x312)
+  Previous State = DeviceNodeInitialized (0x302)
+  Problem = CM_PROB_FAILED_ADD
+  Problem Status = 0xc00000bb
+```
+
+你还可以通过发出 [ **！ devnode**] （.。。/debugger/-devnode.md） DEVICE_NODE 地址：
+
+```
+0: kd> !devnode 0x8ad6ab78 
+DevNode 0x8ad6ab78 for PDO 0x81635c30
+  Parent 0x85d37e30   Sibling 0x8adee670   Child 0000000000   
+  ...
+  Problem = CM_PROB_FAILED_ADD
+  Problem Status = 0xc00000bb
+```
+
+你还可以在设备管理器中的运行系统上查看此信息。 有关信息，请参阅[**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)。
 
 ## <a name="see-also"></a>另请参阅
  

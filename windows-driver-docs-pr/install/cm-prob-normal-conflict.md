@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_NORMAL_CONFLICT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a8c7c5e4cb40f08e563d03d5570268c96da4a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8dabe519441bf0a0f77196ea39b249e51284268
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355761"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279511"
 ---
-# <a name="cmprobnormalconflict"></a>CM_PROB_NORMAL_CONFLICT
+# <a name="code-12---cm_prob_normal_conflict"></a>代码 12-CM_PROB_NORMAL_CONFLICT
 
-此函数保留供系统使用。
-
-相同的 I/O 端口、 同一中断端口或同一个 DMA 通道 （不论是通过 BIOS、 操作系统或两者的组合） 分配了两个设备。
+此设备管理器错误消息表明，为两个设备分配了相同的 i/o 端口、相同的中断或相同的 DMA 通道（由 BIOS、操作系统或二者的组合）。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,12 +23,12 @@ ms.locfileid: "63355761"
 
 ### <a name="display-message"></a>显示消息
 
-"此设备找不到可以使用足够可用资源。 （代码 12）
+"此设备找不到足够的可用资源。 （代码12）
 
-"如果您想要使用此设备，你将需要禁用其中一个此系统上的其他设备。"
+"如果要使用此设备，则需要禁用此系统上的另一台设备。"
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-[使用设备管理器](using-device-manager.md)来确定冲突的根源并解决该冲突。 有关如何解决设备冲突的详细信息，请参阅有关如何使用设备管理器的帮助信息。
+[使用设备管理器](using-device-manager.md)确定冲突源并解决冲突。 有关如何解决设备冲突的详细信息，请参阅有关如何使用设备管理器的帮助信息。
 
-如果 BIOS 没有分配到设备的足够资源，也会出现此错误消息。 例如，如果 BIOS 不会由于无效的多处理器规范 (MPS) 表分配到 USB 控制器中断，则将显示此消息。
+如果 BIOS 未将足够的资源分配给设备，也会出现此错误消息。 例如，如果由于多处理器规范（MPS）表无效，BIOS 不将中断分配到 USB 控制器，则会显示此消息。

@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_FAILED_ADD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d09cd976e890454b2b3f895e163542705d1ff523
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef70c5047319d807fb17ad2efc6bc10aa5b2b017
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391486"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279574"
 ---
-# <a name="cmprobfailedadd"></a>CM_PROB_FAILED_ADD
+# <a name="code-31---cm_prob_failed_add"></a>代码 31-CM_PROB_FAILED_ADD
 
-此函数保留供系统使用。
-
-若要添加设备的驱动程序的尝试失败。
+此设备管理器错误消息表明驱动程序尝试添加设备失败。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,7 +23,7 @@ ms.locfileid: "63391486"
 
 ### <a name="display-message"></a>显示消息
 
-"此设备不正常工作由于 Windows 无法加载这个设备所需的驱动程序。 （代码 31）"
+"此设备无法正常工作，因为 Windows 无法加载此设备所需的驱动程序。 （Code 31） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 

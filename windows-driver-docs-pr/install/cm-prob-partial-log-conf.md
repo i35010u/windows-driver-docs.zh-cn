@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_PARTIAL_LOG_CONF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d46655e164f54f415e4ee3fa87b3ac6ba03065
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a78ae518332b258b2ca143bd29ab9e56e0ff4fd2
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360025"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279504"
 ---
-# <a name="cmprobpartiallogconf"></a>CM_PROB_PARTIAL_LOG_CONF
+# <a name="code-16---cm_prob_partial_log_conf"></a>代码 16-CM_PROB_PARTIAL_LOG_CONF
 
-此函数保留供系统使用。
-
-该设备仅部分配置。
+此设备管理器错误消息指示设备只能部分配置。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,24 +23,24 @@ ms.locfileid: "63360025"
 
 ### <a name="display-message"></a>显示消息
 
-"Windows 无法识别此设备使用的所有资源。 （代码 16）"
+"Windows 无法识别该设备使用的所有资源。 （代码16） "
 
-"若要指定此设备的其他资源，单击资源选项卡，填写缺少的设置。 检查硬件文档，以找出要使用哪些设置。"
+"若要指定此设备的其他资源，请单击" 资源 "选项卡，并填写缺少的设置。 请检查硬件文档，找出要使用的设置。
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-手动配置设备需要的资源。
+手动配置设备所需的资源。
 
-若要配置设备资源，请按照下列步骤：
+若要配置设备资源，请执行以下步骤：
 
 1. [打开设备管理器](using-device-manager.md)。
 
-2. 双击表示设备管理器窗口中的设备的图标。
+2. 双击 "设备管理器" 窗口中表示该设备的图标。
 
-3. 在设备属性表中显示，单击**资源**选项卡。中列出了设备资源**资源设置**上列出**资源**页。
+3. 在出现的 "设备属性" 页上，单击 "**资源**" 选项卡。设备资源列在 "**资源**" 页上的 "**资源设置**" 列表中。
 
-4. 如果中的资源**资源设置**列表具有它旁边的问号，选择该资源并将其分配给设备。
+4. 如果 "**资源设置**" 列表中的某个资源旁有一个问号，请选择该资源将其分配给设备。
 
-5. 如果某个资源不能更改，请单击**更改设置**。 如果**更改设置**不可用，请尝试清除**使用自动设置**复选框以使其可用。
+5. 如果资源无法更改，请单击 "**更改设置**"。 如果 "**更改设置**" 不可用，请尝试清除 "**使用自动设置**" 复选框以使其可用。
 
-如果设备不是插设备，查看设备文档了解有关如何配置设备的资源的详细信息。
+如果设备不是即插即用设备，请在设备文档中查看有关如何为设备配置资源的详细信息。

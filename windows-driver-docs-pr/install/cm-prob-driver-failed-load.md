@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_DRIVER_FAILED_LOAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef92d58401433ea83bf25600dd2cbb15e20156f1
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.openlocfilehash: 07297f6ce47c7f3580420bf7cd2bdc7c749cf8f2
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558413"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279582"
 ---
-# <a name="cm_prob_driver_failed_load"></a>CM_PROB_DRIVER_FAILED_LOAD
+# <a name="code-39---cm_prob_driver_failed_load"></a>代码 39-CM_PROB_DRIVER_FAILED_LOAD
 
-此函数保留供系统使用。
-
-无法加载该驱动程序。
+此设备管理器错误消息指示无法加载驱动程序。
 
 ## <a name="error-code"></a>错误代码
 

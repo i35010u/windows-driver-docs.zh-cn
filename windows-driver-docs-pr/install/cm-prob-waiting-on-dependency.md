@@ -4,18 +4,16 @@ description: CM_PROB_WAITING_ON_DEPENDENCY
 ms.assetid: 2f45c507-1926-47f4-aca8-f8b834c58601
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c500f222e940296e6f78fb0f7fd84877421caf78
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d7cc2065e74f7c1521e40e098f7e53a69879537
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375342"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279464"
 ---
-# <a name="cmprobwaitingondependency"></a>CM_PROB_WAITING_ON_DEPENDENCY
+# <a name="code-51---cm_prob_waiting_on_dependency"></a>代码 51-CM_PROB_WAITING_ON_DEPENDENCY
 
-此函数保留供系统使用。
-
-设备未启动，因为它尚未启动的另一台设备上具有依赖项。
+此设备管理器错误消息表明设备没有启动，因为它与另一台尚未启动的设备有依赖关系。
 
 ## <a name="error-code"></a>错误代码
 
@@ -23,10 +21,10 @@ ms.locfileid: "67375342"
 
 ### <a name="display-message"></a>显示消息
 
-"此设备目前正在等待另一个设备或要启动的设备组上。 （代码 51）。"
+"此设备目前正在等待另一个设备或一组设备启动。 （代码51）。 "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-目前没有解决方法，此问题。
+目前不能解决此问题。
 
-若要帮助诊断问题，请查看其他失败中的设备[设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)可能依赖于此设备。 如果可以确定相关的另一台设备未启动，您可能能够解决此问题。
+若要帮助诊断此问题，请检查[设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)中此设备可能依赖的其他故障设备。 如果可以确定另一个相关设备无法启动的原因，您可能能够解决此问题。

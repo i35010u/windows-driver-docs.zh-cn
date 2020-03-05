@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_DISABLED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ac1edde161e501ac48c4ebaae6fb448180a736
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 110301345716c6f81cdc507dadc6a6707438d488
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353049"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279586"
 ---
-# <a name="cmprobdisabled"></a>CM_PROB_DISABLED
+# <a name="code-22---cm_prob_disabled"></a>代码 22-CM_PROB_DISABLED
 
-此函数保留供系统使用。
-
-设备已被禁用。
+此设备管理器错误消息指示设备已禁用。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,8 +23,8 @@ ms.locfileid: "63353049"
 
 ### <a name="display-message"></a>显示消息
 
-"禁用此设备。 （代码 22）"
+"此设备已禁用。 （代码22） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-设备已被禁用，因为它使用设备管理器禁用该用户。 选择**启用设备**，这将使该设备。
+设备被禁用，因为用户使用设备管理器禁用了它。 选择 "**启用**设备"，这将启用设备。

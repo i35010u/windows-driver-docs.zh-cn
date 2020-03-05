@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_INVALID_DATA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbefda54530708b0de74dec987b668e723ede186
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33150808fdc76d6ac8bc78a171708bc6a9f88727
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355764"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279543"
 ---
-# <a name="cmprobinvaliddata"></a>CM_PROB_INVALID_DATA
+# <a name="code-9---cm_prob_invalid_data"></a>代码 9-CM_PROB_INVALID_DATA
 
-此函数保留供系统使用。
-
-无效[设备 Id](device-ids.md)已检测到。
+此设备管理器错误消息指示检测到无效的[设备 id](device-ids.md) 。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,10 +23,10 @@ ms.locfileid: "63355764"
 
 ### <a name="display-message"></a>显示消息
 
-"Windows 无法识别此硬件原因它不具有一个有效的硬件的标识号。 （代码 9）"
+"Windows 无法识别此硬件，因为它没有有效的硬件标识号。 （代码9） "
 
-"以获得帮助，请与硬件制造商联系。"
+若要获得帮助，请与硬件制造商联系。
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-请联系硬件供应商。 硬件或驱动程序有问题。
+请与硬件供应商联系。 硬件或驱动程序有问题。

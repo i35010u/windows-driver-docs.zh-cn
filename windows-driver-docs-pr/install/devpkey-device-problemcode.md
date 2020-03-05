@@ -13,13 +13,13 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.date: 10/17/2018
-ms.openlocfilehash: 48960b5f4b99c9c836554cdd139f8dd9fa78a7cb
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.date: 02/28/2020
+ms.openlocfilehash: 83230d0ab8bf01d6d16b23c0c7e16972946f5514
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558422"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279448"
 ---
 # <a name="devpkey_device_problemcode"></a>DEVPKEY_Device_ProblemCode
 
@@ -61,6 +61,8 @@ DEVPKEY_Device_ProblemCode 的值是在 Cfg 中定义的 CM_PROB_*Xxx*的问题�
 可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_ProblemCode 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不直接支持此属性。 有关如何访问这些早期版本的 Windows 上的设备实例的问题代码的信息，请参阅[检索设备实例的状态和问题代码](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-the-status-and-problem-code-for-a-device-instance)。
+
+有关查找设备管理器或内核调试器中的问题状态的信息，请参阅[检索设备实例的状态和问题代码](retrieving-the-status-and-problem-code-for-a-device-instance.md)。
 
 有关可帮助解决问题的其他信息，请参阅[**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)。
 

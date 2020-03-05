@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_BIOS_TABLE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f67b6b3f3b1d755147d4188465e03ea5ed6b96c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbfa17d1ea91dd5a01ffc3634f1670f1b299a16d
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353051"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279594"
 ---
-# <a name="cmprobbiostable"></a>CM_PROB_BIOS_TABLE
+# <a name="code-35---cm_prob_bios_table"></a>代码 35-CM_PROB_BIOS_TABLE
 
-此函数保留供系统使用。
-
-MP 表已损坏，并需要更新。
+此设备管理器错误消息指示 MPS 表错误，必须更新。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,7 +23,7 @@ MP 表已损坏，并需要更新。
 
 ### <a name="display-message"></a>显示消息
 
-"您的计算机系统固件没有足够的信息来正确配置并使用此设备。 若要使用此设备，请联系计算机制造商联系以获取固件或 BIOS 更新。 （代码 35）"
+"您的计算机的系统固件没有提供足够的信息来正确配置和使用此设备。 要使用这个设备，请与计算机制造商联系，获取一个固件或 BIOS 更新。 （代码35） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 

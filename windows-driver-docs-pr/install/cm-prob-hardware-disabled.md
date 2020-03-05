@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_HARDWARE_DISABLED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de3d218a12af0edeb13733319c8a9a4c5e957476
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc84f3cae4159976e3d4ba8d8813ba15bfa33401
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360331"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279549"
 ---
-# <a name="cmprobhardwaredisabled"></a>CM_PROB_HARDWARE_DISABLED
+# <a name="code-29---cm_prob_hardware_disabled"></a>代码 29-CM_PROB_HARDWARE_DISABLED
 
-此函数保留供系统使用。
-
-设备已被禁用。
+此设备管理器错误消息指示设备已禁用。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,8 +23,8 @@ ms.locfileid: "63360331"
 
 ### <a name="display-message"></a>显示消息
 
-"因为设备的固件没有提供所需的资源，此设备已被禁用。 （代码 29）"
+"此设备已被禁用，因为设备的固件没有为它提供所需的资源。 （代码29） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-启用在 BIOS 中的该设备。
+在 BIOS 中启用设备。

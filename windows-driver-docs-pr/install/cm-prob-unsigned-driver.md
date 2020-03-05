@@ -4,18 +4,16 @@ description: CM_PROB_UNSIGNED_DRIVER
 ms.assetid: 91d37d25-ca0d-413f-9e6f-5a22a0406714
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85a895d80e88c10f175a080bf5c160fb0570896a
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.openlocfilehash: 6fec56daa34610b85deff3d54ee36bebc7da20b2
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558411"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279466"
 ---
-# <a name="cm_prob_unsigned_driver"></a>CM_PROB_UNSIGNED_DRIVER
+# <a name="code-52---cm_prob_unsigned_driver"></a>代码 52-CM_PROB_UNSIGNED_DRIVER
 
-此函数保留供系统使用。
-
-设备没有在64位版本的 Windows 上启动，因为它的驱动程序未进行数字签名。 有关如何对驱动程序进行签名的详细信息，请参阅[驱动程序签名](driver-signing.md)。
+此设备管理器错误消息表明设备没有在64位版本的 Windows 上启动，因为它的驱动程序未进行数字签名。 有关如何对驱动程序进行签名的详细信息，请参阅[驱动程序签名](driver-signing.md)。
 
 ## <a name="error"></a>错误
 

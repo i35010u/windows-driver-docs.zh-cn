@@ -7,14 +7,14 @@ keywords:
 - 错误 WDK 设备管理器
 - 黄色感叹号 WDK 设备管理器
 - 消息 WDK 设备管理器
-ms.date: 04/20/2017
+ms.date: 03/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 51dd91b56b33018ec93fac25f56e3582bf3154be
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.openlocfilehash: 64860e5c5c0c53c8d723be5738243b61ab92df18
+ms.sourcegitcommit: 1c9663adcbcb23167c5f2a10b36963e5d5c25c99
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558409"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289778"
 ---
 # <a name="device-manager-error-messages"></a>设备管理器错误消息
 
@@ -192,6 +192,18 @@ ms.locfileid: "77558409"
 <tr class="even">
 <td align="left"><p>代码54</p></td>
 <td align="left"><p><a href="cm-prob-device-reset.md" data-raw-source="[CM_PROB_DEVICE_RESET](cm-prob-device-reset.md)">CM_PROB_DEVICE_RESET</a></p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>代码55</p></td>
+<td align="left"><p><a href="cm-prob-console-locked.md" data-raw-source="[CM_PROB_CONSOLE_LOCKED](cm-prob-console-locked.md)">CM_PROB_CONSOLE_LOCKED</a></p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>代码56</p></td>
+<td align="left"><p><a href="cm-prob-need-class-config.md" data-raw-source="[CM_PROB_NEED_CLASS_CONFIG](cm-prob-need-class-config.md)">CM_PROB_NEED_CLASS_CONFIG</a></p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>代码57</p></td>
+<td align="left"><p><a href="cm-prob-guest-assignment-failed.md" data-raw-source="[CM_PROB_GUEST_ASSIGNMENT_FAILED](cm-prob-guest-assignment-failed.md)">CM_PROB_GUEST_ASSIGNMENT_FAILED</a></p></td>
 </tr>
 </tbody>
 </table>

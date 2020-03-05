@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_HALTED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d25b3a467220ec416c7e006d77d86df7aea920ae
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f6976683e20214e74c1e7958ea09f46d7cee79d4
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56522697"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279562"
 ---
-# <a name="cmprobhalted"></a>CM_PROB_HALTED
+# <a name="code-44---cm_prob_halted"></a>代码 44-CM_PROB_HALTED
 
-此函数保留供系统使用。
-
-设备已停止。
+此设备管理器错误消息表示设备已停止。
 
 ## <a name="error-code"></a>错误代码
 
@@ -25,8 +23,8 @@ ms.locfileid: "56522697"
 
 ### <a name="display-message"></a>显示消息
 
-"应用程序或服务已关闭这个硬件设备。 （代码 44）"
+"应用程序或服务已关闭此硬件设备。 （代码44） "
 
 ### <a name="recommended-resolution"></a>建议的解决方法
 
-必须重新启动计算机。
+您必须重新启动计算机。
