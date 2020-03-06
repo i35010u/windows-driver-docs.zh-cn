@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa573aff7307e8a2a81917fa2d4e68b0f3c85d01
-ms.sourcegitcommit: 4184cb3bb6737762b2768cd8b9b2233297fc64cc
+ms.openlocfilehash: fcf71a3bf01640c99fadd035e5ea41b6ea3ade91
+ms.sourcegitcommit: e5c36bcb678ca42ac30e89408c139f2ba0207549
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74820387"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78180971"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -21,7 +21,7 @@ ms.locfileid: "74820387"
 > - 证明签名支持 Windows 10 桌面版内核模式和用户模式驱动程序。 尽管用户模式驱动程序无需由适用于 Windows 10 的 Microsoft 进行签名，但相同的证明过程可以同时用于用户和内核模式驱动程序。
 > - 证明签名不会返回 **ELAM** 的正确 PE 级别或 **Windows Hello** PE 二进制文件。  它们必须经过测试，并且以 .hlkx 包的形式提交，以便接收额外的签名属性。
 > - 证明签名需要使用 EV 证书，才能将驱动程序提交到合作伙伴中心。
-> - **已进行证明签名的驱动程序适用于 Windows 10 和 Windows Server 2016 及更高版本。它不适用于早期版本的 Windows，例如 Windows 8.1 和 Windows 7。**
+> - **已进行证明签名的驱动程序适用于 Windows 10。它不适用于早期版本的 Windows（例如 Windows 8.1 和 Windows 7），并且不受 Windows Server 2016 及更高版本支持。有关支持策略的详细信息，请参阅[使用 Windows 中的证明过程签署的第三方内核级软件的支持策略](https://support.microsoft.com/help/4519013/support-policy-3rd-party-kernel-level-attestation-signed-software)** 。
 > - 证明签名要求驱动程序文件夹名称不包含特殊字符、不包含 UNC 文件共享路径，并且长度小于 40 个字符。
 
 ## <a name="attestation-signing-a-kernel-mode-driver"></a>对内核模式驱动程序进行证明签名
