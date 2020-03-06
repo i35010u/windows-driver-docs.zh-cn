@@ -16,11 +16,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 106603e3ad46679553896d7b3a9b6c8a65c3985c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843086"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402478"
 ---
 # <a name="using-framework-locks"></a>使用框架锁
 
@@ -33,9 +33,9 @@ ms.locfileid: "72843086"
 
 与框架设备对象和队列对象相关联的这些*回拨同步锁*也可由驱动程序获取。 若要获取同步锁，驱动程序将调用[**WdfObjectAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff548721)。 若要释放锁，驱动程序将调用[**WdfObjectReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff548765)。
 
-如果驱动程序使用框架的设备级别或队列级别的 i/o 请求相关回调函数的同步，但必须同步某些在 IRQL = 被动的代码，则您可能希望您的驱动程序使用回调同步锁\_具有在 IRQL = 调度\_级别上运行的回调函数的级别。 这是因为，驱动程序只能对以相同的 IRQL 执行的回调函数使用自动同步。
+如果驱动程序使用框架的设备级别或队列级别的 i/o 请求相关回调函数的同步，但必须将在 IRQL = 被动\_级别运行的代码与以 IRQL = 调度\_级别运行的回调函数同步，则你可能希望你的驱动程序使用回调同步锁定。 这是因为，驱动程序只能对以相同的 IRQL 执行的回调函数使用自动同步。
 
-例如，仅当工作项对象的父对象的执行级别为**WdfExecutionLevelPassive** （因为工作项的回调函数始终以 IRQL = 被动\_执行级别时，驱动程序才能对工作项对象使用自动同步。级别）。 因此，如果驱动程序在设备对象的[**WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的**ExecutionLevel**成员中指定了**WdfExecutionLevelDispatch** ，则驱动程序将无法设置**AutomaticSerialization**子工作项对象的配置结构的成员。 相反，驱动程序必须获取回调同步锁，才能将[*EvtWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)回调函数与父设备对象的回调函数同步。
+例如，仅当工作项对象父对象的执行级别为**WdfExecutionLevelPassive** （因为工作项的回调函数始终以 IRQL = 被动\_级别执行）时，驱动程序才能对工作项对象使用自动同步。 因此，如果驱动程序在设备对象的[**WDF\_对象\_属性**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/ns-wdfobject-_wdf_object_attributes)结构的**ExecutionLevel**成员中指定**WdfExecutionLevelDispatch** ，则驱动程序无法设置子工作项对象的配置结构的**AutomaticSerialization**成员。 相反，驱动程序必须获取回调同步锁，才能将[*EvtWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfworkitem/nc-wdfworkitem-evt_wdf_workitem)回调函数与父设备对象的回调函数同步。
 
 ### <a name="framework-wait-locks"></a>Framework 等待锁
 
