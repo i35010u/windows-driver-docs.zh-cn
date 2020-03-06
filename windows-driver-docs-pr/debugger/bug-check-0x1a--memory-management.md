@@ -12,13 +12,13 @@ api_name:
 - MEMORY_MANAGEMENT
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 32f77bc9713f16345c07aa4b1fc9880b537caf10
-ms.sourcegitcommit: bf18e0a9c16784ebb45b5e0a567f16721b5f1c8d
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 7d9ad86f32d620e87b940a7ed5c7a8c1895a70f4
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036776"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402350"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>Bug 检查0x1A：内存\_管理
 

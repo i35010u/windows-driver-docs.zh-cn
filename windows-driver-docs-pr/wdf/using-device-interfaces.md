@@ -9,12 +9,12 @@ keywords:
 - 设备接口类 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1187deb89c8e665b4a44e67dbb184589b5784419
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 52be0ab0cbe32adec5d3407c1173dd642c1de9b1
+ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843090"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78335957"
 ---
 # <a name="using-device-interfaces"></a>使用设备接口
 
@@ -36,7 +36,7 @@ ms.locfileid: "72843090"
 
 ### <a name="enabling-and-disabling-a-device-interface"></a>启用和禁用设备接口
 
-驱动程序调用[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)后，当设备进入工作状态并在设备离开其工作状态时禁用接口时，框架会自动启用设备的所有接口。 如果驱动程序在调用**WdfDeviceCreateDeviceInterface**时指定了物理设备对象（PDO），则如果重新启用了禁用的设备，框架将重新启用设备的接口。
+驱动程序调用[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)后，当设备通过 pnp 枚举时，框架会自动启用所有设备接口，并在设备执行 pnp 删除时禁用接口。 如果驱动程序在调用**WdfDeviceCreateDeviceInterface**时指定了物理设备对象（PDO），则如果重新启用了禁用的设备，框架将重新启用设备的接口。
 
 如果需要，驱动程序可以禁用并重新启用设备接口。 例如，如果驱动程序确定其设备已停止响应，则驱动程序可以调用[**WdfDeviceSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestate)来禁用设备的接口，并禁止应用程序获取接口的新句柄。 （接口的现有句柄不受影响。）如果该设备稍后变为可用，驱动程序可以再次调用**WdfDeviceSetDeviceInterfaceState**来重新启用接口。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72843090"
 
 ### <a name="accessing-another-drivers-device-interface"></a>访问另一个驱动程序的设备接口
 
-本部分说明如何使用内核模式驱动程序框架（KMDF）驱动程序或用户模式驱动程序框架（UMDF）版本2驱动程序注册接收或删除其他驱动程序提供的设备接口的通知，然后创建[远程 i/o 目标](general-i-o-targets-in-umdf.md)与设备接口所表示的设备通信。
+本部分说明如何使用内核模式驱动程序框架（KMDF）驱动程序或用户模式驱动程序框架（UMDF）版本2驱动程序来注册到达或删除另一驱动程序提供的设备接口的通知，然后创建[远程 i/o 目标](general-i-o-targets-in-umdf.md)以与设备接口所表示的设备进行通信。
 
 有关如何在 UMDF 版本1驱动程序中执行此操作的信息，请参阅在[Umdf 驱动程序中使用设备接口](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)。
 

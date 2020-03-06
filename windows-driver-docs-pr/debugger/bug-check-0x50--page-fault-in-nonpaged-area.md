@@ -12,13 +12,13 @@ api_name:
 - PAGE_FAULT_IN_NONPAGED_AREA
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 035f96ee192e9f654c4e07e4e554402f99e1c1b6
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: c161f61dd3a5b08aa69dcfa8edb170eb31612dae
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606449"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402345"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查0x50：\_\_非分页\_区域中的页\_错误
 
@@ -40,7 +40,7 @@ ms.locfileid: "75606449"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

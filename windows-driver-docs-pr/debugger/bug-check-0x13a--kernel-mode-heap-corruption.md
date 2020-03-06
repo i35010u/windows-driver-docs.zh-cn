@@ -12,13 +12,13 @@ api_name:
 - KERNEL_MODE_HEAP_CORRUPTION
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 3caa531cff5cb06c24b2a98960df3ad8e93bab2d
-ms.sourcegitcommit: e018ef208a38bc871b25d9fb72c2501fe4a5f965
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 986f5e5684c586579ca6766c8b114eae58affac0
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77476332"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402351"
 ---
 # <a name="bug-check-0x13a-kernel_mode_heap_corruption"></a>Bug 检查0x13A：内核\_模式\_堆\_损坏
 

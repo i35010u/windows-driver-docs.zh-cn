@@ -12,23 +12,23 @@ api_name:
 - SYSTEM_SERVICE_EXCEPTION
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 9f92b529d19650ff18e9faff211131bfbd86eee4
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 8180a3a7470771ccdb5204580f380267ada803db
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359582"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402347"
 ---
-# <a name="bug-check-0x3b-system_service_exception"></a>Bug 检查0x3B： SYSTEM \_SERVICE \_EXCEPTION
+# <a name="bug-check-0x3b-system_service_exception"></a>Bug 检查0x3B： SYSTEM\_服务\_异常
 
-系统 \_SERVICE \_EXCEPTION bug 检查的值为0x0000003B。 这表示执行从非特权代码转换为特权代码的例程时发生了异常。
+系统\_服务\_异常 bug 检查的值为0x0000003B。 这表示执行从非特权代码转换为特权代码的例程时发生了异常。
 
 > [!IMPORTANT]
 > 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="system_service_exception-parameters"></a>系统 \_SERVICE \_EXCEPTION 参数
+## <a name="system_service_exception-parameters"></a>系统\_服务\_异常参数
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ ms.locfileid: "72359582"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -71,11 +71,11 @@ ms.locfileid: "72359582"
 
 常见的异常代码包括：
 
-- 0x80000003：状态 \_BREAKPOINT
+- 0x80000003：状态\_断点
 
     当没有内核调试器附加到系统时遇到断点或断言。
 
-- 0xC0000005：状态 \_ACCESS \_VIOLATION
+- 0xC0000005：状态\_访问\_冲突
 
     发生了内存访问冲突。 （Bug 检查的参数4是驱动程序尝试访问的地址。）
 
@@ -106,7 +106,7 @@ Arg4: 0000000000000000, zero.
 
 ### <a name="identify-the-driver"></a>确定驱动程序
 
-如果可以识别负责错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的位置（PUNICODE \_STRING） **KiBugCheckDriver**。 可以使用[ **dx** （显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)和调试器命令来显示此内容： `dx KiBugCheckDriver`。
+如果可以识别负责错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的位置（PUNICODE\_STRING） **KiBugCheckDriver**。 可以使用[ **dx** （显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)和调试器命令来显示此内容： `dx KiBugCheckDriver`。
 
 使用[ **！ error**](-error.md)扩展显示有关参数1中的异常代码的信息。 下面是来自 **！ error**的输出示例。
 

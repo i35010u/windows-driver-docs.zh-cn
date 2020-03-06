@@ -1,16 +1,16 @@
 ---
 title: Bug 检查（蓝屏）
-description: 本主题介绍了 bug 检查 （蓝屏）
+description: 本主题介绍 bug 检查（蓝屏）
 ms.assetid: 6ACE4AD9-5318-4c96-A560-D247033CB500
-keywords: 错误检查、 蓝屏，内核错误、 停止错误停止的代码
+keywords: bug 检查，蓝屏，内核错误，停止错误，停止代码
 ms.date: 05/23/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: bfbddf11fe8582003018f176482577f31ee9fc53
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: fc65ad7f26f895d449f61853c304b124d39d04a3
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374471"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402393"
 ---
 # <a name="bug-checks-blue-screens"></a>Bug 检查（蓝屏）
 
@@ -22,11 +22,11 @@ ms.locfileid: "63374471"
 
 [蓝屏的一般提示](general-troubleshooting-tips.md)
 
-[蓝色屏幕数据](blue-screen-data.md)
+[蓝屏数据](blue-screen-data.md)
 
-[Bug 检查代码参考](bug-check-code-reference2.md)
+[Bug 检查代码引用](bug-check-code-reference2.md)
 
-**请注意**  这些主题适用于程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://go.microsoft.com/fwlink/p/?linkid=183646)。
+**请注意**  这些主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://go.microsoft.com/fwlink/p/?linkid=183646)。
 
  
 
