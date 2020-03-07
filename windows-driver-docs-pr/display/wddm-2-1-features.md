@@ -5,11 +5,11 @@ ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c579c6bfc9a3ded30a9212a828827b26adb3ef0
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74862972"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402479"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 功能
 
@@ -22,13 +22,13 @@ WDDM 2.1 本身是可选的。 如果实现，则它是必需的和可选的驱�
 
 | 功能 | 适用性 |
 | --- | --- |
-| 提供和回收改进 | Mandatory |
+| 提供和回收改进 | 强制 |
 | 视频内存管理 | 可选 |
 | 硬件保护的内容可靠性改进 | 选择硬件 |
-| Windows GameDVR 的应用程序支持 | Mandatory |
+| Windows GameDVR 的应用程序支持 | 强制 |
 | 间接显示 | 选择硬件 |
-| 驱动程序存储区和并行安装 | Mandatory |
-| 照相机/捕获方案的 DirectX 内存表面共享 | Mandatory|
+| 驱动程序存储区和并行安装 | 强制 |
+| 照相机/捕获方案的 DirectX 内存表面共享 | 强制|
 
 WDDM 2.1 支持以下 D3D 版本： D3D9、D3D10、D3D 10.1、D3D11、D3D11、D3D12
 
@@ -170,7 +170,7 @@ KMD 中的 DDI 接口版本如下所示：
 
 ## <a name="graphics-inf-requirements"></a>图形 INF 要求
 
-与 WDDM 2.0 或以前的驱动程序相比，WDDM 2.1 图形驱动程序的 INF 要求不同。 它们是：
+与 WDDM 2.0 或以前的驱动程序相比，WDDM 2.1 图形驱动程序的 INF 要求不同。 这些位置包括：
 
 1. WDDM 2.1 必须具有与 WDDM 2.0 图形驱动程序（D1）相同的功能分数。
 
@@ -342,6 +342,6 @@ D3D9 DDI|14
     * FL_12_1 硬件可以使用20.20.0000.0000 来21.20.65535.65535
 
 
-#### <a name="enforcement"></a>强制性
+#### <a name="enforcement"></a>强制
 
 适用于 Windows 10 10586 版本的 HLK 认证播放列表中的必需测试将强制实施上述规则。 对于较旧的操作系统版本，测试将是可选的。 对于 Windows 10 版本后10586，WDDM 版本已更新为2.1。 另一种查看方法是强制要求仅适用于为 WDDM 2.1 或更高版本生成的驱动程序。
