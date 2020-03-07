@@ -6,11 +6,11 @@ keywords: 调试，调试，Windbg，托管代码调试，.NET 公共语言运�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64b25e9c0822a8f5e4350d9dc844bafcb0541c65
-ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76910349"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402319"
 ---
 # <a name="debugging-managed-code-using-the-windows-debugger"></a>使用 Windows 调试器调试托管代码
 
@@ -36,8 +36,8 @@ Windows 调试器独立于 Visual Studio 调试器。 有关 Windows 调试器�
 | 2.0                    | 2.0         | mscorwks.dll |
 | 3.0                    | 2.0         | mscorwks.dll |
 | 3.5                    | 2.0         | mscorwks.dll |
-| 4.0                    | 4.0         | clr .dll      |
-| 4.5                    | 4.0         | clr .dll      |
+| 4.0                    | 4.0         | clr.dll      |
+| 4.5                    | 4.0         | clr.dll      |
 
  
 
