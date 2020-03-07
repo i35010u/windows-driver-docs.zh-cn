@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e7946f9ddb7a2342aca791c6b7b8ea151b6b827
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843174"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402419"
 ---
 # <a name="framework-file-objects"></a>框架文件对象
 
