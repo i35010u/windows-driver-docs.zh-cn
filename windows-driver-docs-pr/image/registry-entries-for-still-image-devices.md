@@ -5,11 +5,11 @@ ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6534f3acdd55c0f4d7fa029b4367bb3344ce6f4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840757"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402534"
 ---
 # <a name="registry-entries-for-still-image-devices"></a>静态图像设备的注册表项
 
@@ -33,7 +33,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 <tr class="header">
 <th>Constant</th>
 <th>值名称字符串</th>
-<th>定义</th>
+<th>Definition</th>
 </tr>
 </thead>
 <tbody>
@@ -45,12 +45,12 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_ISIS_NAME</p></td>
 <td><p>"ISISDriverName"</p></td>
-<td><p>包含设备 ISIS 驱动程序名称（如 "pxn"）的 REG_SZ 类型。</p></td>
+<td><p>REG_SZ 类型，包含设备的 ISIS 驱动程序名称，例如 "pxn"。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STI_DEVICE_VALUE_TIMEOUT</p></td>
 <td><p>"PollTimeout"</p></td>
-<td><p>一个 REG_DWORD 类型，表示轮询设备时应使用的超时值（以毫秒为单位）。 默认值为1000（1秒）。</p></td>
+<td><p>REG_DWORD 类型，表示轮询设备时应使用的超时值（以毫秒为单位）。 默认值为 1000（1 秒）。</p></td>
 </tr>
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_TWAIN_NAME</p></td>
@@ -82,7 +82,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 <thead>
 <tr class="header">
 <th>注册表项</th>
-<th>定义</th>
+<th>Definition</th>
 </tr>
 </thead>
 <tbody>
