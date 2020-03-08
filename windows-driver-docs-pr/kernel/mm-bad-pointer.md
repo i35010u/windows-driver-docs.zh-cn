@@ -4,12 +4,12 @@ description: Windows 内核宏
 ms.assetid: 91366400-3307-4F13-A839-50BA85B7F73E
 ms.localizationpriority: High
 ms.date: 10/17/2018
-ms.openlocfilehash: 0f94bf92abf3fbc300ce0cf0362b5b9d47743503
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
-ms.translationtype: HT
+ms.openlocfilehash: a7538f85f3a9593840c51abef02c4023904ffaf8
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74261438"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402536"
 ---
 # <a name="windows-kernel-macros"></a>Windows 内核宏
 
@@ -19,7 +19,7 @@ ms.locfileid: "74261438"
 
 ## <a name="address_and_size_to_span_pages"></a>**ADDRESS_AND_SIZE_TO_SPAN_PAGES**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **ADDRESS_AND_SIZE_TO_SPAN_PAGES** 宏返回按虚拟地址以及传输请求的大小（以字节为单位）定义的虚拟范围所跨越的页面数。
 
@@ -52,7 +52,7 @@ _Size [in]_
 
 ## <a name="byte_offset"></a>**BYTE_OFFSET**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **BYTE_OFFSET** 宏获取虚拟地址，并返回该地址在页面中的字节偏移量。
 
@@ -75,7 +75,7 @@ IRQL：任何级别
 
 ## <a name="bytes_to_pages"></a>**BYTES_TO_PAGES**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **BYTES_TO_PAGES** 宏获取传输请求的大小（以字节为单位），并计算包含这些字节所需的页面数。
 
@@ -100,7 +100,7 @@ IRQL：任何级别
 
 ## <a name="containing_record"></a>**CONTAINING_RECORD**
 
-定义位置：Ntdef.h
+定义： Ntdef
 
 **CONTAINING_RECORD** 宏返回某个结构的某个实例的基址，并提供该结构的类型，以及某个字段在包含结构中的地址。
 
@@ -137,7 +137,7 @@ IRQL：任何级别
 
 ## <a name="ioskipcurrentirpstacklocation"></a>**IoSkipCurrentIrpStackLocation**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 \n**IoSkipCurrentIrpStackLocation** 宏修改系统的 [**IO_STACK_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location) 数组指针，以便在当前驱动程序调用下一个较低级别的驱动程序时，被调用的驱动程序会收到当前驱动程序所收到的相同 **IO_STACK_LOCATION** 结构。
 
@@ -151,7 +151,7 @@ _Irp [in, out]_
 
 **VOID**
 
-当你的驱动程序向下一个较低级别的驱动程序发送 IRP 时，如果你不打算提供 [_IoCompletion_](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程（存储在驱动程序的 [**IO_STACK_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location) 结构中的地址），则你的驱动程序可以调用 **IoSkipCurrentIrpStackLocation**。 如果在调用 [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 之前先调用 **IoSkipCurrentIrpStackLocation**，则下一个较低级别的驱动程序会收到你的驱动程序所收到的相同 **IO_STACK_LOCATION**。
+当你的驱动程序向下一个较低级别的驱动程序发送 IRP 时，如果你不打算提供IoCompletion[_例程（存储在驱动程序的_](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)IO_STACK_LOCATION[**结构中的地址），则你的驱动程序可以调用**IoSkipCurrentIrpStackLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)。 如果在调用IoCallDriver[**之前先调用**IoSkipCurrentIrpStackLocation](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)，则下一个较低级别的驱动程序会收到你的驱动程序所收到的相同 **IO_STACK_LOCATION**。
 
 如果你打算为 IRP 提供 _IoCompletion_ 例程，则你的驱动程序应调用 [**IoCopyCurrentIrpStackLocationToNext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocopycurrentirpstacklocationtonext) 而不是 **IoSkipCurrentIrpStackLocation**。 如果错误编写的驱动程序在调用 **IoSkipCurrentIrpStackLocation** 时出错，然后设置完成例程，则此驱动程序可能会覆盖其下级驱动程序设置的完成例程。
 
@@ -168,7 +168,7 @@ IRQL：任何级别
 
 ## <a name="keinitializecallbackrecord"></a>**KeInitializeCallbackRecord**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **KeInitializeCallbackRecord** 宏初始化 [**KBUGCHECK_CALLBACK_RECORD**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess) 或 [**KBUGCHECK_REASON_CALLBACK_RECORD**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess) 结构。
 
@@ -189,7 +189,7 @@ IRQL：任何级别
 
 ## <a name="mm_bad_pointer"></a>**MM_BAD_POINTER**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 驱动程序可以使用 **MM_BAD_POINTER** 宏作为要分配给未初始化或不再有效的指针变量的错误指针值。 尝试访问此无效指针变量指向的内存位置将导致 bug 检查。
 
@@ -216,7 +216,7 @@ IRQL：任何级别
 
 ## <a name="mmgetmdlbytecount"></a>**MmGetMdlByteCount**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmGetMdlByteCount** 宏返回指定 MDL 描述的缓冲区的长度（以字节为单位）。
 
@@ -230,7 +230,7 @@ _Mdl [in]_
 
 **ULONG**
 
-## <a name="mmgetmdlbytecount-returns-the-length-in-bytes-of-the-buffer-described-by-_mdl_"></a>**MmGetMdlByteCount** 返回 _Mdl_ 描述的缓冲区的长度（以字节为单位）。
+**MmGetMdlByteCount** 返回 _Mdl_ 描述的缓冲区的长度（以字节为单位）。
 
 **MmGetMdlByteCount** 的调用方可在任何 IRQL 上运行。 通常，调用方在 <= DISPATCH_LEVEL 的 IRQL 上运行。
 
@@ -241,7 +241,7 @@ IRQL：任何级别
 
 ## <a name="mmgetmdlbyteoffset"></a>**MmGetMdlByteOffset**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmGetMdlByteOffset** 宏返回给定 MDL 描述的缓冲区的初始页面中的字节偏移量。
 
@@ -255,7 +255,7 @@ _Mdl [in]_
 
 **ULONG**
 
-## <a name="mmgetmdlbyteoffset-returns-the-offset-in-bytes"></a>**MmGetMdlByteOffset** 返回偏移量（以字节为单位）。
+**MmGetMdlByteOffset** 返回偏移量（以字节为单位）。
 
 **MmGetMdlByteOffset** 的调用方可在任何 IRQL 上运行。 通常，调用方在 <= DISPATCH_LEVEL 的 IRQL 上运行。
 
@@ -266,7 +266,7 @@ IRQL：任何级别
 
 ## <a name="mmgetmdlpfnarray"></a>**MmGetMdlPfnArray**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmGetMdlPfnArray** 宏返回指向与内存描述符列表 (MDL) 关联的物理页面编号数组开头位置的指针。
 
@@ -280,7 +280,7 @@ _Mdl [in]_
 
 **PPFN_NUMBER**
 
-指向与 MDL 关联的物理页面编号数组开头位置的指针。 数组中的项数为 **ADDRESS_AND_SIZE_TO_SPAN_PAGES**(**MmGetMdlVirtualAddress**(_Mdl_), **MmGetMdlByteCount**(_Mdl_))。 每个数组元素是 PFN_NUMBER 类型的整数值，其定义位置为：Wdm.h，如下所示：
+指向与 MDL 关联的物理页面编号数组开头位置的指针。 数组中的项数为 **ADDRESS_AND_SIZE_TO_SPAN_PAGES**(**MmGetMdlVirtualAddress**(_Mdl_), **MmGetMdlByteCount**(_Mdl_))。 每个数组元素都是类型 PFN_NUMBER 的整数值，该整数值在中定义，如下所示：
 
 `cpp typedef ULONG PFN_NUMBER, *PPFN_NUMBER;`
 
@@ -297,7 +297,7 @@ IRQL：任何级别
 
 ## <a name="mmgetmdlvirtualaddress"></a>**MmGetMdlVirtualAddress**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmGetMdlVirtualAddress** 宏返回 MDL 描述的缓冲区的基本虚拟地址。
 
@@ -311,13 +311,13 @@ _Mdl [in]_
 
 **PVOID**
 
-## <a name="mmgetmdlvirtualaddress-returns-the-starting-virtual-address-of-the-mdl"></a>**MmGetMdlVirtualAddress** 返回 MDL 的起始虚拟地址。
+**MmGetMdlVirtualAddress** 返回 MDL 的起始虚拟地址。
 
 **MmGetMdlVirtualAddress** 返回在当前线程上下文中不一定有效的虚拟地址。 较低级别的驱动程序不应尝试使用返回的虚拟地址来访问内存，尤其是在用户内存空间中。
 
 可将用作 MDL 中物理地址项的索引的返回地址输入到 [**MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer) 中。
 
-**MmGetMdlVirtualAddress** 的调用方可在任何 IRQL 上运行。 通常，调用方在 = DISPATCH_LEVEL 的 IRQL 上运行，因为通常会调用此例程来获取 **MapTransfer**的 _CurrentVa_ 参数。
+**MmGetMdlVirtualAddress** 的调用方可在任何 IRQL 上运行。 通常，调用方在 = DISPATCH_LEVEL 的 IRQL 上运行，因为通常会调用此例程来获取 _MapTransfer_的 **CurrentVa** 参数。
 
 在 Windows 2000 和更高版本的 Windows 中可用。
 
@@ -326,7 +326,7 @@ IRQL：任何级别
 
 ## <a name="mmgetsystemaddressformdlsafe"></a>**MmGetSystemAddressForMdlSafe**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmGetSystemAddressForMdlSafe** 宏返回指定 MDL 描述的缓冲区的非分页系统空间虚拟地址。
 
@@ -338,7 +338,7 @@ _Mdl [in]_
 
 _Priority [in]_
 
-## <a name="mm_page_priority"></a>**Mm_PAGE_PRIORITY**
+**MM_PAGE_PRIORITY**
 
 指定一个 **MM_PAGE_PRIORITY** 值，用于指示在可用 PTE 不足的情况下成功的重要性。 指定优先级值 **LowPagePriority**、**NormalPagePriority** 或 **HighPagePriority**。 从 Windows 8 开始，指定的优先级值可以结合 **MdlMappingNoWrite** 或 **MdlMappingNoExecute** 标志进行按位 OR 运算。
 
@@ -397,7 +397,7 @@ IRQL <= DISPATCH_LEVEL
 
 ## <a name="mminitializemdl"></a>**MmInitializeMdl**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmInitializeMdl** 宏初始化 MDL 的标头。
 
@@ -432,7 +432,7 @@ IRQL <= DISPATCH_LEVEL
 
 ## <a name="mmpreparemdlforreuse"></a>**MmPrepareMdlForReuse**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **MmPrepareMdlForReuse** 宏释放与部分 MDL 关联的资源，以便可以重复使用该 MDL。
 
@@ -446,7 +446,7 @@ _Mdl [in]_
 
 **VOID**
 
-对 [**IoBuildPartialMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 例程调用中的 _TargetMdl_ 参数重复使用同一分配 MDL 的驱动程序使用此宏。 如果在 **MmPrepareMdlForReuse** 调用中，指定的部分 MDL 具有与系统地址空间之间的关联映射，则 **MmPrepareMdlForReuse** 将释放该映射，以便可以重复使用该 MDL。
+对IoBuildPartialMdl[**例程调用中的**TargetMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl) 参数重复使用同一分配 MDL 的驱动程序使用此宏。 如果在 **MmPrepareMdlForReuse** 调用中，指定的部分 MDL 具有与系统地址空间之间的关联映射，则 **MmPrepareMdlForReuse** 将释放该映射，以便可以重复使用该 MDL。
 
 **MmPrepareMdlForReuse** 仅接受 **IoBuildPartialMdl** 生成的部分 MDL。 如果 **MmPrepareMdlForReuse** 收到一个已映射到系统地址空间但并非由 **IoBuildPartialMdl** 生成的 MDL，则 **MmPrepareMdlForReuse** 不会释放该映射。
 
@@ -459,7 +459,7 @@ IRQL <= DISPATCH_LEVEL
 
 ## <a name="page_align"></a>**PAGE_ALIGN**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **PAGE_ALIGN** 宏返回给定虚拟地址的页面对齐虚拟地址。
 
@@ -473,7 +473,7 @@ _Va [in]_
 
 **PVOID**
 
-## <a name="page_align-returns-a-pointer-to-the-page-aligned-virtual-address"></a>**PAGE_ALIGN** 返回指向页面对齐虚拟地址的指针。
+**PAGE_ALIGN** 返回指向页面对齐虚拟地址的指针。
 
 从 Windows 2000 开始可用。
 
@@ -482,7 +482,7 @@ IRQL：任何级别
 
 ## <a name="paged_code"></a>**PAGED_CODE**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **PAGED_CODE** 宏确保调用方线程在足够低的允许分页的 IRQL 上运行。
 
@@ -503,7 +503,7 @@ IRQL：任何级别
 
 ## <a name="paged_code_locked"></a>**PAGED_CODE_LOCKED**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **PAGED_CODE_LOCKED** 宏断言当前正在运行的代码节可分页，在运行之前必须已锁定到内存中。
 
@@ -518,7 +518,7 @@ IRQL：任何级别
 
 ## <a name="posetdevicebusy"></a>**PoSetDeviceBusy**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **PoSetDeviceBusy** 宏向[电源管理器](power-manager.md)告知与 _IdlePointer_ 关联的设备繁忙。
 
@@ -526,7 +526,7 @@ _IdlePointer [in, out]_
 
 **PULONG**
 
-指定 [**PoRegisterDeviceForIdleDetection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection) 先前返回的非 **NULL** 空闲指针。 请注意，**PoRegisterDeviceForIdleDetection** 可能返回 **NULL** 指针。 **PoSetDeviceBusy** 的调用方必须在将指针传递给 **PoSetDeviceBusy** 之前验证该指针是否非 **NULL**。
+指定PoRegisterDeviceForIdleDetection[**先前返回的非**NULL](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-poregisterdeviceforidledetection) 空闲指针。 请注意，**PoRegisterDeviceForIdleDetection** 可能返回 **NULL** 指针。 **PoSetDeviceBusy** 的调用方必须在将指针传递给 **PoSetDeviceBusy** 之前验证该指针是否非 **NULL**。
 
 **返回值**
 
@@ -547,11 +547,13 @@ IRQL：任何级别
 
 ## <a name="psgetcurrentprocess"></a>**PsGetCurrentProcess**
 
-定义位置：Ntddk.h
+定义： Ntddk
 
 返回指向当前线程的进程的指针。
 
 **返回值**
+
+**PEPROCESS**
 
 指向不透明进程对象的指针。
 
@@ -564,7 +566,7 @@ IRQL：任何级别
 
 ## <a name="read_register_buffer_ulong64"></a>**READ_REGISTER_BUFFER_ULONG64**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **READ_REGISTER_BUFFER_ULONG64** 宏将指定寄存器地址中的多个 ULONG64 值读入缓冲区。
 
@@ -601,7 +603,7 @@ IRQL：任何级别
 
 ## <a name="read_register_ulong64"></a>**READ_REGISTER_ULONG64**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **READ_REGISTER_ULONG64** 宏从指定的寄存器地址读取 ULONG64 值。
 
@@ -626,7 +628,7 @@ IRQL：任何级别
 
 ## <a name="round_to_pages"></a>**ROUND_TO_PAGES**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **ROUND_TO_PAGES** 宏获取以字节为单位的大小，并将其向上舍入为下一个完整页面。
 
@@ -649,7 +651,7 @@ IRQL：任何级别
 
 ## <a name="rtlequalluid"></a>**RtlEqualLuid**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **返回值**
 
@@ -660,7 +662,7 @@ IRQL：任何级别
 
 ## <a name="rtlinitemptyansistring"></a>**RtlInitEmptyAnsiString**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlInitEmptyAnsiString** 宏初始化一个空的计数 ANSI 字符串。
 
@@ -703,7 +705,7 @@ IRQL：任何级别
 
 ## <a name="rtlinitemptyunicodestring"></a>**RtlInitEmptyUnicodeString**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlInitEmptyUnicodeString** 宏初始化一个空的计数 Unicode 字符串。
 
@@ -746,7 +748,7 @@ IRQL：任何级别
 
 ## <a name="rtliszeroluid"></a>**RtlIsZeroLuid**
 
-定义位置：Ntddk.h
+定义： Ntddk
 
 **RtlIsZeroLuid** 宏确定指定的 LUID 是否为零 LUID。
 
@@ -760,14 +762,14 @@ _L1 [in]_
 
 **BOOLEAN**
 
-如果 _L1_ 为零，则 **RtlIsZeroLuid** 返回 **TRUE**，否则返回 **FALSE**。
+如果 **L1** 为零，则 **RtlIsZeroLuid** 返回 _TRUE_，否则返回 **FALSE**。
 
 IRQL：任何级别
 
 
 ## <a name="rtlretrieveulong"></a>**RtlRetrieveUlong**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlRetrieveUlong** 宏从源地址检索 ULONG 值，可避免对齐错误。 假设目标地址已对齐。
 
@@ -794,7 +796,7 @@ _SourceAddress [in]_
 
 ## <a name="rtlretrieveushort"></a>**RtlRetrieveUshort**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlRetrieveUshort** 宏从源地址检索 USHORT 值，可避免对齐错误。
 
@@ -823,7 +825,7 @@ IRQL：任何级别
 
 ## <a name="rtlstoreulong"></a>**RtlStoreUlong**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlStoreUlong** 宏在特定的地址中存储 ULONG 值，可避免对齐错误。
 
@@ -852,7 +854,7 @@ IRQL：任何级别
 
 ## <a name="rtlstoreulonglong"></a>**RtlStoreUlonglong**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlStoreUlonglong** 宏在指定的内存地址中存储指定的 ULONGLONG 值，可避免内存对齐错误。
 
@@ -874,7 +876,7 @@ _Value [in]_
 
 **RtlStoreUlonglong** 可避免内存对齐错误。 如果 _Address_ 指定的地址不符合 ULONGLONG 的存储要求，**RtlStoreUlonglong** 将在内存位置 (PUCHAR)_Address_ 的开头位置存储 _Value_ 的字节。
 
-如果 _Address_ 指向非分页池，则 **RtlStoreUlonglong** 可在任何 IRQL 上运行；否则，它必须在 <= APC_LEVEL 的 IRQL 上运行。
+如果 **Address** 指向非分页池，则 _RtlStoreUlonglong_ 可在任何 IRQL 上运行；否则，它必须在 <= APC_LEVEL 的 IRQL 上运行。
 
 从 Windows 2000 开始可用。
 
@@ -883,7 +885,7 @@ IRQL：任何级别
 
 ## <a name="rtlstoreulongptr"></a>**RtlStoreUlongPtr**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlStoreUlongPtr** 宏在指定的内存位置存储指定的 ULONG_PTR 值，可避免内存对齐错误。
 
@@ -905,7 +907,7 @@ _Value [in]_
 
 **RtlStoreUlongPtr** 可避免内存对齐错误。 如果 _Address_ 的值不符合 ULONG_PTR 的存储要求，**RtlStoreUlongPtr** 将在内存位置 (PUCHAR)_Address_ 的开头位置存储 _Value_ 的字节。
 
-如果 _Address_ 指向非分页池，则 **RtlStoreUlongPtr** 可在任何 IRQL 上运行；否则，它必须在 <= APC_LEVEL 的 IRQL 上运行。
+如果 **Address** 指向非分页池，则 _RtlStoreUlongPtr_ 可在任何 IRQL 上运行；否则，它必须在 <= APC_LEVEL 的 IRQL 上运行。
 
 在 Windows 2000 和更高版本的 Windows 中可用。
 
@@ -914,7 +916,7 @@ IRQL：任何级别
 
 ## <a name="rtlstoreushort"></a>**RtlStoreUshort**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **RtlStoreUshort** 宏在特定的地址中存储 USHORT 值，可避免对齐错误。
 
@@ -943,7 +945,7 @@ IRQL：任何级别
 
 ## <a name="write_register_buffer_ulong64"></a>**WRITE_REGISTER_BUFFER_ULONG64**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **WRITE_REGISTER_BUFFER_ULONG64** 宏将缓冲区中的多个 ULONG64 值写入指定的寄存器。
 
@@ -980,7 +982,7 @@ IRQL：任何级别
 
 ## <a name="write_register_ulong64"></a>**WRITE_REGISTER_ULONG64**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **WRITE_REGISTER_ULONG64** 宏将 ULONG64 值写入指定的地址。
 
@@ -1009,7 +1011,7 @@ IRQL：任何级别
 
 ## <a name="zwcurrentprocess"></a>**ZwCurrentProcess**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **ZwCurrentProcess** 宏返回当前进程的句柄。
 
@@ -1032,7 +1034,7 @@ IRQL：任何级别
 
 ## <a name="zwcurrentthread"></a>**ZwCurrentThread**
 
-定义位置：Wdm.h
+定义： Wdm。h
 
 **ZwCurrentThread** 宏返回当前线程的句柄。
 

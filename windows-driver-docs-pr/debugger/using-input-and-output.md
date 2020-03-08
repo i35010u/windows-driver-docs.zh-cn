@@ -5,15 +5,15 @@ ms.assetid: 7a23ee09-0314-400a-8152-eef49a225427
 keywords:
 - 调试器引擎、输入和输出
 - 输入和输出
-- 输出
+- Output
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b32d6288bf4dbaca93fb9257a71484269e67849e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838808"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402391"
 ---
 # <a name="using-input-and-output"></a>使用输入和输出
 
@@ -37,7 +37,7 @@ ms.locfileid: "72838808"
 
 然后，引擎将调用[**IDebugInputCallbacks：： EndInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebuginputcallbacks-endinput)以指示它已停止等待输入。
 
-最后，引擎会将此输入回显到每个客户端（用于提供输入的客户端除外）的已注册**IDebugOutputCallbacks**对象，方法是使用[**IDebugOutputCallbacks：： Output**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output) ，并将位掩码设置为调试\_输出\_提示。
+最后，引擎将此输入回显到每个客户端（用于提供输入的客户端除外）的已注册**IDebugOutputCallbacks**对象，方法是使用[**IDebugOutputCallbacks：： Output**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output) ，并将位掩码设置为调试\_输出\_提示符。
 
 ### <a name="span-idoutputspanspan-idoutputspanoutput"></a><span id="output"></span><span id="OUTPUT"></span>输出
 

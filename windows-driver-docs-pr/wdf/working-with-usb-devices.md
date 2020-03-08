@@ -18,18 +18,18 @@ keywords:
 ms.date: 06/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5b5eab473fd32aecae832c702267c6aaa1bafa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823518"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402521"
 ---
 # <a name="working-with-usb-devices"></a>使用 USB 设备
 
 
 本主题介绍在版本2中启动的内核模式驱动程序框架（KMDF）或用户模式驱动程序框架（UMDF）驱动程序可以使用 Windows 驱动程序框架（WDF）提供的 USB 设备对象方法执行的操作。
 
-其中包含以下各节：
+本主题包含以下部分：
 
 -   [创建 USB 设备对象](#creating-a-framework-usb-device-object)
 -   [配置 USB 设备](#selecting-a-device-configuration)

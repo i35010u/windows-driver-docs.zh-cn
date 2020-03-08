@@ -1,87 +1,87 @@
 ---
 title: HID 用法
-description: HID 的用法确定 HID 控件和控件的实际测量的预期的用途。
+description: HID 用法标识 HID 控件的用途以及控件实际度量的内容。
 ms.assetid: 84fed314-3554-4291-b51c-734d874a4bab
 keywords:
-- 人机接口设备 WDK 用法
-- HID WDK 用法
-- 交互式输入的设备 WDK，用法
-- 输入设备 WDK，用法
-- 人机接口设备 WDK 控件
-- HID WDK 控件
-- 交互式输入的设备 WDK，控件
+- 人体学接口设备 WDK，使用情况
+- HID WDK，使用情况
+- 交互式输入设备 WDK，使用情况
+- 输入设备 WDK，使用情况
+- 人体学接口设备 WDK，控件
+- HID WDK，控件
+- 交互式输入设备 WDK，控件
 - 输入设备 WDK，控件
-- WDK HID 的控件
+- 控制 WDK HID
 - 使用情况页面 WDK HID
-- Id WDK HID 的使用情况
-- WDK HID 扩展的用法
-- 使用范围是 WDK HID
-- 使用别名用法 WDK HID
-- WDK HID 的使用情况
+- 使用 Id WDK HID
+- 扩展使用情况 WDK HID
+- 使用范围 WDK HID
+- 别名用法 WDK HID
+- 使用情况 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43f88332071171ce90e145e9abfacb36d4c26e61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388804"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402435"
 ---
 #  <a name="hid-usages"></a>HID 用法
 
 
-*HID 的用法*标识 HID 控件和控件的实际测量的预期的用途。
+*Hid 用法*标识 hid 控件的用途以及控件实际度量的内容。
 
 
 
 
-以下概念和术语在整个 WDK 中的 HID 文档：
+在 WDK 的整个 HID 文档中使用以下概念和术语：
 
-[使用情况页面](#usage-page)
+[使用情况页](#usage-page)
 
 [使用 ID](#usage-id)
 
-[扩展的使用情况](#extended-usage)
+[扩展使用](#extended-usage)
 
 [使用范围](#usage-range)
 
-[使用别名用法](#aliased-usages)
+[使用别名](#aliased-usages)
 
-Windows 组件访问的使用情况的具体示例，请参阅[顶级集合打开供系统使用的 Windows](top-level-collections-opened-by-windows-for-system-use.md)。
+有关 Windows 组件访问的用法的具体示例，请参阅[Windows 打开的顶级集合以供系统使用](top-level-collections-opened-by-windows-for-system-use.md)。
 
-有关如何确定 HIDClass 设备支持的使用情况的详细信息，请参阅：
+有关如何确定 HIDClass 设备支持的用法的详细信息，请参阅：
 
 [集合功能](collection-capability.md)
 
-[按钮功能数组](button-capability-arrays.md)
+[Button 功能数组](button-capability-arrays.md)
 
-[值功能数组](value-capability-arrays.md)
+[值功能阵列](value-capability-arrays.md)
 
 [解释 HID 报表](interpreting-hid-reports.md)
 
-行业标准的 HID 用法的详细信息，请参阅通用串行总线 (USB) 规范*HID 用法表*位于处[USB 实现论坛](https://go.microsoft.com/fwlink/?linkid=830142)网站。 （此资源可能不会在某些语言和国家/地区中可用。）
+有关行业标准 HID 用法的详细信息，请参阅位于[USB 实现论坛](https://go.microsoft.com/fwlink/?linkid=830142)网站上的通用串行总线（USB）规范*HID 使用情况表*。 （此资源可能在某些语言和国家/地区不可用。）
 
-### <a name="usage-page"></a>使用情况页面
+### <a name="usage-page"></a>使用情况页
 
-HID 的用法分为*使用情况页面*相关的控件。 由其使用情况页上，定义特定的控件使用情况[用法 ID](#usage-id)、 名称和说明。 使用情况页面的示例包括泛型桌面控件、 游戏控件、 Led、 按钮和等等。 泛型桌面控件使用情况页面列出的控件的示例包括指针、 鼠标和键盘的设备、 游戏杆，等等。 使用情况页值为 16 位无符号的值。
+HID 使用情况组织到相关控件的*使用情况页*中。 特定的控件用法由其使用情况页、[用法 ID](#usage-id)、名称和说明定义。 使用页面的示例包括一般桌面控件、游戏控件、Led、按钮等。 一般桌面控件使用页面上列出的控件示例包括指针、鼠标和键盘设备、游戏杆等。 "使用情况" 页值为16位无符号值。
 
 ### <a name="usage-id"></a>使用 ID
 
-使用情况页面，使用是有效标识符的上下文中或*用法 ID*，指示在使用情况页面中的用法。 保留使用情况 ID 为 0。 使用 ID 值是一个无符号的 16 位值。
+在 "使用情况" 页的上下文中，有效的使用标识符或*使用 ID*指示使用情况页中的用法。 保留的用量 ID 为零。 使用 ID 值是无符号的16位值。
 
-### <a name="extended-usage"></a>扩展的使用情况
+### <a name="extended-usage"></a>扩展使用
 
-*扩展的使用情况*是一个 32 位值，指定 16 位[使用情况页面](#usage-page)中最有效的两个字节和 16 位值[用法 ID](#usage-id)中最不重要的两个字节扩展的用法值。
+*扩展用法*是一个32位值，它在最高有效的2个字节中指定16位[使用页](#usage-page)值，在扩展使用值的最小有效2个字节中指定16位[使用 ID](#usage-id) 。
 
 ### <a name="usage-range"></a>使用范围
 
-一个*用法范围*是连续的非独占范围[Id 使用情况](#usage-id)，则所有的是同一个[使用情况页面](#usage-page)。 使用范围由最小的使用情况和使用情况报告描述符中的最大项指定。
+*使用范围*是包含的连续[使用 id](#usage-id)的范围，所有这些使用 id 都在相同的[使用情况页](#usage-page)上。 使用范围由报表描述符中的 "使用情况最小值" 和 "使用量最多" 项指定。
 
-### <a name="aliased-usages"></a>使用别名用法
+### <a name="aliased-usages"></a>使用别名
 
-可以为指定多个使用情况[**集合链接**](link-collections.md)或 HID 控件。 对于给定的集合或控件，此类使用情况的一组是、 别名和称为*别名用法*。 分隔符项用来指定别名用法。 [使用范围](#usage-range)不能有别名。
+可以为一个[**链接集合**](link-collections.md)或一个 HID 控件指定多个使用情况。 对于给定的集合或控件，此类用法的组是另一组，并且称为*别名使用*。 分隔符项用于指定化名使用。 [使用范围](#usage-range)不能有别名。
 
-有关如何在顶级集合的功能数组中指定别名用法的信息，请参阅[按钮功能数组](button-capability-arrays.md)并[值功能数组](value-capability-arrays.md)。
+有关如何在顶级集合的功能数组中指定别名使用情况的信息，请参阅[Button 功能数组](button-capability-arrays.md)和[值功能数组](value-capability-arrays.md)。
 
  
 
