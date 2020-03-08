@@ -3,51 +3,37 @@ title: 筛选 IRP 和快速 I/O
 description: 筛选 IRP 和快速 I/O
 ms.assetid: fad124b0-525d-4ff9-8f2c-3817fc76685c
 keywords:
-- 筛选驱动程序 WDK 文件系统，IRP 筛选
+- 筛选器驱动程序 WDK 文件系统，IRP 筛选
 - 文件系统筛选器驱动程序 WDK，IRP 筛选
 - Irp WDK 文件系统
 - 筛选 Irp WDK 文件系统
-- 筛选快速 I/O WDK 文件系统
-- 筛选 WDK 文件系统的快速 I/O
-- I/O WDK 的文件系统
+- 筛选 fast i/o WDK 文件系统
+- 快速 i/o 筛选 WDK 文件系统
+- I/o WDK 文件系统
 - 调度例程 WDK 文件系统
-- I/O 请求 WDK 文件系统
+- I/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b309bdb20036e4d89a7cd2b6df275bddcd3df3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 468d295adf699c27e54d38c2eb9d047492964249
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380389"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910436"
 ---
 # <a name="filtering-irps-and-fast-io"></a>筛选 IRP 和快速 I/O
 
+> [!NOTE]
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
-## <span id="ddk_filtering_irps_and_fast_io_if"></span><span id="DDK_FILTERING_IRPS_AND_FAST_IO_IF"></span>
+文件系统筛选器驱动程序对一个或多个文件系统或文件系统卷的 i/o 请求进行筛选。 每个 i/o 请求显示为 i/o 请求数据包（IRP）或快速 i/o 请求。 Irp 是由驱动程序的 IRP 调度例程处理的 i/o 系统结构。 快速 i/o 请求由驱动程序的快速 i/o 回调例程处理。
 
+当初始化筛选器驱动程序时，它的**DriverEntry**例程将注册筛选器驱动程序的 IRP 调度例程和快速 i/o 回调例程。 只能为每个筛选器驱动程序注册一组这些例程。
 
-<div class="alert">
-<strong>请注意</strong>最佳的可靠性和性能，我们建议使用<a href="filter-manager-and-minifilter-driver-architecture.md" data-raw-source="[file system minifilter drivers](filter-manager-and-minifilter-driver-architecture.md)">文件系统微筛选器驱动程序</a>而不是旧的文件系统筛选器驱动程序。 此外，旧的文件系统筛选器驱动程序不能将附加到直接访问 (DAX) 卷。 有关文件系统微筛选器驱动程序的详细信息，请参阅<a href="advantages-of-the-filter-manager-model.md" data-raw-source="[Advantages of the Filter Manager Model](advantages-of-the-filter-manager-model.md)">筛选器管理器模型的优势</a>。 若要移植到微筛选器驱动程序的传统的驱动程序，请参阅<a href="guidelines-for-porting-legacy-filter-drivers.md" data-raw-source="[Guidelines for Porting Legacy Filter Drivers](guidelines-for-porting-legacy-filter-drivers.md)">移植旧筛选器驱动程序的指导原则</a>。
-</div>
- 
+某些类型的 Irp 具有快速 i/o 等效项，某些快速 i/o 请求具有 IRP 等效项。 但是，Irp 处理的 i/o 类型太多，无法实现快速 i/o。 此外，某些专用的快速 i/o 例程用于 preacquire 缓存管理器或内存管理器的文件系统资源，而无需创建 IRP。 因此，在大多数情况下，Irp 和快速 i/o 请求在 i/o 操作中执行单独的角色。
 
-文件系统筛选器驱动程序筛选一个或多个文件系统或文件系统卷的 I/O 请求。 每个 I/O 请求显示为 I/O 请求数据包 (IRP) 或快速 I/O 请求。 Irp 是由驱动程序的 IRP 调度例程处理的 I/O 系统结构。 快速 I/O 请求都由驱动程序的快速 I/O 回调例程处理。
+本部分包含下列主题：
 
-初始化筛选器驱动程序时，其**DriverEntry**例程注册筛选器驱动程序的 IRP 调度例程和快速 I/O 回调例程。 只有一组这些例程可针对每个筛选器驱动程序注册。
+[Irp 不同于快速 i/o](irps-are-different-from-fast-i-o.md)
 
-某些类型的 Irp 具有快速 I/O 等效项，以及一些快速 I/O 请求具有 IRP 等效项。 但是，Irp 处理多种类型的不能快速 I/O 的 I/O。 此外，某些专用的快速 I/O 例程用于 preacquire 缓存管理器或内存管理器的文件系统资源，而无需创建 IRP。 因此，大多数情况下，Irp 和快速 I/O 请求执行单独的角色在 I/O 操作中。
-
-本部分介绍以下主题：
-
-[Irp 是不同于快速 I/O](irps-are-different-from-fast-i-o.md)
-
-[类型的文件系统筛选器驱动程序设备对象](types-of-device-objects-used-by-file-system-filter-drivers.md)
-
- 
-
- 
-
-
-
-
+[文件系统筛选器驱动程序设备对象的类型](types-of-device-objects-used-by-file-system-filter-drivers.md)

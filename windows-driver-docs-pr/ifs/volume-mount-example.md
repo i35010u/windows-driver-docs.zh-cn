@@ -9,17 +9,17 @@ keywords:
 - 卷 WDK 文件系统，装载
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 877bcd8160fa65cb6f2b65fb7c9176f4742d678a
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 9d66e976134eb96690ef3db760dd7534ac1352c8
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128461"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910447"
 ---
 # <a name="volume-mount-example"></a>卷装载示例
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用[文件系统筛选器驱动程序](filter-manager-and-minifilter-driver-architecture.md)，而不是旧的文件系统筛选器驱动程序 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 下图显示了在装入任何卷之前，CDFS 可能的外观。 在此示例中，两个筛选器已附加到 CDFS 控制设备对象。 （注意：不显示包含 CDFS control 设备对象的全局文件系统队列。）
 

@@ -3,7 +3,7 @@ title: 双\_OPLOCK\_键\_ECP\_上下文结构
 description: 双\_OPLOCK\_键\_ECP\_上下文结构包含双重 oplock 键的额外 create 参数上下文。 可在此结构中设置目标和父文件对象的 oplock 键。
 ms.assetid: 7E337D2F-7292-4D18-B750-8361A83C8B1F
 keywords:
-- DUAL_OPLOCK_KEY_ECP_CONTEXT 结构可安装的文件系统驱动程序
+- DUAL_OPLOCK_KEY_ECP_CONTEXT 结构可安装文件系统驱动程序
 - PDUAL_OPLOCK_KEY_ECP_CONTEXT 结构指针可安装的文件系统驱动程序
 topic_type:
 - apiref
@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6072e03f3ca9a44447bcd7cffd2ac7198ef2601
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1da2125d4bf4212d56095f16f7088613236d67db
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841429"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910427"
 ---
 # <a name="dual_oplock_key_ecp_context-structure"></a>双\_OPLOCK\_键\_ECP\_上下文结构
 
@@ -39,7 +39,7 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 } DUAL_OPLOCK_KEY_ECP_CONTEXT, *PDUAL_OPLOCK_KEY_ECP_CONTEXT;
 ```
 
-<a name="members"></a>成员
+<a name="members"></a>Members
 -------
 
 **ParentOplockKey**  
@@ -57,9 +57,9 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 <a name="remarks"></a>备注
 -------
 
-**双\_oplock\_键\_ECP\_上下文**结构提供双 oplock 键，以允许对文件和目录的请求进行 oplock。 类似于[**OPLOCK\_键\_ECP\_上下文**](oplock-key-ecp-context.md)结构、**双重\_OPLOCK\_键\_** 在额外的创建参数列表（[**ECP\_列表**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))）中设置，稍后与处理[**IRP\_MJ**](irp-mj-create.md)过程中的文件对象\_由文件系统或文件系统筛选器驱动程序创建。
+**双\_oplock\_键\_ECP\_上下文**结构提供双 oplock 键，以允许对文件和目录的请求进行 oplock。 与[**OPLOCK\_键\_ecp\_上下文**](oplock-key-ecp-context.md)结构一样，**双重\_OPLOCK\_键\_** 在额外的创建参数列表（[**ECP\_列表**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540148(v=vs.85))）中设置，并且稍后在处理[**IRP\_MJ\_** ](irp-mj-create.md)通过文件系统或文件系统筛选器驱动程序创建时与文件对象关联。\_
 
-调用支持例程（如[**FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)、 [**FsRtlInitializeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546113)） [**时，使用值 GUID\_ECP\_双\_OPLOCK\_密钥FltRemoveExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltremoveextracreateparameter)。
+调用[**FsRtlAllocateExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff545609)、 [**FsRtlInitializeExtraCreateParameter**](https://msdn.microsoft.com/library/windows/hardware/ff546113)或[**FltRemoveExtraCreateParameter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltremoveextracreateparameter)等支持例程时，将使用值**GUID\_ECP\_双\_OPLOCK\_键**。
 
 <a name="requirements"></a>要求
 ------------
@@ -94,7 +94,6 @@ typedef struct _DUAL_OPLOCK_KEY_ECP_CONTEXT {
 
 [**OPLOCK\_键\_ECP\_上下文**](oplock-key-ecp-context.md)
 
-[Oplock 语义](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-semantics)
 
  
 

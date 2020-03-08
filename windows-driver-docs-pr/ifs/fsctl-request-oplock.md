@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183ea154d8e53243c22056c5532349e0a71451a5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5dd7c871d8eea9311ba3cfd5bcde9317a9d0084d
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841254"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910388"
 ---
 # <a name="fsctl_request_oplock-control-code"></a>FSCTL\_请求\_OPLOCK 控制代码
 
@@ -45,7 +45,7 @@ ms.locfileid: "72841254"
 关联的 oplock 操作的位掩码。 文件系统或筛选器驱动程序设置位以指定[**FsRtlOplockFsctrlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrlex)的行为。 *Flags*参数具有以下选项：
 
 <a href="" id="oplock-fsctrl-flag-all-keys-match--0x00000001-"></a>OPLOCK\_FSCTRL\_标志\_所有\_密钥\_匹配（0x00000001）  
-指定文件系统已验证所有机会锁定键是否与当前打开的任何句柄匹配。 通过指定此标志，在存在多个打开的文件句柄时，oplock 包可以授予级别为 RW 或 RWH 的 oplock。 有关 oplock 类型的详细信息，请参阅[概述](https://docs.microsoft.com/windows-hardware/drivers/ifs/overview)。
+指定文件系统已验证所有机会锁定键是否与当前打开的任何句柄匹配。 通过指定此标志，在存在多个打开的文件句柄时，oplock 包可以授予级别为 RW 或 RWH 的 oplock。 有关 oplock 类型的详细信息，请参阅[概述](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-overview)。
 
 <a name="status-block"></a>状态块
 ------------
@@ -60,7 +60,7 @@ ms.locfileid: "72841254"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

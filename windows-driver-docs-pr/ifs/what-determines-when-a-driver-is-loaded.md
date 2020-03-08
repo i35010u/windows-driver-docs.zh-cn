@@ -19,17 +19,17 @@ keywords:
 - 启动驱动程序 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eaab9ad4ffc1ecd107dade126a9fa3b13152fee6
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 101f4ddb8d7fa6f255808551bbc91738ea1c974d
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128466"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910446"
 ---
 # <a name="what-determines-when-a-driver-is-loaded"></a>什么决定何时加载驱动程序
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用[文件系统筛选器驱动程序](filter-manager-and-minifilter-driver-architecture.md)，而不是旧的文件系统筛选器驱动程序 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 在浏览系统启动顺序中的文件系统驱动程序的加载时间和方式之前，必须了解驱动程序启动类型和加载顺序组。
 

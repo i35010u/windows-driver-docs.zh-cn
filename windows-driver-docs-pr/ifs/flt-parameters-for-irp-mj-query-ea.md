@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ca74747da95df1881856c430c48f6a0ebbe102
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: 785c11da3aca5d2c757d8526fc2fafa6b29c5204
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072236"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910382"
 ---
 # <a name="flt_parameters-for-irp_mj_query_ea-union"></a>IRP_MJ_QUERY_EA 联合的 FLT_PARAMETERS
 
@@ -62,7 +62,7 @@ typedef union _FLT_PARAMETERS {
 开始扫描扩展属性列表的项的索引。 如果未在操作的 FLT_IO_PARAMETER_BLOCK 结构中设置 SL_INDEX_SPECIFIED 标志，或者如果**EaList**指向非空列表，则忽略此参数。
 
 **EaBuffer**  
-指向调用方提供的、 [**FILE_FULL_EA_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)结构化的输出缓冲区的指针，将在其中返回扩展特性值。 此成员是可选的，如果**MdlAddress**中提供 MDL，此成员可以为 NULL。 请参阅 "**备注**"。
+指向调用方提供的、 [**FILE_FULL_EA_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)结构化的输出缓冲区的指针，将在其中返回扩展特性值。 此成员是可选的，如果**MdlAddress**中提供 MDL，此成员可以为**NULL** 。 请参阅 "**备注**"。
 
 **MdlAddress**  
 描述**EaBuffer**指向的缓冲区的内存描述符列表（MDL）的地址。 此成员是可选的，如果**EaBuffer**中提供了缓冲区，则可以为**NULL** 。 请参阅 "**备注**"。

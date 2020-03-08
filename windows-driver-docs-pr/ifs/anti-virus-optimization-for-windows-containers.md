@@ -2,20 +2,20 @@
 title: 用于 Windows 容器的防病毒优化
 description: 本主题介绍防病毒产品在 Windows 容器中运行时可使用的优化。
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
-ms.date: 01/22/2020
+ms.date: 03/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ee90897d29defac300844637bec9b185d9940733
-ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
+ms.openlocfilehash: ad3e19dfe98751845928b4ff58d89611453ccef4
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706984"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910385"
 ---
 # <a name="anti-virus-optimization-for-windows-containers"></a>用于 Windows 容器的防病毒优化
 
 **此页上的信息适用于：**
-- Windows 10 版本 1607
-- Windows Server 2016
+- Windows 10 版本1607及更高版本
+- Windows Server 2016 及更高版本
 - 主机上运行的防病毒（AV）产品
 
 本主题介绍 AV 产品可用于避免对 Windows 容器文件的冗余扫描，并帮助改进容器启动时间的优化。
@@ -60,32 +60,26 @@ AV 产品中需要进行以下更改：
 
 - **在 "创建后" 中，如果已确认 ECP，请检查 ECP 重定向标志。** 标志将指示是从包层还是从临时根（新文件或已修改的文件）为打开的服务。 标志还会指示包层是否已注册以及它是否为远程。
 
-  - 对于从远程层提供服务的打开，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
+  - *对于从远程层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
 
     可以假定远程层已在远程主机上进行扫描。 Hyper-v 容器包与托管容器的实用工具 VM 远程。 当实用工具 VM 通过 SMB 环回对这些包进行访问时，它们将在 Hyper-v 主机上正常扫描。
 
     由于 VolumeGUID 和 FileId 不适用于远程，因此将不会设置这些字段。
 
-    - 对于从已注册层提供服务的打开，AV 应跳过扫描文件。 重定向标志表明这一点：
-
-    `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
+  - *对于从已注册层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
 
     包安装期间和签名更新之后，应以异步方式扫描已注册的层。
 
     >[!NOTE]
     > 将来，系统可能不会标识已注册的层。 在这种情况下，必须对本地层文件进行单独标识，如最后一个项目符号中所述。
 
-    - 对于从本地包层提供服务的打开，AV 应使用所提供的层文件的 VolumeGUID 和 FileId 来确定是否需要扫描该文件。 这可能需要 AV 构建按卷 GUID 和 FileId 索引的扫描文件的缓存。 重定向标志表明这一点：
+  - *对于从本地包层提供服务的打开*，AV 应使用所提供的层文件的 VolumeGUID 和 FileId 来确定是否需要扫描该文件。 这可能需要 AV 构建按卷 GUID 和 FileId 索引的扫描文件的缓存。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
 
-        `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
+  - *对于暂存位置中的新文件/修改后的文件*，AV 产品应该扫描文件并执行其常规的修正。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
 
-    - 对于暂存位置中的新文件/修改后的文件，AV 产品应该扫描文件并执行其常规的修正。 重定向标志表明这一点：
+    由于在这种情况下没有层文件，因此将不设置 VolumeGUID 和 FileId。
 
-        `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
-
-        由于在这种情况下没有层文件，因此将不设置 VolumeGUID 和 FileId。
-
-- **请勿将 "此文件从层服务作为其流上下文中的永久标记进行服务"。** 在创建后，可以修改从层根最初提供服务的文件。 在这种情况下，同一文件的后续创建可能表示正在从容器卷为创建提供服务。 AV 过滤器需要了解这种情况可能发生。
+  - 请勿将 "此文件从层服务作为其流上下文中的永久标记进行服务"。 在创建后，可以修改从层根最初提供服务的文件。 在这种情况下，同一文件的后续创建可能表示正在从容器卷为创建提供服务。 AV 过滤器需要了解这种情况可能发生。
 
 ## <a name="dont-use-the-layerrootlocations-registry-key"></a>请勿使用 LayerRootLocations 注册表项
 

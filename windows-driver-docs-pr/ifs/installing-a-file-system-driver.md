@@ -19,12 +19,12 @@ keywords:
 - 创建 INF 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 806436a8465574e16ec17bcc34e549b2fd4f87aa
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 917ba3860872f8b2e17cc4f085b14cdf8630b30c
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128467"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910474"
 ---
 # <a name="installing-a-file-system-driver"></a>安装文件系统驱动程序
 
@@ -74,25 +74,25 @@ INF 文件不能用于从注册表读取信息或启动用户模式应用程序�
 
 文件系统驱动程序的 INF 文件通常包含以下各节。
 
-- [版本（必需）](##version-section-(reqired))
+- [版本（必需）](#version-section-required)
 
-- [DestinationDirs （可选，但建议使用）](##destinationdirs-section-(optional-but-recommended))
+- [DestinationDirs （可选，但建议使用）](#destinationdirs-section-optional-but-recommended)
 
-- [SourceDisksNames （必需）](##sourcedisksnames-section-(required))
+- [SourceDisksNames （必需）](#sourcedisksnames-section-required)
 
-- [SourceDisksFiles （必需）](##sourcedisksfiles-section-(required))
+- [SourceDisksFiles （必需）](#sourcedisksfiles-section-required)
 
-- [DefaultInstall （必需）](##defaultinstall-section-(required))
+- [DefaultInstall （必需）](#defaultinstall-section-required)
 
-- [DefaultInstall （必需）](##defaultinstall.services-section-(required))
+- [DefaultInstall （必需）](#defaultinstallservices-section-required)
 
-- [ServiceInstall （必需）](##serviceinstall-section-(required))
+- [ServiceInstall （必需）](#serviceinstall-section-required)
 
-- [DefaultUninstall （可选）](##defaultuninstall-section-(optional))
+- [DefaultUninstall （可选）](#defaultuninstall-section-optional)
 
-- [DefaultUninstall （可选）](##defaultuninstall.services-section-(optional))
+- [DefaultUninstall （可选）](#defaultuninstallservices-section-optional)
 
-- [字符串（必需）](##strings-section-(required))
+- [字符串（必需）](#strings-section-required)
 
 ### <a name="version-section-required"></a>版本部分（必需）
 
@@ -108,7 +108,7 @@ CatalogFile =
 
 下表显示文件系统筛选器驱动程序在 "[**版本**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)" 部分中应指定的值。
 
-| 条目 | Value |
+| 条目 | 值 |
 | ----- | ----- |
 | **信号** | "$WINDOWS NT $" |
 | **程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
@@ -206,7 +206,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**条目指定服务的类型。 下表列出了**ServiceType**的可能值及其相应的服务类型。
 
-| Value | 描述 |
+| 值 | 说明 |
 | ----- | ----------- |
 | 0x00000001 | SERVICE_KERNEL_DRIVER （设备驱动程序服务） |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER （文件系统或文件系统筛选器驱动程序服务） |
@@ -217,7 +217,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **StartType**项指定启动服务的时间。 下表列出了**StartType**的可能值及其相应的启动类型。
 
-| Value | 描述 |
+| 值 | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -233,7 +233,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了**ErrorControl**的可能值及其相应的错误控制值。
 
-| Value | 描述 |
+| 值 | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_ERROR_IGNORE （记录错误并继续系统启动。） |
 | 0x00000001 | SERVICE_ERROR_NORMAL （记录错误、向用户显示一条消息，然后继续系统启动。） |

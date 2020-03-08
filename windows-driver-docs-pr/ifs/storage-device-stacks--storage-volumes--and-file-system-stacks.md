@@ -9,17 +9,17 @@ keywords:
 - 卷 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a111ba12590df0bd9be2619fe7a905e9a927fd2
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: bd36ca6cbb6eec8f6359da9c1413c7993566e441
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128453"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910470"
 ---
 # <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>存储设备堆栈、存储卷和文件系统堆栈
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用[文件系统筛选器驱动程序](filter-manager-and-minifilter-driver-architecture.md)，而不是旧的文件系统筛选器驱动程序 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 在探索文件系统旧筛选器驱动程序如何附加到文件系统和卷之前，必须了解存储设备堆栈、存储卷和文件系统堆栈之间的关系。
 

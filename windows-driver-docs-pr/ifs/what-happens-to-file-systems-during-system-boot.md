@@ -22,17 +22,17 @@ keywords:
 - FsRec
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d74d4861ea0b386f03c5257644192517663ef373
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 740187d7bdfa5770d7bde74d6804beb9c7cc643d
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128469"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910444"
 ---
 # <a name="what-happens-to-file-systems-during-system-boot"></a>文件系统在系统启动期间会发生什么情况
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用[文件系统筛选器驱动程序](filter-manager-and-minifilter-driver-architecture.md)，而不是旧的文件系统筛选器驱动程序 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 文件系统在系统启动过程中进行初始化;具体而言，在 i/o 系统初始化过程中。 I/o 管理器会创建全局文件系统队列，并初始化操作系统（OS）加载程序和 PnP 管理器加载的文件系统和旧筛选器驱动程序。
 

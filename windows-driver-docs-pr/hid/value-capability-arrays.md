@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2ce4b80fc5bacd946381a1c9fe975690a5106ef
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841545"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78854020"
 ---
 # <a name="value-capability-arrays"></a>值功能数组
 
@@ -70,7 +70,7 @@ ms.locfileid: "72841545"
 
 ![阐释包含5个数据项的使用值数组的图表，每个6位长](images/repcount.png)
 
-在前面的示例中，此类使用值数组的值功能结构将其**IsRange**成员设置为**FALSE**，其**NotRange**成员设置为17，其**ReportCount**成员设置为5，其**BitSize**成员设置为6。
+在前面的示例中，此类使用量值数组的值功能结构将其**IsRange**成员设置为**FALSE**，其**NotRange**成员设置为17，其**ReportCount**成员设置为5，其**BitSize**成员设置为6。
 
 如果使用情况的报表计数为1，请使用**HidP\_GetUsageValue**提取使用值。 如果使用情况的报表计数大于1，则**HidP\_GetUsageValue**只返回用量值数组中的第一个数据项。 若要提取使用情况值数组中的所有数据项，请使用[**HidP\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevaluearray)。
 

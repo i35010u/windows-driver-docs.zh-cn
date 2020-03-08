@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 47faceae0f2f1c87f86db4c8653a80bcf3717976
-ms.sourcegitcommit: bc6a10b69a465787894dc62b50bbf5c6c8225ac6
+ms.openlocfilehash: b55abb049cb8f4a28e73acc8aee2b88303d16812
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73882433"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910476"
 ---
 # <a name="oplock_key_ecp_context-structure"></a>OPLOCK_KEY_ECP_CONTEXT 结构
 
@@ -35,7 +35,7 @@ typedef struct _OPLOCK_KEY_ECP_CONTEXT {
 } OPLOCK_KEY_ECP_CONTEXT, *POPLOCK_KEY_ECP_CONTEXT;
 ```
 
-## <a name="members"></a>成员
+## <a name="members"></a>Members
 
 **OplockKey**  
 Oplock 项的 GUID。 此 GUID 在不同的句柄之间共享，并将其标识为属于相同的客户端缓存。 当两个句柄共享同一个 oplock 键时，在一个句柄上执行的请求将不会中断另一个句柄上的未完成 oplock。
@@ -55,7 +55,7 @@ Oplock 项的 GUID。 此 GUID 在不同的句柄之间共享，并将其标识�
 
 创建句柄时，Oplock 项与句柄关联。 即使未授予任何 oplock，你也可以将句柄与 oplock 项关联。
 
-有关 oplock 和 oplock 密钥的详细信息，请参阅[Oplock 语义概述](https://docs.microsoft.com/windows-hardware/drivers/ifs/overview)。
+有关 oplock 和 oplock 密钥的详细信息，请参阅[Oplock 语义概述](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-overview)。
 
 ## <a name="requirements"></a>要求
 
