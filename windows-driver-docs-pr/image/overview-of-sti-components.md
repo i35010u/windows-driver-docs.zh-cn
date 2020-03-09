@@ -5,11 +5,11 @@ ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d05bb8c82a75bff2d98352b8120cb7a6250633ee
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840777"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402354"
 ---
 # <a name="overview-of-sti-components"></a>STI 组件概述
 
