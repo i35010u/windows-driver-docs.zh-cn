@@ -3,12 +3,12 @@ Description: 本主题包括一个详细演练，用于说明如何使用 WinUSB
 title: 如何通过 WinUSB 函数访问 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 1f42c2dc7a21cbcd6c78c42cc0a5a3e000c0ce9d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
-ms.translationtype: HT
+ms.openlocfilehash: 214dfc6d36eef05f533aa4eed749ef1a998d1bc8
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837657"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402433"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>如何通过 WinUSB 函数访问 USB 设备
 
@@ -39,9 +39,9 @@ ms.locfileid: "72837657"
 
 -   此信息适用于以下 Windows 版本：Windows 8.1、Windows 8、Windows 7、Windows Server 2008 和 Windows Vista。
 -   已将 Winusb.sys 作为设备的函数驱动程序进行了安装。 有关此过程的详细信息，请参阅 [WinUSB (Winusb.sys) 安装](winusb-installation.md)。
--   本主题中的示例基于 [OSR USB FX2 学习工具包设备](http://www.osronline.com/)。 可以使用这些示例将过程扩展到其他 USB 设备。
+-   本主题中的示例基于 [OSR USB FX2 学习工具包设备](https://www.osronline.com/)。 可以使用这些示例将过程扩展到其他 USB 设备。
 
-## <a href="" id="setup"></a>步骤 1：基于 WinUSB 模板创建主干应用
+## <a href="" id="setup"></a>步骤1：基于 WinUSB 模板创建主干应用
 
 
 若要访问 USB 设备，请首先基于Windows 驱动程序工具包 (WDK)（带有 Windows 调试工具）和 Microsoft Visual Studio 的集成环境中所包含的 WinUSB 模板创建一个主干应用。可以使用该模板作为起点。
@@ -50,7 +50,7 @@ ms.locfileid: "72837657"
 
 该模板通过使用 [SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) 例程来枚举设备，打开设备的文件句柄，并创建后续任务所需的 WinUSB 接口句柄。 有关获取设备句柄并打开设备的示例代码，请参阅[模板代码讨论](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)。
 
-## <a href="" id="query"></a>步骤 2：向设备查询 USB 描述符
+## <a href="" id="query"></a>步骤2：在设备中查询 USB 描述符
 
 
 接下来，向设备查询特定于 USB 的信息，例如设备速度、接口描述符、相关终结点及其管道。 此过程类似于 USB 设备驱动程序使用的过程。 但是，应用程序通过调用 [**WinUsb\_GetDescriptor**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getdescriptor) 来完成设备查询。
@@ -59,19 +59,19 @@ ms.locfileid: "72837657"
 
 -   其他设备信息。
 
-    调用 [**WinUsb\_QueryDeviceInformation**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querydeviceinformation) 来请求设备的设备描述符中的信息。 若要获取设备的速度，请在 *InformationType* 参数中设置 DEVICE\_SPEED (0x01)。 该函数返回 LowSpeed (0x01) 或 HighSpeed (0x03)。
+    调用 [**WinUsb\_QueryDeviceInformation**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querydeviceinformation) 来请求设备的设备描述符中的信息。 若要获取设备的速度，请在 \_InformationType *参数中设置 DEVICE*SPEED (0x01)。 该函数返回 LowSpeed (0x01) 或 HighSpeed (0x03)。
 
 -   接口描述符
 
-    调用 [**WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) 并传递设备的接口句柄以获取相应的接口描述符。 WinUSB 接口句柄对应于第一个接口。 某些 USB 设备（例如 OSR Fx2 设备）仅支持一个接口，没有任何备用设置。 因此，对于这些设备，*AlternateSettingNumber* 参数设置为零，并且该函数仅被调用一次。 **WinUsb\_QueryInterfaceSettings** 使用有关接口的信息填充调用方分配的 [**USB\_INTERFACE\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor) 结构（在 *UsbAltInterfaceDescriptor* 参数中传递）。 例如，接口中的终结点数目在 **USB\_INTERFACE\_DESCRIPTOR** 的 **bNumEndpoints** 成员中设置。
+    调用 [**WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) 并传递设备的接口句柄以获取相应的接口描述符。 WinUSB 接口句柄对应于第一个接口。 某些 USB 设备（例如 OSR Fx2 设备）仅支持一个接口，没有任何备用设置。 因此，对于这些设备，*AlternateSettingNumber* 参数设置为零，并且该函数仅被调用一次。 **WinUsb\_QueryInterfaceSettings** 使用有关接口的信息填充调用方分配的 [**USB\_INTERFACE\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor) 结构（在 *UsbAltInterfaceDescriptor* 参数中传递）。 例如，接口中的终结点数目在 **USB**INTERFACE**DESCRIPTOR\_ 的 \_bNumEndpoints** 成员中设置。
 
-    对于支持多个接口的设备，请通过在 *AssociatedInterfaceIndex* 参数中指定备用设置来调用 [**WinUsb\_GetAssociatedInterface**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getassociatedinterface) 获取关联接口的接口句柄。
+    对于支持多个接口的设备，请通过在 [AssociatedInterfaceIndex **参数中指定备用设置来调用 \_** WinUsb](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getassociatedinterface)GetAssociatedInterface 获取关联接口的接口句柄。
 
 -   终结点
 
-    调用 [**WinUsb\_QueryPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipe) 获取有关每个接口上每个终结点的信息。 **WinUsb\_QueryPipe** 使用有关指定终结点的管道的信息填充调用方分配的 [**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构。 终结点的管道由从零开始的索引标识，并且必须小于在上一次调用 [**WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) 时检索到的接口描述符的 **bNumEndpoints** 成员中的值。 OSR Fx2 设备有一个具有三个终结点的接口。 对于此设备，函数的 *AlternateInterfaceNumber* 参数设置为 0，*PipeIndex* 参数的值的值在 0 到 2 之间变动。
+    调用 [**WinUsb\_QueryPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipe) 获取有关每个接口上每个终结点的信息。 **WinUsb\_QueryPipe** 使用有关指定终结点的管道的信息填充调用方分配的 [**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构。 终结点的管道由从零开始的索引标识，并且必须小于在上一次调用WinUsb[QueryInterfaceSettings **\_ 时检索到的接口描述符的** bNumEndpoints](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) 成员中的值。 OSR Fx2 设备有一个具有三个终结点的接口。 对于此设备，函数的 *AlternateInterfaceNumber* 参数设置为 0，*PipeIndex* 参数的值的值在 0 到 2 之间变动。
 
-    若要确定管道类型，请检查 [**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构的 **PipeInfo** 成员。 此成员设置为 [**USBD\_PIPE\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ne-usb-_usbd_pipe_type) 枚举值之一：UsbdPipeTypeControl、UsbdPipeTypeIsochronous、UsbdPipeTypeBulk 或 UsbdPipeTypeInterrupt。 OSR USB FX2 设备支持一个中断管道、一个批量传入管道和一个批量传出管道，因此 **PipeInfo** 设置为 UsbdPipeTypeInterrupt 或 UsbdPipeTypeBulk。 UsbdPipeTypeBulk 值标识批量管道，但不提供管道的方向。 方向信息会编码到管道地址的高位中，该地址存储在 **WINUSB\_PIPE\_INFORMATION** 结构的 **PipeId** 成员中。 确定管道方向的最简单方法是将 **PipeId** 值传递到 Usb100.h 中的以下宏之一：
+    若要确定管道类型，请检查 [**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 结构的 **PipeInfo** 成员。 此成员设置为[**USBD\_PIPE\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ne-usb-_usbd_pipe_type)枚举值之一： UsbdPipeTypeControl、UsbdPipeTypeIsochronous、UsbdPipeTypeBulk 或 UsbdPipeTypeInterrupt。 OSR USB FX2 设备支持一个中断管道、一个批量传入管道和一个批量传出管道，因此 **PipeInfo** 设置为 UsbdPipeTypeInterrupt 或 UsbdPipeTypeBulk。 UsbdPipeTypeBulk 值标识批量管道，但不提供管道的方向。 方向信息会编码到管道地址的高位中，该地址存储在 **WINUSB\_PIPE\_INFORMATION** 结构的 **PipeId** 成员中。 确定管道方向的最简单方法是将 **PipeId** 值传递到 Usb100.h 中的以下宏之一：
 
     -   如果方向为 in，则 `USB_ENDPOINT_DIRECTION_IN (PipeId)` 宏将返回 **TRUE**。
     -   如果方向为 out，则 `USB_ENDPOINT_DIRECTION_OUT(PipeId)` 宏将返回 **TRUE**。
@@ -194,7 +194,7 @@ done:
 }
 ```
 
-## <a href="" id="control"></a>步骤 3：将控制传输发送到默认终结点
+## <a href="" id="control"></a>步骤3：将控制传输发送到默认终结点
 
 
 接下来，通过向默认终结点发出控制请求来与设备通信。
@@ -263,7 +263,7 @@ done:
 }
 ```
 
-## <a href="" id="io"></a>步骤 4：发出 I/O 请求
+## <a href="" id="io"></a>步骤4：发出 i/o 请求
 
 
 接下来，将数据发送到设备的批量传入终结点和批量传出终结点，这两种终结点可分别用于读取请求和写入请求。 在 OSR USB FX2 设备上，已为环回功能配置了这两个终结点，因此设备会将数据从批量传入终结点移动到批量传出终结点。 它不会更改数据的值或添加任何新数据。 对于环回配置，读取请求将读取由最新写入请求发送的数据。 WinUSB 提供了以下用于发送写入请求和读取请求的函数：
@@ -346,7 +346,7 @@ done:
 }
 ```
 
-## <a name="step-5-release-the-device-handles"></a>步骤 5：释放设备句柄
+## <a name="step-5-release-the-device-handles"></a>步骤5：释放设备句柄
 
 
 完成对设备的全部所需调用后，请释放设备的文件句柄和 WinUSB 接口句柄。 为此，请调用以下函数：
@@ -354,7 +354,7 @@ done:
 -   **CloseHandle** 释放由 **CreateFile** 创建的句柄，如步骤 1 中所述。
 -   [**WinUsb\_Free**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free) 释放设备的 WinUSB 接口句柄，该句柄由 [**WinUsb\_Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) 返回。
 
-## <a name="step-6-implement-main"></a>步骤 6：实现 Main
+## <a name="step-6-implement-main"></a>步骤6：实现 Main
 
 
 下面的代码示例显示了控制台应用程序的 main 函数。
