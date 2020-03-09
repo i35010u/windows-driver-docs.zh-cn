@@ -8,20 +8,20 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1eafe9d061dbffd91c29910e7f6ea3bf3db547c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375327"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402397"
 ---
 # <a name="co-installer-interface"></a>辅助安装程序界面
 
 
-Co-安装程序的接口包含已导出的入口点函数和关联的数据结构。
+共同安装程序的接口包含一个导出的入口点函数和一个关联的数据结构。
 
-### <a href="" id="co-installer-entry-point"></a> 辅助安装程序入口点
+### <a href="" id="co-installer-entry-point"></a>共同安装程序入口点
 
-辅助安装程序必须导出某个入口点函数具有以下原型：
+共同安装程序必须导出具有以下原型的入口点函数：
 
 ```cpp
 typedef DWORD 
@@ -34,35 +34,35 @@ typedef DWORD
 ```
 
 <a href="" id="installfunction"></a>*InstallFunction*  
-指定设备安装处理的请求，其中辅助安装程序具有的参与选项。 这些请求是使用 DIF 代码 （如 DIF_INSTALLDEVICE） 指定的。 有关详细信息，请参阅[设备安装函数代码](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))。
+指定正在处理的设备安装请求，在该请求中，共同安装程序具有参与的选项。 这些请求是使用 DIF 代码（如 DIF_INSTALLDEVICE）指定的。 有关详细信息，请参阅[设备安装功能代码](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))。
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](device-information-sets.md)。
+提供[设备信息集](device-information-sets.md)的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-（可选） 标识的设备安装请求的目标设备。 如果此参数为非**NULL**，它标识设备信息元素中的设备信息集。 *DeviceInfoData*为非**NULL**时[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用特定于设备的共同安装程序。 可以使用具有一个 DIF 请求调用的特定于类共同安装程序 **NULL * * * DeviceInfoData*，例如 DIF_DETECT 或 DIF_FIRSTTIMESETUP。
+（可选）确定作为设备安装请求的目标的设备。 如果此参数为非**NULL**，则它将标识设备信息集中的设备信息元素。 当[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)调用设备特定的共同安装程序时， *DeviceInfoData*为非**NULL** 。 可以通过具有 **NULL ** * * DeviceInfoData （如 DIF_DETECT 或 DIF_FIRSTTIMESETUP）的 DIF 请求来调用特定于类的共同安装程序。
 
-<a href="" id="context"></a>*上下文*  
-指向[ **COINSTALLER_CONTEXT_DATA** ](#coinstaller-context-data)结构。
+<a href="" id="context"></a>*快捷*  
+指向[**COINSTALLER_CONTEXT_DATA**](#coinstaller-context-data)结构。
 
-设备共同安装程序将返回以下值之一：
+设备共同安装程序返回下列值之一：
 
 <a href="" id="no-error"></a>NO_ERROR  
-辅助安装程序为指定执行相应的措施*InstallFunction*，或者辅助安装程序确定不需要执行任何操作请求。
+共同安装程序针对指定的*InstallFunction*执行了相应的操作，或共同安装程序确定无需对请求执行任何操作。
 
-如果收到无法识别的 DIF 代码，辅助安装程序也必须返回 NO_ERROR。 （请注意类安装程序无法识别 DIF 代码返回 ERROR_DI_DO_DEFAULT。）
+如果辅助安装程序收到无法识别的 DIF 代码，还必须返回 NO_ERROR。 （请注意，类安装程序为无法识别的 DIF 代码返回 ERROR_DI_DO_DEFAULT。）
 
 <a href="" id="error-di-postprocessing-required"></a>ERROR_DI_POSTPROCESSING_REQUIRED  
-辅助安装程序执行任何适当的操作为指定*InstallFunction*并请求要在类安装程序处理完请求之后再次调用。
+共同安装程序针对指定的*InstallFunction*执行了任何适当的操作，并请求在类安装程序处理请求后再次调用。
 
 <a href="" id="a-win32-error"></a>*Win32 错误*  
-辅助安装程序遇到错误。
+共同安装程序遇到错误。
 
-辅助安装程序不会设置 ERROR_DI_DO_DEFAULT 返回状态。 此状态仅类安装程序使用。 如果共同安装程序将返回此状态，请**SetupDiCallClassInstaller**不会处理 DIF_*Xxx*正确请求。 共同安装程序可能会*传播*返回状态为 ERROR_DI_DO_DEFAULT 在其后续处理阶段中，但永远不会*设置*此值。
+共同安装程序不会将返回状态设置为 ERROR_DI_DO_DEFAULT。 此状态只能由类安装程序使用。 如果共同安装程序返回此状态， **SetupDiCallClassInstaller**将不会正确处理 DIF_*Xxx*请求。 共同安装程序可能会将 ERROR_DI_DO_DEFAULT 的返回状态*传播*到其后处理过程中，但它永远不会*设置*此值。
 
-### <a href="" id="coinstaller-context-data"></a> COINSTALLER_CONTEXT_DATA
+### <a href="" id="coinstaller-context-data"></a>COINSTALLER_CONTEXT_DATA
 
-COINSTALLER_CONTEXT_DATA 是描述安装请求的共同 installer 特定的上下文结构。 结构的格式为：
+COINSTALLER_CONTEXT_DATA 是描述安装请求的特定于安装程序的上下文结构。 结构的格式为：
 
 ```cpp
 typedef struct 
@@ -73,13 +73,13 @@ typedef struct
   } COINSTALLER_CONTEXT_DATA, *PCOINSTALLER_CONTEXT_DATA;
 ```
 
-以下列表介绍了此结构的成员：
+以下列表描述了此结构的成员：
 
--   **后续处理**是**TRUE**当共同安装程序后调用适当的类安装程序中，如果任何，已处理指定的 DIF 代码*InstallFunction*。 **后续处理**是只读的辅助安装程序。
+-   如果在适当的类安装程序（如果有）处理了*InstallFunction*所指定的 DIF 代码，则在适当的类安装程序调用后，**后处理**为**TRUE** 。 **后处理**对于共同安装程序是只读的。
 
--   如果**后续处理**是**FALSE**， **InstallResult**不相关。 如果**后续处理**是**TRUE**， **InstallResult**是安装请求的当前状态。 此值为 NO_ERROR 或错误状态返回为此调用前一组件的安装请求。 辅助安装程序可通过返回其函数返回时，此值将传播状态或它可以返回另一个状态。 **InstallResult**是只读的辅助安装程序。
+-   如果**后处理**为**FALSE**，则**InstallResult**不相关。 如果**后处理**为**TRUE**，则**InstallResult**是安装请求的当前状态。 此值为 NO_ERROR 或以前的组件为此安装请求返回的错误状态。 共同安装程序可以通过为其函数返回返回此值来传播状态，也可以返回其他状态。 **InstallResult**对共同安装程序是只读的。
 
--   **PrivateData**指向共同 installer 分配的缓冲区。 如果共同安装程序将设置此指针和后续处理，请求**SetupDiCallClassInstaller**时它调用共同安装程序的后续处理将指针传递到共同安装程序。
+-   **PrivateData**指向由安装程序分配的一个缓冲区。 如果共同安装程序设置了此指针并请求后处理，则在调用共同安装程序进行后处理时， **SetupDiCallClassInstaller**会将指针传递到共同安装程序。
 
  
 
