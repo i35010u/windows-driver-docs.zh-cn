@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f69f7c9b294b7e66b39b67492ed3e3c5ecf2f347
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845624"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402422"
 ---
 # <a name="controlling-device-access-in-kmdf-drivers"></a>在 KMDF 驱动程序中控制设备访问权限
 
@@ -46,7 +46,7 @@ WDM 驱动程序和基于框架的驱动程序应该提供应用程序可以访�
 
 -   为设备对象提供默认安全描述符的操作系统（请参阅[控制设备访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)）。
 
--   此框架提供默认的安全描述符（通过使用 SDDL\_DEVOBJ\_SYS\_所有\_ADM\_所有值）（如果驱动程序调用[**WdfDeviceInitAssignName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)来为设备对象分配名称）（请参阅[SDDL对于设备对象](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects)）。
+-   此框架提供默认的安全描述符（通过使用 SDDL\_DEVOBJ\_SYS\_所有\_ADM\_所有值）（如果驱动程序调用[**WdfDeviceInitAssignName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)来为设备对象指定名称）（请参阅[用于设备对象的 SDDL](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects)）。
 
 -   你的驱动程序，它可以通过调用[**WdfDeviceInitAssignSDDLString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)替代框架的默认安全描述符。
 
@@ -60,7 +60,7 @@ WDM 驱动程序和基于框架的驱动程序应该提供应用程序可以访�
 
 有关操作系统如何确定要用于设备的安全描述符的信息，请参阅[控制设备访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)。
 
-当框架创建设备对象时，它始终将文件\_设备设置\_SECURE\_打开标志，使操作系统在允许应用程序访问设备的任何名称名称. 有关文件\_设备\_SECURE\_打开标志和设备命名空间的详细信息，请参阅[控制设备命名空间访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)。
+当框架创建设备对象时，它始终将文件\_设备设置\_SECURE\_打开标志，以便操作系统在允许应用程序访问设备的命名空间中的任何名称前检查设备的安全描述符。 有关文件\_设备\_SECURE\_打开标志和设备命名空间的详细信息，请参阅[控制设备命名空间访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)。
 
  
 
