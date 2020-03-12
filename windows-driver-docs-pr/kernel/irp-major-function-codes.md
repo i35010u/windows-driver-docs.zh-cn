@@ -1,25 +1,22 @@
 ---
 title: IRP 主要函数代码
 description: IRP 主要函数代码
-ms.date: 08/12/2017
+ms.date: 03/09/2020
 ms.assetid: 11c5b1a9-74c0-47fb-8cce-a008ece9efae
 ms.localizationpriority: medium
-ms.openlocfilehash: e89c464ff82bfa3834501b54a2c1a8796087164b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 17cb9101cc034c0f1cd58b7142c4c70750284793
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838609"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935392"
 ---
 # <a name="irp-major-function-codes"></a>IRP 主要函数代码
 
 
+每个[**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)的每个特定于驱动程序的 i/o 堆栈位置（[**IO_STACK_LOCATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)）都包含一个主要函数代码（IRP_MJ_XXX），该代码告诉驱动程序它或基础设备驱动程序应执行哪些操作来满足 i/o 请求。 每个内核模式驱动程序必须为它必须支持的主要功能代码提供调度例程。
 
-
-
-每个驱动程序特定的 i/o 堆栈位置（**IO\_堆栈\_位置**，以了解它必须支持的主要功能代码。
-
-驱动程序为给定的**IRP\_MJ\_<em>XXX</em>** 代码执行的特定操作在某种程度上取决于基础设备，尤其是[**IRP\_MJ\_设备\_控件**](irp-mj-device-control.md)和[**irp\_mj\_内部\_设备\_控制**](irp-mj-internal-device-control.md)请求。 例如，发送到键盘驱动程序的请求一定与发送到磁盘驱动程序的请求有些不同。 但是，i/o 管理器为每个系统定义的主要函数代码定义参数和 i/o 堆栈位置内容。
+驱动程序为给定的**IRP\_MJ\_<em>XXX</em>** 代码执行的特定操作在某种程度上依赖于基础设备，尤其是对于[**IRP\_MJ\_设备\_控件**](irp-mj-device-control.md)和[**irp\_** ](irp-mj-internal-device-control.md)\_\_\_ 例如，发送到键盘驱动程序的请求一定与发送到磁盘驱动程序的请求有些不同。 但是，i/o 管理器为每个系统定义的主要函数代码定义参数和 i/o 堆栈位置内容。
 
 每个更高级别的驱动程序都必须在 Irp 中为下一级驱动程序设置相应的 i/o 堆栈位置，并使用每个输入 IRP 或使用驱动程序创建的 IRP （如果较高级别的驱动程序保存到输入 IRP）调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)。 因此，每个中间驱动程序必须为基础设备驱动程序处理的每个主要函数代码提供一个调度例程。 否则，每当应用程序或更高级别的驱动程序尝试将 i/o 请求发送到基础设备驱动程序时，新的中间驱动程序就会 "中断链"。
 

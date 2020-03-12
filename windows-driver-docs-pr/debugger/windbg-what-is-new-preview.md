@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: cc6c0e84b91a791e23674fc35fda72a5c6774552
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: d67408c7cbbe05083c7a0d299b6b76e9c3e2e26c
+ms.sourcegitcommit: e0afb1b273c34caba8bda1cb78db9d1c8d8cdada
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256727"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79131204"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
@@ -39,7 +39,7 @@ ms.locfileid: "76256727"
 
 **TTD 调用对象的改进** - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
 
-**支持 Open Enclave** -WinDbg 预览版现在可以调试打开的 ENCLAVE （OE）应用程序，你可以在[打开的 Enclave 文档](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/GettingStarted.Windows.md)中找到如何执行此操作的说明。
+**支持 Open Enclave** -WinDbg 预览版现在可以调试打开的 ENCLAVE （OE）应用程序，你可以在[打开的 Enclave 文档](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/Windows_windbg.md)中找到如何执行此操作的说明。
 
 **VS Code 扩展**-为了更轻松地为开放式 Enclave 进行开发，我们发布了一个基本的 VS Code 扩展，以实现更快的内部循环。 "变量"、"监视" 和 "调用堆栈" 窗口所有工作以及断点和源窗口，任何更深入的调试都需要使用控制台窗口。
  
@@ -98,7 +98,7 @@ ms.locfileid: "76256727"
 
 **调试器数据模型C++标头**-有一个新C++的标头 DbgModel，它作为 Windows SDK 的一部分包含，以便通过C++扩展调试器数据模型。 有关详细信息，请查看[调试器数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过[调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
 
-**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
+**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
 
 其他更改和 bug 修复：
 
@@ -247,7 +247,7 @@ ms.locfileid: "76256727"
 
 **Javascript 脚本中的元数据**-javascript 扩展现在可以返回属性和其他构造的元数据。 这意味着扩展可以提供帮助字符串、指示值的显示基数等。 通过在对象上放置元数据描述符来提供元数据，方法是使用 metadataDescriptor 或 defineMetadata 的显式调用。 函数返回值、迭代值和其他值上下文可以通过 valueWithMetadata 为其值返回元数据。
 
-**JAVASCRIPT API 更新**-对 JavaScript 提供程序中的 api 进行了一些潜在的源级别重大更改（包括新的对本机对象的方法和属性）。 现有扩展将不会看到任何可能重大的更改，而不会指明它们是否支持新版本的 JsProvider API。 对于新的 API 版本，可通过将 apiVersionSupport 记录置于由 initializeScript 返回的支持版本1.1 的数组中来指示。 可能? .. 值为时，指示对版本1.1 的支持。
+**JAVASCRIPT API 更新**-对 JavaScript 提供程序中的 api 进行了一些潜在的源级别重大更改（包括新的对本机对象的方法和属性）。 现有扩展将不会看到任何可能重大的更改，而不会指明它们是否支持新版本的 JsProvider API。 对于新的 API 版本，可通过将 apiVersionSupport 记录置于由 initializeScript 返回的支持版本1.1 的数组中来指示。 可能? . 值为时，指示对版本1.1 的支持。
 
 API 版本1.1 中的更改包括：
 
