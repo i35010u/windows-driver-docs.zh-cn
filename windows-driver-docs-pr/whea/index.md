@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 5a72e96de0677e80657a37a45edc50ffa7654e88
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: d35e9561036a90667c9c7da5876c2dd7add3efd1
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210157"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78947423"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南
 
@@ -31,8 +31,6 @@ ms.locfileid: "75210157"
 - 如何开发和分发特定于平台的硬件错误驱动程序 (PSHED) 插件。有关详细信息，请参阅[特定于平台的硬件错误驱动程序插件](platform-specific-hardware-error-driver-plug-ins2.md)。
 
 - 用户模式应用程序如何与 WHEA 平台通信。 有关详细信息，请参阅 [Windows 硬件错误体系结构感知型用户模式应用程序](windows-hardware-error-architecture-aware-user-mode-applications.md)。
-
-若要更详细地了解 WHEA 以及如何在硬件平台上实现 WHEA，请参阅 **WHEA 平台设计指南**。 平台供应商可以通过向 <wheafb@microsoft.com> 发送电子邮件获取此设计指南。
 
 ## <a name="in-this-section"></a>本部分内容
 
