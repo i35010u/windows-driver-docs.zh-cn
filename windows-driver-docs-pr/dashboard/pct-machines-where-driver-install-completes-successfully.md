@@ -4,18 +4,18 @@ description: 该度量将 30 天滑动窗口中的遥测数据聚合为成功安
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ad66bde87ea9efd250eb622c9fc932fcc8f427
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: 3f2f1868566b73cf4d65204bf302f58979d9f69d
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017023"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083125"
 ---
 # <a name="percent-of-machines-where-the-driver-install-process-completes-successfully"></a>驱动程序安装过程成功完成的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
-当未能正确安装驱动程序时，目标组件会失去功能并阻止用户访问组件功能。 用户必须解决该问题以重新获取功能。 PNP 错误代码列表位于[设备管理器问题代码](https://docs.microsoft.com/windows-hardware/drivers/debugger/device-manager-problem-codes)和 [Windows 支持](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
+当未能正确安装驱动程序时，目标组件会失去功能并阻止用户访问组件功能。 用户必须解决该问题以重新获取功能。 PNP 错误代码列表位于[设备管理器问题代码](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)和 [Windows 支持](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)。
 
 ## <a name="measure-attributes"></a>度量属性
 

@@ -4,11 +4,11 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 10/03/2019
 ms.openlocfilehash: f4795fa7a29071c1eb2c83051cf68a2052caa447
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402384"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243058"
 ---
 # <a name="get-shipping-label-data"></a>获取发货标签数据
 

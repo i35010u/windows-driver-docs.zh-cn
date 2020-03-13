@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d881ea71051ac1c65c2c06207cef7ebab7953b1
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072162"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243068"
 ---
 # <a name="get-product-data"></a>获取产品数据
 

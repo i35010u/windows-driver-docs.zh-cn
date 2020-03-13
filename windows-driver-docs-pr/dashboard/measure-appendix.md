@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: dbaff20d8857aaac03331fd3df5a403fc008e07b
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71016985"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243056"
 ---
 # <a name="appendix-for-the-microsoft-driver-measure-dictionary"></a>Microsoft 驱动程序度量字典附录
 
@@ -20,7 +20,7 @@ ms.locfileid: "71016985"
 |Devenv.exe|开发人员工具|
 |MS Paint|娱乐|
 |Microsoft Skype 应用|Comm & Collab|
-|Microsoft Windows 照片|Media|
+|Microsoft Windows 照片|媒体|
 |Microsoft Windows 通信应用|工作效率|
 |Microsoft 画图|创意|
 |Microsoft Solitaire Collection|游戏|
@@ -28,7 +28,7 @@ ms.locfileid: "71016985"
 |Windows 组件|Windows 组件|
 |Microsoft Edge|浏览器|
 |Microsoft Windows DVD 播放器|娱乐|
-|Microsoft Zune 视频|Media|
+|Microsoft Zune 视频|媒体|
 |Msaccess.exe|开发人员工具|
 |Outlook|工作效率|
 |Excel|工作效率|
@@ -47,7 +47,7 @@ ms.locfileid: "71016985"
 |Power Point|工作效率|
 |Windbg.exe|开发人员工具|
 |Microsoft Office Onenote|工作效率|
-|Microsoft Zune 音乐|Media|
+|Microsoft Zune 音乐|媒体|
 |Microsoft Mahjong|游戏|
 |PowerPoint|工作效率|
 |我的世界|游戏|

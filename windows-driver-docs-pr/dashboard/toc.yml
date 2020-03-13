@@ -36,6 +36,10 @@
           items:
             - name: 驱动程序安装度量
               items:
+                - name: WU 报告成功下载的计算机的百分比
+                  href: pct-machines-wu-success-download.md
+                - name: WU 报告成功安装的计算机的百分比
+                  href: pct-machines-wu-success-install.md
                 - name: 驱动程序安装过程成功完成的计算机的百分比
                   href: pct-machines-where-driver-install-completes-successfully.md
                 - name: 安装了驱动程序更新并在安装后两天内报告 PnP 错误代码的计算机的百分比
@@ -218,7 +222,7 @@
       href: limit-driver-distribution.md
     - name: 发布测试分发
       href: publishing-for-test-distribution.md
-    - name: 为驱动程序分发逐渐推出
+    - name: 逐步推出
       href: gradual-rollout.md
 - name: 硬件仪表板 API
   items:
