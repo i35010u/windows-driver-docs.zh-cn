@@ -5,11 +5,11 @@ ms.assetid: 478e6900-86f9-487c-a2fd-18543402f5e2
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6081171f5fa3668ce5441f93b444ec478405540d
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402355"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242782"
 ---
 # <a name="h"></a>H
 

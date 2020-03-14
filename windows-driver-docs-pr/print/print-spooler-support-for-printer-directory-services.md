@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 170dc2f1756fbea5763d073cd001bed8bc3013e1
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402451"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242980"
 ---
 # <a name="print-spooler-support-for-printer-directory-services"></a>打印机目录服务的打印后台处理程序支持
 

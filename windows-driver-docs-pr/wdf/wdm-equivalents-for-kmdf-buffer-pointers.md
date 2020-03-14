@@ -5,11 +5,11 @@ ms.assetid: 7923A3CA-479A-4C7D-B428-F57C9701906E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d74318e20729b8155e818d5fd585f722f7337ed
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842792"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242958"
 ---
 # <a name="wdm-equivalents-for-wdf-buffer-pointers"></a>WDF 缓冲区指针的 WDM 等效项
 
@@ -30,7 +30,7 @@ ms.locfileid: "72842792"
 
 若要检索读取请求的缓冲区，KMDF 驱动程序将调用**WdfRequestRetrieveOutput**_Xxx_方法之一。 其中每个方法返回的缓冲区会有所不同，具体取决于驱动程序是执行缓冲还是直接 i/o。 下表描述了 WDM 术语中每个方法所返回的指针。
 
-| 函数                                                                             | 缓冲 i/o                                                                                                                                    | 直接 i/o                                                                                                                                                                                                |
+| 函数                                                                             | 缓冲 i/o                                                                                                                                    | 直接 I/O                                                                                                                                                                                                |
 |--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WdfRequestRetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputbuffer)             | **Irp-&gt;AssociatedIrp. SystemBuffer**                                                                                                          | [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) （**Irp-&gt;MdlAddress**）                                                                                                          |
 | [**WdfRequestRetrieveOutputWdmMdl （仅限 KMDF）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputwdmmdl) | 为**Irp&gt;SystemBuffer**生成内存描述符列表（MDL）并返回 MDL。                                           | **Irp-&gt;MdlAddress**                                                                                                                                                                                    |
@@ -43,7 +43,7 @@ ms.locfileid: "72842792"
 
 若要检索写入请求的缓冲区，KMDF 驱动程序将调用**WdfRequestRetrieveInput**_Xxx_方法之一。 其中每个方法返回的缓冲区会有所不同，具体取决于驱动程序是执行缓冲还是直接 i/o。 下表描述了 WDM 术语中每个方法所返回的指针。
 
-| 函数                                                                           | 缓冲 i/o                                                                                                                                    | 直接 i/o                                                                                                                                                                                                |
+| 函数                                                                           | 缓冲 i/o                                                                                                                                    | 直接 I/O                                                                                                                                                                                                |
 |------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WdfRequestRetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)             | **Irp-&gt;AssociatedIrp. SystemBuffer**                                                                                                          | [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) （**Irp-&gt;MdlAddress**）                                                                                                          |
 | [**WdfRequestRetrieveInputWdmMdl （仅限 KMDF）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl) | 为**Irp&gt;AssociatedIrp SystemBuffer**生成 mdl 并返回 mdl。                                                                   | **Irp-&gt;MdlAddress**                                                                                                                                                                                    |
@@ -56,7 +56,7 @@ ms.locfileid: "72842792"
 
 若要检索设备 i/o 控制请求的缓冲区，KMDF 驱动程序需要调用**WdfRequestRetrieveInputXxx**或**WdfRequestRetrieveOutputXxx**方法。 其中每个方法返回的缓冲区会有所不同，具体取决于驱动程序是执行[缓冲还是直接](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-data-buffers-in-wdf-drivers)i/o，如下表所示：
 
-| 函数                                                                             | 缓冲 i/o                                                                                                                                    | 直接 i/o                                                                                                                                                                                                |
+| 函数                                                                             | 缓冲 i/o                                                                                                                                    | 直接 I/O                                                                                                                                                                                                |
 |--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [**WdfRequestRetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputbuffer)               | **Irp-&gt;AssociatedIrp. SystemBuffer**                                                                                                          | [**MmGetSystemAddressForMdlSafe**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer) （**Irp-&gt;MdlAddress**）                                                                                                          |
 | [**WdfRequestRetrieveInputWdmMdl （仅限 KMDF）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputwdmmdl)   | 为**Irp&gt;AssociatedIrp SystemBuffer**生成 mdl 并返回 mdl。                                                                   | 为**Irp&gt;AssociatedIrp SystemBuffer**生成 mdl 并返回 mdl。                                                                                                                             |

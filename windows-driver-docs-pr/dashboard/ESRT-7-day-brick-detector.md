@@ -4,16 +4,16 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为在 7 天
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 57e804d79df3dd6ca406615463697a974ed4ddb4
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: c324f996aa6dbf53184a7e889e02e4897eb394f9
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097495"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083145"
 ---
-# <a name="percent-of-machines-that-successfully-installed-firmware-and-not-heartbeat-within-7-days"></a>已成功安装固件但 7 天内未报告任何遥测数据的计算机的百分比
+# <a name="percent-of-machines-that-successfully-installed-firmware-and-have-seen-no-heartbeat-within-7-days"></a>已成功安装固件但 7 天内未报告任何遥测数据的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 已成功安装固件但 7 天未报告任何遥测数据的计算机的百分比。   
 

@@ -5,11 +5,11 @@ ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffa356f4be919e6615888f064b727de299c74a36
-ms.sourcegitcommit: 645e42f3d8c59e249247d101d63681093f6522ee
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71705404"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242752"
 ---
 # <a name="teexe-command-options"></a>Te.exe 命令选项
 
@@ -272,9 +272,9 @@ te \*/runon： TestMachine1
 
 @\[属性名称\] = \[值作为字符串\]
 @\[属性名称\] &gt;= \[值为 float 或 integer\]
-@\[\] 属性名称 &gt; \[\]
-@\[值\] &lt;= \[\]&lt; \[值作为 float 或 integer\] 属性名称\]
-@\[
+@\[属性名称\] &gt; \[\]
+@值 \[\] &lt;属性名称 = \[\]
+@\[\] &lt; \[整数\]
 
 * *字符串形式的属性值必须用单引号括起来。*
 * *您可以使用 "and"、"or" 和 "not" （不区分大小写）来指定组合选择条件。*
@@ -504,7 +504,7 @@ te test1/logFile： myCustomLogFile/enableWttLogging
 
 ### <a name="stackframecountvalue"></a>/stackFrameCount：\<值 >
 
-指定在获取调用堆栈时要显示的堆栈帧的数目。 默认值为50。
+指定在获取调用堆栈时要显示的堆栈帧的数目。 默认值为“50”。
 
 `te.exe test1.dll /stackFrameCount:100`
 

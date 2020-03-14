@@ -5,16 +5,16 @@ ms.assetid: E464F885-928C-40BC-A09F-7A7921F8FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24d99eadcc8999e3dd2daec4e7639f3a67f221c9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831728"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242940"
 ---
 # <a name="supporting-passive-level-interrupts"></a>支持被动级别中断
 
 
-从 framework 版本1.11 开始，在 Windows 8 或更高版本的操作系统上运行的内核模式驱动程序框架（KMDF）和用户模式驱动程序框架（UMDF）驱动程序可以创建需要被动级别处理的中断对象。 如果驱动程序为被动级别中断处理配置了中断对象，则框架将调用驱动程序的中断服务例程（ISR）和其他[中断对象事件回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/)，同时\_在被动级别中断锁。
+从 framework 版本1.11 开始，在 Windows 8 或更高版本的操作系统上运行的内核模式驱动程序框架（KMDF）和用户模式驱动程序框架（UMDF）驱动程序可以创建需要被动级别处理的中断对象。 如果驱动程序为被动级别中断处理配置了中断对象，则框架将调用驱动程序的中断服务例程（ISR）和其他[中断对象事件回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/)（IRQL = 被动\_级别，同时保留被动级别中断锁）。
 
 如果要为芯片（SoC）平台上的系统开发基于框架的驱动程序，可以使用被动模式中断，通过低速总线（例如，I-C、SPI 或 UART）与离 SoC 设备进行通信。
 
@@ -29,7 +29,7 @@ ms.locfileid: "72831728"
 
 -   将**PassiveHandling**成员设置为 TRUE。
 -   提供要在被动级别调用的[*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr)回调函数。
--   可以选择将**AutomaticSerialization**设置为 TRUE。 如果驱动程序将**AutomaticSerialization**设置为 TRUE，则框架会将中断对象的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数的执行与其他对象中的回调函数同步，位于中断的父对象下。
+-   可以选择将**AutomaticSerialization**设置为 TRUE。 如果驱动程序将**AutomaticSerialization**设置为 TRUE，则框架会将中断对象的[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)或[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数的执行与中断的父对象下的其他对象中的回调函数同步。
 -   或者，驱动程序可以提供一个[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)回调函数，以 IRQL = 被动\_级别或[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)回调函数调用，以 IRQL = 调度\_级别调用。
 
 有关设置上述配置结构成员的其他信息，请参阅[**WDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)。

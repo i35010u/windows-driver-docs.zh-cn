@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eabf931baf7b34d4a082c0477c6e8c4116341558
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828549"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242974"
 ---
 # <a name="canceling-a-waitwake-irp"></a>取消等待/唤醒 IRP
 
@@ -31,7 +31,7 @@ ms.locfileid: "72828549"
 
 在以下情况下，驱动程序可能需要取消挂起的等待/唤醒 IRP：
 
--   驱动程序接收 PnP [**IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)， [**IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)， [**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)，或[**IRP\_MN\_对设备的意外\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)请求。 设备重新启动后，驱动程序应重新发出等待/唤醒 IRP （[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)）。
+-   驱动程序接收 PnP [**IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)、 [**IRP\_MN\_查询\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)、 [**irp\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)，或[**irp\_MN\_意外\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)请求。 设备重新启动后，驱动程序应重新发出等待/唤醒 IRP （[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)）。
 
 -   系统将进入睡眠状态，但不应启用设备来唤醒系统。
 

@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f2c96f433ada8feb655e06b4f5a5089eded1bd4
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209801"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242780"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>读取和筛选调试消息
 
@@ -36,7 +36,7 @@ ms.locfileid: "75209801"
 
 2.  设置相应的 "*组件筛选器掩码*" 的值。 每个组件都有不同的掩码;掩码值指示将显示该组件的哪些消息。 可以使用注册表编辑器或使用内核调试器在内存中设置组件筛选器掩码。
 
-3.  将内核调试器附加到计算机。 每次你的驱动程序将消息传递到**DbgPrintEx**或**KdPrintEx**时，传递*给组件器和**级别*的值将与相应的组件筛选器掩码的值进行比较。 如果这些值满足特定条件，则会将消息发送到内核调试器并显示。 否则，将不会发送任何消息。
+3.  将内核调试器附加到计算机。 每次你的驱动程序将消息传递到**DbgPrintEx**或**KdPrintEx**时，传递*给组件器和* *级别*的值将与相应的组件筛选器掩码的值进行比较。 如果这些值满足特定条件，则会将消息发送到内核调试器并显示。 否则，将不会发送任何消息。
 
 完整的详细信息如下。 此页面上到**DbgPrintEx**的所有引用同样适用于**KdPrintEx**。
 
@@ -131,7 +131,7 @@ Microsoft Windows 驱动程序工具包（WDK）标头 ntddk 中的所有组件�
 
 - 可以在注册表项 HKEY 中访问组件筛选器掩码， **\_本地\_计算机\\系统\\CurrentControlSet\\控制\\会话管理器\\调试打印筛选器**。 使用注册表编辑器创建或打开此项。 在此项下，创建一个值，其中包含所需组件的名称（以大写形式）。 将其设置为要用作组件筛选器掩码的 DWORD 值。
 
-- 如果内核调试程序处于活动状态，则它可以通过取消引用符号 Kd 中存储的地址来访问组件筛选器掩码值**\_** <em>xxxx</em> **\_掩码**，其中*XXXX*是所需的组件名称。 可以使用**dd （显示 dword）** 命令在 WINDBG 或 KD 中显示此掩码的值，也可以使用**ED （enter dword）** 命令输入新的组件筛选器掩码。 如果存在符号多义性的危险，你可能希望将此符号指定为**nt！Kd\_** <em>XXXX</em> **\_掩码**。
+- 如果内核调试程序处于活动状态，则它可以通过取消引用符号 Kd 中存储的地址来访问组件筛选器掩码值 **\_** <em>xxxx</em> **\_掩码**，其中*XXXX*是所需的组件名称。 可以使用**dd （显示 dword）** 命令在 WINDBG 或 KD 中显示此掩码的值，也可以使用**ED （enter dword）** 命令输入新的组件筛选器掩码。 如果存在符号多义性的危险，你可能希望将此符号指定为**nt！Kd\_** <em>XXXX</em> **\_掩码**。
 
 在启动过程中，存储在注册表中的筛选器掩码会生效。 调试器创建的筛选器掩码会立即生效，并且在重新启动 Windows 之前持久保存。 注册表中设置的值可以由调试器重写，但如果重新启动系统，则组件筛选器掩码将返回到注册表中指定的值。
 
@@ -177,7 +177,7 @@ DbgPrintEx( DPFLTR_IHVBUS_ID,    DPFLTR_MASK | 0x10,  "Third message.\n");
 DbgPrint( "Fourth message.\n");
 ```
 
-第一条消息的*级别*参数等于 DPFLTR\_INFO\_Level，后者为3。 由于此小于32，因此将其视为一个移位，并产生一个重要性位域0x8。 然后，此值将与 IHVVIDEO 的有效组件筛选器掩码 and，提供非零结果。 因此，第一条消息会传输到调试器。
+第一条消息的*级别*参数等于 DPFLTR\_INFO\_Level，后者为3。 由于此小于32，因此将其视为一个移位，并产生一个重要性位域0x8。 然后，此值将与 IHVVIDEO 的有效**IHVVIDEO**组件筛选器掩码 and，提供非零结果。 因此，第一条消息会传输到调试器。
 
 第二条消息的*级别*参数等于7。 同样，这被视为一个移位，这会产生一个重要性位字段0x80。 然后，使用0x7 的**IHVAUDIO**组件筛选器掩码 and，结果为零。 因此不会传输第二条消息。
 
@@ -189,7 +189,7 @@ DbgPrint( "Fourth message.\n");
 
 当**DbgPrint**、 **DbgPrintEx**、 **KdPrint**或**KdPrintEx**向调试器传输消息时，将带格式的字符串发送到*DbgPrint 缓冲区*。 在大多数情况下，此缓冲区的内容会立即显示在调试器命令窗口中。 此显示可以通过使用全局标志实用程序（gflags）的**Buffer DbgPrint Output**选项来禁用。 此显示不会在本地内核调试期间自动出现。
 
-在本地内核调试过程中，以及此显示已禁用的任何其他时间，只能使用[**！ DbgPrint**](-dbgprint.md)扩展命令查看 DbgPrint 缓冲区的内容。
+在本地内核调试过程中，以及此显示已禁用的任何其他时间，只能使用[ **！ DbgPrint**](-dbgprint.md)扩展命令查看 DbgPrint 缓冲区的内容。
 
 对**DbgPrint**、 **DbgPrintEx**、 **KdPrint**或**KdPrintEx**的任何单个调用将仅传输512个字节的信息。 超出此长度的任何输出都将丢失。 DbgPrint 缓冲区本身最多可以在 Windows 的免费版本中保存 4 KB 的数据。 在 Windows Server 2003 及更高版本的 Windows 上，可以使用 KDbgCtrl 工具来更改 DbgPrint 缓冲区的大小。 有关详细信息，请参阅[使用 KDbgCtrl](using-kdbgctrl.md) 。
 

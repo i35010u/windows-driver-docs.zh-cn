@@ -5,11 +5,11 @@ ms.assetid: f5d761b9-866e-4948-978e-e95f8aed8b21
 ms.date: 12/03/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 819c50b37d14a228af0d00da4678b05230fbabcb
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402411"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242794"
 ---
 # <a name="tools-included-in-debugging-tools-for-windows"></a>Windows 调试工具中包含的工具
 

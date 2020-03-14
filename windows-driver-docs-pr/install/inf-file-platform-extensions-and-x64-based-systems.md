@@ -7,11 +7,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac311ac10eb3a2188309d0382392bd3a7401ef6
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402506"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243032"
 ---
 # <a name="inf-file-platform-extensions-and-x64-based-systems"></a>INF 文件平台扩展和基于 x64 的系统
 

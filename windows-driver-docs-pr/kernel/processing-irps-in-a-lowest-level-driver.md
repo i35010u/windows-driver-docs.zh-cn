@@ -18,11 +18,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26448d746e4e6e729f5cd254a0c3a612fbcdf4f0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827609"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242948"
 ---
 # <a name="processing-irps-in-a-lowest-level-driver"></a>在最低级驱动程序中处理 IRP
 
@@ -52,7 +52,7 @@ ms.locfileid: "72827609"
 
 ### <a name="calling-iogetcurrentirpstacklocation"></a>调用 IoGetCurrentIrpStackLocation
 
-需要 IRP 参数的任何驱动程序例程都必须调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)以获取驱动程序的[i/o 堆栈位置](i-o-stack-locations.md)。 此类例程包括处理多个主要 i/o 函数代码（<strong>irp\_MJ\_* xxx</strong><em>）、处理支持次要函数的函数（</em><em>irp\_MN\_</em>xxx<strong><em>）或处理设备 i/o控制请求（[</em>* IRP\_MJ\_设备\_控制</strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>)和/或[**IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)），以及处理 IRP 的其他每个驱动程序例程。
+需要 IRP 参数的任何驱动程序例程都必须调用[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)以获取驱动程序的[i/o 堆栈位置](i-o-stack-locations.md)。 此类例程包含处理多个主要 i/o 函数代码（<strong>IRP\_MJ\_* XXX</strong>）的调度例程<em>，处理一个函数，该函数支持次要函数（</em><em>IRP\_MN\_</em>XXX<strong><em>），或处理设备 I/O 控制请求（[</em>* IRP\_mj\_设备\_控制</strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>)和/或 IRP\_[**内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)），以及处理 IRP 的每个其他驱动程序例程。\_
 
 此驱动程序的 i/o 堆栈位置是最低的，其中数量不确定的高级驱动程序的 i/o 堆栈位置显示为灰色。 为简单起见，上图中未显示对[*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 *StartIo*、 *AdapterControl*和[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)例程的**IoGetCurrentIrpStackLocation**的调用。
 
@@ -78,7 +78,7 @@ ms.locfileid: "72827609"
 
 ### <a name="calling-allocateadapterchannel-and-maptransfer"></a>调用 AllocateAdapterChannel 和 MapTransfer
 
-假设*StartIo*例程（如图所示，通过最低级别的驱动程序例程说明 IRP 路径）确定传输请求可以通过单个 DMA 操作完成，则*StartIo*例程会调用[**AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) ，其中包含驱动程序的*AdapterControl*例程和 IRP 的入口点。
+假设*StartIo*例程（如图所示，通过最低级别的驱动程序例程说明 IRP 路径）可以通过单个 DMA 操作来确定传输请求，则*StartIo*例程将使用驱动程序的*AdapterControl*例程和 IRP 的入口点调用[**AllocateAdapterChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel) 。
 
 当系统 DMA 控制器可用时，i/o 管理器会调用驱动程序的*AdapterControl*例程来设置传输操作。 *AdapterControl*例程调用[**MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)来设置系统 DMA 控制器。 然后，驱动程序将其设备用于 DMA 操作并返回。 （有关使用 DMA 和适配器对象的详细信息，请参阅[输入/输出技术](i-o-programming-techniques.md)。）
 
@@ -106,7 +106,7 @@ ms.locfileid: "72827609"
 
 完成 IRP 但不将其发送到下一个较低版本的驱动程序的每个更高级别的驱动程序还必须在调用**IoCompleteRequest**之前设置该 irp 中的 i/o 状态块。 为了获得良好的总 i/o 吞吐量，更高级别的驱动程序应检查每个 IRP 各自的 i/o 堆栈位置中的参数，如果这些参数无效，则应设置 i/o 状态块并完成请求本身。 如果可能，驱动程序应避免将无效请求传递到链中较低的驱动程序。
 
-假设上图中的传输操作成功， *DpcForIsr*例程（如图中所示）通过最低级别的驱动程序例程说明 IRP 路径，设置状态\_**状态**和字节数传输到 IRP 的 i/o 状态块的**信息**中。
+假设上图中的传输操作成功， *DpcForIsr*例程（如图中所示）通过最低级别的驱动程序例程来说明 IRP 路径，将\_状态设置为 "**状态**" "成功" 和 "已在 IRP 的 I/o 状态块的**信息**中传输的字节数"。
 
 许多标准驱动程序例程还会返回 NTSTATUS 类型值。 有关 NTSTATUS 常量（如状态\_成功）的详细信息，请参阅[日志记录错误](logging-errors.md)。
 

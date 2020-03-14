@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43f88332071171ce90e145e9abfacb36d4c26e61
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402435"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243034"
 ---
 #  <a name="hid-usages"></a>HID 用法
 

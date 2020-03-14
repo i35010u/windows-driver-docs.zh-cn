@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b32d6288bf4dbaca93fb9257a71484269e67849e
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402391"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242738"
 ---
 # <a name="using-input-and-output"></a>使用输入和输出
 

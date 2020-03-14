@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c96013d8cc2ec547a687ece45189caba95771e97
-ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71284927"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242968"
 ---
 # <a name="device-console-devconexe-examples"></a>设备控制台 (DevCon.exe) 示例
 
@@ -1038,7 +1038,7 @@ devcon /r classfilter DiskDrive upper !Disklog =@PartMgr +Disklog
 <thead>
 <tr class="header">
 <th align="left">之前</th>
-<th align="left">调整后的文本</th>
+<th align="left">命令</th>
 </tr>
 </thead>
 <tbody>
@@ -1124,7 +1124,7 @@ LPTENUM\HEWLETT-PACKARDDESKJET_1120C\1&7530F08&0&LPT1.4        : Enabled
 
 以下命令使用[**DevCon disable**](devcon-disable.md)操作来禁用本地计算机上的 USB 设备。 它通过硬件 ID 模式（USB\*）来标识设备。 此模式将匹配其硬件 ID 或兼容 ID 以 "USB" 开头的任何设备。 该命令包括 **/r**参数，如果有必要使禁用生效，则会重新启动系统。
 
-**注意**  使用 ID 模式禁用设备之前，请确定哪些设备将受到影响。 若要执行此操作，使用模式在显示命令中，如**devcon 状态 USB\\** * 或 **devcon hwids USB\\** *。
+**注意**  使用 ID 模式禁用设备之前，请确定哪些设备将受到影响。 为此，请在显示命令中使用模式，如**devcon STATUS usb\\** * 或 * * DEVCON hwid usb\\* * *。
 
  
 

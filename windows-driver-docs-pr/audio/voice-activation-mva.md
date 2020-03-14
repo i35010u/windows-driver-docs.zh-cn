@@ -2,14 +2,14 @@
 title: 多语音助手
 description: 多个语音助手平台为除 Cortana 以外的其他语音助手提供支持。
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
-ms.date: 09/26/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c595ae582994d2aff2d8f8a6d0acaa4b824473ca
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 3e193b41abce9aa0c77f0be5ce927d39fda2c91c
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74860563"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79216606"
 ---
 # <a name="multiple-voice-assistant"></a>多语音助手
 
@@ -53,7 +53,7 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
 | HW KWS | 硬件关键字 spotter –在硬件上运行的 KWS 的实现 |
 | 突发缓冲区 | 用于存储 PCM 数据的循环缓冲区，这些数据可在 KWS 检测的情况下 bursted，以便包括触发 KWS 检测的所有音频。 |
 | 事件检测器 OEM 适配器 | 作为 Windows 语音助手堆栈和驱动程序的中介的用户模式组件 |
-| 型号 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
+| 模型 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
 | MVA | 多个语音代理-新的 HWKWS DDI，支持多个代理 |
 | SVA | 单个语音代理-上一个仅支持单一代理（Cortana）的 HWKWS DDI |
 
@@ -67,9 +67,9 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
     - [PKEY\_FX\_KeywordDetector\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-streameffectclsid)
     - [PKEY\_FX\_KeywordDetector\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-modeeffectclsid)
     - [PKEY\_FX\_KeywordDetector\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-endpointeffectclsid)
-    - [PKEY\_SFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-keyworddetector-processingmodes-supported-for-streaming)
-    - [PKEY\_MFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-keyworddetector-processingmodes-supported-for-streaming)
-    - [PKEY\_EFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-keyworddetector-processingmodes-supported-for-streaming)
+    - [PKEY\_SFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-keyworddetector-processingmodes-supported-for-streaming)\_
+    - [PKEY\_MFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-keyworddetector-processingmodes-supported-for-streaming)\_
+    - [PKEY\_EFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-keyworddetector-processingmodes-supported-for-streaming)\_
 - 在[音频设备建议](https://docs.microsoft.com/windows-hardware/design/component-guidelines/audio)中查看硬件建议和测试指南。 本主题提供用于设计和开发用于 Microsoft 语音平台的音频输入设备的指南和建议。
 - 支持暂存和链式命令。
 - 满足语音助手的区域设置要求
@@ -78,20 +78,22 @@ Microsoft 提供 OS default 关键字 spotter （software 关键字 spotter）�
     -   AGC
     -   NS
 -   语音处理模式的效果必须由 MFX APO 报告。
--   APO 可以将格式转换作为 MFX 执行。   
--   APO 必须输出以下格式： 
+-   APO 可以将格式转换作为 MFX 执行。
+-   APO 必须输出以下格式：
     -   16 kHz，mono，FLOAT。
 -   选择性地设计任何自定义的，以增强音频捕获过程。 有关详细信息，请参阅[Windows 音频处理对象](windows-audio-processing-objects.md)。
 
 硬件卸载关键字 spotter （HW KWS） WoV 要求
-- 在 S0 工作状态和 S0 睡眠状态也称为新式备用时，支持 HW KWS WoV。  
+- 在 S0 工作状态和 S0 睡眠状态也称为新式备用时，支持 HW KWS WoV。
 - S3 不支持 HW KWS WoV。  
 
 **AEC**
 
-在捕获突发音频时，它可以由 DSP 执行，也可以在以后通过软件 APO 来完成。 若要使用 KWS 突发数据执行软件 AEC，需要在捕获突发数据时具有相应的环回音频。 为此，会为突发输出创建自定义音频格式，这会将环回音频交错为突发音频数据。 Microsoft AEC APO 知道这一交错格式，可以使用它来执行 AEC。 有关详细信息，请参阅[KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)。 
+在捕获突发音频时，它可以由 DSP 执行，也可以在以后通过软件 APO 来完成。 若要使用 KWS 突发数据执行软件 AEC，需要在捕获突发数据时具有相应的环回音频。 为此，会为突发输出创建自定义音频格式，这会将环回音频交错为突发音频数据。
 
-**验证**
+从 Windows 版本20H1 开始，Microsoft AEC APO 了解这一交错格式，并可以使用它来执行 AEC。 有关详细信息，请参阅[KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)。
+
+**检查**
 
 通过[语音激活管理器2测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)来验证[KSPROPSETID_SOUNDDETECTOR2](kspropsetid-sounddetector2.md)属性的硬件支持。
 

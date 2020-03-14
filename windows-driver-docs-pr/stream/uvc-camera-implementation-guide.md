@@ -4,11 +4,11 @@ description: 概述如何通过收件箱驱动程序向应用程序公开 USB �
 ms.date: 08/16/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 54b87f5f4ec0d42376246e22417851a8640a9b14
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402517"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243050"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC 相机实现指南
 
@@ -372,7 +372,7 @@ Windows 10 RS5 现对具有 Windows Hello 支持的任何照相机强制执行�
 | ------ | ---------- | ------------ | ------ | ------------------------------- |
 | 0      | dwLength   | 4            | \<\>   |                                 |
 | 4      | bcdVersion | 2            | 0x0100 | 版本 1.0                     |
-| 6      | wIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
+| 6      | WIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
 | 8      | wCount     | 2            | 0x0001 | 一个自定义属性             |
 
 #### <a name="microsoft-os-10-descriptor-custom-property-section"></a>Microsoft OS 1.0 描述符自定义属性部分

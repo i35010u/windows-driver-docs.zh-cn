@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed05fb46f85d09394f4d093521d3c53c668c95dd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845516"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242850"
 ---
 # <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>在 WDF 驱动程序（KMDF 或 UMDF）中访问数据缓冲区
 
@@ -57,7 +57,7 @@ UMDF 驱动程序通过为每个设备调用[**WdfDeviceInitSetIoTypeEx**](https
 
 请注意在 KMDF 和 UMDF 之间用于 IOCTLs 的缓冲区访问技术之间的差异。 KMDF 驱动程序未指定 IOCTLs 的缓冲区访问方法，而 UMDF 驱动程序则为 IOCTLs 指定缓冲区访问方法。
 
-如果 WDF 驱动程序通过使用对 i/o 目标使用的 i/o 方法不正确的方法来描述 i/o 请求的缓冲区，则该框架会更正缓冲区说明。 例如，如果驱动程序使用 MDL 来描述它传递给[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)的缓冲区，并且 i/o 目标使用缓冲 i/o （这要求使用虚拟地址（而不是 MDLs）来指定缓冲区），框架将缓冲区说明从 MDL 转换为虚拟地址和长度。 但是，如果您的驱动程序以正确的格式指定缓冲区，则会更有效。
+如果 WDF 驱动程序通过使用对 i/o 目标使用的 i/o 方法不正确的方法来描述 i/o 请求的缓冲区，则该框架会更正缓冲区说明。 例如，如果驱动程序使用 MDL 描述它传递给[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)的缓冲区，并且 i/o 目标使用缓冲 i/o （这要求使用虚拟地址（而不是 MDLs）指定缓冲区，则该框架会将 MDL 中的缓冲区描述转换为虚拟地址和长度。 但是，如果您的驱动程序以正确的格式指定缓冲区，则会更有效。
 
 有关 framework 内存对象、后备链表列表、MDLs 和本地缓冲区的信息，请参阅[使用内存缓冲区](using-memory-buffers.md)。
 
@@ -95,11 +95,11 @@ UMDF 驱动程序通过为每个设备调用[**WdfDeviceInitSetIoTypeEx**](https
 
 <a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
 
-如果你的驱动程序使用的是直接 i/o，则 i/o 管理器将验证指定的 i/o 请求（通常为用户模式应用程序）的发起方的缓冲空间的可访问性，将缓冲区空间锁定在物理内存中，然后为驱动程序提供直接访问缓冲区空间。
+如果你的驱动程序使用直接 i/o，则 i/o 管理器将验证指定的 i/o 请求（通常为用户模式应用程序）的发起方的缓冲空间的可访问性，将缓冲区空间锁定为物理内存，然后为该驱动程序提供对缓冲区空间的直接访问。
 
 <a href="" id="umdf-drivers"></a>**UMDF 驱动程序**  
 
-如果你的驱动程序为直接 i/o 指定了首选项，并且满足了直接 i/o 的所有 UMDF 要求（请参阅[在 UMDF 驱动程序中管理缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)），则该框架会将它从 i/o 管理器接收的内存缓冲区直接映射到驱动程序的主机进程地址空间，从而为驱动程序提供对缓冲区空间的直接访问。
+如果你的驱动程序为直接 i/o 指定了一个首选项，并且满足了直接 i/o 的所有 UMDF 要求（请参阅[在 UMDF 驱动程序中管理缓冲区访问方法](managing-buffer-access-methods-in-umdf-drivers.md)），则该框架会将它从 i/o 管理器接收的内存缓冲区直接映射到驱动程序的主机进程地址空间，从而为驱动程序提供对缓冲区空间的直接访问。
 
 若要检索表示缓冲区空间的 framework memory 对象的句柄，驱动程序将调用[**WdfRequestRetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)或[**WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)。 然后，该驱动程序可以通过调用[**WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)来检索指向缓冲区的指针。 若要读取和写入缓冲区，驱动程序将调用[**WdfMemoryCopyFromBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)或[**WdfMemoryCopyToBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)。
 
@@ -112,7 +112,7 @@ UMDF 驱动程序通过为每个设备调用[**WdfDeviceInitSetIoTypeEx**](https
 
 <a href="" id="kmdf-drivers"></a>**KMDF 驱动程序**  
 
-如果你的驱动程序使用称为*非缓冲 i/o 方法和直接 i/o 方法*的缓冲区访问方法（或者，"两者都" 方法为 short），则 i/o 管理器仅向该驱动程序提供 i/o 请求的发起方的虚拟地址为请求的缓冲区空间指定。 I/o 管理器不会验证 i/o 请求的缓冲区空间，因此驱动程序必须验证缓冲区空间是否可访问，并将缓冲区空间锁定为物理内存。
+如果你的驱动程序使用称为*非缓冲 i/o 方法和直接 i/o 方法*的缓冲区访问方法（或者，"两者都" 方法为 short），则 i/o 管理器只是为该驱动程序提供了 i/o 请求的发起方为请求的缓冲区空间指定的虚拟地址。 I/o 管理器不会验证 i/o 请求的缓冲区空间，因此驱动程序必须验证缓冲区空间是否可访问，并将缓冲区空间锁定为物理内存。
 
 只能在 i/o 请求的发起方的进程上下文中访问 i/o 管理器提供的虚拟地址。 仅保证驱动程序堆栈中的最高级别的驱动程序在发起方的进程上下文中执行。
 

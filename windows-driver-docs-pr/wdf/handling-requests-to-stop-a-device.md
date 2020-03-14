@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 095f190f07ef38e22b496081ca73ba136487e01a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845220"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242910"
 ---
 # <a name="handling-requests-to-stop-a-device"></a>处理停止设备的请求
 
@@ -54,7 +54,7 @@ ms.locfileid: "72845220"
 
 用户可以删除或禁用某些设备。 例如：
 
--   如果你的驱动程序已设置了设备的 WDF\_设备的**可移动**成员（而不是**SurpriseRemovalOK**成员） [ **\_PNP\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)结构，则用户可以运行拔出或弹出硬件程序，然后拔出或弹出设备。
+-   如果你的驱动程序已设置设备的 WDF\_设备的**可移动**成员（而不是**SurpriseRemovalOK**成员） [ **\_PNP\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)结构，则用户可以运行拔出或弹出硬件程序，然后拔出或弹出设备。
 
 -   如果你的驱动程序未将设备的[**WDF\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)的**NotDisableable**成员设置\_状态结构，则用户可以使用设备管理器来禁用该设备。
 

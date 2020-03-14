@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e03da077748558cedb46da32145f2e56847aaf46
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841673"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242954"
 ---
 # <a name="a-user-unplugs-a-device"></a>用户拔出设备
 
@@ -79,7 +79,7 @@ ms.locfileid: "72841673"
 
 9.  如果驱动程序使用的是自管理 i/o，则框架将调用驱动程序的[*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)回调函数。
 
-请注意，在任何时候，都可能会意外删除设备。 因此，该框架可能会调用驱动程序的[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数，而不是在前面的步骤中所示的时间。 例如，如果用户在[进入低功耗状态](a-device-enters-a-low-power-state.md)时意外断开了设备，则框架可能会在调用[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数后调用[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数. 不能以特定顺序调用[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数的方式，而不是假定它和其他回调函数。
+请注意，在任何时候，都可能会意外删除设备。 因此，该框架可能会调用驱动程序的[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数，而不是在前面的步骤中所示的时间。 例如，如果用户在[进入低功耗状态](a-device-enters-a-low-power-state.md)时意外断开了设备，则该框架可能会在调用[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)回调函数后调用[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数。 不能以特定顺序调用[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数的方式，而不是假定它和其他回调函数。
 
 此外，此框架不会将设备的[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数与前面步骤中列出的针对该设备的任何回调函数同步。 因此，当前面列出的另一个回调函数正在运行时， [*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)回调函数可能运行。
 

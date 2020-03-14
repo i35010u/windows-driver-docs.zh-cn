@@ -21,11 +21,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b54f8c54ea5a1ad6a7b006191f8c1a32816ded66
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842797"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242854"
 ---
 # <a name="wdm-concepts-for-wdf-drivers"></a>适用于 WDF 驱动程序的 WDM 概念
 

@@ -8,11 +8,11 @@ ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2d0d800e5ab51fe0de76f7b077a3bd7de4dcca9c
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209007"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243028"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 
@@ -25,7 +25,7 @@ ms.locfileid: "75209007"
 在 Visual Studio 中打开现有的 NDIS 微型端口驱动程序项目，并使用以下步骤将其转换为 KMDF 项目。
 
 1. 首先，导航到 "**配置属性-> 驱动程序设置-> 驱动程序模型**"，并验证 "**驱动程序类型**" 是否设置为 "KMDF"，并且 " **KMDF 版本**" 和 " **KMDF" 版本**都为空。
-2. 在项目属性中，打开 "**驱动程序设置-> 网络适配器驱动程序**"，并将**网络适配器类扩展的链接**设置为 **"是"**。
+2. 在项目属性中，打开 "**驱动程序设置-> 网络适配器驱动程序**"，并将**网络适配器类扩展的链接**设置为 **"是"** 。
    * 如果转换后的驱动程序仍将调用 NDIS Api，请继续链接 `ndis.lib`。
 3. 删除 NDIS 预处理器宏，如 `NDIS650_MINIPORT=1`。
 4. 将以下标头添加到每个源文件（或添加到公共/预编译头）：
@@ -154,7 +154,7 @@ WDF 客户端驱动程序不会收到电源状态更改的[**OID_PNP_SET_POWER**
 * [*EVT_RXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)回调类似于 NDIS 1.x 中[**MINIPORT_RETURN_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) 。
 * [*EVT_TXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nc-nettxqueue-evt_txqueue_advance)回调类似于 NDIS 1.x 中[**MINIPORT_SEND_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 。
 
-## <a name="device-removal"></a>设备删除
+## <a name="device-removal"></a>删除设备
 
 WDF NIC 驱动程序的设备删除与任何其他 WDF 设备驱动程序中的相同，无需进行网络特定的处理。 网络数据路径首先关闭，然后是 WDF 设备。 有关 WDF 关闭的信息，请参阅[断开 a 设备的用户](../wdf/a-user-unplugs-a-device.md)。
 
@@ -176,6 +176,6 @@ WDF 客户端无需删除它创建的 Get-netadapter 或任何 OID 和数据路�
 
 [！ Ndiskd get-netadapter](../debugger/-ndiskd-netadapter.md)调试程序扩展显示了与 NDIS 6 驱动程序的结果类似的**结果。**
 
-## <a name="conclusion"></a>总结
+## <a name="conclusion"></a>结论
 
 使用本主题中的步骤，应该有一个可启动和停止设备的工作驱动程序。

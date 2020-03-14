@@ -5,11 +5,11 @@ ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c579c6bfc9a3ded30a9212a828827b26adb3ef0
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402479"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242994"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 功能
 

@@ -4,16 +4,16 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为报告了
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f38e1329e47918ad5b0ec1d6abfcc4d7d3852d
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: 7c9b46519daeb40725267ac9d285a1442bfd611b
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097505"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083124"
 ---
-# <a name="percent-of-machines-with-whea-error-after-firmware-installation"></a>固件安装后出现 WHEA 错误的计算机的百分比
+# <a name="percent-of-machines-with-windows-hardware-error-architecture-whea-error-after-firmware-installation"></a>固件安装后出现 Windows 硬件错误体系结构 (WHEA) 错误的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 在成功安装固件后报告了致命 WHEA 事件 (WheaProvider.WheaDriverErrorExternal) 的计算机的百分比。
 

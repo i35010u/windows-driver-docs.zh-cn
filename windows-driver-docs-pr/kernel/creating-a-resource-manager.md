@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d152ede92254bf463182300c9a9c2f6c167b6669
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837022"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243046"
 ---
 # <a name="creating-a-resource-manager"></a>创建资源管理器
 
@@ -59,7 +59,7 @@ ms.locfileid: "72837022"
 
 8.  启用事务通知的接收。
 
-    资源管理器可以调用[**ZwGetNotificationResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)来同步获取通知，也可以调用[**TmEnableCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)来注册一个*ResourceManagerNotification*回调例程，只要通知可用。
+    资源管理器可以调用[**ZwGetNotificationResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)来同步获取通知，也可以调用[**TmEnableCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)来注册在有通知可用时 KTM 调用的*ResourceManagerNotification*回调例程。
 
 9.  来自客户端的服务资源访问请求，但不将更改永久更改。
 
@@ -96,7 +96,7 @@ ms.locfileid: "72837022"
 
 你可能希望资源管理器调用**ZwReadOnlyEnlistment**的原因有两个。
 
--   资源管理器已参与事务，并且在收到事务\_通知\_提交通知时，资源管理器将确定不再需要参与事务的提交运作.
+-   资源管理器已参与事务，并且在收到事务\_通知\_提交通知时，资源管理器将确定不再需要参与事务的提交操作。
 
     例如，当 resource manager 收到事务\_通知\_准备通知时，它可能会确定事务的所有操作都没有更改资源管理器的数据库。 资源管理器可以调用**ZwReadOnlyEnlistment**而不是**ZwPrepareComplete** ，将其自身从事务中删除。
 

@@ -2,14 +2,14 @@
 title: 分配的等级
 description: 分配的等级
 ms.assetid: EC1993FB-5219-4C0C-A76A-05937A461C5A
-ms.date: 04/20/2017
+ms.date: 03/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 703112d39982e4a4fef84d62fbcbed2f38a16131
-ms.sourcegitcommit: 5e257e7d54d77649b4981a55a7d61676a3b25f00
+ms.openlocfilehash: ed036373bf51371a47b5b425634f3a8b99957273
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064152"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79216610"
 ---
 # <a name="allocated-altitudes"></a>分配的等级
 
@@ -17,19 +17,19 @@ ms.locfileid: "73064152"
 
 若要请求微筛选器海拔数，请参阅[微筛选器请求](minifilter-altitude-request.md)。
 
-下面列出了以下每个加载顺序组的最新分配数。
+以下每个加载顺序组中的每个加载顺序组（注意：此页每年更新1-2 次）都将在此页面的发布日期中分配的海拔分配。
 
 ## <a name="span-id420000_-_429999__filterspanspan-id420000_-_429999__filterspanspan-id420000_-_429999__filterspan420000---429999-filter"></a><span id="420000_-_429999__Filter"></span><span id="420000_-_429999__filter"></span><span id="420000_-_429999__FILTER"></span>420000-429999：筛选器
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | ntoskrnl.exe | 425500 | Microsoft |
 | ntoskrnl.exe | 425000 | Microsoft |
 
 ## <a name="span-id400000_-_409999__fsfilter_topspanspan-id400000_-_409999__fsfilter_topspanspan-id400000_-_409999__fsfilter_topspan400000---409999-fsfilter-top"></a><span id="400000_-_409999__FSFilter_Top"></span><span id="400000_-_409999__fsfilter_top"></span><span id="400000_-_409999__FSFILTER_TOP"></span>400000-409999： FSFilter Top
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | wcnfs | 409900 | Microsoft |
 | bindflt | 409800 | Microsoft |
 | cldflt | 409500 | Microsoft |
@@ -38,12 +38,15 @@ ms.locfileid: "73064152"
 | fsdepends | 407000 | Microsoft |
 | sftredir | 406000 | Microsoft |
 | node.js | 405000 | Microsoft |
+| VeeamFCT | 404920 | Veeam 软件 |
 | 跟踪器 .sys | 404910 | Acronis |
 | csvnsflt | 404900 | Microsoft |
 | csvflt | 404800 | Microsoft |
 | Uev. AgentDriver | 404710 | Microsoft |
 | AppvVfs | 404700 | Microsoft |
 | CCFFilter | 404600 | Microsoft |
+| uberAgentDrv | 402110 | 巨大限制 GmbH |
+| mrigflt | 402100 | 极其重要的软件公司 |
 | dciogrd | 402010 | Datacloak 技术 |
 | Dewdrv | 402000 | Dell 技术 |
 | zsusbstorfilt | 401910 | Zshield Inc。 |
@@ -64,27 +67,42 @@ ms.locfileid: "73064152"
 | edevmon | 400800 | ESET spol。 s r.o。 |
 | vmwflstor | 400700 | VMware，Inc。 |
 | TsQBDrv | 400600 | 腾讯技术 |
-| WRAEKernel | 400500 | Webroot Inc。 |
+| PolyPortFlt | 400490 | PolyPort Inc。 |
+| Dscdriver | 400300 | Dell 技术公司 |
 
 ## <a name="span-id360000_-_389999__fsfilter_activity_monitorspanspan-id360000_-_389999__fsfilter_activity_monitorspanspan-id360000_-_389999__fsfilter_activity_monitorspan360000---389999-fsfilter-activity-monitor"></a><span id="360000_-_389999__FSFilter_Activity_Monitor"></span><span id="360000_-_389999__fsfilter_activity_monitor"></span><span id="360000_-_389999__FSFILTER_ACTIVITY_MONITOR"></span>360000-389999： FSFilter 活动监视器
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | klboot | 389510 | Kaspersky 等实验室 |
 | klfdefsf | 389500 | Kaspersky 等实验室 |
+| SeRdr | 389450 | rhipe 澳大利亚 Pty |
+| storagedrv | 389400 | SMTechnology Co。 |
+| path8flt | 389320 | Telefónica 数字 |
+| NgScan | 389310 | Acronis |
+| icrlmonitor | 389300 | 工业技术 |
+| gibepcore | 389290 | 组 IB 有限公司 |
+| enmon | 389280 | OpenText 公司 |
+| RansomDetect | 389270 | WidgetNuri 公司 |
+| cbfsfilter2017 | 389260 | 移动内容管理 |
 | CBFSFilter2017 | 389250 | SecureLink Inc。 |
+| cbfsfilter2017 | 389245 | 南京 Geomarking |
 | NWEDriver | 389240 | Dell 技术 |
 | cytmon | 389230 | Cytrence Inc。 |
 | SophosED | 389220 | Sophos |
 | MonsterK | 389210 | Somma Inc。 |
 | IFS64 | 389200 | Ashampoo 开发 |
+| TSTFsReDir | 389192 | ThinScale 技术 |
+| TSTRegReDir | 389191 | ThinScale 技术 |
 | TSTFilter | 389190 | ThinScale 技术 |
 | VrnsFilter | 389180 | Varonis 有限公司 |
+| slb_guard .sys | 389175 | 联想北京 |
 | lrtp | 389170 | 联想北京 |
 | ipcomfltr | 389160 | Bluzen Inc。 |
 | SvCBT | 389150 | Spharsoft 技术 |
 | mbamshuriken | 389140 | Malwarebytes |
 | ContainerMonitor | 389130 | 浅绿安全 |
+| cmflt | 389125 | Certero |
 | SaMFlt | 389120 | DreamCrafts |
 | RuiMinispy | 389117 | RuiGuard 有限公司 |
 | RuiFileAccess | 389115 | RuiGuard 有限公司 |
@@ -93,6 +111,8 @@ ms.locfileid: "73064152"
 | windd | 389110 | Comae 技术 |
 | cbfsfilter2017 | 389105 | Basein 网络 |
 | taobserveflt | 389100 | ThinAir Labs Inc。 |
+| bsrfsflt | 389096 | Man 技术 Inc。 |
+| fsrfilter | 389094 | Man 技术 Inc。 |
 | vollock | 389092 | Man 技术 Inc。 |
 | drbdlock | 389090 | Man 技术 Inc。 |
 | dcfsgrd | 389085 | Datacloak 技术 |
@@ -122,8 +142,10 @@ ms.locfileid: "73064152"
 | drsfile | 388970 | MRY Inc。 |
 | CbFltFs4 | 388966 | Simopro 技术 |
 | CrUnCopy | 388964 | Shenzhen CloudRiver |
-| aictracedrv_am | 388960 | AI 咨询 |
+| aictracedrv_am .sys | 388960 | AI 咨询 |
 | fiopolicyfilter | 388954 | SanDisk Inc。 |
+| sodatpfl | 388951 | SODATSW spol. s r.o。 |
+| sodatpfl | 388950.2 | SODATSW |
 | fcontrol | 388950 | SODATSW spol. s r.o。 |
 | qfilter.sys | 388940 | 仲裁实验室 |
 | Redlight | 388930 | Trustware 有限公司 |
@@ -139,6 +161,7 @@ ms.locfileid: "73064152"
 | dsflt | 388876 | cEncrypt |
 | bfaccess | 388872 | bitFence Inc。 |
 | xcpl | 388870 | X 云系统 |
+| DFMFilter | 388867 | ManageEngine Zoho |
 | DCFAFilter | 388866 | ManageEngine Zoho |
 | RMPHVMonitor | 388865 | ManageEngine Zoho |
 | FAPMonitor | 388864 | ManageEngine Zoho |
@@ -151,13 +174,18 @@ ms.locfileid: "73064152"
 | config.sys | 388831 | Fitsec 有限公司 |
 | SandDriver | 388830 | Fitsec 有限公司 |
 | dskmn | 388820 | Honeycomb 技术 |
+| offsm | 388811 | Jiransoft，有限公司 |
 | xkfsfd | 388810 | Jiransoft，有限公司 |
+| JKPPOB | 388808 | Jiransoft，有限公司 |
+| JKPPXK | 388807 | Jiransoft，有限公司 |
+| JKPPPF | 388806 | Jiransoft，有限公司 |
+| JKPPOK | 388805 | Jiransoft，有限公司 |
 | pcpifd | 388800 | Jiransoft，有限公司 |
 | NNTInfo | 388790 | 新的网络技术有限 |
 | FsMonitor | 388780 | IBM |
 | CVCBT | 388770 | CommVault Systems，Inc。 |
 | AwareCore | 388760 | TaaSera Inc。 |
-| laFS | 388750 | NetworkProfi 有限公司。 |
+| laFS | 388750 | NetworkProfi 有限公司 |
 | fsnk | 388740 | SoftPerfect 研究 |
 | RGNT | 388730 | HFN Inc。 |
 | fltRs329 | 388720 | 安全的环球公司 |
@@ -205,13 +233,14 @@ ms.locfileid: "73064152"
 | ThreatStackFIM | 388380 | 威胁堆栈 |
 | BOsCmFlt | 388370 | Barkly 保护 Inc。 |
 | BOsFsFltr | 388370 | Barkly 保护 Inc。 |
+| Asgard | 388365 | SPEKNET EOOD |
 | FeKern | 388360 | FireEye Inc。 |
 | libwamf | 388350 | OPSWAT Inc。 |
 | SZEDRDrv | 388346 | SaferZone Co。 |
 | szardrv | 388345 | SaferZone Co。 |
 | szpcmdrv | 388341 | SaferZone Co。 |
 | szdfmdrv | 388340 | SaferZone Co。 |
-| szdfmdrv_usb | 388331 | SaferZone Co。 |
+| szdfmdrv_usb .sys | 388331 | SaferZone Co。 |
 | sprtdrv | 388330 | SaferZone Co。 |
 | SWFsFltrv2 | 388321 | Solarwinds LLC |
 | SWFsFltr | 388320 | Solarwinds LLC |
@@ -259,6 +288,7 @@ ms.locfileid: "73064152"
 | uamflt | 387700 | Sevtechnotrans |
 | ehdrv | 387600 | ESET、spol。 s r.o。 |
 | DattoFSF | 387560 | Datto Inc。 |
+| RubrikFileAudit | 387552 | Rubrik Inc。 |
 | FileSystemCBT | 387550 | Rubrik Inc。 |
 | Snilog | 387500 | Systemneeds，Inc。 |
 | tss | 387400 | Tiversa Inc。 |
@@ -287,11 +317,12 @@ ms.locfileid: "73064152"
 | ScAuthIoDrv | 386700 | 安全代码 LLC |
 | mfeaskm | 386610 | McAfee Inc。 |
 | mfencfilter | 386600 | McAfee |
-| WinFLAHdrv | 386540 | NewSoftwares&#x2024;Net，inc。 |
-| WinFLAdrv | 386530 | NewSoftwares&#x2024;Net，inc。 |
-| WinDBdrv | 386520 | NewSoftwares&#x2024;Net，inc。 |
-| WinFLdrv | 386510 | NewSoftwares&#x2024;Net，inc。 |
-| WinFPdrv | 386500 | NewSoftwares&#x2024;Net，inc。 |
+| WinFLAHdrv | 386540 | NewSoftwares，Inc。 |
+| WinFLAdrv | 386530 | NewSoftwares，Inc。 |
+| WinDBdrv | 386520 | NewSoftwares，Inc。 |
+| WinFLdrv | 386510 | NewSoftwares，Inc。 |
+| WinFPdrv | 386500 | NewSoftwares，Inc。 |
+| varpffmon | 386486 | Varlook 有限公司。 |
 | SkyWPDrv | 386435 | 天空有限公司。 |
 | SkyRGDrv | 386431 | 天空有限公司。 |
 | SkyAMDrv | 386430 | 天空有限公司。 |
@@ -325,14 +356,15 @@ ms.locfileid: "73064152"
 | immflex | 385910 | Immidio B.V. |
 | StegoProtect | 385900 | Stegosystems Inc。 |
 | brfilter | 385890 | Bromium Inc。 |
-| BrCow_x_x_x_x | 385889 | Bromium Inc。 |
+| BrCow_x_x_x_x .sys | 385889 | Bromium Inc。 |
 | BemK | 385888 | Bromium Inc。 |
 | secRMM | 385880 | Squadra 技术 |
 | dgfilter | 385870 | DataGravity Inc。 |
-| WFP_MRT | 385860 | FireEye Inc。 |
+| WFP_MRT .sys | 385860 | FireEye Inc。 |
 | klrsps | 385815 | Kaspersky 等实验室 |
 | klsnsr | 385810 | Kaspersky 等实验室 |
 | TaniumRecorderDrv | 385800 | Tanium |
+| CdsgFsFilter | 385700 | CRU 数据安全组 |
 | mssecflt | 385600 | Microsoft |
 | Backupreader | 385500 | Microsoft |
 | MsixPackagingToolMonitor | 385410 | Microsoft |
@@ -360,7 +392,7 @@ ms.locfileid: "73064152"
 | groundling64 | 383200 | Dell Secureworks |
 | avgtpx86 | 383190 | AVG 技术 CZ |
 | avgtpx64 | 383190 | AVG 技术 CZ |
-| DataNow_Driver | 383182 | AppSense 有限公司 |
+| DataNow_Driver .sys | 383182 | AppSense 有限公司 |
 | UcaFltDriver | 383180 | AppSense 有限公司 |
 | YFSD2 | 383170 | Yokogawa Corpration |
 | Kisknl | 383160 | kingsoft |
@@ -374,13 +406,13 @@ ms.locfileid: "73064152"
 | GUMHFilter | 382910 | Glarysoft 有限公司。 |
 | PsAcFileAccessFilter | 382902 | FUJITSU 软件 |
 | FJGSDis2 | 382900 | FUJITSU 有限 |
-| secure_os | 382890 | FUJITSU 社会科学 |
+| secure_os .sys | 382890 | FUJITSU 社会科学 |
 | ibr2fsk | 382880 | FUJITSU 工程 |
 | FJSeparettiFilterRedirect | 382860 | FUJITSU 有限 |
 | Fsw31rj1 | 382855 | FUJITSU 有限 |
-| da_ctl | 382850 | FUJITSU 有限 |
+| da_ctl .sys | 382850 | FUJITSU 有限 |
 | zqFilter | 382800 | magrasoft 有限公司 |
-| ntps_fa | 382700 | NTP 软件 |
+| ntps_fa .sys | 382700 | NTP 软件 |
 | sConnect | 382600 | I-O 数据设备 |
 | AdaptivaClientCache32 | 382500 | Adaptiva |
 | AdaptivaclientCache64 | 382500 | Adaptiva |
@@ -422,7 +454,7 @@ ms.locfileid: "73064152"
 | qfmon | 381190 | 优质公司 |
 | flyfs | 381160 | NEC 软 |
 | serfs | 381150 | NEC 软 |
-| hdrfs | 381140 | NEC 软 |
+| hdrfs | 381140  | NEC 软 |
 | UVMCIFSF | 381130 | NEC 公司 |
 | ICFClientFlt | 381120 | 公司的 NEC 系统技术 |
 | IccFileIoAd | 381110 | 公司的 NEC 系统技术 |
@@ -430,6 +462,7 @@ ms.locfileid: "73064152"
 | IccFilterSc | 381090 | InfoCage |
 | Sefo-顶部 | 381010 | Solusseum Inc。 |
 | mtsvcdf | 381000 | CristaLink |
+| SDDrvLdr | 380970 | Aliaksander Lebiadzevich |
 | SQLsafeFilterDriver | 380901 | Idera 软件 |
 | IderaFilterDriver | 380900 | Idera |
 | cbfsfilter2017 | 380850 | SN Systems 公司 |
@@ -440,6 +473,7 @@ ms.locfileid: "73064152"
 | PkgFilter | 380700 | 可扩展的软件公司。 |
 | snimg | 380600 | Softnext 技术 |
 | SK .sys | 380520 | 热量软件 |
+| cbfsfilter2017 | 380515 | 工具包有限公司 |
 | mpxmon | 380510 | 正面技术 |
 | filenamevalidator | 380502 | Infotecs |
 | KC3 | 380500 | Infotecs |
@@ -451,14 +485,15 @@ ms.locfileid: "73064152"
 | VrExpDrv | 380460 | Hauri Inc。 |
 | srminifilterdrv | 380450 | Citrix 系统 |
 | zzpensys | 380440 | Zhuan Zhuan Jing Shen |
-| tedrdrv | 380430 | Palo Alto 网络 |
-| fangcloud_autolock_driver | 380420 | 杭州 Yifangyun |
+| tedrdrv | 380430 | Palo Alto Networks |
+| fangcloud_autolock_driver .sys | 380420 | 杭州 Yifangyun |
+| FASDriver | 380410 | 技术研究 |
 | CbSampleDrv | 380020 | Microsoft |
 | CbSampleDrv | 380010 | Microsoft |
 | CbSampleDrv | 380000 | Microsoft |
 | simrep | 371100 | Microsoft |
 | 更改 .sys | 370160 | Microsoft |
-| delete_flt | 370150 | Microsoft |
+| delete_flt .sys | 370150 | Microsoft |
 | SmbResilFilter | 370140 | Microsoft |
 | usbtest | 370130 | Microsoft |
 | NameChanger | 370120 | Microsoft |
@@ -474,14 +509,16 @@ ms.locfileid: "73064152"
 | nullFilter | 370020 | Microsoft |
 | 执行测试故障 | 370010 | Microsoft |
 | minispy-中间 | 370000 | Microsoft |
+| AvaPsFD | 368540 | Avanite 有限 |
 | isecureflt | 368530 | iSecure 有限公司。 |
 | SFPMonitor-中间 | 368520 | SonicWall Inc。 |
-| wats_se | 368510 | Fujian Shen 特别行政区 |
-| secure_os_mf | 368500 | HAURI |
+| wats_se .sys | 368510 | Fujian Shen 特别行政区 |
+| secure_os_mf .sys | 368500 | HAURI |
 | FileMonitor | 368470 | Cygna 实验室 |
 | asiofms | 368460 | 鼓励技术 |
 | cbfsfilter2017 | 368450 | 绝对软件 |
 | FileHubAgent | 368440 | SmartFile LLC |
+| pfracdrv | 368430 | NURILAB |
 | nrcomgrdki | 368420 | NURILAB |
 | nrcomgrdka | 368420 | NURILAB |
 | nrpmonki | 368410 | NURILAB |
@@ -497,6 +534,8 @@ ms.locfileid: "73064152"
 | SfdFilter | 368350 | Sandoll 通信 |
 | phdcbtdrv | 368340 | PHD 虚拟技术公司 |
 | sysdiag | 368330 | HeroBravo 技术 |
+| WntGPDrv | 368327 | Winicssec 有限公司 |
+| edrdrv | 368325 | Nurd Yazilim A.S。 |
 | CmdCwagt | 368322 | Comodo 安全解决方案 Inc。 |
 | cfrmd | 368320 | Comodo 安全解决方案 Inc。 |
 | repdrv | 368310 | 远景解决方案 |
@@ -514,7 +553,8 @@ ms.locfileid: "73064152"
 | dsfltfs | 367760 | Digitalsense Co |
 | soidriver | 367750 | Sophos Plc |
 | drvhookcsmf | 367700 | GrammaTech，Inc。 |
-| drvhookcsmf_amd64 | 367700 | GrammaTech，Inc。 |
+| drvhookcsmf_amd64 .sys | 367700 | GrammaTech，Inc。 |
+| RevoNetDriver | 367650 | J 的通信 Co。 |
 | avipbb | 367600 | Avira GmbH |
 | FileSightMF | 367500 | PA 文件视觉 |
 | csaam | 367400 | Cisco 系统 |
@@ -539,7 +579,9 @@ ms.locfileid: "73064152"
 | hiofs | 366782 | Condusiv 技术 |
 | intmfs | 366781 | CondusivTechnologies |
 | excfs | 366780 | CondusivTechnologies |
-| zampit_ml | 366700 | Zampit |
+| zampit_ml .sys | 366700 | Zampit |
+| TenRSafe2 | 366669 | 腾讯技术 |
+| tesxporter | 366667 | 腾讯技术 |
 | tesxnginx | 366666 | 腾讯技术 |
 | rflog | 366600 | 强制，Inc。 |
 | csmon | 366582 | CyberSight Inc。 |
@@ -578,15 +620,16 @@ ms.locfileid: "73064152"
 | ssrfsf | 365210 | Symantec |
 | emxdrv2 | 365200 | Symantec |
 | reghook | 365150 | Symantec |
-| symevnt | 365110 | Symantec |
 | spbbcdrv | 365100 | Symantec |
 | bhdrvx86 | 365100 | Symantec |
 | bhdrvx64 | 365100 | Symantec |
+| symevnt | 365090 | Broadcom |
+| symevnt32 | 365090 | Broadcom |
 | SISIPSFileFilter | 365010 | Symantec |
 | symevent | 365000 | Symantec |
 | wrpfv | 364900 | Microsoft |
 | UpGuardRealTime | 364810 | UpGuard |
-| usbl_ifsfltr | 364800 | SecureAxis |
+| usbl_ifsfltr .sys | 364800 | SecureAxis |
 | ntfsf | 364700 | Sun & 月球上升 |
 | BssAudit | 364600 | ByStorm |
 | GPMiniFIlter | 364500 | Kalpataru |
@@ -601,7 +644,7 @@ ms.locfileid: "73064152"
 | mcstrg | 363712 | Douzone Bizon Co |
 | fmkkc | 363711 | Douzone Bizon Co |
 | nmlhssrv01 | 363710 | Douzone Bizon Co |
-| equ8_helper | 363705 | Int3 Software AB |
+| equ8_helper .sys | 363705 | Int3 Software AB |
 | strapvista （已停用） | 363700 | AvSoft 技术 |
 | SAFE-Agent | 363636 | SAFE-Cyberdefense |
 | EstPrmon | 363610 | ESTsoft 公司。 |
@@ -614,15 +657,18 @@ ms.locfileid: "73064152"
 | 圣 .sys | 363510 | Safend |
 | vfdrv | 363500 | Viewfinity |
 | topdogfsfilt | 363450 | ManTech |
-| xhunter64 | 363400 | Wellbia&#x2024;com |
-| uncheater | 363390 | Wellbia&#x2024;com |
+| xhunter64 | 363400 | Wellbia.com |
+| uncheater | 363390 | Wellbia.com |
 | AuditFlt | 363313 | Ionx 解决方案 LLP |
 | SPIMiniFilter | 363300 | Software 治愈方法 Inc。 |
-| mracdrv | 363230 | 邮件&#x2024;Ru |
+| mracdrv | 363230 | Mail.Ru |
 | BEDaisy | 363220 | BattlEye 创新 |
+| MPKernel | 363210 | Lovelace 网络技术 |
 | NetAccCtrl | 363200 | 链接 co。 |
 | NetAccCtrl64 | 363200 | 链接 co。 |
+| bzsenth | 363140 | BiZone LLC |
 | hpreg | 363130 | HP |
+| QMON | 363122 | Qualys Inc。 |
 | qfimdvr | 363120 | Qualys Inc。 |
 | QDocumentREF | 363110 | BicDroid Inc。 |
 | dsfemon | 363100 | 拓扑公司 |
@@ -635,10 +681,11 @@ ms.locfileid: "73064152"
 | CybKernelTracker | 362960 | CyberArk 软件 |
 | filemon | 362950 | Temasoft S.R.L. |
 | SCAegis | 362940 | Sogou 有限公司。 |
-| fpifp_minifilter | 362930 | ForcePoint LLC。 |
+| ep_minifilter .sys | 362930 | ForcePoint LLC。 |
 | klifks | 362902 | Kaspersky 等实验室 |
 | klifaa | 362901 | Kaspersky 等实验室 |
 | Klifsm | 362900 | Kaspersky 等实验室 |
+| 聚光灯 | 362870 | Cigent 技术 Inc。 |
 | nxrmflt | 362860 | NextLabs |
 | 大型 .sys | 362850 | PolyLogyx LLC |
 | AALProtect | 362840 | AlphaAntiLeak |
@@ -646,13 +693,14 @@ ms.locfileid: "73064152"
 | RsFlt | 362820 | Redstor 有限 |
 | CentrifyFSF | 362810 | Centrify 公司 |
 | Sefo-底部 | 362800 | Solusseum Inc。 |
+| proggerdriver | 362790 | WaikatoLink 有限公司 |
 | SFPMonitor-底部 | 362700 | SonicWall Inc。 |
 | minispy-底部 | 361000 | Microsoft |
 
 ## <a name="span-id340000_-_349999__fsfilter_undeletespanspan-id340000_-_349999__fsfilter_undeletespanspan-id340000_-_349999__fsfilter_undeletespan340000---349999-fsfilter-undelete"></a><span id="340000_-_349999__FSFilter_Undelete"></span><span id="340000_-_349999__fsfilter_undelete"></span><span id="340000_-_349999__FSFILTER_UNDELETE"></span>340000-349999： FSFilter 取消删除
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | BSSFlt | 346000 | 蓝色鞋软件 LLC |
 | ThinIO | 345900 | ThinScale 技术 |
 | hmpalert | 345800 | SurfRight |
@@ -674,14 +722,17 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id320000_-_329998__fsfilter_anti-virusspanspan-id320000_-_329998__fsfilter_anti-virusspanspan-id320000_-_329998__fsfilter_anti-virusspan320000---329998-fsfilter-anti-virus"></a><span id="320000_-_329998__FSFilter_Anti-Virus"></span><span id="320000_-_329998__fsfilter_anti-virus"></span><span id="320000_-_329998__FSFILTER_ANTI-VIRUS"></span>320000-329998： FSFilter 反病毒
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| ReveFltMgr | 329350 | REVE 防病毒 |
+| ReveProcProtection | 329340 | REVE 防病毒 |
 | zwPxeSvr | 329330 | SecureLink Inc。 |
 | zwASatom | 329320 | SecureLink Inc。 |
 | wscm | 329310 | Fujitsu 社会科学 |
 | IMFFilter | 329300 | IObit 信息技术 |
 | CSFlt | 329290 | ConeSecurity Inc。 |
-| ospfile_mini | 329230 | OKUMA 公司 |
+| Osiris | 329240 | 二进制防御系统 |
+| ospfile_mini .sys | 329230 | OKUMA 公司 |
 | SoftFilterxxx | 329222 | WidgetNuri 公司 |
 | RansomDefensexxx | 329220 | WidgetNuri 公司 |
 | RanPodFS | 329210 | Pooyan 系统 |
@@ -696,12 +747,13 @@ ms.locfileid: "73064152"
 | ECATDriver | 329120 | 方面 |
 | pfkrnl | 329110 | FXSEC 有限公司 |
 | epicFilter | 329100 | 隐藏的反射 |
+| EdnemFsFilter | 329090 | 北达科他州大学 |
 | b9kernel | 329050 | Bit9 Inc。 |
-| eeCtrl | 329010 | Symantec |
-| 橡皮 .sys （已停用） | 329010 | Symantec |
-| SRTSP | 329000 | Symantec |
-| SRTSPIT-ia64 系统 | 329000 | Symantec |
-| SRTSP64.SYS-x64 系统 | 329000 | Symantec |
+| eeCtrl | 329010 | symantec |
+| 橡皮 .sys （已停用） | 329010 | symantec |
+| SRTSP | 329000 | symantec |
+| SRTSPIT-ia64 系统 | 329000 | symantec |
+| SRTSP64.SYS-x64 系统 | 329000 | symantec |
 | a2ertpx86 | 328920 | 将 emsi Software GmbH |
 | a2ertpx64 | 328920 | 将 emsi Software GmbH |
 | a2gffx86-x86 | 328910 | 将 emsi Software GmbH |
@@ -710,12 +762,13 @@ ms.locfileid: "73064152"
 | a2acc | 328900 | 将 emsi Software GmbH |
 | x64 系统上的 a2acc64 | 328900 | 将 emsi Software GmbH |
 | FlightRecorder | 328850 | Malwarebytes 公司。 |
-| si32_file | 328810 | Scargo Inc。 |
-| si64_file | 328810 | Scargo Inc。 |
+| si32_file .sys | 328810 | Scargo Inc。 |
+| si64_file .sys | 328810 | Scargo Inc。 |
 | mbam | 328800 | Malwarebytes 公司。 |
+| lnvscenter | 328780 | Lenovo |
 | EnigmaFileMonDriver | 328770 | EnigmaSoft |
 | KUBWKSP | 328750 | Netlor SAS |
-| hcp_kernel_acq | 328740 | refractionPOINT |
+| hcp_kernel_acq .sys | 328740 | refractionPOINT |
 | SegiraFlt | 328730 | Segira LLC |
 | wdocsafe | 328722 | Cheetah Mobile Inc。 |
 | lbprotect | 328720 | Cheetah Mobile Inc。 |
@@ -725,11 +778,12 @@ ms.locfileid: "73064152"
 | MaxProtector | 328610 | 最大安全软件 |
 | maxcryptmon | 328601 | 最大安全软件 |
 | SDActMon | 328600 | 最大安全软件 |
+| TmKmSnsr | 328550 | 走向微 Inc。 |
 | fileflt | 328540 | 走向微 Inc。 |
 | TmEsFlt | 328530 | 走向微 Inc。 |
 | TmEyes | 328520 | 走向微 Inc。 |
 | tmevtmgr | 328510 | 走向微 Inc。 |
-| tmpreflt | 328500 | 预测 |
+| tmpreflt | 328500 | 趋势 |
 | vcMFilter | 328400 | SGRI，有限公司 |
 | SAFsFilter | 328300 | Lightspeed Systems Inc。 |
 | vsepflt | 328200 | VMware，Inc。 |
@@ -744,6 +798,7 @@ ms.locfileid: "73064152"
 | AhkSvPro | 327720 | Ahkun Co。 |
 | AhkUsbFW | 327710 | Ahkun Co。 |
 | AhkAMFlt | 327700 | Ahkun Co。 |
+| majoradvapi | 327680 | 北京 Majorsec |
 | PSINPROC.系统 | 327620 | Panda 安全性 |
 | PSINFILE.系统 | 327610 | Panda 安全性 |
 | amfsm-Windows XP/2003 x64 | 327600 | Panda 安全性 |
@@ -755,20 +810,22 @@ ms.locfileid: "73064152"
 | easyanticheat | 327530 | EasyAntiCheat 解决方案 |
 | 5nine | 327520 | 5nine Software Inc。 |
 | caavFltr | 327510 | 计算机 Assoc |
-| ino_fltr | 327500 | 计算机 Assoc |
-| SECOne_USB | 327426 | GRGBanking 设备 |
-| SECOne_Proc10 | 327424 | GRGBanking 设备 |
-| SECOne_REG10 | 327422 | GRGBanking 设备 |
-| SECOne_FileMon10 | 327420 | GRGBanking 设备 |
+| ino_fltr .sys | 327500 | 计算机 Assoc |
+| SECOne_USB .sys | 327426 | GRGBanking 设备 |
+| SECOne_Proc10 .sys | 327424 | GRGBanking 设备 |
+| SECOne_REG10 .sys | 327422 | GRGBanking 设备 |
+| SECOne_FileMon10 .sys | 327420 | GRGBanking 设备 |
 | WCSDriver | 327410 | 白色 Cloud Security |
 | 360qpesv | 327404 | 360软件（北京） |
 | dsark | 327402 | Qihoo 360 |
 | 360avflt | 327400 | Qihoo 360 |
+| sciptflt | 327334 | SECUI 公司 |
 | scifsflt | 327333 | SECUI 公司 |
 | ANVfsm | 327310 | Arcdo |
 | CDrRSFlt | 327300 | Arcdo |
 | mfdriver | 327250 | Imperva Inc。 |
 | EPSMn | 327200 | SGA |
+| TxFileFilter | 327160 | 北京金星 |
 | VTSysFlt | 327150 | 北京金星 |
 | TesMon | 327130 | 腾讯 |
 | QQSysMonX64 | 327125 | 腾讯 |
@@ -892,7 +949,7 @@ ms.locfileid: "73064152"
 | SCFltr | 323300 | SecurityCoverage，Inc。 |
 | fildds | 323200 | Filseclab |
 | fsfilter | 323100 | MastedCode 有限公司 |
-| fpav_rtp | 323000 | f-保护 |
+| fpav_rtp .sys | 323000 | f-保护 |
 | cwdriver | 322900 | Leith Bade |
 | AYFilter | 322810 | ESTsoft |
 | Rtw | 322800 | ESTsoft |
@@ -927,6 +984,7 @@ ms.locfileid: "73064152"
 | PZDrvXP | 321600 | VisionPower，有限公司 |
 | ggc | 321510 | 快速修复 TechnologiesPvt。 Ltd. |
 | catflt | 321500 | 快速修复 TechnologiesPvt。 Ltd. |
+| snsrflt | 321495 | 快速修复技术 Pvt。 Ltd. |
 | bdsflt | 321490 | 快速修复技术 Pvt。 Ltd. |
 | arwflt | 321480 | 快速修复技术 Pvt。 Ltd. |
 | csagent | 321410 | CrowdStrike 有限公司。 |
@@ -936,7 +994,7 @@ ms.locfileid: "73064152"
 | mfencoas | 321310 | McAfee Inc。 |
 | mfehidk | 321300 | McAfee Inc。 |
 | swin | 321250 | McAfee Inc。 |
-| CyvrFsfd | 321234 | Palo Alto 网络 |
+| CyvrFsfd | 321234 | Palo Alto Networks |
 | cmdccav | 321210 | Comodo 组 Inc。 |
 | cmdguard | 321200 | Comodo 组 Inc。 |
 | K7Sentry | 321100 | K7 计算专用公司。 |
@@ -946,6 +1004,7 @@ ms.locfileid: "73064152"
 | dgsafe | 320950 | KINGSOFT |
 | issfltr | 320900 | ISS |
 | hbflt | 320840 | BitDefender SRL |
+| vlflt | 320832 | BitDefender SRL |
 | bdsvm | 320830 | Bitdefender |
 | gzflt | 320820 | BitDefender SRL |
 | bddevflt | 320812 | BitDefender SRL |
@@ -958,9 +1017,12 @@ ms.locfileid: "73064152"
 | AVC3.系统 | 320780 | BitDefender SRL |
 | TRUFOS.系统 | 320770 | BitDefender SRL |
 | aswmonflt | 320700 | Alwil |
+| kavnsi | 320650 | AVNOS |
 | HookCentre | 320602 | G 数据 |
 | PktIcpt | 320601 | G 数据 |
 | MiniIcpt | 320600 | G 数据 |
+| acdrv | 320520 | OnMoon 公司 LLC |
+| tmfsdrv2 | 320510 | Teramind |
 | avgntflt | 320500 | Avira GmbH |
 | klam | 320450 | Kaspersky 等实验室 |
 | klbg | 320440 | Kaspersky |
@@ -972,20 +1034,29 @@ ms.locfileid: "73064152"
 | klam | 320350 | Kaspersky 等实验室 |
 | hsmltwhl | 320340 | Hitachi 解决方案 |
 | hssfwhl | 320330 | Hitachi 解决方案 |
+| DeepInsFS | 320323 | 深层 Instinct 有限公司。 |
+| DeepInsFS | 320322 | 深层 Instinct 有限公司。 |
+| DeepInsFS | 320321 | 深层 Instinct 有限公司。 |
 | DeepInsFS | 320320 | 深层 Instinct 有限公司。 |
 | avfsmn | 320310 | Anvisoft |
 | lbd | 320300 | Lavasoft AB |
 | pavdrv | 320210 | Panzor 网络安全 |
 | rvsmon | 320200 | CJSC Returnil 软件 |
-| WRKrn | 320110 | Webroot Inc。 |
+| KawachFsMinifilter | 320160 | Sequretek |
+| securoFSD_x64 .sys | 320150 | knowwheresoft 有限公司 |
+| WRAEKernel | 320112 | Webroot Inc。 |
+| WRKrn | 320111 | Webroot Inc。 |
+| WRCore | 320110 | Webroot Inc。 |
 | ssfmonm | 320100 | Webroot Software，Inc。 |
-| vk_fsf | 320050 | AxBx |
+| ODFsFimFilter | 320070 | 太空网络安全 |
+| ODFsFilter | 320060 | 太空网络安全 |
+| vk_fsf .sys | 320050 | AxBx |
 | VirtualAgent | 320005 | Symantec |
 
 ## <a name="span-id300000_-_309998__fsfilter_replicationspanspan-id300000_-_309998__fsfilter_replicationspanspan-id300000_-_309998__fsfilter_replicationspan300000---309998-fsfilter-replication"></a><span id="300000_-_309998__FSFilter_Replication"></span><span id="300000_-_309998__fsfilter_replication"></span><span id="300000_-_309998__FSFILTER_REPLICATION"></span>300000-309998： FSFilter 复制
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | IntelCAS | 309100 | Intel Corporation |
 | mvfs | 309000 | IBM 公司 |
 | frxccd | 306000 | FSLogix Inc。 |
@@ -1005,7 +1076,7 @@ ms.locfileid: "73064152"
 | bkbmfd64 （x64） | 303200 | BakBone Software，Inc。 |
 | mblvn | 303100 | Packeteer |
 | AV12NFNT | 303000 | AhnLab |
-| mDP_win_mini | 302900 | 宏影响 |
+| mDP_win_mini .sys | 302900 | 宏影响 |
 | ctxubs | 302800 | Citrix 系统 Inc。 |
 | rrepfsf | 302700 | 玫瑰 Datasystems Inc。 |
 | cbfsfilter2017 | 301900 | 超级灵活软件 |
@@ -1021,8 +1092,9 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id280000_-_289998__fsfilter_continuous_backupspanspan-id280000_-_289998__fsfilter_continuous_backupspanspan-id280000_-_289998__fsfilter_continuous_backupspan280000---289998-fsfilter-continuous-backup"></a><span id="280000_-_289998__FSFilter_Continuous_Backup"></span><span id="280000_-_289998__fsfilter_continuous_backup"></span><span id="280000_-_289998__FSFILTER_CONTINUOUS_BACKUP"></span>280000-289998： FSFilter 连续备份
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| File_monitor .sys | 289000 | Acronis |
 | Klcdp | 288900 | Kaspersky 等实验室 |
 | splitinfmon | 288800 | 拆分无限大 |
 | versamatic | 288700 | Acertant 技术 |
@@ -1034,7 +1106,7 @@ ms.locfileid: "73064152"
 | HyperBacCA | 285000 | 红色入口软件公司 |
 | ZMSFsFltr | 284400 | Zenith InfoTech |
 | AlfaSC | 284300 | Mg-alfa 公司 |
-| hie_ifs | 284200 | Hie 公司 |
+| hie_ifs .sys | 284200 | Hie 公司 |
 | AAFs | 284100 | AppAssure 软件 |
 | defilter （旧） | 284000 | Microsoft |
 | aFsvDrv | 283100 | ITSTATION Inc。 |
@@ -1043,11 +1115,11 @@ ms.locfileid: "73064152"
 | LbFilter | 281700 | Linkverse S.r.l. |
 | fbsfd | 281600 | Ferro 软件 |
 | dupleemf | 281500 | Duplee SPI，S.L。 |
-| file_tracker | 281420 | Acronis Inc。 |
+| file_tracker .sys | 281420 | Acronis Inc。 |
 | exbackup | 281410 | Acronis Inc。 |
 | afcdp | 281400 | Acronis Inc。 |
 | dcefltr | 281300 | Cofio 软件公司 |
-| ipmrsync_mfilter | 281200 | OpenMars 企业 |
+| ipmrsync_mfilter .sys | 281200 | OpenMars 企业 |
 | cascade. sys | 281100 | 日本软件 |
 | filearchive | 281000 | 代码事后 |
 | syscdp | 280900 | 系统正常 AB |
@@ -1056,7 +1128,7 @@ ms.locfileid: "73064152"
 | hpchgflt | 280800 | HP |
 | VirtFile | 280700 | Veritas |
 | DeqoCPS | 280600 | Deqo |
-| LV_Tracker | 280500 | LiveVault |
+| LV_Tracker .sys | 280500 | LiveVault |
 | cpbak | 280410 | 检查点软件 |
 | tdmonxp | 280400 | TimeData |
 | nvfr_cpd | 280310 | Bakbone Software Inc。 |
@@ -1066,8 +1138,13 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id260000_-_269998__fsfilter_content_screenerspanspan-id260000_-_269998__fsfilter_content_screenerspanspan-id260000_-_269998__fsfilter_content_screenerspan260000---269998-fsfilter-content-screener"></a><span id="260000_-_269998__FSFilter_Content_Screener"></span><span id="260000_-_269998__fsfilter_content_screener"></span><span id="260000_-_269998__FSFILTER_CONTENT_SCREENER"></span>260000-269998： FSFilter 内容筛选程序
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| taExeScanner | 268350 | ITSTATION Inc。 |
+| GuardFSFlt | 268340 | ProShield |
+| usbguard | 268330 | 杭州梳理技术 |
+| gibepdevflt | 268320 | 组 IB 有限公司 |
+| EffeDriver | 268310 | DROVA |
 | Klshadow | 268300 | Kaspersky 等实验室 |
 | TN28 | 268290 | ID 身份验证技术 |
 | PGDriver | 268280 | Avecto 有限公司 |
@@ -1122,7 +1199,7 @@ ms.locfileid: "73064152"
 | activ | 265100 | Rapidware Pty 有限公司 |
 | avscan | 265010 | Microsoft |
 | sys.databases | 265000 | Microsoft |
-| DI_fs | 264910 | Soft-SB |
+| DI_fs .sys | 264910 | Soft-SB |
 | wgnpos | 264900 | Orchestria |
 | odfltr | 264810 | NetClean 技术 |
 | ncpafltr | 264800 | NetClean 技术 |
@@ -1151,8 +1228,8 @@ ms.locfileid: "73064152"
 | SolRedirect | 263110 | Soliton 系统 |
 | solitkm | 263100 | Soliton 系统 |
 | ipcfs | 263000 | NetVeda |
-| netgateav_access | 262910 | NETGATE 技术。 s.r.o. |
-| spyemrg_access | 262900 | NETGATE 技术。 s.r.o. |
+| netgateav_access .sys | 262910 | NETGATE 技术。 s.r.o. |
+| spyemrg_access .sys | 262900 | NETGATE 技术。 s.r.o. |
 | pxrmcet | 262800 | Proxure Inc。 |
 | EgisTecFF | 262700 | Egis 技术 Inc。 |
 | fgcpac | 262600 | Fortres 总计公司。 |
@@ -1165,11 +1242,11 @@ ms.locfileid: "73064152"
 | psepfilter | 262100 | 绝对软件 |
 | SAMDriver | 262000 | 峰会 |
 | emrcore | 261920 | Ivanti Inc。 |
-| wire_fsfilter | 261910 | ThreatSpike 实验室 |
+| wire_fsfilter .sys | 261910 | ThreatSpike 实验室 |
 | AMFileSystemFilter | 261900 | AppSense 有限公司 |
 | mtflt | 261880 | mTalos Inc。 |
 | nxrmflt | 261680 | NextLabs，Inc。 |
-| oc_fsfilter | 261300 | Raiffeisen Bank Aval |
+| oc_fsfilter .sys | 261300 | Raiffeisen Bank Aval |
 | hdlpflt | 261200 | McAfee Inc。 |
 | CCFFilter | 261160 | Microsoft |
 | cbafilt | 261150 | Microsoft |
@@ -1186,7 +1263,8 @@ ms.locfileid: "73064152"
 | symefasi | 260610 | Symantec 公司 |
 | symefa | 260600 | Symantec |
 | symefa64 | 260600 | Symantec |
-| aictracedrv_cs | 260500 | AI 咨询 |
+| apdFSF | 260550 | Cyberbit 有限公司 |
+| aictracedrv_cs .sys | 260500 | AI 咨询 |
 | DWFIxxxx | 260410 | SciencePark 公司 |
 | DWFIxxxx | 260400 | SciencePark 公司 |
 | DSDriver | 260330 | ManageEngine Zoho 公司 |
@@ -1200,41 +1278,44 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id240000_-_249999__fsfilter_quota_managementspanspan-id240000_-_249999__fsfilter_quota_managementspanspan-id240000_-_249999__fsfilter_quota_managementspan240000---249999-fsfilter-quota-management"></a><span id="240000_-_249999__FSFilter_Quota_Management"></span><span id="240000_-_249999__fsfilter_quota_management"></span><span id="240000_-_249999__FSFILTER_QUOTA_MANAGEMENT"></span>240000-249999： FSFilter 配额管理
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| ntps_qfs | 245100 | NTP 软件 |
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| ntps_qfs .sys | 245100 | NTP 软件 |
 | PSSFsFilter | 245000 | PSS 系统 |
 | Sptqmg | 245300 | Safend |
 | storqosflt | 244000 | Microsoft |
 
 ## <a name="span-id220000_-_229999__fsfilter_system_recoveryspanspan-id220000_-_229999__fsfilter_system_recoveryspanspan-id220000_-_229999__fsfilter_system_recoveryspan220000---229999-fsfilter-system-recovery"></a><span id="220000_-_229999__FSFilter_System_Recovery"></span><span id="220000_-_229999__fsfilter_system_recovery"></span><span id="220000_-_229999__FSFILTER_SYSTEM_RECOVERY"></span>220000-229999： FSFilter 系统恢复
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| file_protector | 227000 | Acronis |
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| file_protector .sys | 227000 | Acronis |
 | fbwf | 226000 | Microsoft |
 | Klsysrec | 221500 | Kaspersky 等实验室 |
 | SFDRV.系统 | 221400 | Utixo LLC |
-| sp_prot | 221300 | Xacti 公司 |
+| sp_prot .sys | 221300 | Xacti 公司 |
 | nsfilep | 221200 | Netsupport 有限 |
 | syscow | 221100 | 系统正常 AB |
 | fsredir | 221000 | Microsoft |
 
 ## <a name="span-id200000_-_209999__fsfilter_cluster_file_systemspanspan-id200000_-_209999__fsfilter_cluster_file_systemspanspan-id200000_-_209999__fsfilter_cluster_file_systemspan200000---209999-fsfilter-cluster-file-system"></a><span id="200000_-_209999__FSFilter_Cluster_File_System"></span><span id="200000_-_209999__fsfilter_cluster_file_system"></span><span id="200000_-_209999__FSFILTER_CLUSTER_FILE_SYSTEM"></span>200000-209999： FSFilter 群集文件系统
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | CVCBT | 203400 | CommVault Systems，Inc。 |
 | ResumeKeyFilter | 202000 | Microsoft |
+| VeeamFCT | 201900 | Veeam 软件 |
+| ShadowVirtualStorage | 201800 | 边栏选项卡 |
 
 ## <a name="span-id180000_-_189999__fsfilter_hsmspanspan-id180000_-_189999__fsfilter_hsmspanspan-id180000_-_189999__fsfilter_hsmspan180000---189999-fsfilter-hsm"></a><span id="180000_-_189999__FSFilter_HSM"></span><span id="180000_-_189999__fsfilter_hsm"></span><span id="180000_-_189999__FSFILTER_HSM"></span>180000-189999： FSFilter HSM
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | wcifs | 189900 | Microsoft |
 | prjflt | 189800 | Microsoft |
 | gameflt | 189750 | Microsoft |
 | nvmsqrd | 188900 | NVIDIA 公司 |
+| Ghost_file .sys | 188800 | Acronis |
 | RsFlt | 187000 | Redstor 有限 |
 | mnefs | 186800 | Nippon 技术 Lab |
 | Svfsf | 186700 | Spharsoft 技术 |
@@ -1243,14 +1324,16 @@ ms.locfileid: "73064152"
 | gwmemory | 186600 | Macrotec LLC |
 | cteraflt | 186550 | CTERA 网络有限公司 |
 | .dbx .sys | 186500 | Dropbox Inc。 |
+| iMDrvFlt | 186450 | iManage LLC |
 | quaddrasi | 186400 | Quaddra 软件 |
 | gdrive | 186300 | Google |
 | CoreSyncFilter | 186250 | Adobe Systems Inc。 |
 | EaseTag | 186200 | EaseVault 技术 Inc。 |
+| HSFilter | 186150 | HubStor Inc。 |
 | hcminifilter | 186100 | 祝云公司快乐。 |
 | PDFsFilter | 186000 | Raxco Sfotware Inc。 |
 | camino | 185900 | CaminoSoft 公司 |
-| C2C_AF1R.系统 | 185810 | C2C 系统 |
+| C2C_AF1R。系统 | 185810 | C2C 系统 |
 | DFdriver | 185800 | DataFirst 公司 |
 | amfadrv | 185700 | 寻找软件 Inc。 |
 | HSMdriver | 185600 | Wim Vervoorn |
@@ -1267,19 +1350,19 @@ ms.locfileid: "73064152"
 | acahsm | 184600 | 自治公司 |
 | zlhsm | 184500 | ZL 技术 |
 | CFileProtect | 184100 | Zhejiang 安全技术 |
-| stc_restore_filter | 184000 | StorageCraft 技术 |
+| stc_restore_filter .sys | 184000 | StorageCraft 技术 |
 | dvfilter | 183003 | Microsoft |
 | Accesstracker | 183002 | Microsoft |
 | Changetracker | 183001 | Microsoft |
 | Fstier | 183000 | Microsoft |
 | hsmcdpflt | 182700 | Metalogix |
 | archivmgr | 182690 | Metalogix |
-| ntps_oddm | 182600 | NTP 软件 |
+| ntps_oddm .sys | 182600 | NTP 软件 |
 | XDFileSys | 182500 | XenData 有限 |
 | upmjit | 182400 | Citrix 系统 |
 | AtmosFS | 182310 | EMC 公司 |
 | DxSpy | 182300 | EMC Software Inc.。 |
-| car_hsmflt | 182200 | Caringo，Inc。 |
+| car_hsmflt .sys | 182200 | Caringo，Inc。 |
 | BRDriver | 182100 | BitRaider |
 | BRDriver64 | 182100 | BitRaider |
 | autnhsm | 182000 | 自治公司 |
@@ -1300,12 +1383,13 @@ ms.locfileid: "73064152"
 | BkfMap | 181200 | 数据存储组 |
 | hsmfilter | 181100 | GRAU 数据存储 AG |
 | mwilcflt | 181020 | Moonwalk 通用 P/L |
+| mwildflt | 181015 | Moonwalk |
 | mwilsflt | 181010 | Moonwalk 通用 P/L |
 | mwidmflt | 181000 | Moonwalk 通用 P/L |
 | HcpAwfs | 181960 | Hitachi 数据系统 |
 | sdrefltr | 180950 | Hitachi 数据系统 |
 | fltasm | 180900 | 全局360 |
-| cnet_hsm | 180850 | Carroll-Net Inc。 |
+| cnet_hsm .sys | 180850 | Carroll-Net Inc。 |
 | pntvolflt | 180800 | 点软件 & 系统 |
 | appxstrm | 180710 | Microsoft |
 | wimmount | 180700 | Microsoft |
@@ -1316,20 +1400,20 @@ ms.locfileid: "73064152"
 | sys.databases | 180450 | Microsoft |
 | dfmflt | 180410 | Microsoft |
 | sis .sys | 180400 | Microsoft |
-| rbt_wfd | 180300 | Riverbed 技术，Inc。 |
+| rbt_wfd .sys | 180300 | Riverbed 技术，Inc。 |
 
 ## <a name="span-id170000_-_174999__fsfilter_imaging_ex_zipspanspan-id170000_-_174999__fsfilter_imaging_ex_zipspanspan-id170000_-_174999__fsfilter_imaging_ex_zipspan170000---174999-fsfilter-imaging-ex-zip"></a><span id="170000_-_174999__*FSFilter_Imaging_(ex:_.ZIP)"></span><span id="170000_-_174999__*fsfilter_imaging_(ex:_.zip)"></span><span id="170000_-_174999__*FSFILTER_IMAGING_(EX:_.ZIP)"></span>170000-174999： * FSFilter 映像（例如：）。ZIP
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | pfmfs_???。系统 | 172100 | Pismo Technic Inc。 |
-| virtual_file | 172000 | Acronis |
+| virtual_file .sys | 172000 | Acronis |
 | Wimfltr.sys | 170500 | Microsoft |
 
 ## <a name="span-id160000_-_169999__fsfilter_compressionspanspan-id160000_-_169999__fsfilter_compressionspanspan-id160000_-_169999__fsfilter_compressionspan160000---169999-fsfilter-compression"></a><span id="160000_-_169999__FSFilter_Compression"></span><span id="160000_-_169999__fsfilter_compression"></span><span id="160000_-_169999__FSFILTER_COMPRESSION"></span>160000-169999： FSFilter 压缩
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | CmgFFC | 166000 | Credant 技术 |
 | 压缩 .sys | 165000 | Microsoft |
 | cmpflt | 162000 | Microsoft |
@@ -1343,17 +1427,20 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id140000_-_149999__fsfilter_encryptionspanspan-id140000_-_149999__fsfilter_encryptionspanspan-id140000_-_149999__fsfilter_encryptionspan140000---149999-fsfilter-encryption"></a><span id="140000_-_149999__FSFilter_Encryption"></span><span id="140000_-_149999__fsfilter_encryption"></span><span id="140000_-_149999__FSFILTER_ENCRYPTION"></span>140000-149999： FSFilter 加密
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| AAFS | 149110 | ViGero |
 | FJSeparettiFilterRamMon | 149100 | FUJITSU 有限 |
+| trsxefs | 149060 | TransientX Inc。 |
 | psatfilter | 149050 | ProYuga |
 | RdFilter | 149040 | CyberEye 调研实验室 |
-| gisfile_decryption | 149030 | 中国通信 |
+| gisfile_decryption .sys | 149030 | 中国通信 |
 | TIFSFilter | 149020 | SG 公司 |
 | OsrDt2 | 149010 | 信息安全公司 |
 | EasyKryptMF | 149000 | SoftKrypt LLC |
 | 挂锁 | 148910 | IntSoft Inc。 |
 | ffecore | 148900 | Winmagic |
+| bkfs | 148880 | 杭州 JoyBlock 有限公司 |
 | fangcloud | 148860 | 杭州 Yifangyun |
 | klvfs | 148810 | Kaspersky 等实验室 |
 | Klfle | 148800 | Kaspersky 等实验室 |
@@ -1456,6 +1543,7 @@ ms.locfileid: "73064152"
 | Fcfileio | 143100 | Brainzsquare，有限公司。 |
 | cpdrm | 143000 | Pikewerks |
 | vmfiltr | 142900 | Vormetric Inc。 |
+| Sfntpffd | 142890 | Thales CPL |
 | VFSEnc | 142811 | Symantec |
 | pgpfs | 142810 | Symantec |
 | fencry | 142800 | Symantec |
@@ -1463,12 +1551,13 @@ ms.locfileid: "73064152"
 | cpefs | 142600 | 加密-Pro |
 | dekfs | 142500 | KasherLab，有限公司 |
 | qlockfilter | 142400 | Binqsoft Inc。 |
-| RRFilterDriverStack_d3 | 142300 | 合理保留 |
+| RRFilterDriverStack_d3 .sys | 142300 | 合理保留 |
 | cve .sys | 142200 | 绝对软件公司。 |
 | spcflt | 142100 | FUJITSU .BSC Inc。 |
 | ldsecusb | 142000 | LANDesk Inc。 |
 | fencr | 141900 | SODATSW spol. s.r.o. |
 | RubiFlt | 141800 | 架式 |
+| NCrypt | 141700 | Nimshi 公司 |
 | mfild | 141660 | Penta 安全系统 |
 | cbfsfilter2017 | 141635 | 自动机 Inc。 |
 | cbfsfilter2017 | 141634 | 自动机 Inc。 |
@@ -1489,7 +1578,8 @@ ms.locfileid: "73064152"
 | DWENxxxx | 141400 | SciencePark 公司 |
 | hdFileSentryDrv32 | 141300 | Heilig 防卫 |
 | hdFileSentryDrv64 | 141300 | Heilig 防卫 |
-| CovertxFilter | 141240 | 微聚焦 |
+| pnpfs | 141250 | PNP 安全公司 |
+| SmartCipherFilter | 141240 | 微聚焦 |
 | cplcdt2 | 141230 | conpal GmbH |
 | asCryptoFilter | 141220 | 应用的安全 GmbH |
 | NetCryptKR | 141210 | NetCrypt Pty 有限公司 |
@@ -1500,9 +1590,10 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id130000_-_139999__fsfilter_virtualizationspanspan-id130000_-_139999__fsfilter_virtualizationspanspan-id130000_-_139999__fsfilter_virtualizationspan130000---139999-fsfilter-virtualization"></a><span id="130000_-_139999__FSFilter_Virtualization"></span><span id="130000_-_139999__fsfilter_virtualization"></span><span id="130000_-_139999__FSFILTER_VIRTUALIZATION"></span>130000-139999： FSFilter 虚拟化
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | Klvirt | 138100 | Kaspersky 等实验室 |
+| thsmmf | 138060 | Talon 存储解决方案 |
 | VMagic | 138050 | AI 咨询 |
 | GetSAS | 138040 | SAS 研究所 Inc。 |
 | rqtNos | 138030 | ReaQta 有限公司。 |
@@ -1536,6 +1627,7 @@ ms.locfileid: "73064152"
 | pszmf | 136430 | 索尼公司 |
 | sxsudfmf | 136410 | 索尼公司 |
 | vfammf | 136400 | 索尼公司 |
+| lwfsflt | 136300 | Liquidware 实验室 |
 | VHDFlt | 136240 | Dell |
 | VHDFlt | 136230 | Dell |
 | VHDFlt | 136220 | Dell |
@@ -1551,11 +1643,11 @@ ms.locfileid: "73064152"
 | pfmfs_???。系统 | 132600 | Pismo Technic Inc。 |
 | Stcvhdmf | 132600 | StorageCraft 技术公司 |
 | appdrv01 | 132500 | 保护技术 |
-| virtual_file | 132400 | Acronis |
+| virtual_file .sys | 132400 | Acronis |
 | pdiFsFilter | 132300 | 最近数据 Inc。 |
 | avgvtx86 | 132200 | AVG 技术 CZ |
 | avgvtx64 | 132200 | AVG 技术 CZ |
-| DataNet_Driver | 132100 | AppSense 有限公司 |
+| DataNet_Driver .sys | 132100 | AppSense 有限公司 |
 | EgenPage | 132000 | Egenera，Inc。 |
 | unidrive-旧 | 131900 | Unidesk |
 | ivm | 131800 | RingCube 技术 |
@@ -1572,27 +1664,31 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id120000_-_129999__fsfilter_physical_quota_managementspanspan-id120000_-_129999__fsfilter_physical_quota_managementspanspan-id120000_-_129999__fsfilter_physical_quota_managementspan120000---129999-fsfilter-physical-quota-management"></a><span id="120000_-_129999__FSFilter_Physical_Quota_management"></span><span id="120000_-_129999__fsfilter_physical_quota_management"></span><span id="120000_-_129999__FSFILTER_PHYSICAL_QUOTA_MANAGEMENT"></span>120000-129999： FSFilter 物理配额管理
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | quota | 125000 | Microsoft |
 | qafilter | 124000 | Veritas |
 | DroboFlt | 123900 | 数据机器人 |
 
 ## <a name="span-id100000_-_109999__fsfilter_open_filespanspan-id100000_-_109999__fsfilter_open_filespanspan-id100000_-_109999__fsfilter_open_filespan100000---109999-fsfilter-open-file"></a><span id="100000_-_109999__FSFilter_Open_File"></span><span id="100000_-_109999__fsfilter_open_file"></span><span id="100000_-_109999__FSFILTER_OPEN_FILE"></span>100000-109999： FSFilter 打开文件
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | insyncmf | 105000 | InSync |
 | SPILock8 | 100900 | Software 治愈方法 Inc。 |
 | Klbackupflt | 100800 | Kaspersky |
 | repkap | 100700 | 远景解决方案 |
 | symrg | 100600 | Symantec |
 | adsfilter | 100500 | PolyServ |
+| FMonitor | 100490 | Safetica |
 
 ## <a name="span-id80000_-_89999__fsfilter_security_enhancerspanspan-id80000_-_89999__fsfilter_security_enhancerspanspan-id80000_-_89999__fsfilter_security_enhancerspan80000---89999-fsfilter-security-enhancer"></a><span id="80000_-_89999__FSFilter_Security_Enhancer"></span><span id="80000_-_89999__fsfilter_security_enhancer"></span><span id="80000_-_89999__FSFILTER_SECURITY_ENHANCER"></span>80000-89999： FSFilter Security 不得不一直
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
+| pfcflt | 88240 | PNP 安全公司 |
+| pegasus | 88230 | 有保障的信息安全性 |
+| RSBDrv | 88220 | SMTechnology Co。 |
 | psprotf | 88210 | Panzor 网络安全 |
 | DPMACL | 88100 | Randtronics Pty |
 | dsbwnck | 88000 | Easy 解决方案 Inc。 |
@@ -1618,7 +1714,7 @@ ms.locfileid: "73064152"
 | ikfsmflt | 87300 | IronKey Inc。 |
 | Klsec | 87200 | Kaspersky 等实验室 |
 | XtimUSBFsFilterDrv | 87190 | Dalian CP-SDT 有限公司 |
-| RGFLT_FM | 87180 | Hauri |
+| RGFLT_FM .sys | 87180 | Hauri |
 | flockflt | 87170 | Ahranta Inc。 |
 | ZdCore | 87160 | Zends 技术解决方案 |
 | dcrypt | 87150 | ReactOS 基础 |
@@ -1682,14 +1778,15 @@ ms.locfileid: "73064152"
 | cpAcOnPnP | 81910 | conpal GmbH |
 | cpsgfsmf | 81900 | conpal GmbH |
 | ndevsec | 81800 | Norman ASA |
-| ViewIntus_RTDG | 81700 | Pentego 技术有限公司 |
+| ViewIntus_RTDG .sys | 81700 | Pentego 技术有限公司 |
+| BKSandFS | 81640 | Binklac 工作站 |
 | 代表太空飞船 | 81630 | 代表太空飞船数字 Pty 有限公司 |
 | zam | 81620 |  |
 | ANXfsm | 81610 | Arcdo |
 | CDrSDFlt | 81600 | Arcdo |
 | crnselfdefence32 | 81500 | Coranti Inc。 |
 | crnselfdefence64 | 81500 | Coranti Inc。 |
-| zlock_drv | 81400 | SecurIT |
+| zlock_drv .sys | 81400 | SecurIT |
 | f101fs | 81300 | Fortres 总计公司。 |
 | sysgar | 81200 | 核心数据恢复 |
 | EmbargoM | 81100 | ScriptLogic |
@@ -1711,8 +1808,8 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id60000_-_69999__fsfilter_copy_protectionspanspan-id60000_-_69999__fsfilter_copy_protectionspanspan-id60000_-_69999__fsfilter_copy_protectionspan60000---69999-fsfilter-copy-protection"></a><span id="60000_-_69999__FSFilter_Copy_Protection"></span><span id="60000_-_69999__fsfilter_copy_protection"></span><span id="60000_-_69999__FSFILTER_COPY_PROTECTION"></span>60000-69999： FSFilter Copy 保护
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | d3clock | 67000 | D3CRYPT3D LLC |
 | cbfltfs4 | 66500 | I3D 技术 Inc。 |
 | CkProcess | 66100 | KASHU 系统设计 INC。 |
@@ -1722,6 +1819,7 @@ ms.locfileid: "73064152"
 | rgasdev | 65500 | Macrovision |
 | SkyFPDrv | 65410 | 天空有限公司。 |
 | SkyLWP | 65400 | 天空有限公司。 |
+| SkySDVRF | 65390 | 天空有限公司。 |
 | SnEraser | 65300 | Informzaschita |
 | vfilter | 65200 | RSJ Software GmbH |
 | COGOFlt32 | 65100 | Fortium 技术有限公司 |
@@ -1736,7 +1834,7 @@ ms.locfileid: "73064152"
 | sds | 62000 | 出口软件 |
 | TotalSystemAuditor | 61600 | ANRC LLC |
 | MBAMApiary | 61500 | Malwarebytes 公司。 |
-| WA_FSW | 61400 | Programas Administraci&#243;n y Mejoramiento |
+| WA_FSW .sys | 61400 | Programas Administraci&#243;n y Mejoramiento |
 | ViewIntus_RTAS | 61300 | Pentego 技术 |
 | tffac | 61200 | Toshiba 公司 |
 | tccp | 61100 | TrusCont 有限公司 |
@@ -1744,8 +1842,8 @@ ms.locfileid: "73064152"
 
 ## <a name="span-id40000_-_49999__fsfilter_bottomspanspan-id40000_-_49999__fsfilter_bottomspanspan-id40000_-_49999__fsfilter_bottomspan40000---49999-fsfilter-bottom"></a><span id="40000_-_49999__FSFilter_Bottom"></span><span id="40000_-_49999__fsfilter_bottom"></span><span id="40000_-_49999__FSFILTER_BOTTOM"></span>40000-49999： FSFilter 底端
 
-| 微                  | 高度 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+| 微                  | 高度 | 公司                                 |
+|-----------------------------|----------|-----------------------------------------|
 | RMPFileMounter | 48000 | ManageEngine Zoho |
 | cbfsfilter2017 | 47400 | 12-12 协同 |
 | pfmfs_???。系统 | 47300 | Pismo Technic Inc。 |
@@ -1753,7 +1851,7 @@ ms.locfileid: "73064152"
 | hsmltlib | 47110 | Hitachi 解决方案 |
 | hskdlib | 47100 | Hitachi 解决方案 |
 | acmnlib | 47090 | Hitachi 解决方案 |
-| aictracedrv_b | 47000 | AI 咨询 |
+| aictracedrv_b .sys | 47000 | AI 咨询 |
 | hhdcfltr | 46900 | Seagate 技术 |
 | Npsvctrig | 46000 | Microsoft |
 | klvfs | 44900 | Kaspersky 等实验室 |

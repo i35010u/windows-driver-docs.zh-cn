@@ -26,11 +26,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f615f67236b5691246b6183c731b92bd4f4f2f7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843152"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242736"
 ---
 # <a name="managing-io-queues"></a>管理 I/O 队列
 

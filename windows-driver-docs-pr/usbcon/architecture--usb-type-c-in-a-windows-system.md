@@ -1,23 +1,23 @@
 ---
-Description: 介绍了典型的硬件设计 USB C 类型系统和支持的硬件组件的 Microsoft 提供驱动程序。
-title: Windows 系统的 USB 类型 C 设计的体系结构
+Description: 介绍 USB 类型 C 系统和 Microsoft 提供的支持硬件组件的驱动程序的典型硬件设计。
+title: 适用于 Windows 系统的 USB 类型 C 设计体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e584929528c85dcb5002dea4dae9abfd3ba025
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384489"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242742"
 ---
-# <a name="architecture-usb-type-c-design-for-a-windows-system"></a>体系结构：Windows 系统的 USB 类型 C 设计
+# <a name="architecture-usb-type-c-design-for-a-windows-system"></a>体系结构：用于 Windows 系统的 USB 类型 C 设计
 
 
-**适用于开发与 USB 类型 C 连接器的系统的 Oem**
+**适用于通过 USB 类型 C 连接器开发系统的 Oem**
 
--   通过使用 USB 类型 C USB 双角色功能
--   通过使用 USB 类型 C 当前级别和 Power 交付 2.0 更快地收费
--   显示扩展功能，通过使用备用模式和有线停靠的体验。
+-   使用 USB 类型的 USB 双重角色功能-C
+-   使用 USB 类型-C 当前级别和电源交付2.0 提高了充电速度
+-   使用备用模式和有线插接体验的显示功能。
 
 **上次更新时间**
 
@@ -28,7 +28,7 @@ ms.locfileid: "67384489"
 -   Windows 10 桌面版（家庭版、专业版、企业版和教育版）
 -   Windows 10 移动版
 
-介绍了典型的硬件设计 USB C 类型系统和支持的硬件组件的 Microsoft 提供驱动程序。
+介绍 USB 类型 C 系统和 Microsoft 提供的支持硬件组件的驱动程序的典型硬件设计。
 
 ## <a href="" id="drivers"></a>支持 USB 类型 C 组件的驱动程序
 
@@ -39,49 +39,49 @@ ms.locfileid: "67384489"
 
 -   **USB 设备端驱动程序**
 
-    [USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)服务函数/设备/外设。 USB 函数控制器类扩展支持 MTP （媒体传输协议） 和充电使用 BC 1.2 充电器。 Microsoft 为 Synopsys USB 3.0 和 ChipIdea USB 2.0 控制器提供内置客户端驱动程序。 你可以通过使用为函数控制器编写自定义客户端驱动程序[USB 函数控制器客户端驱动程序的编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))。 有关详细信息，请参阅[开发的 Windows USB 驱动程序函数控制器](developing-windows-drivers-for-usb-function-controllers.md)。
+    [USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)服务的功能/设备/外设。 USB 函数控制器类扩展支持 MTP （媒体传输协议），并使用 BC 1.2 充电器进行充电。 Microsoft 为 Synopsys USB 3.0 和 ChipIdea USB 2.0 控制器提供内置的客户端驱动程序。 您可以使用[USB 函数控制器客户端驱动程序编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))编写函数控制器的自定义客户端驱动程序。 有关详细信息，请参阅[开发适用于 USB 功能控制器的 Windows 驱动程序](developing-windows-drivers-for-usb-function-controllers.md)。
 
-    SoC 供应商可能会为您提供 USB 函数较低筛选器驱动程序的旧专有充电器检测。 如果函数控制器是 Synopsys USB 3.0 或 ChipIdea USB 2.0 控制器，则可以实现你自己的筛选器驱动程序
+    SoC 供应商可能会向你提供 USB 函数的更低筛选器驱动程序，以便进行传统的专用充电器检测。 如果函数控制器为 Synopsys USB 3.0 或 ChipIdea USB 2.0 控制器，则可以实现自己的筛选器驱动程序
 
--   **USB 宿主端驱动程序**
+-   **USB 主机端驱动程序**
 
-    USB 宿主端驱动程序是一组使用 EHCI 或 XHCI 符合 USB 主控制器的驱动程序。 如果在角色切换驱动程序枚举主机角色，将加载的驱动程序。 如果您的主控制器不符合规范，则可以通过编写自定义驱动程序[USB 主机控制器扩展 (UCX) 编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))。 有关信息，请参阅[开发的 Windows USB 驱动程序托管控制器](developing-windows-drivers-for-usb-host-controllers.md)。
+    USB 主机端驱动程序是适用于 EHCI 或 XHCI 兼容 USB 主机控制器的一组驱动程序。 如果角色切换驱动程序枚举主机角色，则会加载驱动程序。 如果主机控制器不符合规范，则可以使用[USB 主机控制器扩展（UCX）编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))编写自定义驱动程序。 有关信息，请参阅[开发适用于 USB 主机控制器的 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)。
 
-    **请注意**  不[USB 设备的所有类](supported-usb-classes.md)在 Windows 10 移动版上受支持。
+    **请注意**  在 Windows 10 移动版上，并非[所有 USB 设备类](supported-usb-classes.md)都受支持。
 
      
 
--   **USB 角色切换驱动程序 (URS)**
+-   **USB 角色切换驱动程序（URS）**
 
-    可以设计系统，以便双角色 USB 端口需要 Windows 配置为主机或函数的模式。 这些设计将需要使用 USB 角色切换 (URS) 驱动程序堆栈。
+    系统可设计为双重角色 USB 端口需要 Windows 将其配置为主机或函数模式。 这些设计需要使用 USB 角色交换机（URS）驱动程序堆栈。
 
-    URS 驱动程序管理连接器、 主机或函数和加载的当前角色和卸载的适当的设备端或主机端驱动程序，基于硬件的平台的事件。 Microsoft 为 Synopsys USB 3.0 和 ChipIdea USB 2.0 控制器提供内置客户端驱动程序。 您可以通过编写在角色切换客户端驱动程序[USB 双角色控制器驱动程序的编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))。 若要激活的角色切换驱动程序，必须对 ACPI 表进行更改。 有关详细信息，请参阅[USB 双角色驱动程序堆栈体系结构](usb-dual-role-driver-stack-architecture.md)。
+    URS 驱动程序管理连接器、主机或功能的当前角色，以及根据平台中的硬件事件加载和卸载适当的设备端或主机端驱动程序。 Microsoft 为 Synopsys USB 3.0 和 ChipIdea USB 2.0 控制器提供内置的客户端驱动程序。 可以使用[USB 双重角色控制器驱动程序编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))编写角色切换客户端驱动程序。 若要激活角色切换驱动程序，必须对 ACPI 表进行更改。 有关详细信息，请参阅[USB 双重角色驱动程序堆栈体系结构](usb-dual-role-driver-stack-architecture.md)。
 
-    在系统上使用 USB 微 AB 连接器，此决定基于的连接器中的 ID 插针。 由客户端驱动程序通过使用分配给它的中断资源来执行 ID pin 检测。
+    在带有 USB 微 AB 连接器的系统上，此决定是根据连接器中的 ID pin 来决定的。 ID pin 检测由客户端驱动程序通过使用分配给它的中断资源来执行。
 
-    在系统上使用 USB 类型 C 连接器，做出的决定是基于抄送插针上。 连接器的客户端驱动程序执行抄送检测并将转发到角色切换驱动程序的信息。
+    在带有 USB 类型 C 连接器的系统上，将根据 CC pin 来做出决定。 连接器的客户端驱动程序执行 CC 检测并将该信息转发到角色切换驱动程序。
 
--   **USB 连接器管理器 (UCM)**
+-   **USB 连接器管理器（UCM）**
 
-    本系列驱动程序管理 USB 类型 C 连接器的所有的方面。 如果您的系统通过 ACPI 实现 UCSI 符合嵌入式的控制器，使用 Microsoft 提供[UCSI 驱动程序](ucsi.md)。 否则为[编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)对于非 ACPI 传输。
+    这组驱动程序管理 USB 类型 C 连接器的所有方面。 如果系统通过 ACPI 实现 UCSI 兼容的嵌入式控制器，请使用 Microsoft 提供的[UCSI 驱动程序](ucsi.md)。 否则，请为非 ACPI 传输[编写 UCSI 客户端驱动程序](write-a-ucsi-driver.md)。
 
-    如果您的硬件不 UCSI 兼容的则你应该向[写入 USB 类型 C 连接器驱动程序](bring-up-a-usb-type-c-connector-on-a-windows-system.md)，它是客户端到 UCM 类扩展。 它们一起管理 USB 类型 C 连接器和连接器驱动程序的预期的行为。
+    如果你的硬件不是 UCSI 兼容的，则应将作为客户端的[USB 类型 C 连接器驱动程序写入](bring-up-a-usb-type-c-connector-on-a-windows-system.md)UCM 类扩展。 它们共同管理 USB 类型 C 连接器和连接器驱动程序的预期行为。
 
-    如果你正在编写一个驱动程序，USB 连接器管理器类扩展遵循 WDF 类扩展客户端驱动程序模型。 客户端驱动程序与硬件和类扩展以处理任务，例如抄送检测，消息传送，Muxing，PD 进行通信和 VBus/VConn 控件和 power 交付和备用模式选择策略。 类扩展通信向操作系统报告的客户端驱动程序的信息。 例如，使用抄送检测结果来配置角色切换驱动程序;USB 类型-C/PD 电源信息用于确定系统应收取费用的级别。 客户端驱动程序管理 USB 类型 C 和 PD 状态机。 客户端驱动程序可以委派给其他驱动程序的一些任务，例如，Mux 可能受另一个驱动程序。 若要编写客户端驱动程序，使用[USB 类型 C 连接器驱动程序的编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))。
+    如果你正在编写驱动程序，则 USB 连接器管理器类扩展将遵循 WDF 类扩展-客户端驱动程序模型。 你的客户端驱动程序与硬件和类扩展通信，以处理诸如 CC 检测、PD 消息传递、Muxing 和 VBus/VConn 控件等任务，并为电源传递和备用模式选择策略。 类扩展将客户端驱动程序报告的信息传递给操作系统。 例如，CC 检测结果用于配置角色切换驱动程序;USB 类型-C/PD 电源信息用于确定系统应收取的费用。 客户端驱动程序管理 USB 类型 C 和 PD 状态机。 客户端驱动程序可以将一些任务委托给其他驱动程序，例如 Mux 可能由另一个驱动程序控制。 若要编写客户端驱动程序，请使用[USB 类型 C 连接器驱动程序编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188011(v=vs.85))。
 
-    **USB 类型 C 端口控制器**
+    **USB 类型-C 端口控制器**
 
-    类型 C 端口控制器接口类扩展 (UcmTcpciCx.sys) 是扩展到了 USB 连接器管理器允许 OS 在行为不实现 PD 状态机连接器的类型 C 端口管理器 (TCPM) 为 Microsoft 提供的。 UcmTcpciCx 客户端驱动程序允许软件 TCPM 控制硬件和实时获取其状态。
+    C # C # 接口类扩展（UcmTcpciCx）是 Microsoft 提供的 USB 连接器管理器的扩展，它允许操作系统在不实现 PD 状态计算机的连接器上表现为类型 C 端口管理器（TCPM）。 UcmTcpciCx 客户端驱动程序允许软件 TCPM 控制硬件并实时获取其状态。
 
-    有关编写客户端驱动程序的信息，请参阅[写入 USB 类型 C 端口控制器驱动程序](write-a-usb-type-c-port-controller-driver.md)。
+    有关编写客户端驱动程序的信息，请参阅[编写 USB 类型 C 端口控制器驱动程序](write-a-usb-type-c-port-controller-driver.md)。
 
--   **收费仲裁驱动程序**
+-   **充电仲裁驱动程序**
 
-    此驱动程序提供的 Microsoft 的 Windows 10 移动版。 该驱动程序充当多个充电源仲裁器。 USB 连接器管理器报告 USB 类型 C 和 PD 充电的 USB 设备端驱动程序 （如果适用） 执行的信息和 BC1.2 充电器检测到加拿大元、 进行选择的源信息。 然后，CAD 报告要使用到电池子系统的最合适充电源。
+    此驱动程序由 Microsoft 提供，适用于 Windows 10 移动版。 驱动程序充当多个充电源的仲裁器。 USB 连接器管理器会报告 USB 类型 C 和 PD 向 CAD 收费的源信息，这会从该信息进行选择，并从 USB 设备端驱动程序（如果适用）执行的 BC 1.2 充电器检测。 然后，CAD 会报告用于电池子系统的最合适的充电来源。
 
 -   **电池驱动程序**
 
-    类驱动程序定义系统中电池的整体功能，并与电源管理器进行交互。 Miniclass 驱动程序处理特定于设备的功能，例如添加和删除电池，以及跟踪的其容量和费用。 Miniclass 驱动程序将导出的类驱动程序调用以获取有关它控制的设备的信息的例程。
+    类驱动程序定义系统中电池的整体功能，并与电源管理器进行交互。 Miniclass 驱动程序处理特定于设备的功能，例如添加和取出电池，并跟踪其容量和电量。 Miniclass 驱动程序导出类驱动程序调用的例程，以获取有关它所控制设备的信息。
 
  
 

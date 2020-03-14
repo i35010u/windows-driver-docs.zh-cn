@@ -4,20 +4,24 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为达到最
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 68e996c34dc638c43955a3e2ef05b97d67e9cb92
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: d4f59740ce37d92e4e1032ae4db4cec32fa6f332
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097489"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083139"
 ---
 # <a name="percent-of-machines-exceeded-firmware-max-retry-limit-from-esrt"></a>超出了 ESRT 的固件最大重试限制的计算机百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
-尝试安装固件成功但超出固件最大重试限制（默认为 3 次）的计算机的百分比
+尝试安装固件成功但超出固件最大重试限制（默认为 3 次）的计算机的百分比。
 
-该度量将 28 天滑动窗口中的遥测数据聚合为达到最大重试限制的计算机数与出现安装事件的计算机数的比率
+该度量将 28 天滑动窗口中的遥测数据聚合为达到最大重试限制的计算机数与出现安装事件的计算机数的比率。
+
+许多未达到对此度量的要求的固件未遵守以下协定：当报告的 ESRT 版本与安装之前计算机上的以前版本相同时，ESRT LastAttemptStatus 字段不报告故障代码。 
+
+[本文档的第 3 部分](https://docs.microsoft.com/windows-hardware/manufacture/desktop/validating-windows-uefi-firmware-update-platform-functionality)提供基本验证方案，以确保固件实现满足此要求。  
 
 ## <a name="measure-attributes"></a>度量属性
 

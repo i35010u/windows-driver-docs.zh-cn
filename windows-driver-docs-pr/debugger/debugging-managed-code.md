@@ -6,11 +6,11 @@ keywords: 调试，调试，Windbg，托管代码调试，.NET 公共语言运�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64b25e9c0822a8f5e4350d9dc844bafcb0541c65
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402319"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242818"
 ---
 # <a name="debugging-managed-code-using-the-windows-debugger"></a>使用 Windows 调试器调试托管代码
 

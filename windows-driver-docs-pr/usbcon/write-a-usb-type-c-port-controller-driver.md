@@ -4,12 +4,12 @@ title: 编写 USB 类型 C 端口控制器驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 32138f6b0e03a22eed8817642d0df313dc840b5f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 85e524e0e1f672380d4d0a9d201eded223334118
+ms.sourcegitcommit: b90987ed918be0ab0973d0c79d9c5164fc3ab287
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841691"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79321728"
 ---
 # <a name="write-a-usb-type-c-port-controller-driver"></a>编写 USB 类型 C 端口控制器驱动程序
 
@@ -33,7 +33,7 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关电源�
 
 适用范围：
 
-- Windows 10
+- Windows 10
 
 **WDF 版本**
 
@@ -77,7 +77,7 @@ UcmTcpciCx 类扩展本身就是 UcmCx 的客户端驱动程序。 有关电源�
 
 ## <a name="behavior-of-the-ucmtcpci-class-extension"></a>UcmTcpci 类扩展的行为
 
- -  在状态机执行过程中，UcmTcpciCx 会将 IOCTL 请求发送到端口控制器。 例如，在 PD 消息传递中，它发送 IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER 请求以设置传输缓冲区。 该请求（TRANSMIT_BUFFER）将移交给客户端驱动程序。 然后，该驱动程序使用类扩展提供的详细信息设置传输缓冲区。 
+ -  在状态机执行过程中，UcmTcpciCx 会将 IOCTL 请求发送到端口控制器。 例如，在 PD 消息传递中，它发送 IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER 请求来设置传输缓冲区。 该请求（TRANSMIT_BUFFER）将移交给客户端驱动程序。 然后，该驱动程序使用类扩展提供的详细信息设置传输缓冲区。 
 
 -   UcmTcpciCx 实现有关电源协定、数据角色等的策略。  
 
@@ -111,7 +111,7 @@ UcmTcpciCx 的客户端驱动程序应为：
 
 示例参考：请参阅 `Device.cpp`中的 `EvtPrepareHardware`。
 
-1.  在 EVT_WDF_DRIVER_DEVICE_ADD 实现中，调用 UcmTcpciDeviceInitInitialize 来初始化 WDFDEVICE_INIT 的不透明结构。 调用将客户端驱动程序与框架相关联。
+1.  在 EVT_WDF_DRIVER_DEVICE_ADD 实现中，调用 UcmTcpciDeviceInitInitialize 以初始化 WDFDEVICE_INIT 的不透明结构。 调用将客户端驱动程序与框架相关联。
 
 2.  创建框架设备对象（WDFDEVICE）后，调用 UcmTcpciDeviceInitialize，将客户端驱动程序注册到 UcmTcpciCx。
 
@@ -125,7 +125,7 @@ UcmTcpciCx 的客户端驱动程序应为：
 
 客户端驱动程序通过调用 WdfCmResourceListGetDescriptor 来枚举硬件资源。 
 
-警报作为中断接收。 因此，驱动程序将创建一个框架中断对象，并注册将处理警报的 ISR。  ISR 执行硬件读写操作，这些操作会一直阻止到完成硬件访问。 由于等待在 DIRQL 不可接受，驱动程序将在 PASSIVE_LEVEL 执行 ISR。 
+警报作为中断接收。 因此，驱动程序将创建一个框架中断对象，并注册将处理警报的 ISR。  ISR 执行硬件读写操作，这些操作会一直阻止到完成硬件访问。 由于等待在 DIRQL 上是不可接受的，因此驱动程序会在 PASSIVE_LEVEL 执行 ISR。 
 
 
 ## <a name="3-initialize-the-port-controllers-type-c-and-pd-capabilities"></a>3. 初始化端口控制器的类型 C 和 PD 功能
@@ -137,7 +137,7 @@ UcmTcpciCx 的客户端驱动程序应为：
  
  1. 通过读取各种寄存器与端口控制器硬件通信并检索设备 identificaton 和功能。 
  
- 2. 将 UCMTCPCI_PORT_CONTROLLER_IDENTIFICATION 和 UCMTCPCI_PORT_CONTROLLER_CAPABILITIES 初始化为检索到的信息。 
+ 2. 用检索到的信息初始化 UCMTCPCI_PORT_CONTROLLER_IDENTIFICATION 和 UCMTCPCI_PORT_CONTROLLER_CAPABILITIES。 
 
  3. 通过将初始化的结构传递到 UCMTCPCI_PORT_CONTROLLER_CONFIG_INIT，用前面的信息初始化 UCMTCPCI_PORT_CONTROLLER_CONFIG 结构。
 
@@ -147,7 +147,7 @@ UcmTcpciCx 的客户端驱动程序应为：
 
 示例参考：参阅 `Queue.cpp`中 `Device.cpp` 和 `HardwareRequestQueueInitialize` 中的 `EvtDeviceD0Entry`。
 
- 1. 在 EVT_WDF_DEVICE_D0_EXIT 实现中，通过调用 WdfIoQueueCreate 创建框架队列对象。 在该调用中，你将需要注册回调实现以处理 UcmTpciCx 发送的 IOCTL 请求。 客户端驱动程序可以使用电源管理的队列。 
+ 1. 在 EVT_WDF_DEVICE_D0_EXIT 实现中，通过调用 WdfIoQueueCreate 来创建框架队列对象。 在该调用中，你将需要注册回调实现以处理 UcmTpciCx 发送的 IOCTL 请求。 客户端驱动程序可以使用电源管理的队列。 
 
     在类型 C 和 PD 状态机的执行过程中，UcmTpciCx 向客户端驱动程序发送要执行的命令。 UcmTcpciCx 保证在任何给定时间最多有一个未完成的端口控制器请求。  
  
@@ -155,15 +155,15 @@ UcmTcpciCx 的客户端驱动程序应为：
 
  3. 实现 EvtIoDeviceControl 回调函数来处理这些 IOCTLs。 
 
-|  控制代码 |  描述 | 
+|  控制代码 |  说明 | 
 |---            |           ---|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_STATUS|   按通用串行总线类型 C 端口控制器接口规范获取所有状态寄存器的值。 客户端驱动程序必须检索 CC_STATUS、POWER_STATUS 和 FAULT_STATUS 寄存器的值。|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_GET_CONTROL|获取根据通用串行总线类型 C 端口控制器接口规范定义的所有控制寄存器的值。|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONTROL|根据通用串行总线类型 C 端口控制器接口规范设置定义的控制寄存器的值。| 
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT|设置按通用串行总线类型 C 端口控制器接口规范定义的传输寄存器。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER|根据通用串行总线类型 C 端口控制器接口规范设置定义的 TRANSMIT_BUFER 寄存器。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_RECEIVE_DETECT|根据通用串行总线类型 C 端口控制器接口规范设置定义的 RECEIVE_DETECT 寄存器。|
-|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONFIG_STANDARD_OUTPUT|根据通用串行总线类型 C 端口控制器接口规范设置定义的 CONFIG_STANDARD_OUTPUT 寄存器。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_TRANSMIT_BUFFER|根据通用串行总线类型 C 端口控制器接口规范设置定义的 TRANSMIT_BUFER Register。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_RECEIVE_DETECT|根据通用串行总线类型 C 端口控制器接口规范设置定义的 RECEIVE_DETECT Register。|
+|IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_CONFIG_STANDARD_OUTPUT|根据通用串行总线类型 C 端口控制器接口规范设置定义的 CONFIG_STANDARD_OUTPUT Register。|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_COMMAND|设置根据通用串行总线类型 C 端口控制器接口规范定义的命令寄存器的值。|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_SET_MESSAGE_HEADER_INFO|根据通用串行总线类型 C 端口控制器接口规范设置定义的 MESSAGE_HEADER_INFO 寄存器的值。|
 |IOCTL_UCMTCPCI_PORT_CONTROLLER_ALTERNATE_MODE_ENTERED|通知客户端驱动程序已进入备用模式，以便驱动程序可以执行其他任务。|
@@ -174,13 +174,13 @@ UcmTcpciCx 的客户端驱动程序应为：
 4. 调用 UcmTcpciPortControllerStart 以指示 UcmTcpciCx 启动端口控制器。 UcmTcpciCx 假定控制 USB 类型 C 和电源。 端口控制器启动后，UcmTcpciCx 可能开始将请求放入硬件请求队列。 
 
  
-## <a name="5-handlle-alerts-from-the-port-controller-hardware"></a>5. 端口控制器硬件中的 Handlle 警报
+## <a name="5-handle-alerts-from-the-port-controller-hardware"></a>5. 处理来自端口控制器硬件的警报
 
 示例参考：请参阅 `Alert.cpp`中的 `ProcessAndSendAlerts`。
 
 客户端驱动程序必须处理从端口控制器硬件接收的警报（或事件），并将它们发送到 UcmTcpciCx，其中包含与事件相关的数据。 
 
-发生硬件警报时，端口控制器硬件会驱动警报引脚的高。 这会导致调用客户端驱动程序的 ISR （在步骤2中注册）。 例程在 PASSIVE_LEVEL 上服务硬件中断。 例程确定中断是否是来自端口控制器硬件的警报;如果是，它将完成警报的处理，并通过调用 UcmTcpciPortControllerAlert 通知 UcmTcpciCx。 
+发生硬件警报时，端口控制器硬件会驱动警报引脚的高。 这会导致调用客户端驱动程序的 ISR （在步骤2中注册）。 例程在 PASSIVE_LEVEL 的硬件中断。 例程确定中断是否是来自端口控制器硬件的警报;如果是，它将完成警报的处理，并通过调用 UcmTcpciPortControllerAlert 通知 UcmTcpciCx。 
 
 在调用 UcmTcpciPortControllerAlert 之前，客户端负责在 UCMTCPCI_PORT_CONTROLLER_ALERT_DATA 结构中包含与警报相关的所有相关数据。 客户端提供所有处于活动状态的警报的数组，因为硬件可能会同时声明多个警报。 
 
@@ -190,7 +190,7 @@ UcmTcpciCx 的客户端驱动程序应为：
 
 2. 客户端读取警报注册并确定活动的类型警报。 
 
-3. 客户端读取 CC 状态 register，并描述 UCMTCPCI_PORT_CONTROLLER_ALERT_DATA 中 CC 状态寄存器的内容。 驱动程序将 AlertType 成员设置为 register 的 UcmTcpciPortControllerAlertCCStatus 和 CCStatus 成员。
+3. 客户端读取 CC 状态寄存器，并描述 UCMTCPCI_PORT_CONTROLLER_ALERT_DATA 中 CC 状态寄存器的内容。 驱动程序将 AlertType 成员设置为 register 的 UcmTcpciPortControllerAlertCCStatus 和 CCStatus 成员。
 
 4. 客户端调用 UcmPortControllerAlert 将阵列硬件警报发送到 UcmTcpciCx。 
 

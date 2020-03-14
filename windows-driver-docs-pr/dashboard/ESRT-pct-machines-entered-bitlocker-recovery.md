@@ -4,16 +4,16 @@ description: 该度量将 28 天滑动窗口中的遥测数据聚合为报告了
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ad467e0025a56e2d689cc3f57e505811cd5236f5
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: 6243b76e8c7011e368fdbdbeb39b20edd8824413
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097493"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083127"
 ---
 # <a name="percent-of-machines-updated-and-successfully-unlocked-bitlocker-recovery"></a>已更新且已成功解锁 Bitlocker 恢复的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 已安装固件并进入 Bitlocker 恢复模式（因此客户可以通过输入 Bitlocker 恢复密钥进行恢复）的计算机的百分比
 
@@ -27,7 +27,7 @@ ms.locfileid: "74097493"
 |时间段 |28 天滑动窗口|
 |度量标准 |计算机的聚合|
 |最小实例数 |250|
-|通过标准 |>= 90%|
+|通过标准 |<= 10%|
 |度量 ID |23154031|
 
 ## <a name="calculation"></a>计算

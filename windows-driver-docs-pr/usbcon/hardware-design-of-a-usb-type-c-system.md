@@ -4,11 +4,11 @@ title: USB 类型 C 系统的硬件设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1612bc64e8d0741183f850788c96b505e98a0e9e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845002"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242998"
 ---
 # <a name="hardware-design-usb-type-c-systems"></a>硬件设计： USB 类型-C 系统
 

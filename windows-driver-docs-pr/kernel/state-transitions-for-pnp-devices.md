@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e8c09d6fc664ea51fd2dacb1bd00b2cba36e425
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838405"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242928"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP 设备的状态转换
 
@@ -36,7 +36,7 @@ ms.locfileid: "72838405"
 
 当驱动程序收到[**IRP\_MN\_开始**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)从 PnP 管理器\_设备请求时，驱动程序将启动设备，并准备好处理设备的 i/o 请求。 有关处理**IRP\_MN 的信息\_启动\_设备**请求，请参阅[启动设备](starting-a-device.md)。
 
-如果 PnP 管理器必须重新配置活动设备的硬件资源，则它会将[**IRP\_MN\_QUERY\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)，并使用[**IRP\_MN\_停止\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)设备的驱动程序请求。 重新配置硬件资源后，PnP 管理器会通过发送[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求来指示驱动程序重启设备。 有关处理停止 Irp 的信息，请参阅[停止设备](stopping-a-device.md)。 （启动配置的设备的驱动程序可以接收**IRP\_MN\_QUERY\_停止\_设备**和**IRP\_** 在设备启动之前停止\_设备请求，但上图中并未显示此步骤。）
+如果 PnP 管理器必须重新配置活动设备的硬件资源，则它会将[**IRP\_MN\_QUERY\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)，并使用[**IRP\_MN\_停止\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)设备的驱动程序请求。 重新配置硬件资源后，PnP 管理器会通过发送[**IRP\_MN\_START\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求来指示驱动程序重启设备。 有关处理停止 Irp 的信息，请参阅[停止设备](stopping-a-device.md)。 （启动配置的设备的驱动程序可以接收**IRP\_MN\_QUERY\_停止\_设备**和**IRP\_** 在设备启动之前停止\_设备请求，但上图中未显示此步骤。）\_
 
 在 Windows 98/Me 上，PnP 管理器还会将**IRP\_MN\_QUERY\_停止\_设备**和**IRP\_MN**\_在设备处于禁用状态时停止\_设备请求。 这些系统上的驱动程序还会接收**IRP\_MN\_** 在启动失败后停止\_设备请求。
 

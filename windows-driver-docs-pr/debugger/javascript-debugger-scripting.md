@@ -5,11 +5,11 @@ ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: b01aed239dabef52d3fcd3a37c1feb56b1f5920b
-ms.sourcegitcommit: 3b7c8b3cb59031e0f4e39dac106c1598ad108828
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930385"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242784"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -39,7 +39,7 @@ ms.locfileid: "70930385"
 
 ## <a name="span-idproviderspanspan-idproviderspanspan-idproviderspanthe-debugger-javascript-provider"></a><span id="Provider"></span><span id="provider"></span><span id="PROVIDER"></span>调试器 JavaScript 提供程序
 
-调试器附带的 JavaScript 提供程序充分利用了最新的 ECMAScript6 对象和类增强功能。 有关详细信息，请[参阅 ECMAScript 6-新增功能：概述 & 比较](https://es6-features.org/)。
+调试器附带的 JavaScript 提供程序充分利用了最新的 ECMAScript6 对象和类增强功能。 有关详细信息，请参阅[ECMAScript 6-新增功能：概述 & 比较](https://es6-features.org/)。
 
 **JsProvider**
 
@@ -411,7 +411,7 @@ function uninitializeScript()
 
 ||[.scriptload](-scriptload--load-script-.md)|[scriptrun （运行脚本）](-scriptrun--run-script-.md)|[scriptunload （卸载脚本）](-scriptunload--unload-script-.md)|
 |--- |--- |--- |--- |
-|Root|是|是| | |
+|root|是|是| | |
 |initializeScript|是|是| | |
 |invokeScript       | |是| |
 |uninitializeScript | ||是|
@@ -462,7 +462,7 @@ function main()
 
 **示例类-Simple1DArray**
 
-假设有一个表示一C++维数组的类的示例。 此类有两个成员：\_m 个 size，这是数组的总大小，m\_pValues 是一个指针，指向内存中等于 m\_大小字段的多个整数。
+假设有一个表示一C++维数组的类的示例。 此类有两个成员： m\_大小，这是数组的总大小，m\_pValues，它是指向内存中等于 m\_大小字段的多个整数的指针。
 
 ```cpp
 class Simple1DArray
@@ -567,7 +567,7 @@ g_array1D.Select(n => n * 3),d
 
 -   属于标准 JavaScript 对象的名称，或属于 JavaScript 提供程序创建的协议的一部分的名称将不会显示在可视化效果中。
 
--   可以通过可迭代的支持\[\]使对象变为可。
+-   可以通过 \[Symbol\]的支持使对象可迭代。
 
 -   通过支持包含多个函数的自定义协议，可以使对象成为可索引的对象： getDimensionality、getValueAt 和（可选） setValueAt。
 
@@ -653,7 +653,7 @@ g_array1D.Select(@$myScript.multiplyBySeven),d
 bp notepad!ShowOpenSaveDialog ".scriptrun C:\\WinDbg\\Scripts\\DebugHandler.js"
 ```
 
-然后，在 " &gt;记事本" 中选择 "文件保存" 选项后，将运行该脚本，不发送 g 命令，并在执行代码时中断。
+然后，在 "记事本" 中选择 "文件 &gt; 保存" 选项时，将运行该脚本，不发送 g 命令，并在执行代码时进行中断。
 
 ```dbgcmd
 JavaScript script successfully loaded from 'C:\WinDbg\Scripts\DebugHandler.js'
@@ -832,12 +832,12 @@ Error: 64 bit value loses precision on conversion to number
 
 |                   |                           |                                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| **方法名称**   | **信号**             | **说明**                                                                                               |
-| asNumber          | .asNumber()               | 将64位值转换为 JavaScript 数字。 如果发生精度损失， \* \*则会引发异常\*\* |
-| convertToNumber   | .convertToNumber()        | 将64位值转换为 JavaScript 数字。 如果发生精度损失， \* \*则不会引发异常\*\* |
+| **方法名称**   | **信号**             | **描述**                                                                                               |
+| asNumber          | .asNumber()               | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \*\*引发异常\*\* |
+| convertToNumber   | .convertToNumber()        | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \*\*不会引发异常\*\* |
 | getLowPart        | .getLowPart()             | 将64位值的低32位转换为 JavaScript 数字                                         |
 | getHighPart       | .getHighPart()            | 将64位值的高32位转换为 JavaScript 数字                                          |
-| 添加               | 。添加（值）               | 将一个值添加到64位值并返回结果                                                       |
+| add               | 。添加（值）               | 将一个值添加到64位值并返回结果                                                       |
 | 减去          | . 减法（值）          | 从64位值中减去一个值并返回结果                                                |
 | 乘          | 。乘（值）          | 用所提供的值乘以64位值并返回结果。                                      |
 | 拆分            | 除数（值）            | 将64位值除以提供的值并返回结果                                         |
@@ -846,7 +846,7 @@ Error: 64 bit value loses precision on conversion to number
 | bitwiseXor        | . bitwiseXor （值）        | 用提供的值计算64位值的按位 xor 并返回结果。                   |
 | bitwiseShiftLeft  | . bitwiseShiftLeft （值）  | 将64位值向左移动给定的量并返回结果                                       |
 | bitwiseShiftRight | . bitwiseShiftRight （值） | 将64位值向右移动给定的量并返回结果                                      |
-| ToString          | toString （\[基数\]）      | 将64位值转换为默认基数（或（可选）提供的基数）中的显示字符串         |
+| toString          | toString （\[基数\]）      | 将64位值转换为默认基数（或（可选）提供的基数）中的显示字符串         |
 
 
 
@@ -968,7 +968,7 @@ function initializeScript()
 >>> Debug [DebuggableSample <No Position>] >
 ```
 
-看到提示后 *> > > 调试 [DebuggableSample <No Position>] >* 和输入请求，就在脚本调试器内。  
+看到提示后 *> > > 调试 [DebuggableSample <No Position>] >* 并请求输入请求，就是在脚本调试器内。  
 
 使用 " **help** " 命令可显示 JavaScript 调试环境中的命令列表。
 
@@ -1194,7 +1194,7 @@ Test
 
 2. 将定义文件复制到与脚本相同的文件夹中。
 
-3. 将`/// <reference path="JSProvider.d.ts" />`添加到 JavaScript 脚本文件的顶部。
+3. 将 `/// <reference path="JSProvider.d.ts" />` 添加到 JavaScript 脚本文件的顶部。
 
 使用 JavaScript 文件中的该引用，VS Code 将自动为你提供 JSProvider 提供的宿主 Api 上的 IntelliSense，以及脚本中的结构。 例如，键入 "host"。 你将看到所有可用调试器模型 Api 的 IntelliSense。
 
@@ -1210,7 +1210,7 @@ Test
 
 -   [Mozilla JavaScript 参考](https://developer.mozilla.org/docs/Web/JavaScript)
 
--   [WinJS：Windows JavaScript 库](https://github.com/winjs/winjs)
+-   [WinJS： Windows JavaScript 库](https://github.com/winjs/winjs)
 
 -   [ECMAScript 6-新增功能：概述 & 比较](https://es6-features.org/)
 

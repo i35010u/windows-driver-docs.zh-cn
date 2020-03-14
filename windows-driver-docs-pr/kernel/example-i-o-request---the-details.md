@@ -9,11 +9,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e07f56c44cc326b0a664eb97f4c7562575a9dbd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836727"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242918"
 ---
 # <a name="example-io-request---the-details"></a>示例 I/O 请求 - 详细信息
 
@@ -35,9 +35,9 @@ ms.locfileid: "72836727"
 
    接下来，FSD 调用 i/o 支持例程（[**IoGetNextIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)）来访问下一级驱动程序的 i/o 堆栈位置，以便为下一个较低版本的驱动程序设置请求。 （在上图中，下一个较低的驱动程序会成为最低级别的驱动程序。）然后，FSD 调用 i/o 支持例程（[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)）将 IRP 传递到下一个较低的驱动程序。
 
-4. 使用 IRP 调用此方法时，最低级别的驱动程序将检查其 i/o 堆栈位置，以确定应在目标设备上执行的操作（由**IRP\_MJ\_* XXX*** 函数代码指示）。 目标设备在其指定 i/o 堆栈位置中由设备对象表示，并与 IRP 一起传递给驱动程序。 最低级别的驱动程序可以假定 i/o 管理器已将 IRP 路由到为 IRP 定义的驱动程序的入口点 **\_MJ\_* XXX*** 操作（此处为[**irp\_mj\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或[**IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)）和更高级别的驱动程序已经检查了请求的其他参数的有效性。
+4. 使用 IRP 调用此方法时，最低级别的驱动程序将检查其 i/o 堆栈位置，以确定应在目标设备上执行的操作（由**IRP\_MJ\_* XXX*** 函数代码指示）。 目标设备在其指定 i/o 堆栈位置中由设备对象表示，并与 IRP 一起传递给驱动程序。 最低级别的驱动程序可以假定 i/o 管理器已将 IRP 路由到为 IRP 定义的驱动程序的入口点。 **\_MJ\_* XXX*** 操作（此处[**IRP\_mj\_READ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)或[**IRP\_mj\_WRITE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)），并且更高级别的驱动程序已经检查了请求的其他参数的有效性。
 
-   如果没有更高级别的驱动程序，最低级别的驱动程序将检查**IRP\_MJ\_* XXX*** 操作的输入参数是否有效。 如果是这样，则驱动程序通常会调用 i/o 支持例程来告知 i/o 管理器设备操作在 IRP 上处于挂起状态，并将 IRP 排队，或将其传递给其他访问目标设备的驱动程序提供的例程（此处，物理或逻辑设备：磁盘或磁盘上的分区。
+   如果没有更高级别的驱动程序，最低级别的驱动程序将检查**IRP\_MJ\_* XXX*** 操作的输入参数是否有效。 如果是这样，则驱动程序通常会调用 i/o 支持例程来告知 i/o 管理器设备操作在 IRP 上处于挂起状态，并将 IRP 传递给 IRP，或将它传递到另一个驱动程序提供的用于访问目标设备的例程（此处为磁盘或磁盘上的分区）。
 
 5. I/o 管理器确定驱动程序是否正在忙于处理目标设备的其他 IRP，如果是，则将 IRP 排队，并返回。 否则，i/o 管理器会将 IRP 路由到驱动程序提供的例程，该例程在其设备上启动 i/o 操作。 （在此阶段，上图中的两个驱动程序和 i/o 管理器都返回控件。）
 
@@ -57,7 +57,7 @@ ms.locfileid: "72836727"
 
 每个驱动程序创建的设备对象表示一个物理设备、逻辑设备或虚拟设备，特定驱动程序会对该设备执行 i/o 请求。 有关创建和设置设备对象的详细信息，请参阅[设备对象和设备堆栈](device-objects-and-device-stacks.md)。
 
-由于[分层驱动程序中的处理 irp](#ddk-example-i-o-request---the-details-kg)还显示，大多数驱动程序通过驱动程序提供的一组系统定义的*标准例程*来处理每个 IRP，但链中不同级别的驱动程序必须具有不同的标准例程。 例如，只有最低级别的驱动程序处理来自物理设备的中断，因此，只有最低级别的驱动程序才能有 ISR 和用于完成中断驱动 i/o 操作的 DPC。 另一方面，因为此类驱动程序知道当 i/o 从其设备接收到一个中断时，它不需要完成例程。 只有较高级别的驱动程序具有一个或多个完成例程，如此图中的 FSD。
+由于[分层驱动程序中的处理 irp](#ddk-example-i-o-request---the-details-kg)还显示，大多数驱动程序通过驱动程序提供的一组由系统定义的*标准例程*来处理每个 IRP，而链中不同级别的驱动程序必须具有不同的标准例程。 例如，只有最低级别的驱动程序处理来自物理设备的中断，因此，只有最低级别的驱动程序才能有 ISR 和用于完成中断驱动 i/o 操作的 DPC。 另一方面，因为此类驱动程序知道当 i/o 从其设备接收到一个中断时，它不需要完成例程。 只有较高级别的驱动程序具有一个或多个完成例程，如此图中的 FSD。
 
  
 

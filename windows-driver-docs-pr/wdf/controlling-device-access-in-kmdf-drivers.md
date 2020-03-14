@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f69f7c9b294b7e66b39b67492ed3e3c5ecf2f347
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402422"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242876"
 ---
 # <a name="controlling-device-access-in-kmdf-drivers"></a>在 KMDF 驱动程序中控制设备访问权限
 

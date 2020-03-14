@@ -5,11 +5,11 @@ ms.assetid: fa52a1f0-9397-48a5-acbd-ce5347c0baef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d8f9de13e52cd6f5d717ccf9ad814df259eac7a0
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402366"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242812"
 ---
 # <a name="debugger-engine-introduction"></a>调试器引擎简介
 

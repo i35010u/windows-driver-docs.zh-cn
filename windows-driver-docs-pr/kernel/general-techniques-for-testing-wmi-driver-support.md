@@ -13,11 +13,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aff029db061d387d185e198c99d4581ab517ad9
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402502"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242912"
 ---
 # <a name="general-techniques-for-testing-wmi-driver-support"></a>用于测试 WMI 驱动程序支持的常规方法
 
