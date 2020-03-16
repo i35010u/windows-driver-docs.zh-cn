@@ -176,19 +176,31 @@
           href: getting-contexts.md
         - name: 引用上下文
           href: referencing-contexts.md
-        - name: 释放上下文
+        - name: 释放 (Release) 上下文
           href: releasing-contexts.md
         - name: 删除上下文
           href: deleting-contexts.md
-        - name: 释放上下文
+        - name: 释放 (Free) 上下文
           href: freeing-contexts.md
         - name: 用于上下文的文件系统支持
           href: file-system-support-for-contexts.md
         - name: 最佳方案
           href: best-practices.md
+    - name: IRP_MJ_CREATE 操作中的 ECP
+      items:
+        - name: 额外 Create 参数简介
+          href: introduction-to-extra-create-parameters.md
+        - name: 将 ECP 附加到 KM 驱动程序发起的 IRP_MJ_CREATE 操作
+          href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
+        - name: 使用 ECP 在微筛选器驱动程序中处理 IRP_MJ_CREATE 操作
+          href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-minifilter.md
+        - name: 用户定义的 ECP
+          href: user-defined-ecps.md
+        - name: 系统定义的 ECP
+          href: system-defined-ecps.md
 - name: 文件系统旧版筛选器驱动程序
   items:
-    - name: 关于文件系统旧版筛选器驱动程序
+    - name: 关于旧版筛选器驱动程序
       href: about-file-system-legacy-filter-drivers.md
     - name: 旧版筛选器驱动程序的文件系统概念
       items:
@@ -234,9 +246,9 @@
               href: registering-fsfilter-callback-routines.md
             - name: 执行任何其他必需的初始化
               href: performing-any-other-needed-initialization.md
-            - name: '可选] 注册回调例程'
+            - name: 注册回调例程
               href: '-optional--registering-callback-routines.md'
-            - name: '可选] 保存注册表路径字符串的副本'
+            - name: 保存注册表路径字符串的副本
               href: '-optional--saving-a-copy-of-the-registry-path-string.md'
             - name: 返回状态
               href: returning-status.md
@@ -246,7 +258,7 @@
               href: attaching-a-filter-to-a-file-system-or-volume.md
             - name: 创建筛选器设备对象
               href: creating-the-filter-device-object.md
-            - name: 将筛选设备对象附加到目标设备对象
+            - name: 将筛选器设备对象附加到目标设备对象
               href: attaching-the-filter-device-object-to-the-target-device-object.md
             - name: 传播 DO_BUFFERED_IO 和 DO_DIRECT_IO 标志
               href: propagating-the-do-buffered-io-and-do-direct-io-flags.md
@@ -256,7 +268,7 @@
               href: clearing-the-do-device-initializing-flag.md
         - name: IRP 和快速 I/O
           items:
-            - name: 筛选 IRPS 和快速 I/O
+            - name: 筛选 IRP 和快速 I/O
               href: filtering-irps-and-fast-i-o.md
             - name: IRP 不同于快速 I/O
               href: irps-are-different-from-fast-i-o.md
@@ -388,7 +400,7 @@
               href: diagnostics-and-debugging.md
             - name: 日志记录例程和宏
               href: logging-routines-and-macros.md
-            - name: 杂项例程
+            - name: 其他例程
               href: miscellaneous-routines2.md
             - name: RX_CONTEXT 和 IRP 管理
               href: rx-context-and-irp-management.md
@@ -446,7 +458,7 @@
               href: file-system-object-i-o-routines.md
             - name: 文件系统对象查询和设置例程
               href: file-system-object-query-and-set-routines.md
-            - name: 杂项网络微型重定向程序例程
+            - name: 其他网络微型重定向程序例程
               href: miscellaneous-network-mini-redirector-routines.md
     - name: 编写内核网络重定向程序
       items:
@@ -580,19 +592,19 @@
               href: process-and-thread-termination-issues.md
     - name: 文件系统筛选器驱动程序的安全注意事项
       items:
-        - name: 文件系统筛选器驱动程序中的代理操作
+        - name: 代理操作
           href: proxy-operations-in-file-system-filter-drivers.md
-        - name: 文件系统筛选器驱动程序中的模拟
+        - name: 模拟
           href: impersonation-in-a-file-system-filter-driver.md
         - name: 与其他文件系统筛选器驱动程序共存
           href: coexistence-with-other-file-system-filter-drivers.md
-        - name: 文件系统筛选器驱动程序中的内存映射文件
+        - name: 内存映射文件
           href: memory-mapped-files-in-a-file-system-filter-driver.md
-        - name: 文件系统筛选器驱动程序中的重新分析点
+        - name: 重新分析点
           href: reparse-points-in-a-file-system-filter-driver.md
-- name: 杂项信息
+- name: 其他信息
   items:
-    - name: 用于 Windows 容器的防病毒优化
+    - name: Windows 容器的防病毒优化
       href: anti-virus-optimization-for-windows-containers.md
     - name: 卸载的数据传输
       href: offloaded-data-transfers.md
