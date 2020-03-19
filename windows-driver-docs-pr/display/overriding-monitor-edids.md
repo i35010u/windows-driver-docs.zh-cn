@@ -1,81 +1,81 @@
 ---
-title: 重写使用 INF 监视器 EDIDs
-description: 使用 INF 文件可以重写扩展显示标识数据 (EDID) 的任何监视器。
+title: 使用 INF 替代监视器 Edid
+description: 使用 INF 文件可以覆盖任何监视器的扩展显示标识数据（EDID）。
 ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a84fb6212511a8ceb06b532c30509519dd166a74
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1ce33823e5d8bf7a586e087c0f95e5c6b913ed54
+ms.sourcegitcommit: 347bd952a4164fd75fd2e4c56d46973bbb90e5a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394110"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79504410"
 ---
-# <a name="overriding-monitor-edids-with-an-inf"></a>重写使用 INF 监视器 EDIDs
+# <a name="overriding-monitor-edids-with-an-inf"></a>使用 INF 替代监视器 Edid
 
 
-使用 INF 文件可以重写扩展显示标识数据 (EDID) 的任何监视器。 示例 INF 文件，Monsamp.inf，演示如何执行此操作提供的 Windows 7 (WDK 版本 7600) 通过使用 Windows Driver Kit (WDK)。 Monsamp.inf，此处重现。
+使用 INF 文件可以覆盖任何监视器的扩展显示标识数据（EDID）。 示例 INF 文件 Monsamp，其中演示了如何通过 windows 7 （WDK 版本7600）随 Windows 驱动程序工具包（WDK）一起提供。 此处将重现 Monsamp。
 
-有关如何使用和修改 Monsamp.inf 的信息，请参见[监视器 INF 文件部分](monitor-inf-file-sections.md)。
+有关如何使用和修改 Monsamp 的信息，请参阅[MONITOR Inf File 部分](monitor-inf-file-sections.md)。
 
-## <a name="span-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanapproaches-to-correcting-edids"></a><span id="Approaches_to_correcting_EDIDs"></span><span id="approaches_to_correcting_edids"></span><span id="APPROACHES_TO_CORRECTING_EDIDS"></span>更正 EDIDs 方法
-
-
-所有监视器，模拟或数字，必须都支持 EDID，其中包含如监视器标识符、 制造商数据、 硬件标识符、 计时信息等的信息。 此数据存储在监视器的 EEPROM 中指定了通过视频电子标准协会 (VESA) 的格式。
-
-监视器提供对 Microsoft Windows 组件 EDID、 显示驱动程序和某些用户模式应用程序。 例如，在初始化期间监视器驱动程序会查询其亮度查询接口和设备驱动程序接口 (DDI) 支持，这是在 EDID 的 Windows 显示器驱动程序模型 (WDDM) 驱动程序。 监视器的 EEPROM 的不正确或无效 EDID 信息可能因此会导致问题，例如设置不正确的显示模式。
-
-有两种方法可以更正 EDIDs:
-
--   标准的解决方案是让客户将发回给制造商，reflashes 与正确的 EDID EEPROM 并返回给客户的监视器的监视器。
--   更好的解决方案，此处所述，为制造商联系，以实现 INF 文件，其中包含正确的 EDID 信息，是让客户将其下载到计算机连接到监视器。 Windows 将从 INF 提取更新的 EDID 信息然后将其从 EEPROM EDID，有效地重写 EEPROM EDID 而不是信息的组件提供。
-
-除了此处所述，请替换 EDID 信息，一个供应商可以提供替代监视器的名称和喜欢的显示分辨率。 此类替代经常对可用客户通过 Windows Update 或传送框中的数字媒体。 此类重写接收优先权要高于此处提及的 EDID 重写。 可在指导原则来实现此目的[监视器 INF 文件部分](monitor-inf-file-sections.md)。
-
-## <a name="span-idedidformatspanspan-idedidformatspanspan-idedidformatspanedid-format"></a><span id="EDID_format"></span><span id="edid_format"></span><span id="EDID_FORMAT"></span>EDID 格式
+## <a name="span-idapproaches_to_correcting_edidsspanspan-idapproaches_to_correcting_edidsspanspan-idapproaches_to_correcting_edidsspanapproaches-to-correcting-edids"></a><span id="Approaches_to_correcting_EDIDs"></span><span id="approaches_to_correcting_edids"></span><span id="APPROACHES_TO_CORRECTING_EDIDS"></span>更正 Edid 的方法
 
 
-EDID 数据格式化为一个或多个 128 字节块为单位：
+所有监视器、模拟或数字都必须支持 EDID，其中包含监视器标识符、制造商数据、硬件标识符、计时信息等信息。 此数据以视频电子标准协会（VESA）指定的格式存储在监视器的 EEPROM 中。
 
--   EDID 版本 1.0 到 1.2 包含每 VESA 规范数据的单个块。
--   EDID 1.3 版或增强的 EDID (E EDID)，制造商可以指定除主块的一个或多个扩展基块。
+监视器为 Microsoft Windows 组件、显示器驱动程序和部分用户模式应用程序提供 EDID。 例如，在初始化期间，监视驱动程序会在 Windows 显示驱动程序模型（WDDM）驱动程序中查询其亮度查询接口和设备驱动程序接口（DDI）支持（在 EDID 中）。 因此，在监视器的 EEPROM 上出现不正确或无效的 EDID 信息可能会导致问题，例如设置错误的显示模式。
 
-每个块是，从 0 开始编号的初始块。 若要更新 EDID 信息，制造商的 INF 指定要更新的块的数量，并提供 128 字节的 EDID 数据来替换原始块。 监视器驱动程序从注册表获取更新后的数据的已更正的块，并使用剩余的块的 EEPROM 数据。
+可以通过两种方法来更正 Edid：
 
-## <a name="span-idupdatinganedidspanspan-idupdatinganedidspanspan-idupdatinganedidspanupdating-an-edid"></a><span id="Updating_an_EDID"></span><span id="updating_an_edid"></span><span id="UPDATING_AN_EDID"></span>正在更新 EDID
+-   标准解决方案是让客户将监视器发送回制造商，该制造商使用正确的 EDID reflashes 了 EEPROM，并将监视器返回给客户。
+-   此处所述的更好的解决方案是让制造商实施包含正确 EDID 信息的 INF 文件，并让客户将其下载到连接到监视器的计算机。 Windows 从 INF 中提取更新后的 EDID 信息，并将其提供给组件，而不是从 EEPROM EDID 提供的信息，从而有效覆盖 EEPROM EDID。
+
+除了替换此处所述的 EDID 信息外，供应商还可以提供监视器名称和首选显示分辨率的替代项。 此类替代通常通过包装盒中 Windows 更新或数字媒体向客户提供。 此类替代的优先级比此处提到的 EDID 替代的优先级高。 有关实现此项的指导原则，请参阅[监视 INF 文件部分](monitor-inf-file-sections.md)。
+
+## <a name="span-idedid_formatspanspan-idedid_formatspanspan-idedid_formatspanedid-format"></a><span id="EDID_format"></span><span id="edid_format"></span><span id="EDID_FORMAT"></span>EDID 格式
 
 
-若要使用 INF 更新 EDID:
+EDID 数据的格式为一个或多个128字节块：
 
-1.  监视器制造商实现 INF 包含已更新的 EDID 信息并将文件下载到用户的计算机。 这可以通过 Windows 更新或传送的监视器 CD。
-2.  监视器类安装程序将从 INF 提取更新的 EDID 信息并将信息存储为此注册表项下的值：
+-   EDID 版本1.0 到1.2 由每个 VESA 规范包含一个数据块。
+-   对于 EDID 版本1.3 或增强型 EDID （E-EDID），制造商除了指定主块以外，还可以指定一个或多个扩展块。
+
+对于初始块，每个块都从0开始编号。 若要更新 EDID 信息，制造商的 INF 指定了要更新的块号，并提供128字节的 EDID 数据来替换原始块。 监视驱动程序从注册表中获取已更正块的已更新数据，并为其余块使用 EEPROM 数据。
+
+## <a name="span-idupdating_an_edidspanspan-idupdating_an_edidspanspan-idupdating_an_edidspanupdating-an-edid"></a><span id="Updating_an_EDID"></span><span id="updating_an_edid"></span><span id="UPDATING_AN_EDID"></span>更新 EDID
+
+
+使用 INF 更新 EDID：
+
+1.  监视器制造商实现了包含更新的 EDID 信息的 INF，并将文件下载到用户的计算机。 这可以通过 Windows 更新或通过将 CD 寄送到监视器来完成。
+2.  Monitor 类安装程序从 INF 中提取更新的 EDID 信息，并将这些信息存储为以下注册表项下的值：
 
     ```registry
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\DISPLAY
     ```
 
-    每个 EDID 重写存储在单独的密钥下。 例如：
+    每个 EDID 重写都存储在一个单独的密钥下。 例如：
 
     ```registry
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\DISPLAY\DELA007\
           5&1608c50f&0&10000090&01&20\Device Parameters\EDID_Override
     ```
 
-3.  监视器驱动程序在初始化期间检查注册表，并使用任何 EDID 信息存储在此处而不是 EEPROM 功能的相应信息。 EDID 信息已添加到注册表始终优先于 EEPROM EDID 信息。
-4.  Windows 组件和用户模式应用使用已更新的 EDID 信息。
+3.  监视驱动程序会在初始化期间检查注册表，并使用存储在其中的任何 EDID 信息，而不是使用 EEPROM 上的相应信息。 已添加到注册表中的 EDID 信息始终优先于 EEPROM EDID 信息。
+4.  Windows 组件和用户模式应用使用更新的 EDID 信息。
 
-## <a name="span-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanoverriding-an-edid-with-an-inf"></a><span id="Overriding_an_EDID_with_an_INF"></span><span id="overriding_an_edid_with_an_inf"></span><span id="OVERRIDING_AN_EDID_WITH_AN_INF"></span>重写使用 INF EDID
+## <a name="span-idoverriding_an_edid_with_an_infspanspan-idoverriding_an_edid_with_an_infspanspan-idoverriding_an_edid_with_an_infspanoverriding-an-edid-with-an-inf"></a><span id="Overriding_an_EDID_with_an_INF"></span><span id="overriding_an_edid_with_an_inf"></span><span id="OVERRIDING_AN_EDID_WITH_AN_INF"></span>使用 INF 替代 EDID
 
 
-若要重写 EDID，包括[ **AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)中为每个你想要重写，采用以下格式的块 INF:
+若要重写 EDID，请采用以下格式在 INF 中为要重写的每个块包含[**AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)：
 
 ```inf
-HKR, EDID_OVERRIDE, BlockNumber, Byte 1, Byte 2, Byte 3, Byte 4,...
+HKR, EDID_OVERRIDE, BlockNumber, 0x1, Byte 1, Byte 2, Byte 3, Byte 4,...
 ```
 
-块号后跟包含二进制 EDID 数据的 128 十六进制整数。
+块号是要重写的 EDID 块的零索引值。 应将数据字节格式化为包含二进制 EDID 数据的128十六进制整数。 块号后面的 "0x1" 值是一个标志，指示此注册表值包含二进制数据（FLG_ADDREG_BINVALUETYPE）。
 
-制造商必须更新仅 EDID 的块不正确。 系统从 EEPROM 获取剩余的块。 下面的示例演示更新 EDID 块 0、 4 和 5 INF 的相关部分。 监视器驱动程序将获取块 1-3 和任何扩展基块，EEPROM 遵循块 5:
+制造商必须仅更新不正确的 EDID 块。 系统从 EEPROM 获取剩余的块。 下面的示例显示了更新 EDID 块0、4和5的 INF 的相关部分。 监视驱动程序获取块 1-3 和从 EEPROM 中跟随块5的任何扩展块：
 
 ```inf
 [ABC.DDInstall.HW]
@@ -88,7 +88,7 @@ HKR, EDID_OVERRIDE, 5, 1, 24, 5C, ..., 2D
 ...
 ```
 
-有关详细信息中常规、 Inf 和**AddReg**和**DDInstall**信息，请参见[创建 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/hid/creating-an-inf-file)。
+有关 Inf 的详细信息以及**AddReg**和**DDInstall**的详细信息，请参阅[创建 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/hid/creating-an-inf-file)。
 
 ```inf
 ; monsamp.INF
