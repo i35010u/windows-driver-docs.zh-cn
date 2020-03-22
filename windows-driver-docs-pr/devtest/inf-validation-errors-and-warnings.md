@@ -4,12 +4,12 @@ description: Microsoft Visual Studio 执行的自动 INF 验证会导致驱动�
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e05d940a773577bcda0ce3d7364dd3c68fa966ba
-ms.sourcegitcommit: 649f6fc79ea79bbafba85f0ffaa384a57f55580b
+ms.openlocfilehash: 41f6076de7493669ea26a8096abcb876553bf430
+ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79452243"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080144"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -223,6 +223,11 @@ AddService = MyFilterDriver,, My-Service-Install-Section
 AddService = ,2
 </pre>
 
+</td>
+</tr>
+<tr>
+<td><strong>1297：设备驱动程序未安装在任何设备上，请使用基元驱动程序（如果适用）。</strong></td>
+<td>这表明 INF 文件是设备驱动程序，但未用作设备驱动程序。 这可能会导致驱动程序存储区如何处理驱动程序中的问题。 如果不是这种情况，请检查 INF 以确保正确指定硬件 Id。 如果不打算在设备上安装驱动程序，请将其转换为基元驱动程序。  有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver">此文档</a>。
 </td>
 </tr>
 </tbody>

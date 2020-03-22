@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinDevCenter
-  ms.openlocfilehash: 3261dc9cf4f03a4c4ffc2574ac07aa4fbe3f7700
-  ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
+  ms.openlocfilehash: e7c4175fbc716f69fd76e225dce65c3ed1aee975
+  ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 02/15/2020
-  ms.locfileid: "77260505"
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "80080145"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -56,7 +56,7 @@ conceptualContent:
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically
       itemType: overview
     - text: 下载 Windows 调试工具 - WinDbg
-      url: https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools
       itemType: download
     - text: 调试通用驱动程序
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-

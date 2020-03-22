@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d82e9ce6809ba0ac558e78f3cb6e9c724a7cade
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0ea2f9a49c4abb1f7a7b0af298609d2ae13bfae8
+ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828800"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080168"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService 指令
 
@@ -26,7 +26,7 @@ ms.locfileid: "72828800"
 
  
 
-在 INF DDInstall 中使用**AddService**指令[ **。Services 部分**](inf-ddinstall-services-section.md)或[**INF DefaultInstall 部分**](inf-defaultinstall-services-section.md)。 它指定与驱动程序相关联的服务的特性，如如何和何时加载服务，以及其他基础旧驱动程序或服务的任何依赖项。 此外，此指令还可以为设备设置事件日志记录服务。
+在 INF DDInstall 中使用**AddService**指令[ **。 *DDInstall*Services 部分**](inf-ddinstall-services-section.md)或[**INF DefaultInstall 部分**](inf-defaultinstall-services-section.md)。 它指定与驱动程序相关联的服务的特性，如如何和何时加载服务，以及其他基础旧驱动程序或服务的任何依赖项。 此外，此指令还可以为设备设置事件日志记录服务。
 
 ```ini
 [DDInstall.Services] 
@@ -125,6 +125,9 @@ ServiceBinary=path-to-service
 [LoadOrderGroup=load-order-group-name]
 [Dependencies=depend-on-item-name[,depend-on-item-name]
 [Security="security-descriptor-string"]...]
+[ServiceSidType=value]
+[DelayedAutoStart=true/false]
+[AddTrigger=service-trigger-install-section[, service-trigger-install-section, ...]]
 ```
 
 每个*服务安装部分*必须至少有**ServiceType**、 **StartType**、 **ErrorControl**和**ServiceBinary**项，如下所示。 但是，其余条目是可选的。
@@ -240,6 +243,80 @@ ServiceBinary=path-to-service
 有关安全描述符字符串的信息，请参阅[安全描述符定义语言（Windows）](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关安全描述符字符串格式的信息，请参阅安全描述符定义语言（Windows）。
 
 有关如何指定安全描述符的详细信息，请参阅[创建安全设备安装](creating-secure-device-installations.md)。
+
+<a href="" id="description-description-string"></a>**ServiceSidType**=*值*
+
+**注意：** 此值仅可用于*Win32 服务*，且仅适用于 Windows 10 版本2004及更高版本。
+
+此项可以使用[SERVICE_SID_INFO](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_sid_info)中所述的任何有效值。
+
+<a href="" id="description-description-string"></a>**DelayedAutoStart**=*true/false*
+
+**注意：** 此值仅可用于*Win32 服务*，且仅适用于 Windows 10 2004 及更高版本。
+
+包含自动启动服务的延迟自动启动设置。
+
+如果此成员为 TRUE，则在启动其他自动启动服务并出现短暂延迟后，将启动该服务。 否则，该服务将在系统启动期间启动。
+
+此设置将被忽略，除非该服务是自动启动服务。
+
+有关详细信息，请参阅[此页](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_delayed_auto_start_info)。
+
+<a href="" id="description-description-string"></a>**AddTrigger**=*服务-触发器 [，服务触发器-安装节，...]*
+
+指定要为 Win32 服务注册的触发器事件，以便在发生触发器事件时可以启动或停止该服务。 有关服务触发器事件的详细信息，请参阅[服务触发器事件](https://docs.microsoft.com/windows/desktop/Services/service-trigger-events)。
+
+AddTrigger 指令引用的每个命名的服务触发器安装部分均采用以下格式：
+
+```
+[service-trigger-install-section]
+
+TriggerType=trigger-type
+Action=action-type
+SubType=trigger-subtype
+[DataItem=data-type,data]
+...
+```
+
+### <a name="service-trigger-install-section-entries-and-values"></a>服务触发器-安装节项和值：
+**TriggerType**=*触发器类型*
+
+按照以下列表中所示的十六进制表示法，用以下数字值之一指定服务触发器事件类型：
+
+**0x1** （SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL）表示当系统启动时，指定设备接口类的设备到达或存在时触发事件。 
+
+有关详细信息，请参阅[SERVICE_TRIGGER 结构](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)
+
+**操作**=*操作类型*
+
+指定发生指定的触发器事件时要执行的操作。
+
+**0x1** （SERVICE_TRIGGER_ACTION_SERVICE_START）在指定的触发事件发生时启动服务。
+
+**0x2** （SERVICE_TRIGGER_ACTION_SERVICE_STOP）当指定的触发器事件发生时，停止服务。
+
+有关详细信息，请参阅[SERVICE_TRIGGER 结构](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)
+
+**子类型**=*触发器-子类型*
+
+指定标识 trigger 事件子类型的 GUID。 该值取决于**TriggerType**的值。 
+
+当**TriggerType**为**0x1** （SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL）时，**子类型**指定标识设备接口类的 GUID。
+
+有关详细信息，请参阅[SERVICE_TRIGGER 结构](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)。
+
+**DataItem**=*数据类型，数据*
+
+（可选）指定服务触发器事件的触发器特定数据。 
+
+当**TriggerType**为**0x1** （SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL）时，可以使用数据类型**0x2** （SERVICE_TRIGGER_DATA_TYPE_STRING）指定可选的 DataItem，以将设备接口类的作用域限定为特定的硬件 ID 或兼容 ID。
+
+有关详细信息，请参阅[SERVICE_TRIGGER_SPECIFIC_DATA_ITEM 结构](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger_specific_data_item)
+
+使用**AddTrigger**指令的最佳做法是在设备接口到达时触发服务的启动。 有关详细信息，请参阅[Win32 服务与设备交互](https://docs.microsoft.com/windows-hardware/drivers/install/best-practices-win32services-interacting-with-devices)。
+
+**注意： AddTrigger**语法仅适用于**Windows 10 版本 2004**和更转发版。
+
 
 ### <a name="specifying-driver-load-order"></a>指定驱动程序加载顺序
 
