@@ -952,6 +952,8 @@
       href: configuring-windows-to-rank-driver-signatures-equally.md
     - name: 安装驱动程序包的已更新版本
       href: installing-the-updated-version-of-the-driver-package.md
+    - name: 编写 Win32 服务以与设备交互
+      href: best-practices-win32services-interacting-with-devices.md
 - name: 疑难解答
   items:
     - name: 排查设备和驱动程序安装问题
