@@ -3,34 +3,34 @@ title: 使用性能监视器查找用户模式内存泄漏
 description: 使用性能监视器查找用户模式内存泄漏
 ms.assetid: 07ba4c55-299c-4558-b4c7-4ffe5c47f496
 keywords:
-- 内存泄漏，用户模式下，性能监视器
+- 内存泄漏, 用户模式, 性能监视器
 ms.date: 05/23/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 801c4054641a86c6fab32a334dc58b8f89d555df
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 37a669e3f196ef32ea40bafd15fa526f44080715
+ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341173"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78335951"
 ---
 # <a name="using-performance-monitor-to-find-a-user-mode-memory-leak"></a>使用性能监视器查找用户模式内存泄漏
 
 
-如果您怀疑出现用户模式内存泄漏但不能确定哪个进程导致它，可以使用性能监视器来测量单个进程的内存使用情况。
+如果怀疑用户模式存在内存泄漏，但不确定是哪个进程导致了这种情况，则可以使用性能监视器来测量各个进程的内存使用情况。
 
 启动性能监视器。 添加以下计数器：
 
--   **进程**--&gt;**专用字节数**（适用于你想要检查每个进程）
+-   “进程”  --&gt;“专用字节”  （针对要检查的每个进程）
 
--   **进程**--&gt;**虚拟字节**（适用于你想要检查每个进程）
+-   “进程”  --&gt;“虚拟字节”  （针对要检查的每个进程）
 
-更改为 600 秒随着时间的推移捕获泄露的关系图的更新时间。 您可能想要将数据记录到一个文件以供日后检查。
+将更新时间更改为 600 秒，捕获一段时间内的泄漏分析图。 你可能还想要将数据记录到文件中，以供以后检查。
 
-**专用字节数**计数器指示进程已分配，不包括与其他进程共享的内存的内存总量。 **虚拟字节**计数器指示进程正在使用的虚拟地址空间的当前大小。
+专用字节计数器指示进程已分配的内存总量，不包括与其他进程共享的内存量  。 虚拟字节计数器指示进程正在使用的虚拟地址空间的当前大小  。
 
-某些内存泄漏显示在增加数据文件中分配的专用字节数。 增加虚拟地址空间中的其他内存泄漏显示设置。
+当分配的专用字节增加时，数据文件中会出现一些内存泄漏。 当虚拟地址空间增加时，会出现其他内存泄漏。
 
-确定哪个进程正在泄漏内存之后，使用 UMDH 工具来确定有故障的特定例程。 有关详细信息，请参阅[查找用户模式内存泄漏到使用 UMDH](using-umdh-to-find-a-user-mode-memory-leak.md)。
+确定正在泄漏内存的进程之后，请使用 UMDH 工具确定出错的特定例程。 有关详细信息，请参阅[使用 UMDH 查找用户模式内存泄漏](using-umdh-to-find-a-user-mode-memory-leak.md)。
 
  
 
