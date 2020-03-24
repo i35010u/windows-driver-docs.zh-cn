@@ -1,62 +1,62 @@
 ---
 title: V4 打印机驱动程序
-description: V4 打印机驱动程序模型旨在解决的已知问题的版本 3 驱动程序模型，并因此改进的用户在他们的打印机的体验质量。
+description: v4 打印机驱动程序模型旨在解决版本 3 驱动程序模型中的已知问题，从而提高用户使用打印机的体验质量。
 ms.assetid: CB333340-FBA0-4CB4-BAD6-4673B4AC0DF2
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: ce43f9ca4b8d3ae71c9ef56bc8ae8513186dc50a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 30af77bb3665f3803f28bf8b2df85019e5ddcaba
+ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359711"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78335956"
 ---
 # <a name="v4-printer-driver"></a>V4 打印机驱动程序
 
 
-V4 打印机驱动程序模型旨在解决的已知问题的版本 3 驱动程序模型，并因此改进的用户在他们的打印机的体验质量。
+v4 打印机驱动程序模型旨在解决版本 3 驱动程序模型中的已知问题，从而提高用户使用打印机的体验质量。
 
-**请注意**  为了帮助更好地介绍一些在本部分中的概念，请使用名为 Fabrikam 的虚构公司。
+**注意**  为了帮助更好地解释本节中的一些概念，我使用了一家名为 Fabrikam 的虚构公司。
 
  
 
 **简介**
 
-V4 打印机驱动程序模型是现有的 v3 打印机驱动程序模型的优化，它旨在改进驱动程序开发，降低 IT 管理成本，并支持新方案。 V4 打印驱动程序模型仍支持许多熟悉的技术，如[XPSDrv](xpsdrv-printer-driver.md)， [GPD](introduction-to-gpd-files.md)， [PPD](pscript-minidrivers.md)，[自动配置](printer-autoconfiguration.md)，和[Bidi](bidirectional-communication.md)。 V4 打印驱动程序模型还支持多个新的扩展点。
+v4 打印机驱动程序模型是对现有 v3 打印机驱动程序模型的优化，旨在改进驱动程序开发、降低 IT 管理成本，并支持新的方案。 v4 打印机驱动程序模型继续支持许多熟悉的技术，例如 [XPSDrv](xpsdrv-printer-driver.md)、[GPD](introduction-to-gpd-files.md)、[PPD](pscript-minidrivers.md)、[Autoconfiguration](printer-autoconfiguration.md) 和 [Bidi](bidirectional-communication.md)。 v4 打印机驱动程序模型还支持多个新的扩展点。
 
-V4 打印驱动程序模型也适用于几个新方案，其中包括：
+v4 打印机驱动程序模型还针对几种新的方案进行了优化，其中包括：
 
 -   Windows 8 方案
 
-    UWP 应用程序可提供有关 UI 行为和安全上下文的新设计注意事项。 因此，需要使用打印机驱动程序模型是这样就为此新环境提供深度集成的支持。 V4 打印驱动程序模型提供了打印机制造商提供自定义打印首选项的唯一方式体验或打印机通知体验在 UWP 应用中。
+    UWP 应用提出了有关 UI 行为和安全上下文的新设计注意事项。 因此，需要一个打印机驱动程序模型，这将为此新环 境提供深度集成支持。 v4 打印机驱动程序模型为打印机制造商提供了在 UWP 应用中提供自定义“打印首选项”体验或“打印机通知”体验的唯一方法。
 
 -   打印机共享
 
-    打印机共享是 Windows 服务器的密钥值主张项。 V4 打印机驱动程序模型旨在使共享更轻松、 更高效，无需跨处理器体系结构中管理驱动程序。
+    打印机共享是 Windows Server 的关键价值主张项。 v4 打印机驱动程序模型旨在通过消除跨处理器体系结构管理驱动程序的需求，使共享变得更加轻松和高效。
 
--   易用性驱动程序开发
+-   易于驱动程序开发
 
-    V4 驱动程序必须支持从版本 3 的打印机驱动程序模型和 XPSDrv 体系结构的现有开发工作。 并且还，v4 驱动程序必须是更轻松地开发和测试。
+    v4 驱动程序必须支持版本 3 打印机驱动程序模型和 XPSDrv 体系结构中的现有开发工作。 而且，v4 驱动程序必须更易于开发和测试。
 
-**高级体系结构**
+**概要体系结构**
 
-下面是 v4 打印驱动程序的高水平表现。 除了呈现筛选器和用户界面应用程序中，所有其他功能块在关系图中由 Microsoft 实现。 V4 打印驱动程序依赖于数据文件和 JavaScript 可扩展性。 蓝色框表示的 v3 驱动程序模型中使用了现有文件和绿色框表示要插入的新位置。
+下面是 v4 打印机驱动程序的概要表示形式。 除了渲染筛选器和用户界面应用程序之外，关系图中的所有其他功能块均由 Microsoft 实现。 V4 打印机驱动程序在很大程度上依赖于数据文件和 JavaScript 来实现扩展性。 蓝色框表示在 v3 驱动程序模型中使用的现有文件，而绿色框表示插入的新位置。
 
-![v4 打印驱动程序的高级别的表示形式](images/v4driverarch.png)
+![v4 打印机驱动程序的概要表示形式](images/v4driverarch.png)
 
-本部分讨论 v4 打印机驱动程序的以下方面：
+本节内容讨论了 v4 打印机驱动程序的以下方面：
 
-[V4 打印机驱动程序呈现](v4-driver-rendering.md)
+[V4 打印机驱动程序渲染](v4-driver-rendering.md)
 
 [V4 打印机驱动程序配置](v4-driver-configuration.md)
 
-[V4 打印机驱动程序安装程序](v4-driver-setup.md)
+[V4 打印机驱动程序安装](v4-driver-setup.md)
 
-[V4 打印机驱动程序的用户界面](v4-printer-driver-user-interfaces.md)
+[V4 打印机驱动程序用户界面](v4-printer-driver-user-interfaces.md)
 
 [V4 打印机驱动程序连接](v4-printer-driver-connectivity.md)
 
-[生成 Visual Studio 中的 v4 打印机驱动程序](build-a-v4-print-driver-in-visual-studio.md)
+[在 Visual Studio 中生成 v4 打印机驱动程序](build-a-v4-print-driver-in-visual-studio.md)
 
  
 
