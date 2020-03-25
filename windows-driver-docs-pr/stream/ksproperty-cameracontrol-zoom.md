@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eb94c60037061756cc2b35fc4d1642e398e0dd61
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2dad660074f1f241d8cbb7679e59c1baa8bc898e
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842475"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226519"
 ---
 # <a name="ksproperty_cameracontrol_zoom"></a>KSPROPERTY\_CAMERACONTROL\_缩放
 
@@ -41,7 +41,7 @@ ms.locfileid: "72842475"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>Get</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ ms.locfileid: "72842475"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
 <td><p>筛选器或节点</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"> <strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s)"><strong>KSPROPERTY_CAMERACONTROL_S</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_CAMERACONTROL_NODE_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_node_s)"><strong>KSPROPERTY_CAMERACONTROL_NODE_S</strong></a></p></td>
 <td><p>漫长</p></td>
 </tr>
 </tbody>
@@ -62,6 +62,8 @@ ms.locfileid: "72842475"
  
 
 属性值（操作数据）是指定相机缩放设置的 LONG。 此值用毫米表示。
+
+**警告**  编写或测试应用程序时，应注意，在实际情况下，某些驱动程序定义了一系列自定义的缩放值和自定义步骤值，这些值可能不基于典型单位。 驱动程序可能会以物理方式或数字方式实现缩放控件。
 
 <a name="remarks"></a>备注
 -------
