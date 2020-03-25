@@ -4,19 +4,19 @@ description: 从 Windows 10 版本1607开始，管理员和驱动程序开发人
 ms.assetid: 90A562FB-D616-4D38-8D4F-7EFCDF9E617F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1710ab4d6187d6bb9c5453ea7bb41ca1008fe08b
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: ff3df20bcec1b04ecf7159ef6a1c020a9e326174
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910390"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226525"
 ---
 # <a name="blocking-legacy-file-system-filter-drivers"></a>阻止旧版文件系统筛选器驱动程序
 
 从 Windows 10 版本1607开始，管理员和驱动程序开发人员可以使用注册表设置来阻止旧式文件系统筛选器驱动程序。 *旧式文件系统筛选器驱动程序*是直接附加到文件系统堆栈的驱动程序，不使用筛选器管理器。 本主题介绍用于阻止和取消阻止旧式文件系统筛选器驱动程序的注册表设置。 它还描述了当旧文件系统筛选器被阻止时输入到系统事件日志中的事件，以及如何检查操作系统是否有旧的文件系统驱动程序运行。
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 ## <a name="how-to-block-legacy-drivers"></a>如何阻止旧驱动程序
 
@@ -61,7 +61,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 如果你不确定哪些筛选器是旧的文件系统筛选器驱动程序，或者想要确保它们未运行，则可以执行以下操作：
 
 1. 右键单击**cmd.exe**图标，然后单击 "以**管理员身份运行**"，以打开提升的命令提示符。
-2. 类型： `fltmc filters`
+2. 类型：`fltmc filters`
 3. 查找旧的驱动程序，它们是**帧**值为 **&lt;旧&gt;** 的驱动程序。
 
 在此示例中，旧的文件系统筛选器驱动程序（名为 AVLegacy 和 EncryptionLegacy）标记为 **&lt;旧&gt;** 帧值。 名为 AVMiniFilter 的文件系统驱动程序没有 **&lt;旧&gt;** 帧值，因为它是微筛选器驱动程序（它不会直接附加到文件系统堆栈并使用筛选器管理器）。

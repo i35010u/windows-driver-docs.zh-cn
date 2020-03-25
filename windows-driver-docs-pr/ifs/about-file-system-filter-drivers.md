@@ -9,12 +9,12 @@ keywords:
 - 文件系统筛选器驱动程序不是设备驱动程序
 ms.date: 02/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7a7ec42d175f08d35ee9fa412884b231efcae8
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: 61d74ef606eda5f0acfa25018f7bdf92edc201b4
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910518"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226531"
 ---
 # <a name="about-file-system-filter-drivers"></a>关于文件系统筛选器驱动程序
 
@@ -31,7 +31,7 @@ Windows 中有两种文件系统筛选器模型：
 - [旧文件系统筛选器模型](https://docs.microsoft.com/windows-hardware/drivers/ifs/about-file-system-legacy-filter-drivers)
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 ## <a name="file-system-filter-drivers-are-not-device-drivers"></a>文件系统筛选器驱动程序不是设备驱动程序
 

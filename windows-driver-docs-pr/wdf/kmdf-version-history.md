@@ -6,15 +6,15 @@ keywords:
 - 内核模式驱动程序 WDK KMDF、修订历史记录
 - KMDF WDK，修订历史记录
 - 内核模式驱动程序框架 WDK，修订历史记录
-ms.date: 10/02/2018
+ms.date: 03/29/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6fccda5aa4af89d1ec1ad81c48175d5ef5c1197d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7214a358e1ddcd49c4c7e2e6895575c1e9ed8cb0
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843155"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226528"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
@@ -33,11 +33,11 @@ ms.locfileid: "72843155"
 |1.19|Windows 10，版本 1607 WDK|Windows 10 版本1607（周年更新，Redstone 1）|Windows 10 版本1607、Windows Server 2016 和更高版本|
 |1.17|Windows 10，版本 1511 WDK|Windows 10 版本1511（11月更新，阈值2）|Windows 10 版本1511、Windows Server 2016 和更高版本|
 |1.15|Windows 10 WDK|Windows 10 版本1507（阈值1）|Windows 10，版本1507，Windows Server 2016 及更高版本|
-|1.13|Windows 8.1 WDK|Windows 8.1|Windows 8.1 和更高版本|
+|1.13|Windows 8.1 WDK|Windows 8.1|Windows 8.1 及更高版本|
 |1.11|Windows 8 WDK|Windows 8|Windows Vista 及更高版本|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
 |1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 （SP1）、Windows Server 2008|Windows 2000 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows 2000 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows 2000 及更高版本|
 |1.1|仅下载|无|Windows 2000 及更高版本|
 |1.0|仅下载|无|Windows XP 及更高版本|
 
@@ -75,8 +75,8 @@ ms.locfileid: "72843155"
 ## <a name="kmdf-version-119"></a>KMDF 版本1.19
 
 * 添加的[ **WdfDmaTransactionSetSingleTransferRequirement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)
-* 在[**WDF_DMA_ENABLER_CONFIG_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中添加了**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**标志
-* 已添加[**WdfDmaTransactionInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)和[**WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)的**STATUS_WDF_TOO_MANY_TRANSFERS**返回值
+* 已在[**WDF_DMA_ENABLER_CONFIG_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中添加**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**标志
+* 添加了**STATUS_WDF_TOO_MANY_TRANSFERS** [**WdfDmaTransactionInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)和[**WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)的返回值
 * 已将单个传输输出的输出消息添加到[ **！ wdfkd. wdfdmatransaction**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmatransaction)和[ **！ wdfkd。 wdfdmaenabler**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenabler)
 * 有关单个传输 DMA 的详细信息，请参阅[使用单个传输 dma](using-single-transfer-dma.md)。
 

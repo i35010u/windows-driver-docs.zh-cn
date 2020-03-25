@@ -9,12 +9,12 @@ keywords:
 - 卷 WDK 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bd36ca6cbb6eec8f6359da9c1413c7993566e441
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: 056a1c6c402894367d938e31d455848be73d22ab
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910470"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226522"
 ---
 # <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>存储设备堆栈、存储卷和文件系统堆栈
 
@@ -25,7 +25,7 @@ ms.locfileid: "78910470"
 
 ## <a name="storage-device-stacks"></a>存储设备堆栈
 
-大多数存储驱动程序都是 pnp 设备驱动程序，由 PnP 管理器加载并管理。 存储设备表示为计算机上的每个物理或逻辑设备包含一个设备节点或*devnode*的 PnP*设备树*。 请务必注意，文件系统和文件系统筛选器驱动程序不是 PnP 设备驱动程序;因此 PnP[设备树]((https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree))不包含它们的 devnodes。
+大多数存储驱动程序都是 pnp 设备驱动程序，由 PnP 管理器加载并管理。 存储设备表示为计算机上的每个物理或逻辑设备包含一个设备节点或*devnode*的 PnP*设备树*。 请务必注意，文件系统和文件系统筛选器驱动程序不是 PnP 设备驱动程序;因此 PnP[设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)不包含它们的 devnodes。
 
 特定存储设备的 devnode 包含设备的*存储设备堆栈*;这是表示设备的存储设备驱动程序的附加设备对象的链。 由于存储设备（如磁盘）可能包含一个或多个逻辑卷（分区或动态卷），因此存储设备堆栈本身通常与堆栈更类似于树。 此树的根是存储适配器或与存储堆栈集成的其他设备堆栈的功能设备对象（FDO）。 此树的叶是逻辑卷（也称为*存储卷*）的物理设备对象（PDOs），可以在其中装入文件系统卷。
 

@@ -14,17 +14,17 @@ keywords:
 - I/o 请求 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 468d295adf699c27e54d38c2eb9d047492964249
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: c7fb38239f20d5bfe66ea14b71d6aadbfd8dbe00
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910436"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226520"
 ---
 # <a name="filtering-irps-and-fast-io"></a>筛选 IRP 和快速 I/O
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
 文件系统筛选器驱动程序对一个或多个文件系统或文件系统卷的 i/o 请求进行筛选。 每个 i/o 请求显示为 i/o 请求数据包（IRP）或快速 i/o 请求。 Irp 是由驱动程序的 IRP 调度例程处理的 i/o 系统结构。 快速 i/o 请求由驱动程序的快速 i/o 回调例程处理。
 

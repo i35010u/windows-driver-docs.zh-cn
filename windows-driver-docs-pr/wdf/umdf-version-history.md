@@ -7,15 +7,15 @@ keywords:
 - UMDF WDK，版本信息
 - 修订历史记录 WDK UMDF
 - 版本信息 WDK UMDF
-ms.date: 10/02/2018
+ms.date: 03/29/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 180774b7ef048abac3ea4eb8d9ca05cf1bb63b3a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b2d6925905add88771007370104055068b96d80
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843114"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226526"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -34,11 +34,11 @@ ms.locfileid: "72843114"
 |2.19|Windows 10，版本 1607 WDK|Windows 10 版本1607（周年更新，Redstone 1）|Windows 10，版本1607，Windows Server 2016 及更高版本|
 |2.17|Windows 10，版本 1511 WDK|Windows 10 版本1511（11月更新，阈值2）|Windows 10，版本1511，Windows Server 2016 及更高版本|
 |2.15|Windows 10 WDK|Windows 10 版本1507（阈值1）|Windows 10，版本1507，Windows Server 2016 及更高版本|
-|2.0|Windows 驱动程序工具包（WDK）8。1|Windows 8.1|Windows 8.1 和更高版本|
+|2.0|Windows 驱动程序工具包（WDK）8。1|Windows 8.1|Windows 8.1 及更高版本|
 |1.11|Windows 驱动程序工具包（WDK）8|Windows 8|Windows Vista 及更高版本|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
 |1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 （SP1）、Windows Server 2008|Windows XP 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
 
 
 可以将 Windows 驱动程序工具包（WDK）与 Microsoft Visual Studio 2017 一起使用，以生成在 Windows 7 和更高版本上运行的驱动程序。
@@ -195,7 +195,7 @@ UMDF 版本2.19 没有更改或添加。
 
 -   [在 UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)
 
--   添加了**UmdfHostProcessSharing**、 **UmdfDirectHardwareAccess**、 **UmdfRegisterAccessMode**、 **UMDFFILEOBJECTPOLICY**和**UmdfFsContextUsePolicy**指令，如在[INF 中指定 WDF 指令中所述文件](specifying-wdf-directives-in-inf-files.md)
+-   添加了**UmdfHostProcessSharing**、 **UmdfDirectHardwareAccess**、 **UmdfRegisterAccessMode**、 **UMDFFILEOBJECTPOLICY**和**UMDFFSCONTEXTUSEPOLICY**指令，如在[INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)中所述
 
 -   [适用于 UMDF 驱动程序的已知安全标识符（SID）](controlling-device-access.md)
 
