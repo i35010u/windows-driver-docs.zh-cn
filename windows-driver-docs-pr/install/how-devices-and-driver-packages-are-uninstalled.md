@@ -4,12 +4,12 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4512c45a1a4d82ecbe9ce17d4a93014e92090619
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: a54bde8a616e73ea31ea4115f2f1899a3caebbb5
+ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080162"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261283"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -26,7 +26,7 @@ ms.locfileid: "80080162"
 
 -   [从驱动程序存储区中删除驱动程序包](#deleting-a-driver-package-from-the-driver-store)
 
--   [正在删除已安装驱动程序的二进制文件](#deleting-the-binary-files-of-the-installed-driver)
+-   正在删除已安装驱动程序的二进制文件
 
 **请注意**  这些操作不需要按顺序执行。
 

@@ -3,12 +3,12 @@ title: 照相机方向驱动程序支持
 description: 提供有关如何在设备上显式指定相机方向的信息。
 ms.date: 08/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9390b49cc90c2e1370a164d5c486f1d9bdca58fe
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 9af0a1154786f627b52de044a143bae87c0f88c3
+ms.sourcegitcommit: 615a1759aea8b598ee3a85cb5927fa2646bb3c66
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881901"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272124"
 ---
 # <a name="driver-support-for-camera-orientation"></a>照相机方向驱动程序支持
 
@@ -100,6 +100,8 @@ ACPI \_PLD 结构还具有定义如下的旋转字段：
 
 请注意，与相机不同的是， **NativeOrientation**属性不基于 ACPI，因此没有 \_PLD 结构。 即使将显示静态装载到设备也是如此。
 
+当在纵向主设备上装载时，照相机驱动程序必须知道，大多数应用程序会将设备视为输出横向相机输出缓冲区，而不考虑实际的相机输出缓冲方向。 因此，我们建议照相机驱动程序在纵向主设备上时，将与 NativeOrientation 纵向偏移的相机缓冲区输出为90度。 这样，在纵向设备上执行此额外旋转的应用程序就可以将旋转方向更正为预期方向。 这可以通过使用[带有旋转示例的相机应用程序](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit/cs)进行验证。
+
 ## <a name="offset-mounting"></a>偏移量装入
 
 强烈建议使用 IHV/Oem 以非0度偏移量来维护应用程序兼容性。 许多现有的和旧的应用程序不知道要查找 ACPI 的 PLD 表，也不会尝试更正非0度偏移量。 因此，对于此类应用，生成的视频将不会正确呈现。
@@ -184,16 +186,16 @@ MS OS 描述符1.0 有两个组件：
 
 标头部分描述单个自定义属性（人脸身份验证配置文件）。
 
-| 偏移量 | 字段      | 大小(字节) | Value  | 描述                     |
+| 偏移 | 字段      | 大小(字节) | 值  | 说明                     |
 | ------ | ---------- | ------------ | ------ | ------------------------------- |
 | 0      | dwLength   | 4            | \<\>   |                                 |
 | 4      | bcdVersion | 2            | 0x0100 | 版本 1.0                     |
-| 6      | wIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
+| 6      | WIndex     | 2            | 0x0005 | 扩展属性 OS 描述符 |
 | 8      | wCount     | 2            | 0x0001 | 一个自定义属性             |
 
 #### <a name="custom-ms-os-descriptor-10-property-section"></a>自定义 MS OS 描述符1.0 属性部分
 
-| 偏移量 | 字段                | 大小(字节) | Value                              | 描述                                  |
+| 偏移 | 字段                | 大小(字节) | 值                              | 说明                                  |
 | ------ | -------------------- | ------------ | ---------------------------------- | -------------------------------------------- |
 | 0      | dwSize               | 4            | 0x00000036 （54）                    | 此属性的总大小（以字节为单位）。     |
 | 4      | dwPropertyDataType   | 4            | 0x00000004                         | REG\_DWORD\_极少\_ENDIAN                   |

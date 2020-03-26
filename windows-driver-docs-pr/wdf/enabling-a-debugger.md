@@ -12,26 +12,24 @@ keywords:
 - 驱动程序调试 WDK UMDF，启用调试器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afaf1f6e452ecbf784907f87842f6ee64b2e0aac
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 9ab2ac66d915d8ff16975a979cfd09363648b44f
+ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242888"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261281"
 ---
 # <a name="how-to-enable-debugging-of-a-umdf-driver"></a>如何启用对 UMDF 驱动程序的调试
 
 
-你可以使用以下配置来调试用户模式驱动程序框架（UMDF）驱动程序。 所有配置都涉及两台计算机，即主机和目标。 运行 Microsoft Visual Studio 和 Windows 驱动程序工具包（WDK）来构建主机上的驱动程序，然后在目标计算机上安装并测试驱动程序。
+你可以使用以下配置在开发过程中调试用户模式驱动程序框架（UMDF）驱动程序。 所有配置都涉及两台计算机，即主机和目标。 
 
--   使用 Visual Studio 将驱动程序复制（"部署"）到目标，并在主机上的 Visual Studio 中启动用户模式调试会话。
 -   手动将驱动程序复制到目标。 对目标执行用户模式调试。 在此方案中，您手动附加到在目标上运行的驱动程序主机进程的实例。
 -   手动将驱动程序复制到目标，然后从主机执行内核模式调试。
 
-可以同时使用后两个配置，同时在目标上运行用户模式调试器，并在主机上运行内核模式调试器。
+建议在附加了内核调试器的情况上进行所有 UMDF 驱动程序测试和开发。
 
-## <a href="" id="bp"></a>最佳做法
-
+## <a name="best-practices"></a><a href="" id="bp"></a>最佳做法
 
 建议使用已附加的内核调试器进行所有 UMDF 驱动程序测试。
 
@@ -45,28 +43,13 @@ ms.locfileid: "79242888"
 
     如果发生异常，应用程序验证工具会将诊断消息发送到调试器并将其中断。
 
--   启用[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。 打开 "**命令提示符**" 窗口（**以管理员身份运行**）。 键入 verifier 以打开驱动程序验证程序管理器。
--   如果使用内核模式调试会话，请设置**HostFailKdDebugBreak** ，使反射器在终止驱动程序主机进程之前进入内核模式调试器。 默认情况下，此设置在 UMDF 版本1.11 中启用。
+-   如果使用内核模式调试会话，请设置**HostFailKdDebugBreak** ，使反射器在终止驱动程序主机进程之前进入内核模式调试器。 默认情况下，从 Windows 8 开始启用此设置。
 
 -   通过将**UmdfHostProcessSharing**设置为**ProcessSharingDisabled**来禁用池。 有关信息，请参阅[在 INF 文件中指定 WDF 指令](specifying-wdf-directives-in-inf-files.md)。
 -   默认情况下，当 UMDF 设备出现故障时，框架会尝试将其重新启动5次。 可以通过将**DebugModeFlags**设置为0x01 来关闭自动重启。 有关详细信息，请参阅[用于调试 WDF 驱动程序的注册表值](registry-values-for-debugging-kmdf-drivers.md)。
 -   重新启动计算机。
 
-## <a name="using-visual-studio-with-f5-to-attach-automatically-user-mode-debugging"></a>使用带有 F5 的 Visual Studio 自动附加（用户模式调试）
-
-
-您必须先设置并配置测试计算机，然后才能将 Visual Studio 与 WDK 一起使用，以便在测试计算机上调试驱动程序。 有关如何执行此操作的信息，请参阅将[驱动程序部署到测试计算机](https://docs.microsoft.com/windows-hardware/drivers)。
-
-配置测试计算机后，请在主计算机上使用 Visual Studio 在你的驱动程序中设置断点。 按 F5 时，Visual Studio 将生成驱动程序，将其部署到目标计算机，并启动用户模式调试会话。
-
-使用此方法部署 UMDF 驱动程序时，Visual Studio 将为该驱动程序启用*umdf 调试模式*。 默认情况下，调试模式意味着：
-
--   该驱动程序在其自己的专用主机进程内启动。 已关闭[设备池](using-device-pooling-in-umdf-drivers.md)。
--   驱动程序崩溃后，不会自动重新启动设备，并禁用错误报告。
--   此框架不会强制执行在 UMDF 中的[主机进程超时](how-umdf-enforces-time-outs.md)中所述的超时。
--   如果 UMDF 主机进程或框架验证器检测到无效操作，则将在用户模式调试器中中断。
-
-即使驱动程序安装需要重新启动，也可以使用调试模式来调试 UMDF 驱动程序。 你还可以调试在用户登录前启动的用户模式驱动程序，例如，生物识别、智能卡或输入。
+-   对于调试 UMDF 驱动程序问题，请查看[确定反射器为何终止了主机进程](determining-why-the-reflector-terminated-the-host-process.md)并[调试 UMDF 驱动程序崩溃](debugging-umdf-2-0-drivers.md) 
 
 ## <a name="using-windbg-to-attach-manually-user-mode-debugging"></a>使用 WinDbg 手动附加（用户模式调试）
 
@@ -89,12 +72,10 @@ ms.locfileid: "79242888"
 
 有关 UMDF 注册表值的详细信息，请参阅[用于调试 WDF 驱动程序的注册表值（KMDF 和 UMDF）](registry-values-for-debugging-kmdf-drivers.md)。
 
-## <a href="" id="kd"></a>使用 WinDbg 从主机远程调试（内核模式调试）
+## <a name="using-windbg-to-remotely-debug-from-a-host-machine-kernel-mode-debugging"></a><a href="" id="kd"></a>使用 WinDbg 从主机远程调试（内核模式调试）
 
 
 在远程主机上，建立一个内核模式调试会话，然后将当前进程设置为托管驱动程序的 Wudfhost 的实例。 如果是从远程内核调试器进行调试，则可以将**HostProcessDbgBreakOnDriverStart**或**HostProcessDbgBreakOnDriverLoad**设置为0x80000000，以指定无超时，但进入内核调试器。
-
-在 UMDF 1.11 或更高版本中，在侵入内核调试器之前，反射器会自动将进程上下文切换为主机进程的上下文。 因此，你可以立即使用 UMDF 调试器扩展命令，而无需首先发出[**process**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process--set-process-context-)命令来更改进程上下文。
 
 使用以下步骤：
 

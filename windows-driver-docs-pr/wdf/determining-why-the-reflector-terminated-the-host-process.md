@@ -8,17 +8,17 @@ keywords:
 - UMDF WDK，反射器终止宿主进程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0820f51e5e878c27ebadb7875248fa83f918c21d
-ms.sourcegitcommit: 9355a80229bb2384dd45493d36bdc783abdd8d7a
+ms.openlocfilehash: 33c5b269e780b4b25993fea88a26800390e230e4
+ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694243"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261287"
 ---
 # <a name="determining-why-the-reflector-terminated-the-host-process"></a>确定反射器终止主机进程的原因
 
 
-本主题介绍如何分析反射器终止驱动程序主机进程（WUDFHost）的原因。
+本主题介绍如何分析反射器为什么终止了驱动程序主机进程（WUDFHost）或驱动程序主机进程崩溃的原因。
 
 反射器终止宿主进程的最常见原因是： UMDF[主机进程超时](how-umdf-enforces-time-outs.md)。
 
@@ -31,13 +31,10 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 ## <a name="using-dump-files"></a>使用转储文件
 
 
-对于许多崩溃，转储文件详细信息足以确定发生终止的原因。 若要查看转储文件信息，请执行以下步骤：
+如果 UMDF 驱动程序崩溃或遇到问题，则会在内核调试器中报告中断。 当在内核调试器中报告用户模式异常时，应调试这些问题。 内核调试器中断还会通过 WudfRd 在终止驱动程序主机进程之前进行报告，因为该驱动程序有问题（无响应）。 你还会发现在以下位置报告的日志和堆转储。 若要查看 UMDF 捕获的转储文件，请遵循以下步骤：
 
-1.  在% windir%\\system32 中找到最新的 dmp 文件，\\日志文件\\WUDF 目录。
-
-    **请注意**  在 UMDF 2.15 开始，日志目录为 *% ProgramData%* \\Microsoft\\WDF。
-
-     
+1.  找到 *% ProgramData%* \\MICROSOFT\\WDF 目录中的最新 dmp 文件。
+    在 Windows 10 1507 随附的 UMDF 2.15 之前，日志目录低于% windir%\\system32\\日志记录\\WUDF。
 
 2.  使用以下命令将最新的 dmp 文件加载到调试器中：
     ```cpp
@@ -46,8 +43,14 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 
 3.  查看终止时线程的状态。
 
-## <a name="using-the-debugger"></a>使用调试器
+如果需要捕获堆转储，则在测试时，在运行测试之前设置以下注册表值并重新启动测试系统。 你还可以在%SystemRoot%\System32\Winevt\Logs\Application.evtx 上检查系统的应用程序事件日志中的 Windows 错误报告历史记录。 
 
+```cpp
+reg add "HKLM\Software\Microsoft\windows NT\CurrentVersion\Wudf" /v LogMinidumpType /t REG_DWORD /d 0x1122
+reg add "HKLM\Software\Microsoft\windows NT\CurrentVersion\Wudf" /v LogEnable /t REG_DWORD /d 1 
+```
+
+## <a name="using-the-debugger"></a>使用调试器
 
 在其他情况下，可能需要附加到实时内核模式目标来确定反射器终止宿主进程的原因。 若要设置调试会话，请按照[如何启用 UMDF 驱动程序调试](enabling-a-debugger.md#kd)中所述的步骤进行操作。
 
@@ -65,8 +68,3 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
  
 
  
-
-
-
-
-
