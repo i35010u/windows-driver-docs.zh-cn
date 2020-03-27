@@ -2,16 +2,21 @@
 ms.assetid: 79AB7242-72D6-4198-9AF0-482CBFB756C7
 title: 如何使用“驱动程序测试”模板编写驱动程序测试
 description: 使用适用于 Windows 8 的 Windows 驱动程序工具包 (WDK) 来创建自己的驱动程序测试或自定义所提供的部分测试。
-ms.date: 04/20/2017
+ms.date: 03/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18018c827e51d24f06e099dd28fad9eb066e2dce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40dafed4d6fa901505fcc57fa82c0d74b7a3de18
+ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370739"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327568"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>如何使用“驱动程序测试”模板编写驱动程序测试
+
+> [!NOTE]
+> 本主题介绍仅在 Visual Studio 2013 中提供的功能。 有关以前的 WDK 和 Visual Studio 版本的信息，请参阅[其他 WDK 下载](../other-wdk-downloads.md)。
+> 
+
 
 你可以使用适用于 Windows 8 的 Windows 驱动程序工具包 (WDK) 来创建自己的驱动程序测试或自定义所提供的部分测试。 你可以使用 WDK 为 Microsoft Visual Studio Ultimate 2012 提供的驱动程序测试框架将你创建的测试部署到远程测试计算机。
 
@@ -77,7 +82,7 @@ WDK 提供有采用 C++、C\# 和脚本编写的、适用于 Windows 驱动程�
 <td align="left">提供用于禁用和启用 PnP 设备的测试用例代码。</td>
 </tr>
 <tr class="even">
-<td align="left">Remove</td>
+<td align="left">删除</td>
 <td align="left">提供用于删除 PnP 设备的测试用例代码。</td>
 </tr>
 <tr class="odd">

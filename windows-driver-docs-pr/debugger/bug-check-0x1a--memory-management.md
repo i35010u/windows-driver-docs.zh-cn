@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 7d9ad86f32d620e87b940a7ed5c7a8c1895a70f4
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.openlocfilehash: aa8f9ccbbf1c8f8e979072dea177ef3202cb8ef3
+ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402350"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327572"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>Bug 检查 0x1A：MEMORY\_MANAGEMENT
 
@@ -153,12 +153,11 @@ MEMORY\_MANAGEMENT bug 检查的值为 0x0000001A。 这表明出现了严重的
 <td align="left"><p>内存存储组件的专用内存范围已损坏，导致无法访问它。 参数 2 是返回的状态。  参数 3 是存储的专用内存范围内的虚拟地址。 参数 4 是 MemoryDescriptorList。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0x8884</p></td>
-<td align="left"><p>（仅适用于 Windows 7）。 备用列表中的两个页面本来应该具有相同的页面优先级值，但实际上它们没有相同的页面优先级值。 参数 4 中捕获了不同的值。</p></td>
+<td align="left"><p>0x8884</p><p>0x8885</p><p>0x8886</p><p>0x8887</p></td>
+<td align="left"><p>（Windows 7 及更高版本）。 备用列表中的两个页面本来应该具有相同的页面优先级值，但实际上它们没有相同的页面优先级值。 参数 4 中捕获了不同的值。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0x8888</p>
-<p>0x8889</p></td>
+<td align="left"><p>0x8888</p><p>0x8889</p></td>
 <td align="left"><p>内部内存管理结构已损坏。</p></td>
 </tr>
 <tr class="even">
@@ -252,7 +251,7 @@ MEMORY\_MANAGEMENT bug 检查的值为 0x0000001A。 这表明出现了严重的
 </tbody>
 </table>
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
 [!analyze](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。 
