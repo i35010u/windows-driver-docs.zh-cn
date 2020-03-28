@@ -4,12 +4,12 @@ description: NDIS 虚拟机 (VM) 共享内存的安全问题
 ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 506040eca4172570cfa0013383f4218118f27c6b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a00716ad8429137e9f6093b97a978a6d5ab24e48
+ms.sourcegitcommit: 7135ca169cc274543fbe170330c054ee18573134
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841989"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367631"
 ---
 # <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 虚拟机 (VM) 共享内存的安全问题
 
@@ -17,7 +17,7 @@ ms.locfileid: "72841989"
 
 
 
-本主题讨论从虚拟机队列（VMQ）接收缓冲区的虚拟机（VM）分配共享内存所涉及的潜在安全问题。 本主题包括以下部分：
+本主题讨论从虚拟机队列（VMQ）接收缓冲区的虚拟机（VM）分配共享内存所涉及的潜在安全问题。 本主题包含以下各节：
 
 -   [VM 共享内存的安全问题概述](#overview)
 
@@ -29,7 +29,7 @@ ms.locfileid: "72841989"
 
  
 
-### <a href="" id="overview"></a>VM 共享内存的安全问题概述
+### <a name="overview-of-the-security-issues-with-vm-shared-memory"></a><a href="" id="overview"></a>VM 共享内存的安全问题概述
 
 Vm 不是受信任的软件实体。 也就是说，恶意 VM 不得干扰其他 Vm，也不能干扰 Hyper-v 父分区中运行的管理操作系统。 本部分提供了背景信息和要求，以确保驱动程序编写人员了解 VMQ 安全问题和共享内存的要求。 有关共享内存的详细信息，请参阅 "[编写 VMQ 驱动程序](writing-vmq-drivers.md)" 部分中的 "[共享内存资源分配](shared-memory-resource-allocation.md)" 主题。
 
@@ -41,7 +41,7 @@ Vm 不是受信任的软件实体。 也就是说，恶意 VM 不得干扰其他
 
 但是，当 VMQ 配置为使用共享内存时，网络适配器将使用 DMA 将传入帧直接传输到 VM 地址空间。 此传输引入了一个安全问题，在这种情况下，VM 可以检查接收到的帧的内容，而无需等待可扩展交换机应用所需的 VLAN 筛选。
 
-### <a href="" id="ndis620"></a>Windows Server 2008 R2 如何解决安全问题
+### <a name="how-windows-server2008r2-addresses-the-security-issue"></a><a href="" id="ndis620"></a>Windows Server 2008 R2 如何解决安全问题
 
 在 Windows Server 2008 R2 中，在 VSP 将 VM 队列配置为使用从 VM 地址空间分配的共享内存之前，它对队列使用以下筛选测试。
 
@@ -77,7 +77,7 @@ VMQ 共享内存的摘要要求如下所示：
 
 如果网络适配器无法通过任何方法满足对 VMQ 共享内存的这些要求，则该 VSP 将从主机地址空间为 VMQ 接收缓冲区分配内存，并将接收的数据包从网络适配器接收缓冲区复制到 VM 地址空间.
 
-### <a href="" id="ndis630"></a>Windows Server 2012 和更高版本如何解决安全问题
+### <a name="how-windows-server2012-and-later-versions-address-the-security-issue"></a><a href="" id="ndis630"></a>Windows Server 2012 和更高版本如何解决安全问题
 
 从 Windows Server 2012 开始，VSP 不会为 VMQ 接收缓冲区从 VM 分配共享内存。 相反，VSP 从主机地址空间为 VMQ 接收缓冲区分配内存，然后将接收的数据包从网络适配器接收缓冲区复制到 VM 地址空间。
 
@@ -89,7 +89,7 @@ VMQ 共享内存的摘要要求如下所示：
 
     -   微型端口驱动程序不得将**NDIS\_接收\_筛选器\_** 在**Flags**成员中\_拆分\_支持的标志。
 
-    -   微型端口驱动程序必须将**MinLookaheadSplitSize**和**MinLookaheadSplitSize**成员设置为零。
+    -   微型端口驱动程序必须将**MinLookaheadSplitSize**和**MaxLookaheadSplitSize**成员设置为零。
 
     有关如何注册 VMQ 功能的详细信息，请参阅[确定网络适配器的 Vmq 功能](determining-the-vmq-capabilities-of-a-network-adapter.md)。
 
