@@ -8,12 +8,12 @@ keywords:
 - NDIS WDK，接口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fce0c042aca1937373c49f0785554f48eb90723b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cb23de4c820cc1d77763332d9696e730c67546b7
+ms.sourcegitcommit: 078e2dfac6c18f65ff923d1e55bff4a23e02a824
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843546"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80400470"
 ---
 # <a name="ndis-interface-information"></a>NDIS 接口信息
 
@@ -30,7 +30,7 @@ NDIS 提供对管理规范（WMI）的增强支持。 有关 NDIS 6.0 对 WMI �
 ## <a name="related-topics"></a>相关主题
 
 
-[**NDIS\_接口\_信息**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)
+[**NDIS\_接口\_信息**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-ndis_interface_information)
 
  
 

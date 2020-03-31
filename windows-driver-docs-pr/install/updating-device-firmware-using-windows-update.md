@@ -4,12 +4,12 @@ description: 本主题介绍如何使用 Windows 更新（WU）服务更新设�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31dec967a4e3c18787f0e857fee450201afd99e8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6e9a680809c2c62e7f9fecd5a101eea915443bd8
+ms.sourcegitcommit: 078e2dfac6c18f65ff923d1e55bff4a23e02a824
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828701"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80400473"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 
@@ -26,7 +26,7 @@ ms.locfileid: "72828701"
 * 在设备启动或驱动程序的[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中：
 
     1. 确定要连接到的设备。
-    2. 确定驱动程序是否具有比设备上的版本更新的固件版本。
+    2. 确定驱动程序的固件版本是否低于当前在设备硬件上闪存的固件版本。
     3. 如果需要固件更新，请设置事件计时器来计划更新。
     4. 否则，不执行任何操作，直到重新启动驱动程序。
 
