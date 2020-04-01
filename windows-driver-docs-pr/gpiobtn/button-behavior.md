@@ -1,162 +1,99 @@
 ---
 title: 按钮行为
-description: 本主题介绍的硬件按钮的预期的行为。
+description: 本主题描述硬件按钮的预期行为。
 ms.assetid: 057A4F21-3514-4CCA-BCE2-279E8228B5A9
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e230e9d2f673fee3c6645d7a06898124b321b215
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 948d355fa315ce028e8befb6eb3e24c426db2b00
+ms.sourcegitcommit: a2d1c389f0f413cc967068cbde22a5598e5a5d57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393485"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80516773"
 ---
 # <a name="button-behavior"></a>按钮行为
 
+本主题描述硬件按钮的预期行为。
 
-本主题介绍的硬件按钮的预期的行为。
+## <a name="required-and-optional-buttons-in-windows10"></a>Windows 10 中的 "必需" 和 "可选" 按钮
 
-## <a name="span-idrequiredandoptionalbuttonsinwindows10spanspan-idrequiredandoptionalbuttonsinwindows10spanspan-idrequiredandoptionalbuttonsinwindows10spanrequired-and-optional-buttons-in-windows10"></a><span id="Required_and_optional__buttons_in_Windows_10"></span><span id="required_and_optional__buttons_in_windows_10"></span><span id="REQUIRED_AND_OPTIONAL__BUTTONS_IN_WINDOWS_10"></span>Windows 10 中的必需和可选按钮
-
-
-<table>
-<colgroup>
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">操作系统/设备</td>
-<td align="left">电源</td>
-<td align="left">音量增大 / 减小音量</td>
-<td align="left">Start</td>
-<td align="left">返回/搜索</td>
-<td align="left">相机</td>
-<td align="left">旋转锁定</td>
-</tr>
-<tr class="even">
-<td align="left">Windows 10 移动版</td>
-<td align="left">必需</td>
-<td align="left">必需</td>
-<td align="left"><p>所需的使用 WVGA 显示的手机</p>
-<p>对于所有其他设备来说为可选</p></td>
-<td align="left"><p>所需的使用 WVGA 显示的手机</p>
-<p>对于所有其他设备来说为可选</p></td>
-<td align="left">可选</td>
-<td align="left">不支持</td>
-</tr>
-<tr class="odd">
-<td align="left">（主页、 专业版、 企业版和教育版） 的桌面版本的 Windows 10 平板电脑 /</td>
-<td align="left">必需</td>
-<td align="left">必需</td>
-<td align="left">可选</td>
-<td align="left">不支持</td>
-<td align="left">不支持</td>
-<td align="left">可选</td>
-</tr>
-<tr class="even">
-<td align="left">面向桌面版本的 Windows 10 / 其他设备</td>
-<td align="left">必需</td>
-<td align="left">使用可拆卸键盘的设备所必需。 对于所有其他设备可选。</td>
-<td align="left">可选</td>
-<td align="left">不支持</td>
-<td align="left">不支持</td>
-<td align="left">可选</td>
-</tr>
-</tbody>
-</table>
-
- 
+|操作系统/设备|电源|增加/减少音量|Start|返回/搜索|照相机|旋转锁定|
+|---|---|---|---|---|---|---|
+|Windows 10 移动版|必需|必需|对于使用 WVGA 显示的手机是必需的。 对于所有其他设备来说为可选|对于使用 WVGA 显示的手机是必需的。 对于所有其他设备来说为可选|可选|不支持|
+|适用于桌面版的 Windows 10 （家庭版、专业版、企业版和教育版）/Tablets|必需|必需|可选|不支持|不支持|可选|
+|适用于桌面版/其他设备的 Windows 10|必需|使用可拆卸键盘的设备所必需。 对于所有其他设备是可选的。|可选|不支持|不支持|可选|
 
 有关按钮要求的详细信息：
 
--   Windows 10 移动版，请参阅中的部分 2.6[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)。
--   对于桌面版本的 Windows 10，请参阅中的部分 3.6[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)。
+- 对于 Windows 10 移动版，请参阅[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)中的2.6 节。
+- 对于桌面版的 Windows 10，请参阅[最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)中的3.6 节。
 
-## <a name="span-idbuttonbehaviorinwindows10spanspan-idbuttonbehaviorinwindows10spanspan-idbuttonbehaviorinwindows10spanbutton-behavior-in-windows10"></a><span id="Button_behavior_in_Windows_10"></span><span id="button_behavior_in_windows_10"></span><span id="BUTTON_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 中的按钮行为
+## <a name="button-behavior-in-windows10"></a>Windows 10 中的按钮行为
 
+### <a name="single-button-behavior-in-windows10"></a>Windows 10 中的单个按钮行为
 
-### <a name="span-idsinglebuttonbehaviorinwindows10spanspan-idsinglebuttonbehaviorinwindows10spanspan-idsinglebuttonbehaviorinwindows10spansingle-button-behavior-in-windows10"></a><span id="Single_button_behavior_in_Windows_10"></span><span id="single_button_behavior_in_windows_10"></span><span id="SINGLE_BUTTON_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 中的单个按钮行为
+|按钮|活动|Windows 10 桌面版|Windows 10 移动版|
+|---|---|---|---|
+|电源|按下并释放|开启/关闭开关|开启/关闭开关|
+|电源|按住|启动关机窗帘|启动关机窗帘|
+|电源|长按下并保持|硬关机|硬件重置|
+|搜索|按下并释放|不支持|启动 Cortana （处于启用市场）/Search|
+|搜索|按住|不支持|启动 Cortana 或通过语音进行搜索|
+|调高音量|按下并释放|递增量|递增量|
+调高音量|按住|自动重复卷增量|自动重复卷增量|
+|减小音量|按下并释放|减量卷|减量卷|
+|减小音量|按住|自动重复卷递减|自动重复卷递减|
+|返回|按下并释放|上一个应用页面/关闭应用|上一个应用页面/关闭应用|
+|返回|按住|启动任务切换器|启动切换器 UI|
+|Start||切换开始屏幕|显示开始屏幕|
+|旋转锁定||不支持|不支持（有 UI 选项）|
+|相机焦点||启动照相机应用程序|由相机应用（焦点）处理|
+|照相机快门||由相机应用程序处理|启动相机应用/拍照|
 
-面向 Windows 10 移动 Power 按桌面版本和版本切换开/关切换开/关按按钮 Windows 10 并按住启动关闭窗帘启动关闭窗帘长按下并保持硬关机硬件重置搜索按和不受支持的版本启动 （在启用了市场） 的 Cortana / 搜索按下并保持不支持启动 Cortana 或使用语音音量增大按搜索和发布增量卷增量卷按，然后保存自动重复音量增量自动重复卷增加按减小音量和发布递减量递减卷按和保存自动重复卷递减自动重复卷递减返回按和上一步应用程序页 / 关闭应用上一步应用程序页 / 关闭应用按发布并保存 UI 启动的启动任务切换器启动切换器切换开始屏幕显示开始屏幕旋转锁不支持不受支持 （没有用户界面选项） 照相机焦点启动相机应用程序已处理的相机应用程序 （关注） 相机快门已处理的相机应用程序启动相机应用程序 / 拍摄图片
- 
+### <a name="button-combination-behavior-in-windows10"></a>Windows 10 中的按钮组合行为
 
-### <a name="span-idbuttoncombinationbehaviorinwindows10spanspan-idbuttoncombinationbehaviorinwindows10spanspan-idbuttoncombinationbehaviorinwindows10spanbutton-combination-behavior-in-windows10"></a><span id="Button_combination_behavior_in_Windows_10"></span><span id="button_combination_behavior_in_windows_10"></span><span id="BUTTON_COMBINATION_BEHAVIOR_IN_WINDOWS_10"></span>Windows 10 中的按钮组合行为
+如上所述，Windows 10 中的一些按钮组合适用于[windows 10 按钮体系结构](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)或 Windows 8.1 按钮体系结构。 Windows 10 中的所有其他按钮组合适用于这两种按钮体系结构。 建议使用 Windows 10 体系结构描述硬件按钮。
 
-如前所述，在 Windows 10 中某些按钮组合应用于[Windows 10 按钮体系结构](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)或 Windows 8.1 按钮体系结构。 Windows 10 中的所有其他按钮组合应用于任一按钮体系结构。 建议来描述使用 Windows 10 体系结构的硬件按钮。
+|按钮组合|Windows 10 桌面版|Windows 10 移动版|
+|---|---|---|
+|启动 + 向上音量|切换屏幕讲述人|切换屏幕讲述人（前提是已启用相应的 "轻松访问" 设置）|
+|开始和音量降低|拍摄屏幕截图|不支持|
+|开始 + 电源|Ctrl + Alt + Del （仅在使用 Windows 8.1 按钮体系结构时）|不支持|
+|接通电源 + 音量|拍摄屏幕截图（仅在使用 Windows 10 按钮体系结构时）|拍摄屏幕截图|
+|幂 + 向下音量|Ctrl + Alt + Del （仅在使用 Windows 10 按钮体系结构时）|启动 Windows 反馈应用。 硬件重置（10秒后）|
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">按钮组合</td>
-<td align="left">Windows 10 桌面版</td>
-<td align="left">Windows 10 移动版</td>
-</tr>
-<tr class="even">
-<td align="left">开始时间 + 调高音量</td>
-<td align="left">屏幕上切换讲述人</td>
-<td align="left">屏幕上切换讲述人 （前提是相应的轻松访问设置已启用）</td>
-</tr>
-<tr class="odd">
-<td align="left">开始时间 + 减小音量</td>
-<td align="left">拍摄的屏幕快照</td>
-<td align="left">不支持</td>
-</tr>
-<tr class="even">
-<td align="left">开始时间 + 电源</td>
-<td align="left">（仅当使用 Windows 8.1 按钮体系结构） Ctrl + Alt + Del</td>
-<td align="left">不支持</td>
-</tr>
-<tr class="odd">
-<td align="left">Power + 调高音量</td>
-<td align="left">（仅当使用 Windows 10 按钮体系结构） 拍摄的屏幕快照</td>
-<td align="left">拍摄的屏幕快照</td>
-</tr>
-<tr class="even">
-<td align="left">Power + 向下的卷</td>
-<td align="left">（仅当使用 Windows 10 按钮体系结构） Ctrl + Alt + Del</td>
-<td align="left"><p>启动 Windows 反馈应用</p>
-<p>硬件重置 （在 10 秒）</p></td>
-</tr>
-</tbody>
-</table>
+## <a name="button-behavior-in-windows-81"></a>Windows 8.1 中的按钮行为
 
- 
+### <a name="single-button-behavior-in-windows-81"></a>Windows 8.1 中的单个按钮行为
 
-## <a name="span-idbuttonbehaviorinwindows81spanspan-idbuttonbehaviorinwindows81spanbutton-behavior-in-windows-81"></a><span id="button_behavior_in_windows_8.1"></span><span id="BUTTON_BEHAVIOR_IN_WINDOWS_8.1"></span>在 Windows 8.1 中的按钮行为
+|按钮|操作|Windows 8.1|Windows 8.1 电话|
+|---|---|---|---|
+|电源|按下并释放|开启/关闭开关|开启/关闭开关|
+|电源|按住|启动关机窗帘|启动关机窗帘|
+|电源|长按下并保持|硬关机|硬件重置|
+|搜索|按下并释放|不支持|启动 Cortana|
+|搜索|按住|不支持|通过语音启动 Cortana|
+|调高音量|按下并释放|递增量|递增量|
+|调高音量|按住|自动重复卷增量|自动重复卷增量|
+|减小音量|按下并释放|减量卷|减量卷|
+|减小音量|按住|自动重复卷递减|自动重复卷递减|
+|返回||不支持|不支持|
+|Start||切换开始屏幕|切换开始屏幕|
+|旋转锁定||Release：锁定旋转|锁定旋转|
+|相机焦点||不支持|不适用|
+|照相机快门||不支持|不适用|
 
+### <a name="button-combination-behavior-in-windows-81"></a>Windows 8.1 中的按钮组合行为
 
-### <a name="span-idsinglebuttonbehaviorinwindows81spanspan-idsinglebuttonbehaviorinwindows81spanspan-idsinglebuttonbehaviorinwindows81spansingle-button-behavior-in-windows-81"></a><span id="Single_button_behavior_in_Windows_8.1"></span><span id="single_button_behavior_in_windows_8.1"></span><span id="SINGLE_BUTTON_BEHAVIOR_IN_WINDOWS_8.1"></span>在 Windows 8.1 中的单个按钮行为
+|按钮组合|Windows 8.1|Windows 8.1 电话|
+|---|---|---|
+|启动 + 向上音量|切换屏幕讲述人|不支持|
+|开始和音量降低|拍摄屏幕截图|不支持|
+|开始 + 电源|Ctrl+Alt+Del|不支持|
+|接通电源 + 音量|不支持|拍摄屏幕截图|
+|幂 + 向下音量|不支持|硬件重置（10秒后）|
 
-Windows 8.1 的 Windows 8.1 Phone Power 按按钮操作和发布切换开/关切换开/关按按住启动关闭窗帘启动关闭窗帘长按，保存硬关机硬件重置搜索按和版本不支持启动 Cortana 按和保留不支持使用语音音量增大按启动 Cortana 和发布增量卷增量卷按和保存自动重复音量增量自动重复卷增加音量降低按和发布递减量递减卷按并保存自动重复卷递减自动重复卷递减回不支持不支持启动切换启动屏幕切换启动屏幕旋转锁版本：锁定旋转锁旋转照相机焦点不支持不适用的相机快门不支持不适用
- 
+## <a name="related-topics"></a>相关主题
 
-### <a name="span-idbuttoncombinationbehaviorinwindows81spanspan-idbuttoncombinationbehaviorinwindows81spanspan-idbuttoncombinationbehaviorinwindows81spanbutton-combination-behavior-in-windows-81"></a><span id="Button_combination_behavior_in_Windows_8.1"></span><span id="button_combination_behavior_in_windows_8.1"></span><span id="BUTTON_COMBINATION_BEHAVIOR_IN_WINDOWS_8.1"></span>在 Windows 8.1 中的按钮组合行为
-
-|                     |                           |                               |
-|---------------------|---------------------------|-------------------------------|
-| 按钮组合  | Windows 8.1               | Windows 8.1 Phone             |
-| 开始时间 + 调高音量   | 屏幕上切换讲述人 | 不支持                 |
-| 开始时间 + 减小音量 | 拍摄的屏幕快照           | 不支持                 |
-| 开始时间 + 电源       | Ctrl+Alt+Del              | 不支持                 |
-| Power + 调高音量   | 不支持             | 拍摄的屏幕快照               |
-| Power + 向下的卷 | 不支持             | 硬件重置 （在 10 秒） |
-
- 
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 [Windows 10 按钮体系结构](https://docs.microsoft.com/windows-hardware/drivers/hid/buttons)  
 [最低硬件要求](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview)  
-
-
-

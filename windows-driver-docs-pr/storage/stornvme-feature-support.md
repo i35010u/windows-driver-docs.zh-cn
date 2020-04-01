@@ -4,18 +4,18 @@ description: StorNVMe 支持的 NVMe 功能
 ms.assetid: 96b62fbb-bcf3-402d-ba29-0a61dc95c92c
 ms.date: 01/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ee6ea6a28405aa0680ff9c5bdd505ddd610d84
-ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
+ms.openlocfilehash: 15374cbab57e3b87abfb933f165ab50ab88a979e
+ms.sourcegitcommit: bc6ee54ecf053edf144aab7eeb811e0d233296d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706930"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80435021"
 ---
 # <a name="nvme-features-supported-by-stornvme"></a>StorNVMe 支持的 NVMe 功能
 
 下表列出了 NVME 功能，并指出了在 Windows 10 版本1903及更高版本上由**StorNVMe**提供的支持。
 
-| 功能  | 支持 | 说明 |
+| 功能  | 支持 | Comments |
 | :------- | :-------: | :------- |
 | 固件更新过程                                        | X |  支持第1个槽，多个槽用于提交/下载。 与控制器报告的固件更新粒度对齐。 |
 | 固件激活而不重置                              | X | |
@@ -89,3 +89,7 @@ ms.locfileid: "76706930"
 | NVMe Boot                                                      | X | |
 | Controller Fatal Status Condition                              | X | Log the event and continue with controller re-initialization |
 --->
+
+## <a name="reference-links"></a>引用链接
+- [使用 NVMe 设备](https://docs.microsoft.com/windows/win32/fileio/working-with-nvme-devices)
+- [NVMe 存储协议数据类型](https://docs.microsoft.com/windows/win32/api/winioctl/ne-winioctl-storage_protocol_nvme_data_type)
