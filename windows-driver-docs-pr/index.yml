@@ -10,13 +10,13 @@ metadata:
   ms.topic: hub-page
   ms.date: 01/14/2020
   ms.localizationpriority: medium
-  uhfHeaderId: MSDocsHeader-WinDevCenter
-  ms.openlocfilehash: e7c4175fbc716f69fd76e225dce65c3ed1aee975
-  ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+  uhfHeaderId: MSDocsHeader-WinHW
+  ms.openlocfilehash: 76d9b55b5e2b645fc567db0e576fb0f1f75ee93d
+  ms.sourcegitcommit: 48a66123515d07e46c53241818fe671046524b12
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/21/2020
-  ms.locfileid: "80080145"
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "80544088"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
