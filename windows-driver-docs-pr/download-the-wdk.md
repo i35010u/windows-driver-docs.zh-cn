@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b29587e696774e5095fab420b280ba9f030d2a9b
-ms.sourcegitcommit: 3923846999792f1ba971e949f5961b06121d40e5
+ms.openlocfilehash: 3bf551387fac640f83b6560f3b2055b54dbeeb33
+ms.sourcegitcommit: ea6aa4fc28576dd47359d0a09ea63ce414d5f6b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79429577"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538118"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -46,15 +46,19 @@ WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，�
 
 如果已安装 Visual Studio 2019，则可以使用 Visual Studio 安装程序中的“修改”按钮安装 Windows 10 预览版 SDK (10.0.18362.0)。 
 
+通过执行以下操作，验证是否已安装了适用于 x86/x64 的 MSVC v142 生成工具的正确版本 
+1. 选择“单个组件” 
+1. 在“编译器、生成工具和运行时”  下，选项“MSVC v142 C++ -VS 2019 x64/x86 生成工具(v14.21)”  应处于选中状态，如果没有，请将其选中。
+
 对于 ARM/ARM64 驱动程序开发： 
 
 1. 选择“单个组件”  。 
-1. 在“编译器、生成工具和运行时”下，选择“适用于 ARM/ARM64 的 Visual C++ 编译器和库”。  
+1. 在“编译器、生成工具和运行时”  下，选择“MSVC v142 - VS 2019 C++ ARM 生成工具(v14.21)”  和“MSVC v142 - VS 2019 C++ ARM64 生成工具(v14.21)”  。
 
-对于要为其生成驱动程序的每个体系结构： 
-
-1. 通过“单个组件”  安装 Spectre 缓解库。 
-1. 在“编译器、生成工具和运行时”  下，选择“MSVC v142-VS 2019 C + x64/x86 Spectre 缓解库(v14.21)”  。
+需要为要生成驱动程序的每个体系结构安装 Spectre 缓解库。 转到“单个组件”  选项卡，在“编译器、生成工具和运行时”标题下  ：
+  * 对于 x86 和 x64，请选择“MSVC v142 - VS 2019 C++ x64/x86 Spectre 缓解库(v14.21)”  。
+  * 对于 ARM，请选择“MSVC v142 - VS 2019 C++ ARM Spectre 缓解库(v14.21)”。 
+  * 对于 ARM64，请选择“MSVC v142 - VS 2019 C++ ARM64 Spectre 缓解库(v14.21)”。 
 
 ### <a name="download-icon-step-2-install-wdk-for-windows-10-version-1903"></a>![“下载”图标](images/download-install.png) 步骤 2：安装适用于 Windows 10 版本 1903 的 WDK
 
