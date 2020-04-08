@@ -4,12 +4,12 @@ description: Microsoft Visual Studio 执行的自动 INF 验证会导致驱动�
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f6076de7493669ea26a8096abcb876553bf430
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: 5d8fd642761e39cf25d6f9c1f56a6888fc6cd1a8
+ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080144"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80807611"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF 验证错误和警告
 
@@ -227,7 +227,7 @@ AddService = ,2
 </tr>
 <tr>
 <td><strong>1297：设备驱动程序未安装在任何设备上，请使用基元驱动程序（如果适用）。</strong></td>
-<td>这表明 INF 文件是设备驱动程序，但未用作设备驱动程序。 这可能会导致驱动程序存储区如何处理驱动程序中的问题。 如果不是这种情况，请检查 INF 以确保正确指定硬件 Id。 如果不打算在设备上安装驱动程序，请将其转换为基元驱动程序。  有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver">此文档</a>。
+<td>这表明 INF 文件是设备驱动程序，但未用作设备驱动程序。 这可能会导致驱动程序存储区如何处理驱动程序中的问题。 如果不是这种情况，请检查 INF 以确保正确指定硬件 Id。 如果不打算在设备上安装驱动程序，请将其转换为基元驱动程序。  有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver#converting-from-a-device-driver-inf">从设备驱动程序 INF 转换</a>。
 </td>
 </tr>
 </tbody>
