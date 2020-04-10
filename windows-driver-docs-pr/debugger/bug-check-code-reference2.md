@@ -2,29 +2,60 @@
 title: Bug 检查代码参考
 description: 本部分包含常见 bug 检查的相关说明，包括传递到蓝屏的参数。
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
-ms.date: 02/12/2020
+ms.date: 04/03/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 6bc00100240975a3dbd07beb97ded2720e529583
-ms.sourcegitcommit: 347bd952a4164fd75fd2e4c56d46973bbb90e5a5
+ms.openlocfilehash: 89c0fb22f5c6232ab237eea4a8cc5609fcfa0a27
+ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79504411"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80812509"
 ---
 # <a name="bug-check-code-reference"></a>Bug 检查代码参考
 
-本部分包含常见 Bug 检查代码的说明，包括在蓝色 Bug 检查屏幕上通过错误代码显示的参数。 本节还介绍如何诊断导致 bug 检查的错误，以及用于解决这些错误的可能有效的方法。
+本部分包含常见 Bug 检查代码的说明，这些代码显示在蓝色 Bug 检查屏幕上。 本部分还介绍如何使用 Windows 调试程序中的 [ **!analyze**](-analyze.md) 扩展来显示有关 Bug 检查代码的信息。
 
-> [!NOTE] 
+> [!NOTE]
 > 本主题面向程序员。 如果你是一个客户，你的系统显示了带有 bug 检查代码的蓝屏，请参阅[蓝屏错误疑难解答](https://go.microsoft.com/fwlink/p/?linkid=183646)。
 
-如果此参考信息中没有某个 bug 检查代码的说明信息，请在 Windows 调试器 (WinDbg) 中使用以下语法（内核模式）和 [ **!analyze**](-analyze.md) 扩展，并将 `<code>` 替换为某个 bug 检查代码：
+## <a name="using-windbg-to-display-stop-code-information"></a>使用 WinDbg 显示终止代码信息
+
+如果此主题中没有某个 Bug 检查代码的说明信息，请在 Windows 调试程序 (WinDbg) 中使用以下语法（内核模式）和 [ **!analyze**](-analyze.md) 扩展，并将 `<code>` 替换为某个 Bug 检查代码：
 
 `!analyze -show <code>`
 
 输入此命令会使 WinDbg 显示指定的 bug 检查代码的相关信息。 如果默认数字基数不是 16，则为 `<code>` 添加前缀 **0x**。
 
-下表显示了每个 bug 检查代码的代码和名称。
+向 !analyze 命令提供终止代码参数，以显示任何可用的参数信息。 例如，若要显示有关 [Bug 检查 0x9F：DRIVER_POWER_STATE_FAILURE](bug-check-0x9f--driver-power-state-failure.md)（参数 1 的值为 0x3）的信息，请使用 `!analyze -show 0x9F 0x3`，如下所示。  
+
+```dbgcmd
+1: kd> !analyze -show 0x9F 0x3
+DRIVER_POWER_STATE_FAILURE (9f)
+A driver has failed to complete a power IRP within a specific time.
+Arguments:
+Arg1: 0000000000000003, A device object has been blocking an Irp for too long a time
+Arg2: 0000000000000000, Physical Device Object of the stack
+Arg3: 0000000000000000, nt!TRIAGE_9F_POWER on Win7 and higher, otherwise the Functional Device Object of the stack
+Arg4: 0000000000000000, The blocked IRP
+```
+
+若要下载 WinDbg，请参阅[下载 Windows调试工具](debugger-download-tools.md)。 若要了解有关 WinDbg 开发工具的详细信息，请参阅 [Windows 调试入门](getting-started-with-windows-debugging.md)。
+
+## <a name="bug-check-dump-files"></a>Bug 检查转储文件
+
+进行 Bug 检查时，可能会有一个转储文件，其中包含有关终止代码出现时的内存内容的其他信息。 若要了解故障期间的内存内容，需要了解处理器内存寄存器和程序集。
+
+有关更多信息，请参阅：
+
+- [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+
+- [!analyze](-analyze.md)
+
+- [处理器体系结构](processor-architecture.md)
+
+## <a name="bug-check-codes"></a>Bug 检查代码
+
+下表提供了 Bug 检查代码的链接。
 
 | 代码       | 名称                                                                                                                                              |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------|

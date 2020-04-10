@@ -4,12 +4,12 @@ description: 通过基元驱动程序处理和管理使用基于 INF 的安装�
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e1588c5d17710faa91f4c13890988944cec860b5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 5605ea9a1e13ca0bb1094cc17827645c98f3da63
+ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382423"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80807609"
 ---
 # <a name="creating-a-new-primitive-driver"></a>创建新的基元驱动程序
 
@@ -73,3 +73,52 @@ LegacyUninstall=1
 \[DefaultInstall\] 和 \[DefaultUninstall\] 节中的**体系结构仍必须经过修饰**；但是，如果包含 `LegacyUninstall=1`，则 Windows 会忽略 \[DefaultUninstall\] 节（在 Windows 10 版本 1903 和更高版本中）。 这样，就可以在 INF 中包含该节，从而可以在下层的传统安装/卸载应用程序中使用该节来卸载基元驱动程序包。
 
 从 Windows 10 版本 1903 开始，如果将经过体系结构修饰的 \[DefaultInstall\] 或 \[DefaultUninstall\] 节传入 setupapi.dll 中的 [InstallHInfSection](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectionw) API，则会检查驱动程序包，以确定它是否支持基元驱动程序功能。 如果它不支持基元驱动程序功能，则不会以传统方式处理指定的节，而是适当地将 INF 传递给 [DiInstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) 或 [DiUninstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw)。 这样，单个安装程序就可以在兼容的 OS 版本中使用基元驱动程序，并保留以往 OS 版本的支持。
+
+## <a name="converting-from-a-device-driver-inf"></a>从设备驱动程序 INF 进行转换
+
+将使用 \[Manufacturer\] 的 INF 转换为使用 \[DefaultInstall\] 的 INF 需要对 INF 进行少量更改。 与 \[Manufacturer\] 节不同，\[DefaultInstall\] 节是入口点和 install 节。 这是在概念上将 \[Manufacturer\] 节、\[Models\] 节和 \[DDInstall\] 节合并为一个节。
+
+考虑一下以下设备驱动程序 INF：
+
+```ini
+[Manufacturer]
+%Company% = Driver, NTx86, NTamd64
+
+[Driver.NTx86]
+%DeviceDesc% = InstallSection_32,
+
+[Driver.NTamd64]
+%DeviceDesc% = InstallSection_64,
+
+[InstallSection_64]
+CopyFiles = MyCopyFiles_64
+AddReg = MyAddReg
+
+[InstallSection_64.Services]
+AddService = MyService,, MyService_Install
+
+[InstallSection_32]
+CopyFiles = MyCopyFiles_x86
+AddReg = MyAddReg
+
+[InstallSection_32.Services]
+AddService = MyService,, MyService_Install
+```
+
+此 INF 会在 [InfVerif](../devtest/infverif.md) 中收到 1297 错误，因为它不会在任何硬件上安装。 此 INF 可转换为基于 \[DefaultInstall\] 的 INF，如下所示。
+
+```ini
+[DefaultInstall.NTamd64]
+CopyFiles = MyCopyFiles_64
+AddReg = MyAddReg
+
+[DefaultInstall.NTamd64.Services]
+AddService = MyService,, MyService_Install
+
+[DefaultInstall.NTx86]
+CopyFiles = MyCopyFiles_x86
+AddReg = MyAddReg
+
+[DefaultInstall.NTx86.Services]
+AddService = MyService,, MyService_Install
+```
