@@ -19,12 +19,12 @@ keywords:
 - 创建 INF 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 917ba3860872f8b2e17cc4f085b14cdf8630b30c
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: c0edc01d03438ac5030f83b77b825eb136d2ece4
+ms.sourcegitcommit: 329eee396e727bbd1b2a096a5c7bb0c4b78f52e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910474"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81007811"
 ---
 # <a name="installing-a-file-system-driver"></a>安装文件系统驱动程序
 
@@ -34,7 +34,7 @@ ms.locfileid: "78910474"
 
 安装过程由 INF 文件控制。 有关 INF 文件的详细信息：
 
-- 有关特定于文件系统驱动程序的 INF 文件信息，请参阅[下文](##creating-an-inf-file-for-a-file-system-driver)
+- 有关特定于文件系统驱动程序的 INF 文件信息，请参阅[下文](#creating-an-inf-file-for-a-file-system-driver)
 
 - 有关常规驱动程序安装（包括有关驱动程序包、INF 文件和驱动程序签名的信息）的详细信息，请参阅[设备和驱动程序安装](https://docs.microsoft.com/windows-hardware/drivers/install/)。
 

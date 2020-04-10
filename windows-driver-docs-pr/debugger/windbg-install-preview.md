@@ -1,14 +1,14 @@
 ---
 title: WinDbg 预览版 - 安装
 description: 本部分介绍如何安装 WinDbg 预览版调试程序。
-ms.date: 08/17/2017
+ms.date: 03/30/2020
 ms.localizationpriority: High
-ms.openlocfilehash: dd59454660902e9ab94fc6322eb6eee8df0725a0
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: 32d4efebef4cfff9698f51d55de3a6b7536ebe26
+ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256743"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80812513"
 ---
 # <a name="windbg-preview---installation"></a>WinDbg 预览版 - 安装
 
