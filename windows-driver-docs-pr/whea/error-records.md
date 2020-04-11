@@ -12,19 +12,19 @@ keywords:
 - 错误记录部分 WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1ea1c1e4ac6a34690afa23b471e36cbcd6bdc9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3e1c414e5a40b02ba0e41906bfc592f5768a9613
+ms.sourcegitcommit: d2ea284edaf31a517948e625630e065dfbb57367
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844413"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119187"
 ---
 # <a name="error-records"></a>错误记录
 
 
 Windows 硬件错误体系结构（WHEA）使用标准错误记录格式来表示所有平台硬件错误。 因此，系统固件、Windows 操作系统和用户模式应用程序可以设计硬件错误报告和恢复机制，它们都基于相同的错误记录格式。
 
-WHEA 所使用的错误记录的格式基于*常见平台错误记录*，如2.2 版[统一可扩展固件接口（UEFI）规范](https://go.microsoft.com/fwlink/p/?linkid=69484)的附录 N 中所述。
+WHEA 使用的错误记录的格式基于*常见的平台错误记录*（CPER），如2.2 的[统一可扩展固件接口（UEFI）规范](https://go.microsoft.com/fwlink/p/?linkid=69484)的中所述。
 
 下图显示了错误记录的一般格式。
 
@@ -34,7 +34,7 @@ WHEA 所使用的错误记录的格式基于*常见平台错误记录*，如2.2 
 
 错误记录可能包括用于动态添加错误记录部分和节描述符的额外缓冲区空间。 额外的缓冲区空间还可用于动态增加现有错误记录部分的大小。
 
-错误记录由[**WHEA\_错误\_记录**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record)结构、错误记录标头描述为[**WHEA\_错误\_记录\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_header)结构，每个错误记录部分描述符为由[**WHEA\_错误\_记录\_节\_说明符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)结构。
+错误记录由[**WHEA\_错误\_记录**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record)结构、错误记录标头描述为[**WHEA\_错误\_记录\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_header)结构，且错误记录部分描述符分别由[**WHEA\_错误\_记录\_部分\_的描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)结构描述。
 
 每个错误记录部分可以是以下部分类型之一：
 
