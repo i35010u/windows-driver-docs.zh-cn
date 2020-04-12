@@ -5,7 +5,7 @@ ms.assetid: 7814f827-05fc-419b-b428-4565978bbb52
 keywords:
 - Bug 检查 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION
 - DRIVER_VERIFIER_DETECTED_VIOLATION
-ms.date: 01/28/2020
+ms.date: 04/10/2020
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5b33af05f23102b994a738f6a1d30e9ff750729
-ms.sourcegitcommit: 70c8e83900015eaea013fb742e5e137cfd08ca98
+ms.openlocfilehash: 1bea9f491fc810e4fab972a2fb740b34d8a6b6ca
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885360"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208124"
 ---
 # <a name="bug-check-0xc4-driver_verifier_detected_violation"></a>Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_
 
 检测到\_冲突 bug 检查的驱动程序\_验证程序\_的值为0x000000C4。 这是驱动程序验证程序发现的致命错误的一般 bug 检查代码。 有关详细信息，请参阅[在启用驱动程序验证程序时处理 Bug 检查](handling-a-bug-check-when-driver-verifier-is-enabled.md)。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题面向程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://www.windows.com/stopcode)。
 
 ## <a name="driver_verifier_detected_violation-parameters"></a>检测到\_验证程序\_的驱动程序\_冲突参数
 
@@ -37,7 +37,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x00-to-0x70"></a>0x00 到0x70
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x00|当前 IRQL|池类型|字节数|驱动程序请求了零字节的池分配。|
 |0x01|当前 IRQL|池类型|分配大小（以字节为单位）|驱动程序尝试 APC_LEVEL > 分配分页内存。|
@@ -54,24 +54,24 @@ ms.locfileid: "76885360"
 |0x31|当前 IRQL|请求的 IRQL|0：新的 IRQL 错误1：新的 IRQL 在 DPC 例程内无效|驱动程序向[KeLowerIrql](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kelowerirql~r1)传递了无效参数。 （参数的值大于当前的 IRQL，或大于 HIGH_LEVEL 的值。 这可能是使用未初始化的参数的结果。）|
 |0x32|当前 IRQL|旋转锁地址|0|驱动程序调用[KeReleaseSpinLock 的](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlock)不是 DISPATCH_LEVEL。 （这可能是由于旋转锁的双释放导致的。）|
 |0x33|当前 IRQL|快速 mutex 地址|0|驱动程序尝试 APC_LEVEL > 获取快速 mutex，并提供 IRQL。|
-|0x34 赋|当前 IRQL|线程 APC 禁用计数|快速 mutex 地址|驱动程序尝试以不同于 APC_LEVEL 的 IRQL 释放快速 mutex。|
+|0x34|当前 IRQL|线程 APC 禁用计数|快速 mutex 地址|驱动程序尝试以不同于 APC_LEVEL 的 IRQL 释放快速 mutex。|
 |0x35|当前 IRQL|旋转锁地址|旧 IRQL|内核释放了一个不等于 DISPATCH_LEVEL 的自旋锁。|
 |0x36|当前 IRQL|旋转锁定号|旧 IRQL|内核释放了一个不等于 DISPATCH_LEVEL 的排队自旋锁。|
 |0x37|当前 IRQL|线程 APC 禁用计数|资源|驱动程序试图获取资源，但 Apc 未被禁用。|
 |0x38|当前 IRQL|线程 APC 禁用计数|资源|驱动程序尝试释放资源，但 Apc 未被禁用。|
-|0x39|当前 IRQL|线程 APC 禁用计数|终端|驱动程序尝试获取互斥体 "unsafe"，其中 IRQL 不等于 APC_LEVEL 输入。|
-|0x3A|当前 IRQL|线程 APC 禁用计数|终端|驱动程序尝试发布一个互斥体 "unsafe"，其中 IRQL 不等于 APC_LEVEL 输入。|
+|0x39|当前 IRQL|线程 APC 禁用计数|Mutex|驱动程序尝试获取互斥体 "unsafe"，其中 IRQL 不等于 APC_LEVEL 输入。|
+|0x3A|当前 IRQL|线程 APC 禁用计数|Mutex|驱动程序尝试发布一个互斥体 "unsafe"，其中 IRQL 不等于 APC_LEVEL 输入。|
 |0x3B|当前 IRQL|要等待的对象|超时参数|正在 DISPATCH_LEVEL 或更高版本调用 KeWaitXxx 例程。|
 |0x3C|传递给例程的句柄|对象类型|0|驱动程序调用[ObReferenceObjectByHandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)时使用了错误的句柄。|
 |0x3D|0|0|错误资源的地址|驱动程序将错误（未对齐）资源传递到[ExAcquireResourceExclusive](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)。|
 |0x3E|0|0|0|对于当前不在关键区域中的线程，驱动程序调用[KeLeaveCriticalRegion](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 。|
 |0x3F|对象地址|新的对象引用计数。 -1：取消引用 case 1：引用大小写|0|驱动程序将[ObReferenceObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)应用到引用计数为零的对象，[或者将该驱动程序应用到](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)引用计数为零的对象。|
 |0x40|当前 IRQL|旋转锁地址|0|名为[KeAcquireSpinLockAtDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlockatdpclevel)的驱动程序 DISPATCH_LEVEL <。|
-|0x41 向|当前 IRQL|旋转锁地址|0|名为[KeReleaseSpinLockFromDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)的驱动程序 DISPATCH_LEVEL <。|
+|0x41|当前 IRQL|旋转锁地址|0|名为[KeReleaseSpinLockFromDpcLevel](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasespinlockfromdpclevel)的驱动程序 DISPATCH_LEVEL <。|
 |0x42|当前 IRQL|旋转锁地址|0|名为[KeAcquireSpinLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)的驱动程序 DISPATCH_LEVEL >。|
 |0x51|分配的基址|超出分配的引用的地址|收费字节数|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x52|分配的基址|哈希条目|收费字节数|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
-|0x53|分配的基址|Header|保留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
+|0x53|分配的基址|标头|保留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x54|分配的基址|保留|池哈希大小|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x59|分配的基址|Listindex|保留|驱动程序在写入超过分配末尾后，尝试释放内存。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x60|从分页池分配的字节数|从非分页池分配的字节数|未释放的分配总数|卸载驱动程序时，不首先释放其池分配。 仅当驱动程序验证程序的池跟踪选项处于活动状态时，才会发生带有此参数的 bug 检查。|
@@ -81,7 +81,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x70-to-0x91"></a>0x70 到0x91
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x70|当前 IRQL|MDL 地址|访问模式|名为[MmProbeAndLockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)的驱动程序 DISPATCH_LEVEL >。|
 |0x71|当前 IRQL|MDL 地址|进程地址|名为 MmProbeAndLockProcessPages 的驱动程序 DISPATCH_LEVEL >。|
@@ -109,7 +109,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0xa0-to-0x140"></a>0xA0 到0x140
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0xA0|一个指针，指向用于进行读取或写入请求的 IRP|较低设备的设备对象|检测到错误的扇区数|在硬盘上检测到循环冗余检查（CRC）错误。 仅当驱动程序验证程序的磁盘完整性检查选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0xA1|进行读取或写入请求的 IRP 副本。 （实际 IRP 已经完成。）|较低设备的设备对象|检测到错误的扇区数|在扇区上检测到 CRC 错误（异步）。 仅当驱动程序验证程序的磁盘完整性检查选项处于活动状态时，才会发生带有此参数的 bug 检查。|
@@ -164,7 +164,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x105-to-0x140"></a>0x105 到0x140
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x105 |IRP 的地址|0|0|驱动程序使用 ExFreePool 而不是 IoFreeIrp 来释放 IRP。|
 |0x10A |0|0|0|驱动程序尝试将池配额计费到空闲进程。|
@@ -192,7 +192,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x1000-to-0x100b---deadlocks"></a>0x1000 到 0x100B-死锁
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x1000 |资源地址|保留|保留|自死锁：当前线程已尝试以递归方式获取资源。 仅当驱动程序验证程序的死锁检测选项处于活动状态时，才会发生带有此参数的 bug 检查。|
 |0x1001 |导致死锁的最后原因的资源的地址|保留|保留|死锁：发现锁层次结构冲突。 仅当驱动程序验证程序的死锁检测选项处于活动状态时，才会发生带有此参数的 bug 检查。 （有关详细信息，请使用[！死锁](-deadlock.md)扩展。）|
@@ -212,7 +212,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x2000-to-0x2005---code-integrity-issues"></a>0x2000 到 0x2005-代码完整性问题
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x2000 |驱动程序代码中检测到错误的地址。 |池类型。 | 池标记（如果已提供）。|代码完整性问题：调用方指定了可执行的池类型。 （应为： NonPagedPoolNx） |
 |0x2001 |驱动程序代码中检测到错误的地址。 |页面保护（WIN32_PROTECTION_MASK）。 | 0 |代码完整性问题：调用方指定了可执行页保护。 （应为：已清除 PAGE_EXECUTE * 位） |
@@ -223,7 +223,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0xa001-to-0xa00d---vm-switch-issues"></a>0xA001 到 0xA00D-VM 交换机问题
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0xA001 |指向 NetBufferList 对象的指针|指向虚拟交换机对象的指针（如果非 NULL）|已保留（未使用）|VM 交换机：必须设置调用方提供的 NetBufferList 的 SourceHandle。 请参阅[AllocateNetBufferListForwardingContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)例程。|
 |0xA002 |指向 NetBufferList 对象的指针|指向虚拟交换机对象的指针（如果非 NULL）。|已保留（未使用）|VM 交换机：调用方提供的 NetBufferList 转发详细信息不为零。 请参阅[AllocateNetBufferListForwardingContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)例程。|
@@ -242,7 +242,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x00020002-to-0x00020022---ddi-compliance-rule-violations"></a>0x00020002 到 0x00020022-DDI 符合性规则冲突
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x00020002 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlApcLte](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlapclte)。 规则指定只有当 IRQL < = APC_LEVEL 时，驱动程序才能调用[ObGetObjectSecurity](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obgetobjectsecurity)和[ObReleaseObjectSecurity](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreleaseobjectsecurity) 。|
 |0x00020003 |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlDispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqldispatch)。 IrqlDispatch 规则指定只有当 IRQL = 时，驱动程序才能调用特定例程 DISPATCH_LEVEL|
@@ -270,13 +270,13 @@ ms.locfileid: "76885360"
 |0x0002001E |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlRtlPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlrtlpassive)。 IrqlRtlPassive 规则指定只有当 IRQL = PASSIVE_LEVEL 时，驱动程序才能调用[RtlDeleteRegistryValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtldeleteregistryvalue) 。|
 |0x0002001F |指向描述违反规则条件的字符串的指针。|指向规则状态变量的可选指针。|保留|驱动程序违反了 DDI 相容性规则[IrqlZwPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlzwpassive)。 IrqlZwPassive 规则指定只有当 IRQL = PASSIVE_LEVEL 时，驱动程序才能调用[ZwClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 。|
 |0x00020022 |指向描述违反规则条件的字符串的指针。|已保留（未使用）|已保留（未使用）|驱动程序违反了 DDI 相容性规则[IrqlIoDispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqliodispatch)。|
-|0x00020023 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）。 |已保留（未使用）。 |驱动程序违反了 DDI 相容性规则[IrqlIoRtlZwPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)。 IrqlIoRtlZwPassive 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。|
-|0x00020024 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）。 |已保留（未使用）。 |驱动程序违反了 DDI 相容性规则[IrqlNtifsApcPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)。 IrqlNtifsApcPassive 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 或 IRQL < = APC_LEVEL 执行时，才调用该规则中列出的 DDIs。|
-|0x00020025 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）。 |已保留（未使用）。 |驱动程序违反了 DDI 相容性规则[IrqlKeMore](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)。 IrqlKeMore 规则指定驱动程序以这些 DDIs 所需的 IRQL 调用规则中列出的 DDIs。|
+|0x00020023 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）。 |已保留（未使用）。 |驱动程序违反了 DDI 相容性规则[IrqlIoRtlZwPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqliortlzwpassive)。 IrqlIoRtlZwPassive 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。|
+|0x00020024 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）。 |已保留（未使用）。 |驱动程序违反了 DDI 相容性规则[IrqlNtifsApcPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlntifsapcpassive)。 IrqlNtifsApcPassive 规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 或 IRQL < = APC_LEVEL 执行时，才调用该规则中列出的 DDIs。|
+|0x00020025 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）。 |已保留（未使用）。 |驱动程序违反了 DDI 相容性规则[IrqlKeMore](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkemore)。 IrqlKeMore 规则指定驱动程序以这些 DDIs 所需的 IRQL 调用规则中列出的 DDIs。|
 
 ### <a name="0x00040003-to-0x00043006---ddi-compliance-rule-violations"></a>0x00040003 到 0x00043006-DDI 符合性规则冲突
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x00040003 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[CriticalRegions](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-criticalregions)。|
 |0x00040006 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[QueuedSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-queuedspinlock)。|
@@ -290,7 +290,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x00081001-to-0x00082005---avstream-driver-compliance-rule-violations"></a>0x00081001 到 0x00082005-AVStream 驱动程序符合性规则冲突
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x00081001 |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsDeviceMutex](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksdevicemutex)。|
 |0x00081002 |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsStreamPointerClone](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksstreampointerclone)。|
@@ -303,7 +303,7 @@ ms.locfileid: "76885360"
 |0x00081009 |指向描述违反规则条件的字符串的指针。 |已保留（未使用）|已保留（未使用）|驱动程序违反了 DDI 相容性规则[KsIrqlDDIs](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksirqlddis)。|
 |0x0008100A |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsFilterMutex](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksfiltermutex)。|
 |0x0008100B |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsProcessingMutex](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksprocessingmutex)。|
-|0x0008100C |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsInvalidStreamPointer](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-avstream-drivers)。|
+|0x0008100C |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsInvalidStreamPointer](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksinvalidstreampointer)。|
 |0x00082001 |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsTimedPinSetDeviceState](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-kstimedpinsetdevicestate)。|
 |0x00082002 |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsTimedDeviceCallbacks](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-kstimeddevicecallbacks)。|
 |0x00082003 |指向描述违反规则条件的字符串的指针。 |内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[KsTimedFilterCallbacks](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-kstimedfiltercallbacks)。|
@@ -313,7 +313,7 @@ ms.locfileid: "76885360"
 
 ### <a name="0x00091001-to-0x0009400c---ndis-ddi-compliance-rule-violations"></a>0x00091001 到 0x0009400C-NDIS DDI 相容性规则冲突
 
-|参数 1|参数2|参数3|参数4|错误的原因|
+|参数 1|参数2|参数3|参数4|错误消息的原因|
 |--- |--- |--- |--- |--- |
 |0x00091001 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[NdisOidComplete](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoidcomplete)。|
 |0x00091002 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 DDI 相容性规则[NdisOidDoubleComplete](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoiddoublecomplete)。|
@@ -327,7 +327,7 @@ ms.locfileid: "76885360"
 |0x00093004 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 NDIS/WIFI 验证规则[WlanAssociation](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassociation)。|
 |0x00093005 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 NDIS/WIFI 验证规则[WlanConnectionRoaming](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanconnectionroaming)。|
 |0x00093006 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 NDIS/WIFI 验证规则[WlanDisassociation](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlandisassociation)。|
-|0x00093101|指向描述违反规则条件的字符串的指针。 |已保留（未使用）|已保留（未使用）|驱动程序违反了 NDIS/WIFI 验证规则[WlanAssert](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification-rule-set)。|
+|0x00093101|指向描述违反规则条件的字符串的指针。 |已保留（未使用）|已保留（未使用）|驱动程序违反了 NDIS/WIFI 验证规则[WlanAssert](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassert)。|
 |0x00094007 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 NDIS/WIFI 验证规则[WlanTimedAssociation](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedassociation)。|
 |0x00094008 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 NDIS/WIFI 验证规则[WlanTimedConnectionRoaming](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedconnectionroaming)。|
 |0x00094009 |指向描述违反规则条件的字符串的指针。|内部规则状态的地址（第二个参数为！ ruleinfo）。|补充状态的地址（第三个参数为！ ruleinfo）。|驱动程序违反了 NDIS/WIFI 验证规则[WlanTimedConnectRequest](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedconnectrequest)。|
