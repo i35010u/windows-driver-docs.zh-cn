@@ -2,14 +2,14 @@
 title: 驱动程序安全清单
 description: 本文为驱动程序开发人员提供了驱动程序安全核对清单。
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
-ms.date: 04/02/2019
+ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d2336302cae77e9a4690f0afd20e1b77ac7e0212
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: 813d92b86f130091c03a18f30db163809ed16d9b
+ms.sourcegitcommit: c169ed9a2b5939858c5578aa8d1f363eaecb7494
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528977"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81398336"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -21,7 +21,7 @@ ms.locfileid: "77528977"
 
 但是，在释放驱动程序后，攻击者可能会尝试探测并识别安全漏洞。 开发人员必须在设计和实施阶段考虑这些问题，以最大程度地减少此类漏洞的可能性。 目标是在驱动程序发布之前消除所有已知的安全漏洞。
 
-创建更安全的驱动程序需要系统架构师（特意考虑驱动程序潜在威胁）、实现代码的开发人员（保守编码可能成为攻击来源的常见操作）以及测试团队（主动尝试查找弱点和漏洞）。 通过适当地协调所有这些活动，驱动程序的安全性大大增强。
+创建更安全的驱动程序需要系统架构师（特意考虑对驱动程序的潜在威胁）、实现代码的开发人员（保守编码可能成为攻击来源的常见操作）以及测试团队（主动尝试查找弱点和漏洞）。 通过适当地协调所有这些活动，驱动程序的安全性大大增强。
 
 除了避免与受攻击的驱动程序相关的问题，所述的许多步骤（如更精确地使用内核内存）也会提高驱动程序的可靠性。 这将降低支持成本，并提高客户对产品的满意度。 完成以下清单中的任务可帮助实现所有这些目标。
 
@@ -55,7 +55,7 @@ ms.locfileid: "77528977"
 
 ![空复选框](images/checkbox.png)[使用静态驱动程序验证程序检查是否存在漏洞](#sdv)
 
-![空复选框](images/checkbox.png)[检查带有 Binscope 二进制分析器的代码](#binscope)
+![空复选框](images/checkbox.png)[检查带有 BinSkim 二进制分析器的代码](#binskim)
 
 ![空复选框](images/checkbox.png)[使用代码验证工具](#codevalidationtools)
 
@@ -271,8 +271,6 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 有关 C 和C++安全编码的其他信息，请参阅本文末尾的[安全编码资源](#securecodingresources)。
 
-
-
 ## <a name="span-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanmanage-driver-access-control"></a><span id="ManagingDriverAccessControl"></span><span id="managingdriveraccesscontrol"></span><span id="MANAGINGDRIVERACCESSCONTROL"></span>管理驱动程序访问控制
 
 **安全清单项 \#7：** *检查您的驱动程序以确保正确控制访问。*
@@ -487,96 +485,163 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 8. 单击每个警告以加载 "SDV 报表" 页，并检查与可能的代码漏洞关联的信息。 使用报表调查验证结果，并确定驱动程序中 SDV 验证失败的路径。 有关详细信息，请参阅[静态驱动程序验证程序报表](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)。
 
-## <a name="span-idbinscopespanspan-idbinscopespanspan-idbinscopespancheck-code-with-binscope-binary-analyzer"></a><span id="BinScope"></span><span id="binscope"></span><span id="BINSCOPE"></span>用 BinScope 二进制分析器检查代码
+## <a name="span-idbinskimspanspan-idbinskimspanspan-idbinskimspancheck-code-with-the-binskim-binary-analyzer"></a><span id="BinSkim"></span><span id="binskim"></span><span id="BINSKIM"></span>用 BinSkim 二进制分析器检查代码
 
-**安全清单项 \#15：** *请按照以下步骤进行操作，以使用 BinScope 来仔细检查是否配置了编译和生成选项，以最大程度地减少已知的安全问题。*
+**安全清单项 \#15：** *请按照以下步骤进行操作，以使用 BinSkim 来仔细检查是否配置了编译和生成选项，以最大程度地减少已知的安全问题。*
 
-使用 BinScope 来检查应用程序的二进制文件，以确定编码和构建方法，这可能会导致应用程序容易受到攻击或用作攻击向量。
+使用 BinSkim 来检查二进制文件，以确定编码和构建可能会导致二进制漏洞发生的行为。
 
-有关详细信息，请参阅[新版 BinScope 二进制分析器](https://www.microsoft.com/security/blog/2014/11/20/new-binscope-released/)以及该工具下载中附带的用户和入门指南。
+BinSkim 检查以下内容：
 
-按照以下步骤验证是否已在你要发货的代码中正确配置了安全编译选项：
+- 使用过时的编译器工具集-应尽可能使用最新的编译器工具集编译二进制文件，以最大限度地利用当前编译器级别和操作系统提供的安全缓解措施。
+- 不安全的编译设置-应使用最安全的设置来编译二进制文件，以启用操作系统提供的安全缓解功能，最大限度地提高编译器错误和可操作的警告报告。
+- 签名问题-已签名的二进制文件应该用加密型强算法进行签名。
 
-1. 从此处下载 BinScope Analyzer 和相关文档： <https://www.microsoft.com/download/details.aspx?id=44995>。
+BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式（[SARIF](https://github.com/oasis-tcs/sarif-spec)）格式的输出文件。 BinSkim 替换了以前的[BinScope](https://www.microsoft.com/security/blog/2014/11/20/new-binscope-released/)工具。
 
-2. 查看下载的*BinScope 入门指南*。
+有关 BinSkim 的详细信息，请参阅[BinSkim 用户指南](https://github.com/microsoft/binskim/blob/master/docs/UserGuide.md)。
 
-3. 使用 MSI 文件在目标测试计算机上安装 BinScope，其中包含要验证的已编译代码。
+按照以下步骤验证是否已在您要发送的代码中正确配置了安全编译选项。
 
-4. 打开命令提示符窗口，并执行以下命令以检查已编译的驱动程序二进制文件。 将路径更新为指向你编译的驱动程序 sys.databases 文件。
+1. 下载并安装跨平台[.NET Core SDK](https://dotnet.microsoft.com/download)。
 
-```cpp
-C:\Program Files\Microsoft BinScope 2014>binscope "C:\Samples\KMDF_Echo_Driver\echo.sys" /verbose /html /logfile c:\mylog.htm
+2. 下载 BinSkim 的方法有很多，例如 NuGet 包。 在此示例中，我们将从此处下载包含 BinSkim 的 zip 文件： <https://github.com/microsoft/binskim> 并将其安装在64位 Windows 电脑上。
+
+3. 单击 <https://github.com/microsoft/binskim> 上的 "**克隆或下载**" 按钮，然后选择 "**下载 Zip**"。
+
+4. 单击下载的 zip 文件并将其解压缩，例如 `C:\binskim-master`。
+
+5. 确认已安装 Visual Studio。 有关下载和安装 Visual Studio 的信息，请参阅[安装 Visual studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019)。
+
+6. 打开 "Visual Studio 开发人员命令提示" 窗口，并移到你将文件解压缩到的目录。  
+
+```console
+C:\> Cd \binskim-master
 ```
 
-5. 使用浏览器查看 BinScope 报表，以确认所有检查标记为（通过）。
+7. 在登记的根目录下运行**BuildAndTest** ，以确保发布生成成功，并且所有测试都通过。
 
-默认情况下，HTML 报表将写入 \\用户\\&lt;用户名&gt;\\BinScope\\
+```console
+C:\binskim-master> BuildAndTest.cmd
 
-有三个类别可能输出到一个日志文件中：
+Welcome to .NET Core 3.1!
+---------------------
+SDK Version: 3.1.101
 
-- 失败的检查 \[失败\]
-- 检查未完成 \[错误\]
-- 传递的检查 \[Pass\]
+...
 
-请注意，传递的检查在默认情况下不会写入日志，并且必须通过使用/verbose 开关来启用。
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64\BinSkim.Sdk.dll
+1 File(s) copied
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\linux-x64\BinSkim.Sdk.dll
+1 File(s) copied
 
-```cpp
-Results for Microsoft BinScope 2014 run on MyPC at 2017-01-28T00:18:48.3828242Z
+...
 
-Failed Checks
-No failed checks.
-Passed Checks
-
-• C:\Samples\KMDF_Echo_Driver\echo.sys - ATLVersionCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - ATLVulnCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - CompilerVersionCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - DBCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - DefaultGSCookieCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - ExecutableImportsCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - GSCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - GSFriendlyInitCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - GSFunctionSafeBuffersCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - HighEntropyVACheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - NXCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - RSA32Check (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - SafeSEHCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - SharedSectionCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - VB6Check (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - WXCheck (PASS)
-
-Checks Executed:
-• ATLVersionCheck
-• ATLVulnCheck
-• CompilerVersionCheck
-• DBCheck
-• DefaultGSCookieCheck
-• ExecutableImportsCheck
-• GSCheck
-• GSFriendlyInitCheck
-• GSFunctionSafeBuffersCheck
-• HighEntropyVACheck
-• NXCheck
-• RSA32Check
-• SafeSEHCheck
-• SharedSectionCheck
-• VB6Check
-• WXCheck
-
-All Scanned Items
-
-• C:\Samples\KMDF_Echo_Driver\echo.sys
 ```
+
+8. 生成过程将创建包含 BinSkim 可执行文件的目录集。 转到 win-x64 位生成输出目录。  
+
+```console
+C:\binskim-master> Cd \binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64>
+```
+
+9. 显示 "分析" 选项的帮助。
+
+```console
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim help analyze
+
+BinSkim PE/MSIL Analysis Driver 1.6.0.0
+
+  --sympath                      Symbols path value, e.g., SRV*http://msdl.microsoft.com/download/symbols or Cache*d:\symbols;Srv*http://symweb. See
+                                 https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/advanced-symsrv-use for syntax information. Note that BinSkim will clear the
+                                 _NT_SYMBOL_PATH environment variable at runtime. Use this argument for symbol information instead.
+
+  --local-symbol-directories     A set of semicolon-delimited local directory paths that will be examined when attempting to locate PDBs.
+
+  -o, --output                   File path to which analysis output will be written.
+
+  --verbose                      Emit verbose output. The resulting comprehensive report is designed to provide appropriate evidence for compliance scenarios.
+
+...
+  
+```
+
+**设置符号路径**
+
+如果要在运行 BinSkim 的计算机上生成所有正在分析的代码，则通常不需要设置符号路径。 这是因为符号文件在你编译的本地框中可用。 如果使用更复杂的生成系统，或将符号重定向到不同的位置（不与已编译的二进制文件一起），请使用 `--local-symbol-directories` 将这些位置添加到符号文件搜索。
+如果代码引用了不是代码一部分的已编译的二进制文件，则可以使用 Window 调试器 sympath 来检索符号，以便验证这些代码依赖项的安全性。 如果在这些依赖关系中发现问题，可能无法修复它们。 但是，若要了解任何可能存在的安全风险，请考虑使用这些依赖项。
+
+> [!TIP]
+>添加符号路径（引用联网的符号服务器）时，添加本地缓存位置以指定要缓存符号的本地路径。 不这样做会极大地影响 BinSkim 的性能。 下面的示例在 d:\symbols. 中指定一个本地缓存。
+`--sympath Cache*d:\symbols;Srv*http://symweb`
+有关 sympath 的详细信息，请参阅[Windows 调试器的符号路径](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)。
+
+10. 执行以下命令来分析已编译的驱动程序二进制文件。 将目标路径更新为指向编译的驱动程序 sys.databases 文件。
+
+```console
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim analyze "C:\Samples\KMDF_Echo_Driver\echo.sys"
+```
+
+11. 有关其他信息，请添加如下的详细选项。
+
+```console
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim analyze "C:\Samples\KMDF_Echo_Driver\osrusbfx2.sys" --verbose
+```
+> [!NOTE]
+>--Verbose 选项将为每个检查产生显式通过/失败结果。 如果未提供详细的，则只会看到 BinSkim 检测到的缺陷。 由于日志文件的大小增加，通常不建议使用--verbose 选项，因为这会使日志文件的大小增加，因此，在发生多个 "pass" 结果时，可能更难选取单个失败。
+
+12. 查看命令输出以查找可能存在的问题。 此示例输出显示了三个通过的测试。 [BinSkim 用户指南](https://github.com/microsoft/binskim/blob/master/docs/UserGuide.md)中提供了有关这些规则的其他信息，例如 BA2002。
+
+```console
+Analyzing...
+Analyzing 'osrusbfx2.sys'...
+...
+
+C:\Samples\KMDF_Echo_Driver\osrusbfx2.sys\Debug\osrusbfx2.sys: pass BA2002: 'osrusbfx2.sys' does not incorporate any known vulnerable dependencies, as configured by current policy.
+C:\Samples\KMDF_Echo_Driver\Debug\osrusbfx2.sys: pass BA2005: 'osrusbfx2.sys' is not known to be an obsolete binary that is vulnerable to one or more security problems.
+C:\Samples\KMDF_Echo_Driver\osrusbfx2.sys: pass BA2006: All linked modules of 'osrusbfx2.sys' generated by the Microsoft front-end satisfy configured policy (compiler minimum version 17.0.65501.17013).
+```
+
+13. 此输出显示测试 BA3001 不会运行，因为该工具指示该驱动程序不是 ELF 二进制文件。
+
+```console
+...
+C:\Samples\KMDF_Echo_Driver\Debug\osrusbfx2.sys: notapplicable BA3001: 'osrusbfx2.sys' was not evaluated for check 'EnablePositionIndependentExecutable' as the analysis is not relevant based on observed metadata: image is not an ELF binary.
+```
+
+14. 此输出显示测试 BA2007 的错误。
+
+```console
+...
+
+C:\Samples\KMDF_Echo_Driver\Debug\osrusbfx2.sys: error BA2007: 'osrusbfx2.sys' disables compiler warning(s) which are required by policy.
+A compiler warning is typically required if it has a high likelihood of flagging memory corruption, information disclosure, or double-free vulnerabilities.
+To resolve this issue, enable the indicated warning(s) by removing /Wxxxx switches (where xxxx is a warning id indicated here) from your command line, and resolve any warnings subsequently raised during compilation.
+```
+
+若要在 Visual Studio 中启用这些警告，请C++在项目的属性页中的 "C/" 下，删除**禁用特定警告**时不希望排除的值。
+
+![用于在 Visual Studio 2019 中禁用特定警告的对话框](images/disable-specific-warnings-dialog.png)
+
+Visual Studio 中用于驱动程序项目的默认编译选项可以禁用如下所示的警告。 BinSkim 将报告这些警告。
+
+[C4603-"name"：未定义宏或在预编译标头使用后定义不同](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4603)
+
+[C4627-"description"：在查找预编译标头使用时跳过](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4627)
+
+[C4986-"声明"：异常规范与前面的声明不匹配](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warning-c4986)
+
+有关编译器警告的详细信息，请参阅编译器[警告（按编译器版本](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warnings-by-compiler-version?view=vs-2019)）。
 
 ## <a name="span-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanuse-additional-code-validation-tools"></a><span id="CodeValidationTools"></span><span id="codevalidationtools"></span><span id="CODEVALIDATIONTOOLS"></span>使用其他代码验证工具
 
 **安全清单项 \#16：** *使用这些附加工具来帮助验证你的代码是否遵循安全建议，并探测你的开发过程中丢失的空白。*
 
-除了上面所述[Visual Studio Code 分析](#use-code-analysis)、[静态驱动程序验证程序](#sdv)和[Binscope](#binscope) ，还可以使用以下工具来探测开发过程中丢失的缺口。
+除了上面所述[Visual Studio Code 分析](#use-code-analysis)、[静态驱动程序验证程序](#sdv)和[Binskim](#binskim) ，还可以使用以下工具来探测开发过程中丢失的缺口。
 
 **驱动程序验证程序**
 
-驱动程序验证程序允许对驱动程序进行实时测试。 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。 驱动程序验证程序可将 Windows 驱动程序用于各种强调和测试，以找出不正确的行为。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+驱动程序验证程序允许对驱动程序进行实时测试。 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。 驱动程序验证程序可将 Windows 驱动程序用于各种强调和测试，以找出不正确的行为。 有关详细信息，请参阅[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 **硬件兼容性计划测试**
 
@@ -604,7 +669,7 @@ All Scanned Items
 
 **自定义和域特定的测试工具**
 
-考虑开发自定义域特定的安全测试。 要开发其他测试，请从该软件的原始设计器中收集输入，以及熟悉正在开发的特定驱动程序类型的无关开发资源，以及一个或多个熟悉安全入侵分析和措施.
+考虑开发自定义域特定的安全测试。 若要开发其他测试，请从该软件的原始设计器中收集输入，以及熟悉正在开发的特定驱动程序类型的无关开发资源，以及一个或多个熟悉安全入侵分析和防护的人。
 
 ## <a name="span-iddebuggerspanspan-iddebuggerspanspan-iddebuggerspanreview-debugger-techniques-and-extensions"></a><span id="Debugger"></span><span id="debugger"></span><span id="DEBUGGER"></span>查看调试器技术和扩展
 
@@ -724,5 +789,3 @@ SAFECode 还提供免费的培训：
 - 使用代码扫描实用程序查找已知的代码漏洞并修正任何确定的问题。
 - 寻找熟悉的代码审阅者，查找可能丢失的问题。
 - 使用驱动程序验证程序并使用多个输入（包括拐角情况）测试驱动程序。
-
-[向 Microsoft 发送有关本文的注释](mailto:wsddocfb@microsoft.com?subject=Documentation%20feedback%20[hw_design/hw_design]:%20Driver%20security%20checklist%20%20RELEASE:%20%286/16/2017%29&body=%0A%0APRIVACY%20STATEMENT%0A%0AWe%20use%20your%20feedback%20to%20improve%20the%20documentation.%20We%20don't%20use%20your%20email%20address%20for%20any%20other%20purpose,%20and%20we'll%20remove%20your%20email%20address%20from%20our%20system%20after%20the%20issue%20that%20you're%20reporting%20is%20fixed.%20While%20we're%20working%20to%20fix%20this%20issue,%20we%20might%20send%20you%20an%20email%20message%20to%20ask%20for%20more%20info.%20Later,%20we%20might%20also%20send%20you%20an%20email%20message%20to%20let%20you%20know%20that%20we've%20addressed%20your%20feedback.%0A%0AFor%20more%20info%20about%20Microsoft's%20privacy%20policy,%20see%20 https://privacy.microsoft.com/default.aspx. "向 Microsoft 发送有关本主题的注释")

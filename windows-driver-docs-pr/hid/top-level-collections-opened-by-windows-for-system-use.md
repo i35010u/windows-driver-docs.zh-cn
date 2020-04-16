@@ -3,107 +3,27 @@ title: Windows 打开的供系统使用的顶级集合
 description: Windows 打开的供系统使用的顶级集合
 ms.assetid: e489ce46-379e-4ba9-a0e3-5848b1f4a17b
 keywords:
-- WDK HID 顶级集合
+- 顶级集合 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f4c7794f4dada8b79d887a7b334539e40771f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 310793a6853c78fd7382274cb7353d697d9c4dd4
+ms.sourcegitcommit: f8c3585ec7b1bdfcd65f7f2cc9aa688655de4d20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384356"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81396311"
 ---
 # <a name="top-level-collections-opened-by-windows-for-system-use"></a>Windows 打开的供系统使用的顶级集合
 
+Windows 将打开以下[顶级集合](top-level-collections.md)以供系统使用：
 
-
-
-
-Windows 将打开以下[顶级集合](top-level-collections.md)对于系统使用：
-
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>设备类型</th>
-<th>使用情况页面</th>
-<th>使用 ID</th>
-<th>Windows 客户端</th>
-<th>访问模式</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>指针</p></td>
-<td><p>0x01</p></td>
-<td><p>0x01</p></td>
-<td><p>Win32 子系统</p></td>
-<td><p>独占</p></td>
-</tr>
-<tr class="even">
-<td><p>鼠标</p></td>
-<td><p>0x01</p></td>
-<td><p>0x02</p></td>
-<td><p>Win32 子系统</p></td>
-<td><p>独占</p></td>
-</tr>
-<tr class="odd">
-<td><p>游戏杆</p></td>
-<td><p>0x01</p></td>
-<td><p>0x04</p></td>
-<td><p>DirectInput</p></td>
-<td><p>共享</p></td>
-</tr>
-<tr class="even">
-<td><p>游戏板</p></td>
-<td><p>0x01</p></td>
-<td><p>0x05</p></td>
-<td><p>DirectInput</p></td>
-<td><p>共享</p></td>
-</tr>
-<tr class="odd">
-<td><p>键盘</p></td>
-<td><p>0x01</p></td>
-<td><p>0x06</p></td>
-<td><p>Win32 子系统</p></td>
-<td><p>独占</p></td>
-</tr>
-<tr class="even">
-<td><p>键盘</p></td>
-<td><p>0x01</p></td>
-<td><p>0x07</p></td>
-<td><p>Win32 子系统</p></td>
-<td><p>独占</p></td>
-</tr>
-<tr class="odd">
-<td><p>系统控制</p></td>
-<td><p>0x01</p></td>
-<td><p>0x80</p></td>
-<td><p>Win32 子系统</p></td>
-<td><p>共享</p></td>
-</tr>
-<tr class="even">
-<td><p>使用者音频控件</p></td>
-<td><p>0x0C</p></td>
-<td><p>0x01</p></td>
-<td><p>在 Windows 2000 和 Microsoft Windows XP 的 hidserv.dll （SVC 主机服务的一个） 输入 hidserv.exe</p></td>
-<td><p>共享</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+| 设备类型            | 使用情况页 | 使用 ID | Windows 客户端                                                                                     | 访问模式 |
+|------------------------|:----------:|:--------:|----------------------------------------------------------------------------------------------------|-------------|
+| 指针                | 0x01       | 0x01     | Win32 子系统                                                                                    | 排他   |
+| 鼠标                  | 0x01       | 0x02     | Win32 子系统                                                                                    | 排他   |
+| 操纵杆               | 0x01       | 0x04     | DirectInput                                                                                        | Shared      |
+| 游戏板               | 0x01       | 0x05     | DirectInput                                                                                        | Shared      |
+| 键盘               | 0x01       | 0x06     | Win32 子系统                                                                                    | 排他   |
+| 键盘                 | 0x01       | 0x07     | Win32 子系统                                                                                    | 排他   |
+| 系统控制         | 0x01       | 0x80     | Win32 子系统                                                                                    | Shared      |
+| 消费者音频控制 | 0x0C       | 0x01     | Windows 2000 中的 hidserv 和 hidserv （其中一个 SVC 主机服务）在 Microsoft Windows XP 中 | Shared      |

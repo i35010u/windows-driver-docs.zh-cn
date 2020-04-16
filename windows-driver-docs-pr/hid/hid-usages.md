@@ -20,12 +20,12 @@ keywords:
 - 使用情况 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f88332071171ce90e145e9abfacb36d4c26e61
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: b120368916b603000602e0a1074ab1fbf124011e
+ms.sourcegitcommit: f8c3585ec7b1bdfcd65f7f2cc9aa688655de4d20
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243034"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81396305"
 ---
 #  <a name="hid-usages"></a>HID 用法
 
@@ -59,15 +59,36 @@ ms.locfileid: "79243034"
 
 [解释 HID 报表](interpreting-hid-reports.md)
 
-有关行业标准 HID 用法的详细信息，请参阅位于[USB 实现论坛](https://go.microsoft.com/fwlink/?linkid=830142)网站上的通用串行总线（USB）规范*HID 使用情况表*。 （此资源可能在某些语言和国家/地区不可用。）
+有关行业标准 HID 用法的详细信息，请参阅位于[USB 实现论坛](https://www.usb.org/hid)网站上的通用串行总线（USB）规范**HID 使用情况表**。
 
 ### <a name="usage-page"></a>使用情况页
 
-HID 使用情况组织到相关控件的*使用情况页*中。 特定的控件用法由其使用情况页、[用法 ID](#usage-id)、名称和说明定义。 使用页面的示例包括一般桌面控件、游戏控件、Led、按钮等。 一般桌面控件使用页面上列出的控件示例包括指针、鼠标和键盘设备、游戏杆等。 "使用情况" 页值为16位无符号值。
+HID 使用情况组织到相关控件的*使用情况页*中。 特定的控件用法由其使用情况页、[用法 ID](#usage-id)、名称和说明定义。 "使用情况" 页值为16位无符号值。
+
+使用页面的示例包括：
+
+| 页面 ID | 页面名称                | *hidusage*常量  |
+|:-------:|--------------------------|------------------------|
+| 0x01    | 通用桌面控件 | HID_USAGE_PAGE_GENERIC |
+| 0x05    | 游戏控制            | HID_USAGE_PAGE_GAME    |
+| 0x08    | 灯                     | HID_USAGE_PAGE_LED     |
+| 0x09    | 按钮                   | HID_USAGE_PAGE_BUTTON  |
 
 ### <a name="usage-id"></a>使用 ID
 
 在 "使用情况" 页的上下文中，有效的使用标识符或*使用 ID*指示使用情况页中的用法。 保留的用量 ID 为零。 使用 ID 值是无符号的16位值。
+
+**一般桌面控件**使用页上列出的控件示例：
+
+| 使用 ID | 使用名称            | *hidusage*常量                    |
+|:--------:|-----------------------|------------------------------------------|
+| 0x01     | 指针               | HID_USAGE_GENERIC_POINTER                |
+| 0x02     | 鼠标                 | HID_USAGE_GENERIC_MOUSE                  |
+| 0x04     | 操纵杆              | HID_USAGE_GENERIC_JOYSTICK               |
+| 0x05     | 游戏板              | HID_USAGE_GENERIC_GAMEPAD                |
+| 0x06     | 键盘              | HID_USAGE_GENERIC_KEYBOARD               |
+| 0x07     | 键盘                | HID_USAGE_GENERIC_KEYPAD                 |
+| 0x08     | 多轴控制器 | HID_USAGE_GENERIC_MULTI_AXIS_CONTROLLER  |
 
 ### <a name="extended-usage"></a>扩展使用
 
