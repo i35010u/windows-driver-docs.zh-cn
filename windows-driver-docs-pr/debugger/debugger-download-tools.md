@@ -5,14 +5,14 @@ keywords:
 - Windows 调试工具下载
 - WinDbg
 - 下载
-ms.date: 03/31/2019
+ms.date: 04/09/2020
 ms.localizationpriority: High
-ms.openlocfilehash: ac19a9754d92461185f7b5c398fcb73bed3a57dc
-ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
+ms.openlocfilehash: 65136ac7f480e07fa1f8e4bd588fcba88e03d6dc
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80812517"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208031"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载 Windows 调试工具
 
