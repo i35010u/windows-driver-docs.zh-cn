@@ -5,14 +5,14 @@ ms.assetid: f251fe07-e68e-4d93-9aa5-9a0bc818756d
 keywords:
 - 驱动程序验证程序 WDK，列出的选项
 - 错误 WDK 驱动程序验证程序
-ms.date: 04/20/2017
+ms.date: 04/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cce9f32bc71bab128496970d053b3ef0158a6e9e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 95f9bec69d0bfa4d54f1dadce31c5db2cfb55b38
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840279"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208134"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>驱动程序验证程序选项和规则类
 
@@ -65,11 +65,12 @@ ms.locfileid: "72840279"
 | 内核同步延迟模糊处理 | 24 |
 | VM 交换机验证 | 25 |
 | 代码完整性检查 | 26 |
+| 其他 IRQL 检查 | 35 |
 
-## <a name="optional-feature-and-rule-class-descriptions"></a>可选功能和规则类说明 
+## <a name="optional-feature-and-rule-class-descriptions"></a>可选功能和规则类说明
 
 [特殊池](special-pool.md)
-    
+
 如果启用此选项，则驱动程序验证器将从特殊池分配大部分驱动程序的内存请求。 将会监控此特殊池是否存在内存溢出、内存欠载和内存在释放后仍可访问的情况。
 
 [强制执行 IRQL 检查](force-irql-checking.md)
@@ -94,7 +95,7 @@ ms.locfileid: "72840279"
 
 [增强的 i/o 验证](enhanced-i-o-verification.md)
 
-（Windows XP 及更高版本）此选项处于活动状态时，Driver Verifier 会监视多个 i/o 管理器例程的调用，并对 PnP Irp、电源 Irp 和 WMI Irp 执行压力测试。 在 windows 7 和更高版本的 Windows 操作系统中，增强的 i/o 验证的所有功能都包含在[I/o 验证](i-o-verification.md)的一部分中，它不再可用，也无法在驱动程序验证器管理器或命令行。
+（Windows XP 及更高版本）此选项处于活动状态时，Driver Verifier 会监视多个 i/o 管理器例程的调用，并对 PnP Irp、电源 Irp 和 WMI Irp 执行压力测试。 在 windows 7 和更高版本的 Windows 操作系统中，增强的 i/o 验证的所有功能都包含在[I/o 验证](i-o-verification.md)的一部分中，它不再可用，也无法在驱动程序验证器管理器或命令行中选择此选项。
 
 [DMA 验证](dma-verification.md)
 
@@ -174,8 +175,13 @@ ms.locfileid: "72840279"
 
 [WDF 验证](wdf-verification.md)
 
-WDF 验证检查内核模式驱动程序是否已正确遵循内核模式驱动程序框架（KMDF）要求。 
+WDF 验证检查内核模式驱动程序是否已正确遵循内核模式驱动程序框架（KMDF）要求。
 
+[其他 IRQL 检查]()
+
+其他 IRQL 检查增加了对 PASSIVE_LEVEL 的 DDI 相容性检查 IRQL 规则。 它包含以下两个规则：
+- [IrqlIoRtlZwPassive](wdm-irqliortlzwpassive.md)规则指定，仅当该驱动程序以 IRQL = PASSIVE_LEVEL 执行时，才调用该规则中列出的 DDIs。
+- [IrqlNtifsApcPassive](wdm-irqlntifsapcpassive.md)规则指定，仅当该驱动程序以 irql = PASSIVE_LEVEL 或以 irql < = APC_LEVEL 执行时，才调用该规则中列出的 DDIs。
 
 ## <a name="standard-settings"></a>标准设置
 
@@ -222,10 +228,7 @@ WDF 验证检查内核模式驱动程序是否已正确遵循内核模式驱动�
 </tbody>
 </table>
 
- 
-
 ## <a name="driver-verifier-options-that-require-io-verification"></a>需要 i/o 验证的驱动程序验证程序选项
-
 
 有四个选项需要你先启用 [I/O 验证](i-o-verification.md)。 如果未启用 I/O 验证，则无法启用这些选项。
 
@@ -233,12 +236,3 @@ WDF 验证检查内核模式驱动程序是否已正确遵循内核模式驱动�
 -   [IRP 日志记录](irp-logging.md)
 -   [面向堆栈的固定 MDL 检查](invariant-mdl-checking-for-stack.md)
 -   [面向驱动程序的固定 MDL 检查](invariant-mdl-checking-for-driver.md)
-
- 
-
- 
-
-
-
-
-

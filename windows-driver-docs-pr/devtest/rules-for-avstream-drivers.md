@@ -4,12 +4,12 @@ description: AVStream 微型端口驱动程序的 DDI 符合性规则验证内�
 ms.assetid: 0A104ADF-8607-4708-A0E3-1697F55B0CF5
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5aceb51bb87258551155096a69bb6702ad5187
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3f7b691ec3913871a38b236f019c77518faf7371
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840047"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208130"
 ---
 # <a name="rules-for-avstream-drivers"></a>AVStream 驱动程序的规则
 
@@ -27,7 +27,7 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -52,12 +52,16 @@ AVStream 微型端口驱动程序的 DDI 符合性规则验证内核流式处理
 <td align="left"><p>KsIrqlDeviceCallbacks 规则指定内核流式处理（KS）微型端口驱动程序从具有调用时所具有的相同 IRQL 的 KS 设备回调函数返回。</p></td>
 </tr>
 <tr class="even">
+<td align="left"><p><a href="ks-ksinvalidstreampointer.md" data-raw-source="[&lt;strong&gt;KsInvalidStreamPointer&lt;/strong&gt;](ks-ksinvalidstreampointer.md)"><strong>KsInvalidStreamPointer</strong></a></p></td>
+<td align="left"><p>KsInvalidStreamPointer 规则验证 KS 微型端口驱动程序是否提供有效的 KS 流指针作为函数参数。</p></td>
+</tr>
+<tr class="even">
 <td align="left"><p><a href="ks-ksirqlfiltercallbacks.md" data-raw-source="[&lt;strong&gt;KsIrqlFilterCallbacks&lt;/strong&gt;](ks-ksirqlfiltercallbacks.md)"><strong>KsIrqlFilterCallbacks</strong></a></p></td>
 <td align="left"><p>KsIrqlFilterCallbacks 规则指定内核流式处理（KS）微型端口驱动程序将从 KS 筛选器回调函数返回，该函数与调用回调函数时使用的 IRQL 相同。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ksmarkpendingirp.md" data-raw-source="[&lt;strong&gt;KsMarkPendingIrp&lt;/strong&gt;](ksmarkpendingirp.md)"><strong>KsMarkPendingIrp</strong></a></p></td>
-<td align="left"><p>KsMarkPendingIrp 规则指定在通过以下回调函数返回 STATUS_PENDING 时，内核流（KS）微型端口驱动程序应将 Irp 标记为挂起：</p>
+<td align="left"><p>KsMarkPendingIrp 规则指定在从以下回调函数 STATUS_PENDING 返回时，内核流（KS）微型端口驱动程序应将 Irp 标记为挂起：</p>
 <ul>
 <li>AVStrMiniFilterClose</li>
 <li>AVStrMiniPinClose</li>
