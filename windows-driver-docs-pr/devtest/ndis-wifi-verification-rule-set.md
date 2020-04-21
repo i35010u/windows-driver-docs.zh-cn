@@ -4,12 +4,12 @@ description: 请注意，你可以从 Windows 8.1 开始测试 NDIS/WIFI 驱动�
 ms.assetid: B856F42E-E4AD-4178-AF71-3E68A23209C9
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f7ece175abda9d298922787cd24f4ce34187d3e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5d80ae833baf07af952d6fb55b169359d5de6b02
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840071"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208126"
 ---
 # <a name="ndiswifi-verification-rule-set"></a>NDIS/WIFI 验证规则集
 
@@ -30,7 +30,7 @@ ms.locfileid: "72840071"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -63,7 +63,7 @@ ms.locfileid: "72840071"
 <td align="left"><p><a href="ndis-ndisoiddoublerequest.md" data-raw-source="[&lt;strong&gt;NdisOidDoubleRequest&lt;/strong&gt;](ndis-ndisoiddoublerequest.md)"><strong>NdisOidDoubleRequest</strong></a></p></td>
 <td align="left"><p>此<a href="ndis-ndisoiddoublerequest.md" data-raw-source="[&lt;strong&gt;NdisOidDoubleRequest&lt;/strong&gt;](ndis-ndisoiddoublerequest.md)"><strong>NdisOidDoubleRequest</strong></a>规则验证：</p>
 <ul>
-<li><p>Minport 驱动程序必须完成当前处于挂起状态的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 。</p></li>
+<li><p>Minport 驱动程序必须完成当前挂起的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request" data-raw-source="[&lt;strong&gt;NDIS_OID_REQUEST&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)"><strong>NDIS_OID_REQUEST</strong></a> 。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -77,6 +77,10 @@ ms.locfileid: "72840071"
 <tr class="odd">
 <td align="left"><p><a href="ndis-ndistimedoidcomplete.md" data-raw-source="[&lt;strong&gt;NdisTimedOidComplete&lt;/strong&gt;](ndis-ndistimedoidcomplete.md)"><strong>NdisTimedOidComplete</strong></a></p></td>
 <td align="left"><p><a href="ndis-ndistimedoidcomplete.md" data-raw-source="[&lt;strong&gt;NdisTimedOidComplete&lt;/strong&gt;](ndis-ndistimedoidcomplete.md)"><strong>NdisTimedOidComplete</strong></a>规则指定 NDIS 微型端口驱动程序在12秒内完成 OID 请求。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="ndis-wlanassert.md" data-raw-source="[&lt;strong&gt;WlanAssert&lt;/strong&gt;](ndis-wlanassert.md)"><strong>WlanAssert</strong></a></p></td>
+<td align="left"><p><a href="ndis-wlanassert.md" data-raw-source="[&lt;strong&gt;WlanAssociation&lt;/strong&gt;](ndis-wlanassert.md)"><strong>WlanAssert</strong></a>规则包括在 WDIWIFI 驱动程序中验证的一组检查。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-wlanassociation.md" data-raw-source="[&lt;strong&gt;WlanAssociation&lt;/strong&gt;](ndis-wlanassociation.md)"><strong>WlanAssociation</strong></a></p></td>
@@ -100,7 +104,7 @@ ms.locfileid: "72840071"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-wlantimedconnectrequest.md" data-raw-source="[&lt;strong&gt;WlanTimedConnectRequest&lt;/strong&gt;](ndis-wlantimedconnectrequest.md)"><strong>WlanTimedConnectRequest</strong></a></p></td>
-<td align="left"><p><a href="ndis-wlantimedconnectrequest.md" data-raw-source="[&lt;strong&gt;WlanTimedConnectRequest&lt;/strong&gt;](ndis-wlantimedconnectrequest.md)"><strong>WlanTimedConnectRequest</strong></a>规则在10秒内验证 OID_DOT11_CONNECT_REQUEST 是否后跟 NDIS_STATUS_DOT11_CONNECTION_START。</p></td>
+<td align="left"><p><a href="ndis-wlantimedconnectrequest.md" data-raw-source="[&lt;strong&gt;WlanTimedConnectRequest&lt;/strong&gt;](ndis-wlantimedconnectrequest.md)"><strong>WlanTimedConnectRequest</strong></a>规则验证 OID_DOT11_CONNECT_REQUEST 后是否 NDIS_STATUS_DOT11_CONNECTION_START 10 秒内。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ndis-wlantimedscan.md" data-raw-source="[&lt;strong&gt;WlanTimedScan&lt;/strong&gt;](ndis-wlantimedscan.md)"><strong>WlanTimedScan</strong></a></p></td>
@@ -108,7 +112,7 @@ ms.locfileid: "72840071"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-wlantimedlinkquality.md" data-raw-source="[&lt;strong&gt;WlanTimedLinkQuality&lt;/strong&gt;](ndis-wlantimedlinkquality.md)"><strong>WlanTimedLinkQuality</strong></a></p></td>
-<td align="left"><p><a href="ndis-wlantimedlinkquality.md" data-raw-source="[&lt;strong&gt;WlanTimedLinkQuality&lt;/strong&gt;](ndis-wlantimedlinkquality.md)"><strong>WlanTimedLinkQuality</strong></a>规则指定在成功 NDIS_STATUS_DOT11_ASSOCIATION_COMPLETION 后的15秒内执行 NDIS_STATUS_DOT11_LINK_QUALITY 指示。</p></td>
+<td align="left"><p><a href="ndis-wlantimedlinkquality.md" data-raw-source="[&lt;strong&gt;WlanTimedLinkQuality&lt;/strong&gt;](ndis-wlantimedlinkquality.md)"><strong>WlanTimedLinkQuality</strong></a>规则指定在成功 NDIS_STATUS_DOT11_ASSOCIATION_COMPLETION 后15秒内发出 NDIS_STATUS_DOT11_LINK_QUALITY 指示。</p></td>
 </tr>
 </tbody>
 </table>
