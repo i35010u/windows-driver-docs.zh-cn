@@ -2,14 +2,14 @@
 title: 获取产品数据
 description: Microsoft 硬件 API 中的这些方法可获取注册到开发人员中心帐户的硬件产品的数据。
 ms.topic: article
-ms.date: 04/05/2018
+ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d881ea71051ac1c65c2c06207cef7ebab7953b1
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 426ef28c766ff2f052253021528efc6fc9a688fd
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243068"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82039811"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -42,11 +42,11 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 
 ```json
 {
-  "id”: 9007199267351834,
-  “sharedProductId”: 1152921504606971100,
-  “links”: [
+  "id": 9007199267351834,
+  "sharedProductId": 1152921504606971100,
+  "links": [
     {
-      “href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
       "rel": "self",
       "method": "GET"
     },
@@ -199,7 +199,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | 值 | 类型 | 说明 |
 |:--|:--|:--|
 | 项目 | 数组 | 下载类型和每种类型的 URL 的数组。 有关详细信息，请参阅下文 |
-| 类型 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的 Shell</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
+| 类型 | 字符串 | 可供下载的程序包的类型。 可能的值为：<ul><li>“initialPackage”- 用户上传的程序包（对于新提交，它指向用于上传程序包的 SAS URI）</li><li>“derivedPackage”- 派生的提交的外壳</li><li>“signedPackage”- 由 Microsoft 签名的程序包</li><li>“certificationReport”- 签名产品的认证报告</li></ul>|
 | Messages | 数组 | 一个字符串数组，用于提供有关可下载文件的消息 |
 
 ### <a name="link-object"></a>链接对象
@@ -396,6 +396,10 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
 | Windows_v100_19H1 | Windows 10 19H1 更新 |
+| Windows_v100_VB | Windows 10 即将发布的更新 |
+
+>[!NOTE]
+>在更新发布之前，Windows_v100_VB 操作系统系列代码是无效的。
 
 ### <a name="list-of-operating-system-codes"></a>操作系统代码列表
 
@@ -456,6 +460,12 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 |WINDOWS_v100_19H1_FULL |Windows 19H1 客户端 x86 |
 |WINDOWS_v100_X64_19H1_FULL |Windows 19H1 客户端 x64 |
 |WINDOWS_v100_ARM64_19H1_FULL | Windows 19H1 客户端 ARM64 |
+|WINDOWS_v100_VB_FULL | Windows 10（下一次更新）客户端 x86 |
+|WINDOWS_v100_X64_VB_FULL | Windows（下一次更新）客户端 x64 |
+|WINDOWS_v100_ARM64_VB_FULL | Windows（下一次更新）客户端 ARM64 |
+
+>[!NOTE]
+>在更新发布之前，三个 \*_VB\* 操作系统代码都是无效的。
 
 ## <a name="error-codes"></a>错误代码
 

@@ -5,10 +5,10 @@ description: 设置分析和验证计数器清单的 CTRPP 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f33684b24b51557b594f9153c82048a3e396cae3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370820"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>驱动程序项目的计数器清单预处理器属性
@@ -32,7 +32,7 @@ ms.locfileid: "67370820"
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -74,25 +74,25 @@ ms.locfileid: "67370820"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Generate_Summary_Global_File"></span><span id="generate_summary_global_file"></span><span id="GENERATE_SUMMARY_GLOBAL_FILE"></span>生成摘要全局文件</p></td>
-<td align="left"><p>生成每个提供程序的二进制计数器文件。 (<strong>-summary</strong> <em>path</em>)</p>
+<td align="left"><p>生成每个提供程序的二进制计数器文件。 (<strong>-summary</strong> <路径>)</p>
 <p>生成摘要全局文件 GenSumResource.BIN。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generated_Counter_Files_Path"></span><span id="generated_counter_files_path"></span><span id="GENERATED_COUNTER_FILES_PATH"></span>生成的计数器文件路径</p></td>
-<td align="left"><p>指定生成二进制计数器文件的路径。 (<strong>-sumPath</strong> <em>path</em>)</p>
+<td align="left"><p>指定生成二进制计数器文件的路径。 (<strong>-sumPath</strong> <路径>)</p>
 <p>如果未指定路径，则使用当前目录。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Header_File_Name_For_Counter"></span><span id="header_file_name_for_counter"></span><span id="HEADER_FILE_NAME_FOR_COUNTER"></span>计数器的头文件名</p></td>
-<td align="left"><p>生成包含计数器名称和 ID 的头文件。 (<strong>-ch</strong> <em>filename</em>)</p></td>
+<td align="left"><p>生成包含计数器名称和 ID 的头文件。 (<strong>-ch</strong> <文件名>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Header_FileName_For_Provider"></span><span id="header_filename_for_provider"></span><span id="HEADER_FILENAME_FOR_PROVIDER"></span>提供程序的头文件名</p></td>
-<td align="left"><p>生成提供程序的头文件。 它将替换默认名称。 (<strong>-o</strong> <em>filename</em>)</p></td>
+<td align="left"><p>生成提供程序的头文件。 它将替换默认名称。 (<strong>-o</strong> <文件名>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Resource_File_Name"></span><span id="resource_file_name"></span><span id="RESOURCE_FILE_NAME"></span>资源文件名</p></td>
-<td align="left"><p>指定资源文件的名称。 这将替换默认名称。 (<strong>-rc</strong> <em>filename</em>)</p></td>
+<td align="left"><p>指定资源文件的名称。 这将替换默认名称。 (<strong>-rc</strong> <文件名>)</p></td>
 </tr>
 </tbody>
 </table>

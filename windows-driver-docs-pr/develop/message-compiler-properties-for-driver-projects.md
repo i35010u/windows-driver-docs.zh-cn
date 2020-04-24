@@ -5,10 +5,10 @@ description: 设置消息编译器 (MC.exe) 工具的属性。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f5cbea73bb79d260dc703c226a5898c2784ecf5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364257"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>驱动程序项目的消息编译器属性
@@ -20,7 +20,7 @@ ms.locfileid: "67364257"
 ## <a name="span-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspanspan-idsetting_message_compiler_properties_for_driver_projectsspansetting-message-compiler-properties-for-driver-projects"></a><span id="Setting_Message_Compiler_properties_for_driver_projects"></span><span id="setting_message_compiler_properties_for_driver_projects"></span><span id="SETTING_MESSAGE_COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的消息编译器属性
 
 
-1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
+1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”  中右键单击驱动程序项目，并选择“属性”  。
 2.  在驱动程序项目的属性页中，单击“配置属性”  ，然后单击“消息编译器”  。
 3.  设置项目属性。
 
@@ -34,7 +34,7 @@ ms.locfileid: "67364257"
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -52,15 +52,15 @@ ms.locfileid: "67364257"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Baseline_Path"></span><span id="baseline_path"></span><span id="BASELINE_PATH"></span><strong>基线路径</strong></p></td>
-<td align="left"><p>此路径必须指向包含基线操作创建的 .BIN 文件的文件夹。 (<strong>-t</strong> <em>directory</em>)</p></td>
+<td align="left"><p>此路径必须指向包含基线操作创建的 .BIN 文件的文件夹。 (<strong>-t</strong> <目录>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Baseline_Resource_Path"></span><span id="baseline_resource_path"></span><span id="BASELINE_RESOURCE_PATH"></span><strong>基线资源路径</strong></p></td>
-<td align="left"><p>包含基线清单文件的文件夹。 (<strong>-s</strong> <em>directory</em>)</p></td>
+<td align="left"><p>包含基线清单文件的文件夹。 (<strong>-s</strong> <目录>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Debug_Output_Path"></span><span id="debug_output_path"></span><span id="DEBUG_OUTPUT_PATH"></span><strong>调试输出路径</strong></p></td>
-<td align="left"><p>用于放置 .dbg C 包含文件的路径。 (<strong>-x</strong> <em>path</em>)</p></td>
+<td align="left"><p>用于放置 .dbg C 包含文件的路径。 (<strong>-x</strong> <路径>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Enable_Callout_Macro"></span><span id="enable_callout_macro"></span><span id="ENABLE_CALLOUT_MACRO"></span><strong>启用标注宏</strong></p></td>
@@ -72,7 +72,7 @@ ms.locfileid: "67364257"
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="File_extension_for_the_generated_header"></span><span id="file_extension_for_the_generated_header"></span><span id="FILE_EXTENSION_FOR_THE_GENERATED_HEADER"></span><strong>生成的头文件的文件扩展名</strong></p></td>
-<td align="left"><p>指定生成的头文件的扩展名。 (<strong>-e</strong> <em>extension</em>)</p></td>
+<td align="left"><p>指定生成的头文件的扩展名。 (<strong>-e</strong> <扩展名>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Generate_Baseline_Resource"></span><span id="generate_baseline_resource"></span><span id="GENERATE_BASELINE_RESOURCE"></span><strong>生成基线资源</strong></p></td>
@@ -80,7 +80,7 @@ ms.locfileid: "67364257"
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generate_C___managed__logging_class"></span><span id="generate_c___managed__logging_class"></span><span id="GENERATE_C___MANAGED__LOGGING_CLASS"></span><strong>生成 C#（托管）日志记录类</strong></p></td>
-<td align="left"><p>生成一个 C#（托管）日志记录类，你可以通过调用其中包含的方法来将事件记录到清单中。 (<strong>-cs</strong> <em>namespace</em>)</p></td>
+<td align="left"><p>生成一个 C#（托管）日志记录类，你可以通过调用其中包含的方法来将事件记录到清单中。 (<strong>-cs</strong> <命名空间>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Generate_header_file_for_containing_counter_names_and_GUIDs"></span><span id="generate_header_file_for_containing_counter_names_and_guids"></span><span id="GENERATE_HEADER_FILE_FOR_CONTAINING_COUNTER_NAMES_AND_GUIDS"></span><strong>生成包含计数器名称和 GUID 的头文件</strong></p></td>
@@ -100,7 +100,7 @@ ms.locfileid: "67364257"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Generate_static_C___managed__logging_class"></span><span id="generate_static_c___managed__logging_class"></span><span id="GENERATE_STATIC_C___MANAGED__LOGGING_CLASS"></span><strong>生成静态 C#（托管）日志记录类</strong></p></td>
-<td align="left"><p>生成一个静态 C#（托管）日志记录类，你可以通过调用其中包含的方法来将事件记录到清单中。 (<strong>-css</strong> <em>namespace</em>)</p></td>
+<td align="left"><p>生成一个静态 C#（托管）日志记录类，你可以通过调用其中包含的方法来将事件记录到清单中。 (<strong>-css</strong> <命名空间>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generate_User_Mode_Logging_Macros"></span><span id="generate_user_mode_logging_macros"></span><span id="GENERATE_USER_MODE_LOGGING_MACROS"></span><strong>生成用户模式日志记录宏</strong></p></td>
@@ -108,7 +108,7 @@ ms.locfileid: "67364257"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Generated_Files_Base_Name"></span><span id="generated_files_base_name"></span><span id="GENERATED_FILES_BASE_NAME"></span><strong>生成文件基名</strong></p></td>
-<td align="left"><p>指定所有生成文件的基名。 (<strong>-z</strong> <em>basename</em>)</p></td>
+<td align="left"><p>指定所有生成文件的基名。 (<strong>-z</strong> <基名>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Generated_RC_and_Binary_Message_Files_Path"></span><span id="generated_rc_and_binary_message_files_path"></span><span id="GENERATED_RC_AND_BINARY_MESSAGE_FILES_PATH"></span><strong>生成 RC 和二进制消息文件路径</strong></p></td>
@@ -116,23 +116,23 @@ ms.locfileid: "67364257"
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Header_File_Path"></span><span id="header_file_path"></span><span id="HEADER_FILE_PATH"></span><strong>头文件路径</strong></p></td>
-<td align="left"><p>指定生成的头文件的路径。 (<strong>-h</strong> <em>path</em>)</p></td>
+<td align="left"><p>指定生成的头文件的路径。 (<strong>-h</strong> <路径>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Maximum_Message_Length"></span><span id="maximum_message_length"></span><span id="MAXIMUM_MESSAGE_LENGTH"></span><strong>最大消息长度</strong></p></td>
-<td align="left"><p>使用此参数来让编译器在任何消息超出字符长度时生成警告。 (<strong>-m</strong> <em>length</em>)</p></td>
+<td align="left"><p>使用此参数来让编译器在任何消息超出字符长度时生成警告。 (<strong>-m</strong> <长度>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Prefix_Macro_Name"></span><span id="prefix_macro_name"></span><span id="PREFIX_MACRO_NAME"></span><strong>前缀宏名称</strong></p></td>
-<td align="left"><p>使用此参数来覆盖编译器用于记录宏名称和方法名称的默认前缀。 (<strong>-p</strong> <em>prefix</em>)</p></td>
+<td align="left"><p>使用此参数来覆盖编译器用于记录宏名称和方法名称的默认前缀。 (<strong>-p</strong> <前缀>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="RC_File_Path"></span><span id="rc_file_path"></span><span id="RC_FILE_PATH"></span><strong>RC 文件路径</strong></p></td>
-<td align="left"><p>你想要编译器在其中放置生成的资源编译器脚本 (.rc file) 和生成的 .bin 文件的文件夹。 (<strong>-r</strong> <em>path</em>)</p></td>
+<td align="left"><p>你想要编译器在其中放置生成的资源编译器脚本 (.rc file) 和生成的 .bin 文件的文件夹。 (<strong>-r</strong> <路径>)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Remove_Characters_From_Symbolic_Name"></span><span id="remove_characters_from_symbolic_name"></span><span id="REMOVE_CHARACTERS_FROM_SYMBOLIC_NAME"></span><strong>从符号名称中删除字符</strong></p></td>
-<td align="left"><p>使用此参数来从你为事件指定的符号名称开始删除字符。 (<strong>-P</strong> <em>prefix</em>)</p></td>
+<td align="left"><p>使用此参数来从你为事件指定的符号名称开始删除字符。 (<strong>-P</strong> <前缀>)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Set_Customer_Bit"></span><span id="set_customer_bit"></span><span id="SET_CUSTOMER_BIT"></span><strong>设置客户位</strong></p></td>

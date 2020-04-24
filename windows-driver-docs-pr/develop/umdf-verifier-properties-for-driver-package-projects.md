@@ -5,10 +5,10 @@ description: 设置测试计算机上的 UMDF 验证程序的属性。 为测试
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a35afe6236b5018df0cf51f4384d9d81cf8fc6c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364203"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 UMDF 验证程序属性
@@ -34,12 +34,12 @@ ms.locfileid: "67364203"
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="_Deploy_UMDF_Verifier"></span><span id="_deploy_umdf_verifier"></span><span id="_DEPLOY_UMDF_VERIFIER"></span> <strong>部署 UMDF 验证程序</strong></p></td>
+<td align="left"><p><span id="_Deploy_UMDF_Verifier"></span><span id="_deploy_umdf_verifier"></span><span id="_DEPLOY_UMDF_VERIFIER"></span><strong>部署 UMDF 验证程序</strong></p></td>
 <td align="left"><p>启用测试计算机上的 UMDF 验证程序设置。</p></td>
 </tr>
 <tr class="even">
@@ -65,7 +65,7 @@ ms.locfileid: "67364203"
 <p><strong>所有错误</strong> - 记录所有错误。</p>
 <p><strong>警告和所有错误</strong> - 记录警告和所有错误。</p>
 <p><strong>信息事件、警告和所有错误</strong> - 记录信息事件、警告和所有错误。</p>
-<p><strong>详细输出(任何种类的所有事件)</strong> - 记录所有事件。</p></td>
+<p><strong>详细输出（任何种类的所有事件）</strong> - 记录所有事件。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Log_to_Kernel_Debugger"></span><span id="log_to_kernel_debugger"></span><span id="LOG_TO_KERNEL_DEBUGGER"></span><strong>记录到内核调试程序</strong></p></td>

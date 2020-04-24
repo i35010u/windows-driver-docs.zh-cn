@@ -5,10 +5,10 @@ description: 设置 Stampinf 工具的属性。 生成驱动程序时，你可�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75d7d9cb94387f22ccc82fc7f7ee48c0d5e66ce8
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393071"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>驱动程序项目的 Stampinf 属性
@@ -32,7 +32,7 @@ ms.locfileid: "67393071"
 <thead>
 <tr class="header">
 <th align="left">Stampinf 选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

@@ -5,10 +5,10 @@ ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c146762cf55ceb51c081c0852fa966424e6df221
-ms.sourcegitcommit: 459c7928a7917609afb68bafb65c2fcc1d9040ff
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "69887200"
 ---
 # <a name="device-filter-driver-ordering"></a>设备筛选器驱动程序排序
@@ -21,7 +21,7 @@ Microsoft 开发了一种以声明方式添加筛选器的方法，，此方法�
 
 使用 AddReg 指令的筛选器注册只会将筛选器追加到筛选器列表的末尾。 此方法使用值的列表，其中的顺序非常重要，决定了要将筛选器加载到堆栈中的哪个位置。
 
-使用单个有序值列表的方法不太理想，尤其是当 [AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) 只追加到末尾时，因为在有多个驱动程序将筛选器添加到同一设备时，会造成不利后果。   
+使用单个有序值列表这一方法不太理想，尤其是当 [AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) 只追加到末尾时，因为在有多个驱动程序将筛选器添加到同一设备时，会造成不利后果。   
 
 在至少涉及到一个[扩展 INF](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file) 的情况下，如果 INF 不当使用 **AddReg**（即，不使用追加标志），则它们可能会擦除掉另一 INF 添加的筛选器。
 

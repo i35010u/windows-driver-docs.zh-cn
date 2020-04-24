@@ -5,10 +5,10 @@ description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db6f4fa3a257c04f317ad5569b3d9c444dc1dc0
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261421"
 ---
 # <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>使用 Visual Studio 和 WDK 生成驱动程序
@@ -18,8 +18,8 @@ ms.locfileid: "74261421"
 你可以使用任意版本的 Microsoft Visual Studio 2015（包括 Microsoft Visual Studio Community 2015）为以下操作系统生成驱动程序：
 
 -   Windows 10
--   Windows 8.1
--   Windows 7
+-   Windows 8.1
+-   Windows 7
 
 **重要提示**  从 Windows 驱动程序工具包 (WDK) 8 开始，MSBuild 取代 Windows 生成实用程序 (Build.exe)。 WDK 现在使用的编译器和生成工具与你用于生成 Visual Studio 项目的工具相同。 使用以前版本的 WDK 生成的驱动程序项目必须转换为在 Visual Studio 环境中工作。 你可以从命令行运行转换实用程序，也可以通过从现有源创建新 Visual Studio 项目来转换现有驱动程序。 有关详细信息，请参阅[从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)和 [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)。
 
@@ -138,7 +138,7 @@ WDK 提供了大量的命令行工具，如 [Stampinf](https://docs.microsoft.co
 
 **使用 Visual Studio 中的选项提高生成输出的详细级别**
 
-1.  单击“工具”&gt;“选项”。  
+1.  单击“工具”  &gt;“选项”  。
 2.  单击“项目和解决方案”  文件夹，然后单击“生成并运行”  。
 3.  更改“MSBuild 项目生成输出详细级别”  和“MSBuild 项目生成日志文件详细级别”  选项。 默认情况下，这些选项设置为“最低”。
 
@@ -152,7 +152,7 @@ WDK 提供了大量的命令行工具，如 [Stampinf](https://docs.microsoft.co
 * [MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)
 * [从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)
 * [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)
-* [为驱动程序签名](signing-a-driver.md)
+* [签署驱动程序](signing-a-driver.md)
 * [将驱动程序部署到测试计算机](deploying-a-driver-to-a-test-computer.md)
 
 

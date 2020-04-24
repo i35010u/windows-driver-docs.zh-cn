@@ -5,17 +5,17 @@ description: 可以使用 ApiValidator.exe 工具验证驱动程序调用的 API
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b5827d01525464f5660e863bf48c7a3e66ae21
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344035"
 ---
 # <a name="validating-universal-windows-drivers"></a>验证通用 Windows 驱动程序
 
 可以使用 ApiValidator.exe 工具验证二进制文件调用的 API 是否对通用 Windows 驱动程序有效。 如果二进制文件调用的 API 不是有效的通用 Windows 驱动程序 API，该工具将返回错误。 此工具是适用于 Windows 10 的 Windows 驱动程序工具包 (WDK) 的一部分。
 
-## <a name="span-idrunningapivalidatorinvisualstudiospanspan-idrunningapivalidatorinvisualstudiospanspan-idrunningapivalidatorinvisualstudiospanrunning-apivalidator-in-visual-studio"></a><span id="Running_ApiValidator_in_Visual_Studio"></span><span id="running_apivalidator_in_visual_studio"></span><span id="RUNNING_APIVALIDATOR_IN_VISUAL_STUDIO"></span>在 Visual Studio 中运行 ApiValidator
+## <a name="span-idrunning_apivalidator_in_visual_studiospanspan-idrunning_apivalidator_in_visual_studiospanspan-idrunning_apivalidator_in_visual_studiospanrunning-apivalidator-in-visual-studio"></a><span id="Running_ApiValidator_in_Visual_Studio"></span><span id="running_apivalidator_in_visual_studio"></span><span id="RUNNING_APIVALIDATOR_IN_VISUAL_STUDIO"></span>在 Visual Studio 中运行 ApiValidator
 
 
 如果驱动程序项目的“目标平台”  属性设置为“通用”  ，Visual Studio 将作为生成后步骤自动运行 ApiValidator。

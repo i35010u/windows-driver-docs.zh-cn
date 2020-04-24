@@ -1,21 +1,21 @@
 ---
 title: 基于模板编写通用 Windows 驱动程序 (KMDF)
-description: 本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写通用 Windows 驱动程序。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装你的驱动程序。
+description: 本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写通用 Windows 驱动程序。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
 ms.assetid: 1E15A136-94BB-46C1-A438-9562C6BDCE7E
 keywords:
 - 编写 KMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93b1d7ec9576a9ec817ef6f7aa1f64797a5fa1f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf1f284a64b66737bed3cd89bc9ffbd04c22aa6c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359296"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81679077"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (KMDF)
 
-本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装你的驱动程序。
+本主题介绍了如何使用内核模式驱动程序框架 (KMDF) 编写[通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。 首先使用 Microsoft Visual Studio 模板，然后在单独的计算机上部署和安装驱动程序。
 
 若要开始操作，请确保你已安装 [Microsoft Visual Studio 2015](https://go.microsoft.com/fwlink/p/?LinkId=698539) 和 [Windows 驱动程序工具包 (WDK) 10](https://go.microsoft.com/fwlink/p/?LinkId=733614)。
 
@@ -100,7 +100,7 @@ ms.locfileid: "67359296"
 2. 在目标计算机上，导航到包含驱动程序文件的文件夹，然后运行 DevCon 工具，以安装驱动程序。
     1. 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
-        *devcon install \<INF file\> \<hardware ID\>*
+        devcon install \<INF 文件\> \<硬件 ID\> 
 
         安装此驱动程序所需的 INF 文件是 KmdfDriver.inf。 INF 文件包含用于安装驱动程序二进制文件 *KmdfDriver.sys* 的硬件 ID。 回想一下，位于 INF 文件中的硬件 ID 是 **Root\\KmdfDriver**。
     2. 以管理员身份打开命令提示符窗口。 导航到你的驱动程序包文件夹，然后输入以下命令：
@@ -144,7 +144,7 @@ ms.locfileid: "67359296"
 
 有关驱动程序调试过程的详细分步演练，请参阅[调试通用驱动程序 - 分步实验室（回显内核模式）](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。
 
-有关远程调试的详细信息，请参阅[使用 WinDbg 远程调试](../debugger/remode-debugging-using-windbg.md)。
+有关远程调试的详细信息，请参阅[使用 WinDbg 远程调试](../debugger/remote-debugging-using-windbg.md)。
 
 ## <a name="using-the-driver-module-framework-dmf"></a>使用驱动程序模块框架 (DMF)
 
@@ -164,4 +164,4 @@ DMF 不会取代 WDF。 DMF 是与 WDF 搭配使用的另一个框架。 利用 
 
 [调试通用驱动程序 - 分步实验室（回显内核模式）](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 
-[编写第一个驱动程序](writing-your-first-driver.md)
+[编写你的第一个驱动程序](writing-your-first-driver.md)

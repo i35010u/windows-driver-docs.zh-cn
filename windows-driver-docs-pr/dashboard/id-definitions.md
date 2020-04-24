@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb44f0d544f52e7025949b95d0f2ef7756d9638
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67353884"
 ---
 # <a name="dashboard-id-definitions"></a>仪表板 ID 定义
@@ -29,7 +29,7 @@ ms.locfileid: "67353884"
 <thead>
 <tr class="header">
 <th>ID 名称</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -40,7 +40,7 @@ ms.locfileid: "67353884"
 <tr class="even">
 <td><p>专用产品 ID</p></td>
 <td><p>专用产品 ID 是在创建每个新产品时生成的顶级标识符。 此 ID 最常用于对特定产品进行个人参考并预测其 URL。
-&gt; [!NOTE] &gt; 与其他人共享驱动程序时，将为他们分配一个新的专用产品 ID。 如果你想要交流有关产品的信息，请使用共享产品 ID。
+&gt; [!NOTE] &gt; 当你与其他人共享驱动程序时，一个新的专用产品 ID 将分配给他们。 如果你想要交流有关产品的信息，请使用共享产品 ID。
 </p>
 </td>
 </tr>
@@ -53,7 +53,7 @@ ms.locfileid: "67353884"
 
 发货标签还包含两个其他 ID：
 
-|ID 名称 | 描述|
+|ID 名称 | 说明|
 |--- | ---|
 |发货标签 ID | 此标识符用于内部跟踪，并分配给为产品分配的任何发货标签。 在大多数情况下，你不需要知道发货标签 ID。|
 |推广请求 ID | 如果发货标签需要 Microsoft 进行手动审查，则将为其提供推广请求 ID。 它表示驱动程序发货室内的唯一发货标签。 你应在任何支持查询中包含此 ID。|

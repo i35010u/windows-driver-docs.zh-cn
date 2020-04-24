@@ -5,10 +5,10 @@ description: 本主题提供解决使用 WDK 运行设备基础功能测试时�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab5a9eecc731f01f5b93e966ffed3a3fa0be69c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364201"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>驱动程序部署、测试和调试配置故障排除

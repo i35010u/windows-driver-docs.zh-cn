@@ -5,10 +5,10 @@ description: 提供为驱动程序部署预配 Visual Studio 的故障排除技�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92c41da624e1f1285e0a2cc60c47cec5e3f9cb60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364212"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>驱动程序部署、测试和调试配置故障排除

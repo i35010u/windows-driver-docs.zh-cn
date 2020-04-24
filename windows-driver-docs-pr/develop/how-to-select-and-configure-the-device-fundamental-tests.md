@@ -5,10 +5,10 @@ description: 适用于 Windows 8 的 WDK 提供了一个驱动程序测试框架
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 155e3e4d792052db0e7bb4a24fb439bb8eefcf69
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72839614"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>如何选择和配置设备基础功能测试
@@ -60,7 +60,7 @@ WDK 提供有两种配置的设备基础功能测试：基本和认证。 在两
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -245,7 +245,7 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 <thead>
 <tr class="header">
 <th align="left">测试</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -277,7 +277,7 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 <thead>
 <tr class="header">
 <th align="left">测试</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

@@ -6,12 +6,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d43b1c8593473a5724208048d9acfa78803fe95
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d4e8ef4e012d9f09ec0b60bad6bc2910a1ce253b
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825164"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81679416"
 ---
 # <a name="write-a-universal-hello-world-driver-kmdf"></a>编写通用 Hello World 驱动程序 (KMDF)
 
@@ -51,7 +51,7 @@ ms.locfileid: "72825164"
     > [!NOTE]
     > 文件扩展名为 **.c**，不是 **.cpp**。
 
-     单击**添加**。 Driver.c 文件添加在源文件下，如下所示。
+     单击 **“添加”** 。 Driver.c 文件添加在源文件下，如下所示。
 
     ![“解决方案资源管理器”窗口的屏幕截图，显示添加到驱动程序项目中的 driver.c 文件](images/firstdriverkmdfsmall03.png)
 
@@ -289,7 +289,7 @@ ms.locfileid: "72825164"
 2. 在目标计算机上，导航到包含驱动程序文件的文件夹，然后运行 DevCon 工具，以安装驱动程序。 
     1. 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
-        *devcon install \<INF file\> \<hardware ID\>*
+        devcon install \<INF 文件\> \<硬件 ID\> 
 
         安装此驱动程序所需的 INF 文件是 KmdfHelloWorld.inf。 INF 文件包含用于安装驱动程序二进制文件 *KmdfHelloWorld.sys* 的硬件 ID。 回想一下，位于 INF 文件中的硬件 ID 是 **Root\\KmdfHelloWorld**。
     2. 以管理员身份打开命令提示符窗口。 导航到内置驱动程序 .sys 文件所在的文件夹，然后输入以下命令：
@@ -333,7 +333,7 @@ ms.locfileid: "72825164"
 
 有关驱动程序调试过程的详细分步演练，请参阅[调试通用驱动程序 - 分步实验室（回显内核模式）](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。
 
-有关远程调试的详细信息，请参阅[使用 WinDbg 远程调试](../debugger/remode-debugging-using-windbg.md)。
+有关远程调试的详细信息，请参阅[使用 WinDbg 远程调试](../debugger/remote-debugging-using-windbg.md)。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
@@ -343,4 +343,4 @@ ms.locfileid: "72825164"
 
 [调试通用驱动程序 - 分步实验室（回显内核模式）](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 
-[编写第一个驱动程序](writing-your-first-driver.md)
+[编写你的第一个驱动程序](writing-your-first-driver.md)

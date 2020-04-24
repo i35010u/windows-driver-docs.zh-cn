@@ -5,10 +5,10 @@ description: 在公开发布驱动程序包之前，我们建议你先提交程�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a0e381540ef439e45300df2e0d8852d687acc90
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393066"
 ---
 # <a name="signing-a-driver-for-public-release"></a>为驱动程序签名以便公开发布

@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6d70012306391ab0b95550962673213e43d1d3
-ms.sourcegitcommit: cdb75f4fae5b4da47c860205e407c5a7a44b89b6
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68446391"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>获取由 Microsoft 签名的适用于多个 Windows 版本的驱动程序
@@ -98,7 +98,7 @@ ms.locfileid: "68446391"
 
 对于已提交到硬件开发人员中心 (Sysdev) 的 WLK 提交、系统提交或证明签名的驱动程序：
 
-- 依次选择“硬件兼容性”  &gt;“管理提交”  &gt;在“摘要和任务”  选项卡上，如果状态为“已批准”  ，则表示可以随时检索提交。 在屏幕右下角的“下载”  下，单击“已签名的驱动程序包”  。 Microsoft 将流式传输内存中包含已签名提交的 zip 文件。
+- 依次选择“硬件兼容性”  &gt;“管理提交”  &gt;。在“摘要和任务”  选项卡上，如果状态为“已批准”  ，则表示提交可供检索。 在屏幕右下角的“下载”  下，单击“已签名的驱动程序包”  。 Microsoft 将流式传输内存中包含已签名提交的 zip 文件。
 
 提交文件夹内将是程序包文件。 这些文件都由 Microsoft 进行签名。 合作伙伴无需对返回的负载进行签名。 Microsoft 始终返回内含已批准提交的 .cat 文件。 如果合作伙伴包含自己的 .cat 文件。 Microsoft 将丢弃它，并返回自己已签名的 .cat 文件。
 
