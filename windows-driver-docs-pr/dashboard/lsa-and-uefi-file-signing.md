@@ -5,10 +5,10 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
 ms.openlocfilehash: cafdaa3a12a23d36c1174c64f1367c70eb80fecf
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393063"
 ---
 # <a name="file-signing-lsa-plugins-and-uefi-firmware"></a>文件签名 LSA 插件和 UEFI 固件

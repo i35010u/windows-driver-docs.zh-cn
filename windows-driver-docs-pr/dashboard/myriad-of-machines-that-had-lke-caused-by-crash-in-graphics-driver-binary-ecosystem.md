@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 10/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c53dbdb8e3c0678349a926d9c215f817ae33140
-ms.sourcegitcommit: fe0b8b8b162c6fc0afd82dd03e83d41be0bc5d12
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72980748"
 ---
 # <a name="myriad-of-machines-that-had-an-lke-caused-by-a-crash-in-the-graphics-driver-binary"></a>由于显卡驱动程序二进制文件中的崩溃导致发生了 LKE 的计算机的巨大数量
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 在用户会话期间，显卡驱动程序二进制文件中的崩溃可能导致实时内核事件 (LKE)，该事件可能会重启计算机，并且可能会中断用户的工作流。 该度量评估由于显卡驱动程序二进制文件中的崩溃而导致遇到 LKE 的使用该驱动程序的计算机数。
 

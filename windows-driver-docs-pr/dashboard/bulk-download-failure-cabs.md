@@ -6,10 +6,10 @@ ms.date: 09/01/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5afb3cf56642ec6a28827ee3d6df0afcd2b10874
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63337283"
 ---
 # <a name="bulk-download-failure-cabs"></a>批量下载失败的 Cab
@@ -26,13 +26,13 @@ ms.locfileid: "63337283"
 
 ## <a name="request-header"></a>请求标头
 
-|标头|在任务栏的搜索框中键入|描述|
+|Header|类型|说明|
 |----|----|----|
-|授权|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>  。|
+|Authorization|字符串|必需。 Azure AD 访问令牌的格式为 **Bearer** *\<token\>* 。|
 
 ### <a name="request-parameters"></a>请求参数
 
-|参数|在任务栏的搜索框中键入|描述|必需|
+|参数|类型|说明|必需|
 |----|----|----|----|
 |applicationId|字符串|要为其检索错误数据的驱动程序的产品 ID 值。|是|
 |failureHash|字符串|你希望获取详细信息的错误的唯一 ID。|是|

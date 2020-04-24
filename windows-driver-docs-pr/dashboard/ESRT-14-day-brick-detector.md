@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d8e46ef69b3c9b9a40c2d596fd6ebd15bcf06f1
-ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79083148"
 ---
 # <a name="percent-of-machines-that-successfully-installed-firmware-and-have-seen-no-heartbeat-within-14-days"></a>已成功安装固件但 14 天内未报告任何遥测数据的计算机的百分比

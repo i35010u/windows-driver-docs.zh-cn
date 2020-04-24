@@ -5,10 +5,10 @@ ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 5605ea9a1e13ca0bb1094cc17827645c98f3da63
-ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80807609"
 ---
 # <a name="creating-a-new-primitive-driver"></a>创建新的基元驱动程序

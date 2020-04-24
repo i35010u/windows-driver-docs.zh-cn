@@ -6,10 +6,10 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 10/17/2018
 ms.openlocfilehash: 7b66c22e03cf5b6b1568c0146093f37a2a5faacb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63337293"
 ---
 # <a name="bug-management"></a>Bug 管理

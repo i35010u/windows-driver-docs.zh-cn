@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a9e4b1c9fe858e37ab4559ba4090638010f61c0
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74097525"
 ---
 # <a name="percent-of-machines-reporting-successful-firmware-installation-from-esrt"></a>从 ESRT 报告成功安装固件的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 该度量将 28 天滑动窗口中的遥测数据聚合为尝试安装时成功的比率。
 如果发生以下事件，则会将安装定义为成功的安装：

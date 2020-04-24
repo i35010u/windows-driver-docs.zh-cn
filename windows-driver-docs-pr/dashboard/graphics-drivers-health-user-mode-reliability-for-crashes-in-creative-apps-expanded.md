@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 00c88187a857cfc107189f317249ba5dd5f23612
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017067"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-creative-applications-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>创意应用程序中用户模式可靠性的崩溃次数（按使用时间规范化）小于或等于基线目标
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 该度量计算在创意应用程序上下文中发生的显示器驱动程序的崩溃次数，并计算具有更新的驱动程序的所有计算机上的[创意应用程序](measure-appendix.md#creative-applications-example)运行时。 然后，该度量将总运行时规范化到年，指示用户在一年中使用创意应用程序时可能遇到的崩溃次数。
 

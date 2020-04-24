@@ -5,10 +5,10 @@ ms.assetid: 33387A72-5278-4637-AED4-C010E4C1616B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19cf08d6a8ce1a7d2f81ee5907cdc664a7f004b9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72825165"
 ---
 # <a name="minidrivers-miniport-drivers-and-driver-pairs"></a>微型驱动程序、微型端口驱动程序和驱动程序对

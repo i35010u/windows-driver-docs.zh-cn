@@ -5,10 +5,10 @@ description: 驱动程序验证程序是一款运行时验证工具，用于提�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f53baf932735ec28168f437aeebad78c69eeac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72839612"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的驱动程序验证程序属性

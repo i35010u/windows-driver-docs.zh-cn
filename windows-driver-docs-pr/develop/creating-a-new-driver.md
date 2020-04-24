@@ -5,10 +5,10 @@ description: 在本主题中，我们将介绍如何使用 Visual Studio 开始�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d023d9883cb92acd21636a7ff89f73a926c0b65f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370789"
 ---
 # <a name="creating-a-new-device-function-driver"></a>创建新设备功能驱动程序

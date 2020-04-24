@@ -5,10 +5,10 @@ ms.date: 05/28/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38052a3ea40526dd32913c7a395be865e3268ef6
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "66307868"
 ---
 # <a name="understanding-windows-update-automatic-and-optional-rules-for-driver-distribution"></a>了解适用于驱动程序分发的 Windows 更新自动和可选规则
@@ -54,7 +54,7 @@ ms.locfileid: "66307868"
 |-|-|-|-|-|
 |仅“自动”|是|否|仅当本地驱动程序是通用的/缺失时。|是|
 |仅“动态更新”|仅当本地驱动程序是通用的/缺失，并且 WU 没有适用的**自动**驱动程序时|是|仅当本地驱动程序是通用的/缺失，并且 WU 没有适用的**自动**驱动程序时|是|
-|两者|是|是|仅当本地驱动程序是通用的/缺失时。|是|
+|双向|是|是|仅当本地驱动程序是通用的/缺失时。|是|
 |两者均未选中|仅当本地驱动程序是通用的/缺失，并且 WU 没有适用的**自动**驱动程序时|否|仅当本地驱动程序是通用的/缺失，并且 WU 没有适用的**自动**驱动程序时|是|
 
 <!--use word generic? or just condense descriptive text?-->

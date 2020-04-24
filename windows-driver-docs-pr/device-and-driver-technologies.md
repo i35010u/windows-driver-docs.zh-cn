@@ -5,10 +5,10 @@ ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5c8ed9dc26adca1c411ff0ca108a294d744c12
-ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77144693"
 ---
 # <a name="overview-of-driver-technologies"></a>驱动程序技术概述

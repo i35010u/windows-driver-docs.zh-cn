@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5428bfce09d725cd1bd781d393054faa0f0de2c
-ms.sourcegitcommit: c466ccb35634d7b57a97326764db6d7bff232cf2
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68533206"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
@@ -77,7 +77,7 @@ ms.locfileid: "68533206"
 
 * URL 中使用的标识号及其位置如下所示：
 
-| Component | 描述 |
+| 组件 | 说明 |
 | ---       | ---         |
 |SellerID   | 合作伙伴帐户的标识号。 可以在帐户管理页上的**帐户设置**下，找到该标识号。 |
 |PrivateProductID | 每次创建产品时生成的标识号。 位于产品的驱动程序详细信息页上。 请参阅[仪表板 ID 定义](https://docs.microsoft.com/windows-hardware/drivers/dashboard/id-definitions)，了解详细信息。 |

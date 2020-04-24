@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 605ab114189e5a34e665dd3441ca4ad1ff10dcbf
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017079"
 ---
 # <a name="percent-of-camera-photo-capture-failures"></a>相机照片捕获失败次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 若要将相机的预览捕获到内存中，用户可拍摄照片，并将其存储在计算机上。 如果照片处理过程失败，用户将无法捕获所需的图像。
 

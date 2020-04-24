@@ -5,10 +5,10 @@ description: 介绍如何使用设备元数据创作向导在 Visual Studio 中�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dea0b545e7d808fa88ef5e438f17683598d657d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370817"
 ---
 # <a name="creating-a-device-metadata-package"></a>创建设备元数据包

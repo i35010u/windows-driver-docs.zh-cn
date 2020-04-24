@@ -5,10 +5,10 @@ ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 69bea184cab181b3a92713957d7a643a6164df11
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072182"
 ---
 # <a name="create-a-new-product"></a>创建新产品

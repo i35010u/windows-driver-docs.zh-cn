@@ -5,10 +5,10 @@ description: 如果你在为不同版本的 Windows 编写驱动程序，以下�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d00ea320f46d52efb357a2c28489b7788dbdba4b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72829903"
 ---
 # <a name="building-drivers-for-different-versions-of-windows"></a>为不同版本的 Windows 生成驱动程序

@@ -6,13 +6,13 @@ ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 0d75b697082a08b8c7b87c25586e1b058dd24c17
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76980706"
 ---
-# <a name="top"></a>驱动程序开发中的新增功能
+# <a name="whats-new-in-driver-development"></a><a name="top"></a>驱动程序开发中的新增功能
 
 本部分提供有关 Windows 10 中 Windows 驱动程序开发的新增功能和更新的信息。
 
@@ -290,7 +290,7 @@ Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.micro
 
 [返回页首](#top)
 
-### <a name="audio-1903"></a>音频
+### <a name="audio"></a><a name="audio-1903"></a>音频
 
 下面是 Windows 10 版本 1903 中新的和更新的音频功能列表：
 
@@ -302,7 +302,7 @@ Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.micro
     
 * [USB 音频 2.0 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/usb-2-0-audio-drivers)中的新插孔说明信息。
 
-### <a name="camera-1903"></a>相机
+### <a name="camera"></a><a name="camera-1903"></a>相机
 
 在 Windows 10 版本 1903 中添加的新相机驱动程序文档和功能包括：
 
@@ -313,7 +313,7 @@ Windows 10 版本 1903 支持[定向电源管理框架 (DFx)](https://docs.micro
   * MSXU_CONTROL_METADATA
   * MSUX_CONTROL_IR_TORCH
 
-### <a name="display-1903"></a>显示
+### <a name="display"></a><a name="display-1903"></a>显示
 
 Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
@@ -327,7 +327,7 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 * **驱动程序热更新**：需要更新 OS 组件时，尽量减少服务器停机时间。 请参阅 [DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) 和 [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate)。
 
-### <a name="networking-1903"></a>网络
+### <a name="networking"></a><a name="networking-1903"></a>网络
 
 #### <a name="netadaptercx"></a>NetAdapterCx
 
@@ -374,7 +374,7 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 * [移动套餐](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/mobile-plans)
 
-### <a name="mobilebroadband-1903"></a>移动宽带
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1903"></a>移动宽带
 
 以下功能已添加到 Windows 10 版本 1903 中的移动宽带：
 
@@ -383,7 +383,7 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 * 新的[使用 DSS 进行调制解调器日志记录](https://docs.microsoft.com/windows-hardware/drivers/network/mb-modem-logging-with-dss)功能。
 * 新的 [5G 数据类支持](https://docs.microsoft.com/windows-hardware/drivers/network/mb-5g-data-class-support)功能。
 
-### <a name="print-1903"></a>打印
+### <a name="print"></a><a name="print-1903"></a>打印
 
 在 Windows 10 版本 1903 中添加的新打印驱动程序文档和功能包括：
 
@@ -395,13 +395,13 @@ Windows 10 版本 1903 中的显示驱动程序开发的更新包括：
 
 * 新的 **fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_printprovidor) 结构成员和更新的文档。
 
-### <a name="sensors-1903"></a>传感器
+### <a name="sensors"></a><a name="sensors-1903"></a>传感器
 
 Windows 10 版本 1903 中传感器驱动程序开发的新功能包括用于测试和校准屏幕亮度的 [MALT（Microsoft 环境光照度工具）](https://docs.microsoft.com/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)。
 
 此外，还更新了环境色 OEM 白皮书。
 
-### <a name="storage-1903"></a>存储
+### <a name="storage"></a><a name="storage-1903"></a>存储
 
 Windows 10 版本 1903 中添加了以下存储功能：
 
@@ -421,7 +421,7 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 * [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
 * [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
 
-### <a name="wifi-1903"></a>Wi-Fi
+### <a name="wi-fi"></a><a name="wifi-1903"></a>Wi-Fi
 
 新的 Wi-Fi 驱动程序开发文档和功能包括：
 
@@ -442,17 +442,17 @@ Windows 10 版本 1903 包含 WHEA 的简化界面。  有关详细信息，请�
 
 [返回页首](#top)
 
-### <a name="audio-1809"></a>音频
+### <a name="audio"></a><a name="audio-1809"></a>音频
 
 现已发布有关新的 [sidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/sidebandaudio/) 和 [usbsidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbsidebandaudio/) 标头的文档。
 
-### <a name="bluetooth-1809"></a>蓝牙
+### <a name="bluetooth"></a><a name="bluetooth-1809"></a>蓝牙
 
 * HCI_VS_MSFT_Read_Supported_Features 已更新，包含用于安全简单配对过程的新标志。 请参阅 [Microsoft 定义的蓝牙 HCI 命令和事件](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/microsoft-defined-bluetooth-hci-commands-and-events#hcivsmsftreadsupportedfeatures)。
 
 * 以下网页提供了 Windows 10 版本 1809 的新 QDID：[108589](https://launchstudio.bluetooth.com/ListingDetails/55701)。 有关所有版本的 QD ID 完整列表，请参阅[蓝牙](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)。
 
-### <a name="display-1809"></a>显示
+### <a name="display"></a><a name="display-1809"></a>显示
 
 Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
@@ -494,7 +494,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
 * **SDR 白水平**：内核模式设备驱动程序接口的更改包括将新的参数添加到现有的 DDI，使图形驱动程序知道 OS 复合器对所有在 HDR 模式下显示的 SDR 内容应用的“SDR 白水平”值。 请参阅“_DXGK_COLORIMETRY”。
 
-### <a name="kernel-1809"></a>Windows 内核
+### <a name="windows-kernel"></a><a name="kernel-1809"></a>Windows 内核
 
 核心内核中添加了几个新的 API：
 
@@ -515,7 +515,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 * [KzLowerIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzlowerirql) 和 [KzRaiseIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzraiseirql) 已移到面向 Windows 8 和更高版本的内核组件的受支持外部 forceinline，而不依赖于转发器来实例化内联函数的特殊用例。
 * 平展 PCI 的门户桥 (FPB) 现在受支持。 有关详细信息，请参阅[官方规范](https://pcisig.com/sites/default/files/specification_documents/ECN_FPB_9_Feb_2017.pdf)。 在 [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) 中声明了新的 API (_PCI_FPB_*)。
 
-### <a name="networking-1809"></a>网络
+### <a name="networking"></a><a name="networking-1809"></a>网络
 
 #### <a name="netadaptercx"></a>NetAdapterCx
 
@@ -538,7 +538,7 @@ Windows 10 版本 1809 中的“显示”驱动程序开发的更新包括：
 
 [接收端缩放版本 2 (RSSv2)](https://docs.microsoft.com/windows-hardware/drivers/network/receive-side-scaling-version-2-rssv2-) 已更新为版本 1.01。
 
-### <a name="mobilebroadband-1809"></a>移动宽带
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1809"></a>移动宽带
 
 * 新的 [OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-mpdp) 和 DDI 可以支持 MBB 设备的多个数据包数据协议 (MPDP) 接口。
 * 新的[基于设备的重置和恢复](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-based-reset-and-recovery)能够以更可靠的方式重置和恢复 MBB 设备与驱动程序。
@@ -553,7 +553,7 @@ MBBCx 电源管理方法已简化。
 
 现在，桌面版 COSA 支持 [AutoConnectOrder 设置](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings#apn-database-and-desktop-cosa-settings)。
 
-### <a name="sensors-1809"></a>传感器
+### <a name="sensors"></a><a name="sensors-1809"></a>传感器
 
 自动亮度调节功能支持：
 
@@ -561,7 +561,7 @@ MBBCx 电源管理方法已简化。
 
 有关详细信息，请参阅[光传感器数据字段](https://docs.microsoft.com/windows-hardware/drivers/sensors/light-sensor-data-fields)。
 
-### <a name="usb-1809"></a>USB
+### <a name="usb"></a><a name="usb-1809"></a>USB
 
 **面向 USB 类型 C 驱动程序开发人员的新功能：**
 
@@ -588,7 +588,7 @@ MBBCx 电源管理方法已简化。
 
 * [EVT_UCX_USBDEVICE_DISABLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_disable)
 
-### <a name="wifi-1809"></a>Wi-Fi
+### <a name="wi-fi"></a><a name="wifi-1809"></a>Wi-Fi
 
 WLAN 设备驱动程序接口 (WDI) 规范已更新为版本 1.1.7。
 
@@ -601,15 +601,15 @@ WLAN 设备驱动程序接口 (WDI) 规范已更新为版本 1.1.7。
 
 [返回页首](#top)
 
-### <a name="acpi-1803"></a>ACPI
+### <a name="acpi"></a><a name="acpi-1803"></a>ACPI
 
 Windows 10 版本 1803 包含 ACPI DDI 的更新，支持平台功能和物理设备定位。
 
-### <a name="audio-1803"></a>音频
+### <a name="audio"></a><a name="audio-1803"></a>音频
 
 [语音激活](https://docs.microsoft.com/windows-hardware/drivers/audio/voice-activation)主题已更新，包括有关 APO 要求的附加信息。
 
-### <a name="bluetooth-1803"></a>蓝牙
+### <a name="bluetooth"></a><a name="bluetooth-1803"></a>蓝牙
 
 Windows 10 版本 1803 引入了迅速配对的支持。 用户不再需要在设置应用中导航并查找外设即可配对。 Windows 可以自动为用户完成配对。当附近出现新的外设并且该设备准备就绪时，Windows 会弹出一条通知。 确保外设进行迅速配对需要满足两套要求。 一套要求与外设的行为相关，另一套要求与 Microsoft 定义的供应商播发部分中的结构和值相关。 有关更多信息，请参阅：
 
@@ -618,14 +618,14 @@ Windows 10 版本 1803 引入了迅速配对的支持。 用户不再需要在�
 
 Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信息，请参阅 [Windows 10 中的蓝牙版本和配置文件支持](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/general-bluetooth-support-in-windows)。
 
-### <a name="camera-1803"></a>相机
+### <a name="camera"></a><a name="camera-1803"></a>相机
 
 对相机驱动程序开发的更新包括：
 
 * [适用于 UVC 设备的 DShow (DirectShow) 桥实施指南](https://docs.microsoft.com/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices) - 有关配置符合 USB 视频类 (UVC) 规范的相机和设备的 DShow 桥的实施指南。 平台使用 USB 总线标准中的 Microsoft OS 描述符来配置 DShow 桥。 扩展属性 OS 描述符是 USB 标准描述符的扩展，USB 设备使用它来返回尚未通过标准规范启用的 Windows 特定设备属性。
 * [全景相机视频捕获](https://docs.microsoft.com/windows-hardware/drivers/stream/360-camera-video-capture) - 使用现有的 MediaCapture API 提供全景相机预览、捕获和记录支持。 平台可以使用此功能来公开球形帧源（例如 equirectangular 帧），使应用能够检测和处理全景视频相机流，以及提供全景拍摄体验。
 
-### <a name="display-1803"></a>显示
+### <a name="display"></a><a name="display-1803"></a>显示
 
 下面是对 Windows 10 版本 1803 中的“显示”驱动程序开发的更新：
 
@@ -668,11 +668,11 @@ Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信�
 
 * **共享纹理改进** - 包括增加了可在进程和 D3D 设备之间共享的纹理类型。 此设计使得帧服务器 OS 组件能够以极少量的内存复制来支持单色。
 
-### <a name="security-1803"></a>驱动程序安全性
+### <a name="driver-security"></a><a name="security-1803"></a>驱动程序安全性
 
 对 [Windows 驱动程序安全指南](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/)和[驱动程序安全清单](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/driver-security-checklist)做了更新，为驱动程序开发人员提供驱动程序安全清单。
 
-### <a name="kernel-1803"></a>Windows 内核
+### <a name="windows-kernel"></a><a name="kernel-1803"></a>Windows 内核
 
 本部分介绍 Windows 10 版本 1803 中的 Windows 内核驱动程序开发的新增功能和已更新的功能。
 
@@ -696,7 +696,7 @@ NT 服务以及内核模式和用户模式驱动程序可以使用 [RtlRaiseCust
 
 现在，可以在激发通知时注册活动会话更改通知并获取回调。 作为此通知的一部分，某些数据还会与调用方共享。 这些关联的数据通过 [PO_SPR_ACTIVE_SESSION_DATA 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntpoapi/ns-ntpoapi-_po_spr_active_session_data)传送。
 
-### <a name="networking-1803"></a>网络
+### <a name="networking"></a><a name="networking-1803"></a>网络
 
 本部分概述 Windows 10 版本 1803 中 Windows 网络驱动程序开发的新增功能和改进。
 
@@ -720,7 +720,7 @@ NDIS 的更新包括：
   * [编写 MBBCx 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/netcx/writing-an-mbbcx-client-driver)
   * [MBBCx API 参考](https://docs.microsoft.com/windows-hardware/drivers/netcx/mbbcx-api-reference)
 
-### <a name="mobilebroadband-1803"></a>移动宽带
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1803"></a>移动宽带
 
 在移动宽带中，提供了详细介绍 [MB 低级别 UICC 访问](https://docs.microsoft.com/windows-hardware/drivers/network/mb-low-level-uicc-access)的新主题。
 
@@ -728,7 +728,7 @@ NDIS 的更新包括：
 
 [桌面版 COSA](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings#desktop-cosa-only-settings) 现在包括新的热点和 AppID 设置。 强烈建议移动运营商从使用 [Sysdev 元数据包](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata)的宽带应用体验过渡到 [MO UWP 应用](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/uwp-mobile-broadband-apps)和 [COSA 数据库](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings)。
 
-### <a name="pci-1803"></a>PCIe
+### <a name="pcie"></a><a name="pci-1803"></a>PCIe
 
 添加了新的 ACPI _DSD 方法用于支持以下新式待机和 PCI 热插拔方案：
 
@@ -738,15 +738,15 @@ NDIS 的更新包括：
 
 有关信息，请参阅 [ACPI 接口：PCIe 根端口的设备特定数据 (_DSD)](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports)。
 
-### <a name="sensors-1803"></a>传感器
+### <a name="sensors"></a><a name="sensors-1803"></a>传感器
 
 添加了 [SENSOR_CONNECTION_TYPES 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_connection_types)用于澄清连接类型属性。
 
-### <a name="usb-1803"></a>USB
+### <a name="usb"></a><a name="usb-1803"></a>USB
 
 添加了新的 API 用于模拟共享连接器的分离。 如果 USB 设备已附加到主机，或者在删除堆栈时包含共享连接器，则你可以模拟分离事件。 此时已禁用所有附加/分离通知机制。 有关详细信息，请参阅 [UfxDeviceNotifyFinalExit 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicenotifyfinalexit)。
 
-### <a name="wifi-1803"></a>Wi-Fi
+### <a name="wi-fi"></a><a name="wifi-1803"></a>Wi-Fi
 
 Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源保护程序 (NAPS) 高级电源管理的 TLV 功能](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-os-power-management-features)，以及对平台级设备恢复服务 (PLDR) 的更新。
 
@@ -756,7 +756,7 @@ Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源�
 
 [返回页首](#top)
 
-### <a name="audio-1709"></a>音频
+### <a name="audio"></a><a name="audio-1709"></a>音频
 
 下面是 Windows 10 版本 1709 中 Windows 音频驱动程序开发的更新列表：
 
@@ -768,7 +768,7 @@ Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源�
   * 更新的关键字系统概述
   * 有关语音唤醒的更新信息
 
-### <a name="acpi-1709"></a>ACPI
+### <a name="acpi"></a><a name="acpi-1709"></a>ACPI
 
 下面是用于支持输入/输出缓冲区的新高级配置和电源接口 (ACPI) DDI 列表。
 
@@ -793,11 +793,11 @@ Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源�
 * [ACPI_METHOD_ARGUMENT_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v2)
 * [GIC_ITS](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpitabl/ns-acpitabl-_gic_its)
 
-### <a name="biometric-1709"></a>生物识别
+### <a name="biometric"></a><a name="biometric-1709"></a>生物识别
 
 Windows 生物识别驱动程序有新的签名要求。 有关详细信息，请参阅[为 WBDI 驱动程序签名](https://docs.microsoft.com/windows-hardware/drivers/biometric/signing-wbdi-drivers)。
 
-### <a name="display-1709"></a>显示
+### <a name="display"></a><a name="display-1709"></a>显示
 
 下面是 Windows 10 版本 1709 中 Windows 显示驱动程序开发的新增功能列表。
 
@@ -808,14 +808,14 @@ Windows 生物识别驱动程序有新的签名要求。 有关详细信息，�
     2. 内容保护
     3. 视频处理
 
-### <a name="hardware-notifications-1709"></a>硬件通知
+### <a name="hardware-notifications"></a><a name="hardware-notifications-1709"></a>硬件通知
 
 Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬件的支持。 有关更多信息，请参阅：
 
 * [硬件通知支持](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/hardware-notifications-support)
 * [硬件通知参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gpiobtn/)
 
-### <a name="kernel-1709"></a>Windows 内核
+### <a name="windows-kernel"></a><a name="kernel-1709"></a>Windows 内核
 
 在 Windows 10 版本 1709 中，为驱动程序的 Windows 内核添加了多个新例程。
 
@@ -837,7 +837,7 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
   * [RtlInitializeCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlinitializecorrelationvector)
   * [RtlValidateCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlvalidatecorrelationvector)
 
-### <a name="mobilebroadband-1709"></a>移动宽带
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1709"></a>移动宽带
 
 下面是适用于 Windows 10 版本 1709 中驱动程序开发的 Windows 移动宽带和移动运营商方案的新增功能列表：
 
@@ -849,7 +849,7 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
 在 Windows 10 版本 1709 中，[桌面版 COSA 文档](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/planning-your-desktop-cosa-apn-database-submission)已更新，包括新的品牌相关字段。
 有关对移动运营商方案所做的其他更改，请参阅[已弃用的功能](#deprecated-features)列表。
 
-### <a name="networking-1709"></a>网络
+### <a name="networking"></a><a name="networking-1709"></a>网络
 
 本部分概述 Windows 10 版本 1709 中 Windows 网络驱动程序开发的新增功能和改进。
 
@@ -865,11 +865,11 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
 * [NDIS 6.80 简介](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-6-80)
 * [将 NDIS 6.x 驱动程序移植到 NDIS 6.80](https://docs.microsoft.com/windows-hardware/drivers/network/porting-ndis-6-x-drivers-to-ndis-6-80)
 
-### <a name="pci-1709"></a>虚拟化 PCI
+### <a name="virtualized-pci"></a><a name="pci-1709"></a>虚拟化 PCI
 
 提供新的编程接口用于编写符合 PCI Express 单根 I/O 虚拟化 (SR-IOV) 规范的设备的物理功能驱动程序。 接口在 Pcivirt.h 中声明。 有关详细信息，请参阅 [PCI 虚拟化](https://docs.microsoft.com/windows-hardware/drivers/ddi/pcivirt/)。
 
-### <a name="pwm-1709"></a>脉宽调制 (PWM) 控制器
+### <a name="pulse-width-modulation-pwm-controllers"></a><a name="pwm-1709"></a>脉宽调制 (PWM) 控制器
 
 在 Windows 10 版本 1709 中，若要提供对已映射到 SoC 地址空间的 SoC 和内存中的脉宽调制 (PWM) 控制器的访问，需要编写一个内核模式驱动程序。 有关详细信息，请参阅 [SoC 中 PWM 模块的 PWM 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/spb/pulse-width-controller%20driver?branch=spb)。
 
@@ -877,7 +877,7 @@ Windows 10 版本 1709 为 LED 和振动机制等通知组件提供不区分硬�
 
 应用可以通过发送 [PWM IOCTL](https://docs.microsoft.com/windows-hardware/drivers/spb/pulse-width-controller%20driver#pwm-ioctl-requests) 请求，将请求发送到控制器驱动程序。
 
-### <a name="storage-1709"></a>存储和文件系统
+### <a name="storage-and-file-systems"></a><a name="storage-1709"></a>存储和文件系统
 
 Windows 10 版本 1709 的文件系统和存储中添加了 ufs.h 标头，以提供对通用闪存存储的额外支持。
 
@@ -895,7 +895,7 @@ Posix 更新包括新的 **delete** 和 **rename** 函数。
 * scsi.h
 * storport.h
 
-### <a name="usb-1709"></a>USB
+### <a name="usb"></a><a name="usb-1709"></a>USB
 
 本部分介绍 Windows 10 版本 1709 中 USB 的新增功能。
 
@@ -961,7 +961,7 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 
 [返回页首](#top)
 
-### <a name="audio-1703"></a>音频
+### <a name="audio"></a><a name="audio-1703"></a>音频
 
 下面是 Windows 10 版本 1703 中音频驱动程序开发的新主题列表：
 
@@ -971,7 +971,7 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
   * [KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command) 属性 - 可让音频模块客户端发送自定义命令以查询和设置音频模块的参数。
   * [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsnotifications) - 新的端口类通知，用于提供微型端口的通知帮助器来支持音频模块通信。
 
-### <a name="bluetooth-1703"></a>蓝牙
+### <a name="bluetooth"></a><a name="bluetooth-1703"></a>蓝牙
 
 下面是 Windows 10 版本 1703 中蓝牙的更新列表：
 
@@ -981,7 +981,7 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 
 有关蓝牙新增功能的详细信息，请参阅[蓝牙](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)和[蓝牙 LE 预配对](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth-prepairing)。
 
-### <a name="camera-1703"></a>相机
+### <a name="camera"></a><a name="camera-1703"></a>相机
 
 下面是 Windows 10 版本 1703 中相机驱动程序开发的更新列表：
 
@@ -993,11 +993,11 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
   * [KSCATEGORY_SENSOR_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-sensor-camera)
   * [KSCATEGORY_VIDEO_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video-camera)
 
-### <a name="kernel-1703"></a>Windows 内核
+### <a name="windows-kernel"></a><a name="kernel-1703"></a>Windows 内核
 
 [Windows 内核模式进程和线程管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-process-and-thread-manager) - 从 Windows 10 版本 1703 开始，适用于 Linux 的 Windows 子系统 (WSL) 可让用户在 Windows 上连同其他 Windows 应用程序一起运行本机 Linux ELF64 二进制文件。 有关 WSL 体系结构以及运行二进制文件所需的用户模式和内核模式组件的详细信息，请参阅[适用于 Linux 的 Windows 子系统](https://blogs.msdn.microsoft.com/wsl/)博客中的文章。
 
-### <a name="mobilebroadband-1703"></a>移动宽带
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1703"></a>移动宽带
 
 [**移动宽带 (MB)** ](https://docs.microsoft.com/windows-hardware/drivers/network/mobile-broadband--mb--design-guide) 的更新包括改进了 [LTE 附加功能](https://docs.microsoft.com/windows-hardware/drivers/network/mb-lte-attach-operations)、支持[多 SIM 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-multi-sim-operations)、支持调制解调器中的[预配上下文](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provisioned-context-operations)、支持[特定吸收率平台](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support)，以及支持[网络阻止列表](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)。
 
@@ -1007,11 +1007,11 @@ USB 驱动程序堆栈可以使用不区分媒体的 USB (MA-USB) 协议，通�
 * [提交 COSA/APN 数据库更新](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/submitting-the-desktop-cosa-apn-database-update)
 * [测试 COSA/APN 数据库提交](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission)
 
-### <a name="networking-1703"></a>网络
+### <a name="networking"></a><a name="networking-1703"></a>网络
 
 Windows 10 版本 1703 中的网络驱动程序开发更新包括名为“流套接字”的新套接字类型，该类型支持 Windows 上的 Linux 网络应用程序。 有关详细信息，请参阅 [**Winsock 内核**](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)。 新的函数和结构包括 [WskConnectEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_connect_ex)、[WskListen](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_listen)、[WSK_CLIENT_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_stream_dispatch) 和 [WSK_PROVIDER_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_stream_dispatch)
 
-### <a name="pos-1703"></a>POS
+### <a name="pos"></a><a name="pos-1703"></a>POS
 
 下面是 Windows 10 版本 1703 中 POS 的新主题列表：
 
@@ -1021,7 +1021,7 @@ Windows 10 版本 1703 中的网络驱动程序开发更新包括名为“流套
 
 [BarcodeSymbology 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicecommontypes/ne-pointofservicecommontypes-_barcodesymbology)有新的 Gs1DWCode 符号。
 
-### <a name="usb-1703"></a>USB
+### <a name="usb"></a><a name="usb-1703"></a>USB
 
 Windows 10 版本 1703 提供新的类扩展 (UcmTcpciCx.sys) 用于支持通用串行总线类型 C 端口控制器接口规范。 USB 类型 C 连接器驱动程序不需要保留任何内部的 PD/类型 C 状态。 管理 USB C 型连接器和 USB 电源输送 (PD) 状态机时存在的复杂性由系统处理。 你只需编写一个客户端驱动程序，以便通过该类扩展将硬件事件传送给系统即可。 有关详细信息，请参阅 [USB 类型 C 控制器接口驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))。
 
@@ -1031,7 +1031,7 @@ Windows 10 版本 1703 提供新的类扩展 (UcmTcpciCx.sys) 用于支持通用
 
 本部分介绍 Windows 10 版本 1607 中驱动程序开发的新增功能和改进。
 
-### <a name="audio-1607"></a>音频
+### <a name="audio"></a><a name="audio-1607"></a>音频
 
 下面是 Windows 10 版本 1607 中音频驱动程序开发的新主题列表。
 
@@ -1042,7 +1042,7 @@ Windows 10 版本 1703 提供新的类扩展 (UcmTcpciCx.sys) 用于支持通用
   * [**KSAUDIO\_PACKETSIZE\_CONSTRAINTS2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2)
 * [PKEY\_AudioEndpoint\_Default\_VolumeInDb](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-audioendpoint-default-volumeindb) &ndash; 一个 INF 键，将相应的增益或衰减应用到音频信号时，该键可为用户提供更好的体验。
 
-### <a name="camera-1607"></a>相机
+### <a name="camera"></a><a name="camera-1607"></a>相机
 
 Windows 10 版本 1607 中的相机驱动程序开发包括新的和更新的主题，以支持 Windows Hello 和人脸身份验证：
 
@@ -1050,7 +1050,7 @@ Windows 10 版本 1607 中的相机驱动程序开发包括新的和更新的主
 * [扩展的相机控制](https://docs.microsoft.com/windows-hardware/drivers/stream/standardized-extended-controls-)
 * [**KSPROPERTY\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_MODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)
 
-### <a name="location-1607"></a>定位
+### <a name="location"></a><a name="location-1607"></a>定位
 
 Windows 10 版本 1607 中的定位驱动程序开发包括以下新的全球导航卫星系统 (GNSS) 痕迹导航 DDI：
 
@@ -1063,11 +1063,11 @@ Windows 10 版本 1607 中的定位驱动程序开发包括以下新的全球导
 * [**IOCTL\_GNSS\_START\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_breadcrumbing)
 * [**IOCTL\_GNSS\_STOP\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_breadcrumbing)
 
-### <a name="print-1607"></a>打印
+### <a name="print"></a><a name="print-1607"></a>打印
 
 Windows 10 版本 1607 中的打印机驱动程序开发包括 [JSConstraintsDebug](https://docs.microsoft.com/windows-hardware/drivers/devtest/jsconstraintsdebug)，它是一个命令行工具，在开发 V4 打印机驱动程序时，可针对 JavaScript 约束提供调试支持。
 
-### <a name="wlan-1607"></a>WLAN
+### <a name="wlan"></a><a name="wlan-1607"></a>WLAN
 
 在 Windows 10 版本 1607 中，为 WLAN 设备驱动程序接口 (WDI) 版本 1.0.21 提供了新的和更新的主题。 有关详细信息，请参阅 [WDI 文档更改历史记录](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-doc-change-history)。
 
@@ -1077,7 +1077,7 @@ Windows 10 版本 1607 中的打印机驱动程序开发包括 [JSConstraintsDeb
 
 本部分介绍 Windows 10 中驱动程序开发的新增功能和已更新的功能。
 
-### <a name="bluetooth-1507"></a>蓝牙
+### <a name="bluetooth"></a><a name="bluetooth-1507"></a>蓝牙
 
 在 Windows 10 中，添加了新的 [Microsoft 定义的蓝牙 HCI 扩展](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/microsoft-defined-bluetooth-hci-commands-and-events)。
 
@@ -1085,7 +1085,7 @@ Windows 10 版本 1607 中的打印机驱动程序开发包括 [JSConstraintsDeb
 
 Windows 的基于 OneCoreUAP 的版本包含适用于简单外设总线 (SPB)（例如 I2C 和 SPI）以及 GPIO 的驱动程序编程接口和现成驱动程序。 这些驱动程序可在 Windows 10 桌面版、Windows 10 移动版和其他 Windows 10 版本上运行。
 
-### <a name="camera-1507"></a>相机
+### <a name="camera"></a><a name="camera-1507"></a>相机
 
 相机驱动程序 DDI 已融合到通用 Windows 驱动程序模型中，包括新的[相机 DDI](https://docs.microsoft.com/windows-hardware/drivers/stream/windows-10-technical-preview-camera-drivers-reference)。 其他功能包括：
 
@@ -1104,34 +1104,34 @@ Windows 的基于 OneCoreUAP 的版本包含适用于简单外设总线 (SPB)（
 
 Windows 10 的[手机网络体系结构和实现](https://docs.microsoft.com/windows-hardware/drivers/network/cellular-architecture-and-driver-model)已更新。
 
-### <a name="display-1507"></a>显示
+### <a name="display"></a><a name="display-1507"></a>显示
 
 Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/_display/)已融合到 Windows 10 的统一模型。
 
 实现了新的内存模型，可为每个 GPU 提供一个进程虚拟地址空间。 对于需要视频内存直接寻址的图形硬件，WDDMv2 仍然支持此寻址方式，但这种用例被视为已过时。 IHV 有望开发出支持虚拟寻址的新硬件。 为了支持这种新的内存模型，我们对 DDI 做了重大更改。
 
-### <a name="human-interface-device"></a>人机接口设备 (HID)
+### <a name="human-interface-device-hid"></a><a name="human-interface-device"></a>人机接口设备 (HID)
 
 新的虚拟 HID 框架 (VHF) 消除了编写内核模式传输微型驱动程序的需要。 该框架包括 Microsoft 提供的静态库 (Vhfkm.lib)，该库可公开驱动程序使用的编程元素。 此外，它还包括 Microsoft 提供的现成驱动程序 (Vhf.sys)，该驱动程序可以枚举一个或多个子设备，并继续生成虚拟的[人机接口设备](https://docs.microsoft.com/windows-hardware/drivers/hid/) (HID) 树。
 
 * [使用虚拟 HID 框架 (VHF) 编写 HID 源驱动程序](https://docs.microsoft.com/windows-hardware/drivers/hid/virtual-hid-framework--vhf-)
 * [虚拟 HID 框架](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/)
 
-### <a name="location-1507"></a>定位
+### <a name="location"></a><a name="location-1507"></a>定位
 
 全球导航卫星系统 (GNSS) 驱动程序 DDI 已融合到 [GNSS 通用 Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gnss/) (UMDF 2.0)。
 
-### <a name="near-field-communication"></a>近场通信 (NFC)
+### <a name="near-field-communication-nfc"></a><a name="near-field-communication"></a>近场通信 (NFC)
 
 [NFC DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/_nfpdrivers/) 包含新的融合驱动程序模型用于支持移动和桌面解决方案。
 
 [NFC 类扩展](https://docs.microsoft.com/windows-hardware/drivers/nfc/nfc-class-extension-)：推出了新的 NFC 类扩展驱动程序。 该 NFC 类扩展驱动程序实现 Windows 定义的所有 DDI，以便与 NFC 控制器、安全元素和远程 RF 终结点交互。
 
-### <a name="networking-1507"></a>网络
+### <a name="networking"></a><a name="networking-1507"></a>网络
 
 在现有的 NDIS 微型端口驱动程序模型中以扩展的形式推出了新的 [PacketDirect 提供程序接口 (PDPI)](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-pdpi)。 PDPI 提供一个 I/O 模型，可让应用程序管理自身的缓冲区、轮询处理器，以及直接管理通过微型端口适配器发送和接收数据包的操作。 将这些功能相结合，应用程序可以完全控制其自身的上下文，从而大大提高每秒数据包 (pps) 的传输速率。
 
-### <a name="print-1507"></a>打印
+### <a name="print"></a><a name="print-1507"></a>打印
 
 已使用 v4 打印驱动程序改进和更改对打印驱动程序做了更新，以支持通过移动设备进行无线打印；更新的功能还包括：
 
@@ -1149,7 +1149,7 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 * [智能卡客户端驱动程序事件回调函数](https://docs.microsoft.com/previous-versions/dn946583(v=vs.85))
 * [智能卡客户端驱动程序支持方法](https://docs.microsoft.com/previous-versions/dn946584(v=vs.85))
 
-### <a name="storage-1507"></a>存储
+### <a name="storage"></a><a name="storage-1507"></a>存储
 
 在 Windows 10 中，已添加新的特定于协议的接口，使应用能够使用其本机设备协议来与存储设备通信。 这些更新包括：
 
@@ -1160,7 +1160,7 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 
 [GUID\_DEVICE\_RESET\_INTERFACE\_STANDARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_reset_interface_standard) 接口定义功能驱动程序尝试重置和恢复有故障设备的标准方式。
 
-### <a name="usb-1507"></a>USB
+### <a name="usb"></a><a name="usb-1507"></a>USB
 
 下面是 Windows 10 中 USB 的新增功能。 有关详细信息，请参阅 [Windows 10：USB 的新增功能](https://docs.microsoft.com/windows-hardware/drivers/usbcon/windows-10--what-s-new-for-usb)。
 
@@ -1170,7 +1170,7 @@ Windows 8.1 和 Windows Phone 中的[显示驱动程序模型](https://docs.micr
 * 支持为不符合 xHCI 规范的主控制器或者为虚拟主控制器编写驱动程序。 若要编写此类驱动程序，请参阅[为 USB 主控制器开发 Windows驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/developing-windows-drivers-for-usb-host-controllers)。
 * 支持使用 USB 功能类扩展 (UFX) 编写功能控制器驱动程序。 请参阅[为 USB 功能控制器开发 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/developing-windows-drivers-for-usb-function-controllers)。
 
-### <a name="wlan-1507"></a>WLAN
+### <a name="wlan"></a><a name="wlan-1507"></a>WLAN
 
 WDI（WLAN 设备驱动程序接口）是一个新的 [WLAN 通用 Windows 驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/network/wifi-universal-driver-model)，可在 Windows 10 桌面版和 Windows 10 移动版上融合 WLAN 驱动程序。
 

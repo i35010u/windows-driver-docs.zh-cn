@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f65d958e15445b0a5c492d546795f8bbe500bd3
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209247"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>创建 LocaleInfo.xml 提交文件
@@ -58,7 +58,7 @@ LocaleInfo.xml 文档中的数据基于 LocaleInfo XML 架构（将在下面进�
 <td><p>可选</p></td>
 </tr>
 <tr class="odd">
-<td><p>default</p></td>
+<td><p>默认</p></td>
 <td><p>xs:boolean</p></td>
 <td><p>必需</p></td>
 </tr>
@@ -68,7 +68,7 @@ LocaleInfo.xml 文档中的数据基于 LocaleInfo XML 架构（将在下面进�
 <td><p>可选</p></td>
 </tr>
 <tr class="odd">
-<td><p>区域设置</p></td>
+<td><p>Locale</p></td>
 <td><p>xs:string</p></td>
 <td><p>可选</p></td>
 </tr>
@@ -124,11 +124,11 @@ LocaleInfo XML 架构定义以下元素和属性：
 
   - LocaleDeclaredInPackageInfo
 
-      -   default
+      -   默认
 
    -   SupportedLocaleList
 
-       - 区域设置
+       - Locale
 
 ### <a name="multiplelocale-element"></a>MultipleLocale 元素
 

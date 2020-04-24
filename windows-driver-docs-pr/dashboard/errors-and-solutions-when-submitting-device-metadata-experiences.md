@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19542734f4689dc23db5f87f211aadb34b15e7ef
-ms.sourcegitcommit: 8486945726d87cf983a7035360059d9f9ab765a7
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68808265"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>提交设备元数据体验时的错误和解决方案

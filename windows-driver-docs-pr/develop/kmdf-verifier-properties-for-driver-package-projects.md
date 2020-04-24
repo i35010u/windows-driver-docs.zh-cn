@@ -5,10 +5,10 @@ description: 设置远程计算机上的 KMDF 验证程序的属性。  使用�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b319b3c54012151bc2f27f2504ea471fe85937a
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393451"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>驱动程序包项目的 KMDF 验证程序属性
@@ -32,7 +32,7 @@ ms.locfileid: "67393451"
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

@@ -5,10 +5,10 @@ description: 使用 Windows 驱动程序工具包 (WDK) 以及测试创作和执
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d28281ed52474270cdd340d9bd9cf7e03db7e4a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364207"
 ---
 # <a name="how-to-add-test-metadata"></a>如何添加测试元数据

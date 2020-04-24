@@ -4,10 +4,10 @@ description: 介绍了 DCHU 通用驱动程序示例如何应用 DCHU 设计原�
 ms.date: 04/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 41b3bf5ae9c3d3e6e20d9492306b1c8e40a5b757
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78910394"
 ---
 # <a name="universal-driver-scenarios"></a>通用驱动程序方案

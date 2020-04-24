@@ -5,10 +5,10 @@ description: 设置 Inf2Cat 工具的属性。 Inf2Cat 工具可用于为具有 
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: cdf833c26cd3f2c463608144c9a61c05b24bdb48
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393454"
 ---
 # <a name="inf2cat-properties-for-driver-package-projects"></a>驱动程序包项目的 Inf2Cat 属性
@@ -32,7 +32,7 @@ ms.locfileid: "67393454"
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

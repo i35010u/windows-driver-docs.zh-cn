@@ -7,10 +7,10 @@ keywords:
 ms.date: 04/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d87ddd88af414359d0f792cb4bc21987db7e4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67359294"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (UMDF 2)
@@ -26,7 +26,7 @@ ms.locfileid: "67359294"
 >[!NOTE]
 >在创建新的 KMDF 或 UMDF 驱动程序时，必须选择一个不多于 32 个字符的驱动程序名称。 此长度限制在 wdfglobals.h 中定义。
 
-1. 打开 Visual Studio。 在“文件”  菜单上，选择“新建”&gt;“项目”  。
+1. 打开 Visual Studio 在“文件”  菜单上，选择“新建”&gt;“项目”  。
 2. 在“新建项目”对话框的左侧窗格中，依次转到  “Visual C++”&gt;“Windows 驱动程序”&gt;“WDF”。 选择“用户模式驱动程序(UMDF V2)”  。
 3. 在“名称”  字段中，输入“UmdfDriver”作为项目名称。
 4. 在“位置”  字段中，输入要在其中创建新项目的目录。

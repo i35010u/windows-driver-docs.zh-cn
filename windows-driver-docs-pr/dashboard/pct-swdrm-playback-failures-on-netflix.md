@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 12/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: d554310e46af4968dc104be366ce4728249cb3bf
-ms.sourcegitcommit: 90faff267098e5ff04e3c4ffdb63447f2f97df50
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75737321"
 ---
 # <a name="percent-of-swdrm-playback-failures-on-netflix"></a>Netflix 上的 SWDRM 播放失败次数百分比

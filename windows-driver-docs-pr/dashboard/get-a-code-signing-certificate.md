@@ -6,17 +6,17 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57b45861821e33ac7426dedbf3f940adca4bfd4b
-ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "73589235"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
 在建立合作伙伴中心帐户之前，需要获取代码签名证书以保护数字信息。 此证书是用于建立你的公司对你所提交代码的所有权的接受标准。 它让你可以用数字形式签署 PE 二进制文件，例如 .exe、.cab、.dll、.ocx、.msi、.xpi 和 .xap 文件。
 
-## <a name="step-1-obtain-an-ev-certificate"></a>第 1 步：获取 EV 证书
+## <a name="step-1-obtain-an-ev-certificate"></a>步骤 1：获取 EV 证书
 
 - Microsoft 需要为内核模式代码签名注册和授权（作为 Microsoft 受信任的根证书计划的一部分）的合作伙伴提供的扩展验证 (EV) 代码签名证书。 如果已有其中一个颁发机构颁发的已批准 EV 证书，则可以使用它建立合作伙伴中心帐户。 如果没有证书，则需要购买一个新证书。
 

@@ -5,10 +5,10 @@ description: WDK 已与 Microsoft Visual Studio 集成，并使用与你用于�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e57e821e4a223107fa28d193eb68784f8eece76d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370805"
 ---
 # <a name="creating-a-driver-from-existing-source-files"></a>从现有源文件创建驱动程序

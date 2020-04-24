@@ -1,16 +1,15 @@
 ---
 title: 查找和管理硬件提交内容
-author: dimanjar
 description: 了解如何通过搜索文本或选择关键字搜索中的驱动程序属性来查找特定的 Windows 硬件提交内容。
 ms.topic: article
 ms.date: 09/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 77c5d52709ce09bd674de5dba00a2700674863fe
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: 19f8a7f74a143e93f1cf49d2e1007f0c6be65e7c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601712"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81679115"
 ---
 # <a name="find-a-hardware-submission"></a>查找硬件提交
 

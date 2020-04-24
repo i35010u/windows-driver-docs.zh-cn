@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 03/01/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 09d97659a6f4246c85e16ce6005655514bc919a2
-ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79083141"
 ---
 # <a name="gradual-rollout"></a>逐步推出

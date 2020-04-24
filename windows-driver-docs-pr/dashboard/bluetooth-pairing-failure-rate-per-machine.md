@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 85ec8300e547130bdd9b665175e41a1a12022ac8
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017085"
 ---
 # <a name="percent-of-bluetooth-pairing-failures"></a>蓝牙配对失败次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 成功完成蓝牙配对后，身份验证信息会在本地保存，供将来使用。 如果设备无法配对，则用户将无法对其连接进行身份验证，并且无法在设备之间流式传输内容。
 

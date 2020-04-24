@@ -5,10 +5,10 @@ description: 创建驱动程序包
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a778114e57284cba6a460c4a257e766fa4d76d37
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370809"
 ---
 # <a name="creating-a-driver-package"></a>创建驱动程序包

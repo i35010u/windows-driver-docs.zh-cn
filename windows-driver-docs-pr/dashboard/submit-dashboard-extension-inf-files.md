@@ -5,10 +5,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6803f0632e501678688a48a50fc457dfa58fb359
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364415"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>在合作伙伴中心使用扩展 INF
@@ -128,7 +128,7 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 
 * 有关 Windows 操作系统中的驱动程序选择和定向的信息，请参阅 [Using an Extension INF file](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)（使用扩展 INF 文件）
 
-## <a name="faq"></a>常见问题
+## <a name="faq"></a>FAQ
 
 ### <a name="driver-development"></a>驱动程序开发
 
@@ -140,7 +140,7 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 
 #### <a name="can-we-use-an-ihv-supplied-extension-inf-with-their-extensionid-for-manufacturing-purposes"></a>我们是否可以为制造目的将 IHV 提供的扩展 INF 与其 ExtensionID 配合使用？
 
-否。 如果你计划对扩展的服务方面负责，则必须在制造期间使用自己的扩展 INF 和 ExtensionID。  
+不能。 如果你计划对扩展的服务方面负责，则必须在制造期间使用自己的扩展 INF 和 ExtensionID。  
 
 ### <a name="driver-updates"></a>驱动程序更新
 
@@ -158,7 +158,7 @@ ExtensionID 是你生成的用于驱动程序沿袭标识和版本控制的 GUID
 
 #### <a name="can-two-systems-share-the-same-extension-inf-if-their-customizations-are-the-same"></a>如果两个系统的自定义项相同，那么这两个系统是否可以共享相同的扩展 INF？
 
-是。  如果多个系统使用相同的设置，或者如果你想要在更广泛的一组设备中自定义设置，则一个扩展 INF 就足够了。  为此，需将由 4 部分组成的适用硬件 ID 添加到扩展 INF 中。 有关详细信息，请参阅“Using an Extension INF File”（使用扩展 INF 文件）。
+是的。  如果多个系统使用相同的设置，或者如果你想要在更广泛的一组设备中自定义设置，则一个扩展 INF 就足够了。  为此，需将由 4 部分组成的适用硬件 ID 添加到扩展 INF 中。 有关详细信息，请参阅“Using an Extension INF File”（使用扩展 INF 文件）。
 
 ## <a name="related-pages"></a>相关页面
 

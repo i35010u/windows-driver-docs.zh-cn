@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4abe4352bf55da2b31992bf3ba87563185185761
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016981"
 ---
 # <a name="number-of-crashes-and-hangs-in-win32-games-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Win32 游戏中的崩溃和挂起次数（按使用时间规范化）小于或等于基线目标
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 当用户玩 Win32 游戏时，显卡组件将处理可视数据，然后在屏幕上显示呈现的视图。 该度量监视 Win32 游戏因显卡组件而崩溃和挂起的频率（相对于这些应用程序在使用该驱动程序的所有设备上的运行时）。 如果应用程序崩溃，则用户可能会丢失进度，并且必须等待该应用程序恢复，然后才能再次使用它。
 

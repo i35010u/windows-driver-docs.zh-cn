@@ -5,17 +5,17 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 04/05/2018
 ms.openlocfilehash: 28bb769ea30b7a8f14e0f68a506f128671d21b24
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63335040"
 ---
 # <a name="hardware-failure-reporting"></a>硬件故障报告
 
 使用这些异步方法可以访问 Windows 8 和 Windows 10 驱动程序和 OEM 硬件错误的报告数据。 
 
-你可以根据需要定义报告模板、设置计划，系统将会定期向你提供数据。 
+可根据需要定义报告模板、设置计划，系统会定期向你传送数据。 
 
 ## <a name="prerequisites"></a>必备条件 
 

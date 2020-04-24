@@ -5,17 +5,17 @@ description: 此信息主要面向开发人员和为 Windows 编译内核模式�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2f017367c211eb8020ea8ee3f29d29509467ee
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63359485"
 ---
 # <a name="avoiding-floating-point-errors-in-custom-build-environments"></a>避免自定义生成环境内出现浮点错误
 
 此信息主要面向开发人员和为 Windows 编译内核模式驱动程序的构建工程师。 在 Microsoft Visual Studio Professional 2012 中，Visual C++ (VC++) 编译器的默认体系结构从 IA32 更改为流式 SIMD 扩展 2 (SSE2) 指令集。 如果未考虑这一点，由于此更改，编译时注入二进制文件的 SSE2 浮点 (FP) 指令可能会产生浮点错误。 使用 Microsoft VC++ 编译器，或自定义生成环境开发 Windows 驱动程序的人员可能会遇到此问题。 但此问题不会影响借助 Microsoft Visual Studio 开发环境或 MSbuild 实用工具，利用未修改的工具集生成驱动程序的开发人员。
 
-## <a name="span-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanspan-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanspan-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanfloating-point-errors-can-cause-data-corruption-or-computer-crashes"></a><span id="Floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="FLOATING_POINT_ERRORS_CAN_CAUSE_DATA_CORRUPTION_OR_COMPUTER_CRASHES_"></span>浮点错误可能导致数据损坏或计算机故障
+## <a name="span-idfloating_point_errors_can_cause_data_corruption_or_computer_crashes_spanspan-idfloating_point_errors_can_cause_data_corruption_or_computer_crashes_spanspan-idfloating_point_errors_can_cause_data_corruption_or_computer_crashes_spanfloating-point-errors-can-cause-data-corruption-or-computer-crashes"></a><span id="Floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="FLOATING_POINT_ERRORS_CAN_CAUSE_DATA_CORRUPTION_OR_COMPUTER_CRASHES_"></span>浮点错误可能导致数据损坏或计算机故障
 
 
 如果不  使用 WDK、Visual Studio 和为 Windows 驱动程序 (**WindowsKernelModeDriver8.0**) 推荐的平台工具集编译驱动程序，驱动程序可能无法正确管理浮点操作，即使驱动程序能够正确编译也是如此。

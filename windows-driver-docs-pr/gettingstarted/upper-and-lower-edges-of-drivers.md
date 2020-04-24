@@ -5,10 +5,10 @@ ms.assetid: EA1C36F4-B9BD-4A9E-A6D4-6B4EC5455030
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f050749d4d784809238816968c1f79dc0fd76247
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67385173"
 ---
 # <a name="upper-and-lower-edges-of-drivers"></a>驱动程序的上沿和下沿

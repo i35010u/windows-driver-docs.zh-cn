@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e9926776d8e700eadd0a1ab1fe0511e645a3e231
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016951"
 ---
 # <a name="percent-of-internet-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs-that-have-greater-than-50-percent-signal-quality"></a>Internet 连接失败次数百分比（来自信号质量大于 50% 的前 95% 的设备和接入点对）
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 设备连接到接入点 (AP) 后，可使用该连接尝试通过 Wi-Fi 连接到 Internet。 如果用户无法使用 Wi-Fi 连接到 Internet，则会在“Internet 访问”按钮上显示警告图标（黄色区域内显示惊叹号）。 用户无法完全运行需要 Wi-Fi 的应用程序。
 

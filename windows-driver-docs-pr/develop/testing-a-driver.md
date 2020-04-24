@@ -5,10 +5,10 @@ description: 测试驱动程序
 ms.date: 06/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fa185c23d5d2b7c3f99e74d27482ff065f4d2c
-ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67427687"
 ---
 # <a name="testing-a-driver"></a>测试驱动程序
@@ -38,7 +38,7 @@ WDK 提供的测试二进制文件和工具支持轻松地从命令行运行设�
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

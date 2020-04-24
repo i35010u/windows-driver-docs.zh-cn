@@ -14,16 +14,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2613202fb101bcd13bd6cbc2d76c1ab39b7766f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72825155"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows 驱动程序工具包中的头文件
 
 
-[Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/) 包含构建内核模式和用户模式驱动程序所需的所有头文件（.h 文件）。 头文件位于 WDK 安装文件夹的 Include 文件夹中。 示例：C:\\Program Files (x86)\\Windows Kits\\10\\Include。
+[Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/) 包含构建内核模式和用户模式驱动程序所需的所有头文件（.h 文件）。 头文件位于 WDK 安装文件夹的 Include 文件夹中。 例如：C:\\Program Files (x86)\\Windows Kits\\10\\Include。
 
 头文件包含版本信息，因此不论驱动程序在哪个版本的 Windows 上运行，你都可以使用一组相同的头文件。
 
@@ -54,7 +54,7 @@ WDK 中的头文件包含的条件语句指定编程元素仅在某些版本的 
 </tr>
 <tr class="even">
 <td align="left"><p>NTDDI_WINBLUE</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>NTDDI_WIN8</p></td>
@@ -78,7 +78,7 @@ WDK 中的头文件包含的条件语句指定编程元素仅在某些版本的 
 </tr>
 <tr class="even">
 <td align="left"><p>NTDDI_WS08</p></td>
-<td align="left"><p>Windows Server 2008</p></td>
+<td align="left"><p>Windows 2008 Server</p></td>
 </tr>
 </tbody>
 </table>

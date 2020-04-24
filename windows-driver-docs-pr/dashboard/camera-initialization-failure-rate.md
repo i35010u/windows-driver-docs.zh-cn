@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4410cd826e6735d7b5ad57033f5d06e3a3d3d83c
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017083"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>相机初始化失败次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 当某个用户尝试使用可访问计算机的相机设备的应用程序时，必须首先初始化相机功能。 如果此初始化失败，则用户无法使用计算机的相机来捕获内容，并且必须重启初始化过程。
 

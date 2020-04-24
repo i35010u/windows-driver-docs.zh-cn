@@ -5,13 +5,13 @@ description: 只有已签署的驱动程序包才能安装于 64 位 Windows 上
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aac999925a9775473b10b7358646e28b27dcb1c9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364231"
 ---
-# <a name="signing-a-driver-during-development-and-testing"></a>在开发和测试期间签署驱动程序
+# <a name="signing-a-driver-during-development-and-testing"></a>在开发和测试期间为驱动程序签名
 
 在运行 64 位版本 Windows 的计算机上安装驱动程序之前，必须先签署驱动程序包。 出于测试目的，可以对驱动程序包进行测试签名，这种签名形式比对公开发布进行的签名更为轻松。
 

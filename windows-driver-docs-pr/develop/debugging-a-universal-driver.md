@@ -4,10 +4,10 @@ description: 介绍可用于通用 Windows 驱动程序的调试技术，特别�
 ms.date: 08/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 863cd334378d325f815e7704bd9078e2b53357cc
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020683"
 ---
 # <a name="debugging-a-universal-windows-driver"></a>调试通用 Windows 驱动程序 

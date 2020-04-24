@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: ee3457c572ff8bff7aab72ed613da0a4416729aa
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63323245"
----
 # <a name="contributing-to-windows-driver-documentation"></a>Windows驱动程序文档投稿
 
 本页介绍 Windows 驱动程序文档投稿的基本步骤。

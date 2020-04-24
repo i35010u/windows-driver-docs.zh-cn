@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cec191850f774186b0c564eecd36137881217e7
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209249"
 ---
 # <a name="hardware-dashboard-api"></a>硬件仪表板 API
@@ -74,9 +74,9 @@ grant_type=client_credentials
 
 获取 Azure AD 访问令牌后，可以在“Microsoft 硬件 API”中调用方法。 该 API 包括许多分组到各个方案中的方法。 若要创建或更新提交，一般需在“Microsoft 硬件 API”中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
-| 方案 | 描述 |
+| 方案 | 说明 |
 |:--|:--|
-| Drivers | 获取、创建和更新向你的合作伙伴中心帐户注册的驱动程序。 有关这些方法的详细信息，请参阅以下文章：<ul><li>[获取产品数据](get-product-data.md)</li><li>[管理产品提交](manage-product-submissions.md)</li><li>[获取发货标签数据](get-shipping-labels.md)</li><li>[管理发货标签](manage-shipping-labels.md)</li></ul>|
+| 驱动程序 | 获取、创建和更新向你的合作伙伴中心帐户注册的驱动程序。 有关这些方法的详细信息，请参阅以下文章：<ul><li>[获取产品数据](get-product-data.md)</li><li>[管理产品提交](manage-product-submissions.md)</li><li>[获取发货标签数据](get-shipping-labels.md)</li><li>[管理发货标签](manage-shipping-labels.md)</li></ul>|
 
 ## <a name="code-examples"></a>代码示例
 

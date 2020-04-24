@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c67e56efcc044c7aebe7840a450581a233daa7f
-ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71195762"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-stream-initialization-failure"></a>至少有一次音频流初始化失败的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 请参阅[音频度量](audio-measures.md)中的“音频流初始化”部分
 

@@ -5,10 +5,10 @@ ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f945bd59b717c7e242ce46398ea33f2ae76f1582
-ms.sourcegitcommit: 8fce8b22c7437f0aa322c40625d5163e8812ea01
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77146509"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间

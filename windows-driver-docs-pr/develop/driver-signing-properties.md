@@ -5,17 +5,17 @@ description: ''
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: aa3d8b39490757d3ec01d31670cca8a322f4894d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63391516"
 ---
 # <a name="driver-signing-properties"></a>驱动程序签名属性
 
 在“解决方案资源管理器”中选择项目时，“驱动程序签名”  节点下的“属性”  对话框将显示属性的两个部分：
 
-## <a name="span-idundergeneralspanspan-idundergeneralspanspan-idundergeneralspanunder-general"></a><span id="Under_General_"></span><span id="under_general_"></span><span id="UNDER_GENERAL_"></span>在“常规”下：
+## <a name="span-idunder_general_spanspan-idunder_general_spanspan-idunder_general_spanunder-general"></a><span id="Under_General_"></span><span id="under_general_"></span><span id="UNDER_GENERAL_"></span>在“常规”下：
 
 
 **签名模式**
@@ -55,7 +55,7 @@ ms.locfileid: "63391516"
 -   *空白* - 未选择文件摘要算法（默认）。
 -   **&lt;编辑…&gt;** - 选择在签署驱动程序时要使用的文件摘要算法。
 
-## <a name="span-idundercommandlinespanspan-idundercommandlinespanspan-idundercommandlinespanunder-command-line"></a><span id="Under_Command_Line_"></span><span id="under_command_line_"></span><span id="UNDER_COMMAND_LINE_"></span>在命令行下：
+## <a name="span-idunder_command_line_spanspan-idunder_command_line_spanspan-idunder_command_line_spanunder-command-line"></a><span id="Under_Command_Line_"></span><span id="under_command_line_"></span><span id="UNDER_COMMAND_LINE_"></span>在命令行下：
 
 
 **其他选项**

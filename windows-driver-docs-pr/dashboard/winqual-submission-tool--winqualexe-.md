@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7273640dd6d764bd79efbdf39d6584ae62dad092
-ms.sourcegitcommit: ebf7371cb1b70330b9251bc2d2703d2b6de6fad1
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68917854"
 ---
 # <a name="winqual-submission-tool-winqualexe"></a>Winqual 提交工具 (winqual.exe)

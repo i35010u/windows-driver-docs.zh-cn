@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 12/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 43a15a5b155c95bd2eca50f6439defd736ed8d4d
-ms.sourcegitcommit: 90faff267098e5ff04e3c4ffdb63447f2f97df50
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75737323"
 ---
 # <a name="ecosystem-netflix-hwdrm-quality-comparison"></a>生态系统 Netflix HWDRM 质量比较

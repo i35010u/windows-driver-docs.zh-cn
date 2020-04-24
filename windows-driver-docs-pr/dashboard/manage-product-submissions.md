@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ca915ec2ee7a1f73622d222a7d029be6338c474
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072170"
 ---
 # <a name="manage-product-submissions"></a>管理产品提交

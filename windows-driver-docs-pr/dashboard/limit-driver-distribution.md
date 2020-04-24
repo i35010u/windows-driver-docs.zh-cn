@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: be0a92b0c9d72640b4dfaf615be8d8dc35cbb1a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364464"
 ---
 # <a name="how-to-limit-or-expand-a-drivers-distribution-based-on-windows-version"></a>如何基于 Windows 版本限制或扩展驱动程序的分发
@@ -34,7 +34,7 @@ ms.locfileid: "67364464"
   <thead>
     <tr>
       <th>下限/上限类型</th>
-      <th>描述</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
@@ -183,7 +183,7 @@ OS 下限表示可以将驱动程序分发到的最低 Windows 版本。  若要
 
 此驱动程序将会发布，它适用于 RS3 及更高版本的所有 OS 版本。
 
-## <a name="faq"></a>常见问题
+## <a name="faq"></a>FAQ
 
 ### <a name="why-cant-i-check-the-restrict-operating-systems-for-driver-distribution-box"></a>为什么我不能勾选“限制操作系统进行驱动程序分发”框？
 

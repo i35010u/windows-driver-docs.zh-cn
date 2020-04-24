@@ -6,10 +6,10 @@ description: 在合作伙伴中心管理用户角色
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9df6f24bfc3b03b3d5184c6ff51d754254ed9434
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77558426"
 ---
 # <a name="managing-user-roles"></a>管理用户角色

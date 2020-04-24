@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e153d22e6fcd54eb9706e150f8547eb89d74f1a2
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072158"
 ---
 # <a name="create-a-new-submission-for-a-product"></a>为产品创建新的提交

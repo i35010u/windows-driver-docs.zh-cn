@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e8ac44992816693a18b1e8ae3d265949d74b2d5f
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016949"
 ---
 # <a name="percent-of-wi-fi-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs"></a>WLAN 连接失败次数百分比（来自前 95% 的设备和接入点对） 
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 Wi-Fi 接入点 (AP) 是一种网络硬件，可允许其他启用 Wi-Fi 的设备连接到无线局域网 (WLAN)。 用户无法连接到 AP 时，其计算机显示“无法连接到接入点”错误消息，并将无法访问 WLAN 或 Wi-Fi  。
 

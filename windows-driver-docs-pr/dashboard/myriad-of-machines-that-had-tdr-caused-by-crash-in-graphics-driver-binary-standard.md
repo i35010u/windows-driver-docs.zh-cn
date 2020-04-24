@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d741c3a3a5be5e86e828c292ef16c00e947ed69
-ms.sourcegitcommit: cf8f0b13f33dfe97a94c8587f1f6797db24d1746
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77075639"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有离散式 GPU 的计算机的巨大数量 

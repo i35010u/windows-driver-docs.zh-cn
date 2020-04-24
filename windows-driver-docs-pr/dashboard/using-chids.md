@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad7467b621ce12ca4429506be87f9a30c763b56
-ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68483071"
 ---
 # <a name="using-computer-hardware-ids-chids"></a>使用计算机硬件 ID (CHID)

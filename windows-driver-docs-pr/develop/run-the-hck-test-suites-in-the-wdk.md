@@ -5,10 +5,10 @@ description: 为了可以更轻松地在 WDK 中测试 Windows 驱动程序，�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 186461bfda62753dd3e9e5998e8dd257d476df1e
-ms.sourcegitcommit: 2c8c13ed8d8f11eccf4c4ffb492c64099003b6a9
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020670"
 ---
 # <a name="how-to-run-the-hck-test-suites-in-wdk-81"></a>如何在 WDK 8.1 中运行 HCK 测试套件

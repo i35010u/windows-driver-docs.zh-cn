@@ -4,12 +4,12 @@ title: 通用 Windows 驱动程序入门
 description: 使用通用 Windows 驱动程序，可以创建一个在多种设备类型（从嵌入式系统到平板电脑和电脑）上运行的驱动程序。
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f54d52ae032ef66a7d48c0c08e6502ac556f7a84
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 002d94ce8fc322445109b04dd13b64e181739da9
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861260"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81772734"
 ---
 # <a name="getting-started-with-universal-windows-drivers"></a>通用 Windows 驱动程序入门
 
@@ -32,8 +32,6 @@ ms.locfileid: "74861260"
 IHV 遵循驱动程序包隔离的设计最佳做法，以确保驱动程序提供可靠和稳健的维护操作  。
 
 IHV 认证了基础驱动程序后，该驱动程序便可以在所有 OEM 系统上部署。 由于可以在共享一个硬件部件的所有系统中使用一个基础驱动程序，因此 Microsoft 可以通过使用 Windows 预览体验成员*驱动程序外部测试*广泛地测试该基础驱动程序，而不是将分发局限于特定计算机。
-
-IHV 认证基准驱动程序包后，可以在所有 OEM 系统上部署该驱动程序。 由于可以在共享硬件部件的所有系统中使用基准驱动程序包，因此 Microsoft 可以通过 Windows 预览体验成员外部测试广泛地测试基准驱动程序包，而不是将分发局限于特定计算机。 
 
 OEM 仅验证它为 OEM 系统提供的可选自定义项。
 
@@ -65,9 +63,9 @@ OEM 仅验证它为 OEM 系统提供的可选自定义项。
     2.  使用 [InfVerif](../devtest/infverif.md) 工具验证驱动程序包的 INF 文件是否为通用。
 *  使用 [ApiValidator 工具](validating-universal-drivers.md)验证二进制文件调用的 API 是否对通用驱动程序包有效。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 
-*  如果正在 Visual Studio 中使用 Windows 驱动程序工具包 (WDK)，请将驱动程序项目属性中的“目标平台”  值设置为 `Universal`。  这将自动添加正确的库，并且会在生成过程中运行通用 INF 验证和 APiValidator。  要实现此目的，请执行以下操作：
+*  如果正在 Visual Studio 中使用 Windows 驱动程序工具包 (WDK)，请将驱动程序项目属性中的“目标平台”  值设置为 `Universal`。  这将自动添加正确的库，并且会在生成过程中运行通用 INF 验证和 APiValidator。  若要实现此目的，请执行以下操作：
 
     1. 打开驱动程序项目属性。
     2. 选择“驱动程序设置”  。

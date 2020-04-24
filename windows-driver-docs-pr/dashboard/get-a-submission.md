@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: f89411c7f9d2eb9c4f2f63b907bd17b6188f5b0b
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072210"
 ---
 # <a name="get-a-submission"></a>获取一个提交

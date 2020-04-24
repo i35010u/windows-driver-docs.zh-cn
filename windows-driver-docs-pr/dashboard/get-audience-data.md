@@ -6,10 +6,10 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 1e9aefd492d82db21cb8d1f851aedf5d8402c336
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072188"
 ---
 # <a name="get-audience-data"></a>获取受众数据

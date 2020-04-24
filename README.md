@@ -1,15 +1,7 @@
----
-ms.openlocfilehash: 4c6e5c12a9c2d2d621c8fbd29d6f6c0956c2c390
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63323433"
----
 ## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源代码行为准则
 
 此项目采用了 [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。
-有关详细信息，请参阅[行为准则常见问题解答](https://opensource.microsoft.com/codeofconduct/faq/)，或如果有任何其他问题或意见，请与 [opencode@microsoft.com ](mailto:opencode@microsoft.com) 联系。
+有关详细信息，请参阅[行为准则常见问题解答](https://opensource.microsoft.com/codeofconduct/faq/)，或如果有任何其他问题或意见，请与 [opencode@microsoft.com](mailto:opencode@microsoft.com) 联系。
 
 # <a name="windows-driver-documentation"></a>Windows 驱动程序文档
 

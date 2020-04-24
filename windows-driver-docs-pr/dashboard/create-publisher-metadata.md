@@ -6,10 +6,10 @@ ms.author: vaganesh
 ms.topic: article
 ms.date: 11/06/2019
 ms.openlocfilehash: 8c87896d245c2eb4ba3502f438d1448e696d464e
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072220"
 ---
 # <a name="create-publisher-driver-metadata"></a>创建发布者驱动程序元数据

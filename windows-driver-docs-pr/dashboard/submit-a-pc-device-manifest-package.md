@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 147d3c944141cbcc8075f7ab2d47193d599ba2ee
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209160"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>提交电脑设备清单包
@@ -163,7 +163,7 @@ PcMetadataSubmission.xml 文档中的数据基于 PcMetadataSubmission XML 架�
 <th>元素/属性</th>
 <th>元素/属性类型</th>
 <th>必需/可选</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -411,7 +411,7 @@ SystemManufacturer 属性指定的值必须与目标电脑 SMBIOS 表中“制�
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -468,12 +468,12 @@ SystemFamily 属性指定的值必须与目标电脑 SMBIOS 表中“系列”�
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>系列</p></td>
+<td><p>家庭</p></td>
 <td><p>系统信息(类型 1)</p></td>
 <td><p>2.4+</p></td>
 <td><p>1Ah</p></td>
@@ -525,7 +525,7 @@ SystemProductName 属性指定的值必须与目标电脑 SMBIOS 表中“产品
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -582,7 +582,7 @@ BIOSVendor 属性指定的值必须与目标电脑 SMBIOS 表中“供应商”�
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -639,7 +639,7 @@ BIOSVersion 属性指定的值必须与目标电脑 SMBIOS 表中“BIOS 版本�
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -696,7 +696,7 @@ SystemBIOSMajorRelease 属性指定的值必须与目标电脑 SMBIOS 表中 Sys
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -753,7 +753,7 @@ SystemBIOSMinorRelease 属性指定的值必须与目标电脑 SMBIOS 表中 Sys
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -809,7 +809,7 @@ Enclosuretype 属性指定的值必须与目标电脑 SMBIOS 表中“机箱”�
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -866,7 +866,7 @@ SKUNumber 元素指定的值必须与目标电脑 SMBIOS 表中“SKU 号”字�
 <th>偏移量</th>
 <th>长度</th>
 <th>值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

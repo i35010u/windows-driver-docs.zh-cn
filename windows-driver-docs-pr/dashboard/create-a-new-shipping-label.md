@@ -6,10 +6,10 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 6febf7bad14ccb343c45c81ed23abc09ddbb57f1
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072218"
 ---
 # <a name="create-a-new-shipping-label"></a>创建新的发货标签

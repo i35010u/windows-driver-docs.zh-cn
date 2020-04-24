@@ -10,21 +10,21 @@ ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c328c2aca85819449910d3334d6870b95096abb1
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75210847"
 ---
 # <a name="other-wdk-downloads"></a>其他 WDK 下载
 
 本主题介绍 Windows 驱动程序工具包 (WDK) 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要开发驱动程序，请使用在[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 上提供下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
 
-Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows 驱动程序。 若要开发驱动程序，请使用在[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 上提供下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
+Windows 驱动程序工具包 (WDK) 可用于开发、测试和部署 Windows 驱动程序。 若要开发驱动程序，请使用可从[下载 Windows 驱动程序工具包 (WDK)](download-the-wdk.md) 下载的最新公共版 Windows 驱动程序工具包 (WDK) 和工具。
 
 本主题介绍 WDK 和企业版 WDK (EWDK) 的早期版本以及用于提供支持的其他下载内容。 若要使用这些早期的版本，必须*先*安装适用于目标平台的 Visual Studio 版本。
 
-## <a name="step-1-install-visual-studio"></a>第 1 步：安装 Visual Studio
+## <a name="step-1-install-visual-studio"></a>步骤 1：安装 Visual Studio
 
 支持开发特定 Visual Studio 版本的驱动程序。 若要开发特定 Windows 版本的驱动程序，必须使用在下表中标识（并提供下载链接）的某个 Visual Studio 版本。
 

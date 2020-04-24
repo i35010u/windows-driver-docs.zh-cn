@@ -5,10 +5,10 @@ description: 应在何时开始测试？ 了解驱动程序的要求后，便可
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a0964ab68748c3a9af7fdcf21aa0f0eccda0e534
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261419"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧

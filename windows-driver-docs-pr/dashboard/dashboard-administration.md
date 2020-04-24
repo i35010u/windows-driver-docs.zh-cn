@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6518442161f1ebe65d5e7323d44b477d0ea2d3fd
-ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67492520"
 ---
 # <a name="dashboard-administration"></a>仪表板管理

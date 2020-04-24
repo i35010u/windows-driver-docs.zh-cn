@@ -2,10 +2,10 @@
 title: 驱动程序包隔离
 ms.date: 10/01/2019
 ms.openlocfilehash: 2e964ee5e43b0f42faf55f84e2d8d3fdaa8655b4
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80080158"
 ---
 # <a name="driver-package-isolation"></a>驱动程序包隔离

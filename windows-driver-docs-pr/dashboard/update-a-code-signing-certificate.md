@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e1878f3283ecdb3877c80299906370818b09c47
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364397"
 ---
 # <a name="add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
@@ -29,7 +29,7 @@ ms.locfileid: "67364397"
 
 ## <a name="to-add-or-update-a-code-signing-certificate"></a>添加或更新代码签名证书
 
-### <a name="step-1-renew-your-code-signing-certificate-if-needed"></a>第 1 步：续订代码签名证书（如果需要）  
+### <a name="step-1-renew-your-code-signing-certificate-if-needed"></a>步骤 1：续订代码签名证书（如果需要）  
 
 1. 确定所需的代码签名证书类型（有关详细信息，请参阅[获取代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate)）。
 

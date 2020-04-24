@@ -4,10 +4,10 @@ description: 生成通用驱动程序指南
 ms.date: 10/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 555cdead7ae3e80fc5835e9c724ad0552825da86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370372"
 ---
 # <a name="building-a-universal-windows-driver"></a>生成通用 Windows 驱动程序

@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d02ee5456656e9d39f5c49cb93301f3a9958e4c
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017016"
 ---
 # <a name="percent-of-machines-without-a-live-kernel-dump"></a>没有实时内核转储的计算机所占的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 实时内核转储 (LKD) 是内核错误的结果，遇到这种情况时，计算机可以恢复而不发生崩溃。 如果用户遇到 LKD，其应用程序可能会挂起或崩溃。 一种常见类型的 LKD 是超时检测和恢复 (TDR)，在此情况下，在驱动程序恢复之前，显卡驱动程序会崩溃，并且显示器会暂时变黑。
 

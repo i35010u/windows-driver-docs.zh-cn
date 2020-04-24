@@ -4,10 +4,10 @@ description: 描述在 Windows 10 移动版上安装驱动程序的过程。
 ms.date: 06/02/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34d19520e79745f3f0833010abac96767709dae9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364186"
 ---
 # <a name="installing-a-driver-on-windows-10-mobile"></a>在 Windows 10 移动版上安装驱动程序
@@ -18,7 +18,7 @@ WDK 10 包括 PkgGen，后者是一个生成包文件的工具。 使用以下�
 
 **使用 PkgGen 生成包文件**
 
-1.  右键单击驱动程序项目，然后选择“添加”-&gt;“新项目”  。 接下来，在“Visual C++”-&gt;“Windows 驱动程序”  下，选择“程序包清单”  。 单击**添加**。
+1.  右键单击驱动程序项目，然后选择“添加”-&gt;“新项目”  。 接下来，在“Visual C++”-&gt;“Windows 驱动程序”  下，选择“程序包清单”  。 单击 **“添加”** 。
 2.  Visual Studio 会将名为 Package.pkg.xml 的文件添加到你的驱动程序项目。 你可以右键单击该文件，然后选择属性来确认项目类型是 **PkgGen**。 （在同一个属性页中，如果你稍后决定要生成此驱动程序项目且不生成包文件，可以将“从生成中排除”  设置为“是”  。）单击“确定”  。
 3.  右键单击该驱动程序项目，然后选择“属性”  。 在“配置属性”下打开 PackageGen 节点，将“版本”更改为你喜欢的任意值。
 4.  保存工作数据，并以管理员身份重启 Visual Studio。

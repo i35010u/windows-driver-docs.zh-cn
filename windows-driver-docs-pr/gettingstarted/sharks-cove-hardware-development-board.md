@@ -5,10 +5,10 @@ ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05949ca727d68333f60016df1ef8e06797a5f980
-ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72681935"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove 硬件开发板
@@ -63,7 +63,7 @@ Sharks Cove 是[硬件开发板](https://go.microsoft.com/fwlink/p?linkid=506967
 
 请在[此处](https://go.microsoft.com/fwlink/p?linkid=223405)开始查看 Windows 调试工具的联机文档。
 
-Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 示例：C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm。
+Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 例如：C:\\Program Files (x86)\\Windows Kits\\8.1\\Debuggers\\x64\\debugger.chm。
 
 ## <a name="span-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanspan-idstep_3__install_windows_on_the_sharks_cove_boardspanstep-3-install-windows-on-the-sharks-cove-board"></a><span id="Step_3__Install_Windows_on_the_Sharks_Cove_board"></span><span id="step_3__install_windows_on_the_sharks_cove_board"></span><span id="STEP_3__INSTALL_WINDOWS_ON_THE_SHARKS_COVE_BOARD"></span>步骤 3：在 Sharks Cove 板上安装 Windows
 
@@ -78,7 +78,7 @@ Windows 调试工具的文档还作为安装目录中的 CHM 文件提供。 示
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -222,7 +222,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 编写 Sharks Cove 板的设备驱动程序之前，最好先通过编写软件驱动程序自行熟悉驱动程序开发工具。 该过程类似于编写任何其他目标计算机的软件驱动程序。 开始时，请按照此处的实例练习进行操作：
 
--   [编写第一个驱动程序](writing-your-first-driver.md)
+-   [编写你的第一个驱动程序](writing-your-first-driver.md)
 
 ## <a name="span-idstep_6__alter_the_secondary_system_description_table__ssdt_spanspan-idstep_6__alter_the_secondary_system_description_table__ssdt_spanspan-idstep_6__alter_the_secondary_system_description_table__ssdt_spanstep-6-alter-the-secondary-system-description-table-ssdt"></a><span id="Step_6__Alter_the_Secondary_System_Description_Table__SSDT_"></span><span id="step_6__alter_the_secondary_system_description_table__ssdt_"></span><span id="STEP_6__ALTER_THE_SECONDARY_SYSTEM_DESCRIPTION_TABLE__SSDT_"></span>步骤 6：更改辅助系统描述表 (SSDT)
 
@@ -237,7 +237,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 1.  将 x86 版本的 ASL.exe 复制到 Sharks Cove 板。 ASL.exe 包括在 WDK 中。
 
-    示例：C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
+    例如：C:\\Program Files (x86)\\Windows Kits\\8.1\\Tools\\x86\\ACPIVerify\\ASL.exe
 
 2.  以管理员身份打开命令提示符窗口。 通过输入以下命令反编译 SSDT：
 
@@ -398,7 +398,7 @@ testsigning             Yes
 
 使用该规格确定要用于你的设备的引脚。 例如，假设你想要将 ADXL345 加速计连接到 I2C 总线。 在该规格中，可以看到 J1C1 头具有所需的引脚。 下面是要在 J1C1 头上使用的一些（但不是全部）引脚。
 
-| Pin | 引脚名称        | 备注                            | ACPI 对象      |
+| Pin | 引脚名称        | 说明                            | ACPI 对象      |
 |-----|-----------------|-------------------------------------|------------------|
 | 7   | GPIO\_S5\[23\]  | 加速计中断信号      | \_SB.GPO2 {0x17} |
 | 13  | SIO\_I2C2\_DATA | I2C 控制器 2 的 I2C 数据线  | \_SB.I2C3        |

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 02/28/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: ee75ce1be42905004068ced6bfefedea6967a1e5
-ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79083189"
 ---
 # <a name="percent-of-machines-that-wu-reported-a-successful-download-within-the-last-28-days"></a>在过去 28 天内 WU 报告成功下载的计算机的百分比

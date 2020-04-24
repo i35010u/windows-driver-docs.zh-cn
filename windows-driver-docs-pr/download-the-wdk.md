@@ -11,10 +11,10 @@ ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: fb64e0e87ad62c4da101f066378d17f48002a2ca
-ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80807614"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)

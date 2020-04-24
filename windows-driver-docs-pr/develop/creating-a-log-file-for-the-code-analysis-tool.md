@@ -5,10 +5,10 @@ description: Windows Server 2012 硬件认证计划需要所有驱动程序在�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e21d7f99c4c8c27402e0624152e79c8151bc8df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370792"
 ---
 # <a name="creating-a-log-file-for-the-code-analysis-tool"></a>为代码分析工具创建日志文件

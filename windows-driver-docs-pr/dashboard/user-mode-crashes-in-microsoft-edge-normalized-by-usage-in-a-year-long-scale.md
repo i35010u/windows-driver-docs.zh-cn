@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bb786d87571ef4dc7446b2a1b0bb6066e866fd7
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016940"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-edge-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Microsoft Edge 中用户模式可靠性的崩溃次数（按使用时间规范化）小于或等于基线目标
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 当用户通过 Microsoft Edge 浏览 Internet 时，显卡组件将处理来自 Web 的可视数据，并在用户屏幕上显示呈现的视图。 该度量监视 Microsoft Edge 的崩溃频率（相对于使用该驱动程序的所有设备上的 Microsoft Edge 运行时）。 如果 Microsoft Edge 崩溃，用户必须先等待该应用程序恢复，然后才能再次使用它。
 

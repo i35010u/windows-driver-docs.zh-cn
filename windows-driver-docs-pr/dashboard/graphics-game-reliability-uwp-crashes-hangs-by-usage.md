@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 10/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: ee0dddfdc9d4200035b40388e278cf95b1dab19c
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74097497"
 ---
 # <a name="number-of-crashes-and-hangs-in-uwp-games-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>UWP 游戏中的崩溃和挂起次数（按使用时间规范化）小于或等于基线目标
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 当用户玩 UWP 游戏时，显卡组件将处理可视数据，然后在用户的屏幕上显示渲染的视图。 该度量监视 UWP 游戏因显卡组件而崩溃和挂起的频率（相对于这些应用程序在使用该驱动程序的所有设备上的运行时）。 如果应用程序崩溃，则用户可能会丢失进度，并且必须等待该应用程序恢复，然后才能再次使用它。 
 

@@ -5,13 +5,13 @@ description: 可以针对 Windows 10 之前的版本和 OneCore 版本生成单�
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0aefa62ad1fbf120ffb6b905c9aafbdb5b44f5ab
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63382488"
 ---
-# <a name="building-for-onecore"></a>针对 OneCore 生成
+# <a name="building-for-onecore"></a>针对 OneCore 进行构建
 
 使用 Visual Studio 生成适用于 Windows 10 的用户模式代码时，可以自定义针对特定版本的 Windows 的链接器选项。  请考虑下列因素：
 
@@ -23,7 +23,7 @@ ms.locfileid: "63382488"
 
 但是，根据要求的不同，可以选择改为链接到 `OneCore.lib`。 下表显示了适用于每个库的方案：
 
-|Library|方案|
+|库|方案|
 |-|-|
 |`OneCore.lib`|Windows 7 及更高版本的所有版本，不支持 UWP|
 |`OneCoreUAP.lib`|Windows 7 及更高版本、Windows 10 的 UWP 版本（Desktop、IoT、HoloLens，但不包括 Nano Server）|
@@ -35,7 +35,7 @@ Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore
 
 例如，[**InstallApplication**](https://docs.microsoft.com/windows/desktop/api/appmgmt/nf-appmgmt-installapplication) 函数在非 Desktop 的 OneCore 版本中会返回 `ERROR_ NOT_SUPPORTED`。  [ApiValidator](validating-universal-drivers.md) 工具也会报告这些问题。 下一部分将介绍如何解决这些问题。
 
-## <a name="fixing-apivalidator-errors-by-using-isapisetimplementedhttpsdocsmicrosoftcomwindowsdesktopapiapiquery2nf-apiquery2-isapisetimplemented"></a>使用 [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 修复 ApiValidator 错误
+## <a name="fixing-apivalidator-errors-by-using-isapisetimplemented"></a>使用 [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 修复 ApiValidator 错误
 
 如果代码调用非通用 API，可能会显示以下 [ApiValidator](validating-universal-drivers.md) 错误：
 
@@ -143,7 +143,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 }
 ```
 
-## <a name="recommended-actions"></a>建议采取的操作
+## <a name="recommended-actions"></a>建议的操作
 
 * 查看上面的链接器选项并相应地更新 Visual Studio 项目。
 * 使用 WDK 中的 [ApiValidator](validating-universal-drivers.md) 工具。  在 Visual Studio 中生成驱动程序时该工具会自动运行。

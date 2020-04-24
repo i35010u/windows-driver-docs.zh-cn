@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b26a9cdea2a31f4a04486ed09b5bcb694c128509
-ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68483075"
 ---
 # <a name="hardware-submissions"></a>硬件提交
@@ -45,7 +45,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 <thead>
 <tr class="header">
 <th>列</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -131,7 +131,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 <thead>
 <tr class="header">
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -191,7 +191,7 @@ Windows 硬件兼容性计划（适用于 Windows 10）和 Windows 硬件认证�
 <thead>
 <tr class="header">
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

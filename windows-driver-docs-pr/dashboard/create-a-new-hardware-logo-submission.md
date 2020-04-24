@@ -6,10 +6,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 3543b86f5c1ceed26137740c85331c97206423e0
-ms.sourcegitcommit: 9e91fcdfcc0b4d05ca2f1f8a30b627adc607f7af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "69621142"
 ---
 # <a name="create-a-new-wlk-device-certification-submission"></a>创建新的 WLK 设备认证提交

@@ -5,10 +5,10 @@ description: Windows 驱动程序工具包 (WDK) 8.1 使你可以将 Visual Stu
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5072737d94c1546f29953147edbdf8b44304929d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344856"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>在实验室中安装 WDK 8.1 生成环境
@@ -29,7 +29,7 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
 2.  下载独立的 [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507)。 当系统询问你是想要运行还是保存 sdksetup.exe 时，单击“运行”  ，然后将下载位置指定为 **C:\\Kits\\SDK**。 单击“下一步”  并按照说明下载独立的 SDK。
 3.  下载 [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353)。 当系统询问你是想要运行还是保存 wdksetup.exe 时，单击“运行”  ，然后将下载位置指定为 **C:\\Kits\\WDK**。 单击“下一步”  并按照说明下载 WDK。 如果已在计算机上安装 WDK，则 web 安装程序将会告诉你计算机上安装的功能已处于最新状态。 若要下载 WDK 设置文件以便能够部署生成环境，请单击“下一步”  并指定 **C:\\Kits\\WDK** 路径。
 
-## <a name="span-iddownloadscriptspanspan-iddownloadscriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.下载 BuildLabSupport 文件
+## <a name="span-iddownload_scriptspanspan-iddownload_scriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.下载 BuildLabSupport 文件
 
 
 若要能够在实验室的计算机上安装 WDK 生成环境，你需要先在计算机上下载生成实验室支持文件。
@@ -37,7 +37,7 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
 1.  下载 [BuildLabSupportfiles.zip](https://go.microsoft.com/fwlink/p/?linkid=321805)。
 2.  将压缩文件的内容提取到计算机上。 提取的文件包括 BuildLabSupport 目录及你需要的设置文件和实用程序。
 
-## <a name="span-idinstallscriptspanspan-idinstallscriptspan3-install-the-wdk81-build-environment"></a><span id="install_script"></span><span id="INSTALL_SCRIPT"></span>3.安装 WDK 8.1 生成环境
+## <a name="span-idinstall_scriptspanspan-idinstall_scriptspan3-install-the-wdk81-build-environment"></a><span id="install_script"></span><span id="INSTALL_SCRIPT"></span>3.安装 WDK 8.1 生成环境
 
 
 生成实验室支持文件包括 **setup.ps1** PowerShell 命令文件，它将提取所需的 Visual Studio 和 WDK 组件并将其复制到目标目录（文件夹）。 随后，你可以将此目录复制到另一个位置，从此位置你可以在 Visual Studio 命令行接口 (CLI) 开发环境中生成项目。
@@ -76,7 +76,7 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
     xpansionRoot C:\BuildLabInstall -CatalogFile  files.xml
     ```
 
-## <a name="span-idbuildstepspanspan-idbuildstepspan4-build-windows-driver-projects-and-solutions"></a><span id="build_step"></span><span id="BUILD_STEP"></span>4.生成 Windows 驱动程序项目和解决方案
+## <a name="span-idbuild_stepspanspan-idbuild_stepspan4-build-windows-driver-projects-and-solutions"></a><span id="build_step"></span><span id="BUILD_STEP"></span>4.生成 Windows 驱动程序项目和解决方案
 
 
 **使用生成环境命令脚本**
@@ -89,7 +89,7 @@ Windows 驱动程序工具包 (WDK) 8.1 中提供的功能使你可以将 Visua
     msbuild /t:clean /t:build .\MyDriver.vcxproj /p:Configuration="Win8.1 Debug" /p:Platform=Win32
     ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [生成驱动程序](building-a-driver.md)

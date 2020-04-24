@@ -5,10 +5,10 @@ description: 这里我们将介绍在使用 Windows 驱动程序工具包 (WDK) 
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f223bc4c4c20086ec2f3f779c174ad2c9235683c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364176"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-81"></a>预配计算机时会出现什么情况 (WDK 8.1)
@@ -46,7 +46,7 @@ ms.locfileid: "67364176"
 
 1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择目标计算机的名称，然后单击“删除计算机”  。
-3.  选择“删除预配并删除计算机”  。 单击“下一步”  。
+3.  选择“删除预配并删除计算机”  。 单击 **下一步**。
 4.  完成删除过程后，单击“完成”  。
 5.  从目标计算机中卸载 WDK 测试目标设置。
 

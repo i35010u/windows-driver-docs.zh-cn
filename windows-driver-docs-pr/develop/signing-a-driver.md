@@ -5,13 +5,13 @@ description: 必须先签署所有在 64 位版本 Windows 上运行的驱动程
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af4e7e65df105ae2951d5ad9165552efb68250db
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "64368648"
 ---
-# <a name="signing-a-driver"></a>签署驱动程序
+# <a name="signing-a-driver"></a>为驱动程序签名
 
 必须先签署所有在 64 位版本 Windows 上运行的驱动程序，然后 Windows 才会加载它们。 但是，32 位版本的 Windows 无需签署驱动程序。
 

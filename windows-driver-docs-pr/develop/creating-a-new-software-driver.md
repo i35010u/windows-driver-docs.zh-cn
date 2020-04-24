@@ -6,10 +6,10 @@ ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: bcaf5c2e7e27eb5d4791f6825f9a7412768123e3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370774"
 ---
 # <a name="creating-a-new-software-driver"></a>创建新的软件驱动程序

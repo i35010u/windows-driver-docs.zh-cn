@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1365dc8641cb6a5b4d7d0bd8f9856c281c368174
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017074"
 ---
 # <a name="percent-of-camera-video-and-stream-failures"></a>相机视频和流故障次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 若要捕获相机的视频流，计算机必须将计算机透视图连续存储到视频文件中。 如果视频和流式处理功能发生故障，用户将无法捕获相机的透视图，可能会丢失尚未保存的视频。
 

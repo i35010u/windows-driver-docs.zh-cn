@@ -8,10 +8,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: ab6e38dc576599d695e9efdacc267c73a35f909a
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344138"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静态驱动程序验证程序已知问题
@@ -28,7 +28,7 @@ ms.locfileid: "63344138"
 
 1. 在 Visual Studio 2017 本机工具命令行中结合 /debug 标志重新运行 SDV。  有关命令选项的详细信息，请参阅[静态驱动程序验证程序命令](https://docs.microsoft.com/windows-hardware/drivers/devtest/-static-driver-verifier-commands--msbuild-)。
 
-    a. 首先，针对任何依赖库项目运行 SDV 的库函数。  例如：`msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/lib /debug"`。
+    a. 首先，针对任何依赖库项目运行 SDV 的库函数。  例如： `msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/lib /debug"`。
 
     b. 然后针对驱动程序项目本身运行 SDV。  例如：`msbuild /p:Configuration=Release /p:Platform=x64 /t:sdv /p:inputs="/check /debug"`
 
@@ -88,7 +88,7 @@ ms.locfileid: "63344138"
 
 ## <a name="dvl-generation-failure-after-removing-configuration-from-a-project"></a>从项目中删除配置后 DVL 生成失败
 
-主要症状：通过“配置管理器”窗口从项目中删除某个配置后，用户在选择“创建驱动程序验证日志”时看到以下消息：`Please select a driver project. Driver Verification Log cannot be created for the selected platform tool set: 'v100'"` 
+主要症状：通过“配置管理器”窗口从项目中删除某个配置后，用户在选择“创建驱动程序验证日志”时看到以下消息：`Please select a driver project. Driver Verification Log cannot be created for the selected platform tool set: 'v100'"`
 
 解决方法： 
 

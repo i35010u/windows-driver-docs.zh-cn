@@ -5,10 +5,10 @@ description: 你可以在项目的每个配置中配置远程测试计算机上�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8670f7bb647998ee7cc7b88e636034b5256b86e
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020659"
 ---
 # <a name="deployment-properties-for-driver-package-projects"></a>驱动程序包项目的部署属性

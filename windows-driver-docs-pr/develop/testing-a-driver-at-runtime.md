@@ -5,10 +5,10 @@ description: 你可以在 Visual Studio 中使用 WDK 扩展，在网络中的�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4f024d689ef60087d854418cb247c8ff28e0265
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261418"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>如何使用 Visual Studio 在运行时测试驱动程序

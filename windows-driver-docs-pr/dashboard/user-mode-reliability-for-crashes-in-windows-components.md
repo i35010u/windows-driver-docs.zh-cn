@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 08/08/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c09cc623b49d7c5aba506da836ca5f95ed39c4
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016919"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-windows-components-photos-app-normalized-by-population-is-less-than-or-equal-to-the-baseline-goal"></a>Windows 组件照片应用中用户模式可靠性的崩溃次数（按总体规范化）小于或等于基线目标
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 该度量监视 Windows 组件（例如 dwm.exe、shell、登录 UI 等）在显示器驱动程序中的崩溃频率（相对于使用该驱动程序的所有计算机数）。 如果 Windows 组件崩溃，用户必须先等待其恢复，然后才能再次使用它。
 

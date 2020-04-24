@@ -5,10 +5,10 @@ ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
 ms.date: 02/24/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 5201f216036949b968d2c5b162bd1e7a602f808d
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77601733"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>预配计算机以便进行驱动程序部署和测试 (WDK 10)

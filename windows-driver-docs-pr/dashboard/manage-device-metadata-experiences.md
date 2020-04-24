@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6e9dab46eef01a358b95133672e6cb10008eeb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63334954"
 ---
 # <a name="manage-device-metadata-experiences"></a>管理设备元数据体验
@@ -30,7 +30,7 @@ ms.locfileid: "63334954"
 
 4. 使用列表顶部的筛选器以仅显示你希望看到的体验。 输入以下一个或多个参数：
 
-|参数|描述|
+|参数|说明|
 |---|---|
 |体验名称|从列表中，选择你要查看或更新的体验名称。|
 |硬件 ID|输入你要查看的硬件 ID，在输入每个 ID 后插入分号。 这将显示包含所选硬件 ID 的体验。
@@ -51,7 +51,7 @@ ms.locfileid: "63334954"
     <thead>
     <tr class="header">
     <th>元素</th>
-    <th>描述</th>
+    <th>说明</th>
     </tr>
     </thead>
     <tbody>
@@ -97,7 +97,7 @@ ms.locfileid: "63334954"
     <thead>
     <tr class="header">
     <th>列标题</th>
-    <th>描述</th>
+    <th>说明</th>
     </tr>
     </thead>
     <tbody>
@@ -114,11 +114,11 @@ ms.locfileid: "63334954"
     <td><p>如果包处于预览状态，尚未发布，则选中此复选框。</p></td>
     </tr>
     <tr class="even">
-    <td><p>区域设置</p></td>
+    <td><p>Locale</p></td>
     <td><p>这将列出设计包所针对的国家/地区。</p></td>
     </tr>
     <tr class="odd">
-    <td><p>默认</p></td>
+    <td><p>默认值</p></td>
     <td><p>“是”指示你已指定为默认包的包。</p></td>
     </tr>
     <tr class="even">

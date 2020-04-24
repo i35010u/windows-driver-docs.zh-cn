@@ -7,16 +7,16 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42ec2df44588dff7f2a37f70f861720c46b5e267
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371359"
 ---
 # <a name="concepts-for-all-driver-developers"></a>适用于所有驱动程序开发人员的概念
 
 
-本节内容：
+本部分内容：
 
 -   [用户模式和内核模式](user-mode-and-kernel-mode.md)
 -   [虚拟地址空间](virtual-address-spaces.md)

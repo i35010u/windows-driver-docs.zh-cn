@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f7df03da49a8be8b7119aafe4ff6da97b1e90349
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017089"
 ---
 # <a name="percent-of-bluetooth-connection-failures"></a>蓝牙连接失败次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 如果两个设备无法与蓝牙连接，则用户将无法向另一个设备发送内容或者接收来自另一个设备的内容。 断开连接也可能表明设备之间存在通信问题。 该度量计算蓝牙连接的失败率。
 

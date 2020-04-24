@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 74a0af946d837fe120dd6dc7fe34086b661cadab
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016943"
 ---
 # <a name="percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer"></a>Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 当用户使用 Microsoft Edge 或 Internet Explorer 观看 YouTube 视频时，显卡组件将处理来自 Web 的视频流，并在屏幕上显示呈现的视频。 该度量监视 YouTube 视频在 Microsoft Edge 中播放失败的频率；如果用户遇到播放失败，他们将无法加载和观看视频。
 

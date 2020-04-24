@@ -5,10 +5,10 @@ description: 可以使用 Visual Studio 在测试计算机上部署和安装驱�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 59f8edbabc28832d2e589d2eed4d173ea0ca5669
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364213"
 ---
 # <a name="how-to-test-a-driver-package"></a>如何测试驱动程序包

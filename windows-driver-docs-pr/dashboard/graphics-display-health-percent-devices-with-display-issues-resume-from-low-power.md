@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: faa827ff80942ed5acfbde3c84e7eda5f77bf1fb
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017069"
 ---
 # <a name="percent-of-machines-with-display-issues-when-resume-from-low-power-state"></a>从低功率状态恢复时出现显示问题的计算机的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 计算机从低功率状态启动时，显卡组件中的错误会导致出现影响用户体验的显示问题。 此度量计算在低功率状态下恢复时出现显示问题的计算机的百分比。 有关显示问题的列表，请参阅[附录](measure-appendix.md#display-issues)。
 

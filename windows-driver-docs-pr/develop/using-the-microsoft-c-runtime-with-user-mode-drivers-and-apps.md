@@ -5,10 +5,10 @@ description: 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fef7a8ac858884e1be68e5b0fc7f61ca014d2e
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344032"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
@@ -16,12 +16,12 @@ ms.locfileid: "63344032"
 
 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。 它为用户模式驱动程序和桌面应用程序编写人员提供了编译代码、并通过必要的 C 运行时库打包代码以重新分发的指南。
 
-## <a name="span-idthecruntimelibrariescrtarenolongershippedasawindowssharedcomponentspanspan-idthecruntimelibrariescrtarenolongershippedasawindowssharedcomponentspanspan-idthecruntimelibrariescrtarenolongershippedasawindowssharedcomponentspanthe-c-runtime-libraries-crt-are-no-longer-shipped-as-a-windows-shared-component"></a><span id="The_C_runtime_libraries__CRT__are_no_longer_shipped_as_a_Windows_shared_component"></span><span id="the_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_component"></span><span id="THE_C_RUNTIME_LIBRARIES__CRT__ARE_NO_LONGER_SHIPPED_AS_A_WINDOWS_SHARED_COMPONENT"></span>C 运行时库 (CRT) 不再以 Windows 共享组件的形式提供
+## <a name="span-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanspan-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanspan-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanthe-c-runtime-libraries-crt-are-no-longer-shipped-as-a-windows-shared-component"></a><span id="The_C_runtime_libraries__CRT__are_no_longer_shipped_as_a_Windows_shared_component"></span><span id="the_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_component"></span><span id="THE_C_RUNTIME_LIBRARIES__CRT__ARE_NO_LONGER_SHIPPED_AS_A_WINDOWS_SHARED_COMPONENT"></span>C 运行时库 (CRT) 不再以 Windows 共享组件的形式提供
 
 
 过去，Microsoft 将 C 运行时库 (CRT) 作为 Window 共享系统组件分发。 在以前版本的 WDK 中，在生成驱动程序或传统 Windows 应用时，可以将代码与 CRT 的 Windows 系统版本链接。 Windows 8 发布后，C 运行时库不再被视为系统组件，你必须随你的用户模式驱动程序或桌面应用程序提供 CRT 的可再发行版本。 本主题讨论了这一变化的原因、C 运行时的新组件，以及生成桌面应用或驱动程序和重新分发 CRT 的策略。
 
-## <a name="span-idwhydidmicrosoftmakethischangespanspan-idwhydidmicrosoftmakethischangespanspan-idwhydidmicrosoftmakethischangespanwhy-did-microsoft-make-this-change"></a><span id="Why_did_Microsoft_make_this_change_"></span><span id="why_did_microsoft_make_this_change_"></span><span id="WHY_DID_MICROSOFT_MAKE_THIS_CHANGE_"></span>Microsoft 为何进行这项更改？
+## <a name="span-idwhy_did_microsoft_make_this_change_spanspan-idwhy_did_microsoft_make_this_change_spanspan-idwhy_did_microsoft_make_this_change_spanwhy-did-microsoft-make-this-change"></a><span id="Why_did_Microsoft_make_this_change_"></span><span id="why_did_microsoft_make_this_change_"></span><span id="WHY_DID_MICROSOFT_MAKE_THIS_CHANGE_"></span>Microsoft 为何进行这项更改？
 
 
 C 运行时有两个独立的版本。 一个是内部 Windows 组件，另一个供应用程序和驱动程序开发人员使用，随 Visual Studio 提供。 这项更改的主要原因是为了保持一致性，同时支持向客户提供 CRT 服务。
@@ -32,12 +32,12 @@ C 运行时有两个独立的版本。 一个是内部 Windows 组件，另一�
 
 msvcrt.dll 现在是 Windows 所有并生成的系统组件。 它只供系统级别组件使用。 文件 msvcr110.dll (Visual Studio 2012) 或 msvcr120.dll (Microsoft Visual Studio 2013) 是 CRT 的新公开版本，供桌面应用程序和用户模式驱动程序开发人员使用。
 
-## <a name="span-idbuildingyourcodewiththecruntimespanspan-idbuildingyourcodewiththecruntimespanspan-idbuildingyourcodewiththecruntimespanbuilding-your-code-with-the-c-runtime"></a><span id="Building_your_code_with_the_C_runtime"></span><span id="building_your_code_with_the_c_runtime"></span><span id="BUILDING_YOUR_CODE_WITH_THE_C_RUNTIME"></span>使用 C 运行时生成代码
+## <a name="span-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanbuilding-your-code-with-the-c-runtime"></a><span id="Building_your_code_with_the_C_runtime"></span><span id="building_your_code_with_the_c_runtime"></span><span id="BUILDING_YOUR_CODE_WITH_THE_C_RUNTIME"></span>使用 C 运行时生成代码
 
 
 Visual C++ 在开发系统的 System32 目录中安装 CRT 的最新版本。 这样安装的目的是为开发人员提供方便。 否则，使用与共享 CRT 链接的 Visual C++ 生成的所有项目均需要在生成目录中保留 DLL 副本，以方便调试和执行。 msvcr120.dll 可以用于目标为 Windows 8.1 和 Windows 8 以及以前版本的 Windows（从 Windows Vista 开始）的驱动程序。
 
-## <a name="span-idredistributingthecruntimespanspan-idredistributingthecruntimespanspan-idredistributingthecruntimespanredistributing-the-c-runtime"></a><span id="Redistributing_the_C_Runtime_"></span><span id="redistributing_the_c_runtime_"></span><span id="REDISTRIBUTING_THE_C_RUNTIME_"></span>重新分发 C 运行时
+## <a name="span-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanredistributing-the-c-runtime"></a><span id="Redistributing_the_C_Runtime_"></span><span id="redistributing_the_c_runtime_"></span><span id="REDISTRIBUTING_THE_C_RUNTIME_"></span>重新分发 C 运行时
 
 
 当你在 Microsoft Visual Studio 中生成用户模式驱动程序或传统桌面应用程序，且应用程序使用 C 运行时库 (CRT) 时，你必须分发相应的 CRT 动态链接库。
@@ -50,7 +50,7 @@ Visual C/C++ 可再发行组件包 (VCRedist\_\*.exe) 作为应用程序提供�
 
 如果驱动程序将 CRT 组件复制到 System32 且另一个程序在运行可再发行组件包，有可能出现问题：驱动程序安装的版本将被覆盖。 相反情况同样存在潜在问题。 如果某个程序运行可再发行组件包，并且驱动程序将早期版本的 CRT 组件复制到 System32，这可能会中断应用程序。 INF 安装过程只会对照 System32 中已经存在的库检查要安装的库的版本号，如果不同将会将其覆盖。
 
-## <a name="span-idrecommendedstrategiesspanspan-idrecommendedstrategiesspanspan-idrecommendedstrategiesspanrecommended-strategies"></a><span id="Recommended_Strategies"></span><span id="recommended_strategies"></span><span id="RECOMMENDED_STRATEGIES"></span>建议的策略
+## <a name="span-idrecommended_strategiesspanspan-idrecommended_strategiesspanspan-idrecommended_strategiesspanrecommended-strategies"></a><span id="Recommended_Strategies"></span><span id="recommended_strategies"></span><span id="RECOMMENDED_STRATEGIES"></span>建议的策略
 
 
 随你的驱动程序和应用程序重新分发 C/C++ 运行时时，请使用以下策略。
@@ -86,7 +86,7 @@ Msvcr120.dll = 2
 
 -   根据 CRT 静态链接驱动程序以在二进制文件中加入运行时。 在此情况下，你不需要重新分发 CRT。
 
-## <a name="span-idlinkingyourcodewiththecruntimelibrariesspanspan-idlinkingyourcodewiththecruntimelibrariesspanspan-idlinkingyourcodewiththecruntimelibrariesspanlinking-your-code-with-the-c-runtime-libraries"></a><span id="Linking_your_code_with_the_C_Runtime_libraries"></span><span id="linking_your_code_with_the_c_runtime_libraries"></span><span id="LINKING_YOUR_CODE_WITH_THE_C_RUNTIME_LIBRARIES"></span>将代码与 C 运行时库相链接
+## <a name="span-idlinking_your_code_with_the_c_runtime_librariesspanspan-idlinking_your_code_with_the_c_runtime_librariesspanspan-idlinking_your_code_with_the_c_runtime_librariesspanlinking-your-code-with-the-c-runtime-libraries"></a><span id="Linking_your_code_with_the_C_Runtime_libraries"></span><span id="linking_your_code_with_the_c_runtime_libraries"></span><span id="LINKING_YOUR_CODE_WITH_THE_C_RUNTIME_LIBRARIES"></span>将代码与 C 运行时库相链接
 
 
 以下库包含 C 运行时库功能。
@@ -99,7 +99,7 @@ Msvcr120.dll = 2
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -130,7 +130,7 @@ Msvcr120.dll = 2
 
 你无法重新分发 Visual Studio 中包括的所有文件；仅允许你重新分发 [Visual Studio 2013 Preview and Visual Studio 2013 SDK Preview 的可再发行代码](https://go.microsoft.com/fwlink/p/?linkid=320999)。 应用程序的调试版本和各个 Visual C++ 动态链接库不可以再分发。
 
-## <a name="span-idsummary-whatyouneedtodospanspan-idsummary-whatyouneedtodospanspan-idsummary-whatyouneedtodospansummary---what-you-need-to-do"></a><span id="Summary_-_What_you_need_to_do"></span><span id="summary_-_what_you_need_to_do"></span><span id="SUMMARY_-_WHAT_YOU_NEED_TO_DO"></span>总结 - 需要执行的操作
+## <a name="span-idsummary_-_what_you_need_to_dospanspan-idsummary_-_what_you_need_to_dospanspan-idsummary_-_what_you_need_to_dospansummary---what-you-need-to-do"></a><span id="Summary_-_What_you_need_to_do"></span><span id="summary_-_what_you_need_to_do"></span><span id="SUMMARY_-_WHAT_YOU_NEED_TO_DO"></span>总结 - 需要执行的操作
 
 
 如有可能，在安装过程中使用 Visual C++ 可再发行组件包（(VCRedist\_x86.exe、VCRedist\_x64.exe、VCRedist\_arm.exe）VCRedist.msi。
@@ -139,7 +139,7 @@ Msvcr120.dll = 2
 
 对于 UMDF 驱动程序，请将 CRT 与驱动程序代码以静态方式进行链接。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 * [确定要重新分发的 DLL](https://go.microsoft.com/fwlink/p/?linkid=321001)

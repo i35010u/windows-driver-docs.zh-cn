@@ -6,10 +6,10 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d0d90055be8c79438ff4985119678c66f46235
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67353940"
 ---
 # <a name="create-a-new-hardware-submission"></a>创建新硬件提交
@@ -51,7 +51,7 @@ ms.locfileid: "67353940"
    <thead>
    <tr class="header">
    <th>字段</th>
-   <th>描述</th>
+   <th>说明</th>
    </tr>
    </thead>
    <tbody>

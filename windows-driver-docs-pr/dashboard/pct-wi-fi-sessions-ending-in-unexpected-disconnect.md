@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 7034bdbaa669ba0d4e5de6386a7969f23769559e
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017013"
 ---
 # <a name="percent-of-wi-fi-sessions-ending-in-an-unexpected-disconnect"></a>在意外断开连接的情况下结束的 WLAN 会话百分比 
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 设备成功连接到 Wi-Fi 后，必须保持该连接，这样设备才能持续访问 Internet。 此度量监视任何意外的 Wi-Fi 断开。 如果用户的设备出现意外的 Wi-Fi 断开连接，则其依赖于 Internet 的应用程序无法正常工作，并在 Internet 访问按钮上显示有警告图标（黄色区域内显示惊叹号），或者计算机完全从 Internet 断开连接。
 

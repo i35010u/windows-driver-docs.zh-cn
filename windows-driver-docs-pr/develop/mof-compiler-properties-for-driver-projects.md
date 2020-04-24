@@ -5,10 +5,10 @@ description: 托管对象格式 (MOF) 编译器 (mofcomp.exe) 用于解析 MOF �
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c5fe74aba3fe87b75c37285202bd714eb7e64784
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364251"
 ---
 # <a name="mof-compiler-properties-for-driver-projects"></a>驱动程序项目的 MOF 编译器属性
@@ -18,7 +18,7 @@ ms.locfileid: "67364251"
 ## <a name="span-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspanspan-idsetting_managed_object_format__mof__compiler_properties_for_driver_projectsspansetting-managed-object-format-mof-compiler-properties-for-driver-projects"></a><span id="Setting_Managed_Object_Format__MOF__Compiler_properties_for_driver_projects"></span><span id="setting_managed_object_format__mof__compiler_properties_for_driver_projects"></span><span id="SETTING_MANAGED_OBJECT_FORMAT__MOF__COMPILER_PROPERTIES_FOR_DRIVER_PROJECTS"></span>设置驱动程序项目的托管对象格式 (MOF) 编译器属性
 
 
-1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
+1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”  中右键单击驱动程序项目，并选择“属性”  。
 2.  在驱动程序项目的属性页中，单击“配置属性”  ，然后单击“Mof 编译器”  。
 3.  设置项目属性。
 
@@ -32,7 +32,7 @@ ms.locfileid: "67364251"
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

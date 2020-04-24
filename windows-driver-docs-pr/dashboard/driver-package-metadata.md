@@ -6,10 +6,10 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 7906f735d41a063b329ca2b66ad0bf2a95721654
-ms.sourcegitcommit: 257850d61aa5d1db707dc2f30721319b650e47f6
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "73801165"
 ---
 # <a name="driver-package-metadata"></a>驱动程序包元数据
@@ -58,7 +58,7 @@ ms.locfileid: "73801165"
 
 此文件具有以下值：
 
-| 值 | 在任务栏的搜索框中键入 | 描述 |
+| 值 | 类型 | 说明 |
 |:--|:--|:--|
 |BundleInfoMap|对象|这是父级。 它由 GUID 标识，并包含有关驱动程序捆绑包的所有详细信息。 此值映射到[硬件 ID 对象](get-shipping-labels.md#hardware-id-object)中的 *bundleID*|
 |区域设置|字符串数组|捆绑包的适用区域设置数组|

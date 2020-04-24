@@ -5,10 +5,10 @@ ms.assetid: C05E3017-0F1A-49D7-8EAD-0DC44351A39A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fb7c4c0d0c87db0ae03d092239b6ed0182098eb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371287"
 ---
 # <a name="kmdf-as-a-generic-driver-pair-model"></a>作为通用驱动程序对模型的 KMDF
@@ -61,7 +61,7 @@ USB 3.0 主控制器驱动程序为基于 KMDF 的驱动程序示例。 在此�
 
 在（KMDF 驱动程序，框架）对中，框架处理各种内核模式驱动程序共同的任务。 例如，框架可以处理 I/O 请求排队、线程同步、大部分即插即用任务以及大部分电源管理任务。 KMDF 驱动程序处理需要与特定设备交互的任务。 KMDF 驱动程序通过注册“框架”根据需要调用的事件处理程序来参与处理请求。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [微型驱动程序和驱动程序对](minidrivers-and-driver-pairs.md)

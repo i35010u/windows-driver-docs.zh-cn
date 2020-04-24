@@ -5,10 +5,10 @@ ms.assetid: 49207485-AFDF-4E84-B39C-A14FC7E2CF60
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a08581620dad4b82d279c93e26f1ad682e227d7
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371299"
 ---
 # <a name="kmdf-extensions-and-driver-triples"></a>KMDF 扩展和三重驱动程序

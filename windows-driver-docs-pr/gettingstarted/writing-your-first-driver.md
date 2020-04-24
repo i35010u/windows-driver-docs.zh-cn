@@ -7,13 +7,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b19a39b73fcf69d144732d43712d8e4a4aac7b6b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67385170"
 ---
-# <a name="write-your-first-driver"></a>编写第一个驱动程序
+# <a name="write-your-first-driver"></a>编写你的第一个驱动程序
 
 
 如果要编写第一个驱动程序，请使用以下练习开始操作。 每个练习都相互独立，因此可以按任何顺序执行它们。
@@ -29,7 +29,7 @@ ms.locfileid: "67385170"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

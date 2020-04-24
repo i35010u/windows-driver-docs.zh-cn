@@ -8,10 +8,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a79779e6d34b80a250b1d176a8085cfdf5e23bbc
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371232"
 ---
 # <a name="what-is-a-driver"></a>什么是驱动程序？
@@ -21,7 +21,7 @@ ms.locfileid: "63371232"
 
 ![图：显示应用程序、操作系统以及驱动程序](images/whatisadriver01.png)
 
-## <a name="span-idexpandingthedefinitionspanspan-idexpandingthedefinitionspanspan-idexpandingthedefinitionspanexpanding-the-definition"></a><span id="Expanding_the_definition"></span><span id="expanding_the_definition"></span><span id="EXPANDING_THE_DEFINITION"></span>扩展定义
+## <a name="span-idexpanding_the_definitionspanspan-idexpanding_the_definitionspanspan-idexpanding_the_definitionspanexpanding-the-definition"></a><span id="Expanding_the_definition"></span><span id="expanding_the_definition"></span><span id="EXPANDING_THE_DEFINITION"></span>扩展定义
 
 
 到目前为止，我们的说明在几个方面过于简单化：
@@ -38,7 +38,7 @@ ms.locfileid: "63371232"
 
 我们可以扩展驱动程序  的定义，即驱动程序是观察或参与操作系统和设备之间通信的任何软件组件。
 
-## <a name="span-idsoftwaredriversspanspan-idsoftwaredriversspanspan-idsoftwaredriversspansoftware-drivers"></a><span id="Software_drivers"></span><span id="software_drivers"></span><span id="SOFTWARE_DRIVERS"></span>软件驱动程序
+## <a name="span-idsoftware_driversspanspan-idsoftware_driversspanspan-idsoftware_driversspansoftware-drivers"></a><span id="Software_drivers"></span><span id="software_drivers"></span><span id="SOFTWARE_DRIVERS"></span>软件驱动程序
 
 
 我们的扩展定义相当准确，但仍然不完整，因为有些驱动程序根本不与任何硬件设备相关联。 例如，假设你需要编写可以访问核心操作系统数据结构的工具，这些结构仅可以由内核模式下运行的代码进行访问。 可以通过将工具拆分成两个组件来执行该操作。 第一个组件在用户模式下运行且提供用户界面。 第二个组件在内核模式下运行且可以访问核心操作系统数据。 在用户模式下运行的组件称为应用程序，在内核模式下运行的组件称为“软件驱动程序”  。 软件驱动程序与硬件设备不关联。 有关处理器模式的详细信息，请参阅[用户模式和内核模式](user-mode-and-kernel-mode.md)。
@@ -47,7 +47,7 @@ ms.locfileid: "63371232"
 
 ![图：显示应用程序和软件驱动程序](images/whatisadriver03.png)
 
-## <a name="span-idadditionalnotesspanspan-idadditionalnotesspanspan-idadditionalnotesspanadditional-notes"></a><span id="Additional_notes"></span><span id="additional_notes"></span><span id="ADDITIONAL_NOTES"></span>其他说明
+## <a name="span-idadditional_notesspanspan-idadditional_notesspanspan-idadditional_notesspanadditional-notes"></a><span id="Additional_notes"></span><span id="additional_notes"></span><span id="ADDITIONAL_NOTES"></span>其他说明
 
 
 软件驱动程序始终在内核模式下运行。 编写软件驱动程序的主要原因是要获取对仅在内核模式下可用的受保护数据的访问权限。 但是设备驱动程序并不总是需要访问内核模式数据和资源。 因此某些设备驱动程序在用户模式下运行。

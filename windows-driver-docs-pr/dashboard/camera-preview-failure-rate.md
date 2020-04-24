@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 32e6692b5b895ecb11224d62561e306a083d37a7
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017076"
 ---
 # <a name="percent-of-camera-preview-failures"></a>相机预览失败次数百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 尝试捕获图像时，设备可预览即将捕获的图像。 如果预览功能失败，用户将看不到相机的透视图，并可能无法拍照以将图像作为照片保存。
 

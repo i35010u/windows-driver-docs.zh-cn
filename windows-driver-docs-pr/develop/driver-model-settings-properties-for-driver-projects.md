@@ -5,10 +5,10 @@ description: 为内核模式或用户模式驱动程序设置基本属性，包�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0dcb1641d50051d2d743e313fe09bf601857237
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370749"
 ---
 # <a name="driver-model-settings-properties-for-driver-projects"></a>驱动程序项目的驱动程序模型设置属性
@@ -18,7 +18,7 @@ ms.locfileid: "67370749"
 ## <a name="setting-driver-model-properties-for-driver-projects"></a>设置驱动程序项目的驱动程序模型属性
 
 
-1.  打开驱动程序项目的属性页。 在**解决方案资源管理器**中右键单击驱动程序项目，并选择“属性”  。
+1.  打开驱动程序项目的属性页。 在“解决方案资源管理器”  中右键单击驱动程序项目，并选择“属性”  。
 2.  在驱动程序项目的属性页中，单击“配置属性”  ，然后单击“驱动程序模型设置”  。
 3.  设置项目属性。
 

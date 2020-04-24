@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 49540d0393a8423721ce9255c636c0f6c0ce29fa
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016946"
 ---
 # <a name="percent-of-machines-without-a-kernel-mode-crash"></a>没有内核模式崩溃的计算机所占的百分比
 
-## <a name="description"></a>描述
+## <a name="description"></a>说明
 
 内核模式崩溃 (KMC) 由停止操作系统的内核错误导致。 如果用户遇到 KMC，其计算机会突然崩溃，并显示蓝屏。 此类崩溃可能会导致用户工作流中断，并且导致数据丢失。
 

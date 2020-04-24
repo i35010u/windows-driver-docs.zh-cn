@@ -5,10 +5,10 @@ description: 使用适用于 Windows 8 的 Windows 驱动程序工具包 (WDK) �
 ms.date: 03/26/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 40dafed4d6fa901505fcc57fa82c0d74b7a3de18
-ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80327568"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>如何使用“驱动程序测试”模板编写驱动程序测试

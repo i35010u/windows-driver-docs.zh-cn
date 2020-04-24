@@ -5,10 +5,10 @@ description: 在 Visual Studio 中，WDK 提供了一个可让你在测试计算
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f336f87cdc4e6151c9026d5695f9a316936afd
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020676"
 ---
 # <a name="deploying-a-driver-to-a-test-computer"></a>将驱动程序部署到测试计算机

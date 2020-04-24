@@ -5,13 +5,13 @@ description: 在 Microsoft 驱动程序参考页底部的“要求”块中，�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf53562619c2fff7f444a36373553cc7f5b6b70
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344040"
 ---
-# <a name="target-platform-on-driver-reference-pages"></a>驱动程序参考页的目标平台
+# <a name="target-platform-on-driver-reference-pages"></a>驱动程序参考页上的“目标平台”
 
 在 Microsoft 驱动程序参考页底部的“要求”块中，将看到一个称为“目标平台”  的条目。 该行列出了页面将应用到的 Windows 版本。
 
@@ -31,7 +31,7 @@ ms.locfileid: "63344040"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
