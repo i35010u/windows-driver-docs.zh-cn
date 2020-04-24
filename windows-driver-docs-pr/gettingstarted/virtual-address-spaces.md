@@ -2,14 +2,14 @@
 title: 虚拟地址空间
 description: 虚拟地址空间
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
-ms.date: 04/20/2017
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f945bd59b717c7e242ce46398ea33f2ae76f1582
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e9c9ba03e89cf2d6436b1d99f88582f0516b9b52
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77146509"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82122238"
 ---
 # <a name="virtual-address-spaces"></a>虚拟地址空间
 
@@ -41,9 +41,7 @@ ms.locfileid: "77146509"
 
 在 32 位 Windows 中，可以选择指定（在启动时）超过 2 GB 可用于用户空间。 其结果是系统空间可用的虚拟地址更少。 可以将用户空间的大小增加到 3 GB，在这种情况下，系统空间只有1 GB 可用。 若要增大用户空间的大小，请使用 [**BCDEdit /set increaseuserva**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set)。
 
-在 64 位 Windows 中，虚拟地址空间的理论大小为 2^64 字节（16 艾字节），但实际上仅使用 16 艾字节范围的一小部分。 范围从 0x000'00000000 至 0x7FF'FFFFFFFF 的 8 TB 用于用户空间，范围从 0xFFFF0800'00000000 至 0xFFFFFFFF'FFFFFFFF 的 248 TB 的部分用于系统空间。
-
-![图：分页缓冲池和非分页缓冲池](images/virtualaddressspace03.png)
+在 64 位 Windows 中，虚拟地址空间的理论大小为 2^64 字节（16 艾字节），但实际上仅使用 16 艾字节范围的一小部分。
 
 用户模式下运行的代码可以访问用户空间，但不能访问系统空间。 此限制可防止用户模式代码读取或更改受保护的操作系统数据结构。 内核模式下运行的代码既可以访问用户空间，也可以访问系统空间。 即，内核模式下运行的代码可以访问系统空间和当前用户模式进程的虚拟地址空间。
 
