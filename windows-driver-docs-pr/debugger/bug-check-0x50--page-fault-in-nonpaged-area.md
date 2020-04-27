@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: c161f61dd3a5b08aa69dcfa8edb170eb31612dae
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402345"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查 0x50：PAGE\_FAULT\_IN\_NONPAGED\_AREA
@@ -40,7 +40,7 @@ PAGE\_FAULT\_IN\_NONPAGED\_AREA bug 检查的值为 0x00000050。 这表明引�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -115,7 +115,7 @@ PAGE\_FAULT\_IN\_NONPAGED\_AREA bug 检查的值为 0x00000050。 这表明引�
 
 有关一般蓝屏疑难解答信息，请参阅[蓝屏数据](blue-screen-data.md)  。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
 通常，引用的地址在释放的内存中，或者是无效的。 这不能通过“try-except”处理程序保护，只能由探测或类似的编程技术保护  。

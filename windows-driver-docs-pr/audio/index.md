@@ -6,10 +6,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: e5000e3658365a5a8806797b346377566a6f0add
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "63333425"
 ---
 # <a name="audio-devices-design-guide"></a>音频设备设计指南

@@ -104,9 +104,9 @@
               href: net-buffer-list-context-structure.md
         - name: NET_BUFFER 撤退和前进操作
           items:
-            - name: 撤退和前进操作
+            - name: 重新处理和前进操作
               href: retreat-and-advance-operations.md
-            - name: 撤退操作
+            - name: 重新处理操作
               href: retreat-operations.md
             - name: 前进操作
               href: advance-operations.md
@@ -1834,7 +1834,7 @@
           href: querying-and-changing-nvgre-task-offload-state.md
         - name: NVGRE 任务卸载的标准化 INF 关键字
           href: standardized-inf-keywords-for-nvgre-task-offload.md
-    - name: Receive Segment Coalescing (RSC)
+    - name: 接受段合并 (RSC)
       items:
         - name: 关于接收段合并 (RSC)
           items:
@@ -2936,7 +2936,7 @@
               href: wdi-information-collection-for-bugs.md
             - name: WDI 非 TLV 版本控制
               href: wdi-non-tlv-versioning.md
-            - name: 将用户发起的反馈与 IHV 跟踪日志记录配合使用
+            - name: 用户使用 IHV 跟踪日志记录发起的反馈
               items:
                 - name: “将用户发起的反馈与 IHV 跟踪日志记录配合使用”概述
                   href: user-initiated-feedback-with-ihv-trace-logging.md
@@ -4298,13 +4298,13 @@
           href: using-tdi-transports.md
         - name: 使用网络模块注册机构 (NMR) 注册和注销 WSK
           items:
-            - name: 使用 NMR 注册和注销 WSK
+            - name: 使用 NMR 注册和取消注册 WSK
               href: using-nmr-for-wsk-registration-and-unregistration.md
             - name: 初始化 NMR 数据结构
               href: initializing-nmr-data-structures.md
             - name: 将 WSK 客户端附加到 WSK 子系统
               href: attaching-the-wsk-client-to-the-wsk-subsystem.md
-            - name: 注销和卸载 WSK 客户端
+            - name: 取消注册和卸载 WSK 客户端
               href: unregistering-and-unloading-the-wsk-client.md
 - name: IP 帮助程序
   items:
@@ -4336,7 +4336,7 @@
           href: callout-driver.md
         - name: 标注函数
           href: callout-function.md
-        - name: Filter
+        - name: 筛选
           href: filter.md
         - name: 筛选器引擎
           href: filter-engine.md
@@ -4584,7 +4584,7 @@
               href: windows-sockets-spi-extensions-for-sans.md
         - name: SAN 服务提供程序代理驱动程序创建
           items:
-            - name: 为 SAN 服务提供商创建代理驱动程序
+            - name: 为 SAN 服务提供程序创建代理驱动程序
               href: creating-a-proxy-driver-for-a-san-service-provider.md
             - name: 初始化和卸载 SAN 代理驱动程序
               href: initializing-and-unloading-a-san-proxy-driver.md

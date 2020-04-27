@@ -330,9 +330,9 @@
           href: hidi2c-device-specific-method---dsm-.md
         - name: Windows 按钮数组的特定于设备的方法 (_DSM)
           href: windows-button-array-device-specific-method---dsm-.md
-- name: 安全性
+- name: 安全
   items:
-    - name: 安全性
+    - name: 安全
       href: security-overview.md
     - name: 安全启动和设备加密概述
       href: secure-boot-and-device-encryption-overview.md

@@ -7,10 +7,10 @@ keywords:
 ms.date: 03/02/2020
 ms.localizationpriority: High
 ms.openlocfilehash: 6dcd25c57c9f9625a77987a23822c049c4546c73
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79437058"
 ---
 # <a name="how-windows-selects-a-driver-for-a-device"></a>Windows 如何为设备选择驱动程序
@@ -21,7 +21,7 @@ ms.locfileid: "79437058"
 在 Windows 10 中，此匹配过程分两个阶段进行。 首先，Windows 10 在[驱动程序存储](driver-store.md)中安装最匹配的驱动程序，允许设备快速开始操作。 安装该驱动程序之后，Windows 10 还会：
 
 * 从Windows 更新下载任何匹配的[驱动程序包](driver-packages.md)，并将其放入[驱动程序存储](driver-store.md)。
-* 搜索在“设备路径”注册表值指定的位置预加载的驱动程序包  。  “设备路径”注册表值位于以下子项下：`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`  。  默认情况下，“设备路径”值指定 %SystemRoot%\\INF 目录  。
+* 搜索在“设备路径”注册表值指定的位置预加载的驱动程序包  。  “设备路径”注册表值位于以下子项下：`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion` 。  默认情况下，“设备路径”值指定 %SystemRoot%\\INF 目录  。
 
 如果 Windows 10 在这些位置找到比初始安装项匹配度更高的驱动程序包，Windows 会将其从驱动程序存储安装的驱动程序替换为匹配度更高的驱动程序。
 

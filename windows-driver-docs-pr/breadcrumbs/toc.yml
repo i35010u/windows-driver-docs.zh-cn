@@ -38,7 +38,7 @@
                 - name: ACPI
                   tocHref: /windows-hardware/drivers/acpi/
                   topicHref: /windows-hardware/drivers/acpi/index
-                - name: Audio
+                - name: 音频
                   tocHref: /windows-hardware/drivers/audio/
                   topicHref: /windows-hardware/drivers/audio/index
                 - name: 电池
@@ -47,7 +47,7 @@
                 - name: 生物识别
                   tocHref: /windows-hardware/drivers/biometric/
                   topicHref: /windows-hardware/drivers/biometric/index
-                - name: 蓝牙
+                - name: Bluetooth
                   tocHref: /windows-hardware/drivers/bluetooth/
                   topicHref: /windows-hardware/drivers/bluetooth/index
                 - name: 仪表板
@@ -56,7 +56,7 @@
                 - name: 设备应用
                   tocHref: /windows-hardware/drivers/devapps/
                   topicHref: /windows-hardware/drivers/devapps/index
-                - name: 显示
+                - name: 显示器
                   tocHref: /windows-hardware/drivers/display/
                   topicHref: /windows-hardware/drivers/display/index
                 - name: 用于测试驱动程序的工具
@@ -68,7 +68,7 @@
                 - name: IEEE
                   tocHref: /windows-hardware/drivers/ieee/
                   topicHref: /windows-hardware/drivers/ieee/index
-                - name: 图像
+                - name: 映像
                   tocHref: /windows-hardware/drivers/image/
                   topicHref: /windows-hardware/drivers/image/index
                 - name: 可安装的文件系统
@@ -92,7 +92,7 @@
                 - name: NetCx
                   tocHref: /windows-hardware/drivers/netcx/
                   topicHref: /windows-hardware/drivers/netcx/index
-                - name: Network
+                - name: Network (网络)
                   tocHref: /windows-hardware/drivers/network/
                   topicHref: /windows-hardware/drivers/network/index
                 - name: NFC
@@ -113,7 +113,7 @@
                 - name: 服务点
                   tocHref: /windows-hardware/drivers/pos/
                   topicHref: /windows-hardware/drivers/pos/index
-                - name: Print
+                - name: 打印
                   tocHref: /windows-hardware/drivers/print/
                   topicHref: /windows-hardware/drivers/print/index
                 - name: SD

@@ -5,10 +5,10 @@ ms.assetid: 4981928E-A33D-4F60-AAA0-124C360B7E03
 ms.date: 08/23/2018
 ms.localizationpriority: high
 ms.openlocfilehash: 9e62ff14ef3e006c85bf880a1f27ed885a655bbf
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335960"
 ---
 # <a name="getting-started-with-windows-debugging"></a>Windows 调试入门

@@ -298,7 +298,7 @@
       href: security-issues-for-section-objects-and-views.md
     - name: 使用 MDL
       href: using-mdls.md
-- name: 安全性
+- name: 安全
   items:
     - name: 控制设备访问权限
       href: controlling-device-access.md

@@ -8,10 +8,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 32b3fefefc3c90ae1269fc0e20fb29f83db9c81d
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473448"
 ---
 # <a name="biometric-devices-design-guide"></a>生物识别设备设计指南
@@ -22,7 +22,7 @@ ms.locfileid: "68473448"
 
 本部分介绍了如何编写适用于 Windows 生物识别驱动程序接口 (WBDI) 的用户模式驱动程序。 WBDI 是 Windows 生物识别框架 (WBF) 的驱动程序接口。 Windows 7 和更高版本的 Windows 操作系统都附带了 WBF。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 -   [生物识别驱动程序入门](getting-started-with-biometric-drivers.md)

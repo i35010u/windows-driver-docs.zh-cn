@@ -4,10 +4,10 @@ title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: ce0646add1764f938ce2931262492afcb2fa03ca
-ms.sourcegitcommit: 287f4572fea735e99525ec3a7d08f80d908a2b21
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80998075"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序

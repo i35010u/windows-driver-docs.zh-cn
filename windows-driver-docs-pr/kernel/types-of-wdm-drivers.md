@@ -16,10 +16,10 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 0bb3c681298fad8ccecdc35842e512058c350a70
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79437062"
 ---
 # <a name="types-of-wdm-drivers"></a>WDM 驱动程序的类型

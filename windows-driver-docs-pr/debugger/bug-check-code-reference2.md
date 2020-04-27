@@ -5,10 +5,10 @@ ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 04/03/2020
 ms.localizationpriority: high
 ms.openlocfilehash: ea3c330f00fc893fad1cadc70fd2c3bd94937ff3
-ms.sourcegitcommit: 8adf72e64e6eddb62b8b7de01f79a748a2112f62
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81224687"
 ---
 # <a name="bug-check-code-reference"></a>Bug 检查代码参考

@@ -10,10 +10,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
 ms.openlocfilehash: 373b90f326408e36dbd4fb92b7380fb92aea60fb
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75210895"
 ---
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>网络适配器 WDF 类扩展 (NetAdapterCx)

@@ -6,10 +6,10 @@ keywords: 符号文件和路径、符号、延迟符号加载、延迟符号加�
 ms.date: 10/23/2019
 ms.localizationpriority: high
 ms.openlocfilehash: 71cf811cffadf33a34c207e5455ff2a0e3d322f6
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335964"
 ---
 # <a name="symbol-path-for-windows-debuggers"></a>Windows 调试器的符号路径

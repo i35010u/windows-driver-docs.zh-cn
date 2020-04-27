@@ -11,10 +11,10 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 09062c0572ac672a66b4f39d6bd000898601cf56
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261408"
 ---
 # <a name="acpisys-the-windows-acpi-driver"></a>Acpi.sysWindows ACPI 驱动程序

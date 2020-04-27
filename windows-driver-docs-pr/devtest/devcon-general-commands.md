@@ -13,10 +13,10 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: high
 ms.openlocfilehash: aeff1990d5695440e0f7431334f26e7782863027
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335945"
 ---
 # <a name="device-console-devconexe-commands"></a>设备控制台 (DevCon.exe) 命令
@@ -162,7 +162,7 @@ DevCon 返回一个整数，可在程序和脚本中使用该整数来确定 Dev
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>成功</p></td>
+<td align="left"><p>Success</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>

@@ -640,6 +640,8 @@
           href: indirect-display-driver-model-overview.md
         - name: IddCx 对象
           href: iddcx-objects.md
+        - name: 调试
+          href: indirect-display-debugging.md
     - name: Windows 显示驱动程序模型 (WDDM) 中的任务
       items:
         - name: Windows 显示驱动程序模型 (WDDM) 中的任务

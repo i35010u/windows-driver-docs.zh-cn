@@ -11,10 +11,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 354c836b5a358b9acbef34933d80434f0a4021cd
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "70020665"
 ---
 # <a name="developing-testing-and-deploying-drivers"></a>开发、测试以及部署驱动程序

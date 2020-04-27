@@ -13,10 +13,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: 3c4af5a4b1bc932be78717700253f3ba15db8360
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335950"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
@@ -318,7 +318,7 @@ bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} truncatememory 0x40000000
 **x2apicpolicy** \[ **enable** | **disable** \]  
 启用或禁用扩展 APIC 模式（如果支持）。 如果系统可用，则默认使用扩展的 APIC 模式。
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>说明
 
 有关特定 BCD 元素和启动选项的详细信息，可以使用命令 BCDEdit /?  OSLOADER 和 BCDEdit /?  TYPES OSLOADER。
 

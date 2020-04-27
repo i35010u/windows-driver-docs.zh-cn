@@ -14,10 +14,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 982379cd73e2949bdcd7d0bc46ff53e1fce55f2d
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "74861423"
 ---
 # <a name="debugging-tools-for-windows-windbg-kd-cdb-ntsd"></a>Windows 调试工具（WinDbg、KD、CDB、NTSD）

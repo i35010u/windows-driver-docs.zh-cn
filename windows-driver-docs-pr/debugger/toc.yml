@@ -918,7 +918,7 @@
           href: e.md
         - name: F
           href: f.md
-        - name: H
+        - name: H 上执行碎片合并
           href: h.md
         - name: I
           href: i.md
@@ -967,7 +967,7 @@
         - name: 在 WinDbg 中设置符号和可执行映像路径
           href: setting-symbol-and-source-paths-in-windbg.md
         - name: 使用 WinDbg 进行远程调试
-          href: remode-debugging-using-windbg.md
+          href: remote-debugging-using-windbg.md
         - name: 在 WinDbg 中输入调试器命令
           href: debugger-command-window.md
         - name: 在 WinDbg 中使用命令浏览器窗口

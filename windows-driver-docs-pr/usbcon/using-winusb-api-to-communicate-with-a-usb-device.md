@@ -4,10 +4,10 @@ title: 如何通过 WinUSB 函数访问 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 214dfc6d36eef05f533aa4eed749ef1a998d1bc8
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79437066"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>如何通过 WinUSB 函数访问 USB 设备
@@ -32,7 +32,7 @@ ms.locfileid: "79437066"
 
 **注意**  WinUSB 函数需要 Windows XP 或更高版本。 可以在 C/C++应用程序中使用这些函数与 USB 设备通信。 Microsoft 不为 WinUSB 提供托管 API。
 
-## <a href="" id="pre"></a>先决条件
+## <a name="prerequisites"></a><a href="" id="pre"></a>先决条件
 
 
 以下各项适用于本演练：
@@ -41,7 +41,7 @@ ms.locfileid: "79437066"
 -   已将 Winusb.sys 作为设备的函数驱动程序进行了安装。 有关此过程的详细信息，请参阅 [WinUSB (Winusb.sys) 安装](winusb-installation.md)。
 -   本主题中的示例基于 [OSR USB FX2 学习工具包设备](https://www.osronline.com/)。 可以使用这些示例将过程扩展到其他 USB 设备。
 
-## <a href="" id="setup"></a>步骤 1：基于 WinUSB 模板创建主干应用
+## <a name="step-1-create-a-skeleton-app-based-on-the-winusb-template"></a><a href="" id="setup"></a>步骤 1：基于 WinUSB 模板创建主干应用
 
 
 若要访问 USB 设备，请首先基于Windows 驱动程序工具包 (WDK)（带有 Windows 调试工具）和 Microsoft Visual Studio 的集成环境中所包含的 WinUSB 模板创建一个主干应用。可以使用该模板作为起点。
@@ -50,7 +50,7 @@ ms.locfileid: "79437066"
 
 该模板通过使用 [SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) 例程来枚举设备，打开设备的文件句柄，并创建后续任务所需的 WinUSB 接口句柄。 有关获取设备句柄并打开设备的示例代码，请参阅[模板代码讨论](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)。
 
-## <a href="" id="query"></a>步骤 2：向设备查询 USB 描述符
+## <a name="step-2-query-the-device-for-usb-descriptors"></a><a href="" id="query"></a>步骤 2：向设备查询 USB 描述符
 
 
 接下来，向设备查询特定于 USB 的信息，例如设备速度、接口描述符、相关终结点及其管道。 此过程类似于 USB 设备驱动程序使用的过程。 但是，应用程序通过调用 [**WinUsb\_GetDescriptor**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getdescriptor) 来完成设备查询。
@@ -194,7 +194,7 @@ done:
 }
 ```
 
-## <a href="" id="control"></a>步骤 3：将控制传输发送到默认终结点
+## <a name="step-3-send-control-transfer-to-the-default-endpoint"></a><a href="" id="control"></a>步骤 3：将控制传输发送到默认终结点
 
 
 接下来，通过向默认终结点发出控制请求来与设备通信。
@@ -263,7 +263,7 @@ done:
 }
 ```
 
-## <a href="" id="io"></a>步骤 4：发出 I/O 请求
+## <a name="step-4-issue-io-requests"></a><a href="" id="io"></a>步骤 4：发出 I/O 请求
 
 
 接下来，将数据发送到设备的批量传入终结点和批量传出终结点，这两种终结点可分别用于读取请求和写入请求。 在 OSR USB FX2 设备上，已为环回功能配置了这两个终结点，因此设备会将数据从批量传入终结点移动到批量传出终结点。 它不会更改数据的值或添加任何新数据。 对于环回配置，读取请求将读取由最新写入请求发送的数据。 WinUSB 提供了以下用于发送写入请求和读取请求的函数：

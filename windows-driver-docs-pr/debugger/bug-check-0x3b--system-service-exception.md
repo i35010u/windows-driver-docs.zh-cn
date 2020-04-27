@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: 8180a3a7470771ccdb5204580f380267ada803db
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402347"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
@@ -38,7 +38,7 @@ The SYSTEM\_SERVICE\_EXCEPTION Bug 检查具有 0x0000003B 值。 这表示在�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -79,7 +79,7 @@ The SYSTEM\_SERVICE\_EXCEPTION Bug 检查具有 0x0000003B 值。 这表示在�
 
     出现内存访问冲突。 （Bug 检查的参数 4 是驱动程序尝试访问的地址。）
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
 若要调试此问题，请使用参数 3 的 [.cxr（显示上下文记录）](-cxr--display-context-record-.md) 命令，然后使用 [kb（显示堆栈回溯跟踪）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)   。 还可以在此停止代码之前的代码中设置断点，并尝试单步前进到故障代码中。 使用 [u、ubuu (unassemble)](u--unassemble-.md) 命令查看程序集程序代码    。
@@ -106,7 +106,7 @@ Arg4: 0000000000000000, zero.
 
 ### <a name="identify-the-driver"></a>标识驱动程序
 
-如果能够识别出导致错误的驱动程序，则它的名称将打印在蓝色屏幕上，并存储在该位置的内存中 (PUNICODE\_STRING) KiBugCheckDriver  。 可以使用一个调试器命令 [dx（显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)来显示此内容：`dx KiBugCheckDriver`  。
+如果能够识别出导致错误的驱动程序，则它的名称将打印在蓝色屏幕上，并存储在该位置的内存中 (PUNICODE\_STRING) KiBugCheckDriver  。 可以使用一个调试器命令 [dx（显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)来显示此内容：`dx KiBugCheckDriver` 。
 
 使用 [!error](-error.md) 扩展显示参数 1 中的异常代码的相关信息  。 以下是 !error 的输出实例  。
 

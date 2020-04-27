@@ -2,7 +2,7 @@
   href: index.md
 - name: 后台任务和自定义触发器
   href: background-tasks-and-oem-triggers.md
-- name: 涉及分配的访问权限的展台应用：最佳做法
+- name: 涉及分配的访问权限的展台应用：最佳实践
   href: create-a-kiosk-app-for-assigned-access.md
 - name: 创建合作伙伴设置应用
   href: create-a-system-settings-application.md

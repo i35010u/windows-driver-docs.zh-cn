@@ -1454,7 +1454,7 @@
                   href: pagespersheet2.md
                 - name: 方向
                   href: direction2.md
-            - name: Orientation
+            - name: 方向
               href: orientation2.md
             - name: 解决方法
               href: resolutions.md
@@ -1518,7 +1518,7 @@
                   items:
                     - name: 'Event###'
                       href: event---.md
-                    - name: Component
+                    - name: 组件
                       href: component2.md
     - name: 双向通信错误代码
       href: bidi-error-codes.md

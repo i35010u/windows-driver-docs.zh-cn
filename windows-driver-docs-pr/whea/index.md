@@ -16,10 +16,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: d35e9561036a90667c9c7da5876c2dd7add3efd1
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "78947423"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南

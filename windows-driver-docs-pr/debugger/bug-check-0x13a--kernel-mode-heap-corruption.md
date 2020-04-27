@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: 986f5e5684c586579ca6766c8b114eae58affac0
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402351"
 ---
 # <a name="bug-check-0x13a-kernel_mode_heap_corruption"></a>Bug 检查 0x13A：KERNEL\_MODE\_HEAP\_CORRUPTION
@@ -37,7 +37,7 @@ KERNEL\_MODE\_HEAP\_CORRUPTION bug 检查的值为 0x0000013A。 这表示内核
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ KERNEL\_MODE\_HEAP\_CORRUPTION bug 检查的值为 0x0000013A。 这表示内核
 
 0x16：在检查给定 VA 管理器分配的大小的过程中，确定查询无效。
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
 [!analyze](-analyze.md) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。
 

@@ -4,10 +4,10 @@ title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
 ms.openlocfilehash: d2157430a1e220e693d9ae88c3a3a36ce3fd3d2e
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79437068"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装

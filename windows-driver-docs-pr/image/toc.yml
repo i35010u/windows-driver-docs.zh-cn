@@ -248,15 +248,15 @@
           items:
             - name: 分段筛选器示例
               href: segmentation-filter-examples.md
-            - name: 示例：默认分段筛选器
+            - name: 例如：默认分段筛选器
               href: example--default-segmentation-filter.md
-            - name: 示例：简单的分段筛选器
+            - name: 例如：简单的分段筛选器
               href: example--simple-segmentation-filter.md
-            - name: 示例：使用分段筛选器的应用程序
+            - name: 例如：使用分段筛选器的应用程序
               href: example--application-using-a-segmentation-filter.md
-            - name: 示例：DetectSubregions
+            - name: 例如：DetectSubregions
               href: example--detectsubregions.md
-            - name: 示例：DownloadPreviewImage
+            - name: 例如：DownloadPreviewImage
               href: example--downloadpreviewimage.md
 - name: WIA 项树
   items:
@@ -1648,7 +1648,7 @@
                   href: activeconditions.md
                 - name: ClearTime
                   href: cleartime.md
-                - name: Component
+                - name: 组件
                   href: component.md
                 - name: ConditionHistory
                   href: conditionhistory.md
@@ -1772,7 +1772,7 @@
                   href: mediafront.md
                 - name: MediaSides
                   href: mediasides.md
-                - name: 分辨率
+                - name: 解决方法
                   href: resolution.md
                 - name: 旋转
                   href: rotation.md

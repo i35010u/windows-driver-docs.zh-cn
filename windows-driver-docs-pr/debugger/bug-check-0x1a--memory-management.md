@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: aa8f9ccbbf1c8f8e979072dea177ef3202cb8ef3
-ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80327572"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>Bug 检查 0x1A：MEMORY\_MANAGEMENT

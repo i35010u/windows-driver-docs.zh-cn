@@ -7,10 +7,10 @@ keywords:
 ms.date: 02/22/2017
 ms.localizationpriority: high
 ms.openlocfilehash: 54ba17767e3bd70a172d1dea99322990fcbd8812
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335953"
 ---
 # <a name="usbview"></a>USBView

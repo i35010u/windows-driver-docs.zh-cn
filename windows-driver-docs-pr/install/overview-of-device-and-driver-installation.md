@@ -9,10 +9,10 @@ keywords:
 ms.date: 10/16/2019
 ms.localizationpriority: High
 ms.openlocfilehash: 284ba5a6913b022a6e7988354388e9e9e76c9abc
-ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72512076"
 ---
 # <a name="overview-of-device-and-driver-installation"></a>设备和驱动程序安装概述
