@@ -19,10 +19,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: dde045c85fac221b0118cae05046ab40d99b0443
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473514"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI 驱动程序编程指南

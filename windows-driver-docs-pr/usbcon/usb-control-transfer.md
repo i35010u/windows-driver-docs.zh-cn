@@ -4,10 +4,10 @@ title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 23cf718b0797d6ca04ea4f96a91b59b1564e3d39
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72844833"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
@@ -109,9 +109,9 @@ ms.locfileid: "72844833"
     <thead>
     <tr class="header">
     <th>字段</th>
-    <th>尺寸</th>
+    <th>大小</th>
     <th>值</th>
-    <th>描述</th>
+    <th>说明</th>
     </tr>
     </thead>
     <tbody>
@@ -193,7 +193,7 @@ ms.locfileid: "72844833"
 
     将合并的数据数据包映射到设备描述符的结构（参见表 9-8）以后，我们看到以下字段和值：
 
-    | 字段                  | 尺寸 | 值  | 描述                                                                       |
+    | 字段                  | 大小 | 值  | 说明                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | 设备描述符的长度，即 18 个字节。                               |
     | **bDescriptorType**    | 1    | 0x01   | 描述符类型为设备。                                                    |
@@ -648,7 +648,7 @@ VOID  GetFirmwareVersion(
 }  
 ```
 
-##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>如何发送 GET\_STATUS 的控制传输 - UMDF
+##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a><a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>如何发送 GET\_STATUS 的控制传输 - UMDF
 
 
 以下过程演示了客户端驱动程序如何发送 GET\_STATUS 命令的控制传输。 请求的接收者为设备，请求获取 D1-D0 位中的信息。 有关详细信息，请参阅 USB 规范中的图 9-4。

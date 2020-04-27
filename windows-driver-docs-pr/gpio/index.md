@@ -8,10 +8,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 313f848dbf429e0c3b117eedf9340436700fc555
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "72824941"
 ---
 # <a name="general-purpose-io-gpio-driver-design-guide"></a>通用 I/O (GPIO) 驱动程序设计指南
@@ -30,7 +30,7 @@ ms.locfileid: "72824941"
 <thead>
 <tr class="header">
 <th>主题</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

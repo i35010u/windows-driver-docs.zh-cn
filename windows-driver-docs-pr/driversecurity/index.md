@@ -7,10 +7,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: eacdb18cce223d8274968fa518ff824cefeadbec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "63371459"
 ---
 # <a name="driver-security-guidance"></a>驱动程序安全指南
@@ -18,7 +18,7 @@ ms.locfileid: "63371459"
 
 本部分包含了有关增强驱动程序安全性的信息。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 
 <table>
@@ -29,7 +29,7 @@ ms.locfileid: "63371459"
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

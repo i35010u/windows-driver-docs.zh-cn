@@ -8,10 +8,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 0e212c0b156b0ec25e87ccb52e3eebacec6d0a58
-ms.sourcegitcommit: 55171d00a4d0776ffbea40ab421f765c5432fcaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68995408"
 ---
 # <a name="uwp-device-apps"></a>UWP 设备应用
@@ -34,7 +34,7 @@ ms.locfileid: "68995408"
 <thead>  
 <tr class="header">  
 <th align="left">主题</th>  
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

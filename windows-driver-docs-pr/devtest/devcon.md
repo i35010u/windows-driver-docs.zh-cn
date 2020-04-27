@@ -19,10 +19,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: high
 ms.openlocfilehash: d5c3e1418e05d8ffc0a852d626dbefbe1433dc72
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335943"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows 设备控制台 (Devcon.exe)
