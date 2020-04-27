@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: b109e02fb258a61b440af0d8a6833d71b8f5fcb4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "63381276"
 ---
 # <a name="power-metering-and-budgeting-design-guide"></a>功率计量和预算设计指南

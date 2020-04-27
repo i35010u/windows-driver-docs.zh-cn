@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 38867a715c9cc4d7e1a4af8e86d80545bbd9cdff
-ms.sourcegitcommit: 5f4252ee4d5a72fa15cf8c68a51982c2bc6c8193
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "72252385"
 ---
 # <a name="display-devices-design-guide"></a>显示设备设计指南

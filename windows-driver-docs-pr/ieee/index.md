@@ -12,10 +12,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: b79daff8941074938e46c74162f5b494553481bd
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473478"
 ---
 # <a name="ieee-1394-bus-driver-design-guide"></a>IEEE 1394 总线驱动程序设计指南

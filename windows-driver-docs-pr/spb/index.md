@@ -8,10 +8,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 0efa5dae2495ee47b777d509950207f7ffe06c06
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473561"
 ---
 # <a name="simple-peripheral-bus-spb-driver-design-guide"></a>简单外设总线 (SPB) 驱动程序设计指南

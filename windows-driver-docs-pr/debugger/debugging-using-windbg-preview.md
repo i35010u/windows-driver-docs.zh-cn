@@ -4,10 +4,10 @@ description: 本部分介绍如何使用 WinDbg 预览版调试程序执行基�
 ms.date: 01/16/2020
 ms.localizationpriority: High
 ms.openlocfilehash: 319542f71ee71f5d3c1913484eab29d752e30fdb
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76256698"
 ---
 # <a name="debugging-using-windbg-preview"></a>使用 WinDbg 预览版进行调试

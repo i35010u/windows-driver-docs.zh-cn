@@ -5,10 +5,10 @@ ms.assetid: faf586b9-ab99-4fee-a0d1-923000000189
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 21572205ffc743caa2a05cad9f9f97903bcbd1e9
-ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72512074"
 ---
 # <a name="system-provided-device-installation-components"></a>系统提供的设备安装组件

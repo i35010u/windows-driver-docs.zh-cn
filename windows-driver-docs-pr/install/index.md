@@ -7,10 +7,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 8057fb224e47c5ec71b81953f83ca62e3465e723
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "63323444"
 ---
 # <a name="device-and-driver-installation"></a>设备和驱动程序安装

@@ -7,10 +7,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 5ae0d009ed41fd1733101fc86f72ae8f4faa4ab2
-ms.sourcegitcommit: fdb3c417aa94cf4e025364a836c87af62a9bbeca
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "74782608"
 ---
 # <a name="windows-driver-samples"></a>Windows 驱动程序示例

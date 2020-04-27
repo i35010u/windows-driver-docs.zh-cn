@@ -5,10 +5,10 @@ ms.assetid: CB333340-FBA0-4CB4-BAD6-4673B4AC0DF2
 ms.date: 04/20/2017
 ms.localizationpriority: high
 ms.openlocfilehash: 30af77bb3665f3803f28bf8b2df85019e5ddcaba
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335956"
 ---
 # <a name="v4-printer-driver"></a>V4 打印机驱动程序

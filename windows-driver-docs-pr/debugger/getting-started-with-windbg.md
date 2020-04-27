@@ -5,10 +5,10 @@ ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 02/20/2020
 ms.localizationpriority: high
 ms.openlocfilehash: d2d4cd70f8fa02914ce07661bcbf51479aeeceaf
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335962"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
@@ -53,7 +53,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     [x notepad!*](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-    **注意**  如果没有看到任何输出，请再次输入 [.reload](https://go.microsoft.com/fwlink/p?linkid=399239)  。
+    **注意**  如果没有看到任何输出，请再次输入 [.reload  ](https://go.microsoft.com/fwlink/p?linkid=399239)。
 
     若要查看 Notepad.exe 模块中包含 main 的符号，请输入以下命令：
 

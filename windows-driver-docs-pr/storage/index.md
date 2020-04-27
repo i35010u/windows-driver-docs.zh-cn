@@ -7,10 +7,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: c1ab472469eb0ecc8eb66fb6fc42561f19ea4823
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75606427"
 ---
 # <a name="storage-driver-design-guide"></a>存储驱动程序设计指南

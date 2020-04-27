@@ -4,10 +4,10 @@ title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 2e54bba6c5ba56376f41693ab12050d9932738aa
-ms.sourcegitcommit: 05c2f94fa2fe77276ca7000c1ff8e1bbe7a67b6a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76892194"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
@@ -33,7 +33,7 @@ ms.locfileid: "76892194"
 -   通过驱动程序改进了 PnP 和电源管理（例如处理意外删除）。
 -   添加了电源管理功能，如 [USB 选择性挂起](usb-selective-suspend.md)。
 
-此外，UWP 应用程序现在可以使用新的 [Windows.Devices.SerialCommunication](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication) 命名空间提供的 API，该命名空间允许应用与这些设备对话  。
+此外，UWP 应用程序现在可以使用新的 [Windows.Devices.SerialCommunication **命名空间提供的 API，该命名空间允许应用与这些设备对话**](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication)。
 
 ## <a name="usbsersys-installation"></a>Usbser.sys 安装
 
@@ -111,7 +111,7 @@ AddReg=LowerFilterAddReg
 
 如果为 USB CDC 设备安装 Usbser.sys，以下是应用程序编程模型选项：
 
--   从 Windows 10 开始，Windows 应用可以使用 [Windows.Devices.SerialCommunication](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication) 命名空间向 Usbser.sys 发送请求  。 它定义了 Windows 运行时类，这些类可用于通过串行端口或某个串行端口抽象与 USB CDC 设备通信。 这些类提供了发现此类串行设备、读写数据和控制流控制的串行特定属性（如设置波特率、信号状态）的功能。
+-   从 Windows 10 开始，Windows 应用可以使用 [Windows.Devices.SerialCommunication **命名空间向 Usbser.sys 发送请求**](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication)。 它定义了 Windows 运行时类，这些类可用于通过串行端口或某个串行端口抽象与 USB CDC 设备通信。 这些类提供了发现此类串行设备、读写数据和控制流控制的串行特定属性（如设置波特率、信号状态）的功能。
 
 -   在 Windows 8.1 及更早版本中，你可以编写 Windows 桌面应用程序，使其打开虚拟 COM 端口并与设备通信。 有关详细信息，请参阅：
 

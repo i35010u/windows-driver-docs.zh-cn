@@ -76,7 +76,7 @@
       href: creating-a-device-metadata-package.md
 - name: 为驱动程序签名
   items:
-    - name: 为驱动程序签名
+    - name: 签署驱动程序
       href: signing-a-driver.md
     - name: 对内核驱动程序进行证明签名以便公开发布
       href: attestation-signing-a-kernel-driver-for-public-release.md

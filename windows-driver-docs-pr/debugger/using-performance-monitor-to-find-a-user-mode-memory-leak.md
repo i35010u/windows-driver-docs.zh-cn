@@ -7,10 +7,10 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: high
 ms.openlocfilehash: 37a669e3f196ef32ea40bafd15fa526f44080715
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335951"
 ---
 # <a name="using-performance-monitor-to-find-a-user-mode-memory-leak"></a>使用性能监视器查找用户模式内存泄漏

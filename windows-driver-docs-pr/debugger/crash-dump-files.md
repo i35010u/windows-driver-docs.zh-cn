@@ -6,10 +6,10 @@ keywords: 转储文件、故障转储文件
 ms.date: 05/23/2017
 ms.localizationpriority: high
 ms.openlocfilehash: 4286902e00acbebaf90d2f1b55c8413746eecec7
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402389"
 ---
 # <a name="analyze-crash-dump-files-by-using-windbg"></a>使用 WinDbg 分析故障转储文件

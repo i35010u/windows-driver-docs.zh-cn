@@ -7,10 +7,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 97b237f5794d4ee38e390def974c18cc6a3e7719
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "78910384"
 ---
 # <a name="file-systems-driver-design-guide"></a>文件系统驱动程序设计指南

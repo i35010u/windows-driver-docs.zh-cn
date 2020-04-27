@@ -34,7 +34,7 @@
       href: 3dprint/index.md
     - name: ACPI
       href: acpi/index.md
-    - name: 音频
+    - name: Audio
       href: audio/index.md
     - name: 电池驱动程序
       href: battery/index.md

@@ -7,10 +7,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: 8e2e65fb15cfc7141f18c58b8fffa30e9409cb37
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "76980680"
 ---
 # <a name="global-navigation-satellite-system-gnss-driver-design-guide"></a>全球导航卫星系统 (GNSS) 驱动程序设计指南
