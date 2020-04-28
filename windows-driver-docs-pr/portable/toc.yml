@@ -72,8 +72,6 @@
                   href: supporting-autoplay.md
             - name: MTP 安装程序信息 (.inf) 文件
               href: the-mtp-setup-information---inf--file.md
-            - name: 验证安装程序信息文件的结构和语法
-              href: verifying-structure-and-syntax-for-setup-information-files.md
             - name: COM 组件文件
               href: the-com-component-files.md
             - name: Windows 驱动程序框架文件
