@@ -7,12 +7,12 @@ keywords:
 - 驱动程序设计
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9c1e5138295c5f49d8e5c9a559c3ebe37ea4c0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 2a45b6fe28d4d876c030b0bd7b37106bc40a0386
+ms.sourcegitcommit: 7ec16beda3860c058f693651d614001d5572f719
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67371972"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166365"
 ---
 # <a name="choosing-a-driver-model"></a>选择驱动程序模型
 
@@ -79,12 +79,12 @@ Microsoft Windows 提供了多种驱动程序模型，你可以使用这些模�
 ## <a name="span-idchoosing_a_driver_model_for_a_file_system_filter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_filter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_filter_driverspanchoosing-a-driver-model-for-a-file-system-filter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_filter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_FILTER_DRIVER"></span>为文件系统筛选器驱动程序选择驱动程序模型
 
 
-有关为文件系统筛选器驱动程序选择模型的帮助，请参阅“文件系统微过滤驱动程序”和[文件系统筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-filter-drivers)。
+有关为文件系统筛选器驱动程序选择模型的帮助，请参阅“文件系统微过滤驱动程序”和[文件系统筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/#file-system-filter-drivers)。
 
 ## <a name="span-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanspan-idchoosing_a_driver_model_for_a_file_system_minifilter_driverspanchoosing-a-driver-model-for-a-file-system-minifilter-driver"></a><span id="Choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="choosing_a_driver_model_for_a_file_system_minifilter_driver"></span><span id="CHOOSING_A_DRIVER_MODEL_FOR_A_FILE_SYSTEM_MINIFILTER_DRIVER"></span>为文件系统微过滤驱动程序选择驱动程序模型
 
 
-有关为文件系统微过滤驱动程序选择模型的帮助，请参阅[文件系统微过滤驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-minifilter-drivers)。
+有关为文件系统微过滤驱动程序选择模型的帮助，请参阅[文件系统微过滤驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
