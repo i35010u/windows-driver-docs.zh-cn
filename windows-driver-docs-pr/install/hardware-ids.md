@@ -4,12 +4,12 @@ description: 硬件 ID 是供应商定义的标识字符串，Windows 使用该�
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: cd75a09e4dc79c36d9abfc75f02d8238a5a98447
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 090018971c02b7de68642c6afe03af296f55e193
+ms.sourcegitcommit: 43797a92ac6d2a37d2284d990d5cc4ca730afa00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72828815"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82588364"
 ---
 # <a name="hardware-id"></a>硬件 ID
 
@@ -21,7 +21,7 @@ ms.locfileid: "72828815"
 
 硬件 ID 具有以下通用格式之一：
 
-`<enumerator>\\<enumerator-specific-device-ID>`
+`<enumerator>\<enumerator-specific-device-ID>`
 
 这是单个枚举器报告给即插即用 (PnP) 管理器的单个 PnP 设备的最常见格式。 新枚举器应使用此格式或以下格式。 有关特定于枚举器的设备 ID 的详细信息，请参阅[设备标识符格式](device-identifier-formats.md)。
 
@@ -35,7 +35,7 @@ ms.locfileid: "72828815"
 
 共享通用命名空间（如 `ROOT\SYSTEM`）的根枚举设备可能会导致在操作系统升级时出现冲突，并且设备管理器中会显示黄色感叹号。
 
-为防止出现这种情况，请为每个驱动程序使用包含根枚举设备的唯一命名空间。 对于 USB 或系统设备，请使用 `ROOT\USB`，而不是使用 `ROOT\SYSTEM”` 或 `ROOT\[COMPANYNAME]\[DEVICENAME]`。  此外，驱动程序安装程序代码还应检查 devnode 是否已存在，并在安装前采取任何必要的更正措施。
+为防止出现这种情况，请为每个驱动程序使用包含根枚举设备的唯一命名空间。 对于 USB 或系统设备，请使用 `ROOT\[COMPANYNAME]\[DEVICENAME]`，而不是使用 `ROOT\USB` 或 `ROOT\SYSTEM”`。  此外，驱动程序安装程序代码还应检查 devnode 是否已存在，并在安装前采取任何必要的更正措施。
 
 已建立自己的命名约定的现有设备类可能会使用自定义格式。 有关其硬件 ID 格式的信息，请参阅此类总线的硬件规范。 新枚举器不应使用此格式。
 
@@ -43,15 +43,15 @@ ms.locfileid: "72828815"
 
 ## <a name="obtaining-the-list-of-hardware-ids-for-a-device"></a>获取设备的硬件 ID 列表
 
-若要获取设备的硬件 ID 列表，请在将 [DeviceProperty**参数设置为**DevicePropertyHardwareID](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty) 的情况下调用  IoGetDeviceProperty  。 此例程检索到的硬件 ID 列表是一个 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) 值。 硬件列表中的字符的最大数目（包括每个硬件 ID 后的 NULL 终止符和最终 NULL 终止符）为 REGSTR_VAL_MAX_HCID_LEN。 硬件 ID 列表中最多可以包含的 ID 数为 64 个。
+若要获取设备的硬件 ID 列表，请在将 *DeviceProperty* 参数设置为 **DevicePropertyHardwareID** 的情况下调用 [**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)。 此例程检索到的硬件 ID 列表是一个 [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) 值。 硬件列表中的字符的最大数目（包括每个硬件 ID 后的 NULL 终止符和最终 NULL 终止符）为 REGSTR_VAL_MAX_HCID_LEN。 硬件 ID 列表中最多可以包含的 ID 数为 64 个。
 
 ## <a name="examples-of-hardware-ids"></a>硬件 ID 示例
 
 在下面的示例中，第一个示例是 PnP 设备的[通用标识符](generic-identifiers.md)，第二个示例是 [PCI 设备的标识符](identifiers-for-pci-devices.md)：
 
-root\\\*PNP0F08
+`root\*PNP0F08`
 
-PCI\\VEN_1000&DEV_0001&SUBSYS_00000000&REV_02
+`PCI\VEN_1000&DEV_0001&SUBSYS_00000000&REV_02`
 
 
 
