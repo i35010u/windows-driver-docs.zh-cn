@@ -1,7 +1,7 @@
 ---
 title: INF AddEventProvider 指令
 author: andylsn
-description: AddEventProvider 指令使用 INF DDInstall.Events 部分内。
+description: AddEventProvider 指令用于 INF DDInstall 部分中。
 ms.assetid: ''
 keywords:
 - INF AddEventProvider 指令设备和驱动程序安装
@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd3bbc859f70910e3908e329e61d3d7d81dd538
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2e3f64d893db57f32182aa9cd14bf015d3fd8547
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385926"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223187"
 ---
 # <a name="inf-addeventprovider-directive"></a>INF AddEventProvider 指令
 
-**AddEventProvider**中使用指令[ **INF *DDInstall*。事件部分**](inf-ddinstall-services-section.md)。 指定的特征[Windows 的事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)(ETW) 提供程序与驱动程序相关联。 适用于 Windows 10 1809年和更高版本支持此指令。
+在 INF DDInstall 中使用**AddEventProvider**指令[**。 *DDInstall*事件部分**](inf-ddinstall-services-section.md)。 它指定与驱动程序相关联的[Windows 事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)（ETW）提供程序的特征。 Windows 10 版本1809及更高版本支持此指令。
 
-```ini
+```inf
 [DDInstall.Events] 
 
 AddEventProvider={ProviderGUID},event-provider-install-section
@@ -35,21 +35,21 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 
 
 <a href="" id="ProviderGUID"></a>*ProviderGUID*  
-指定标识提供程序的 GUID 值。 这可以表示为一个显式的 GUID 值的窗体`{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}`或 %strkey%令牌到定义`{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}`中[**字符串**](inf-strings-section.md) INF 文件部分。
+指定标识提供程序的 GUID 值。 这可以表示为形式`{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}`的显式 GUID 值，或表示为 INF 文件的`{nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}` [**字符串**](inf-strings-section.md)部分中定义的% strkey% 令牌。
 
-<a href="" id="event-provider-install-section"></a>*event-provider-install-section*  
-引用了一个 INF 编写器定义的部分，其中包含用于注册此设备 （或设备） 的提供程序的信息。 有关详细信息，请参阅以下**备注**部分。
+<a href="" id="event-provider-install-section"></a>*事件提供程序-安装-部分*  
+引用由 INF 写入方定义的部分，其中包含用于注册此设备（或设备）的提供程序的信息。 有关详细信息，请参阅下面的 "**备注**" 部分。
 
 <a name="remarks"></a>备注
 -------
 
-系统定义的和不区分大小写扩展可以插入到<em>DDInstall</em> **。事件**节，其中包含**AddEventProvider**指令跨操作系统系统和/或跨平台 INF 文件中指定特定于平台的或特定于操作系统的安装。
+系统定义和不区分大小写的扩展可以插入<em>DDInstall</em>**。事件**部分，其中包含跨操作系统系统和/或跨平台 INF 文件中的**AddEventProvider**指令，用于指定特定于平台或特定于操作系统的安装。
 
-每个 INF 编写器创建的部分名称的 INF 文件中必须是唯一和必须遵从常规规则，用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
+在 INF 文件中，每个 INF 编写器创建的节名称必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅[INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
-**AddEventProvider**指令必须引用一个已命名*事件提供程序安装部分*INF 文件中的其他位置。 每个此类部分具有以下形式：
+**AddEventProvider**指令必须在 INF 文件中的其他位置引用已命名的*事件提供程序安装部分*。 每个此类部分都具有以下形式：
 
-```ini
+```inf
 [event-provider-install-section]
  
 ProviderName=name
@@ -61,53 +61,53 @@ ResourceFile=path-to-file
 ...
 ```
 
-每个*事件提供程序安装部分*必须提供**ProviderName**并**ResourceFile**。 （可选） 提供程序使用的任意组合指定的信道列表**ImportChannel(s)** 并**AddChannel(s)** ，每个单独的行上。 有关 INF 文件中的通道列表的详细信息，请参阅[**指定通道列表**](#specifying-a-channel-list)下面。 有关详细信息[Windows 事件日志](https://docs.microsoft.com/windows/desktop/WES/windows-event-log)通道，请参阅[定义通道](https://docs.microsoft.com/windows/desktop/WES/defining-channels)。
+每个*事件提供程序安装部分*必须提供**ProviderName**和**ResourceFile**。 根据需要，还可以使用**ImportChannel**和**AddChannel**的任意组合指定提供程序的通道列表，每个通道在单独的行上。 有关 INF 文件中的通道列表的详细信息，请参阅下面[**的指定通道列表**](#specifying-a-channel-list)。 有关[Windows 事件日志](https://docs.microsoft.com/windows/desktop/WES/windows-event-log)通道的详细信息，请参阅[定义通道](https://docs.microsoft.com/windows/desktop/WES/defining-channels)。
 
-### <a name="event-provider-install-section-entries-and-values"></a>事件提供程序安装节条目和值
+### <a name="event-provider-install-section-entries-and-values"></a>事件提供程序-安装节项和值
 
-<a href="" id="providername-name"></a>**ProviderName**=*name*  
-指定的提供程序名称。 名称长度不能超过 255 个字符，并且不能包含字符: >，<，&、"，|、\'，:，' '，'？ '，*，或与 ASCII 字符的值小于 31。 此外，该名称必须遵循文件和注册表项名称的常规约束。 这些约束，请参阅[为文件命名](https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file)并[注册表元素大小限制](https://docs.microsoft.com/windows/desktop/SysInfo/registry-element-size-limits)。
+<a href="" id="providername-name"></a>**ProviderName**=*名称*  
+指定提供程序的名称。 名称长度不能超过255个字符，并且不能包含以下字符： ">"、"<"、"&"、"" "、" | "、\'" "、"： "、" ""、"？"、"*" 或 ASCII 值小于31的字符。 此外，此名称必须遵循有关文件和注册表项名称的一般约束。 可在[命名文件](https://docs.microsoft.com/windows/desktop/FileIO/naming-a-file)和[注册表元素大小限制](https://docs.microsoft.com/windows/desktop/SysInfo/registry-element-size-limits)中找到这些约束。
 
-<a href="" id="resourcefile-path-to-file"></a>**ResourceFile**=*path-to-file*  
-指定的 exe 或 dll，其中包含表示为 %dirid%\filename 的提供程序的元数据资源的路径。
+<a href="" id="resourcefile-path-to-file"></a>**ResourceFile**=*路径到文件*  
+指定包含提供程序的元数据资源的 exe 或 dll 的路径，表示为%dirid%\filename。
 
-*Dirid*数是自定义目录标识符或之一中所述的系统定义的目录标识符[使用 Dirids](using-dirids.md)。
+*Dirid*号可以是自定义目录标识符，也可以是[使用 Dirids](using-dirids.md)中所述的系统定义的目录标识符之一。
 
-<a href="" id="messagefile-path-to-file"></a>**MessageFile**=*path-to-file*  
-（可选） 指定的路径的 exe 或 dll，其中包含提供程序的已本地化的消息资源，表示为 %dirid%\filename。
+<a href="" id="messagefile-path-to-file"></a>**MessageFile**=*路径到文件*  
+（可选）指定包含提供程序的本地化消息资源（以%dirid%\filename. 表示）的 exe 或 dll 的路径。
 
-<a href="" id="parameterfile-path-to-file"></a>**ParameterFile**=*path-to-file*  
-（可选） 指定 exe 或 dll，其中包含表示为 %dirid%\filename 的提供程序的参数字符串资源的路径。
+<a href="" id="parameterfile-path-to-file"></a>**ParameterFile**=*路径到文件*  
+（可选）指定包含提供程序的参数字符串资源的 exe 或 dll 的路径，表示为%dirid%\filename。
 
 <a href="" id="importchannel-channel-name"></a>**ImportChannel**=*channel-name*  
-（可选） 指定已由另一个提供程序定义的通道。 有关详细信息，请参阅以下**指定的通道列表**部分。
+根据需要，还可以指定已由另一个提供程序定义的通道。 有关详细信息，请参阅以下**指定频道列表**部分。
 
-<a href="" id="addchannel-channel-name-channel-type--channel-install-section-"></a>**AddChannel**=*channel-name*,*channel-type*\[,*channel-install-section*\]  
-（可选） 指定一个通道具有子指令 （可选） 引用了一个 INF 编写器定义通道的安装-部分 INF 文件中的其他位置。 有关详细信息，请参阅以下**指定的通道列表**部分。
+<a href="" id="addchannel-channel-name-channel-type--channel-install-section-"></a>**AddChannel**=*信道名称*，*通道类型*\[，*通道安装-部分*\]  
+（可选）使用子指令指定一个通道，该子指令可以选择引用 INF 文件中其他位置的 INF 写入器定义的通道安装部分。 有关详细信息，请参阅以下**指定频道列表**部分。
 
-### <a name="specifying-a-channel-list"></a>指定通道列表
+### <a name="specifying-a-channel-list"></a>指定频道列表
 
-可以在提供程序指定的信道列表及其*事件提供程序安装部分*。 可以导入一个通道，也可以将通道添加到列表并保留这些通道的顺序。 有关详细信息，请参阅[定义通道](https://docs.microsoft.com/windows/desktop/WES/defining-channels)。
+可以在其*事件提供程序-安装部分*中为提供程序指定通道列表。 你可以导入通道或向列表中添加频道，并保留这些通道的顺序。 有关详细信息，请参阅[定义通道](https://docs.microsoft.com/windows/desktop/WES/defining-channels)。
 
-*通道名称*的提供程序使用的通道列表中必须唯一。 *通道名称*必须是少于 255 个字符，不能包含以下字符: >，<，&、"，|、\'，:，' '，'？ '，*，或与 ASCII 字符的值小于 31。
+*信道名称*在提供程序使用的通道列表中必须是唯一的。 *通道名称*必须少于255个字符，并且不能包含以下字符： ">"、"<"、"&"、"" "、" | "、"\'"、"： "、" ""、"？"、"*" 或 ASCII 值小于31的字符。
 
-*通道类型*可以指定为以下数字值，可以用十进制表示之一，或如以下列表中，以十六进制表示法中所示。
+*通道类型*可以指定为以下数字值之一，以十进制或形式表示，如下面的列表所示，采用十六进制表示法。
 
 <a href="" id="0x1--admin-"></a>**0x1** （管理员）  
-管理员类型通道支持事件的目标最终用户、 管理员和技术支持人员。 写入到管理通道的事件应具有定义完善的解决方案，管理员可以在其进行操作。
+管理类型通道支持面向最终用户、管理员和支持人员的事件。 写入管理通道的事件应该有一个明确定义的解决方案，管理员可以在该解决方案中执行操作。
 
 <a href="" id="0x2--operational-"></a>**0x2** （操作）  
-操作类型的通道支持用于分析和诊断问题或匹配项的事件。 可以使用它们来触发工具或基于问题或匹配项的任务。
+操作类型通道支持用于分析和诊断问题的事件。 它们可用于基于问题或匹配项来触发工具或任务。
 
 <a href="" id="0x3--analytic-"></a>**0x3** （分析）  
-Analytic 类型通道支持发布量非常大的事件。 它们描述程序操作，并指示无法处理的用户干预的问题。
+分析类型通道支持大容量发布的事件。 它们描述程序操作并指示用户无法处理的问题。
 
 <a href="" id="0x4--debug-"></a>**0x4** （调试）  
-调试仅供开发人员用于诊断问题以进行调试的类型的通道支持事件。
+调试类型通道支持仅由开发人员用来诊断问题以进行调试的事件。
 
-**AddChannel**还可以引用子指令*通道安装部分*INF 文件中的其他位置。 每个此类部分具有以下形式：
+**AddChannel**子指令还可在 INF 文件中的其他位置引用*通道安装部分*。 每个此类部分都具有以下形式：
 
-```ini
+```inf
 [channel-install-section]
 
 [Isolation=isolation-type]
@@ -119,12 +119,12 @@ Analytic 类型通道支持发布量非常大的事件。 它们描述程序操�
 [LoggingAutoBackup=0|1]
 ```
 
-有关通道属性的详细信息，请参阅[ChannelType](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-channeltype-complextype)中定义[EventManifest 架构](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema)。
+有关通道属性的详细信息，请参阅在[EventManifest 架构](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema)中定义的[ChannelType](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-channeltype-complextype) 。
 
-### <a name="channel-install-section-entries-and-values"></a>通道安装节条目和值
+### <a name="channel-install-section-entries-and-values"></a>通道安装部分条目和值
 
 <a href="" id="isolation-isolation-type"></a>**隔离**=*隔离类型*  
-（可选） 指定的信道的默认访问权限，作为以下数字值，可以用十进制表示之一，或者，如以下列表中，以十六进制表示法中所示。 如果省略，则此值默认为**0x1** （应用程序）。
+（可选）将通道的默认访问权限指定为以下其中一个数值（用 decimal 或表示），如下面的列表所示，用十六进制表示法表示。 如果省略，则默认为**0x1** （应用程序）。
 
 <a href="" id="0x1--application-"></a>**0x1** （应用程序）  
 
@@ -132,34 +132,34 @@ Analytic 类型通道支持发布量非常大的事件。 它们描述程序操�
 
 <a href="" id="0x3--Custom-"></a>**0x3** （自定义）  
 
-<a href="" id="access-access-string"></a>**Access**=*access-string*  
-（可选） 指定[安全描述符定义语言](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)(SDDL) 访问说明符控制访问到日志文件支持通道。
+<a href="" id="access-access-string"></a>**访问**=*访问-字符串*  
+根据需要，还可以指定[安全描述符定义语言](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)（SDDL）访问描述符，以控制对支持通道的日志文件的访问。
 
-如果此字符串用于控制读取访问权限 （忽略的写入权限） 的文件**隔离**设置为**0x1** （应用程序） 或**0x2** （系统），同时可以控制通道和读取访问权限的文件，如果隔离属性设置为写入访问权限**0x3** （自定义）。
+如果**隔离**设置为**0x1** （应用程序）或**0x2** （系统），则此字符串控制对文件的读取访问权限（忽略写入权限），并控制对通道的写入访问权限，并在隔离属性设置为**0x3** （自定义）时对文件进行读取访问。
 
 <a href="" id="enabled-0-1"></a>**已启用**=**0 | 1**  
-（可选） 指定是否启用了通道。 如果省略，则默认为 0 （禁用）。
+根据需要指定是否启用通道。 如果省略，则默认为0（禁用）。
 
-因为**0x3** （分析） 和**0x4** （调试）*通道类型*是大量通道应设置**已启用**为 1 时，才调查某个问题的一个组件，它将写入到该通道。 可以在每次**0x3** （分析） 和**0x4** （调试） 通道，该服务将清除从通道的事件。
+因为**0x3** （分析）和**0x4** （调试）*通道类型*为大容量通道，所以仅当调查写入到该通道的组件的问题时，才应将**Enabled**设置为1。 每次启用**0x3** （分析）和**0x4** （调试）通道时，服务将从通道中清除事件。
 
 <a href="" id="value-value"></a>**值**=*值*  
-（可选） 指定唯一标识的提供程序定义的通道列表中的通道的数字标识符。
+（可选）指定一个数字标识符，该标识符唯一标识提供程序所定义的通道列表中的通道。
 
-<a href="" id="loggingmaxsize-max-size"></a>**LoggingMaxSize**=*max-size*  
-（可选） 指定的最大大小，以字节为单位的日志文件。 默认 （和最小值） 值为 1 MB。
+<a href="" id="loggingmaxsize-max-size"></a>**LoggingMaxSize**=*最大大小*  
+根据需要指定日志文件的最大大小（以字节为单位）。 默认值（最小值）为 1 MB。
 
-<a href="" id="loggingretention-retention-type"></a>**LoggingRetention**=*retention-type*  
-（可选） 指定日志文件是否处于**0x1** （循环） 或**0x2** （按顺序）。 默认值是**0x1** （循环） 对于**0x1** (Admin) 和**0x2** （操作）*通道类型*和**0x2**（按顺序） 的**0x3** （分析） 和**0x4** （调试）*通道类型*。
+<a href="" id="loggingretention-retention-type"></a>**LoggingRetention**=*保留类型*  
+根据需要指定日志文件是**0x1** （环形）还是**0x2** （顺序）。 对于**0x3** （"分析"）和**0x1** **0x4** （调试）*通道类型*，默认**值为0x1 （Admin** ）和**0x2** （操作）*通道类型*和**0x2** （顺序）。
 
-<a href="" id="loggingautobackup-0-1"></a>**LoggingAutoBackup**=**0|1**  
-（可选） 指定是否创建新的日志文件，当当前日志文件达到其最大大小。 设置为 1，以请求该服务创建一个新文件，当日志文件达到其最大大小;否则为为 0。 可以设置**LoggingAutoBackup**到 1 才**LoggingRetention**设置为**0x2** （按顺序） 并且仅限于**0x1** (Admin) 和**0x2** （操作）*通道类型*。
+<a href="" id="loggingautobackup-0-1"></a>**LoggingAutoBackup**=**0 | 1**  
+根据需要指定在当前日志文件达到其最大大小时是否创建新的日志文件。 设置为1，请求服务在日志文件达到其最大大小时创建新文件;否则为0。 仅当**LoggingRetention**设置为**0x2** （顺序）并且仅适用于**0x1** （Admin）和**0x2** （操作）*通道类型*时，才能将**LoggingAutoBackup**设置为1。
 
 <a name="examples"></a>示例
 --------
 
-此示例显示引用的事件提供程序安装各个部分**AddEventProvider**指令前面部分中的示例如前面所示[ * **DDInstall *。事件**](inf-ddinstall-events-section.md)。
+此示例显示了**AddEventProvider**指令引用的事件提供程序安装节，如[ *DDInstall * 的示例中所示。事件](inf-ddinstall-events-section.md)。
 
-```ini
+```inf
 [foo_Event_Provider_Inst]
 ProviderName  = FooCollector
 ResourceFile  = %13%\FooResource.dll
@@ -185,10 +185,10 @@ LoggingRetention  = 2                                       ; Sequential
 LoggingAutoBackup = 1
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[***DDInstall *。事件**](inf-ddinstall-events-section.md)
+[***DDInstall*.事件**](inf-ddinstall-events-section.md)
 
  
 

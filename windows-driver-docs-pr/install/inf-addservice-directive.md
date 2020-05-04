@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ea2f9a49c4abb1f7a7b0af298609d2ae13bfae8
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: 71b10ff9b4ccf967176911bdff3fb58173ef014c
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080168"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223279"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService 指令
 
 
-**请注意**  不会在安装不需要任何驱动程序的设备（例如调制解调器或显示器监视器）的 INF 文件中使用此指令。
+**请注意**  ，不会在安装不需要任何驱动程序的设备（例如调制解调器或显示器监视器）的 INF 文件中使用此指令。
 
  
 
-在 INF DDInstall 中使用**AddService**指令[ **。 *DDInstall*Services 部分**](inf-ddinstall-services-section.md)或[**INF DefaultInstall 部分**](inf-defaultinstall-services-section.md)。 它指定与驱动程序相关联的服务的特性，如如何和何时加载服务，以及其他基础旧驱动程序或服务的任何依赖项。 此外，此指令还可以为设备设置事件日志记录服务。
+在 INF DDInstall 中使用**AddService**指令[**。 *DDInstall*Services 部分**](inf-ddinstall-services-section.md)或[**INF DefaultInstall 部分**](inf-defaultinstall-services-section.md)。 它指定与驱动程序相关联的服务的特性，如如何和何时加载服务，以及其他基础旧驱动程序或服务的任何依赖项。 此外，此指令还可以为设备设置事件日志记录服务。
 
-```ini
+```inf
 [DDInstall.Services] 
  
 AddService=ServiceName,[flags],service-install-section
@@ -103,13 +103,13 @@ AddService = ,2.
 <a name="remarks"></a>备注
 -------
 
-系统定义和不区分大小写的扩展可以插入<em>DDInstall</em> **。服务**部分，其中包含跨操作系统系统和/或跨平台 INF 文件中的**AddService**指令，用于指定特定于平台或特定于操作系统的安装。
+系统定义和不区分大小写的扩展可以插入<em>DDInstall</em>**。服务**部分，其中包含跨操作系统系统和/或跨平台 INF 文件中的**AddService**指令，用于指定特定于平台或特定于操作系统的安装。
 
 在 INF 文件中，每个 INF 编写器创建的节名称必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅[INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
 **AddService**指令必须在 INF 文件中的其他位置引用命名*服务安装部分*。 每个此类部分都具有以下形式：
 
-```ini
+```inf
 [service-install-section]
  
 [DisplayName=name]
@@ -137,7 +137,7 @@ ServiceBinary=path-to-service
 <a href="" id="displayname-name"></a>**DisplayName**=*名称*  
 为服务/驱动程序指定一个友好名称，通常为简化本地化，表示为在 INF 文件的[**字符串**](inf-strings-section.md)部分中定义的%*strkey*% 令牌。
 
-<a href="" id="description-description-string"></a>**Description**=*说明-字符串*  
+<a href="" id="description-description-string"></a>**说明**=*说明-字符串*  
 （可选）指定描述服务的字符串，通常表示为在 INF 文件的**字符串**部分中定义的%*strkey*% 令牌。
 
 此字符串为用户提供有关该服务的详细信息，而不是**DisplayName**。 例如， **DisplayName**的名称可能类似于 "DHCP 客户端"，描述可能类似于 "通过注册和更新 IP 地址和 DNS 名称来管理网络配置"。
@@ -153,7 +153,7 @@ ServiceBinary=path-to-service
 
 在*Wdm .h*和*Ntddk*中定义 SERVICE_xxxx 常量。
 
-<a href="" id="starttype-start-code"></a>**StartType**=*开始代码*  
+<a href="" id="starttype-start-code"></a>**StartType**=*开始-代码*  
 指定何时启动驱动程序作为以下数值之一（用 decimal 或表示），如下面的列表所示，采用十六进制表示法。
 
 <a href="" id="0x0--service-boot-start-"></a>**0x0** （SERVICE_BOOT_START）  
@@ -203,25 +203,25 @@ ServiceBinary=path-to-service
 如果在使用**LastKnownGood**时启动仍失败，请运行 bug 检查例程。 （*只有*系统启动所需的设备/驱动程序在其 INF 文件中指定此值。）
 
 <a href="" id="servicebinary-path-to-service"></a>**ServiceBinary**=*路径到服务*  
-指定服务的二进制文件的路径，表示为 *% dirid%\\文件名*。
+指定服务的二进制文件的路径，表示为 *% dirid%\\filename*。
 
 *Dirid*号可以是自定义目录标识符，也可以是[使用 Dirids](using-dirids.md)中所述的系统定义的目录标识符之一。 给定的*文件名*指定已传输的文件（请参阅[**INF CopyFiles 指令**](inf-copyfiles-directive.md)），该文件在目标计算机上从源分发媒体传输到该目录。
 
-<a href="" id="startname-driver-object-name"></a>**StartName**=*驱动程序-名称*  
+<a href="" id="startname-driver-object-name"></a>**StartName**=*驱动程序-对象名称*  
 此可选条目指定表示此设备/驱动程序的驱动程序对象的名称。 如果*类型代码*指定**1** （SERVICE_KERNEL_DRIVER）或**2** （SERVICE_FILE_SYSTEM_DRIVER），则此名称是 i/o 管理器用来加载驱动程序的驱动程序对象名称。
 
-<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*add-registry*\[ **，** <em>add-registry-section</em>\]。  
-引用一个或多个 INF 写入器定义的*外*接程序，其中设置了与新安装的服务相关的任何注册表信息。 此类 " **HKR** "*部分*指定**HKLM\\System\\CurrentControlSet\\服务\\ServiceName**注册表项。 有关详细信息，请参阅[**INF AddReg 指令**](inf-addreg-directive.md)。
+<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*添加注册表-节*\[**，**<em>外</em>\]接程序 .。。  
+引用一个或多个 INF 写入器定义的*外*接程序，其中设置了与新安装的服务相关的任何注册表信息。 此类 " **HKR** "*部分*指定了**HKLM\\\\System CurrentControlSet\\Services\\ServiceName**注册表项。 有关详细信息，请参阅[**INF AddReg 指令**](inf-addreg-directive.md)。
 
 此指令很少用于服务安装部分。
 
-<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=*del-section*\[ **，** <em>del-section</em>\]。  
-引用一个或多个由 INF 写入器定义的 " *del-注册表" 部分*，其中已删除已安装服务的相关注册表信息。 此类**HKR**规范在此*中指定了* **HKLM\\System\\CurrentControlSet\\服务\\ServiceName**注册表项。 有关详细信息，请参阅[**INF DelReg 指令**](inf-delreg-directive.md)。
+<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**DelReg**=-*registry-section*\[**，**<em>del</em>\].。。  
+引用一个或多个由 INF 写入器定义的 " *del-注册表" 部分*，其中已删除已安装服务的相关注册表信息。 这种**HKR**规范在这种 " *del-registry" 部分*中指定了**\\HKLM System\\\\CurrentControlSet Services\\ServiceName**注册表项。 有关详细信息，请参阅[**INF DelReg 指令**](inf-delreg-directive.md)。
 
 此指令几乎不能用于*服务安装部分*，但它可能用于 "更新" 注册表以用于以前安装的相同设备/驱动程序服务。
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg**=*位注册表*\[ **，** <em>位注册表-部分</em>\]。  
-在*服务安装部分*有效，但几乎从未使用过。 此类*注册表*项中的**HKR**规范还指定了**HKLM\\System\\CurrentControlSet\\服务\\ServiceName**注册表项。
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg**=*位注册表-节*\[**，**<em>位注册表-节</em>\].。。  
+在*服务安装部分*有效，但几乎从未使用过。 此类*注册表部分*中的**HKR**规范还指定了**HKLM\\System\\CurrentControlSet\\Services\\ServiceName**注册表项。
 
 <a href="" id="loadordergroup-load-order-group-name"></a>**LoadOrderGroup**=*加载顺序-组名称*  
 此可选条目用于标识此驱动程序所属的加载顺序组。 它可以是 "标准" 加载顺序组（如**SCSI**类或**NDIS**）之一。
@@ -230,7 +230,7 @@ ServiceBinary=path-to-service
 
 有关**LoadOrderGroup**的详细信息，请参阅[指定驱动程序加载顺序](specifying-driver-load-order.md)。
 
-<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依赖项=依赖***项-名称*\[ **，** <em>依赖项-名称</em>\]。  
+<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依赖**=项-*项-名称*\[**、**<em>依赖项-名称</em>\].。。  
 依赖项列表中的每个*项依赖项名称*项指定了设备/驱动程序所依赖的服务或加载顺序组的名称。
 
 如果*依赖项名称*指定了服务，则在启动此驱动程序之前必须运行该服务。 例如，系统提供的 Win32 TCP/IP 打印服务的 INF 取决于对基础（内核模式） TCP/IP 传输堆栈的支持。 因此，TCP/IP 打印服务的 INF 将此项指定为**依赖项**。
@@ -238,7 +238,7 @@ ServiceBinary=path-to-service
 *依赖项名称*可以指定此设备/驱动程序所依赖的加载顺序组。 仅当启动指定组中的至少一个成员时，才会启动此类驱动程序。 在组名称之前加上加号（+）。 例如，系统 RAS 服务 INF 可能有一个类似于 **"NetBIOSGroup"** 的条目，其中列出了负载顺序组和服务。
 
 <a href="" id="security--security-descriptor-string-"></a>**Security**= "*security-描述符-string*"  
-指定要应用于服务的安全描述符。 此安全描述符指定执行此类操作（如启动、停止和配置服务）所需的权限。 *安全描述符字符串*值是带有标记的字符串，用于指示 DACL （**D：** ）安全组件。
+指定要应用于服务的安全描述符。 此安全描述符指定执行此类操作（如启动、停止和配置服务）所需的权限。 *安全描述符字符串*值是带有标记的字符串，用于指示 DACL （**D：**）安全组件。
 
 有关安全描述符字符串的信息，请参阅[安全描述符定义语言（Windows）](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关安全描述符字符串格式的信息，请参阅安全描述符定义语言（Windows）。
 
@@ -260,9 +260,9 @@ ServiceBinary=path-to-service
 
 此设置将被忽略，除非该服务是自动启动服务。
 
-有关详细信息，请参阅[此页](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_delayed_auto_start_info)。
+有关详细信息，请参阅 [本页](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_delayed_auto_start_info)。
 
-<a href="" id="description-description-string"></a>**AddTrigger**=*服务-触发器 [，服务触发器-安装节，...]*
+<a href="" id="description-description-string"></a>**AddTrigger**=*[，服务-触发器-install-section，...]*
 
 指定要为 Win32 服务注册的触发器事件，以便在发生触发器事件时可以启动或停止该服务。 有关服务触发器事件的详细信息，请参阅[服务触发器事件](https://docs.microsoft.com/windows/desktop/Services/service-trigger-events)。
 
@@ -323,7 +323,7 @@ SubType=trigger-subtype
 操作系统根据  **StartType**值加载驱动程序，*如下所示*：
 
 -   在系统启动开始阶段，操作系统加载所有**0x0** （SERVICE_BOOT_START）驱动程序。
--   在系统启动阶段，操作系统首先加载 PnP 管理器在注册表中查找设备节点（*devnodes*）的所有 WDM 和 PnP 驱动程序。 **\\枚举**树（无论其 INF 文件是否为 SERVICE_SYSTEM_START 指定**0x01**或 SERVICE_DEMAND_START 的**0x03** ）。然后，操作系统会加载所有剩余的 SERVICE_SYSTEM_START 驱动程序。
+-   在系统启动阶段，操作系统首先加载 PnP 管理器在注册表中查找设备节点（*devnodes*）的所有 WDM 和 PnP 驱动**程序。枚举\\**树（对于 SERVICE_DEMAND_START，其 INF 文件是为 SERVICE_SYSTEM_START 指定**0x01**还是指定**0x03** ）。然后，操作系统会加载所有剩余的 SERVICE_SYSTEM_START 驱动程序。
 -   在系统自动启动阶段，操作系统会加载所有剩余的 SERVICE_AUTO_START 驱动程序。
 
 有关**依赖关系**的详细信息，请参阅[指定驱动程序加载顺序](specifying-driver-load-order.md)。
@@ -350,7 +350,7 @@ SubType=trigger-subtype
 
 "*服务安装" 部分*具有以下通用格式：
 
-```ini
+```inf
 [service-install-section]
 AddReg=add-registry-section
 ...
@@ -363,7 +363,7 @@ HKR,,BootFlags,0x00010003,0x14 ; CM_SERVICE_USB3_DISK_BOOT_LOAD|CM_SERVICE_USB_D
 
 **AddService**指令还可在 INF 文件中的其他位置引用*事件日志安装部分*。 每个此类部分都具有以下形式：
 
-```ini
+```inf
 [event-log-install-section]
  
 AddReg=add-registry-section[, add-registry-section]... 
@@ -372,9 +372,9 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-对于典型的设备/驱动程序 INF 文件，*事件日志-安装部分*仅使用**AddReg**指令为驱动程序设置事件日志记录文件。 **HKR**规范在 "*添加注册表" 一节*中指定**HKLM\\System\\CurrentControlSet\\服务\\EventLog\\** <em>EventLogType</em> **\\** <em>事件名称</em>注册表项。 此事件日志记录*添加注册表部分*具有以下常规形式：
+对于典型的设备/驱动程序 INF 文件，*事件日志-安装部分*仅使用**AddReg**指令为驱动程序设置事件日志记录文件。 "*添加注册表" 一节*中的**HKR**规范指定**HKLM\\\\System CurrentControlSet\\Services\\EventLog\\**<em>EventLogType</em>**\\**<em>事件</em>日志项。 此事件日志记录*添加注册表部分*具有以下常规形式：
 
-```ini
+```inf
 [drivername_EventLog_AddReg]
 HKR,,EventMessageFile,0x00020000,"path\IoLogMsg.dll;path\driver.sys"
 HKR,,TypesSupported,0x00010001,7 
@@ -386,7 +386,7 @@ HKR,,TypesSupported,0x00010001,7
 
     *%% SystemRoot%%\\System32\\IoLogMsg*
 
-    *%% SystemRoot%%\\System32\\驱动程序\\驱动程序*
+    *%% SystemRoot%%\\System32\\驱动\\程序驱动程序*
 
 -   名为**TypesSupported**的值项的类型为[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)，由 FLG_ADDREG_TYPE_DWORD 值**0x00010001**指定。
 
@@ -394,14 +394,14 @@ HKR,,TypesSupported,0x00010001,7
 
 如果新安装的驱动程序正在取代驱动程序二进制文件 *，则还可以使用* [**DelReg**](inf-delreg-directive.md)指令删除以前安装的事件日志消息文件，方法是显式删除现有的**EventMessageFile**和**TypesSupported**值项。 （另请参阅[**INF DelService 指令**](inf-delservice-directive.md)。）
 
-尽管[**BitReg**](inf-bitreg-directive.md)指令在 INF-编写器定义的*事件日志安装*-*部分*中是有效的，但它几乎从未使用过，因为设备驱动程序事件日志记录的标准值项不是位掩码。
+尽管[**BitReg**](inf-bitreg-directive.md)指令在 INF-编写器定义的*事件日志安装*-*部分*中也有效，但它几乎从未使用过，因为设备驱动程序事件日志记录的标准值项不是位掩码。
 
 <a name="examples"></a>示例
 --------
 
-此示例显示了**AddService**指令引用的服务安装和事件日志-安装部分，如[*DDInstall * 的示例中所示 **。服务**](inf-ddinstall-services-section.md)。
+此示例显示了**AddService**指令引用的服务安装和事件日志-安装部分，如[ *DDInstall * 的示例中所示。服务](inf-ddinstall-services-section.md)。
 
-```ini
+```inf
 [sermouse_Service_Inst]
 DisplayName    = %sermouse.SvcDesc%
 ServiceType    = 1                   ; = SERVICE_KERNEL_DRIVER
@@ -444,7 +444,7 @@ sermouse.SvcDesc = "Serial Mouse Driver"
 mouclass.SvcDesc = "Mouse Class Driver"
 ```
 
-[*DDInstall * 的参考中的示例 **。** ](inf-ddinstall-hw-section.md)前面所述的 HW 部分还显示了**AddService**指令所引用的某些服务安装部分，以设置 PnP 上层筛选器驱动程序。
+DDInstall * 的参考中的示例。 [ *](inf-ddinstall-hw-section.md)前面所述的 HW 部分还显示了**AddService**指令所引用的某些服务安装部分，以设置 PnP 上层筛选器驱动程序。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -455,9 +455,9 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [**CopyFiles**](inf-copyfiles-directive.md)
 
-[***DDInstall *。HW**](inf-ddinstall-hw-section.md)
+[***DDInstall*.HW**](inf-ddinstall-hw-section.md)
 
-[***DDInstall *。服务**](inf-ddinstall-services-section.md)
+[***DDInstall*.服务器**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 
@@ -465,7 +465,7 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [**DestinationDirs**](inf-destinationdirs-section.md)
 
-[**Strings**](inf-strings-section.md)
+[**字符串**](inf-strings-section.md)
 
  
 

@@ -4,12 +4,12 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a54bde8a616e73ea31ea4115f2f1899a3caebbb5
-ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
+ms.openlocfilehash: fdf01743fdb97a60dda18192583b7cb1f344ab7b
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80261283"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173551"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -20,15 +20,13 @@ ms.locfileid: "80261283"
 
 -   调用[setupapi.log](setupapi.md)和[设备安装](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))功能的设备安装应用程序。
 
-这些操作包括以下各项：
+这些操作包括下列各项：
 
 -   [卸载设备](#uninstalling-the-device)
 
 -   [从驱动程序存储区中删除驱动程序包](#deleting-a-driver-package-from-the-driver-store)
 
--   正在删除已安装驱动程序的二进制文件
-
-**请注意**  这些操作不需要按顺序执行。
+**请注意**  ，不需要按顺序执行这些操作。
 
  
 
@@ -46,7 +44,7 @@ ms.locfileid: "80261283"
 
 此卸载操作不会撤消安装过程中执行的所有操作。 例如，驱动程序包或*共同安装*程序（与其他一些注册表操作一起）不会更改。
 
-**请注意**  在此卸载操作完成后，设备的 devnode 将不再存在，但是[驱动程序包](driver-packages.md)仍存在于[驱动程序存储区](driver-store.md)中。 如果 PnP 管理器重新枚举设备（例如，拔出设备后再重新插入），PnP 管理器会将其视为新的设备实例，并从驱动程序存储区中安装驱动程序包。
+**请注意**  ，此卸载操作完成后，设备的 devnode 将不再存在，但是[驱动程序包](driver-packages.md)仍存在于[驱动程序存储区](driver-store.md)中。 如果 PnP 管理器重新枚举设备（例如，拔出设备后再重新插入），PnP 管理器会将其视为新的设备实例，并从驱动程序存储区中安装驱动程序包。
 
  
 
@@ -58,7 +56,7 @@ ms.locfileid: "80261283"
 
 在从驱动程序存储区中删除驱动程序包之前，请确保卸载使用它的所有设备。
 
-**重要**  您不得从[驱动程序存储区](driver-store.md)中手动删除[驱动程序包](driver-packages.md)。 这样做可能会导致 INF 文件、驱动程序存储目录和驱动程序存储区中的驱动程序不一致。 你可能还无法将同一驱动程序包暂存到驱动程序存储区。
+**重要说明**  你不得从[驱动程序存储区](driver-store.md)中手动删除[驱动程序包](driver-packages.md)。 这样做可能会导致 INF 文件、驱动程序存储目录和驱动程序存储区中的驱动程序不一致。 你可能还无法将同一驱动程序包暂存到驱动程序存储区。
 
  
 

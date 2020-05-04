@@ -4,12 +4,12 @@ description: 间接显示驱动程序模型旨在提供简单的用户模式驱�
 ms.assetid: E2E64500-5F99-42A7-8945-B496026EA142
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b124798a900a4b185975f582cf5dc79e64a9e2
-ms.sourcegitcommit: 7135ca169cc274543fbe170330c054ee18573134
+ms.openlocfilehash: c319e4a330fe5c0bfccd40af2cdd4686a08a8874
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80367629"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104615"
 ---
 # <a name="indirect-display-driver-model-overview"></a>间接显示驱动程序模型概述
 
@@ -38,7 +38,7 @@ ms.locfileid: "80367629"
 
 间接显示驱动程序是一种仅限用户模式的模型，不支持内核模式组件，因此驱动程序可以使用任何 DirectX API 来处理桌面映像。 事实上，IddCx 提供了在 DirectX 图面中进行编码的桌面映像。
 
-**请注意**  间接显示器驱动程序应该构建为通用 windows 驱动程序，以便它可以在多个 windows 平台上使用。
+**请注意**  ，间接显示驱动程序应该构建为通用 windows 驱动程序，以便它可以在多个 windows 平台上使用。
 
  
 
@@ -46,9 +46,10 @@ ms.locfileid: "80367629"
 
 以下各节介绍间接显示驱动程序模型：
 
-[IddCx 对象](iddcx-objects.md)
+[IddCx 对象](iddcx-objects.md)  
+[调试](indirect-display-debugging.md)
  
-## <a name="sample-code"></a>示例代码
+## <a name="sample-code"></a>代码示例
 
 Microsoft 提供了位于[Windows 驱动程序示例 GitHub](https://github.com/microsoft/Windows-driver-samples/tree/master/video/IndirectDisplay)上的间接显示驱动程序的示例实现。 此示例演示如何连接监视器、如何响应模式集，以及如何接收帧。
 

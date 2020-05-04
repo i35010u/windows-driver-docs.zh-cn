@@ -4,12 +4,12 @@ description: Windows 64 位版本要求在内核模式（包括驱动程序）�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 024e304efda69539f416d0f7998f4f32b394ff72
-ms.sourcegitcommit: 17052bc92153522fbd05aed21cee87ff037cfeca
+ms.openlocfilehash: 8947b9a122f807309d66b41e30c27705745d7906
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70301192"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173555"
 ---
 # <a name="test-signing"></a>测试签名
 
@@ -19,9 +19,9 @@ ms.locfileid: "70301192"
 ## <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
 
-*摘录自*[在开发和测试过程中安装未签名的驱动程序](installing-an-unsigned-driver-during-development-and-test.md)：
+在[开发和测试过程中安装未签名驱动程序](installing-an-unsigned-driver-during-development-and-test.md)*的摘录*：
 
-默认情况下，仅当内核可以验证驱动程序签名时，Windows Vista 和更高版本的 windows 的64位版本才会加载内核模式驱动程序。 但是，在早期的驱动程序开发和非自动测试期间，可以禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用有效驱动程序签名的加载时间强制。 但是，若要完全自动测试即插即用（PnP）安装的驱动程序，则必须对该驱动程序的[编录文件](catalog-files.md)进行签名。 对驱动程序进行签名是必需的，因为 Windows Vista 和更高版本的 Windows 将为需要系统管理员授权安装驱动程序的无符号驱动程序显示 "驱动程序签名" 对话框，这可能会阻止没有安装驱动程序和使用该设备所需的权限。 无法在 Windows Vista 和更高版本的 Windows 上禁用此 PnP 驱动程序安装行为。
+默认情况下，仅当内核可以验证驱动程序签名时，Windows Vista 和更高版本的 windows 的64位版本才会加载内核模式驱动程序。 但是，在早期的驱动程序开发和非自动测试期间，可以禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用有效驱动程序签名的加载时间强制。 但是，若要完全自动测试即插即用（PnP）安装的驱动程序，则必须对该驱动程序的[编录文件](catalog-files.md)进行签名。 需要对驱动程序进行签名的原因是 Windows Vista 和更高版本的 Windows 将为需要系统管理员授权安装驱动程序的无符号驱动程序显示 "驱动程序签名" 对话框，这可能会阻止没有必要权限的用户安装驱动程序和使用设备。 无法在 Windows Vista 和更高版本的 Windows 上禁用此 PnP 驱动程序安装行为。
 
 ### <a name="use-the-f8-advanced-boot-option"></a>**使用 "F8 高级启动" 选项**
 
@@ -31,7 +31,7 @@ Windows Vista 和更高版本的 Windows 支持 F8 高级启动选项--"禁用�
 
 ![显示 f8 高级启动选项的屏幕截图](images/tutorialf8.png)
 
-### <a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a>附加内核调试器以禁用签名验证
+### <a name="attach-a-kernel-debugger-to-disable-signature-verification"></a><a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a>附加内核调试器以禁用签名验证
 
 将活动内核调试器附加到开发或测试计算机会禁用内核模式驱动程序的加载时签名强制。 若要使用此调试配置，请将调试计算机附加到开发或测试计算机，然后通过运行以下命令在开发或测试计算机上启用内核调试：
 
@@ -41,14 +41,14 @@ bcdedit -debug on
 
 若要使用 BCDEdit，用户必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请创建*cmd.exe*的桌面快捷方式，右键单击快捷方式，然后选择 "**以管理员身份运行**"。
 
-但请注意，在某些情况下，开发人员可能必须附加内核调试器，还需要维护加载时签名强制。 请[参阅附录1：在内核调试模式下](appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md)强制执行内核模式签名验证，以了解如何实现此目的。
+但请注意，在某些情况下，开发人员可能必须附加内核调试器，还需要维护加载时签名强制。 有关如何实现此目的，请参阅[附录1：在内核调试模式下强制执行内核模式签名验证](appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md)。
 
 ## <a name="test-sign-a-driver-package"></a>测试对驱动程序包进行签名
 
 
 最好的方法是测试对驱动程序包的签名，而不是使用上述两种方法来绕过驱动程序签名强制要求。 测试签名和驱动程序安装可以在开发计算机上完成，但您可能需要使用两台计算机，一个用于开发和签名，另一个用于测试。
 
-*摘录自*[如何对驱动程序包进行测试签名](how-to-test-sign-a-driver-package.md)：
+*Excerpt from* [如何对驱动程序包进行测试签名](how-to-test-sign-a-driver-package.md)：
 
 <a href="" id="signing-computer"></a>**正在为计算机签名**  
 此计算机用于对 Windows Vista 和更高版本的 Windows 的驱动程序包进行测试签名。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 为了使用[驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)，此计算机必须安装 windows Vista 和更高版本的 Windows 驱动程序工具包（WDK）。 这也可以是开发计算机。
@@ -67,7 +67,7 @@ bcdedit -debug on
 
     下面所述的所有命令工具都应从相应的工具/生成命令窗口 Visual Studio 2012 或 Visual Studio 2013 中使用。
 
-    **注意** Visual Studio 的命令工具位于\\安装目录 C： Program Files （x86）\\Microsoft Visual Studio 12.0\\Common7\\工具\\快捷方式中
+    **注意** Visual Studio 的命令工具位于安装目录 C\\： Program Files （x86）\\Microsoft Visual Studio 12.0\\Common7\\工具\\快捷方式中
 
 
 
@@ -76,18 +76,18 @@ bcdedit -debug on
 
 你可以选择最常见的 "开发人员命令提示 for VS2013"。 快捷方式可以固定到任务栏以方便访问。
 
-**注意** 请注意，使用 Visual Studio 时，请不要使用驱动程序签名的命令工具方法，还可以使用 Visual Studio 2013 开发环境（也称为 IDE）对驱动程序包进行签名。 请参阅[附录2：有关详细信息，请](appendix-2--signing-drivers-with-visual-studio.md)通过 Visual Studio 对驱动程序进行签名。
+**注意** 请注意，使用 Visual Studio 时，请不要使用驱动程序签名的命令工具方法，还可以使用 Visual Studio 2013 开发环境（也称为 IDE）对驱动程序包进行签名。 有关详细信息，请参阅[附录2：用 Visual Studio 为驱动程序签名](appendix-2--signing-drivers-with-visual-studio.md)。
 
 
 
 
 2.  创建驱动程序包文件夹并复制驱动程序文件，并保留所需的任何子目录，例如 C：\\DriverTestPackage。
-3.  为驱动程序包创建一个 inf 文件。 请确保 inf 文件的日期不早于适用于 Vista 的08/21/2006，更晚的日期适用于 Windows 8.0、Windows 8.1、Windows 7.0 和 Windows 7.1。 建议使用 inf 文件中的 chkinf 工具来测试 inf 文件，这样就不会报告错误。 如果它是打印机驱动程序，请使用 chkinf 和 INFGate 从 WDK 测试 inf 文件。
-4.  *摘录自*[创建测试证书](creating-test-certificates.md)：
+3.  为驱动程序包创建一个 inf 文件。 使用 inf 文件中的[InfVerif](../devtest/infverif.md)工具测试 inf 文件，以便不报告错误。
+4.  *Excerpt from* [创建测试证书](creating-test-certificates.md)摘录：
 
     以下命令行示例使用 MakeCert 来完成以下任务：
 
-    -   创建名为 " *Contoso .com （测试）* " 的自签名测试证书。 此证书对使用者名称和证书颁发机构（CA）使用相同的名称。
+    -   创建名为 " *Contoso .com （测试）*" 的自签名测试证书。 此证书对使用者名称和证书颁发机构（CA）使用相同的名称。
 
     -   将证书的副本放入名为*ContosoTest*的输出文件中。
 
@@ -111,7 +111,7 @@ bcdedit -debug on
 
     -   *ContosoTest*是包含测试证书的副本的文件名，即 .Com （test）。 证书文件用于将证书添加到 "受信任的根证书颁发机构" 证书存储和 "受信任的发布者" 证书存储中。
 
-    *摘录自*[查看测试证书](viewing-test-certificates.md)：
+    *Excerpt from* [查看测试证书](viewing-test-certificates.md)摘录：
 
     创建证书并将副本放入证书存储区后，可以使用 Microsoft 管理控制台（MMC）证书管理单元来查看该证书。 执行以下操作以通过 MMC "**证书**" 管理单元查看证书：
 
@@ -129,9 +129,9 @@ bcdedit -debug on
 
     ![显示有关 contoso.com （测试）证书的一般信息的证书窗口的屏幕截图](images/tutorialcertificategeneraltab.png)
 
-    请注意，"证书" 对话框状态如下："此 CA 根证书不受信任。 若要启用信任，请在受信任的根证书颁发机构存储中安装此证书。 " 这是预期的行为。 无法验证证书，因为 Windows 不信任证书颁发机构（默认情况下为 "Contoso （Test）"）。
+    请注意，"证书" 对话框状态： "此 CA 根证书不受信任。 若要启用信任，请在受信任的根证书颁发机构存储中安装此证书。 " 这是预期的行为。 无法验证证书，因为 Windows 不信任证书颁发机构（默认情况下为 "Contoso （Test）"）。
 
-5.  创建编录文件（.cat 扩展名）。 使用如下所示的 inf2cat 工具来创建目录文件。 请注意，开关不允许有空格，/driver：&lt;没有空间&gt;&lt;&gt;&lt;完整路径&gt;，/os：：&lt;no space&gt;os1 name，：&lt;无空格&gt;&lt;os2 名称&gt;。
+5.  创建编录文件（.cat 扩展名）。 使用如下所示的 inf2cat 工具来创建目录文件。 请&lt;注意，开关不允许有空格，/driver：没有空间&gt;&lt;完整路径&gt;，/os：：&lt;no space&gt;&lt;os1 name&gt;，：&lt;no space&gt;&lt;os2 name。&gt;
 
     ```cpp
     inf2cat  /v  /driver:C:\DriverTestPackage  /os:7_64,7_x86 ,XP_X86
@@ -161,7 +161,7 @@ bcdedit -debug on
 
     /Driver （或/drv）选项指定包含一个或多个 INF 文件的目录。 在此目录中，将为包含一个或多个 CatalogFile 指令的 INF 文件创建目录文件。 目录文件的名称不能超过8.3。
 
-    如果使用命令行参数/os：7_X64，则 Inf2Cat 将创建目录文件 tstamd64.cat。 同样，如果使用/os： XP_X86，则该工具会创建目录文件 toastx86.cat，这与 Server2008R2_IA64 类似。 如果只需要一个编录文件，则 INF 文件中只有一个条目，如下所示。
+    如果使用命令行参数/os：7_X64，则 Inf2Cat 将创建目录文件 tstamd64.cat。 同样，如果使用/os： XP_X86，则该工具将创建目录文件 toastx86.cat，与 Server2008R2_IA64 类似。 如果只需要一个编录文件，则 INF 文件中只有一个条目，如下所示。
 
     ```cpp
     CatalogFile.NT  = toaster.cat
@@ -193,7 +193,7 @@ bcdedit -debug on
 
     建议检查 cat 文件以验证是否包含驱动程序文件和所选操作系统。 如果添加或删除了任何驱动程序文件，则已修改 INF 文件，必须重新创建并重新签名该 cat 文件。 此处的任何省略都将导致安装日志文件（Vista 和更高版本的 setupapi.log 或 XP 的 setupapi.log 文件）上报告的安装错误。
 
-6.  *摘录自*[对驱动程序包的目录文件进行测试签名](test-signing-a-driver-package-s-catalog-file.md)：
+6.  针对[驱动程序包的目录文件的测试签名](test-signing-a-driver-package-s-catalog-file.md)*摘录*：
 
     以下命令行说明了如何运行 SignTool 来执行以下操作：
 
@@ -219,7 +219,7 @@ bcdedit -debug on
 
     -   **/N**选项指定在指定的证书存储中安装的证书（*Contoso .com （Test））* 的名称。
 
-    -   **/T**选项指定将对数字签名进行时间 *http://timestamp.digicert.com* 戳的 TSA （）的 URL。
+    -   **/T**选项指定将对数字签名进行时间*http://timestamp.digicert.com*戳的 TSA （）的 URL。
         **重要提示**  包含时间戳会提供密钥吊销所需的信息，以防签名者的代码签名私钥泄漏。
 
 
@@ -230,7 +230,7 @@ bcdedit -debug on
 tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所述，你可以打开 cat 文件
 
 
-7.  *修改后的摘录*[通过嵌入的签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)：
+7.  *修改后的摘录*：[通过嵌入的签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)：
 
     -   在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求必须具有嵌入签名。 无论驱动程序的驱动程序包是否有经过数字签名的目录文件，此项都是必需的。
 
@@ -242,7 +242,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     amd64\\toaster 指定将嵌入签名的内核模式二进制文件的名称。
 
-    在 WDK 7.1 安装目录中，toaster 示例位于 src\\general\\toaster\\toastpkg.inf\\toastcd\\目录中。 Windows 8 或 8.1 WDK 示例将从 Microsoft 下载站点下载。 这些示例不附带 Windows 8 或 8.1 Windows 驱动程序工具包。
+    在 WDK 7.1 安装目录中，toaster 示例\\位于 src general\\toaster\\toastpkg.inf\\toastcd\\目录中。 Windows 8 或 8.1 WDK 示例将从 Microsoft 下载站点下载。 这些示例不附带 Windows 8 或 8.1 Windows 驱动程序工具包。
 
     通过在 Windows 资源管理器中双击文件打开目录文件时，将看到以下屏幕截图。 请注意，"查看签名" 现在已突出显示。
 
@@ -254,7 +254,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     ![显示有关证书一般信息的屏幕截图](images/tutorialcertificategeneraltab.png)
 
-现在可以在签名计算机或测试计算机上测试该驱动程序。 如果你使用的是测试计算机，请将驱动程序包复制到计算机，使文件结构保持不变。 还必须将工具 certmgr.msc 复制到测试计算机。 使用测试计算机时，将测试签名 toastpkg.inf 驱动程序包复制到 c：\\toaster 临时文件夹。
+现在可以在签名计算机或测试计算机上测试该驱动程序。 如果你使用的是测试计算机，请将驱动程序包复制到计算机，使文件结构保持不变。 还必须将工具 certmgr.msc 复制到测试计算机。 使用测试计算机时，将测试签名 Toastpkg.inf 驱动程序包复制到 c：\\toaster 临时文件夹。
 
 以下过程描述了在任一计算机上用于测试驱动程序的步骤：
 
@@ -266,9 +266,9 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     重新启动计算机。
 
-2.  *选择的摘录*[使用 certmgr.msc 在测试计算机上安装测试证书](using-certmgr-to-install-test-certificates-on-a-test-computer.md)：
+2.  [使用 certmgr.msc 在测试计算机上安装测试证书](using-certmgr-to-install-test-certificates-on-a-test-computer.md)*所选的摘录*：
 
-    将用于对驱动程序进行[测试签名](test-signing-driver-packages.md)的证书（ *.cer*）文件复制到测试计算机。 可以将证书文件复制到测试计算机上的任何目录中。
+    将用于对驱动程序进行[测试签名](test-signing-driver-packages.md)的证书（*.cer*）文件复制到测试计算机。 可以将证书文件复制到测试计算机上的任何目录中。
 
     以下 Certmgr.msc 命令将证书文件*CertificateFileName*中的证书添加到测试计算机上受信任的根证书颁发机构证书存储：
 
@@ -282,7 +282,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
     CertMgr.exe /add CertificateFileName.cer /s /r localMachine trustedpublisher
     ```
 
-    Where （*从* [**certmgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr).msc 的摘录 ）：
+    Where （*从 certmgr.msc 的摘录* [**CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)）：
 
     /add CertificateName
 
@@ -294,7 +294,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     /r RegistryLocation
 
-    指定系统存储的注册表位置位于 HKEY_LOCAL_MACHINE 下。
+    指定系统存储的注册表位置位于 HKEY_LOCAL_MACHINE。
 
     CertificateStore
 
@@ -359,7 +359,7 @@ Dpinst 和 Pnputil 预安装驱动程序包，而借助 Devcon 和 Windows 添�
 
     上述命令将安装所有 inf 文件对应的所有驱动程序。 你还可以使用 "." 不包含当前目录中的引号。 "dpinst/？" 显示此工具的所有开关。
 
-    驱动程序 inf 文件上的/u 开关将从 DriverStore 的 FileRepository （% SystemRoot%\\System32\\ DriverStore\\FileRepository）目录中删除驱动程序包，并提供与该设备关联的驱动程序已删除。 借助 Dpinst 工具，只需引用驱动程序的 inf 文件即可删除驱动程序。
+    如果与驱动程序相关联的设备已被删除，驱动程序 inf 文件上的/U 开关将从\\DriverStore\\的\\FileRepository （% SystemRoot% System32 DriverStore FileRepository）目录中删除驱动程序包。 借助 Dpinst 工具，只需引用驱动程序的 inf 文件即可删除驱动程序。
 
     ```cpp
     dpinst.exe  /U  toaster.inf
@@ -402,7 +402,7 @@ Dpinst 和 Pnputil 预安装驱动程序包，而借助 Devcon 和 Windows 添�
      '*PNP0501      - Hardware ID with apostrophe (' prefixes literal match - matches exactly as typed, including the asterisk.)
     ```
 
-    删除设备后，若要删除驱动程序，需要两个命令。 使用第一个带 "dp_enum" 开关的命令查找与计算机中安装的驱动程序包相对应的驱动程序 inf 文件名。
+    删除设备后，若要删除驱动程序，需要两个命令。 使用带有 "dp_enum" 开关的第一个命令查找与计算机中安装的驱动程序包相对应的驱动程序 inf 文件名。
 
     ```cpp
     devcon  dp_enum

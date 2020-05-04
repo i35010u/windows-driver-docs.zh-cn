@@ -1,6 +1,6 @@
 ---
 title: INF SourceDisksNames 节
-description: SourceDisksNames 部分标识分发磁盘或包含源代码文件，以在安装过程中传输到目标计算机的 CD-ROM 光盘。
+description: SourceDisksNames 节标识了包含要在安装过程中传输到目标计算机的源文件的分发磁盘或 CD-ROM 光盘。
 ms.assetid: ad69521c-5185-4c7b-a851-eb825b468459
 keywords:
 - INF SourceDisksNames 部分设备和驱动程序安装
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8133d47f86875787083cb74c53bd20a019eb426a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3e4fa0833de5d1d3cda64edf98449c0260f3d9e5
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341468"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223203"
 ---
 # <a name="inf-sourcedisksnames-section"></a>INF SourceDisksNames 节
 
 
-一个**SourceDisksNames**部分标识分发磁盘或包含源代码文件，以在安装过程中传输到目标计算机的 CD-ROM 光盘。
+**SourceDisksNames**节标识了包含要在安装过程中传输到目标计算机的源文件的分发磁盘或 cd-rom 光盘。
 
-```ini
+```inf
 [SourceDisksNames] |
 [SourceDisksNames.x86] | 
 [SourceDisksNames.arm] | (Windows 8 and later versions of Windows)
@@ -43,77 +43,77 @@ diskid = disk-description[,[tag-or-cab-file],[unused],[path],[flags][,tag-file]]
 
 
 <a href="" id="diskid"></a>*diskid*  
-指定以十进制格式，用于标识源磁盘的非负整数。 此值不能要求超过 4 个字节的存储。 如果有多个源磁盘对于分发中，每个*diskid*在本部分中的条目必须具有唯一的值，如**1**， **2**， **3**，依次类推。
+指定标识源磁盘的非负整数（十进制格式）。 此值不能要求超过4个字节的存储空间。 如果有多个源磁盘用于分发，此部分中的每个*diskid*条目都必须有一个唯一值，如**1**、 **2**、 **3**等。
 
-<a href="" id="disk-description"></a>*disk-description*  
-指定 %*strkey*%令牌或 **"** <em>带引号的字符串</em> **"** 描述的内容和/或由标识磁盘的用途*diskid*。 安装程序可以显示此字符串的值向最终用户在安装期间，例如，若要确定源磁盘，在安装过程的某个特定阶段要插入到驱动器。
+<a href="" id="disk-description"></a>*磁盘-描述*  
+指定%*strkey*% 令牌或 **"**<em>带引号的字符串</em>**"** ，描述由*diskid*标识的磁盘的内容和/或用途。 例如，在安装过程中，安装程序可以将此字符串的值显示给最终用户，以标识在安装过程的特定阶段要插入驱动器的源磁盘。
 
-每个 %*strkey*必须在 INF 中定义在本部分中的 %规范**字符串**部分。 任何*磁盘描述*，它是不是 %*strkey*%令牌是必须由两个双引号字符分隔的用户可见字符串 ( **"** ) 如果它具有任何前导或尾随空格。
+本部分中的每个%*strkey*% 规范必须在 INF 的**字符串**部分中定义。 不是%*strkey*% 令牌的任何*磁盘描述*都是用户可见的字符串，如果包含任何前导空格或尾随空格，则必须用双引号字符（**"**）分隔。
 
-<a href="" id="tag-or-cab-file"></a>*tag-or-cab-file*  
-此可选值指定的名称*标记文件*或*cabinet (.cab) 文件*分发在磁盘上，在提供*安装根目录*或子目录中通过指定*路径*(如果有）。 该值应指定的文件名和扩展名，没有任何目录或子目录。
+<a href="" id="tag-or-cab-file"></a>*标记或 cab 文件*  
+此可选值指定在分发磁盘上提供的*标记文件*或 cab *（.cab）文件*的名称，无论是在*安装根目录*中还是在*path*指定的子目录中（如果有）。 该值仅应指定文件的名称和扩展名，而不应指定任何目录或子目录。
 
-Windows 使用的标记文件来验证用户插入正确的安装磁盘。 标记文件所需的可移动媒体，而对于固定媒体是可选的。
+Windows 使用标记文件来验证用户是否插入了正确的安装磁盘。 标记文件是可移动媒体所必需的，并且对于固定媒体是可选的。
 
-如果 Windows 找不到安装文件的安装介质上的名称，并且*标记或 cab 文件*具有扩展名 **。** <em>cab</em>，Windows 将它作为包含安装文件的 cab 文件的名称。
+如果 Windows 无法在安装介质上按名称找到安装文件，并且*标记或 cab 文件*具有扩展名，则为 **。**<em>cab</em>，Windows 将其用作包含安装文件的 cab 文件的名称。
 
-如果。*cab*指定为扩展时，Windows 将该文件视为标记文件和 cab 文件，如以下所述**备注**部分。
+如果为。指定了*cab*扩展，Windows 将该文件视为标记文件和 cabinet 文件，如下面的 "**备注**" 部分所述。
 
-对于 Windows XP 和更高版本的 Windows，另请参阅*标志*并*标记文件*条目的值。
+对于 Windows XP 和更高版本的 Windows，还应查看*标志*和*标记文件*条目值。
 
-<a href="" id="unused"></a>*未使用*  
-此项不再支持 Windows 2000 和更高版本的 Windows。
+<a href="" id="unused"></a>*用*  
+Windows 2000 和更高版本的 Windows 不再支持此项。
 
-<a href="" id="path"></a>*path*  
-此可选值指定包含源文件的分发磁盘上的目录路径。 *路径*相对于*安装根目录*，表示为 **\\** <em>dirname1</em>  **\\** <em>dirname2</em>...等等。 如果此值从条目中省略，假定文件分发磁盘的安装根目录中。
+<a href="" id="path"></a>*通道*  
+此可选值指定分发磁盘上包含源文件的目录路径。 *路径*相对于*安装根*，表示为**\\** <em>dirname1</em>**\\**<em>dirname2</em>.。。依此类推。 如果在某个条目中省略此值，则假定文件位于分发磁盘的安装根目录中。
 
-可以使用**INF SourceDisksFiles 部分**必须位于给定的路径目录中或安装根路径中。
+你可以使用**INF SourceDisksFiles 部分**必须位于给定路径目录中或安装根目录中。
 
-<a href="" id="flags"></a>*flags*  
-从 Windows XP 中，此值设置为**0x10**强制 Windows 以使用*标记或 cab 文件*作为 cabinet 文件名称，并使用*标记文件*作为标记文件名称。 否则为*标志*是仅供内部使用。
+<a href="" id="flags"></a>*随意*  
+从 Windows XP 开始，将此设置为**0x10**将强制 Windows 使用*标记或 cab 文件*作为 cabinet 文件名，并将*标记文件*用作标记文件名。 否则，*标志*仅供内部使用。
 
-<a href="" id="tag-file"></a>*tag-file*  
-如果从 Windows XP*标志*设置为**0x10**，此可选值指定的名称*标记文件*上分发介质，在提供*安装根*或在指定的子目录*路径*。 该值应指定文件名和扩展名不包含路径信息。 有关详细信息，请参阅“备注”部分。
+<a href="" id="tag-file"></a>*标记文件*  
+从 Windows XP 开始，如果*标志*设置为**0x10**，则此可选值指定在分发介质上提供的*标记文件*的名称，无论是在*安装根目录*中，还是在*path*指定的子目录中。 该值应指定不含路径信息的文件名和扩展名。 有关详细信息，请参见“备注”部分。
 
 <a name="remarks"></a>备注
 -------
 
-一个**SourceDisksNames**部分可以具有任意数量的条目，一个用于分发的每个磁盘。 与任何 INF **SourceDisksNames**节还必须具有[ **INF SourceDisksFiles 部分**](inf-sourcedisksfiles-section.md)。 (按照惯例， **SourceDisksNames**并**SourceDisksFiles**部分按照[ **INF 版本部分**](inf-version-section.md)。)
+**SourceDisksNames**节可以包含任意数量的条目，每个条目对应于每个分发磁盘。 具有**SourceDisksNames**部分的任何 inf 都必须具有[**INF SourceDisksFiles 部分**](inf-sourcedisksfiles-section.md)。 （按照约定， **SourceDisksNames**和**SourceDisksFiles**部分遵循[**INF 版本部分**](inf-version-section.md)。）
 
-这些部分永远不会出现系统提供 INF 文件中。 相反，系统提供的 INF 文件指定**LayoutFile**中的条目及其**版本**部分。
+这些部分决不会出现在系统提供的 INF 文件中。 相反，系统提供的 INF 文件会在其**版本**部分中指定**LayoutFile**项。
 
-中的条目**SourceDisksNames**部分可以具有两种格式，其中之一是支持仅在 Windows XP 及更高版本的 Windows 的版本之一。
+**SourceDisksNames**节中的条目可以采用两种格式，其中一种格式仅在 windows XP 和更高版本的 windows 中受支持。
 
-在第一个格式*标记或 cab 文件*参数可以指定*标记文件*或*cab 文件*。 如果遇到这种格式，Windows 将使用以下算法：
+在第一种格式中，*标记或 cab 文件*参数可以指定*标记文件*或*cabinet 文件*。 当遇到此格式时，Windows 使用以下算法：
 
-1.  将视为*标记或 cab 文件*值作为标记文件名称，并查找安装介质上的文件。 如果媒体为可移动媒体且未找到标记文件时，提示用户输入正确的媒体。 如果可以找到标记文件和要安装的第一个文件都不固定的介质，提示用户输入正确的媒体。
-2.  尝试将安装文件复制直接从该介质。
-3.  将视为*标记或 cab 文件*值为.cab 文件，并查找该文件。
-4.  尝试将从安装文件复制 *.cab*文件。
-5.  提示用户输入找不到文件。
+1.  将*标记或 cab 文件*值视为标记文件名，并在安装介质上查找文件。 如果介质是可移动的并且找不到标记文件，则提示用户输入正确的介质。 如果介质是固定的，并且找不到标记文件和第一个要安装的文件，则提示用户输入正确的介质。
+2.  尝试直接从介质中复制安装文件。
+3.  将*标记或 cab 文件*值视为 .cab 文件，然后查找文件。
+4.  尝试从 *.cab*文件复制安装文件。
+5.  提示用户找不到文件。
 
-在 Windows XP 和更高版本的 Windows 支持第二个格式。 使用此格式，可以使用*标记或 cab 文件*，*标志*，并*标记文件*条目同时指定 *.cab*文件和标记文件。 如果遇到这种格式，Windows 将使用以下算法：
+Windows XP 和更高版本的 Windows 支持第二种格式。 使用此格式，可以使用*标记或 cab 文件*、*标志*和*标记文件*项来指定 *.cab*文件和标记文件。 当遇到此格式时，Windows 使用以下算法：
 
-1.  如果可移动的安装介质，寻找标记匹配的文件的文件的名称指定的*标记文件*。 如果找不到该文件，提示用户输入正确的媒体。 如果该介质得到解决，查找标记文件或 cabinet 文件。 如果找到任一文件，则提示用户输入正确的媒体。
-2.  尝试将从安装文件复制 *.cab*指定的文件*标记或 cab 文件*。
-3.  提示用户输入找不到文件。
+1.  如果安装介质是可移动的，请查找与*标记文件*指定的文件名相匹配的标记文件。 如果找不到该文件，则提示用户输入正确的介质。 如果介质是固定的，请查找标记文件或 cabinet 文件。 如果未找到任何文件，则提示用户输入正确的介质。
+2.  尝试复制由*标记或 cab 文件*指定的 *.cab*文件中的安装文件。
+3.  提示用户找不到文件。
 
-有关这两种格式，必须为每个版本的驱动程序文件的不同的文件名称提供不同的标记文件。
+无论采用哪种格式，都必须为驱动程序文件的每个版本提供不同的标记文件，并具有不同的文件名。
 
-若要支持多个系统体系结构上的驱动程序文件的分发，可以指定一个体系结构特定于**SourceDisksNames**通过添加部分 **.x86**， **.ia64**，或 **.amd64**扩展**SourceDisksNames**。
+若要支持在多个系统体系结构上分发驱动程序文件，可以通过将**SourceDisksNames**添加到**x86**、 **ia64**或**amd64**扩展名来指定特定于体系结构的**SourceDisksNames**部分。
 
-请注意，与其他节，例如不同*DDInstall*部分中，为这些平台扩展**SourceDisksNames**部分不 **.ntx86**， **。ntia64**，或 **.ntamd64**。 例如，若要指定的源磁盘对于基于 x86 的系统名称部分，使用**SourceDisksNames.x86**部分中，不**SourceDisksNames.ntx86**部分。 同样，使用**SourceDisksNames.ia64**部分，以指定用于基于 Itanium 的系统和一个**SourceDisksNames.amd64**部分以指定的基于 x64 的系统。
+请注意，与其他部分（如*DDInstall* ）不同， **SourceDisksNames**节的平台扩展不是**ntx86**、 **ntia64**或**ntamd64**。 例如，若要为基于 x86 的系统指定源磁盘名称部分，请使用**SourceDisksNames**部分，而不是**SourceDisksNames。 ntx86**节。 同样，可以使用**SourceDisksNames**部分指定基于 Itanium 的系统，使用**SourceDisksNames**部分指定基于 x64 的系统。
 
-在安装期间，安装程序 Api 函数查找特定于体系结构**SourceDisksNames**部分之前使用的泛型部分。 例如，如果在安装期间的基于 x86 的平台上，一个 INF 文件引用磁盘"2"，则[SetupAPI](setupapi.md)函数将查找磁盘"2"的条目**SourceDisksNames.x86**中查找之前**SourceDisksNames**。
+在安装过程中，Setupapi.log 函数在使用通用节之前查找特定于体系结构的**SourceDisksNames**部分。 例如，如果在基于 x86 的平台上安装期间 INF 文件引用磁盘 "2"，则[setupapi.log](setupapi.md)函数将在**SourceDisksNames**中查找磁盘 "2 **" 的条目**。
 
-安装程序 Api 函数使用**SourceDisksNames**并**SourceDisksNames。** <em>体系结构</em>部分中相同的 INF 文件作为相关[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)部分。
+Setupapi.log 函数使用**SourceDisksNames**和**SourceDisksNames。** 与相关[**SourceDisksFiles**](inf-sourcedisksfiles-section.md)部分位于同一 INF 文件中的<em>体系结构</em>部分。
 
 <a name="examples"></a>示例
 --------
 
-在以下示例中， *write.exe*文件是相同的所有 Windows 平台，它位于 *\\常见* CD-ROM 分发光盘上安装根下的子目录，.*Cmd.exe*文件是仅在基于 x86 的平台使用一个特定于平台的文件。
+在下面的示例中，所有 Windows 平台的*写入 .exe*文件都是相同的，位于 cd-rom 分发光盘上安装根目录下的* \\公共*子目录中。*Cmd.exe*文件是仅在基于 x86 的平台上使用的特定于平台的文件。
 
-```ini
+```inf
 [SourceDisksNames]
 1 = "Windows NT CD-ROM",file.tag,,\common
 
@@ -125,9 +125,9 @@ write.exe = 1
 cmd.exe = 2
 ```
 
-下面的示例使用包含单独的规范的条目 *.tag*文件并 *.cab*文件。
+下面的示例使用包含*标记*文件和 *.cab*文件的单独规范的条目。
 
-```ini
+```inf
 [Version]
 signature = "$Windows NT$"
 Provider = %Msft%
@@ -178,7 +178,7 @@ Entry.class
 Msft = "Microsoft"
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DestinationDirs**](inf-destinationdirs-section.md)

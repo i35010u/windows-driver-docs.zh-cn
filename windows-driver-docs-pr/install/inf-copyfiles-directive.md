@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e771bf2ef7d7326964b662ed4b920aaec9a4dc55
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 10d704ae9a3031a5771b2c1fcdfdcebdd211d91c
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369822"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223265"
 ---
 # <a name="inf-copyfiles-directive"></a>INF CopyFiles 指令
 
 
-一个**CopyFiles**指令可以执行以下任一操作：
+**CopyFiles**指令可以执行以下任一操作：
 
--   会导致单个文件要复制的源媒体中的默认目标目录。
--   引用一个或多个 INF 编写器定义中每个指定要复制到目标的源媒体中的文件列表 INF 部分。
+-   导致将单个文件从源媒体复制到默认目标目录。
+-   引用 INF 中的一个或多个由 INF 编写器定义的部分，每个部分都指定要从源媒体复制到目标的文件的列表。
 
-```ini
+```inf
 [DDInstall] | 
 [DDInstall.CoInstallers] | 
 [ClassInstall32] | 
@@ -42,24 +42,24 @@ ms.locfileid: "67369822"
 CopyFiles=@filename | file-list-section[, file-list-section]... 
 ```
 
-一个**CopyFiles**指令可以指定任何正式语法语句中所示的部分内。 此外可以在任何以下 INF 部分中指定此指令：
+可以在正式语法语句中所示的任何部分中指定**CopyFiles**指令。 还可以在以下任何 INF 部分中指定此指令：
 
--   *添加接口部分*引用的 INF [ **AddInterface** ](inf-addinterface-directive.md)指令[ * **DDInstall *。接口**](inf-ddinstall-interfaces-section.md)部分。
--   *安装接口部分*INF 中引用[ **InterfaceInstall32** ](inf-interfaceinstall32-section.md)部分
+-   [**AddInterface**](inf-addinterface-directive.md)在*add-interface-section* [DDInstall * 中由 INF AddInterface 指令引用的添加接口部分。 *接口](inf-ddinstall-interfaces-section.md)部分。
+-   INF [**InterfaceInstall32**](inf-interfaceinstall32-section.md)部分中引用的*安装界面部分*
 
-每个命名部分引用的**CopyFiles**指令具有以下形式的一个或多个条目：
+**CopyFiles**指令引用的每个命名部分都具有以下形式的一个或多个条目：
 
-```ini
+```inf
 [file-list-section]
 destination-file-name[,[source-file-name][,[unused][,flag]]]
 ...
 ```
 
-INF 编写器的定义*文件列表部分*可以有任意数量的条目，每个单独的行上。
+由 INF 编写器定义的*文件列表部分*可以有任意数量的条目，每个条目都在单独的行中。
 
-每个*文件列表部分*可以具有可选的相关联<em>文件列表部分</em>**安全**部分中的以下形式：
+每个*文件列表部分*都可以有一个可选的、关联的<em>文件列表节</em>，其中包含以下形式的 "**安全**" 部分：
 
-```ini
+```inf
 [file-list-section.security]
 "security-descriptor-string"
 ```
@@ -67,106 +67,106 @@ INF 编写器的定义*文件列表部分*可以有任意数量的条目，每�
 ## <a name="entries"></a>条目
 
 
-<a href="" id="destination-file-name"></a>*destination-file-name*  
-指定目标文件的名称。 如果没有*源文件名*是，此规范也是源文件的名称。
+<a href="" id="destination-file-name"></a>*目标-文件名*  
+指定目标文件的名称。 如果未提供*源文件名*，则此规范也是源文件的名称。
 
-<a href="" id="source-file-name"></a>*source-file-name*  
-指定源文件的名称。 如果文件复制操作的源和目标文件名称相同，*源文件名*可以省略。
+<a href="" id="source-file-name"></a>*源文件-文件名*  
+指定源文件的名称。 如果文件复制操作的源和目标文件名称相同，则可以省略*源文件名*。
 
-<a href="" id="unused"></a>*未使用*  
-在 Windows 2000 和更高版本的 Windows 中不再支持此项。
+<a href="" id="unused"></a>*用*  
+Windows 2000 和更高版本的 Windows 不再支持此项。
 
-<a href="" id="flag"></a>*flag*  
-这些可选标志，以十六进制表示法或为十进制值中的部分条目，表示可用于控制如何 （或是否） 将特定的源文件复制到目标。 可以指定一个或多个系统定义的以下标志的 （或运算） 值。 但是，某些这些标志是互斥的：
+<a href="" id="flag"></a>*标志*  
+这些可选标志（以十六进制表示法形式表示）或部分输入中的十进制值可用于控制是否将特定的源文件复制到目标。 可以为以下系统定义的标志指定一个或多个（运算）值。 但是，其中一些标志是互斥的：
 
-<a href="" id="0x00000001---copyflg-warn-if-skip--"></a>**0x00000001** (COPYFLG_WARN_IF_SKIP)   
-如果用户选择不用于复制文件，将发送一条警告。 此标志和下一步是互斥的且都已进行数字签名的 INF 文件不相关。
+<a href="" id="0x00000001---copyflg-warn-if-skip--"></a>**0x00000001** （COPYFLG_WARN_IF_SKIP）   
+如果用户选择不复制文件，则发送警告。 此标志和下一标志是互斥的，并且两者都与已进行数字签名的 INF 文件无关。
 
-<a href="" id="0x00000002--copyflg-noskip-"></a>**0x00000002** (COPYFLG_NOSKIP)  
-不允许用户跳过该文件复制。 如果此标志为隐式[驱动程序包](driver-packages.md)进行签名。
+<a href="" id="0x00000002--copyflg-noskip-"></a>**0x00000002** （COPYFLG_NOSKIP）  
+不允许用户跳过复制文件的操作。 如果对[驱动程序包](driver-packages.md)进行了签名，则隐含此标志。
 
-<a href="" id="0x00000004--copyflg-noversioncheck-"></a>**0x00000004** (COPYFLG_NOVERSIONCHECK)  
-忽略文件版本和目标目录中的现有文件上写入。 此标志与两个互相排斥。 此标志与数字签名的 INF 文件无关。
+<a href="" id="0x00000004--copyflg-noversioncheck-"></a>**0x00000004** （COPYFLG_NOVERSIONCHECK）  
+忽略文件版本并写入目标目录中的现有文件。 此标志和接下来的两个是互斥的。 此标志与数字签名的 INF 文件无关。
 
-<a href="" id="0x00000008--copyflg-force-file-in-use-"></a>**0x00000008** (COPYFLG_FORCE_FILE_IN_USE)  
-强制使用文件中的行为： 它当前处于打开状态时不将其复制通过具有相同名称的现有文件。 以便可以重命名并在下次重启发生时使用，而不是，复制给定的源文件以一个临时名称。
+<a href="" id="0x00000008--copyflg-force-file-in-use-"></a>**0x00000008** （COPYFLG_FORCE_FILE_IN_USE）  
+强制使用文件中行为：如果当前打开了同名的现有文件，请勿复制该文件。 相反，使用临时名称复制给定的源文件，以便在下次重新启动时可以重命名并使用该文件。
 
-<a href="" id="0x00000010--copyflg-no-overwrite-"></a>**0x00000010** (COPYFLG_NO_OVERWRITE)  
-不要使用相同名称的源文件替换的目标目录中的现有文件。 此标志不能与任何其他标志组合。
+<a href="" id="0x00000010--copyflg-no-overwrite-"></a>**0x00000010** （COPYFLG_NO_OVERWRITE）  
+不要将目标目录中的现有文件替换为具有相同名称的源文件。 此标志不能与任何其他标志组合。
 
-<a href="" id="0x00000020--copyflg-no-version-dialog--"></a>**0x00000020** (COPYFLG_NO_VERSION_DIALOG)   
-不会覆盖目标目录中使用的源文件的文件如果现有的文件比源文件新。
+<a href="" id="0x00000020--copyflg-no-version-dialog--"></a>**0x00000020** （COPYFLG_NO_VERSION_DIALOG）   
+如果现有文件比源文件新，则不要使用源文件写入目标目录中的文件。
 
-较新的检查目的是使用文件版本中，从 VS_VERSIONINFO 文件版本资源中提取。 有关详细信息，请参阅 https://docs.microsoft.com/windows/desktop/menurc/version-information 。 如果目标文件不是一个可执行文件或资源的映像，或该文件不包含的文件版本信息，则设备安装会假定目标文件是较旧。 
+将使用文件版本完成较新的检查，如从 VS_VERSIONINFO 文件版本资源中提取。 有关详细信息，请参阅 https://docs.microsoft.com/windows/desktop/menurc/version-information。 如果目标文件不是可执行文件或资源映像，或者该文件不包含文件版本信息，则设备安装将假定目标文件较旧。 
 
-<a href="" id="0x00000040---copyflg-overwrite-older-only-"></a>**0x00000040** (COPYFLG_OVERWRITE_OLDER_ONLY)  
-将源文件复制到目标目录中，仅当目标上的文件已被较新版本取代。 此标志与数字签名的 INF 文件无关。 版本检查作为 COPYFLG_NO_VERSION_DIALOG 中所述，使用相同的过程。
+<a href="" id="0x00000040---copyflg-overwrite-older-only-"></a>**0x00000040** （COPYFLG_OVERWRITE_OLDER_ONLY）  
+仅当目标上的文件被较新版本取代时，才将源文件复制到目标目录。 此标志与数字签名的 INF 文件无关。 版本检查使用与上述 COPYFLG_NO_VERSION_DIALOG 中所述相同的过程。
 
-<a href="" id="0x00000400--copyflg-replaceonly--"></a>**0x00000400** (COPYFLG_REPLACEONLY)   
-仅当该文件已存在目标目录中，请将源文件复制到目标目录。
+<a href="" id="0x00000400--copyflg-replaceonly--"></a>**0x00000400** （COPYFLG_REPLACEONLY）   
+仅当文件已存在于目标目录中时，才将源文件复制到目标目录。
 
-<a href="" id="0x00000800--copyflg-nodecomp--"></a>**0x00000800** (COPYFLG_NODECOMP)   
-(Windows 7 及更高版本)将源文件复制到目标目录中，而无需解压缩源文件，如果已进行压缩。
+<a href="" id="0x00000800--copyflg-nodecomp--"></a>**0x00000800** （COPYFLG_NODECOMP）   
+（Windows 7 及更高版本）如果源文件已压缩，则将源文件复制到目标目录，而不将其解压缩。
 
-<a href="" id="0x00001000--copyflg-replace-boot-file-"></a>**0x00001000** (COPYFLG_REPLACE_BOOT_FILE)  
-此文件是所需的系统加载程序。 系统将提示用户重新启动系统。
+<a href="" id="0x00001000--copyflg-replace-boot-file-"></a>**0x00001000** （COPYFLG_REPLACE_BOOT_FILE）  
+此文件是系统加载程序所必需的。 系统将提示用户重新启动系统。
 
-<a href="" id="0x00002000--copyflg-noprune-"></a>**0x00002000** (COPYFLG_NOPRUNE)  
-不要删除此操作作为优化结果。
+<a href="" id="0x00002000--copyflg-noprune-"></a>**0x00002000** （COPYFLG_NOPRUNE）  
+由于优化，不要删除此操作。
 
-例如，Windows 可能会确定该文件复制操作不需要因为文件已存在。 但是，INF 的编写器知道该操作是必需的并且指示 Windows 重写其优化并执行文件操作。
+例如，Windows 可能会确定文件复制操作不是必需的，因为文件已存在。 但 INF 的编写器知道该操作是必需的，并指示 Windows 重写其优化并执行文件操作。
 
-此标志可以用于确保文件复制如果他们还可以指定在 INF [ **DelFiles** ](inf-delfiles-directive.md)指令或 INF [ **RenFiles** ](inf-renfiles-directive.md)指令。
+如果文件也是在 INF [**DelFiles**](inf-delfiles-directive.md)指令或 inf [**RenFiles**](inf-renfiles-directive.md)指令中指定的，则可以使用此标志来确保复制这些文件。
 
-<a href="" id="0x00004000--copyflg-in-use-rename-"></a>**0x00004000** (COPYFLG_IN_USE_RENAME)  
-如果不能复制的源文件，因为正在使用目标文件，重命名目标文件，然后将源文件复制到目标文件，并删除已重命名的目标文件。 如果目标文件不能重命名，完成复制操作期间在下次系统重新启动。 如果不能删除已重命名的目标文件，在下次系统重新启动过程中删除已重命名的目标文件。
+<a href="" id="0x00004000--copyflg-in-use-rename-"></a>**0x00004000** （COPYFLG_IN_USE_RENAME）  
+如果由于目标文件正在使用而无法复制源文件，请重命名目标文件，然后将源文件复制到目标文件，并删除重命名的目标文件。 如果无法重命名目标文件，请在下一次系统重新启动期间完成复制操作。 如果重命名的目标文件无法删除，请在下一次系统重新启动过程中删除重命名的目标文件。
 
-<a href="" id="security-descriptor-string"></a>*security-descriptor-string*  
-指定要应用于命名复制的所有文件的安全描述符*文件列表部分*。 *安全描述符字符串*是标记，则指示 DACL 的字符串 (**d:** ) 安全组件。
+<a href="" id="security-descriptor-string"></a>*安全描述符-字符串*  
+指定一个安全描述符，它将应用于通过命名*文件列表部分*复制的所有文件。 *安全描述符字符串*是一个带有标记的字符串，用于指示 DACL （**D：**）安全组件。
 
-有关安全描述符字符串的信息，请参阅[安全描述符定义语言 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关的安全描述符字符串格式的信息，请参阅安全描述符定义语言 (Windows)。
+有关安全描述符字符串的信息，请参阅[安全描述符定义语言（Windows）](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)。 有关安全描述符字符串格式的信息，请参阅安全描述符定义语言（Windows）。
 
-如果<em>文件列表部分</em>**安全**部分未指定，则文件继承的文件复制到其中的目录的安全特征。
+如果未指定<em>文件列表节</em>，则文件将继承要将文件复制到其中的目录的安全**特性。**
 
-如果<em>文件列表部分</em>**安全**指定部分，以便进行安装和升级的设备和系统服务包必须包含以下 ACE:
+如果指定了一个<em>文件列表节</em>**，则**必须包含以下 ACE，以便可以进行设备和系统 service pack 的安装和升级：
 
--   (A;GA;;SY) − 授予对本地系统的所有访问。
--   (A;GA;;BA) − 向内置管理员授予的所有访问。
+-   （A;;GA;;;SY）−授予对本地系统的所有访问权限。
+-   （A;;GA;;;BA）−授予对内置管理员的所有访问权限。
 
-不要*不*指定对非特权用户授予写入权限的 ACE 字符串。
+不要*指定向*非特权用户授予写入权限的 ACE 字符串。
 
-有关如何指定安全描述符的详细信息，请参阅[创建安全的设备安装](creating-secure-device-installations.md)。
+有关如何指定安全描述符的详细信息，请参阅[创建安全设备安装](creating-secure-device-installations.md)。
 
 <a name="remarks"></a>备注
 -------
 
-Windows 仅复制[驱动程序包](driver-packages.md)到其目标位置，如果该文件具有 INF 的驱动程序安装的一部分**CopyFiles**指令。 时它将文件复制，操作系统将自动生成临时文件的名称，如有必要，并将复制的源文件重命名操作系统启动下一次。
+如果文件具有 INF **CopyFiles**指令，则 Windows 仅将[驱动程序包](driver-packages.md)复制到其目标位置作为驱动程序安装的一部分。 当它复制文件时，操作系统会在必要时自动生成临时文件名，并在下次启动操作系统时重命名复制的源文件。
 
-INF 文件编写器还必须提供通过使用 INF 源媒体中复制的文件的路径规范[ **SourceDisksNames** ](inf-sourcedisksnames-section.md)部分和 INF [ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)部分，以显式指定的源媒体中的每个源文件的 INF 文件的相对路径。
+INF 文件编写器还必须为从源媒体复制的文件提供路径规范，方法是使用 INF [**SourceDisksNames**](inf-sourcedisksnames-section.md)部分和 inf [**SourceDisksFiles**](inf-sourcedisksfiles-section.md)部分显式指定每个源文件相对于源媒体中 INF 文件的路径。
 
-复制操作的目标受[ **INF DestinationDirs 部分**](inf-destinationdirs-section.md)。 本部分中控件所有文件复制操作的目标，如下所示：
+复制操作的目标由[**INF DestinationDirs 部分**](inf-destinationdirs-section.md)控制。 本部分控制所有文件复制操作的目标，如下所示：
 
-- 如果引用的指定部分**CopyFiles**指令有一个对应的条目[ **DestinationDirs** ](inf-destinationdirs-section.md)相同 INF，明确指定条目的部分目标目标目录中的命名的节列出的所有文件都复制到其中。 如果在未列出的命名的节**DestinationDirs**部分中，Windows 使用**DefaultDestDir**中的条目**DestinationDirs** INF 文件部分。
-- 如果**CopyFiles**指令使用 **@** <em>filename</em>语法，Windows 使用**DefaultDestDir** 中的条目**DestinationDirs** INF 文件部分。
+- 如果**CopyFiles**指令引用的命名节在同一 INF 的[**DestinationDirs**](inf-destinationdirs-section.md)部分中具有相应的条目，则该条目显式指定将在其中复制已命名部分中列出的所有文件的目标目标目录。 如果命名部分未在**DestinationDirs**节中列出，则 Windows 将使用 INF 文件的**DestinationDirs**部分中的**DefaultDestDir**条目。
+- 如果**CopyFiles**指令使用**@** <em>filename</em>语法，则 Windows 将使用 INF 文件的**DestinationDirs**部分中的**DefaultDestDir**条目。
 
 以下几点适用于 INF **CopyFiles**指令：
 
-- 每个*文件列表部分*名称必须是唯一的 INF 文件，但它可以被**CopyFiles**， [ **DelFiles**](inf-delfiles-directive.md)，或[**RenFiles** ](inf-renfiles-directive.md)指令相同的 INF 文件中的其他位置。 节名称必须遵循中所述的常规规则[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
-- 文件中指定的名称 **@** <em>filename</em>或*文件列表部分*项必须是源媒体上的文件的确切名称。 不能使用 %*strkey*%令牌指定的文件的名称。 详细了解 %*strkey*%令牌，请参阅[ **INF 字符串部分**](inf-strings-section.md)。
-- **CopyFiles**指令不支持修饰*文件列表部分*名称与系统定义的平台扩展 ( **.nt**， **.ntx86**， **.ntia64**，或 **.ntamd64**)。
-- 不要使用**CopyFiles**指令以将 INF 文件复制。 有关详细信息，请参阅[复制 INF 文件](copying-inf-files.md)。
+- 对于 INF 文件，每个*文件列表节*名称必须是唯一的，但可以在同一 INF 文件中的其他位置通过**CopyFiles**、 [**DelFiles**](inf-delfiles-directive.md)或[**RenFiles**](inf-renfiles-directive.md)指令引用它。 节名称必须遵循[INF 文件一般语法规则](general-syntax-rules-for-inf-files.md)中描述的常规规则。
+- **@**<em>文件名</em>或*文件列表节*项中指定的文件名必须是源媒体上文件的确切名称。 不能使用%*strkey*% 令牌来指定文件名。 有关%*strkey*% 令牌的详细信息，请参阅[**INF 字符串部分**](inf-strings-section.md)。
+- **CopyFiles**指令不支持使用系统定义的平台扩展（**nt**、 **. ntx86**、 **. ntia64**或**ntamd64**）修饰*文件列表节*名称。
+- 请勿使用**CopyFiles**指令复制 INF 文件。 有关详细信息，请参阅[复制 INF 文件](copying-inf-files.md)。
 
-从 Windows Vista 开始，以下几点也适用于 INF **CopyFiles**指令：
+从 Windows Vista 开始，以下点还适用于 INF **CopyFiles**指令：
 
--   当 DIFx 工具预安装中的驱动程序包[驱动程序存储区](driver-store.md)，它们仅将复制文件从驱动程序包源到驱动程序存储区如果文件具有相应 INF **CopyFiles**指令。
--   作为 Windows 升级的一部分，Windows 将仅复制到驱动程序包文件[驱动程序存储区](driver-store.md)如果文件具有 INF 驱动程序迁移的一部分**CopyFiles**指令。
+-   当 DIFx 工具在[驱动程序存储区](driver-store.md)中预安装驱动程序包时，如果该文件具有相应的 INF **CopyFiles**指令，则它们仅将驱动程序包源中的文件复制到驱动程序存储区。
+-   作为 Windows 升级的一部分，如果文件具有 INF **CopyFiles**指令，则 windows 仅将驱动程序包文件复制到驱动程序[存储区](driver-store.md)中。
 
 <a name="examples"></a>示例
 --------
 
-此示例演示如何[ **SourceDisksNames**](inf-sourcedisksnames-section.md)， [ **SourceDisksFiles**](inf-sourcedisksfiles-section.md)，并[ **DestinationDirs** ](inf-destinationdirs-section.md)部分处理简单设备驱动程序 INF 中指定的路径复制文件 （和删除文件） 发生的操作。 (还作为示例的以前使用同一个 INF [**版本**](inf-version-section.md)， **SourceDisksNames**，以及**SourceDisksFiles**部分。)
+此示例显示了[**SourceDisksNames**](inf-sourcedisksnames-section.md)、 [**SourceDisksFiles**](inf-sourcedisksfiles-section.md)和[**DestinationDirs**](inf-destinationdirs-section.md)节如何指定处理简单设备驱动程序 INF 时所发生的复制文件（以及删除文件）操作的路径。 （以前也将同一个 INF 用作[**版本**](inf-version-section.md)、 **SourceDisksNames**和**SourceDisksFiles**部分的示例。）
 
-```ini
+```inf
 [SourceDisksNames]
 1 = %Floppy_Description%,,,\WinNT
 
@@ -190,9 +190,9 @@ CopyFiles=@AHA154x.SYS
 ; ...
 ```
 
-此示例演示如何**CopyFiles**中，可以使用指令[ * **DDInstall *。共同安装程序**](inf-ddinstall-coinstallers-section.md)部分提供了两个特定于设备的共同安装程序以补充系统特定于设备的类型类安装程序的 INF 处理的设备驱动程序 INF。
+此示例演示如何在**CopyFiles** [ *DDInstall 中使用 CopyFiles 指令。](inf-ddinstall-coinstallers-section.md)设备驱动程序的 inf 的 CoInstallers 部分，提供两个特定于设备的共同安装程序来补充特定于系统设备类型的类安装程序的 inf 处理。
 
-```ini
+```inf
 [DestinationDirs]
 XxDev_Coinstallers_CopyFiles = 11  ; DIRID_SYSTEM
 ; ... other file-list entries and DefaultDestDirs omitted here
@@ -208,11 +208,11 @@ XxPreInst.dll   ; dev-specific co-installer run before class installer
 XxPostInst.dll  ; run after class installer (post processing)
 ```
 
-如前面的示例中所示，可以从提供程序的名称构造的新的特定于设备的共同安装程序的名称 (显示为此处*Xx*) 和每个此类共同安装程序 DLL 的用途 (显示为此处*PreInst*并*PostInst*)。
+如前面的示例所示，可以根据提供程序的名称（此处显示为*Xx*）以及每个此类共同安装程序 DLL 的预期用途（如*PreInst*和*PostInst*所示）来构造新设备特定的共同安装程序的名称。
 
-有关如何使用 INF 的其他示例**CopyFiles**指令，请参阅 INF 文件中包含的设备驱动程序示例*src* Windows 驱动程序工具包 (WDK) 的目录。
+有关如何使用 INF **CopyFiles**指令的其他示例，请参阅 Windows 驱动程序工具包（WDK）的*src*目录中包含的设备驱动程序示例的 INF 文件。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddInterface**](inf-addinterface-directive.md)
@@ -223,7 +223,7 @@ XxPostInst.dll  ; run after class installer (post processing)
 
 [***DDInstall*.CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[***DDInstall *。接口**](inf-ddinstall-interfaces-section.md)
+[***DDInstall*.接口**](inf-ddinstall-interfaces-section.md)
 
 [**DelFiles**](inf-delfiles-directive.md)
 
@@ -237,7 +237,7 @@ XxPostInst.dll  ; run after class installer (post processing)
 
 [**SourceDisksNames**](inf-sourcedisksnames-section.md)
 
-[**Strings**](inf-strings-section.md)
+[**字符串**](inf-strings-section.md)
 
 [**版本**](inf-version-section.md)
 

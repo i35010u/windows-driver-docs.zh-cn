@@ -16,12 +16,12 @@ keywords:
 - 筛选器驱动程序 WDK 串行设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3d0f5889c868b8a0221e268204008a08b49f14c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cad3d6fc38a5d257cadcebfbf49de09901e72aba
+ms.sourcegitcommit: 6b09412f7bf562f7c01ffa94ac44a3d0ea895e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845386"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086715"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>使用 Serial.sys 和 Serenum.sys
 
@@ -39,8 +39,8 @@ ms.locfileid: "72845386"
     - [串行和 Serenum 的功能](features-of-serial-and-serenum.md)
     - [串行设备和驱动程序的配置](configuration-of-serial-devices-and-drivers.md)
     - [Serenum 和串行的操作](operation-of-serenum-and-serial.md)
-    - [串行的注册表设置](registry-settings-for-serial.md)
-    - [Serenum 的注册表设置](registry-settings-for-serenum.md)
+    - [用于串行的注册表设置](registry-settings-for-serial.md)
+    - [用于 Serenum 的注册表设置](registry-settings-for-serenum.md)
     - [串行驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
     - [Serenum 驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
     - WDK 中 Ntddser 标头文件中的数据定义。
@@ -53,7 +53,7 @@ ms.locfileid: "72845386"
 
 - COM 端口[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)
 
-    必须使用 COM 端口设备接口访问 COM 端口。 （COM 端口设备接口类的 GUID 是[**guid\_DEVINTERFACE\_COMPORT**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport)。）
+    必须使用 COM 端口设备接口访问 COM 端口。 （COM 端口设备接口类的 GUID 是[**\_guid DEVINTERFACE\_COMPORT**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport)。）
 
 - [Com 端口数据库](com-port-database.md)和[com 端口数据库支持例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
@@ -67,8 +67,8 @@ ms.locfileid: "72845386"
 
 这些示例演示了串行驱动程序。
 
-- [串行](https://go.microsoft.com/fwlink/p/?LinkId=617962)示例为串行设备生成函数驱动程序。
-- [Serenum](https://go.microsoft.com/fwlink/p/?LinkId=617961)示例为 RS-232 端口提供了总线驱动程序的即插即用功能。
+- [串行](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)示例为串行设备生成函数驱动程序。
+- [Serenum](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum)示例为 RS-232 端口提供了总线驱动程序的即插即用功能。
 - 简单的虚拟串行驱动程序（ComPort）和无控制器的调制解调器驱动程序（FakeModem）。
-    -   [虚拟串行驱动程序示例（UMDF 1.0）](https://go.microsoft.com/fwlink/p/?LinkId=617963)
-    -   [Virtual serial2 driver 示例（KMDF）](https://go.microsoft.com/fwlink/p/?LinkId=722209)
+    -   [虚拟串行驱动程序示例（UMDF 1.0）](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/VirtualSerial)
+    -   [Virtual serial2 driver 示例（KMDF）](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/VirtualSerial2)

@@ -1,9 +1,9 @@
 ---
 title: INF DDInstall.WMI 节
-description: INF DDInstall.WMI 部分包含一个或多个指定的驱动程序提供了每个 WMI 类的特征的 WMIInterface 指令。
+description: INF DDInstall 部分包含一个或多个 WMIInterface 指令，这些指令为驱动程序提供的每个 WMI 类指定特征。
 ms.assetid: 8c4f6b2b-c2b4-4579-9dce-4436e041ebbc
 keywords:
-- INF DDInstall.WMI 部分设备和驱动程序安装
+- INF DDInstall 部分设备和驱动程序安装
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f02b590e141faf4a96dc6aef12d4bafdd19cb15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea23fc30240c2839742bff609d963556c306dd00
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370579"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223219"
 ---
 # <a name="inf-ddinstallwmi-section"></a>INF DDInstall.WMI 节
 
 
-INF *DDInstall*。**WMI**部分包含一个或多个**WMIInterface**指定驱动程序提供了每个 WMI 类的特征的指令。
+INF *DDInstall*。**WMI**部分包含一个或多个**WMIInterface**指令，这些指令为驱动程序提供的每个 WMI 类指定特征。
 
-```ini
+```inf
 [install-section-name.WMI] |
 [install-section-name.nt.WMI] | 
 [install-section-name.ntx86.WMI] |
@@ -40,41 +40,41 @@ WMIInterface={WmiClassGUID},[flags,]WMI-class-section
 
 
 <a href="" id="wmiclassguid"></a>*WmiClassGUID*  
-指定用于标识 WMI 类的 GUID 值。
+指定标识 WMI 类的 GUID 值。
 
-<a href="" id="flags"></a>*flags*  
-指定以下位掩码标志之一：
+<a href="" id="flags"></a>*随意*  
+指定下列位掩码标志之一：
 
-<a href="" id="0x00000001--scwmi-clobber-security-"></a>0X00000001 (SCWMI_CLOBBER_SECURITY)  
-如果设置，并且如果在注册表中已存在的安全描述符，现有的安全描述符替换为一个 INF 文件中指定。 如果未设置，并且如果在注册表中已存在的安全描述符，而不是 INF 文件中指定的一个使用现有的安全描述符。
+<a href="" id="0x00000001--scwmi-clobber-security-"></a>0x00000001 （SCWMI_CLOBBER_SECURITY）  
+如果已设置，并且注册表中已经存在安全描述符，则现有的安全描述符将替换为 INF 文件中指定的安全描述符。 如果未设置，并且注册表中已经存在安全描述符，则使用现有的安全描述符，而不是在 INF 文件中指定的安全描述符。
 
-<a href="" id="wmi-class-section"></a>*WMI 类部分*  
-指定一个 INF 文件部分，其中包含用于设置 WMI 类的特征指令。
+<a href="" id="wmi-class-section"></a>*WMI-class-部分*  
+指定一个 INF 文件部分，其中包含用于设置 WMI 类的特征的指令。
 
-在中指定以下指令*WMI 类部分*:
+可在*WMI 类部分*中指定以下指令：
 
-<a href="" id="security--security-descriptor-string-"></a>**Security="**<em>security-descriptor-string</em>**"**  
-指定将存储在注册表中并应用于由指定的 GUID 的安全描述符*WmiClassGUID*。 此安全说明符指定所需的访问的数据块与类关联的权限。 *安全描述符字符串*值是指示 DACL 标记的字符串 (**d:**) 安全组件。
+<a href="" id="security--security-descriptor-string-"></a>**Security = "**<em>security-描述符-string</em>**"**  
+指定将存储在注册表中并应用于*WmiClassGUID*指定的 GUID 的安全描述符。 此安全描述符指定访问与类关联的数据块所需的权限。 *安全描述符字符串*值是一个字符串，其标记指示 DACL （**D：**）安全组件。
 
-只有一个**安全**条目可以出现。 如果多个**安全**条目存在，安全未设置 WMI 类。
+只能存在一个**安全**条目。 如果存在多个**安全**条目，则不会为 WMI 类设置安全性。
 
 <a name="remarks"></a>备注
 -------
 
-INF <em>DDInstall</em>**。WMI**部分是 Microsoft Windows Server 2003 和更高版本的操作系统上可用。
+INF <em>DDInstall</em>**。WMI**部分在 Microsoft Windows Server 2003 和更高版本的操作系统上可用。
 
-安全描述符是与每个 WMI GUID 相关联。 对于 Windows XP 和早期操作系统版本，WMI Guid 的默认安全描述符允许完全访问权限的所有用户。 对于 Windows Server 2003 和更高版本，默认安全描述符允许仅对管理员的访问。
+安全描述符与每个 WMI GUID 相关联。 对于 Windows XP 和早期版本的操作系统版本，WMI Guid 的默认安全描述符允许所有用户完全访问。 对于 Windows Server 2003 及更高版本，默认安全描述符仅允许管理员访问。
 
-如果您的驱动程序定义的 WMI 类，并且不希望使用默认的描述符，包括<em>DDInstall</em>**。WMI**部分以指定存储在注册表中，重写系统的默认描述符的安全描述符。
+如果你的驱动程序定义 WMI 类，并且你不希望使用默认描述符，请包含一个<em>DDInstall</em>**。"WMI** " 部分指定存储在注册表中的安全描述符，并覆盖系统的默认描述符。
 
-有关如何在 INF 文件中指定安全描述符的详细信息，请参阅[创建安全的设备安装](creating-secure-device-installations.md)。
+有关如何在 INF 文件中指定安全描述符的详细信息，请参阅[创建安全设备安装](creating-secure-device-installations.md)。
 
 <a name="examples"></a>示例
 --------
 
-下面的示例演示单个<em>DDInstall</em>**。WMI**节，其中包含两个**WMIInterface**指令。 每个指令标识 WMI 类，并指定*WMI 类部分*类。
+下面的示例演示了单个<em>DDInstall</em>**。WMI**节，其中包含两个**WMIInterface**指令。 每个指令标识一个 WMI 类，并为类指定一个*wmi 类部分*。
 
-```ini
+```inf
 [InstallA.NT.WMI]
 WMIInterface = {99999999-4cf9-11d2-ba4a-00a0c9062910},,WMISecurity1
 WMIInterface = {99999998-4cf9-11d2-ba4a-00a0c9062910},1,WMISecurity2
@@ -86,7 +86,7 @@ security = "O:BAG:BAD:(A;;0x120fff;;;BA)(A;;CC;;;WD)(A;;0x120fff;;;SY)"
 security = "O:BAG:BAD:(A;;0x120fff;;;BA)(A;;CC;;;WD)(A;;0x120fff;;;SY)"
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [***DDInstall***](inf-ddinstall-section.md)

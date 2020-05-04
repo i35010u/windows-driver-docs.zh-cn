@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecef85a4d1dac6a692f107019710cac26c603d4b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3bb7771197af2134ad6f71ebf2109d4f0c6d2563
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828803"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223111"
 ---
 # <a name="inf-addinterface-directive"></a>INF AddInterface 指令
 
 
 可在[**INF DDInstall 部分**](inf-ddinstall-interfaces-section.md)中指定一个或多个**AddInterface**指令。 此指令将为导出到更高级别的组件（如其他驱动程序或应用程序）的[设备接口类](device-interface-classes.md)安装特定于设备的支持。 指令通常引用*添加接口部分*，该部分用于设置设备接口类的设备特定实例的注册表信息。
 
-```ini
+```inf
 [DDInstall.Interfaces]
   
 AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section][,flags]]] 
@@ -36,12 +36,12 @@ AddInterface={InterfaceClassGUID} [,[reference-string] [,[add-interface-section]
 
 
 <a href="" id="interfaceclassguid"></a>*InterfaceClassGUID*  
-指定标识设备接口类的 GUID 值。 这可以表示为 **{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}** 形式的显式 GUID 值或%*strkey*% 令牌在 INF 文件的[**字符串**](inf-strings-section.md)部分定义为 **"{** <em>nnnnnnnn</em> **-***nnnn***-***nnnn *-* nnnn***-** <em>nnnnnnnnnnnn</em> **}"** 。
+指定标识设备接口类的 GUID 值。 这可以表示为以下形式的显式 GUID 值： **{**<em>nnnnnnnn</em>**-***nnnn***-****-****-** nnnn<em>nnnnnnnnnnnn</em>**}** ，或在 INF 文件的[**字符串**](inf-strings-section.md)部分中定义为 **"{**<em>nnnnnnnn</em>**-***nnnn***-****-****-** nnnn<em>nnnnnnnnnnnn</em>**}"** 的%*strkey*% 令牌。
 
 有关如何创建 GUID 的详细信息，请参阅[在驱动程序中使用 guid](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)。 对于系统定义的接口类 GUID，请参阅相应的标头，如用于内核流式处理接口 Guid 的*Ks。*
 
 <a href="" id="reference-string"></a>*reference-string*  
-与指定接口类的特定于设备的实例关联的此可选值可以表示为 **"** <em>带引号的字符串</em> **"** 或作为[**INF 字符串部分**](inf-strings-section.md)中定义的%*strkey*% 令牌。
+与指定接口类的特定于设备的实例关联的此可选值可以表示为 **"**<em>带引号的字符串</em>**"** 或作为[**INF 字符串部分**](inf-strings-section.md)中定义的%*strkey*% 令牌。
 
 PnP 函数和筛选器驱动程序通常会在其 INF 文件中的**AddInterface =** 条目中省略此值。 *Swenum*驱动程序使用*引用字符串*作为通过使用单个接口类的多个实例按需创建的软件设备的占位符。 可以在具有两个或多个唯一*引用字符串*s 的 INF 条目中指定相同的*InterfaceClassGUID*值。 由于在打开时，i/o 管理器会将*引用字符串*值作为接口实例的名称的路径部分进行传递，因此，已安装的驱动程序可以区分单个设备相同类的接口实例。
 
@@ -54,15 +54,15 @@ PnP 函数和筛选器驱动程序通常会在其 INF 文件中的**AddInterface
 <a name="remarks"></a>备注
 -------
 
-如果尚未安装由指定的 **{** <em>InterfaceClassGUID</em> **}** 标识的[设备接口类](device-interface-classes.md)，系统安装代码会在系统中安装该类。 安装新类的任何 INF 文件还具有一个[**Inf InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。 本部分包含指定的 **{** <em>InterfaceClassGUID</em> **}** 并引用*接口安装部分*，该部分将为该类设置接口特定的安装操作。
+如果尚未安装由指定的 **{**<em>InterfaceClassGUID</em>**}** 标识的[设备接口类](device-interface-classes.md)，系统安装代码会在系统中安装该类。 安装新类的任何 INF 文件还具有一个[**Inf InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)。 本部分包含指定的 **{**<em>InterfaceClassGUID</em>**}** 并引用*接口安装部分*，该部分将为该类设置接口特定的安装操作。
 
-若要启用设备接口类的实例以供更高级组件的运行时使用，则设备驱动程序必须首先调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)以检索要启用的设备接口实例的符号链接名称。  通常，PnP 函数或筛选器驱动程序从其[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程进行此调用。  若要启用在 inf 中预配的设备接口的实例，设备驱动程序必须在调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)时提供 InterfaceClassGUID 中指定的 **{** **}** 和*引用字符串*。  然后，驱动程序调用[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate) ，以使用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的符号链接名称启用接口。 
+若要启用设备接口类的实例以供更高级组件的运行时使用，则设备驱动程序必须首先调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)以检索要启用的设备接口实例的符号链接名称。  通常，PnP 函数或筛选器驱动程序从其[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程进行此调用。  若要启用在 inf 中预配的设备接口的实例，设备驱动程序必须在调用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)时提供 InterfaceClassGUID 中指定的 **{**<em>InterfaceClassGUID</em>**}** 和*引用字符串*。  然后，驱动程序调用[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate) ，以使用[**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)返回的符号链接名称启用接口。 
 
 [**Inf DDInstall 部分**](inf-ddinstall-interfaces-section.md)中的每个**AddInterface**指令都可以引用 inf 文件中其他位置的 inf 写入器定义的*添加接口部分*。 每个 INF 写入方定义的部分名称在 INF 文件中必须唯一，并且必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅[INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
 **AddInterface**指令引用的*添加接口部分*具有以下格式：
 
-```ini
+```inf
 [add-interface-section]
  
 AddReg=add-registry-section[, add-registry-section]...
@@ -91,7 +91,7 @@ AddReg=add-registry-section[, add-registry-section]...
 
 此示例演示了*DDInstall*的一些扩展。支持系统定义的内核流接口的特定音频设备的**接口**部分。
 
-```ini
+```inf
 ; ...
 [ESS6881.Device.Interfaces]
 AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,ESSAud.Interface.Wave
@@ -145,7 +145,7 @@ ESSAud.Wave.szPname="ESS AudioDrive"
 
 [**CopyFiles**](inf-copyfiles-directive.md)
 
-[***DDInstall *。接口**](inf-ddinstall-interfaces-section.md)
+[***DDInstall*.接口**](inf-ddinstall-interfaces-section.md)
 
 [**DelFiles**](inf-delfiles-directive.md)
 

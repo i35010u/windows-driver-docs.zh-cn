@@ -4,12 +4,12 @@ description: BTP 测试概述。
 ms.assetid: b5b039bb-af0f-446f-9657-aa0e137a3437
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 814605264196fd77061cd8e4643b8e477145052e
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: d5206a7e0d875d95bfb759a6955a5178523e8749
+ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528949"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138634"
 ---
 # <a name="currently-supported-btp-tests"></a>当前支持的 BTP 测试 #
 
@@ -17,3 +17,4 @@ ms.locfileid: "77528949"
 
 - [配对测试](testing-BTP-tests-pairing.md)
 - [HID 测试](testing-BTP-tests-hid.md)
+- [音频测试](testing-BTP-tests-audio.md)

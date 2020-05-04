@@ -1,6 +1,6 @@
 ---
 title: INF SourceDisksFiles 节
-description: SourceDisksFiles 节名称源代码文件、 安装磁盘和安装过程中使用的目录路径。
+description: SourceDisksFiles 节命名在安装期间使用的源文件、安装磁盘和目录路径。
 ms.assetid: 4a20b2e7-3371-47c1-8f51-bcc7af044382
 keywords:
 - INF SourceDisksFiles 部分设备和驱动程序安装
@@ -12,21 +12,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 410a84f32309842a2437d6c6fdd9572dd5b28b01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e0f5dc83b15c522ac25546f773ad1cfdb1dca6f
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380218"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223205"
 ---
 # <a name="inf-sourcedisksfiles-section"></a>INF SourceDisksFiles 节
 
 
-**SourceDisksFiles**部分名称在安装过程中使用的源文件，标识包含这些文件的安装磁盘并提供的目录路径，如果有包含在分布磁盘上单个文件。
+**SourceDisksFiles**部分将在安装过程中使用的源文件命名为标识包含这些文件的安装磁盘，并在包含单个文件的分发磁盘上提供目录路径（如果有）。
 
-中的驱动程序文件或应用程序文件是作为一个已签名的一部分的顺序[驱动程序包](driver-packages.md)，该文件必须具有相应 INF **SourceDisksFiles**部分条目和相应[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)。
+为了使驱动程序文件或应用程序文件作为签名的[驱动程序包](driver-packages.md)的一部分包含，该文件必须具有相应的 inf **SourceDisksFiles**节条目和相应的[**inf CopyFiles 指令**](inf-copyfiles-directive.md)。
 
-```ini
+```inf
 [SourceDisksFiles] | 
 [SourceDisksFiles.x86] | 
 [SourceDisksFiles.arm] | (Windows 8 and later versions of Windows)
@@ -41,43 +41,43 @@ filename=diskid[,[ subdir][,size]]
 ## <a name="entries"></a>条目
 
 
-<a href="" id="filename"></a>*filename*  
-指定源磁盘上文件的名称。
+<a href="" id="filename"></a>*名字*  
+指定源磁盘上的文件的名称。
 
 <a href="" id="diskid"></a>*diskid*  
-指定用于标识包含该文件的源磁盘的整数。 此值，以及初始*subdir*(ectory) 路径 （如果有），其中包含命名的文件，必须在定义[ **SourceDisksNames** ](inf-sourcedisksnames-section.md)相同 INF 部分。
+指定一个整数，该整数标识包含文件的源磁盘。 此值连同包含命名文件的初始*subdir*（ectory）路径（如果有）必须在同一 INF 的[**SourceDisksNames**](inf-sourcedisksnames-section.md)节中定义。
 
 <a href="" id="subdir"></a>*subdir*  
-此可选值指定的子目录 (相对于*路径*的值**SourceDisksNames**部分中，如果有) 已命名的文件所在的位置的源磁盘上。
+此可选值指定指定文件所在的源磁盘上的子目录（相对于**SourceDisksNames**部分的*路径*值（如果有））。
 
-如果条目中省略此值，则假定命名的源文件处于*路径*中指定的目录**SourceDisksFiles**部分，了解给定磁盘或者，如果没有*路径*指定了目录，在*安装根目录*。
+如果在某个条目中省略此值，则假定指定的源文件位于给定磁盘的**SourceDisksFiles**部分中指定的*路径*目录中，或者，如果未指定*路径*目录，则假定在*安装根目录*中。
 
-<a href="" id="size"></a>*size*  
-此可选值以字节为单位，给定文件的指定的未压缩的大小。
+<a href="" id="size"></a>*规格*  
+此可选值指定给定文件的未压缩大小（以字节为单位）。
 
 <a name="remarks"></a>备注
 -------
 
-一个**SourceDisksFiles**部分可以具有任意数量的条目，一个用于分发磁盘上每个文件。 与任何 INF **SourceDisksFiles**节还必须具有[ **INF SourceDisksNames 部分**](inf-sourcedisksnames-section.md)。 按照约定， **SourceDisksNames**并**SourceDisksFiles**部分按照[ **INF 版本部分**](inf-version-section.md)。 (改为指定系统提供 INF 中省略了这些部分**LayoutFile**中的条目及其**版本**部分。)
+**SourceDisksFiles**节可以包含任意数量的条目，每个条目对应于分发磁盘上的每个文件。 具有**SourceDisksFiles**部分的任何 inf 都必须具有[**INF SourceDisksNames 部分**](inf-sourcedisksnames-section.md)。 按照约定， **SourceDisksNames**和**SourceDisksFiles**部分遵循[**INF 版本部分**](inf-version-section.md)。 （系统提供的 INF 中省略了这些部分，而是在其**版本**部分中指定**LayoutFile**条目。）
 
-每个*文件名*条目都必须指定源磁盘上的文件的确切名称。 不能使用 %*strkey*%令牌指定的文件的名称。 详细了解 %*strkey*%令牌，请参阅[ **INF 字符串部分**](inf-strings-section.md)。
+每个*文件名*条目都必须指定源磁盘上某个文件的确切名称。 不能使用%*strkey*% 令牌来指定文件名。 有关%*strkey*% 令牌的详细信息，请参阅[**INF 字符串部分**](inf-strings-section.md)。
 
-若要支持多个系统体系结构上的驱动程序文件的分发，可以指定一个体系结构特定于**SourceDisksFiles**通过添加部分 **.x86**， **.ia64**， **.amd64**， **.arm**，或 **.arm64**扩展**SourceDisksFiles**。 请注意，与其他节，例如不同***DDInstall***部分中，为这些平台扩展**SourceDisksFiles**部分不 **.ntx86**， **。ntia64**，或 **.ntamd64**。
+若要支持在多个系统体系结构上分发驱动程序文件，可以通过将**arm64**扩展添加 **.ia64**到**SourceDisksFiles**来指定特定于体系结构 **.amd64**的**SourceDisksFiles**部分 **.arm** **。** 请注意，与其他部分（如***DDInstall*** ）不同， **SourceDisksFiles**节的平台扩展不是**ntx86**、 **ntia64**或**ntamd64**。
 
-例如，若要指定的源磁盘对于基于 x86 的系统名称部分，使用**SourceDisksFiles.x86**部分中，不**SourceDisksFiles.ntx86**部分。 同样，使用**SourceDisksFiles.ia64**部分，以指定用于基于 Itanium 的系统和一个**SourceDisksFiles.amd64**部分以指定的基于 x64 的系统。
+例如，若要为基于 x86 的系统指定源磁盘名称部分，请使用**SourceDisksFiles**部分，而不是**SourceDisksFiles。 ntx86**节。 同样，可以使用**SourceDisksFiles**部分指定基于 Itanium 的系统，使用**SourceDisksFiles**部分指定基于 x64 的系统。
 
-在安装期间，安装程序 Api 函数查找特定于体系结构**SourceDisksFiles**部分之前使用的泛型部分。 例如，如果，在安装期间的基于 x86 的平台上，Windows 复制的文件，名为*driver.sys*，则将该文件的说明中查找 [**SourceDisksFiles.x86**] 中查找之前[**SourceDisksFiles**]。
+在安装过程中，Setupapi.log 函数在使用通用节之前查找特定于体系结构的**SourceDisksFiles**部分。 例如，在安装过程中，如果在基于 x86 的平台上进行安装，Windows 将复制一个名为 " *driver*" 的文件，它将在 [**SourceDisksFiles**] 中查找文件的说明，然后再查看 [**SourceDisksFiles**]。
 
-**重要**  不要使用**SourceDisksFiles**将 INF 文件复制到的部分。 有关如何将 INF 文件复制的详细信息，请参阅[复制 Inf](copying-inf-files.md)。
+**重要说明**  不要使用**SourceDisksFiles**部分来复制 INF 文件。 有关如何复制 INF 文件的详细信息，请参阅[复制 inf](copying-inf-files.md)。
 
  
 
 <a name="examples"></a>示例
 --------
 
-下面的示例演示[ **SourceDisksNames** ](inf-sourcedisksnames-section.md)部分和相应的 SourceDisksFiles 节。  请注意，此示例仅具有**SourceDisksFiles.x86**部分中，指定的文件的 x86 体系结构。  支持另一个体系结构 INF 需要相应**SourceDisksFiles**部分，了解该体系结构或使用的未修饰 [**SourceDisksFiles**] 部分中，它支持所有体系结构。
+下面的示例演示了[**SourceDisksNames**](inf-sourcedisksnames-section.md)节和相应的 SourceDisksFiles 节。  请注意，此示例仅包含**SourceDisksFiles**部分，它指定了 x86 体系结构的文件。  支持另一种体系结构的 INF 需要该体系结构的相应**SourceDisksFiles**部分，或者使用了不支持所有体系结构的未经修饰的 [**SourceDisksFiles**] 部分。
 
-```ini
+```inf
 [SourceDisksNames]
 ;
 ; diskid = description[, [tagfile] [, <unused>, subdir]]
@@ -90,10 +90,10 @@ aha154x.sys = 1,\x86 ; on distribution disk 1, in subdir \WinNT\x86
 ; ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**CopyFiles,**](inf-copyfiles-directive.md)
+[**CopyFiles**](inf-copyfiles-directive.md)
 
 [**DestinationDirs**](inf-destinationdirs-section.md)
 
@@ -101,7 +101,7 @@ aha154x.sys = 1,\x86 ; on distribution disk 1, in subdir \WinNT\x86
 
 [**SourceDisksNames**](inf-sourcedisksnames-section.md)
 
-[**Strings**](inf-strings-section.md)
+[**字符串**](inf-strings-section.md)
 
 [**版本**](inf-version-section.md)
 

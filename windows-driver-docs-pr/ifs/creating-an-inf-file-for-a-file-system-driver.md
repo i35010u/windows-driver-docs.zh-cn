@@ -15,12 +15,12 @@ keywords:
 - 创建 INF 文件系统
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 06340df1d9191a9c1375f999d546ba1e38174a97
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 9525c91f77c7724f9a92abeeee71e1f2b6cb9c58
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128485"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173553"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-driver"></a>为文件系统驱动程序创建 INF 文件
 
@@ -34,7 +34,7 @@ Windows 安装程序和设备安装程序服务（统称为[setupapi.log](https:
 
 从64位版本的 Windows Vista 开始，所有内核模式组件（即插即用包括文件系统驱动程序（文件系统、旧筛选器和微筛选器驱动程序））都必须进行签名，以便加载和执行。 对于这些版本的 Windows 操作系统，下表包含与文件系统驱动程序相关的信息。
 
-- 非 PnP 驱动程序的 INF 文件（包括文件系统驱动程序）不需要包含 \[制造商\] 或 \[模型\] 部分。
+- 非 PnP 驱动程序的 INF 文件（包括文件系统驱动程序）不需要\[包含制造商\]或\[型号\]部分。
 
 - 位于 WDK 安装目录的 \bin\SelfSign 目录中的[**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令行工具可用于直接 "嵌入签名" 驱动程序的可执行文件。 出于性能方面的考虑，启动驱动程序必须包含一个嵌入签名。
 
@@ -50,7 +50,7 @@ INF 文件不能用于从注册表读取信息或启动用户模式应用程序�
 
 创建 INF 文件后，通常会为安装应用程序编写源代码。 安装应用程序调用用户模式安装程序功能来访问 INF 文件中的信息并执行安装操作。
 
-若要构造自己的文件系统驱动程序 INF 文件，请使用以下信息作为指南。 可以使用[ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)工具来检查 INF 文件的语法。
+若要构造自己的文件系统驱动程序 INF 文件，请使用以下信息作为指南。 可以使用[InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)工具来检查 INF 文件的语法。
 
 文件系统驱动程序的 INF 文件通常包含以下各节。
 
@@ -88,10 +88,10 @@ CatalogFile =
 
 下表显示文件系统筛选器驱动程序在 "[**版本**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)" 部分中应指定的值。
 
-| 条目 | 值 |
+| 条目 | “值” |
 | ----- | ----- |
 | **信号** | "$WINDOWS NT $" |
-| **程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
+| **提供程序** | 在你自己的 INF 文件中，你应该指定除 Microsoft 之外的提供程序。 |
 | **DriverVer** | 请参阅[ **INF DriverVer 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive) |
 | **CatalogFile** | 将此项留空。 将来，它将包含已签名驱动程序的 WHQL 提供的编录文件的名称。 |
 
@@ -186,7 +186,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**条目指定服务的类型。 下表列出了**ServiceType**的可能值及其相应的服务类型。
 
-| 值 | 描述 |
+| “值” | 说明 |
 | ----- | ----------- |
 | 0x00000001 | SERVICE_KERNEL_DRIVER （设备驱动程序服务） |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER （文件系统或文件系统筛选器驱动程序服务） |
@@ -197,7 +197,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **StartType**项指定启动服务的时间。 下表列出了**StartType**的可能值及其相应的启动类型。
 
-| 值 | 描述 |
+| “值” | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
@@ -213,7 +213,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ErrorControl**项指定在系统启动过程中服务无法启动时要执行的操作。 下表列出了**ErrorControl**的可能值及其相应的错误控制值。
 
-| 值 | 描述 |
+| “值” | 说明 |
 | ----- | ----------- |
 | 0x00000000 | SERVICE_ERROR_IGNORE （记录错误并继续系统启动。） |
 | 0x00000001 | SERVICE_ERROR_NORMAL （记录错误、向用户显示一条消息，然后继续系统启动。） |
@@ -224,7 +224,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 [**AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)是指一个或多个 INF 写入器定义的**AddRegistry**部分，其中包含要存储在注册表中用于新安装的服务的任何信息。
 
-**请注意**   如果在初始安装后 INF 文件还将用于升级驱动程序，则**AddRegistry**部分中包含的项应指定0x00000002 （FLG_ADDREG_NOCLOBBER）标志。 如果指定此标志，则在安装后续文件时，会保留 HKLM\CurrentControlSet\Services 中的注册表项。 例如：
+**注意**  如果在初始安装后 INF 文件还将用于升级驱动程序，则**AddRegistry**部分中包含的项应指定0x00000002 （FLG_ADDREG_NOCLOBBER）标志。 如果指定此标志，则在安装后续文件时，会保留 HKLM\CurrentControlSet\Services 中的注册表项。 例如：
 
 ```cpp
 [ExampleFileSystem.AddRegistry]

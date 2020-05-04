@@ -1,9 +1,9 @@
 ---
 title: INF DDInstall.Services 节
-description: 每个每个模型 DDInstall.Services 部分包含一个或多个引用的 INF 文件中的其他 INF 编写器定义部分的 INF AddService 指令。
+description: 每个模型的 DDInstall 节都包含一个或多个 INF AddService 指令，这些指令引用 INF 文件中其他由 INF 编写器定义的部分。
 ms.assetid: 30efb094-cc18-4c01-8851-4bc5dba1ae1d
 keywords:
-- INF DDInstall.Services 部分设备和驱动程序安装
+- INF DDInstall 部分设备和驱动程序安装
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efb03b5b2f1243d6230941206526f119761f4861
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72c40dedf327b19ce636ab1ed0d04a00bb439537
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370584"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223223"
 ---
 # <a name="inf-ddinstallservices-section"></a>INF DDInstall.Services 节
 
 
-每个每个模型<em>DDInstall</em>**。服务**部分包含一个或多个[ **INF AddService 指令**](inf-addservice-directive.md)引用 INF 文件中的其他 INF 编写器定义部分。
+每个模型<em>DDInstall</em>**。Services**节包含一个或多个[**inf AddService 指令**](inf-addservice-directive.md)，这些指令引用 inf 文件中其他由 inf 编写器定义的部分。
 
-```ini
+```inf
 [install-section-name.Services] |
 [install-section-name.nt.Services] |
 [install-section-name.ntx86.Services] |
@@ -40,43 +40,43 @@ AddService=ServiceName,[flags],service-install-section
 [Needs=inf-section-name[,inf-section-name]...] 
 ```
 
-你可以提供<em>DDInstall</em>**。服务**上至少有一个部分**AddService**指令来控制如何以及何时的特定驱动程序的服务已加载，项目依赖于其他服务或驱动程序，等等。 （可选） 还可以指定事件日志记录服务。
+可以提供<em>DDInstall</em>**。** 包含至少一个**AddService**指令的服务部分，用于控制加载特定驱动程序的服务的方式和时间、其他服务或驱动程序的依赖关系等。 还可以选择指定事件日志记录服务。
 
 ## <a name="entries"></a>条目
 
 <a href="" id="addservice-servicename--flags--service-install-section"></a>
 <a href="" id="------------------------------------------------event-log-install-section---eventlogtype---eventname-------"></a>
-**AddService =**<em>ServiceName</em>，\[*标志*\]**，**<em>服务安装部分</em>\[，*事件日志-安装部分*\[**，**\[*EventLogType* \] \[ **，**<em>EventName</em>\]\]\]...\]  
-此指令引用 INF 编写器的定义*服务安装部分*，并且可能*事件日志-安装部分*其他位置中 INF 文件的设备驱动程序涵盖此*DDInstall*部分。 有关详细信息，请参阅[ **INF AddService 指令**](inf-addservice-directive.md)。
+**AddService =**<em>ServiceName</em>，\[*flags*\]**，**<em>service-</em>\[安装节，*事件日志-安装节*\[**，**\[*EventLogType*\]\[**，**<em>事件名称</em>\]\]\].。。\]  
+此指令在 INF 文件中*的其他位置*引用了一个由 inf 编写器定义的*服务安装部分*，也可能是在此*DDInstall*部分所涵盖的设备的驱动程序的 inf 文件中的其他地方。 有关详细信息，请参阅[**INF AddService 指令**](inf-addservice-directive.md)。
 
-<a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**DelService=**<em>ServiceName</em>\[**,**\[*flags*\]\[**,**\[*EventLogType*\]\[**,**<em>EventName</em>\]\]\]...  
-此指令从目标计算机中删除以前安装的服务。 很少使用此指令。 有关详细信息，请参阅[ **INF DelService 指令**](inf-delservice-directive.md)。
+<a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**DelService =**<em>ServiceName</em>\[**，**\[*flags*\[*EventLogType***,**\]**,**<em>EventName</em>，EventLogType\]，事件名称 ...\]\]\[\]\[  
+此指令从目标计算机中删除以前安装的服务。 此指令很少使用。 有关详细信息，请参阅[**INF DelService 指令**](inf-delservice-directive.md)。
 
-<a href="" id="include-filename-inf--filename2-inf----"></a>**Include=**<em>filename</em>**.inf**\[**,**<em>filename2</em>**.inf**\]...  
-此可选项指定一个或多个其他系统提供 INF 文件包含安装此设备所需的部分。 如果指定此项时，通常那么**需要**条目。
+<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =**<em>filename</em>**.inf**\[**，**<em>filename2</em>\]...**.inf**  
+此可选条目指定一个或多个系统提供的其他 INF 文件，其中包含安装此设备所需的部分。 如果指定此项，则通常是**需要**输入。
 
-有关详细信息**Include**条目和限制其使用时，请参阅[设备文件中指定的源和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
+有关其用法的**包含**项和限制的详细信息，请参阅[指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**需要 =**<em>inf 部分名称</em>\[**，**<em>inf 部分名称</em>\]...  
-此可选项指定必须在此设备的安装过程中处理的部分。 通常情况下，部分是<em>DDInstall</em>**。服务**中列出系统提供 INF 文件中的节**Include**条目。 但是，它可以是任何部分中引用的<em>DDInstall</em>**。服务**部分。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**需求 =**<em>inf-名称</em>\[**，**<em>inf-节名称</em>\].。。  
+此可选条目指定在安装此设备过程中必须处理的部分。 通常，部分是<em>DDInstall</em>**。**"**包含**项" 中列出的系统提供的 INF 文件中的 "服务" 部分。 但是，它可以是在 DDInstall 中引用的任何节<em>DDInstall</em>**。服务**部分。
 
-**需要**条目不能嵌套。 有关详细信息**需要**条目和限制其使用时，请参阅[设备文件中指定的源和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
+不能嵌套**需求**条目。 有关其用法的**需求**条目和限制的详细信息，请参阅[指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
 <a name="remarks"></a>备注
 -------
 
-<em>DDInstall</em>**。服务**部分应具有其相关的相同平台和操作系统修饰[ ***DDInstall*** ](inf-ddinstall-section.md)部分。 例如，<em>安装的部分名称</em>**.ntx86**部分中将具有相应<em>安装部分名称</em>**.ntx86。服务**部分。
+<em>DDInstall</em>**。服务**部分应该与相关的[***DDInstall***](inf-ddinstall-section.md)部分具有相同的平台和操作系统修饰。 例如，**ntx86**节<em>会</em>有一个相应的<em>安装节名称</em>**. ntx86。服务**部分。
 
-指定*DDInstall*部分必须在每个制造商下的特定于设备/模型的项中引用*模型*INF 文件部分。 不区分大小写的扩展*安装的部分名称*所示在正式语法语句可插入到此类<em>DDInstall</em>**。服务**跨平台 INF 文件中的节名称。
+在 INF 文件的 "每制造商"*型号*部分下，必须在特定于设备/模型的条目中引用指定的*DDInstall*部分。 在正式语法语句中显示的*安装节名称*不区分大小写的扩展可以插入到此类<em>DDInstall</em>中 **。** 跨平台 INF 文件中的服务部分名称。
 
-有关如何使用系统定义的详细信息 **.nt**， **.ntx86**， **.ntia64**， **.ntamd64**， **.ntarm**，并 **.ntarm64**扩展，请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+有关如何使用**系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和**Ntarm64**扩展的详细信息，请参阅[为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 <a name="examples"></a>示例
 --------
 
-此示例演示<em>DDInstall</em>**。服务**部分，了解**Ser_Inst**部分中的示例所示[ **INF *DDInstall*部分**](inf-ddinstall-section.md)。
+此示例显示了<em>DDInstall</em>**。** 作为[**INF *DDInstall*部分**](inf-ddinstall-section.md)示例的 " **Ser_Inst** " 部分的 "服务" 部分。
 
-```ini
+```inf
 [Ser_Inst.Services]
 AddService=sermouse, 0x00000002, sermouse_Service_Inst,\
                 sermouse_EventLog_Inst 
@@ -101,9 +101,9 @@ AddService = mouclass,, mouclass_Service_Inst, mouclass_EventLog_Inst
 ; ...
 ```
 
-此示例演示<em>安装的部分名称</em>**。NT。服务**部分，并在 INF 及其服务安装部分文件系统提供 WDM 音频设备/驱动程序的示例所示[ **INF *DDInstall*部分**](inf-ddinstall-section.md).
+此示例显示了<em>安装部分的名称</em>**。NT.服务**部分及其服务-安装节，适用于系统提供的 WDM 音频设备/驱动程序的 inf 文件中，如[**inf *DDInstall*部分**](inf-ddinstall-section.md)所示。
 
-```ini
+```inf
 [WDMPNPB003_Device.NT.Services]
 AddService = wdmaud,0x00000000,wdmaud_Service_Inst
 AddService = swmidi,0x00000000,swmidi_Service_Inst
@@ -136,16 +136,16 @@ ServiceBinary = %10%\system32\drivers\mssb16.sys
 %sndblst.SvcDesc%="WDM Sample Driver for SB16"
 ```
 
-请参阅[ **INF DDInstall.HW 部分**](inf-ddinstall-hw-section.md)的更多示例<em>DDInstall</em>**。服务**包含一些部分*服务安装*-引用的部分[ **AddService** ](inf-addservice-directive.md)指令。 这包括一个用于即插即用的筛选器驱动程序。
+有关<em>DDInstall</em>的更多示例，请参阅[**INF DDInstall 部分**](inf-ddinstall-hw-section.md)**。服务**节，其中包含[**AddService**](inf-addservice-directive.md)指令引用的某些*服务安装*部分。 这包括一个用于 PnP 筛选器驱动程序。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddService**](inf-addservice-directive.md)
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。硬件**](inf-ddinstall-hw-section.md)
+[***DDInstall*.HW**](inf-ddinstall-hw-section.md)
 
 [**DelService**](inf-delservice-directive.md)
 

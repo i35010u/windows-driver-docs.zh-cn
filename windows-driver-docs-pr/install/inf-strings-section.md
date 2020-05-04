@@ -1,6 +1,6 @@
 ---
 title: INF Strings 节
-description: INF 文件必须具有至少一个字符串部分来定义该 INF 中指定其他位置的每个 strkey 标记。
+description: INF 文件必须至少具有一个字符串部分，才能定义该 INF 中其他地方指定的每个 strkey 标记。
 ms.assetid: 7352aa82-a7cd-4d15-9a9e-e03985f6006e
 keywords:
 - INF 字符串部分设备和驱动程序安装
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d69c976faa7309f56d2b16344fd3d41c46ccb619
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d8ae4fe2aecf6284e2fa493406d6ab1306b2ca7
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325799"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223109"
 ---
 # <a name="inf-strings-section"></a>INF Strings 节
 
 
-INF 文件必须至少一个**字符串**部分来定义每 %*strkey*%令牌在该 INF 中指定其他位置。
+INF 文件必须至少具有一个**字符串**部分，才能定义该 inf 中其他地方指定的每个%*strkey*% 令牌。
 
-```ini
+```inf
 [Strings] | 
 [Strings.LanguageID] ...
  
@@ -40,81 +40,81 @@ strkey2 = "    string-with-leading-or-trailing-whitespace     "  |
 ## <a name="entries"></a>条目
 
 
-<a href="" id="strkey1--strkey2-----"></a>*strkey1*, *strkey2*, ...  
-INF 文件中的每个字符串密钥必须指定包含字母、 数字，和/或其他显式可见的字符的唯一名称。 此类中的 %字符*strkey*令牌必须表示为 **%%** 。
+<a href="" id="strkey1--strkey2-----"></a>*strkey1*， *strkey2*，.。。  
+INF 文件中的每个字符串键都必须指定一个唯一的名称，该名称包含字母、数字和/或其他显式可见字符。 此类*strkey*标记中的% 字符必须表示为**%%**。
 
-<a href="" id="some-string----some-string-"></a>*某些字符串* |  **"** <em>一些字符串</em> **"**  
-指定的字符串，可以选择使用两个双引号字符 （"），包含字母、 数字、 标点符号和甚至某些隐式可见的字符，具体而言，内部的空间和/或制表符分隔。 但是，不带引号的字符串不能包含内部双引号引起来 （'）、 分号 （;）、 换行符、 返回时或任何不可见控件字符，而且不能包含反斜杠 (\)作为其最后一个字符。
+<a href="" id="some-string----some-string-"></a>*某些字符串* | **"**<em>some string</em>**"**  
+指定一个字符串，可以选择性地用双引号（"）分隔，其中包含字母、数字、标点符号，甚至可能是某些隐式可见字符，特别是内部空间和/或制表符。 但是，未加引号的字符串不能包含内部双引号（"）、分号（;)、换行符、返回或任何不可见的控制字符，也不能包含反斜杠\) （作为其最终字符）。
 
-<a href="" id="------string-with-leading-or-trailing-whitespace-----------"></a> **"** *     string-with-leading-or-trailing-whitespace*     **"** |   
+<a href="" id="------string-with-leading-or-trailing-whitespace-----------"></a>**"* **     带前导或尾随空格的字符串*     **" * * |   
 
-<a href="" id="-very-long-multiline-string----"></a> **"** <em>very-long-multiline-string</em> **"**  |   
+<a href="" id="-very-long-multiline-string----"></a>**"**<em>非常长的多行字符串</em>**"** |   
 
-<a href="" id="-string-with-semicolon----"></a> **"** <em>string-with-semicolon</em> **"**  |   
+<a href="" id="-string-with-semicolon----"></a>**"**<em>带有分号的字符串</em>**"** |   
 
-<a href="" id="-string-ending-in-backslash---"></a> **"** <em>string-ending-in-backslash</em> **"**  |  
+<a href="" id="-string-ending-in-backslash---"></a>**"**<em>字符串结尾-反斜杠</em>**"** |  
 
-<a href="" id="--double-quoted-string-value--"></a> **"***"double-quoted-string-value"***"**  
-%为指定的值*strkey*%令牌*必须*括在双引号 （"） 中，如果它满足以下条件的任何：
+<a href="" id="--double-quoted-string-value--"></a>**""***带双引号的字符串-值 "***"**  
+如果为%*strkey*% token 指定的值满足以下任一条件，则*必须*将该值用双引号（"）引起来：
 
--   如果指定的字符串具有前导或尾随空格，必须保留其值的一部分，该字符串必须括在双引号字符以防止其前导和/或尾随空格被放弃 INF 分析器中。
--   如果一个长字符串可能包含任何内部换行符或回车符，由于在文本编辑器中换行，应也括在双引号内以防止发生截断在初始内部换行字符串或返回字符。
--   如果此类字符串包含分号，它必须括在双引号内以避免字符串分号处被截断。 (如前面所述[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)，分号字符开始 INF 文件中的每个注释。)
--   如果此类字符串以反斜杠结尾，它必须括在双引号内以防止与下一个条目被串联字符串中。 (如前所述已在一般情况下语法规则的 INF 文件，反斜杠字符 (\)用作行 continuator INF 文件中。)
--   不带引号的字符串规范等此类"带引号的字符串"不能包含内部双引号字符。 但是，它可以将指定为显式双引号分隔的字符串值使用一个或多个其他两个双引号字符 （例如，""一些字符串""） 对。
+-   如果指定的字符串具有必须保留为其值的一部分的前导空格或尾随空格，则必须用双引号将该字符串括起来，以防止 INF 分析器丢弃其前导空格和/或尾随空格。
+-   如果长字符串可能包含任何内部换行或返回字符（因为文本编辑器中的换行），则它也应该用双引号引起来，以防止在初始内部换行或返回字符处截断字符串。
+-   如果此类字符串包含分号，则必须将其括在双引号中，以防止在分号处截断字符串。 （正如[Inf 文件一般语法规则](general-syntax-rules-for-inf-files.md)中所述，分号字符在 inf 文件中开始每个注释。）
+-   如果此类字符串以反斜杠结尾，则必须用双引号引起来，以防止字符串与下一项连接。 （正如 INF 文件一般语法规则中所述，反斜杠字符（\)用作 inf 文件中的 continuator 行）。
+-   与不带引号的字符串规范一样，此类 "带引号的字符串" 不能包含内部双引号字符。 不过，可以使用一个或多个附加的双引号字符（例如，"" 部分字符串 ""）将其指定为用双引号引起来的字符串值。
 
-    INF 分析器不仅将放弃最外面的封闭双引号引起来的任何"带引号的字符串"在此部分中，对，而且还会双引号将每个后续顺序对将转换为单个双引号字符。
+    INF 分析器不仅会丢弃此部分中任何 "带引号的字符串" 的最外面的封闭双引号，还会会将每个后续的双引号对一个双引号字符。
 
-    例如，"""一些字符串"""也将变为"一些字符串"时进行分析。
+    例如，在分析时，"" "某些字符串" "也会变成" 某些字符串 "。
 
-总之，任何字符串必须括在一对双引号字符 （"） 如果任意下列条件成立：
+总之，如果满足以下任一条件，则任何字符串都必须包含在一对双引号字符（"）中：
 
--   此字符串包含前导或尾随空格。
--   该字符串是使长时间，其行包装。
--   该字符串包含分号或最终反斜杠字符。
--   该字符串本身是带引号的字符串。
+-   字符串包含前导空格或尾随空格。
+-   如果此字符串已换行，则该字符串很长。
+-   字符串包含分号或最后一个反斜杠字符。
+-   字符串本身是一个带引号的字符串。
 
-系统 INF 分析器将丢弃 double 引号字符来分隔此类字符串，以及带有在两个双引号字符串分隔符外任何前导或尾随空白字符的最外面的封闭对。
+系统 INF 分析器会丢弃最外面的一对双引号字符，这些字符用于分隔此类字符串以及双引号字符串分隔符之外的任何前导或尾随空格字符。
 
 <a name="remarks"></a>备注
 -------
 
-由于系统 INF 分析器会剥离最外面的封闭从任何两个双引号对因此 **"** <em>带引号的字符串</em> **"** 定义 %*strkey*%令牌，许多系统 INF 文件定义所有 %*strkey*%令牌作为 **"** <em>带引号的字符串</em><strong>"</strong>秒以避免前导空格和尾随空格 INF 分析期间的意外的丢失。 利用 **"** <em>带引号的字符串</em><strong>"</strong>s 还确保该特别长字符串包装在行之间的值不能被截断，并且该字符串末尾有反斜杠无法连接到 INF 文件中的下一行。
+由于系统 inf 分析器从定义%*strkey*% 令牌的任何 **"**<em>带引号的字符串</em>**"** 中去除了最外面的封闭双引号，因此许多系统 inf 文件将所有%*strkey*% 令牌定义为 **"**<em>带引号的字符串</em><strong>"</strong>，以避免在 INF 分析期间意外丢失前导空格和尾随空格。 使用 **"**<em>带引号的字符串</em><strong>"</strong>还可以确保无法截断跨行换行的更长字符串值，并且无法将带有结束反斜杠的字符串连接到 INF 文件中的下一行。
 
-若要创建一个国际 INF 文件，INF 可以具有一组特定于区域设置**字符串。** <em>LanguageID</em>节，如正式语法语句中所示。 *LanguageID*扩展是一个十六进制值，如下所示定义：
+若要创建单个国际 INF 文件，INF 可以具有一组特定于区域设置的**字符串。**<em>LanguageID</em>节，如正式语法语句中所示。 *LanguageID*扩展是一个十六进制值，定义如下：
 
--   较低的 10 位包含主语言 ID，接下来的 6 位包含子语言 ID，如果指定由中定义的 MAKELANGID 宏*Winnt.h*。
--   语言和子语言 Id 必须匹配系统定义的值的 Win32 LANG_*XXX*和 SUBLANG_*XXX*中定义的常量*Winnt.h 中的。*
+-   较小的10位包含主要语言 ID，接下来的6位包含 "子语言 ID"，由*Winnt*中定义的 MAKELANGID 宏指定。
+-   语言和子语言 Id 必须与 Winnt 中定义的 Win32 LANG_*xxx*和 SUBLANG_*XXX*常量的系统定义的值相匹配 *。*
 
-例如， *LanguageID* 0x0407 值表示主语言 ID LANG_GERMAN (07) 与子语言 ID SUBLANG_GERMAN (01)。
+例如， *LanguageID*的值为0x0407，表示主要语言 id LANG_GERMAN （07），其中的子语言 id 为 SUBLANG_GERMAN （01）。
 
-INF 文件只能包含一个**字符串**部分中的，以及一个**字符串。** <em>LanguageID</em>部分，了解每个*LanguageID*值。
+INF 文件只能包含一个**字符串**和一个**字符串。** 每个*LanguageID*值的<em>LanguageID</em>部分。
 
-Windows 选择单个**字符串**节，用来转换所有 %*strkey*%令牌进行安装。 具体取决于特定计算机的当前区域设置，选择 Windows**字符串**部分如下所示：
+Windows 选择一个**字符串**部分用于转换用于安装的所有%*strkey*% 令牌。 根据特定计算机的当前区域设置，Windows 会按以下方式选择**字符串**部分：
 
-1.  Windows 将首先查找 *。LanguageID* INF 匹配分配给计算机的当前区域设置的值。 如果找到完全匹配，Windows 将使用该**Strings.LanguageID** INF 部分转换所有 %*strkey*INF 中定义的 %令牌。
-2.  否则，Windows 中查找下一个匹配项到 LANG_*XXX*值与的值作为 SUBLANG_ SUBLANG_NEUTRAL*XXX*。 如果找到这样的匹配，则 Windows 将使用该 INF 部分将所有 %*strkey*INF 中定义的 %令牌。
-3.  否则，Windows 中查找下一个匹配项到 LANG_*XXX*值和任何有效 SUBLANG_*XXX*的同一个 LANG_*XXX*系列。 如果找到此类的部分匹配，则使用该 Strings.LanguageID INF 部分转换所有 %*strkey*INF 中定义的 %令牌。
-4.  否则，Windows 使用的未修饰的字符串部分对所有转换 %*strkey*INF 中定义的 %令牌。
+1.  Windows 首先查找 *。* INF 中与分配给计算机的当前区域设置相匹配的 LanguageID 值。 如果找到完全匹配项，Windows 将使用该**LanguageID** inf 部分来转换 INF 中定义的所有%*strkey*% 令牌。
+2.  否则，Windows 会查找 "下一步"，以查找 LANG_*xxx*值的匹配项，并将 SUBLANG_NEUTRAL 的值作为 SUBLANG_*XXX*。 如果找到此匹配项，Windows 将使用该 INF 部分来转换 INF 中定义的所有%*strkey*% 令牌。
+3.  否则，Windows 会查找 "下一步"，以匹配 LANG_*xxx*值和相同 LANG_*xxx*系列的任何有效 SUBLANG_*xxx* 。 如果找到这样的部分匹配项，请使用 LanguageID INF 部分来转换 INF 中定义的所有%*strkey*% 令牌。
+4.  否则，Windows 会将未修饰的字符串部分用于在 INF 中定义的所有转换%*strkey*% 令牌。
 
-按照约定，并为方便起见，在创建一组针对国际市场的 INF 文件**字符串**部分介绍了所有系统 INF 文件中的最后一个。 使用 %*strkey*%中 INF 中，并将其置于每个区域设置中的所有用户可见的字符串值的令牌**字符串**部分中，简化了此类字符串的翻译。 有关特定于区域设置的 INF 文件的详细信息，请参阅[创建国际 INF 文件](creating-international-inf-files.md)。
+按照约定，为国际市场创建一组 INF 文件，为方便起见，**字符串**部分是所有系统 INF 文件中的最后一个。 对于 INF 中所有用户可见的字符串值使用%*strkey*% 令牌，并将其放入每个区域设置**字符串**部分，简化了此类字符串的转换。 有关特定于区域设置的 INF 文件的详细信息，请参阅[创建国际 INF 文件](creating-international-inf-files.md)。
 
-尽管**字符串**部分中的每个 INF 文件的最后一个部分，任何指定的 %*strkey*中定义的 %令牌**字符串**中可以重复其他位置使用部分INF，特别是，无论此标记的已转换的值是必需的。 [SetupAPI](setupapi.md)函数展开每个 %*strkey*到指定的字符串，然后使用扩展值来进行进一步 INF 处理 %令牌。
+尽管**字符串**部分是每个 inf 文件中的最后一个部分，但在**字符串**部分中定义的任何指定的%*strkey*% 令牌都可以在 INF 中的其他位置重复使用（特别是在需要该令牌的翻译值需要时）。 [Setupapi.log](setupapi.md)函数将每个%*strkey*% 令牌展开为指定的字符串，然后使用该扩展值进行更多 INF 处理。
 
-使用 %*strkey*INF 文件内的 %令牌并不局限于用户可见的字符串值。 只要中定义的每个标记，可以方便 INF 编写器，以任何方式使用这些令牌**字符串**部分。 例如，当您编写需要多个 Guid 指定的 INF 文件，可能会方便地创建 %*strkey*%令牌为每个 GUID，通过为每个此类的 GUID 值的替代使用有意义的名称。
+在 INF 文件中使用%*strkey*% 令牌并不限于用户可见的字符串值。 只要在**字符串**部分中定义了每个标记，就可以使用任何对 INF 编写器都方便的方式使用这些标记。 例如，当你编写需要多个 Guid 规范的 INF 文件时，通过使用有意义的名称作为每个此类 GUID 值的替代方法，可以方便地为每个 GUID 创建%*strkey*% 令牌。
 
-指定一组 **%** <em>strkey</em> **%="{** <em>GUID</em> **}"** INF 文件中的值**字符串**部分要求仅一次键入每个显式的 GUID 值。 这可以帮助提供更具可读性内部的 INF 文件比通过在整个 INF 文件中使用显式的 GUID 值。
+在 INF 文件的**%****字符串**部分指定一组<em>strkey</em>**% = "{**<em>GUID</em>**}"** 值需要只键入每个显式 GUID 值一次。 与在整个 INF 文件中使用显式 GUID 值相比，这可以提供更具可读性的内部 INF 文档。
 
-所有 %*strkey*%令牌必须引用这些 INF 文件内定义。 因此，对于具有任何 INF 文件**Include**并**需要**项，包括 INF 必须具有其自己**字符串**部分，以定义所有 %*strkey*该 INF 中引用的 %令牌。
+所有%*strkey*% 令牌必须在引用它们的 INF 文件中定义。 因此，对于具有 "**包含**" 和 "**需要**" 条目的任何 inf 文件，包含的 inf 都必须有其自己的**字符串**部分，才能定义该 inf 中引用的所有%*strkey*% 令牌。
 
-在 INF**字符串**部分中，以字符为单位的替换字符串，包括终止 NULL 字符，最大长度为 4096 （Windows Vista 和更高版本的 Windows） 和 512 (Windows Server 2003、 Windows XP、 和Windows 2000)。 字符串替换后以字符为单位的 INF 文件字符串的最大长度为 4096，包括终止 NULL 字符。
+在 INF**字符串**部分，包含终止 NULL 字符的替换字符串的最大长度（以字符为4096）为（windows Vista 和更高版本的 windows）和512（windows Server 2003、windows XP 和 windows 2000）。 字符串替换后，INF 文件字符串的最大长度（以字符为4096）为，包括终止 NULL 字符。
 
 <a name="examples"></a>示例
 --------
 
-下面的示例演示的一个片段**字符串**从系统提供区域设置特定的部分*dvd.inf*说英语的国家/地区中安装的。
+下面的示例演示了一个来自系统提供的特定于区域设置的本地*dvd*的**字符串**部分片段，适用于英语的国家/地区。
 
-```ini
+```inf
 [Strings]
 Msft="Microsoft"
 MfgToshiba="Toshiba"
@@ -124,7 +124,7 @@ Tosh404.DeviceDesc="Toshiba DVD decoder card"
 
 下面的示例演示字符串串联。
 
-```ini
+```inf
 [OEM Windows System Component Verification]
 OID = 1.3.6.1.4.1.311.10.3.7    ; WHQL OEM OID 
 Notice = "%A% %B% %C% %D% %E%" 
@@ -136,18 +136,18 @@ D = "Vendors who have their drivers signed with this certificate do so at their 
 E = "In particular, Microsoft assumes no liability for any damages that may result from the distribution of this certificate or drivers signed with this certificate outside the test environment described in a vendor's driver signing agreement."
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [***DDInstall***](inf-ddinstall-section.md)
 
 [***DDInstall*.CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-[***DDInstall *。硬件**](inf-ddinstall-hw-section.md)
+[***DDInstall*.HW**](inf-ddinstall-hw-section.md)
 
-[***DDInstall *。接口**](inf-ddinstall-interfaces-section.md)
+[***DDInstall*.接口**](inf-ddinstall-interfaces-section.md)
 
-[***DDInstall*.Services**](inf-ddinstall-services-section.md)
+[***DDInstall*.服务器**](inf-ddinstall-services-section.md)
 
 [**制造商**](inf-manufacturer-section.md)
 

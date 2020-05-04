@@ -1,9 +1,9 @@
 ---
 title: INF Reboot 指令
-description: 重新启动指令指示应通知调用方以完成安装后重新启动系统。
+description: 重新启动指令表明在安装完成后应通知调用方重新启动系统。
 ms.assetid: 0E2640EA-921D-4677-82EF-EF9707254E66
 keywords:
-- INF 重启指令设备和驱动程序安装
+- INF 重新启动指令设备和驱动程序安装
 topic_type:
 - apiref
 api_name:
@@ -12,37 +12,37 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2ad3ad61e5b4bcf5b610a29d01de988ded3b071
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1bd09765ba9f3745bf9cb8c1114c0dfe60efa201
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370038"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223125"
 ---
 # <a name="inf-reboot-directive"></a>INF Reboot 指令
 
-一个**重新启动**指令指示应通知调用方以完成安装后重新启动系统。
+**重新启动**指令表明在安装完成后应通知调用方重新启动系统。
 
-```ini
+```inf
 [DDInstall]
   
 Reboot
 ```
 
-**警告**  **重新启动**中直接指定时，只处理指令 **\[DDInstall\]** 部分。
+**警告**  仅**在\[DDInstall\] **节中直接指定时才处理**Reboot**指令。
 
  
 
-**重新启动**因为需要重新启动系统将自动检测到基于设备的一部分遇到的常见条件对于安装在 Windows 上的 INF 文件几乎永远不会指定指令安装。 例如，系统会通知调用方如果某些目标的目标文件的文件复制操作是在使用中，或者如果设备无法自动重新启动安装过程，则需要重新启动。 **重新启动**为其重新启动系统始终是必需的系统本身不能自动检测此驱动程序安装后某些特定条件时，应仅使用指令。
+在 INF 文件中，在 Windows 上的安装过程中几乎从未指定**reboot**指令，因为系统会根据在设备安装过程中遇到的常见情况，自动检测重新启动系统的需求。 例如，如果文件复制操作的某个目标目标文件正在使用中，或者如果在安装过程中无法自动重新启动设备，则系统将通知调用方需要重新启动。 只有在安装了此驱动程序之后，系统本身无法自动检测到某些特定条件时，才应使用**reboot**指令。
 
-指定重新启动指令，则调用方将收到通知的系统重启所需的任何设备使用本节 INF 安装的安装。 安装已发起时通过函数的指针等[ **UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)， [ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)，或[ **DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)，这将导致*NeedReboot* out 参数设置为 TRUE 这些例程。
+指定 reboot 指令后，将通知调用方系统需要重新启动系统才能完成使用此 INF 安装部分的任何设备的安装。 当通过[**UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)、 [**DiInstallDriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)或[**DiInstallDevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)等函数启动安装时，这将导致这些例程的*NeedReboot* out 参数设置为 TRUE。
 
 <a name="remarks"></a>备注
 -------
 
-在 Windows 7 及更早版本，使用的设备驱动程序和安装**重新启动**指令将始终导致调用方被通知的系统重启完成安装所必需的。
+在 Windows 7 和更早版本上，使用带有**重新启动**指令的驱动程序安装设备将始终导致调用方通知系统需要重新启动系统才能完成安装。
 
-在 Windows 8 和更高，以上描述的行为仅时发生一个或多个要安装的设备尚未启动。 而不是新的驱动程序在安装期间重启设备，系统将通知调用方的系统重启已完成的新的驱动程序安装所必需的。 如果当前未启动要安装的设备，系统将尝试执行安装，无需重新启动系统。 请注意是否某项操作的安装仍要求仍可能需要重新启动。 例如，如果当前正在使用某些文件要复制的目标文件位置，重新启动系统仍需要以完成安装。
+在 Windows 8 及更高版本上，仅当已经启动了一个或多个要安装的设备时，才会出现上述行为。 系统不会在安装新驱动程序的过程中重新启动设备，而是通知调用方需要重新启动系统才能完成新驱动程序的安装。 如果要安装的设备当前未启动，则系统将尝试执行安装，而无需重新启动系统。 请注意，如果安装操作之一仍需要重新启动，则可能仍需要重新启动。 例如，如果要复制的某个文件的目标文件位置当前正在使用中，则仍需要重新启动系统才能完成安装。
 
  
 

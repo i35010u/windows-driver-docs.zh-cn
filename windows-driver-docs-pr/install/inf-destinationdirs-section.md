@@ -1,6 +1,6 @@
 ---
 title: INF DestinationDirs 节
-description: DestinationDirs 部分指定的目标目标目录或目录的所有复制、 删除和/或重命名对其他位置中的 INF 文件按名称引用的文件的操作。
+description: DestinationDirs 节指定 INF 文件中其他位置对其名称所引用的文件的所有复制、删除和/或重命名操作的目标目录。
 ms.assetid: fadebcb9-da4b-4daf-9e84-822447e5cb2a
 keywords:
 - INF DestinationDirs 部分设备和驱动程序安装
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e0df8123a9ab861b102b87e72d62d43f0eb7b6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81c8c448a6f5c8d5aef5ce87fe965ec7deea8fb4
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380745"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223177"
 ---
 # <a name="inf-destinationdirs-section"></a>INF DestinationDirs 节
 
 
-一个**DestinationDirs**部分指定的目标目标目录或目录的所有复制、 删除和/或重命名对其他位置中的 INF 文件按名称引用的文件的操作。
+**DestinationDirs**节指定 INF 文件中其他位置对其名称所引用的文件的所有复制、删除和/或重命名操作的目标目录。
 
-```ini
+```inf
 [DestinationDirs]
 
 [DefaultDestDir=dirid[,subdir]] 
@@ -34,45 +34,45 @@ ms.locfileid: "63380745"
 ## <a name="entries"></a>条目
 
 
-<a href="" id="defaultdestdir-dirid--subdir-"></a>**DefaultDestDir=**<em>dirid</em>\[**,**<em>subdir</em>\]  
-指定所有副本、 删除和/或重命名操作中未显式列出的文件的默认目标目录*文件列表部分*引用此处的其他条目。 若要确保文件操作始终发生在正确的目录，INF 文件，包括**Include**并**需要**条目不应指定默认目标目录。 有关详细信息，请参阅以下备注部分。
+<a href="" id="defaultdestdir-dirid--subdir-"></a>**DefaultDestDir =**<em>dirid</em>\[**，**<em>subdir</em>\]  
+指定对文件的所有复制、删除和/或重命名操作的默认目标目录，这些操作未显式列出在此处其他条目引用的*文件列表部分*。 若要确保文件操作始终出现在正确的目录中，包含 "**包含**" 和 "**需要**" 条目的 INF 文件不应指定默认目标目录。 有关更多信息，请参见下面的“备注”部分。
 
-<a href="" id="file-list-section-dirid--subdir--------------"></a><em>文件列表部分</em>**=**<em>dirid</em>\[**，**<em>subdir</em> \] \] ...   
-指定引用的一个部分的 INF 编写器确定名称[ **CopyFiles**](inf-copyfiles-directive.md)， [ **RenFiles**](inf-renfiles-directive.md)，或[ **DelFiles** ](inf-delfiles-directive.md)指令 INF 文件中的其他位置。 这一项是可选的如果此部分提供了**DefaultDestDir**条目和此 INF 中指定的所有复制文件操作具有相同的目标位置。 但是，任何*文件列表部分*所引用的**RenFiles**或**DelFiles** INF 中的其他位置的指令必须在此处列出。
+<a href="" id="file-list-section-dirid--subdir--------------"></a><em>文件列表-section</em>**=**<em>dirid</em>\[**，**<em>subdir</em> \] \] .。。   
+指定由 inf 文件中其他位置的[**CopyFiles**](inf-copyfiles-directive.md)、 [**RenFiles**](inf-renfiles-directive.md)或[**DELFILES**](inf-delfiles-directive.md)指令引用的由 inf 编写器决定的部分名称。 如果此部分包含**DefaultDestDir**项并且此 INF 中指定的所有复制文件操作都具有相同的目标目标，则此项是可选的。 但是，INF 中其他位置的**RenFiles**或**DelFiles**指令所引用的任何*文件列表部分*都必须在此处列出。
 
 <a href="" id="dirid"></a>*dirid*  
-指定对引用的名称，可能是中的已命名的文件的操作的目标目录的目录标识符*文件列表部分*的 INF。 有关列表的常用*dirids*，请参阅[使用 Dirids](using-dirids.md)。
+为名称所引用的文件（可能在 INF 的命名*文件列表部分*内）执行的操作指定目标目录的目录标识符。 有关常用*dirids*的列表，请参阅[使用 dirids](using-dirids.md)。
 
 <a href="" id="subdir"></a>*subdir*  
-指定的子目录 (和其路径下，如果任何标识的目录下的其余*dirid*) 中的文件操作的目标是给定*文件列表部分*。
+指定子目录（并且其路径的其余部分，如果有的话，在*dirid*标识的目录下）成为给定*文件列表部分*中文件操作的目标。
 
 <a name="remarks"></a>备注
 -------
 
-**DestinationDirs**中使用任何 INF 文件需要部分[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)引用或*文件列表部分*、 是否具有**CopyFiles**， [ **DelFiles**](inf-delfiles-directive.md)，或[ **RenFiles** ](inf-renfiles-directive.md)指令。
+无论是否使用**CopyFiles**、 [**DelFiles**](inf-delfiles-directive.md)或[**RenFiles**](inf-renfiles-directive.md)指令，都需要使用[**inf CopyFiles 指令**](inf-copyfiles-directive.md)或引用*文件列表部分*的任何 INF 文件中的**DestinationDirs**部分。
 
-如果*Abc.inf*包括从另一个 INF 文件，部分*Def.inf*，并且这两个 INF 文件包含**DefaultDestDir**条目复制文件、 重命名文件或删除文件操作，Windows 会忽略 Def.inf 中指定并执行所有相应的文件操作中指定的默认目标目录中的默认目标目录*Abc.inf*。
+如果*Abc*包含来自另一个 inf 文件和版本 *.def*的部分，并且这两个 inf 文件包含用于复制文件、重命名文件或删除文件操作的**DefaultDestDir**条目，则 Windows 将忽略在 .def 中指定的默认目标目录，并在*Abc. inf*中指定的默认目标目录中执行所有相应的文件操作。
 
-为了确保文件操作始终发生在正确的目录中的 INF 文件包含**Include**并**需要**条目不应包括**DefaultDestDir**中的条目**DestinationDirs**部分。 相反，此类的 INF 文件应显式引用所有*文件列表部分*由指定的名称[ **CopyFiles**](inf-copyfiles-directive.md)， [ **RenFiles**](inf-renfiles-directive.md)，并[ **DelFiles** ](inf-delfiles-directive.md)中的指令**DestinationDirs**部分。
+若要确保文件操作始终出现在正确的目录中，包含和**需要**条目的 INF 文件不应在**DestinationDirs**节**中包含** **DefaultDestDir**条目。 相反，此类 INF 文件应显式引用由**DestinationDirs**部分中的[**CopyFiles**](inf-copyfiles-directive.md)、 [**RenFiles**](inf-renfiles-directive.md)和[**DelFiles**](inf-delfiles-directive.md)指令指定的所有*文件列表节*名称。
 
-如果一个 INF 文件不包含**Include**并**需要**条目，可以使用 INF **DefaultDestDir**项以指定默认目标的复制、 重命名和删除文件INF 文件中的其他位置出现的操作：
+如果 INF 文件不包括 "**包括**" 和 "**需要**" 条目，则 inf 可以使用**DEFAULTDESTDIR**项来指定在 INF 文件中的其他位置出现的复制、重命名和删除文件操作的默认目标：
 
--   [**CopyFiles** ](inf-copyfiles-directive.md)指令使用直接复制 (@*filename*) 表示法必须具有**DefaultDestDir**中的条目**DestinationDirs**的直接复制条目将显示的 INF 部分。
--   **CopyFiles**， [ **RenFiles**](inf-renfiles-directive.md)，或[ **DelFiles** ](inf-delfiles-directive.md)部分中没有直接引用**DestinationDirs**部分必须具有**DefaultDestDir**中的条目**DestinationDirs**复制、 重命名和删除文件的部分显示的 INF 部分。
+-   使用直接复制（@*filename*）表示法的[**CopyFiles**](inf-copyfiles-directive.md)指令必须在显示直接复制条目的 INF 的**DestinationDirs**部分中具有**DefaultDestDir**条目。
+-   **DestinationDirs**部分中未直接引用的**CopyFiles**、 [**RenFiles**](inf-renfiles-directive.md)或[**DelFiles**](inf-delfiles-directive.md)节必须在 INF （其中显示了 "复制"、"重命名" 和 "删除文件" 部分）的**DefaultDestDir**部分中具有**DestinationDirs**条目。
 
 <a name="examples"></a>示例
 --------
 
-此示例设置所有复制文件、 删除文件和重命名文件操作的默认目标目录。 此类简单**DestinationDirs**部分是普遍适用于新的外围设备的 INF 文件，因为此类 INF 通常只是将一组源代码文件复制到目标计算机上的单个目录。
+此示例为所有复制文件、删除文件和重命名文件操作设置默认目标目录。 这种简单的**DestinationDirs**部分是用于新外围设备的 inf 文件所共有的，因为此类 inf 通常只是将一组源文件复制到目标计算机上的一个目录中。
 
-```ini
+```inf
 [DestinationDirs]
 DefaultDestDir = 12 ; dirid = \Drivers on WinNT platforms
 ```
 
-此示例演示的一个片段**DestinationDirs**显示/视频驱动程序 INF 部分。
+此示例显示了 INF 对于显示/视频驱动程序的**DestinationDirs**部分的片段。
 
-```ini
+```inf
 [DestinationDirs]
 DefaultDestDir     = 11 ; dirid = \system32 on WinNT platforms
 
@@ -91,7 +91,7 @@ xga.Display      = 11
 ; all paired display drivers copied into \system32
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**ClassInstall32**](inf-classinstall32-section.md)

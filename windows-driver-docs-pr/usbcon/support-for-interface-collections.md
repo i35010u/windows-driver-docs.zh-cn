@@ -2,13 +2,14 @@
 Description: 复合 USB 设备上的接口可以分组到集合中。 USB 泛型父驱动程序（Usbccgp）可以通过四种方式枚举接口集合。
 title: 枚举 USB 复合设备上的接口集合的概述
 ms.date: 01/07/2019
+ms.assetid: aa68a774-d5b2-4fd8-aee9-9b72b1e4ad4f
 ms.localizationpriority: medium
-ms.openlocfilehash: ea00031216c2c376b80d1df6a2911cec1a509070
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8c958afe46039535a870f6c07c37e58b303d9e85
+ms.sourcegitcommit: 8084a046ca9d4c29a58b25ffcdea5d8387e9f538
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72824171"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81625284"
 ---
 # <a name="overview-of-enumeration-of-interface-collections-on-usb-composite-devices"></a>枚举 USB 复合设备上的接口集合的概述
 
@@ -23,7 +24,7 @@ ms.locfileid: "72824171"
 
 2.  **联合功能说明符**
 
-    。 如果供应商在 USB 泛型父驱动程序中启用了 CDC 和 WMCDC 枚举，则通用父驱动程序使用*联合功能描述符*（ufd）将接口分组到集合中。 启用后，此方法优先于除供应商提供的回调例程之外的所有其他方法。 有关 Ufd 设备枚举的详细信息，请参阅[对无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。
+    . 如果供应商在 USB 泛型父驱动程序中启用了 CDC 和 WMCDC 枚举，则通用父驱动程序使用*联合功能描述符*（ufd）将接口分组到集合中。 启用后，此方法优先于除供应商提供的回调例程之外的所有其他方法。 有关 Ufd 设备枚举的详细信息，请参阅[对无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。
 
 3.  **接口关联描述符**
 
@@ -40,18 +41,18 @@ ms.locfileid: "72824171"
 
 为了使通用父驱动程序定义自定义接口集合，复合设备的供应商必须：
 
-1.  实现枚举回调例程（[**USBC\_启动\_设备\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbbusif/nc-usbbusif-usbc_start_device_callback)）。
-2.  提供一个指向*USB 设备配置界面* **（** [**USBC\_设备\_配置\_接口\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_device_configuration_interface_v1)）中的回调例程的指针。
+1.  实现枚举回调例程（[**USBC\_\_启动设备\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbbusif/nc-usbbusif-usbc_start_device_callback)）。
+2.  提供一个指针，该指针指向*USB 设备配置接口*中的回调例程（ [**USBC\_设备\_配置\_接口\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_device_configuration_interface_v1)的**StartDeviceCallback**成员）。
 3.  提供一个 INF 文件，使其与复合设备的设备 ID 相匹配，并显式加载 USB 泛型父驱动程序和筛选器驱动程序。
 
 ### <a name="implementation-considerations"></a>实现注意事项
 
 
-包含枚举回调例程的筛选器驱动程序可以是大写或较低的筛选器驱动程序。 当 USB 通用父驱动程序收到[**IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求启动复合设备时，它通过发送[**IRP\_MN\_查询来查询 USB 设备配置界面\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)向驱动程序堆栈顶部发出接口请求。
+包含枚举回调例程的筛选器驱动程序可以是大写或较低的筛选器驱动程序。 当 USB 通用父驱动程序收到[**\_IRP MN\_start\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求以启动复合设备时，它会通过将[**\_IRP MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求发送到驱动程序堆栈的顶部来查询 USB 设备配置接口。
 
-在接收[**IRP\_MN\_QUERY\_INTERFACE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求时，筛选器驱动程序必须检查请求的**InterfaceType**成员中的 GUID 类型，以验证所请求的接口的类型是否为 USB\_总线\_接口\_USBC\_配置\_GUID。 如果是，筛选器驱动程序将返回指向 IRP 的**接口**成员中的接口的指针。
+收到[**IRP\_MN\_查询\_接口**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)请求后，筛选器驱动程序必须检查请求的**InterfaceType**成员中的 GUID 类型，以验证所请求的接口的类型是否为 USB\_总线\_接口\_USBC\_配置\_GUID。 如果是，筛选器驱动程序将返回指向 IRP 的**接口**成员中的接口的指针。
 
-枚举回调例程必须返回一个指针，该指针指向描述接口集合的*函数描述符*（[**USBC\_函数\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_function_descriptor)）的数组。 每个函数描述符都包含一个接口描述符（[**USB\_接口\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)）的数组，用于描述接口集合。 回调例程必须从非分页池分配函数描述符和接口描述符。 通用父驱动程序释放此内存。 回调例程必须确保\_描述符的每个**USB\_接口**的**NumberOfInterfaces**成员准确报告接口集合中的接口数。
+枚举回调例程必须返回一个指针，该指针指向描述接口集合的*函数说明符*（[**\_USBC 函数\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbbusif/ns-usbbusif-_usbc_function_descriptor)）的数组。 每个函数说明符都包含一个接口说明符数组[**（\_USB\_接口描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor)），用于描述接口集合。 回调例程必须从非分页池分配函数描述符和接口描述符。 通用父驱动程序释放此内存。 回调例程必须确保每个**USB\_\_接口描述符**的**NumberOfInterfaces**成员准确地报告接口集合中的接口数。
 
 通用父驱动程序为每个函数描述符创建一个物理设备对象（PDO）。
 
@@ -60,7 +61,7 @@ ms.locfileid: "72824171"
 ### <a name="usb-generic-parent-driver-loading-mechanism"></a>USB 一般父驱动程序加载机制
 
 
-当复合设备满足[USB 复合设备枚举](enumeration-of-the-composite-parent-device.md)中所述的要求时，操作系统将生成一个兼容的 ID，以指示设备是复合的 `USB\COMPOSITE`。 兼容 ID 在 Usb 中生成匹配项，操作系统会自动加载 USB 通用父驱动程序，而无需提供供应商提供的 INF 文件的帮助。
+当复合设备满足[USB 复合设备枚举](enumeration-of-the-composite-parent-device.md)中所述的要求时，操作系统将生成一个兼容的`USB\COMPOSITE` ID，以指示设备是复合设备。 兼容 ID 在 Usb 中生成匹配项，操作系统会自动加载 USB 通用父驱动程序，而无需提供供应商提供的 INF 文件的帮助。
 
 但是，此默认机制对于需要接口集合的自定义枚举的复合设备不起作用，因为在默认机制中，系统不会加载所需的供应商提供的筛选器驱动程序。 若要使枚举回调例程机制正常工作，当 USB 泛型父代枚举复合设备的接口集合时，必须已加载公开 USB 设备配置界面的筛选器驱动程序。 这要求复合设备的供应商安装一个 INF 文件，该文件与复合设备的设备 ID 相匹配，并显式加载 USB 泛型父驱动程序和筛选器驱动程序。
 
@@ -74,7 +75,7 @@ ms.locfileid: "72824171"
 
 WMCDC 设备包含多个按*逻辑话机*分组的函数。 大多数 WMCDC 设备都有一个逻辑耳机，但一个设备可能有多个逻辑话机。 逻辑话机通常包括诸如数据/传真调制解调器、对象存储和呼叫控制设施等功能。 逻辑耳机还可能包括由其他 USB 规范（如 USB 音频类规范、USB 人体输入设备（HID）类规范和 USB 视频类规范）定义的支持函数。
 
-Windows WMCDC 体系结构使用本机 Windows 驱动程序来管理 WMCDC 设备的功能。 例如，你可以使用 Windows 电话应用程序接口（TAPI）子系统来管理设备和 Windows 网络驱动程序接口规范（NDIS）子系统的语音和数据/传真调制解调器功能，以管理设备的以太网LAN 函数。 此外，还可以使用[WinUSB](winusb.md) （WinUSB）的帮助，在用户模式软件中管理一些功能，例如对象交换协议（OBEX）函数。
+Windows WMCDC 体系结构使用本机 Windows 驱动程序来管理 WMCDC 设备的功能。 例如，你可以使用 Windows 电话应用程序接口（TAPI）子系统来管理设备和 Windows 网络驱动程序接口规范（NDIS）子系统的语音和数据/传真调制解调器功能，以管理设备的以太网 LAN 功能。 此外，还可以使用[WinUSB](winusb.md) （WinUSB）的帮助，在用户模式软件中管理一些功能，例如对象交换协议（OBEX）函数。
 
 此图显示了 WMCDC 设备的示例驱动程序堆栈。
 
@@ -84,7 +85,7 @@ Windows WMCDC 体系结构使用本机 Windows 驱动程序来管理 WMCDC 设�
 
 ### <a name="registry-settings"></a>注册表设置
 
-USB stack 不会自动支持 WMCDC。 必须提供一个 INF 文件，用于加载 Usbccgp 的实例。 INF 文件必须包含**AddReg**部分，该部分将与 Usbccgp 关联的软件密钥中的**EnumeratorClass**注册表值设置为从三个数字构造的 REG\_二进制值：0x02、0x00 和 0x 00。 下面的示例 INF 文件中的代码示例演示如何将**EnumeratorClass**设置为合适的值。
+USB stack 不会自动支持 WMCDC。 必须提供一个 INF 文件，用于加载 Usbccgp 的实例。 INF 文件必须包含**AddReg**部分，该部分将与 Usbccgp 关联的软件密钥中的**EnumeratorClass**注册表值设置为从以下三个数字\_构造的注册表项二进制值：0x02、0x00 和 0x 00。 下面的示例 INF 文件中的代码示例演示如何将**EnumeratorClass**设置为合适的值。
 
 ```INF
 [CCGPDriverInstall.NT]
@@ -232,14 +233,14 @@ USB 通用父驱动程序以特殊方式处理无线耳机控制模型（WHCM）
 -   你可以配置 USB 通用父驱动程序，为 OBEX 控件模型接口集合创建单独的物理设备对象（PDOs），或者为所有 OBEX 控件模型接口集合创建单个 PDO。
 -   UFD 中的接口编号列表可以有空白。 也就是说，UFD 的接口号可以引用不连续的接口。 这种类型的编号无效，例如，对于[USB 接口关联描述符（IAD）](usb-interface-association-descriptor.md)，其接口必须是连续的并且具有顺序号。
 -   Ufd 可以包括相关音频接口集合
--   CDC 和 WMCDC 接口集合的硬件标识符（Id）必须包含 interface 子类。 其他 USB 接口（其硬件 Id 包含用于指定接口号的 MI\_% 02X 后缀）不包含有关 interface 子类的信息。 在硬件 ID 中包含子类信息，以允许供应商为特定接口集合提供具有硬件 ID 匹配项的 INF 文件，而不是依赖于描述符布局中接口的位置来确定要加载的驱动程序用于集合。 硬件 ID 中的子类信息还允许来自当前供应商提供的驱动程序的逐步迁移路径，该驱动程序将 WMCDC interface 集合管理为替代方法，例如用户模式驱动程序。 有关 CDC 和 WMCDC 硬件 Id 的示例，请参阅对[无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。 有关如何格式化 USB 接口硬件 Id 的一般讨论，请参阅[Usb 设备的标识符](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-usb-devices)。
+-   CDC 和 WMCDC 接口集合的硬件标识符（Id）必须包含 interface 子类。 其他 USB 接口（其硬件 Id 包含用于指定\_接口号的 MI% 02x 后缀）不包含接口子类的相关信息。 在硬件 ID 中包含子类信息，以允许供应商为特定接口集合提供具有硬件 ID 匹配项的 INF 文件，而不是依赖于描述符布局中接口的位置来确定要为集合加载哪个驱动程序。 硬件 ID 中的子类信息还允许来自当前供应商提供的驱动程序的逐步迁移路径，该驱动程序将 WMCDC interface 集合管理为替代方法，例如用户模式驱动程序。 有关 CDC 和 WMCDC 硬件 Id 的示例，请参阅对[无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。 有关如何格式化 USB 接口硬件 Id 的一般讨论，请参阅[Usb 设备的标识符](https://docs.microsoft.com/windows-hardware/drivers/install/identifiers-for-usb-devices)。
 
 ### <a name="cdc-and-wmcdc-control-models"></a>CDC 和 WMCDC 控件模型
 
 
 CDC 和 WMCDC 控件模型部分介绍了 Microsoft Windows 操作系统中支持的接口集合的属性。 每个说明包括一个硬件和设备标识符（Id）列表，其中包含 USB 通用父驱动程序为接口集合生成的硬件和设备标识符（Id）。
 
-Windows 支持的大多数接口集合对应于属于通信设备类（CDC）和无线移动通信设备类（WMCDC）的控件模型，但操作系统还支持旧的音频和视频移动计算促销协会（MCPC）定义的接口集合和接口集合。
+Windows 支持的大多数接口集合对应于属于通信设备类（CDC）和无线移动通信设备类（WMCDC）的控件模型，但操作系统还支持旧的音频和视频接口集合，以及移动计算促销协会（MCPC）定义的接口集合。
 
 本部分中描述的接口集合如下所示：
 
@@ -256,7 +257,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类（CDC）和
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -269,7 +270,7 @@ Windows 支持的大多数接口集合对应于属于通信设备类（CDC）和
 <td><p>接口集合中的所有接口都必须属于音频设备类（0x01）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>类别</p></td>
+<td><p>子类</p></td>
 <td><p>接口集合中的每个接口必须与集合中的第一个接口具有不同的子类。</p></td>
 </tr>
 <tr class="even">
@@ -277,8 +278,8 @@ Windows 支持的大多数接口集合对应于属于通信设备类（CDC）和
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -317,7 +318,7 @@ USB\Class_01</code></pre>
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -338,8 +339,8 @@ USB\Class_01</code></pre>
 <td><p>随时.</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -378,7 +379,7 @@ USB CDC ATM 网络控制模型（ANCM）接口集合具有以下属性。
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -399,8 +400,8 @@ USB CDC ATM 网络控制模型（ANCM）接口集合具有以下属性。
 <td><p>无（0x00）</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>“是”</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -440,7 +441,7 @@ USB CDC 公共 ISDN API （CAPI）控制模型接口集合具有以下属性。
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -462,8 +463,8 @@ USB CDC 公共 ISDN API （CAPI）控制模型接口集合具有以下属性。
 <td><p>无（0x00）</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>“是”</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -499,7 +500,7 @@ USB CDC 直接线路控制模型（DLCM）接口集合具有以下属性。
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -520,8 +521,8 @@ USB CDC 直接线路控制模型（DLCM）接口集合具有以下属性。
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -560,7 +561,7 @@ USB CDC 以太网网络控制模型（ENCM）接口集合具有以下属性。
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -581,8 +582,8 @@ USB CDC 以太网网络控制模型（ENCM）接口集合具有以下属性。
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -621,7 +622,7 @@ USB CDC 多通道 ISDN 控制模型（MCCM）接口集合具有以下属性。
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -642,8 +643,8 @@ USB CDC 多通道 ISDN 控制模型（MCCM）接口集合具有以下属性。
 <td><p>无（0x00）</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>“是”</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -683,7 +684,7 @@ USB CDC 电话控制模型（TCM）接口集合具有以下属性。
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -704,8 +705,8 @@ USB CDC 电话控制模型（TCM）接口集合具有以下属性。
 <td><p>随时.</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -746,7 +747,7 @@ USB\Class_02</code></pre></td>
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -759,7 +760,7 @@ USB\Class_02</code></pre></td>
 <td><p>CDC （0x02）</p></td>
 </tr>
 <tr class="odd">
-<td><p>类别</p></td>
+<td><p>子类</p></td>
 <td><p>0x88</p></td>
 </tr>
 <tr class="even">
@@ -767,8 +768,8 @@ USB\Class_02</code></pre></td>
 <td><p>无（0x00）</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>“是”</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -807,7 +808,7 @@ USB\Class_02</code></pre></td>
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -820,7 +821,7 @@ USB\Class_02</code></pre></td>
 <td><p>视频（0x0E）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>类别</p></td>
+<td><p>子类</p></td>
 <td><p>视频控制（0x01）。</p></td>
 </tr>
 <tr class="even">
@@ -828,8 +829,8 @@ USB\Class_02</code></pre></td>
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -870,7 +871,7 @@ USB\Class_0E</code></pre></td>
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -891,8 +892,8 @@ USB\Class_0E</code></pre></td>
 <td><p>如果集合使用 AT 命令集协议，则在兼容 Id 中嵌入的协议值为0x01。 如果集合使用 WMCDC 规范描述的一种协议，则在兼容 Id 中嵌入的协议值将是0x2 到0x06 或0xFE。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -914,8 +915,8 @@ USB\Class_02</code></pre></td>
 <tr class="odd">
 <td><p>特殊处理</p></td>
 <td><p>UFD 可能会引用一个音频接口集合，该集合是独立于工作类型接口集合枚举的。</p>
-<p>接口集合必须符合 WMCDC 规范的6.2 节中指定的特殊描述符和终结点要求。 如果接口集合不符合 WMCDC 要求，但接口符合 CDC 要求，则 USB 通用父驱动程序将用 CDC 格式枚举接口集合和通用硬件 Id，如支持中所述。 <a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">对于无线移动通信设备类</a>。</p>
-<p>此控件模型的兼容 Id 在 Microsoft 提供的 INF 文件中匹配。 如果操作系统在供应商提供的 INF 文件中找不到其中一个硬件 Id 的匹配项，则系统会自动加载本机电话应用程序编程接口（TAPI）调制解调器筛选器驱动程序以管理调制解调器功能并设置如果协议代码不是0xFE，则为相应的 TAPI 注册表设置。 如果协议代码为0xFE，则供应商必须提供设备或类共同安装程序，才能正确地填充 TAPI 注册表设置。</p></td>
+<p>接口集合必须符合 WMCDC 规范的6.2 节中指定的特殊描述符和终结点要求。 如果接口集合不符合 WMCDC 要求，但接口符合 CDC 要求，则 USB 通用父驱动程序将用 CDC 格式枚举接口集合和通用硬件 Id，如对<a href="support-for-the-wireless-mobile-communication-device-class--wmcdc-.md" data-raw-source="[Support for the Wireless Mobile Communication Device Class](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)">无线移动通信设备类的支持</a>中所述。</p>
+<p>此控件模型的兼容 Id 在 Microsoft 提供的 INF 文件中匹配。 如果操作系统在供应商提供的 INF 文件中找不到其中一个硬件 Id 的匹配项，则系统会自动加载本机电话应用程序编程接口（TAPI）调制解调器筛选器驱动程序以管理调制解调器功能并设置相应的 TAPI 注册表设置，除非协议代码为0xFE。 如果协议代码为0xFE，则供应商必须提供设备或类共同安装程序，才能正确地填充 TAPI 注册表设置。</p></td>
 </tr>
 </tbody>
 </table>
@@ -933,7 +934,7 @@ USB WMCDC 设备管理模型（CALL CENTER.DMM）接口集合具有以下属性�
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -954,8 +955,8 @@ USB WMCDC 设备管理模型（CALL CENTER.DMM）接口集合具有以下属性�
 <td><p>随时.</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -994,7 +995,7 @@ USB WMCDC 移动直接连线模型（MDLM）接口集合具有以下属性：
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -1015,8 +1016,8 @@ USB WMCDC 移动直接连线模型（MDLM）接口集合具有以下属性：
 <td><p>Any</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>“是”</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -1045,7 +1046,7 @@ USB\Class_02</code></pre></td>
 #### <a name="wmcdc-obex-control-model-multiple-pdos"></a>WMCDC OBEX 控件模型（多个 PDOs）
 
 
-可以通过两种方法来枚举对象交换协议（OBEX）控制模型接口集合： USB 通用父驱动程序可以将所有 OBEX 接口组合在一起，并为所有 OBEX 接口创建单个物理设备对象（PDO），或父驱动程序可以为每个 OBEX 接口创建一个单独的 PDO。 有关 USB 通用父驱动程序为组合在一起的 OBEX 接口生成的硬件 Id 的说明，请参阅对[无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。
+可以通过两种方法来枚举对象交换协议（OBEX）控制模型接口集合： USB 通用父驱动程序可以将所有 OBEX 接口组合在一起，并为所有 OBEX 接口创建单个物理设备对象（PDO），或者父驱动程序可以为每个 OBEX 接口创建一个单独的 PDO。 有关 USB 通用父驱动程序为组合在一起的 OBEX 接口生成的硬件 Id 的说明，请参阅对[无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。
 
 当 USB 通用父驱动程序为每个 OBEX 接口分配单独的 PDOs 时，PDOs 具有以下属性。
 
@@ -1057,7 +1058,7 @@ USB\Class_02</code></pre></td>
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -1078,8 +1079,8 @@ USB\Class_02</code></pre></td>
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -1108,7 +1109,7 @@ USB\Class_02</code></pre></td>
 #### <a name="wmcdc-obex-control-model-single-pdo"></a>WMCDC OBEX 控件模型（单一 PDO）
 
 
-可以通过两种方法来枚举对象交换协议（OBEX）控制模型接口集合： USB 通用父驱动程序可以将所有 OBEX 接口组合在一起，并为所有 OBEX 接口创建单个物理设备对象（PDO），或父驱动程序可以为每个 OBEX 接口创建一个单独的 PDO。 有关 USB 通用父驱动程序为单独枚举的 OBEX 接口生成的硬件 Id 的说明，请参阅对[无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。
+可以通过两种方法来枚举对象交换协议（OBEX）控制模型接口集合： USB 通用父驱动程序可以将所有 OBEX 接口组合在一起，并为所有 OBEX 接口创建单个物理设备对象（PDO），或者父驱动程序可以为每个 OBEX 接口创建一个单独的 PDO。 有关 USB 通用父驱动程序为单独枚举的 OBEX 接口生成的硬件 Id 的说明，请参阅对[无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。
 
 当 USB 通用父驱动程序将单个 PDO 分配给所有 OBEX 接口时，PDO 具有以下属性。
 
@@ -1120,7 +1121,7 @@ USB\Class_02</code></pre></td>
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -1141,8 +1142,8 @@ USB\Class_02</code></pre></td>
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -1182,7 +1183,7 @@ USB 泛型父驱动程序并不总是枚举无线耳机控制模型（WHCM）接
 <thead>
 <tr class="header">
 <th>属性</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -1203,8 +1204,8 @@ USB 泛型父驱动程序并不总是枚举无线耳机控制模型（WHCM）接
 <td><p>无（0x00）。</p></td>
 </tr>
 <tr class="odd">
-<td><p>列举</p></td>
-<td><p>是</p></td>
+<td><p>Enumerated</p></td>
+<td><p>是的。</p></td>
 </tr>
 <tr class="even">
 <td><p>相关接口</p></td>
@@ -1236,9 +1237,9 @@ USB\Class_02</code></pre></td>
 
 - 字符串 "Vid\_" 后面的整数是 USB 委员会（www.usb.org）分配给供应商的供应商代码的四位十六进制表示形式。
 
-- 字符串 "Pid\_" 后面的整数是供应商分配给设备的产品代码的4位十六进制表示形式。
+- 字符串 "Pid\_" 后面的整数是供应商分配给设备的产品代码的四位十六进制表示形式。
 
-- 字符串 "Rev\_" 后面的整数是设备修订号的4位十六进制表示形式。
+- 字符串 "Rev\_" 后面的整数是设备修订号的四位十六进制表示形式。
 
 - 字符串 "Cdc\_" 后面的整数是接口子类。
 
@@ -1250,7 +1251,7 @@ USB\Class_02</code></pre></td>
 ### <a name="enumeration-of-interface-collections-on-usb-devices-with-iads"></a>在带有 IADs 的 USB 设备上枚举接口集合
 
 
-如果 USB 复合设备在其固件中具有接口关联描述符（IAD），则 Windows 将枚举接口集合，就好像每个集合都是单个设备，并为每个接口集合分配一个物理设备对象（PDO），将硬件和兼容的标识符（Id）与 PDO 关联。 有关 IADs 的详细说明，请参阅[USB 接口关联描述符](usb-interface-association-descriptor.md)。 本部分介绍分配给与 IAD 关联的接口集合的硬件 Id 和兼容标识符（Id）。
+如果 USB 复合设备在其固件中具有接口关联描述符（IAD），Windows 会枚举接口集合，就好像每个集合都是单个设备，并将单个物理设备对象（PDO）分配给每个接口集合，并将硬件和兼容的标识符（Id）与 PDO 关联起来。 有关 IADs 的详细说明，请参阅[USB 接口关联描述符](usb-interface-association-descriptor.md)。 本部分介绍分配给与 IAD 关联的接口集合的硬件 Id 和兼容标识符（Id）。
 
 ##  <a name="hardware-ids"></a>硬件 Id
 
@@ -1282,7 +1283,7 @@ USB\Class_02</code></pre></td>
 ### <a name="enumeration-of-interface-collections-on-audio-devices-without-iads"></a>在音频设备上枚举接口集合而不 IADs
 
 
-对于音频设备，Windows 操作系统可以枚举与某个函数关联的接口组（接口集合），并为每个组分配一个物理设备对象（PDO），即使该设备没有接口关联描述符（IAD）。
+对于音频设备，Windows 操作系统可以枚举与某个函数关联的接口组（接口集合），并为每个组分配一个物理设备对象（PDO），即使该设备没有接口关联描述符（IAD）也是如此。
 
 如果接口满足以下条件，操作系统会将复合音频设备的接口分组为接口集合：
 
@@ -1321,7 +1322,7 @@ USB\Class_02</code></pre></td>
 在这些兼容 Id 中，c （2）、s （2）和 p （2）包含分别从每个接口集合中第一个 USB 接口描述符的 bInterfaceClass、bInterfaceSubClass 和 bInterfaceProtocol 字段中提取的值。
 
 ## <a name="related-topics"></a>相关主题
-[USB 通用父驱动程序（Usbccgp）](usb-common-class-generic-parent-driver.md)  
+[USB 常规父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)  
 [Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  
 
 

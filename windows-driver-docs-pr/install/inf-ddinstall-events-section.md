@@ -1,10 +1,10 @@
 ---
 title: INF DDInstall.Events 节
 author: andylsn
-description: 每个每个模型 DDInstall.Events 部分包含一个或多个引用的 INF 文件中的其他 INF 编写器定义部分的 INF AddEventProvider 指令。
+description: 每个模型的 DDInstall 节都包含一个或多个 INF AddEventProvider 指令，这些指令引用 INF 文件中其他由 INF 编写器定义的部分。
 ms.assetid: ''
 keywords:
-- INF DDInstall.Events 部分设备和驱动程序安装
+- INF DDInstall 部分设备和驱动程序安装
 topic_type:
 - apiref
 api_name:
@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b878adfab32765453510d6fd17632e14a5d0dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fd15c052eb52af092f84c80a19601f4e056cd7c
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385918"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223253"
 ---
 # <a name="inf-ddinstallevents-section"></a>INF DDInstall.Events 节
 
-每个每个模型<em>DDInstall</em> **。事件**部分包含一个或多个[ **INF AddEventProvider 指令**](inf-addeventprovider-directive.md)引用 INF 文件中的其他 INF 编写器定义部分。 本部分适用于 Windows 10 版本 1809年及更高版本。
+每个模型<em>DDInstall</em>**。Events**节包含一个或多个[**inf AddEventProvider 指令**](inf-addeventprovider-directive.md)，这些指令引用 inf 文件中其他由 inf 编写器定义的部分。 Windows 10 版本1809及更高版本支持此部分。
 
-```ini
+```inf
 [install-section-name.Events] |
 [install-section-name.nt.Events] |
 [install-section-name.ntx86.Events] |
@@ -38,38 +38,38 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 [Needs=inf-section-name[,inf-section-name]...] 
 ```
 
-你可以提供<em>DDInstall</em> **。事件**上至少有一个部分**AddEventProvider**指令来注册[Windows 的事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)(ETW) 提供程序。
+可以提供<em>DDInstall</em>**。** 包含至少一个**AddEventProvider**指令的 Events 节，用于注册[Windows 事件跟踪](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)（ETW）提供程序。
 
 ## <a name="entries"></a>条目
 
-<a href="" id="addeventprovider--providerguid--event-provider-install-section"></a>**AddEventProvider=** {*ProviderGUID*},*event-provider-install-section*  
-此指令引用 INF 编写器的定义*事件提供程序安装部分*涵盖此设备的驱动程序的 INF 文件中的其他位置*DDInstall*部分。 有关详细信息，请参阅[ **INF AddEventProvider 指令**](inf-addeventprovider-directive.md)。
+<a href="" id="addeventprovider--providerguid--event-provider-install-section"></a>**AddEventProvider =**{*ProviderGUID*}，*事件提供程序-安装部分*  
+此指令在 INF 文件中的其他位置引用由 INF 编写器定义的 DDInstall*节*，其中包含此*DDInstall*部分涵盖的设备的驱动程序。 有关详细信息，请参阅[**INF AddEventProvider 指令**](inf-addeventprovider-directive.md)。
 
-<a href="" id="include-filename-inf--filename2-inf----"></a>**Include=** <em>filename</em> **.inf**\[ **,** <em>filename2</em> **.inf**\]...  
-此可选项指定一个或多个其他系统提供 INF 文件包含安装此设备所需的部分。 如果指定此项，则**需要**输入也是通常所需。
+<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =**<em>filename</em>**.inf**\[**，**<em>filename2</em>\]...**.inf**  
+此可选条目指定一个或多个系统提供的其他 INF 文件，其中包含安装此设备所需的部分。 如果指定此项 **，则通常还需要输入。**
 
-有关详细信息**Include**条目和限制其使用时，请参阅[设备文件中指定的源和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
+有关其用法的**包含**项和限制的详细信息，请参阅[指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**需要 =** <em>inf 部分名称</em>\[ **，** <em>inf 部分名称</em>\]...  
-此可选项指定必须在此设备的安装过程中处理的部分。 通常情况下，部分是<em>DDInstall</em> **。事件**中列出系统提供 INF 文件中的节**Include**条目。 但是，它可以是任何部分中引用的<em>DDInstall</em> **。事件**部分。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**需求 =**<em>inf-名称</em>\[**，**<em>inf-节名称</em>\].。。  
+此可选条目指定在安装此设备过程中必须处理的部分。 通常，部分是<em>DDInstall</em>**。****包含在包含**项中的系统提供的 INF 文件中的事件部分。 但是，它可以是在 DDInstall 中引用的任何节<em>DDInstall</em>**。事件**部分。
 
-**需要**条目不能嵌套。 有关详细信息**需要**条目和限制其使用时，请参阅[设备文件中指定的源和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
+不能嵌套**需求**条目。 有关其用法的**需求**条目和限制的详细信息，请参阅[指定设备文件的源位置和目标位置](specifying-the-source-and-target-locations-for-device-files.md)。
 
 <a name="remarks"></a>备注
 -------
 
-<em>DDInstall</em> **。事件**部分应具有其相关的相同平台和操作系统修饰[ ***DDInstall*** ](inf-ddinstall-section.md)部分。 例如，<em>安装的部分名称</em> **.ntx86**部分中将具有相应<em>安装部分名称</em> **.ntx86。事件**部分。
+<em>DDInstall</em>**。事件**部分应该与相关的[***DDInstall***](inf-ddinstall-section.md)部分具有相同的平台和操作系统修饰。 例如，**ntx86**节<em>会</em>有一个相应的<em>安装节名称</em>**. ntx86。事件**部分。
 
-指定*DDInstall*部分必须在每个制造商下的特定于设备/模型的项中引用*模型*INF 文件部分。 不区分大小写的扩展*安装的部分名称*所示在正式语法语句可插入到此类<em>DDInstall</em> **。事件**跨平台 INF 文件中的节名称。
+在 INF 文件的 "每制造商"*型号*部分下，必须在特定于设备/模型的条目中引用指定的*DDInstall*部分。 在正式语法语句中显示的*安装节名称*不区分大小写的扩展可以插入到此类<em>DDInstall</em>中 **。** 跨平台 INF 文件中的事件部分名称。
 
-有关如何使用系统定义的详细信息 **.nt**， **.ntx86**， **.ntia64**， **.ntamd64**， **.ntarm**，并 **.ntarm64**扩展，请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+有关如何使用**系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和**Ntarm64**扩展的详细信息，请参阅[为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 <a name="examples"></a>示例
 --------
 
-此示例演示<em>安装的部分名称</em> **。事件**部分和其事件的提供程序的安装-部分 INF 文件中。
+此示例显示了<em>安装部分的名称</em>**。** INF 文件中的事件部分及其事件提供程序安装部分。
 
-```ini
+```inf
 [Device_Inst.NT.Events]
 AddEventProvider={071acb53-ccfb-42e0-9a68-5336b7301507},foo_Event_Provider_Inst
 AddEventProvider={6d3fd9ef-bcbb-42d7-9fbd-1bf2d926b394},bar_Event_Provider_Inst
@@ -84,7 +84,7 @@ AddEventProvider={6d3fd9ef-bcbb-42d7-9fbd-1bf2d926b394},bar_Event_Provider_Inst
 ; ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddEventProvider**](inf-addeventprovider-directive.md)

@@ -3,67 +3,55 @@ title: 关于驱动程序的事件跟踪
 description: 关于驱动程序的事件跟踪
 ms.assetid: 1b5c85b1-5b7a-48bc-bdd4-356316d4467f
 keywords:
-- Windows WDK，有关 Windows 事件跟踪的事件跟踪
-- ETW WDK，有关 Windows 事件跟踪
-- 事件跟踪的 Windows WDK，内核模式
-- ETW WDK 内核模式
+- Windows WDK 事件跟踪，关于 Windows 的事件跟踪
+- ETW WDK，关于 Windows 的事件跟踪
+- Windows WDK 事件跟踪，内核模式
+- ETW WDK，内核模式
 - 内核模式 ETW WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23fee31ba48a8afb8f50a267438e5524e9b70faf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 959a78cf068691a2bba679e3063b1f1ee906f374
+ms.sourcegitcommit: 9b791a85c471f0d7707a4a28a2ca273713b7993e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358091"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82558846"
 ---
 # <a name="about-event-tracing-for-drivers"></a>关于驱动程序的事件跟踪
 
+## <a name="event-tracing-defined"></a>已定义事件跟踪
 
-## <a name="what-is-event-tracing"></a>什么是事件跟踪？
-
-Windows 事件跟踪 (ETW) 是一种有效和高效的机制，用于跟踪和日志记录由用户模式应用程序和内核模式驱动程序引发的事件。 ETW 包括三个组件：
+Windows 事件跟踪（ETW）是一个高效而有效的机制，用于跟踪和记录用户模式应用程序和内核模式驱动程序引发的事件。 ETW 包含三个组件：
 
 <table>
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>提供程序</p></td>
-<td align="left"><p>应用程序或引发事件跟踪检测的组件。</p></td>
+<td align="left"><p>引发事件跟踪检测的应用程序或组件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>控制器</p></td>
-<td align="left"><p>启动、 停止和配置事件跟踪会话的应用程序。</p></td>
+<td align="left"><p>Controllers</p></td>
+<td align="left"><p>启动、停止和配置事件跟踪会话的应用程序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>使用者</p></td>
-<td align="left"><p>接收事件跟踪会话 （在真实时间） 的应用程序或文件。</p></td>
+<td align="left"><p>从文件接收事件跟踪会话的应用程序。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ## <a name="the-etw-kernel-mode-api"></a>ETW 内核模式 API
 
-ETW 应用程序编程接口 (API) 提供了一组适用于内核模式组件和驱动程序的函数。 [WMI 事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)并[WPP 软件跟踪](wpp-software-tracing.md)都使用 ETW。 驱动程序开发人员可以使用这些函数的 ETW 提供程序作为注册驱动程序。 ETW 提供程序可以引发事件并将其发布到 Windows 事件日志或可以将其事件写入 ETW 会话，用于获取写入到跟踪文件或传递到实时的使用者。 事件是用于描述系统中有趣的匹配项，并由一组由 ETW 提供程序的属性定义的实体。
+ETW 应用程序编程接口（API）提供了一组可用于内核模式组件和驱动程序的函数。 [WMI 事件跟踪](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)和[WPP 软件跟踪](wpp-software-tracing.md)均使用 ETW。 驱动程序开发人员可以使用这些函数将驱动程序注册为 ETW 提供程序。 ETW 提供程序可以引发事件，并可以将其发布到 Windows 事件日志，也可以将其事件写入 ETW 会话，后者会写入跟踪文件或传递给实时使用者。 事件是描述系统中感兴趣的事件的实体，由 ETW 提供程序确定的一组属性进行定义。
 
-ETW 在 Windows 操作系统中实现，并为开发人员快速、 可靠且用途广泛的一组事件跟踪功能提供对性能的影响非常小。 您可以动态启用或禁用跟踪而无需重新启动计算机，或重新加载应用程序或驱动程序。 与不同的调试在开发期间添加到你的代码的语句，可以在生产代码中使用 ETW。
+ETW 是在 Windows 操作系统中实现的，它为开发人员提供了一组快速、可靠且丰富的事件跟踪功能，对性能的影响非常小。 你可以在不重新启动计算机或重新加载应用程序或驱动程序的情况下动态启用或禁用跟踪。 与在开发过程中添加到代码中的调试语句不同，您可以在生产代码中使用 ETW。
 
 ## <a name="when-to-use-event-tracing"></a>何时使用事件跟踪
 
-如果你想要发布的应用程序感兴趣管理、 操作和分析事件，除了详细的跟踪可能需要在开发过程中可以使用事件，请使用 ETW 内核模式 API。 如果您有兴趣主要收集跟踪数据，用于开发和调试目的，请使用 WPP 软件跟踪。
-
- 
-
- 
-
-
-
-
-
+如果希望发布可由对管理、操作和分析事件感兴趣的应用程序使用的事件，以及在开发过程中可能需要的详细跟踪，请使用 ETW 内核模式 API。 如果你有兴趣主要收集用于开发和调试目的的跟踪数据，请使用 WPP 软件跟踪。

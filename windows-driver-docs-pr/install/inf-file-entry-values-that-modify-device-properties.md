@@ -1,56 +1,56 @@
 ---
-title: INF 文件条目的值修改 Windows Vista 之前的设备属性
-description: INF 文件条目的值修改 Windows Vista 之前的设备属性
+title: 在 Windows Vista 之前修改设备属性的 INF 文件输入值
+description: 在 Windows Vista 之前修改设备属性的 INF 文件输入值
 ms.assetid: b2a1f265-fc9b-47fb-83af-b4f66d79da83
 keywords:
 - 设备属性 WDK 设备安装，修改
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b3abf1f8e5e5eda729eeb2f77ab755daae4661
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64d99683a14a399284ae7b1c995484179661c8ed
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365849"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223149"
 ---
-# <a name="inf-file-entry-values-that-modify-device-properties-before-windows-vista"></a>INF 文件条目的值修改 Windows Vista 之前的设备属性
+# <a name="inf-file-entry-values-that-modify-device-properties-before-windows-vista"></a>在 Windows Vista 之前修改设备属性的 INF 文件输入值
 
 
-修改 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备属性的 INF 文件条目值如下：
+以下是在 Windows Server 2003、Windows XP 和 Windows 2000 上修改设备属性的 INF 文件条目值：
 
--   设置设备属性的 INF 文件条目值对应于[系统定义的设备属性](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))属于[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)在 Windows Vista 和更高版本的Windows。
+-   INF 文件输入值，用于设置设备属性，这些属性对应于 Windows Vista 和更高版本的 Windows 中的[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)所包含的[系统定义的设备属性](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))。
 
--   [**INF AddReg 指令**](inf-addreg-directive.md)并[ **INF DelReg 指令**](inf-delreg-directive.md)的设置或删除对应的系统定义的设备属性的系统定义的注册表项值是 Windows Vista 和更高版本中的统一的设备属性模型的一部分。
+-   [**Inf AddReg 指令**](inf-addreg-directive.md)和[**inf DelReg 指令**](inf-delreg-directive.md)，用于设置或删除系统定义的注册表项值，这些值对应于 Windows Vista 和更高版本中统一设备属性模型所包含的系统定义的设备属性。
 
--   INF **AddReg**指令和 INF **DelReg**指令用于设置或删除自定义注册表条目对应于自定义设备属性的值。
+-   INF **AddReg**指令和 inf **DelReg**指令，用于设置或删除与自定义设备属性对应的自定义注册表项值。
 
-有关常规信息的 INF 文件安装设备实例的部分[设备安装程序类](device-setup-classes.md)，[设备接口类](device-interface-classes.md)，以及设备接口，请参阅以下主题：
+有关安装设备实例、[设备安装程序类](device-setup-classes.md)、[设备接口类](device-interface-classes.md)和设备接口的 INF 文件部分的常规信息，请参阅以下主题：
 
 [**INF *DDInstall*部分**](inf-ddinstall-section.md)
 
-[**INF ClassInstall32 部分**](inf-classinstall32-section.md)
+[**INF ClassInstall32 节**](inf-classinstall32-section.md)
 
-[**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)
+[**INF InterfaceInstall32 节**](inf-interfaceinstall32-section.md)
 
 [**INF *DDInstall*。接口部分**](inf-ddinstall-interfaces-section.md)
 
-### <a href="" id="inf-file-entry-values-that-correspond-to-system-defined-device-propert"></a>INF 文件条目对应于系统定义的设备属性的值
+### <a name="inf-file-entry-values-that-correspond-to-system-defined-device-properties"></a><a href="" id="inf-file-entry-values-that-correspond-to-system-defined-device-propert"></a>与系统定义的设备属性相对应的 INF 文件输入值
 
-某些 INF 文件条目的值提供 Windows 用来设置为设备实例属性和设备接口属性的系统定义的注册表条目的值相对应的信息。 以下是几个示例提供的此类 INF 文件条目的值的注册表项值：
+某些 INF 文件输入值提供 Windows 用于设置与设备实例属性和设备接口属性相对应的系统定义注册表项值的信息。 以下是此类 INF 文件条目值提供的注册表项值的几个示例：
 
--   [ **INF 模型部分**](inf-models-section.md)的 INF 文件包含*设备描述*条目值。 此值对应于[ **DEVPKEY_Device_DeviceDesc** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-devicedesc)统一的设备属性中属性的模型，并且可以通过调用检索[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)并设置*属性*SPDRP_DEVICEDESC 参数。
+-   INF 文件的[**Inf 型号部分**](inf-models-section.md)包含*设备说明*条目值。 此值对应于统一设备属性模型中的[**DEVPKEY_Device_DeviceDesc**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-devicedesc)属性，可通过调用[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)并将*属性*参数设置为 SPDRP_DEVICEDESC 来检索。
 
--   INF**类**指令[ **INF 版本部分**](inf-version-section.md)包括*类名*条目值，用于提供的名称[设备安装程序类](device-setup-classes.md)。 此值对应于[ **DEVPKEY_DeviceClass_ClassName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceclass-classname)统一的设备属性模型中的属性。 可以通过调用来检索设备安装程序类的类名[ **SetupDiClassNameFromGuid**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)，并且可以通过调用检索设备实例的类名[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)并设置*属性*SPDRP_CLASS 参数。
+-   [**Inf 版本部分**](inf-version-section.md)的 inf**类**指令包括*类名称*输入值，该值提供[设备安装程序类](device-setup-classes.md)的名称。 此值对应于统一设备属性模型中的[**DEVPKEY_DeviceClass_ClassName**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceclass-classname)属性。 设备安装程序类的类名称可以通过调用[**SetupDiClassNameFromGuid**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)进行检索，并且可以通过调用[**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)检索设备实例的类名，并将*Property*参数设置为 SPDRP_CLASS。
 
--   [ **INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)包括*InterfaceClassGuid*条目值，用于提供设备接口的 GUID。 此值对应于统一的设备属性模型中的 DEVPKEY_DeviceInterface_ClassGuid 属性。 类可以检索通过查询接口项，也可以通过调用来打开根的子项的已安装的设备接口的 Guid [ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)并设置*ClassGuid*参数**NULL**并且*标志*DIOCR_INTERFACE 参数。 可以通过调用来检索设备接口的 GUID [ **SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)，哪些检索[ **SP_DEVICE_INTERFACE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)与设备实例相关联的设备接口的结构。 **InterfaceClassGuid** SP_DEVICE_INTERFACE_DATA 结构成员标识接口的类 GUID。
+-   [**INF InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)包括一个*InterfaceClassGuid*条目值，该值提供设备接口的 GUID。 此值对应于统一设备属性模型中的 DEVPKEY_DeviceInterface_ClassGuid 属性。 可以通过查询接口键的根的子项来检索已安装的设备接口类的 Guid，可以通过调用[**SetupDiOpenClassRegKeyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)打开该接口的根子项，并将*ClassGuid*参数设置为**NULL** ，并将*Flags*参数设置为 DIOCR_INTERFACE。 可以通过调用[**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)来检索设备接口的 GUID，该接口将检索与设备实例关联的设备接口的[**SP_DEVICE_INTERFACE_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)结构。 SP_DEVICE_INTERFACE_DATA 结构的**InterfaceClassGuid**成员标识接口类 GUID。
 
-### <a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>INF AddReg 指令和修改系统定义的设备属性的 INF DelReg 指令
+### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-defined-device-properties"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>用于修改系统定义的设备属性的 INF AddReg 指令和 INF DelReg 指令
 
-许多系统定义的设备属性有对应的系统定义的注册表项值。 对于具有相应的注册表条目值，使用的设备属性[ **INF AddReg 指令**](inf-addreg-directive.md)添加相应的注册表项值设置相应的设备属性。 同样，使用[ **INF DelReg 指令**](inf-delreg-directive.md)删除相应的注册表条目值，也会删除相应的设备属性。
+许多系统定义的设备属性具有相应的系统定义的注册表项值。 对于具有相应注册表项值的设备属性，使用[**INF AddReg 指令**](inf-addreg-directive.md)添加相应的注册表项值将设置相应的设备属性。 同样，使用[**INF DelReg 指令**](inf-delreg-directive.md)删除相应的注册表项值，也会删除相应的设备属性。
 
-例如，INF **AddReg** "Abc_Device_Install.HW"部分，将设置以下指令**DeviceCharacteristics**设备实例的注册表条目值：
+例如，以下 "Abc_Device_Install HW" 部分中的 INF **AddReg**指令将设置设备实例的**DeviceCharacteristics**注册表项值：
 
-```ini
+```inf
 [Abc_Device_Install.HW]
 ...
 AddReg = Xxx_AddReg
@@ -61,15 +61,15 @@ AddReg = Xxx_AddReg
 ] 
 ```
 
-**DeviceCharacteristics**注册表项值对应于[ **DEVPKEY_Device_Characteristics** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-characteristics)中的属性[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)Windows Vista 和更高版本的 Windows 中。
+**DeviceCharacteristics**注册表项值对应于 windows Vista 和更高版本的 windows 中的[统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md)中的[**DEVPKEY_Device_Characteristics**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-characteristics)属性。
 
-### <a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-custom-reg"></a>INF AddReg 指令和修改自定义注册表项值的 INF DelReg 指令
+### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-custom-registry-entry-values"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-custom-reg"></a>用于修改自定义注册表项值的 INF AddReg 指令和 INF DelReg 指令
 
-Windows 管理系统定义的注册表条目的值和系统定义的设备属性的对应关系。 但是，Windows 不会管理自定义注册表项值和自定义设备属性之间的对应关系。 [ **INF AddReg 指令**](inf-addreg-directive.md)或[ **INF DelReg 指令**](inf-delreg-directive.md)修改自定义的注册表条目值，不会影响Windows 管理的系统定义的属性。
+Windows 管理系统定义的注册表项值和系统定义的设备属性之间的对应关系。 但是，Windows 不会管理自定义注册表项值和自定义设备属性之间的对应关系。 用于修改自定义注册表项值的[**Inf AddReg 指令**](inf-addreg-directive.md)或[**inf DelReg 指令**](inf-delreg-directive.md)不影响 Windows 所管理的系统定义的属性。
 
-在下面的示例所示设置的自定义设备实例属性可以通过调用来检索[ **SetupDiGetCustomDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetcustomdevicepropertya)。
+如以下示例中所示，可通过调用[**SetupDiGetCustomDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetcustomdevicepropertya)来检索自定义设备实例属性，如下面的示例中所示。
 
-```ini
+```inf
 [XxxDDInstall.HW]
 ...
 AddReg = Xxx_AddReg
@@ -80,7 +80,7 @@ AddReg = Xxx_AddReg
 ] 
 ```
 
-有关如何访问有对应的自定义注册表项值的自定义设备属性的详细信息，请参阅[访问自定义设备属性](accessing-custom-device-properties.md)。
+有关如何访问具有相应自定义注册表项值的自定义设备属性的详细信息，请参阅[访问自定义设备属性](accessing-custom-device-properties.md)。
 
 
 

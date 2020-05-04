@@ -4,16 +4,16 @@ description: BTP 安装程序
 ms.date: 2/14/2020
 ms.assetid: 85ac7c5b-b5f7-49e0-85f8-72e191c00974
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d1ed88ea816d5b08bb74afc48871881826949e2
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: ce704690920609c319b6cbfe89f36c5dbe7135fb
+ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528914"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138642"
 ---
 # <a name="setting-up-the-bluetooth-test-platform-btp"></a>设置蓝牙测试平台（BTP） #
 
-## <a name="hardware-setup"></a>硬件安装 ##
+## <a name="hardware-setup"></a>硬件设置 ##
 
 ### <a name="connecting-traduci-to-the-pc"></a>将 Traduci 连接到电脑 ###
 
@@ -38,9 +38,9 @@ Traduci 具有 4 12 针端口（标记为 JA、作业、JC、JD）用于测试�
 
 1. 下载[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk#download-icon-step-2-install-wdk-for-windows-10-version-1903)。
 
-2. 安装 WDK 后，[测试创作和执行框架（TAEF）](https://docs.microsoft.com/windows-hardware/drivers/taef/)安装文件（* .msi 和 * .cab 文件）位于 `%ProgramFiles%\Windows Kits\8.0\Testing\Runtimes` 目录中。
+2. 安装 WDK 后，[测试创作和执行框架（TAEF）](https://docs.microsoft.com/windows-hardware/drivers/taef/)安装文件（* .msi 和 * .cab 文件）位于`%ProgramFiles%\Windows Kits\10\Testing\Runtimes`目录中。
 
-3. 下载 BTP 软件包，该[软件包](testing-BTP-software-package.md)会将所有必需的文件安装到 `C:\BTP` 目录。
+3. 下载 BTP 软件包，该[软件包](testing-BTP-software-package.md)会将所有所需的`C:\BTP`文件安装到目录。
 
 4. 确保**禁用**[安全启动](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-secure-boot)。
 
@@ -48,7 +48,7 @@ Traduci 具有 4 12 针端口（标记为 JA、作业、JC、JD）用于测试�
 
 6. 确保将 Traduci 板插入 SUT。
 
-7. 在 SUT 上提升的命令行中，导航到 `C:\BTP` 目录，并运行 `ConfigureMachineForBTP.bat` 来配置测试计算机。 可能需要重新启动。
+7. 在 SUT 上提升的命令行中，导航到该`C:\BTP`目录，然后`ConfigureMachineForBTP.bat`运行以配置测试计算机。 可能需要重新启动。
 
 8. 请参阅[BTP 测试](testing-BTP-Tests.md)，以在包中运行测试脚本。
 

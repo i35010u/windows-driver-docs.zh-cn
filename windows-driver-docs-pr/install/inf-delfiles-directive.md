@@ -1,6 +1,6 @@
 ---
 title: INF DelFiles 指令
-description: DelFiles 指令引用其他位置在 INF 文件中，INF 编写器定义部分，并导致的要删除文件的列表。
+description: DelFiles 指令引用 inf 文件中其他位置的 INF 写入器定义的部分，并导致删除该文件的列表。
 ms.assetid: e163f88f-e0ab-41e7-97df-49853ec0836f
 keywords:
 - INF DelFiles 指令设备和驱动程序安装
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ca4df3872f33d49efb001c62d77b2a75008b241e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b125bff6055f21812249f3b410eec44f21ca0a48
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370665"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223107"
 ---
 # <a name="inf-delfiles-directive"></a>INF DelFiles 指令
 
 
-**请注意**  如果要构建一个通用或移动设备的驱动程序包，此指令无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
+**注意：**  如果要生成通用或移动驱动程序包，则此指令无效。 请参阅[使用通用 INF 文件](using-a-universal-inf-file.md)。
 
  
 
-一个**DelFiles**指令引用其他位置在 INF 文件中，INF 编写器定义部分，并导致该列表中删除对在其中的内容的操作的上下文中的文件引用**DelFiles**指定指令。
+**DelFiles**指令引用 inf 文件中其他位置的 inf 写入器定义的部分，并导致在指定了引用**DelFiles**指令的部分中的操作上下文中删除该文件列表。
 
-```ini
+```inf
 [DDInstall] | 
 [DDInstall.CoInstallers] | 
 [ClassInstall32] | 
@@ -43,66 +43,66 @@ ms.locfileid: "63370665"
 Delfiles=file-list-section[,file-list-section]... 
 ```
 
-一个**DelFiles**指令可以指定任何正式语法语句中所示的部分内。 此外可以在任何 INF 编写器定义以下各节中指定此指令：
+可以在正式语法语句中所示的任何部分中指定**DelFiles**指令。 还可以在以下任何 INF 写入器定义的部分中指定此指令：
 
--   由引用添加的接口的部分[ **AddInterface** ](inf-addinterface-directive.md)指令[ * **DDInstall *。接口**](inf-ddinstall-interfaces-section.md)部分。
--   安装-接口-部分中引用[ **InterfaceInstall32** ](inf-interfaceinstall32-section.md)部分
+-   由 DDInstall * 中的[**AddInterface**](inf-addinterface-directive.md)指令引用的添加接口部分。 [ *接口](inf-ddinstall-interfaces-section.md)部分。
+-   [**InterfaceInstall32**](inf-interfaceinstall32-section.md)节中引用的安装界面部分
 
-每个命名部分引用的**DelFiles**指令具有以下形式的一个或多个条目：
+**DelFiles**指令引用的每个命名部分都具有以下形式的一个或多个条目：
 
-```ini
+```inf
 [file-list-section]
  
 destination-file-name[,,,flag]
 ...
 ```
 
-一个*文件列表部分*可以有任意数量的条目，每个单独的行上。
+*文件列表部分*可以有任意数量的条目，每个条目都在单独的行上。
 
 ## <a name="entries"></a>条目
 
 
-<a href="" id="destination-file-name"></a>*destination-file-name*  
+<a href="" id="destination-file-name"></a>*目标-文件名*  
 指定要从目标中删除的文件的名称。
 
-未指定文件中列出[ **CopyFiles** ](inf-copyfiles-directive.md)指令。 如果某个文件列出在这种**CopyFiles**的引用和一个**DelFiles**-引用部分中，并且该文件是否具有有效签名的系统上当前存在，操作系统可能优化掉复制操作但执行删除操作。 这是很有可能*不*适用哪些 INF 的编写器。
+不要指定[**CopyFiles**](inf-copyfiles-directive.md)指令中列出的文件。 如果文件同时在**CopyFiles**引用的和**DelFiles**的节中列出，并且该文件当前在具有有效签名的系统上，则操作系统可能会优化掉复制操作，但执行删除操作。 这很可能*不*是 INF 编写器的预期。
 
-**请注意**  不能使用 %*strkey*%令牌，以指定目标文件名条目。 详细了解 %*strkey*%令牌，请参阅[ **INF 字符串部分**](inf-strings-section.md)。
+**请注意**  ，不能使用%*strkey*% 令牌来指定目标文件名项。 有关%*strkey*% 令牌的详细信息，请参阅[**INF 字符串部分**](inf-strings-section.md)。
 
  
 
-<a href="" id="flag"></a>*flag*  
-此可选值可以是以下值之一所示此处或为十进制值，以十六进制表示法表示：
+<a href="" id="flag"></a>*标志*  
+此可选值可以是以下值之一，以十六进制表示法表示，或以十进制值表示：
 
-<a href="" id="0x00000001--delflg-in-use-"></a>**0x00000001** (DELFLG_IN_USE)  
-后它在安装过程中使用可能删除的命名的文件。
+<a href="" id="0x00000001--delflg-in-use-"></a>**0x00000001** （DELFLG_IN_USE）  
+删除已命名的文件，可能在安装过程中使用该文件。
 
-如果无法删除给定的文件，因为它正在使用此 INF 在处理时，系统已重新启动之前，设置此标志中 INF 值排队文件删除操作。 否则，将删除此类文件。
+在 INF 中设置此标志值会将文件删除操作排队，直到系统重新启动（如果无法删除给定文件，因为该文件在处理此 INF 时正在使用）。 否则，将不会删除此类文件。
 
-<a href="" id="0x00010000---delflg-in-use1-"></a>**0x00010000** (DELFLG_IN_USE1)  
-（Windows 2000 或更高版本的 Windows）此标志是 DELFLG_IN_USE 标志的高 word 版本，它具有相同的目的和效果。 仅对在基于 NT 的系统上安装，应在使用此标志。
+<a href="" id="0x00010000---delflg-in-use1-"></a>**0x00010000** （DELFLG_IN_USE1）  
+（Windows 2000 或更高版本的 Windows）此标志是 DELFLG_IN_USE 标志的高词版本，它具有相同的用途和效果。 此标志仅应在基于 NT 的系统上的安装中使用。
 
-设置此标志中 INF 值可防止在两个 INF COPYFLG_WARN_IF_SKIP 标志与冲突**DelFiles**并[ **CopyFiles** ](inf-copyfiles-directive.md)引用指令相同*文件列表部分*。
+在 INF 中设置此标志值可防止与 INF 中的 COPYFLG_WARN_IF_SKIP 标志冲突，同时包含引用相同*文件列表部分*的**DelFiles**和[**CopyFiles**](inf-copyfiles-directive.md)指令。
 
 <a name="remarks"></a>备注
 -------
 
-**重要**  必须谨慎使用此指令。 我们强烈建议不要使用**DelFiles**指令 Plug and play INF 文件中 (PnP) 函数驱动程序。
+**重要说明**  必须谨慎使用此指令。 我们强烈建议你不要在 INF 文件中对即插即用（PnP）函数驱动程序使用**DelFiles**指令。
 
  
 
-任何*文件列表部分*名称必须是唯一的 INF 文件，但它可以被[ **CopyFiles**](inf-copyfiles-directive.md)， **DelFiles**，或[ **RenFiles** ](inf-renfiles-directive.md)指令相同 INF 中的其他位置。 此类 INF 编写器定义的节名称必须遵循的一般规则用于定义的节名称。 有关这些规则的详细信息，请参阅[INF 文件的常规语法规则](general-syntax-rules-for-inf-files.md)。
+对于 INF 文件，任何*文件列表节*名称必须是唯一的，但它可以在同一 INF 中的其他位置通过[**CopyFiles**](inf-copyfiles-directive.md)、 **DelFiles**或[**RenFiles**](inf-renfiles-directive.md)指令引用。 此类 INF 写入方定义的部分名称必须遵循用于定义节名称的常规规则。 有关这些规则的详细信息，请参阅[INF 文件的一般语法规则](general-syntax-rules-for-inf-files.md)。
 
-**DelFiles**指令不支持修饰*文件列表部分*名称与系统定义的平台扩展 (**.nt**， **.ntx86**， **.ntia64**， **.ntamd64**， **.ntarm**，或 **.ntarm64**)。
+**DelFiles**指令不支持使用系统定义的平台扩展（**nt**、 **. ntx86**、 **. ntia64**、 **ntamd64**、 **ntarm**或**ntarm64**）修饰*文件列表节*名称。
 
-[ **DestinationDirs** ](inf-destinationdirs-section.md) INF 文件的部分控制的所有文件删除操作，而不考虑包含特定的部分目标**DelFiles**指令。 如果引用的指定部分**DelFiles**指令有一个对应的条目**DestinationDirs**相同 INF，该条目的部分显式指定从目标目标目录在命名的节中列出的所有文件将被都删除。 如果在未列出的命名的节**DestinationDirs**部分中，Windows 使用**DefaultDestDir** INF 中的条目。
+INF 文件的[**DestinationDirs**](inf-destinationdirs-section.md)部分控制所有文件删除操作的目标，而不考虑包含特定**DelFiles**指令的部分。 如果**DelFiles**指令引用的命名节在同一 INF 的**DestinationDirs**节中具有相应的条目，则该条目显式指定将删除已命名部分中列出的所有文件的目标目标目录。 如果命名部分未在**DestinationDirs**节中列出，则 Windows 将在 INF 中使用**DefaultDestDir**条目。
 
 <a name="examples"></a>示例
 --------
 
-此示例演示如何[ **DestinationDirs** ](inf-destinationdirs-section.md)部分处理简单设备驱动程序 INF 中指定删除文件操作，它的路径。
+此示例显示了[**DestinationDirs**](inf-destinationdirs-section.md)节如何指定在处理简单设备驱动程序 INF 时所发生的删除文件操作的路径。
 
-```ini
+```inf
 [DestinationDirs]
 DefaultDestDir = 12  ; DIRID_DRIVERS 
 
@@ -118,7 +118,7 @@ VASPID.SYS ; name of file to be deleted, if it exists on target
 ; ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**AddInterface**](inf-addinterface-directive.md)
@@ -136,7 +136,7 @@ VASPID.SYS ; name of file to be deleted, if it exists on target
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 
 **RenFiles**
-[**Strings**](inf-strings-section.md)
+[**字符串**](inf-strings-section.md)
 
  
 

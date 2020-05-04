@@ -6,12 +6,12 @@ keywords:
 - x86 INF 文件平台扩展 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b100a09c2f2c2794963404030e95260e9727d6da
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 782ad30f4a755c4bd6119a1fb54a18c438b17f44
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243030"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223145"
 ---
 # <a name="inf-file-platform-extensions-and-x86-based-systems"></a>INF 文件平台扩展和基于 x86 的系统
 
@@ -32,19 +32,19 @@ ms.locfileid: "79243030"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>.ntamd64</strong></p></td>
-<td align="left"><p>不受支持。</p></td>
+<td align="left"><p>不支持。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>.ntia64</strong></p></td>
-<td align="left"><p>不受支持。</p></td>
+<td align="left"><p>不支持。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>.ntarm</strong></p></td>
-<td align="left"><p>不受支持。</p></td>
+<td align="left"><p>不支持。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>.ntarm64</strong></p></td>
-<td align="left"><p>不受支持。</p></td>
+<td align="left"><p>不支持。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>.ntx86</strong></p></td>
@@ -69,7 +69,7 @@ ms.locfileid: "79243030"
 
 [为基于 x86 的系统创建 INF 文件（Windows 2000 及更高版本）](#creating-inf-files-for-x86-based-systems--windows-2000-and-later-)
 
-### <a href="" id="platform-extensions-and-x86-based-systems--windows-2000-and-later-"></a>平台扩展和基于 x86 的系统
+### <a name="platform-extensions-and-x86-based-systems"></a><a href="" id="platform-extensions-and-x86-based-systems--windows-2000-and-later-"></a>平台扩展和基于 x86 的系统
 
 Windows XP 和更高版本的 Windows 支持在*模型*中使用可选的**nt**或 **. ntx86**平台扩展，以及支持平台扩展的其他部分的名称。
 
@@ -77,13 +77,13 @@ Windows 2000 不支持[**INF*型号*部分**](inf-models-section.md)名称上的
 
 对于支持可选平台扩展的部分，Windows 会选择要处理的部分，如下所示：
 
-1. Windows 将检查<em>节名称</em> **. ntx86**部分，如果存在，则对其进行处理。 Windows 将检查正在处理的 INF 文件和任何包含的 INF 文件中的**ntx86**扩展（即包含**包含**在包含项中的任何 inf 文件）。
+1. Windows 将检查<em>节名称</em>**. ntx86**部分，如果存在，则对其进行处理。 Windows 将检查正在处理的 INF 文件和任何包含的 INF 文件中的**ntx86**扩展（即包含**包含**在包含项中的任何 inf 文件）。
 
 2. 如果<em>节名称</em>**ntx86**部分不存在，则 Windows 将检查 inf 文件或任何包含的 inf 文件中的<em>部分名称</em>**nt 部分。** 如果存在，则 Windows 将处理<em>节名称</em>**nt**部分。
 
 3. 如果<em>节名</em>**nt**部分不存在，则 Windows 将处理不包含平台扩展的*节名称*节。
 
-### <a href="" id="creating-inf-files-for-x86-based-systems--windows-2000-and-later-"></a>为基于 x86 的系统创建 INF 文件
+### <a name="creating-inf-files-for-x86-based-systems"></a><a href="" id="creating-inf-files-for-x86-based-systems--windows-2000-and-later-"></a>为基于 x86 的系统创建 INF 文件
 
 通常，你不能使用单个 INF 文件来区分基于操作系统版本的设备安装。 例如，如果支持设备的文件或注册表设置在基于 x86 的操作系统版本之间不同，则必须为每个版本创建特定于操作系统的 INF 文件。
 
@@ -97,7 +97,7 @@ Windows 2000 不支持[**INF*型号*部分**](inf-models-section.md)名称上的
 
 2.  包括一个 INF**制造商**部分，其中包含*制造商标识符*，该标识符指定设备的*型号*部分名称，但不指定可选的**nt**或 **. ntx86**平台扩展。 例如，以下**制造商**部分为 Abc 设备指定了 "AbcModelSection"*模型*部分名称。
 
-    ```ini
+    ```inf
     [Manufacturer]
     ; The manufacturer-identifier for the Abc device.
     %ManufacturerName%=AbcModelSection
@@ -105,14 +105,14 @@ Windows 2000 不支持[**INF*型号*部分**](inf-models-section.md)名称上的
 
 3.  包括名称与 "**制造商**" 部分中*制造商标识符*指定的 "*模型*" 部分名称匹配的*模型*部分。 例如，Abc 设备的以下 AbcModelSection 部分包含*设备说明*，该说明指定了 "AbcInstallSection" 的*安装节名称*。
 
-    ```ini
+    ```inf
     [AbcModelSection]
     %AbcDeviceName%=AbcInstallSection,Abc-hw-id
     ```
 
 4.  包括名称与 "*模型*" 部分指定的*安装节名称*匹配的*DDInstall*节。 例如，"AbcModelSection" 部分中的 "*设备说明*" 为 Abc 设备指定以下 AbcInstallSection 部分。 Windows 将处理此部分，以在运行 Windows 2000 和更高版本的 Windows 的基于 x86 的系统上安装 Abc 设备。
 
-    ```ini
+    ```inf
     [AbcInstallSection]
     ; Install section entries go here.
     ...

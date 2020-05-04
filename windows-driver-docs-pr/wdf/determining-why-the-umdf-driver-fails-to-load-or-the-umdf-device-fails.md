@@ -11,12 +11,12 @@ keywords:
 - UMDF WDK，设备未启动方案
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef23e04d8451fc3b058b2cc6e2c228a75980a0b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dae98201f8cb6ec71b1f6de61b3443451f5ca547
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833674"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173519"
 ---
 # <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>确定 UMDF 驱动程序无法加载或 UMDF 设备无法启动的原因
 
@@ -28,9 +28,9 @@ ms.locfileid: "72833674"
 1.  通过确保以下文件正确来检查设置：
     -   驱动程序的 INF 文件。
 
-        使用[ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)工具验证驱动程序的 INF 文件。
+        使用[InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)工具验证驱动程序的 INF 文件。
 
-    -   % windir%\\inf\\setupapi.log （Windows XP 上的 setupapi.log）、% windir%\\setupact.log 和% windir%\\temp\\wudf\_更新日志文件。
+    -   % windir%\\inf\\\\setupapi.log （Windows XP 上的 setupapi.log）、% windir% setupact.log 和% windir%\\temp\\wudf\_更新日志文件。
 
 2.  如果未找到任何安装问题，请通过使用[WDF 验证器控件应用程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)（您尚未 wdfverifier）来启用**HostProcessDbgBreakOnStart**注册表项。 通过启用**HostProcessDbgBreakOnStart**，你将在 WUDFHost 启动之后但在加载驱动程序 DLL 之前，将设备的驱动程序宿主进程（WUDFHost）立即进入调试器。
 
@@ -57,7 +57,7 @@ ms.locfileid: "72833674"
 
     6.  如果前面的每个操作都已成功运行，但随后执行的操作未运行，则应检查以下各项：
         1.  验证用户模式堆栈中的驱动程序上方和下方的每个驱动程序是否也成功执行这些操作。
-        2.  验证驱动程序以下的内核堆栈是否已成功完成[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)和[**IRP\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)irp。
+        2.  验证驱动程序下面的内核堆栈是否已成功完成[**IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)和[**irp\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)irp。
 
  
 

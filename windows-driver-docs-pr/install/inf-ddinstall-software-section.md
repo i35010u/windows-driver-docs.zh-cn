@@ -1,20 +1,20 @@
 ---
 title: INF DDInstall.Software 节
-description: DDInstall.Software 部分包含一个或多个引用的软件组件 INF 文件中的其他 INF 编写器定义部分的 INF AddSoftware 指令。
+description: DDInstall 部分包含一个或多个 INF AddSoftware 指令，这些指令引用软件组件 INF 文件中其他由 INF 编写器定义的部分。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 834120ca5ae4fc2c96f1e0f7ea0d30ffafe36340
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a942b1f394261f106a63363c8bb3da61b1046610
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370675"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223221"
 ---
 # <a name="inf-ddinstallsoftware-section"></a>INF DDInstall.Software 节
 
-每个每个模型*DDInstall*。**软件**部分包含一个或多个[ **INF AddSoftware 指令**](inf-addsoftware-directive.md)引用的软件组件 INF 文件中的其他 INF 编写器定义部分。  本部分被支持 Windows 10 版本 1703年及更高版本。
+每个模型*DDInstall*。**Software**节包含一个或多个[**inf AddSoftware 指令**](inf-addsoftware-directive.md)，这些指令引用软件组件 INF 文件中其他由 INF 编写器定义的部分。  Windows 10 版本1703及更高版本支持此部分。
 
-```ini
+```inf
 [install-section-name.Software] |
 [install-section-name.nt.Software] |
 [install-section-name.ntx86.Software] |
@@ -26,27 +26,27 @@ ms.locfileid: "63370675"
 AddSoftware=SoftwareName,[flags],software-install-section
 ```
 
-你可以提供*DDInstall*。**软件**上至少有一个部分[AddSoftware 指令](inf-addsoftware-directive.md)从软件组件安装软件。
+可以提供*DDInstall*。包含至少一个[AddSoftware 指令](inf-addsoftware-directive.md)以从软件组件安装软件的**软件**部分。
 
 软件安装必须为非交互式。
 
 ## <a name="entries"></a>条目
 
-**AddSoftware**=*SoftwareName,[flags],software-install-section*
+**AddSoftware**=*SoftwareName，[flags]，software-安装节*
 
-此指令引用 INF 编写器的定义*软件安装部分*软件组件 INF 文件中的其他位置。  有关详细信息，请参阅[ **INF AddSoftware 指令**](inf-addsoftware-directive.md)。
+此指令在软件组件 INF 文件中的其他位置引用一个由 INF 编写器定义的*软件安装部分*。  有关详细信息，请参阅[**INF AddSoftware 指令**](inf-addsoftware-directive.md)。
 
 ## <a name="remarks"></a>备注
 
-*DDInstall*。**软件**部分应具有其相关的相同平台和操作系统修饰*DDInstall*部分。  例如，*安装的部分名称*。**ntx86**部分中将具有相应*安装的部分名称*。**ntx86。软件**部分。
+*DDInstall*。**软件**部分应该与相关的*DDInstall*部分具有相同的平台和操作系统修饰。  例如，*安装--名称*。**ntx86**部分会有一个相应的*安装节名称*。**ntx86。软件**部分。
     
-指定*DDInstall*部分必须在每个制造商下的特定于设备/模型的项中引用*模型*INF 文件部分。 不区分大小写的扩展*安装的部分名称*所示在正式语法语句可插入到此类<em>DDInstall</em>**。软件**跨平台 INF 文件中的节名称。
+在 INF 文件的 "每制造商"*型号*部分下，必须在特定于设备/模型的条目中引用指定的*DDInstall*部分。 在正式语法语句中显示的*安装节名称*不区分大小写的扩展可以插入到此类<em>DDInstall</em>中 **。** 跨平台 INF 文件中的软件分区名称。
 
-有关如何使用系统定义的详细信息 **.nt**， **.ntx86**， **.ntia64**， **.ntamd64**， **.ntarm**，并 **.ntarm64**扩展，请参阅[创建多个平台和操作系统的 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+有关如何使用**系统定义的** **ntx86**、 **ntia64**、 **ntamd64**、 **ntarm**和**Ntarm64**扩展的详细信息，请参阅[为多个平台和操作系统创建 INF 文件](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
 
 ## <a name="examples"></a>示例
 
-```ini
+```inf
 [ContosoCtrlPnl.NT.Software]
 AddSoftware = ContosoGrfx1CtrlPnl,, Software_Inst
 
@@ -57,7 +57,7 @@ SoftwareArguments = <<DeviceInstanceID>>
 SoftwareVersion = 1.0.0.0
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [使用组件 INF 文件](using-a-component-inf-file.md)。
 
