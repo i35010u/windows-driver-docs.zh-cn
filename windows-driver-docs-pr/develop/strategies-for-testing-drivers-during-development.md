@@ -4,12 +4,12 @@ title: 测试驱动程序代码和驱动程序包的相关建议。
 description: 应在何时开始测试？ 了解驱动程序的要求后，便可以立即开始设计测试用例来测试是否已实现了这些关键要求。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0964ab68748c3a9af7fdcf21aa0f0eccda0e534
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8a240fa574c407c81c48149e6e55470f2e6c1367
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74261419"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173547"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>开发期间测试驱动程序的相关技巧
 
@@ -32,7 +32,7 @@ ms.locfileid: "74261419"
 
 -   在开发过程的早期创建 INF 文件和驱动程序包，并在整个测试中使用。
 
--   使用 [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf) 工具来验证 INF 文件的结构和语法，并帮助你诊断 INF 文件和其他安装相关问题。
+-   使用 [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif) 工具来验证 INF 文件的结构和语法，并帮助你诊断 INF 文件和其他安装相关问题。
 
 -   使用 [**Inf2Cat**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat) 工具（通过 **/nocat** 选项）来执行额外的 INF 文件验证。 **Inf2Cat** 可以验证 INF 引用的文件是否存在并放在 INF 预期的包目录中。
 

@@ -130,7 +130,7 @@
           href: opening-and-closing-an-inf-file.md
         - name: 从 INF 文件中检索信息
           href: retrieving-information-from-an-inf-file.md
-        - name: 为 Shell 和自动播放提供供应商图标
+        - name: 为设备提供图标
           href: providing-vendor-icons-for-the-shell-and-autoplay.md
     - name: 驱动程序签名
       items:
