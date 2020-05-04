@@ -118,5 +118,7 @@
               href: testing-BTP-tests-pairing.md
             - name: 测试蓝牙 HID
               href: testing-BTP-tests-hid.md
+            - name: 测试蓝牙音频
+              href: testing-BTP-tests-audio.md
 - name: 蓝牙无线收发器重置和恢复
   href: bluetooth-radio-error-recovery.md

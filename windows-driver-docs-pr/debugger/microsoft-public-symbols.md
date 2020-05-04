@@ -9,17 +9,17 @@ keywords:
 - Microsoft 符号存储
 ms.date: 04/26/2018
 ms.localizationpriority: High
-ms.openlocfilehash: bc3e794ba35bb3cef1a8db136a9bea2ce0eaef35
-ms.sourcegitcommit: fe0b8b8b162c6fc0afd82dd03e83d41be0bc5d12
+ms.openlocfilehash: 01d18916e96b2d96aab3b839e85b0fdfb7a7dcaf
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72980746"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft 公共符号服务器
 
 
-**服务器状态：** MSDL 服务中断 <br> 我们在所有区域收到了错误报告。 客户可能无法解析公共符号。 团队正在积极调查此问题并努力提供解决方法。  <br>
+**服务器状态：** 无已知问题 :white_check_mark: <br> Microsoft 公共符号服务器已全面运行。 <br>
 请将任何已知问题报告给 [windbgfb@microsoft.com](mailto:windbgfb@microsoft.com)。 
 
 ---

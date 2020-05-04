@@ -16,10 +16,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
 ms.openlocfilehash: d2a7da20e127757192cc0dd88fd0c70cb213b5dc
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75210817"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
@@ -122,7 +122,7 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 
     -   即使未连接调试程序，也可以访问这两种日志。  若要了解具体方法，请观看[视频：在没有调试程序的情况下访问驱动程序 IFR 日志](video--accessing-driver-ifr-logs-without-a-debugger.md)。
 
-    -   调试 UMDF 驱动程序时，可以将框架日志与驱动程序日志合并在一起，方法是发出以下命令： **!wdfkd.wdflogdump** *&lt;drivername.dll&gt;* **-m**
+    -   调试 UMDF 驱动程序时，可以将框架日志与驱动程序日志合并在一起，方法是发出以下命令：!wdfkd.wdflogdump  &lt;drivername.dll&gt;  -m 
 
 -   UMDF 日志 (WudfTrace.etl) 和转储现在位于 %ProgramData%\\Microsoft\\WDF 中而不是 %systemDrive%\\LogFiles\\Wudf 中。
 
