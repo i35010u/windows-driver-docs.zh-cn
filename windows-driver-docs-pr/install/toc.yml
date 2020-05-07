@@ -58,8 +58,8 @@
           href: driver-rank-example--windows-vista-and-later-.md
         - name: SetupAPI 日志中的驱动程序分级信息
           href: driver-rank-information-in-the-setupapi-log.md
-        - name: AllSignersEqual 组策略
-          href: allsignersequal-group-policy--windows-vista-and-later-.md
+        - name: AllSigningEqual 组策略
+          href: allsigningequal-group-policy.md
 - name: 概念
   items:
     - name: 驱动程序包

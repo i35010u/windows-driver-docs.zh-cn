@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8ae4fe2aecf6284e2fa493406d6ab1306b2ca7
-ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
+ms.openlocfilehash: 9d7b9c2a137f5cd12ef7f912a450f983b9851c03
+ms.sourcegitcommit: 6e2986506940c203a6a834a927a774b7efa6b86e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82223109"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82800094"
 ---
 # <a name="inf-strings-section"></a>INF Strings 节
 
@@ -93,6 +93,9 @@ INF 文件只能包含一个**字符串**和一个**字符串。** 每个*Langua
 Windows 选择一个**字符串**部分用于转换用于安装的所有%*strkey*% 令牌。 根据特定计算机的当前区域设置，Windows 会按以下方式选择**字符串**部分：
 
 1.  Windows 首先查找 *。* INF 中与分配给计算机的当前区域设置相匹配的 LanguageID 值。 如果找到完全匹配项，Windows 将使用该**LanguageID** inf 部分来转换 INF 中定义的所有%*strkey*% 令牌。
+
+    你确实需要在所有字符串中复制所有字符串标记 **。**<i>*</i>**]** 节，甚至是无需本地化的数值/固定常数。
+
 2.  否则，Windows 会查找 "下一步"，以查找 LANG_*xxx*值的匹配项，并将 SUBLANG_NEUTRAL 的值作为 SUBLANG_*XXX*。 如果找到此匹配项，Windows 将使用该 INF 部分来转换 INF 中定义的所有%*strkey*% 令牌。
 3.  否则，Windows 会查找 "下一步"，以匹配 LANG_*xxx*值和相同 LANG_*xxx*系列的任何有效 SUBLANG_*xxx* 。 如果找到这样的部分匹配项，请使用 LanguageID INF 部分来转换 INF 中定义的所有%*strkey*% 令牌。
 4.  否则，Windows 会将未修饰的字符串部分用于在 INF 中定义的所有转换%*strkey*% 令牌。

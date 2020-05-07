@@ -3,16 +3,16 @@ title: 无法验证长度可变的缓冲区
 description: 无法验证长度可变的缓冲区
 ms.assetid: 0cc4be22-8197-421a-a5a6-2e7b89a79a38
 keywords:
-- 输入的缓冲区 WDK 内核
-- 长度可变的输入的缓冲区 WDK 内核
+- 输入缓冲 WDK 内核
+- 可变长度输入缓冲 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be723319ea8d6b2419f40e83068f0e6d0e6f0bb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9497c5944dcf88bc301d2421b621967bf59bc34
+ms.sourcegitcommit: 6e2986506940c203a6a834a927a774b7efa6b86e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359984"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82800092"
 ---
 # <a name="failure-to-validate-variable-length-buffers"></a>无法验证长度可变的缓冲区
 
@@ -20,7 +20,7 @@ ms.locfileid: "63359984"
 
 
 
-驱动程序通常接受输入的缓冲区的固定标头和尾部可变长度数据，如以下示例所示：
+驱动程序通常接受带有固定标头和尾随可变长度数据的输入缓冲区，如以下示例中所示：
 
 ```cpp
    typedef struct _WAIT_FOR_BUFFER {
@@ -44,7 +44,7 @@ ms.locfileid: "63359984"
    }
 ```
 
-如果**WaitBuffer-&gt;NameLength**是一个非常大的 ULONG 值，将添加到偏移量，可能会导致整数溢出。 相反，驱动程序应该减去的偏移**InputBufferLength**，并将结果与进行比较**WaitBuffer-&gt;NameLength**，如以下示例：
+如果**WaitBuffer-&gt;NameLength**是非常大的 ULONG 值，则将其添加到偏移量可能导致整数溢出。 相反，驱动程序应从**InputBufferLength** （缓冲区大小）中减去偏移量（固定标头大小），并测试结果是否为**WaitBuffer-&gt;NameLength** （可变长度数据）留出足够的空间，如以下示例中所示：
 
 ```cpp
    if (InputBufferLength < sizeof(WAIT_FOR_BUFFER)) {
@@ -55,14 +55,16 @@ ms.locfileid: "63359984"
    WaitBuffer = Irp->AssociatedIrp.SystemBuffer;
 
    if ((InputBufferLength -
-         FIELD_OFFSET(WAIT_FOR_BUFFER, Name[0])  >
+         FIELD_OFFSET(WAIT_FOR_BUFFER, Name[0])  <
          WaitBuffer->NameLength) {
       IoCompleteRequest( Irp, STATUS_INVALID_PARAMETER );
       return( STATUS_INVALID_PARAMETER );
    }
 ```
 
-上述减法无法下溢，因为第一个**如果**语句可确保**InputBufferLength**大于或等于的大小**等待\_为\_缓冲区**。
+换而言之，如果缓冲区大小减去固定标头大小的长度少于可变长度数据所需的字节数，则返回失败。
+
+上述减法不能下溢，因为第一个**if**语句可确保**InputBufferLength**大于或等于**等待\_\_缓冲区**的大小。
 
 下面显示了更复杂的溢出问题：
 
@@ -84,7 +86,7 @@ ms.locfileid: "63359984"
       }
 ```
 
-在此示例中，在乘法会发生整数溢出。 如果的大小**设置\_值\_信息**结构是 2 的倍数**NumEntries**值如 0x80000000 导致溢出时，bits 时期间的左移乘法。 但是，缓冲区大小将不过通过验证测试，因为溢出会导致**dwSize**才会显示相当小。 若要避免此问题，如前面的示例中所示的长度减去、 除以**sizeof**(**设置\_值\_信息**)，并比较结果与**NumEntries**。
+在此示例中，在乘法运算期间可能发生整数溢出。 如果**集\_\_值信息**结构的大小是2的倍数，则当在乘法运算期间将位向左移位时， **NumEntries**值（例如0x80000000）会导致溢出。 但是，缓冲区大小仍将通过验证测试，因为溢出会导致**dwSize**显示得相当小。 若要避免此问题，请在前面的示例中按**sizeof 除以 sizeof**（**设置\_值\_信息**）来减去长度，并将结果与**NumEntries**进行比较。
 
  
 

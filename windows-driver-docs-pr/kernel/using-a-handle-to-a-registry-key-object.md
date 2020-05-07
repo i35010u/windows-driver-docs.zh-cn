@@ -10,12 +10,12 @@ keywords:
 - 注册表-密钥对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b61185a0f3fedc83065b10f0e47823cee4a48c01
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fa2b11c0202b8ee8ff4a0d34a333487cfd3fce5b
+ms.sourcegitcommit: 63402c9cd10f909e355172037f9bd2d58813303c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838369"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82883716"
 ---
 # <a name="using-a-handle-to-a-registry-key-object"></a>使用注册表项对象的句柄
 
@@ -70,9 +70,9 @@ ms.locfileid: "72838369"
 
  
 
-驱动程序完成其操作后，必须调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)来关闭句柄，除非它已调用**ZwDeleteKey**来删除该密钥。 （删除密钥后，其所有打开的句柄将变为无效，因此在这种情况下，驱动程序不得关闭句柄。）
+一旦驱动程序完成其操作，它就必须调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)来关闭句柄，即使它已调用**ZwDeleteKey**来删除密钥。 （删除密钥后，其所有打开的句柄将变为无效，但驱动程序仍须关闭句柄。）
 
-下面的代码示例演示了如何为名为 **\\注册表\\Machine\\Software\\** <em>MyCompany</em>\\*MyApp*的密钥打开句柄，然后检索密钥数据并关闭句柄。
+下面的代码示例演示了如何为名为** \\\\注册表计算机\\Software\\**<em>MyCompany</em>\\*MyApp*的密钥打开句柄，然后检索密钥数据并关闭句柄。
 
 ```cpp
 //

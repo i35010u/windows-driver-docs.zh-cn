@@ -4,12 +4,12 @@ description: 如何卸载设备和驱动程序包
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdf01743fdb97a60dda18192583b7cb1f344ab7b
-ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
+ms.openlocfilehash: 4f209df90a9ee1d600a37e0f2ebd073783276860
+ms.sourcegitcommit: 6e2986506940c203a6a834a927a774b7efa6b86e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173551"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82800097"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>如何卸载设备和驱动程序包
 
@@ -56,7 +56,7 @@ ms.locfileid: "82173551"
 
 在从驱动程序存储区中删除驱动程序包之前，请确保卸载使用它的所有设备。
 
-**重要说明**  你不得从[驱动程序存储区](driver-store.md)中手动删除[驱动程序包](driver-packages.md)。 这样做可能会导致 INF 文件、驱动程序存储目录和驱动程序存储区中的驱动程序不一致。 你可能还无法将同一驱动程序包暂存到驱动程序存储区。
+**重要提示**  从[驱动程序存储区](driver-store.md)中手动删除[驱动程序包](driver-packages.md)可能会导致不可预知的行为。
 
  
 
