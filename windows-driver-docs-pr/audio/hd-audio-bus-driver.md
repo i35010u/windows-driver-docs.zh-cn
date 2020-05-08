@@ -3,50 +3,50 @@ title: HD 音频总线驱动程序
 description: HD 音频总线驱动程序
 ms.assetid: a08f4304-467b-45cf-8026-87f41b408692
 keywords:
-- 高清晰度音频，通用音频体系结构
-- 高清晰度音频 （HD 音频） 通用音频体系结构
+- HD 音频，通用音频体系结构
+- 高清晰音频（HD 音频），通用音频体系结构
 - UAA WDK
 - 通用音频体系结构 WDK
 - 总线驱动程序 WDK 音频
-- HD Audio，总线驱动程序
-- 高清晰度音频 (HD Audio) 总线驱动程序
+- HD 音频，总线驱动程序
+- 高清晰音频（HD 音频），总线驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a15802a495212ec51a559917614093d565ca1c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6885db4038e3dedc0e7f53cccbe914b4ef6820ad
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333602"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925584"
 ---
 # <a name="hd-audio-bus-driver"></a>HD 音频总线驱动程序
 
 
-HD Audio 总线驱动程序是唯一的软件组件来直接访问硬件的 HD Audio 总线界面控制器注册。 总线驱动程序公开 HD 音频 DDI 的子级-实例的功能的驱动程序，用于控制音频和调制解调器的编解码器-可以使用 HD Audio 控制器硬件进行编程。 此外，总线驱动程序管理的 HD 音频链接硬件资源，其中包括的 DMA 引擎和总线带宽。 功能的驱动程序分配和释放这些资源通过 HD 音频 DDI。
+HD 音频总线驱动程序是唯一直接访问 HD 音频总线接口控制器的硬件寄存器的软件组件。 总线驱动程序公开了 HD 音频 DDI，其中的子（控制音频和调制解调器编解码器的函数驱动程序的实例）可用于对 HD 音频控制器硬件进行编程。 此外，总线驱动程序还管理 HD 音频链接硬件资源，其中包括 DMA 引擎和总线带宽。 函数驱动程序通过 HD audio DDI 分配和释放这些资源。
 
-HD Audio 总线驱动程序：
+HD 音频总线驱动程序：
 
--   查询在总线上的编解码器，并创建管理编解码器的子级。
+-   在总线上查询编解码器，并创建子编解码器来管理编解码器。
 
--   处理中断服务例程 (Isr) 的未经请求的响应并传播到其子未经请求的响应。
+-   处理非请求响应的中断服务例程（Isr），并将未经请求的响应传播到其子代。
 
--   将其子级中的命令传递给编解码器，并从编解码器检索响应。
+-   将命令从其子编解码器传递到编解码器，并从编解码器检索响应。
 
--   设置传输到或从循环缓冲区数据的 DMA 引擎。
+-   设置在循环缓冲区之间传输数据的 DMA 引擎。
 
 -   管理 HD 音频链接上的总线带宽资源。
 
--   提供对墙时钟寄存器和链接位置寄存器的访问。
+-   提供对墙壁时钟寄存器和链接位置寄存器的访问。
 
--   提供了已同步的启动和停止的流的组。
+-   提供同步的流组的启动和停止。
 
-HD Audio 总线驱动程序不提供：
+HD 音频总线驱动程序未提供：
 
--   用于编程 DSP 或 Intel 高定义音频规范中未定义的其他寄存器的接口。
+-   用于对未在 Intel 高质音频规范中定义的 DSP 或其他寄存器进行编程的接口。
 
--   按优先顺序排列的带宽管理。
+-   优先带宽管理。
 
-在设备枚举期间 HD Audio 总线驱动程序检测到连接到高清晰度音频控制器的 HD 音频链路的编解码器。 对于每个编解码器，总线驱动程序将为它找到编解码器中的每个函数组加载一个功能驱动程序 （如果可用）。 有关函数组的信息，请参阅 Intel 高定义音频规范[Intel HD Audio](https://go.microsoft.com/fwlink/p/?linkid=42508)网站。
+在设备枚举过程中，HD 音频总线驱动程序检测附加到 HD audio 控制器的 HD 音频链接的编解码器。 对于每个编解码器，总线驱动程序会为它在编解码器内找到的每个函数组加载一个函数驱动程序（如果可用）。 有关函数组的信息，请参阅[INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html)网站上的 Intel 高质音频规范。
 
  
 

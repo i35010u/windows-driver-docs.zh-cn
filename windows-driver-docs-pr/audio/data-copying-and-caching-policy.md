@@ -13,12 +13,12 @@ keywords:
 - 数据复制 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4683f20185d2e178d1a5f205860d8a4b78e3606f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4449e4328b31b23eec5ca6086ae3974fcab6af28
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833584"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925610"
 ---
 # <a name="data-copying-and-caching-policy"></a>数据复制和缓存策略
 
@@ -41,9 +41,9 @@ WaveCyclic 微型端口驱动程序在 DMA 缓冲区（HD Audio 控制器硬件�
 
 函数驱动程序复制到 DMA 缓冲区的数据块无需在写入合并的缓冲区边界上开始或结束，并且它的大小不需要是写入合并缓冲区大小（通常为32或64字节）的倍数。
 
-对于使用[**HDAUDIO\_总线\_接口\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)版本的 DDI 的编解码器函数驱动程序， [**AllocateContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer)例程将同时执行 DMA 缓冲区内存的分配和映射。 例程始终将缓冲区的缓存类型设置为**MmWriteCombined**。
+对于使用 DDI 的[**HDAUDIO\_BUS\_\_INTERFACE BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)版本的编解码器函数驱动程序， [**AllocateContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer)例程将同时执行 DMA 缓冲区内存的分配和映射。 例程始终将缓冲区的缓存类型设置为**MmWriteCombined**。
 
-有关写入合并的详细信息，请参阅[intel](https://go.microsoft.com/fwlink/p/?linkid=38518)网站上的 IA-32 Intel 体系结构软件开发人员手册。
+有关写入合并的详细信息，请参阅[intel](https://www.intel.com/content/www/us/en/homepage.html)网站上的 IA-32 Intel 体系结构软件开发人员手册。
 
  
 

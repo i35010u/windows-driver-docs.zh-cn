@@ -6,16 +6,16 @@ keywords:
 - 驱动程序验证程序的代码完整性检查
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d0048d134d47f30896ed17546cbcad7c7c862ba
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c0dad7dd96c1d84d3f3591615fb55ca543264954
+ms.sourcegitcommit: 46b135fe70134bba6cbb8111ce0def7100eed027
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82104605"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82973284"
 ---
 # <a name="code-integrity-checking"></a>代码完整性检查
 
-[Device Guard](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)可以使用硬件技术和虚拟化将代码完整性（CI）决策功能与 Windows 操作系统的其余部分隔离开来。 使用基于虚拟化的安全性来隔离代码完整性时，内核内存可执行的唯一方式是通过代码完整性验证。 这意味着内核内存页永远不能为可写且可执行（W + X）和可执行代码不能直接修改。 代码完整性检查确保这些代码完整性规则的兼容性，并检测以下冲突：
+[受虚拟机监控程序保护的代码完整性](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/use-device-guard-readiness-tool)可以使用硬件技术和虚拟化将代码完整性（CI）决策功能与 Windows 操作系统的其余部分隔离开来。 使用基于虚拟化的安全性来隔离代码完整性时，内核内存可执行的唯一方式是通过代码完整性验证。 这意味着内核内存页永远不能为可写且可执行（W + X）和可执行代码不能直接修改。 代码完整性检查确保这些代码完整性规则的兼容性，并检测以下冲突：
 
 <table>
   <tr>
@@ -89,3 +89,7 @@ ms.locfileid: "82104605"
 2. 选择 "创建自定义设置（对于代码开发人员）"，然后单击 "下一步"。
 3. 选择（检查）代码完整性检查。
 4. 重新启动计算机。
+
+## <a name="related-topics"></a>相关主题
+
+[评估要求 HVCI 驱动程序兼容性](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/use-device-guard-readiness-tool)

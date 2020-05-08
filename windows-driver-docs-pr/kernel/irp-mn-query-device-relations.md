@@ -6,12 +6,12 @@ ms.assetid: 32437c5a-ad92-433c-8255-83775751a44d
 keywords:
 - IRP_MN_QUERY_DEVICE_RELATIONS 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab05cfa55bec65f63128bf571e5bc8904e5eac8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 55884e623edc843a066488d474c8140effdeae4c
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828029"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922586"
 ---
 # <a name="irp_mn_query_device_relations"></a>IRP\_MN\_查询\_设备\_关系
 
@@ -26,10 +26,16 @@ PnP 管理器发送此请求，以确定设备之间的某些关系。 以下类
 
 -   总线驱动程序可以处理其子设备（子 PDOs）的**EjectionRelations**请求。
 
-<a name="major-code"></a>主代码
+## <a name="value"></a>值
+
+0x07
+
+<a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>发送时间
 ---------
 
 PnP 管理器发送此 IRP，收集与指定设备有关系的设备的相关信息。
@@ -38,32 +44,32 @@ PnP 管理器发送此 IRP，收集与指定设备有关系的设备的相关信
 
 PnP 管理器会在删除设备驱动程序之前查询设备的**RemovalRelations** 。 PnP 管理器会在**RemovalRelations**和**EjectionRelations**弹出设备之前对其进行查询。
 
-当驱动程序或用户模式应用程序注册设备上的**EventCategoryTargetDeviceChange**的 pnp 通知时，PnP 管理器会查询设备的**TargetDeviceRelation** 。 PnP 管理器查询与特定文件对象关联的设备。 **IRP\_MN\_查询\_设备\_关系**是唯一具有有效文件对象参数的 PnP IRP。 驱动程序可以为**TargetDeviceRelation**查询设备堆栈。 驱动程序在发送其**TargetDeviceRelation**查询时无需提供文件对象。
+当驱动程序或用户模式应用程序注册设备上的**EventCategoryTargetDeviceChange**的 pnp 通知时，PnP 管理器会查询设备的**TargetDeviceRelation** 。 PnP 管理器查询与特定文件对象关联的设备。 **IRP\_MN\_查询\_设备\_关系**是唯一具有有效 file object 参数的 PnP IRP。 驱动程序可以为**TargetDeviceRelation**查询设备堆栈。 驱动程序在发送其**TargetDeviceRelation**查询时无需提供文件对象。
 
 当设备的驱动程序调用**IoInvalidateDeviceRelations**时，PnP 管理器会查询设备的**PowerRelations** ，以指示此设备具有隐式电源管理关系的设备集已发生更改。 从 Windows 7 开始支持**PowerRelations**请求。
 
-对于**BusRelations**、 **RemovalRelations**、 **EjectionRelations**和**PowerRelations**请求，PnP 管理器\_设备\_关系在系统线程的上下文中发送**IRP\_MN\_查询设备\_关系**。
+对于**BusRelations**、 **RemovalRelations**、 **EjectionRelations**和**PowerRelations**请求，PnP 管理器会在系统线程的上下文中发送**IRP\_MN\_查询\_设备\_关系**，以 IRQL = 被动\_级别。
 
-对于**TargetDeviceRelation**请求，PnP 管理器会在任意线程上下文中以 IRQL = 被动\_级别发送此 IRP。
+对于**TargetDeviceRelation**请求，PnP 管理器会在任意线程上下文中以\_IRQL = 被动级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-[**IO\_STACK\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**QueryDeviceRelations**成员指定正在查询的关系的类型。 可能的值包括**BusRelations**、 **EjectionRelations**、 **RemovalRelations**、 **TargetDeviceRelation**和**PowerRelations**。
+[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)结构的**QueryDeviceRelations**成员指定正在查询的关系的类型。 可能的值包括**BusRelations**、 **EjectionRelations**、 **RemovalRelations**、 **TargetDeviceRelation**和**PowerRelations**。
 
-仅当**QueryDeviceRelations**为**TargetDeviceRelation**时，当前**IO\_堆栈\_位置**结构的**FileObject**成员才指向有效的文件对象。
+仅当**QueryDeviceRelations**为**TargetDeviceRelation**时，当前**IO\_\_堆栈位置**结构的**FileObject**成员才指向有效的文件对象。
 
 ## <a name="output-parameters"></a>输出参数
 
 
 在 i/o 状态块中返回。
 
-## <a name="io-status-block"></a>I/O 状态块
+## <a name="io-status-block"></a>I/o 状态块
 
 
-驱动程序将**Irp&gt;IoStatus**的状态设置为 "状态\_成功" 或 "状态"，如 "状态"\_"\_资源不足"。
+驱动程序将**Irp-&gt;IOSTATUS**设置为状态\_"成功" 或设置为 "失败" 状态\_，\_如 "资源不足"。
 
-成功时，驱动程序将**Irp&gt;IoStatus**设置为指向请求的关系信息的 PDEVICE\_关系指针。 **设备\_关系**结构定义如下：
+成功时，驱动程序将**&gt;IoStatus**设置为指向请求的关系信息\_的 PDEVICE 关系指针。 **设备\_关系**结构定义如下：
 
 ```cpp
 typedef struct _DEVICE_RELATIONS {
@@ -75,7 +81,7 @@ typedef struct _DEVICE_RELATIONS {
 <a name="operation"></a>操作
 ---------
 
-如果驱动程序返回关系以响应此**IRP\_MN\_QUERY\_设备\_关系**，则驱动程序将从分页内存中分配一个 **\_设备**，该结构包含计数和适当数量的设备对象指针。 当不再需要该结构时，PnP 管理器会将其释放。 如果驱动程序替换了其他驱动程序分配的**设备\_关系**结构，则驱动程序必须释放以前的结构。
+如果驱动程序在响应此**IRP\_\_MN 查询\_设备\_关系**时返回关系，则驱动程序将从分页内存中分配一个**设备\_关系**结构，该结构包含计数和适当数量的设备对象指针。 当不再需要该结构时，PnP 管理器会将其释放。 如果驱动程序替换了另一驱动程序分配的**设备\_关系**结构，则驱动程序必须释放以前的结构。
 
 驱动程序必须引用它在此 IRP 中报告的任何设备的 PDO （[**ObReferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)）。 PnP 管理器会在适当时删除引用。
 
@@ -89,19 +95,19 @@ typedef struct _DEVICE_RELATIONS {
 
 如果 PnP 管理器查询适配器或控制器的总线关系（子设备），则总线驱动程序必须返回指向总线上物理上存在的任何设备的 PDOs 的指针列表。 总线驱动程序报告所有设备，无论它们是否已启动。 总线驱动程序可能需要为总线设备接通电源，以确定哪些子项存在。
 
-**警告**   无法将设备对象传递到采用 PDO 作为参数的任何例程，直到 PnP 管理器为该对象创建设备节点（*devnode*）。 （如果驱动程序确实传递了设备对象，系统将使用[**Bug 检查检查码0xca： PNP\_检测到\_严重\_错误**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xca--pnp-detected-fatal-error)。）PnP 管理器将创建 devnode，以响应**IRP\_MN\_QUERY\_设备\_关系**请求。 该驱动程序可以放心地假定在收到[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)请求时创建了 PDO 的 devnode。
+**警告**   ：无法将设备对象传递到采用 PDO 作为参数的任何例程，直到 PnP 管理器为该对象创建设备节点（*devnode*）。 （如果驱动程序已通过设备对象，则系统将使用[**Bug 检查检查错误码 0xca\_： PNP 检测到\_\_错误**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xca--pnp-detected-fatal-error)。）PnP 管理器将创建 devnode，以响应**IRP\_MN\_查询\_设备\_关系**请求。 驱动程序可以安全地假定在收到[**IRP\_MN\_\_查询资源\_要求**](irp-mn-query-resource-requirements.md)请求时已创建了 PDO 的 devnode。
 
  
 
 响应此 IRP 的总线驱动程序是总线适配器或控制器的函数驱动程序，而不是适配器或控制器连接到的总线的父总线驱动程序。 非总线设备的函数驱动程序不处理此查询。 此类驱动程序只需将 IRP 传递到下一个较低版本的驱动程序。 （请参见下图。）筛选器驱动程序通常不处理此查询。
 
-在 Windows Vista 和更高版本的操作系统上，建议驱动程序始终挂起**IRP\_MN\_QUERY\_设备\_关系**IRP 并在以后完成其处理。 此顺序使系统可以异步处理总线关系查询。 （在 Windows Vista 之前的操作系统上，驱动程序可以安全地返回状态\_其调度例程挂起，但 PnP 管理器不会与任何其他操作的总线关系查询重叠。）
+在 Windows Vista 和更高版本的操作系统上，建议驱动程序始终**挂起\_IRP\_MN\_QUERY\_设备关系**IRP 并在以后完成其处理。 此顺序使系统可以异步处理总线关系查询。 （在 Windows Vista 之前的操作系统上，驱动程序可以安全\_地从其调度例程返回 "挂起" 状态，但 PnP 管理器不会与任何其他操作重叠总线关系查询。）
 
 下图显示了驱动程序如何处理总线关系的查询。
 
 ![阐释处理总线关系查询的驱动程序的关系图](images/qdrstaks.png)
 
-在图所示的示例中，PnP 管理器将**IRP\_MN\_QUERY\_设备\_关系**发送到 USB 集线器设备的驱动程序的**BusRelations** 。 PnP 管理器正在请求集线器设备子节点的列表。
+在图所示的示例中，PnP 管理器将**IRP\_MN\_查询\_设备\_关系** **BusRelations**到 USB 集线器设备的驱动程序。 PnP 管理器正在请求集线器设备子节点的列表。
 
 1.  与所有 PnP Irp 一样，PnP 管理器将 IRP 发送到设备在设备堆栈中的顶层驱动程序。
 
@@ -117,13 +123,13 @@ typedef struct _DEVICE_RELATIONS {
 
     -   报告总线上存在的任何子设备。
 
-        对于每个子设备，总线驱动程序都引用 PDO，并在设备\_关系结构中放置一个指向 PDO 的指针。
+        对于每个子设备，总线驱动程序都引用 PDO，并在设备\_关系结构中放置一个指向 pdo 的指针。
 
         在此示例中有两个 PDOs：一个用于操纵杆设备，另一个用于键盘设备。
 
-        总线驱动程序应检查是否有另一个驱动程序已为此 IRP 创建了一个设备\_关系结构。 如果是这样，则总线驱动程序必须将添加到现有的信息中。
+        总线驱动程序应检查是否有另一个驱动程序已\_为此 IRP 创建了设备关系结构。 如果是这样，则总线驱动程序必须将添加到现有的信息中。
 
-        如果总线上不存在子设备，则驱动程序会将设备中的计数设置为零，\_关系结构并返回 success。
+        如果总线上不存在子设备，驱动程序会在设备\_关系结构中将计数设置为零，并返回 success。
 
     -   在 i/o 状态块中设置相应的值，并将 IRP 传递到下一个较低的驱动程序。 适配器或控制器的总线驱动程序未完成 IRP。
 
@@ -137,7 +143,7 @@ typedef struct _DEVICE_RELATIONS {
 
 驱动程序将指针返回到在弹出指定设备时可能会从系统中实际删除的任何设备的 PDOs。 不报告设备子的 PDOs;PnP 管理器始终请求在其父设备之前删除子设备。
 
-PnP 管理器将[**irp\_MN\_EJECT**](irp-mn-eject.md) irp 发送到要弹出的设备。 此类设备的驱动程序还会接收 "删除 IRP"。 设备的弹出关系接收[**IRP\_MN\_删除\_设备**](irp-mn-remove-device.md)IRP （而不是**irp\_MN\_EJECT** IRP）。
+PnP 管理器会将[**irp\_MN\_弹出**](irp-mn-eject.md)IRP 发送到要弹出的设备。 此类设备的驱动程序还会接收 "删除 IRP"。 设备的弹出关系接收[**irp\_\_MN REMOVE\_device**](irp-mn-remove-device.md) irp （而不是**irp\_MN\_EJECT** IRP）。
 
 只有父总线驱动程序可以响应其某个子设备的**EjectionRelations**查询。 函数和筛选器驱动程序必须将其传递到设备堆栈中的下一个较低的驱动程序。 如果总线驱动程序接收到此 IRP 作为适配器或控制器的函数驱动程序，则总线驱动程序将执行函数驱动程序的任务，并且必须将 IRP 传递到下一个较低版本的驱动程序。
 
@@ -147,13 +153,13 @@ PnP 管理器将[**irp\_MN\_EJECT**](irp-mn-eject.md) irp 发送到要弹出的�
 
 当设备的驱动程序调用[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)例程并指定**PowerRelations**的*类型*参数值时，PnP 管理器会为设备发出**PowerRelations**查询。
 
-对于此查询，目标设备的驱动程序（即，查询的目标设备）将提供一个**设备\_关系**结构，该结构包含指向任何其他设备（必须在打开目标设备之前由电源管理器打开）的 PDOs 的指针。 相反，只有在关闭目标设备后，才能关闭这些其他设备。 Power manager 使用查询中的信息来保证按正确的顺序打开和关闭这些设备。
+对于此查询，目标设备的驱动程序（即，查询的目标设备）提供了一个**设备\_关系**结构，该结构包含指向任何其他设备的 PDOs 的指针，这些设备必须在打开目标设备之前由电源管理器打开。 相反，只有在关闭目标设备后，才能关闭这些其他设备。 Power manager 使用查询中的信息来保证按正确的顺序打开和关闭这些设备。
 
 此顺序保证仅适用于全局系统睡眠状态转换，包括与 S1、S2、S3 （*睡眠*）、S4 （*休眠*）和 S5 （*关机*）系统电源状态之间的转换。 **PowerRelations**顺序保证不适用于 Dx 设备电源状态转换，而系统仍处于 S0 （*正在运行*）系统状态，但[定向运行时电源管理（DFx）](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-the-directed-power-management-framework)转换除外。
 
-如果目标设备位于特殊文件（如页面文件、休眠文件或故障转储文件）的设备路径上，则目标设备的驱动程序在处理[**IRP\_MN\_设备\_使用\_通知**](irp-mn-device-usage-notification.md)IRP，其中**InPath**为**TRUE**时，必须执行额外的步骤。 此驱动程序必须确保为**PowerRelations**查询提供其 PDOs 的设备也可以支持在特定文件的设备路径中。 若要确认此支持，目标设备的驱动程序必须首先将**IRP\_MN\_设备\_使用\_通知**IRP 发送到其中每个设备，并且此 IRP 必须指定与目标设备相同的**UsageNotification。** 仅当接收此 IRP 的所有设备完成 IRP 并显示成功状态代码时，目标设备的驱动程序才能完成其**irp\_MN\_设备\_使用\_通知**IRP 成功。 否则，此驱动程序必须使用故障状态代码完成此 IRP。
+如果目标设备位于特殊文件（如页面文件、休眠文件或故障转储文件）的设备路径上，则目标设备的驱动程序在处理[**irp\_MN\_设备\_使用\_通知**](irp-mn-device-usage-notification.md)IRP （其中**InPath**为**TRUE**）时，必须执行额外的步骤。 此驱动程序必须确保为**PowerRelations**查询提供其 PDOs 的设备也可以支持在特定文件的设备路径中。 若要确认此支持，目标设备的驱动程序必须首先将**\_irp MN\_设备\_使用情况\_通知**IRP 发送到其中每个设备，并且此 IRP 必须指定与目标设备相同的**UsageNotification。** 仅当接收此 IRP 的所有设备完成 IRP 并显示成功状态代码时，目标设备的驱动程序才能成功完成其**irp\_MN\_设备\_使用\_通知**IRP。 否则，此驱动程序必须使用故障状态代码完成此 IRP。
 
-当此同一驱动程序处理**IRP\_MN\_设备\_使用\_通知**IRP， **InPath**为**FALSE**时，驱动程序必须将**irp\_MN\_设备\_使用情况\_通知**irp 发送到与**InPath**为**TRUE**的情况相同的一组依赖设备。 但是，当**InPath**为**FALSE**时，驱动程序不应在失败状态代码的情况下完成此 IRP。
+当此同一驱动程序处理**InPath**为**FALSE**的**\_IRP MN\_设备\_使用情况\_通知**irp 时，驱动程序必须将**irp\_MN\_设备\_使用\_情况通知**irp 发送到相同的依赖设备集，这是因为**InPath**为**TRUE**。 但是，当**InPath**为**FALSE**时，驱动程序不应在失败状态代码的情况下完成此 IRP。
 
 响应**PowerRelations**查询的驱动程序应在为**PowerRelations**查询提供 PDOs 的所有设备上注册目标设备更改通知。 若要注册这些通知，驱动程序可以调用[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)例程，并将*EventCategory*参数值指定为**EventCategoryTargetDeviceChange**。
 
@@ -169,13 +175,13 @@ PnP 管理器将[**irp\_MN\_EJECT**](irp-mn-eject.md) irp 发送到要弹出的�
 
 使用**TargetDeviceRelation**查询，pnp 管理器可以在用于控制硬件的 PnP 设备堆栈中查询 PDO 的非 PnP 设备堆栈。
 
-通常，驱动程序将**irp\_MN\_QUERY\_设备\_关系**IRP 向下移动，直到 irp 达到特定设备堆栈的底部。 非 PnP 堆栈底部的驱动程序，然后将 IRP 转发或重新颁发给相关的 PnP 堆栈。 例如，PnP 管理器可能会将**TargetDeviceRelation**查询发送到文件系统堆栈顶部的设备对象，这是一个非 PnP 堆栈。 文件系统堆栈中的每个设备对象会将查询传递给其下的设备对象，直到该查询到达堆栈底部的设备对象。 堆栈中的最小设备对象会将**TargetDeviceRelation**查询转发或重新发出到 PnP 存储卷堆栈顶部的设备对象，然后将查询向下传递到存储卷堆栈底部的 PDO。
+通常，驱动程序将**irp\_MN\_查询\_设备\_关系**IRP 向下转发到其堆栈，直到 irp 达到特定设备堆栈的底部。 非 PnP 堆栈底部的驱动程序，然后将 IRP 转发或重新颁发给相关的 PnP 堆栈。 例如，PnP 管理器可能会将**TargetDeviceRelation**查询发送到文件系统堆栈顶部的设备对象，这是一个非 PnP 堆栈。 文件系统堆栈中的每个设备对象会将查询传递给其下的设备对象，直到该查询到达堆栈底部的设备对象。 堆栈中的最小设备对象会将**TargetDeviceRelation**查询转发或重新发出到 PnP 存储卷堆栈顶部的设备对象，然后将查询向下传递到存储卷堆栈底部的 PDO。
 
 下面的列表总结了可以安全获取指向 PnP 设备堆栈底部的 PDO 的指针的情况：
 
 -   PnP 中的设备对象
 
-    当调用设备的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程时，PnP 设备堆栈中的设备对象将了解堆栈的 PDO。 如果使用指针与传入 IRP\_MN 正确同步，则驱动程序可以安全地缓存到 PDO 的指针，\_通过使用[删除锁定例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)[**删除\_设备**](irp-mn-remove-device.md)消息。
+    当调用设备的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程时，PnP 设备堆栈中的设备对象将了解堆栈的 PDO。 如果使用指针与传入[**IRP\_MN\_\_**](irp-mn-remove-device.md)通过使用[删除锁定例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)来删除设备消息，则驱动程序可以安全地缓存指向 PDO 的指针。
 
 -   非 PnP 堆栈中的设备对象，而不是堆栈底部的设备对象
 
@@ -197,15 +203,15 @@ PnP 管理器将[**irp\_MN\_EJECT**](irp-mn-eject.md) irp 发送到要弹出的�
 
 **正在发送此 IRP**
 
-驱动程序不得将**IRP\_MN\_QUERY\_设备\_关系**发送到请求**BusRelations**。 对于**RemovalRelations**或**EjectionRelations**，驱动程序不限于发送此 IRP，但驱动程序不太可能会这样做。
+驱动程序不得发送**IRP\_MN\_查询\_设备\_关系**来请求**BusRelations**。 对于**RemovalRelations**或**EjectionRelations**，驱动程序不限于发送此 IRP，但驱动程序不太可能会这样做。
 
 驱动程序可以在设备堆栈中查询**TargetDeviceRelation**。 有关发送 Irp 的信息，请参阅[处理 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-irps) 。 以下步骤专门适用于此 IRP：
 
--   在 IRP 的下一个 i/o 堆栈位置设置值：将**MajorFunction**设置为[**irp\_MJ\_PNP**](irp-mj-pnp.md)，将 MinorFunction 设置为**irp\_MN\_查询\_设备\_关系**，将设置为**TargetDeviceRelation**，并将**IRP-&gt;FileObject** **设置为有效**的文件对象。
+-   在 IRP 的下一个 i/o 堆栈位置设置值：将**MajorFunction**设置为[**irp\_\_MJ PNP**](irp-mj-pnp.md)，将 MinorFunction 设置为**irp\_MN\_查询\_设备\_关系**，将**MinorFunction**设置为**TargetDeviceRelation**，并将**IRP-&gt;FileObject**设置为有效的文件对象。 **Parameters.QueryDeviceRelations.Type**
 
--   将**IoStatus**初始化\_不\_支持的状态。
+-   将**IoStatus**初始化为不\_受\_支持的状态。
 
-如果驱动程序发送此 IRP 以获取 PDO 来响应**IRP\_MN\_QUERY\_设备\_** 与驱动程序**接收的**关系，则驱动程序将报告 PDO，并在 IRP 完成时释放返回的关系结构。 如果驱动程序出于其他原因启动了此 IRP，则当 IRP 完成时，驱动程序将释放关系结构，并且在不再需要该 PDO 时取消对它的引用。
+如果驱动程序发送此 IRP 以获取 PDO 来响应该驱动程序收到的**TargetDeviceRelation**的**\_IRP\_MN\_\_查询设备关系**，则驱动程序将报告 PDO 并在 IRP 完成时释放返回的关系结构。 如果驱动程序出于其他原因启动了此 IRP，则当 IRP 完成时，驱动程序将释放关系结构，并且在不再需要该 PDO 时取消对它的引用。
 
 <a name="requirements"></a>要求
 ------------
@@ -238,11 +244,11 @@ PnP 管理器将[**irp\_MN\_EJECT**](irp-mn-eject.md) irp 发送到要弹出的�
 
 [**IRP\_MJ\_PNP**](irp-mj-pnp.md)
 
-[**IRP\_MN\_设备\_使用情况\_通知**](irp-mn-device-usage-notification.md)
+[**IRP\_MN\_设备\_使用\_通知**](irp-mn-device-usage-notification.md)
 
 [**IRP\_MN\_弹出**](irp-mn-eject.md)
 
-[**IRP\_MN\_查询\_资源\_要求**](irp-mn-query-resource-requirements.md)
+[**IRP\_MN\_查询\_资源\_需求**](irp-mn-query-resource-requirements.md)
 
 [**IRP\_MN\_删除\_设备**](irp-mn-remove-device.md)
 

@@ -1,62 +1,68 @@
 ---
 title: IRP_MN_CANCEL_STOP_DEVICE
-description: 所有即插即用驱动程序必须处理此 IRP。
+description: 所有 PnP 驱动程序都必须处理此 IRP。
 ms.date: 08/12/2017
 ms.assetid: 7047c266-84b4-4260-ad75-d56c87c8c9ef
 keywords:
 - IRP_MN_CANCEL_STOP_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a077ad80a4c11379ff0e3bfa1751d3793a4faae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0bb8725f947a76624611861d7e2e28f78e273ef7
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382252"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922531"
 ---
-# <a name="irpmncancelstopdevice"></a>IRP\_MN\_取消\_停止\_设备
+# <a name="irp_mn_cancel_stop_device"></a>IRP\_MN\_取消\_停止\_设备
 
 
-所有即插即用驱动程序必须处理此 IRP。
+所有 PnP 驱动程序都必须处理此 IRP。
 
-<a name="major-code"></a>主代码
+## <a name="value"></a>值
+
+0x06
+
+<a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md) When Sent
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>发送时间
 ---------
 
-即插即用 manager 之后的某个时刻发送此 IRP [ **IRP\_MN\_查询\_停止\_设备**](irp-mn-query-stop-device.md)，以通知设备的驱动程序，设备不会被禁用 (Windows 98 / 只是我) 或资源重新配置已停止。
+PnP 管理器会在[**irp\_MN\_\_查询停止\_设备**](irp-mn-query-stop-device.md)之后的某个时间发送此 IRP，通知设备的驱动程序设备不会被禁用（仅适用于 Windows 98/Me）或停止资源重新配置。
 
-PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文中。
+PnP 管理器在系统线程的上下文中\_以 IRQL 被动级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-无
+None
 
 ## <a name="output-parameters"></a>输出参数
 
 
-无
+None
 
-## <a name="io-status-block"></a>I/O 状态块
+## <a name="io-status-block"></a>I/o 状态块
 
 
-驱动程序必须设置**Irp-&gt;IoStatus.Status**于状态\_此 irp 的成功。 如果驱动程序失败时此 IRP，设备是处于不一致的状态。
+对于此 IRP，驱动程序必须将**irp&gt;IOSTATUS**设置\_为状态 "成功"。 如果驱动程序未通过此 IRP，则设备处于不一致状态。
 
 <a name="operation"></a>操作
 ---------
 
-按设备父总线驱动程序，然后按设备堆栈中每个更高版本的驱动程序，必须首先处理此 IRP。
+此 IRP 必须首先由设备的父总线驱动程序处理，然后由设备堆栈中的每个更高的驱动程序处理。
 
-在响应此 IRP，驱动程序将设备恢复为已启动状态。 驱动程序启动时在设备处于停止挂起状态已保持任何 Irp。
+为了响应此 IRP，驱动程序将设备恢复到 "已启动" 状态。 当设备处于停止挂起状态时，驱动程序将启动任何已持有的 Irp。
 
-如果设备已处于活动状态时，驱动程序收到此 IRP，函数或筛选器驱动程序将只需将状态设置为成功，并将 IRP 传递到下一步的驱动程序。 父总线驱动程序完成 IRP。 对于此类取消停止 IRP，函数或筛选器驱动程序不需要设置完成例程。
+如果设备在接收到此 IRP 时已处于活动状态，则函数或筛选器驱动程序只需将状态设置为 "成功"，并将 IRP 传递到下一个驱动程序。 父总线驱动程序完成 IRP。 对于这种取消-停止 IRP，函数或筛选器驱动程序不需要设置完成例程。
 
-请参阅[插](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)有关处理停止 Irp 的详细信息以及处理所有的常规规则[即插即用次要 Irp](plug-and-play-minor-irps.md)。
+请参阅[即插即用](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)，了解有关处理 stop irp 的详细信息以及处理所有[即插即用次要 irp](plug-and-play-minor-irps.md)的常规规则。
 
-**发送此 IRP**
+**正在发送此 IRP**
 
-保留供系统使用。 驱动程序必须发送此 IRP。
+预留给系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,13 +74,13 @@ PnP 管理器将此 IRP 发送在 IRQL 被动\_级别在系统线程的上下文
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h 中 （包括 wdm.h 中、 Ntddk.h 或 Ntifs.h）</td>
+<td><p>标头</p></td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**IRP\_MN\_查询\_停止\_设备**](irp-mn-query-stop-device.md)

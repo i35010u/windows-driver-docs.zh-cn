@@ -13,12 +13,12 @@ keywords:
 - 分配带宽
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a002afac326d572af80849061048870fa59a651
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 71a555d4d503c169621692d2f2b3bf9717472e0b
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830106"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925514"
 ---
 # <a name="striping"></a>条带化
 
@@ -27,7 +27,7 @@ HD 音频体系结构支持一种称为*条带化*技术，可减少呈现流使
 
 函数驱动程序通过[**AllocateRenderDmaEngine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_render_dma_engine)例程的*条带*调用参数启用条带化。
 
-有关条带化的详细信息，请参阅[INTEL HD 音频](https://go.microsoft.com/fwlink/p/?linkid=42508)网站上的*Intel 高质音频规范*。
+有关条带化的详细信息，请参阅[INTEL HD 音频](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html)网站上的*Intel 高质音频规范*。
 
  
 

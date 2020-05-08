@@ -4,12 +4,12 @@ description: 音频处理对象（即）为 Windows 音频流提供可自定义�
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f89a0c8a87f4f071610eec6021c0016decdd4c0
-ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
+ms.openlocfilehash: 928ca414f75dfdb4f23ff24590558f194a1eb9b8
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898494"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925526"
 ---
 # <a name="audio-processing-object-architecture"></a>音频处理对象体系结构
 
@@ -21,7 +21,7 @@ Windows 允许 Oem 和第三方音频硬件制造商将自定义数字信号处�
 
 音频处理对象（即）为 Windows 音频流提供基于软件的数字信号处理。 APO 是一个 COM 主机对象，该对象包含一个算法，该算法是为了提供特定数字信号处理（DSP）效果而编写的。 此功能非正式地称为 "音频效果"。 的示例包括图形 equalizers、回音、tremolo、回声取消（AEC）和自动增益控制（AGC）。 是基于 COM 的实时进程内对象。
 
-**请注意**，本文档中的说明和术语主要指的是输出设备的  。 不过，这种技术是对称的，并在本质上适用于输入设备。
+**请注意**   ，本文档中的说明和术语主要涉及输出设备。 不过，这种技术是对称的，并在本质上适用于输入设备。
 
 **软件与硬件 DSP**
 
@@ -76,7 +76,7 @@ Microsoft HLK 提供可用于的测试。 有关音频测试的详细信息，�
 
 您可以使用 "音频效果发现示例" 来浏览可用的音频效果。 此示例演示如何在呈现和捕获音频设备上查询音频效果，以及如何监视音频效果的变化。 它作为 SDK 示例的一部分提供，可以使用以下链接下载：
 
-[音频效果发现示例](https://go.microsoft.com/fwlink/p/?linkid=2112597)
+[音频效果发现示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Audio%20effects%20discovery%20sample)
 
 **应用程序音频效果感知**
 
@@ -117,7 +117,7 @@ Microsoft HLK 提供可用于的测试。 有关音频测试的详细信息，�
 
 ![显示多个应用程序如何可以访问 stream、mode 和 endpoint apo 效果的多个组合的关系图](images/audio-apo-software-effects-1.png)
 
-**请注意**  可以使用此页面最底部的滚动条来查看此关系图。
+**请注意**  ，您可以使用此页底部的滚动条来查看此关系图。
 
 **用于呈现和捕获的软件模式效果和硬件终结点效果**
 

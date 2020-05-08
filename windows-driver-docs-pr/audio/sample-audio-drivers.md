@@ -16,99 +16,99 @@ keywords:
 - Stdunk 示例音频驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6fb728afe77ad0c6c4b8aff8c7047c72d56e7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9242bb43973280df23a142e33f86d53f411ab811
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355272"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925536"
 ---
 # <a name="sample-audio-drivers"></a>示例音频驱动程序
 
 
-## <a name="span-idsysvadaudiosamplespanspan-idsysvadaudiosamplespanspan-idsysvadaudiosamplespansysvad-audio-sample"></a><span id="SYSVAD_Audio_Sample"></span><span id="sysvad_audio_sample"></span><span id="SYSVAD_AUDIO_SAMPLE"></span>SYSVAD 音频示例
+## <a name="span-idsysvad_audio_samplespanspan-idsysvad_audio_samplespanspan-idsysvad_audio_samplespansysvad-audio-sample"></a><span id="SYSVAD_Audio_Sample"></span><span id="sysvad_audio_sample"></span><span id="SYSVAD_AUDIO_SAMPLE"></span>SYSVAD 音频示例
 
 
-**系统虚拟音频设备驱动程序示例 (SYSVAD)**
+**系统虚拟音频设备驱动程序示例（SYSVAD）**
 
-SYSVAD 驱动程序突出显示了 WDM 音频体系结构的许多重要功能。 这些正在实现可用作一个起始点，编写专有的音频设备的自定义驱动程序的源代码。
+SYSVAD 驱动程序重点介绍了 WDM 音频体系结构的许多重要功能。 这些是使用源代码的工作实现，它们可作为为专有音频设备编写自定义驱动程序的起点。
 
 *Sysvad*解决方案文件包含以下项目。
 
 -   **TabletAudioSample**
 
-    *TabletAudioSample*项目演示了如何开发 WDM 音频驱动程序公开的多个音频设备的支持。 这些音频设备的某些系统中是嵌入 （扬声器，mic 数组），而有些则是可插入 （耳机演讲者/mic、 蓝牙耳机演讲者/mic）。 驱动程序使用 WaveRT 和呈现设备的音频卸载。 该驱动程序使用而不是实际基于硬件的适配器的"虚拟音频设备"，并突出显示音频卸载 WDM 音频驱动程序体系结构的不同方面。 有关 Windows 音频引擎的详细信息，请参阅[Hardware-Offloaded 音频处理 （Windows 驱动程序）](hardware-offloaded-audio-processing.md)。
+    *TabletAudioSample*项目演示了如何开发公开支持多个音频设备的 WDM 音频驱动程序。 其中某些音频设备是在系统中嵌入的（扬声器、mic 阵列），其他音频设备可插入（耳机扬声器/麦克风、蓝牙耳机扬声器/麦克风）。 驱动程序为呈现设备使用 WaveRT 和音频卸载。 驱动程序使用 "虚拟音频设备" 而不是基于硬件的实际适配器，突出显示音频卸载 WDM 音频驱动程序体系结构的不同方面。 有关 Windows 音频引擎的详细信息，请参阅[硬件卸载音频处理（Windows 驱动程序）](hardware-offloaded-audio-processing.md)。
 
 -   **PhoneAudioSample**
 
-    *PhoneAudioSample*项目是非常类似于*TabletAudioSample*项目。 它包括针对移动设备的优化。
+    *PhoneAudioSample*项目与*TabletAudioSample*项目非常相似。 它包括移动设备的优化。
 
 -   **EndpointsCommon**
 
-    *EndpointsCommon*项目包含到平板电脑和手机的通用代码。 有关详细信息，请参阅[音频的通用 Windows 驱动程序](audio-universal-drivers.md)。
+    *EndpointsCommon*项目包含平板电脑和手机的通用代码。 有关详细信息，请参阅[适用于音频的通用 Windows 驱动程序](audio-universal-drivers.md)。
 
 -   **SwapAPO**
 
-    *SwapAPO*项目演示了如何开发音频处理对象。 它包括演示如何注册和注销音频处理对象的示例代码，并还演示了如何自定义控制面板属性页上，以反映中处理对象的可用功能。 有关详细信息，请参阅[Windows 音频处理对象](windows-audio-processing-objects.md)。
+    *SwapAPO*项目演示了如何开发音频处理对象。 它包括演示如何注册和注销音频处理对象的示例代码，还演示了如何自定义 "控制面板" 属性页以反映处理对象中的可用功能。 有关详细信息，请参阅[Windows 音频处理对象](windows-audio-processing-objects.md)。
 
 -   **KeywordDetectorAdapter**
 
-    *KeywordDetectorAdapter*项目演示了如何开发关键字检测程序适配器。 有关详细信息，请参阅[语音激活](voice-activation.md)。
+    *KeywordDetectorAdapter*项目演示如何开发关键字检测器适配器。 有关详细信息，请参阅[语音激活](voice-activation.md)。
 
-**下载并从 GitHub 提取 Sysvad 音频示例**
+**从 GitHub 下载并提取 Sysvad 音频示例**
 
-SYSVAD 音频示例位于[Windows 驱动程序示例 GitHub](https://github.com/Microsoft/Windows-driver-samples)。
+[Windows 驱动程序示例 GitHub](https://github.com/Microsoft/Windows-driver-samples)上提供了 SYSVAD 音频示例。
 
-您可以浏览 Sysvad 音频此处的示例：
+可在此处浏览 Sysvad 音频示例：
 
 <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
-请按照下列步骤以下载并打开 SYSVAD 示例。
+按照以下步骤下载并打开 "SYSVAD" 示例。
 
-a. 可以使用 GitHub 工具以使用这些示例。 此外可以下载一个 zip 文件中的通用驱动程序示例。
+a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动程序示例下载到一个 zip 文件中。
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b. Master.zip 文件下载到本地硬盘。
+b. 将主 .zip 文件下载到本地硬盘驱动器。
 
-c. 右键单击*Windows 驱动程序示例 master.zip*，然后选择**全部提取**。 指定新文件夹，或浏览到一个现有将存储提取的文件。 例如，可以指定*c:\\DriverSamples\\* 作为新文件将被提取到其中的文件夹。
+c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C：\\DriverSamples\\ *作为要将文件提取到的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹。
 
-*C:\\DriverSamples\\音频\\Sysvad*
+*C：\\DriverSamples\\音频\\Sysvad*
 
 **在 Visual Studio 中打开驱动程序解决方案**
 
-在 Microsoft Visual Studio 中，单击**文件** &gt; **打开** &gt; **项目/解决方案...** 并导航到包含所提取的文件的文件夹 (例如， *c:\\DriverSamples\\音频\\Sysvad*)。 双击*Sysvad*解决方案文件以将其打开。
+在 Microsoft Visual Studio 中，单击 "**文件** &gt; " "**打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C\\：\\\\DriverSamples Audio Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
 
-在 Visual Studio 中找到解决方案资源管理器。 (如果尚未打开，请将此选择**解决方案资源管理器**从**视图**菜单。)在解决方案资源管理器，可以看到一个具有六个项目的解决方案。
+在 Visual Studio 中找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，你可以看到一个包含六个项目的解决方案。
 
-## <a name="span-idsampleaudiodriversspanspan-idsampleaudiodriversspanarchived-audio-samples"></a><span id="sample_audio_drivers"></span><span id="SAMPLE_AUDIO_DRIVERS"></span>已存档的音频示例
+## <a name="span-idsample_audio_driversspanspan-idsample_audio_driversspanarchived-audio-samples"></a><span id="sample_audio_drivers"></span><span id="SAMPLE_AUDIO_DRIVERS"></span>存档的音频示例
 
 
-这些音频示例支持早期版本的 Microsoft Windows Driver Kit (WDK)。 这些信息可作为 zip 文件下载可用的一部分[此处](https://go.microsoft.com/fwlink/p/?LinkId=618052)。
+这些音频示例支持以前版本的 Microsoft Windows 驱动程序工具包（WDK）。 在[此处](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)提供的 zip 文件下载中提供了这些文件。
 
--   **Microsoft 虚拟音频设备驱动程序示例 (Msvad)**
+-   **Microsoft 虚拟音频设备驱动程序示例（Msvad）**
 
--   **AC97 Driver (Ac97)**
+-   **AC97 驱动程序（Ac97）**
 
--   **DirectMusic UART 驱动程序示例 (Dmusuart)**
+-   **DirectMusic UART 驱动程序示例（Dmusuart）**
 
--   **DirectMusic 软件合成器示例 (ddksynth)**
+-   **DirectMusic 软件合成器示例（ddksynth）**
 
--   **FM 合成器 (Fmsynth)**
+-   **FM 合成器（Fmsynth）**
 
 -   **音频适配器示例**
 
 **音频处理编解码器示例**
 
--   **Msfilter 示例编解码器 (MsFilter)**
+-   **Msfilter 示例编解码器（MsFilter）**
 
--   **Msgsm610 示例编解码器 (gsm610)**
+-   **Msgsm610 示例编解码器（gsm610）**
 
-有关详细信息，请参阅随附在 WDK 中的这些示例的自述文件文档。
+有关详细信息，请参阅 WDK 中每个示例随附的自述文档。
 
-有关 WDK 示例的信息，请参阅[Windows 驱动程序工具包示例包 （Windows 驱动程序）。](https://docs.microsoft.com/windows-hardware/drivers/samples/index)
+有关 WDK 示例的信息，请参阅[Windows 驱动程序工具包示例 Pack （Windows 驱动程序）。](https://docs.microsoft.com/windows-hardware/drivers/samples/index)
 
  
 

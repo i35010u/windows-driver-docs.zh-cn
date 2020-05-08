@@ -6,46 +6,52 @@ ms.assetid: 2807eeca-c614-469a-baeb-3d2d65416c57
 keywords:
 - IRP_MN_EJECT 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: d5848375fc53b681ca5633d1ba8c16d5ee03ae2d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f3d983bfe7094e6ccf952b7aec592a23cff3fa1a
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838586"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922469"
 ---
 # <a name="irp_mn_eject"></a>IRP\_MN\_弹出
 
 
 总线驱动程序通常会为支持设备弹出的子设备（子 PDOs）处理此请求。 函数和筛选器驱动程序不会收到此请求。
 
-<a name="major-code"></a>主代码
+## <a name="value"></a>值
+
+0x11
+
+<a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>发送时间
 ---------
 
 PnP 管理器发送此 IRP 以指示适当的驱动程序或驱动程序从其插槽中弹出设备。
 
-PnP 管理器在任意线程上下文中以 IRQL 被动\_级别发送此 IRP。
+PnP 管理器在任意线程上下文中以\_IRQL 被动级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-无
+None
 
 ## <a name="output-parameters"></a>输出参数
 
 
-无
+None
 
-## <a name="io-status-block"></a>I/O 状态块
+## <a name="io-status-block"></a>I/o 状态块
 
 
-总线驱动程序将**Irp&gt;的 IoStatus**设置为 STATUS\_SUCCESS 或适当的错误状态。
+总线驱动程序将**Irp-&gt;IoStatus**设置为 "\_成功" 或相应的 "错误" 状态。
 
-成功时，总线驱动程序将**Irp&gt;IoStatus**设置为零。
+如果成功，则总线驱动程序将**Irp&gt;-IoStatus**设置为零。
 
-如果总线驱动程序未处理此 IRP，它会将**irp&gt;IoStatus 的状态**保留原样，并完成 irp。
+如果总线驱动程序未处理此 IRP，它会将**irp-&gt;IoStatus**保持原样，并完成 irp。
 
 <a name="operation"></a>操作
 ---------
@@ -58,7 +64,7 @@ PnP 管理器在任意线程上下文中以 IRQL 被动\_级别发送此 IRP。
 
 **正在发送此 IRP**
 
-保留供系统使用。 驱动程序不得发送此 IRP。
+预留给系统使用。 驱动程序不得发送此 IRP。
 
 请参阅[**IoRequestDeviceEject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdeviceeject)例程的参考页。
 
@@ -73,7 +79,7 @@ PnP 管理器在任意线程上下文中以 IRQL 被动\_级别发送此 IRP。
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>

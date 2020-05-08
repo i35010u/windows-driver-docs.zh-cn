@@ -6,29 +6,31 @@ ms.assetid: f00c0021-a909-4d76-9114-6710e1aa4307
 keywords:
 - IRP_MN_POWER_SEQUENCE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 70cbc1f1ea39ecd512b4c6cce9780de7d00f6c2e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7780e8ded4c29646520fa95ae8243ec5bdd86bcd
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828046"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922464"
 ---
-# <a name="irp_mn_power_sequence"></a>IRP\_MN\_电源\_序列
+# <a name="irp_mn_power_sequence"></a>IRP\_MN\_幂\_序列
 
 
 此 IRP 返回设备的电源序列值。
 
-<a name="major-code"></a>主代码
+<a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_POWER**](irp-mj-power.md)发送时间
+[**IRP\_MJ\_POWER**](irp-mj-power.md)
+
+<a name="when-sent"></a>发送时间
 ---------
 
 驱动程序以优化形式发送此 IRP，以确定其设备是否实际进入了特定电源状态。 此 IRP 的支持是可选的。
 
-若要发送此 IRP，驱动程序必须调用[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)来分配 irp，并指定主要 Irp 代码[**irp\_MJ\_电源**](irp-mj-power.md)和次要 IRP 代码**irp\_MN\_POWER\_序列**。 然后，驱动程序必须调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) （windows Vista）或[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) （Windows SERVER 2003、windows XP 和 WINDOWS 2000）将 IRP 传递到下一个较低版本的驱动程序。 Power manager 无法发送此 IRP。
+若要发送此 IRP，驱动程序必须调用[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)来分配 irp，同时指定主要 Irp 代码[**irp\_MJ\_功能**](irp-mj-power.md)和次要 irp 代码**irp\_MN\_电源\_序列**。 然后，驱动程序必须调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) （windows Vista）或[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) （Windows SERVER 2003、windows XP 和 WINDOWS 2000）将 IRP 传递到下一个较低版本的驱动程序。 Power manager 无法发送此 IRP。
 
-此 IRP 的发送方必须以 IRQL 运行 &lt;= 调度\_级别。
+此 IRP 的发送方必须以 IRQL &lt;= 调度\_级别运行。
 
 ## <a name="input-parameters"></a>输入参数
 
@@ -38,7 +40,7 @@ ms.locfileid: "72828046"
 ## <a name="output-parameters"></a>输出参数
 
 
-**PowerSequence**指向具有以下成员的**POWER\_序列**结构：
+**PowerSequence**指向具有以下成员的**幂\_序列**结构：
 
 <a href="" id="sequenced1"></a>**SequenceD1**  
 设备处于电源状态 D1 或更低状态的次数。
@@ -53,10 +55,10 @@ ms.locfileid: "72828046"
 
 总线驱动程序会在每次设备进入相应电源状态或降低电源状态时，增加**SequenceD1**、 **SequenceD2**和**SequenceD3**中的值。
 
-## <a name="io-status-block"></a>I/O 状态块
+## <a name="io-status-block"></a>I/o 状态块
 
 
-驱动程序将**Irp&gt;IoStatus**的状态设置为 STATUS\_SUCCESS，以指示它已返回请求的信息，或\_未\_实现的状态以指示它不支持此 Irp。
+驱动程序将**Irp-&gt;IOSTATUS**设置为状态\_"成功" 以指示该状态为 "已返回请求的信息"\_，\_或设置为 "未实现的状态" 以指示它不支持此 Irp。
 
 <a name="operation"></a>操作
 ---------
@@ -80,7 +82,7 @@ ms.locfileid: "72828046"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>

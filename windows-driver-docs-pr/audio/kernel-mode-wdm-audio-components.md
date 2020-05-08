@@ -23,12 +23,12 @@ keywords:
 - WDM 音频组件 WDK
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 85056150cd27c1d6c0f9246549c73a5bdd32e812
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 9aa1ef986683bd43247e3e27f99d4becbce29cec
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242836"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925556"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>内核模式 WDM 音频组件
 
@@ -70,7 +70,7 @@ AVCAudio 类系统驱动程序
 
 ### <a name="span-idsysaudio_system_driverspanspan-idsysaudio_system_driverspansysaudio-system-driver"></a><span id="sysaudio_system_driver"></span><span id="SYSAUDIO_SYSTEM_DRIVER"></span>SysAudio 系统驱动程序
 
-SysAudio 系统驱动程序（Sysaudio）生成用于呈现和捕获音频内容的筛选器图形。 SysAudio 驱动程序将音频筛选器图形表示为[虚拟音频设备](virtual-audio-devices.md)，并将每个虚拟音频设备注册为 KSCATEGORY\_音频\_设备设备接口的实例。 （适配器驱动程序不应在此类别中注册自身，这种情况下专门为 SysAudio 保留。）例如，虚拟 MIDI 设备可能代表通过连接 SWMidi 驱动程序、KMixer 驱动程序和端口/微型端口驱动程序创建的筛选器图。 客户端仅与虚拟音频设备通信，而不是与构成虚拟音频设备的单个设备通信。 SysAudio 驱动程序对于客户端是透明的，它在连接的筛选器图中配置所有 KS 筛选器，以形成虚拟音频设备。 以下音频流源使用 SysAudio 生成的关系图：
+SysAudio 系统驱动程序（Sysaudio）生成用于呈现和捕获音频内容的筛选器图形。 SysAudio 驱动程序将音频筛选器图形表示为[虚拟音频设备](virtual-audio-devices.md)，并将每个虚拟音频设备注册为\_KSCATEGORY\_音频设备接口的实例。 （适配器驱动程序不应在此类别中注册自身，这种情况下专门为 SysAudio 保留。）例如，虚拟 MIDI 设备可能代表通过连接 SWMidi 驱动程序、KMixer 驱动程序和端口/微型端口驱动程序创建的筛选器图。 客户端仅与虚拟音频设备通信，而不是与构成虚拟音频设备的单个设备通信。 SysAudio 驱动程序对于客户端是透明的，它在连接的筛选器图中配置所有 KS 筛选器，以形成虚拟音频设备。 以下音频流源使用 SysAudio 生成的关系图：
 
 -   DirectSound （请参阅 Microsoft Windows SDK 文档。）
 
@@ -164,7 +164,7 @@ AVCAudio 类系统驱动程序（Avcaudio）是一种 AVStream 微型驱动程�
 
 -   当前正在处理的 AV/C 音频子单元规范的更新
 
-这些规范可在[1394 商业协会](https://go.microsoft.com/fwlink/p/?linkid=8728)网站上找到。 AVCAudio 驱动程序支持在这些规范中介绍的功能的子集。
+这些规范可在[1394 商业协会](https://1394ta.org/)网站上找到。 AVCAudio 驱动程序支持在这些规范中介绍的功能的子集。
 
 当音频设备在即插即用设备枚举过程中将自身标识为符合 IEEE 1394 的音频设备时，系统会自动加载 AVCAudio 驱动程序来驱动设备。 AVCAudio 直接驱动设备，无需借助专用适配器驱动程序。 这意味着符合相应 IEEE 1394 规范的设备不需要专用适配器驱动程序。
 

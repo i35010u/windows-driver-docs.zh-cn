@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0c2ad5dfabdac0585bfaef7ee1c19c863bc3aa0d
-ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
+ms.openlocfilehash: 3566ba43991838496746a21b920ac9f2c1d576ed
+ms.sourcegitcommit: 8af4ad1d9829787d07f9c413ba3e5a24947cf0cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82138650"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872936"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -24,7 +24,7 @@ WDK 用于开发、测试和部署 Windows 驱动程序。
 * [了解驱动程序开发中的新增内容](what-s-new-in-driver-development.md)
 * [查看已知问题](https://go.microsoft.com/fwlink/?linkid=872986)
 
-[加入 Windows 预览体验计划](https://insider.windows.com/)以获取 [WDK Insider Preview 版本](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)。 有关 Windows Insider Preview 版本的安装说明，请参阅[安装 Windows 驱动程序工具包 (WDK) 的预览版本](installing-preview-versions-wdk.md)。
+[加入 Windows 预览体验计划](https://insider.windows.com/)以获取 [WDK Insider Preview 版本](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)。 有关 Windows Insider Preview 版本的安装说明，请参阅[安装 Windows 驱动程序工具包 (WDK) 的预览版本](installing-preview-versions-wdk.md)。
 
 ## <a name="wdk-for-windows-10-version-1903"></a>适用于 Windows 10 版本 1903 的 WDK
 
@@ -100,7 +100,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 ## <a name="related-downloads"></a>相关下载
 
-* [下载 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+* [下载 WDK Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 * [下载以前版本的 WDK](other-wdk-downloads.md)
 * [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 * [下载 Windows HLK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)

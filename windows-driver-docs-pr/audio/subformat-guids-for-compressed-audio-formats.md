@@ -4,12 +4,12 @@ description: 压缩的音频格式的子格式 GUID
 ms.assetid: f9595d6c-952c-4266-8eb5-5c8581051d28
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 389a791ead4e2aeff2e374245a20d3d206865420
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0d9bd4029d2cf5a21c3d3a3b6fdad4a484f8a46f
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830108"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925626"
 ---
 # <a name="subformat-guids-for-compressed-audio-formats"></a>压缩的音频格式的子格式 GUID
 
@@ -18,11 +18,11 @@ ms.locfileid: "72830108"
 
 由于 CEA-861-D 标准，你必须确保 CEA 设备不支持的音频格式不会传输到此类设备。 高清晰多媒体接口（HDMI）和[DisplayPort](https://www.displayport.org/)是 CEA 设备的示例。
 
-对于用户模式访问，将在[WAVEFORMATEXTENSIBLE](https://go.microsoft.com/fwlink/p/?linkid=142020)的**SubFormat**成员和[WAVEFORMATEXTENSIBLE\_IEC61937](https://go.microsoft.com/fwlink/p/?linkid=142021)的**FormatExt**成员中指定 guid。 对于音频驱动程序的内核模式访问，将在[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构的**DataRange**成员中指定 guid。
+对于用户模式访问，将在[WAVEFORMATEXTENSIBLE](https://docs.microsoft.com/windows/win32/api/mmreg/ns-mmreg-waveformatextensible)的**SubFormat**成员和[\_WAVEFORMATEXTENSIBLE IEC61937](https://docs.microsoft.com/windows/win32/coreaudio/representing-formats-for-iec-61937-transmissions)的**FormatExt**成员中指定 guid。 对于音频驱动程序的内核模式访问，将在[**\_KSDATARANGE 音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)结构的**DataRange**成员中指定 guid。
 
 下表列出了可用压缩音频格式的 Guid。
 
-**请注意**   WINDOWS 7 HD 音频类驱动程序不支持所有可用格式。 Windows 7 支持的格式在表中以星号（\*）表示。
+**请注意**   ，并非所有可用格式都支持 Windows 7 HD 音频类驱动程序。 Windows 7 支持的格式在表中以星号（\*）表示。
 
  
 
@@ -36,7 +36,7 @@ ms.locfileid: "72830108"
 <tr class="header">
 <th align="left">CEA 861 类型</th>
 <th align="left">SubFormat GUID</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +95,7 @@ ms.locfileid: "72830108"
 </tr>
 <tr class="even">
 <td align="left"><p>0x0f</p></td>
-<td align="left"><p>用.</p></td>
+<td align="left"><p>未使用。</p></td>
 <td align="left"><p>保留</p></td>
 </tr>
 </tbody>
@@ -115,7 +115,7 @@ ms.locfileid: "72830108"
 <tr class="header">
 <th align="left">CEA 861 类型</th>
 <th align="left">SubFormat GUID</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -129,7 +129,7 @@ ms.locfileid: "72830108"
 <td align="left"><p>0x0c</p></td>
 <td align="left"><p>0000000c-0cea-0010-8000-00aa00389b71</p>
 <p>KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MLP</p></td>
-<td align="left"><p>材料（MLP）<em>- 经线无损打包（杜比数字 True HD-24 位 196KHz/高达 18M bps，8个通道）</p></td>
+<td align="left"><p>材料（MLP）<em> -经线无损包装（杜比数字 True HD-24 位 196KHz/高达 18M bps，8通道）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0e</p></td>
@@ -154,7 +154,7 @@ ms.locfileid: "72830108"
 <tr class="header">
 <th align="left">CEA 861 类型</th>
 <th align="left">SubFormat GUID</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -181,7 +181,7 @@ ms.locfileid: "72830108"
 
  
 
-下面的代码示例演示了音频微型端口驱动程序如何定义并初始化[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构，以便与具有完全功能杜比数字和解码器的 HDMI 接收器一起使用。 此类型的接收器支持44.1 和 48 KHz 的传输速率。
+下面的代码示例演示了音频微型端口驱动程序如何定义并[**初始化\_KSDATARANGE 音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构，以便与具有完全功能杜比数字和解码器的 HDMI 接收器一起使用。 此类型的接收器支持44.1 和 48 KHz 的传输速率。
 
 对于 48 KHz 的采样率，音频微型端口驱动程序使用以下代码来定义和初始化[**KSDATARANGE\_音频**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)结构。 此代码显示音频微型端口驱动程序公开的数据范围：
 

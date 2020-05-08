@@ -4,29 +4,29 @@ description: 将谓词与 HD 音频编解码器通信
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe04cc596357f1e42a7ba1353b94db1a563a0f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 724d4265ae5a4b63d1b8ffb22566bb265fefdbd0
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355586"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925605"
 ---
 # <a name="communicating-verbs-with-the-hd-audio-codec"></a>将谓词与 HD 音频编解码器通信
 
 
-IOCTL\_AZALIABUS\_SENDVERBS IOCTL 由 Hdau.exe pin 配置工具时为音频适配器定义声音的拓扑。 请不要将此 IOCTL 用于其他目的。 此信息 IOCTL\_AZALIABUS\_SENDVERBS 提供其设计和实施仅记录。 Windows 7 Hdaudio.sys 音频类驱动程序支持此 IOCTL。
+当你\_为\_音频适配器定义声音拓扑时，Hdau pin 配置工具将使用 ioctl AZALIABUS SENDVERBS ioctl。 请勿将此 IOCTL 用于其他目的。 提供有关 IOCTL\_AZALIABUS\_SENDVERBS 的此信息以记录其设计和实现。 Windows 7 Hdaudio 音频类驱动程序支持此 IOCTL。
 
-高清晰度 (HD) 音频编解码器都能够接收和响应的谓词。 作为的一部分说明了这些谓词和对这些谓词的响应的编解码器[HD 音频规范](https://go.microsoft.com/fwlink/p/?linkid=169394)。
+高清晰度（HD）音频编解码器能够接收和响应动词。 这些动词和这些动词的编解码器的响应记录为[高清音频规范](https://www.intel.com/content/www/us/en/products/docs/chipsets/high-definition-audio.html)的一部分。
 
-在 Windows 7 和更高版本的 Windows 操作系统，HD 音频类驱动程序将使用 IOCTL\_AZALIABUS\_SENDVERBS IOCTL 进行通信的音频编解码器的谓词。 IOCTL\_AZALIABUS\_SENDVERBS 定义如下面的示例中所示：
+在 windows 7 和更高版本的 Windows 操作系统中，HD audio 类驱动程序使用 IOCTL\_AZALIABUS\_SENDVERBS ioctl 与音频编解码器通信。 定义\_了\_IOCTL AZALIABUS SENDVERBS，如以下示例中所示：
 
 ```cpp
 #define IOCTL_AZALIABUS_SENDVERBS CTL_CODE(FILE_DEVICE_UNKNOWN, 1, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-有关文件的详细信息\_设备\_未知，则方法\_缓冲，并且文件\_ANY\_访问权限，请参阅 Windows SDK 中的 Devioctl.h 标头文件。
+\_有关文件设备\_未知、缓存方法\_和文件\_任何\_访问的详细信息，请参阅 Windows SDK 中的 Devioctl 标头文件。
 
-若要启动与音频编解码器的通信，在类驱动程序调用[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)使用以下参数的函数。
+若要启动与音频编解码器的通信，类驱动程序需要调用具有以下参数的[DeviceIoControl](https://docs.microsoft.com/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)函数。
 
 ```cpp
 BOOL DeviceIoControl(
@@ -41,11 +41,11 @@ BOOL DeviceIoControl(
 );
 ```
 
-如果在调用[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)是成功，它将返回一个非零值。 如果调用失败或被挂起 （不立即处理）， **DeviceIoControl**返回零值。 在类驱动程序可以调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)的更详细的错误消息。
+如果对[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)的调用成功，它将返回一个非零值。 如果调用失败或挂起（不立即处理），则**DeviceIoControl**将返回零值。 类驱动程序可以调用[GetLastError](https://docs.microsoft.com/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)以获取更详细的错误消息。
 
-当音频驱动程序必须更改 pin 配置默认值时，它可以使用 IOCTL\_AZALIABUS\_SENDVERBS 发送和接收设置和获取从音频编解码器的谓词。 如果与音频编解码器的通信不是 pin 配置中，音频编解码器将仅响应 Get 谓词。
+当音频驱动程序必须更改 pin 配置默认值时，它可以\_使用\_IOCTL AZALIABUS SENDVERBS 来发送和接收设置，并从音频编解码器获取动词。 如果与音频编解码器的通信与 pin 配置无关，则音频编解码器仅响应 Get 谓词。
 
-下面的示例演示使用 AzCorbeEntry 结构和句柄作为参数并返回 AzRirbResponse 从编解码器的函数。
+下面的示例演示一个函数，该函数采用 AzCorbeEntry 结构和句柄作为参数，并从编解码器返回 AzRirbResponse。
 
 ```cpp
 AzRirbEntry SendVerb(HANDLE handle, AzCorbEntry verb)
@@ -75,9 +75,9 @@ BOOL rc = DeviceIoControl(handle, IOCTL_AZALIABUS_SENDVERBS, &c, sizeof(c), &r, 
 }
 ```
 
-在下面的示例定义了数据类型和在前面的代码示例中使用的结构：
+在下面的示例中定义了前面的代码示例中使用的数据类型和结构：
 
-### <a name="span-idazcorbentryspanspan-idazcorbentryspan-azcorbentry"></a><span id="azcorbentry"></span><span id="AZCORBENTRY"></span> AzCorbEntry
+### <a name="span-idazcorbentryspanspan-idazcorbentryspan-azcorbentry"></a><span id="azcorbentry"></span><span id="AZCORBENTRY"></span>AzCorbEntry
 
 ```cpp
 struct AzCorbEntry
@@ -100,7 +100,7 @@ struct AzCorbEntry
 };
 ```
 
-### <a name="span-idazrirbentryspanspan-idazrirbentryspan-azrirbentry"></a><span id="azrirbentry"></span><span id="AZRIRBENTRY"></span> AzRirbEntry
+### <a name="span-idazrirbentryspanspan-idazrirbentryspan-azrirbentry"></a><span id="azrirbentry"></span><span id="AZRIRBENTRY"></span>AzRirbEntry
 
 ```cpp
 struct AzRirbEntry
@@ -137,9 +137,9 @@ struct AzRirbEntry
 };
 ```
 
-以下两个结构一起谓词传输 IOCTL，用于启用该命令和音频驱动程序和 HD 音频编解码器之间传输响应。
+以下两个结构与动词传输 IOCTL 一起使用，以便在音频驱动程序和 HD 音频编解码器之间启用命令和响应传输。
 
-### <a name="span-idusermodecodeccommandpacketspanspan-idusermodecodeccommandpacketspan-usermodecodeccommandpacket"></a><span id="usermodecodeccommandpacket"></span><span id="USERMODECODECCOMMANDPACKET"></span> UserModeCodecCommandPacket
+### <a name="span-idusermodecodeccommandpacketspanspan-idusermodecodeccommandpacketspan-usermodecodeccommandpacket"></a><span id="usermodecodeccommandpacket"></span><span id="USERMODECODECCOMMANDPACKET"></span>UserModeCodecCommandPacket
 
 ```cpp
 typedef struct _UserModeCodecCommandPacket
@@ -149,7 +149,7 @@ typedef struct _UserModeCodecCommandPacket
 } UserModeCodecCommandPacket;
 ```
 
-### <a name="span-idusermodecodecresponsepacketspanspan-idusermodecodecresponsepacketspan-usermodecodecresponsepacket"></a><span id="usermodecodecresponsepacket"></span><span id="USERMODECODECRESPONSEPACKET"></span> UserModeCodecResponsePacket
+### <a name="span-idusermodecodecresponsepacketspanspan-idusermodecodecresponsepacketspan-usermodecodecresponsepacket"></a><span id="usermodecodecresponsepacket"></span><span id="USERMODECODECRESPONSEPACKET"></span>UserModeCodecResponsePacket
 
 ```cpp
 typedef struct _UserModeCodecResponsePacket

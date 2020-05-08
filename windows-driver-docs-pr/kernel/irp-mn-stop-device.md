@@ -6,46 +6,52 @@ ms.assetid: a5c81db0-e753-4d91-97e4-c58ea05f5ce8
 keywords:
 - IRP_MN_STOP_DEVICE 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 03bc3143324d86265bac7855dc3a7727d2569b7f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34e33779bd4965696f599fdbacb1cb221ead4796
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827950"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922516"
 ---
 # <a name="irp_mn_stop_device"></a>IRP\_MN\_停止\_设备
 
 
 所有 PnP 驱动程序都必须处理此 IRP。
 
-<a name="major-code"></a>主代码
+## <a name="value"></a>值
+
+0x04
+
+<a name="major-code"></a>主要代码
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md)发送时间
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>发送时间
 ---------
 
 PnP 管理器发送此 IRP 来停止设备，以便它可以重新配置设备的硬件资源。
 
-在 Windows 2000 和更高版本的系统上，仅当之前的[**irp\_MN\_QUERY\_停止\_设备**](irp-mn-query-stop-device.md)成功完成时，PnP 管理器才会发送此 IRP。
+在 Windows 2000 和更高版本的系统上，PnP 管理器仅在以前[**的\_irp\_MN\_查询\_停止设备**](irp-mn-query-stop-device.md)成功完成后发送此 irp。
 
-在 Windows 98/Me 上，PnP 管理器还会在以下情况下发送此 IRP：当设备处于禁用状态时，如果设备堆栈未通过**IRP\_MN\_开始\_设备**请求。 如果启动失败，PnP 管理器将在没有前面的[**irp\_MN\_QUERY\_停止\_设备**](irp-mn-query-stop-device.md)请求的情况下发送此 irp。
+在 Windows 98/Me 上，PnP 管理器还会在设备被禁用时，以及当设备堆栈未通过**IRP\_\_MN 启动\_设备**请求时发送此 IRP。 如果启动失败，PnP 管理器会发送此 IRP，而不会出现前面的[**irp\_MN\_查询\_停止\_设备**](irp-mn-query-stop-device.md)请求。
 
-PnP 管理器以 IRQL 被动\_级别在系统线程的上下文中发送此 IRP。
+PnP 管理器在系统线程的上下文中\_以 IRQL 被动级别发送此 IRP。
 
 ## <a name="input-parameters"></a>输入参数
 
 
-无
+None
 
 ## <a name="output-parameters"></a>输出参数
 
 
-无
+None
 
-## <a name="io-status-block"></a>I/O 状态块
+## <a name="io-status-block"></a>I/o 状态块
 
 
-驱动程序必须将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
+驱动程序必须将**Irp-&gt;IOSTATUS**设置为状态\_"成功"。
 
 <a name="operation"></a>操作
 ---------
@@ -64,7 +70,7 @@ PnP 管理器以 IRQL 被动\_级别在系统线程的上下文中发送此 IRP�
 
 **正在发送此 IRP**
 
-保留供系统使用。 驱动程序不得发送此 IRP。
+预留给系统使用。 驱动程序不得发送此 IRP。
 
 <a name="requirements"></a>要求
 ------------
@@ -77,7 +83,7 @@ PnP 管理器以 IRQL 被动\_级别在系统线程的上下文中发送此 IRP�
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
@@ -85,7 +91,7 @@ PnP 管理器以 IRQL 被动\_级别在系统线程的上下文中发送此 IRP�
 ## <a name="see-also"></a>另请参阅
 
 
-[**IRP\_MN\_QUERY\_停止\_设备**](irp-mn-query-stop-device.md)
+[**IRP\_MN\_查询\_停止\_设备**](irp-mn-query-stop-device.md)
 
 [**IRP\_MN\_启动\_设备**](irp-mn-start-device.md)
 

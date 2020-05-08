@@ -10,12 +10,12 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aa0665e141954bb04e37335657e0bee9f731d4a0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3be1a9d7c92062aef7cf0420ecd5b1856d02611a
+ms.sourcegitcommit: 8af4ad1d9829787d07f9c413ba3e5a24947cf0cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "70174697"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872934"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 
@@ -45,11 +45,11 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 ### <a name="3-install-sdk-insider-preview"></a>3.安装 SDK Insider Preview 
 
-[获取 SDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+[获取 SDK Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
 ### <a name="4-install-wdk-insider-preview"></a>4.安装 WDK Insider Preview
 
-[获取 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+[获取 WDK Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
 > [!Note]   
 > 在安装过程中，你将看到 Visual Studio 安装程序安装 WDK 的 Visual Studio 扩展。 
@@ -58,7 +58,7 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它包括用于 Visual Studio 2019 的生成工具、SDK、WDK 以及对 ARM64 驱动程序开发的支持。 有关详细信息，请参阅[安装企业版 WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk)。 
 
-[获取企业版 Windows 驱动程序工具包 (WDK) Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+[获取企业版 Windows 驱动程序工具包 (WDK) Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
 若要开始使用，请装载 ISO 并单击“LaunchBuildEnv”。 
 
