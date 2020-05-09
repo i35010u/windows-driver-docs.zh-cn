@@ -6,14 +6,14 @@ keywords:
 - 检查生成 WDK，断言
 - 断言 WDK 检查生成
 - 错误 WDK 检查版本
-ms.date: 04/20/2017
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c90bc667b666b73f1614739b2e68b09554bdd3ba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b60262b4fce41ce1af187d9338284a946722e9a9
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839578"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999074"
 ---
 # <a name="checked-build-asserts"></a>已检验版本 ASSERT
 
@@ -26,6 +26,10 @@ ms.locfileid: "72839578"
 有关如何处理这些断言（以及未列出的其他内容）的一些提示，请参阅[检查的生成如何指示问题](how-the-checked-build-indicates-a-problem.md)。
 
 "例程" 列中列出的例程是驱动程序编写器或系统组件为引发此错误而要调用的最常见的例程。 下面列出的一些例程是驱动程序调用的记录例程。 其他是只有系统组件可以调用的内部例程。 请记住，从驱动程序调用其他某个函数可能会导致调用的函数在内部调用列出的函数之一，进而发出**断言**。
+
+> [!NOTE]
+> 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
+> 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。
 
 <table>
 <colgroup>
@@ -53,17 +57,17 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver" data-raw-source="[&lt;strong&gt;IoCallDriver&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)"><strong>IoCallDriver</strong></a></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;Type = = IO_TYPE_IRP）</p></td>
+<td align="left"><p>ASSERT （Irp&gt;类型 = = IO_TYPE_IRP）</p></td>
 <td align="left"><p>PIRP 参数不指向 IRP。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp" data-raw-source="[&lt;strong&gt;IoCancelIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocancelirp)"><strong>IoCancelIrp</strong></a></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;Type = = IO_TYPE_IRP）</p></td>
+<td align="left"><p>ASSERT （Irp&gt;类型 = = IO_TYPE_IRP）</p></td>
 <td align="left"><p>PIRP 参数不指向 IRP。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest" data-raw-source="[&lt;strong&gt;IoCompleteRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)"><strong>IoCompleteRequest</strong></a></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;Type = = IO_TYPE_IRP）</p></td>
+<td align="left"><p>ASSERT （Irp&gt;类型 = = IO_TYPE_IRP）</p></td>
 <td align="left"><p>PIRP 参数不指向 IRP。</p></td>
 </tr>
 <tr class="even">
@@ -83,17 +87,17 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IoCompleteRequest</strong></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;AuxiliaryBuffer！ = <strong>NULL</strong> ）</p></td>
-<td align="left"><p>已使用 STATUS_REPARSE、IO_REPARSE_TAG_MOUNT_POINT 完成 IRP，辅助缓冲区为<strong>NULL</strong>。</p></td>
+<td align="left"><p>ASSERT （Irp-&gt;Tail. AuxiliaryBuffer！ = <strong>NULL</strong> ）</p></td>
+<td align="left"><p>IRP 正在使用 STATUS_REPARSE，IO_REPARSE_TAG_MOUNT_POINT 完成，辅助缓冲区为<strong>NULL</strong>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice" data-raw-source="[&lt;strong&gt;IoCreateDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)"><strong>IoCreateDevice</strong></a></p></td>
-<td align="left"><p>ASSERT （（DriverObject-&gt;Flags & DRVO_UNLOAD_INVOKED） = = 0）</p></td>
+<td align="left"><p>ASSERT （（DriverObject&gt;& DRVO_UNLOAD_INVOKED） = = 0）</p></td>
 <td align="left"><p>已创建设备对象，但创建它的驱动程序标记为要卸载。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp" data-raw-source="[&lt;strong&gt;IoFreeIrp&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)"><strong>IoFreeIrp</strong></a></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;Type = = IO_TYPE_IRP）</p></td>
+<td align="left"><p>ASSERT （Irp&gt;类型 = = IO_TYPE_IRP）</p></td>
 <td align="left"><p>PIRP 不指向 IRP。</p></td>
 </tr>
 <tr class="even">
@@ -103,7 +107,7 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IoFreeIrp</strong></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;CurrentLocation &gt;= Irp-&gt;StackCount）</p></td>
+<td align="left"><p>ASSERT （Irp-&gt;CurrentLocation &gt;= irp-&gt;StackCount）</p></td>
 <td align="left"><p>正在释放 IRP，但尚未完成处理此 IRP 的所有驱动程序的 i/o 完成。</p></td>
 </tr>
 <tr class="even">
@@ -113,12 +117,12 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IoReuseIrp</strong></p></td>
-<td align="left"><p>ASSERT （IsListEmpty （& Irp-&gt;ThreadListEntry））</p></td>
+<td align="left"><p>ASSERT （IsListEmpty （&Irp-&gt;ThreadListEntry））</p></td>
 <td align="left"><p>正在重用的 IRP 仍在线程的 IRP 列表中，因此仍在使用中。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iosetharderrororverifydevice" data-raw-source="[&lt;strong&gt;IoSetHardErrorOrVerifyDevice&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iosetharderrororverifydevice)"><strong>IoSetHardErrorOrVerifyDevice</strong></a></p></td>
-<td align="left"><p>ASSERT （Irp-&gt;Tail. Thread！ = <strong>NULL</strong> ）</p></td>
+<td align="left"><p>断言（Irp-&gt;Tail. Thread！ = <strong>NULL</strong> ）</p></td>
 <td align="left"><p>IRP 不在任何线程的 IRP 列表上。</p></td>
 </tr>
 <tr class="odd">
@@ -134,7 +138,7 @@ ms.locfileid: "72839578"
 <tr class="odd">
 <td align="left"><p><strong>IopCompleteRequest</strong></p></td>
 <td align="left"><p>ASSERT （reparseBuffer-&gt;ReparseTag = = IO_REPARSE_TAG_MOUNT_POINT）</p></td>
-<td align="left"><p>已完成 IRP，状态为 = = STATUS_REPARSE，信息 = = IO_REPARSE_TAG_MOUNT_POINT，但 ReparseTag 不适用于 MOUNT_POINT。</p></td>
+<td align="left"><p>已完成 IRP，状态为 = = STATUS_REPARSE，信息 = = IO_REPARSE_TAG_MOUNT_POINT，但 ReparseTag 不是 MOUNT_POINT 的。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IopCompleteRequest</strong></p></td>
@@ -143,13 +147,13 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IopCompleteRequest</strong></p></td>
-<td align="left"><p>ASSERT （reparseBuffer-&gt;Reserved &lt; MAXIMUM_REPARSE_DATA_BUFFER_SIZE）</p></td>
+<td align="left"><p>ASSERT （reparseBuffer&gt; &lt; MAXIMUM_REPARSE_DATA_BUFFER_SIZE）</p></td>
 <td align="left"><p>已完成 IRP，状态为 = = STATUS_REPARSE，信息 = = IO_REPARSE_TAG_MOUNT_POINT，但返回的标记的长度无效。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IopSynchronousServiceTail</strong></p></td>
 <td align="left"><p>ASSERT （！Irp-&gt;PendingReturned）</p></td>
-<td align="left"><p>IRP 已标记为 "挂起"，但以 status！ = STATUS_PENDING 同步调度返回的例程。</p></td>
+<td align="left"><p>IRP 已标记为挂起，但以状态！ = STATUS_PENDING 同步调度返回的例程。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages" data-raw-source="[&lt;strong&gt;MmProbeAndLockPages&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)"><strong>MmProbeAndLockPages</strong></a></p></td>
@@ -159,11 +163,11 @@ ms.locfileid: "72839578"
 <tr class="even">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
 <td align="left"><p>ASSERT （（（ULONG） MemoryDescriptorList-&gt;ByteOffset & ~ （PAGE_SIZE-1）） = = 0）</p></td>
-<td align="left"><p>MDL 中第一页的偏移量为 &gt;= PAGE_SIZE;MDL 的格式不正确。</p></td>
+<td align="left"><p>MDL 中第一页的偏移量为&gt;= PAGE_SIZE;MDL 的格式不正确。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmProbeAndLockPages</strong></p></td>
-<td align="left"><p>ASSERT （（（ULONG_PTR） MemoryDescriptorList-&gt;StartVa & （PAGE_SIZE）） = = 0）</p></td>
+<td align="left"><p>ASSERT （（（ULONG_PTR） MemoryDescriptorList-&gt;StartVa & （PAGE_SIZE-1）） = = 0）</p></td>
 <td align="left"><p>MDL 中的起始 VA 不是页对齐的;MDL 的格式不正确。</p></td>
 </tr>
 <tr class="even">
@@ -253,12 +257,12 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>ASSERT （&gt;PointerPte = = 0）</p></td>
+<td align="left"><p>ASSERT （PointerPte&gt;= = 0）</p></td>
 <td align="left"><p>MDL 描述的缓冲区包含不在内存中的页面。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmMapLockedPagesSpecifyCache</strong></p></td>
-<td align="left"><p>ASSERT （Pfn2-&gt;u3. ReferenceCount！ = 0）</p></td>
+<td align="left"><p>ASSERT （Pfn2-&gt;ReferenceCount！ = 0）</p></td>
 <td align="left"><p>MDL 描述的缓冲区包含内存中未锁定的页面。</p></td>
 </tr>
 <tr class="odd">
@@ -273,7 +277,7 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmUnmapLockedPages</strong></p></td>
-<td align="left"><p>ASSERT （&gt;PointerPte = = 1）</p></td>
+<td align="left"><p>ASSERT （PointerPte&gt;= = 1）</p></td>
 <td align="left"><p>MDL 描述的缓冲区中的页面不在内存中。</p></td>
 </tr>
 <tr class="even">
@@ -283,7 +287,7 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>MmUnmapLockedPages</strong></p></td>
-<td align="left"><p>ASSERT （Pfn3-&gt;u3. ReferenceCount！ = 0）</p></td>
+<td align="left"><p>ASSERT （Pfn3-&gt;ReferenceCount！ = 0）</p></td>
 <td align="left"><p>MDL 描述的缓冲区包含内存中未锁定的页面。</p></td>
 </tr>
 <tr class="even">
@@ -298,7 +302,7 @@ ms.locfileid: "72839578"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>MmMapIoSpace</strong></p></td>
-<td align="left"><p>ASSERT （&gt;PointerPte = = 0）</p></td>
+<td align="left"><p>ASSERT （PointerPte&gt;= = 0）</p></td>
 <td align="left"><p>地址风行一时中的页面不在 i/o 空间。</p></td>
 </tr>
 <tr class="odd">

@@ -1,35 +1,35 @@
 ---
 title: 音频硬件资源管理
-description: Windows 10 包括能够 express 使用的并发性约束和 XML 文件。
+description: Windows 10 包括使用和 XML 文件表达并发约束的能力。
 ms.assetid: 6E94529E-F3F0-4DC5-AF8B-F896A4F991E3
 ms.date: 10/29/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e3b7d4995110d9d998cbc02173a48693943b0e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9608a783fd0a1b19e51f204c03d4d7b587d62574
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331467"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999062"
 ---
 # <a name="audio-hardware-resource-management"></a>音频硬件资源管理
 
-Windows 10 包括能够 express 使用的并发性约束和 XML 文件。 在资源受限的移动设备上指定特定的音频流的优先级别的功能可以增强客户体验。
+Windows 10 包括使用 XML 文件表达并发约束的能力。 在资源受限的移动设备上，可以指定特定音频流的优先级，从而提高客户体验。
 
-**请注意**  此机制选项仅适用于手机和平板电脑。
+**请注意**   ，此机制仅适用于手机和平板电脑。
  
-在低成本的移动设备上创建很好的音频体验的难题之一是某些设备具有各种并发约束。 例如，就可以支持仅 2 没有负载的流和该设备只能同时播放最多 6 个音频流。 当在移动设备上有活动的电话呼叫时，就可以在设备支持只有 2 个音频流。 当设备捕获音频时，设备只能播放最多 4 个音频流。
+在成本较低的移动设备上创建良好的音频体验的一个挑战是，某些设备有多种并发约束。 例如，设备可能只能同时播放最多6个音频流，且仅支持2个卸载流。 如果移动设备上存在活动电话呼叫，则设备可能仅支持2个音频流。 当设备正在捕获音频时，设备只能播放最多4个音频流。
 
-Windows 10 包含一种机制来表达并发约束以确保高优先级音频流和移动电话网络使用电话呼叫将能够播放。 如果系统没有足够的资源，然后终止低优先级的流。 此机制才在手机和平板电脑不在台式机或便携式计算机中可用。
+Windows 10 包含一种机制，用于表达并发约束，以确保高优先级的音频流和移动电话呼叫能够播放。 如果系统资源不足，则终止低优先级流。 此机制仅适用于不在台式机或笔记本电脑上的手机和平板电脑。
 
-若要指定约束，请完成这两个步骤。
+若要指定约束，请完成以下两个步骤。
 
-- 创建一个并发约束的 XML 文件中所述[指定并发约束](#specify_concurrency_constraints)。
-- 配置注册表项，以使用自定义并发约束 XML 文件中所述[注册表\_密钥\_配置](#registry_key_configuration)。
+- 如[指定并发](#specify_concurrency_constraints)约束中所述，创建一个并发约束 XML 文件。
+- 如[\_注册表项\_配置](#registry_key_configuration)中所述，将注册表项配置为使用自定义并发约束 XML 文件。
 
-## <a name="span-idspecifyconcurrencyconstraintsspanspan-idspecifyconcurrencyconstraintsspanspan-idspecifyconcurrencyconstraintsspanspecify-concurrency-resource-constraints"></a><span id="Specify_Concurrency_Constraints"></span><span id="specify_concurrency_constraints"></span><span id="SPECIFY_CONCURRENCY_CONSTRAINTS"></span>指定并发资源约束
+## <a name="span-idspecify_concurrency_constraintsspanspan-idspecify_concurrency_constraintsspanspan-idspecify_concurrency_constraintsspanspecify-concurrency-resource-constraints"></a><span id="Specify_Concurrency_Constraints"></span><span id="specify_concurrency_constraints"></span><span id="SPECIFY_CONCURRENCY_CONSTRAINTS"></span>指定并发资源约束
 
 
-XML 约束文件由三个部分组成。 通过定义第一个所需的部分&lt;限制&gt; &lt;/限制&gt;。 本部分可以用于定义最多 15 台资源约束。 例如，您可以定义呈现流的最大数目和可以关闭加载的流的最大数目的约束。
+XML 约束文件由三个部分组成。 第一个必需部分是&lt;通过限制&gt; &lt;/Limits&gt;定义的。 此部分可用于定义最多15个资源限制。 例如，可以为最大渲染流数和可以卸载的最大流数定义约束。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,11 +49,11 @@ XML 约束文件由三个部分组成。 通过定义第一个所需的部分&lt
   </Limits>
 ```
 
-下一节的 XML 文件定义一个或多个列表独占终结点，每个列表，其中包含两个或多个终结点。 这些是终结点，，不能处于活动状态一次。 本部分是可选的。
+XML 文件的下一部分定义了一个或多个独占终结点列表，每个列表都包含两个或多个终结点。 这些是不能同时处于活动状态的终结点。 本部分为可选。
 
-例如，如果音频硬件具有 HandsetSpeaker 和 WiredHeadsetSpeaker 网线连接到相同的 DAC，不能同时处于活动状态，这些应是相同的 ExclusiveEndpoints 列表中。
+例如，如果音频硬件同时将 HandsetSpeaker 和 WiredHeadsetSpeaker 连接到同一个 DAC，这一次不能处于活动状态，则这些硬件应位于同一 ExclusiveEndpoints 列表中。
 
-本部分中可以有多个&lt;ExclusiveEndpoints&gt;节点。 每个 ExclusiveEndpoints 节点包含两个或多个终结点节点。 每个终结点节点包含 HWID、 TopologyName 和 PinId。
+此部分可以有多&lt;个&gt; ExclusiveEndpoints 节点。 每个 ExclusiveEndpoints 节点包含两个或多个终结点节点。 每个终结点节点都包含 HWID、TopologyName 和 PinId。
 
 ```xml
   <ExclusiveEndpoints>
@@ -76,7 +76,7 @@ XML 约束文件由三个部分组成。 通过定义第一个所需的部分&lt
   </ExclusiveEndpoints>
 ```
 
-最后一个所需的 XML 文件的部分定义了各种资源使用者。 文件的此部分包含多个&lt;ResourceConsumer&gt;条目。 每个条目标识有关的信息资源使用者和及其关联的资源使用。 使用时，每个资源必须以前在中定义&lt;限制&gt;部分。
+XML 文件的最后一个必需部分定义了各种资源使用者。 此部分文件包含多个&lt;ResourceConsumer&gt;条目。 每个条目标识有关资源使用者及其关联资源使用情况的信息。 使用的每个资源都必须在 "限制&lt;&gt; " 部分中定义。
 
 ```xml
   <ResourceConsumer>
@@ -98,47 +98,47 @@ XML 约束文件由三个部分组成。 通过定义第一个所需的部分&lt
   </ResourceConsumer>
 ```
 
-使用音频资源，音频服务跟踪资源。 没有足够的资源可用时，都将终止较低优先级的流，或如果现有的资源使用者更高的优先级将当前的资源请求失败。
+使用音频资源时，音频服务会跟踪资源。 当资源不足时，将终止低优先级流; 如果现有资源使用者的优先级较高，则当前资源请求失败。
 
-这些是有效&lt;ConsumerInfo&gt;条目。
+这些是有效&lt;的 ConsumerInfo&gt;条目。
 
--   &lt;表示 PhoneCall&gt; - &lt;Phonecall&gt;节点包含与 CallState 子节点，这可以是"活动"或"待定"。
--   &lt;Stream&gt; -音频流。 &lt;Stream&gt;节点包含以下子节点。
+-   &lt;电话&gt;呼叫- &lt;"&gt;电话呼叫" 节点包含具有 "活动" 或 "保留" 的 "CallState" 子节点。
+-   &lt;流&gt; -音频流。 " &lt;流&gt; " 节点包含下列子节点。
 
-    &lt;HWID 硬件 ID (hw id) 的资源使用者指定驱动程序的 INF 文件中。
+    &lt;HWID-在驱动程序的 INF 文件中指定的资源使用者的硬件 ID （硬件 id）。
 
     &lt;TopologyName&gt; -资源使用者的拓扑筛选器引用字符串。
 
     &lt;PinId&gt; -资源使用者的 pin ID。
 
-    &lt;模式&gt;-关联的模式下的 GUID。 有关详细信息，请参阅[音频信号处理模式](audio-signal-processing-modes.md)。
+    &lt;Mode&gt; -关联模式的 GUID。 有关详细信息，请参阅[音频信号处理模式](audio-signal-processing-modes.md)。
 
-    &lt;ConnectorType&gt; -资源使用者的连接器类型。 有效值包括：主机、 Loopback，或卸载。
+    &lt;ConnectorType&gt; -资源使用者的连接器类型。 有效值为： "主机"、"环回" 或 "卸载"。
 
--   &lt;FM&gt; -调频广播。
--   &lt;KeywordDetector&gt; -关键字检测程序用来支持 Cortana 语音交互。
+-   &lt;FM&gt; -调频无线电。
+-   &lt;KeywordDetector&gt; -用于支持 Cortana 语音交互的关键字检测程序。
 
-下表总结了从最高到最低优先级列出的呈现音频流优先级。
+下表汇总了从最高优先级到最低优先级列出的 "呈现音频流" 优先级。
 
 |                          |     |
 |--------------------------|-----|
-| Communications           | 1   |
+| 信息传达           | 1   |
 | 游戏聊天                | 2   |
-| 屏幕读取器            | 3   |
-| 相机快门           | 4   |
-| 将推送到对话             | 5   |
-| 在调用通知     | 6   |
-| 个人助理       | 6   |
+| 屏幕阅读器            | 3   |
+| 照相机快门           | 4   |
+| 推送对话             | 5   |
+| 在呼叫通知中     | 6   |
+| 个人助手       | 6   |
 | 语音                   | 7   |
 | “铃声”                 | 8   |
-| Alarm                    | 9   |
+| 警报                    | 9   |
 | 电影                    | 10  |
-| 前景色唯一媒体    | 10  |
-| 背景媒体 | 11  |
-| Media                    | 11  |
+| 仅前景介质    | 10  |
+| 支持后台的媒体 | 11  |
+| 媒体                    | 11  |
 | 声音效果            | 12  |
 | DTMF                     | 12  |
-| 游戏的媒体               | 12  |
+| 游戏媒体               | 12  |
 | 系统                   | 12  |
 | 游戏效果             | 12  |
 | 其他                    | 13  |
@@ -146,28 +146,28 @@ XML 约束文件由三个部分组成。 通过定义第一个所需的部分&lt
 
  
 
-下表总结了从最高到最低优先级列出的捕获音频流优先级。
+下表总结了从最高优先级到最低优先级列出的捕获音频流优先级。
 
 |                          |     |
 |--------------------------|-----|
-| Communications           | 1   |
+| 信息传达           | 1   |
 | 游戏聊天                | 2   |
-| 将推送到对话             | 4   |
-| 个人助理       | 6   |
+| 推送对话             | 4   |
+| 个人助手       | 6   |
 | 语音                   | 7   |
-| 背景媒体 | 8   |
-| Media                    | 8   |
+| 支持后台的媒体 | 8   |
+| 媒体                    | 8   |
 | 其他                    | 13  |
-| 游戏的媒体               | 15  |
-| 屏幕读取器            | 15  |
+| 游戏媒体               | 15  |
+| 屏幕阅读器            | 15  |
 | 警报                   | 15  |
-| 前景色唯一媒体    | 15  |
+| 仅前景介质    | 15  |
 | 游戏效果             | 15  |
 | 声音效果            | 15  |
 | DTMF                     | 15  |
-| 在调用通知     | 15  |
-| Alarm                    | 15  |
-| 相机快门           | 15  |
+| 在呼叫通知中     | 15  |
+| 警报                    | 15  |
+| 照相机快门           | 15  |
 | 电影                    | 15  |
 | “铃声”                 | 15  |
 | 系统                   | 15  |
@@ -176,31 +176,31 @@ XML 约束文件由三个部分组成。 通过定义第一个所需的部分&lt
 
 **示例**
 
-- 示例 1：用户正在通过 Skype，使用通信呈现和捕获流和通信。 他们开始游戏时，它会尝试创建游戏效果流。 如果没有足够的资源，游戏效果流创建将失败。
+- 示例1：用户正在通过 Skype 交谈，使用通信呈现和捕获流。 它们启动游戏，尝试创建游戏效果流。 如果没有足够的资源可用，则游戏效果流创建将会失败。
 
-- 示例 2：用户正在播放音乐。 启动创建语音流的应用程序。 如果没有足够的资源，将终止的音乐流与语音流创建成功。
+- 示例2：用户正在播放音乐。 它们启动了一个创建语音流的应用程序。 如果没有足够的可用资源，音乐流将终止，并且语音流创建将成功。
 
-## <a name="span-idregistrykeyconfigurationspanspan-idregistrykeyconfigurationspanspan-idregistrykeyconfigurationspanregistry-key-configuration"></a><span id="Registry_Key_Configuration"></span><span id="registry_key_configuration"></span><span id="REGISTRY_KEY_CONFIGURATION"></span>注册表密钥配置
+## <a name="span-idregistry_key_configurationspanspan-idregistry_key_configurationspanspan-idregistry_key_configurationspanregistry-key-configuration"></a><span id="Registry_Key_Configuration"></span><span id="registry_key_configuration"></span><span id="REGISTRY_KEY_CONFIGURATION"></span>注册表项配置
 
-需要在以下注册表项中指定的并发约束 XML 文件的完整路径。 
+需要在以下注册表项中指定并发约束 XML 文件的完整路径。 
 
 ```inf
 HKR\SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig
 ```
 
-该路径是相对于驱动程序安装。 需要在驱动程序 INF 安装中复制约束的 XML 文件并将添加以下行以向系统注册：
+该路径是相对于驱动程序安装的路径。 在驱动程序 INF 安装中，需要复制约束 XML 文件，并添加以下行以将其注册到系统：
 
 ```inf
 HKR,SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig,<Name of the constraint>,,<Path to the constraint>
 ```
 
-在此注册表项提供一个值，包含 XML 的路径。 建议的 XML 文件和注册密钥值名称是唯一的因为没有提供自己的一组 XML 文件中的约束的其他子系统/音频设备潜在。 Regkey 可以设置音频驱动程序 INF 文件中。
+在此注册表项中，提供一个包含 XML 路径的值。 建议 XML 文件的名称和 regkey 值名称是唯一的，因为其他子系统/音频设备可能会在 XML 文件中提供自己的约束集。 可以在音频驱动程序 INF 文件中设置 regkey。
 
 
-## <a name="span-idexamplexmlconstraintsfilespanspan-idexamplexmlconstraintsfilespanspan-idexamplexmlconstraintsfilespanexample-xml-constraints-file"></a><span id="Example_XML_Constraints_File"></span><span id="example_xml_constraints_file"></span><span id="EXAMPLE_XML_CONSTRAINTS_FILE"></span>约束的示例 XML 文件
+## <a name="span-idexample_xml_constraints_filespanspan-idexample_xml_constraints_filespanspan-idexample_xml_constraints_filespanexample-xml-constraints-file"></a><span id="Example_XML_Constraints_File"></span><span id="example_xml_constraints_file"></span><span id="EXAMPLE_XML_CONSTRAINTS_FILE"></span>示例 XML 约束文件
 
 
-这是 XML 约束 SYSVAD 虚拟音频驱动程序示例中的文件的示例。
+这是 SYSVAD 虚拟音频驱动程序示例中的 XML 约束文件示例。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

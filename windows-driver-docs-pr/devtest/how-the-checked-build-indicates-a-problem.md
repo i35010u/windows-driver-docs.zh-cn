@@ -10,20 +10,22 @@ keywords:
 - 调试器消息 WDK
 - 消息 WDK 检查版本
 - 错误 WDK 检查版本
-ms.date: 04/20/2017
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d29a0a891a6a24a5ae89229f0a86c3a8a39ab82
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3234192f15cbd2e365536918e73d5370d540df65
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840266"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999064"
 ---
 # <a name="how-the-checked-build-indicates-a-problem"></a>已检验版本如何指出问题
 
-
 ## <span id="ddk_how_the_checked_build_indicates_a_problem_tools"></span><span id="DDK_HOW_THE_CHECKED_BUILD_INDICATES_A_PROBLEM_TOOLS"></span>
 
+> [!NOTE]
+> 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
+> 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。
 
 操作系统的检查内部版本使用各种方法来通知您发现的问题。 这些方法包括断言错误、断点和调试器消息。 所有这些方法都将导致内核调试器输出。 因此，若要非常有用，必须在已连接内核模式调试器（例如 WinDbg 或 KD）的情况下运行检查的生成。
 
@@ -52,9 +54,9 @@ ntkrnlmp!DbgBreakPoint:
 
 如调试器输出所示，要求用户 "中断、忽略、终止进程或终止线程"。 用户通过输入 "b" 回答，这会导致调试器停止系统执行并带有断点。 因此，用户现在可以继续调试发现的问题。
 
-失败的断言对系统产生的影响的方式取决于多个因素。 在 Windows Vista 之前的 Windows 版本中，如果在系统启动过程中为操作系统启用了调试，则系统将中断到调试器（如果已连接）或挂起等待调试器连接。 如果未启用调试，系统将崩溃， [**Bug 检查 0x1E**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) （KMODE\_异常\_未\_处理），参数1值为0x80000003。 在 Windows Vista 和更高版本中，只有当调试器连接时，系统才会中断调试器。 如果未启用调试，或启用了调试但未连接调试程序，则不会报告失败的断言（尽管仍将执行断言检查）。 如果正在开发驱动程序，并且希望在启用调试但未连接调试器的情况下，明确中断调试器，则可以在代码中使用[**DbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)语句。
+失败的断言对系统产生的影响的方式取决于多个因素。 在 Windows Vista 之前的 Windows 版本中，如果在系统启动过程中为操作系统启用了调试，则系统将中断到调试器（如果已连接）或挂起等待调试器连接。 如果未启用调试，系统将崩溃， [**Bug 检查 0x1E**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) （未\_处理 KMODE\_异常\_），参数1值为0x80000003。 在 Windows Vista 和更高版本中，只有当调试器连接时，系统才会中断调试器。 如果未启用调试，或启用了调试但未连接调试程序，则不会报告失败的断言（尽管仍将执行断言检查）。 如果正在开发驱动程序，并且希望在启用调试但未连接调试器的情况下，明确中断调试器，则可以在代码中使用[**DbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)语句。
 
-某些[**断言**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))失败之前有其他[**DbgPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)输出。 此类断言的一个常见示例是以下[**分页\_代码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)宏，它在 ntddk 和 wdm 中定义，以在驱动程序的已检查版本中使用：
+某些[**断言**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))失败之前有其他[**DbgPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)输出。 此类断言的一个常见示例是下面的[**分页\_代码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)宏，该宏是在 ntddk 中定义的，并在驱动程序的已检查版本中使用：
 
 ```
 #define PAGED_CODE() \

@@ -6,22 +6,22 @@ keywords:
 - checked build WDK，与免费版本
 - 免费生成 WDK
 - 零售版本 WDK
-ms.date: 09/26/2019
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fdc411da56c9aa4f14e31de833a0bda1cec4ae3
-ms.sourcegitcommit: f018b0ab82aae3e3779128d3c4420222ddc0f4ac
+ms.openlocfilehash: ffa44c1773dc1b58c6734387bd14fe07ad650c26
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329601"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999052"
 ---
 # <a name="checked-and-free-build-differences"></a>已检验版本和免费版本的差异
 
 提供了两个不同的基于 NT 的操作系统版本：免费（零售）和检查（调试）。 还有第三个选项（*称为部分检查的生成*），它将两个元素组合在一起。
 
-- [已检查和免费生成之间的差异](#differences-between-the-checked-and-free-builds)
-- [在何处可以找到 Windows 的已检查版本](#where-to-find-a-checked-build-of-windows)
-- [何时使用选中的生成或部分选中的生成](#when-to-use-the-checked-build-or-partial-checked-build)
+> [!NOTE]
+> 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
+> 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。
 
 ## <a name="differences-between-the-checked-and-free-builds"></a>已检查和免费生成之间的差异
 

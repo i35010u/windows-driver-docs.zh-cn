@@ -8,12 +8,12 @@ keywords:
 - 已释放内存 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e140b3685a47cb87e0e92e123b2642b8fb6ade4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e94456735bd9ea79d3d8b1139d8733bea3457ecb
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839409"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999068"
 ---
 # <a name="miscellaneous-checks"></a>其他检查
 
@@ -22,18 +22,18 @@ ms.locfileid: "72839409"
 
 具体而言，"杂项检查" 选项将查找以下不正确的驱动程序行为：
 
--   **已释放内存中的活动工作项。** 驱动程序调用[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)来释放包含使用[**IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)排队的工作项的池块。 （默认情况下，在 Windows Server 2003 的检查版本中启用此检查。）
+-   **已释放内存中的活动工作项。** 驱动程序调用[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)来释放包含使用[**IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)排队的工作项的池块。 
 
 -   **已释放内存中的活动资源。** 驱动程序调用[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)来释放包含活动[ERESOURCE 结构](https://docs.microsoft.com/windows-hardware/drivers/kernel/eresource-structures)的池块。 在调用**ExFreePool**之前，驱动程序应调用[**EXDELETERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)来删除 ERESOURCE 对象。
 
--   **已释放内存中的活动后备链表列表。** 驱动程序调用[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)来释放仍包含活动后备链表列表（[**NPAGED\_后备链表\_列表**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)或[**分页\_后备链表\_列表**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构的池块。 在调用**ExFreePool**之前，驱动程序应调用[**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletenpagedlookasidelist)或[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletepagedlookasidelist)以删除后备链表列表。
+-   **已释放内存中的活动后备链表列表。** 驱动程序调用[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)来释放仍包含活动后备链表列表（[**\_NPAGED 后备链表\_列表**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)或[**分页\_后备链表\_列表**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)结构的池块。 在调用**ExFreePool**之前，驱动程序应调用[**ExDeleteNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletenpagedlookasidelist)或[**ExDeletePagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeletepagedlookasidelist)以删除后备链表列表。
 
 -   **Windows Management Instrumentation （WMI）和 Windows 事件跟踪（ETW）注册问题。** 驱动程序验证程序检测到的此类问题包括：
     -   尝试在不取消注册其 WMI 回调的情况下卸载的驱动程序。
     -   尝试删除未从 WMI 中注销的设备对象的驱动程序。
     -   尝试在不注销其 ETW 内核模式提供程序的情况下卸载的驱动程序。
     -   尝试注销已取消注册的提供程序的驱动程序。
--   **内核句柄错误。** （Windows Vista 和更高版本）启用 "杂项检查" 选项还将为系统进程启用处理跟踪，以帮助调查内核句柄泄漏和[**Bug 检查0x93：内核\_句柄\_无效**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x93--invalid-kernel-handle)。 启用句柄跟踪后，内核将收集最近句柄打开和关闭操作的堆栈跟踪。 使用 **！ htrace**调试器扩展可以在内核调试器中显示堆栈跟踪。 有关 **！ htrace**的详细信息，请参阅 Windows 调试工具文档。
+-   **内核句柄错误。** （Windows Vista 和更高版本）启用 "杂项检查" 选项还将为系统进程启用处理跟踪，以帮助调查内核句柄泄漏和[**Bug 检查0x93：\_内核\_句柄无效**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x93--invalid-kernel-handle)。 启用句柄跟踪后，内核将收集最近句柄打开和关闭操作的堆栈跟踪。 使用 **！ htrace**调试器扩展可以在内核调试器中显示堆栈跟踪。 有关 **！ htrace**的详细信息，请参阅 Windows 调试工具文档。
 
 -   **使用内核模式访问的用户模式句柄**从 Windows 7 开始，在选择 "杂项检查" 选项时，驱动程序验证器还会检查对[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)的调用。 不能使用内核模式访问传递用户模式句柄。 如果发生此类操作，驱动程序验证程序将发出 Bug 检查0xC4，参数1值为0xF6。
 
@@ -43,9 +43,9 @@ ms.locfileid: "72839409"
 
     将同步对象（如 KEVENT 结构）作为内核堆栈上的局部变量进行分配是一种常见的做法。 当进程加载到内存中时，它的线程的内核堆栈永远不会从工作集中修整或分页到磁盘。 在此类不可分页内存中分配同步对象是正确的。
 
-    但是，当驱动程序调用 Api （如[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)或[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects) ）等待在堆栈上分配的对象时，它们必须为 API 的*WaitMode*参数指定**KernelMode**值。 当进程的所有线程都在**UserMode**模式下等待时，该进程将有资格换出到磁盘。 因此，如果驱动程序将**UserMode**指定为*WaitMode*参数，则只要同一进程中的每个其他线程都等待**UserMode**，操作系统就可以交换当前进程。 将整个过程交换到磁盘上包括对其内核堆栈进行分页。 正在等待操作系统已交换的同步对象不正确。 在某一时刻，线程必须伴随，并向同步对象发出信号。 向同步对象发出信号涉及到在 IRQL = 调度\_级别或更高级别处理对象的 Windows 内核。 在调度\_级别或更高级别上触摸时，将会发生系统崩溃，并向外或交换内存。
+    但是，当驱动程序调用 Api （如[**KeWaitForSingleObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitforsingleobject)或[**KeWaitForMultipleObjects**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kewaitformultipleobjects) ）等待在堆栈上分配的对象时，它们必须为 API 的*WaitMode*参数指定**KernelMode**值。 当进程的所有线程都在**UserMode**模式下等待时，该进程将有资格换出到磁盘。 因此，如果驱动程序将**UserMode**指定为*WaitMode*参数，则只要同一进程中的每个其他线程都等待**UserMode**，操作系统就可以交换当前进程。 将整个过程交换到磁盘上包括对其内核堆栈进行分页。 正在等待操作系统已交换的同步对象不正确。 在某一时刻，线程必须伴随，并向同步对象发出信号。 向同步对象发出信号涉及到在 IRQL = 调度\_级别或更高级别处理对象的 Windows 内核。 在派单\_或更高级别上触摸已分页或换出内存会导致系统崩溃。
 
-    从 Windows 7 开始，当你选择 "杂项检查" 选项时，驱动程序验证器将检查已验证驱动程序用于在**UserMode**中等待的同步对象是否未在当前线程的内核堆栈上进行分配。 当驱动程序验证器检测到此类错误等待时，它会发出[**错误检查 0xC4\_：\_检测到\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，并将参数1的值0x123。
+    从 Windows 7 开始，当你选择 "杂项检查" 选项时，驱动程序验证器将检查已验证驱动程序用于在**UserMode**中等待的同步对象是否未在当前线程的内核堆栈上进行分配。 当驱动程序验证器检测到此类错误等待时，它会发出[**错误\_检查\_0XC4\_：驱动程序验证程序检测到冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，参数1值为0x123。
 
 -   **内核句柄引用不正确**
 
@@ -55,9 +55,9 @@ ms.locfileid: "72839409"
 
     在 Windows 7 中，驱动程序验证程序检测到引用不正确的内核句柄值。 如果启用了驱动程序验证程序的杂项检查选项，则这些驱动程序缺陷将报告为[**Bug 检查0x93：无效\_内核\_句柄**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x93--invalid-kernel-handle)。 通常，这种不正确的句柄引用意味着驱动程序已关闭该句柄，但正在尝试继续使用该句柄。 此类缺陷可能会导致系统无法预测的问题，因为正在引用的句柄值可能已被另一个不相关的驱动程序使用过。
 
-    如果内核驱动程序最近关闭了内核句柄，以后引用了关闭的句柄，则驱动程序验证程序会强制执行 bug 检查，如前文所述。 在这种情况下， [ **！ htrace**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-htrace)调试器扩展的输出为关闭此句柄的代码路径提供堆栈跟踪。 使用系统进程的地址作为 **！ htrace**的参数。 若要查找系统进程的地址，请使用 **！ process 4 0**命令。
+    如果内核驱动程序最近关闭了内核句柄，以后引用了关闭的句柄，则驱动程序验证程序会强制执行 bug 检查，如前文所述。 在这种情况下， [**！ htrace**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-htrace)调试器扩展的输出为关闭此句柄的代码路径提供堆栈跟踪。 使用系统进程的地址作为 **！ htrace**的参数。 若要查找系统进程的地址，请使用 **！ process 4 0**命令。
 
-    从 Windows 7 开始，驱动程序验证器将检查添加到[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)。 现在禁止通过 KernelMode 访问传递用户空间句柄。 如果检测到此类组合，则驱动程序验证程序问题[**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，参数1的值为0xF6。
+    从 Windows 7 开始，驱动程序验证器将检查添加到[**ObReferenceObjectByHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)。 现在禁止通过 KernelMode 访问传递用户空间句柄。 如果检测到此类组合，则驱动程序验证程序问题[**Bug 检查\_0XC4\_：\_驱动程序验证器检测到冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，参数1值为0xF6。
 
 ### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
@@ -90,7 +90,7 @@ ms.locfileid: "72839409"
 -   **使用驱动程序验证器管理器**
 
     1.  启动驱动程序验证器管理器。 在命令提示符窗口中键入**Verifier** 。
-    2.  选择 "**创建自定义设置（适用于代码开发人员）** "，然后单击 "**下一步**"。
+    2.  选择 "**创建自定义设置（适用于代码开发人员）**"，然后单击 "**下一步**"。
     3.  选择 "**从完整列表中选择单个设置**"。
     4.  选择 "**杂项检查**"。
 
@@ -100,7 +100,7 @@ ms.locfileid: "72839409"
 
 若要查看 "杂项检查" 选项的结果，请在内核调试器中使用 **！ verifier**扩展。 （有关 **！ verifier**的信息，请参阅*Windows 调试工具*文档。）
 
-在下面的示例中，"杂项检查" 选项检测到驱动程序在内存中正在尝试释放的活动 ERESOURCE 结构，导致[**错误检查0xC4：驱动程序\_验证程序\_检测到\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)。 Bug 检查0xC4 显示包括 ERESOURCE 的地址和受影响的内存。
+在下面的示例中，"杂项检查" 选项检测到驱动程序在内存中正在尝试释放的活动 ERESOURCE 结构，导致[**错误检查0xC4：\_驱动\_程序\_验证程序检测到冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)。 Bug 检查0xC4 显示包括 ERESOURCE 的地址和受影响的内存。
 
 ```
 1: kd> !verifier 1
@@ -145,7 +145,7 @@ Entry     State           NonPagedPool   PagedPool   Module
                4 -  Pool allocation size.
 ```
 
-若要调查池分配，请使用[ **！ pool**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-pool)调试程序扩展和池分配的起始地址9655D468。 （ *2*标志仅显示包含指定地址的池的标头信息。 禁止其他池的标头信息。）
+若要调查池分配，请使用[**！ pool**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-pool)调试程序扩展和池分配的起始地址9655D468。 （ *2*标志仅显示包含指定地址的池的标头信息。 禁止其他池的标头信息。）
 
 ```
 1: kd> !pool 9655d468  2
@@ -153,7 +153,7 @@ Pool page 9655d468 region is Paged pool
 *9655d468 size:   b0 previous size:    8  (Allocated) *Bug_
 ```
 
-若要查找有关 ERESOURCE 的信息，请使用带有结构地址的[ **！锁（！ kdext\*）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-locks---kdext--locks-)调试器扩展。
+若要查找有关 ERESOURCE 的信息，请使用带有结构地址的[**！锁（！\*kdext）**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-locks---kdext--locks-)调试器扩展。
 
 ```
 1: kd> !locks 0x9655D4A8     <<<<<- ERESOURCE @0x9655D4A8 lives inside the pool block being freed
