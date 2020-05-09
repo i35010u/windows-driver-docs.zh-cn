@@ -132,6 +132,8 @@
                       href: user-mode-reliability-for-crashes-in-windows-components.md
                     - name: Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
                       href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
+                    - name: 遇到 WinML 运行时错误的设备所占的百分比
+                      href: pct-devices-winml-runtime-error.md
                 - name: 生态系统受众度量
                   items:
                     - name: 由于显卡驱动程序二进制文件中的崩溃导致出现蓝屏且具有离散式 GPU 的计算机的巨大数量

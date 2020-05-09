@@ -4,12 +4,12 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 426ef28c766ff2f052253021528efc6fc9a688fd
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 78d591e217b677454753aac7efef13c06cf11726
+ms.sourcegitcommit: 2efaa8f233b1d19e18faa3387a9c11ef69fe790f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82039811"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82777894"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -396,10 +396,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
 | Windows_v100_19H1 | Windows 10 19H1 更新 |
-| Windows_v100_VB | Windows 10 即将发布的更新 |
-
->[!NOTE]
->在更新发布之前，Windows_v100_VB 操作系统系列代码是无效的。
+| Windows_v100_VB | Windows 10 版本 2004 |
 
 ### <a name="list-of-operating-system-codes"></a>操作系统代码列表
 
@@ -460,12 +457,9 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 |WINDOWS_v100_19H1_FULL |Windows 19H1 客户端 x86 |
 |WINDOWS_v100_X64_19H1_FULL |Windows 19H1 客户端 x64 |
 |WINDOWS_v100_ARM64_19H1_FULL | Windows 19H1 客户端 ARM64 |
-|WINDOWS_v100_VB_FULL | Windows 10（下一次更新）客户端 x86 |
-|WINDOWS_v100_X64_VB_FULL | Windows（下一次更新）客户端 x64 |
-|WINDOWS_v100_ARM64_VB_FULL | Windows（下一次更新）客户端 ARM64 |
-
->[!NOTE]
->在更新发布之前，三个 \*_VB\* 操作系统代码都是无效的。
+|WINDOWS_v100_VB_FULL | Windows 10 版本 2004 客户端 x86 |
+|WINDOWS_v100_X64_VB_FULL | Windows 版本 2004 客户端 x64 |
+|WINDOWS_v100_ARM64_VB_FULL | Windows 版本 2004 客户端 ARM64 |
 
 ## <a name="error-codes"></a>错误代码
 

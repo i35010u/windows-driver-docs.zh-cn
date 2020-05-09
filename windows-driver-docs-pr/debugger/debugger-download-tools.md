@@ -5,14 +5,14 @@ keywords:
 - Windows 调试工具下载
 - WinDbg
 - 下载
-ms.date: 04/09/2020
+ms.date: 05/01/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 65136ac7f480e07fa1f8e4bd588fcba88e03d6dc
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f12bff2ee48bf0fd2912755c2a3be300b1534447
+ms.sourcegitcommit: c74025e4ac60c3eb42ae80ab0d9806858527d228
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81208031"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726261"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载 Windows 调试工具
 
@@ -30,7 +30,7 @@ WinDbg Preview 是 WinDbg 的新版本，具有更现代的视觉效果、更快
 
 ## <a name="small-classic-windbg-preview-logo-debugging-tools-for-windows-10-windbg"></a>![小的经典 WinDbg Preview 徽标](images/windbg-classic-logo.png) Windows 10 调试工具 (WinDbg)
 
-从 SDK 获取 Windows 调试工具 (WinDbg)：[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
+从 SDK 获取 Windows 调试工具 (WinDbg)：[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。 请使用 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) 页上的“下载”链接，因为 Visual Studio 中不提供 Windows 调试工具。
 
 如果仅需 Windows 调试工具，而不需适用于 Windows 10 的 Windows 驱动程序工具包 (WDK)，则可将调试工具作为 Windows 软件开发工具包 (SDK) 中的独立组件进行安装。
 
