@@ -1,25 +1,25 @@
 ---
 title: 从命令行运行 InfVerif
-description: 本主题列出了从命令行运行 InfVerif.exe 时可用的选项。
+description: 本主题列出了从命令行运行 InfVerif 时可用的选项。
 ms.assetid: CC2DB624-FFEE-4049-ACE7-4A24B330BADB
-ms.date: 04/20/2017
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c2686122d1c695c1b99b691115c45289947ead84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b7f868f8bc9d7633e2644d226a579a4c9ac6b84
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340221"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235297"
 ---
 # <a name="running-infverif-from-the-command-line"></a>从命令行运行 InfVerif
 
 
-本主题列出了从命令行运行 InfVerif.exe 时可用的选项。
+本主题列出了从命令行运行 InfVerif 时可用的选项。
 > [!NOTE]
-> InfVerif 要求每个组合的路径和文件名称必须少于 260 个字符。
+> InfVerif 要求每个组合的路径和文件名必须少于260个字符。
 
 ```
-USAGE: InfVerif.exe [/v] [/u | /universal] [/k] [/info] [/stampinf] [/l <path>]
+USAGE: InfVerif.exe [/v] [/u | /universal] [/w] [/k] [/info] [/stampinf] [/l <path>]
                     [/osver TargetOSVersion>] [/product <ias file>] <files>
 
 /v
@@ -30,6 +30,9 @@ USAGE: InfVerif.exe [/v] [/u | /universal] [/k] [/info] [/stampinf] [/l <path>]
 
 /u
         Reports errors if INF is not Universal. (mode)
+
+/w
+        Reports Windows Driver compatibility. See below. (mode)
 
 /info
         Displays INF summary information.
@@ -58,9 +61,17 @@ USAGE: InfVerif.exe [/v] [/u | /universal] [/k] [/info] [/stampinf] [/l <path>]
 Only one mode option may be passed at a time.
 ```
 
-有关的示例*TargetOSVersion*格式设置，请参阅备注部分中的[INF 制造商部分](../install/inf-manufacturer-section.md)。
+Verbose 选项向输出添加一行，用于指定 INF 是否有效。  某些参数被标记为模式，其中只应传递其中一项。
 
-使用详细选项指定 INF 或不是有效的输出中添加一行。  某些参数标记为模式，其中应传递唯一。
+有关*TargetOSVersion*格式设置的示例，请参阅[INF 制造商部分](../install/inf-manufacturer-section.md)的 "备注" 部分。
 
-*新建适用于 Windows 10，版本 1703年:* 信息选项是特别有用，若要验证 INF 适用性。  它将报告以及有效的体系结构和最低操作系统版本的每个受支持的硬件 ID。  可用于 /info 和 /osver 一起跨 OS 版本和体系结构验证 INF 的适用性。
+*适用于 Windows 10 的新版本1703：* Info 选项对于验证 INF 适用性特别有用。  它会报告每个受支持的硬件 ID 以及有效的体系结构和最低操作系统版本。  可以同时使用/info 和/osver 来验证 INF 在操作系统版本和体系结构方面的适用性。
 
+*适用于 Windows 10 的新版本1809：* 如果要开发*Windows 驱动程序*，请使用 `infverif /w` （理想使用 `/v` ）来确定与[DCH 设计原则](dch-principles-best-practices.md)的**声明性（D）** 原则兼容性。  该 `/w` 标志还会检查 INF 是否符合[驱动程序包隔离](driver-isolation.md)要求[和 Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
+
+若要验证多个 INF 文件，请提供多个文件名或使用通配符：
+
+```
+infverif.exe /w test1.inf test2.inf
+infverif.exe /w test*.inf
+```

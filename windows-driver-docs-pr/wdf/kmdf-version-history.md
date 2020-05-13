@@ -6,15 +6,15 @@ keywords:
 - 内核模式驱动程序 WDK KMDF、修订历史记录
 - KMDF WDK，修订历史记录
 - 内核模式驱动程序框架 WDK，修订历史记录
-ms.date: 03/29/2019
+ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7214a358e1ddcd49c4c7e2e6895575c1e9ed8cb0
-ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
+ms.openlocfilehash: 9474f6a88b3730f8075329189c0b5eebc18c6983
+ms.sourcegitcommit: 74fe7ba90604b4d1e794bd818e9cfc1b46e5c31b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226528"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83279852"
 ---
 # <a name="kmdf-version-history"></a>KMDF 版本历史记录
 
@@ -25,19 +25,20 @@ ms.locfileid: "80226528"
 
 |KMDF 版本|Release 方法|包含在此版本的 Windows 中|使用的驱动程序运行于|
 |--- |--- |--- |--- |
-|1.29|在 WDK 中未发布|Windows 10 版本1903（2019年3月更新，19H1）|Windows 10 版本1903及更高版本|
+|1.31|Windows 10，版本 2004 WDK|Windows 10 版本2004（可能2020更新，Vibranium）|Windows 10 版本2004及更高版本|
+|1.29|在 WDK 中未发布|Windows 10 版本1903（2019年3月更新，19H1）|Windows 10 版本 1903 及更高版本|
 |1.27|Windows 10，版本 1809 WDK|Windows 10 版本1809（2018年10月更新，Redstone 5）|Windows 10 版本1809及更高版本|
 |1.25|Windows 10，版本 1803 WDK|Windows 10 版本1803（2018更新，Redstone 4）|Windows 10 版本1803及更高版本|
-|1.23|Windows 10，版本 1709 WDK|Windows 10 版本1709（秋季创建者更新、Redstone 3）|Windows 10 版本1709及更高版本|
-|1.21|Windows 10，版本 1703 WDK|Windows 10 版本1703（创意者更新，Redstone 2）|Windows 10 版本1703及更高版本|
+|1.23|Windows 10，版本 1709 WDK|Windows 10 版本1709（秋季创建者更新、Redstone 3）|Windows 10 版本 1709 和更高版本|
+|1.21|Windows 10，版本 1703 WDK|Windows 10 版本1703（创意者更新，Redstone 2）|Windows 10 版本 1703 及更高版本|
 |1.19|Windows 10，版本 1607 WDK|Windows 10 版本1607（周年更新，Redstone 1）|Windows 10 版本1607、Windows Server 2016 和更高版本|
 |1.17|Windows 10，版本 1511 WDK|Windows 10 版本1511（11月更新，阈值2）|Windows 10 版本1511、Windows Server 2016 和更高版本|
 |1.15|Windows 10 WDK|Windows 10 版本1507（阈值1）|Windows 10，版本1507，Windows Server 2016 及更高版本|
-|1.13|Windows 8.1 WDK|Windows 8.1|Windows 8.1 及更高版本|
+|1.13|Windows 8.1 WDK|Windows 8.1|Windows 8.1 及更高版本|
 |1.11|Windows 8 WDK|Windows 8|Windows Vista 及更高版本|
 |1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
 |1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 （SP1）、Windows Server 2008|Windows 2000 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows 2000 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows 2000 及更高版本|
 |1.1|仅下载|无|Windows 2000 及更高版本|
 |1.0|仅下载|无|Windows XP 及更高版本|
 
@@ -48,6 +49,12 @@ ms.locfileid: "80226528"
 有关回调和方法的完整列表，以及它们适用于哪些框架和版本，请参阅[WDF 回调和方法摘要](https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf/)。
 
 有关 Windows 10 中 KMDF 驱动程序的新增功能的信息，请参阅[WDF 驱动程序的新增](index.md)功能。
+
+## <a name="kmdf-version-131"></a>KMDF 版本1.31
+
+* 添加了新的 API [ **WdfDeviceSetDeviceInterfaceStateEx**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestateex)
+* 改进现有 API [ **WdfDeviceGetSystemPowerAction**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetsystempoweraction)
+* 添加了新的 API [ **WdfPdoInitRemovePowerDependencyOnParent**](/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitremovepowerdependencyonparent)
 
 ## <a name="kmdf-version-129"></a>KMDF 版本1.29
 
@@ -77,19 +84,19 @@ ms.locfileid: "80226528"
 * 添加的[ **WdfDmaTransactionSetSingleTransferRequirement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)
 * 已在[**WDF_DMA_ENABLER_CONFIG_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)中添加**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**标志
 * 添加了**STATUS_WDF_TOO_MANY_TRANSFERS** [**WdfDmaTransactionInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)和[**WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)的返回值
-* 已将单个传输输出的输出消息添加到[ **！ wdfkd. wdfdmatransaction**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmatransaction)和[ **！ wdfkd。 wdfdmaenabler**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenabler)
+* 已将单个传输输出的输出消息添加到[**！ wdfkd. wdfdmatransaction**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmatransaction)和[**！ wdfkd。 wdfdmaenabler**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenabler)
 * 有关单个传输 DMA 的详细信息，请参阅[使用单个传输 dma](using-single-transfer-dma.md)。
 
 ## <a name="kmdf-version-115"></a>KMDF 版本1.15
 
--   使用新的[**WdfDeviceOpenDevicemapKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)方法，驱动程序可以访问**HKEY\_本地\_计算机\\硬件\\DEVICEMAP**上的子项和值。
+-   使用新的[**WdfDeviceOpenDevicemapKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)方法，驱动程序可以访问**HKEY \_ 本地 \_ 计算机 \\ 硬件 \\ DEVICEMAP**下的子项和值。
 
 ## <a name="kmdf-version-113"></a>KMDF 版本1.13
 
 
 KMDF 版本1.13 添加了以下功能：
 
--   将**CanWakeDevice**成员添加到[**WDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)结构，以支持可用于将设备从低功耗 Dx 状态恢复为完全开机 D0 状态的中断。 有关详细信息，请参阅[使用中断唤醒设备](using-an-interrupt-to-wake-a-device.md)。
+-   将**CanWakeDevice**成员添加到[**WDF \_ 中断 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)结构，以支持可用于将设备从低功耗 Dx 状态恢复为完全打开的 D0 状态的中断。 有关详细信息，请参阅[使用中断唤醒设备](using-an-interrupt-to-wake-a-device.md)。
 -   支持高分辨率计时器。 有关详细信息，请参阅[使用计时器](using-timers.md)。
 -   支持在系统处于低功耗状态时，不会唤醒系统的计时器。 有关详细信息，请参阅[使用计时器](using-timers.md)。
 -   [访问统一设备属性模型](accessing-the-unified-device-property-model.md)中所述的以下 KMDF/UMDF 方法：
@@ -113,7 +120,7 @@ KMDF 版本1.13 添加了以下功能：
 
 -   单个设备中多个组件的[功能电源状态](supporting-functional-power-states.md)
 
--   [向 i/o 队列调度 Irp](dispatching-irps-to-i-o-queues.md)
+-   [将 IRP 调度到 I/O 队列](dispatching-irps-to-i-o-queues.md)
 -   以下方法：
     -   [**WdfDeviceConfigureWdmIrpDispatchCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)
     -   [**WdfDeviceInitSetReleaseHardwareOrderOnFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetreleasehardwareorderonfailure)
@@ -143,13 +150,13 @@ KMDF 版本1.13 添加了以下功能：
     -   [**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)
 -   添加了[*EvtDeviceUsageNotificationEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_usage_notification_ex)。
 
--   将**IdleTimeoutType**和**ExcludeD3Cold**成员添加到[**WDF\_设备\_POWER\_策略\_空闲\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)。
+-   将**IdleTimeoutType**和**ExcludeD3Cold**成员添加到[**WDF \_ 设备 \_ 电源 \_ 策略 \_ 空闲 \_ 设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)。
 
--   已将**ReportInactiveOnPowerDown**成员添加到[**WDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)。
+-   已将**ReportInactiveOnPowerDown**成员添加到[**WDF \_ 中断 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)。
 
--   已将**WdfIoTargetPurged**值添加到[**WDF\_IO\_目标\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_state)。
+-   将**WdfIoTargetPurged**值添加到[**WDF \_ IO \_ TARGET \_ 状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_state)。
 
--   将**WdfSpecialFileBoot**值添加到[**WDF\_特殊\_文件\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_special_file_type)。
+-   将**WdfSpecialFileBoot**值添加到[**WDF \_ 特殊 \_ 文件 \_ 类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_special_file_type)。
 
 -   已将**DbgWaitForSignalTimeoutInSec**添加到[用于调试基于框架的驱动程序的注册表值](registry-values-for-debugging-kmdf-drivers.md)。
 
@@ -175,31 +182,31 @@ KMDF 版本1.13 添加了以下功能：
     -   [**WdfPreDeviceInstallEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinstaller/nf-wdfinstaller-wdfpredeviceinstallex)
     -   [**WdfRequestForwardToParentDeviceIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoparentdeviceioqueue)
     -   [**WdfRequestMarkCancelableEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)
--   将**NumberOfPresentedRequests**成员添加到[**WDF\_IO\_QUEUE\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)结构，以便驱动程序可以限制该框架从并行 i/o 队列传递到驱动程序的 i/o 请求数。
+-   将**NumberOfPresentedRequests**成员添加到[**WDF \_ IO \_ 队列 \_ CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/ns-wdfio-_wdf_io_queue_config)结构，以便驱动程序可以限制该框架从并行 i/o 队列传递到驱动程序的 i/o 请求数。
 
--   已将**WdfFileObjectCanBeOptional**标志添加到[**WDF\_FILEOBJECT\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_fileobject_class)结构。
+-   已将**WdfFileObjectCanBeOptional**标志添加到[**WDF \_ FILEOBJECT \_ 类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_fileobject_class)结构。
 
--   已将**TolerableDelay**成员添加到[**WDF\_计时器\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config)结构。
+-   将**TolerableDelay**成员添加到[**WDF \_ 计时器 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdftimer/ns-wdftimer-_wdf_timer_config)结构。
 
 -   添加了[WdfDefaultIdleInWorkingState 和 WdfDefaultWakeFromSleepState](user-control-of-device-idle-and-wake-behavior.md)注册表值。
 
 ## <a name="kmdf-version-17"></a>KMDF 版本1。7
 
 
--   可以在 IRQL&lt;= 调度\_级别调用[**WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)方法。
+-   可以[**WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)在 IRQL &lt; = 调度级别调用 WdfDeviceEnqueueRequest 方法 \_ 。
 
 -   如果指定的工作项已在工作项队列上，则可以调用[**WdfWorkItemEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfworkitem/nf-wdfworkitem-wdfworkitemenqueue)方法。
 
 -   添加了[*EvtDeviceArmWakeFromSxWithReason*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx_with_reason)事件回调函数。
 
--   将**ArmForWakeIfChildrenAreArmedForWake**和**IndicateChildWakeOnParentWake**成员添加到[**WDF\_设备\_POWER\_策略\_唤醒\_设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)结构。
+-   将**ArmForWakeIfChildrenAreArmedForWake**和**IndicateChildWakeOnParentWake**成员添加到[**WDF \_ 设备 \_ 电源 \_ 策略 \_ 唤醒 \_ 设置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_wake_settings)结构中。
 
 ## <a name="kmdf-version-15"></a>KMDF 版本1。5
 
 
 -   [**WdfUsbInterfaceGetNumSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetnumsettings)
 
--   已将**DriverPoolTag**成员添加到[**WDF\_驱动程序\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)。
+-   已将**DriverPoolTag**成员添加到[**WDF \_ 驱动程序 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/ns-wdfdriver-_wdf_driver_config)。
 
 ## <a name="kmdf-version-11"></a>KMDF 版本1。1
 

@@ -2,19 +2,19 @@
 title: PCIe 根端口的设备特定数据 (_DSD)
 description: 用于支持新式备用和 PCI 热插拔方案的 ACPI _DSD 方法
 ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
-keywords: ACPI，ACPI \_DSD 方法
+keywords: ACPI，ACPI \_ DSD 方法
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 068544e52664ad138bac65aecc508dedbb174b76
-ms.sourcegitcommit: 508e275021b34197fedd82b3649c9b59b471300b
+ms.openlocfilehash: be8015d4e8d3751cc443fb61bff9cd5db282d90a
+ms.sourcegitcommit: 8973457113e00a5f4a0848a1b3165a42b975e81c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82039790"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83349879"
 ---
-# <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI 接口： PCIe 根端口的设备特定数据（_DSD）
+# <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI 接口： \_ 适用于 PCIe 根端口的设备特定数据（DSD）
 
-在 Windows 10 （版本1803）中，新增了 ACPI _DSD 方法来支持新式备用和 PCI 热插拔方案：
+在 Windows 10 （版本1803）中，新增了 ACPI \_ DSD 方法来支持新式备用和 PCI 热插拔方案：
 
 ## <a name="directed-deepest-runtime-idle-platform-state-drips-support-on-pcie-root-ports"></a>PCIe 根端口上的定向最深运行时空闲平台状态（DRIPS）支持
 
@@ -35,9 +35,9 @@ Name (_DSD, Package () {
 
 ## <a name="identifying-pcie-root-ports-supporting-hot-plug-in-d3"></a>在 D3 中识别支持热插拔的 PCIe 根端口
 
-此 ACPI 对象允许操作系统识别和管理能够在 D3 状态下处理热插拔事件的 PCIe 根端口。 如果未在 PCIe 热插拔可用端口上实现此对象，则系统不会对此端口进行电源管理，因为它没有任何子 PCIe 设备，导致系统消耗的电量比所需的更多。
+此 ACPI 对象使操作系统能够识别和管理能够在 D3 状态下处理热插拔事件的 PCIe 根端口。 如果未在 PCIe 热插拔可用端口上实现此对象，则系统不会对此端口进行电源管理，因为它没有任何子 PCIe 设备，导致系统消耗的电量比所需的更多。
 
-此对象必须在根端口 ACPI 设备作用域中的闪电™层次结构（运行时 D3 （RTD3）支持的系统）上实现。
+此对象必须在根端口 ACPI 设备范围内的闪电层次结构的所有 PCIe 根端口（在运行时 D3 （RTD3）的系统）上实现。
 
 ```ASL
 Name (_DSD, Package () {  
@@ -55,9 +55,9 @@ Name (_DSD, Package () {
 
 ## <a name="identifying-externally-exposed-pcie-root-ports"></a>识别外部公开的 PCIe 根端口
 
-此 ACPI 对象允许操作系统识别外部公开的 PCIe 层次结构（例如，闪电™）。 此对象必须在根端口 ACPI 设备范围内实现。
+此 ACPI 对象使操作系统能够识别外部公开的 PCIe 层次结构，如闪电。 此对象必须在根端口 ACPI 设备范围内实现。
 
-注意：在 Windows 10 1803 系统交付的系统上，只应在闪电™层次结构的 PCIe 根端口上实现此操作。
+注意：在 Windows 10 版本1803的系统发货上，此对象只应在闪电层次结构的 PCIe 根端口上实现。
 
 ```ASL
 Name (_DSD, Package () {  
@@ -71,6 +71,30 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 )
 ```
 
+## <a name="identifying-internal-pcie-ports-accessible-to-users-and-requiring-dma-protection"></a>确定用户可访问并需要 DMA 保护的内部 PCIe 端口
+
+此 ACPI 对象使操作系统能够识别可供用户轻松访问的内部 PCIe 层次结构（例如，使用闩锁可以访问的便携式计算机 M. 2 PCIe 槽），并需要由 OS[内核 DMA 保护](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)机制进行保护。 此对象必须在根端口 ACPI 设备范围内实现。 
+
+注意： 
+-   仅 Windows 10 版本1903及更高版本支持使用此 ACPI 对象保护 PCI 端口。
+-   必须在系统 BIOS/UEFI 中启用内核 DMA 保护，操作系统才能分析 \_ DSD 并将必要的保护应用到 PCI 端口。
+-   连接到此端口的设备的驱动程序必须支持 DMA 重新映射，否则，Windows 10 可能会阻止这些设备运行，直到用户登录或无限期，具体取决于[DMAGuard 策略](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)。
+
+
+```ASL
+Name (_DSD, Package () {  
+
+ToUUID("70D24161-6DD5-4C9E-8070-705531292865"),
+Package () {
+Package (2) {"DmaProperty", 1}, // Property 1: This port needs to be protected by the OS
+Package (2) {"UID", 0}, // Property 2: UID of the PCIe port on platform, range is: 0, 1, …, n-1
+                   }
+        }
+)
+```
+
 ## <a name="see-also"></a>另请参阅
 
 [在 Windows 中启用 PCI Express 原生控制](enabling-pci-express-native-control.md)
+
+[Thunderbolt™ 3 的内核 DMA 保护](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)

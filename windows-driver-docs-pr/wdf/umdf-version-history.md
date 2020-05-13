@@ -7,15 +7,15 @@ keywords:
 - UMDF WDK，版本信息
 - 修订历史记录 WDK UMDF
 - 版本信息 WDK UMDF
-ms.date: 03/29/2019
+ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0b2d6925905add88771007370104055068b96d80
-ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
+ms.openlocfilehash: 7e29d819ac11e1ed55160f1e463c49e42bfaca59
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226526"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235441"
 ---
 # <a name="umdf-version-history"></a>UMDF 版本历史记录
 
@@ -26,19 +26,20 @@ ms.locfileid: "80226526"
 
 |UMDF 版本|Release 方法|包含在此版本的 Windows 中|使用它的驱动程序可以在|
 |--- |--- |--- |--- |
-|2.29|在 WDK 中未发布|Windows 10 版本1903（2019年3月更新，19H1）|Windows 10 版本1903及更高版本|
+|2.31|Windows 10，版本 2004 WDK|Windows 10 版本2004（可能2020更新，Vibranium）|Windows 10 版本2004及更高版本|
+|2.29|在 WDK 中未发布|Windows 10 版本1903（2019年3月更新，19H1）|Windows 10 版本 1903 及更高版本|
 |2.27|Windows 10，版本 1809 WDK|Windows 10 版本1809（2018年10月更新，Redstone 5）|Windows 10 版本1809及更高版本|
 |2.25|Windows 10，版本 1803 WDK|Windows 10 版本1803（2018更新，Redstone 4）|Windows 10 版本1803及更高版本|
-|2.23|Windows 10，版本 1709 WDK|Windows 10 版本1709（秋季创建者更新、Redstone 3）|Windows 10 版本1709及更高版本|
-|2.21|Windows 10，版本 1703 WDK|Windows 10 版本1703（创意者更新，Redstone 2）|Windows 10 版本1703及更高版本|
+|2.23|Windows 10，版本 1709 WDK|Windows 10 版本1709（秋季创建者更新、Redstone 3）|Windows 10 版本 1709 和更高版本|
+|2.21|Windows 10，版本 1703 WDK|Windows 10 版本1703（创意者更新，Redstone 2）|Windows 10 版本 1703 及更高版本|
 |2.19|Windows 10，版本 1607 WDK|Windows 10 版本1607（周年更新，Redstone 1）|Windows 10，版本1607，Windows Server 2016 及更高版本|
 |2.17|Windows 10，版本 1511 WDK|Windows 10 版本1511（11月更新，阈值2）|Windows 10，版本1511，Windows Server 2016 及更高版本|
 |2.15|Windows 10 WDK|Windows 10 版本1507（阈值1）|Windows 10，版本1507，Windows Server 2016 及更高版本|
-|2.0|Windows 驱动程序工具包（WDK）8。1|Windows 8.1|Windows 8.1 及更高版本|
+|2.0|Windows 驱动程序工具包（WDK）8。1|Windows 8.1|Windows 8.1 及更高版本|
 |1.11|Windows 驱动程序工具包（WDK）8|Windows 8|Windows Vista 及更高版本|
 |1.9|Windows 7 WDK|Windows 7|Windows XP 及更高版本|
 |1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 （SP1）、Windows Server 2008|Windows XP 及更高版本|
-|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
+|1.5|Windows Vista WDK|Windows Vista|Windows XP 及更高版本|
 
 
 可以将 Windows 驱动程序工具包（WDK）与 Microsoft Visual Studio 2017 一起使用，以生成在 Windows 7 和更高版本上运行的驱动程序。
@@ -46,6 +47,12 @@ ms.locfileid: "80226526"
 若要帮助确定要使用的 WDF 版本，请参阅[应该使用哪种 framework 版本？](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)。
 
 有关 Windows 10 中的 UMDF 驱动程序的新增功能的信息，请参阅[WDF 驱动程序的新增](index.md)功能。
+
+## <a name="umdf-version-231"></a>UMDF 版本2.31
+
+* 添加了新的 API [ **WdfDeviceSetDeviceInterfaceStateEx**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestateex)
+* 改进现有 API [ **WdfDeviceGetSystemPowerAction**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetsystempoweraction)
+* 添加了每驱动程序**HostProcessDbgBreakOnDriverLoad**注册表值。 有关信息，请参阅[用于调试 WDF 驱动程序的注册表值](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)。
 
 ## <a name="umdf-version-229"></a>UMDF 版本2.29
 
@@ -88,7 +95,7 @@ UMDF 版本2.19 没有更改或添加。
 
 下面是版本2.15 的已更新 DDIs 列表：
 
--   使用新的[**WdfDeviceOpenDevicemapKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)方法，驱动程序可以访问**HKEY\_本地\_计算机\\硬件\\DEVICEMAP**上的子项和值。
+-   使用新的[**WdfDeviceOpenDevicemapKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)方法，驱动程序可以访问**HKEY \_ 本地 \_ 计算机 \\ 硬件 \\ DEVICEMAP**下的子项和值。
 
 -   UMDF 驱动程序可以调用[**WdfIoTargetWdmGetTargetFileHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetwdmgettargetfilehandle) ，以便在其堆栈中获取下一个较低内核模式驱动程序的文件句柄。 驱动程序可以将数据写入该句柄，绕过框架用于向本地 i/o 目标发送 i/o 的抽象。
 
@@ -102,28 +109,28 @@ UMDF 版本2.19 没有更改或添加。
 除了[具有 umdf 的入门](getting-started-with-umdf-version-2.md)中所述的共享功能，umdf 2.0 版还添加了以下内容：
 
 -   支持在系统处于低功耗状态时，不会唤醒系统的计时器。 有关详细信息，请参阅[使用计时器](using-timers.md)。
--   将**CanWakeDevice**成员添加到[**WDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)结构，以支持可用于将设备从低功耗 Dx 状态恢复为完全开机 D0 状态的中断。 有关详细信息，请参阅[使用中断唤醒设备](using-an-interrupt-to-wake-a-device.md)。
+-   将**CanWakeDevice**成员添加到[**WDF \_ 中断 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)结构，以支持可用于将设备从低功耗 Dx 状态恢复为完全打开的 D0 状态的中断。 有关详细信息，请参阅[使用中断唤醒设备](using-an-interrupt-to-wake-a-device.md)。
 -   用于 UMDF 驱动程序的单组件单一状态（F0）电源管理。 有关详细信息，请参阅[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)。
 
 -   Wdfkd 中的多个调试器扩展命令现在也可用于 UMDF 2.0 驱动程序。 扩展库还包含用于调试 UMDF 2.0 驱动程序的以下新扩展命令：
 
-    -   [ **!wdfkd.wdfumdevstack**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)
-    -   [ **!wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)
-    -   [ **!wdfkd.wdfumdownirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdownirp)
-    -   [ **!wdfkd.wdfumfile**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile)
-    -   [ **!wdfkd.wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp)
-    -   [ **!wdfkd.wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)
-    -   [ **!wdfkd.wdfdeviceinterrupts**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdeviceinterrupts)
+    -   [**!wdfkd.wdfumdevstack**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)
+    -   [**!wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)
+    -   [**!wdfkd.wdfumdownirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdownirp)
+    -   [**!wdfkd.wdfumfile**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile)
+    -   [**!wdfkd.wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp)
+    -   [**!wdfkd.wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)
+    -   [**!wdfkd.wdfdeviceinterrupts**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdeviceinterrupts)
 
     有关扩展命令和框架适用性的列表，请参阅[调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
 
 -   [框架的事件记录器](using-the-framework-s-event-logger.md)或正在进行的*记录器*（IFR）已更新为适用于 UMDF 2.0 驱动程序。
 -   其他 WDF 调试器扩展已更新为使用 UMDF 2.0 驱动程序。 有关扩展命令的完整列表，包括适用于哪个框架的信息，请参阅适用于[WDF 驱动程序的调试器扩展](debugger-extensions-for-kmdf-drivers.md)。
--   已将**WdfIoTargetOpenLocalTargetByFile**添加到[**WDF\_IO\_TARGET\_打开\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type)，以允许 UMDF 驱动程序将驱动程序创建的请求发送到需要关联的文件对象的低级目标。 有关详细信息，请参阅 WDF 的备注 **\_IO\_TARGET\_打开\_类型**。
+-   已将**WdfIoTargetOpenLocalTargetByFile**添加到[**WDF \_ IO \_ 目标 \_ 开放 \_ 类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type)，以允许 UMDF 驱动程序将驱动程序创建的请求发送到需要关联文件对象的更低目标。 有关详细信息，请参阅**WDF \_ IO \_ 目标 \_ 开放 \_ 类型**的备注。
 -   以下仅 UMDF 例程：
 
     -   [*EvtRequestImpersonate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate)
-    -   [**WDF\_IO\_目标\_打开\_参数\_INIT\_\_文件打开\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)
+    -   [**WDF \_ IO \_ TARGET \_ 打开 \_ \_ \_ \_ 按文件打开的 PARAMS INIT \_**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)
     -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
     -   [**WdfDeviceAssignInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
     -   [**WdfDeviceGetDeviceStackIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestackiotype)
@@ -158,8 +165,8 @@ UMDF 版本2.19 没有更改或添加。
     -   **WdfUsbTargetDeviceSelectConfigTypeMultiInterface**
     -   **WdfUsbTargetDeviceSelectConfigTypeInterfacesPairs**
 -   支持查询[**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)中的以下功能类型：
-    -   **GUID\_USB\_功能\_设备\_连接\_高\_速度\_兼容**
-    -   **GUID\_USB\_功能\_设备\_连接\_超级\_速度\_兼容**
+    -   **GUID \_ USB \_ 功能 \_ 设备 \_ 连接 \_ 高速 \_ \_ 兼容**
+    -   **GUID \_ USB \_ 功能 \_ 设备 \_ 连接 \_ 超级 \_ 速度 \_ 兼容**
 -   添加了[WDF 寄存器/端口访问函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfhwaccess/)
 
 ## <a name="umdf-version-111"></a>UMDF 版本1.11

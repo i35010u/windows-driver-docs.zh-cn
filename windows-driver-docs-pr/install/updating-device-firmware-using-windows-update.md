@@ -4,18 +4,18 @@ description: 本主题介绍如何使用 Windows 更新（WU）服务更新设�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9a680809c2c62e7f9fecd5a101eea915443bd8
-ms.sourcegitcommit: 078e2dfac6c18f65ff923d1e55bff4a23e02a824
+ms.openlocfilehash: 902a765ed4680cb210f3d9ac5e671b1d8bf63e84
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80400473"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235406"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 
 本主题介绍如何使用 Windows 更新（WU）服务更新可移动或机箱内设备的固件。  有关更新系统固件的信息，请参阅[WINDOWS UEFI 固件更新平台](../bringup/windows-uefi-firmware-update-platform.md)。
 
-为此，你将提供一个作为设备驱动程序实现的更新机制，其中包括固件负载。  如果设备使用供应商提供的驱动程序，则可以选择将固件更新逻辑和负载添加到现有的函数驱动程序，或者提供单独的固件更新驱动程序包。  如果设备使用 Microsoft 提供的驱动程序，则必须提供单独的固件更新驱动程序包。  在这两种情况下，固件更新驱动程序包必须是通用的。  有关通用驱动程序的详细信息，请参阅[具有通用 Windows 驱动程序的入门](../develop/getting-started-with-universal-drivers.md)。  驱动程序二进制文件可以使用[KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md)或[Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)。 
+为此，你将提供一个作为设备驱动程序实现的更新机制，其中包括固件负载。  如果设备使用供应商提供的驱动程序，则可以选择将固件更新逻辑和负载添加到现有的函数驱动程序，或者提供单独的固件更新驱动程序包。  如果设备使用 Microsoft 提供的驱动程序，则必须提供单独的固件更新驱动程序包。  在这两种情况下，固件更新驱动程序包必须是通用的。  有关通用驱动程序的详细信息，请参阅[Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。  驱动程序二进制文件可以使用[KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md)或[Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)。 
 
 由于 WU 无法执行软件，因此固件更新驱动程序必须将固件安装到即插即用（PnP）才能进行安装。
 
@@ -73,7 +73,7 @@ AddComponent=ComponentName,,AddComponentSection
 ComponentIDs = ComponentDeviceId
 ```
 
-在上述 INF 示例中，`ComponentIDs = ComponentDeviceId` 指示子设备的硬件 ID 为 `SWC\ComponentDeviceId`。  安装此 INF 后，会创建以下设备层次结构：
+在上述 INF 示例中， `ComponentIDs = ComponentDeviceId` 指示子设备将具有的硬件 ID `SWC\ComponentDeviceId` 。  安装此 INF 后，会创建以下设备层次结构：
 
 ![父设备，主设备，AddComponent 设备](images/component-device-hierarchy.png)
 

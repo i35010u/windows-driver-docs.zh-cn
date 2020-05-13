@@ -4,20 +4,19 @@ description: AllowStandardUserPinUnlock
 ms.assetid: 3fb6de78-662b-46d0-bf0c-9efde15b0861
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e60bc78d534ae988f8569a46bf3fa3ff6f6d2ff7
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 8cc86418798a74818008867cd11837c7cb340566
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323646"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235304"
 ---
+# <a name="allowstandarduserpinunlock"></a>AllowStandardUserPinUnlock
+
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
 > 从 Windows 10 版本1507开始，此元素已弃用，在未来版本的 Windows 中可能不受支持。
-
-# <a name="allowstandarduserpinunlock"></a>AllowStandardUserPinUnlock
-
 
 AllowStandardUserPinUnlock 元素指定是否允许标准用户执行 PIN 解锁操作。
 
@@ -43,7 +42,7 @@ AllowStandardUserPinUnlock 元素指定是否允许标准用户执行 PIN 解锁
 ## <a name="span-idchild_elementsspanspan-idchild_elementsspanspan-idchild_elementsspanchild-elements"></a><span id="Child_elements"></span><span id="child_elements"></span><span id="CHILD_ELEMENTS"></span>子元素
 
 
-没有子元素。
+没有任何子元素。
 
 ## <a name="span-idparent_elementsspanspan-idparent_elementsspanspan-idparent_elementsspanparent-elements"></a><span id="Parent_elements"></span><span id="parent_elements"></span><span id="PARENT_ELEMENTS"></span>父元素
 
@@ -56,7 +55,7 @@ AllowStandardUserPinUnlock 元素指定是否允许标准用户执行 PIN 解锁
 <thead>
 <tr class="header">
 <th>元素</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>

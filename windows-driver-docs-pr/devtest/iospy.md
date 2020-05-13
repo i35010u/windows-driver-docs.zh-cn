@@ -1,20 +1,22 @@
 ---
 title: IoSpy
-description: IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 和 WMI 请求数据的筛选器驱动程序。
+description: IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及对设备的内核模式驱动程序发出的 WMI 请求。
 ms.assetid: 5fe52fe6-97b4-477a-9450-727c5bf9bd72
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9446da21ab50fd7e7ef8dceeba7114f83f622a7d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c000ef6d8e4ccdfa3f29840f495c8bde893db531
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373701"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235292"
 ---
+# <a name="iospy"></a>IoSpy
+
 > [!NOTE]
-> IoSpy 和 IoAttack 不再在 WDK 中可用后 Windows 10 版本 1703年。
+> Windows 10 1703 版后，WDK 中不再提供 IoSpy 和 IoAttack。
 >
-> 作为这些工具的替代方法，请考虑使用 HLK 中可用的模糊测试。 下面是一些需要考虑。
+> 作为这些工具的替代方法，请考虑使用在 HLK 中提供的模糊化测试。 下面是一些需要考虑的事项。
 > 
 > [DF - 模糊随机 IOCTL 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 >
@@ -26,19 +28,14 @@ ms.locfileid: "67373701"
 >
 > [DF - 模糊杂项 API 测试（可靠性）](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 >
-> 此外可以使用[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)随驱动程序验证程序。
+> 你还可以使用驱动程序验证程序附带的[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)处理。
 >
 
+IoSpy 是一个筛选器驱动程序，用于记录有关 IOCTL 的数据以及对设备的内核模式驱动程序发出的 WMI 请求。
 
+您可以使用[渗透测试（设备基础）](coverage-tests--device-fundamentals-.md)测试安装和删除 IoSpy，**启用 I/o spy**并**禁用 i/o 监视**。 *DQ*参数控制安装 IoSpy 筛选器驱动程序的设备。 IoSpy 记录有关[IoSpy 数据文件](#iospy-data-file)中的 IOCTL 和 WMI 请求的详细信息， [IoAttack](ioattack.md)使用此文件执行模糊测试。
 
-# <a name="iospy"></a>IoSpy
-
-
-IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 和 WMI 请求数据的筛选器驱动程序。
-
-可以安装和删除使用 IoSpy [（设备基础） 的渗透测试](coverage-tests--device-fundamentals-.md)测试，**启用 I/O Spy**并**禁用 I/O Spy**。 *DQ*参数控制哪些设备安装 IoSpy 筛选器驱动程序。 IoSpy 记录中的 IOCTL 和 WMI 请求有关的详细信息[IoSpy 数据文件](#iospy-data-file)，以供[IoAttack](ioattack.md)执行模糊测试。
-
-**重要**  运行 IoAttack 之前，必须之前已运行 IoSpy 的虚拟机和模板，然后从测试系统中删除它。 有关详细信息，请参阅[如何使用 IoSpy 和 IoAttack 执行模糊测试](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)。
+**重要提示**   在运行 IoAttack 之前，必须先运行 IoSpy，然后将其从测试系统中删除。 有关详细信息，请参阅[如何通过 IoSpy 和 IoAttack 执行模糊测试](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)。
 
  
 
@@ -50,32 +47,32 @@ IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 和 WMI 请�
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Disable_I_O_Spy"></span><span id="disable_i_o_spy"></span><span id="DISABLE_I_O_SPY"></span>禁用 I/O Spy</p></td>
-<td align="left"><p>一个或多个设备上禁用 I/O Spy。 卸载 IoSpy 并禁用 IOCTL 和 WMI 筛选的测试系统上的所有设备。</p>
-<p><strong>测试二进制文件：</strong>Devfund_IOSpy_DisableSupport.wsc</p>
+<td align="left"><p><span id="Disable_I_O_Spy"></span><span id="disable_i_o_spy"></span><span id="DISABLE_I_O_SPY"></span>禁用 i/o Spy</p></td>
+<td align="left"><p>禁用1个或多个设备上的 i/o 监视。 卸载 IoSpy 并为测试系统上的所有设备禁用 IOCTL 和 WMI 筛选。</p>
+<p><strong>测试二进制文件：</strong>Devfund_IOSpy_DisableSupport. wsc</p>
 <p><strong>测试方法：</strong>DisableIoSpy</p>
 <p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Display_I_O_Spy-enabled_Device"></span><span id="display_i_o_spy-enabled_device"></span><span id="DISPLAY_I_O_SPY-ENABLED_DEVICE"></span>显示 I/O Spy 启用设备</p></td>
-<td align="left"><p>显示具有 I/O Spy 启用的设备。</p>
-<p><strong>测试二进制文件：</strong>Devfund_IOSpy_DisplayEnabledDevices.wsc</p>
+<td align="left"><p><span id="Display_I_O_Spy-enabled_Device"></span><span id="display_i_o_spy-enabled_device"></span><span id="DISPLAY_I_O_SPY-ENABLED_DEVICE"></span>显示启用了监视的 i/o 设备</p></td>
+<td align="left"><p>显示在其上启用了 i/o 监视程序的设备。</p>
+<p><strong>测试二进制文件：</strong>Devfund_IOSpy_DisplayEnabledDevices. wsc</p>
 <p><strong>测试方法：</strong>DisplayIoSpyDevices</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Enable_I_O_Spy_"></span><span id="enable_i_o_spy_"></span><span id="ENABLE_I_O_SPY_"></span>启用 I/O Spy</p></td>
-<td align="left"><p>测试系统上安装 IoSpy 并启用 IOCTL 和 WMI 筛选一个或多个设备上。 DQ 参数控制 IoSpy 筛选器驱动程序将安装在哪些设备。</p>
-<p><strong>测试二进制文件：</strong>Devfund_IOSpy_EnableSupport.wsc</p>
+<td align="left"><p><span id="Enable_I_O_Spy_"></span><span id="enable_i_o_spy_"></span><span id="ENABLE_I_O_SPY_"></span>启用 i/o Spy</p></td>
+<td align="left"><p>在测试系统上安装 IoSpy，并在一个或多个设备上启用 IOCTL 和 WMI 筛选。 DQ 参数控制将安装 IoSpy 筛选器驱动程序的设备。</p>
+<p><strong>测试二进制文件：</strong>Devfund_IOSpy_EnableSupport. wsc</p>
 <p><strong>测试方法：</strong>EnableIoSpy</p>
 <p><strong>参数：</strong> -请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Device Fundamentals Test Parameters](https://docs.microsoft.com/windows-hardware/drivers)">设备基础测试参数</a></p>
 <p><em>DQ</em></p>
-<p><em>DFD</em> -指定 IoSpy 数据文件的路径。 默认位置是 %SystemDrive%\DriverTest\IoSpy</p></td>
+<p><em>DFD</em> -指定 IoSpy 数据文件的路径。 默认位置为%SystemDrive%\DriverTest\IoSpy</p></td>
 </tr>
 </tbody>
 </table>
@@ -84,9 +81,9 @@ IoSpy 是记录有关对设备的内核模式驱动程序的 IOCTL 和 WMI 请�
 
 ## <a name="iospy-data-file"></a>IoSpy 数据文件
 
-IoSpy 安装测试系统中后，它会记录通过 IOCTL 和 WMI 请求发送到驱动程序，为设备启用的模糊测试的数据。 虽然 IoSpy 不会分析这些请求的负载，它记录的详细信息，如负载缓冲区的长度的请求。
+在测试系统中安装 IoSpy 后，它将通过 IOCTL 和 WMI 请求发送的数据记录到为模糊测试启用的设备驱动程序的驱动程序中。 尽管 IoSpy 不分析这些请求的负载，但它确实记录了请求的详细信息，例如负载缓冲区的长度。
 
-*DFD*参数**启用 I/O Spy**测试指定 IoSpy 数据文件的路径。 默认位置是 %systemdrive%\\DriverTest\\IoSpy
+**启用 I/o 监视**测试的*DFD*参数指定 IoSpy 数据文件的路径。 默认位置为% SystemDrive% \\ DriverTest \\ IoSpy
 
  
 

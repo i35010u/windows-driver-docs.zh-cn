@@ -5,16 +5,16 @@ ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES，OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b43ae8403d5201ccc60a043743d8bf14483d34
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: a50c3deb16aade12857130a8d9ac30b0984fd0ef
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210523"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235450"
 ---
-[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
-
 # <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
+
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID 发送到支持[RSSv2](receive-side-scaling-version-2-rssv2-.md)的微型端口驱动程序，以执行单个间接表项的移动。 此 OID 为[同步 oid](synchronous-oid-request-interface-in-ndis-6-80.md)，这意味着它不能返回 NDIS_STATUS_PENDING。 它仅作为方法请求发出，在 IRQL = = DISPATCH_LEVEL。 
 
@@ -73,7 +73,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
 
 - 上层要一起执行的命令，作为相同 VPort 的 "全部移动" 命令的一部分，在整个批处理中连续放置。
 - 微型端口驱动程序不应尝试执行整个命令批处理，该批处理以 "全部移动" 的方式面向不同的 VPorts。 只需执行针对相同 VPort 的命令组（标记为同一**SwitchId + VPortId**对），才能符合 "移动全部" 语义。
-- 如果上层并不关心 "全部移动" 语义，则它可能会将命令与不同 VPort 的命令进行 VPort。 在这种情况下，如果由于存在 "队列数量" 冲突而导致第二组命令无法执行，则微型端口驱动程序会使用相应的状态代码（NDIS_STATUS_NO_QUEUES）来标记该组，并使用上层来负责从中.
+- 如果上层并不关心 "全部移动" 语义，则它可能会将命令与不同 VPort 的命令进行 VPort。 在这种情况下，如果由于存在 "队列数量" 冲突而导致第二组命令无法执行，则微型端口驱动程序会使用相应的状态代码（NDIS_STATUS_NO_QUEUES）来标记该组，并使用上层来进行恢复。
 
 例如，如果上层协议交错一系列命令，如下所示：
 
@@ -81,7 +81,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
 - `VPort=2 ITE[0]`
 - `VPort=1 ITE[2]`
 
-微型端口驱动程序无需尝试以原子方式执行所有四个移动命令，或所有三个移动命令用于 `VPort=1` （`ITE[0,1,2]`）。 它只需以 "移动全部" 的方式执行 `VPort=1 ITE[0,1]` 组，然后以 `VPort=2 ITE[0]` 组的形式执行，然后 `VPort=1 ITE[2]`。 这三个命令组可能会有不同的结果。 例如，`VPort=1 ITE[0,1]` 和 `VPort=2 ITE[0]` 的组可能会成功，并且 `VPort=1 ITE[2]` 组可能会失败。 结果应在每个命令结构的相应**EntryStatus**成员中反映出来。 这样一来，微型端口驱动程序无需采取措施来安全地执行整个批处理（例如锁定整个适配器）。 只有面向特定 VPort 的命令需要进行序列化，可使用更细粒度的 VPort 锁定，并避免某些死锁。
+微型端口驱动程序无需尝试以原子方式执行所有四个移动命令或（）的所有三个移动命令 `VPort=1` `ITE[0,1,2]` 。 它只需以 `VPort=1 ITE[0,1]` "移动全部" 的方式执行组，然后再执行 `VPort=2 ITE[0]` 组 `VPort=1 ITE[2]` 。 这三个命令组可能会有不同的结果。 例如，和的组 `VPort=1 ITE[0,1]` 可能会 `VPort=2 ITE[0]` 成功，并且 `VPort=1 ITE[2]` 组可能会失败。 结果应在每个命令结构的相应**EntryStatus**成员中反映出来。 这样一来，微型端口驱动程序无需采取措施来安全地执行整个批处理（例如锁定整个适配器）。 只有面向特定 VPort 的命令需要进行序列化，可使用更细粒度的 VPort 锁定，并避免某些死锁。
 
 > [!NOTE]
 > 整个命令条目组必须标记为相同的条目状态。
@@ -90,7 +90,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
 
 当发生错误时，此 OID 返回以下状态代码：
 
-| 状态代码 | 错误条件 |
+| 状态代码 | 添加状态 |
 | --- | --- |
 | NDIS_STATUS_INVALID_LENGTH | OID 的格式不正确。 |
 | NDIS_STATUS_INVALID_PARAMETER | 其他字段（在标头中或 OID 本身中，而不是在单独的命令项中）包含无效的值。 |
@@ -100,11 +100,11 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
 | | |
 | --- | --- |
 | 版本 | Windows 10 版本 1709 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+| Header | Ntddndis （包括 Ndis .h） |
 
 ## <a name="see-also"></a>另请参阅
 
-- [接收方缩放版本2（RSSv2）](receive-side-scaling-version-2-rssv2-.md)
+- [接收端缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)
 - [NDIS_RSS_SET_INDIRECTION_ENTRY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entry)
 - [NDIS_NIC_SWITCH_CAPABILITIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_nic_switch_capabilities)

@@ -3,18 +3,18 @@ title: INF AddSoftware 指令
 description: AddSoftware 指令介绍了独立软件的安装。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26de0aa0f35add9159a49f457fb76c9786b7dd56
-ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
+ms.openlocfilehash: 8feed269e6a8dece71f4d6d644e6cced72c06aa4
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82223275"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235440"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware 指令
 
 每个**AddSoftware**指令描述独立软件的安装。  在**SoftwareComponent**安装程序类的 INF 文件中使用此指令。 有关软件组件的详细信息，请参阅[使用组件 INF 文件](using-a-component-inf-file.md)。  Windows 10 版本1703及更高版本支持此指令。
 
-有效的安装类型取决于[目标平台](../develop/windows-10-editions-for-universal-drivers.md)。 例如，桌面支持 MSI 安装程序和安装程序 Exe。  **注意**：通用驱动程序支持类型2，类型1为仅桌面。
+有效的安装类型取决于[目标平台](../develop/target-platforms.md)。 例如，桌面支持 MSI 安装程序和安装程序 Exe。  **注意**：通用驱动程序支持类型2，类型1为仅桌面。
 
 当软件组件 INF 文件指定**AddSoftware**时，系统会将安装设备后要安装的软件排队。  不保证何时安装软件。
 如果引用的软件安装失败，则系统会在引用软件组件更新时再次尝试。
@@ -30,7 +30,7 @@ AddSoftware=SoftwareName,[flags],software-install-section
 
 *SoftwareName*
 
-指定要安装的软件的名称。  此名称唯一地标识软件。  处理**AddSoftware**指令时，将使用来自任何驱动程序包的**AddSoftware**指令来检查以前安装的同名软件的版本。  建议将 SoftwareName 与供应商名称一起提供，例如`ContosoControlPanel`。
+指定要安装的软件的名称。  此名称唯一地标识软件。  处理**AddSoftware**指令时，将使用来自任何驱动程序包的**AddSoftware**指令来检查以前安装的同名软件的版本。  建议将 SoftwareName 与供应商名称一起提供，例如 `ContosoControlPanel` 。
 
 *flag*
 
@@ -165,7 +165,7 @@ SoftwareType=type-code
 
 `SoftwareID={x.y.z}`
 
-指定 Microsoft Store 标识符和标识符类型。  目前仅支持包系列名称（PFN）。  使用 PFN 通过窗体`pfn://<x.y.z>`引用通用 WINDOWS 平台（UWP）应用。
+指定 Microsoft Store 标识符和标识符类型。  目前仅支持包系列名称（PFN）。  使用 PFN 通过窗体引用通用 Windows 平台（UWP）应用 `pfn://<x.y.z>` 。
 
 >[!NOTE]
 >有关**SoftwareID**项和值的约束的信息，请参阅[**SoftwareType**](#software-install-section-softwaretype) 。

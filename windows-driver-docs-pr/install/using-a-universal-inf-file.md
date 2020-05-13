@@ -2,24 +2,24 @@
 title: 使用通用 INF 文件
 description: 如果要构建通用或移动驱动程序包，则必须使用通用 INF 文件。
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
-ms.date: 04/20/2017
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 517479adc9d31562812a27e2555839c2c55435e0
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 7b099889203e9d3e00e0eb16348ef67d8bb9b256
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242992"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235394"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
-如果要构建通用或移动驱动程序包，则必须使用通用 INF 文件。 如果要构建桌面驱动程序包，则无需使用通用 INF 文件，但建议这样做，因为性能有好处。
+如果要生成[Windows 驱动](../develop/getting-started-with-windows-drivers.md)程序包，则必须使用通用 INF 文件。 如果要生成 Windows 桌面驱动程序包，则无需使用通用 INF 文件，但建议这样做，因为性能有好处。
 
 通用 INF 文件使用适用于 Windows 驱动程序的[INF 语法](inf-file-sections-and-directives.md)的子集。 通用 INF 文件安装驱动程序并配置设备硬件，但不执行任何其他操作，例如运行共同安装程序。
 
 ## <a name="why-is-a-universal-inf-file-required-on-non-desktop-editions-of-windows"></a>为什么 Windows 的非桌面版本上需要通用 INF 文件？
 
-某些版本的 Windows （如 Windows 10 移动版）不支持驱动程序安装的即插即用机制。 因此，驱动程序安装会在目标系统的脱机映像上进行。 当 Microsoft Visual Studio 为此类目标系统生成驱动程序时，它会生成一个基于 XML 的配置文件，其中包含要应用的所有注册表设置。 因此，此类系统的 INF 文件必须仅执行不依赖于系统运行时行为的加法运算。 带有此类受限语法的 INF 文件称为通用 INF 文件。
+某些版本的 Windows （如 Windows 10）仅使用 Windows 10 Desktop 上提供的一部分驱动程序安装方法。 Windows 的非桌面版本的 INF 文件必须仅执行不依赖于系统运行时行为的加法运算。 带有此类受限语法的 INF 文件称为通用 INF 文件。
 
 通用 INF 文件可预测安装，每次都具有相同的结果。 安装的结果不取决于系统的运行时行为。 例如，共同安装程序引用在通用 INF 文件中无效，因为不能在脱机系统上执行其他 DLL 中的代码。
 
@@ -31,10 +31,10 @@ ms.locfileid: "79242992"
 
 你可以使用通用 INF 文件中的任何 INF 部分，如下所示：
 
--   [**INF ClassInstall32 部分**](inf-classinstall32-section.md)
--   [**INF DDInstall. CoInstallers 部分**](inf-ddinstall-coinstallers-section.md)
--   [**INF DDInstall. FactDef 部分**](inf-ddinstall-factdef-section.md)
--   [**INF DDInstall. LogConfigOverride 部分**](inf-ddinstall-logconfigoverride-section.md)
+-   [**INF ClassInstall32 节**](inf-classinstall32-section.md)
+-   [**INF DDInstall.CoInstallers 节**](inf-ddinstall-coinstallers-section.md)
+-   [**INF DDInstall.FactDef 节**](inf-ddinstall-factdef-section.md)
+-   [**INF DDInstall.LogConfigOverride 节**](inf-ddinstall-logconfigoverride-section.md)
 
 只要**TargetOSVersion**修饰不包含**ProductType**标志或**SuiteMask**标志， [**INF 制造商部分**](inf-manufacturer-section.md)就有效。
 
@@ -70,15 +70,15 @@ ms.locfileid: "79242992"
 
 -   仅当[目标目录](inf-destinationdirs-section.md)为下列项之一时， [**INF CopyFiles 指令**](inf-copyfiles-directive.md)才有效：
 
-    -   11（对应于% WINDIR%\\System32）
-    -   12（对应于% WINDIR%\\System32\\驱动程序）
-    -   13（对应于% WINDIR%\\System32 下的目录，\\DriverStore\\存储驱动程序的 FileRepository）  
+    -   11（对应于% WINDIR% \\ System32）
+    -   12（对应于% WINDIR% \\ System32 \\ 驱动程序）
+    -   13（对应于存储驱动程序的% WINDIR% \\ System32 \\ DriverStore FileRepository 下的目录 \\ ）  
             **注意：** CopyFiles 不能用于重命名**DestinationDirs**包括*dirid* 13 的文件。 此外， *dirid* 13 仅在 Windows 10 产品上适用于有限的部分设备安装方案。  有关更多详细信息，请参阅特定设备类的指南和示例。
-    -   10，SysWOW64 （对应于% WINDIR%\\SysWOW64）
+    -   10，SysWOW64 （对应于% WINDIR% \\ SysWOW64）
     -   10个*特定于供应商的子目录名称*  
             **注意：** 在 Windows 10 1709 版中，将*dirid* 10 与供应商特定子目录名称一起使用在通用 INF 中有效，使用[InfVerif](../devtest/infverif.md)工具来度量。  在更高版本中，可能不支持此值。  建议移动到*dirid* 13。
 
 ## <a name="see-also"></a>另请参阅
 
-* [通用 Windows 驱动程序入门](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)
-* [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)
+* [Windows 驱动程序的入门](../develop/getting-started-with-windows-drivers.md)
+* [InfVerif](../devtest/infverif.md)
