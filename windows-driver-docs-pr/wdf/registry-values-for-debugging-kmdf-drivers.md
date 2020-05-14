@@ -1,5 +1,5 @@
 ---
-title: 用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
+title: 用于调试 WDF 驱动程序的注册表值
 description: 本主题介绍 Windows 驱动程序框架（WDF）驱动程序可以设置的注册表值。 它适用于从 UMDF 版本2开始的内核模式驱动程序框架（KMDF）驱动程序和用户模式驱动程序框架（UMDF）驱动程序。
 ms.assetid: d54bdc6c-b409-4973-9b29-16967a4d83fb
 keywords:
@@ -7,41 +7,70 @@ keywords:
 - 调试驱动程序的注册表值 WDK KMDF
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 340014ae79571adb7f49a6921a8dc1a70179fa32
-ms.sourcegitcommit: 8973457113e00a5f4a0848a1b3165a42b975e81c
+ms.openlocfilehash: 9db25f9a9a3580b207aece1dc9e41b7ae890f98e
+ms.sourcegitcommit: b54d49545599b0a64f64e4e4b9fd78c8d9198094
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83349885"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83383914"
 ---
-# <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
+# <a name="registry-values-for-debugging-wdf-drivers"></a>用于调试 WDF 驱动程序的注册表值
 
 
-本文介绍 Windows 驱动程序框架（WDF）驱动程序可以设置的注册表值。 它适用于从 UMDF 版本2开始的内核模式驱动程序框架（KMDF）驱动程序和用户模式驱动程序框架（UMDF）驱动程序。
+本文介绍了 WDF 驱动程序可以设置的注册表值。 它适用于从 UMDF 版本2开始的 KMDF 驱动程序和 UMDF 驱动程序。
 
+除非在下面的部分中另行指定，否则以下注册表值位于驱动程序的 `Parameters\Wdf` 子项下。
 
-驱动程序的**参数 \\ Wdf**子项下可以存在以下注册表值。 对于 KMDF 驱动程序，此子项位于驱动程序的服务名称下的**HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services**中。 对于 UMDF 驱动程序，此子项位于该驱动程序的服务名称下的**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services**中。 驱动程序的子项始终使用驱动程序的服务名称，即使驱动程序二进制文件的文件名不同于服务名称也是如此。
+* 对于 KMDF 驱动程序，此子项位于 `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services` 驱动程序的服务名称下的中。
+* 对于 UMDF 驱动程序，此子项位于 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services` 驱动程序的服务名称下的中。
+
+驱动程序的子项始终使用驱动程序的服务名称，即使驱动程序二进制文件的文件名不同于服务名称也是如此。
 
 
 ## <a name="dbgbreakonerror"></a>DbgBreakOnError
 
 *REG \_ DWORD*
 
-如果设置为非零值，则当驱动程序调用[**WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)时，框架会中断到调试器。 （如果设置了**VerifierOn**值，则即使**DbgBreakOnError**值不存在，框架也会中断调试器。）请参阅上面的代码示例。
+如果设置为非零值，则当驱动程序调用[**WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)时，框架会中断到调试器。 （如果设置了**VerifierOn**值，则即使**DbgBreakOnError**值不存在，框架也会中断调试器。）请参阅[**VerifierOn**](#verifieron)部分中的代码示例。
 
 ## <a name="dbgprinton"></a>DbgPrintOn
 
 *REG \_ DWORD*
 
-如果设置为非零值，则框架的加载程序将向内核调试器发送各种消息，同时加载驱动程序并将其绑定到框架库版本，或者在卸载驱动程序时。
+* 对于 KMDF 驱动程序，请在注册表项下设置此值 `HKLM\SYSTEM\CurrentControlSet\Control\Wdf\Kmdf\Diagnostics` 。
+* 对于 UMDF 驱动程序，请在注册表项下设置此值 `HKLM\System\CurrentControlSet\Control\Wdf\Umdf\Diagnostics` 。
 
-对于 KMDF 驱动程序，请在**HKLM \\ SYSTEM \\ CurrentControlSet \\ Control \\ Wdf \\ KMDF \\ Diagnostics**注册表项下设置此值。 对于 UMDF 驱动程序，请在**HKLM \\ 系统 \\ CurrentControlSet \\ 控制 \\ Wdf \\ UMDF \\ 诊断**注册表项下设置此值。 驱动程序可能需要创建可选的**诊断**子项。
+驱动程序可能需要创建可选的**诊断**子项。
+
+如果设置为非零值，则框架的加载程序将向内核调试器发送各种消息，同时加载驱动程序并将其绑定到框架库版本，或者在卸载驱动程序时。
 
 ## <a name="dbgwaitforsignaltimeoutinsec"></a>DbgWaitForSignalTimeoutInSec
 
 *REG \_ DWORD，framework 版本1.11 及更高版本*
 
 从 Windows 8 开始，当**VerifierOn**和**DbgBreakOnError**设置为非零值时，驱动程序可以通过设置**DbgWaitForSignalTimeoutInSec**更改用于中断到调试器的默认超时时间。
+
+## <a name="debugmodebinaries"></a>DebugModeBinaries
+
+*REG \_ 多 \_ SZ，仅 UMDF*
+
+此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\DebugMode` 。
+
+此值指定要在调试模式下加载的驱动程序二进制文件的名称。 例如，若要为驱动程序二进制文件 X .DLL、Y .DLL 和 Z .DLL 启用调试模式，此值将设置为 `X.DLL\0Y.DLL\0Z.DLL\0\0` 。
+
+## <a name="debugmodeflags"></a>DebugModeFlags
+
+*REG \_ DWORD，仅 UMDF*
+
+此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\DebugMode` 。
+
+|值|说明|
+|--- |--- |
+|0x01|启用调试模式。 此设置关闭在[UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)中所述的自动重新启动功能。|
+|0x02|禁用设备池。 有关设备池的详细信息，请参阅[在 UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)。|
+|0x04|禁用超时。|
+ 
+在 Microsoft Visual Studio 中使用 F5 选项时，会为部署的驱动程序设置所有三个标志。
 
 ## <a name="enhancedverifieroptions"></a>EnhancedVerifierOptions
 
@@ -67,20 +96,59 @@ ms.locfileid: "83349885"
 
 设置为一个非零值，以使框架在崩溃转储文件中包含其事件记录器中的信息。
 
-## <a name="hostprocessdbgbreakondriverload-driver-specific"></a>HostProcessDbgBreakOnDriverLoad 驱动程序-特定
+## <a name="hostfailkddebugbreak"></a>HostFailKdDebugBreak
 
-*REG \_DWORD*、仅适用于 umdf 2.31 和更高版本 *
+*REG \_ DWORD，仅 UMDF*
 
-> [!NOTE]
-> 此值仅影响指定的 UMDF 驱动程序。
+此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF` 。
 
-此注册表值位于中 `HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\Services\\<service name>\\Parameters\\Wdf` 。
+如果此值不为零，并且内核调试器连接到计算机，则在终止宿主进程之前，反射器将进入内核调试器。 默认情况下，在 Windows 7 和更早版本的操作系统中禁用**HostFailKdDebugBreak** 。 从 Windows 8 开始，默认情况下会启用**HostFailKdDebugBreak** 。
+
+如果主机进程意外终止（例如，由于非 UMDF 组件或由于未经处理的异常），则反射器还会中断内核调试器。 如果要终止的主机进程中有多个设备堆栈，则反射器会多次中断到调试器中，一次用于主机进程中加载的每个设备堆栈。
+
+
+## <a name="hostprocessdbgbreakondriverload-driver-specific"></a>HostProcessDbgBreakOnDriverLoad （特定于驱动程序）
+
+*REG \_DWORD*仅适用于 umdf，适用于在[umdf 版本 2.31](umdf-version-history.md)或更高版本的目标计算机上运行的任何 UMDF 1.x 驱动程序
+
+此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\<service name>\Parameters\Wdf` 。
+
+此值仅影响指定的 UMDF 驱动程序。
 
 包含延迟值（以秒为单位）。 导致 WUDFHost 在加载驱动程序后尝试连接到调试器指定的秒数。
 
 在指定的延迟期间，主机进程每秒查找用户模式调试器一次，并在连接的情况下中断。 如果在这段时间内未附加用户模式调试器，并且设置了中的高位（0x80000000），则框架将进行一次尝试进入内核模式调试器。 有关示例，请参阅上面有关**HostProcessDbgBreakOnStart**的部分。
 
 要使对 UMDF 注册表值所做的更改生效，您必须重新启动计算机。
+
+
+## <a name="hostprocessdbgbreakondriverload-global"></a>HostProcessDbgBreakOnDriverLoad （全局）
+
+*REG \_ DWORD，仅 UMDF*
+
+此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\{193a1820-d9ac-4997-8c55-be817523f6aa}` 。 您可以使用 WDK 中的[WDF 验证程序工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)（您尚未 wdfverifier）来设置它。 此值会影响系统上的所有 UMDF 驱动程序。
+
+包含延迟值（以秒为单位）。 导致 WUDFHost 在加载驱动程序后延迟指定的秒数。 否则， **HostProcessDbgBreakOnDriverLoad**的行为与为**HostProcessDbgBreakOnStart**所述的行为相同。
+
+指定**HostProcessDbgBreakOnStart**或**HostProcessDbgBreakOnDriverLoad**会导致框架禁用其他 UMDF 超时（例如即插即用操作）。 这意味着，如果你的驱动程序导致过多的超时，则使用这些值可能导致驱动程序导致目标出现严重故障。
+
+
+## <a name="hostprocessdbgbreakonstart"></a>HostProcessDbgBreakOnStart
+
+*REG \_ DWORD，仅 UMDF*
+
+此注册表值位于中 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\{193a1820-d9ac-4997-8c55-be817523f6aa}` 。 您可以使用 WDK 中的[WDF 验证程序工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)（您尚未 wdfverifier）来设置它。 此值会影响系统上的所有 UMDF 驱动程序。
+
+包含延迟值（以秒为单位）。 在指定的延迟期间，主机进程每秒查找用户模式调试器一次，并在连接的情况下中断。 如果在这段时间内未附加用户模式的调试程序，并且**HostProcessDbgBreakOnStart**中的高位（0x80000000）已设置，则该框架将进行一次尝试进入内核模式调试器。 例如：
+
+|“值”|结果|
+|--- |--- |
+|0x00000004|框架每秒尝试连接到用户模式调试器一次，4秒。 框架从不尝试连接到内核模式调试器。|
+|0x80000000|该框架将创建一次尝试连接到用户模式调试器。 如果未附加用户模式调试器，框架将尝试连接到内核模式调试器。|
+|0x80000004|框架每秒尝试连接到用户模式调试器一次，4秒。 如果未在4秒内附加用户模式调试器，框架将尝试连接到内核模式调试器。|
+
+还可以使用 WDK 中包含的[WDF 验证程序工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)（您尚未 wdfverifier）来设置此注册表值。
+
 
 ## <a name="logpages"></a>LogPages
 
@@ -114,7 +182,7 @@ HKR, Parameters\Wdf, LogPages,   0x00010001, 3 ; KMDF IFR size
 
 *REG \_ DWORD*
 
-如果设置为非零值，框架的[事件记录器](using-the-framework-s-event-logger.md)将记录有助于调试驱动程序的其他信息，例如，条目进入或退出内部代码路径。 只有在开发驱动程序时，才应设置此值。 请参阅上面的代码示例。
+如果设置为非零值，框架的[事件记录器](using-the-framework-s-event-logger.md)将记录有助于调试驱动程序的其他信息，例如，条目进入或退出内部代码路径。 只有在开发驱动程序时，才应设置此值。 请参阅[**VerifierOn**](#verifieron)中的代码示例。
 
 
 ## <a name="verifierallocatefailcount"></a>VerifierAllocateFailCount
@@ -165,71 +233,3 @@ HKR, Parameters\Wdf,DbgBreakOnError,0x00010001,1
 
 
 
-
-你还可以在**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services \\ {193a1820-d9ac-4997-8c55-be817523f6aa}** 中设置以下注册表值。 这些值会影响系统上的所有 UMDF 驱动程序。
-
-## <a name="hostprocessdbgbreakonstart"></a>HostProcessDbgBreakOnStart
-
-*REG \_ DWORD，仅 UMDF*
-
-包含延迟值（以秒为单位）。 在指定的延迟期间，主机进程每秒查找用户模式调试器一次，并在连接的情况下中断。 如果在这段时间内未附加用户模式的调试程序，并且**HostProcessDbgBreakOnStart**中的高位（0x80000000）已设置，则该框架将进行一次尝试进入内核模式调试器。 例如：
-
-|“值”|结果|
-|--- |--- |
-|0x00000004|框架每秒尝试连接到用户模式调试器一次，4秒。 框架从不尝试连接到内核模式调试器。|
-|0x80000000|该框架将创建一次尝试连接到用户模式调试器。 如果未附加用户模式调试器，框架将尝试连接到内核模式调试器。|
-|0x80000004|框架每秒尝试连接到用户模式调试器一次，4秒。 如果未在4秒内附加用户模式调试器，框架将尝试连接到内核模式调试器。|
-
-
-## <a name="hostprocessdbgbreakondriverload-global"></a>HostProcessDbgBreakOnDriverLoad 全局
-
-*REG \_ DWORD，仅 UMDF*
-
-包含延迟值（以秒为单位）。 导致 WUDFHost 在加载驱动程序后延迟指定的秒数。 否则， **HostProcessDbgBreakOnDriverLoad**的行为与为**HostProcessDbgBreakOnStart**所述的行为相同。
-
-指定**HostProcessDbgBreakOnStart**或**HostProcessDbgBreakOnDriverLoad**会导致框架禁用其他 UMDF 超时（例如即插即用操作）。 这意味着，如果你的驱动程序导致过多的超时，则使用这些值可能导致驱动程序导致目标出现严重故障。
-
-> [!NOTE]
-> 从 UMDF 2.31 开始，可以设置每个驱动程序的**HostProcessDbgBreakOnDriverLoad**。  有关详细信息，请参阅上面的。
-
-
-还可以使用 WDK 中包含的 WDF 验证程序工具（您尚未 wdfverifier）来设置这些注册表值。 有关将此工具用于 UMDF 驱动程序的信息，请参阅使用[WDF 验证器管理 UMDF 验证程序设置](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)。
-
-此外，以下值位于**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ DebugMode**：
-
-## <a name="debugmodeflags"></a>DebugModeFlags
-
-*REG \_ DWORD，仅 UMDF*
-
-|值|说明|
-|--- |--- |
-|0x01|启用调试模式。 此设置关闭在[UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)中所述的自动重新启动功能。|
-|0x02|禁用设备池。 有关设备池的详细信息，请参阅[在 UMDF 驱动程序中使用设备池](using-device-pooling-in-umdf-drivers.md)。|
-|0x04|禁用超时。|
- 
-
-在 Microsoft Visual Studio 中使用 F5 选项时，会为部署的驱动程序设置所有三个标志。
-
-## <a name="debugmodebinaries"></a>DebugModeBinaries
-
-*REG \_ 多 \_ SZ，仅 UMDF*
-
-此值指定要在调试模式下加载的驱动程序二进制文件的名称。 例如，若要为驱动程序二进制文件 X .DLL、Y .DLL 和 Z .DLL 启用调试模式，此值将设置为* \\ w..1 ....。DLL \\ 0Z \\ 0 \\ 0*。
-
-还可以在**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF**中设置以下值：
-
-## <a name="hostfailkddebugbreak"></a>HostFailKdDebugBreak
-
-*REG \_ DWORD，仅 UMDF*
-
-如果此值不为零，并且内核调试器连接到计算机，则在终止宿主进程之前，反射器将进入内核调试器。 默认情况下，在 Windows 7 和更早版本的操作系统中禁用**HostFailKdDebugBreak** 。 从 Windows 8 开始，默认情况下会启用**HostFailKdDebugBreak** 。
-
-如果主机进程意外终止（例如，由于非 UMDF 组件或由于未经处理的异常），则反射器还会中断内核调试器。 如果要终止的主机进程中有多个设备堆栈，则反射器会多次中断到调试器中，一次用于主机进程中加载的每个设备堆栈。
-
-
-你还可以在**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ WUDF \\ Services \\ <service name> \\ 参数 \\ Wdf**中设置以下注册表值。 
-
-
-
-
- 
