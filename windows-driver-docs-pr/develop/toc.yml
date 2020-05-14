@@ -1,25 +1,23 @@
 - name: 开发驱动程序
   href: index.md
-- name: 通用驱动程序
+- name: Windows 驱动程序
   items:
-    - name: 通用驱动程序入门
-      href: getting-started-with-universal-drivers.md
+    - name: Windows 驱动程序入门
+      href: getting-started-with-windows-drivers.md
+    - name: DCH 设计原则和最佳做法
+      href: dch-principles-best-practices.md
     - name: 驱动程序包隔离
       href: driver-isolation.md
-    - name: 生成通用 Windows 驱动程序
-      href: building-a-universal-driver.md
-    - name: 验证通用驱动程序
-      href: validating-universal-drivers.md
-    - name: 针对 OneCore 进行构建
-      href: building-for-onecore.md
-    - name: 通用驱动程序方案
-      href: universal-driver-scenarios.md
-    - name: 调试通用驱动程序
-      href: debugging-a-universal-driver.md
-    - name: 驱动程序参考页上的“目标平台”
-      href: windows-10-editions-for-universal-drivers.md
-    - name: 适用于 Windows 10 的驱动程序融合模型
-      href: driver-model-convergence.md
+    - name: API 分层
+      href: api-layering.md
+    - name: 构建 Windows 驱动程序
+      href: building-a-windows-driver.md
+    - name: 验证 Windows 驱动程序
+      href: validating-windows-drivers.md
+    - name: 符合 DCH 的驱动程序包示例
+      href: dch-example.md
+    - name: 调试 Windows 驱动程序
+      href: debugging-a-windows-driver.md
 - name: 生成驱动程序
   items:
     - name: 创建新设备功能驱动程序
@@ -36,6 +34,8 @@
       href: creating-a-driver-from-existing-source-files.md
     - name: 使用 WDK 生成驱动程序
       href: building-a-driver.md
+    - name: 针对 OneCore 进行构建
+      href: building-for-onecore.md
     - name: 为不同版本的 Windows 生成驱动程序
       href: building-drivers-for-different-versions-of-windows.md
     - name: 使用 WDK 生成 ARM64 驱动程序
@@ -60,6 +60,10 @@
       href: stampinf-properties-for-driver-projects.md
     - name: 将 WDK 8.1 项目转换为 WDK 10
       href: converting-wdk-8-1-projects-to-wdk-10.md
+    - name: 适用于 Windows 10 的驱动程序融合模型
+      href: driver-model-convergence.md
+    - name: 驱动程序参考页上的“目标平台”
+      href: target-platforms.md
     - name: 使用代码分析和验证工具分析驱动程序
       href: analyzing-driver-quality-by-using-code-analysis-tools.md
     - name: 准备一台用于手动部署驱动程序的计算机
@@ -76,7 +80,7 @@
       href: creating-a-device-metadata-package.md
 - name: 为驱动程序签名
   items:
-    - name: 签署驱动程序
+    - name: 为驱动程序签名
       href: signing-a-driver.md
     - name: 对内核驱动程序进行证明签名以便公开发布
       href: attestation-signing-a-kernel-driver-for-public-release.md

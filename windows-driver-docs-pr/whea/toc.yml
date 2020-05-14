@@ -4,6 +4,8 @@
       href: index.md
     - name: Windows 硬件错误体系结构简介
       href: introduction-to-the-windows-hardware-error-architecture.md
+    - name: 在 Windows 10 上使用 WHEA
+      href: using-whea-on-windows-10.md
     - name: Windows 硬件错误体系结构的新信息
       items:
         - name: Windows 硬件错误体系结构的新信息

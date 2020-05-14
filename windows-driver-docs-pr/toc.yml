@@ -1,13 +1,23 @@
-- name: Windows 驱动程序工具包入门
-  href: index.yml
-- name: 驱动程序开发中的新增功能
-  href: what-s-new-in-driver-development.md
-- name: 下载 Windows 驱动程序工具包 (WDK)
-  href: download-the-wdk.md
-- name: 安装预览版 WDK
-  href: installing-preview-versions-wdk.md
-- name: 其他 WDK 下载
-  href: other-wdk-downloads.md
+- name: 新增功能
+  items:
+    - name: Windows 10 版本 2004 中的新增功能
+      href: what-s-new-in-driver-development.md
+    - name: Windows 10 版本 1903 中的新增功能
+      href: driver-changes-for-windows-10-version-1903.md
+    - name: Windows 10 版本 1809 中的新增功能
+      href: driver-changes-for-windows-10-version-1809.md
+    - name: Windows 10 版本 1803 中的新增功能
+      href: driver-changes-for-windows-10-version-1803.md
+    - name: Windows 10 版本 1709 中的新增功能
+      href: driver-changes-for-windows-10-version-1709.md
+- name: 下载
+  items:
+    - name: 下载 Windows 驱动程序工具包 (WDK)
+      href: download-the-wdk.md
+    - name: 安装预览版 WDK
+      href: installing-preview-versions-wdk.md
+    - name: 其他 WDK 下载
+      href: other-wdk-downloads.md
 - name: “引入”指南
   href: bringup/index.md
 - name: 开发、测试以及部署驱动程序
@@ -34,7 +44,7 @@
       href: 3dprint/index.md
     - name: ACPI
       href: acpi/index.md
-    - name: Audio
+    - name: 音频
       href: audio/index.md
     - name: 电池驱动程序
       href: battery/index.md

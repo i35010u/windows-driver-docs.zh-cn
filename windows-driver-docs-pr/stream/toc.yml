@@ -1,7 +1,21 @@
 - name: 流媒体设备设计指南
   href: index.md
 - name: 在不使用共同安装程序的情况下为 USB 设备更新设备固件
-  href: device-firmware-update-for-usb-devices-without-using-a-co-installer.md
+  items:
+    - name: 在不使用共同安装程序的情况下为 USB 设备更新设备固件
+      href: device-firmware-update-for-usb-devices-without-using-a-co-installer.md
+- name: 网络相机设计指南
+  items:
+    - name: 网络相机设计指南
+      href: network-camera-design-guide.md
+    - name: KSPROPERTYSETID_NetworkCameraControl
+      href: kspropertysetid-networkcameracontrol.md
+    - name: KSPROPERTY_NETWORKCAMERACONTROL_NTP
+      href: ksproperty_networkcameracontrol_ntp.md
+    - name: KSPROPERTY_NETWORKCAMERACONTROL_URI
+      href: ksproperty_networkcameracontrol_uri.md
+    - name: KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER
+      href: ksproperty_networkcameracontrol_ntpinfo_header.md
 - name: USB 视频类 (UVC) 相机实现指南
   items:
     - name: USB 视频类 (UVC) 相机实现指南
@@ -1440,6 +1454,8 @@
           href: ksproperty-cameracontrol-extended-photomode2.md
         - name: KSPROPERTY_CAMERACONTROL_EXTENDED_PROFILE
           href: ksproperty-cameracontrol-extended-profile.md
+        - name: KSPROPERTY_CAMERACONTROL_EXTENDED_RELATIVEPANELOPTIMIZATION
+          href: ksproperty-cameracontrol-extended-relativepaneloptimization.md
         - name: KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_CONFIGCAPS
           href: ksproperty-cameracontrol-extended-roi-configcaps.md
         - name: KSPROPERTY_CAMERACONTROL_EXTENDED_ROI_ISPCONTROL

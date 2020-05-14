@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: d2a7da20e127757192cc0dd88fd0c70cb213b5dc
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 05368cddd6534c4507a569a3387d657e23b3ca85
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75210817"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235344"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 中的 WDF 驱动程序新增功能
 
@@ -34,6 +34,10 @@ Windows 10 版本 1903（2019 年 3 月更新，19H1）包括内核模式驱动
 -   Windows Server 版本 1809
 
 有关版本历史记录，请参阅 [KMDF 版本历史记录](kmdf-version-history.md)和 [UMDF 版本历史记录](umdf-version-history.md)。 除非特别说明，否则本页中的 UMDF 参考介绍的是版本 2 的功能，该功能在 UMDF 版本 1 中不提供。
+
+## <a name="new-in-wdf-for-windows-10-version-2004"></a>适用于 Windows 10 版本 2004 的 WDF 中的新增功能
+
+请参阅 [KMDF 版本历史记录](kmdf-version-history.md)和 [UMDF 版本历史记录](umdf-version-history.md)。
 
 ## <a name="new-in-wdf-for-windows-10-version-1903"></a>适用于 Windows 10 版本 1903 的 WDF 中的新功能
 

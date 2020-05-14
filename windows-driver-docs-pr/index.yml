@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: 76d9b55b5e2b645fc567db0e576fb0f1f75ee93d
-  ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+  ms.openlocfilehash: 83d3b0cfbd341712161de579064d61931d85d22d
+  ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "80544088"
+  ms.lasthandoff: 05/12/2020
+  ms.locfileid: "83235445"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -58,7 +58,7 @@ conceptualContent:
     - text: 下载 Windows 调试工具 - WinDbg
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools
       itemType: download
-    - text: 调试通用驱动程序
+    - text: 调试 Windows 驱动程序
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-
       itemType: tutorial
   - title: API 参考
@@ -85,10 +85,10 @@ additionalContent:
   sections:
   - title: 任务
     items:
-    - title: 编写通用 Hello World 驱动程序
-      summary: 了解如何使用 KMDF 编写很小的通用 Windows 驱动程序。
+    - title: 编写 Hello World Windows 驱动程序
+      summary: 了解如何使用 KMDF 编写很小的 Windows 驱动程序。
       url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
-    - title: 通用 Windows 驱动程序入门
+    - title: Windows 驱动程序入门
       summary: 编写可以跨多个设备类型运行的单一驱动程序包。
       url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
     - title: 添加启动项
@@ -114,7 +114,7 @@ additionalContent:
     - title: Windows 硬件合作伙伴中心
       summary: 了解如何轻松快捷地创建和管理系统和驱动程序提交。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
-    - title: 新功能和更新
+    - title: 驱动程序开发中的新增功能
       summary: 了解 Windows 10 中的最新驱动程序开发功能。
       url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
     - title: 驱动程序技术概述

@@ -54,9 +54,9 @@
           href: configuring-tools-ini.md
         - name: 使用 KDbgCtrl
           href: using-kdbgctrl.md
-    - name: 调试通用驱动程序 - 分步实验（Echo 内核模式）
+    - name: 调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
       href: debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md
-    - name: 调试驱动程序 - 分步实验（Sysvad 内核模式）
+    - name: 调试驱动程序 - 分步实验室（Sysvad 内核模式）
       href: debug-universal-drivers--kernel-mode-.md
 - name: WinDbg 预览版
   items:
