@@ -4,12 +4,12 @@ title: 将 WDK 8.1 项目转换为 WDK 10
 description: 如何将使用 Microsoft Visual Studio 2013 和 Windows 驱动程序工具包 (WDK) 8.1 创建的驱动程序项目转换为在 Microsoft Visual Studio 2015 中使用 Windows 驱动程序工具包 (WDK) 10 生成的驱动程序项目。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d3fa096f10d2cfe3a6bc592c0c98f21317fd68b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 4be525014290284e1c90d7053f1a97556860b945
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63382485"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235401"
 ---
 # <a name="converting-wdk-81-projects-to-wdk-10"></a>将 WDK 8.1 项目转换为 WDK 10
 
@@ -47,7 +47,7 @@ Visual Studio 2015 存在新的编译器警告和错误。 即使在 Visual Stud
 
     有关 ApiValidator 的详细信息，请参阅[验证通用 Windows 驱动程序](validating-universal-drivers.md)。
 
-    若要了解如何确定给定 DDI 的目标平台，请参阅[驱动程序的目标平台的参考页面](windows-10-editions-for-universal-drivers.md)。
+    若要了解如何确定给定 DDI 的目标平台，请参阅[驱动程序的目标平台的参考页面](target-platforms.md)。
 
  
 

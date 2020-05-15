@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x20001 HYPERVISOR_ERROR
-description: HYPERVISOR_ERROR bug 检查具有 0x00020001 值。 这表示虚拟机监控程序遇到致命错误。
+description: HYPERVISOR_ERROR bug 检查的值为0x00020001。 这表示虚拟机监控程序遇到错误。
 ms.assetid: 5F62DEEA-D192-46ED-827C-021A749D7091
 keywords:
 - Bug 检查 0x20001 HYPERVISOR_ERROR
@@ -13,31 +13,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f69fb24bc593500937100c4d0e84c8f5bdd237ef
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: b3822317651aa3d6a1b0293f2561e70d371551f9
+ms.sourcegitcommit: b35469bbcabee996af70bcbd8564184f547a8c57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519608"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83406247"
 ---
-# <a name="bug-check-0x20001-hypervisorerror"></a>Bug 检查 0x20001：虚拟机监控程序\_错误
+# <a name="bug-check-0x20001-hypervisor_error"></a>Bug 检查0x20001：虚拟机监控程序 \_ 错误
 
 
-虚拟机监控程序\_错误 bug 检查的值为 0x00020001。 这表示虚拟机监控程序遇到致命错误。
+虚拟机监控程序 \_ 错误检查的值为0x00020001。 这表示虚拟机监控程序遇到错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="hypervisorerror-parameters"></a>虚拟机监控程序\_错误参数
+## <a name="hypervisor_error-parameters"></a>虚拟机监控程序 \_ 错误参数
 
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------|-------------|
 | 1         | 保留    |
 | 2         | 保留    |
 | 3         | 保留    |
 | 4         | 保留    |
 
-## <a name="resolution"></a>分辨率 
+## <a name="resolution"></a>解决方法 
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，可以非常确定根本原因。
+[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，并且在确定根本原因时可能非常有用。
