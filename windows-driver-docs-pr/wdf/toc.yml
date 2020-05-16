@@ -146,7 +146,7 @@
       href: determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md
     - name: 如何启用对 UMDF 驱动程序的调试
       href: enabling-a-debugger.md
-    - name: 用于调试 WDF 驱动程序（KMDF 和 UMDF）的注册表值
+    - name: 用于调试 WDF 驱动程序的注册表值
       href: registry-values-for-debugging-kmdf-drivers.md
     - name: Wdfkd.dll 中的调试程序扩展摘要
       href: debugger-extensions-for-kmdf-drivers.md
