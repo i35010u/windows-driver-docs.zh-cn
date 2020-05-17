@@ -53,7 +53,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     [x notepad!*](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-    **注意**  如果没有看到任何输出，请再次输入 [.reload  ](https://go.microsoft.com/fwlink/p?linkid=399239)。
+    **注意**  如果没有看到任何输出，请再次输入 [.reload](https://go.microsoft.com/fwlink/p?linkid=399239)  。
 
     若要查看 Notepad.exe 模块中包含 main 的符号，请输入以下命令：
 
