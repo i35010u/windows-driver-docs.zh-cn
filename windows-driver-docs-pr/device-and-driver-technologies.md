@@ -4,12 +4,12 @@ description: 本部分包含有关每项受支持的 Windows 驱动程序技术�
 ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5c8ed9dc26adca1c411ff0ca108a294d744c12
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a1ed585772441720df42307670137810354e1a85
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77144693"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235313"
 ---
 # <a name="overview-of-driver-technologies"></a>驱动程序技术概述
 
@@ -17,9 +17,9 @@ ms.locfileid: "77144693"
 
 大部分驱动程序技术信息对于所有 Windows 10 版本都是相同的。 如果你必须对特定版本的 Windows（例如 Windows 10 移动版）予以特殊考虑，我们已明确在每个技术领域中将这些考虑事项标注出来。
 
-## <a name="universal-windows-drivers"></a>通用 Windows 驱动程序
+## <a name="windows-drivers"></a>Windows 驱动程序
 
-可以创建在所有版本的 Windows 10 上均能运行的通用 Windows 驱动程序（该驱动程序使用一部分可供 Windows 驱动程序使用的接口）。 如果可能，请使用通用 Windows 驱动程序在多个设备上启用驱动程序部署。 有关如何生成、安装、部署和调试适用于 Windows 10 的通用 Windows 驱动程序的详细信息，请参阅[通用 Windows 驱动程序入门](develop/getting-started-with-universal-drivers.md)和[将驱动程序部署到测试计算机](develop/deploying-a-driver-to-a-test-computer.md)。
+可以创建在所有 Windows 10 版本上运行的 Windows 驱动程序（即使用部分可用接口的驱动程序）。 尽可能使用 Windows 驱动程序在多个设备上启用驱动程序部署。 若要详细了解如何生成、安装、部署和调试适用于 Windows 10 的 Windows 驱动程序，请参阅[ Windows 驱动程序入门](develop/getting-started-with-windows-drivers.md)和[将驱动程序部署到测试计算机](develop/deploying-a-driver-to-a-test-computer.md)。
 
 ## <a name="device-drivers-and-windows-10-for-desktop-computers"></a>适用于台式计算机的设备驱动程序和 Windows 10
 

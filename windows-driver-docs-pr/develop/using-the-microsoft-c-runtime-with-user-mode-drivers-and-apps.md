@@ -4,15 +4,17 @@ title: 使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
 description: 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fef7a8ac858884e1be68e5b0fc7f61ca014d2e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d09e7c264713d5eb3c7cc4be7b80a28d131343b8
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63344032"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235315"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>使用含用户模式驱动程序和桌面应用的 Microsoft C 运行时
-[本主题仅适用于桌面驱动程序，不适用通用驱动程序。]
+
+> [!NOTE]
+> 本主题只适用于 Windows 桌面驱动程序，而不适用于 Windows 驱动程序。  若要了解此区别，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
 
 本主题提供了有关分发 Windows 8 和 Windows 8.1 应用程序和驱动程序的 C 运行时库的信息。 它为用户模式驱动程序和桌面应用程序编写人员提供了编译代码、并通过必要的 C 运行时库打包代码以重新分发的指南。
 

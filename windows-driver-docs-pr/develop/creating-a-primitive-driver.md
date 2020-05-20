@@ -4,12 +4,12 @@ description: 通过基元驱动程序处理和管理使用基于 INF 的安装�
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5605ea9a1e13ca0bb1094cc17827645c98f3da63
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 05ed44d21291a17a3bc532550ef1ff47d1c3b9fd
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80807609"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235400"
 ---
 # <a name="creating-a-new-primitive-driver"></a>创建新的基元驱动程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "80807609"
 
 为了提高可靠性并保证此类软件的正确行为（尤其是在 OS 升级和重置方案期间），从 Windows 10 版本 1903 开始，即插即用平台现在会将此类软件包作为顶级实体进行处理和管理。
 
-利用这种新平台支持的软件类型称为“基元驱动程序”。  基元驱动程序继续使用基于 INF 的安装，底层平台利用[驱动程序存储](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)来跟踪所有相关文件。
+利用这种新平台支持的软件类型称为“基元驱动程序”。 基元驱动程序继续使用基于 INF 的安装，底层平台利用[驱动程序存储](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)来跟踪所有相关文件。
 
 然后，底层即插即用平台在 OS 升级时，可正常安装、卸载和维护驱动程序状态。
 
@@ -43,7 +43,7 @@ ms.locfileid: "80807609"
 
   * 必须填写 **ClassGuid** 指令。
 
-* 驱动程序必须符合[通用](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)要求。
+* 驱动程序必须[符合 DCH](dch-principles-best-practices.md)。
 
 * 不能有任何 \[Manufacturer\] 节存在。
 

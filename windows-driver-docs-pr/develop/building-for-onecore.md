@@ -1,15 +1,15 @@
 ---
-ms.assetid: ee46801a-4fa5-465a-aa81-5e76eb83d315
 title: 针对 OneCore 生成
 description: 可以针对 Windows 10 之前的版本和 OneCore 版本生成单个二进制文件。
-ms.date: 10/02/2018
+ms.assetid: ee46801a-4fa5-465a-aa81-5e76eb83d315
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aefa62ad1fbf120ffb6b905c9aafbdb5b44f5ab
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: bf8bf6e343b296b6dcb7ab13135d2fe148a79a36
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63382488"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235404"
 ---
 # <a name="building-for-onecore"></a>针对 OneCore 进行构建
 
@@ -29,7 +29,7 @@ ms.locfileid: "63382488"
 |`OneCoreUAP.lib`|Windows 7 及更高版本、Windows 10 的 UWP 版本（Desktop、IoT、HoloLens，但不包括 Nano Server）|
 
 >[!NOTE]
->若要更改 Visual Studio 中的链接器选项，请选择项目属性，然后导航至“链接器”->“输入”->“其他依赖项”  。
+>若要更改 Visual Studio 中的链接器选项，请选择项目属性，然后导航至“链接器”->“输入”->“其他依赖项”。
 
 Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore 版本（例如 Mobile 或 IoT）上返回运行时错误。
 
@@ -45,7 +45,7 @@ Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore
 
 * `Error: <Binary Name> has a dependency on <Module Name><Api Name> but is missing: IsApiSetImplemented("<contract-name-for-Module>)`
     
-    上述类别中的 API 调用编译良好，但在运行时可能表现不符合预期，具体取决于目标操作系统。 若要通过 [DCHU](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers#design-principles) 的 U 要求，请使用 [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 包装这些调用。
+    上述类别中的 API 调用编译良好，但在运行时可能表现不符合预期，具体取决于目标操作系统。 若要传递 [Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-windows-drivers)的 [API 分层要求](api-layering.md)，请使用 [IsApiSetImplemented](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 包装这些调用。
 
 这使你能够编译代码而不出错。  然后在运行时，如果目标计算机没有所需的 API，则 [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) 将返回 FALSE。
 
@@ -55,7 +55,7 @@ Windows API 的一个子集可以干净地编译，但在非 Desktop 的 OneCore
 
 此代码在早于 Windows 10 的 Windows 版本上运行良好，但在 Windows 10 的 OneCore 版本上运行会导致 WTSEnumerateSessions 失败：78 或 ERROR_CALL_NOT_IMPLEMENTED 120 (0x78)。
 
-此代码示例使 DCHU 的 U 部分失败，并出现以下 [ApiValidator](validating-universal-drivers.md) 错误：
+此代码示例不符合 Windows 驱动程序的 [API 分层](api-layering.md)要求，出现了以下 [ApiValidator](validating-universal-drivers.md) 错误：
 
 ```cpp
 ApiValidation: Error: FlexLinkTest.exe has a dependency on 'wtsapi32.dll!WTSEnumerateSessionsW' but is missing: IsApiSetImplemented("ext-ms-win-session-wtsapi32-l1-1-0")
@@ -97,7 +97,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 
 ## <a name="code-sample-direct-usage-of-api-after-evaluating-for-existence"></a>代码示例：评估是否存在后直接使用 API
 
-此示例演示如何调用 [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented)。 此示例通过 DCHU 的 U 部分要求，并显示以下 [ApiValidator](validating-universal-drivers.md) 输出：
+此示例演示如何调用 [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented)。 此示例符合 Windows 驱动程序的 [API 分层](api-layering.md)要求，生成了以下 [ApiValidator](validating-universal-drivers.md) 输出：
 
 ```cpp
 ApiValidation: All binaries are Universal
@@ -151,7 +151,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 
 ## <a name="see-also"></a>另请参阅
 
-* [验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/validating-universal-drivers)
+* [验证 Windows 驱动程序](validating-windows-drivers.md)
 * [OneCore](https://docs.microsoft.com/windows-hardware/get-started/what-s-new-in-windows)
 
 <!--API BOILERPLATE: Compiles using OneCore.lib but returns ERROR_CALL_NOT_IMPLEMENTED on non-Desktop OneCore editions.-->
