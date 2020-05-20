@@ -21,7 +21,7 @@ ms.locfileid: "79437058"
 在 Windows 10 中，此匹配过程分两个阶段进行。 首先，Windows 10 在[驱动程序存储](driver-store.md)中安装最匹配的驱动程序，允许设备快速开始操作。 安装该驱动程序之后，Windows 10 还会：
 
 * 从Windows 更新下载任何匹配的[驱动程序包](driver-packages.md)，并将其放入[驱动程序存储](driver-store.md)。
-* 搜索在“设备路径”注册表值指定的位置预加载的驱动程序包  。  “设备路径”注册表值位于以下子项下：`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion` 。  默认情况下，“设备路径”值指定 %SystemRoot%\\INF 目录  。
+* 搜索在“设备路径”注册表值指定的位置预加载的驱动程序包  。  “设备路径”注册表值位于以下子项下：`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`。  默认情况下，“设备路径”值指定 %SystemRoot%\\INF 目录。
 
 如果 Windows 10 在这些位置找到比初始安装项匹配度更高的驱动程序包，Windows 会将其从驱动程序存储安装的驱动程序替换为匹配度更高的驱动程序。
 
@@ -31,7 +31,7 @@ ms.locfileid: "79437058"
 
 |搜索阶段|Windows 7 匹配顺序|Windows 8、Windows 10 匹配顺序|
 |--- |--- |--- |
-|安装驱动程序之前|设备路径；Windows 更新；[驱动程序存储](driver-store.md) |[驱动程序存储](driver-store.md)|
+|安装驱动程序之前|设备路径；Windows 更新；[驱动程序存储](driver-store.md)|[驱动程序存储](driver-store.md)|
 |选择初始驱动程序之后|不适用|**DevicePath**; Windows Update|
 
 
