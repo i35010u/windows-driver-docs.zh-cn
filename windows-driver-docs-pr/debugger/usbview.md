@@ -69,7 +69,7 @@ USBView 可以枚举 USB 主机控制器、USB 集线器和连接的 USB 设备�
 
 ## <a name="windows-usb-troubleshooter"></a>Windows USB 疑难解答
 
-如果尝试使用“安全删除硬件”对话框来诊断无法弹出的 USB 设备，请尝试使用 [Windows USB 疑难解答](https://support.microsoft.com/help/17614/windows-10-troubleshoot-common-usb-problems)  。
+如果尝试使用“安全删除硬件”对话框来诊断无法弹出的 USB 设备，请尝试使用 [Windows USB 疑难解答](https://support.microsoft.com/help/17614/windows-10-troubleshoot-common-usb-problems)。
 
 
  
