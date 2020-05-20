@@ -4,12 +4,12 @@ title: 适用于 Windows 10 的驱动程序融合模型
 description: 若要使设备在 Windows 10 之前的 Windows 和 Windows Phone 版本上工作，可能需要编写两个独立的驱动程序，一个是 Windows 8.1，一个是 Windows Phone 8.1。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad62d7c13888eaf8210f0d3f2b8d1315662def93
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6f8758a3390d9c9331815e85679fffa50101fa4a
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76980702"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235322"
 ---
 # <a name="driver-convergence-model-for-windows10"></a>适用于 Windows 10 的驱动程序融合模型
 
@@ -102,7 +102,7 @@ ms.locfileid: "76980702"
 <tr class="even">
 <td align="left">Windows 驱动程序框架 (WDF)</td>
 <td align="left">是</td>
-<td align="left"><p>Windows 10 附带 KMDF 1.15、UMDF 2.15、UMDF 1.11 和早期的框架版本。 Windows 10 移动版也附带 KMDF 1.15、UMDF 2.15 和早期的框架版本。 请注意，UMDF 版本 1 不在 Windows 10 移动版中提供。 仅 KMDF 和 UMDF 版本 2 可以用于编写<a href="getting-started-with-universal-drivers.md" data-raw-source="[Universal Windows drivers](getting-started-with-universal-drivers.md)">通用 Windows 驱动程序</a>。</p></td>
+<td align="left"><p>Windows 10 附带 KMDF 1.15、UMDF 2.15、UMDF 1.11 和早期的框架版本。 Windows 10 移动版也附带 KMDF 1.15、UMDF 2.15 和早期的框架版本。 请注意，UMDF 版本 1 不在 Windows 10 移动版中提供。 只有 KMDF 和 UMDF 版本 2 可以用来编写 <a href="getting-started-with-windows-drivers.md" data-raw-source="[Windows drivers](getting-started-with-windows-drivers.md)">Windows 驱动程序</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">WLAN</td>

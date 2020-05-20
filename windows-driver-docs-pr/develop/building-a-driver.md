@@ -4,22 +4,17 @@ title: 使用 WDK 生成驱动程序
 description: 本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 生成驱动程序。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1db6f4fa3a257c04f317ad5569b3d9c444dc1dc0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 72474a7d1a705041b480674d2dba2866bc831864
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74261421"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235417"
 ---
-# <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>使用 Visual Studio 和 WDK 生成驱动程序
+# <a name="using-visual-studio-or-msbuild-to-build-a-driver"></a>使用 Visual Studio 或 MSBuild 生成驱动程序
 
-本主题介绍了如何使用 Windows 驱动程序工具包 (WDK) 生成驱动程序。 WDK 10 与 Microsoft Visual Studio 完全集成。 你可以使用 Visual Studio 开发环境生成驱动程序，也可以使用 Microsoft 生成引擎直接从命令行生成驱动程序 ([MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804))。
 
-你可以使用任意版本的 Microsoft Visual Studio 2015（包括 Microsoft Visual Studio Community 2015）为以下操作系统生成驱动程序：
-
--   Windows 10
--   Windows 8.1
--   Windows 7
+本主题介绍了如何使用 Visual Studio 开发环境来生成驱动程序，或使用 Microsoft 生成引擎 ([MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)) 通过命令行来生成驱动程序。
 
 **重要提示**  从 Windows 驱动程序工具包 (WDK) 8 开始，MSBuild 取代 Windows 生成实用程序 (Build.exe)。 WDK 现在使用的编译器和生成工具与你用于生成 Visual Studio 项目的工具相同。 使用以前版本的 WDK 生成的驱动程序项目必须转换为在 Visual Studio 环境中工作。 你可以从命令行运行转换实用程序，也可以通过从现有源创建新 Visual Studio 项目来转换现有驱动程序。 有关详细信息，请参阅[从现有源文件创建驱动程序](creating-a-driver-from-existing-source-files.md)和 [WDK 和 Visual Studio 生成环境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)。
 
@@ -30,7 +25,7 @@ ms.locfileid: "74261421"
 
 在 Visual Studio 中生成驱动程序与生成任何项目或解决方案的方法相同。 在使用 Windows 驱动程序模板创建新驱动程序项目时，模板定义默认（有效）的项目配置和默认（有效）的解决方案生成配置。
 
-**注意**  你可以将使用 WDK 8 或 Windows 驱动程序工具包 (WDK) 8.1 创建的项目和解决方案转换为与 Windows 驱动程序工具包 (WDK) 10 和 Visual Studio 2015 结合使用。 在打开项目或解决方案之前，请运行 [ProjectUpgradeTool](https://docs.microsoft.com/windows-hardware/drivers/devtest/projectupgradetool)。 ProjectUpgradeTool 可以转换项目和解决方案，以便使用 WDK 10 进行生成。
+注意  可以将使用 WDK 8 或 Windows 驱动程序工具包 (WDK) 8.1 创建的项目和解决方案转换为使用 Windows 驱动程序工具包 (WDK) 10 和 Visual Studio 2019。 在打开项目或解决方案之前，请运行 [ProjectUpgradeTool](https://docs.microsoft.com/windows-hardware/drivers/devtest/projectupgradetool)。 ProjectUpgradeTool 可以转换项目和解决方案，以便使用 WDK 10 进行生成。
 
  
 
@@ -42,11 +37,11 @@ ms.locfileid: "74261421"
 
 1.  确保你的计算机上安装了相同版本的 SDK 和 WDK。
 2.  在 Visual Studio 中，打开驱动程序项目或解决方案。
-3.  在“解决方案资源管理器”  中，右键单击该解决方案并选择“配置管理器”  。
-4.  在“配置管理器”  中，选择与你感兴趣的生成类型对应的**活动解决方案配置**（例如，**调试**或**发布**）和**活动解决方案平台**（例如，**Win32**）。
-5.  右键单击 Avshws 项目，然后选择“属性”  。  导航到“驱动程序设置”>“常规”  ，设置“目标操作系统版本”  和“目标平台”  。
+3.  在“解决方案资源管理器”中，右键单击该解决方案并选择“配置管理器”。
+4.  在“配置管理器”中，选择与你感兴趣的生成类型对应的**活动解决方案配置**（例如，**调试**或**发布**）和**活动解决方案平台**（例如，**Win32**）。
+5.  右键单击 Avshws 项目，然后选择“属性”。  导航到“驱动程序设置”>“常规”，设置“目标操作系统版本”和“目标平台”。
 6.  配置驱动程序或驱动程序包的项目属性。 你可以为部署、驱动程序签名或其他任务设置属性。 有关详细信息，请参阅[配置驱动程序和驱动程序包的项目属性](#configure_project_props)。
-7.  从“生成”  菜单中，单击“生成解决方案”  (**Ctrl+Shift+B**)。
+7.  从“生成”菜单中，单击“生成解决方案”(**Ctrl+Shift+B**)。
 
 ## <a name="span-idbuilding_a_driver_using_the_command_line__msbuild_spanspan-idbuilding_a_driver_using_the_command_line__msbuild_spanbuilding-a-driver-using-the-command-line-msbuild"></a><span id="building_a_driver_using_the_command_line__msbuild_"></span><span id="BUILDING_A_DRIVER_USING_THE_COMMAND_LINE__MSBUILD_"></span>使用命令行 (MSBuild) 生成驱动程序
 
@@ -55,7 +50,7 @@ ms.locfileid: "74261421"
 
 **如何使用“Visual Studio 命令提示”窗口生成驱动程序**
 
-1.  打开“适用于 VS2015 的开发人员命令提示”  窗口。
+1.  打开“适用于 VS2019 的开发人员命令提示符”窗口。
 
     在此窗口中，你可以通过指定项目 (.VcxProj) 或解决方案 (.Sln) 文件使用 MSBuild.exe 生成任何 Visual Studio 项目。
 
@@ -73,7 +68,7 @@ ms.locfileid: "74261421"
     msbuild /t:clean /t:build ProjectFile /p:Configuration=<Debug|Release> /p:Platform=architecture /p:TargetPlatformVersion=a.b.c.d /p:TargetVersion=OS    
     ```
 
-    例如，以下命令为“调试”配置、“Win32”平台和 Windows 10 生成通用 Windows 驱动程序。
+    例如，以下命令针对“调试”配置和“Win32”平台为 Windows 10 生成驱动程序。
 
     ```cpp
     msbuild /t:clean /t:build .\MyDriver.vcxproj /p:Configuration="Debug" /p:Platform=Win32 /p:TargetVersion=”Windows10” /p:TargetPlatformVersion=”10.0.10010.0”
@@ -138,9 +133,9 @@ WDK 提供了大量的命令行工具，如 [Stampinf](https://docs.microsoft.co
 
 **使用 Visual Studio 中的选项提高生成输出的详细级别**
 
-1.  单击“工具”  &gt;“选项”  。
-2.  单击“项目和解决方案”  文件夹，然后单击“生成并运行”  。
-3.  更改“MSBuild 项目生成输出详细级别”  和“MSBuild 项目生成日志文件详细级别”  选项。 默认情况下，这些选项设置为“最低”。
+1.  单击“工具”&gt;“选项”。
+2.  单击“项目和解决方案”文件夹，然后单击“生成并运行”。
+3.  更改“MSBuild 项目生成输出详细级别”和“MSBuild 项目生成日志文件详细级别”选项。 默认情况下，这些选项设置为“最低”。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
