@@ -4,12 +4,12 @@ description: 本主题列出了从命令行运行 InfVerif 时可用的选项。
 ms.assetid: CC2DB624-FFEE-4049-ACE7-4A24B330BADB
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b7f868f8bc9d7633e2644d226a579a4c9ac6b84
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 8486fabd13756ad7fcc9eee3688f992988e7b8db
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235297"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435365"
 ---
 # <a name="running-infverif-from-the-command-line"></a>从命令行运行 InfVerif
 
@@ -67,7 +67,7 @@ Verbose 选项向输出添加一行，用于指定 INF 是否有效。  某些�
 
 *适用于 Windows 10 的新版本1703：* Info 选项对于验证 INF 适用性特别有用。  它会报告每个受支持的硬件 ID 以及有效的体系结构和最低操作系统版本。  可以同时使用/info 和/osver 来验证 INF 在操作系统版本和体系结构方面的适用性。
 
-*适用于 Windows 10 的新版本1809：* 如果要开发*Windows 驱动程序*，请使用 `infverif /w` （理想使用 `/v` ）来确定与[DCH 设计原则](dch-principles-best-practices.md)的**声明性（D）** 原则兼容性。  该 `/w` 标志还会检查 INF 是否符合[驱动程序包隔离](driver-isolation.md)要求[和 Windows 驱动程序入门](getting-started-with-windows-drivers.md)。
+*适用于 Windows 10 的新版本1809：* 如果要开发*Windows 驱动程序*，请使用 `infverif /w` （理想使用 `/v` ）来确定与[DCH 设计原则](../develop/dch-principles-best-practices.md)的**声明性（D）** 原则兼容性。  该 `/w` 标志还会检查 INF 是否符合[驱动程序包隔离](../develop/driver-isolation.md)要求[和 Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。
 
 若要验证多个 INF 文件，请提供多个文件名或使用通配符：
 

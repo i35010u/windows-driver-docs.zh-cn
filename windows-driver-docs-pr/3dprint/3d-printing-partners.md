@@ -1,16 +1,16 @@
 ---
 title: 3D 硬件合作伙伴
-description: Microsoft 与 3D 硬件合作伙伴，以便使用 Windows 10 的任何人都可以访问的端到端 3D 制造合作。 有关合作伙伴和设备的最新信息，请在 Windows 合作伙伴中心上参阅硬件合作伙伴站点。
+description: Microsoft 已与3D 硬件合作伙伴合作，使使用 Windows 10 的任何人都可以访问端到端的3D 生产。
 ms.assetid: A361DBE6-FD12-4BE1-B239-E3ED3715C126
-ms.date: 04/20/2017
+ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e683f73c5f21a3d03f72d02e9c44bd0814e8d14f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26db18f2edff4eb6ae1a256a88e7906647f2ead9
+ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324707"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83553324"
 ---
 # <a name="3d-hardware-partners"></a>3D 硬件合作伙伴
 
-Microsoft 与 3D 硬件合作伙伴，以便使用 Windows 10 的任何人都可以访问的端到端 3D 制造合作。 有关合作伙伴和设备的最新信息，请参阅[硬件合作伙伴](https://go.microsoft.com/fwlink/p/?LinkId=627548)Windows 合作伙伴中心上的站点。
+Microsoft 已与3D 硬件合作伙伴合作，使使用 Windows 10 的任何人都可以访问端到端的3D 生产。 有关合作伙伴和设备的最新信息，请参阅[3d 打印合作伙伴](https://www.microsoft.com/en-us/3d-print/printing-partners)。

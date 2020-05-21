@@ -2,29 +2,31 @@
 title: StorNVMe 命令集支持
 description: StorNVMe 命令集支持
 ms.assetid: c0bcee11-ea66-4726-99a2-ad18256cf616
-ms.date: 01/13/2020
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a7e099f13f2e0da3f93accd314d227cc69c45a
-ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
+ms.openlocfilehash: d8085c82690b07a198411a7c93b92cb423322a0b
+ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706936"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83642597"
 ---
 # <a name="stornvme-command-set-support"></a>StorNVMe 命令集支持
 
 下表列出了 NVMe *Admin*和*NVM*命令集及关联的操作码，并指明了 Windows 10 版本1903及更高版本上的**StorNVMe**提供的支持。  
 
+有关其他信息，请参阅使用[NVMe 驱动器](https://docs.microsoft.com/windows/win32/fileio/working-with-nvme-devices#protocol-specific-queries)。
+
 ## <a name="admin-command-set-support"></a>管理命令集支持
 
-| 操作码  | NVMe 命令                | StorNVMe 支持      | 说明 |
+| 操作码  | NVMe 命令                | StorNVMe 支持      | 注释 |
 | ------  | --------------------------  | --------------------- | -------- |
 | 0       | 删除 i/o 提交队列 | 内部驱动程序使用情况 |    |
 | 1       | 创建 i/o 提交队列 | 内部驱动程序使用情况 |    |
 | 2       | 获取日志页                | 内部驱动程序使用情况;IOCTL_STORAGE_QUERY_PROPERTY |   |
 | 4       | 删除 i/o 完成队列 | 内部驱动程序使用情况 |   |
 | 5       | 创建 i/o 完成队列 | 内部驱动程序使用情况 |
-| 6       | 身份                    | 内部驱动程序使用情况;IOCTL_STORAGE_QUERY_PROPERTY，IOCTL_STORAGE_FIRMWARE_GET_INFO |   |
+| 6       | 识别                    | 内部驱动程序使用情况;IOCTL_STORAGE_QUERY_PROPERTY，IOCTL_STORAGE_FIRMWARE_GET_INFO |   |
 | 8       | 中止                       |   | 目前不受支持。 |
 | 9       | 设置功能                | 内部驱动程序使用情况;IOCTL_STORAGE_SET_PROPERTY | 仅对主机控制的热量管理设置了 IOCTL_STORAGE_SET_PROPERTY 的功能 |
 | 啊      | 获取功能                | 内部驱动程序使用情况;IOCTL_STORAGE_QUERY_PROPERTY |   |
@@ -49,13 +51,13 @@ ms.locfileid: "76706936"
 
 ## <a name="nvm-command-set-support"></a>NVM 命令集支持
 
-| 操作码  | NVMe 命令                | StorNVMe 支持      | 说明 |
+| 操作码  | NVMe 命令                | StorNVMe 支持      | 注释 |
 | ------  | --------------------------  | --------------------- | -------- |
 | 0       | 刷新                       | 内部驱动程序使用情况，IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH 的 SCSIOP_SYNCHRONIZE_CACHE |
 | 1       | 写入                       | 内部驱动程序使用情况，IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH 的 SCSIOP_WRITE/SCSIOP_WRITE16 |
-| 2       | 已阅读                        | 内部驱动程序使用情况，IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH 的 SCSIOP_READ/SCSIOP_READ16 |
+| 2       | 读取                        | 内部驱动程序使用情况，IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH 的 SCSIOP_READ/SCSIOP_READ16 |
 | 4       | 写入无法纠正         |   | 目前不受支持。 |
-| 5       | “比较”                     | IOCTL_STORAGE_PROTOCOL_COMMAND | 仅在 Win PE 模式下为 IOCTL_STORAGE_PROTOCOL_COMMAND 启用 |
+| 5       | 比较                     | IOCTL_STORAGE_PROTOCOL_COMMAND | 仅在 Win PE 模式下为 IOCTL_STORAGE_PROTOCOL_COMMAND 启用 |
 | 8       | 写零                |   | 目前不受支持。 |
 | 9       | 数据集管理          | IOCTL_SCSI_PASS_THROUGH | 仅剪裁（解除分配）;IOCTL_SCSI_PASS_THROUGH 的 SCSIOP_UNMAP |
 | 48      | 验证                      |   | 目前不受支持。 |

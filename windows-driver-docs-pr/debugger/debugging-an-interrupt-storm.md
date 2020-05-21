@@ -4,42 +4,40 @@ description: 调试中断风暴
 ms.assetid: b863cb9c-dce0-4572-b0ed-6f7d3a6ba472
 keywords:
 - 挂起的 Irp
-- I/O 请求数据包 (IRP) 挂起
-ms.date: 05/23/2017
+- I/o 请求数据包（IRP），挂起
+ms.date: 05/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d78ad3206adb2f283c924098b620ce818e19dc0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 131c2ab6bb126e8459a74bf3c77c3e720bcd4987
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377197"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435375"
 ---
 # <a name="debugging-an-interrupt-storm"></a>调试中断风暴
 
-
 ## <span id="ddk_debugging_pending_irps_dbg"></span><span id="DDK_DEBUGGING_PENDING_IRPS_DBG"></span>
 
+停止系统的一个最常见的示例是中断风暴。 *中断风暴*是处于断言状态的级别触发的中断信号。
 
-停止系统的最常见的示例之一是中断 storm。 *中断 storm*是保持断言状态级别触发中断信号。
+以下事件可能会导致中断风暴：
 
-以下事件可能会导致中断 storm:
+- 设备驱动程序将硬件设备定向到该设备后，无法释放其中断信号。
 
--   硬件设备不会释放其中断信号后是定向的设备驱动程序。
+- 设备驱动程序不会指示其硬件释放中断信号，因为它不会检测到中断是从其硬件启动的。
 
--   设备驱动程序不会指示发布中断信号，其硬件，因为它不会检测中断已从其硬件启动。
+- 即使中断并非从其硬件启动，设备驱动程序也会声明该中断。 仅当多个设备共享同一 IRQ 时才会发生这种情况。
 
--   设备驱动程序声明中断，即使不从其硬件初始化的中断也是如此。 多个设备都共享相同的 IRQ 时仅发生此情况。
+- 未正确设置边缘级别控制寄存器（ELCR）。
 
--   边缘级别控制寄存器 (ELCR) 未正确设置。
+- 边缘和级别中断触发的设备共享 IRQ （例如，COM 端口和 PCI SCSI 控制器）。
 
--   边缘和级别触发中断的设备共享 IRQ （例如，COM 端口和 PCI SCSI 控制器）。
+此示例演示检测和调试中断风暴的一种方法。
 
-此示例演示一种方法可以检测和调试中断 storm。
-
-机挂起，使用内核调试器中断。 使用 **！ irpfind**扩展命令要查找挂起的 Irp。 然后，使用 **！ irp**扩展能够获取有关任何挂起的 Irp 的详细信息。 例如：
+计算机挂起时，使用内核调试器中断。 使用 **！ irpfind** extension 命令查找挂起的 irp。 然后，使用 **！ irp**扩展获取有关任何挂起的 irp 的详细信息。 例如：
 
 ```dbgcmd
-kd> !irp 81183468 
+kd> !irp 81183468
 Irp is active with 2 stacks 2 is current (= 0x811834fc)
  No Mdl Thread 00000000:  Irp stack trace.
      cmd  flg cl Device   File     Completion-Context
@@ -51,9 +49,9 @@ Irp is active with 2 stacks 2 is current (= 0x811834fc)
                         Args: 00000000 00000000 00000002 00000002 
 ```
 
-此示例演示\\驱动程序\\e100b 未返回有关 IRP **ntoskrnl ！PopCompleteSystemPowerIrp**。 它似乎会卡滞，可能会遇到中断 storm。
+此示例显示 \\ 驱动程序 \\ e100b 尚未返回 NTOSKRNL.EXE 的 IRP **！PopCompleteSystemPowerIrp**。 这似乎是停滞的，并且可能会遇到中断风暴。
 
-若要调查，请使用**kb**命令请求的堆栈跟踪。 例如：
+若要进行调查，请使用**kb**命令请求堆栈跟踪。 例如：
 
 ```dbgcmd
 kd> kb
@@ -66,7 +64,7 @@ f714ef78 80067cc2 00000000 00000240 8000017c ntoskrnl!KiDispatchInterrupt
 f714ef78 80501cb5 00000000 00000240 8000017c halacpi!HalpDispatchInterrupt2ndEnt  
 ```
 
-请注意以粗体显示的部分是中断调度。 如果您使用**g**命令，并会破坏中同样，您将很有可能看到不同的堆栈跟踪，但仍会中断调度。 若要确定哪种中断负责系统停滞，请查看第二个参数传递到**HalBeginSystemInterrupt** （在此情况下，0x3B）。 标准规则是显示 (0x3B) 的中断向量是 IRQ 行加上 0x30，因此中断是数字 0xB。 运行另一个堆栈跟踪可能提供有关颁发中断服务请求 (ISR) 的设备的详细信息。 在这种情况下，第二个堆栈跟踪具有以下结果：
+请注意，从开始的部分 `halacpi!HalBeginSystemInterrupt` 为中断调度。 如果使用**g**命令并再次中断，则很可能会看到不同的堆栈跟踪，但仍会看到中断调度。 若要确定哪些中断负责系统延迟，请查看传递到**HalBeginSystemInterrupt**的第二个参数（在本例中为0x3B）。 标准规则是显示的中断向量（0x3B）是 IRQ 行加0x30，因此中断是数字0xB。 运行另一个堆栈跟踪可能会提供有关哪个设备发出中断服务请求（ISR）的详细信息。 在这种情况下，第二个堆栈跟踪具有以下结果：
 
 ```dbgcmd
 kd> kb
@@ -93,12 +91,12 @@ f714f2bc 8044cc52 80475b18 811a2708 811a279c ntoskrnl!IopfCallDriver+0x35
 f714f2d4 8044cb89 811a279c 811a2708 811a27c0 ntoskrnl!PopPresentIrp+0x62 
 ```
 
-系统当前正在运行视频卡的 ISR。 系统将为每个设备共享 IRQ 0xB 运行 ISR。 如果没有进程声称中断，操作系统将请求驱动程序来处理中断的 Isr 无限，等待。 还有可能，进程可能会处理中断和停止它，但如果硬件中断的中断可能只是重新断言。
+系统当前正在运行视频卡的 ISR。 系统将为共享 IRQ 0xB 的每个设备运行 ISR。 如果没有进程声称中断，操作系统将无限期等待，请求驱动程序 Isr 来处理中断。 还可能是进程处理中断并停止该中断，但如果硬件中断，中断可能只需重新断言。
 
-使用 **！ 仲裁器 4**扩展来确定哪些设备位于 IRQ 0xB。 IRQ 0xB 时只有一个设备，如果您已经找到问题的原因... 如果有多个设备共享的中断 （99%的情况下)，将需要手动编程 LNK 节点 （这是对系统状态），或通过删除或禁用硬件隔离设备。
+使用 **！仲裁 4**扩展来确定哪些设备在 IRQ 0xB 上。 如果 IRQ 0xB 上只有一个设备，则可能会出现问题的原因。 如果有多个设备共享中断（99% 的事例），则需要通过手动对 .LNK 节点（系统状态的破坏性）或通过删除或禁用硬件来隔离设备。
 
 ```dbgcmd
-kd> !arbiter 4 
+kd> !arbiter 4
 DEVNODE 8149a008 (HTREE\ROOT\0)
   Interrupt Arbiter "RootIRQ" at 80472a20
     Allocated ranges:
@@ -175,23 +173,23 @@ DEVNODE 8149a008 (HTREE\ROOT\0)
           000000000000000e - 000000000000000e       8145bb50  (atapi)
  000000000000000f - 000000000000000f       8145b970  (atapi)
         Possible allocation:
-          < none > 
+          < none >
 ```
 
-在这种情况下，将音频、 通用串行总线 (USB)、 网络接口卡 (NIC) 和视频是所有使用相同的 IRQ。
+在这种情况下，音频、通用串行总线（USB）、网络接口卡（NIC）和视频均使用同一 IRQ。
 
-若要找出哪些 ISR 声明中断的所有权，请查看 ISR 的返回值 只需 ISR 使用反汇编**U**命令与地址在 **！ 仲裁器**显示，并在 ISR （它将是 ret 指令） 的最后一个指令处设置断点。 请注意，使用命令**g&lt;地址&gt;** 相当于该地址上设置断点：
+若要找出哪些 ISR 声称了中断的所有权，请检查 ISR 的返回值。 只需使用带 " **！仲裁**器" 显示中给定地址的**U**命令来反汇编 ISR，并在 ISR 的最后一个指令上设置断点（这将是 "ret" 指令）。 请注意，使用命令**g &lt; address &gt; **等效于在该地址上设置断点：
 
 ```dbgcmd
-kd> g bfe33e7b 
+kd> g bfe33e7b
 ds1wdm!AdapterIsr+ad:
 bfe33e7b c20800           ret     0x8 
 ```
 
-使用**r**命令来检查寄存器。 具体而言，看看 EAX 寄存器。 如果内容中的加粗 （在下面的代码示例） 的寄存器的部分为任何其他然后零，此 ISR 占用了中断。 否则为不声明中断，并且操作系统将调用下一步 ISR 此示例演示视频卡不声明中断：
+使用**r**命令检查寄存器。 具体而言，请查看 EAX 寄存器。 如果下面的代码示例中所示的 EAX 注册内容为其他任何值，则此 ISR 会要求中断。 否则，中断不会被声明，操作系统将调用下一个 ISR。 此示例演示视频卡没有声称中断：
 
 ```dbgcmd
-kd> r 
+kd> r
 eax=00000000 ebx=813f4ff0 ecx=00000010 edx=ffdff848 esi=8145d168 edi=813f4fc8
 eip=bfe33e7b esp=f714eec4 ebp=f714eee0 iopl=0         nv up ei pl zr na po nc
 cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
@@ -199,10 +197,10 @@ ds1wdm!AdapterIsr+ad:
 bfe33e7b c20800           ret     0x8 
 ```
 
-事实上，在这种情况下，中断不声明任何 IRQ 0xb 上的设备。 当遇到此问题时，还应检查实际是否启用了硬件与中断相关联的每个部分。 对于 PCI，这很容易-查找在显示的 CMD 寄存器 **！ pci**扩展输出：
+事实上，在这种情况下，IRQ 0xb 上的任何设备不会声明该中断。 遇到此问题时，还应检查是否确实启用了与中断关联的每个硬件。 对于 PCI，这非常简单--查看由 **！ PCI**扩展输出显示的 CMD 寄存器：
 
 ```dbgcmd
-kd> !pci 0 0 
+kd> !pci 0 0
 PCI Bus 0
 00:0  8086:7190.03  Cmd[0006:.mb...]  Sts[2210:c....]  Device  Host bridge
 01:0  8086:7191.03  Cmd[0107:imb..s]  Sts[0220:.6...]  PciBridge 0->1-1  PCI-PCI bridge
@@ -211,18 +209,9 @@ PCI Bus 0
 07:0  8086:7110.02  Cmd[000f:imb...]  Sts[0280:.....]  Device  ISA bridge
 07:1  8086:7111.01  Cmd[0005:i.b...]  Sts[0280:.....]  Device  IDE controller
 07:2  8086:7112.01  Cmd[0005:i.b...]  Sts[0280:.....]  Device  USB host controller
-07:3  8086:7113.02  Cmd[0003:im....]  Sts[0280:.....]  Device  Class:6:80:0 
+07:3  8086:7113.02  Cmd[0003:im....]  Sts[0280:.....]  Device  Class:6:80:0
 ```
 
-请注意，音频芯片 CMD 注册为零。 这意味着音频芯片有效地禁用这一次。 这也意味着这些音频芯片将不能响应由驱动程序的访问。
+请注意，音频芯片（标记为 "音频设备"） CMD 寄存器为零。 这意味着此时会有效禁用音频芯片。 这也意味着音频芯片将不能响应由驱动程序的访问。
 
 在这种情况下，需要手动重新启用音频芯片。
-
- 
-
- 
-
-
-
-
-

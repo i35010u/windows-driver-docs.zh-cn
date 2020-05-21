@@ -125,7 +125,7 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 * [硬件支持应用（HSA）：驱动程序开发人员的步骤](hardware-support-app--hsa--steps-for-driver-developers.md)
 * [启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 * [自定义功能示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)
-* [Windows 驱动程序的入门](../develop/getting-started-with-windows-drivers.md)
+* [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)
 * [将驱动程序与通用 Windows 平台 (UWP) 应用配对](../install/pairing-app-and-driver-versions.md)
 * [通用 Windows 平台简介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)

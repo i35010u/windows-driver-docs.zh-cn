@@ -5,7 +5,7 @@ ms.assetid: 5F62DEEA-D192-46ED-827C-021A749D7091
 keywords:
 - Bug 检查 0x20001 HYPERVISOR_ERROR
 - HYPERVISOR_ERROR
-ms.date: 04/12/2019
+ms.date: 05/15/2020
 topic_type:
 - apiref
 api_name:
@@ -13,15 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3822317651aa3d6a1b0293f2561e70d371551f9
-ms.sourcegitcommit: b35469bbcabee996af70bcbd8564184f547a8c57
+ms.openlocfilehash: 067d8df4d045e11eb96de2a78d10923333f4b6b1
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83406247"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435369"
 ---
 # <a name="bug-check-0x20001-hypervisor_error"></a>Bug 检查0x20001：虚拟机监控程序 \_ 错误
-
 
 虚拟机监控程序 \_ 错误检查的值为0x00020001。 这表示虚拟机监控程序遇到错误。
 
@@ -38,6 +37,6 @@ ms.locfileid: "83406247"
 | 3         | 保留    |
 | 4         | 保留    |
 
-## <a name="resolution"></a>解决方法 
+## <a name="resolution"></a>解决方法
 
-[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，并且在确定根本原因时可能非常有用。
+[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。

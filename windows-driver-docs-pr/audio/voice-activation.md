@@ -2,38 +2,37 @@
 title: 语音激活
 description: Cortana，Windows 语音平台用于为 Windows 10 中的所有语音体验（例如 Cortana 和听写）供电。
 ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
-ms.date: 07/02/2018
+ms.date: 05/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 773aceb8cf4e1ba27208b7caab40d02546ab69f5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a38bdba67462925d53aa5088f7a700f0e23192be
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832342"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435367"
 ---
 # <a name="voice-activation"></a>语音激活
+
+> [!NOTE]
+> 本主题主要涉及我们在 Windows 10 （版本1909及更早版本）中提供的使用者体验。
+>
 
 Cortana，在2013中的 Microsoft BUILD 开发人员大会首次演示了个人助手技术。 Windows 语音平台用于为 Windows 10 中的所有语音体验（例如 Cortana 和听写）供电。 语音激活是一项功能，使用户能够通过口述特定短语 "你好 Cortana" 从各种设备电源状态调用语音识别引擎。 若要创建支持语音激活技术的硬件，请查看本主题中的信息。
 
 **注意**  
 实现语音激活是一种重要的项目，是由 SoC 供应商完成的任务。 Oem 可以联系其 SoC 供应商，了解有关其 SoC 的语音激活实现的信息。
 
-
 ## <a name="span-idcortana_end_user_experiencecortana-end-user-experience"></a><span id="cortana_end_user_experience">Cortana 最终用户体验
-
 
 若要了解 Windows 中可用的语音交互体验，请查看以下主题。
 
 |                                                                                                   |                                                                       |
 |---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| **标题**                                                                                         | **描述**                                                       |
+| **主题**                                                                                         | **说明**                                                       |
 | [什么是 Cortana？](https://support.microsoft.com/help/17214/cortana-what-is)      | 提供 Cortana 的概述和使用方向                 |
-| [让 Cortana](https://support.microsoft.com/help/17178/windows-10-make-cortana-yours) | 描述可通过 Cortana 的 "设置" 屏幕进行的自定义。 |
-
-
+| [使 Cortana 彰显你的个性](https://support.microsoft.com/help/17178/windows-10-make-cortana-yours) | 描述可通过 Cortana 的 "设置" 屏幕进行的自定义。 |
 
 ## <a name="span-idintroduction_to__hey_cortana__voice_activation_and__learn_my_voice_spanintroduction-to-hey-cortana-voice-activation-and-learn-my-voice"></a><span id="introduction_to__hey_cortana__voice_activation_and__learn_my_voice_"></span>"你好 Cortana" 语音激活和 "了解我的语音" 简介
-
 
 **"你好 Cortana" 语音激活**
 
@@ -51,7 +50,7 @@ Cortana，在2013中的 Microsoft BUILD 开发人员大会首次演示了个人�
 
 ![显示音频缓冲区和时间序列的链接和关键字激活关系图](images/audio-chained-keyword-activation.png)
 
-Microsoft 提供了 OS default 关键字 spotter （software 关键字 spotter），用于确保硬件关键字检测的质量，并在硬件关键字检测缺少或不可用的情况下提供 "你好 Cortana" 体验。 
+Microsoft 提供了 OS default 关键字 spotter （software 关键字 spotter），用于确保硬件关键字检测的质量，并在硬件关键字检测缺少或不可用的情况下提供 "你好 Cortana" 体验。
 
 **"了解我的语音" 功能**
 
@@ -63,14 +62,13 @@ Microsoft 提供了 OS default 关键字 spotter （software 关键字 spotter�
 
 语音激活由关键字 spotter （KWS）提供支持，它会响应是否检测到密钥短语。 如果 KWS 将设备从 "低" 状态唤醒，则此解决方案称为 "语音唤醒" （WoV）。 有关详细信息，请参阅[唤醒](#wake_on_voice)。
 
-
 ## <a name="span-idglossary_of_termsspanspan-idglossary_of_termsspanglossary-of-terms"></a><span id="glossary_of_terms"></span><span id="Glossary_Of_Terms"></span>术语术语表
 
 此词汇表汇总了与语音激活相关的术语。
 
 |                      |                                                                                                                                                           |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 暂存命令        | 示例：你好，Cortana < 暂停，> 天气情况下等待 earcon？ 这有时称为 "双拍命令" 或 "仅限关键字" |
+| 暂存命令        | 示例：你好，Cortana <暂停，> 天气情况下等待 earcon？ 这有时称为 "双拍命令" 或 "仅限关键字" |
 |链式命令        | 示例：您好 Cortana 的天气是什么？ 这有时称为 "一次" 命令 |
 | 语音激活      | 提供预定义激活关键短语关键字检测的方案。 例如，"你好 Cortana" 是 Microsoft 语音激活方案。 |
 |WoV                    | 唤醒-语音-从屏幕关闭语音激活，将电源状态降低到处于完全供电状态的屏幕。 |
@@ -81,7 +79,7 @@ Microsoft 提供了 OS default 关键字 spotter （software 关键字 spotter�
 | HW KWS                | 硬件卸载关键字 spotter –在硬件上运行的 KWS 的实现。 |
 |突发缓冲区           | 一种用于存储在 KWS 检测时可以 "bursted" 的 PCM 数据的循环缓冲区，因此包括触发 KWS 检测的所有音频。 |
 |关键字检测器 OEM 适配器 |一种驱动程序级别填充程序，使支持 WoV 的 HW 能够与 Windows 和 Cortana 堆栈进行通信。 |
-|型号 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
+|“模型” | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
 
 ## <a name="span-idimplementing_voice_activationspanspan-idimplementing_voice_activationspanspan-idimplementing_voice_activationspanintegrating-a-hardware-keyword-spotter"></a><span id="Implementing_Voice_Activation"></span><span id="implementing_voice_activation"></span><span id="IMPLEMENTING_VOICE_ACTIVATION"></span>集成硬件关键字 Spotter
 
@@ -90,19 +88,19 @@ Microsoft 提供了 OS default 关键字 spotter （software 关键字 spotter�
 -   根据本主题后面所述的 SYSVAD 示例创建自定义关键字检测器。 你将在 COM DLL 中实现这些方法，如[关键字检测器 OEM 适配器接口](#keyword_detector)中所述。
 -   实现[WAVERT 增强](#wavert_enhancements)中所述的声波 RT 增强功能。
 -   提供 INF 文件项来描述用于关键字检测的任何自定义项。
-    -   [PKEY\_FX\_KeywordDetector\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-streameffectclsid)
-    -   [PKEY\_FX\_KeywordDetector\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-modeeffectclsid)
-    -   [PKEY\_FX\_KeywordDetector\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-endpointeffectclsid)
-    -   [PKEY\_SFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-keyworddetector-processingmodes-supported-for-streaming)
-    -   [PKEY\_MFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-keyworddetector-processingmodes-supported-for-streaming)
-    -   [PKEY\_EFX\_KeywordDetector\_ProcessingModes\_支持\_流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-keyworddetector-processingmodes-supported-for-streaming)
+    -   [PKEY \_ FX \_ KeywordDetector \_ StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-streameffectclsid)
+    -   [PKEY \_ FX \_ KeywordDetector \_ ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-modeeffectclsid)
+    -   [PKEY \_ FX \_ KeywordDetector \_ EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-keyworddetector-endpointeffectclsid)
+    -   [PKEY \_ SFX \_ KeywordDetector \_ ProcessingModes \_ 支持 \_ \_ 流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-keyworddetector-processingmodes-supported-for-streaming)
+    -   [PKEY \_ MFX \_ KeywordDetector \_ ProcessingModes \_ 支持 \_ \_ 流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-keyworddetector-processingmodes-supported-for-streaming)
+    -   [PKEY \_ EFX \_ KeywordDetector \_ ProcessingModes \_ 支持 \_ \_ 流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-keyworddetector-processingmodes-supported-for-streaming)
 -   在[音频设备建议](https://docs.microsoft.com/windows-hardware/design/component-guidelines/audio)中查看硬件建议和测试指南。 本主题提供用于设计和开发用于 Microsoft 语音平台的音频输入设备的指南和建议。
 -   支持暂存和链式命令。
 -   支持每个受支持 Cortana 区域设置的 "你好 Cortana"。 
 -   中（音频处理对象）必须提供以下效果： 
     -   AEC
     -   AGC
-    -   N
+    -   NS
 -   语音处理模式的效果必须由 MFX APO 报告。
 -   APO 可以将格式转换作为 MFX 执行。   
 -   APO 必须输出以下格式： 
@@ -123,9 +121,7 @@ HW KWS 的 AEC 要求
     - HW KWS WoV 支持 S0 工作状态。
     - 若要启用 HW KWS WoV for S0 工作状态，APO 必须支持 AEC。
 
-
 ## <a name="span-idsample_code_overviewspansample-code-overview"></a><span id="sample_code_overview"></span>示例代码概述
-
 
 在 GitHub 上实现语音激活的音频驱动程序的示例代码是 SYSVAD 虚拟音频适配器示例的一部分。 建议使用此代码作为起点。 此位置提供了代码。
 
@@ -135,14 +131,13 @@ HW KWS 的 AEC 要求
 
 ## <a name="span-idkeyword_recognition_system_informationspankeyword-recognition-system-information"></a><span id="keyword_recognition_system_information"></span>关键字识别系统信息
 
-
 **语音激活音频堆栈支持**
 
 用于启用语音激活的音频堆栈外部接口用作语音平台和音频驱动程序的通信管道。 外部接口分为三部分。
 
--   *关键字检测器设备驱动程序接口（DDI）* 。 关键字检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter （KWS）。  它还可由驱动程序用来通知系统检测事件。
--   *关键字检测器 OEM 适配器 DLL*。 此 DLL 实现了一个 COM 接口，用于改编驱动程序特定的不透明数据以供 OS 用于帮助进行关键字检测。
--   *WaveRT 流增强功能*。 增强功能使得音频驱动程序能够突发地流式传输来自关键字检测的缓冲音频数据。
+- *关键字检测器设备驱动程序接口（DDI）*。 关键字检测器设备驱动程序接口负责配置和武装 HW 关键字 Spotter （KWS）。  它还可由驱动程序用来通知系统检测事件。
+- *关键字检测器 OEM 适配器 DLL*。 此 DLL 实现了一个 COM 接口，用于改编驱动程序特定的不透明数据以供 OS 用于帮助进行关键字检测。
+- *WaveRT 流增强功能*。 增强功能使得音频驱动程序能够突发地流式传输来自关键字检测的缓冲音频数据。
 
 **音频终结点属性**
 
@@ -152,14 +147,14 @@ HW KWS 的 AEC 要求
 
 驱动程序会像往常一样为其捕获设备公开 KS 筛选器。 此筛选器支持多个 KS 属性和一个 KS 事件来配置、启用和发出检测事件信号。 此筛选器还包括一个标识为关键字 spotter （KWS） pin 的附加 pin 工厂。 此 pin 用于从关键字 spotter 流式传输音频。
 
-属性为：
+这些属性为：
 
--   支持的关键字类型- [**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)。 此属性由操作系统设置，用于配置要检测的关键字。
--   关键字模式 Guid 列表- [**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
--   [**KSPROPERTY\_SOUNDDETECTOR\_** ](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-armed)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。 （操作系统必须进行重置。）
--   匹配结果- [**KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)。 此 read 属性保存检测后的结果数据。
+- 支持的关键字类型- [**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)。 此属性由操作系统设置，用于配置要检测的关键字。
+- 关键字模式 Guid 列表- [**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)。 此属性用于获取 Guid 列表，这些 Guid 用于标识支持模式的类型。
+- [**KSPROPERTY \_ SOUNDDETECTOR \_ **](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-armed)。 此读取/写入属性是一个简单的布尔状态，它指示是否已确定探测器。 操作系统将此设置为参与关键字检测器。 操作系统可以清除此来脱开。 如果设置了关键字模式，并且在检测到了关键字之后，驱动程序会自动清除此设置。 （操作系统必须进行重置。）
+- Match result- [**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)。 此 read 属性保存检测后的结果数据。
 
-检测到关键字时触发的事件是[**KSEVENT\_SOUNDDETECTOR\_MATCHDETECTED**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-sounddetector-matchdetected)事件。
+检测到关键字时触发的事件是一个[**KSEVENT \_ SOUNDDETECTOR \_ MATCHDETECTED**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksevent-sounddetector-matchdetected)事件。
 
 **操作顺序**
 
@@ -191,9 +186,9 @@ HW KWS 的 AEC 要求
 
 ## <a name="span-idkeyword_detectorspankeyword-detector-oem-adapter-interface"></a><span id="keyword_detector"></span>关键字检测器 OEM 适配器接口
 
-OEM 提供一个 COM 对象实现，它充当 OS 和驱动程序之间的中介，有助于计算或分析通过[**KSPROPERTY\_SOUNDDETECTOR\_模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)写入和读取到音频驱动程序的不透明数据。和[**KSPROPERTY\_SOUNDDETECTOR\_MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)。
+OEM 提供一个 COM 对象实现，它充当 OS 和驱动程序之间的中介，有助于计算或分析通过[**KSPROPERTY \_ SOUNDDETECTOR \_ 模式**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-patterns)和[**KSPROPERTY \_ SOUNDDETECTOR \_ MATCHRESULT**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-matchresult)写入和读取到音频驱动程序的不透明数据。
 
-COM 对象的 CLSID 是[**KSPROPERTY\_SOUNDDETECTOR\_SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)返回的检测程序模式类型 GUID。 OS 调用 CoCreateInstance，传递模式类型 GUID 来实例化与关键字模式类型兼容的适当 COM 对象，并调用对象的 IKeywordDetectorOemAdapter 接口上的方法。
+COM 对象的 CLSID 是由[**KSPROPERTY \_ SOUNDDETECTOR \_ SUPPORTEDPATTERNS**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-sounddetector-supportedpatterns)返回的探测器模式类型 GUID。 OS 调用 CoCreateInstance，传递模式类型 GUID 来实例化与关键字模式类型兼容的适当 COM 对象，并调用对象的 IKeywordDetectorOemAdapter 接口上的方法。
 
 **COM 线程模型要求**
 
@@ -201,7 +196,7 @@ OEM 的实现可以选择任何 COM 线程模型。
 
 **IKeywordDetectorOemAdapter**
 
-接口设计会尝试使对象实现保持无状态。 换句话说，实现应要求在方法调用之间不存储任何状态。 事实上，在一般C++情况下，内部类可能不需要任何成员变量来实现 COM 对象。
+接口设计会尝试使对象实现保持无状态。 换句话说，实现应要求在方法调用之间不存储任何状态。 事实上，内部 c + + 类可能不需要除实现 COM 对象所需的所有成员变量。
 
 **方法**
 
@@ -275,12 +270,12 @@ OEM DLL 开发人员决定如何管理独立于用户的数据和用户相关数
 </tr>
 <tr class="odd">
 <td align="left"><strong>附加</strong></td>
-<td align="left">正常</td>
+<td align="left">一般</td>
 <td align="left">KWS</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>音频格式</strong></td>
-<td align="left">32位 float （Type = Audio，子类型 = IEEE_FLOAT，采样率 = 16 kHz，位 = 32）</td>
+<td align="left">32位 float （类型 = 音频，子类型 = IEEE_FLOAT，采样率 = 16 kHz，位 = 32）</td>
 <td align="left">由 OS 音频堆栈管理</td>
 </tr>
 <tr class="odd">
@@ -328,11 +323,11 @@ OEM DLL 开发人员决定如何管理独立于用户的数据和用户相关数
 
 硬件-KWS 解决方案至少必须支持100ms 和200毫秒的音频捕获大小。
 
-驱动程序通过在包含 KS 流式处理 pin 的 KS 筛选器的 KSCATEGORY\_音频 PnP 设备接口上设置 DEVPKEY\_KsAudio\_PacketSize\_约束设备属性来表示缓冲区大小约束。 当启用了 KS 筛选器接口时，此属性应保持有效且稳定。 操作系统可以随时读取此值，而无需打开驱动程序的句柄并对驱动程序调用。
+驱动程序通过在 \_ \_ \_ \_ 包含 ks 流式处理 pin 的 KS 筛选器的 KSCATEGORY 音频 PnP 设备接口上设置 DEVPKEY KsAudio PacketSize 约束设备属性来表示缓冲区大小约束。 当启用了 KS 筛选器接口时，此属性应保持有效且稳定。 操作系统可以随时读取此值，而无需打开驱动程序的句柄并对驱动程序调用。
 
-**DEVPKEY\_KsAudio\_PacketSize\_约束**
+**DEVPKEY \_ KsAudio \_ PacketSize \_ 约束**
 
-DEVPKEY\_KsAudio\_PacketSize\_约束属性值包含一个[**KsAudio\_PacketSize\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)用于描述物理硬件约束的约束结构（即由于将数据从 WaveRT 缓冲区传输到音频硬件）。 该结构包含0个或多个[**KSAUDIO\_PACKETSIZE\_\_PROCESSINGMODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)的数组，这些结构描述特定于任何信号处理模式的约束。 驱动程序在调用[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
+DEVPKEY \_ KsAudio \_ PacketSize \_ 约束属性值包含一个[**KsAudio \_ PacketSize \_ 约束**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)结构，该结构描述物理硬件约束（例如，由于将数据从 WaveRT 缓冲区传输到音频硬件的机制）。 此结构包含一个数组，其中包含0个或多个[**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)结构，其中描述了特定于任何信号处理模式的约束。 驱动程序在调用[**PcRegisterSubdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcregistersubdevice)之前设置此属性，或以其他方式为其流式处理 pin 启用其 KS 筛选器接口。
 
 **IMiniportWaveRTInputStream**
 
@@ -356,14 +351,14 @@ WaveRT 微型端口可以选择实现此接口，以便建议从 OS 写入进度
 
 本部分介绍了突发读取的操作系统和驱动程序交互。 只要驱动程序支持基于数据包的流式处理 WaveRT 模型（包括[**IMiniportWaveRTInputStream：： GetReadPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)函数），就可以在语音激活方案之外执行突发读取。
 
-讨论了两次突发示例读取方案。 在一种方案中，如果微型端口支持 pin 类别为 KSNODETYPE 的 pin， [ **\_音频\_KEYWORDDETECTOR**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-keyworddetector) ，则在检测到关键字时，驱动程序将开始捕获和内部缓冲数据。 在另一种情况下，如果 OS 不是通过调用[**IMiniportWaveRTInputStream：： GetReadPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)更快地读取数据，则驱动程序可以有选择地在 WaveRT 缓冲区之外缓冲数据。
+讨论了两次突发示例读取方案。 在一种方案中，如果微型端口支持 pin 类别为[**KSNODETYPE \_ AUDIO \_ KEYWORDDETECTOR**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-keyworddetector)的 pin，则在检测到关键字时，驱动程序将开始捕获和内部缓冲数据。 在另一种情况下，如果 OS 不是通过调用[**IMiniportWaveRTInputStream：： GetReadPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertinputstream-getreadpacket)更快地读取数据，则驱动程序可以有选择地在 WaveRT 缓冲区之外缓冲数据。
 
-若要突发在转换到 KSSTATE 之前捕获的数据\_运行，驱动程序必须保留准确的示例时间戳信息以及缓冲捕获数据。 时间戳标识捕获样本的即时采样。
+若要突发在转换到 KSSTATE 运行之前捕获的数据 \_ ，驱动程序必须保留准确的示例时间戳信息以及缓冲捕获数据。 时间戳标识捕获样本的即时采样。
 
-1. 在流转换到 KSSTATE\_运行后，驱动程序会立即设置缓冲区通知事件，因为它已经有可用数据。
+1. 流过渡到 KSSTATE 运行后 \_ ，该驱动程序会立即设置缓冲区通知事件，因为它已经有可用数据。
 2. 在此事件中，操作系统将调用 GetReadPacket （）来获取有关可用数据的信息。
 
-    a. 驱动程序将返回有效捕获的数据的数据包编号（0表示从\_KSSTATE 转换到 KSSTATE\_运行后的第一个数据包），操作系统可以在 WaveRT 缓冲区内派生数据包位置以及数据包位置相对于流的开头。
+    a. 驱动程序将返回有效捕获的数据（0表示从 KSSTATE STOP 转换到 KSSTATE 运行后的第一个数据包）的数据包号 \_ \_ ，操作系统可从该数据派生 WaveRT 缓冲区内的数据包位置以及相对于流开始的数据包位置。
 
     b. 驱动程序还会返回性能计数器值，该值对应于数据包中第一个样本的采样瞬时。 请注意，此性能计数器值可能相对较旧，这取决于在硬件或驱动程序（WaveRT 缓冲区之外）缓冲捕获数据的程度。
 
@@ -372,7 +367,7 @@ WaveRT 微型端口可以选择实现此接口，以便建议从 OS 写入进度
 4. OS 等待下一个缓冲区通知事件。 如果驱动程序在步骤中设置了缓冲区通知，等待可能会立即终止。
 5. 如果驱动程序没有在步骤（2c）中立即设置事件，则驱动程序会在将更多捕获的数据传输到 WaveRT 缓冲区并使其可供 OS 读取时设置事件。
 6. 请参阅（2）。
-对于[**KSNODETYPE\_音频\_KEYWORDDETECTOR**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-keyworddetector)关键字检测器 pin，驱动程序应为至少 5000 ms 的音频数据分配足够的内部突发缓冲。 如果在缓冲区溢出之前，操作系统无法在 pin 上创建流，则驱动程序可能会结束内部缓冲活动和可用的关联资源。
+对于[**KSNODETYPE \_ audio \_ KEYWORDDETECTOR**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-audio-keyworddetector)关键字检测器引脚，驱动程序应为至少 5000 ms 的音频数据分配足够的内部突发缓冲。 如果在缓冲区溢出之前，操作系统无法在 pin 上创建流，则驱动程序可能会结束内部缓冲活动和可用的关联资源。
 
 
 ## <a name="span-idwake_on_voicespanspan-idwake_on_voicespanspan-idwake_on_voicespanwake-on-voice"></a><span id="Wake_on_Voice"></span><span id="wake_on_voice"></span><span id="WAKE_ON_VOICE"></span>唤醒

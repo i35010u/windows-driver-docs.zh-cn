@@ -1,57 +1,57 @@
 ---
-title: 12 的示例使用页面堆验证，以查找 Bug
-description: 12 的示例使用页面堆验证，以查找 Bug
+title: 示例12使用页堆验证查找 Bug
+description: 示例12使用页堆验证查找 Bug
 ms.assetid: aa3f5c53-8522-48be-a3cd-49b740803fe3
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a541f8ef5e454d73afebb0fd1ee48b251f453068
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dc76e4c73a8ce64b24b2506e1b38248724f7de0
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347776"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435374"
 ---
-# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>示例 12：使用页堆验证查找 Bug
+# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>示例12：使用页堆验证查找 Bug
 
 
 ## <span id="ddk_example_12___using_page_heap_verification_to_find_a_bug_dtools"></span><span id="DDK_EXAMPLE_12___USING_PAGE_HEAP_VERIFICATION_TO_FIND_A_BUG_DTOOLS"></span>
 
 
-以下一系列命令演示了如何使用页面堆验证功能 GFlags 和 NTSD 调试器的堆内存使用中检测到错误。 在此示例中，程序员怀疑虚构的应用程序、 pheap buggy.exe，有一个堆错误，并通过一系列测试，以确定错误继续执行。
+以下一系列命令演示了如何使用 GFlags 和 NTSD 调试器的页堆验证功能来检测堆内存使用中的错误。 在此示例中，程序员怀疑某个虚构应用程序 pheap-buggy 具有堆错误，并通过一系列测试来识别错误。
 
-NTSD 的详细信息，请参阅[调试使用 CDB 和 NTSD](debugging-using-cdb-and-ntsd.md)。
+有关 NTSD 的详细信息，请参阅[使用 CDB 和 NTSD 进行调试](debugging-using-cdb-and-ntsd.md)。
 
-### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>步骤 1：启用标准页面堆验证
+### <a name="span-idstep_1__enable_standard_page_heap_verificationspanspan-idstep_1__enable_standard_page_heap_verificationspanspan-idstep_1__enable_standard_page_heap_verificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>步骤1：启用标准页堆验证
 
-以下命令启用 pheap 的标准页面堆验证-buggy.exe:
+以下命令为 pheap-buggy 启用标准页堆验证：
 
 ```console
 gflags /p /enable pheap-buggy.exe
 ```
 
-### <a name="span-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>步骤 2：验证已启用该页面堆
+### <a name="span-idstep_2__verify_that_page_heap_is_enabledspanspan-idstep_2__verify_that_page_heap_is_enabledspanspan-idstep_2__verify_that_page_heap_is_enabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>步骤2：验证是否已启用页堆
 
-以下命令将列出为其启用页堆验证图像文件：
+以下命令将列出为其启用页堆验证的图像文件：
 
 ```console
 gflags /p
 ```
 
-在响应中，GFlags 显示下面的程序列表。 在此显示中，**跟踪**指示标准页面堆验证，并**完整跟踪**指示整页堆验证。 在这种情况下，pheap buggy.exe 列出**跟踪**，指示标准页面堆验证是否启用了，按预期方式。
+在响应中，GFlags 显示以下程序列表。 在此显示中，"**跟踪**" 指示标准页堆验证，而 "**完全跟踪**" 指示完全页堆验证。 在这种情况下，pheap-buggy 将与**跟踪**一起列出，这表示启用标准页堆验证。
 
 ```console
 pheap-buggy.exe: page heap enabled with flags (traces )
 ```
 
-### <a name="span-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>步骤 3：运行调试器
+### <a name="span-idstep_3__run_the_debuggerspanspan-idstep_3__run_the_debuggerspanspan-idstep_3__run_the_debuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>步骤3：运行调试器
 
-以下命令将运行**CorruptAfterEnd**函数中与 NTSD 的 pheap buggy.exe **-g** （忽略初始断点） 和 **-x** （在上设置第二次中断访问冲突异常） 参数：
+以下命令使用 **-g** （忽略初始断点）和 **-x** （在访问冲突异常时设置了第二次中断）参数运行 pheap-buggy 的**CorruptAfterEnd**函数：
 
 ```console
 ntsd -g -x pheap-buggy CorruptAfterEnd
 ```
 
-NTSD 当应用程序失败时，生成以下显示，指示，它检测到错误 pheap-buggy.exe:
+当应用程序失败时，NTSD 会生成以下显示，这表示它在 pheap-buggy 中检测到错误：
 
 ```dbgcmd
 ===========================================================
@@ -71,13 +71,13 @@ ntdll!DbgBreakPoint:
 77f7e098 cc               int     3
 ```
 
-标头信息包括具有已损坏的块的堆的地址 (00 C 81000:堆句柄），已损坏的块的地址 (00D81EB0:堆块） 和分配的大小 (00000100:块大小）。
+标头信息包括带有损坏块（00C81000：堆句柄）的堆的地址、损坏的块的地址（00D81EB0：堆块）和分配的大小（00000100：块大小）。
 
-"已损坏的后缀模式"消息指示应用程序违反 GFlags pheap buggy.exe 堆分配结束后插入的数据完整性模式。
+"损坏的后缀模式" 消息指示应用程序违反了 GFlags 在 pheap-buggy 堆分配结束后插入的数据完整性模式。
 
-### <a name="span-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>步骤 4：显示调用堆栈
+### <a name="span-idstep_4__display_the_call_stackspanspan-idstep_4__display_the_call_stackspanspan-idstep_4__display_the_call_stackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>步骤4：显示调用堆栈
 
-在下一步中，使用 NTSD 报告，以找到导致此错误的函数的地址。 接下来两个命令启用转储的调试器和显示行号的调用堆栈中的行号。
+在下一步中，使用 NTSD 报告的地址来查找导致错误的函数。 接下来的两个命令打开调试器中的行号转储，并显示带有行号的调用堆栈。
 
 ```dbgcmd
 C:\>.lines
@@ -101,41 +101,41 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 0006fff0 00000000 0100149c 00000000 78746341 kernel32!DosPathToSessionPathA+0x204
 ```
 
-因此，调试器将具有行号显示 pheap buggy.exe 的调用堆栈。 调用堆栈显示显示的错误时出错**TestCorruptAfterEnd** pheap buggy.exe 中的函数尝试通过调用释放的分配在 0x00c80000 **HeapFree**，重定向到**RtlFreeHeap**。
+因此，调试器会显示带有行号的 pheap-buggy 的调用堆栈。 "调用堆栈" 显示显示错误在 pheap-buggy 中的**TestCorruptAfterEnd**函数尝试通过调用**HeapFree**在0x00c80000 释放分配时出错，重定向到**RtlFreeHeap**。
 
-此错误最可能原因是缓冲区的该程序编写了它在此函数中分配的末尾。
+此错误的最可能原因是，程序在此函数中分配的缓冲区末尾结束。
 
-### <a name="span-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>步骤 5：启用整页堆验证
+### <a name="span-idstep_5__enable_full_page_heap_verificationspanspan-idstep_5__enable_full_page_heap_verificationspanspan-idstep_5__enable_full_page_heap_verificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>步骤5：启用整页堆验证
 
-与不同的标准页面堆验证整页堆验证可以捕获此堆缓冲区的滥用，一旦它发生。 以下命令启用 pheap 整页堆验证-buggy.exe:
+与标准页堆验证不同，整页堆验证一旦发生，就可以捕获此堆缓冲区的滥用。 以下命令启用对 pheap-buggy 的完整页面堆验证：
 
 ```console
 gflags /p /enable pheap-buggy.exe /full
 ```
 
-### <a name="span-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>步骤 6：验证已启用该整页堆
+### <a name="span-idstep_6__verify_that_full_page_heap_is_enabledspanspan-idstep_6__verify_that_full_page_heap_is_enabledspanspan-idstep_6__verify_that_full_page_heap_is_enabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>步骤6：验证是否已启用全页堆
 
-以下命令列出了为其启用页堆验证程序：
+以下命令列出为其启用页堆验证的程序：
 
 ```console
 gflags /p
 ```
 
-在响应中，GFlags 显示下面的程序列表。 在此显示中，**跟踪**指示标准页面堆验证，并**完整跟踪**指示整页堆验证。 在这种情况下，pheap buggy.exe 列出**完整的跟踪**，指示启用了整页堆验证，按预期方式。
+在响应中，GFlags 显示以下程序列表。 在此显示中，"**跟踪**" 指示标准页堆验证，而 "**完全跟踪**" 指示完全页堆验证。 在这种情况下，pheap-buggy 会列出**完整跟踪**，指示已启用 "完全页堆验证"。
 
 ```console
 pheap-buggy.exe: page heap enabled with flags (full traces )
 ```
 
-### <a name="span-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>步骤 7：再次运行调试器
+### <a name="span-idstep_7__run_the_debugger_againspanspan-idstep_7__run_the_debugger_againspanspan-idstep_7__run_the_debugger_againspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>步骤7：再次运行调试器
 
-以下命令将运行**CorruptAfterEnd**函数中使用的是 NTSD 调试器的 pheap buggy.exe **-g** （忽略初始断点） 和 **-x** （设置第二次访问冲突异常时中断) 参数：
+以下命令在 NTSD 调试器中运行 pheap-buggy 的**CorruptAfterEnd**函数，其中包含 **-g** （忽略初始断点）和 **-x** （在访问冲突异常时设置了第二次中断）参数：
 
 ```console
 ntsd -g -x pheap-buggy CorruptAfterEnd
 ```
 
-NTSD 当应用程序失败时，生成以下显示，指示，它检测到错误 pheap-buggy.exe:
+当应用程序失败时，NTSD 会生成以下显示，这表示它在 pheap-buggy 中检测到错误：
 
 ```console
 Page heap: process 0x5BC created heap @ 00880000 (00980000, flags 0x3)
@@ -152,9 +152,9 @@ pheap-buggy!TestCorruptAfterEnd+1f:
 01001398 889801010000     mov     [eax+0x101],bl          ds:0023:00c87001=??
 ```
 
-使用启用了整页堆验证，调试器将中断处访问冲突。 若要查找访问冲突的精确位置，打开行号转储并显示调用堆栈跟踪。
+启用全页堆验证后，调试器将在出现访问冲突时中断。 若要确定访问冲突的确切位置，请打开行号转储，并显示 "调用堆栈" 跟踪。
 
-带编号的调用堆栈跟踪显示，如下所示：显示问题的行以粗体文本显示。
+编号调用堆栈跟踪如下所示： 
 
 ```console
 ChildEBP RetAddr  Args to Child
@@ -165,11 +165,11 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 0006fff0 00000000 0100149c 00000000 78746341 kernel32!DosPathToSessionPathA+0x204
 ```
 
-堆栈跟踪显示 pheap buggy.exe 184 行中出现问题。 由于启用了整页堆验证，调用堆栈开始在程序代码中，不在系统 DLL。 因此，发生，而不是堆块已释放时捕获冲突。
+堆栈跟踪显示问题出现在 pheap-buggy 的第184行中。 由于启用了全页堆验证，因此调用堆栈在程序代码中启动，而不是在系统 DLL 中启动。 因此，冲突被捕获到了发生的位置，而不是释放堆块。
 
-### <a name="span-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>步骤 8：在代码中查找错误
+### <a name="span-idstep_8__locate_the_error_in_the_codespanspan-idstep_8__locate_the_error_in_the_codespanspan-idstep_8__locate_the_error_in_the_codespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>步骤8：在代码中找到错误
 
-快速检查揭示问题的原因：该程序尝试写入的 257th 字节 (0x101) 的 256 字节 (0x100) 缓冲区，一种常见关闭--一个错误。
+快速检查可揭示问题的原因：程序尝试写入256字节（0x100）缓冲区的 257th byte （0x101），这是一个常见的由一次错误引起的。
 
 ```console
 *((PCHAR)Block + 0x100) = 0;

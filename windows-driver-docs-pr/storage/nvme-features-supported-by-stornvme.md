@@ -2,14 +2,14 @@
 title: StorNVMe 支持的 NVMe 功能
 description: StorNVMe 支持的 NVMe 功能
 ms.assetid: 1c6f78d7-ea00-44d4-95d2-62f5a1c7d568
-ms.date: 12/12/2019
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a3166faa28d6471939a811a5da8de8c5860858af
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: aa8f9fb8d81a6b8a3de8fee60e888b6dcb74a97b
+ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75252084"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83642788"
 ---
 # <a name="nvme-features-supported-by-stornvme"></a>StorNVMe 支持的 NVMe 功能
 
@@ -20,3 +20,5 @@ ms.locfileid: "75252084"
 - [StorNVMe 功能支持](stornvme-feature-support.md)
 
 - [StorNVMe SCSI 转换支持](stornvme-scsi-translation-support.md)
+
+有关其他信息，请参阅使用[NVMe 驱动器](https://docs.microsoft.com/windows/win32/fileio/working-with-nvme-devices#protocol-specific-queries)。
