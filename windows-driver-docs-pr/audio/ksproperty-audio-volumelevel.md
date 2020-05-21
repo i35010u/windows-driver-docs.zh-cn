@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_音频\_VOLUMELEVEL
-description: KSPROPERTY\_音频\_VOLUMELEVEL 属性指定卷节点中通道的音量级别（KSNODETYPE\_VOLUME）。
+title: KSPROPERTY \_ 音频 \_ VOLUMELEVEL
+description: KSPROPERTY \_ AUDIO \_ VOLUMELEVEL 属性指定卷节点中通道的音量级别（KSNODETYPE \_ 卷）。
 ms.assetid: 5b420c71-fc82-413d-a93d-e8f3408cc8d7
 keywords:
 - KSPROPERTY_AUDIO_VOLUMELEVEL 音频设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86829ec7980313c0e9c4a3ca3f661c6996729464
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 19771178e6302931490019fb2dd39ee6ac3a8085
+ms.sourcegitcommit: 7ee048ef0b2928b5fd372d6fe5d6c0c008462180
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830929"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83729551"
 ---
-# <a name="ksproperty_audio_volumelevel"></a>KSPROPERTY\_音频\_VOLUMELEVEL
+# <a name="ksproperty_audio_volumelevel"></a>KSPROPERTY \_ 音频 \_ VOLUMELEVEL
 
 
-KSPROPERTY\_音频\_VOLUMELEVEL 属性指定卷节点中通道的音量级别（[**KSNODETYPE\_volume**](ksnodetype-volume.md)）。
+KSPROPERTY \_ AUDIO \_ VOLUMELEVEL 属性指定卷节点中通道的音量级别（[**KSNODETYPE \_ 卷**](ksnodetype-volume.md)）。
 
 ## <span id="ddk_ksproperty_audio_volumelevel_ks"></span><span id="DDK_KSPROPERTY_AUDIO_VOLUMELEVEL_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性指定卷节点中通道的音量级别（
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">“获取”</th>
+<th align="left">Get</th>
 <th align="left">设置</th>
 <th align="left">目标</th>
 <th align="left">属性描述符类型</th>
@@ -50,11 +50,11 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性指定卷节点中通道的音量级别（
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>“是”</p></td>
-<td align="left"><p>“是”</p></td>
+<td align="left"><p>是</p></td>
+<td align="left"><p>是</p></td>
 <td align="left"><p>节点 via 筛选器或固定实例</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
-<td align="left"><p>漫长</p></td>
+<td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,9 +67,10 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性指定卷节点中通道的音量级别（
 
 -2147483647 为-32767.99998474 分贝（衰减），并且
 
-\+ 2147483647 为 + 32767.99998474 分贝（增益）。
++ 2147483647 为 + 32767.99998474 分贝（增益）。
 
-&gt; \[！注意\] &gt; 分贝范围由从-2147483648 到 + 2147483647 的整数值表示，其中此刻度的分辨率为1/65536 分贝。
+> [!Note]
+> 分贝范围由从-2147483648 到 + 2147483647 的整数值表示，其中此刻度的分辨率为1/65536 分贝。
 
  
 
@@ -77,7 +78,7 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性指定卷节点中通道的音量级别（
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_音频\_VOLUMELEVEL 属性请求返回状态\_SUCCESS，以指示已成功完成。 否则，请求将返回相应的错误状态代码。
+KSPROPERTY \_ 音频 \_ VOLUMELEVEL 属性请求返回状态 " \_ 成功" 以指示它已成功完成。 否则，请求将返回相应的错误状态代码。
 
 <a name="remarks"></a>备注
 -------
@@ -105,11 +106,11 @@ KSPROPERTY\_音频\_VOLUMELEVEL 属性请求返回状态\_SUCCESS，以指示已
 
 [自定义默认音频音量设置](https://docs.microsoft.com/windows-hardware/drivers/audio/customizing-default-audio-volume-settings)
 
-[默认音频音量设置](https://docs.microsoft.com/windows-hardware/drivers/audio/default-audio-volume-settings)
+[默认的音频音量设置](https://docs.microsoft.com/windows-hardware/drivers/audio/default-audio-volume-settings)
 
-[**KSNODEPROPERTY\_音频\_频道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
+[**KSNODEPROPERTY \_ 音频 \_ 通道**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
-[**KSNODETYPE\_卷**](ksnodetype-volume.md)
+[**KSNODETYPE \_ 卷**](ksnodetype-volume.md)
 
  
 
