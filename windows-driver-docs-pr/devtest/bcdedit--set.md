@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4af5a4b1bc932be78717700253f3ba15db8360
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 05a0fff08f9416c372f08371ab0ed3a8078bfb30
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335950"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769687"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -39,7 +39,7 @@ bcdedit  /set [{ID}] datatype value
 {ID} 是与启动项关联的 GUID  。 如果未指定 {ID}，命令将修改当前操作系统启动项  。 如果指定了启动目，则必须用大括号 { } 将与启动项关联的 GUID 括起来  。 要查看所有活动启动项的 GUID 标识符，请使用 bcdedit /enum 命令  。 当前启动项的标识符是 {current}  。 有关此选项的详细信息，请使用以下命令：bcdedit /?  ID
 
 > [!NOTE]
-> 如果使用 [Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)，必须使用引号将启动项标识符引起来，例如：“{49916baf-0e08-11db-9af4-000bdbd316a0}”或“{current}”   。
+> 如果使用 [Windows PowerShell](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/?view=powershell-6)，必须使用引号将启动项标识符引起来，例如：“{49916baf-0e08-11db-9af4-000bdbd316a0}”或“{current}”   。
 
 *datatype* *value*  
 
@@ -49,7 +49,7 @@ bcdedit  /set [{ID}] datatype value
 启用系统初始化日志。 此日志存储在 %WINDIR% 目录中的 Ntbtlog.txt 文件中。 它包括以文本格式加载和卸载的驱动程序列表。
 
 **bootmenupolicy** \[ **Legacy** | **Standard** \]  
-定义系统将使用的启动菜单类型。 对于 Windows 10、Windows 8.1、Windows 8 和 Windows RT，默认值为 Standard  。 对于 Windows Server 2012 R2 和 Windows Server 2012，默认值为 Legacy  。 选择 Legacy 时，“高级选项”菜单 (F8) 可用   。 选择 Standard 时，仅在某些情况下会显示启动菜单：例如，出现启动故障、从修复磁盘或安装媒体启动、配置了多个启动项目或手动配置了计算机以使用高级启动  。 选择 Standard 时，在启动过程中将忽略 F8 键   。 Windows 8 电脑会快速启动，因此没有足够的时间按 F8  。 有关详细信息，请参阅[ Windows 启动设置（包括安全模式）](https://go.microsoft.com/fwlink/p/?linkid=313921)。
+定义系统将使用的启动菜单类型。 对于 Windows 10、Windows 8.1、Windows 8 和 Windows RT，默认值为 Standard  。 对于 Windows Server 2012 R2 和 Windows Server 2012，默认值为 Legacy  。 选择 Legacy 时，“高级选项”菜单 (F8) 可用   。 选择 Standard 时，仅在某些情况下会显示启动菜单：例如，出现启动故障、从修复磁盘或安装媒体启动、配置了多个启动项目或手动配置了计算机以使用高级启动  。 选择 Standard 时，在启动过程中将忽略 F8 键   。 Windows 8 电脑会快速启动，因此没有足够的时间按 F8  。 有关详细信息，请参阅[ Windows 启动设置（包括安全模式）](https://support.microsoft.com/help/17076/windows-8-startup-settings-safe-mode)。
 
 > [!NOTE]
 > 此选项从 Windows 8 和 Windows Server 2012 开始提供。 还可以使用 onetimeadvancedoptions 在下一次启动时使用一次高级选项 (F8) 菜单 (Legacy)    。
@@ -98,12 +98,12 @@ bcdedit  /set [{ID}] datatype value
 > [!NOTE]
 > 此选项应仅用于调试。 
 
-**groupsize** *maxsize* 设置单个处理器组中逻辑处理器的最大数量，其中最大大小为介于 1 到 64（含）之间 2 的任意次幂  。 默认情况下，处理器组的最大大小为 64 个逻辑处理器。 可以使用此启动配置设置来替代计算机处理器组的大小和组成，以便进行测试。 [处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)对具有超过 64 个逻辑处理器的计算机提供支持。 此启动选项适用于 64 位版本的 Windows 7 和 Windows Server 2008 R2 及更高版本。 此启动选项对 32 位版本的 Windows 7 不起作用。
+**groupsize** *maxsize* 设置单个处理器组中逻辑处理器的最大数量，其中最大大小为介于 1 到 64（含）之间 2 的任意次幂  。 默认情况下，处理器组的最大大小为 64 个逻辑处理器。 可以使用此启动配置设置来替代计算机处理器组的大小和组成，以便进行测试。 [处理器组](https://docs.microsoft.com/windows/win32/procthread/processor-groups)对具有超过 64 个逻辑处理器的计算机提供支持。 此启动选项适用于 64 位版本的 Windows 7 和 Windows Server 2008 R2 及更高版本。 此启动选项对 32 位版本的 Windows 7 不起作用。
 
 如果要强制多个组，并且计算机的可用逻辑处理器不超过 64 个，请使用 groupsize 选项  。 有关使用此选项的详细信息，请参阅[用于测试驱动程序是否支持多个处理器组的启动参数](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)。
 
 **groupaware** \[ **on** | **off** \]  
-强制驱动程序了解多个处理器组环境中的多个组。 使用此选项可帮助公开驱动程序和组件中的跨组不兼容性。 [处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)对具有超过 64 个逻辑处理器的计算机提供支持。 此启动选项适用于 64 位版本的 Windows 7 和 Windows Server 2008 R2 及更高版本。 此启动选项对 32 位版本的 Windows 7 不起作用。 当计算机的可用逻辑处理器不超过 64 个时，可以使用 groupaware 选项和 groupsize 选项来测试驱动程序是否与多个组兼容   。
+强制驱动程序了解多个处理器组环境中的多个组。 使用此选项可帮助公开驱动程序和组件中的跨组不兼容性。 [处理器组](https://docs.microsoft.com/windows/win32/procthread/processor-groups)对具有超过 64 个逻辑处理器的计算机提供支持。 此启动选项适用于 64 位版本的 Windows 7 和 Windows Server 2008 R2 及更高版本。 此启动选项对 32 位版本的 Windows 7 不起作用。 当计算机的可用逻辑处理器不超过 64 个时，可以使用 groupaware 选项和 groupsize 选项来测试驱动程序是否与多个组兼容   。
 
 groupaware on 设置可确保进程在组 0 以外的组中启动  。 这增加了驱动程序和组件之间跨组交互的机会。 该选项还会修改旧函数 KeSetTargetProcessorDpc、KeSetSystemAffinityThreadEx 和 KeRevertToUserAffinityThreadEx 的行为，以便它们始终对包含可用逻辑处理器的最高编号组进行操作    。 调用任何这些旧函数的驱动程序应更改为调用其组感知对应项（KeSetTargetProcessorDpcEx、KeSetSystemGroupAffinityThread 和 KeRevertToUserGroupAffinityThread）    。
 
@@ -334,7 +334,7 @@ bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} truncatememory 0x40000000
 bcdedit /deletevalue groupsize
 ```
 
-对启动选项的任何更改都需要重启才能生效。 有关常用 BCDEdit 命令的详细信息，请参阅[引导配置数据编辑器常见问题](https://go.microsoft.com/fwlink/p/?linkid=155086)。
+对启动选项的任何更改都需要重启才能生效。 有关常用 BCDEdit 命令的详细信息，请参阅[引导配置数据编辑器常见问题](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc721886(v=ws.10))。
 
 ## <a name="requirements"></a>要求
 
