@@ -4,18 +4,18 @@ description: 合作伙伴中心中的驱动程序外部测试使你能够在定�
 ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a6cf66d1d57bc66da2f732db121470f17240709b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 53839b5beeb7ec2a73fc1eafc2bd77fcf6cb740e
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63335116"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778345"
 ---
 # <a name="driver-flighting"></a>驱动程序外部测试
 
-合作伙伴中心中的驱动程序外部测试使你能够在定义的 Windows 预览体验成员圈中分发驱动程序，同时提供自动监视和评估。 完成外部测试后，将会生成一份驱动程序性能报告，使你能够评估其关键功能和更新方案。 成功完成外部测试并获得 Microsoft 批准后，该驱动程序即可通过 Windows 更新公开分发。 
+合作伙伴中心中的驱动程序外部测试使你能够在定义的 Windows 预览体验成员圈中分发驱动程序，同时提供自动监视和评估。 完成外部测试后，将会生成一份驱动程序性能报告，使你能够评估其关键功能和更新方案。 成功完成外部测试并获得 Microsoft 批准后，该驱动程序即可通过 Windows 更新公开分发。
 
-以下视频更详细地概述了驱动程序外部测试计划： 
+以下视频更详细地概述了驱动程序外部测试计划：
 <iframe src="https://channel9.msdn.com/Events/WinHEC/WinHEC-Online/Start-Your-Driver-Flighting-The-benefit-of-Driver-Promotion/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="signing-up-for-driver-flighting"></a>注册驱动程序外部测试
@@ -44,7 +44,7 @@ ms.locfileid: "63335116"
 
 在将驱动程序提交到合作伙伴中心后，可以使用以下步骤推广驱动程序以进行外部测试：
 
-1. 驱动程序提交并且处于处理的**验证**阶段后，请创建新的发货标签并填写“详细信息”  和“属性”  部分。 有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
+1. 驱动程序提交并且处于处理的**验证**阶段后，请创建新的发货标签并填写“详细信息”和“属性”部分。 有关详细信息，请参阅[将驱动程序发布到 Windows 更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/publish-a-driver-to-windows-update)。
 
 2. 按照如下所述，选择一个或多个驱动程序推广选项，以推广驱动程序进行外部测试：
 
@@ -61,7 +61,7 @@ ms.locfileid: "63335116"
 
 4. 选择适用于你的驱动程序的适当声明。 这些答案将提高评估流程的速度：![一个显示了可能适用于正进行外部测试的驱动程序的声明的图像：这是一个联合研发的驱动程序，需要重新启动，用于部署 UI 和/或软件。它支持新的或未发布的设备](images/driver-flighting-statements.png)
 
-    > [!IMPORTANT] 
+    > [!IMPORTANT]
     > 请注意以下事项：
     > * 建议避免在安装驱动程序之后要求重新启动。 
     > * 处于 S 模式的 Windows 10 不支持在驱动程序安装过程中部署 UI 和/或软件，并且无法针对此操作系统进行外部测试。
@@ -76,7 +76,7 @@ ms.locfileid: "63335116"
 
 ## <a name="reasons-a-driver-may-be-rejected"></a>驱动程序可能会被拒绝的原因
 
-驱动程序遭拒有多种原因。 通常情况下，驱动程序遭拒是因驱动程序定位不当所致。 其中包括：
+驱动程序遭拒可能有多种原因。 通常情况下，驱动程序遭拒是因驱动程序定位不当所致。 其中包括：
 
 - 既面向先前版本的 Windows，同时也面向 Windows 10。
 - 所面向的设备类可能具有你未能正确遵循的特定 CHID 面向要求。  某些设备类需要 CHID（如固件），其他类会禁止使用 CHID（如屏幕）。  请确保已正确输入你的信息。

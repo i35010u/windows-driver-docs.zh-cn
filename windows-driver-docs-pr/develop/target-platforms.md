@@ -4,12 +4,12 @@ title: 驱动程序参考页的目标平台
 description: 在 Microsoft 驱动程序参考页底部的“要求”块中，将看到一个称为“目标平台”的条目。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e824f0536b8aa039a64db8227bb7cea3b65178
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: fc571594ab09e403673c388d3e56669b4849c46b
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270454"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769655"
 ---
 # <a name="target-platform-on-driver-reference-pages"></a>驱动程序参考页上的“目标平台”
 
@@ -25,7 +25,8 @@ ms.locfileid: "83270454"
 
 |术语|说明|
 |--- |--- |
-|通用|Windows 驱动程序中的驱动程序二进制文件可以调用此设备驱动程序接口 (DDI)。
+|通用|Windows 驱动程序中的驱动程序二进制文件可以调用此设备驱动程序接口 (DDI)。 有关详细信息，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。|
+|台式机|Windows 10 桌面版或 Windows Server 2016 的驱动程序二进制文件可以调用此 DDI。|
 
 Windows 驱动程序在以下基于通用 Windows 平台 (UWP) 的 Windows 10 版本上运行：
 
@@ -33,8 +34,5 @@ Windows 驱动程序在以下基于通用 Windows 平台 (UWP) 的 Windows 10 �
 *   处于 S 模式的 Windows 10
 *   Windows 10 IoT 核心版
 *   Windows Server 2016
-
-有关详细信息，请参阅 [Windows 驱动程序入门](getting-started-with-windows-drivers.md)。| |桌面|适用于 Windows 10 桌面版或 Windows Server 2016 的驱动程序二进制文件可以调用此 DDI。|
-
 
 

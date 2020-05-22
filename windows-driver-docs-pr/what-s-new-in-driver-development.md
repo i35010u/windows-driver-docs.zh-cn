@@ -4,12 +4,12 @@ description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd0be7cb41ffca0b08d838852f937345b915cda
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 678be02ff0d40401e88776b1eef8aa09a921c0ee
+ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235368"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83642593"
 ---
 # <a name="whats-new-in-driver-development"></a><a name="top"></a>驱动程序开发中的新增功能
 
@@ -32,6 +32,14 @@ Windows 驱动程序与 Windows 桌面驱动程序是不同的。 Windows 驱动
 ### <a name="windows-hardware-error-architecture-whea"></a>Windows 硬件错误体系结构 (WHEA)
 
 WHEA 新增了一个接口 (v2)。 若要了解如何注册为错误源并报告错误，请参阅[在 Windows 10 中使用 WHEA](whea/using-whea-on-windows-10.md)。
+
+### <a name="display-and-graphics-drivers"></a>显示驱动程序和图形驱动程序
+
+Windows 10 版本 2004 中提供了几个新的和增强的显示驱动程序和图形驱动程序功能，其中包括 D3D12 网格着色器支持、采样器支持、光线跟踪扩展、视频运动估计，以及视频的受保护资源支持。 有关这些新功能的详细信息，请参阅 [Windows 10 显示驱动程序和图形驱动程序的新增功能](https://docs.microsoft.com/windows-hardware/drivers/display/what-s-new-for-windows-10-display-and-graphics-drivers)。
+
+### <a name="storage-drivers"></a>存储驱动程序
+
+存储微型端口驱动程序现在可以获取和设置有关设备的内部状态的详细信息，包括重置设备的功能。 请从参阅 [**IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_device_internal_log) 和 [**StorPortHardwareReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storporthardwarereset) 开始了解相关信息。
 
 ## <a name="related-topics"></a>“相关主题”
 
