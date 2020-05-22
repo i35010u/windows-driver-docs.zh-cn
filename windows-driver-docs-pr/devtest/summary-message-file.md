@@ -6,16 +6,16 @@ keywords:
 - Tracefmt WDK，摘要消息文件
 - 摘要消息文件 WDK Tracefmt
 - 文件 WDK Tracefmt
-- .sum 文件
+- . sum 文件
 - sum 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dce1d04a7dc1035e0959339aa2e7ff86dde467f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 785baa8f875ea0567ec22bcbaf8b1b5621f2a785
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360937"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769713"
 ---
 # <a name="summary-message-file"></a>摘要消息文件
 
@@ -23,31 +23,31 @@ ms.locfileid: "67360937"
 ## <span id="ddk_summary_message_file_tools"></span><span id="DDK_SUMMARY_MESSAGE_FILE_TOOLS"></span>
 
 
-摘要消息文件是文本文件，其中包含有关软件跟踪信息。 创建 Tracefmt*摘要消息 (.sum) 文件*之后处理跟踪日志中的消息或跟踪会话。
+摘要消息文件是一个文本文件，其中包含有关软件跟踪的信息。 在处理跟踪日志或跟踪会话中的消息后，Tracefmt 创建*摘要消息（sum）文件*。
 
-该摘要消息文件中的统计摘要包括以下数据：
+摘要消息文件包含统计摘要中的以下数据：
 
--   处理的缓冲区数
+-   已处理的缓冲区数
 
 -   处理和丢失的消息数
 
--   经过的时间，以微秒为单位，跟踪会话
+-   跟踪会话的运行时间（微秒）
 
-以下统计摘要是组成为表示在跟踪中每个跟踪消息的一个行的表。 表的每个列提供了有关跟踪消息的以下信息：
+下面的统计摘要是一个表，该表在跟踪中表示的每个跟踪消息中占一行。 表中的每一列都提供有关跟踪消息的下列信息：
 
 <span id="EventCount"></span><span id="eventcount"></span><span id="EVENTCOUNT"></span>**EventCount**  
-在跟踪中的跟踪消息的实例数。
+跟踪消息在跟踪中的实例数。
 
-<span id="EventName"></span><span id="eventname"></span><span id="EVENTNAME"></span>**EventName**  
-友好名称[消息 GUID](message-guid.md)的跟踪消息。 默认情况下，一条消息的 GUID 的友好名称是在其中生成跟踪提供程序，该目录的名称，但可以通过使用指定的备选友好名称 **-p**参数运行\_WPP 或 Tracewpp.exe。 有关信息，请参阅运行\_WPP 选项。 (**EventName**具有相同的值中的 %1 变量[跟踪消息前缀](trace-message-prefix.md)。)
+<span id="EventName"></span><span id="eventname"></span><span id="EVENTNAME"></span>**名**  
+跟踪消息的[消息 GUID](message-guid.md)的友好名称。 默认情况下，消息 GUID 的友好名称是在其中生成跟踪提供程序的目录的名称，但您可以通过使用 **-p**参数运行 WPP 或 Tracewpp 来指定备用的友好名称 \_ 。 有关信息，请参阅运行 \_ WPP 选项。 （**事件名称**与[跟踪消息前缀](trace-message-prefix.md)中的 %1 变量具有相同的值。）
 
 <span id="EventType"></span><span id="eventtype"></span><span id="EVENTTYPE"></span>**EventType**  
-跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称是代码的源文件和生成的跟踪消息的行号的名称。 (**EventType**具有相同的值中的 %2 变量[跟踪消息前缀](trace-message-prefix.md)。)
+跟踪消息的友好名称。 默认情况下，跟踪消息的友好名称是源文件的名称和生成跟踪消息的代码的行号。 （**事件**1 与[跟踪消息前缀](trace-message-prefix.md)中的 %2 变量具有相同的值。）
 
-<span id="GUID"></span><span id="guid"></span>**GUID**  
-消息的跟踪消息的 GUID。
+<span id="GUID"></span><span id="guid"></span>**GUID.EMPTY**  
+跟踪消息的消息 GUID。
 
-下面的示例显示了由 Tracedrv，检测跟踪的一个示例驱动程序生成 testtrace.etl 跟踪日志的摘要消息文件。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)，为软件跟踪设计的一个示例驱动程序是从可用[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+下面的示例演示由 Tracedrv 生成的 testtrace 跟踪日志的摘要消息文件，该文件是一个用于跟踪的示例驱动程序。 [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，可从 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库获取。
 
 ```
 Files Processed:
@@ -65,9 +65,9 @@ Elapsed Time            122 sec
 +---------------------------------------------------------------------------------+
 ```
 
-上述摘要显示 Tracedrv 生成标头消息和两个跟踪消息。 通过生成一个跟踪消息[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))由行 258 DoTraceMessage 语句生成行 264，另一个语句。 在此跟踪日志中，有 1700年实例的第一个跟踪消息和 17 的第二个跟踪消息的实例。
+上述摘要显示 Tracedrv 生成标头消息和两条跟踪消息。 [**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))语句在第264行生成一个跟踪消息，另一个跟踪消息由第258行的 DoTraceMessage 语句生成。 在此跟踪日志中，有1700个实例的第一个跟踪消息和17个实例的第二个跟踪消息。
 
-摘要消息文件主要用于调试软件跟踪和它的格式可能会发生更改。
+摘要消息文件主要用于调试软件跟踪，其格式可能会更改。
 
  
 

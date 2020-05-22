@@ -4,12 +4,12 @@ title: DCH 设计原则和最佳做法
 description: 介绍了 Windows 驱动程序的 DCH 原则。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d2c96949ba71ad4a77d036fc98989a150b6c5117
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 6505f9bda33e2bc9a543314e5d62cfdee81468a2
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270466"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435373"
 ---
 # <a name="dch-design-principles-and-best-practices"></a>DCH 设计原则和最佳做法
 
@@ -67,6 +67,6 @@ OEM 仅验证它为 OEM 系统提供的可选自定义项。
    
 *  如果 INF 执行依赖于目标平台的任何自定义设置操作，请考虑将其分离形成一个扩展 INF。 可以独立于基础驱动程序包更新扩展 INF，以提高稳健性和可用性。 有关详细信息，请参阅[使用扩展 INF 文件](../install/using-an-extension-inf-file.md)。
 *  如果想要提供一个与你的设备兼容的应用程序，请包括 UWP 应用。 有关详细信息，请参阅[硬件支持应用 (HSA)：适用于驱动程序开发人员的步骤](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)。  OEM 可以使用 [DISM - 部署映像服务和管理](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)预加载此类应用。 或者，用户可以从 Microsoft Store 手动下载此应用。
-*  在 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)中，将目标目录设为 [dirid 13](../install/using-dirids)，使驱动程序可从[驱动程序存储](driver-isolation.md#run-from-driver-store)运行。 此设置不适用于某些设备。
+*  在 [**INF DestinationDirs 部分**](../install/inf-destinationdirs-section.md)中，将目标目录设为 [dirid 13](../install/using-dirids.md)，使驱动程序可从[驱动程序存储](driver-isolation.md#run-from-driver-store)运行。 此设置不适用于某些设备。
 
 

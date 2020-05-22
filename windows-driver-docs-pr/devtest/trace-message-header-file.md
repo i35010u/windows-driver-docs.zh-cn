@@ -3,34 +3,34 @@ title: 跟踪消息标头文件
 description: 跟踪消息标头文件
 ms.assetid: 835162c0-6596-42ae-bc6d-824dd6c3f69f
 keywords:
-- 跟踪消息标头文件 WDK
+- 跟踪消息头文件 WDK
 - TMH 文件 WDK
 - 文件 WDK 软件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55b9b475ae935e1304ec78fa17f3ea8783428e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80b432ed8b5dc5f26fd9c57e1a44c42b3ff23966
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381813"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769647"
 ---
 # <a name="trace-message-header-file"></a>跟踪消息标头文件
 
 
-一个*跟踪消息标头*(TMH) 文件是包含声明的函数和变量使用 WPP 生成的跟踪代码的文本文件。 标头文件还包括添加跟踪消息格式到 PDB 文件的说明的宏[跟踪提供程序](trace-provider.md)，如内核模式驱动程序或用户模式应用程序。
+*跟踪消息标头*（TMH）文件是一个文本文件，该文件包含 WPP 生成的跟踪代码所使用的函数和变量的声明。 标头文件还包括将跟踪消息格式设置指令添加到[跟踪提供程序](trace-provider.md)的 PDB 文件（如内核模式驱动程序或用户模式应用程序）的宏。
 
-WPP TMH 文件会自动生成编译时[跟踪提供程序](trace-provider.md)包括 WPP 宏。 TMH 文件作为源文件，但扩展名为.tmh 具有相同的名称。 WPP 将文件保存在与源文件相同的目录中。
+当你编译包含 WPP 宏的[跟踪提供程序](trace-provider.md)时，WPP 会自动生成 TMH 文件。 TMH 文件具有与源文件相同的名称，但文件扩展名为 TMH。 WPP 将该文件保存在源文件所在的同一目录中。
 
-当将 WPP 宏添加到源代码时，还必须添加 **\#包括**指令将生成 WPP TMH 文件。 Include 语句采用以下格式：
+向源代码添加 WPP 宏时，还必须为 WPP 将生成的 TMH 文件添加** \# 包含**指令。 Include 语句的形式为：
 
 ```
 #include SourceFileName.tmh
 ```
 
-这包括语句后的定义必须出现[WPP\_控制\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏，但对 WPP 宏的任何调用之前。
+此 include 语句必须出现在[wpp \_ 控件 \_ guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏的定义之后、在对 wpp 宏的任何调用之前。
 
-有关详细信息，请参阅[添加到跟踪制造者 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)，并查看[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)，为软件跟踪设计的一个示例驱动程序。 TraceDrv 示例现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+有关详细信息，请参阅[向跟踪生成程序添加 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)和查看[TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)（一个用于软件跟踪的示例驱动程序）。 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中提供了 TraceDrv 示例。
 
  
 

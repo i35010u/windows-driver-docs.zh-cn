@@ -4,12 +4,12 @@ description: 从 Windows 2000 开始，驱动程序验证器在 Windows 的所�
 ms.assetid: EAC30108-F8A2-4914-9218-2E0672982B7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7caa464c9032c594587ce77ba1b2f1aef5437f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6fb106ab5afe776bdb9560fe7c3ace600b7ee3ce
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839564"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769715"
 ---
 # <a name="driver-verifier-whats-new"></a>驱动程序验证程序：新增功能
 
@@ -27,8 +27,8 @@ ms.locfileid: "72839564"
 > [!IMPORTANT]
 > 从 Windows 10 1803 之后的版本开始，运行驱动程序验证程序将不再自动启用 Windows 驱动程序框架（WDF）验证。 请注意以下事项：
 
-* 你仍可以在驱动程序验证程序的 `/standard` 标志中启用 WDF 验证。 有关详细信息，请参阅[驱动程序验证程序命令语法](https://docs.microsoft.com/windows-hardware/drivers/devtest/verifier-command-line)。
-* 如果你正在启用带有语法 `/flags 0x209BB` 的 DV，则此更改将影响你，因为不会再自动启用 WDF 验证。
+* 你仍可以在驱动程序验证程序的标志中启用 WDF 验证 `/standard` 。 有关详细信息，请参阅[驱动程序验证程序命令语法](https://docs.microsoft.com/windows-hardware/drivers/devtest/verifier-command-line)。
+* 如果你正在启用 DV 语法，则此更改将影响你， `/flags 0x209BB` 因为 WDF 验证将不再自动启用。
 
 从 Windows 10 开始，驱动程序验证器包含适用于以下技术的新驱动程序验证规则：
 
@@ -64,8 +64,6 @@ ms.locfileid: "72839564"
 
 ## <a name="driver-verifier-in-windows-7-updated-october-22-2012"></a>Windows 7 中的驱动程序验证程序（*已更新：2012年10月22日*）
 
-有关 Windows 7 中已添加的新功能的信息，请参阅[windows 7 中的白皮书驱动程序验证程序]( https://go.microsoft.com/fwlink/p/?linkid=309793)。
-
 对于 Windows 7，驱动程序验证程序已通过允许驱动程序验证程序公开更多类典型驱动程序错误的新测试和功能进行了增强。
 
 * 来自内核驱动程序的用户句柄引用不正确
@@ -83,15 +81,15 @@ ms.locfileid: "72839564"
 
 * 验证应降低 IRQL 值（如[**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)）的操作是否实际上不会引发 irql 值。
 
-* 如果启用了[强制 Irql 检查](force-irql-checking.md)选项，则在引发 IRQL 以调度\_级别或更高级别时，尝试公开对可分页内存的可能引用（当驱动程序在提升的状态下运行时），以修整系统进程的工作集IRQL.
+* 如果启用了[强制 Irql 检查](force-irql-checking.md)选项，则在将 irql 提升为调度 \_ 级别或更高级别或更高版本时，如果在驱动程序以提升的 IRQL 运行时尝试公开可分页内存的可能引用，则修整系统进程的工作集。
 
 * 在启用死锁检测选项时预测可能的死锁。
 
-* 尝试在启用死锁检测选项时，尝试使用相同的 KSPIN\_锁定数据结构作为旋转锁，并作为堆栈排队自旋锁。
+* 尝试在 \_ 启用死锁检测选项时，将相同的 KSPIN 锁数据结构同时用作旋转锁和堆栈排队自旋锁。
 
 * 检查明显不正确的指针值，如用作旋转锁地址的用户模式虚拟地址。
 
-* 正在驱动程序验证程序 IRQL 日志中记录 IRQL 转换。 当你使用 Windows 调试器的 **！ verifier 8**扩展时，将显示此信息。 请参阅[ **！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
+* 正在驱动程序验证程序 IRQL 日志中记录 IRQL 转换。 当你使用 Windows 调试器的 **！ verifier 8**扩展时，将显示此信息。 请参阅[**！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
 
 ## <a name="additional-debugging-information"></a>其他调试信息
 
@@ -115,8 +113,6 @@ IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**�
 
 ## <a name="driver-verifier-in-windows-vista-updated-february-9-2009"></a>Windows Vista 中的驱动程序验证程序（*已更新：2009年2月9日*）
 
-有关 Windows Vista 中添加的新功能的信息，请参阅[Windows vista 中的白皮书驱动程序验证程序]( https://go.microsoft.com/fwlink/p/?linkid=309794)。
-
 对于 Windows Vista，驱动程序验证程序已通过新的测试和功能得到了增强。
 
 * 在不重新启动的情况下启用驱动程序验证程序和更改设置
@@ -139,14 +135,14 @@ IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**�
 * 新的监视堆栈切换的自动检查
 * 用于 DMA 验证（也称为 HAL 验证）、死锁检测和 SCSI 验证的新的驱动程序验证程序选项
 * 结合了 "Level 1" 和 "Level 2" 测试的 i/o 验证更改，可选的增强型 i/o 验证测试
-* 新调试器扩展[ **！死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)和[ **！ dma**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-dma)
-* 新 bug 检查：0xE6 （驱动程序\_验证程序\_DMA\_冲突）和0xF1 （检测到的 SCSI\_验证程序\_冲突）
+* 新调试器扩展[**！死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)和[**！ dma**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-dma)
+* 新 bug 检查：0xE6 （驱动程序 \_ 验证程序 \_ DMA \_ 冲突）和0xF1 （SCSI \_ 验证程序 \_ 检测到 \_ 冲突）
 * 现有 bug 检查代码0xC4 和0xC9 的附加子代码
 
 驱动程序验证程序功能还包括：
 
 * **新的验证程序命令行选项**Verifier 实用程序具有一个新参数*VolatileDriverList*，它可与 **/adddriver**关键字一起使用，以指定要添加到易失性设置的驱动程序列表。 *VolatileDriverList*可以与 **/removedriver**关键字一起使用，以指定要删除的驱动程序列表。
-* **New！ verifier extension**New [ **！** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)当监视资源不足或 IRQL 引发和旋转锁时，验证程序扩展显示额外的日志信息。 还提供联机帮助。
+* **New！ verifier extension**New [**！**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)当监视资源不足或 IRQL 引发和旋转锁时，验证程序扩展显示额外的日志信息。 还提供联机帮助。
   * 使用0x4 设置的*标志*将导致显示包含驱动程序验证器在低资源模拟期间注入的错误日志
   * 使用0x8 设置的*标志*将导致显示包含所验证驱动程序所做的最新 IRQL 更改的日志
   * 如果*Flags*等于0x4 或0x8，则数量参数指定要包含在显示中的记录数或日志条目数
@@ -157,4 +153,4 @@ IRQL 转换日志中存在更有效的堆栈跟踪。 使用 **！ verifier 8**�
 
 * 驱动程序验证程序管理器的联机帮助可通过以下方式之一显示驱动程序验证器管理器的联机帮助：
   * 右键单击 "驱动程序验证器管理器" 窗口中的项，然后从弹出菜单中选择 **"这是什么？"** 。
-  * 单击窗口右上角的问号（ **？** ），然后单击 "驱动程序验证器管理器" 窗口中的项。
+  * 单击窗口右上角的问号（**？**），然后单击 "驱动程序验证器管理器" 窗口中的项。

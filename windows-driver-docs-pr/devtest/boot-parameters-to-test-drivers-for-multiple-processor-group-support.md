@@ -4,24 +4,24 @@ description: 用于测试驱动程序是否支持多个处理器组的启动参�
 ms.assetid: 8ce311d6-a182-4d04-a453-81f6abe2043b
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 846e3594c114eed564e15776b244bd6360278afd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cc203d49ea8ca86362abb44aeeb8774b1f0c7762
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839582"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769583"
 ---
 # <a name="boot-parameters-to-test-drivers-for-multiple-processor-group-support"></a>用于测试驱动程序是否支持多个处理器组的启动参数
 
 
-Windows 7 和 Windows Server 2008 R2 为具有超过64个处理器的计算机提供支持。 这种支持是通过引入[处理器组](https://go.microsoft.com/fwlink/p/?linkid=155063)来实现的。 出于测试目的，可以将具有多个逻辑处理器的任何计算机配置为具有多个处理器组，方法是限制组大小。 这意味着，可以在具有64个或更少逻辑处理器的计算机上测试多个处理器组兼容性的驱动程序和组件。
+Windows 7 和 Windows Server 2008 R2 为具有超过64个处理器的计算机提供支持。 这种支持是通过引入[处理器组](https://docs.microsoft.com/windows/win32/procthread/processor-groups)来实现的。 出于测试目的，可以将具有多个逻辑处理器的任何计算机配置为具有多个处理器组，方法是限制组大小。 这意味着，可以在具有64个或更少逻辑处理器的计算机上测试多个处理器组兼容性的驱动程序和组件。
 
-**请注意**   Windows 7 中引入的*处理器组*的概念，允许现有 api 和 DDIs 在超过64个逻辑处理器的计算机上继续工作。 通常，组的处理器由关联掩码表示，后者长度为64位。 具有超过64个逻辑处理器的任何计算机都必须有多个组。
+**注意**   Windows 7 中引入的*处理器组*的概念使现有 Api 和 DDIs 能够在超过64个逻辑处理器的计算机上继续工作。 通常，组的处理器由关联掩码表示，后者长度为64位。 具有超过64个逻辑处理器的任何计算机都必须有多个组。
 创建进程时，该进程将分配给特定组。 默认情况下，进程的线程可以在同一组的所有逻辑处理器上运行，尽管可以显式更改线程关联。 对使用关联掩码或处理器编号作为参数而不是组号的任何 API 或 DDI 的调用，只能影响调用线程组中这些处理器上的或报告。 这同样适用于返回关联掩码或处理器编号（如**GetSystemInfo**）的 Api 或 DDIs。
 
-从 Windows 7 开始，应用程序或驱动程序可以使用扩展旧版 Api 的函数。 这些新的组感知函数接受组号参数以明确限定处理器编号或关联掩码，因此可以操作调用线程的组以外的处理器。 在计算机中的不同组中运行的驱动程序和组件之间的交互会在涉及到旧 Api 或 DDIs 时引入 bug。 可以在 Windows 7 和 Windows Server 2008 R2 上使用旧版的非组感知 Api。 但是，驱动程序要求更为严格。 对于具有多个处理器组的计算机上的驱动程序的功能正确性，你必须将接受处理器号或掩码的任何 DDI 替换为不带随附处理器组的参数，或者不使用随附的处理器组。 这些旧式的非组感知 DDIs 在具有多个进程组的计算机上可能不稳定，因为推断组可能不同于调用线程所需的组。 因此，使用这些旧式 DDIs 的驱动程序和面向 Windows Server 2008 R2 的驱动程序必须更新为使用新的扩展版本的接口。 不调用任何使用处理器关联掩码或处理器编号的函数的驱动程序将正常运行，而不考虑处理器的数量。 调用新 DDIs 的驱动程序可以通过包括 procgrp 标头、调用[**WdmlibProcgrpInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/procgrp/nf-procgrp-wdmlibprocgrpinitialize)并针对[处理器组兼容性库](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)（procgrp）进行链接，来在以前版本的 Windows 上运行。
+从 Windows 7 开始，应用程序或驱动程序可以使用扩展旧版 Api 的函数。 这些新的组感知函数接受组号参数以明确限定处理器编号或关联掩码，因此可以操作调用线程的组以外的处理器。 在计算机中的不同组中运行的驱动程序和组件之间的交互会在涉及到旧 Api 或 DDIs 时引入 bug。 可以在 Windows 7 和 Windows Server 2008 R2 上使用旧版的非组感知 Api。 但是，驱动程序要求更为严格。 对于具有多个处理器组的计算机上的驱动程序的功能是否正确，你必须将接受处理器号或掩码的任何 DDI 替换为不带随附处理器组的参数，或者返回不带随附处理器组的处理器号或掩码。 这些旧式的非组感知 DDIs 在具有多个进程组的计算机上可能不稳定，因为推断组可能不同于调用线程所需的组。 因此，使用这些旧式 DDIs 的驱动程序和面向 Windows Server 2008 R2 的驱动程序必须更新为使用新的扩展版本的接口。 不调用任何使用处理器关联掩码或处理器编号的函数的驱动程序将正常运行，而不考虑处理器的数量。 调用新 DDIs 的驱动程序可以通过包括 procgrp 标头、调用[**WdmlibProcgrpInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/procgrp/nf-procgrp-wdmlibprocgrpinitialize)并针对[处理器组兼容性库](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)（procgrp）进行链接，来在以前版本的 Windows 上运行。
 
-有关新的组感知 Api 和 DDIs 的详细信息，请下载[包含64个以上逻辑处理器的支持系统的白皮书：面向开发人员的指南](https://go.microsoft.com/fwlink/p/?linkid=147914)。
+有关新的组感知 Api 和 DDIs 的详细信息，请下载[支持超过64个逻辑处理器的系统的白皮书：面向开发人员的准则](https://download.microsoft.com/download/a/d/f/adf1347d-08dc-41a4-9084-623b1194d4b2/MoreThan64proc.docx)。
 
  
 
@@ -31,7 +31,7 @@ Windows 7 和 Windows Server 2008 R2 为具有超过64个处理器的计算机�
 
 **Groupsize**选项指定组中的逻辑处理器的最大数量。 默认情况下，未设置**groupsize**选项，并且具有64或更少逻辑处理器的任何计算机都有一个组0。
 
-**请注意**   物理处理器或处理器包可以有一个或多个核心或处理器单元，其中每个都可以包含一个或多个逻辑处理器。 操作系统将逻辑处理器视为一个逻辑计算引擎。
+**注意**   物理处理器或处理器包可以有一个或多个核心或处理器单元，其中每个都可以包含一个或多个逻辑处理器。 操作系统将逻辑处理器视为一个逻辑计算引擎。
 
  
 

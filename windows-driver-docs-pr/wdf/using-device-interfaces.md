@@ -9,12 +9,12 @@ keywords:
 - 设备接口类 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87439df215c57b4957265fdf0b28fdadc702fa10
-ms.sourcegitcommit: 8973457113e00a5f4a0848a1b3165a42b975e81c
+ms.openlocfilehash: 19d76515a1ec5e9cf28f844a21abb5bfce23363e
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83349883"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769453"
 ---
 # <a name="using-device-interfaces"></a>使用设备接口
 
@@ -22,9 +22,9 @@ ms.locfileid: "83349883"
 
 
 
-*设备接口*是应用程序可用于访问设备的即插即用（PnP）设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 **CreateFile**函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用**SetupDi**函数。 有关**SetupDi**函数的详细信息，请参阅[使用设备接口功能](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)。
+*设备接口*是应用程序可用于访问设备的即插即用（PnP）设备的符号链接。 用户模式应用程序可将接口的符号链接名称传递到 API 元素，例如 Microsoft Win32 **CreateFile**函数。 若要获取设备接口的符号链接名称，用户模式应用程序可以调用**SetupDi**函数。 有关**SetupDi**函数的详细信息，请参阅[使用设备安装函数](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)。
 
-每个设备接口属于一个*设备接口类*。 例如，cd-rom 设备的驱动程序堆栈可能提供属于 GUID \_ DEVINTERFACE \_ CDROM 类的接口。 Cd-rom 设备的驱动程序之一将注册 GUID \_ DEVINTERFACE CDROM 类的实例， \_ 以通知系统和应用程序提供 cd-rom 设备。 有关设备接口类的详细信息，请参阅[设备接口简介](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)。
+每个设备接口属于一个*设备接口类*。 例如，cd-rom 设备的驱动程序堆栈可能提供属于 GUID \_ DEVINTERFACE \_ CDROM 类的接口。 Cd-rom 设备的驱动程序之一将注册 GUID \_ DEVINTERFACE CDROM 类的实例， \_ 以通知系统和应用程序提供 cd-rom 设备。 有关设备接口类的详细信息，请参阅[设备接口类概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)。
 
 ### <a name="registering-a-device-interface"></a>注册设备接口
 

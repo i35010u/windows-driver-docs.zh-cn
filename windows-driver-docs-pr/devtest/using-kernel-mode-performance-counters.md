@@ -4,12 +4,12 @@ description: 使用内核模式性能计数器
 ms.assetid: b740dd92-ad75-4dea-98d4-dce04b273d2f
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f65bae39d83b41c10cce0f2a2c7031b42f86b7
-ms.sourcegitcommit: 7aa0dc2d0465f815438dcbb5335fd6a77a0fd630
+ms.openlocfilehash: 0b1e7822aec5118570f22608714e916620b7c410
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73432668"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769616"
 ---
 # <a name="using-kernel-mode-performance-counters"></a>使用内核模式性能计数器
 
@@ -19,11 +19,11 @@ ms.locfileid: "73432668"
 
 1. 编写描述提供程序及其计数器集的[信息清单](https://docs.microsoft.com/windows/win32/wes/writing-an-instrumentation-manifest)。
 
-    有关清单中的元素和属性的详细信息，请参阅[性能计数器架构](https://go.microsoft.com/fwlink/p/?linkid=147029)。 计数器清单是一种 XML 格式的文件，用于定义性能计数器提供程序及其计数器集。
+    有关清单中的元素和属性的详细信息，请参阅[性能计数器架构](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-schema)。 计数器清单是一种 XML 格式的文件，用于定义性能计数器提供程序及其计数器集。
 
     可以手动创建清单，也可以使用 WDK 中包含的清单生成器工具**Ecmangen**创建清单。 可以通过键入**ecmangen**在[开发人员命令提示](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs)中使用它。
 
-2. 使用[CTRPP 工具](https://go.microsoft.com/fwlink/p/?linkid=144441)从清单生成注册代码和字符串资源。
+2.  使用[CTRPP 工具](https://docs.microsoft.com/windows/win32/perfctrs/ctrpp)从清单生成注册代码和字符串资源。
 
     在 WDK 中包含计数器预处理器（CTRPP）工具，通过键入**CTRPP**可在[开发人员命令提示](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs)中找到该工具。
 
@@ -35,4 +35,13 @@ ms.locfileid: "73432668"
 
 5. 生成包含新代码和字符串资源的二进制文件。
 
-有关内核模式 PCW 提供程序的示例，请参阅 GitHub 上的[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)存储库中的[内核计数器示例（Kcs）](https://go.microsoft.com/fwlink/p/?LinkId=617718) 。
+有关内核模式 PCW 提供程序的示例，请参阅 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中的[内核计数器示例（Kcs）](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/perfcounters/kcs) 。
+
+ 
+
+ 
+
+
+
+
+

@@ -10,42 +10,42 @@ keywords:
 - enumguid 命令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e94a41767a6fe440f0db0f45e1f47108d2f4d112
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 36450bb7e1d880260b09d4dfbd312b694cf54fbc
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56576480"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769697"
 ---
 # <a name="tracelog-enumguid-display"></a>Tracelog Enumguid 显示
 
-提交时**tracelog enumguid**命令时，Tracelog 显示一系列的跟踪提供程序正在运行并且已[注册](registered-provider.md)使用事件跟踪 Windows (ETW)。 显示是非常有用，但它通常被错误解释。
+提交**tracelog enumguid**命令时，tracelog 将显示正在运行且已使用 Windows 事件跟踪（ETW）[注册](registered-provider.md)的跟踪提供程序的列表。 显示非常有用，但通常不会被误解。
 
-### <a name="span-idwhichprovidersappearinthedisplayspanspan-idwhichprovidersappearinthedisplayspanwhich-providers-appear-in-the-display"></a><span id="which_providers_appear_in_the_display_"></span><span id="WHICH_PROVIDERS_APPEAR_IN_THE_DISPLAY_"></span>显示中显示哪些提供程序？
+### <a name="span-idwhich_providers_appear_in_the_display_spanspan-idwhich_providers_appear_in_the_display_spanwhich-providers-appear-in-the-display"></a><span id="which_providers_appear_in_the_display_"></span><span id="WHICH_PROVIDERS_APPEAR_IN_THE_DISPLAY_"></span>哪些提供程序显示在显示中？
 
-Tracelog enumguid 显示列出了一些跟踪会话，可以启用的提供程序，但它不是完整的列表。 它包括仅跟踪提供程序正在运行并且已向 ETW 注册。
+Tracelog enumguid 显示列出了一些您可以为跟踪会话启用的提供程序，但它不是完整列表。 它仅包括正在运行且已注册 ETW 的跟踪提供程序。
 
-显示不包括以下提供程序：
+显示内容不包括以下提供程序：
 
-通常跟踪提供程序可在系统上，但未注册，因为它们未运行。
+可在系统上使用但未注册的跟踪提供程序，通常是因为它们没有运行。
 
-跟踪提供程序，用于跟踪会话被启用，但不是当前正在运行。 (这些测试通常称为*预先启用*或*预注册*提供程序。)这包括如 Dll 的加载和卸载根据需要并不连续，运行的提供程序。
+跟踪提供程序已启用跟踪会话，但当前未运行。 （这通常称为*预启用*或*预注册*的提供程序。）这包括不连续运行的提供程序，如根据需要加载和卸载的 Dll。
 
-内置于 Windows，包括系统会话和提供程序提供程序的提供程序[全局记录器跟踪会话](global-logger-trace-session.md)并[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)。
+内置于 Windows 中的提供程序，包括用于系统会话的提供程序和用于[全局记录器跟踪会话](global-logger-trace-session.md)和[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)的提供程序。
 
-### <a name="span-idthelogmanqueryprovidersdisplayspanspan-idthelogmanqueryprovidersdisplayspanthe-logman-query-providers-display"></a><span id="the_logman_query_providers_display"></span><span id="THE_LOGMAN_QUERY_PROVIDERS_DISPLAY"></span>Logman 查询提供程序显示
+### <a name="span-idthe_logman_query_providers_displayspanspan-idthe_logman_query_providers_displayspanthe-logman-query-providers-display"></a><span id="the_logman_query_providers_display"></span><span id="THE_LOGMAN_QUERY_PROVIDERS_DISPLAY"></span>Logman 查询提供程序显示
 
-Tracelog enumguid 显示却大不相同的查询提供程序显示 Logman 中 (**logman 查询提供程序**)，尽管显示通常容易混淆。
+Tracelog enumguid 显示与查询提供程序在 Logman （**Logman 查询提供程序**）中的显示效果大不相同，但通常会混淆显示器。
 
-Logman (logman.exe) 是跟踪事件和性能计数器跟踪控制器。 它包含在 Windows XP 和更高版本的 Windows。
+Logman （Logman）是跟踪事件和性能计数器的跟踪控制器。 它包含在 Windows XP 和更高版本的 Windows 中。
 
-Logman 提供程序的查询 (**logman 查询提供程序**) 显示一系列已注册到 WMI 托管对象格式 (MOF) 文件的提供程序。 Logman 显示不包括检测的软件跟踪提供程序，除非它们已注册 WMI。
+Logman 提供程序查询（**Logman 查询提供**程序）显示已向 WMI 注册托管对象格式（MOF）文件的提供程序的列表。 Logman 显示不包含检测到的软件跟踪的提供程序，除非它们也已注册到 WMI。
 
-开发人员想要帮助用户有时会查找其提供程序注册他们的 MOF 文件只是为了使 Logman 显示中显示的提供程序。 遗憾的是，Logman 查询提供程序显示和 Tracelog enumguid 显示器都不是在系统上的所有跟踪提供程序的完整列表。 Logman 有关的详细信息，请参阅帮助和支持中心中的"Logman"。
+想要帮助用户查找其提供程序的开发人员有时只注册其 MOF 文件，以使提供程序出现在 Logman 显示器中。 遗憾的是，Logman 查询提供程序和 Tracelog enumguid 显示都不显示系统上所有跟踪提供程序的完整列表。 有关 Logman 的详细信息，请参阅 "帮助和支持中心" 中的 "Logman"。
 
-### <a name="span-idelementsoftheenumguiddisplayspanspan-idelementsoftheenumguiddisplayspanelements-of-the-enumguid-display"></a><span id="elements_of_the_enumguid_display"></span><span id="ELEMENTS_OF_THE_ENUMGUID_DISPLAY"></span>元素的 Enumguid 显示
+### <a name="span-idelements_of_the_enumguid_displayspanspan-idelements_of_the_enumguid_displayspanelements-of-the-enumguid-display"></a><span id="elements_of_the_enumguid_display"></span><span id="ELEMENTS_OF_THE_ENUMGUID_DISPLAY"></span>Enumguid 显示元素
 
-Tracelog enumguid 显示中的表包括以下列。
+Tracelog enumguid 显示中的表包含以下列。
 
 <table>
 <colgroup>
@@ -55,41 +55,41 @@ Tracelog enumguid 显示中的表包括以下列。
 <thead>
 <tr class="header">
 <th align="left">列标题</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>guid</strong></p></td>
-<td align="left"><p><a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">控制 GUID</a>跟踪提供程序</p></td>
+<td align="left"><p><strong>Guid.empty</strong></p></td>
+<td align="left"><p>跟踪提供程序的<a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">控件 GUID</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Enabled</strong></p></td>
-<td align="left"><p>显示提供程序当前是否启用了 (<strong>，则返回 TRUE</strong>) 或已注册但未启用 (<strong>FALSE</strong>)。</p></td>
+<td align="left"><p>显示提供程序当前是否已启用（<strong>TRUE</strong>）或已注册但未启用（<strong>FALSE</strong>）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>LoggerId</strong></p></td>
 <td align="left"><p>标识跟踪会话。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Level</strong></p></td>
-<td align="left"><p>当前设置为提供程序的级别。 仅在启用的提供程序时才有效。</p></td>
+<td align="left"><p><strong>级别</strong></p></td>
+<td align="left"><p>当前为提供程序设置的级别。 仅在启用了提供程序时有效。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>标志</strong></p></td>
-<td align="left"><p>当前设置为提供程序的标志。 仅在启用的提供程序时才有效。</p></td>
+<td align="left"><p><strong>标记</strong></p></td>
+<td align="left"><p>当前为提供程序设置的标志。 仅在启用了提供程序时有效。</p></td>
 </tr>
 </tbody>
 </table>
 
  
-如果提供程序是已注册但未启用，则它显示在 enumguid 显示，但在其条目**已启用**列为**FALSE**。
+如果提供程序已注册但未启用，则它显示在 enumguid 显示器中，但在 "**已启用**" 列中其条目为**FALSE**。
 
-如果提供程序已启用，但当前未运行且为，因此，未注册，则它不会不出现在 enumguid 显示。
+如果提供程序已启用但当前未运行，并且未注册，则它不会显示在 enumguid 显示器中。
 
-### <a name="span-idsampleenumguiddisplayspanspan-idsampleenumguiddisplayspansample-enumguid-display"></a><span id="sample_enumguid_display"></span><span id="SAMPLE_ENUMGUID_DISPLAY"></span>示例 Enumguid 显示
+### <a name="span-idsample_enumguid_displayspanspan-idsample_enumguid_displayspansample-enumguid-display"></a><span id="sample_enumguid_display"></span><span id="SAMPLE_ENUMGUID_DISPLAY"></span>示例 Enumguid 显示
 
-以下 enumguid 显示已从运行 Windows Server 2003 的计算机复制。 仅显示已注册并正在运行的提供程序。 一个提供程序，Tracedrv 示例驱动程序，可用于跟踪。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)，为软件跟踪设计的一个示例驱动程序现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+以下 enumguid 显示已从运行 Windows Server 2003 的计算机复制。 显示的将列出已注册并正在运行的提供程序。 为跟踪启用了一个提供程序（Tracedrv 示例驱动程序）。 [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，位于 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中。
 
 ```
 c:\Tracelog>tracelog -enumguid

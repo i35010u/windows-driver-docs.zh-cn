@@ -8,12 +8,12 @@ keywords:
 - SDV WDK，限制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 143276aaa7c9235343a78a641c0432a5eedfe7f2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3520a0c33bfcecc3b2a074efe3a485b91aec5dfe
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839316"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769725"
 ---
 # <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静态驱动程序验证程序常规工具和技术限制
 
@@ -38,7 +38,7 @@ SDV[验证引擎](verification-engine.md)具有可防止其正确解释某些驱
     static DRIVER_UNLOAD Unload;
     ```
 
-    Sdv 不会包含常用 *\_DriverUnload*的常用条目。
+    Sdv 不会包含*有趣 \_ DriverUnload*的常用条目。
 
     ```
     #define fun_DriverUnload Unload
@@ -94,7 +94,7 @@ SDV[验证引擎](verification-engine.md)具有可防止其正确解释某些驱
 
     对于**try/except**和**try/FINALLY**语句，SDV**将忽略 leave**语句。
 
-    对于**try/except**和**try/finally**语句， **try**块的跳出会阻止分析**except**或**finally**语句。 有关如何重写以便可以使用 leave 语句的信息，请参阅有关编译器警告的主题[C6242](https://go.microsoft.com/fwlink/p/?linkid=153317)。
+    对于**try/except**和**try/finally**语句， **try**块的跳出会阻止分析**except**或**finally**语句。 有关如何重写以便可以使用 leave 语句的信息，请参阅有关编译器警告的主题[C6242](https://docs.microsoft.com/cpp/code-quality/c6242?view=vs-20)。
 
 -   忽略指针算法。 例如，它会遗漏指针递增或递减的情况。 此限制可能导致误报和误报结果。
 

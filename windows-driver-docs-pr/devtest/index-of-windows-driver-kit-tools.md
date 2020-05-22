@@ -20,19 +20,19 @@ keywords:
 - Guidgen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 33cdaf80ef88dd61f3f8c1971366bc7a0058ce0d
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 8ba7bd8c3943a7b40e3f8b231c9dd9c197b87f8f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209457"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769337"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows 驱动程序工具包工具的索引
 
 
 本主题提供有关 Windows 驱动程序工具包（WDK）中包含的工具的基本信息。 本主题还包括对驱动程序开发有用的其他工具的参考。 这些其他工具要么作为操作系统的一部分提供，要么作为单独的下载提供。 有关每个工具的详细信息，请参阅本主题介绍该工具的文档。
 
-有关如何获取最新 WDK 的信息，请参阅[Windows 驱动程序工具包（WDK）](https://go.microsoft.com/fwlink/p/?linkid=261797)。
+有关如何获取最新 WDK 的信息，请参阅[Windows 驱动程序工具包（WDK）](https://developer.microsoft.com/windows/hardware/)。
 
 本主题包括以下内容：
 
@@ -54,11 +54,11 @@ ms.locfileid: "75209457"
 -   [传感器](#tech-sensors)
 -   [所有驱动程序](#tech-all)
 
-**请注意**  Visual Studio 环境变量% WindowsSdkDir% 表示安装了此版本的 WDK 的 Windows 工具包目录的路径，例如，C：\\Program Files （x86）\\Windows 工具包\\8.1。
+**注意**   Visual Studio 环境变量% WindowsSdkDir% 表示安装了此版本的 WDK 的 Windows 工具包目录的路径，例如，C： \\ Program Files （x86） \\ Windows 工具包 \\ 8.1。
 
  
 
-### 技术：音频/视频驱动程序<a name="tech-audio-video"></a>
+### <a name="technology-audio--video-drivers"></a>技术：音频/视频驱动程序<a name="tech-audio-video"></a>
 
 <table>
 <colgroup>
@@ -86,8 +86,8 @@ ms.locfileid: "75209457"
 <td align="left"><p>%WindowsSdkDir%\tools\x86\graphedt.exe</p>
 <p>%WindowsSdkDir%\tools\x64\graphedt.exe</p></td>
 <td align="left"><p>生成筛选器关系图以测试流式传输音频/视频捕获驱动程序。</p>
-<p>关于</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=9230" data-raw-source="[Overview of GraphEdit](https://go.microsoft.com/fwlink/p/?linkid=9230)">GraphEdit 概述</a></p></td>
+<p>文档：</p>
+<p><a href="https://docs.microsoft.com/windows/win32/directshow/simulating-graph-building-with-graphedit" data-raw-source="[Overview of GraphEdit](https://docs.microsoft.com/windows/win32/directshow/simulating-graph-building-with-graphedit)">GraphEdit 概述</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KSStudio （KsStudio）</p>
@@ -95,7 +95,7 @@ ms.locfileid: "75209457"
 <td align="left"><p>%WindowsSdkDir%\tools\x86\KsStudio.exe</p>
 <p>%WindowsSdkDir%\tools\x64\KsStudio.exe</p>
 <div class="alert">
-<strong>请注意</strong>   此工具必须由具有管理员权限的用户运行。
+<strong>注意</strong>   此工具必须由具有管理员权限的用户运行。
 </div>
 <div>
  
@@ -111,14 +111,14 @@ ms.locfileid: "75209457"
 <td align="left"><p>%WindowsSdkDir%\tools\x86\Usbview.exe</p>
 <p>%WindowsSdkDir%\tools\x64\Usbview.exe</p></td>
 <td align="left"><p>枚举 USB 主机控制器、USB 集线器和连接的 USB 设备，并可以从注册表查询设备信息，并通过 USB 请求将设备查询到设备。</p>
-<p>可以从代码库中获取 USB 设备查看器的源代码，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=256205" data-raw-source="[USBVIEW Sample Application](https://go.microsoft.com/fwlink/p/?linkid=256205)">USBVIEW 示例应用程序</a>。</p></td>
+<p>可以从代码库中获取 USB 设备查看器的源代码，请参阅<a href="https://docs.microsoft.com/samples/microsoft/windows-driver-samples/usbview-sample-application/" data-raw-source="[USBVIEW Sample Application](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/usbview-sample-application/)">USBVIEW 示例应用程序</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### 技术：蓝牙驱动程序<a name="tech-bluetooth"></a>
+### <a name="technology-bluetooth-drivers"></a>技术：蓝牙驱动程序<a name="tech-bluetooth"></a>
 
 <table>
 <colgroup>
@@ -148,7 +148,7 @@ ms.locfileid: "75209457"
 
  
 
-### 技术： Windows 图像获取（WIA）驱动程序<a name="tech_wia"></a>
+### <a name="technology-windows-image-acquisition-wia-drivers"></a>技术： Windows 图像获取（WIA）驱动程序<a name="tech_wia"></a>
 
 <table>
 <colgroup>
@@ -171,7 +171,7 @@ ms.locfileid: "75209457"
 <p>%WindowsSdkDir%\tools\x64\wiadbgcfg.exe</p></td>
 <td align="left"><p>为 WIA 驱动程序启用日志记录（Windows Server 2008 和更高版本的 Windows）。</p>
 <div class="alert">
-<strong>请注意</strong>，   适用于 Windows 的早期版本，请使用 WIALogCfg。
+<strong>注意</strong>   对于早期版本的 Windows，请使用 WIALogCfg。
 </div>
 <div>
  
@@ -220,7 +220,7 @@ ms.locfileid: "75209457"
 
  
 
-### 技术： Windows 便携设备（WPD）驱动程序<a name="tech-wpd"></a>
+### <a name="technology-windows-portable-devices-wpd-drivers"></a>技术： Windows 便携设备（WPD）驱动程序<a name="tech-wpd"></a>
 
 <table>
 <colgroup>
@@ -243,8 +243,8 @@ ms.locfileid: "75209457"
 <p>%WindowsSdkDir%\tools\x86\WpdDeviceInspector.exe</p></td>
 <td align="left"><p>查询 WPD 驱动程序，并生成全面的 HTML 报告，用于描述设备及其功能。 例如，你可以使用它来检索受支持的设备命令和对象的列表。 此工具将生成每个对象支持的所有属性的列表。</p>
 <p>WDK 文档：</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows 便携设备</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD 驱动程序开发工具</a></p></td>
+<p><a href="https://docs.microsoft.com/windows/win32/windows-portable-devices" data-raw-source="[Windows Portable Devices](https://docs.microsoft.com/windows/win32/windows-portable-devices)">Windows 便携设备</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver" data-raw-source="[WPD Driver Development Tools](https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver)">WPD 驱动程序开发工具</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WpdInfo （WpdInfo）</p>
@@ -253,24 +253,24 @@ ms.locfileid: "75209457"
 <p>%WindowsSdkDir%\tools\x86\WpdInfo.exe</p></td>
 <td align="left"><p>执行常见的 WPD 操作，例如：打开和关闭设备、在设备上创建或删除对象以及发出设备命令。</p>
 <p>WDK 文档：</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows 便携设备</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD 驱动程序开发工具</a></p></td>
+<p><a href="https://docs.microsoft.com/windows/win32/windows-portable-devices" data-raw-source="[Windows Portable Devices](https://docs.microsoft.com/windows/win32/windows-portable-devices)">Windows 便携设备</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver" data-raw-source="[WPD Driver Development Tools](https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver)">WPD 驱动程序开发工具</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Microsoft 网络监视器（NetMon）</p>
 <p><strong>WDK 工具：</strong>不</p></td>
-<td align="left"><p>下载 Microsoft 网络监视器（<a href="https://go.microsoft.com/fwlink/p/?linkid=248501" data-raw-source="[here](https://go.microsoft.com/fwlink/p/?linkid=248501)">此处</a>为 NetMon。</p></td>
+<td align="left"><p>下载 Microsoft 网络监视器（<a href=" https://www.microsoft.com/download/details.aspx?displaylang=en&id=4865" data-raw-source="[here]( https://www.microsoft.com/download/details.aspx?displaylang=en&id=4865)">此处</a>为 NetMon。</p></td>
 <td align="left"><p>显示 WPD 组件中的跟踪信息。 此工具取代了以前版本的 WDK 中随附的 WpdMon。</p>
 <p>WDK 文档：</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows 便携设备</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD 驱动程序开发工具</a>，请参阅<a href="https://docs.microsoft.com/previous-versions/hh451296(v=vs.85)" data-raw-source="[Using the Network Monitor Tool](https://docs.microsoft.com/previous-versions/hh451296(v=vs.85))">使用网络监视器工具</a>。</p></td>
+<p><a href="https://docs.microsoft.com/windows/win32/windows-portable-devices" data-raw-source="[Windows Portable Devices](https://docs.microsoft.com/windows/win32/windows-portable-devices)">Windows 便携设备</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver" data-raw-source="[WPD Driver Development Tools](https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver)">WPD 驱动程序开发工具</a>，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/portable/using-the-netmon-tool" data-raw-source="[Using the Network Monitor Tool](https://docs.microsoft.com/windows-hardware/drivers/portable/using-the-netmon-tool)">使用网络监视器工具</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### 技术：打印机驱动程序<a name="tech-printer"></a>
+### <a name="technology-printer-drivers"></a>技术：打印机驱动程序<a name="tech-printer"></a>
 
 <table>
 <colgroup>
@@ -312,7 +312,7 @@ ms.locfileid: "75209457"
 <td align="left"><p>验证 XPS 文件与 XPS 和 OPC 规范的符合性。</p>
 <p>有关命令选项的信息，请键入</p>
 <p><strong>isxps.exe/？</strong> 在命令提示符窗口中。</p>
-<p>有关详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=150004" data-raw-source="[isXPS Conformance Tool](https://go.microsoft.com/fwlink/p/?linkid=150004)">Isxps.exe 一致性工具</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/aa348104(v=vs.110)" data-raw-source="[isXPS Conformance Tool](https://docs.microsoft.com/previous-versions/aa348104(v=vs.110))">Isxps.exe 一致性工具</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Looksgood （Looksgood）</p>
@@ -330,8 +330,8 @@ ms.locfileid: "75209457"
 <p>%WindowsSdkDir%\tools\x86\makentf.exe</p></td>
 <td align="left"><p>将 Adobe 字体指标（AFM）文件和中文字体 AFM 文件转换为 Windows 字体文件（. contoso.ntf）。</p>
 <p>WDK 文档：</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files" data-raw-source="[Converting AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files)">将 AFM 文件转换为 CONTOSO.NTF 文件</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files)">将东亚 AFM 文件转换为 CONTOSO.NTF 文件</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files" data-raw-source="[Converting AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files)">将 AFM 文件转换为 NTF 文件</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files)">将东亚版 AFM 文件转换为 NTF 文件</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PPDCheck （Ppdcheck）</p>
@@ -365,7 +365,7 @@ ms.locfileid: "75209457"
 
  
 
-### 技术：传感器<a name="tech-sensors"></a>
+### <a name="technology-sensors"></a>技术：传感器<a name="tech-sensors"></a>
 
 <table>
 <colgroup>
@@ -384,8 +384,8 @@ ms.locfileid: "75209457"
 <tr class="odd">
 <td align="left"><p>传感器诊断工具（sensordiagnostictool）</p>
 <p><strong>WDK 工具：</strong>是的</p></td>
-<td align="left"><p>%WindowsSdkDir%\tools\x64&lt;/p&gt;
-<p>%WindowsSdkDir%\tools\x86&lt;/p&gt;</td>
+<td align="left"><p>%WindowsSdkDir%\tools\x64 &lt; /p&gt;
+<p>%WindowsSdkDir%\tools\x86 &lt; /p&gt;</td>
 <td align="left"><p>测试传感器和位置功能的驱动程序、固件和硬件。 该工具调用传感器和位置 API 来测试数据检索、事件处理、报告间隔、更改敏感度、属性检索。</p>
 <p>WDK 文档：</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool" data-raw-source="[Testing sensor functionality with the Sensor Diagnostic Tool](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)">通过传感器诊断工具测试传感器功能</a></p></td>
@@ -395,7 +395,7 @@ ms.locfileid: "75209457"
 
  
 
-### 技术：所有驱动程序<a name="tech-all"></a>
+### <a name="technology-all-drivers"></a>技术：所有驱动程序<a name="tech-all"></a>
 
 <table>
 <colgroup>
@@ -423,9 +423,9 @@ ms.locfileid: "75209457"
 <td align="left"><p>驱动程序的代码分析</p>
 <p><strong>WDK 工具：</strong>是的</p></td>
 <td align="left"><p>代码分析工具包含在 Visual Studio 中。 安装 WDK 时，会添加驱动程序特定的组件。</p></td>
-<td align="left"><p>检测 C 和C++编码错误的静态验证工具。 此版本专用于检测内核模式驱动程序中的错误。</p>
+<td align="left"><p>检测 C 和 c + + 编码错误的静态验证工具。 此版本专用于检测内核模式驱动程序中的错误。</p>
 <div class="alert">
-<strong>请注意</strong>，在以前版本的 WDK 中  ，此功能是 OACR 的一部分，也可以作为独立工具 PREfast 用于驱动程序。 从 Visual Studio 2012 开始，该功能现已集成到 Visual Studio 中。
+<strong>注意</strong>   在 WDK 的以前版本中，此功能是 OACR 的一部分，也可以作为独立工具 PREfast 用于驱动程序。 从 Visual Studio 2012 开始，该功能现已集成到 Visual Studio 中。
 </div>
 <div>
  
@@ -473,8 +473,8 @@ ms.locfileid: "75209457"
 <td align="left"><p>%WindowsSdkDir%\tools\x64\DC2WMIParser.exe</p>
 <p>%WindowsSdkDir%\tools\x86\DC2WMIParser.exe</p></td>
 <td align="left"><p>DC2WMIParser 是一种工具，用于收集驱动程序验证器创建的 WMI IRP 记录，并将此日志转换为文本文件。</p>
-<p>关于</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?LinkId=698758" data-raw-source="[IRP Logging](https://go.microsoft.com/fwlink/p/?LinkId=698758)">IRP 日志记录</a></p></td>
+<p>文档：</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/irp-logging" data-raw-source="[IRP Logging](https://docs.microsoft.com/windows-hardware/drivers/devtest/irp-logging)">IRP 日志记录</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>依赖关系查看（取决于 .exe）</p>
@@ -514,7 +514,7 @@ ms.locfileid: "75209457"
 <td align="left"><p>驱动程序验证日志（DVL）</p>
 <p><strong>WDK 工具：</strong>是的</p></td>
 <td align="left"><p>需要 Microsoft Visual Studio 和 WDK。 在 "<strong>驱动程序</strong>" 菜单中，单击 "<strong>创建驱动程序验证日志 ...</strong> "。</p></td>
-<td align="left"><p>对于所有适用的驱动程序提交， <a href="https://go.microsoft.com/fwlink/p/?linkid=227016" data-raw-source="[Windows Server 2012 Hardware Certification Program](https://go.microsoft.com/fwlink/p/?linkid=227016)">Windows Server 2012 硬件认证计划</a>需要驱动程序验证日志（DVL）。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Creating a Driver Verification Log](https://docs.microsoft.com/windows-hardware/drivers)">创建驱动程序验证日志</a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae" data-raw-source="[Static Tools Logo Test](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)">静态工具徽标测试</a>要求对所有适用的驱动程序提交使用驱动程序验证日志（DVL）。 DVL 包含代码分析的结果和静态驱动程序验证程序日志文件的摘要。 请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-verification-log" data-raw-source="[Creating a Driver Verification Log](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-verification-log)">创建驱动程序验证日志</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>增强的存储证书管理工具（EhStorCertMgrCmd）</p>
@@ -531,13 +531,6 @@ ms.locfileid: "75209457"
 <td align="left"><p>%WindowsSdkDir%\bin\x64\ECManGen.exe</p>
 <p>%WindowsSdkDir%\bin\x86\ECManGen.exe</p></td>
 <td align="left"><p>用于从头开始创建事件或性能计数器清单（* man）的工具，无需使用 XML 标记。 有关创建清单文件的信息，请参阅<a href="https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)">编写检测清单（Windows）</a>部分和<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">向内核模式驱动程序添加事件跟踪</a>。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Guidgen.exe （Guidgen.exe）</p>
-<p><strong>WDK 工具：</strong>不</p></td>
-<td align="left"><p>可从<a href="https://go.microsoft.com/fwlink/p/?linkid=121586" data-raw-source="[Microsoft Exchange Server GUID Generator](https://go.microsoft.com/fwlink/p/?linkid=121586)">Microsoft Exchange SERVER GUID 生成器</a>下载</p></td>
-<td align="left"><p>生成全局唯一标识符（GUID），您可以使用它们来标识类、对象和接口。 生成的 GUID 将以四种格式之一复制到剪贴板，以便可以将其插入到源代码中。</p>
-<p>GUIDGEN.EXE （包含在下载包中）</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Inf2Cat （Inf2cat）</p>
@@ -584,7 +577,7 @@ ms.locfileid: "75209457"
 <p><strong>WDK 工具：</strong>不</p></td>
 <td align="left"><p>随 Visual Studio 一起安装</p></td>
 <td align="left"><p>生成 Microsoft WDK 中提供的示例、驱动程序和关联的软件组件。</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262804" data-raw-source="[MSBuild]( https://go.microsoft.com/fwlink/p/?linkid=262804)">MSBuild</a></p></td>
+<p><a href="https://docs.microsoft.com/visualstudio/msbuild/msbuild?view=vs-2015" data-raw-source="[MSBuild]( https://docs.microsoft.com/visualstudio/msbuild/msbuild?view=vs-2015)">MSBuild</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PnpCpu （PnPCpu）</p>
@@ -667,7 +660,7 @@ ms.locfileid: "75209457"
 <td align="left"><p>%WindowsSdkDir%\tools\SDV</p>
 <p></p>
 <div class="alert">
-<strong>请注意</strong>  从 Visual Studio 中的 "<strong>驱动程序</strong>" 菜单启动 "静态驱动程序验证程序"。
+<strong>注意</strong>   从 Visual Studio 中的 "<strong>驱动程序</strong>" 菜单启动 "静态驱动程序验证程序"。
 </div>
 <div>
  
@@ -725,13 +718,13 @@ ms.locfileid: "75209457"
 <td align="left"><p>运行 Windows 软件跟踪预处理器（WPP）。</p>
 <p>WDK 文档：</p>
 <p><a href="wpp-preprocessor.md" data-raw-source="[WPP Preprocessor](wpp-preprocessor.md)">WPP 预处理器</a></p>
-<p><a href="survey-of-software-tracing-tools.md" data-raw-source="[Survey of Software Tracing Tools](survey-of-software-tracing-tools.md)">软件跟踪工具的调查</a></p></td>
+<p><a href="survey-of-software-tracing-tools.md" data-raw-source="[Survey of Software Tracing Tools](survey-of-software-tracing-tools.md)">软件跟踪工具调查</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WDF 测试器</p>
 <p><strong>WDK 工具：</strong>是的</p></td>
-<td align="left"><p>%WindowsSdkDir%\tools\x64&lt;/p&gt;
-<p>%WindowsSdkDir%\tools\x86&lt;/p&gt;</td>
+<td align="left"><p>%WindowsSdkDir%\tools\x64 &lt; /p&gt;
+<p>%WindowsSdkDir%\tools\x86 &lt; /p&gt;</td>
 <td align="left"><p>一组可用于测试、验证和调试 WDF 驱动程序的工具。 工具集提供可在脚本或已编译的应用程序中使用的 WMI 编程接口。</p>
 <p>WDK 文档：</p>
 <p><a href="wdftester--wdf-driver-testing-toolset.md" data-raw-source="[WdfTester: WDF Driver Testing Toolset](wdftester--wdf-driver-testing-toolset.md)">WdfTester： WDF 驱动程序测试工具集</a></p></td>
@@ -743,7 +736,7 @@ ms.locfileid: "75209457"
 <p>%WindowsSdkDir%\tools\x86\wdfverifier.exe</p></td>
 <td align="left"><p>为 KMDF 和 UMDF 驱动程序的框架验证程序提供了一个易于使用的界面。</p>
 <p>WDK 文档：</p>
-<p><a href="wdf-verifier-control-application.md" data-raw-source="[WDF Verifier Control Application](wdf-verifier-control-application.md)">WDF 验证程序控件应用程序</a></p></td>
+<p><a href="wdf-verifier-control-application.md" data-raw-source="[WDF Verifier Control Application](wdf-verifier-control-application.md)">WDF 验证程序控制应用程序</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>设备上的 Web 服务（WSD）基本互操作性工具（WSDBIT）</p>
@@ -754,7 +747,7 @@ ms.locfileid: "75209457"
 <p><strong>WSDBIT 服务器：</strong></p>
 <p>%WindowsSdkDir%\tools\x64\ wsdbit_server .exe</p>
 <p>%WindowsSdkDir%\tools\x86\ wsdbit_server .exe</p></td>
-<td align="left"><p>验证<a href="https://go.microsoft.com/fwlink/p/?linkid=81255" data-raw-source="[Device Profile for Web Services (DPWS)](https://go.microsoft.com/fwlink/p/?linkid=81255)">Web 服务（DPWS）的设备配置文件</a>实现是否适用于 WSDAPI。</p>
+<td align="left"><p>验证 Web 服务（DPWS）的设备配置文件实现是否适用于 WSDAPI。</p>
 <p>WDK 文档：</p>
 <p><a href="wsdapi-basic-interoperability-tool.md" data-raw-source="[WSD Interoperability Tool](wsdapi-basic-interoperability-tool.md)">WSD 互操作性工具</a></p></td>
 </tr>
@@ -784,7 +777,7 @@ ms.locfileid: "75209457"
 <td align="left"><p>基于 Web 服务协定自动生成代理和存根。 您可以使用此工具来创建客户端应用程序。 不过，你可以使用它来测试或创建用户模式驱动程序。</p>
 <p>验证二进制 MOF 文件（. bmf）中指定的类、属性、方法和事件对于 WMI 使用是否有效。 生成 MOF 支持文件。</p>
 <p>Windows SDK：</p>
-<p>请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=81407" data-raw-source="[Web Services on Devices](https://go.microsoft.com/fwlink/p/?linkid=81407)">Web 服务设备</a>部分</p></td>
+<p>请参阅<a href="https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal" data-raw-source="[Web Services on Devices](https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal)">Web 服务设备</a>部分</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WSDDebug_client 和 WSDDebug_host</p>
@@ -797,14 +790,14 @@ ms.locfileid: "75209457"
 <p>%WindowsSdkDir%\bin\x86\ WSDDebug_host .exe</p></td>
 <td align="left"><p>这些工具是可以用来对设备或应用程序进行故障排除的软设备和客户端。</p>
 <p>Windows SDK：</p>
-<p>请参阅<a href="https://go.microsoft.com/fwlink/p/?linkid=81407" data-raw-source="[Web Services on Devices](https://go.microsoft.com/fwlink/p/?linkid=81407)">Web 服务设备</a>部分</p></td>
+<p>请参阅<a href="https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal" data-raw-source="[Web Services on Devices](https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal)">Web 服务设备</a>部分</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### WDK 中用于 Windows 8.1 的新增功能<a name="what-s-new-in-the-wdk-for-windows8-1"></a>
+### <a name="whats-new-in-the-wdk-for-windows81"></a>WDK 中用于 Windows 8.1 的新增功能<a name="what-s-new-in-the-wdk-for-windows8-1"></a>
 
 已在 WDK 8.1 中添加或更改以下工具：
 
@@ -814,7 +807,7 @@ ms.locfileid: "75209457"
 -   [PwrTest](pwrtest.md)—更新的文档、新的测试方案，包括对连接待机电源状态的支持。
 -   [Tracelog](tracelog.md)—新选项。
 
-### Windows 8 的 WDK 新增功能<a name="what-s-new-in-the-wdk-for-windows8"></a>
+### <a name="whats-new-in-the-wdk-for-windows8"></a>Windows 8 的 WDK 新增功能<a name="what-s-new-in-the-wdk-for-windows8"></a>
 
 以下工具已添加到适用于 Windows 8 的 WDK：
 
@@ -824,7 +817,7 @@ ms.locfileid: "75209457"
 
 -   传感器诊断工具（sensordiagnostictool）
 
-### 适用于 Windows 8 的 WDK 中发生了哪些更改<a name="what-s-changed-in-the-wdk-for-windows8"></a>
+### <a name="whats-changed-in-the-wdk-for-windows8"></a>适用于 Windows 8 的 WDK 中发生了哪些更改<a name="what-s-changed-in-the-wdk-for-windows8"></a>
 以下工具位于适用于 Windows 7 的 Microsoft WDK 中，但在 Windows 8 的 WDK 中未包含。
 
 -   Windows Biometric Framework 工具（BioTest、WBDIDriverTest）
@@ -833,7 +826,7 @@ ms.locfileid: "75209457"
 
 -   IoSpy 和 IoAttack （IoSpyCmd，IoAttack）。 现在是设备基础测试的一部分。
 
--   不再支持 Kernrate （Kernrate） Kernrate。 而是使用[Windows 性能分析工具包](https://go.microsoft.com/fwlink/p/?linkid=294280)。
+-   不再支持 Kernrate （Kernrate） Kernrate。 而是使用[Windows 性能工具包](https://docs.microsoft.com/windows-hardware/test/wpt/)。
 
 -   Microsoft 自动代码审核（OACR）（驱动程序组件现在是 Visual Studio 中的代码分析工具的一部分。）
 
@@ -851,7 +844,7 @@ WDK 8.1 支持开发在这些版本的 Windows 上运行的驱动程序：
 
 -   Windows Server 2012 R2 和 Windows Server 2012
 
--   Windows 7
+-   Windows 7
 
 -   Windows Server 2008 R2
 
@@ -863,7 +856,7 @@ WDK 8.1 支持开发在这些版本的 Windows 上运行的驱动程序：
 
 -   Windows Server 2012 R2 和 Windows Server 2012
 
--   Windows 7
+-   Windows 7
 
 -   Windows Server 2008 R2
 

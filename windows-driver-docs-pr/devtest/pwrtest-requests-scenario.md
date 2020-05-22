@@ -4,12 +4,12 @@ description: PwrTest 请求方案记录系统中正在运行的进程和服务�
 ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d2d4606985b66b0dc6d5ae4721655881dd4713
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2685134af91507fdf9b08bd69977825db0c9691a
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839332"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769657"
 ---
 # <a name="pwrtest-requests-scenario"></a>PwrTest 请求方案
 
@@ -18,7 +18,7 @@ PwrTest 请求方案记录系统中正在运行的进程和服务的电源请求
 
 你可以使用 "PwrTest 请求" 方案诊断计算机不会进入睡眠状态的原因或监视器保持打开状态的原因。
 
-你还可以使用管理员工具[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568) （powercfg）来实现此目的（**powercfg/requests**）。 PowerCfg 包含在 Windows 中（Windows\\System32 目录）。 但是，Powercfg 仅捕获在运行该工具时处于活动状态的电源请求。 与此相反，PwrTest 请求方案在指定时间运行，并在创建和关闭时记录电源请求，因此在运行该工具时，请求无需处于活动状态。
+你还可以使用管理员工具[PowerCfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options) （powercfg）来实现此目的（**powercfg/requests**）。 PowerCfg 包含在 Windows 中（Windows \\ System32 目录）。 但是，Powercfg 仅捕获在运行该工具时处于活动状态的电源请求。 与此相反，PwrTest 请求方案在指定时间运行，并在创建和关闭时记录电源请求，因此在运行该工具时，请求无需处于活动状态。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>语法
 
@@ -27,7 +27,7 @@ PwrTest 请求方案记录系统中正在运行的进程和服务的电源请求
 pwrtest /requests [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span> **/t：** <em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span>**/t：**<em>n</em>  
 指定应用场景运行的总时间（分钟）（ *n*的默认值为30分钟）。
 
 **示例**
@@ -96,20 +96,20 @@ pwrtest /requests  /t:60
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>&lt;PowerRequests&gt;</strong></td>
-<td align="left"><p>包含所有不同的电源请求事件。 PwrTest 日志文件中只能有一个<strong>&lt;PowerRequests&gt;</strong>元素。</p></td>
+<td align="left"><p>包含所有不同的电源请求事件。 PwrTest 日志文件中只能有一个<strong> &lt; PowerRequests &gt; </strong>元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;时间戳&gt;</strong></td>
+<td align="left"><strong>&lt;标志&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;调用方&gt;</strong></td>
+<td align="left"><strong>&lt;呼叫&gt;</strong></td>
 <td align="left"><p>请求者的名称。</p></td>
 </tr>
 <tr class="even">
@@ -136,7 +136,7 @@ pwrtest /requests  /t:60
 <td align="left"><p>调用方的会话 ID （如果为）。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;旧&gt;</strong></td>
+<td align="left"><strong>&lt;旧的&gt;</strong></td>
 <td align="left"><p>如果调用方使用了旧的<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"><strong>SetThreadExecutionState 函数（windows）</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)"><strong>PoSetSystemState</strong></a> api 或较新的<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)"><strong>PowerSetRequest 函数（windows）</strong></a>或<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest)"><strong>PoSetPowerRequest</strong></a> api，则报告 True 或 False。</p></td>
 </tr>
 <tr class="even">
@@ -201,7 +201,7 @@ pwrtest /requests  /t:60
 
 [PwrTest 语法](pwrtest-syntax.md)
 
-[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568)
+[PowerCfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)
 
  
 

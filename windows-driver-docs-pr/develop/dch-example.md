@@ -4,24 +4,24 @@ description: 介绍了 DCHU 驱动程序示例如何应用 DCH 设计原则（�
 ms.assetid: f46f0ea6-d855-49d2-8c09-a6ad56084742
 ms.date: 04/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f173334421b5a41aac7ca65c64d35b6925bc561
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: d0894525905e2ecbf5fc3e635a17350fbb91b48e
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270468"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435379"
 ---
 # <a name="dch-compliant-driver-package-example"></a>符合 DCH 的驱动程序包示例
 
-本主题介绍了 [DCHU 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)如何应用 [DCH 设计原则](dch-design-principles-best-practices.md)。  可以将它用作向你自己的驱动程序包应用 DCH 设计原则的模型。  
+本主题介绍了 [DCHU 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)如何应用 [DCH 设计原则](dch-principles-best-practices.md)。  可以将它用作向你自己的驱动程序包应用 DCH 设计原则的模型。  
 
 如果你需要此示例存储库的本地副本，请从 [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) 进行克隆。
 
-此示例的某些部分可能使用只在特定版本的 Windows 10 及更高版本上可用的指令和 API。  若要了解支持给定指令的 OS 版本，请参阅 [INF 指令](../install/inf-directives)。
+此示例的某些部分可能使用只在特定版本的 Windows 10 及更高版本上可用的指令和 API。  若要了解支持给定指令的 OS 版本，请参阅 [INF 指令](../install/inf-directives.md)。
 
 ## <a name="prerequisites"></a>必备条件
 
-在阅读本部分之前，应先熟悉 [DCH 设计原则](dch-design-principles-best-practices.md)。
+在阅读本部分之前，应先熟悉 [DCH 设计原则](dch-principles-best-practices.md)。
 
 ## <a name="overview"></a>概述
 

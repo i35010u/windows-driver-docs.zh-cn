@@ -4,12 +4,12 @@ description: 静态驱动程序验证程序 KMDF 函数声明
 ms.assetid: 1623f3a4-e318-41b3-bbcf-d443202f31e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de7ad984002ae400f44c22793d64aee8930f6303
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8f83a1cc992ea8a506b9226afdde03e95615b63e
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839313"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769529"
 ---
 # <a name="static-driver-verifier-kmdf-function-declarations"></a>静态驱动程序验证程序 KMDF 函数声明
 
@@ -476,9 +476,9 @@ EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 
 ### <a name="span-idfunction_role_types_and_i_o_queuesspanspan-idfunction_role_types_and_i_o_queuesspanfunction-role-types-and-io-queues"></a><span id="function_role_types_and_i_o_queues"></span><span id="FUNCTION_ROLE_TYPES_AND_I_O_QUEUES"></span>函数角色类型和 i/o 队列
 
-在声明依赖于 KMDF 框架的[请求处理](https://go.microsoft.com/fwlink/p/?linkid=153345)程序和回调函数以将 i/o 请求传递给驱动程序（对于顺序或并行调度）时，请使用以下函数角色类型。 不要将这些函数角色类型用于手动将请求从默认队列转发到其他队列（手动分派）的函数。 SDV 不支持允许它跟踪从一个队列到另一个队列的请求的内存模型。
+在声明依赖于 KMDF 框架的[请求处理](https://docs.microsoft.com/windows-hardware/drivers/wdf/request-handlers)程序和回调函数以将 i/o 请求传递给驱动程序（对于顺序或并行调度）时，请使用以下函数角色类型。 不要将这些函数角色类型用于手动将请求从默认队列转发到其他队列（手动分派）的函数。 SDV 不支持允许它跟踪从一个队列到另一个队列的请求的内存模型。
 
-有关 i/o 队列的详细信息，请参阅[创建 I/o 队列](https://go.microsoft.com/fwlink/p/?linkid=153346)。
+有关 i/o 队列的详细信息，请参阅[创建 I/o 队列](https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-i-o-queues)。
 
 <table>
 <colgroup>

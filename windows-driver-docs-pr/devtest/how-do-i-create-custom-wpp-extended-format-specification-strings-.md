@@ -1,36 +1,36 @@
 ---
-title: 如何创建自定义 WPP 扩展的格式规范字符串
-description: 如何创建自定义 WPP 扩展的格式规范字符串
+title: 如何实现创建自定义 WPP 扩展格式规范字符串
+description: 如何实现创建自定义 WPP 扩展格式规范字符串
 ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57fac7ac4e0fdd36248b1df4787ce3ad8a8917b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3fb181e34a13f1cd3c4810a70cc0c836f55f9741
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358298"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769439"
 ---
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>如何创建自定义的 WPP 扩展格式规范字符串？
 
 
-通过使用定义创建自定义 WPP 扩展的格式规范字符串\_CPLX\_类型宏。 有关如何使用此宏的详细信息，请参阅[什么是复杂的语法类型定义？](what-is-the-syntax-of-the-complex-types-definition-.md)。
+您可以使用 DEFINE \_ CPLX TYPE 宏创建自定义 WPP 扩展格式规范字符串 \_ 。 有关如何使用此宏的详细信息，请参阅[复杂类型定义的语法是什么？](what-is-the-syntax-of-the-complex-types-definition-.md)。
 
-本主题提供了示例，演示如何执行以下操作：
+本主题提供的示例演示如何执行以下操作：
 
-- [跟踪固定长度字符串也可以通过自定义扩展 WPP 格式规范字符串](#trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings)
+- [通过自定义 WPP 扩展格式规范字符串跟踪固定长度的字符串](#trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings)
 
-- [跟踪长度可变的字符串也可以通过自定义扩展 WPP 格式规范字符串](#trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings)
+- [通过自定义 WPP 扩展格式规范字符串跟踪可变长度字符串](#trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings)
 
-每个示例演示如何使用的定义中定义的自定义 WPP 配置文件\_CPLX\_类型宏。 在这些示例中，配置文件命名为 LocalWpp.ini。 有关如何使用自定义 WPP 配置文件的详细信息，请参阅[如何定义自定义数据类型？](how-do-you-define-custom-data-types-.md)。
+其中每个示例演示如何将自定义 WPP 配置文件用于定义 \_ CPLX \_ 类型宏的定义。 在这些示例中，配置文件被命名为 LocalWpp。 有关如何使用自定义 WPP 配置文件的详细信息，请参阅[如何定义自定义数据类型？](how-do-you-define-custom-data-types-.md)。
 
-## <a name="trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings"></a>跟踪固定长度字符串也可以通过自定义扩展 WPP 格式规范字符串
+## <a name="trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings"></a>通过自定义 WPP 扩展格式规范字符串跟踪固定长度的字符串
 
-此示例演示如何跟踪 Internet 协议版本 6 (IPv6) 网络地址通过使用自定义 WPP 扩展格式规范的字符串。 IPv6 网络地址，由 in6 定义\_addr 结构，具有固定长度长度为 16 个字节。
+此示例演示如何使用自定义 WPP 扩展格式规范字符串跟踪 Internet 协议版本6（IPv6）网络地址。 In6 地址结构定义的 IPv6 网络地址的 \_ 长度固定为16字节。
 
-在此示例中，复杂的数据类型 (IPV6ADDR) 定义，然后用作 %！IPV6ADDR ！ 格式规范在源代码中的字符串。
+在此示例中，定义了一个复杂数据类型（IPV6ADDR），该数据类型可用作%！IPV6ADDR! 源代码中的格式规范字符串。
 
-若要创建 IPV6ADDR 复杂数据类型，请将以下语句添加到 LocalWpp.ini 配置文件：
+若要创建 IPV6ADDR 复杂数据类型，请将以下语句添加到 LocalWpp 配置文件中：
 
 1.  <span codelanguage=""></span>
     <table>
@@ -44,9 +44,9 @@ ms.locfileid: "67358298"
     </tbody>
     </table>
 
-    此语句使用友好名称\_CPLX\_类型宏来定义复杂类型 (IPV6ADDR) 以及其属性，例如其自变量类型 (in6\_addr \*) 和大小 (16)。
+    此语句使用 DEFINE \_ CPLX \_ TYPE 宏来定义复杂类型（IPV6ADDR）及其属性，如参数类型（in6 \_ 地址 \* ）和大小（16）。
 
-    该语句还指定了一个帮助器宏的名称 (WPP\_LOGIPV6) 分析的源代码中的 IPV6ADDR 复杂类型时所使用的 WPP 预处理器你[跟踪提供程序](trace-provider.md)。
+    语句还指定了 \_ 当 wpp 预处理器在[跟踪提供程序](trace-provider.md)的源代码中分析 IPV6ADDR 复杂类型时使用的帮助程序宏（WPP LOGIPV6）的名称。
 
 2.  <span codelanguage=""></span>
     <table>
@@ -60,28 +60,28 @@ ms.locfileid: "67358298"
     </tbody>
     </table>
 
-    此语句定义用于格式化 IPV6 参数的长度/地址对传递给帮助器宏[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)函数。
+    此语句定义了 helper 宏，该宏用于在将 IPV6 参数传递到[TraceMessage](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-tracemessage)函数时设置其长度/地址对的格式。
 
-在 Visual Studio 中，打开你的项目的属性页。 下**WPP 跟踪**，**文件选项**，指定作为 LocalWpp.ini**额外的配置文件**。 请参阅[WPP 预处理器](wpp-preprocessor.md)有关详细信息。
+在 Visual Studio 中，打开项目的 "属性" 页。 在 " **WPP 跟踪**、**文件选项**" 下，将 LocalWpp 指定为**其他配置文件**。 有关详细信息，请参阅[WPP 预处理器](wpp-preprocessor.md)。
 
-下面的示例源的代码演示如何在[跟踪提供程序](trace-provider.md)可以跟踪 IPv6 网络地址的通过使用 %！IPV6ADDR ！ 格式规范的字符串：
+下面的示例代码演示[跟踪提供程序](trace-provider.md)如何使用%！IPV6ADDR! 格式规范字符串：
 
 ```
 struct in6_addr IPAddressV6 = {0};
 DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
 ```
 
-**请注意**  跟踪固定长度媒体访问控制 (MAC) 地址，可以创建复杂类型 (MACADDR)。 此复杂类型可以指定用于 IPV6ADDDR 复杂类型的过程。
+**注意**   可以为跟踪固定长度的媒体访问控制（MAC）地址创建复杂类型（MACADDR）。 可以按照用于 IPV6ADDDR 复杂类型的过程来指定此复杂类型。
 
  
 
-## <a name="trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings"></a>跟踪长度可变的字符串也可以通过自定义扩展 WPP 格式规范字符串
+## <a name="trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings"></a>通过自定义 WPP 扩展格式规范字符串跟踪可变长度字符串
 
-此示例演示如何通过使用扩展格式规范的字符串自定义 WPP 跟踪长度可变的缓冲区的数据。
+此示例演示如何使用自定义 WPP 扩展格式规范字符串跟踪数据的可变长度缓冲区。
 
-在此示例中，这可以用作 %定义复杂数据类型 (HEXDUMP) ！HEXDUMP ！ 格式规范在源代码中的字符串。
+在此示例中，定义了一个复杂数据类型（HEXDUMP），该数据类型可用作%！HEXDUMP! 源代码中的格式规范字符串。
 
-若要创建 HEXDUMP 复杂数据类型，请将以下语句添加到 LocalWpp.ini 配置文件：
+若要创建 HEXDUMP 复杂数据类型，请将以下语句添加到 LocalWpp 配置文件中：
 
 1.  <span codelanguage=""></span>
     <table>
@@ -95,9 +95,9 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句使用友好名称\_CPLX\_类型宏来定义复杂类型 (HEXDUMP) 以及其属性，例如其自变量类型 (const xstr\_t &) 和数量的参数传递给**TraceMessage** (2)。 由于此复杂类型是要用于长度可变的数据，该宏**大小**元素设置为零。
+    此语句使用 DEFINE \_ CPLX \_ TYPE 宏来定义复杂类型（HEXDUMP）及其属性，如其参数类型（const xstr \_ t&）和传递给**TraceMessage**的参数的数目（2）。 由于此复杂类型将用于可变长度数据，因此宏的**Size**元素设置为零。
 
-    该语句还指定了一个帮助器宏的名称 (WPP\_LOGHEXDUMP) 分析的源代码中的 HEXDUMP 复杂类型时所使用的 WPP 预处理器你[跟踪提供程序](trace-provider.md)。
+    语句还指定了 \_ 当 wpp 预处理器在[跟踪提供程序](trace-provider.md)的源代码中分析 HEXDUMP 复杂类型时使用的帮助程序宏（WPP LOGHEXDUMP）的名称。
 
 2.  <span codelanguage=""></span>
     <table>
@@ -115,7 +115,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句定义的结构，用于保存的长度和可变长度的缓冲区的地址。 在日志中初始化此结构\_LENSTR 宏是每次调用本地[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))在 HEXDUMP 复杂类型在使用*FormatString*参数。
+    此语句定义用于保存可变长度缓冲区的长度和地址的结构。 此结构在 LOG LENSTR 宏中进行初始化 \_ ，在每次调用[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))时都是本地的，在这种情况下，在 "*格式字符串*" 参数中使用 HEXDUMP 复杂类型。
 
 3.  <span codelanguage=""></span>
     <table>
@@ -129,7 +129,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句定义的宏，用来初始化 xstr\_t 结构的长度可变的缓冲区。 必须使用此宏将传递在长度可变的缓冲区*VariableList*的参数[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))。
+    此语句定义用于初始化 \_ 可变长度缓冲区的 xstr t 结构的宏。 必须使用此宏在[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))的*VariableList*参数中传递长度可变的缓冲区。
 
 4.  <span codelanguage=""></span>
     <table>
@@ -143,27 +143,27 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    此语句定义的帮助器宏，用于设置长度可变的缓冲区参数的长度/地址对格式时传递给[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)函数。
+    此语句定义了 helper 宏，该宏用于在将可变长度缓冲参数传递到[TraceMessage](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-tracemessage)函数时设置其长度/地址对的格式。
 
-    长度可变的自变量需要两个长度/地址对。 因此，WPP\_LOGHEXDUMP 宏可定义两个调用 WPP\_LOGPAIR 如下所示：
+    可变长度参数需要两个长度/地址对。 因此，WPP \_ LOGHEXDUMP 宏会按以下方式定义对 WPP LOGPAIR 的两个调用 \_ ：
 
-    -   首次调用 WPP\_LOGPAIR 传递长度可变的缓冲区的大小。
-    -   第二个调用 WPP\_LOGPAIR 传递的缓冲区本身的地址。
+    -   对 WPP LOGPAIR 的第一次调用会 \_ 传递变长缓冲区的大小。
+    -   对 WPP LOGPAIR 的第二次调用会 \_ 传递缓冲区本身的地址。
 
-    **请注意**  此宏需要 xstr\_t 结构已初始化，长度可变的缓冲区通过日志调用\_LENSTR。 因此，必须将传递到长度可变的缓冲区[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))通过日志\_LENSTR 宏。
+    **注意**   此宏要求 \_ 通过调用日志 LENSTR 为长度可变的缓冲区初始化 xstr t 结构 \_ 。 因此，必须通过 LOG LENSTR 宏将可变长度缓冲区传递到[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) \_ 。
 
      
 
-在 Visual Studio 中，打开你的项目的属性页。 下**WPP 跟踪**，**文件选项**，指定作为 LocalWpp.ini**额外的配置文件**。 请参阅[WPP 预处理器](wpp-preprocessor.md)有关详细信息。
+在 Visual Studio 中，打开项目的 "属性" 页。 在 " **WPP 跟踪**、**文件选项**" 下，将 LocalWpp 指定为**其他配置文件**。 有关详细信息，请参阅[WPP 预处理器](wpp-preprocessor.md)。
 
-下面的示例源的代码演示如何在[跟踪提供程序](trace-provider.md)可以跟踪数据的缓冲区，使用 %！HEXDUMP ！ 格式规范的字符串：
+下面的示例代码演示了[跟踪提供程序](trace-provider.md)如何使用%！HEXDUMP! 格式规范字符串：
 
 ```
 CHAR HexDump[1024] = {0, 1, 2, 3, 4, 5, 6, 7} ;
 DoTraceMessage(Noise, "HEXDUMP: %!HEXDUMP! ", LOG_LENSTR(sizeof(HexDump),(PCHAR)HexDump));
 ```
 
-**请注意**  可以用于跟踪长度可变的缓冲区创建复杂类型 (HEXBYTES)。 此复杂类型可以指定用于 HEXDUMP 复杂类型的过程。 
+**注意**   可以创建复杂类型（HEXBYTES）来跟踪长度可变的缓冲区。 可以按照用于 HEXDUMP 复杂类型的过程来指定此复杂类型。 
 
 
 

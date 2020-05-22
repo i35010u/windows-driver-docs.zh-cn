@@ -1,24 +1,24 @@
 ---
 title: PwrTest 磁盘方案
-description: PwrTest 磁盘的情况下监视磁盘空闲的统计信息和向下数值调节钮的事件。
+description: PwrTest 磁盘方案监视磁盘空闲统计信息和降速事件。
 ms.assetid: E54AA721-27C6-4E42-B42A-77AC70711A26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da12a7c265694dd3d4bfd73525088ba8f2d2af2e
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 7ea0a51f226a0a13a5577c2e78fab12aa3525c4f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393501"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769661"
 ---
 # <a name="pwrtest-disk-scenario"></a>PwrTest 磁盘方案
 
 
-PwrTest 磁盘的情况下监视磁盘空闲的统计信息和向下数值调节钮的事件。
+PwrTest 磁盘方案监视磁盘空闲统计信息和降速事件。
 
-此方案主要用于 Windows 7 硬盘电源活动，后续版本的 Windows 跟踪磁盘空闲的 Pwrtest 目前不支持使用不同的机制。 对于 Windows 7 比更高版本的 Windows 版本，使用[Windows 性能工具包 (WPT)](https://go.microsoft.com/fwlink/p/?linkid=294280)。 WPT 包括 Windows 性能记录器 (WPR) 可用于跟踪的内核模式电源提供程序和 Windows Performance Analyzer (WPA)，可以显示电源框架 (PoFx) 设备统计信息，之后可以以图形转换。
+此方案主要用于 Windows 7 硬盘电源活动，后续版本的 Windows 将使用不同的机制跟踪磁盘空闲，而 Pwrtest 当前不支持此功能。 对于比 Windows 7 更新的 Windows 版本，请使用[Windows 性能工具包（WPT）](https://docs.microsoft.com/windows-hardware/test/wpt/windows-performance-toolkit-technical-reference)。 WPT 包含 Windows 性能记录器（"），可用于跟踪内核模式电源提供程序和 Windows 性能分析器（WPA），该程序可显示 power framework （PoFx）设备统计信息，并可以在以后图形转换。
 
-**请注意**  由于并非所有存储驱动程序都注册为空闲检测，这种情况下不适合所有类型的磁盘或控制器。 请参阅[存储类驱动程序中处理即插即用启动](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-pnp-start-in-a-storage-class-driver)有关详细信息。
+**注意**   此方案不适用于所有类型的磁盘或控制器，因为并非所有存储驱动程序都注册了空闲检测。 有关详细信息，请参阅[在存储类驱动程序中处理 PnP 启动](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-pnp-start-in-a-storage-class-driver)。
 
  
 
@@ -29,8 +29,8 @@ PwrTest 磁盘的情况下监视磁盘空闲的统计信息和向下数值调节
 pwrtest /disk  [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
-为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
+<span id="_t_n"></span><span id="_T_N"></span>**/t：**<em>n</em>  
+指定应用场景运行的总时间（分钟）（ *n*的默认值为30分钟）。
 
 **示例**
 
@@ -42,7 +42,7 @@ pwrtest /disk /t:60
 pwrtest /disk
 ```
 
-### <a name="span-idxmllogfileoutputspanspan-idxmllogfileoutputspanspan-idxmllogfileoutputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
+### <a name="span-idxml_log_file_outputspanspan-idxml_log_file_outputspanspan-idxml_log_file_outputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
 
 ```XML
 <PwrTestLog>
@@ -80,7 +80,7 @@ pwrtest /disk
 </PwrTestLog> 
 ```
 
-下表介绍日志文件中显示的 XML 元素。
+下表描述了日志文件中显示的 XML 元素。
 
 <table>
 <colgroup>
@@ -90,21 +90,21 @@ pwrtest /disk
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>&lt;DiskIdleEvents&gt;</strong></td>
-<td align="left"><p>包含所有不同的磁盘空闲事件。 只有一个&lt;DeviceIdleEvents&gt;每个 PwrTest 日志文件的元素。</p></td>
+<td align="left"><p>包含所有不同的磁盘空闲事件。 &lt; &gt; 每个 PwrTest 日志文件只能有一个 DeviceIdleEvents 元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;时间戳&gt;</strong></td>
+<td align="left"><strong>&lt;标志&gt;</strong></td>
 <td align="left"><p>任何给定事件的时间戳。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;DiskNumber&gt;</strong></td>
-<td align="left"><p>标识的物理磁盘是此事件的。</p></td>
+<td align="left"><p>标识此事件所针对的物理磁盘。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;InstancePath&gt;</strong></td>
@@ -123,8 +123,8 @@ pwrtest /disk
 <td align="left"><p>磁盘超时更改事件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;Timeout&gt;</strong></td>
-<td align="left"><p>新磁盘驱动器关闭超时值。</p></td>
+<td align="left"><strong>&lt;超时&gt;</strong></td>
+<td align="left"><p>新磁盘降速超时。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;IgnoreThreshold&gt;</strong></td>
@@ -132,7 +132,7 @@ pwrtest /disk
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;设备&gt;</strong></td>
-<td align="left"><p>功能的设备对象。</p></td>
+<td align="left"><p>功能设备对象。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;Pdo&gt;</strong></td>
@@ -140,46 +140,46 @@ pwrtest /disk
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;BusyCount&gt;</strong></td>
-<td align="left"><p>设备驱动程序调用的次数<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>期间。</p></td>
+<td align="left"><p>一段时间内设备驱动程序调用<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"><strong>PoSetDeviceBusy</strong></a>的次数。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedBusyCount&gt;</strong></td>
-<td align="left"><p>数乘以设备驱动程序调用<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"> <strong>PoSetDeviceBusy</strong> </a>总数。</p></td>
+<td align="left"><p>设备驱动程序调用<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer" data-raw-source="[&lt;strong&gt;PoSetDeviceBusy&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)"><strong>PoSetDeviceBusy</strong></a>总数的次数。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;IdlePowerState&gt;</strong></td>
-<td align="left"><p>哪些数值状态为空闲状态。</p></td>
+<td align="left"><p>什么是空闲状态。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;CurrentPowerState&gt;</strong></td>
-<td align="left"><p>当前的数值的电源状态。</p></td>
+<td align="left"><p>当前数字的电源状态。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;Timeout&gt;</strong></td>
-<td align="left"><p>超时 （以秒为单位）。</p></td>
+<td align="left"><strong>&lt;超时&gt;</strong></td>
+<td align="left"><p>超时（以秒为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;IgnoreThreshold&gt;</strong></td>
-<td align="left"><p>忽略非空闲时间的秒数</p></td>
+<td align="left"><p>要忽略的非空闲时间的秒数</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;AccruedIdleTime&gt;</strong></td>
-<td align="left"><p>时间段内应计空闲的时间。</p></td>
+<td align="left"><p>期间内的应计空闲时间。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AccruedNonIdleTime&gt;</strong></td>
-<td align="left"><p>已计入总空闲时间。</p></td>
+<td align="left"><p>已累积的总空闲时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;分析&gt;</strong></td>
-<td align="left"><p>字符串，描述在期间发生的情况。</p></td>
+<td align="left"><p>描述期间发生的情况的字符串。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)

@@ -1,22 +1,22 @@
 ---
 title: PwrTest 热量方案
-description: PwrTest 热量方案监视 ACPI 温度区信息和统计信息。
+description: PwrTest 散热方案监视 ACPI 热量区域信息和统计信息。
 ms.assetid: C6941A50-EA0F-4C46-A290-8CAAD292E156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92add792882c0a50b7697b1976181fbf2e2a10c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3d9e86da55a505ad8dd6835e15d32a8ad3a4347
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380959"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769571"
 ---
 # <a name="pwrtest-thermal-scenario"></a>PwrTest 热量方案
 
 
-PwrTest 热量方案监视 ACPI 温度区信息和统计信息。 报告过热区域和温度变化的系统上仅支持此方案。
+PwrTest 散热方案监视 ACPI 热量区域信息和统计信息。 此方案仅在报告热量区域和温度变化的系统上受支持。
 
-**请注意**此方案仅适用于向操作系统报告温度数据的系统。
+**注意** 此方案仅适用于向操作系统报告热量数据的系统。
 
  
 
@@ -27,11 +27,11 @@ PwrTest 热量方案监视 ACPI 温度区信息和统计信息。 报告过热�
 pwrtest /thermal [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**/t:**<em>n</em>  
-为方案运行指定的总时间 （以分钟为单位） (默认值*n*为 30 分钟)。
+<span id="_t_n"></span><span id="_T_N"></span>**/t：**<em>n</em>  
+指定应用场景运行的总时间（分钟）（ *n*的默认值为30分钟）。
 
-<span id="_temp_kcf"></span><span id="_TEMP_KCF"></span>**/temp:**{**k**|**c**|**f**}  
-指定温度小数位数 Kelvin (**k**)、 摄氏度 (**c**)、 华氏度 (**f**) 若要使用的所有输出和日志记录 （默认值为 Kelvin）。
+<span id="_temp_kcf"></span><span id="_TEMP_KCF"></span>**/temp：**{**k** | **c** | **f**}  
+指定用于所有输出和日志记录的温度刻度（**k**）、摄氏温度（**c**）、华氏（**f**）（默认为 "开氏"）。
 
 **示例**
 
@@ -47,7 +47,7 @@ pwrtest /thermal  /t:30
 pwrtest /thermal  /t:30 /temp:f
 ```
 
-### <a name="span-idxmllogfileoutputspanspan-idxmllogfileoutputspanspan-idxmllogfileoutputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
+### <a name="span-idxml_log_file_outputspanspan-idxml_log_file_outputspanspan-idxml_log_file_outputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML 日志文件输出
 
 ```XML
 <PwrTestLog>
@@ -105,7 +105,7 @@ pwrtest /thermal  /t:30 /temp:f
 </PwrTestLog> 
 ```
 
-下表介绍日志文件中显示的 XML 元素。
+下表描述了日志文件中显示的 XML 元素。
 
 <table>
 <colgroup>
@@ -115,21 +115,21 @@ pwrtest /thermal  /t:30 /temp:f
 <thead>
 <tr class="header">
 <th align="left">元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>&lt;ThermalEvents&gt;</strong></td>
-<td align="left"><p>包含所有不同的热量事件。 可能只有一个<strong>&lt;ThermalEvents&gt;</strong> PwrTest 日志文件中的元素。</p></td>
+<td align="left"><p>包含所有不同的散热事件。 PwrTest 日志文件中只能有一个<strong> &lt; ThermalEvents &gt; </strong>元素。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;EnteringCS&gt;</strong></td>
-<td align="left"><p>启动连接待机状态 (CS) 条目，系统是： 在 CS 中，显示器变并且输入被禁用。</p></td>
+<td align="left"><p>已启动连接备用（CS）条目，在显示器关闭并禁用输入后，系统就会进入 CS。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ExitingCS&gt;</strong></td>
-<td align="left"><p>CS 退出启动。</p></td>
+<td align="left"><p>CS 退出已经开始。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;ExitedCS&gt;</strong></td>
@@ -137,55 +137,55 @@ pwrtest /thermal  /t:30 /temp:f
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AbortingCS&gt;</strong></td>
-<td align="left"><p>CS 条目中止和进入最深的阶段前退出。</p></td>
+<td align="left"><p>进入最早阶段之前，将中止并退出 CS 条目。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;AbortedCS&gt;</strong></td>
-<td align="left"><p>完成后已中止的条目 CS 退出。</p></td>
+<td align="left"><p>CS 退出在中止项后完成。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;InputDisabled&gt;</strong></td>
-<td align="left"><p>用户输入已在本地控制台上被禁用。</p></td>
+<td align="left"><p>已在本地控制台上禁用用户输入。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;InputEnabled&gt;</strong></td>
-<td align="left"><p>在本地控制台上启用了用户输入。</p></td>
+<td align="left"><p>已在本地控制台上启用用户输入。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;PhaseEnter&gt;</strong></td>
-<td align="left"><p>CS 阶段输入的名称属性是 CS 阶段的名称。</p></td>
+<td align="left"><p>输入 CS 阶段，name 属性是 CS 阶段的名称。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;PhaseExit&gt;</strong></td>
-<td align="left"><p>CS 阶段已退出，name 属性是 CS 阶段的名称。</p></td>
+<td align="left"><p>CS 阶段退出，name 属性是 CS 阶段的名称。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ExecutionRequiredSet&gt;</strong></td>
-<td align="left"><p>进程所做的执行所需的请求，这将阻止坝阶段完成。</p></td>
+<td align="left"><p>执行了执行所需的请求，该请求将阻止 DAM 阶段完成。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;ExecutionRequiredCleared&gt;</strong></td>
-<td align="left"><p>进程清除这将取消阻止坝阶段完成的执行所需的请求。</p></td>
+<td align="left"><p>进程清除了执行所需的请求，该请求将取消阻止 DAM 阶段完成。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;PlatformIdleStats&gt;</strong></td>
-<td align="left"><p>平台空闲状态的统计信息块。</p></td>
+<td align="left"><p>平台空闲统计信息块。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;State&gt;</strong></td>
-<td align="left"><p>自前一个平台空闲状态的统计信息块转换为平台空闲状态的计数。</p></td>
+<td align="left"><strong>&lt;州省/自治区/直辖市&gt;</strong></td>
+<td align="left"><p>自上一个平台空闲统计信息块以来平台空闲状态的转换计数。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [PwrTest 语法](pwrtest-syntax.md)
 
-[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568)
+[PowerCfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)
 
  
 

@@ -15,16 +15,16 @@ keywords:
 - 内存 WDK PoolMon
 - 终端服务会话 WDK PoolMon
 - 标记文件 WDK PoolMon
-- WDK PoolMon 的统计信息
-- WDK PoolMon 的状态信息
+- 统计信息 WDK PoolMon
+- 状态信息 WDK PoolMon
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36966ba65ca5d337e9af9808d990e8fb4ec93a39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea468b00148cccd81e57c392fbc4faa8d47fb92a
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338708"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769525"
 ---
 # <a name="poolmon"></a>PoolMon
 
@@ -32,11 +32,11 @@ ms.locfileid: "63338708"
 ## <span id="ddk_poolmon_tools"></span><span id="DDK_POOLMON_TOOLS"></span>
 
 
-PoolMon (poolmon.exe) 内存池监视器，显示的操作系统从分页系统收集有关内存分配数据和非分页的内核池和用于终端服务会话使用的内存池。 按池分配标记分组数据。
+PoolMon （poolmon）是内存池监视器，显示操作系统从系统分页和非分页内核池收集的内存分配数据，以及用于终端服务会话的内存池。 数据按池分配标记进行分组。
 
-驱动程序开发人员和测试人员通常使用 PoolMon 检测内存泄漏时不创建新的驱动程序、 更改驱动程序代码中，或强调该驱动程序。 此外可以使用 PoolMon 测试的每个阶段中可查看分配和 free 操作的驱动程序的模式，并以显示该驱动程序使用在任何给定时间的池内存量。
+当驱动程序开发人员和测试人员创建新的驱动程序、更改驱动程序代码或对驱动程序进行压力时，通常使用 PoolMon 来检测内存泄漏。 你还可以在测试的每个阶段使用 PoolMon 来查看驱动程序的分配模式和自由操作模式，并显示驱动程序在任何给定时间使用的池内存量。
 
-本文档中所述的 PoolMon 版本包含在\\工具\\的其他子目录[Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=846744)。
+本文档中所述的 PoolMon 版本包含在 \\ \\ [Windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)的工具其他子目录中。
 
 本主题包括以下内容：
 
@@ -50,11 +50,9 @@ PoolMon (poolmon.exe) 内存池监视器，显示的操作系统从分页系统�
 
 [PoolMon 示例](poolmon-examples.md)
 
-若要在 Microsoft Windows XP 和早期系统上使用 PoolMon，必须启用*池标记*。 在 Windows Server 2003 和更高版本的 Windows，永久启用池标记。 详细信息，请参阅"池标记要求"中[PoolMon 要求](poolmon-requirements.md)。
+若要在 Microsoft Windows XP 和更早的系统上使用 PoolMon，必须启用*池标记*。 在 Windows Server 2003 和更高版本的 Windows 上，将永久启用池标记。 有关详细信息，请参阅[PoolMon 要求](poolmon-requirements.md)中的 "池标记要求"。
 
-PoolMon 可以显示 Windows 组件的名称，常用于分配每个池标记的驱动程序。 此功能使用 pooltag.txt，安装与 PoolMon，并为 Windows 调试工具软件包的文件中的数据。 有时，Microsoft 将会更新此文件。 若要检查更新，请转到[Microsoft 支持部门](https://go.microsoft.com/fwlink/p/?linkid=8713)网站，搜索"pooltag.txt。"
-
- 
+PoolMon 可以显示 Windows 组件的名称，以及分配每个池标记的常用驱动程序的名称。 此功能使用 pooltag 中的数据、使用 PoolMon 安装的文件以及用于 Windows 包的调试工具。
 
  
 

@@ -2,22 +2,20 @@
 title: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
 description: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
 ms.assetid: 3254C0F1-85C2-472B-938A-F71645703540
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 707369e918301a1b1f3387e6253a8235b078a119
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb9670a81c73ab3f33b0308a1a54a95daf495d94
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337750"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778337"
 ---
-# <a name="efiusbsuperspeedendpointdescriptor"></a>EFI\_USB\_SUPERSPEED\_终结点\_描述符
+# <a name="efi_usb_superspeed_endpoint_descriptor"></a>EFI \_ USB \_ SUPERSPEED \_ 终结点 \_ 描述符
 
-
-**EFI\_USB\_SUPERSPEED\_终结点\_描述符**结构用于描述对 USB 函数驱动程序支持的 USB SuperSpeed 终结点。
+**EFI \_ USB \_ SUPERSPEED \_ 终结点 \_ 描述符**结构用于介绍 USB 函数驱动程序支持的 usb SUPERSPEED 终结点。
 
 ## <a name="syntax"></a>语法
-
 
 ```cpp
 typedef struct
@@ -29,27 +27,18 @@ typedef struct
 
 ## <a name="members"></a>成员
 
+### <a name="endpointdescriptor"></a>EndpointDescriptor
 
-<a href="" id="endpointdescriptor"></a>**EndpointDescriptor**  
-EFI\_USB\_终结点\_描述符结构，它介绍 USB 终结点。
+\_ \_ 描述 USB 端点的 EFI USB 终结点 \_ 描述符结构。
 
-<a href="" id="endpointcompaniondescriptor"></a>**EndpointCompanionDescriptor**  
-[EFI\_USB\_SUPERSPEED\_终结点\_配套\_描述符](efi-usb-superspeed-endpoint-companion-descriptor.md)结构，它是 USB SuperSpeed 终结点的配套描述符。
+### <a name="endpointcompaniondescriptor"></a>EndpointCompanionDescriptor
 
-## <a name="remarks"></a>备注
+[EFI \_ usb \_ SUPERSPEED \_ 终结点 \_ 伴随 \_ 描述符](efi-usb-superspeed-endpoint-companion-descriptor.md)结构，是 USB SUPERSPEED 终结点的伴随描述符。
 
+## <a name="remarks"></a>注解
 
-**EFI\_USB\_终结点\_描述符**结构是定义中的 UEFI 规范版本 2.3 及更高版本。 有关详细信息，请访问[UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526)网站。
+在 UEFI 规范版本2.3 及更高版本中定义了**EFI \_ USB \_ 终结点 \_ 描述符**结构。 有关详细信息，请访问[UEFI.org](https://uefi.org/specifications)网站。
 
 ## <a name="requirements"></a>要求
 
-
 **标头：** 用户生成
-
- 
-
- 
-
-
-
-

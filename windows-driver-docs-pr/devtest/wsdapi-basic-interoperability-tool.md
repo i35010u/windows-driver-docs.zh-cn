@@ -7,52 +7,52 @@ keywords:
 - WSDBIT 工具 WDK
 - WSDAPI 基本互操作性工具 WDK
 - DWPS WDK
-- Web Services WDK 的的设备配置文件
-- 设备 API WDK 的 web 服务
+- Web 服务 WDK 的设备配置文件
+- 用于设备的 Web 服务 API WDK
 - WSDAPI WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db83d5879d5cc8b4c1d66ea078c67e3dcd5d8c35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dfe9df72d7ef2dbc2aa2241c5704eafec32c2371
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358051"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769507"
 ---
 # <a name="wsdapi-basic-interoperability-tool"></a>WSDAPI 基本互操作性工具
 
 
-[设备配置文件的 Web 服务 (DPWS)](https://go.microsoft.com/fwlink/p/?linkid=81255)是一种引用规范的汇编，并限制数 Web 服务 (WS) 规范。 [Web 服务上 Devices (WSD)](https://go.microsoft.com/fwlink/p/?linkid=163865) API (WSDAPI) 是 Windows 附带的 DPWS 的实现。 Windows 使用 WSDAPI 发现 DPWS 设备的任何类型，并且还使用 WSDAPI 将控制消息发送到多个设备类，如打印机、 扫描仪和网络投影仪。
+[Web services 的设备配置文件（DPWS）](http://schemas.xmlsoap.org/ws/2005/05/devprof/)是一种引用规范，可汇编和约束若干 Web 服务（WS）规范。 [Web 服务设备（WSD）](https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal) API （WSDAPI）是 Windows 附带的 DPWS 实现。 Windows 使用 WSDAPI 来发现任何类型的 DPWS 设备，并使用 WSDAPI 将控制消息发布到多个设备类，如打印机、扫描仪和网络投影仪。
 
-WSDAPI 基本互操作性工具 (WSDBIT) 可以用于验证 Windows 可以与非 WSDAPI DPWS 堆栈互操作。 此工具主要面向设备开发人员要实现 DPWS，那些想要测试与 Windows 互操作性。 一些 WSDBIT 测试要求设备实现特殊的测试接口用来执行高级的 DPWS 功能，如[SOAP 消息传输优化机制 (MTOM)](https://go.microsoft.com/fwlink/p/?linkid=81254) （用于消息附件） 和[Web 服务事件](https://go.microsoft.com/fwlink/p/?linkid=81245)。 这些接口是不是绝对必需的。 但是，它们涵盖 WSDBIT 中的此功能的唯一方法。
+WSDAPI 基本互操作性工具（WSDBIT）可用于验证 Windows 是否可以与非 WSDAPI DPWS 堆栈进行互操作。 此工具主要用于实现 DPWS 的设备开发人员以及要测试与 Windows 的互操作性。 某些 WSDBIT 测试要求设备实现一个特殊的测试接口，该接口用于运用高级 DPWS 功能，如[SOAP 消息传输优化机制（MTOM）](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/) （用于消息附件）和[Web 服务事件](https://docs.microsoft.com/previous-versions/ms951233(v=msdn.10))。 这些接口并不是绝对必需的。 但是，它们是在 WSDBIT 中涵盖此功能的唯一方法。
 
-WSDAPI 实现客户端和设备规范、 部分和 WSDBIT 可用于执行 WSDAPI 为客户端或设备。 WSDBIT 可以用于测试和验证非 WSDAPI 设备或非 WSDAPI 客户端。
+WSDAPI 实现了规范的客户端和设备部分，而 WSDBIT 可用于将 WSDAPI 作为客户端或设备使用。 WSDBIT 可用于测试和验证非 WSDAPI 设备或非 WSDAPI 客户端。
 
-阅读有关 WSD 互操作性工具之前，您应熟悉 DPWS 规范并将其[引用规范](referenced-namespaces.md)。
+阅读关于 WSD 互操作性工具之前，应熟悉 DPWS 规范及其[引用的规范](referenced-namespaces.md)。
 
-**请注意**  WSDBIT 可能用于帮助在设备上的 DPWS 实现但不是应为一个通用的调试工具。 其他[WSDAPI 开发工具](https://go.microsoft.com/fwlink/p/?linkid=163866)(如[WSDAPI 调试工具](https://go.microsoft.com/fwlink/p/?linkid=163867)) 更适合于观察流量和诊断故障。 适用于桌面应用程序的 Windows SDK 中提供了这些工具，请参阅[适用于开发桌面应用程序的下载]( https://go.microsoft.com/fwlink/p/?linkid=309790)。
+**注意**   WSDBIT 可用于帮助实现设备上的 DPWS，但并不是一种通用的调试工具。 其他[wsdapi 开发工具](https://docs.microsoft.com/windows/win32/wsdapi/wsdapi-development-tools)（如[WSDAPI 调试工具](https://docs.microsoft.com/windows/win32/wsdapi/debugging-tools)）更适合用于观察流量和诊断故障。 这些工具适用于桌面应用的 Windows SDK，请参阅[用于开发桌面应用的下载](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)。
 
  
 
-本部分包括以下主题：
+本节包括下列主题：
 
 [WSDBIT 简介](introduction-to-wsdbit.md)
 
-[引用的命名空间](referenced-namespaces.md)
+[参考的命名空间](referenced-namespaces.md)
 
 [WSDBIT 测试环境](wsdbit-testing-environment.md)
 
 [WSDBIT 的客户端方案](client-scenarios-for-wsdbit.md)
 
-[WSDBIT 引用](wsdbit-reference.md)
+[WSDBIT 参考](wsdbit-reference.md)
 
-有关 WSD 和 WSDAPI 的详细信息，请参阅 Windows 软件开发工具包 (SDK) 中的以下主题：
+有关 WSD 和 WSDAPI 的详细信息，请参阅 Windows 软件开发工具包（SDK）中的以下主题：
 
--   [WSD 设备开发](https://go.microsoft.com/fwlink/p/?linkid=163868)
+-   [WSD 设备开发](https://docs.microsoft.com/windows/win32/wsdapi/wsd-device-development)
 
--   [在 Windows 上的 WSD 应用程序开发](https://go.microsoft.com/fwlink/p/?linkid=163869)
+-   [Windows 上的 WSD 应用程序开发](https://docs.microsoft.com/windows/win32/wsdapi/wsd-application-development-on-windows)
 
--   [WSDAPI 故障排除指南](https://go.microsoft.com/fwlink/p/?linkid=163870)
+-   [WSDAPI 故障排除指南](https://docs.microsoft.com/windows/win32/wsdapi/wsdapi-troubleshooting-guide)
 
  
 

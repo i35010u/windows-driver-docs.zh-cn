@@ -4,19 +4,19 @@ description: Microsoft 源代码注释语言（SAL）包含特定于分析 Windo
 ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acca2d23ee7aee79847d90282c11b276e17b8b89
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5f8190ca3fff8f6daeec928d033d25529335152a
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840044"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769717"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows 驱动程序的 SAL 2.0 注释
 
 
 Microsoft 源代码注释语言（SAL）包含特定于分析 Windows 驱动程序和相关内核代码的注释。 批注语言提供了一种方法来描述函数、参数、返回值、结构和结构字段的属性。 批注类似于添加到代码中并被编译器忽略但由静态分析工具使用的注释。 使用批注有助于提高开发人员的工作效率，帮助提高静态分析的结果准确性，并使工具能够更好地确定是否存在特定的 bug。 驱动程序批注不适用于非驱动程序或非内核相关的代码。 驱动程序批注是在 Driverspecs 中定义的。
 
-**请注意**  Windows 8 引入了 sal 2.0，后者将取代 sal 1.0。 有关 SAL 2.0 的信息，请参阅[使用 Sal 注释减少 C/C++代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)。 SAL 2.0 替换 SAL 1.0。 SAL 2.0 应与适用于 Windows 8 的 Windows 驱动程序工具包（WDK）8一起使用。 如果需要有关 SAL 1.0 的驱动程序的信息，请参阅 WDK for Windows 7 随附的文档。
+**注意**   Windows 8 引入了 SAL 2.0，后者替代了 SAL 1.0。 有关 SAL 2.0 的信息，请参阅[使用 Sal 注释减少 C/c + + 代码缺陷](https://docs.microsoft.com/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)。 SAL 2.0 替换 SAL 1.0。 SAL 2.0 应与适用于 Windows 8 的 Windows 驱动程序工具包（WDK）8一起使用。 如果需要有关 SAL 1.0 的驱动程序的信息，请参阅 WDK for Windows 7 随附的文档。
 
  
 
@@ -30,7 +30,7 @@ Microsoft 源代码注释语言（SAL）包含特定于分析 Windows 驱动程�
 <tr class="header">
 <th align="left">驱动程序批注</th>
 <th align="left">类别</th>
-<th align="left">将</th>
+<th align="left">使用</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +95,7 @@ Microsoft 源代码注释语言（SAL）包含特定于分析 Windows 驱动程�
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[使用 SAL 注释减少 C/C++ 代码缺陷](https://go.microsoft.com/fwlink/p/?linkid=247283)
+[使用 SAL 注释减少 C/C++ 代码缺陷](https://docs.microsoft.com/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)
 
  
 

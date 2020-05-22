@@ -6,32 +6,30 @@ keywords:
 - 在移动宽带元数据创作向导中指定应用程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2b5f8d3483f58e4b3ac3171373eb0d14472e654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac71728e58f7cc123f4a67c9478258770ab39159
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387922"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769521"
 ---
 # <a name="specify-applications-in-the-mobile-broadband-metadata-authoring-wizard"></a>在移动宽带元数据创作向导中指定应用程序
 
 
-若要指定不同的应用程序为你的服务，包括 Microsoft Store 的设备应用程序和权限的应用程序，请单击**应用程序**选项卡。
+若要为服务指定不同的应用程序（包括 Microsoft Store 设备应用和特权应用程序），请单击 "**应用程序**" 选项卡。
 
-下载并安装在用户首次连接设备时 UWP 设备应用程序。 权限的应用程序具有特殊访问设备。 您可以指定只有各之一。
+当用户首次连接设备时，将下载并安装 UWP 设备应用。 特权应用程序具有设备的特殊访问权限。 只能指定其中的一个。
 
-有关 UWP 的设备应用程序和权限的应用程序的详细信息，请参阅[Windows 8 设备体验](https://go.microsoft.com/fwlink/p/?LinkId=227312)。
-
-## <a name="span-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>指定的 Microsoft Store 设备应用
+## <a name="span-idto_specify_the_windows_store_device_appspanspan-idto_specify_the_windows_store_device_appspanspan-idto_specify_the_windows_store_device_appspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>指定 Microsoft Store 设备应用
 
 
-若要指定应用程序，请填写以下字段：
+若要指定应用，请填写以下字段：
 
--   **包名称**。 应用程序清单的包元素中的标识元素中输入名称属性的值。
--   **发布者**。 应用程序清单的包元素中的标识元素中输入将 Publisher 属性的值。 此值必须与安装在电脑上的发布服务器证书。
--   **应用程序 ID**。 应用程序清单的应用程序元素中输入的 ID 属性的值。
+-   **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。
+-   **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。 此值必须与计算机上安装的发布者证书匹配。
+-   **应用 ID**。 在应用程序清单的应用程序元素中输入 ID 属性的值。
 
-**包名称**，**发布者**，并**应用程序 ID**所有必须匹配应用 package.appxmanifest 中的信息。
+**包名称**、**发布者**和**应用 ID**全部必须与应用程序包中的信息相匹配。 appxmanifest.xml。
 
 下面是应用程序清单的示例：
 
@@ -51,35 +49,35 @@ ms.locfileid: "63387922"
   <Application Id="Microsoft.SDKSamples.MoFx2App" DisplayName="MoFx2App" Logo="images\tile-sdk.png" SmallLogo="images\tile-sdk.png" EntryPointType="startPage" EntryPoint="default.html">
 ```
 
-## <a name="span-idtoseethepackagenameandpublisherspanspan-idtoseethepackagenameandpublisherspanspan-idtoseethepackagenameandpublisherspanto-see-the-package-name-and-publisher"></a><span id="To_see_the_Package_name_and_Publisher"></span><span id="to_see_the_package_name_and_publisher"></span><span id="TO_SEE_THE_PACKAGE_NAME_AND_PUBLISHER"></span>若要查看的包名称和发布服务器
+## <a name="span-idto_see_the_package_name_and_publisherspanspan-idto_see_the_package_name_and_publisherspanspan-idto_see_the_package_name_and_publisherspanto-see-the-package-name-and-publisher"></a><span id="To_see_the_Package_name_and_Publisher"></span><span id="to_see_the_package_name_and_publisher"></span><span id="TO_SEE_THE_PACKAGE_NAME_AND_PUBLISHER"></span>查看包名称和发布服务器
 
 
-1.  在 Visual Studio 中打开应用解决方案。
+1.  在 Visual Studio 中打开应用程序解决方案。
 2.  单击解决方案资源管理器中的应用程序清单。
 3.  双击“Package.appxmanifest”。
-4.  在中**打包**选项卡上，查看**包名称**并**发布服务器**字段。
+4.  在 "**打包**" 选项卡中，查看 "**包名称**" 和 "**发布者**" 字段。
 
-## <a name="span-idtoseetheappidspanspan-idtoseetheappidspanspan-idtoseetheappidspanto-see-the-app-id"></a><span id="To_see_the_App_ID_"></span><span id="to_see_the_app_id_"></span><span id="TO_SEE_THE_APP_ID_"></span>若要查看应用程序 ID
+## <a name="span-idto_see_the_app_id_spanspan-idto_see_the_app_id_spanspan-idto_see_the_app_id_spanto-see-the-app-id"></a><span id="To_see_the_App_ID_"></span><span id="to_see_the_app_id_"></span><span id="TO_SEE_THE_APP_ID_"></span>查看应用 ID
 
 
-1.  在 Visual Studio 中打开应用解决方案。
+1.  在 Visual Studio 中打开应用程序解决方案。
 2.  单击解决方案资源管理器中的应用程序清单。
-3.  右键单击 Package.appxmanifest。
-4.  选择**查看代码**。
+3.  右键单击 appxmanifest.xml。
+4.  选择 "**查看代码**"。
 
-## <a name="span-idprivilegedapplicationsspanspan-idprivilegedapplicationsspanspan-idprivilegedapplicationsspanprivileged-applications"></a><span id="Privileged_applications"></span><span id="privileged_applications"></span><span id="PRIVILEGED_APPLICATIONS"></span>权限的应用程序
+## <a name="span-idprivileged_applicationsspanspan-idprivileged_applicationsspanspan-idprivileged_applicationsspanprivileged-applications"></a><span id="Privileged_applications"></span><span id="privileged_applications"></span><span id="PRIVILEGED_APPLICATIONS"></span>特权应用程序
 
 
-为 Microsoft Store 的设备应用来访问特权的移动宽带接口，它需要下指定**权限的应用程序**。
+要使 Microsoft Store 设备应用访问特权移动宽带接口，需要在**特权应用程序**下指定它。
 
-若要指定权限的应用程序，填写以下字段下**权限的应用程序**:
+若要指定特权应用程序，请在**特权应用程序**下填写以下字段：
 
-**请注意**  有关的以下字段的详细信息，请参阅[Windows 8 设备体验](https://go.microsoft.com/fwlink/p/?LinkId=242009)。 有关特权设备接口属性项的信息，请参阅[DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)。
+**注意**   有关特权设备接口属性密钥的信息，请参阅[DEVPKEY \_ DeviceInterface \_ 限制](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)。
 
  
 
--   **包名称**。 应用程序清单的包元素中的标识元素中输入名称属性的值。
--   **发布者**。 应用程序清单的包元素中的标识元素中输入将 Publisher 属性的值。
+-   **包名称**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 Name 属性的值。
+-   **发布者**。 在应用程序清单的 Package 元素中的 Identity 元素中输入 "发布服务器" 属性的值。
 
 下面是应用程序清单的示例：
 
@@ -99,12 +97,12 @@ ms.locfileid: "63387922"
   <Application Id="Microsoft.SDKSamples.MoFx2App" DisplayName="MoFx2App" Logo="images\tile-sdk.png" SmallLogo="images\tile-sdk.png" EntryPointType="startPage" EntryPoint="default.html">
 ```
 
-## <a name="span-iddevicenotificationhandlerspanspan-iddevicenotificationhandlerspanspan-iddevicenotificationhandlerspandevice-notification-handler"></a><span id="Device_Notification_Handler"></span><span id="device_notification_handler"></span><span id="DEVICE_NOTIFICATION_HANDLER"></span>设备通知处理程序
+## <a name="span-iddevice_notification_handlerspanspan-iddevice_notification_handlerspanspan-iddevice_notification_handlerspandevice-notification-handler"></a><span id="Device_Notification_Handler"></span><span id="device_notification_handler"></span><span id="DEVICE_NOTIFICATION_HANDLER"></span>设备通知处理程序
 
 
-移动宽带平台提供了用于接收和显示 m n O 管理短信或 USSD 通知，如接近数据使用限制、 国际漫游和低余额的增强的功能。 它还提供功能的响应数据使用情况和连接、 断开连接，或适用于移动网络提供商漫游 UWP 应用中的后台事件。
+移动宽带平台提供了增强的功能，可用于接收和显示 o 的管理短信或 USSD 通知，如接近数据使用量上限、国际化漫游和低平衡。 它还提供了用于响应移动网络提供程序的 UWP 应用中的数据使用和连接、断开或漫游背景事件的功能。
 
-Windows 提供用于 UWP 应用运行一些代码以响应事件，即使 Microsoft Store 应用程序未运行的 broker 工具。 有关实现通知处理程序的详细信息，请参阅[启用移动运营商通知和系统事件](https://go.microsoft.com/fwlink/p/?linkid=242062)。
+Windows 提供适用于 UWP 应用的 broker 功能，以运行某些代码来响应事件，即使 Microsoft Store 应用未运行也是如此。 有关实现通知处理程序的详细信息，请参阅[启用移动运营商通知和系统事件简介](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/enabling-mobile-operator-notifications-and-system-events)。
 
  
 

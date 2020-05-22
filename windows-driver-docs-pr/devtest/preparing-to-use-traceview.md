@@ -7,12 +7,12 @@ keywords:
 - 文件 WDK TraceView
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ff91a47ea2c8a4a31b791d1d2acf870ccbdb1f9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff2860f7a8705ef171ebdd702fbda0f08a4cd9ec
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327330"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769667"
 ---
 # <a name="preparing-to-use-traceview"></a>准备使用 TraceView
 
@@ -20,39 +20,39 @@ ms.locfileid: "63327330"
 ## <span id="ddk_preparing_to_use_traceview_tools"></span><span id="DDK_PREPARING_TO_USE_TRACEVIEW_TOOLS"></span>
 
 
-在使用 TraceView 之前，需要收集有关事件跟踪和有关的信息[跟踪提供程序](trace-provider.md)您正在跟踪的。 本主题介绍这些先决条件。
+使用 TraceView 之前，需要收集有关事件跟踪以及要跟踪的[跟踪提供程序](trace-provider.md)的信息。 本主题介绍这些先决条件。
 
-**请注意**  如果版本的 Windows 操作系统早于 Windows Vista 上运行 TraceView，必须将 Dbghelp.dll 文件复制到为 TraceView 可执行文件，TraceView.exe 相同的子目录。 
+**注意**   如果在早于 Windows Vista 的 Windows 操作系统版本上运行 TraceView，则必须将 Dbghelp.dll 文件复制到 TraceView 可执行文件（TraceView）所在的同一子目录中。 
 
-默认情况下，TraceView.exe 位于在工具\\ *&lt;平台&gt;* 子目录的 Windows Driver Kit (WDK) 中，其中 *&lt;平台&gt;* 是 i386、 amd64 或 ia64。 Dbghelp.dll 已安装，默认情况下，在\\bin\\x86 子目录。
+默认情况下，TraceView 位于 \\ Windows 驱动程序工具包（WDK）的工具* &lt; &gt; 平台*子目录中，其中* &lt; &gt; Platform*为 i386、amd64 或 ia64。 默认情况下，在 \\ bin x86 子目录中安装 dbghelp.dll。 \\
 
  
 
-### <a name="span-idunderstandeventtracingspanspan-idunderstandeventtracingspanunderstand-event-tracing"></a><span id="understand_event_tracing"></span><span id="UNDERSTAND_EVENT_TRACING"></span>了解事件跟踪
+### <a name="span-idunderstand_event_tracingspanspan-idunderstand_event_tracingspanunderstand-event-tracing"></a><span id="understand_event_tracing"></span><span id="UNDERSTAND_EVENT_TRACING"></span>了解事件跟踪
 
-在使用 TraceView 之前，您应熟悉*事件跟踪*。 有关详细信息，请参阅[WPP 软件跟踪](wpp-software-tracing.md)和"[事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=60384)"Microsoft Windows SDK 中的主题。
+使用 TraceView 之前，应熟悉*事件跟踪*。 有关详细信息，请参阅[WPP Software 跟踪](wpp-software-tracing.md)和[Windows 事件跟踪](https://docs.microsoft.com/windows-hardware/test/wpt/event-tracing-for-windows)。
 
-同时，检查 Tracedrv (Tracedrv.c) 使用 WPP 软件跟踪检测的示例驱动程序。 [Tracedrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)示例现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507 )GitHub 上的存储库。 生成 Tracedrv 驱动程序和其引擎，Tracectl (Tracectl.c)，然后使用驱动程序和引擎 TraceView 试验。
+另外，请检查 Tracedrv （Tracedrv），它是使用 WPP 软件跟踪进行检测的示例驱动程序。 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中提供了[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)示例。 构建 Tracedrv 驱动程序及其引擎 Tracectl （Tracectl），然后使用驱动程序和引擎来试验 TraceView。
 
-### <a name="span-idknowthetraceproviderspanspan-idknowthetraceproviderspanknow-the-trace-provider"></a><span id="know_the_trace_provider"></span><span id="KNOW_THE_TRACE_PROVIDER"></span>了解跟踪提供程序
+### <a name="span-idknow_the_trace_providerspanspan-idknow_the_trace_providerspanknow-the-trace-provider"></a><span id="know_the_trace_provider"></span><span id="KNOW_THE_TRACE_PROVIDER"></span>了解跟踪提供程序
 
-您应熟悉[跟踪提供程序](trace-provider.md)您正在跟踪和类型的跟踪消息，它将生成。
+你应该熟悉正在跟踪的[跟踪提供程序](trace-provider.md)以及它生成的跟踪消息的类型。
 
-TraceView 跟踪事件和跟踪消息以用户可读格式显示，但它不会将其解释或为消息提供任何信息或上下文。 若要了解消息和它们所指示的有关提供程序，您必须非常熟悉的提供程序的操作。
+TraceView 以用户可读的格式显示跟踪事件和跟踪消息，但不会对其进行解释或为消息提供任何信息或上下文。 若要了解消息以及它们对提供程序的含义，你必须非常熟悉提供程序的操作。
 
-### <a name="span-idfindproviderfilesspanspan-idfindproviderfilesspanfind-provider-files"></a><span id="find_provider_files"></span><span id="FIND_PROVIDER_FILES"></span>查找提供程序的文件
+### <a name="span-idfind_provider_filesspanspan-idfind_provider_filesspanfind-provider-files"></a><span id="find_provider_files"></span><span id="FIND_PROVIDER_FILES"></span>查找提供程序文件
 
-若要查看来自跟踪提供程序的跟踪消息，将需要向 TraceView 提供以下位置之一：
+若要查看跟踪提供程序中的跟踪消息，需要提供以下位置之一进行 TraceView：
 
--   位置[PDB 符号文件](pdb-symbol-files.md)提供程序
+-   提供程序的[PDB 符号文件](pdb-symbol-files.md)的位置
 
 -   - 或 -
 
--   位置[控制 GUID (.ctl) 文件](control-guid-file.md)提供程序和位置[跟踪消息格式 (.tmf) 文件](trace-message-format-file.md)为其跟踪消息
+-   提供程序的[控件 GUID （ctl）文件](control-guid-file.md)的位置以及跟踪消息的[跟踪消息格式（. tmf）文件](trace-message-format-file.md)的位置
 
-[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)使用 WDK 中包含的 system.tmf 文件 (\\工具\\跟踪\\i386\)。
+[NT 内核记录器跟踪会话](nt-kernel-logger-trace-session.md)使用 WDK 中包含的 tmf 文件（ \\ 工具 \\ 跟踪 \\ i386） \) 。
 
-中介绍了这些文件和在 TraceView 中, 使用它们[NT 内核记录器跟踪会话的创建](creating-an-nt-kernel-logger-trace-session.md)。 创建跟踪会话时，将使用此信息。
+这些文件及其在 TraceView 中的用法在[创建 NT 内核记录器跟踪会话](creating-an-nt-kernel-logger-trace-session.md)中进行了介绍。 在创建跟踪会话时，将使用此信息。
 
  
 

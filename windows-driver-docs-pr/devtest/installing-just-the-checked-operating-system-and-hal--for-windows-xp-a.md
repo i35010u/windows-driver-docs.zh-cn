@@ -13,12 +13,12 @@ keywords:
 - Boot.ini 文件 WDK，已检查版本
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 294943fe810e35771bdb6f6b3d4b98088380c407
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: f4cf103b68090b83c107e9ce97fe8973b69b21f6
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999056"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769613"
 ---
 # <a name="installing-just-the-checked-operating-system-and-hal-for-windows-xp-and-windows-server-2003"></a>只安装已检验的操作系统和 HAL（适用于 Windows XP 和 Windows Server 2003）
 
@@ -36,11 +36,11 @@ ms.locfileid: "82999056"
 
 -   单个安装（因而一个系统目录、一组可执行组件和一组注册表参数）可以使用操作系统映像和 HAL 的 "已检查" 或 "免费" 版本，如启动时所确定。
 
-若要安装操作系统映像和 HAL 的已检查版本，必须使用新的、唯一的文件名将相应的文件从已检查的分发\\媒体复制到% SystemRoot% system32 目录。 然后，必须指示系统在系统启动期间提供一个使用这些文件的选项。 在其他免费安装上安装已检查的操作系统和 HAL 映像时，应记住以下重要准则：
+若要安装操作系统映像和 HAL 的已检查版本，必须使用新的、唯一的文件名将相应的文件从已检查的分发媒体复制到% SystemRoot% \\ system32 目录。 然后，必须指示系统在系统启动期间提供一个使用这些文件的选项。 在其他免费安装上安装已检查的操作系统和 HAL 映像时，应记住以下重要准则：
 
 -   操作系统映像和 HAL 必须始终保持同步。 因此，如果使用操作系统映像的已检查版本，则还必须使用所检查的 HAL 版本（反之亦然）。 未能使系统的操作系统映像和 HAL 进行协调会使系统无法启动。
 
--   不要覆盖操作系统映像和安装免费版本期间安装的 HAL 的免费版本。 覆盖操作系统映像和 HAL 的免费版本可能使系统无法启动，并可能会导致难以从错误中恢复。 因此，在将操作系统和 HAL 的已检查版本复制到% SystemRoot%\\system32 目录时，请务必谨慎使用新的唯一文件名。
+-   不要覆盖操作系统映像和安装免费版本期间安装的 HAL 的免费版本。 覆盖操作系统映像和 HAL 的免费版本可能使系统无法启动，并可能会导致难以从错误中恢复。 因此，在将操作系统和 HAL 的已检查版本复制到% SystemRoot% system32 目录时，请务必谨慎使用新的唯一文件名 \\ 。
 
 -   请确保所使用的选定分发版与免费系统的服务包号相同。 例如，如果在安装了免费生成系统的 Service Pack 2 的系统上安装已检查操作系统映像和 HAL，请确保所使用的已检查分发也是 Service Pack 2。
 
@@ -50,7 +50,7 @@ ms.locfileid: "82999056"
 
 安装部分检查版本的第一步是确定用于在系统上安装免费版本的操作系统映像和 HAL 文件的版本。
 
-基于 NT 的操作系统分发介质上提供了几种不同版本的操作系统和 HAL 映像。 这些不同版本的存在是为了支持处理器和其他系统硬件的不同组合。 安装操作系统软件时，安装过程会自动标识要使用的操作系统映像和 HAL 映像，并将相应的文件从分发介质复制到系统的% SystemRoot%\\system32 目录。
+基于 NT 的操作系统分发介质上提供了几种不同版本的操作系统和 HAL 映像。 这些不同版本的存在是为了支持处理器和其他系统硬件的不同组合。 安装操作系统软件时，安装过程会自动标识要使用的操作系统映像和 HAL 映像，并将相应的文件从分发介质复制到系统的% SystemRoot% \\ system32 目录。
 
 安装的操作系统映像文件取决于是否支持一个或多个处理器，以及是否支持物理地址扩展（PAE）（物理内存超过 4 GB 的系统上的 PAE 是活动的）。 分发介质上的文件名如下：
 
@@ -68,7 +68,7 @@ ms.locfileid: "82999056"
 
 同样，HAL 有多个不同的名称。
 
-在系统安装过程中，安装过程会确定要在您的系统上安装的相应操作系统映像和 HAL。 使用固定的已知名称，在安装过程中\\将所选文件复制到% SystemRoot% system32 目录。 使用这些固定名称可以使加载程序在启动时轻松找到这些文件。 这些文件的固定名称为：
+在系统安装过程中，安装过程会确定要在您的系统上安装的相应操作系统映像和 HAL。 使用固定的已知名称，在安装过程中将所选文件复制到% SystemRoot% \\ system32 目录。 使用这些固定名称可以使加载程序在启动时轻松找到这些文件。 这些文件的固定名称为：
 
 <span id="NTOSKRNL.EXE"></span>ntoskrnl.exe  
 适用于物理内存不超过 4 GB 的 x86 系统的操作系统映像。
@@ -81,9 +81,9 @@ ms.locfileid: "82999056"
 
 请注意，在某些情况下，根据系统的硬件配置，可以将一个或多个文件重命名为适当的固定名称。 在其他情况下，分发介质上的文件名与所需的固定文件名相同。
 
-若要安装所选的操作系统映像和 HAL，你必须首先确定系统安装过程中复制到系统中的映像的原始名称。 若要执行此过程，请检查文件%\\SystemRoot\\% repair setup .log。 这是一个隐藏文件，因此你需要更改其属性，然后才能使用**dir**命令查看它。
+若要安装所选的操作系统映像和 HAL，你必须首先确定系统安装过程中复制到系统中的映像的原始名称。 若要执行此过程，请检查文件% SystemRoot% \\ repair \\ setup .log。 这是一个隐藏文件，因此你需要更改其属性，然后才能使用**dir**命令查看它。
 
-安装日志文件列出系统安装过程中从分发介质复制到% SystemRoot%\\system32 目录的文件。
+安装日志文件列出系统安装过程中从分发介质复制到% SystemRoot% system32 目录的文件 \\ 。
 
 安装日志文件的示例如下所示：
 
@@ -113,15 +113,15 @@ arcldr.exe = "arcldr.exe","2eca9"
 \WINNT\inf\mdmrpci.inf = "mdmrpci.inf","96a3"
 ```
 
-在示例安装程序 .log 文件中，可以看到，在安装过程中，已将两个操作系统\\映像\\文件复制到 winnt system32 目录（即\\% SystemRoot% system32）。 文件 ntkrpamp 将从分发介质复制到 ntkrnlpa，并从分发介质将文件 ntkrnlmp 复制到 ntoskrnl.exe 中。 在此示例中，你还可以看到 HAL 文件（在% SystemRoot%\\system32 目录中具有固定名称 HAL）最初名为 halmacpi。
+在示例安装程序 .log 文件中，可以看到，在安装过程中，已将两个操作系统映像文件复制到 \\ winnt \\ system32 目录（即% SystemRoot% \\ system32）。 文件 ntkrpamp 将从分发介质复制到 ntkrnlpa，并从分发介质将文件 ntkrnlmp 复制到 ntoskrnl.exe 中。 在此示例中，你还可以看到 HAL 文件（在% SystemRoot% system32 目录中具有固定名称 HAL \\ ）最初名为 halmacpi。
 
-**警告**  某些 HAL 文件具有其实不然相似名称。 例如，halacpi 和 halapic 是两个常用的 Hal。 请注意，使用正确版本的 HAL 作为系统。 选择错误的 HAL 将导致系统无法引导。
+**警告**   某些 HAL 文件具有其实不然相似名称。 例如，halacpi 和 halapic 是两个常用的 Hal。 请注意，使用正确版本的 HAL 作为系统。 选择错误的 HAL 将导致系统无法引导。
 
  
 
 ### <a name="span-idstep_2__copying_the_checked_filesspanspan-idstep_2__copying_the_checked_filesspanstep-2-copying-the-checked-files"></a><span id="step_2__copying_the_checked_files"></span><span id="STEP_2__COPYING_THE_CHECKED_FILES"></span>步骤2：复制已检查的文件
 
-现在，你知道在系统安装过程中使用的文件的名称，你可以将这些文件的已检查版本复制到系统中。 查找在已检查的分发工具包中标识的文件。 然后将这些文件复制到系统的%\\SystemRoot% system32 目录，并为其提供新的、唯一的文件名。 这些文件的副本必须遵循8.3 命名约定。 确保符合8.3 的唯一文件名的一种方法是，在复制文件类型时，将文件类型从其原始文件类型（.dll 或 .exe）重命名为 .chk。 因此，使用步骤1中的示例，您可以从已检查的分发工具包复制文件，如下所示：
+现在，你知道在系统安装过程中使用的文件的名称，你可以将这些文件的已检查版本复制到系统中。 查找在已检查的分发工具包中标识的文件。 然后将这些文件复制到系统的% SystemRoot% \\ system32 目录，并为其提供新的、唯一的文件名。 这些文件的副本必须遵循8.3 命名约定。 确保符合8.3 的唯一文件名的一种方法是，在复制文件类型时，将文件类型从其原始文件类型（.dll 或 .exe）重命名为 .chk。 因此，使用步骤1中的示例，您可以从已检查的分发工具包复制文件，如下所示：
 
 <table>
 <colgroup>
@@ -152,9 +152,9 @@ arcldr.exe = "arcldr.exe","2eca9"
 
  
 
-已检查分发中的某些文件以压缩形式提供。 这些文件使用下划线字符作为其文件类型中的最后一个字符。 例如，如果在已检查的生成分发工具包中查找文件 halapic，将找到文件 halapic\_，它是正确的文件，但采用压缩形式。
+已检查分发中的某些文件以压缩形式提供。 这些文件使用下划线字符作为其文件类型中的最后一个字符。 例如，如果在已检查的生成分发工具包中查找文件 halapic，将找到文件 halapic \_ ，它是正确的文件，但采用压缩形式。
 
-若要从选定的分发中解压缩压缩文件，请使用展开实用程序（\\%\\SystemRoot% system32 展开 .exe）。 例如，若要展开 halapic\_并将展开的文件命名为 halapic，可以在命令提示符窗口中使用以下命令：
+若要从选定的分发中解压缩压缩文件，请使用展开实用程序（% SystemRoot% \\ system32 \\ 展开 .exe）。 例如，若要展开 halapic \_ 并将展开的文件命名为 halapic，可以在命令提示符窗口中使用以下命令：
 
 ```
 > expand halapic.dl_ halapic.chk
@@ -162,13 +162,13 @@ arcldr.exe = "arcldr.exe","2eca9"
 
 ### <a name="span-idstep_3__editing_boot_inispanspan-idstep_3__editing_boot_inispanstep-3-editing-bootini"></a><span id="step_3__editing_boot_ini"></span><span id="STEP_3__EDITING_BOOT_INI"></span>步骤3：编辑 boot.ini
 
-将所选文件复制到% SystemRoot%\\system32 目录后，必须创建启动时选项，使系统能够开始使用这些已检查的文件。 若要执行此，请编辑 boot.ini 文件。
+将所选文件复制到% SystemRoot% \\ system32 目录后，必须创建启动时选项，使系统能够开始使用这些已检查的文件。 若要执行此，请编辑 boot.ini 文件。
 
 有关一般说明，请参阅[编辑 Boot.ini 文件](editing-the-boot-ini-file.md)。
 
 在此特定情况下，你需要创建一个新的引导时选项，该选项允许你使用已安装的操作系统映像和 HAL 的已检查版本启动系统。
 
-在 boot.ini 的 " ** \[操作系统\] ** " 部分中找到指向 Windows 安装的行。 创建它的第二个副本，并将以下参数添加到复制行的末尾：
+在 boot.ini 的 " ** \[ 操作系统 \] ** " 部分中找到指向 Windows 安装的行。 创建它的第二个副本，并将以下参数添加到复制行的末尾：
 
 ```
 /kernel=KernelFile /hal=HalFile 
@@ -201,14 +201,14 @@ multi(0)disk(0)rdisk(0)partition(1)\WINNT="Windows 2000 Checked" /fastdetect /ke
 
 将可用驱动程序替换为其选中的对应项时，无法为系统提供的驱动程序组件轻松提供备用映像。 因此，当你在系统上将可用驱动程序替换为所选的驱动程序时，在启动操作系统映像包和 HAL 的免费或已检查版本时，将使用所选的驱动程序。 因此，你可能需要重命名（或复制）替换为选中的对应项的任何驱动程序的原始免费版本，以便以后可以还原免费的驱动程序。
 
-最后，请注意，只要更改其中一个系统目录中存在的某个标准文件（例如% SystemRoot%\\system32），Windows 文件保护（WFP）就会将该文件还原到其原始状态，除非第一次禁用 WFP。 如果将调试器附加到系统，则可以通过更改以下注册表值来暂时禁用 WFP：
+最后，请注意，只要更改其中一个系统目录中存在的某个标准文件（例如% SystemRoot% \\ system32），Windows 文件保护（WFP）就会将该文件还原到其原始状态，除非第一次禁用 WFP。 如果将调试器附加到系统，则可以通过更改以下注册表值来暂时禁用 WFP：
 
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
 SFCDisable:REG_DWORD:2
 ```
 
-如果将**SFCDisable**设置为值2，则将为下一次启动禁用 WFP （仅限）。 值0（默认值）启用 WFP。 有关 WFP 功能的说明，请参阅 Microsoft Windows SDK。 有关 WFP 注册表设置的详细信息，请参阅[Microsoft 知识库文章 Q222473](https://go.microsoft.com/fwlink/p/?linkid=38360)。
+如果将**SFCDisable**设置为值2，则将为下一次启动禁用 WFP （仅限）。 值0（默认值）启用 WFP。 有关 WFP 功能的说明，请参阅 Microsoft Windows SDK。
 
  
 

@@ -4,16 +4,16 @@ description: 内核模式性能监视
 ms.assetid: 317d2f9d-db50-4513-8bbd-28f429236877
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 447859191174145b0981b2ac2eb7a75b08b5258b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b7517d8f8c437a7189f61471c4074db209f8e02f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839544"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769427"
 ---
 # <a name="kernel-mode-performance-monitoring"></a>内核模式性能监视
 
-Microsoft Windows 操作系统允许系统组件和第三方使用[性能计数器](https://go.microsoft.com/fwlink/p/?linkid=144442)以标准方式公开性能指标。
+Microsoft Windows 操作系统允许系统组件和第三方使用[性能计数器](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal)以标准方式公开性能指标。
 
 部分包括以下主题：
 

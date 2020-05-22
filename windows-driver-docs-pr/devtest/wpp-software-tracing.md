@@ -13,12 +13,12 @@ keywords:
 - 跟踪 WDK，WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c484639102f09bad1aae022f2a1dc801911fac5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb1772fa4a4ccfbedd739a610d1bae7207aa4d92
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839084"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769651"
 ---
 # <a name="wpp-software-tracing"></a>WPP 软件跟踪
 
@@ -62,7 +62,7 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 
 向驱动程序或应用程序添加 WPP 软件跟踪的基本过程包括以下步骤。 如果使用 WDK 中提供的一个 Visual Studio 模板来创建 WDF 驱动程序，将完成大部分工作。
 
--   定义唯一地将驱动程序或应用程序标识为[跟踪提供](trace-provider.md)程序的控件 GUID。 提供程序在其[WPP\_控件\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏和[Tracelog](tracelog.md)或其他[跟踪控制器](trace-controller.md)使用的相关控件文件中指定此 GUID。
+-   定义唯一地将驱动程序或应用程序标识为[跟踪提供](trace-provider.md)程序的控件 GUID。 提供程序在其[WPP \_ 控制 \_ guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))宏的定义和[Tracelog](tracelog.md)或其他[跟踪控制器](trace-controller.md)使用的相关控件文件中指定此 GUID。
 
 -   如向[Windows 驱动程序添加 Wpp 软件跟踪](adding-wpp-software-tracing-to-a-windows-driver.md)和[Wpp 软件跟踪参考](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85))中所述，将所需的与 wpp 相关的 C 预处理器指令和 WPP 宏调用添加到提供程序的源文件中。
 
@@ -73,15 +73,16 @@ Microsoft Windows 2000 和更高版本的 Windows 支持 WPP 软件跟踪。
 ## <a name="in-this-section"></a>本部分内容
 
 
--   [向 Windows 驱动程序添加 WPP 软件跟踪](adding-wpp-software-tracing-to-a-windows-driver.md)
--   [日志记录跟踪的即时跟踪记录器](using-wpp-recorder.md)
+-   [将 WPP 软件跟踪添加到 Windows 驱动程序](adding-wpp-software-tracing-to-a-windows-driver.md)
+-   [用于记录跟踪的即时跟踪记录器](using-wpp-recorder.md)
 -   [在跟踪提供程序中使用 WPP 软件跟踪](using-wpp-software-tracing-in-a-trace-provider.md)
--   [向跟踪提供程序添加 WPP 宏](adding-wpp-macros-to-a-trace-provider.md)
+-   [将 WPP 宏添加到跟踪提供程序](adding-wpp-macros-to-a-trace-provider.md)
 -   [WPP 预处理器](wpp-preprocessor.md)
--   [WDF 驱动程序的跟踪和诊断](tracing-and-diagnosability-for-wdf-drivers.md)
+-   [WDF 驱动程序的跟踪和诊断能力](tracing-and-diagnosability-for-wdf-drivers.md)
 
-**请注意**   Windows 事件跟踪（ETW）和 WPP 支持大多数类型的内核模式和用户模式驱动程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持特定的驱动程序类型，请向驱动程序添加基本的 WPP 宏，如[WPP\_INIT\_跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))和[wpp\_清除](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而无法编译，则 ETW 和 WPP 不能支持驱动程序类型。
-有关 ETW 的详细信息，请参阅 Windows SDK 文档中的[事件跟踪](https://go.microsoft.com/fwlink/p/?linkid=179202)。
+**注意**   Windows 事件跟踪（ETW）和 WPP 支持大多数类型的内核模式和用户模式驱动程序。 但 ETW 和 WPP 使用某些类型的驱动程序（如微型端口驱动程序）不可用的类型。 若要确定是否支持某个特定的驱动程序类型，请将基本的 WPP 宏添加到该驱动程序，如[WPP \_ INIT \_ 跟踪](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))和[wpp \_ 清除](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))。 如果代码由于未定义所使用的类型而无法编译，则 ETW 和 WPP 不能支持驱动程序类型。
+
+有关 ETW 的详细信息，请参阅[Windows 事件跟踪](https://docs.microsoft.com/windows-hardware/test/wpt/event-tracing-for-windows)。
 
 **注意**WPP 跟踪提供程序一次只能由一个跟踪会话启用。 有关详细信息，请参阅[WPP 提供程序](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing#providers)。
 

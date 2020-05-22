@@ -1,34 +1,34 @@
 ---
-title: 可以自定义 DoTraceMessage
-description: 可以自定义 DoTraceMessage
+title: 能否自定义 DoTraceMessage
+description: 能否自定义 DoTraceMessage
 ms.assetid: 4c5c4990-6095-4ab8-a20b-7597b3169f52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63dbeae90a2de439ad3f26d58ef95bc0e6dfe139
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98de0b66328d05b42d22e86ad61d8209fc9c5fc8
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371625"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769443"
 ---
 # <a name="can-i-customize-dotracemessage"></a>是否可以自定义 DoTraceMessage？
 
 
-是的您可以编写自己的版本[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏。 DoTraceMessage 生成的跟踪消息。
+是的，您可以编写自己的[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))宏版本。 DoTraceMessage 生成跟踪消息。
 
-[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)示例驱动程序提供了本主题中所述的方法的示例。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+[TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)示例驱动程序提供了本主题中描述的方法的示例。 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中提供了[TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver) 。
 
-### <a name="span-iddotracemessagedefaultversionspanspan-iddotracemessagedefaultversionspandotracemessage-default-version"></a><span id="dotracemessage__default_version"></span><span id="DOTRACEMESSAGE__DEFAULT_VERSION"></span>DoTraceMessage:默认版本
+### <a name="span-iddotracemessage__default_versionspanspan-iddotracemessage__default_versionspandotracemessage-default-version"></a><span id="dotracemessage__default_version"></span><span id="DOTRACEMESSAGE__DEFAULT_VERSION"></span>DoTraceMessage：默认版本
 
-默认情况下，DoTraceMessage 宏采用以下格式：
+默认情况下，DoTraceMessage 宏的格式如下：
 
 ```
 DoTraceMessage(Flag,"Message",MessageVariables...);
 ```
 
-在此默认版本，*标志*表示[跟踪标志](trace-flags.md)，这是在其下生成的消息的条件。 *MessageVariables*包含驱动程序定义，并在跟踪消息中都出现的变量的以逗号分隔列表。 *MessageVariables*使用格式化变量**printf**元素。 预处理器 WPP 从 DoTraceMessage 宏创建的编译器指令。 此宏会将消息定义信息和格式设置信息添加到为其生成的 PDB 文件[跟踪提供程序](trace-provider.md)，如内核模式驱动程序或用户模式应用程序。
+在此默认版本中，*标志*表示[跟踪标志](trace-flags.md)，这是生成消息时所依据的条件。 *MessageVariables*包含一个逗号分隔的变量列表，驱动程序将定义这些变量并将其显示在跟踪消息中。 *MessageVariables*变量使用**printf**元素进行格式设置。 WPP 预处理器从 DoTraceMessage 宏创建编译器指令。 此宏向为[跟踪提供程序](trace-provider.md)生成的 PDB 文件添加消息定义信息和格式设置信息，例如内核模式驱动程序或用户模式应用程序。
 
-DoTraceMessage 宏将展开，在逻辑上，为以下：
+DoTraceMessage 宏按逻辑展开为以下内容：
 
 ```
 PRE macro // If defined
@@ -38,17 +38,17 @@ If (WPP_CHECK_INIT && Flag is enabled) {
 POST macro // If defined
 ```
 
-请考虑下面的代码示例。
+请考虑以下代码示例。
 
 ```
 DoTraceMessage(ERROR, "IOCTL = %d", ControlCode);
 ```
 
-此调用时启用错误标志，则生成的跟踪消息。 该消息是"IOCTL = %d"和*MessageVariables*的值*ControlCode*。
+启用错误标志后，此调用会生成跟踪消息。 消息为 "IOCTL =% d"， *MessageVariables*是*ControlCode*的值。
 
-如果定义了预日志记录和后的日志记录宏，它们也将得到扩展。 在 Microsoft Windows 2000 和更高版本操作系统支持预宏和 POST 宏。 若要使用宏，必须使用 WDK 构建该驱动程序。 如果使用早期版本的 Windows 驱动程序开发工具包 (DDK) 生成一个驱动程序，PRE 和 POST 功能不可用，并且宏将不会作为跟踪语句的一部分运行。 使用早期版本的 Windows DDK 构建该驱动程序可能不会导致生成中断，但该代码将无法按预期工作。
+如果预日志记录和日志记录后的宏已定义，则它们也将展开。 Microsoft Windows 2000 及更高版本的操作系统支持宏和发布宏。 若要使用宏，必须使用 WDK 构建驱动程序。 如果使用早期版本的 Windows 驱动程序开发工具包（DDK）构建驱动程序，则 PRE 和 POST 功能不可用，并且宏不会作为跟踪语句的一部分运行。 使用早期版本的 Windows DDK 构建驱动程序可能不会导致生成中断，但代码不会按预期方式工作。
 
-### <a name="span-iddotracemessagegeneralformatspanspan-iddotracemessagegeneralformatspandotracemessage-general-format"></a><span id="dotracemessage__general_format"></span><span id="DOTRACEMESSAGE__GENERAL_FORMAT"></span>DoTraceMessage:常规格式
+### <a name="span-iddotracemessage__general_formatspanspan-iddotracemessage__general_formatspandotracemessage-general-format"></a><span id="dotracemessage__general_format"></span><span id="DOTRACEMESSAGE__GENERAL_FORMAT"></span>DoTraceMessage：常规格式
 
 下面是有效的跟踪消息函数的常规格式：
 
@@ -56,13 +56,13 @@ DoTraceMessage(ERROR, "IOCTL = %d", ControlCode);
 FunctionName(Conditions...,"Message",MessageVariables...);
 ```
 
-显示的消息之前的参数被解释为条件。 该消息后显示的参数被解释为消息变量。
+消息之前显示的参数被解释为条件。 消息后显示的参数被解释为消息变量。
 
-*条件*是以逗号分隔值的列表。 仅当满足所有条件都时生成的跟踪消息。 可以指定代码中支持任何条件。
+*条件*是以逗号分隔的值列表。 仅当所有条件均为 true 时，才生成跟踪消息。 您可以指定代码中支持的任何条件。
 
-### <a name="span-idexamplemytracespanspan-idexamplemytracespanexample-mytrace"></a><span id="example__mytrace"></span><span id="EXAMPLE__MYTRACE"></span>示例：MyTrace
+### <a name="span-idexample__mytracespanspan-idexample__mytracespanexample-mytrace"></a><span id="example__mytrace"></span><span id="EXAMPLE__MYTRACE"></span>示例： MyTrace
 
-下面是跟踪功能的示例。 此示例将跟踪级别和提供程序生成的跟踪消息的子组件的条件。
+下面是一个跟踪函数的示例。 此示例为生成跟踪消息的提供程序的跟踪级别和子组件添加条件。
 
 ```
 MyDoTrace(Level, Flag, Subcomponent,"Message",MessageVariables...);
@@ -74,7 +74,7 @@ MyDoTrace(Level, Flag, Subcomponent,"Message",MessageVariables...);
 MyDoTrace(TRACE_LEVEL_ERROR, VERBOSE, Network,"IOCTL = %d", ControlCode);
 ```
 
-跟踪级别为 Evntrace.h，WDK 的 Include 子目录中的公共标头文件中定义的标准级别。
+跟踪级别是在 Evntrace 中定义的标准级别，它是在 WDK 的包含子目录中的公共标头文件。
 
 ```
 #define TRACE_LEVEL_NONE        0   // Tracing is not on
@@ -89,37 +89,37 @@ MyDoTrace(TRACE_LEVEL_ERROR, VERBOSE, Network,"IOCTL = %d", ControlCode);
 #define TRACE_LEVEL_RESERVED9   9
 ```
 
-### <a name="span-idhowtocreateacustomtracingfunctionspanspan-idhowtocreateacustomtracingfunctionspanhow-to-create-a-custom-tracing-function"></a><span id="how_to_create_a_custom_tracing_function"></span><span id="HOW_TO_CREATE_A_CUSTOM_TRACING_FUNCTION"></span>如何创建自定义跟踪函数
+### <a name="span-idhow_to_create_a_custom_tracing_functionspanspan-idhow_to_create_a_custom_tracing_functionspanhow-to-create-a-custom-tracing-function"></a><span id="how_to_create_a_custom_tracing_function"></span><span id="HOW_TO_CREATE_A_CUSTOM_TRACING_FUNCTION"></span>如何创建自定义跟踪函数
 
-若要创建的自定义跟踪功能，请执行以下步骤：
+若要创建自定义跟踪功能，请执行以下步骤：
 
--   编写支持 DoTraceMessage 宏的宏的替代版本。
+-   编写支持 DoTraceMessage 宏的其他版本的宏。
 
--   添加 **-func**参数运行\_WPP WPP 预处理器将调用的语句。
+-   将 **-func**参数添加到 \_ 调用 wpp 预处理器的 RUN WPP 语句中。
 
-### <a name="span-idwritecustommacrosspanspan-idwritecustommacrosspanwrite-custom-macros"></a><span id="write_custom_macros"></span><span id="WRITE_CUSTOM_MACROS"></span>编写自定义的宏
+### <a name="span-idwrite_custom_macrosspanspan-idwrite_custom_macrosspanwrite-custom-macros"></a><span id="write_custom_macros"></span><span id="WRITE_CUSTOM_MACROS"></span>编写自定义宏
 
-若要创建更改的条件跟踪消息 （在消息之前显示的参数） 的自定义跟踪功能，必须编写备用版本支持跟踪函数的宏**WPP\_级别\_已启用**并**WPP\_级别\_记录器**。
+若要创建一个更改跟踪消息的条件的自定义跟踪函数（在消息之前显示的参数），必须编写支持跟踪函数的其他版本的宏， ** \_ \_ 启用 Wpp 级别**和**wpp \_ 级别 \_ 记录器**。
 
--   **WPP\_级别\_已启用 (*标志*)** 确定是否使用指定的标志值启用日志记录。 它将返回 **，则返回 TRUE**或**FALSE**。
+-   **WPP \_\_已启用级别（*标志*）** 确定是否已启用具有指定标志值的日志记录。 它返回**TRUE**或**FALSE**。
 
--   **WPP\_级别\_记录器 (*标志*)** 查找跟踪会话向其提供程序，并返回到跟踪会话的句柄。
+-   **WPP \_级别 \_ 记录器（*Flags*）** 查找启用了提供程序的跟踪会话，并为跟踪会话返回一个句柄。
 
-例如，如果你想要包括的跟踪级别，除了标志，作为一项条件，定义新 WPP\_级别\_包括跟踪级别的已启用宏。 可以基于新的宏的定义默认宏，如以下代码示例所示。
+例如，如果你想要包含跟踪级别，则除了标志以外，还需要定义一个包含跟踪级别的新的 \_ 启用 WPP 级别的 \_ 宏。 可以将新宏的定义基于默认宏，如下面的代码示例所示。
 
 ```
 #define WPP_LEVEL_FLAGS_ENABLED(lvl, flags) (WPP_LEVEL_ENABLED(flags) && WPP_CONTROL(WPP_BIT_ ## flags).Level >=lvl
 ```
 
-通常情况下，WPP\_级别\_记录器宏不会受到影响。 在这些情况下，可以定义新的宏是默认宏。 例如：
+通常，WPP \_ 级别 \_ 记录器宏不受影响。 在这些情况下，可以将新宏定义为默认宏。 例如：
 
 ```
 #define WPP_LEVEL_FLAGS_LOGGER(lvl,flags) WPP_LEVEL_LOGGER(flags)
 ```
 
-但是，在某些情况下，您需要更改记录器宏。 例如，你可能想要编写取决于仅跟踪级别以及不在标志上的跟踪功能。
+但是，在某些情况下，需要更改记录器宏。 例如，你可能希望编写一个仅依赖于跟踪级别而不依赖于标志的跟踪函数。
 
-在下面的代码示例中，在宏中标志值将替换为虚拟值。 声明控制 GUID 定义时不定义任何标志。
+在下面的代码示例中，宏中的 flags 值被替换为一个虚拟值。 在声明控件 GUID 定义时不定义任何标志。
 
 ```
 #define WPP_CONTROL_GUIDS \
@@ -131,19 +131,19 @@ MyDoTrace(TRACE_LEVEL_ERROR, VERBOSE, Network,"IOCTL = %d", ControlCode);
 #define WPP_LEVEL_LOGGER(lvl) (WPP_CONTROL(WPP_BIT_ ## DUMMY).Logger)
 ```
 
-### <a name="span-idaddthefunctiontowppspanspan-idaddthefunctiontowppspanadd-the-function-to-wpp"></a><span id="add_the_function_to_wpp"></span><span id="ADD_THE_FUNCTION_TO_WPP"></span>此函数添加到 WPP
+### <a name="span-idadd_the_function_to_wppspanspan-idadd_the_function_to_wppspanadd-the-function-to-wpp"></a><span id="add_the_function_to_wpp"></span><span id="ADD_THE_FUNCTION_TO_WPP"></span>将函数添加到 WPP
 
-若要将自定义跟踪功能添加到 WPP，添加 **-func**参数运行\_WPP 语句与声明的函数，如下面的代码示例显示了。
+若要将自定义跟踪函数添加到 WPP，请使用函数的声明将 **-func**参数添加到 RUN \_ WPP 语句，如下面的代码示例所示。
 
 ```
 RUN_WPP=$(SOURCES) -km -func:DoTraceLevelMessage(LEVEL,FLAGS,MSG,...)
 ```
 
-**请注意**您必须指定**公里**运行中切换\_WPP 指令用于用户模式应用程序或动态链接库 (Dll)。
+**注意** 不得在 **-km** \_ 用户模式应用程序或动态链接库（dll）的 "运行 WPP" 指令中指定-公里开关。
 
 
 
-有关运行的可选参数的完整列表\_WPP，请参阅[WPP 预处理器](wpp-preprocessor.md)。
+有关运行 WPP 的可选参数的完整列表 \_ ，请参阅[WPP 预处理器](wpp-preprocessor.md)。
 
 
 

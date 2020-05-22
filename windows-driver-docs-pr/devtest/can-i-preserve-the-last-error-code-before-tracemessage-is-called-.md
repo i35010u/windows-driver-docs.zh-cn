@@ -1,28 +1,28 @@
 ---
-title: 调用 TraceMessage 之前可以保留的最后一个错误代码
-description: 调用 TraceMessage 之前可以保留的最后一个错误代码
+title: 在调用 TraceMessage 之前，是否可以保留最后一个错误的代码
+description: 在调用 TraceMessage 之前，是否可以保留最后一个错误的代码
 ms.assetid: 57390fb1-5e01-4b98-960f-0201213d673c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ea0614ceee3bc10330bebb08786c36b041c47666
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8305e09a0707cad2bf7a97f2ec40f8141db502de
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344917"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769643"
 ---
 # <a name="can-i-preserve-the-last-error-code-before-tracemessage-is-called"></a>是否可以在调用 TraceMessage 之前保留最后一个错误代码？
 
 
-默认情况下[TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)使用 WPP 调用\_TRACE 宏。 在早于 Windows Vista 的 Windows 版本[最后一个错误代码](https://go.microsoft.com/fwlink/p/?linkid=179346)已覆盖**TraceMessage**。
+默认情况下[TraceMessage](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-tracemessage) ，使用 WPP 跟踪宏调用 TraceMessage \_ 。 在早于 Windows Vista 的 Windows 版本中， **TraceMessage**覆盖了[最后一个错误代码](https://docs.microsoft.com/windows/win32/debug/last-error-code)。
 
-从 Windows Vista 开始，你可以通过定义自定义 WPP 保留上一个错误代码\_TRACE 宏。 包括在内之前，必须定义此宏的版本[跟踪消息标头 (.tmh) 文件](trace-message-header-file.md)的源文件中您[跟踪提供程序](trace-provider.md)，如内核模式驱动程序或用户模式应用程序...
+从 Windows Vista 开始，可以通过定义自定义 WPP 跟踪宏来保留最后一个错误代码 \_ 。 必须先定义此宏的版本，然后才能将[跟踪消息头（. tmh）文件](trace-message-header-file.md)包含在[跟踪提供程序](trace-provider.md)的源文件中，例如内核模式驱动程序或用户模式应用程序。
 
-下面的示例演示如何在调用之前保留的最后一个错误代码**TraceMessage**:
+下面的示例演示如何在调用**TraceMessage**之前保留最后一个错误代码：
 
--   请到包装**TraceMessage**调用从 WPP\_TRACE 宏。 然后，可以调用[TraceMessageVa](https://go.microsoft.com/fwlink/p/?linkid=179352)，从包装器函数。
+-   创建从 WPP 跟踪宏调用的**TraceMessage**的包装器 \_ 。 然后，可以从包装函数调用[TraceMessageVa](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-tracemessageva)。
 
-    下面的示例演示如何编写的包装**TraceMessage**:
+    下面的示例演示如何将包装器写入**TraceMessage**：
 
     ```
     #define WPP_TRACE WppTraceMessageWrapper
@@ -49,7 +49,7 @@ ms.locfileid: "63344917"
     }
     ```
 
--   修改 WPP\_TRACE 宏，如下面的示例中所示：
+-   修改 WPP \_ 跟踪宏，如以下示例中所示：
     ```
     #define WPP_TRACE(...)                              \
      do                                              \
@@ -61,7 +61,7 @@ ms.locfileid: "63344917"
      while (FALSE, FALSE)
     ```
 
-    **请注意**  此方法会增加您的二进制文件的代码大小，因为相同的代码将生成每个 WPP\_SF 函数。
+    **注意**   此方法增加了二进制文件的代码大小，因为将为每个 WPP SF 函数生成相同的代码 \_ 。
 
      
 

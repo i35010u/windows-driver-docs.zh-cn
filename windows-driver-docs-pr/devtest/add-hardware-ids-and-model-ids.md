@@ -6,41 +6,41 @@ keywords:
 - 在设备元数据创作向导中添加硬件和模型 ID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e77e7073e38b0cd567b058fe8e11b30803f30aa2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec93357dc51fa5c5dea5c036d28e9ac22e8aab1b
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332060"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769409"
 ---
 # <a name="add-hardware-and-model-ids-in-the-device-metadata-authoring-wizard"></a>在设备元数据创作向导中添加硬件和模型 ID
 
 
-硬件 Id 确定硬件函数基于特定于总线的值，并可用于将设备驱动程序映射到设备。 例如，具有相同的硬件 ID 的两个设备共享相同的驱动程序使用的功能接口。 硬件 Id 用于将设备元数据包映射到特定的总线或接口上的设备实例。
+硬件 Id 基于特定于总线的值识别硬件功能，可用于将设备驱动程序映射到设备。 例如，两个具有相同硬件 ID 的设备共享同一驱动程序使用的功能接口。 硬件 Id 用于将设备元数据包映射到特定总线或接口上的设备实例。
 
-模型 Id 允许原始设备制造商 (OEM) 或独立硬件供应商 (IHV) 来唯一标识的总线或接口技术独立的物理设备。 例如，具有不同的模型 Id 的两个设备可能有其组件的相同硬件 Id。 模型 Id 用于将设备元数据包映射到物理设备，而不考虑如何将设备连接到计算机。
+模型 Id 允许原始设备制造商（OEM）或独立硬件供应商（IHV）唯一标识独立于总线或接口技术的物理设备。 例如，两个具有不同模型 Id 的设备可能为其组件具有相同的硬件 Id。 模型 Id 用于将设备元数据包映射到物理设备，无论设备连接到计算机的方式如何。
 
-若要在设备元数据包，将关联的硬件 Id 和模型 Id，请单击**关联**选项卡。
+若要关联设备元数据包的硬件 Id 和型号 Id，请单击 "**关联**" 选项卡。
 
-### <a name="span-idtoaddahardwareidspanspan-idtoaddahardwareidspanspan-idtoaddahardwareidspanto-add-a-hardware-id"></a><span id="To_add_a_Hardware_ID_"></span><span id="to_add_a_hardware_id_"></span><span id="TO_ADD_A_HARDWARE_ID_"></span>若要添加的硬件 ID
+### <a name="span-idto_add_a_hardware_id_spanspan-idto_add_a_hardware_id_spanspan-idto_add_a_hardware_id_spanto-add-a-hardware-id"></a><span id="To_add_a_Hardware_ID_"></span><span id="to_add_a_hardware_id_"></span><span id="TO_ADD_A_HARDWARE_ID_"></span>添加硬件 ID
 
-1.  单击**关联**选项卡。
-2.  下一步**硬件 ID**，单击**加号 （+）**。
-3.  在显示的框，输入硬件 id。
-    **请注意**  如果可能，使用一个值，包含你公司的供应商 id。 例如：USB\\VID\_045E&PID\_0047
+1.  单击 "**关联**" 选项卡。
+2.  单击 "**硬件 ID**" 旁边的**加号（+）**。
+3.  在出现的框中，输入硬件 ID。
+    **注意**   如果可能，请使用包含公司供应商 ID 的值。 例如： USB \\ VID \_ 045E&PID \_ 0047
 
      
 
-4.  单击 **“确定”**。
+4.  单击“确定” 。
 
-### <a name="span-idtoaddamodelidspanspan-idtoaddamodelidspanspan-idtoaddamodelidspanto-add-a-model-id"></a><span id="To_add_a_Model_ID_"></span><span id="to_add_a_model_id_"></span><span id="TO_ADD_A_MODEL_ID_"></span>若要添加模型 ID
+### <a name="span-idto_add_a_model_id_spanspan-idto_add_a_model_id_spanspan-idto_add_a_model_id_spanto-add-a-model-id"></a><span id="To_add_a_Model_ID_"></span><span id="to_add_a_model_id_"></span><span id="TO_ADD_A_MODEL_ID_"></span>添加模型 ID
 
-1.  单击**关联**选项卡。
-2.  下一步**模型 ID**，单击**加号 （+）**。
-3.  在显示的框，输入模型 id。 输入的 GUID 值
-4.  单击 **“确定”**。
+1.  单击 "**关联**" 选项卡。
+2.  单击 "**模型 ID**" 旁边的**加号（+）**。
+3.  在出现的框中，输入模型 ID 的 GUID 值。
+4.  单击“确定” 。
 
-有关每个设备样式硬件 ID 的详细信息，请参阅[元数据包架构引用 Windows 8 设备](https://go.microsoft.com/fwlink/p/?LinkId=226753)。
+有关每种设备样式的硬件 ID 的详细信息，请参阅[设备元数据包概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-metadata-packages)。
 
  
 

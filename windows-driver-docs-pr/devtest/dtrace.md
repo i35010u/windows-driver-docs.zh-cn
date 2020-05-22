@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a4bc59edb1a22e863a2cc68a4fb8a3523395b3b9
-ms.sourcegitcommit: 6997fcbd0ad57e189c4b7c6b490632d1d53b6b26
+ms.openlocfilehash: b2d9d7a700553aad3c6881d451d2389a2dc6bd17
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822819"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769681"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -35,9 +35,9 @@ Windows Github 站点上的 DTrace 位于此处：
   
 有关 DTrace 的详细信息，请参阅剑桥大学的[OpenDTrace 规范1.0 版](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-924.pdf)。
 
-主 GitHub 站点位于[https://github.com/opendtrace/](https://github.com/opendtrace/)。
+主 GitHub 站点位于上 [https://github.com/opendtrace/](https://github.com/opendtrace/) 。
 
-[https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit)提供一组有用的脚本。
+提供一组有用的脚本 [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit) 。
 
 [DTrace.Org](http://dtrace.org)是一个网站，其中许多原始开发人员提供了提示和技巧。
 
@@ -53,7 +53,7 @@ Illumos[动态跟踪指南](http://dtrace.org/guide/bookinfo.html)介绍了如�
 
 使用反馈中心请求新功能，或使用 Windows DTrace 报告任何问题或错误。
 
-1. 通过单击此链接[https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053)从 Windows 电脑启动反馈中心。
+1. 通过单击此链接从 Windows 电脑启动反馈中心 [https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053) 。
 2. 选择 "*添加新反馈*"。
 3. 提供问题的详细特定说明或建议。
 
@@ -71,7 +71,7 @@ Illumos[动态跟踪指南](http://dtrace.org/guide/bookinfo.html)介绍了如�
 
 ### <a name="syscall"></a>SYSCALL
 
-SYSCALL 为每个系统调用提供一对探测：输入系统调用之前触发的入口探测，以及在系统调用完成后，但在控制转移回用户级别之前触发的 return 探测器。 对于所有 SYSCALL 探测，函数名称设置为已检测系统调用的名称，模块名称是该函数所在的模块。 可以通过在命令提示符下键入命令 `dtrace.exe -l -P syscall` 来找到 SYSCALL 提供程序提供的系统调用的名称。 请注意，探测名称为小写。 命令 `dtrace -ln syscall:::` 还将列出 syscall 提供程序中提供的所有探测及其参数。
+SYSCALL 为每个系统调用提供一对探测：输入系统调用之前触发的入口探测，以及在系统调用完成后，但在控制转移回用户级别之前触发的 return 探测器。 对于所有 SYSCALL 探测，函数名称设置为已检测系统调用的名称，模块名称是该函数所在的模块。 可以通过在命令提示符处键入命令来找到 SYSCALL 提供程序提供的系统调用的名称 `dtrace.exe -l -P syscall` 。 请注意，探测名称为小写。 命令 `dtrace -ln syscall:::` 还将列出 syscall 提供程序中提供的所有探测及其参数。
 
 ```dtrace
 C:\> dtrace -ln syscall:::
@@ -152,7 +152,7 @@ C:\>dtrace -ln "fbt:nt::"
 ```
 
 > [!NOTE]
-> 由于在 nt 中可以使用上千个调用，因此在运行记录数据的 DTrace 命令时，将函数名称留空是不是一个好办法。 避免可能影响性能的建议方法是至少指定函数名称的一部分，如 `fbt:nt:*Timer*:entry`。
+> 由于在 nt 中可以使用上千个调用，因此在运行记录数据的 DTrace 命令时，将函数名称留空是不是一个好办法。 避免可能影响性能的建议方法是至少指定函数名称的一部分，例如 `fbt:nt:*Timer*:entry` 。
 
 ### <a name="pid"></a>PID
 
@@ -178,7 +178,7 @@ Traceext （跟踪扩展）是 Windows 内核扩展驱动程序，它允许 Wind
 
 1. 检查是否正在运行受支持的 Windows 版本。 版本18980和 Windows Server 有问必答 Preview 版本18975后，20H1 Windows 的内部版本支持 DTrace 的当前下载。 *在较早版本的 Windows 上安装此版本的 DTrace 可能导致系统不稳定，不建议这样做。*
 
-   适用于19H1 的 DTrace 存档版本适用于[Windows 上存档的下载 dtrace](https://www.microsoft.com/en-us/download/58091)。 请注意，不再支持此版本的 DTrace。
+   适用于19H1 的 DTrace 存档版本适用于[Windows 上存档的下载 dtrace](https://www.microsoft.com/download/58091)。 请注意，不再支持此版本的 DTrace。
 
 
 1. 从 Microsoft 下载中心下载 MSI 安装文件-[在 Windows 上下载 DTrace](https://www.microsoft.com/download/details.aspx?id=100441)。
@@ -199,9 +199,9 @@ bcdedit /set dtrace ON
 当你更新到新的 Windows 预览体验版本时，你将需要再次设置 dtrace bcdedit 选项。
 
 > [!NOTE]
-> 如果你使用的是 BitLocker，请在对启动值进行更改时将其禁用。 如果不这样做，系统可能会提示你输入 BitLocker 恢复密钥。 从此情况恢复的一种方法是启动到恢复控制台并还原 bcdedit 值 `bcdedit /set {default} dtrace on`。 如果操作系统更新移除了值并将其添加到中，则若要恢复操作系统，请使用 bcdedit 来删除值，`bcdedit /deletevalue {default} dtrace`。 然后，禁用 BitLocker 并重新启用 dtrace，`bcdedit /set dtrace ON`。
+> 如果你使用的是 BitLocker，请在对启动值进行更改时将其禁用。 如果不这样做，系统可能会提示你输入 BitLocker 恢复密钥。 从这种情况恢复的一种方法是启动到恢复控制台并还原 bcdedit 值 `bcdedit /set {default} dtrace on` 。 如果操作系统更新移除了值并将其添加到中，则若要恢复操作系统，请使用 bcdedit 删除值 `bcdedit /deletevalue {default} dtrace` 。 然后，禁用 BitLocker 并重新启用 dtrace `bcdedit /set dtrace ON` 。
 
-通过将 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" 设置为1，在计算机上配置 VSM （虚拟安全模式），以启用 VSM 和安全壳.
+通过将 "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" 设置为1以启用 VSM 和安全内核，在计算机上配置 VSM （虚拟安全模式），以启用内核函数边界跟踪（FBT）。
 
 为此，请使用 REG Add 命令，如下所示：
 
@@ -220,7 +220,7 @@ set _NT_SYMBOL_PATH=srv*C:\symbols*https://msdl.microsoft.com/download/symbols
 
 ### <a name="using-dtrace-inside-of-a-virtual-machine"></a>在虚拟机内使用 DTrace
 
-如果在 VM 上运行 DTrace，请在 VM 停止时，使用以下 PowerShell 命令在支持 VM 的计算机上启用嵌套虚拟化。 为正在运行 DTrace 的 VM 提供 `<VMName>`。 以管理员身份打开 PowerShell 窗口。
+如果在 VM 上运行 DTrace，请在 VM 停止时，使用以下 PowerShell 命令在支持 VM 的计算机上启用嵌套虚拟化。 为正在 `<VMName>` 运行 DTrace 的 VM 提供。 以管理员身份打开 PowerShell 窗口。
 
 ```powershell
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
@@ -272,7 +272,7 @@ C:\>  dtrace -l
 
 从管理员命令提示符运行这些命令即可开始。
 
-此命令按计划显示5秒的 syscall summary。 5sec 参数指定时间段。 Exit （0）;使命令在完成后退出到命令提示符。 输出是使用指定的 `[pid,execname] = count();` 显示进程 ID （PID）、可执行文件名称和最后5秒的计数。
+此命令按计划显示5秒的 syscall summary。 5sec 参数指定时间段。 Exit （0）;使命令在完成后退出到命令提示符。 使用指定的输出将 `[pid,execname] = count();` 显示进程 ID （PID）、可执行文件名称和过去5秒的计数。
 
 ``` dtrace
 C:\> dtrace -Fn "tick-5sec {exit(0);} syscall:::entry{ @num[pid,execname] = count();} "  

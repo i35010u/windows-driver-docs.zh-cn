@@ -1,32 +1,32 @@
 ---
-title: 示例全局记录器提供程序
-description: 示例全局记录器提供程序
+title: 全局记录器提供程序示例
+description: 全局记录器提供程序示例
 ms.assetid: 06de4d6f-747c-4cf9-a325-2b697b72a1e9
 keywords:
 - 全局记录器跟踪会话 WDK，日志记录
 - 启动时全局记录器跟踪会话 WDK，日志记录
-- 启动过程中日志 WDK 跟踪
+- 在启动过程中记录 WDK 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0da3421309af849261e51f07ac3f77c518ad13bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 323751855948b5ebea5b7dd318267b38e5c58bf9
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344797"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769557"
 ---
-# <a name="example-global-logger-provider"></a>例如：全局记录器提供程序
+# <a name="example-global-logger-provider"></a>示例：全局记录器提供程序
 
 
-下面的屏幕截图所示**GlobalLogger**子项，其中包含配置条目[全局记录器跟踪会话](global-logger-trace-session.md)。 下**GlobalLogger**子项**ControlGUID**表示记录到全局记录器跟踪会话的跟踪提供程序的子项。 **ControlGUID**子项已选中，然后在右窗格中显示子项中的项。
+以下屏幕截图显示了**GlobalLogger**子项，其中包含配置[全局记录器跟踪会话](global-logger-trace-session.md)的条目。 **GlobalLogger**子项下是一个**ControlGUID**子项，表示日志记录到全局记录器跟踪会话的跟踪提供程序。 **ControlGUID**子项已选中，并且子项中的条目显示在右窗格中。
 
-![记录到 windows xp 上的全局记录器跟踪会话的跟踪提供程序的子项的屏幕截图](images/globallogger.png)
+![在 windows xp 上记录到全局记录器跟踪会话的跟踪提供程序子项的屏幕截图](images/globallogger.png)
 
-在此示例中， **ControlGUID**子项表示 TraceDrv 示例驱动程序。 子项命名的 Tracedrv[控制 GUID](control-guid.md)，d58c126f-b309-11 d 1 969e 0000f875a5bc。 跟踪会话正在 Windows XP 上运行，因为 GUID 不括在大括号中。
+在此示例中， **ControlGUID**子项表示 TraceDrv 示例驱动程序。 为 Tracedrv[控件 GUID](control-guid.md)d58c126f-b309-11d1-969e-0000f875a5bc 指定子项。 由于跟踪会话正在 Windows XP 上运行，因此 GUID 不会括在大括号中。
 
-[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)示例驱动程序现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上提供的存储库。
+[TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)示例驱动程序在 GitHub 上提供的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中提供。
 
-这**ControlGUID**子项包含**标志**条目和一个**级别**条目。 这些条目是可选的其值由提供程序定义。
+此**ControlGUID**子项包含**标志**条目和**级别**条目。 这些条目是可选的，其值由提供程序定义。
 
  
 

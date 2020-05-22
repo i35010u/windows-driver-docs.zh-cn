@@ -3,30 +3,30 @@ title: Tracefmt 输出文件
 description: Tracefmt 输出文件
 ms.assetid: 55c8964c-992f-468c-83ea-0316fcb12110
 keywords:
-- Tracefmt WDK 的输出文件
+- Tracefmt WDK，输出文件
 - 输出文件 WDK Tracefmt
 - 文件 WDK Tracefmt
-- .out 文件
-- 出文件
+- out 文件
+- out 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98132e51949b9c29b8affce8bc458fb4db42a04d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5dee9ffeb1a8b5b7c70c37526fcb4af762ee533
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373107"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769579"
 ---
 # <a name="tracefmt-output-file"></a>Tracefmt 输出文件
 
 
-Tracefmt 输出 (.out) 文件是以用户可读格式显示从跟踪日志或实时跟踪会话的跟踪消息的文本文件。 每条跟踪消息前面通过可自定义[跟踪消息前缀](trace-message-prefix.md)。
+Tracefmt 输出（out）文件是一个文本文件，它以用户可读的格式从跟踪日志或实时跟踪会话中显示跟踪消息。 每个跟踪消息前面都有一个可自定义的[跟踪消息前缀](trace-message-prefix.md)。
 
-Tracefmt 输出文件是可选的。 你可以直接 Tracefmt 显示跟踪消息，但不是能创建输出文件，也可以同时显示跟踪消息和输出文件中记录这些。
+Tracefmt 输出文件是可选的。 可以指示 Tracefmt 显示跟踪消息，但不会创建输出文件，也可以同时显示跟踪消息并将其记录到输出文件中。
 
-Tracefmt 输出文件通常用作其他程序的分析和筛选跟踪消息的输入。
+Tracefmt 输出文件通常用作分析和筛选跟踪消息的其他程序的输入。
 
-下面是内容的与 Tracedrv，检测软件跟踪的一个示例驱动程序的跟踪会话 Tracefmt 输出文件的一段摘录。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)，为软件跟踪设计的一个示例驱动程序现已推出[Windows 驱动程序示例](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub 上的存储库。
+下面是 Tracefmt 输出文件的内容的摘要，其中包含 Tracedrv，这是一个针对软件跟踪进行检测的示例驱动程序。 [TraceDrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)是设计用于软件跟踪的示例驱动程序，位于 GitHub 上的[Windows 驱动程序示例](https://github.com/Microsoft/Windows-driver-samples)存储库中。
 
 ```
 EventTrace

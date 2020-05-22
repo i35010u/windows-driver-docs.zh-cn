@@ -1,34 +1,34 @@
 ---
-title: 调试 DRIVER_VERIFIER_DETECTED_VIOLATION (C4)
-description: 驱动程序验证程序检测到驱动程序违反了某个 NDIS/WiFi 超时规则。
+title: 调试 DRIVER_VERIFIER_DETECTED_VIOLATION （C4）
+description: 驱动程序验证程序检测到驱动程序违反了 NDIS/WiFi 超时规则之一。
 ms.assetid: 73D4B6DF-E667-4C71-B985-FCDC05837908
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4496a76e2753b5a7f216d2e49c78be948d1ef3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3e4a58821359fc066888e3e6ce071c5f777f9df6
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371423"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769721"
 ---
-# <a name="debugging-ndiswifi-time-out-errors---driververifierdetectedviolation-c4"></a>调试 NDIS/WiFi 超时错误的驱动程序\_VERIFIER\_检测到\_冲突 (C4)
+# <a name="debugging-ndiswifi-time-out-errors---driver_verifier_detected_violation-c4"></a>调试 NDIS/WiFi 超时错误-驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突（C4）
 
 
-当你具有[NDIS/WIFI 验证](ndis-wifi-verification.md)选择选项，并且驱动程序验证程序检测到驱动程序违反了某个 NDIS/WiFi 超时规则[Driver Verifier](driver-verifier.md)生成[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （参数 1 等于为特定的 NDIS/WiFi 超时规则的标识符）。
+如果选择了[ndis/wifi 验证](ndis-wifi-verification.md)选项，并且驱动程序验证器检测到驱动程序违反了某个 NDIS/wifi 超时规则，则[驱动程序验证](driver-verifier.md)器将生成[**BUG 检查0xC4：驱动程序 \_ 验证器 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（参数1等于特定 NDIS/WIFI 超时规则的标识符）。
 
-Driver Verifier 测试时 NDIS/WIFI 超时规则，如[ **NdisTimedOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete)，驱动程序验证程序的轮询机制需要在一定数目的周期内的微型端口驱动程序的响应。 每个定时的规则定义了其自己允许的最大周期。 当超过最大值时，驱动程序验证程序生成的 bug 检查。 本部分介绍调试这些冲突的一些示例策略。
+当驱动程序验证器测试 NDIS/WIFI 超时规则（如[**NdisTimedOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete)）时，驱动程序验证程序的轮询机制需要在多个循环中通过微型端口驱动程序的响应。 每个定时规则定义了其自己的最大周期。 超过最大值时，驱动程序验证器会生成 bug 检查。 本部分介绍用于调试这些冲突的一些示例策略。
 
 ## <a name="debugging-ndiswifi-timeout-errors"></a>调试 NDIS/WIFI 超时错误
 
 
--   [使用 ！ 分析以显示 bug 检查有关的信息](#use-analyze-to-display-information-about-the-bug-check)
--   [使用 ！ ruleinfo 扩展命令](#use-the-ruleinfo-extension-command)
--   [单击最后一个\_调用\_堆栈链接，来识别冲突的位置](#identify-the-location-of-the-violation)
+-   [使用！分析显示 bug 检查的相关信息](#use-analyze-to-display-information-about-the-bug-check)
+-   [使用！ ruleinfo extension 命令](#use-the-ruleinfo-extension-command)
+-   [单击 "最后一个 \_ 调用 \_ 堆栈" 链接以标识冲突的位置。](#identify-the-location-of-the-violation)
 -   [修复 NDIS/WIFI 超时冲突的原因](#fixing-the-cause-of-the-ndis-wifi-timeout-violation)
 
-### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用 ！ 分析以显示 bug 检查有关的信息
+### <a name="use-analyze-to-display-information-about-the-bug-check"></a>使用！分析显示 bug 检查的相关信息
 
-最佳的第一步是运行后可以控制在调试器中出现任何错误检查，与一样[ **！ 分析-v** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)命令。
+与发生的任何 bug 检查一样，在控制调试器后，最好的第一步是运行[**！分析-v**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)命令。
 
 ```
 DRIVER_VERIFIER_DETECTED_VIOLATION (c4)
@@ -44,7 +44,7 @@ Arg3: 9c17b860, Address of internal rule state (second argument to !ruleinfo).
 Arg4: 9c1f3480, Address of supplemental states (third argument to !ruleinfo).
 ```
 
-下一节中 **！ 分析-v**输出，原因违反这一规则下的原因显示下 DV\_VIOLATED\_条件字段。 DV\_MSDN\_链接部分也是很有用的链接提取到有关此规则的文档。
+在 **！分析-v**输出的以下部分中，违反此规则的原因显示在 "DV \_ 违反 \_ 条件" 字段下。 "DV \_ MSDN \_ 链接" 部分也有助于获取有关此规则的文档的链接。
 
 ```
 ## Debugging Details:
@@ -54,7 +54,7 @@ Arg4: 9c1f3480, Address of supplemental states (third argument to !ruleinfo).
 
 DV_VIOLATED_CONDITION:  Timeout on completing an NDIS OID request.
 
-DV_MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=278804
+DV_MSDN_LINK: https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete
 
 DRIVER_OBJECT: 98a87980
 
@@ -67,7 +67,7 @@ MODULE_NAME: NdisTimedOidComplete
 FAULTING_MODULE: 9fee1000 NdisTimedOidComplete
 ```
 
-进一步下此分析输出，您可以单击链接下 dv 摄\_规则\_信息部分，了解其他规则的说明。 对于超时类型的规则，当前堆栈可能不包含相关信息。
+在此分析输出的后面，你可以单击 "DV 规则信息" 部分下的链接 \_ \_ 以获取其他规则说明。 对于超时类型的规则，当前堆栈可能不包含相关信息。
 
 ```
 DV_RULE_INFO: 0x92003
@@ -100,9 +100,9 @@ STACK_TEXT:
 89123dbc 00000000 00000000 00000000 00000000 nt!KiThreadStartup+0x15
 ```
 
-### <a name="use-the-ruleinfo-extension-command"></a>使用 ！ ruleinfo 扩展命令
+### <a name="use-the-ruleinfo-extension-command"></a>使用！ ruleinfo extension 命令
 
-**DV\_规则\_信息：** 字段 **！ 分析**输出显示到命令可用于查找有关此规则冲突的详细信息的链接。 对于此示例中，如果单击该链接，它将运行[ **！ ruleinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)命令与规则\_ID (0x92003) Arg3 和 Arg 4 bug 检查值。
+" **！分析**" 输出的 " **DV \_ 规则 \_ 信息：** " 字段显示一个指向命令的链接，你可以使用该命令查找有关此规则冲突的详细信息。 在此示例中，如果单击该链接，它将运行[**!ruleinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)带规则 \_ ID （0x92003） Arg3 和 Arg 4 bug 检查值的！ ruleinfo 命令。
 
 ```
 kd> !ruleinfo 0x92003 0xffffffff9c17b860 0xffffffff9c1f3480
@@ -115,7 +115,7 @@ RULE_DESCRIPTION:
 This rule verifies if an NDIS miniport driver completes an OID in time.
 The OID is tracked (a.k.a., TRACKED_OBJECT). Use !ndiskd.oid .
 
-MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=278804
+MSDN_LINK: https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete
 
 CONTEXT: Miniport 0x86BD10E8
 
@@ -128,9 +128,9 @@ LAST_CALL_STACK: 0x9C1F3480 + 0x10
 RULE_STATE: 0x9C1F3480
 ```
 
-### <a name="identify-the-location-of-the-violation"></a>标识冲突的位置
+### <a name="identify-the-location-of-the-violation"></a>确定冲突的位置
 
-在示例中我们将在这里，微型端口驱动程序，NdisTimedOidComplete.sys，具有睡眠周期注入到其*MPOidRequest*函数。 我们可以通过单击的最后一个检查\_调用\_堆栈中的链接[ **！ ruleinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)输出。 这是最后一个调用堆栈看到的驱动程序验证程序，我们看到，调用 NDIS *ndisMInvokeOidRequest*发生超时之前。
+在此处使用的示例中，微型端口驱动程序 NdisTimedOidComplete 已将一个睡眠周期注入到其*MPOidRequest*函数中。 可以通过单击 \_ \_ [**！ ruleinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)输出中的最后一个调用堆栈链接进行检查。 这是驱动程序验证程序看到的最后一个调用堆栈，在此，我们看到在超时发生之前 NDIS 调用了*ndisMInvokeOidRequest* 。
 
 ```
 kd> dps 0x9C1F3480 + 0x10
@@ -144,20 +144,20 @@ kd> dps 0x9C1F3480 + 0x10
 9c1f34ac  85104005 ndis!ndisMInitializeAdapter+0xad7
 ```
 
-### <a name="fixing-the-cause-of-the-ndis-wifi-timeout-violation"></a>修复超时冲突的 NDIS WIFI 的原因
+### <a name="fixing-the-cause-of-the-ndis-wifi-timeout-violation"></a>修复 NDIS WIFI 超时冲突的原因
 
-当已为计时规则生成故障转储时，则可能可以在故障转储的时间找到根本原因的。 若要进一步调试，请考虑从开始 NdisKd 调试器扩展命令，请参阅[NDIS 扩展 (Ndiskd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/ndis-extensions--ndiskd-dll-)并[入门 NDISKD](https://go.microsoft.com/fwlink/p/?linkid=327569)。 您可能还需要看一下[事件跟踪 Windows (ETW)](event-tracing-for-windows--etw-.md)日志，如果您的驱动程序已实现 ETW。 如果未启用此规则，此错误将表现为用户应用程序挂起，或者[ **Bug 检查 0x9F:驱动程序\_电源\_状态\_失败**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)在最差。
+为定时规则生成崩溃转储时，可能会在出现故障转储时找到根本原因的原因。 若要进一步调试，请考虑从 NdisKd 调试器扩展命令开始，请参阅[NDIS 扩展（NdisKd）](https://docs.microsoft.com/windows-hardware/drivers/debugger/ndis-extensions--ndiskd-dll-)和[NdisKd](https://docs.microsoft.com/archive/blogs/ndis/getting-started-with-ndiskd)入门。 如果驱动程序已经实现了 ETW，你可能还需要查看[Windows 事件跟踪（etw）](event-tracing-for-windows--etw-.md)日志。 如果未启用此规则，则此错误将表现为用户应用程序挂起，或者[**Bug 检查0x9F：驱动程序 \_ 电源 \_ 状态 \_ 故障**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [NDIS 扩展 (Ndiskd.dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/ndis-extensions--ndiskd-dll-)
 
-[开始使用 NDISKD （第 1 部分）](https://go.microsoft.com/fwlink/p/?linkid=327569)
+[NDISKD 入门（第1部分）](https://docs.microsoft.com/archive/blogs/ndis/getting-started-with-ndiskd)
 
-[NDISKD 和 ！ 微型端口 （第 2 部分）]( https://go.microsoft.com/fwlink/p/?linkid=327570)
+[NDISKD 和！微型端口（第2部分）](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-and-miniport)
 
-[使用 NDISKD （第 3 部分） 进行调试](https://go.microsoft.com/fwlink/p/?linkid=327571)
+[用 NDISKD 进行调试（第3部分）](https://docs.microsoft.com/archive/blogs/ndis/debugging-with-ndiskd)
 
 
 

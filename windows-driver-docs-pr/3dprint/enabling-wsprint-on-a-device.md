@@ -3,12 +3,12 @@ title: 在设备上启用 WSPrint 2.0
 description: 使用这些设置在设备上启用 WSPrint 2。0
 ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d01b0d6fa3a69dffcaf46e50c3263fe8be38657
-ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
+ms.openlocfilehash: 7933eaa830eb90df3a23ece3950ce8473f19e253
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83553332"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769351"
 ---
 # <a name="enable-wsprint-20-on-a-device"></a>在设备上启用 WSPrint 2.0
 
@@ -44,43 +44,43 @@ WSDPRINT\MS3DCompatE2D2
 
 1. 探测–网络发现启动
 
-2. 解决–网络发现启动
+1. 解决–网络发现启动
 
-3. 获取–打印机元数据查询
+1. 获取–打印机元数据查询
 
-4. GetPrinterElements –打印机元数据查询
+1. GetPrinterElements –打印机元数据查询
 
-5. 订阅–事件模型注册
+1. 订阅–事件模型注册
 
-6. 取消订阅–事件注销
+1. 取消订阅–事件注销
 
-7. SetEventRate –事件速率
+1. SetEventRate –事件速率
 
-8. 续订–续订
+1. 续订–续订
 
-9. PrepareToPrint –打印初始化
+1. PrepareToPrint –打印初始化
 
-10. CreatePrintJob –打印提交
+1. CreatePrintJob –打印提交
 
-11. CreatePrintJob2 –打印提交
+1. CreatePrintJob2 –打印提交
 
-12. GetPrintDeviceResources –允许检索 .Resx 中的本地化资源（多部分传出响应）
+1. GetPrintDeviceResources –允许检索 .Resx 中的本地化资源（多部分传出响应）
 
-13. GetPrintDeviceCapabilities-允许检索打印设备功能（多部分传出响应）
+1. GetPrintDeviceCapabilities-允许检索打印设备功能（多部分传出响应）
 
-14. GetBidiSchemaExtensions-允许检索双向架构扩展（多部分传出响应）
+1. GetBidiSchemaExtensions-允许检索双向架构扩展（多部分传出响应）
 
-15. CancelJob –作业取消
+1. CancelJob –作业取消
 
-16. GetActiveJobs –作业进度
+1. GetActiveJobs –作业进度
 
-17. GetJobHistory –作业历史记录
+1. GetJobHistory –作业历史记录
 
-18. AddDocument –将文档添加到当前打印
+1. AddDocument –将文档添加到当前打印
 
-19. GetJobElements –获取作业状态
+1. GetJobElements –获取作业状态
 
-20. SendDocument –实际打印数据（多部分传入请求）
+1. SendDocument –实际打印数据（多部分传入请求）
 
 有关 WSPrint 2.0 的详细信息，请参阅以下资源：
 

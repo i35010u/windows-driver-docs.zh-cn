@@ -2,25 +2,23 @@
 title: EFI_USBFN_PORT_TYPE
 description: EFI_USBFN_PORT_TYPE
 ms.assetid: 2596dd4f-26bd-454b-9550-a89c7e1f790b
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dea889b1b34bf22dcc97311dcb0693b54681e60f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1cf7fe654a7fdfef36ba8c0b00f3eee0caba7b9
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337670"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778342"
 ---
-# <a name="efiusbfnporttype"></a>EFI\_USBFN\_端口\_类型
-
+# <a name="efi_usbfn_port_type"></a>EFI \_ USBFN \_ 端口 \_ 类型
 
 此枚举指定 USB 端口类型。
 
 ## <a name="syntax"></a>语法
 
-
 ```cpp
-typedef enum _EFI_USBFN_PORT_TYPE 
+typedef enum _EFI_USBFN_PORT_TYPE
 {
     EfiUsbUnknownPort = 0,
     EfiUsbStandardDownstreamPort,
@@ -32,58 +30,18 @@ typedef enum _EFI_USBFN_PORT_TYPE
 
 ## <a name="constants"></a>常量
 
+| Value | 说明 |
+| --- | --- |
+| EfiUsbUnknownPort | 未知端口-驱动程序内部默认端口类型;该驱动程序不会使用成功状态代码返回此消息。 |
+| EfiUsbStandardDownstreamPort | 标准下游端口-标准 USB 主机。 |
+| EfiUsbChargingDownstreamPort | 向下游端口收费-标准 USB 主机。 |
+| EfiUsbDedicatedChargingPort | 专用收费端口–一种墙充电器，而不是 USB 主机。 |
+| EfiUsbInvalidDedicatedChargingPort | 无效的专用收费端口–非 USB 主机或专用收费端口。 |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>EfiUsbUnknownPort</strong></p></td>
-<td><p>未知端口-驱动程序内部的默认端口类型;这不会返回成功状态代码与驱动程序。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>EfiUsbStandardDownstreamPort</strong></p></td>
-<td><p>标准 Downstream 端口-标准 USB host.for 的详细信息，请参阅<strong>备注</strong>。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>EfiUsbChargingDownstreamPort</strong></p></td>
-<td><p>充电 Downstream 端口-标准 USB 主机。 有关详细信息，请参阅<strong>备注</strong></p></td>
-</tr>
-<tr class="even">
-<td><p><strong>EfiUsbDedicatedChargingPort</strong></p></td>
-<td><p>专用正在充电端口 – 墙充电器，非 USB 主机。 有关详细信息，请参阅<strong>备注</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>EfiUsbInvalidDedicatedChargingPort</strong></p></td>
-<td><p>专用正在充电端口无效 – 不是 USB 主机或充电的专用的端口。</p></td>
-</tr>
-</tbody>
-</table>
+## <a name="remarks"></a>注解
 
- 
-
-## <a name="remarks"></a>备注
-
-
-请参阅"电池充电规范，修订版本 1.1"上的[USB.org](https://go.microsoft.com/fwlink/p/?linkid=64124)网站。
+有关详细信息，请参阅[USB.org](https://www.usb.org/documents)网站上的 "电池充电规范，修订版本 1.1"。
 
 ## <a name="requirements"></a>要求
 
-
 **标头：** 用户生成
-
- 
-
- 
-
-
-
-
