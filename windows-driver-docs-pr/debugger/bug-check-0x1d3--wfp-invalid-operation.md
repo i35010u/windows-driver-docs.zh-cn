@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1D3 WFP_INVALID_OPERATION
-description: WFP_INVALID_OPERATION bug 检查具有 0x000001D3 值。
+description: WFP_INVALID_OPERATION bug 检查的值为0x000001D3。
 keywords:
 - Bug 检查 0x1D3 WFP_INVALID_OPERATION
 - WFP_INVALID_OPERATION
@@ -12,43 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b91554b2ecad7fb602871c235b7521d2247719a
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 36220da276f7c0a7ec79d05a3e30978d1715f990
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866503"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851483"
 ---
-# <a name="bug-check-bug-check-0x1d3-wfpinvalidoperation"></a>Bug 检查 Bug 检查 0x1D3:WFP_INVALID_OPERATION 
+# <a name="bug-check-0x1d3-wfp_invalid_operation"></a>Bug 检查 0x1D3：WFP_INVALID_OPERATION 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-WFP_INVALID_OPERATION bug 检查具有 0x000001D3 值。 这指示 Windows 筛选平台标注执行无效操作。
+WFP_INVALID_OPERATION bug 检查的值为0x000001D3。 这表明 Windows 筛选平台标注执行了无效操作。
 
-## <a name="wfpinvalidoperation-parameters"></a>WFP\_无效\_操作参数
+## <a name="wfp_invalid_operation-parameters"></a>WFP \_ 无效 \_ 操作参数
 
-参数 | 描述 
+参数 | 说明 
 |---------|--------------|
-1 | 检测的错误子类型。
+1 | 错误检查的子类型。
 2 | 保留
 3 | 保留
 4 | 保留
 
-**参数 1 的值**
+**参数1值**
 
- 0x1:标注注入与多个 NET_BUFFERS NBL 入站。
+ 0x1：标注注入了多 NET_BUFFERS 入站的 NBL。
 
  2-保留。
 
- 3-NBL 指向的指针。
+ 3-指向 NBL 的指针。
 
- 4-保留。
+ 4-已保留。
 
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息和确定根本原因非常有帮助。
+## <a name="resolution"></a>解决方法
+[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，并且在确定根本原因时可能非常有用。
 
  
 

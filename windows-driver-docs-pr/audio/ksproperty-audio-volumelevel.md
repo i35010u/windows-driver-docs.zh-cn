@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19771178e6302931490019fb2dd39ee6ac3a8085
-ms.sourcegitcommit: 7ee048ef0b2928b5fd372d6fe5d6c0c008462180
+ms.openlocfilehash: 9e1b8a09e046c2c23e7e0211f4f29e298eca522c
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83729551"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851310"
 ---
 # <a name="ksproperty_audio_volumelevel"></a>KSPROPERTY \_ 音频 \_ VOLUMELEVEL
 
@@ -69,7 +69,7 @@ KSPROPERTY \_ AUDIO \_ VOLUMELEVEL 属性指定卷节点中通道的音量级别
 
 + 2147483647 为 + 32767.99998474 分贝（增益）。
 
-> [!Note]
+> [!NOTE]
 > 分贝范围由从-2147483648 到 + 2147483647 的整数值表示，其中此刻度的分辨率为1/65536 分贝。
 
  
@@ -95,7 +95,7 @@ KSPROPERTY \_ 音频 \_ VOLUMELEVEL 属性请求返回状态 " \_ 成功" 以指
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>标头</p></td>
+<td align="left"><p>Header</p></td>
 <td align="left">Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>

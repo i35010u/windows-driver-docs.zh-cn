@@ -1,6 +1,6 @@
 ---
-title: D3DDDI\_MULTIPLANE\_覆盖\_筛选器\_范围结构
-description: 保留供系统使用。 不要使用它在您的驱动程序中。请注意此结构是仅在使用 Windows Driver Kit (WDK) 8 随附版本与 Windows 8 提供的 D3dumddi.h 标头中可用。 已从更高版本的标头。 .
+title: D3DDDI \_ MULTIPLANE \_ 叠加 \_ 筛选 \_ 范围结构
+description: 预留给系统使用。 不要在您的驱动程序中使用它。请注意，此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dumddi 标头中可用。 它已从标头的更高版本中删除。.
 ms.assetid: 61393cb5-eedc-4186-a321-703b74450ee5
 keywords:
 - D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE 结构显示设备
@@ -14,19 +14,20 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c012dc263fde65fc9f23b2bb8438b0e2ee8752c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8da73872cad56eb05371dbe1a89fe358cc9eb030
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382964"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852158"
 ---
-# <a name="d3dddimultiplaneoverlayfilterrange-structure"></a>D3DDDI\_MULTIPLANE\_覆盖\_筛选器\_范围结构
+# <a name="d3dddi_multiplane_overlay_filter_range-structure"></a>D3DDDI \_ MULTIPLANE \_ 叠加 \_ 筛选 \_ 范围结构
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
-&gt; \[!请注意\]&gt;此结构是仅在使用 Windows Driver Kit (WDK) 8 随附版本与 Windows 8 提供的 D3dumddi.h 标头中可用。 已从更高版本的标头。
+> [!NOTE]
+> 此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dumddi 标头中可用。 它已从标头的更高版本中删除。
 
  
 
@@ -49,7 +50,7 @@ typedef struct D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE {
 
 **最大值**
 
-**默认**
+**Default**
 
 **乘数**
 
@@ -72,7 +73,7 @@ typedef struct D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE {
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">D3dumddi.h</td>
+<td align="left">D3dumddi</td>
 </tr>
 </tbody>
 </table>

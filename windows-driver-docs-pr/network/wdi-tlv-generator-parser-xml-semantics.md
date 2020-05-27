@@ -1,70 +1,68 @@
 ---
-title: WDI TLV 分析器生成器/XML 语义
-description: TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行分组 （结构）。 本主题介绍的 XML 语法。
+title: WDI TLV 生成器/分析器 XML 语义
+description: TLV 生成器/分析器 XML 文件是消息、容器（TLVs）和属性组（结构）的列表。 本主题介绍 XML 语法。
 ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7333a5f37d2b9c419daa513d0f2a19f6446fc824
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 756e6c1b2e1d1a09f662e3974369c7c8e354d1e3
+ms.sourcegitcommit: 53cf8b3982c47fa1bbf9f1725ec5fbba2ebc4f42
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405277"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83883440"
 ---
-# <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV 分析器生成器/XML 语义
+# <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV 生成器/分析器 XML 语义
 
+TLV 生成器/分析器 XML 文件是消息、容器（TLVs）和属性组（结构）的列表。 本主题介绍 XML 语法。
 
-TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行分组 （结构）。 本主题介绍的 XML 语法。
-
--   [`<message />`](#message-)
-    -   [属性](#attributes)
-    -   [Content](#content)
-    -   [示例](#example)
--   [`<containerRef />`](#containerref-)
-    -   [属性](#attributes)
-    -   [Content](#content)
-    -   [示例](#example)
--   [`<containers />`](#containers-)
--   [`<container />`](#container-)
-    -   [属性](#attributes)
-    -   [内容](#contents)
-    -   [示例](#example)
--   [`<groupRef />`](#groupref-)
-    -   [属性](#attributes)
-    -   [Content](#content)
-    -   [示例](#examples)
--   [`    <namedType />`](#namedtype-)
-    -   [属性](#attributes)
-    -   [Content](#content)
-    -   [示例](#example)
--   [`<aggregateContainer />`](#aggregatecontainer-)
-    -   [属性](#attributes)
-    -   [Content](#content)
-    -   [示例](#example)
--   [`<propertyGroups />`](#propertygroups-)
--   [基元字段类型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
-    -   [属性](#attributes)
-    -   [内容](#contents)
--   [`<propertyGroup />`](#propertygroup-)
-    -   [属性](#attributes)
-    -   [内容](#contents)
-    -   [示例](#example)
+- [`<message />`](#message-)
+  - [特性](#attributes)
+  - [内容](#content)
+  - [示例](#example)
+- [`<containerRef />`](#containerref-)
+  - [特性](#attributes)
+  - [内容](#content)
+  - [示例](#example)
+- [`<containers />`](#containers-)
+- [`<container />`](#container-)
+  - [特性](#attributes)
+  - [Contents](#contents)
+  - [示例](#example)
+- [`<groupRef />`](#groupref-)
+  - [特性](#attributes)
+  - [内容](#content)
+  - [示例](#examples)
+- [`<namedType />`](#namedtype-)
+  - [特性](#attributes)
+  - [内容](#content)
+  - [示例](#example)
+- [`<aggregateContainer />`](#aggregatecontainer-)
+  - [特性](#attributes)
+  - [内容](#content)
+  - [示例](#example)
+- [`<propertyGroups />`](#propertygroups-)
+- [基元字段类型（ `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>` ）](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
+  - [特性](#attributes)
+  - [Contents](#contents)
+- [`<propertyGroup />`](#propertygroup-)
+  - [特性](#attributes)
+  - [Contents](#contents)
+  - [示例](#example)
 
 ## `<message />`
 
+描述单个顶级 WDI 消息。 对于这些消息项，只有分析器/生成器函数。
 
-描述单个顶级 WDI 消息。 有一些分析器/生成器函数仅为这些消息条目。
+### <a name="attributes"></a>属性
 
-### <a name="attributes"></a>特性
-
--   `commandId` 必须在 dot11wdi.h 中定义的符号常量。
--   `type` 若要公开给 （到分析器/生成器的函数中调用时，您使用此类型） 的代码的类型名称。
--   `description` -该命令的说明。
--   `direction` – 指示是否此消息描述 TLV 流，因为它从 WDI 转到 M1 （称为"ToIhv"） 的一部分 IHV 微型端口，将相应地显示 IHV 微型端口到 WDI 为 M0、 M3 或 M4 （称为"FromIhv"），或进入 （名为两个方向，描述了 TLV 流 "Both")。 请参阅*消息方向*中[WDI TLV 分析器接口概述](wdi-tlv-parser-interface-overview.md)。
+- `commandId`-必须在 dot11wdi 中定义的符号常数。
+- `type`-要向代码公开的类型名称（在调用分析器/生成器函数时使用此类型）。
+- `description`-命令的说明。
+- `direction`-指示此消息是否描述了从 WDI 转到 IHV 微端口作为 M1 （称为 "ToIhv"）的一部分的 TLV 流，描述了 TLV 流，因为它从作为 M0、M3 或 M4 （称为 "FromIhv"）的 IHV 小型端口进入 WDI，或在两个方向（称为 "两个"）。 请参阅[WDI TLV parser interface 概述](wdi-tlv-parser-interface-overview.md)中的*消息方向*。
 
 ### <a name="content"></a>内容
 
-容器引用的列表 (`<containerRef />`)。 这些是组成消息不同 TLVs。 它们是对类型中定义的引用`<containers />`部分。
+容器引用（）的列表 `<containerRef />` 。 这些是组成消息的不同 TLVs。 它们是对在部分中定义的类型的引用 `<containers />` 。
 
 ### <a name="example"></a>示例
 
@@ -85,24 +83,23 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
 
 ## `<containerRef />`
 
+对 `<container />` 节中定义的的引用 `<containers />` 。
 
-引用`<container />`中定义`<containers />`部分。
+### <a name="containerref--attributes"></a>`<containerRef />`属性
 
-### <a name="attributes"></a>特性
+- `id`-必须在 wditypes 中定义的 TLV ID。
+- `name`-父结构中的变量的名称。
+- `optional`-指定它是否为可选字段。 默认值为 False。 生成的代码强制执行 "选择性"。
+- `multiContainer`–指定生成的代码是否应期望多个相同类型的 TLVs。 默认值为 False。 如果为 false，则生成的代码强制仅存在其中一个。
+- `type`-引用部分中特定元素的 "name" 属性 `<containers />` 。
+- `versionAdded`-版本控制的一部分。 指示此 TLV 容器不应在与此特性中所指示的版本小于的对等方之间出现在字节流中。
+- `versionRemoved`-版本控制的一部分。 指示此 TLV 容器不应在与此特性中所指示的版本大于或等于的对等方中出现在字节流中。
 
--   `id` -TLV 必须 wditypes.h 中定义的 ID。
--   `name` -父结构中的变量的名称。
--   `optional` -指定它是一个可选字段。 默认值为 false。 生成的代码强制实施"可选状态"。
--   `multiContainer` -指定在生成的代码应会相同类型的多个 TLVs。 默认值为 false。 如果为 false，强制执行生成的代码，只有一个已存在。
--   `type` -引用中的特定元素的"name"属性`<containers />`部分。
--   `versionAdded` -版本控制的一部分。 指示，此 TLV 容器不应出现在与对等方具有一个版本的字节流小于 1 指示此属性中。
--   `versionRemoved` -版本控制的一部分。 指示不应在向/从对等方具有的版本大于或等于此属性中指定的字节流中出现此 TLV 容器。
-
-### <a name="content"></a>内容
+### <a name="containerref--content"></a>`<containerRef />`Content
 
 无。
 
-### <a name="example"></a>示例
+### <a name="containerref--example"></a>`<containerRef />` 示例
 
 ```XML
 <containerRef id="WDI_TLV_P2P_CHANNEL_NUMBER"
@@ -113,27 +110,25 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
 
 ## `<containers />`
 
-
-描述所有容器/TLVs WDI 消息中使用。 可以将容器视为 TLV 存储桶。 有两种类型：`<container />`和`<aggregateContainer />`。
+描述 WDI 消息中使用的所有容器/TLVs。 可以将容器视为 TLV 存储桶。 有2种类型： `<container />` 和 `<aggregateContainer />` 。
 
 ## `<container />`
 
+单个结构引用或命名类型的 TLV 容器。 它的大小是静态的，但也可以是 C 样式的数组，只要它是静态大小的。
 
-单个结构引用或命名的类型的 TLV 容器。 它以静态方式调整大小，但可能的 C 样式数组，只要以静态方式调整大小。
+### <a name="container--attributes"></a>`<container />`属性
 
-### <a name="attributes"></a>特性
+- `name`-由 WDI 消息/其他容器引用的 ID。
+- `description`-容器的用途的友好说明。
+- `type`–要向代码公开的类型名称。
+- `isCollection`-指定生成的代码是否应期望同一 TLV （C 样式数组）中有很多相同的大小元素。 默认值为 false （仅应有一个具有给定类型的元素）。
+- `isZeroValid`-仅当 `isCollection` 为 true 时有效。 确定是否允许使用零元素数组。 当 TLV 流需要区分不存在的可选 TLV 与存在但长度为零（如 Ssid）的可选 TLV 时，这非常有用。 由于这种差异很少出现，因此默认值为 false。
 
--   `name` -ID 是所引用的 WDI 消息 / 其他容器。
--   `description` -容器是什么友好说明。
--   `type` – 若要向代码公开的类型名称。
--   `isCollection` -指定生成代码应期待许多相同 TLV （C 样式数组） 中的相同大小元素。 默认值为 false （仅需要给定类型的一个元素）。
--   `isZeroValid` -时仅有效`isCollection`为 true。 确定是否允许一个零个元素的数组。 当需要区分不存在与一个出现但长度为零 （如 Ssid) 可选 TLV TLV 流时，这很有用。 由于这一区别很少见，默认值为 false。
+### <a name="container--contents"></a>`<container />` 内容
 
-### <a name="contents"></a>目录
+`<groupRef />`或中的一个 `<namedType />` 。
 
-之一`<groupRef />`或`<namedType />`。
-
-### <a name="example"></a>示例
+### <a name="container--example"></a>`<container />` 示例
 
 ```XML
 <container name="P2PListenStateContainer"
@@ -147,20 +142,19 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
 
 ## `<groupRef />`
 
+对节中定义的属性组（结构）的引用 `<propertyGroups />` 。
 
-对属性组 （结构） 中定义引用`<propertyGroups />`部分。
+### <a name="groupref--attributes"></a>`<groupRef />`属性
 
-### <a name="attributes"></a>特性
+- `name`-父结构中结构的名称。
+- `ref`-引用节中的命名结构 `<propertyGroups />` 。
+- `description`–结构的用途的友好说明符。
 
--   `name` -父结构中的结构的名称。
--   `ref` -引用中的命名结构`<propertyGroups />`部分。
--   `description` – 结构使用友好描述符。
-
-### <a name="content"></a>内容
+### <a name="groupref--content"></a>`<groupRef />`Content
 
 无。
 
-### <a name="examples"></a>示例
+### <a name="groupref--examples"></a>`<groupRef />` 示例
 
 ```XML
 <container name="WFDChannelContainer"
@@ -172,22 +166,21 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
 </container>
 ```
 
-## ` <namedType />`
+## `<namedType />`
 
+对由 wditypes、hpp 或 dot11wdi 公开的原始类型的引用。 使用默认序列化程序（memcpy），因此，由于存在填充问题，请使用自己的风险。
 
-对由 wditypes.hpp 或 dot11wdi.h 公开原始类型的引用。 使用默认序列化程序 (memcpy)，因此使用您自己承担，因为填充问题。
+### <a name="namedtype--attributes"></a>`<namedType />`属性
 
-### <a name="attributes"></a>特性
+- `name`-父结构中结构的名称。
+- `type`-要在实际代码中使用的类型名称。
+- `description`–结构的用途的友好说明。
 
--   `name` -父结构中的结构的名称。
--   `type` 若要在实际代码中使用的类型名称。
--   `description` – 结构使用友好说明。
-
-### <a name="content"></a>内容
+### <a name="namedtype--content"></a>`<namedType />`Content
 
 无。
 
-### <a name="example"></a>示例
+### <a name="namedtype--example"></a>`<namedType />` 示例
 
 ```XML
 <container name="P2PListenStateContainer"
@@ -201,20 +194,19 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
 
 ## `<aggregateContainer />`
 
+许多不同容器的 TLV 容器。 这用于处理嵌套的 TLVs。
 
-许多不同的容器的 TLV 容器。 这用于处理嵌套的 TLVs。
+### <a name="-attributes"></a>`<aggregateContainer />`属性
 
-### <a name="attributes"></a>特性
+- `name`-由 WDI 消息/其他容器引用的 ID。
+- `description`-容器的用途的友好说明。
+- `type`-要向代码公开的类型名称。
 
--   `name` -ID 是所引用的 WDI 消息 / 其他容器。
--   `description` – 容器适用友好说明。
--   `type` 若要向代码公开的类型名称。
+### <a name="-content"></a>`<aggregateContainer />`Content
 
-### <a name="content"></a>内容
+列表 `<containerRef />` 。
 
-列出的`<containerRef />`。
-
-### <a name="example"></a>示例
+### <a name="-example"></a>`<aggregateContainer />` 示例
 
 ```XML
 <aggregateContainer
@@ -244,52 +236,48 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
 
 ## `<propertyGroups />`
 
+描述所有容器中使用的所有结构。 结构可由使用 `<container />` 或由另一个 `<propertyGroup />` （嵌套结构）引用。 它们是独立于 TLVs 容器定义的，因此可以重复使用。 它们没有 TLV 标头。
 
-描述所有容器中使用的所有结构。 也可以通过使用结构`<container />`，或由另一个引用`<propertyGroup />`（嵌套结构）。 它们独立于 TLVs 容器定义以便它们可以重新使用。 他们不具备 TLV 标头。
+这些定义是必需的，因为它们有助于解决与结构有关的填充问题，并提供代码生成器有关如何解释数据的说明。
 
-这些定义是必要的因为它们能帮您解决填充结构问题，并提供有关如何解释数据的代码生成器的说明。
+>[!NOTE]
+>这里的顺序很重要。 所有数据偏移均基于属性组说明隐含，数据按此处定义的顺序写入/分析。 这些结构必须在此处定义。
 
-**请注意**  此处顺序非常重要。 所有数据偏移量隐都式基于属性组描述，并且数据在此处定义的顺序写入/分析。 这些结构必须在此处定义。
+## <a name="primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32"></a>基元字段类型（ `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>` ）
 
- 
+这些是可用的基元类型，并由生成的代码适当地进行转换/封送。
 
-## <a name="primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32"></a>基元字段类型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)
+### <a name="attributes-for-primitive-field-types"></a>基元字段类型的特性
 
+- `name`-父结构中的字段名称。
+- `description`–属性的含义的友好说明。
+- `count`-给定属性有多少个。 默认值为1。 如果值大于1，则将此属性设置为代码中的静态大小的数组。
 
-这些是可用的基元类型，并将转换/封送适当地通过生成的代码。
-
-### <a name="attributes"></a>特性
-
--   `name` 的父结构中字段名称。
--   `description` – 该属性是为友好说明。
--   `count` -多少有的给定属性。 默认值为 1。 大于 1 的值使此属性成为代码中以静态方式大小的数组。
-
-### <a name="contents"></a>目录
+### <a name="contents-for-primitive-field-types"></a>基元字段类型的内容
 
 无
 
 ## `<propertyGroup />`
 
+单个结构。
 
-单个的结构。
+### <a name="propertygroup--attributes"></a>`<propertyGroup />`属性 
 
-### <a name="attributes"></a>特性
+- `name`-由 WDI 消息/其他容器引用的 ID。
+- `description`–属性组的用途的友好说明。
+- `type`-要向代码公开的类型名称。
 
--   `name` -ID 是所引用的 WDI 消息 / 其他容器。
--   `description` – 属性组是为友好说明。
--   `type` 若要向代码公开的类型名称。
+### <a name="propertygroup--contents"></a>`<propertyGroup />` 内容
 
-### <a name="contents"></a>目录
+有几种可能的属性类型（"结构" 字段）。
 
-有几种可能的属性类型 （结构字段）。
+- `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`
 
--   `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`
+- `<groupRef />`
 
--   `<groupRef />`
+- `<namedType />`
 
--   `<namedType />`
-
-### <a name="example"></a>示例
+### <a name="propertygroup--example"></a>`<propertyGroup />` 示例
 
 ```XML
 <propertyGroup name="P2PDiscoverModeStruct"
@@ -319,12 +307,3 @@ TLV 生成器/分析 XML 文件是一系列消息容器 (TLVs) 和属性进行�
             ref="WFDDeviceType" />
 </propertyGroup>
 ```
-
- 
-
- 
-
-
-
-
-

@@ -1,8 +1,8 @@
 ---
-title: Bug Check 0x356 XBOX_ERACTRL_CS_TIMEOUT
-description: XBOX_ERACTRL_CS_TIMEOUT bug 检查具有 0x00000356 值。
+title: Bug 检查 0x356 XBOX_ERACTRL_CS_TIMEOUT
+description: XBOX_ERACTRL_CS_TIMEOUT bug 检查的值为0x00000356。
 keywords:
-- Bug Check 0x356 XBOX_ERACTRL_CS_TIMEOUT
+- Bug 检查 0x356 XBOX_ERACTRL_CS_TIMEOUT
 - XBOX_ERACTRL_CS_TIMEOUT
 ms.date: 07/02/2018
 topic_type:
@@ -12,28 +12,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0855b85ff45fc99a9141b777f1ea7f428a9027ce
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 6f6f0d2780cd4ecd3ca3c093ae1fb4e5a26791c5
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519502"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852212"
 ---
-# <a name="bug-check-bug-check-0x356-xboxeractrlcstimeout"></a>Bug 检查 Bug 检查 0x356:XBOX\_ERACTRL\_CS\_超时
+# <a name="bug-check-0x356-xbox_eractrl_cs_timeout"></a>Bug 检查0x356： XBOX \_ ERACTRL \_ CS \_ 超时
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-XBOX_ERACTRL_CS_TIMEOUT bug 检查具有 0x00000356 值。 
+XBOX_ERACTRL_CS_TIMEOUT bug 检查的值为0x00000356。 
 
-Eractrl.sys 驱动程序无法在一段较长的时间后转换到或从连接待机的 Xbox 控制台。 密钥主机的驱动程序会引导支持 VM 且有助于管理 VM 生存期是 eractrl.sys 驱动程序。
+Eractrl 驱动程序无法在经过一段时间后将 Xbox 控制台转换为或从连接待机状态转换为备用。 Eractrl 驱动程序用于引导支持 VM 的 KM 驱动程序，可帮助管理 VM 生存期。
 
-## <a name="xboxeractrlcstimeout-parameters"></a>XBOX\_ERACTRL\_CS\_超时参数
+## <a name="xbox_eractrl_cs_timeout-parameters"></a>XBOX \_ ERACTRL \_ CS \_ 超时参数
 
-参数 | 描述 
+参数 | 说明 
 |---------|--------------|
-1 | CS 退出
+1 | CS 出口
 2 | 保留
 3 | 保留
 4 | 保留

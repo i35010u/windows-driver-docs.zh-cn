@@ -1,6 +1,6 @@
 ---
-title: D3DDDI\_MULTIPLANE\_覆盖\_筛选器结构
-description: 保留供系统使用。 不要使用它在您的驱动程序中。请注意此结构是仅在使用 Windows Driver Kit (WDK) 8 随附版本与 Windows 8 提供的 D3dumddi.h 标头中可用。 已从更高版本的标头。 .
+title: D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构
+description: 预留给系统使用。 不要在您的驱动程序中使用它。请注意，此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dumddi 标头中可用。 它已从标头的更高版本中删除。.
 ms.assetid: 56276b78-5550-4d93-8a73-b1183deb54da
 keywords:
 - D3DDDI_MULTIPLANE_OVERLAY_FILTER 结构显示设备
@@ -14,19 +14,20 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e166be1415c6b129fedcc5b8165634bbe5133b38
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dcd273bd01dae78f5a40161470b710d61109d1a
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341109"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852128"
 ---
-# <a name="d3dddimultiplaneoverlayfilter-structure"></a>D3DDDI\_MULTIPLANE\_覆盖\_筛选器结构
+# <a name="d3dddi_multiplane_overlay_filter-structure"></a>D3DDDI \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
-&gt; \[!请注意\]&gt;此结构是仅在使用 Windows Driver Kit (WDK) 8 随附版本与 Windows 8 提供的 D3dumddi.h 标头中可用。 已从更高版本的标头。
+> [!NOTE]
+> 此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dumddi 标头中可用。 它已从标头的更高版本中删除。
 
  
 
@@ -69,7 +70,7 @@ typedef struct _D3DDDI_MULITPLANE_OVERLAY_FILTER {
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">D3dumddi.h</td>
+<td align="left">D3dumddi</td>
 </tr>
 </tbody>
 </table>

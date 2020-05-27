@@ -1,9 +1,9 @@
 ---
-title: KSJACK\_描述结构
-description: KSJACK\_描述结构指定的音频插孔的物理属性。
+title: KSJACK \_ 说明结构
+description: KSJACK \_ 描述结构指定音频插孔的物理属性。
 ms.assetid: 303bc73a-fe47-499b-97b3-7c49a40e8cfa
 keywords:
-- KSJACK_DESCRIPTION 结构音频设备
+- KSJACK_DESCRIPTION 构造音频设备
 - PKSJACK_DESCRIPTION 结构指针音频设备
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1657777c2466aa50bbbda559ea3f3bb6dd4d09e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d49ffc3703165d9e77cbf87a53a68007a112bc50
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333380"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851579"
 ---
-# <a name="ksjackdescription-structure"></a>KSJACK\_描述结构
+# <a name="ksjack_description-structure"></a>KSJACK \_ 说明结构
 
 
-KSJACK\_描述结构指定的音频插孔的物理属性。
+KSJACK \_ 描述结构指定音频插孔的物理属性。
 
 <a name="syntax"></a>语法
 ------
@@ -46,17 +46,18 @@ typedef struct {
 -------
 
 **ChannelMapping**  
-指定的映射到相应的扬声器位置的音频通道。 **ChannelMapping**是一个位掩码的 KSAUDIO\_演讲者\_*XXX*标志 (例如，说话人\_前端\_左侧 |说话人\_FRONT\_右侧)，该标头文件 Ksmedia.h 中定义。 **ChannelMapping**应为非零值仅用于模拟呈现 pin。 对于捕获 pin 或数字呈现插针，将此成员设置为 0。
+指定音频通道到相应扬声器位置的映射。 **ChannelMapping**是 KSAUDIO \_ 发言人 \_ *XXX*标志的位掩码（例如，左侧的发言人 \_ \_ |\_前 \_ 向右扬声器），在头文件 Ksmedia 中定义。 对于模拟呈现端口， **ChannelMapping**应为非零值。 若要获取捕获插针或数字呈现 pin，请将此成员设置为0。
 
-&gt; \[!请注意\]&gt;最初定义 Devicetopology.h **ChannelMapping**为枚举的类型**EChannelMapping**。 **EChannelMapping**枚举已被弃用并不再使用 Windows Vista 和更高版本的 Windows 操作系统中。
+> [!NOTE]
+> Devicetopology 最初定义**ChannelMapping**作为**EChannelMapping**类型的枚举。 **EChannelMapping**枚举已被弃用，并且不再用于 windows Vista 和更高版本的 windows 操作系统中。
 
  
 
-**Color**  
-指定 jack 颜色。 颜色表示为一个 32 位 RGB 值，通过串联的 8 位蓝色、 绿色和红色颜色组件。 蓝色组件占用 8 的最低有效位 （0-7 位），绿色分量所占位 8 月 15 日，而红色组件占用位 16-23。 8 的最高有效位均为零。 如果 jack 颜色为未知或物理连接器具有没有可识别的颜色，此成员的值将为 0x00000000，表示黑色。
+**颜色**  
+指定插孔颜色。 颜色表示为32位 RGB 值，该值通过连接8位蓝色、绿色和红色颜色分量形成。 蓝色组件占用8个最不重要的位（bits 0-7），绿色组件占用 bits 8-15，红色组件占用 bits 16-23。 8个最高有效位为零。 如果插孔颜色未知或物理连接器没有可识别的颜色，则该成员的值为0x00000000，表示黑色。
 
 **ConnectionType**  
-为此 jack 指定物理连接类型。 此成员的值是之一**EPcxConnectionType**下表中所示的枚举值。
+指定此插孔的物理连接类型。 此成员的值是下表中显示的**EPcxConnectionType**枚举值之一。
 
 <table>
 <colgroup>
@@ -72,15 +73,15 @@ typedef struct {
 <tbody>
 <tr class="odd">
 <td align="left"><p>eConnTypeUnknown</p></td>
-<td align="left"><p>Unknown</p></td>
+<td align="left"><p>未知</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnType3Point5mm</p></td>
-<td align="left"><p>3.5mm 微型插孔</p></td>
+<td align="left"><p>3.5 mm minijack</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeQuarter</p></td>
-<td align="left"><p>1/4-英寸插孔</p></td>
+<td align="left"><p>1/4 英寸插座</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeAtapiInternal</p></td>
@@ -88,7 +89,7 @@ typedef struct {
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeRCA</p></td>
-<td align="left"><p>RCA 插孔</p></td>
+<td align="left"><p>RCA 插座</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeOptical</p></td>
@@ -96,15 +97,15 @@ typedef struct {
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeOtherDigital</p></td>
-<td align="left"><p>泛型数字连接器</p></td>
+<td align="left"><p>通用数字连接器</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeOtherAnalog</p></td>
-<td align="left"><p>泛型模拟连接器</p></td>
+<td align="left"><p>一般模拟连接器</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeMultichannelAnalogDIN</p></td>
-<td align="left"><p>多渠道模拟 DIN 连接器</p></td>
+<td align="left"><p>多通道模拟通道连接器</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeXlrProfessional</p></td>
@@ -116,15 +117,15 @@ typedef struct {
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeCombination</p></td>
-<td align="left"><p>连接器组合</p></td>
+<td align="left"><p>连接符组合</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**GeoLocation**  
-Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示的枚举值。
+**地理**  
+插孔的几何位置。 此成员的值是下表中显示的**EPcxGeoLocation**枚举值之一。
 
 <table>
 <colgroup>
@@ -133,26 +134,26 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">几何位置</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>eGeoLocRear</p></td>
-<td align="left"><p>后端</p></td>
+<td align="left"><p>Rear</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocFront</p></td>
-<td align="left"><p>前端</p></td>
+<td align="left"><p>Front</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocLeft</p></td>
-<td align="left"><p>向左</p></td>
+<td align="left"><p>左</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocRight</p></td>
-<td align="left"><p>向右</p></td>
+<td align="left"><p>权限</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocTop</p></td>
@@ -164,7 +165,7 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocRearPanel</p></td>
-<td align="left"><p>后端滑动打开或请求打开面板</p></td>
+<td align="left"><p>后滑动-打开或请求打开面板</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocRiser</p></td>
@@ -172,7 +173,7 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocInsideMobileLid</p></td>
-<td align="left"><p>深入了解盖的移动计算机</p></td>
+<td align="left"><p>移动计算机的内盖</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocDrivebay</p></td>
@@ -184,7 +185,7 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocOutsideMobileLid</p></td>
-<td align="left"><p>移动计算机的外部合上盖子</p></td>
+<td align="left"><p>移动计算机外盖</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocATAPI</p></td>
@@ -200,7 +201,7 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
  
 
 **GenLocation**  
-指定 jack 的常规位置。 此成员的值是之一**EPcxGenLocation**下表中所示的枚举值。
+指定插孔的一般位置。 此成员的值是下表中显示的**EPcxGenLocation**枚举值之一。
 
 <table>
 <colgroup>
@@ -216,15 +217,15 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 <tbody>
 <tr class="odd">
 <td align="left"><p>eGenLocPrimaryBox</p></td>
-<td align="left"><p>在主底盘</p></td>
+<td align="left"><p>在主机箱上</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGenLocInternal</p></td>
-<td align="left"><p>深入了解主底盘</p></td>
+<td align="left"><p>主机箱内部</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGenLocSeparate</p></td>
-<td align="left"><p>在单独的机箱</p></td>
+<td align="left"><p>在单独的底盘上</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGenLocOther</p></td>
@@ -236,7 +237,7 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
  
 
 **PortConnection**  
-指定表示 jack 端口类型。 此成员的值是之一**EPxcPortConnection**下表中所示的枚举值。
+指定由插座表示的端口类型。 此成员的值是下表中显示的**EPxcPortConnection**枚举值之一。
 
 <table>
 <colgroup>
@@ -245,41 +246,41 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">ReplTest1</th>
+<th align="left">值</th>
 <th align="left">端口连接类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>ePortConnJack</p></td>
-<td align="left"><p>Jack</p></td>
+<td align="left"><p>插孔</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ePortConnIntegratedDevice</p></td>
-<td align="left"><p>集成的设备的插槽</p></td>
+<td align="left"><p>集成设备的槽</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ePortConnBothIntegratedAndJack</p></td>
-<td align="left"><p>Jack 和集成的设备的插槽</p></td>
+<td align="left"><p>集成设备的插孔和槽</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ePortConnUnknown</p></td>
-<td align="left"><p>Unknown</p></td>
+<td align="left"><p>未知</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**IsConnected**  
-指示是否存在外部设备连接到输入插孔。 音频控制器是否支持此 pin 的值 jack 检测**IsConnected**应准确地指示是否在任何给定时间占用的即插即用插孔。 此值应始终设置为 **，则返回 TRUE**不支持 jack 检测的设备。
+**Connectionmultiplexer.isconnected**  
+指示是否有外部设备连接到插孔。 如果音频控制器在此 pin 上支持插座检测，则**connectionmultiplexer.isconnected**的值应准确指出插孔是否在任何给定时间都被插头占用。 对于不支持插座检测的设备，此值应始终设置为**TRUE** 。
 
 <a name="remarks"></a>备注
 -------
 
-此结构可供[ **KSPROPERTY\_JACK\_说明**](ksproperty-jack-description.md)属性在 Windows Vista 及更高版本。 它描述了属于终结点设备和音频适配器中的硬件设备之间的连接的音频插孔。 当用户需要将终结点设备插入插孔或拔下插座时，音频应用程序可以使用的描述性信息结构中以帮助用户查找插孔。
+此结构由 Windows Vista 和更高版本中的[**KSPROPERTY \_ 插座 \_ 说明**](ksproperty-jack-description.md)属性使用。 它描述了音频插孔，它是终结点设备与音频适配器中硬件设备之间的连接的一部分。 如果用户需要将终结点设备插入插孔，或将其从插孔中拔出，则音频应用程序可以使用结构中的描述性信息来帮助用户查找插孔。
 
-音频设备时将音频设备不会公开一个以物理方式访问插孔，使用**eGeoLocNotApplicable**值以指示 Windows 和基于 Windows 的应用不存在任何物理插孔。 在这种情况下，没有任何几何位置或者。 例如，音频设备可以集成到主板，而无需任何可访问的插孔。
+当音频设备不公开可物理访问的插孔时，音频设备将使用**eGeoLocNotApplicable**值向 windows 和基于 windows 的应用程序指示没有物理插孔。 同样，也没有几何位置。 例如，音频设备可以集成到主板中，无需任何可访问的插座。
 
 <a name="requirements"></a>要求
 ------------
@@ -292,15 +293,15 @@ Jack 几何位置。 此成员的值是之一**EPcxGeoLocation**下表中所示�
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left">Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**KSPROPERTY\_JACK\_说明**](ksproperty-jack-description.md)
+[**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md)
 
  
 

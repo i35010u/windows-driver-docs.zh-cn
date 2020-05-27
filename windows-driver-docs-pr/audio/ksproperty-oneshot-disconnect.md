@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_ONESHOT\_断开连接
-description: KSPROPERTY\_ONESHOT\_断开连接属性用于提示音频驱动程序以断开与蓝牙音频设备的连接。
+title: KSPROPERTY \_ ONESHOT \_ 断开连接
+description: KSPROPERTY \_ ONESHOT \_ disconnect 属性用于提示音频驱动程序与蓝牙音频设备断开连接。
 ms.assetid: B79B3B1E-A34A-4FF9-852A-938C0D5202E9
 keywords:
 - KSPROPERTY_ONESHOT_DISCONNECT 音频设备
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98361d8e8fbc5ad4261f6a598344756ccc9df1d1
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 084817a07e1d94908182a5e4a3dedaa6e64febee
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391668"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851282"
 ---
-# <a name="kspropertyoneshotdisconnect"></a>KSPROPERTY\_ONESHOT\_断开连接
+# <a name="ksproperty_oneshot_disconnect"></a>KSPROPERTY \_ ONESHOT \_ 断开连接
 
 
-**KSPROPERTY\_ONESHOT\_断开连接**属性用于提示音频驱动程序以断开与蓝牙音频设备的连接。
+**KSPROPERTY \_ ONESHOT \_ disconnect**属性用于提示音频驱动程序与蓝牙音频设备断开连接。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用率摘要表
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用情况摘要表
 
 <table>
 <colgroup>
@@ -49,29 +49,30 @@ ms.locfileid: "67391668"
 <tr class="odd">
 <td align="left"><p>是</p></td>
 <td align="left"><p>否</p></td>
-<td align="left"><p>Filter</p></td>
+<td align="left"><p>筛选器</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
-<td align="left"><p>NULL</p></td>
+<td align="left"><p>Null</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-没有属性值请求而发送的此属性。
+没有与此属性请求一起发送的属性值。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-**KSPROPERTY\_ONESHOT\_断开连接**属性将返回状态\_成功请求是否成功。
+如果请求成功，则**KSPROPERTY \_ ONESHOT \_ DISCONNECT**属性返回状态 \_ 成功。
 
-&gt; \[!请注意\]&gt;成功的请求表示该驱动程序尝试以断开与蓝牙音频设备，但并不一定意味着的尝试已成功。
+> [!NOTE]
+> 成功的请求表示驱动程序尝试从蓝牙音频设备断开连接，但并不一定表示尝试成功。
 
  
 
 <a name="remarks"></a>备注
 -------
 
-您可以实现[ **KSPROPERTY\_JACK\_说明**](ksproperty-jack-description.md)固定在中，您的驱动程序的属性。 此实现允许你检查连接状态的终结点进行后**KSPROPERTY\_ONESHOT\_断开连接**属性请求。
+您可以在您的驱动程序中实现[**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md)pin 属性。 此实现允许在进行**KSPROPERTY \_ ONESHOT \_ 断开连接**属性请求后检查终结点的连接状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,22 +84,22 @@ ms.locfileid: "67391668"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left">Ksmedia （包括 Ksmedia）</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSPROPERTY\_JACK\_说明**](ksproperty-jack-description.md)
+[**KSPROPERTY \_ 插孔 \_ 说明**](ksproperty-jack-description.md)
 
  
 

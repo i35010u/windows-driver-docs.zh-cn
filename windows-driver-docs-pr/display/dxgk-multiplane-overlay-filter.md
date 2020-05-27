@@ -1,6 +1,6 @@
 ---
-title: '\_DXGK\_MULTIPLANE\_覆盖\_筛选器结构'
-description: 保留供系统使用。 不要使用它在您的驱动程序中。请注意此结构是仅在使用 Windows Driver Kit (WDK) 8 随附版本与 Windows 8 提供的 D3dkmddi.h 标头中可用。 已从更高版本的标头。 .
+title: '\_DXGK \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构'
+description: 预留给系统使用。 不要在您的驱动程序中使用它。请注意，此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dkmddi 标头中可用。 它已从标头的更高版本中删除。.
 ms.assetid: db369274-df58-40b0-8f2c-c1963dfa3607
 keywords:
 - _DXGK_MULTIPLANE_OVERLAY_FILTER 结构显示设备
@@ -15,19 +15,20 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c242686c494b3d62813b0a6a19ffdfceea760f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93b6148246a304670f97ef5df6886637535a9d91
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350305"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851732"
 ---
-# <a name="dxgkmultiplaneoverlayfilter-structure"></a>\_DXGK\_MULTIPLANE\_覆盖\_筛选器结构
+# <a name="_dxgk_multiplane_overlay_filter-structure"></a>\_DXGK \_ MULTIPLANE \_ 覆盖 \_ 筛选器结构
 
 
-保留供系统使用。 不要使用它在您的驱动程序中。
+预留给系统使用。 不要在您的驱动程序中使用它。
 
-&gt; \[!请注意\]&gt;此结构是仅在使用 Windows Driver Kit (WDK) 8 随附版本与 Windows 8 提供的 D3dkmddi.h 标头中可用。 已从更高版本的标头。
+> [!NOTE]
+>  此结构仅在随 Windows 8 随附的 Windows 驱动程序工具包（WDK）版本8随附的 D3dkmddi 标头中可用。 它已从标头的更高版本中删除。
 
  
 
@@ -70,7 +71,7 @@ typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h</td>
+<td align="left">D3dkmddi</td>
 </tr>
 </tbody>
 </table>

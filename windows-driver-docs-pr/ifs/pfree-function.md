@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ec38b905a8cba9223807911027010ef147ea29b
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: e599ba76e3e39f307f00587e0c3217abd6e8058b
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910478"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852311"
 ---
 # <a name="pfree_function-function-pointer"></a>PFREE_FUNCTION 函数指针
 
@@ -37,7 +37,7 @@ typedef VOID ( *FreeCallback)(
 
 ## <a name="parameters"></a>参数
 
-*缓冲区*\[\]  
+*缓冲区* \[中\]  
 指向要释放的[**FSRTL_PER_FILE_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547352)或[**FSRTL_PER_STREAM_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547357)结构的指针。
 
 ## <a name="return-value"></a>返回值
@@ -51,7 +51,8 @@ typedef VOID ( *FreeCallback)(
 
 有关如何在调用*FreeCallback*期间同步对每个文件上下文对象或按流上下文对象的访问的备注，请参阅[**FsRtlTeardownPerFileContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547290)和[**FsRtlTeardownPerStreamContexts**](https://msdn.microsoft.com/library/windows/hardware/ff547295)。
 
-&gt; \[！请注意\] &gt; *FreeCallback*例程无法以递归方式向下调用文件系统或获取任何文件系统资源。
+> [!NOTE]
+> *FreeCallback*例程无法以递归方式向下调用文件系统或获取任何文件系统资源。
 
 若要定义名为*MyFreeFunction*的*FreeCallback*回调函数，必须先提供[静态驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)器（SDV）和其他验证工具需要的函数声明，如下所示：
 
@@ -73,10 +74,10 @@ VOID
 
 |   |   |
 | - | - |
-| 目标平台 | 桌面 |
+| 目标平台 | 桌面型 |
 | 版本 | 可从与 windows Vista 开始使用。 |
-| 标头 | Wdm （包括 Wdm 或 Ntddk） |
-| IRQL | < = APC_LEVEL |
+| Header | Wdm （包括 Wdm 或 Ntddk） |
+| IRQL | <= APC_LEVEL |
 
 ## <a name="see-also"></a>另请参阅
 
@@ -88,7 +89,7 @@ VOID
 
 [**FSRTL_PER_STREAM_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547357)
 
-[在旧文件系统筛选器驱动程序中跟踪每文件上下文](https://docs.microsoft.com/windows-hardware/drivers/ifs/tracking-per-file-context-in-a-legacy-file-system-filter-driver)
+[跟踪旧文件系统筛选器驱动程序中的按文件上下文](https://docs.microsoft.com/windows-hardware/drivers/ifs/tracking-per-file-context-in-a-legacy-file-system-filter-driver)
 
-[跟踪旧式文件系统筛选器驱动程序中的每个流的上下文](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-streams--stream-contexts--and-per-stream-contexts
+[跟踪旧文件系统筛选器驱动程序中的按流上下文](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-streams--stream-contexts--and-per-stream-contexts
 )

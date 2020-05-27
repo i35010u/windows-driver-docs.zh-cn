@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bfde3809e99a97da8951f62277d83704bc1d44d1
-ms.sourcegitcommit: f931a1bad4132c07be5966b428c77745c96bcba4
+ms.openlocfilehash: 69a3e7fbf651f7d951b21594ba476ec7a2f87a02
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77340084"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852124"
 ---
-# <a name="bug-check-bug-check-0x1a1-win32k_callout_watchdog_livedump"></a>Bug 检查 Bug 检查0x1A1： WIN32K.SYS\_CALLOUT\_监视器\_LIVEDUMP
+# <a name="bug-check-0x1a1-win32k_callout_watchdog_livedump"></a>Bug 检查0x1A1： WIN32K.SYS \_ 标注 \_ 监视器 \_ LIVEDUMP
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-WIN32K.SYS\_标注\_监视器\_LIVEDUMP 实时转储的值为0x000001A1。 Win32k.sys 的标注不会立即返回。
+WIN32K.SYS \_ CALLOUT \_ 看门程序 \_ LIVEDUMP 实时转储的值为0x000001A1。 Win32k.sys 的标注不会立即返回。
 
-## <a name="win32k_callout_watchdog_livedump-parameters"></a>WIN32K.SYS\_标注\_监视器\_LIVEDUMP 参数
+## <a name="win32k_callout_watchdog_livedump-parameters"></a>WIN32K.SYS \_ 标注 \_ 监视器 \_ LIVEDUMP 参数
 
 以下参数显示在蓝色屏幕上。
 

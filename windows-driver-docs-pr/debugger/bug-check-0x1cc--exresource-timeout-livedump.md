@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 1CC EXRESOURCE_TIMEOUT_LIVEDUMP
-description: EXRESOURCE_TIMEOUT_LIVEDUMP bug 检查具有 0x000001CC 值。
+description: EXRESOURCE_TIMEOUT_LIVEDUMP bug 检查的值为0x000001CC。
 keywords:
 - Bug 检查 0x1CC EXRESOURCE_TIMEOUT_LIVEDUMP
 - EXRESOURCE_TIMEOUT_LIVEDUMP
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 131d6bfc1076e03d7e940384229218019ca70998
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: b65027cbaa9c47cc30079bb66d6e2fff4eb999da
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519693"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851284"
 ---
-# <a name="bug-check-bug-check-0x1cc-exresourcetimeoutlivedump"></a>Bug 检查 Bug 检查 0x1CC:EXRESOURCE\_超时\_LIVEDUMP
+# <a name="bug-check-0x1cc-exresource_timeout_livedump"></a>Bug 检查0x1CC： EXRESOURCE \_ 超时 \_ LIVEDUMP
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-EXRESOURCE_TIMEOUT_LIVEDUMP bug 检查具有 0x000001CC 值。
+EXRESOURCE_TIMEOUT_LIVEDUMP bug 检查的值为0x000001CC。
 
-内核 ERESOURCE 已超时。这可能指示死锁条件或这可能导致性能问题的大量争用。
+内核 ERESOURCE 已超时。这可能表示死锁条件或严重争用，这可能会导致性能问题。
 
 
-## <a name="exresourcetimeoutlivedump-parameters"></a>EXRESOURCE\_超时\_LIVEDUMP 参数
+## <a name="exresource_timeout_livedump-parameters"></a>EXRESOURCE \_ TIMEOUT \_ LIVEDUMP 参数
 
-在蓝色屏幕上显示以下参数。
+以下参数显示在蓝色屏幕上。
 
-参数 | 描述 
+参数 | 说明 
 |---------|--------------|
-1 | ERESOURCE 已超时。
-2 | 检测到超时线程
+1 | 已超时的 ERESOURCE。
+2 | 检测到超时的线程
 3 | ERESOURCE 争用计数
-4 | 配置的超时 （秒）
+4 | 配置的超时（秒）
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)

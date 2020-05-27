@@ -1,29 +1,29 @@
 ---
 title: 重置为出厂默认设置（功能索引 21）
-description: 此函数将返回到供应商预先配置的设置重置 NVDIMM N。
+description: 此函数将 NVDIMM-N 重置回供应商预先配置的设置。
 ms.assetid: 64CEF5C8-FC2A-4C6E-829C-27E18A4EDC26
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bb6598830bb7efc03f016b22dfe2949a2904eb42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 455f32429fc67349788dde17465a2980a6d6c379
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346544"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851262"
 ---
 # <a name="reset-to-factory-defaults-function-index-21"></a>重置为出厂默认设置（功能索引 21）
 
 
-此函数将返回到供应商预先配置的设置重置 NVDIMM N。
+此函数将 NVDIMM-N 重置回供应商预先配置的设置。
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>输入
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>送
 
 
 ### <a name="span-idargs3spanspan-idargs3spanspan-idargs3spanargs3"></a><span id="Args3"></span><span id="args3"></span><span id="ARGS3"></span>Args3
 
 无。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>输出
 
 
 <table>
@@ -37,8 +37,8 @@ ms.locfileid: "63346544"
 <tr class="header">
 <th align="left">字段</th>
 <th align="left">字节长度</th>
-<th align="left">字节偏移</th>
-<th align="left">描述</th>
+<th align="left">字节偏移量</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -46,23 +46,24 @@ ms.locfileid: "63346544"
 <td align="left"><strong>状态</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>此函数可返回以下特定于函数的错误代码：</p>
-<p>1：操作已超时。</p>
-<p>转到<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>有关详细信息。</p></td>
+<td align="left"><p>此函数可以返回以下特定于函数的错误代码：</p>
+<p>1：操作超时。</p>
+<p>有关详细信息，请参阅<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM 方法输出</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-&gt; \[!请注意\]    &gt;平台应等待三次的最大值保存工厂默认操作完成的超时值 （例如，如果保存超时的最大值为 60 秒，平台应等待 180 秒）。 如果该操作时间超过该时间间隔内，平台应中止操作，并返回特定于函数的错误代码 1 （操作超时）。
+> [!NOTE]
+> 平台应等待完成出厂默认操作的最大保存超时的三倍（例如，如果最大保存超时为60秒，则平台将等待180秒）。 如果操作所用时间超过该时间间隔，则平台应中止操作并返回与函数特定的错误代码1（操作超时）。
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[\_字节可寻址能源的 DSM 接口支持的函数类 （函数接口 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_用于字节寻址的支持能源的函数类的 DSM 接口（Function Interface 1）](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

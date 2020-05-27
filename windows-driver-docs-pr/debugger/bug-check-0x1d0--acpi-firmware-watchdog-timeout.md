@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1D0 ACPI_FIRMWARE_WATCHDOG_TIMEOUT
-description: ACPI_FIRMWARE_WATCHDOG_TIMEOUT bug 检查具有 0x000001D0 值。
+description: ACPI_FIRMWARE_WATCHDOG_TIMEOUT bug 检查的值为0x000001D0。
 keywords:
 - Bug 检查 0x1D0 ACPI_FIRMWARE_WATCHDOG_TIMEOUT
 - ACPI_FIRMWARE_WATCHDOG_TIMEOUT
@@ -12,34 +12,34 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 72688bd601555ddad3e4c501ccb6a4f933609bc9
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: a2465fd5baade86ab0274a0861df9293fa8fe195
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519675"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851982"
 ---
-# <a name="bug-check-bug-check-0x1d0-acpifirmwarewatchdogtimeout"></a>Bug 检查 Bug 检查 0x1D0:ACPI\_固件\_监视器\_超时 
+# <a name="bug-check-0x1d0-acpi_firmware_watchdog_timeout"></a>Bug 检查0x1D0： ACPI \_ 固件 \_ 监视器 \_ 超时 
 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-ACPI_FIRMWARE_WATCHDOG_TIMEOUT bug 检查具有 0x000001D0 值。 
+ACPI_FIRMWARE_WATCHDOG_TIMEOUT bug 检查的值为0x000001D0。 
 
-ACPI 驱动程序未能在预期的分配的时间内的操作。
+ACPI 驱动程序无法在预期的分配时间内完成操作。
 
-## <a name="acpifirmwarewatchdogtimeout-parameters"></a>ACPI\_固件\_监视器\_超时参数
+## <a name="acpi_firmware_watchdog_timeout-parameters"></a>ACPI \_ 固件 \_ 监视器 \_ 超时参数
 
-在蓝色屏幕上显示以下参数。
+以下参数显示在蓝色屏幕上。
 
-参数 | 描述 
+参数 | 说明 
 |---------|--------------|
-1 | 指向 AMLI 上下文
-2 | 指向 Unicode 名的 Aml 上下文
-3 | ACPI 设备扩展到指针。
-4 | 到 ACPI 会审块的指针。
+1 | 指向 AMLI 上下文的指针
+2 | 指向 Aml 上下文的 Unicode 名称的指针
+3 | 指向 ACPI 设备扩展的指针。
+4 | 指向 ACPI 会审块的指针。
 
 
 

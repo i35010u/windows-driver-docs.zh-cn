@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1D2 WORKER_THREAD_INVALID_STATE
-description: WORKER_THREAD_INVALID_STATE bug 检查具有 0x000001D2 值。
+description: WORKER_THREAD_INVALID_STATE bug 检查的值为0x000001D2。
 keywords:
 - Bug 检查 0x1D2 WORKER_THREAD_INVALID_STATE
 - WORKER_THREAD_INVALID_STATE
@@ -12,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe77d8a1fa7cd63a8ece9b0a6ec607d883079e3d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 1075d939b592b53653f07cc29aeaafe3314747d7
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519664"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851564"
 ---
-# <a name="bug-check-bug-check-0x1d2-workerthreadinvalidstate"></a>Bug 检查 Bug 检查 0x1D2:辅助角色\_线程\_无效\_状态 
+# <a name="bug-check-0x1d2-worker_thread_invalid_state"></a>Bug 检查0x1D2：工作 \_ 线程 \_ 无效 \_ 状态 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-辅助角色\_线程\_无效\_状态 bug 检查的值为 0x000001D2。 
+工作 \_ 线程的 \_ \_ 状态 bug 检查无效，其值为0x000001D2。 
 
-此错误表示 executive 工作线程处于无效状态。
+此错误表示执行工作线程处于无效状态。
 
-## <a name="workerthreadinvalidstate-parameters"></a>辅助角色\_线程\_无效\_状态参数
+## <a name="worker_thread_invalid_state-parameters"></a>工作 \_ 线程 \_ 无效的 \_ 状态参数
 
-参数 | 描述 
+参数 | 说明 
 |---------|--------------|
-1 | 失败的类型
-2 | 工作线程地址
+1 | 失败类型
+2 | 工作线程的地址
 3 | 保留
 4 | 保留
 
 
 
-**参数 1 的值**
+**参数1值**
 
-  0x0:工作线程终止的过程中具有未完成 I/O
+  0x0：正在终止进程的工作线程具有未完成的 i/o
   
-  2-的工作线程地址
+  2-工作线程的地址
   
   3-保留
   

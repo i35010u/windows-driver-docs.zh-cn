@@ -1,34 +1,31 @@
 ---
 title: 修复了 ComBuffer 和 Windows SMM 安全缓解表 (WSMT)
 description: 修复了 ComBuffer 和 Windows SMM 安全缓解表 (WSMT)
-ms.date: 05/07/2018
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b573858b60ced40ee8ae2c7e8f302389fabe440
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dafaa17592ad7878e9c011c4f005fc87e0731ad6
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337614"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851965"
 ---
 # <a name="fixed-combuffer-and-windows-smm-security-mitigation-table-wsmt"></a>修复了 ComBuffer 和 Windows SMM 安全缓解表 (WSMT)
 
+Windows SMM 安全缓解表（WSMT）是 ACPI 命名空间中所述的一个静态表，其中包含的标志表明已在系统上实现了特定的安全功能。
 
-Windows SMM 安全缓解表 (WSMT) 是包含标志，用于指明特定的安全功能已经在系统上的 ACPI 命名空间中所述的静态表。
+"保护标志" 字段指示系统固件中是否存在特定的 BIOS 安全缓解措施。 在启动 ACPI 解释器之前，Windows 操作系统支持的 Windows 操作系统版本在 Windows SMM 安全表中及早读取。 Windows 操作系统可能会根据这些 SMM 保护标志的存在，选择启用、禁用或取消功能特定的安全功能。
 
-保护标志字段指示存在系统固件中的特定 BIOS 安全缓解措施。 受支持的版本的 Windows 操作系统早期在初始化期间，以前的 ACPI 解释器启动 Windows SMM 安全表中读取。 Windows 操作系统可以选择启用、 禁用或取消功能根据这些 SMM 保护标志存在某些安全功能。
+保护标志固定 \_ \_ 的通信缓冲区和 \_ comm \_ 缓冲 \_ 嵌套 \_ 的 PTR 保护依赖于固件供应商重新设计系统管理中断（SMIs），以便仅读取或写入包含 MMIO 和 EFI 分配内存的区域的 "允许" 列表。不能检查指针是否在 SMM 之外，它们必须仅在这些 "安全" 区域内。这可以防止 SMM 成为一种困惑的 deputy，它可以绕过 Windows 旗舰 "Guard" 功能。 上面提到的保护标志仅引用输入验证和指针检查，当前不需要通过 SMM 页保护进行强制。
 
-保护标志固定\_COMM\_缓冲区和通信\_缓冲区\_嵌套\_PTR\_保护依赖固件供应商重新设计系统管理中断 (SMIs) 权限仅读取或写入到包括 MMIO 和 EFI 分配内存的区域的"允许"列表。  不足够，若要检查的指针是 SMM 之外，它们必须仅为这些"安全"区域。  这可以防止 SMM 变得混淆的 deputy，这可以绕过 Windows 旗舰"防护"功能。 上面提到的保护标志仅引用输入的验证和检查，指针和当前不需要强制通过 SMM 页保护。
+以下 Windows 版本中包含对 WSMT 的支持：
 
-WSMT 支持以下版本的 Windows 中包括：
+- Windows Server Technical Preview 2016
 
--   Windows Server Technical Preview 2016
+- Windows 10 版本 1607
 
--   Windows 10 版本 1607
-
--   Windows 10 版本 1703
+- Windows 10 版本 1703
 
 ## <a name="related-resources"></a>相关资源
 
-[Windows SMM 安全缓解措施表 (WSMT)](https://go.microsoft.com/fwlink/p/?LinkId=786943)
-
-
+[Windows SMM 安全缓解表（WSMT）](https://go.microsoft.com/fwlink/p/?LinkId=786943)

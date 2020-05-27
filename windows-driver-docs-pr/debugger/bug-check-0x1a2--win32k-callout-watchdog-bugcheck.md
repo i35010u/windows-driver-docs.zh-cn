@@ -12,21 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a4a8a3e23094476f0bf3f09e34a6b8c187ef40b
-ms.sourcegitcommit: f931a1bad4132c07be5966b428c77745c96bcba4
+ms.openlocfilehash: a3e7a1973b07b6171b96f8dc696c1f62d9a6248c
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77340086"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852122"
 ---
-# <a name="bug-check-bug-check-0x1a2-win32k_callout_watchdog_bugcheck"></a>Bug 检查 Bug 检查0x1A2： WIN32K.SYS\_CALLOUT\_监视器\_检测错误
+# <a name="bug-check-0x1a2-win32k_callout_watchdog_bugcheck"></a>Bug 检查0x1A2： WIN32K.SYS \_ 标注 \_ 监视器 \_ 错误检查
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-WIN32K.SYS\_标注\_监视器\_错误检查实时转储的值为0x000001A2。 它指示 Win32k.sys 的标注不会立即返回。
+WIN32K.SYS \_ 标注 \_ 监视程序 \_ 错误检查实时转储的值为0x000001A2。 它指示 Win32k.sys 的标注不会立即返回。
 
-## <a name="win32k_callout_watchdog_bugcheck-parameters"></a>WIN32K.SYS\_标注\_监视器\_检测错误参数
+## <a name="win32k_callout_watchdog_bugcheck-parameters"></a>WIN32K.SYS \_ 标注 \_ 监视器 \_ 错误检测参数
 
 以下参数显示在蓝色屏幕上。
 

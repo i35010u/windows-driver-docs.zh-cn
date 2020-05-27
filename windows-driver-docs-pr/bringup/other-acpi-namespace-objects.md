@@ -1,178 +1,187 @@
 ---
 title: 其他 ACPI 命名空间对象
-description: 对于设备的某些特定的类，有其他的 ACPI 命名空间对象，以显示下命名空间中的这些设备的要求。
+description: 对于某些特定类别的设备，需要在命名空间中的这些设备下显示其他 ACPI 命名空间对象。
 ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
-ms.date: 05/16/2018
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 321512a06471120b820a42e19701c68d28cc959e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e69d7fae009841ad8cb5338755fde4456a737f71
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364531"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851734"
 ---
 # <a name="other-acpi-namespace-objects"></a>其他 ACPI 命名空间对象
 
-对于设备的某些特定的类，有其他高级配置和电源接口 (ACPI) 命名空间对象下方的命名空间中的这些设备出现的要求。 本部分列出了用于基于 SoC 的平台所需的其他对象。
+对于某些特定类别的设备，需要在命名空间中的这些设备下显示其他高级配置和电源接口（ACPI）命名空间对象。 本部分列出了基于 SoC 的平台所需的其他对象。
 
-## <a name="processor-identification-objects"></a>处理器标识对象
+## <a name="processor-identification-objects"></a>处理器识别对象
 
-必须在 ACPI 名称空间中枚举的处理器。 下声明处理器\\ \_SB"设备"语句中，使用与在平台上的其他设备一样。 处理器的设备必须包含以下对象：
+处理器必须在 ACPI 命名空间中枚举。 与 \\ \_ 平台上的其他设备一样，使用 "Device" 语句在 SB 下声明处理器。 处理器设备必须包含以下对象：
 
-- \_HID:ACPI0007
-- \_UID:匹配 MADT 中处理器的条目的唯一编号。
+- \_HID： ACPI0007
+- \_UID：与 MADT 中的处理器条目相匹配的唯一编号。
 
-## <a name="display-specific-objects"></a>显示特定对象
+## <a name="display-specific-objects"></a>特定于显示的对象
 
-显示特定对象的详细信息，请参阅附录 B，"视频 Extensions"的[ACPI 5.0 规范](https://uefi.org/specifications)。
+有关显示特定对象的详细信息，请参阅[ACPI 5.0 规范](https://uefi.org/specifications)的附录 B "视频扩展"。
 
-### <a name="display-specific-object-requirements"></a>显示特定对象的要求
+### <a name="display-specific-object-requirements"></a>特定于显示的对象要求
 
-| 方法 | 描述                                        | 要求                                                                      |
+| 方法 | 说明                                        | 要求                                                                      |
 |--------|----------------------------------------------------|----------------------------------------------------------------------------------|
-| \_DOS  | 启用/禁用输出切换。                   | 所需的系统是否支持显示切换或 LCD 亮度级别。          |
-| \_DOD  | 枚举连接以显示适配器的所有设备。 | 需要集成的控制器是否支持输出切换。                     |
-| \_ROM  | 获取 ROM 数据。                                      | 所需如果 ROM 映像存储在专用格式。                           |
-| \_GPD  | 获取 POST 设备。                                   | 如果使用\_VPO 实现。                                                |
-| \_SPD  | 开机自检设备设置。                                   | 如果使用\_VPO 实现。                                                |
-| \_VPO  | 视频 POST 选项。                                | 所需的系统是否支持不断变化的 post VGA 设备。                            |
+| \_造成  | 启用/禁用输出切换。                   | 如果系统支持显示器切换或 LCD 亮度级别，则是必需的。          |
+| \_DOD  | 枚举附加到显示适配器的所有设备。 | 如果集成控制器支持输出切换，则为必需。                     |
+| \_CD-ROM  | 获取 ROM 数据。                                      | 如果 ROM 映像以专有格式存储，则是必需的。                           |
+| \_GPD  | 获取后设备。                                   | 如果 \_ 实现了 VPO，则为必需。                                                |
+| \_SPD  | 设置后设备。                                   | 如果 \_ 实现了 VPO，则为必需。                                                |
+| \_VPO  | 视频帖子选项。                                | 如果系统支持更改 VGA 后设备，则是必需的。                            |
 | \_ADR  | 返回此设备的唯一 ID。              | 必需。                                                                        |
-| \_BCL  | 支持的亮度控制级别的查询列表。 | 所需嵌入的 LCD 是否支持的亮度控制。                            |
-| \_BCM  | 设置的亮度级别。                          | 如果使用\_BCL 实现。                                                |
-| \_DDC  | 返回为此设备 EDID。                   | 所需嵌入的 LCD 不支持 EDID 返回通过标准接口。 |
-| \_DCS  | 返回的输出设备的状态。                    | 所需的系统是否支持显示切换 （通过热键）。                  |
-| \_DGS  | 查询图形状态。                              | 所需的系统是否支持显示切换 （通过热键）。                  |
-| \_DSS  | 设备状态集。                                  | 所需的系统是否支持显示切换 （通过热键）。                  |
+| \_BCL  | 支持的亮度控制级别的查询列表。 | 如果嵌入式 LCD 支持亮度控制，则是必需的。                            |
+| \_BCM  | 设置亮度级别。                          | 如果 \_ 实现了 BCL，则为必需。                                                |
+| \_DDC  | 返回此设备的 EDID。                   | 如果嵌入的 LCD 不支持通过标准接口返回 EDID，则是必需的。 |
+| \_DC  | 返回输出设备的状态。                    | 如果系统支持显示切换（通过热键），则是必需的。                  |
+| \_DG  | 查询图形状态。                              | 如果系统支持显示切换（通过热键），则是必需的。                  |
+| \_DSS  | 设备状态集。                                  | 如果系统支持显示切换（通过热键），则是必需的。                  |
 
-## <a name="usb-host-controllers-and-devices"></a>USB 主控制器和设备
+## <a name="usb-host-controllers-and-devices"></a>USB 主机控制器和设备
 
-USB 主控制器在 SoC 平台上可用来连接内部和外部设备。 Windows 包含符合 EHCI 或 XHCI 规范的标准 USB 主控制器的收件箱驱动程序。
+USB 主机控制器用于连接内部和外部设备的 SoC 平台。 Windows 包括符合 EHCI 或 XHCI 规范的标准 USB 主机控制器的收件箱驱动程序。
 
-SoC 基于在平台上，可由 ACPI 枚举 USB 主控制器。 Windows 使用以下 ACPI 命名空间对象枚举和配置兼容的 USB 硬件时：
+在基于 SoC 的平台上，可以通过 ACPI 枚举 USB 主机控制器。 当枚举和配置兼容的 USB 硬件时，Windows 使用以下 ACPI 命名空间对象：
 
-- 供应商指派 ACPI 兼容的硬件 ID (\_HID)。
-- 唯一 ID (\_UID) 对象，如果多个实例中的命名空间 （即，两个或多个节点具有相同的设备标识对象） 的 USB 控制器。
-- 兼容 ID (\_CID) EHCI 或 XHCI 符合标准 USB 主控制器 (EHCI:PNP0D20)，(XHCI:PNP0D10)。
-- 当前资源设置 (\_CRS) 分配给 USB 控制器。 控制器的资源进行了适当的硬件接口规范 （EHCI 或 XHCI） 中描述。
+- 供应商分配的符合 ACPI 的硬件 ID （ \_ HID）。
 
-### <a name="usb-device-specific-method-dsm"></a>USB 设备特定的方法 (\_DSM)
+- 唯一 ID （ \_ UID）对象，如果命名空间中有多个 USB 控制器实例（即，具有相同设备标识对象的两个或多个节点）。
 
-Windows 定义的特定于设备的方法 (\_DSM) 以支持 USB 子系统的特定于设备的类的配置。 有关详细信息，请参阅[USB 设备特定的方法](usb-device-specific-method---dsm-.md)。
+- \_适用于 EHCI 或 XHCI 标准兼容 USB 主机控制器（EHCI： PNP0D20）的兼容 ID （CID），（XHCI： PNP0D10）。
 
-### <a name="usb-integrated-transaction-translator-tt-support-hrv"></a>USB 集成事务转换器 (TT) 支持 (\_HRV)
+- 分配到 USB 控制器的当前资源设置（ \_ CRS）。 控制器的资源在适当的硬件接口规范（EHCI 或 XHCI）中进行了介绍。
 
-标准 EHCI 主控制器仅支持高速 USB 设备。 SoC 在平台上，Windows 支持两种常见设计的 EHCI 符合主机控制器实现低速和全速 USB 设备集成的事务处理翻译。 硬件版本 (\_HRV) 对象指示集成 TT 支持添加到 USB 主控制器驱动程序的类型。
+### <a name="usb-device-specific-method-_dsm"></a>USB 设备特定方法（ \_ DSM）
 
-\_HRV 设置根据以下条件：
+Windows 定义了特定于设备的方法（ \_ DSM）来支持 USB 子系统的设备特定于设备的配置。 有关详细信息，请参阅[USB 特定于设备的方法](usb-device-specific-method---dsm-.md)。
 
-- **NoIntegratedTT - \_HRV = 0**
+### <a name="usb-integrated-transaction-translator-tt-support-_hrv"></a>USB 集成事务转换器（TT）支持（ \_ HRV）
 
-    标准 EHCI 主控制器不会实现集成的事务处理翻译人员和\_HRV 值为 0 时才有效这些控制器。 不需要包括\_HRV 这些控制器对象。
+标准 EHCI 主机控制器仅支持高速 USB 设备。 在 SoC 平台上，Windows 支持两个常见的与 EHCI 兼容的主机控制器的设计，它们实现了用于低速和全速 USB 设备的集成事务转换器。 硬件修订（ \_ HRV）对象指示 USB 主机控制器驱动程序的集成 TT 支持类型。
 
-- **IntegratedTTSpeedInPortSc - \_HRV = 1**
+\_根据以下条件设置 HRV：
 
-    启用集成的 TT 支持。 此风格的接口包括降低速度和中 PORTSC HiSpeed 位注册自身。 这些位分别位于 26 和 27、 的位偏移量。 在确定速度，EHCI 驱动程序将读取 PORTSC，并从这些位中提取的速度信息。
+- **NoIntegratedTT- \_ HRV = 0**
 
-- **IntegratedTTSpeedInHostPc - \_HRV = 2**
+    标准 EHCI 主机控制器不实现集成事务翻译，且 \_ HRV 值为0只对这些控制器有效。 不需要为 \_ 这些控制器包含 HRV 对象。
 
-    启用集成的 TT 支持。 此风格的接口包括在单独的 HOSTPC 寄存器降低速度和 HiSpeed 位。 当 EHCI 驱动程序需要确定端口速度时，它将读取对应于所需的端口的 HOSTPC 寄存器和提取的速度信息。
+- **IntegratedTTSpeedInPortSc- \_ HRV = 1**
+
+    启用集成 TT 支持。 此界面风格包含 PORTSC 注册本身中的 LowSpeed 和 HiSpeed 位。 这些位分别分别为位偏移26和27。 确定速度时，EHCI 驱动程序将读取 PORTSC，并从这些位提取速度信息。
+
+- **IntegratedTTSpeedInHostPc- \_ HRV = 2**
+
+    启用集成 TT 支持。 此界面风格包含单独 HOSTPC 寄存器中的 LowSpeed 和 HiSpeed 位。 当 EHCI 驱动程序需要确定端口速度时，它将读取对应于相关端口的 HOSTPC 寄存器，并提取速度信息。
 
 ### <a name="usb-xhci-d3cold-support"></a>USB XHCI D3cold 支持
 
-除了选择性挂起，可以将放入 D3cold 状态并关闭时不使用内部的 USB 设备连接到 XHCI 控制器。 有关详细信息，请参阅[设备电源管理](device-power-management.md)。 所有 USB 设备功能的驱动程序必须参加 D3cold 到。
+除了选择性挂起外，连接到 XHCI 控制器的内部 USB 设备还可以进入 D3cold 状态，并在不使用时关闭电源。 有关详细信息，请参阅[设备电源管理](device-power-management.md)。 所有 USB 设备功能驱动程序都必须选择加入 D3cold。
 
-### <a name="usb-port-specific-objects"></a>USB 端口特定的对象
+### <a name="usb-port-specific-objects"></a>USB 端口专用对象
 
-Windows 需要知道的可见性和连接的功能的 USB 端口的系统上。 这是为了向有关端口和设备用户提供准确信息所必需的。 两个对象，物理设备的位置 (\_以前) 和 USB 端口功能 (\_UPC)，用于此目的。 有关详细信息，请参阅以下文章：
+Windows 需要知道系统上 USB 端口的可见性和连接能力。 为了向用户提供有关端口和设备的准确信息，这是必需的。 将使用两个对象（物理设备位置（ \_ PLD）和 USB 端口功能（ \_ UPC））来实现此目的。 有关详细信息，请参阅以下部分：
 
-- 节 6.1.6、"设备标识对象"和 9.13.1，"USB 2.0 端口的主控制器和\_UPC 和\_以前"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
-- [使用 ACPI 的计算机上配置 USB 端口](https://docs.microsoft.com/windows-hardware/drivers/install/using-acpi-to-configure-usb-ports-on-a-computer)。
+- \_ \_ [ACPI 5.0 规范](https://uefi.org/specifications)中的6.1.6、"设备标识对象" 和 "9.13.1"、"USB 2.0 主机控制器和 UPC 和 PLD" 部分。
 
-## <a name="sd-host-controllers-and-devices"></a>SD 主控制器和设备
+- [使用 ACPI 配置计算机上的 USB 端口](https://docs.microsoft.com/windows-hardware/drivers/install/using-acpi-to-configure-usb-ports-on-a-computer)。
 
-SD 主机控制器使用 SoC 平台上进行存储，以及输入/输出设备的访问。 Windows 包括 SDA 标准主机控制器硬件的收件箱驱动程序。 使用此驱动程序的兼容性，SD 主机控制器设备必须符合 SD 关联[SD 主机控制器规范](https://www.sdcard.org/developers/overview/host_controller/)。
+## <a name="sd-host-controllers-and-devices"></a>SD 主机控制器和设备
 
-SoC 在平台上，可由 ACPI 枚举 SD 主控制器。 Windows 使用以下 ACPI 命名空间对象枚举和配置兼容 SD 硬件时：
+SD 主机控制器用于 SoC 平台，可用于访问存储和 i/o 设备。 Windows 包括 SDA-standard 主机控制器硬件的收件箱驱动程序。 为了与此驱动程序兼容，SD 主机控制器设备必须符合 SD 关联的[Sd 主机控制器规范](https://www.sdcard.org/developers/overview/host_controller/)。
 
-- 供应商指派 ACPI 兼容的硬件 ID (\_HID)。
-- 唯一 ID (\_UID) 对象，如果多个实例中的命名空间 （即，两个或多个节点具有相同的设备标识对象） 的 SD 控制器。
-- 兼容 ID (\_CID) SDA 符合标准的 SD 主控制器 (PNP0D40)。
-- 当前资源设置 (\_CRS) 分配给的控制器。 控制器的资源进行了描述，如下所示：
+在 SoC 平台上，可通过 ACPI 枚举 SD 主机控制器。 枚举和配置兼容的 SD 硬件时，Windows 使用以下 ACPI 命名空间对象：
 
-  - 中包含的所有实现的插槽的硬件资源。 在槽是内存或 I/O 设备 SDIO 总线上的连接点。 每个插槽都与一组标准的寄存器和 SD 主机控制器中的中断与已连接的设备一起使用的通信相关联。 SD 主机控制器可以实现任意数量的槽，但在 SoC 平台上没有通常只有一个。
-  - 中的槽编号顺序在一起，列出槽资源 （槽 0 的资源是第一，在槽 1 的资源是第二个，依此类推）。
-  - 为每个槽中，按以下顺序列出了资源：
+- 供应商分配的符合 ACPI 的硬件 ID （ \_ HID）。
 
-    - 标准 SD 的基址的槽的集进行注册。
-    - 在槽 SD 标准中断。
-    - GPIO 中断信号性沉寂卡插入和删除 （如果标准 SD 卡检测期间所有的电源状态，不支持接口） 的槽的资源。
-    - GPIO 输入读取的槽的资源是否卡位于当前槽中 （如果标准 SD 卡检测期间所有的电源状态，不支持接口）。 使用相同的 pin 作为插入/删除中断。
-    - 第二个 GPIO 输入读取的资源是否在槽中的卡是写保护状态 （如果标准 SD 写保护接口不支持在所有的电源状态期间）。
+- 唯一 ID （ \_ UID）对象，如果命名空间中有一个 SD 控制器实例（即，具有相同设备标识对象的两个或多个节点）。
 
-必须支持唤醒的中断 （描述为"SharedAndWake"或"ExclusiveAndWake"）。
+- \_符合 SDA 标准的 SD 主机控制器（PNP0D40）的兼容 ID （CID）。
 
-### <a name="embedded-sd-devices"></a>Embedded 的 SD 设备
+- 分配给控制器的当前资源设置（ \_ CRS）。 控制器的资源如下所述：
 
-SD 总线驱动程序通过枚举 SD 连接的设备。 集成到平台的 SD 设备还必须在 ACPI 名称空间作为 SD 主控制器的子级列出。 此要求使操作系统能够总线枚举设备相关联 ACPI 对象 （例如，非其可移除性、 设备的电源状态、 消耗的 GPIO 或存储资源等） 提供的设备的特定于平台的属性。 若要建立此关联，设备命名空间需要地址 (\_ADR) 对象，该通信 SDIO 总线上设备的地址对象。 \_ADR 对象返回一个整数。 对于 SDIO 总线中，此整数的值定义，如下所示：
+  - 包括所有已实现槽的硬件资源。 槽是用于内存或 i/o 设备的 SDIO 总线上的连接点。 每个槽都与一组标准寄存器和 SD 主机控制器中的中断相关联，该主机控制器用于与连接的设备进行通信。 SD 主机控制器可以实现任意数量的插槽，但在 SoC 平台上通常只有一个。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>SDIO 总线</td>
-<td><p>高位字 – 槽编号 （0 – 第一个槽）</p>
-<p>低位字 – 函数号 （请参阅 SD 定义的规范）。</p></td>
-</tr>
-</tbody>
-</table>
+  - 槽资源一起列出，按槽号顺序排列（第0插槽的资源是第一个，槽1的资源是第二个，依此类推）。
 
-此外必须包括嵌入的 SD 设备命名空间：
+  - 对于每个槽，按以下顺序列出资源：
 
-- 删除方法 (\_RMV)，则返回 0 （以指示不能删除该设备） 的对象。
-- 一个\_CRS 设备要求 （如 GPIO 插针或存储的连接），如有必要的旁带资源的对象。
+    - 槽的 SD 标准寄存器集的基址。
 
-## <a name="imaging-class-devices-cameras"></a>图像处理类设备 （照相机）
+    - 槽的 SD 标准中断。
 
-通过图形驱动程序或通过 USB 可能枚举摄像机设备。 在任一情况下，Windows 需要知道的相机的物理位置，以便可以显示适当的用户界面。 若要执行此操作，内置的系统底盘和机械地修复方向的照相机设备 ACPI 名称空间中包含并提供物理设备位置 (\_以前) 对象。 这需要：
+    - 用于发送信号卡插入和删除的槽的 GPIO 中断资源（如果在所有电源状态中都不支持标准 SD 卡检测接口）。
 
-- 要显示为子级 （嵌套设备） 的枚举器设备 （GPU 设备或 USB 设备） 的摄像机设备。
-- 摄像机设备提供的地址 (\_ADR) 对象，其中包含父设备的总线上的照相机的地址。
+    - 槽的 GPIO 输入资源，用于读取卡是否当前位于槽中（如果在所有电源状态中都不支持标准 SD 卡检测接口）。 使用与插入/删除中断相同的 pin。
 
-  - 有关 USB，请参阅**ACPI 命名空间层次结构和\_适用于 embedded USB 设备 ADR**中下一节。
-  - 对于图形，这是中指定的标识符\_DOD 方法提供 GPU 设备下。 有关详细信息，请参阅附录 B，视频的"扩展"，ACPI 5.0 规范。
+    - 用于读取槽中的卡是否受写保护的另一个 GPIO 输入资源（如果在所有电源状态中都不支持标准 SD 写入保护接口）。
 
-- 该摄像机设备提供\_以前对象。
-- 如果有摄像机驱动程序 （如 GPIO 中断或 I/O 的连接或存储连接），需要任何旁带资源\_CRS 对象提供对这些资源。
+中断必须是支持唤醒的（描述为 "SharedAndWake" 或 "ExclusiveAndWake"）。
 
-在中\_以前对象**面板**字段 （位 67 69），**合上盖子**字段 （位 66） 和**停靠**字段 （位 65） 设置为正确值的图面装载照相机。 所有其他字段是可选的。 对于手持移动设备，包括平板电脑前, 面板是一个持有显示屏幕和其原点位于左下角显示查看纵向方向时。 使用此引用，"前"指示照相机视图用户 （网络摄像机），而"上一步"表示照相机视图即可从用户 （仍或视频摄像机）。 有关详细信息，请参阅，部分 6.1.8，"\_以前 （物理位置的设备）"，在[ACPI 5.0 规范](https://uefi.org/specifications)。
+### <a name="embedded-sd-devices"></a>嵌入式 SD 设备
 
-### <a name="acpi-namespace-hierarchy-and-adr-for-embedded-usb-devices"></a>ACPI 命名空间层次结构和\_ADR embedded USB 设备
+Sd 连接的设备由 SD bus 驱动程序枚举。 集成到平台中的 SD 设备还必须作为 SD 主机控制器的子项列在 ACPI 命名空间中。 此要求使操作系统能够将总线枚举设备与通过 ACPI 对象为设备提供的特定于平台的属性（例如，非 removability、设备电源状态、GPIO 或使用的 SPB 资源等）相关联。 若要建立此关联，设备命名空间需要 Address （ \_ ADR）对象，该对象会在 SDIO 总线上传达设备的地址。 \_ADR 对象返回整数。
 
-将嵌入的 USB 设备添加到 ACPI 名称空间，当设备节点的层次结构必须完全匹配的 Windows USB 驱动程序通过枚举的设备。 这可以通过在"视图的连接"模式下查看 Windows 设备管理器来确定。 必须包含整个层次结构，从 USB 主控制器开始并扩展到嵌入式设备。 为每个设备固件必须报告的设备中的地址提供设备管理器中的"地址"属性\_ADR。
+对于 SDIO 总线，此整数的值定义如下：
 
-[ACPI 5.0 规范](https://uefi.org/specifications)定义 USB 设备的地址，如下所示：
+- 高位字–槽号（0–第一个槽）
+
+- Low word-函数编号（有关定义，请参阅 SD 规范。）
+
+嵌入的 SD 设备命名空间还必须包括：
+
+- 返回0的 Remove 方法（ \_ RMV）对象，指示无法删除设备。
+
+- \_设备需要的 sideband 资源的 CRS 对象（如 GPIO 引脚或 SPB 连接）（如果需要）。
+
+## <a name="imaging-class-devices-cameras"></a>成像类设备（照相机）
+
+照相机设备可由图形驱动程序或 USB 来枚举。 在任一情况下，Windows 都需要知道照相机的物理位置，以便可以显示适当的 UI。 要执行此操作，请在 ACPI 命名空间中包含内置于系统机箱的相机设备，并将其固定方向包含在 ACPI 命名空间中，并提供物理设备位置（ \_ PLD）对象。 这需要：
+
+- 照相机设备显示为枚举器设备（GPU 设备或 USB 设备）的子（嵌套设备）。
+
+- 用于提供地址（ \_ ADR）对象的相机设备，该对象包含父设备总线上相机的地址。
+
+  - 对于 USB，请参阅下一节中的 " **ACPI namespace 层次结构和 \_ ADR FOR embedded USB 设备**"。
+
+  - 对于图形，这是在 \_ GPU 设备下提供的 DOD 方法中指定的标识符。 有关详细信息，请参阅 ACPI 5.0 规范的附录 B "视频扩展"。
+
+- 照相机设备，用于提供 \_ PLD 对象。
+
+- 如果照相机驱动程序所需的任何 sideband 资源（例如 GPIO 中断或 i/o 连接或 SPB 连接），则将 \_ 为这些资源提供 CRS 对象。
+
+在 \_ PLD 对象中，将**面板**字段（bits 67-69）、**盖子**字段（位66）和**停靠**字段（bit 65）设置为装入照相机的图面的正确值。 所有其他字段是可选的。 对于手持式移动设备（包括平板电脑），前面板是一个包含显示屏幕的面板，其原点位于左下角，在纵向方向上查看。 使用此引用时，"前面" 表示相机查看用户（网络摄像机），而 "后退" 表示相机视图远离用户（仍为相机或视频摄像机）。 有关详细信息，请参阅 6.1.8 \_ 中[5.0](https://uefi.org/specifications)的 "PLD （设备的物理位置）" 部分。
+
+### <a name="acpi-namespace-hierarchy-and-_adr-for-embedded-usb-devices"></a>用于嵌入式 USB 设备的 ACPI 命名空间层次结构和 \_ ADR
+
+将嵌入式 USB 设备添加到 ACPI 命名空间时，设备节点的层次结构必须与 Windows USB 驱动程序所枚举的设备的层次结构完全匹配。 可以通过在其 "按连接查看" 模式下检查 Windows 设备管理器来确定这一点。 必须包含从 USB 主机控制器开始向下扩展到嵌入式设备的整个层次结构。 每个设备设备管理器中提供的 "Address" 属性是固件必须在设备的 ADR 中报告的地址 \_ 。
+
+[ACPI 5.0 规范](https://uefi.org/specifications)定义了 USB 设备的地址，如下所示：
 
 |              |                                                                                                                  |
 |--------------|------------------------------------------------------------------------------------------------------------------|
-| USB 根集线器 | 主控制器仅子项。 它必须具有\_ADR 为 0。 没有其他子项或值的\_允许 ADR。 |
-| USB 端口    | 端口号 (1-n)                                                                                                |
+| USB 根集线器 | 仅限主机控制器的子。 它 \_ 的 ADR 必须为0。 不允许使用任何其他子级或 \_ ADR 值。 |
+| USB 端口    | 端口号（1-n）                                                                                                |
 
-USB 设备连接到特定端口共享该端口的地址。
+连接到特定端口的 USB 设备共享该端口的地址。
 
-如果设备连接到的端口是复合的 USB 设备，复合设备中的函数必须使用以下地址：
+如果连接到端口的设备是复合 USB 设备，则复合设备中的函数必须使用以下地址：
 
 |     |     |
 | --- | --- |
-| 在复合 USB 设备中的 USB 函数 | 复合设备连接到，加上函数的第一个接口号的端口的端口号。 （算术加法）。 |
+| 复合 USB 设备内的 USB 函数 | 复合设备连接到的端口的端口号，以及函数的第一个接口号。 （算术加法）。 |
 
-有关详细信息，请参阅[确定内部相机位置的](https://go.microsoft.com/fwlink/p/?linkid=331060)。
+有关详细信息，请参阅[标识内部照相机的位置](https://docs.microsoft.com/windows-hardware/drivers/devapps/identifying-the-location-of-internal-cameras)。
 
 ### <a name="asl-code-examples"></a>ASL 代码示例
 
-下面的 ASL 代码示例介绍直接连接到 USB 端口 3 USB 网络摄像机。
+以下 ASL 代码示例描述了直接连接到 USB 端口3的 USB 网络摄像机。
 
 ```asl
 Device (EHCI) {
@@ -188,7 +197,7 @@ Device (EHCI) {
 }  // End of EHCI device
 ```
 
-下面的 ASL 代码示例介绍实现为函数 2 网络摄像头的 USB 复合设备。
+下面的 ASL 代码示例介绍了将网络摄像头作为函数2实现的 USB 复合设备。
 
 ```asl
 Device (EHCI) {
@@ -211,7 +220,7 @@ Device (EHCI) {
 }  // End of EHCI device
 ```
 
-下面的 ASL 代码示例介绍了通过 I2C 连接的摄像头。
+以下 ASL 代码示例介绍了通过 I2C 连接的网络摄像机。
 
 ```asl
 Device (GPU0) {
@@ -243,94 +252,112 @@ Device (GPU0) {
 } // End of GPU0 device
 ```
 
-## <a name="hid-over-i2c-devices"></a>HID over I2C 设备
+## <a name="hid-over-i2c-devices"></a>HID-over I2C 设备
 
-Windows 包括类驱动程序的人机接口设备 (HID)。 此驱动程序，输入设备 （如触摸面板、 键盘、 鼠标和传感器） 的范围更广的一般性支持。 在 SoC 平台上 HID 设备通过 I2C，可连接到该平台，并由 ACPI 枚举。 对于 Windows 中的 HID 类支持的兼容性，则使用以下命名空间对象：
+Windows 包含用于人体学接口设备（HID）的类驱动程序。 此驱动程序支持对各种输入设备（如触控面板、键盘、鼠标和传感器）的通用支持。 在 SoC 平台上，HID 设备可以通过 I2C 连接到平台，并由 ACPI 枚举。 为了与 Windows 中的 HID 类支持兼容，使用了以下命名空间对象：
 
-- 供应商特定\_HID
-- 一个\_PNP0C50 CID
-- 一个\_CRS 使用：
-  - 设备的访问权限 I2CSerialBusConnection 资源
-  - Interrupt(s) GpioInt 资源
-- HIDI2C \_DSM 方法在设备中返回的 HID 描述符注册地址。 有关详细信息，请参阅[HIDI2C 特定于设备的方法 (\_DSM)](hidi2c-device-specific-method---dsm-.md)。
+- 特定于供应商的 \_ HID
 
-## <a name="button-devices"></a>按钮的设备
+- \_PNP0C50 的 CID
 
-对于 SoC 平台，Windows 支持 ACPI 定义控制方法电源按钮，以及 Windows 兼容五个按钮数组。 电源按钮是否作为 ACPI 控件方法电源按钮或 Windows 兼容按钮数组的一部分实现执行以下操作：
+- \_CRS：
 
-- 会导致平台来强化如果它处于关闭状态。
-- 生成时按下电源按钮重写事件。 有关详细信息，请参阅部分 4.8.2.2.1.3，"电源按钮重写"，ACPI 5.0 规范。
+  - 用于访问设备的 I2CSerialBusConnection 资源
 
-### <a name="control-method-power-button"></a>控制方法电源按钮
+  - 用于中断的 GpioInt 资源
 
-蛤设计以及使用内置或连接键盘、 其他系统实现 ACPI 定义控制方法电源按钮 （部分 4.8.2.2.1.2 ACPI 5.0 规范的） 使用 GPIO-Signaled ACPI 事件 （5.6.5 ACPI 5.0 规范部分）. 若要支持的电源按钮设备，该命名空间：
+- 用于在 \_ 设备中返回 HID 描述符注册地址的 HIDI2C DSM 方法。 有关详细信息，请参阅[HIDI2C 设备特定方法（ \_ DSM）](hidi2c-device-specific-method---dsm-.md)。
 
-- 介绍将作为非共享 （排他） GPIO 的电源按钮 GPIO 中断固定中断资源。
-- 列出了中的电源按钮 GPIO 中断资源\_AEI GPIO 控制器连接到的对象。
-- 提供了相关联的事件方法 (Lxx/Exx/EVT) GPIO 控制器设备下。 此事件方法通知按钮事件已发生的操作系统中的控制方法按钮驱动程序。
+## <a name="button-devices"></a>按钮设备
 
-有关详细信息，请参阅[Windows 8 平板电脑和可转换为设备的硬件按钮](https://go.microsoft.com/fwlink/p/?linkid=331284)。
+对于 SoC 平台，Windows 支持 ACPI 定义的控制方法电源按钮，以及与 Windows 兼容的五按钮数组。 "电源" 按钮（无论是作为 ACPI 控制方法电源按钮还是作为 Windows 兼容的按钮数组的一部分实现的）执行以下操作：
 
-### <a name="windows-compatible-button-array"></a>Windows 兼容按钮数组
+- 使平台启动（如果它处于关闭状态）。
 
-对于触摸优先 （无键盘） 平台，例如平板电脑，Windows 提供的通用驱动程序为五个按钮数组。 数组中的每个按钮都定义函数 （请参阅下面的列表中带编号的项），并且某些"保留按"按钮组合在 UI 中具有其他含义。 任何按钮的组合不定义需要按下电源按钮。 与 Windows 收件箱按钮驱动程序的兼容性，为实现 Windows 兼容按钮数组 ACPI 设备。 设备定义，如下所示：
+- 当按住时，生成电源按钮重写事件。 有关详细信息，请参阅 ACPI 5.0 规范的 "电源按钮替代" 部分。
 
-- 五个按钮的每个已连接到在平台上其自己专用的中断 pin。
-- 配置每个中断 pin 作为非共享 （专用），edge 触发 (Edge) 中断中断 (ActiveBoth) 这两个边缘的资源。
-- 供应商定义的设备命名空间包含\_HID 以及\_CID PNP0C40。
-- 中的 GPIO 中断资源\_CRS 对象按以下顺序列出：
+### <a name="control-method-power-button"></a>Control 方法电源按钮
 
-    1. 中断对应的"电源"按钮
+使用内置或连接键盘的 Clamshell 设计和其他系统，使用 GPIO-已发出 acpi 的 ACPI 事件（ACPI 5.0 规范的第5.6.5 部分）实现 ACPI 定义的控制方法电源按钮（ACPI 5.0 规范的部分4.8.2.2.1.2）。 若要支持电源按钮设备，命名空间为：
 
-        "电源"按钮必须支持唤醒的 (ExclusiveAndWake)。
+- 将电源按钮的 GPIO 中断 pin 描述为非共享（独占） GPIO 中断资源。
 
-    2. 中断对应于"Windows"按钮
+- 列出电源按钮在 \_ 其所连接的 gpio 控制器的 AEI 对象中的 GPIO 中断资源。
 
-        Windows 按钮必须支持唤醒的 (ExclusiveAndWake)。
+- 在 GPIO 控制器设备下提供关联的事件方法（Lxx/Exx/.EVT）。 此事件方法通知操作系统中发生按钮事件的控件方法按钮驱动程序。
 
-    3. 中断对应于"提高音量"按钮
+有关详细信息，请参阅[适用于 Windows 8 平板电脑和可转换设备的硬件按钮](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613928(v=vs.85))。
 
-        不能支持唤醒的"提高音量"按钮 （必须使用排他）。
+### <a name="windows-compatible-button-array"></a>与 Windows 兼容的按钮数组
 
-    4. 中断对应于"降低音量"按钮
+对于 touch （无键盘）平台（如清单），Windows 为包含五个按钮的数组提供通用驱动程序。 数组中的每个按钮都具有其定义的函数（请参阅下面列表中的编号项），并且某些 "按住" 按钮组合在 UI 中具有其他含义。 没有定义需要保持电源按钮的按钮组合。 为了与 Windows 收件箱按钮驱动程序兼容，实现了与 Windows 兼容的按钮阵列 ACPI 设备。 设备定义如下：
 
-        "调低音量"按钮不能支持唤醒的 （必须使用排他）。
+- 这五个按钮中的每一个都连接到其在平台上的专用中断 pin。
 
-    5. 中断对应于"旋转锁定"按钮，如果受支持
+- 每个中断 pin 配置为在两个边缘（ActiveBoth）中断的非共享（独占）、边缘触发（边缘）中断资源。
 
-        "旋转锁定"按钮不能支持唤醒的 （必须使用排他）。
+- 设备命名空间包含供应商定义 \_ 的 HID 以及 \_ PNP0C40 的 CID。
 
-有关详细信息，请参阅[Windows 8 平板电脑和可转换为设备的硬件按钮](https://go.microsoft.com/fwlink/p/?linkid=331284)。
+- CRS 对象中的 GPIO 中断资源 \_ 按以下顺序列出：
 
-若要支持的 Windows 按钮 UI 演变，Windows 定义了特定于设备的方法 (\_DSM) 的 Windows 按钮数组设备。 有关详细信息，请参阅[Windows 按钮数组特定于设备的方法 (\_DSM)](windows-button-array-device-specific-method---dsm-.md)。
+    1. 对应于 "电源" 按钮的中断
 
-## <a name="dock-and-convertible-pc-sensing-devices"></a>停靠和感知设备的改变 PC
+        "电源" 按钮必须支持唤醒（ExclusiveAndWake）。
 
-Windows 支持通过在 ACPI 名称空间中的两个花巨资投入设备使用停靠和双用型 (蛤/平板电脑 combos)。 通过 Windows 收件箱按钮驱动程序支持这些设备。 请注意将应用到按钮数组设备相同的要求也适用于这些设备：
+    1. 对应于 "Windows" 按钮的中断
 
-- GPIO ActiveBoth 中断必须连接到在 SoC GPIO 控制器 （不到连接存储的 GPIO 控制器）。
-- GPIO 控制器必须支持级别模式中断和动态极性重新编程。
-- GPIO 控制器驱动程序必须使用提供的 ActiveBoth 仿真[GPIO 框架扩展](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-i-o-and-interrupt-interfaces)(**GpioClx**)。
-- 如果断言的状态 （"停靠"或"Converted"） 没有被声明逻辑级别较低，GPIO 控制器\_DSM 方法需重写 GPIO 驱动程序堆栈的默认行为。 有关详细信息，请参阅**GPIO 控制器设备**主题中[常规用途 I/O (GPIO)](general-purpose-i-o--gpio-.md)主题。
+        Windows 按钮必须是唤醒功能（ExclusiveAndWake）。
 
-有关详细信息，请参阅[Windows 8 平板电脑和可转换为设备的硬件按钮](https://go.microsoft.com/fwlink/p/?linkid=331284)。
+    1. 对应于 "音量增加" 按钮的中断
 
-### <a name="dock-sensing-device"></a>停靠感知设备
+        "调高" 按钮不能是唤醒功能（必须使用独占）。
 
-附加或从系统未附加停靠时，停靠感知设备会中断系统。 此模式下更改信息用于更新用户输入和输出与所需的体验。 设备的命名空间要求：
+    1. 对应于 "向下移动" 按钮的中断
 
-- 供应商特定\_HID
-- 一个\_PNP0C70 CID
-- 一个\_CRS 与一个 ActiveBoth 中断
+        "向下移动" 按钮不能支持唤醒功能（必须使用独占模式）。
 
-    不能支持唤醒的中断。
+    1. 对应于 "旋转锁定" 按钮的中断（如果支持）
 
-### <a name="convertible-pc-sensing-device"></a>可转换为 PC 花巨资投入设备
+        "旋转锁定" 按钮不得支持唤醒（必须使用独占）。
 
-当转换 PC 从平板电脑切换到蛤外形规格时，可转换为 PC 感知设备中断系统。 此模式下更改信息用于更新用户输入和输出与所需的体验。 设备的命名空间要求：
+有关详细信息，请参阅[适用于 Windows 8 平板电脑和可转换设备的硬件按钮](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613928(v=vs.85))。
 
-- 供应商特定\_HID
-- 一个\_PNP0C60 CID
-- 一个\_CRS 与一个 ActiveBoth 中断
+为了支持 Windows 按钮 UI 的演变，Windows 为 Windows 按钮阵列设备定义了设备特定的方法（ \_ DSM）。 有关详细信息，请参阅[Windows 按钮阵列特定于设备的方法（ \_ DSM）](windows-button-array-device-specific-method---dsm-.md)。
 
-    不能支持唤醒的中断。
+## <a name="dock-and-convertible-pc-sensing-devices"></a>停靠和可转换 PC 感知设备
+
+Windows 通过使用 ACPI 命名空间中的两个感应设备支持改装（clamshell/tablet combos）。 Windows 收件箱按钮驱动程序支持这些设备。 请注意，适用于按钮阵列设备的相同要求也适用于这些设备：
+
+- GPIO ActiveBoth 中断必须连接到已在 SoC 连接的 gpio 控制器上（而不是连接到 SPB 连接的 GPIO 控制器）。
+
+- GPIO 控制器必须支持级别模式中断和动态极性 reprogramming。
+
+- GPIO 控制器驱动程序必须使用[GPIO framework 扩展](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpioclx-i-o-and-interrupt-interfaces)（**GpioClx**）提供的 ActiveBoth 仿真。
+
+- 如果断言状态（"已停靠" 或 "已转换"）的逻辑级别不为断言，则需要 GPIO 控制器 \_ DSM 方法来重写 gpio 驱动程序堆栈的默认行为。 有关详细信息，请参阅[常规用途 i/o （GPIO）](general-purpose-i-o--gpio-.md)主题中的**GPIO 控制器设备**部分。
+
+有关详细信息，请参阅[适用于 Windows 8 平板电脑和可转换设备的硬件按钮](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn613928(v=vs.85))。
+
+### <a name="dock-sensing-device"></a>固定感应设备
+
+当插接连接到系统或从系统中断开连接时，插接感应设备将中断系统。 此模式更改信息用于根据需要更新用户输入和输出体验。 设备的命名空间需要：
+
+- 特定于供应商的 \_ HID
+
+- \_PNP0C70 的 CID
+
+- \_具有一个 ActiveBoth 中断的 CRS
+
+    中断不能是唤醒功能。
+
+### <a name="convertible-pc-sensing-device"></a>可转换的 PC 感应设备
+
+当可转换的 PC 从平板电脑切换到 clamshell 外形规格时，可转换的电脑感应设备将中断系统。 此模式更改信息用于根据需要更新用户输入和输出体验。 设备的命名空间需要：
+
+- 特定于供应商的 \_ HID
+
+- \_PNP0C60 的 CID
+
+- \_具有一个 ActiveBoth 中断的 CRS
+
+    中断不能是唤醒功能。
