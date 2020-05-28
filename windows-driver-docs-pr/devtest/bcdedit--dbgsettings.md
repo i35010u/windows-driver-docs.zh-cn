@@ -40,7 +40,7 @@ bcdedit /dbgsettings USB [TARGETNAME:targetname] [/start startpolicy] [/noumex]
 bcdedit /dbgsettings 1394 [CHANNEL:channel] [/start startpolicy] [/noumex] NOTE: The 1394 TRANSPORT IS DEPRECATED
 ```
 
-<a name="parameters"></a>parameters
+<a name="parameters"></a>参数
 ----------
 
 ## <a name="net"></a>NET
@@ -148,7 +148,7 @@ bcdedit /dbgsettings serial debugport:1 baudrate:115200
 bcdedit /dbgsettings usb targetname:myTarget
 ```
 
-有关详细信息，请参见:
+有关详细信息，请参阅：
 
 - [手动设置通过 USB 3.0 线缆进行的内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-usb-3-0-debug-cable-connection)
 - [手动设置通过 USB 2.0 线缆进行的内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-usb-2-0-debug-cable-connection)

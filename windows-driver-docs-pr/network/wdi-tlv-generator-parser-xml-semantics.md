@@ -4,12 +4,12 @@ description: TLV 生成器/分析器 XML 文件是消息、容器（TLVs）和�
 ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 756e6c1b2e1d1a09f662e3974369c7c8e354d1e3
-ms.sourcegitcommit: 53cf8b3982c47fa1bbf9f1725ec5fbba2ebc4f42
+ms.openlocfilehash: 2f59ab54c77805620d7e7ad49812399faabe00f2
+ms.sourcegitcommit: 97272cb572d24b1ac72669e51e5051089e1dd2c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/27/2020
-ms.locfileid: "83883440"
+ms.locfileid: "84053281"
 ---
 # <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV 生成器/分析器 XML 语义
 
@@ -20,34 +20,34 @@ TLV 生成器/分析器 XML 文件是消息、容器（TLVs）和属性组（结
   - [内容](#content)
   - [示例](#example)
 - [`<containerRef />`](#containerref-)
-  - [特性](#attributes)
-  - [内容](#content)
-  - [示例](#example)
+  - [特性](#containerref--attributes)
+  - [内容](#container--contents)
+  - [示例](#containerref--example)
 - [`<containers />`](#containers-)
 - [`<container />`](#container-)
-  - [特性](#attributes)
-  - [Contents](#contents)
-  - [示例](#example)
+  - [特性](#container--attributes)
+  - [Contents](#container--contents)
+  - [示例](#container--example)
 - [`<groupRef />`](#groupref-)
-  - [特性](#attributes)
-  - [内容](#content)
-  - [示例](#examples)
+  - [特性](#groupref--attributes)
+  - [内容](#groupref--content)
+  - [示例](#groupref--examples)
 - [`<namedType />`](#namedtype-)
-  - [特性](#attributes)
-  - [内容](#content)
-  - [示例](#example)
+  - [特性](#namedtype--attributes)
+  - [内容](#namedtype--content)
+  - [示例](#namedtype--example)
 - [`<aggregateContainer />`](#aggregatecontainer-)
-  - [特性](#attributes)
-  - [内容](#content)
-  - [示例](#example)
+  - [特性](#aggregatecontainer--attributes)
+  - [内容](#aggregatecontainer--content)
+  - [示例](#aggregatecontainer--example)
 - [`<propertyGroups />`](#propertygroups-)
 - [基元字段类型（ `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>` ）](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
-  - [特性](#attributes)
-  - [Contents](#contents)
+  - [特性](#attributes-for-primitive-field-types)
+  - [Contents](#contents-for-primitive-field-types)
 - [`<propertyGroup />`](#propertygroup-)
-  - [特性](#attributes)
-  - [Contents](#contents)
-  - [示例](#example)
+  - [特性](#propertygroup--attributes)
+  - [Contents](#propertygroup--contents)
+  - [示例](#propertygroup--example)
 
 ## `<message />`
 
@@ -261,7 +261,7 @@ TLV 生成器/分析器 XML 文件是消息、容器（TLVs）和属性组（结
 
 单个结构。
 
-### <a name="propertygroup--attributes"></a>`<propertyGroup />`属性 
+### <a name="propertygroup--attributes"></a>`<propertyGroup />`属性
 
 - `name`-由 WDI 消息/其他容器引用的 ID。
 - `description`–属性组的用途的友好说明。

@@ -2,22 +2,20 @@
 title: SoC 平台上 Windows 的 UEFI 要求
 description: 本主题介绍适用于 Windows 10 （家庭版、专业版、企业版和教育版）和 Windows 10 移动版的 UEFI 要求。
 ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
-ms.date: 04/20/2017
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c32694d75dcdd948d93f0fda50674f7fdf3abc55
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 80f670f5646a923e7d3deceb6080f15a4cfd2765
+ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242838"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122697"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
-
 
 本主题介绍适用于 Windows 10 （家庭版、专业版、企业版和教育版）和 Windows 10 移动版的 UEFI 要求。 有关仅适用于 Windows 10 移动版的其他要求，请参阅[Windows 10 移动版的 UEFI 要求](uefi-requirements-specific-to-windows-mobile.md)。
 
 ## <a name="summary-of-requirements"></a>要求摘要
-
 
 下表列出了 uefi 规范（UEFI 2.3.1 规范的第2.6 节）中定义的 UEFI 符合性的所有当前要求。 在此表中，术语 "*显式 Windows 要求*" 标识 windows 组件直接调用的任何协议或服务。 虽然 Windows 只显式使用这些服务，但核心固件实现、EFI 设备驱动程序或开发和部署工具链可能会隐式或显式地要求使用其他列出的服务和协议。
 
@@ -25,7 +23,7 @@ Microsoft 欢迎您对此组要求的实施人员提供反馈和意见。 对于
 
 有关特定要求的详细信息，请参阅表后面的部分。
 
-| 要求                               | UEFI 规范部分 | 注意                          |
+| 要求                               | UEFI 规范部分 | 备注                          |
 |-------------------------------------------|----------------------------|--------------------------------|
 | **EFI 系统表**                      | 4.3                        | 显式 Windows 要求   |
 | **EFI 启动服务**                     | 6.0                        |                                |
@@ -65,10 +63,7 @@ Microsoft 欢迎您对此组要求的实施人员提供反馈和意见。 对于
 |   安全启动                             | 27.0                       | 显式 Windows 要求   |
 |   启动管理器要求               | 3.1、3。3                   | 显式 Windows 要求   |
 
- 
-
 ## <a name="efi-system-table-requirements"></a>EFI 系统表要求
-
 
 EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系统表指向的配置表必须包含下表中描述的两个 Guid 及其关联的指针。
 
@@ -80,7 +75,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <thead>
 <tr class="header">
 <th>GUID</th>
-<th>说明</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
@@ -96,10 +91,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 </tbody>
 </table>
 
- 
-
 ## <a name="efi-boot-services-requirements"></a>EFI 启动服务要求
-
 
 下表列出了 Windows 的 EFI 启动服务要求。
 
@@ -143,7 +135,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <li><p>隔栏（）</p></li>
 </ul>
 <div class="alert">
-<strong>请注意</strong>  延迟（）实现必须具有确定性（可重复）错误，以便可以可靠地纠正或取消错误。
+<strong>注意</strong>   需要使用延迟（）实现才能具有确定性（可重复）错误，以便可以可靠地纠正或取消错误。
 </div>
 <div>
  
@@ -152,10 +144,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 </tbody>
 </table>
 
- 
-
 ## <a name="efi-runtime-services-requirements"></a>EFI 运行时服务要求
-
 
 下表列出了 Windows 的 EFI 运行时服务要求。
 
@@ -178,7 +167,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <li><p>GetTime （）</p></li>
 <li><p>SetTime （）</p>
 <div class="alert">
-<strong>请注意</strong>  时间服务将仅在启动过程中调用（ExitBootServices （）），以便访问平台时间的硬件。
+<strong>注意</strong>   只会在启动过程中调用时间服务（在 ExitBootServices （）之前）以访问平台时间的硬件。
 </div>
 <div>
  
@@ -195,7 +184,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <ul>
 <li><p>ResetSystem()</p>
 <div class="alert">
-<strong>请注意</strong>  ResetSystem （）实现必须同时支持 reset 和 shutdown 选项。
+<strong>注意</strong>   ResetSystem （）实现必须支持重置和关闭选项。
 </div>
 <div>
  
@@ -205,10 +194,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 </tbody>
 </table>
 
- 
-
 ## <a name="protocol-requirements"></a>协议要求
-
 
 下表描述了 Windows 在启动过程中完成特定功能所需的 UEFI 协议。
 
@@ -266,10 +252,7 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 </tbody>
 </table>
 
- 
-
-## <a name="security-requirements"></a>安全性要求
-
+## <a name="security-requirements"></a>安全要求
 
 Windows 在安全启动、标准启动、加密和数据保护方面具有安全要求。 下表详细介绍了这些要求。 此外，对于 SoC 硬件阻止与现有标准（TPM、RTC 等）的符合性的那些区域，还会开发其他要求。 表的末尾介绍了这些步骤。
 
@@ -280,7 +263,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 </colgroup>
 <thead>
 <tr class="header">
-<th>领域</th>
+<th>区域</th>
 <th>要求</th>
 </tr>
 </thead>
@@ -300,7 +283,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>要求5：必填。 由 Microsoft 提供的 UEFI KEK 应包括在 UEFI KEK 数据库中。 不应存在其他 Kek。 Microsoft 将以 EFI_CERT_X509 签名的形式提供 KEK。</p></li>
 <li><p>要求6：必填。 PK<em><sub>pub</sub></em>密钥应存在并存储在固件闪存中。</p>
 <div class="alert">
-<strong>请注意</strong>  因为 pk<em><sub>特权</sub></em>（与 pk<em><sub>pub</sub></em>对应的私钥）控制使用 pk<em><sub>pub</sub></em>预配的所有设备上的安全启动策略，所以必须严密保护其保护和使用。
+<strong>注意</strong>   由于 PK<em><sub>特权</sub></em>（与 pk<em><sub>pub</sub></em>对应的私钥）控制使用 pk<em><sub>pub</sub></em>预配的所有设备上的安全启动策略，因此必须严格保护其保护和使用。
 </div>
 <div>
  
@@ -327,7 +310,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <td><p>以下要求并不意味着需要 TCG TPM 实现;但它们却意味着需要对受影响的区域使用等效功能。</p>
 <p>平台支持可以通过在安全执行环境中执行的 TPM 的固件实现来提供，在加密加速引擎之上进行分层，并利用独立存储。 Microsoft 可能会提供供供应商使用的此类 TPM 实现的参考软件。 这会进一步讨论。</p>
 <ul>
-<li><p>要求22：必填。 平台应符合<a href="https://go.microsoft.com/fwlink/p/?LinkId=528536" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://go.microsoft.com/fwlink/p/?LinkId=528536)">UEFI 可信执行环境 Efi 协议</a>中指定的 efi 协议。</p></li>
+<li><p>要求22：必填。 平台应符合<a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 Efi 协议</a>中指定的 efi 协议。</p></li>
 <li><p>要求23：必填。 平台应遵循 TCG EFI 平台规范，其中添加了以下内容：</p>
 <ul>
 <li><p>在支持在 TrEE EFI 协议中定义的接口的平台上，PK<em><sub>pub</sub></em>的摘要应扩展为 TPM PCR [03] 作为 EV_EFI_VARIABLE_CONFIG 事件。</p></li>
@@ -335,7 +318,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>UEFI 客户端应可以使用 EFI_IMAGE_SECURITY_DATABASE 变量来读取和解析证书列表，并根据扩展值验证摘要。</p></li>
 <li><p>TCG_PCR_EVENT 摘要值应为 SHA-256，而不是 SHA-1。</p></li>
 </ul></li>
-<li><p>要求24：必填。 平台必须实现<a href="https://go.microsoft.com/fwlink/p/?LinkId=528539" data-raw-source="[TCG Platform Reset Attack Mitigation Specification](https://go.microsoft.com/fwlink/p/?LinkId=528539)">TCG 平台重置攻击缓解规范</a>中定义的 MemoryOverwriteRequestControl。</p></li>
+<li><p>要求24：必填。 平台必须实现<a href="https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf" data-raw-source="[TCG Platform Reset Attack Mitigation Specification](https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)">TCG 平台重置攻击缓解规范</a>中定义的 MemoryOverwriteRequestControl。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -363,21 +346,17 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>Microsoft 定义了从 UEFI 平台收集平均信息量的协议。 尽管不是 UEFI 要求，但 Windows 在 SoC 平台上是必需的。 有关此协议的详细信息，请参阅<a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">UEFI 熵收集协议</a>。</p></li>
 <li><p>UEFI 签名数据库更新。 在 UEFI 2.3.1 的第27节中采用了用于更新已验证的变量的一种新机制。 Windows 需要此机制。</p></li>
 <li><p>受信任的执行环境。 Microsoft 开发了 EFI 协议，可与受信任的计算组（TCG）受信任的平台模块（TPM）的功能中的受信任的执行环境（树）交互。 EFI 协议利用受信任的计算组，使用较大的 "TCG EFI 协议" 版本1.2 修订版1.00 （6月9日2006）。</p>
-<p>有关详细信息，请参阅<a href="https://go.microsoft.com/fwlink/p/?LinkId=528536" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://go.microsoft.com/fwlink/p/?LinkId=528536)">UEFI 可信执行环境 EFI 协议</a>。</p></li>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 EFI 协议</a>。</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ## <a name="firmware-boot-manager-requirements"></a>固件启动管理器要求
-
 
 固件启动管理器必须支持规范的3.3 节中定义的默认启动行为。 此外，为支持多启动、全局定义的变量以及规范的第3.1 节的启动管理器要求。
 
 ## <a name="uefi-arm-binding-requirements"></a>UEFI ARM 绑定要求
-
 
 UEFI ARM 绑定包括特定于 ARM 平台的要求，这些要求必须符合 UEFI 规范要求。 Windows 要求 ARM 绑定中所有适用于 ARMv7 的内容。 由于 Windows 不支持 ARMv7 之前的任何内容，因此，特定于 ARMv6k 和更低版本的绑定中的要求是可选的。
 
@@ -385,11 +364,9 @@ UEFI ARM 绑定包括特定于 ARM 平台的要求，这些要求必须符合 UE
 
 ## <a name="uefi-arm-multiprocessor-startup-requirements"></a>UEFI ARM 多处理器启动要求
 
-
-Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持[电源状态协调接口（PSCI）](https://go.microsoft.com/fwlink/p/?LinkId=528534)。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构（ACPICA）网站上的[基于 UEFI ARM 平台的多处理器启动](https://go.microsoft.com/fwlink/p/?LinkId=528533)文档。
+Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持[电源状态协调接口（PSCI）](http://infocenter.arm.com/help/topic/com.arm.doc.den0022d/Power_State_Coordination_Interface_PDD_v1_1_DEN0022D.pdf)。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构（ACPICA）网站上的[基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP Startup for ARM platforms.docx)文档。
 
 ## <a name="platform-setup-requirements"></a>平台设置要求
-
 
 在将系统硬件交付到 OS 加载程序之前，固件负责将系统硬件置于明确定义的状态。 下表定义了相关的平台设置要求。
 
@@ -425,25 +402,18 @@ Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动�
 </tbody>
 </table>
 
- 
-
 ## <a name="installation-requirements"></a>安装要求
-
 
 Windows 要求 OS 分区驻留在 GPT 分区的存储解决方案上。 可以使用 MBR 分区存储作为数据存储。 如 UEFI 规范中所定义，UEFI 平台需要专用的系统分区。 Windows 需要此专用系统分区，称为 EFI 系统分区（ESP）。
 
 ## <a name="hardware-security-test-interface-hsti-requirement"></a>硬件安全测试接口（HSTI）要求
 
-
 平台必须实现硬件安全测试接口，并且需要平台来共享[硬件安全测试规范](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)中指定的文档和工具。
 
 ## <a name="related-topics"></a>相关主题
 
-[SoC 平台上 Windows 的最低 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md)  
+[SoC 平台上的 Windows 的最低 UEFI 要求](minimum-uefi-requirements-for-windows-on-soc-platforms.md)  
 
 [Windows 10 移动版的 UEFI 要求](uefi-requirements-specific-to-windows-mobile.md)  
 
-[USB 闪烁支持的 UEFI 要求](uefi-requirements-for-usb-flashing-support.md)  
-
-
-
+[USB 刷写支持的 UEFI 要求](uefi-requirements-for-usb-flashing-support.md)  

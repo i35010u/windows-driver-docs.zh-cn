@@ -116,7 +116,7 @@ SoC 设备集成到 SoC 芯片，无法删除。 可从启用和禁用的要求�
 
 设备驱动程序之间也可能存在软件依赖关系。 还必须描述这些依赖关系。
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
 - 对于驱动程序加载顺序依赖关系，请参阅[指定驱动程序加载顺序](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-driver-load-order)。
 

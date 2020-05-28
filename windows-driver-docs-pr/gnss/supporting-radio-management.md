@@ -1,47 +1,48 @@
 ---
 title: 支持无线电管理
-description: 当用户在其 Windows 8 便携式计算机、 笔记本或平板电脑上的 PC 设置中选择无线选项时，他们可以打开任何连接的无线设备，或关闭。
+description: 当用户在其 Windows 8 便携式计算机、笔记本或平板电脑上的 "电脑设置" 中选择 "无线" 选项时，他们可以打开或关闭任何连接的无线设备。
 ms.assetid: AA7AB429-30C5-4C10-AA85-41ED9EAEE69A
 keywords:
-- 单选管理 API
-- 单选管理 API 示例
-- 单选管理示例
-- GPS 无线电管理
-- 单选管理、 GPS
+- 收音机管理 API
+- 收音机管理 API，示例
+- 收音机管理，示例
+- GPS 收音机管理
+- 收音机管理，GPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cd840a2c99a3518d4ea32c58e133bb011515bfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69304e9e86afc1cf3dfc62a69866d127ef4f0338
+ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363620"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122690"
 ---
 # <a name="supporting-radio-management"></a>支持无线电管理
 
-> [!IMPORTANT] 
-> 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
+> [!IMPORTANT]
+> 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
-当用户在其 Windows 8 便携式计算机、 笔记本或平板电脑上的 PC 设置中选择无线选项时，他们可以打开任何连接的无线设备，或关闭。 这些无线设备可能包括 Wi-fi 天线或 GPS 设备。 PC 设置以及给定的无线设备之间的内部链接是[单选管理 API](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))和相应的单选管理 DLL 对于给定的设备。
+当用户在其 Windows 8 便携式计算机、笔记本或平板电脑上的 "电脑设置" 中选择 "无线" 选项时，他们可以打开或关闭任何连接的无线设备。 这些无线设备可能包括 Wi-fi 天线或 GPS 设备。 PC 设置与给定无线设备之间的内部链接是[无线电管理 API](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))和给定设备的相应收音机管理 DLL。
 
-单选管理 API 是一组作为 Windows 驱动程序工具包的一部分提供的 COM/Win32 接口。 这些接口包括方法的：
+收音机管理 API 是一组作为 Windows 驱动程序工具包附带的 COM/Win32 接口。 这些接口包括以下方法：
 
--   检索单选设备的当前状态
--   支持的无线电设备的通知事件
--   检索设备属性 （如的友好名称）
+- 检索无线设备的当前状态
 
-这些接口仅供 Oem 和 Ihv 而不是应用程序开发人员。
+- 支持收音机设备的通知事件
 
-## <a name="the-radio-management-dynamic-link-library-dll"></a>单选管理动态链接库 (DLL)
+- 检索设备属性（如友好名称）
 
+这些接口仅适用于 Oem 和 Ihv，而不是应用程序开发人员。
 
-创建用于单选设备，像 GPS 这样的设备驱动程序如果您的驱动程序将需要包含单选管理 API 中支持接口的其他动态链接库 (DLL)。 为了帮助你了解此 DLL 的要求，Microsoft 提供的示例中的地理位置驱动程序示例为 Microsoft Visual Studio 项目和源文件代码。 此示例项目，传感器地理位置驱动程序示例中找到 SampleRM.vcxproj\\C++\\RadioManagerGPS 文件夹的驱动程序示例。 它包括七个存储帐户C++源文件，六个C++标头文件、 模块定义文件、 资源文件、 两个 IDL 文件、 注册表文件 （适用于注册 DLL） 和的安装脚本。
+## <a name="the-radio-management-dynamic-link-library-dll"></a>收音机管理动态链接库（DLL）
 
-下表列出了单选管理 API 中的方法和示例 DLL 中找到相应的方法。
+如果为收音机设备创建设备驱动程序，如 GPS，则驱动程序将需要包含附加的动态链接库（DLL），该库支持收音机管理 API 中的接口。 为了帮助你了解此 DLL 的要求，Microsoft 提供了一个示例 Microsoft Visual Studio 项目和源代码，作为地理位置驱动程序示例的一部分。 此示例项目 SampleRM，请参阅驱动程序示例的传感器地理位置驱动程序示例 \\ c + + \\ RadioManagerGPS 文件夹中的 .vcxproj。 它包括七个 c + + 源文件、六个 c + + 头文件、一个模块定义文件、一个资源文件、两个 IDL 文件、一个注册表文件（用于注册 DLL）和一个安装脚本。
+
+下表列出了无线电管理 API 中的方法和示例 DLL 中的相应方法。
 
 |                                                     |                                                       |
 |-----------------------------------------------------|-------------------------------------------------------|
-| 单选管理器 API                                   | 单选管理器 DLL                                     |
+| 收音机管理器 API                                   | 收音机管理器 DLL                                     |
 | IMediaRadioManager::GetRadioInstances               | CSampleRadioManager::GetRadioInstances                |
 | IMediaRadioManager::OnSystemRadioStateChange        | CSampleRadioManager::OnSystemRadioStateChange         |
 | IRadioInstance::GetFriendlyName                     | CSampleRadioInstance::GetFriendlyName                 |
@@ -51,49 +52,40 @@ ms.locfileid: "67363620"
 | IRadioState::IsAssociatingDevice                    | CSampleRadioInstance::IsAssociatingDevice             |
 | IRadioState::IsMultiComm                            | CSampleRadioInstance::IsMultiComm                     |
 | IRadioState::SetRadioState                          | CSampleRadioInstance::SetRadioState                   |
-| IRadioInstanceCollection::GetAt                     | CRadioInstanceCollection::GetAt                       |
-| IRadioInstanceCollection::GetCount                  | CRadioInstanceCollection::GetCount                    |
-| IMediaRadioManagerNotifySink::OnInstanceAdd         | CSampleRadioManager::\_FireEventOnInstanceAdd         |
-| IMediaRadioManagerNotifySink::OnInstanceRadioChange | CSampleRadioManager::\_FireEventOnInstanceRadioChange |
-| IMediaRadioManagerNotifySink::OnInstanceRemove      | CSampleRadioManager::\_FireEventOnInstanceRemove      |
+| IRadioInstanceCollection：： GetAt                     | CRadioInstanceCollection：： GetAt                       |
+| IRadioInstanceCollection：： GetCount                  | CRadioInstanceCollection：： GetCount                    |
+| IMediaRadioManagerNotifySink::OnInstanceAdd         | CSampleRadioManager：： \_ FireEventOnInstanceAdd         |
+| IMediaRadioManagerNotifySink::OnInstanceRadioChange | CSampleRadioManager：： \_ FireEventOnInstanceRadioChange |
+| IMediaRadioManagerNotifySink::OnInstanceRemove      | CSampleRadioManager：： \_ FireEventOnInstanceRemove      |
 
- 
+## <a name="communicating-with-the-device-driver"></a>与设备驱动程序通信
 
-## <a name="communicating-with-the-device-driver"></a>与设备驱动程序进行通信
+当收音机管理 DLL 收到从无线电管理 API 检索或设置无线电状态的请求时，它会将该请求作为 IOCTL 转发到相应的设备驱动程序。 DLL 通过调用[DeviceIoControl](https://docs.microsoft.com/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)函数发送 IOCTLs。 与收音机管理关联的特定 IOCTLs 是：
 
+- IOCTL \_ GPS \_ 收音机 \_ 管理 \_ 获取 \_ 无线电 \_ 状态
 
-当单选管理 DLL 收到请求以检索或设置从单选管理 API 单选状态时，它将作为相应的设备驱动程序 IOCTL 转发该请求。 DLL 的调用发送 Ioctl [DeviceIoControl]( https://go.microsoft.com/fwlink/p/?linkid=256462)函数。 特定于单选管理与相关联的 Ioctl 是：
+- IOCTL \_ GPS \_ 收音机 \_ 管理 \_ 获取 \_ 上一 \_ 无线电 \_ 状态
 
--   IOCTL\_GPS\_RADIO\_MANAGEMENT\_GET\_RADIO\_STATE
--   IOCTL\_GPS\_单选\_管理\_获取\_上一步\_单选\_状态
--   IOCTL\_GPS\_RADIO\_MANAGEMENT\_SET\_RADIO\_STATE
--   IOCTL\_GPS\_单选\_管理\_设置\_上一步\_单选\_状态
+- IOCTL \_ GPS \_ 收音机 \_ 管理 \_ 设置 \_ 无线电 \_ 状态
 
-在示例单选管理的情况下 DLL **CSensorCommuncation::GetRadioStateHelper**并**CSensorCommunication::SetRadioStateHelper**方法转发 Ioctl，示例地理位置驱动程序。
+- IOCTL \_ GPS \_ 收音机 \_ 管理 \_ 设置 \_ 上一 \_ 无线电 \_ 状态
 
-## <a name="driver-support-for-radio-management"></a>驱动程序支持的无线电管理
+对于示例收音机管理 DLL， **CSensorCommunication：： GetRadioStateHelper**和**CSensorCommunication：： SetRadioStateHelper**方法转发 IOCTLs，以便进行示例地理位置驱动程序。
 
+## <a name="driver-support-for-radio-management"></a>对收音机管理的驱动程序支持
 
-除了单选管理 DLL，还需要修改你的设备驱动程序来处理四个单选管理 Ioctl 从 DLL 发送到该驱动程序。 这些 Ioctl 通知的设备驱动程序，它应检索当前的广播状态，或者，打开或关闭设备的单选。
+除了广播管理 DLL 外，还需要修改设备驱动程序，以处理从 DLL 发送到驱动程序的四个收音机管理 IOCTLs。 这些 IOCTLs 通知设备驱动程序它应检索当前无线电状态，或打开或关闭设备的无线电。
 
-设备驱动程序最初接收并处理在任何 IOCTL **CMyQueue::OnDeviceIoControl**方法。 如果此方法标识四个单选管理 Ioctl 之一，它将转发到该 IOCTL **CMyDevice::ProcessIoControlRadioManagement**进行进一步的处理方法。 此方法，反过来，将转发到 IOCTL **CSensorManager::ProcessIoControlRadioManagement**。 在此最后一个方法中，设置或检索到的调用单选状态**CSensorDDI**类。
+设备驱动程序最初接收并处理**CMyQueue：： OnDeviceIoControl**方法中的任何 IOCTL。 如果此方法标识四个单选管理 IOCTLs 中的一个，则会将该 IOCTL 转发到**CMyDevice：:P rocessiocontrolradiomanagement**方法以便进一步处理。 此方法反过来将 IOCTL 转发到**CSensorManager：:P rocessiocontrolradiomanagement**。 在最后一种方法中，通过调用**CSensorDDI**类设置或检索无线电状态。
 
-**CSensorDDI**类包含一个方法来检索单选状态 (**CSensorDDI::OnGetRadioState**) 和设置广播状态的一种方法 (**CSEnsorDDI::OnSetRadioState**). 这是最终 IOCTL 处理的示例设备驱动程序，它可以模拟硬件中出现的位置。 在实际的设备驱动程序的情况下**CSensorDDI::OnGetRadioState**方法会从设备固件请求单选状态并**CSensorDDI::OnSetRadioState**会发出方法请求对固件状态设置。
+**CSensorDDI**类包含一个检索无线电状态（**CSensorDDI：： OnGetRadioState**）的方法，以及一个用于设置无线电状态的方法（**CSensorDDI：： OnSetRadioState**）。 这是在模拟硬件的示例设备驱动程序中发生最终 IOCTL 处理的地方。 对于实际设备驱动程序， **CSensorDDI：： OnGetRadioState**方法会从设备固件请求无线电状态，而**CSensorDDI：： OnSetRadioState**方法会向固件发出请求以设置状态。
 
-## <a name="debugging-the-radio-management-dll"></a>调试单选管理 DLL
+## <a name="debugging-the-radio-management-dll"></a>调试收音机管理 DLL
 
+可以通过完成以下步骤，在 Visual Studio 中调试收音机管理 DLL。
 
-通过完成以下步骤，可以调试在 Visual Studio 中的单选管理 DLL。
+1. 打开 Visual Studio，并在 c + + RadioManagerGPS 文件夹中选择**SampleRM. vcsproj** 。 \\
 
-1.  1. 打开 Visual Studio 并选择**SampleRM.vcsproj**中C++ \\RadioManagerGPS 文件夹。
-2.  2. 选择**调试/附加到进程**。 在列表中显示的可用进程**附加到进程**对话框中，选择 dllhost.exe。
+1. 选择 "**调试"/"附加到进程**"。 在 "**附加到进程**" 对话框中显示的可用进程列表中，选择 "dllhost.exe"。
 
-请注意，是否 dllhost.exe 的多个实例正在运行，您可能需要排除过程中每个选择来确定无线电管理 DLL 与关联的进程。 一旦已附加到正确的进程，可以在 Visual Studio 中设置断点并开始调试。
-
- 
-
- 
-
-
-
-
+请注意，如果 dllhost.exe 的多个实例正在运行，则可能需要在排除过程中选择每个实例，以确定与该收音机管理 DLL 关联的进程。 附加到正确的进程后，可以在 Visual Studio 中设置断点并开始调试。

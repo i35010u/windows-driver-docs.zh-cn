@@ -1,38 +1,28 @@
 ---
 title: UEFI 熵收集协议
-description: UEFI 平均信息量收集协议用于生成随机数生成 (RNG) 值的已知的方式。
+description: UEFI 平均数量收集协议用于以已知方式生成随机数生成（RNG）值。
 ms.assetid: 616F178F-B4A0-4B8B-B71D-F7474738EA35
-ms.date: 04/20/2017
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ce227750ac8a71300da634487ad586357a5140
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e06b39ed9dde5d401fe231c909b35fa70c03d7b
+ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337424"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122680"
 ---
 # <a name="uefi-entropy-gathering-protocol"></a>UEFI 熵收集协议
 
+UEFI 平均数量收集协议用于以已知方式生成随机数生成（RNG）值。
 
-UEFI 平均信息量收集协议用于生成随机数生成 (RNG) 值的已知的方式。
+实现此协议的 UEFI RNG 服务采用一个可选输入值，用于标识 RNG 算法，并基于输入值和内部状态提供一个 RNG 值，包括其熵源的状态。 在原始熵源的输出中使用确定性随机位生成器（DRBG）时，其安全级别必须至少为256位。
 
-实现此协议的 UEFI RNG 服务采用一个可选的输入的值，标识 RNG 算法，并提供基于输入的值和内部状态，包括其平均信息量源状态的 RNG 值。 原始平均信息量源的输出上使用确定性的随机位生成器 (DRBG) 时，其安全级别必须至少 256 位。
-
-有关创建此协议中使用的 RNG 值的标准方法的指南，请参阅[NIST SP 800 90A 建议使用确定性的随机位生成器的随机数字生成]( https://go.microsoft.com/fwlink/p/?LinkId=523737)。
+有关创建此协议中使用的 RNG 值的标准方法的指导，请参阅[NIST SP 800-90A Rev。 1-建议使用确定性随机位生成器进行随机数生成](https://csrc.nist.gov/publications/detail/sp/800-90a/rev-1/final)。
 
 ## <a name="protocol-interface"></a>协议接口
 
+- [EFI \_ RNG \_ 服务 \_ 绑定 \_ 协议](efi-rng-service-binding-protocol.md)
 
--   [EFI\_RNG\_SERVICE\_BINDING\_PROTOCOL](efi-rng-service-binding-protocol.md)
+- [EFI \_ RNG \_ 协议](efi-rng-protocol.md)
 
--   [EFI\_RNG\_PROTOCOL](efi-rng-protocol.md)
-
--   [**EFI\_RNG\_ALGORITHM\_LIST**](efi-rng-algorithm-list.md)
-
- 
-
- 
-
-
-
-
+- [**EFI \_ RNG \_ 算法 \_ 列表**](efi-rng-algorithm-list.md)
