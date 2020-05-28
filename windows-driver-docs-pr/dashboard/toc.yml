@@ -18,7 +18,7 @@
           href: create-a-new-hardware-logo-submission.md
         - name: 使用 Winqual 提交工具 (winqual.exe)
           href: winqual-submission-tool--winqualexe-.md
-    - name: 'ID 定义 '
+    - name: ID 定义
       href: id-definitions.md
     - name: 对内核驱动程序进行证明签名以便公开发布
       href: attestation-signing-a-kernel-driver-for-public-release.md
@@ -118,6 +118,8 @@
                       href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-standard.md
                     - name: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量
                       href: graphics-tdr-integrated-gpu.md
+                    - name: 在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量
+                      href: myriad-drivers-rolled-back-standard.md
                     - name: 显卡内核中的崩溃导致出现蓝屏的计算机数
                       href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-kernel.md
                     - name: Microsoft 照片应用中的用户模式崩溃次数
@@ -128,8 +130,12 @@
                       href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale-expanded.md
                     - name: Microsoft Edge 中的用户模式崩溃次数
                       href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale-expanded.md
+                    - name: Microsoft Edge Chromium 中的用户模式崩溃次数
+                      href: graphics-user-mode-crashes-edge-chromium-standard.md
                     - name: Windows 组件中的用户模式崩溃次数
                       href: user-mode-reliability-for-crashes-in-windows-components.md
+                    - name: 协作和通信应用程序中的用户模式崩溃次数
+                      href: graphics-user-mode-crashes-collaboration-standard.md
                     - name: Microsoft Edge 和 Internet Explorer 中的 YouTube 视频播放失败次数百分比
                       href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
                     - name: 遇到 WinML 运行时错误的设备所占的百分比
@@ -144,8 +150,12 @@
                       href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-ecosystem.md
                     - name: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量
                       href: graphics-ecosystem-integrated-gpu-with-tdr.md
+                    - name: 在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量
+                      href: myriad-drivers-rolled-back-ecosystem.md
                     - name: Microsoft Edge 中的用户模式崩溃次数
                       href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
+                    - name: Microsoft Edge Chromium 中的用户模式崩溃次数
+                      href: graphics-user-mode-crashes-edge-chromium-ecosystem.md
                     - name: 热门 Microsoft 应用中的用户模式崩溃次数
                       href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
                     - name: 创意应用程序中的用户模式崩溃次数
@@ -154,6 +164,8 @@
                       href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
                     - name: Windows 组件中的用户模式崩溃次数
                       href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
+                    - name: 协作和通信应用程序中的用户模式崩溃次数
+                      href: graphics-user-mode-crashes-collaboration-ecosystem.md
                     - name: Netflix 上的 SWDRM 播放失败次数百分比
                       href: pct-swdrm-playback-failures-on-netflix.md
                     - name: 从低功率状态恢复时出现显示问题的计算机的百分比

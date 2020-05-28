@@ -78,6 +78,8 @@
       href: creating-a-driver-package.md
     - name: 创建设备元数据包
       href: creating-a-device-metadata-package.md
+    - name: 为设备驱动程序启用 DMA 重新映射
+      href: enabling-dma-remapping-for-device-drivers.md
 - name: 为驱动程序签名
   items:
     - name: 为驱动程序签名
