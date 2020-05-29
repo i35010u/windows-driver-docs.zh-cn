@@ -6,12 +6,12 @@ keywords:
 - 编写 UMDF 驱动程序
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d87ddd88af414359d0f792cb4bc21987db7e4b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8f48ea2c821c2232dd59fa00272cf67cc52be355
+ms.sourcegitcommit: 97272cb572d24b1ac72669e51e5051089e1dd2c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67359294"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84053287"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>基于模板编写通用 Windows 驱动程序 (UMDF 2)
 
@@ -93,8 +93,8 @@ DMF 不会取代 WDF。 DMF 是与 WDF 搭配使用的另一个框架。 利用 
 
 ## <a name="related-topics"></a>相关主题
 
-[开发、测试以及部署驱动程序](https://go.microsoft.com/fwlink/p?linkid=399234)
+[开发、测试以及部署驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/)
 
-[Windows 调试工具](https://go.microsoft.com/fwlink/p?linkid=223405)
+[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
 
 [编写第一个驱动程序](writing-your-first-driver.md)

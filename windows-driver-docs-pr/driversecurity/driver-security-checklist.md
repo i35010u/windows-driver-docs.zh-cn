@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 813d92b86f130091c03a18f30db163809ed16d9b
-ms.sourcegitcommit: c169ed9a2b5939858c5578aa8d1f363eaecb7494
+ms.openlocfilehash: f5fb99a4b7c936136b6e7f5776bf3f0b0982be45
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81398336"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153182"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -33,25 +33,25 @@ ms.locfileid: "81398336"
 
 ![空复选框](images/checkbox.png)[控制对仅软件驱动程序的访问](#controlsoftwareonly)
 
-![空复选框，](images/checkbox.png)[则不会为生产签署测试驱动程序代码](#donotproductionsign)
+![空复选框，不](images/checkbox.png)[生产符号测试驱动程序代码](#donotproductionsign)
 
 ![空复选框](images/checkbox.png)[执行威胁分析](#threatanalysis)
 
-![空复选框](images/checkbox.png)[遵循驱动程序安全编码准则](#driversecuritycodepractices)
+![空复选框](images/checkbox.png)[遵照驱动程序安全编码准则](#driversecuritycodepractices)
 
-![空复选框](images/checkbox.png)[验证设备保护兼容性](#dgc)
+![空复选框](images/checkbox.png)[验证要求 hvci 兼容性](#dgc)
 
 ![空复选框](images/checkbox.png)[遵循特定于技术的代码最佳做法](#technologyspecificcodepractices)
 
 ![空复选框](images/checkbox.png)[执行对等代码评审](#peercodereview)
 
-"![空" 复选框](images/checkbox.png)[管理驱动程序访问控制](#managingdriveraccesscontrol)
+![空复选框](images/checkbox.png)[管理驱动程序访问控制](#managingdriveraccesscontrol)
 
 ![空复选框](images/checkbox.png)[增强设备安装安全性](#enhancedeviceinstallationsecurity)
 
-![空复选框则](images/checkbox.png)[执行正确的版本驱动程序签名](#releasedriversigning)
+![空复选框](images/checkbox.png)[执行正确的发布驱动程序签名](#releasedriversigning)
 
-![空复选框](images/checkbox.png)[在 Visual Studio 中使用代码分析来调查驱动程序安全性](#use-code-analysis)
+![空复选框](images/checkbox.png)[使用 Visual Studio 中的代码分析来调查驱动程序安全性](#use-code-analysis)
 
 ![空复选框](images/checkbox.png)[使用静态驱动程序验证程序检查是否存在漏洞](#sdv)
 
@@ -67,7 +67,7 @@ ms.locfileid: "81398336"
 
 ## <a name="span-idconfirmkernelspanconfirm-that-a-kernel-driver-is-required"></a><span id="confirmkernel"></span>确认需要内核驱动程序
 
-**安全核对清单项 \#1：** *确认需要内核驱动程序，并且不能更好地选择较低的风险方法（如 Windows 服务或应用）。*
+**安全清单项 \# 1：** *确认内核驱动程序是必需的，并且不能更好地选择较低的风险方法（如 Windows 服务或应用）。*
 
 Windows 内核中的驱动程序在内核中执行时会出现问题。 如果有任何其他选项可用，则与创建新的内核驱动程序相比，它可能会降低成本并降低关联的风险。
 有关使用内置 Windows 驱动程序的详细信息，请参阅[是否需要编写驱动程序？](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/do-you-need-to-write-a-driver-)。
@@ -78,17 +78,17 @@ Windows 内核中的驱动程序在内核中执行时会出现问题。 如果�
 
 ## <a name="span-idconfirmkernelspanuse-the-driver-frameworks"></a><span id="confirmkernel"></span>使用驱动程序框架
 
-**安全清单项 \#2：** *使用驱动程序框架减小代码大小并提高其可靠性和安全性。*
+**安全检查表项 \# 2：** *使用驱动程序框架减小代码大小并提高其可靠性和安全性。*
 
 使用[Windows 驱动程序框架](https://docs.microsoft.com/windows-hardware/drivers/wdf/)减小代码大小并提高其可靠性和安全性。  若要开始，请查看[使用 WDF 开发驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)。 有关使用低风险用户模式框架驱动程序（UMDF）的信息，请参阅[选择驱动程序模型](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)。
 
 编写旧的方式[Windows 驱动模型（WDM）](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)驱动程序需要花费更多时间，并且几乎始终都需要重新创建驱动程序框架中提供的代码。
 
-Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 这与 Windows 10 中随附的 WDF 运行时库生成的源代码相同。 如果能够按照驱动程序和 WDF 之间的交互步骤进行操作，则可更有效地调试驱动程序。 从[https://github.com/Microsoft/Windows-Driver-Frameworks](https://github.com/Microsoft/Windows-Driver-Frameworks)下载。
+Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 Windows 10 中提供的 WDF 运行时库是根据此源代码生成的。 如果能够按照驱动程序和 WDF 之间的交互步骤进行操作，则可更有效地调试驱动程序。 从下载 [https://github.com/Microsoft/Windows-Driver-Frameworks](https://github.com/Microsoft/Windows-Driver-Frameworks) 。
 
 ## <a name="span-idcontrolsoftwareonlyspancontrol-access-to-software-only-drivers"></a><span id="controlsoftwareonly"></span>控制对仅软件驱动程序的访问
 
-**安全清单项 \#3：** *如果要创建仅软件驱动程序，则必须实现其他访问控制。*
+**安全清单项目 \# 3：** *如果要创建仅软件驱动程序，则必须实现其他访问控制。*
 
 仅软件内核驱动程序不使用即插即用（PnP）与特定硬件 Id 相关联，并且可以在任何电脑上运行。 此类驱动程序可用于除最初目的之外的其他用途，从而创建攻击向量。
 
@@ -98,7 +98,7 @@ Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 
 
 ## <a name="span-iddonotproductionsignspan-do-not-production-sign-test-code"></a><span id="donotproductionsign"></span>不生产签名测试代码
 
-**安全清单项 \#4：** *不生成代码签名开发、测试和制造内核驱动程序代码。*
+**安全检查表项目 \# 4：** *不生产代码签名开发、测试和制造内核驱动程序代码。*
 
 用于开发、测试或制造的内核驱动程序代码可能包含带来安全风险的危险功能。  此危险代码决不会使用 Windows 信任的证书进行签名。  执行危险驱动程序代码的正确机制是禁用 UEFI 安全启动，启用 BCD "TESTSIGNING"，并使用不受信任的证书（例如，由 makecert 生成的证书）对开发、测试和制造代码进行签名。
 
@@ -113,7 +113,7 @@ Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 
 
 ## <a name="span-idthreatanalysisspanspan-idthreatanalysisspanspan-idthreatanalysisspanperform-threat-analysis"></a><span id="ThreatAnalysis"></span><span id="threatanalysis"></span><span id="THREATANALYSIS"></span>执行威胁分析
 
-**安全清单项 \#5：** *修改现有的驱动程序威胁模型或创建自定义的驱动程序威胁模型。*
+**安全检查表项目 \# 5：** *修改现有的驱动程序威胁模型或创建自定义的驱动程序威胁模型。*
 
 考虑到安全性，一种常见的方法是创建具体的威胁模型，以尝试描述可能的攻击类型。 设计驱动程序时，此方法非常有用，因为它会强制开发人员提前考虑潜在的攻击媒介。 如果已确定潜在的威胁，驱动程序开发人员就可以考虑防御这些威胁，从而加强驱动程序组件的总体安全性。
 
@@ -125,7 +125,7 @@ Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关�
 
 ## <a name="span-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanfollow-driver-secure-coding-guidelines"></a><span id="DriverSecurityCodePractices"></span><span id="driversecuritycodepractices"></span><span id="DRIVERSECURITYCODEPRACTICES"></span>遵循驱动程序安全编码准则
 
-**安全清单项 \#6：** *检查代码并删除任何已知的代码漏洞。*
+**安全清单项目 \# 6：** *检查代码并删除任何已知的代码漏洞。*
 
 创建安全驱动程序的核心活动是识别代码中需要更改的区域，以避免已知的软件漏洞。 其中的许多已知软件漏洞都涉及到严格跟踪内存使用情况，以避免他人覆盖或包含驱动程序使用的内存位置的问题。
 
@@ -143,11 +143,11 @@ Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。
 
-|IOCTL 缓冲区类型 | 摘要                                    | 更多相关信息 |  
+|IOCTL 缓冲区类型 | 总结                                    | 更多信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
-| METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
-| METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
-| METHOD_NEITHER |尽可能避免 |[不使用缓冲和直接 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
+| METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
+| METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
+| METHOD_NEITHER |尽可能避免 |[既不使用缓冲 I/O，也不使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
 
 建议使用一般的缓冲 i/o，因为它提供最安全的缓冲方法。 但即使使用缓冲 i/o 也存在风险，如必须缓解的嵌入指针。
 
@@ -185,9 +185,9 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 - 设备驱动程序必须正确处理各种用户模式，以及内核到内核 i/o 和请求。
 
-若要允许驱动程序支持要求 HVCI 虚拟化，需要额外的内存。 有关详细信息，请参阅本文后面的[Device Guard 兼容性](#dgc)。
+若要允许驱动程序支持要求 HVCI 虚拟化，需要额外的内存。 有关详细信息，请参阅本文后面的[要求 hvci 兼容性](#dgc)。
 
-**手柄**
+**句柄数**
 
 - 验证在用户模式和内核模式内存之间传递的句柄。 有关详细信息，请参阅[处理管理](https://docs.microsoft.com/windows-hardware/drivers/ifs/handle-management)和[验证对象句柄失败](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-object-handles)。
 
@@ -209,15 +209,15 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 以下文章提供了有关验证 IRP 输入值的信息：
 
-[使用缓冲 i/o 的 DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-buffered-i-o)
+[使用缓冲 I/O 执行 DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-buffered-i-o)
 
-[缓冲 i/o 中的错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-buffered-i-o)
+[缓冲 I/O 出错](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-buffered-i-o)
 
-[使用直接 i/o 的 DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-direct-i-o)
+[使用直接 I/O 执行 DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-direct-i-o)
 
-[直接 i/o 中的错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)
+[直接 I/O 出错](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)
 
-[I/o 控制代码的安全问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)
+[I/O 控制代码的安全问题](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)
 
 请考虑验证与 IRP 关联的值，例如缓冲区地址和长度。
 
@@ -225,7 +225,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 **正确处理 IRP 完成操作**
 
-驱动程序永远不能完成状态值为 STATUS 的 IRP\_SUCCESS，除非它实际支持和处理 IRP。 有关处理 IRP 完成操作的正确方法的信息，请参阅[完成 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/completing-irps)。
+驱动程序绝不能完成状态值为 "成功" 的 IRP， \_ 除非它实际支持和处理 irp。 有关处理 IRP 完成操作的正确方法的信息，请参阅[完成 irp](https://docs.microsoft.com/windows-hardware/drivers/kernel/completing-irps)。
 
 **管理驱动程序 IRP 挂起状态**
 
@@ -239,7 +239,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 **正确处理 IRP 清理并关闭操作**
 
-请确保了解[**IRP\_mj\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)和[**irp\_MJ\_关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅以下文章：
+请确保了解[**IRP \_ mj \_ 清除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)和[**irp \_ mj \_ 关闭**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)请求之间的差异。 清理请求在应用程序关闭文件对象上的所有句柄之后，但有时在所有 i/o 请求完成之前到达。 完成或取消对文件对象的所有 i/o 请求后，关闭请求即可到达。 有关详细信息，请参阅以下文章：
 
 [DispatchCreate、DispatchClose 和 DispatchCreateClose 例程](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines)
 
@@ -269,11 +269,11 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 除了本文所述的可能的漏洞之外，本文还提供了有关增强内核模式驱动程序代码的安全性的其他信息：[创建可靠的内核模式驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)。
 
-有关 C 和C++安全编码的其他信息，请参阅本文末尾的[安全编码资源](#securecodingresources)。
+有关 C 和 c + + 安全编码的其他信息，请参阅本文末尾的[安全编码资源](#securecodingresources)。
 
 ## <a name="span-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanmanage-driver-access-control"></a><span id="ManagingDriverAccessControl"></span><span id="managingdriveraccesscontrol"></span><span id="MANAGINGDRIVERACCESSCONTROL"></span>管理驱动程序访问控制
 
-**安全清单项 \#7：** *检查您的驱动程序以确保正确控制访问。*
+**安全核对清单项 \# 7：** 检查您的*驱动程序，确保正确控制访问权限。*
 
 **管理驱动程序访问控制-WDF**
 
@@ -289,9 +289,9 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 有关控制访问的详细信息，请参阅以下文章：
 
-[在 KMDF 驱动程序中控制设备访问](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
+[在 KMDF 驱动程序中控制设备访问权限](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
 
-[名称、安全描述符和设备类-使设备对象可访问 。](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe/)从*2017 年1月1日起*， [OSR](https://www.osr.com)发布的 NT 有问必答新闻稿。
+[名称、安全描述符和设备类-使设备对象可访问 .。。](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe/)从*2017 年1月1日起*， [OSR](https://www.osr.com)发布的 NT 有问必答新闻稿。
 
 **管理驱动程序访问控制-WDM**
 
@@ -299,9 +299,9 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 有关详细信息，请参阅以下文章：
 
-[控制设备访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)
+[控制设备访问权限](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)
 
-[控制设备命名空间访问](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)
+[控制设备命名空间访问权限](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)
 
 [适用于驱动程序开发人员的 Windows 安全模型](windows-security-model.md)
 
@@ -333,17 +333,17 @@ AC (Application Container)
 
 有关详细信息，请参阅以下文章：
 
-[定义 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
+[定义 I/O 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
 
-## <a name="span-iddgcspanspan-iddgcspanvalidate-device-guard-compatibility"></a><span id="DGC"></span><span id="dgc"></span>验证 Device Guard 兼容性
+## <a name="span-iddgcspanspan-iddgcspanvalidate-hvci-compatibility"></a><span id="DGC"></span><span id="dgc"></span>验证要求 HVCI 兼容性
 
-**安全清单项 \#8：** *验证驱动程序是否使用内存，使其与设备保护兼容。*
+**安全清单项 \# 8：** *验证驱动程序是否使用了内存，使其与要求 hvci 兼容。*
 
-**内存使用情况和设备防护兼容性**
+**内存使用情况和要求 HVCI 的兼容性**
 
-Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函数与操作系统的其余部分隔离开来。 使用基于虚拟化的安全性隔离 CI 时，内核内存可执行的唯一方式是通过 CI 验证。 这意味着内核内存页永远不能为可写且可执行（W + X）和可执行代码不能直接修改。
+要求 HVCI 使用硬件技术和虚拟化将代码完整性（CI）决策函数与操作系统的其余部分隔离开来。 使用基于虚拟化的安全性隔离 CI 时，内核内存可执行的唯一方式是通过 CI 验证。 这意味着内核内存页永远不能为可写且可执行（W + X）和可执行代码不能直接修改。
 
-若要实现 Device Guard 兼容的代码，请确保你的驱动程序代码执行以下操作：
+若要实现要求 HVCI 兼容的代码，请确保你的驱动程序代码执行以下操作：
 
 - 默认情况下，使用 NX
 - 使用 NX Api/标志进行内存分配（NonPagedPoolNx）
@@ -351,17 +351,15 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 - 不尝试直接修改可执行系统内存
 - 不使用内核中的动态代码
 - 不将数据文件加载为可执行文件
-- 节对齐方式为0x1000 的倍数（页\_大小）。 例如 驱动程序\_对齐 = 0x1000
+- 节对齐是0x1000 （页 \_ 大小）的倍数。 例如 驱动程序 \_ 对齐 = 0x1000
 
-若要详细了解如何使用该工具和不兼容的内存调用列表，请参阅[使用设备保护准备工具评估要求 hvci 驱动程序兼容性](use-device-guard-readiness-tool.md)。
-
-有关 Device Guard 的一般信息，请参阅[Windows 10 中与设备保护的驱动程序兼容性](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)。
+有关使用该工具和不兼容的内存调用列表的详细信息，请参阅[评估要求 hvci 驱动程序兼容性](use-device-guard-readiness-tool.md)。
 
 有关相关系统基础安全测试的详细信息，请参阅[设备保护性测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)和[与设备保护的驱动程序兼容性](https://docs.microsoft.com/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)。
 
 ## <a name="span-idtechnologyspecificcodepracticesspanfollow-technology-specific-code-best-practices"></a><span id="technologyspecificcodepractices"></span>遵循特定于技术的代码最佳做法
 
-**安全清单项 \#9：** *查看适用于你的驱动程序的以下特定于技术的指南。*
+**安全核对清单项 \# 9：** *查看适用于你的驱动程序的以下特定于技术的指南。*
 
 *文件系统*
 
@@ -381,9 +379,9 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 *显示器*
 
-有关显示驱动程序安全性的信息，请参阅 &lt;内容挂起&gt;。
+有关显示驱动程序安全性的信息，请参阅 &lt; 内容挂起 &gt; 。
 
-*Printers*
+*打印机*
 
 有关打印机驱动程序安全的信息，请参阅[V4 打印机驱动程序安全注意事项](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver-security-considerations)。
 
@@ -393,7 +391,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 ## <a name="span-idenhancedeviceinstallationsecurityspanenhance-device-installation-security"></a><span id="enhancedeviceinstallationsecurity"></span>增强设备安装安全性
 
-**安全清单项 \#10：** *查看驱动程序 inf 创建和安装指南，确保遵循最佳做法。*
+**安全清单项 \# 10：** *查看驱动程序 inf 创建和安装指南，以确保遵循最佳做法。*
 
 当你创建用于安装驱动程序的代码时，必须确保始终以安全的方式执行你的设备安装。 安全设备安装是指执行以下操作的设备：
 
@@ -406,17 +404,17 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 有关详细信息，请参阅以下文章：
 
-[创建安全设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)
+[创建安全的设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)
 
-[使用 Setupapi.log 的准则](https://docs.microsoft.com/windows-hardware/drivers/install/guidelines-for-using-setupapi)
+[SetupAPI 使用指南](https://docs.microsoft.com/windows-hardware/drivers/install/guidelines-for-using-setupapi)
 
-[使用设备安装功能](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)
+[使用设备安装函数](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)
 
 [设备和驱动程序安装高级主题](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-advanced-topics)
 
 ## <a name="span-idpeercodereviewspanperform-peer-code-review"></a><span id="peercodereview"></span>执行对等代码评审
 
-**安全清单项 \#11：** *执行对等代码评审，以查找其他工具和进程未出现的问题*
+**安全清单项 \# 11：** *执行对等代码评审，以查找其他工具和进程未*显示的问题
 
 寻找熟悉的代码审阅者，查找可能丢失的问题。 另一组眼睛通常会发现可能已被忽略的问题。
 
@@ -424,13 +422,13 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 ## <a name="span-idreleasedriversigningspanspan-idreleasedriversigningspanspan-idreleasedriversigningspanexecute-proper-release-driver-signing"></a><span id="ReleaseDriverSigning"></span><span id="releasedriversigning"></span><span id="RELEASEDRIVERSIGNING"></span>执行正确的发布驱动程序签名
 
-**安全核对清单项 \#12：** *使用 Windows 合作伙伴门户对驱动程序进行正确签名以进行分发。*
+**安全检查表项目 \# 12：** *使用 Windows 合作伙伴门户对驱动程序进行正确的签名以进行分发。*
 
 在公开发布驱动程序包之前，我们建议你先提交程序包以进行认证。 有关详细信息，请参阅对[性能和兼容性进行测试](https://docs.microsoft.com/windows-hardware/test/index)，[开始使用硬件计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)、[硬件仪表板服务](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-services)以及使用[公共发布的内核驱动程序进行签名](https://docs.microsoft.com/windows-hardware/drivers/dashboard/attestation-signing-a-kernel-driver-for-public-release)。
 
 ## <a name="span-iduse-code-analysisspanuse-code-analysis-in-visual-studio-to-investigate-driver-security"></a><span id="use-code-analysis"></span>在 Visual Studio 中使用代码分析来调查驱动程序安全性
 
-**安全清单项 \#13：** *请按照以下步骤使用 Visual Studio 中的代码分析功能来检查驱动程序代码中的漏洞。*
+**安全检查表项目 \# 13：** *按照以下步骤使用 Visual Studio 中的代码分析功能检查驱动程序代码中的漏洞。*
 
 使用 Visual Studio 中的代码分析功能来检查代码中的安全漏洞。 Windows 驱动程序工具包（WDK）安装旨在检查本机驱动程序代码中的问题的规则集。
 
@@ -438,13 +436,13 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 有关详细信息，请参阅[驱动程序代码分析概述](https://docs.microsoft.com/windows-hardware/drivers/devtest/code-analysis-for-drivers-overview)。 有关代码分析的更多背景知识，请参阅[深层 Visual Studio 2013 静态代码分析](https://blogs.msdn.microsoft.com/hkamel/2013/10/24/visual-studio-2013-static-code-analysis-in-depth-what-when-and-how/)。
 
-若要熟悉代码分析，可以使用其中一个示例驱动程序，例如，<https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured> toaster 或 ELAM 初期启动反恶意软件示例 <https://github.com/Microsoft/Windows-driver-samples/tree/master/security/elam>。
+若要熟悉代码分析，可以使用示例驱动程序之一（例如，精选的 toaster 示例） <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured> 或 ELAM 初期启动的反恶意软件示例 <https://github.com/Microsoft/Windows-driver-samples/tree/master/security/elam> 。
 
 1. 在 Visual Studio 中打开驱动程序解决方案。
 
-2. 在 Visual Studio 中，对于解决方案中的每个项目，将项目属性更改为使用所需的规则集。 例如：项目 &gt;&gt; 属性 &gt;&gt; 代码分析 &gt;&gt; 常规 "，请选择"*推荐的驱动程序规则*"。 除了使用 recommenced 驱动程序规则之外，还可以使用 "*建议的本机规则*" 规则集。
+2. 在 Visual Studio 中，对于解决方案中的每个项目，将项目属性更改为使用所需的规则集。 例如：项目 &gt; &gt; 属性 &gt; &gt; 代码分析 &gt; &gt; 常规，请选择 "*推荐的驱动程序规则*"。 除了使用 recommenced 驱动程序规则之外，还可以使用 "*建议的本机规则*" 规则集。
 
-3. 选择 "生成" &gt;&gt; 对解决方案运行代码分析。
+3. 选择 &gt; &gt; "生成" "对解决方案运行代码分析"。
 
 4. 在 Visual Studio 中的 "生成输出" 窗口的 "**错误列表**" 选项卡中查看警告。
 
@@ -452,28 +450,28 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 单击链接的警告代码可查看其他信息。
 
-确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅[使用 SAL 注释减少 C/C++代码缺陷](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)和[用于 Windows 驱动程序的 SAL 2.0 批注](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)。
+确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅[使用 SAL 注释减少 C/c + + 代码缺陷](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)和[适用于 Windows 驱动程序的 SAL 2.0 批注](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)。
 
 有关 SAL 的一般信息，请参阅 OSR 中的这篇文章。
 [https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/)
 
 ## <a name="span-idsdvspanspan-idsdvspanuse-static-driver-verifier-to-check-for-vulnerabilities"></a><span id="SDV"></span><span id="sdv"></span>使用静态驱动程序验证程序检查是否存在漏洞
 
-**安全核对清单项 \#14：** *按照以下步骤使用 Visual Studio 中的静态驱动程序验证程序（SDV）检查驱动程序代码中的漏洞。*
+**安全检查表项 \# 14：** *按照以下步骤使用 Visual Studio 中的静态驱动程序验证程序（SDV）检查驱动程序代码中的漏洞。*
 
 静态驱动程序验证程序（SDV）使用一组接口规则和操作系统模型来确定驱动程序是否与 Windows 操作系统正确交互。 SDV 在驱动程序代码中查找一些缺陷，这些缺陷可能指向驱动程序中的潜在 bug。
 
 有关详细信息，请参阅[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/introducing-static-driver-verifier)和[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)简介。 请注意，SDV 仅支持某些类型的驱动程序。 有关 SDV 可以验证的驱动程序的详细信息，请参阅[支持的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/supported-drivers)。
 
-若要熟悉 SDV，可以使用其中一个示例驱动程序（例如，特色 toaster 示例： <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured>）。
+若要熟悉 SDV，可以使用其中一个示例驱动程序（例如，特色 toaster 示例： <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured> ）。
 
 1. 在 Visual Studio 中打开目标驱动程序解决方案。
 
 2. 在 Visual Studio 中，将生成类型更改为 "*发布*"。 静态驱动程序验证程序要求生成类型为 release，而不是调试。
 
-3. 在 Visual Studio 中，选择 "生成" &gt;&gt; 生成解决方案 "。
+3. 在 Visual Studio 中，选择 "生成" "生成 &gt; &gt; 解决方案"。
 
-4. 在 Visual Studio 中，选择 "驱动程序" &gt;&gt; 启动静态驱动程序验证程序 "。
+4. 在 Visual Studio 中，选择 "驱动程序 &gt; &gt; 启动静态驱动程序验证程序"。
 
 5. 在 SDV 的 "*规则*" 选项卡上，选择 "*规则集*" 下的 "*默认*"。
 
@@ -487,7 +485,7 @@ Device Guard 使用硬件技术和虚拟化将代码完整性（CI）决策函�
 
 ## <a name="span-idbinskimspanspan-idbinskimspanspan-idbinskimspancheck-code-with-the-binskim-binary-analyzer"></a><span id="BinSkim"></span><span id="binskim"></span><span id="BINSKIM"></span>用 BinSkim 二进制分析器检查代码
 
-**安全清单项 \#15：** *请按照以下步骤进行操作，以使用 BinSkim 来仔细检查是否配置了编译和生成选项，以最大程度地减少已知的安全问题。*
+**安全核对清单项 \# 15：** *按照以下步骤进行操作，以使用 BinSkim 来仔细检查是否配置了编译和生成选项，以最大程度地减少已知的安全问题。*
 
 使用 BinSkim 来检查二进制文件，以确定编码和构建可能会导致二进制漏洞发生的行为。
 
@@ -505,11 +503,11 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
 
 1. 下载并安装跨平台[.NET Core SDK](https://dotnet.microsoft.com/download)。
 
-2. 下载 BinSkim 的方法有很多，例如 NuGet 包。 在此示例中，我们将从此处下载包含 BinSkim 的 zip 文件： <https://github.com/microsoft/binskim> 并将其安装在64位 Windows 电脑上。
+2. 下载 BinSkim 的方法有很多，例如 NuGet 包。 在此示例中，我们将从此处下载包含 BinSkim 的 zip 文件： <https://github.com/microsoft/binskim> 并将其安装在64位 WINDOWS 电脑上。
 
-3. 单击 <https://github.com/microsoft/binskim> 上的 "**克隆或下载**" 按钮，然后选择 "**下载 Zip**"。
+3. 单击上的 "**克隆或下载**" 按钮 <https://github.com/microsoft/binskim> ，然后选择 "**下载 Zip**"。
 
-4. 单击下载的 zip 文件并将其解压缩，例如 `C:\binskim-master`。
+4. 单击下载的 zip 文件并将其解压缩，例如 `C:\binskim-master` 。
 
 5. 确认已安装 Visual Studio。 有关下载和安装 Visual Studio 的信息，请参阅[安装 Visual studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019)。
 
@@ -619,7 +617,7 @@ A compiler warning is typically required if it has a high likelihood of flagging
 To resolve this issue, enable the indicated warning(s) by removing /Wxxxx switches (where xxxx is a warning id indicated here) from your command line, and resolve any warnings subsequently raised during compilation.
 ```
 
-若要在 Visual Studio 中启用这些警告，请C++在项目的属性页中的 "C/" 下，删除**禁用特定警告**时不希望排除的值。
+若要在 Visual Studio 中启用这些警告，请在项目的属性页中的 "C/c + +" 下，在 "**禁用特定警告**" 中删除不希望排除的值。
 
 ![用于在 Visual Studio 2019 中禁用特定警告的对话框](images/disable-specific-warnings-dialog.png)
 
@@ -635,13 +633,13 @@ Visual Studio 中用于驱动程序项目的默认编译选项可以禁用如下
 
 ## <a name="span-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanuse-additional-code-validation-tools"></a><span id="CodeValidationTools"></span><span id="codevalidationtools"></span><span id="CODEVALIDATIONTOOLS"></span>使用其他代码验证工具
 
-**安全清单项 \#16：** *使用这些附加工具来帮助验证你的代码是否遵循安全建议，并探测你的开发过程中丢失的空白。*
+**安全核对清单项 \# 16：** *使用这些附加工具来帮助验证你的代码是否遵循安全建议，并探测你的开发过程中丢失的空白。*
 
 除了上面所述[Visual Studio Code 分析](#use-code-analysis)、[静态驱动程序验证程序](#sdv)和[Binskim](#binskim) ，还可以使用以下工具来探测开发过程中丢失的缺口。
 
 **驱动程序验证程序**
 
-驱动程序验证程序允许对驱动程序进行实时测试。 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。 驱动程序验证程序可将 Windows 驱动程序用于各种强调和测试，以找出不正确的行为。 有关详细信息，请参阅[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+驱动程序验证程序允许对驱动程序进行实时测试。 驱动程序验证程序监视 Windows 内核模式驱动程序和图形驱动程序，目的是检测可能损坏系统的非法函数调用或操作。 驱动程序验证程序可将 Windows 驱动程序用于各种强调和测试，以找出不正确的行为。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 **硬件兼容性计划测试**
 
@@ -665,7 +663,7 @@ Visual Studio 中用于驱动程序项目的默认编译选项可以禁用如下
 
 设备基础的渗透测试执行各种形式的输入攻击，这是安全测试的关键组成部分。 攻击和渗透测试可帮助识别软件接口中的漏洞。 有关详细信息，请参阅[渗透测试（设备基础）](https://docs.microsoft.com/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)。
 
-使用[Device Guard 合规性测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)以及本文中所述的其他工具，以确认您的驱动程序与 Device Guard 兼容。
+使用[Device Guard 合规性测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)以及本文中所述的其他工具，以确认你的驱动程序与要求 hvci 兼容。
 
 **自定义和域特定的测试工具**
 
@@ -673,31 +671,31 @@ Visual Studio 中用于驱动程序项目的默认编译选项可以禁用如下
 
 ## <a name="span-iddebuggerspanspan-iddebuggerspanspan-iddebuggerspanreview-debugger-techniques-and-extensions"></a><span id="Debugger"></span><span id="debugger"></span><span id="DEBUGGER"></span>查看调试器技术和扩展
 
-**安全清单项 \#17：** *查看这些调试器工具并考虑它们在开发调试工作流中的使用。*
+**安全清单项目 \# 17：** *查看这些调试器工具并考虑它们在开发调试工作流中的使用。*
 
 **！可利用故障分析器**
 
 ！可利用的故障分析器是一种 Windows 调试程序扩展，用于分析查找独特问题的崩溃日志。 它还检查崩溃类型，并尝试确定错误是否是恶意黑客可以利用的问题。
 
-Microsoft 安全工程中心（毫秒），创建了！可利用故障分析器。 可以从 codeplex 下载： <https://msecdbg.codeplex.com/>。
+Microsoft 安全工程中心（毫秒），创建了！可利用故障分析器。 可以从 codeplex 下载： <https://msecdbg.codeplex.com/> 。
 
 有关详细信息，请参阅[！可利用的崩溃分析器版本 1.6](https://www.microsoft.com/security/blog/2013/06/13/exploitable-crash-analyzer-version-1-6/)和第9频道视频[！可利用故障分析器](https://channel9.msdn.com/blogs/pdcnews/bang-exploitable-security-analyzer)。
 
 **与安全性相关的调试器命令**
 
-！ Acl 扩展格式化并显示访问控制列表（ACL）的内容。 有关详细信息，请参阅[确定对象的 ACL](https://docs.microsoft.com/windows-hardware/drivers/debugger/determining-the-acl-of-an-object)和[ **！ acl**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-acl)。
+！ Acl 扩展格式化并显示访问控制列表（ACL）的内容。 有关详细信息，请参阅[确定对象的 ACL](https://docs.microsoft.com/windows-hardware/drivers/debugger/determining-the-acl-of-an-object)和[**！ acl**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-acl)。
 
-！令牌扩展显示安全令牌对象的格式化视图。 有关详细信息，请参阅[ **！ token**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-token)。
+！令牌扩展显示安全令牌对象的格式化视图。 有关详细信息，请参阅[**！ token**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-token)。
 
-！ Tokenfields extension 显示访问令牌对象（令牌结构）中的字段的名称和偏移量。 有关详细信息，请参阅[ **！ tokenfields**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-tokenfields)。
+！ Tokenfields extension 显示访问令牌对象（令牌结构）中的字段的名称和偏移量。 有关详细信息，请参阅[**！ tokenfields**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-tokenfields)。
 
-！ Sid 扩展显示指定地址处的安全标识符（SID）。 有关详细信息，请参阅[ **！ sid**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sid)。
+！ Sid 扩展显示指定地址处的安全标识符（SID）。 有关详细信息，请参阅[**！ sid**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sid)。
 
-！ Sd extension 显示指定地址处的安全描述符。 有关详细信息，请参阅[ **！ sd**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sd)。
+！ Sd extension 显示指定地址处的安全描述符。 有关详细信息，请参阅[**！ sd**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sd)。
 
 ## <a name="span-idsecurecodingresourcesspanspan-idsecurecodingresourcesspanspan-idsecurecodingresourcesspanreview-secure-coding-resources"></a><span id="SecureCodingResources"></span><span id="securecodingresources"></span><span id="SECURECODINGRESOURCES"></span>查看安全编码资源
 
-**安全核对清单项 \#18：** *查看这些资源，以扩展对驱动程序开发人员适用的安全编码最佳实践的了解。*
+**安全清单项目 \# 18：** *查看这些资源，以扩展对驱动程序开发人员适用的安全编码最佳实践的了解。*
 
 *查看这些资源，了解有关驱动程序安全性的详细信息*
 
@@ -715,15 +713,15 @@ CERT-[生成安全性](https://www.us-cert.gov/bsi)
 
 MITRE-[由 CERT C 安全编码标准解决的漏洞](https://cwe.mitre.org/data/definitions/734.html)
 
-在成熟度模型中构建安全性（BSIMM）- [https://www.bsimm.com/](https://www.bsimm.com/)
+在成熟度模型中构建安全性（BSIMM）-[https://www.bsimm.com/](https://www.bsimm.com/)
 
-SAFECode- [https://safecode.org/](https://safecode.org/)
+SAFECode -[https://safecode.org/](https://safecode.org/)
 
 **OSR**
 
 [OSR](https://www.osr.com)提供驱动程序开发培训和咨询服务。 OSR 新闻稿中的这些文章突出显示了驱动程序安全问题。
 
-[名称、安全描述符和设备类-使设备对象可访问 。和安全](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe/)
+[名称、安全描述符和设备类-使设备对象可访问 .。。和安全](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe/)
 
 [已走使用保护--内部驱动程序 & 设备安全](https://www.osronline.com/article.cfm^article=100.htm)
 
@@ -735,7 +733,7 @@ SAFECode- [https://safecode.org/](https://safecode.org/)
 
 [从警报到驱动程序漏洞： Microsoft Defender ATP 调查 unearths 特权升级缺陷](https://www.microsoft.com/security/blog/2019/03/25/from-alert-to-driver-vulnerability-microsoft-defender-atp-investigation-unearths-privilege-escalation-flaw/)
 
-**帐簿**
+**书籍**
 
 *24 抱问题软件安全：* Michael Howard、David LeBlanc 和 John Viega 的编程缺陷和解决方法
 
@@ -745,13 +743,13 @@ SAFECode- [https://safecode.org/](https://safecode.org/)
 
 *软件安全评估的内容：识别并防止软件漏洞*，将 Dowd 和约翰麦克唐纳
 
-*C 和C++中的安全编码（软件工程中的 SEI 系列）第2版*，Robert Seacord
+*C 和 c + + 中的安全编码（软件工程中的 SEI 系列）第2版*，Robert Seacord
 
-*编程 Microsoft Windows 驱动模型（第2版）* ，Walter Oney
+*编程 Microsoft Windows 驱动模型（第2版）*，Walter Oney
 
-*开发包含 Windows Driver Foundation （开发人员参考）* 、Orwick 和专家 Smith 的驱动程序
+*开发包含 Windows Driver Foundation （开发人员参考）*、Orwick 和专家 Smith 的驱动程序
 
-**方面**
+**培训**
 
 可从以下供应商获取 Windows 驱动程序课堂培训：
 
@@ -761,7 +759,7 @@ SAFECode- [https://safecode.org/](https://safecode.org/)
 
 可从各种源获取安全编码在线培训。 例如，可以从 coursera 获取此课程：
 
-[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security)。
+[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security).
 
 SAFECode 还提供免费的培训：
 

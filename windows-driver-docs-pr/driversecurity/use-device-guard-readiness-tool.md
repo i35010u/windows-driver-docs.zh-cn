@@ -1,23 +1,23 @@
 ---
-title: 使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
-description: 请按照以下步骤使用 Device Guard 准备工具来评估驱动程序代码的要求 HVCI 驱动程序兼容性。
+title: 评估要求 HVCI 驱动程序兼容性
+description: 请按照以下步骤来评估驱动程序代码的要求 HVCI 驱动程序兼容性。
 ms.assetid: ''
-ms.date: 02/22/2017
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f63b97117a4df00fa2af082e400d9ba23cfc4850
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6e1f4331474b7dc9093483ee762e3059f13cce60
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825173"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153163"
 ---
-# <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
+# <a name="evaluate-hvci-driver-compatibility"></a>评估要求 HVCI 驱动程序兼容性
 
 ## <a name="overview"></a>概述
 
-Device Guard 准备工具旨在检查多种需求，以创建支持各种安全增强功能的 PC。 本部分介绍如何使用该工具评估驱动程序在受管理程序保护的代码完整性（要求 HVCI）环境中运行的能力。 
+DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增强功能的 PC。 本部分介绍如何使用该工具评估驱动程序在受管理程序保护的代码完整性（要求 HVCI）环境中运行的能力。
 
-用于测试要求 HVCI driver Device Guard 兼容性的操作系统和硬件要求：
+用于测试要求 HVCI 驱动程序兼容性的操作系统和硬件要求：
 
 1. Windows：适用于所有版本的 Windows，例如 Windows Pro、Windows 10 企业版、Windows Server 和 Windows 10 IoT Enterprise （在 S 模式下不受支持）。
 
@@ -27,9 +27,9 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 
 有关相关设备基础测试的详细信息，请参阅[DevFund 测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)。
 
-## <a name="implement-device-guard-compatible-code"></a>实现 Device Guard 兼容代码
+## <a name="implement-hvci-compatible-code"></a>实现与要求 HVCI 兼容的代码
 
-若要实现 Device Guard 兼容的代码，请确保你的驱动程序代码执行以下操作：
+若要实现要求 HVCI 兼容的代码，请确保你的驱动程序代码执行以下操作：
 
 - 默认情况下，使用 NX
 - 使用 NX Api/标志进行内存分配（NonPagedPoolNx）
@@ -37,7 +37,7 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 - 不尝试直接修改可执行系统内存
 - 不使用内核中的动态代码
 - 不将数据文件加载为可执行文件
-- 节对齐方式为0x1000 的倍数（页\_大小）。 例如 驱动程序\_对齐 = 0x1000
+- 节对齐是0x1000 （页 \_ 大小）的倍数。 例如 驱动程序 \_ 对齐 = 0x1000
 
 以下 DDIs 列表未保留给系统使用可能会受到影响：
 
@@ -72,7 +72,7 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 | [**StorPortGetDataInBufferSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetdatainbuffersystemaddress)             |
 | [**StorPortGetSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetsystemaddress)                                     |
 | [**ChangerClassAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassallocatepool)                                     |
-| “显示”                                                                                              |
+| 显示                                                                                              |
 | [*DxgkCbMapMemory*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_map_memory)                                                         |
 | [**VideoPortAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportallocatepool)                                           |
 | 音频微型端口                                                                                       |
@@ -99,13 +99,13 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 | [**WdfRegistryQueryMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryquerymemory)                                             |
 
 
-## <a name="using-the-dgr-tool"></a>使用 DGR 工具
+## <a name="using-the-dgreadiness-tool"></a>使用 DGReadiness 工具
 
-若要使用 Device Guard 准备工具，请完成以下步骤：
+若要使用 DGReadiness 工具，请完成以下步骤：
 
 -   **准备测试 PC**
 
-    *启用基于虚拟化的代码完整性保护*-运行系统信息应用（msinfo32）。 查找以下项： "Device Guard Virtualization security"。 它应显示： "正在运行"。
+    *启用基于虚拟化的代码完整性保护*-运行系统信息应用（msinfo32）。 查找以下项： "基于虚拟化的安全性"。 它应显示： "正在运行"。
 
     另外，还提供了一个 WMI 接口，用于检查如何使用可用于在 PowerShell 中显示信息的管理工具。
 
@@ -113,14 +113,12 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
     Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
     ```
 
-    有关如何中断显示的输出的信息，请参阅[启用基于虚拟化的代码完整性保护](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)。
+    *禁用 "Device guard"* -请注意，运行准备工具时，必须在测试中的 PC 上禁用 "device guard"，因为它可能会阻止加载驱动程序，并且驱动程序将不能用于测试。
 
-    *禁用设备防护*-请注意，在运行准备工具时，必须在正在测试的 PC 上禁用 device guard，因为 device guard 可能会阻止驱动程序加载，并且驱动程序将无法用于测试的准备工具。
-
-    *Optionaly 启用测试签名*-若要允许安装未签名的开发驱动程序，你可能想要使用 BCDEdit 启用测试签名。
+    *（可选）启用测试签名*-若要允许安装未签名的开发驱动程序，您可能希望使用 BCDEdit 启用测试签名。
 
     ```console
-    bcdedit /set TESTSIGNING ON 
+    bcdedit /set TESTSIGNING ON
     ```
 
 -   **安装测试驱动程序**
@@ -131,10 +129,10 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 
 
 
--   **安装 Device Guard 准备工具**
+-   **安装 DGReadiness 工具**
 
     **警告**  
-    由于设备保护准备工具会更改注册表值，可能会影响安全启动等功能，因此请使用不包含任何数据或应用程序的测试 PC。 运行测试后，你可能需要重新安装 Windows 以重新建立所需的安全配置。
+    由于 DGReadiness 工具更改注册表值，可能会影响安全启动等功能，因此请使用不包含任何数据或应用程序的测试 PC。 运行测试后，你可能需要重新安装 Windows 以重新建立所需的安全配置。
 
     1. 从此处下载此工具： [Device Guard 和 Credential Guard 硬件准备工具](https://www.microsoft.com/download/details.aspx?id=53337)。
 
@@ -180,9 +178,9 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
     | 黄色-警告 | 此设备可用于启用和使用 DG/CG，但不会有更多的安全优势。 |
     | 绿色-消息  | 此设备完全符合 DG/CG 要求。                                           |
 
-    除了屏幕输出之外，默认情况下，具有详细输出的日志文件位于 C：\\DGLogs
+    除了屏幕输出之外，默认情况下，具有详细输出的日志文件位于 C： \\ DGLogs
 
-    Device Guard 准备工具的输出中有5个步骤（或部分）。 步骤1包含驱动程序兼容性信息。
+    在该工具的输出中有5个步骤（或部分）。 步骤1包含驱动程序兼容性信息。
 
     ```text
      ====================== Step 1 Driver Compat ====================== 
@@ -203,7 +201,7 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 
     在上面所示的示例中，两个驱动程序被标识为不兼容。 TestDriver1 的内存部分对齐失败，TestDriver2 具有配置为使用可执行内存区域的池。
 
-    使用！ verifier 调试器扩展时，还可以使用7种类型的设备驱动程序不兼容的统计信息。 有关！ verifier 扩展的详细信息，请参阅[ **！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
+    使用！ verifier 调试器扩展时，还可以使用7种类型的设备驱动程序不兼容的统计信息。 有关！ verifier 扩展的详细信息，请参阅[**！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
 
     ```text
             Execute Pool Type Count:                3
@@ -215,11 +213,7 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
             IAT in Executable Section Count:        0
     ```
 
-
-
 使用下表来解释输出，并确定需要进行哪些驱动程序代码更改以修复不同类型的要求 HVCI 不兼容。
-
-
 
 <table>
 <colgroup>
@@ -279,7 +273,6 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 </tbody>
 </table>
 
-
 ---------
 
 不支持的重定位
@@ -287,8 +280,6 @@ Device Guard 准备工具旨在检查多种需求，以创建支持各种安全�
 <p>在 Windows 10 中，版本1507到 Windows 10，版本1607，因为使用地址空间布局随机化（ASLR），因此可能会出现地址对齐和内存重定位问题。  操作系统需要将地址从链接器设置其默认基址的位置重定位到 ASLR 分配的实际位置。 此重定位不能跨页面边界。  例如，请考虑在页面中以 offset 0x3FFC 开始的64位地址值。 它的地址值与0x0003 偏移量重叠到下一页。 在 Windows 10 版本1703之前，不支持此类型的重叠重定位。</p>
 
 <p>当全局结构类型变量初始值设定项具有指向另一个全局结构的未对齐指针时，可能会出现这种情况，这种情况下，链接器无法移动变量来避免跨越重定位。 链接器将尝试移动变量，但在某些情况下，它可能无法执行此操作（例如，具有较大的结构或不对齐的结构的大型数组）。 在适当的情况下，应使用<a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking)">/gy （COMDAT）</a>选项组装模块，以允许链接器尽可能地对齐模块代码。</p>
-
-
 
 ```cpp
 #include <pshpack1.h>
@@ -350,10 +341,9 @@ BAD_STRUCT MayHaveStraddleRelocations[4096] = { // as a global variable
 
 ---------
 
-
 ## <a name="script-customization"></a>脚本自定义
 
-下面是用于自定义脚本到 Device Guard 和 Credential Guard，无需 UEFI 锁定的 Regkeys 及其值的列表。
+下面是 Regkeys 的列表及其用于自定义脚本的值，用于在没有 UEFI 锁定的情况下要求 HVCI 和 Credential Guard。
 
 若要启用要求 HVCI 和 CG 而不使用 UEFI 锁：
 
@@ -369,17 +359,11 @@ REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "RequirePlatformS
 ```console
 verifier.exe /flags 0x02000000 /driver <driver.sys>
 ```
+
 若要在使用验证程序 GUI 时选择此选项，请选择 "*创建自定义设置*（对于代码开发人员）"，选择 "*下一步*"，然后选择 "_代码完整性检查_"。
 
 可以使用验证器命令行/query 选项显示当前的驱动程序验证程序信息。
 
 ```console
-verifier /query 
+verifier /query
 ```
-
-
-
-
-
-
-
