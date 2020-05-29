@@ -6,5 +6,5 @@
   href: threat-modeling-for-drivers.md
 - name: 适用于驱动程序开发人员的 Windows 安全模型
   href: windows-security-model.md
-- name: 使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性
+- name: 评估 HVCI 驱动程序兼容性
   href: use-device-guard-readiness-tool.md

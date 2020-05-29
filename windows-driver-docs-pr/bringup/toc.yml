@@ -10,7 +10,7 @@
           href: uefi-security.md
         - name: 统一可扩展固件接口 (UEFI)
           href: unified-extensible-firmware-interface.md
-        - name: Device Guard 和 Credential Guard
+        - name: 虚拟机监控程序保护的代码完整性 (HVCI)
           href: device-guard-and-credential-guard.md
         - name: 修复了 ComBuffer 和 Windows SMM 安全缓解表 (WSMT)
           href: fixed-combuffer-and-windows-smm-security-mitigation-table.md
