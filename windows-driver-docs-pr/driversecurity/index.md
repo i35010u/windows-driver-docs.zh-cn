@@ -6,12 +6,12 @@ ms.date: 02/23/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: eacdb18cce223d8274968fa518ff824cefeadbec
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 32a702a78c0ad1dc1ac8131fe017ddd22cc1d531
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "63371459"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153166"
 ---
 # <a name="driver-security-guidance"></a>驱动程序安全指南
 
@@ -46,8 +46,8 @@ ms.locfileid: "63371459"
 <td align="left"><p>本主题介绍了 Windows 安全模型如何应用于驱动程序，并说明了驱动程序编写者必须执行哪些工作来提高设备安全性。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="use-device-guard-readiness-tool.md" data-raw-source="[Use the Device Guard Readiness Tool to evaluate HVCI driver compatibility](use-device-guard-readiness-tool.md)">使用 Device Guard 准备工具来评估 HVCI 驱动程序兼容性</a></p></td>
-<td align="left"><p>本主题介绍了如何使用该工具来评估驱动程序在受虚拟机监控程序保护的代码完整性 (HVCI) 环境中的运行能力。 </p></td>
+<td align="left"><p><a href="use-device-guard-readiness-tool.md" data-raw-source="[Evaluate HVCI driver compatibility](use-device-guard-readiness-tool.md)">评估 HVCI 驱动程序兼容性</a></p></td>
+<td align="left"><p>本主题介绍了如何评估驱动程序在虚拟机监控程序保护的代码完整性 (HVCI) 环境中的运行能力。 </p></td>
 </tr>
 </tr>
 </tbody>
