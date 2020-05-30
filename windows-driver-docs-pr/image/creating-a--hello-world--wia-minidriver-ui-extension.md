@@ -1,54 +1,57 @@
 ---
-title: 创建"Hello World"WIA 微型驱动程序 UI 扩展
-description: 创建"Hello World"WIA 微型驱动程序 UI 扩展
+title: 创建 "Hello World" WIA 微型驱动程序 UI 扩展
+description: 创建 "Hello World" WIA 微型驱动程序 UI 扩展
 ms.assetid: 8de1f8ca-f618-44d7-b6dd-c02cdee8a556
-ms.date: 04/20/2017
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d164e80fab69b0333ba190cf033c3f32437405
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1082eac8969fdaf51fedb6da972f5adc5bdde84
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386322"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223525"
 ---
-# <a name="creating-a-hello-world-wia-minidriver-ui-extension"></a>创建"Hello World"WIA 微型驱动程序 UI 扩展
+# <a name="creating-a-hello-world-wia-minidriver-ui-extension"></a>创建 "Hello World" WIA 微型驱动程序 UI 扩展
 
+WIA 微型驱动程序 UI 扩展是一个简单的 DLL，它导出几个函数并实现至少以下四个 COM 接口标识符（IID）之一：
 
+**IID \_ IWiaUIExtension**
 
+**IWiaUIExtension**接口的接口标识符（IID）。 这是标准的 WIA 接口，用于替换 "我的电脑" 和 "控制面板" 中 "微型驱动程序" 设备图标，并替换 Microsoft common 微型驱动程序 UI 对话框。
 
+**IID \_ IShellExtInit**
 
-WIA 微型驱动程序的 UI 扩展是一个简单的 DLL 将导出了一些功能并实现在至少一个四个以下 COM 接口标识符 (IID):
+**IShellExtInit**接口的 IID。 这是用于为属性表、快捷菜单和拖放处理程序（在非默认拖放操作期间向快捷菜单添加项的扩展）初始化 Shell 扩展的标准 Windows Shell 接口。
 
-<a href="" id="iid-iwiauiextension"></a>IID\_IWiaUIExtension  
-接口标识符 (IID) **IWiaUIExtension**接口。 这是用来替换我的电脑和控件面板中的微型驱动程序设备图标并将为 Microsoft 公共微型驱动程序用户界面对话框的标准 WIA 接口。
+**IID \_ IContextMenu**
 
-<a href="" id="iid-ishellextinit"></a>IID\_IShellExtInit  
-IID **IShellExtInit**接口。 这是标准的 Windows Shell 接口用来初始化属性表、 快捷方式菜单和拖放处理程序 （在非默认拖放操作期间将项添加到快捷菜单的扩展） 的 Shell 扩展。
+**ContextMenu**接口的 IID。 这是标准的 Windows Shell 接口，用于创建或合并与 Shell 对象关联的快捷菜单（我的电脑和控制面板中的 WIA 微型驱动程序图标）。
 
-<a href="" id="iid-icontextmenu"></a>IID\_IContextMenu  
-IID **ContextMenu**接口。 这是标准的 Windows Shell 接口用于创建或合并与外壳对象 （WIA 微型驱动程序图标在我的电脑和控制面板中） 关联的快捷菜单。
+**IID \_ IShellPropSheet**
 
-<a href="" id="iid-ishellpropsheet"></a>IID\_IShellPropSheet  
-IID **IShellPropSheet**接口。 这是用来添加或替换为 Shell 对象 （我的电脑和控制面板中的图标进行 WIA 的微型驱动程序） 显示在属性表中的页的标准 Windows Shell 接口。
+**IShellPropSheet**接口的 IID。 这是用于在为 Shell 对象显示的属性表中添加或替换页面的标准 Windows Shell 接口（我的电脑和控制面板中的 WIA 微型驱动程序图标）。
 
-"Hello World"WIA 微型驱动程序的 UI 扩展包含以下文件：
+"Hello World" WIA 微型驱动程序 UI 扩展包含以下文件：
 
-<a href="" id="hellowld-inf"></a>*hellowld.inf*  
-这是安装文件 (修改以使用原始安装此 UI 扩展插件*hellowld*示例)。
+*hellowld .inf*
 
-<a href="" id="hellowldui-def"></a>*hellowldui.def*  
-这是包含两个 COM 导出定义文件**DllGetClassObject**并**DllCanUnloadNow** （同时描述了 Windows SDK 文档中）。
+这是安装文件（已修改为随原始*hellowld*示例一起安装此 UI 扩展）。
 
-<a href="" id="hellowldui-cpp"></a>*hellowldui.cpp*  
-这是 WIA UI 扩展插件实现。
+*hellowldui*
 
-### <a name="installing-wia-ui-extensions"></a>安装 WIA UI 扩展
+这是包含两个 COM 导出（ **DllGetClassObject**和**DllCanUnloadNow** ）的定义文件（在 Windows SDK 文档中介绍了这两个）。
 
-若要安装 WIA UI 扩展 DLL，添加**UI 类 ID =**{&lt;UI 扩展 DLL 的 CLSID&gt;} 下 INF 文件**DeviceData**部分。 此 CLSID 允许客户端调用**CoCreateInstance** （Microsoft Windows SDK 文档中介绍），并获取 WIA UI 扩展插件的受支持的接口。
+*hellowldui .cpp*
 
-下面的示例 INF 段派生自中的 WIA 微型驱动程序示例[创建 Hello World WIA 微型驱动程序](creating-a---hello-world---wia-minidriver.md)。 默认情况下使用的 CLSID 应该是公共对话框、 图标和属性页的 Microsoft 提供的 CLSID。
+这是 WIA UI 扩展实现。
 
-建议所有 WIA UI 扩展 Dll 应自都注册 COM 对象，以促进更容易安装。 此示例不包含自行注册的 COM 对象。
+## <a name="installing-wia-ui-extensions"></a>安装 WIA UI 扩展
+
+若要安装 WIA UI 扩展 DLL，请将 Ui 扩展插件的**Ui 类 ID =**{CLSID] 添加 &lt; &gt; 到**DeviceData**节下的 INF 文件。 此 CLSID 允许客户端调用**CoCreateInstance** （如 Microsoft Windows SDK 文档中所述），并获取 WIA UI 扩展支持的接口。
+
+以下示例 INF 代码段派生自[创建 "Hello World" Wia 微型驱动程序](creating-a---hello-world---wia-minidriver.md)中的 WIA 微型驱动程序示例。 默认情况下，使用的 CLSID 应是 Microsoft 提供的用于常见对话框、图标和属性页的 CLSID。
+
+建议所有 WIA UI 扩展 Dll 都应该自注册 COM 对象，以便更轻松地进行安装。 此示例不包含自行注册的 COM 对象。
 
 ```INF
 [WIADevice.DeviceData]
@@ -57,7 +60,7 @@ UI DLL=sti.dll
 UI Class ID={4DB1AD10-3391-11D2-9A33-00C04FA36145}
 ```
 
-下面的示例是一个完整的 INF 文件，用于设置**UI 类 ID**对 CLSID 的子项*hellowldui*示例 UI 扩展。
+下面的示例是一个完整的 INF 文件，它将**UI 类 ID**子项设置为*Hellowldui*示例 UI 扩展的 CLSID。
 
 ```INF
 ; HELLOWLD.INF  -- Hello World WIA Minidriver setup file (with a WIA UI extension DLL)
@@ -137,7 +140,7 @@ WIADevice.DeviceDesc="Hello World WIA Minidriver"
 Location="Hello World WIA Minidriver Installation Source"
 ```
 
-*Hellowldui.def*文件应包含以下：
+*Hellowldui*文件应包含以下内容：
 
 ```make
 LIBRARY HELLOWLDUI
@@ -147,7 +150,7 @@ EXPORTS
         DllCanUnloadNow     PRIVATE
 ```
 
-*Hellowldui.cpp*文件应包含以下：
+*Hellowldui*文件应包含以下内容：
 
 ```cpp
 #ifndef WIN32_LEAN_AND_MEAN
@@ -352,14 +355,6 @@ extern "C" STDAPI DllGetClassObject(REFCLSID rclsid,REFIID riid,LPVOID *ppv)
 }
 ```
 
-### <a name="adding-a-custom-device-icon"></a>添加自定义设备图标
+## <a name="adding-a-custom-device-icon"></a>添加自定义设备图标
 
-前面的示例是如何替换为你的设备的默认图标的示例。 替换默认图标可以指导用户在使用正确的设备，如果安装多个设备的理想方法。 如果图标类似于连接的设备，它将会更直观的用户。
-
- 
-
- 
-
-
-
-
+前面的示例举例说明了如何替换设备的默认图标。 如果安装了多个设备，则替换默认图标可能是指导用户使用正确设备的理想方法。 如果图标类似于连接的设备，则会更直观地用于用户。

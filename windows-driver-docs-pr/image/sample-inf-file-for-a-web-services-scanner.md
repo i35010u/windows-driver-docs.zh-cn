@@ -2,36 +2,34 @@
 title: Web 服务扫描仪的示例 INF 文件
 description: Web 服务扫描仪的示例 INF 文件
 ms.assetid: 1e65739f-9216-4962-9108-60ba291ff052
-ms.date: 04/20/2017
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 531b139c8a10339c50d273829fe7c62c676b152c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eea1fda2c71bc8446e4e7492d68d88ff55694bf8
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381506"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223554"
 ---
 # <a name="sample-inf-file-for-a-web-services-scanner"></a>Web 服务扫描仪的示例 INF 文件
 
+以下 INF 文件*Sti*演示如何安装 WIA 驱动程序。 将突出显示*WSDScan*所需的项。
 
-下面的 INF 文件， *Sti.inf*，演示如何安装 WIA 驱动程序。 所需的条目*WSDScan.sys*突出显示。
-
-**请注意**  的设备硬件 Id 的要求和**主键\_设备\_HardwareIds** INF 下例中引用的属性中所述[PNP X 实施人员指南](https://go.microsoft.com/fwlink/p/?linkid=242570)。
-
- 
+> [!NOTE]
+> " [Pnp-x 实施者指南](https://go.microsoft.com/fwlink/p/?linkid=242570)" 中介绍了在以下 INF 示例中引用的设备硬件 Id 和**PKEY \_ 设备 \_ HardwareIds**属性的要求。
 
 ```INF
 ;
 ; MyWSScanner.inf - sample installation file that shows how
-; to install a WIA driver for a WS scanner by using the inbox 
+; to install a WIA driver for a WS scanner by using the inbox
 ; WSDScan.sys kernel driver
 ;
 [Version]
 Signature="$WINDOWS NT$"
 Class=Image
-ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f} 
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
 Provider=%Mfg%
-DriverVer=1/17/2006,1.0.0.0 ; replace with the actual driver date 
+DriverVer=1/17/2006,1.0.0.0 ; replace with the actual driver date
 ; and version
 
 [SourceDisksFiles.x86]
@@ -59,10 +57,10 @@ DefaultDestDir = 11
 %Mfg%=Models,NTx86,NTamd64,NTia64
 
 ;
-; Replace UMB\PnPX_YourDevice_HardwareID in the three Models 
-; sections below to match the actual hardware IDs and compatible 
-; IDs from the metadata that is supplied by the device, as it 
-; is described in the PNP-X Implementer's Guide for the 
+; Replace UMB\PnPX_YourDevice_HardwareID in the three Models
+; sections below to match the actual hardware IDs and compatible
+; IDs from the metadata that is supplied by the device, as it
+; is described in the PNP-X Implementer's Guide for the
 ; PKEY_Device_HardwareIds property:
 ;
 
@@ -93,21 +91,21 @@ MyWIADriver.dll
 
 ;
 ; Do not forget to replace 00000000-0000-0000-0000-000000000000
-; in the AddReg section below with the actual UUID for your WIA 
+; in the AddReg section below with the actual UUID for your WIA
 ; minidriver:
 ;
 
 [WSDScanDriver.AddReg]
 HKR,,HardwareConfig,1,1 ; generic WDM device
-HKR,,USDClass,,"{00000000-0000-0000-0000-000000000000}" 
+HKR,,USDClass,,"{00000000-0000-0000-0000-000000000000}"
 ; the GUID for the WIA mini-driver
-HKCR,CLSID\{00000000-0000-0000-0000-000000000000},,,"<Description 
+HKCR,CLSID\{00000000-0000-0000-0000-000000000000},,,"<Description
 of your Web Services scanner WIA device>"
 HKCR,CLSID\{00000000-0000-0000-0000-000000000000}\InProcServer32,,,%11%\YourWIADriver.dll
 HKCR,CLSID\{00000000-0000-0000-0000-000000000000}\InProcServer32,ThreadingModel,,"Both"
 
 [WSDScanDriver.DeviceData]
-Server=local           ; the WIA mini-driver runs on the same 
+Server=local           ; the WIA mini-driver runs on the same
 machine as the client application
 
 [WSDScanDriver.Events]
@@ -135,11 +133,3 @@ ScanToFaxEvent.Desc="Scan To Fax"
 ScanToOCREvent.Desc="Scan To OCR"
 ScanToEmailEvent.Desc="Scan To E-mail"
 ```
-
- 
-
- 
-
-
-
-
