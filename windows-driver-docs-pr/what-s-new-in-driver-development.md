@@ -2,14 +2,14 @@
 title: 驱动程序开发中的新增功能
 description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
-ms.date: 04/28/2020
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 678be02ff0d40401e88776b1eef8aa09a921c0ee
-ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
+ms.openlocfilehash: 6ff12920674c792ddd23ff9a060c03af2d74f782
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83642593"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851220"
 ---
 # <a name="whats-new-in-driver-development"></a><a name="top"></a>驱动程序开发中的新增功能
 
@@ -40,6 +40,22 @@ Windows 10 版本 2004 中提供了几个新的和增强的显示驱动程序和
 ### <a name="storage-drivers"></a>存储驱动程序
 
 存储微型端口驱动程序现在可以获取和设置有关设备的内部状态的详细信息，包括重置设备的功能。 请从参阅 [**IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_device_internal_log) 和 [**StorPortHardwareReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storporthardwarereset) 开始了解相关信息。
+
+### <a name="windows-debugger"></a>Windows 调试器
+
+#### <a name="windbg-preview"></a>WinDbg 预览版
+
+[WinDbg 预览版](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-using-windbg-preview)的更新包含新功能，例如 [WinDbg 预览版 - 时间线](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-timeline-preview)。 可通过时间旅行时间线直观显示时间旅行代码执行跟踪。
+
+#### <a name="stop-codes"></a>停止代码
+
+- 更新 [Bug 检查代码参考](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)主题，向 [Bug 检查 0x1A：MEMORY_MANAGEMENT](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1a--memory-management) 和 [Bug 检查 0xC4：DRIVER_VERIFIER_DETECTED_VIOLATION](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) 主题添加了新参数。
+
+- 新的停止代码，例如 [Bug 检查 0x1DA：HAL_BLOCKED_PROCESSOR_INTERNAL_ERROR](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1da--hal-blocked-processor-internal-error)、[Bug 检查 0x1A2：WIN32K_CALLOUT_WATCHDOG_BUGCHECK](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1a2--win32k-callout-watchdog-bugcheck) 和 [Bug 检查 0x119：VIDEO_SCHEDULER_INTERNAL_ERROR](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x119---video-scheduler-internal-error)。
+
+### <a name="driver-security"></a>驱动程序安全性
+
+更新了[驱动程序安全清单](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/driver-security-checklist) 以使用 BinSkim 工具。
 
 ## <a name="related-topics"></a>“相关主题”
 

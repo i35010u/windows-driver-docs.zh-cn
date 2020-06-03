@@ -4,12 +4,12 @@ description: 发布者和作者使用 Microsoft 驱动程序度量的说明来�
 ms.topic: article
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 86813b4c730ff62fea0f2eeeb2568065178b8bd1
-ms.sourcegitcommit: 85a89ea01c5018bc09e508dadaace5e6b428555b
+ms.openlocfilehash: 19413615340b3c4d8a13442fcdd13580c77f8268
+ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394011"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84108614"
 ---
 # <a name="overview-of-the-microsoft-driver-measures"></a>Microsoft 驱动程序度量概述
 
@@ -47,12 +47,14 @@ Microsoft 将度量定义为可量化的指标，用于衡量公司所提供的�
 
 ## <a name="evaluating-by-targeting-cohort"></a>按目标队列评估
 
-可以开发一个驱动程序来支持多个系统和设备。 通过聚合驱动程序在所有目标设备（见下面的目标队列定义）中的度量结果来评估驱动程序的质量，这并不总是足够或准确的。 为了确保没有低性能的目标队列，我们分析这些队列，以发现任何不符合度量要求的队列。 所有驱动程序度量都用于按目标队列评估驱动程序质量，因为它们能够支持按目标队列评估。 请查看每个度量定义页中是否标有新的度量属性 `cohort-capable`。 如果度量被标记为 `cohort-capable`，表示度量能够支持按目标队列评估。
+可以开发一个驱动程序来支持多个系统和设备。 通过聚合驱动程序在所有目标设备（见下面的目标队列定义）中的度量结果来评估驱动程序的质量，这并不总是足够或准确的。 为了确保没有低性能的目标队列，我们分析这些队列，以发现任何不符合度量要求的队列。 所有驱动程序度量都用于按目标队列评估驱动程序质量，因为它们能够支持按目标队列评估。 请查看每个度量定义页中是否标有新的度量属性“cohort-capable”。 如果度量被标记为“cohort-capable”，表示度量能够支持按目标队列评估。
 
 ### <a name="targeting-cohortsclusters-definition"></a>目标队列/群集定义
+
 目标队列/群集的定义为，发货标签指定和共用相同的目标属性（包括 HWID、CHID 和 OS 版本）的一组 Windows 系统和设备。
 
 ### <a name="cohort-evaluation-passfail-criteria"></a>队列评估通过/未通过条件
+
 如果一个或多个驱动程序度量不符合通过条件，目标队列就不能通过评估（未通过）。 如果在一个或多个目标队列中检测到一个或多个评估未通过，驱动程序可能会遭到拒绝。  启用后，将会把至少所需的队列实例添加到度量定义页。
 
 ## <a name="data-sources-for-measures"></a>度量的数据源
