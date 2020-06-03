@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b45861821e33ac7426dedbf3f940adca4bfd4b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6aa376e34cb96f62cdab31785874caa60b5a05ee
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "73589235"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153172"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -40,9 +40,9 @@ ms.locfileid: "73589235"
 
 - [购买 DigiCert EV 代码签名证书](https://go.microsoft.com/fwlink/?LinkId=393249)
 
-  1. 在“Sysdevs 的 DigiCert 代码签名证书”  页上，单击“开始”  。
+  1. 在“Sysdevs 的 DigiCert 代码签名证书”页上，单击“开始”。
 
-  2. 在“DigiCert 订单”  页上（步骤 1）的“代码签名”  部分中，单击“EV 代码签名证书”  、填写其余的表单，然后单击“继续”  。
+  2. 在“DigiCert 订单”页上（步骤 1）的“代码签名”部分中，单击“EV 代码签名证书”、填写其余的表单，然后单击“继续”。
 
   3. 按照 DigiCert 提供的说明购买证书。
 
@@ -96,9 +96,9 @@ ms.locfileid: "73589235"
 - 不推荐将使用在 2015 年 7 月 29 日后颁发的 SHA-1 或 SHA-256 证书进行交叉签名的驱动程序用于 Windows 10。
 - 有关移动到 SHA-256 证书的工作的详细信息，请参阅[验证码签名和时间戳的 Windows 强制](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)
 
-### <a name="device-guard"></a>Device Guard
+### <a name="windows-defender-application-control"></a>Microsoft Defender 应用程序控制
 
-- 企业可以实现某项设备保护策略，以使用 Windows 10 企业版修改驱动程序签名要求。 Device Guard 提供企业定义的代码完整性策略，该策略可配置为要求至少一个证明签名的驱动程序。 有关 Device Guard 的详细信息，请参阅 [Device Guard 认证和合规性](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)。
+- 企业可实现一项策略，使用 Windows 10 企业版修改驱动程序签名要求。 Microsoft Defender 应用程序控制 (WDAC) 提供企业定义的代码完整性策略，该策略可配置为要求至少一个证明签名的驱动程序。 有关 WDAC 的详细信息，请参阅 [关于 Microsoft Defender 应用程序控制部署过程的计划和入门](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
 ### <a name="windows-server"></a>Windows Server
 
@@ -131,6 +131,6 @@ ms.locfileid: "73589235"
 | Windows IoT 企业版 - DG 已启用 | \*配置相关      | \*配置相关          | \*配置相关                                                      |
 | Windows IoT 核心版(1)                | 是（不需要）             | 是（不需要）                 | 是（交叉签名也适用于 2015 年 7 月 29 日后颁发的证书） |
 
-\*配置相关 - 通过 Windows 10 企业版，组织可以使用 Device Guard 来定义自定义驱动程序签名要求。 有关 Device Guard 的详细信息，请参阅 [Device Guard 认证和合规性](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)。
+\*配置从属 - 通过 Windows 10 企业版，组织可使用 Microsoft Defender 应用程序控制 (WDAC) 来定义自定义签名要求。 有关 WDAC 的详细信息，请参阅 [关于 Microsoft Defender 应用程序控制部署过程的计划和入门](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
 (1) 制造商生成装有 IoT 核心版的零售产品（即不用于开发用途）需要驱动程序签名。 有关批准的证书颁发机构 (CA) 列表，请参阅[适用于内核模式代码签名的交叉证书](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)。 请注意，如果 UEFI 安全启动已启用，则必须对驱动程序进行签名。
