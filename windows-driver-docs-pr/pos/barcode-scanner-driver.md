@@ -61,7 +61,7 @@ GitHub 上提供了[Windows 驱动程序示例](https://github.com/Microsoft/Win
 
     `bcdedit.exe /set TESTSIGNING on`
 
-1. 重启计算机。
+1. 重新启动计算机。
 
     > [!NOTE]
     > 如果以前启用了测试签名，则不需要重新启动。
@@ -70,7 +70,7 @@ GitHub 上提供了[Windows 驱动程序示例](https://github.com/Microsoft/Win
 
     在该文件夹中，你将看到以下文件：
 
-    | 文件                        | 说明                                                                  |
+    | 文件                        | 描述                                                                  |
     |-----------------------------|------------------------------------------------------------------------------|
     | SampleBarcodeScannerDrv | 驱动程序文件。                                                             |
     | SampleBarcodeScannerDrv .inf | 一个 INF 文件，其中包含安装驱动程序所需的信息。          |
