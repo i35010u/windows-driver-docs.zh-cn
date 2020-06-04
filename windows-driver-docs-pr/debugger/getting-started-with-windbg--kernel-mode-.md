@@ -2,14 +2,14 @@
 title: WinDbg 入门（内核模式）
 description: 本主题提供的动手练习将帮助你开始使用 WinDbg 作为内核模式调试器。
 ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
-ms.date: 02/20/2020
+ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c6ae75d07f3b62ebf64bb45b88138d95d64ecc06
-ms.sourcegitcommit: 959841f2404a4729b497ceebaf32915f5987cd6f
+ms.openlocfilehash: 2a2ea99d6be59ed31ad8b9fb46c7ddd00c8dae06
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84160311"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84336392"
 ---
 # <a name="getting-started-with-windbg-kernel-mode"></a>WinDbg 入门（内核模式）
 
@@ -405,7 +405,7 @@ Windows 的较早版本的另一个选项是使用 USB 或串行电缆等直接�
 - [bc（断点清除）](bc--breakpoint-clear-.md)
 - "**调试**" 菜单上的 "**单步**执行" 命令（**F11**）
 - [！进程](-process.md)
-- [!thread](-thread.md)
+- [！ thread](-thread.md)
 - [!devnode](-devnode.md)
 - [!devstack](-devstack.md)
 - [!drvobj](-drvobj.md)

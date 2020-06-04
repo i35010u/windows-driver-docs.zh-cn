@@ -4,7 +4,7 @@ description: PLMDebug 是一种工具，使您可以使用 Windows 调试器调�
 ms.assetid: 68BE8F5D-6425-43E2-B5BC-C1D35614AB32
 keywords:
 - PLMDebug Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/03/2020
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 80b57a1136d17374eca7ef24edf3d2b80da6d73d
-ms.sourcegitcommit: 9d57e0d7e4e2b3f5f564fba99c8d71a46f73e7e2
+ms.openlocfilehash: 20552b490a3f4a5e15c64554d5fe08b024cdb4c8
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/03/2020
-ms.locfileid: "84318281"
+ms.locfileid: "84336386"
 ---
 # <a name="plmdebug"></a>PLMDebug
-
 
 PLMDebug 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理（PLM）下运行。 使用 PLMDebug，可以手动控制挂起、继续和终止 Windows 应用。
 
 **提示**   使用 Windows 10 版本1607或更高版本，可以使用 UWP 命令（如 createpackageapp）调试 UWP 应用。 有关详细信息，请参阅[使用 WinDbg 调试 UWP 应用](debugging-a-uwp-app-using-windbg.md)。
-
- 
 
 **从何处获取 PLMDebug**
 
@@ -46,7 +43,6 @@ plmdebug /activateBgTaskTaskId "{TaskID}"
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
 
 <span id="_______Package"></span><span id="_______package"></span><span id="_______PACKAGE"></span>*包*  
 包的完整名称或正在运行的进程的 ID。
@@ -170,7 +166,7 @@ Package state: Terminated
 
 **手动激活后台任务**
 
-假设要手动激活后台任务以进行调试。 可以查询已注册的后台任务的列表，然后通过 plmdebug 激活该任务。
+若要手动激活用于调试的后台任务，可以查询已注册的后台任务的列表，然后通过 plmdebug 激活该任务。
 
 首先查询已注册的一组后台任务：
 
@@ -185,23 +181,12 @@ SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
 
 **plmdebug/enabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
-使用其注册 GUID 激活所需的任务。
+然后，使用所枚举的注册 GUID 激活所需的任务。
 
 **plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [如何在 Windows 应用程序中触发挂起、继续和后台事件](https://go.microsoft.com/fwlink/p/?LinkID=267916)
 
 [Windows 调试工具中包含的工具](extra-tools.md)
-
- 
-
- 
-
-
-
-
-
-
