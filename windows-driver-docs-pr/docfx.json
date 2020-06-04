@@ -61,8 +61,9 @@
         }
       }
     },
-    "fileMetadata": {
-      "author": {
+     "fileMetadata": {
+      "author":
+      {
         "**/3dprint/*.md": "barrygolden",
         "**/acpi/*.md": "barrygolden",
         "**/audio/*.md": "DOMARS",
@@ -87,10 +88,10 @@
         "**/image/*.md": "barrygolden",
         "**/install/*.md": "tedhudek",
         "**/kernel/*.md": "tedhudek",
-        "**/mobilebroadband/*.md": "billlattimer",
+        "**/mobilebroadband/*.md": "aviviano",
         "**/multifunction/*.md": "barrygolden",
-        "**/netcx/*.md": "billlattimer",
-        "**/network/*.md": "billlattimer",
+        "**/netcx/*.md": "aviviano",
+        "**/network/*.md": "aviviano",
         "**/nfc/*.md": "EliotSeattle",
         "**/parports/*.md": "EliotSeattle",
         "**/partnerapps/*.md": "EliotSeattle",
@@ -112,9 +113,9 @@
         "**/usbcon/*.md": "billlattimer",
         "**/wdf/*.md": "tedhudek",
         "**/wdtf/*.md": "EliotSeattle",
-        "**/whea/*.md": "EliotSeattle"
-      },
-      "ms.author": {
+        "**/whea/*.md": "EliotSeattle"     },
+      "ms.author":
+      {
         "**/3dprint/*.md": "bagold",
         "**/acpi/*.md": "bagold",
         "**/audio/*.md": "domars",
@@ -139,11 +140,11 @@
         "**/image/*.md": "bagold",
         "**/install/*.md": "tedhudek",
         "**/kernel/*.md": "tedhudek",
-        "**/mobilebroadband/*.md": "billla",
+        "**/mobilebroadband/*.md": "amvivian",
         "**/multifunction/*.md": "bagold",
-        "**/netcx/*.md": "billla",
-        "**/network/*.md": "billla",
-        "**/nfc/*.md": "eliotgra",
+        "**/netcx/*.md": "amvivian",
+        "**/network/*.md": "amvivian",
+       "**/nfc/*.md": "eliotgra",
         "**/parports/*.md": "eliotgra",
         "**/partnerapps/*.md": "eliotgra",
         "**/pci/*.md": "eliotgra",
@@ -164,8 +165,8 @@
         "**/usbcon/*.md": "billla",
         "**/wdf/*.md": "tedhudek",
         "**/wdtf/*.md": "eliotgra",
-        "**/whea/*.md": "eliotgra"
-      }
+        "**/whea/*.md": "eliotgra"  }
+      
     },
     "externalReference": [],
     "template": "op.html",
