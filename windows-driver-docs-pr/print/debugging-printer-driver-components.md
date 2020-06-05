@@ -5,83 +5,92 @@ ms.assetid: 550cc8fe-5520-4521-8c4e-9c8c80521357
 keywords:
 - 调试驱动程序 WDK 打印机
 - 打印机驱动程序 WDK，调试
-- 用户模式下调试 WDK 打印机
+- 用户模式调试 WDK 打印机
 - 宏 WDK 打印机
 - 全局变量 WDK 调试
-ms.date: 01/30/2019
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fbe2ad35d80877ba3ebe3c1ef94c1bb581f3483
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 336bb2e91a47ce512fa618d6e2d74726d7fc12ba
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323136"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428314"
 ---
 # <a name="debugging-printer-driver-components"></a>调试打印机驱动程序组件
 
-如果你正在开发呈现插件的打印机驱动程序或插件的用户界面，可以启用这些组件中的调试消息。 调试的全局变量节中所述，可以使用全局调试变量来控制在调试器窗口中显示的消息中的详细信息的级别。
+如果要开发打印机驱动程序呈现插件或用户界面插件，可以在这些组件中启用调试消息。 如 "全局调试变量" 一节中所述，可以使用全局调试变量控制调试器窗口中显示的消息的详细级别。
 
-调试消息宏节所述的宏可用于将消息发送到各种条件下在调试器窗口。 此外，您可以使用本部分中的信息可在 Microsoft 通用打印机驱动程序 (Unidrv) 或 PostScript 的打印机驱动程序 (Pscript) 呈现器的调试消息，前提是您已生成的这些 Dll。
-
-在接下来的两部分包含用于调试的用户模式驱动程序和调试的一些常规提示的步骤。
-
-## <a name="preparing-for-user-mode-debugging"></a>准备用于用户模式下调试
-
-若要开始调试打印机驱动程序和其组件：
-
-1. 安装最新调试工具。 请参阅[下载 Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
-
-1. 安装从正确的符号[Windows 符号包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)
+您可以使用在 "调试消息宏" 部分中讨论的宏，在各种条件下向调试器窗口发送消息。 此外，还可以使用此部分中的信息在 Microsoft 通用打印机驱动程序（Unidrv）或 PostScript 打印机驱动程序（Pscript）呈现器中启用调试消息，前提是已选中这些 Dll 的版本。
 
 > [!NOTE]
-> 它是调试器的非常重要，使用最新版本。
+> 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
+> 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。
 
-最好安装仅您感兴趣调试的组件的内部的版本。 通常您会替换为以下发布二进制文件及其相应的检查内部版本号：
+以下两节包含调试用户模式驱动程序和一些常规调试提示的步骤。
 
-- Unidrv.dll
-- Unidrvui.dll
-- Unires.dll
+## <a name="preparing-for-user-mode-debugging"></a>准备用户模式调试
 
-此外应安装 Oemuni 示例数据还是正在调试的打印机驱动程序的内部的版本。 使用这种方法，而不是安装整个已检验的版本系统的优点是不会减慢整个系统。
+若要开始调试打印机驱动程序及其组件：
 
-## <a name="starting-a-user-mode-debugging-session"></a>启动用户模式下调试会话
+1. 安装最新的调试工具。 请参阅[下载适用于 Windows 的调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)
 
-若要开始调试用户模式下，在**文件**在 Windbg 调试器中，选择菜单**附加到进程**。 附加到调试器的过程取决于您尝试调试的方案。 对于打印机驱动程序，必须将调试器附加到的打印应用程序或到后台处理程序处理 (Spoolsv.exe)。 请记住，打印应用程序加载配置/用户界面模块，而后台进程将加载呈现模块。 但是，有的差异"文件:"打印后台处理不会发生，其中的打印应用程序的结果，还加载呈现模块。 因此，您必须确保附加到正确的进程。
+1. 从[Windows 符号包](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)安装正确的符号
 
 > [!NOTE]
-> 用于用户模式下调试不需要两个单独的计算机。
+> 使用最新版本的调试器非常重要。
 
-以下过程将帮助你准备好调试 Oemuni 示例。
+建议仅安装对调试感兴趣的组件的已检查生成。 通常会将以下零售二进制文件替换为其对应的已选中版本：
 
-1. 将 Oemuni 示例安装在"文件:"端口。
-1. 通过单击启动写字板应用程序**启动**菜单中，选择**所有程序**，选择**附件**，然后选择**写字板**.
-1. 在 WinDbg**文件**菜单中，选择**附加到进程**。 在可用进程的列表中选择**WordPad.exe**。
-1. 从写字板中启动打印作业。 现在您就可以调试 Oemuni 示例。
+- Unidrv
 
-您可以启用详细调试开启 giDebugLevel 变量。 其默认值为 3，该项表示警告。 如果设置为 1，则表示详细。 若要设置 Unidrv.dll 与第二个值，请在调试器中键入以下命令：
+- Unidrvui
+
+- Unires
+
+还应安装 Oemuni 示例或正在调试的打印机驱动程序的已检查版本。 使用此方法（而不是安装整个已检查的生成系统）的优点是不会降低整个系统的速度。
+
+## <a name="starting-a-user-mode-debugging-session"></a>启动用户模式调试会话
+
+若要开始用户模式调试，请在 Windbg 调试器中的 "**文件**" 菜单上选择 "**附加到进程**"。 您将调试器附加到的过程取决于您尝试调试的方案。 对于打印机驱动程序，必须将调试器附加到打印应用程序或后台处理程序进程（Spoolsv.exe）。 请记住，打印应用程序加载配置/用户界面模块，而后台处理程序进程加载呈现模块。 但是，"文件：" 打印存在差异，因此不会进行后台打印，因此，打印应用程序也会加载呈现模块。 因此，你必须确保附加到正确的进程。
+
+> [!NOTE]
+> 用户模式调试不需要两个单独的计算机。
+
+以下过程将使你可以调试 Oemuni 示例。
+
+1. 在 "FILE：" 端口上安装 Oemuni 示例。
+
+1. 通过依次单击 "**开始**" 菜单、"**所有程序**"、"**附件**"，然后选择 "**写字板**"，启动 "写字板" 应用程序。
+
+1. 在 "WinDbg**文件**" 菜单上，选择 "**附加到进程**"。 在可用进程列表中，选择 " **WordPad**"。
+
+1. 从写字板启动打印作业。 你现在已准备好调试 Oemuni 示例。
+
+可以通过打开 giDebugLevel 变量来启用详细调试。 其默认值为3，表示警告。 如果设置为1，则表示详细。 若要通过 Unidrv 设置后一个值，请在调试器中键入以下命令：
 
 ```cmd
 > ed unidrv!giDebugLevel 1
 ```
 
-时要在运行 Oemuni 示例，同一个调试变量也适用，因此若要启用详细调试，请键入以下命令：
+运行 Oemuni 示例时，还会应用相同的调试变量，因此若要启用详细调试，请键入以下命令：
 
 ```cmd
 > ed oemuni!giDebugLevel 1
 ```
 
-您还可以向 Oemuni 示例添加您自己的调试语句。
+你还可以将自己的 debug 语句添加到 Oemuni 示例。
 
-有关调试的值设置的详细信息，请参阅 WinDbg 文档，其中介绍可用的命令，并概述了设置用户模式下调试所需的步骤。 若要访问的文档，在 WinDbg**帮助**菜单中，选择**内容**。
+有关设置调试值的详细信息，请参阅 WinDbg 文档，其中描述了设置用户模式调试所需的可用命令和概述步骤。 若要访问文档，请在 WinDbg 的 "**帮助**" 菜单上选择 "**内容**"。
 
-## <a name="global-debug-variable"></a>调试全局变量
+## <a name="global-debug-variable"></a>全局调试变量
 
-通过其 Debug.h 和 Debug.cpp 文件中的 Oemui 和 Oemuni 示例声明 giDebugLevel 全局变量。 可以通过修改 giDebugLevel 的值：
+GiDebugLevel 全局变量由 Oemui 和 Oemuni 示例在其 Debug.exe 和 Debug .cpp 文件中声明。 可以通过以下方式修改 giDebugLevel 的值：
 
-- 在调试器中的其值更改
-- 重新定义其在插件中的值
+- 在调试器中更改其值
+- 在插件中重新定义其值
 
-可以将 giDebugLevel 设置为以下值之一：
+可以将 giDebugLevel 设置为以下任意值：
 
 ```cpp
 #define DBG_VERBOSE 1
@@ -93,45 +102,45 @@ ms.locfileid: "63323136"
 
 ## <a name="debug-message-macros"></a>调试消息宏
 
-下列宏用于调试目的。 仅当 giDebugLevel 全局变量，发出的调试消息的控件，设置为特定值，多个执行操作。 宏扩展到空格免费生成。 以下是他们执行的操作及其参数的简要说明。
+以下宏用于调试目的。 其中的几个只在 giDebugLevel 全局变量（控制发出的调试消息）设置为特定值时才采取措施。 宏在免费版本中展开为空格。 下面简要说明了它们的作用及其参数。
 
-**ASSERT**(*cond*)
+**断言**（*导线*）
 
-- 验证是否中的布尔表达式*条件*是**TRUE**。 如果不是这样，宏会强制断点。
+- 验证*导线*中的布尔表达式是否为**TRUE**。 如果不是，则宏强制断点。
 
-**ASSERTMSG**(*cond,* (*msg*))
+**ASSERTMSG**（*导线，* （*msg*））
 
-- 验证是否中的布尔表达式*条件*是**TRUE**。 如果不是这样，该宏将显示中的消息*msg，* 并强制断点。
+- 验证*导线*中的布尔表达式是否为**TRUE**。 如果不是，则宏将在 msg 中显示消息 *，* 并强制执行断点。
 
-**ERR**((*msg*))
+**ERR**（（*msg*））
 
-- 显示中的消息*msg*当前的调试级别是否&lt;= DBG\_错误。 消息格式为：
+- 如果当前调试级别为 = DBG 错误，则在*msg*中显示消息 &lt; \_ 。 消息格式为：
 
     ```cpp
     ERR filename (linenumber): msg
     ```
 
-**RIP**((*msg*))
+**RIP**（（*msg*））
 
-- 显示中的消息*msg*并强制断点。
+- 在*msg*中显示消息，并强制断点。
 
-**TERSE**((*msg*))
+**简要**（（*msg*））
 
-- 显示中的消息*msg*当前的调试级别是否&lt;= DBG\_TERSE。
+- 如果当前调试级别为 = DBG 简要，则在*msg*中显示消息 &lt; \_ 。
 
-**VERBOSE**((*msg*))
+**详细**（（*msg*））
 
-- 显示中的消息*msg*当前的调试级别是否&lt;= DBG\_VERBOSE。
+- 如果当前调试级别为，则在*msg*中显示消息 &lt; \_ 。
 
-**WARNING**((*msg*))
+**警告**（（*msg*））
 
-- 显示中的消息*msg*当前的调试级别是否&lt;= DBG\_警告。 消息格式为：
+- 如果当前调试级别为 = DBG 警告，则在*msg*中显示消息 &lt; \_ 。 消息格式为：
 
     ```cpp
     WRN filename (linenumber): msg
     ```
 
-请注意，所有与宏*msg*参数需要额外的一对括号周围此参数。 下面是两个示例，演示了这一要求：
+请注意，具有*msg*参数的所有宏都需要在此参数的前后使用一对括号。 下面是两个示例，用于说明这一要求：
 
 ```cpp
 ASSERTMSG(x > 0, ("x is less than 0\n"));
@@ -141,4 +150,4 @@ ASSERTMSG(x > 0, ("x is less than 0\n"));
 WARNING( ("App passed NULL pointer, ignoring...\n") );
 ```
 
-包含的宏*msg*其 Debug.h 标头中的 Oemui 和 Oemuni 示例通过定义参数。
+包含*msg*参数的宏由 Oemui 和 Oemuni 示例在其 debug.exe 标头中定义。

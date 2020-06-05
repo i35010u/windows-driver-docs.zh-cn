@@ -7,14 +7,14 @@ keywords:
 - 驱动程序开发工具 WDK，验证驱动程序
 - 验证驱动程序 WDK
 - 驱动程序验证 WDK
-ms.date: 04/20/2017
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f541cd66d37cb0a582dacad75dd44ab061fcf6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9f5f340babca67386cd3193e37e61b15046a7add
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839997"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428318"
 ---
 # <a name="tools-for-verifying-drivers"></a>用于验证驱动程序的工具
 
@@ -24,17 +24,21 @@ Windows 驱动程序工具包（WDK）包含几个非常全面的工具，旨在
 
 为了获得最佳结果，请使用可以在你的驱动程序上运行的所有工具。 如果省略这些工具中的任何一种，可能会错过驱动程序中的严重错误。
 
+> [!NOTE]
+> 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
+> 使用驱动程序验证程序和 GFlags 等工具在更高版本的 Windows 中检查驱动程序代码。
+
 本部分首先简要介绍了代码验证工具的特性，以及在 Windows 中或从 Microsoft 提供的工具的调查。
 
-本部分包括：
+本节包括：
 
 [静态和动态验证工具](static-and-dynamic-verification-tools.md)
 
-[验证工具的调查](survey-of-verification-tools.md)
+[验证工具调查](survey-of-verification-tools.md)
 
-[DDI 符合性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[DDI 合规性规则](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
-[已检查 Windows 内部版本](checked-build-of-windows.md)
+[Windows 已检验版本](checked-build-of-windows.md)
 
 [应用程序验证工具](application-verifier.md)
 
@@ -44,10 +48,10 @@ Windows 驱动程序工具包（WDK）包含几个非常全面的工具，旨在
 
 [静态驱动程序验证程序](static-driver-verifier.md)
 
-[WDF 验证程序控件应用程序](wdf-verifier-control-application.md)
+[WDF 验证程序控制应用程序](wdf-verifier-control-application.md)
 
 [WdfTester： WDF 驱动程序测试工具集](wdftester--wdf-driver-testing-toolset.md)
 
-### <a name="span-idother_toolsspanspan-idother_toolsspanother-tools"></a><span id="other_tools"></span><span id="OTHER_TOOLS"></span>其他工具
+## <a name="other-tools"></a>其他工具
 
-如果你有权访问其他代码或驱动程序验证工具（来自其他源），则我们建议你除了使用 WDK 中的工具以外，还可以使用这些工具。 请确保对驱动程序、[静态驱动程序验证](static-driver-verifier.md)程序和[驱动程序验证](driver-verifier.md)程序使用[代码分析](code-analysis-for-drivers.md)，因为它们特定于 Windows 驱动程序的知识，但每个工具都以不同的方式查看代码，从而帮助你查找和修复不同类型的问题。
+如果你有权访问其他代码或驱动程序验证工具（来自其他源），则我们建议你除了使用 WDK 中的工具以外，还可以使用这些工具。 请确保对驱动程序、[静态驱动程序验证](static-driver-verifier.md)程序和[驱动程序验证程序](driver-verifier.md)使用[代码分析](code-analysis-for-drivers.md)，因为它们特定于 Windows 驱动程序的知识，但每个工具都以不同的方式查看代码，从而帮助你查找并解决不同类型的问题。

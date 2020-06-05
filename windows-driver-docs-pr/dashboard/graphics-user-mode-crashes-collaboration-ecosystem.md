@@ -4,12 +4,12 @@ description: 该度量将 7 天滑动窗口中的遥测数据聚合为通信和�
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5946ec2f3c2754f571a670b24b7be4fb00e875e3
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: 318abc2f57cda797b647a9dd6e4b61c90eead082
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84110255"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84336388"
 ---
 # <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal"></a>按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标
 

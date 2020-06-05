@@ -7,12 +7,12 @@ keywords:
 - 插入设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a5c2b8336d3763cb5e11d0fb87f267d5113f323
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 64c5ccdaa14cdee12c6250133683dc0ba1b79745
+ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210077"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421380"
 ---
 # <a name="a-user-plugs-in-a-device"></a>用户插入设备
 
@@ -28,10 +28,6 @@ ms.locfileid: "75210077"
 对于每次支持设备的每个 UMDF 函数或筛选器驱动程序，框架都会继续执行此序列，每次使用驱动程序堆栈中最低的驱动程序。
 
  
-
- 
-
-
 
 
 

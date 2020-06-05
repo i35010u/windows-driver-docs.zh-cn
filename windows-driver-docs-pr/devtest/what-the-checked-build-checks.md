@@ -12,16 +12,14 @@ keywords:
 - 跟踪输出检查 WDK
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a67b707f4b85ef1c372528917395ac8d33c7c40
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: 521078fdfe833e6ca2450bb2571c005a8e22731b
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999054"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428308"
 ---
 # <a name="what-the-checked-build-checks"></a>已检验版本检查哪些项目
-
-## <span id="ddk_what_the_checked_build_checks_tools"></span><span id="DDK_WHAT_THE_CHECKED_BUILD_CHECKS_TOOLS"></span>
 
 > [!NOTE]
 > 在 Windows 10 版本1803之前，已检查的生成在较早版本的 Windows 上可用。
@@ -29,15 +27,15 @@ ms.locfileid: "82999054"
 
 选中的生成包含大量的调试检查，这些检查通常不存在于系统中。 这些检查包括：
 
--   **参数验证检查**
+- **参数验证检查**
 
     这些检查确保 Windows 操作系统代码通常会尽量少的开销运行。 因此，基于 NT 的操作系统实现了在内核模式下运行的所有组件（包括驱动程序）的策略，它们彼此隐式 "信任"。 因此，从一个内核模式组件传递到另一个内核模式组件的参数（例如，在函数调用上传递的参数）通常只需进行最小验证。 操作系统的选中版本启用了许多其他参数验证检查。
 
--   **操作系统正确性和一致性的内部检查**
+- **操作系统正确性和一致性的内部检查**
 
     这些检查通常会验证操作系统中密钥算法和数据结构的正确性。 此类型的检查还可以在操作系统调试过程中由一个 Windows 开发人员插入，以帮助隔离难以解决的问题。
 
--   **信息检查和跟踪输出**
+- **信息检查和跟踪输出**
 
     这些检查以及在调试器中显示的结果输出旨在帮助调试驱动程序或其他系统级组件。 通常，这些类型的检查必须通过设置调试标志单独启用，通常是在相关组件中的内部使用调试器。 此类检查及其调试输出的存在情况可能与操作系统版本不同。 当存在此类检查时，它们通常记录在 Microsoft 知识库文章中。
 
@@ -46,12 +44,3 @@ ms.locfileid: "82999054"
 因此，即使检查生成中的某个检查失败，也不一定意味着发生了灾难性故障。 事实上，检查生成中的失败检查并不一定表示出现了问题。 这只意味着特定检查已失败。 您必须能够*解释*失败的原因。
 
 不要忽略由选中版本标识的问题。 若要成功调试具有选中版本的驱动程序，请确保您可以解释检查生成所发现的每个失败的原因。
-
- 
-
- 
-
-
-
-
-

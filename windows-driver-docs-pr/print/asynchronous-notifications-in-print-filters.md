@@ -7,14 +7,14 @@ keywords:
 - XPS 筛选器 WDK XPSDrv
 - 筛选 WDK XPS
 - 异步通知 WDK XP
-ms.date: 04/20/2017
+ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c56615d841dc7f3080065d3d38fd37af91566b1f
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 2d2a686c6dea3f9fce5730c8705f500571479ab9
+ms.sourcegitcommit: a2003149edf03fb18c0c9608a010583e9599ebd1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881927"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84418962"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>打印筛选器中的异步通知
 
@@ -38,7 +38,7 @@ VARIANT var;
 VariantInit(&var);
 
 HRESULT hr = pIPropertyBag->GetProperty(
-    XPS_FP_PRINT_CLASS_FACTORY, 
+    XPS_FP_PRINT_CLASS_FACTORY,
     &var);
 
 if (SUCCEEDED(hr))
@@ -103,9 +103,9 @@ if (SUCCEEDED(hr))
 }
 ```
 
-在上面的代码示例中，变量 `pIAsyncCallback` 是指向调用方的[IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)接口实现的指针。
+在上面的代码示例中，变量 `pIAsyncCallback` 是指向调用方的[IPrintAsyncNotifyCallback](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback)接口实现的指针。
 
-在某些情况下，在完成双向通知通道后，必须释放双向通知通道。 为此，请在[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)上调用[Release](https://go.microsoft.com/fwlink/p/?linkid=98433)方法。 有关何时发布通道的信息，请参阅[通知通道](notification-channel.md)。
+在某些情况下，在完成双向通知通道后，必须释放双向通知通道。 为此，请在[IPrintAsyncNotifyChannel](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)上调用[Release](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychanne)方法。 有关何时发布通道的信息，请参阅[通知通道](notification-channel.md)。
 
 ## <a name="impersonation-and-notification"></a>模拟和通知
 
@@ -129,7 +129,7 @@ HRESULT hr = m_pPrintClassFactory->GetPrintClassObject(
 if (SUCCEEDED(hr))
 {
     hr = pIAsyncNotify->CreatePrintAsyncNotifyChannel(
- // the same arguments as for 
+ // the same arguments as for
  // RouterCreatePrintAsyncNotificationChannel
         );
 

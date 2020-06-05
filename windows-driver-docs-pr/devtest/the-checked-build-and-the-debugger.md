@@ -10,16 +10,14 @@ keywords:
 - 空调制解调器电缆 WDK
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 954927d937c043e39d26b4c129c8c4fdbb3647b6
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: 380d20e7bd4c2e4c2be31635f28c0caae4305af3
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999066"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428336"
 ---
 # <a name="the-checked-build-and-the-debugger"></a>已检验版本和调试器
-
-## <span id="ddk_the_checked_build_and_the_debugger_tools"></span><span id="DDK_THE_CHECKED_BUILD_AND_THE_DEBUGGER_TOOLS"></span>
 
 用于在 Windows 操作系统上调试内核模式驱动程序的典型设置包括两台通过网络、USB 或串行连接方式连接的计算机。 有关设置内核模式调试的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
 
