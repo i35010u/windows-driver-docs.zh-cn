@@ -9,12 +9,12 @@ keywords:
 - 异步通知 WDK XP
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2a686c6dea3f9fce5730c8705f500571479ab9
-ms.sourcegitcommit: a2003149edf03fb18c0c9608a010583e9599ebd1
+ms.openlocfilehash: b28c037a64b1f1591dcfc05d208f18ff4b97d3d4
+ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84418962"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455565"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>打印筛选器中的异步通知
 
@@ -133,6 +133,6 @@ if (SUCCEEDED(hr))
  // RouterCreatePrintAsyncNotificationChannel
         );
 
-    // Etc.
+    // etc...
 }
 ```

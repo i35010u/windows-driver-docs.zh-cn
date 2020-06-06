@@ -8,12 +8,12 @@ keywords:
 - 无线连接 WDK 打印机
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ddcdf0dcc281e7b2e70ac562ba0895bab7fbf46c
-ms.sourcegitcommit: a2003149edf03fb18c0c9608a010583e9599ebd1
+ms.openlocfilehash: bbf317201be82595af1bdf2edd4c4efcd616ca96
+ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84418960"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455563"
 ---
 # <a name="bluetooth-printing"></a>蓝牙打印
 
@@ -28,7 +28,7 @@ ms.locfileid: "84418960"
 
   Windows 操作系统不使用 1284 ID 跟踪通过多个总线附加的设备。 打印机应使用相同的 1284 ID，以便操作系统可以通过单个 INF 条目加载适当的驱动程序。 打印机总线驱动程序使用和未指定总线创建 PnP Id。 例如，蓝牙打印机获取格式为 "BTHPRINT hpdeskje1234" 的 ID \\ ，格式为 "hpdeskje1234"。 第一种形式是特定于总线的，第二种形式是与主线无关。 您可以使用其中任一 Id 创建 INF，这取决于您的驱动程序包是否完全是特定于总线的。
 
-- 设备必须支持蓝牙硬副本替换配置文件（HCRP）。 有关 HCRP for Bluetooth 的详细信息，请参阅[蓝牙](https://go.microsoft.com/fwlink/p/?linkid=26268)网站。
+- 设备必须支持蓝牙硬副本替换配置文件（HCRP）。 有关 HCRP for Bluetooth 的详细信息，请参阅[蓝牙](https://www.bluetooth.com/specifications/profiles-overview)网站。
 
   > [!NOTE]
-  > Microsoft 支持串行端口配置文件（SPP），但需要进行身份验证。 但是，我们建议使用 HCRP 而不是 SPP，因为 HCRP 提供了更好的用户体验。
+  > Microsoft 支持串行端口配置文件（SPP），但需要进行身份验证。 建议使用 HCRP 而不是 SPP，因为 HCRP 提供了更好的用户体验。

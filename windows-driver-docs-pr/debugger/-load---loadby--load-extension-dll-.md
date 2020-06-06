@@ -16,12 +16,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2580192f7edfffe003737a276843e4d0559ab6ed
-ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
+ms.openlocfilehash: bd4128d46781e0558ff58d9489a8652bd3c31ea4
+ms.sourcegitcommit: 581fb777a2376854ca12e767d366e2cb79724b73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76910357"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84461828"
 ---
 # <a name="load-loadby-load-extension-dll"></a>.load、.loadby（加载扩展 DLL）
 
@@ -33,7 +33,7 @@ ms.locfileid: "76910357"
 .loadby DLLName ModuleName
 ```
 
-## <a name="span-idddk_meta_load_extension_dll_dbgspanspan-idddk_meta_load_extension_dll_dbgspanparameters"></a><span id="ddk_meta_load_extension_dll_dbg"></span><span id="DDK_META_LOAD_EXTENSION_DLL_DBG"></span>Parameters
+## <a name="span-idddk_meta_load_extension_dll_dbgspanspan-idddk_meta_load_extension_dll_dbgspanparameters"></a><span id="ddk_meta_load_extension_dll_dbg"></span><span id="DDK_META_LOAD_EXTENSION_DLL_DBG"></span>参数
 
 
 <span id="_______DLLName______"></span><span id="_______dllname______"></span><span id="_______DLLNAME______"></span>*DLLName*   
@@ -59,8 +59,8 @@ ms.locfileid: "76910357"
 <td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>适用</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p><strong>平台</strong></p></td>
+<td align="left"><p>All</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ ms.locfileid: "76910357"
 
 有关如何加载、卸载和控制扩展的详细信息，请参阅[加载调试器扩展 dll](loading-debugger-extension-dlls.md)。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果使用**load**命令，则必须指定完整路径。
@@ -82,9 +82,9 @@ ms.locfileid: "76910357"
 
 - 使用**load**或 **. loadby**命令。
 
-- 通过发出 full **！** <em>DLLName</em> **。** <em>ExtensionCommand</em>语法。 如果调试器尚未加载*DLLName*，则在此时加载 dll （如果它位于当前 dll 搜索路径中）。
+- 通过发出 full **！**<em>DLLName</em>**。**<em>ExtensionCommand</em>语法。 如果调试器尚未加载*DLLName*，则在此时加载 dll （如果它位于当前 dll 搜索路径中）。
 
-使用[链式]()命令显示有关已加载内容和当前 DLL 搜索路径的信息。
+使用[链式](-chain--list-debugger-extensions-.md)命令显示有关已加载内容和当前 DLL 搜索路径的信息。
 
 ```dbgcmd
 0:000> .chain
