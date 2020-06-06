@@ -4,12 +4,12 @@ title: Windows 驱动程序入门
 description: 使用 Windows 驱动程序，可以创建一个同时在 Windows 10X 和 Windows 桌面版中运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ca50228667a1622463fe3be7d36ad6123bd349
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 2640310a12a2d111fb1d617e4aa9c5a7413c5fa5
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270456"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223514"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
@@ -29,10 +29,10 @@ Windows 驱动程序在所有 Window 10 变体中运行，其中包括 Windows 1
 
 当 Windows 驱动程序成为认证选项时，需要遵守以下要求：
 
-- 符合 [DCH 设计原则](dch-principles-best-practices.md)
-- 遵循[驱动程序包隔离](driver-isolation.md)原则
-- 遵循 [API 分层要求](api-layering.md)
-- 使用 [Hardware Lab Kit](https://docs.microsoft.com/windows-hardware/test/hlk/) 获得 [Windows 硬件兼容性计划认证流程](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-certification-process)认证
+- 符合 [DCH 设计原则](dch-principles-best-practices.md)。
+- 遵循[驱动程序包隔离](driver-isolation.md)原则。
+- 遵循 [API 分层要求](api-layering.md)。
+- 使用 [Hardware Lab Kit](https://docs.microsoft.com/windows-hardware/test/hlk/) 获得 [Windows 硬件兼容性计划认证流程](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-certification-process)认证。 请注意，Windows 硬件兼容性计划认证流程要求适用于 KMDF 和 UMDF 驱动程序。
 
 ## <a name="windows-drivers-vs-windows-desktop-drivers"></a>Windows 驱动程序与Windows 桌面驱动程序
 
