@@ -39,7 +39,7 @@ ms.locfileid: "84534576"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -145,7 +145,7 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 若要启动驱动程序验证程序管理器，请在命令提示符下键入**Verifier** 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 如果你不具备使用 Windows 调试器来处理此问题，则可以使用一些基本的故障排除技术。

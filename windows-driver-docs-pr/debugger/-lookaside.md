@@ -62,7 +62,7 @@ ms.locfileid: "84534742"
 
 有关 "查找" 列表的信息，请参阅[使用后备链表列表](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)和*Microsoft Windows 内部机制*，并将其标记为 Russinovich 和 David
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 "查找" 列表是多处理器安全机制，用于在分页或非分页内存中管理固定大小的条目池。

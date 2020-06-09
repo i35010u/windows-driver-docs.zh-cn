@@ -40,7 +40,7 @@ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于 bug 检查的值为0x0000000a。 这表�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -162,7 +162,7 @@ NDIS!_EthFilterIndicateReceiveComplete+0x31
 8013ef64 00000246 fe551aa1 ff690268 00000002 elnkii!_ElnkiiRcvInterruptDpc+0x1d0
 ```
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 生成此 bug 检查的错误通常在安装了有故障的设备驱动程序、系统服务或 BIOS 之后发生。

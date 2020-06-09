@@ -54,7 +54,7 @@ ms.locfileid: "84534892"
 
 Usb3kd
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **！ Xhci \_ dumpall**命令是此命令集的父命令。

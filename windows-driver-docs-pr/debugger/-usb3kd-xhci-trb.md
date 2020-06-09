@@ -49,7 +49,7 @@ TRB 的物理地址。
 
 Usb3kd
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 输出[**！ xhci \_ trb**](-usb3kd-device-info.md)命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB 堆栈中其他驱动程序的详细信息，请参阅[Windows 中的 usb 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。

@@ -39,7 +39,7 @@ ms.locfileid: "84534154"
 
 Usb3kd
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出[**！ ucx \_ device**](-usb3kd-device-info.md)命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。

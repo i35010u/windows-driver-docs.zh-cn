@@ -72,7 +72,7 @@ Windows 7 和更高版本的 Windows 中提供了此扩展。
 
 有关此扩展的参数的更多详细信息，请参阅[StartTraceA 函数](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-starttracea)和[事件 \_ 跟踪 \_ 属性](https://docs.microsoft.com/windows/win32/api/evntrace/ns-evntrace-event_trace_properties)。 有关事件跟踪的概念性概述，请参阅 Microsoft Windows SDK。 有关跟踪工具的信息，请参阅 Windows 驱动程序工具包（WDK）。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 使用此扩展后，必须恢复程序执行（例如，通过使用[**g （转）**](g--go-.md)命令），使其生效。 经过一段时间后，目标计算机会自动中断到调试器。

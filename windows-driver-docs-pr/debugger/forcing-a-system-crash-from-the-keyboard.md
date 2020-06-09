@@ -90,7 +90,7 @@ ms.locfileid: "84534366"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">值</th>
+<th align="left">“值”</th>
 <th align="left">键盘快捷方式序列中使用的第一个键</th>
 </tr>
 </thead>

@@ -40,7 +40,7 @@ WIN32K.SYS \_ POWER \_ 监视器 \_ 超时 bug 检查的值为0x0000019C。 这�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
