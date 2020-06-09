@@ -8,12 +8,12 @@ keywords:
 - 扩展，内核流式处理
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a84edd701f379fbc4eb76f727b46c7264c86ae
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 2529f6e892d4f18a441361c184232cf7ebbdcbc6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209823"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534776"
 ---
 # <a name="kernel-streaming-extensions-ksdll"></a>内核流扩展 (Ks.dll)
 
@@ -22,7 +22,7 @@ ms.locfileid: "75209823"
 
 这些引用页中的大部分示例输出都是通过调试以筛选器为中心的示例 Avssamp 生成的。 此示例包含在 Windows 驱动程序工具包中。
 
-需要使用特殊符号才能使用此扩展。 有关详细信息，请参阅[Windows 调试工具](https://go.microsoft.com/fwlink/p/?linkid=8708)网站。
+需要使用特殊符号才能使用此扩展。
 
 只需在不带参数的情况下将命令输入到调试器中，即可获取本节中多个扩展命令的附加信息。
 

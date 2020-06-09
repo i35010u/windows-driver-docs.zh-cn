@@ -1,9 +1,9 @@
 ---
-title: usb3kd.device_info
-description: Usb3kd.device_info 命令在 USB 3.0 树中显示有关 USB 设备的信息。
+title: usb3kd device_info
+description: Device_info usb3kd 命令在 USB 3.0 树中显示有关 USB 设备的信息。
 ms.assetid: BD6D1562-2606-42C1-9EE6-D38D93D685DE
 keywords:
-- usb3kd.device_info Windows 调试
+- usb3kd device_info Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f6872f33878d36433f939c75841de65a9fa4b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82bb10b26d035fdafea0d57e8cd6832dd54eb090
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335664"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534902"
 ---
-# <a name="usb3kddeviceinfo"></a>!usb3kd.device\_info
+# <a name="usb3kddevice_info"></a>！ usb3kd \_ 信息
 
 
-**！ Usb3kd.device\_信息**命令将显示有关 USB 设备中的信息[USB 3.0 树](usb-3-extensions.md#usb-3-tree)。
+**！ Usb3kd \_ info**命令显示有关[USB 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备的信息。
 
 ```dbgcmd
 !usb3kd.device_info DeviceContext
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceContext______"></span><span id="_______devicecontext______"></span><span id="_______DEVICECONTEXT______"></span> *DeviceContext*   
-地址\_设备\_上下文结构，它表示该设备。
+<span id="_______DeviceContext______"></span><span id="_______devicecontext______"></span><span id="_______DEVICECONTEXT______"></span>*DeviceContext*   
+\_表示设备的设备 \_ 上下文结构的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**！ 设备\_info**并[ **！ ucx\_设备**](-usb3kd-ucx-device.md)两者都显示有关设备的信息，但显示的信息不同。 输出 **！ 设备\_信息**是从 USB 3.0 集线器驱动程序，point of view 和输出 **！ ucx\_设备**是从 USB 主机控制器扩展的角度驱动程序。 例如， **！ 设备\_信息**输出包含有关配置和接口描述符并 **！ ucx\_设备**输出包括下列相关信息终结点。
+**！设备 \_ 信息**和[**！ ucx \_ 设备**](-usb3kd-ucx-device.md)都显示设备的相关信息，但显示的信息不同。 **！设备 \_ 信息**的输出来自 usb 3.0 集线器驱动程序的位置，而 **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的位置。 例如， **！设备 \_ 信息**输出包含有关配置和接口描述符的信息， **！ ucx \_ 设备**输出包含有关终结点的信息。
 
 <a name="examples"></a>示例
 --------
 
-可以通过查看的输出中获取设备上下文结构的地址[ **！ usb\_树**](-usb3kd-usb-tree.md)命令。 在以下示例中，设备上下文结构的地址是 0xfffffa8005abd0c0。
+可以通过查看[**！ usb \_ 树**](-usb3kd-usb-tree.md)命令的输出来获取设备上下文结构的地址。 在下面的示例中，设备上下文结构的地址为0xfffffa8005abd0c0。
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -70,7 +70,7 @@ Topology
     ...
 ```
 
-现在可以将传递到设备上下文的地址 **！ 设备\_信息**命令。
+现在可以将设备上下文的地址传递到 **！设备 \_ 信息**命令。
 
 ```dbgcmd
 3: kd> !device_info 0xfffffa8005abd0c0
@@ -108,14 +108,14 @@ Device Event History:
     ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[**!usb3kd.device\_info\_from\_pdo**](-usb3kd-device-info-from-pdo.md)
+[**！ usb3kd \_ \_ 来自 pdo 的设备 \_ 信息**](-usb3kd-device-info-from-pdo.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

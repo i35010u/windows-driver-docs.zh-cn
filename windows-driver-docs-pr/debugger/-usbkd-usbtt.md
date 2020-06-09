@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbtt
-description: Usbkd.usbtt 命令显示 USBPORT _TRANSACTION_TRANSLATOR 结构中的信息。
+description: Usbkd. usbtt 命令显示 USBPORT _TRANSACTION_TRANSLATOR 结构中的信息。
 ms.assetid: 4D599BCE-C6C3-42B3-BDCE-EE9E47FA6AB7
 keywords:
-- usbkd.usbtt Windows 调试
+- usbkd usbtt Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 433e1555f5d947c15c433d6a22c1ee1b44163a2a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2776a62be158c465832e698b18744733aa67fb56
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362427"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534676"
 ---
 # <a name="usbkdusbtt"></a>!usbkd.usbtt
 
 
-**！ Usbkd.usbtt**命令显示中的信息**USBPORT ！\_事务\_转换器**结构。
+**！ Usbkd. usbtt**命令显示 USBPORT 中的信息 **！ \_事务 \_ 转换器**结构。
 
 ```dbgcmd
 !usbkd.usbtt StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbport ！\_事务\_转换器**结构。 若要获得 USB 主控制器事务转换器列表，请使用[ **！ usbkd.usbhcdext** ](-usbkd-usbhcdext.md)命令。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbport 的地址 **！ \_事务 \_ 转换器**结构。 若要获取 USB 主机控制器的事务转换器列表，请使用[**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md)命令。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法，若要查找的地址**usbport ！\_事务\_转换器**结构。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbport 地址的一种方法 **！ \_事务 \_ 转换器**结构。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,16 +51,16 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
+在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)若要获取的地址`GlobalTtListHead`。 传递到该地址[ **！ usbkd.usblist**](-usbkd-usblist.md)，随后会显示的地址 **\_事务\_转换器**结构。
+单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md) ，以获取的地址 `GlobalTtListHead` 。 将该地址传递给[**！ usbkd. usblist**](-usbkd-usblist.md)，这将显示** \_ 事务 \_ 转换器**结构的地址。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

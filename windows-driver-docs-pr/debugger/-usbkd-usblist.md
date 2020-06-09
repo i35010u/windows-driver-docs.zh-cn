@@ -1,9 +1,9 @@
 ---
 title: usbkd.usblist
-description: Usbkd.usblist 命令显示链接的列表的指定类型的结构。
+description: Usbkd. usblist 命令显示指定类型的结构的链接列表。
 ms.assetid: 503466EE-2246-4CE3-BCE7-6DC7D42DB86A
 keywords:
-- usbkd.usblist Windows 调试
+- usbkd usblist Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,58 +12,58 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b20b0269a625cd019d42859a06b037946197625b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fbeedc82cadde926e61f1bd2bd47b2ad6f9f61bb
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367989"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533982"
 ---
 # <a name="usbkdusblist"></a>!usbkd.usblist
 
 
-**！ Usbkd.usblist**命令显示链接的列表的指定类型的结构。
+**！ Usbkd. usblist**命令显示指定类型的结构的链接列表。
 
 ```dbgcmd
 !usbkd.usblist ListAddr, ListType
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______ListAddr______"></span><span id="_______listaddr______"></span><span id="_______LISTADDR______"></span> *ListAddr*   
-结构的链接列表的地址。 若要查找所维护的 USB 端口驱动程序的链接列表的地址，请使用[ **！ usbhcdext**](-usbkd-usbhcdext.md)。 若要查找的维护的 USB 集线器驱动程序的链接列表的地址，请使用[ **！ usbhubext**](-usbkd-usbhubext.md)。
+<span id="_______ListAddr______"></span><span id="_______listaddr______"></span><span id="_______LISTADDR______"></span>*ListAddr*   
+结构的链接列表的地址。 若要查找 USB 端口驱动程序所维护的链接列表的地址，请使用[**！ usbhcdext**](-usbkd-usbhcdext.md)。 若要查找由 USB 集线器驱动程序维护的链接列表的地址，请使用[**！ usbhubext**](-usbkd-usbhubext.md)。
 
-<span id="_______ListType______"></span><span id="_______listtype______"></span><span id="_______LISTTYPE______"></span> *ListType*   
+<span id="_______ListType______"></span><span id="_______listtype______"></span><span id="_______LISTTYPE______"></span>*ListType*   
 以下列表类型之一。
 
 | 列表类型 | 结构                                |
 |-----------|------------------------------------------|
-| **BC**    | **usbport ！\_总线\_上下文**               |
-| **EP**    | **usbport!\_HCD\_ENDPOINT**              |
-| **TT**    | **usbport ！\_事务\_转换器**    |
-| **DL**    | **usbport!\_USBD\_DEVICE\_HANDLE**       |
-| **PL**    | **usbhub!\_DEVICE\_EXTENSION\_PDO**      |
-| **EL**    | **usbhub ！\_集线器\_异常\_记录**      |
-| **RL**    | **usbhub ！\_集线器\_引用\_列表\_条目** |
-| **TL**    | **usbhub ！\_集线器\_计时器\_对象**          |
-| **WI**    | **usbhub ！\_中心\_工作项**               |
-| **IO**    | **usbhub ！\_IO\_列表\_条目**             |
-| **LA**    | **usbhub ！\_闩锁\_列表\_条目**          |
-| **CL**    | **usbhub ！\_端口\_更改\_上下文**       |
-| **BL**    | **usbhub ！\_SSP\_忙\_处理**           |
+| **BC**    | **usbport！ \_总线 \_ 上下文**               |
+| **EP**    | **usbport！ \_HCD \_ 终结点**              |
+| **TT**    | **usbport！ \_事务 \_ 转换器**    |
+| **磁盘**    | **usbport！ \_USBD \_ 设备 \_ 句柄**       |
+| **PL**    | **usbhub！ \_设备 \_ 扩展 \_ PDO**      |
+| **EL**    | **usbhub！ \_中心 \_ 异常 \_ 记录**      |
+| **RL**    | **usbhub！ \_中心 \_ 引用 \_ 列表 \_ 条目** |
+| **TL**    | **usbhub！ \_中心 \_ 计时器 \_ 对象**          |
+| **WI**    | **usbhub！ \_中心 \_ 工作项**               |
+| **排**    | **usbhub！ \_IO \_ 列表 \_ 条目**             |
+| **LA**    | **usbhub！ \_闩锁 \_ 列表 \_ 项**          |
+| **CL**    | **usbhub！ \_端口 \_ 更改 \_ 上下文**       |
+| **BL**    | **usbhub！ \_SSP \_ 繁忙 \_ 句柄**           |
 
  
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法来查找链接列表的地址。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找链接列表地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -72,9 +72,9 @@ Usbkd.dll
    ...
 ```
 
-在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
+在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)。
+单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -86,9 +86,9 @@ DeviceHandleList: !usblist ffffe00001ca23b8, DL
 ...
 ```
 
-链接列表的地址是在上面的输出，ffffe00001ca23b8 **usbport ！\_USBD\_设备\_处理**结构。
+在上面的输出中，ffffe00001ca23b8 是 usbport 的链接列表的地址 **！ \_USBD \_ 设备 \_ 句柄**结构。
 
-现在将传递到链接列表的地址 **！ usblist**。
+现在，将链接列表的地址传递给 **！ usblist**。
 
 ```dbgcmd
 0: kd> !usblist ffffe00001ca23b8, DL
@@ -108,12 +108,12 @@ DriverName :\Driver\USBSTOR      !devstack ffffe000053ef2a0
 ----------
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

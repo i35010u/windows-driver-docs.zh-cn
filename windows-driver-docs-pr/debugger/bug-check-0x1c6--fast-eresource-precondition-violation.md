@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1C6 FAST_ERESOURCE_PRECONDITION_VIOLATION
-description: FAST_ERESOURCE_PRECONDITION_VIOLATION bug 检查具有 0x000001C6 值。 它指示当前线程正在执行对快速资源例程的无效调用。
+description: FAST_ERESOURCE_PRECONDITION_VIOLATION bug 检查的值为0x000001C6。 它指示当前线程正在对快速资源例程执行无效调用。
 keywords:
 - Bug 检查 0x1C6 FAST_ERESOURCE_PRECONDITION_VIOLATION
 - FAST_ERESOURCE_PRECONDITION_VIOLATION
@@ -12,25 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b8dd793f18c7a592bd14a8490bb0399d605bb741
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 9660018e02da67455a09f51a8528e5da52b5c4ff
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866505"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534646"
 ---
-# <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>Bug 检查 0x1C6：快速\_ERESOURCE\_不满足前提条件\_冲突
+# <a name="bug-check-0x1c6-fast_eresource_precondition_violation"></a>Bug 检查0x1C6：快速 \_ ERESOURCE \_ 前置条件 \_ 冲突
 
-快速\_ERESOURCE\_不满足前提条件\_冲突错误检查的值为 0x000001C6。 它指示当前线程正在执行对快速资源例程的无效调用。
+FAST \_ ERESOURCE \_ 先决条件 \_ 冲突 bug 检查的值为0x000001C6。 它指示当前线程正在对快速资源例程执行无效调用。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
  
 
-## <a name="fasteresourcepreconditionviolation-parameters"></a>快速\_ERESOURCE\_不满足前提条件\_冲突参数
+## <a name="fast_eresource_precondition_violation-parameters"></a>FAST \_ ERESOURCE \_ 先决条件 \_ 冲突参数
 
-|参数|描述|
+|参数|说明|
 |-------- |---------- |
 |1|冲突类型。 请参阅下面的值。 |
 |2| 请参阅下面的值。 |
@@ -126,12 +126,12 @@ ms.locfileid: "67866505"
 ## <a name="cause"></a>原因
 -----
 
-当前线程正在执行对快速资源例程的无效调用。
+当前线程正在对快速资源例程执行无效调用。
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)

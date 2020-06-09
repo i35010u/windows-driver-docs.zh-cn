@@ -1,53 +1,51 @@
 ---
 title: USB 2.0 扩展
-description: 本部分介绍 USB 2.0 调试器扩展命令。 这些命令显示通过 USB 2.0 驱动程序堆栈中的驱动程序维护的数据结构中的信息。
+description: 本部分介绍了 USB 2.0 调试程序扩展命令。 这些命令显示由 USB 2.0 驱动程序堆栈中的驱动程序所维护的数据结构的信息。
 ms.assetid: 42A78738-CE0D-42EA-9E3D-04CDC2060266
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b506fe76da4e30b53a5c220b3b2d0e5a85caafa2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 95e4888ff5af72e4778213adc1d69b3a325f2830
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367991"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533831"
 ---
 # <a name="usb-20-extensions"></a>USB 2.0 扩展
 
+本部分介绍了 USB 2.0 调试程序扩展命令。 这些命令显示由 USB 2.0 驱动程序堆栈中的驱动程序所维护的数据结构的信息。 有关这三个驱动程序的详细信息，请参阅[Windows 中的 USB 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
 
-本部分介绍 USB 2.0 调试器扩展命令。 这些命令显示通过 USB 2.0 驱动程序堆栈中的驱动程序维护的数据结构中的信息。 有关上述三个的驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://go.microsoft.com/fwlink/p?LinkId=251983)。
+USB 2.0 调试程序扩展命令是在 Usbkd 中实现的。 若要加载 Usbkd 命令，请在调试器中输入**Usbkd** 。
 
-USB 2.0 调试器扩展命令中 Usbkd.dll 实现。 若要加载的 Usbkd 命令，请输入 **.load usbkd.dll**在调试器中。
+## <a name="span-idusb-2-treespan-usb-20-tree"></a><span id="usb-2-tree"></span>USB 2.0 树
 
-## <a name="span-idusb-2-treespanspan-idusb2treespanusb-20-tree"></a><span id="usb-2-tree"></span><span id="USB_2_TREE"></span>USB 2.0 树
+USB 2.0 树包含代表 EHCI 主机控制器设备上执行单元的设备节点，以及表示集线器和连接设备的子节点。 此图显示了一个 USB 2.0 树的示例。
 
+![显示 usb 2tree 的图示](images/usbkd01.png)
 
-USB 2.0 树包含表示 EHCI 以及表示中心的子节点的主机控制器设备和连接的设备上执行单元的设备节点。 此图显示了 USB 2.0 树的示例。
+此关系图显示了一个具有两个执行单元的物理主机控制器设备。 每个执行单元在即插即用设备树中显示为一个设备节点。 一个执行单元显示为 UHCI USB 主机控制器节点，另一个执行单元显示为 EHCI USB 主机控制器节点。 其中每个节点都有一个表示 USB 根集线器的子节点。 每个根集线器都有一个表示连接的 USB 设备的子节点。
 
-![显示 usb 2tree 的关系图](images/usbkd01.png)
+请注意，该关系图不是所有节点都从单个父节点中派生出的树。 但是，当我们使用术语 " *USB 2.0 树*" 时，我们将引用一组设备节点，这些节点代表 EHCI 主机控制器设备上的执行单元以及集线器和连接设备的节点。
 
-该图显示一个物理主机控制器设备具有两个执行单位。 每个执行单元将显示为插设备树中的设备节点。 一个执行单位显示为 UHCI USB 主机控制器节点，并作为 EHCI USB 主控制器节点显示其他执行单元。 每个这些节点具有表示 USB 根集线器的子节点。 每个根中心都有一个子节点表示连接的 USB 设备。
-
-请注意，在关系图不是内容而言，并非所有节点都源自的单一父节点的树。 但是，我们使用术语*USB 2.0 树*，指使用的设备节点表示的节点的中心以及 EHCI 主机控制器设备和连接的设备上执行单元集。
-
-## <a name="span-idgettingstartedwithusb20debuggingspanspan-idgettingstartedwithusb20debuggingspangetting-started-with-usb-20-debugging"></a><span id="getting_started_with_usb_2.0_debugging"></span><span id="GETTING_STARTED_WITH_USB_2.0_DEBUGGING"></span>开始使用 USB 2.0 调试
+## <a name="getting-started-with-usb-20-debugging"></a>USB 2.0 调试入门
 
 
-若要开始调试一个 USB 2.0 的问题，请输入[ **！ usb2tree** ](-usbkd-usb2tree.md)命令。 **！ Usb2tree**命令显示命令和可用于调查主机控制器、 中心、 端口、 设备、 端点和 USB 2.0 树的其他元素的地址的列表。
+若要开始调试 USB 2.0 问题，请输入[**！ usb2tree**](-usbkd-usb2tree.md)命令。 **！ Usb2tree**命令显示可用于调查主机控制器、集线器、端口、设备、终结点和 USB 2.0 树的其他元素的命令和地址列表。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [**!usbkd.usbhelp**](-usbkd-usbhelp.md)
--   [**!usbkd.\_ehcidd**](-usbkd--ehcidd.md)
--   [**！ usbkd。\_ehciep**](-usbkd--ehciep.md)
--   [**!usbkd.\_ehciframe**](-usbkd--ehciframe.md)
--   [**!usbkd.\_ehciqh**](-usbkd--ehciqh.md)
--   [**！ usbkd。\_ehciregs**](-usbkd--ehciregs.md)
--   [**!usbkd.\_ehcisitd**](-usbkd--ehcisitd.md)
--   [**!usbkd.\_ehcistq**](-usbkd--ehcistq.md)
--   [**!usbkd.\_ehcitd**](-usbkd--ehcitd.md)
--   [**！ usbkd。\_ehcitfer**](-usbkd--ehcitfer.md)
--   [**!usbkd.\_ehciitd**](-usbkd--ehciitd.md)
+-   [**！ usbkd。 \_ehcidd**](-usbkd--ehcidd.md)
+-   [**！ usbkd。 \_ehciep**](-usbkd--ehciep.md)
+-   [**！ usbkd。 \_ehciframe**](-usbkd--ehciframe.md)
+-   [**！ usbkd。 \_ehciqh**](-usbkd--ehciqh.md)
+-   [**！ usbkd。 \_ehciregs**](-usbkd--ehciregs.md)
+-   [**！ usbkd。 \_ehcisitd**](-usbkd--ehcisitd.md)
+-   [**！ usbkd。 \_ehcistq**](-usbkd--ehcistq.md)
+-   [**！ usbkd。 \_ehcitd**](-usbkd--ehcitd.md)
+-   [**！ usbkd。 \_ehcitfer**](-usbkd--ehcitfer.md)
+-   [**！ usbkd。 \_ehciitd**](-usbkd--ehciitd.md)
 -   [**!usbkd.doesdumphaveusbdata**](-usbkd-doesdumphaveusbdata.md)
 -   [**!usbkd.isthisdumpasyncissue**](-usbkd-isthisdumpasyncissue.md)
 -   [**!usbkd.urbfunc**](-usbkd-urbfunc.md)
@@ -56,7 +54,7 @@ USB 2.0 树包含表示 EHCI 以及表示中心的子节点的主机控制器设
 -   [**!usbkd.usbchain**](-usbkd-usbchain.md)
 -   [**!usbkd.usbdevobj**](-usbkd-usbdevobj.md)
 -   [**!usbkd.usbdpc**](-usbkd-usbdpc.md)
--   [**!usbkd.ehci\_info\_from\_fdo**](-usbkd-ehci-info-from-fdo.md)
+-   [**！ usbkd \_ \_ fdo 中的信息 \_**](-usbkd-ehci-info-from-fdo.md)
 -   [**!usbkd.usbdevh**](-usbkd-usbdevh.md)
 -   [**!usbkd.usbep**](-usbkd-usbep.md)
 -   [**!usbkd.usbfaildata**](-usbkd-usbfaildata.md)
@@ -69,7 +67,7 @@ USB 2.0 树包含表示 EHCI 以及表示中心的子节点的主机控制器设
 -   [**!usbkd.usbhcdlogex**](-usbkd-usbhcdlogex.md)
 -   [**!usbkd.usbhcdpnp**](-usbkd-usbhcdpnp.md)
 -   [**!usbkd.usbhcdpow**](-usbkd-usbhcdpow.md)
--   [**!usbkd.hub2\_info\_from\_fdo**](-usbkd-hub2-info-from-fdo.md)
+-   [**！ usbkd hub2 \_ info \_ from \_ fdo**](-usbkd-hub2-info-from-fdo.md)
 -   [**!usbkd.usbhuberr**](-usbkd-usbhuberr.md)
 -   [**!usbkd.usbhubext**](-usbkd-usbhubext.md)
 -   [**!usbkd.usbhubinfo**](-usbkd-usbhubinfo.md)
@@ -94,19 +92,8 @@ USB 2.0 树包含表示 EHCI 以及表示中心的子节点的主机控制器设
 -   [**!usbkd.usbusb2tt**](-usbkd-usbusb2tt.md)
 -   [**!usbkd.usbver**](-usbkd-usbver.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="related-topics"></a>相关主题
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
 [RCDRKD 扩展](rcdrkd-extensions.md)
-
- 
-
- 
-
-
-
-
-
-

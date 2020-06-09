@@ -1,9 +1,9 @@
 ---
-title: usbkd.hub2_info_from_fdo
-description: Usbkd.hub2_info_from_fdo 命令显示有关 USB 集线器的信息。
+title: usbkd hub2_info_from_fdo
+description: Hub2_info_from_fdo usbkd 命令显示有关 USB 集线器的信息。
 ms.assetid: BB40AEDD-9FDF-43BE-A741-56D06BE2965C
 keywords:
-- usbkd.hub2_info_from_fdo Windows 调试
+- usbkd hub2_info_from_fdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84912ddbe4cc9f21afcfd7489a4cae979e2e88d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b116a63061d2613dea641e81786560e7df1be77
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334100"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534872"
 ---
-# <a name="usbkdhub2infofromfdo"></a>!usbkd.hub2\_info\_from\_fdo
+# <a name="usbkdhub2_info_from_fdo"></a>！ usbkd hub2 \_ info \_ from \_ fdo
 
 
-**！ Usbkd.hub2\_信息\_从\_fdo**命令显示有关 USB 集线器的信息。
+**Fdo 命令中的！ usbkd hub2 \_ 信息 \_ \_ **显示有关 USB 集线器的信息。
 
 ```dbgcmd
 !usbkd.hub2_info_from_fdo FDO
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______FDO______"></span><span id="_______fdo______"></span> *FDO*   
-USB 集线器的功能的设备对象 (FDO) 的地址。
+<span id="_______FDO______"></span><span id="_______fdo______"></span>*FDO*   
+USB 集线器的功能设备对象（FDO）的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法找到的 USB 集线器的 FDO 的地址。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 USB 集线器的 FDO 地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd.dll
     RootHub !hub2_info ffffe000023201a0 !devstack ffffe00002320050
 ```
 
-在上面的输出中的中心 FDO 的地址显示为建议命令的参数 **！ devstack ffffe00002320050**。
+在上面的输出中，中心的 FDO 地址显示为建议的命令 **！ devstack ffffe00002320050**的参数。
 
-现在将传递到 FDO 的地址 **！ hub2\_信息\_从\_fdo**命令。
+现在，将 FDO 的地址** \_ \_ 从 \_ FDO 命令传递到！ hub2 信息**。
 
 ```dbgcmd
 0: kd> !usbkd.hub2_info_from_fdo ffffe00002320050
@@ -131,12 +131,12 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

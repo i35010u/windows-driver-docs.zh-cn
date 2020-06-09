@@ -3,12 +3,12 @@ title: 时光穿越调试 - 重放跟踪
 description: 本部分介绍如何重播时间行程跟踪。
 ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cace40ee102215a920653af28f0310dd7dc002da
-ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
+ms.openlocfilehash: e8e9e94b67ba5fc57484efaf7818108f46b211f2
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706948"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534278"
 ---
 # <a name="time-travel-debugging---replay-a-trace"></a>时光穿越调试 - 重放跟踪
 
@@ -47,7 +47,7 @@ ntdll!ZwTestAlert+0x14:
 00007ffc`61f789d4 c3              ret
 ```
 
-使用[p （Step）](https://docs.microsoft.com/windows-hardware/drivers/debugger/p--step-)命令在 TTD 跟踪中前进。 
+使用[p （Step）](p--step-.md)命令在 TTD 跟踪中前进。 
 
 ```dbgcmd
 0:000> p
@@ -73,7 +73,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 7774f83c 0f8450e8ffff    je      ntdll!LdrpInitializeProcess+0x42f (7774e092) [br=1]
 ```
 
-你还可以使用[t （Trace）](https://docs.microsoft.com/windows-hardware/drivers/debugger/t--trace-)命令在跟踪中导航。
+你还可以使用[t （Trace）](t--trace-.md)命令在跟踪中导航。
 
 ```dbgcmd
 0:000> t
@@ -121,16 +121,16 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 提供以下任意格式的时间位置以在该时间点旅行。
 
-- 如果 [position] 为介于0到100之间的十进制数字，则它会在跟踪中接近该百分比。 例如 `!tt 50` 向跟踪的一半。
+- 如果 [position] 为介于0到100之间的十进制数字，则它会在跟踪中接近该百分比。 例如， `!tt 50` 遍历跟踪的一半。
 
-- 如果 {position} 为 #： #，其中 # 是十六进制数字，则将其移动到该位置。 例如，`!tt 1A0:12F` 传播到跟踪中的位置1A0：12F。
+- 如果 {position} 为 #： #，其中 # 是十六进制数字，则将其移动到该位置。 例如， `!tt 1A0:12F` 在跟踪中，移动到位置1A0：12F。
 
 有关详细信息，请参阅[行程调试-！ tt （行程时间）](time-travel-debugging-extension-tt.md)。
 
 
 ## <a name="positions"></a>！位置
 
-使用 `!positions` 显示所有活动线程，包括它们在跟踪中的位置。 有关详细信息，请参阅[行程调试-！位置（旅行时间）](time-travel-debugging-extension-positions.md)。
+用于 `!positions` 显示所有活动线程，包括它们在跟踪中的位置。 有关详细信息，请参阅[行程调试-！位置（旅行时间）](time-travel-debugging-extension-positions.md)。
 
 ```dbgcmd
 0:000> !positions
@@ -196,18 +196,18 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 ```
 
 > [!NOTE]
-> *~ S #* ，其中 *#* 是一个线程号，还切换到给定线程，但它不会更改跟踪中的当前位置。  当使用 *！ tt*来使到达另一个线程的位置时，将在该位置查找您（和调试器）从内存中读取的任何值。 当使用 *~ s #* 切换线程时，调试器不会内部更改当前位置，这用于所有内存查询。 这主要以这种方式运行，因此 *~ s #* 不必重置调试器的内部循环。
+> *~ S #*，其中 *#* 是一个线程号，还切换到给定线程，但它不会更改跟踪中的当前位置。  当使用 *！ tt*来使到达另一个线程的位置时，将在该位置查找您（和调试器）从内存中读取的任何值。 当使用 *~ s #* 切换线程时，调试器不会内部更改当前位置，这用于所有内存查询。 这主要以这种方式运行，因此 *~ s #* 不必重置调试器的内部循环。
 
 ## <a name="time-travel-debugging-extension-commands"></a>行程调试扩展命令
 
-有关 `!tt`的信息，[请参阅 `!positions` 和 `!index` 命令。](time-travel-debugging-extension-commands.md)
+有关的信息 `!tt` `!positions` 和 `!index` 命令，请参阅[行程调试-扩展命令](time-travel-debugging-extension-commands.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-[行程调试-概述](time-travel-debugging-overview.md)
+[时光穿越调试 - 概述](time-travel-debugging-overview.md)
 
-[旅行调试-记录跟踪](time-travel-debugging-record.md)
+[时间旅行调试 - 记录跟踪](time-travel-debugging-record.md)
 
-[时间行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)
+[时光穿越调试 - 使用跟踪文件](time-travel-debugging-trace-file-information.md)
 
-[旅行调试-示例应用演练](time-travel-debugging-walkthrough.md)
+[时光穿越调试 - 示例应用演练](time-travel-debugging-walkthrough.md)

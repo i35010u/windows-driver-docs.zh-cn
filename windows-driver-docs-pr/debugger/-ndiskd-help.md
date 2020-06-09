@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a8cfee043624b067ce4094e7d353e1e2f5ed696d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3079375184a8b6bd7605929762e30f3a18949a8a
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826659"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534934"
 ---
 # <a name="ndiskdhelp"></a>!ndiskd.help
 
@@ -131,9 +131,9 @@ NDIS KD EXTENSIONS
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
 
 

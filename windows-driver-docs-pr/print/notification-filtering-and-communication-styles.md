@@ -14,33 +14,29 @@ keywords:
 - 通信 WDK 后台处理程序通知
 - 所有侦听器通知 WDK 打印后台处理程序
 - 每用户侦听器筛选 WDK 后台处理程序通知
-ms.date: 04/20/2017
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 400860734767a3aa137321575739e9204dd5743a
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 363037f2992d3ed7a6733be32543e3c29c36e2ac
+ms.sourcegitcommit: d71024c0c782b5c013192d960700802eafc120f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242894"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507102"
 ---
 # <a name="notification-filtering-and-communication-styles"></a>通知筛选和通信样式
 
-
-
-
-
 本部分介绍了后台处理程序进程和打印组件（如打印处理器、驱动程序和监视器）之间的接口。
 
-### <a name="notification-filtering"></a>通知筛选
+## <a name="notification-filtering"></a>通知筛选
 
-PrintAsyncNotifyUserFilter 枚举类型用于两种情况。 在其中的第一个中，后台处理程序中运行的打印组件会调用[CreatePrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124750)函数来创建通知通道。 调用方传递一个 PrintAsyncNotifyUserFilter 枚举类型的枚举器，以指定允许哪些侦听客户端接收通知。 在第二种情况下，侦听客户端将调用[RegisterForPrintAsyncNotifications](https://go.microsoft.com/fwlink/p/?linkid=124752)函数以注册通知。 调用方传递一个 PrintAsyncNotifyUserFilter 枚举器来指示它应接收的通知。
+PrintAsyncNotifyUserFilter 枚举类型用于两种情况。 在其中的第一个中，后台处理程序中运行的打印组件会调用[CreatePrintAsyncNotifyChannel](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-createprintasyncnotifychannel)函数来创建通知通道。 调用方传递一个 PrintAsyncNotifyUserFilter 枚举类型的枚举器，以指定允许哪些侦听客户端接收通知。 在第二种情况下，侦听客户端将调用[RegisterForPrintAsyncNotifications](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-registerforprintasyncnotifications)函数以注册通知。 调用方传递一个 PrintAsyncNotifyUserFilter 枚举器来指示它应接收的通知。
 
 ```cpp
-typedef enum 
+typedef enum
 {
   kPerUser,
   kAllUsers
-} PrintAsyncNotifyUserFilter; 
+} PrintAsyncNotifyUserFilter;
 ```
 
 在下图中， **kPerUser**枚举器用于调用**CreatePrintAsyncNotifyChannel**函数。 因此，只允许与进行注册的用户在同一用户帐户中运行的那些侦听器接收通知。
@@ -57,27 +53,27 @@ typedef enum
 
 如果上图中显示的侦听客户端调用了**RegisterForPrintAsyncNotifications**，但这次在调用中传递**kAllUsers**枚举器，则所有会话中的所有侦听器都将收到三个通知。 请注意，只有管理员才能在对此函数的调用中使用**kAllUsers**枚举器。
 
-### <a href="" id="administrators-"></a>负责
+## <a name="administrators"></a>管理员
 
-管理员是具有打印机\_访问权限\_指定打印对象的管理权限的用户。 管理员可以向任何人发送通知，并可以接收任何人的通知。 请注意，仍将强制实施通知筛选器。
+管理员是具有 \_ \_ 指定打印对象的 "打印机访问" 管理权限的用户。 管理员可以向任何人发送通知，并可以接收任何人的通知。 请注意，仍将强制实施通知筛选器。
 
 在下图中，Joe 使用**kPerUser**在通道上发送通知。 根据此枚举器对通道进行筛选时，通知只应发送到属于用户1的会话，即会话1。 但是，通知还会发送到会话2，因为有一个管理员正在侦听该通知并侦听此类型的通知。 请注意，会话3中的管理员不会收到通知，因为通知类型不相同。
 
 ![说明每用户和通知类型筛选的关系图](images/notifyfilt4.gif)
 
-### <a name="specifying-the-type-of-communication"></a>指定通信类型
+## <a name="specifying-the-type-of-communication"></a>指定通信类型
 
 通过指定通信类型，打印组件将指示侦听器客户端是否需要响应，以及当从多个客户端发回通知时，后台处理程序处理此情况的方式。
 
 ```cpp
-typedef enum 
+typedef enum
 {
-  kBidirectional = 1, 
-  kUnidirectional, 
+  kBidirectional = 1,
+  kUnidirectional,
 } PrintAsyncNotifyConversationStyle
 ```
 
-有两种类型的通信：单向和双向。 在单向通信中，侦听客户端不响应后台处理程序通知。 在这种情况下，侦听客户端无法发送回通知，因为它收到**空**的[IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)接口指针。 在双向通信中，客户端在收到通知时将发送响应，并在包含打印组件的对话框上携带。 这是 UI 通知的情况。
+有两种类型的通信：单向和双向。 在单向通信中，侦听客户端不响应后台处理程序通知。 在这种情况下，侦听客户端无法发送回通知，因为它收到**空**的[IPrintAsyncNotifyChannel](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)接口指针。 在双向通信中，客户端在收到通知时将发送响应，并在包含打印组件的对话框上携带。 这是 UI 通知的情况。
 
 多个会话接收 UI 通知的情况值得注释。 在这种情况下，后台处理程序将打开一个通道，并通知与筛选器匹配的所有侦听器，并向它们发送第一个通知。 当第一个侦听器响应时，后台处理程序将关闭其他通道，并在第一个客户端继续对话。
 
@@ -85,7 +81,7 @@ typedef enum
 
 当第一个用户（例如，管理员）发送响应时，后台处理程序会将与其他客户端的连接标记为 "已关闭"。 当其他侦听客户端最终响应时，它将收到 "通道已关闭" 消息。
 
-### <a name="notification-types"></a>通知类型
+## <a name="notification-types"></a>通知类型
 
 通知类型是后台处理程序接受并用于筛选侦听器客户端的 GUID。 （请参阅头文件 Prnasnot 中的 PrintAsyncNotificationType 类型定义。）后台处理程序异步通知机制的任何客户端都可以定义自己的通知类型。 即使后台处理程序不知道发送的通知类型的意义，它仍将根据通知类型筛选侦听器客户端。
 
@@ -105,18 +101,10 @@ typedef enum
 const GUID NOTIFICATION_RELEASE;
 ```
 
-只有在调用[IPrintAsyncNotifyCallback：： ChannelClosed](https://go.microsoft.com/fwlink/p/?linkid=124756)方法时，侦听客户端才能接收此类消息。
+只有在调用[IPrintAsyncNotifyCallback：： ChannelClosed](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-iprintasyncnotifycallback-channelclosed)方法时，侦听客户端才能接收此类消息。
 
-### <a href="" id="notification-registration-handle-"></a>通知注册句柄
+## <a name="notification-registration-handle"></a>通知注册句柄
 
 当客户端注册通知时，服务器端后台处理程序将维护一个内部表，其中包含有关应用程序的信息，如其安全上下文。 通知注册句柄是客户端接收的不透明结构。
 
 客户端只能通过使用此句柄注销来接收通知。
-
- 
-
- 
-
-
-
-

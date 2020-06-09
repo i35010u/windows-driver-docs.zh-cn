@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 45b17f6bfeebce573a847d9c917571b7ee1edf4f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 46671dc50dbed532e2364a0beb2545a9f17591e6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826657"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534928"
 ---
 # <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
@@ -56,7 +56,7 @@ INTERFACE STACK TABLE
     ffffdf801494c010   16                  17                 ffffdf801494ba20
 ```
 
-NDIS 为 NDIS 微型端口适配器、NDIS 1.x 筛选器中间驱动程序和 NDIS 筛选器模块维护堆栈表，而[NDIS MUX 中间驱动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)程序驱动程序则需要指定虚拟微型端口接口和协议下限接口。 因此，在安装了更复杂 MUX 驱动程序的系统中，ifStackTable 可能非常有用。
+NDIS 为 NDIS 微型端口适配器、NDIS 1.x 筛选器中间驱动程序和 NDIS 筛选器模块维护堆栈表，而[NDIS MUX 中间驱动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)程序驱动程序则需要指定虚拟微型端口接口和协议下限接口之间的内部接口关系。 因此，在安装了更复杂 MUX 驱动程序的系统中，ifStackTable 可能非常有用。
 
 由于此示例系统上没有安装 NDIS MUX 中间驱动程序，ifStackTable 仅显示 NDIS 提供的堆栈关系。 在下面的示例中，单击第三行的下一个接口的句柄（handle ffffdf801494c010，Lower IfIndex 16）将显示 QoS 数据包计划程序的接口。
 
@@ -160,7 +160,7 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-这表明 WFP 802.3 MAC 层轻型筛选器位于网络接口堆栈中的 QoS 数据包 Scheudler 筛选器之上。 可以通过运行[ **！ ndiskd. netreport**](-ndiskd-netreport.md)扩展来确认这一点，该扩展会以可视方式显示网络堆栈。
+这表明 WFP 802.3 MAC 层轻型筛选器位于网络接口堆栈中的 QoS 数据包 Scheudler 筛选器之上。 可以通过运行[**！ ndiskd. netreport**](-ndiskd-netreport.md)扩展来确认这一点，该扩展会以可视方式显示网络堆栈。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
@@ -169,17 +169,17 @@ STATE
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [维护网络接口堆栈](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
 
 [NDIS MUX 中间驱动程序](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)
 
-[ **!ndiskd.netreport**](-ndiskd-netreport.md)
+[**!ndiskd.netreport**](-ndiskd-netreport.md)
 
  
 

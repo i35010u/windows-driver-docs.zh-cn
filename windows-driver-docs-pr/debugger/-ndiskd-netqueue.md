@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a49ac36a65d06b194152e8c04aa07528de5cd5e4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2a94e3d761fc7437faec4816c40db7aca2f49124
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826550"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534908"
 ---
 # <a name="ndiskdnetqueue"></a>!ndiskd.netqueue
 
@@ -33,10 +33,10 @@ ms.locfileid: "72826550"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 NETTXQUEUE 或 NETRXQUEUE 的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示基本信息。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -46,15 +46,15 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-**注意**  查看[对象的摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)，以查看一个关系图，该关系图说明了 NETTXQUEUE 和 NETRXQUEUE 对象与 NetAdapterCx 中的其他对象之间的关系。
+**注意**   若要查看说明 NETTXQUEUE 和 NETRXQUEUE 对象与 NetAdapterCx 中其他对象的关系的关系图，请参阅[对象的摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)。
 
  
 
 若要获取 NETTXQUEUE 或 NETRXQUEUE 的句柄，请执行以下步骤：
 
-1.  运行[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
+1.  运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
 2.  单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
-3.  单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[ **！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
+3.  单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
 4.  输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
 
 有关此过程的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。
@@ -104,19 +104,19 @@ DATAPATH QUEUES
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
 [对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
 
-[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[ **!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
+[**!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
 
  
 

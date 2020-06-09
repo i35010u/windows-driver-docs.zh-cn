@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehcistq
-description: Usbkd._ehcistq 命令显示 usbehci _HCD_QUEUEHEAD_DESCRIPTOR 结构。
+title: usbkd _ehcistq
+description: _Ehcistq usbkd 命令显示 usbehci _HCD_QUEUEHEAD_DESCRIPTOR 结构。
 ms.assetid: 282206D2-7F4A-4EBA-A874-F1744F218194
 keywords:
-- usbkd._ehcistq Windows 调试
+- usbkd _ehcistq Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c204f3bd3726b94cade4e4aeba298e510cf577eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e6b878fd5af12d110d7446005d3f45a4348e48d1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334133"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534080"
 ---
-# <a name="usbkdehcistq"></a>!usbkd.\_ehcistq
+# <a name="usbkd_ehcistq"></a>！ usbkd。 \_ehcistq
 
 
-**！ Usbkd。\_ehcistq**命令将显示**usbehci ！\_HCD\_QUEUEHEAD\_描述符**结构。
+**！ Usbkd。 \_ehcistq**命令显示**usbehci！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。
 
 ```dbgcmd
 !usbkd._ehciep StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbehci ！\_HCD\_QUEUEHEAD\_描述符**结构。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci 的地址 **！ \_HCD \_ QUEUEHEAD \_ 描述符**结构。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

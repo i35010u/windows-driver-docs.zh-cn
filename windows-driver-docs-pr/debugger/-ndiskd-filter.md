@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 946a669c7eedef831a5c8f0e33d390d634c4abc1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c1ea58812764cb23818922d7917dfe42d2892b08
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837595"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534736"
 ---
 # <a name="ndiskdfilter"></a>!ndiskd.filter
 
@@ -31,13 +31,13 @@ ms.locfileid: "72837595"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NDIS 轻型筛选器的句柄。
 
-<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-system.windows.frameworkelement.findname*   
+<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span>*-system.windows.frameworkelement.findname*   
 按名称前缀筛选 LWFs。
 
-<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-处理程序*   
+<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span>*-处理程序*   
 显示此 LWF 的筛选器处理程序。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -96,11 +96,11 @@ FILTER
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
  
 

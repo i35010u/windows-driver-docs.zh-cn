@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 12bb51e58874954f8ffed0dd3eb9213ca0693751
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a1158ebf742230058be2a4bd2f0524215282d4d8
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837842"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534706"
 ---
-# <a name="usb3kducx_controller"></a>！ usb3kd. ucx\_控制器
+# <a name="usb3kducx_controller"></a>！ usb3kd ucx \_ 控制器
 
 
-[ **！ Usb3kd. ucx\_控制器**](-usb3kd-device-info.md)命令显示有关 USB 3.0 主机控制器的信息。 此显示基于 USB 主机控制器扩展驱动程序 *（Ucx）* 所维护的数据结构。
+[**！ Usb3kd. ucx \_ 控制器**](-usb3kd-device-info.md)命令显示有关 USB 3.0 主机控制器的信息。 此显示基于 USB 主机控制器扩展驱动程序 *（Ucx）* 所维护的数据结构。
 
 ```dbgcmd
 !usb3kd.ucx_controller UcxControllerPrivContext
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
 <span id="_______UcxControllerPrivContext______"></span><span id="_______ucxcontrollerprivcontext______"></span><span id="_______UCXCONTROLLERPRIVCONTEXT______"></span>*UcxControllerPrivContext*   
-表示控制器的 \_UCXCONTROLLER\_PRIVCONTEXT 结构的地址。
+\_表示控制器的 UCXCONTROLLER \_ PRIVCONTEXT 结构的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出[ **！ ucx\_控制器**](-usb3kd-device-info.md)命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
+USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出[**！ ucx \_ 控制器**](-usb3kd-device-info.md)命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 <a name="examples"></a>示例
 --------
 
-若要获取 UCX 控制器专用上下文的地址，请查看[ **！ UCX\_控制器的输出\_list**](-usb3kd-ucx-controller-list.md)命令。 在下面的示例中，专用上下文的地址为0xfffffa80052da050。
+若要获取 UCX 控制器专用上下文的地址，请查看[**！ UCX \_ controller \_ list**](-usb3kd-ucx-controller-list.md)命令的输出。 在下面的示例中，专用上下文的地址为0xfffffa80052da050。
 
 ```dbgcmd
 3: kd> !ucx_controller_list
@@ -63,7 +63,7 @@ USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动
         ...
 ```
 
-现在可以将 UCX 控制器专用上下文的地址传递给[ **！ UCX\_控制器**](-usb3kd-device-info.md)命令。
+现在可以将 UCX 控制器私有上下文的地址传递给[**！ UCX \_ 控制器**](-usb3kd-device-info.md)命令。
 
 ```dbgcmd
 3: kd> !ucx_controller 0xfffffa80052da050
@@ -113,9 +113,9 @@ Device Tree:
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[ **！ usb3kd. ucx\_控制器\_列表**](-usb3kd-ucx-controller-list.md)
+[**！ usb3kd ucx \_ 控制器 \_ 列表**](-usb3kd-ucx-controller-list.md)
 
-[通用串行总线（USB）驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

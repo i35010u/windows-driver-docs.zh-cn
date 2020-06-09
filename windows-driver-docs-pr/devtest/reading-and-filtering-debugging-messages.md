@@ -18,19 +18,19 @@ keywords:
 - DbgPrint 缓冲区
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9725654a4f011f072aceb754a0a597a189a51f19
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: 0f3620a5dac393eb6cca43dbbcdd8ba705445855
+ms.sourcegitcommit: 188596c90e03a5619b5cbf0bff4276fc94777253
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428320"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84519848"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>读取和筛选调试消息
 
 在您指定的条件下， [**DbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)、 [**vDbgPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-vdbgprintex)、 [**vDbgPrintExWithPrefix**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-vdbgprintexwithprefix)和[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)例程向内核调试器发送消息。 此过程使您可以筛选出低优先级的消息。
 
 > [!NOTE]
-在 Microsoft Windows Server 2003 和更早版本的 Windows 中， [**DbgPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)和[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)例程无条件地将消息发送到内核调试器。
+> 在 Microsoft Windows Server 2003 和更早版本的 Windows 中， [**DbgPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)和[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)例程无条件地将消息发送到内核调试器。
 > 在 Windows Vista 和更高版本的 Windows 中，这些例程有条件地发送消息，例如**DbgPrintEx**和**KdPrintEx**。
 > 无论使用哪种 Windows 版本，都应使用**DbgPrintEx**、 **vDbgPrintEx**、 **vDbgPrintExWithPrefix**和**KdPrintEx**，因为这些例程使您能够控制发送消息的条件。
 

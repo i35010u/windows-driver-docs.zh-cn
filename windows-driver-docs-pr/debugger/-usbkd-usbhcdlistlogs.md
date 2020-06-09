@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbhcdlistlogs
-description: Usbkd.usbhcdlistlogs 命令 (FDOs) 的所有功能的设备对象的列表显示与 USB 端口驱动程序 (Usbport.sys) 关联日志和调试日志。
+description: Usbkd. usbhcdlistlogs 命令显示与 USB 端口驱动程序（Usbport）和调试日志关联的所有功能设备对象（FDOs）的列表。
 ms.assetid: C86646D3-7B39-4C8C-9FDA-FD07AA7A880A
 keywords:
-- usbkd.usbhcdlistlogs Windows 调试
+- usbkd usbhcdlistlogs Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,31 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: da59ea96bd8beec1d7d43e5e6e7e32989d10261f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b9d5aea4ae0528ed5683d95d3c2d95d865c16fe
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334083"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534012"
 ---
 # <a name="usbkdusbhcdlistlogs"></a>!usbkd.usbhcdlistlogs
 
 
-**！ Usbkd.usbhcdlistlogs**命令显示的所有功能的设备对象 (FDOs) 与 USB 端口驱动程序 (Usbport.sys) 相关联的列表。 该命令还显示有关所有 EHCI 主控制器的完整的调试日志。
+**！ Usbkd. usbhcdlistlogs**命令显示与 USB 端口驱动程序（Usbport）关联的所有功能设备对象（FDOs）的列表。 该命令还显示所有 EHCI 主机控制器的完整调试日志。
 
 ```dbgcmd
 !usbkd.usbhcdlistlogs
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-此示例中显示的输出的一部分 **！ usbhcdlistlogs**命令。
+此示例显示 **！ usbhcdlistlogs**命令输出的一部分。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlistlogs
@@ -69,14 +69,14 @@ LOG@: ffffe00001ca11b8
 [1023] ffffe00002019180 xdB0 ffffe00001ca1b88 ffffe00001ca1050 0000000000000000 
 ```
 
-命令输出显示两个 FDOs 表示 UHCI 主机 controlers 和一个 FDO 表示 EHCI 主控制器。 然后该输出显示一个 EHCI 主控制器的调试日志。
+命令输出显示两个 FDOs，分别表示 UHCI 主机 controlers 和一个表示 EHCI 主机控制器的 FDO。 然后，输出显示一个 EHCI 主机控制器的调试日志。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

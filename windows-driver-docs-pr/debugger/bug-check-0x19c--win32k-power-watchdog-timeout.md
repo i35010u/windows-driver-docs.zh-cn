@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
-description: WIN32K_POWER_WATCHDOG_TIMEOUT bug 检查具有 0x0000019C 值。 这表示，Win32k 不能打开监视器及时。
+description: WIN32K_POWER_WATCHDOG_TIMEOUT bug 检查的值为0x0000019C。 这表示 Win32k.sys 未及时打开监视器。
 ms.assetid: 55907359-C282-43F0-92FE-5DC248BF9D02
 keywords:
 - Bug 检查 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf61b78baa49b45ba114ed359a95577ec642bb2
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ae048f4e73c8d518a2471e92e598f377dfac4790
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519784"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534652"
 ---
-# <a name="bug-check-0x19c-win32kpowerwatchdogtimeout"></a>Bug 检查 0x19C：WIN32K\_电源\_监视器\_超时
+# <a name="bug-check-0x19c-win32k_power_watchdog_timeout"></a>Bug 检查0x19C： WIN32K.SYS \_ 电源 \_ 监视器 \_ 超时
 
 
-WIN32K\_电源\_监视器\_超时错误检查的值为 0x0000019C。 这表示，Win32k 不能打开监视器及时。
+WIN32K.SYS \_ POWER \_ 监视器 \_ 超时 bug 检查的值为0x0000019C。 这表示 Win32k.sys 未及时打开监视器。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="win32kpowerwatchdogtimeout-parameters"></a>WIN32K\_电源\_监视器\_超时参数
+## <a name="win32k_power_watchdog_timeout-parameters"></a>WIN32K.SYS \_ POWER \_ 监视器 \_ 超时参数
 
 
 <table>
@@ -40,13 +40,13 @@ WIN32K\_电源\_监视器\_超时错误检查的值为 0x0000019C。 这表示�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left"><p>失败类型 (win32kbase ！POWER_WATCHDOG_TYPE)</p>
+<td align="left"><p>失败类型（win32kbase！POWER_WATCHDOG_TYPE）</p>
 <div class="code">
 <code>0x10 : The power request queue is not making progress
               2 - Pointer to the thread processing power requests, if any
@@ -73,21 +73,21 @@ WIN32K\_电源\_监视器\_超时错误检查的值为 0x0000019C。 这表示�
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 1</td>
+<td align="left">请参阅参数1</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 
 

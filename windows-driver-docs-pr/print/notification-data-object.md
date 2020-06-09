@@ -8,22 +8,18 @@ keywords:
 - 通知数据对象 WDK 打印后台处理程序
 - IPrintAsyncNotifyDataObject
 - 数据对象 WDK 后台处理程序通知
-ms.date: 04/20/2017
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: eea6f5532c4baf19af9d3671658ea1662ab7e6a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2b955d6405af507c67e7d255569f01e980b7013f
+ms.sourcegitcommit: d71024c0c782b5c013192d960700802eafc120f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382784"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507108"
 ---
 # <a name="notification-data-object"></a>通知数据对象
 
-
-
-
-
-通知数据处理作为对象公开[IPrintAsyncNotifyDataObject](https://go.microsoft.com/fwlink/p/?linkid=124761)接口。 后台处理程序通知管道的客户端可以定义自己的数据架构，并且可以来回发送任何数据类型。 但是，后台处理程序查询通知数据对象的一个字节\*指针、 数据和通知类型的长度。 通知类型是 GUID，如中所述[通知类型](notification-filtering-and-communication-styles.md#notification-types)。
+通知数据将作为公开[IPrintAsyncNotifyDataObject](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifydataobject)接口的对象处理。 后台处理程序通知管道的客户端可以定义自己的数据架构，并可以来回发送任何数据类型。 但是，后台处理程序将在通知数据对象中查询字节 \* 指针、数据的长度和通知类型。 通知类型为 GUID，如[通知类型](notification-filtering-and-communication-styles.md#notification-types)中所述。
 
 ```cpp
 #define INTERFACE IPrintAsyncNotifyDataObject
@@ -34,7 +30,7 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyDataObject, IUnknown)
         REFIID riid,
         void** ppvObj
         ) PURE;
- 
+
     STDMETHOD_(ULONG, AddRef)(
         THIS
         ) PURE;
@@ -42,34 +38,26 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyDataObject, IUnknown)
     STDMETHOD_(ULONG, Release)(
         THIS
         ) PURE;
- 
+
     STDMETHOD(AcquireData)(
          THIS_
          OUT BYTE**,
          OUT ULONG*,
          OUT PrintAsyncNotificationType**
          ) PURE;
- 
+
     STDMETHOD(ReleaseData)(
         THIS
         ) PURE;
 };
 ```
 
-通知发件人必须在包数据**IPrintAsyncNotifyDataObject**对象。 发件人必须实现[IUnknown](https://go.microsoft.com/fwlink/p/?linkid=124716)接口。
+通知发送方必须将数据打包到**IPrintAsyncNotifyDataObject**对象中。 发件人必须实现[IUnknown](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。
 
-侦听客户端调用[IPrintAsyncNotifyDataObject::AcquireData](https://go.microsoft.com/fwlink/p/?linkid=124762)方法以获取通知数据、 通知数据，并通知类型的大小的原始指针。
+侦听客户端将调用[IPrintAsyncNotifyDataObject：： AcquireData](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-iprintasyncnotifydataobject-acquiredata)方法，以获取指向通知数据的原始指针、通知数据的大小和通知类型。
 
-侦听客户端的数据完成后，它必须调用[IPrintAsyncNotifyDataObject::ReleaseData](https://go.microsoft.com/fwlink/p/?linkid=124763)方法。 后台处理程序通知管道的客户端必须实现**IPrintAsyncNotifyDataObject**接口的方式，如果**IPrintAsyncNotifyDataObject::Release**方法之前调用**IPrintAsyncNotifyDataObject::ReleaseData**方法调用时，不释放的对象。 建议调用**IPrintAsyncNotifyDataObject::AcquireData**方法应递增对象的引用计数，并且调用**ReleaseData**方法应递减对象的引用计数。
+当侦听客户端处理完数据后，必须调用[IPrintAsyncNotifyDataObject：： ReleaseData](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-iprintasyncnotifydataobject-releasedata)方法。 如果调用**IPrintAsyncNotifyDataObject：： ReleaseData**方法之前调用**IPrintAsyncNotifyDataObject：： Release**方法，则后台处理程序通知管道的客户端必须实现**IPrintAsyncNotifyDataObject**接口，不会释放对象。 建议对**IPrintAsyncNotifyDataObject：： AcquireData**方法的调用应递增对象的引用计数，并且对**ReleaseData**方法的调用应递减对象的引用计数。
 
-后台处理程序定义了一个特殊的通知类型名为通知 GUID\_版本。 断开的代码时后台处理程序或侦听应用程序停止运行，通过调用宣布"仍处于活动状态"的通道的末尾[IPrintAsyncNotifyChannel::CloseChannel](https://go.microsoft.com/fwlink/p/?linkid=124759)方法。
+后台处理程序定义了一个名为 "通知版本" 的特殊通知类型 GUID \_ 。 当后台处理程序或侦听应用程序停止时，断开代码通过调用[IPrintAsyncNotifyChannel：： CloseChannel](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-iprintasyncnotifychannel-closechannel)方法公布通道的 "仍处于活动" 状态。
 
-调用**IPrintAsyncNotifyDataObject::AcquireData**针对此通知的方法返回与字节\*\*参数设置为**NULL**，ULONG\*参数设置为 0 和 GUID\*参数设置为通知\_版本。
-
- 
-
- 
-
-
-
-
+对于此通知，对**IPrintAsyncNotifyDataObject：： AcquireData**方法的调用将返回，其中 BYTE \* \* 参数设置为**NULL**，ULONG \* 参数设置为0，GUID \* 参数设置为通知 \_ 版本。

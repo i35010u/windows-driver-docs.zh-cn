@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b04dfc644c9125e6fd3d43943cbaa37514f4661
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1ee88687a333b072a6f6b545ff9ebf914e79117d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837572"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534914"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
 
@@ -37,106 +37,106 @@ ms.locfileid: "72837572"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NDIS 小型端口的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示有关微型端口的摘要信息。
 
-<span id="_______-diag______"></span><span id="_______-DIAG______"></span> *-诊断*   
+<span id="_______-diag______"></span><span id="_______-DIAG______"></span>*-诊断*   
 显示自动诊断警报（如果有）。
 
-<span id="_______-state______"></span><span id="_______-STATE______"></span> *-state*   
+<span id="_______-state______"></span><span id="_______-STATE______"></span>*-state*   
 显示微型端口的当前状态。
 
-<span id="_______-bindings______"></span><span id="_______-BINDINGS______"></span> *-绑定*   
+<span id="_______-bindings______"></span><span id="_______-BINDINGS______"></span>*-bindings*   
 显示微型端口绑定。
 
-<span id="_______-ports______"></span><span id="_______-PORTS______"></span> *-端口*   
+<span id="_______-ports______"></span><span id="_______-PORTS______"></span>*-端口*   
 显示 NDIS 端口的列表。
 
-<span id="_______-offloads______"></span><span id="_______-OFFLOADS______"></span> *-卸载*   
+<span id="_______-offloads______"></span><span id="_______-OFFLOADS______"></span>*-卸载*   
 显示任务卸载状态和功能。
 
-<span id="_______-filterdb______"></span><span id="_______-FILTERDB______"></span> *-filterdb*   
+<span id="_______-filterdb______"></span><span id="_______-FILTERDB______"></span>*-filterdb*   
 显示当前的数据包筛选器。
 
-<span id="_______-timers______"></span><span id="_______-TIMERS______"></span> *-计时器*   
+<span id="_______-timers______"></span><span id="_______-TIMERS______"></span>*-计时器*   
 显示微型端口分配的计时器对象。
 
-<span id="_______-rst______"></span><span id="_______-RST______"></span> *-rst*   
+<span id="_______-rst______"></span><span id="_______-RST______"></span>*-rst*   
 显示接收端限制状态。
 
-<span id="_______-pm______"></span><span id="_______-PM______"></span> *-pm*   
+<span id="_______-pm______"></span><span id="_______-PM______"></span>*-pm*   
 显示电源管理状态和功能。
 
-<span id="_______-ss______"></span><span id="_______-SS______"></span> *-ss*   
+<span id="_______-ss______"></span><span id="_______-SS______"></span>*-ss*   
 显示选择性挂起状态。
 
-<span id="_______-aoac______"></span><span id="_______-AOAC______"></span> *-aoac*   
+<span id="_______-aoac______"></span><span id="_______-AOAC______"></span>*-aoac*   
 显示 AOAC （连接待机）状态。
 
-<span id="_______-wol______"></span><span id="_______-WOL______"></span> *-wol*   
+<span id="_______-wol______"></span><span id="_______-WOL______"></span>*-wol*   
 显示 LAN 唤醒（WoL）配置。
 
-<span id="_______-protocoloffloads______"></span><span id="_______-PROTOCOLOFFLOADS______"></span> *-protocoloffloads*   
+<span id="_______-protocoloffloads______"></span><span id="_______-PROTOCOLOFFLOADS______"></span>*-protocoloffloads*   
 显示活动电源管理协议卸载。
 
-<span id="_______-rss______"></span><span id="_______-RSS______"></span> *-rss*   
+<span id="_______-rss______"></span><span id="_______-RSS______"></span>*-rss*   
 显示接收方缩放参数。
 
-<span id="_______-hw______"></span><span id="_______-HW______"></span> *-hw*   
+<span id="_______-hw______"></span><span id="_______-HW______"></span>*-hw*   
 显示硬件资源。
 
-<span id="_______-device______"></span><span id="_______-DEVICE______"></span> *-设备*   
+<span id="_______-device______"></span><span id="_______-DEVICE______"></span>*-设备*   
 显示有关基础 NT 设备对象的信息。
 
-<span id="_______-wmi______"></span><span id="_______-WMI______"></span> *-wmi*   
+<span id="_______-wmi______"></span><span id="_______-WMI______"></span>*-wmi*   
 显示注册到适配器的 WMI Guid。
 
-<span id="_______-customwmi______"></span><span id="_______-CUSTOMWMI______"></span> *-customwmi*   
+<span id="_______-customwmi______"></span><span id="_______-CUSTOMWMI______"></span>*-customwmi*   
 显示小型端口注册的自定义 WMI Guid。
 
-<span id="_______-ndiswmi______"></span><span id="_______-NDISWMI______"></span> *-ndiswmi*   
+<span id="_______-ndiswmi______"></span><span id="_______-NDISWMI______"></span>*-ndiswmi*   
 显示 NDIS 提供的 WMI Guid。
 
-<span id="_______-ref______"></span><span id="_______-REF______"></span> *-ref*   
+<span id="_______-ref______"></span><span id="_______-REF______"></span>*-ref*   
 显示对小型端口上的引用的细分。
 
-<span id="_______-log______"></span><span id="_______-LOG______"></span> *-日志*   
+<span id="_______-log______"></span><span id="_______-LOG______"></span>*-日志*   
 显示 PnP 和电源事件日志。
 
-<span id="_______-grovel______"></span><span id="_______-GROVEL______"></span> *-grovel*   
+<span id="_______-grovel______"></span><span id="_______-GROVEL______"></span>*-grovel*   
 在内存中强制搜索微型端口块。
 
-<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span> *-system.windows.frameworkelement.findname*   
+<span id="_______-findname______"></span><span id="_______-FINDNAME______"></span>*-system.windows.frameworkelement.findname*   
 按名称前缀筛选微型端口。
 
-<span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span> *-rcvfilter*   
+<span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span>*-rcvfilter*   
 显示接收筛选功能。
 
-<span id="_______-nicswitch______"></span><span id="_______-NICSWITCH______"></span> *-nicswitch*   
+<span id="_______-nicswitch______"></span><span id="_______-NICSWITCH______"></span>*-nicswitch*   
 显示 NIC 交换机功能。
 
-<span id="_______-rcvqueues______"></span><span id="_______-RCVQUEUES______"></span> *-rcvqueues*   
+<span id="_______-rcvqueues______"></span><span id="_______-RCVQUEUES______"></span>*-rcvqueues*   
 显示接收队列。
 
-<span id="_______-nicswitches______"></span><span id="_______-NICSWITCHES______"></span> *-nicswitches*   
+<span id="_______-nicswitches______"></span><span id="_______-NICSWITCHES______"></span>*-nicswitches*   
 显示 NIC 交换机。
 
-<span id="_______-iov______"></span><span id="_______-IOV______"></span> *-sr-iov*   
+<span id="_______-iov______"></span><span id="_______-IOV______"></span>*-*   
 显示 SR-IOV （单根 i/o 虚拟化）功能。
 
-<span id="_______-vfs______"></span><span id="_______-VFS______"></span> *-vfs*   
+<span id="_______-vfs______"></span><span id="_______-VFS______"></span>*-vfs*   
 显示 SR-IOV VFs （虚拟筛选器）。
 
-<span id="_______-vports______"></span><span id="_______-VPORTS______"></span> *-vports*   
+<span id="_______-vports______"></span><span id="_______-VPORTS______"></span>*-vports*   
 显示 Vports （虚拟端口）。
 
-<span id="_______-ifrtrace______"></span><span id="_______-IFRTRACE______"></span> *-ifrtrace*   
+<span id="_______-ifrtrace______"></span><span id="_______-IFRTRACE______"></span>*-ifrtrace*   
 显示正在进行的记录器跟踪。
 
-<span id="_______-ip______"></span><span id="_______-IP______"></span> *-ip*   
+<span id="_______-ip______"></span><span id="_______-IP______"></span>*-ip*   
 显示网络接口上的 IP 地址。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -146,7 +146,7 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-通过运行不带参数的 **！ ndiskd** ，你可以获取系统上所有网络适配器的列表及其关联的微型端口驱动程序。 在此示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffdf80140c71a0。 有关内核调试网络适配器用途的详细信息，请参阅 NDIS 博客上[的通过网络进行内核调试](https://go.microsoft.com/fwlink/p/?linkid=845868)。
+通过运行不带参数的 **！ ndiskd** ，你可以获取系统上所有网络适配器的列表及其关联的微型端口驱动程序。 在此示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffdf80140c71a0。 有关内核调试网络适配器用途的详细信息，请参阅 NDIS 博客上[的通过网络进行内核调试](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -235,7 +235,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-例如，使用 **！ ndiskd**作为进一步调试的开始位置，单击报表底部的 "驱动程序处理程序" 链接可查看此网络适配器的微型端口驱动程序的所有已注册驱动程序回调处理程序的列表。 在下面的示例中，单击链接会导致！ ndiskd 与此网络适配器的微型端口驱动程序的句柄一起运行[ **！ ndiskd。** ](-ndiskd-minidriver.md) 微型端口驱动程序是 kdnic 4.2 及其句柄 ffffdf801418d650。
+例如，使用 **！ ndiskd**作为进一步调试的开始位置，单击报表底部的 "驱动程序处理程序" 链接可查看此网络适配器的微型端口驱动程序的所有已注册驱动程序回调处理程序的列表。 在下面的示例中，单击链接会导致！ ndiskd 与此网络适配器的微型端口驱动程序的句柄一起运行[**！ ndiskd。**](-ndiskd-minidriver.md) 微型端口驱动程序是 kdnic 4.2 及其句柄 ffffdf801418d650。
 
 ```console
 3: kd> !ndiskd.minidriver ffffdf801418d650 -handlers
@@ -275,15 +275,15 @@ HANDLERS
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[通过网络进行内核调试](https://go.microsoft.com/fwlink/p/?linkid=845868)
+[通过网络进行内核调试](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)
 
-[ **！ ndiskd. 微型驱动程序**](-ndiskd-minidriver.md)
+[**!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
 
 

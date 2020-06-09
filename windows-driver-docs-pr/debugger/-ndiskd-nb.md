@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fb01044dde6b95e312f1de17561d5ac9515c3b6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c393b538c6666049bebbfb6ce0c4f290dca068b7
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826649"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534734"
 ---
 # <a name="ndiskdnb"></a>!ndiskd.nb
 
 
-**！ Ndiskd**扩展显示[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) （nb）结构的相关信息。
+**！ Ndiskd**扩展显示有关[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)（nb）结构的信息。
 
 ```console
 !ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data] 
@@ -31,19 +31,19 @@ ms.locfileid: "72826649"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-必需。 **NET\_缓冲区**结构的地址。
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
+必需。 **网络 \_ 缓冲区**的地址。
 
-<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span> *-详细级别*   
+<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span>*-详细级别*   
 要显示的详细信息的级别。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示有关 NB 的基本信息。
 
-<span id="_______-chain______"></span><span id="_______-CHAIN______"></span> *-链式*   
+<span id="_______-chain______"></span><span id="_______-CHAIN______"></span>*-链*   
 显示与 NB 关联的所有 MDLs。
 
-<span id="_______-data______"></span><span id="_______-DATA______"></span> *-数据*   
+<span id="_______-data______"></span><span id="_______-DATA______"></span>*-数据*   
 转储 NB 的实际数据有效负载。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -53,14 +53,14 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-以下示例中的**net\_缓冲区**是从[ **！ ndiskd nbl**](-ndiskd-nbl.md)主题的 "示例" 部分中的[**net\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)中获取的。 NB 的句柄为 ffffdf8014952610。
+以下示例中的**网络 \_ 缓冲区**是从[**！ ndiskd，Nbl**](-ndiskd-nbl.md)主题的 "示例" 部分的[**net \_ buffer \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)中获取的。 NB 的句柄为 ffffdf8014952610。
 
 ```console
 2: kd> !ndiskd.nbl ffffdf80149524a0 -data
 NET_BUFFER ffffdf8014952610
 ```
 
-可以单击**NET\_缓冲区**的句柄，或运行 **！ ndiskd**命令来查看其详细信息。
+可以单击**网络 \_ 缓冲区**的句柄，或运行 **！ ndiskd**命令来查看其详细信息。
 
 ```console
 2: kd> !ndiskd.nb ffffdf8014952610
@@ -72,7 +72,7 @@ NET_BUFFER ffffdf8014952610
     View associated NBL
 ```
 
-使用 **！ ndiskd**命令查看此**网络\_缓冲区**的 MDL 链以及其基本详细信息。 在下面的示例中，只有一个 MDL。 它的句柄为 ffffdf8014a37930。
+使用 **！ ndiskd**命令查看此**网络 \_ 缓冲区**的 MDL 链以及其基本详细信息。 在下面的示例中，只有一个 MDL。 它的句柄为 ffffdf8014a37930。
 
 ```console
 2: kd> !ndiskd.nb ffffdf8014952610 -chain
@@ -92,17 +92,17 @@ NET_BUFFER ffffdf8014952610
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
+[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
-[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[ **！ ndiskd. nbl**](-ndiskd-nbl.md)
+[**!ndiskd.nbl**](-ndiskd-nbl.md)
 
  
 

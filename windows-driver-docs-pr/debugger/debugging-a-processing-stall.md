@@ -3,20 +3,20 @@ title: 调试处理停滞问题
 description: 调试处理停滞问题
 ms.assetid: 9dff37ed-4843-4e85-8ab3-6a0a37a58c23
 keywords:
-- 内核调试，视频流停止，处理停止流式处理
+- 内核流调试，视频流停止，处理延迟
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0051d7ae2a9f4aa5eddc1a7efe3b47bfdcef71d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 088a6a8f5dcb069b0d64ed73ce717aab4fa483df
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324559"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534780"
 ---
 # <a name="debugging-a-processing-stall"></a>调试处理停滞问题
 
 
-首先找到相关的 pin。 在假设的情况下，相关的视频捕获 pin 具有地址**8160DDE0**，因此，我们使用[ **！ ks.dump** ](-ks-dump.md)此地址的扩展命令，以获取更多详细信息：
+首先查找相关的 pin。 在假设的情况下，相关视频捕获 pin 具有地址**8160DDE0**，因此，我们在此地址上使用[**！ ks**](-ks-dump.md) extension 命令来获取更多详细信息：
 
 ```dbgcmd
 kd> !ks.dump 8160DDE0 7
@@ -30,7 +30,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
         And Gate Count           1
 ```
 
-首先，确定 pin 是适当的状态和另一个线程是否正在挂起处理互斥体。 在这种情况下，锁定状态是**KSSTATE\_运行**，和处理互斥体不被保留后，接下来，我们使用如[ **！ ks.dumpqueue** ](-ks-dumpqueue.md)扩展若要确定是否有帧可用：
+首先，确定 pin 是否处于适当的状态，以及处理 mutex 是否正在由另一个线程持有。 在这种情况下，pin 状态为**KSSTATE \_ RUN**，因为它应该是，并且不会保留处理互斥体，因此我们接下来使用[**！ dumpqueue**](-ks-dumpqueue.md)扩展来确定是否有可用的帧：
 
 ```dbgcmd
 kd> !ks.dumpqueue 8160DDE0 7
@@ -57,15 +57,15 @@ Queue 8172D5D8:
 ...<this part of display not shown>...
 ```
 
-中的上述部分显示 **！ ks.dumpqueue**输出，我们看到，有五个帧等待或可用。 这些帧超前或落后于前导边缘？ 在中 **！ ks.dumpqueue**显示，帧始终可以从最早列出到最新。 框架标头的前边缘与匹配的第一个帧列出，最早的帧。 因此所有可用的帧都是领先的前沿。
+在上面的 **！ dumpqueue**输出的部分显示中，我们看到有5个帧正在等待或可用。 这些帧是位于前导边缘之前还是之后？ 在**dumpqueue**显示中，框架始终按从最旧到最新的顺序列出。 前导边缘的框架标头与列出的第一个帧的帧标题匹配，即最早的帧。 因此，所有可用帧都在前导边缘之前。
 
-如果这不是这种情况，并改为的所有帧已背后前导边缘，并且拥有计数应克隆指针的引用，这些问题很可能源自的硬件或硬件的驱动程序的编程。 请确保硬件信号缓冲区完成 （检查中断和 dpc 进行标记），并确定，该驱动程序是进行适当的响应这些通知 （通过如删除缓冲区完成后，克隆）。
+如果不是这种情况，而是所有的帧都在前导边缘之后，并且由于克隆指针而产生了引用计数，则问题很可能是由硬件或驱动程序的硬件编程引起的。 请确保硬件发出缓冲区信号完成（检查中断和 Dpc），并确定驱动程序是否正确响应这些通知（例如，在缓冲区完成时删除克隆）。
 
-如果如下所示示例中，所有帧都是领先的前沿，问题几乎可以肯定是一个软件问题。 进一步的信息可以通过查看插针的获取和入口。
+例如，如我们的示例中所述，所有帧都在领先的边缘，问题几乎肯定是软件问题。 可以通过查看 pin 和门获取详细信息。
 
-### <a name="span-idinterpretingtheandgatespanspan-idinterpretingtheandgatespaninterpreting-the-and-gate"></a><span id="interpreting_the_and_gate"></span><span id="INTERPRETING_THE_AND_GATE"></span>解释和入口
+### <a name="span-idinterpreting_the_and_gatespanspan-idinterpreting_the_and_gatespaninterpreting-the-and-gate"></a><span id="interpreting_the_and_gate"></span><span id="INTERPRETING_THE_AND_GATE"></span>解释和门
 
-Pin 和入口控件处理。 如果其中一个入口计数，可以进行处理。 使用获取的当前状态和入口 **！ ks.dump**扩展：
+Pin 的和门控件处理。 如果入口计数为1，则可能发生处理。 使用 **！ ks**扩展名获取和入口的当前状态：
 
 ```dbgcmd
 kd> !ks.dump 8160DDE0 7
@@ -79,11 +79,11 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
         And Gate Count           1
 ```
 
-由于入口计数是一个，And 门处于打开状态。 在这种情况下，调查处理停止以下可能的原因：
+因为入口计数为1，所以和入口为打开状态。 在这种情况下，请调查处理延迟的以下潜在原因：
 
--   进程调度错误地返回的状态为\_PENDING。
+-   进程调度错误地返回了 "挂起" 状态 \_ 。
 
--   数据可用性用例缺少[KsPinAttemptProcessing](https://go.microsoft.com/fwlink/p/?linkid=56545)调用。
+-   数据可用性事例缺少[KsPinAttemptProcessing](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattemptprocessing)调用。
 
  
 

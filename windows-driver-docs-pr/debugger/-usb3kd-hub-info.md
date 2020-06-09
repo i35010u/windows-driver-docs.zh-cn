@@ -1,9 +1,9 @@
 ---
-title: usb3kd.hub_info
-description: Usb3kd.device_info 命令在 USB 3.0 树中显示有关集线器的信息。
+title: usb3kd hub_info
+description: Device_info usb3kd 命令显示有关 USB 3.0 树中的集线器的信息。
 ms.assetid: B46B48C1-C14A-410D-9C34-F8AB1640682C
 keywords:
-- usb3kd.hub_info Windows 调试
+- usb3kd hub_info Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 399a35aeaee39f782bc7e0b1fc19ac62c91d2d9c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b83fdef85c0607b36d569bdb5921fd12845d3f3a
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338764"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534176"
 ---
-# <a name="usb3kdhubinfo"></a>!usb3kd.hub\_info
+# <a name="usb3kdhub_info"></a>！ usb3kd \_ 信息
 
 
-[ **！ Usb3kd.device\_信息**](-usb3kd-device-info.md)命令显示有关中的集线器信息[USB 3.0 树](usb-3-extensions.md#usb-3-tree)。
+[**！ Usb3kd \_ info**](-usb3kd-device-info.md)命令显示有关[USB 3.0 树](usb-3-extensions.md#usb-3-tree)中的集线器的信息。
 
 ```dbgcmd
 !usb3kd.hub_info DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-适用于中心的功能的设备对象 (FDO) 的设备扩展的地址。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
+中心功能设备对象（FDO）的设备扩展的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看的输出[ **！ usb\_树**](-usb3kd-usb-tree.md)命令。 在以下示例中，适用于根中心的设备扩展的地址是 0xfffffa8005ad92d0。
+若要获取设备扩展的地址，请查看[**！ usb \_ 树**](-usb3kd-usb-tree.md)命令的输出。 在以下示例中，根集线器的设备扩展地址为0xfffffa8005ad92d0。
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -57,7 +57,7 @@ Topology
         ...
 ```
 
-现在可以将传递到设备扩展的地址 **！ 中心\_信息**命令。
+现在可以将设备扩展的地址传递到 **！ hub \_ 信息**命令。
 
 ```dbgcmd
 3: kd> !hub_info fffffa8005ad92d0 
@@ -97,14 +97,14 @@ Hub Event History:
     ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[**!usb3kd.hub\_info\_from\_fdo**](-usb3kd-hub-info-from-fdo.md)
+[**！ usb3kd \_ \_ fdo 中的信息 \_**](-usb3kd-hub-info-from-fdo.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

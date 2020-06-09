@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x9 IRQL_NOT_GREATER_OR_EQUAL
-description: IRQL_NOT_GREATER_OR_EQUAL bug 检查具有 0x00000009 值。检查此错误极少出现。
+description: IRQL_NOT_GREATER_OR_EQUAL bug 检查的值为0x00000009。此 bug 检查很少出现。
 ms.assetid: d48f1681-df49-4cc3-a22d-84e090e7d774
 keywords:
 - Bug 检查 0x9 IRQL_NOT_GREATER_OR_EQUAL
@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a49cf97f7dc29f491468e0c273e113b450bddada
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d14f05ee9e1600d8f6d77fb1932ad87ff38681db
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519142"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534592"
 ---
-# <a name="bug-check-0x9-irqlnotgreaterorequal"></a>Bug 检查 0x9：IRQL\_NOT\_GREATER\_OR\_EQUAL
+# <a name="bug-check-0x9-irql_not_greater_or_equal"></a>Bug 检查0x9： IRQL \_ 不 \_ 大于 \_ 或 \_ 等于
 
 
-IRQL\_不\_GREATER\_或\_相等 bug 检查的值为 0x00000009。
+IRQL \_ 不 \_ 大于 \_ 或 \_ 等于 bug 检查的值为0x00000009。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

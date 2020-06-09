@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎，COM 接口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a671b96d256c265f66745fb205fba64133c16884
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6c8800583b3000544c9f6f469d949ed2bae7e2da
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834242"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533821"
 ---
 # <a name="using-client-objects"></a>使用客户端对象
 
@@ -26,7 +26,7 @@ ms.locfileid: "72834242"
 
 调试器引擎 API 包含几个 COM，如接口;它们实现**IUnknown**接口。
 
-[调试引擎接口](https://docs.microsoft.com/windows-hardware/drivers/debugger/client-com-interfaces)部分中描述的接口是由客户端实现的（尽管不一定是最新版本）。 您可以使用 COM 方法**IUnknown：： QueryInterface**从任何其他接口获取其中的每个接口。
+[调试引擎接口](client-com-interfaces.md)部分中描述的接口是由客户端实现的（尽管不一定是最新版本）。 您可以使用 COM 方法**IUnknown：： QueryInterface**从任何其他接口获取其中的每个接口。
 
 客户端实现**IUnknown** COM 接口，并使用它来维护引用计数和接口选择。 但是，客户端不是已注册的 COM 对象。 方法**iunknown：： AddRef**用于递增对象的引用计数，而方法**Iunknown：： Release**用于递减引用计数。 当调用**iunknown：： QueryInterface**时，引用计数会递增，因此，当不再需要客户端接口指针时，应调用**release**来递减引用计数。
 
@@ -34,14 +34,14 @@ ms.locfileid: "72834242"
 
 有关何时应增加和减少引用计数的详细信息，请参阅平台 SDK。
 
-**IUnknown：： QueryInterface**、 **DebugCreate**和**DebugConnect** ，每个都采用接口 ID 作为其参数之一。 可以使用 **\_\_uuidof**运算符获取此接口 ID。 例如：
+**IUnknown：： QueryInterface**、 **DebugCreate**和**DebugConnect** ，每个都采用接口 ID 作为其参数之一。 可使用** \_ \_ uuidof**运算符获取此接口 ID。 例如：
 
 ```cpp
 IDebugClient * debugClient;
 HRESULT Hr = DebugCreate( __uuidof(IDebugClient), (void **)&debugClient );
 ```
 
-**重要**  IDebug\* 接口（如 COM like）不是正确的 com api，如[**IDebugEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
+**重要提示**   IDebug \* 接口（如 COM like）不是正确的 Com api，如[**IDebugEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugeventcallbacks)接口。 从托管代码调用这些接口是不受支持的方案。 当通过托管代码调用这些接口时，会导致系统不稳定的问题，例如垃圾回收和线程所有权。
 
  
 

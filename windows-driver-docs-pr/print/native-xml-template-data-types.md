@@ -9,35 +9,34 @@ keywords:
 - XML_TYPE WDK GDL
 - ArrayLabel 指令 WDK GDL
 - XMLDataType 指令 WDK GDL
-ms.date: 04/20/2017
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 719d28be12cb3adaf19fccf2a28d192689855523
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8724ec1b6ce9e7f50657fd35141e35a0504011ab
+ms.sourcegitcommit: d71024c0c782b5c013192d960700802eafc120f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324221"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507098"
 ---
 # <a name="native-xml-template-data-types"></a>本机 XML 模板数据类型
 
+本机 XML 数据类型定义为 XML \_ 类型。
 
-本机 XML 数据类型定义为 XML\_类型。
+语法由 XML 定义。 可以定义 XML 架构可识别的任何数据类型。 分析器筛选器不依赖于 XML 数据类型，因此，当前分析器可以在不进行任何更改的情况下支持未来的 XML 数据类型。
 
-语法定义的 XML。 可以定义识别的 XML 架构的任何数据类型。 因此，当前的分析器可以支持未来的 XML 数据类型，无需更改任何分析器筛选器不依赖于 XML 数据类型。
+\***DataType**： **XML \_ 类型**将模板与特定 XML 架构定义语言的内置简单数据类型相关联。 实例数据值将作为 XML 元素的内容输出，其**xsi： type**派生自 \* 此模板指定的**XMLDataType**构造。
 
-\***数据类型**:**XML\_类型**将模板与特定的 XML 架构定义语言的内置简单数据类型相关联。 实例数据值将作为 XML 元素的内容的输出**xsi: type**派生自\* **XMLDataType**构造，它指定此模板。
+以下指令用于定义 XML \_ 类型数据类型：
 
-以下指令用于定义 XML\_数据类型：
+- \*XMLDataType （必需）。 任何 XSD 架构内置简单类型。 XML 架构的[万维网联合会（W3C）](https://www.w3.org/XML/Schema#dev)建议可识别以下内置简单数据类型： String、normalizedString、token、Byte、UnsignedByte、Base64Binary、hexBinary、Integer、PositiveInteger、NegativeInteger、NonNegativeInteger、nonPositiveInteger、Int、unsignedInt、Long、unsignedLong、Short、unsignedShort、decimal、float、double、boolean、Time、dateTime、duration、Date、GMonth、GYear、GYearMonth、GDay、GMonthDay、Name、QName、 请注意，GDL 分析器并不限于这些数据类型，设计用于处理将来的 XML 数据类型，而不进行任何更改。
 
--   \*XMLDataType （必需）。 任何 XSD 架构内置简单类型。 [World Wide Web 联合会 (W3C)](https://go.microsoft.com/fwlink/p/?linkid=73527)的 XML 架构建议可以识别以下内置的简单数据类型： string、 normalizedString、 令牌、 字节、 unsignedByte、 base64Binary、 hexBinary、 integer、positiveInteger、 negativeInteger、 nonNegativeInteger、 nonPositiveInteger，int，unsignedInt，长，unsignedLong，短、 无符号 Short、 decimal、 float、 double、 布尔值、 时间、 日期时间、 持续时间、 日期、 gMonth、 gYear、 gYearMonth、 gDay、 gMonthDay，名称，QName、 NCName、 anyURI、 语言、 ID、 IDREF、 IDREFS、 实体、 实体、 表示法、 NMTOKEN 和 NMTOKENS。 请注意 GDL 分析器并不局限于这些数据类型，它旨在处理将来的 XML 数据类型，无需进行任何更改。
+- \*ArrayLabel （可选）。 如果指定此指令，则分析器筛选器会将值括在括号内，并在其前面加上指定的数组标签。
 
--   \*ArrayLabel （可选）。 如果指定此指令时，分析器筛选器需要括在圆括号，以指定的数组标签值。
+值的语法必须符合 W3C XML 标准为该特定数据类型定义的语法。 如果 XML 语法与基本 GDL 语法规则冲突，则值（或只是冲突部分）必须包含在 <Begin/EndValue： > 构造内。 不兼容语法的 XML 值或其语法与复合数据类型所用语法不兼容的 XML 值不能作为复合数据类型的成员出现。 另请注意，GDL 分析器将不会转义特殊的 XML 字符（如左括号或右括号（< 或 >）或与号（&）。 值的创建者负责使字符数据符合 XML 语法。
 
-值的语法必须符合 W3C XML 标准定义为该特定的数据类型的语法。 如果与基本 GDL 语法规则冲突的 XML 语法的值 （或只是冲突的部分） 必须括起&lt;Begin/EndValue:&gt;构造。 XML 值与此类不兼容的语法，或其语法不兼容的语法由复合数据类型，不能显示为复合数据类型的成员。 此外请注意 GDL 分析器将不会转义特殊 XML 字符如打开或右括号 (&lt;或&gt;) 或与号 (&)。 值的创建者负责符合用于字符数据的 XML 语法。
+例如，请考虑以下模板。
 
-例如，考虑以下模板。
-
-```cpp
+```console
 *Template:  XML_STRING
 {
     *Type:  DATATYPE
@@ -46,9 +45,9 @@ ms.locfileid: "63324221"
 }
 ```
 
-如果使用前面的模板，将创建以下 XML 架构项。 此项定义派生自最初指定的类型的新数据类型\* **XMLDataType**指令，但在此新的数据类型具有可以在快照中显示的其他 XML 特性。 如果你使用的原始数据类型，则会收到架构验证错误，因为原始预定义的类型不允许出现 XML 特性。
+如果使用前面的模板，则将创建以下 XML 架构条目。 此项定义了从 XMLDataType 指令最初指定的类型派生的新数据类型 \* **XMLDataType** ，但此新数据类型具有可在快照中显示的其他 XML 属性。 如果使用的是原始数据类型，则会出现架构验证错误，因为原始预定义类型不允许显示 XML 属性。
 
-```cpp
+```xml
     <complexType name = "GDLW_string">
         <simpleContent>
             <extension base="string">
@@ -61,13 +60,13 @@ ms.locfileid: "63324221"
 
 请考虑以下 GDL 条目。
 
-```cpp
+```console
 *Text: Hello World
 ```
 
-请考虑短语模板声明 GDL 属性\***文本**具有\* **ValueType**由 XML\_字符串作为模板，下面的代码示例显示了。
+请考虑短语模板，该模板将 GDL 特性 \* **文本**声明为具有 \* **ValueType**由 XML 字符串模板定义的 ValueType \_ ，如以下代码示例所示。
 
-```cpp
+```console
 *Template:  PHRASE
 {
     *Name:  "*Text"
@@ -76,18 +75,10 @@ ms.locfileid: "63324221"
 }
 ```
 
-如果早期 GDL 条目解释使用短语模板中，将发生以下 XML 输出。
+如果使用短语模板解释前面的 GDL 项，则将发生以下 XML 输出。
 
-```cpp
+```xml
 <GDL_ATTRIBUTE Name="*Text"  xsi:type="GDLW_string" >Hello World</GDL_ATTRIBUTE>
 ```
 
-XML 特性**xsi: type**用来指定由于架构包含此元素没有声明，此属性元素保留的数据类型。
-
- 
-
- 
-
-
-
-
+XML 特性**xsi： type**用于指定此 attribute 元素保存的数据类型，因为架构不包含此元素的声明。

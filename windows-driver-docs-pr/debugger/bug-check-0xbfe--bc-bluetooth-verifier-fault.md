@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff7466bde88fd16f7d8dad3a62b1ff5bbe948cf7
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 4c4f1cae3054da3da996647354e4d82a9ef7f474
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916226"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534794"
 ---
-# <a name="bug-check-0xbfe-bc_bluetooth_verifier_fault"></a>Bug 检查0xBFE： BC\_BLUETOOTH\_VERIFIER\_错误
+# <a name="bug-check-0xbfe-bc_bluetooth_verifier_fault"></a>Bug 检查0xBFE： BC \_ 蓝牙 \_ 验证程序 \_ 错误
 
 
-BC\_BLUETOOTH\_VERIFIER\_错误检查的值为0x00000BFE。 这表明驱动程序导致了冲突。
+BC \_ 蓝牙 \_ 验证程序 \_ 错误检查的值为0x00000BFE。 这表明驱动程序导致了冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bc_bluetooth_verifier_fault-parameters"></a>BC\_BLUETOOTH\_VERIFIER\_错误参数
+## <a name="bc_bluetooth_verifier_fault-parameters"></a>BC \_ 蓝牙 \_ 验证程序 \_ 错误参数
 
 
 <table>
@@ -40,7 +40,7 @@ BC\_BLUETOOTH\_VERIFIER\_错误检查的值为0x00000BFE。 这表明驱动程�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -103,10 +103,10 @@ BC\_BLUETOOTH\_VERIFIER\_错误检查的值为0x00000BFE。 这表明驱动程�
 
 
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 参数1描述了冲突类型。 查看调用堆栈，确定驱动程序是否有异常。
 
 

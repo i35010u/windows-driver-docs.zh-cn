@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 018e4917a2049e81bd74b742f99142140c4c2396
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d3407e5f652bf63ecade29eb4552c49d8c02d8da
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837590"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534922"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
 
@@ -28,13 +28,13 @@ ms.locfileid: "72837590"
 !ndiskd.mopen [-handle <x>] [-ref] 
 ```
 
-## <a name="span-idddk__ndiskd_mopen_dbgspanspan-idddk__ndiskd_mopen_dbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>Parameters
+## <a name="span-idddk__ndiskd_mopen_dbgspanspan-idddk__ndiskd_mopen_dbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>参数
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NDIS 开放式绑定的句柄。
 
-<span id="_______-ref______"></span><span id="_______-REF______"></span> *-ref*   
+<span id="_______-ref______"></span><span id="_______-REF______"></span>*-ref*   
 显示开放绑定的 refcounts。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -44,7 +44,7 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-输入！ ndiskd. mopen 命令获取所有打开的绑定的列表。 在此示例中，查找 Microsoft ISATAP 适配器 \#2 微型端口与 TCPIP6TUNNEL 协议之间的绑定。 它的句柄为 ffff8083e56b8110。
+输入！ ndiskd. mopen 命令获取所有打开的绑定的列表。 在此示例中，查找 Microsoft ISATAP 适配器 \# 2 小型端口与 TCPIP6TUNNEL 协议之间的绑定。 它的句柄为 ffff8083e56b8110。
 
 ```console
 3: kd> !ndiskd.mopen
@@ -111,11 +111,11 @@ RECEIVE PATH
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
  
 

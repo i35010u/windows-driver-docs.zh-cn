@@ -4,15 +4,15 @@ description: 类型
 ms.assetid: 234f4f36-ccd3-426a-a361-33727e9ece5a
 keywords:
 - 符号，类型
-- 类型
+- types
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 671b0f5145e2f53fe9b50828dc62737445bd220b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3ae852959fd0d618192a0ac70d33db2827dd8a97
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838806"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533826"
 ---
 # <a name="types"></a>类型
 
@@ -44,7 +44,7 @@ ms.locfileid: "72838806"
 
 若要设置类型化数据的格式并将其发送到输出回调，请将[*OutputTypedDataPhysical*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-outputtypeddataphysical)和[*OutputTypedDataVirtual*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-outputtypeddatavirtual)分别用于目标物理和虚拟内存中的数据。
 
-[**调试\_TYPEOPTS\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-typeopts-xxx)中描述的类型选项会影响引擎在将类型化数据发送到输出回调之前如何设置其格式。
+[**DEBUG \_ TYPEOPTS \_ XXX**](debug-typeopts-xxx.md)中描述的类型选项会影响引擎在将类型化数据发送到输出回调之前如何设置其格式。
 
 可以使用[**AddTypeOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-addtypeoptions)打开类型选项，并通过使用[**RemoveTypeOptions**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-removetypeoptions)将其关闭。
 
@@ -54,7 +54,7 @@ ms.locfileid: "72838806"
 
 调试器引擎 API 支持解释类型化数据。 这提供了一种方法来遍历目标上的对象层次结构，包括查找结构的成员、取消引用指针以及查找数组元素。
 
-类型化的数据由[**调试\_类型化\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data)结构的实例描述，表示目标强制转换为特定类型的内存区域。 [**调试\_请求\_EXT\_类型\_数据\_ANSI**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-request-ext-typed-data-ansi)**请求**操作用于处理这些实例。 可以将它们初始化为表达式的结果，或将内存的区域强制转换为指定类型。 有关 DEBUG\_请求\_EXT\_类型\_数据\_ANSI**请求**操作支持的所有子操作的列表，请参阅[**EXT\_TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)。
+类型化的数据由[**调试 \_ 类型化 \_ 数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ns-wdbgexts-_debug_typed_data)结构的实例描述，表示目标强制转换为特定类型的内存区域。 [**调试 \_ 请求 \_ EXT \_ 类型化 \_ 数据 \_ ANSI**](debug-request-ext-typed-data-ansi.md)**请求**操作用于操作这些实例。 可以将它们初始化为表达式的结果，或将内存的区域强制转换为指定类型。 有关调试 \_ 请求 \_ EXT \_ 类型化数据 ANSI 请求操作支持的所有子操作的列表 \_ \_ ，请参阅[**EXT \_ TDOP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdbgexts/ne-wdbgexts-_ext_tdop)。 **Request**
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 

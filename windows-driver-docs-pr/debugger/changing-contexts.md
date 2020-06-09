@@ -11,12 +11,12 @@ keywords:
 - 会话
 ms.date: 08/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf6b33d78464be58fc7598febd4aa554f5e2e76
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 3e56c96b6620d4c2a1186cc856b27dae46b6b4f4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242832"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534484"
 ---
 # <a name="changing-contexts"></a>更改上下文
 
@@ -42,9 +42,9 @@ ms.locfileid: "79242832"
 
 可同时运行多个登录会话。 每个登录会话都有自己的进程。
 
-[ **！会话**](-session.md)扩展显示所有登录会话或更改当前会话上下文。
+[**！会话**](-session.md)扩展显示所有登录会话或更改当前会话上下文。
 
-当会话号码输入为 "-2" 时，将由[ **！ sprocess**](-sprocess.md)和[ **！ spoolused**](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-extensions)扩展使用会话上下文。
+当会话号码输入为 "-2" 时，将由[**！ sprocess**](-sprocess.md)和[**！ spoolused**](kernel-mode-extensions.md)扩展使用会话上下文。
 
 更改会话上下文时，进程上下文会自动更改为该会话的活动进程。
 
@@ -54,7 +54,7 @@ ms.locfileid: "79242832"
 
 在用户模式调试期间，当前进程将确定进程上下文。 调试程序命令、扩展和调试信息窗口中使用的虚拟地址通过使用当前进程的页目录进行解释。
 
-在内核模式调试过程中，你可以通过使用[ **. process （Set 进程上下文）** ](-process--set-process-context-.md)命令设置进程上下文。 使用此命令可选择用于解释虚拟地址的进程的页面目录。 设置进程上下文后，可以在任何采用地址的命令中使用此上下文。 甚至可以在此地址设置断点。 通过在 **. process**命令中包含一个 **/i**选项来指定侵害性调试，还可以使用内核调试器在用户空间中设置断点。
+在内核模式调试过程中，你可以通过使用[**. process （Set 进程上下文）**](-process--set-process-context-.md)命令设置进程上下文。 使用此命令可选择用于解释虚拟地址的进程的页面目录。 设置进程上下文后，可以在任何采用地址的命令中使用此上下文。 甚至可以在此地址设置断点。 通过在 **. process**命令中包含一个 **/i**选项来指定侵害性调试，还可以使用内核调试器在用户空间中设置断点。
 
 还可以通过在内核空间函数上使用特定于进程的断点，在内核调试器中设置用户模式断点。 设置战略断点并等待适当的上下文启动。
 
@@ -70,25 +70,25 @@ ms.locfileid: "79242832"
 
 使用以下命令之一执行用户模式调试时，可以将注册上下文更改为当前线程以外的值：
 
-[ **. .cxr （显示上下文记录）** ](-cxr--display-context-record-.md)
+[**.cxr（显示上下文记录）**](-cxr--display-context-record-.md)
 
-[ **. ecxr （显示异常上下文记录）** ](-ecxr--display-exception-context-record-.md)
+[**.ecxr（显示异常上下文记录）**](-ecxr--display-exception-context-record-.md)
 
 在内核模式调试过程中，可以使用各种调试器命令（包括以下命令）控制注册上下文：
 
-[ **。 thread （设置寄存器上下文）** ](-thread--set-register-context-.md)
+[**.thread（设置寄存器上下文）**](-thread--set-register-context-.md)
 
-[ **. .cxr （显示上下文记录）** ](-cxr--display-context-record-.md)
+[**.cxr（显示上下文记录）**](-cxr--display-context-record-.md)
 
-[**trap （显示陷印帧）** ](-trap--display-trap-frame-.md)
+[**.trap（显示陷阱帧）**](-trap--display-trap-frame-.md)
 
 这些命令不会更改 CPU 寄存器的值。 相反，调试器从其在内存中的位置检索指定的寄存器上下文。 实际上，调试器只能检索*保存*的寄存器值。 （其他值是动态设置的，不会保存。 保存的值足以重新创建堆栈跟踪。
 
-设置注册上下文后，新的寄存器上下文将用于任何使用寄存器值的命令，如[**k （显示 Stack Backtrace）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)和[**r （寄存器）** ](r--registers-.md)。
+设置注册上下文后，新的寄存器上下文将用于任何使用寄存器值的命令，如[**k （显示 Stack Backtrace）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)和[**r （寄存器）**](r--registers-.md)。
 
 但是，在调试多处理器计算机时，某些命令使你能够指定处理器。 （有关此类命令的详细信息，请参阅[多处理器语法](multiprocessor-syntax.md)。）如果为命令指定处理器，则该命令将使用指定处理器上的活动线程的注册上下文而不是当前寄存器上下文，即使指定的处理器是当前活动的处理器。
 
-此外，如果寄存器上下文与当前处理器模式设置不匹配，则这些命令会产生不正确或无意义的输出。 若要避免输出错误，依赖于注册状态的命令将失败，直到您更改处理器模式以匹配注册上下文为止。 若要更改处理器模式，请使用[**effmach （有效的计算机）** ](-effmach--effective-machine-.md)命令，
+此外，如果寄存器上下文与当前处理器模式设置不匹配，则这些命令会产生不正确或无意义的输出。 若要避免输出错误，依赖于注册状态的命令将失败，直到您更改处理器模式以匹配注册上下文为止。 若要更改处理器模式，请使用[**effmach （有效的计算机）**](-effmach--effective-machine-.md)命令，
 
 更改注册上下文还可以更改本地上下文。 通过这种方式，注册上下文可能会影响本地变量的显示。
 
@@ -96,13 +96,13 @@ ms.locfileid: "79242832"
 
 注册上下文会影响堆栈跟踪，因为堆栈跟踪从堆栈指针注册的位置（基于 x86 的处理器上的**esp** ）指向。 如果将注册上下文设置为无效或无法访问的值，则无法获取堆栈跟踪。
 
-可以使用将处理器断点（数据断点）应用于特定的注册上下文[ **。 apply\_.dbp （将数据断点应用于上下文）** ](-apply-dbp--apply-data-breakpoint-to-context-.md)命令。
+您可以通过使用将处理器断点（数据断点）应用到特定的注册上下文[**。将 .dbp 应用于 \_ 上下文的数据断点**](-apply-dbp--apply-data-breakpoint-to-context-.md)。
 
 ### <a name="span-idlocal-contextspanspan-idlocal_contextspanlocal-context"></a><span id="local-context"></span><span id="LOCAL_CONTEXT"></span>本地上下文
 
 当程序正在执行时，本地变量的意义取决于程序计数器的位置，因为此类变量的作用域只扩展到在其中定义的函数。
 
-执行用户模式或内核模式调试时，调试器使用当前函数（堆栈上的当前帧）的作用域作为本地上下文。 若要更改此上下文，请使用 " [**frame （设置本地上下文）** ](-frame--set-local-context-.md) " 命令，或在[调用窗口](calls-window.md)中双击所需的帧。
+执行用户模式或内核模式调试时，调试器使用当前函数（堆栈上的当前帧）的作用域作为本地上下文。 若要更改此上下文，请使用 " [**frame （设置本地上下文）**](-frame--set-local-context-.md) " 命令，或在[调用窗口](calls-window.md)中双击所需的帧。
 
 在用户模式调试中，本地上下文始终是当前线程的堆栈跟踪内的帧。 在内核模式调试中，本地上下文始终是当前寄存器上下文的线程的堆栈跟踪内的帧。
 
@@ -116,7 +116,7 @@ ms.locfileid: "79242832"
 
 -   对寄存器上下文所做的任何更改
 
-[ **！ For\_每个\_帧**](-for-each-frame.md)扩展都使你可以重复执行单个命令，为堆栈中的每个帧执行一次。 此命令更改每个帧的本地上下文，执行指定的命令，然后将本地上下文返回到其原始值。
+[**！对于 \_ 每个 \_ 帧**](-for-each-frame.md)扩展，可以重复执行单个命令，为堆栈中的每个帧执行一次。 此命令更改每个帧的本地上下文，执行指定的命令，然后将本地上下文返回到其原始值。
 
  
 

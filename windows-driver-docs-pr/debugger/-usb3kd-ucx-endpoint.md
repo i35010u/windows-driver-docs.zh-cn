@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f067172eb8e297d45292ffc5da977772566254
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 72791e1cc75b671a33378b27ecbaa53f364484d3
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837840"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534704"
 ---
-# <a name="usb3kducx_endpoint"></a>！ usb3kd. ucx\_终结点
+# <a name="usb3kducx_endpoint"></a>！ usb3kd ucx \_ 终结点
 
 
-[ **！ Usb3kd. ucx\_endpoint**](-usb3kd-device-info.md)命令显示有关[usb 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备上的终结点的信息。 此显示基于 USB 主机控制器扩展驱动程序 *（Ucx）* 所维护的数据结构。
+[**！ Usb3kd ucx \_ 终结点**](-usb3kd-device-info.md)命令显示 usb [3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备上的终结点的相关信息。 此显示基于 USB 主机控制器扩展驱动程序 *（Ucx）* 所维护的数据结构。
 
 ```dbgcmd
 !usb3kd.ucx_endpoint UcxEndpointPrivContext
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
 <span id="_______UcxEndpointPrivContext______"></span><span id="_______ucxendpointprivcontext______"></span><span id="_______UCXENDPOINTPRIVCONTEXT______"></span>*UcxEndpointPrivContext*   
-表示终结点的 \_UCXENDPOINT\_PRIVCONTEXT 结构的地址。
+\_ \_ 表示终结点的 UCXENDPOINT PRIVCONTEXT 结构的地址。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
 Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 **！ ucx\_endpoint**命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
+USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动程序与 usb 3.0 主机控制器驱动程序之间的抽象层。 扩展驱动程序具有其自己的主机控制器、设备和终结点的表示形式。 输出 **！ ucx \_ endpoint**命令基于扩展驱动程序所维护的数据结构。 有关 USB 主机控制器扩展驱动程序和 USB 3.0 主机控制器驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 <a name="examples"></a>示例
 --------
 
-若要获取 UCX 终结点专用上下文的地址，请查看[ **！ UCX\_控制器的输出\_list**](-usb3kd-ucx-controller-list.md)命令。 在下面的示例中，第二个设备上的第一个终结点的专用上下文地址为0xfffffa8003694860。
+若要获取 UCX 终结点专用上下文的地址，请查看[**！ UCX \_ controller \_ list**](-usb3kd-ucx-controller-list.md)命令的输出。 在下面的示例中，第二个设备上的第一个终结点的专用上下文地址为0xfffffa8003694860。
 
 ```dbgcmd
 3: kd> !ucx_controller_list
@@ -69,7 +69,7 @@ USB 主机控制器扩展驱动程序 *（Ucx）* 提供 usb 3.0 集线器驱动
         .!ucx_endpoint 0xfffffa80036a20c0 [Blk Out], UcxEndpointStateStale
 ```
 
-现在可以将 UCX 终结点专用上下文的地址传递给 **！ UCX\_endpoint**命令。
+现在可以将 UCX 终结点专用上下文的地址传递给 **！ UCX \_ endpoint**命令。
 
 ```dbgcmd
 3: kd> !ucx_endpoint 0xfffffa8003694860
@@ -102,9 +102,9 @@ EventCallbacks:
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[ **！ usb3kd. ucx\_控制器\_列表**](-usb3kd-ucx-controller-list.md)
+[**！ usb3kd ucx \_ 控制器 \_ 列表**](-usb3kd-ucx-controller-list.md)
 
-[通用串行总线（USB）驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

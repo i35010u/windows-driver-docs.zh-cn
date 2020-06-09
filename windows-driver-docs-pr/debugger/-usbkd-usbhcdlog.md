@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbhcdlog
-description: Usbkd.usbhcdlog 命令显示有关 USB 主控制器的调试日志的一部分。
+description: Usbkd. usbhcdlog 命令显示 USB 主机控制器的部分调试日志。
 ms.assetid: 78FDC557-7791-422A-AB7B-5C9B6A1DF481
 keywords:
-- usbkd.usbhcdlog Windows 调试
+- usbkd usbhcdlog Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f4f717e87a9dc35aac053467012d4818ef95e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6c06943b2b84c373217db2cbe33af27e543889b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363081"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534864"
 ---
 # <a name="usbkdusbhcdlog"></a>!usbkd.usbhcdlog
 
 
-[ **！ Usbkd.usbhcdlog** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlog)命令显示有关 USB 主控制器的调试日志的一部分。
+[**！ Usbkd. usbhcdlog**](-usbkd-usbhcdlog.md)命令显示 USB 主机控制器的调试日志的一部分。
 
 ```dbgcmd
 !usbkd.usbhcdlog DeviceExtension[, NumberOfEntries]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-适用于 UHCI 或 EHCI USB 主控制器的功能的设备对象 (FDO) 的设备扩展的地址。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
+UHCI 或 EHCI USB 主机控制器的功能设备对象（FDO）的设备扩展的地址。
 
-<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span> *NumberOfEntries*   
-若要显示的日志条目数。 若要显示整个日志，请将此参数设置为-1。
+<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span>*NumberOfEntries*   
+要显示的日志条目数。 若要显示整个日志，请将此参数设置为-1。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法找到的 USB 主控制器 FDO 设备扩展的地址。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是一种查找 USB 主机控制器的 FDO 的设备扩展地址的方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0 kd> !usbkd.usb2tree
@@ -57,9 +57,9 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
+在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-现在将传递到设备扩展的地址 **！ usbhcdlog**命令。 在此示例中，第二个参数将显示限制为四个日志条目。
+现在，将设备扩展的地址传递给 **！ usbhcdlog**命令。 在此示例中，第二个参数将显示范围限制为四个日志条目。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlog ffffe00001ca11a0, 4
@@ -73,12 +73,12 @@ LOG@: ffffe00001ca11b8
 [ 003] ffffe00002019300 gNX0 0000000000000000 0000000000000000 ffffe00001ca1b88 
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

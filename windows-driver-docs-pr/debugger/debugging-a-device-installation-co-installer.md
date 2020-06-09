@@ -4,16 +4,16 @@ description: 调试设备安装包中的辅助安装程序
 ms.assetid: a5cf3cec-bd61-49a6-b836-6759cd8c7d82
 keywords:
 - 设备安装共同安装程序调试
-- 安装辅助安装程序调试
-- 调试共同安装程序
+- 安装共同安装程序调试
+- 共同安装程序调试
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce340d98e111ff1bf87b7877c402ae54b8afff22
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 734987cb7b563937f489d20c3caeaa75296c66bf
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324639"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534782"
 ---
 # <a name="debugging-a-device-installation-co-installer"></a>调试设备安装包中的辅助安装程序
 
@@ -21,54 +21,54 @@ ms.locfileid: "63324639"
 ## <span id="ddk_debugging_dual_boot_machines_dbg"></span><span id="DDK_DEBUGGING_DUAL_BOOT_MACHINES_DBG"></span>
 
 
-一些硬件设备安装包中包含 DLL 文件称为*共同安装程序*，该设备的安装帮助。
+某些硬件设备安装包包括称为*共同安装程序*的 DLL 文件，这有助于安装设备。
 
-不能调试相同方式与其他模块的共同安装程序。 这是因为所在加载，辅助安装程序的唯一方式是，因为无需提供开发人员可以分解为正在运行的进程会自动执行各种安装方案。
+不能以与其他模块相同的方式调试共同安装程序。 这是因为加载共同安装程序的方法是独特的，因为许多安装方案会自动发生，而不会让开发人员中断正在运行的进程。
 
-可以通过以编程方式安装在设备来解决此问题。 将调试器附加到应用程序安装在设备允许访问共同安装程序本身。 实现此目的的最简单方法是安装或重新安装设备使用[DevCon](https://go.microsoft.com/fwlink/p/?linkid=152915)包括 Windows Driver Kit (WDK) 中的工具。 然后可以共同安装程序使用 WinDbg 进行调试。
+可以通过编程方式安装设备来解决此问题。 将调试器附加到安装了设备的应用程序后，可以访问共同安装程序本身。 实现此目的的最简单方法是使用 Windows 驱动程序工具包（WDK）中包含的[DevCon](https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon)工具来安装或重新安装该设备。 然后，您可以用 WinDbg 调试共同安装程序。
 
-使用以下过程来完成此任务。 此过程假定您已为你的设备使用共同安装程序的开发工作驱动程序安装包。 它还假定您有 WDK 的最新副本。 开发驱动程序、 驱动程序安装包和驱动程序安装共同安装程序的信息，请参阅 WDK 文档。
+使用以下过程来完成此任务。 此过程假定你已为使用共同安装程序的设备开发了一个工作的驱动程序安装包。 它还假定您拥有最新的 WDK 副本。 有关开发驱动程序、驱动程序安装包和驱动程序安装共同安装程序的信息，请参阅 WDK 文档。
 
-**调试共同安装程序使用 DevCon 和 WinDbg**
+**使用 DevCon 和 WinDbg 调试共同安装程序**
 
 1.  插入硬件设备。
 
-2.  取消**发现新硬件**向导。
+2.  取消 "**发现新硬件**" 向导。
 
 3.  启动 WinDbg。
 
-4.  选择**打开可执行文件**WinDbg 的从**文件**菜单。
+4.  从 WinDbg 的 "文件" 菜单中选择 "**打开可执行****文件**"。
 
-5.  在中**打开可执行文件**对话框框中，执行以下操作：
-    1.  在文件选择文本框中，选择 DevCon 工具 (Devcon.exe)。 为此中,，浏览到 WDK 的安装文件夹，然后打开子目录工具，然后打开子目录 devcon，然后打开您的计算机的处理器体系结构匹配的子目录，，然后选择 Devcon.exe。 Devcon.exe 仅一次单击，然后执行尚不支持按**打开**。
-    2.  中**自变量**文字框中，输入以下文本，其中*INFFile*是你的设备安装的信息 (INF) 文件的文件名和*HardwareID*是设备的硬件 ID:
+5.  在 "**打开可执行文件**" 对话框中，执行以下操作：
+    1.  在 "文件选择" 文本框中，选择 DevCon 工具（Devcon）。 为此，请浏览到 WDK 安装文件夹，然后打开 "子目录" 工具，打开子目录 "devcon"，打开与计算机的处理器体系结构匹配的子目录，然后选择 "Devcon"。 在 Devcon .exe 上单击一次，但不要按 "**打开**"。
+    2.  在 "**参数**" 文本框中，输入以下文本，其中*INFFile*是设备安装信息（INF）文件的文件名， *HARDWAREID*是设备的硬件 ID：
 
         ```text
         update INFFile HardwareID 
         ```
 
-    3.  在中**开始目录**文字框中，输入你的设备安装包的路径。
+    3.  在 "**开始目录**" 文本框中，输入设备安装包的路径。
     4.  单击“打开” 。
 
-6.  调试过程将开始，并 DevCon 安装您的驱动程序之前，WinDbg 将进入此 DevCon 进程。
+6.  调试过程将开始，并且在 DevCon 安装您的驱动程序之前，WinDbg 会中断 DevCon 进程。
 
-7.  配置调试器在加载时中断到共同安装程序进程。 可以通过以下方法之一执行此操作：
-    -   在调试器命令窗口中，使用[ **sxe （设置异常）** ](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)命令并后接**ld:** 以及然后共同安装程序中，不包括文件扩展名的文件名。 应该有没有空格的冒号后为例，如果辅助安装程序的名称是 mycoinst.dll，可以使用以下命令：
+7.  将调试器配置为在加载时中断共同安装程序进程。 可以通过以下方法之一来执行此操作：
+    -   在调试器命令窗口中，使用后跟**ld：** 的[**Sxe （Set 例外）**](sx--sxd--sxe--sxi--sxn--sxr--sx---set-exceptions-.md)命令，然后使用共同安装程序的文件名（不包括文件扩展名）。 冒号后面应没有空格。例如，如果共同安装程序的名称为 mycoinst，则可以使用以下命令：
         ```dbgcmd
         sxe ld:mycoinst 
         ```
 
-    -   选择**事件筛选器**WinDbg 的从**调试**菜单。 在中**事件筛选器**对话框中，选择**负载模块**。 下**执行**，选择**已启用。** 下**继续**，选择**未处理。** 单击**自变量**按钮，然后再在文本框中输入的共同安装程序中，不包括文件扩展名的文件名 （例如，对于 mycoinst.dll 输入"mycoinst"）。 单击**确定**，然后单击**关闭**。
+    -   从 WinDbg 的 "**调试**" 菜单中选择 "**事件筛选器**"。 在 "**事件筛选器**" 对话框中，选择 "**加载模块**"。 在 "**执行**" 下，选择 "**已启用"。** 在 "**继续**" 下，选择 "**未处理"。** 单击 "**参数**" 按钮，然后在文本框中输入共同安装程序的文件名（不包括文件扩展名）（例如，为 mycoinst 输入 "mycoinst"）。 单击 **"确定"** ，然后单击 "**关闭**"。
 
-8.  通过按 F5，或输入继续执行**g （转向）** 命令在调试器命令窗口中。
+8.  按 F5 或在调试器命令窗口中输入**g （中转）** 命令，继续执行。
 
-9.  加载辅助安装程序时，将返回到调试器中断执行。 此时，您可以设置所需的任何其他断点。
+9.  加载共同安装程序后，执行将会重新进入调试器。 此时，你可以设置所需的任何其他断点。
 
-### <a name="span-idlimitationsofthisprocedurespanspan-idlimitationsofthisprocedurespanlimitations-of-this-procedure"></a><span id="limitations_of_this_procedure"></span><span id="LIMITATIONS_OF_THIS_PROCEDURE"></span>此过程的限制
+### <a name="span-idlimitations_of_this_procedurespanspan-idlimitations_of_this_procedurespanlimitations-of-this-procedure"></a><span id="limitations_of_this_procedure"></span><span id="LIMITATIONS_OF_THIS_PROCEDURE"></span>此过程的限制
 
-在某些情况下，运行 DevCon 下的设备安装包可能会导致略有不同行为比的即插即用安装，由于不同的安全令牌和类似的内容。 如果想要调试共同安装程序中的特定问题，就可以，如果涉及到 DevCon，此问题将不会复制。 因此，然后再使用此方法，应使用 DevCon 没有调试程序附加到验证即插即用和 DevCon 方案中存在此问题的情况下安装的驱动程序。
+在某些情况下，在 DevCon 下运行设备安装包可能会导致与 PnP 安装的行为稍有不同，因为不同的安全令牌和类似的安全令牌。 如果你尝试调试共同安装程序中的特定问题，则在涉及 DevCon 的情况下，此问题可能不会复制。 因此，在使用此方法之前，应使用 DevCon 来安装没有附加调试器的驱动程序，以验证此问题是否存在于 PnP 和 DevCon 方案中。
 
-如果问题消失 DevCon 启动安装时，你将需要调试而无需使用 DevCon 共同安装程序。 这是为了使用这样做的一种方法[TList](tlist.md)工具用于 **/m**选项，以确定哪个进程是共同安装程序模块加载，然后将调试器附加到该进程。
+如果在 DevCon 启动安装时消失问题，则必须在不使用 DevCon 的情况下调试你的共同安装程序。 执行此操作的一种方法是将[tlist.exe](tlist.md)工具与 **/m**选项一起使用，以确定哪个进程正在加载共同安装程序模块，然后将调试器附加到该进程。
 
  
 

@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e2721e2ea83a9b14c18be328d1ce2e511d5ce24
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4b8ef36050d62568b5ca340f5c7a8e82d8592899
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826539"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534720"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
 
 
-**！ Ndiskd pendingnbls**扩展显示正在传输中的挂起的 Nbl （[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）。
+**！ Ndiskd pendingnbls**扩展显示正在传输中的挂起 Nbl （[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）。
 
 ```console
 !ndiskd.pendingnbls [-handle <x>] [-fullstack] [-verbosity <x>] 
@@ -31,13 +31,13 @@ ms.locfileid: "72826539"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NDIS 微型端口、筛选器或打开的句柄。
 
-<span id="_______-fullstack______"></span><span id="_______-FULLSTACK______"></span> *-fullstack*   
+<span id="_______-fullstack______"></span><span id="_______-FULLSTACK______"></span>*-fullstack*   
 显示与句柄关联的整个堆栈中的挂起 Nbl。
 
-<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span> *-详细级别*   
+<span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span>*-详细级别*   
 要显示的详细信息的级别。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -47,7 +47,7 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-**！ ndiskd。 pendingnbls**可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的[ **！ ndiskd。** ](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
+**！ ndiskd。 pendingnbls**可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的[**！ ndiskd。**](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -56,7 +56,7 @@ Ndiskd
     ffffe00bc51b9ae0   ffffe00bc3f701a0    Microsoft Kernel Debug Network Adapter
 ```
 
-若要查看微型端口的挂起 Nbl，请在其微型驱动程序的 SendNetBufferListsHandler 上设置断点。 使用微型驱动程序的句柄运行[ **！ ndiskd**](-ndiskd-minidriver.md)命令来查看其处理程序的列表，然后单击 SendNetBufferListsHandler 右侧的 "最佳实践" 链接。 也可以在命令行中输入[**bp 处理**](bp--bu--bm--set-breakpoint-.md)命令。
+若要查看微型端口的挂起 Nbl，请在其微型驱动程序的 SendNetBufferListsHandler 上设置断点。 使用微型驱动程序的句柄运行[**！ ndiskd**](-ndiskd-minidriver.md)命令来查看其处理程序的列表，然后单击 SendNetBufferListsHandler 右侧的 "最佳实践" 链接。 也可以在命令行中输入[**bp 处理**](bp--bu--bm--set-breakpoint-.md)命令。
 
 ```console
 0: kd> !ndiskd.minidriver ffffe00bc51b9ae0 -handlers
@@ -98,7 +98,7 @@ fffff80a`e9611870 4053            push    rbx
 
 现在，在命中微型驱动程序的 SendNetBufferListsHandler 断点之后，可以通过使用微型端口的句柄输入 **！ ndiskd**命令，查看微型端口的任何挂起的 nbl。
 
-**请注意**   在此示例中，调试对象目标计算机在遇到断点时加载网页，因此流量已通过微型端口的数据路径流动。 因此，它有一个要发送的挂起 NBL。 即使在对微型驱动程序的一个或多个 NBL 处理程序设置断点之后，在数据路径中没有活动的情况下，也可能看不到任何挂起的 Nbl。
+**注意**   在此示例中，调试对象目标计算机已在遇到断点时加载网页，因此流量已通过微型端口的数据路径流动。 因此，它有一个要发送的挂起 NBL。 即使在对微型驱动程序的一个或多个 NBL 处理程序设置断点之后，在数据路径中没有活动的情况下，也可能看不到任何挂起的 Nbl。
 
  
 
@@ -123,19 +123,19 @@ Search complete.
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[ **！ ndiskd. 微型驱动程序**](-ndiskd-minidriver.md)
+[**!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
-[**最佳实践、bu、bm.exe （设置断点）** ](bp--bu--bm--set-breakpoint-.md)
+[**bp、bu、bm（设置断点）**](bp--bu--bm--set-breakpoint-.md)
 
  
 

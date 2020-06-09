@@ -5,15 +5,15 @@ ms.assetid: 7a23ee09-0314-400a-8152-eef49a225427
 keywords:
 - 调试器引擎、输入和输出
 - 输入和输出
-- Output
+- 输出
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32d6288bf4dbaca93fb9257a71484269e67849e
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 37e695f7f9c6bd47f27857bb4f62cd22f98926c5
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242738"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534754"
 ---
 # <a name="using-input-and-output"></a>使用输入和输出
 
@@ -37,15 +37,15 @@ ms.locfileid: "79242738"
 
 然后，引擎将调用[**IDebugInputCallbacks：： EndInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebuginputcallbacks-endinput)以指示它已停止等待输入。
 
-最后，引擎将此输入回显到每个客户端（用于提供输入的客户端除外）的已注册**IDebugOutputCallbacks**对象，方法是使用[**IDebugOutputCallbacks：： Output**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output) ，并将位掩码设置为调试\_输出\_提示符。
+最后，引擎将此输入回显到每个客户端（用于提供输入的每个客户端除外）的已注册**IDebugOutputCallbacks**对象，方法是使用[**IDebugOutputCallbacks：： Output**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output) ，并将位掩码设置为调试 \_ 输出 \_ 提示符。
 
 ### <a name="span-idoutputspanspan-idoutputspanoutput"></a><span id="output"></span><span id="OUTPUT"></span>输出
 
 可以使用多个客户端方法将输出发送到引擎，例如[*output*](https://msdn.microsoft.com/library/windows/hardware/ff553183)和[*OutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-outputvalist)。 接收到输出后，引擎会将其发送到一些客户端。
 
-客户端使用*输出掩码*来指示它们感兴趣的输出类型。 只要引擎生成输出，就会附带指定其输出类型的掩码。 如果输出的类型与客户端的输出掩码匹配，则客户端将接收输出。 可以通过调用[**SetOutputMask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputmask)来设置输出掩码，并使用[**GetOutputMask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputmask)进行查询。 有关输出掩码值的详细信息，请参阅[**调试\_输出\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-output-xxx) 。
+客户端使用*输出掩码*来指示它们感兴趣的输出类型。 只要引擎生成输出，就会附带指定其输出类型的掩码。 如果输出的类型与客户端的输出掩码匹配，则客户端将接收输出。 可以通过调用[**SetOutputMask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputmask)来设置输出掩码，并使用[**GetOutputMask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputmask)进行查询。 有关输出掩码值的详细信息，请参阅[**调试 \_ 输出 \_ XXX**](debug-output-xxx.md) 。
 
-引擎将向其发送输出的客户端列表由*输出控件*控制。 通常，输出控件设置为将输出发送到所有客户端;但是，可以使用[*ControlledOutput*](https://msdn.microsoft.com/library/windows/hardware/ff539248)和[*ControlledOutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)临时更改此方法。 有关输出控制值的详细信息，请参阅[**DEBUG\_OUTCTL\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-outctl-xxx) 。
+引擎将向其发送输出的客户端列表由*输出控件*控制。 通常，输出控件设置为将输出发送到所有客户端;但是，可以使用[*ControlledOutput*](https://msdn.microsoft.com/library/windows/hardware/ff539248)和[*ControlledOutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)临时更改此方法。 有关输出控制值的详细信息，请参阅[**DEBUG \_ OUTCTL \_ XXX**](debug-outctl-xxx.md) 。
 
 引擎可以缓冲输出。 如果将多个输出传递到引擎，则可以收集这些输出，并将其发送到一个大块的客户端。 若要刷新此缓冲区，请使用[**FlushCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-flushcallbacks)。
 

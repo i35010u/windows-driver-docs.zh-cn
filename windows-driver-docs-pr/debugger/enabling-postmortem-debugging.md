@@ -5,12 +5,12 @@ ms.assetid: ae116b60-fed2-4e1d-98a8-9fe83f460c50
 keywords: 调试. 调试，Windbg，事后调试，实时调试，JIT 调试，AeDebug 注册表项
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 46aa353a7a492aa8dbef6131d3d944108c24d226
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 66978e922da8f8b0699038359d0b1bf3d80dd9b2
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209295"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534370"
 ---
 # <a name="enabling-postmortem-debugging"></a>启用事后调试
 
@@ -40,7 +40,7 @@ Windows 根据配置值以及哪些调试程序处于活动状态，以各种方
 
 4.  如果步骤1、2和3中的条件不适用，Windows 将激活在 AeDebug 注册表值中配置的调试工具。 在此情况下，可以提前选择任何程序作为工具使用。 选择的程序称为*事后调试器*。
 
-5.  如果步骤1、2和3中的条件不适用，并且没有已注册的事后调试器，Windows 错误报告（WER）将显示一条消息，并在有任何可用的情况下提供解决方案。 如果在注册表中设置了适当的值，则 WER 还会写入内存转储文件。 有关详细信息，请参阅[使用 WER](https://go.microsoft.com/fwlink/p?LinkID=257799)和[收集用户模式转储](https://go.microsoft.com/fwlink/p?LinkID=257798)。
+5.  如果步骤1、2和3中的条件不适用，并且没有已注册的事后调试器，Windows 错误报告（WER）将显示一条消息，并在有任何可用的情况下提供解决方案。 如果在注册表中设置了适当的值，则 WER 还会写入内存转储文件。 有关详细信息，请参阅[使用 WER](https://docs.microsoft.com/windows/win32/wer/using-wer)和[收集用户模式转储](https://docs.microsoft.com/windows/win32/wer/collecting-user-mode-dumps)。
 
 **DebugBreak 函数**
 
@@ -55,13 +55,13 @@ Windows 根据配置值以及哪些调试程序处于活动状态，以各种方
 
 Windows 错误报告（WER）使用在 AeDebug 注册表项中设置的值创建事后调试进程。
 
-**HKLM**\\**软件**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**AeDebug**
+**HKLM** \\**软件** \\**Microsoft** \\**WINDOWS NT** \\**CurrentVersion** \\**AeDebug**
 
 有两个重要的主注册表值： "*调试器*" 和 "*自动*"。*调试器*注册表值指定事后调试器的命令行。 *自动*注册表值指定是自动启动事后调试器，还是首先显示确认消息框。
 
-<span id="Debugger__REG_SZ_"></span><span id="debugger__reg_sz_"></span><span id="DEBUGGER__REG_SZ_"></span>**调试器（REG\_SZ）**  
+<span id="Debugger__REG_SZ_"></span><span id="debugger__reg_sz_"></span><span id="DEBUGGER__REG_SZ_"></span>**调试器（REG \_ SZ）**  
 
-此 REG\_SZ 值指定将处理事后调试的调试器。
+此 REG \_ SZ 值指定将处理事后调试的调试器。
 
 必须列出调试器的完整路径，除非调试器位于默认路径中的目录中。
 
@@ -71,9 +71,9 @@ DWORD （% ld）-目标进程的进程 ID。
 
 DWORD （% ld）-事件句柄重复到事后调试器进程。 如果事后调试器发出事件信号，则 WER 将继续目标进程，而不会等待事后调试器终止。 只有在问题得到解决后，才应发出事件信号。 如果事后调试器在终止时未发出事件的信号，则 WER 会继续收集有关目标进程的信息。
 
-void\* （% p）-在目标进程的地址空间中分配的 JIT\_调试\_信息结构的地址。 结构包含其他异常信息和上下文。
+void \* （% p）- \_ \_ 在目标进程的地址空间中分配的 JIT 调试信息结构的地址。 结构包含其他异常信息和上下文。
 
-<span id="Auto__REG_SZ_"></span><span id="auto__reg_sz_"></span><span id="AUTO__REG_SZ_"></span>**Auto （REG\_SZ）** 此 REG\_SZ 值始终为**0**或**1**。
+<span id="Auto__REG_SZ_"></span><span id="auto__reg_sz_"></span><span id="AUTO__REG_SZ_"></span>**自动（REG \_ SZ）** 此 REG \_SZ 值始终是**0**或**1**。
 
 如果 "**自动**" 设置为**0**，则在开始调试调试过程之前，将显示确认消息框。
 
@@ -83,14 +83,14 @@ void\* （% p）-在目标进程的地址空间中分配的 JIT\_调试\_信息�
 
 **示例命令行用法**
 
-许多事后调试程序使用命令行，其中包括-p 和-e 开关，以指示参数是 PID 和事件（分别为）。 例如，通过 `windbg.exe -I` 安装 WinDbg 会创建以下值：
+许多事后调试程序使用命令行，其中包括-p 和-e 开关，以指示参数是 PID 和事件（分别为）。 例如，通过安装 WinDbg，会 `windbg.exe -I` 创建以下值：
 
 ```console
 Debugger = "<Path>\WinDbg -p %ld -e %ld -g"
 Auto = 1
 ```
 
-可以灵活地使用 WER% ld% ld% p 参数。 举个例子。 不需要在 WER 参数前后指定任何开关。 例如，使用 `procdump.exe -i` 安装[Windows Sysinternals ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)会创建以下值，而不会在 WER% ld% ld% p 参数之间切换：
+可以灵活地使用 WER% ld% ld% p 参数。 例如， 不需要在 WER 参数前后指定任何开关。 例如，使用安装[Windows Sysinternals ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)会 `procdump.exe -i` 创建以下值，而不会在 WER% ld% ld% p 参数之间切换：
 
 ```console
 Debugger = "<Path>\procdump.exe" -accepteula -j "c:\Dumps" %ld %ld %p
@@ -99,13 +99,13 @@ Auto = 1
 
 **32和64位调试器**
 
-在64位平台上，调试程序（REG\_SZ）和 Auto （REG\_SZ）注册表值是分别为64位和32位应用程序定义的。 其他 Windows on Windows （WOW）键用于存储32位应用程序 post 事后调试值。
+在64位平台上，调试程序（REG \_ sz）和 Auto （reg \_ sz）注册表值是分别为64位和32位应用程序定义的。 其他 Windows on Windows （WOW）键用于存储32位应用程序 post 事后调试值。
 
-**HKLM**\\**软件**\\**WOW6432NODE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**AeDebug**
+**HKLM** \\**软件** \\**Wow6432Node** \\**Microsoft** \\**WINDOWS NT** \\**CurrentVersion** \\**AeDebug**
 
 在64位平台上，为32位进程使用32位事后调试器，为64位进程使用64位调试器。 这样就避免了64位调试程序，它将精力集中在 WOW64 线程上，而不是32位线程的32位进程中。
 
-对于许多事后调试程序，包括用于 Windows 的调试工具事后调试器，这涉及到运行安装命令两次;一次是 x86 版本，一次是 x64 版本。 例如，若要使用 WinDbg 作为交互式的事后调试，将为每个版本运行一次 `windbg.exe -I` 命令。
+对于许多事后调试程序，包括用于 Windows 的调试工具事后调试器，这涉及到运行安装命令两次;一次是 x86 版本，一次是 x64 版本。 例如，若要使用 WinDbg 作为交互式的事后调试，则该命令将为 `windbg.exe -I` 每个版本运行两次。
 
 64位安装：
 
@@ -142,27 +142,27 @@ Windows 调试器的调试工具都支持将设置为事后调试器。 安装�
 
 **WinDbg**
 
-若要将事后调试器设置为 WinDbg，请运行 `windbg -I`。 （`I` 必须大写。）此命令在使用后将显示成功或失败消息。 若要使用32和64位应用程序，请对64和32调试器运行命令。
+若要将事后调试器设置为 WinDbg，请运行 `windbg -I` 。 （ `I` 必须大写。）此命令在使用后将显示成功或失败消息。 若要使用32和64位应用程序，请对64和32调试器运行命令。
 
 ```console
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe –I
 C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe –I
 ```
 
-这是在 `windbg -I` 运行时将如何配置 AeDebug 注册表项。
+这是运行时将如何配置 AeDebug 注册表项 `windbg -I` 。
 
 ```console
 Debugger = "<Path>\WinDbg -p %ld -e %ld -g"
 Auto = 1
 ```
 
-在示例中， *&lt;路径&gt;* 是调试程序所在的目录。
+在示例中， * &lt; Path &gt; *是调试程序所在的目录。
 
 如前文所述，-p 和-e 参数传递了进程 ID 和事件。
 
 **-G**将 g （走）命令传递给 WinDbg，并继续从当前指令执行。
 
-**请注意**   传递 g （走）命令时出现重大问题。 此方法的问题是，异常并不总是重复，这通常是由于在重新启动代码时不再存在的暂时情况。 有关此问题的详细信息，请参阅[**jdinfo （使用 JIT\_调试\_信息）**](-jdinfo--use-jit-debug-info-.md)。
+**注意**   传递 g （走）命令时出现重大问题。 此方法的问题是，异常并不总是重复，这通常是由于在重新启动代码时不再存在的暂时情况。 有关此问题的详细信息，请参阅[**jdinfo （使用 JIT \_ 调试 \_ 信息）**](-jdinfo--use-jit-debug-info-.md)。
 
 若要避免此问题，请使用 jdinfo 或/j.。 此方法允许调试器位于相关代码失败的上下文中。 有关详细信息，请参阅本主题后面的[实时（JIT）调试](#jit)。
 
@@ -204,7 +204,7 @@ C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe -iaec [KeyString]
 
 如果此命令成功，则不显示任何内容，并在出现故障时显示新的控制台窗口。
 
-**请注意**  因为-p% ld-e% ld-g 参数总是首先出现在事后调试调试器的命令行上，所以不应使用-iaec 开关来指定-server 参数，因为-server 在命令行第一次出现时将无法工作。 若要安装包含此参数的事后调试器，必须手动编辑注册表。
+**注意**   由于-p% ld-e% ld-g 参数总是首先出现在事后调试器的命令行上，因此不应使用-iaec 开关来指定-server 参数，因为-server 在命令行上首先显示时将无法工作。 若要安装包含此参数的事后调试器，必须手动编辑注册表。
 
  
 
@@ -226,7 +226,7 @@ Windows Sysinternals ProcDump 实用程序还可用于事后转储捕获。 有�
 
 当转储文件捕获完成时，ProcDump 将退出，然后，WER 会报告失败，错误过程将终止。
 
-使用 `procdump -i` 安装 procdump 和-对于32和64位后事后调试，请卸载 ProcDump。
+使用 `procdump -i` 安装 procdump 和-对于32和64位 post 事后调试，同时卸载 procdump。
 
 ```console
 <Path>\procdump.exe -i
@@ -240,9 +240,9 @@ Windows Sysinternals ProcDump 实用程序还可用于事后转储捕获。 有�
 Debugger = <Path>\ProcDump.exe -accepteula -j "<DumpFolder>" %ld %ld %p
 ```
 
-ProcDump 使用所有3个参数-PID、Event 和 JIT\_调试\_信息。 有关 JIT\_DEBUG\_INFO 参数的详细信息，请参阅下面的[实时（JIT）调试](#jit)。
+ProcDump 使用所有3个参数-PID、事件和 JIT \_ 调试 \_ 信息。 有关 JIT \_ 调试信息参数的详细信息 \_ ，请参阅下面的[实时（JIT）调试](#jit)。
 
-在没有大小选项集的情况下，捕获的转储大小默认为 "迷你（进程/线程/句柄/模块/地址空间）"、"使用-mp 集的小型增强（迷你 + MEM\_专用页面）"，或 "完全" （与 "/mA"）一起使用-mA 集。
+在没有大小选项集的情况下，捕获的转储大小默认为迷你（进程/线程/句柄/模块/地址空间），具有-mp 集的小型增强（迷你 plus MEM \_ 专用页面），或具有-mA 集的完全（所有内存等效于 "/mA"）。
 
 对于具有足够驱动器空间的系统，建议使用完整的（-ma）捕获。
 
@@ -258,7 +258,7 @@ ProcDump 使用所有3个参数-PID、Event 和 JIT\_调试\_信息。 有关 JI
 <Path>\procdump.exe -mp -i c:\Dumps
 ```
 
-要将转储文件保存到的文件夹是可选的。 默认值为当前文件夹。 文件夹应使用与用于 C：\\Windows\\Temp 相同或更好的 ACL 进行保护。有关管理与文件夹相关的安全性的详细信息，请参阅[事后调试过程中的安全性](security-during-postmortem-debugging.md)。
+要将转储文件保存到的文件夹是可选的。 默认值为当前文件夹。 应使用与用于 C： Windows Temp 相同或更好的 ACL 来保护文件夹 \\ \\ 。有关管理与文件夹相关的安全性的详细信息，请参阅[事后调试过程中的安全性](security-during-postmortem-debugging.md)。
 
 若要将 ProcDump 卸载为事后调试器，并还原以前的设置，请使用-u （Uninstall）选项。
 
@@ -275,24 +275,24 @@ ProcDump 是一个 "打包" 的可执行文件，其中包含应用程序的32�
 
 **设置出错应用程序的上下文**
 
-如前所述，需要使用 JIT\_DEBUG\_INFO 参数将上下文设置为导致崩溃的异常。 有关此内容的详细信息，请参阅[**jdinfo （使用 JIT\_调试\_信息）**](-jdinfo--use-jit-debug-info-.md)。
+如前文所述，使用 JIT \_ 调试信息参数将上下文设置为导致崩溃的异常非常有必要 \_ 。 有关此内容的详细信息，请参阅[**jdinfo （使用 JIT \_ 调试 \_ 信息）**](-jdinfo--use-jit-debug-info-.md)。
 
 **Windows 调试工具**
 
-此示例演示如何编辑注册表以运行使用. jdinfo &lt;address&gt; 命令显示其他异常信息的初始命令（-c），并将上下文更改为异常的位置（类似于使用 ecxr 时，将上下文设置为 "异常" 记录）。
+此示例演示如何编辑注册表以运行初始命令（-c），该命令使用. jdinfo &lt; address &gt; 命令显示其他异常信息，并将上下文更改为异常的位置（类似于使用 ecxr 时，将上下文设置为 "异常" 记录）。
 
 ```console
 Debugger = "<Path>\windbg.exe -p %ld -e %ld -c ".jdinfo 0x%p"
 Auto = 1
 ```
 
-% P 参数是目标进程的地址空间中 JIT\_调试\_信息结构的地址。 % P 参数使用0x 预先追加，以便将其解释为十六进制值。 有关详细信息，请参阅[**jdinfo （使用 JIT\_调试\_信息）**](-jdinfo--use-jit-debug-info-.md)。
+% P 参数是 \_ \_ 目标进程的地址空间中的 JIT 调试信息结构的地址。 % P 参数使用0x 预先追加，以便将其解释为十六进制值。 有关详细信息，请参阅[**jdinfo （使用 JIT \_ 调试 \_ 信息）**](-jdinfo--use-jit-debug-info-.md)。
 
 若要调试32和64位应用的混合，请配置32和64位注册表项（如上所述），将正确的路径设置为64位和32位 WinDbg 的位置。
 
 **使用转储创建转储文件**
 
-若要在出现包含 JIT\_调试\_信息数据的失败时捕获转储文件，请使用. 转储/j &lt;地址&gt;。
+若要在出现包含 JIT 调试信息数据的故障时捕获转储文件 \_ \_ ，请使用. dump/j &lt; address &gt; 。
 
 ```console
 <Path>\windbg.exe -p %ld -e %ld -c ".dump /j %p /u <DumpPath>\AeDebug.dmp; qd"
@@ -300,7 +300,7 @@ Auto = 1
 
 使用/u 选项生成唯一的文件名，以允许自动创建多个转储文件。 有关选项的详细信息，请参阅[**。 dump （创建转储文件）**](-dump--create-dump-file-.md)。
 
-创建的转储会将 JITDEBUG\_信息数据存储为默认的异常上下文。 请使用 .exr-1 显示异常记录和 ecxr，以设置上下文，而不是使用 jdinfo 查看异常信息和设置上下文。 有关详细信息，请参阅[**.exr （显示异常记录）**](-exr--display-exception-record-.md)和[**Ecxr （显示异常上下文记录）**](-ecxr--display-exception-context-record-.md)。
+创建的转储会将 JITDEBUG \_ 信息数据存储为默认的异常上下文。 请使用 .exr-1 显示异常记录和 ecxr，以设置上下文，而不是使用 jdinfo 查看异常信息和设置上下文。 有关详细信息，请参阅[**.exr （显示异常记录）**](-exr--display-exception-record-.md)和[**Ecxr （显示异常上下文记录）**](-ecxr--display-exception-context-record-.md)。
 
 **Windows 错误报告-q/qd**
 

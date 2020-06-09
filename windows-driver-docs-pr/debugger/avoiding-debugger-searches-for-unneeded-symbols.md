@@ -1,71 +1,59 @@
 ---
 title: 避免调试器搜索不需要的符号
-description: 为何符号加载有时需要花费很长时间？ 这取决于符号名称是否是限定或未限定。
+description: 为什么符号加载有时会花费很长时间？ 这取决于符号名称是限定名称还是未限定名称。
 ms.assetid: 710BAEAF-BC45-416E-8359-69E9DFCA2570
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 063d442c36b6b5a240f024927f56a02443d37fce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6443cb2cc97e0a047bf29d12b349ddc821c0a6c4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362399"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533906"
 ---
 # <a name="avoiding-debugger-searches-for-un-needed-symbols"></a>避免调试器搜索不需要的符号
 
-
 **上次更新时间：**
 
--   2007 年 5 月 27日日
+- 5月27日，2007
 
-调试您的驱动程序，仅具有很长时间的调试器暂停时它会尝试加载符号的驱动程序，不属于你，甚至无关紧要的手头的调试任务时到达有趣的断点。 这是怎么回事？
+调试驱动程序时，您会收到一个有趣的断点，只是为了让调试器在很长一段时间内暂停，同时尝试为您不拥有的驱动程序加载符号，并使调试任务不会有任何影响。 这是怎么回事？
 
-默认情况下，为在需要符号由调试器中加载。 （这称为延迟的符号加载或延迟加载的符号。）每当执行符号显示调用命令时，调试器查找符号。 如果已设置监视变量无效，无法在当前上下文中，例如函数参数或局部变量的不存在于当前堆栈帧，因为它们会变得无效的上下文更改时，这可能发生在断点处。 它还可能如果只需键入错误的符号名或执行命令的使用无效的调试器调试器启动寻找匹配的符号。
+默认情况下，调试器会在需要时加载符号。 （这称为延迟符号加载或延迟符号加载。）调试器将在执行请求显示符号的命令时查找符号。 如果在当前上下文中设置了无效的监视变量（如当前堆栈帧中不存在的函数参数或局部变量），则在断点处可能会发生这种情况，因为在上下文更改时，这些变量将变为无效。 如果你简单地错误地输入符号名称或执行无效的调试器命令，则会发生这种情况，即调试器会开始查找匹配的符号。
 
-为什么这有时需要太长？ 这取决于符号名称是否是限定或未限定。 限定的符号名称前面带有包含的符号的模块的名称-例如，myModule ！ myVar。 非限定的符号名称未指定的模块名称-例如，myOtherVar。
+为什么这有时会花费很长时间？ 这取决于符号名称是限定名称还是未限定名称。 限定符号名称前面带有符号所在模块的名称，例如，myModule！ myVar。 非限定符号名称未指定模块名称，例如，myOtherVar。
 
-在限定名称的情况下调试器查找中指定的模块的符号并，如果未加载的模块，将加载模块 （假设该模块存在并且包含的符号）。 这种情况相当快的速度。
+在限定名称的情况下，调试器将在指定的模块中查找符号，如果尚未加载该模块，则加载该模块（假设该模块存在并且包含符号）。 这种情况的发生速度非常快。
 
-在非限定名称的情况下调试器不"知道"的模块包含的符号，因此它必须在所有这些看起来。 调试器首先会检查所有已加载的模块符号，然后，如果它不能匹配任何加载的模块中的符号，调试器会继续其搜索条件加载所有已卸载的模块，下游应用商店的开始和结尾符号服务器，如果你是使用其中一个。 显然，这可能需要很多时间。
+在未限定名称的情况下，调试器不会 "知道" 哪个模块包含符号，因此必须查看其中的所有模块。 调试器首先检查所有加载的模块中是否存在符号，然后，如果它不能与任何已加载的模块中的符号匹配，则调试器会通过加载所有已卸载的模块（从下游存储开始并以符号服务器结尾）来继续执行搜索。 很明显，这可能需要很长时间。
 
-## <a name="span-idhowtopreventautomaticloadingforunqualifiedsymbolsspanspan-idhowtopreventautomaticloadingforunqualifiedsymbolsspanspan-idhowtopreventautomaticloadingforunqualifiedsymbolsspanhow-to-prevent-automatic-loading-for-unqualified-symbols"></a><span id="How_to_prevent_automatic_loading_for_unqualified_symbols_"></span><span id="how_to_prevent_automatic_loading_for_unqualified_symbols_"></span><span id="HOW_TO_PREVENT_AUTOMATIC_LOADING_FOR_UNQUALIFIED_SYMBOLS_"></span>如何阻止自动加载的非限定的符号
+## <a name="how-to-prevent-automatic-loading-for-unqualified-symbols"></a>如何阻止非限定符号的自动加载
 
+**SYMOPT " \_ 无 \_ 非限定 \_ 加载**" 选项在搜索非限定符号时禁用或启用调试器自动加载模块。 当**SYMOPT \_ 未设置 \_ 非限定的 \_ 负载**并且调试器尝试匹配非限定符号时，它将只搜索已加载的模块，并且在它无法匹配符号时停止搜索，而不是加载已卸载的模块来继续执行搜索。 此选项不会影响限定名称的搜索。
 
-**SYMOPT\_否\_UNQUALIFIED\_加载**选项禁用或启用调试器自动加载模块时它会搜索的非限定的符号。 当**SYMOPT\_否\_UNQUALIFIED\_加载**是组和调试器尝试匹配的非限定的符号，它将搜索唯一模块，已被加载，并会停止搜索时它不能与匹配的符号，而不是加载已卸载的模块，以继续搜索。 此选项不会影响搜索限定名称。
+**SYMOPT \_默认情况下没有 \_ 非限定的 \_ 负载**。 若要激活此选项，请使用 **-snul**命令行选项，或在调试器正在运行时，使用 **. symopt + 0x100**或**symopt-0x100**分别打开或关闭该选项。
 
-**SYMOPT\_否\_UNQUALIFIED\_加载**默认情况下处于关闭状态。 若要激活此选项，请使用 **-snul**命令行选项，或运行调试器时，使用 **.symopt + 0x100**或 **.symopt 0x100**打开或关闭，关闭此选项分别。
+若要查看**SYMOPT \_ 没有未 \_ 限定的 \_ 加载**的效果，请尝试执行以下试验：
 
-若要查看的效果**SYMOPT\_否\_UNQUALIFIED\_加载**，尝试此实验：
+1. 使用 **-n**命令行选项激活干扰符号加载（**SYMOPT \_ 调试**），或者，如果调试器已在运行，请使用 **. SYMOPT + 0x80000000**或 **！符号干扰**调试器扩展命令。 **SYMOPT \_调试**指示调试器显示其搜索符号的相关信息，例如每个模块加载时的名称，或者调试器找不到文件时的错误消息。
+2. 指示调试器计算不存在的符号（例如，键入 **？ asdasdasd**）。 调试器在搜索不存在的符号时应报告许多错误。
+3. 使用**SYMOPT + 0x100**激活**SYMOPT \_ 未 \_ 限定的 \_ 负载**。
+4. 重复步骤2。 调试器应该只搜索已加载的不存在符号的模块，并且应更快地完成任务。
+5. 若要禁用**SYMOPT \_ 调试**，请使用**SYMOPT-0x80000000**或 **！符号 quiet**调试器 extension 命令。
 
-1.  激活干扰符号加载 (**SYMOPT\_调试**) 通过使用 **-n**命令行选项，或如果调试器已在运行，使用 **.symopt + 0x80000000**或 **！ 符号干扰**调试器扩展命令。 **SYMOPT\_调试**指示调试器在加载它时显示其搜索符号，如每个模块的名称有关的信息或一条错误消息，如果调试器无法找到的文件。
-2.  指示调试程序评估不存在的符号 (例如，键入 **？ asdasdasd**)。 调试器应报告大量错误，而它会搜索不存在的符号。
-3.  激活**SYMOPT\_否\_UNQUALIFIED\_加载**通过 **.symopt + 0x100**。
-4.  重复步骤 2。 调试器应搜索不存在的符号，仅加载的模块，它应完成的任务要快得多。
-5.  若要禁用**SYMOPT\_调试**，使用 **.symopt 0x80000000**或 **！ 符号静默**调试器扩展命令。
+有许多选项可用于控制调试器加载和使用符号的方式。 有关符号选项的完整列表以及如何使用它们，请参阅随 Windows 调试工具提供的联机文档中的 "设置符号选项"。 最新版本的适用于 Windows 的调试工具包可从 web 免费下载，也可以从 Windows DDK、平台 SDK 或客户支持诊断 CD 安装包。
 
-有多种选项都是可用来控制调试器如何加载和使用的符号。 符号选项以及如何使用它们的完整列表，请参阅联机文档提供有关 Windows 调试工具中的"设置符号选项"。 最新版本的 Windows 调试工具包是可作为从 web 免费下载，或可以从 Windows DDK、 Platform SDK 或客户支持诊断 CD 中安装包。
+## <a name="what-should-you-do"></a>该怎么办？
 
-## <a name="span-idwhatshouldyoudospanspan-idwhatshouldyoudospanspan-idwhatshouldyoudospanwhat-should-you-do"></a><span id="What_should_you_do__"></span><span id="what_should_you_do__"></span><span id="WHAT_SHOULD_YOU_DO__"></span>您该怎么办？
+- 若要加快符号搜索速度，请尽可能在断点和调试器命令中使用限定名。 如果要查看已知模块的符号，请将其限定为模块名称;如果不知道符号的位置，请使用非限定名称。 对于局部变量和函数参数，请使用 **$** 作为模块名称（例如， *$！MyVar*）。
+- 若要诊断执行缓慢符号加载的原因，请使用 " **-n** " 命令行选项或通过使用 **. SYMOPT + 0x80000000**或 **！符号干扰**调试器扩展命令，激活干扰符号加载（**SYMOPT \_ 调试**）。
+- 若要阻止调试器在已卸载的模块中搜索符号，请使用 **-snul**命令行选项或（如果已在运行该调试器，则使用**SYMOPT + 0X100**）激活** \_ \_ \_ SYMOPT** 。
+- 若要显式加载调试会话所需的模块，请使用的调试器命令（如） **。** **ld**
 
+## <a name="related-topics"></a>相关主题
 
--   若要加快搜索符号，请使用断点和只要有可能的调试器命令中的限定的名称。 如果想要查看从一个已知的模块的符号，限定使用模块名称;如果您不知道该符号的位置，，使用非限定的名称。 对于本地变量和函数参数，使用 **$** 用作模块名称 (例如， *$！MyVar*)。
--   若要诊断的原因的慢速符号加载，激活干扰符号加载 (**SYMOPT\_调试**) 通过使用 **-n**命令行选项或如果调试器已在运行，通过使用 **.symopt + 0x80000000**或 **！ 符号干扰**调试器扩展命令。
--   若要防止调试器搜索中卸载的模块的符号，激活**SYMOPT\_否\_UNQUALIFIED\_加载**通过 **-snul**命令行选项或者，如果调试器已在运行，通过使用 **.symopt + 0x100**。
--   若要显式加载所需的调试会话的模块，使用调试器命令如 **.reload**或**ld**。
+[下载 WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+[下载 Windows 调试工具](debugger-download-tools.md)
 
-
-[WDK 和 WinDbg 下载](https://go.microsoft.com/fwlink/p/?LinkId=733614)
-
-[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)
-
- 
-
- 
-
-
-
-
-
-
+[Windows 调试入门](getting-started-with-windows-debugging.md)

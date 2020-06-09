@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbep
-description: Usbkd.usbep 命令显示有关 USB 终结点的信息。
+description: Usbkd. usbep 命令显示有关 USB 终结点的信息。
 ms.assetid: FEF66394-0502-4F3F-ACBE-57AA1945CC74
 keywords:
-- usbkd.usbep Windows 调试
+- usbkd usbep Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e044f021598cff11d913860252e17b82ff5c7580
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1227cf98b6c0ba4b3e664077ca1ac4d3e84eb994
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367988"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534700"
 ---
 # <a name="usbkdusbep"></a>!usbkd.usbep
 
 
-**！ Usbkd.usbep**命令显示有关 USB 终结点的信息。
+**！ Usbkd. usbep**命令显示有关 USB 终结点的信息。
 
 ```dbgcmd
 !usbkd.usbep StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbport ！\_HCD\_终结点**结构。 若要获得 USB 主控制器的终结点列表，请使用[ **！ usbkd.usbhcdext** ](-usbkd-usbhcdext.md)命令。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbport 的地址 **！ \_HCD \_ 终结点**结构。 若要获取 USB 主机控制器的终结点列表，请使用[**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md)命令。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法，若要查找的地址**usbport ！\_HCD\_终结点**结构。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbport 地址的一种方法 **！ \_HCD \_ 终结点**结构。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd.dll
      ...
 ```
 
-在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe00001ca11a0**。
+在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)获取全局终结点列表。
+单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)以获取全局终结点列表。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -64,7 +64,7 @@ GlobalEndpointList: !usblist ffffe00001ca2388, EP
 ...
 ```
 
-现在，使用[ **！ usbkd.usblist** ](-usbkd-usblist.md)命令来获取的地址 **\_HCD\_终结点**结构。
+现在使用[**！ usbkd. usblist**](-usbkd-usblist.md)命令获取** \_ HCD \_ 终结点**结构的地址。
 
 ```dbgcmd
 0: kd> !usblist ffffe00001ca2388, EP
@@ -77,7 +77,7 @@ dt usbport!_ENDPOINT_PARAMETERS ffffe000020f6b18    RootHub Endpoint
 ...
 ```
 
-在上面的输出`ffffe000020f6970 `是地址 **\_HCD\_终结点**结构。 传递到此地址 **！ usbkd.usbep**。
+在上面的输出中， `ffffe000020f6970 ` 是** \_ HCD \_ 终结点**结构的地址。 将此地址传递给 **！ usbkd. usbep**。
 
 ```dbgcmd
 0: kd> !usbep ffffe000020f6970
@@ -103,12 +103,12 @@ RootHub Endpoint
 [02] Ev_gEp_ReqActive        GEp_Paused                GEp_Active                ENDPOINT_ACTIVE
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

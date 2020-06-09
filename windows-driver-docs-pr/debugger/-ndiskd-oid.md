@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0045020c01dcab392df1eb507527dacb9f973ffa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fb93b5d6dcda07a027a2d5cc73955bb9fecaf067
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837574"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534722"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
 
@@ -33,31 +33,31 @@ ms.locfileid: "72837574"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-\_OID\_请求的句柄
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
+NDIS \_ OID 请求的句 \_ 柄
 
-<span id="_______-legacyoid______"></span><span id="_______-LEGACYOID______"></span> *-legacyoid*   
-将视为旧的 NDIS\_请求，而不是\_OID\_请求。
+<span id="_______-legacyoid______"></span><span id="_______-LEGACYOID______"></span>*-legacyoid*   
+将视为传统 NDIS \_ 请求，而不是 NDIS \_ OID \_ 请求。
 
-<span id="_______-nolimit______"></span><span id="_______-NOLIMIT______"></span> *-nolimit*   
+<span id="_______-nolimit______"></span><span id="_______-NOLIMIT______"></span>*-nolimit*   
 不限制显示的挂起 Oid 的数目。
 
-<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span> *-微型端口*   
+<span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span>*-微型端口*   
 查找此小型端口堆栈上的挂起 OID 请求。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Ndiskd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**！ ndiskd**每次显示系统上所有挂起的 oid 的列表，因此它有助于调试系统挂起或[0x9F bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)情况（驱动程序\_POWER\_状态\_故障）。 例如，假设分析了一个虚构的 0x9F bug 检查，其中显示系统在 IRP 上挂起并等待 NDIS。 在 NDIS 中，将操作系统中的 Irp 转换为 Oid （包括电源转换），因此通过运行 **！ ndiskd** ，可以看到，在此示例中，堆栈底部的设备可能已 Clinging 到[oid\_PNP\_设置\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)并挂起堆栈的其余部分。 NDIS 驱动程序不应挂起 OID 超过一秒，因此，您可以在此之后调查为什么该设备保留 OID 的时间太长而无法尝试解决问题。
+**！ ndiskd**每次显示系统上所有挂起的 oid 的列表，因此它有助于调试系统挂起或[0x9F 错误检查](bug-check-0x9f--driver-power-state-failure.md)情况（驱动程序 \_ 电源 \_ 状态 \_ 故障）。 例如，假设分析了一个虚构的 0x9F bug 检查，其中显示系统在 IRP 上挂起并等待 NDIS。 在 NDIS 中，将操作系统中的 Irp 转换为 Oid （包括电源转换），因此通过运行 **！ ndiskd** ，可以看到，在此示例中，堆栈底部的设备可能已 Clinging 到[oid \_ PNP \_ 集 \_ 电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)，并挂起堆栈的其余部分。 NDIS 驱动程序不应挂起 OID 超过一秒，因此，您可以在此之后调查为什么该设备保留 OID 的时间太长而无法尝试解决问题。
 
 <a name="examples"></a>示例
 --------
 
-若要查看正常运行的系统上的挂起 OID 示例，请在微型端口的 OID 请求处理程序例程（在微型端口的对应微型端口驱动程序中）上设置一个断点。 首先，运行不带参数的[ **！ ndiskd**](-ndiskd-minidriver.md)命令，以获取系统上的微型端口驱动程序列表。 在此示例输出中，查找 kdnic 微型驱动程序，ffffdf801418d650 的句柄。
+若要查看正常运行的系统上的挂起 OID 示例，请在微型端口的 OID 请求处理程序例程（在微型端口的对应微型端口驱动程序中）上设置一个断点。 首先，运行不带参数的[**！ ndiskd**](-ndiskd-minidriver.md)命令，以获取系统上的微型端口驱动程序列表。 在此示例输出中，查找 kdnic 微型驱动程序，ffffdf801418d650 的句柄。
 
 ```console
 3: kd> !ndiskd.minidriver
@@ -121,7 +121,7 @@ ALL PENDING OIDs
         Current OID        OID_GEN_STATISTICS
 ```
 
-在此示例中，OID 搁置[\_代\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)。 查看！ ndiskd 的结果时，请记住，筛选克隆 OID 请求并沿堆栈向下传递这些请求，Oid 通常会从筛选器传递到筛选器以筛选到小型端口。 因此，虽然在此示例中可能有三个具有相同名称的单独 OID 请求，但实际上有一个逻辑操作发生在物理上跨3个 Oid 和3个驱动程序。
+在此示例中，OID 搁置是[oid \_ 生成 \_ 统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)。 查看！ ndiskd 的结果时，请记住，筛选克隆 OID 请求并沿堆栈向下传递这些请求，Oid 通常会从筛选器传递到筛选器以筛选到小型端口。 因此，虽然在此示例中可能有三个具有相同名称的单独 OID 请求，但实际上有一个逻辑操作发生在物理上跨3个 Oid 和3个驱动程序。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
@@ -130,19 +130,19 @@ ALL PENDING OIDs
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[0x9F bug 检查](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
+[0x9F bug 检查](bug-check-0x9f--driver-power-state-failure.md)
 
-[OID\_PNP\_集\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
+[OID \_ PNP \_ 设置 \_ 电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)
 
-[**最佳实践、bu、bm.exe （设置断点）** ](bp--bu--bm--set-breakpoint-.md)
+[**bp、bu、bm（设置断点）**](bp--bu--bm--set-breakpoint-.md)
 
-[OID\_代\_统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)
+[OID \_ 生成 \_ 统计信息](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)
 
 [NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 

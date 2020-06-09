@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec7e2c7ba01054f7147adf368550d05b3a7b0a1
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: c562379bd6d6aece7aac32d4f9d163d2e1df984a
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916232"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534666"
 ---
-# <a name="bug-check-0x1000008e-kernel_mode_exception_not_handled_m"></a>Bug 检查0x1000008E：内核\_模式\_异常\_未\_处理\_M
+# <a name="bug-check-0x1000008e-kernel_mode_exception_not_handled_m"></a>Bug 检查0x1000008E：内核 \_ 模式 \_ 异常 \_ 未 \_ 处理 \_ M
 
 
-内核\_模式\_异常\_未\_处理\_bug 检查的值为0x1000008E。 这表示内核模式程序生成了错误处理程序未捕获的异常。
+\_未处理的内核模式 \_ 异常 \_ \_ \_ M Bug 检查的值为0x1000008E。 这表示内核模式程序生成了错误处理程序未捕获的异常。
 
-Bug 检查0x1000008E 具有与[**bug 检查 0x8E**](bug-check-0x8e--kernel-mode-exception-not-handled.md)相同的含义和参数（内核\_模式\_异常\_未\_处理）。
+Bug 检查0x1000008E 具有与[**bug 检查 0x8E**](bug-check-0x8e--kernel-mode-exception-not-handled.md) （ \_ 未处理的内核模式异常）相同的含义和参数 \_ \_ \_ 。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="resolution"></a>分辨率
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

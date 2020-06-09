@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x28 CORRUPT_ACCESS_TOKEN
-description: CORRUPT_ACCESS_TOKEN bug 检查具有 0x00000028 值。检查此错误极少出现。
+description: CORRUPT_ACCESS_TOKEN bug 检查的值为0x00000028。此 bug 检查很少出现。
 ms.assetid: 33f275b8-1f7a-49ed-af4b-8686b73d64f9
 keywords:
 - Bug 检查 0x28 CORRUPT_ACCESS_TOKEN
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ca37a83eaea85f9067bedd8e8b5564e8848808a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: a1b6a398079736c065246bfa22a177872f2ab7aa
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519572"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534636"
 ---
-# <a name="bug-check-0x28-corruptaccesstoken"></a>Bug 检查 0x28：损坏\_访问\_令牌
+# <a name="bug-check-0x28-corrupt_access_token"></a>Bug 检查0x28：损坏的 \_ 访问 \_ 令牌
 
 
-损坏\_访问\_令牌错误检查的值为 0x00000028。
+损坏的 \_ 访问 \_ 令牌 bug 检查的值为0x00000028。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

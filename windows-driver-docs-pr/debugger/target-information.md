@@ -6,12 +6,12 @@ keywords:
 - 调试器引擎 API、目标、信息
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a2d4a6608dc80637de8777f63afc2e98fc0cbc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3f7fe85783098b7611a4290f9ab2f756cf28a809
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838811"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534284"
 ---
 # <a name="target-information"></a>目标信息
 
@@ -24,7 +24,7 @@ ms.locfileid: "72838811"
 
 [**GetPageSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getpagesize)返回目标计算机的页面大小。 [**IsPointer64Bit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-ispointer64bit)将指示计算机使用32位还是64位地址。
 
-**请注意**  在内部，调试器引擎始终对目标使用64位地址。 如果目标仅使用32位地址，则当与目标通信时，引擎将自动对其进行转换。
+**注意**   在内部，调试器引擎始终对目标使用64位地址。 如果目标仅使用32位地址，则当与目标通信时，引擎将自动对其进行转换。
 
  
 
@@ -50,7 +50,7 @@ ms.locfileid: "72838811"
 
 ### <a name="span-idtarget_versionsspanspan-idtarget_versionsspantarget-versions"></a><span id="target_versions"></span><span id="TARGET_VERSIONS"></span>目标版本
 
-在目标计算机上运行的 Windows 版本由[**GetSystemVersionValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionvalues)和[**请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**调试\_请求\_获取\_WIN32\_主要\_次要\_版本**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-request-get-win32-major-minor-versions)，并由[**GetSystemVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionstring)返回 Windows 版本的说明。 此信息也由[**GetSystemVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getsystemversion)返回。
+在目标计算机上运行的 Windows 版本由[**GetSystemVersionValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionvalues)和[**请求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**调试 \_ 请求 \_ 获取 \_ WIN32 \_ 主要 \_ 次要 \_ 版本**](debug-request-get-win32-major-minor-versions.md)返回，windows 版本的说明由[**GetSystemVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionstring)返回。 此信息也由[**GetSystemVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getsystemversion)返回。
 
  
 

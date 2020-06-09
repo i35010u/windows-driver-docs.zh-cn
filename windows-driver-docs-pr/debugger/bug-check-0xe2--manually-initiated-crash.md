@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 695b5abc58e27dcc482a6576a7b3218e9c70f84d
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: 5409bf4e65cce6a514d1dc3b13f2b14af5d6c796
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601725"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534520"
 ---
-# <a name="bug-check-0xe2-manually_initiated_crash"></a>Bug 检查0xE2：手动\_启动\_崩溃
+# <a name="bug-check-0xe2-manually_initiated_crash"></a>Bug 检查0xE2：手动 \_ 启动 \_ 崩溃
 
 
-手动\_启动\_崩溃 bug 检查的值为0x000000E2。 这表示用户特意从内核调试器或键盘启动了故障转储。
+手动 \_ 启动的 \_ 故障 bug 检查的值为0x000000E2。 这表示用户特意从内核调试器或键盘启动了故障转储。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="manually_initiated_crash-parameters"></a>手动\_启动\_崩溃参数
+## <a name="manually_initiated_crash-parameters"></a>手动 \_ 启动的 \_ 故障参数
 
 无
 
 ## <a name="remarks"></a>备注
 
-有关手动启动的故障转储的详细信息，请参阅[强制系统崩溃。](https://docs.microsoft.com/windows-hardware/drivers/debugger/forcing-a-system-crash)
+有关手动启动的故障转储的详细信息，请参阅[强制系统崩溃。](forcing-a-system-crash.md)

@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehciframe
-description: Usbkd._ehciframe 命令显示帧数 FrameListBaseAddress 定期列表条目链索引 EHCI 微型端口。
+title: usbkd _ehciframe
+description: _Ehciframe usbkd 命令显示一个 EHCI 小型端口 FrameListBaseAddress 定期列表条目链，并按帧号进行索引。
 ms.assetid: 6359FC98-F070-410E-AFE7-C2C67A4F7C98
 keywords:
-- usbkd._ehciframe Windows 调试
+- usbkd _ehciframe Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e79141fb1dd6b34cafe0eb666eea078ac33f35
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7052fd160a57c80e347eadc4931b2736f81a20a3
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335597"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534882"
 ---
-# <a name="usbkdehciframe"></a>!usbkd.\_ehciframe
+# <a name="usbkd_ehciframe"></a>！ usbkd。 \_ehciframe
 
 
-**！ Usbkd。\_ehciframe**的命令显示帧数 EHCI 微型端口 FrameListBaseAddress 定期列表条目链编制索引。
+**！ Usbkd。 \_ehciframe**命令显示以帧号为索引的 EHCI 小型端口 FrameListBaseAddress 定期列表条目链。
 
 ```dbgcmd
 !usbkd._ehciframe StructAddr, FrameNumber
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbehci ！\_设备\_数据**结构。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci 的地址 **！ \_设备 \_ 数据**结构。
 
-<span id="_______FrameNumber______"></span><span id="_______framenumber______"></span><span id="_______FRAMENUMBER______"></span> *FrameNumber*   
-在范围 0 到 1023年的帧数。
+<span id="_______FrameNumber______"></span><span id="_______framenumber______"></span><span id="_______FRAMENUMBER______"></span>*FrameNumber*   
+范围0到1023中的帧号。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

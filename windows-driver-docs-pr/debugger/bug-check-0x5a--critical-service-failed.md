@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x5A CRITICAL_SERVICE_FAILED
-description: CRITICAL_SERVICE_FAILED bug 检查的值为 0x0000005A.This bug 检查极少出现。
+description: CRITICAL_SERVICE_FAILED bug 检查的值为0x0000005A。此 bug 检查很少出现。
 ms.assetid: 9a0657b0-943b-4c25-bb30-f04377fdaee9
 keywords:
 - Bug 检查 0x5A CRITICAL_SERVICE_FAILED
@@ -13,21 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f1e0873096ab1df39655316f0222e4424cf27327
-ms.sourcegitcommit: a39a3f4c9f26968e00317574c0d8530ee8ab6f8b
+ms.openlocfilehash: f705e5c891b34fc1e6f0b012e91a90a3b301c2d4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67894239"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534808"
 ---
-# <a name="bug-check-0x5a-criticalservicefailed"></a>Bug 检查 0x5A：关键\_服务\_失败
+# <a name="bug-check-0x5a-critical_service_failed"></a>Bug 检查0x5A：关键 \_ 服务 \_ 失败
 
-严重\_服务\_失败错误检查的值为 0x0000005A。
+"关键 \_ 服务 \_ 失败 bug 检查" 的值为 "0x0000005A"。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。

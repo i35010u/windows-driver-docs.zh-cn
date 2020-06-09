@@ -12,25 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16c5a8a24e70756d33305902c10ec54077aabd03
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 140a35037a32191fae10658e1ae6d5ba94d5ede1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916227"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534828"
 ---
-# <a name="bug-check-0x1dc-dma_common_buffer_vector_error"></a>Bug 检查0x1DC： DMA\_常见\_缓冲区\_向量\_错误
+# <a name="bug-check-0x1dc-dma_common_buffer_vector_error"></a>Bug 检查0x1DC： DMA \_ 常见 \_ 缓冲区 \_ 向量 \_ 错误
 
-DMA\_常见\_缓冲区\_向量\_错误 bug 检查的值为0x000001DC。 它表示驱动程序误用了 DMA 向量公共缓冲 Api。
+DMA \_ 公共 \_ 缓冲区 \_ 向量 \_ 错误检查的值为0x000001DC。 它表示驱动程序误用了 DMA 向量公共缓冲 Api。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
  
 
-## <a name="dma_common_buffer_vector_error-parameters"></a>DMA\_常见\_缓冲区\_向量\_错误参数
+## <a name="dma_common_buffer_vector_error-parameters"></a>DMA \_ 常见 \_ 缓冲区 \_ 向量 \_ 错误参数
 
-|参数|描述|
+|参数|说明|
 |-------- |---------- |
 |1| 指示失败的类型。 请参阅下面的值。|
 |2| 请参阅下面的值。 |
@@ -61,10 +61,10 @@ x02 : Vector not empty.
 ## <a name="cause"></a>原因
 -----
 
-驱动程序误用了 DMA 向量公共缓冲 Api。 [ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+驱动程序误用了 DMA 向量公共缓冲 Api。 [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 ## <a name="see-also"></a>另请参阅
 ----------
 
-[Bug 检查代码引用](bug-check-code-reference2.md)
+[Bug 检查代码参考](bug-check-code-reference2.md)
 

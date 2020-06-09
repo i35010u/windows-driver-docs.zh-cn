@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbportmddevext
-description: 如果一个 usbport _DEVICE_EXTENSION 结构是中的故障转储中已存在该 usbkd.usbportmddevext 命令显示结果生成 Bug 检查 0xFE。
+description: Usbkd usbportmddevext 命令显示 usbport _DEVICE_EXTENSION 结构（如果在作为结果 Bug 检查0xFE 生成的故障转储中存在）。
 ms.assetid: 07DE5D4A-E909-4D9B-B906-B74C9CC8AE49
 keywords:
-- usbkd.usbportmddevext Windows 调试
+- usbkd usbportmddevext Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,36 +12,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fd1a1006d7cc08652a696506e38b191368ab2726
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc8d97c71f89d97501cafe1aba791587da82af51
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327982"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534682"
 ---
 # <a name="usbkdusbportmddevext"></a>!usbkd.usbportmddevext
 
 
-**！ Usbkd.usbportmddevext**命令将显示**usbport ！\_设备\_扩展**结构，如果结果是生成的故障转储中存在[ **Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)。
+**！ Usbkd. usbportmddevext**命令显示**usbport！ \_设备 \_ 扩展**结构（如果在作为结果[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中存在）。
 
 ```dbgcmd
 !usbkd.usbportmddevext
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-使用此命令仅在调试时为生成的崩溃转储文件[ **Bug 检查 0xFE:BUGCODE\_USB\_驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)。
+仅当调试因[**Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储文件时，才使用此命令。
 
 <a name="examples"></a>示例
 --------
 
-下面是输出的示例 **！ usbportmddevext**。
+下面是 **！ usbportmddevext**的输出示例。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -108,12 +108,12 @@ Ev_Xdpc_Worker       XDPC_DpcQueued          XDPC_Running
 ...           
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

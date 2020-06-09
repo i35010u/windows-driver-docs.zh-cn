@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbtx
-description: Usbkd.usbtx 命令显示 usbport _HCD_TRANSFER_CONTEXT 结构中的信息。
+description: Usbkd. usbtx 命令显示 usbport _HCD_TRANSFER_CONTEXT 结构中的信息。
 ms.assetid: 603AD207-69D5-4DED-80B5-ADA21E191D47
 keywords:
-- usbkd.usbtx Windows 调试
+- usbkd usbtx Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a815470de80b66646ab420f337c2744bba11e2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ebfa930c07a75f0c1ab6b010f6af82bc4733f658
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367981"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534674"
 ---
 # <a name="usbkdusbtx"></a>!usbkd.usbtx
 
 
-**！ Usbkd.usbtx**命令显示中的信息**usbport ！\_HCD\_传输\_上下文**结构。
+**！ Usbkd. usbtx**命令显示 usbport 中的信息 **！ \_HCD \_ 传输 \_ 上下文**结构。
 
 ```dbgcmd
 !usbkd.usbtx StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbport ！\_HCD\_传输\_上下文**结构。 若要获取传输列表为 USB 主控制器，请使用[ **！ usbkd.usbhcdext** ](-usbkd-usbhcdext.md)命令。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbport 的地址 **！ \_HCD \_ 传输 \_ 上下文**结构。 若要获取 USB 主机控制器的传输列表，请使用[**！ usbkd. usbhcdext**](-usbkd-usbhcdext.md)命令。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法，若要查找的地址**usbport ！\_HCD\_传输\_上下文**结构。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbport 地址的一种方法 **！ \_HCD \_ 传输 \_ 上下文**结构。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ uhci\_信息 ffffe00001c8f1a0**。
+在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md) command **！ uhci \_ info ffffe00001c8f1a0**的参数。
 
-单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)获取传输列表。
+单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)以获取传输列表。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001c8f1a0
@@ -68,7 +68,7 @@ Usbkd.dll
     ...
 ```
 
-在上面的输出`ffffe0000653401c`是地址 **\_HCD\_传输\_上下文**结构。 传递到此地址 **！ usbtx**。
+在上面的输出中， `ffffe0000653401c` 是** \_ HCD \_ 传输 \_ 上下文**结构的地址。 将此地址传递给 **！ usbtx**。
 
 ```dbgcmd
 0: kd> !usbkd.usbtx ffffe0000653401c
@@ -97,12 +97,12 @@ NumberOfElements = 1
      :phys 00000000'ded90000 len 0x00001000(4096)
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

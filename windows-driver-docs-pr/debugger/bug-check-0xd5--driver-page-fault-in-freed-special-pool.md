@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f882b4e91ac32d838428b8a81a0fe7d5ada730
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: d65d5fa367a6c562eaf83a3a8088d22a58a2dbd4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313784"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534554"
 ---
-# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>Bug 检查0xD5：驱动程序\_页面\_错误\_\_释放\_特殊\_池
+# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>Bug 检查0xD5：已 \_ \_ \_ \_ 释放的 \_ 特殊 \_ 池中的驱动程序页错误
 
 
-\_释放的 "驱动程序"\_页面\_错误\_，\_特殊\_池 bug 检查的值为 "0x000000D5"。 这表明驱动程序已引用先前释放的内存。
+\_ \_ \_ \_ \_ \_ 已释放的特殊池 bug 检查中的驱动程序页错误的值为0x000000D5。 这表明驱动程序已引用先前释放的内存。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>驱动程序\_页面\_错误\_\_释放\_特殊\_池参数
+## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>\_ \_ \_ \_ 释放 \_ 特殊 \_ 池参数时出现驱动程序页错误
 
 
 <table>
@@ -40,7 +40,7 @@ ms.locfileid: "72313784"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -65,8 +65,8 @@ ms.locfileid: "72313784"
 </table>
 
  
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
-如果可以识别负责错误的驱动程序，其名称将打印在蓝色屏幕上，并存储在内存中的位置（PUNICODE\_STRING） **KiBugCheckDriver**。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+如果可以识别负责错误的驱动程序，则会在蓝色屏幕上打印其名称，并将其存储在内存中的位置（PUNICODE \_ 字符串） **KiBugCheckDriver**。
 
 <a name="cause"></a>原因
 -----
@@ -75,7 +75,7 @@ ms.locfileid: "72313784"
 
 有关特殊池的信息，请参阅 Windows 驱动程序工具包的驱动程序验证程序部分。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 这不能通过**try-except**处理程序来保护--它只能通过探测进行保护。

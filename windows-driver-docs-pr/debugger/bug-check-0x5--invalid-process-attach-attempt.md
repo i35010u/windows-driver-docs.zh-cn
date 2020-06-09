@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 663aabde692a1c0e27347914f589c328aa9113c5
-ms.sourcegitcommit: 70c8e83900015eaea013fb742e5e137cfd08ca98
+ms.openlocfilehash: b74da3425eb501fc2ad485eac3b417f633239ff1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885356"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534622"
 ---
-# <a name="bug-check-0x5-invalid_process_attach_attempt"></a>Bug 检查0x5：附加\_尝试\_无效的\_进程
+# <a name="bug-check-0x5-invalid_process_attach_attempt"></a>Bug 检查0x5： \_ 进程 \_ 附加 \_ 尝试无效
 
 
-\_附加\_尝试 bug 检查的无效\_进程的值为0x00000005。 这通常表示在不允许的情况下，线程已附加到进程。 例如，如果在线程已附加到进程时调用了**KeAttachProcess** （这是非法的），或者如果从特定函数返回的线程处于附加状态（无效），则可能发生此 bug 检查。
+无效的 \_ 进程 \_ 附加 \_ 尝试 bug 检查的值为0x00000005。 这通常表示在不允许的情况下，线程已附加到进程。 例如，如果在线程已附加到进程时调用了**KeAttachProcess** （这是非法的），或者如果从特定函数返回的线程处于附加状态（无效），则可能发生此 bug 检查。
 
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="invalid_process_attach_attempt-parameters"></a>\_进程无效\_附加\_尝试参数
+## <a name="invalid_process_attach_attempt-parameters"></a>无效的 \_ 进程 \_ 附加 \_ 尝试参数
 
 
 <table>
@@ -42,7 +42,7 @@ ms.locfileid: "76885356"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -67,10 +67,10 @@ ms.locfileid: "76885356"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 如果驱动程序调用**KeAttachProcess**函数，并且该线程已附加到另一个进程，则会发生此 bug 检查。 最好使用**KeStackAttachProcess**函数。 如果当前线程已附加到另一个进程，则**KeStackAttachProcess**函数将保存当前的 APC 状态，然后将当前线程附加到新进程。
 
  

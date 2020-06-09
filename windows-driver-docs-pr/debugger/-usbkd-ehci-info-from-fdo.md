@@ -1,9 +1,9 @@
 ---
-title: usbkd.ehci_info_from_fdo
-description: Usbkd.ehci_info_from_fdo 命令显示有关 USB 主控制器的信息。
+title: usbkd ehci_info_from_fdo
+description: Ehci_info_from_fdo usbkd 命令显示有关 USB 主机控制器的信息。
 ms.assetid: C7026EF3-F58D-45EB-83D5-8B4A3E661759
 keywords:
-- usbkd.ehci_info_from_fdo Windows 调试
+- usbkd ehci_info_from_fdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8b16221433561d95e3d00a6c494cf57522bb9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf9da8b15c2bfbe6c69a88cf526ed2b4f93778c2
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359777"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534056"
 ---
-# <a name="usbkdehciinfofromfdo"></a>!usbkd.ehci\_info\_from\_fdo
+# <a name="usbkdehci_info_from_fdo"></a>！ usbkd \_ \_ fdo 中的信息 \_
 
 
-[ **！ Usbkd.ehci\_信息\_从\_fdo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)命令显示有关 USB 主控制器的信息。
+[**Fdo 命令中的！ \_ usbkd \_ INFO \_ **](-usbkd-ehci-info-from-fdo.md)显示有关 USB 主机控制器的信息。
 
 ```dbgcmd
 !usbkd.ehci_info_from_fdo fdo
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______fdo______"></span><span id="_______FDO______"></span> *fdo*   
-UHCI 或 EHCI USB 主控制器的功能的设备对象 (FDO) 的地址。 可以从的输出中获取的地址 FDO [ **！ usb2tree** ](-usbkd-usb2tree.md)命令。
+<span id="_______fdo______"></span><span id="_______FDO______"></span>*fdo*   
+UHCI 或 EHCI USB 主机控制器的功能设备对象（FDO）的地址。 可以从[**！ usb2tree**](-usbkd-usb2tree.md)命令的输出中获取 FDO 的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-首先，使用[ **！ usb2tree** ](-usbkd-usb2tree.md)命令来获取 FDO 的地址。
+首先，使用[**！ usb2tree**](-usbkd-usb2tree.md)命令获取 FDO 的地址。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -53,7 +53,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-在上面的输出，您可以看到的 USB 主控制器 FDO 的地址是`ffffe00001ca1050`。 传递到 FDO 的地址[ **！ ehci\_信息\_从\_fdo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)。
+在上面的输出中，可以看到 USB 主机控制器的 FDO 地址是 `ffffe00001ca1050` 。 将 FDO 的地址传递给[**！ ehci \_ info \_ from \_ FDO**](-usbkd-ehci-info-from-fdo.md)。
 
 ```dbgcmd
 0: kd> !usbkd.ehci_info_from_fdo ffffe00001ca1050
@@ -90,12 +90,12 @@ BusContextHead: !usblist ffffe00001ca16b0, BC
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

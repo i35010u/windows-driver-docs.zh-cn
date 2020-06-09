@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbhubs
-description: Usbkd.usbhubs 命令显示有关 USB 集线器的信息。
+description: Usbkd. usbhubs 命令显示有关 USB 集线器的信息。
 ms.assetid: 88642A67-5105-45A4-8374-7E4D01FFAEB6
 keywords:
-- usbkd.usbhubs Windows 调试
+- usbkd usbhubs Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a6dedc4cfee0966fa678e68f89c0c18c59c2fda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1862c782a3c2c6f83ef2e60921c25645880d4421
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325399"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534690"
 ---
 # <a name="usbkdusbhubs"></a>!usbkd.usbhubs
 
 
-**！ Usbkd.usbhubs**命令显示有关 USB 集线器的信息。
+**！ Usbkd. usbhubs**命令显示有关 USB 集线器的信息。
 
 ```dbgcmd
 !usbkd.usbhubs a[v]
@@ -30,30 +30,30 @@ ms.locfileid: "63325399"
 !usbkd.usbhubs r[v]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_____________a"></span><span id="_____________A"></span> **a**  
+<span id="_____________a"></span><span id="_____________A"></span>**一个**  
 显示所有中心。
 
-<span id="_____________r"></span><span id="_____________R"></span> **r**  
+<span id="_____________r"></span><span id="_____________R"></span>**r**  
 显示根中心。
 
-<span id="_____________x"></span><span id="_____________X"></span> **x**  
-显示外部的中心。
+<span id="_____________x"></span><span id="_____________X"></span>**x**  
+显示外部中心。
 
-<span id="_____________v"></span><span id="_____________V"></span> **v**  
-该输出非常详细。 例如， **！ usbhubs rv**显示有关所有根中心的详细输出。
+<span id="_____________v"></span><span id="_____________V"></span>**v**  
+输出为 verbose。 例如， **！ usbhubs rv**显示有关所有根集线器的详细输出。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是从详细输出的示例 **！ usbhubs**命令。
+下面是 **！ usbhubs**命令的详细输出示例。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubs rv
@@ -109,12 +109,12 @@ On Host Controller (0x8086, 0x2937)
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

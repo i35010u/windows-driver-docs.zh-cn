@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED
-description: KERNEL_MODE_EXCEPTION_NOT_HANDLED bug 检查具有 0x0000008E 值。 检查此错误指示在内核模式应用程序生成的错误处理程序未捕获异常。
+title: Bug 检查 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED
+description: KERNEL_MODE_EXCEPTION_NOT_HANDLED bug 检查的值为0x0000008E。 此 bug 检查指示内核模式应用程序生成了错误处理程序未捕获的异常。
 ms.assetid: 987ee868-5622-44e4-979c-3ae93a98b5b1
 keywords:
-- Bug Check 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED
+- Bug 检查 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED
 - KERNEL_MODE_EXCEPTION_NOT_HANDLED
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 93662d93cbd93dd6dc41645e86d723c203e0e9ff
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: c99c06bbc8f72656731870be709275e345063a65
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519146"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534598"
 ---
-# <a name="bug-check-0x8e-kernelmodeexceptionnothandled"></a>Bug 检查 0x8E：内核\_模式下\_异常\_不\_已处理
+# <a name="bug-check-0x8e-kernel_mode_exception_not_handled"></a>Bug 检查0x8E： \_ \_ \_ 未处理内核模式 \_ 异常
 
-
-内核\_模式下\_异常\_不\_已处理错误检查的值为 0x0000008E。 检查此错误指示在内核模式应用程序生成的错误处理程序未捕获异常。
+\_未处理的内核模式 \_ 异常 \_ \_ bug 检查的值为0x0000008E。 此 bug 检查指示内核模式应用程序生成了错误处理程序未捕获的异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-
-## <a name="kernelmodeexceptionnothandled-parameters"></a>内核\_模式下\_异常\_不\_HANDLED 参数
+## <a name="kernel_mode_exception_not_handled-parameters"></a>内核 \_ 模式 \_ 异常 \_ 未 \_ 处理的参数
 
 
 <table>
@@ -40,21 +38,21 @@ ms.locfileid: "67519146"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>未处理异常代码</p></td>
+<td align="left"><p>未处理的异常代码</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>异常发生位置的地址</p></td>
+<td align="left"><p>发生异常的地址</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>陷阱帧</p></td>
+<td align="left"><p>捕获帧</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -63,65 +61,54 @@ ms.locfileid: "67519146"
 </tbody>
 </table>
 
- 
-
 <a name="cause"></a>原因
 -----
 
-内核\_模式下\_异常\_不\_HANDLED bug 检查是很常见的错误检查。 若要解释它，必须标识生成的异常。
+\_未处理的内核模式 \_ 异常 \_ \_ bug 检查是一个非常常见的 bug 检查。 若要对其进行解释，必须确定生成的异常。
 
-常见的异常代码如下所示：
+常见的异常代码包括：
 
--   数 0x80000002:状态\_数据类型\_未对齐指示遇到了未对齐的数据引用。
+-   数0x80000002：状态 \_ 数据类型不 \_ 一致指示遇到了未对齐的数据引用。
 
--   0x80000003:状态\_断点指示没有内核调试器已附加到系统时，遇到断点或断言。
+-   0x80000003：状态 \_ 断点指示在没有内核调试器附加到系统时遇到断点或断言。
 
--   0xC0000005:状态\_访问\_冲突指示内存访问冲突发生。
+-   0xC0000005：状态 \_ 访问 \_ 冲突表明发生了内存访问冲突。
 
-异常代码的完整列表，请参阅位于 inc 目录的 Microsoft Windows Driver Kit (WDK) 中的 Ntstatus.h 文件。
+有关异常代码的完整列表，请参阅位于 Microsoft Windows 驱动程序工具包（WDK）的 inc 目录中的 Ntstatus .h 文件。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
-如果您未配备调试此问题，则应使用一些基本的故障排除技巧：
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+如果你不具备调试此问题的方法，则应使用一些基本的故障排除方法：
 
--   确保你有足够的磁盘空间。
+- 确保你有足够的磁盘空间。
 
--   如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
+- 如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
 
--   尝试更改视频适配器。
+- 尝试更改视频适配器。
 
--   咨询任何 BIOS 更新的硬件供应商。
+- 咨询任何 BIOS 更新的硬件供应商。
 
--   禁用 BIOS 内存选项，例如缓存或隐藏。
+- 禁用 BIOS 内存选项，例如缓存或隐藏。
 
-如果您计划调试此问题，可能会发现很难获取堆栈跟踪。 驱动程序或函数导致此问题，应确定参数 2 （异常地址）。
+如果打算调试此问题，您可能会发现很难获得堆栈跟踪。 参数2（异常地址）应确定导致此问题的驱动程序或函数。
 
-如果出现异常代码 0x80000003，硬编码断点或断言已命中，但在此计算机启动与 **/NODEBUG**切换。 此问题很少发生。 如果重复发生，请确保内核调试器已连接并且启动计算机时与 **/debug**切换。
+如果发生异常代码0x80000003，则会命中硬编码断点或断言，但计算机是使用 **/NODEBUG**开关启动的。 此问题很少发生。 如果它反复发生，请确保已连接内核调试器，并且计算机是通过 **/debug**开关启动的。
 
-如果发生异常的代码数 0x80000002，陷阱框架提供的其他信息。
+如果发生异常代码数0x80000002，陷阱帧会提供其他信息。
 
-如果不知道特定异常的原因，请考虑以下各项：
+如果不知道异常的具体原因，请考虑以下各项：
 
--   硬件不兼容。 请确保已安装任何新硬件与安装的 Windows 版本兼容。 例如，可以获取有关与 Windows 7 的兼容性信息[Windows 7 兼容性中心](https://go.microsoft.com/fwlink/p/?LinkID=246806)。
+- 硬件不兼容。 请确保安装的任何新硬件都与安装的 Windows 版本兼容。
 
--   有故障的设备驱动程序或系统服务。 有故障的设备驱动程序或系统服务可能会导致此错误。 硬件问题，例如 BIOS 不兼容性、 内存冲突和 IRQ 冲突还可以生成此错误。
+- 设备驱动程序或系统服务错误。 错误的设备驱动程序或系统服务可能会导致此错误。 硬件问题（例如 BIOS 不兼容、内存冲突和 IRQ 冲突）也可能生成此错误。
 
-如果 bug 检查消息按名称列出了驱动程序、 禁用或删除该驱动程序。 此外，禁用或删除任何驱动程序或最近添加的服务。 如果在启动序列期间发生错误，而且使用 NTFS 文件系统格式化的系统分区，您可能能够使用安全模式下重命名或删除错误的驱动程序。 如果该驱动程序用作在安全模式下在系统启动过程的一部分，你必须使用恢复控制台访问该文件中启动计算机。
+如果 bug 检查消息按名称列出了驱动程序，请禁用或删除该驱动程序。 同时，禁用或删除最近添加的任何驱动程序或服务。 如果在启动序列过程中出现错误，并且使用 NTFS 文件系统格式化系统分区，则可以使用安全模式来重命名或删除有故障的驱动程序。 如果在安全模式下使用驱动程序作为系统启动过程的一部分，则必须使用恢复控制台来启动计算机以访问该文件。
 
-如果问题是与 Win32k.sys 相关联，错误的源可能是第三方远程控制程序。 如果安装了此类软件，您可以通过在开始使用恢复控制台，然后在删除有问题的系统服务文件系统中删除服务。
+如果问题与 Win32k.sys 相关联，则错误源可能是第三方远程控制程序。 如果安装了此类软件，则可以通过使用恢复控制台启动系统，然后删除有问题的系统服务文件来删除此服务。
 
-有关其他错误消息可能有助于识别设备或驱动程序导致 bug 检查 0x8e 越权检查事件查看器中的系统日志。 您可以禁用内存缓存来尝试解决该错误的 bios。 您还应运行硬件诊断，尤其是内存扫描程序，系统制造商提供。 有关这些过程的详细信息，请参阅您的计算机的用户手册。
+检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于识别导致 bug 检查0x8E 的设备或驱动程序。 可以禁用 BIOS 的内存缓存，尝试解决错误。 还应运行系统制造商提供的硬件诊断，尤其是内存扫描器。 有关这些过程的详细信息，请参阅您的计算机的所有者手册。
 
-在 Windows 安装过程中或在安装完成后，在第一重启后可能出现此错误，将生成此消息。 错误的可能原因是缺少的安装和系统 BIOS 不兼容的磁盘空间。 对于在 Windows 安装过程中与磁盘空间不足的问题，减少目标硬盘驱动器上的文件的数。 检查并删除任何不需要具有的临时文件、 Internet 缓存文件、 应用程序的备份文件和.chk 文件，其中包含从磁盘扫描保存的文件碎片。 也可以使用另一个硬盘驱动器上更多可用空间用于安装。
-
-可以通过升级系统 BIOS 版本来解决 BIOS 问题。
-
- 
-
- 
-
-
-
+在 Windows 安装程序期间或安装完成后，可能会在首次重新启动之后出现生成此消息的错误。 此错误的可能原因是缺少用于安装的磁盘空间和系统 BIOS 不兼容性。 对于与缺少磁盘空间关联的 Windows 安装过程中出现的问题，请减少目标硬盘驱动器上的文件数。 检查并删除不需要的任何临时文件、Internet 缓存文件、应用程序备份文件以及包含磁盘扫描中保存的文件片段的 .chk 文件。 你还可以使用具有更多可用空间的另一个硬盘驱动器来安装。
 

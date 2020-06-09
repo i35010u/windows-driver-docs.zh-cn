@@ -12,19 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 78254c231218357d21daac30063fc578b02bd8c3
-ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
+ms.openlocfilehash: 22af6e8eeab67c6d536ab7cdf48c00bce8bf435d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80812515"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533928"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 
-> [!NOTE]
-> 本主题面向程序员。 如果你是一个客户，你的系统显示了带有 bug 检查代码的蓝屏，请参阅[蓝屏错误疑难解答](https://go.microsoft.com/fwlink/p/?linkid=183646)。
 
-**请注意**   如果你是 IT 专业人员或支持代理，请参阅此文章，以获取其他信息、[排查 "蓝屏" 问题或在联系 Microsoft 支持部门之前停止出现错误问题](https://support.microsoft.com/help/3106831/)。
+**注意**   本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+
+ 
+
+**注意**   如果你是 IT 专业人员或支持代理，请参阅此文，了解其他信息、[排查 "蓝屏" 问题或停止错误问题，然后再联系 Microsoft 支持部门](https://support.microsoft.com/help/3106831/)。
 
 当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为*系统崩溃*、*内核错误*或*停止错误*。
 
@@ -44,7 +46,7 @@ ms.locfileid: "80812515"
 
 ![bug 检查示例 windows 10 blue screen with qr 代码](images/bug-check-example-blue-screen-page-fault.png)
 
-"停止代码" 显示，如[ **\_"非分页\_区域中的页面\_错误\_** ](bug-check-0x50--page-fault-in-nonpaged-area.md)。 当它可用时，还会显示正在执行的代码的模块名称，例如 AcmeVideo。
+在[** \_ \_ \_ 非分页 \_ 区域**](bug-check-0x50--page-fault-in-nonpaged-area.md)显示 stop 代码，如页错误。 当它可用时，还会显示正在执行的代码的模块名称，例如 AcmeVideo。
 
 如果已写入[内核模式转储文件](kernel-mode-dump-files.md)，则会在写入转储时，按百分比完成计数来指示这一点。
 
@@ -59,9 +61,9 @@ ms.locfileid: "80812515"
 
 有多种方法可以收集四个停止代码参数。
 
--   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
+-   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅[Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
 
--   加载生成的转储文件，并在附加调试器中使用[ **！ "分析**](-analyze.md)" 命令。 有关详细信息，请参阅[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
+-   加载生成的转储文件，并在附加调试器中使用[**！ "分析**](-analyze.md)" 命令。 有关详细信息，请参阅[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
 
 -   将内核调试器附加到出错的 PC。 当发生停止代码时，调试器输出将在停止代码十六进制值之后包含四个参数。
 
@@ -82,33 +84,33 @@ ms.locfileid: "80812515"
 
 ### <a name="span-idbug_check_symbolic_namesspanspan-idbug_check_symbolic_namesspanbug-check-symbolic-names"></a><span id="bug_check_symbolic_names"></span><span id="BUG_CHECK_SYMBOLIC_NAMES"></span>Bug 检查符号名称
 
-[**驱动程序\_电源\_状态\_故障**](bug-check-0x9f--driver-power-state-failure.md)为 Bug 检查符号名称，关联 bug 检查代码9f。 与 Bug 检查符号名称关联的停止代码十六进制值列在 " [Bug 检查代码参考](bug-check-code-reference2.md)" 中。
+[**驱动程序 \_电源 \_ 状态 \_ 故障**](bug-check-0x9f--driver-power-state-failure.md)是错误检查符号名称，其关联 Bug 检查代码为9f。 与 Bug 检查符号名称关联的停止代码十六进制值列在 " [Bug 检查代码参考](bug-check-code-reference2.md)" 中。
 
 ### <a name="span-idreading_bug_check_information_from_the_debuggerspanspan-idreading_bug_check_information_from_the_debuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>从调试器读取 Bug 检查信息
 
-如果附加了调试器，则 bug 检查将导致目标计算机中断到调试器。 在这种情况下，蓝屏可能不会立即出现，此故障的完整详细信息将发送到调试器并显示在调试器窗口中。 若要再次查看此信息，请使用 "[**错误检查（显示 Bug 检查数据）** ](-bugcheck--display-bug-check-data-.md) " 命令或 " [ **！分析**](-analyze.md)扩展" 命令。
+如果附加了调试器，则 bug 检查将导致目标计算机中断到调试器。 在这种情况下，蓝屏可能不会立即出现，此故障的完整详细信息将发送到调试器并显示在调试器窗口中。 若要再次查看此信息，请使用 "[**错误检查（显示 Bug 检查数据）**](-bugcheck--display-bug-check-data-.md) " 命令或 " [**！分析**](-analyze.md)扩展" 命令。
 
 **内核调试和故障转储分析**
 
 当其他故障排除方法失败或反复发生问题时，内核调试特别有用。 请记得捕获错误消息的 "bug 检查信息" 部分中的确切文本。 若要隔离复杂问题并制定可行的解决方法，请记录导致失败的确切操作。
 
-[!analyze **调试扩展显示有关 bug 检查的信息，并有助于确定根本原因**](-analyze.md)。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 你还可以在代码中设置一个断点，使其导致此 stop 代码，并尝试单步执行出错的代码。
 
 有关详细信息，请参阅以下主题：
 
-[使用 Windows 调试器（WinDbg）进行故障转储分析](crash-dump-files.md)
+[使用 Windows 调试器 (WinDbg) 进行故障转储分析](crash-dump-files.md)
 
 [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
 [使用！分析扩展](using-the--analyze-extension.md)和[！分析](-analyze.md)
 
-碎片整理工具显示在第9频道-<https://channel9.msdn.com/Shows/Defrag-Tools>
+在第9频道上显示的碎片整理工具-<https://channel9.msdn.com/Shows/Defrag-Tools>
 
 ### <a name="span-idusing_driver_verifier_to_gather_informationspanspan-idusing_driver_verifier_to_gather_informationspanspan-idusing_driver_verifier_to_gather_informationspanusing-driver-verifier-to-gather-information"></a><span id="Using_Driver_Verifier_to_Gather_Information"></span><span id="using_driver_verifier_to_gather_information"></span><span id="USING_DRIVER_VERIFIER_TO_GATHER_INFORMATION"></span>使用驱动程序验证器收集信息
 
-据估计，蓝屏的三个季度由错误驱动程序引起。 驱动程序验证程序是一个实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源（如内存池）的使用。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证程序管理器内置于 Windows 中，可在所有 Windows PC 上使用。 若要启动驱动程序验证程序管理器，请在命令提示下键入“验证程序”。 你可以配置要验证的驱动程序。 验证驱动程序的代码在运行时会增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+据估计，蓝屏的三个季度由错误驱动程序引起。 驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源的使用情况，例如内存池。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符下键入*verifier* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 ## <a name="span-idtips_for_software_engineersspanspan-idtips_for_software_engineersspanspan-idtips_for_software_engineersspantips-for-software-engineers"></a><span id="Tips_for_Software_Engineers"></span><span id="tips_for_software_engineers"></span><span id="TIPS_FOR_SOFTWARE_ENGINEERS"></span>软件工程师的技巧
 
@@ -119,19 +121,19 @@ ms.locfileid: "80812515"
 
 许多问题可以通过基本的故障排除过程来解决，如验证指令、重新安装关键组件和验证文件日期。 此外，事件查看器 Sysinternals 诊断工具和网络监视工具可能会隔离并解决这些问题。
 
-有关 Windows Bug 检查代码的一般故障排除，请按照以下建议操作：
+有关 Windows 错误检查代码的一般疑难解答，请遵循以下建议：
 
--   如果最近向系统添加了硬件，请尝试删除或替换它。 或与制造商联系，查看是否有可用的修补程序。
+-   如果最近向系统中添加了硬件，请尝试删除或替换它。 或与制造商联系，查看是否有可用的修补程序。
 
--   如果最近添加了新的设备驱动程序或系统服务，请尝试删除或更新它们。 尝试确定系统中导致新 Bug 检查代码出现的原因。
+-   如果最近添加了新的设备驱动程序或系统服务，请尝试删除或更新它们。 尝试确定系统中发生了导致新 bug 检查代码的更改。
 
 -   查看**设备管理器**，查看是否有任何设备标记为惊叹号（！）。 查看在驱动程序属性中显示的任何错误驱动程序的事件日志。 请尝试更新相关驱动程序。
 
--   检查事件查看器中的系统日志，以获取可能有助于查明导致错误的设备或驱动程序的其他错误消息。 有关详细信息，请参阅[打开事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在系统日志中查找与蓝屏同时出现的严重错误。
+-   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅[Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在与蓝色屏幕相同的时间范围内查找系统日志中的严重错误。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后单击 "**诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找“内存诊断结果”条目以查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后单击 "**诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
 
 -   确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在[Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
 
@@ -158,7 +160,7 @@ ms.locfileid: "80812515"
 
 **使用安全模式**
 
-删除或禁用组件时，请考虑使用安全模式。 使用安全模式仅加载 Windows 启动过程中所需的最少驱动程序和系统服务。 若要进入安全模式，请使用 "设置" 中的 "**更新和安全**"。 选择 "**恢复**-&gt;"**高级启动**"以启动到维护模式。 在出现的菜单中，选择 "**故障排除**"-&gt;**高级选项**"， -&gt;**启动设置** -&gt; **Restart**"。 Windows 重启到 "**启动设置**" 屏幕后，选择 "选项"、"4"、"5" 或 "6" 以启动到安全模式。
+删除或禁用组件时，请考虑使用安全模式。 使用安全模式仅加载 Windows 启动过程中所需的最少驱动程序和系统服务。 若要进入安全模式，请使用 "设置" 中的 "**更新和安全**"。 选择 "**恢复** - &gt; **高级启动**" 以启动到维护模式。 在出现的菜单中，**选择 "** - &gt; **高级选项**" "启动  - &gt; **设置**  - &gt; **重新启动**"。 Windows 重启到 "**启动设置**" 屏幕后，选择 "选项"、"4"、"5" 或 "6" 以启动到安全模式。
 
 可以通过在启动时按功能键来提供安全模式，例如 F8。 请参阅制造商提供的有关特定启动选项的信息。
 

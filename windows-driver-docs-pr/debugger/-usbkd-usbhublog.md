@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbhublog
-description: Usbkd.usbhublog 命令显示的 USB 集线器的调试日志。
+description: Usbkd. usbhublog 命令显示 USB 集线器的调试日志。
 ms.assetid: DFDF595E-3452-40C2-A6C7-94FB8954002C
 keywords:
-- usbkd.usbhublog Windows 调试
+- usbkd usbhublog Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a1c337e4e50da85b10860b05d113f122845497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f70387f907ffec4f29e28a1ae96a06aa7c93344
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340617"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534694"
 ---
 # <a name="usbkdusbhublog"></a>!usbkd.usbhublog
 
 
-**！ Usbkd.usbhublog**命令显示的 USB 集线器的调试日志。
+**！ Usbkd. usbhublog**命令显示 USB 集线器的调试日志。
 
 ```dbgcmd
 !usbkd.usbhublog DeviceExtension[, NumberOfEntries]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-适用于 USB 集线器的功能的设备对象 (FDO) 的设备扩展的地址。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
+USB 集线器的功能设备对象（FDO）的设备扩展的地址。
 
-<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span> *NumberOfEntries*   
-若要显示的日志条目数。 若要显示整个日志，请将此参数设置为-1。
+<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span>*NumberOfEntries*   
+要显示的日志条目数。 若要显示整个日志，请将此参数设置为-1。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法找到的 USB 集线器 FDO 设备扩展的地址。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是一种查找 USB 集线器 FDO 的设备扩展地址的方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -55,7 +55,7 @@ Usbkd.dll
       ...
 ```
 
-在上面的输出中可以看到建议的命令 **！ devstack ffffe00002320050**。 输入此命令。
+在上面的输出中，可以看到建议的命令 **！ devstack ffffe00002320050**。 输入此命令：
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -66,9 +66,9 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出，`ffffe000023201a0`为中心的 FDO 是设备扩展的地址。
+在上面的输出中， `ffffe000023201a0` 是中心 FDO 的设备扩展的地址。
 
-现在将传递到设备扩展的地址 **！ usbhublog**。 在此示例中，第二个参数将显示限制为 10 个日志条目。
+现在，将设备扩展的地址传递给 **！ usbhublog**。 在此示例中，第二个参数将显示范围限制为10个日志条目。
 
 ```dbgcmd
 0: kd> !usbkd.usbhublog ffffe000023201a0, 10
@@ -88,12 +88,12 @@ LOG@: ffffe000023201a0 (usbhub!_DEVICE_EXTENSION_HUB)
 [ 009] ffffe00002321dc0 pqDP 0000000000000000 ffffe000021c11d8 0000000000000006
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

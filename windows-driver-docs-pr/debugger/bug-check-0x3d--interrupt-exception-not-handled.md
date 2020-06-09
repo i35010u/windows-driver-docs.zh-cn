@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e7a079472a34fe7c0751a33beb0630a1494e925
-ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
+ms.openlocfilehash: ff400cb3d01d0a06960f50df8585f7613ed15bf1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74411176"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534634"
 ---
-# <a name="bug-check-0x3d-interrupt_exception_not_handled"></a>Bug 检查0x3D：中断\_异常\_未\_处理
+# <a name="bug-check-0x3d-interrupt_exception_not_handled"></a>Bug 检查0x3D：中断 \_ 异常 \_ 未 \_ 处理
 
 
-中断\_异常\_未\_处理的 bug 检查的值为0x0000003D。
+\_未处理的中断异常 \_ \_ bug 检查的值为0x0000003D。
 
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="resolution"></a>分辨率 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+## <a name="resolution"></a>解决方法 
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
 

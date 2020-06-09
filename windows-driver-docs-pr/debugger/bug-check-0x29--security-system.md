@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x29 SECURITY_SYSTEM
-description: SECURITY_SYSTEM bug 检查具有 0x00000029 值。检查此错误极少出现。
+description: SECURITY_SYSTEM bug 检查的值为0x00000029。此 bug 检查很少出现。
 ms.assetid: 9a027a41-71f4-4b5e-a9f0-c626c77248cf
 keywords:
 - Bug 检查 0x29 SECURITY_SYSTEM
@@ -13,28 +13,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c50efd8ce6c1dce9a16867a70b337a2b4ff78730
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 98409e5da51c04abdde53856ce7be1cfc8da58c4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519571"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534824"
 ---
-# <a name="bug-check-0x29-securitysystem"></a>Bug 检查 0x29：安全\_系统
+# <a name="bug-check-0x29-security_system"></a>Bug 检查0x29：安全 \_ 系统
 
 
-安全性\_检查系统错误的值为 0x00000029。
+安全 \_ 系统 bug 检查的值为0x00000029。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

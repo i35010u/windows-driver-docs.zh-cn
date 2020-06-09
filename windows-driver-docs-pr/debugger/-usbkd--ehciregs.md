@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehciregs
-description: Usbkd._ehciregs 命令显示操作和根集线器端口状态的 USB EHCI 主机控制器注册。
+title: usbkd _ehciregs
+description: _Ehciregs usbkd 命令显示 USB EHCI 主机控制器的操作端口和根集线器端口状态寄存器。
 ms.assetid: BFD58E6B-BC51-4F2F-B597-8C815826F931
 keywords:
-- usbkd._ehciregs Windows 调试
+- usbkd _ehciregs Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b81f63e35fd2c56f7c45fe2b252add571f01c3a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e60507e8ccba9eb8b9aa6e5579e284828d85c1c
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334130"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534088"
 ---
-# <a name="usbkdehciregs"></a>！ usbkd。\_ehciregs
+# <a name="usbkd_ehciregs"></a>！ usbkd。 \_ehciregs
 
 
-**！ Usbkd。\_ehciregs**命令显示操作和根集线器的 USB EHCI 主控制器的端口状态寄存器。
+**！ Usbkd。 \_ehciregs**命令显示 USB EHCI 主机控制器的操作端口和根集线器端口状态寄存器。
 
 ```dbgcmd
 !usbkd._ehciregs StructAddr[, NumPorts]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbehci ！\_HC\_OPERATIONAL\_注册**结构。 若要查找的地址**usbehci ！\_HC\_OPERATIONAL\_注册**结构，请使用[ **！ usbkd.usbhcdlist**](-usbkd-usbhcdlist.md)。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器**结构。 查找 usbehci 的地址 **！ \_HC \_ 操作 \_ 寄存器**结构，请使用[**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
 
-<span id="_______NumPorts______"></span><span id="_______numports______"></span><span id="_______NUMPORTS______"></span> *NumPorts*   
-根集线器端口状态数注册要显示。
+<span id="_______NumPorts______"></span><span id="_______numports______"></span><span id="_______NUMPORTS______"></span>*NumPorts*   
+要显示的根集线器端口状态寄存器的数目。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法获取的地址**usbehci ！\_HC\_OPERATIONAL\_注册**结构。 首次进入[ **！ usbkd.usbhcdlist**](-usbkd-usbhcdlist.md)。
+下面是获取 usbehci 的地址的一种方法 **！ \_HC \_ 操作 \_ 寄存器**结构。 首先输入[**！ usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist
@@ -61,9 +61,9 @@ MINIPORT List @ fffff80001e5bbd0
     Operational Registers ffffd000228bf020
 ```
 
-在上面的输出` ffffd000228bf020`是地址 **\_HC\_OPERATIONAL\_注册**结构。
+在上面的输出中， ` ffffd000228bf020` 是** \_ HC \_ 操作 \_ 寄存器**结构的地址。
 
-现在将传递到的结构地址 **！\_ehciregs**。 在此示例中，第二个参数将显示限制为两个根集线器端口状态寄存器。
+现在，将结构地址传递给 **！ \_ehciregs**。 在此示例中，第二个参数将显示限制为两个根集线器端口状态寄存器。
 
 ```dbgcmd
 0: kd> !usbkd._ehciregs ffffd000228bf020, 2
@@ -141,12 +141,12 @@ MINIPORT List @ fffff80001e5bbd0
         WakeOnDisconnect x0
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

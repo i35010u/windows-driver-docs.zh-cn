@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 014ce8979258d37187c8733570e559491febeb41
-ms.sourcegitcommit: d2dab8b8bf335835d0341ca3f0a36eab0ec028f5
+ms.openlocfilehash: f4eff575430c3a5375aa4bac160a5031216ad6b1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72892685"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534792"
 ---
-# <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>Bug 检查0xBFF： BC\_BTHMINI\_VERIFIER\_错误
+# <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>Bug 检查0xBFF： BC \_ BTHMINI \_ 验证程序 \_ 错误
 
 
-BC\_BTHMINI\_VERIFIER\_错误 bug 检查的值为0x00000BFF。 这表明蓝牙微型端口可扩展驱动程序验证程序已捕获到冲突。
+BC \_ BTHMINI \_ VERIFIER \_ 错误检查的值为0x00000BFF。 这表明蓝牙微型端口可扩展驱动程序验证程序已捕获到冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bc_bthmini_verifier_fault-parameters"></a>BC\_BTHMINI\_VERIFIER\_错误参数
+## <a name="bc_bthmini_verifier_fault-parameters"></a>BC \_ BTHMINI \_ 验证程序 \_ 错误参数
 
 
 <table>
@@ -40,7 +40,7 @@ BC\_BTHMINI\_VERIFIER\_错误 bug 检查的值为0x00000BFF。 这表明蓝牙�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -79,10 +79,10 @@ BC\_BTHMINI\_VERIFIER\_错误 bug 检查的值为0x00000BFF。 这表明蓝牙�
 
 
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 参数1描述了冲突类型。 查看调用堆栈，确定驱动程序是否有异常。
 
 

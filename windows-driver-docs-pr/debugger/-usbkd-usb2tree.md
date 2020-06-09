@@ -1,9 +1,9 @@
 ---
 title: usbkd.usb2tree
-description: Usbkd.usb2tree 命令显示 USB 2.0 树。
+description: Usbkd. usb2tree 命令显示 USB 2.0 树。
 ms.assetid: 6BEFE154-C8F0-466C-AB68-71C6304D0DEA
 keywords:
-- usbkd.usb2tree Windows 调试
+- usbkd usb2tree Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a47edbfe78880ed2ea784bf79c55e6ff9f1fb49
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c965428d3db1d3db617515903fba3bf90a8553b1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334126"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534868"
 ---
 # <a name="usbkdusb2tree"></a>!usbkd.usb2tree
 
 
-**！ Usbkd.usb2tree**命令将显示[USB 2.0 树](usb-2-0-extensions.md#usb-2-tree)。
+**！ Usbkd. usb2tree**命令显示[USB 2.0 树](usb-2-0-extensions.md#usb-2-tree)。
 
 ```dbgcmd
 !usbkd.usb2tree
@@ -31,41 +31,41 @@ ms.locfileid: "63334126"
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>示例
 
 
-此屏幕截图的输出示例 **！ usb2tree**命令。
+此屏幕截图显示了 **！ usb2tree**命令的输出示例和示例。
 
-![输出 ！ usbkd.usb2tree 命令显示 uhci ehci 信息和枚举的中心列表](images/usb2tree01.png)
+![显示 uhci ehci 信息和枚举中心列表的！ usbkd. usb2tree 命令的输出](images/usb2tree01.png)
 
-该输出显示一个 EHCI 执行单元测试和两个 UHCI 执行单位。 此示例中所示的执行单元恰好位于单个 USB 主机控制器设备上。 输出还显示根集线器和连接的设备。
+输出显示一个 EHCI 执行单元和两个 UHCI 执行单位。 本例中所示的执行单元恰好位于单个 USB 主机控制器设备上。 输出还显示根集线器和连接的设备。
 
-输出会使用[使用调试器标记语言 (DML)](debugger-markup-language-commands.md)提供链接。 链接执行命令来提供与树中的对象相关的详细的信息。 例如，可以单击其中一个[ **！ devobj** ](-devobj.md) EHCI 执行单元与关联的链接可获取有关功能的设备对象的信息。 作为单击的链接的替代方法，你可以输入该命令手动： **！ devobj ffffe00001ca7050**
+输出使用[调试器标记语言（DML）](debugger-markup-language-commands.md)来提供链接。 这些链接执行命令，以便为树中的对象指定相关的详细信息。 例如，你可以单击其中一个[**！ devobj**](-devobj.md)链接来获取与 EHCI 执行单元关联的功能设备对象的相关信息。 作为单击链接的替代方法，可以手动输入命令： **！ devobj ffffe00001ca7050**
 
-**请注意**  DML 功能现已推出的 WinDbg 中，但未在 Visual Studio 或 KD。
+**注意**   DML 功能在 WinDbg 中可用，但在 Visual Studio 或 KD 中不可用。
 
  
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**！ Usb2tree**命令是为许多父命令[USB 2.0 调试器扩展命令。](usb-2-0-extensions.md) 这些命令显示的信息基于由这些驱动程序维护的数据结构：
+**！ Usb2tree**命令是针对许多[USB 2.0 调试程序扩展命令](usb-2-0-extensions.md)的父命令。 这些命令显示的信息基于这些驱动程序维护的数据结构：
 
--   usbehci.sys （USB 2 主机控制器微型端口驱动程序）
--   usbuhci.sys （USB 2 主机控制器微型端口驱动程序）
--   usbport.sys （USB 2 主机控制器端口驱动程序）
--   usbhub.sys （USB 2 中心驱动程序）
+-   usbehci （用于 USB 2 主机控制器的微型端口驱动程序）
+-   usbuhci （用于 USB 2 主机控制器的微型端口驱动程序）
+-   usbport （USB 2 主机控制器的端口驱动程序）
+-   usbhub （USB 2 集线器驱动程序）
 
-有关这些驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://go.microsoft.com/fwlink/p/?LinkId=251983)。
+有关这些驱动程序的详细信息，请参阅[Windows 中的 USB 主机端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

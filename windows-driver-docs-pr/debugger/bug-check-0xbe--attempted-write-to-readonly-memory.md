@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xBE ATTEMPTED_WRITE_TO_READONLY_MEMORY
-description: ATTEMPTED_WRITE_TO_READONLY_MEMORY bug 检查具有 0x000000BE 值。 这被发出一个驱动程序尝试写入只读内存段。
+description: ATTEMPTED_WRITE_TO_READONLY_MEMORY bug 检查的值为0x000000BE。 如果驱动程序尝试写入只读内存段，则会发出此项。
 ms.assetid: d6247828-09ae-4071-9b4f-917af29265bc
 keywords:
 - Bug 检查 0xBE ATTEMPTED_WRITE_TO_READONLY_MEMORY
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd60b8f44e488f621860b0436e2ad681c28d02d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: be0219f1be94a0355509cf84e226ecad9f5fc563
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518992"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534796"
 ---
-# <a name="bug-check-0xbe-attemptedwritetoreadonlymemory"></a>Bug 检查 0xBE：尝试\_编写\_TO\_READONLY\_内存
+# <a name="bug-check-0xbe-attempted_write_to_readonly_memory"></a>Bug 检查0xBE：尝试 \_ 写入 \_ \_ 只读 \_ 内存
 
 
-已尝试\_编写\_TO\_READONLY\_内存错误检查的值为 0x000000BE。 这被发出一个驱动程序尝试写入只读内存段。
+尝试 \_ 写入 \_ \_ READONLY \_ 内存 bug 检查的值为0x000000BE。 如果驱动程序尝试写入只读内存段，则会发出此项。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="attemptedwritetoreadonlymemory-parameters"></a>尝试\_编写\_TO\_READONLY\_内存参数
+## <a name="attempted_write_to_readonly_memory-parameters"></a>尝试 \_ 写入 \_ \_ READONLY \_ 内存参数
 
 
 <table>
@@ -40,13 +40,13 @@ ms.locfileid: "67518992"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>虚拟地址的尝试的写入</p></td>
+<td align="left"><p>尝试写入的虚拟地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -65,13 +65,13 @@ ms.locfileid: "67518992"
 
  
 
-如果无法确定导致错误的驱动程序，其名称是蓝色屏幕上输出和位置在内存中存储 (PUNICODE\_字符串) **KiBugCheckDriver**。
+如果可以识别负责错误的驱动程序，则会在蓝色屏幕上打印其名称，并将其存储在内存中的位置（PUNICODE \_ 字符串） **KiBugCheckDriver**。
 
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
 

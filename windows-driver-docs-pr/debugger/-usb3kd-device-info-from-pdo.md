@@ -1,9 +1,9 @@
 ---
-title: usb3kd.device_info_from_pdo
-description: Usb3kd.device_info_from_pdo 命令在 USB 3.0 树中显示有关 USB 设备的信息。
+title: usb3kd device_info_from_pdo
+description: Device_info_from_pdo usb3kd 命令在 USB 3.0 树中显示有关 USB 设备的信息。
 ms.assetid: 74FD68E6-78DF-452F-80C2-91A37877DE52
 keywords:
-- usb3kd.device_info_from_pdo Windows 调试
+- usb3kd device_info_from_pdo Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e5d06b96c0dc41678c9fc30f8c11a7e2d71016
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 645fe27ebbe8557f54c763e878eda1b71f747a12
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334140"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534904"
 ---
-# <a name="usb3kddeviceinfofrompdo"></a>!usb3kd.device\_info\_from\_pdo
+# <a name="usb3kddevice_info_from_pdo"></a>！ usb3kd \_ \_ 来自 pdo 的设备 \_ 信息
 
 
-**！ Usb3kd.device\_信息\_从\_pdo**命令显示有关 USB 设备中的信息[USB 3.0 树](usb-3-extensions.md#usb-3-tree)。
+** \_ \_ 来自 \_ pdo 的！ usb3kd 信息**命令显示有关[usb 3.0 树](usb-3-extensions.md#usb-3-tree)中 usb 设备的信息。
 
 ```dbgcmd
 !usb3kd.device_info_from_pdo DeviceObject
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-USB 设备或中心的物理设备对象 (PDO) 的地址。
+<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
+USB 设备或集线器的物理设备对象（PDO）的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**！ 设备\_info\_从\_pdo**并[ **！ ucx\_设备**](-usb3kd-ucx-device.md)两者都显示有关设备的信息，但信息显示与不同。 输出 **！ 设备\_信息\_从\_pdo** USB 3.0 集线器驱动程序，point of view 和的输出来自 **！ ucx\_设备**来自角度来看的 USB 主控制器扩展驱动程序。 例如， **！ 设备\_信息\_从\_pdo**输出包含有关配置和接口描述符并 **！ ucx\_设备**输出包括终结点的信息。
+**！ \_ \_ 来自 \_ pdo**和[**！ ucx \_ 设备**](-usb3kd-ucx-device.md)的设备信息均显示有关设备的信息，但显示的信息不同。 ** \_ \_ 来自 \_ pdo 的！设备信息**的输出来自于 usb 3.0 集线器驱动程序的观点， **！ ucx \_ 设备**的输出来自 usb 主机控制器扩展驱动程序的观点。 例如， ** \_ \_ 来自 \_ pdo 输出的！设备信息**包含有关配置和接口描述符的信息， **！ ucx \_ 设备**输出包含有关终结点的信息。
 
 <a name="examples"></a>示例
 --------
 
-可以从的输出中获取的地址的 PDO [ **！ usb\_树**](-usb3kd-usb-tree.md)或使用不同的其他调试器命令。 例如， [ **！ devnode** ](-devnode.md)命令显示 PDOs 的地址。 在以下示例中，USBSTOR 设备节点是 USBHUB3 节点的直接子级。 PDO USBSTOR 节点的地址是 0xfffffa80059c3800。
+可以从[**！ usb \_ 树**](-usb3kd-usb-tree.md)的输出或其他各种调试器命令获取 PDO 的地址。 例如， [**！ devnode**](-devnode.md)命令显示 PDOs 的地址。 在下面的示例中，USBSTOR 设备节点是 USBHUB3 节点的直接子节点。 USBSTOR 节点的 PDO 地址为0xfffffa80059c3800。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbhub3
@@ -72,7 +72,7 @@ DevNode 0xfffffa8005981730 for PDO 0xfffffa8004ffc550
       Previous State = DeviceNodeEnumerateCompletion (0x30d)
 ```
 
-现在可以将传递给 PDO 的地址 **！ usb3kd.device\_信息\_从\_pdo**命令。
+现在，可以通过 pdo 命令将 PDO 地址传递到 **！ usb3kd \_ info \_ \_ ** 。
 
 ```dbgcmd
 3: kd> !device_info_from_pdo 0xfffffa80059c3800
@@ -112,7 +112,7 @@ Device Event History:
     ...
 ```
 
-下面的示例显示了一些的输出[ **！ usb\_树**](-usb3kd-usb-tree.md)命令。 您所见的其中一个子设备节点 PDO 的地址作为参数[ **！ devstack** ](-devstack.md)命令。 (**!devstack fffffa80059c3800**)
+下面的示例演示了[**！ usb \_ 树**](-usb3kd-usb-tree.md)命令的一些输出。 可以查看其中一个子设备节点的 PDO 地址作为[**！ devstack**](-devstack.md)命令的参数。 （**！ devstack fffffa80059c3800**）
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -137,14 +137,14 @@ Topology
     !ucx_device 0xfffffa8005992840 !xhci_deviceslots 0xfffffa80051d1940 1
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[**!usb3kd.device\_info**](-usb3kd-device-info.md)
+[**！ usb3kd \_ 信息**](-usb3kd-device-info.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

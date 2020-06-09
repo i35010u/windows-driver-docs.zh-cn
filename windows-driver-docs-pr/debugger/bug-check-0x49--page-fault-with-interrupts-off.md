@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb76a4472dafa970ed4f27aca2f9a057f14f9f6f
-ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
+ms.openlocfilehash: 18a41cf463fc42ce079faee4e587f7685ff12f1c
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74411173"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534628"
 ---
-# <a name="bug-check-0x49-page_fault_with_interrupts_off"></a>Bug 检查0x49：页\_故障\_，\_中断\_关闭
+# <a name="bug-check-0x49-page_fault_with_interrupts_off"></a>Bug 检查0x49： \_ \_ 包含中断的页错误 \_ \_
 
 
-\_中断\_\_错误\_的页的值为 "0x00000049"。
+\_ \_ 带有中断的 bug 检查的页错误 \_ \_ 具有值0x00000049。
 
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="resolution"></a>分辨率 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+## <a name="resolution"></a>解决方法 
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 
 

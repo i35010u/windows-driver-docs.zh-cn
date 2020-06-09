@@ -1,14 +1,14 @@
 ---
 title: 时光穿越调试 - 示例应用演练
-description: 本部分包含一个小型C++应用程序的演练。
+description: 本部分包含一个小 c + + 应用程序的演练。
 ms.date: 01/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4945f708ed5e8389af683d638b61e8b239c7e5de
-ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
+ms.openlocfilehash: 10107b71920d0f0857dec089f4f677f21c4cfa02
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706971"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534290"
 ---
 # <a name="time-travel-debugging---sample-app-walkthrough"></a>时光穿越调试 - 示例应用演练
 
@@ -44,8 +44,8 @@ ms.locfileid: "76706971"
 
 你将需要以下软件才能完成实验室。
 
-- WinDbg 预览。 有关安装 WinDbg Preview 的信息，请参阅[WinDbg 预览版-安装](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)
-- Visual Studio 生成示例C++代码。
+- WinDbg 预览。 有关安装 WinDbg Preview 的信息，请参阅[WinDbg 预览版-安装](windbg-install-preview.md)
+- Visual Studio 生成示例 c + + 代码。
 
 实验室包含以下三个部分。
 
@@ -59,11 +59,11 @@ ms.locfileid: "76706971"
 
 **在 Visual Studio 中创建示例应用**
 
-1. 在 Microsoft Visual Studio 中，单击 "**文件**" &gt;**新建**&gt;**项目/解决方案 ...** "，然后单击**C++** 视觉对象模板。
+1. 在 Microsoft Visual Studio 中，单击 "**文件**" " &gt; **新建** &gt; **项目"/"解决方案 ...** "，然后单击 "Visual **c + +** 模板"。
 
     选择 "Win32 控制台应用程序"。
 
-    提供项目名称 " *DisplayGreeting* "，并单击 **"确定"** 。
+    提供项目名称 " *DisplayGreeting* "，并单击 **"确定"**。
 
 2. 取消选中 "安全开发生命周期（SDL）检查"。
 
@@ -100,21 +100,21 @@ ms.locfileid: "76706971"
     }
     ```
 
-6. 在 Visual Studio 中，单击 "**项目**&gt; **DisplayGreeting" 属性**"。 然后单击 " **C/C++**  " 和 "**代码生成**"。
+6. 在 Visual Studio 中，单击 "**项目**" " &gt; **DisplayGreeting 属性**"。 然后单击 " **c/c + +** " 和 "**代码生成**"。
 
     设置以下属性：
 
-    | 设置              |  Value                        |
+    | 设置              |  值                        |
     |----------------------|-------------------------------|
     | 安全检查       | 禁用安全检查（/GS-） |
-    | 基本运行时检查 |  默认值                      |
+    | 基本运行时检查 |  默认                      |
 
  
    > [!NOTE]
    > 尽管不建议使用这些设置，但也可以想象出这样一种情况：有人建议使用这些设置来加速编码或促进某些测试环境。
    >  
 
-7. 在 Visual Studio 中，单击 "**生成**&gt;**生成解决方案**"。
+7. 在 Visual Studio 中，单击 "**生成**" "生成 &gt; **解决方案**"。
 
     如果一切顺利，生成窗口应显示一条消息，指示生成已成功。
 
@@ -144,7 +144,7 @@ ms.locfileid: "76706971"
 
 1. 以管理员身份运行 WinDbg Preview，以便能够记录时间行程跟踪。
 
-2. 在 WinDbg Preview 中，选择 "**文件**" > **启动调试** > **启动可执行文件（高级）** 。
+2. 在 WinDbg Preview 中，选择 "**文件**  >  **启动调试**" "启动  >  **可执行文件（高级）**"。
 
 3. 输入要记录的用户模式可执行文件的路径，或选择 "**浏览**" 以导航到可执行文件。 有关使用 WinDbg Preview 中的 "启动可执行文件" 菜单的信息，请参阅[Windbg preview-启动用户模式会话](windbg-user-mode-preview.md)。
 
@@ -368,12 +368,12 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>E</p></td>
+<td align="left"><p>e</p></td>
 <td align="left"><p>execute （当 CPU 从地址提取指令时）</p></td>
 </tr>
 <tr class="even">
@@ -388,7 +388,7 @@ ba <access> <size> <address> {options}
 </table>
 
 
-请注意，在任何给定时间，只能设置四个数据断点，并由您确保正确对齐数据或不触发断点（单词必须以2为界限的地址结束，dword 必须可被4整除），并按0或 8 quadwords）。
+请注意，在任何给定的时间，只能设置四个数据断点，并由您确保正确对齐数据或不触发断点（单词必须以2为界限的地址结束），dword 必须可被4整除，并 quadwords 0 或8。
 
 **设置基指针的内存访问断点中断**    
 
@@ -433,7 +433,7 @@ ba <access> <size> <address> {options}
 
 1. 使用 "断点" 窗口通过右键单击现有断点并选择 "**删除**" 来清除现有断点。
 
-2. 确定 DisplayGreeting 的地址！GetCppConGreeting 函数。
+2. 确定 DisplayGreeting 的地址！GetCppConGreeting 函数。 **dx**
 
     ```dbgcmd
     0:000> dx &DisplayGreeting!GetCppConGreeting
@@ -451,11 +451,11 @@ ba <access> <size> <address> {options}
 
     ![WinDbg 预览显示带有一个硬件读取断点的 "断点" 窗口](images/ttd-time-travel-walkthrough-hardware-write-breakpoint.png)
 
-5. 当我们想知道问候语字符串的大小时，我们将设置一个 "监视" 窗口来显示 "sizeof" （问候语）的值。 从 "视图" 功能区中，选择 "**观看**并提供*sizeof （问候语）* "。
+5. 当我们想知道问候语字符串的大小时，我们将设置一个 "监视" 窗口来显示 "sizeof" （问候语）的值。 从 "视图" 功能区中，选择 "**观看**并提供*sizeof （问候语）*"。
 
     ![显示 "监视局部变量" 窗口的 WinDbg 预览](images/ttd-time-travel-watch-locals.png)
 
-6. 在 "时间段" 菜单中，使用 "**时间段" 启动**，或使用 "`!tt 0`" 命令移动到跟踪开头。
+6. 在 "时间段" 菜单上，使用 "**时间段启动**" 或使用 `!tt 0` 命令移动到跟踪的开始处。
 
     ```dbgcmd
     0:000> !tt 0
@@ -470,7 +470,7 @@ ba <access> <size> <address> {options}
     77a266ac 83bdbcfeffff00  cmp     dword ptr [ebp-144h],0 ss:002b:00ddf4c4=00000000
     ```
 
-7. 在 "主文件夹" 菜单上，选择 "**转**到" 或使用 `g` 命令在代码中向前移动，直到命中断点。
+7. 在主菜单上，选择 "**转**到" 或使用 `g` 命令在代码中向前移动，直到命中断点。
 
     ```dbgcmd
     0:000> g
@@ -483,7 +483,7 @@ ba <access> <size> <address> {options}
     00b61721 8bec            mov     ebp,esp
     ```
 
-8. 在主菜单上，选择 "**跳出**" 或使用 `g-u` 命令返回一个步骤。
+8. 在 "主文件夹" 菜单上，选择 "**跳出**" 或使用 `g-u` 命令后退一步。
 
     ```dbgcmd
     0:000> g-u
@@ -701,10 +701,10 @@ ba <access> <size> <address> {options}
 
 ## <a name="see-also"></a>另请参阅
 
-[行程调试-概述](time-travel-debugging-overview.md)
+[时光穿越调试 - 概述](time-travel-debugging-overview.md)
 
-[旅行调试-记录](time-travel-debugging-record.md)
+[时光穿越调试 - 记录](time-travel-debugging-record.md)
 
-[旅行调试-重播跟踪](time-travel-debugging-replay.md)
+[时光穿越调试 - 重放跟踪](time-travel-debugging-replay.md)
 
-[时间行程调试-使用跟踪文件](time-travel-debugging-trace-file-information.md)
+[时光穿越调试 - 使用跟踪文件](time-travel-debugging-trace-file-information.md)

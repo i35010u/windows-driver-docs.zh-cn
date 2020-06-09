@@ -4,22 +4,22 @@ description: 本主题介绍如何在 Visual Studio 中使用带 Cove 开发板�
 ms.assetid: D909CA2C-3870-4521-8F23-FBF93738F338
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f95605abfb3317b33417e7fa77c5e74668a1d94
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: 4a449bd2e40613946362fcb02c446102b976b44f
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528959"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534762"
 ---
-# <a name="span-iddebuggersetting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>在 Visual Studio 中使用串连 over USB 设置内核模式调试
+# <a name="span-iddebuggersetting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studiospansetting-up-kernel-mode-debugging-using-serial-over-usb-in-visual-studio"></a><span id="debugger.setting_up_kernel-mode_debugging_using_serial_over_usb_in_visual_studio"></span>在 Visual Studio 中设置使用串行端口通过 USB 进行的内核模式调试
 
 > [!IMPORTANT]
 > 此功能在 Windows 10 版本1507及更高版本的 WDK 中不可用。
 >
 
-[带 Cove 开发板](https://go.microsoft.com/fwlink/p?linkid=403168)支持通过 USB 电缆进行串行调试。
+[带 Cove 硬件开发委员会](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/sharks-cove-hardware-development-board)支持通过 USB 电缆进行串行调试。
 
-若要将 Microsoft Visual Studio 用于内核模式调试，必须将 Windows 驱动程序工具包（WDK）与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅[Windows 驱动程序工具包（WDK）](https://go.microsoft.com/fwlink/p?linkid=301383)。
+若要将 Microsoft Visual Studio 用于内核模式调试，必须将 Windows 驱动程序工具包（WDK）与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅[使用 Visual Studio 进行调试](debugging-using-visual-studio.md)。
 
 运行调试器的计算机称为*主机计算机*，被调试的计算机称为*目标计算机*。 在本主题中，带 Cove 板是目标计算机。
 
@@ -61,33 +61,33 @@ ms.locfileid: "77528959"
 1.  在主计算机上，在 Visual Studio 的 "**工具**" 菜单中，选择 "**附加到进程**"。
 2.  对于 "**传输**"，请选择 " **Windows 内核模式调试程序**"。
 3.  对于 "**限定符**"，选择以前配置的目标计算机的名称。
-4.  单击 "**附加**"。
+4.  单击 **“附加”** 。
 
 ## <a name="span-idtroubleshooting_tips_for_serial_debugging_over_a_usb_cablespanspan-idtroubleshooting_tips_for_serial_debugging_over_a_usb_cablespanspan-idtroubleshooting_tips_for_serial_debugging_over_a_usb_cablespantroubleshooting-tips-for-serial-debugging-over-a-usb-cable"></a><span id="Troubleshooting_Tips_for_Serial_Debugging_over_a_USB_Cable"></span><span id="troubleshooting_tips_for_serial_debugging_over_a_usb_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_SERIAL_DEBUGGING_OVER_A_USB_CABLE"></span>通过 USB 电缆进行串行调试的故障排除提示
 
 
 ### <a name="span-idspecify_correct_com_port_on_both_host_and_targetspanspan-idspecify_correct_com_port_on_both_host_and_targetspanspan-idspecify_correct_com_port_on_both_host_and_targetspanspecify-correct-com-port-on-both-host-and-target"></a><span id="Specify_correct_COM_port_on_both_host_and_target"></span><span id="specify_correct_com_port_on_both_host_and_target"></span><span id="SPECIFY_CORRECT_COM_PORT_ON_BOTH_HOST_AND_TARGET"></span>指定主机和目标上的正确 COM 端口
 
-在目标计算机（带 Cove 板）上，验证是否正在使用 COM1 进行调试。 以管理员身份打开命令提示符窗口，然后输入**bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `debugport 1`。
+在目标计算机（带 Cove 板）上，验证是否正在使用 COM1 进行调试。 以管理员身份打开命令提示符窗口，然后输入**bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `debugport 1` 。
 
 在主计算机上，验证你是否正在使用之前在设备管理器中记下的 COM 端口。
 
-1.  在主计算机上，在 Visual Studio 的“驱动程序”菜单中，选择“测试” **“配置计算机”&gt;** 。
+1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择测试计算机的名称，然后单击 "**下一步**"。
-3.  选择 "**设置计算机" 并选择 "调试器设置**"。 单击 **“下一步”** 。
+3.  选择 "**设置计算机" 并选择 "调试器设置**"。 单击“下一步” 。
 4.  验证是否为 "**端口**" 列出了正确的 COM 端口号。
 
 ### <a name="span-idbaud_rate_must_be_the_same_on_host_and_targetspanspan-idbaud_rate_must_be_the_same_on_host_and_targetspanspan-idbaud_rate_must_be_the_same_on_host_and_targetspanbaud-rate-must-be-the-same-on-host-and-target"></a><span id="Baud_rate_must_be_the_same_on_host_and_target"></span><span id="baud_rate_must_be_the_same_on_host_and_target"></span><span id="BAUD_RATE_MUST_BE_THE_SAME_ON_HOST_AND_TARGET"></span>主机和目标上的波特率必须相同
 
 主机和目标计算机上的波特率必须为115200。
 
-在目标计算机（带 Cove 板）上，以管理员身份打开命令提示符窗口，然后输入**bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `baudrate 115200`。
+在目标计算机（带 Cove 板）上，以管理员身份打开命令提示符窗口，然后输入**bcdedit/dbgsettings**。 **Bcdedit**的输出应显示 `baudrate 115200` 。
 
 在主计算机上，验证是否使用的波特率为115200。
 
-1.  在主计算机上，在 Visual Studio 的“驱动程序”菜单中，选择“测试” **“配置计算机”&gt;** 。
+1.  在主计算机上，在 Visual Studio 的“驱动程序”  菜单中，选择“测试”&gt;“配置计算机”  。
 2.  选择测试计算机的名称，然后单击 "**下一步**"。
-3.  选择 "**设置计算机" 并选择 "调试器设置**"。 单击 **“下一步”** 。
+3.  选择 "**设置计算机" 并选择 "调试器设置**"。 单击“下一步” 。
 4.  验证**波特率**是否为115200。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题

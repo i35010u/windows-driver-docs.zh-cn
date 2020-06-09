@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 882a6175296b27d3f182065af8bb5db550876445
-ms.sourcegitcommit: 0ba337ab671763e374c79b67f6730f1451c8615e
+ms.openlocfilehash: c69a4233e26bbeca5d5d52141b2b92c29331f7cb
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72041335"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534540"
 ---
-# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>Bug 检查0xD7：驱动程序\_取消映射\_无效的\_视图
+# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>Bug 检查0xD7：驱动程序取消 \_ 映射 \_ 无效 \_ 视图
 
 
-驱动程序\_取消映射\_无效的\_查看 bug 检查的值为0x000000D7。 这表明驱动程序正在尝试取消对未映射的地址的映射。
+驱动程序取消 \_ 映射 \_ 无效 \_ 的视图 bug 检查的值为0x000000D7。 这表明驱动程序正在尝试取消对未映射的地址的映射。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_unmapping_invalid_view-parameters"></a>驱动程序\_取消映射\_无效的\_VIEW 参数
+## <a name="driver_unmapping_invalid_view-parameters"></a>驱动程序取消 \_ 映射 \_ 无效的 \_ 视图参数
 
 
 <table>
@@ -40,7 +40,7 @@ ms.locfileid: "72041335"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -66,10 +66,10 @@ ms.locfileid: "72041335"
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 使用[**kb （显示 Stack Backtrace）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令获取堆栈跟踪：可以从堆栈跟踪确定导致错误的驱动程序。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 使用[**kb （显示 Stack Backtrace）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令获取堆栈跟踪：可以从堆栈跟踪确定导致错误的驱动程序。
 
  
 

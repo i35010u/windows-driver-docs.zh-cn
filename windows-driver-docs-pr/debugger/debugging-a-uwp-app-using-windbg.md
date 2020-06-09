@@ -4,12 +4,12 @@ description: 可以使用 WinDbg 调试通用 Windows 平台（UWP）应用。
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e38cf99e7c9a7159b6cb82b225468fad776c4ece
-ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
+ms.openlocfilehash: 4294d1e035af5852906a63b5433a68f2a63b14aa
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898498"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534408"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>使用 WinDbg 调试 UWP 应用
 
@@ -32,7 +32,7 @@ UWP 应用将不会以它在不进行调试时的相同方式挂起。 若要显
 windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 ```
 
-由于多个应用可以包含在一个包中，因此 &lt;PLMPackage&gt; 和 &lt;ApplicationId&gt; 参数都是必需的。 这是参数的汇总。
+由于多个应用可以包含在一个包中，因此 &lt; PLMPackage &gt; 和 &lt; ApplicationId &gt; 参数都是必需的。 这是参数的汇总。
 
 <table>
 <colgroup>
@@ -42,7 +42,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <tbody>
 <tr class="odd">
 <td align="left"><strong>参数</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
@@ -54,7 +54,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 <p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left">[&lt;参数&gt;]</td>
+<td align="left">[ &lt; 参数 &gt; ]</td>
 <td align="left"><p>传递给应用的可选参数。 并非所有应用都使用或要求参数。</p></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 **查找完整的包名称和 AppId**
 
-使用 querypackages 命令可找到完整的包名称和 AppId。 键入 querypackages，然后按 user CRTL + F 在应用程序名称的输出中向上搜索，例如 HelloWorld。 使用 CTRL + F 定位项时，它会显示包的完整名称，例如*e24caf14-8483-4743-b80c-ca46c28c75df\_1.0.0.0\_x86\_\_97ghe447vaan8*和*应用程序*的 AppId。
+使用 querypackages 命令可找到完整的包名称和 AppId。 键入 querypackages，然后按 user CRTL + F 在应用程序名称的输出中向上搜索，例如 HelloWorld。 当使用 CTRL + F 定位项时，它将显示包的完整名称，例如*e24caf14-8483-4743-b80c-ca46c28c75df \_ 1.0.0.0 \_ X86 \_ \_ 97Ghe447vaan8*和*应用程序*的 AppId。
 
 示例：
 
@@ -141,7 +141,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>参数</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
@@ -163,7 +163,7 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 windbg.exe -plmPackage Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe -plmBgTaskId {ee4438ee-22db-4cdd-85e4-8ad8a1063523}
 ```
 
-你可以尝试后台任务示例代码，以熟悉 UWP 调试。 它可以在[后台任务示例](https://go.microsoft.com/fwlink/p/?linkid=2112776)中下载。
+你可以尝试后台任务示例代码，以熟悉 UWP 调试。 它可以在[后台任务示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/%5BC%23%5D-Universal%20Windows%20app%20samples/Background%20task%20sample)中下载。
 
 使用 querypackages 命令可找到 BackgroundTaskId。 使用 CTRL + F 查找应用程序，然后找到 "*后台任务 Id* " 字段。 若要显示关联的后台任务名称和任务 Id，必须运行后台任务。
 
@@ -200,7 +200,7 @@ SUCCEEDED
 ## <a name="span-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spandebugging-a-uwp-process-remotely-using-a-process-server-dbgsrv"></a><span id="Debugging_a_UWP_process_remotely_using_a_Process_Server__DbgSrv_"></span><span id="debugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_"></span><span id="DEBUGGING_A_UWP_PROCESS_REMOTELY_USING_A_PROCESS_SERVER__DBGSRV_"></span>使用进程服务器远程调试 UWP 进程（DbgSrv）
 
 
-所有-plm\* 命令都能与 dbgsrv 正常配合使用。 若要使用 dbgsrv 进行调试，请将-premote 开关与 dbgsrv 的连接字符串一起使用：
+所有-plm 命令都能 \* 与 dbgsrv 正常配合使用。 若要使用 dbgsrv 进行调试，请将-premote 开关与 dbgsrv 的连接字符串一起使用：
 
 ```console
 windbg.exe -premote npipe:pipe=fdsa,server=localhost -plmPackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 -plmApp App
@@ -306,7 +306,7 @@ Createpackageapp 命令启用调试并启动 UWP 应用程序。
 <tbody>
 <tr class="odd">
 <td align="left"><strong>参数</strong></td>
-<td align="left"><strong>描述</strong></td>
+<td align="left"><strong>说明</strong></td>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
@@ -318,7 +318,7 @@ Createpackageapp 命令启用调试并启动 UWP 应用程序。
 <p>有关应用程序清单文件的详细信息，请参阅<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">应用包清单</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left">[&lt;参数&gt;]</td>
+<td align="left">[ &lt; 参数 &gt; ]</td>
 <td align="left">传递给应用程序的可选参数。 并非所有应用程序都需要或使用这些可选参数。</td>
 </tr>
 </tbody>
@@ -431,7 +431,7 @@ Activatepackagebgtask 命令启用调试，并启动 UWP 后台任务。
 
 **在应用程序启动时附加调试器**
 
-假设你有一个名为 HelloWorld 的应用程序，该应用程序位于名为 e24caf14-8483-4743-b80c-ca46c28c75df\_1.0.0.0\_x86\_\_97ghe447vaan8。 通过显示所有已安装的包的完整名称和运行状态，验证是否已安装包。 在命令提示符窗口中，输入以下命令。 可以使用 CTRL + F 在命令输出中搜索 HelloWorld 的应用名称。
+假设你有一个名为 HelloWorld 的应用程序，该应用程序位于名为 e24caf14-8483-4743-b80c-ca46c28c75df \_ 1.0.0.0 x86 97ghe447vaan8 的包中 \_ \_ \_ 。 通过显示所有已安装的包的完整名称和运行状态，验证是否已安装包。 在命令提示符窗口中，输入以下命令。 可以使用 CTRL + F 在命令输出中搜索 HelloWorld 的应用名称。
 
 ```dbgcmd
 .querypackages 

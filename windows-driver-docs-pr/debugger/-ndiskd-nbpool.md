@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fecfca6443ed17826e5f2be2887daf369e0bf833
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 73a23317652e33db9420e46a18bb8ab92cfddaf3
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826605"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534200"
 ---
 # <a name="ndiskdnbpool"></a>!ndiskd.nbpool
 
 
-**！ Ndiskd nbpool**扩展显示有关[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) （NB）池的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中所有已分配的 NB 池的列表。
+**！ Ndiskd nbpool**扩展显示有关[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)（NB）池的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中所有已分配的 NB 池的列表。
 
 ```console
 !ndiskd.nbpool [-handle <x>] [-allocations] [-find <str>] [-findva <x>] [-findpa <x>] 
@@ -31,19 +31,19 @@ ms.locfileid: "72826605"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NB 池的句柄。
 
-<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-分配*   
+<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span>*-分配*   
 显示所有已分配的 NBs。
 
-<span id="_______-find______"></span><span id="_______-FIND______"></span> *-查找*   
+<span id="_______-find______"></span><span id="_______-FIND______"></span>*-查找*   
 使用调试器表达式筛选分配的 NBs 的列表。
 
-<span id="_______-findva______"></span><span id="_______-FINDVA______"></span> *-findva*   
+<span id="_______-findva______"></span><span id="_______-FINDVA______"></span>*-findva*   
 查找跨给定虚拟地址的 NBs。
 
-<span id="_______-findpa______"></span><span id="_______-FINDPA______"></span> *-findpa*   
+<span id="_______-findpa______"></span><span id="_______-FINDPA______"></span>*-findpa*   
 查找跨给定物理地址的 NBs。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -142,13 +142,13 @@ ALL ALLOCATED NBs
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
+[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
  
 

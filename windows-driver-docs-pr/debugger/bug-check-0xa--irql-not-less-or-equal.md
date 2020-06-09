@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 61137952271875bf69a1654dddf15cc7a4ee0b54
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: 9e7b2f40d71117ec273d399700d55f03dd1fda4e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359590"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534578"
 ---
-# <a name="bug-check-0xa-irql_not_less_or_equal"></a>Bug 检查0xA： IRQL \_NOT \_LESS \_OR \_EQUAL
+# <a name="bug-check-0xa-irql_not_less_or_equal"></a>Bug 检查0xA： IRQL \_ 不 \_ 小于 \_ 或 \_ 等于
 
 
-@No__t_1LESS \_OR \_EQUAL bug 检查的 IRQL \_NOT 的值为0x0000000A。 这表明在出现中断请求级别（IRQL）的情况下，Microsoft Windows 或内核模式驱动程序以无效的地址访问分页内存。 这通常是错误指针或 pageability 问题的结果。
+IRQL \_ 不 \_ 小于 \_ 或 \_ 等于 bug 检查的值为0x0000000a。 这表明在出现中断请求级别（IRQL）的情况下，Microsoft Windows 或内核模式驱动程序以无效的地址访问分页内存。 这通常是错误指针或 pageability 问题的结果。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="irql_not_less_or_equal-parameters"></a>@No__t_1LESS \_OR \_EQUAL 参数的 IRQL \_NOT
+## <a name="irql_not_less_or_equal-parameters"></a>IRQL \_ 不 \_ 小于 \_ 或 \_ 等于参数
 
 
 <table>
@@ -40,20 +40,20 @@ ms.locfileid: "72359590"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>1</p></td>
 <td align="left"><p>无法访问的虚拟内存地址。</p>
-<p>使用此地址上的<strong><a href="-pool.md" data-raw-source="[!pool](-pool.md)">！池</a></strong>来查看其是否已分页。 这些命令也可用于收集有关失败的信息： <strong><a href="-pte.md" data-raw-source="[!pte](-pte.md)">！ pte</a></strong>、 <strong><a href="-address.md" data-raw-source="[!address](-address.md)">！ address</a></strong>和 <strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln </strong> （列出最近的符号）</a>。</p></td>
+<p>使用此地址上的<strong><a href="-pool.md" data-raw-source="[!pool](-pool.md)">！池</a></strong>来查看其是否已分页。 这些命令也可用于收集有关失败的信息： <strong><a href="-pte.md" data-raw-source="[!pte](-pte.md)">！ pte</a></strong>、 <strong><a href="-address.md" data-raw-source="[!address](-address.md)">！ address</a></strong>和 <strong> <a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln </strong> （列出最近的符号）</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
 <td align="left"><p>出现故障时的 IRQL。</p>
 <p>分隔</p>
-<ul><li><p><strong>2</strong>：在出现故障时，IRQL 是 DISPATCH_LEVEL 的。</p></li></ul></td>
+<ul><li><p><strong>2</strong>：错误时 DISPATCH_LEVEL IRQL。</p></li></ul></td>
 </tr>
 <tr class="odd">
 <td><p>3</p></td>
@@ -83,7 +83,7 @@ ms.locfileid: "72359590"
 <tr class="even">
 <td><p>4</p></td>
 <td align="left"><p>出现错误时的指令指针。</p>
-<p>使用此地址上 <strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln </strong> （列表最近的符号）</a>命令查看函数名称。</p></td>
+<p>对 <strong> 此地址使用<a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln </strong> （列表最近的符号）</a>命令，以查看函数的名称。</p></td>
 </tr>
 </tbody>
 </table>
@@ -100,17 +100,17 @@ ms.locfileid: "72359590"
 
 - 如果参数1小于0x1000，则问题可能是 NULL 指针取消引用。
 
-- 如果[ **！池**](-pool.md)报告参数1是分页池（或其他类型的可分页内存），则 IRQL 太高，无法访问此数据。 以较低的 IRQL 运行，或分配非分页池中的数据。
+- 如果[**！池**](-pool.md)报告参数1是分页池（或其他类型的可分页内存），则 IRQL 太高，无法访问此数据。 以较低的 IRQL 运行，或分配非分页池中的数据。
 
 - 如果参数3指示此尝试执行可分页的代码，则 IRQL 太高，无法调用此函数。 以较低的 IRQL 运行，或者不将代码标记为可分页。
 
-- 否则，这可能是一个错误指针，可能是由于使用不到或进行反向。 调查参数1的有效性，其中包含[ **！ pte**](-pte.md)、 [ **！ address**](-address.md)和[ **ln** （列出最近的符号）](ln--list-nearest-symbols-.md)。
+- 否则，这可能是一个错误指针，可能是由于使用不到或进行反向。 调查参数1的有效性，其中包含[**！ pte**](-pte.md)、 [**！ address**](-address.md)和[ **ln** （列出最近的符号）](ln--list-nearest-symbols-.md)。
 
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-如果内核调试器可用，则获取堆栈跟踪。 首先运行[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试器扩展，以显示有关 bug 检查的信息。 （ **！分析**扩展可帮助确定根本原因。）接下来，输入[ **k \*** （显示 stack backtrace）](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令之一来查看调用堆栈。
+如果内核调试器可用，则获取堆栈跟踪。 首先运行[**！分析**](-analyze.md)调试器扩展，以显示有关 bug 检查的信息。 （ **！分析**扩展可帮助确定根本原因。）接下来，输入[ **k \* ** （显示 stack backtrace）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令之一来查看调用堆栈。
 
 ### <a name="gather-information"></a>收集信息
 
@@ -162,7 +162,7 @@ NDIS!_EthFilterIndicateReceiveComplete+0x31
 8013ef64 00000246 fe551aa1 ff690268 00000002 elnkii!_ElnkiiRcvInterruptDpc+0x1d0
 ```
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 生成此 bug 检查的错误通常在安装了有故障的设备驱动程序、系统服务或 BIOS 之后发生。

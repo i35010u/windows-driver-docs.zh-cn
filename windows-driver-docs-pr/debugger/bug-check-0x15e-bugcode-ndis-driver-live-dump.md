@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eaa78f3d89f85e63406ffdfbd25bafe6a934e33
-ms.sourcegitcommit: d2dab8b8bf335835d0341ca3f0a36eab0ec028f5
+ms.openlocfilehash: a70c5c14dcf12ce08b14aecbe618b21ebd06f417
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72892688"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534840"
 ---
-# <a name="bug-check-0x15e-bugcode_ndis_driver_live_dump"></a>Bug 检查0x15E： BUGCODE\_NDIS\_驱动程序\_实时\_转储
+# <a name="bug-check-0x15e-bugcode_ndis_driver_live_dump"></a>Bug 检查0x15E： BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储
 
 
-BUGCODE\_NDIS\_驱动程序\_实时\_转储错误代码的值为0x0000015E。 此错误代码指示 NDIS 已捕获实时内核转储。 在这种情况下，NDIS 不会生成 bug 检查。
+BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储错误代码的值为0x0000015E。 此错误代码指示 NDIS 已捕获实时内核转储。 在这种情况下，NDIS 不会生成 bug 检查。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bugcode_ndis_driver-parameters"></a>BUGCODE\_NDIS\_驱动程序参数
+## <a name="bugcode_ndis_driver-parameters"></a>BUGCODE \_ NDIS \_ 驱动程序参数
 
 
 参数1指示违规类型。 其他参数的意义取决于参数1的值。 如果参数的值为 "0"，则表示未使用该参数。
@@ -58,14 +58,14 @@ BUGCODE\_NDIS\_驱动程序\_实时\_转储错误代码的值为0x0000015E。 �
 <p>微型端口驱动程序遇到错误，请求重新枚举。</p></td>
 <td align="left"><p>微型端口块的地址。 有关详细信息，请运行带此地址的<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">！ ndiskd。</a></strong></p></td>
 <td align="left"><p>微型端口的物理设备对象（PDO）的地址</p></td>
-<td align="left"><p>导致执行此实时转储的严重错误。 可能值：</p>
+<td align="left"><p>导致执行此实时转储的严重错误。 可能的值：</p>
 <ol>
 <li>70：由用户模式引起</li>
-<li>71：由 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a>导致</strong></li>
+<li>71：由<strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a>导致</strong></li>
 <li>72： <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex" data-raw-source="[NdisIMInitializeDeviceInstanceEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex)">NdisIMInitializeDeviceInstanceEx</a></strong>失败</li>
 <li>73： <em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart" data-raw-source="[MiniportRestart](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)">MiniportRestart</a></em>失败</li>
-<li>74： <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER （D0）</a>请求失败导致</li>
-<li>75： <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER （Dx）</a>请求失败导致</li>
+<li>74：失败<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER （D0）</a>请求失败</li>
+<li>75：由<a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER （Dx）</a>请求失败引起</li>
 </ol></td>
 </tr>
 <tr class="even">
@@ -74,7 +74,7 @@ BUGCODE\_NDIS\_驱动程序\_实时\_转储错误代码的值为0x0000015E。 �
 <p>尝试管理网络堆栈花费了太长时间。 当 NDIS 调用其他驱动程序时，NDIS 会启动监视程序计时器，以确保调用立即完成。 如果调用时间过长，NDIS 将注入错误检测。</p>
 <p>这可能是由简单的死锁引起的。 查找 "！ stack 2 ndis" 或类似的，以查看是否有任何线程看起来可疑。 请特别注意 NDIS_WATCHDOG_TRIAGE_BLOCK 的 PrimaryThread。</p>
 <p>这可能是由于丢失 Nbl 导致的，在这种情况下， <strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">ndiskd pendingnbls</a></strong>可能会有所帮助。 使用<strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">！ ndiskd</a></strong>检查是否粘滞了 oid。</p></td>
-<td align="left"><p>花费了太长时间的操作。 可能值：</p>
+<td align="left"><p>花费了太长时间的操作。 可能的值：</p>
 <ul>
 <li><p>0x01： NDIS_BUGCHECK_WATCHDOG_PROTOCOL_PAUSE</p>
 <p>暂停协议驱动程序时超时。</p></li>
@@ -84,19 +84,19 @@ BUGCODE\_NDIS\_驱动程序\_实时\_转储错误代码的值为0x0000015E。 �
 <p>向协议驱动程序传递状态指示时出现超时。</p></li>
 <li><p>0x04： NDIS_BUGCHECK_WATCHDOG_PROTOCOL_UNBIND</p>
 <p>取消绑定协议驱动程序时超时。</p></li>
-<li><p>0x11 : NDIS_BUGCHECK_WATCHDOG_FILTER_PAUSE</p>
+<li><p>0x11： NDIS_BUGCHECK_WATCHDOG_FILTER_PAUSE</p>
 <p>暂停筛选器驱动程序时超时。</p></li>
-<li><p>0x12 : NDIS_BUGCHECK_WATCHDOG_FILTER_NETPNPEVENT</p>
+<li><p>0x12： NDIS_BUGCHECK_WATCHDOG_FILTER_NETPNPEVENT</p>
 <p>将 NET_PNP_EVENT_NOTIFICATION 传递到筛选器驱动程序时超时。</p></li>
 <li><p>0x13： NDIS_BUGCHECK_WATCHDOG_FILTER_STATUS_INDICATION</p>
 <p>向筛选器驱动程序传递状态指示时出现超时。</p></li>
 <li><p>0x14： NDIS_BUGCHECK_WATCHDOG_FILTER_DETACH</p>
 <p>分离筛选器驱动程序时超时。</p></li>
-<li><p>0x21 : NDIS_BUGCHECK_WATCHDOG_MINIPORT_PAUSE</p>
+<li><p>0x21： NDIS_BUGCHECK_WATCHDOG_MINIPORT_PAUSE</p>
 <p>暂停微型端口适配器时超时。</p></li>
 <li><p>0x22： NDIS_BUGCHECK_WATCHDOG_MINIPORT_HALT</p>
 <p>停止微型端口适配器时超时。</p></li>
-<li><p>0x23 : NDIS_BUGCHECK_WATCHDOG_MINIPORT_OID</p>
+<li><p>0x23： NDIS_BUGCHECK_WATCHDOG_MINIPORT_OID</p>
 <p>向微型端口适配器传递 OID 请求时出现超时。</p></li>
 <li><p>0x24： NDIS_BUGCHECK_WATCHDOG_FILTER_OID</p>
 <p>向筛选器驱动程序传递 OID 请求时出现超时。</p></li>
@@ -105,7 +105,7 @@ BUGCODE\_NDIS\_驱动程序\_实时\_转储错误代码的值为0x0000015E。 �
 <li><p>0x26： NDIS_BUGCHECK_WATCHDOG_CANCEL_IDLE</p>
 <p>在微型端口适配器上取消空闲请求时出现超时。</p></li>
 </ul></td>
-<td align="left"><p>强制转换为 ndis！NDIS_WATCHDOG_TRIAGE_BLOCK. 有用字段：</p>
+<td align="left"><p>强制转换为 ndis！NDIS_WATCHDOG_TRIAGE_BLOCK。 有用字段：</p>
 <ul>
 <li><strong>StartTime</strong>以100ns 为单位显示操作开始的时间，KeQueryInterruptTime 返回。</li>
 <li><strong>TimeoutMilliseconds</strong>显示了在触发此错误检测之前，NDIS 至少等待多长时间。</li>
@@ -146,9 +146,9 @@ BUGCODE\_NDIS\_驱动程序\_实时\_转储错误代码的值为0x0000015E。 �
 <a name="cause"></a>原因
 -----
 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 参数1指示 BUGCODE\_NDIS\_驱动程序\_实时\_转储错误检查的具体原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。 参数1指示 BUGCODE \_ NDIS \_ 驱动程序 \_ 实时 \_ 转储错误检查的具体原因。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 NDIS 已检测到另一个网络驱动程序中的严重问题，并已将其恢复。 尽管系统未暂停，但以后可能会导致连接问题或致命错误检测。

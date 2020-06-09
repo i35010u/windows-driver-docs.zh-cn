@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b78418ca8d6922d9215aaba567773d0d3a5afb
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: e30b3877219cbe8137fdc96ca3fb44232e452cc1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359579"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534610"
 ---
-# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>Bug 检查0x7E： SYSTEM \_THREAD \_EXCEPTION \_NOT \_HANDLED
+# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>Bug 检查0x7E：系统 \_ 线程 \_ 异常 \_ 未 \_ 处理
 
 
-系统 \_THREAD \_EXCEPTION \_NOT \_HANDLED bug 检查的值为0x0000007E。 此 bug 检查指示系统线程生成了错误处理程序未捕获的异常。
+系统 \_ 线程 \_ 异常 \_ 未 \_ 处理 bug 检查的值为0x0000007e。 此 bug 检查指示系统线程生成了错误处理程序未捕获的异常。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="system_thread_exception_not_handled-parameters"></a>系统 \_THREAD \_EXCEPTION \_NOT \_HANDLED 参数
+## <a name="system_thread_exception_not_handled-parameters"></a>系统 \_ 线程 \_ 异常 \_ 未 \_ 处理的参数
 
 <table>
 <colgroup>
@@ -39,7 +39,7 @@ ms.locfileid: "72359579"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -69,25 +69,25 @@ ms.locfileid: "72359579"
 
 常见的异常代码包括：
 
-- 数0x80000002：状态 \_DATATYPE \_MISALIGNMENT 指示遇到了未对齐的数据引用。
+- 数0x80000002：状态 \_ 数据类型不 \_ 一致指示遇到了未对齐的数据引用。
 
-- 0x80000003： \_BREAKPOINT 状态指示在没有内核调试器附加到系统时遇到断点或断言。
+- 0x80000003：状态 \_ 断点指示在没有内核调试器附加到系统时遇到断点或断言。
 
-- 0xC0000005：状态 \_ACCESS \_VIOLATION 指示发生了内存访问冲突。
+- 0xC0000005：状态 \_ 访问 \_ 冲突指示发生了内存访问冲突。
 
 有关异常代码的完整列表，请参阅[NTSTATUS 值](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)。 异常代码在*ntstatus*中定义，该文件是[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/)提供的标头文件。 （有关详细信息，请参阅[Windows 驱动程序工具包中的标头文件](../gettingstarted/header-files-in-the-windows-driver-kit.md)）。 
 
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
 如果打算调试此问题，则异常地址（参数2）应确定导致此问题的驱动程序或函数。
 
 如果在 bug 检查消息中按名称列出了驱动程序，请禁用或删除该驱动程序。 如果将此问题缩小到单个驱动程序，请在代码中设置断点和单步执行以找到故障，并深入了解导致崩溃的事件。
 
-[ **！分析**](-analyze.md)调试器扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
+[**！分析**](-analyze.md)调试器扩展显示有关 bug 检查的信息，可帮助确定根本原因。 
 
-可以使用[ **！线程**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)扩展以及[ **dds**、 **dps**和**dqs** （显示字和符号）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dds--dps--dqs--display-words-and-symbols-)命令来执行其他分析。 当 WinDbg 报表 "可能由以下原因导致" 时，这可能是一个合理的方法。 
+可以使用[**！线程**](-thread.md)扩展以及[ **dds**、 **dps**和**dqs** （显示字和符号）](dds--dps--dqs--display-words-and-symbols-.md)命令来执行其他分析。 当 WinDbg 报表 "可能由以下原因导致" 时，这可能是一个合理的方法。 
 
 如果发生异常代码0x80000003，则会命中硬编码断点或断言，但系统是使用 **/NODEBUG**开关启动的。 此问题不会频繁出现。 如果它反复发生，请确保已连接内核调试器，并使用 **/debug**开关启动系统。
 
@@ -102,7 +102,7 @@ ms.locfileid: "72359579"
  - [使用！分析扩展](using-the--analyze-extension.md)和[！分析](-analyze.md)
 
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果你不具备使用 Windows 调试器来处理此问题，则应使用一些基本的故障排除方法：

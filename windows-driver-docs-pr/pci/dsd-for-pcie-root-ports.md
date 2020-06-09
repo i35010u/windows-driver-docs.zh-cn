@@ -5,12 +5,12 @@ ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
 keywords: ACPI，ACPI \_ DSD 方法
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d7f9f7c218fe3596b261240a3af8a32a8ffeb4cc
-ms.sourcegitcommit: 985439ba501a870675a8bd6867c4b8944cc002d2
+ms.openlocfilehash: 51d2e55e01550c726bd2dcd4631d3d27426719fd
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84225968"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533818"
 ---
 # <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI 接口： \_ 适用于 PCIe 根端口的设备特定数据（DSD）
 
@@ -81,7 +81,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 - 必须在系统 BIOS/UEFI 中启用内核 DMA 保护，操作系统才能分析 \_ DSD 并将必要的保护应用到 PCI 端口。
 
-- 连接到此端口的设备的驱动程序必须支持 DMA 重新映射，否则，Windows 10 可能会阻止这些设备运行，直到用户登录或无限期，具体取决于[DMAGuard 策略](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)。
+- 连接到此端口的设备的驱动程序必须支持[DMA 重新映射](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)，否则，Windows 10 可能会阻止这些设备运行，直到用户登录或无限期，具体取决于[DMAGuard 策略](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)。
 
 ```asl
 Name (_DSD, Package () {  
@@ -109,10 +109,12 @@ Name (_DSD, Package () {
 
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [在 Windows 中启用 PCI Express 原生控制](enabling-pci-express-native-control.md)
 
 [闪电3的内核 DMA 保护](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+
+[为设备驱动程序启用 DMA 重新映射](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)
 
 [D3COLD_AUX_POWER_AND_TIMING_INTERFACE 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)

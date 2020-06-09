@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd68c3ac12d770c1b62b454f689dfd18682ccfda
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7fda0e07004abce591f27fe7e91d0a6d21fcf138
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837592"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534926"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
 
@@ -33,10 +33,10 @@ ms.locfileid: "72837592"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 网络接口的句柄。
 
-<span id="_______-luid______"></span><span id="_______-LUID______"></span> *-luid*   
+<span id="_______-luid______"></span><span id="_______-LUID______"></span>*-luid*   
 网络接口的[NetLuid](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value) （网络本地唯一标识符）。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -127,15 +127,15 @@ STATE
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)
 
-[NET\_LUID 值](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
+[NET \_ LUID 值](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
 
  
 

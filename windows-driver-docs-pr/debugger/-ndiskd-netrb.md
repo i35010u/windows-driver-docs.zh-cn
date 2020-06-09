@@ -13,17 +13,17 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 576c721fa9e10d4404d8fda641c445b346426a3e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: da6ec830644af7c8c7abecff5cfcea728e4b9d70
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826548"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534906"
 ---
 # <a name="ndiskdnetrb"></a>!ndiskd.netrb
 
 
-**！ Ndiskd netrb**扩展显示[\_环形\_缓冲区](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)结构的信息。
+**！ Ndiskd netrb**扩展显示有关[网络 \_ 环形 \_ 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)结构的信息。
 
 有关网络适配器 WDF 类扩展（NetAdapterCx）的详细信息，请参阅[网络适配器 Wdf 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)。
 
@@ -34,16 +34,16 @@ ms.locfileid: "72826548"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
-必需。 网络\_环形\_缓冲区的地址。
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
+必需。 网络 \_ 环形缓冲区的地址 \_ 。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示基本信息。
 
-<span id="_______-dump______"></span><span id="_______-DUMP______"></span> *-dump*   
-显示 NET\_环形\_缓冲区中每个元素的相关信息。
+<span id="_______-dump______"></span><span id="_______-DUMP______"></span>*-dump*   
+显示网络环形缓冲区中每个元素的相关信息 \_ \_ 。
 
-<span id="_______-elementtype______"></span><span id="_______-ELEMENTTYPE______"></span> *-elementtype*   
+<span id="_______-elementtype______"></span><span id="_______-ELEMENTTYPE______"></span>*-elementtype*   
 引用环形缓冲区元素时要使用的数据类型的字符串。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -53,19 +53,19 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-**请注意**  查看[对象的摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)，以查看一个关系图，该关系图说明了与 NetAdapterCx 中的其他对象之间的网络\_环\_缓冲对象的关系。
+**注意**   若[Summary of Objects](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)要查看 \_ \_ 与 NetAdapterCx 中的其他对象之间的网络环形缓冲对象关系的关系图，请参阅对象的摘要。
 
  
 
-若要获取网络\_环形\_缓冲区的句柄，请执行以下步骤：
+若要获取网络环形缓冲区的句柄 \_ \_ ，请执行以下步骤：
 
-1.  运行[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
+1.  运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
 2.  单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
-3.  单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[ **！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
+3.  单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
 4.  输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
 5.  单击其中一个数据路径队列的句柄。
 
-有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [ **！ ndiskd. netqueue**](-ndiskd-netqueue.md)主题中的示例。
+有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [**！ ndiskd. netqueue**](-ndiskd-netqueue.md)主题中的示例。
 在下面的示例中，查找此 NETTXQUEUE 的环形缓冲区 ffffd1022d000000 的句柄。
 
 ```console
@@ -82,7 +82,7 @@ Ndiskd
     EvtQueueCancel                         fffff800341598d8   RtEthSample+98d8
 ```
 
-通过单击环形缓冲区的句柄，或在命令行上输入 **！ ndiskd**命令，可以查看此 NET\_环形\_缓冲区的详细信息，包括它包含的元素数以及其开始和结束索引的地址。
+通过单击环形缓冲区的句柄，或在命令行上输入 **！ ndiskd**命令，可以查看此网络环形缓冲区的详细信息 \_ ，包括该网络环形 \_ 缓冲区包含多少元素以及其开始和结束索引的地址。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000
@@ -100,7 +100,7 @@ Ndiskd
     List all elements
 ```
 
-若要查看此 NET\_环形\_缓冲区的元素，请单击其详细信息底部的 "列出所有元素" 链接，或在命令行中输入 **！ ndiskd**命令。 下面的示例为简洁起见，excised 了中间元素。
+若要查看此网络 \_ 环形 \_ 缓冲区的元素，请单击其详细信息底部的 "列出所有元素" 链接，或在命令行上输入 **！ ndiskd**命令。 下面的示例为简洁起见，excised 了中间元素。
 
 ```console
 0: kd> !ndiskd.netrb ffffd1022d000000 -dump
@@ -128,23 +128,23 @@ Ndiskd
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
 [对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
 
-[NET\_环形\_缓冲器](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)
+[网络 \_ 环形 \_ 缓冲区](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-ring-buffer)
 
-[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[ **!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
+[**!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
 
-[ **!ndiskd.netqueue**](-ndiskd-netqueue.md)
+[**!ndiskd.netqueue**](-ndiskd-netqueue.md)
 
  
 

@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf10e51debb1dd63c185d759f61dc79277cbb22a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6942e19db80e3866a184c1a4a7e0ecdcda4eeee9
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837585"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534730"
 ---
 # <a name="ndiskdnblpool"></a>!ndiskd.nblpool
 
 
-**！ Ndiskd nblpool**扩展显示有关[**网络\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)（NBL）池的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中已分配的所有 NBL 池的列表。
+**！ Ndiskd nblpool**扩展显示有关[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)（NBL）池的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统中已分配的所有 NBL 池的列表。
 
 ```console
 !ndiskd.nblpool [-handle <x>] [-basic] [-allocations] [-find <str>] [-findnb <str>] 
@@ -32,31 +32,31 @@ ms.locfileid: "72837585"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NBL 池的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示有关 NBL 池的基本信息。
 
-<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-分配*   
+<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span>*-分配*   
 显示所有已分配的 Nbl。
 
-<span id="_______-find______"></span><span id="_______-FIND______"></span> *-查找*   
+<span id="_______-find______"></span><span id="_______-FIND______"></span>*-查找*   
 使用调试器表达式筛选分配的 Nbl 的列表。
 
-<span id="_______-findnb______"></span><span id="_______-FINDNB______"></span> *-findnb*   
-按链接的[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)（NBs）筛选已分配的 nbl 的列表。
+<span id="_______-findnb______"></span><span id="_______-FINDNB______"></span>*-findnb*   
+按链接的[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)秒（NBs）筛选已分配的 nbl 的列表。
 
-<span id="_______-findctx______"></span><span id="_______-FINDCTX______"></span> *-findctx*   
+<span id="_______-findctx______"></span><span id="_______-FINDCTX______"></span>*-findctx*   
 按上下文区域筛选分配的 Nbl 的列表。
 
-<span id="_______-findctxtype______"></span><span id="_______-FINDCTXTYPE______"></span> *-findctxtype*   
+<span id="_______-findctxtype______"></span><span id="_______-FINDCTXTYPE______"></span>*-findctxtype*   
 重写上下文区域的数据类型。
 
-<span id="_______-findva______"></span><span id="_______-FINDVA______"></span> *-findva*   
+<span id="_______-findva______"></span><span id="_______-FINDVA______"></span>*-findva*   
 查找 Nbl，其中包含跨越给定虚拟地址的 NB。
 
-<span id="_______-findpa______"></span><span id="_______-FINDPA______"></span> *-findpa*   
+<span id="_______-findpa______"></span><span id="_______-FINDPA______"></span>*-findpa*   
 查找 Nbl，其中包含跨越给定物理地址的 NB。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -165,15 +165,15 @@ ALL ALLOCATED NBLs
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[**NET\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
+[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
  
 

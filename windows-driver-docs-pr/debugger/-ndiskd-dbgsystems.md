@@ -12,20 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b47b5cf4b4296706d90c6f8ca5b3f291f2cc59ca
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f0d3a46cf1dec24685794a53a65b0d1b4e91bbd1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826672"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534225"
 ---
 # <a name="ndiskddbgsystems"></a>!ndiskd.dbgsystems
 
 
 **！ Ndiskd dbgsystems**扩展显示，并选择性地更改启用了调试跟踪的 NDIS 子系统。
 
-**警告**  
- **！ NDISKD**已被 WPP （Windows 软件跟踪预处理器）和驱动程序验证程序取代。 ！如果目标系统不支持 **！ ndiskd dbgsystems**，ndiskd 将为你提供以下警告。
+**警告**   
+ **！ ndiskd**已被 WPP （Windows 软件跟踪预处理器）和驱动程序验证程序取代。 ！如果目标系统不支持 **！ ndiskd dbgsystems**，ndiskd 将为你提供以下警告。
 
 ```console
 0: kd> !ndiskd.dbgsystems
@@ -57,16 +57,16 @@ ms.locfileid: "72826672"
 
 有关驱动程序验证程序的详细信息，请参阅[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)器。
 
-有关 WMI 跟踪的详细信息，请参阅[Wmi 跟踪扩展（Wmitrace）](https://docs.microsoft.com/windows-hardware/drivers/debugger/wmi-tracing-extensions--wmitrace-dll-)。
+有关 WMI 跟踪的详细信息，请参阅[Wmi 跟踪扩展（Wmitrace）](wmi-tracing-extensions--wmitrace-dll-.md)。
 
 ```console
 !ndiskd.dbgsystems [-subsystem <any>] 
 ```
 
-## <a name="span-idddk__ndiskd_dbgsystems_dbgspanspan-idddk__ndiskd_dbgsystems_dbgspanparameters"></a><span id="ddk__ndiskd_dbgsystems_dbg"></span><span id="DDK__NDISKD_DBGSYSTEMS_DBG"></span>Parameters
+## <a name="span-idddk__ndiskd_dbgsystems_dbgspanspan-idddk__ndiskd_dbgsystems_dbgspanparameters"></a><span id="ddk__ndiskd_dbgsystems_dbg"></span><span id="DDK__NDISKD_DBGSYSTEMS_DBG"></span>参数
 
 
-<span id="_______-subsystem______"></span><span id="_______-SUBSYSTEM______"></span> *-子系统*   
+<span id="_______-subsystem______"></span><span id="_______-SUBSYSTEM______"></span>*-子系统*   
 要切换的子系统。
 
 如果选择了多个组件，请用空格分隔它们。 如果重复以前选择的组件，则将关闭其调试监视。 可能的值如下：
@@ -86,11 +86,11 @@ ms.locfileid: "72826672"
 <td align="left"><p>跟踪适配器初始化。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>CONFIG.XML</p></td>
+<td align="left"><p>CONFIG</p></td>
 <td align="left"><p>跟踪适配器配置。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>发送</p></td>
+<td align="left"><p>SEND</p></td>
 <td align="left"><p>跟踪通过网络发送数据。</p></td>
 </tr>
 <tr class="odd">
@@ -118,7 +118,7 @@ ms.locfileid: "72826672"
 <td align="left"><p>跟踪内存管理。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>筛选器</p></td>
+<td align="left"><p>FILTER</p></td>
 <td align="left"><p>跟踪筛选器操作。</p></td>
 </tr>
 <tr class="even">
@@ -134,11 +134,11 @@ ms.locfileid: "72826672"
 <td align="left"><p>跟踪即插即用操作。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>下午</p></td>
+<td align="left"><p>PM</p></td>
 <td align="left"><p>跟踪电源管理操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>未</p></td>
+<td align="left"><p>OPEN</p></td>
 <td align="left"><p>跟踪打开引用对象的操作。</p></td>
 </tr>
 <tr class="odd">
@@ -146,7 +146,7 @@ ms.locfileid: "72826672"
 <td align="left"><p>跟踪锁定操作。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>&</p></td>
+<td align="left"><p>RESET</p></td>
 <td align="left"><p>跟踪重置操作。</p></td>
 </tr>
 <tr class="odd">
@@ -158,7 +158,7 @@ ms.locfileid: "72826672"
 <td align="left"><p>跟踪面向连接的 NDIS。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>对</p></td>
+<td align="left"><p>参考</p></td>
 <td align="left"><p>跟踪引用操作。</p></td>
 </tr>
 </tbody>
@@ -170,10 +170,10 @@ ms.locfileid: "72826672"
 
 Ndiskd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-此扩展仅适用于已检查的 sys.databases。 若要查看 ndiskd 的生成信息，请运行[ **！** ](-ndiskd-ndis.md)
+此扩展仅适用于已检查的 sys.databases。 若要查看 ndiskd 的生成信息，请运行[**！**](-ndiskd-ndis.md)
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
@@ -182,19 +182,19 @@ Ndiskd
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[ **！ ndiskd**](-ndiskd-ndis.md)
+[**!ndiskd.ndis**](-ndiskd-ndis.md)
 
 [WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)
 
 [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 
-[WMI 跟踪扩展（Wmitrace）](https://docs.microsoft.com/windows-hardware/drivers/debugger/wmi-tracing-extensions--wmitrace-dll-)
+[WMI 跟踪扩展 (Wmitrace.dll)](wmi-tracing-extensions--wmitrace-dll-.md)
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x14F PDC_WATCHDOG_TIMEOUT
-description: PDC_WATCHDOG_TIMEOUT bug 检查具有 0x0000014F 值。 这表示系统组件未能在分配的时间段内响应。
+description: PDC_WATCHDOG_TIMEOUT bug 检查的值为0x0000014F。 这表明系统组件未能在分配的时间段内响应。
 ms.assetid: 347D31C2-7027-44BD-A0E8-60C6EC3A2030
 keywords:
 - Bug 检查 0x14F PDC_WATCHDOG_TIMEOUT
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e7959459c193bb608da5b117f105e933810556
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 322991768b03f360017bcea443a9a82001693f53
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520072"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534654"
 ---
-# <a name="bug-check-0x14f-pdcwatchdogtimeout"></a>Bug 检查 0x14F：PDC\_监视器\_超时
+# <a name="bug-check-0x14f-pdc_watchdog_timeout"></a>Bug 检查0x14F： PDC \_ 监视程序 \_ 超时
 
 
-PDC\_监视器\_超时错误检查的值为 0x0000014F。 这表示无法阻止退出系统分配的时间内响应的系统组件连接待机。
+PDC \_ 监视程序 \_ 超时 bug 检查的值为0x0000014F。 这表明系统组件未能在分配的时间段内响应，从而阻止系统退出连接待机状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="pdcwatchdogtimeout-parameters"></a>PDC\_监视器\_超时参数
+## <a name="pdc_watchdog_timeout-parameters"></a>PDC \_ 监视程序 \_ 超时参数
 
 
 <table>
@@ -40,45 +40,45 @@ PDC\_监视器\_超时错误检查的值为 0x0000014F。 这表示无法阻止�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">挂起的组件的客户端 ID。</td>
+<td align="left">挂起组件的客户端 ID。</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left"><p>挂起的组件的客户端类型。</p>
-<p>0x1:通知客户端未能响应。</p>
-参数 3:指向通知客户端 (PDC_NOTIFICATION_CLIENT)。
-参数 4:指向 pdc ！PDC_14F_TRIAGE 结构。
-<p>0x2:弹性客户端未能响应。</p>
-参数 3:弹性客户端 (PDC_RESILIENCY_CLIENT) 的指针。
-参数 4:指向 pdc ！PDC_14F_TRIAGE 结构。
-<p>0x3:激活器客户端保留的时间太长的引用。</p>
-参数 3:指向激活客户端 (pdc ！ _PDC_ACTIVATOR_CLIENT)。
-参数 4:指向 pdc ！PDC_14F_TRIAGE 结构。
-<p>0x100:Win32k 未及时完成一个监视器上的请求。</p>
-参数 3:此请求的最新的 POWER_MONITOR_REQUEST_REASON 值。
-参数 4:一个值，该值以发起该请求所采用的内部路径。</td>
+<td align="left"><p>挂起组件的客户端类型。</p>
+<p>0x1：通知客户端未能响应。</p>
+参数3：指向通知客户端的指针（PDC_NOTIFICATION_CLIENT）。
+参数4：指向 pdc！PDC_14F_TRIAGE 结构。
+<p>0x2：复原客户端未能响应。</p>
+参数3：指向复原客户端的指针（PDC_RESILIENCY_CLIENT）。
+参数4：指向 pdc！PDC_14F_TRIAGE 结构。
+<p>0x3：激活器客户端持有引用的时间太长。</p>
+参数3：指向激活客户端（pdc！ _PDC_ACTIVATOR_CLIENT）的指针。
+参数4：指向 pdc！PDC_14F_TRIAGE 结构。
+<p>0x100： Win32k.sys 未及时完成监视器上的请求。</p>
+参数3：此请求的最新 POWER_MONITOR_REQUEST_REASON 值。
+参数4：指示启动请求所需的内部路径的值。</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">请参阅参数 2</td>
+<td align="left">请参阅参数2</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">请参阅参数 2</td>
+<td align="left">请参阅参数2</td>
 </tr>
 </tbody>
 </table>
 
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

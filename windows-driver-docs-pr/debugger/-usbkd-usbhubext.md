@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbhubext
-description: Usbkd.usbhubext 命令显示有关 USB 集线器的信息...
+description: Usbkd. usbhubext 命令显示有关 USB 集线器的信息。
 ms.assetid: 1EC75753-3743-4384-8068-E796083D8239
 keywords:
-- usbkd.usbhubext Windows 调试
+- usbkd usbhubext Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d084da9510dbbb863c1eac3ca68b04581e9388
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3aaad955d90957aac80a01f2b3f565f0c7ff5d66
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323578"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534854"
 ---
 # <a name="usbkdusbhubext"></a>!usbkd.usbhubext
 
 
-**！ Usbkd.usbhubext**命令显示有关 USB 集线器的信息。
+**！ Usbkd. usbhubext**命令显示有关 USB 集线器的信息。
 
 ```dbgcmd
 !usbkd.usbhubext DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-其中一个以下地址：
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
+以下项之一的地址：
 
--   USB 集线器的功能的设备对象 (FDO) 设备扩展。
--   连接到 USB 集线器的设备的物理设备对象 (PDO) 设备扩展。
+-   USB 集线器的功能设备对象（FDO）的设备扩展。
+-   连接到 USB 集线器的设备的物理设备对象（PDO）的设备扩展。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法查找 FDO 的 USB 集线器的设备扩展的地址。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是一种查找 USB 集线器 FDO 的设备扩展地址的方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -54,7 +54,7 @@ Usbkd.dll
     RootHub !hub2_info ffffe000023201a0 !devstack ffffe00002320050
 ```
 
-在上面的输出中可以看到建议的命令 **！ devstack ffffe00002320050**。 输入此命令。
+在上面的输出中，可以看到建议的命令 **！ devstack ffffe00002320050**。 输入此命令：
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -65,9 +65,9 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出，您可以看到的中心的 FDO 设备扩展的地址是`ffffe000023201a0`。
+在上面的输出中，可以看到集线器的 FDO 的设备扩展的地址是 `ffffe000023201a0` 。
 
-现在将传递到设备扩展的地址 **！ usbkd.usbhubext**命令。
+现在，将设备扩展的地址传递给 **！ usbkd. usbhubext**命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000023201a0
@@ -142,7 +142,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ...
 ```
 
-下面是设备的一种方法查找 PDO 的 USB 集线器连接的设备扩展的地址。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找连接到 USB 集线器的设备的 PDO 的设备扩展地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -154,7 +154,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
         Port 3: !port2_info ffffe000021c0680 !devstack ffffe00007c882a0
 ```
 
-在上面的输出中可以看到建议的命令 **！ devstack ffffe00007c882a0**。 输入此命令。
+在上面的输出中，可以看到建议的命令 **！ devstack ffffe00007c882a0**。 输入此命令：
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00007c882a0
@@ -165,9 +165,9 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ...
 ```
 
-在上面的输出，您可以看到的是 PDO 设备的设备扩展的地址是`ffffe00007c883f0`。
+在上面的输出中，可以看到设备的 PDO 的设备扩展地址是 `ffffe00007c883f0` 。
 
-现在将传递到设备扩展的地址[ **！ usbhcdpnp** ](-usbkd-usbhcdpnp.md)命令。
+现在，将设备扩展的地址传递给[**！ usbhcdpnp**](-usbkd-usbhcdpnp.md)命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe00007c883f0
@@ -224,12 +224,12 @@ ProductId:Cruzer
     [EMPTY]
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -12,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 978fc7551358d802cad1c75e22a15e5ef2b469ba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6b1839a397dba8aea27c3e7cc8cb0c8dd08c6059
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837644"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534128"
 ---
-# <a name="usb3kdxhci_capability"></a>！ usb3kd. xhci\_功能
+# <a name="usb3kdxhci_capability"></a>！ usb3kd xhci \_ 功能
 
 
-[ **！ Usb3kd. xhci\_功能**](-usb3kd-device-info.md)扩展显示 USB 3.0 主机控制器的功能。
+[**！ Usb3kd xhci \_ 功能**](-usb3kd-device-info.md)扩展显示 USB 3.0 主机控制器的功能。
 
 ```dbgcmd
 !usb3kd.xhci_capability DeviceExtension
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
@@ -39,15 +39,15 @@ ms.locfileid: "72837644"
 
 Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-输出[ **！ xhci\_功能**](-usb3kd-device-info.md)命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
+输出[**！ xhci \_ 功能**](-usb3kd-device-info.md)命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看[ **！ xhci\_dumpall**](-usb3kd-xhci-dumpall.md)命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
+若要获取设备扩展的地址，请查看[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -64,7 +64,7 @@ Usb3kd
     ...
 ```
 
-现在可以将设备扩展的地址传递到 **！ xhci\_功能**命令。
+现在可以将设备扩展的地址传递到 **！ xhci \_ 功能**命令。
 
 ```dbgcmd
 3: kd> !xhci_capability 0xfffffa800536e2d0
@@ -117,9 +117,9 @@ Usb3kd
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[ **！ xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线（USB）驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

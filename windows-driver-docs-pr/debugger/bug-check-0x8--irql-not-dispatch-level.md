@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: deb045323ece2d0ac1af745e16e1856fa594efec
-ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
+ms.openlocfilehash: add989f8b01a5dd1fa1dad5ee3dc636931dca687
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73589261"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534600"
 ---
-# <a name="bug-check-0x8-irql_not_dispatch_level"></a>Bug 检查0x8： IRQL\_未\_调度\_级别
+# <a name="bug-check-0x8-irql_not_dispatch_level"></a>Bug 检查0x8： IRQL \_ 非 \_ 调度 \_ 级别
 
 
-IRQL\_未\_调度\_级别 bug 检查的值为0x00000008。
+IRQL \_ NOT \_ 调度 \_ 级别 bug 检查的值为0x00000008。
 
 此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="resolution"></a>分辨率
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 
  

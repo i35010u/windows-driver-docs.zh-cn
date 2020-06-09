@@ -1,6 +1,6 @@
 ---
 title: whea
-description: Whea 扩展显示顶级的 Windows 硬件错误体系结构 (WHEA) 信息。
+description: Whea 扩展显示顶级 Windows 硬件错误体系结构（WHEA）信息。
 ms.assetid: 5d621507-74e7-4a43-8600-88dca29e461d
 keywords:
 - whea Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64be5d0163bb821ad30c1ebe65d26ce7b41c6ecf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68358e86bc93dc6a13ba64924638accac2b02d40
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342831"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533972"
 ---
 # <a name="whea"></a>!whea
 
 
-**！ Whea**扩展显示顶级的 Windows 硬件错误体系结构 (WHEA) 信息。
+**！ Whea** extension 显示顶级 Windows 硬件错误体系结构（whea）信息。
 
 ```dbgcmd
 !whea 
@@ -31,7 +31,7 @@ ms.locfileid: "63342831"
 ## <span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -41,35 +41,35 @@ ms.locfileid: "63342831"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows Vista 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-仅在 Windows Vista 和更高版本的 Windows 中，可以使用此扩展。
+此扩展只能在 Windows Vista 和更高版本的 Windows 中使用。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[ **！ Errrec** ](-errrec.md)并[ **！ errpkt** ](-errpkt.md)扩展可用于显示 WHEA 的其他信息。 WHEA 的常规信息，请参阅[Windows 硬件错误体系结构 (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) 文档中。
+[**！ Errrec**](-errrec.md)和[**！ errpkt**](-errpkt.md)扩展可用于显示其他 WHEA 信息。 有关 WHEA 的常规信息，请参阅 Windows 驱动程序工具包（WDK）文档中的[Windows 硬件错误体系结构（WHEA）](https://docs.microsoft.com/windows-hardware/drivers/whea/) 。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-下面的示例演示 （截断） 的输出 **！ whea**扩展：
+下面的示例演示 **！ whea**扩展的（截断）输出：
 
 ```dbgcmd
 3: kd> !whea 

@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbhuberr
-description: Usbkd.usbhuberr 命令显示的 USB 集线器错误记录。
+description: Usbkd. usbhuberr 命令显示 USB 集线器错误记录。
 ms.assetid: 5BB87FA2-0531-400C-95B3-325EE4DDB649
 keywords:
-- usbkd.usbhuberr Windows 调试
+- usbkd usbhuberr Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b1593b60ec2a846d5ea8703211ba5faaf9881921
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be0b24214a99f780b30b355fa51ffac7388b30a9
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334062"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534856"
 ---
 # <a name="usbkdusbhuberr"></a>!usbkd.usbhuberr
 
 
-**！ Usbkd.usbhuberr**命令显示的 USB 集线器错误记录。
+**！ Usbkd. usbhuberr**命令显示 USB 集线器错误记录。
 
 ```dbgcmd
 !usbkd.usbhuberr StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbhub ！\_集线器\_异常\_记录**结构。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbhub 的地址 **！ \_中心 \_ 异常 \_ 记录**结构。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法，若要查找的地址**usbhub ！\_集线器\_异常\_记录**。 首次进入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 usbhub 地址的一种方法 **！ \_中心 \_ 异常 \_ 记录**。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -52,7 +52,7 @@ Usbkd.dll
       ...
 ```
 
-在上面的输出中可以看到建议的命令 **！ devstack ffffe00002320050**。 输入此命令。
+在上面的输出中，可以看到建议的命令 **！ devstack ffffe00002320050**。 输入此命令：
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe000011f7050
@@ -63,7 +63,7 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出，`ffffe000011f71a0`是适用于中心的功能的设备对象 (FDO) 的设备扩展的地址。 传递到设备扩展的地址[ **！ usbkd.usbhubext**](-usbkd-usbhubext.md)。
+在上面的输出中， `ffffe000011f71a0` 是中心功能设备对象（FDO）的设备扩展的地址。 将设备扩展的地址传递给[**！ usbkd. usbhubext**](-usbkd-usbhubext.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000011f71a0
@@ -81,15 +81,15 @@ ExceptionList: !usblist ffffe000011f8498, EL [Empty]
 ...
 ```
 
-在上面的输出，`ffffe000011f8498`是例外列表的地址。 如果异常列表不为空，它将包含的地址 **\_中心\_异常\_记录**结构。
+在上面的输出中， `ffffe000011f8498` 是异常列表的地址。 如果异常列表不为空，它将包含** \_ 中心 \_ 异常 \_ 记录**结构的地址。
 
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

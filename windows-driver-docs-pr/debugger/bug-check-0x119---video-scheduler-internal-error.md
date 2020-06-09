@@ -13,21 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b864db5982677a361f6eb57ca6d3277200f074
-ms.sourcegitcommit: 8fce8b22c7437f0aa322c40625d5163e8812ea01
+ms.openlocfilehash: d3432d07a66d36e5cd6c01552924e5b9b2cea37d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77146507"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534662"
 ---
-# <a name="bug-check-0x119-video_scheduler_internal_error"></a>Bug 检查0x119：视频\_计划程序\_内部\_错误
+# <a name="bug-check-0x119-video_scheduler_internal_error"></a>Bug 检查0x119：视频 \_ 计划程序 \_ 内部 \_ 错误
 
-视频\_计划程序\_内部\_错误 bug 检查的值为0x00000119。 这表示视频计划程序检测到严重冲突。
+视频 \_ 计划程序 \_ 内部 \_ 错误检查的值为0x00000119。 这表示视频计划程序检测到严重冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="video_scheduler_internal_error-parameters"></a>视频\_计划程序\_内部\_错误参数
+## <a name="video_scheduler_internal_error-parameters"></a>视频 \_ 计划程序 \_ 内部 \_ 错误参数
 
 参数1是唯一相关的参数，用于标识完全冲突。
 
@@ -43,9 +43,9 @@ ms.locfileid: "77146507"
 |0x1000| 这是一个内部操作系统状态错误，通常是由于内存损坏或硬件错误造成的。|
 |0x10000| 这是一个内部操作系统状态错误，通常是由于内存损坏或硬件错误造成的。|
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 如果！分析输出中列出的错误模块是视频驱动程序，请调查供应商是否有更新可供该视频驱动程序使用。
 
@@ -55,8 +55,8 @@ ms.locfileid: "77146507"
 
 [提交命令缓冲区](https://docs.microsoft.com/windows-hardware/drivers/display/submitting-a-command-buffer)
 
-[提供防护标识符](https://docs.microsoft.com/windows-hardware/drivers/display/supplying-fence-identifiers)
+[提供围栏标识符](https://docs.microsoft.com/windows-hardware/drivers/display/supplying-fence-identifiers)
 
 [GPU 计划程序类](https://docs.microsoft.com/windows-hardware/drivers/display/gpu-scheduler-class)
 
-[视频内存的直接翻转](https://docs.microsoft.com/windows-hardware/drivers/display/direct-flip-of-video-memory)
+[视频内存的直接交替](https://docs.microsoft.com/windows-hardware/drivers/display/direct-flip-of-video-memory)

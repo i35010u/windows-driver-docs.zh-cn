@@ -4,17 +4,17 @@ description: 编写分析扩展插件时，还需要编写一个元数据文件�
 ms.assetid: 13B9B7A5-1D68-49A3-825B-454AC070FCC1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36ccae904dae8756c6ca058ec463b0a279c571d6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 106801c80abf6a0611f3e8004bac10a9bd5d3ec9
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834343"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534328"
 ---
 # <a name="metadata-files-for-analysis-extension-plug-ins"></a>分析扩展插件的元数据文件
 
 
-编写分析扩展插件时，还需要编写一个元数据文件，用于描述要调用插件的情况。 当[ **！分析**](-analyze.md)调试器命令运行时，它会使用元数据文件来确定要加载的插件。
+编写分析扩展插件时，还需要编写一个元数据文件，用于描述要调用插件的情况。 当[**！分析**](-analyze.md)调试器命令运行时，它会使用元数据文件来确定要加载的插件。
 
 创建一个与分析扩展插件同名的元数据文件，并创建 alz 扩展名。 例如，如果分析扩展插件的名称为 MyAnalyzer，则元数据文件必须命名为 MyAnalyzer. alz。 将元数据文件放在与 analysis extension 插件相同的目录中。
 
@@ -24,22 +24,22 @@ Analysis extension 插件的元数据文件是包含键值对的 ASCII 文本文
 
 -   行末尾的任何字符集。 此窗体适用于不包含任何换行符的值。
 
-    **重要**  如果元数据文件中的最后一个值具有此格式的值，则行必须以换行符结尾。
+    **重要提示**   如果元数据文件中的最后一个值具有此格式的值，则行必须以换行符结尾。
 
      
 
 -   大括号 {} 之间的任何字符集。 此窗体适用于包含换行符的值。
 
-以 \# 开头的行是注释，将被忽略。 注释只能开始需要键的位置。
+以开头的行 \# 是注释，将被忽略。 注释只能开始需要键的位置。
 
 可以在元数据文件中使用以下键。
 
-| 键            | 描述                                                                                                                                                                                                                                                                                       |
+| 键            | 说明                                                                                                                                                                                                                                                                                       |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PluginId       | String-标识插件。                                                                                                                                                                                                                                                                  |
 | DebuggeeClass  | 字符串可能的值为 "内核" 和 "用户"。 指示插件仅对分析内核模式故障或仅用户模式故障进行分析感兴趣。                                                                                                                                     |
 | BugCheckCode   | 32位 bug 检查代码-指示插件对分析此[bug 检查代码](bug-check-code-reference2.md)感兴趣。 单个元数据文件可以指定多个 bug 检查代码。                                                                                                  |
-| ExceptionCode  | 32位异常代码-指示插件对分析此[异常代码](https://go.microsoft.com/fwlink/p?LinkID=282670)感兴趣。 单个元数据文件可以指定多个异常代码。                                                                                 |
+| ExceptionCode  | 32位异常代码-指示插件对分析此[异常代码](https://docs.microsoft.com/windows/win32/debug/structured-exception-handling)感兴趣。 单个元数据文件可以指定多个异常代码。                                                                                 |
 | ExecutableName | String-指示插件仅对这是要分析的进程的运行可执行文件的会话感兴趣。 单个元数据文件可以指定多个可执行名称。                                                                                              |
 | ImageName      | String-指示插件仅对默认分析将此映像（dll、sys 或 exe）视为错误的会话感兴趣。 此插件是在分析确定哪个映像出错后调用的。 单个元数据文件可以指定多个映像名称。 |
 | MaxTagCount    | Integer-插件所需的自定义标记的最大数目。 自定义标记是 extsfns 中定义的标记。                                                                                                                                                                |
@@ -77,7 +77,7 @@ ExceptionCode   0xC0000005
 ExecutableName  MyApp.exe
 ```
 
-适用于 Windows 的调试工具提供了一个示例，可用于生成名为 dbgexts 的调试器扩展模块。 此扩展模块实现了几个调试器扩展命令，但它还可以充当分析扩展插件;也就是说，它会导出[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是一种元数据文件，它将 dbgexts 描述为分析扩展插件。
+适用于 Windows 的调试工具提供了一个示例，可用于生成名为 dbgexts 的调试器扩展模块。 此扩展模块实现了几个调试器扩展命令，但它还可以充当分析扩展插件;也就是说，它将导出[** \_ EFN \_ 分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)函数。 下面是一种元数据文件，它将 dbgexts 描述为分析扩展插件。
 
 ```text
 PluginId         PluginSample
@@ -96,11 +96,11 @@ help text from plug-in analysis}
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[正在写入分析扩展插件！分析](writing-an-analysis-extension-to-extend--analyze.md)
+[编写分析扩展插件以扩展 !analyze](writing-an-analysis-extension-to-extend--analyze.md)
 
-[ **\_EFN\_分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)
+[**\_EFN \_ 分析**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extsfns/nc-extsfns-ext_analysis_plugin)
 
-[ **！分析**](-analyze.md)
+[**！分析**](-analyze.md)
 
  
 

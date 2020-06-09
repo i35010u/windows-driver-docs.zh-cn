@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x2F INSTRUCTION_BUS_ERROR
-description: INSTRUCTION_BUS_ERROR bug 检查的值为 0x0000002F.This bug 检查极少出现。
+description: INSTRUCTION_BUS_ERROR bug 检查的值为0x0000002F。此 bug 检查很少出现。
 ms.assetid: ff2d54ad-924b-420c-b2f9-716c30cb1ef8
 keywords:
 - Bug 检查 0x2F INSTRUCTION_BUS_ERROR
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ca324ae7c2d6d4fc5a6c7e057ea5095727a8e9e7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4bc2eea7b457e3b3225f3ec89c27e06e81f67f23
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519538"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534816"
 ---
-# <a name="bug-check-0x2f-instructionbuserror"></a>Bug 检查 0x2F：指令\_总线\_错误
+# <a name="bug-check-0x2f-instruction_bus_error"></a>Bug 检查0x2F：指令 \_ 总线 \_ 错误
 
 
-指令\_总线\_错误 bug 检查的值为 0x0000002F。
+指令 \_ 总线 \_ 错误检查的值为0x0000002F。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

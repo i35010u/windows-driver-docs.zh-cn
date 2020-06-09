@@ -1,122 +1,122 @@
 ---
 title: 在 Visual Studio 中设置虚拟机的内核模式调试
-description: 可以使用 Microsoft Visual Studio 设置和执行虚拟机的内核模式调试。
+description: 你可以使用 Microsoft Visual Studio 来设置和执行虚拟机的内核模式调试。
 ms.assetid: E7A289CA-29CE-4C6F-AD08-529E58379715
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fa784a5cdb58fdcdb0830978688503f6b6e6e01f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e965d57fdd8bd4a6d8403c2fff68564c6f2b2a2d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381935"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534766"
 ---
 # <a name="setting-up-kernel-mode-debugging-of-a-virtual-machine-in-visual-studio"></a>在 Visual Studio 中设置虚拟机的内核模式调试
 
 > [!IMPORTANT]
-> 此功能不在 Windows 10，版本 1507年和更高版本的 WDK 中可用。
+> 此功能在 Windows 10 版本1507及更高版本的 WDK 中不可用。
 >
 
-可以使用 Microsoft Visual Studio 设置和执行虚拟机的内核模式调试。 虚拟机可以位于与调试器相同的物理计算机上，也可以连接到同一网络的不同计算机上。 若要使用内核模式调试的 Visual Studio，必须具有 Windows Driver Kit (WDK) 与 Visual Studio 集成。 有关如何安装集成的环境的信息，请参阅[Windows 驱动程序开发](https://go.microsoft.com/fwlink/p?linkid=301383)。
+你可以使用 Microsoft Visual Studio 来设置和执行虚拟机的内核模式调试。 虚拟机可以与调试器位于同一台物理计算机上，也可以位于连接到同一网络的其他计算机上。 若要将 Visual Studio 用于内核模式调试，必须将 Windows 驱动程序工具包（WDK）与 Visual Studio 集成。 有关如何安装集成环境的信息，请参阅[使用 Visual Studio 进行调试](debugging-using-visual-studio.md)。
 
-运行调试器的计算机称为*主机计算机*，并调用正在调试的虚拟机*目标虚拟机*。
+运行调试器的计算机称为 "*主机*"，正在调试的虚拟机称为 "*目标虚拟机*"。
 
-## <a name="span-idconfiguringthetargetvirtualmachinespanspan-idconfiguringthetargetvirtualmachinespanspan-idconfiguringthetargetvirtualmachinespanconfiguring-the-target-virtual-machine"></a><span id="Configuring_the_Target_Virtual_Machine"></span><span id="configuring_the_target_virtual_machine"></span><span id="CONFIGURING_THE_TARGET_VIRTUAL_MACHINE"></span>配置目标虚拟机
+## <a name="span-idconfiguring_the_target_virtual_machinespanspan-idconfiguring_the_target_virtual_machinespanspan-idconfiguring_the_target_virtual_machinespanconfiguring-the-target-virtual-machine"></a><span id="Configuring_the_Target_Virtual_Machine"></span><span id="configuring_the_target_virtual_machine"></span><span id="CONFIGURING_THE_TARGET_VIRTUAL_MACHINE"></span>正在配置目标虚拟机
 
 
-1. 在虚拟机，在提升的命令提示符窗口，输入以下命令。
+1. 在虚拟机中，在提升的命令提示符窗口中输入以下命令。
 
-   **bcdedit /debug 上**
+   **bcdedit/debug on**
 
-   **bcdedit /dbgsettings 串行 debugport:**<em>n</em> **baudrate:115200**
+   **bcdedit/dbgsettings 串行 debugport：**<em>n</em> **波特率： 115200**
 
-   其中*n*是虚拟机上的 COM 端口的数目。
+   其中， *n*是虚拟机上的 COM 端口的编号。
 
 2. 重新启动虚拟机。
-3. 虚拟机中配置的 COM 端口映射到命名管道。 调试器将通过此管道连接。 有关如何创建此管道的详细信息，请参阅虚拟机的文档。
+3. 在虚拟机中，将 COM 端口配置为映射到命名管道。 调试器将通过此管道进行连接。 有关如何创建此管道的详细信息，请参阅虚拟机的文档。
 
-## <a name="span-idconfiguringthehostcomputerspanspan-idconfiguringthehostcomputerspanspan-idconfiguringthehostcomputerspanconfiguring-the-host-computer"></a><span id="Configuring_the_Host_Computer"></span><span id="configuring_the_host_computer"></span><span id="CONFIGURING_THE_HOST_COMPUTER"></span>配置主计算机
-
-
-主机计算机可以是同一物理计算机运行虚拟机，也可以是单独的计算机。
-
-1. 上，在 Visual Studio 中，主机计算机上**驱动程序**菜单中，选择**测试&gt;配置计算机**。
-2. 单击**添加新的计算机**。
-3. 有关**计算机名**，输入正在运行目标虚拟机的物理计算机的名称。
-4. 选择**手动配置调试器并不设置**，然后单击**下一步**。
-5. 有关**连接类型**，选择**串行**。
-6. 检查**管道**，并检查**重新连接**。
-7. 如果调试器运行在虚拟机所在的计算机上，输入以下项作为**管道名称**:
-
-   **\\\\.\\管道\\**<em>PipeName</em>。
-
-   如果调试器正在从虚拟机的不同计算机上，输入以下项作为**管道名称**:
-
-   **\\\\**<em>VMHost</em>**\\pipe\\**<em>PipeName</em>
-
-   其中， *VMHost*运行目标虚拟机，请在物理计算机的名称和*PipeName*是与目标虚拟机上的 COM 端口关联的管道的名称。
-
-8. 单击“下一步” 。 单击 **“完成”**。
-
-## <a name="span-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>启动调试会话
+## <a name="span-idconfiguring_the_host_computerspanspan-idconfiguring_the_host_computerspanspan-idconfiguring_the_host_computerspanconfiguring-the-host-computer"></a><span id="Configuring_the_Host_Computer"></span><span id="configuring_the_host_computer"></span><span id="CONFIGURING_THE_HOST_COMPUTER"></span>配置主机计算机
 
 
-1.  上，在 Visual Studio 中，主机计算机上**调试**菜单中，选择**附加到进程**。
-2.  有关**传输**，选择**Windows 内核模式调试程序**。
-3.  有关**限定符**，选择正在运行目标虚拟机的物理计算机的名称。
-4.  单击**附加**。
+主计算机可以是运行虚拟机的同一物理计算机，也可以是单独的计算机。
+
+1. 在主计算机上的 Visual Studio 中，在 "**驱动程序**" 菜单上选择 "测试" " ** &gt; 配置计算机**"。
+2. 单击 "**添加新计算机**"。
+3. 对于 "**计算机名称**"，请输入运行目标虚拟机的物理计算机的名称。
+4. 选择 "**手动配置调试器并不设置**"，然后单击 "**下一步**"。
+5. 对于 "**连接类型**"，请选择 "**串行**"。
+6. 选中 "**管道**"，然后选中 "**重新连接**"。
+7. 如果调试器在虚拟机所在的同一台计算机上运行，请输入以下**管道名称**：
+
+   **\\\\.\\管道 \\ **<em>PipeName</em>。
+
+   如果调试器在不同于虚拟机的计算机上运行，请在 "**管道名称**" 中输入以下内容：
+
+   **\\\\**<em>VMHost</em>** \\ 管道 \\ **<em>PipeName</em>
+
+   其中， *VMHost*是运行目标虚拟机的物理计算机的名称， *PipeName*是与目标虚拟机上的 COM 端口关联的管道的名称。
+
+8. 单击“下一步”  。 单击“完成”  。
+
+## <a name="span-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>启动调试会话
+
+
+1.  在主计算机上，在 Visual Studio 的 "**调试**" 菜单中，选择 "**附加到进程**"。
+2.  对于 "**传输**"，请选择 " **Windows 内核模式调试程序**"。
+3.  对于 "**限定符**"，请选择运行目标虚拟机的物理计算机的名称。
+4.  单击 **“附加”** 。
 
 >[!TIP] 
-> 如果你将收到消息"无法启动调试会话，错误 8007005:拒绝访问"，在主计算机上以管理员身份运行 Visual Studio。 
+> 如果收到 "无法启动调试会话，错误8007005：访问被拒绝" 消息，请在主计算机上以管理员身份运行 Visual Studio。 
 
-## <a name="span-idgeneration2virtualmachinesspanspan-idgeneration2virtualmachinesspangeneration-2-virtual-machines"></a><span id="generation_2_virtual_machines"></span><span id="GENERATION_2_VIRTUAL_MACHINES"></span>第 2 代虚拟机
+## <a name="span-idgeneration_2_virtual_machinesspanspan-idgeneration_2_virtual_machinesspangeneration-2-virtual-machines"></a><span id="generation_2_virtual_machines"></span><span id="GENERATION_2_VIRTUAL_MACHINES"></span>第2代虚拟机
 
 
-默认情况下，COM 端口不显示在第 2 代虚拟机中。 可以添加通过 PowerShell 或 WMI 的 COM 端口。 要在 Hyper-v 管理器控制台中显示的 COM 端口，则必须创建使用路径。
+默认情况下，第2代虚拟机中不显示 COM 端口。 可以通过 PowerShell 或 WMI 添加 COM 端口。 要使 COM 端口显示在 Hyper-v 管理器控制台中，必须使用路径创建这些端口。
 
-若要启用内核调试第 2 代虚拟机上使用 COM 端口，请执行以下步骤：
+若要使用第2代虚拟机上的 COM 端口启用内核调试，请按照以下步骤操作：
 
 1. 通过输入以下 PowerShell 命令来禁用安全启动：
 
-   **Set-VMFirmware –Vmname** *VmName* **–EnableSecureBoot Off**
+   **Set-vmfirmware – Vmname** *Vmname* **– EnableSecureBoot Off**
 
-   其中*VmName*是你的虚拟机的名称。
+   其中， *VmName*是虚拟机的名称。
 
-2. 将 COM 端口添加到虚拟机中，通过输入此 PowerShell 命令：
+2. 输入以下 PowerShell 命令，将 COM 端口添加到虚拟机：
 
-   **Set-VMComPort –VMName** *VmName* **1 \\\\.\\pipe\\**<em>PipeName</em>
+   **Set-vmcomport – VMName** *VMName* **1 \\ \\ 。 \\管道 \\ **<em>PipeName</em>
 
-   例如，以下命令在虚拟机 TestVM 以连接到命名管道 TestPipe 本地计算机上的配置的第一个 COM 端口。
+   例如，以下命令将虚拟机 TestVM 上的第一个 COM 端口配置为连接到本地计算机上的命名管道 TestPipe。
 
-   **Set-vmcomport – VMName TestVM 1 \\ \\。\\管道\\TestPipe**
+   **Set-vmcomport – VMName TestVM 1 \\ \\ 。 \\管道 \\ TestPipe**
 
-3. 重新启动 VM，使新设置是在起作用。
+3. 重新启动 VM，使新设置生效。
 
-有关详细信息，请参阅[第 2 代虚拟机概述](https://go.microsoft.com/fwlink/p/?Linkid=331326)。
+有关详细信息，请参阅[第 2 代虚拟机概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282285(v=ws.11))。
 
 
 ## <a name="span-idfirewallsspantroubleshooting-firewalls-and-network-access-issues"></a><span id="Firewalls"></span>防火墙和网络访问问题疑难解答
 
-调试器 （WinDbg 或 KD） 必须具有通过防火墙进行访问。 这甚至可以是虚拟串行端口支持的网络适配器，这种情况。
+调试器（WinDbg 或 KD）必须具有通过防火墙的访问权限。 这甚至是网络适配器支持的虚拟串行端口的情况。
 
-如果 Windows 提示你关闭防火墙，调试程序时加载，请选择**所有这三个**框。
+如果在加载调试器时 Windows 提示你关闭防火墙，请选择**所有三个**框。
 
-具体取决于在使用 VM 的详细信息，可能需要更改要到 Microsoft 内核调试的网卡桥接各虚拟机的网络设置。 否则，虚拟机将不具有网络访问权限。
+根据所使用的 VM 的具体情况，可能需要更改虚拟机的网络设置，以将其桥接到 Microsoft 内核网络调试适配器。 否则，虚拟机将无法访问网络。
 
 **Windows 防火墙**
 
-可以使用控制面板以允许通过 Windows 防火墙的访问。 
+可以使用 "控制面板" 允许通过 Windows 防火墙进行访问。 
 
-1. 打开控制面板 > 系统和安全性，并选择允许通过 Windows 防火墙的应用程序。 
-2. 在应用程序列表中，找到*Windows GUI 符号调试器*并*Windows 内核调试程序*。 
-3. 使用复选框以允许通过防火墙这些两个应用程序。 单击“确定”保存设置。
-4. 重新启动调试应用程序 （WinDbg 或 KD）。
-
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+1. 打开 "控制面板 > 系统和安全"，然后选择 "允许应用通过 Windows 防火墙"。 
+2. 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器*" 和 " *windows 内核调试器*"。 
+3. 使用此复选框可以通过防火墙允许这两个应用程序。 单击“确定”保存设置。
+4. 重新启动调试应用程序（WinDbg 或 KD）。
 
 
-[设置网络调试的虚拟机主机](setting-up-network-debugging-of-a-virtual-machine-host.md)
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+
+
+[设置虚拟机主机的网络调试](setting-up-network-debugging-of-a-virtual-machine-host.md)
  
 
  

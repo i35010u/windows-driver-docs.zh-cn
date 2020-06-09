@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b525a33656b9077ce310ef5d9e1afc0cf72ea797
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7ee92f55f7253cdc1000191113f996908d1c2174
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826679"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534228"
 ---
 # <a name="ndiskdcxadapter"></a>!ndiskd.cxadapter
 
@@ -33,16 +33,16 @@ ms.locfileid: "72826679"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 GET-NETADAPTER 的句柄。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 显示基本信息。
 
-<span id="_______-power______"></span><span id="_______-POWER______"></span> *-power*   
+<span id="_______-power______"></span><span id="_______-POWER______"></span>*-power*   
 显示有关 GET-NETADAPTER 的 NETPOWERSETTINGS 对象的信息。
 
-<span id="_______-datapath______"></span><span id="_______-DATAPATH______"></span> *-数据路径*   
+<span id="_______-datapath______"></span><span id="_______-DATAPATH______"></span>*-数据路径*   
 显示有关数据路径队列的信息。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -52,7 +52,7 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-若要获取 GET-NETADAPTER 对象的句柄，请首先运行[ **！ ndiskd**](-ndiskd-netadapter.md)命令，以查看系统上所有 NIC 驱动程序和 NetAdapters 的列表。 在下面的示例中，查找名为 Realtek PCIe GBE 系列控制器 Get-netadapter \#2 的 Get-netadapter 的句柄。 它的句柄为 ffffd1022d048030。
+若要获取 GET-NETADAPTER 对象的句柄，请首先运行[**！ ndiskd**](-ndiskd-netadapter.md)命令，以查看系统上所有 NIC 驱动程序和 NetAdapters 的列表。 在下面的示例中，查找名为 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序2的 Get-netadapter 的句柄 \# 。 它的句柄为 ffffd1022d048030。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -61,7 +61,7 @@ Ndiskd
     ffffd1022ed908e0   ffffd1022e8611a0    Microsoft Kernel Debug Network Adapter
 ```
 
-通过单击此 Get-netadapter 的句柄，或在命令行上使用其句柄输入 **！ ndiskd**命令，你可以查看此 get-netadapter 的详细信息，包括其 get-netadapter 对象。 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序 \#2 的 GET-NETADAPTER 句柄为00002efdd0e5f988。
+通过单击此 Get-netadapter 的句柄，或在命令行上使用其句柄输入 **！ ndiskd**命令，你可以查看此 get-netadapter 的详细信息，包括其 get-netadapter 对象。 Realtek PCIe GBE 系列控制器 Get-netadapter 示例驱动程序 \# 2 的 get-netadapter 句柄为00002efdd0e5f988。
 
 ```console
 0: kd> !ndiskd.netadapter ffffd1022d048030
@@ -144,7 +144,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-由于 GET-NETADAPTER 对象是一个 WDF 对象，因此单击其控点将导致调试程序运行[ **！ wdfkd**](-wdfkd-wdfhandle.md)命令，该命令将从 WDF 角度为你显示有关它的详细信息。 若要从网络角度查看有关 GET-NETADAPTER 的更多详细信息，请单击 GET-NETADAPTER 的句柄右侧的 "详细信息" 链接，以使用其句柄运行**cxadapter**命令。
+由于 GET-NETADAPTER 对象是一个 WDF 对象，因此单击其控点将导致调试程序运行[**！ wdfkd**](-wdfkd-wdfhandle.md)命令，该命令将从 WDF 角度为你显示有关它的详细信息。 若要从网络角度查看有关 GET-NETADAPTER 的更多详细信息，请单击 GET-NETADAPTER 的句柄右侧的 "详细信息" 链接，以使用其句柄运行**cxadapter**命令。
 
 ```console
 0: kd> !ndiskd.cxadapter ffffd1022f1a0720
@@ -194,17 +194,17 @@ DATAPATH QUEUES
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [网络适配器 WDF 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
-[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[ **!wdfkd.wdfhandle**](-wdfkd-wdfhandle.md)
+[**!wdfkd.wdfhandle**](-wdfkd-wdfhandle.md)
 
  
 

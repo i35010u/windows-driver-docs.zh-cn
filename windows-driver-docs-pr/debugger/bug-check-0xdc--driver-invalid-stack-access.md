@@ -13,30 +13,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d402f6c24d4374b9d6ac934e4ad7401ae7732fab
-ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
+ms.openlocfilehash: 3712217344fcf8c48e90205449da0d3ebc8f55e4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038002"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534526"
 ---
-# <a name="bug-check-0xdc-driver_invalid_stack_access"></a>Bug 检查0xDC：驱动程序\_无效\_STACK\_访问
+# <a name="bug-check-0xdc-driver_invalid_stack_access"></a>Bug 检查0xDC：驱动 \_ 程序 \_ 堆栈 \_ 访问无效
 
 
-驱动程序\_\_堆栈无效，\_访问 bug 检查的值为0x000000DC。 这表明驱动程序已访问堆栈地址，堆栈地址位于堆栈线程的堆栈指针的下方。
+驱动程序 \_ \_ 堆栈 \_ 访问 bug 检查无效，值为0x000000DC。 这表明驱动程序已访问堆栈地址，堆栈地址位于堆栈线程的堆栈指针的下方。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_invalid_stack_access-parameters"></a>驱动程序\_无效\_堆栈\_访问参数
+## <a name="driver_invalid_stack_access-parameters"></a>驱动 \_ 程序 \_ 堆栈 \_ 访问参数无效
 
 
 无
 
  
 ## <a name="remarks"></a>备注
-[ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
 

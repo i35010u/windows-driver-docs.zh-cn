@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36220da276f7c0a7ec79d05a3e30978d1715f990
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 04fb86d17a3a4d0aa3d7655d04965151ca0e1db1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851483"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534832"
 ---
 # <a name="bug-check-0x1d3-wfp_invalid_operation"></a>Bug 检查 0x1D3：WFP_INVALID_OPERATION 
 
@@ -48,7 +48,7 @@ WFP_INVALID_OPERATION bug 检查的值为0x000001D3。 这表明 Windows 筛选�
 
 
 ## <a name="resolution"></a>解决方法
-[**！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，并且在确定根本原因时可能非常有用。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，并且在确定根本原因时可能非常有用。
 
  
 

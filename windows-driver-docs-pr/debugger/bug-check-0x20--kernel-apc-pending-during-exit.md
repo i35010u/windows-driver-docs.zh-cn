@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x20 KERNEL_APC_PENDING_DURING_EXIT
-description: KERNEL_APC_PENDING_DURING_EXIT bug 检查具有 0x00000020 值。 这表明异步过程调用 (APC) 仍是挂起的线程在退出时。
+title: Bug 检查 0x20 KERNEL_APC_PENDING_DURING_EXIT
+description: KERNEL_APC_PENDING_DURING_EXIT bug 检查的值为0x00000020。 这表示在线程退出时，异步过程调用（APC）仍处于挂起状态。
 ms.assetid: 0ef7c2b2-0864-4206-b786-bac9df9cedc7
 keywords:
-- Bug Check 0x20 KERNEL_APC_PENDING_DURING_EXIT
+- Bug 检查 0x20 KERNEL_APC_PENDING_DURING_EXIT
 - KERNEL_APC_PENDING_DURING_EXIT
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 88311b70bcc13ec2d4dd7d0e23bcc13fe042963a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4b919df6dd569d53c1a0413a8608bc4dd1709851
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519613"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534826"
 ---
-# <a name="bug-check-0x20-kernelapcpendingduringexit"></a>Bug 检查 0x20：内核\_APC\_PENDING\_在\_退出
+# <a name="bug-check-0x20-kernel_apc_pending_during_exit"></a>Bug 检查0x20： \_ \_ \_ 退出期间内核 APC \_ 挂起
 
 
-内核\_APC\_PENDING\_在\_退出 bug 检查的值为 0x00000020。 这表明异步过程调用 (APC) 仍是挂起的线程在退出时。
+\_ \_ 退出 bug 检查期间等待的内核 APC 的 \_ \_ 值为0x00000020。 这表示在线程退出时，异步过程调用（APC）仍处于挂起状态。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="kernelapcpendingduringexit-parameters"></a>内核\_APC\_PENDING\_在\_退出参数
+## <a name="kernel_apc_pending_during_exit-parameters"></a>\_ \_ \_ 在 \_ 退出参数期间内核 APC 挂起
 
 
 <table>
@@ -40,13 +40,13 @@ ms.locfileid: "67519613"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>在退出过程发现的挂起的 APC 的地址</p></td>
+<td align="left"><p>退出过程中发现的 APC 的地址</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -68,21 +68,21 @@ ms.locfileid: "67519613"
 <a name="cause"></a>原因
 -----
 
-密钥的数据项是 APC 禁用线程计数 (参数 2)。 如果计数为非零值，它将指明问题的原因。
+Key data 项是线程的 APC 禁用计数（参数2）。 如果计数为非零，则它将指示问题的根源。
 
-APC 禁用计数将减少每次将驱动程序调用**KeEnterCriticalRegion**， **FsRtlEnterFileSystem**，或获取互斥锁。
+每次驱动程序调用**KeEnterCriticalRegion**、 **FsRtlEnterFileSystem**或获取互斥体时，APC 禁用计数都将减少。
 
-APC 禁用计数每的次递增一个驱动程序调用**KeLeaveCriticalRegion**， **KeReleaseMutex**，或**FsRtlExitFileSystem**。
+每次驱动程序调用**KeLeaveCriticalRegion**、 **KeReleaseMutex**或**FsRtlExitFileSystem**时，APC 禁用计数都将递增。
 
-由于这些调用应该总是以对，APC 禁用计数应在线程退出时为零。 负值指示的驱动程序具有未重新启用这些情况下禁用 APC 的调用。 正值指示反向为 true。
+由于这些调用应始终成对出现，因此在线程退出时，APC 禁用计数应为零。 负值表示驱动程序已禁用 APC 调用，而无需重新启用它们。 正值指示反转为 true。
 
-如果您遇到此错误，是很值得怀疑计算机--尤其是异常或非标准的驱动程序上安装的所有驱动程序。
+如果你看到此错误，则非常怀疑计算机上安装的所有驱动程序-特别是异常或非标准驱动程序。
 
-此当前 IRQL (参数 3) 应为零。 如果不是这样，驱动程序的取消例程可能通过在提升的 IRQL 返回导致此 bug 检查。 在这种情况下，仔细注意在发生崩溃，次时运行 （和内容已关闭），并在发生崩溃时注意所有已安装的驱动程序。 在这种情况下的原因通常是驱动程序中的严重 bug。
+当前 IRQL （参数3）应为零。 如果不是这样，则驱动程序的取消例程可能会通过返回提升的 IRQL 来导致此 bug 检查。 在这种情况下，请仔细记下发生崩溃时正在运行的内容（以及关闭的内容），并在发生故障时记下所有已安装的驱动程序。 这种情况的原因通常是驱动程序中的严重错误。
 
 
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

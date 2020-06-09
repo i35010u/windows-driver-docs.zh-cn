@@ -13,21 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 95dd279e70ce0fbb3e98b00c5e826c078ac7a396
-ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
+ms.openlocfilehash: 83cf10eb1350145369abcbb64821dda0b6d697fd
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77260501"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534844"
 ---
-# <a name="bug-check-0x121-driver_violation"></a>Bug 检查0x121：驱动程序\_冲突
+# <a name="bug-check-0x121-driver_violation"></a>Bug 检查0x121：驱动程序 \_ 冲突
 
-驱动程序\_违反 bug 检查的值为0x00000121。 此 bug 检查表明驱动程序导致了冲突。
+驱动程序 \_ 冲突 bug 检查的值为0x00000121。 此 bug 检查表明驱动程序导致了冲突。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="driver_violation-parameters"></a>驱动程序\_冲突参数
+## <a name="driver_violation-parameters"></a>驱动程序 \_ 冲突参数
 
 参数1指示违规类型。
 
@@ -59,7 +59,7 @@ ms.locfileid: "77260501"
 </tbody>
 </table>
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-使用内核调试器并查看调用堆栈以确定导致冲突的驱动程序的名称： [ **！分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后输入[**k （显示 stack Backtrace）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)命令之一来查看调用堆栈。
+使用内核调试器并查看调用堆栈以确定导致冲突的驱动程序的名称： [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因，然后输入[**k （显示 stack Backtrace）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令之一来查看调用堆栈。

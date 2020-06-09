@@ -1,34 +1,34 @@
 ---
 title: 在启用驱动程序验证程序的情况下处理 Bug 检查
-description: 驱动程序验证程序在运行时检测到驱动程序错误。 可以使用驱动程序验证程序以及分析调试器命令，来检测和驱动程序中显示有关错误的信息。
+description: 驱动程序验证程序在运行时检测驱动程序错误。 可以结合使用驱动程序验证程序和 "分析调试器" 命令来检测和显示有关驱动程序中的错误的信息。
 ms.assetid: 4226B62B-0AA5-4D04-A32D-7DD22FD694E3
 keywords:
 - 驱动程序验证程序
-- 验证程序
+- 符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a835eb71d0a959575ae04a7f55970b02d68a89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f49951abcbd074a30aa1b492fc2aed30b8d8eab4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342079"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534352"
 ---
 # <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>在启用驱动程序验证程序的情况下处理 Bug 检查
 
 
-[驱动程序验证程序](https://go.microsoft.com/fwlink/p?LinkID=268663)在运行时检测到驱动程序错误。 可以使用与 Driver Verifier [ **！ 分析**](-analyze.md)调试器命令，以检测和驱动程序中显示有关错误的信息。
+[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)程序在运行时检测驱动程序错误。 可以结合使用驱动程序验证程序和[**！分析**](-analyze.md)调试器命令来检测和显示有关驱动程序中的错误的信息。
 
-在 Windows 8 中， [Driver Verifier](https://go.microsoft.com/fwlink/p?LinkID=268663)新功能，包括已得到增强[DDI 符合性检查](https://go.microsoft.com/fwlink/p?LinkID=268676)。 此处我们提供的示例，演示 DDI 符合性检查。
+在 Windows 8 中，[驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)已通过新功能（包括[DDI 相容性检查](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)）进行了增强。 这里提供了一个示例，演示了 DDI 相容性检查。
 
-使用以下过程来进行设置。
+使用以下过程进行设置。
 
 1.  建立主机和目标计算机之间的内核模式调试会话。
-2.  在目标计算机上安装您的驱动程序。
-3.  在目标计算机上，打开命令提示符窗口并输入命令**verifier**。 使用[驱动程序验证程序管理器](https://go.microsoft.com/fwlink/p?LinkID=268659)为您的驱动程序启用驱动程序验证程序。
+2.  在目标计算机上安装驱动程序。
+3.  在目标计算机上，打开命令提示符窗口，然后输入命令**验证**程序。 使用[驱动程序验证器管理器](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-manager--windows-xp-and-later-)为驱动程序启用驱动程序验证程序。
 4.  重新启动目标计算机。
 
-当驱动程序验证程序检测到错误时，它将生成的 bug 检查。 然后 Windows 进入调试器并显示错误的简短说明。 下面是一个示例驱动程序验证程序生成错误检查[**驱动程序\_VERIFIER\_已检测\_冲突 (C4)**](bug-check-0xc4--driver-verifier-detected-violation.md)。
+当驱动程序验证程序检测到错误时，它将生成 bug 检查。 然后，Windows 将中断调试器并显示错误的简短说明。 下面是一个示例，其中，驱动程序验证程序生成 Bug 检查[**驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突（C4）**](bug-check-0xc4--driver-verifier-detected-violation.md)。
 
 ```dbgcmd
 Driver Verifier: Extension abort with Error Code 0x20005
@@ -48,7 +48,7 @@ nt!DbgBreakPointWithStatus:
 fffff802`a40ef930 cc              int     3
 ```
 
-在调试器中，输入[ **！ 分析-v** ](-analyze.md)获取错误的详细的说明。
+在调试器中，输入[**！分析-v**](-analyze.md)以获取错误的详细说明。
 
 ```dbgcmd
 0: kd> !analyze -v
@@ -98,9 +98,9 @@ PROCESS_NAME:  TiWorker.exe
 CURRENT_IRQL:  9
 ```
 
-在上面的输出中可以看到的名称和规则的说明**IrqlExApcLte1**、 违反了的并且你可以单击指向描述规则的参考页的链接： <https://go.microsoft.com/fwlink/p/?linkid=216022>。 此外可以单击调试器 command link **！ ruleinfo 0x20005**，以获取有关规则的信息。 在这种情况下，规则规定，不能调用[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)中断请求级别 (IRQL) 是否大于 APC\_级别。 该输出显示当前 IRQL 是 9，并在 wdm.h 中可以看到该 APC\_级别的值为 1。 有关于 Irql 详细信息，请参阅[管理硬件优先级](https://go.microsoft.com/fwlink/p?LinkID=268625)。
+在上面的输出中，你可以看到违反规则的名称和**描述，你**可以单击描述该规则的参考页的链接： <https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1> 。 还可以单击 "调试器" 命令链接 " **！ ruleinfo 0x20005**" 以获取有关规则的信息。 在这种情况下，该规则指出，如果中断请求级别（IRQL）高于 APC 级别，则不能调用[ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85)) \_ 。 输出显示当前 IRQL 为9，在 wdm .h 中，你可以看到 APC 级别的值为 \_ 1。 有关 IRQLs 的详细信息，请参阅[管理硬件优先级](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities)。
 
-输出[ **！ 分析-v** ](-analyze.md)将继续执行堆栈跟踪和有关代码导致了错误的信息。 在下面的输出，可以看到**OnInterrupt**例程中名为 MyDriver.sys [ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)。 **OnInterrupt**大于 APC 的 IRQL 在运行一个中断服务例程\_级别，因此，若要调用该例程的冲突[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)。
+[**！分析-v**](-analyze.md)的输出将继续执行堆栈跟踪以及导致错误的代码的相关信息。 在下面的输出中，可以看到 MyDriver 中的**OnInterrupt**例程称为[ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))。 **OnInterrupt**是以比 APC 级别更高的 IRQL 运行的中断服务例程 \_ ，因此，此例程在调用[ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))时会发生冲突。
 
 ```dbgcmd
 LAST_CONTROL_TRANSFER:  from fffff802a41f00ea to fffff802a40ef930
@@ -164,10 +164,10 @@ FAILURE_BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[静态驱动程序验证程序](https://go.microsoft.com/fwlink/p?LinkID=268668)
+[静态驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)
 
  
 

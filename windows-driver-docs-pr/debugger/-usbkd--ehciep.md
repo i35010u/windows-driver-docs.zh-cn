@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehciep
-description: Usbkd._ehciep 命令显示 usbehci _ENDPOINT_DATA 结构中的信息。 使用此命令显示有关异步终结点 （即，控制和大容量的终结点） 的信息。
+title: usbkd _ehciep
+description: _Ehciep usbkd 命令显示 usbehci _ENDPOINT_DATA 结构中的信息。 使用此命令可以显示有关异步终结点（即控件和大容量终结点）的信息。
 ms.assetid: 0DA42FDD-41D6-4234-9D9C-36872F0CE0C1
 keywords:
-- usbkd._ehciep Windows 调试
+- usbkd _ehciep Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f93a7583b2ace68d59d3ee632bf89a8efc843f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b5e0699ca34186ddc4813f7984a76a60f777e37
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359775"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534094"
 ---
-# <a name="usbkdehciep"></a>！ usbkd。\_ehciep
+# <a name="usbkd_ehciep"></a>！ usbkd。 \_ehciep
 
 
-**！ Usbkd。\_ehciep**命令将显示从信息**usbehci ！\_终结点\_数据**结构。 使用此命令显示有关异步终结点 （即，控制和大容量的终结点） 的信息。
+**！ Usbkd。 \_ehciep**命令显示 usbehci 中的信息 **！ \_终结点 \_ 数据**结构。 使用此命令可以显示有关异步终结点（即控件和大容量终结点）的信息。
 
 ```dbgcmd
 !usbkd._ehciep StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-地址**usbehci ！\_终结点\_数据**结构。 若要查找的地址**usbehci ！\_终结点\_数据**结构，使用[ **！ usbhcdext** ](-usbkd-usbhcdext.md)并[ **！ usblist**](-usbkd-usblist.md)。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci 的地址 **！ \_终结点 \_ 数据**结构。 查找 usbehci 的地址 **！ \_终结点 \_ 数据**结构，请使用[**！ usbhcdext**](-usbkd-usbhcdext.md)和[**！ usblist**](-usbkd-usblist.md)。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-此示例演示一种方法获取的地址**usbehci ！\_终结点\_数据**结构。 开头[ **！ usb2tree** ](-usbkd-usb2tree.md)命令。
+此示例展示了获取 usbehci 地址的一种方法 **！ \_终结点 \_ 数据**结构。 从[**！ usb2tree**](-usbkd-usb2tree.md)命令开始。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -56,7 +56,7 @@ Usbkd.dll
         Port 4: !port2_info ffffe000026df1c0 
 ```
 
-在上面的输出，FDO 设备扩展的地址显示为的参数[DML](debugger-markup-language-commands.md)命令 **！ ehci\_信息 ffffe0000206e1a0**。 单击 DML 命令或传递到设备扩展的地址[ **！ usbhcdext**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)。
+在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe0000206e1a0**的参数。 单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe0000206e1a0
@@ -67,7 +67,7 @@ GlobalEndpointList: !usblist ffffe0000206f388, EP
 ...
 ```
 
-上面的输出显示的命令 **！ usblist ffffe0000206f388，EP**。 使用此命令显示终结点的列表。
+前面的输出显示了命令 **！ usblist ffffe0000206f388，EP**。 使用此命令可以显示终结点的列表。
 
 ```dbgcmd
 0: kd> !usblist ffffe0000206f388, EP 
@@ -80,7 +80,7 @@ Device Address: 0x01, ep 0x81 Bulk In Flags: 00000041 dt _USB_ENDPOINT_FLAGS fff
 ...
 ```
 
-在上面的输出`ffffe000026dcc38`是地址**usbehci ！\_终结点\_数据**结构。 传递到此地址 **！\_ehciep**。
+在上面的输出中， `ffffe000026dcc38` 是 usbehci 的地址 **！ \_终结点 \_ 数据**结构。 将此地址传递给 **！ \_ehciep**。
 
 ```dbgcmd
 0: kd> !usbkd._ehciep ffffe000026dcc38
@@ -117,12 +117,12 @@ slot[0] dt usbehci!_ENDPOINT_SLOT ffffe000026dcdb8 - slot_NotBusy
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

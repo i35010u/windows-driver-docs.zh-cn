@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x4 INVALID_DATA_ACCESS_TRAP
-description: INVALID_DATA_ACCESS_TRAP bug 检查具有值为 0x00000004。检查此错误极少出现。
+description: INVALID_DATA_ACCESS_TRAP bug 检查的值为0x00000004。此 bug 检查很少出现。
 ms.assetid: 98c7052d-37ff-4ad8-b9c4-afa4226ed1b0
 keywords:
 - Bug 检查 0x4 INVALID_DATA_ACCESS_TRAP
@@ -13,28 +13,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e8c3751917ca9370c4cb08cfddc33942172076e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d8ae5a068350ac60d73468d8747cbb02b17a8bf9
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519462"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534632"
 ---
-# <a name="bug-check-0x4-invaliddataaccesstrap"></a>Bug 检查 0x4：无效\_数据\_访问\_陷阱
+# <a name="bug-check-0x4-invalid_data_access_trap"></a>Bug 检查0x4：无效的 \_ 数据 \_ 访问 \_ 陷阱
 
 
-无效\_数据\_访问\_陷阱 bug 检查的值为 0x00000004。 它表示一个不正确的数据访问陷阱。
+无效的 \_ 数据 \_ 访问 \_ 陷阱错误检查的值为0x00000004。 它表示数据访问陷阱不正确。
 
-检查此错误极少出现。
+此 bug 检查很少出现。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
 
  

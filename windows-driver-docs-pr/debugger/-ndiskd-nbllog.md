@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0898a87ef75f767eecdb38df4bd3c0f99c04f2ac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 836ec3f84eff5ab53b8b012b2313a2813d2b6909
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826620"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534206"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**！ Ndiskd nbllog**扩展显示系统上所有 NBL （[**NET\_BUFFER\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）活动的日志。
+**！ Ndiskd nbllog**扩展显示系统上所有 NBL （[**NET \_ BUFFER \_ LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）活动的日志。
 
 ```console
 !ndiskd.nbllog [-stacks] 
@@ -31,18 +31,18 @@ ms.locfileid: "72826620"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-堆栈*   
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span>*-堆栈*   
 包括调用堆栈。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Ndiskd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-**重要**  
- **！ nbllog**需要在调试对象目标计算机上启用 NBL 跟踪。 默认情况下，不会在 Windows 的所有配置中启用 NBL 跟踪。 如果未启用 NBL 跟踪，！ ndiskd 将为你提供有关如何启用它的说明，如以下代码片段所示。
+**重要提示**   
+ **！ ndiskd。 nbllog**需要在调试对象目标计算机上启用 NBL 跟踪。 默认情况下，不会在 Windows 的所有配置中启用 NBL 跟踪。 如果未启用 NBL 跟踪，！ ndiskd 将为你提供有关如何启用它的说明，如以下代码片段所示。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -63,7 +63,7 @@ Ndiskd
 
  
 
-NBL 日志显示系统上的网络流量。 [ **！ ndiskd netreport**](-ndiskd-netreport.md)分析 NBL 跟踪日志以直观地显示此网络流量。 因此，如果未启用 NBL 跟踪， **！ ndiskd**会显示此信息。
+NBL 日志显示系统上的网络流量。 [**！ ndiskd netreport**](-ndiskd-netreport.md)分析 NBL 跟踪日志以直观地显示此网络流量。 因此，如果未启用 NBL 跟踪， **！ ndiskd**会显示此信息。
 
 <a name="examples"></a>示例
 --------
@@ -102,24 +102,23 @@ NBL 日志显示系统上的网络流量。 [ **！ ndiskd netreport**](-ndiskd-
     Rerun with the '-force' option to bypass this limit.
 ```
 
-有关如何解释 **！ ndiskd. nbllog**的结果的更详细说明，请参阅 "NDIS 博客上的[！ ndiskd。](https://go.microsoft.com/fwlink/p/?linkid=846176)
+有关如何解释 **！ ndiskd. nbllog**的结果的更详细说明，请参阅 "NDIS 博客上的[！ ndiskd。](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-nbl-log)
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_缓冲区\_列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[！ ndiskd nbl-log](https://go.microsoft.com/fwlink/p/?linkid=846176)
+[！ ndiskd nbl-log](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-nbl-log)
 
  
 

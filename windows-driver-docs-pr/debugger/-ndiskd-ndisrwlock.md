@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 303af191bdb062bdc89c906065723757df47d4fc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f9948c0e9b8e35af233650454a1f939c0063db22
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837582"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534920"
 ---
 # <a name="ndiskdndisrwlock"></a>!ndiskd.ndisrwlock
 
 
-**！ Ndiskd ndisrwlock**扩展显示有关[**NDIS\_RW\_锁\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁结构的信息。
+**！ Ndiskd ndisrwlock**扩展显示有关[**NDIS \_ RW \_ 锁 \_ EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁结构的信息。
 
 ```console
 !ndiskd.ndisrwlock [-handle <x>] 
@@ -31,7 +31,7 @@ ms.locfileid: "72837582"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 锁结构的句柄。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -88,13 +88,13 @@ NDIS READ-WRITE LOCK
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NDIS\_RW\_锁\_EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
+[**NDIS \_ RW \_ LOCK （ \_ EX）**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
 
  
 

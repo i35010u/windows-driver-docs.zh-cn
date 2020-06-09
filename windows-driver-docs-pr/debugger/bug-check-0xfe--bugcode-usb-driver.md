@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0xFE BUGCODE_USB_DRIVER
-description: BUGCODE_USB_DRIVER bug 检查具有 0x000000FE 值。 这指示错误发生在通用串行总线 (USB) 驱动程序。
+description: BUGCODE_USB_DRIVER bug 检查的值为0x000000FE。 这表明通用串行总线（USB）驱动程序中出现错误。
 ms.assetid: 830f9d11-4b16-41a9-a804-6d689a779278
 keywords:
 - Bug 检查 0xFE BUGCODE_USB_DRIVER
@@ -13,44 +13,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 268e31eb353f6ec817a0842d3a5244b6a6d75875
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 48005be82b35a9ec3e3979395cc044c05192f282
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518711"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534510"
 ---
-# <a name="bug-check-0xfe-bugcodeusbdriver"></a>Bug 检查 0xFE：BUGCODE\_USB\_DRIVER
+# <a name="bug-check-0xfe-bugcode_usb_driver"></a>Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序
 
 
-BUGCODE\_USB\_驱动程序 bug 检查的值为 0x000000FE。 这指示错误发生在通用串行总线 (USB) 驱动程序。
+BUGCODE \_ USB \_ 驱动程序 bug 检查的值为0x000000FE。 这表明通用串行总线（USB）驱动程序中出现错误。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="bugcodeusbdriver-parameters"></a>BUGCODE\_USB\_驱动程序参数
+## <a name="bugcode_usb_driver-parameters"></a>BUGCODE \_ USB \_ 驱动程序参数
 
 
-四个 bug 检查参数显示在错误检查停止屏幕并可使用 ！ 分析。 参数 1 标识冲突的类型。
+四个 bug 检查参数显示在 bug 检查停止屏幕上，并可使用！分析。 参数1标识冲突类型。
 
-| 参数 1 | 参数 2 | 参数 3 | 参数 4 | 错误的原因                            | 
+| 参数 1 | 参数2 | 参数3 | 参数4 | 错误的原因                            | 
 |-------------|-------------|-------------|-------------|-------------------------------------------|
-| 0x1 | 保留 | 保留 | 保留 | USB 堆栈中发生内部错误。 |
-| 0x2 | 挂起的 IRP 的地址 | 传入的 IRP 的地址| USB 请求块 (URB) 导致了错误地址 | USB 客户端驱动程序已提交仍附加到挂起的总线驱动程序中的另一个 IRP URB。| 
-|0x3| 保留 | 保留| 保留| USB 微型端口驱动程序已生成的 bug 检查。 这通常发生硬件故障的响应中。|
-| 0x4 | IRP 的地址| URB 的地址| 保留| 调用方已提交操作已被挂起 IRP USB 总线驱动程序中。| 
-| 0x5| 设备扩展的主控制器的指针| PCI 供应商，为控制器的产品 id| 指向终结点数据结构| 由于硬件数据结构中找到的错误的物理地址出现硬件故障。| 
-| 0x6 | 对象地址| 应有的签名| 保留 | 内部数据结构 （对象） 已损坏。|
-| 0x7 | 指向 usbport.sys 调试日志 | 消息字符串 | 文件名 | 请参阅提供的消息字符串的详细信息。|
+| 0x1 | 保留 | 保留 | 保留 | USB 堆栈中出现内部错误。 |
+| 0x2 | 挂起 IRP 的地址 | 传入的 IRP 的地址| 导致错误的 USB 请求块（URB）的地址 | USB 客户端驱动程序已提交 URB，该连接仍附加到在总线驱动程序中挂起的另一个 IRP。| 
+|0x3| 保留 | 保留| 保留| USB 微型端口驱动程序已生成 bug 检查。 发生这种情况时，通常会出现硬件故障。|
+| 0x4 | IRP 的地址| URB 的地址| 保留| 调用方提交了已在 USB 总线驱动程序中挂起的 IRP。| 
+| 0x5| 主机控制器的设备扩展指针| PCI 供应商，控制器的产品 id| 指向终结点数据结构的指针| 由于在硬件数据结构中发现了错误的物理地址，导致硬件故障。| 
+| 0x6 | 对象地址| 预期的签名| 保留 | 内部数据结构（对象）已损坏。|
+| 0x7 | 指向 usbport 调试日志的指针 | 消息字符串 | 文件名 | 有关详细信息，请参阅提供的消息字符串。|
 | 0x8 | 1 | 保留 | 保留 | 保留 |
-| | 2 | 设备对象  | IRP | 它不需要或尚未注册的中心驱动程序接收 IRP。 |
+| | 2 | 设备对象  | IRP | 缺少 IRP 的集线器驱动程序已收到 IRP，或未对其进行注册。 |
 | | 3 | 保留 | 保留 | 保留
-| | 4 | PDO 如果参数 3 不为 NULL。 如果参数 3 为 NULL 的上下文。 | 上下文或 NULL | 致命 PDO 陷阱
+| | 4 | 如果参数3不为 NULL，则为 PDO。 如果参数3为 NULL，则为上下文。 | 上下文或 NULL | 严重的 PDO 陷阱
 | | 5 | 保留 | 保留 | 保留 |
-| | 6 | 超时代码。 请参阅下表。 | 超时代码上下文： 端口数据 | 致命超时
+| | 6 | 超时代码。 请参阅下表。 | 超时代码上下文：端口数据 | 严重超时
 
-如果参数 1 的值为 8，参数 2 的值为 6，参数 3 是超时代码。 下表给出了超时代码的可能值。
+如果参数1的值为8，并且参数2的值为6，则参数3为超时代码。 下表中给出了超时代码的可能值。
 
 <table>
 <colgroup>
@@ -70,50 +70,50 @@ BUGCODE\_USB\_驱动程序 bug 检查的值为 0x000000FE。 这指示错误发�
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>失败恢复挂起的端口。</p></td>
+<td align="left"><p>恢复暂停的端口失败。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>超时等待重置，由客户端驱动程序，启动完成，然后挂起该端口。</p></td>
+<td align="left"><p>等待由客户端驱动程序启动的重置超时，在挂起端口前完成。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>3</p></td>
-<td align="left"><p>等待要完成恢复之前暂停它的端口时超时。</p></td>
+<td align="left"><p>等待端口完成恢复，然后再将其挂起。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>4</p></td>
-<td align="left"><p>等待要挂起端口之前禁用的端口更改状态机超时。</p></td>
+<td align="left"><p>等待在挂起端口之前禁用端口更改状态机超时。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>5</p></td>
-<td align="left"><p>等待完成的挂起端口请求超时。</p></td>
+<td align="left"><p>等待挂起端口请求完成时超时。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>6</p></td>
-<td align="left"><p>等待要禁用的端口更改状态机超时。</p></td>
+<td align="left"><p>等待禁用端口更改状态计算机时超时。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>7</p></td>
-<td align="left"><p>等待要关闭的端口更改状态机超时。</p></td>
+<td align="left"><p>等待端口更改状态机关闭时超时。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>8</p></td>
-<td align="left"><p>操作已超时等待中心继续从选择性挂起。</p></td>
+<td align="left"><p>等待集线器从选择性挂起状态恢复超时。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>9</p></td>
-<td align="left"><p>操作已超时等待中心继续从选择性挂起之前系统挂起。</p></td>
+<td align="left"><p>等待中心从选择性挂起恢复到系统挂起之前已超时。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>10</p></td>
-<td align="left"><p>等待端口更改状态机进入空闲状态时超时。</p></td>
+<td align="left"><p>等待端口更改状态机处于空闲状态时超时。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
  
  
 

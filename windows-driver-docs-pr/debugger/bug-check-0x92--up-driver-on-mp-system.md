@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x92 UP_DRIVER_ON_MP_SYSTEM
-description: UP_DRIVER_ON_MP_SYSTEM bug 检查具有 0x00000092 值。 此 bug 检查指示，已在多处理器系统上加载，仅限单处理器的驱动程序。
+description: UP_DRIVER_ON_MP_SYSTEM bug 检查的值为0x00000092。 此错误检查指示已在多处理器系统上加载仅限单处理器的驱动程序。
 ms.assetid: 1e26c7b1-bfa5-4a32-a483-5ce8179ac6b7
 keywords:
 - Bug 检查 0x92 UP_DRIVER_ON_MP_SYSTEM
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a1e930e56a24521527baafd42b33f167079f4b8c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: e1728ae9a95a4cddc65bf50694d3e6cbe414eaa7
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519122"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534580"
 ---
-# <a name="bug-check-0x92-updriveronmpsystem"></a>Bug 检查 0x92：UP\_DRIVER\_ON\_MP\_SYSTEM
+# <a name="bug-check-0x92-up_driver_on_mp_system"></a>Bug 检查0x92： \_ \_ \_ MP 系统上的驱动程序 \_
 
 
-向上\_驱动程序\_ON\_MP\_检查系统错误的值为 0x00000092。 此 bug 检查指示，已在多处理器系统上加载，仅限单处理器的驱动程序。
+\_ \_ MP 系统上的驱动程序 \_ \_ bug 检查的值为0x00000092。 此错误检查指示已在多处理器系统上加载仅限单处理器的驱动程序。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="updriveronmpsystem-parameters"></a>向上\_驱动程序\_ON\_MP\_系统参数
+## <a name="up_driver_on_mp_system-parameters"></a>\_ \_ MP 系统上的驱动程序 \_ \_ 参数
 
 
 <table>
@@ -40,7 +40,7 @@ ms.locfileid: "67519122"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -68,11 +68,11 @@ ms.locfileid: "67519122"
 <a name="cause"></a>原因
 -----
 
-已加载的驱动程序，编译若要仅在单处理器计算机上运行，但具有多个活动处理器的多处理器系统上运行 Microsoft Windows 操作系统。
+已编译为仅在单处理器计算机上使用的驱动程序已加载，但 Microsoft Windows 操作系统正在具有多个活动处理器的多处理器系统上运行。
 
  
-## <a name="resolution"></a>分辨率
-[ **！ 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)调试扩展显示有关错误检查的信息，有助于在确定根本原因。
+## <a name="resolution"></a>解决方法
+[**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
 
 

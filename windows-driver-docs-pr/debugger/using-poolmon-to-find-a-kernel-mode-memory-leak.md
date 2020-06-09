@@ -3,34 +3,34 @@ title: 使用 PoolMon 查找内核模式内存泄漏
 description: 使用 PoolMon 查找内核模式内存泄漏
 ms.assetid: 383b5d9a-3e99-4dc5-bce9-bd44f2ef1dc0
 keywords:
-- 内存泄漏，内核模式下 PoolMon
+- 内存泄漏，内核模式，PoolMon
 - PoolMon
 - PoolMon，查找内存泄漏
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 848b8e11bcd03bfa26161ff814dd034b3ffe8951
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6487d067042aab9835519579fdf0b552f566f1b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381020"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534750"
 ---
 # <a name="using-poolmon-to-find-a-kernel-mode-memory-leak"></a>使用 PoolMon 查找内核模式内存泄漏
 
 
-如果您怀疑内核模式内存泄漏，以确定哪个池标记为泄漏与相关联的最简单方法是使用 PoolMon 工具。
+如果怀疑存在内核模式内存泄漏，确定与该泄漏关联的池标记的最简单方法是使用 PoolMon 工具。
 
-PoolMon (Poolmon.exe) 监视器按池标记名称的池内存使用情况。 此工具包含 Windows Driver Kit (WDK) 中。 有关完整说明，请参阅[PoolMon](https://go.microsoft.com/fwlink/p/?linkid=122776) WDK 文档中。
+PoolMon （Poolmon）按池标记名称监视池内存使用情况。 此工具包含在 Windows 驱动程序工具包（WDK）中。 有关完整说明，请参阅 WDK 文档中的[PoolMon](https://docs.microsoft.com/windows-hardware/drivers/devtest/poolmon) 。
 
-### <a name="span-idenablepooltaggingwindows2000andwindowsxpspanspan-idenablepooltaggingwindows2000andwindowsxpspanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>启用池标记 （Windows 2000 和 Windows XP）
+### <a name="span-idenable_pool_tagging__windows_2000_and_windows_xp_spanspan-idenable_pool_tagging__windows_2000_and_windows_xp_spanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>启用池标记（Windows 2000 和 Windows XP）
 
-在 Windows 2000 和 Windows XP 首先必须使用 GFlags 启用池标记。 GFlags 包含在为 Windows 调试工具。 启动 GFlags、 选择**系统注册表**选项卡上，选中**启用池标记**框中，然后依次**应用**。 您必须重新启动 Windows 为此设置，才会生效。 有关更多详细信息，请参阅[GFlags](gflags.md)。
+在 Windows 2000 和 Windows XP 上，必须先使用 GFlags 来启用池标记。 GFlags 包含在 Windows 调试工具中。 启动 GFlags，选择 "**系统注册表**" 选项卡，选中 "**启用池标记**" 框，然后单击 "**应用**"。 您必须重新启动 Windows 才能使此设置生效。 有关更多详细信息，请参阅[GFlags](gflags.md)。
 
 在 Windows Server 2003 和更高版本的 Windows 上，始终启用池标记。
 
-### <a name="span-idusingpoolmonspanspan-idusingpoolmonspanusing-poolmon"></a><span id="using_poolmon"></span><span id="USING_POOLMON"></span>使用 PoolMon
+### <a name="span-idusing_poolmonspanspan-idusing_poolmonspanusing-poolmon"></a><span id="using_poolmon"></span><span id="USING_POOLMON"></span>使用 PoolMon
 
-PoolMon 标头显示总分页和非分页池字节数。 列显示为每个池标记的池中使用。 显示将自动更新每隔几秒。 例如：
+PoolMon 标头显示总页数和非分页池字节数。 列显示每个池标记的池使用情况。 显示将每隔几秒自动更新一次。 例如：
 
 ```dbgcmd
 Memory: 16224K Avail: 4564K PageFlts: 31 InRam Krnl: 684K P: 680K
@@ -45,7 +45,7 @@ Fat   Paged   6662  ( 8)  4971  ( 6)  1691   174560 ( 128)   103
 MmSt  Paged    614  ( 0)   441  ( 0)   173    83456   ( 0)   482 
 ```
 
-PoolMon 具有对根据各种条件的输出进行排序的命令键。 按每个命令，以便将数据重新排序与相关联的字母。 花费几秒钟时间来处理每个命令。
+PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与每个命令相关联的字母，以便对数据重新排序。 每个命令都需要几秒钟的时间。
 
 排序命令包括：
 
@@ -57,44 +57,44 @@ PoolMon 具有对根据各种条件的输出进行排序的命令键。 按每�
 <thead>
 <tr class="header">
 <th align="left">命令键</th>
-<th align="left">操作</th>
+<th align="left">Operation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>P</strong></p></td>
-<td align="left"><p>限制向非分页缓冲的池、 页面缓冲的池，或同时显示的标记。 重复按<strong>P</strong>循环通过每个选项，按该顺序。</p></td>
+<td align="left"><p>将显示的标记限制为非分页池、页面缓冲池或两者。 按顺序重复按下每个选项来重复按下<strong>P</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>B</strong></p></td>
-<td align="left"><p>对标记排序最大字节使用情况。</p></td>
+<td align="left"><p>按最大字节使用情况对标记排序。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>M</strong></p></td>
-<td align="left"><p>最大字节分配对标记排序。</p></td>
+<td align="left"><p>按最大字节分配对标记排序。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>T</strong></p></td>
-<td align="left"><p>标记名称按字母顺序排列的标记。</p></td>
+<td align="left"><p>按标记名的字母顺序对标记排序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>E</strong></p></td>
-<td align="left"><p>将导致显示在底部包含分页和非分页总计。</p></td>
+<td align="left"><p><strong>电邮</strong></p></td>
+<td align="left"><p>使显示器在底部包含分页和非分页的总计。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>A</strong></p></td>
-<td align="left"><p>对标记排序分配的大小。</p></td>
+<td align="left"><p>按分配大小对标记排序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>F</strong></p></td>
-<td align="left"><p>对标记排序可用操作。</p></td>
+<td align="left"><p><strong>果</strong></p></td>
+<td align="left"><p>按自由操作对标记排序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>S</strong></p></td>
-<td align="left"><p>对标记之间分配的差异进行排序，并释放。</p></td>
+<td align="left"><p><strong>些</strong></p></td>
+<td align="left"><p>按分配和释放之间的差异对标记排序。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Q</strong></p></td>
+<td align="left"><p><strong>：</strong></p></td>
 <td align="left"><p>退出 PoolMon。</p></td>
 </tr>
 </tbody>
@@ -102,27 +102,27 @@ PoolMon 具有对根据各种条件的输出进行排序的命令键。 按每�
 
  
 
-### <a name="span-idusingthepoolmonutilitytofindamemoryleakspanspan-idusingthepoolmonutilitytofindamemoryleakspanusing-the-poolmon-utility-to-find-a-memory-leak"></a><span id="using_the_poolmon_utility_to_find_a_memory_leak"></span><span id="USING_THE_POOLMON_UTILITY_TO_FIND_A_MEMORY_LEAK"></span>使用 PoolMon 实用程序以查找内存泄漏
+### <a name="span-idusing_the_poolmon_utility_to_find_a_memory_leakspanspan-idusing_the_poolmon_utility_to_find_a_memory_leakspanusing-the-poolmon-utility-to-find-a-memory-leak"></a><span id="using_the_poolmon_utility_to_find_a_memory_leak"></span><span id="USING_THE_POOLMON_UTILITY_TO_FIND_A_MEMORY_LEAK"></span>使用 PoolMon 实用工具查找内存泄漏
 
-若要查找内存泄漏 PoolMon 实用程序，请按照此过程操作：
+若要查找使用 PoolMon 实用工具的内存泄漏，请遵循以下过程：
 
-1.  启动 PoolMon。
+1.  开始 PoolMon。
 
-2.  如果已确定在非分页池发生泄漏，请按**P**一次; 如果已确定发生在页面缓冲池，请按**P**两次。 如果您不知道，不要按**P**以及包含这两种类型的池。
+2.  如果确定在非分页池内发生了泄漏，请按**P**一次;如果已确定它出现在页面缓冲池中，**请按两**次。 如果你不知道，请不要按**P** ，这两种类型的池都包括在内。
 
-3.  按**B**以最大字节使用排序显示。
+3.  按**B**按最大字节使用排序显示。
 
-4.  启动测试。 拍摄屏幕快照并将其复制到记事本。
+4.  开始测试。 拍摄屏幕截图，并将其复制到记事本。
 
-5.  需要一个新的屏幕截图半小时为单位。 通过比较屏幕截图，确定哪些标记的字节数不断增加。
+5.  每半小时拍摄一次新的屏幕快照。 通过比较屏幕截图，确定增加了哪些标记的字节。
 
-6.  停止你的测试并等待几个小时。 在标记中有多少已释放了在此时间内？
+6.  停止测试并等待几个小时。 此时间内释放了多少标记？
 
-通常情况下，应用程序达到一个稳定运行状态后，它会分配内存和可用内存大致相同的费率。 如果它往往不是将其释放更快地分配内存，内存使用量会随时间增加。 这通常指示内存泄漏。
+通常，在应用程序达到稳定运行状态后，它会以大致相同的速率分配内存和释放内存。 如果比释放内存的速度要快得多，则其内存使用将随着时间的推移而增加。 这通常指示内存泄漏。
 
-### <a name="span-idaddressingtheleakspanspan-idaddressingtheleakspanaddressing-the-leak"></a><span id="addressing_the_leak"></span><span id="ADDRESSING_THE_LEAK"></span>寻址泄漏
+### <a name="span-idaddressing_the_leakspanspan-idaddressing_the_leakspanaddressing-the-leak"></a><span id="addressing_the_leak"></span><span id="ADDRESSING_THE_LEAK"></span>解决泄漏
 
-确定哪个池标记为泄漏与相关联之后，这可能会显示所有需要了解有关泄漏。 如果您需要确定哪个特定的实例分配例程导致泄露，请参阅[使用内核调试器，以查找内核模式内存泄漏](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
+确定与该泄漏关联的池标记后，这可能会显示你需要了解的有关泄露的全部信息。 如果需要确定分配例程的哪个特定实例导致了泄漏，请参阅[使用内核调试器查找内核模式的内存泄漏](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe45892232bac37a9ff651403f31093490c7d25
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d37760a91048660b0f7e15b3bd90be41db83bbbf
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837654"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534716"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
 
@@ -28,22 +28,22 @@ ms.locfileid: "72837654"
 !ndiskd.rcvqueue [-handle <x>] [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>Parameters
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 接收队列的句柄。
 
-<span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-筛选器*   
+<span id="_______-filters______"></span><span id="_______-FILTERS______"></span>*-筛选器*   
 显示队列中的筛选器。
 
-<span id="_______-mem______"></span><span id="_______-MEM______"></span> *-mem*   
+<span id="_______-mem______"></span><span id="_______-MEM______"></span>*-mem*   
 显示共享内存分配。
 
-<span id="_______-verbose______"></span><span id="_______-VERBOSE______"></span> *-详细*   
+<span id="_______-verbose______"></span><span id="_______-VERBOSE______"></span>*-verbose*   
 显示其他详细信息。
 
-<span id="_______-rcvqueueverbosity______"></span><span id="_______-RCVQUEUEVERBOSITY______"></span> *-rcvqueueverbosity*   
+<span id="_______-rcvqueueverbosity______"></span><span id="_______-RCVQUEUEVERBOSITY______"></span>*-rcvqueueverbosity*   
 要显示的详细信息的级别。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -54,7 +54,7 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-若要获取接收队列句柄，请首先输入不带参数的[ **！ ndiskd**](-ndiskd-netadapter.md)命令，以查看网络适配器列表、驱动程序及其句柄。 在以下示例中，查找 Microsoft ISATAP 适配器 \#2 的 Get-netadapter 句柄 ffff8083e02ce1a0。
+若要获取接收队列句柄，请首先输入不带参数的[**！ ndiskd**](-ndiskd-netadapter.md)命令，以查看网络适配器列表、驱动程序及其句柄。 在以下示例中，查找 Microsoft ISATAP 适配器 \# 2 的 get-netadapter 句柄 ffff8083e02ce1a0。
 
 ```console
 3: kd> !ndiskd.netadapter
@@ -116,13 +116,13 @@ RECEIVE QUEUE
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[ **！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
  
 

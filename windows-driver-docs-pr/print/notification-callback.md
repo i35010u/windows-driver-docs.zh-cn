@@ -3,29 +3,25 @@ title: 通知回调
 description: 通知回调
 ms.assetid: cf884097-45a4-4ef3-8ebb-64c006838235
 keywords:
-- 后台处理程序通知 WDK 打印，回调
-- 打印后台处理程序通知 WDK、 回调
+- 后台处理程序通知 WDK 打印，回拨
+- 打印后台处理程序通知 WDK，回调
 - 通知回调 WDK 打印后台处理程序
 - IPrintAsyncNotifyCallback
 - 回调 WDK 后台处理程序通知
-ms.date: 04/20/2017
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e2a91ba3ad89ffd19c554853cf15ad49c68c46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8a7816c3d179f6cf364d158c0770e2b287f7bb6
+ms.sourcegitcommit: d71024c0c782b5c013192d960700802eafc120f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382850"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507104"
 ---
 # <a name="notification-callback"></a>通知回调
 
+对接收通知感兴趣的任何打印组件或侦听应用程序都必须提供公开[IPrintAsyncNotifyCallback](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback)接口的对象。 此接口继承自**IUnknown** ，以便后台处理程序通知机制的客户端可以实现 COM 或 c + + 对象。
 
-
-
-
-任何打印组件或侦听感兴趣接收通知的应用程序必须提供公开的对象[IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)接口。 接口继承自**IUnknown** ，以便客户端的后台处理程序通知机制可以实现或者 COM 或C++对象。
-
-侦听应用程序必须提供一个指向**IPrintAsyncNotifyCallback**接口时它会注册以接收通知。 通知发件人必须提供一个指向**IPrintAsyncNotifyCallback**如果感兴趣的响应，还会创建一个双向通道的接口。
+侦听应用程序在注册接收通知时，必须提供指向**IPrintAsyncNotifyCallback**接口的指针。 如果通知发件人对响应感兴趣并创建双向通道，则通知发件人必须提供指向**IPrintAsyncNotifyCallback**接口的指针。
 
 ```cpp
 #define INTERFACE IPrintAsyncNotifyCallback
@@ -36,21 +32,21 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyCallback, IUnknown)
         REFIID riid,
         void** ppvObj
         ) PURE;
- 
+
     STDMETHOD_(ULONG, AddRef)(
         THIS
         ) PURE;
- 
+
     STDMETHOD_(ULONG, Release)(
         THIS
         ) PURE;
- 
+
     STDMETHOD(OnEventNotify)(
          THIS_
  IN IPrintAsyncNotifyChannel*,
          IN IPrintAsyncNotifyDataObject*
          ) PURE;
- 
+
  STDMETHOD(ChannelClosed)(
          THIS_
          IN IPrintAsyncNotifyChannel*,
@@ -59,16 +55,8 @@ DECLARE_INTERFACE_(IPrintAsyncNotifyCallback, IUnknown)
 };
 ```
 
-当从一端的通道发送通知时，后台处理程序服务调用[IPrintAsyncNotifyCallback::OnEventNotify](https://go.microsoft.com/fwlink/p/?linkid=124757)来传递通知的通道另一端的方法。
+当从通道的一端发送通知时，后台处理程序服务会在通道的另一端调用[IPrintAsyncNotifyCallback：： OnEventNotify](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-iprintasyncnotifycallback-oneventnotify)方法来传送通知。
 
-在一个最终关闭时通知通道，后台处理程序服务调用[IPrintAsyncNotifyCallback::ChannelClosed](https://go.microsoft.com/fwlink/p/?linkid=124756)另一端地宣布在通道关闭的方法。 在通道关闭的原因是作为通知传递。
+当在一端关闭通知通道时，后台处理程序服务将调用另一端的[IPrintAsyncNotifyCallback：： ChannelClosed](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-iprintasyncnotifycallback-channelclosed)方法，以通告通道已关闭。 结束通道的原因将作为通知传递。
 
-如果服务器或侦听应用程序出现故障，后台处理程序断开代码检测到这种情况，并通过通知通道，它仍处于活动状态"仍处于活动状态"结束**IPrintAsyncNotifyCallback::ChannelClosed**调用，在该通知\_发布的消息传递。
-
- 
-
- 
-
-
-
-
+如果服务器或侦听应用程序停止，则后台处理程序断开代码会检测到这种情况，并且仍处于活动状态的通道的 "仍处于活动状态" 将通过**IPrintAsyncNotifyCallback：： ChannelClosed**调用（其中传递了通知 \_ 发布消息）通知。

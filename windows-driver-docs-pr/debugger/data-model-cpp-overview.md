@@ -1,37 +1,37 @@
 ---
-title: 调试器数据模型C++接口概述
-description: 本主题概述了用于扩展和自定义调试器C++功能的调试器数据模型接口。
+title: 调试器数据模型 c + + 接口概述
+description: 本主题概述了用于扩展和自定义调试器功能的调试器数据模型 c + + 接口。
 ms.date: 09/12/2019
-ms.openlocfilehash: b68998897980b48aa60ab2f0c60c691e5057803a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6022c3de0bbf12376403287e7b4e7a4a6e7a13a4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837808"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534492"
 ---
 # <a name="debugger-data-model-c-overview"></a>调试器数据模型 C++ 概述
 
-本主题概述了如何使用调试器数据模型C++接口来扩展和自定义调试器的功能。
+本主题概述了如何使用调试器数据模型 c + + 接口来扩展和自定义调试器的功能。
 
-本主题是一系列文章的一部分，其中描述了可C++从其访问的接口，如何使用C++它们来生成基于的调试器扩展，以及如何从C++数据模型扩展使用其他数据模型构造（例如： JavaScript 或 NatVis）.
+本主题是一系列文章的一部分，其中介绍了可从 c + + 访问的接口，如何使用它们来生成基于 c + + 的调试器扩展，以及如何从 c + + 数据模型扩展使用其他数据模型构造（例如： JavaScript 或 NatVis）。
 
-[调试器数据模型C++概述](data-model-cpp-overview.md)
+[调试器数据模型 C++ 概述](data-model-cpp-overview.md)
 
-[调试器数据模型C++接口](data-model-cpp-interfaces.md)
+[调试器数据模型 C++ 接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型C++对象](data-model-cpp-objects.md)
+[调试器数据模型 C++ 对象](data-model-cpp-objects.md)
 
-[调试器数据模型C++附加接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型 C++ 的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型C++概念](data-model-cpp-concepts.md)
+[调试器数据模型 C++ 的概念](data-model-cpp-concepts.md)
 
-[调试器数据模型C++脚本](data-model-cpp-scripting.md)
+[调试器数据模型 C++ 脚本](data-model-cpp-scripting.md)
 
 ---
 
-## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview"> 调试器数据模型C++接口概述
+## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview">调试器数据模型 c + + 接口概述
 
-调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 编写到数据模型 Api 的构造可用于调试器的较新（dx）表达式计算器以及 JavaScript 扩展或C++扩展。 
+调试器数据模型是一种可扩展的对象模型，它能够让新调试器扩展（包括 JavaScript、NatVis 和 C++ 中的扩展）使用来自调试器的信息并生成可从调试器及其他扩展访问的信息。 编写到数据模型 Api 的构造在调试器的较新（dx）表达式计算器中提供，也可从 JavaScript 扩展或 c + + 扩展中获取。 
 
 若要阐释调试器数据模型的目标，请考虑此传统的调试器命令。
 
@@ -45,7 +45,7 @@ PROCESS ffffe0007e6a7780
 ```
 调试器命令使用二进制掩码，并且仅以非标准方式提供文本输出。 文本输出难以使用、格式化或扩展，并且布局特定于此命令。
 
-将此与调试器数据模型[dx （显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)命令相比较。
+将此与调试器数据模型[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)命令相比较。
 
 ```console
 dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
@@ -55,7 +55,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 逻辑上命名对特定对象的间距和扩展允许发现调试器扩展功能。  
 
 > [!TIP]
-> 由于数据模型C++对象接口可以非常详细地为使用完全C++ C++异常和模板编程范例的数据模型实现完整的帮助程序库。 有关详细信息，请参阅本主题后面[的使用 DbgModelClientEx 库](#dbgmodelclientex)。
+> 由于数据模型 c + + 对象接口可以非常详细地实现使用完整 c + + 异常的数据模型的完整 c + + 帮助库，建议使用模板编程范例。 有关详细信息，请参阅本主题后面[的使用 DbgModelClientEx 库](#dbgmodelclientex)。
 >
 
 数据模型是新的[WinDbg 预览](debugging-using-windbg-preview.md)调试器显示大多数项目的方式。 可以查询、扩展或编写新 UI 中的许多元素，因为这些元素由数据模型提供支持。 有关详细信息，请参阅[WinDbg 预览-数据模型](windbg-data-model-preview.md)。
@@ -68,7 +68,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 下图汇总了调试器数据模型结构的主要元素。
 
 - 向左显示 UI 元素，这些元素提供对对象的访问，并支持 LINQ 查询等功能。  
-- 关系图的右侧是向调试器数据模型提供数据的组件。 这包括自定义 NatVis、JavaScript C++和调试器数据模型扩展。 
+- 关系图的右侧是向调试器数据模型提供数据的组件。 这包括自定义 NatVis、JavaScript 和 c + + 调试器数据模型扩展。 
 
 ![数据模型体系结构视图](images/data-model-simple-architectural-view.png)
 
@@ -116,18 +116,18 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 - 数据模型管理器充当所有对象的中央注册器。 
 - 左侧显示了如何注册标准调试器元素，如会话和进程。
 - 命名空间块显示中央注册列表。
-- 关系图的右侧显示两个提供程序，一个用于顶部有一个 NatVis，另一个是 CC++ /扩展。
+- 关系图的右侧显示了两个提供程序，一个用于顶部有一个 NatVis，另一个是 C/c + + 扩展。
 
 ![数据模型体系结构视图](images/data-model-manager.png)
 
 
-## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a>调试器数据模型接口 <span id="summary"> 摘要
+## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary">调试器数据模型接口摘要
 
-许多C++接口都包含不同的数据模型部分。 若要以一致且简单的方式来实现这些接口的方法，它们按常规类别细分。 主要区域如下： 
+许多 c + + 接口都包含不同的数据模型部分。 若要以一致且简单的方式来实现这些接口的方法，它们按常规类别细分。 主要区域如下： 
 
 **常规对象模型**
 
-第一组和最重要的接口定义如何访问核心数据模型，以及如何访问和操作对象。 IModelObject 是一个接口，它表示数据模型中的每个对象（ C#非常类似于对象）。 这是对数据模型的两个使用者和制造者都感兴趣的主要接口。 其他接口是用于访问对象的不同方面的机制。 为此类别定义以下接口： 
+第一组和最重要的接口定义如何访问核心数据模型，以及如何访问和操作对象。 IModelObject 是一个接口，它表示数据模型中的每个对象（非常类似于 c # 的对象）。 这是对数据模型的两个使用者和制造者都感兴趣的主要接口。 其他接口是用于访问对象的不同方面的机制。 为此类别定义以下接口： 
 
 
 *DbgEng 和数据模型之间的桥梁*
@@ -150,7 +150,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IRawEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-irawenumerator) 
 
-[IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
+[IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)   / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
 
 *概念接口*
 
@@ -177,7 +177,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 *常规数据模型管理器访问* 
 
-[IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager)  / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
+[IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager)   / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
 
 *脚本管理* 
 
@@ -198,11 +198,11 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostcontext) 
 
-[IDebugHostMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory)  / [IDebugHostMemory2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory2) 
+[IDebugHostMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory)   / [IDebugHostMemory2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory2) 
 
 [IDebugHostErrorSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosterrorsink) 
 
-[IDebugHostEvaluator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator)  / [IDebugHostEvaluator2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator2) 
+[IDebugHostEvaluator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator)   / [IDebugHostEvaluator2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator2) 
 
 [IDebugHostExtensibility](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostextensibility) 
 
@@ -210,11 +210,11 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostSymbols](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbols) 
 
-[IDebugHostSymbol](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol)  / [IDebugHostSymbol2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol2) 
+[IDebugHostSymbol](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol)   / [IDebugHostSymbol2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol2) 
 
 [IDebugHostModule](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmodule) 
 
-[IDebugHostType](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype)  / [IDebugHostType2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype2) 
+[IDebugHostType](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype)   / [IDebugHostType2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype2) 
 
 [IDebugHostConstant](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostconstant) 
 
@@ -222,7 +222,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostData](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostdata) 
 
-[IDebugHostBaseClass](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostbaseclass) 
+[IDebugHostBaseClass](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostbaseclass)  
 [IDebugHostPublic](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostpublic) 
 
 [IDebugHostModuleSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmodulesignature) 
@@ -274,13 +274,13 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
 
 
-## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a>使用 DbgModelClientEx 库 <span id="dbgmodelclientex">
+## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex">使用 DbgModelClientEx 库
 
 **概述**
 
-数据模型C++对象对数据模型的接口可能非常详细，无法实现。 尽管它们允许对数据模型进行完全操作，但它们要求实现大量的小接口以扩展数据模型（例如：为每个动态 fetchable 属性添加的 IModelPropertyAccessor 实现）。 除此之外，基于 HRESULT 的编程模型还添加了大量用于错误检查的样板印版代码。
+数据模型 c + + 对象接口到数据模型的接口可能非常详细，无法实现。 尽管它们允许对数据模型进行完全操作，但它们要求实现大量的小接口以扩展数据模型（例如：为每个动态 fetchable 属性添加的 IModelPropertyAccessor 实现）。 除此之外，基于 HRESULT 的编程模型还添加了大量用于错误检查的样板印版代码。
 
-为了最大限度地减少此项工作，可以使用完整C++的数据模型的帮助程序库，该库C++使用完整的异常和模板编程范例。 使用此库可以在使用或扩展数据模型时获得更简洁的代码。
+为了最大限度地减少其中的某些工作，使用完整的 c + + 异常和模板编程模式的数据模型有一个完整的 c + + 帮助程序库。 使用此库可以在使用或扩展数据模型时获得更简洁的代码。
 
 帮助程序库中有两个重要的命名空间：
 
@@ -293,9 +293,9 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 https://github.com/Microsoft/WinDbg-Libraries/tree/master/DbgModelCppLib
 
 
-**HelloWorld C++示例**
+**HelloWorld c + + 示例**
 
-若要查看如何使用 DbgModelClientEx 库，请查看此处的数据模型 HelloWorld C++示例。
+若要查看如何使用 DbgModelClientEx 库，请查看此处的数据模型 HelloWorld c + + 示例。
 
 https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
 
@@ -322,12 +322,12 @@ https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[调试器数据模型C++接口](data-model-cpp-interfaces.md)
+[调试器数据模型 C++ 接口](data-model-cpp-interfaces.md)
 
-[调试器数据模型C++对象](data-model-cpp-objects.md)
+[调试器数据模型 C++ 对象](data-model-cpp-objects.md)
 
-[调试器数据模型C++附加接口](data-model-cpp-additional-interfaces.md)
+[调试器数据模型 C++ 的其他接口](data-model-cpp-additional-interfaces.md)
 
-[调试器数据模型C++概念](data-model-cpp-concepts.md)
+[调试器数据模型 C++ 的概念](data-model-cpp-concepts.md)
 
-[调试器数据模型C++脚本](data-model-cpp-scripting.md)
+[调试器数据模型 C++ 脚本](data-model-cpp-scripting.md)

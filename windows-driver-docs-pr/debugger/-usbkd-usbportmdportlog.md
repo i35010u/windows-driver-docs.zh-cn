@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbportmdportlog
-description: USBPORT 调试日志，如果存在已生成的故障转储中 usbkd.usbportmdportlog 命令显示结果的 Bug 检查 0xFE。
+description: 如果 USBPORT 调试日志存在于 Bug 检查0xFE 所生成的故障转储中，则该命令将显示调试日志。
 ms.assetid: C0E32BDE-8186-4477-AB57-530B0AF6F27F
 keywords:
-- usbkd.usbportmdportlog Windows 调试
+- usbkd usbportmdportlog Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,36 +12,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 213152340406a3d87dd90b95901ab530f519a567
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbc3e3e9610c15a62a73a0384563ca7088a470c0
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327989"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534680"
 ---
 # <a name="usbkdusbportmdportlog"></a>!usbkd.usbportmdportlog
 
 
-**！ Usbkd.usbportmdportlog**命令显示 USBPORT 调试日志，如果它为生成的故障转储中存在[ **Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)。
+如果 USBPORT 调试日志存在于因[**Bug 检查 0xFE**](bug-check-0xfe--bugcode-usb-driver.md)生成的故障转储中 **，则该命令将**显示调试日志。
 
 ```dbgcmd
 !usbkd.usbportmdportlog
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-使用此命令仅在调试时为生成的崩溃转储文件[ **Bug 检查 0xFE:BUGCODE\_USB\_驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)。
+仅当调试因[**Bug 检查0xFE： BUGCODE \_ USB \_ 驱动程序**](bug-check-0xfe--bugcode-usb-driver.md)而生成的故障转储文件时，才使用此命令。
 
 <a name="examples"></a>示例
 --------
 
-下面是示例的输出的一部分 **！ usbportmdportlog**。
+下面是 **！ usbportmdportlog**的输出部分的示例。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -107,12 +107,12 @@ Minidump USBPORT DEBUG_LOG buffer size 32768, entries 1024, index 400
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

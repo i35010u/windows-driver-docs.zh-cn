@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_deviceslots
-description: Usb3kd.xhci_deviceslots 扩展显示有关连接到 USB 3.0 主控制器的设备的信息。
+title: usb3kd xhci_deviceslots
+description: Xhci_deviceslots usb3kd 扩展显示有关连接到 USB 3.0 主机控制器的设备的信息。
 ms.assetid: 471167EA-F7F8-470D-B09C-8627C5BE9566
 keywords:
-- usb3kd.xhci_deviceslots Windows 调试
+- usb3kd xhci_deviceslots Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,50 +12,50 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ce2c4b1bd84d16f3169c365e79c6389c30e6646
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 098d97a4f07301b7962c66376e4f80bf74bdee24
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335632"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534122"
 ---
-# <a name="usb3kdxhcideviceslots"></a>!usb3kd.xhci\_deviceslots
+# <a name="usb3kdxhci_deviceslots"></a>！ usb3kd. xhci \_ deviceslots
 
 
-[ **！ Usb3kd.xhci\_deviceslots** ](-usb3kd-device-info.md)扩展显示有关连接到 USB 3.0 主控制器的设备的信息。
+[**！ Usb3kd. xhci \_ deviceslots**](-usb3kd-device-info.md)扩展显示有关连接到 USB 3.0 主机控制器的设备的信息。
 
 ```dbgcmd
 !usb3kd.xhci_deviceslots DeviceExtension [SlotNumber] [verbose]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-适用于主机控制器的功能的设备对象 (FDO) 的设备扩展的地址。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
+主机控制器的功能设备对象的设备扩展（FDO）的地址。
 
-<span id="_______SlotNumber______"></span><span id="_______slotnumber______"></span><span id="_______SLOTNUMBER______"></span> *SlotNumber*   
-要显示的设备的插槽数。 如果省略此参数，则将显示所有设备。
+<span id="_______SlotNumber______"></span><span id="_______slotnumber______"></span><span id="_______SLOTNUMBER______"></span>*SlotNumber*   
+要显示的设备的插槽号。 如果省略此参数，则显示所有设备。
 
-<span id="_______verbose______"></span><span id="_______VERBOSE______"></span> **verbose**   
-显示为 verbose。
+<span id="_______verbose______"></span><span id="_______VERBOSE______"></span>**详细**   
+显示详细。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-输出 **！ xhci\_deviceslots**命令基于 USB 3.0 主机控制器驱动程序 (UsbXhci.sys) 维护的数据结构。 有关 USB 3.0 主机控制器驱动程序和 USB 堆栈中的其他驱动程序的详细信息，请参阅[USB 驱动程序堆栈体系结构](https://go.microsoft.com/fwlink/p?LinkID=251983)。
+输出 **！ xhci \_ deviceslots**命令基于 USB 3.0 主机控制器驱动程序（UsbXhci .sys）维护的数据结构。 有关 usb 3.0 主机控制器驱动程序和 USB stack 中其他驱动程序的详细信息，请参阅[Usb 驱动程序堆栈体系结构](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)。
 
-USB 3.0 主机控制器驱动程序维护数据结构表示连接到控制器的设备的列表。 这些数据结构的每个标识的插槽编号。
+USB 3.0 主机控制器驱动程序维护表示连接到控制器的设备的数据结构列表。 其中每个数据结构都由槽编号标识。
 
 <a name="examples"></a>示例
 --------
 
-若要获取设备扩展的地址，请查看的输出[ **！ xhci\_dumpall** ](-usb3kd-xhci-dumpall.md)命令。 在以下示例中，设备扩展的地址是 0xfffffa800536e2d0。
+若要获取设备扩展的地址，请查看[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)命令的输出。 在以下示例中，设备扩展的地址为0xfffffa800536e2d0。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -75,7 +75,7 @@ USB 3.0 主机控制器驱动程序维护数据结构表示连接到控制器的
     ...
 ```
 
-现在可以将传递到设备扩展的地址 **！ usb3kd.xhci\_deviceslots**命令。
+现在可以将设备扩展的地址传递给 **！ usb3kd. xhci \_ deviceslots**命令。
 
 ```dbgcmd
 3: kd> !xhci_deviceslots 0xfffffa800536e2d0
@@ -122,14 +122,14 @@ DeviceContextBase: VA 0xfffffa8005ab9000 LA 0x1168b9000 !wdfcommonbuffer 0x57ffa
     ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 3.0 扩展](usb-3-extensions.md)
 
-[**!xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**！ xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

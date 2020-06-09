@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fbf2e1d8b275949a4b7e5d675077c42a1ddc7caa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d2856dc43389d6096bd818a0410d75a017672dd7
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826563"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534188"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
 
@@ -31,19 +31,19 @@ ms.locfileid: "72826563"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-handle*   
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 引用计数块的句柄。
 
-<span id="_______-tagtype______"></span><span id="_______-TAGTYPE______"></span> *-tagtype*   
+<span id="_______-tagtype______"></span><span id="_______-TAGTYPE______"></span>*-tagtype*   
 标记的枚举类型。
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-堆栈*   
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span>*-堆栈*   
 包括堆栈跟踪（如果可用）。
 
-<span id="_______-tag______"></span><span id="_______-TAG______"></span> *-标记*   
+<span id="_______-tag______"></span><span id="_______-TAG______"></span>*-tag*   
 限制显示单个标记。
 
-<span id="_______-refdebug______"></span><span id="_______-REFDEBUG______"></span> *-refdebug*   
+<span id="_______-refdebug______"></span><span id="_______-REFDEBUG______"></span>*-refdebug*   
 显示详细的调试日志（如果可用）。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -53,7 +53,7 @@ Ndiskd
 <a name="examples"></a>示例
 --------
 
-下面的示例将 NDIS 微型端口驱动程序的句柄传递给 **！ ndiskd ndisref**扩展，以显示该驱动程序的引用计数块。 首先，不使用参数运行[ **！ ndiskd**](-ndiskd-minidriver.md) ，以查看系统上所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序 ffffdf801418d650 的句柄。
+下面的示例将 NDIS 微型端口驱动程序的句柄传递给 **！ ndiskd ndisref**扩展，以显示该驱动程序的引用计数块。 首先，不使用参数运行[**！ ndiskd**](-ndiskd-minidriver.md) ，以查看系统上所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序 ffffdf801418d650 的句柄。
 
 ```console
 3: kd> !ndiskd.minidriver
@@ -104,13 +104,13 @@ REFCOUNT BLOCK
 
 [Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[调试网络堆栈](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
 
-[ **！ ndiskd。帮助**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[ **！ ndiskd. 微型驱动程序**](-ndiskd-minidriver.md)
+[**!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
  
 

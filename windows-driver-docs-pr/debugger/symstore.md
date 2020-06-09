@@ -3,17 +3,17 @@ title: SymStore
 description: SymStore
 ms.assetid: acc7bf3a-62ea-4c93-843e-b81d4f71555f
 keywords:
-- SymStore 功能
+- SymStore，功能
 - SymStore，使用
-- 符号存储区，SymStore (symstore.exe)
+- 符号存储，SymStore （SymStore）
 ms.date: 03/27/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e22cad6b6b3bd3967a8b3148bbee3dcb73935653
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 46c8feeeac0d3c7a1b7e42a2d143f162bb11de47
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383003"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534288"
 ---
 # <a name="symstore"></a>SymStore
 
@@ -21,17 +21,17 @@ ms.locfileid: "63383003"
 ## <span id="ddk_using_symstore_dbg"></span><span id="DDK_USING_SYMSTORE_DBG"></span>
 
 
-SymStore (symstore.exe) 是用于创建符号存储区的工具。 它包含在调试工具的 Windows 中。 有关详细信息，请参阅[的 Windows 中下载调试的工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)。
+SymStore （SymStore）是用于创建符号存储区的工具。 它包含在适用于 Windows 的调试工具中。 有关详细信息，请参阅[下载适用于 Windows 的调试工具](debugger-download-tools.md)。
 
-SymStore 使调试器能够查找基于时间戳和大小的图像 （.dbg 或可执行文件） 或签名和期限 （用于.pdb 文件） 的符号的格式存储的符号。 在符号存储区对传统符号存储格式的优点是，可以存储或在同一台服务器上引用并且无需任何事先了解调试器来检索所有符号的哪一种产品包含相应的符号。
+SymStore 以一种格式存储符号，使调试器可以根据图像的时间戳和大小（dbg 或可执行文件）或签名和 age （对于 .pdb 文件）来查找符号。 符号存储区与传统符号存储格式的优点是，可以在同一台服务器上存储或引用所有符号，并由调试器检索，而不需要事先了解哪些产品包含相应的符号。
 
-请注意，不能在同一服务器上存储多个版本的.pdb 符号文件 （例如，公共和专用版本），这是因为它们每个包含相同的签名和年龄。
+请注意，不能在同一服务器上存储 .pdb 符号文件的多个版本（例如，公共版本和私有版本），因为它们每个版本都包含相同的签名和生存期。
 
-本部分包括：
+本节包括：
 
 [SymStore 事务](symstore-transactions.md)
 
-[文件系统引用和符号文件](file-system-references-and-symbol-files.md)
+[文件系统参考和符号文件](file-system-references-and-symbol-files.md)
 
 [SymStore 压缩文件](symstore-compressed-files.md)
 

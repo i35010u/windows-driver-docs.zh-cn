@@ -4,12 +4,12 @@ description: 词汇表页面-A
 ms.assetid: ef7fa08b-0eed-4ef9-8b2f-79247e2ad988
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 370ba9483bc05b97d38506e87632ce644eba05e7
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: 81d2155f831b59efa0a4c4c1baef1e290dbbb15e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387024"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533962"
 ---
 # <a name="a"></a>A
 
@@ -27,7 +27,7 @@ ms.locfileid: "70387024"
 <span id="arbitrary_exception_filter"></span><span id="ARBITRARY_EXCEPTION_FILTER"></span>**任意异常筛选器**  
 已手动添加到事件筛选器的引擎列表的异常筛选器。
 
-另请参阅[特定异常筛选器](https://docs.microsoft.com/windows-hardware/drivers/debugger/specific-exceptions)。
+另请参阅[特定异常筛选器](specific-exceptions.md)。
 
 有关详细信息，请参阅[事件筛选器](event-filters.md)。
 

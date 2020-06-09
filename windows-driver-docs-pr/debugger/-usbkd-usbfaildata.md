@@ -1,9 +1,9 @@
 ---
 title: usbkd.usbfaildata
-description: Usbkd.usbfaildata 命令显示有关 USB 设备存储的故障数据 （如果有）。
+description: Usbkd. usbfaildata 命令显示为 USB 设备存储的故障数据（如果有）。
 ms.assetid: 08FD3F82-73E3-4616-92EB-D562ECAB8A96
 keywords:
-- usbkd.usbfaildata Windows 调试
+- usbkd usbfaildata Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55fdb43933f08d4ae24f466a86e3fbc99a74d167
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 743172ae48fef183451ef390d2e3d8d276a6739e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334114"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534024"
 ---
 # <a name="usbkdusbfaildata"></a>!usbkd.usbfaildata
 
 
-**！ Usbkd.usbfaildata**命令显示有关 USB 设备存储的故障数据 （如果有）。
+**！ Usbkd. usbfaildata**命令显示为 USB 设备存储的故障数据（如果有）。
 
 ```dbgcmd
 !usbkd.usbfaildata PDO
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
 
 
-<span id="_______PDO______"></span><span id="_______pdo______"></span> *PDO*   
-连接到 USB 集线器的设备的物理设备对象 (PDO) 的地址。
+<span id="_______PDO______"></span><span id="_______pdo______"></span>*PDO*   
+连接到 USB 集线器的设备的物理设备对象（PDO）的地址。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd.dll
+Usbkd
 
 <a name="examples"></a>示例
 --------
 
-下面是一种方法，若要查找的是 PDO USB 设备的地址。 输入[ **！ usbkd.usb2tree**](-usbkd-usb2tree.md)。
+下面是查找 USB 设备的 PDO 地址的一种方法。 输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
  kd> !usbkd.usb2tree
@@ -55,16 +55,16 @@ Usbkd.dll
 ...
 ```
 
-在上面的输出，显示作为建议命令的参数的地址 PDO **！ devstack ffffe00007c882a0**。
+在上面的输出中，PDO 的地址显示为建议命令的参数 **！ devstack ffffe00007c882a0**。
 
-现在将传递给 PDO 的地址 **！ usbkd.usbfaildata**。
+现在，将 PDO 的地址传递给 **！ usbkd. usbfaildata**。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线 (USB) 驱动程序](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 87f44bc8d3187233831bd87e5440515758d41131
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: 9d18dd3f24300037011dc615ae61814ddae10d73
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359586"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534576"
 ---
-# <a name="bug-check-0xd1-driver_irql_not_less_or_equal"></a>Bug 检查0xD1：驱动 \_IRQL \_NOT \_LESS \_OR \_EQUAL
+# <a name="bug-check-0xd1-driver_irql_not_less_or_equal"></a>Bug 检查0xD1：驱动程序 \_ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于
 
 
-驱动程序 \_IRQL \_NOT \_LESS \_OR \_EQUAL bug 检查的值都为0x000000D1。 这表示内核模式驱动程序尝试在进程 IRQL 太高时访问可分页内存。 
+驱动程序 \_ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于 Bug 检查的值为0x000000D1。 这表示内核模式驱动程序尝试在进程 IRQL 太高时访问可分页内存。 
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="driver_irql_not_less_or_equal-parameters"></a>驱动 \_IRQL \_NOT \_LESS \_OR \_EQUAL 参数
+## <a name="driver_irql_not_less_or_equal-parameters"></a>驱动程序 \_ IRQL \_ 不 \_ 小于 \_ 或 \_ 等于参数
 
 <table>
 <colgroup>
@@ -39,7 +39,7 @@ ms.locfileid: "72359586"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -71,15 +71,15 @@ ms.locfileid: "72359586"
 <a name="cause"></a>原因
 -----
 
-通常情况下，当发生此错误时，驱动程序尝试访问在中断请求级别（IRQL）过高时可分页（或完全无效）的地址。 这可能是以下原因引起的：
+通常情况下，当发生此错误时，驱动程序尝试访问在中断请求级别（IRQL）过高时可分页（或完全无效）的地址。 这可能是由于：
 
- - 在或更高版本的 DISPATCH_LEVEL 执行时取消引用错误指针（如 NULL 或释放指针）。
+ - 在 DISPATCH_LEVEL 或更高版本中执行时取消引用错误指针（如 NULL 或释放指针）。
 
- - 访问 DISPATCH_LEVEL 或更高版本的可分页数据。
+ - 访问 DISPATCH_LEVEL 的或更高版本的可分页数据。
 
- - 正在 DISPATCH_LEVEL 或更高版本上执行可分页代码。
+ - 在 DISPATCH_LEVEL 或更高版本上执行可分页代码。
 
-如果可以识别负责错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的位置（PUNICODE \_STRING） **KiBugCheckDriver**。 可以使用[ **dx** （显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)和调试器命令来显示以下内容： **dx KiBugCheckDriver**。
+如果可以识别负责错误的驱动程序，则其名称将打印在蓝屏上，并存储在内存中的位置（PUNICODE \_ 字符串） **KiBugCheckDriver**。 可以使用[ **dx** （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)和调试器命令来显示以下内容： **dx KiBugCheckDriver**。
 
 此 bug 检查通常是由于使用了不正确的内存地址的驱动程序引起的。
 
@@ -92,12 +92,12 @@ ms.locfileid: "72359586"
 - 此函数是通过使用无效指针的函数指针调用的。
 
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
 如果此问题是由您正在开发的驱动程序引起的，请确保在 bug 检查时执行的函数是（1）未标记为可分页，或者（2）不调用任何其他可以分页的内联函数。
 
-[ **！分析**](-analyze.md)调试器扩展显示有关 bug 检查的信息，可帮助确定根本原因。 下面的示例是来自 **！分析**的输出。
+[**！分析**](-analyze.md)调试器扩展显示有关 bug 检查的信息，可帮助确定根本原因。 下面的示例是来自 **！分析**的输出。
 
 ```dbgcmd
 DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)
@@ -116,7 +116,7 @@ Arg4: fffff808adc386a6, address which referenced memory
 
 若要开始调试此类 bug 检查，请使用[ **k**、 **kb**、 **Glm-kc-qnw**、 **kd**、 **kp**、 **kp**、 **kv** （显示 stack backtrace）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令检查堆栈跟踪。
 
-在调试器中，运行[ **！！ irql**](-irql.md)命令以显示有关在调试器中断之前目标计算机上的处理器的 irql 的信息。 例如：
+在调试器中，运行[**！！ irql**](-irql.md)命令以显示有关在调试器中断之前目标计算机上的处理器的 irql 的信息。 例如：
 
 ```dbgcmd
 0: kd> !irql
@@ -129,13 +129,13 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 
 使用参数4的[ **ln** （列表最接近的符号）](ln--list-nearest-symbols-.md)来查看调用的函数的名称。 另外，请检查 **！分析**输出，查看是否确定了错误代码。
 
-使用参数1的 " [ **！ pool**](-pool.md) " 地址，查看其是否为页面缓冲池。 使用[ **！ address**](-address.md)和 advanced [ **！ pte**](-pte.md)命令了解有关此内存区域的详细信息。
+使用参数1的 " [**！ pool**](-pool.md) " 地址，查看其是否为页面缓冲池。 使用[**！ address**](-address.md)和 advanced [**！ pte**](-pte.md)命令了解有关此内存区域的详细信息。
 
 使用 "[显示内存](-db---dc---dd---dp---dq---du---dw.md)" 命令检查参数1的命令中引用的内存。
 
 使用[ **u**， **ub**， **uu** （unassemble）](u--unassemble-.md)命令查看地址中引用参数4中的内存的代码。
 
-使用命令 `lm t n` 列出加载到内存中的模块。 使用[ **！ memusage**](-memusage.md)和检查系统内存的一般状态。 
+使用命令 `lm t n` 列出在内存中加载的模块。 使用[**！ memusage**](-memusage.md)和检查系统内存的一般状态。 
 
 
 ### <a name="driver-verifier"></a>驱动程序验证程序
@@ -145,7 +145,7 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 若要启动驱动程序验证程序管理器，请在命令提示符下键入**Verifier** 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试验证尽可能少的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
 如果你不具备使用 Windows 调试器来处理此问题，则可以使用一些基本的故障排除技术。
