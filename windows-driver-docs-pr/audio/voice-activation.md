@@ -4,12 +4,12 @@ description: Cortana，Windows 语音平台用于为 Windows 10 中的所有语�
 ms.assetid: 0684EF32-AA76-418B-9027-1C067A8140E3
 ms.date: 05/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a38bdba67462925d53aa5088f7a700f0e23192be
-ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
+ms.openlocfilehash: 873381ce16fcac9d724d1f07db38506e4e03f6ff
+ms.sourcegitcommit: 8097a09d2f989a9b3dca250c4e2ffd4cec2172e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435367"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84563171"
 ---
 # <a name="voice-activation"></a>语音激活
 
@@ -36,7 +36,7 @@ Cortana，在2013中的 Microsoft BUILD 开发人员大会首次演示了个人�
 
 **"你好 Cortana" 语音激活**
 
-使用 "你好 Cortana" 语音激活（VA）功能，用户可以通过使用他/她的语音来快速在其活动的上下文（即，当前在屏幕上）上使用 Cortana 体验。 用户经常希望能够立即访问体验，而无需对设备进行物理交互。 对于电话用户，这可能是因为在汽车中推动并密切关注运营车。 对于 Xbox 用户，这可能是由于找不到并连接控制器。 对于 PC 用户，这可能是因为快速访问体验，而无需执行多个鼠标、触控和/或键盘操作，例如厨房中的计算机。
+使用 "你好 Cortana" 语音激活（VA）功能，用户可以通过语音在活动上下文之外（即，当前在屏幕上）快速进行 Cortana 体验。 用户经常希望能够立即访问体验，而无需对设备进行物理交互。 对于电话用户，这可能是因为在汽车中推动并密切关注运营车。 对于 Xbox 用户，这可能是由于找不到并连接控制器。 对于 PC 用户，这可能是因为快速访问体验，而无需执行多个鼠标、触控和/或键盘操作，例如厨房中的计算机。
 
 语音激活提供始终通过预定义的关键短语或 "激活短语" 来侦听语音输入。 关键短语可能会自行失措（"你好 Cortana"）作为暂存命令，也可后跟语音操作，例如，"你好 Cortana，其中是下一会议？"，它是一个链式命令。
 
@@ -79,7 +79,7 @@ Microsoft 提供了 OS default 关键字 spotter （software 关键字 spotter�
 | HW KWS                | 硬件卸载关键字 spotter –在硬件上运行的 KWS 的实现。 |
 |突发缓冲区           | 一种用于存储在 KWS 检测时可以 "bursted" 的 PCM 数据的循环缓冲区，因此包括触发 KWS 检测的所有音频。 |
 |关键字检测器 OEM 适配器 |一种驱动程序级别填充程序，使支持 WoV 的 HW 能够与 Windows 和 Cortana 堆栈进行通信。 |
-|“模型” | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
+|型号 | KWS 算法使用的声音模型数据文件。 数据文件为静态。 模型已本地化，每个区域设置一个。|
 
 ## <a name="span-idimplementing_voice_activationspanspan-idimplementing_voice_activationspanspan-idimplementing_voice_activationspanintegrating-a-hardware-keyword-spotter"></a><span id="Implementing_Voice_Activation"></span><span id="implementing_voice_activation"></span><span id="IMPLEMENTING_VOICE_ACTIVATION"></span>集成硬件关键字 Spotter
 
@@ -265,11 +265,11 @@ OEM DLL 开发人员决定如何管理独立于用户的数据和用户相关数
 </tr>
 <tr class="even">
 <td align="left"><strong>模式</strong></td>
-<td align="left">原始</td>
+<td align="left">Raw</td>
 <td align="left">Raw 或语音</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>附加</strong></td>
+<td align="left"><strong>引脚</strong></td>
 <td align="left">一般</td>
 <td align="left">KWS</td>
 </tr>
