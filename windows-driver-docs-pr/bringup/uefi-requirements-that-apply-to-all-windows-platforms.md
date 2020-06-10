@@ -2,14 +2,14 @@
 title: SoC 平台上 Windows 的 UEFI 要求
 description: 本主题介绍适用于 Windows 10 （家庭版、专业版、企业版和教育版）和 Windows 10 移动版的 UEFI 要求。
 ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
-ms.date: 05/26/2020
+ms.date: 06/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f670f5646a923e7d3deceb6080f15a4cfd2765
-ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
+ms.openlocfilehash: 841ccc8507bc56c20ed73c8bb2320af669c93416
+ms.sourcegitcommit: 88f6e7355de9e0714057020557dc8c7831e90e7b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122697"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84638447"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
 
@@ -23,7 +23,7 @@ Microsoft 欢迎您对此组要求的实施人员提供反馈和意见。 对于
 
 有关特定要求的详细信息，请参阅表后面的部分。
 
-| 要求                               | UEFI 规范部分 | 备注                          |
+| 要求                               | UEFI 规范部分 | 说明                          |
 |-------------------------------------------|----------------------------|--------------------------------|
 | **EFI 系统表**                      | 4.3                        | 显式 Windows 要求   |
 | **EFI 启动服务**                     | 6.0                        |                                |
@@ -263,7 +263,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 </colgroup>
 <thead>
 <tr class="header">
-<th>区域</th>
+<th>领域</th>
 <th>要求</th>
 </tr>
 </thead>
@@ -294,7 +294,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>要求10：可选。 OEM 可以为物理上的用户实现此功能，使其能够使用 PK<em><sub>特权</sub></em>访问或通过固件设置物理状态关闭安全启动。 可以通过特定于平台的方法（管理员密码、智能卡、静态配置等）来保护对固件设置的访问。</p></li>
 <li><p>要求11：实现要求10时是必需的。 如果关闭安全引导，则所有现有 UEFI 变量都不应访问。</p></li>
 <li><p>要求12：可选。 OEM 可以为物理上的用户实现在固件设置中选择两种安全启动模式的功能： "自定义" 和 "标准"。 自定义模式允许更灵活，如以下所示。</p></li>
-<li><p>要求13：如果实现了要求12，则为必需。 可以通过设置特定于所有者的<em>PK</em>，在自定义模式下重新启用禁用的安全启动。 管理应按照 UEFI 规范（2.3.1：固件/OS 密钥交换）的27.5 节中的定义继续进行。 在自定义模式下，设备所有者可以在签名数据库中设置其选择的签名。</p></li>
+<li><p>要求13：如果实现了要求12，则为必需。 可以通过设置特定于所有者的<em>PK</em>，在自定义模式下重新启用禁用的安全启动。 管理应按照 UEFI 规范（2.3.1：固件/OS 密钥交换）的27.5 节中的定义继续进行。 在自定义模式下，设备所有者可以在签名数据库中设置他们选择的签名。</p></li>
 <li><p>要求14：如果实现了要求12，则为必需。 固件设置应指出是否启用了安全启动，以及是否在标准或自定义模式下操作。 固件设置应提供一个选项，以从自定义模式返回到标准模式。</p></li>
 <li><p>要求15：必填。 如果固件设置被重置为出厂默认值，则应删除所有自定义集的受保护的变量，并且应与原始的制造商预配的签名数据库一起重新建立原始 PK<em><sub>pub</sub></em> 。</p></li>
 <li><p>要求16：必填。 驱动程序签名应使用 Authenticode 选项（WIN_CERT_TYPE_PKCS_SIGNED_DATA）。</p></li>
@@ -322,7 +322,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 </ul></td>
 </tr>
 <tr class="even">
-<td>加密</td>
+<td>密码</td>
 <td><ul>
 <li><p>要求25：强制。 平台应提供用于卸载加密哈希操作的 EFI_HASH_PROTOCOL （UEFI v1.0 第27.4 节）。 必须支持 SHA-256。</p></li>
 <li><p>要求26：必填。 平台应支持 Microsoft 定义的<a href="uefi-entropy-gathering-protocol.md" data-raw-source="[EFI_RNG_PROTOCOL](uefi-entropy-gathering-protocol.md)">EFI_RNG_PROTOCOL</a> ，以进行 OS 预操作系统读取。</p></li>

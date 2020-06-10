@@ -4,31 +4,27 @@ description: 处理可安装的功能和选项
 ms.assetid: b970808f-55bd-4a3a-9464-c9cd3567fa6f
 keywords:
 - Unidrv，可安装的功能和选项
-- 可安装的功能和选项 WDK Unidrv
-- GPD 文件 WDK Unidrv，可安装的功能和选项
+- 可安装功能和选项 WDK Unidrv
+- GPD 文件 WDK Unidrv，可安装功能和选项
 - Unidrv WDK 打印
-ms.date: 04/20/2017
+ms.date: 06/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e470708dcfba3f2b5ef7256eecf36f574faa170
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d9bc895385a652bc7f3f5f1c036b084eef0bb326
+ms.sourcegitcommit: 88f6e7355de9e0714057020557dc8c7831e90e7b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360537"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84638439"
 ---
 # <a name="handling-installable-features-and-options"></a>处理可安装的功能和选项
 
+打印机的某些功能或选项可能是可安装的。 例如，打印机可能会接受可选的信封进纸器，这可能是当前无法连接的。 必须通过两种方式在 GPD 文件中描述此信封进纸器：
 
+- 作为 InputBin 功能的一个选项。
 
+- 作为可安装的 "功能" （即使它确实是选项），这使用户能够指示它是否已实际安装。
 
-
-某些打印机的功能或选项可能是可安装。 例如，打印机可以接受可选信封进纸器，这可能会或可能不当前连接。 此信封进纸器必须在两种方式 GPD 文件中所述：
-
--   作为一个选项来 InputBin 功能。
-
--   作为一个可安装的"功能"（即使它实际上是一个选项），它允许用户在以指示是否实际安装。
-
-首先，要指定信封进纸器，以及一个自动送纸器，为 InputBin 功能选项，可以使用以下 GPD 条目。
+首先，若要将信封进纸器与自动送纸器一起指定为 InputBin 功能的选项，可以使用以下 GPD 条目。
 
 ```cpp
 *Feature: InputBin
@@ -47,7 +43,7 @@ ms.locfileid: "63360537"
 }
 ```
 
-若要使可安装信封进纸器，其他 GPD 条目所需，按如下所示：
+若要使信封送纸器可安装，需要额外的 GPD 条目，如下所示：
 
 ```cpp
 *InstalledOptionName: "Installed"
@@ -70,21 +66,21 @@ ms.locfileid: "63360537"
 }
 ```
 
-在\*选项条目已添加信封进纸器，两个属性：
+\*信封进纸器的选项条目中添加了两个属性：
 
--   \*可安装？ 属性指示是否可安装选项。
+- " \* 可安装的？" 属性表示选项是可安装的。
 
--   \*InstallableFeatureName 属性指定 Unidrv 显示，以便用户可以指示是否实际安装选项的文本字符串。
+- \*InstallableFeatureName 属性指定 Unidrv 显示的文本字符串，以使用户能够指示该选项是否已实际安装。
 
-每当 **\*可安装？** 设置为**TRUE** Unidrv 功能或选项，创建另一项功能以显示属性表。 （请注意，即使可安装的项是一个选项，Unidrv 功能表示为其创建属性表中。）此 Unidrv 合成功能由使用提供的字符串 **\*InstallableFeatureName**。 该功能提供了两个选项:"已安装"和"未安装"，并允许用户选择以下选项之一。 使用指定字符串"安装"和"未安装" \*InstalledOptionName 和\*NotInstalledOptionName 属性，以便更适合其他文本是否可以修改它们。
+每当功能或选项的** \* "可安装"** 设置为**TRUE**时，Unidrv 会为属性表显示创建附加功能。 （请注意，即使可安装项目是一个选项，Unidrv 也会在属性表中为其创建一个特征表示形式。）此 Unidrv 合成功能由** \* InstallableFeatureName**提供的字符串标识。 此功能提供了两个选项： "已安装" 和 "未安装"，并允许用户选择其中一个选项。 将 "已安装" 和 "未安装" 的字符串指定为 \* InstalledOptionName 和 \* NotInstalledOptionName 属性，以便您可以修改它们（如果其他文本更合适）。
 
-因此，对于本示例中，属性表包括 InputBin 功能，标记为**输入 Bin**，其中包括两个选项，标记为**自动送纸器**和**信封进纸器**. 属性表还应包括附加功能，标有**可选信封进纸器**，使用两个选项，标记为**已安装**并**未安装**。 用户只能选择**信封进纸器**下**输入 Bin**如果他或她首先选择**已安装**下**可选信封进纸器**.
+因此，在我们的示例中，属性表包括一个标记为 " **Input Bin**" 的 InputBin 功能，其中包含两个选项，分别标记为**自动送纸器**和**信封进纸器**。 属性表还将包含一项附加功能，该功能**标记为****可选信封进** **Not installed** 如果首次选择 "在**可选信封进纸器****下"，** 则用户只能在 "**输入纸盒**" 下选择**信封进纸器**。
 
-有时，很有必要，以指示不能同时，安装某些可安装选项，或如果安装了其他一些可安装选项不能选择某个 noninstallable 选项。 若要处理这些情况下，使用指定的 GPD 条目[选项约束](option-constraints.md)。
+有时，有必要指出无法同时安装某些可安装选项，或者如果安装了其他某个可安装选项，则无法选择特定的 noninstallable 选项。 若要处理这些情况，请使用指定[选项约束](option-constraints.md)的 GPD 项。
 
-不能使用\*可安装？ 属性的可选功能，需要使用\*DisabledFeatures 条目。 有关这些功能，必须显式指定可选的功能，使用"安装"和"未安装"选项。 例如，假设打印机具有可选双面打印单元。 双工功能 (请参阅[标准功能](standard-features.md)) 如果未安装进行双面打印单元，则必须禁用。 必须定义了"可选双面打印单元"功能，使用"已安装"和"未安装"选项。 在"未安装"\*选项条目应包括\*DisabledFeatures 条目的双工的功能。 可以使用以下 GPD 条目：
+不能将 "可 \* 安装？" 特性与需要 DisabledFeatures 项的可选功能一起使用 \* 。 对于这些功能，你必须显式指定带有 "已安装" 和 "未安装" 选项的可选功能。 例如，假设打印机有一个可选的双面打印单元。 如果未安装双面打印单元，则必须禁用双工功能（请参阅[标准功能](standard-features.md)）。 必须使用 "已安装" 和 "未安装" 选项来定义 "可选的双工单元" 功能。 在 "未安装" \* 选项条目中，你将 \* 为双工功能包含 DisabledFeatures 条目。 可以使用以下 GPD 条目：
 
-```cpp
+```console
 *Feature: DuplexUnit
 {
     *ConflictPriority: 3   *% Make priority higher than Duplex feature
@@ -102,12 +98,4 @@ ms.locfileid: "63360537"
 }
 ```
 
-请确保还指定任何相关[选项约束](option-constraints.md)，如下所示。
-
- 
-
- 
-
-
-
-
+还应确保指定任何相关的[选项约束](option-constraints.md)，如图所示。

@@ -4,17 +4,17 @@ description: 使用 C + + 创作测试
 ms.assetid: ECADDDD6-5BD4-4c43-803F-47AE44467342
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09279d214edab919394e26c6e4e1f541d3876dd8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fdef10d80c0a251f870749cf8fc20698a9c2eba3
+ms.sourcegitcommit: 546cc69e970e16f4e226c189da54c4fe012ae855
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372773"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84629731"
 ---
 # <a name="authoring-tests-in-c"></a>使用 C + + 创作测试
 
 
-下面的代码示例显示了一个本机C++包含具有两个测试方法的单个测试类的文件。
+下面的代码示例演示一个本机 c + + 文件，其中包含一个具有两个测试方法的测试类。
 
 ```cpp
 1   #include "WexTestClass.h"
@@ -39,15 +39,15 @@ ms.locfileid: "63372773"
 20  }
 ```
 
-**第 1 行**包含所需的框架，单个标头文件**WexTestClass.h**。 该包含的头文件还包括**Log.h**记录器的文件和**Verify.h**用于定义验证的情况下的文件。 稍后将讨论这些标头文件。
+**第1行**包括在 **% \ Program Files （x86） \windows Kits\10\Testing\Development\inc**中找到的框架**WexTestClass**所需的单个头文件。包含的标头文件还包括记录器的**Log .h**文件和用于定义验证事例的**验证 .h**文件。 稍后将讨论这些标头文件。
 
-**第 3 行**定义一个测试类， **SimpleTests**。 测试类不必继承任何特殊的类。 此外，其内容不需要是公共的。
+**第3行**定义了一个测试类**SimpleTests**。 测试类不需要从任何特殊类继承。 而且，它们的内容不需要是公共的。
 
-**第 5 行**为测试类中定义此类。
+**第5行**将此类定义为测试类。
 
-**行 8 和 9**声明两个测试方法在类中的**FirstTest**并**SecondTest**。 在定义行至第 20 12。 **测试\_方法**宏将所需的方法声明添加到类。 在此标记方案中，所有测试必须都具有相同的原型。 它们必须返回**void**，且它们必须接受任何参数。
+**第8行和第9行**声明类**FirstTest**和**SecondTest**中的两个测试方法。 它们是在第12行到第20行上定义的。 **测试 \_ 方法**宏将所需的方法声明添加到类中。 在此标记方案中，所有测试都必须具有相同的原型。 它们必须返回**void**，并且它们必须不采用任何参数。
 
-如果你想要定义在类声明中的测试内联，则可以执行的只要包括"WexTestClass.h"时**内联\_测试\_方法\_标记**中定义预处理器。
+如果希望在类声明中以内联方式定义测试，则可以执行此操作，只要在预处理器中定义**内联 \_ 测试 \_ 方法 \_ 标记**时包含 "WexTestClass" 即可。
 
 ```cpp
 1   #define INLINE_TEST_METHOD_MARKUP
@@ -69,16 +69,16 @@ ms.locfileid: "63372773"
 17  };
 ```
 
-**第 10 和 15 行**现在包含测试方法的定义。
+**第10和15行**现在包含测试方法的定义。
 
-**请注意**  如果标头文件中将测试类声明中，最好仅到一个 cpp 文件中包括该标头文件。 Extratraneous 数据编译到测试 DLL 中包括到多个 CPP 文件结果的测试类声明。
+**注意**   如果将测试类声明放在标头文件中，最好只将该头文件包含在一个 cpp 文件中。 如果将测试类声明包括到多个 CPP 文件中，则会将 extratraneous 的数据编译到测试 DLL 中。
 
  
 
-## <a name="span-idadvancedauthoringtestsincspanspan-idadvancedauthoringtestsincspanspan-idadvancedauthoringtestsincspanadvanced-authoring-tests-in-c"></a><span id="Advanced_Authoring_Tests_in_C__"></span><span id="advanced_authoring_tests_in_c__"></span><span id="ADVANCED_AUTHORING_TESTS_IN_C__"></span>中的高级创作测试C++
+## <a name="span-idadvanced_authoring_tests_in_c__spanspan-idadvanced_authoring_tests_in_c__spanspan-idadvanced_authoring_tests_in_c__spanadvanced-authoring-tests-in-c"></a><span id="Advanced_Authoring_Tests_in_C__"></span><span id="advanced_authoring_tests_in_c__"></span><span id="ADVANCED_AUTHORING_TESTS_IN_C__"></span>C + + 中的高级创作测试
 
 
-下面的示例使用的设置和清理方法，并声明元数据以及在测试类和测试方法声明。 此示例还包含一个类 (**MetadataAndFixturesTests**) 具有两个测试方法。
+下面的示例使用安装和清理方法，并声明了元数据以及测试类和测试方法声明。 此示例还包含一个具有两个测试方法的类（**MetadataAndFixturesTests**）。
 
 ```cpp
  1  #define INLINE_TEST_METHOD_MARKUP
@@ -146,19 +146,19 @@ ms.locfileid: "63372773"
 63  }
 ```
 
-**第 4 行**开始全局元数据，一组应用于此标头将编译的测试二进制文件的属性的声明。
+**第4行**开始全局元数据的声明，这是一组属性，适用于此标头编译的测试二进制文件。
 
-**第 5 行**声明具有名称属性**功能**和值**TAEF**。 可能有多个开始之间的单个属性...日期和结束...宏。 行 20 到 24 个 （类级别的元数据）、 45-47 （方法级别元数据） 和 52 54 （测试级别元数据中定义的测试内联） 上存在类似的属性声明。
+**第5行**声明了一个属性，该属性具有 name**功能**，值为**TAEF**。 BEGIN 之间可能有多个属性。结束 .。。macros. 类似的属性声明存在于20-24 行（类级别的元数据）、45-47 （方法级别元数据）和52-54 （内嵌定义的测试中的测试级别元数据）中。
 
-**第 45 47 和 60 – 63 行**演示这些测试宏用于添加元数据还将测试方法声明。 **行 50-57**演示你仍可以包含元数据，即使你想要声明和定义测试在相同的位置。
+**45 行-47 和60– 63**演示了用于添加元数据的这些测试宏还声明了测试方法。 **行 50-57**演示即使要在同一位置声明和定义测试，也仍然可以使用元数据。
 
-**第 8 行**声明模块的安装程序函数的任何模块的测试类创建之前执行的函数。
+**第8行**声明了一个在创建模块的任何测试类之前执行的模块安装函数。
 
-**第 13 行**声明模块的清理函数-测试和类清理方法和析构函数完成所有执行的函数。 有类似的设置和行 24 类清理方法但 32。 这些方法分别运行之后的类构造函数和类析构函数之前。
+**第13行**声明了一个模块清理函数：在所有测试和类清理方法和析构函数完成后执行的函数。 在32行上，类有类似的安装和清理方法。 这些方法在类构造函数之后、类析构函数的前面运行。
 
-**行通过 42 34**声明类似函数的测试方法。 测试设置和清理方法运行之前和之后执行每个测试。
+**从34到42的行**为测试方法声明了类似的函数。 测试设置和清理方法在每个测试执行之前和之后运行。
 
-TAEF 设置和清理方法返回布尔值，并不接受任何参数。 返回值向发出信号，该框架是否可以继续运行某些测试单元测试。 例如，如果类安装方法失败，并返回 false，该框架不会运行类测试方法。
+TAEF 安装和清理方法返回布尔值，并且不接受任何参数。 返回值向框架发出信号，无论是否可以继续运行特定测试单元的测试。 例如，如果类安装方法失败并返回 false，则该框架将不会运行类测试方法。
 
  
 
