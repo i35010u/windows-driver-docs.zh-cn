@@ -3,12 +3,12 @@ title: 闪光灯支持
 description: 本主题提供有关设备如何支持 WinRT 灯具 API 的指南
 ms.date: 08/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0152992467bf2ec49165b5a22db9b4509b84af31
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 6ae80820792c6dbd8f4cfb6ccc3f53ae964876e0
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881938"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681681"
 ---
 # <a name="flashlight-support"></a>闪光灯支持
 
@@ -30,19 +30,19 @@ ms.locfileid: "74881938"
 
 在上面的示例中，只有一个闪存硬件实例（显示为），它由单个*KMDF 闪存驱动程序*管理。 闪存驱动程序公开两个设备接口，每个接口都针对特定类型的客户端（或 WinRT API）。 例如，假设上图：
 
-- WinRT*媒体* *捕获*API 和 AVSTREAM 微型驱动程序始终通过 GUID\_DEVINTERFACE\_相机\_flash 接口与闪存驱动程序通信，而
+- WinRT*媒体**捕获*API 和 AVSTREAM 微型驱动程序始终通过 GUID \_ DEVINTERFACE 相机 flash 接口与闪存驱动程序通信 \_ \_ ，而
 
-- WinRT*灯泡*API 始终通过 GUID\_DEVINTERFACE\_灯具接口与闪存驱动程序通信。
+- WinRT*灯泡*API 始终通过 GUID \_ DEVINTERFACE 灯接口与闪存驱动程序通信 \_ 。
 
-由于 GUID\_DEVINTERFACE\_相机\_闪存接口由特定于供应商的 AVStream 微型驱动程序使用，因此，不会对 Windows 施加任何限制，因此不会有任何限制。
+由于 GUID \_ DEVINTERFACE \_ 照相机 \_ 闪存接口由特定于供应商的 AVStream 微型驱动程序使用，因此 IHV/OEM 可随意定义其功能，而不会对 Windows 施加任何限制。
 
-不过，Microsoft 会将接口、GUID\_DEVINTERFACE\_灯标准化，因为它应由 WinRT*灯光 API*使用。 有关 GUID\_DEVINTERFACE\_灯的详细信息，请参阅[设备接口类 GUID](#device-interface-class-guid)
+不过，Microsoft 会将接口 GUID \_ DEVINTERFACE 灯标准化 \_ ，因为它应由 WINRT*灯光 API*使用。 有关 GUID DEVINTERFACE 灯的详细信息 \_ \_ ，请参阅[设备接口类 GUID](#device-interface-class-guid)
 
 ## <a name="concurrency-use-cases"></a>并发用例
 
 ### <a name="sharing-flash-between-camera-and-flashlight-applications"></a>共享照相机和闪光灯应用程序之间的闪烁
 
-照相机闪光灯通常被视为捕获设备的*外设。* 当捕获正在运行时，不应与非照相机方案共享。 为了进一步增加，底盘上的闪存设备数非常有限，因此，在实际情况下，不会有专用闪存专用于闪烁用途。
+照相机闪光灯通常被视为捕获设备的*从属*设备。 当捕获正在运行时，不应与非照相机方案共享。 为了进一步增加，底盘上的闪存设备数非常有限，因此，在实际情况下，不会有专用闪存专用于闪烁用途。
 
 从软件的角度来看，上述一项挑战就是相机应用程序和闪存应用程序可以同时共存和访问闪存的挑战。 例如，在理论上，用户可以在照相机取景器运行时通过闪烁应用程序切换 LED 状态。
 
@@ -52,52 +52,52 @@ ms.locfileid: "74881938"
 
   - 闪光灯应用程序仍可获取闪存驱动程序的句柄，但任何修改闪存状态的操作都会产生即时错误。
 
-  - 捕获停止后，AVStream 微型驱动程序会释放闪存，需要闪存驱动程序才能发布 PnP 通知（请参阅 GUID\_灯\_资源\_可用于[异步通知](#asynchronous-notifications)），指示基础硬件现在变为可用。 收到此类通知后，将允许闪烁应用程序相应地进行刷新。
+  - 当捕获停止以便 AVStream 微型驱动程序释放闪存时，需要使用闪存驱动程序发布 PnP 通知（请参阅 \_ \_ \_ [异步通知](#asynchronous-notifications)中可用的 GUID 灯泡资源），指出底层硬件现在变为可用。 收到此类通知后，将允许闪烁应用程序相应地进行刷新。
 
 - **如果闪光应用程序首先启动**，捕获会话可随意劫持闪存硬件，而无需明确同意。
 
-  - "劫持" 是指 IHV/OEM 可以实现任意协议（可能通过 GUID\_DEVINTERFACE\_相机\_FLASH 接口），以便允许 AVStream 微型驱动程序获取闪存，就好像硬件根本不使用一样。
+  - "劫持" 是指 IHV/OEM 可以实现任意协议（可能通过 GUID \_ DEVINTERFACE \_ 相机 \_ FLASH 接口），以便允许 AVStream 微型驱动程序获取闪存，就好像硬件根本不使用一样。
 
-  - 当发生劫持时，需要使用闪存驱动程序发布另一个 PnP 通知（请参阅 GUID\_灯\_资源\_[异步通知](#asynchronous-notifications)中丢失）指示已 involuntarily 重新分配闪存，以使闪光灯应用程序可以相应地执行（例如，通过更新 UI）
+  - 当发生劫持时，需要使用闪存驱动程序发布另一个 PnP 通知（请参阅 GUID \_ 灯泡 \_ 资源 \_ 在[异步通知](#asynchronous-notifications)中丢失），以指示闪存已 involuntarily 重新分配，以便闪光灯应用程序可以相应地进行操作（例如，通过更新 UI）
 
 ### <a name="sharing-flash-between-multiple-flashlight-applications"></a>在多个闪光应用程序之间共享 Flash
 
-如果不涉及相机并且两个闪光灯应用程序连续运行，则驱动程序应继续为第一个客户端提供服务，该客户端已获取 GUID\_DEVINTERFACE\_灯具接口，并拒绝所有其他客户端，直到第一个客户端最终释放接口。
+如果不涉及相机并且两个闪光灯应用程序连续运行，则驱动程序应继续为第一个客户端提供服务，该客户端已经获取了 GUID \_ DEVINTERFACE \_ 灯接口并拒绝所有其他客户端，直到第一个客户端最终释放该接口。
 
-换句话说，GUID\_DEVINTERFACE\_灯具接口一次只允许一台闪光灯客户端，而第一个获取接口的客户端会阻止其他设备运行（相机/AVStream 排除）。
+换句话说，GUID \_ DEVINTERFACE \_ 灯接口每次只允许使用一台闪光灯客户端，而第一个获取接口的客户端会阻止其他设备运行（相机/AVStream 排除）。
 
 ## <a name="device-interface-class-guid"></a>设备接口类 GUID
 
-支持独立于 MediaCapture 的的 IHV/OEM 闪存驱动程序必须自行注册[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)Guid、 **guid\_DEVINTERFACE\_灯**。
+支持独立于 MediaCapture 的的 IHV/OEM 闪存驱动程序必须向[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)Guid、 **guid \_ DEVINTERFACE \_ 灯具**注册自身。
 
-| 属性  | 设置                                |
+| Attribute  | 设置                                |
 | ---------- | -------------------------------------- |
-| 标识符 | GUID\_DEVINTERFACE\_灯               |
+| 标识符 | GUID \_ DEVINTERFACE \_ 灯               |
 | 类 GUID | {6C11E9E3-8232-4F0A-AD19-AAEC26CA5E98} |
 
-GUID\_DEVINTERFACE\_相机\_FLASH 的设备接口类 GUID 可以是由 Ihv/Oem 定义的自定义。 但是，DEVINTERFACE\_灯具的设备接口类 GUID\_由 Windows 定义。
+GUID DEVINTERFACE 照相机闪存的设备接口类 GUID \_ \_ \_ 可以是由 ihv/oem 定义的自定义。 但是，GUID DEVINTERFACE 灯具的设备接口类 \_ guid \_ 由 Windows 定义。
 
-根据协定，提供设备接口的驱动程序、GUID\_DEVINTERFACE\_灯泡，以支持以下功能（有关详细信息，请参阅后面的部分）：
+按照约定，提供设备接口 GUID DEVINTERFACE 灯具的驱动 \_ 程序 \_ 需要支持以下功能（有关详细信息，请参阅后面的部分）：
 
-- **IOCTL\_灯\_获取\_功能\_{白色 |COLOR}** –获取底层硬件支持的所有模式（例如，仅限白与彩色）
+- **IOCTL \_灯泡 \_ 获取 \_ 功能 \_ {白色 |COLOR}** –获取底层硬件支持的所有模式（例如，仅限白与彩色）
 
-- **IOCTL\_灯\_{GET |设置}\_模式**–获取或设置当前模式
+- **IOCTL \_灯 \_ {GET |设置} \_ 模式**–获取或设置当前模式
 
-- **IOCTL\_灯\_{GET |设置}\_强度\_{白色 |COLOR}** –获取或设置光源强度
+- **IOCTL \_灯 \_ {GET |设置} \_ 强度 \_ {白色 |COLOR}** –获取或设置光源强度
 
-- **IOCTL\_灯\_{GET |设置}\_发射\_** ，获取或设置闪光灯状态（例如，开/关）
+- **IOCTL \_灯 \_ {GET |设置} \_ 发出 \_ 光源**–获取或设置闪光灯状态（例如，开/关）
 
-如果设备有多个不同类型的闪存硬件（例如，*白色 LED*和*Xenon 闪存*），并且这些硬件由不同的闪存驱动程序控制，则每个驱动程序应使用唯一的实例 ID 公开相同的 GUID\_DEVINTERFACE\_灯具接口。
+如果设备有多个不同类型的闪存硬件（例如，*白色 LED*和*Xenon 闪存*），并且这些硬件由不同的闪存驱动程序控制，则每个驱动程序应 \_ 使用唯一的实例 ID 公开同一 GUID DEVINTERFACE \_ 灯具接口。
 
 ## <a name="device-interface-property"></a>设备接口属性
 
 由于一台计算设备可以在不同的面板上有零个或多个闪存设备，因此，WinRT*灯光 API*需要一个机制来枚举所有闪存硬件，使应用程序可以对特定实例进行编程。
 
-为了支持设备枚举，与相机驱动程序类似，需要使用闪存驱动程序将 ACPI \_PLD v2 结构与每个 GUID\_DEVINTERFACE\_灯光接口作为接口属性数据进行关联。
+为了支持设备枚举，与相机驱动程序类似，需要使用闪存驱动程序将 ACPI \_ PLD v2 结构与每个 GUID \_ DEVINTERFACE 灯泡接口相关联， \_ 作为接口属性数据。
 
 ## <a name="ioctl_lamp_get_capabilities_white"></a>IOCTL_LAMP_GET_CAPABILITIES_WHITE
 
-IOCTL\_灯\_获取\_功能\_在将设备配置为发出白屏时，白色 i/o 请求会查询闪存的功能。
+IOCTL \_ 灯光 \_ 获取功能 \_ ： \_ 当设备配置为发出白屏时，白色 i/o 请求会查询闪存的功能。
 
 ### <a name="definition"></a>定义
 
@@ -109,21 +109,21 @@ IOCTL\_灯\_获取\_功能\_在将设备配置为发出白屏时，白色 i/o �
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向类型为灯光\_功能\_白色的缓冲区。 有关详细信息，请参阅**备注**。
+Irp- \>AssociatedIrp.SystemBuffer 指向类型为 "灯光" 的 \_ 缓冲区 \_ 。 有关详细信息，请参阅**备注**。
 
-IO\_堆栈\_位置。DeviceIoControl. OutputBufferLength 是\>SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
+IO \_ 堆栈 \_ 位置。DeviceIoControl. OutputBufferLength 是 Irp \>AssociatedIrp.SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 
-Irp-\>AssociatedIrp。 SystemBuffer 已使用闪存硬件支持的所有功能。
+Irp- \>AssociatedIrp.SystemBuffer 填充了闪存硬件支持的所有功能。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。 它会将 Irp\>IoStatus 设置为保留缓冲区所需的字节数。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。 它会将 IoStatus 设置 \> 为保留缓冲区所需的字节数。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-根据要求，驱动程序支持 GUID\_DEVINTERFACE\_灯具接口，以支持发射的空白。 此 IOCTL 的有效负载定义如下：
+根据要求，驱动程序支持 GUID \_ DEVINTERFACE \_ 灯接口，以支持发出白屏。 此 IOCTL 的有效负载定义如下：
 
 ```cpp
 // The output parameter type of IOCTL_LAMP_GET_CAPABILITIES_WHITE.
@@ -137,7 +137,7 @@ IsLightIntensityAdjustable 字段指示是否可以对亮度级别进行编程�
 
 ## <a name="ioctl_lamp_get_capabilities_color"></a>IOCTL_LAMP_GET_CAPABILITIES_COLOR
 
-IOCTL\_灯\_获取\_功能\_颜色 i/o 请求会在设备配置为发出颜色浅时查询闪存的功能。
+IOCTL \_ 灯光 \_ 获取 \_ 功能 \_ 当设备配置为发出颜色亮度时，i/o 请求会查询闪存的功能。
 
 ### <a name="definition"></a>定义
 
@@ -148,19 +148,19 @@ IOCTL\_灯\_获取\_功能\_颜色 i/o 请求会在设备配置为发出颜色�
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向类型为灯光\_功能\_颜色的缓冲区。 有关详细信息，请参阅**备注**。
+Irp- \>AssociatedIrp.SystemBuffer 指向类型为灯光功能的缓冲区 \_ \_ 。 有关详细信息，请参阅**备注**。
 
-IO\_堆栈\_位置。DeviceIoControl. OutputBufferLength 是\>SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
+IO \_ 堆栈 \_ 位置。DeviceIoControl. OutputBufferLength 是 Irp \>AssociatedIrp.SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 
-Irp-\>AssociatedIrp。 SystemBuffer 已使用闪存硬件支持的所有功能。
+Irp- \>AssociatedIrp.SystemBuffer 填充了闪存硬件支持的所有功能。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。 它会将 Irp\>IoStatus 设置为保留缓冲区所需的字节数。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。 它会将 IoStatus 设置 \> 为保留缓冲区所需的字节数。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 此 IOCTL 的有效负载定义如下：
 
@@ -179,7 +179,7 @@ typedef struct LAMP_CAPABILITIES_COLOR
 
 ## <a name="ioctl_lamp_get_mode"></a>IOCTL_LAMP_GET_MODE
 
-IOCTL\_灯\_获取\_模式 i/o 请求查询当前配置闪存所用的模式。
+IOCTL \_ 灯光 \_ 获取 \_ 模式 i/o 请求查询当前配置闪存时所用的模式。
 
 ### <a name="definition"></a>定义
 
@@ -190,7 +190,7 @@ IOCTL\_灯\_获取\_模式 i/o 请求查询当前配置闪存所用的模式。
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向类型为灯光\_MODE 的缓冲区，该缓冲区定义如下：
+Irp- \>AssociatedIrp.SystemBuffer 指向类型为 \_ "灯模式" 的缓冲区，其定义如下：
 
 ```cpp
 typedef enum LAMP_MODE
@@ -200,21 +200,21 @@ typedef enum LAMP_MODE
 } LAMP_MODE;
 ```
 
-IO\_堆栈\_位置。DeviceIoControl. OutputBufferLength 是\>SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
+IO \_ 堆栈 \_ 位置。DeviceIoControl. OutputBufferLength 是 Irp \>AssociatedIrp.SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 
-Irp-\>AssociatedIrp. SystemBuffer 用灯光\_模式值填充。
+Irp- \>AssociatedIrp.SystemBuffer 使用灯具 \_ 模式值进行填充。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。 它会将 Irp\>IoStatus 设置为保存 DWORD 值所需的字节数。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。 它会将 IoStatus 设置 \> 为保存 DWORD 值所需的字节数。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
 ## <a name="ioctl_lamp_set_mode"></a>IOCTL_LAMP_SET_MODE
 
-IOCTL\_灯\_集\_模式 i/o 请求设置 flash 操作的模式。
+IOCTL \_ 灯光 \_ 集 \_ 模式 i/o 请求设置 flash 操作的模式。
 
 ### <a name="definition"></a>定义
 
@@ -225,21 +225,21 @@ IOCTL\_灯\_集\_模式 i/o 请求设置 flash 操作的模式。
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向类型为灯光\_模式的缓冲区。
+Irp- \>AssociatedIrp.SystemBuffer 指向类型为灯光模式的缓冲区 \_ 。
 
 ### <a name="output-parameters"></a>输出参数
 
 无。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
 ## <a name="ioctl_lamp_get_intensity_white"></a>IOCTL_LAMP_GET_INTENSITY_WHITE
 
-IOCTL\_灯\_获取\_强度\_在将闪存配置为发出白屏时，白色 i/o 请求会查询光线强度。
+IOCTL \_ 灯 \_ 获取 \_ 强度 \_ 当 flash 配置为发出白色光时，i/o 请求会查询光线强度。
 
 ### <a name="definition"></a>定义
 
@@ -250,21 +250,21 @@ IOCTL\_灯\_获取\_强度\_在将闪存配置为发出白屏时，白色 i/o �
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向灯光\_强度\_白色结构。 有关详细信息，请参阅**备注**。
+Irp- \>AssociatedIrp.SystemBuffer 指向灯泡强度的 \_ \_ 白色结构。 有关详细信息，请参阅**备注**。
 
-IO\_堆栈\_位置。DeviceIoControl. OutputBufferLength 是\>SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
+IO \_ 堆栈 \_ 位置。DeviceIoControl. OutputBufferLength 是 Irp \>AssociatedIrp.SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 
-Irp-\>AssociatedIrp 的 SystemBuffer。
+Irp- \>AssociatedIrp.SystemBuffer 填充光强度信息。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 此 IOCTL 的负载类型定义如下：
 
@@ -280,7 +280,7 @@ typedef struct LAMP_INTENSITY_WHITE
 
 ## <a name="ioctl_lamp_set_intensity_white"></a>IOCTL_LAMP_SET_INTENSITY_WHITE
 
-IOCTL\_灯\_设置\_强度\_白色 i/o 请求将闪存设置为指定的光线强度。
+IOCTL \_ 灯 \_ 设置 \_ 强度 \_ 白色 i/o 请求将闪存设置为指定的光线强度。
 
 ### <a name="definition"></a>定义
 
@@ -291,21 +291,21 @@ IOCTL\_灯\_设置\_强度\_白色 i/o 请求将闪存设置为指定的光线�
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向灯光\_密度\_白色结构（有关详细信息，请参阅[IOCTL_LAMP_GET_INTENSITY_WHITE](#ioctl_lamp_get_intensity_white) ）。
+Irp- \>AssociatedIrp.SystemBuffer 指向灯泡强度的 \_ \_ 白色结构（有关详细信息，请参阅[IOCTL_LAMP_GET_INTENSITY_WHITE](#ioctl_lamp_get_intensity_white) ）。
 
 ### <a name="output-parameters"></a>输出参数
 
 无。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
 ## <a name="ioctl_lamp_get_intensity_color"></a>IOCTL_LAMP_GET_INTENSITY_COLOR
 
-IOCTL\_灯\_获取\_强度\_颜色 i/o 请求会在将闪存配置为发出颜色亮度时查询光线强度。
+IOCTL \_ 灯 \_ 获取 \_ 强度 \_ 色 i/o 请求会在将闪存配置为发出颜色亮度时查询光线强度。
 
 ### <a name="definition"></a>定义
 
@@ -316,21 +316,21 @@ IOCTL\_灯\_获取\_强度\_颜色 i/o 请求会在将闪存配置为发出颜�
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向灯光\_强度\_颜色结构。 有关详细信息，请参阅**备注**。
+Irp- \>AssociatedIrp.SystemBuffer 指向灯光 \_ 强度 \_ 色结构。 有关详细信息，请参阅**备注**。
 
-IO\_堆栈\_位置。DeviceIoControl. OutputBufferLength 是\>SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
+IO \_ 堆栈 \_ 位置。DeviceIoControl. OutputBufferLength 是 Irp \>AssociatedIrp.SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 
-Irp-\>AssociatedIrp 的 SystemBuffer。
+Irp- \>AssociatedIrp.SystemBuffer 填充光强度信息。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 此 IOCTL 的负载类型定义如下：
 
@@ -346,7 +346,7 @@ typedef struct LAMP_INTENSITY_COLOR
 
 ## <a name="ioctl_lamp_set_intensity_color"></a>IOCTL_LAMP_SET_INTENSITY_COLOR
 
-IOCTL\_灯\_集\_亮度\_颜色 i/o 请求将闪光灯设置为指定的光线强度。
+IOCTL \_ 灯 \_ 设置 \_ 强度 \_ 颜色 i/o 请求将闪光灯设置为指定的光线强度。
 
 ### <a name="definition"></a>定义
 
@@ -357,21 +357,21 @@ IOCTL\_灯\_集\_亮度\_颜色 i/o 请求将闪光灯设置为指定的光线�
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向灯光\_亮度\_颜色结构（有关详细信息，请参阅[IOCTL_LAMP_GET_INTENSITY_COLOR](#ioctl_lamp_get_intensity_color) ）。
+Irp- \>AssociatedIrp.SystemBuffer 指向灯泡 \_ 强度 \_ 色结构（有关详细信息，请参阅[IOCTL_LAMP_GET_INTENSITY_COLOR](#ioctl_lamp_get_intensity_color) ）。
 
 ### <a name="output-parameters"></a>输出参数
 
 无。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
 ## <a name="ioctl_lamp_get_emitting_light"></a>IOCTL_LAMP_GET_EMITTING_LIGHT
 
-IOCTL\_灯\_获取\_发出\_光 i/o 请求查询（如果已打开）。
+\_ \_ \_ \_ 如果已打开（闪光灯）指示灯，则 IOCTL 灯将发出轻型 i/o 请求查询。
 
 ### <a name="definition"></a>定义
 
@@ -382,23 +382,23 @@ IOCTL\_灯\_获取\_发出\_光 i/o 请求查询（如果已打开）。
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向布尔类型的缓冲区。
+Irp- \>AssociatedIrp.SystemBuffer 指向布尔类型的缓冲区。
 
-IO\_堆栈\_位置。DeviceIoControl. OutputBufferLength 是\>SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
+IO \_ 堆栈 \_ 位置。DeviceIoControl. OutputBufferLength 是 Irp \>AssociatedIrp.SystemBuffer 字段中传递的缓冲区的长度（以字节为单位）。
 
 ### <a name="output-parameters"></a>输出参数
 
-Irp-\>AssociatedIrp 的 SystemBuffer 填充了 flash 状态，这意味着闪存处于开启状态（例如，发射灯光）;否则为 FALSE。
+Irp- \>AssociatedIrp.SystemBuffer 填充了 flash 状态，这意味着闪存处于开启状态（例如，发射灯光）;否则为 FALSE。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。 它会将 Irp\>IoStatus 设置为保存 DWORD 值所需的字节数。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。 它会将 IoStatus 设置 \> 为保存 DWORD 值所需的字节数。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
 ## <a name="ioctl_lamp_set_emitting_light"></a>IOCTL_LAMP_SET_EMITTING_LIGHT
 
-IOCTL\_灯\_集\_发出\_光 i/o 请求会开启/关闭（闪光灯）光。
+IOCTL \_ 灯 \_ 设置 \_ 发出 \_ 的 i/o 请求开启/关闭（闪光灯）光。
 
 ### <a name="definition"></a>定义
 
@@ -409,17 +409,17 @@ IOCTL\_灯\_集\_发出\_光 i/o 请求会开启/关闭（闪光灯）光。
 
 ### <a name="input-parameters"></a>输入参数
 
-Irp-\>AssociatedIrp. SystemBuffer 指向布尔类型的缓冲区，其值为 TRUE，表示 ON;否则为 FALSE。
+Irp- \>AssociatedIrp.SystemBuffer 指向布尔类型的缓冲区，其值为 TRUE，表示 ON;否则为 FALSE。
 
 ### <a name="output-parameters"></a>输出参数
 
 无。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-驱动程序将 Irp\>IoStatus 设置为状态\_成功或相应的错误状态。
+驱动程序将 Irp- \> IoStatus 设置为 " \_ 成功" 或相应的 "错误" 状态。
 
-如果在发出此请求时 MediaCapture 会话正在流式传输数据，则驱动程序应通过 Irp 返回一个错误（状态\_资源\_\_使用）\>IoStatus。
+如果在发出此请求时 MediaCapture 会话正在传输数据，则驱动程序应 \_ \_ 通过 Irp-IoStatus 返回错误（正在使用的状态资源 \_ ） \> 。
 
 ## <a name="asynchronous-notifications"></a>异步通知
 
@@ -427,14 +427,14 @@ Irp-\>AssociatedIrp. SystemBuffer 指向布尔类型的缓冲区，其值为 TRU
 
 - 闪存资源已被逐出，因为捕获会话（或另一个闪烁应用程序）启动：
 
-  | 属性  | 设置                                |
+  | Attribute  | 设置                                |
   | ---------- | -------------------------------------- |
-  | 标识符 | GUID\_灯\_资源\_丢失            |
+  | 标识符 | GUID \_ 灯泡 \_ 资源 \_ 丢失            |
   | 类 GUID | {F770E98C-4403-48C9-B1D2-4EEC3302E41F} |
 
 - Flash 资源现在变为可用：
 
-  | 属性  | 设置                                |
+  | Attribute  | 设置                                |
   | ---------- | -------------------------------------- |
-  | 标识符 | GUID\_灯可用\_资源\_       |
+  | 标识符 | GUID \_ 灯泡 \_ 资源 \_ 可用       |
   | 类 GUID | {185FE7CE-2616-481B-9094-20BB893ACD81} |

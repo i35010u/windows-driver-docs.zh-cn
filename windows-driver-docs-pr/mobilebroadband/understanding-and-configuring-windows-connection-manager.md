@@ -4,12 +4,12 @@ description: 了解和配置 Windows 连接管理器
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce81320dadd12132ea712b81ef903c1006fe66a
-ms.sourcegitcommit: eb1f58d23da3b1240385c072837d9118239a8f97
+ms.openlocfilehash: 0046844b912bdaebb3766d188bbf3383a7adf4fa
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883896"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681679"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 
@@ -25,7 +25,7 @@ Windows 8 中引入的自动连接管理通过查看以太网、Wi-fi 和移动�
 
 -   拨号连接，如调制解调器
 
--   纯虚拟接口，如 Vpn 或隧道 IP 连接
+-   纯虚拟接口，如 Vpn 和隧道 IP 连接
 
 ## <a name="span-idconnection_management_policiesspanspan-idconnection_management_policiesspanspan-idconnection_management_policiesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>连接管理策略
 
@@ -63,9 +63,9 @@ Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理�
 
 如果此策略设置为**1**，则在计算机至少有一个与首选网络类型的活动 Internet 连接时，将阻止任何新的自动 Internet 连接。 优先顺序如下：
 
-1. Ethernet
+1. 以太网
 2. WLAN
-3. 手机网络
+3. 移动电话
 
 连接时，以太网始终是首选的。 用户仍可手动连接到任何网络。 在 Windows 10 版本1809之前的 Windows 版本中17763.404，此策略设置以前是此策略设置的 "*已启用*" 状态。 此选项在 Windows 8 中首次可用。
 
@@ -75,35 +75,35 @@ Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理�
 
 ### <a name="span-idsoft_disconnectspanspan-idsoft_disconnectspanspan-idsoft_disconnectspansoft-disconnect"></a><span id="Soft_disconnect"></span><span id="soft_disconnect"></span><span id="SOFT_DISCONNECT"></span>软断开
 
-软断开连接的工作方式如下：
+软断开连接策略的工作方式如下：
 
 1.  当 Windows 决定不再连接某个网络时，它不会立即断开连接。 突然断开会降低用户体验，而无需提供明显权益，并尽可能避免使用。
 
-2.  一旦 Windows 决定软断开连接接口，就会通知 TCP 堆栈网络不应再使用。 现有 TCP 会话将继续中断，但新的 TCP 会话将仅在显式绑定或没有其他任何接口路由到所需目标时才使用此接口。
+2.  一旦 Windows 决定软断开连接接口，就会通知 TCP 堆栈网络不应再使用。 现有的 TCP 会话将继续不间断，但新的 TCP 会话仅当显式绑定或没有其他任何接口路由到所需目标时才使用此接口。
 
 3.  此通知到 TCP 堆栈会生成网络状态更改。 网络应用程序应该侦听这些事件，并在可能的情况下主动将其连接转移到新的网络。
 
-4.  然后，Windows 每隔30秒检查接口上的流量级别。 如果流量级别超过特定阈值，则不执行其他操作。 这允许当前有效使用接口，如文件传输或 VoIP 调用，以避免中断。
+4.  然后，Windows 每隔30秒检查一次接口的流量级别。 如果流量级别超过特定阈值，则不执行其他操作。 这允许当前有效使用接口，如文件传输或 VoIP 调用，以避免中断。
 
 5.  当流量低于此阈值时，接口将断开连接。 保持长期空闲连接的应用程序（例如电子邮件客户端）可能会被中断，并应通过不同的接口重新建立连接。
 
 ### <a name="span-idinitial_connectionspanspan-idinitial_connectionspanspan-idinitial_connectionspaninitial-connection"></a><span id="Initial_connection"></span><span id="initial_connection"></span><span id="INITIAL_CONNECTION"></span>初始连接
 
-Windows 会自动连接，然后在一种情况下立即软断开。 当 PC 首次启动或从待机状态恢复时，所有接口同时尝试连接，以确保用户尽快获得网络连接。 如果多个接口成功连接，则 Windows 将立即开始软断开连接接口。
+在一种情况下，Windows 会自动连接，然后立即软断开。 当电脑首次启动或从待机状态恢复时，所有接口同时尝试连接，以确保用户尽快获得网络连接。 如果多个接口成功连接，则 Windows 将立即开始软断开连接接口。
 
 ### <a name="span-idprohibit_interconnect_between_domain_and_non-domain_networksspanspan-idprohibit_interconnect_between_domain_and_non-domain_networksspanspan-idprohibit_interconnect_between_domain_and_non-domain_networksspanprohibit-interconnect-between-domain-and-non-domain-networks"></a><span id="Prohibit_interconnect_between_domain_and_non-domain_networks"></span><span id="prohibit_interconnect_between_domain_and_non-domain_networks"></span><span id="PROHIBIT_INTERCONNECT_BETWEEN_DOMAIN_AND_NON-DOMAIN_NETWORKS"></span>禁止域和非域网络之间的互连
 
 默认情况下，此策略在 Windows 8、Windows 8.1 和 Windows 10 中处于关闭状态。 如果启用此策略，则 Windows 将尝试防止计算机在域网络和非域网络之间建立连接。 当使用多宿主计算机作为攻击点时，企业管理员可能会使用此项。
 
-如果所有连接的网络都路由到域，或者当没有连接的网络路由到域时，此策略不会影响系统行为。
+当所有连接的网络路由到域或没有连接的网络路由到域时，此策略不会影响系统行为。
 
 ### <a name="span-idmultiple_wireless_networksspanspan-idmultiple_wireless_networksspanspan-idmultiple_wireless_networksspanmultiple-wireless-networks"></a><span id="Multiple_wireless_networks"></span><span id="multiple_wireless_networks"></span><span id="MULTIPLE_WIRELESS_NETWORKS"></span>多个无线网络
 
-许多 Windows 8、Windows 8.1 或 Windows 10 移动版设备在任何时候都有可供他们使用的外部 Internet 连接，即使是在其企业的 Wi-fi 网络范围内。 启用此策略后，用户可以自由连接到其公共移动宽带网络或企业的专用 Wi-fi 网络，并在它们之间进行切换。 但是，手动连接一个将自动导致另一个连接立即断开。
+许多 Windows 8、Windows 8.1 和 Windows 10 移动版设备在任何时候都有可供他们使用的外部 Internet 连接，即使是在其企业的 Wi-fi 网络范围内。 启用此策略后，用户可以自由连接到其公共移动宽带网络或企业的专用 Wi-fi 网络，并在它们之间进行切换。 但是，手动连接一个将自动导致另一个连接立即断开。
 
 ### <a name="span-idethernetspanspan-idethernetspanspan-idethernetspanethernet"></a><span id="Ethernet"></span><span id="ethernet"></span><span id="ETHERNET"></span>网
 
-由于 Windows 8、Windows 8.1 或 Windows 10 无法自动连接或断开与电脑的以太网电缆连接，因此它只能通过允许或禁止无线连接来强制执行该策略。 当电脑与域网络建立以太网连接时，不能连接到域的无线网络无法连接，反之亦然。 如果尝试这样做，将导致以下错误：
+由于 Windows 8、Windows 8.1 和 Windows 10 无法自动将以太网电缆连接到或断开连接，因此它们只能通过允许或禁止无线连接来强制执行该策略。 当电脑与域网络建立以太网连接时，不能连接到域的无线网络无法连接，反之亦然。 如果尝试这样做，将导致以下错误：
 
 ![自动连接管理错误](images/mb-acm-1.png)
 
@@ -117,7 +117,7 @@ Windows 会自动连接，然后在一种情况下立即软断开。 当 PC 首�
 
 ### <a name="span-idprohibit_roaming_on_mobile_broadband_networksspanspan-idprohibit_roaming_on_mobile_broadband_networksspanspan-idprohibit_roaming_on_mobile_broadband_networksspanprohibit-roaming-on-mobile-broadband-networks"></a><span id="Prohibit_roaming_on_mobile_broadband_networks"></span><span id="prohibit_roaming_on_mobile_broadband_networks"></span><span id="PROHIBIT_ROAMING_ON_MOBILE_BROADBAND_NETWORKS"></span>禁止在移动宽带网络上漫游
 
-此策略阻止 Windows 连接到处于漫游状态的移动宽带网络。 默认情况下，禁用此策略，用户可以选择在漫游时手动连接到移动宽带网络，或启用自动连接到此类网络。 启用后，用户无法从连接管理器中选择漫游移动宽带网络。
+此策略阻止 Windows 连接到处于漫游状态的移动宽带网络。 默认情况下，禁用此策略，用户可以选择在漫游时手动连接到移动宽带网络，或启用自动连接到此类网络。 如果启用此策略，用户将无法从连接管理器中选择漫游移动宽带网络。
 
 ## <a name="span-idnetwork_preferencesspanspan-idnetwork_preferencesspanspan-idnetwork_preferencesspannetwork-preferences"></a><span id="Network_preferences"></span><span id="network_preferences"></span><span id="NETWORK_PREFERENCES"></span>网络首选项
 
@@ -154,7 +154,7 @@ Windows 10 不使用 Wi-fi 信号强度。
 
 ### <a name="span-idautomatic_generationspanspan-idautomatic_generationspanspan-idautomatic_generationspanautomatic-generation"></a><span id="Automatic_generation"></span><span id="automatic_generation"></span><span id="AUTOMATIC_GENERATION"></span>自动生成
 
-Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选网络列表。 任何手动连接或断开连接都会更新网络列表，以便在将来自动发生相同的行为。
+Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选网络列表。 任何手动连接或断开连接都将更新网络列表，以便在将来自动发生相同的行为。
 
 以下用户操作修改首选网络列表：
 
@@ -176,7 +176,7 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 移动宽带和 Wi-fi 热点操作员使用[**ProvisioningAgent**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)或[**MsProvisionNetworks**](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) api 为 Windows 提供一系列移动宽带和 wi-fi 配置文件。
 
-初始预配时，操作员创建的配置文件将添加到现有网络列表的顶部（仅适用于 Wi-fi）或底部（如果包含移动宽带）。 不能影响在网络列表中设置的网络的位置。 但是，你可以在网络列表中定义其网络的相对顺序。
+初始预配时，操作员创建的配置文件将添加到现有网络列表的顶部（仅适用于 Wi-fi）或底部（如果包含移动宽带）。 不能影响用户在网络列表中设置的网络位置。 但是，你可以在网络列表中定义其网络的相对顺序。
 
 用户的操作可能会在预配元数据的应用程序之间修改网络列表。 重新应用预配元数据时，所需的网络顺序将被还原。 但是，重新排序的网络集会移到用户已将任何网络移动到的最小位置。
 
@@ -212,7 +212,7 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 -   对于 Wi-fi 网络，使用[**WlanDeleteProfile**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile)函数。
 
--   对于移动宽带网络，请使用[**IMbnConnectionProfile：:D e)** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)方法。
+-   对于移动宽带网络，请使用[**IMbnConnectionProfile：:D e)**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)方法。
 
 ### <a name="span-idcommand-linespanspan-idcommand-linespanspan-idcommand-linespancommand-line"></a><span id="Command-line"></span><span id="command-line"></span><span id="COMMAND-LINE"></span>命令行
 
@@ -232,7 +232,7 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 ### <a name="span-idconflict_resolutionspanspan-idconflict_resolutionspanspan-idconflict_resolutionspanconflict-resolution"></a><span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>冲突解决
 
-当同一网络存在多个配置文件时，Windows 8 和 Windows 8.1 将使用以下逻辑来确定应使用的配置文件：
+当同一网络存在多个配置文件时，Windows 8 和 Windows 8.1 使用以下逻辑来确定应使用的配置文件：
 
 1.  **“配置文件类型”**
 

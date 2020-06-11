@@ -6,51 +6,49 @@ keywords:
 - helper 对象 WDK 音频，DMA 通道对象
 - DMA 通道对象 WDK 音频
 - 主设备 WDK 音频
-- 从属设备音响音频
 - IDmaChannel 接口
 - 通道对象 WDK 音频
-ms.date: 04/20/2017
+ms.date: 06/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4b4ba0b9ce16ed8a9ebe5ee88926d37cfc1f08
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e95aca2d9485a70df9ebedd916b2924d1ccf6618
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833470"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681675"
 ---
 # <a name="dma-channel-objects"></a>DMA 通道对象
 
-
-## <span id="dma_channel_objects"></span><span id="DMA_CHANNEL_OBJECTS"></span>
-
+> [!NOTE]
+> Microsoft 支持多元化和 inclusionary 的环境。 在本文档中，有对单词从属的引用。 适用于偏置的通信的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
 
 PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的优点实现了[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)和[IDmaChannelSlave](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannelslave)接口。 **IDmaChannel**表示 dma 通道及其关联的 dma 缓冲区和缓冲区用法参数。 此外，WaveCyclic 微型端口驱动程序使用**IDmaChannelSlave**管理从属设备的 DMA 通道。 **IDmaChannelSlave**继承自**IDmaChannel**。 有关控制 DMA 操作的详细信息，请参阅[适配器对象和 DMA](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)。
 
 **IDmaChannel**对象封装以下内容：
 
--   主设备或从属设备的 DMA 通道
+- 主设备或从属设备的 DMA 通道
 
--   与通道关联的数据缓冲区
+- 与通道关联的数据缓冲区
 
--   描述如何使用通道的信息
+- 描述如何使用通道的信息
 
 端口和微型端口驱动程序使用 DMA 通道对象传达有关 DMA 通道使用情况的信息。 通常，微型端口驱动程序会在初始化期间或在创建流期间分配一组 DMA 通道。 在创建新流的过程中，微型端口驱动程序会告知端口驱动程序要将哪个 DMA 通道对象用于流。
 
 可以为主设备或从属设备创建 DMA 通道对象：
 
--   从属设备没有内置 DMA 硬件功能，必须依赖系统 DMA 控制器执行设备所需的任何数据传输。
+- 从属设备没有内置 DMA 硬件功能，必须依赖系统 DMA 控制器执行设备所需的任何数据传输。
 
--   主设备使用自己的总线主控 DMA 硬件在系统总线上执行数据传输。
+- 主设备使用自己的总线主控 DMA 硬件在系统总线上执行数据传输。
 
 有关使用从属 DMA 通道对象的 WaveCyclic 设备的示例，请参阅 Microsoft Windows 驱动程序工具包（WDK）中的 Sb16 示例音频驱动程序。 主 DMA 通道对象只是一个 backboard，用于在端口和微型端口驱动程序之间共享 DMA 通道的相关信息。 有关主设备和从属设备的详细信息，请参阅[适配器对象简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-adapter-objects)。
 
 主设备或从属设备的 DMA 通道对象公开以下内容：
 
--   适配器对象
+- 适配器对象
 
--   驱动程序和 DMA 硬件可以共享的单个常见缓冲区
+- 驱动程序和 DMA 硬件可以共享的单个常见缓冲区
 
--   可以查询和更改的缓冲区大小值
+- 可以查询和更改的缓冲区大小值
 
 *适配器对象*是*物理设备对象（PDO）* 的 DMA 适配器结构。 当微型端口驱动程序通过调用以下方法之一创建 DMA 通道对象时，将自动创建适配器对象：
 
@@ -62,7 +60,7 @@ PortCls 系统驱动程序为 WaveCyclic 和 WavePci 微型端口驱动程序的
 
 方法[**IDmaChannel：： GetAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-getadapterobject)可用于获取指向适配器对象的指针。
 
-适配器驱动程序还可以调用[**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)函数来创建 DMA 通道对象，但此函数比**IPortWave*Xxx*：： New*Xxx*DmaChannel**调用更难使用，因为调用方必须显式指定设备对象和其他上下文信息。
+适配器驱动程序还可以调用[**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)函数来创建 DMA 通道对象，但此函数比**IPortWave*Xxx*：： New*Xxx*DmaChannel**调用更难以使用，因为调用方必须显式指定设备对象和其他上下文信息。
 
 对于从属设备的 DMA 通道， [**IDmaChannel：： TransferCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)方法返回在调用[**IDmaChannelSlave：： Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-start)中指定的最大传输大小（ *MapSize*参数）。 此外，适配器对象还提供了一些操作和查询 DMA 设备的方法。 这些方法对于主 DMA 通道均无意义。
 

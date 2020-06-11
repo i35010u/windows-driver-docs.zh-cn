@@ -1,67 +1,67 @@
 ---
-title: 示例驱动程序 I/O 模型
-description: 存储驱动程序通过简单的外围总线、 系统 GPIO 插针和资源中心进行通信。 这里可以看到在用户模式和内核模式下，实际的硬件组件的组织方式。
+title: 示例驱动程序 i/o 模型
+description: SPB 驱动程序通过简单的外围总线、系统 GPIO pin 和资源中心进行通信。 可在此处了解如何在用户模式、内核模式和实际硬件中组织组件。
 ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e090668c678b8ad9b6f31822341acadef2b2c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00b8a9c4bc1fd9be97e71729c316d515d999afa7
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345103"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681677"
 ---
-# <a name="sample-driver-io-model"></a>示例驱动程序 I/O 模型
+# <a name="sample-driver-io-model"></a>示例驱动程序 i/o 模型
 
 
-存储驱动程序通过简单的外围总线、 系统 GPIO 插针和资源中心进行通信。 在这里可以看到组件中的组织方式： 用户模式和内核模式下，实际的硬件。
+SPB 驱动程序通过简单的外围总线、系统 GPIO pin 和资源中心进行通信。 可在此处查看组件的组织方式：用户模式、内核模式和实际硬件。
 
 ![驱动程序 i/o 模型](images/io.png)
 
 ## <a name="simple-peripheral-bus-spb"></a>简单外设总线 (SPB)
 
 
-Windows 8.1 支持存储组件作为类扩展插件 （在内核模式下运行），使开发和实现存储控制器驱动程序更容易。 存储组件：
+Windows 8.1 支持作为类扩展（在内核模式下运行）的 SPB 组件，使开发和实现 SPB 控制器驱动程序更容易。 SPB 组件：
 
--   资源中心包括注册和设置检索处理所有通信。
--   实现分层的队列结构来管理同步目标和总线锁定请求
--   将转换到内核模式从用户模式缓冲区
+-   处理与资源中心的所有通信，包括注册和设置检索。
+-   实现分层队列结构以管理同时目标和总线锁定请求
+-   将缓冲区从用户模式转换为内核模式
 
-有关详细信息请参阅[简单的外围总线](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)。
+有关详细信息，请参阅[简单外围总线](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)。
 
-### <a name="spb-component-and-the-sample-driver"></a>存储组件和示例驱动程序
+### <a name="spb-component-and-the-sample-driver"></a>SPB 组件和示例驱动程序
 
 | 模块         | 类/接口 |
 |----------------|-----------------|
-| SpbRequest.cpp | CSpbRequest     |
+| SpbRequest .cpp | CSpbRequest     |
 
  
 
-示例代码与存储组件交互的 SpbAccelerometer SpbRequest.cpp 中找到。 按如下所述，与此组件进行交互 CSpbRequest 类中的三个方法。
+SpbAccelerometer 示例代码与 SPB 组件进行交互，可在 SpbRequest 中找到。 CSpbRequest 类中的三种方法与此组件进行交互，如下所述。
 
-| 方法                                          | 用途                                       |
+| 方法                                          | 目的                                       |
 |-------------------------------------------------|-----------------------------------------------|
-| **CSpbRequest::CreateAndSendIoctl**             | 创建并发出一个 IOCTL 请求。          |
-| **CSpbRequest::CreateAndSendWrite**             | 创建并发出存储写入               |
-| **CSpbRequest::CreateAndSendWriteReadSequence** | 创建并发出存储读/写序列。 |
+| **CSpbRequest::CreateAndSendIoctl**             | 创建并发出 IOCTL 请求。          |
+| **CSpbRequest::CreateAndSendWrite**             | 创建并颁发 SPB 写入               |
+| **CSpbRequest::CreateAndSendWriteReadSequence** | 创建并颁发一个 SPB 写入/读取序列。 |
 
  
 
-## <a name="general-purpose-inputoutput-gpio"></a>常规用途输入/输出 (GPIO)
+## <a name="general-purpose-inputoutput-gpio"></a>一般用途的输入/输出（GPIO）
 
-Windows 8.1 支持驻留在同一级别作为内核模式存储组件的 GPIO 类扩展。 同时提供驱动程序的客户端的标准接口，该扩展允许在基础硬件连接和 GPIO 位置的灵活性。
+Windows 8.1 支持与内核模式 SPB 组件位于同一级别的 GPIO 类扩展。 扩展可在基础硬件连接和 GPIO 位置上灵活，同时提供客户端驱动程序的标准接口。
 
-在 SoC 平台 GPIO 插针是分散到芯片，以及其他组件，如 SPI 连接调制解调器上公开。
+在 SoC 平台上，GPIO 引脚分布在芯片上，并在其他组件（如 SPI 连接的调制解调器）上公开。
 
 ### <a name="the-gpio-component-and-the-sample-driver"></a>GPIO 组件和示例驱动程序
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | 不可用             |
+| SpbAccelerometer. asl | 空值             |
 
  
 
-SpbAccelerometer 示例依赖于中断的 GPIO 组件。 SpbAccelerometer.asl 文件中的 GpioInt() 元素定义已连接到作为中断资源 ADXL345 的 GPIO 插针。
+SpbAccelerometer 示例依赖于用于中断的 GPIO 组件。 Asl 文件中的 GpioInt （）元素将连接到 ADXL345 的 GPIO pin 定义为中断资源。
 
 ```cpp
 //
@@ -78,11 +78,11 @@ GpioInt(Level, ActiveHigh, Exclusive, PullDown, 0, "\\_SB.GPIO") {1} })
 
 下面是 I2C 资源的关键元素：
 
-| 元素    | 描述                                             |
+| 元素    | 说明                                             |
 |------------|---------------------------------------------------------|
-| 0x1D       | 指定从设备的 I2C 地址。         |
-| 400000     | 指定从设备的运行频率。 |
-| \\\\SB.I2C | 指定从设备的 ACPI 节点。           |
+| 0x1D       | 指定从属设备的 I2C 地址。         |
+| 400000     | 指定从属设备的运行频率。 |
+| \\\\SB.I2C | 为从属设备指定 ACPI 节点。           |
 
  
 
@@ -90,15 +90,15 @@ GpioInt(Level, ActiveHigh, Exclusive, PullDown, 0, "\\_SB.GPIO") {1} })
 
 | 模块                  | 类/接口      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| AccelerometerDevice .cpp | CAccelerometerDevice |
 
  
 
-如果由 ADXL345，示例驱动程序的被动 ISR 例程断言 GPIO 行 (**CAccelerometerDevice::OnInterruptIsr**) 调用。 帮助器函数**CAccelerometerDevice::OnInterruptWorkItem**，处理中断数据的::**OnInterruptIsr**存储。
+如果 GPIO 行由 ADXL345 断言，则会调用示例驱动程序的被动 ISR 例程（**CAccelerometerDevice：： OnInterruptIsr**）。 Helper 函数**CAccelerometerDevice：： OnInterruptWorkItem**可处理：：**OnInterruptIsr**存储的中断数据。
 
-如果中断处理::**OnInterruptIsr**对应于注册 0x30 (ADXL\_345\_INT\_文件 Adxl345.h 中的源)，该驱动程序调用一个函数注册表，读取操作以获取通过 0x37 0x32 寄存器的内容。 这些寄存器包含 X、 Y 和 z 轴的最新的加速数据。 读取的操作调用中**CAcclerometerDevice::RequestData**方法 (通过调用**CAccelerometerDevice::OnInterruptWorkItem**)。
+如果由：：**OnInterruptIsr**处理的中断对应于 register 0x30 （ \_ 文件 ADXL345 中的 ADXL 345 \_ INT \_ 源），则驱动程序将调用 register 读取操作，以获取寄存器0x32 到0x37 的内容。 这些寄存器包含 X 轴、Y 轴和 Z 轴的最新加速数据。 读取操作在**CAcclerometerDevice：： RequestData**方法（由**CAccelerometerDevice：： OnInterruptWorkItem**调用）中调用。
 
-当::**RequestData**方法处理读取操作的结果，它首先将两个字节的对应于每个轴的数据相结合。 接下来，它将应用的比例因子来获取实际 acceleration 值。 (缩放比例是范围的 G-强制 (32) 除以解决方法的结果 (2 ^13)。 结果是.00390625.).
+当：：**RequestData**方法处理读取操作的结果时，它首先合并对应于每个轴的两个字节的数据。 接下来，它应用缩放比例以获取实际加速值。 （缩放系数是指将 G 力（32）的范围除以分辨率（2 ^ 13）的结果。 结果为. 00390625。）
 
 ```cpp
 // Get the data values as doubles
@@ -115,26 +115,26 @@ yAccel = (DOUBLE)yRaw * scaleFactor;
 zAccel = (DOUBLE)zRaw * scaleFactor;
 ```
 
-缩放比例由中设置注册 0x31 (数据\_格式)。
+缩放比例取决于 register 0x31 中的设置（数据 \_ 格式）。
 
 ## <a name="resource-hub"></a>资源中心
 
-Windows 8.1 支持的资源中心，管理所有设备和总线控制器连接。 它可确保必要的开始和停止排序进行维护。
+Windows 8.1 支持一个资源中心，该中心管理所有设备和总线控制器的连接。 它可确保维护必要的开始和结束排序。
 
-中心是专门针对 SoC 平台和其平面设备树的组件。 在这些系统上的总线不同于电脑：
+中心是专门针对 SoC 平台及其平面设备树的组件。 这些系统上的总线与电脑不同：
 
--   连接是通常无法发现的;它们在 ACPI 以静态方式定义
--   硬件组件通常具有跨越多个总线，而不是严格的父-子关系的多个依赖项
+-   连接通常是不可发现的;它们是在 ACPI 中静态定义的
+-   硬件组件通常具有多个跨越多个总线的依赖关系，而不是严格的父子关系
 
 ### <a name="resource-hub-and-the-sample-driver"></a>资源中心和示例驱动程序
 
 | 模块               | 类/接口 |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | 不可用             |
+| SpbAccelerometer. asl | 空值             |
 
  
 
-**ResourceTemplate** SpbAccelerometer.asl 节指定资源的连接方式。
+Asl 的**ResourceTemplate**节指定了资源的连接方式。
 
 ```cpp
 Name(RBUF, ResourceTemplate()

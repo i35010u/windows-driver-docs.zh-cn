@@ -19,12 +19,12 @@ keywords:
 - WaveCyclic，筛选器
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f8264ef7e4d007d006d05c5924890e4d74876ad8
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: 21eb5816447c39b189c021f5de85e561d721f635
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925628"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681669"
 ---
 # <a name="wave-filters"></a>滤波器
 
@@ -42,7 +42,7 @@ ms.locfileid: "82925628"
 
 音频适配器驱动程序通过绑定波形微型端口驱动程序形成波形筛选器，该驱动程序将硬件供应商实现为适配器驱动程序的一部分，并使用系统实现的波形端口驱动程序。 微型端口驱动程序处理波形筛选器的所有特定于硬件的操作，端口驱动程序管理所有通用波形筛选器函数。
 
-PortCls 系统驱动程序（Portcls）实现了三个波形端口驱动程序： WaveRT、WavePci 和 WaveCyclic。
+PortCls 系统驱动程序（Portcls.sys）实现了三个波形端口驱动程序： WaveRT、WavePci 和 WaveCyclic。
 
 这三种类型的波形滤镜的操作如下所示：
 
@@ -63,7 +63,7 @@ WaveRT 筛选器实现为端口/微型端口驱动程序对。 在 Windows Vista
 
 -   它实例化 WaveRT 微型端口驱动程序对象。
 
--   它通过使用 GUID 值**\_CLSID PortWaveRT**调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化 WaveRT 端口驱动程序对象。
+-   它通过使用 GUID 值**CLSID \_ PortWaveRT**调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化 WaveRT 端口驱动程序对象。
 
 -   它调用端口驱动程序的[**IPort：： Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)方法将微型端口驱动程序绑定到端口驱动程序。
 
@@ -97,7 +97,7 @@ WavePci 筛选器实现为端口/微型端口驱动程序对。 WavePci 筛选�
 
 -   它实例化 WavePci 微型端口驱动程序对象。
 
--   它通过使用 GUID 值**\_CLSID PortWavePci**调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化 WavePci 端口驱动程序对象。
+-   它通过使用 GUID 值**CLSID \_ PortWavePci**调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化 WavePci 端口驱动程序对象。
 
 -   它调用端口驱动程序的[**IPort：： Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)方法将微型端口驱动程序绑定到端口驱动程序。
 
@@ -107,13 +107,16 @@ WavePci 筛选器实现为端口/微型端口驱动程序对。 WavePci 筛选�
 
 ### <a name="span-idwavecyclic_filterspanspan-idwavecyclic_filterspanwavecyclic-filters"></a><span id="wavecyclic_filter"></span><span id="WAVECYCLIC_FILTER"></span>WaveCyclic 筛选器
 
+> [!NOTE]
+> Microsoft 支持多元化和 inclusionary 的环境。 在本文档中，有对单词从属的引用。 适用于偏置的通信的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
+
 **注意： Windows 以前版本的 WaveCyclic 信息**
 
 WaveCyclic 筛选器实现为端口/微型端口驱动程序对。 WaveCyclic 筛选器工厂创建 WaveCyclic 筛选器，如下所示：
 
 -   它实例化 WaveCyclic 微型端口驱动程序对象。
 
--   它通过使用 GUID 值**\_CLSID PortWaveCyclic**调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化 WaveCyclic 端口驱动程序对象。
+-   它通过使用 GUID 值**CLSID \_ PortWaveCyclic**调用[**PcNewPort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)来实例化 WaveCyclic 端口驱动程序对象。
 
 -   它调用端口驱动程序的[**IPort：： Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)方法将微型端口驱动程序绑定到端口驱动程序。
 
@@ -133,7 +136,7 @@ WaveCyclic 微型端口驱动程序可以实现其自己的 DMA 通道对象，�
 
 适配器驱动程序的自定义[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)实现可以对数据执行自定义处理，以满足特殊的硬件限制。 例如，Windows 多媒体函数使用波形格式，其中16位样本始终为有符号值，但音频呈现硬件可能设计为使用不带符号的16位值。 在这种情况下，可以编写驱动程序的自定义[**IDmaChannel：： CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto)方法，将已签名的源值转换为硬件所需的无符号目标值。 尽管此方法可用于解决硬件设计缺陷，但它也会导致软件开销巨大的成本。
 
-有关实现其自己的 DMA 通道对象的驱动程序的示例，请参阅 WDK 中的 Sb16 示例音频适配器。 如果将常量重\_写\_DMA 通道定义为**TRUE**，则源代码中的条件编译语句将启用专用的[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)对象，驱动程序使用该对象替换 IPortWaveCyclic：： New*Xxx*DmaChannel 调用中的默认 IDmaChannel 对象。
+有关实现其自己的 DMA 通道对象的驱动程序的示例，请参阅 WDK 中的 Sb16 示例音频适配器。 如果将常量重 \_ 写 DMA \_ 通道定义为**TRUE**，则源代码中的条件编译语句将启用专用的[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)对象，驱动程序使用该对象替换 IPortWaveCyclic：： New*Xxx*DmaChannel 调用中的默认 IDmaChannel 对象。
 
  
 
