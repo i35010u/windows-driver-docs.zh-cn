@@ -8,12 +8,12 @@ keywords:
 - 适配器对象 WDK 内核，关于适配器对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd589a676a4d1e2b0785d5b52a4426ed86ca863
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 71e2ce06498c0e0c0f7eaf21a59433a24e060fdf
+ms.sourcegitcommit: 2d999dcf63d3b67bf74777d6fae29d96b98141ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838636"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714824"
 ---
 # <a name="introduction-to-adapter-objects"></a>适配器对象简介
 
@@ -42,6 +42,10 @@ ms.locfileid: "72838636"
 （对于支持总线主机 DMA 的 SCSI 设备，SCSI 端口驱动程序为特定于 HBA 的 SCSI 微型端口驱动程序设置适配器对象。 微型端口驱动程序的[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))例程为端口驱动程序提供特定于适配器的数据。）
 
 有关何时以及如何使用适配器对象和*AdapterControl*例程的详细信息，请参阅[使用系统 DMA](using-system-dma.md)和[使用 Bus-主 dma](using-bus-master-dma.md) 。
+
+## <a name="related-topics"></a>相关主题
+
+[为设备驱动程序启用 DMA 重新映射](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)
 
  
 

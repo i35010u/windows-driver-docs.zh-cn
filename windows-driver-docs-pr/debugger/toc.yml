@@ -56,7 +56,7 @@
           href: using-kdbgctrl.md
     - name: 调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
       href: debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md
-    - name: 调试驱动程序 - 分步实验室（Sysvad 内核模式）
+    - name: 调试驱动程序 - 分步实验（Sysvad 内核模式）
       href: debug-universal-drivers--kernel-mode-.md
 - name: WinDbg 预览版
   items:
@@ -1842,8 +1842,6 @@
               href: analyzing-a-kernel-mode-dump-file-with-kd.md
             - name: 使用 WinDbg 分析内核模式转储文件
               href: analyzing-a-kernel-mode-dump-file-with-windbg.md
-            - name: 使用 KAnalyze 分析内核模式转储文件
-              href: analyzing-a-kernel-mode-dump-file-with-kanalyze.md
     - name: 用户模式转储文件
       items:
         - name: 用户模式转储文件
@@ -4666,10 +4664,6 @@
                   href: '-wmitrace-tmffile.md'
                 - name: '!wmitrace.traceoperation'
                   href: '-wmitrace-traceoperation.md'
-            - name: OEM 支持扩展 (kdex2x86.dll)
-              href: oem-support-extensions--kdex2x86-dll-.md
-            - name: SieExtPub.dll
-              href: sieextpub-dll.md
     - name: 调试器相关的 API
       items:
         - name: 调试器相关的 API

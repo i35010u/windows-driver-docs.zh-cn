@@ -4,6 +4,8 @@
   href: pci-power-management-and-device-drivers.md
 - name: 在 Windows 中启用 PCI Express 原生控制
   href: enabling-pci-express-native-control.md
+- name: 为设备驱动程序启用 DMA 重新映射
+  href: enabling-dma-remapping-for-device-drivers.md
 - name: PCIe 根端口的设备特定数据 (_DSD)
   href: dsd-for-pcie-root-ports.md
 - name: 访问 PCI 设备配置空间

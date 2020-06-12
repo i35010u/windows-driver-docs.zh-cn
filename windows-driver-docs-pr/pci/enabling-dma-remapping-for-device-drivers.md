@@ -4,12 +4,12 @@ description: 启动并选择直接内存访问 (DMA) 重新映射功能，确保
 ms.date: 05/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3ba29a13a3cc1849512118f2114a5d6f2fca5bc8
-ms.sourcegitcommit: 188596c90e03a5619b5cbf0bff4276fc94777253
+ms.openlocfilehash: 67d635f739911be8b6000c8e5550ddacd2a92347
+ms.sourcegitcommit: 2d999dcf63d3b67bf74777d6fae29d96b98141ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84530242"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714820"
 ---
 # <a name="enabling-dma-remapping-for-device-drivers"></a>为设备驱动程序启用 DMA 重新映射
 
@@ -46,6 +46,8 @@ _注意：图形设备驱动程序不支持 DMA 重新映射。_
 * 2 表示正在为特定设备实例强制实施 DMA 重新映射。
 * 1 表示设备驱动程序已明确选择不使用 DMA 重新映射。
 * 0（DMA 重新映射策略属性不可见）表示 INF 文件中未指定 DMA 重新映射 INF 指令。 不为此设备强制执行 DMA 重新映射。
+
+![“设备管理器详细信息”选项卡](images/device-details-tab-1903.png)
 
 >[!NOTE]
 > 对于 Windows 10 版本1803和1809，设备管理器中的属性字段使用 GUID {83da6326-97a6-4088-9453-a1923f573b29} [18]

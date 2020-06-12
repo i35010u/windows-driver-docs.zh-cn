@@ -4,12 +4,12 @@ description: 使用 ACPI 生成框架（AcpiGenFx）库来编写用于生成 ACP
 ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d335b8f5f287b161ba66cf9597325ea240a8f25d
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: faa0b01c0a5f019876a7a44f193524c7a1943d65
+ms.sourcegitcommit: 6bd546fea677833fc20cd802256d030633ac562e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851961"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84717446"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>使用 AcpiGenFx 生成 ACPI 表
 
@@ -37,14 +37,14 @@ ms.locfileid: "83851961"
 
 AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是用于生成动态运行时方法的。 如果框架未涵盖用例，如先进的外部设备电源管理，则这些方法必须在 Windows 平台扩展驱动程序中实现，或手动添加到 AcpiGenFx 生成的 ASL 代码。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
 在 WDK 安装的**AcpiGenFx**文件夹中找到以下文件。
 
 > [!NOTE]
-> WDK 的 Tools 文件夹中提供了 AcpiGenFx 和关联的示例。 在 "工具" 目录中，导航到 "目标体系结构" 文件夹，然后导航到 "AcpiGenFx" 文件夹。 例如，x86 版本位于 C:\Program Files （x86） \Windows Kits\10\Tools\x86\ACPIGenFx。
+> 在 WDK 的 "工具" 文件夹中提供 AcpiGenFx.dll 和相关的示例。 在 "工具" 目录中，导航到 "目标体系结构" 文件夹，然后导航到 "AcpiGenFx" 文件夹。 例如，x86 版本位于 C:\Program Files （x86） \Windows Kits\10\Tools\x86\ACPIGenFx。
 
-- AcpiGenFx
+- AcpiGenFx.dll
 
     需要使用 ACPIGenFx。
 
@@ -68,7 +68,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 1. 在 Visual Studio 中，打开一个新的 c # 控制台项目。
 
-1. 添加对 AutoAcpi 程序集的引用。 在 "**项目**" 菜单下，单击 "**添加引用**"。 单击 "**浏览**" 并导航到 AutoAcpi 的位置。 单击 **“确定”** 。
+1. 向 AutoAcpi.dll 程序集添加引用。 在 "**项目**" 菜单下，单击 "**添加引用**"。 单击 "**浏览**" 并导航到 AutoAcpi.dll 的位置。 单击“确定”。
 
 1. 在**解决方案资源管理器**中，展开 "**引用**" 并选择 " **acpigenfx**"。 查看对象浏览器中的对象（"**查看 &gt; 对象浏览器**）"。
 
@@ -122,7 +122,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 该应用程序会生成两个其他文件夹： Aslc 和 Bin。 Aslc 包含 Aslc 格式的所有固件表。 Bin 包含二进制 blob 格式的所有固件表。
 
-使用 WDK 中提供的 ASL 编译器将 ASL 代码文件编译为 ACPI 计算机语言（AML）二进制。
+使用 WDK 中提供的 asl.exe 编译器将 ASL 代码文件编译为 ACPI 机器语言（AML）二进制。
 
 ## <a name="add-devices-and-resources-in-the-dsdt"></a>在 DSDT 中添加设备和资源
 
@@ -373,6 +373,9 @@ void * ReferenceDBG2Table(void) {
 
 1. 创建设备并分配资源。 例如，对于此处显示的传感器设备，示例将调用**AddGenericDevice** ，并指定设备名称、硬件 ID 和唯一实例。 连接到 I-C 串行总线 I2C1 的传感器设备，如 DSDT 中所述。
 
+> [!NOTE]
+> Microsoft 支持多元化和 inclusionary 的环境。 在本文档中，有对单词从属的引用。 适用于[偏置的通信](https://docs.microsoft.com/style-guide/bias-free-communication)的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
+
 ```asl
 namespace SSDTSample
 {
@@ -439,7 +442,7 @@ DefinitionBlock ("SSDT.aml", "SSDT", 5, "MSFT", "EDK2", 1)
 
 ## <a name="replacing-acpi-firmware-during-development-and-testing"></a>在开发和测试期间替换 ACPI 固件
 
-在开发和测试方案中，可以将从设备上的 asl 编译器生成的 AML 二进制文件替换为。 为此，请将 AML 二进制文件重命名为 acpitabl，并将其移动到% windir% \\ system32。 在启动时，Windows 会将 ACPI 固件中存在的表替换为 acpitabl 中的表。
+在开发和测试方案中，可以替换从设备上的 asl.exe 编译器生成的 AML 二进制文件。 为此，请将 AML 二进制文件重命名为 acpitabl，并将其移动到% windir% \\ system32。 在启动时，Windows 会将 ACPI 固件中存在的表替换为 acpitabl 中的表。
 
 请确保通过命令启用测试签名：
 
