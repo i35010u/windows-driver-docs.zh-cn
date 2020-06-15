@@ -5,35 +5,31 @@ ms.assetid: 63ea5534-b2e1-43aa-b45b-e4fe8bb69f49
 keywords:
 - Unidrv，引用区域设置
 - GPD 文件 WDK Unidrv，引用区域设置
-- 引用的区域设置
+- 引用区域设置
 - 引用 WDK Unidrv 的区域设置
 - Unidrv WDK 打印
-ms.date: 04/20/2017
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a47fe10eb8df01764acd99b04967442bc3ee7e4
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d995b24d21a53624bfb94344384ad5e1146cfdff
+ms.sourcegitcommit: 8a3cb2a87ce9751059bca8145a55b8cc39c34de9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56567496"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756169"
 ---
-# <a name="referencing-locales"></a>引用的区域设置
+# <a name="referencing-locales"></a>引用区域设置
 
+## <a name="using-gpd-files"></a>使用 GPD 文件
 
+GPD 文件可以引用系统的区域设置。 通常，在 Switch 语句中使用区域设置标识符 \* ，其中的参数（例如，默认的纸张大小和资源 dll）可以通过特定于区域设置的方式指定。
 
-
-
-### <a name="using-gpd-files"></a>使用 GPD 文件
-
-GPD 文件可以引用系统的区域设置。 通常情况下，在使用区域设置标识符\*Switch 的语句，其中参数，如默认纸张大小和资源 Dll 中可以指定以区域设置特定的方式。
-
-若要引用的区域设置信息，GPD 文件必须包含\*包括包含文件 locale.gpd 语句 (其中提供使用 Windows 驱动程序工具包\[WDK\])，如下所示：
+若要引用区域设置信息，GPD 文件必须包含包含 \* 文件区域设置的 Include 语句，其中包含 Windows 驱动程序工具包（WDK），如下所示：
 
 ```cpp
 *Include: locale.gpd
 ```
 
-此 GPD 文件定义一个名为"区域设置"功能，并定义多个区域设置的选项。 （请参阅文件以查看定义的区域设置。）下面是这些区域设置选项的用法示例。 该示例将访问的区域设置的默认纸张大小。
+此 GPD 文件定义了一个名为 "Locale" 的功能，并为许多区域设置定义了选项。 （请参阅文件以查看定义了哪些区域设置。）下面是这些区域设置选项的示例用法。 该示例基于区域设置的默认纸张大小。
 
 ```cpp
 *Feature: PaperSize
@@ -61,9 +57,9 @@ GPD 文件可以引用系统的区域设置。 通常情况下，在使用区域
 } *% End of Feature: PaperSize
 ```
 
-在运行时，Unidrv 确定系统的默认区域设置通过调用**GetSystemDefaultLCID** （Microsoft Windows SDK 文档中所述）。 安装打印机时，GPD 分析器读取打印机的 GPD 文件，并使用中的信息\*Case 语句与默认区域设置相关联。 （请注意，是否安装打印机后更改系统区域设置，基于区域设置的选项不会更改。）
+在运行时，Unidrv 通过调用**GetSystemDefaultLCID**确定系统的默认区域设置（如 Microsoft Windows SDK 文档中所述）。 安装打印机时，GPD 分析器读取打印机的 GPD 文件，并使用 \* 与默认区域设置关联的 Case 语句中的信息。 （请注意，如果在安装打印机后更改了系统的区域设置，则不会更改基于区域设置的选项。）
 
-下面是另一个示例中，选择 DLL 根据区域设置的资源。 资源 DLL 可以包含特定于区域设置的资源，例如显示字符串。
+下面是另一个示例，该示例选择基于区域设置的资源 DLL。 资源 DLL 可包含特定于区域设置的资源，如显示字符串。
 
 ```cpp
 *switch: Locale
@@ -83,26 +79,23 @@ GPD 文件可以引用系统的区域设置。 通常情况下，在使用区域
 }
 ```
 
-### <a name="setting-default-paper-size-by-locale"></a>设置由区域设置的默认纸张大小
+## <a name="setting-default-paper-size-by-locale"></a>按区域设置设置默认纸张大小
 
-您可能想要将驱动程序分配的默认纸张大小，度量值或非度量值，根据用户的地理位置。
+您可能想要让您的驱动程序根据用户的地理位置分配默认纸张大小（公制或非度量值）。
 
-下面的算法检索默认系统区域设置，然后使用国家/地区代码来确定系统区域设置是否表示通常使用度量值或非度量值的纸张大小的国家/地区。 使用此信息，您的驱动程序可以设置的默认纸张大小相应地，如 A4 国家/地区使用公制的和不的国家/地区的信纸大小。
+以下算法检索默认的系统区域设置，然后使用国家/地区代码来确定系统区域设置是否表示一个通常使用度量或非指标纸张大小的国家/地区。 使用此信息，您的驱动程序可以相应地设置默认纸张大小，例如，对于使用度量系统的国家/地区，使用不是的国家/地区的 A4。
 
-1.  使用[GetLocaleInfo](https://go.microsoft.com/fwlink/p/?linkid=52069)函数 （在 Microsoft Windows SDK 文档中定义） 来检索默认系统区域设置。 使用区域设置\_系统\_的第一个参数，默认*区域设置*，和区域设置\_对于第二个参数，ICOUNTRY *LCType*。
+1. 使用[GetLocaleInfo](https://docs.microsoft.com/previous-versions//ms776270(v=vs.85))函数检索默认的系统区域设置。 对于第 \_ 一个参数，请使用区域设置系统 \_ 默认值，为第二个参数使用*区域设置* \_ ICOUNTRY，为*LCType*。
 
-2.  使用默认系统区域设置从获取**GetLocaleInfo**来确定度量值或非度量值的纸张大小。
-    -   非-指标如果默认系统区域设置是：
-        -   CTRY\_UNITED\_状态，或
-        -   CTRY\_加拿大，或
-        -   大于或等于 50 个，但不超过 60 和不 CTRY\_巴西，或
-        -   大于或等于 500，但小于 600
-    -   否则为的度量值。
+1. 使用从**GetLocaleInfo**获取的默认系统区域设置来确定度量或非指标纸张大小。
+    - 非度量值（如果默认的系统区域设置为：
 
- 
+        - CTRY \_ \_ 或
 
- 
+        - \_加拿大 CTRY
 
+        - 大于或等于50，但小于60而不是 CTRY \_ 巴西或
 
+        - 大于或等于500，但小于600
 
-
+    - 否则为指标。

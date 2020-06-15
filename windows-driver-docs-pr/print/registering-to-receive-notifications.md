@@ -3,31 +3,27 @@ title: 注册以接收通知
 description: 注册以接收通知
 ms.assetid: 2442c204-c9d8-49fa-93ae-02623d08119c
 keywords:
-- 后台处理程序 WDK 打印，注册以接收通知
-- 打印后台处理程序 WDK，注册以接收通知
-- 后台处理程序通知的接收
-- 注册的后台处理程序通知
+- 后台处理程序通知 WDK 打印，注册接收
+- 打印后台处理程序通知 WDK，注册以接收
+- 接收后台处理程序通知
+- 注册后台处理程序通知
 - RegisterForPrintAsyncNotifications
 - UnRegisterForPrintAsyncNotifications
-- 取消注册的后台处理程序通知
-ms.date: 04/20/2017
+- 取消注册后台处理程序通知
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 98b168fd0117921d70f043e25039663628f4d3da
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2137c8ba609cc7d772afb90d4dbe68c5901bb5d
+ms.sourcegitcommit: 8a3cb2a87ce9751059bca8145a55b8cc39c34de9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382592"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756165"
 ---
 # <a name="registering-to-receive-notifications"></a>注册以接收通知
 
+侦听客户端调用[RegisterForPrintAsyncNotifications](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-registerforprintasyncnotifications)方法来注册接收通知。 侦听客户端可以是应用程序，也可以在后台处理程序中运行。 Winspool.drv winspool.drv 公开此功能，而不考虑它的加载位置。
 
-
-
-
-侦听客户端调用[RegisterForPrintAsyncNotifications](https://go.microsoft.com/fwlink/p/?linkid=124752)方法来注册接收通知。 侦听客户端可以是应用程序，也可以在后台处理程序内运行。 Winspool.drv 公开此功能而不考虑其中是加载。
-
-Spoolss.lib 公开此功能，以便可以注册通知的端口监视器。 在后台处理程序内的运行组件和可以调用该链接到 Spoolss.lib **RegisterForPrintAsyncNotifications**。 以下过程详细说明了必须对此函数的调用中传递的信息。 该过程的第一步应用于第一个参数，第二个步骤适用于第二个参数，依此类推。
+Spoolss 将公开此功能，以便端口监视器可以注册通知。 在后台处理程序中运行并且链接到 Spoolss 的组件可以调用**RegisterForPrintAsyncNotifications**。 下面的过程详细说明必须在调用此函数时传递的信息。 该过程的第一步适用于第一个参数，第二个步骤适用于第二个参数，依此类推。
 
 ```cpp
 HRESULT
@@ -41,21 +37,21 @@ HRESULT
     );
 ```
 
-**若要注册通知，请指定**
+若要注册通知，请指定以下各项：
 
-1.  本地/远程打印机或服务器名称。
+1. 本地/远程打印机或服务器名称。
 
-2.  侦听器处于感兴趣的通知的类型。
+1. 侦听器感兴趣的通知类型。
 
-3.  用户筛选器，指示的用户从其客户端是希望接收通知，或者作为通知发送相同的用户或所有用户。
+1. 用户筛选器，指示客户端要接收通知的用户，该用户是通知发件人的用户，也可能是所有用户。
 
-4.  会话样式筛选器。 客户端可以指定单向或双向通信。
+1. 会话样式筛选器。 客户端可以指定单向或双向通信。
 
-5.  [IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)接口从通道另一端返回一条通知时调用。 此参数不能**NULL**。
+1. 当通知从通道的另一端返回时要调用的[IPrintAsyncNotifyCallback](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback)接口。 此参数不能为**NULL**。
 
-当此函数返回时，第六个参数 (类型句柄的\*) 指向的注册句柄。 注册句柄是客户端收到的不透明结构。 注册是线程的与进行注册调用的用户标识相关联。 后台处理程序筛选侦听客户端根据频道的会话筛选器和客户端的注册会话中，除了该客户端会话的筛选器。
+如果此函数返回，则第六个参数（类型 HANDLE \* ）指向注册句柄。 注册句柄是客户端接收的不透明结构。 注册与发出注册调用的线程的用户标识相关联。 后台处理程序根据通道的会话筛选器和客户端的注册会话来筛选侦听客户端，以及客户端会话的筛选器。
 
-通知后台处理程序，侦听客户端应不会再收到通知，调用时，客户端必须使用此句柄[UnRegisterForPrintAsyncNotifications](https://go.microsoft.com/fwlink/p/?linkid=124754)。 对于单向通信，解除服务器端上任何挂起的通知。 对于双向通信，如果有打开的双向通道，通信将持续至在关闭为止。
+若要通知后台处理程序，侦听客户端不应再收到通知，则客户端在调用[UnRegisterForPrintAsyncNotifications](https://docs.microsoft.com/windows/win32/api/prnasnot/nf-prnasnot-unregisterforprintasyncnotifications)时必须使用此句柄。 对于单向通信，会消除服务器端上的任何挂起的通知。 对于双向通信，如果有开放式双向通道，通信将继续，直到它们关闭。
 
 ```cpp
 HRESULT
@@ -63,11 +59,3 @@ HRESULT
     IN HANDLE
     );
 ```
-
-
-
-
-
-
-
-

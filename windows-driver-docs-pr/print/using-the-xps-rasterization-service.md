@@ -2,14 +2,14 @@
 title: 使用 XPS 光栅化服务
 description: 使用 XPS 光栅化服务
 ms.assetid: a6a3746a-3638-464b-bca0-60003f37af76
-ms.date: 04/20/2017
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc60046c38303f8bdb0a3cd7ad0320b4555bd51
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 6a37b33133640f3437fe3a91698c5fbc67e38183
+ms.sourcegitcommit: 8a3cb2a87ce9751059bca8145a55b8cc39c34de9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881880"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756167"
 ---
 # <a name="using-the-xps-rasterization-service"></a>使用 XPS 光栅化服务
 
@@ -25,7 +25,7 @@ XPS 光栅化服务是在系统文件 Xpsrasterservice.dll 中实现的。 但�
   <FilterServiceProvider dll = "XpsRasterService.dll" />
 ```
 
-**FilterServiceProvider**元素是**筛选器**元素的子元素，它列出管道中的筛选器。 在管道初始化期间，打印筛选器管道管理器加载 XPS 光栅化服务，并通过属性包使该服务可访问该服务。 有关加载 XPS 光栅化服务的筛选器管道配置文件的示例，请参阅 WDK 中的 XpsRasFilter 示例。 此示例位于\\在 WDK 安装中打印\\Xpsrasfilter 文件夹中。
+**FilterServiceProvider**元素是**筛选器**元素的子元素，它列出管道中的筛选器。 在管道初始化期间，打印筛选器管道管理器加载 XPS 光栅化服务，并通过属性包使该服务可访问该服务。 有关加载 XPS 光栅化服务的筛选器管道配置文件的示例，请参阅 WDK 中的 XpsRasFilter 示例。 此示例位于你的 WDK 安装中的 Src \\ Print \\ Xpsrasfilter 文件夹中。
 
 ## <a name="obtaining-an-xps-rasterization-factory"></a>获取 XPS 光栅化工厂
 
@@ -33,9 +33,9 @@ XPS 光栅化服务是在系统文件 Xpsrasterservice.dll 中实现的。 但�
 
 为了初始化 XPSDrv 筛选器，打印筛选器管道管理器会调用筛选器的[**IPrintPipelineFilter：： InitializeFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinefilter-initializefilter)方法，并将属性包的[IPrintPipelinePropertyBag](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nn-filterpipeline-iprintpipelinepropertybag)接口作为输入参数传递到方法。
 
-若要获取指向 XPS 光栅化工厂对象的指针，XPSDrv 筛选器将调用[**IPrintPipelinePropertyBag：： GetProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinepropertybag-getproperty)方法。 属性名称 "MS\_IXpsRasterizationFactory" 标识光栅化工厂对象。 对于此属性，从**GetProperty**获取的值是对光栅化工厂对象的**IUnknown**接口的引用。 获取此接口后，筛选器必须调用[IUnknown：： QueryInterface](https://go.microsoft.com/fwlink/p/?linkid=119700)方法，以获取对该对象的[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)接口的引用。 随后，筛选器可以调用[**IXpsRasterizationFactory：： CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)方法来创建 XPS 光栅器对象。
+若要获取指向 XPS 光栅化工厂对象的指针，XPSDrv 筛选器将调用[**IPrintPipelinePropertyBag：： GetProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/filterpipeline/nf-filterpipeline-iprintpipelinepropertybag-getproperty)方法。 属性名称 "MS \_ IXpsRasterizationFactory" 标识光栅化工厂对象。 对于此属性，从**GetProperty**获取的值是对光栅化工厂对象的**IUnknown**接口的引用。 获取此接口后，筛选器必须调用[IUnknown：： QueryInterface](https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))方法，以获取对该对象的[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)接口的引用。 随后，筛选器可以调用[**IXpsRasterizationFactory：： CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)方法来创建 XPS 光栅器对象。
 
-当不再需要 factory 对象时，该筛选器应通过对对象的**IXpsRasterizationFactory**接口调用[release](https://go.microsoft.com/fwlink/p/?linkid=98433)方法来释放对象。
+当不再需要 factory 对象时，该筛选器应通过对对象的**IXpsRasterizationFactory**接口调用[release](https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-release)方法来释放对象。
 
 下面的代码示例演示如何从**IPrintPipelinePropertyBag**接口实例获取**IXpsRasterizationFactory**接口实例：
 
@@ -118,7 +118,7 @@ width = （8.5 英寸） x （600 DPI） = 5100 点
 
 高度 = （11英寸） x （600 DPI） = 6600 点
 
-若要创建固定页面的矩形区域的位图图像，XPSDrv 筛选器会调用 XPS 光栅器对象的[**IXpsRasterizer：： RasterizeRect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect)方法。 此方法始终产生像素大小为32位的位图。 像素格式由 GUID 值**guid 指定\_WICPixelFormat32bppPBGRA**，它是在头文件 Wincodec 中定义的。 格式包含8位红色、绿色和蓝色分量，并使用标准（sRGB）颜色空间。 此外，该格式还包含一个8位 alpha 分量。 每个像素值中的颜色分量由 alpha 分量预乘。 有关此格式的详细信息，请参阅[本机像素格式概述](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)。
+若要创建固定页面的矩形区域的位图图像，XPSDrv 筛选器会调用 XPS 光栅器对象的[**IXpsRasterizer：： RasterizeRect**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizer-rasterizerect)方法。 此方法始终产生像素大小为32位的位图。 像素格式由标头文件 Wincodec 中定义的 GUID 值**guid \_ WICPixelFormat32bppPBGRA**指定。 格式包含8位红色、绿色和蓝色分量，并使用标准（sRGB）颜色空间。 此外，该格式还包含一个8位 alpha 分量。 每个像素值中的颜色分量由 alpha 分量预乘。 有关此格式的详细信息，请参阅[本机像素格式概述](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)。
 
 某些 XPSDrv 筛选器可能会对 XPS 光栅器对象生成的位图执行额外的处理。 例如，彩色打印机的筛选器可能会将位图转换为 CMYK 像素格式，然后才能在打印机的页面描述语言中将其发送到打印机。
 
@@ -128,7 +128,7 @@ width = （8.5 英寸） x （600 DPI） = 5100 点
 
 - 在 Windows 8 中，XPS 光栅化服务公开了新的接口[IXpsRasterizationFactory1](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory1)，它是[IXpsRasterizationFactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nn-xpsrassvc-ixpsrasterizationfactory)的新版本。 **IXpsRasterizationFactory1**公开一个与 Windows 7 版本（[**IXpsRasterizationFactory：： CreateRasterizer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/nf-xpsrassvc-ixpsrasterizationfactory-createrasterizer)）相同的新方法[**IXpsRasterizationFactory1：： CreateRasterizer1**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh802468(v=vs.85))，只不过它需要一个新参数用于输出像素格式。
 
-- 此功能公开一个新枚举[**XPSRAS\_像素\_格式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/ne-xpsrassvc-__midl___midl_itf_xpsrassvc_0000_0003_0001)，它允许调用方选择 IXpsRasterizer：： RasterizeRect 方法返回的[IWICBitmap](https://docs.microsoft.com/windows/desktop/api/wincodec/nn-wincodec-iwicbitmap)接口所使用的像素格式。
+- 此功能公开一个新枚举[**XPSRAS \_ 像素 \_ 格式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/xpsrassvc/ne-xpsrassvc-__midl___midl_itf_xpsrassvc_0000_0003_0001)，它允许调用方选择由 IXpsRasterizer：： RasterizeRect 方法返回的[IWICBitmap](https://docs.microsoft.com/windows/desktop/api/wincodec/nn-wincodec-iwicbitmap)接口所使用的像素格式。
 
 ## <a name="xpsras-and-the-gpu"></a>XPSRas 和 GPU
 
