@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: 83d3b0cfbd341712161de579064d61931d85d22d
-  ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+  ms.openlocfilehash: 50380398229bcaa95270c6349b5cd0361b490368
+  ms.sourcegitcommit: e6e17c669e52e12f5c4fb74dc8730fda3fa2160c
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/12/2020
-  ms.locfileid: "83235445"
+  ms.lasthandoff: 06/14/2020
+  ms.locfileid: "84758218"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -72,6 +72,26 @@ conceptualContent:
     - text: 核心内核 API 参考
       url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel
       itemType: reference
+  - title: 构建设备
+    links:
+    - text: 自定义
+      url: https://docs.microsoft.com/windows-hardware/customize
+      itemType: overview
+    - text: 设计 Windows 10 设备
+      url: https://docs.microsoft.com/windows-hardware/design
+      itemType: overview
+    - text: Windows 10 入门
+      url: https://docs.microsoft.com/windows-hardware/get-started
+      itemType: overview
+    - text: 制造商
+      url: https://docs.microsoft.com/windows-hardware/manufacture
+      itemType: overview
+    - text: 服务
+      url: https://docs.microsoft.com/windows-hardware/service
+      itemType: overview
+    - text: 测试性能和兼容性
+      url: https://docs.microsoft.com/windows-hardware/test
+      itemType: overview
 tools:
   title: 驱动程序平台和框架
   items:
