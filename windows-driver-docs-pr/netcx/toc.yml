@@ -52,7 +52,7 @@
           href: net-ring-element-management.md
 - name: NetAdapterCx 接收方缩放 (RSS)
   href: netadaptercx-receive-side-scaling-rss-.md
-- name: 配置电源管理
+- name: 配置 NetAdapterCx 电源管理
   href: configuring-power-management.md
 - name: NDIS-WDF 函数等效项
   href: ndis-wdf-function-equivalents.md

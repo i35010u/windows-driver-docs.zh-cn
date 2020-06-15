@@ -4,16 +4,18 @@ description: 从 Windows 10 开始，可以通过提供名为扩展 INF 的其�
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d3bc985429956fd791eb458f6f3e9a3b2fe22da
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 04bc03a97e0efb611e58ddbd20e1b756b0d43c29
+ms.sourcegitcommit: ed28d54b986933ce1ab810df361269675e216e33
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235386"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84765947"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
-在 Windows 10 之前，Windows 选择了要为给定设备安装的单个驱动程序包。  这会生成大量复杂的驱动程序包，其中包括所有方案和配置的代码，每次更新需要更新整个驱动程序包。  从 Windows 10 开始，你可以将 INF 功能拆分为多个组件，每个组件都可以单独进行维护。  若要扩展驱动程序包 INF 文件的功能，请在单独的驱动程序包中提供扩展 INF。  扩展 INF：
+在 Windows 10 之前，Windows 选择了要为给定设备安装的单个驱动程序包。  这会生成大量复杂的驱动程序包，其中包括所有方案和配置的代码，每次更新需要更新整个驱动程序包。  从 Windows 10 开始，你可以将 INF 功能拆分为多个组件，每个组件都可以单独进行维护。
+
+若要扩展驱动程序包 INF 文件的功能，请在单独的驱动程序包中提供扩展 INF。  扩展 INF：
 
 * 可由不同的公司提供，并独立于基本 INF 进行更新。
 * 看起来与基本 INF 相同，但可以扩展用于自定义或专用化的基本 INF。
@@ -27,7 +29,7 @@ ms.locfileid: "83235386"
 * 修改基本 INF 中提供的设置，例如自定义设备友好名称或修改硬件配置设置。
 * 通过指定[INF AddComponent 指令](inf-addcomponent-directive.md)并提供[组件 INF 文件](using-a-component-inf-file.md)来创建一个或多个软件组件。
 
-你可以在此页上的示例中查找这些方案的示例代码。  另请参阅[通用驱动程序方案](../develop/universal-driver-scenarios.md)，其中描述了[DCHU 通用驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)如何使用 extension inf。
+可以在下面的示例中查找这些方案的示例代码。  另请参阅[DCH 兼容驱动程序包示例](../develop/dch-example.md)，其中介绍了[DCHU 通用驱动程序示例](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)如何使用 extension inf。
 
 在下图中，两个不同的公司为同一设备创建了单独的驱动程序包，它们显示在点线中。  第一个仅包含扩展 INF，第二个包含组件 INF 和旧软件模块。  该图还显示了扩展 INF 如何引用组件 INF，后者又可以引用要安装的软件模块。
 
@@ -49,7 +51,7 @@ ms.locfileid: "83235386"
 
 ![显示如何选择基本 INF 和扩展 Inf 的关系图](images/extension-base-inf-example.png)
 
-**ExtensionId**值显示在大括号中，每个驱动程序的[排名](how-setup-ranks-drivers--windows-vista-and-later-.md)显示在横幅功能区中。
+**ExtensionId**值 `{A}` 、 `{B}` 和 `{C}` 显示在大括号中，每个驱动程序的[排名](how-setup-ranks-drivers--windows-vista-and-later-.md)显示在横幅功能区中。
 
 首先，系统选择具有最新版本和最高级别的驱动程序。
 
@@ -98,7 +100,7 @@ ms.locfileid: "83235386"
 
 5.  不要使用定义服务 `SPSVCINST_ASSOCSERVICE` 。  但是，扩展 INF 可以定义其他服务，例如设备的筛选器驱动程序。  有关指定服务的详细信息，请参阅[**INF AddService 指令**](inf-addservice-directive.md)。
 
-在大多数情况下，你将扩展 INF 包分别从基础驱动程序包提交到硬件开发人员中心。  有关如何打包 extension Inf 以及指向示例代码的链接的示例，请参阅[通用驱动程序方案](../develop/universal-driver-scenarios.md)。
+在大多数情况下，你将扩展 INF 包分别从基础驱动程序包提交到硬件开发人员中心。  有关如何打包 extension Inf 以及指向示例代码的链接的示例，请参阅[DCH 兼容驱动程序包示例](../develop/dch-example.md)。
 
 对于常规 Inf，对于扩展 Inf，驱动程序验证和提交过程是相同的。 有关详细信息，请参阅[WINDOWS HLK 入门](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)。
 
@@ -230,7 +232,7 @@ OsrFx2.ExtensionDesc = "OsrFx2 DCHU Device Extension"
 REG_EXPAND_SZ = 0x00020000
 FLG_ADDREG_KEYONLY = 0x00000010
 ```
-若要使用扩展 INF 安装筛选器驱动程序，[请参阅本页，其中详细](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)说明了如何使用扩展 inf 正确注册筛选器驱动程序。
+有关如何使用扩展 INF 安装筛选器驱动程序的信息，请参阅[设备筛选器驱动程序顺序](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)。
 
 ##  <a name="submitting-an-extension-inf-for-certification"></a>提交用于认证的扩展 INF
 
@@ -238,7 +240,8 @@ FLG_ADDREG_KEYONLY = 0x00000010
 
 ## <a name="related-topics"></a>相关主题
 
-* [通用驱动程序方案](../develop/universal-driver-scenarios.md)
+* [在合作伙伴中心使用扩展 INF](../dashboard/submit-dashboard-extension-inf-files.md)
+* [符合 DCH 的驱动程序包示例](../develop/dch-example.md)
 * [Using a Universal INF File](using-a-universal-inf-file.md)（使用通用 INF 文件）
-* [Windows 驱动程序的入门](../develop/getting-started-with-windows-drivers.md)
+* [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)
 * [适用于通用驱动程序的驱动程序包安装工具包](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)
