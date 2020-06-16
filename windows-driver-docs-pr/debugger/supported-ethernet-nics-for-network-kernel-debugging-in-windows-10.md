@@ -2,14 +2,14 @@
 title: Windows 10 中的网络内核调试支持的以太网 NIC
 description: 当目标计算机运行 Windows 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡（NIC）或网络适配器。
 ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
-ms.date: 06/01/2020
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49cee589c33b008aae631ae853ea9ac30b6339c6
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: a44c6eebc06d394e034a352d8c86bd7f21a6b7d9
+ms.sourcegitcommit: d728d086444a8a820fb098df34414ccdb3f32100
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336390"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84784633"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 中的网络内核调试支持的以太网 NIC
 
@@ -32,7 +32,7 @@ ms.locfileid: "84336390"
 
 `C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\VerifiedNicList.xml`
 
-针对特定版本检查 WDK 中随附的 VerifiedNicList 是必需的，因为其他硬件支持已添加到以前版本中不存在的新版本的 Windows。  因此，你必须检查该特定版本的 VerifiedNicLIst 文件。
+针对特定版本检查 WDK 中随附的 VerifiedNicList.xml 是必需的，因为其他硬件支持已添加到以前版本中不存在的新版本的 Windows 中。  因此，你必须检查该特定版本的 VerifiedNicLIst.xml 文件。
 
 ## <a name="finding-the-vendor-id-and-device-id"></a>查找供应商 ID 和设备 ID
 
@@ -61,7 +61,7 @@ ms.locfileid: "84336390"
 
 对于供应商 ID 14E4，支持以下设备 Id：
 
-1600 1601 1639 163A 163B 163C 163D 163E 1641 1642 1643 1644 1645 1646 1647 1648 164A 164C 164D 164E 164F 1650 1653 1654 1655 1656 1657 1659 165A 165B 165C 165D 165E 165F 1662 1663 1665 1668 1669 166A 166B 166D 166E 1672 1673 1674 1676 1677 1678 1679 167A 167B 167C 167D 167F 168A 168D 168E 1680 1681 1682 1683 1684 1686 1687 1688 1690 1691 1692 1693 1694 1696 1698 1699 169A 169B 169D 16A0 16A1 16A216A4 16A5 16A6 16A7 16A8 16AA 16AC 16AE 16B0 16B1 16B2 16B3 16B4 16B5 16B6 16B7 16C6 16C7 16DD 16F7 16FD 16FE 16FF 170D 170E 170F
+1600 1601 1614 1639 163A 163B 163C 163D 163E 1641 1642 1643 1644 1645 1646 1647 1648 164A 164C 164D 164E 164F 1650 1653 1654 1655 1656 1657 1659 165A 165B 165C 165D 165E 165F 1662 1663 1665 1668 1669 166A 166B 166D 166E 1672 1673 1674 1676 1677 1678 1679 167A 167B 167C 167D 167F 168A 168D 168E 1680 1681 1682 1683 1684 1686 1687 1688 1690 1691 1692 1693 1694 1696 1698 1699 169A 169B 169D 16A0 16A116A2 16A4 16A5 16A6 16A7 16A8 16AA 16AC 16AE 16B0 16B1 16B2 16B3 16B4 16B5 16B6 16B7 16C6 16C7 16C9 16CA 16CE 16CF 16D0 16D1 16D2 16D5 16D6 16D7 16D8 16D9 16DD 16DF 16E0 16E2 16E3 16E4 16E9 16F0 16F1 16F7 16FD 16FE 16FF 170D 170E 170F D802
 
 ## <a name="vendor-id-1969-atheros-communications"></a>供应商 ID 1969，Atheros 通信
 

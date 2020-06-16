@@ -1,330 +1,168 @@
 ---
-title: Wi-Fi Direct 打印实现
-description: 提供有关 Wi-Fi Direct 打印实现设备要求的信息。
+title: Wi-fi Direct 打印实现
+description: 提供 Wi-fi Direct 打印实现设备要求的相关信息。
 ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
-ms.date: 01/30/2018
+ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16381bee107e988684373adb4b147d27634f98cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1ced3a6dbd2f9371aac25c37f3992448c1b7f5a
+ms.sourcegitcommit: 77c63789350cfc1dc740baaafdef64803d86217f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387185"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84793749"
 ---
-# <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 打印实现
-
+# <a name="wi-fi-direct-printing-implementation"></a>Wi-fi Direct 打印实现
 
 ## <a name="device-requirements"></a>设备要求
 
+要使 WFD WSD 设备获取[Wi-fi Direct 打印概述](wfd-overview.md)中所述的无缝连接体验，设备必须遵守以下要求：
 
-WFD WSD 设备以获取无缝连接体验，如中所述[Wi-Fi Direct 打印概述](wfd-overview.md)，设备必须遵守以下要求：
+- 设备必须支持垂直配对并发送 WPS 消息中的相关 DPWS （WSD）数据（下面的 "实现垂直配对数据 Blob" 中所述的格式）
 
--   设备必须支持垂直配对并发送相关 DPWS (WSD) 数据中的 WPS 消息 （"实现垂直配对的数据 Blob"下面所述的格式）
--   物理设备中的所有逻辑设备必须在其 PNP-X 的扩展中使用相同的 PNP-X 的容器 ID
-    -   有关为网络连接的设备实现 PNP-X 的容器 Id 的详细信息，请参阅[概述的容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)。
-    -   PNP-X 的扩展的常规信息，请参阅[PnP x:Plug and Play for Windows 规范的扩展](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))。
+- 物理设备中的所有逻辑设备必须使用其 Pnp-x 扩展中的相同 Pnp-x 容器 ID
 
-由于 WFD 容器 ID 将与匹配的打印机的 UUID，设备元数据中将不需要 PNP-X 的容器 ID。 但是，仍建议设备支持 PNP-X 的元数据中的设备元数据和设备元数据中的 PNP-X 的元数据的一部分播发 PNP-X 的容器 ID。 此容器 ID 应匹配 WFD 容器的 id。
+  - 有关为网络连接设备实施 Pnp-x 容器 Id 的详细信息，请参阅[容器 Id 概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)。
 
-具有相同的容器 ID WFD 层以及 WSD 层可确保以下项：
+  - 有关 Pnp-x 扩展的常规信息，请参阅[pnp-x： Windows 即插即用扩展规范](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))。
 
--   配对 UI，如添加一个设备向导中，可以了解多个逻辑设备共存于单个物理设备和处理方式为用户更具逻辑性配对。 （例如用户无需配对 WFD 和手动在单独的操作中的打印设备。）
--   即使有两个设置的 devnodes （WFD devnodes 一个组），另一 WSD devnodes 在系统上安装的设备和打印机可以显示设备的单个设备的图标。
--   请注意该正确的容器 ID 实现是所必需的 Windows 硬件认证工具包测试正确运行。 不正确的实现将导致测试作为单独的物理设备识别每个逻辑设备。
+由于 WFD 容器 ID 将匹配打印机的 UUID，因此设备元数据中不需要 Pnp-x 容器 ID。 但是，仍建议设备在设备元数据中支持 Pnp-id 元数据，并在设备元数据中将 Pnp-x 容器 ID 作为 Pnp-x 元数据的一部分播发。 此容器 ID 应与 WFD 容器 ID 匹配。
 
-如果 WFD WSD 设备不符合上述要求，然后在此实现中所述的连接体验不会应用到这些设备中。
+在 WFD 层和 WSD 层具有相同的容器 ID 可确保以下各项：
 
-设备应实现持久的组和并发连接多个组中的规定[Wi-fi 联盟-Wi-Fi Direct 行业白皮书](https://go.microsoft.com/fwlink/p/?LinkId=784967)。
+- 配对 UI （如添加设备向导）可以了解多个逻辑设备在单个物理设备上共存，并以更具逻辑性的方式为用户处理配对。 （例如，用户不必在单独的操作中手动配对 WFD 和打印设备。）
 
-## <a name="how-to-publish-container-uuid-over-wi-fi-direct-for-printers"></a>如何将发布容器 UUID 通过 Wi-Fi Direct 打印机
+- 设备 & 打印机可以显示设备的单个设备图标，即使系统上安装了两组 devnodes （一组 WFD devnodes 和一组 WSD devnodes）。
 
+- 请注意，要使 Windows 硬件认证工具包测试正确运行，需要正确的容器 ID 实现。 不正确的实现将导致测试将每个逻辑设备识别为单独的物理设备。
 
-Windows 通过 Wi-Fi Direct 使用探测请求/响应每个 Wi-fi 联盟"Wi-Fi-对等 (P2P) 规范 v1.1"发现打印机部分 3.1.2.1.2 （扫描阶段）。 该设备，打印机在这种情况下将回复使用适当的探测请求/响应帧的 PC。
+如果 WFD WSD 设备不符合上述要求，则此实现中描述的连接体验将不会应用到这些设备。
 
-同时探测请求和探测响应帧可以使用自定义导致浏览器扩展。 Microsoft 还定义了自定义 IE 具有多个特性来启用各种扩展。
+设备应按照[Wi-fi 联合-Wi-fi Direct 工业白皮书](https://www.wi-fi.org)中指定的方式实现永久性组和并发连接。
 
-**如何构造 Microsoft 802.11 自定义 IE**
+## <a name="how-to-publish-container-uuid-over-wi-fi-direct-for-printers"></a>如何在 Wi-fi Direct 上为打印机发布容器 UUID
 
-自定义 IE 包含供应商 ID 和供应商数据。
+Windows 使用每个 Wi-fi 联盟 "Wi-fi 对等（P2P）规范 v1.1" 部分3.1.2.1.2 （扫描阶段）的探测请求/响应，通过 Wi-fi 发现打印机。 在这种情况下，设备打印机将使用适当的探测请求/响应帧回复 PC。
+
+可使用自定义扩展 & 探测响应帧的探测请求。 Microsoft 定义了具有多个属性的自定义 IE 来启用各种扩展。
+
+### <a name="how-to-construct-a-microsoft-80211-custom-ie-for-container-uuid"></a>如何构造用于容器 UUID 的 Microsoft 802.11 自定义 IE
+
+自定义 IE 包含供应商 ID & 供应商数据，如以下 WFD 供应商扩展图所示。
 
 ![wfd 供应商扩展](images/wfd-customie.png)
 
-*WFD 供应商扩展*
-
-Microsoft 使用供应商 ID 0x137 来表示导致浏览器由 Microsoft 拥有。 在每个供应商的供应商扩展的供应商数据块包含任意供应商定义数据的块。 在 Microsoft 供应商扩展包含一个或多个类型-长度-值 (TLV) 结构中块的供应商数据。 在图下方显示 TLV 结构的组织。
+Microsoft 使用供应商 ID 0x137 来表示 Microsoft 拥有的。 每个供应商供应商扩展中的供应商数据块包含供应商定义的任意数据块。 Microsoft 供应商扩展中的供应商数据块包含一个或多个类型-长度-值（TLV）结构。 以下*WFD 供应商数据*图中显示了 TLV 结构的组织。
 
 ![wfd 供应商数据](images/wfd-vendordatatlv.png)
 
-*WFD 供应商数据*
+### <a name="tlv-definition-for-container-uuid"></a>容器 UUID 的 TLV 定义
 
-**容器 UUID 的 TLV 定义**
-
-有两个 TLVs 与 Contained id。 没有"请求属性"，Windows 将发送到设备和没有"容器 UUID"TLV 设备使用进行响应。
+有两个与包含的 ID 相关的 TLVs。 Windows 发送到设备的 "属性请求" & 存在设备所响应的 "容器 UUID" TLV。
 
 定义：
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>名称/描述</th>
-<th>类型 （2 个字节）</th>
-<th>长度 （2 个字节）</th>
-<th>值 （由长度定义）</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>请求的 Microsoft 属性 （这由发送探测请求中的 PC 在发现期间）</p></td>
-<td><p>0x1005</p></td>
-<td><p>0x0002</p></td>
-<td><p>0x0001 = Microsoft 正在请求包含 UUID</p></td>
-</tr>
-<tr class="even">
-<td><p>容器 UUID （这由发送打印机在探测响应在发现期间）</p></td>
-<td><p>0x1006</p></td>
-<td><p>0x0010</p></td>
-<td><p>若要定义的打印机</p></td>
-</tr>
-</tbody>
-</table>
+| 名称/说明 | 类型（2个字节） | 长度（2个字节） | 值（按长度定义） |
+|--|--|--|--|
+| 请求 Microsoft 属性（在发现期间，计算机在探测请求中发送此项） | 0x1005 | 0x0002 | 0x0001 = Microsoft 正在请求包含 UUID |
+| 容器 UUID （在发现过程中，由打印机在探测响应中发送） | 0x1006 | 0x0010 | 要由打印机定义 |
 
- 
+## <a name="implementing-vertical-pairing-data-blob"></a>实现垂直配对数据 Blob
 
-## <a name="implementing-vertical-pairing-data-blob"></a>实现垂直配对的数据 Blob
+在连接到打印机之前，垂直配对数据 Blob 允许 PC 了解 WSD 打印服务。 此机制是服务发现的简单替代，因为它是在编写 Wi-fi Direct 的服务发现规范之前实现的。
 
+与容器 UUID 一样，垂直配对数据 Blob 也是 Microsoft IE 的一个属性。 与容器 ID 属性不同的是，这必须从设备上的 M7/M8-2ms WPS 消息（在 Wi-fi 直接配对期间）中发布，具体取决于设备的角色。
 
-垂直的配对数据 Blob 允许 PC 连接到打印机之前，了解 WSD 打印服务。 此机制是服务发现的简单替代 Wi-Fi Direct 的服务发现规范已写入之前已实现。
+### <a name="how-to-construct-a-microsoft-80211-custom-ie-for-vertical-pairing"></a>如何构造用于垂直配对的 Microsoft 802.11 自定义 IE
 
-容器 UUID，如垂直配对的数据 Blob 也是 Microsoft IE 的属性。 与不同的容器 ID 属性，这必须发布，任一 M7/M8 WPS 消息中 （在 Wi-Fi Direct 配对） 期间从设备根据其角色。
-
-**如何构造 Microsoft 802.11 自定义 IE**
-
-自定义 IE 包含供应商 ID 和供应商数据。
+自定义 IE 包含供应商 ID & 供应商数据，如以下 WFD 供应商扩展图所示。
 
 ![wfd 供应商扩展](images/wfd-customie.png)
 
-*WFD 供应商扩展*
-
-Microsoft 使用供应商 ID 0x137 来表示导致浏览器由 Microsoft 拥有。 在每个供应商的供应商扩展的供应商数据块包含任意供应商定义数据的块。 在 Microsoft 供应商扩展包含一个或多个类型-长度-值 (TLV) 结构中块的供应商数据。 TLV 结构的组织在下图中所示：
+Microsoft 使用供应商 ID 0x137 来表示 Microsoft 拥有的。 每个供应商供应商扩展中的供应商数据块包含供应商定义的任意数据块。 Microsoft 供应商扩展中的供应商数据块包含一个或多个类型-长度-值（TLV）结构。 以下 WFD 供应商数据图中显示了 TLV 结构的组织：
 
 ![wfd 供应商数据](images/wfd-vendordatatlv.png)
 
-*WFD 供应商数据*
+### <a name="tlv-definition-for-vertical-pairing-blob"></a>垂直配对 Blob 的 TLV 定义
 
-**垂直配对的 Blob 的 TLV 定义**
+为 Rally 垂直配对定义了两个特定的 TLV 类型。 下表列出了这些 TLV 类型。
 
-为 Rally 垂直配对定义两个特定 TLV 类型。 下表列出了这些 TLV 类型。
+| 名称/说明 | 类型（2个字节） | 长度（2个字节） | 值（按长度定义） |
+|--|--|--|--|
+| 垂直配对标识符（传达设备的内部拓扑） | 0x1001 | 0x0002 | 请参阅下面的 "垂直配对标识符 TLV"。 |
+| 传输 UUID （设备的传输 UUID 值） | 0x1002 | 0x0010 | 请参阅上面的 "容器 UUID 的 TLV 定义"。 |
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>名称/描述</th>
-<th>类型 （2 个字节）</th>
-<th>长度 （2 个字节）</th>
-<th>值 （由长度定义）</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>垂直配对标识符 （进行通信的设备内部拓扑）</p></td>
-<td><p>0x1001</p></td>
-<td><p>0x0002</p></td>
-<td><p>请参阅下面的"垂直配对标识符 TLV"。</p></td>
-</tr>
-<tr class="even">
-<td><p>传输 UUID （设备的 UUID 值传输）</p></td>
-<td><p>0x1002</p></td>
-<td><p>0x0010</p></td>
-<td><p>请参阅上面的"容器 UUID TLV 定义"。</p></td>
-</tr>
-</tbody>
-</table>
+### <a name="vertical-pairing-identifier-tlv"></a>垂直配对标识符 TLV
 
- 
+垂直配对标识符（VPI） TLV 传达设备的内部拓扑，该拓扑指定 Windows 如何与设备的服务进行通信。 至少需要一个 VPI 才能支持 Rally 垂直配对扩展，即使设备中未实现垂直配对也是如此。 在这种情况下，VPI 将指定不使用传输。 必须将 VPI TLV 作为 Microsoft 供应商扩展的一部分发送到 WPS M1 消息中。
 
-*Rally 垂直配对 TLVs*
-**垂直配对标识符 TLV**
+VPI TLV 附带的数据长度为2个字节，包含两个不同的字段： "传输" 字段和 "配置文件请求" 字段，如下图所示的对 VPI TLV （每个字段的长度为1个字节）。
 
-垂直配对标识符 (VPI) TLV 通信设备的内部拓扑，指定 Windows 可以在与设备的服务进行通信。 至少一个 VPI 必需以支持 Rally 垂直配对的扩展，即使在设备中不实现垂直配对。 在此情况下，VPI 会指定不使用任何传输。 VPI TLV 必须作为 Microsoft 供应商扩展 WPS M1 消息中的一部分发送。
+![使用 vpi tlv 进行 wfd 数据](images/wfd-vpi.png)
 
-附带 VPI TLV 数据是 2 个字节长和两个不同字段组成： 传输字段和一个配置文件请求字段，如下面的图像 （每个字段为 1 个字节长） 中所示：
+### <a name="vpi-transport-field"></a>VPI 传输字段
 
-![wfd vpi tlv 中包含的数据](images/wfd-vpi.png)
+传输字段指定 Windows 可用来与设备通信的传输。 每个 VPI 只能指定一个传输。 如果设备支持多个 Pnp-x 传输，则可以通过在 Microsoft 供应商扩展中包含多个 VPI TLVs （每个传输一个）来进行通信。 下表列出了 VPI 传输字段的有效值。
 
-*WFD VPI TLV 中包含的数据*
+| 值 | 传输 |
+|--|--|
+| 0x00 | 无 |
+| 0x01 | DPWS |
+| 0x02 | UPnP |
+| 0x03 | 保护 DPWS |
+| 0x04-0xFF | 保留 |
 
-**VPI 传输字段**
+> [!NOTE]
+> Windows 7 支持 DPWS （0x01）或 Secure DPWS （0x03），但不能同时支持两者。
 
-传输字段指定 Windows 可用于与设备进行通信的传输。 每 VPI，可以指定只有一个传输。 如果设备支持多个 PNP-X 的传输协议，它可以通过在 Microsoft 供应商扩展中包含多个 VPI TLVs （一个用于每个传输协议） 来进行通信。 下表中列出 VPI 传输字段的有效值。
+如果设备未实现 Rally 垂直配对，则它必须仅指定一个传输值为0x00 （None）的 VPI。 在这种情况下，设备不应指定传输 UUID TLV。 这会通知 Windows 它不应与设备配对。 因此，Windows 在配置设备的 Wi-fi 设置时不会尝试与设备预配对。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ReplTest1</th>
-<th>“传输”</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0x00</p></td>
-<td><p>无</p></td>
-</tr>
-<tr class="even">
-<td><p>0x01</p></td>
-<td><p>DPWS</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x02</p></td>
-<td><p>UPnP</p></td>
-</tr>
-<tr class="even">
-<td><p>0x03</p></td>
-<td><p>安全 DPWS</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x04-0xFF</p></td>
-<td><p>保留</p></td>
-</tr>
-</tbody>
-</table>
+### <a name="vpi-profile-request-field"></a>VPI 配置文件请求字段
 
- 
+VPI 允许设备使用 WPS 协议预配设备的服务。 在这种情况下，设备服务可以请求 Windows 发送用于配置服务的信息。 此信息称为配置文件。 VPI 的第二个字段指定设备是否正在请求 Windows 向其发送配置文件。 下表列出了 VPI 配置文件请求字段的有效值。
 
-*VPI 传输字段值*
+| 值 | 说明 |
+|--|--|
+| 0x01 | 请求了 wi-fi 配置文件。 这是 Windows 7 当前支持的唯一值。 |
+| 0x00，0x02 –0xFF | 保留 |
 
-**请注意**  Windows 7 提供支持 DPWS (0x01) 或安全 DPWS (0x03)，但不是同时。
+VPI 配置文件请求字段值0x00 被视为保留值，因为 Windows 7 当前不支持此值。 只能将 "VPI 配置文件请求" 字段设置为值 "0x01 （请求 Wi-fi 配置文件）"，即使为传输指定了值0x00 （无）。
 
- 
+### <a name="transport-uuid-tlv"></a>传输 UUID TLV
 
-**请注意**  如果设备未实现 Rally 垂直配对时，它必须指定只有一个 VPI 传输值为 0x00 （无）。 在此情况下，设备不应指定传输 UUID TLV。 这会通知 Windows，它不应期望以与设备配对。 因此，Windows 不会尝试将设备的 Wi-fi 设置配置时，与设备预配对。
+传输 UUID TLV 指定特定传输（DPWS 或 UPnP）的基本 UUID 值与 WPS UUID 不同。 传输 UUID TLV 是可选的。 如果未包含传输 UUID TLV，则使用 WPS UUID 形成指定传输的标识。
 
- 
+如果包含传输 UUID TLV，则它必须紧跟在标识传输的 VPI TLV 之后。 如果包括多个 VPI TLV，则每个 VPI TLV 之后都可以包含一个传输 UUID TLV。
 
-**VPI 配置文件请求字段**
+传输 UUID TLV 数据值必须采用网络字节顺序。
 
-VPI 一来，设备使用 WPS 协议来预配设备的服务。 在这种情况下，设备服务可以请求，Windows 将其发送了用于配置服务的信息。 此信息称为配置文件。 VPI 的第二个字段指定设备是否正在请求，Windows 将其发送了一个配置文件。 下表中列出的 VPI 配置文件请求的字段的有效值。
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ReplTest1</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0x01</p></td>
-<td><p>请求的 Wi-fi 配置文件。 这是 Windows 7 目前支持的唯一值。</p></td>
-</tr>
-<tr class="even">
-<td><p>0x00，0x02 – 0xFF</p></td>
-<td><p>保留</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-*VPI 配置文件请求字段值*
-
-**请注意**  VPI 配置文件请求字段值为 0x00 被视为预留，因为它当前不支持通过 Windows 7。 VPI 配置文件请求字段仅应设置为值 0x01 （请求的 Wi-fi 配置文件），值为 0x00 （无），即使指定的传输。
-
- 
-
-**传输 UUID TLV**
-
-传输 UUID TLV 指定特定的传输 （DPWS 或 UPnP） 具有不同基 UUID 值比 WPS UUID。 传输 UUID TLV 是可选的。 如果未包括传输 UUID TLV，则使用 WPS UUID 窗体中指定的传输的标识。
-
-如果包括传输 UUID TLV，则它必须紧跟标识传输 VPI TLV。 如果包含多个 VPI TLV，则在每个 VPI TLV 后可以包含传输 UUID TLV。
-
-**请注意**  传输 UUID TLV 数据值必须以网络字节顺序。
-
- 
-
-**请注意**  设备指定 VPI 传输值为 0x00 （无），如果不包括传输 UUID TLV。
-
- 
+如果设备指定的 VPI 传输值为0x00 （none），请不要包含传输 UUID TLV。
 
 ## <a name="wps-example"></a>WPS 示例
 
+对于本示例，假定打印机设备使用 DPWS 并实现 WS 打印接口。 设备使用下表中的 UUID 值：
 
-对于此示例中，假定打印机设备使用 DPWS 并实现 WS 打印接口。 设备使用下表中的 UUID 值：
+| 服务 | 标识 |
+|--|--|
+| WPS | ec742c0d-5915-4bcb-b969-008132afec5e |
+| DPWS 打印 | urn： uuid：00010203-0405-0607-0809-0a0b0c0e0e0f |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>服务</th>
-<th>标识</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>WPS</p></td>
-<td><p>ec742c0d-5915-4bcb-b969-008132afec5e</p></td>
-</tr>
-<tr class="even">
-<td><p>DPWS 打印</p></td>
-<td><p>urn:uuid:00010203-0405-0607-0809-0a0b0c0e0e0f</p></td>
-</tr>
-</tbody>
-</table>
+### <a name="wps-exampleservice-uuid-values"></a>WPS 示例-服务 UUID 值
 
- 
+UUID 值以全部小写指定，DPWS 标识字符串使用格式 urn： uuid： uuid \_ 值。
 
-*WPS 示例 — 服务 UUID 值*
+> [!NOTE]
+> 此示例中的 UUID 值是虚构的，不能在实际设备中使用。
 
-**请注意**  中全部小写，指定 UUID 值并 DPWS 标识字符串使用格式 urn: uuid:uuid\_值。
+当设备发送其 WPS M7/M8-2ms 消息时，它会包含 Microsoft 供应商扩展，此扩展将在以下示例中显示：
 
- 
+![wfd 供应商扩展详细信息示例](images/wfd-vendorextensiondetails.png)
 
-**请注意**  在此示例中的 UUID 值是虚构的和不得在实际设备上使用。
+在此示例中，供应商扩展包含0x137 的供应商 ID 值，该值将其标识为 Microsoft 供应商扩展。 供应商扩展的供应商数据字段中包含两个 TLV 结构。
 
- 
+第一个 TLV 的类型值为0x1001，它将 TLV 标识为 VPI。 第一个 TLV 中的数据长度为2个字节，其中包含值0x0101。 此方法指定设备支持 DPWS 传输（0x01），并且该设备正在请求配置文件（0x01）。
 
-当设备发送出其 WPS M7/M8 消息时，它包括在下图中所示的 Microsoft 供应商扩展：
+第二个 TLV 的类型值为0x1002，它将 TLV 标识为传输 UUID。 第二个 TLV 中的数据长度为16字节，其中包含00010203-0405-0607-0809-0a0b0c0e0e0f 的二进制版本。
 
-![示例 wfd 供应商扩展详细信息](images/wfd-vendorextensiondetails.png)
+如果客户垂直对打印机进行配对，Windows 将首先使用适当的设置来配置设备的 Wi-fi 收音机。 然后，它使用指定的传输 UUID 值配对设备的 DPWS 设备。
 
-*示例 WFD 供应商扩展详细信息*
-
-在此示例中，供应商扩展包含 0x137，其标识为 Microsoft 供应商扩展的供应商 ID 值。 在供应商扩展的供应商数据字段是两个 TLV 结构。
-
-第一个 TLV 具有 0x1001，标识作为 VPI TLV 类型值。 第一个 TLV 中数据的长度为 2 个字节，包含值为 0x0101。 这将指定设备是否支持 DPWS 传输 (0x01) 和请求的配置文件 (0x01)。
-
-第二个 TLV 具有 0x1002，标识作为传输 UUID TLV 类型值。 第二个 TLV 中的数据的长度为 16 个字节，其中包含的 UUID 值 00010203-0405年-0607年-0809年-0a0b0c0e0e0f 的二进制版本。
-
-客户垂直对打印机，Windows 先将设备的 Wi-fi 无线电配置具有适当设置。 然后，它使用指定的传输 UUID 值对 DPWS 设备。
-
-设备连接到 Wi-fi 网络，并宣布其 DPWS 服务后，Windows 将适当的即插即用设备节点创建和安装并加载合适的驱动程序。
-
- 
-
- 
-
-
-
-
+在设备连接到 Wi-fi 网络并公布其 DPWS 服务后，Windows 将创建适当的 PnP 设备节点并安装和加载相应的驱动程序。

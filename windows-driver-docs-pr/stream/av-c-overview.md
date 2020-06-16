@@ -3,54 +3,42 @@ title: AV/C 概述
 description: AV/C 概述
 ms.assetid: ff9e6dfc-7ab4-4b56-8b47-d3ea46b579e0
 keywords:
-- AV/C WDK，有关 AV/C
-- Avc.sys 功能驱动程序 WDK
-- 对等方 Avc.sys 模式 WDK AV/C
+- AV/C WDK，关于 AV/C
+- Avc.sys 函数驱动程序 WDK
+- 对等 Avc.sys 模式 WDK AV/C
 - 虚拟 Avc.sys 模式 WDK AV/C
-- Avc.sys 功能驱动程序 WDK，有关 Avc.sys 函数驱动程序
-ms.date: 04/20/2017
+- Avc.sys 函数驱动程序 WDK，关于 Avc.sys 函数驱动程序
+ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e01a56600aca0974afda1d4099d42cc4baad68a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c430d5cbd982d9182e60f037bd1e5b19ad07ac52
+ms.sourcegitcommit: 77c63789350cfc1dc740baaafdef64803d86217f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384756"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84793747"
 ---
 # <a name="avc-overview"></a>AV/C 概述
 
+本部分介绍了 Microsoft 提供的*Avc.sys*函数驱动程序，该驱动程序提供对 IEEE 1394 音频/视频控制（AV/C）协议的支持。 本部分还提供了为 AV/C 兼容设备开发 AV/C 子单位驱动程序的指南。 [1394 贸易协会的](https://1394ta.org/library-2)网站上提供了 AV/C 协议的详细信息。 请注意，供应商可能使用 Microsoft 提供的驱动程序（ *Msdv.sys*或*Mstape.sys*）支持其磁带子单元连接（如果适用）。 这两个类驱动程序使写入磁带的驱动程序子单元连接不必要。
 
+*Avc.sys*提供了两种运行模式：对等和虚拟。 *Avc.sys*对等机模式支持外部 AV/C 设备上的子单元连接。 利用*Avc.sys*虚拟模式，计算机功能可以作为 Av/c 子源公开，从而使计算机成为 Av/c 命令的有效目标，并使其在 IEEE 1394 串行总线上通过其他 Av/c 设备发出。
 
+*Avc.sys*使用单独的驱动程序堆栈来支持对等子和虚拟子单元连接。 请注意，不同模式不支持相同的功能。 有关对等子和虚拟子单位驱动程序堆栈的详细信息，请参阅[AV/C 驱动程序堆栈](av-c-driver-stacks.md)。
 
-
-本部分介绍了 Microsoft 提供*Avc.sys* IEEE 1394 音频/视频控件 (AV/C) 协议提供支持的功能驱动程序。 本部分还提供了指导原则开发 AV/C 子单元 AV/C 符合设备的驱动程序。 AV/C 协议的详细信息位于[1394年贸易协会](https://go.microsoft.com/fwlink/p/?linkid=518448)网站。 请注意，供应商可能会使用 Microsoft 提供的驱动程序， *Msdv.sys*或*Mstape.sys*，以支持其磁带子单元连接，如果适用。 这些两个类驱动程序进行不必要的磁带子单元连接编写驱动程序。
-
-*Avc.sys*提供两种操作模式： 对等和虚拟。 *Avc.sys*对等模式支持外部 C AV/设备上的子单元连接。 *Avc.sys*虚拟模式下启用计算机的功能公开为 AV/C 子单元，并因此以使计算机成为 AV/C 的有效目标的命令，从请求其他 AV/C 设备跨 IEEE 1394 串行总线。
-
-*Avc.sys*使用单独的驱动程序堆栈，以支持对等子单元和虚拟子单元连接。 请注意，不同的模式不支持相同的功能。 有关对等子单元和虚拟子单元驱动程序堆栈的详细信息，请参阅[AV/C 驱动程序堆栈](av-c-driver-stacks.md)。
-
-*Avc.sys*为对等方和虚拟子单元连接生成设备标识符 (Id)。 设备标识符将正确的 INF 文件和子单元驱动程序与将子单元连接相关联。 AV/C 设备连接到计算机时*Avc.sys*枚举作为对等子单元连接活动子单元连接。 然后，Windows 将加载相应的子单元驱动程序。 对等方和虚拟子单元设备标识符字符串的格式的详细信息，请参阅[AV/C 设备 Id](av-c-device-identifiers.md)。
+*Avc.sys*会为对等互连和 virtual 子单元连接生成设备标识符（id）。 设备标识符将正确的 INF 文件和子单位驱动程序与子单元连接相关联。 当 AV/C 设备连接到计算机时， *Avc.sys*将活动的子单元连接作为对等子单元连接枚举。 然后，Windows 将加载相应的子单位驱动程序。 有关对等互连和虚拟子单位的设备标识符字符串的格式的详细信息，请参阅[AV/C 设备 id](av-c-device-identifiers.md)。
 
 *Avc.sys*提供了以下功能：
 
--   在 100 毫秒要求所代表的对等子单元驱动程序 AV/C 规范所定义的临时响应。 *Avc.sys*返回仅 AV/C 命令或查询的最终响应。 虚拟子单元驱动程序仍必须生成临时和最终响应。
+- 在由 AV/C 规范代表对等子驱动程序定义的100毫秒要求内的过渡响应。 *Avc.sys*仅返回 AV/C 命令或查询的最终响应。 虚拟子单位驱动程序仍必须生成过渡和最终响应。
 
--   路由从 AV/C 子单元连接到其各自的子单元驱动程序的响应。 子单元驱动程序仅其硬件从接收响应。
+- 将来自 AV/C 子单元连接的响应路由到各自的子源驱动程序。 子单位驱动程序只接收来自其硬件的响应。
 
--   IEC 61883 即插即用枚举和内核流式处理 (KS) 框架中的控制。 有关即插即用连接和数据格式的详细信息，请参阅[AV/C 子单元插入连接和格式管理](av-c-subunit-plug-connection-and-format-management.md)。
+- IEC-61883 在内核流式处理（KS）框架内的插入枚举和控制。 有关插入连接和数据格式的详细信息，请参阅[AV/C 子单位插入连接和格式管理](av-c-subunit-plug-connection-and-format-management.md)。
 
-子单元驱动程序可以使用 Stream 类接口或更高版本的 AVStream 接口。 此外，子单元驱动程序可以提供其自己 KS 代理插件公开给用户模式应用程序的自定义属性页。 有关详细信息，请参阅[AV/C 内核流式处理接口和 KS 代理插件](av-c-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins.md)。
+子单位驱动程序可以使用 Stream 类接口或较新的 AVStream 接口。 而且，子单位驱动程序可以提供自己的 KS 代理插件来向用户模式应用程序公开自定义属性页。 有关详细信息，请参阅[AV/C 内核流式处理接口和 KS 代理插件](av-c-kernel-streaming-interface-and-kernel-streaming-proxy-plug-ins.md)。
 
-通常情况下，供应商编写 AV/C 子单元驱动程序提供支持：
+通常情况下，供应商编写 AV/C 子单位驱动程序来提供对以下内容的支持：
 
--   控制基于设备类型定义的子单元[1394年贸易协会规范](https://go.microsoft.com/fwlink/p/?LinkId=518448)网站
+- 根据[1394 贸易协会规范](https://1394ta.org/library-2)网站定义的设备类型控制子单位
 
--   管理即插即用连接到基于 IEC 61883 标准通过 IEEE 1394 总线的流数据。 有关 61883 标准的详细信息，请参阅[IEC](https://go.microsoft.com/fwlink/p/?linkid=8732)网站。
-
- 
-
- 
-
-
-
-
+- 管理插入连接，以便基于 IEEE 1394 总线上的 IEC-61883 标准流式传输数据。 有关61883标准的详细信息，请参阅[IEC](https://www.iec.ch/)网站。

@@ -2,14 +2,14 @@
 title: 实现音频处理对象
 description: 本主题介绍如何实现音频处理对象（APO）。 有关的一般信息，请参阅音频处理对象体系结构。
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
-ms.date: 03/26/2020
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c153272cefea02a61ed411feb3e70c6a44b794c7
-ms.sourcegitcommit: c81abcddfd3e819ee105db5adc7937dda96b7fb4
+ms.openlocfilehash: 46111d348365d0be38a78914626da1074d1ef0c3
+ms.sourcegitcommit: d728d086444a8a820fb098df34414ccdb3f32100
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80359896"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84784631"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
@@ -59,7 +59,7 @@ ms.locfileid: "80359896"
 
 - 自定义的不能公开 IAudioProcessingObjectVBR 接口。
 
-**请注意**  有关所需接口的详细信息，请参阅 Windows 工具包中的 Audioenginebaseapo 和 Audioenginebaseapo 文件\\&lt;生成号&gt;\\包括\\um 文件夹。
+**注意**   有关所需接口的详细信息，请参阅 Windows 工具包内部版本号中的 Audioenginebaseapo 和 Audioenginebaseapo 文件， \\ &lt; &gt; \\ 其中包括 \\ um 文件夹。
 
 ## <a name="span-idusing_sample_code_to_accelerate_the_development_processspanspan-idusing_sample_code_to_accelerate_the_development_processspanspan-idusing_sample_code_to_accelerate_the_development_processspanusing-sample-code-to-accelerate-the-development-process"></a><span id="Using_Sample_Code_to_Accelerate_the_Development_Process"></span><span id="using_sample_code_to_accelerate_the_development_process"></span><span id="USING_SAMPLE_CODE_TO_ACCELERATE_THE_DEVELOPMENT_PROCESS"></span>使用示例代码加速开发过程
 
@@ -79,17 +79,17 @@ a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动�
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b. 将主 .zip 文件下载到本地硬盘驱动器。
+b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C：\\DriverSamples\\* 作为要将文件提取到其中的新文件夹。
+c. 右键单击*Windows-driver-samples-master.zip*，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ DriverSamples \\ *作为要将文件提取到的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹。
 
-*C：\\DriverSamples\\音频\\Sysvad*
+*C： \\ DriverSamples \\ 音频 \\ Sysvad*
 
 **在 Visual Studio 中打开驱动程序解决方案**
 
-在 Microsoft Visual Studio 中，单击 "**文件**" &gt; "**打开**&gt;**项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C：\\DriverSamples\\音频\\Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
+在 Microsoft Visual Studio 中，单击 "**文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C： \\ DriverSamples \\ Audio \\ Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
 
 在 Visual Studio 中找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，你可以看到一个包含六个项目的解决方案。
 
@@ -99,14 +99,14 @@ SYSVAD 示例中有五个项目，其中一项是 APO 开发人员的主要兴�
 
 |                    |                                       |
 |--------------------|---------------------------------------|
-| **投影**        | **描述**                       |
+| **Project**        | **说明**                       |
 | SwapAPO            | 示例 APO 的示例代码。       |
 
 下面总结了 Sysvad 示例中的其他项目。
 
 |                        |                                            |
 |------------------------|--------------------------------------------|
-| **投影**            | **描述**                            |
+| **Project**            | **说明**                            |
 | PhoneAudioSample       | 移动音频驱动程序的示例代码。     |
 | TabletAudioSample      | 备用音频驱动程序的示例代码。 |
 | KeywordDetectorAdapter | 关键字检测器适配器的示例代码 |
@@ -116,8 +116,8 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
 
 |                      |                                                                   |
 |----------------------|-------------------------------------------------------------------|
-| **文件**             | **描述**                                                   |
-| 交换 .cpp             | C++包含交换 APO 的实现的代码。        |
+| **File**             | **说明**                                                   |
+| 交换 .cpp             | 包含交换 APO 的实现的 c + + 代码。        |
 | SwapAPOMFX .cpp       | CSwapAPOMFX 的实现                                     |
 | SwapAPOSFX .cpp       | CSwapAPOSFX 的实现                                     |
 | SwapAPODll .cpp       | DLL 导出的实现。                                    |
@@ -135,7 +135,7 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
 
 1. 创建从**CBaseAudioProcessingObject**继承的类。
 
-    下面C++的代码示例演示如何创建从**CBaseAudioProcessingObject**继承的类。 对于此概念的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapo*文件。
+    下面的 c + + 代码示例演示如何创建从**CBaseAudioProcessingObject**继承的类。 对于此概念的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapo*文件。
 
     ```cpp
     // Custom APO class - LFX
@@ -147,7 +147,7 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
     };
     ```
 
-    **请注意**   因为 APO 的信号处理不同于 MFX 或 EFX APO 执行的信号处理，所以必须为每个创建单独的类。
+    **注意**   由于 SFX APO 执行的信号处理不同于 MFX 或 EFX APO 执行的信号处理，因此必须为每个创建单独的类。
 
 2. 实现以下三种方法：
 
@@ -157,7 +157,7 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
 
     - **ValidateAndCacheConnectionInfo**。 此方法分配内存以存储格式详细信息，例如，通道计数、采样率、样本深度和通道掩码。
 
-下面C++的代码示例演示在步骤1中创建的示例类的[**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)方法的实现。 对于此概念的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapolfx*文件。
+下面的 c + + 代码示例演示了在步骤1中创建的示例类的[**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)方法的实现。 对于此概念的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapolfx*文件。
 
 ```cpp
 // Custom implementation of APOProcess method
@@ -181,7 +181,7 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 }
 ```
 
-**请  注意**，在 Audioenginebaseapo 文件中详细介绍了类继承自**CBaseAudioProcessingObject**的剩余接口和方法。
+**注意**   类继承自**CBaseAudioProcessingObject**的剩余接口和方法在 Audioenginebaseapo 文件中进行了详细介绍。
 
 对于台式计算机，可以提供一个用户界面，用于配置添加到自定义 APO 的功能。 有关此方面的详细信息，请参阅[实现用于配置的 UI](implementing-a-ui-for-configuring-sapos.md)。
 
@@ -215,7 +215,7 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 为 COM 组件实现以下接口和方法：
 
-- [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 此接口所需的方法为： [**Initialize**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)和[**IsInputFormatSupported。** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
+- [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 此接口所需的方法为： [**Initialize**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)和[**IsInputFormatSupported。**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
 - [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 此接口的必需方法为： [**LockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)和[**UnlockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-unlockforprocess)
 - [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 此接口所需的方法是[**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)的，它是实现 DSP 算法的方法。
 - [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)。 此接口使音频引擎可以将 DLL 识别为 APO。
@@ -228,7 +228,7 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 面向 Windows 10 的驱动程序应动态地链接到通用 CRT。
 
-如果需要支持 Windows 8，1，请通过在 C/C++，代码生成中设置项目属性来启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd*设置为用于调试版本。 进行此更改是因为，对于驱动程序，很难将 MSVCRT.LIB&lt;n&gt;.dll 二进制文件重新发布。 解决方案是静态链接 libcmt.lib。 有关详细信息，请参阅[/md、/mt、/ld （使用运行时库）](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 。
+如果需要支持 Windows 8，1，请通过在 C/c + + 中设置项目属性，代码生成启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd*设置为用于调试版本。 进行此更改的原因是，对于驱动程序，很难再分发 MSVCRT.LIB &lt; 的 &gt; 二进制文件。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息，请参阅[/md、/mt、/ld （使用运行时库）](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 。
 
 ### <a name="disable-use-of-an-embedded-manifest"></a>禁止使用嵌入清单
 
@@ -242,7 +242,7 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 以下段落和 INF 文件片段显示了使用标准 INF 文件复制和注册的必要修改。
 
-Sysvad 示例附带的 inf 文件说明了 SwapApo 的注册方式。
+Sysvad 示例附带的 inf 文件演示了如何注册 SwapApo.dll。
 
 ## <a name="span-id_registering_apos_for_processing_modes_and_effects_in_the_inf_filespanspan-id_registering_apos_for_processing_modes_and_effects_in_the_inf_filespanspan-id_registering_apos_for_processing_modes_and_effects_in_the_inf_filespan-registering-apos-for-processing-modes-and-effects-in-the-inf-file"></a><span id="_Registering_APOs_for_Processing_Modes_and_Effects_in_the_INF_File"></span><span id="_registering_apos_for_processing_modes_and_effects_in_the_inf_file"></span><span id="_REGISTERING_APOS_FOR_PROCESSING_MODES_AND_EFFECTS_IN_THE_INF_FILE"></span>在 INF 文件中注册用于处理模式和效果的
 
@@ -250,39 +250,39 @@ Sysvad 示例附带的 inf 文件说明了 SwapApo 的注册方式。
 
 请参阅以下参考主题，了解有关每个 APO INF 文件设置的信息。
 
-[PKEY\_FX\_StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
+[PKEY \_ FX \_ StreamEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-streameffectclsid)
 
-[PKEY\_FX\_ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
+[PKEY \_ FX \_ ModeEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-modeeffectclsid)
 
-[PKEY\_FX\_EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
+[PKEY \_ FX \_ EndpointEffectClsid](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-fx-endpointeffectclsid)
 
-[PKEY\_SFX\_ProcessingModes\_支持的\_流式处理\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
+[\_ \_ \_ 支持 \_ \_ 流式处理的 PKEY SFX ProcessingModes](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-sfx-processingmodes-supported-for-streaming)
 
-[PKEY\_MFX\_ProcessingModes\_支持的\_流式处理\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
+[PKEY \_ MFX \_ ProcessingModes \_ 支持 \_ \_ 流式处理](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-mfx-processingmodes-supported-for-streaming)
 
-[PKEY\_EFX\_ProcessingModes\_支持的\_流式处理\_](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
+[\_ \_ \_ 支持 \_ \_ 流式处理的 PKEY EFX ProcessingModes](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
 
 以下 INF 文件示例说明了如何为特定模式注册音频处理对象（中）。 它们说明了此列表中可用的可能组合。
 
-- PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
-- PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
-- PKEY\_FX\_ModeEffectClsid 无 PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
-- PKEY\_FX\_EndpointEffectClsid 无 PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
+- PKEY \_ FX \_ STREAMEFFECTCLSID with PKEY \_ SFX \_ ProcessingModes \_ 支持 \_ \_ 流式处理
+- PKEY \_ FX \_ MODEEFFECTCLSID with PKEY \_ MFX \_ ProcessingModes \_ Suppoted \_ For \_ 流式处理
+- PKEY \_ FX \_ ModeEffectClsid （无 PKEY \_ MFX \_ ProcessingModes Suppoted） \_ \_ 进行 \_ 流式处理
+- PKEY \_ FX \_ EndpointEffectClsid，不 \_ \_ \_ 支持 \_ \_ 流式处理的 PKEY EFX ProcessingModes
 
 这两个示例中未显示一种附加的有效组合。
 
-- PKEY\_FX\_EndpointEffectClsid with PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
+- \_ \_ \_ \_ \_ 支持 \_ \_ 流式处理的 PKEY FX EndpointEffectClsid 与 PKEY EFX ProcessingModes
 
 ### <a name="sysvad-tablet-multi-mode-streaming-effect-apo-inf-sample"></a>SYSVAD Tablet 多模式流式处理效果 APO INF 示例
 
 此示例演示如何使用 SYSVAD Tablet INF 文件中的 AddReg 条目注册多模式流式处理效果。
 
-此示例代码来自 SYSVAD 音频示例，在 GitHub 上提供： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>。
+此示例代码来自 SYSVAD 音频示例，在 GitHub 上提供： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> 。
 
 此示例演示了这种系统效果组合：
 
-- PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
-- PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
+- PKEY \_ FX \_ STREAMEFFECTCLSID with PKEY \_ SFX \_ ProcessingModes \_ 支持 \_ \_ 流式处理
+- PKEY \_ FX \_ MODEEFFECTCLSID with PKEY \_ MFX \_ ProcessingModes \_ Suppoted \_ For \_ 流式处理
 
 ```inf
 [SWAPAPO.I.Association0.AddReg]
@@ -306,13 +306,13 @@ HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDI
 ;HKR,FX\0,%PKEY_EFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 ```
 
-请注意，在示例 INF 文件中，EFX\_流式处理属性被注释掉，因为音频处理已转换为该层之上的内核模式，因此不需要使用流式处理属性，因此不会使用此属性。 为发现目的指定 PKEY\_FX\_EndpointEffectClsid 是有效的，但指定 PKEY\_EFX\_ProcessingModes\_\_流支持的\_时，会出现错误。 这是因为模式混合/t 会在堆栈中较低，因此无法插入终结点 APO。
+请注意，在示例 INF 文件中，EFX \_ 流式处理属性被注释掉，因为音频处理已转换为该层之上的内核模式，因此不需要使用流式处理属性，因此不会使用此属性。 为发现目的指定 PKEY FX EndpointEffectClsid 是有效的 \_ \_ ，但为 \_ \_ \_ \_ \_ 流式处理指定 PKEY EFX ProcessingModes 会是错误的。 这是因为模式混合/t 会在堆栈中较低，因此无法插入终结点 APO。
 
 ### <a name="componentized-apo-installation"></a>组件化 APO 安装
 
 从 Windows 10 开始，版本1809，使用音频引擎 APO 注册使用组件化音频驱动程序模型。 使用音频组件化创建更平稳、更可靠的安装体验，并更好地支持组件服务。 有关详细信息，请参阅[创建组件化音频驱动程序安装](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)。
 
-下面的示例代码从公共 ComponentizedAudioSampleExtension 和 ComponentizedApoSample 提取。 请参阅 GitHub 上提供的 SYSVAD 音频示例，网址为： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>。
+下面的示例代码从公共 ComponentizedAudioSampleExtension 和 ComponentizedApoSample 提取。 请参阅 GitHub 上提供的 SYSVAD 音频示例，网址为： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> 。
  
 使用新创建的 APO 设备，将 APO 与音频引擎注册。 要使音频引擎能够使用新的 APO 设备，它必须是音频设备的 PNP 子元素、音频终结点的同级。 新的组件化 APO 设计不允许将 APO 在多个不同的驱动程序上全局注册和使用。 每个驱动程序都必须注册其自己的 APO。
 
@@ -331,7 +331,7 @@ Capabilities = 0x00000008 ; SWDeviceCapabilitiesDriverRequired
 此 APO 设备在 SYSVAD 示例中触发了 APO INF 的第二部分，这是在 ComponentizedApoSample 中完成的。 此 INF 文件专用于 APO 设备。 它将设备类指定为 AudioProcessingObject，并添加用于 CLSID 注册的所有 APO 属性，并向音频引擎注册。
 
 >[!NOTE]
-> 在大多数情况下，通过使用 HKR 注册表项，显示的 INF 文件示例支持状态分隔。 前面的示例使用 HKCR 存储持久值。 例外情况是注册组件对象模型（COM）对象时，可能会在 HKCR 下写入密钥。
+> 在大多数情况下，通过使用 HKR 注册表项，显示的 INF 文件示例支持驱动程序包隔离。 前面的示例使用 HKCR 存储持久值。 例外情况是注册组件对象模型（COM）对象时，可能会在 HKCR 下写入密钥。
 有关详细信息，请参阅[使用通用 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)。
  
 ```inf
@@ -360,9 +360,9 @@ HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%S
 
 此示例演示了这种系统效果组合：
 
-- PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
+- PKEY \_ FX \_ STREAMEFFECTCLSID with PKEY \_ SFX \_ ProcessingModes \_ 支持 \_ \_ 流式处理
 
-- PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
+- PKEY \_ FX \_ MODEEFFECTCLSID with PKEY \_ MFX \_ ProcessingModes \_ Suppoted \_ For \_ 流式处理
 
 此示例代码支持蓝牙免提和立体声设备。
 
@@ -396,11 +396,11 @@ AUDIO_SIGNALPROCESSINGMODE_DEFAULT = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
 
 此示例 INF 文件说明了以下系统效果组合：
 
-- PKEY\_FX\_StreamEffectClsid with PKEY\_SFX\_ProcessingModes\_支持\_流式处理\_
+- PKEY \_ FX \_ STREAMEFFECTCLSID with PKEY \_ SFX \_ ProcessingModes \_ 支持 \_ \_ 流式处理
 
-- PKEY\_FX\_ModeEffectClsid with PKEY\_MFX\_ProcessingModes\_Suppoted\_用于\_流式处理
+- PKEY \_ FX \_ MODEEFFECTCLSID with PKEY \_ MFX \_ ProcessingModes \_ Suppoted \_ For \_ 流式处理
 
-- PKEY\_FX\_EndpointEffectClsid 无 PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
+- PKEY \_ FX \_ EndpointEffectClsid，不 \_ \_ \_ 支持 \_ \_ 流式处理的 PKEY EFX ProcessingModes
 
 ```inf
 [MyDevice.Interfaces]
@@ -424,13 +424,13 @@ HKR,"FX\\0",%PKEY_MFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNA
 
 ### <a name="define-a-custom-apo-and-clsid-apo-inf-sample"></a>定义自定义 APO 和 CLSID APO INF 示例
 
-此示例演示如何为自定义 APO 定义自己的 CLSID。 此示例使用 MsApoFxProxy CLSID {889C03C8-ABAD-4004-BF0A-BC7BB825E166}。 共同 iopalisserverextension-此 GUID 在 MsApoFxProxy 中实例化一个类，该类实现 IAudioProcessingObject 接口，并通过 KSPROPSETID\_AudioEffectsDiscovery 属性集查询基础驱动程序。
+此示例演示如何为自定义 APO 定义自己的 CLSID。 此示例使用 MsApoFxProxy CLSID {889C03C8-ABAD-4004-BF0A-BC7BB825E166}。 共同 iopalisserverextension-此 GUID 在 MsApoFxProxy.dll 中实例化一个类，该类实现 IAudioProcessingObject 接口，并通过 KSPROPSETID AudioEffectsDiscovery 属性集查询基础驱动程序 \_ 。
 
-此 INF 文件示例显示了 \[的 BthHfAud\] 部分，该部分从 wdmaudio \[BthHfAud 中提取 \[MsApoFxProxy\]，然后将 ANLGACAPTURE\]FX\_AddReg 注册为 PKEY 的已知 CLSID。\_
+此 INF 文件示例显示了 \[ BthHfAud \] 部分，该部分将 \[ \] 从 wdmaudio BthHfAud 中提取 MSAPOFXPROXY \[ \] ，然后将 AnlgACapture \_ FX \_ AddReg 注册为 MsApoFxProxy.dll 的知名 CLSID。
 
 此 INF 文件示例还演示了此系统效果组合的用法：
 
-- PKEY\_FX\_EndpointEffectClsid 无 PKEY\_EFX\_ProcessingModes\_支持\_流式处理\_
+- PKEY \_ FX \_ EndpointEffectClsid，不 \_ \_ \_ 支持 \_ \_ 流式处理的 PKEY EFX ProcessingModes
 
 ```inf
 ;wdma_bt.inf
@@ -453,7 +453,7 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 
 ### <a name="sample-apo-effect-registration"></a>示例 APO 效果注册
 
-此示例显示了 Sysvad ComponentizedApoSample 的 \[Apo_AddReg\] 部分。 本部分将交换流 GUID 注册到 COM 并注册 Swap Stream APO 效果。 \] 节 \[Apo_CopyFiles 将 swapapo 复制到 C：\\Windows\\system32 中。
+此示例显示 \[ \] Sysvad ComponentizedApoSample. inx 中的 Apo_AddReg 部分。 本部分将交换流 GUID 注册到 COM 并注册 Swap Stream APO 效果。 \[Apo_CopyFiles \] 节将 swapapo.dll 复制到 C： \\ Windows system32 中 \\ 。
 
 ```inf
 ; ComponentizedApoSample.inx
@@ -507,26 +507,26 @@ APO 注册用于支持使用加权计算动态匹配终结点效果的进程。 
 终结点属性存储权重
 
 1. 具有特定 KSNODETYPE 的 FX
-2. FX with KSNODETYPE\_
+2. KSNODETYPE \_ ANY
 3. 具有特定 KSNODETYPE 的 MSFX
-4. MSFX with KSNODETYPE\_
+4. MSFX with KSNODETYPE \_ ANY
 
 效果属性存储权重
 
 1. 具有特定 KSNODETYPE 的 EP
-2. 具有 KSNODETYPE 的 EP\_任意
+2. 具有 \_ KSNODETYPE 的 EP
 3. 具有特定 KSNODETYPE 的 MSEP
-4. MSEP with KSNODETYPE\_
+4. MSEP with KSNODETYPE \_ ANY
 
-数字必须从0开始并按顺序递增： MSEP\\0，MSEP\\1，...，MSEP\\n 如果（例如）缺少 EP\\3，则 Windows 将停止查找 EP\\n，而不会看到 EP\\4，即使存在
+数字必须从0开始，并按顺序递增： MSEP \\ 0、MSEP \\ 1、...、MSEP \\ n 如果（例如）缺少 ep \\ 3，则 WINDOWS 将停止查找 ep \\ n，而不会看到 ep \\ 4，即使存在
 
-PKEY 的值\_FX\_Association （适用于效果属性存储）或 PKEY\_EP\_关联（对于终结点属性存储）与 KSPINDESCRIPTOR 进行比较。信号路径的硬件端的固定工厂的类别值（由内核流公开）。
+\_与 KSPINDESCRIPTOR 相比，PKEY FX association 的值 \_ （适用于效果属性存储）或 PKEY \_ EP \_ 关联（适用于终结点属性存储）。信号路径的硬件端的固定工厂的类别值（由内核流公开）。
 
 只有 Microsoft 收件箱类驱动程序（可以由第三方开发人员包装）应使用 MSEP 和 MSFX;所有第三方驱动程序应使用 EP 和 FX。
 
 ### <a name="apo-node-type-compatibility"></a>APO 节点类型的兼容性
 
-以下 INF 文件示例说明了如何将 PKEY\_FX\_关联密钥设置为与 APO 关联的 GUID。
+以下 INF 文件示例说明了如何将 PKEY \_ FX \_ 关联密钥设置为与 APO 关联的 GUID。
 
 ```inf
 ;; Property Keys
@@ -539,7 +539,7 @@ PKEY_FX_Association = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
 HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_ANY%
 ```
 
-由于音频适配器能够支持多个输入和输出，因此必须显式指示与自定义 APO 兼容的内核流式处理（KS）节点类型。 在上述 INF 文件片段中，APO 显示为与 KS 节点类型% KSNODETYPE\_任意% 关联。 稍后在本 INF 文件中，KSNODETYPE\_ANY 定义如下：
+由于音频适配器能够支持多个输入和输出，因此必须显式指示与自定义 APO 兼容的内核流式处理（KS）节点类型。 在上述 INF 文件片段中，APO 显示为与 KS 节点类型% KSNODETYPE \_ ANY% 关联。 稍后在本 INF 文件中，KSNODETYPE \_ ANY 定义如下：
 
 ```inf
 [Strings]
@@ -550,7 +550,7 @@ KSNODETYPE_SPEAKER  = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
 ...
 ```
 
-如果 KSNODETYPE 的值为**NULL**\_则表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE\_嘉宾的 KS 节点类型兼容，则 INF 文件会显示 KS 节点类型和 APO 关联，如下所示：
+对于 KSNODETYPE， **NULL**值为 NULL \_ 表示此 APO 与任何类型的 KS 节点类型兼容。 例如，若要指示 APO 仅与 KSNODETYPE 发言人的 KS 节点类型兼容 \_ ，则 INF 文件会显示 ks 节点类型和 APO 关联，如下所示：
 
 ```inf
 ;; Key value pairs
@@ -587,7 +587,7 @@ HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
 
 - APO 已被重命名或篡改。
 
-此外，如果 SFX、MFX 或 EFX APO 的失败计数值达到系统指定的限制，则会通过将 PKEY\_终结\_点设置为 ""，禁用\_SysFx 注册表项来禁用 MFX 和 EFX。 系统指定的限制当前为值10。
+此外，如果 SFX、MFX 或 EFX APO 的失败计数值达到系统指定的限制，则会通过将 PKEY \_ 终结点 \_ 禁用 \_ SysFx 注册表项设置为 "1" 来禁用 "sfx"、"MFX" 和 "efx"。 系统指定的限制当前为值10。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

@@ -4,14 +4,14 @@ description: 配置电源管理
 ms.assetid: 0EAE26D0-C191-422F-8A73-28A71C272D4D
 keywords:
 - NetAdapterCx 配置电源管理，NetCx 配置电源管理
-ms.date: 11/06/2019
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 22b653bff2bc2fe0fd079023374daf6445286c55
-ms.sourcegitcommit: 661e1f3bd629d316394e4468eccda6489273209f
+ms.openlocfilehash: 39ae39450599b557f73c52eebe19ee64b1ce3e97
+ms.sourcegitcommit: 7cc3143fc4b7c88dbebb4bdaeff666d290aa1a16
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84753995"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84780689"
 ---
 # <a name="configuring-netadaptercx-power-management"></a>配置 NetAdapterCx 电源管理
 
