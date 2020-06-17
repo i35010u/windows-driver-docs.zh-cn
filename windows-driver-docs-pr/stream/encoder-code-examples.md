@@ -16,27 +16,26 @@ keywords:
 - 注册表 WDK 编码器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f6b83cee8a47538019fbefe3cb244aab5a0e5c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 14b781f40bf5e1514701fd6e55c0af9c68b1e447
+ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843206"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879035"
 ---
 # <a name="encoder-code-examples"></a>编码器代码示例
 
+下面的代码示例基于[AVStream 模拟硬件示例驱动程序（AVSHwS）](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)。 它们演示了以下内容：
 
-下面的代码示例基于[AVStream 模拟硬件示例驱动程序（AVSHwS）](https://go.microsoft.com/fwlink/p/?linkid=256083)。 它们演示了以下内容：
+- 如何指定编码器支持的比特率
 
--   如何指定编码器支持的比特率
+- 如何指定编码器支持的比特率编码模式
 
--   如何指定编码器支持的比特率编码模式
+- 如何在运行时指定编码器设备的*设备参数 \\ 功能*注册表项下的元数据值
 
--   如何在编码器设备的*设备参数\\功能*"注册表项下的运行时指定元数据值
+## <a name="implementing-supported-bit-rates"></a>实现支持的比特率
 
-### <a name="implementing-supported-bit-rates"></a>**实现支持的比特率**
-
-下面的代码段演示如何实现对[ENCAPIPARAM\_比特率](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)属性的支持。 使用[**KSPROPERTY\_单步执行\_LONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)结构，以指定400位/秒（bps）的单步执行粒度，其中的下限为 400-bps，上限为 4000000-bps。
+下面的代码段演示如何实现对[ENCAPIPARAM \_ 比特率](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)属性的支持。 使用[**KSPROPERTY \_ 单步 \_ 长**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)结构来指定400位/秒（bps）的单步执行粒度，使用 400-bps 下限和 4000000-bps 上限。
 
 ```cpp
 const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
@@ -51,7 +50,7 @@ const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
 
 如果通过右键单击工具（如 GraphEdit）中的筛选器来访问编码器筛选器的属性页，将看到使用这些值的**比特率**滑块条。
 
-接下来，在创建编码器筛选器的实例时，指定其默认编码比特率。 请注意，所使用的数据类型是对应于 ENCAPIPARAM\_比特率属性所需的属性值类型的 ULONG。 此值是在编码器的属性页中显示的默认编码 "比特率"：
+接下来，在创建编码器筛选器的实例时，指定其默认编码比特率。 请注意，所使用的数据类型为 ULONG，对应于 ENCAPIPARAM 比特率属性所需的属性值类型 \_ 。 此值是在编码器的属性页中显示的默认编码 "比特率"：
 
 ```cpp
 const ULONG BitRateValues [] = {
@@ -59,7 +58,7 @@ const ULONG BitRateValues [] = {
 };
 ```
 
-指定合法范围列表，并指定 ENCAPIPARAM\_比特率属性的默认值：
+指定合法范围列表和 ENCAPIPARAM \_ 比特率属性的默认值：
 
 ```cpp
  const KSPROPERTY_MEMBERSLIST BitRateMembersList [] = {
@@ -96,7 +95,7 @@ const ULONG BitRateValues [] = {
 };
 ```
 
-指定为 ENCAPIPARAM\_比特率属性集定义的单个属性：
+指定为 ENCAPIPARAM \_ 比特率属性集定义的单个属性：
 
 ```cpp
 DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
@@ -115,13 +114,12 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 };
 ```
 
-**请注意**   *get*属性处理程序返回编码比特率，而*设置*属性处理程序必须在使用前测试传入传入的值是否有效。
+> [!NOTE]
+> *Get*属性处理程序返回编码比特率，并且*设置*属性处理程序必须先测试传入传入的值是否有效，然后再使用它。
 
- 
+## <a name="implementing-supported-encoding-bit-rate-modes"></a>实现支持的编码比特率模式
 
-### <a name="implementing-supported-encoding-bit-rate-modes"></a>**实现支持的编码比特率模式**
-
-下面的代码段演示如何实现对[ENCAPIPARAM\_比特率\_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)属性的支持。
+下面的代码段演示如何实现对[ENCAPIPARAM \_ 比特率 \_ 模式](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)属性的支持。
 
 定义编码器支持的编码模式：
 
@@ -140,7 +138,7 @@ const VIDEOENCODER_BITRATE_MODE BitRateModeDefaultValues [] = {
 };
 ```
 
-指定 ENCAPIPARAM\_比特率\_MODE 属性的合法范围和默认值的列表：
+为 "ENCAPIPARAM" \_ 比特率模式属性指定合法范围和默认值的列表 \_ ：
 
 ```cpp
 const KSPROPERTY_MEMBERSLIST BitRateModeMembersList [] = {
@@ -175,7 +173,7 @@ const KSPROPERTY_VALUES BitRateModeValuesSet = {
 };
 ```
 
-指定为 ENCAPIPARAM\_比特率\_MODE 属性集定义的单个属性：
+指定为 ENCAPIPARAM \_ 比特率模式属性集定义的单个属性 \_ ：
 
 ```cpp
 DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
@@ -194,11 +192,10 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 };
 ```
 
-**请注意**   *get*属性处理程序应返回编码比特率模式，*并且在使用*传入的传入值之前必须先测试该传入传入的值是否有效。
+> [!NOTE]
+> *Get*属性处理程序应返回编码比特率模式，*并且在使用*传入的传入值之前必须先测试该传入传入的值是否有效。
 
- 
-
-然后将属性集指定为[**KSFILTER\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的自动化表。
+然后，将属性集指定为[**KSFILTER \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的自动化表。
 
 ```cpp
 DEFINE_KSPROPERTY_SET_TABLE(PropertyTable) {
@@ -224,8 +221,8 @@ DEFINE_KSAUTOMATION_TABLE(FilterTestTable) {
     DEFINE_KSAUTOMATION_EVENTS_NULL
 };
 
-const 
-KSFILTER_DESCRIPTOR 
+const
+KSFILTER_DESCRIPTOR
 FilterDescriptor = {
     ...,
     &FilterTestTable, // Automation Table
@@ -234,11 +231,12 @@ FilterDescriptor = {
 };
 ```
 
-### <a href="" id="specifying-the-encoder-s-capabilities-in-the-registry"></a>**在注册表中指定编码器的功能**
+## <a name="specifying-the-encoders-capabilities-in-the-registry"></a>在注册表中指定编码器的功能
 
 下面的代码示例演示如何在*Device Parameters*注册表项下创建*功能*注册表项，以及如何创建和指定*功能*项下的子项和值。 当驱动程序初始化时执行此代码。
 
-**注意：** 以下代码假设每个物理设备上存在单个硬件编码器。 如果你的硬件包含多个编码器，则必须循环访问**IoGetDeviceInterfaces**函数的调用中返回的列表，并为每个编码器注册功能。
+> [!NOTE]
+> 以下代码假设每个物理设备上存在单个硬件编码器。 如果你的硬件包含多个编码器，则必须循环访问**IoGetDeviceInterfaces**函数的调用中返回的列表，并为每个编码器注册功能。
 
 ```cpp
 /**************************************************************************
@@ -248,7 +246,7 @@ IN Pdo: PhysicalDeviceObject
 IN categoryGUID: Category GUID eg KSCATEGORY_CAPTURE
 
 1. Get Symbolic name for interface
-2. Open registry key for storing information about a 
+2. Open registry key for storing information about a
    particular device interface instance
 3. Create Capabilities key under "Device Parameters" key
 4. Create a DWORD value "TestCapValueDWORD" under Capabilities
@@ -260,9 +258,9 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
 {
 
     // 1. Get Symbolic name for interface
-    // pSymbolicNameList can contain multiple strings if pdo is NULL. 
-    // Driver should parse this list of string to get 
-    // the one corresponding to current device interface instance. 
+    // pSymbolicNameList can contain multiple strings if pdo is NULL.
+    // Driver should parse this list of string to get
+    // the one corresponding to current device interface instance.
     PWSTR  pSymbolicNameList = NULL;
 
     NTSTATUS ntStatus = IoGetDeviceInterfaces(
@@ -275,7 +273,7 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
         HANDLE hDeviceParametersKey = NULL;
         UNICODE_STRING symbolicName;
 
-        // 2. Open registry key for storing information about a 
+        // 2. Open registry key for storing information about a
         // particular device interface instance
         RtlInitUnicodeString(&symbolicName, pSymbolicNameList);
         ntStatus = IoOpenDeviceInterfaceRegistryKey(
@@ -286,7 +284,7 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
         {
             OBJECT_ATTRIBUTES objAttribSubKey;
             UNICODE_STRING subKey;
- 
+
             // 3. Create Capabilities key under "Device Parameters" key
             RtlInitUnicodeString(&subKey,L"Capabilities");
             InitializeObjectAttributes(&objAttribSubKey,
@@ -294,9 +292,9 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
                 OBJ_KERNEL_HANDLE,
                 hDeviceParametersKey,
                 NULL);
- 
+
             HANDLE hCapabilityKeyHandle = NULL;
- 
+
             ntStatus = ZwCreateKey(&hCapabilityKeyHandle,
                     KEY_READ|KEY_WRITE|KEY_SET_VALUE,
                     &objAttribSubKey,
@@ -308,12 +306,12 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
             {
                 OBJECT_ATTRIBUTES objAttribDwordKeyVal;
                 UNICODE_STRING subValDword;
- 
-                // 4. Create a DWORD value "TestCapValueDWORD" under Capabilities 
+
+                // 4. Create a DWORD value "TestCapValueDWORD" under Capabilities
                 RtlInitUnicodeString(&subValDword,L"TestCapValueDWORD");
- 
+
                 ULONG data = 0xaaaaaaaa;
- 
+
                 ntStatus = ZwSetValueKey(hCapabilityKeyHandle,&subValDword,0,REG_DWORD,&data,sizeof(ULONG));
                 ZwClose(hCapabilityKeyHandle);
             }
@@ -321,15 +319,7 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
         ZwClose(hDeviceParametersKey);
         ExFreePool(pSymbolicNameList);
     }
- 
+
     return ntStatus;
 }
 ```
-
- 
-
- 
-
-
-
-
