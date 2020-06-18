@@ -250,6 +250,8 @@
       href: overview-of-windows-memory-space.md
     - name: 分配系统空间内存
       href: allocating-system-space-memory.md
+    - name: POOL_FLAGS
+      href: pool_flags.md
     - name: 映射寄存器
       href: map-registers.md
     - name: 将总线相对地址映射到虚拟地址
