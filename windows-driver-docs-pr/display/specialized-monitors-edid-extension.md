@@ -5,7 +5,7 @@ keywords:
 - 显示设备 WDK
 - 监视驱动程序 WDK
 - 显示驱动程序 WDK，监视驱动程序
-- 监视器
+- monitors
 - HMD
 - 虚拟现实
 ms.author: windowsdriverdev
@@ -14,12 +14,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: a9c9a1e9089371982eec0306001bc36078179cad
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: c97ee96359dddb76967d9dfe0e6c1577ad14bf31
+ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863063"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84992485"
 ---
 # <a name="edid-extension-vsdb-for-hmds-and-specialized-displays"></a>用于 HMDs 和专用显示器的 EDID 扩展（VSDB）
 
@@ -37,7 +37,7 @@ ms.locfileid: "74863063"
 1. 显示中包含[EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)的固件将被修改为包含[特定于供应商的数据块](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data#EIA.2FCEA-861_extension_block)，以标识显示的特定于 Windows 的用例。
 2. Windows 显示子系统将正确识别此文档中所述的特定于供应商的数据块，并适当地处理显示。 请注意，不同版本的 Windows 操作系统可能具有不同的行为，如下所示。
 
-1的组合。 和2。 以上将从显示器第一次插入的那一刻起，产生正确的 Windows 行为。 特别是，HMDs 和某些专用显示器不会包含在常规的 Windows 桌面环境中，并可使用[Windows. display. Core](https://docs.microsoft.com/uwp/api/windows.devices.display.core) api 访问显示。
+1的组合。 和第 2 步 以上将从显示器第一次插入的那一刻起，产生正确的 Windows 行为。 特别是，HMDs 和某些专用显示器不会包含在常规的 Windows 桌面环境中，并可使用[Windows. display. Core](https://docs.microsoft.com/uwp/api/windows.devices.display.core) api 访问显示。
 
 视频电子标准协会（VESA）已在 DisplayId v2.0 中定义标准化字段，该字段提供了与本文档中定义的 VSDB 相同的信息的访问权限。  DisplayID v2.0 或更高版本是为 HMDs 传递此数据的首选机制，但是，如果设备由于其他原因必须使用 EDID，则应使用此 VSDB。
 
@@ -51,15 +51,15 @@ VSDB 结构必须包含下表中所述的格式和值。
 
 ### <a name="vendor-specific-tag-code-3-bits"></a>供应商特定标记代码 [3 位]
 
-此字段必须设置为 `0x3`。
+此字段必须设置为 `0x3` 。
 
 ### <a name="length-5-bits"></a>长度 [5 位]
 
-数据块的总长度，不包括此字节。  此字段必须设置为 `0x15`。
+数据块的总长度，不包括此字节。  此字段必须设置为 `0x15` 。
 
 ### <a name="ieee-oui-3-bytes"></a>IEEE OUI [3 个字节]
 
-分配给 Microsoft 用于标识显示的 IEEE 组织唯一标识符（OUI）： `0x5C`、`0x12``0xCA`，按顺序字节顺序排列。
+为标识显示分配给 Microsoft 的 IEEE 组织唯一标识符（OUI）， `0x5C` 按 `0x12` 顺序字节顺序显示：、、 `0xCA` 。
 
 ### <a name="version-1-byte"></a>版本 [1 字节]
 
@@ -73,21 +73,21 @@ VSDB 结构必须包含下表中所述的格式和值。
 
 ### <a name="desktop-usage-flag-1-bit"></a>桌面使用标志 [1 位]
 
-在此 VSDB 的版本 `0x3` 及更高版本中，此位指示显示是否应为桌面的一部分。
+在 `0x3` 此 VSDB 的版本和更高版本中，此位指示显示是否应为桌面的一部分。
 
-* 如果显示应为桌面的一部分，则应将其设置为 `0x1`。
-* 如果显示屏不应是桌面的一部分，则应将其设置为 `0x0`。
+* 如果显示应为桌面的一部分，则应将其设置为 `0x1` 。
+* 如果显示不应是桌面的一部分，则应将其设置为 `0x0` 。
 
-在此 VSDB 的版本 `0x1` 和 `0x2` 中，此值应始终设置为 "`0x0`"。
+在 `0x1` `0x2` 此 VSDB 的版本和中，此值应始终设置为 `0x0` 。
 
 ### <a name="third-party-usage-flag-1-bit"></a>第三方使用标志 [1 位]
 
-在此 VSDB 的版本 `0x3` 及更高版本中，此位指示显示应可由第三方排序器使用，还是仅适用于 Microsoft 提供的 Windows 合成器。
+在 `0x3` 此 VSDB 的版本和更高版本中，此位指示显示应可由第三方排序器使用，还是仅供 Microsoft 提供的 Windows 合成器使用。
 
-* 如果显示应由非 Windows software 排序器使用，则应将其设置为 `0x1`。
-* 如果显示应仅由 Windows 合成器使用，则应将其设置为0x0。
+* 如果显示应由非 Windows software 排序器使用，则应将其设置为 `0x1` 。
+* 如果显示应仅由 Windows 合成器使用，则应将其设置为 `0x0` 。
 
-在此 VSDB 的版本 `0x1` 和 `0x2` 中，此值应始终设置为 "`0x0`"。
+在 `0x1` `0x2` 此 VSDB 的版本和中，此值应始终设置为 `0x0` 。
 
 ### <a name="display-product-primary-use-case-5-bits"></a>显示产品的主要用例 [5 位]
 
@@ -95,16 +95,16 @@ VSDB 结构必须包含下表中所述的格式和值。
 
 * 测试设备-`0x1`
 * 一般显示-`0x2`
-* 电视显示-`0x3`
+* 电视显示器-`0x3`
 * 桌面生产力显示-`0x4`
-* 桌面游戏显示-`0x5`
+* 桌面游戏显示器-`0x5`
 * 演示显示-`0x6`
 * 虚拟现实耳机-`0x7`
-* 增强的现实-`0x8`
+* 扩充的现实-`0x8`
 * 视频墙壁显示-`0x10`
 * 医疗图像显示-`0x11`
-* 专用游戏显示-`0x12`
-* 专用视频监视器显示-`0x13`
+* 专用游戏显示器-`0x12`
+* 专用视频监视器显示器-`0x13`
 * 附件显示-`0x14`
 
 ### <a name="containerid-16-bytes"></a>ContainerID [16 字节]
@@ -113,4 +113,4 @@ VSDB 结构必须包含下表中所述的格式和值。
 
 ## <a name="remarks"></a>备注
 
-请注意，为了保持与早期操作系统的最大兼容性，建议 HMDs 继续使用此 EDID 扩展 `0x1` 和 `0x2` 版本。 有关要用于 HMDs 的值，请参阅上一节。
+请注意，为了保持与早期操作系统的最大兼容性，建议 HMDs 继续使用版本 `0x1` 和 `0x2` 此 EDID 扩展。 有关要用于 HMDs 的值，请参阅上一节。

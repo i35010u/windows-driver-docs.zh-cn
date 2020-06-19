@@ -3,38 +3,29 @@ title: 媒体和类别
 description: 媒体和类别
 ms.assetid: 2bc83ce6-7f79-44e7-a0fb-7b9f56771730
 keywords:
-- 视频捕获 WDK AVStream，介质
-- 捕获视频 WDK AVStream，介质
+- 视频捕获 WDK AVStream，媒体
+- 捕获视频 WDK AVStream，媒体
 - 视频捕获 WDK AVStream，流类别
 - 捕获视频 WDK AVStream，流类别
 - 标识 pin 主要用途
 - 流类别 WDK 视频捕获
 - 媒体 WDK 视频捕获
-- pin 连接 WDK 视频捕获
-ms.date: 04/20/2017
+- 固定连接 WDK 视频捕获
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d88fb8020a0acfacd71709ac20d2e3f7c967e9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52bd0fa781a9cea025f5384253641053d4eeb8c5
+ms.sourcegitcommit: 31fa7dbbcd051d7ec1ea3e05a4c0340af9d3b8a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340861"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073436"
 ---
 # <a name="mediums-and-categories"></a>媒体和类别
 
+传统上，Microsoft DirectShow 流仅由其[媒体类型](https://docs.microsoft.com/previous-versions//ms787271(v=vs.85))标识。 虽然这对于呈现简单的筛选器图形来说是足够的，但对于反映硬件拓扑的更复杂的图形和图形，需要更多的信息以进行正确的图形生成。 为了使筛选器图生成正确地识别和连接 pin，视频捕获微型驱动程序指定其 pin 所属的流类别以及媒体。
 
-一直以来，Microsoft DirectShow 流已证实存在完全由其[媒体类型](https://go.microsoft.com/fwlink/p/?linkid=51458)。 尽管这足以用于呈现简单的筛选器关系图，更复杂的关系图和关系图，以反映硬件拓扑为正确的关系图构建需要其他信息。 若要启用筛选器关系图构建正确标识并连接插针，视频捕获微型驱动程序指定流类别属于他们的 pin，以及媒体。
+流类别是用于标识 pin 的主要目的的一种方法。 例如，捕获筛选器可以具有两个每个 pin 支持相同 MediaTypes 的输出插针。 如果筛选器提供了某个 pin 的优先级，则可以将较高优先级的 pin 分配到 "捕获流" 类别（PINNAME \_ 视频 \_ 捕获），将较低优先级的 pin 分配到 "预览流" 类别（PINNAME \_ 视频 \_ 预览版）。
 
-Stream 类别是一种方法来标识 pin 的主要目的。 例如，使用捕获筛选器可以有两个输出插针，其中在每个插针上受支持的相同 MediaTypes。 在其中筛选器为优先级到其中一个球瓶的情况下，优先级较高的 pin 可以分配给捕获流类别 (PINNAME\_视频\_捕获)，以及到预览流类别 (PINNAME优先级较低的pin\_视频\_预览版)。
+媒体是一种方法，用于确保两个 pin 在单独的筛选器上的连接，例如电视调谐器筛选器上的模拟音频输出插针（用于支持电视音频）和电视音频筛选器上的电视音频输入插针。 考虑中型的一种方法是，它标识一个滤镜的输出插针与另一个滤镜的输入插针之间的一条线。
 
-媒体是一种方法来确保两个插针上单独的筛选器之间的连接，如模拟音频输出插针上 （以支持电视音频） 的电视调谐器筛选器，以及电视音频输入插针上的电视音频筛选器。 一种方法可以看作是一种介质是它标识一个筛选器的输出插针和另一个筛选器输入插针之间以有线方式。
-
-DirectShow 图形生成器接口**IFilterMapper2**并**ICaptureGraphBuilder**，使用这些方法来构造筛选器关系图基于媒体和流类别。
-
- 
-
- 
-
-
-
-
+DirectShow 图形生成器接口（ **IFilterMapper2**和**ICaptureGraphBuilder**）使用这些方法来基于媒体和流类别构造筛选器关系图。

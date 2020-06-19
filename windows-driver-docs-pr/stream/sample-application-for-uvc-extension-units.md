@@ -3,31 +3,30 @@ title: UVC 扩展单元的示例应用程序
 description: UVC 扩展单元的示例应用程序
 ms.assetid: f900b0b1-3469-442f-8593-2094a0966d4a
 keywords:
-- 扩展单位 WDK USB 视频类，示例，示例应用程序
-- 示例代码 WDK USB 视频类，UVC 扩展单位
-ms.date: 04/20/2017
+- 扩展单元-WDK USB 视频类、示例、示例应用程序
+- 示例代码 WDK USB 视频类，UVC 扩展单元
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a661099f55e56e29e5802cd0f02c704f7ebc8c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68144abcaf7519e88f58a6e7461a30e5b4c0bcbc
+ms.sourcegitcommit: 31fa7dbbcd051d7ec1ea3e05a4c0340af9d3b8a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389216"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073426"
 ---
 # <a name="sample-application-for-uvc-extension-units"></a>UVC 扩展单元的示例应用程序
 
+本主题包含可用于支持扩展单元的示例应用程序代码。
 
-本主题包含可用于支持扩展单位的示例应用程序代码。
+应用程序通过使用[**IKsTopologyInfo：： CreateNodeInstance**](https://docs.microsoft.com/previous-versions/windows/desktop/api/Vidcap/nf-vidcap-ikstopologyinfo-createnodeinstance) ，然后调用节点对象上的**QueryInterface**以获取所需的 COM API 来访问接口。 有关详细信息，请参阅[**IKsTopologyInfo**](https://docs.microsoft.com/previous-versions/windows/desktop/api/Vidcap/nn-vidcap-ikstopologyinfo)。
 
-应用程序通过使用访问接口**IKsTopologyInfo::CreateNodeInstance**调用后跟**QueryInterface**上获取所需的 COM API 的节点对象。 **IKsTopologyInfo**上记录接口[API 和参考目录](https://go.microsoft.com/fwlink/p/?linkid=27252)网站。
+在应用程序源中包含名为 TestApp 的以下代码。
 
-在应用程序源中，任意名为 TestApp.cpp 包括下面的代码。
-
-此外包括 TestApp.cpp 中所示的代码[扩展单位支持自动更新事件](supporting-autoupdate-events-with-extension-units.md)。
+还包括在 TestApp 中所示的代码，[支持带有扩展单元的自动更新事件](supporting-autoupdate-events-with-extension-units.md)。
 
 ```cpp
   // pUnkOuter is the unknown associated with the base filter
-  hr = pUnkOuter->QueryInterface(__uuidof(IKsTopologyInfo), 
+  hr = pUnkOuter->QueryInterface(__uuidof(IKsTopologyInfo),
                                (void **) &pKsTopologyInfo);
   if (!SUCCEEDED(hr))
   {
@@ -35,7 +34,7 @@ ms.locfileid: "63389216"
  goto errExit;
   }
 
-  hr = FindExtensionNode(pKsTopologyInfo,                                                                                                   
+  hr = FindExtensionNode(pKsTopologyInfo,
      GUID_EXTENSION_UNIT_DESCRIPTOR,
      &dwExtensionNode);
   if (FAILED(hr))
@@ -45,8 +44,8 @@ ms.locfileid: "63389216"
   }
 
   hr = pKsTopologyInfo->CreateNodeInstance(
-        dwExtensionNode, 
-   __uuidof(IExtensionUnit), 
+        dwExtensionNode,
+   __uuidof(IExtensionUnit),
  (void **) &pExtensionUnit);
  if (FAILED(hr))
   {
@@ -74,21 +73,13 @@ ms.locfileid: "63389216"
       printf("Unable to get property value\n");
       goto errExit;
   }
- 
+
   // assume the property value is an integer
   ASSERT(ulSize == 4);
-  printf("The value of property 1 = %d\n", *((int *) 
+  printf("The value of property 1 = %d\n", *((int *)
      pbPropertyValue));
 ```
 
-在这种情况下， **pUnkOuter**应是指向表示 USB 视频类 (UVC) 设备捕获筛选器。 将捕获筛选器添加到筛选器关系图后，可以查询的筛选器**IKsTopologyInfo**接口，在此示例代码所示。
+在这种情况下， **pUnkOuter**应是指向捕获筛选器的指针，该对象表示 USB 视频类（UVC）设备。 将捕获筛选器添加到筛选器关系图后，可以查询**IKsTopologyInfo**接口的筛选器，如下面的示例代码所示。
 
-为编写代码**FindExtensionNode**函数来查找必要的扩展单元节点并返回其 ID 在*dwExtensionNode*。 在此示例代码的后续调用中使用此 ID **IKsTopologyInfo::CreateNodeInstance**方法。
-
- 
-
- 
-
-
-
-
+编写**FindExtensionNode**函数的代码以查找必需的扩展单元节点并在*dwExtensionNode*中返回其 ID。 此 ID 在此示例代码中对**IKsTopologyInfo：： CreateNodeInstance**方法的后续调用中使用。

@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: 50380398229bcaa95270c6349b5cd0361b490368
-  ms.sourcegitcommit: e6e17c669e52e12f5c4fb74dc8730fda3fa2160c
+  ms.openlocfilehash: eb6655beaa3787844bdfb55c582cbac91c504204
+  ms.sourcegitcommit: 141a81f884c4951c6baa34b709ceee0d30caf3d0
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/14/2020
-  ms.locfileid: "84758218"
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "84978458"
 highlightedContent:
   items:
   - title: 获取 Windows 驱动程序工具包
@@ -74,14 +74,14 @@ conceptualContent:
       itemType: reference
   - title: 构建设备
     links:
-    - text: 自定义
-      url: https://docs.microsoft.com/windows-hardware/customize
+    - text: Windows 10 入门
+      url: https://docs.microsoft.com/windows-hardware/get-started
       itemType: overview
     - text: 设计 Windows 10 设备
       url: https://docs.microsoft.com/windows-hardware/design
       itemType: overview
-    - text: Windows 10 入门
-      url: https://docs.microsoft.com/windows-hardware/get-started
+    - text: 自定义
+      url: https://docs.microsoft.com/windows-hardware/customize
       itemType: overview
     - text: 制造商
       url: https://docs.microsoft.com/windows-hardware/manufacture
