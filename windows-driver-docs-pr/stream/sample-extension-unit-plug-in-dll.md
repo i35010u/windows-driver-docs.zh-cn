@@ -1,34 +1,33 @@
 ---
 title: 示例扩展单元插件 DLL
-description: 示例扩展单元插件 DLL
+description: 示例扩展单元 DLL
 ms.assetid: bd9ea70d-7bd0-494d-8d67-7a36a41d005b
 keywords:
 - 插件 DLL WDK USB 视频类
-- 扩展单位 WDK USB 视频类，示例中，插件 DLL
-- 示例代码 WDK USB 视频类扩展单元插件 DLL
-ms.date: 04/20/2017
+- 扩展单元-WDK USB 视频类、示例、插件 DLL
+- 示例代码 WDK USB 视频类，扩展单元插件 DLL
+ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf245d4dac1ec8b886eca4ace2042950818b8e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0429260e9268cbea78517c667b04404f6c2ba53a
+ms.sourcegitcommit: f29360d62eb77b6ee875ce66483d5bc72785eede
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360111"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85111240"
 ---
-# <a name="sample-extension-unit-plug-in-dll"></a>示例扩展单元插件 DLL
+# <a name="sample-extension-unit-plug-in-dll"></a>示例扩展单元 DLL
 
+本主题包含用于在 KS 属性集的顶层公开 COM API 的扩展单元插件 DLL 的示例代码。
 
-本主题包含示例代码的公开 COM API 之上 KS 属性集的扩展单元插件 DLL。
+此示例定义了一个名为**CExtension**的类，该类派生自**CNodeControl**。 稍后还提供了**CNodeControl**类的实现。 **CNodeControl**派生自 Microsoft 提供的**IKsNodeControl**接口，该接口是在*Vidcap*中定义的。
 
-此示例定义一个名为类**CExtension**，它派生**CNodeControl**。 实现**CNodeControl**类还提供了更高版本。 **CNodeControl**派生的 Microsoft 提供**IKsNodeControl**接口中定义*Vidcap.h*。
+*Vidcap.ax*使用**IKsNodeControl**来通知扩展节点 ID 的插件，并为其提供**IKsControl**的实例。 具体而言，该插件通过对 CExtension 的调用来接收此信息 **：:p \_ ：** **:p CExtension 和 \_ KsControl**。 可以在本主题的**CNodeControl**中找到这些方法的可能实现。
 
-*Vidcap.ax*使用**IKsNodeControl**若要告知插件的扩展节点 ID，并为其提供的一个实例**IKsControl**。 具体而言，该插件收到此信息通过调用**CExtension::put\_NodeId**并**CExtension::put\_KsControl**。 可以稍后在本主题中找到这些方法的可能的实现，父类**CNodeControl**。
+*Vidcap*通过2月 2005 [directx Sdk](https://docs.microsoft.com/previous-versions/dn629515(v=msdn.10))出现在夏季 2004 directx sdk 中。 安装这些包时，必须安装其他内容才能获取*Vidcap*。
 
-*Vidcap.h*将出现在 2004 年夏季 DirectX SDK 通过 2005 年 2 月[DirectX SDK](https://go.microsoft.com/fwlink/p/?linkid=51990)。 安装这些程序包时，必须安装其他功能来获取*Vidcap.h*。
+在 Windows Vista 和更高版本中， *Vidcap*作为 Microsoft Windows SDK 的一部分包含。
 
-在 Windows Vista 和更高版本*Vidcap.h*是作为 Microsoft Windows SDK 的一部分。
-
-下面的代码包含在类标头文件中，任意名为*Xuproxy.h*:
+在类头文件中包含以下代码，任意命名为*Xuproxy*：
 
 ```cpp
 #include <ks.h>
@@ -77,36 +76,36 @@ class CExtension :
    STDMETHOD (get_InfoSize)(
       ULONG *pulSize);
    STDMETHOD (get_PropertySize)(
-      ULONG PropertyId, 
+      ULONG PropertyId,
       ULONG *pulSize);
    STDMETHOD (get_Property)(
-      ULONG PropertyId, 
-      ULONG ulSize, 
+      ULONG PropertyId,
+      ULONG ulSize,
       BYTE pValue[]);
    STDMETHOD (put_Property)(
-      ULONG PropertyId, 
-      ULONG ulSize, 
+      ULONG PropertyId,
+      ULONG ulSize,
       BYTE pValue[]);
    STDMETHOD (get_PropertyRange)(
-      ULONG PropertyId, 
+      ULONG PropertyId,
       ULONG ulSize,
-      BYTE pMin[], 
-      BYTE pMax[], 
-      BYTE pSteppingDelta[], 
+      BYTE pMin[],
+      BYTE pMax[],
+      BYTE pSteppingDelta[],
       BYTE pDefault[]);
 };
 
 #define STATIC_PROPSETID_VIDCAP_EXTENSION_UNIT \
    0xXXXXXXXX,0xXXXX,0xXXXX,0xXX,0xXX,0xXX,0xXX,0xXX,0xXX,0xXX,0xXX
-DEFINE_GUIDSTRUCT("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", \ 
+DEFINE_GUIDSTRUCT("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", \
    PROPSETID_VIDCAP_EXTENSION_UNIT);
-#define PROPSETID_VIDCAP_EXTENSION_UNIT \      
+#define PROPSETID_VIDCAP_EXTENSION_UNIT \
    DEFINE_GUIDNAMED(PROPSETID_VIDCAP_EXTENSION_UNIT)
 ```
 
-实现中的两个虚方法**IKsNodeControl**中**CNodeControl**。 这些方法然后由的实例继承**CExtension**类。
+在**CNodeControl**中实现**IKsNodeControl**中的两个虚拟方法。 然后，这些方法由**CExtension**类的实例继承。
 
-下面的代码是任意名为源代码文件中的*Xuproxy.cpp*:
+以下代码位于任意名为*Xuproxy*的源文件中：
 
 ```cpp
 STDMETHODIMP
@@ -129,13 +128,13 @@ CNodeControl::put_KsControl(
 
     if (m_pKsControl) m_pKsControl.Release();
  hr = pIKsControl->QueryInterface(__uuidof(IKsControl),
-       (void **) &m_pKsControl);        
+       (void **) &m_pKsControl);
 
     return hr;
 }
 ```
 
-此外包括以下内容的实现**CExtension**的方法中相同*Xuproxy.cpp*文件：
+还在同一*Xuproxy*文件中包含**CExtension**的方法实现：
 
 ```cpp
 CExtension::CExtension()
@@ -143,14 +142,14 @@ CExtension::CExtension()
     m_pKsControl = NULL;
 }
 
-STDMETHODIMP 
+STDMETHODIMP
 CExtension::FinalConstruct()
 {
     if (m_pOuterUnknown == NULL ) return E_FAIL;
     return S_OK;
 }
 
-STDMETHODIMP 
+STDMETHODIMP
 CExtension::get_InfoSize(
     ULONG *pulSize)
 {
@@ -162,7 +161,7 @@ CExtension::get_InfoSize(
 
     ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
     ExtensionProp.Property.Id = KSPROPERTY_EXTENSION_UNIT_INFO;
-    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET | 
+    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET |
                                    KSPROPERTY_TYPE_TOPOLOGY;
     ExtensionProp.NodeId = m_dwNodeId;
 
@@ -173,17 +172,17 @@ CExtension::get_InfoSize(
         0,
         &ulBytesReturned);
 
-    if (hr == HRESULT_FROM_WIN32(ERROR_MORE_DATA)) 
+    if (hr == HRESULT_FROM_WIN32(ERROR_MORE_DATA))
     {
         *pulSize = ulBytesReturned;
         hr = S_OK;
     }
- 
+
  return hr;
 }
 
 
-STDMETHODIMP 
+STDMETHODIMP
 CExtension::get_Info(
     ULONG ulSize,
     BYTE pInfo[])
@@ -194,7 +193,7 @@ CExtension::get_Info(
 
     ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
     ExtensionProp.Property.Id = KSPROPERTY_EXTENSION_UNIT_INFO;
-    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET | 
+    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET |
                                    KSPROPERTY_TYPE_TOPOLOGY;
     ExtensionProp.NodeId = m_dwNodeId;
 
@@ -209,9 +208,9 @@ CExtension::get_Info(
 }
 
 
-STDMETHODIMP 
+STDMETHODIMP
 CExtension::get_PropertySize(
-    ULONG PropertyId, 
+    ULONG PropertyId,
     ULONG *pulSize)
 {
     HRESULT hr = S_OK;
@@ -222,7 +221,7 @@ CExtension::get_PropertySize(
 
     ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
     ExtensionProp.Property.Id = PropertyId;
-    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET | 
+    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET |
                                    KSPROPERTY_TYPE_TOPOLOGY;
     ExtensionProp.NodeId = m_dwNodeId;
 
@@ -233,19 +232,19 @@ CExtension::get_PropertySize(
         0,
         &ulBytesReturned);
 
- if (hr == HRESULT_FROM_WIN32(ERROR_MORE_DATA)) 
+ if (hr == HRESULT_FROM_WIN32(ERROR_MORE_DATA))
     {
         *pulSize = ulBytesReturned;
         hr = S_OK;
     }
- 
+
  return hr;
 }
 
-STDMETHODIMP 
+STDMETHODIMP
 CExtension::get_Property(
-    ULONG PropertyId, 
-    ULONG ulSize, 
+    ULONG PropertyId,
+    ULONG ulSize,
     BYTE pValue[])
 {
     HRESULT hr = S_OK;
@@ -254,33 +253,7 @@ CExtension::get_Property(
 
     ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
     ExtensionProp.Property.Id = PropertyId;
-    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET | 
-                                   KSPROPERTY_TYPE_TOPOLOGY;
-    ExtensionProp.NodeId = m_dwNodeId;
-
-    hr = m_pKsControl->KsProperty(
-        (PKSPROPERTY) &ExtensionProp,
- sizeof(ExtensionProp),
-        (PVOID) pValue,
-        ulSize,
-        &ulBytesReturned);
-
-    return hr;
-}
-
-STDMETHODIMP 
-CExtension::put_Property(
-    ULONG PropertyId, 
-    ULONG ulSize, 
-    BYTE pValue[])
-{
-    HRESULT hr = S_OK;
-    KSP_NODE ExtensionProp;
-    ULONG ulBytesReturned;
-
-    ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
-    ExtensionProp.Property.Id = PropertyId;
-    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_SET | 
+    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_GET |
                                    KSPROPERTY_TYPE_TOPOLOGY;
     ExtensionProp.NodeId = m_dwNodeId;
 
@@ -295,7 +268,33 @@ CExtension::put_Property(
 }
 
 STDMETHODIMP
-CExtension::get_PropertyRange( 
+CExtension::put_Property(
+    ULONG PropertyId,
+    ULONG ulSize,
+    BYTE pValue[])
+{
+    HRESULT hr = S_OK;
+    KSP_NODE ExtensionProp;
+    ULONG ulBytesReturned;
+
+    ExtensionProp.Property.Set = PROPSETID_VIDCAP_EXTENSION_UNIT;
+    ExtensionProp.Property.Id = PropertyId;
+    ExtensionProp.Property.Flags = KSPROPERTY_TYPE_SET |
+                                   KSPROPERTY_TYPE_TOPOLOGY;
+    ExtensionProp.NodeId = m_dwNodeId;
+
+    hr = m_pKsControl->KsProperty(
+        (PKSPROPERTY) &ExtensionProp,
+ sizeof(ExtensionProp),
+        (PVOID) pValue,
+        ulSize,
+        &ulBytesReturned);
+
+    return hr;
+}
+
+STDMETHODIMP
+CExtension::get_PropertyRange(
     ULONG PropertyId,
     ULONG ulSize,
     BYTE pMin[  ],
@@ -312,19 +311,11 @@ CExtension::CExtension()
 {
     m_pKsControl = NULL;
 }
- 
-STDMETHODIMP 
+
+STDMETHODIMP
 CExtension::FinalConstruct()
 {
     if (m_pOuterUnknown == NULL) return E_FAIL;
     return S_OK;
 }
 ```
-
- 
-
- 
-
-
-
-

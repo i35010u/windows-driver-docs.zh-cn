@@ -1,57 +1,48 @@
 ---
 title: 带捕获按钮的基于 USB 的摄像机
-description: 带捕获按钮的基于 USB 的摄像机
+description: 带有 "捕获" 按钮的基于 USB 的相机
 ms.assetid: abbd824c-1ade-4dbc-8807-e558c444a3ea
 keywords:
-- 筛选器图形配置 WDK 视频捕获，基于 USB 的相机捕获按钮
-- 仍然 pin WDK 视频捕获
+- 筛选器关系图配置 WDK 视频捕获、带有捕获按钮的基于 USB 的摄像机
+- 仍锁定 WDK 视频捕获
 - 捕获按钮 WDK AVStream
-- 与基于 USB 的相机捕获按钮 WDK 视频捕获
-- 仍捕获映像 WDK 视频捕获
-- 仍捕获 WDK 视频捕获的映像
+- 带有 "捕获" 按钮的基于 USB 的相机视频捕获
+- 捕获静止图像 WDK 视频捕获
+- 仍在捕获 WDK 视频捕获的映像
 - 照相机 WDK 视频捕获
-ms.date: 04/20/2017
+ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b17b5a84e77abc3f92ce0bb3dcc1cdcd332a2dc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 242c379286aa594ead2387a849f4d8d8049fef69
+ms.sourcegitcommit: f29360d62eb77b6ee875ce66483d5bc72785eede
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377725"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85111244"
 ---
-# <a name="usb-based-camera-with-a-capture-button"></a>带捕获按钮的基于 USB 的摄像机
+# <a name="usb-based-camera-with-a-capture-button"></a>带有 "捕获" 按钮的基于 USB 的相机
 
+与[基于 USB 或1394的会议照相机](usb-or-1394-based-conferencing-camera.md)相比，创建的筛选器稍微稍微复杂一些，因为它的微型驱动程序公开的静止 pin 支持按钮来捕获静止图像。 当用户将相机上的按钮推送时，静止 pin 可以提供更高的分辨率图像。
 
-一个稍微复杂的筛选器关系图，相比[USB 或基于的 1394年会议摄像机](usb-or-1394-based-conferencing-camera.md)，为其微型驱动程序公开仍 pin 支持捕获静止图像的按钮的会议摄像机创建。 用户将一个按钮推送摄像机上时，仍处于 pin 可以提供更高分辨率图像。
+如果供应商符合 UVC 规范，则不需要为其基于 USB 的相机编写微型驱动程序。 Microsoft 为此类照相机提供[USB 视频类驱动程序](usb-video-class-driver.md)。 Microsoft 建议开发任何新的基于 USB 的电话会议硬件，以遵循 UVC 规范。
 
-供应商不需要编写用于其基于 USB 的相机微型驱动程序，如果它符合 UVC 规范。 Microsoft 提供了[USB 视频类驱动程序](usb-video-class-driver.md)用于此类相机。 Microsoft 建议开发任何新的基于 USB 会议摄像机硬件，以遵循 UVC 规范。
+Microsoft 还提供了[USBCAMD 微型驱动程序库](usbcamd-minidriver-library.md)用于向后兼容。 USBCAMD 支持具有静止 pin 的相机。 但是，USBCAMD 接口已过时，并且 Microsoft 已停止其开发。
 
-Microsoft 还提供了[USBCAMD 微型驱动程序库](usbcamd-minidriver-library.md)为了向后兼容。 USBCAMD 支持以仍插针相机。 但是，USBCAMD 接口已过时，并且 Microsoft 已停止使用进一步开发。
+下图演示了一个可能的筛选器图形配置，适用于带有静止 pin 的基于 USB 的相机。
 
-下图演示了基于 USB 的照相机，摄像机带有仍 pin 的可能的筛选器图形配置。
+![说明带静止 pin 的基于 usb 的相机可能的筛选器图形配置的示意图](images/usb-camera-still.gif)
 
-![说明使用仍 pin 基于 usb 的照相机的可能的筛选器图形配置的关系图](images/usb-camera-still.gif)
+在关系图中，当用户将该按钮推入照相机时，静止 pin 仅流式传输一个图像。 此外，也可以通过编程控制触发静态静态。
 
-在图中，仍处于 pin 将流式传输单个映像时用户将推送到相机按钮。 或者，可以通过编程控制触发仍 pin。
+在静止映像体系结构（STI）上构建的 Windows 映像获取（WIA）技术补充了 USBCAMD 提供的功能。 有关详细信息，请参阅[Windows 映像获取驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)和[静止映像驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/still-image-drivers)。
 
-生成上仍映像体系结构 (STI) 的 Windows 图像采集 (WIA) 技术是补充 USBCAMD 提供的功能。 请参阅[Windows 图像采集驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)并[仍映像驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/still-image-drivers)有关详细信息。
+WIA 视频快照筛选器是由 Microsoft Windows XP 和更高版本的操作系统随附的 WIA 的补充。 WIA 视频快照筛选器允许从视频流中捕获仍帧。
 
-WIA 视频快照筛选器是随 Microsoft Windows XP 和更高版本操作系统的 WIA 的补充。 WIA 视频快照筛选器仍使视频流中要捕获的帧。
+可通过两种方法从设备捕获静止图像。 第一种方式是插入从捕获筛选器下游的 WIA 视频快照筛选器并以编程方式触发捕获。 第二种方法是通过使用 USBCAMD 接口开发微型驱动程序来启用仍支持静止。 然后，可以通过在设备上推送按钮来触发 WIA 视频快照筛选器。
 
-有两种方法的捕获设备中的静止图像。 第一种是从捕获筛选器插入下游的 WIA 视频快照筛选器，并以编程方式触发捕获。 第二个是启用 pin 支持仍使用 USBCAMD 界面开发微型驱动程序。 然后可以通过在设备上按下按钮触发 WIA 视频快照筛选器。
+从静止 pin 捕获图像（而不是视频流）的优点是：静止 pin 可以提供更高的分辨率图像，并允许用户通过按设备上的按钮来捕获映像。
 
-而不是视频流仍处于 pin 从捕获映像的优点是可以提供更高分辨率图像并允许用户通过按按钮在设备上捕获映像仍 pin。
+如果仍未将固定 pin 支持显式添加到微型驱动程序中，则该软件可能会触发 WIA 视频快照筛选器，但解析将与视频流相同。
 
-如果仍 pin 支持不会显式添加到微型驱动程序，WIA 视频快照筛选器可触发的软件，但解决方法将视频流相同。
+某些静止 pin 实现只能在捕获 pin 后呈现，因为它们基于捕获 pin 数据格式。
 
-一些仍的 pin 仅实现可以呈现后捕获 pin 中，因为它们基于捕获 pin 数据格式。
-
-有关 WIA 驱动程序开发的详细信息，请参阅[仍映像技术](https://go.microsoft.com/fwlink/p/?linkid=8768)网站。
-
- 
-
- 
-
-
-
-
+有关 WIA 驱动程序开发的详细信息，请参阅[映像设备驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/image)。

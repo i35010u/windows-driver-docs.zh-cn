@@ -1,14 +1,14 @@
 ---
 title: USB 视频类 (UVC) 驱动程序实现清单
 description: 提供如何为设备实现 USB 视频类（UVC）驱动程序的分步信息。
-ms.date: 01/30/2018
+ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 94839ce6a93ffd5b55ea6dde8ff0885210373222
-ms.sourcegitcommit: eb1f58d23da3b1240385c072837d9118239a8f97
+ms.openlocfilehash: 39b2485631a33df4f414dc48e6d354ea36d500b5
+ms.sourcegitcommit: baf3075858705d4c78d4ea4b0869bf6291bcb823
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883888"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85112139"
 ---
 # <a name="usb-video-class-uvc-driver-implementation-checklist"></a>USB 视频类 (UVC) 驱动程序实现清单
 
@@ -18,7 +18,7 @@ ms.locfileid: "75883888"
 
 - 在 USB.org 访问[USB 类](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)文档（非 UVC）
 
-- 从 USB.org 下载[USB Video 类 1.5](https://go.microsoft.com/fwlink/p/?linkid=2085170)文档
+- 从 USB.org 下载[USB Video 类 1.5](https://www.usb.org/document-library/video-class-v15-document-set)文档
 
 - 查看[USB 视频类驱动程序概述](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver-overview)主题
 
@@ -51,7 +51,7 @@ ms.locfileid: "75883888"
 
   - USB.org 文档：
 
-    - 查看*方法 2*的部分，该部分从你在上面的步骤1中下载的*UVC 1.5 类规范 .pdf*的第17页开始。
+    - 查看*UVC 1.5 类*的第17页上开始的*方法 2*部分，specification.pdf你在上面的步骤1中下载了。
 
   - 特定于 Microsoft 的文档：
 
