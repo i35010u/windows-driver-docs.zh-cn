@@ -5,12 +5,12 @@ ms.assetid: 6ACE4AD9-5318-4c96-A560-D247033CB500
 keywords: bug 检查、蓝屏、内核错误、停止错误、停止代码
 ms.date: 05/23/2017
 ms.localizationpriority: high
-ms.openlocfilehash: fc65ad7f26f895d449f61853c304b124d39d04a3
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0242c8da44457e5bfbf039426b8f7e789ccbb3cf
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78402393"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534494"
 ---
 # <a name="bug-checks-blue-screens"></a>Bug 检查（蓝屏）
 
@@ -26,7 +26,7 @@ ms.locfileid: "78402393"
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-**请注意**   本主题适用于程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://go.microsoft.com/fwlink/p/?linkid=183646)。
+**请注意**   本主题适用于程序员。 如果您是在使用计算机时收到蓝屏错误代码的客户，请参阅[蓝屏错误疑难解答](https://support.microsoft.com//help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 

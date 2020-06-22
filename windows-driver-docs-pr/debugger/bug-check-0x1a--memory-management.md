@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: aa8f9ccbbf1c8f8e979072dea177ef3202cb8ef3
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 86962e0d29df9fc1f7019c2cef24629c31f6fee7
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80327572"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534650"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>Bug 检查 0x1A：MEMORY\_MANAGEMENT
 
@@ -254,6 +254,6 @@ MEMORY\_MANAGEMENT bug 检查的值为 0x0000001A。 这表明出现了严重的
 <a name="resolution"></a>解决方法
 ----------
 
-[!analyze](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。 
+[!analyze](-analyze.md) 调试扩展显示有关 bug 检查的信息，并有助于确定根本原因  。
 
 运行 Windows 内存诊断工具对于排除任何影响物理内存模块的问题也很有用。

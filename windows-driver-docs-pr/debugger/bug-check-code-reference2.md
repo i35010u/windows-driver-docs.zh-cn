@@ -4,19 +4,19 @@ description: 本部分包含常见 bug 检查的相关说明，包括传递到�
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 04/03/2020
 ms.localizationpriority: high
-ms.openlocfilehash: ea3c330f00fc893fad1cadc70fd2c3bd94937ff3
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a4d12aa3f8e3013bbb42c51254dd93b20aeebf61
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81224687"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534498"
 ---
 # <a name="bug-check-code-reference"></a>Bug 检查代码参考
 
 本部分包含常见 Bug 检查代码的说明，这些代码显示在蓝色 Bug 检查屏幕上。 本部分还介绍如何使用 Windows 调试程序中的 [ **!analyze**](-analyze.md) 扩展来显示有关 Bug 检查代码的信息。
 
 > [!NOTE]
-> 本主题面向程序员。 如果你是一个客户，你的系统显示了带有 bug 检查代码的蓝屏，请参阅[蓝屏错误疑难解答](https://go.microsoft.com/fwlink/p/?linkid=183646)。
+> 本主题面向程序员。 如果你是一个客户，你的系统显示了带有 bug 检查代码的蓝屏，请参阅[蓝屏错误疑难解答](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
 ## <a name="using-windbg-to-display-stop-code-information"></a>使用 WinDbg 显示终止代码信息
 

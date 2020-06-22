@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 8180a3a7470771ccdb5204580f380267ada803db
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1ee9898b747fe08032107845c2167414eabca5e6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78402347"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534638"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>Bug 检查 0x3B：SYSTEM\_SERVICE\_EXCEPTION
 
@@ -106,7 +106,7 @@ Arg4: 0000000000000000, zero.
 
 ### <a name="identify-the-driver"></a>标识驱动程序
 
-如果能够识别出导致错误的驱动程序，则它的名称将打印在蓝色屏幕上，并存储在该位置的内存中 (PUNICODE\_STRING) KiBugCheckDriver  。 可以使用一个调试器命令 [dx（显示调试器对象模型表达式）](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)来显示此内容：`dx KiBugCheckDriver` 。
+如果能够识别出导致错误的驱动程序，则它的名称将打印在蓝色屏幕上，并存储在该位置的内存中 (PUNICODE\_STRING) KiBugCheckDriver  。 可以使用一个调试器命令 [dx（显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)来显示此内容：`dx KiBugCheckDriver` 。
 
 使用 [!error](-error.md) 扩展显示参数 1 中的异常代码的相关信息  。 以下是 !error 的输出实例  。
 
