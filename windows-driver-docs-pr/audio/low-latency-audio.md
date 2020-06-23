@@ -4,42 +4,40 @@ description: 本主题介绍 Windows 10 中的音频延迟更改。 它涵盖了
 ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8c1f88db55e0317daf12eb1a5e0356ca37b120
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dfe4dc6f31faa90789e9718bbec65b2f3911bf32
+ms.sourcegitcommit: 57b649e59a2be2055413982035d89bc85e3e425d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830468"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133285"
 ---
 # <a name="low-latency-audio"></a>低延迟音频
 
-
 本主题介绍 Windows 10 中的音频延迟更改。 它涵盖了应用程序开发人员的 API 选项，以及可用于支持低延迟音频的驱动程序中的更改。
 
-本主题包含以下各部分内容。
+本主题包含以下各节。
 
--   [概述](#overview)
--   [定义](#definitions)
--   [Windows 音频堆栈](#windows_audio_stack)
--   [Windows 10 中的音频堆栈改进](#audio_stack_improvements_in_windows_10)
--   [API 改进](#api_improvements)
--   [AudioGraph](#audiograph)
--   [Windows 音频会话 API （WASAPI）](#windows_audio_session_api_wasapi)
--   [驱动程序改进](#driver_improvements)
--   [度量工具](#measurement_tools)
--   [示例](#samples)
--   [常见问题解答](#faq)
+- [概述](#overview)
+- [定义](#definitions)
+- [Windows 音频堆栈](#windows_audio_stack)
+- [Windows 10 中的音频堆栈改进](#audio_stack_improvements_in_windows_10)
+- [API 改进](#api_improvements)
+- [AudioGraph](#audiograph)
+- [Windows 音频会话 API （WASAPI）](#windows_audio_session_api_wasapi)
+- [驱动程序改进](#driver_improvements)
+- [度量工具](#measurement_tools)
+- [示例](#samples)
+- [常见问题解答](#faq)
 
-## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概述
-
+## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>叙述
 
 音频延迟是指在该时间内创建声音和听到声音的延迟时间。 对于几个关键方案（如下所示），具有较低的音频延迟非常重要。
 
--   Pro 音频
--   音乐创建
--   Communications
--   虚拟现实
--   游戏
+- Pro 音频
+- 音乐创建
+- 通信
+- 虚拟现实
+- 游戏
 
 Windows 10 包含更改以降低音频延迟。 本文档的目标是：
 
@@ -52,44 +50,16 @@ Windows 10 包含更改以降低音频延迟。 本文档的目标是：
 
 ## <a name="span-iddefinitionsspanspan-iddefinitionsspanspan-iddefinitionsspandefinitions"></a><span id="Definitions"></span><span id="definitions"></span><span id="DEFINITIONS"></span>定义
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>术语</p></td>
-<td align="left"><p>描述</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>呈现延迟</p></td>
-<td align="left"><p>应用程序将音频数据的缓冲区提交到呈现 Api 的时间之间的延迟，直到扬声器听到该时间。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>捕获延迟</p></td>
-<td align="left"><p>从麦克风捕获声音到将其发送到应用程序正在使用的捕获 Api 的时间之间的延迟。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>往返延迟</p></td>
-<td align="left"><p>从麦克风捕获声音、由应用程序处理并由应用程序提交以呈现给扬声器的时间之间的延迟。 它大致等于呈现延迟 + 捕获延迟。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>触控到应用延迟</p></td>
-<td align="left"><p>用户点击屏幕到将信号发送到应用程序的时间之间的延迟。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>触摸到声音延迟</p></td>
-<td align="left"><p>用户点击屏幕后的延迟时间，事件会转到应用程序，并通过扬声器听到声音。 它相当于呈现延迟 + 触控到应用延迟。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|||
+|--- |--- |
+|术语|说明|
+|呈现延迟|应用程序将音频数据的缓冲区提交到呈现 Api 的时间之间的延迟，直到扬声器听到该时间。|
+|捕获延迟|从麦克风捕获声音到将其发送到应用程序正在使用的捕获 Api 的时间之间的延迟。|
+|往返延迟|从麦克风捕获声音、由应用程序处理并由应用程序提交以呈现给扬声器的时间之间的延迟。 它大致等于呈现延迟 + 捕获延迟。|
+|触控到应用延迟|用户点击屏幕到将信号发送到应用程序的时间之间的延迟。|
+|触摸到声音延迟|用户点击屏幕后的延迟时间，事件会转到应用程序，并通过扬声器听到声音。 它相当于呈现延迟 + 触控到应用延迟。|
 
 ## <a name="span-idwindows_audio_stackspanspan-idwindows_audio_stackspanspan-idwindows_audio_stackspanwindows-audio-stack"></a><span id="Windows_Audio_Stack"></span><span id="windows_audio_stack"></span><span id="WINDOWS_AUDIO_STACK"></span>Windows 音频堆栈
-
 
 下图显示了 Windows 音频堆栈的简化版本。
 
@@ -133,7 +103,6 @@ Windows 10 包含更改以降低音频延迟。 本文档的目标是：
 
 ## <a name="span-idaudio_stack_improvements_in_windows_10spanspan-idaudio_stack_improvements_in_windows_10spanspan-idaudio_stack_improvements_in_windows_10spanaudio-stack-improvements-in-windows-10"></a><span id="Audio_Stack_Improvements_in_Windows_10"></span><span id="audio_stack_improvements_in_windows_10"></span><span id="AUDIO_STACK_IMPROVEMENTS_IN_WINDOWS_10"></span>Windows 10 中的音频堆栈改进
 
-
 Windows 10 在三个方面进行了增强，以减少延迟：
 
 1. 与 Windows 8.1 相比，使用音频的所有应用程序都将在不进行任何代码更改或驱动程序更新的情况下，在往返延迟（如上一节中所述）中看到 4.5 m32-16ms 的缩减。
@@ -148,18 +117,17 @@ Windows 10 在三个方面进行了增强，以减少延迟：
 
 ## <a name="span-idapi_improvementsspanspan-idapi_improvementsspanspan-idapi_improvementsspanapi-improvements"></a><span id="API_Improvements"></span><span id="api_improvements"></span><span id="API_IMPROVEMENTS"></span>API 改进
 
-
 以下两个 Windows 10 Api 提供低延迟功能：
 
--   [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)
--   [Windows 音频会话 API （WASAPI）](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)
+- [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)
+- [Windows 音频会话 API （WASAPI）](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)
 
 这是应用程序开发人员如何确定要使用的两个 Api 中的哪一个：
 
--   为新的应用程序开发提供任何可能的 AudioGraph。
--   仅在以下情况下使用 WASAPI：
-    -   你需要比 AudioGraph 提供的更多的控制。
-    -   需要的延迟低于 AudioGraph 提供的时间。
+- 为新的应用程序开发提供任何可能的 AudioGraph。
+- 仅在以下情况下使用 WASAPI：
+    - 你需要比 AudioGraph 提供的更多的控制。
+    - 需要的延迟低于 AudioGraph 提供的时间。
 
 本主题中的 "[度量工具](#measurement_tools)" 部分显示了使用收件箱 HDAudio 驱动程序从 Haswell 系统进行的特定度量。
 
@@ -167,40 +135,20 @@ Windows 10 在三个方面进行了增强，以减少延迟：
 
 ### <a name="span-idaudiographspanspan-idaudiographspanspan-idaudiographspanaudiograph"></a><span id="AudioGraph"></span><span id="audiograph"></span><span id="AUDIOGRAPH"></span>AudioGraph
 
-AudioGraph 是 Windows 10 中新的通用 Windows 平台 API，旨在轻松实现交互和音乐创建方案。 AudioGraph 以多种编程语言（C++、 C#、JavaScript）提供，并且具有一种简单且功能丰富的编程模型。
+AudioGraph 是 Windows 10 中新的通用 Windows 平台 API，旨在轻松实现交互和音乐创建方案。 AudioGraph 提供多种编程语言（c + +、c #、JavaScript），并且具有简单且功能丰富的编程模型。
 
 为了面向低延迟方案，AudioGraph 提供了[AudioGraphSettings：： QuantumSizeSelectionMode 属性](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings#Windows_Media_Audio_AudioGraphSettings_QuantumSizeSelectionMode)。 此属性可以是下表中所示的以下任何值：
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Value</p></td>
-<td align="left"><p>描述</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>SystemDefault</p></td>
-<td align="left"><p>将缓冲区设置为默认缓冲区大小（~ 10ms）</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>LowestLatency</p></td>
-<td align="left"><p>将缓冲区设置为驱动程序支持的最小值</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>ClosestToDesired</p></td>
-<td align="left"><p>将缓冲区大小设置为等于 DesiredSamplesPerQuantum 属性定义的值，或设置为与驱动程序支持的 DesiredSamplesPerQuantum 接近的值。</p></td>
-</tr>
-</tbody>
-</table>
+|||
+|--- |--- |
+|值|说明|
+|SystemDefault|将缓冲区设置为默认缓冲区大小（~ 10ms）|
+|LowestLatency|将缓冲区设置为驱动程序支持的最小值|
+|ClosestToDesired|将缓冲区大小设置为等于 DesiredSamplesPerQuantum 属性定义的值，或设置为与驱动程序支持的 DesiredSamplesPerQuantum 接近的值。|
 
- 
+ AudioCreation 示例（可在 GitHub 上下载： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation> ）演示如何使用 AudioGraph 以降低延迟。 下面的代码段演示如何设置最小缓冲区大小：
 
-AudioCreation 示例（可在 GitHub 上下载： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>）演示如何使用 AudioGraph 以降低延迟。 下面的代码段演示如何设置最小缓冲区大小：
-
-```cpp
+```csharp
 AudioGraphSettings settings = new AudioGraphSettings(AudioRenderCategory.Media);
 settings.QuantumSizeSelectionMode = QuantumSizeSelectionMode.LowestLatency;
 CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
@@ -210,9 +158,9 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 从 Windows 10 开始，WASAPI 已增强到：
 
--   允许应用程序发现给定音频设备的音频驱动程序所支持的缓冲区大小（即周期值）的范围。 这使应用程序可以在以共享模式打开流时在默认的缓冲区大小（10ms）或小缓冲区（&lt;10ms）之间进行选择。 如果应用程序未指定缓冲区大小，则它将使用默认的缓冲区大小。
--   允许应用程序发现音频引擎的当前格式和周期。 这允许应用程序与音频引擎的当前设置对齐。
--   允许应用指定它希望以它指定的格式呈现/捕获，而不是由音频引擎进行任何重新采样
+- 允许应用程序发现给定音频设备的音频驱动程序所支持的缓冲区大小（即周期值）的范围。 这使应用程序可以在 &lt; 以共享模式打开流时在默认的缓冲区大小（10ms）或小型缓冲区（10ms）之间进行选择。 如果应用程序未指定缓冲区大小，则它将使用默认的缓冲区大小。
+- 允许应用程序发现音频引擎的当前格式和周期。 这允许应用程序与音频引擎的当前设置对齐。
+- 允许应用指定它希望以它指定的格式呈现/捕获，而不是由音频引擎进行任何重新采样
 
 以上功能将在所有 Windows 设备上可用。 但是，具有足够资源和更新驱动程序的某些设备将提供比其他设备更好的用户体验。
 
@@ -220,34 +168,14 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 [**IAudioClient3**](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)定义以下3种方法：
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>方法</p></td>
-<td align="left"><p>描述</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>GetCurrentSharedModeEnginePeriod</p></td>
-<td align="left"><p>返回音频引擎的当前格式和周期</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>GetSharedModeEnginePeriod</p></td>
-<td align="left"><p>返回引擎支持的指定流格式的周期范围</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>InitializeSharedAudioStream</p></td>
-<td align="left"><p>用指定的周期初始化共享流</p></td>
-</tr>
-</tbody>
-</table>
+|||
+|--- |--- |
+|方法|说明|
+|GetCurrentSharedModeEnginePeriod|返回音频引擎的当前格式和周期|
+|GetSharedModeEnginePeriod|返回引擎支持的指定流格式的周期范围|
+|InitializeSharedAudioStream|用指定的周期初始化共享流|
 
- 
-
-WASAPIAudio 示例（可在 GitHub 上找到： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession>）演示如何使用 IAudioClient3 以降低延迟。
+WASAPIAudio 示例（可在 GitHub 上找到： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession> ）演示如何使用 IAudioClient3 以降低延迟。
 
 以下代码片段演示了音乐创建应用如何在系统支持的最低延迟设置下运行。
 
@@ -483,19 +411,18 @@ Exit:
 
 最后，使用 WASAPI 的应用程序开发人员需要使用音频类别标记其流，并根据每个流的功能是否使用原始信号处理模式。 建议所有音频流不使用原始信号处理模式，除非理解这些含义。 Raw 模式会绕过 OEM 选择的所有信号处理，因此：
 
--   特定终结点的呈现信号可能是最佳的。
--   捕获信号可能采用应用程序无法理解的格式。
--   延迟可能会提高。
+- 特定终结点的呈现信号可能是最佳的。
+- 捕获信号可能采用应用程序无法理解的格式。
+- 延迟可能会提高。
 
 ## <a name="span-iddriver_improvementsspanspan-iddriver_improvementsspanspan-iddriver_improvementsspandriver-improvements"></a><span id="Driver_Improvements"></span><span id="driver_improvements"></span><span id="DRIVER_IMPROVEMENTS"></span>驱动程序改进
 
-
 为了使音频驱动程序支持低延迟，Windows 10 提供了以下三个新功能：
 
-1. \[必需的\] 声明每个模式所支持的最小缓冲区大小。
-2. \[可选，但建议\] 改善驱动程序和操作系统之间数据流的协调。
-3. \[可选的，但建议\] 注册驱动程序资源（中断、线程），以便它们可以在低延迟方案中受操作系统保护。
-收件箱 HDAudio 总线驱动程序 hdaudbus 枚举的 HDAudio 微型端口函数驱动程序无需注册 HDAudio 中断，因为它已由 hdaudbus 完成。 但是，如果微型端口驱动程序创建其自己的线程，则需要对其进行注册。
+1. \[必需 \] 声明每个模式所支持的最小缓冲区大小。
+2. \[可选，但建议 \] 改善驱动程序和操作系统之间数据流的协调。
+3. \[可选，但建议 \] 注册驱动程序资源（中断、线程），以便它们可以在低延迟方案中受操作系统保护。
+收件箱 HDAudio 总线驱动程序 hdaudbus.sys 枚举的 HDAudio 微型端口函数驱动程序无需注册 HDAudio 中断，因为这已通过 hdaudbus.sys 完成。 但是，如果微型端口驱动程序创建其自己的线程，则需要对其进行注册。
 
 以下三个部分将更深入地介绍每个新功能。
 
@@ -503,7 +430,7 @@ Exit:
 
 在操作系统、驱动程序和硬件之间移动音频数据时，驱动程序在各种约束下运行。 这些限制可能是由于物理硬件传输在内存和硬件间移动数据，以及/或者由于硬件或关联的 DSP 中的信号处理模块导致的。
 
-在 Windows 10 中，驱动程序可以使用 DEVPKEY\_KsAudio\_PacketSize\_约束设备属性来表示其缓冲区大小功能。 此属性允许用户定义驱动程序支持的绝对最小缓冲区大小，以及每个信号处理模式的特定缓冲区大小约束（特定模式的约束需要高于驱动程序最小缓冲区大小，否则音频堆栈将忽略它们。 例如，下面的代码段演示了驱动程序如何声明支持的绝对最小缓冲区大小为1ms，但如果我们假定 48 kHz 采样率为默认模式，则默认模式支持128帧（对应于 3 ms）。
+在 Windows 10 中，驱动程序可以使用 DEVPKEY \_ KsAudio \_ PacketSize \_ 约束设备属性来表示其缓冲区大小功能。 此属性允许用户定义驱动程序支持的绝对最小缓冲区大小，以及每个信号处理模式的特定缓冲区大小约束（模式特定的约束需要高于驱动程序的最小缓冲区大小，否则音频堆栈将忽略这些限制）。 例如，下面的代码段演示了驱动程序如何声明支持的绝对最小缓冲区大小为1ms，但如果我们假定 48 kHz 采样率为默认模式，则默认模式支持128帧（对应于 3 ms）。
 
 ```cpp
 // Describe constraints for small buffers
@@ -529,10 +456,10 @@ static struct
 
 有关这些结构的详细信息，请参阅下列主题：
 
--   [**KSAUDIO\_PACKETSIZE\_约束结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
--   [**KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_约束结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
+-   [**KSAUDIO \_ PACKETSIZE \_ 约束结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
+-   [**KSAUDIO \_ PACKETSIZE \_ PROCESSINGMODE \_ 约束结构**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
 
-此外，sysvad 示例（<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>）演示如何使用这些属性，以便驱动程序声明每个模式的最小缓冲区。
+此外，sysvad 示例（ <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> ）还演示了如何使用这些属性，以便驱动程序声明每个模式的最小缓冲区。
 
 **2. 改善驱动程序和操作系统之间的协调。**
 
@@ -558,7 +485,7 @@ static struct
 -   在驱动程序和 DSP 之间，计算 Windows 性能计数器和 DSP 墙壁时钟之间的关联。 此过程的过程包括非常简单（但不精确）到相当复杂或 novel （但更精确）。
 -   由于信号处理算法、管道或硬件传输而导致的任何常量延迟，除非其他情况下会考虑这些延迟。
 
-Sysvad 示例（<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>）演示了如何使用上述 DDIs。
+Sysvad 示例（ <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> ）演示如何使用上述 DDIs。
 
 **3. 注册驱动程序资源**
 
@@ -580,18 +507,18 @@ Sysvad 示例（<https://github.com/Microsoft/Windows-driver-samples/tree/master
 
 注意：
 
--   收件箱 HDAudio 总线驱动程序 hdaudbus 枚举的 HDAudio 微型端口函数驱动程序无需注册 HDAudio 中断，因为它已由 hdaudbus 完成。 但是，如果微型端口驱动程序创建其自己的线程，则需要对其进行注册。
--   仅为注册流式处理资源而与 Portcls 链接的驱动程序必须更新其 Inf，使其包含/需要 wdmaudio 并复制 Portcls （和依赖文件）。 在 wdmaudio 中定义了一个新的 INF 复制部分，仅复制这些文件。
+-   收件箱 HDAudio 总线驱动程序 hdaudbus.sys 枚举的 HDAudio 微型端口函数驱动程序无需注册 HDAudio 中断，因为这已通过 hdaudbus.sys 完成。 但是，如果微型端口驱动程序创建其自己的线程，则需要对其进行注册。
+-   仅为注册流式处理资源而与 Portcls 链接的驱动程序必须更新其 Inf，使其包含/需要 wdmaudio 并复制 portcls.sys （和依赖文件）。 在 wdmaudio 中定义了一个新的 INF 复制部分，仅复制这些文件。
 -   仅在 Windows 10 中运行的音频驱动程序可以硬链接到：
     -   [**PcAddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcaddstreamresource)
     -   [**PcRemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcremovestreamresource)
--   必须在下层操作系统上运行的音频驱动程序可以使用以下接口（微型端口可以为 IID\_IPortClsStreamResourceManager 接口调用 QueryInterface 并仅在 PortCls 支持接口时才注册其资源）。
+-   必须在下层操作系统上运行的音频驱动程序可以使用以下接口（微型端口可以为 IID \_ IPortClsStreamResourceManager 接口调用 QueryInterface 并仅在 PortCls 支持接口时才注册其资源）。
     -   [IPortClsStreamResourceManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsstreamresourcemanager)
         -   [**AddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsstreamresourcemanager-addstreamresource)
         -   [**RemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsstreamresourcemanager-removestreamresource)
 -   这些 DDIs，请使用此枚举和结构：
     -   [**PcStreamResourceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ne-portcls-_pcstreamresourcetype)
-    -   [**PCSTREAMRESOURCE\_描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcstreamresource_descriptor)
+    -   [**PCSTREAMRESOURCE \_ 描述符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcstreamresource_descriptor)
 
 最后，仅用于注册资源的 PortCls 链接的驱动程序必须将以下两行添加到其 inf 的 DDInstall 部分中。 音频微型端口驱动程序不需要此项，因为它们已在 wdmaudio 中具有包含/需求。
 
@@ -605,62 +532,51 @@ Needs=WDMPORTCLS.CopyFilesOnly
 
 ## <a name="span-idmeasurement_toolsspanspan-idmeasurement_toolsspanspan-idmeasurement_toolsspanmeasurement-tools"></a><span id="Measurement_Tools"></span><span id="measurement_tools"></span><span id="MEASUREMENT_TOOLS"></span>度量工具
 
-
 为了衡量往返延迟，用户可以利用通过扬声器播放脉冲的工具，并通过麦克风捕获它们。 它们测量以下路径的延迟：
 
 1. 应用程序调用渲染 API （AudioGraph 或 WASAPI）来播放脉冲
 2. 音频通过扬声器播放
 3. 从麦克风捕获音频
-4. 捕获 API （AudioGraph 或 WASAPI）检测到脉冲：为了衡量不同缓冲区大小的往返延迟，用户需要安装支持小缓冲区的驱动程序。 收件箱 HDAudio 驱动程序已更新，以支持128样本（2.66ms@48kHz）和480示例（10ms@48kHz）之间的缓冲区大小。 以下步骤演示了如何安装收件箱 HDAudio 驱动程序（这是所有 Windows 10 Sku 的一部分）：
+4. 捕获 API （AudioGraph 或 WASAPI）检测到脉冲：为了衡量不同缓冲区大小的往返延迟，用户需要安装支持小缓冲区的驱动程序。 收件箱 HDAudio 驱动程序已更新为支持128示例（ 2.66ms@48kHz ）和480示例（）之间的缓冲区大小 10ms@48kHz 。 以下步骤演示了如何安装收件箱 HDAudio 驱动程序（这是所有 Windows 10 Sku 的一部分）：
 
--   开始设备管理器。
--   在 "**声音视频和游戏控制器**" 下，双击与内部扬声器相对应的设备。
--   在下一个窗口中，请切换到 "**驱动程序**" 选项卡。
--   选择 "**更新驱动程序**" -&gt;**浏览计算机以查找驱动程序软件**" -&gt;**在此计算机中选择设备驱动程序列表**， -**选择" 高清晰音频设备**和单击 "**下一步**"。
--   如果出现标题为 "更新驱动程序警告" 的窗口，请单击 **"是**"。
--   选择 "**关闭**"。
--   如果系统要求重新启动系统，请选择 **"是"** 重新启动。
--   重新启动后，系统将使用收件箱 Microsoft HDAudio 驱动程序，而不是第三方编解码器驱动程序。 请记住以前使用的驱动程序，如果想要对音频编解码器使用最佳设置，则可以回退到该驱动程序。
+- 启动“设备管理器”。
+- 在 "**声音视频和游戏控制器**" 下，双击与内部扬声器相对应的设备。
+- 在下一个窗口中，请切换到 "**驱动程序**" 选项卡。
+- 选择 "**更新驱动**程序  - &gt; **" "浏览计算机以查找驱动程序软件"。**  - &gt; **从设备驱动程序列表中**  - &gt; **选择 "高清晰音频设备**"，然后单击 "**下一步**"。
+- 如果出现标题为 "更新驱动程序警告" 的窗口，请单击 **"是**"。
+- 选择 "**关闭**"。
+- 如果系统要求重新启动系统，请选择 **"是"** 重新启动。
+- 重新启动后，系统将使用收件箱 Microsoft HDAudio 驱动程序，而不是第三方编解码器驱动程序。 请记住以前使用的驱动程序，如果想要对音频编解码器使用最佳设置，则可以回退到该驱动程序。
 
 ![显示 wasapi 和 audiograph 之间的往返延迟与不同缓冲区大小之间的差异的关系图。 ](images/low-latency-audio-roundtrip-latency.png)
 
 由于以下原因，WASAPI 与 AudioGraph 之间的延迟差异：
 
--   AudioGraph 在捕获端添加一个延迟缓冲区，以便同步呈现和捕获（不是由 WASAPI 提供）。 此加法简化了使用 AudioGraph 编写的应用程序的代码。
--   当系统使用 &gt; 6ms 缓冲区时，会在 AudioGraph 的呈现端出现额外的延迟。
--   AudioGraph 没有禁用捕获音频效果的选项
+- AudioGraph 在捕获端添加一个延迟缓冲区，以便同步呈现和捕获（不是由 WASAPI 提供）。 此加法简化了使用 AudioGraph 编写的应用程序的代码。
+- 当系统使用6ms 缓冲区时，在 AudioGraph 的呈现端有一个额外的延迟 &gt; 。
+- AudioGraph 没有禁用捕获音频效果的选项
 
 ## <a name="span-idsamplesspanspan-idsamplesspanspan-idsamplesspansamples"></a><span id="Samples"></span><span id="samples"></span><span id="SAMPLES"></span>范例
 
+- WASAPI 音频示例：<https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession>
+- AudioCreation 示例（AudioGraph）：<https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
+- Sysvad 驱动程序示例：<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
--   WASAPI 音频示例： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession>
--   AudioCreation 示例（AudioGraph）： <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
--   Sysvad 驱动程序示例： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
-
-## <a name="span-idfaqspanspan-idfaqspanfaq"></a><span id="FAQ"></span><span id="faq"></span>常见问题
-
+## <a name="span-idfaqspanspan-idfaqspanfaq"></a><span id="FAQ"></span><span id="faq"></span>常见问题解答
 
 **1. 如果所有应用程序都使用新 Api 来实现低延迟，则不是更好？低延迟始终保证用户获得更好的用户体验吗？**
 
 不一定。 低延迟具有其折衷：
 
--   低延迟意味着更高的功率消耗。 如果系统使用10ms 缓冲区，则意味着 CPU 将唤醒每个10ms，填满数据缓冲区并进入睡眠状态。 但是，如果系统使用1ms 缓冲区，则意味着 CPU 将唤醒每个1ms。 在第二种情况下，这意味着 CPU 将更频繁地唤醒，并且功率消耗将增加。 这会缩短电池寿命。
--   大多数应用程序都依靠音频效果来提供最佳用户体验。 例如，媒体播放器需要提供高保真音频。 通信应用程序需要最少的回显和干扰。 将这些类型的音频效果添加到流会增加其延迟。 与音频延迟相比，这些应用程序比音频质量更感兴趣。
+- 低延迟意味着更高的功率消耗。 如果系统使用10ms 缓冲区，则意味着 CPU 将唤醒每个10ms，填满数据缓冲区并进入睡眠状态。 但是，如果系统使用1ms 缓冲区，则意味着 CPU 将唤醒每个1ms。 在第二种情况下，这意味着 CPU 将更频繁地唤醒，并且功率消耗将增加。 这会缩短电池寿命。
+- 大多数应用程序都依靠音频效果来提供最佳用户体验。 例如，媒体播放器需要提供高保真音频。 通信应用程序需要最少的回显和干扰。 将这些类型的音频效果添加到流会增加其延迟。 与音频延迟相比，这些应用程序比音频质量更感兴趣。
 
 总而言之，每种应用程序类型对于音频延迟有不同的需求。 如果应用程序不需要低延迟，则不应使用新的 Api 来实现低延迟。
 
 **2. 更新到 Windows 10 的所有系统是否会自动更新为支持小型缓冲区？同时，所有系统是否支持相同的最小缓冲区大小？**
 
-不相同。 为了使系统支持小型缓冲区，需要更新驱动程序。 由 Oem 决定将更新哪些系统以支持小型缓冲区。 另外，较新的系统更 likey 支持比较早的系统更小的缓冲区（即，新系统中的延迟很可能低于较早的系统）。
+不是。 为了使系统支持小型缓冲区，需要更新驱动程序。 由 Oem 决定将更新哪些系统以支持小型缓冲区。 另外，较新的系统更 likey 支持比较早的系统更小的缓冲区（即，新系统中的延迟很可能低于较早的系统）。
 
-**3. 如果驱动程序支持小缓冲区大小（&lt;10ms 缓冲区），Windows 10 中的所有应用程序是否会自动使用小型缓冲区来呈现和捕获音频？**
+**3. 如果驱动程序支持小型缓冲区大小（ &lt; 10ms buffer），Windows 10 中的所有应用程序是否会自动使用小型缓冲区来呈现和捕获音频？**
 
-不相同。 默认情况下，Windows 10 中的所有应用程序都将使用10ms 的缓冲区来呈现和捕获音频。 如果应用程序需要使用小型缓冲区，则需要使用新的 AudioGraph 设置或 WASAPI IAudioClient3 接口，以便执行此操作。 但是，如果 Windows 10 中的一个应用程序请求使用小型缓冲区，则音频引擎将使用该特定缓冲区大小开始传输音频。 在这种情况下，使用同一终结点和模式的所有应用程序都将自动切换到该小型缓冲区大小。 当低延迟应用程序退出时，音频引擎将再次切换到10ms 缓冲区。
-
- 
-
- 
-
-
-
-
+不是。 默认情况下，Windows 10 中的所有应用程序都将使用10ms 的缓冲区来呈现和捕获音频。 如果应用程序需要使用小型缓冲区，则需要使用新的 AudioGraph 设置或 WASAPI IAudioClient3 接口，以便执行此操作。 但是，如果 Windows 10 中的一个应用程序请求使用小型缓冲区，则音频引擎将使用该特定缓冲区大小开始传输音频。 在这种情况下，使用同一终结点和模式的所有应用程序都将自动切换到该小型缓冲区大小。 当低延迟应用程序退出时，音频引擎将再次切换到10ms 缓冲区。

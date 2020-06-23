@@ -9,12 +9,12 @@ keywords:
 - 线程锁定 WDK 驱动程序验证程序
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d4c905a7cd7cf778cf088502c879d59a7b153b8
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: 4251ae6424c19b02af40d47de5ca5253b53d869a
+ms.sourcegitcommit: 8f693fbfca7705f138442fb22411edbcc8850d31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428322"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85191766"
 ---
 # <a name="deadlock-detection"></a>死锁检测
 
@@ -66,9 +66,9 @@ ms.locfileid: "84428322"
 
 当死锁检测发现冲突时，它将发出 bug 检查0xC4。 此错误检查的第一个参数将指示具体的冲突。 可能的冲突包括：
 
-- 锁层次结构冲突涉及两个或多个线程
+-   锁层次结构冲突涉及两个或多个线程
 
-- 按顺序释放的资源
+-   尝试以独占方式获取其已为其共享所有者的资源的线程（可通过共享方式获取独占拥有的资源; 无法以独占方式获取共享资源）。
 
 - 尝试获取同一资源两次（自死锁）的线程
 
@@ -92,7 +92,10 @@ ms.locfileid: "84428322"
 
 ### <a name="activating-this-option"></a>激活此选项
 
-您可以使用驱动程序验证器管理器或 Verifier 命令行为一个或多个驱动程序激活死锁检测功能。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
+> [!NOTE]
+> 此选项与[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)处理不兼容
+
+您可以使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活死锁检测功能。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
 - **在命令行中**
 
