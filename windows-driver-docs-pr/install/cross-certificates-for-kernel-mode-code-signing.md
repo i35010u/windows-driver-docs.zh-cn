@@ -4,12 +4,12 @@ description: 此信息介绍如何获取和使用 Microsoft Windows 的代码签
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2536d56a8f9f7b1ee7bc67944366f5933e72a7ff
-ms.sourcegitcommit: fe3c8b53a94c35b564b04adc0d56852879a2f119
+ms.openlocfilehash: c2a34a2bdbf14135a394429939b7f5c15b22b511
+ms.sourcegitcommit: c4f15f33d57d360f0868abe43a018248b97d5656
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85200196"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85311620"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>用于内核模式代码签名的交叉证书
 
@@ -66,28 +66,28 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
 
 下面的列表包含 Microsoft 当前支持的用于为代码签名内核模式代码颁发 SPCs 的所有 Ca。
 
-|                              CA                              |                 根证书指纹                 |                        下载链接                        |
-| :----------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
-| Certum 可信网络 CA                                    | 55 43 55 15 fd d2 48 65 75 fd c5 cf 3b ad 00 c9 13 12 3d 03 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321770) |
-| DigiCert 有保障的 ID 根 CA                                  | ba 3e a5 4d 72 c1 45 d3 7c 25 5e 1e a4 0a fb c6 33 48 b9 6e | [下载](https://go.microsoft.com/fwlink/p/?linkid=321771) |
-| DigiCert 全局根 CA                                      | c9 83 39 19 f1 f3 6a 63 48 11 1e 93 02 6f d4 0e b9 6f bc 34 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321772) |
-| DigiCert 高保障 EV 根 CA                           | 2f 25 13 af 39 92 db 0a 3f 79 70 9f f8 14 3b 3f 7b d2 d1 43 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321773) |
-| Entrust.net 证书颁发机构 (2048)                   | 00 a3 e6 00 9e aa 73 9b 3d ee f4 b5 06 64 9d 8a 1a 7a d3 3a | [下载](https://go.microsoft.com/fwlink/p/?linkid=321774) |
-| Entrust 根证书颁发机构– G2                    | d8 fc 24 87 48 58 5e 17 3e fb fb 30 75 c4 b4 d6 0f 9d 8 d 08 | [下载](https://go.microsoft.com/fwlink/p/?LinkId=624811) |
-| GeoTrust 主要证书颁发机构                     | e8 6e 80 82 99 0e 3d fa ed 81 6d 9e b1 72 0f 91 a4 f1 a1 85 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321775) |
-| GeoTrust 主证书颁发机构– G3                | b2 bb bd fa c8 f1 a8 ad 58 95 cd 49 38 4b 22 ca 19 db 2d 1f | [下载](https://go.microsoft.com/fwlink/p/?linkid=321776) |
-| GlobalSign 根 CA                                           | cc 1d ee bf 6d 55 c2 c9 06 1b a1 6f 10 a0 bf a6 97 9a-z 4a 32 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321777) |
-| 中转 Daddy 根证书颁发机构– G2                     | 84 2c 5c b3 4b 73 bb c5 ed 85 64 bd ed a7 86 96 7d 7b 42 ef | [下载](https://go.microsoft.com/fwlink/p/?linkid=321778) |
-| NetLock Arany （类金牌）                                   | 89 4f 1d 28 97 aa 4c 07 4d cd 85 c5 fc 09 ee 73 b9 51 04 d8 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321779) |
-| NetLock Platina （白金类）                             | 97 dd 74 97 16 20 57 29 41 dc 80 0c 2f d8 0a 48 07 7d 10 b0 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321780) |
-| 安全通信 RootCA1                               | 41 f2 8c e5 6f d8 b9 cb 46 7f b5 03 2a 3c ae 1c 1c 9d 86 48 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321781) |
-| Starfield 根证书颁发机构– G2                    | 40 c2 0a 9a-z 33 fa d0 36 ac bf e8 2d 6c bb ee 1b 42 9b 86 de | [下载](https://go.microsoft.com/fwlink/p/?linkid=321782) |
-| StartCom 证书颁发机构                             | e6 06 9e 04 8 d ea 8 d 81 7a fc 41 88 b1 为 f1 d8 88 d0 af 17 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321783) |
-| TC TrustCenter Class 2 CA II                                 | 42 62 ff 7d 89 70 66 aa e7 75 80 d3 3a d2 88 03 f9 a1 1a 62 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321784) |
-| Thawte 主要根 CA                                       | 55 38 e9 fe c1 40 30 b7 40 15 23 49 e1 15 a1 16 5d 29 07 4a | [下载](https://go.microsoft.com/fwlink/p/?linkid=321785) |
-| Thawte 主根 CA-G3                                  | ba 57 ca 5e 78 dd 2d 1d 74 76 ae e9 95 3e 39 6f d0 55 46 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321786) |
-| VeriSign Class 3 公共主证书颁发机构-G5 | 57 53 4c cc 33 91 4c 41 f7 0e 2c bb 21 03 a1 db 18 81 7d 8b | [下载](https://go.microsoft.com/fwlink/p/?linkid=321787) |
-| VeriSign 通用根证书颁发机构              | 9e d8 cd 56 01 f0 10 56 51 eb bb 3f 57 f0 31 82 e5 fa 7e 01 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321788) |
+|                              CA                              |                 根证书指纹                 |到期日期|                        下载链接                        |
+| :----------------------------------------------------------: | :---------------------------------------------------------: | :-----------: | :---------------------------------------------------------: |
+| Certum 可信网络 CA                                    | 55 43 55 15 fd d2 48 65 75 fd c5 cf 3b ad 00 c9 13 12 3d 03 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321770) |
+| DigiCert 有保障的 ID 根 CA                                  | ba 3e a5 4d 72 c1 45 d3 7c 25 5e 1e a4 0a fb c6 33 48 b9 6e | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321771) |
+| DigiCert 全局根 CA                                      | c9 83 39 19 f1 f3 6a 63 48 11 1e 93 02 6f d4 0e b9 6f bc 34 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321772) |
+| DigiCert 高保障 EV 根 CA                           | 2f 25 13 af 39 92 db 0a 3f 79 70 9f f8 14 3b 3f 7b d2 d1 43 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321773) |
+| Entrust.net 证书颁发机构 (2048)                   | 00 a3 e6 00 9e aa 73 9b 3d ee f4 b5 06 64 9d 8a 1a 7a d3 3a | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321774) |
+| Entrust 根证书颁发机构– G2                    | d8 fc 24 87 48 58 5e 17 3e fb fb 30 75 c4 b4 d6 0f 9d 8 d 08 | 2025/07/07    | [下载](https://go.microsoft.com/fwlink/p/?LinkId=624811) |
+| GeoTrust 主要证书颁发机构                     | e8 6e 80 82 99 0e 3d fa ed 81 6d 9e b1 72 0f 91 a4 f1 a1 85 | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321775) |
+| GeoTrust 主证书颁发机构– G3                | b2 bb bd fa c8 f1 a8 ad 58 95 cd 49 38 4b 22 ca 19 db 2d 1f | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321776) |
+| GlobalSign 根 CA                                           | cc 1d ee bf 6d 55 c2 c9 06 1b a1 6f 10 a0 bf a6 97 9a-z 4a 32 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321777) |
+| 中转 Daddy 根证书颁发机构– G2                     | 84 2c 5c b3 4b 73 bb c5 ed 85 64 bd ed a7 86 96 7d 7b 42 ef | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321778) |
+| NetLock Arany （类金牌）                                   | 89 4f 1d 28 97 aa 4c 07 4d cd 85 c5 fc 09 ee 73 b9 51 04 d8 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321779) |
+| NetLock Platina （白金类）                             | 97 dd 74 97 16 20 57 29 41 dc 80 0c 2f d8 0a 48 07 7d 10 b0 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321780) |
+| 安全通信 RootCA1                               | 41 f2 8c e5 6f d8 b9 cb 46 7f b5 03 2a 3c ae 1c 1c 9d 86 48 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321781) |
+| Starfield 根证书颁发机构– G2                    | 40 c2 0a 9a-z 33 fa d0 36 ac bf e8 2d 6c bb ee 1b 42 9b 86 de | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321782) |
+| StartCom 证书颁发机构                             | e6 06 9e 04 8 d ea 8 d 81 7a fc 41 88 b1 为 f1 d8 88 d0 af 17 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321783) |
+| TC TrustCenter Class 2 CA II                                 | 42 62 ff 7d 89 70 66 aa e7 75 80 d3 3a d2 88 03 f9 a1 1a 62 | 2021/04/11    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321784) |
+| Thawte 主要根 CA                                       | 55 38 e9 fe c1 40 30 b7 40 15 23 49 e1 15 a1 16 5d 29 07 4a | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321785) |
+| Thawte 主根 CA-G3                                  | ba 57 ca 5e 78 dd 2d 1d 74 76 ae e9 95 3e 39 6f d0 55 46 | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321786) |
+| VeriSign Class 3 公共主证书颁发机构-G5 | 57 53 4c cc 33 91 4c 41 f7 0e 2c bb 21 03 a1 db 18 81 7d 8b | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321787) |
+| VeriSign 通用根证书颁发机构              | 9e d8 cd 56 01 f0 10 56 51 eb bb 3f 57 f0 31 82 e5 fa 7e 01 | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321788) |
 
 ## <a name="new-cross-certificate-list"></a>新建交叉证书列表
 
@@ -95,12 +95,12 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
 下面的列表包含 Microsoft 当前支持的用于为代码签名内核模式代码颁发 SPCs 的多个新 Ca。
 
 
-|                              CA                              |                 根证书指纹                 |                        下载链接                        |
-| :----------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
-| AddTrust 外部 CA 根                                    | a7 5a c6 57 aa 7a 4c df e5 f9 de 39 3e 69 ef ca b6 59 d2 50 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321790) |
-| GoDaddy 2 类证书颁发机构                      | d9 61 24 72 ef 0f 27 87 e2 b2 d9 e0 63 a0 6b 32 fa 5e 33 3d | [下载](https://go.microsoft.com/fwlink/p/?linkid=321791) |
-| Starfield 2 类证书颁发机构                    | f8 fc 7f 3c dd 51 76 ad d2 7c f9 7f 73 96 59 09 46 6d 9a-z 22 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321792) |
-| UTN-USERFirst-Object                                         | ae 1e 25 26 01 30 a3 0b 1b c2 20 29 35 65 3b e5 a7 23 | [下载](https://go.microsoft.com/fwlink/p/?linkid=321793) |
+|                              CA                              |                 根证书指纹                 |到期日期|                         下载链接                        |
+| :----------------------------------------------------------: | :---------------------------------------------------------: | :-----------: | :---------------------------------------------------------: |
+| AddTrust 外部 CA 根                                    | a7 5a c6 57 aa 7a 4c df e5 f9 de 39 3e 69 ef ca b6 59 d2 50 | 2023/08/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321790) |
+| GoDaddy 2 类证书颁发机构                      | d9 61 24 72 ef 0f 27 87 e2 b2 d9 e0 63 a0 6b 32 fa 5e 33 3d | 2023/08/27    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321791) |
+| Starfield 2 类证书颁发机构                    | f8 fc 7f 3c dd 51 76 ad d2 7c f9 7f 73 96 59 09 46 6d 9a-z 22 | 2023/08/27    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321792) |
+| UTN-USERFirst-Object                                         | ae 1e 25 26 01 30 a3 0b 1b c2 20 29 35 65 3b e5 a7 23 | 2023/08/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321793) |
  
 
  
