@@ -2,14 +2,14 @@
 title: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有离散式 GPU 的计算机的巨大数量
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有独立 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了 TDR
 ms.topic: article
-ms.date: 10/28/2019
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cce11eba6fd055382842b0602f5b8c555b3cbbeb
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 74e1ed08bac5bc1d50a5fbf050b61bd136bbc5c7
+ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77075645"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353717"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有离散式 GPU 的计算机的巨大数量 
 
@@ -23,23 +23,23 @@ ms.locfileid: "77075645"
 
 |属性|值|
 |----|----|
-|受众 |生态系统|
-|时间段 |7 天滑动窗口|
-|度量标准 |计算机的聚合|
-|最小总体数量 |20,000 台计算机|
-|通过标准 |<= 130/10,000 台计算机遇到 TDR|
-|度量 ID |20350972|
+|受众|生态系统|
+|时间段|7 天滑动窗口|
+|度量标准|计算机的聚合|
+|最小总体数量|20,000 台计算机|
+|通过标准|<= 65/10000 台计算机遇到 TDR|
+|度量 ID|20350972|
 
 ## <a name="calculation"></a>计算
 
-该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有独立 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了 TDR。  
-1. 遇到 TDR 的计算机数 = 计数（使用该驱动程序且装有独立 GPU 的计算机中出现 TDR 的计算机数） 
-2. 计算机总数 = 计数（使用该驱动程序且装有独立 GPU 的计算机数） 
-3. 发生 TDR 的计算机的比率 = 发生 TDR 的计算机数/计算机总数 
+该度量将来自 7 天滑动窗口的遥测数据聚合为大量装有独立 GPU 的不同计算机，这些计算机由于显卡驱动程序二进制文件中的崩溃而发生了 TDR。 
+1. 遇到 TDR 的计算机数 = 计数（使用该驱动程序且装有独立 GPU 的计算机中出现 TDR 的计算机数）
+2. 计算机总数 = 计数（使用该驱动程序且装有独立 GPU 的计算机数）
+3. 发生 TDR 的计算机的比率 = 发生 TDR 的计算机数/计算机总数
 
 ### <a name="final-calculation"></a>最终计算
 
-相对于总体的不同设备命中数 (DHoP) = 出现 TDR 的计算机的比率 * 10,000 
+相对于总体的不同设备命中数 (DHoP) = 出现 TDR 的计算机的比率 * 10,000
 
 在上面的计算中，结果规范化为 10,000 台计算机，最终结果为：  
 [相对于总体的不同设备命中数 (DHoP)] 10,000 台装有独立 GPU 的计算机中由于显卡驱动程序二进制文件中的崩溃而发生 TDR 的不同计算机数

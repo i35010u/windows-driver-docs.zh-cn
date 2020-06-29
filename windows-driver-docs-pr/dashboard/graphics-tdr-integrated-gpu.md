@@ -2,14 +2,14 @@
 title: 由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量
 description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量使用集成 GPU 的计算机，这些计算机由于显卡驱动程序崩溃而发生了 TDR。
 ms.topic: article
-ms.date: 01/28/2020
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bf4d53c4c6eabfdf06fe7d8cf60b0f0bdcbb8714
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 71c33528ebeb9f322a908548d483bf0d20e23d0b
+ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77076279"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353713"
 ---
 # <a name="myriad-of-machines-with-integrated-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>由于显卡驱动程序二进制文件中的崩溃导致 TDR 且具有集成式 GPU 的计算机的巨大数量
 
@@ -22,12 +22,12 @@ ms.locfileid: "77076279"
 
 |属性|值|
 |----|----|
-|受众 |Standard|
-|时间段 |7 天滑动窗口|
-|度量标准 |计算机的聚合|
-|最小实例数 |10000 台计算机|
-|通过标准 |<= 130/10000 的计算机遇到 TDR|
-|度量 ID |24633264|
+|受众|Standard|
+|时间段|7 天滑动窗口|
+|度量标准|计算机的聚合|
+|最小实例数|20,000 台计算机|
+|通过标准|<= 60/10000 的计算机遇到了 TDR|
+|度量 ID|24633264|
 
 ## <a name="calculation"></a>计算
 

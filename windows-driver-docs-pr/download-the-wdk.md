@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 111b79261c3f65b871d001e0fb21728f08b3e1bf
-ms.sourcegitcommit: b54d49545599b0a64f64e4e4b9fd78c8d9198094
+ms.openlocfilehash: b3f5d23794fa490bc9ed0428c2b3d9f1f70fcc02
+ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83383922"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85382732"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -81,7 +81,7 @@ EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要
 
 ### <a name="release-notes-and-runtime-requirements"></a>发行说明和运行时要求
 
-你可以使用 WDK 开发适用于以下操作系统的驱动程序：
+可以在 Windows 7 及更高版本上运行 Windows 10 版本 2004 WDK，并使用它来开发这些操作系统的驱动程序：
 
 |客户端 OS|服务器 OS|
 |-|-|

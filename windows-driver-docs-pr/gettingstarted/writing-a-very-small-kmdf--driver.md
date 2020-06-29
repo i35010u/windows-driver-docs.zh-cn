@@ -6,12 +6,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 454ff276b4da0cc590509f947dc804ed301ce040
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 3c886ae2b5dec4eea98b9b00aa184db1f1a1516e
+ms.sourcegitcommit: 830392693a16a87294b66679b0b3a623bd0c7971
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235283"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84633828"
 ---
 # <a name="write-a-hello-world-windows-driver-kmdf"></a>编写 Hello World Windows 驱动程序 (KMDF)
 
@@ -43,9 +43,9 @@ ms.locfileid: "83235283"
 
     ![“解决方案资源管理器”窗口的屏幕截图，显示了解决方案和空的驱动程序项目 (kmdfhelloworld)](images/vs2015-kmdf-hello-world-solution-explorer.png)
 
-7.  在“解决方案资源管理器”窗口中，右键单击“KmdfHelloWorld”项目，然后选择“属性”。 导航到“配置属性”&gt;“驱动程序设置”&gt;“常规”。请注意，“目标平台”默认为“通用”。  单击“取消” 。
+7.  在“解决方案资源管理器”窗口中，右键单击“KmdfHelloWorld”项目，然后选择“属性”。 导航到“配置属性”&gt;“驱动程序设置”&gt;“常规”。请注意，“目标平台”默认为“通用”。  单击“应用”，然后单击“确定”。
 
-8.  在“解决方案资源管理器”窗口中，再次右键单击“KmdfHelloWorld”项目，然后选择“添加”&gt;“新项”。
+8.  在“解决方案资源管理器”窗口中，再次右键单击“KmdfHelloWorld”项目，然后选择“添加”，再单击“新项” 。
 9.  在“添加新项目”对话框中，选择“C++ 文件”。 对于“名称”，请输入“Driver.c”。
 
     > [!NOTE]
@@ -289,7 +289,7 @@ ms.locfileid: "83235283"
 2. 在目标计算机上，导航到包含驱动程序文件的文件夹，然后运行 DevCon 工具，以安装驱动程序。 
     1. 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
-        devcon install \<INF 文件\> \<硬件 ID\>
+        *devcon install \<INF file\> \<hardware ID\>*
 
         安装此驱动程序所需的 INF 文件是 KmdfHelloWorld.inf。 INF 文件包含用于安装驱动程序二进制文件 *KmdfHelloWorld.sys* 的硬件 ID。 回想一下，位于 INF 文件中的硬件 ID 是 **Root\\KmdfHelloWorld**。
     2. 以管理员身份打开命令提示符窗口。 导航到内置驱动程序 .sys 文件所在的文件夹，然后输入以下命令：

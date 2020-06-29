@@ -7,16 +7,18 @@ ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 846802f41117c9a4ee14266142fc4bef4da499b8
-ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
+ms.openlocfilehash: 0a2ce71a213655ec65de73923052fd7f25424999
+ms.sourcegitcommit: 444e055daa9b28e9fd9dc92dd0a3f1e62e215b31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421376"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666163"
 ---
-# <a name="static-driver-verifier-known-issues"></a>静态驱动程序验证程序已知问题
+# <a name="static-driver-verifier-known-issues---windows-10-version-1809"></a>静态驱动程序验证程序的已知问题 - Windows 10 版本1809
 
-本页描述在 WDK 中使用静态驱动程序验证程序工具时可能遇到的常见问题。 以下信息特定于 Windows 10 2018 年 10 月更新版随附的工具版本（版本 1809）。
+本页描述在 Windows 驱动程序工具包 (WDK) 中使用静态驱动程序验证程序 (SDV) 工具时可能遇到的常见问题。 以下信息特定于 Windows 10 2018 年 10 月更新版随附的工具版本（版本 1809）。
+
+有关最新官方 WDK 的已知 SDV 问题，请参阅 [WDK 已知问题](https://social.msdn.microsoft.com/Forums/en-US/96c770a9-19a3-42d0-8d0e-bd200285d980/hardware-development-kits-for-windows-10-version-2004?forum=wdk)。
 
 ## <a name="interceptedbuild-failures"></a>InterceptedBuild 失败
 

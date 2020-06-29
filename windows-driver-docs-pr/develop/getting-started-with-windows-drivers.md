@@ -4,12 +4,12 @@ title: Windows 驱动程序入门
 description: 使用 Windows 驱动程序，可以创建一个同时在 Windows 10X 和 Windows 桌面版中运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2640310a12a2d111fb1d617e4aa9c5a7413c5fa5
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: b2039ae8d30b9de3f55aa8e52f80441ba6e1c854
+ms.sourcegitcommit: 9fe9c8309690fd8fe7af50865d3ac216887ab922
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223514"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85071689"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
@@ -44,7 +44,7 @@ Windows 驱动程序在所有 Window 10 变体中运行，其中包括 Windows 1
 | 在 Windows 10X 中运行                                                  | 是           | 否                     |
 | 必须获得 WHCP 认证                                         | 是           | 否                     |
 | WDK 和 HLK 是开发和认证驱动程序的主要工具| 是           | 是                    |
-| 可靠性和可维护性要求     | 是           | 否                     |
+| 遵循更严格的可靠性和可维护性要求（如驱动程序包隔离）     | 是           | 否                     |
 
 
 尽管只在 Windows 10 桌面版中运行的驱动程序不需要符合针对 Windows 驱动程序的附加要求，但这样做将增强驱动程序的可维护性和可靠性，并为将来可能在 Windows 10X 上获得认证做好准备。
