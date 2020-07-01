@@ -46,10 +46,24 @@
               href: setting-up-a-1394-cable-connection.md
         - name: Windows 10 中的网络内核调试支持的以太网 NIC
           href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md
-        - name: Windows 8.1 中的网络内核调试支持的以太网 NIC
-          href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md
-        - name: Windows 8 中的网络内核调试支持的以太网 NIC
-          href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md
+        - name: Windows 先前版本中的网络内核调试支持的以太网 NIC
+          items:
+            - name: Windows 10 版本 1909 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1909.md
+            - name: Windows 10 版本 1903 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1903.md
+            - name: Windows 10 版本 1809 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1809.md
+            - name: Windows 10 版本 1803 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1803.md
+            - name: Windows 10 版本 1709 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1709.md
+            - name: Windows 10 版本 1703 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1703.md
+            - name: Windows 8.1 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md
+            - name: Windows 8 中的网络内核调试支持的以太网 NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md
         - name: 配置 tools.ini
           href: configuring-tools-ini.md
         - name: 使用 KDbgCtrl
@@ -1564,18 +1578,10 @@
               href: other-acpi-debugging-extensions.md
         - name: NDIS 调试
           items:
-            - name: NDIS 调试
-              href: ndis-debugging.md
             - name: NDIS 调试概述
               href: overview-of-ndis-debugging.md
-            - name: 准备 NDIS 调试
-              href: preparing-for-ndis-debugging.md
             - name: 启用 NDIS 调试跟踪
-              items:
-                - name: 启用 NDIS 调试跟踪
-                  href: enabling-ndis-debug-tracing.md
-                - name: 通过设置注册表值启用 NDIS 调试跟踪
-                  href: enabling-ndis-debug-tracing-by-setting-registry-values.md
+              href: enabling-ndis-debug-tracing.md
         - name: 内核流调试
           items:
             - name: 内核流调试
@@ -4240,16 +4246,6 @@
                   href: '-ndiskd-pendingnbls.md'
                 - name: '!ndiskd.nbllog'
                   href: '-ndiskd-nbllog.md'
-                - name: '!ndiskd.cxadapter'
-                  href: '-ndiskd-cxadapter.md'
-                - name: '!ndiskd.netqueue'
-                  href: '-ndiskd-netqueue.md'
-                - name: '!ndiskd.netrb'
-                  href: '-ndiskd-netrb.md'
-                - name: '!ndiskd.netpacket'
-                  href: '-ndiskd-netpacket.md'
-                - name: '!ndiskd.netpacketfragment'
-                  href: '-ndiskd-netpacketfragment.md'
                 - name: '!ndiskd.oid'
                   href: '-ndiskd-oid.md'
                 - name: '!ndiskd.interfaces'
@@ -4296,6 +4292,22 @@
                   href: '-ndiskd-ndiskdversion.md'
                 - name: '!ndiskd.netreport'
                   href: '-ndiskd-netreport.md'
+                - name: NDIS CX 扩展 (Ndiskd.dll)
+                  items:
+                    - name: '!ndiskd.cxadapter'
+                      href: '-ndiskd-cxadapter.md'
+                    - name: '!ndiskd.netqueue'
+                      href: '-ndiskd-netqueue.md'
+                    - name: '!ndiskd.netrb'
+                      href: '-ndiskd-netrb.md'
+                    - name: '!ndiskd.netpacket'
+                      href: '-ndiskd-netpacket.md'
+                    - name: '!ndiskd.netfragment'
+                      href: '-ndiskd-netfragment.md'
+                    - name: '!ndiskd.nrc'
+                      href: '-ndiskd-nrc.md'
+                    - name: '!ndiskd.netring'
+                      href: '-ndiskd-netring.md'
             - name: RPC 扩展 (Rpcexts.dll)
               items:
                 - name: RPC 扩展 (Rpcexts.dll)

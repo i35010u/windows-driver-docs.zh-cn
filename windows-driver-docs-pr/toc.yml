@@ -1,14 +1,14 @@
-- name: 新增功能
+- name: Windows 10 版本 2004 驱动程序开发中的新增功能
+  href: what-s-new-in-driver-development.md
+- name: 先前版本中的新增功能
   items:
-    - name: Windows 10 版本 2004 中的新增功能
-      href: what-s-new-in-driver-development.md
-    - name: Windows 10 版本 1903 中的新增功能
+    - name: Windows 10 版本 1903 驱动程序开发中的新增功能
       href: driver-changes-for-windows-10-version-1903.md
-    - name: Windows 10 版本 1809 中的新增功能
+    - name: Windows 10 版本 1809 驱动程序开发中的新增功能
       href: driver-changes-for-windows-10-version-1809.md
-    - name: Windows 10 版本 1803 中的新增功能
+    - name: Windows 10 版本 1803 驱动程序开发中的新增功能
       href: driver-changes-for-windows-10-version-1803.md
-    - name: Windows 10 版本 1709 中的新增功能
+    - name: Windows 10 版本 1709 驱动程序开发中的新增功能
       href: driver-changes-for-windows-10-version-1709.md
 - name: 下载
   items:
