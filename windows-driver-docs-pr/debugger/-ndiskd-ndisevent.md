@@ -12,28 +12,24 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a2e968018eef27d05b968b9ac2ad0a053ca5057b
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 0aed9349a815bf4b4eceb34bffb172cce543ab4e
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534198"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593933"
 ---
 # <a name="ndiskdndisevent"></a>!ndiskd.ndisevent
 
-
 **注意**   第三方网络驱动程序开发人员不需要手动使用此扩展命令。 您可以运行它来查看它所显示的信息，但不能重复使用它在您的驱动程序中提供的详细信息。
-
- 
 
 **！ Ndiskd ndisevent**扩展显示 NDIS 调试事件日志。
 
 ```console
-!ndiskd.ndisevent [-handle <x>] [-tagtype <str>] 
+!ndiskd.ndisevent -handle <x> [-tagtype <str>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 事件日志的句柄。
@@ -41,12 +37,11 @@ ms.locfileid: "84534198"
 <span id="_______-tagtype______"></span><span id="_______-TAGTYPE______"></span>*-tagtype*   
 标记的枚举类型。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 若要查看网络适配器的事件日志输出，！ ndiskd 在[**！ ndiskd**](-ndiskd-netadapter.md)输出的 State 节中提供了一个指向它的链接。 这比从微型端口块查找事件日志句柄并使用它来运行 **！ ndiskd. ndisevent**扩展的手动方法更容易。
 
@@ -159,8 +154,7 @@ MINIPORT PM & PNP EVENTS
     Set a breakpoint on the next event
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -168,18 +162,8 @@ MINIPORT PM & PNP EVENTS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
-
- 
-
- 
-
-
-
-
-
-

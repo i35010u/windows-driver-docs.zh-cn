@@ -4,7 +4,7 @@ description: Ndiskd 扩展显示 NET_BUFFER （NB）结构的相关信息。
 ms.assetid: 7351264c-4adc-43ac-9eca-41deb3d35983
 keywords:
 - ndiskd Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c393b538c6666049bebbfb6ce0c4f290dca068b7
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6980c6320baa0044027fbb31cbe68f0f857a859c
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534734"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593935"
 ---
 # <a name="ndiskdnb"></a>!ndiskd.nb
-
 
 **！ Ndiskd**扩展显示有关[**网络 \_ 缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)（nb）结构的信息。
 
 ```console
-!ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data] 
+!ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data]
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 **网络 \_ 缓冲区**的地址。
@@ -46,12 +44,11 @@ ms.locfileid: "84534734"
 <span id="_______-data______"></span><span id="_______-DATA______"></span>*-数据*   
 转储 NB 的实际数据有效负载。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 以下示例中的**网络 \_ 缓冲区**是从[**！ ndiskd，Nbl**](-ndiskd-nbl.md)主题的 "示例" 部分的[**net \_ buffer \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)中获取的。 NB 的句柄为 ffffdf8014952610。
 
@@ -85,8 +82,7 @@ NET_BUFFER ffffdf8014952610
         Process            [System process]    ByteOffset         0n36  
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -94,7 +90,7 @@ NET_BUFFER ffffdf8014952610
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -103,13 +99,3 @@ NET_BUFFER ffffdf8014952610
 [**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [**!ndiskd.nbl**](-ndiskd-nbl.md)
-
- 
-
- 
-
-
-
-
-
-

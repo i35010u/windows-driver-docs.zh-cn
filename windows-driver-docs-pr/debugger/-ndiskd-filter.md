@@ -4,7 +4,7 @@ description: Ndiskd 扩展显示有关 NDIS 轻型筛选器（LWF）的信息。
 ms.assetid: 4cf0f8bc-a15a-49db-b7db-13d60fd0c767
 keywords:
 - ndiskd Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c1ea58812764cb23818922d7917dfe42d2892b08
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 41010efd0ab375747e6e6a4a451d54f4f15a6da1
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534736"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593951"
 ---
 # <a name="ndiskdfilter"></a>!ndiskd.filter
-
 
 **！ Ndiskd**扩展显示有关 NDIS 轻型筛选器（LWF）的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有 LWFs 的列表。
 
 ```console
-!ndiskd.filter [-handle <x>] [-findname <any>] [-handlers] 
+!ndiskd.filter [-handle <x>] [-findname <any>] [-handlers]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-NDIS 轻型筛选器的句柄。
+NDIS 轻型筛选器的可选句柄。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span>*-system.windows.frameworkelement.findname*   
 按名称前缀筛选 LWFs。
@@ -40,12 +38,11 @@ NDIS 轻型筛选器的句柄。
 <span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span>*-处理程序*   
 显示此 LWF 的筛选器处理程序。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 输入不带参数的 **！ ndiskd**命令以获取所有筛选器的列表。 在此示例中，查找 ffff8083e14e8460 句柄。 请注意，此句柄用于筛选器本身，并嵌套在其关联的筛选器*驱动程序*（QoS 数据包计划程序）之下。
 
@@ -89,8 +86,7 @@ FILTER
     Driver handlers
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -98,16 +94,6 @@ FILTER
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

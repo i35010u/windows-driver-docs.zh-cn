@@ -4,7 +4,7 @@ description: Ndiskd 命令显示有关 NDIS 协议驱动程序的信息。
 ms.assetid: c1d349d5-b0ba-4665-a399-1bc5cd55dde6
 keywords:
 - ndiskd Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5738462ec1840b0a43c6b2e450db97ad0d68b39e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: e12b9cac8aa24b30a13070cf58e73c83f15ddd7c
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534718"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593889"
 ---
 # <a name="ndiskdprotocol"></a>!ndiskd.protocol
-
 
 **！ Ndiskd**命令显示有关 NDIS 协议驱动程序的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示系统上处于活动状态的 NDIS 协议驱动程序的列表。
 
@@ -28,22 +27,19 @@ ms.locfileid: "84534718"
 !ndiskd.protocol [-handle <x>] [-findname <any>] 
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-NDIS 协议的句柄。
+NDIS 协议的可选句柄。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span>*-system.windows.frameworkelement.findname*   
 按名称前缀筛选协议。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+## <a name="dll"></a>DLL
 
+Ndiskd.dll
 
-Ndiskd
-
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 输入 **！ ndiskd**命令，以查看所有 NDIS 协议的列表、它们的句柄以及到微型端口（如果有）的开放绑定。 在下面的示例中，查找 TCPIP6TUNNEL 协议的句柄 ffff8083e1a95c00。
 
@@ -120,8 +116,7 @@ HANDLERS
     DirectOidRequestCompleteHandler        fffff80e2e398120  bp
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -129,16 +124,6 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

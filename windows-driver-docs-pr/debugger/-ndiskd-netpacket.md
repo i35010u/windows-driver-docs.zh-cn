@@ -4,7 +4,7 @@ description: Ndiskd. netpacket 扩展显示 NET_PACKET 结构的相关信息。
 ms.assetid: 304BA2CF-B6BC-452C-8543-9B872054AA9E
 keywords:
 - ndiskd netpacket Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/17/2020
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d16cc097bdd59b753beead63946f8849f29e776a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: cba5ebff2a786fb4640fd464368799e3e1af5638
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534912"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593913"
 ---
 # <a name="ndiskdnetpacket"></a>!ndiskd.netpacket
-
 
 **！ Ndiskd netpacket**扩展显示有关[网络 \_ 数据包](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-packet)结构的信息。
 
 有关网络适配器 WDF 类扩展（NetAdapterCx）的详细信息，请参阅[网络适配器 Wdf 类扩展（Cx）](https://docs.microsoft.com/windows-hardware/drivers/netcx)。
 
 ```console
-!ndiskd.netpacket [-handle <x>] [-basic] [-layout] [-checksum] [-data] 
+!ndiskd.netpacket -handle <x> [-basic] [-layout] [-checksum] [-data]
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
@@ -48,26 +47,23 @@ ms.locfileid: "84534912"
 <span id="_______-data______"></span><span id="_______-DATA______"></span>*-数据*   
 转储负载内存。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 **注意**   请参阅[对象摘要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)，以查看说明网络 \_ 数据包对象与 NetAdapterCx 中的其他对象的关系的关系图。
 
- 
-
 若要获取网络数据包的句柄 \_ ，请执行以下步骤：
 
-1.  运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
-2.  单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
-3.  单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
-4.  输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
-5.  单击其中一个数据路径队列的句柄。
-6.  单击该数据路径队列的环形缓冲区的句柄。
-7.  单击环形缓冲区详细信息底部的 "列出所有元素" 链接，查看其包含的元素。
+1. 运行[**！ ndiskd. get-netadapter**](-ndiskd-netadapter.md)扩展。
+2. 单击安装了 NetAdapterCx 驱动程序的 Get-netadapter 的句柄。
+3. 单击 Get-netadapter 的 GET-NETADAPTER 对象右侧的 "详细信息" 链接，以运行[**！ ndiskd. cxadapter**](-ndiskd-cxadapter.md)扩展。
+4. 输入包含 *-数据路径*参数的 **！ cxadapter**命令，以查看 get-netadapter 的数据路径队列。
+5. 单击其中一个数据路径队列的句柄。
+6. 单击该数据路径队列的环形缓冲区的句柄。
+7. 单击环形缓冲区详细信息底部的 "列出所有元素" 链接，查看其包含的元素。
 
 有关此过程中步骤1-4 的详细信息，请参阅 **！ ndiskd. cxadapter**主题中的示例。 有关此过程的步骤5的详细信息，请参阅《 [**！ ndiskd. netqueue**](-ndiskd-netqueue.md)主题中的示例。 有关此过程中步骤6-7 的详细信息，请参阅[**！ ndiskd. netrb**](-ndiskd-netrb.md)主题中的示例。
 在下面的示例中，查找第一个网络数据包 ffffd1022d000040 的句柄 \_ 。
@@ -145,8 +141,7 @@ Ndiskd
     ffffd102303e8352  00 fc   
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -154,7 +149,7 @@ Ndiskd
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -171,13 +166,3 @@ Ndiskd
 [**!ndiskd.netqueue**](-ndiskd-netqueue.md)
 
 [**!ndiskd.netrb**](-ndiskd-netrb.md)
-
- 
-
- 
-
-
-
-
-
-

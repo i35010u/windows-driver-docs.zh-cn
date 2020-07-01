@@ -4,7 +4,7 @@ description: Ndiskd. wdiadapter 扩展显示有关 WDIWiFi CAdapter 结构的信
 ms.assetid: 1AC069E8-CF87-459B-9C56-DDC1A6F765A8
 keywords:
 - ndiskd wdiadapter Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 487dd6d66da29402ea7d150e4a835475343b2738
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ddfa77f65dc81ec5b75b0b6d4b1be426219b6d8b
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534712"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593827"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
-
 
 **！ Ndiskd wdiadapter**扩展显示有关 WDIWiFi 的信息！CAdapter 结构。 如果运行不带参数的扩展，！ ndiskd 将显示所有 WDIWiFi 的列表！CAdapter 结构。
 
@@ -32,11 +31,10 @@ ms.locfileid: "84534712"
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-CAdapter 对象的句柄。
+CAdapter 对象的可选句柄。
 
 <span id="_______-pm______"></span><span id="_______-PM______"></span>*-pm*   
 显示电源管理状态和功能。
@@ -44,18 +42,17 @@ CAdapter 对象的句柄。
 <span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span>*-rcvfilter*   
 显示接收筛选功能。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 运行不带参数的 **！ ndiskd wdiadapter**扩展，以查看所有 CAdapter 对象的列表以及其每个 WDI 适配器的详细信息。 在下面的示例中，只有一个 CAdapter 结构。 其关联的 WDI 适配器的句柄为 ffffc804af396000。
 
 ```console
 1: kd> !ndiskd.wdiadapter
-    CAdapter                                                                    
+    CAdapter
     ffffc804af396000 - WDI Adapter
 
 
@@ -134,8 +131,7 @@ RECEIVE FILTER
     Max lookahead split size               0
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -143,20 +139,10 @@ RECEIVE FILTER
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [WDI 微型端口驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
 [WDI 微型端口驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-
- 
-
- 
-
-
-
-
-
-

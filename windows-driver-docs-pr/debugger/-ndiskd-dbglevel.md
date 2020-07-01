@@ -4,7 +4,7 @@ description: Ndiskd dbglevel 扩展显示，并根据需要更改当前的 NDIS 
 ms.assetid: D134FD03-DABA-4558-A5C3-C365F77BD69A
 keywords:
 - ndiskd dbglevel Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef68ecec2640b779b115633acf92501f783b3f4d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: a415d4aa79483da9b7ecfa19cf56a4ce6968ad2e
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534738"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593955"
 ---
 # <a name="ndiskddbglevel"></a>!ndiskd.dbglevel
-
 
 **！ Ndiskd dbglevel**扩展显示，并根据需要更改当前的 NDIS 调试级别。
 
@@ -51,42 +50,37 @@ ms.locfileid: "84534738"
     !wmitrace.enable ndis {DD7A21E6-A651-46D4-B7C2-66543067B869} -level 4 -flag 0x31f3
 ```
 
- 
-
 有关 WPP 的详细信息，请参阅[Wpp 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
 
 有关驱动程序验证程序的详细信息，请参阅[驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)器。
 
-有关 WMI 跟踪的详细信息，请参阅[Wmi 跟踪扩展（Wmitrace）](wmi-tracing-extensions--wmitrace-dll-.md)。
+有关 WMI 跟踪的详细信息，请参阅[Wmi 跟踪扩展（Wmitrace.dll）](wmi-tracing-extensions--wmitrace-dll-.md)。
 
 ```console
-!ndiskd.dbglevel [-level <str>] 
+!ndiskd.dbglevel [-level <str>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-level______"></span><span id="_______-LEVEL______"></span>*-级别*   
 调试详细级别。 可能的值包括：
 
--   无-禁用调试跟踪
--   严重-启用要打印的致命错误
--   错误-启用打印错误
--   警告-启用要打印的警告
--   INFO-启用要打印的信息性消息
--   详细-启用要打印的所有调试跟踪
+- 无-禁用调试跟踪
+- 严重-启用要打印的致命错误
+- 错误-启用打印错误
+- 警告-启用要打印的警告
+- INFO-启用要打印的信息性消息
+- 详细-启用要打印的所有调试跟踪
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="remarks"></a>注解
--------
+### <a name="remarks"></a>备注
 
-此扩展仅适用于已检查的 sys.databases。 若要查看 ndiskd 的生成信息，请运行[**！**](-ndiskd-ndis.md)
+此扩展仅适用于选中 NDIS.sys。 若要检查 NDIS.sys 的生成信息，请运行[**！ ndiskd**](-ndiskd-ndis.md)扩展名。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -94,7 +88,7 @@ Ndiskd
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -105,13 +99,3 @@ Ndiskd
 [驱动程序验证程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 
 [WMI 跟踪扩展 (Wmitrace.dll)](wmi-tracing-extensions--wmitrace-dll-.md)
-
- 
-
- 
-
-
-
-
-
-

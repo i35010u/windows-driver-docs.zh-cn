@@ -4,7 +4,7 @@ description: Ndiskd.af 扩展显示面向连接的 NDIS （CoNDIS）地址系列
 ms.assetid: 737AB46E-DFAA-42D6-A9BD-B7223167D0DD
 keywords:
 - ndiskd.af Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,47 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dd706d7c6be28490605034067d1b7b1024037c4a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 316dd60189943261ca9567d9714e7a4a2835fe32
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534234"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593957"
 ---
 # <a name="ndiskdaf"></a>!ndiskd.af
-
 
 **！ Ndiskd.af** Extension 显示面向连接的 NDIS （CoNDIS）地址系列（af）。
 
 ```console
-!ndiskd.af [-handle <x>] 
+!ndiskd.af -handle <x>
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 CoNDIS 地址族的句柄。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="remarks"></a>注解
--------
+### <a name="remarks"></a>备注
 
 有关 CoNDIS 的详细信息，请参阅[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)。
 
 有关 CoNDIS 地址系列的详细信息，请参阅[地址系列](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)。
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中的微型端口驱动程序已创建并激活 CoNDIS 虚拟连接，则运行 **！ ndiskd.af**将不会显示结果。 以下示例显示了连接到 VPN 网络的计算机的结果。 首先，运行不带参数的[**！ get-netadapter**](-ndiskd-netadapter.md)扩展，以查看系统上的微型端口和微型端口驱动程序的列表 ndiskd。 在下面的输出中，查找 Marvell AVASTAR 无线-AC 网络控制器网络适配器的微型端口驱动程序。 它的句柄为 ffffc804af2e3710。
 
 ```console
 1: kd> !ndiskd.netadapter
-    Driver             NetAdapter          Name                                 
+    Driver             NetAdapter          Name
     ffffc804af2e3710   ffffc804b9e6f1a0    Marvell AVASTAR Wireless-AC Network Controller
     ffffc804b99b9020   ffffc804b9c301a0    WAN Miniport (Network Monitor)
     ffffc804b99b9020   ffffc804b9c2a1a0    WAN Miniport (IPv6)
@@ -114,8 +110,7 @@ CLIENT HANDLERS
     ClIncomingCallQoSChangeHandler         fffff80965ffa610   wdiwifi!MPWrapperOidRequest
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -123,20 +118,10 @@ CLIENT HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
 
 [地址系列](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)
-
- 
-
- 
-
-
-
-
-
-

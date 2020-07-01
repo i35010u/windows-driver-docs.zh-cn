@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fb99a4b7c936136b6e7f5776bf3f0b0982be45
-ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
+ms.openlocfilehash: c12c8ee0bf7801c6921b62e8903a612114790fbf
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153182"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593975"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -100,7 +100,7 @@ Windows 驱动程序框架源代码是开放源代码，在 GitHub 上可用。 
 
 **安全检查表项目 \# 4：** *不生产代码签名开发、测试和制造内核驱动程序代码。*
 
-用于开发、测试或制造的内核驱动程序代码可能包含带来安全风险的危险功能。  此危险代码决不会使用 Windows 信任的证书进行签名。  执行危险驱动程序代码的正确机制是禁用 UEFI 安全启动，启用 BCD "TESTSIGNING"，并使用不受信任的证书（例如，由 makecert 生成的证书）对开发、测试和制造代码进行签名。
+用于开发、测试或制造的内核驱动程序代码可能包含带来安全风险的危险功能。  此危险代码决不会使用 Windows 信任的证书进行签名。  执行危险驱动程序代码的正确机制是禁用 UEFI 安全启动，启用 BCD "TESTSIGNING"，并使用不受信任的证书（例如 makecert.exe 生成的证书）对开发、测试和制造代码进行签名。
 
 受信任的软件发行者证书（SPC）或 Windows 硬件质量实验室（WHQL）签名签署的代码不得方便绕过 Windows 代码完整性和安全技术。  在通过受信任的 SPC 或 WHQL 签名对代码进行签名之前，请先确保它符合[创建可靠的内核模式驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)的指南。 此外，代码不得包含任何危险行为，如下所述。  有关驱动程序签名的详细信息，请参阅本文后面的[发布驱动程序签名](#releasedriversigning)。
 
@@ -143,7 +143,7 @@ Ihv 和 Oem 可以使用安全开发生命周期（SDL）最佳实践和相关�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。
 
-|IOCTL 缓冲区类型 | 总结                                    | 更多信息 |  
+|IOCTL 缓冲区类型 | “摘要”                                    | 更多信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
@@ -187,7 +187,7 @@ Windows 驱动程序的主要职责之一是在用户模式应用程序和系统
 
 若要允许驱动程序支持要求 HVCI 虚拟化，需要额外的内存。 有关详细信息，请参阅本文后面的[要求 hvci 兼容性](#dgc)。
 
-**句柄数**
+**控点**
 
 - 验证在用户模式和内核模式内存之间传递的句柄。 有关详细信息，请参阅[处理管理](https://docs.microsoft.com/windows-hardware/drivers/ifs/handle-management)和[验证对象句柄失败](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-object-handles)。
 
@@ -551,7 +551,7 @@ C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim 
 BinSkim PE/MSIL Analysis Driver 1.6.0.0
 
   --sympath                      Symbols path value, e.g., SRV*http://msdl.microsoft.com/download/symbols or Cache*d:\symbols;Srv*http://symweb. See
-                                 https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/advanced-symsrv-use for syntax information. Note that BinSkim will clear the
+                                 https://docs.microsoft.com/windows-hardware/drivers/debugger/advanced-symsrv-use for syntax information. Note that BinSkim will clear the
                                  _NT_SYMBOL_PATH environment variable at runtime. Use this argument for symbol information instead.
 
   --local-symbol-directories     A set of semicolon-delimited local directory paths that will be examined when attempting to locate PDBs.

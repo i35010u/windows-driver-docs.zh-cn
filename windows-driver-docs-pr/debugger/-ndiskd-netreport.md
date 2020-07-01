@@ -4,7 +4,7 @@ description: Ndiskd. netreport 扩展会生成整个网络堆栈的可视报表�
 ms.assetid: 0FC134A8-8D91-4299-8D15-4E8EDD9ED855
 keywords:
 - ndiskd netreport Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/23/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c74aca795441d1715ab965fd65527f98a4d1ee
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: b9ec2838ea485a2cf5e344e6ead4b7886d748084
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534728"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593917"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
-
 
 **！ Ndiskd netreport**扩展生成整个网络堆栈的视觉报表。 报表 **！ ndiskd**将生成一个 HTML 文件，它将为你显示指向其位置的链接。 该 HTML 文件包含有关网络堆栈的详细信息，因此，如果需要共享它进行分析，可以通过电子邮件发送该文件，而无需发送大型故障转储文件。
 
@@ -28,8 +27,7 @@ ms.locfileid: "84534728"
 !ndiskd.netreport [-outputpath <str>] [-jsononly] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-outputpath______"></span><span id="_______-OUTPUTPATH______"></span>*-outputpath*   
 指定报表文件的写入位置。
@@ -37,12 +35,11 @@ ms.locfileid: "84534728"
 <span id="_______-jsononly______"></span><span id="_______-JSONONLY______"></span>*-jsononly*   
 仅写入原始数据，没有 HTML。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 运行 **！ ndiskd. netreport**扩展以绘制网络堆栈的方框关系图。
 
@@ -82,8 +79,7 @@ NETWORK STACK REPORT
 
 ![网络调试报表数据流](images/!ndiskd-netreport-activesystem-dataflows.png)
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -91,20 +87,10 @@ NETWORK STACK REPORT
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
 [对网络子系统性能使用 NIC 组合](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
-
- 
-
- 
-
-
-
-
-
-

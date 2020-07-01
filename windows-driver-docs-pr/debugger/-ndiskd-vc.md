@@ -4,7 +4,7 @@ description: Ndiskd.vc 扩展显示面向连接的（CoNDIS）虚拟连接（VC�
 ms.assetid: 8F172026-3FBC-4686-A3A4-F54F1A0D08E5
 keywords:
 - ndiskd.vc Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,47 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d853d8a771f1fe42eb7f04bfe7a566e02fe5e8d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 1227c1386889ee98332a6c037b0a71459896fb9a
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534714"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593907"
 ---
 # <a name="ndiskdvc"></a>!ndiskd.vc
-
 
 **！ Ndiskd.vc** Extension 显示面向连接的（CoNDIS）虚拟连接（vc）。
 
 ```console
-!ndiskd.vc [-handle <x>] 
+!ndiskd.vc -handle <x>
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 VC 指针的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="remarks"></a>注解
--------
+### <a name="remarks"></a>备注
 
 有关 CoNDIS 的详细信息，请参阅[面向连接的 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)。
 
 有关 CoNDIS 虚拟连接的详细信息，请参阅[虚拟连接](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)。
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 CoNDIS 在某些情况下使用，例如连接到 VPN，因此，如果系统中的微型端口驱动程序已创建并激活 CoNDIS 虚拟连接，则运行 **！ ndiskd.vc**将不会显示结果。 以下示例显示了连接到 VPN 网络的计算机的结果。 首先，运行不带参数的[**！ get-netadapter**](-ndiskd-netadapter.md)扩展，以查看系统上的微型端口和微型端口驱动程序的列表 ndiskd。 在下面的输出中，查找 Marvell AVASTAR 无线-AC 网络控制器网络适配器的微型端口驱动程序。 它的句柄为 ffffc804af2e3710。
 
 ```console
 1: kd> !ndiskd.netadapter
-    Driver             NetAdapter          Name                                 
+    Driver             NetAdapter          Name
     ffffc804af2e3710   ffffc804b9e6f1a0    Marvell AVASTAR Wireless-AC Network Controller
     ffffc804b99b9020   ffffc804b9c301a0    WAN Miniport (Network Monitor)
     ffffc804b99b9020   ffffc804b9c2a1a0    WAN Miniport (IPv6)
@@ -95,8 +91,7 @@ VIRTUAL CALL
     Client Context     00003206
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -104,7 +99,7 @@ VIRTUAL CALL
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -113,13 +108,3 @@ VIRTUAL CALL
 [虚拟连接](https://docs.microsoft.com/windows-hardware/drivers/network/virtual-connections)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
-
- 
-
- 
-
-
-
-
-
-

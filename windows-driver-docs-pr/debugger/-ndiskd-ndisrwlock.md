@@ -4,7 +4,7 @@ description: Ndiskd. ndisrwlock 扩展显示 NDIS_RW_LOCK_EX 锁结构的相关�
 ms.assetid: 853CBAFE-3899-4983-BFC7-933D3BC7ADA1
 keywords:
 - ndiskd ndisrwlock Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/18/2020
 topic_type:
 - apiref
 api_name:
@@ -12,34 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f9948c0e9b8e35af233650454a1f939c0063db22
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6ce40c0652d57e6a941f19bc1f99e7673cb92bbb
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534920"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593923"
 ---
 # <a name="ndiskdndisrwlock"></a>!ndiskd.ndisrwlock
-
 
 **！ Ndiskd ndisrwlock**扩展显示有关[**NDIS \_ RW \_ 锁 \_ EX**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))锁结构的信息。
 
 ```console
-!ndiskd.ndisrwlock [-handle <x>] 
+!ndiskd.ndisrwlock -handle <x>
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 锁结构的句柄。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 如果创建自己的 RW 锁并想要对其进行检查，请使用 **！ ndiskd。** 若要获取 RW 锁的句柄，请使用*poi*命令取消引用驱动程序的锁定地址。 以下代码片段演示了如何在示例中查看 TCIPIP 协议使用的锁定。
 
@@ -81,8 +78,7 @@ NDIS READ-WRITE LOCK
     Set a breakpoint on acquire/release
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -90,18 +86,8 @@ NDIS READ-WRITE LOCK
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**NDIS \_ RW \_ LOCK （ \_ EX）**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff567279(v=vs.85))
-
- 
-
- 
-
-
-
-
-
-

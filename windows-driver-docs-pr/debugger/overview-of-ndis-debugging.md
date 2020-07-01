@@ -3,32 +3,52 @@ title: NDIS 调试概述
 description: NDIS 调试概述
 ms.assetid: d15e8a0c-e553-4e0d-84ed-5fdc2026a2d3
 keywords:
-- NDIS 调试概述
-ms.date: 05/23/2017
+- NDIS 调试，概述
+ms.date: 05/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ace66602dde1efba95cf1841158a74087deae4ed
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1f93d9b5fb63a2eb086aa2983baff386c176fcea
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359539"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593969"
 ---
 # <a name="overview-of-ndis-debugging"></a>NDIS 调试概述
 
+调试网络驱动程序的两种主要工具是调试跟踪和网络驱动程序接口规范（NDIS）扩展。 有关调试跟踪的详细信息，请参阅[启用 NDIS 调试跟踪](enabling-ndis-debug-tracing.md)。 有关 NDIS 调试扩展的详细信息，请参阅[Ndis 扩展](ndis-extensions--ndiskd-dll-.md)，其中提供了在扩展模块 Ndiskd.dll 中找到的扩展命令的完整列表。
 
-用于调试的网络驱动程序的两个主要工具是调试跟踪和网络驱动程序接口规范 (NDIS) 扩展。 调试跟踪的详细信息，请参阅[启用 NDIS 调试跟踪](enabling-ndis-debug-tracing.md)。 调试扩展 NDIS 的详细信息，请参阅[NDIS 扩展](ndis-extensions--ndiskd-dll-.md)，提供了扩展模块 Ndiskd.dll 中找到的扩展命令的完整列表。 扩展模块将出现在 winxp 目录。
+使用 netreport 命令生成显示当前适配器和协议的视觉报表[ndiskd](-ndiskd-netreport.md) 。
 
-另一种工具进行调试的网络驱动程序是常规调试扩展，可用于获取调试信息的集合。 例如，输入[ **！ 堆栈 2 ndis ！**](-stacks.md) 显示以开头的堆栈中的所有线程**ndis ！**。 此信息也可用于调试挂起并停止运行。
+![ndiskd. netreport 彩色编码的输出，其中显示了演示多个适配器的两列](images/ndis-report.png)
 
-此外，还有一个特定于 NDIS 的 bug 检查代码，bug 检查 0x7C (BUGCODE\_NDIS\_驱动程序)。 其参数的完整列表，请参阅[ **Bug 检查 0x7C**](bug-check-0x7c--bugcode-ndis-driver.md)。
+然后，可以使用[ndiskd get-netadapter](-ndiskd-netadapter.md)内核调试器命令来调查当前的驱动程序集。
 
-用于测试的 NDIS 驱动程序的另一个有用工具是 NDIS 验证程序。 有关详细信息，请查阅 Windows Driver Kit (WDK) 文档中的 NDIS 验证程序主题。
+```dbgconsole
+1: kd> !ndiskd.netadapter
+    Driver             NetAdapter          Name
+    ffffdf8015a98380   ffffdf8015aa11a0    Microsoft ISATAP Adapter #2
+    ffffdf801418d650   ffffdf80140c71a0    Microsoft Kernel Debug Network Adapter
+```
 
- 
+用于调试网络驱动程序的另一个工具是常规调试扩展的集合，这对获取调试信息非常有用。 例如，输入[！ stack 2 ndis！](-stacks.md) 显示堆栈中以**ndis！** 开头的所有线程。 此信息可用于调试挂起和停止。 有关 WinDbg 入门的常规信息，请参阅[Windows 调试](getting-started-with-windows-debugging.md)入门。
 
- 
+## <a name="driver-verifier"></a>驱动程序验证程序
 
+用于测试 NDIS 驱动程序的另一个有用工具是 "NDIS 验证程序"。 有关详细信息，请参阅[NDIS 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/devtest/sdv-rules-for-ndis-drivers)和[静态驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)程序的规则。
 
+## <a name="ndis-debugging-resources"></a>NDIS 调试资源
 
+碎片整理工具显示的剧集175介绍[了 #175 调试网络堆栈的 NDIS 调试碎片整理工具](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)。
 
+Ndis 团队博客存档在[ndis 博客](https://docs.microsoft.com/archive/blogs/ndis/)上提供。
+
+## <a name="ndis-bug-checks"></a>NDIS Bug 检查
+
+此外，还提供了特定于 NDIS 的 bug 检查代码和 bug 检查0x7C （BUGCODE \_ NDIS \_ 驱动程序）。 有关参数的完整列表，请参阅[Bug 检查 0x7C](bug-check-0x7c--bugcode-ndis-driver.md)。
+
+常见的 NDIS misbehavior 相关 bug 检查是[错误检查0xD1： DRIVER_IRQL_NOT_LESS_OR_EQUAL](bug-check-0xd1--driver-irql-not-less-or-equal.md)这可能由驱动程序代码本身引起。 这很可能是一个错误或内存损坏，最终会将自身表现为错误指针。
+
+另一个常见问题是[错误检查0x9F： DRIVER_POWER_STATE_FAILURE](bug-check-0x9f--driver-power-state-failure.md)。
+
+所有 bug 检查的第一步是查找好的转储文件，将其加载到 Windows 调试器中，然后使用[！ "分析](-analyze.md)" 命令。 有关详细信息，请参阅[使用！分析扩展](using-the--analyze-extension.md)。
 

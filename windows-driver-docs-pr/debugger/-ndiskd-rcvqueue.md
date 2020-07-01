@@ -4,7 +4,7 @@ description: Ndiskd. rcvqueue 命令显示有关接收队列的信息。
 ms.assetid: 776A459F-A698-4BF6-8DAD-BEB15858AD7F
 keywords:
 - ndiskd rcvqueue Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d37760a91048660b0f7e15b3bd90be41db83bbbf
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ba450f644765419946c19f2a00540afd364f0042
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534716"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593901"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
-
 
 **！ Ndiskd. rcvqueue**命令显示有关接收队列的信息。
 
 ```console
-!ndiskd.rcvqueue [-handle <x>] [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
+!ndiskd.rcvqueue -handle <x> [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>参数
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 接收队列的句柄。
@@ -46,13 +44,11 @@ ms.locfileid: "84534716"
 <span id="_______-rcvqueueverbosity______"></span><span id="_______-RCVQUEUEVERBOSITY______"></span>*-rcvqueueverbosity*   
 要显示的详细信息的级别。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+## <a name="dll"></a>DLL
 
+Ndiskd.dll
 
-Ndiskd
-
-<a name="examples"></a>示例
---------
+## <a name="examples"></a>示例
 
 若要获取接收队列句柄，请首先输入不带参数的[**！ ndiskd**](-ndiskd-netadapter.md)命令，以查看网络适配器列表、驱动程序及其句柄。 在以下示例中，查找 Microsoft ISATAP 适配器 \# 2 的 get-netadapter 句柄 ffff8083e02ce1a0。
 
@@ -109,8 +105,7 @@ RECEIVE QUEUE
     Shared memory allocations
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -118,18 +113,8 @@ RECEIVE QUEUE
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
-
- 
-
- 
-
-
-
-
-
-

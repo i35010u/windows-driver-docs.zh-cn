@@ -4,7 +4,7 @@ description: Ndiskd. mopen 扩展显示有关微型端口和协议之间的绑�
 ms.assetid: 439c4647-8f3e-4473-aca8-364b5d2206e9
 keywords:
 - ndiskd mopen Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3407e5f652bf63ecade29eb4552c49d8c02d8da
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 0f3faa99ca2ba7c41faff3fa6aa05805f47c5697
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534922"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593937"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
-
 
 **！ Ndiskd mopen**扩展显示有关微型端口和协议之间的绑定的信息。 如果运行不带参数的此扩展，！ ndiskd 将显示 NDIS 微型端口驱动程序和协议驱动程序之间所有打开的绑定的列表。
 
@@ -30,19 +29,17 @@ ms.locfileid: "84534922"
 
 ## <a name="span-idddk__ndiskd_mopen_dbgspanspan-idddk__ndiskd_mopen_dbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>参数
 
-
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-NDIS 开放式绑定的句柄。
+NDIS 开放式绑定的可选句柄。
 
 <span id="_______-ref______"></span><span id="_______-REF______"></span>*-ref*   
 显示开放绑定的 refcounts。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 输入！ ndiskd. mopen 命令获取所有打开的绑定的列表。 在此示例中，查找 Microsoft ISATAP 适配器 \# 2 小型端口与 TCPIP6TUNNEL 协议之间的绑定。 它的句柄为 ffff8083e56b8110。
 
@@ -104,8 +101,7 @@ RECEIVE PATH
     Frame Type(s)      0x86dd
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -113,16 +109,6 @@ RECEIVE PATH
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

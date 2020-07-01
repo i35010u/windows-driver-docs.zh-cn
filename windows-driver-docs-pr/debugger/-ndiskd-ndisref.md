@@ -4,7 +4,7 @@ description: Ndiskd. ndisref 扩展显示跟踪的引用计数的调试日志。
 ms.assetid: 6860A567-1017-4184-B8DF-157467360FB9
 keywords:
 - ndiskd ndisref Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/18/2020
 topic_type:
 - apiref
 api_name:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2856dc43389d6096bd818a0410d75a017672dd7
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c758301f248f1e9dcee537b6fe2f9e6d463c3ea8
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534188"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593929"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
-
 
 **！ Ndiskd ndisref**扩展显示跟踪的引用计数的调试日志。
 
 ```console
-!ndiskd.ndisref [-handle <x>] [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
+!ndiskd.ndisref -handle <x> [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 必需。 引用计数块的句柄。
@@ -46,12 +44,11 @@ ms.locfileid: "84534188"
 <span id="_______-refdebug______"></span><span id="_______-REFDEBUG______"></span>*-refdebug*   
 显示详细的调试日志（如果可用）。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 下面的示例将 NDIS 微型端口驱动程序的句柄传递给 **！ ndiskd ndisref**扩展，以显示该驱动程序的引用计数块。 首先，不使用参数运行[**！ ndiskd**](-ndiskd-minidriver.md) ，以查看系统上所有微型端口驱动程序的列表。 在下面的示例输出中，查找 kdnic 驱动程序 ffffdf801418d650 的句柄。
 
@@ -97,8 +94,7 @@ REFCOUNT BLOCK
     Include inactive tags
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -106,18 +102,8 @@ REFCOUNT BLOCK
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
-
- 
-
- 
-
-
-
-
-
-

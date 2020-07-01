@@ -4,7 +4,7 @@ description: Ndiskd 命令显示可用 ndiskd 命令的列表，其中包含每�
 ms.assetid: ba9a1364-173b-4258-9894-09271e47786e
 keywords:
 - ndiskd Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,29 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3079375184a8b6bd7605929762e30f3a18949a8a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 71cc9c2f3e291059aef6bc70a84042c135574523
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534934"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593945"
 ---
 # <a name="ndiskdhelp"></a>!ndiskd.help
-
 
 **！ Ndiskd**命令显示可用！ ndiskd 命令的列表，其中包含每个命令的简短说明。
 
 ```console
-!ndiskd.help 
+!ndiskd.help
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+## <a name="dll"></a>DLL
 
+Ndiskd.dll
 
-Ndiskd
-
-<a name="examples"></a>示例
---------
+## <a name="examples"></a>示例
 
 下面的示例使用 **！ ndiskd**显示帮助命令的列表。
 
@@ -62,14 +59,12 @@ NDIS KD EXTENSIONS
 **注意**  
 下面的示例中列出了一些替代命令。 这些命令可用于前面曾使用过这些命令的 NDIS 驱动程序开发人员，但我们建议改为使用主命令。
 
-
-
 ```console
 3: kd> !ndiskd.help -all
 
 NDIS KD EXTENSIONS
 
-    Primary commands:                                                           
+    Primary commands:
     help               This help and lots more
     netadapter         Show network adapters  (this is a good starting place)
         minidriver     Show network adapter drivers
@@ -102,14 +97,18 @@ NDIS KD EXTENSIONS
     wdiminidriver      Shows one or more CMiniportDriver structures
     nwadapter          Shows one or more nwifi!ADAPT structures
     ndisrwlock         Show an NDIS_RW_LOCK_EX lock
-    ndisslot           Show an NDIS per-processor slot
-    ndis               Show NDIS.sys build info
         dbglevel       Change the debugging level [checked NDIS.sys only]
         dbgsystems     Toggle subsystems being debugged [checked NDIS.sys only]
         ndiskdversion  Show info about NDISKD itself
     netreport          Draw a box diagram of your network stack
+    cxadapter          Show information about an NETADAPTER
+    netqueue           Show information about a NetAdapterCx datapath queue
+    nrc                Show information about an NET_RING_COLLECTION
+    netring            Show information about an NET_RING
+    netpacket          Show information about an NET_PACKET
+    netfragment        Show information about an NET_FRAGMENT
 
-    Alternate commands:                                                         
+    Alternate commands:
     miniport           Same as !ndiskd.netadapter
     gminiports         Same as !ndiskd.netadapter
     miniports          "Classic" version of !ndiskd.netadapter
@@ -124,8 +123,7 @@ NDIS KD EXTENSIONS
     nbpools            Same as !ndiskd.nbpool
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -133,14 +131,4 @@ NDIS KD EXTENSIONS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
-
-
-
-
-
-
-
-
-
-
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)

@@ -4,7 +4,7 @@ description: Ndiskd. get-netadapter 扩展显示有关在系统上处于活动�
 ms.assetid: 7D55F7CE-5DDB-4C80-8C27-F619F2FB7F15
 keywords:
 - ndiskd get-netadapter Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/23/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee88687a333b072a6f6b545ff9ebf914e79117d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ccd75c0c06a92ce0d01058119c52198c324c4fc8
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534914"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593920"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
-
 
 **！ Ndiskd get-netadapter**扩展显示有关在系统上处于活动状态的 NDIS 微型端口或网络适配器的信息。 如果在没有参数的情况下运行此命令，！ ndiskd 将显示所有网络适配器的列表。
 
@@ -34,8 +33,7 @@ ms.locfileid: "84534914"
         [-vfs] [-vports] [-iftrace] [-ip]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NDIS 小型端口的句柄。
@@ -139,12 +137,11 @@ NDIS 小型端口的句柄。
 <span id="_______-ip______"></span><span id="_______-IP______"></span>*-ip*   
 显示网络接口上的 IP 地址。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 通过运行不带参数的 **！ ndiskd** ，你可以获取系统上所有网络适配器的列表及其关联的微型端口驱动程序。 在此示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffdf80140c71a0。 有关内核调试网络适配器用途的详细信息，请参阅 NDIS 博客上[的通过网络进行内核调试](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)。
 
@@ -268,8 +265,7 @@ HANDLERS
 
 你现在可以单击每个处理程序右侧的 "最佳实践" 链接，以在该处理程序上设置一个断点来调试特定的问题。 例如，如果数据路径中存在挂起，你可以调查驱动程序的 SendNetBufferListsHandler 或 ReturnNetBufferListsHandler。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -277,20 +273,10 @@ HANDLERS
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [通过网络进行内核调试](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)
 
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
-
-
-
-
-
-
-
-
-
-

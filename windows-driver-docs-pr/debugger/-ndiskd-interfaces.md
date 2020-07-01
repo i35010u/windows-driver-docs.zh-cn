@@ -4,7 +4,7 @@ description: Ndiskd 扩展显示有关网络接口的信息。
 ms.assetid: AC458FDF-CCB6-4A65-8C9C-38C436062017
 keywords:
 - ndiskd Windows 调试
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fda0e07004abce591f27fe7e91d0a6d21fcf138
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 794adb5dcd1ea347ad2fd08b54cac1e8f41dcb20
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534926"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593943"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
-
 
 **！ Ndiskd**扩展显示有关网络接口的信息。 如果运行不带参数的扩展，！ ndiskd 将显示所有网络接口的列表。
 
 有关网络接口的详细信息，请参阅[NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)。
 
 ```console
-!ndiskd.interfaces [-handle <x>] [-luid <x>] 
+!ndiskd.interfaces -handle <x> [-luid <x>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
+## <a name="parameters"></a>参数
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
-网络接口的句柄。
+网络接口的可选句柄。
 
 <span id="_______-luid______"></span><span id="_______-LUID______"></span>*-luid*   
 网络接口的[NetLuid](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value) （网络本地唯一标识符）。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 运行不带参数的 **！ ndiskd**扩展，以查看系统上所有网络接口的列表。 在此示例中，查找 Intel （R）82579LM 千兆网络连接接口。 它的句柄为 ffffdf80139f8a20。
 
@@ -120,8 +117,7 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
-
+## <a name="see-also"></a>请参阅
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -129,20 +125,10 @@ STATE
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [NDIS 网络接口](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)
 
 [NET \_ LUID 值](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
-
- 
-
- 
-
-
-
-
-
-

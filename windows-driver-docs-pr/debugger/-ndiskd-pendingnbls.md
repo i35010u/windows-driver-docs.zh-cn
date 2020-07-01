@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8ef36050d62568b5ca340f5c7a8e82d8592899
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c0595b3a21c08633857a3479df9f7a8e0d0c4964
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534720"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593893"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
-
 
 **！ Ndiskd pendingnbls**扩展显示正在传输中的挂起 Nbl （[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）。
 
@@ -29,7 +28,6 @@ ms.locfileid: "84534720"
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-handle*   
 NDIS 微型端口、筛选器或打开的句柄。
@@ -40,12 +38,11 @@ NDIS 微型端口、筛选器或打开的句柄。
 <span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span>*-详细级别*   
 要显示的详细信息的级别。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
+### <a name="dll"></a>DLL
 
-Ndiskd
+Ndiskd.dll
 
-<a name="examples"></a>示例
---------
+### <a name="examples"></a>示例
 
 **！ ndiskd。 pendingnbls**可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的[**！ ndiskd。**](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
 
@@ -100,7 +97,6 @@ fffff80a`e9611870 4053            push    rbx
 
 **注意**   在此示例中，调试对象目标计算机已在遇到断点时加载网页，因此流量已通过微型端口的数据路径流动。 因此，它有一个要发送的挂起 NBL。 即使在对微型驱动程序的一个或多个 NBL 处理程序设置断点之后，在数据路径中没有活动的情况下，也可能看不到任何挂起的 Nbl。
 
- 
 
 ```console
 0: kd> !ndiskd.pendingnbls ffffe00bc3f701a0
@@ -116,7 +112,7 @@ PHASE 3/3: Found 1 pending NBL(s) of 4817 total NBL(s).
 Search complete.
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
@@ -125,7 +121,7 @@ Search complete.
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -136,13 +132,3 @@ Search complete.
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
 [**bp、bu、bm（设置断点）**](bp--bu--bm--set-breakpoint-.md)
-
- 
-
- 
-
-
-
-
-
-
