@@ -7,18 +7,18 @@ ms.topic: article
 ms.custom:
 - CI 111498
 - CSSTroubleshooting
-ms.openlocfilehash: a8989f52c9b5f6b4223c6c5ee60bac692df97474
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.openlocfilehash: fde47d6a24609de53ef16e6eddbe893192aaf4fb
+ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606383"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85829038"
 ---
 # <a name="usb-audio-20-drivers"></a>USB 音频 2.0 驱动程序
 
-从 Windows 10 开始，版本1703，Windows 附带了一个 USB 音频2.0 驱动程序。 它设计为支持 USB 音频2.0 设备类。 驱动程序是 WaveRT 的音频端口类微型端口。 有关 USB 音频2.0 设备类的详细信息，请参阅[https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)。
+从 Windows 10 开始，版本1703，Windows 附带了一个 USB 音频2.0 驱动程序。 它设计为支持 USB 音频2.0 设备类。 驱动程序是 WaveRT 的音频端口类微型端口。 有关 USB 音频2.0 设备类的详细信息，请参阅 [https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50) 。
 
-该驱动程序名为： _usbaudio2_ ，关联的 inf 文件为_usbaudio2_。
+该驱动程序的名称为： _usbaudio2.sys_ ，相关联的 inf 文件为_usbaudio2_。
 
 驱动程序将在设备管理器中标识为 "USB 音频类2设备"。 如果该名称可用，将使用 USB 产品字符串覆盖此名称。
 
@@ -26,9 +26,9 @@ ms.locfileid: "75606383"
 
 ## <a name="architecture"></a>体系结构
 
-USBAudio 适用于 Windows USB 音频的更广泛的体系结构，如下所示。 
+USBAudio.Sys 适合 Windows USB 音频的更广泛的体系结构，如下所示。 
 
-![在顶部显示 Kmixer 的堆栈关系图，底部显示一个 USB 音频设备](images/usb-2-0-audio-arch.png)
+![显示顶部 Kmixer.sys 的堆栈关系图，底部显示一个 USB 音频设备](images/usb-2-0-audio-arch.png)
 
 ## <a name="related-usb-specifications"></a>相关 USB 规范
 
@@ -59,7 +59,7 @@ USB-如果是一个特殊的兴趣组，其中维护了[官方 USB 规范](https
 - IEC61937_DTS-III
 - TYPE_III_WMA
 
-## <a name="feature-descriptions"></a>功能描述
+## <a name="feature-descriptions"></a>功能说明
 
 本部分介绍 USB 音频2.0 驱动程序的功能。
 
@@ -123,9 +123,9 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 存在以下限制：
 
-|                            |                        |                               |
-|----------------------------|------------------------|-------------------------------|
-| 键入 I PCM 格式：         | 1 < = bSubslotSize < = 4 |     8 < = bBitResolution < = 32 |
+|格式                      |Subslot 大小            |位解析                 |
+|----|----|----|
+| 键入 I PCM 格式：         | 1 <= bSubslotSize <= 4 |     8 <= bBitResolution <= 32 |
 | 键入 I PCM8 format：        | bSubslotSize = = 1      |     bBitResolution = = 8       |
 | 键入我 IEEE_FLOAT 的格式：  | bSubslotSize = = 4      |     bBitResolution = = 32      |
 | 类型 III IEC61937 格式： | bSubslotSize = = 2      |     bBitResolution = = 16      |
@@ -142,7 +142,7 @@ AS 接口描述符中的 bFormatType 字段必须与在格式类型描述符（B
 
 该驱动程序支持在 ADC-2、5.2 节中定义的控制请求的一个子集，并支持某些控件的中断数据消息（ADC-2 6.1）。 下表显示了驱动程序中实现的子集。
 
-| 实体           | 控件                    | 获取当前 | 设置当前 | 获取范围 | 妨碍 |
+| 实体           | 控制                    | 获取当前 | 设置当前 | 获取范围 | 妨碍 |
 |------------------|----------------------------|---------|---------|-----------|-----------|
 | 时钟源     | 采样频率控制 | x       | x       | x         |           |
 | 时钟选择器   | 时钟选择器控件     | x       |         |           |           |
@@ -209,7 +209,7 @@ USB\Class_01&SubClass_03&Prot_20
 
 请参阅适用于子类类型的 USB 音频2.0 规范。
 
-带 MIDI （上面的子类0x03）的 USB 音频2.0 设备将使用已加载 usbaudio （USB 音频1.0 驱动程序）的独立多功能设备枚举 MIDI 函数。
+带 MIDI 的 USB 音频2.0 设备（上面的子类0x03）会将 MIDI 函数枚举为单独的多功能设备，并加载 usbaudio.sys （USB 音频1.0 驱动程序）。
 
 USB 音频1.0 类驱动程序将此兼容 ID 注册到 wdma_usb。
 
@@ -250,11 +250,11 @@ REG_DWORD  T<tid>_J<n>_PortConnection     The enum value is define in EPxcPortCo
 REG_DWORD  T<tid>_J<n>_Color              The color needs to be represent by RGB like this: 0x00RRGGBB (NOT a COLORREF).
 ```
 
-\<tid\> = 终端 ID （在描述符中定义）
+\<tid\>= 终端 ID （在描述符中定义）
   
-\<n\> = 插孔号（1 ~ n）。 
+\<n\>= 插孔号（1 ~ n）。 
 
-\<tid\> 和 \<n 的约定\> 为：
+和的 \<tid\> 约定 \<n\> 为：
 
 - 基数为10（8，9，10，而不是8，9，a）
 - 无前导零
@@ -328,7 +328,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
     0x00, 0x00, 0xff, 0x00  // PropertyData - 0xff0000 - RED }
 ```
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>疑难解答
 
 如果驱动程序未启动，则应检查系统事件日志。 驱动程序记录指示失败原因的事件。 同样，可以按照[此博客文章](https://matthewvaneerde.wordpress.com/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)中所述的步骤手动收集音频日志。 如果失败可能表示驱动程序出现问题，请使用下面所述的反馈中心进行报告，并包含日志。
 
@@ -344,9 +344,9 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
 
 此 USB 音频2.0 类驱动程序由 Thesycon 开发，由 Microsoft 支持。
 
-### <a name="see-also"></a>另请参阅
+### <a name="see-also"></a>请参阅
 
-[Windows 驱动模型（WDM）](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
+[Windows 驱动程序模型 (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
 
 [音频驱动程序概述](https://docs.microsoft.com/windows-hardware/drivers/audio/getting-started-with-wdm-audio-drivers)
 

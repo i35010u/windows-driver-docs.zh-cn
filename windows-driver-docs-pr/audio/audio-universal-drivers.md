@@ -4,12 +4,12 @@ description: 在 Windows 10 中，你可以编写一个通用音频驱动程序�
 ms.assetid: F4B56B3F-792F-4887-AF0F-FFC1F000CB8F
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f067360b3938102f5bbd7e2f59256a8315277221
-ms.sourcegitcommit: 36b7db40d5a91d8726feb2e2d9d4ece1fb484051
+ms.openlocfilehash: e9577766f4e05624567b15178a1cb010abe76922
+ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591011"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85829044"
 ---
 # <a name="universal-windows-drivers-for-audio"></a>音频的通用 Windows 驱动程序
 
@@ -23,7 +23,7 @@ Ihv 可以开发适用于所有设备（台式机、笔记本电脑、平板电�
 
 - Visual Studio 2015 支持：存在将 "目标平台" 设置为 "通用" 的驱动程序设置。 有关设置驱动程序开发环境的详细信息，请参阅[具有通用 Windows 驱动程序的入门](https://docs.microsoft.com/windows-hardware/drivers)。
 
-- APIValidator 工具：可以使用 ApiValidator 工具来验证驱动程序调用的 Api 对通用 Windows 驱动程序是否有效。 此工具是适用于 Windows 10 的 Windows 驱动程序工具包（WDK）的一部分，如果你使用的是 Visual Studio 2015，则会自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
+- APIValidator 工具：可以使用 ApiValidator.exe 工具验证驱动程序调用的 Api 对通用 Windows 驱动程序是否有效。 此工具是适用于 Windows 10 的 Windows 驱动程序工具包（WDK）的一部分，如果你使用的是 Visual Studio 2015，则会自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
 - 更新了 DDI 参考文档：正在更新 DDI 引用文档以指示通用 Windows 驱动程序支持哪些 DDIs。 有关详细信息，请参阅[音频设备参考](https://docs.microsoft.com/previous-versions/ff536192(v=vs.85))。
 
@@ -39,7 +39,7 @@ Ihv 可以开发适用于所有设备（台式机、笔记本电脑、平板电�
 
 4. 构建、安装、部署和调试适用于 Windows 10 的驱动程序以用于桌面版或 Windows 10 移动版。
 
-## <a name="sample-code"></a>示例代码
+## <a name="sample-code"></a>代码示例
 
 Sysvad 和 SwapAPO 已转换为通用 Windows 驱动程序示例。 有关详细信息，请参阅[示例音频驱动程序](sample-audio-drivers.md)。
 
@@ -59,7 +59,7 @@ Sysvad 和 SwapAPO 已转换为通用 Windows 驱动程序示例。 有关详细
 
 - [音频拓扑节点](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)
 
-- [高清晰音频 DDI 引用](https://docs.microsoft.com/windows-hardware/drivers/audio/high-definition-audio-ddi-reference)
+- [高清音频 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/audio/high-definition-audio-ddi-reference)
 
 - [端口类音频驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/audio/port-class-audio-driver-reference)
 
@@ -71,7 +71,7 @@ Sysvad 和 SwapAPO 已转换为通用 Windows 驱动程序示例。 有关详细
 
 2. 将驱动程序重新编译为通用 Windows 驱动程序。 在项目属性中，将 "目标平台" 设置为 "通用"。
 
-3. 使用 ApiValidator 工具验证驱动程序调用的 DDIs 对通用 Windows 驱动程序是否有效。 此工具是适用于 Windows 10 的 Windows 驱动程序工具包（WDK）的一部分，如果你使用的是 Visual Studio 2015，则会自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
+3. 使用 ApiValidator.exe 工具验证驱动程序调用的 DDIs 对通用 Windows 驱动程序是否有效。 此工具是适用于 Windows 10 的 Windows 驱动程序工具包（WDK）的一部分，如果你使用的是 Visual Studio 2015，则会自动运行。 有关详细信息，请参阅[验证通用 Windows 驱动程序](https://docs.microsoft.com/windows-hardware/drivers)。
 
 4. 如果驱动程序调用的接口不是 OneCoreUAP 的一部分，编译器会显示错误。
 
@@ -107,7 +107,7 @@ APO INF 包必须单独从基础驱动程序包提交到合作伙伴中心。 �
 
 若要查看组件化 INF 文件的示例，请查看 Github 上的[sysvad/TabletAudioSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad/TabletAudioSample)。
 
-| 文件名                              | 描述                                                                    |
+| 文件名                              | 说明                                                                    |
 |----------------------------------------|--------------------------------------------------------------------------------|
 | ComponentizedAudioSample .inf           | 基本组件化示例音频 INF 文件。                                  |
 | ComponentizedAudioSampleExtension .inf  | 具有其他 OEM 自定义的 sysvad 基础的扩展驱动程序。   |
@@ -115,7 +115,7 @@ APO INF 包必须单独从基础驱动程序包提交到合作伙伴中心。 �
 
 SYSVAD 示例中仍提供了传统的 INF 文件。
 
-| 文件名                      | 描述                                                                    |
+| 文件名                      | 说明                                                                    |
 |--------------------------------|--------------------------------------------------------------------------------|
 | tabletaudiosample .inf          | 一个 desktop monolitic INF 文件，其中包含安装驱动程序所需的所有信息。 |
 | phoneaudiosample .inf           | 一个手机 monolitic INF 文件，其中包含安装驱动程序所需的所有信息。   |
@@ -173,7 +173,7 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
 ### <a name="use-a-windows-service-to-facilitate-uwp---apo-communication"></a>使用 Windows 服务来促进 UWP < > APO 通信
 
-管理用户模式组件（例如，如果你的设计包含 RPC 服务器来促进 UWP < > APO 通信），则不是必需的 Windows 服务，我们建议在 Windows 服务中实现该功能，然后控制在音频引擎中运行的 APO。  
+管理用户模式组件（例如，如果你的设计包含 RPC 服务器来帮助 UWP < > APO 通信），则不一定需要 Windows 服务，我们建议在 Windows 服务中实现该功能，然后控制在音频引擎中运行的 APO。  
 
 ## <a name="building-the-sysvad-universal-audio-sample-for-windows10-desktop"></a>构建适用于 Windows 10 桌面版的 Sysvad 通用音频示例
 
@@ -191,18 +191,18 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
    C:\Program Files (x86)\Windows Kits\10\src\audio\sysvad\x64\Debug\package
    ```
 
-5. 导航到 WDK 安装中的 "工具" 文件夹，并找到 PnpUtil 工具。 例如，在以下文件夹中查找： C： \\Program Files （x86） \\Windows 套件 \\10 \\Tools \\x64 \\PnpUtil。
+5. 导航到 WDK 安装中的 "工具" 文件夹，并找到 PnpUtil 工具。 例如，在以下文件夹中查找： C： \\ Program Files （x86） \\ Windows 工具包 \\ 10 \\ 工具 \\ x64 \\PnpUtil.exe。
 
 6. 将以下文件复制到要安装 sysvad 驱动程序的系统：
 
-|                            |                                                                                   |
-|----------------------------|-----------------------------------------------------------------------------------|
-| TabletAudioSample      | 驱动程序文件。                                                                  |
+|文件|描述|
+|----|----|
+| TabletAudioSample.sys      | 驱动程序文件。                                                                  |
 | tabletaudiosample .inf      | 一个信息（INF）文件，其中包含安装驱动程序所需的信息。 |
 | sysvad.cat                 | 目录文件。                                                                 |
-| SwapAPO                | 用于管理的 UI 的示例驱动程序扩展插件。                                |
-| PropPageExt            | 属性页的驱动程序扩展示例。                                    |
-| KeywordDetectorAdapter | 示例关键字检测器。                                                        |
+| SwapAPO.dll                | 用于管理的 UI 的示例驱动程序扩展插件。                                |
+| PropPageExt.dll            | 属性页的驱动程序扩展示例。                                    |
+| KeywordDetectorAdapter.dll | 示例关键字检测器。                                                        |
 
 ## <a name="install-and-test-the-driver"></a>安装并测试驱动程序
 
@@ -212,11 +212,11 @@ Windows 即插即用系统评估日期和驱动程序版本，以确定存在多
 
     **pnputil-i-a tabletaudiosample**
 
-2. Sysvad 驱动程序安装应已完成。 如果有任何错误，可以检查此文件以了解其他信息： `%windir%\inf\setupapi.dev.log`
+2. Sysvad 驱动程序安装应已完成。 如果有任何错误，可以检查此文件以了解其他信息：`%windir%\inf\setupapi.dev.log`
 
 3. 在设备管理器的 "视图" 菜单上，选择 "设备（按类型）"。 在设备树中，找到 Microsoft 虚拟音频设备（WDM）-Sysvad 示例。 这通常位于 "声音、视频和游戏控制器" 节点下。
 
-4. 在目标计算机上，打开 "控制面板"，导航到 "**硬件和声音**&gt;**管理音频设备**"。 在 "声音" 对话框中，选择标记为 "Microsoft 虚拟音频设备（WDM）-Sysvad 示例" 的扬声器图标，然后单击 "设置默认值"，但不要单击 "确定"。 这会使 "声音" 对话框处于打开状态。
+4. 在目标计算机上，打开 "控制面板"，并导航到 "**硬件和声音** &gt; **管理音频设备**"。 在 "声音" 对话框中，选择标记为 "Microsoft 虚拟音频设备（WDM）-Sysvad 示例" 的扬声器图标，然后单击 "设置默认值"，但不要单击 "确定"。 这会使 "声音" 对话框处于打开状态。
 
 5. 在目标计算机上找到 MP3 或其他音频文件，然后双击以播放该文件。 然后，在 "声音" 对话框中，验证卷级别指示器中是否存在与 Microsoft 虚拟音频设备（WDM）-Sysvad 示例驱动程序相关联的活动。
 
