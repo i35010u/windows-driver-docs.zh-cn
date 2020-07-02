@@ -15,17 +15,17 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.custom: 19H1
-ms.openlocfilehash: d22c7bb4426c77a3223fa8bd27f287417ca88e44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2e1fd4582d3d07da17d5629ccaef7850a0b8d99
+ms.sourcegitcommit: a260b60c121b25f06e8672afaaa8a3b197b17534
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390743"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85839121"
 ---
-# <a name="kscategorynetworkcamera"></a>KSCATEGORY_NETWORK_CAMERA
+# <a name="kscategory_network_camera"></a>KSCATEGORY_NETWORK_CAMERA
 
 
-KSCATEGORY_NETWORK_CAMERA GUID 定义，如下所示：
+KSCATEGORY_NETWORK_CAMERA GUID 定义如下：
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ KSCATEGORY_NETWORK_CAMERA GUID 定义，如下所示：
 </tr>
 <tr class="even">
 <td align="left"><p>类 GUID</p></td>
-<td align="left"><p>{B8238652-B500-41EB-B4F3-4234F7F5AE9}</p></td>
+<td align="left"><p>{B8238652-B500-41EB-B4F3-4234F7F5AE99}</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,8 +62,8 @@ KSCATEGORY_NETWORK_CAMERA GUID 定义，如下所示：
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks （包含 Ks）</td>
 </tr>
 </tbody>
 </table>
