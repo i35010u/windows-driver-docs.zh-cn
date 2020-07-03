@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b3f5d23794fa490bc9ed0428c2b3d9f1f70fcc02
-ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
+ms.openlocfilehash: 218f3bb861995adaf4125d3098c3498416e10272
+ms.sourcegitcommit: 65b0a70e00c319b18f86a5b451908798ce2026a5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/26/2020
-ms.locfileid: "85382732"
+ms.locfileid: "85448514"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -25,6 +25,17 @@ WDK 用于开发、测试和部署 Windows 驱动程序。
 * [查看已知问题](https://go.microsoft.com/fwlink/?linkid=872986)
 
 [加入 Windows 预览体验计划](https://insider.windows.com/)以获取 [WDK Insider Preview 版本](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)。 有关 Windows Insider Preview 版本的安装说明，请参阅[安装 Windows 驱动程序工具包 (WDK) 的预览版本](installing-preview-versions-wdk.md)。
+
+## <a name="runtime-requirements"></a>运行时要求
+
+可以在 Windows 7 及更高版本上运行 Windows 10 版本 2004 WDK，并使用它来开发这些操作系统的驱动程序：
+
+|客户端 OS|服务器 OS|
+|-|-|
+|Windows 10|Windows Server 2019、Windows Server 2016|
+|Windows 8.1|Windows Server 2012 R2|
+Windows 8|Windows Server 2012|
+Windows 7|Windows Server 2008 R2 SP1|
 
 ## <a name="wdk-for-windows-10-version-2004"></a>适用于 Windows 10 版本 2004 的 WDK
 
@@ -77,22 +88,10 @@ EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要
 
 * [下载适用于 Windows 10 版本 2004 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019)
 
-## <a name="additional-information"></a>附加信息
 
-### <a name="release-notes-and-runtime-requirements"></a>发行说明和运行时要求
+## <a name="driver-samples-for-windows-10"></a>Windows 10 驱动程序示例
 
-可以在 Windows 7 及更高版本上运行 Windows 10 版本 2004 WDK，并使用它来开发这些操作系统的驱动程序：
-
-|客户端 OS|服务器 OS|
-|-|-|
-|Windows 10|Windows Server 2019、Windows Server 2016|
-|Windows 8.1|Windows Server 2012 R2|
-Windows 8|Windows Server 2012|
-Windows 7|Windows Server 2008 R2 SP1|
-
-### <a name="universal-windows-driver-samples"></a>通用 Windows 驱动程序示例
-
-若要下载通用 Windows 驱动程序示例，请执行以下任一操作：
+要下载驱动程序示例，请执行以下任一操作：
 
 * 转到 [GitHub](https://github.com/Microsoft/Windows-driver-samples) 上的驱动程序示例页面，然后依次单击“克隆或下载”、“下载 ZIP” 。
 * 下载[适用于 Visual Studio 的 GitHub 扩展](https://visualstudio.github.com/)，然后连接到 GitHub 存储库。
