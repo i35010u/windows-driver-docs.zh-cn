@@ -1,6 +1,6 @@
 ---
-title: Irql\_连接\_函数规则（ndis）
-description: Irql\_连接\_函数规则指定必须在正确的 IRQL 级别调用协议驱动程序的 NDIS 连接函数。
+title: Irql \_ 连接 \_ 函数规则（ndis）
+description: Irql \_ 连接 \_ 函数规则指定必须在正确的 Irql 级别调用协议驱动程序的 NDIS 连接函数。
 ms.assetid: 9721cb8a-ac70-4f2b-8bbd-809dc06548dc
 ms.date: 05/21/2018
 keywords:
@@ -12,31 +12,29 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47b88319e890892c262e616a3d0c5a36f9a018
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 047c9e33251ae17b24b45a6bbc37d8cb15903972
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840118"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917793"
 ---
-# <a name="irql_connection_function-rule-ndis"></a>Irql\_连接\_函数规则（ndis）
+# <a name="irql_connection_function-rule-ndis"></a>Irql \_ 连接 \_ 函数规则（ndis）
 
 
-**Irql\_连接\_函数**规则指定必须在正确的 Irql 级别调用协议驱动程序的 NDIS 连接函数。
+**Irql \_ 连接 \_ 函数**规则指定必须在正确的 Irql 级别调用协议驱动程序的 NDIS 连接函数。
 
 此规则验证以下 NDIS 函数：
 
-**NdisCoAssignInstanceNam**
-**NdisCoCreateVc**
-**NdisCoDeleteVc**
-**NdisCoGetTapiCallId**
-**NdisCoOidRequest**
-**NdisCoOidRequestComplete**
+**NdisCoAssignInstanceNam** 
+**NdisCoCreateVc** 
+**NdisCoDeleteVc** 
+**NdisCoGetTapiCallId** 
+**NdisCoOidRequest** 
+**NdisCoOidRequestComplete** 
 **NdisCoSendNetBufferLists**
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | 以此 |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -67,12 +65,12 @@ ms.locfileid: "72840118"
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisCoAssignInstanceName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscoassigninstancename)
-[**NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscocreatevc)
-[**NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc)
-[**NdisCoGetTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid)
-[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)
-[**NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete)
+[**NdisCoAssignInstanceName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscoassigninstancename) 
+[**NdisCoCreateVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscocreatevc) 
+[**NdisCoDeleteVc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscodeletevc) 
+[**NdisCoGetTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscogettapicallid) 
+[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 
+[**NdisCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequestcomplete) 
 [**NdisCoSendNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscosendnetbufferlists)
 
 

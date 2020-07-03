@@ -1,6 +1,6 @@
 ---
-title: Irql\_收集\_DMA\_函数规则（ndis）
-description: Irql\_收集\_DMA\_函数规则指定 NDIS 散播/聚集 DMA 函数必须以正确的 IRQL 级别进行调用。
+title: Irql \_ 收集 \_ DMA \_ 函数规则（ndis）
+description: Irql \_ 收集 \_ dma \_ 函数规则指定 NDIS 散播/聚集 dma 函数必须以正确的 Irql 级别进行调用。
 ms.assetid: 2ac0d238-4ca0-4b07-9318-159cd9a64d35
 ms.date: 05/21/2018
 keywords:
@@ -12,29 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de503521ee6a780928130862e357d64dde98e808
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b6e9bda77fffb5b8bd9f4354a45a6f297384185e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840114"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917777"
 ---
-# <a name="irql_gather_dma_function-rule-ndis"></a>Irql\_收集\_DMA\_函数规则（ndis）
+# <a name="irql_gather_dma_function-rule-ndis"></a>Irql \_ 收集 \_ DMA \_ 函数规则（ndis）
 
 
-Irql\_收集\_DMA\_函数规则指定 NDIS 散播/聚集 DMA 函数必须以正确的 IRQL 级别进行调用。
+Irql \_ 收集 \_ dma \_ 函数规则指定 NDIS 散播/聚集 dma 函数必须以正确的 Irql 级别进行调用。
 
 此规则验证以下 NDIS 函数：
 
-**NdisMAllocateNetBufferSGList**
-**NdisMAllocateSharedMemoryAsyncEx**
-**NdisMDeregisterScatterGatherDma**
-**NdisMFreeNetBufferSGList**
+**NdisMAllocateNetBufferSGList** 
+**NdisMAllocateSharedMemoryAsyncEx** 
+**NdisMDeregisterScatterGatherDma** 
+**NdisMFreeNetBufferSGList** 
 **NdisMRegisterScatterGatherDma**
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | 以此 |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -65,10 +63,10 @@ Irql\_收集\_DMA\_函数规则指定 NDIS 散播/聚集 DMA 函数必须以正�
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisMAllocateNetBufferSGList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatenetbuffersglist)
-[**NdisMAllocateSharedMemoryAsyncEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemoryasyncex)
-[**NdisMDeregisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterscattergatherdma)
-[**NdisMFreeNetBufferSGList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreenetbuffersglist)
+[**NdisMAllocateNetBufferSGList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatenetbuffersglist) 
+[**NdisMAllocateSharedMemoryAsyncEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismallocatesharedmemoryasyncex) 
+[**NdisMDeregisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterscattergatherdma) 
+[**NdisMFreeNetBufferSGList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismfreenetbuffersglist) 
 [**NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)
 
 

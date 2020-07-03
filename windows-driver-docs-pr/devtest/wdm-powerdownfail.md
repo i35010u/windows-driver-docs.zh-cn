@@ -1,6 +1,6 @@
 ---
 title: PowerDownFail 规则（wdm）
-description: PowerDownFail 规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP\_MN\_设置\_电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+description: PowerDownFail 规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 ms.assetid: 1C4CFF0D-E1E3-48CE-9F5A-C02BF95973C7
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f82188bd61cecf45eef4f4853708ebf2b0951782
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fdde9afc6a11e1bc4c6afc998e0f458dd5ee3e5f
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839144"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917661"
 ---
 # <a name="powerdownfail-rule-wdm"></a>PowerDownFail 规则（wdm）
 
 
-**PowerDownFail**规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP\_MN\_设置\_电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+**PowerDownFail**规则指定在设备关机时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,9 +55,9 @@ ms.locfileid: "72839144"
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)
-[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
-[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)
+[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 
+[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) 
 [**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)
  
 

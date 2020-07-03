@@ -1,6 +1,6 @@
 ---
-title: Irql\_NetBuffer\_函数规则（ndis）
-description: Irql\_NetBuffer\_函数规则指定必须在正确的 IRQL 级别调用 NET\_与缓冲区相关的函数。
+title: Irql \_ NetBuffer \_ 函数规则（ndis）
+description: Irql \_ NetBuffer \_ 函数规则指定 \_ 必须在正确的 Irql 级别调用与网络缓冲区相关的函数。
 ms.assetid: e3b43ba1-3b58-4bc8-9d90-7be31c9e0a09
 ms.date: 05/21/2018
 keywords:
@@ -12,58 +12,56 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 53bb96318d64e6b58767eadf93299938b68ff839
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 206f3a66d4f933099e5e20a70d9f08da055cab25
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839385"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916521"
 ---
-# <a name="irql_netbuffer_function-rule-ndis"></a>Irql\_NetBuffer\_函数规则（ndis）
+# <a name="irql_netbuffer_function-rule-ndis"></a>Irql \_ NetBuffer \_ 函数规则（ndis）
 
 
-Irql\_NetBuffer\_函数规则指定必须在正确的 IRQL 级别调用 NET\_与缓冲区相关的函数。
+Irql \_ NetBuffer \_ 函数规则指定 \_ 必须在正确的 Irql 级别调用与网络缓冲区相关的函数。
 
 此规则验证以下 NDIS 函数：
 
-**NdisAdvanceNetBufferDataStart**
-**disAdvanceNetBufferListDataStart**
-**NdisAllocateCloneNetBufferList**
-**NdisAllocateFragmentNetBufferList**
-**NdisAllocateMdl**
-**NdisAllocateNetBuffer**
-**NdisAllocateNetBufferAndNetBufferList**
-**NdisAllocateNetBufferList**
-**NdisAllocateNetBufferListContext**
-**NdisAllocateNetBufferListPool**
-**NdisAllocateNetBufferMdlAndData**
-**NdisAllocateNetBufferPool**
-**NdisAllocateReassembledNetBufferList**
-**NdisCopyFromNetBufferToNetBuffer**
-**NdisCopyReceiveNetBufferListInfo**
-**NdisCopySendNetBufferListInfo**
-**NdisFreeCloneNetBufferList**
-**NdisFreeFragmentNetBufferList**
-**NdisFreeMdl**
-**NdisFreeNetBuffer**
-**NdisFreeNetBufferList**
-**NdisFreeNetBufferListContext**
-**NdisFreeNetBufferListPool**
-**NdisFreeNetBufferPool**
-**NdisFreeReassembledNetBufferList**
-**NdisGetDataBuffer**
-**NdisGetMdlPhysicalArraySize**
-**NdisGetPoolFromNetBuffer**
-**NdisGetPoolFromNetBufferList**
-**NdisQueryMdl**
-**NdisQueryMdlOffset**
-**NdisQueryNetBufferPhysicalCount**
-**NdisRetreatNetBufferDataStart**
+**NdisAdvanceNetBufferDataStart** 
+**disAdvanceNetBufferListDataStart** 
+**NdisAllocateCloneNetBufferList** 
+**NdisAllocateFragmentNetBufferList** 
+**NdisAllocateMdl** 
+**NdisAllocateNetBuffer** 
+**NdisAllocateNetBufferAndNetBufferList** 
+**NdisAllocateNetBufferList** 
+**NdisAllocateNetBufferListContext** 
+**NdisAllocateNetBufferListPool** 
+**NdisAllocateNetBufferMdlAndData** 
+**NdisAllocateNetBufferPool** 
+**NdisAllocateReassembledNetBufferList** 
+**NdisCopyFromNetBufferToNetBuffer** 
+**NdisCopyReceiveNetBufferListInfo** 
+**NdisCopySendNetBufferListInfo** 
+**NdisFreeCloneNetBufferList** 
+**NdisFreeFragmentNetBufferList** 
+**NdisFreeMdl** 
+**NdisFreeNetBuffer** 
+**NdisFreeNetBufferList** 
+**NdisFreeNetBufferListContext** 
+**NdisFreeNetBufferListPool** 
+**NdisFreeNetBufferPool** 
+**NdisFreeReassembledNetBufferList** 
+**NdisGetDataBuffer** 
+**NdisGetMdlPhysicalArraySize** 
+**NdisGetPoolFromNetBuffer** 
+**NdisGetPoolFromNetBufferList** 
+**NdisQueryMdl** 
+**NdisQueryMdlOffset** 
+**NdisQueryNetBufferPhysicalCount** 
+**NdisRetreatNetBufferDataStart** 
 **NdisRetreatNetBufferListDataStart**
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | 以此 |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -94,39 +92,39 @@ Irql\_NetBuffer\_函数规则指定必须在正确的 IRQL 级别调用 NET\_与
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferdatastart)
-[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferlistdatastart)
-[**NdisAllocateCloneNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocateclonenetbufferlist)
-[**NdisAllocateFragmentNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatefragmentnetbufferlist)
-[**NdisAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl)
-[**NdisAllocateNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer)
-[**NdisAllocateNetBufferAndNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist)
-[**NdisAllocateNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlist)
-[**NdisAllocateNetBufferListContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistcontext)
-[**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool)
-[**NdisAllocateNetBufferMdlAndData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffermdlanddata)
-[**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferpool)
-[**NdisAllocateReassembledNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatereassemblednetbufferlist)
-[**NdisCopyFromNetBufferToNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscopyfromnetbuffertonetbuffer)
-[**NdisCopyReceiveNetBufferListInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscopyreceivenetbufferlistinfo)
-[**NdisCopySendNetBufferListInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscopysendnetbufferlistinfo)
-[**NdisFreeCloneNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreeclonenetbufferlist)
-[**NdisFreeFragmentNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreefragmentnetbufferlist)
-[**NdisFreeMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl)
-[**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer)
-[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist)
-[**NdisFreeNetBufferListContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlistcontext)
-[**NdisFreeNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlistpool)
-[**NdisFreeNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferpool)
-[**NdisFreeReassembledNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreereassemblednetbufferlist)
-[**NdisGetDataBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetdatabuffer)
-[**NdisGetMdlPhysicalArraySize**](https://docs.microsoft.com/windows-hardware/drivers/network/ndisgetmdlphysicalarraysize)
-[**NdisGetPoolFromNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetpoolfromnetbuffer)
-[**NdisGetPoolFromNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetpoolfromnetbufferlist)
-[**NdisQueryMdl**](https://docs.microsoft.com/windows-hardware/drivers/network/ndisquerymdl)
-[**NdisQueryMdlOffset**](https://docs.microsoft.com/windows-hardware/drivers/network/ndisquerymdloffset)
-[**NdisQueryNetBufferPhysicalCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisquerynetbufferphysicalcount)
-[**NdisRetreatNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferdatastart)
+[**NdisAdvanceNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferdatastart) 
+[**NdisAdvanceNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisadvancenetbufferlistdatastart) 
+[**NdisAllocateCloneNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocateclonenetbufferlist) 
+[**NdisAllocateFragmentNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatefragmentnetbufferlist) 
+[**NdisAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatemdl) 
+[**NdisAllocateNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffer) 
+[**NdisAllocateNetBufferAndNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferandnetbufferlist) 
+[**NdisAllocateNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlist) 
+[**NdisAllocateNetBufferListContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistcontext) 
+[**NdisAllocateNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferlistpool) 
+[**NdisAllocateNetBufferMdlAndData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbuffermdlanddata) 
+[**NdisAllocateNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatenetbufferpool) 
+[**NdisAllocateReassembledNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatereassemblednetbufferlist) 
+[**NdisCopyFromNetBufferToNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscopyfromnetbuffertonetbuffer) 
+[**NdisCopyReceiveNetBufferListInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscopyreceivenetbufferlistinfo) 
+[**NdisCopySendNetBufferListInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscopysendnetbufferlistinfo) 
+[**NdisFreeCloneNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreeclonenetbufferlist) 
+[**NdisFreeFragmentNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreefragmentnetbufferlist) 
+[**NdisFreeMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreemdl) 
+[**NdisFreeNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbuffer) 
+[**NdisFreeNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlist) 
+[**NdisFreeNetBufferListContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlistcontext) 
+[**NdisFreeNetBufferListPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferlistpool) 
+[**NdisFreeNetBufferPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreenetbufferpool) 
+[**NdisFreeReassembledNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreereassemblednetbufferlist) 
+[**NdisGetDataBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetdatabuffer) 
+[**NdisGetMdlPhysicalArraySize**](https://docs.microsoft.com/windows-hardware/drivers/network/ndisgetmdlphysicalarraysize) 
+[**NdisGetPoolFromNetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetpoolfromnetbuffer) 
+[**NdisGetPoolFromNetBufferList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetpoolfromnetbufferlist) 
+[**NdisQueryMdl**](https://docs.microsoft.com/windows-hardware/drivers/network/ndisquerymdl) 
+[**NdisQueryMdlOffset**](https://docs.microsoft.com/windows-hardware/drivers/network/ndisquerymdloffset) 
+[**NdisQueryNetBufferPhysicalCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisquerynetbufferphysicalcount) 
+[**NdisRetreatNetBufferDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferdatastart) 
 [**NdisRetreatNetBufferListDataStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisretreatnetbufferlistdatastart)
 
 

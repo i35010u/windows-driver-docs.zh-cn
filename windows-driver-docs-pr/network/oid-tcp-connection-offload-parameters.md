@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_CONNECTION_OFFLOAD_PARAMETERS，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a30f17bf5e126bc464d5b53a7d73a23ee15d834a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d3d4a1b229dfb4be81bdb4854255b82950cc6926
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843907"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916802"
 ---
 # <a name="oid_tcp_connection_offload_parameters"></a>OID_TCP_CONNECTION_OFFLOAD_PARAMETERS
 
@@ -33,8 +33,5 @@ ms.locfileid: "72843907"
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

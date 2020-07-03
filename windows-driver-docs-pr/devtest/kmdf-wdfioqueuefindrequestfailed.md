@@ -1,6 +1,6 @@
 ---
 title: WdfIoQueueFindRequestFailed 规则（kmdf）
-description: WdfIoQueueFindRequestFailed 规则指定仅应在 WdfIoQueueFindRequestFailed 返回状态\_SUCCESS 后调用 WdfIoQueueRetrieveFoundRequest 或 WdfObjectDereference。
+description: WdfIoQueueFindRequestFailed 规则指定仅应在 WdfIoQueueFindRequestFailed 返回状态成功后调用 WdfIoQueueRetrieveFoundRequest 或 WdfObjectDereference \_ 。
 ms.assetid: 9D211A0A-36CB-4083-B379-EE1C34A7B50F
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 76139a1f691f5a7054692a389908cbfd6f00d463
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 867743dd92c2f43f482ffef0cc4476d041b0a704
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839432"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917983"
 ---
 # <a name="wdfioqueuefindrequestfailed-rule-kmdf"></a>WdfIoQueueFindRequestFailed 规则（kmdf）
 
 
-**WdfIoQueueFindRequestFailed**规则指定仅应在**WdfIoQueueFindRequestFailed**返回状态\_SUCCESS 后调用[**WdfIoQueueRetrieveFoundRequest**](kmdf-wdfioqueueretrievefoundrequest.md)或[**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference) 。
+**WdfIoQueueFindRequestFailed**规则指定仅应在**WdfIoQueueFindRequestFailed**返回状态成功后调用[**WdfIoQueueRetrieveFoundRequest**](kmdf-wdfioqueueretrievefoundrequest.md)或[**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference) \_ 。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,8 +55,8 @@ ms.locfileid: "72839432"
 <a name="applies-to"></a>适用于
 ----------
 
-[**WdfIoQueueFindRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest)
-[**WdfIoQueueRetrieveFoundRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievefoundrequest)
+[**WdfIoQueueFindRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueuefindrequest) 
+[**WdfIoQueueRetrieveFoundRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievefoundrequest) 
 [**WdfObjectDereference**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfobjectdereference)
  
 

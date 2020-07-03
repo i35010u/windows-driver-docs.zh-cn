@@ -5,12 +5,12 @@ ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES，OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a50c3deb16aade12857130a8d9ac30b0984fd0ef
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 4e922335372512effda090610f7928c668e3d142
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235450"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916610"
 ---
 # <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
 
@@ -97,10 +97,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES 的 OID 处理程序的行为应如下
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows 10 版本 1709 |
-| Header | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1709**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 

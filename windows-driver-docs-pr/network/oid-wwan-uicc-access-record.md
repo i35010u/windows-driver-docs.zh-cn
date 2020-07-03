@@ -6,12 +6,12 @@ ms.date: 04/10/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_UICC_ACCESS_RECORD 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 283f8ea15e012d62a531ac73501a5c5225c7c3e4
-ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
+ms.openlocfilehash: 2f853fe0585d16a30400f208f4062752e06f6d90
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443009"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916596"
 ---
 # <a name="oid_wwan_uicc_access_record"></a>OID_WWAN_UICC_ACCESS_RECORD
 
@@ -25,14 +25,11 @@ OID_WWAN_UICC_ACCESS_RECORD 访问 UICC 线性固定或循环文件，其结构�
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 
-[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)
+[MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE](ndis-status-wwan-uicc-record-response.md)
 

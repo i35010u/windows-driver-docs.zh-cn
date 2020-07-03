@@ -1,23 +1,23 @@
 ---
 title: OID_CO_TAPI_GET_CALL_DIAGNOSTICS
-description: 本主题介绍 OID_CO_TAPI_GET_CALL_DIAGNOSTICS 对象标识符 (OID)。
+description: 本主题介绍 OID_CO_TAPI_GET_CALL_DIAGNOSTICS 对象标识符（OID）。
 ms.assetid: 5b0b1a96-9d66-4ee3-9b9a-3341ca3a4b5c
 keywords:
 - OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a2aba33822e587782642eb0e58308b57c1d1f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 984bda7c7eace1c0999eab3b34a8dff241b9ec16
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383260"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917528"
 ---
-# <a name="oidcotapigetcalldiagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
+# <a name="oid_co_tapi_get_call_diagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 
-OID_CO_TAPI_GET_CALL_DIAGNOSTICS OID 请求呼叫管理器或 MCM 驱动程序返回有关失败的调用或调用远程 TAPI 方在拆解的诊断信息。
+OID_CO_TAPI_GET_CALL_DIAGNOSTICS OID 请求一个调用管理器或 MCM 驱动程序返回有关失败的调用的诊断信息或远程 TAPI 方已断开的调用。
 
-此请求使用 CO_TAPI_CALL_DIAGNOSTICS 结构，其定义，如下所示：
+此请求使用 CO_TAPI_CALL_DIAGNOSTICS 结构，定义如下：
 
 ```c++
 typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
@@ -28,71 +28,68 @@ typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
 ```
 
 **ulOrigin**  
-指定调用的来源为以下 LINECALLORIGIN_ 常量之一： 
+将调用的源指定为以下 LINECALLORIGIN_ 常量之一： 
 
 - **LINECALLORIGIN_OUTBOUND**  
-调用是传出呼叫。
+此调用为传出呼叫。
 
 - **LINECALLORIGIN_INTERNAL**  
-调用是传入和来自内部 （在相同的 PBX，例如)。
+呼叫传入并内部发出（例如，在同一 PBX 上）。
 
-- **LINECALLORIGIN_EXTERNAL**的调用是传入和起源于外部。
+- **LINECALLORIGIN_EXTERNAL**调用是传入的，并从外部发出。
 
 - **LINECALLORIGIN_UNKNOWN**  
-传入调用。 其源是当前未知但可能会变得更高版本已知。
+调用是传入的。 其源目前未知，但以后可能会被识别。
 
 - **LINECALLORIGIN_UNAVAIL**  
-传入调用。 源不可用，并且永远不会将已知。
+调用是传入的。 它的源不可用，因此永远不会被识别。
 
 - **LINECALLORIGIN_CONFERENCE**  
-调用句柄适用于一场电话会议-即，为与会议桥在交换机中的应用程序的连接。
+调用句柄用于电话会议，即，应用程序连接到交换机中的 "网桥"。
 
 **ulReason**  
-指定在调用的原因为以下 LINECALLREASON_ 常量之一： 
+将调用的原因指定为以下 LINECALLREASON_ 常量之一： 
 
 - **LINECALLREASON_DIRECT**  
-直接调用。
+调用为 direct。
 
 - **LINECALLREASON_FWDBUSY**  
-调用已从忙扩展转发。
+调用已从繁忙的扩展中转发。
 
 - **LINECALLREASON_FWDNOANSWER**  
-调用已将转发之后一定数量的环来自未答复的扩展插件。
+从无应答扩展发送一定数量的震铃后，调用被转发。
 
 - **LINECALLREASON_FWDUNCOND**  
-已从另一个数无条件转发调用。
+此调用从另一个数字中无条件转发。
 
 - **LINECALLREASON_PICKUP**  
-在调用另一个扩展从信箱接听。
+从另一个扩展中选取了调用。
 
 - **LINECALLREASON_UNPARK**  
-在调用，作为归位调用进行检索。
+调用被检索为寄存调用。
 
 - **LINECALLREASON_REDIRECT**  
-调用已重定向到此工作站。
+呼叫已重定向到此工作站。
 
 - **LINECALLREASON_CALLCOMPLETION**  
-在调用时调用完成请求的结果。
+调用是调用完成请求的结果。
 
 - **LINECALLREASON_TRANSFER**  
-从另一个数转移呼叫。 参与方的标识符信息可能指示调用方是谁以及从转移呼叫。
+调用已从另一个数字传输。 参与方标识符信息可以指示调用方是谁以及从何处传输呼叫。
 
 - **LINECALLREASON_REMINDER**  
-在调用是提醒你 （或"还记得"），用户必须停放的调用或在保留的时间可能很长。
+此呼叫是一个提醒（或 "回忆"），用户有可能长时间暂停或处于暂停状态。
 
 - **LINECALLREASON_UNKNOWN**  
-调用的原因是当前未知但可能会变得更高版本已知。
+调用的原因目前未知，但稍后可能会被识别。
 
 - **LINECALLREASON_UNAVAIL**  
-在调用的原因不可用，并且不能变得更高版本已知。
+调用的原因不可用，稍后无法识别。
 
 **DiagInfo**  
-指定[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，其中包含的偏移量，以及由呼叫管理器或 MCM 驱动程序提供的可选诊断信息的长度。 内容和格式的诊断信息是驱动程序确定。
+指定包含偏移量的[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，以及由调用管理器或 MCM 驱动程序提供的可选诊断信息的长度。 诊断信息的内容和格式由驱动程序确定。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

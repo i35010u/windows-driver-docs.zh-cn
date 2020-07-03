@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b237d2e0ea3c34261a8a06fdddcbe1ec630adc8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 88add45091a4f03a9b733b4a5328e29266addeba
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839584"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916367"
 ---
 # <a name="pcunmapallocatedpages-rule-audio"></a>PcUnmapAllocatedPages 规则（音频）
 
@@ -27,13 +27,11 @@ PcUnmapAllocatedPages 规则指定：
 -   PortCls 微型端口驱动程序不会映射当前映射的 MDL，而不先取消其映射。
 -   PortCls 微型端口驱动程序在使用[IMiniportWaveRTStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstream)接口释放内存之前 messagebox 取消内存。
 
-|              |       |
-|--------------|-------|
-| 驱动程序模型 | Audio |
+**驱动程序模型：音频**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00071004） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00071004） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -51,7 +49,7 @@ PcUnmapAllocatedPages 规则指定：
 <tr class="odd">
 <td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain 音频</strong>。</p>
 <p>例如：</p>
-<p><strong>verifier/domain 音频</strong>[<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
+<p><strong>verifier/domain 音频</strong>[<em>options</em>] <strong>/driver</strong> <em> &lt; yourdriver &gt; </em></p>
 <p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>

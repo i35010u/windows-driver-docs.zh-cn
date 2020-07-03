@@ -1,6 +1,6 @@
 ---
 title: PowerIrpDDIs 规则（wdm）
-description: PowerIrpDDIs 规则指定当驱动程序处理系统或设备 IRP\_MJ\_使用 IRP\_MN\_设置\_电源时，它不应调用只能在被动\_级别调用的 DDIs。
+description: PowerIrpDDIs 规则指定当驱动程序使用 IRP MN 设置的电源处理系统或设备 IRP \_ MJ \_ 功能时 \_ \_ \_ ，它不应调用只能在被动级别调用的 DDIs \_ 。
 ms.assetid: C56C73E5-75D6-427A-8582-24D6B1404A70
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ffedda72bc424c36def38911c199c649512f72
-ms.sourcegitcommit: 1c9663adcbcb23167c5f2a10b36963e5d5c25c99
+ms.openlocfilehash: 2bc9e5a92bd560c7fc730382b943e32011d69271
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78289782"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918071"
 ---
 # <a name="powerirpddis-rule-wdm"></a>PowerIrpDDIs 规则（wdm）
 
 
-**PowerIrpDDIs**规则指定当驱动程序处理系统或设备 IRP\_MJ\_使用 IRP\_MN\_设置\_电源时，它不应调用只能在被动\_级别调用的 DDIs。
+**PowerIrpDDIs**规则指定当驱动程序使用 irp MN 设置的电源处理系统或设备 IRP \_ MJ 功能时 \_ \_ \_ \_ ，它不应调用只能在被动级别调用的 DDIs \_ 。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -43,7 +41,7 @@ ms.locfileid: "78289782"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>PowerIrpDDIs</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>

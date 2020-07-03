@@ -1,26 +1,23 @@
 ---
 title: OID_802_3_XMIT_DEFERRED
-description: 本主题介绍 OID_802_3_XMIT_DEFERRED 对象标识符 (OID)。
+description: 本主题介绍 OID_802_3_XMIT_DEFERRED 对象标识符（OID）。
 ms.assetid: 1E406A88-1100-407C-B533-5A6C0086D630
 keywords:
 - OID_802_3_XMIT_DEFERRED
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b65efb6fed21f97e4c99205ccbed2fd9f0fe3d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b3a0f377cbd41d833c8d2a66524c86d7979254d
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916407"
 ---
-# <a name="oid8023xmitdeferred"></a>OID_802_3_XMIT_DEFERRED
+# <a name="oid_802_3_xmit_deferred"></a>OID_802_3_XMIT_DEFERRED
 
-已成功传输后 NIC 交由至少一次传输的帧数。
+在 NIC 延迟传输至少一次后成功传输的帧数。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

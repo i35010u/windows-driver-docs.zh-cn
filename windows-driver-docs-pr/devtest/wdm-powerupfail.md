@@ -1,6 +1,6 @@
 ---
 title: PowerUpFail 规则（wdm）
-description: PowerUpFail 规则指定 FDO 或 FIDO 驱动程序不应使 IRP\_MN 在设备开启时\_电源请求\_设置。
+description: PowerUpFail 规则指定在设备开启时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。
 ms.assetid: 48998C82-91F6-42F9-AF7A-4E5ECAB823E1
 ms.date: 05/21/2018
 keywords:
@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ffe15cc0eab5e91b617865fdc2c5e9c0e610a8a0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 515406cc86d54e47aaae855ce80b3e01d37bfd7e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839138"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918069"
 ---
 # <a name="powerupfail-rule-wdm"></a>PowerUpFail 规则（wdm）
 
 
-PowerUpFail 规则指定 FDO 或 FIDO 驱动程序不应使 IRP\_MN 在设备开启时\_电源请求\_设置。
+PowerUpFail 规则指定在设备开启时，FDO 或 FIDO 驱动程序不应使 IRP \_ MN \_ 设置 \_ 电源请求失败。
 
 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -59,10 +57,10 @@ PowerUpFail 规则指定 FDO 或 FIDO 驱动程序不应使 IRP\_MN 在设备开
 <a name="applies-to"></a>适用于
 ----------
 
-[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
-[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)
-[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
-[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)
+[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 
+[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 
+[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) 
 [**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)
  
 

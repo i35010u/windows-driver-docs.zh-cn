@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3556bce13adf5ec9bb5a587cc5082c0b3afc6ba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ade31a555814edc0a1791d6382fa74ba4e6f6301
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843904"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917629"
 ---
 # <a name="oid_tcp_offload_hardware_capabilities"></a>OID_TCP_OFFLOAD_HARDWARE_CAPABILITIES
 
@@ -25,7 +25,7 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序向 NDI
 
 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)结构。 如果缓冲区不够大，NDIS 将返回 NDIS_STATUS_BUFFER_TOO_SHORT。
 
-确定微型端口适配器的硬件功能后，上层应用程序或驱动程序可以使用[OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) OID 来启用当前报告为 OID_TCP_OFFLOAD_CURRENT 不启用的功能。 [_CONFIG](oid-tcp-offload-current-config.md) OID。
+确定微型端口适配器的硬件功能后，上层应用程序或驱动程序可以使用[OID_TCP_OFFLOAD_PARAMETERS](oid-tcp-offload-parameters.md) oid 来启用[OID_TCP_OFFLOAD_CURRENT_CONFIG](oid-tcp-offload-current-config.md) OID 当前报告为未启用的功能。
 
 ### <a name="see-also"></a>另请参阅
 
@@ -36,8 +36,5 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序向 NDI
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

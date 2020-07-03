@@ -1,6 +1,6 @@
 ---
 title: DeviceCreateFail 规则（kmdf）
-description: DeviceCreateFail 规则指定在对 WdfDeviceCreate 的调用失败时，\_WDF\_驱动程序\_设备\_ADD 返回错误状态。
+description: DeviceCreateFail 规则指定 \_ \_ 如果对 \_ \_ WdfDeviceCreate 的调用失败，则将返回一个错误状态。
 ms.assetid: 07272d72-d9a2-42b2-b89b-c7bc903c1425
 ms.date: 05/21/2018
 keywords:
@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 79976fd5f13ec93d0586cf6279683e4a62c488cb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1d090cfe3e21ccef632bc686dc57d5a1d1a32853
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839516"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918019"
 ---
 # <a name="devicecreatefail-rule-kmdf"></a>DeviceCreateFail 规则（kmdf）
 
 
-**DeviceCreateFail**规则指定在对[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的调用失败时，\_WDF\_驱动程序\_设备\_ADD 返回错误状态。
+**DeviceCreateFail**规则指定 \_ 如果对 \_ \_ \_ [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的调用失败，则将返回一个错误状态。
 
 若要使驱动程序对设备进行服务，必须成功创建设备对象。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -45,7 +43,7 @@ ms.locfileid: "72839516"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>DeviceCreateFail</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -56,7 +54,7 @@ ms.locfileid: "72839516"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)

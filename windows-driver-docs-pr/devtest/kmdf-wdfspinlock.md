@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2544f86ba1d11398055d860d10afb19833faa35f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f38aa51f0179b12465b2f4bebd44d5960d6672e1
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840142"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916763"
 ---
 # <a name="wdfspinlock-rule-kmdf"></a>WdfSpinlock 规则（kmdf）
 
 
 **WdfSpinlock**规则指定对[**WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))方法的调用与[**WdfSpinlockRelease**](kmdf-wdfspinlockrelease.md)一起用于严格替换。 在任何 KMDF 回调例程结束时，驱动程序不应持有先前对**WdfSpinLockAcquire**的调用获取的框架旋转锁对象。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,8 +55,8 @@ ms.locfileid: "72840142"
 <a name="applies-to"></a>适用于
 ----------
 
-[**WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85))
-[**WdfSpinLockCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfspinlockcreate)
+[**WdfSpinLockAcquire**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550040(v=vs.85)) 
+[**WdfSpinLockCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfsync/nf-wdfsync-wdfspinlockcreate) 
 [**WdfSpinLockRelease**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550044(v=vs.85))
  
 

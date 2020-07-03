@@ -1,6 +1,6 @@
 ---
-title: Init\_RegisterSG 规则（ndis）
-description: Init\_RegisterSG 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消在初始化过程中出现的散播聚集列表（SG）的注册。如果在 MiniportInitializeEx 期间至少调用了一次 NdisMRegisterScatterGatherDma，则 NdisMDeregisterScatterGatherDma 函数应在 MiniportHaltEx 中至少调用一次。
+title: Init \_ RegisterSG 规则（ndis）
+description: Init \_ RegisterSG 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消在初始化期间发生的散播聚集列表（SG）的注册。如果在 MiniportInitializeEx 期间至少调用了一次 NdisMRegisterScatterGatherDma，则 NdisMDeregisterScatterGatherDma 函数应在 MiniportHaltEx 中至少调用一次。
 ms.assetid: c4d00be1-b44b-4769-bbe6-6128a742d088
 ms.date: 05/21/2018
 keywords:
@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 74eaa4df2927031932ad70201c9164bc6fdafc5a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c1d9b5023f6d8c9fc0a65f3db4c870578f1bdd34
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840116"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918047"
 ---
-# <a name="init_registersg-rule-ndis"></a>Init\_RegisterSG 规则（ndis）
+# <a name="init_registersg-rule-ndis"></a>Init \_ RegisterSG 规则（ndis）
 
 
-Init\_RegisterSG 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消在初始化过程中出现的散播聚集列表（SG）的注册。
+Init \_ RegisterSG 规则指定如果在初始化过程中出现问题或在停止微型端口驱动程序的过程中出现问题，则必须撤消在初始化期间发生的散播聚集列表（SG）的注册。
 
 如果在**MiniportInitializeEx**期间至少调用了一次**NdisMRegisterScatterGatherDma** ，则**NdisMDeregisterScatterGatherDma**函数应在**MiniportHaltEx**中至少调用一次。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -45,7 +43,7 @@ Init\_RegisterSG 规则指定如果在初始化过程中出现问题或在停止
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>Init_RegisterSG</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -59,7 +57,7 @@ Init\_RegisterSG 规则指定如果在初始化过程中出现问题或在停止
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisMDeregisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterscattergatherdma)
+[**NdisMDeregisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismderegisterscattergatherdma) 
 [ **NdisMRegisterScatterGatherDma**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterscattergatherdma)
  
 

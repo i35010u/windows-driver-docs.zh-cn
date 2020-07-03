@@ -3,14 +3,14 @@ title: NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS 通知来通知移动宽带（MB）服务完成了上一个 OID_WWAN_SAR_TRANSMISSION_STATUS 查询或设置请求。
 ms.assetid: 0F04AC31-A16F-4E6A-A5FF-A69574A300A1
 ms.date: 08/20/2018
-keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 56799aa77088fee7be66d1efe8d4884c089b3ae1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f9c25655c1a0e676d59c80442720e44ef803ed2e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844646"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918013"
 ---
 # <a name="ndis_status_wwan_sar_transmission_status"></a>NDIS_STATUS_WWAN_SAR_TRANSMISSION_STATUS
 
@@ -22,10 +22,7 @@ ms.locfileid: "72844646"
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1703 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1703**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 

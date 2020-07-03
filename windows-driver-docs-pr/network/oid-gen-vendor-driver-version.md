@@ -1,34 +1,31 @@
 ---
 title: OID_GEN_VENDOR_DRIVER_VERSION
-description: 为查询，OID_GEN_VENDOR_DRIVER_VERSION OID 指定微型端口驱动程序的供应商分配版本号。
+description: 作为查询，OID_GEN_VENDOR_DRIVER_VERSION OID 指定了供应商分配的微型端口驱动程序的版本号。
 ms.assetid: 37CB6A21-9AF2-49BF-AFBA-868C0C6C5383
 keywords:
 - OID_GEN_VENDOR_DRIVER_VERSION
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e69adabe84a2320f4e9e28209b7d7e64817d0cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f25991dd8620d6372252e4526f419606910c4c20
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387865"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917007"
 ---
-# <a name="oidgenvendordriverversion"></a>OID_GEN_VENDOR_DRIVER_VERSION
+# <a name="oid_gen_vendor_driver_version"></a>OID_GEN_VENDOR_DRIVER_VERSION
 
-为查询，OID_GEN_VENDOR_DRIVER_VERSION OID 指定微型端口驱动程序的供应商分配版本号。
+作为查询，OID_GEN_VENDOR_DRIVER_VERSION OID 指定了供应商分配的微型端口驱动程序的版本号。
 
-不支持组的请求。
+不支持设置请求。
 
 ## <a name="remarks"></a>备注
 
-返回值的低位部分指定的次版本;高序位后半部分指定的主版本。
+返回值的低序位半部分指定次要版本;高阶半部分指定主要版本。
 
-此 OID 是必需的 NDIS 6.0 和更高版本的微型端口驱动程序。
+此 OID 对于 NDIS 6.0 和更高的微型端口驱动程序是必需的。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

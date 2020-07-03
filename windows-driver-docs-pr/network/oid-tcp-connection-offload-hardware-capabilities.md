@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 14ceddf0dbc5153583213be493e3657ff5fdb368
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5c27eec05a4aa22749c836d58595c41e1f13628e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843910"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916152"
 ---
 # <a name="oid_tcp_connection_offload_hardware_capabilities"></a>OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES
 
@@ -25,7 +25,7 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告�
 
 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)结构的**InformationBuffer**成员包含[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)结构。
 
-为响应 OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，NDIS_TCP_CONNECTION_OFFLOAD 的**封装**成员定义了微型端口适配器的当前数据包封装硬件功能。 NDIS 提供**封装**成员中提供的标志的按位 "或"。 NDIS_TCP_CONNECTION_OFFLOAD 的其他成员包含各种连接卸载服务的设置。 有关封装和其他功能的详细信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)和[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)。
+为响应 OID_TCP_CONNECTION_OFFLOAD_HARDWARE_CAPABILITIES，NDIS_TCP_CONNECTION_OFFLOAD 的**封装**成员定义微型端口适配器的当前数据包封装硬件功能。 NDIS 提供**封装**成员中提供的标志的按位 "或"。 NDIS_TCP_CONNECTION_OFFLOAD 的其他成员包含各种连接卸载服务的设置。 有关封装和其他功能的详细信息，请参阅[NDIS_TCP_CONNECTION_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_connection_offload)和[NDIS_OFFLOAD_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload_parameters)。
 
 
 ### <a name="see-also"></a>另请参阅
@@ -36,8 +36,5 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告�
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

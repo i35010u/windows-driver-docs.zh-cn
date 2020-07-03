@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_OFFLOAD_CURRENT_CONFIG，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5db248e281e0c51b0760e60169d6344df4dfb14
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6a9083238d253e4bd9c37c75e0a692766536e98a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843906"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917643"
 ---
 # <a name="oid_tcp_offload_current_config"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -48,8 +48,5 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告�
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

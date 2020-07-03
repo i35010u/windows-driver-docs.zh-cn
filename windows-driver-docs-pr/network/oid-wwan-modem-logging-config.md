@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WWAN_MODEM_LOGGING_CONFIG 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9eaaa5fc0776d82c31c3cb5aa5b5f2de00a65ac7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cf324cec4ff5c1816f16855f844b67730525db86
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843833"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916090"
 ---
 # <a name="oid_wwan_modem_logging_config"></a>OID_WWAN_MODEM_LOGGING_CONFIG
 
@@ -30,14 +30,11 @@ OID_WWAN_MODEM_LOGGING_CONFIG 用于配置调制解调器收集的日志以及�
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 
-[MB 的调制解调器日志记录](mb-modem-logging-with-dss.md)
+[使用 DSS 进行 MB 调制解调器日志记录](mb-modem-logging-with-dss.md)
 
 [NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG](ndis-status-wwan-modem-logging-config.md)
 

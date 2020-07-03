@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f2413cac19434e17f875f44839d04cc00d38037e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e8d6965d6478fd3efe3ccb4df8ce1fb0b2df336
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839514"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916239"
 ---
 # <a name="deviceinitapi-rule-kmdf"></a>DeviceInitAPI 规则（kmdf）
 
 
 对于 FDO 设备，必须先调用框架设备对象初始化方法和框架 FDO 初始化方法，然后再调用设备对象的[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)方法。
 
-对于 FDO 设备，不能在驱动程序调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)的情况下调用将信息存储在[\_WDFDEVICE](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)中的框架设备对象初始化方法和框架 FDO 初始化方法框架设备对象。
+对于 FDO 设备，在驱动程序为框架设备对象调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)后，不能调用在[WDFDEVICE \_ INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构中存储信息的 framework 设备对象初始化方法和框架 FDO 初始化方法。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -45,7 +43,7 @@ ms.locfileid: "72839514"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>DeviceInitAPI</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -56,7 +54,7 @@ ms.locfileid: "72839514"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)  

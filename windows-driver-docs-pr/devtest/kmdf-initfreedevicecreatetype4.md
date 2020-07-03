@@ -1,6 +1,6 @@
 ---
 title: InitFreeDeviceCreateType4 规则（kmdf）
-description: InitFreeDeviceCreateType4 规则指定如果驱动程序在调用 WdfDeviceCreate 时遇到错误时，驱动程序必须调用 WdfDeviceInitFree，并且如果驱动程序收到调用的 WDFDEVICE\_INIT 结构WdfControlDeviceInitAllocate.
+description: InitFreeDeviceCreateType4 规则指定如果驱动程序在调用 WdfDeviceCreate 时遇到错误，则驱动程序必须调用 WdfDeviceInitFree，并且如果驱动程序从对 WdfControlDeviceInitAllocate 的调用接收到 WDFDEVICE INIT 结构，则为 \_ 。
 ms.assetid: 5a521053-5d31-4e4a-8a82-48206d506916
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 99f74e0f4d2f7fa3d4e84c427764507a22e649d3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c6818b3b3ffd93ea8a28f18b597eea8f224dc1ba
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840215"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916999"
 ---
 # <a name="initfreedevicecreatetype4-rule-kmdf"></a>InitFreeDeviceCreateType4 规则（kmdf）
 
 
-**InitFreeDeviceCreateType4**规则指定当驱动程序在调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)时遇到错误时，驱动程序必须调用[**WdfDeviceInitFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) ，并且如果驱动程序收到[**WDFDEVICE\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构从对[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用。
+**InitFreeDeviceCreateType4**规则指定如果驱动程序在调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)时遇到错误，则驱动程序必须调用[**WdfDeviceInitFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree) ，并且如果驱动程序从对[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)的调用接收到[**WDFDEVICE \_ INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构，则为。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -43,7 +41,7 @@ ms.locfileid: "72840215"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>InitFreeDeviceCreateType4</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -54,21 +52,21 @@ ms.locfileid: "72840215"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
-[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)
-[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)
-[**WdfDeviceInitFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)的另请参阅
+[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate) 
+[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 
+[**WdfDeviceInitFree**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitfree)另请参阅
 --------
 
-[**InitFreeDeviceCallback**](kmdf-initfreedevicecallback.md)
-[**InitFreeDeviceCreate**](kmdf-initfreedevicecreate.md)
-[**InitFreeDeviceCreateType2**](kmdf-initfreedevicecreatetype2.md)
-[**PdoInitFreeDeviceCreateType2**](kmdf-pdoinitfreedevicecreatetype2.md)
-[**PdoInitFreeDeviceCallback**](kmdf-pdoinitfreedevicecallback.md)
-[**PdoInitFreeDeviceCreate**](kmdf-pdoinitfreedevicecreate.md)
-[**PdoInitFreeDeviceCreateType4**](kmdf-pdoinitfreedevicecreatetype4.md)
+[**InitFreeDeviceCallback**](kmdf-initfreedevicecallback.md) 
+[**InitFreeDeviceCreate**](kmdf-initfreedevicecreate.md) 
+[**InitFreeDeviceCreateType2**](kmdf-initfreedevicecreatetype2.md) 
+[**PdoInitFreeDeviceCreateType2**](kmdf-pdoinitfreedevicecreatetype2.md) 
+[**PdoInitFreeDeviceCallback**](kmdf-pdoinitfreedevicecallback.md) 
+[**PdoInitFreeDeviceCreate**](kmdf-pdoinitfreedevicecreate.md) 
+[**PdoInitFreeDeviceCreateType4**](kmdf-pdoinitfreedevicecreatetype4.md) 
 [**InitFreeNull**](kmdf-initfreenull.md)
  
 

@@ -5,12 +5,12 @@ ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
 keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2，OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 311829906f8ce32b51fd76e3cbd2681454db6e4c
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: d37979cb5fda85eb2b35fafe3f6a75da5fc6439e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235350"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916904"
 ---
 # <a name="oid_gen_receive_scale_parameters_v2"></a>OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 
@@ -57,12 +57,9 @@ OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID 发送到支持[RSSv2](receive-side-scal
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows 10 版本 1709 |
-| Header | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1709**头**： Ntddndis （包括 Ndis .h）
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [接收端缩放版本 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md)

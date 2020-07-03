@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: de64d0c05dd10f574d202ba13592acc12698b06a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b5857ac22dba7d588804c54f193916586b2bd403
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839350"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916924"
 ---
 # <a name="wlanconnectionroaming-rule-ndis"></a>WlanConnectionRoaming 规则（ndis）
 
 
 **WlanConnectionRoaming**规则验证微型端口驱动程序是否正确遵循了本机802.11 无线 LAN （WLAN）连接和漫游顺序。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00093005） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00093005） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -56,14 +54,14 @@ ms.locfileid: "72839350"
 <a name="applies-to"></a>适用于
 ----------
 
-[**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
+[**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 
 [**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)另请参阅
 --------
 
-[常规连接操作指导原则](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
-[NDIS\_STATUS\_DOT11\_连接\_启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start)
-[OID\_DOT11\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)\_
-\_[\_\_](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)\_
+[常规连接操作指导原则](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines) 
+[NDIS \_状态 \_ DOT11 \_ 连接 \_ 开始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-connection-start) 
+ [OID \_ DOT11 \_ 重置 \_ 请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request) 
+ [NDIS \_ 状态 \_ DOT11 \_ 漫游 \_ 启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-roaming-start)
  
 
  

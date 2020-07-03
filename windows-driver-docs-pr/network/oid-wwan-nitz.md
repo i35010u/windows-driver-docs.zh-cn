@@ -7,12 +7,12 @@ keywords:
 - 从 Windows Vista 开始 OID_WWAN_NITZ 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b048475b19bdd02951b4c506ceae6a56a60adeab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6ac746bd22ec03facb9a0867c00c3cbb7728a935
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843825"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916786"
 ---
 # <a name="oid_wwan_nitz"></a>OID_WWAN_NITZ
 
@@ -28,12 +28,9 @@ OID_WWAN_NITZ 用于使用网络标识和时区（NITZ）查询当前网络时�
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [MB NITZ 支持](mb-nitz-support.md)
 

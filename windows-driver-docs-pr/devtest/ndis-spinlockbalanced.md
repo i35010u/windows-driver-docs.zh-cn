@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b380aa03ec7d78329fe322024879fef057c60584
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 85031de998af58aa773095de1a7e2203e1199511
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840076"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916559"
 ---
 # <a name="spinlockbalanced-rule-ndis"></a>SpinLockBalanced 规则（ndis）
 
 
 **SpinLockBalanced**规则验证对获取旋转锁的函数的调用次数是否等于释放同一旋转锁的函数的调用次数。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | 以此 |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,9 +55,9 @@ ms.locfileid: "72840076"
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock)
-[**NdisDprAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock)
-[**NdisDprReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdprreleasespinlock)
+[**NdisAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisacquirespinlock) 
+[**NdisDprAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdpracquirespinlock) 
+[**NdisDprReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisdprreleasespinlock) 
 [**NdisReleaseSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisreleasespinlock)
  
 

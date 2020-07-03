@@ -12,29 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f192546f9c4b5fc0fc2c36e1887fd77da98a1aa7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 777906808e417767c558f5d675a6f160d6eabbe6
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839244"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916412"
 ---
 # <a name="criticalregions-rule-wdm"></a>CriticalRegions 规则（wdm）
 
 
-**CriticalRegions**规则指定在调用[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)之前驱动程序必须调用[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，并且驱动程序将在任何后续调用 **之前调用 KeLeaveCriticalRegionKeEnterCriticalRegion**。 （允许使用嵌套调用。）
+**CriticalRegions**规则指定在调用[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)之前驱动程序必须调用[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) ，并且驱动程序会在对**KeEnterCriticalRegion**的任何后续调用之前调用**KeLeaveCriticalRegion** 。 （允许使用嵌套调用。）
 
 此规则还指定在返回前，驱动程序调用**KeLeaveCriticalRegion**来重新启用正常内核异步过程调用（apc）的传递。
 
-**KeEnterCriticalRegion**和**KeLeaveCriticalRegion**的 WDK 文档说明了这些函数的调用方可以在 IRQL&lt;= APC\_级别运行。 在这种情况下，此规则将强制实施最佳做法建议。
+**KeEnterCriticalRegion**和**KeLeaveCriticalRegion**的 WDK 文档说明了这些函数的调用方可以以 IRQL &lt; = APC \_ 级别运行。 在这种情况下，此规则将强制实施最佳做法建议。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00040003） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00040003） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -83,9 +81,9 @@ ms.locfileid: "72839244"
 <a name="applies-to"></a>适用于
 ----------
 
-[**ExEnterCriticalRegionAndAcquireResourceExclusive**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn308550(v=vs.85))
-[**ExReleaseResourceAndLeaveCriticalRegion**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn308551(v=vs.85))
-[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)
+[**ExEnterCriticalRegionAndAcquireResourceExclusive**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn308550(v=vs.85)) 
+[**ExReleaseResourceAndLeaveCriticalRegion**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn308551(v=vs.85)) 
+[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion) 
 [**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)
  
 

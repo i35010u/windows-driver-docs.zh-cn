@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d94649ceeca8f44a7f2eef8bb09f0227e337e216
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7b436557596e74e52ec902b5d9e4a4af853cb0db
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839188"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916176"
 ---
 # <a name="irqliopassive1-rule-wdm"></a>IrqlIoPassive1 规则（wdm）
 
 
-**IrqlIoPassive1**规则指定，仅当驱动程序在 IRQL = 被动\_级别执行时才调用以下例程：
+**IrqlIoPassive1**规则指定仅当驱动程序在 IRQL = 被动级别执行时才调用以下例程 \_ ：
 
 -   [**IoAttachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice)
 
@@ -30,17 +30,15 @@ ms.locfileid: "72839188"
 
 -   [**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)
 
-此规则还指定，仅当驱动程序在以下情况下执行时才会调用以下例程： IRQL = 被动\_级别或 IRQL = APC\_级别：
+规则还指定该驱动程序仅在以下情况下才会调用以下例程： IRQL = 被动 \_ 级别或 IRQL = APC \_ 级别：
 
 -   [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x0002000A） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x0002000A） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -89,9 +87,9 @@ ms.locfileid: "72839188"
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAttachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice)
-[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
-[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
+[**IoAttachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice) 
+[**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest) 
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 
 [**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)
  
 

@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_UICC_APP_LIST 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 47eac27b7135245e64775ff89ab1a4054441ee72
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: da57f9d8586c957cb49d2da8f25e45ac8ca2531c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843772"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916594"
 ---
 # <a name="oid_wwan_uicc_app_list"></a>OID_WWAN_UICC_APP_LIST
 
@@ -29,14 +29,11 @@ OID_WWAN_UICC_APP_LIST 在 UICC 中检索应用程序的列表以及这些应用
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 
-[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)
+[MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_UICC_UICC_APP_LIST](ndis-status-wwan-uicc-app-list.md)
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 95456f604ae33f9834e2343153f1f16b70c5cdfa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 93c294ff91a3557ffc8bc9279504ce2931163bd7
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917317"
 ---
 # <a name="iosetcompletionroutinenonpnpdriver-rule-wdm"></a>IoSetCompletionRoutineNonPnpDriver 规则（wdm）
 
@@ -26,9 +26,7 @@ ms.locfileid: "72839202"
 
 在将驱动程序标记为卸载后， [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)例程将避免实际的驱动程序映像卸载。 这适用于非 PnP 驱动程序，因为在发生删除或卸载时，PnP 管理器不会向其发送通知。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -45,7 +43,7 @@ ms.locfileid: "72839202"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>IoSetCompletionRoutineNonPnpDriver</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -56,7 +54,7 @@ ms.locfileid: "72839202"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)

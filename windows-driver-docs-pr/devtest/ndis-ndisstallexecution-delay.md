@@ -1,6 +1,6 @@
 ---
-title: NdisStallExecution\_延迟规则（ndis）
-description: NdisStallExecution\_延迟规则指定绝不能使用大于50微秒的 MicrosecondsToStall 值来调用 NdisStallExecution。
+title: NdisStallExecution \_ 延迟规则（ndis）
+description: NdisStallExecution \_ 延迟规则指定绝不能使用大于50微秒的 MicrosecondsToStall 的值调用 NdisStallExecution。
 ms.assetid: 4c9368d0-4da7-4adc-bc63-4f21af90b682
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c7831bb4c61d194565aac8c1fece3f5cce540a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b8b50d9603243753016ba98ac7e5bc81d67a91eb
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917589"
 ---
-# <a name="ndisstallexecution_delay-rule-ndis"></a>NdisStallExecution\_延迟规则（ndis）
+# <a name="ndisstallexecution_delay-rule-ndis"></a>NdisStallExecution \_ 延迟规则（ndis）
 
 
-NdisStallExecution\_延迟规则指定绝不能使用大于50微秒的*MicrosecondsToStall*值来调用**NdisStallExecution** 。
+NdisStallExecution \_ 延迟规则指定绝不能使用大于50微秒的*MicrosecondsToStall*的值调用**NdisStallExecution** 。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -43,7 +41,7 @@ NdisStallExecution\_延迟规则指定绝不能使用大于50微秒的*Microseco
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>NdisStallExecution_Delay</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -54,7 +52,7 @@ NdisStallExecution\_延迟规则指定绝不能使用大于50微秒的*Microseco
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**NdisStallExecution**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisstallexecution)

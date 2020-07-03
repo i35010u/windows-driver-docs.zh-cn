@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ebffcdd876c8b2bc402b0c00f0a4157c6317ce5b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8961a469928e8f6bf01ac476c7e17bd70ae5ae2e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839847"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917182"
 ---
 # <a name="signaleventincompletion3-rule-wdm"></a>SignalEventInCompletion3 规则（wdm）
 
 
-**SignalEventInCompletion3**规则指定在处理异步 IRP 时，如果设置了**IRP&gt;的 PendingReturned**标志，则驱动程序需要在完成例程中调用[**KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
+**SignalEventInCompletion3**规则指定在处理异步 IRP 时，如果设置了**IRP- &gt; PendingReturned**标志，驱动程序需要在完成例程中调用[**KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent) 。
 
 在这种情况下，将不会调用完成例程。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -59,8 +57,8 @@ ms.locfileid: "72839847"
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)
-[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)
+[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 
+[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) 
 [**KeInitializeEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent)
  
 

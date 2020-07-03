@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af85249dd08229b2cc4208a599e15ae5e110165
-ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
+ms.openlocfilehash: dc91bbc89e2c40498849627859eac7d4b005f72b
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81219525"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917927"
 ---
 # <a name="ksinvalidstreampointer-rule-ks"></a>KsInvalidStreamPointer 规则（ks）
 
@@ -28,13 +28,11 @@ https://docs.microsoft.com/windows-hardware/drivers/stream/leading-and-trailing-
 
 此规则还验证是否尚未使用[KsStreamPointerDelete](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)来尝试删除非克隆的流指针。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | KS  |
+**驱动程序模型： KS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x0008100C） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x0008100C） |
 
 <a name="example"></a>示例
 -------
@@ -74,14 +72,14 @@ KsStreamPointerDelete (NULL);
 <td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain ks</strong>。</p>
 <p>例如：</p>
 <p></p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">驱动程序验证程序</a>。</p></td>
+<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**验证程序/domain ks** \[*选项*\] **/driver** *&lt;yourdriver&gt;*
+**验证程序/domain ks** \[*选项* \]**/driver** * &lt; yourdriver &gt; *
 
 <table>
 <colgroup>

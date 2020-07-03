@@ -1,6 +1,6 @@
 ---
 title: IoSetCompletionRoutineExCheckDeviceObject 规则（wdm）
-description: IoSetCompletionRoutineExCheckDeviceObject 规则指定，如果当前设备对象未传递到 IoSetCompletionRoutineEx，而较低的设备对象为，则可能会导致争用条件，甚至可以卸载当前设备对象虽然完成例程尚未运行。
+description: IoSetCompletionRoutineExCheckDeviceObject 规则指定，如果当前设备对象未传递到 IoSetCompletionRoutineEx，而较低的设备对象为，则可能会导致争用条件，即使完成例程尚未运行，也可以卸载当前设备对象。
 ms.assetid: 037E4CED-FBC7-480F-B81F-561396A217C6
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f01d036e01f64033fc65951407d3bdbe428b365e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: be1d7cee0f430b2eaf32180a871483a730d2cf28
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839942"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917533"
 ---
 # <a name="iosetcompletionroutineexcheckdeviceobject-rule-wdm"></a>IoSetCompletionRoutineExCheckDeviceObject 规则（wdm）
 
 
-**IoSetCompletionRoutineExCheckDeviceObject**规则指定，如果当前设备对象未传递到[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) ，而较低的设备对象为，则可能会导致争用条件，当前设备对象可以即使完成例程尚未运行，也要卸载。
+**IoSetCompletionRoutineExCheckDeviceObject**规则指定，如果当前设备对象未传递到[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) ，而较低的设备对象为，则可能会导致争用条件，即使完成例程尚未运行，也可以卸载当前设备对象。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -43,7 +41,7 @@ ms.locfileid: "72839942"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>IoSetCompletionRoutineExCheckDeviceObject</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -54,7 +52,7 @@ ms.locfileid: "72839942"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)

@@ -6,16 +6,16 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_SAP
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c257d84f9ff3b34a23b0685d4a170f3cd4145a29
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ba8f5fe10bbabec2e7a63491a2d90a571f1273a8
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844948"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917501"
 ---
 # <a name="oid_co_tapi_translate_tapi_sap"></a>OID_CO_TAPI_TRANSLATE_TAPI_SAP
 
-OID_CO_TAPI_TRANSLATE_TAPI_SAP OID 请求调用管理器或集成 MCM 驱动程序，以便从 TAPI 调用参数中准备一个或多个 Sap。 查询此 OID 的客户端使用调用管理器或 MCM 驱动程序返回的 NDIS SAP 作为输入（格式化为[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构）到[NdisClRegisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)，客户端调用该客户端调用来注册要接收传入调用的 SAP。
+OID_CO_TAPI_TRANSLATE_TAPI_SAP OID 请求调用管理器或集成 MCM 驱动程序，以便从 TAPI 调用参数中准备一个或多个 Sap。 查询此 OID 的客户端使用调用管理器或 MCM 驱动程序返回的 NDIS SAP 作为输入（格式化为[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构）到[NdisClRegisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)，客户端会调用它来注册要接收传入调用的 SAP。
 
 此请求使用 CO_TAPI_TRANSLATE_SAP 结构，定义如下：
 
@@ -85,19 +85,16 @@ typedef struct _CO_TAPI_TRANSLATE_SAP {
 - **LINEMEDIAMODE_VOICEVIEW**  
 调用的媒体模式为 VoiceView。
 
-**保护**  
+**保留**  
 这是保留的。 客户端必须将此字段设置为0。
 
 **NumberOfSaps**  
-指定**NdisSapParams**中包含在缓冲区中的[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构的数量。
+指定**NdisSapParams**中包含在缓冲区中的[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构的数目。
 
 **NdisSapParams**  
-指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的可变长度数组。 每个 NDIS_VAR_DATA_DESC 结构都包含偏移量，以及[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的长度。 每个 CO_SAP 结构都指定了一个面向连接的客户端可以在其上接收传入呼叫的服务访问点（SAP）。
+指定包含一个或多个 NDIS_VAR_DATA_DESC 结构的可变长度数组。 每个 NDIS_VAR_DATA_DESC 结构都包含一个到[CO_SAP](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545392(v=vs.85))结构的偏移量以及长度。 每个 CO_SAP 结构指定一个服务访问点（SAP），面向连接的客户端可以在该点上接收传入呼叫。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

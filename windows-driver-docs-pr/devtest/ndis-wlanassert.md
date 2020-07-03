@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 158a0752bedbe9f6b339270aa9bb131a93aa7ac3
-ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
+ms.openlocfilehash: 69ad43be3b675c5a9ea4c1886c0f3f3ec734505e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81219515"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916859"
 ---
 # <a name="wlanassert-rule-ndis"></a>WlanAssert 规则（ndis）
 
@@ -37,13 +37,11 @@ ms.locfileid: "81219515"
 
 将在 0xC4 bug 检查中将*冲突文本*作为参数2提供。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00093004） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00093004） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -90,6 +88,6 @@ ms.locfileid: "81219515"
 
 [常规连接操作指导原则](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
 
-[OID\_DOT11\_RESET\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
+[OID \_ DOT11 \_ 重置 \_ 请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
 
-[NDIS\_状态\_DOT11\_关联\_开始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-start)
+[NDIS \_ 状态 \_ DOT11 \_ 关联 \_ 启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-start)

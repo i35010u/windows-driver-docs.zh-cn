@@ -1,26 +1,23 @@
 ---
 title: OID_802_3_XMIT_MAX_COLLISIONS
-description: 本主题介绍 OID_802_3_XMIT_MAX_COLLISIONS 对象标识符 (OID)。
+description: 本主题介绍 OID_802_3_XMIT_MAX_COLLISIONS 对象标识符（OID）。
 ms.assetid: 5C1349FC-073D-4DDB-9829-CCBF75E92A6A
 keywords:
 - OID_802_3_XMIT_MAX_COLLISIONS
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 083ab911dfd48b859aba3b473a89b92b895768a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d02ee67836e4e468e0a396f251fe7015bec1124a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359275"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916401"
 ---
-# <a name="oid8023xmitmaxcollisions"></a>OID_802_3_XMIT_MAX_COLLISIONS
+# <a name="oid_802_3_xmit_max_collisions"></a>OID_802_3_XMIT_MAX_COLLISIONS
 
-由于过多冲突而不传输的帧数。
+由于过多冲突而未传输的帧数。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

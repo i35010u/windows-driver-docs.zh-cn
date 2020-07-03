@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_FTM_REQUEST_TIMEOUT
-description: WDI_TLV_FTM_REQUEST_TIMEOUT 是包含最大时间 （毫秒），以完成正常计时度量 (FTM) TLV。
+description: WDI_TLV_FTM_REQUEST_TIMEOUT 是一种 TLV，其中包含完成精确计时度量值（INTERNAL.H）所用的最长时间（以毫秒为单位）。
 ms.assetid: C2C4CDEE-4CB6-49C1-8DBF-4A1AE71954ED
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_FTM_REQUEST_TIMEOUT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d5f324bf21fbd9ded8949036e63a2e4584ad854e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bd2b64133a71087cb89c201cffaa07c757fdaa64
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382889"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916147"
 ---
-# <a name="wditlvftmrequesttimeout"></a>WDI_TLV_FTM_REQUEST_TIMEOUT
+# <a name="wdi_tlv_ftm_request_timeout"></a>WDI_TLV_FTM_REQUEST_TIMEOUT
 
-**WDI_TLV_FTM_REQUEST_TIMEOUT**是包含最大时间 （毫秒），以完成正常计时度量 (FTM) TLV。
+**WDI_TLV_FTM_REQUEST_TIMEOUT**是一种 TLV，其中包含完成精确计时度量值（internal.h）所用的最长时间（以毫秒为单位）。
 
-中的任务参数使用此 TLV [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)。
+此 TLV 用于[OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)的任务参数中。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63382889"
 
 ## <a name="length"></a>长度
 
-UINT32 大小 （以字节为单位）。
+UINT32 的大小（以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| UINT32 | 最长的时间，以毫秒为单位，以完成 FTM。 超时设置为 150 毫秒的目标数的乘积。 |
+| UINT32 | 完成 INTERNAL.H 的最长时间（以毫秒为单位）。 超时值设置为150毫秒，乘以目标的数目。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp

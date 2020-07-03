@@ -6,12 +6,12 @@ keywords:
 - OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 124bfb0b0f89d2fdeee3942cc2793ab1341a9307
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c8a6510c985220906d8fcc13e7cfa48feb483e9e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842362"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917511"
 ---
 # <a name="oid_co_tapi_translate_tapi_callparams"></a>OID_CO_TAPI_TRANSLATE_TAPI_CALLPARAMS
 
@@ -42,25 +42,22 @@ typedef struct _CO_TAPI_TRANSLATE_TAPI_CALLPARAMS {
 客户端必须在**ulFlags**中设置 CO_TAPI_FLAG_OUTGOING_CALL 位。 客户端可以选择将**ulFlags**中的 CO_TAPI_USE_DEFAULT_CALLPARAMS 位设置为要求调用管理器或 MCM 驱动程序忽略**LineCallParams** ，并为设备返回默认的 NDIS 调用参数。
 
 **DestAddress**  
-指定一个[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，其中包含从 NDIS_VAR_DATA_DESC 结构开始到格式为字符数组的目标地址的偏移量。 NDIS_VAR_DATA_DESC 结构还包含目标地址的长度。 目标地址是传出调用将定向到的地址。
+指定一个[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，该结构包含从 NDIS_VAR_DATA_DESC 结构开始到格式化为字符数组的目标地址的偏移量。 NDIS_VAR_DATA_DESC 结构还包含目标地址的长度。 目标地址是传出调用将定向到的地址。
 
 **LineCallParams**  
-指定一个[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，其中包含从 NDIS_VAR_DATA_DESC 结构开始到 LINE_CALL_PARAMS 结构的偏移量。 NDIS_VAR_DATA_DESC 结构还包含 LINE_CALL_PARAMS 结构的长度。 LINE_CALL_PARAMS 结构指定要转换为 NDIS 调用参数的 TAPI 调用参数。 有关 LINE_CALL_PARAMS 结构的详细信息，请参阅 Microsoft Windows SDK 和 ndistapi 标头文件。
+指定一个[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，该结构包含从 NDIS_VAR_DATA_DESC 结构开始到 LINE_CALL_PARAMS 结构的偏移量。 NDIS_VAR_DATA_DESC 结构还包含 LINE_CALL_PARAMS 结构的长度。 LINE_CALL_PARAMS 结构指定要转换为 NDIS 调用参数的 TAPI 调用参数。 有关 LINE_CALL_PARAMS 结构的详细信息，请参阅 Microsoft Windows SDK 和 ndistapi 头文件。
 
 **NdisCallParams**  
-指定一个[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，其中包含从 NDIS_VAR_DATA_DESC 结构开始到 CO_CALL_PARAMETERS 结构的偏移量。 NDIS_VAR_DATA_DESC 结构还包含[CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构的长度。 CO_CALL_PARAMETERS 结构指定已对其转换给定 TAPI 调用参数的 NDIS 调用参数。
+指定一个[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))结构，该结构包含从 NDIS_VAR_DATA_DESC 结构开始到 CO_CALL_PARAMETERS 结构的偏移量。 NDIS_VAR_DATA_DESC 结构还包含[CO_CALL_PARAMETERS](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff545384(v=vs.85))结构的长度。 CO_CALL_PARAMETERS 结构指定了向其转换给定 TAPI 调用参数的 NDIS 调用参数。
 
 ## <a name="remarks"></a>备注
 
-如果请求成功，则调用管理器或 MCM 驱动程序将使用转换后的 NDIS 调用参数填充**NdisCallParams**引用的 CO_CALL_PARAMETERS 结构。 调用管理器或 MCM 驱动程序必须在**NdisCallParams**所引用的平面内存部分中分配 CO_CALL_PARAMETERS 结构。 客户端将 CO_CALL_PARAMETERS 结构的总长度写入**NdisCallParams**。
+如果请求成功，则调用管理器或 MCM 驱动程序将使用转换后的 NDIS 调用参数填充**NdisCallParams**所引用的 CO_CALL_PARAMETERS 结构。 调用管理器或 MCM 驱动程序必须在**NdisCallParams**所引用的平面内存部分中分配 CO_CALL_PARAMETERS 结构。 客户端将 CO_CALL_PARAMETERS 结构的总长度写入**NdisCallParams**。
 
-如果客户端在**ulFlags**中设置 CO_TAPI_USE_DEFAULT_CALLPARAMS 位，则客户端不会指定 TAPI 调用参数。 在这种情况下，呼叫管理器或 MCM 驱动程序应为设备返回默认的 NDIS 调用参数。 如果设备没有默认的 NDIS 调用参数，则调用管理器或 MCM 驱动程序应返回 NDIS_STATUS_FAILURE。
+如果客户端设置**ulFlags**中的 CO_TAPI_USE_DEFAULT_CALLPARAMS 位，则客户端不会指定 TAPI 调用参数。 在这种情况下，呼叫管理器或 MCM 驱动程序应为设备返回默认的 NDIS 调用参数。 如果设备没有默认的 NDIS 调用参数，则调用管理器或 MCM 驱动程序应返回 NDIS_STATUS_FAILURE。
 
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

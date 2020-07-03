@@ -3,15 +3,15 @@ title: NDIS_STATUS_WWAN_NITZ_INFO
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_NITZ_INFO 通知来通知移动宽带（MB）服务完成了上一个 OID_WWAN_NITZ 查询请求。
 ms.assetid: 8AC20FB1-FD2E-46B4-97F7-56EC7AA79740
 ms.date: 04/11/2019
-keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_NITZ_INFO 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_NITZ_INFO 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cbc69ce1f356ee7220a203a41993169ebcfe0ba1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 28087695fc38d499c3c68468ba726186baf8fb34
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844665"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916645"
 ---
 # <a name="ndis_status_wwan_nitz_info"></a>NDIS_STATUS_WWAN_NITZ_INFO
 
@@ -23,14 +23,11 @@ ms.locfileid: "72844665"
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 
-[MB 的调制解调器日志记录](mb-modem-logging-with-dss.md)
+[使用 DSS 进行 MB 调制解调器日志记录](mb-modem-logging-with-dss.md)
 
 [OID_WWAN_NITZ](oid-wwan-nitz.md)
 

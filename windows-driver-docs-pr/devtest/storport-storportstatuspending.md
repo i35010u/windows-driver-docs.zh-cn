@@ -1,6 +1,6 @@
 ---
 title: StorPortStatusPending 规则（storport）
-description: 此规则检查 SRB 是否未完成，状态为 SRB\_\_状态为 "挂起"。
+description: 此规则检查 SRB 是否未完成，状态为 "SRB" 的状态为 " \_ \_ 挂起"。
 ms.assetid: 134BDADA-C475-4D82-A0AB-31410C994AAF
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c6c4938523f3fdc60dcf6f7286c3cecacca90f9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2d73bebfde528f9e8df05bc3b75c9d2506b6f704
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839274"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916819"
 ---
 # <a name="storportstatuspending-rule-storport"></a>StorPortStatusPending 规则（storport）
 
 
-此规则检查 SRB 是否未完成，状态为**SRB\_\_状态**为 "挂起"。
+此规则检查 SRB 是否未完成，状态为 "SRB" 的状态为 " ** \_ \_ 挂起**"。
 
-|              |          |
-|--------------|----------|
-| 驱动程序模型 | Storport |
+**驱动程序模型： Storport**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -43,7 +41,7 @@ ms.locfileid: "72839274"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>StorPortStatusPending</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -54,7 +52,7 @@ ms.locfileid: "72839274"
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**StorPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportnotification)

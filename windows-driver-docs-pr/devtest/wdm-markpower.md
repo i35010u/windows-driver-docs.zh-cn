@@ -1,6 +1,6 @@
 ---
 title: MarkPower 规则（wdm）
-description: MarkPower 规则指定 IRP\_MJ\_使用 IRP\_MN\_设置\_POWER for SystemPowerState IRP 将挂起。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+description: MarkPower 规则指定 irp \_ MJ \_ POWER with irp \_ MN \_ 将 \_ SystemPowerState irp 的 power 设置为 "正在挂起"。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 ms.assetid: 2EF5F14B-F474-4583-B7AC-70142BC3D831
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b1a2c7ed53917a52dbfb39a91e8299b5f5f472a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4b66746b8da609ceccee56ba4491fc1084905af6
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839899"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917861"
 ---
 # <a name="markpower-rule-wdm"></a>MarkPower 规则（wdm）
 
 
-**MarkPower**规则指定 IRP\_MJ\_使用 IRP\_MN\_设置\_Power for **SystemPowerState** irp 将挂起。 此规则仅适用于 FDO 和 FIDO 驱动程序。
+**MarkPower**规则指定 irp \_ MJ \_ power With irp \_ MN \_ 将 \_ **SystemPowerState** irp 的 power 设置为 "正在挂起"。 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,14 +55,14 @@ ms.locfileid: "72839899"
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)
-[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)
-[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
-[**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces)
-[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)
-[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)
-[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)
-[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)
+[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 
+[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 
+[**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) 
+[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) 
+[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) 
+[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) 
+[**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex) 
 [**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)
  
 

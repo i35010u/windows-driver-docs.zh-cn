@@ -1,6 +1,6 @@
 ---
 title: ForwardedAtBadIrqlAllocate 规则（wdm）
-description: ForwardedAtBadIrqlAllocate 规则指定驱动程序应在 IRQL 调度\_级别调用 IoCallDriver 和 PoCallDriver，除非要转发的 IRP 主要函数代码是以下 IRP 之一\_MJ\_POWERIRP\_MJ\_READIRP\_MJ\_WRITEIRP\_MJ\_设备\_CONTROLIRP\_MJ\_内部\_设备\_控件。
+description: ForwardedAtBadIrqlAllocate 规则指定驱动程序应在 IRQL 调度级别调用 IoCallDriver 和 PoCallDriver \_ ，除非要转发的 irp 主要函数代码是以下 irp \_ mj \_ POWERIRP \_ mj \_ READIRP \_ mj \_ WRITEIRP mj \_ \_ DEVICE \_ CONTROLIRP \_ mj \_ INTERNAL \_ device \_ CONTROL。
 ms.assetid: 74BB8358-AE25-4FF8-BBA7-BF108DC2946C
 ms.date: 05/21/2018
 keywords:
@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c2c05879390b00a0b04f5d994c8de3f474564c76
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d679aab97936c40927199d28a16857c073bdf5d0
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916132"
 ---
 # <a name="forwardedatbadirqlallocate-rule-wdm"></a>ForwardedAtBadIrqlAllocate 规则（wdm）
 
 
-**ForwardedAtBadIrqlAllocate**规则指定驱动程序应\_级别的&lt;IRQL 调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) ，除非要转发的 IRP 主要函数代码是以下项之一：
+**ForwardedAtBadIrqlAllocate**规则指定驱动程序应在 IRQL 调度级别调用[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)和[**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) &lt; \_ ，除非要转发的 IRP 主要函数代码是以下项之一：
 
--   [**IRP\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)
--   [**IRP\_MJ\_读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)
--   [**IRP\_MJ\_写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)
--   [**IRP\_MJ\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)
--   [**IRP\_MJ\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)
+-   [**IRP \_ MJ \_ POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)
+-   [**IRP \_ MJ \_ 读取**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)
+-   [**IRP \_ MJ \_ 写入**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)
+-   [**IRP \_ MJ \_ 设备 \_ 控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)
+-   [**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -63,8 +61,8 @@ ms.locfileid: "72839970"
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)
-[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
+[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 
 [**PoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)
  
 

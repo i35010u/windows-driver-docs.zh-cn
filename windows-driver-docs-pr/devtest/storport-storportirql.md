@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e5da0970b6ac8fc9a139c99ede070fd7865f0b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: feb34ce1973d599b8ffd503d16d339614b689ec9
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840015"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916197"
 ---
 # <a name="storportirql-rule-storport"></a>StorPortIrql 规则（storport）
 
 
 **StorPortIrql**规则检查 StorPort 例程是否是以正确的 IRQL 级别调用的。
 
-|              |          |
-|--------------|----------|
-| 驱动程序型号 | Storport |
+**驱动程序模型： Storport**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,24 +55,24 @@ ms.locfileid: "72840015"
 <a name="applies-to"></a>适用于
 ----------
 
-[**StorPortAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatecontiguousmemoryspecifycachenode)
-[**StorPortAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatemdl)
-[**StorPortAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool)
-[**StorPortBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportbuildmdlfornonpagedpool)
-[**StorPortFreeContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreecontiguousmemoryspecifycache)
-[**StorPortFreeMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreemdl)
-[**StorPortFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool)
-[**StorPortGetActiveGroupCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetactivegroupcount)
-[**StorPortGetActiveNodeCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetactivenodecount)
-[**StorPortGetCurrentProcessorNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetcurrentprocessornumber)
-[**StorPortGetGroupAffinity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetgroupaffinity)
-[**StorPortGetHighestNodeNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgethighestnodenumber)
-[**StorPortGetLogicalProcessorRelationship**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetlogicalprocessorrelationship)
-[**StorPortGetNodeAffinity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetnodeaffinity)
-[**StorPortGetSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetsystemaddress)
-[**StorPortLogSystemEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportlogsystemevent)
-[**StorPortPutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportputscattergatherlist)
-[**StorPortRegistryRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportregistryread)
+[**StorPortAllocateContiguousMemorySpecifyCacheNode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatecontiguousmemoryspecifycachenode) 
+[**StorPortAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatemdl) 
+[**StorPortAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportallocatepool) 
+[**StorPortBuildMdlForNonPagedPool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportbuildmdlfornonpagedpool) 
+[**StorPortFreeContiguousMemorySpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreecontiguousmemoryspecifycache) 
+[**StorPortFreeMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreemdl) 
+[**StorPortFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportfreepool) 
+[**StorPortGetActiveGroupCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetactivegroupcount) 
+[**StorPortGetActiveNodeCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetactivenodecount) 
+[**StorPortGetCurrentProcessorNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetcurrentprocessornumber) 
+[**StorPortGetGroupAffinity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetgroupaffinity) 
+[**StorPortGetHighestNodeNumber**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgethighestnodenumber) 
+[**StorPortGetLogicalProcessorRelationship**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetlogicalprocessorrelationship) 
+[**StorPortGetNodeAffinity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetnodeaffinity) 
+[**StorPortGetSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetsystemaddress) 
+[**StorPortLogSystemEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportlogsystemevent) 
+[**StorPortPutScatterGatherList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportputscattergatherlist) 
+[**StorPortRegistryRead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportregistryread) 
 [**StorPortRegistryWrite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportregistrywrite)
  
 

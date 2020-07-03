@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 82fa69b1d7ba5be505e1ea5dad8a4882b766447a
-ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
+ms.openlocfilehash: df86790d93221b5be2e3935797794ba4d68a0f40
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81219517"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917385"
 ---
 # <a name="irqliortlzwpassive-rule-wdm"></a>IrqlIoRtlZwPassive 规则（wdm）
 
@@ -25,13 +25,11 @@ ms.locfileid: "81219517"
 
 此规则为 PASSIVE_LEVEL 扩充了 DDI 相容性检查 IRQL 规则。 有关详细信息，请参阅[Irql 规则集（WDM）](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | WDM |
+**驱动程序模型： WDM**
 
 |                                   |                                                                                                                                    |
 |-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x20023） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x20023） |
 
 <a name="example"></a>示例
 -------
@@ -74,7 +72,7 @@ KeReleaseSpinLock (&Lock, OldIrql);
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>IrqlIoRtlZwPassive</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -97,10 +95,10 @@ KeReleaseSpinLock (&Lock, OldIrql);
 <tbody>
 <tr class="odd">
 <td align="left">
-<p>您可以使用 Verifier 命令行为一个或多个驱动程序激活 DDI 相容性附加的 IRQL 规则。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-driver-verifier-options" data-raw-source="[Selecting Driver Verifier Options](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">选择驱动程序验证程序选项</a>。 你必须重新启动计算机以激活或停用 DDI 符合性-其他 IRQL 规则。</p>
+<p>你可以使用 Verifier.exe 命令行为一个或多个驱动程序激活 DDI 符合性-其他 IRQL 规则。 有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-driver-verifier-options" data-raw-source="[Selecting Driver Verifier Options](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">选择驱动程序验证程序选项</a>。 你必须重新启动计算机以激活或停用 DDI 符合性-其他 IRQL 规则。</p>
 <p>在命令行中，DDI 符合性-额外的 IRQL 检查用规则类值35表示。 例如：</p>
 <p><code>verifier /ruleclasses 35 /driver MyDriver.sys</code></p>
-<p>或者</p>
+<p>OR</p>
 <p><code>verifier /rc 35 /driver MyDriver.sys</code></p>
 <p>重新启动计算机后，其他 IRQL 检查将处于活动状态。</p>
 </td>

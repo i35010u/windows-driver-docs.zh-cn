@@ -6,12 +6,12 @@ ms.date: 04/10/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_UICC_ACCESS_BINARY 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 315d060608827310b57b5236e12b71779e49bf46
-ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
+ms.openlocfilehash: 8abdcf3c2236c81e182d71707a6a20a3b3e57ade
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443013"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916598"
 ---
 # <a name="oid_wwan_uicc_access_binary"></a>OID_WWAN_UICC_ACCESS_BINARY
 
@@ -25,14 +25,11 @@ OID_WWAN_UICC_ACCESS_BINARY 访问 UICC 二进制文件，其结构类型为**Ww
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 
-[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)
+[MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_UICC_BINARY_RESPONSE](ndis-status-wwan-uicc-binary-response.md)
 

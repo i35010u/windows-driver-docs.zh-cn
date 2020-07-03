@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a27791d1e0749885187a6285d60cc3391bf8c1b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 114cfb7ec00e07eff2e41ec7f1ea2ce6246da93b
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839365"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916259"
 ---
 # <a name="ndisoiddoublecomplete-rule-ndis"></a>NdisOidDoubleComplete 规则（ndis）
 
 
 **NdisOidDoubleComplete**规则指定 NDIS 微型端口驱动程序不得为同一 OID 调用两次[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)例程。
 
-将跟踪 OID （跟踪\_对象）。 若要使用内核调试器帮助调试此错误，请使用 **！ ndiskd**调试器扩展。
+将跟踪 OID （跟踪的 \_ 对象）。 若要使用内核调试器帮助调试此错误，请使用 **！ ndiskd**调试器扩展。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00091002） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00091002） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -60,7 +58,7 @@ ms.locfileid: "72839365"
 <a name="applies-to"></a>适用于
 ----------
 
-[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
+[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
 [ **NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
  
 

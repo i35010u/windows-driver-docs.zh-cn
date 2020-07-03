@@ -1,68 +1,65 @@
 ---
 title: OID_GEN_CO_MEDIA_SUPPORTED
-description: 本主题介绍 OID_GEN_CO_MEDIA_SUPPORTED 对象标识符 (OID)。
+description: 本主题介绍 OID_GEN_CO_MEDIA_SUPPORTED 对象标识符（OID）。
 ms.assetid: 688d5054-f92d-4054-bf6e-dcf43fcfeb06
 keywords:
 - OID_GEN_CO_MEDIA_SUPPORTED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ccb08cde7fb56219683bcdbc3a9d07b2e23b70
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96f92e6110d3b2a3a4d0b51041cb24c1ded7c883
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361169"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917915"
 ---
-# <a name="oidgencomediasupported"></a>OID_GEN_CO_MEDIA_SUPPORTED
+# <a name="oid_gen_co_media_supported"></a>OID_GEN_CO_MEDIA_SUPPORTED
 
-媒体的完整列表类型 NIC 支持中，定义为以下系统定义的值的真子集：
+NIC 支持的介质类型的完整列表，作为以下系统定义的值的正确子集：
 
 **NdisMedium802_3**  
-以太网 (802.3)。
+以太网（802.3）。
 
 **NdisMedium802_5**  
-令牌环 (802.5)。
+令牌环（802.5）。
 
 **NdisMediumFddi**  
-FDDI。
+FDDI.
 
 **NdisMediumWan**  
-WAN。
+WAN.
 
 **NdisMediumLocalTalk**  
-LocalTalk。
+LocalTalk.
 
 **NdisMediumDix**  
-DEC/Intel Xerox (DIX) 以太网。
+DEC/Intel/Xerox （DIX）以太网。
 
 **NdisMediumArcnetRaw**  
 ARCNET （原始）。
 
 **NdisMediumArcnet878_2**  
-ARCNET (878.2)。
+ARCNET （878.2）。
 
 **NdisMediumWirelessWan**  
 各种类型的 NdisWirelessXxx 媒体。
 
 **NdisMediumAtm**  
-ATM。
+ATM.
 
 **NdisMediumIrda**  
-保留供将来使用在 Windows 2000 和更高版本的平台上。
+保留以供将来用于 Windows 2000 和更高版本的平台。
 
 ## <a name="remarks"></a>备注
 
-ATM 网络 LAN 仿真驱动程序声明为其中等**NdisMedium802_3** ，而非**NdisMediumAtm**。 这样的驱动程序模拟以太网更高级别的的 NDIS 驱动程序，符合 ATM 论坛通道，并提供单元信号的支持。
+ATM 网络的 LAN 仿真驱动程序将其媒体声明为**NdisMedium802_3** ，而不是**NdisMediumAtm**。 此类驱动程序将以太网模拟到更高级别的 NDIS 驱动程序，符合 ATM 论坛的 LANE，并提供单信号支持。
 
-WAN 无线 NIC 驱动程序必须报告为其介质类型**NdisMediumWirelessWan**。 但是，这样的微型端口驱动程序还必须提供**NdisWWDIXEthernetFrames**标头格式到任何绑定选择此格式的协议和微型端口驱动程序可以提供其 NIC 的纯标头格式以及。 若要支持现有基于 LAN 的协议，驱动程序编写器可以提供 NDIS 中间驱动程序"翻译"无线 NIC 的纯标头格式和到理解现有协议的一个窗体的特定于中的信息。
+无线 WAN NIC 驱动程序必须将其中型类型报告为**NdisMediumWirelessWan**。 但是，这种微型端口驱动程序还必须为选择此格式的任何绑定协议提供**NdisWWDIXEthernetFrames**标头格式，而微型端口驱动程序也可以提供其 NIC 的本机标头格式。 为了支持现有的基于 LAN 的协议，驱动程序编写器可以提供一个 NDIS 中间驱动程序，以将无线 NIC 的本机标头格式和特定于中型的信息转换为现有协议理解的形式。
 
-如果基础微型端口驱动程序将返回**NULL**此查询或如果使用实验性的媒体类型，必须指示驱动程序将会收到包含[NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))。
+如果基础微型端口驱动程序为此查询返回**NULL** ，或者如果使用的是实验媒体类型，则驱动程序必须使用[NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))指示接收。
 
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cc10072cfd4d487f4c8f074f3c9e56c76cbefa5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5a3692f3b474cf9fc3f2cc65e34355d91cdb4811
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839304"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916746"
 ---
 # <a name="iofreeirp-rule-storport"></a>IoFreeIrp 规则（storport）
 
 
 此规则验证**IoAllocateIrp**分配的 IRP 是否将由**IoFreeIrp**或其完成例程进行释放，以由**IoSetCompletionRoutine**设置。
 
-|              |          |
-|--------------|----------|
-| 驱动程序型号 | Storport |
+**驱动程序模型： Storport**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,8 +55,8 @@ ms.locfileid: "72839304"
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)
-[**IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)
+[**IoAllocateIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp) 
+[**IoFreeIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp) 
 [**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)
  
 

@@ -3,14 +3,14 @@ title: NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG
 description: 微型端口驱动程序使用 NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG 通知来通知移动宽带（MB）服务完成了上一个 OID_WWAN_LTE_ATTACH_CONFIG 查询或设置请求。
 ms.assetid: 866BCD4F-85A1-46C8-9FE2-8C5A8ADCD3CA
 ms.date: 08/22/2018
-keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG 网络驱动程序
+keywords: -从 Windows Vista 开始 NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 770716891d1830866ce122869cf8c5adb81134ee
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 58830396a5c913ca4d6faa764ab2a0eab470b65b
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843024"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916877"
 ---
 # <a name="ndis_status_wwan_lte_attach_config"></a>NDIS_STATUS_WWAN_LTE_ATTACH_CONFIG
 
@@ -22,10 +22,7 @@ ms.locfileid: "72843024"
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1703 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1703**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 

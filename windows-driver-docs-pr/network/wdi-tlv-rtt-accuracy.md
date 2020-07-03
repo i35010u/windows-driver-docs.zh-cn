@@ -1,26 +1,26 @@
 ---
 title: WDI_TLV_RTT_ACCURACY
-description: WDI_TLV_RTT_ACCURACY 是程度的包含的准确性或预期为好计时度量 (FTM) 请求的则返回 true 值的往返时间 (RTT) 度量程度 TLV。
+description: WDI_TLV_RTT_ACCURACY 是一种 TLV，其中包含往返时间（RTT）度量值到精细计时度量（INTERNAL.H）请求的 true 值的准确性或预期的靠近程度。
 ms.assetid: 689C9C22-6AA4-4581-BF26-147F49F2456F
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_RTT_ACCURACY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a765cae38c9c1f153d5dcd54e94c176e7470dd45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c238e844fab98c883aef76ca995a4bafc92f46b
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359097"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917485"
 ---
-# <a name="wditlvrttaccuracy"></a>WDI_TLV_RTT_ACCURACY
+# <a name="wdi_tlv_rtt_accuracy"></a>WDI_TLV_RTT_ACCURACY
 
-**WDI_TLV_RTT_ACCURACY**是包含的准确性或预期的程度为好计时度量 (FTM) 请求的则返回 true 值的往返时间 (RTT) 度量程度 TLV。 单位为 picoseconds 中。
+**WDI_TLV_RTT_ACCURACY**是一种 TLV，其中包含往返时间（RTT）度量值到精细计时度量（internal.h）请求的 true 值的准确性或预期的靠近程度。 单元位于 picoseconds 中。
 
-例如，如果当前的 RTT 为 66712.82 picoseconds （从目标 AP 10 米），但它是已知通过硬件事件探查的测量值可能是关闭快/慢 1 米，则 RTT 准确性是 6671.28 picoseconds。 它负责 IHV 提供作为特定拍摄实际 FTM 时其硬件和匹配条件的分析基于尽可能精确。 有多个变量影响 FTM 准确性，可以测量和被视为多个可能性的这些变量。 更具体的准确性是理想的原因是因为这是可以使用较高的层，例如首选具有较高准确度计算位置时，或改变基于 FTM 准确性计算的位置错误度量的有用信息。 在分析时，应使用 CDF 最低 90%。 
+例如，如果当前 RTT 为 66712.82 picoseconds （远离目标 AP 的10米），但通过硬件分析知道测量可能由 +/-1 米关闭，则 RTT 准确度为 6671.28 picoseconds。 IHV 的责任是根据其硬件分析和执行实际 INTERNAL.H 时的匹配条件，提供尽可能具体的准确性。 存在多个影响 INTERNAL.H 准确性的变量，以及可以对这些变量进行度量和考虑的多种可能性。 需要更具体的准确性的原因是，这是上层可以使用的有用信息，例如，在计算位置时使用更高准确性的首选度量值，或者根据 INTERNAL.H 准确性改变计算位置错误。 在分析时，应使用至少90% 的 CDF。 
 
-在中使用此 TLV [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)。
+此 TLV 用于[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -28,18 +28,14 @@ ms.locfileid: "63359097"
 
 ## <a name="length"></a>长度
 
-UINT32 大小 （以字节为单位）。
+UINT32 的大小（以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
 | UINT32 | RTT。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp

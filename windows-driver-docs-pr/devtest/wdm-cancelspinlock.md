@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fd17a0d95909f94c606111c37be05a594cb32ff
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 808eee0126647377680652d7598955ae53bc5f05
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839253"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916816"
 ---
 # <a name="cancelspinlock-rule-wdm"></a>CancelSpinLock 规则（wdm）
 
 
-CancelSpinLock 规则指定在调用[**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))之前驱动程序调用[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) ，并且驱动程序在任何后续调用**之前调用 IoReleaseCancelSpinLockIoAcquireCancelSpinLock**。
+CancelSpinLock 规则指定在调用[**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))之前，驱动程序调用[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) ，并且驱动程序会在对**IoAcquireCancelSpinLock**的任何后续调用之前调用**IoReleaseCancelSpinLock** 。
 
 此规则还指定在调度例程或取消例程结束时，驱动程序不得保留任何自旋锁。 允许嵌套调用。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -59,8 +57,8 @@ CancelSpinLock 规则指定在调用[**IoReleaseCancelSpinLock**](https://docs.m
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85))
-[**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85))
+[**IoAcquireCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff548196(v=vs.85)) 
+[**IoReleaseCancelSpinLock**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549550(v=vs.85)) 
 [**RemoveHeadList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeheadlist)
  
 

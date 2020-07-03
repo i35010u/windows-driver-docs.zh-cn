@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 817ab284c2914d2a3938c28f2268bacba64d0b3a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f2ce0c47a70b8dc444f26bc13bc92fadbeb95eb2
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918149"
 ---
 # <a name="miniportonlywdmdevice-rule-kmdf"></a>MiniportOnlyWdmDevice 规则（kmdf）
 
 
 **MiniportOnlyWdmDevice**规则指定 WDF 驱动程序不应使用[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)和[**IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)函数创建裸机设备对象。 如果有人尝试将 IRP 发送到 WDM 设备，这将导致计算机崩溃。 这是因为，将设备的 IRP 调度条目设置为特定于 WDF 的条目，但框架尚未创建 WDF 设备。 但微型端口驱动程序可以使用 DDIs，因为没有为其设置驱动程序调度入口点。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,8 +55,8 @@ ms.locfileid: "72840192"
 <a name="applies-to"></a>适用于
 ----------
 
-[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)
-[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
+[**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate) 
+[**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice) 
 [**IoCreateDeviceSecure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)
  
 

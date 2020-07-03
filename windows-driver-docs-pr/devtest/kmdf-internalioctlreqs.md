@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ff63b01846a11c639a91373732b3fd6e08fed10
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0cfea2f1b012483d915258794a46de470774746d
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839490"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916985"
 ---
 # <a name="internalioctlreqs-rule-kmdf"></a>InternalIoctlReqs 规则（kmdf）
 
 
 **InternalIoctlReqs**规则指定内部 IOCTL 请求不会传递到不适当的 KMDF 请求-发送设备驱动程序接口（DDIs）。
 
-在 .EVT\_WDF 中提供给驱动程序的所有请求都\_IO\_队列\_IO\_内部\_设备\_控制回调函数保证是内部 IOCTL 请求。 因此，不能使用特定于发送读取、写入或 IOCTL 请求的 DDIs 来发送这些 IOCTLs，如**WdfIoTargetSendReadSynchronously**、 **WdfIoTargetSendWriteSynchronously**、 **WdfIoTargetSendIoctlSynchronously**， **WdfUsbTargetPipeWriteSynchronously**。
+在 .EVT \_ WDF \_ io \_ QUEUE io 内部设备控制回调函数中提供给驱动程序的所有请求 \_ \_ \_ \_ 都保证为内部 IOCTL 请求。 因此，不能使用特定于发送读取、写入或 IOCTL 请求的 DDIs （如**WdfIoTargetSendReadSynchronously**、 **WdfIoTargetSendWriteSynchronously**、 **WdfIoTargetSendIoctlSynchronously**、 **WdfUsbTargetPipeWriteSynchronously**）发送这些 IOCTLs。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | KMDF |
+**驱动程序模型： KMDF**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -59,10 +57,10 @@ ms.locfileid: "72839490"
 <a name="applies-to"></a>适用于
 ----------
 
-[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously)
-[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)
-[**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)
-[**WdfUsbTargetPipeReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously)
+[**WdfIoTargetSendIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously) 
+[**WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously) 
+[**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously) 
+[**WdfUsbTargetPipeReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipereadsynchronously) 
 [**WdfUsbTargetPipeWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipewritesynchronously)
  
 

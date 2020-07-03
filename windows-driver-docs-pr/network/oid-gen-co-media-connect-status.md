@@ -6,12 +6,12 @@ keywords:
 - OID_GEN_CO_MEDIA_CONNECT_STATUS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eff8c9916a77cd8b5131a9608b56f3273689706
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c7966d9d618780c619145f316df34d45c9d9b034
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844990"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916902"
 ---
 # <a name="oid_gen_co_media_connect_status"></a>OID_GEN_CO_MEDIA_CONNECT_STATUS
 
@@ -21,12 +21,9 @@ OID_GEN_CO_MEDIA_CONNECT_STATUS OID 请求微型端口驱动程序将网络上 N
 
 **NdisMediaStateDisconnected**
 
-当微型端口驱动程序感知到网络连接已丢失时，它应使用 NDIS_STATUS_MEDIA_DISCONNECT 调用[NdisMCoIndicateStatus](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex) 。 在恢复连接时，它应将 NdisMCoIndicateStatus 与 NDIS_STATUS_MEDIA_CONNECT 一起调用。
+当微型端口驱动程序感知到网络连接已丢失时，它应使用 NDIS_STATUS_MEDIA_DISCONNECT 调用[NdisMCoIndicateStatus](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex) 。 在恢复连接时，它应 NDIS_STATUS_MEDIA_CONNECT 调用 NdisMCoIndicateStatus。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

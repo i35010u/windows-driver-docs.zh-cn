@@ -1,10 +1,10 @@
 ---
-title: KsIrqlPinCallbacks 规则 （)
-description: KsIrqlPinCallbacks 规则指定内核流 (KS) 微型端口驱动程序返回从它必须在调用同一 IRQL KS Pin 回调函数。
+title: KsIrqlPinCallbacks 规则（）
+description: KsIrqlPinCallbacks 规则指定内核流（KS）微型端口驱动程序从一个 KS Pin 回调函数返回，该函数与调用该函数时使用的 IRQL 相同。
 ms.assetid: B2C1413A-9B94-499A-A15C-A943065F7CA1
 ms.date: 05/21/2018
 keywords:
-- KsIrqlPinCallbacks 规则 （)
+- KsIrqlPinCallbacks 规则（）
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fe7185b93503fa00971a47321a423416536267d
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 369d33ce1252b02f3a58d0a4dc416fd1afbf8c5c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392747"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916546"
 ---
-# <a name="ksirqlpincallbacks-rule-"></a>KsIrqlPinCallbacks 规则 （)
+# <a name="ksirqlpincallbacks-rule-"></a>KsIrqlPinCallbacks 规则（）
 
 
-KsIrqlPinCallbacks 规则指定内核流 (KS) 微型端口驱动程序返回从它必须在调用同一 IRQL KS Pin 回调函数。
+KsIrqlPinCallbacks 规则指定内核流（KS）微型端口驱动程序从一个 KS Pin 回调函数返回，该函数与调用该函数时使用的 IRQL 相同。
 
-**调试的提示**
+**调试提示**
 
-当驱动程序验证程序检测到违反此规则时，它将触发[ **Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)，与*arg1* 0x00081008 的值。 *Arg3* (RuleState) 和*了 arg4* （子状态） 的 bug 检查提供了指向有关的规则冲突的其他信息。
+当驱动程序验证器检测到与该规则的冲突时，它将触发[**Bug 检查0xC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)， *arg1*值为0x00081008。 Bug 检查的*arg3* （RuleState）和*arg4* （子错误）提供指向有关规则冲突的其他信息的指针。
 
-使用[ **！ ruleinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)调试器扩展，以找出 IRQL 值已在函数入口和出口。
+使用[**！ ruleinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)调试器扩展来找出函数进入和退出时的 IRQL 值。
 
 使用命令：
 
-**!ruleinfo 0x81008** *RuleState* *SubState*.
+**！ ruleinfo 0x81008** *RuleState*子*情况。*
 
-在规则状态数据中， *OldIrql*是 IRQL 输入回调时。 *NewIrql*是 IRQL 回调函数退出时。
+在规则状态数据中，输入回调时， *OldIrql*是 IRQL。 退出回调函数时， *NewIrql*是 IRQL。
 
-不要使用[ **！ irql** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-irql)以确定当前 IRQL，因为驱动程序验证程序可能具有的 IRQL 前引发 bug 检查。 请改用 **！ verifier 0x008**查看 IRQL 日志。
+不要使用[**！ irql**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-irql)来确定当前的 irql，因为驱动程序验证程序可能在 bug 检查前引发了 irql。 改为使用 **！ verifier 0x008**查看 IRQL 日志。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | KS  |
+**驱动程序模型： KS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00081008) |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00081008） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -60,9 +58,9 @@ KsIrqlPinCallbacks 规则指定内核流 (KS) 微型端口驱动程序返回从�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain ks</strong>。</p>
+<td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain ks</strong>。</p>
 <p>例如：</p>
-<p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
+<p><strong>验证程序/domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em> &lt; &gt; yourdriver</em></p>
 <p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>

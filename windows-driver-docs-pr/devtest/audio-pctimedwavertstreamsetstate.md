@@ -1,10 +1,10 @@
 ---
-title: PcTimedWaveRtStreamSetState 规则 （音频）
-description: PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序，可在所需的时间内通过 IMiniportWaveRTStream SetState 状态转换。
+title: PcTimedWaveRtStreamSetState 规则（音频）
+description: PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序在所需时间内通过 IMiniportWaveRTStream SetState 进行状态转换。
 ms.assetid: D49869E0-9108-460B-8FA3-4FD99C3EA81E
 ms.date: 05/21/2018
 keywords:
-- PcTimedWaveRtStreamSetState 规则 （音频）
+- PcTimedWaveRtStreamSetState 规则（音频）
 topic_type:
 - apiref
 api_name:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3127283fcf3fb22761078204e64d83efabbba698
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 070e95abca5263b3a32e618e69cdad3fdda98472
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394023"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917703"
 ---
-# <a name="pctimedwavertstreamsetstate-rule-audio"></a>PcTimedWaveRtStreamSetState 规则 （音频）
+# <a name="pctimedwavertstreamsetstate-rule-audio"></a>PcTimedWaveRtStreamSetState 规则（音频）
 
 
-PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序，可通过状态转换[ **IMiniportWaveRTStream::SetState** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))内所需的时间。
+PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序通过[**IMiniportWaveRTStream：： SetState**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))在所需时间内进行状态转换。
 
-|              |       |
-|--------------|-------|
-| 驱动程序模型 | Audio |
+**驱动程序模型：音频**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00072001) |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00072001） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -46,9 +44,9 @@ PcTimedWaveRtStreamSetState 规则指定 ProtCls 微型端口驱动程序，可�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain 音频</strong>。</p>
+<td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain 音频</strong>。</p>
 <p>例如：</p>
-<p><strong>verifier /domain audio</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
+<p><strong>verifier/domain 音频</strong>[<em>options</em>] <strong>/driver</strong> <em> &lt; yourdriver &gt; </em></p>
 <p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>

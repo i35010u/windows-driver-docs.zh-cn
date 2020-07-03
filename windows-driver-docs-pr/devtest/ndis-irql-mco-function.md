@@ -1,6 +1,6 @@
 ---
-title: Irql\_MCO\_函数规则（ndis）
-description: Irql\_MCO\_函数规则指定必须在正确的 IRQL 级别调用微型端口驱动程序的 NDIS MCO DDIs。
+title: Irql \_ MCO \_ 函数规则（ndis）
+description: Irql \_ MCO \_ 函数规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS MCO DDIs。
 ms.assetid: 4a6643a2-d831-4b60-a9d6-decf494a2ffc
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c8d20d9b55aff898070eff678f47211dbc21507
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a99c415fc8e2869f572c911c012bc59e231fd904
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839390"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916542"
 ---
-# <a name="irql_mco_function-rule-ndis"></a>Irql\_MCO\_函数规则（ndis）
+# <a name="irql_mco_function-rule-ndis"></a>Irql \_ MCO \_ 函数规则（ndis）
 
 
-**Irql\_MCO\_函数**规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS MCO DDIs。
+**Irql \_ MCO \_ 函数**规则指定必须在正确的 Irql 级别调用微型端口驱动程序的 NDIS MCO DDIs。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | 以此 |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -57,12 +55,12 @@ ms.locfileid: "72839390"
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisMCoActivateVcComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoactivatevccomplete)
-[**NdisMCoDeactivateVcComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcodeactivatevccomplete)
-[**NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists)
-[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)
-[**NdisMCompleteDmaTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcompletedmatransfer)
-[**NdisMCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcooidrequestcomplete)
+[**NdisMCoActivateVcComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoactivatevccomplete) 
+[**NdisMCoDeactivateVcComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcodeactivatevccomplete) 
+[**NdisMCoIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatereceivenetbufferlists) 
+[**NdisMCoIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex) 
+[**NdisMCompleteDmaTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcompletedmatransfer) 
+[**NdisMCoOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcooidrequestcomplete) 
 [**NdisMCoSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcosendnetbufferlistscomplete)
  
 

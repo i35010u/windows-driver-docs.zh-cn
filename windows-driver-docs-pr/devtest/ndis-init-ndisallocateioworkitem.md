@@ -1,6 +1,6 @@
 ---
-title: Init\_NdisAllocateIoWorkItem 规则（ndis）
-description: Init\_NdisAllocateIoWorkItem 规则指定在 MiniportInitializeEx 期间至少调用 NdisAllocateIoWorkItem 一次，如果 MPHaltEx 成功，则至少应在 MiniportInitializeEx 中调用 NdisFreeIoWorkItem 函数一次。
+title: Init \_ NdisAllocateIoWorkItem 规则（ndis）
+description: Init \_ NdisAllocateIoWorkItem 规则指定在 MiniportInitializeEx 期间至少调用 NdisAllocateIoWorkItem 一次，如果 MPHaltEx 成功，则至少应在 MiniportInitializeEx 中调用 NdisFreeIoWorkItem 函数一次。
 ms.assetid: B7889948-741C-4C54-B27F-3175ED4EA7BA
 ms.date: 05/21/2018
 keywords:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a93b174e8eeed41adddfeb8e8ca5bf72fc781b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a8e268e0e3b202dc16d3f0ac35c518fa27fbdb5a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840120"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918059"
 ---
-# <a name="init_ndisallocateioworkitem-rule-ndis"></a>Init\_NdisAllocateIoWorkItem 规则（ndis）
+# <a name="init_ndisallocateioworkitem-rule-ndis"></a>Init \_ NdisAllocateIoWorkItem 规则（ndis）
 
 
-**Init\_NdisAllocateIoWorkItem**规则指定在[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)期间至少调用[**NdisAllocateIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocateioworkitem)一次， [**NdisFreeIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreeioworkitem)函数应：
+**Init \_ NdisAllocateIoWorkItem**规则指定在[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)期间至少调用[**NdisAllocateIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocateioworkitem)一次， [**NdisFreeIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreeioworkitem)函数应：
 
 -   - 如果[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)成功，请在 MPHaltEx 中至少调用一次。
 -   - 如果*MiniportInitializeEx*失败，则在[*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)中调用。
 
-|              |      |
-|--------------|------|
-| 驱动程序型号 | 以此 |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -60,8 +58,8 @@ ms.locfileid: "72840120"
 <a name="applies-to"></a>适用于
 ----------
 
-[**NdisAllocateIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocateioworkitem)
-[**NdisFreeIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreeioworkitem)
+[**NdisAllocateIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocateioworkitem) 
+[**NdisFreeIoWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfreeioworkitem) 
 [**RemoveHeadList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeheadlist)
  
 

@@ -1,6 +1,6 @@
 ---
-title: Irql\_杂项\_函数规则（ndis）
-description: Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别调用 NDIS 函数。
+title: Irql \_ 杂项 \_ 函数规则（ndis）
+description: Irql \_ 杂项 \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 函数。
 ms.assetid: ae1d0243-1db9-428f-a112-f438e2322ff2
 ms.date: 05/21/2018
 keywords:
@@ -12,74 +12,72 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c23e6b01b65a6d8c1fe1dced6456993751e795
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 29447d9125eddb33f4ed497ac56ebe504527b3f7
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840107"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916530"
 ---
-# <a name="irql_miscellaneous_function-rule-ndis"></a>Irql\_杂项\_函数规则（ndis）
+# <a name="irql_miscellaneous_function-rule-ndis"></a>Irql \_ 杂项 \_ 函数规则（ndis）
 
 
-Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别调用 NDIS 函数。
+Irql \_ 杂项 \_ 函数规则指定必须在正确的 Irql 级别调用 NDIS 函数。
 
 此规则验证以下功能：
 
-**KeGetCurrentProcessorNumber**
-**NdisAllocateFromNPagedLookasideList**
-**NdisAllocateGenericObject**
-**NdisAllocateIoWorkItem**
-**NdisAllocateMemoryWithTagPriority**
-**NdisAnsiStringToUnicodeString**
-**NdisCloseConfiguration**
-**NdisCloseFile**
-**NdisDeleteNPagedLookasideList**
-**NdisDeregisterDeviceEx**
-**NdisEqualMemory**
-**NdisEqualUnicodeString**
-**NdisFreeGenericObject**
-**NdisFreeIoWorkItem**
-**NdisFreeMemory**
-**NdisFreeSpinLock**
-**NdisFreeString**
-**NdisFreeToNPagedLookasideList**
-**NdisGeneratePartialCancelId**
-**NdisGetCurrentProcessorCounts**
-**NdisGetDriverHandle**
-**NdisGetRoutineAddress**
-**NdisGetSharedDataAlignment**
-**NdisGetVersion**
-**NdisInitAnsiString**
-**NdisInitializeListHead**
-**NdisInitializeNPagedLookasideList**
-**NdisInitializeSListHead**
-**NdisInitializeString**
-**NdisInitUnicodeString**
-**NdisMapFile**
-**NdisOpenConfigurationEx**
-**NdisOpenConfigurationKeyByIndex**
-**NdisOpenConfigurationKeyByName**
-**NdisOpenFile**
-**NdisQueryAdapterInstanceName**
-**NdisQueryDepthSList**
-**NdisQueueIoWorkItem**
-**NdisReadConfiguration**
-**NdisReadNetworkAddress**
-**NdisReEnumerateProtocolBindings**
-**NdisSetOptionalHandlers**
-**NdisSystemProcessorCount**
-**NdisUnicodeStringToAnsiString**
-**NdisUnmapFile**
-**NdisUpcaseUnicodeString**
-**NdisWaitEvent**
-**NdisWriteConfiguration**
-**NdisWriteErrorLogEntry**
+**KeGetCurrentProcessorNumber** 
+**NdisAllocateFromNPagedLookasideList** 
+**NdisAllocateGenericObject** 
+**NdisAllocateIoWorkItem** 
+**NdisAllocateMemoryWithTagPriority** 
+**NdisAnsiStringToUnicodeString** 
+**NdisCloseConfiguration** 
+**NdisCloseFile** 
+**NdisDeleteNPagedLookasideList** 
+**NdisDeregisterDeviceEx** 
+**NdisEqualMemory** 
+**NdisEqualUnicodeString** 
+**NdisFreeGenericObject** 
+**NdisFreeIoWorkItem** 
+**NdisFreeMemory** 
+**NdisFreeSpinLock** 
+**NdisFreeString** 
+**NdisFreeToNPagedLookasideList** 
+**NdisGeneratePartialCancelId** 
+**NdisGetCurrentProcessorCounts** 
+**NdisGetDriverHandle** 
+**NdisGetRoutineAddress** 
+**NdisGetSharedDataAlignment** 
+**NdisGetVersion** 
+**NdisInitAnsiString** 
+**NdisInitializeListHead** 
+**NdisInitializeNPagedLookasideList** 
+**NdisInitializeSListHead** 
+**NdisInitializeString** 
+**NdisInitUnicodeString** 
+**NdisMapFile** 
+**NdisOpenConfigurationEx** 
+**NdisOpenConfigurationKeyByIndex** 
+**NdisOpenConfigurationKeyByName** 
+**NdisOpenFile** 
+**NdisQueryAdapterInstanceName** 
+**NdisQueryDepthSList** 
+**NdisQueueIoWorkItem** 
+**NdisReadConfiguration** 
+**NdisReadNetworkAddress** 
+**NdisReEnumerateProtocolBindings** 
+**NdisSetOptionalHandlers** 
+**NdisSystemProcessorCount** 
+**NdisUnicodeStringToAnsiString** 
+**NdisUnmapFile** 
+**NdisUpcaseUnicodeString** 
+**NdisWaitEvent** 
+**NdisWriteConfiguration** 
+**NdisWriteErrorLogEntry** 
 **NdisWriteEventLogEntry**
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -96,7 +94,7 @@ Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别调用 NDIS 函数
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>Irql_Miscellaneous_Function</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -107,7 +105,7 @@ Irql\_杂项\_函数规则指定必须在正确的 IRQL 级别调用 NDIS 函数
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
 [**NdisAllocateFromNPagedLookasideList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatefromnpagedlookasidelist)  

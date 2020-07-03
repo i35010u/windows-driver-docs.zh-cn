@@ -6,12 +6,12 @@ keywords:
 - OID_CO_AF_CLOSE
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc1c52ef2ef5f263db973010894657359cb87990
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ccb7a8665955f5a8bf265921b57ecff9eeab390c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843267"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916625"
 ---
 # <a name="oid_co_af_close"></a>OID_CO_AF_CLOSE
 
@@ -23,12 +23,9 @@ OID_CO_AF_CLOSE OID 由呼叫管理器发送，该管理器必须从基础微型
 
 3. 按需多次调用[NdisClDeregisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclderegistersap) ，以取消注册客户端已向呼叫管理器注册的所有 sap
 
-4. 调用[NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily)以关闭包含 OID_CO_AF_CLOSE 的请求中的 NdisAfHandle 引用的地址族
+4. 调用[NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily) ，关闭包含 OID_CO_AF_CLOSE 的请求中的 NdisAfHandle 引用的地址族。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

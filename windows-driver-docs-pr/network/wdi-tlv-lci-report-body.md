@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_LCI_REPORT_BODY
-description: WDI_TLV_LCI_REPORT_BODY 是包含正常计时 Measuremement (FTM) 请求位置配置报表 (LCI) TLV。
+description: WDI_TLV_LCI_REPORT_BODY 是一种 TLV，其中包含精细计时 Measuremement （INTERNAL.H）请求的位置配置报告（LCI）。
 ms.assetid: D80AB500-0B4F-47AC-ADF7-DDB5635FF1F2
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_LCI_REPORT_BODY 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6d92d7859feeac6e27efacab4574968369737bb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6197c77ce1c54ba0038ff198828f595ebf4ab12c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390958"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916107"
 ---
-# <a name="wditlvlcireportbody"></a>WDI_TLV_LCI_REPORT_BODY
+# <a name="wdi_tlv_lci_report_body"></a>WDI_TLV_LCI_REPORT_BODY
 
-**WDI_TLV_LCI_REPORT_BODY**是包含正常计时 Measuremement (FTM) 请求位置配置报表 (LCI) TLV。
+**WDI_TLV_LCI_REPORT_BODY**是一种 TLV，其中包含精细计时 MEASUREMEMENT （internal.h）请求的位置配置报告（LCI）。
 
-在中使用此 TLV [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)。
+此 TLV 用于[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63390958"
 
 ## <a name="length"></a>长度
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小（以字节为单位）。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| UINT8[] | LCI 报表中。 |
+| UINT8 [] | LCI 报表。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp

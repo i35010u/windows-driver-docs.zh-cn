@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d7544527011cca10f2e011782bad16596022a09e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e64da7be8b0b394add3c1158c59b6cbefafcd40
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839306"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917746"
 ---
 # <a name="doubleexfreepool-rule-storport"></a>DoubleExFreePool 规则（storport）
 
@@ -26,9 +26,7 @@ ms.locfileid: "72839306"
 
 规则将跟踪首先传递到**ExFreePool**的内存指针。 如果再次传递同一指针，则驱动程序将无法满足规则。 如果驱动程序调用**RemoveHeadList**或**RemoveEntryList**，则规则通过。
 
-|              |          |
-|--------------|----------|
-| 驱动程序型号 | Storport |
+**驱动程序模型： Storport**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -59,8 +57,8 @@ ms.locfileid: "72839306"
 <a name="applies-to"></a>适用于
 ----------
 
-[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)
-[**RemoveEntryList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeentrylist)
+[**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool) 
+[**RemoveEntryList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeentrylist) 
 [**RemoveHeadList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeheadlist)
  
 

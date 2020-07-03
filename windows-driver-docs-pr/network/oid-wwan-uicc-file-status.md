@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 keywords: -从 Windows Vista 开始 OID_WWAN_UICC_FILE_STATUS 的网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d0d247384205d1d439e77bf86224ece343ce9c17
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2e31b0892ca40b93738a35500f9aac423e25533f
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843770"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917657"
 ---
 # <a name="oid_wwan_uicc_file_status"></a>OID_WWAN_UICC_FILE_STATUS
 
@@ -27,14 +27,11 @@ OID_WWAN_UICC_FILE_STATUS 检索有关指定 UICC 文件的信息。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1903 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1903**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 
-[MB UICC 应用程序和文件系统访问](mb-uicc-application-and-file-system-access.md)
+[MB UICC 应用程序和文件系统访问权限](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_UICC_UICC_FILE_STATUS](ndis-status-wwan-uicc-file-status.md)
 

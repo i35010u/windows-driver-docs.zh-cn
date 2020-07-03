@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 93fec962c3af04a381f887ac4476ee431befe8c7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e158a63c5e6f079491d703bb552c34224a94e7d4
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840069"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916932"
 ---
 # <a name="wlanassociation-rule-ndis"></a>WlanAssociation 规则（ndis）
 
 
 **WlanAssociation**规则将验证微型端口驱动程序是否正确遵循了本机802.11 无线 LAN （WLAN）关联顺序。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （0x00093004） |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00093004） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -53,18 +51,18 @@ ms.locfileid: "72840069"
 
  
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
-[**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
-[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
+[**MiniportHaltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 
+[**MiniportOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 
 [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)另请参阅
 --------
 
-[常规连接操作指导原则](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
-[OID\_DOT11\_重置\_请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
-[NDIS\_状态\_DOT11\_关联\_启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-start)
+[常规连接操作指导原则](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines) 
+[OID \_DOT11 \_ 重置 \_ 请求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request) 
+ [NDIS \_ 状态 \_ DOT11 \_ 关联 \_ 启动](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-start)
  
 
  

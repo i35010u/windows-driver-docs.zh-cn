@@ -5,12 +5,12 @@ ms.assetid: 7E753513-D6A2-4B67-9AED-83A695C39D3C
 ms.date: 08/22/2018
 keywords: -从 Windows Vista 开始 OID_WWAN_LTE_ATTACH_CONFIG 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: bb13251a5d2ad8efaffb48de3995b640e19d1fc5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 82fb6b54b24157ef09755ee37236f9a3bb5c85a9
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843840"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917579"
 ---
 # <a name="oid_wwan_lte_attach_config"></a>OID_WWAN_LTE_ATTACH_CONFIG
 
@@ -28,10 +28,7 @@ OID_WWAN_LTE_ATTACH_CONFIG 允许操作系统查询或设置插入的 SIM 提供
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 版本 | Windows 10 版本 1703 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows 10，版本 1703**头**： Ntddndis （包括 Ndis .h）
 
 ## <a name="see-also"></a>另请参阅
 

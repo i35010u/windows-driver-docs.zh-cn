@@ -1,10 +1,10 @@
 ---
-title: KsTimedFilterCallbacks 规则 （)
-description: KsTimedFilterCallbacks 规则指定一个内核流式处理 (KS) 微型端口驱动程序返回从 500 毫秒内的某个筛选器回调函数。
+title: KsTimedFilterCallbacks 规则（）
+description: KsTimedFilterCallbacks 规则指定内核流式处理（KS）微型端口驱动程序在500毫秒内从筛选器回调函数返回。
 ms.assetid: 5F631D49-405F-4F1A-A280-FEFB4ADA460D
 ms.date: 05/21/2018
 keywords:
-- KsTimedFilterCallbacks 规则 （)
+- KsTimedFilterCallbacks 规则（）
 topic_type:
 - apiref
 api_name:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9255f964f50bdab14bc8791eea3f25536703e22f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: bda8ca202949784cbe4d870abda60a0ce787c003
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392727"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917110"
 ---
-# <a name="kstimedfiltercallbacks-rule-"></a>KsTimedFilterCallbacks 规则 （)
+# <a name="kstimedfiltercallbacks-rule-"></a>KsTimedFilterCallbacks 规则（）
 
 
-KsTimedFilterCallbacks 规则指定一个内核流式处理 (KS) 微型端口驱动程序返回从 500 毫秒内的某个筛选器回调函数。
+KsTimedFilterCallbacks 规则指定内核流式处理（KS）微型端口驱动程序在500毫秒内从筛选器回调函数返回。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | KS  |
+**驱动程序模型： KS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查 0xC4:驱动程序\_VERIFIER\_已检测\_冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00082003) |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00082003） |
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -46,9 +44,9 @@ KsTimedFilterCallbacks 规则指定一个内核流式处理 (KS) 微型端口驱
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>若要验证此规则，请打开命令提示符窗口。 输入驱动程序验证程序命令，并指定<strong>/domain ks</strong>。</p>
+<td align="left"><p>若要验证此规则，请打开 "命令提示符" 窗口。 输入 Driver Verifier 命令并指定<strong>/domain ks</strong>。</p>
 <p>例如：</p>
-<p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
+<p><strong>验证程序/domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em> &lt; &gt; yourdriver</em></p>
 <p>有关详细信息，请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>。</p></td>
 </tr>
 </tbody>

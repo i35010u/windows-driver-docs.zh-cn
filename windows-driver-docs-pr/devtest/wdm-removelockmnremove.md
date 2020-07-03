@@ -1,6 +1,6 @@
 ---
 title: RemoveLockMnRemove 规则（wdm）
-description: RemoveLockMnRemove 规则验证在使用 MinorFunction IRP\_\_\_MN\_PNP 处理 IRP\_MJ 时，对 IoAcquireRemoveLock 和 IoReleaseRemoveLockAndWait 的调用是否正确。
+description: RemoveLockMnRemove 规则验证在 \_ \_ 使用 MinorFunction IRP \_ MN \_ REMOVE 设备处理 IRP MJ PNP 时，对 IoAcquireRemoveLock 和 IoReleaseRemoveLockAndWait 的调用是否正确使用 \_ 。
 ms.assetid: 3BB367F0-AAF7-4A9E-B642-BA839DDCAA4E
 ms.date: 05/21/2018
 keywords:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 398840e480b4dded1d6775f28eefa3f974690664
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 797dfbd6d3836ed0c41a5788c63564e767bf743a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917917"
 ---
 # <a name="removelockmnremove-rule-wdm"></a>RemoveLockMnRemove 规则（wdm）
 
 
-**RemoveLockMnRemove**规则验证在使用 MinorFunction IRP\_MN\_PNP 处理 IRP\_MJ 时，对[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)和[**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)的调用是否正确使用\_删除\_设备。
+**RemoveLockMnRemove**规则验证在[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) [**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) \_ \_ 使用 MinorFunction IRP \_ MN \_ REMOVE \_ 设备处理 IRP MJ PNP 时，对 IoAcquireRemoveLock 和 IoReleaseRemoveLockAndWait 的调用是否正确使用。
 
 此规则仅适用于 FDO 和 FIDO 驱动程序。
 
@@ -34,15 +34,13 @@ PnP 管理器通过堆栈发送查询删除。 当系统正在运行时，FDO �
 
 1.  在设备从设备堆栈分离之前， [**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)必须在将 irp 转发到以下 irp 类型的堆栈之前成功：
 
-    -   IRP\_MN\_查询\_删除
-    -   IRP\_MN\_SUPRISE\_删除
-    -   IRP\_MN\_删除\_设备
+    -   IRP \_ MN \_ 查询 \_ 删除
+    -   IRP \_ MN \_ SUPRISE \_ 删除
+    -   IRP \_ MN \_ 删除 \_ 设备
 
 2.  调用[**IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)或[**IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)之前应调用[**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) 。 （这可确保在设备驱动程序中释放所有删除锁）。
 
-|              |     |
-|--------------|-----|
-| 驱动程序型号 | WDM |
+**驱动程序模型： WDM**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -73,9 +71,9 @@ PnP 管理器通过堆栈发送查询删除。 当系统正在运行时，FDO �
 <a name="applies-to"></a>适用于
 ----------
 
-[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)
-[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)
-[**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)
+[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 
+[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) 
+[**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait) 
 [**RemoveHeadList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeheadlist)
  
 

@@ -1,6 +1,6 @@
 ---
-title: Irql\_协议\_驱动程序\_函数规则（ndis）
-description: Irql\_协议\_驱动程序\_函数规则指定 CoNDIS 客户端的 NDIS 函数必须以正确的 IRQL 级别进行调用。
+title: Irql \_ 协议 \_ 驱动程序 \_ 函数规则（ndis）
+description: Irql \_ 协议 \_ 驱动程序 \_ 函数规则指定 CoNDIS 客户端的 NDIS 函数必须以正确的 Irql 级别进行调用。
 ms.assetid: 9461c3d9-cb31-4ffd-b057-fd9978808c2f
 ms.date: 05/21/2018
 keywords:
@@ -12,45 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 44f83b00ad20de8eeb2f5ac1269a33adaa4fb5ce
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1268bbdc3e27b8be1f5be1042f075d09e8545c08
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839384"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916520"
 ---
-# <a name="irql_protocol_driver_function-rule-ndis"></a>Irql\_协议\_驱动程序\_函数规则（ndis）
+# <a name="irql_protocol_driver_function-rule-ndis"></a>Irql \_ 协议 \_ 驱动程序 \_ 函数规则（ndis）
 
 
-Irql\_协议\_驱动程序\_函数规则指定 CoNDIS 客户端的 NDIS 函数必须以正确的 IRQL 级别进行调用。
+Irql \_ 协议 \_ 驱动程序 \_ 函数规则指定 CoNDIS 客户端的 NDIS 函数必须以正确的 Irql 级别进行调用。
 
 此规则验证以下 NDIS 函数：
 
-**NdisClAddParty**
-**NdisClCloseAddressFamily**
-**NdisClCloseCall**
-**NdisClDeregisterSap**
-**NdisClDropParty**
-**NdisClGetProtocolVcContextFromTapiCallId**
-**NdisClIncomingCallComplete**
-**NdisClMakeCall**
-**NdisClModifyCallQoS**
-**NdisClNotifyCloseAddressFamilyComplete**
-**NdisClOpenAddressFamilyEx**
-**NdisCloseAdapterEx**
-**NdisClRegisterSap**
-**NdisCompleteBindAdapterEx**
-**NdisCompleteNetPnPEvent**
-**NdisCompleteUnbindAdapterEx**
-**NdisDeregisterProtocolDriver**
-**NdisMNetPnPEvent**
-**NdisOpenAdapterEx**
-**NdisRegisterProtocolDriver**
+**NdisClAddParty** 
+**NdisClCloseAddressFamily** 
+**NdisClCloseCall** 
+**NdisClDeregisterSap** 
+**NdisClDropParty** 
+**NdisClGetProtocolVcContextFromTapiCallId** 
+**NdisClIncomingCallComplete** 
+**NdisClMakeCall** 
+**NdisClModifyCallQoS** 
+**NdisClNotifyCloseAddressFamilyComplete** 
+**NdisClOpenAddressFamilyEx** 
+**NdisCloseAdapterEx** 
+**NdisClRegisterSap** 
+**NdisCompleteBindAdapterEx** 
+**NdisCompleteNetPnPEvent** 
+**NdisCompleteUnbindAdapterEx** 
+**NdisDeregisterProtocolDriver** 
+**NdisMNetPnPEvent** 
+**NdisOpenAdapterEx** 
+**NdisRegisterProtocolDriver** 
 **NdisUnbindAdapter**
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -67,7 +65,7 @@ Irql\_协议\_驱动程序\_函数规则指定 CoNDIS 客户端的 NDIS 函数�
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>Irql_Protocol_Driver_Function</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -78,29 +76,29 @@ Irql\_协议\_驱动程序\_函数规则指定 CoNDIS 客户端的 NDIS 函数�
 </tbody>
 </table>
 
-<a name="applies-to"></a>适用范围
+<a name="applies-to"></a>适用于
 ----------
 
-[**NdisClAddParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscladdparty)
-[**NdisClCloseAddressFamily**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily)
-[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall)
-[**NdisClDeregisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclderegistersap)
-[**NdisClDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscldropparty)
-[**NdisClGetProtocolVcContextFromTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclgetprotocolvccontextfromtapicallid)
-[**NdisClIncomingCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete)
-[**NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall)
-[**NdisClModifyCallQoS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmodifycallqos)
-[**NdisClNotifyCloseAddressFamilyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclnotifycloseaddressfamilycomplete)
-[**NdisClOpenAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)
-[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex)
-[**NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)
-[**NdisCompleteBindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletebindadapterex)
-[**NdisCompleteNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletenetpnpevent)
-[**NdisCompleteUnbindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompleteunbindadapterex)
-[**NdisDeregisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisderegisterprotocoldriver)
-[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent)
-[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)
-[**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver)
+[**NdisClAddParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscladdparty) 
+[**NdisClCloseAddressFamily**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily) 
+[**NdisClCloseCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclclosecall) 
+[**NdisClDeregisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclderegistersap) 
+[**NdisClDropParty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscldropparty) 
+[**NdisClGetProtocolVcContextFromTapiCallId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclgetprotocolvccontextfromtapicallid) 
+[**NdisClIncomingCallComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclincomingcallcomplete) 
+[**NdisClMakeCall**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmakecall) 
+[**NdisClModifyCallQoS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclmodifycallqos) 
+[**NdisClNotifyCloseAddressFamilyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclnotifycloseaddressfamilycomplete) 
+[**NdisClOpenAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex) 
+[**NdisCloseAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscloseadapterex) 
+[**NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap) 
+[**NdisCompleteBindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletebindadapterex) 
+[**NdisCompleteNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompletenetpnpevent) 
+[**NdisCompleteUnbindAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscompleteunbindadapterex) 
+[**NdisDeregisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisderegisterprotocoldriver) 
+[**NdisMNetPnPEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismnetpnpevent) 
+[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex) 
+[**NdisRegisterProtocolDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisregisterprotocoldriver) 
 [**NdisUnbindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisunbindadapter)
 
 

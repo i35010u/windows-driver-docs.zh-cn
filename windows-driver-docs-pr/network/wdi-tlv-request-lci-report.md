@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_REQUEST_LCI_REPORT
-description: WDI_TLV_REQUEST_LCI_REPORT 是包含的信息是否位置配置信息 (LCI) 报表应在正常时间度量 (FTM) 请求期间请求从目标 BSS TLV。
+description: WDI_TLV_REQUEST_LCI_REPORT 是一种 TLV，其中包含有关是否应在精细计时度量（INTERNAL.H）请求期间从目标 BSS 请求位置配置信息（LCI）报告的信息。
 ms.assetid: BFB15FF0-0272-4FDC-AD7A-94ECDA59D0ED
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_REQUEST_LCI_REPORT 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 70c3c232db4b4dd0930a39df75b67fe02b072bcb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b2ade18e17f79859cc22b9e41e277785b55258a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360166"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916893"
 ---
-# <a name="wditlvrequestlcireport"></a>WDI_TLV_REQUEST_LCI_REPORT
+# <a name="wdi_tlv_request_lci_report"></a>WDI_TLV_REQUEST_LCI_REPORT
 
-**WDI_TLV_REQUEST_LCI_REPORT**是 TLV，其中是否的位置配置信息 (LCI) 报表应在正常时间度量 (FTM) 请求期间从目标 BSS 请求的信息。
+**WDI_TLV_REQUEST_LCI_REPORT**是一种 TLV，其中包含有关是否应在精细计时度量（internal.h）请求期间从目标 BSS 请求位置配置信息（LCI）报告的信息。
 
-在中使用此 TLV [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md)。
+此 TLV 用于[WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63360166"
 
 ## <a name="length"></a>长度
 
-超出 UINT8 的大小 （以字节为单位）。
+UINT8 的大小（以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| UINT8 | 可能值： <ul><li>0:不需要 LCI 报表。</li><li>1：应请求 LCI 报表。</li></ul> |
+| UINT8 | 可能的值： <ul><li>0：不需要 LCI 报表。</li><li>1：应请求 LCI 报告。</li></ul> |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp

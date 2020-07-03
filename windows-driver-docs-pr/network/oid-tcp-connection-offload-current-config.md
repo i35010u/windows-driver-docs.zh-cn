@@ -6,16 +6,16 @@ keywords:
 - OID_TCP_CONNECTION_OFFLOAD_CURRENT_CONFIG，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ff0f7d25253f376a8fbd58ca83d1ffc24e8afddf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 936fa26b6e6caeb49d93b5089cfc34d10d5a1155
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843912"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917645"
 ---
 # <a name="oid_tcp_connection_offload_current_config"></a>OID_TCP_CONNECTION_OFFLOAD_CURRENT_CONFIG
 
-作为查询请求，管理应用程序（或可能过量的驱动程序）可以使用 OID_TCP_CONNECTION_OFFLOAD_CURRENT_CONFIG OID 来确定基础微型端口适配器的当前启用的连接卸载功能。 系统管理员可以通过 Microsoft Windows Management Instrumentation （WMI）接口使用此 OID。
+作为查询请求，管理应用程序（或可能过量的驱动程序）可以使用 OID_TCP_CONNECTION_OFFLOAD_CURRENT_CONFIG OID 来确定基础微型端口适配器当前启用的连接卸载功能。 系统管理员可以通过 Microsoft Windows Management Instrumentation （WMI）接口使用此 OID。
 
 不支持设置请求。
 
@@ -36,8 +36,5 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告�
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 版本 | Windows Vista 及更高版本 |
-| 标头 | Ntddndis （包括 Ndis .h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

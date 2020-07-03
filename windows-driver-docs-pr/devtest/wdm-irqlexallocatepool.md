@@ -1,6 +1,6 @@
 ---
 title: IrqlExAllocatePool 规则（wdm）
-description: IrqlExAllocatePool 规则指定仅当驱动程序在 IRQL 调度\_级别执行时，才调用 ExAllocatePoolWithTag 和 ExAllocatePoolWithTagPriority。
+description: IrqlExAllocatePool 规则指定仅当驱动程序在 IRQL 调度级别执行时，驱动程序才调用 ExAllocatePoolWithTag 和 ExAllocatePoolWithTagPriority \_ 。
 ms.assetid: 0bb179c5-e76b-46bc-b497-8639328d2eb2
 ms.date: 05/21/2018
 keywords:
@@ -12,32 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb05a4f598fd2c910b3e25d1f4b025b61672ab0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb821492a7f30f32a5394d6e0fd09c25b60aac99
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839936"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916847"
 ---
 # <a name="irqlexallocatepool-rule-wdm"></a>IrqlExAllocatePool 规则（wdm）
 
 
-**IrqlExAllocatePool**规则指定，仅当驱动程序在 IRQL&lt;= 调度\_级别执行时，才调用[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)和[**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) 。
+**IrqlExAllocatePool**规则指定仅当驱动程序以 IRQL = 调度级别执行时，驱动程序才调用[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)和[**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority) &lt; \_ 。
 
-在调度\_级别执行的调用方必须为*PoolType*指定非分页的*Xxx*值。 在 IRQL &lt;= APC\_级别执行的调用方可以指定任何[**池\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)值。
+在调度级别执行的调用方 \_ 必须为*PoolType*指定非分页的*Xxx*值。 在 IRQL = APC 级别执行的调用方 &lt; \_ 可以指定任何[**池 \_ 类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)值。
 
-|              |     |
-|--------------|-----|
-| 驱动程序模型 | WDM |
+**驱动程序模型： WDM**
 
 |                                   |                                                                                                                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 使用此规则发现的错误检查 | [**Bug 检查0xC4：检测到\_冲突（0x00020004）的驱动程序\_验证程序\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) ， [ **BUG 检查0XA： IRQL\_没有\_或\_相等**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal)\_ |
+| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_验证器 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0X00020004）， [ **Bug 检查0xA： IRQL \_ 不 \_ 小于 \_ 或 \_ 等于**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal) |
 
 <a name="example"></a>示例
 -------
 
-在下面的示例中， [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)例程在[**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)例程之后调用，后者将 IRQL 设置为调度\_级别。 **ExAllocatePoolWithTag**例程由**PagedPool**调用，后者违反了规则。
+在下面的示例中， [**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)例程在[**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)例程之后调用，后者将 IRQL 设置为调度 \_ 级别。 **ExAllocatePoolWithTag**例程由**PagedPool**调用，后者违反了规则。
 
 ```ManagedCPlusPlus
 NTSTATUS
@@ -108,7 +106,7 @@ ProcessRequest (
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>IrqlExAllocatePool</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
@@ -140,12 +138,12 @@ ProcessRequest (
 <a name="applies-to"></a>适用于
 ----------
 
-[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
+[**ExAllocatePoolWithTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 
 [**ExAllocatePoolWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)另请参阅
 --------
 
-[](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities) [**在使用自旋锁时管理硬件优先级
-防止错误和死锁**](https://docs.microsoft.com/windows-hardware/drivers/kernel/preventing-errors-and-deadlocks-while-using-spin-locks)
+[**管理硬件优先级**](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities) 
+[**使用自旋锁时防止错误和死锁**](https://docs.microsoft.com/windows-hardware/drivers/kernel/preventing-errors-and-deadlocks-while-using-spin-locks)
  
 
  
