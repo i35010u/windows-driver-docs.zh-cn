@@ -1,21 +1,21 @@
 ---
 title: OID_CO_GET_ADDRESSES
-description: 本主题介绍 OID_CO_GET_ADDRESSES 对象标识符 (OID)。
+description: 本主题介绍 OID_CO_GET_ADDRESSES 对象标识符（OID）。
 ms.assetid: 0c30e184-be01-49ab-b9ad-3ccc2fdf9fc5
 keywords:
 - OID_CO_GET_ADDRESSES
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9004aadc69b1a2d2afa3d9b1ab426cc77df8adb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19c68a354e0ad3b040a2a0d4a2a4d761642f3303
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363279"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918231"
 ---
-# <a name="oidcogetaddresses"></a>OID_CO_GET_ADDRESSES
+# <a name="oid_co_get_addresses"></a>OID_CO_GET_ADDRESSES
 
-客户端使用 OID_CO_GET_ADDRESSES OID 对呼叫管理器进行查询。 此查询将响应发送到客户端 OID_CO_ADDRESS_CHANGE 呼叫管理器中。 此查询的响应，呼叫管理器客户端设置的格式的地址列表将作为发送 CO_ADDRESS_LIST 定义的结构，按如下所示：
+OID_CO_GET_ADDRESSES OID 由客户端用于向调用管理器发出查询。 此查询用于响应将 OID_CO_ADDRESS_CHANGE 发送到客户端的调用管理器。 对于此查询，调用管理器会向客户端发送一个格式为 CO_ADDRESS_LIST 结构的地址列表，定义如下：
 
 ```c++
 typedef struct _CO_ADDRESS_LIST {
@@ -25,16 +25,16 @@ typedef struct _CO_ADDRESS_LIST {
 } CO_ADDRESS_LIST, *PCO_ADDRESS_LIST;
 ```
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
 **NumberOfAddressesAvailable**  
-在调用管理器的地址列表中指定的最大地址数。 而不考虑呼叫管理器返回到客户端在地址的实际数目**AddressList**，在缓冲区的大小**AddressList**始终**NumberOfAddressesAvailable**地址大小，这是特定于呼叫管理器的固定的大小的乘积。
+指定呼叫管理器的地址列表中的最大地址数。 无论调用管理器在**AddressList**返回到客户端的地址的实际数量如何， **AddressList**的缓冲区大小始终为**NumberOfAddressesAvailable**乘以地址大小，该大小是特定于调用管理器的固定大小。
 
 **NumberOfAddresses**  
-指定的呼叫管理器已写入到的地址数**AddressList**。
+指定调用管理器写入**AddressList**的地址的数目。
 
 **AddressList**  
-别名地址格式为 CO_ADDRESS 定义的结构，按如下所示：
+别名地址的格式为 CO_ADDRESS 结构，定义如下：
 
 ```c++
 typedef struct _CO_ADDRESS {
@@ -43,20 +43,17 @@ typedef struct _CO_ADDRESS {
 } CO_ADDRESS, *PCO_ADDRESS;
 ```
 
-此结构的成员包含下列信息：
+此结构的成员包含以下信息：
 
 **AddressSize**  
-以字节为单位的结构在指定的大小**地址**。
+指定**地址**处的结构的大小（以字节为单位）。
 
-**地址**  
-指定长度可变的数组，其中包含的地址列表。 地址格式是特定于呼叫管理器使用的信号协议。
+**Address**  
+指定包含地址列表的可变长度数组。 地址格式特定于呼叫管理器使用的信号协议。
 
-**AddressList**包含用于访问本地主机的网络地址。 **AddressList**返回到特定客户端包含共有的所有客户端的地址，以及客户端本身已添加到呼叫管理器的列表具有 OID_CO_ADD_ADDRESS 地址的任何地址。
+**AddressList**包含可用于访问本地主机的网络地址。 返回到特定客户端的**AddressList**包含所有客户端共用的地址，以及该客户端自行添加到 OID_CO_ADD_ADDRESS 的地址列表中的所有地址。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| Version | Windows Vista 及更高版本 |
-| Header | Ntddndis.h （包括 Ndis.h） |
+**版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
 

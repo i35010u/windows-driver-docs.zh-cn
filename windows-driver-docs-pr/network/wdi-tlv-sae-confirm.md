@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_CONFIRM
-description: WDI_TLV_SAE_CONFIRM 是包含同时进行身份验证的等于 (SAE) 确认请求的确认字段 TLV。
+description: WDI_TLV_SAE_CONFIRM 是一种 TLV，其中包含对 Equals （SAE）确认请求同时进行的身份验证的确认字段。
 ms.assetid: F2251F48-7EED-460B-9EFD-554451E1172B
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SAE_CONFIRM 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 949cf66d9025d3912bb347119af532ec0b9d152b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: a279d965e8df785a08aa1ff6c3c59189f2318d27
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905345"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918187"
 ---
-# <a name="wditlvsaeconfirm"></a>WDI_TLV_SAE_CONFIRM
+# <a name="wdi_tlv_sae_confirm"></a>WDI_TLV_SAE_CONFIRM
 
-**WDI_TLV_SAE_CONFIRM**是包含同时进行身份验证的等于 (SAE) 确认请求的确认字段 TLV。
+**WDI_TLV_SAE_CONFIRM**是一种 TLV，其中包含对 EQUALS （SAE）确认请求同时进行的身份验证的确认字段。
 
-在中使用此 TLV [WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md)。
+此 TLV 用于[WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +26,14 @@ ms.locfileid: "59905345"
 
 ## <a name="length"></a>长度
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小（以字节为单位）。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| UINT8[] | 确认字段中。 |
+| UINT8 [] | 确认字段。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10，版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp

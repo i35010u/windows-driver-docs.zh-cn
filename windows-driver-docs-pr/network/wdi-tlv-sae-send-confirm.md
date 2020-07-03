@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_SEND_CONFIRM
-description: WDI_TLV_SAE_SEND_CONFIRM 是 TLV 包含同时进行身份验证的等于 (SAE) 确认请求的发送确认字段。
+description: WDI_TLV_SAE_SEND_CONFIRM 是一种 TLV，其中包含对 Equals （SAE）确认请求同时进行的身份验证的发送确认字段。
 ms.assetid: F2251F48-7EED-460B-9EFD-554451E1172B
 ms.date: 02/15/2019
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_SAE_SEND_CONFIRM 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0c6405e10073daaef1bfdf5f0a196a3b8c45be42
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 901946f9867bca33af52a4358ec041429c2c77d0
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359052"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918287"
 ---
-# <a name="wditlvsaesendconfirm"></a>WDI_TLV_SAE_SEND_CONFIRM
+# <a name="wdi_tlv_sae_send_confirm"></a>WDI_TLV_SAE_SEND_CONFIRM
 
-**WDI_TLV_SAE_SEND_CONFIRM**是 TLV 包含同时进行身份验证的等于 (SAE) 确认请求的发送确认字段。 发送确认字段用作抗重播计数器。
+**WDI_TLV_SAE_SEND_CONFIRM**是一种 TLV，其中包含对 EQUALS （SAE）确认请求同时进行的身份验证的发送确认字段。 "发送确认" 字段用作反重播计数器。
 
-在中使用此 TLV [WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md)。
+此 TLV 用于[WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md)。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63359052"
 
 ## <a name="length"></a>长度
 
-UINT16 大小 （以字节为单位）。
+UINT16 的大小（以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| UINT16 | 发送确认字段中。 |
+| UINT16 | 发送确认字段。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： windows 10 版本 1903**支持的最低服务器**： Windows server 2016**标头**： Wditypes. hpp

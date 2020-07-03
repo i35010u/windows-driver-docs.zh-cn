@@ -1,6 +1,6 @@
 ---
-title: MiniportPause\_返回规则（ndis）
-description: MiniportPause\_返回规则指定，MiniportPause 回调函数应仅在暂停操作完成时返回 NDIS\_状态\_成功\_\_; 如果微型端口驱动程序在正在暂停状态。
+title: MiniportPause \_ 返回规则（ndis）
+description: MiniportPause \_ 返回规则指定，如果暂停操作完成，则 MiniportPause 回调函数应仅返回 ndis \_ 状态 \_ 成功; \_ \_ 如果微型端口驱动程序处于暂停状态，则为 ndis 状态。
 ms.assetid: f3751636-6ba2-4126-88e2-1f347bd7dd45
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f9fd70cea4261fdc4b7371b8ed0ba655d0c1fa2d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3efb5f84990eb0d2dcc2541be529992f996a0e84
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840100"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918293"
 ---
-# <a name="miniportpause_return-rule-ndis"></a>MiniportPause\_返回规则（ndis）
+# <a name="miniportpause_return-rule-ndis"></a>MiniportPause \_ 返回规则（ndis）
 
 
-**MiniportPause\_返回**规则指定， [*MiniportPause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)回调函数应仅在暂停操作完成时返回 NDIS\_状态\_成功\_\_; 如果微型端口驱动程序处于暂停状态。 任何其他返回的状态均无效。
+**MiniportPause \_ 返回**规则指定，如果暂停操作完成，则[*MiniportPause*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_pause)回调函数应仅返回 ndis \_ 状态 \_ 成功; \_ \_ 如果微型端口驱动程序处于暂停状态，则为 ndis 状态。 任何其他返回的状态均无效。
 
-|              |      |
-|--------------|------|
-| 驱动程序模型 | NDIS |
+**驱动程序模型： NDIS**
 
 <a name="how-to-test"></a>如何测试
 -----------
@@ -43,7 +41,7 @@ ms.locfileid: "72840100"
 <tbody>
 <tr class="odd">
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>MiniportPause_Return</strong>规则。</p>
-使用以下步骤来分析你的代码：
+使用以下步骤来运行代码分析：
 <ol>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
