@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e80c2f2ff2fbcb08316785a2214a183e43b1686f
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 0d795d9238a51a2ec981dff64fbc9e3bb6d6891b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917705"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967998"
 ---
 # <a name="pcregisteradapterpower-rule-audio"></a>PcRegisterAdapterPower 规则（音频）
 
@@ -29,9 +29,8 @@ PcRegisterAdapterPower 规则指定 PortCls 微型端口驱动程序不应：
 
 **驱动程序模型：音频**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00071006） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00071006）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

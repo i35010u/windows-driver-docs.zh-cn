@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f85f46bc878aa75a45a81a7a575f634f8eda1cdb
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: 57dbbfb21b8a333d331e3e318333ba5af4981d02
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072230"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968320"
 ---
 # <a name="flt_parameters-for-irp_mj_query_security-union"></a>IRP_MJ_QUERY_SECURITY 联合的 FLT_PARAMETERS
 
@@ -42,7 +42,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>成员
 
 **QuerySecurity**  
 包含以下成员的结构。
@@ -80,9 +80,8 @@ IRP_MJ_QUERY_SECURITY 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

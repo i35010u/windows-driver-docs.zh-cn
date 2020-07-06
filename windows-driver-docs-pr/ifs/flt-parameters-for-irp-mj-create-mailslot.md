@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 11/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 207a206ad7e39ccbd0b2ef93fe3eb27b9d410062
-ms.sourcegitcommit: 257850d61aa5d1db707dc2f30721319b650e47f6
+ms.openlocfilehash: f487d320d59d1ec3494922bc5e10a0ade89b6b14
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73801177"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968338"
 ---
 # <a name="flt_parameters-for-irp_mj_create_mailslot-union"></a>IRP_MJ_CREATE_MAILSLOT 联合的 FLT_PARAMETERS
 
@@ -50,20 +50,20 @@ FLT_PARAMETERS 的**CreateMailslot**结构包含以下成员。
 **SecurityContext**  
 一个指向[IO_SECURITY_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_security_context)结构的指针，该结构表示 IRP_MJ_CREATE_MAILSLOT 请求的安全上下文，其中：
 
-- **SecurityContext-> AccessState**是一个指向[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)结构的指针，该结构包含对象的主题上下文、授予访问类型和剩余所需的访问类型。
+- **SecurityContext->AccessState**是一个指向[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)结构的指针，该结构包含对象的主题上下文、授予访问类型和剩余所需的访问类型。
 
-- **SecurityContext-> DesiredAccess**是一个[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)结构，它指定为 mailslot 请求的访问权限。 有关详细信息，请参阅[**FltCreateMailslotFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatemailslotfile)的*DesiredAccess*参数。
+- **SecurityContext->DesiredAccess**是一个[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)结构，它指定为 mailslot 请求的访问权限。 有关详细信息，请参阅[**FltCreateMailslotFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatemailslotfile)的*DesiredAccess*参数。
 
 **选项**  
 标志的位掩码，用于指定创建或打开 mailslot 时要应用的选项，以及当 mailslot 已经存在时要执行的操作。 此成员的低24位对应于**FltCreateMailslotFile**的*CreateOptions*参数。 高8位对应于**FltCreateMailslotFile**的*CreateDisposition*参数。
 
-**保护**  
+**保留**  
 保护请勿使用。
 
 **ShareAccess**  
 为 mailslot 文件请求的共享访问权限位掩码。 如果此参数为零，则请求独占访问。 有关详细信息，请参阅[**FltCreateMailslotFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatemailslotfile)的*ShareAccess*参数。
 
-**Parameters**  
+**参数**  
 指向[MAILSLOT_CREATE_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mailslot_create_parameters)结构的指针，该结构包含正在创建或打开的 MAILSLOT 的相关信息。
 
 
@@ -79,9 +79,8 @@ IRP_MJ_CREATE_MAILSLOT 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头| Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

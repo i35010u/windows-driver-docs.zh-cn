@@ -1,21 +1,21 @@
 ---
 title: WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB
-description: WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB 是 TLV，其中包含有关设备服务从 IHV 驱动程序收到的信息。
+description: WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB 是一种 TLV，其中包含有关从 IHV 驱动程序收到的设备服务的信息。
 ms.assetid: D07CDC24-849F-447A-8447-FD2D37178C42
 ms.date: 06/15/2018
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 76bec883c708bb9976d907c119e0cc790e5b4e0b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 53ed36aa0bc80fdb79c114211d97d7a9864946e7
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331849"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968440"
 ---
-# <a name="wditlvdeviceserviceparamsdatablob"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB
+# <a name="wdi_tlv_device_service_params_data_blob"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB
 
-WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB 是 TLV，其中包含有关设备服务从 IHV 驱动程序收到的信息。 在中使用此 TLV [NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT](ndis-status-wdi-indication-device-service-event.md)状态指示。
+WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB 是一种 TLV，其中包含有关从 IHV 驱动程序收到的设备服务的信息。 此 TLV 用于[NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT](ndis-status-wdi-indication-device-service-event.md)状态指示。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -23,18 +23,19 @@ WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB 是 TLV，其中包含有关设备服务
 
 ## <a name="length"></a>长度
 
-大小，以字节为单位的`(UINT8 * (the number of elements in the list))`。
+的大小（以字节为单位） `(UINT8 * (the number of elements in the list))` 。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| TLV\<List\<UINT8\>\> | [可选]从 IHV 驱动程序收到的信息。 |
+| TLV\<List\<UINT8\>\> | 可有可无从 IHV 驱动程序接收的信息。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1809 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： Windows 10，版本1809
+
+**支持的最低服务器**： Windows server 2016
+
+**标头**： Wditypes. hpp
+

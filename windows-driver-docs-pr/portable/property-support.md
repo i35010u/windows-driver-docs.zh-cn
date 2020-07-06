@@ -3,32 +3,36 @@ Description: 属性支持
 title: 属性支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a36aaa31b751f6672e97906fe6d8aa6c90e9e8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 445700819101499437251fbaff795a6730994a74
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376236"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967858"
 ---
 # <a name="property-support"></a>属性支持
 
 
-*WpdObjectProperties.cpp*并*WpdObjectProperties.h*文件包含设置和检索设备上的对象属性的成员函数。
+*WpdObjectProperties*和*WpdObjectProperties*文件包含用于在设备上设置和检索对象属性的成员函数。
 
-当 Windows 应用程序调用中的五个方法之一**IPortableDeviceProperties**接口，此调用，进而触发中的五个命令处理程序之一**WpdObjectProperty**类。 下表列出了应用程序的方法的映射**WpdObjectProperties**驱动程序的方法。
+当 Windows 应用程序调用**IPortableDeviceProperties**接口中的五种方法之一时，此调用反过来会触发**WpdObjectProperty**类中的五个命令处理程序之一。 下表标识了应用程序方法到**WpdObjectProperties**驱动程序方法的映射。
 
-|                                                       |                                                   |
-|-------------------------------------------------------|---------------------------------------------------|
-| **IPortableDeviceProperties 方法**                  | **WpdObjectProperties 命令处理程序**           |
-| **IPortableDeviceProperties::Delete**                 | **OnDelete**                                      |
-| **IPortableDeviceProperties::GetPropertyAttributes**  | **OnGetPropertyAttributes**                       |
-| **IPortableDeviceProperties::GetSupportedProperties** | **OnGetSupportedProperties**                      |
-| **IPortableDeviceProperties::GetValues**              | **OnGetPropertyValues 或 OnGetAllPropertyValues** |
-| **IPortableDeviceProperties::SetValues**              | **OnSetPropertyValues**                           |
+IPortableDeviceProperties 方法 * * * * *： **WpdObjectProperties 命令处理程序**
+
+IPortableDeviceProperties：:D e) * * * *： **OnDelete**
+
+IPortableDeviceProperties：： GetPropertyAttributes * * * *： **OnGetPropertyAttributes**
+
+IPortableDeviceProperties：： GetSupportedProperties * * * *： **OnGetSupportedProperties**
+
+IPortableDeviceProperties：： GetValues * * * *： **OnGetPropertyValues 或 OnGetAllPropertyValues**
+
+IPortableDeviceProperties：： SetValues * * * *： **OnSetPropertyValues**
+
 
  
 
-通过调用 WpdObjectProperties 命令处理程序**WpdObjectProperty::DispatchWpdMessage**方法。 以下内容摘自示例驱动程序包含的代码**WpdObjectProperty::DispatchWpdMessage:**
+WpdObjectProperties 命令处理程序由**WpdObjectProperty：:D ispatchwpdmessage**方法调用。 示例驱动程序的以下摘录包含用于 WpdObjectProperty 的代码 **：:D ispatchwpdmessage：**
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::DispatchWpdMessage(

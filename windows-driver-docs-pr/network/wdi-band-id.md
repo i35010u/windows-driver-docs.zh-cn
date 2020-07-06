@@ -6,16 +6,16 @@ keywords:
 - WDI_BAND_ID，WDK WDI_BAND_ID 网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e8782091eaf19c4217ff0d7e57b2eb4d85895e3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8c5744120f400a1e73d9d8ce4f86a1c29c8724b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391921"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968240"
 ---
-# <a name="wdibandid"></a>WDI_BAND_ID
+# <a name="wdi_band_id"></a>WDI_BAND_ID
 
-WDI_BAND_ID 数据类型是一个 UINT32 值，定义一个带区 id。
+WDI_BAND_ID 数据类型是一个定义带区 ID 的 UINT32 值。
 
 ```c++
 typedef UINT32 WDI_BAND_ID;
@@ -23,23 +23,24 @@ typedef UINT32 WDI_BAND_ID;
 
 ## <a name="remarks"></a>备注
 
-可能的带区的 ID 值如下所示：
+可能的带区 ID 值如下所示：
 
-| ReplTest1 |   | 描述 |
+| Value |   | 说明 |
 | --- | --- | --- |
 | WDI_BAND_ID_ANY | 0xFFFFFFFF | 所有带区 |
 | WDI_BAND_ID_2400 | 1 | 2.4 GHz |
 | WDI_BAND_ID_5000 | 2 | 5 GHz |
 | WDI_BAND_ID_60000 | 3 | 60 GHz |
 | WDI_BAND_ID_900 | 4 | 900 MHz |
-| WDI_BAND_ID_CUSTOM_START | 0x80000000 |指定用于定义报告的 IHV 外 ID 范围的开始。 |
-| WDI_BAND_ID_CUSTOM_END | 0x81000000 | 指定用于定义报告的 IHV 外 ID 范围的末尾。 |
+| WDI_BAND_ID_CUSTOM_START | 0x80000000 |指定用于定义 IHV 报告的带区 ID 的范围的开始时间。 |
+| WDI_BAND_ID_CUSTOM_END | 0x81000000 | 指定范围的结束，该范围用于定义由 IHV 报告的带区 ID。 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： Windows 10
+
+**支持的最低服务器**： Windows server 2016
+
+**标头**： Wditypes. hpp
+
 

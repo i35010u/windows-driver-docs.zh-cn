@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4bfe344072899fc30455ef09d7d460bf48aad4
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 3532795a5ee62d5b4e0c990a6399aca82c73ce7b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917835"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968094"
 ---
 # <a name="ndisoidcomplete-rule-ndis"></a>NdisOidComplete 规则（ndis）
 
@@ -104,9 +104,8 @@ ms.locfileid: "85917835"
 
 **驱动程序模型： NDIS**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00091001） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00091001）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

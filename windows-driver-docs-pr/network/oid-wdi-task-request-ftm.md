@@ -1,47 +1,48 @@
 ---
 title: OID_WDI_TASK_REQUEST_FTM
-description: OID_WDI_TASK_REQUEST_FTM 颁发给 LE 启动使用列出的 BSS 目标的正常时间度量 (FTM) 过程。
+description: 将 OID_WDI_TASK_REQUEST_FTM 颁发给 LE，以启动具有列出的 BSS 目标的精细计时度量（INTERNAL.H）过程。
 ms.assetid: 67E17BD2-9216-43B5-8D1E-C6DF8537D79E
 ms.date: 02/08/2019
 keywords:
 - 从 Windows Vista 开始 OID_WDI_TASK_REQUEST_FTM 网络驱动程序
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e4d4a295aaa71d6bd80ab3dcbcf371ec77809cc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7e2cf3a171a59613e11575b7b6c2e9025620856
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340015"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968536"
 ---
-# <a name="oidwditaskrequestftm"></a>OID_WDI_TASK_REQUEST_FTM
+# <a name="oid_wdi_task_request_ftm"></a>OID_WDI_TASK_REQUEST_FTM
 
 
-**OID_WDI_TASK_REQUEST_FTM**颁发给 LE 启动使用列出的 BSS 目标的正常时间度量 (FTM) 过程。 目标数小于或等于的值**FTMNumberOfSupportedTargets**，从工作站属性获得。
+将**OID_WDI_TASK_REQUEST_FTM**颁发给 LE，以启动具有列出的 BSS 目标的精细计时度量（internal.h）过程。 目标数小于或等于从工作站特性获取的**FTMNumberOfSupportedTargets**的值。
 
-一旦完成目标的所有 FTM 会话、 超时已过期，或该主机已中止该操作，应都完成此任务。
+当目标的所有 INTERNAL.H 会话完成、超时已过期或主机已中止操作时，应立即完成此任务。
 
-完成此任务后，驱动程序应发送[NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md) FTM 响应的列表包含为每个请求的目标的状态指示。
+完成此任务后，驱动程序应发送一个[NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)状态指示，其中包含每个请求的目标的 internal.h 响应列表。
 
-完成此任务后，该端口应处于良好状态，并应该已准备好处理新的 FTM 请求，因为主机立即重新尝试该任务的一组新的目标。
+完成此任务后，端口应处于良好状态并且应准备好处理新的 INTERNAL.H 请求，因为主机可能会立即使用一组新的目标重新尝试该任务。
 
-对于每个目标，指示如果应请求位置配置信息 (LCI) 报表。 如果已指明，LE 应请求来自目标。 
+对于每个目标，如果应请求位置配置信息（LCI）报告，则指示。 如果指示，则该 LE 应从目标请求一个。 
 
 ## <a name="task-parameters"></a>任务参数
 
-| TLV | 在任务栏的搜索框中键入 | 允许多个 TLV 实例 | 可选 | 描述 |
+| TLV | 类型 | 允许多个 TLV 实例 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| [WDI_TLV_FTM_REQUEST_TIMEOUT](wdi-tlv-ftm-request-timeout.md) | UINT32 |   |   | 最长的时间，以毫秒为单位，以完成 FTM。 超时设置为 150 毫秒的目标数的乘积。 |
-| [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md) | WDI_FTM_TARGET_BSS_ENTRY | X |   | 应使用哪个 FTM 完成过程的 BSS 目标的列表。 |
+| [WDI_TLV_FTM_REQUEST_TIMEOUT](wdi-tlv-ftm-request-timeout.md) | UINT32 |   |   | 完成 INTERNAL.H 的最长时间（以毫秒为单位）。 超时值设置为150毫秒，乘以目标的数目。 |
+| [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md) | WDI_FTM_TARGET_BSS_ENTRY | X |   | 应完成其 INTERNAL.H 过程的 BSS 目标的列表。 |
 
-## <a name="task-completion-indication"></a>指示任务完成
+## <a name="task-completion-indication"></a>任务完成指示
 
 [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1903 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Dot11wdi.h |
+**支持的最低客户端**： Windows 10，版本1903
+
+**支持的最低服务器**： Windows server 2016
+
+**标头**： Dot11wdi
+

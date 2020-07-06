@@ -5,12 +5,12 @@ keywords:
 - 将 LINQ 与调试器对象配合使用
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e0db367cdb6636212407b3aef0643217c2dfd59c
-ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
+ms.openlocfilehash: 0304df55a8655e4b637af954fb77ffc312e614e4
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144696"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968008"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
@@ -18,11 +18,11 @@ LINQ 语法可以与调试器对象结合使用来搜索和操作数据。 将 L
 
 调试器对象投影到以 "调试器" 为根的命名空间中。 进程、模块、线程、堆栈、堆栈帧和局部变量均可在 LINQ 查询中使用。
 
-LINQ 在概念上类似于用于查询数据库的结构化查询语言（SQL）。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 使用 LINQ C#方法语法。 有关 LINQ 和 LINQ C#语法的详细信息，请参阅[中的入门 linq C# in](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/getting-started-with-linq)
+LINQ 在概念上类似于用于查询数据库的结构化查询语言（SQL）。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 使用 LINQ c # 方法语法。 有关 LINQ 和 LINQ c # 语法的详细信息，请参阅[在 c # 中通过 LINQ 入门](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/getting-started-with-linq)
 
 调试器支持中使用的 LINQ 使用 LINQ 的 "方法语法"，而不是 "查询语法"。 可以在[LINQ （语言集成查询）](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq)中找到有关差异的详细信息。
 
-LINQ 命令（如下所示）可与调试器对象一起使用。 All、。Any、。计数、。首先，。平展，。GroupBy，。Last。OrderBy，。OrderByDescending、。选择 "与"。其中. 这些方法遵循C# LINQ 方法窗体。
+LINQ 命令（如下所示）可与调试器对象一起使用。 All、。Any、。计数、。首先，。平展，。GroupBy，。Last。OrderBy，。OrderByDescending、。选择 "与"。其中. 这些方法遵循 c # LINQ 方法形式。
 
 ## <a name="native-debugger-objects"></a>本机调试器对象
 
@@ -35,10 +35,10 @@ LINQ 命令（如下所示）可与调试器对象一起使用。 All、。Any�
 - 局部变量
 - 模块/模块
 - 实用程序
-- State
+- 状态
 - 设置
 
-还可以使用 NatVis 处理调试器对象。 有关详细信息，请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。 有关将调试器对象与 JavaScript 一起使用的信息，请参阅[Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。 有关使用C++和驱动程序对象的信息，请参阅[调试器数据模型C++概述](data-model-cpp-overview.md)。
+还可以使用 NatVis 处理调试器对象。 有关详细信息，请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。 有关将调试器对象与 JavaScript 一起使用的信息，请参阅[Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。 有关使用 c + + 和驱动程序对象的信息，请参阅[调试器数据模型 c + + 概述](data-model-cpp-overview.md)。
 
 ## <a name="dx-command"></a>Dx 命令
 
@@ -108,7 +108,7 @@ Debugger.Sessions[0].Processes[1428].Threads
 ...
 ```
 
-对于我们的方案，还需要线程数。 因为有两个字段，所以请使用*new*（类似于C#下面的[用户定义变量](#user-defined-variables)中所述的匿名类型语法）创建匿名类型。
+对于我们的方案，还需要线程数。 因为有两个字段，所以请使用*new*创建一个匿名类型，类似于下面在[用户定义的变量](#user-defined-variables)中描述的 c # 匿名类型语法。
 
 ```dbgcmd
 dx @$cursession.Processes.Select(p => new {Name = p.Name, Threads = p.Threads})
@@ -337,7 +337,7 @@ kd> dx -r1 @$curprocess.Threads
 
 ## <a name="user-defined-variables---anonymous-types"></a>用户定义的变量-匿名类型
 
-动态对象的创建是使用C#匿名类型语法（new {...}）完成的。 有关详细信息，请参阅[匿名类型（C#编程指南）](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/classes-and-structs/anonymous-types)。 此示例创建一个具有整数和字符串值的匿名类型。
+此动态对象的创建是使用 c # 匿名类型语法（new {...}）完成的。 有关详细信息，请参阅[匿名类型（c # 编程指南）](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/classes-and-structs/anonymous-types)。 此示例创建一个具有整数和字符串值的匿名类型。
 
 ```dbgcmd
 kd> dx -r1 new { MyInt = 42, MyString = "Hello World" }
@@ -349,9 +349,9 @@ new { MyInt = 42, MyString = "Hello World" } :
 
 ## <a name="function-objects-lambda-expressions"></a>函数对象（Lambda 表达式）
 
-用于查询数据的许多方法都基于跨集合中的对象重复运行用户提供函数的概念。 为了支持在调试器中查询和操作数据的功能，dx 命令支持使用等效C#语法的 lambda 表达式。 Lambda 表达式由 =&gt; 运算符的用法定义，如下所示：
+用于查询数据的许多方法都基于跨集合中的对象重复运行用户提供函数的概念。 为了支持在调试器中查询和操作数据的功能，dx 命令支持使用等效 c # 语法的 lambda 表达式。 Lambda 表达式是通过使用 = 运算符定义的， &gt; 如下所示：
 
-（arguments） =&gt; （result）
+（arguments） = &gt; （result）
 
 若要查看如何将 LINQ 与 dx 一起使用，请尝试使用这一简单示例将5和7相加。
 
@@ -379,108 +379,116 @@ Dx 定义为可迭代的任何对象（这是本机数组，NatVis 将其描述�
 
 筛选方法
 
-|                            |                                                                                                                                   |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| .Where （PredicateMethod） | 返回一个新的对象集合，其中包含谓词方法为其返回 true 的输入集合中的每个对象。 |
+**.Where （PredicateMethod）**：返回一个新的对象集合，其中包含谓词方法为其返回 true 的输入集合中的每个对象。
+
 
 
 
 投影方法
 
-|                                     |                                                                                                                                                                                                                                                                                                                             |
-|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .平展（\[KeyProjectorMethod\]） | 采用容器的输入容器（一个树），并将其平展到一个容器中，该容器具有树中的每个元素。 如果提供了可选的密钥投影仪方法，则会将树视为一个密钥容器，这些密钥是自身的容器，而这些密钥是通过调用投影方法确定的。 |
-| .Select （KeyProjectorMethod）      | 返回一个新的对象集合，其中包含对输入集合中的每个对象调用投影仪方法的结果。                                                                                                                                                                                          |
+**.平展（ \[ KeyProjectorMethod \] ）**：采用容器（一个树）的输入容器，并将其平展到一个容器中，该容器包含树中的每个元素。 如果提供了可选的密钥投影仪方法，则会将树视为一个密钥容器，这些密钥是自身的容器，而这些密钥是通过调用投影方法确定的。
+
+**.Select （KeyProjectorMethod）**：返回一个新的对象集合，其中包含对输入集合中的每个对象调用投影仪方法的结果。
+
 
 
 
 分组方法
 
-|                                                                                                                            |                                                                                                                                                                                                               |
-|----------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .GroupBy （KeyProjectorMethod、\[KeyComparatorMethod\]）                                                                   | 通过将输入集合中的所有对象与通过调用密钥投影仪方法确定的键组合在一起，返回集合的新集合。 可以提供可选的比较运算符方法。 |
-| 联接（InnerCollection，外键选择器方法，内部键选择器方法，结果选择器方法，\[ComparatorMethod\]） | 基于键选择器函数联接两个序列并提取值对。 还可以指定可选的比较运算符方法。                                                                        |
-| Intersect （InnerCollection，\[ComparatorMethod\]）                                                                          | 返回交集，这意味着出现在两个集合中的元素。 还可以指定可选的比较运算符方法。                                                               |
-| 联合（InnerCollection、\[ComparatorMethod\]）                                                                              | 返回并集，这意味着在两个集合中的任何一个中出现的唯一元素。 还可以指定可选的比较运算符方法。                                                             |
+**.GroupBy （KeyProjectorMethod， \[ KeyComparatorMethod \] ）**：通过将输入集合中的所有对象与通过调用密钥投影仪方法确定的键组合在一起，返回集合的新集合。 可以提供可选的比较运算符方法。
+
+**联接（InnerCollection，外键选择器方法，内部键选择器方法，结果选择器方法， \[ ComparatorMethod \] ）**：基于键选择器函数联接两个序列并提取值对。 还可以指定可选的比较运算符方法。
+
+**Intersect （InnerCollection， \[ ComparatorMethod \] ）**：返回交集，这意味着出现在两个集合中的每个集合中的元素。 还可以指定可选的比较运算符方法。
+
+**Union （InnerCollection， \[ ComparatorMethod \] ）**：返回集并集，这意味着在两个集合中的任意一个集合中出现的唯一元素。 还可以指定可选的比较运算符方法。
+
 
 
 
 数据集方法
 
-|                                                |                                                                                                                                                                                                   |
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Contains （Object，\[ComparatorMethod\]）        | 确定序列是否包含指定的元素。 可以提供一个可选的比较运算符方法，每次将元素与序列中的条目进行比较时，都会调用此方法。 |
-| Distinct （\[ComparatorMethod\]）                | 从集合中移除重复值。 可以提供一个可选的比较运算符方法，以便每次必须对集合中的对象进行比较。                                      |
-| Except （InnerCollection，\[ComparatorMethod\]） | 返回这两个集之间的差异，这意味着一个集合中未出现在第二个集合中的元素。 可以指定可选的比较运算符方法。                                 |
-| Concat （InnerCollection）                       | 连接两个序列以形成一个序列。                                                                                                                                                  |
+**Contains （Object， \[ ComparatorMethod \] ）**：确定序列是否包含指定的元素。 可以提供一个可选的比较运算符方法，每次将元素与序列中的条目进行比较时，都会调用此方法。
+
+**Distinct （ \[ ComparatorMethod \] ）**：从集合中移除重复值。 可以提供一个可选的比较运算符方法，以便每次必须对集合中的对象进行比较。
+
+**Except （InnerCollection， \[ ComparatorMethod \] ）**：返回设置的差异，这意味着一个集合中未出现在第二个集合中的元素。 可以指定可选的比较运算符方法。
+
+**Concat （InnerCollection）**：连接两个序列以形成一个序列。
+
 
 
 
 排序方法
 
-|                                                                    |                                                                                                                                                                                                      |
-|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .OrderBy （KeyProjectorMethod，\[KeyComparatorMethod\]）           | 根据通过对输入集合中的每个对象调用密钥投影方法提供的键，按升序对集合进行排序。 可以提供可选的比较运算符方法。  |
-| .OrderByDescending （KeyProjectorMethod，\[KeyComparatorMethod\]） | 根据通过对输入集合中的每个对象调用密钥投影方法提供的键，按降序对集合进行排序。 可以提供可选的比较运算符方法。 |
+**.OrderBy （KeyProjectorMethod， \[ KeyComparatorMethod \] ）**：根据在输入集合中每个对象上调用密钥投影方法提供的键，按升序对集合进行排序。 可以提供可选的比较运算符方法。
+
+**.OrderByDescending （KeyProjectorMethod， \[ KeyComparatorMethod \] ）**：通过在输入集合中的每个对象上调用密钥投影方法，按顺序按降序对集合进行排序。 可以提供可选的比较运算符方法。
+
 
 
 
 聚合方法
 
-|                            |                                                                                                                                                |
-|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Count （）                   | 返回集合中的元素数的方法。                                                                                |
-| Sum （\[ProjectionMethod\]） | 计算集合中值的总和。 可以选择指定一个投影仪方法来转换元素，然后再进行求和。 |
+**Count （）**：返回集合中的元素数的方法。
+
+**Sum （ \[ ProjectionMethod \] ）**：计算集合中的值的和。 可以选择指定一个投影仪方法来转换元素，然后再进行求和。
+
 
 
 
 Skip 方法
 
-|                             |                                                                                               |
-|-----------------------------|-----------------------------------------------------------------------------------------------|
-| Skip （计数）                | 跳过序列中指定位置的元素。                                      |
-| SkipWhile （PredicateMethod） | 基于谓词函数跳过元素，直到元素不满足该条件。 |
+**Skip （Count）**：跳过序列中指定位置的元素。
+
+**SkipWhile （PredicateMethod）**：跳过基于谓词函数的元素，直到元素不满足该条件。
+
 
 
 
 Take 方法
 
-|                             |                                                                                               |
-|-----------------------------|-----------------------------------------------------------------------------------------------|
-| Take （计数）                | 获取序列中指定位置的元素。                                      |
-| TakeWhile （PredicateMethod） | 根据谓词函数获取元素，直到元素不满足该条件。 |
+**Take （Count）**：使元素在序列中的指定位置之前。
+
+**TakeWhile （PredicateMethod）**：使用基于谓词函数的元素，直到某个元素不满足该条件。
+
 
 
 
 比较方法
 
-|                                                       |                                                                                                                                  |
-|-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| SequenceEqual （InnerCollection，\[ComparatorMethod\]） | 通过对元素进行成对比较来确定两个序列是否相等。 可以指定可选的比较运算符。 |
+**SequenceEqual （InnerCollection， \[ ComparatorMethod \] ）**：通过对元素进行成对比较来确定两个序列是否相等。 可以指定可选的比较运算符。
+
 
 
 
 错误处理方法
 
-|                                     |                                                                                   |
-|-------------------------------------|-----------------------------------------------------------------------------------|
-| AllNonError (PredicateMethod)       | 返回集合的所有非错误元素是否都满足给定的条件。 |
-| FirstNonError （\[PredicateMethod\]） | 返回集合中不是错误的第一个元素。                    |
-| LastNonError （\[PredicateMethod\]）  | 返回集合中不是错误的最后一个元素。                     |
+**AllNonError （PredicateMethod）**：返回集合的所有非错误元素是否满足给定条件。
+
+**FirstNonError （ \[ PredicateMethod \] ）**：返回集合中不是错误的第一个元素。
+
+**LastNonError （ \[ PredicateMethod \] ）**：返回集合中不是错误的最后一个元素。
+
 
 
 
 其他方法
 
-|                                |                                                                                                                                                                                                                                                                              |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .全部（PredicateMethod）       | 返回对输入集合中的每个元素调用指定谓词方法的结果是否为 true。                                                                                                                                                       |
-| .Any （PredicateMethod）       | 返回对输入集合中的任何元素调用指定谓词方法的结果是否为 true。                                                                                                                                                         |
-| .First （\[PredicateMethod\]） | 返回集合中的第一个元素。 如果传递了可选谓词，则将返回集合中对谓词的调用返回 true 的第一个元素。                                                                                                |
-| .Last （\[PredicateMethod\]）  | 返回集合中的最后一个元素。 如果传递了可选谓词，则将返回集合中的最后一个元素，对该谓词的调用将返回 true。                                                                                                  |
-| Min （\[KeyProjectorMethod\]）    | 返回集合中的最小元素。 可以指定一个可选的投影仪方法，以便在将每个方法与其他方法进行比较之前将其投影。                                                                                                                         |
-| Max （\[KeyProjectorMethod\]）    | 返回集合中的最大元素。 可以指定一个可选的投影仪方法，以便在将每个方法与其他方法进行比较之前将其投影。                                                                                                                         |
-| Single （\[PredicateMethod\]）    | 返回列表中的唯一元素（如果集合包含多个元素，则返回错误）。 如果指定了谓词，则将返回满足该谓词的单个元素（如果有多个元素满足该谓词，则函数将改为返回错误）。 |
+**.All （PredicateMethod）**：返回对输入集合中的每个元素调用指定谓词方法的结果是否为 true。
+
+**.Any （PredicateMethod）**：返回对输入集合中的任何元素调用指定谓词方法的结果是否为 true。
+
+**.First （ \[ PredicateMethod \] ）**：返回集合中的第一个元素。 如果传递了可选谓词，则将返回集合中对谓词的调用返回 true 的第一个元素。
+
+**.Last （ \[ PredicateMethod \] ）**：返回集合中的最后一个元素。 如果传递了可选谓词，则将返回集合中的最后一个元素，对该谓词的调用将返回 true。
+
+**Min （ \[ KeyProjectorMethod \] ）**：返回集合中的最小元素。 可以指定一个可选的投影仪方法，以便在将每个方法与其他方法进行比较之前将其投影。
+
+**Max （ \[ KeyProjectorMethod \] ）**：返回集合中的最大元素。 可以指定一个可选的投影仪方法，以便在将每个方法与其他方法进行比较之前将其投影。
+
+**Single （ \[ PredicateMethod \] ）**：返回列表中唯一的元素（如果集合包含多个元素，则返回错误）。 如果指定了谓词，则将返回满足该谓词的单个元素（如果有多个元素满足该谓词，则函数将改为返回错误）。
+
 
 
 
@@ -493,18 +501,18 @@ Take 方法
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">KeyProjectorMethod：（obj =&gt; 任意密钥）</td>
+<td align="left">KeyProjectorMethod：（obj = &gt; 任意密钥）</td>
 <td align="left">获取集合的对象并从该对象返回一个键。</td>
 </tr>
 <tr class="even">
-<td align="left">KeyComparatorMethod：（（a，b） =&gt; 整数值）</td>
+<td align="left">KeyComparatorMethod：（（a，b） = &gt; 整数值）</td>
 <td align="left">采用两个键并比较它们返回的内容：
-<p>如果为（a &lt; b），则为-1</p>
+<p>如果为（a b），则为-1 &lt;</p>
 <p>如果为0（a = = b）</p>
-<p>如果为（a &gt; b），则为1</p></td>
+<p>如果为（a b），则为 1 &gt;</p></td>
 </tr>
 <tr class="odd">
-<td align="left">PredicateMethod：（obj =&gt; 布尔值）</td>
+<td align="left">PredicateMethod：（obj = &gt; 布尔值）</td>
 <td align="left">获取集合的对象，并根据该对象是否满足某些条件，返回 true 或 false。</td>
 </tr>
 </tbody>
@@ -518,33 +526,38 @@ Take 方法
 
 查询相关方法 & 属性
 
-|                                     |                                                                                                                                                                                                                                   |
-|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .Contains （OtherString）           | 返回一个布尔值，该值指示输入字符串是否包含 OtherString。                                                                                                                                                 |
-| .EndsWith （OtherString）           | 返回一个布尔值，该值指示输入字符串是否以 OtherString 结尾。                                                                                                                                                |
-| 长度                              | 一个属性，该属性返回字符串的长度。                                                                                                                                                                                |
-| .StartsWith （OtherString）         | 返回一个布尔值，该值指示输入字符串是否以 OtherString 开头。                                                                                                                                              |
-| .Substring （StartPos，\[长度\]） | 从给定的起始位置开始，返回输入字符串中的子字符串。 如果提供了可选长度，则返回的子字符串将为指定的长度;否则，将会跳到字符串的末尾。 |
+**.Contains （OtherString）**：返回一个布尔值，该值指示输入字符串是否包含 OtherString。
+
+**.EndsWith （OtherString）**：返回一个布尔值，该值指示输入字符串是否以 OtherString 结束。
+
+**Length**：返回字符串长度的属性。
+
+**.StartsWith （OtherString）**：返回一个布尔值，该值指示输入字符串是否以 OtherString 开头。
+
+**.Substring （StartPos， \[ Length \] ）**：从给定的起始位置开始，返回输入字符串中的子字符串。 如果提供了可选长度，则返回的子字符串将为指定的长度;否则，将会跳到字符串的末尾。
+
 
 
 
 其他方法
 
-|                              |                                                                                   |
-|------------------------------|-----------------------------------------------------------------------------------|
-| .IndexOf （OtherString）     | 返回 OtherString 在输入字符串中的第一个匹配项的索引。 |
-| .LastIndexOf （OtherString） | 返回 OtherString 在输入字符串中的最后一个匹配项的索引。  |
+**.IndexOf （OtherString）**：返回输入字符串中第一个匹配项的索引。
+
+**.LastIndexOf （OtherString）**：返回输入字符串中最后一个匹配项的索引。
+
 
 
 
 格式设置方法
 
-|                                          |                                                                                                                                                                                                                                                     |
-|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .PadLeft （TotalWidth）                  | 根据需要在字符串左侧添加空格，以便将字符串的总长度显示为指定的宽度。                                                                                                                    |
-| .PadRight （TotalWidth）                 | 根据需要在字符串的右侧添加空格，以便将字符串的总长度显示为指定的宽度。                                                                                                                   |
-| .Remove （StartPos，\[长度\]）         | 从输入字符串中删除以指定的起始位置开始的字符。 如果提供了可选长度参数，则将删除该字符的数量;否则为-将删除字符串末尾的所有字符。 |
-| .Replace （SearchString，ReplaceString） | 用指定的 ReplaceString 替换输入字符串中的每个出现的 SearchString。                                                                                                                                                 |
+**.PadLeft （TotalWidth）**：根据需要在字符串左侧添加空格，以便将字符串的总长度显示为指定的宽度。
+
+**.PadRight （TotalWidth）**：在字符串的右侧添加空格，以便将字符串的总长度显示为指定的宽度。
+
+**.Remove （StartPos， \[ Length \] ）**：从输入字符串中删除以指定的起始位置开始的字符。 如果提供了可选长度参数，则将删除该字符的数量;否则为-将删除字符串末尾的所有字符。
+
+**.Replace （SearchString，ReplaceString）**：用指定的 ReplaceString 替换输入字符串中的每个匹配项。
+
 
 
 
@@ -552,9 +565,8 @@ Take 方法
 
 除了直接投影到字符串对象的方法之外，任何本身具有字符串转换的对象都具有以下方法，并将其投影到该方法，使其可供使用：
 
-|                      |                                                                                                                                                                                                                  |
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .ToDisplayString ( ) | 返回对象的字符串转换。 这是将在对象的 dx 调用中显示的字符串转换。 可以提供格式设置说明符来设置 ToDisplayString 的输出格式。 有关详细信息，请参阅[Visual Studio C++调试器中的格式说明符](https://docs.microsoft.com/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2019) |
+**.ToDisplayString （）**：返回对象的字符串转换。 这是将在对象的 dx 调用中显示的字符串转换。 可以提供格式设置说明符来设置 ToDisplayString 的输出格式。 有关详细信息，请参阅[Visual Studio 调试器中 c + + 的格式说明符](https://docs.microsoft.com/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2019)
+
 
 
 
@@ -668,7 +680,7 @@ dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.State <
 dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.DeviceNodeObject.Problem <operator> <problemCode>)
 ```
 
-例如，若要查看具有非零问题代码的设备，请使用此命令。 这会向 "[ **！ devnode**](-devnode.md) 0 21" 提供类似的信息。
+例如，若要查看具有非零问题代码的设备，请使用此命令。 这会向 "[**！ devnode**](-devnode.md) 0 21" 提供类似的信息。
 
 ```dbgcmd
 1: kd> dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.DeviceNodeObject.Problem != 0)
@@ -730,7 +742,7 @@ nt!IopInitializeBootDrivers:
 8225c634 8bff            mov     edi,edi
 ```
 
-使用 "？" 命令来显示启动驱动程序结构。
+查询半结构化 命令来显示启动驱动程序结构。
 
 ```dbgcmd
 1: kd> ?? LoaderBlock->BootDriverListHead
@@ -740,7 +752,7 @@ struct _LIST_ENTRY
    +0x004 Blink            : 0x808c8728 _LIST_ENTRY [ 0x808a2e18 - 0x808c8de0 ]
 ```
 
-使用 FromListEntry 调试器对象来查看数据，并使用 nt 的起始地址进行查看！\_列表\_条目结构。
+使用 FromListEntry 调试器对象来查看数据，并使用 nt 的起始地址进行查看！ \_列表 \_ 条目结构。
 
 ```dbgcmd
 1: kd> dx Debugger.Utility.Collections.FromListEntry(*(nt!_LIST_ENTRY *)0x808c9960, "nt!_BOOT_DRIVER_LIST_ENTRY", "Link")
@@ -850,12 +862,12 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 </table>
 
 
-有关 CapabilityFlags 的详细信息，请参阅[**设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)。
+有关 CapabilityFlags 的详细信息，请参阅[**设备 \_ 功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)。
 
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
+[dx（显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
 
 [NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)
 

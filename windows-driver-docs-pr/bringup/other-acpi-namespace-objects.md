@@ -4,12 +4,12 @@ description: 对于某些特定类别的设备，需要在命名空间中的这�
 ms.assetid: 41EA8C3D-F2C9-4BA9-A839-FCB66F271E3C
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e69d7fae009841ad8cb5338755fde4456a737f71
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: f5621dd3ba0a2ed10a28fd9c21fca689590253de
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851734"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968044"
 ---
 # <a name="other-acpi-namespace-objects"></a>其他 ACPI 命名空间对象
 
@@ -86,7 +86,7 @@ Windows 定义了特定于设备的方法（ \_ DSM）来支持 USB 子系统的
 
 ### <a name="usb-port-specific-objects"></a>USB 端口专用对象
 
-Windows 需要知道系统上 USB 端口的可见性和连接能力。 为了向用户提供有关端口和设备的准确信息，这是必需的。 将使用两个对象（物理设备位置（ \_ PLD）和 USB 端口功能（ \_ UPC））来实现此目的。 有关详细信息，请参阅以下部分：
+Windows 需要知道系统上 USB 端口的可见性和连接能力。 为了向用户提供有关端口和设备的准确信息，这是必需的。 将使用两个对象（物理设备位置（ \_ PLD）和 USB 端口功能（ \_ UPC））来实现此目的。 有关详细信息，请参阅以下主题：
 
 - \_ \_ [ACPI 5.0 规范](https://uefi.org/specifications)中的6.1.6、"设备标识对象" 和 "9.13.1"、"USB 2.0 主机控制器和 UPC 和 PLD" 部分。
 
@@ -164,18 +164,17 @@ Sd 连接的设备由 SD bus 驱动程序枚举。 集成到平台中的 SD 设�
 
 [ACPI 5.0 规范](https://uefi.org/specifications)定义了 USB 设备的地址，如下所示：
 
-|              |                                                                                                                  |
-|--------------|------------------------------------------------------------------------------------------------------------------|
-| USB 根集线器 | 仅限主机控制器的子。 它 \_ 的 ADR 必须为0。 不允许使用任何其他子级或 \_ ADR 值。 |
-| USB 端口    | 端口号（1-n）                                                                                                |
+**USB 根集线器**：仅限主机控制器的子节点。 它 \_ 的 ADR 必须为0。 不允许使用任何其他子级或 \_ ADR 值。
+
+**USB 端口**：端口号（1-n）
+
 
 连接到特定端口的 USB 设备共享该端口的地址。
 
 如果连接到端口的设备是复合 USB 设备，则复合设备中的函数必须使用以下地址：
 
-|     |     |
-| --- | --- |
-| 复合 USB 设备内的 USB 函数 | 复合设备连接到的端口的端口号，以及函数的第一个接口号。 （算术加法）。 |
+**复合 usb 设备内的 USB 函数**：复合设备连接到的端口端口号，以及函数的第一个接口号。 （算术加法）。
+
 
 有关详细信息，请参阅[标识内部照相机的位置](https://docs.microsoft.com/windows-hardware/drivers/devapps/identifying-the-location-of-internal-cameras)。
 

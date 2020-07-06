@@ -1,21 +1,21 @@
 ---
 title: WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
-description: WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 是 TLV，其中包含当前配置的 Rsn Eapol 密钥信息。
+description: WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 是包含当前配置的 Rsn Eapol 密钥信息的 TLV。
 ms.assetid: DFF81CBD-1B10-456F-AD8D-1163DD80C981
 ms.date: 04/02/2018
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a812bd7b11c7f1118ec14a7f2a934ba0c09b56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6e2eceea6140f3449bed66b0ae2aa960ffb5ed1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380693"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968308"
 ---
-# <a name="wditlvpmprotocolrsnoffloadkeys"></a>WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
+# <a name="wdi_tlv_pm_protocol_rsn_offload_keys"></a>WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
 
-WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 是 TLV，其中包含当前配置的 Rsn Eapol 密钥信息。 在中使用此 TLV [NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED](ndis-status-wdi-indication-cipher-key-updated.md)状态指示。
+WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 是包含当前配置的 Rsn Eapol 密钥信息的 TLV。 此 TLV 用于[NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED](ndis-status-wdi-indication-cipher-key-updated.md)状态指示。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -23,14 +23,15 @@ WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS 是 TLV，其中包含当前配置的 Rsn E
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
 | WDI_RSN_OFFLOAD_KEYS_CONTAINER | 当前配置的 Rsn Eapol 密钥信息。 |
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1803 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： Windows 10，版本1803
+
+**支持的最低服务器**： Windows server 2016
+
+**标头**： Wditypes. hpp
+

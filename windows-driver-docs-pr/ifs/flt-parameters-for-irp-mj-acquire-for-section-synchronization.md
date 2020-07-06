@@ -1,10 +1,10 @@
 ---
-title: FLT_PARAMETERS for IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION union
-description: 当操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段为 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 时，使用以下联合组件。
+title: IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合的 FLT_PARAMETERS
+description: 当 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的 FLT_IO_PARAMETER_BLOCK 结构的 MajorFunction 字段时，将使用以下联合组件。
 ms.assetid: ea3ae072-4a98-48df-871a-cc7d882b96b8
 keywords:
-- FLT_PARAMETERS for IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION union 可安装的文件系统驱动程序
-- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合可安装文件系统驱动程序的 FLT_PARAMETERS
+- FLT_PARAMETERS 联合可安装文件系统驱动程序
 - PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
@@ -16,16 +16,16 @@ api_type:
 - HeaderDef
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a2806f8fad6284f70858a8de015af23e89183392
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a203d01aec8f6f30bf6d260259392b5b77852fd4
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841391"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968352"
 ---
-# <a name="flt_parameters-for-irp_mj_acquire_for_section_synchronization-union"></a>FLT_PARAMETERS for IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION union
+# <a name="flt_parameters-for-irp_mj_acquire_for_section_synchronization-union"></a>IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 联合的 FLT_PARAMETERS
 
-当操作的[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MAJORFUNCTION**字段为 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 时，使用以下联合组件。
+当 IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段时，将使用以下联合组件。
 
 ## <a name="syntax"></a>语法
 
@@ -53,24 +53,24 @@ typedef union _FLT_PARAMETERS {
 
 ### <a name="outputinformation"></a>OutputInformation
 
-[**FS_FILTER_SECTION_SYNC_OUTPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fs_filter_section_sync_output)结构，指定描述正在创建的节的属性的信息。
+一个[**FS_FILTER_SECTION_SYNC_OUTPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fs_filter_section_sync_output)结构，它指定描述正在创建的节的特性的信息。
 
 ## <a name="remarks"></a>备注
 
-IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含回调数据（[**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）表示的**AcquireForSectionSynchronization**操作的参数构造. 它包含在 FLT_IO_PARAMETER_BLOCK 结构中。
+IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 操作的[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含回调数据（[**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构所表示的**AcquireForSectionSynchronization**操作的参数。 它包含在 FLT_IO_PARAMETER_BLOCK 结构中。
 
-IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 是一个文件系统（FSFilter）回调操作。
+IRP_MJ_ACQUIRE_FOR_SECTION_SYNCHRONIZATION 是一种文件系统（FSFilter）回调操作。
 
-如果**SyncType**成员的枚举值设置为**SyncTypeOther**，则文件系统筛选器或旧筛选器驱动程序不能使此操作失败。 如果将**SyncType**设置为**SyncTypeCreateSection**，则在没有足够的内存来创建分区时，将允许文件系统微筛选器或旧版筛选器驱动程序失败并出现 STATUS_INSUFFICIENT_RESOURCES 错误。
+如果**SyncType**成员的枚举值设置为**SyncTypeOther**，则文件系统筛选器或旧筛选器驱动程序不能使此操作失败。 如果将**SyncType**设置为**SyncTypeCreateSection**，则如果没有足够的内存来创建分区，则允许文件系统微筛选器或旧版筛选器驱动程序失败并出现 STATUS_INSUFFICIENT_RESOURCES 错误。
 
 有关 FSFilter 回调操作的详细信息，请参阅[**FsRtlRegisterFileSystemFilterCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlregisterfilesystemfiltercallbacks)的参考条目。
 
 ## <a name="requirements"></a>要求
 
-| | |
-| ------- | ------- |
-| 版本 | 在 windows XP 和更高版本的 Windows 操作系统中可用。 |
-| 标头    | Fltkernel （包括 Fltkernel） |
+**版本**：在 windows XP 和更高版本的 windows 操作系统中可用。
+
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

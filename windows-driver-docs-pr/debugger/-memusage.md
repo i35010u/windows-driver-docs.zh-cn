@@ -1,6 +1,6 @@
 ---
 title: memusage
-description: Memusage 扩展显示有关物理内存使用情况摘要统计信息。
+description: Memusage 扩展显示有关物理内存使用情况的摘要统计信息。
 ms.assetid: 32796ada-53ee-465f-b284-db6ee5481878
 keywords:
 - memusage Windows 调试
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8468f84e63c62f9ee54280adf8f755f8a4d5e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43000e448c5f7a400eeaccfa73a8a6b832276a4f
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336122"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968302"
 ---
 # <a name="memusage"></a>!memusage
 
@@ -30,45 +30,44 @@ ms.locfileid: "63336122"
 !memusage [Flags]
 ```
 
-## <a name="span-idddkmemusagedbgspanspan-idddkmemusagedbgspanparameters"></a><span id="ddk__memusage_dbg"></span><span id="DDK__MEMUSAGE_DBG"></span>参数
+## <a name="span-idddk__memusage_dbgspanspan-idddk__memusage_dbgspanparameters"></a><span id="ddk__memusage_dbg"></span><span id="DDK__MEMUSAGE_DBG"></span>参数
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *标志*   
-可以是以下值之一。 默认值为 0x0。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
+可以是下列值之一。 默认值为0x0。
 
 <span id="0x0"></span><span id="0X0"></span>0x0  
-显示常规的摘要信息，以及 PFN 数据库中的页面的更多详细说明。 请参阅备注部分以举例说明此类型的输出。
+显示一般摘要信息以及对 PFN 数据库中页面的更详细说明。 有关此类输出的示例，请参阅 "备注" 部分。
 
 <span id="0x1"></span><span id="0X1"></span>0x1  
-仅显示摘要信息修改后的任何写入页 PFN 数据库中...
+只显示有关 PFN 数据库中修改的非写入页的摘要信息。
 
 <span id="0x2"></span><span id="0X2"></span>0x2  
-显示仅详细 PFN 数据库中已修改的任何写入页面的信息。
+仅显示有关 PFN 数据库中修改的非写入页的详细信息。
 
 <span id="0x8"></span><span id="0X8"></span>0x8  
-显示仅一般摘要信息关于内存使用。
+只显示有关内存使用情况的一般摘要信息。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-|       |                  |
-|-------|------------------|
-| 模式 | 内核模式下 |
+**模式**：仅限内核模式
+
 
  
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-物理内存统计信息收集从内存管理器的页帧数 (PFN) 数据库表。
+物理内存统计信息是从内存管理器的页面框架编号（PFN）数据库表中收集的。
 
-此命令采用较长时间才能运行，尤其是当目标计算机运行在 64 位模式下，由于数据，以获取更大程度。 正在加载 PFN 数据库，而计数器将显示其进度。 若要提高这种加载速度，增加使用的 COM 端口速度[ **CTRL + A （切换波特率）** ](ctrl-a--toggle-baud-rate-.md)密钥，或使用[ **.cache （设置缓存大小）** ](-cache--set-cache-size-.md)命令来增加缓存大小 （可能为大约 10 MB)。
+此命令需要较长时间才能运行，特别是当目标计算机在64位模式下运行时，由于要获取的数据量更大，因此更是如此。 在加载 PFN 数据库时，计数器将显示其进度。 若要加快此加载速度，请使用[**CTRL + A （切换波特率）**](ctrl-a--toggle-baud-rate-.md)键增加 COM 端口速度，或使用[**Cache （设置缓存大小）**](-cache--set-cache-size-.md)命令增加缓存大小（可能为大约 10 MB）。
 
-**！ Memusage**还可以使用执行时的命令[本地内核调试](performing-local-kernel-debugging.md)。
+执行[本地内核调试](performing-local-kernel-debugging.md)时，还可以使用 **！ memusage**命令。
 
-下面是输出的来自此扩展插件示例：
+下面是此扩展的输出示例：
 
 ```dbgcmd
 kd> !memusage
@@ -133,14 +132,14 @@ Control Valid Standby Dirty Shared Locked PageTables  name
 --------     0      0     0 -----     0 -----  driver ( NonPaged Pool )
 ```
 
-第一列显示说明每个映射的结构的控制区域结构的地址。 使用[ **！ ca** ](-ca.md)扩展命令以显示这些控件区域。
+第一列显示描述每个映射结构的控件区域结构的地址。 使用[**！ ca**](-ca.md) extension 命令显示这些控件区域。
 
 <a name="remarks"></a>备注
 -------
 
-可以使用[ **！ vm** ](-vm.md)扩展命令即可分析虚拟内存的使用。 此扩展是比通常更有用 **！ memusage**。 有关内存管理的详细信息，请参阅*Microsoft Windows Internals*、 Mark Russinovich 和 David solomon 合著的。 
+可以使用[**！ vm**](-vm.md)扩展命令分析虚拟内存使用情况。 此扩展通常比 **！ memusage**更有用。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。 
 
-[ **！ Pfn** ](-pfn.md)扩展命令可用于显示 PFN 数据库中的特定页帧条目。
+[**！ Pfn**](-pfn.md) extension 命令可用于显示 pfn 数据库中的特定页面帧条目。
 
  
 

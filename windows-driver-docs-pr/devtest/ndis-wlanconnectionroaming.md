@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b5857ac22dba7d588804c54f193916586b2bd403
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: bb603369a09f83e337075ac8a0cfacbe43b1f593
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916924"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968414"
 ---
 # <a name="wlanconnectionroaming-rule-ndis"></a>WlanConnectionRoaming 规则（ndis）
 
@@ -26,9 +26,8 @@ ms.locfileid: "85916924"
 
 **驱动程序模型： NDIS**
 
-|                                   |                                                                                                                                        |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00093005） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00093005）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

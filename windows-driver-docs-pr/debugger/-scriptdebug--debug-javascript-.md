@@ -1,8 +1,8 @@
 ---
 title: .scriptdebug（调试 JavaScript）
-description: 使用.scriptdebug 命令来调试 JavaScript 的脚本。
+description: 使用 scriptdebug 命令调试 JavaScript 脚本。
 keywords:
-- .scriptdebug 调试 JavaScript Windows 调试
+- 。 scriptdebug 调试 JavaScript Windows 调试
 ms.date: 12/28/2017
 ms.topic: article
 ms.prod: windows-hardware
@@ -13,26 +13,26 @@ api_name:
 - .scriptdebug (Debug JavaScript)
 api_type:
 - NA
-ms.openlocfilehash: cd1dd7119b2eca9716e7b4779319c37b538e62cb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43a503f3c5f2891a13bc35228aea2f8a93ff668f
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334310"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968037"
 ---
 # <a name="scriptdebug-debug-javascript"></a>.scriptdebug（调试 JavaScript）
 
-使用 **.scriptdebug**命令来调试 JavaScript 的脚本。
+使用**scriptdebug**命令调试 JavaScript 脚本。
 
 ```dbgcmd
 .scriptdebug FileName
 ```
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>parameters
 
 *FileName*
 
-指定调试器 JavaScript 脚本进行调试的名称。
+指定要调试的调试器 JavaScript 脚本的名称。
 
 ### <a name="span-idenvironmentspanenvironment"></a><span id="Environment"></span>环境
 
@@ -43,37 +43,37 @@ ms.locfileid: "63334310"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>all</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>all</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="span-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span>其他信息
+## <a name="span-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span>附加信息
 
-JavaScript 调试的概述，请参阅[JavaScript 调试器脚本-JavaScript 调试](javascript-debugger-scripting.md#DEBUGGING)。
+有关 JavaScript 调试的概述，请参阅[Javascript 调试器脚本-Javascript 调试](javascript-debugger-scripting.md#DEBUGGING)。
 
 >[!NOTE] 
-> 若要使用 JavaScript 调试 WinDbg 预览，请以管理员身份运行调试器。
+> 若要对 WinDbg Preview 使用 JavaScript 调试，请以管理员身份运行调试器。
 >
 
 
 <a name="remarks"></a>备注
 -------
 
-在你之前调试 JavaScript 完成以下步骤。
+在调试 JavaScript 之前，请完成以下步骤。
 
-1. 加载 JavaScript 脚本编写提供程序使用[ **.load (加载扩展 DLL)** ](-load---loadby--load-extension-dll-.md)命令。 
+1. 使用[**load （加载扩展 DLL）**](-load---loadby--load-extension-dll-.md)命令加载 JavaScript 脚本提供程序。 
 
     ```dbgcmd
     0:000> .load jsprovider.dll
@@ -85,7 +85,7 @@ JavaScript 调试的概述，请参阅[JavaScript 调试器脚本-JavaScript 调
     0:000> .scriptload C:\MyScripts\DebuggableSample.js
     ```
 
-若要开始主动进行调试脚本使用 **.scriptdebug**命令。
+若要开始主动调试脚本，请使用**scriptdebug**命令。
 
 ```dbgcmd
 0:000> .scriptdebug C:\MyScripts\DebuggableSample.js
@@ -95,9 +95,9 @@ JavaScript 调试的概述，请参阅[JavaScript 调试器脚本-JavaScript 调
 >>> Debug [DebuggableSample <No Position>] >
 ```
 
-一旦你会看到提示 *>>> 调试 [DebuggableSample <No Position>] >* 和输入的请求，则位于脚本调试器。  
+看到提示符 *>>> 调试 [DebuggableSample <No Position> ] >* 和输入请求时，就会出现在脚本调试器内。  
 
-使用 **.help 获取**命令或 **？** 若要在 JavaScript 调试环境中显示的命令的列表。
+使用 " **help** " 命令或 **？** 显示 JavaScript 调试环境中的命令列表。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >.help
@@ -135,7 +135,7 @@ Script Debugger Commands (*NOTE* IDs are **PER SCRIPT**):
 
 ### <a name="events"></a>事件
 
-使用**sx**脚本调试器命令以查看可捕获的事件的列表。
+使用**sx**脚本调试器命令可以查看可以捕获的事件列表。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >sx              
@@ -146,7 +146,7 @@ sx
     uh  [     active] .... Break on unhandled exception     
 ```
 
-使用**sxe**脚本调试器命令以启用任何中断行为。 若要开启条目时中断，以便该脚本将捕获到脚本调试器就立即执行其中的任何代码示例，使用此命令。
+使用**sxe** script 调试器命令启用任何中断行为。 例如，若要在输入时启用中断，以便在脚本调试器中的任何代码执行时，脚本将捕获到脚本调试器中，请使用此命令。
 
 ```dbgcmd
 >>> Debug [DebuggableSample <No Position>] >sxe en          
@@ -154,7 +154,7 @@ sxe en
 Event filter 'en' is now active                             
 ```
 
-使用**sxd**脚本调试器命令以禁用所有断点行为。
+使用**sxd** script 调试器命令可以禁用任何断点行为。
 
 ```dbgcmd                                                                                                                      
 >>> Debug [DebuggableSample 34:5] >sxd en                                                                              
@@ -164,7 +164,7 @@ Event filter 'en' is now inactive
 
 ### <a name="stack-trace"></a>堆栈跟踪
 
-使用**k**命令以显示堆栈跟踪。
+使用**k**命令显示堆栈跟踪。
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >k                                                  
@@ -177,7 +177,7 @@ k
 
 ### <a name="enumerating-variables"></a>枚举变量
 
-使用 **??** 若要枚举的 JavaScript 变量的值。
+使用 **？？** 枚举 JavaScript 变量的值。
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >??someObj                
@@ -191,45 +191,52 @@ someObj          : {...}
 
 ### <a name="breakpoints"></a>断点
 
-使用以下断点命令来处理其他断点。
+使用以下断点命令处理其他断点。
 
 
-|           |                                |
-|-----------|--------------------------------|
-| bp <bpid> |        设置断点        |
-| bd <bpid> |     禁用断点     |
-| be <bpid> |     启用的断点      |
-| bc <bpid> |      清除断点      |
-|    bpc    | 当前行上设置断点 |
-|    bl     |     列出断点     |
+**bp <bpid> **：设置断点
 
-### <a name="flow-control---navigation"></a>流控制的导航
+**bd <bpid> **：禁用断点
 
-使用以下命令以在脚本中向前移动。
+**为 <bpid> **：启用断点
 
-|   |                           |
-|---|---------------------------|
-|p  | 逐过程执行                 |
-|的 VPN 连接下  | 中的步骤                   |
-|g  | 继续脚本           |
-|gu | 跳出                  |
+**bc <bpid> **：清除断点
+
+**bpc**：在当前行上设置断点
+
+**bl**：列出断点
 
 
+### <a name="flow-control---navigation"></a>流控制-导航
 
-### <a name="frames"></a>帧
+使用以下命令在脚本中向前移动。
 
-使用以下命令以使用帧。
+**p**：逐过程
+
+**t**：单步执行
+
+**g**：继续编写脚本
+
+**gu**：跳出
 
 
-|                |                                |
-|----------------|--------------------------------|
-| .frame <index> | 切换到帧数 <index> |
-|      .f+       |   切换到下一步堆栈帧   |
-|      .f+       | 切换到上一个堆栈帧 |
+
+
+### <a name="frames"></a>文本框
+
+使用以下命令来处理框架。
+
+
+**。 frame <index> **：切换到帧号<index>
+
+**。 f +**：切换到下一个堆栈帧
+
+**。 f +**：切换到上一个堆栈帧
+
 
 ### <a name="quiting"></a>Quiting
 
-使用 **.detach**命令以 JavaScript 调试器分离。 
+使用**detach**命令分离 JavaScript 调试器。 
 
 ```dbgcmd
 >>> Debug [DebuggableSample 34:5] >.detach                  

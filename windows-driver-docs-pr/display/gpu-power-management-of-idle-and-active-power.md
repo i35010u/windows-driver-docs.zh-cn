@@ -4,24 +4,26 @@ description: 一种 GPU 电源管理基础结构，它允许 Windows 显示驱�
 ms.assetid: F8096F7E-39EA-45CB-8A1C-60A7A298AFEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a3a9b3a2e47c8b9581998b4ad51c40609e90a4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b88727c350c3d4c094cf0c0019a05d8be8b8bfd8
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838931"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967964"
 ---
 # <a name="gpu-power-management-of-idle-states-and-active-power"></a>空闲状态和活动电源的 GPU 电源管理
 
 
 从 Windows 8 开始，可以使用可选的 GPU 电源管理基础结构，使 Windows 显示驱动程序模型（WDDM）1.2 和更高版本的驱动程序可以管理单个设备或一组设备的强大功能。 此基础结构提供了一种标准化机制，可支持与 Windows 协作的 F 状态和 P 状态电源管理。
 
-|                                                                                   |                                        |
-|-----------------------------------------------------------------------------------|----------------------------------------|
-| 最小 WDDM 版本                                                              | 1.2                                    |
-| 最大 Windows 版本                                                           | 8                                      |
-| 驱动程序实现                                                             | 可选                               |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **设备 。RuntimePowerMgmt** |
+**最小 WDDM 版本**：1。2
+
+**最低 Windows 版本**：8
+
+**驱动程序实现**：可选
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：**设备 .。。RuntimePowerMgmt**
+
 
  
 
@@ -38,14 +40,14 @@ ms.locfileid: "72838931"
 -   [*DxgkCbSetPowerComponentResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_setpowercomponentresidency)
 -   [*DxgkDdiPowerRuntimeControlRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)
 -   [*DxgkDdiSetPowerComponentFState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate)
--   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
--   [**DXGK\_POWER\_组件\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_flags)
--   [**DXGK\_POWER\_组件\_映射**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_mapping)
--   [**DXGK\_POWER\_组件\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_power_component_type)
--   [**DXGK\_POWER\_RUNTIME\_组件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_runtime_component)
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
--   [**DXGKARG\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)
--   [**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)
+-   [**DXGK \_ DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK \_ 电源 \_ 组件 \_ 标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_flags)
+-   [**DXGK \_ 电源 \_ 组件 \_ 映射**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_mapping)
+-   [**DXGK \_ 电源 \_ 组件 \_ 类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_power_component_type)
+-   [**DXGK \_ POWER \_ RUNTIME \_ 组件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_runtime_component)
+-   [**DXGK \_ QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGKARG \_ QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)
+-   [**DXGK \_ QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)
 
 ## <a name="span-idgpu_power_management_scenariosspanspan-idgpu_power_management_scenariosspanspan-idgpu_power_management_scenariosspangpu-power-management-scenarios"></a><span id="GPU_power_management_scenarios"></span><span id="gpu_power_management_scenarios"></span><span id="GPU_POWER_MANAGEMENT_SCENARIOS"></span>GPU 电源管理方案
 

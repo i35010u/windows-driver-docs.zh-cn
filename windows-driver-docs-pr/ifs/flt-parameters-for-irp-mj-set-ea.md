@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 638da672d967bf0f79be59c1baec5c62398438e8
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: a688cd4b9ffeed5968d03699aab2d5d52f24261b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072226"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968072"
 ---
 # <a name="flt_parameters-for-irp_mj_set_ea-union"></a>IRP_MJ_SET_EA 联合的 FLT_PARAMETERS
 
@@ -41,7 +41,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>成员
 
 **SetEa**  
 包含以下成员的结构。
@@ -67,9 +67,8 @@ IRP_MJ_SET_EA 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

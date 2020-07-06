@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 785c11da3aca5d2c757d8526fc2fafa6b29c5204
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: a1ce7f523c91038efa1ebe855f010c13f1ff1c0b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910382"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967962"
 ---
 # <a name="flt_parameters-for-irp_mj_query_ea-union"></a>IRP_MJ_QUERY_EA 联合的 FLT_PARAMETERS
 
@@ -44,7 +44,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>成员
 
 **QueryEa**  
 包含以下成员 FLT_PARAMETERS 联合内的结构。
@@ -79,9 +79,8 @@ IRP_MJ_QUERY_EA 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

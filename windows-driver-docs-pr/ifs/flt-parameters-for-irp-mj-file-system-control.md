@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 854cc1fe98305c2a961cb783086f1e34f73a4edd
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: 7a87f1ee7e997c04b08049337d1338f6bc1f0a50
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072242"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968080"
 ---
 # <a name="flt_parameters-for-irp_mj_file_system_control-union"></a>IRP_MJ_FILE_SYSTEM_CONTROL 联合的 FLT_PARAMETERS
 
@@ -69,7 +69,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>成员
 
 **FileSystemControl**  
 包含以下成员的结构。
@@ -83,21 +83,21 @@ typedef union _FLT_PARAMETERS {
 **DeviceObject**  
 一个指针，指向要验证的卷的设备对象。
 
-**常见问题解答**  
+**通用**  
 用于 IRP_MN_KERNEL_CALL 和 IRP_MN_USER_FS_REQUEST 操作的所有缓冲方法的联合组件。
 
 **OutputBufferLength**  
 **OutputBuffer**或**OutputBuffer**成员指向的缓冲区的长度（以字节为单位）。
 
 **InputBufferLength**  
-**InputBuffer**、 **SystemBuffer**或**InputSystemBuffer**成员指向的缓冲区的长度（以字节为单位）。
+**InputBuffer**、 **Buffered.SystemBuffer**或**InputSystemBuffer**成员指向的缓冲区的长度（以字节为单位）。
 
 **FsControlCode**  
 要传递给目标设备的文件系统、文件系统筛选器或微筛选器驱动程序的 FSCTL 函数代码。
 
 有关 IOCTL 和 FSCTL 请求的详细信息，请参阅在 Microsoft Windows SDK 文档中使用*内核模式体系结构指南*中的[i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)和 "设备输入和输出控制代码"。 （此资源可能在某些语言和国家/地区不可用。）
 
-**但**  
+**两者均未选中**  
 METHOD_NEITHER 缓冲方法时用于 IRP_MN_KERNEL_CALL 和 IRP_MN_USER_FS_REQUEST 操作的联合组件。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。 （此资源可能在某些语言和国家/地区不可用。）
 
 **InputBuffer**  
@@ -117,7 +117,7 @@ METHOD_BUFFERED 缓冲方法时用于 IRP_MN_KERNEL_CALL 和 IRP_MN_USER_FS_REQU
 **SystemBuffer**  
 操作的系统分配的缓冲区的地址。 在 METHOD_BUFFERED i/o 中，此缓冲区用于输入和输出。 有关详细信息，请参阅*内核模式体系结构指南*中的[访问数据缓冲区的方法](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)。 （此资源可能在某些语言和国家/地区不可用。）
 
-**直**  
+**直接**  
 METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT 缓冲方法时用于 IRP_MN_KERNEL_CALL 和 IRP_MN_USER_FS_REQUEST 操作的联合组件。 有关缓冲方法的详细信息，请参阅在*内核模式体系结构指南*中[定义 i/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)。
 
 **InputSystemBuffer**  
@@ -141,9 +141,8 @@ IRP_MJ_FILE_SYSTEM_CONTROL 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

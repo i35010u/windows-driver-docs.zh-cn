@@ -4,42 +4,42 @@ description: Windows 收件箱智能卡微型驱动程序
 ms.assetid: 4B61607E-090A-4935-B944-110ACE9A4D83
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e80abba0d39b8dc0e61905f647d11b17af8f08f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 266be9f0091b0f41e622c7384fd1daf94535b368
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369592"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968500"
 ---
 # <a name="windows-inbox-smart-card-minidriver"></a>Windows 收件箱智能卡微型驱动程序
 
 
-从 Windows 7 Service Pack 1 (SP1) 开始，提供的支持符合 piv 标准的智能卡和实现 GID 卡边缘的卡，收件箱泛型类微型驱动程序。
+从带有 Service Pack 1 （SP1）的 Windows 7 开始，提供了一个收件箱泛型类微型驱动程序，它支持 PIV 兼容的智能卡和实现 GID 卡边缘的智能卡。
 
-符合 piv 标准的智能卡和卡实现 GID 纸牌的边缘。 有关 piv 标准的详细信息，请参阅[有关个人标识验证 (PIV) 联邦员工和合同工的](http://csrc.nist.gov/groups/SNS/piv/index.mdl)网页。
+符合 PIV 标准的智能卡和卡，用于实现 GID 卡边缘。 有关 PIV 的详细信息，请参阅[联邦员工和合同工的个人身份验证（PIV）](http://csrc.nist.gov/groups/SNS/piv/index.mdl)网页。
 
-有关 GID 的详细信息，请参阅[通用标识设备规范](https://msdn.microsoft.com/windows/hardware/gg487496)网页。
+有关 GID 的详细信息，请参阅 "[通用标识设备规范](https://msdn.microsoft.com/windows/hardware/gg487496)" 网页。
 
-智能卡插入读取器和基本 CSP/KSP 时调用[ **CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))，类微型驱动程序将执行以下的发现过程，以将标记为任一 PIV-关联的卡或GID 合规：
+将智能卡插入读卡器并且基本 CSP/KSP 调用[**CardAcquireContext**](https://docs.microsoft.com/previous-versions/dn468701(v=vs.85))时，类微型驱动程序会执行以下发现过程，以将关联的卡标记为 PIV 或 gid 兼容：
 
-1.  发出 SELECT 命令来查找 PIV 辅助设备。 如果命令成功，Windows 会考虑卡为 PIV 设备和发现过程停止。
-2.  如果该命令将失败，则发出 SELECT 命令以找到 GID 辅助设备。 如果命令成功，Windows 会考虑卡为 GID 设备和发现过程停止。
-3.  如果命令失败，状态代码，以指示既不帮助存在智能卡上，Windows 仍将继续像卡是 GID 设备。 如果该命令将失败，任何其他错误，Windows 会考虑卡是一个未知的设备。
+1.  发出 SELECT 命令以查找 PIV 辅助工具。 如果此命令成功，则 Windows 将该卡视为 PIV 设备，并停止发现进程。
+2.  如果命令失败，则会发出 SELECT 命令来查找 GID 辅助。 如果此命令成功，则 Windows 将该卡视为 GID 设备，并且发现进程将停止。
+3.  如果命令失败，状态代码指示智能卡上没有任何帮助，则 Windows 仍会继续执行，就像卡是一个 GID 设备一样。 如果命令失败并出现任何其他错误，Windows 会将该卡视为未知设备。
 
-## <a name="span-idelectricalprofileforgidscardswiththemicrosoftgenericprofilespanspan-idelectricalprofileforgidscardswiththemicrosoftgenericprofilespanspan-idelectricalprofileforgidscardswiththemicrosoftgenericprofilespanelectrical-profile-for-gids-cards-with-the-microsoft-generic-profile"></a><span id="Electrical_Profile_for_GIDS_cards_with_the_Microsoft_Generic_Profile"></span><span id="electrical_profile_for_gids_cards_with_the_microsoft_generic_profile"></span><span id="ELECTRICAL_PROFILE_FOR_GIDS_CARDS_WITH_THE_MICROSOFT_GENERIC_PROFILE"></span>与 Microsoft 的泛型配置文件电气 GID 卡的配置文件
+## <a name="span-idelectrical_profile_for_gids_cards_with_the_microsoft_generic_profilespanspan-idelectrical_profile_for_gids_cards_with_the_microsoft_generic_profilespanspan-idelectrical_profile_for_gids_cards_with_the_microsoft_generic_profilespanelectrical-profile-for-gids-cards-with-the-microsoft-generic-profile"></a><span id="Electrical_Profile_for_GIDS_cards_with_the_Microsoft_Generic_Profile"></span><span id="electrical_profile_for_gids_cards_with_the_microsoft_generic_profile"></span><span id="ELECTRICAL_PROFILE_FOR_GIDS_CARDS_WITH_THE_MICROSOFT_GENERIC_PROFILE"></span>带有 Microsoft 通用配置文件的 GID 卡的电气配置文件
 
 
-智能卡的实现 GID 卡边缘上，它们必须是带电气配置文件，使其使用收件箱类微型驱动程序为预配预配。 在本部分中的信息需要深入了解 Apdu、 数据模型和 GID 规范中指定的卡边缘。
+对于实现 GID 卡边缘的智能卡，必须使用电气配置文件对其进行预配，使其能够使用收件箱类微型驱动程序进行设置。 本部分中的信息需要深入了解 GID 规范中指定的 Apdu、数据模型和卡边缘。
 
-此处提供的子节的后面必须前卡可用于个性化设置列出的顺序。 请参阅此部分中提到的 Apdu 的详细信息的 GID 规范的部分 11。
+此处提供的子节必须按列出的顺序执行，然后才能将该卡用于个性化。 有关本部分中引用的 Apdu 的详细信息，请参阅 GID 规范的第11部分。
 
-### <a name="span-idgidsapplicationmetadataspanspan-idgidsapplicationmetadataspanspan-idgidsapplicationmetadataspangids-application-metadata"></a><span id="GIDS_Application_Metadata"></span><span id="gids_application_metadata"></span><span id="GIDS_APPLICATION_METADATA"></span>GID 应用程序元数据
+### <a name="span-idgids_application_metadataspanspan-idgids_application_metadataspanspan-idgids_application_metadataspangids-application-metadata"></a><span id="GIDS_Application_Metadata"></span><span id="gids_application_metadata"></span><span id="GIDS_APPLICATION_METADATA"></span>GID 应用程序元数据
 
-在本部分中所述的 DOs GID 由管理，可以仅在 SELECT 命令的响应数据字段中检索。 在应用程序"创建"状态时，只能创建此元数据。 请有关详细信息 GID 生命周期管理 GID 规范的第 6 节，参阅。
+本节中所述的 DOs 由 GID 管理，只能在 SELECT 命令的响应数据字段中检索。 只有在应用程序处于 "创建" 状态时才能创建此元数据。 有关 GID 生命周期管理的详细信息，请参阅 GID 规范的第6节。
 
-请注意，下面提供了元数据仅包含存在完全按所述 （除非另有说明） 的要求。 有可能是可选的也是可自定义卡应用程序供应商的其他字段。
+请注意，下面提供的元数据只包含完全按说明列出的内容（除非另有说明）。 其他字段可能是可选的，也可能是智能卡应用程序供应商自定义的。
 
-### <a name="span-idfilecontrolinformationdffcispanspan-idfilecontrolinformationdffcispanspan-idfilecontrolinformationdffcispan-file-control-information-df-fci"></a><span id="_File_Control_Information__DF_FCI_"></span><span id="_file_control_information__df_fci_"></span><span id="_FILE_CONTROL_INFORMATION__DF_FCI_"></span> 文件控制信息 (DF FCI)
+### <a name="span-id_file_control_information__df_fci_spanspan-id_file_control_information__df_fci_spanspan-id_file_control_information__df_fci_span-file-control-information-df-fci"></a><span id="_File_Control_Information__DF_FCI_"></span><span id="_file_control_information__df_fci_"></span><span id="_FILE_CONTROL_INFORMATION__DF_FCI_"></span>文件控制信息（DF FCI）
 
 <table>
 <colgroup>
@@ -49,30 +49,30 @@ ms.locfileid: "67369592"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Tag</th>
+<th align="left">标记</th>
 <th align="left">Len</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">64</td>
-<td align="left">Var。</td>
+<td align="left">差.</td>
 <td align="left"><p>应用程序模板数据对象</p>
 <p></p>
 <dl>
-<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>标记</dt>
+<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>符</dt>
 <dd><p>4F</p>
 </dd>
-<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>Len</dt>
-<dd><p>Var。</p>
+<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>长度</dt>
+<dd><p>差.</p>
 </dd>
-<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>值</dt>
-<dd><p>应用程序的辅助工具 =</p>
+<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值</dt>
+<dd><p>应用程序辅导 =</p>
 <p>A0 00 00 03 97 42 54 46 59 xx yy</p>
 <ul>
-<li><strong>XX</strong> = 01 或 02 GID 规范修订号。</li>
-<li><strong>YY</strong> = 保留以卡应用程序。</li>
+<li><strong>XX</strong> = gid 规范修订号，即01或02。</li>
+<li><strong>YY</strong> = 为卡应用程序保留。</li>
 </ul>
 </dd>
 </dl></td>
@@ -82,7 +82,7 @@ ms.locfileid: "67369592"
 
  
 
-### <a name="span-idfilemanagementdatadffmdspanspan-idfilemanagementdatadffmdspanspan-idfilemanagementdatadffmdspan-file-management-data-df-fmd"></a><span id="_File_Management_Data__DF_FMD_"></span><span id="_file_management_data__df_fmd_"></span><span id="_FILE_MANAGEMENT_DATA__DF_FMD_"></span> 文件管理数据 (DF FMD)
+### <a name="span-id_file_management_data__df_fmd_spanspan-id_file_management_data__df_fmd_spanspan-id_file_management_data__df_fmd_span-file-management-data-df-fmd"></a><span id="_File_Management_Data__DF_FMD_"></span><span id="_file_management_data__df_fmd_"></span><span id="_FILE_MANAGEMENT_DATA__DF_FMD_"></span>文件管理数据（DF FMD）
 
 <table>
 <colgroup>
@@ -92,30 +92,30 @@ ms.locfileid: "67369592"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Tag</th>
+<th align="left">标记</th>
 <th align="left">Len</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">64</td>
-<td align="left">Var。</td>
+<td align="left">差.</td>
 <td align="left"><p>FMD 模板</p>
 <p></p>
 <dl>
-<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>标记</dt>
+<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>符</dt>
 <dd><p>5F2F</p>
 </dd>
-<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>Len</dt>
-<dd><p>Var。</p>
+<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>长度</dt>
+<dd><p>差.</p>
 </dd>
-<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>值</dt>
-<dd><p>PIN 使用情况策略 （请参阅"PIN 使用情况策略"） =</p>
-<p>40 或 60</p>
+<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值</dt>
+<dd><p>PIN 使用策略（请参阅 "PIN 使用策略"） =</p>
+<p>40或60</p>
 <ul>
-<li><strong>40</strong> – 存在并可用于满足 CHV 应用程序 PIN。</li>
-<li><strong>60</strong> – 应用程序和全局 Pin 都存在，而且可用于满足 CHV。</li>
+<li><strong>40</strong> –应用程序 PIN 存在，可用于满足 CHV。</li>
+<li><strong>60</strong> -应用程序和全局 pin 均存在，可用于满足 CHV。</li>
 </ul>
 </dd>
 </dl></td>
@@ -125,7 +125,7 @@ ms.locfileid: "67369592"
 
  
 
-### <a name="span-idfilecontrolparametersdffcpspanspan-idfilecontrolparametersdffcpspanspan-idfilecontrolparametersdffcpspanfile-control-parameters-df-fcp"></a><span id="File_Control_Parameters__DF_FCP_"></span><span id="file_control_parameters__df_fcp_"></span><span id="FILE_CONTROL_PARAMETERS__DF_FCP_"></span>文件控制参数 (DF FCP)
+### <a name="span-idfile_control_parameters__df_fcp_spanspan-idfile_control_parameters__df_fcp_spanspan-idfile_control_parameters__df_fcp_spanfile-control-parameters-df-fcp"></a><span id="File_Control_Parameters__DF_FCP_"></span><span id="file_control_parameters__df_fcp_"></span><span id="FILE_CONTROL_PARAMETERS__DF_FCP_"></span>文件控制参数（DF FCP）
 
 <table>
 <colgroup>
@@ -135,46 +135,46 @@ ms.locfileid: "67369592"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Tag</th>
+<th align="left">标记</th>
 <th align="left">Len</th>
-<th align="left">ReplTest1</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">62</td>
-<td align="left">Var。</td>
+<td align="left">差.</td>
 <td align="left"><p>FCP 模板</p>
 <p></p>
 <dl>
-<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>标记</dt>
+<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>符</dt>
 <dd><p>82</p>
 </dd>
-<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>Len</dt>
+<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>长度</dt>
 <dd><p>01</p>
 </dd>
-<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>值</dt>
-<dd><p>文件描述符字节：38 ("不共享-DF")</p>
+<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值</dt>
+<dd><p>文件描述符字节：38（"不可共享-DF"）</p>
 </dd>
 </dl>
 <p></p>
 <dl>
-<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>标记</dt>
+<dt><span id="Tag"></span><span id="tag"></span><span id="TAG"></span>符</dt>
 <dd><p>8C</p>
 </dd>
-<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>Len</dt>
+<dt><span id="Len"></span><span id="len"></span><span id="LEN"></span>长度</dt>
 <dd><p>03</p>
 </dd>
-<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>值</dt>
-<dd><p>安全特性以紧凑 =</p>
+<dt><span id="Value"></span><span id="value"></span><span id="VALUE"></span>负值</dt>
+<dd><p>精简格式的安全属性 =</p>
 <p>03 30 30</p>
 <ul>
-<li><strong>40</strong> – 以下字节指定创建文件的 EFs 和删除文件用于 EFs （和要求按该顺序）。</li>
-<li><strong>60</strong> – 用户身份验证或外部身份验证满足要求，以创建 EFs。</li>
-<li><strong>60</strong> – 用户身份验证或外部身份验证满足要求，以删除 EFs。</li>
+<li><strong>40</strong> -以下字节指定为 EFS 创建文件的要求，并为 EFS 删除文件（按该顺序）。</li>
+<li><strong>60</strong> –用户身份验证或外部身份验证满足创建 EFs 的要求。</li>
+<li><strong>60</strong> –用户身份验证或外部身份验证满足删除 EFs 的要求。</li>
 </ul>
 <div class="alert">
-<strong>请注意</strong>  安全属性不具有完全匹配，但允许用户身份验证或外部身份验证，以创建并删除 EFs 不需要。
+<strong>注意</strong>   安全属性不必与此完全匹配，但允许用户身份验证或外部身份验证创建和删除 EFs。
 </div>
 <div>
  
@@ -187,70 +187,84 @@ ms.locfileid: "67369592"
 
  
 
-一旦创建 DF FCP 后，卡应切换为"初始化"状态，这是创建以下各节中列出的对象所需的状态。
+创建 DF FCP 后，该卡会转换为 "初始化" 状态，这是创建以下部分中所列的对象所需的状态。
 
-### <a name="span-idpincreationspanspan-idpincreationspanspan-idpincreationspan-pin-creation"></a><span id="_PIN_Creation"></span><span id="_pin_creation"></span><span id="_PIN_CREATION"></span> PIN 创建
+### <a name="span-id_pin_creationspanspan-id_pin_creationspanspan-id_pin_creationspan-pin-creation"></a><span id="_PIN_Creation"></span><span id="_pin_creation"></span><span id="_PIN_CREATION"></span>创建 PIN
 
-若要创建 PIN，应用程序密码更改引用数据 APDU 必须发送到卡：
+若要创建 PIN，必须将应用程序密码的更改引用数据 APDU 发送到卡：
 
-|            |                              |
-|------------|------------------------------|
-| CLA        | 00                           |
-| INS        | 24                           |
-| P1         | 01                           |
-| P2         | 80                           |
-| Lc         | 命令数据字段的长度 |
-| 数据字段 | &lt;password&gt;             |
-| le         | 不存在                       |
+**CLA**：00
+
+**INS**：24
+
+**P1**：01
+
+**P2**：80
+
+**Lc**：命令数据字段的长度
+
+**数据字段**： &lt; 密码&gt;
+
+**Le**：不存在
+
 
  
 
-例如，若要设置到 12345678 PIN，以下 APDU 必须发送到卡：
+例如，若要将 PIN 设置为12345678，必须将以下 APDU 发送到卡：
 
 ``` syntax
 00 24 01 80 08 31 32 33 34 35 36 37 38
 ```
 
-### <a name="span-idpinunblockkeypukcreationspanspan-idpinunblockkeypukcreationspanspan-idpinunblockkeypukcreationspan-pin-unblock-key-puk-creation"></a><span id="_Pin_Unblock_Key__PUK__Creation"></span><span id="_pin_unblock_key__puk__creation"></span><span id="_PIN_UNBLOCK_KEY__PUK__CREATION"></span> Pin 取消阻止键 (PUK) 创建
+### <a name="span-id_pin_unblock_key__puk__creationspanspan-id_pin_unblock_key__puk__creationspanspan-id_pin_unblock_key__puk__creationspan-pin-unblock-key-puk-creation"></a><span id="_Pin_Unblock_Key__PUK__Creation"></span><span id="_pin_unblock_key__puk__creation"></span><span id="_PIN_UNBLOCK_KEY__PUK__CREATION"></span>Pin 解除阻止密钥（PUK）创建
 
-PUK 用于取消阻止和/或重置在情况下，卡被阻塞或忘记了 PIN 的 PIN。 如果管理员密钥盘询/响应是改为使用，则不会产生 PUK。
+如果卡被阻止或忘记了 PIN，则使用 PUK 来取消阻止和/或重置 PIN。 如果改为使用管理密钥质询/响应，请不要创建 PUK。
 
-若要创建 PUK，应用程序正在重置密码更改引用数据 APDU 必须发送到卡：
+若要创建 PUK，必须将应用程序重置密码的更改引用数据 APDU 发送到卡：
 
-|            |                              |
-|------------|------------------------------|
-| CLA        | 00                           |
-| INS        | 24                           |
-| P1         | 01                           |
-| P2         | 81                           |
-| Lc         | 命令数据字段的长度 |
-| 数据字段 | &lt;password&gt;             |
-| le         | 不存在                       |
+**CLA**：00
+
+**INS**：24
+
+**P1**：01
+
+**P2**：81
+
+**Lc**：命令数据字段的长度
+
+**数据字段**： &lt; 密码&gt;
+
+**Le**：不存在
+
 
  
 
-例如，若要设置到 12345678 PUK，以下 APDU 必须发送到卡：
+例如，若要将 PUK 设置为12345678，则必须将以下 APDU 发送到卡：
 
 ``` syntax
 00 24 01 81 08 31 32 33 34 35 36 37 38
 ```
 
-### <a name="span-idaclcreationspanspan-idaclcreationspanspan-idaclcreationspan-acl-creation"></a><span id="_ACL_Creation"></span><span id="_acl_creation"></span><span id="_ACL_CREATION"></span> ACL 创建
+### <a name="span-id_acl_creationspanspan-id_acl_creationspanspan-id_acl_creationspan-acl-creation"></a><span id="_ACL_Creation"></span><span id="_acl_creation"></span><span id="_ACL_CREATION"></span>创建 ACL
 
-必须使用创建文件 APDU 创建 Acl:
+必须使用 "创建文件" APDU 创建 Acl：
 
-|            |                      |
-|------------|----------------------|
-| CLA        | 00                   |
-| INS        | E0                   |
-| P1-P2      | 00 00                |
-| Lc         | 数据字段的长度 |
-| 数据字段 | EF 的 FCP 模板  |
-| le         | 不存在               |
+**CLA**：00
+
+**INS**： E0
+
+**P1-P2**： 00 00
+
+**Lc**：数据字段的长度
+
+**数据字段**： EF 的 FCP 模板
+
+**Le**：不存在
+
 
  
 
-必须创建下表中所述的 Acl。 每个 ACL 创建 APDU 后面必须跟 ActivateFile APDU (00 44 00 00 00)
+必须创建下表中所述的 Acl。 每个 ACL 创建 APDU 必须后跟 ActivateFile APDU （00 44 00 00 00）
 
 | ACL                      | APDU                                                     |
 |--------------------------|----------------------------------------------------------|
@@ -263,103 +277,119 @@ PUK 用于取消阻止和/或重置在情况下，卡被阻塞或忘记了 PIN �
 
  
 
-### <a name="span-idcreateefforadminkeyspanspan-idcreateefforadminkeyspanspan-idcreateefforadminkeyspan-create-ef-for-admin-key"></a><span id="_Create_EF_for_Admin_Key"></span><span id="_create_ef_for_admin_key"></span><span id="_CREATE_EF_FOR_ADMIN_KEY"></span> 为管理密钥创建 EF
+### <a name="span-id_create_ef_for_admin_keyspanspan-id_create_ef_for_admin_keyspanspan-id_create_ef_for_admin_keyspan-create-ef-for-admin-key"></a><span id="_Create_EF_for_Admin_Key"></span><span id="_create_ef_for_admin_key"></span><span id="_CREATE_EF_FOR_ADMIN_KEY"></span>为管理密钥创建 EF
 
-必须使用创建文件 APDU 创建管理密钥的 EF:
+必须使用 "创建文件" APDU 创建 EF for Admin key：
 
-|            |                                                |
-|------------|------------------------------------------------|
-| CLA        | 00                                             |
-| INS        | E0                                             |
-| P1-P2      | 00 00                                          |
-| Lc         | 数据字段的长度                           |
-| 数据字段 | EF 的 FCP 模板 (EFID = B080 和 KeyID = 80) |
-| le         | 不存在                                         |
+**CLA**：00
+
+**INS**： E0
+
+**P1-P2**： 00 00
+
+**Lc**：数据字段的长度
+
+**数据字段**： EF 的 FCP 模板（EFID = B080，KeyID = 80）
+
+**Le**：不存在
+
 
  
 
-以下 APDU 必须发送到卡中为三重 DES 三个密钥管理密钥创建 EF:
+必须将以下 APDU 发送到卡，才能为三重 DES 三密钥管理密钥创建 EF：
 
 ``` syntax
 00 E0 00 00 1C 62 1A 82 01 18 83 02 B0 80 8C 04 87 00 20 FF A5 0B A4 09 80 01 02 83 01 80 95 01 C0
 ```
 
-上述命令后面必须跟 ActivateFile APDU:
+上面提到的命令必须后跟 ActivateFile APDU：
 
 ``` syntax
 00 44 00 00 00
 ```
 
-### <a name="span-idinjectadminkeyspanspan-idinjectadminkeyspanspan-idinjectadminkeyspan-inject-admin-key"></a><span id="_Inject_Admin_Key"></span><span id="_inject_admin_key"></span><span id="_INJECT_ADMIN_KEY"></span> 插入管理密钥
+### <a name="span-id_inject_admin_keyspanspan-id_inject_admin_keyspanspan-id_inject_admin_keyspan-inject-admin-key"></a><span id="_Inject_Admin_Key"></span><span id="_inject_admin_key"></span><span id="_INJECT_ADMIN_KEY"></span>插入管理密钥
 
-管理密钥必须插入到使用 PUT 密钥 APDU 卡：
+必须使用 PUT 键 APDU 将管理密钥注入到卡上：
 
-|            |                      |
-|------------|----------------------|
-| CLA        | 00                   |
-| INS        | DB                   |
-| P1-P2      | 3F FF                |
-| Lc         | 数据字段的长度 |
-| 数据字段 | 密钥用法模板   |
-| le         | 不存在               |
+**CLA**：00
+
+**INS**： DB
+
+**P1-P2**： 3F FF
+
+**Lc**：数据字段的长度
+
+**数据字段**：密钥用法模板
+
+**Le**：不存在
+
 
  
 
-以下 APDU 必须发送到卡管理员密钥注入 KeyID 80:
+必须将以下 APDU 发送到卡，才能将管理密钥注入到 KeyID 80：
 
 ``` syntax
 00 DB 3F FF 26 70 24 84 01 80 A5 1F 87 18 01 02 03 04 05 06 07 08 01 02 03 04 05 06 07 08 01 02
 03 04 05 06 07 08 88 03 B0 73 DC
 ```
 
-在上面所述的示例中将管理密钥注入具有以下值：
+在上述示例中，将用以下值注入管理密钥：
 
 ``` syntax
 01 02 03 04 05 06 07 08 01 02 03 04 05 06 07 08 01 02 03 04 05 06 07 08
 ```
 
-### <a name="span-idsetoperationalstatespanspan-idsetoperationalstatespanspan-idsetoperationalstatespan-set-operational-state"></a><span id="__Set_Operational_State"></span><span id="__set_operational_state"></span><span id="__SET_OPERATIONAL_STATE"></span> 设置操作状态
+### <a name="span-id__set_operational_statespanspan-id__set_operational_statespanspan-id__set_operational_statespan-set-operational-state"></a><span id="__Set_Operational_State"></span><span id="__set_operational_state"></span><span id="__SET_OPERATIONAL_STATE"></span>设置操作状态
 
-转换从"初始化"状态为"操作"状态，选择与后接 EFID DF 的卡，以便激活文件的命令需要发送到卡。
+若要将卡从 "初始化" 状态转换为 "操作" 状态，则需要将包含 EFID 的选择 DF 发送到智能卡。
 
-首先，将选择 APDU 的 DF 发送：
+首先，为 DF 发送 SELECT APDU：
 
-|            |        |
-|------------|--------|
-| CLA        | 00     |
-| INS        | A4     |
-| P1-P2      | 00 0C  |
-| Lc         | 02     |
-| 数据字段 | 3F FF  |
-| le         | 不存在 |
+**CLA**：00
 
- 
+**INS**： A4
 
-其次，使用激活文件 APDU DF 将状态更改为"操作":
+**P1-P2**： 00 0C
 
-|            |        |
-|------------|--------|
-| CLA        | 00     |
-| INS        | 44     |
-| P1-P2      | 00 00  |
-| Lc         | 00     |
-| 数据字段 | 不存在 |
-| le         | 不存在 |
+**Lc**：02
+
+**数据字段**： 3F FF
+
+**Le**：不存在
+
 
  
 
-以下 APDU 必须发送到卡中将它放到操作状态：
+其次，使用 "激活文件" APDU 将 DF 的状态更改为 "操作"：
+
+**CLA**：00
+
+**INS**：44
+
+**P1-P2**： 00 00
+
+**Lc**：00
+
+**数据字段**：不存在
+
+**Le**：不存在
+
+
+ 
+
+必须将以下 APDU 发送到卡，才能使其进入操作状态：
 
 ``` syntax
 00 A4 00 0C 02 3F FF
 00 44 00 00 00
 ```
 
-此步骤后，卡已准备好将放置在文件系统规范部分中所述的文件系统，并被视为"空白卡"。 按照卡"创建"将文件系统上使用微型驱动程序 API 的卡的步骤。 此外，按照下一部分，以使用 Apdu 在卡上放置文件系统中的步骤。
+完成此步骤后，该卡就可以根据 "文件系统规范" 一节中所述放置文件系统，并将其视为 "空白卡"。 按照 "创建" 卡上的步骤使用微型驱动程序 API 将文件系统置于卡上。 或者，按照下一部分中的步骤操作，使用 Apdu 将文件系统放在卡片上。
 
-### <a name="span-iddataobjectsonagidscardafterthefilesystemiscreatedspanspan-iddataobjectsonagidscardafterthefilesystemiscreatedspanspan-iddataobjectsonagidscardafterthefilesystemiscreatedspan-data-objects-on-a-gids-card-after-the-filesystem-is-created"></a><span id="_Data_objects_on_a_GIDS_card_after_the_filesystem_is_created"></span><span id="_data_objects_on_a_gids_card_after_the_filesystem_is_created"></span><span id="_DATA_OBJECTS_ON_A_GIDS_CARD_AFTER_THE_FILESYSTEM_IS_CREATED"></span> GID 卡后创建文件系统上的数据对象
+### <a name="span-id_data_objects_on_a_gids_card_after_the_filesystem_is_createdspanspan-id_data_objects_on_a_gids_card_after_the_filesystem_is_createdspanspan-id_data_objects_on_a_gids_card_after_the_filesystem_is_createdspan-data-objects-on-a-gids-card-after-the-filesystem-is-created"></a><span id="_Data_objects_on_a_GIDS_card_after_the_filesystem_is_created"></span><span id="_data_objects_on_a_gids_card_after_the_filesystem_is_created"></span><span id="_DATA_OBJECTS_ON_A_GIDS_CARD_AFTER_THE_FILESYSTEM_IS_CREATED"></span>创建文件系统后，GID 卡上的数据对象
 
-对于符合与 Microsoft 的泛型配置文件的 GID 规范的卡下, 表描述数据对象和其相应 EFIDs 后在卡"创建"部分所述创建必需的对象。 将每个到卡微型驱动程序 API 不被用于创建文件系统放置数据 APDU 使用 GID 规范中指定下表中的数据对象。
+对于与带有 Microsoft 通用配置文件的 GID 规范兼容的卡，下表介绍了在创建必需对象之后，按 "创建" 一节中的数据对象及其相应的 EFIDs。 如果未使用微型驱动程序 API 来创建文件系统，请使用在 GID 规范中指定的 "PUT DATA" APDU，将下表中的每个数据对象置于卡片上。
 
 <table>
 <colgroup>
@@ -371,7 +401,7 @@ PUK 用于取消阻止和/或重置在情况下，卡被阻塞或忘记了 PIN �
 <thead>
 <tr class="header">
 <th align="left">EFID</th>
-<th align="left">标记</th>
+<th align="left">DO 标记</th>
 <th align="left">目录</th>
 <th align="left">友好名称</th>
 </tr>
@@ -420,16 +450,16 @@ PUK 用于取消阻止和/或重置在情况下，卡被阻塞或忘记了 PIN �
 
  
 
-## <a name="span-idinfsampletore-brandinboxclassminidriverspanspan-idinfsampletore-brandinboxclassminidriverspanspan-idinfsampletore-brandinboxclassminidriverspaninf-sample-to-re-brand-inbox-class-minidriver"></a><span id="INF_Sample_to_re-brand_inbox_class_minidriver"></span><span id="inf_sample_to_re-brand_inbox_class_minidriver"></span><span id="INF_SAMPLE_TO_RE-BRAND_INBOX_CLASS_MINIDRIVER"></span>为重新标记收件箱类微型驱动程序 INF 示例
+## <a name="span-idinf_sample_to_re-brand_inbox_class_minidriverspanspan-idinf_sample_to_re-brand_inbox_class_minidriverspanspan-idinf_sample_to_re-brand_inbox_class_minidriverspaninf-sample-to-re-brand-inbox-class-minidriver"></a><span id="INF_Sample_to_re-brand_inbox_class_minidriver"></span><span id="inf_sample_to_re-brand_inbox_class_minidriver"></span><span id="INF_SAMPLE_TO_RE-BRAND_INBOX_CLASS_MINIDRIVER"></span>用于重新标记收件箱类微型驱动程序的 INF 示例
 
 
-智能卡供应商可以使用收件箱微型驱动程序而无需将传送一个驱动程序包。 若要将品牌信息添加到此类卡插体验，供应商可以提供重写各种字符串，以便提供品牌信息的 INF 文件。 这些字符串如下所示：
+智能卡供应商可以使用收件箱微型驱动程序，而无需交付驱动程序包。 为了将品牌信息添加到此类卡的即插即用体验中，供应商可以提供用于重写各种字符串以提供品牌信息的 INF 文件。 这些字符串包括：
 
 -   ProviderName
 -   CardDeviceName
 -   SmartCardName
 
-下面是一个示例 INF 文件，可以在收件箱微型驱动程序。 此 INF 文件安装在 x86 和 amd64 CPU 平台进行了修饰。
+下面是可以与收件箱微型驱动程序一起使用的示例 INF 文件。 此 INF 文件在 x86 和 amd64 CPU 平台中进行了修饰。
 
 ``` syntax
 ;
@@ -585,11 +615,11 @@ SmartCardNameWOW64="SOFTWARE\Wow6432Node\Microsoft\Cryptography\Calais\SmartCard
 SmartCardCardModule="msclmd.dll"
 ```
 
-此类型的 INF 文件需要以下项：
+对于这种类型的 INF 文件，需要满足以下要求：
 
--   由 %fabrikamcarddevicename%字符串必须 ATR 历史字节的设备或设备的智能卡框架标识符的已解码的值指定硬件 ID。 有关此标识符的详细信息，请参阅中的"Windows 智能卡框架卡标识符"一节[发现过程](discovery-process.md)。
--   **DefaultInstall**部分是必需的智能卡微型驱动程序的包的 INF 文件中。
--   **DriverVer** INF 文件中的指令必须具有一个值，大于收件箱驱动程序的 INF 文件中的版本和时间戳值。 否则，系统不安装使用供应商的 INF 文件设备。
+-   % FabrikamCardDeviceName% 字符串指定的硬件 ID 必须是设备的 ATR 历史字节或设备的智能卡框架标识符的已解码值。 有关此标识符的详细信息，请参阅[发现过程](discovery-process.md)中的 "Windows 智能卡框架标识符" 部分。
+-   **DefaultInstall**节是适用于智能卡微型驱动程序包的 INF 文件中的必需部分。
+-   INF 文件中的**DriverVer**指令的值必须大于收件箱驱动程序的 INF 文件中的版本和时间戳值。 否则，系统不会使用供应商的 INF 文件来安装设备。
 
     **DriverVer**指令具有以下语法。
 
@@ -597,12 +627,12 @@ SmartCardCardModule="msclmd.dll"
     DriverVer=mm/dd/yyyy[,w.x.y.z]
     ```
 
-    我们建议设置的值时请遵循以下准则**DriverVer**指令：
+    建议你在设置**DriverVer**指令的值时遵循以下准则：
 
-    -   指定一个日期值，是足够遥远的将来以避免与 Windows service pack 更新冲突。
-    -   尽管 4 位版本号是可选的但必须指定明显高于收件箱驱动程序的 INF 文件中指定的当前版本的版本。
+    -   指定一个最适合未来的日期值，以避免与 Windows Service Pack 更新冲突。
+    -   尽管4位数版本号是可选的，但你必须指定比收件箱驱动程序的 INF 文件中指定的当前版本明显更高的版本。
 
-INF 文件和语法的详细信息，请参阅[设备和驱动程序安装设计指南](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)。
+有关 INF 文件和语法的详细信息，请参阅[设备和驱动程序安装设计指南](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation)。
 
  
 

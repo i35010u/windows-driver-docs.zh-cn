@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f1b7e8a7369a6bbbd4218863c7290aa5c8001a
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: c9eb4eaf9c4aad02c1e59b0ffc236c8b1f4cd279
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072238"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968254"
 ---
 # <a name="flt_parameters-for-irp_mj_directory_control-union"></a>IRP_MJ_DIRECTORY_CONTROL 联合的 FLT_PARAMETERS
 
@@ -54,7 +54,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>成员
 
 **DirectoryControl**  
 包含以下成员的结构。
@@ -65,13 +65,13 @@ typedef union _FLT_PARAMETERS {
 **长度**  
 **DirectoryBuffer**成员指向的缓冲区的长度（以字节为单位）。
 
-**名字**  
+**FileName**  
 指向[**UNICODE_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)结构的指针，该结构包含指定目录中的文件的名称。
 
 **FileInformationClass**  
 指定下面描述的值之一。
 
-| 值 | 含义 |
+| “值” | 含义 |
 |-------|---------|
 | FileBothDirectoryInformation   | 为每个文件返回[**FILE_BOTH_DIR_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)结构。                      |
 | FileDirectoryInformation       | 为每个文件返回[**FILE_DIRECTORY_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_directory_information)结构。                     |
@@ -100,7 +100,7 @@ typedef union _FLT_PARAMETERS {
 **CompletionFilter**  
 标志的位掩码，用于指定应在通知列表中完成 Irp 的文件或目录的更改类型。 下面描述了可能的标志值。
 
-| Flag | 含义  |
+| 标志 | 含义  |
 |------|----------|
 | FILE_NOTIFY_CHANGE_FILE_NAME    | 已在此目录中添加、删除或重命名文件。                  |
 | FILE_NOTIFY_CHANGE_DIR_NAME     | 已创建、删除或重命名了子目录。                          |
@@ -140,9 +140,8 @@ IRP_MJ_DIRECTORY_CONTROL 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

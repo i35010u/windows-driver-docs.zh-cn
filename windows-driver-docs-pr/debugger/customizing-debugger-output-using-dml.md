@@ -4,12 +4,12 @@ description: 调试器标记语言（DML）提供了一种机制，用于增强�
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb2477b1e331569a525f9052af6fa16353c5656
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d0524a0bed0dbea8f4433c82983726961af28c42
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837816"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968050"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>使用 DML 自定义调试器输出
 
@@ -21,7 +21,7 @@ DML 适用于 Windows 10 及更高版本。
 ## <a name="span-iddml_overviewspanspan-iddml_overviewspanspan-iddml_overviewspandml-overview"></a><span id="DML_Overview"></span><span id="dml_overview"></span><span id="DML_OVERVIEW"></span>DML 概述
 
 
-在 DML 的主要优点中，它提供链接到调试器输出中的相关信息的能力。 其中一项主要 DML 标记是 &lt;链接&gt; 标记，该标记允许输出生成方指示可通过链接的指定操作访问与输出片段相关的信息。 与 web 浏览器中的 HTML 链接一样，这允许用户导航超链接的信息。
+在 DML 的主要优点中，它提供链接到调试器输出中的相关信息的能力。 其中一个主 DML 标记是 &lt; 链接标记，该 &gt; 标记允许输出生成方指示可通过链接的指定操作来访问与输出片段相关的信息。 与 web 浏览器中的 HTML 链接一样，这允许用户导航超链接的信息。
 
 提供超链接内容的一个优点是它可以用于增强调试器和调试器扩展功能的可发现性。 调试器及其扩展包含大量功能，但很难确定要在不同方案中使用的相应命令。 用户必须只知道哪些命令可用于特定方案。 用户和内核调试之间的差异增加了复杂性。 这通常意味着许多用户不了解可帮助它们的调试命令。 通过 DML 链接，可将任意调试命令包装在备用演示文稿中，如说明性文本、可单击的菜单系统或链接的帮助。 使用 DML，可以增强命令输出，指导用户使用与手头任务相关的其他相关命令。
 
@@ -29,7 +29,7 @@ DML 适用于 Windows 10 及更高版本。
 
 -   WinDbg 中的命令窗口支持所有 DML 行为，并将显示颜色、字体样式和链接。
 -   控制台调试– ntsd、cdb 和 kd –仅支持 DML 的颜色属性，并且仅在启用了颜色模式的真正控制台中运行时才支持。
--   具有重定向 i/o、ntsd – d 或远程 .exe 会话的调试器不会显示任何颜色。
+-   具有重定向 i/o、ntsd – d 或 remote.exe 会话的调试器不会显示任何颜色。
 
 ## <a name="span-iddml_content_specificationspanspan-iddml_content_specificationspanspan-iddml_content_specificationspandml-content-specification"></a><span id="DML_Content_Specification"></span><span id="dml_content_specification"></span><span id="DML_CONTENT_SPECIFICATION"></span>DML 内容规范
 
@@ -44,11 +44,11 @@ DML 不可扩展;所有标记都是预定义的并且经过验证，可以在所
 
 **标记结构**
 
-与 XML 类似，DML 标记作为开始 &lt;tagname \[args\]&gt; 和以下 &lt;/tagname&gt;。
+与 XML 类似，DML 标记作为起始 &lt; tagname \[ 参数 \] &gt; 和以下 &lt; /tagname &gt; 。
 
 **特殊字符**
 
-DML 内容大致遵循用于特殊字符的 XML/HTML 规则。 &、&lt;、&gt; 和 "字符是特殊字符，不能以纯文本格式使用。 等效的转义版本 &、&lt;、&gt; 和 "。 例如，以下文本：
+DML 内容大致遵循用于特殊字符的 XML/HTML 规则。 &、和的 &lt; 字符 &gt; 是特殊字符，不能以纯文本格式使用。 等效的转义版本为 &、 &lt; &gt; 和 "。 例如，以下文本：
 
 "Alice & Bob 认为 3 &lt; 4"
 
@@ -60,12 +60,12 @@ DML 内容大致遵循用于特殊字符的 XML/HTML 规则。 &、&lt;、&gt; �
 
 **C 编程语言格式字符**
 
-从 XML/HTML 规则出发，DML 文本可以包含 C 编程语言流样式的格式设置字符，如 \\b、\\t \\r 和 \\n。 这是为了支持与现有调试器文本生产和使用的兼容性。
+从 XML/HTML 规则出发，DML 文本可以包含 C 编程语言流样式的格式化字符 \\ ，如 b、 \\ t、 \\ r 和 \\ n。 这是为了支持与现有调试器文本生产和使用的兼容性。
 
 ## <a name="span-idexample_dmlspanspan-idexample_dmlspanspan-idexample_dmlspanexample-dml"></a><span id="Example_DML"></span><span id="example_dml"></span><span id="EXAMPLE_DML"></span>示例 DML
 
 
-假设文件 C：\\Dml\_试验包含以下行。
+假设文件 C： \\ Dml \_Experiment.txt 包含以下行。
 
 ```text
 My DML Experiment
@@ -87,7 +87,7 @@ My DML Experiment
 ## <a name="span-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanright-click-behavior-in-dml"></a><span id="Right-Click_Behavior_in_DML"></span><span id="right-click_behavior_in_dml"></span><span id="RIGHT-CLICK_BEHAVIOR_IN_DML"></span>在 DML 中右键单击行为
 
 
-在 DML 中可使用右键单击行为。 此示例演示如何使用 &lt;altlink&gt; 来定义右键单击行为，以便通过定期单击发送断点[ **（"设置断点"）** ](bp--bu--bm--set-breakpoint-.md)命令并发送[**u （Unassemble）** ](u--unassemble-.md) 。
+在 DML 中可使用右键单击行为。 此示例演示如何使用 altlink 来定义右键单击 &lt; 行为 &gt; ，以便使用常规单击发送断点的[**最佳实践（设置断点）**](bp--bu--bm--set-breakpoint-.md)命令并发送[**u （Unassemble）**](u--unassemble-.md) 。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -99,13 +99,13 @@ u MyProgram!memcpy
 ## <a name="span-iddml_tag_referencespanspan-iddml_tag_referencespanspan-iddml_tag_referencespandml-tag-reference"></a><span id="DML_Tag_Reference"></span><span id="dml_tag_reference"></span><span id="DML_TAG_REFERENCE"></span>DML 标记引用
 
 
-### <a name="span-id_link_spanspan-id_link_spanltlinkgt"></a><span id="_link_"></span><span id="_LINK_"></span>&lt;链接&gt;
+### <a name="span-id_link_spanspan-id_link_spanltlinkgt"></a><span id="_link_"></span><span id="_LINK_"></span>&lt;连接&gt;
 
-*&lt;链接 \[name = "text"\] \[cmd = "调试器\_command"\]\[alt = "悬停文本以显示"\] \[部分 = "name"\]&gt;/link&lt;链接文本&gt;*
+*&lt;link \[ name = "text" \] \[ cmd = "调试器 \_ 命令" \] \[ alt = "悬停要显示的文本" \] \[ section = "name" \] &gt; 链接文本 &lt; /link&gt;*
 
 Link 标记是 DML 中的基本超链接机制。 它指导支持 DML 表示形式的用户界面将链接文本显示为可单击的链接。 当单击具有 cmd 规范的链接时，将执行调试器命令，其输出应替换当前输出。
 
-Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &lt;名称&gt; 和 \#名称支持。 当在 UI 上单击具有 section 参数的链接时，将扫描名称与匹配的链接，并将其滚动到 "查看"。 这允许链接指向同一页面的不同部分（或新页面的特定部分）。 DML 的部分名称是单独的，以避免必须定义一个新语法，这会允许在命令字符串末尾使用节名称。
+Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &lt; 名称 &gt; 和 \# 名称支持。 当在 UI 上单击具有 section 参数的链接时，将扫描名称与匹配的链接，并将其滚动到 "查看"。 这允许链接指向同一页面的不同部分（或新页面的特定部分）。 DML 的部分名称是单独的，以避免必须定义一个新语法，这会允许在命令字符串末尾使用节名称。
 
 转换为纯文本会删除标记。
 
@@ -128,15 +128,15 @@ Name 和 section 参数允许在命名链接之间导航，类似于 HTML 的 &l
 
 ### <a name="span-id_altlink_spanspan-id_altlink_spanltaltlinkgt"></a><span id="_altlink_"></span><span id="_ALTLINK_"></span>&lt;altlink&gt;
 
-*&lt;altlink \[name = "text"\] \[cmd = "调试器\_command"\] \[节 = "name"\]&gt;alt link text&lt;/altlink&gt;*
+*&lt;altlink \[ name = "text" \] \[ cmd = "调试器 \_ command" \] \[ section = "name" \] &gt; alt link text &lt; /altlink&gt;*
 
-&lt;altlink&gt; 标记提供右键单击行为，在 DML 中提供。 当单击具有 cmd 规范的链接时，将执行调试器命令，其输出应替换当前输出。 &lt;altlink&gt; 选项卡通常与 &lt;链接&gt; 标记配对，以支持常规单击和右击行为。
+&lt;Altlink &gt; 标记提供右键单击行为，在 DML 中可用。 当单击具有 cmd 规范的链接时，将执行调试器命令，其输出应替换当前输出。 &lt;Altlink &gt; 选项卡通常与 &lt; link 标记配对 &gt; ，以支持常规单击和右键单击行为。
 
 转换为纯文本会删除标记。
 
 **示例**
 
-此示例显示了如何使用 &lt;altlink&gt; 来定义右键单击行为，以便通过定期单击发送断点[ **（"设置断点"）** ](bp--bu--bm--set-breakpoint-.md)命令并发送[**u （Unassemble）** ](u--unassemble-.md) 。
+此示例演示如何使用 altlink 来定义右键单击 &lt; 行为 &gt; ，以便使用常规单击发送断点的[**最佳实践（设置断点）**](bp--bu--bm--set-breakpoint-.md)命令并发送[**u （Unassemble）**](u--unassemble-.md) 。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -147,7 +147,7 @@ u MyProgram!memcpy
 
 ### <a name="span-id_exec_spanspan-id_exec_spanltexecgt"></a><span id="_exec_"></span><span id="_EXEC_"></span>&lt;exec&gt;
 
-*&lt;exec cmd = "调试器\_命令"&gt;描述性文本&lt;/exec&gt;*
+*&lt;exec cmd = "调试器 \_ 命令" &gt; 说明性文本 &lt; /exec&gt;*
 
 Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的项。 但是，当在命令浏览器窗口中使用 exec 标记时，将在不替换当前输出的情况下执行给定的命令，此标记提供了一种通过单击菜单中的命令来执行命令的方法。
 
@@ -165,9 +165,9 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 
 ### <a name="span-id_b_spanspan-id_b_spanltbgt"></a><span id="_b_"></span><span id="_B_"></span>&lt;b&gt;
 
-*&lt;b&gt;粗体文本&lt;/b&gt;*
+*&lt;b &gt; 粗文本 &lt; /b&gt;*
 
-此标记请求粗体。 &lt;b&gt;，&lt;我&gt;，&lt;u&gt; 可以嵌套起来，以混合使用属性。
+此标记请求粗体。 &lt;B &gt; 、 &lt; i &gt; 和 &lt; u &gt; 可以嵌套，以混合使用属性。
 
 转换为纯文本会删除标记。
 
@@ -179,11 +179,11 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 <b>This is bold Text</b>
 ```
 
-### <a name="span-id_i_spanspan-id_i_spanltigt"></a><span id="_i_"></span><span id="_I_"></span>&lt;我&gt;
+### <a name="span-id_i_spanspan-id_i_spanltigt"></a><span id="_i_"></span><span id="_I_"></span>&lt;看到&gt;
 
-*&lt;&gt;斜体文本&lt;/i&gt;*
+*&lt;i &gt; 倾斜文本 &lt; /i&gt;*
 
-此标记请求倾斜。 &lt;b&gt;，&lt;我&gt;，&lt;u&gt; 可以嵌套起来，以混合使用属性。
+此标记请求倾斜。 &lt;B &gt; 、 &lt; i &gt; 和 &lt; u &gt; 可以嵌套，以混合使用属性。
 
 转换为纯文本会删除标记。
 
@@ -195,11 +195,11 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 <i>This is italicized Text</i>
 ```
 
-### <a name="span-id_u_spanspan-id_u_spanltugt"></a><span id="_u_"></span><span id="_U_"></span>&lt;u&gt;
+### <a name="span-id_u_spanspan-id_u_spanltugt"></a><span id="_u_"></span><span id="_U_"></span>&lt;形&gt;
 
-*&lt;u&gt;带下划线的文本&lt;/u&gt;*
+*&lt;u &gt; 带下划线的文本 &lt; /u&gt;*
 
-此标记请求带下划线的文本。 &lt;b&gt;，&lt;我&gt;，&lt;u&gt; 可以嵌套起来，以混合使用属性。
+此标记请求带下划线的文本。 &lt;B &gt; 、 &lt; i &gt; 和 &lt; u &gt; 可以嵌套，以混合使用属性。
 
 转换为纯文本会删除标记。
 
@@ -219,9 +219,9 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 <b><u><i>This is bold, underlined and italizized text. </i></u></b> 
 ```
 
-### <a name="span-id_col_spanspan-id_col_spanltcolgt"></a><span id="_col_"></span><span id="_COL_"></span>&lt;列&gt;
+### <a name="span-id_col_spanspan-id_col_spanltcolgt"></a><span id="_col_"></span><span id="_COL_"></span>&lt;col&gt;
 
-&lt;col fg = "name" bg = "name"&gt;text&lt;/col&gt;
+&lt;col fg = "name" bg = "name" &gt; text &lt; /col&gt;
 
 请求文本的前景色和背景色。 颜色被指定为已知颜色的名称而不是绝对值，因为这样可以让客户控制他们看到的颜色类型。 当前颜色名称（默认值仅适用于 WinDbg）。
 
@@ -234,56 +234,56 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>将</strong></td>
+<td align="left"><strong>设置</strong></td>
 <td align="left"><strong>说明/示例</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><p>wbg-Windows 后台</p>
 <p>wfg-Windows 前台</p></td>
 <td align="left">默认窗口背景色和前景色。 默认为窗口和窗口文本的系统颜色。
-<p>&lt;col fg = "wfg" bg = "wbg"&gt; 这是标准前景/背景文本 &lt;/col&gt;</p></td>
+<p>&lt;col fg = "wfg" bg = "wbg" &gt; 这是标准前景/背景文本 &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>clbg-当前行前景</p>
 <p>clfg-当前行背景</p></td>
 <td align="left">当前线条背景色和前景色。 默认为突出显示和突出显示文本的系统颜色。
-<p>&lt;col fg = "clfg" bg = "clbg"&gt; 测试文本-当前行&lt;/col&gt;</p></td>
+<p>&lt;col fg = "clfg" bg = "clbg" &gt; 测试文本-当前行 &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>empbg-强调背景</p>
 <p>emphfg-突出前景</p></td>
 <td align="left">强调文本。 默认为浅蓝色。
-<p>&lt;col fg = "empfg" bg = "empbg"&gt; 这是强调前景/背景文本 &lt;/col&gt;</p></td>
+<p>&lt;col fg = "empfg" bg = "empbg" &gt; 这是强调前景/背景文本 &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>subbg-温柔背景</p>
 <p>subfg-温柔前台</p></td>
 <td align="left">温柔文本。 默认为非活动标题文本和非活动标题的系统颜色。
-<p>&lt;col fg = "subfg" bg = "subbg"&gt; 这是温柔前台/背景文本 &lt;/col&gt;</p></td>
+<p>&lt;col fg = "subfg" bg = "subbg" &gt; 这是温柔前台/背景文本 &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>normbg-正常背景</p>
 <p>normfg-正常前景</p></td>
-<td align="left">正常
-<p>&lt;col fg = "normfg" bg = "normbg"&gt; 测试文本-Normal （normfg/normbg） &lt;/col&gt;</p></td>
+<td align="left">普通
+<p>&lt;col fg = "normfg" bg = "normbg" &gt; Test Text-Normal （normfg/normbg） &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>warnbg-警告背景</p>
 <p>warnfg-Warning 前台</p></td>
 <td align="left">警告
-<p>&lt;col fg = "warnfg" bg = "warnbg"&gt; 测试文本-警告（warnfg/warnbg） &lt;/col&gt;</p></td>
+<p>&lt;col fg = "warnfg" bg = "warnbg" &gt; Test Text-Warning （warnfg/warnbg） &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>errbg-错误背景</p>
 <p>errfg-错误前景</p></td>
 <td align="left">错误
-<p>&lt;col fg = "errfg" bg = "errbg"&gt; 测试文本-错误（errfg/errbg） &lt;/col&gt;</p></td>
+<p>&lt;col fg = "errfg" bg = "errbg" &gt; Test Text-Error （errfg/errbg） &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>verbbg-详细背景</p>
 <p>verbfg-详细前景</p></td>
-<td align="left">Verbose
-<p>&lt;col fg = "verbfg" bg = "verbbg"&gt; 测试文本-Verbose （verbfg/verbbg） &lt;/col&gt;</p></td>
+<td align="left">“详细”
+<p>&lt;col fg = "verbfg" bg = "verbbg" &gt; Test Text-Verbose （verbfg/verbbg） &lt; /col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,48 +301,48 @@ Exec 标记类似于 link 标记，其中描述性文本应显示为可单击的
 <tr class="odd">
 <td align="left"><p>srcnum-源数值常量</p></td>
 <td align="left">源元素颜色。
-<p>&lt;col fg = "srcnum" bg = "wbg"&gt; 测试文本-srcnum &lt;/col&gt;</p></td>
+<p>&lt;col fg = "srcnum" bg = "wbg" &gt; 测试文本-srcnum &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcchar-源字符常量</p></td>
-<td align="left"><p>&lt;col fg = "srcchar" bg = "wbg"&gt; 测试文本-srcchar &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcchar" bg = "wbg" &gt; 测试文本-srcchar &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcstr-源字符串常量</p></td>
-<td align="left"><p>&lt;col fg = "srcstr" bg = "wbg"&gt; 测试文本-srcstr &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcstr" bg = "wbg" &gt; 测试文本-srcstr &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcid-源标识符</p></td>
-<td align="left"><p>&lt;col fg = "srcid" bg = "wbg"&gt; 测试文本-srcid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcid" bg = "wbg" &gt; 测试文本-srcid &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srckw 关键字</p></td>
-<td align="left"><p>&lt;col fg = "srckw" bg = "wbg"&gt; 测试文本-srckw &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srckw" bg = "wbg" &gt; 测试文本-srckw &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcpair-源大括号或匹配符号对</p></td>
-<td align="left"><p>&lt;col fg = "srcpair" bg = "empbbg"&gt; 测试文本-srcpair &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcpair" bg = "empbbg" &gt; 测试文本-srcpair &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srccmnt-源注释</p></td>
-<td align="left"><p>&lt;col fg = "srccmnt" bg = "wbg"&gt; 测试文本-srccmnt &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srccmnt" bg = "wbg" &gt; 测试文本-srccmnt &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcdrct-源指令</p></td>
-<td align="left"><p>&lt;col fg = "srcdrct" bg = "wbg"&gt; 测试文本-srcdrct &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcdrct" bg = "wbg" &gt; 测试文本-srcdrct &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcspid-源特殊标识符</p></td>
-<td align="left"><p>&lt;col fg = "srcspid" bg = "wbg"&gt; 测试文本-srcspid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcspid" bg = "wbg" &gt; 测试文本-srcspid &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcannot-源批注</p></td>
-<td align="left"><p>&lt;col fg = "srcannot" bg = "wbg"&gt; 测试文本-srcannot &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcannot" bg = "wbg" &gt; 测试文本-srcannot &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>更改的数据</p></td>
 <td align="left">用于自上一停止点以来发生更改的数据，例如，在 WinDbg 中更改寄存器。 默认值为红色。
-<p>&lt;col fg = "changed" bg = "wbg"&gt; 测试文本-已更改&lt;/col&gt;</p></td>
+<p>&lt;col fg = "changed" bg = "wbg" &gt; 测试文本-已更改 &lt; /col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -486,7 +486,7 @@ Dbgeng 已具有一组文本处理输入方法和输出接口，使用 DML 只�
 
 **向 dbgeng 提供 DML 内容**
 
-Output 控件标记 DEBUG\_OUTCTL\_DML 表示 dbgeng 方法生成的文本应作为 DML 内容处理。 如果未指定此标志，则文本将被视为纯文本上下文。 调试\_OUTCTL\_DML 可以与以下方法一起使用。
+Output 控件标志 DEBUG \_ OUTCTL \_ DML 指示 dbgeng 方法生成的文本应作为 DML 内容处理。 如果未指定此标志，则文本将被视为纯文本上下文。 DEBUG \_ OUTCTL \_ DML 可以与以下方法一起使用。
 
 -   [**IDebugControl4::ControlledOutput**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
 -   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
@@ -495,19 +495,24 @@ Output 控件标记 DEBUG\_OUTCTL\_DML 表示 dbgeng 方法生成的文本应作
 
 给定的文本必须遵循用于有效字符的 DML 规则。
 
-所有输出例程均已增强，以允许新格式说明符%\[h | w\]Y {t}。 此格式说明符包含一个字符串指针作为参数，指示给定文本为纯文本，并应在输出处理期间转换为 DML 格式。 这为调用方提供了一种简单的方法，在 DML 内容中包含纯文本，而无需事先转换为 DML 格式。 H 和 w 限定符指示 ANSI 或 Unicode 文本，如% s。
+所有输出例程均已增强，以允许新的格式说明符% \[ h | w \] Y {t}。 此格式说明符包含一个字符串指针作为参数，指示给定文本为纯文本，并应在输出处理期间转换为 DML 格式。 这为调用方提供了一种简单的方法，在 DML 内容中包含纯文本，而无需事先转换为 DML 格式。 H 和 w 限定符指示 ANSI 或 Unicode 文本，如% s。
 
 下表总结了% Y 格式说明符的用法。
 
-|        |                                                                                                                                                                                                                                    |
-|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| % Y {t}  | 带引号的字符串。 如果输出格式（第一个 arg）为 DML，则将文本转换为 DML。                                                                                                                                                   |
-| % Y {T}  | 带引号的字符串。 将始终将文本转换为 DML，而不考虑输出格式。                                                                                                                                                    |
-| % Y {s}  | 未加引号的字符串。 如果输出格式（第一个 arg）为 DML，则将文本转换为 DML。                                                                                                                                                 |
-| % Y {S}  | 未加引号的字符串。 将始终将文本转换为 DML，而不考虑输出格式。                                                                                                                                                  |
-| % Y {as} | ULONG64. 添加一个空字符串或9个空格的间距，以填充调试器格式的指针字段的高32位部分。 额外的空间输出9个空格，其中包含前8个零加上 \` 字符。 |
-| % Y {ps} | ULONG64. 填充调试器格式化指针字段的额外空间（包括前8个零加上 \` 字符）。                                                                                                             |
-| % Y {l}  | ULONG64. 作为源行信息的地址。                                                                                                                                                                                       |
+**% Y {t}**：带引号的字符串。 如果输出格式（第一个 arg）为 DML，则将文本转换为 DML。
+
+**% Y {T}**：带引号的字符串。 将始终将文本转换为 DML，而不考虑输出格式。
+
+**% Y {s}**：未加引号的字符串。 如果输出格式（第一个 arg）为 DML，则将文本转换为 DML。
+
+**% Y {S}**：未加引号的字符串。 将始终将文本转换为 DML，而不考虑输出格式。
+
+**% Y {as}**： ULONG64。 添加一个空字符串或9个空格的间距，以填充调试器格式的指针字段的高32位部分。 额外的空间输出9个空格，其中包含前8个零加上 \` 字符。
+
+**% Y {ps}**： ULONG64。 填充调试器格式的指针字段的额外空间（包括前8个零加上 \` 字符）。
+
+**% Y {l}**： ULONG64。 作为源行信息的地址。
+
 
 
 
@@ -565,7 +570,7 @@ DML/NORMAL Y{ps} 32value : '        '
 DML/NORMAL Y{l}: [d:\th\minkernel\kernelbase\debug.c @ 443]
 ```
 
-额外的控制标志、DEBUG\_OUTCTL\_环境\_DML）允许指定 DML 上下文文本，而无需修改任何输出控制特性。 调试\_OUTCTL\_环境\_文本添加为以前存在的调试\_OUTCTL\_环境的更具描述性的别名。 在 dbgeng 中定义了输出控制标志。
+其他控制标志（调试 \_ OUTCTL \_ 的环境 \_ DML）允许指定 DML 上下文文本，而无需修改任何输出控制特性。 调试 \_ OUTCTL \_ 环境 \_ 文本还添加为以前存在的调试 OUTCTL 环境的更具描述性的别名 \_ \_ 。 在 dbgeng 中定义了输出控制标志。
 
 ```cpp
 #define DEBUG_OUTCTL_DML               0x00000020
@@ -597,14 +602,14 @@ IDebugOutputCallbacks2 允许 dbgeng 接口客户端接收用于显示的完整 
 
 新的方法是：
 
--   IDebugOutputCallbacks2：： GetInterestMask –允许回调对象描述其要接收的输出通知的类型。 基本的选择是在纯文本内容（调试\_OUTCBI\_文本）和 DML 内容（调试\_OUTCBI\_DML）之间进行。 此外，回调对象还可以请求显式刷新（调试\_OUTCBI\_显式\_刷新）的通知。
+-   IDebugOutputCallbacks2：： GetInterestMask –允许回调对象描述其要接收的输出通知的类型。 基本的选择是在纯文本内容（调试 \_ OUTCBI \_ 文本）和 dml 内容（调试 \_ OUTCBI \_ DML）之间进行。 此外，回调对象还可以请求显式刷新（调试 \_ OUTCBI \_ 显式刷新）的通知 \_ 。
 -   IDebugOutputCallbacks2：：输出2–所有 IDebugOutputCallbacks2 通知都通过输出2。 一个参数，指示在 Flags、Arg 和 Text 参数携带通知有效负载时传入哪种类型的通知。 通知包括：
 
-    -   调试\_OUTCB\_文本–纯文本输出。 标志来自 DEBUG\_OUTCBF\_\*，Arg 为输出掩码，文本为纯文本。 仅当在兴趣掩码中提供了 DEBUG\_OUTCBI\_文本时才会收到此内容。
+    -   调试 \_ OUTCB \_ 文本–纯文本输出。 标志来自调试 \_ OUTCBF \_ \* ，Arg 是输出掩码，文本是纯文本。 仅当 \_ \_ 利息掩码中提供了 DEBUG OUTCBI 文本时才会收到此内容。
 
-    -   调试\_OUTCB\_DML – DML 内容输出。 标志来自调试\_OUTCBF\_\*，Arg 是输出掩码，文本是 DML 内容。 仅当在兴趣掩码中提供了 DEBUG\_OUTCBI\_DML 时才会收到此项。
+    -   调试 \_ OUTCB \_ DML – dml 内容输出。 标志来自调试 \_ OUTCBF \_ \* ，Arg 是输出掩码，文本是 DML 内容。 仅当 \_ \_ 利息掩码中提供了 DEBUG OUTCBI DML 时才会收到此项。
     
-    -   调试\_OUTCB\_显式\_刷新–调用方调用了 FlushCallbacks，但未缓冲文本。 通常情况下，在刷新缓冲的文本时，将设置 "调试\_OUTCBF"\_组合\_显式\_刷新标志，将两个通知折叠为一个。 如果未缓冲任何文本，则发送仅限刷新通知。
+    -   调试 \_ OUTCB \_ 显式 \_ 刷新–调用方调用了 FlushCallbacks，但未缓冲文本。 通常，当刷新缓冲文本时 \_ \_ \_ ，将设置 DEBUG OUTCBF 组合显式 \_ 刷新标志，并将两个通知折叠为一个。 如果未缓冲任何文本，则发送仅限刷新通知。
 
  相关掩码标志在 dbgeng 中定义，如下所示。
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 302d6ba132add50d7d010a318c125a1e0bbe93a8
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 9c45a06b7bf33c309b71b760b24bf83046e7d08e
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917887"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968552"
 ---
 # <a name="irqlkereleasespinlock-rule-wdm"></a>IrqlKeReleaseSpinLock 规则（wdm）
 
@@ -28,9 +28,8 @@ ms.locfileid: "85917887"
 
 **驱动程序模型： WDM**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00020015） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00020015）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

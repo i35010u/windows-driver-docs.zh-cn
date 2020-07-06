@@ -3,41 +3,45 @@ Description: MultiTransport 设备支持
 title: MultiTransport 设备支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f686c03b91ec7d64486ac475372590f015725f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 663b9a3f84ad152d90b7e7825be85b6fd88899af
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370539"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968299"
 ---
 # <a name="multitransport-device-support"></a>MultiTransport 设备支持
 
 
-WpdMultiTransportDriver 示例基于 WpdHelloWorldDriver，并且原始的驱动程序的源代码的大部分保持不变。 具体而言，支持对象枚举、 属性和功能的代码包含很少更改或修订。
+WpdMultiTransportDriver 示例基于 WpdHelloWorldDriver，而原始驱动程序的大部分源代码仍保持不变。 具体而言，支持对象枚举、属性和功能的代码包含非常少的更改或修改。
 
-对 WpdMultiTransportDriver 中的代码修订出现在两个主要方面： 设备到达和 I/O 队列。 在两个文件中找到支持设备到达代码*Device.cpp*并*Driver.cpp*。 支持的 I/O 队列的代码中找到*Driver.cpp*和*Queue.cpp*
+WpdMultiTransportDriver 中代码的修订出现在两个主要区域：设备到达队列和 i/o 队列。 支持设备到达的代码可在两个文件中找到：*设备 .cpp*和*驱动程序 .cpp*。 支持 i/o 队列的代码位于*驱动程序 .cpp*和*Queue*中
 
-## <a name="span-idmultitransportdevice-arrivalspanspan-idmultitransportdevice-arrivalspanspan-idmultitransportdevice-arrivalspanmultitransport-device-arrival"></a><span id="Multitransport_Device-Arrival"></span><span id="multitransport_device-arrival"></span><span id="MULTITRANSPORT_DEVICE-ARRIVAL"></span>Multitransport 设备到达
+## <a name="span-idmultitransport_device-arrivalspanspan-idmultitransport_device-arrivalspanspan-idmultitransport_device-arrivalspanmultitransport-device-arrival"></a><span id="Multitransport_Device-Arrival"></span><span id="multitransport_device-arrival"></span><span id="MULTITRANSPORT_DEVICE-ARRIVAL"></span>Multitransport 设备到达
 
 
-设备到达代码中找到**CDevice::OnPrepareHardware**方法 (在*Device.cpp*文件) 并在**CDriver::OnDeviceAdd**方法 (在*Driver.cpp*文件)。
+设备到达代码在**CDevice：： OnPrepareHardware**方法（在*设备 .cpp*文件中）和**CDriver：： OnDeviceAdd**方法（位于*驱动程序 .cpp*文件中）中找到。
 
-中的代码**CDevice::OnPrepareHardware**方法之前初始化 WPD 类扩展完成以下任务。 （最后三个任务设置的选项参数传递给 WPD 类扩展。）
+**CDevice：： OnPrepareHardware**方法中的代码在初始化 WPD 类扩展之前完成以下任务。 （最后三个任务设置传递到 WPD 类扩展的选项参数。）
 
-并行的队列是必需的以便**IOCTL\_复合\_传输\_请求 Ioctl**可以正确接收 WPD 类安装程序的设备接口状态更改时。 第二个队列允许传输驱动程序要使用不同 （例如，非并行） 调度模式。 顺序队列是更容易管理，因为 WUDF 仅一次只允许一个请求。 但是，如果您 WPD 的驱动程序能够处理多个并行请求，它不需要辅助队列。
+并行队列是必需的，以便在设备接口状态发生更改时，可以从 WPD 类安装程序中正确接收**IOCTL \_ 复合 \_ 传输 \_ 请求 IOCTLs** 。 第二个队列允许传输驱动程序使用不同（例如，非并行）调度模式。 顺序队列更易于管理，因为 WUDF 一次只允许一个请求。 但是，如果 WPD 驱动程序能够并行处理多个请求，则不需要辅助队列。
 
-|                                                                       |                                                                                                                                                                                                                                  |
-|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 任务                                                                  | 描述                                                                                                                                                                                                                      |
-| 创建功能的唯一标识符 (FUID)。                         | FUID 是驱动程序将传递给 WPD 类扩展在初始化期间的全局唯一标识符 (GUID) 值。 （此类扩展相关联此 FUID 每个传输协议。）                                   |
-| 检索一个指向**IQueueCallbackDeviceIoControl**接口。 | 该驱动程序将任何至类扩展的非-WPD Ioctl 转发通过此指针。                                                                                                                                             |
-| 启用 multitransport 模式选项。                                | 此选项会通知其应设置 multitransport framework WPD 类扩展。                                                                                                                                  |
-| 设置必要的插 (PnP) 值。                         | 这些值用于配置 multitransport 框架。                                                                                                                                                                 |
-| 设置当前流传输的带宽。                                  | 类扩展和复合的驱动程序使用此值 (*WpdComp.dll*)。 复合驱动程序从该扩展插件检索的值，并使用它来确定最佳传输多个传输协议处于活动状态。 |
+**任务**：说明
+
+**创建功能唯一标识符（FUID）。**： FUID 是一个全局唯一标识符（GUID）值，驱动程序在初始化过程中会将此值传递给 WPD 类扩展。 （类扩展将此 FUID 与每个传输关联。）
+
+**检索指向**IQueueCallbackDeviceIoControl**接口的指针。**：驱动程序使用此指针将任何非 WPD IOCTLs 转发到类扩展。
+
+**启用 multitransport 模式选项。**：此选项通知 WPD 类扩展它应设置 multitransport 框架。
+
+**设置必需的即插即用（PnP）值。**：这些值用于配置 multitransport 框架。
+
+**设置当前传输带宽。**：此值由类扩展和复合驱动程序（*WpdComp.dll*）使用。 复合驱动程序检索扩展中的值，并在多个传输处于活动状态时使用它来确定最佳传输。
+
 
  
 
-下面的代码示例摘自**CDevice::OnPrepareHardware**方法演示的示例驱动程序创建功能唯一标识符 (FUID) 的方式。 请务必查看前加上此 GUID 创建注释。
+以下来自**CDevice：： OnPrepareHardware**方法的代码示例演示示例驱动程序如何创建功能唯一标识符（FUID）。 请确保在创建此 GUID 之前查看注释。
 
 ```ManagedCPlusPlus
  // ATTENTION: The following GUID value is provided for illustrative
@@ -55,7 +59,7 @@ WpdMultiTransportDriver 示例基于 WpdHelloWorldDriver，并且原始的驱动
                 GUID guidFUID = { 0x245e5e81, 0x2c17, 0x40a4, { 0x8b, 0x10, 0xe9, 0x43, 0xc5, 0x4c, 0x97, 0xb2 } };
 ```
 
-下面的代码示例摘自**CDevice::OnPrepareHardware**方法显示了上表中的三个剩余任务 (检索**IQueueCallbackDeviceIoControl**指针，启用multitransport 模式，即插即用的值和当前带宽设置。
+以下来自**CDevice：： OnPrepareHardware**方法的代码示例显示了上表中的三个剩余任务（检索**IQueueCallbackDeviceIoControl**指针、启用 Multitransport 模式、设置 PnP 值和当前带宽。
 
 ```ManagedCPlusPlus
      if (hr == S_OK)
@@ -104,14 +108,14 @@ WpdMultiTransportDriver 示例基于 WpdHelloWorldDriver，并且原始的驱动
                 }
 ```
 
-## <a name="span-idmultitransportqueuesspanspan-idmultitransportqueuesspanspan-idmultitransportqueuesspanmultitransport-queues"></a><span id="MultiTransport_Queues"></span><span id="multitransport_queues"></span><span id="MULTITRANSPORT_QUEUES"></span>MultiTransport 队列
+## <a name="span-idmultitransport_queuesspanspan-idmultitransport_queuesspanspan-idmultitransport_queuesspanmultitransport-queues"></a><span id="MultiTransport_Queues"></span><span id="multitransport_queues"></span><span id="MULTITRANSPORT_QUEUES"></span>MultiTransport 队列
 
 
-WpdHelloWorld 驱动程序示例进程 Ioctl 到单一、 连续队列支持从 WPD 序列化程序。 WpdMultiTransportDriver 驱动程序支持两个队列： 一个并行的队列和顺序的队列。 并行的队列处理多个同时进行的 I/O 请求，而顺序队列处理只在一个请求一次。
+WpdHelloWorld driver 示例支持单顺序队列，用于处理 WPD 序列化程序中的 IOCTLs。 WpdMultiTransportDriver 驱动程序支持两个队列：并行队列和顺序队列。 并行队列处理多个同时进行的 i/o 请求，而顺序队列一次只处理一个请求。
 
-中的设备到达代码**CDriver::OnDeviceAdd**方法准备两个队列。 第一个 （或默认） 队列是并行处理每个 IOCTL，然后将其转发到任一第二个 （按顺序） 中的队列驱动程序，或受 WPD 类扩展的另一个队列。
+**CDriver：： OnDeviceAdd**方法中的设备到达代码准备两个队列。 第一个（或默认）队列是一个并行队列，用于处理每个 IOCTL，然后将其转发到驱动程序中的第二个（顺序）队列，或转发到 WPD 类扩展所支持的另一个队列。
 
-下面的代码示例包含用于创建并行和顺序队列的代码：
+下面的代码示例包含创建并行和顺序队列的代码：
 
 ```ManagedCPlusPlus
         //
@@ -162,9 +166,9 @@ WpdHelloWorld 驱动程序示例进程 Ioctl 到单一、 连续队列支持从 
         }
 ```
 
-虽然**CDriver::OnDeviceAdd**方法处理的 I/O 队列创建，而这两个队列中支持的功能的代码中找到*Queue.cpp*文件。
+当**CDriver：： OnDeviceAdd**方法处理 i/o 队列的创建时，在*队列 .cpp*文件中可找到支持这两个队列中的功能的代码。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [WPD 驱动程序示例](the-wpd-driver-samples.md)

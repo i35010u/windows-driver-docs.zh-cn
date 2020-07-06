@@ -1,22 +1,22 @@
 ---
 title: WDI_TLV_OFFLOAD_SCOPE
-description: WDI_TLV_OFFLOAD_SCOPE 是包含 Rx TLV coalesce 卸载功能。
+description: WDI_TLV_OFFLOAD_SCOPE 是包含 Rx 合并卸载功能的 TLV。
 ms.assetid: 2E00659F-4A41-4907-AEA6-92EAFBFF2149
 ms.date: 10/05/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_OFFLOAD_SCOPE 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 62fde916cdec2dd2a9041c67461e7a3f8f8531a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 570e0ba1bd44ba1082105347c03cb5a2b7ff4f80
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385256"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968528"
 ---
-# <a name="wditlvoffloadscope"></a>WDI_TLV_OFFLOAD_SCOPE
+# <a name="wdi_tlv_offload_scope"></a>WDI_TLV_OFFLOAD_SCOPE
 
 
-WDI_TLV_OFFLOAD_SCOPE 是包含网络的作用域 TLV 将卸载。
+WDI_TLV_OFFLOAD_SCOPE 为 TLV，其中包含网络卸载的作用域。
 
 ## <a name="tlv-type"></a>TLV 类型
 
@@ -26,25 +26,26 @@ WDI_TLV_OFFLOAD_SCOPE 是包含网络的作用域 TLV 将卸载。
 ## <a name="length"></a>长度
 
 
-大小 （以字节为单位） 的以下值。
+以下值的大小（以字节为单位）。
 
 ## <a name="values"></a>值
 
-| 在任务栏的搜索框中键入 | 描述 |
+| 类型 | 说明 |
 | --- | --- |
-| UINT8 | 指定所有端口上的校验和卸载参数是否适用。 <p>可能值：</p> <ul><li>0:不适用</li><li>1：适用</li></ul> |
-| UINT8 | 指定所有端口上是否适用 LsoV1 卸载参数。 <p>可能值：</p> <ul><li>0:不适用</li><li>1：适用</li></ul> |
-| UINT8 | 指定所有端口上是否适用 LsoV2 卸载参数。 <p>可能值：</p> <ul><li>0:不适用</li><li>1：适用</li></ul> |
-| UINT8 | 指定所有端口上是否适用 RSC 卸载参数。 <p>可能值：</p> <ul><li>0:不适用</li><li>1：适用</li></ul> |
+| UINT8 | 指定校验和卸载参数是否适用于所有端口。 <p>可能的值：</p> <ul><li>0：不适用</li><li>1：适用</li></ul> |
+| UINT8 | 指定 LsoV1 卸载参数是否适用于所有端口。 <p>可能的值：</p> <ul><li>0：不适用</li><li>1：适用</li></ul> |
+| UINT8 | 指定 LsoV2 卸载参数是否适用于所有端口。 <p>可能的值：</p> <ul><li>0：不适用</li><li>1：适用</li></ul> |
+| UINT8 | 指定 RSC 卸载参数是否适用于所有端口。 <p>可能的值：</p> <ul><li>0：不适用</li><li>1：适用</li></ul> |
  
 
 ## <a name="requirements"></a>要求
 
-| | |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 版本 1709 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**支持的最低客户端**： Windows 10，版本1709
+
+**支持的最低服务器**： Windows server 2016
+
+**标头**： Wditypes. hpp
+
 
 
 

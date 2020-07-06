@@ -1,39 +1,51 @@
 ---
 title: 无线电管理器文件列表
-description: 下表描述在单选管理器 DLL 中找到的文件。
+description: 下表描述了在收音机管理器 DLL 中找到的文件。
 ms.assetid: 70A8B11F-89FF-49E3-933E-2BB66D5E1BF6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 42e3ca5785a317105ef72ccd189af999e9b1d15f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b34c2d6280e0fffbceff58fa1b4be38e6deea0d1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326175"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968264"
 ---
 # <a name="the-radio-manager-file-list"></a>无线电管理器文件列表
 
 > [!IMPORTANT] 
-> 已弃用此文档和 Windows 8.1 的地理位置驱动程序示例。
+> 此文档和 Windows 8.1 的地理位置驱动程序示例已弃用。
 
-下表描述在单选管理器 DLL 中找到的文件。
+下表描述了在收音机管理器 DLL 中找到的文件。
 
-|                              |                                                                                                                                                                                                                                             |
-|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 文件名                    | 目录                                                                                                                                                                                                                                    |
-| SampleRM.sln                 | 生成示例单选管理器 dll 的 Visual Studio 2010 解决方案文件                                                                                                                                                              |
-| sampleRM.idl                 | 接口定义的示例单选管理器                                                                                                                                                                                       |
-| RadioMgr.idl                 | 接口定义为 Windows 单选管理器                                                                                                                                                                                        |
-| SampleRadioManager.h         | 头文件所需为单选管理器的功能。                                                                                                                                                                                  |
-| SampleRadioInstance.h        | 对于单选实例所需的功能的标头文件                                                                                                                                                                                 |
-| SampleInstanceCollection.h   | 对于单选实例集合所需的功能的标头文件                                                                                                                                                                  |
-| precomp.h                    | 常见头文件                                                                                                                                                                                                                          |
-| dllmain.cpp                  | 标准 dllmain                                                                                                                                                                                                                            |
-| InternalInterfaces.h         | 此示例使用的内部接口的标头文件                                                                                                                                                                                     |
-| SampleRadioManager.cpp       | 实现详细信息的示例单选管理器。 重要的概念包括:-利用 IMediaRadioManagerNotifySink 单选实例事件-添加/删除单选实例的队列和部署系统事件的辅助角色作业 |
-| SampleRadioInstance.cpp      | 示例单选实例的实现细节。 重要的概念包括： 访问器 （& m) 无线电收发器信息的修饰符的实例更改函数                                                                                 |
-| SampleInstanceCollection.cpp | 示例实例集合的实现细节。 重要的概念包括:-单选实例发现和检索                                                                                                             |
-| RadioMgr\_interface.cpp      | 帮助程序源文件以包含 MIDL 生成的文件。                                                                                                                                                                                     |
+**文件名**：内容
+
+**SampleRM**：用于生成示例收音机管理器 Dll 的 Visual Studio 2010 解决方案文件
+
+**sampleRM**：示例收音机管理器的接口定义
+
+**RadioMgr**： Windows 收音机管理器的接口定义
+
+**SampleRadioManager**：收音机管理器所需功能的头文件
+
+**SampleRadioInstance**：收音机实例所需功能的头文件
+
+**SampleInstanceCollection**：单选按钮集合所需的函数头文件
+
+**precomp**：通用标头文件
+
+**dllmain .cpp**：标准 dllmain
+
+**InternalInterfaces**：用于此示例的内部接口的标头文件
+
+**SampleRadioManager**：示例收音机管理器的实现详细信息。 重要概念包括：-利用 IMediaRadioManagerNotifySink 实现收音机实例事件-添加/删除收音机实例-为系统事件排队和部署工作作业
+
+**SampleRadioInstance**：示例广播实例的实现详细信息。 重要概念包括：-访问器 & 用于广播信息实例更改函数的修饰符
+
+**SampleInstanceCollection**：示例实例集合的实现详细信息。 重要概念包括：-无线电实例发现和检索
+
+**RadioMgr \_ interface .Cpp**： Helper 源文件，其中包含 MIDL 生成的文件。
+
 
  
 

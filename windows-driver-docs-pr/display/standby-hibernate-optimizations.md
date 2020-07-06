@@ -4,24 +4,26 @@ description: Windows 8 为图形堆栈提供优化，你的驱动程序可以选
 ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21d14fa3191877eb0a84e559a3fed3240faa9241
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6bda009ca528a5e774775ce6af5c1883521b8bfd
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825707"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968588"
 ---
 # <a name="standby-hibernate-optimizations"></a>待机休眠优化
 
 
 Windows 8 为图形堆栈提供优化，你的驱动程序可以选择利用它来提高睡眠和恢复系统性能。
 
-|                                                                                   |                                             |
-|-----------------------------------------------------------------------------------|---------------------------------------------|
-| 最小 Windows 显示器驱动程序模型（WDDM）版本                               | 1.2                                         |
-| 最大 Windows 版本                                                           | 8                                           |
-| 驱动程序实现-仅限完整图形和呈现                               | 可选                                    |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **¦ StandbyHibernateFlags** |
+**最小 Windows 显示驱动程序模型（WDDM）版本**：1。2
+
+**最低 Windows 版本**：8
+
+**驱动程序实现-完整图形和仅呈现**：可选
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ StandbyHibernateFlags**
+
 
  
 
@@ -30,11 +32,11 @@ Windows 8 为图形堆栈提供优化，你的驱动程序可以选择利用它�
 
 从 Windows 8 开始，这些结构是新的或更新的，以支持备用休眠。
 
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
--   [**DXGK\_SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
--   [**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
+-   [**DXGK \_ QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGK \_ SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
+-   [**DXGK \_ SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
 
-可以支持此功能的每个设备都应利用这些休眠优化。 当 WDDM 1.2 或更高版本的驱动程序枚举段功能时，它还必须设置一个或多个备用休眠标志**PreservedDuringStandby**、 **PreservedDuringHibernate**和**PartiallyPreservedDuringHibernate**。 有关更多详细信息，请参阅[**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)主题的备注。
+可以支持此功能的每个设备都应利用这些休眠优化。 当 WDDM 1.2 或更高版本的驱动程序枚举段功能时，它还必须设置一个或多个备用休眠标志**PreservedDuringStandby**、 **PreservedDuringHibernate**和**PartiallyPreservedDuringHibernate**。 有关更多详细信息，请参阅[**DXGK \_ SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)主题的备注。
 
 ## <a name="span-idstandbyoptspanspan-idstandbyoptspanusing-standby-hibernate-optimizations"></a><span id="standbyopt"></span><span id="STANDBYOPT"></span>使用备用休眠优化
 

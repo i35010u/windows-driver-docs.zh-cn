@@ -10,12 +10,12 @@ keywords:
 - 收音机管理，GPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69304e9e86afc1cf3dfc62a69866d127ef4f0338
-ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
+ms.openlocfilehash: 41517e0cb783979a32a63104d92edbb9fc1f17d0
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122690"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968270"
 ---
 # <a name="supporting-radio-management"></a>支持无线电管理
 
@@ -40,23 +40,36 @@ ms.locfileid: "84122690"
 
 下表列出了无线电管理 API 中的方法和示例 DLL 中的相应方法。
 
-|                                                     |                                                       |
-|-----------------------------------------------------|-------------------------------------------------------|
-| 收音机管理器 API                                   | 收音机管理器 DLL                                     |
-| IMediaRadioManager::GetRadioInstances               | CSampleRadioManager::GetRadioInstances                |
-| IMediaRadioManager::OnSystemRadioStateChange        | CSampleRadioManager::OnSystemRadioStateChange         |
-| IRadioInstance::GetFriendlyName                     | CSampleRadioInstance::GetFriendlyName                 |
-| IRadioInstance::GetInstanceSignature                | CSampleRadioInstance::GetInstanceSignature            |
-| IRadioInstance::GetRadioManagerSignature            | CSampleRadioInstance::GetRadioManagerSignature        |
-| IRadioInstance::GetRadioState                       | CSampleRadioInstance::GetRadioState                   |
-| IRadioState::IsAssociatingDevice                    | CSampleRadioInstance::IsAssociatingDevice             |
-| IRadioState::IsMultiComm                            | CSampleRadioInstance::IsMultiComm                     |
-| IRadioState::SetRadioState                          | CSampleRadioInstance::SetRadioState                   |
-| IRadioInstanceCollection：： GetAt                     | CRadioInstanceCollection：： GetAt                       |
-| IRadioInstanceCollection：： GetCount                  | CRadioInstanceCollection：： GetCount                    |
-| IMediaRadioManagerNotifySink::OnInstanceAdd         | CSampleRadioManager：： \_ FireEventOnInstanceAdd         |
-| IMediaRadioManagerNotifySink::OnInstanceRadioChange | CSampleRadioManager：： \_ FireEventOnInstanceRadioChange |
-| IMediaRadioManagerNotifySink::OnInstanceRemove      | CSampleRadioManager：： \_ FireEventOnInstanceRemove      |
+**收音机管理器 API**：收音机管理器 DLL
+
+**IMediaRadioManager：： GetRadioInstances**： CSampleRadioManager：： GetRadioInstances
+
+**IMediaRadioManager：： OnSystemRadioStateChange**： CSampleRadioManager：： OnSystemRadioStateChange
+
+**IRadioInstance：： GetFriendlyName**： CSampleRadioInstance：： GetFriendlyName
+
+**IRadioInstance：： GetInstanceSignature**： CSampleRadioInstance：： GetInstanceSignature
+
+**IRadioInstance：： GetRadioManagerSignature**： CSampleRadioInstance：： GetRadioManagerSignature
+
+**IRadioInstance：： GetRadioState**： CSampleRadioInstance：： GetRadioState
+
+**IRadioState：： IsAssociatingDevice**： CSampleRadioInstance：： IsAssociatingDevice
+
+**IRadioState：： IsMultiComm**： CSampleRadioInstance：： IsMultiComm
+
+**IRadioState：： SetRadioState**： CSampleRadioInstance：： SetRadioState
+
+**IRadioInstanceCollection：： GetAt**： CRadioInstanceCollection：： GetAt
+
+**IRadioInstanceCollection：： GetCount**： CRadioInstanceCollection：： GetCount
+
+**IMediaRadioManagerNotifySink：： OnInstanceAdd**： CSampleRadioManager：： \_ FireEventOnInstanceAdd
+
+**IMediaRadioManagerNotifySink：： OnInstanceRadioChange**： CSampleRadioManager：： \_ FireEventOnInstanceRadioChange
+
+**IMediaRadioManagerNotifySink：： OnInstanceRemove**： CSampleRadioManager：： \_ FireEventOnInstanceRemove
+
 
 ## <a name="communicating-with-the-device-driver"></a>与设备驱动程序通信
 
@@ -88,4 +101,4 @@ ms.locfileid: "84122690"
 
 1. 选择 "**调试"/"附加到进程**"。 在 "**附加到进程**" 对话框中显示的可用进程列表中，选择 "dllhost.exe"。
 
-请注意，如果 dllhost.exe 的多个实例正在运行，则可能需要在排除过程中选择每个实例，以确定与该收音机管理 DLL 关联的进程。 附加到正确的进程后，可以在 Visual Studio 中设置断点并开始调试。
+请注意，如果 dllhost.exe 的多个实例正在运行，则可能需要在排除过程中选择每个实例，以确定与广播管理 DLL 关联的进程。 附加到正确的进程后，可以在 Visual Studio 中设置断点并开始调试。

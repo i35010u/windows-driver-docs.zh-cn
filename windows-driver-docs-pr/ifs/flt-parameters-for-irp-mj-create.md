@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 11/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c49a6cc4c3551f039961aa39a1dfba3257a63600
-ms.sourcegitcommit: 23ca676ade460f8ce7866015559c24728c7c308b
+ms.openlocfilehash: 2495e968d3ffc20bb942aedb9e0f07345da79aa1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73799191"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968210"
 ---
 # <a name="flt_parameters-for-irp_mj_create-union"></a>IRP_MJ_CREATE 联合的 FLT_PARAMETERS
 
@@ -53,9 +53,9 @@ FLT_PARAMETERS 的**Create**结构包含以下成员。
 
 一个指向[IO_SECURITY_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_security_context)结构的指针，该结构表示 IRP_MJ_CREATE 请求的安全上下文，其中：
 
-- **SecurityContext-> AccessState**是一个指向[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)结构的指针，该结构包含对象的主题上下文、授予访问类型和剩余所需的访问类型。
+- **SecurityContext->AccessState**是一个指向[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)结构的指针，该结构包含对象的主题上下文、授予访问类型和剩余所需的访问类型。
 
-- **SecurityContext-> DesiredAccess**是一个[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)结构，它指定为文件请求的访问权限。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*DesiredAccess*参数。
+- **SecurityContext->DesiredAccess**是一个[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)结构，它指定为文件请求的访问权限。 有关详细信息，请参阅[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*DesiredAccess*参数。
 
 **选项**  
 标志的位掩码，用于指定创建或打开该文件时要应用的选项，以及在文件已存在时要执行的操作。 此成员的低24位对应于[**FltCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)的*CreateOptions*参数。 高8位对应于**FltCreateFile**的*CreateDisposition*参数。
@@ -83,9 +83,7 @@ IRP_MJ_CREATE 是基于 IRP 的操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | *fltkernel* （包括 fltkernel）
+|标头 |*fltkernel* （包括 fltkernel）
 
 ## <a name="see-also"></a>另请参阅
 

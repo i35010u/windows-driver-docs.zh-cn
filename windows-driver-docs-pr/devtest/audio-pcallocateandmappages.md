@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a44ec6cb7dbe7d50f7b4619490dbbafd38d39527
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 48debd629dea2352a4f083d48c789d9df34b2fda
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918129"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968422"
 ---
 # <a name="pcallocateandmappages-rule-audio"></a>PcAllocateAndMapPages 规则（音频）
 
@@ -30,9 +30,8 @@ PcAllocateAndMapPages 规则指定 PortCls 微型端口驱动程序使用正确�
 
 **驱动程序模型：音频**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00071009） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00071009）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

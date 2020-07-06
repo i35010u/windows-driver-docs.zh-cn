@@ -1,5 +1,5 @@
 ---
-title: vmnetwork
+title: vm
 description: Vm 扩展显示有关目标系统上的虚拟内存使用统计信息的摘要信息。
 ms.assetid: 25e4f80c-d4ca-407c-991d-e8ee5dfbb309
 keywords:
@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eaaa9cf742780e9f186c9eded8a13a777d7899f1
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 0a9e06ad65fe3f16190d9bae2c82fd0074b4e205
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70025161"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968232"
 ---
 # <a name="vm"></a>!vm
 
@@ -28,7 +28,7 @@ ms.locfileid: "70025161"
 !vm [Flags]
 ```
 
-## <a name="span-idddk__vm_dbgspanspan-idddk__vm_dbgspanparameters"></a><span id="ddk__vm_dbg"></span><span id="DDK__VM_DBG"></span>Parameters
+## <a name="span-idddk__vm_dbgspanspan-idddk__vm_dbgspanparameters"></a><span id="ddk__vm_dbg"></span><span id="DDK__VM_DBG"></span>参数
 
 
 <span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*标志*   
@@ -54,9 +54,8 @@ ms.locfileid: "70025161"
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
-|       |                  |
-|-------|------------------|
-| 交货 | 仅限内核模式 |
+**模式**：仅限内核模式
+
 
  
 
@@ -70,11 +69,11 @@ ms.locfileid: "70025161"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +82,7 @@ ms.locfileid: "70025161"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-[ **！ Memusage**](-memusage.md) extension 命令可用于分析物理内存使用情况。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。
+[**！ Memusage**](-memusage.md) extension 命令可用于分析物理内存使用情况。 有关内存管理的详细信息，请参阅 Russinovich 和 David 所罗门群岛的*Microsoft Windows 内部机制*。
 
 <a name="remarks"></a>备注
 -------

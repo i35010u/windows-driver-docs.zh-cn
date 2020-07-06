@@ -1,20 +1,20 @@
 ---
 title: Direct3D 呈现性能改进
-description: Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序可以支持 Microsoft Direct3D 渲染性能改进，使 Direct3D 9 硬件更好地使用硬件命令缓冲区和计数器，并将系统内存的有效副本提供给子资源. 这些功能镜像了 Direct3D 版本10硬件可用的一些功能，是从 Windows 8.1 开始的新功能。
+description: Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序可以支持 Microsoft Direct3D 渲染性能改进，使 Direct3D 9 硬件更好地使用硬件命令缓冲区和计数器，并将系统内存的有效副本提供给子资源。 这些功能镜像了 Direct3D 版本10硬件可用的一些功能，是从 Windows 8.1 开始的新功能。
 ms.assetid: F9AAE489-EC45-4EE6-875E-E084BB3054EE
 ms.date: 10/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cd1da2b3eb70364fb03c236fa805129267aecc48
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9b7253019244c327c3ee85a3de88c5c27c7956ad
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839007"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968347"
 ---
 # <a name="direct3d-rendering-performance-improvements"></a>Direct3D 呈现性能改进
 
 
-Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序可以支持 Microsoft Direct3D 渲染性能改进，使 Direct3D 9 硬件更好地使用硬件命令缓冲区和计数器，并将系统内存的有效副本提供给子资源. 这些功能镜像了 Direct3D 版本10硬件可用的一些功能，是从 Windows 8.1 开始的新功能。
+Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序可以支持 Microsoft Direct3D 渲染性能改进，使 Direct3D 9 硬件更好地使用硬件命令缓冲区和计数器，并将系统内存的有效副本提供给子资源。 这些功能镜像了 Direct3D 版本10硬件可用的一些功能，是从 Windows 8.1 开始的新功能。
 
 还提供了新的 Direct3D 11.1 资源剪裁和地图默认性能改进。 下面的行为更改部分中概述了地图的默认情况。
 
@@ -28,25 +28,25 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 本部分包含 Windows 显示驱动程序模型（WDDM）1.3 和更高版本的用户模式显示驱动程序实现的功能，以支持 Microsoft Direct3D 呈现性能改进。
 
 
-|||
-|:--|:--|
-|[PFND3DDDI_FLUSH1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_flush1)| [PFND3DDDI_CHECKCOUNTERINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounterinfo)|
-|[PFND3DDDI_CHECKCOUNTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounter) |[PFND3DDDI_UPDATESUBRESOURCEUP](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updatesubresourceup)|
+**[PFND3DDDI_FLUSH1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_flush1)**： [PFND3DDDI_CHECKCOUNTERINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounterinfo)
+
+**[PFND3DDDI_CHECKCOUNTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounter)**： [PFND3DDDI_UPDATESUBRESOURCEUP](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updatesubresourceup)
+
 
 ### <a name="direct3d-rendering-performance-structures-and-enumerations"></a>Direct3D 呈现性能结构和枚举
 
-这些用户模式结构和枚举支持呈现性能改进，并为 Windows 8.1 提供了新的或更新的。 All 适用于 Direct3D Level 9 驱动程序，但[**D3D11\_1\_DDI\_刷新\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)。
+这些用户模式结构和枚举支持呈现性能改进，并为 Windows 8.1 提供了新的或更新的。 All 适用于除[**D3D11 \_ 1 \_ DDI \_ 刷新 \_ 标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)以外的 Direct3D Level 9 驱动程序。
 
--   [**D3DDDI\_刷新\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddi_flush_flags)（新）
--   [**D3DDDIARG\_COPYFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_copyflags) （新）
--   [**D3DDDIARG\_计数器\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_counter_info)（新）
--   [**D3DDDIARG\_UPDATESUBRESOURCEUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_updatesubresourceup) （新）
--   [**D3DDDICAPS\_简单\_实例化\_支持**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddicaps_simple_instancing_support)（新）
--   [*CreateResource2*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2) （WDDM 1.3 和更高版本的 Direct3D Level 9 驱动程序必须在设置**CaptureBuffer**标志值时返回**E\_INVALIDARG**错误代码）
--   [**D3D11\_1\_DDI\_刷新\_标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)（**D3DWDDM1\_3DDI\_剪裁\_** 添加的内存常量）
--   [**D3DDDI\_DEVICEFUNCS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs) （**pfnFlush1**， **pfnCheckCounterInfo**， **pfnCheckCounter**， **pfnUpdateSubresourceUP** members 已添加）
--   [**D3DDDI\_池**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_pool)（**D3DDDIPOOL\_STAGINGMEM**常量已添加）
--   [**D3DDDICAPS\_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type)（**D3DDDICAPS\_获取\_简单\_实例化\_支持**常量添加）
+-   [**D3DDDI \_刷新 \_ 标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddi_flush_flags)（新）
+-   [**D3DDDIARG \_COPYFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_copyflags) （新）
+-   [**D3DDDIARG \_计数器 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_counter_info)（新）
+-   [**D3DDDIARG \_UPDATESUBRESOURCEUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_updatesubresourceup) （新）
+-   [**D3DDDICAPS \_简单 \_ 实例化 \_ 支持**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddicaps_simple_instancing_support)（新）
+-   [*CreateResource2*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2) （WDDM 1.3 和更高版本的 Direct3D Level 9 驱动程序必须在设置**CaptureBuffer**标志值时返回**E \_ INVALIDARG**错误代码）
+-   [**D3D11 \_ 1 \_ DDI \_ 刷新 \_ 标志**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)（已添加**D3DWDDM1 \_ 3DDI \_ 剪裁 \_ 内存**常量）
+-   [**D3DDDI \_DEVICEFUNCS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs) （已添加**pfnFlush1**、 **pfnCheckCounterInfo**、 **pfnCheckCounter**、 **pfnUpdateSubresourceUP**成员）
+-   [**D3DDDI \_池**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_pool)（添加了**D3DDDIPOOL \_ STAGINGMEM**常数）
+-   [**D3DDDICAPS \_类型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type)（已添加**D3DDDICAPS \_ GET \_ 简单 \_ 实例 \_ 支持**常量）
 -   [*GetCaps*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps) （备注中的新信息）
 
 ## <a name="span-idddi_implementation_requirements_starting_with_wddm_13spanspan-idddi_implementation_requirements_starting_with_wddm_13spanddi-implementation-requirements-starting-with-wddm-13"></a><span id="ddi_implementation_requirements_starting_with_wddm_1.3"></span><span id="DDI_IMPLEMENTATION_REQUIREMENTS_STARTING_WITH_WDDM_1.3"></span>从 WDDM 1.3 开始的 DDI 实现要求
@@ -62,7 +62,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 <thead>
 <tr class="header">
 <th align="left">函数组</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,8 +102,8 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 </ul>
 <p>调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps" data-raw-source="[&lt;em&gt;GetCaps&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)"><em>GetCaps</em></a>时，将应用这些方案：</p>
 <ul>
-<li>如果设置了<strong>D3DDDICAPS_GETD3DQUERYDATA</strong> ，则驱动程序可以选择报告对时间戳的支持，这意味着 Direct3D 运行时不支持。</li>
-<li>如果设置了<strong>D3DDDICAPS_GET_SIMPLE_INSTANCING_SUPPORT</strong> ，则驱动程序可以报告对实例化的可选硬件支持。</li>
+<li>如果设置<strong>D3DDDICAPS_GETD3DQUERYDATA</strong> ，则驱动程序可以选择报告对时间戳的支持，这意味着 Direct3D 运行时不支持。</li>
+<li>如果设置<strong>D3DDDICAPS_GET_SIMPLE_INSTANCING_SUPPORT</strong> ，则驱动程序可以报告对实例化的可选硬件支持。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -127,7 +127,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 
 [***CreateResource （D3D11）***](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource) **函数**-
 
-这些输入[**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)结构成员受到限制：
+以下输入[**D3D11DDIARG \_ CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)结构成员受到限制：
 
 <table>
 <colgroup>
@@ -143,11 +143,11 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="ResourceDimension_and_Usage"></span><span id="resourcedimension_and_usage"></span><span id="RESOURCEDIMENSION_AND_USAGE"></span><strong>ResourceDimension</strong>和<strong>用法</strong></p></td>
-<td align="left"><p>这些行为更改仅适用于 Direct3D 运行时为<strong>ResourceDimension</strong>提供类型<strong>D3D10DDIRESOURCE_BUFFER</strong>和使用<strong>D3D10_DDI_USAGE_DEFAULT</strong>类型。</p></td>
+<td align="left"><p>仅当 Direct3D 运行时为<strong>ResourceDimension</strong>提供类型<strong>D3D10DDIRESOURCE_BUFFER</strong> ，并键入<strong>D3D10_DDI_USAGE_DEFAULT</strong>以供<strong>使用</strong>时，这些行为更改才适用。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="BindFlags"></span><span id="bindflags"></span><span id="BINDFLAGS"></span><strong>BindFlags</strong></p></td>
-<td align="left"><p>Direct3D 运行时仅设置<strong>D3D10_DDI_BIND_SHADER_RESOURCE</strong>和<strong>D3D11_DDI_BIND_UNORDERED_ACCESS</strong>值。</p></td>
+<td align="left"><p>Direct3D 运行时仅设置<strong>D3D10_DDI_BIND_SHADER_RESOURCE</strong>值和<strong>D3D11_DDI_BIND_UNORDERED_ACCESS</strong>值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="MapFlags"></span><span id="mapflags"></span><span id="MAPFLAGS"></span><strong>MapFlags</strong></p></td>
@@ -155,7 +155,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="MiscFlags"></span><span id="miscflags"></span><span id="MISCFLAGS"></span><strong>MiscFlags</strong></p></td>
-<td align="left"><p>运行时仅设置<strong>D3D11_DDI_RESOURCE_MISC_BUFFER_ALLOW_RAW_VIEWS</strong>和<strong>D3D11_DDI_RESOURCE_MISC_BUFFER_STRUCTURED</strong>值。</p></td>
+<td align="left"><p>运行时仅设置<strong>D3D11_DDI_RESOURCE_MISC_BUFFER_ALLOW_RAW_VIEWS</strong>值和<strong>D3D11_DDI_RESOURCE_MISC_BUFFER_STRUCTURED</strong>值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Format"></span><span id="format"></span><span id="FORMAT"></span><strong>形式</strong></p></td>
@@ -194,7 +194,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -212,7 +212,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="DDIMap"></span><span id="ddimap"></span><span id="DDIMAP"></span><em>DDIMap</em></p></td>
-<td align="left"><p>如果满足此处列出的所有其他成员要求，则运行时可以设置<strong>D3D10_DDI_MAP_READ</strong>、 <strong>D3D10_DDI_MAP_WRITE</strong>或<strong>D3D10_DDI_MAP_READWRITE</strong>值，将创建调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>中设置的 MapFlags 值与CreateResource （D3D11）</em></a>。</p></td>
+<td align="left"><p>如果满足此处列出的所有其他成员要求，则运行时可以设置<strong>D3D10_DDI_MAP_READ</strong>、 <strong>D3D10_DDI_MAP_WRITE</strong>或<strong>D3D10_DDI_MAP_READWRITE</strong>值，这与在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>CreateResource （D3D11）</em></a>的创建调用中设置的<em>MapFlags</em>值匹配。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span><em>随意</em></p></td>
@@ -220,7 +220,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="pMappedSubResource"></span><span id="pmappedsubresource"></span><span id="PMAPPEDSUBRESOURCE"></span>pMappedSubResource</p></td>
-<td align="left"><p>尽管运行时中的输入值不受限制，但驱动程序必须将有效的 CPU 可缓存指针分配给<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_mapped_subresource" data-raw-source="[&lt;strong&gt;D3D10DDI_MAPPED_SUBRESOURCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_mapped_subresource)"><strong>D3D10DDI_MAPPED_SUBRESOURCE</strong></a>。<strong>pData</strong>成员，并且必须设置<strong>RowPitch</strong>和<strong>DepthPitch</strong> ，以匹配缓冲区大小和<strong>pData</strong>中提供的数据。</p></td>
+<td align="left"><p>尽管运行时中的输入值不受限制，但驱动程序必须将有效的可通过 CPU 缓存的指针分配到<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_mapped_subresource" data-raw-source="[&lt;strong&gt;D3D10DDI_MAPPED_SUBRESOURCE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_mapped_subresource)"><strong>D3D10DDI_MAPPED_SUBRESOURCE</strong></a>。<strong>pData</strong>成员，并且必须设置<strong>RowPitch</strong>和<strong>DepthPitch</strong> ，以匹配缓冲区大小和<strong>pData</strong>中提供的数据。</p></td>
 </tr>
 </tbody>
 </table>
@@ -239,7 +239,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -249,7 +249,7 @@ Windows 显示器驱动程序模型（WDDM）1.3 及更高版本的驱动程序�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="hResource"></span><span id="hresource"></span><span id="HRESOURCE"></span><em>hResource</em></p></td>
-<td align="left"><p>仅当在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>CreateResource （D3D11）</em></a>的创建调用中设置了<em>MapFlags</em>的非零值时，运行时才会设置<strong>D3D10DDIRESOURCE_BUFFER</strong>资源。</p></td>
+<td align="left"><p>仅当在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>CreateResource （D3D11）</em></a>的创建调用中设置<em>MapFlags</em>的非零值时，运行时才会设置<strong>D3D10DDIRESOURCE_BUFFER</strong>资源。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Subresource"></span><span id="subresource"></span><span id="SUBRESOURCE"></span><em>Subresource</em></p></td>

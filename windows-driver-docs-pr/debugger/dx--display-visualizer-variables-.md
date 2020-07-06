@@ -1,6 +1,6 @@
 ---
 title: dx（显示调试器对象模型表达式）
-description: Dx 命令显示C++表达式中使用 NatVis 扩展模型。 Dx 命令处理调试器对象。
+description: Dx 命令显示使用 NatVis 扩展模型的 c + + 表达式。 Dx 命令适用于调试器对象。
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
 - dx （显示调试器对象模型表达式） Windows 调试
@@ -12,90 +12,104 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efbf791848c434cd3c55113496f411adb6338fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1906e00abd0942ef0771ff31c0a3616d4fd38400
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366902"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968190"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
 
-**Dx**命令将显示C++使用 NatVis 扩展模型表达式。 NatVis 有关详细信息，请参阅[创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅[创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
 dx [{-?}|{-h}]
 ```
 
-## <a name="span-idddkcmddisplaytypedbgspanspan-idddkcmddisplaytypedbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>参数
+## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>参数
 
 
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *表达式*   
-一个C++要显示的表达式。
+<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*表达式*   
+要显示的 c + + 表达式。
 
-<span id="_______-g______"></span><span id="_______-G______"></span> **-g**   
-显示为数据网格对象，后者是可迭代。 每个循环访问元素是在网格中的行并且这些元素的每个显示子列。 这样，您可以查看类似于数组的结构，其中每个数组元素显示在一行中和结构的每个字段显示在列中。
+<span id="_______-g______"></span><span id="_______-G______"></span>**-g**   
+显示为可迭代的数据网格对象。 每个迭代元素都是网格中的一行，这些元素的每个显示子级都是一个列。 这使您可以查看结构数组，如结构数组，其中每个数组元素都显示在行中，结构的每个字段都显示在一列中。
 
-保持单击列名称 （如果没有可用的 DML 链接） 将按该列排序。 如果已按该列排序，则将反转排序顺序。
+左键单击列名称（其中有可用的 DML 链接）将按该列进行排序。 如果已按该列进行排序，则将反转排序顺序。
 
-这是可迭代的任何对象将具有项已添加名为显示为网格 DML 通过右键单击上下文菜单。 右键单击输出窗口中的对象，然后选择此项将显示在网格视图中而不是标准树视图的对象。
+任何可迭代的对象都将有一个通过称为 "显示为网格" 的 DML 添加的右键单击上下文菜单项。 右键单击 "输出" 窗口中的某个对象并选择此项将在网格视图中显示该对象，而不是标准树视图。
 
-（+） 显示的列命名产品/服务这两个右键单击和左键单击行为。
+列名称显示的（+）同时提供右键单击和左键单击的行为。
 
--   左键的单击采用该列，并解压后生成它自己的表。 您会看到原始行以及扩展的列的子级。
--   右键单击提供"展开到网格"采用列并将其返回到当前表添加为正确的大多数列。
+-   单击此列会将该列分解到其自己的表中。 您将看到原始行加上展开列的子级。
+-   右键单击提供 "扩展到网格"，它将列添加回当前表，作为最右侧的列。
 
-<span id="_______-gc________"></span><span id="_______-GC________"></span> **-gc \#**    
-显示为一个网格，并将网格单元格的大小限制为指定的数 (\#) 字符。
+<span id="_______-gc________"></span><span id="_______-GC________"></span>**-gc \# **   
+显示为网格，并将网格单元大小限制为指定数量的（ \# ）字符。
 
-<span id="_______-c________"></span><span id="_______-C________"></span> **-c \#**    
-显示容器延续 (跳过\#容器中的元素)。此选项通常用于自定义输出自动化方案，并提供一个"..."在列表底部的继续符元素。
+<span id="_______-c________"></span><span id="_______-C________"></span>**-c \# **   
+显示容器延续（跳过 \# 容器的元素）。此选项通常用于自定义输出自动化方案，并提供 "..."列表底部的继续符元素。
 
-<span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
-有两种方法可呈现数据。 使用 NatVis 可视化效果 （默认值） 或使用基础本机 C /C++结构。 指定要呈现的输出使用只是本机的 C-n 参数 /C++结构和不 NatVis 可视化效果。
+<span id="_______-n______"></span><span id="_______-N______"></span>**-n**   
+可以通过两种方式来呈现数据。 使用 NatVis 可视化（默认值）或使用基础本机 C/c + + 结构。 使用纯 C/c + + 结构而不是 NatVis 可视化对象指定-n 参数以呈现输出。
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-显示详细信息，包括方法和其他非典型的对象。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+显示包括方法和其他非典型对象的详细信息。
 
-<span id="_______-r_______"></span><span id="_______-R_______"></span> **-r**<em>\#</em>   
-以递归方式显示子 （字段） 最多 *\#* 级别。 如果 *\#* 是未指定，1，递归级别是默认值。
+<span id="_______-r_______"></span><span id="_______-R_______"></span>**-r**<em>\#</em>   
+以递归方式显示最多级别的子类型（字段） *\#* 。 如果 *\#* 未指定，则递归级别为1，默认值为。
 
-<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span> **\[&lt;,FormatSpecifier&gt;\]**    
-使用任何下列格式说明符来修改默认的呈现。
+<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span>** \[ &lt; ， &gt; FormatSpecifier \] **   
+使用以下任意格式说明符修改默认呈现。
 
-|                         |                                                                                          |
-|-------------------------|------------------------------------------------------------------------------------------|
-| x                      | 在十六进制显示序号                                                          |
-| d                      | 以十进制显示序号                                                              |
-| o                      | 在八进制中显示序号                                                                |
-| ,b                      | 显示二进制文件中的序号                                                               |
-| en                     | 通过仅名称 （没有值） 显示枚举                                                    |
-| ,c                      | 显示为单个字符 （而不是字符串）                                               |
-| s                      | 显示 8 位字符串，如带引号的 ASCII                                                    |
-| ,sb                     | 显示为不带引号的 ASCII 8 位字符串                                                  |
-| ,s8                     | 显示 8 位字符串，如带引号的 utf-8                                                    |
-| ,s8b                    | 显示为 utf-8 不带引号的 8 位字符串                                                  |
-| ,su                     | 显示 16 位字符串，如带引号的 utf-16                                                  |
-| ,sub                    | 显示为 utf-16 unqouted 的 16 位字符串                                                |
-| ,!                      | 只在 raw 模式中显示对象 (例如： 没有 NatVis)                                       |
-| ,\#                     | 作为文本值指定长度的指针/数组/容器\#（使用数字替换） |
-| ,\[&lt;expression&gt;\] | 指定作为表达式的长度的指针/数组/容器&lt;表达式&gt;           |
-| nd                     | 不到对象的派生 (runtype) 类型。 仅显示静态值          |
+**，x**：以十六进制显示序号
 
-<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span> **dx** { **-?** }   
+**，d**：以十进制显示序号
+
+**，o**：以八进制显示序号
+
+**，b**：以二进制形式显示序号
+
+**，en**：仅按名称显示枚举（无值）
+
+**，c**：显示为单个字符（不是字符串）
+
+**，s**：将8位字符串显示为 ASCII 引号
+
+**，sb**：将8位字符串显示为 ASCII 未加引号
+
+**，s8**：以 utf-8 括起来显示8位字符串
+
+**，s8b**：以 utf-8 无引号显示8位字符串
+
+**，su**：将16位字符串显示为 utf-16 引号
+
+**，sub**：显示16位字符串作为 utf-16 unqouted
+
+**，！**：仅在原始模式下显示对象（例如： no NatVis）
+
+**， \# **：指定指针/数组/容器的长度作为文本值 \# （替换为数值）
+
+**,\[&lt;&gt;expression \] **：指定指针/数组/容器的长度作为表达式 &lt; 表达式&gt;
+
+**，nd**：找不到对象的派生（runtype）类型。 仅显示静态值
+
+
+<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span>**dx** {**-？**}   
 显示命令行帮助。
 
-<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span> **dx** { **-h**}   
-显示可在调试器中的对象的帮助。
+<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span>**dx** {**-h**}   
+显示调试器中可用对象的帮助。
 
-<span id="_______dx_-id______"></span><span id="_______DX_-ID______"></span> **dx** { **-id**}   
-仅限 Microsoft 内部使用。 用于跟踪命令输出中的数据模型链接。
+<span id="_______dx_-id______"></span><span id="_______DX_-ID______"></span>**dx** {**-id**}   
+仅供 Microsoft 内部使用。 用于在命令输出中跟踪数据模型链接。
 
 ## <a name="command-line-usage-example"></a>命令行用法示例
 
-.Dx 设置命令可以用于显示有关调试设置对象的信息。 有关调试设置对象的详细信息，请参阅[ **.settings** ](-settings--set-debug-settings-.md) 。
+可以使用 "dx 设置" 命令显示有关 "调试设置" 对象的信息。 有关调试设置对象的详细信息，请参阅[**。**](-settings--set-debug-settings-.md)
 ```dbgcmd
 kd> dx -r1 Debugger.Settings
 Debugger.Settings : 
@@ -108,7 +122,7 @@ Debugger.Settings :
     AutoSaveSettings : false
 ```
 
-使用-r1 递归选项以查看其他调试器对象-会话、 设置和状态。
+使用-r1 递归选项查看其他调试器对象-会话、设置和状态。
 
 ```dbgcmd
 kd> dx -r1 Debugger
@@ -118,7 +132,7 @@ Debugger :
   State    : 
 ```
 
-指定 Debugger.Sessions 旅行的-r3 递归选项对象随后将向下的对象链。
+指定带有-r3 递归选项的 "会话" 对象，以便沿对象链向下移动。
 
 ```dbgcmd
 kd> dx -r3 Debugger.Sessions
@@ -138,7 +152,7 @@ Debugger.Sessions :
        ...               ...
 ```
 
-添加 x 格式说明符，以十六进制格式显示的顺序值。
+添加 x 格式说明符以以十六进制显示序号值。
 
 ```dbgcmd
 kd> dx -r3 Debugger.Sessions,x
@@ -163,7 +177,7 @@ Debugger.Sessions,x :
        ...               ...
 ```
 
-此示例使用活动的调试会话列表中第一个过程的第一个线程的调用堆栈。
+此示例使用活动的调试会话来列出第一个进程中第一个线程的调用堆栈。
 
 ```dbgcmd
 kd> dx -r1 Debugger.Sessions.First().Processes.First().Threads.First().Stack.Frames
@@ -179,15 +193,15 @@ Debugger.Sessions.First().Processes.First().Threads.First().Stack.Frames :
     [0x8]            : nt!KiIdleLoop + 0x1a
 ```
 
--G 选项用于为数据网格中显示输出。 单击要排序的列。
+使用-g 选项将输出显示为数据网格。 单击要排序的列。
 
 ```dbgcmd
 kd> dx -g @$curprocess.Modules
 ```
 
-![output from dx -g @$curprocess.modules showing columnar grid output](images/dx-grid-example.png)
+![dx-g @ $curprocess 的输出显示纵栏式网格输出](images/dx-grid-example.png)
 
-使用-h 选项可显示有关对象的信息。
+使用-h 选项显示有关对象的信息。
 ```dbgcmd
 kd>  dx -h Debugger.State
 Debugger.State   [State pertaining to the current execution of the debugger (e.g.: user variables)]
@@ -196,11 +210,11 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
     UserVariables     [User variables which are maintained by the debugger and can be referenced by a pseudo-register prefix of @$]
 ```
 
-## <a name="displaying-teb-and-peb-information-using-the-environment-object"></a>显示 TEB 和 PEB 信息使用环境对象
+## <a name="displaying-teb-and-peb-information-using-the-environment-object"></a>使用环境对象显示 TEB 和 PEB 信息
 
-使用环境对象来显示 TEB 和 PEB 信息与线程和进程相关联。
+使用 "环境" 对象可显示与线程和进程关联的 TEB 和 PEB 信息。
 
-若要显示 TEB 关联与当前线程使用此命令。
+若要显示与当前线程关联的 TEB，请使用此命令。
 
 ```dbgcmd
 0: kd> dx -r2 @$curthread.Environment
@@ -224,7 +238,7 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
          ...
 ```
 
-若要显示 PEB 关联进程当前使用此命令。
+若要显示与当前进程关联的 PEB，请使用此命令。
 
 ```dbgcmd
 0: kd> dx -r2 @$curprocess.Environment
@@ -251,9 +265,9 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
 ```
 
 
-## <a name="kernel-iohandles-object"></a>内核 Io.Handles 对象
+## <a name="kernel-iohandles-object"></a>内核 Io。 Handles 对象
 
-使用当前进程 Io.Handles 对象显示内核句柄的信息。
+使用当前进程 Io。 Handles 对象以显示内核句柄信息。
 
 ```dbgcmd
 0: kd> dx -r1 @$curprocess.Io.Handles
@@ -266,7 +280,7 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
     ...
 ```
 
-使用。First （） 函数来显示有关第一个句柄的信息。
+使用。First （）函数，用于显示有关第一个句柄的信息。
 
 ```dbgcmd
 0: kd> dx -r2 @$curprocess.Io.Handles.First()
@@ -302,25 +316,25 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
         UnderlyingObject : Unexpected failure to dereference object
 ```
 
-请注意，Io.Handles 对象内核唯一对象。
+请注意，"Io" 对象是 "仅限内核" 对象。
 
 
-## <a name="working-around-symbol-file-limitations-with-casting"></a>解决与强制转换的符号文件限制
+## <a name="working-around-symbol-file-limitations-with-casting"></a>使用强制转换解决符号文件限制
 
-在显示有关各种 Windows 系统变量的信息时，有些时候，并非所有类型信息现已推出公共符号。 此示例说明了这种情况。
+在显示有关各种 Windows 系统变量的信息时，有些情况下，公共符号中并没有所有类型信息可用。 此示例阐释了这种情况。
 
 ```dbgcmd
 0: kd> dx nt!PsIdleProcess
 Error: No type (or void) for object at Address 0xfffff800e1d50128
 ```
 
-Dx 命令支持的功能，以引用不具有类型信息的变量的地址。 此类"的地址"的引用将被视为"void \*"，并且可以这种情况下强制转换。 这意味着，如果数据类型已知时，可以使用以下语法来显示变量的类型信息。
+Dx 命令支持引用不包含类型信息的变量的地址。 此类 "address" 引用被视为 "void \* "，可以转换为。 这意味着，如果数据类型已知，则可以使用以下语法来显示变量的类型信息。
 
 ```dbgcmd
 dx (Datatype *)&VariableName
 ```
 
-例如对于 nt ！数据类型为 nt 的 PsIdleProcess ！\_EPROCESS，使用此命令。
+例如，nt！PsIdleProcess 的数据类型为 nt！ \_EPROCESS，请使用此命令。
 
 ```dbgcmd
 dx (nt!_EPROCESS *)&nt!PsIdleProcess
@@ -335,26 +349,26 @@ dx (nt!_EPROCESS *)&nt!PsIdleProcess
     [+0x2f8 ( 0: 0)] JobNotReallyActive : 0x0 [Type: unsigned long]
 ```
 
-Dx 命令不支持切换表达式计算器使用 @ @ MASM 语法。 有关表达式计算器的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
+Dx 命令不支持用 @ @ MASM 语法切换表达式计算器。 有关表达式计算器的详细信息，请参阅[计算表达式](evaluating-expressions.md)。
 
 ## <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
-可以使用调试器对象使用 LINQ 语法，用于搜索和操作数据。 LINQ 是从概念上讲类似到结构化查询语言 (SQL)，用于查询数据库。 许多 LINQ 方法可用于搜索、 筛选和分析调试数据。 了解我们使用 LINQ 和对象的调试器，请参阅[使用调试器对象与 LINQ](using-linq-with-the-debugger-objects.md)。
+LINQ 语法可以与调试器对象结合使用来搜索和操作数据。 LINQ 在概念上类似于用于查询数据库的结构化查询语言（SQL）。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 有关将 LINQ 与调试器对象结合使用的信息，请参阅[将 Linq 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)。
 
-## <a name="using-debugger-objects-with-natvis-and-javascript"></a>使用 NatVis 和 JavaScript 使用调试器对象
+## <a name="using-debugger-objects-with-natvis-and-javascript"></a>将调试器对象用于 NatVis 和 JavaScript
 
-使用 NatVis 调试器对象有关的信息，请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。
+有关将调试器对象与 NatVis 结合使用的信息，请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。
 
-与 JavaScript 一起使用调试器对象的信息，请参阅[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
+有关将调试器对象与 JavaScript 一起使用的信息，请参阅[Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
 
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>另请参阅
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
-[使用 LINQ 与调试器对象](using-linq-with-the-debugger-objects.md)
+[将 LINQ 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)
 
 [NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)
 
-[中 JavaScript 扩展本机调试器对象](native-objects-in-javascript-extensions.md) 
+[JavaScript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md) 
 
 ---
 

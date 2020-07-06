@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22de34ca81afc0c16d2e0aa929a9a24f96f1050f
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: d0f18516283eec8e48c99609907a55d9117cb228
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918141"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967984"
 ---
 # <a name="kscallbackreturn-rule-"></a>KsCallbackReturn 规则（）
 
@@ -26,9 +26,8 @@ KsCallbackReturn 规则指定内核流式处理（KS）微型端口驱动程序�
 
 **驱动程序模型： KS**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00081005） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00081005）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

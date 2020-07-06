@@ -4,24 +4,26 @@ description: 为了获得更具可操作性的视频内存细分，Windows 显�
 ms.assetid: E850E148-821D-4544-A778-00B1B9D13964
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b12be227498c33ebbe103168480602fbba2fb397
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bf4b5995ad14eaf7b0e45af85ceda7130a2898bc
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825408"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967897"
 ---
 # <a name="span-iddisplayuser-mode_driver_loggingspanuser-mode-driver-logging"></a><span id="display.user-mode_driver_logging"></span>用户模式驱动程序日志记录
 
 
 为了获得更具可操作性的视频内存细分，Windows 显示驱动程序模型（WDDM）驱动程序必须公开 Microsoft Direct3D 资源与视频内存分配之间的关系。 这可以从 Windows 8 开始，并引入了附加的用户模式驱动程序（UMD）日志记录接口。 将此信息添加到 Windows 事件跟踪（ETW）跟踪后，可以从 API 的角度查看视频内存分配。
 
-|                                                                                   |                                  |
-|-----------------------------------------------------------------------------------|----------------------------------|
-| 最小 WDDM 版本                                                              | 1.2                              |
-| 最大 Windows 版本                                                           | 8                                |
-| 驱动程序实现-仅限完整图形和呈现                               | Mandatory                        |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **¦ UMDLogging** |
+**最小 WDDM 版本**：1。2
+
+**最低 Windows 版本**：8
+
+**驱动程序实现-完整图形和仅呈现**：必需
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**： **Device. Graphics ¦ UMDLogging**
+
 
  
 
@@ -32,9 +34,9 @@ ms.locfileid: "72825408"
 ## <a name="span-idumd_driver_allocation_logging_ddispanspan-idumd_driver_allocation_logging_ddispanspan-idumd_driver_allocation_logging_ddispanumd-driver-allocation-logging-ddi"></a><span id="UMD_driver_allocation_logging_DDI"></span><span id="umd_driver_allocation_logging_ddi"></span><span id="UMD_DRIVER_ALLOCATION_LOGGING_DDI"></span>UMD 驱动程序分配日志记录 DDI
 
 
-用户模式驱动程序分配日志记录设备驱动程序接口（DDI）在 Windows 事件跟踪（ETW）内核级别跟踪工具下提供事件，该功能显示了哪些 API 资源与 Microsoft DirectX 中的内核分配相关联图形内核子系统（Dxgkrnl）。
+用户模式驱动程序分配日志记录设备驱动程序接口（DDI）在 Windows 事件跟踪（ETW）内核级别跟踪工具下提供事件，该功能显示了哪些 API 资源与 Microsoft DirectX 图形内核子系统（Dxgkrnl.sys）中的内核分配相关联。
 
-您可以使用 DDI 来发现内部内存碎片或表面迅速丢弃的影响，从而为 Microsoft 提供更好的跟踪信息，以帮助您确定性能问题，并帮助确定应用程序的资源或 API 调用的时间导致其使用太大的内存工作集。
+您可以使用 DDI 来发现内部内存碎片或表面迅速被丢弃的影响，从而为 Microsoft 提供更好的跟踪信息，以帮助您确定性能问题，以及帮助确定应用程序的资源或 API 调用何时导致其使用过大的内存集。
 
 使用 Umdprovider 标头中的这些函数、枚举和结构在用户模式显示驱动程序中记录事件：
 
@@ -42,8 +44,8 @@ ms.locfileid: "72825408"
 -   [**UMDEtwLogUnmapAllocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwlogunmapallocation)函数
 -   [**UMDEtwRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwregister)函数
 -   [**UMDEtwUnregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/nf-umdprovider-umdetwunregister)函数
--   [**UMDETW\_分配\_语义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/ne-umdprovider-_umdetw_allocation_semantic)枚举
--   [**UMDETW\_分配\_使用情况**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/ns-umdprovider-_umdetw_allocation_usage)结构
+-   [**UMDETW \_分配 \_ 语义**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/ne-umdprovider-_umdetw_allocation_semantic)枚举
+-   [**UMDETW \_分配 \_ 使用情况**](https://docs.microsoft.com/windows-hardware/drivers/ddi/umdprovider/ns-umdprovider-_umdetw_allocation_usage)结构
 
 另请参阅 Umdetw 标头。
 

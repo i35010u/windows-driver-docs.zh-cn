@@ -3,37 +3,46 @@ Description: 驱动程序功能
 title: 驱动程序功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5616504930a48c3c1f0dfc72deb75ee432e8d460
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd4e0ef946c35f2b8a6cb29f7c44033db4cbf2f2
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378233"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968584"
 ---
 # <a name="driver-capabilities"></a>驱动程序功能
 
 
-*WpdCapabilities.cpp*并*WpdCapabilities.h*文件包含的命令处理程序检索受支持的命令、 命令选项，函数类别等。
+*WpdCapabilities*和*WpdCapabilities*文件包含用于检索支持的命令、命令选项、函数类别等的命令处理程序。
 
-当基于 Windows 的应用程序调用中的方法之一**IPortableDeviceCapabilities**接口，此调用，进而触发中的八个命令处理程序之一**WpdCapabilities**类。 下表列出了的映射**IPortableDeviceCapabilities**方法添加到**WpdCapabilities**命令处理程序。
+当基于 Windows 的应用程序调用**IPortableDeviceCapabilities**接口中的方法之一时，此调用反过来会触发**WpdCapabilities**类中的八个命令处理程序之一。 下表标识了**IPortableDeviceCapabilities**方法到**WpdCapabilities**命令处理程序的映射。
 
-|                                                               |                                    |
-|---------------------------------------------------------------|------------------------------------|
-| **IPortableDeviceCapabilities 方法**                        | **WpdCapabilities 事件处理程序**  |
-| **IPortableDeviceCapabilities::GetCommandOptions**            | **OnGetCommandOptions**            |
-| **IPortableDeviceCapabilities::GetFixedPropertyAttributes**   | **OnGetFixedPropertyAttributes**   |
-| **IPortableDeviceCapabilities::GetFunctionalCategories**      | **OnGetFunctionalCategories**      |
-| **IPortableDeviceCapabilities::GetFunctionalObjects**         | **OnGetFunctionalObjects**         |
-| **IPortableDeviceCapabilities::GetSupportedCommands**         | **OnGetSupportedCommands**         |
-| **IPortableDeviceCapabilities::GetSupportedContentTypes**     | **OnGetSupportedContentTypes**     |
-| **IPortableDeviceCapabilities::GetSupportedFormatProperties** | **OnGetSupportedFormatProperties** |
-| **IPortableDeviceCapabilities::GetSupportedFormats**          | **OnGetSupportedFormats**          |
-| **IPortableDeviceCapabilities::GetSupportedEvents**           | **OnGetSupportedEvents**           |
-| **IPortableDeviceCapabilities::GetEventOptions**              | **OnGetEventOptions**              |
+IPortableDeviceCapabilities 方法 * * * * *： **WpdCapabilities 事件处理程序**
+
+IPortableDeviceCapabilities：： GetCommandOptions * * * *： **OnGetCommandOptions**
+
+IPortableDeviceCapabilities：： GetFixedPropertyAttributes * * * *： **OnGetFixedPropertyAttributes**
+
+IPortableDeviceCapabilities：： GetFunctionalCategories * * * *： **OnGetFunctionalCategories**
+
+IPortableDeviceCapabilities：： GetFunctionalObjects * * * *： **OnGetFunctionalObjects**
+
+IPortableDeviceCapabilities：： GetSupportedCommands * * * *： **OnGetSupportedCommands**
+
+IPortableDeviceCapabilities：： GetSupportedContentTypes * * * *： **OnGetSupportedContentTypes**
+
+IPortableDeviceCapabilities：： GetSupportedFormatProperties * * * *： **OnGetSupportedFormatProperties**
+
+IPortableDeviceCapabilities：： GetSupportedFormats * * * *： **OnGetSupportedFormats**
+
+IPortableDeviceCapabilities：： GetSupportedEvents * * * *： **OnGetSupportedEvents**
+
+IPortableDeviceCapabilities：： GetEventOptions * * * *： **OnGetEventOptions**
+
 
  
 
-通过调用 WpdCapabilities 命令处理程序**WpdCapabilities::DispatchMessage**方法。 以下内容摘自示例驱动程序包含的代码**WpdCapabilities::DispatchMessage**。
+WpdCapabilities 命令处理程序由**WpdCapabilities：:D ispatchmessage**方法调用。 以下摘自示例驱动程序的代码包含**WpdCapabilities：:D ispatchmessage**的代码。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::DispatchWpdMessage(const PROPERTYKEY&      Command,

@@ -4,24 +4,26 @@ description: 介绍容器 ID 支持，显示嵌入到显示或监视设备内的
 ms.assetid: 3149C156-34F4-4C55-AE77-1CC40C2B35BC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 532a5f82f73183cecc9dad4634d99b92a5ba03a2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dec90bc5598ec818cf6945ab893bd96aafee0b94
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839808"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968490"
 ---
 # <a name="container-id-support-for-displays"></a>显示设备的容器 ID 支持
 
 
 本主题介绍容器 ID 支持，其中显示了在显示或监视设备中嵌入的设备的可视表示形式。
 
-|                                                                                   |                                          |
-|-----------------------------------------------------------------------------------|------------------------------------------|
-| 最小 Windows 显示器驱动程序模型（WDDM）版本                               | 1.2                                      |
-| 最大 Windows 版本                                                           | 8                                        |
-| 驱动程序实现-完整图形和仅显示                              | Mandatory                                |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 |  [监视器容器 ID 功能测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4) |
+**最小 Windows 显示驱动程序模型（WDDM）版本**：1。2
+
+**最低 Windows 版本**：8
+
+**驱动程序实现-完整图形和显示**：必需
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：[监视器容器 ID 的功能测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2f657caa-368c-4531-8cec-8faf475125f4)
+
 
  
 
@@ -31,7 +33,7 @@ ms.locfileid: "72839808"
 在显示微型端口驱动程序中实现此函数和结构：
 
 -   [*DxgkDdiGetChildContainerId*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkddi_get_child_container_id)
--   [**DXGK\_子\_容器\_ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_child_container_id)
+-   [**DXGK \_ 子 \_ 容器 \_ ID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/ns-dispmprt-_dxgk_child_container_id)
 
 ## <a name="span-idcontainer_id_descriptionspanspan-idcontainer_id_descriptionspanspan-idcontainer_id_descriptionspancontainer-id-description"></a><span id="Container_ID_description"></span><span id="container_id_description"></span><span id="CONTAINER_ID_DESCRIPTION"></span>容器 ID 描述
 
@@ -42,7 +44,7 @@ ms.locfileid: "72839808"
 
 !["设备和打印机" 文件夹的可视化表示形式](images/visualdevicesprintersfolder.jpg)
 
-在 Windows 7 中，Microsoft 引入了设备的*容器 ID*的概念： "系统提供的设备标识字符串，用于唯一地将与安装在计算机 "。 （请参阅[容器 id](https://go.microsoft.com/fwlink/p/?linkid=327784)。）如果设备包含相同的容器 ID，则对其进行分组。
+在 Windows 7 中，Microsoft 引入了设备的*容器 ID*的概念： "系统提供的设备标识字符串，用于对与计算机上安装的单一功能或多功能设备关联的功能设备进行唯一的分组。" （请参阅[容器 id](https://go.microsoft.com/fwlink/p/?linkid=327784)。）如果设备包含相同的容器 ID，则对其进行分组。
 
 为了使容器 ID 概念成功，Windows 中的所有设备类必须支持它，并且整个生态系统都需要在硬件中实现它。 在 Windows 7 中，如果插入了多个支持音频的监视器，用户将无法轻松确定哪些显示映射到哪些音频终结点。 触控数字化器存在相同的难度。 在 Windows 8 中，显示设备类添加了对容器 ID 的支持。 这使得显示设备的所有功能都可以报告相同的容器 ID 并在 Windows 用户界面和 Api 中以可视方式配对。
 

@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e599ba76e3e39f307f00587e0c3217abd6e8058b
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 94195908ac31592708a3fe61e6fa82b53f1c0dab
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852311"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968062"
 ---
 # <a name="pfree_function-function-pointer"></a>PFREE_FUNCTION 函数指针
 
@@ -35,7 +35,7 @@ typedef VOID ( *FreeCallback)(
 );
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
 *缓冲区* \[中\]  
 指向要释放的[**FSRTL_PER_FILE_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547352)或[**FSRTL_PER_STREAM_CONTEXT**](https://msdn.microsoft.com/library/windows/hardware/ff547357)结构的指针。
@@ -72,12 +72,14 @@ VOID
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 目标平台 | 桌面型 |
-| 版本 | 可从与 windows Vista 开始使用。 |
-| Header | Wdm （包括 Wdm 或 Ntddk） |
-| IRQL | <= APC_LEVEL |
+**目标平台**：桌面
+
+**版本**：从与 windows Vista 开始可用。
+
+**标头**： wdm .h （包括 Wdm 或 Ntddk）
+
+**IRQL**： <= APC_LEVEL
+
 
 ## <a name="see-also"></a>另请参阅
 

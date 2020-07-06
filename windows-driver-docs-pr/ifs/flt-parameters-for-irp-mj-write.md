@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0478f5e946c5491d6377b2a53f30c8078088a77f
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: be0ef99262ccbb9f4caebf3f729115d0ccc4b468
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072234"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968064"
 ---
 # <a name="flt_parameters-for-irp_mj_write-union"></a>IRP_MJ_WRITE 联合的 FLT_PARAMETERS
 
@@ -43,7 +43,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>成员
 
 **写入**  
 包含以下成员的结构。
@@ -75,9 +75,8 @@ IRP_MJ_WRITE 可以是基于 IRP 的操作，也可以是快速的 i/o 操作。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 标头 | Fltkernel （包括 Fltkernel） |
+**标头**： Fltkernel （包括 Fltkernel）
+
 
 ## <a name="see-also"></a>另请参阅
 

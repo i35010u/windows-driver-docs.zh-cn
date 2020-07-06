@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eec3b19a4b10ce4440f35c3cbda2667d3a14e3d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 01e104146823bafaaa695cbf333dfdae4cb36a0b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841232"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968208"
 ---
 # <a name="fsrtlenterfilesystem-function"></a>FsRtlEnterFileSystem 函数
 
@@ -36,7 +36,7 @@ VOID FsRtlEnterFileSystem(
 
 ## <a name="parameters"></a>参数
 
-无
+None
 
 ## <a name="return-value"></a>返回值
 
@@ -48,7 +48,7 @@ VOID FsRtlEnterFileSystem(
 
 必须通过对[**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)的后续调用来匹配每个对**FsRtlEnterFileSystem**的成功调用。
 
-文件系统筛选器驱动程序可以通过在[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)之前调用**FsRtlEnterFileSystem**或[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)来禁止发送正常内核 Apc，仅当[**FsRtlExitFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsrtlexitfilesystem)或[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)是在同一调度例程中。 它们不应在**IoCallDriver**之前调用**FsRtlEnterFileSystem**或**KeEnterCriticalRegion** ，然后在 IRP 的*完成例程*中调用**FsRtlExitFileSystem**或**KeLeaveCriticalRegion** 。 驱动程序验证程序提供了一个有助于捕获此情况的规则。
+文件系统筛选器驱动程序可以通过在[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)之前调用**FsRtlEnterFileSystem**或[**KeEnterCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keentercriticalregion)来禁止交付普通内核 apc [**FsRtlExitFileSystem**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsrtlexitfilesystem) [**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion) 它们不应在**IoCallDriver**之前调用**FsRtlEnterFileSystem**或**KeEnterCriticalRegion** ，然后在 IRP 的*完成例程*中调用**FsRtlExitFileSystem**或**KeLeaveCriticalRegion** 。 驱动程序验证程序提供了一个有助于捕获此情况的规则。
 
 文件系统筛选器驱动程序应在获取任何资源之前禁用正常内核 Apc。 文件系统筛选器驱动程序通过以下例程获取资源：
 
@@ -59,15 +59,16 @@ VOID FsRtlEnterFileSystem(
 * [**ExAcquireSharedStarveExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544367)
 * [**ExAcquireSharedWaitForExclusive**](https://msdn.microsoft.com/library/windows/hardware/ff544370)
 
-作为**FsRtlEnterFileSystem**的替代方法，微筛选器驱动程序可以使用[**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)和[**FltReleaseResource**](fltreleaseresource.md)例程，在获取和释放资源。
+作为**FsRtlEnterFileSystem**的一种替代方法，微筛选器驱动程序可以使用[**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)、 [**FltAcquireResourceShared**](fltacquireresourceshared.md)和[**FltReleaseResource**](fltreleaseresource.md)例程，在获取和释放资源时正确处理 apc。
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| - | - |
-| 目标平台 | 桌面 |
-| 标头 | Ntifs （包括 Ntifs） |
-| IRQL | < = APC_LEVEL |
+**目标平台**：桌面
+
+**标头**： Ntifs （包括 Ntifs）
+
+**IRQL**： <= APC_LEVEL
+
 
 ## <a name="see-also"></a>另请参阅
 

@@ -4,24 +4,26 @@ description: Windows 显示驱动程序模型（WDDM）1.2 和更高版本的用
 ms.assetid: 8BB6A7A3-E102-4069-BFC2-9605DDE9F020
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cdfda6e350753a70edb0d9e0a1af8a56aef1082
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 58691a688afc069ab6154c9cad99f3c4985b1721
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825293"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968220"
 ---
 # <a name="video-memory-offer-and-reclaim"></a>视频内存供应和回收
 
 
 Windows 显示驱动程序模型（WDDM）1.2 和更高版本的用户模式显示驱动程序必须使用从 Windows 8 开始提供的内存提供和回收功能，以减少本地和系统内存中的临时表面所需的内存开销。
 
-|                                                                                   |                                  |
-|-----------------------------------------------------------------------------------|----------------------------------|
-| 最小 WDDM 版本                                                              | 1.2                              |
-| 最大 Windows 版本                                                           | 8                                |
-| 驱动程序实现-仅限完整图形和呈现                               | Mandatory                        |
-| [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试 | **设备 。OfferReclaim** |
+**最小 WDDM 版本**：1。2
+
+**最低 Windows 版本**：8
+
+**驱动程序实现-完整图形和仅呈现**：必需
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)要求和测试**：**设备 .。。OfferReclaim**
+
 
  
 
@@ -51,18 +53,18 @@ Windows 显示驱动程序模型（WDDM）1.2 和更高版本的用户模式显�
 
 使用这些关联的结构和枚举：
 
--   [**D3DDDI\_提供\_优先级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_offer_priority)
--   [**D3DDDIARG\_OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_offerresources)
--   [**D3DDDIARG\_RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_reclaimresources)
--   [**D3DDDICB\_OFFERALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_offerallocations)
--   [**D3DDDICB\_RECLAIMALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_reclaimallocations)
--   [**DXGI\_DDI\_ARG\_OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_offerresources)
--   [**DXGI\_DDI\_ARG\_RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_reclaimresources)
--   [**DXGI1\_2\_DDI\_基\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
+-   [**D3DDDI \_ 产品/服务 \_ 优先级**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_offer_priority)
+-   [**D3DDDIARG \_ OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_offerresources)
+-   [**D3DDDIARG \_ RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_reclaimresources)
+-   [**D3DDDICB \_ OFFERALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_offerallocations)
+-   [**D3DDDICB \_ RECLAIMALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_reclaimallocations)
+-   [**DXGI \_ DDI \_ ARG \_ OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_offerresources)
+-   [**DXGI \_ DDI \_ ARG \_ RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_reclaimresources)
+-   [**DXGI1 \_ 2 \_ DDI \_ 基本 \_ 函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
 
 为了支持产品/服务功能，从 Windows 8 开始，此结构有两个新成员：
 
--   [**D3DDDI\_ALLOCATIONLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationlist)
+-   [**D3DDDI \_ ALLOCATIONLIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationlist)
 
 你应仔细测试驱动程序是否正确处理此功能，因为在放弃分配之后，其中的所有数据都将丢失。
 

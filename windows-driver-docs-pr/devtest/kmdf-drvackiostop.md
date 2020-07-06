@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f79bb5c05ef8700cc0d0ad7d9ad0ae867ca102
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: efa0fafdcd8af91bb2eff3fc54c4b5cfd94b9262
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917951"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967936"
 ---
 # <a name="drvackiostop-rule-kmdf"></a>DrvAckIoStop 规则（kmdf）
 
@@ -28,9 +28,8 @@ ms.locfileid: "85917951"
 
 **驱动程序模型： KMDF**
 
-|                                   |                                                                                                          |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0x9F：驱动程序 \_ 电源 \_ 状态 \_ 故障**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure) |
+**找到了具有此规则的 bug 检查**： [ **bug 检查0x9F：驱动程序 \_ 电源 \_ 状态 \_ 故障**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)
+
 
 <a name="how-to-test"></a>如何测试
 -----------

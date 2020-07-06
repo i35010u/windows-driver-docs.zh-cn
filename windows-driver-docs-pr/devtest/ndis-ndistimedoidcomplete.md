@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d07fc62a0a1a59a3da7b6c50fd73993c79889b
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: b16ab1c628e3c78408dda73ba0a8ce7d7fcb1b98
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916318"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967974"
 ---
 # <a name="ndistimedoidcomplete-rule-ndis"></a>NdisTimedOidComplete 规则（ndis）
 
@@ -26,9 +26,8 @@ ms.locfileid: "85916318"
 
 **驱动程序模型： NDIS**
 
-|                                   |                                                                                                                                        |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 找到了具有此规则的 Bug 检查 | [**Bug 检查0xC4：驱动程序 \_\_检测到 \_ 验证程序冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00092003） |
+**找到了具有此规则的 bug 检查**： [**bug 检查0XC4：驱动程序 \_ 验证程序 \_ 检测到 \_ 冲突**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)（0x00092003）
+
 
 <a name="how-to-test"></a>如何测试
 -----------

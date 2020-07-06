@@ -6,16 +6,16 @@ keywords:
 - WDI_EXTENDED_TID，WDK WDI_EXTENDED_TID 网络驱动程序
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6654123110081e749b939e1d147f8685a7a16b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a58bca838aeb851ba899d933c8fa8899910bed9
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330499"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967888"
 ---
-# <a name="wdiextendedtid"></a>WDI_EXTENDED_TID
+# <a name="wdi_extended_tid"></a>WDI_EXTENDED_TID
 
-WDI_EXTENDED_TID 数据类型是一个定义通信标识符 (TID) 的 UINT8 值。
+WDI_EXTENDED_TID 的数据类型是定义流量标识符（TID）的 UINT8 值。
 
 ```c++
 typedef UINT8 WDI_EXTENDED_TID;
@@ -25,19 +25,20 @@ typedef UINT8 WDI_EXTENDED_TID;
 
 可能的值如下：
 
-| ReplTest1 | 描述 |
+| Value | 说明 |
 | --- | --- |
-| 0-15 | 802.11 Tid |
-| 16 (WDI_EXT_TID_NON_QOS) | 非 QoS 数据 |
-| 17-24 | 保留以用于 IHV 注入框架。 与扩展 TID 间隔 17 24 中的帧被视为 17 日至 24 日在相同间隔内的优先级高于具有较小的扩展 TID。 |
+| 0-15 | 802.11 TIDs |
+| 16（WDI_EXT_TID_NON_QOS） | 非 QoS 数据 |
+| 17-24 | 保留以与 IHV 注入的帧一起使用。 在时间间隔17-24 中具有扩展 TID 的帧被视为比在相同间隔17-24 中具有较小扩展 TID 的帧的优先级高。 |
 | 25-30 | 未使用的值 |
-| 31 (WDI_EXT_TID_UNKNOWN) | 未指定未知 / |
+| 31（WDI_EXT_TID_UNKNOWN） | 未知/未指定 |
 
 ## <a name="requirements"></a>要求
 
-|   |   |
-| --- | --- |
-| 最低受支持的客户端 | Windows 10 |
-| 最低受支持的服务器 | Windows Server 2016 |
-| Header | Dot11wdi.h |
+**支持的最低客户端**： Windows 10
+
+**支持的最低服务器**： Windows server 2016
+
+**标头**： Dot11wdi
+
 
