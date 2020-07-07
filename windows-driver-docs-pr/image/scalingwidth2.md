@@ -1,31 +1,28 @@
 ---
-title: ScalingWidth 元素
-description: 必需的 ScalingWidth 元素包含范围的允许值为缩放输出文档的宽度。
+title: ScalingWidth 元素（输出文档）
+description: 必需的 ScalingWidth 元素包含用于缩放输出文档宽度的允许值范围。
 ms.assetid: 8b15f4b9-8537-479e-8745-0c8b35883bf5
 keywords:
-- ScalingWidth 元素成像设备
+- ScalingWidth 元素图像设备
 topic_type:
 - apiref
 api_name:
 - wscn ScalingWidth
 api_type:
 - Schema
-ms.date: 11/28/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 042c342380510624166107a867d23d8d7f3a6cbe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.openlocfilehash: 29de9789434b4e3ee415ecf37eacc5795d1602ef
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364380"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020070"
 ---
-# <a name="scalingwidth-element"></a>ScalingWidth 元素
+# <a name="scalingwidth-element-output-document"></a>ScalingWidth 元素（输出文档）
 
+必需的**ScalingWidth**元素包含用于缩放输出文档宽度的允许值范围。
 
-所需**ScalingWidth**元素包含范围的允许值为缩放输出文档的宽度。
-
-<a name="usage"></a>用法
------
+## <a name="usage"></a>使用情况
 
 ```xml
 <wscn:ScalingWidth>
@@ -33,76 +30,35 @@ ms.locfileid: "63364380"
 </wscn:ScalingWidth>
 ```
 
-<a name="attributes"></a>特性
-----------
+## <a name="attributes"></a>属性
 
 没有特性。
 
 ## <a name="child-elements"></a>子元素
 
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="maxvalue.md" data-raw-source="[&lt;strong&gt;MaxValue&lt;/strong&gt;](maxvalue.md)"><strong>MaxValue</strong></a></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="minvalue.md" data-raw-source="[&lt;strong&gt;MinValue&lt;/strong&gt;](minvalue.md)"><strong>MinValue</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+| 元素 |
+|--|
+| [**Timespan.maxvalue**](maxvalue.md) |
+| [**MinValue**](minvalue.md) |
 
 ## <a name="parent-elements"></a>父元素
 
+| 元素 |
+|--|
+| [**ScalingRangeSupported**](scalingrangesupported.md) |
 
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="scalingrangesupported.md" data-raw-source="[&lt;strong&gt;ScalingRangeSupported&lt;/strong&gt;](scalingrangesupported.md)"><strong>ScalingRangeSupported</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+## <a name="remarks"></a>注解
 
-<a name="remarks"></a>备注
--------
+**ScalingWidth**元素包含[**MinValue**](minvalue.md)和[**元素，这些**](maxvalue.md)元素指定扫描设备支持的最小值和最大值，以便缩放输出文档的宽度。
 
-**ScalingWidth**元素包含[ **MinValue** ](minvalue.md)并[ **MaxValue** ](maxvalue.md)指定的元素扫描设备支持缩放宽度的输出文档的最小和最大值。
+**MinValue**和**MaxValue**必须是从**1 到 1000**的整数， **MinValue**小于或等于。 如果值为100，则表示扫描设备不应对扫描图像的宽度进行任何调整。 WSD 扫描服务至少必须支持100的值。
 
-**MinValue**并**MaxValue**必须是介于 1 到 1000，整数**MinValue**小于或等于**MaxValue**。 值为 100 表示扫描设备不应进行的扫描图像宽度调整。 至少，WSD 扫描服务必须支持值为 100。
+## <a name="see-also"></a>另请参阅
 
-## <a name="see-also"></a>请参阅
-
-
-[**MaxValue**](maxvalue.md)
+[**Timespan.maxvalue**](maxvalue.md)
 
 [**MinValue**](minvalue.md)
 
 [**ScalingHeight**](scalingheight2.md)
 
 [**ScalingRangeSupported**](scalingrangesupported.md)
-
- 
-
- 
-
-
-
-
-
-

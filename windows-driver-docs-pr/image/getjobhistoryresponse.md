@@ -10,22 +10,19 @@ api_name:
 - wscn GetJobHistoryResponse
 api_type:
 - Schema
-ms.date: 11/28/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: df3d4b5ae3fe43b640fb49565773d8d81fbb5931
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
-ms.translationtype: MT
+ms.openlocfilehash: fb0423ff4198ead5198f18f8274e680ca67f224a
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652971"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020068"
 ---
 # <a name="getjobhistoryresponse-element"></a>GetJobHistoryResponse 元素
 
-
 必需的**GetJobHistoryResponse**元素返回已完成作业的摘要。
 
-<a name="usage"></a>Usage
------
+## <a name="usage"></a>使用情况
 
 ```xml
 <wscn:GetJobHistoryResponse>
@@ -33,37 +30,21 @@ ms.locfileid: "75652971"
 </wscn:GetJobHistoryResponse>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 没有特性。
 
 ## <a name="child-elements"></a>子元素
 
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="jobhistory.md" data-raw-source="[&lt;strong&gt;JobHistory&lt;/strong&gt;](jobhistory.md)"><strong>JobHistory</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+| 元素 |
+|--|
+| [**JobHistory**](jobhistory.md) |
 
 ## <a name="parent-elements"></a>父元素
 
-
 没有父元素。
 
-<a name="remarks"></a>备注
--------
+## <a name="remarks"></a>注解
 
 WSD 扫描服务必须支持**GetJobHistoryResponse**操作元素。
 
@@ -71,8 +52,7 @@ WSD 扫描服务必须支持**GetJobHistoryResponse**操作元素。
 
 WSD 扫描服务维护的作业历史记录量是特定于实现的。
 
-<a name="examples"></a>示例
---------
+## <a name="examples"></a>示例
 
 下面的代码示例演示如何返回无作业历史记录，以响应客户端对作业历史记录的请求。
 
@@ -155,17 +135,6 @@ WSD 扫描服务维护的作业历史记录量是特定于实现的。
 
 ## <a name="see-also"></a>另请参阅
 
-
 [**GetJobHistoryRequest**](getjobhistoryrequest.md)
 
 [**JobHistory**](jobhistory.md)
-
-
-
-
-
-
-
-
-
-

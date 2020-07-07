@@ -2,14 +2,13 @@
 title: 位置驱动程序功率和性能指南
 description: 以下各节介绍了一些准则，以确保你的位置驱动程序节省电源并有效地提供数据。
 ms.assetid: 81B9A3A1-D273-48C8-A808-CDB1533A1B6A
-ms.date: 04/20/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7df6a2de8280f37b16ae6b8be9786e2d728aadb8
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
-ms.translationtype: MT
+ms.openlocfilehash: 13fd7fce45075b5f9caffbbf2651c15c463b753d
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980688"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020084"
 ---
 # <a name="location-driver-guidelines-for-power-and-performance"></a>位置驱动程序功率和性能指南
 
@@ -17,7 +16,7 @@ ms.locfileid: "76980688"
 
 ## <a name="tracking-the-number-of-connected-clients-and-radio-state"></a>跟踪连接的客户端和无线电状态的数目
 
-位置传感器必须跟踪已连接的应用程序的数目，并且必须跟踪传感器\_属性\_位置的值\_所需的\_准确性和传感器\_属性\_当前\_报表\_每个已订阅应用程序的间隔属性。
+位置传感器必须跟踪连接的应用程序的数目，并且必须跟踪 \_ \_ \_ 每个已订阅应用程序的传感器属性位置所需 \_ 准确性和传感器 \_ 属性 \_ 当前 \_ 报表 \_ 间隔属性的值。
 
 如果连接的客户端数为零，则位置传感器应输入可能的最低电源状态，即 D3。 当某个事件指示客户端已连接时，传感器应退出低功耗状态并获取数据。
 
@@ -29,22 +28,20 @@ ms.locfileid: "76980688"
 
 下表提供了各种输入组合和生成的输出（包括电源状态）的另一个视图。
 
-|               |             |                  |                   |            |               |             |
-|---------------|-------------|------------------|-------------------|------------|---------------|-------------|
-| 输入        |             |                  |                   | 输出    |               |             |
-| 客户端存在 | 无线电收发器状态 | CRI              | 报告的位置 | ASIC 状态 | 传感器状态  | 电源状态 |
-| 无            | 任意         | 任意              | 任意               | Off        | N/A           | D3          |
-| “是”           | On          | &lt;= 120 秒 | 无                | On         | 初始化  | D0          |
-| “是”           | On          | &lt;= 120 秒 | “是”               | On         | Ready         | D0          |
-| “是”           | Off         | 任意              | 任意               | Off        | 未推出 | D3          |
-| “是”           | On          | &gt;120 秒  | 任意               | Off        | Ready         | D3          |
-| “是”           | On          | &gt;120 秒  | 任意               | On         | Ready         | D0          |
+| 客户端存在（输入） | 无线电状态（输入） | CRI （输入） | 报告的位置（输入） | ASIC 状态（输出） | 传感器状态（输出） | 电源状态（输出） |
+|--|--|--|--|--|--|--|
+| 否 | 任意 | 任意 | 任意 | 关 | 空值 | D3 |
+| 是 | 开 | <= 120 秒 | 否 | 开 | 正在初始化 | D0 |
+| 是 | 开 | <= 120 秒 | 是 | 开 | 就绪 | D0 |
+| 是 | 关 | 任意 | 任意 | 关 | 不可用 | D3 |
+| 是 | 开 | >120 秒 | Any | 关 | 就绪 | D3 |
+| 是 | 开 | >120 秒 | Any | 开 | 就绪 | D0 |
 
 WDK 中的[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)提供了一个驱动程序示例，该驱动程序跟踪连接的客户端数和无线电状态。
 
 ## <a name="tracking-report-intervals"></a>跟踪报表间隔
 
-通过订阅事件来使用位置数据的应用程序通过将传感器\_属性设置\_当前\_报表\_INTERVAL 属性，来请求数据更新事件的最大频率。 为了节省电源，您的驱动程序应发送的数据报告不会比请求的请求报告时间间隔更少。
+通过订阅事件来使用位置数据的应用程序通过设置传感器 \_ 属性 " \_ 当前 \_ 报表 \_ 间隔" 属性来请求数据更新事件的最大频率。 为了节省电源，您的驱动程序应发送的数据报告不会比请求的请求报告时间间隔更少。
 
 有关如何跟踪每个应用程序的值的详细信息，请参阅[筛选数据](https://docs.microsoft.com/windows-hardware/drivers/sensors/filtering-data)。 你还可以在 WDK 的[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)中找到跟踪报表间隔的示例。
 
@@ -54,11 +51,11 @@ WDK 中的[传感器地理位置驱动程序示例](sensors-geolocation-driver-s
 
 WDK 中的[传感器地理位置驱动程序示例](sensors-geolocation-driver-sample.md)提供一个驱动程序示例，用于跟踪客户端请求的所需准确性。
 
-位置传感器驱动程序必须支持传感器\_属性\_位置\_所需的\_准确性作为可设置属性。 驱动程序应监视已连接客户端的所需准确性属性，并根据所需的最高所需准确性，将传感器\_属性\_位置设置为\_所需\_准确性。
+位置传感器驱动程序必须支持传感器 \_ 属性 \_ 定位 \_ 所需 \_ 准确性作为可设置属性。 驱动程序应监视已连接客户端的所需准确性属性，并根据所 \_ \_ \_ \_ 需的最高所需准确性设置传感器属性定位所需准确性。
 
-如果需要应用所需的最高准确性\_准确度\_默认情况下，位置传感器应优化电源和其他成本注意事项。 如果位置数据可从系统中的其他提供程序使用，且数据准确性500m 或更佳，则 Location API 不会使用 GPS 传感器。
+如果应用请求的最高准确性为 \_ \_ 默认值，则位置传感器应优化电源和其他成本注意事项。 如果位置数据可从系统中的其他提供程序使用，且数据准确性500m 或更佳，则 Location API 不会使用 GPS 传感器。
 
-如果任何应用请求\_准确性\_高，则传感器应提供可能的最高准确性报告。 Location API 始终连接到所有位置传感器（包括 GPS），以便尽可能获得最准确的位置。
+如果任何应用请求所 \_ 需 \_ 的准确性高，则传感器应提供可能的最高准确性报告。 Location API 始终连接到所有位置传感器（包括 GPS），以便尽可能获得最准确的位置。
 
 ## <a name="detecting-idle-states"></a>检测空闲状态
 
@@ -81,7 +78,7 @@ GPS 或全局导航卫星系统（GNSS）传感器可以使用系统中的三角
 > [!NOTE]
 > 传感器不应从同一类型的位置传感器获取数据。 例如，三角化传感器不应使用其他三角传感器的数据。
 
-若要访问三角化传感器，请将[**ISensorManager：： GetSensorByType**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensormanager-getsensorsbytype)与类型为传感器\_类型\_位置\_三角化。 这将返回所有三角化传感器，包括 Windows 8 中内置的 Windows 位置提供程序。 你的 GPS 驱动程序需要能够处理从零传感器返回到多个传感器的任何位置。 有关使用**GetSensorsByType**的详细信息，请参阅[检索传感器对象](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-a-sensor)。
+若要访问三角化传感器，请使用类型为 "传感器类型位置三角化" 的[**ISensorManager：： GetSensorByType**](https://docs.microsoft.com/windows/desktop/api/sensorsapi/nf-sensorsapi-isensormanager-getsensorsbytype)调用 \_ \_ \_ 。 这将返回所有三角化传感器，包括 Windows 8 中内置的 Windows 位置提供程序。 你的 GPS 驱动程序需要能够处理从零传感器返回到多个传感器的任何位置。 有关使用**GetSensorsByType**的详细信息，请参阅[检索传感器对象](https://docs.microsoft.com/windows/desktop/SensorsAPI/retrieving-a-sensor)。
 
 > [!NOTE]
 > Windows 位置提供程序不提供准确性或可用性的任何保证。

@@ -1,131 +1,72 @@
 ---
-title: ScalingHeight 元素
-description: 必需的 ScalingHeight 元素指定在进行慢扫描方向缩放的文档。
+title: ScalingHeight 元素（慢速扫描方向）
+description: 必需的 ScalingHeight 元素以慢速扫描方向指定文档缩放。
 ms.assetid: 29dcaab0-d32b-4aa0-ba27-3da0c9c39f97
 keywords:
-- ScalingHeight 元素成像设备
+- ScalingHeight 元素图像设备
 topic_type:
 - apiref
 api_name:
 - wscn ScalingHeight wscn Override "" wscn UsedDefault ""
 api_type:
 - Schema
-ms.date: 11/28/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e33ea0dcd0bbbc74635ecec5d54575d3c2355336
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.openlocfilehash: fb23d3bd7cfe7ce49aff28955f52233172f74df0
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364398"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020078"
 ---
-# <a name="scalingheight-element"></a>ScalingHeight 元素
+# <a name="scalingheight-element-slow-scan-direction"></a>ScalingHeight 元素（慢速扫描方向）
 
+必需的**ScalingHeight**元素以慢速扫描方向指定文档缩放。
 
-所需**ScalingHeight**元素指定在进行慢扫描方向缩放的文档。
-
-<a name="usage"></a>用法
------
+## <a name="usage"></a>使用情况
 
 ```xml
-<wscn:ScalingHeight wscn:Override=""                    wscn:UsedDefault=""
+<wscn:ScalingHeight wscn:Override="" wscn:UsedDefault=""
   Override = "xs:string"
   UsedDefault = "xs:string">
   text
-</wscn:ScalingHeight wscn:Override=""                    wscn:UsedDefault="">
+</wscn:ScalingHeight wscn:Override="" wscn:UsedDefault="">
 ```
 
-<a name="attributes"></a>特性
-----------
+## <a name="attributes"></a>属性
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>特性</th>
-<th>在任务栏的搜索框中键入</th>
-<th>必需</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><strong>Override</strong></strong></p></td>
-<td><p>xs:string</p></td>
-<td><p>否</p></td>
-<td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
-</tr>
-<tr class="even">
-<td><p><strong><strong>UsedDefault</strong></strong></p></td>
-<td><p>xs:string</p></td>
-<td><p>否</p></td>
-<td><p></p>
-<p>可选。 一个布尔值，必须为 0，为 false，1 或 true。<strong>falsetrue</strong></p></td>
-</tr>
-</tbody>
-</table>
+| 属性 | 类型 | 必须 | 说明 |
+|--|--|--|--|
+| **忽略** | xs:string | 否 | 可选。 必须为0、false、1或 true 的布尔值。 |
+| **UsedDefault** | xs:string | 否 | 可选。 必须为0、false、1或 true 的布尔值。 |
 
-<a name="text-value"></a>文本值
-----------
+## <a name="text-value"></a>文本值
 
-必需。 从 1 到 1000，（含) 范围内的整数。
+必需。 介于1到1000（含）范围内的整数。
 
 ## <a name="child-elements"></a>子元素
 
-
-没有子元素。
+没有任何子元素。
 
 ## <a name="parent-elements"></a>父元素
 
+| 元素 |
+|--|
+| [**扩展**](scaling.md) |
 
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="scaling.md" data-raw-source="[&lt;strong&gt;Scaling&lt;/strong&gt;](scaling.md)"><strong>缩放</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+## <a name="remarks"></a>注解
 
-<a name="remarks"></a>备注
--------
+**ScalingHeight**元素指定要应用在慢速扫描方向上的缩放比例。 缩放以1% 的增量表示，其中，值100表示100% 宽度刻度（不对文档高度进行调整）。
 
-**ScalingHeight**元素指定要应用在进行慢扫描方向的缩放系数。 缩放以 1%的增量，其中的值为 100 表示 100%的宽度横向 （不调整为文档高度） 表示。
+所有 WSD 扫描服务必须至少支持值100。
 
-所有 WSD 扫描服务必须至少都支持值 100。
+仅当**ScalingHeight**元素包含在**DocumentFinalParameters**层次结构中时，WSD 扫描服务才能指定可选**Override**和**UsedDefault**属性。 有关**Override**和**UsedDefault**及其用法的详细信息，请参阅[**DocumentFinalParameters**](documentfinalparameters.md)。
 
-WSD 扫描服务可以指定可选**重写**并**UsedDefault**属性时，才**ScalingHeight**元素包含在**DocumentFinalParameters**层次结构。 有关详细信息**重写**并**UsedDefault**及其使用情况，请参阅[ **DocumentFinalParameters**](documentfinalparameters.md)。
+可以将此元素的允许值作为子集。
 
-你可以部分为此元素允许的值。
-
-## <a name="see-also"></a>请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [**DocumentFinalParameters**](documentfinalparameters.md)
 
-[**缩放**](scaling.md)
+[**扩展**](scaling.md)
 
 [**ScalingWidth**](scalingwidth.md)
-
- 
-
- 
-
-
-
-
-
-

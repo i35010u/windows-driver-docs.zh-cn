@@ -1,32 +1,19 @@
 ---
-title: 设备属性
-description: 设备属性
+title: 图像处理设备属性
+description: 图像处理设备属性
 ms.assetid: f41040c5-0eac-450d-b532-9165c543cc1a
-ms.date: 04/20/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 64b6465882a036ae60f138adb86ce6b5c94c4c70
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.openlocfilehash: 01849860eda10d3a95e9d8a28465bf8540a763f9
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364561"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020042"
 ---
-# <a name="device-properties"></a>设备属性
+# <a name="imaging-device-properties"></a>图像处理设备属性
 
+所有静止图像设备都具有描述该设备的特定特征。 例如，平板扫描仪的两个特征是其水平和垂直床大小。 数字摄像机的可能特征是电池状态，它指示电池剩余寿命。
 
+同样，还可以通过特征来描述设备生成的数据或存储的数据。 例如，扫描程序生成的数据可以按行上的像素数和每个像素的位数来进行描述。
 
-
-
-所有静止图像设备具有特定特征，描述该设备。 例如，平板扫描仪的两个特征是其平台上水平和垂直大小。 数码照相机的可能特征是它指示电池剩余寿命的电池状态。
-
-同样，也可以使用特征描述设备生成或存储的数据。 例如，可以上一个行和每像素位数的像素数由描述扫描程序生成的数据。
-
-在 WIA，描述设备和数据的特征称为*属性*。 属性集; 中存在WIA 微型驱动程序将维护这些 WIA 驱动程序项目中。
-
- 
-
- 
-
-
-
-
+在 WIA 中，描述设备和数据的特性称为*属性*。 集中存在属性;WIA 微型驱动程序将它们保留在 WIA 驱动程序项中。

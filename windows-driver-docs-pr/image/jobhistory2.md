@@ -1,31 +1,28 @@
 ---
-title: JobHistory 元素
-description: 可选 JobHistory 元素包含有关处理最近完成的扫描作业的信息。
+title: JobHistory 元素（可选）
+description: 可选的 JobHistory 元素包含有关扫描作业的信息，这些作业最近完成了处理。
 ms.assetid: 7f46044e-ac34-4181-9a35-62dea5ec8c82
 keywords:
-- JobHistory 元素成像设备
+- JobHistory 元素图像设备
 topic_type:
 - apiref
 api_name:
 - wscn JobHistory
 api_type:
 - Schema
-ms.date: 11/28/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aa969d68f4f86dfbd07ac6019cb34977826f3b3c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.openlocfilehash: 118664d5e1d033084dcbcc65531b0b4a755f6daf
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377599"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020046"
 ---
-# <a name="jobhistory-element"></a>JobHistory 元素
+# <a name="jobhistory-element-optional"></a>JobHistory 元素（可选）
 
+可选的**JobHistory**元素包含有关扫描作业的信息，这些作业最近完成了处理。
 
-可选**JobHistory**元素包含有关处理最近完成的扫描作业的信息。
-
-<a name="usage"></a>用法
------
+## <a name="usage"></a>使用情况
 
 ```xml
 <wscn:JobHistory>
@@ -33,81 +30,38 @@ ms.locfileid: "63377599"
 </wscn:JobHistory>
 ```
 
-<a name="attributes"></a>特性
-----------
+## <a name="attributes"></a>属性
 
 没有特性。
 
 ## <a name="child-elements"></a>子元素
 
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="job.md" data-raw-source="[&lt;strong&gt;Job&lt;/strong&gt;](job.md)"><strong>Job</strong></a></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="jobsummary.md" data-raw-source="[&lt;strong&gt;JobSummary&lt;/strong&gt;](jobsummary.md)"><strong>JobSummary</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+| 元素 |
+|--|
+| [**作业**](job.md) |
+| [**JobSummary**](jobsummary.md) |
 
 ## <a name="parent-elements"></a>父元素
 
+| 元素 |
+|--|
+| [**GetJobHistoryResponse**](getjobhistoryresponse.md) |
+| [**JobTable**](jobtable.md) |
 
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>元素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="getjobhistoryresponse.md" data-raw-source="[&lt;strong&gt;GetJobHistoryResponse&lt;/strong&gt;](getjobhistoryresponse.md)"><strong>GetJobHistoryResponse</strong></a></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="jobtable.md" data-raw-source="[&lt;strong&gt;JobTable&lt;/strong&gt;](jobtable.md)"><strong>JobTable</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+## <a name="remarks"></a>注解
 
-<a name="remarks"></a>备注
--------
+**JobHistory**元素包含已完成处理的最新作业的子集。 由于其他原因，这些作业可以扫描、中止或失败。 此列表中的最大作业数取决于设备。
 
-**JobHistory**元素包含的最新作业已完成处理的子集。 这些作业可以扫描、 已中止，或由于其他原因而失败。 此列表中的作业的最大数目取决于设备。
+客户端可以通过[**GetJobHistoryRequest**](getjobhistoryrequest.md)操作元素请求作业历史记录。 WSD 扫描服务在[**GetJobHistoryResponse**](getjobhistoryresponse.md)操作元素中返回此历史记录。
 
-客户端可以请求通过作业历史记录[ **GetJobHistoryRequest** ](getjobhistoryrequest.md)操作元素。 WSD 扫描服务将返回在此历史记录[ **GetJobHistoryResponse** ](getjobhistoryresponse.md)操作元素。
-
-## <a name="see-also"></a>请参阅
-
+## <a name="see-also"></a>另请参阅
 
 [**GetJobHistoryRequest**](getjobhistoryrequest.md)
 
 [**GetJobHistoryResponse**](getjobhistoryresponse.md)
 
-[**Job**](job.md)
+[**作业**](job.md)
 
 [**JobSummary**](jobsummary.md)
 
 [**JobTable**](jobtable.md)
-
- 
-
- 
-
-
-
-
-
-
