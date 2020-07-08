@@ -1,61 +1,52 @@
 ---
-title: Location
-description: Location
+title: 位置（打孔）
+description: 此属性包含与在输出页中打孔的位置相关的所有值项。
 ms.assetid: f04ce4de-233d-4763-be4d-e913623f4f1a
-ms.date: 11/28/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ba732e515fdaa7a8d2d89753f0dd7dfa0d3f851e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c7285cbbc88839c4de424b7c2af70960a08b94d
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388079"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060850"
 ---
-# <a name="location"></a>Location
+# <a name="location-hole-punch"></a>位置（打孔）
 
+架构路径： \\ HolePunch
 
-架构路径：\\Printer.Finishing.HolePunch.Location
+节点类型：属性
 
-节点类型： 属性
+说明：此属性包含与在输出页中打孔的位置相关的所有值项。
 
-说明： 此属性包含与从该处打孔输出页中的位置相关的所有值项。
+Location 属性包含两个子值： **CurrentValue**和**受支持**。
 
-位置属性包含两个对子值：**CurrentValue**并**支持**。
+## <a name="currentvalue"></a>CurrentValue
 
-### <a name="span-idcurrentvaluespanspan-idcurrentvaluespan-currentvalue"></a><span id="currentvalue"></span><span id="CURRENTVALUE"></span> CurrentValue
+架构路径： \\ HolePunch： CurrentValue
 
-架构路径：\\Printer.Finishing.HolePunch.Location:CurrentValue
+节点类型：值
 
-节点类型： 值
+数据类型：双向 \_ INT
 
-数据类型： BIDI\_INT
+说明：打孔的当前（默认）位置。
 
-说明： 当前 （默认） 位置的打孔。
-
-允许使用以下值：
+允许以下值：
 
 顶部
 
 底部
 
-向左
+左
 
-向右
+权限
 
-### <a name="span-idsupportedspanspan-idsupportedspan-supported"></a><span id="supported"></span><span id="SUPPORTED"></span> 支持
+## <a name="supported"></a>支持
 
-架构路径：\\Printer.Finishing.HolePunch.Location:Supported
+架构路径： \\ HolePunch：支持
 
-节点类型： 值
+节点类型：值
 
-数据类型： BIDI\_字符串
+数据类型：双向 \_ 字符串
 
-说明： 一个以逗号分隔的列表的孔打孔位置支持的所有值。
-
- 
-
- 
-
-
-
-
+说明：打孔位置支持的所有值的逗号分隔列表。

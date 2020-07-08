@@ -11,16 +11,16 @@ api_location:
 - Ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 04/21/2020
+ms.date: 07/07/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: dc0ea2a841ac1c89235f2194e459a60a48c1e4f4
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: e52042089d4ca186758016a0cec77c04366e8fba
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270442"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060858"
 ---
 # <a name="ksproperty_cameracontrol_extended_relativepaneloptimization"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ RELATIVEPANELOPTIMIZATION
 
@@ -30,11 +30,11 @@ ms.locfileid: "83270442"
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
-| Get | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
-| --- | --- | --- | --- | --- |
-| 是 | 是 | 筛选器 | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)|
+| 获取 | 设置 | 目标 | 属性描述符类型 | 属性值类型 |
+|--|--|--|--|--|
+| 是 | 是 | 筛选器 | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 属性请求包含[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构和[KSCAMERA_EXTENDEDPROP_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)结构。
 
@@ -44,10 +44,10 @@ ms.locfileid: "83270442"
 
 下面是可放置在 KSCAMERA_EXTENDEDPROP_HEADER 中的标志 **。Flags**和**KSCAMERA_EXTENDEDPROP_HEADER。功能**字段。
 
-| 相对面板优化模式 | 说明 |
-| --- | --- |
-| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ OFF | 照相机将使用正常的操作模式  |
-| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_  | 相机将使用与 "值" 字段中所述位置相关的优化 |
+| 相对面板优化模式 | 描述 |
+|--|--|
+| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ OFF | 照相机将使用正常的操作模式 |
+| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ | 相机将使用与 "值" 字段中所述位置相关的优化 |
 | KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ DYNAMIC | 在流式处理时，可以动态调整照相机位置提示，而不 glitching 流 |
 
 **KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION**始终是同步控件。
@@ -64,14 +64,14 @@ Windows 将控制 "**功能**" 和 "**标志**" 字段。
 
 下表包含在使用元数据控件时对[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的要求。
 
-| 成员 | 说明 |
-| --- | --- |
+| 成员 | 描述 |
+|--|--|
 | 版本 | 这必须为1。 |
 | PinId | KSCAMERA_EXTENDEDPROP_FILTERSCOPE （0xFFFFFFFF） |
 | 大小 | 这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_VALUE） |
 | 结果 | 指示上一次设置操作的错误结果。 如果未执行任何设置操作，则此必须为0。 |
 | 功能 | 必须是前面定义的受**支持的** ***KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_XXX***标志。 |
-| 标志 | 这是一个读/写字段。 这可以是**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_ON**或上面定义**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_OFF**标志。 |
+| Flags | 这是一个读/写字段。 这可以是**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_ON**或上面定义**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_OFF**标志。 |
 
 如果在[**KSCAMERA \_ EXTENDEDPROP \_ 标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)的 "**标志**" 字段中指定了 " **KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ ** "，则 "**值**" 字段必须为相机当前所面向的相对方向指定 PLD。
 
@@ -87,6 +87,4 @@ Windows 将控制 "**功能**" 和 "**标志**" 字段。
 
 ## <a name="requirements"></a>要求
 
-| &nbsp; | &nbsp; |
-| --- | --- |
-| Header | ksmedia （包括 Ksmedia） |
+**标头：** ksmedia （包括 ksmedia）

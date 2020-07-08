@@ -14,8 +14,6 @@
       href: ksproperty_networkcameracontrol_ntp.md
     - name: KSPROPERTY_NETWORKCAMERACONTROL_URI
       href: ksproperty_networkcameracontrol_uri.md
-    - name: KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_HEADER
-      href: ksproperty_networkcameracontrol_ntpinfo_header.md
 - name: USB 视频类 (UVC) 相机实现指南
   items:
     - name: USB 视频类 (UVC) 相机实现指南

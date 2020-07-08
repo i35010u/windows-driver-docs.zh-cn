@@ -1,6 +1,6 @@
 ---
-title: IPrinterScriptUsbJobContext PrintedPageCount 方法
-description: 返回由当前的作业中的打印设备打印的页数。
+title: IPrinterScriptUsbJobContext PrintedPageCount 方法（out）
+description: 返回当前作业中打印设备打印的页数。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
@@ -15,21 +15,20 @@ api_name:
 - IPrinterScriptUsbJobContext.PrintedPageCount
 api_type:
 - COM
-ms.date: 04/20/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dc2323f6336ed01fdd57565d91f0fd334b101eb5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9b42aa4aa8dc28af7ef6f6829170521c2643d90
+ms.sourcegitcommit: c2c99017178160988aa0e9a861ac347a11cda12a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349243"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092462"
 ---
-# <a name="iprinterscriptusbjobcontextprintedpagecount-method"></a>IPrinterScriptUsbJobContext::PrintedPageCount method
+# <a name="iprinterscriptusbjobcontextprintedpagecount-method-out"></a>IPrinterScriptUsbJobContext：:P rintedPageCount 方法（out）
 
-返回由当前的作业中的打印设备打印的页数。
+返回当前作业中打印设备打印的页数。
 
-<a name="syntax"></a>语法
-------
+## <a name="syntax"></a>语法
 
 ```cpp
 HRESULT PrintedPageCount(
@@ -37,52 +36,33 @@ HRESULT PrintedPageCount(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>参数
 
 *值* \[out，retval\]  
-由当前的作业中的打印设备打印的页数。
+当前作业中打印设备打印的页数。
 
-<a name="return-value"></a>返回值
-------------
+## <a name="return-value"></a>返回值
 
 此方法返回**HRESULT**值。
 
-<a name="remarks"></a>备注
--------
+## <a name="remarks"></a>注解
 
-**PrintedPageCount**是读/写方法。 IHV JavaScript **writeData**函数应保留打印的页计数保持最新状态，以允许 USBMon 来对作业设置正确的进度。
+**PrintedPageCount**是读/写方法。 IHV JavaScript **writeData**函数应将打印页计数保持为最新状态，以允许 USBMon 设置作业的正确进度。
 
-如果 IHV JavaScript 代码永远不会调用**PrintedPageCount**若要设置打印的页计数，假定是不可能准确的页计数和 USBMon 将允许后台处理程序以继续估计进度。
+如果 IHV JavaScript 代码从不调用**PrintedPageCount**来设置打印的页计数，则假定页面的准确计数不可能，USBMon 将允许后台处理程序继续估计进度。
 
-璝惠 USBMon 和基于 USB 的双向通信与打印设备，请参阅[USB Bidi 扩展器](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)。
+有关使用打印设备进行 USBMon 和基于 USB 的双向通信的信息，请参阅[USB 双向扩展](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)器。
 
-<a name="requirements"></a>要求
-------------
+## <a name="requirements"></a>要求
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
-</tr>
-<tr class="even">
-<td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2012 R2</p></td>
-</tr>
-<tr class="odd">
-<td><p>目标平台</p></td>
-<td>桌面设备</td>
-</tr>
-</tbody>
-</table>
+**支持的最低客户端：** Windows 8.1
+
+**支持的最低服务器：** Windows Server 2012 R2
+
+**目标平台：** 机
 
 ## <a name="see-also"></a>请参阅
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
 
-[USB Bidi 扩展程序](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)
+[USB 双向扩展程序](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)

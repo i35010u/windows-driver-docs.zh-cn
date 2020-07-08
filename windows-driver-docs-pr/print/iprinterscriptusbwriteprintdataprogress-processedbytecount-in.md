@@ -1,6 +1,6 @@
 ---
-title: IPrinterScriptUsbWritePrintDataProgress ProcessedByteCount 方法
-description: 设置 IHV JavaScript 函数在调用此方法时已处理的字节数。
+title: IPrinterScriptUsbWritePrintDataProgress ProcessedByteCount 方法（在中）
+description: 设置在调用此方法时 IHV JavaScript 函数已处理的字节数。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
@@ -15,21 +15,20 @@ api_name:
 - IPrinterScriptUsbWritePrintDataProgress.ProcessedByteCount
 api_type:
 - COM
-ms.date: 04/20/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 27d84b37a5863ca6acc3f9a080d94c78795d410f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be5165e4be597e67da9cf20183368b4c6dae6090
+ms.sourcegitcommit: c2c99017178160988aa0e9a861ac347a11cda12a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349205"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092464"
 ---
-# <a name="iprinterscriptusbwriteprintdataprogressprocessedbytecount-method"></a>IPrinterScriptUsbWritePrintDataProgress::ProcessedByteCount 方法
+# <a name="iprinterscriptusbwriteprintdataprogressprocessedbytecount-method-in"></a>IPrinterScriptUsbWritePrintDataProgress：:P rocessedByteCount 方法（在中）
 
-设置 IHV JavaScript 函数在调用此方法时已处理的字节数。
+设置在调用此方法时 IHV JavaScript 函数已处理的字节数。
 
-<a name="syntax"></a>语法
-------
+## <a name="syntax"></a>语法
 
 ```cpp
 HRESULT ProcessedByteCount(
@@ -37,40 +36,22 @@ HRESULT ProcessedByteCount(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>参数
 
-*value* \[in\]  
-在调用此方法时处理的字节数。
+*值* \[中\]  
+调用此方法时处理的字节数。
 
-<a name="return-value"></a>返回值
-------------
+## <a name="return-values"></a>返回值
 
 此方法返回**HRESULT**值。
 
-<a name="requirements"></a>要求
-------------
+## <a name="requirements"></a>要求
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
-</tr>
-<tr class="even">
-<td><p>最低受支持的服务器</p></td>
-<td><p>Windows Server 2012 R2</p></td>
-</tr>
-<tr class="odd">
-<td><p>目标平台</p></td>
-<td>桌面设备</td>
-</tr>
-</tbody>
-</table>
+**支持的最低客户端：** Windows 8.1
+
+**支持的最低服务器：** Windows Server 2012 R2
+
+**目标平台：** 机
 
 ## <a name="see-also"></a>请参阅
 
