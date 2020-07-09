@@ -1,5 +1,5 @@
 ---
-title: 设备回到工作状态
+title: 设备返回到其工作状态（UMDF 1）
 description: 设备回到工作状态
 ms.assetid: 2b192eea-f731-4d61-be19-95724bf7b04a
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - 设备返回到工作状态方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9218d9f1a874175c9cefc70cc01a9fe131a2314c
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 57331ee75ec73856042555e1980029d13523180b
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210129"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141252"
 ---
-# <a name="a-device-returns-to-its-working-state"></a>设备回到工作状态
+# <a name="a-device-returns-to-its-working-state-umdf-1"></a>设备返回到其工作状态（UMDF 1）
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

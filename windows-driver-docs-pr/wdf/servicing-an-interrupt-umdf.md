@@ -1,17 +1,17 @@
 ---
-title: 为中断提供服务
+title: 维护中断（UMDF 1）
 description: 为中断提供服务
 ms.assetid: 79BA75B3-E10F-4AC1-A2C5-A502BF821188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a04a6b9c23421062a21e1bea39ff33658e3ab68
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 6b70a4890494814ce597e9867561cd7e03567dc7
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210537"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141266"
 ---
-# <a name="servicing-an-interrupt"></a>为中断提供服务
+# <a name="servicing-an-interrupt-umdf-1"></a>维护中断（UMDF 1）
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "75210537"
 
 当设备生成硬件中断时，框架会调用驱动程序的中断服务例程（ISR），这是基于框架的驱动程序作为[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)回调函数实现的。
 
-在被动\_级别运行的[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)回调函数必须快速保存中断信息，如注册内容、对工作项进行排队以便进一步处理数据，并从 ISR 返回，以允许在中断行共享时处理其他中断。 由于 UMDF 驱动程序的 ISR 在被动\_级别运行，因此不建议处理基于 PCI 线路的中断。 通常会在多个设备之间共享这些中断，其中一些中断可能不会接受 ISR 延迟。 但是，可以在 UMDF 驱动程序中处理 PCI MSI 中断。 这些中断具有边缘语义并且不共享。
+在被动级别运行的[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)回调函数 \_ 必须快速保存中断信息，如注册内容、对工作项进行排队以便进一步处理数据，并从 ISR 返回，以允许在中断行共享时处理其他中断。 由于 UMDF 驱动程序的 ISR 在被动 \_ 级别运行，因此不建议处理基于 PCI 线路的中断。 通常会在多个设备之间共享这些中断，其中一些中断可能不会接受 ISR 延迟。 但是，可以在 UMDF 驱动程序中处理 PCI MSI 中断。 这些中断具有边缘语义并且不共享。
 
 通常， [*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)回调函数会安排一个工作项，以便以后处理保存的信息。 基于框架的驱动程序将工作项例程作为[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)回调函数实现。
 

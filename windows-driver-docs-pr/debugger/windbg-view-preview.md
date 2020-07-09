@@ -1,14 +1,14 @@
 ---
 title: WinDbg 预览-"查看" 菜单
 description: 本部分介绍如何使用 "视图" 菜单。
-ms.date: 01/10/2020
+ms.date: 07/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbd91f829ad6c9d02ab4cd74f3d643a703be172
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: 8ec196b6f1cf452a47fb756929b3d2bd26d55cd0
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256689"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141307"
 ---
 # <a name="windbg-preview---view-menu"></a>WinDbg 预览-"查看" 菜单
 
@@ -24,13 +24,13 @@ ms.locfileid: "76256689"
 
 命令窗口允许你输入调试器命令。 有关调试器命令的详细信息，请参阅[调试器命令](debugger-commands.md)。
 
-## <a name="watch"></a>观看
+## <a name="watch"></a>监视
 
 在 "监视" 窗口中，可以监视本地变量和注册。 
 
 "局部变量" 和 "监视" 窗口均基于 dx 命令使用的数据模型。 这意味着，"局部变量" 和 "监视" 窗口将受益于已加载的任何 NatVis 或 JavaScript 扩展，并支持完整的 LINQ 查询，就像 dx 命令一样。 有关数据模型的详细信息，请参阅[WinDbg 预览-数据模型](windbg-data-model-preview.md)。
 
-## <a name="locals"></a>局部
+## <a name="locals"></a>局部变量
 
 "局部变量" 窗口显示有关当前范围内的所有本地变量的信息。 "局部变量" 窗口将突出显示在前面的代码执行过程中更改的值。
 
@@ -38,11 +38,11 @@ ms.locfileid: "76256689"
 
 ## <a name="registers"></a>寄存器
 
-收银机显示处理器的内容（如果可用）。 有关寄存器的详细信息，[请](registers.md)参阅[在 WinDbg 中注册和查看和编辑寄存器](registers-window.md)。
+收银机显示处理器的内容（如果可用）。 有关寄存器的详细信息，请[Registers](registers.md)参阅[在 WinDbg 中注册和查看和编辑寄存器](registers-window.md)。
 
 ## <a name="memory"></a>内存
 
-使用 "内存" 窗口显示内存位置。 除了提供内存地址外，还可以使用伪寄存器值（如 $scopeip 和 $eventip）来检查内存。 预先追加 @ 符号以使用 "内存" 窗口中的伪寄存器值，例如 `@$scopeip`。 有关详细信息，请参阅[伪寄存器语法](pseudo-register-syntax.md)
+使用 "内存" 窗口显示内存位置。 除了提供内存地址外，还可以使用伪寄存器值（如 $scopeip 和 $eventip）来检查内存。 预先追加 @ 符号以使用 "内存" 窗口中的伪寄存器值，例如 `@$scopeip` 。 有关详细信息，请参阅[伪寄存器语法](pseudo-register-syntax.md)
 
 ## <a name="stack"></a>堆栈
 
@@ -54,7 +54,7 @@ ms.locfileid: "76256689"
 
 ![ 调试器中的 "反汇编" 窗口](images/windbgx-disassembly.png)
 
-## <a name="threads"></a>主题
+## <a name="threads"></a>线程数
 
 "线程" 窗口突出显示当前线程。
 
@@ -70,13 +70,24 @@ ms.locfileid: "76256689"
 
  可以使用 logopen 命令继续创建传统的调试器命令日志。 有关此方面的详细信息，请参阅[在 WinDbg 中保留日志文件](keeping-a-log-file-in-windbg.md)。
 
-## <a name="notes"></a>注释
+## <a name="notes"></a>说明
 
 使用 "注释" 选项可打开 "便笺拍摄" 窗口。
 
-## <a name="timelines"></a>日程表
+## <a name="timelines"></a>时间线
 
 使用时间线打开或将焦点移到 "时间线" 窗口。 有关时间线的详细信息，请参阅[WinDbg 预览-时间线](windbg-timeline-preview.md)。
+
+## <a name="modules"></a>模块
+
+使用模块来显示已加载的模块及其相关信息。 模块显示以下内容：
+
+- 包含路径位置的模块的名称
+- 加载的模块的大小（以字节为单位）
+- 加载模块的基址
+- 文件版本
+
+![显示了五个模块的 "模块" 视图窗口](images/windbgx-view-modules.png)
 
 ## <a name="layouts"></a>布局
 
@@ -86,10 +97,10 @@ ms.locfileid: "76256689"
 
 使用此函数可将调试器窗口重置为其默认位置。
 
-## <a name="accent-color"></a>主题色
+## <a name="accent-color"></a>强调颜色
 
 使用下拉菜单设置调试器的强调颜色。
 
 ## <a name="see-also"></a>另请参阅
 
-[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
+[使用 WinDbg 预览版进行调试](debugging-using-windbg-preview.md)

@@ -1,17 +1,17 @@
 ---
-title: 启用和禁用中断
+title: 启用和禁用中断（UMDF 1）
 description: 启用和禁用中断
 ms.assetid: 52846461-4F08-4546-93F5-F2469C6E3AD8
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c86d5948c4c6f0b162d415fe790177ebc3585e74
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: bdc6c6d33dc65227039a15a597fe54b3a5f3b7a7
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210459"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141343"
 ---
-# <a name="enabling-and-disabling-interrupts"></a>启用和禁用中断
+# <a name="enabling-and-disabling-interrupts-umdf-1"></a>启用和禁用中断（UMDF 1）
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_DIRECTORY_CONTROL
+title: IRP_MJ_DIRECTORY_CONTROL （IFS）
 description: IRP \_ MJ \_ 目录 \_ 控件
 ms.assetid: cb1bed36-bcb5-419b-87ca-6d9107ece6d1
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba45995e9a98cb43bebc6f9ec019d982fcda2346
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 27dad27ec40dd7da37269f66ee7a066f849e779c
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852309"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141329"
 ---
-# <a name="irp_mj_directory_control"></a>IRP \_ MJ \_ 目录 \_ 控件
+# <a name="irp_mj_directory_control-ifs"></a>IRP \_ MJ \_ 目录 \_ 控件（IFS）
 
 
 ## <a name="when-sent"></a>发送时间
@@ -99,7 +99,7 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
+<th align="left">标志</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -134,7 +134,7 @@ FileBothDirectoryInformation FileDirectoryInformation FileFullDirectoryInformati
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
+<th align="left">标志</th>
 <th align="left">含义</th>
 </tr>
 </thead>

@@ -1,23 +1,84 @@
 ---
 title: WinDbg 预览版 - 新增功能
 description: 本主题提供有关 WinDbg 预览调试器的新增功能的 inofmration。
-ms.date: 12/12/2019
+ms.date: 07/02/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: d67408c7cbbe05083c7a0d299b6b76e9c3e2e26c
-ms.sourcegitcommit: e0afb1b273c34caba8bda1cb78db9d1c8d8cdada
+ms.openlocfilehash: cad1e49a7da21301b0faaa98d4d4072d22154050
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79131204"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141301"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
 ![windbg 预览版上的小徽标](images/windbgx-preview-logo.png)
 
 本主题提供有关 WinDbg 预览调试器中的新增功能的信息。
+
+## <a name="10200701003"></a>1.0.2007.01003
+
+**时间线书签**
+
+在 WinDbg 将重要的时间旅行位置做成书签，而不是手动将位置粘贴到记事本。 使用书签，可以更轻松地查看相对于其他事件的跟踪中的不同位置，并为其添加批注。 
+
+可以为书签提供描述性名称。
+
+![显示问候语应用中第一个 api 调用的示例名称的 "新建书签" 对话框](images/windbgx-timeline-bookmark-new.png)
+
+通过 *> 时间线视图*中提供的 "时间线" 窗口访问书签。 当您将鼠标悬停在某个书签上方时，它将显示书签名称。
+
+![显示在一个显示书签名称的书签上方的三个书签的时间线](images/windbgx-timeline-bookmarks.png)
+
+您可以右键单击书签以到达该位置，重命名或删除书签。
+
+![书签右键单击显示旅行以定位编辑和删除的弹出菜单](images/windbgx-timeline-bookmark-edit.png)
+
+**模块窗口**
+
+新的 windows 会显示模块及其相关信息，可以通过 "视图" 功能区获得。
+其中显示：
+
+- 包含路径位置的模块的名称
+- 加载的模块的大小（以字节为单位）
+- 加载模块的基址
+- 文件版本
+
+![显示了五个模块的 "模块" 视图窗口](images/windbgx-view-modules.png)
+
+
+**实时调试中提供的线程名称/说明**
+
+当执行实时用户模式调试时，从 SetThreadDescription 设置的线程名称现在可用。 线程名称可使用 "~" 命令或调试器数据模型。
+
+```dbgconsole
+0:000> ~
+   0  Id: 53a0.5ffc Suspend: 1 Teb: 000000b1`db1ed000 Unfrozen "Hello world!"
+   7  Id: 53a0.9114 Suspend: 1 Teb: 000000b1`db1ef000 Unfrozen
+   8  Id: 53a0.2cc4 Suspend: 1 Teb: 000000b1`db1f1000 Unfrozen
+   9  Id: 53a0.5c40 Suspend: 1 Teb: 000000b1`db1f3000 Unfrozen
+
+0:000> dx @$curthread
+@$curthread                 : ConsoleTestApp!ILT+25(mainCRTStartup) (00007ff7`fac7101e)  [Switch To]
+    Id               : 0x5ffc
+    Name             : Hello world!
+    Stack
+    Registers
+    Environment
+```
+
+**便携 PDB 支持**
+
+添加了便携 PDB 支持。 可移植 PDB （程序数据库）格式描述由公共语言基础结构（CLI）语言的编译器生成的调试信息的编码，并由调试器和其他工具使用。 有关详细信息，请参阅[可移植 PDB v1.0：格式规范](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
+
+
+**其他更改和 bug 修补程序**
+
+- WinDbg 现在支持 AMD64 和 Linux 内核转储调试。
+- 旅行记录增强功能和其他修补程序。
 
 ## <a name="10191211001"></a>1.0.1912.11001
 
@@ -33,11 +94,11 @@ ms.locfileid: "79131204"
 * 向附加对话框添加了 "服务" 列，以便轻松地查找正在运行的服务。
 * 修复了在使用参数启动应用程序时导致体系结构检测不起作用的 bug。
 * 在加载私有符号时，"反汇编" 窗口已改进了反汇编。
-* jsprovider 现已自动加载，因此我们从脚本功能区删除了 "Load JSProvider" 按钮。
+* 现在会自动加载 jsprovider.dll，因此我们从脚本功能区删除了 "Load JSProvider" 按钮。
 
 ## <a name="10190830002"></a>1.0.1908.30002
 
-**TTD 调用对象的改进** - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
+**对 TTD 的改进调用对象**  - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
 
 **支持 Open Enclave** -WinDbg 预览版现在可以调试打开的 ENCLAVE （OE）应用程序，你可以在[打开的 Enclave 文档](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/Windows_windbg.md)中找到如何执行此操作的说明。
 
@@ -45,7 +106,7 @@ ms.locfileid: "79131204"
  
 可以在[VS Code Marketplace](https://aka.ms/CDBVSCode)中找到该扩展，并向我们的[WinDbg 反馈 GitHub](https://aka.ms/dexex)报告任何问题。 请注意，虽然扩展可能适用于其他方案，但我们只是在此时解决与 OE 方案相关的问题。
 
-**ELF 核心转储**-作为支持的开放 Enclave 的一部分，WinDbg 可以从 DWARF 和 Linux 应用程序打开 ELF Core 转储和二进制文件（目前不支持 Enclaves 5）。 当从非 Windows 应用程序打开核心转储时，基本窗口和命令都应正常运行，但大多数扩展和 Windows 特定的命令将不起作用。 按照[此处定义的关键约定](https://github.com/dotnet/symstore/blob/master/docs/specs/SSQP_Key_Conventions.md)，将从符号服务器下载 ELF 和 DWARF 文件。 Enclaves 是唯一受支持的方案，但我们在打开其他 Linux core 转储时提供反馈。 
+**ELF 核心转储**-作为支持的开放 Enclave 的一部分，WinDbg 可以从 DWARF 和 Linux 应用程序打开 ELF Core 转储和二进制文件（目前不支持 Enclaves 5）。 当从非 Windows 应用程序打开核心转储时，基本窗口和命令都应正常运行，但大多数扩展和 Windows 特定的命令将不起作用。 按照[此处定义的关键约定](https://github.com/dotnet/symstore/blob/master/docs/specs/SSQP_Key_Conventions.md)，将从符号服务器下载 ELF 和 DWARF 文件。 Enclaves 是唯一受支持的方案，但我们在打开其他 Linux core 转储时提供反馈。
 
 **TTD 文件格式更改**-对于中断向前兼容性的 TTD 跟踪，我们已对文件格式进行了重大更新。 以前版本的 WinDbg Preview 将无法打开此（以及将来）版本的 WinDbg Preview 记录的跟踪，但此（和更未来）版本将能够打开新的和旧的跟踪。
 
@@ -65,7 +126,7 @@ ms.locfileid: "79131204"
 
 只需单击 "**视图**" 功能区，然后在上一节中选择 "**强调色**" 选项。 从最近的目标启动未来的会话时，将在目标工作区中保留着色颜色。
 
-**源**标记的改进-源窗口现在具有对词汇切分 Rust 源文件和C++ SEH __try/__except/__finally/__leave 的基本支持。
+**源词汇切分改进**-源窗口现在具有对词汇切分 Rust 源文件和 c + + SEH __try/__except/__finally/__leave 的基本支持。
 
 **协同程序改进**-改进了对协同程序局部变量和某些优化变量的支持。
 
@@ -96,9 +157,9 @@ ms.locfileid: "79131204"
 
 此版本包含这些更新。
 
-**调试器数据模型C++标头**-有一个新C++的标头 DbgModel，它作为 Windows SDK 的一部分包含，以便通过C++扩展调试器数据模型。 有关详细信息，请查看[调试器数据模型C++概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过[调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
+**调试器数据模型 c + + 标头**-有一个新的 c + + 标头 DbgModel，作为 Windows SDK 的一部分包含，用于通过 c + + 扩展调试器数据模型。 有关详细信息，请查看[调试器数据模型 c + + 概述](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)。 此版本包含一个新扩展，它向调试器数据模型添加一些更多 "API 样式" 功能，可通过 "dx" 命令、JavaScript 和新的 DbgModel 标头进行访问。 此扩展插件将数据模型扩展为包含有关通过[调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)程序中的程序集和代码执行的知识，并通过调试程序. [FileSystem 命名](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)空间和本地文件系统。
 
-**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库上提供了一个新示例- https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
+**合成类型扩展**使用这一新的 API 扩展，我们在 GitHub 存储库中提供了一个新示例 https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes 。 此 JavaScript 扩展读取基本 C 头文件，并定义标头中定义的结构和联合的综合类型信息。 然后，可以通过 dx 命令查看内存结构，就像您有一个具有这些类型的类型信息的 PDB 一样。
 
 其他更改和 bug 修复：
 
@@ -124,7 +185,7 @@ ms.locfileid: "79131204"
 -  现在，未编制索引的 TTD 跟踪将更清楚地表明它们未编入索引。
 -  提高了 "局部变量" 窗口的性能
 -  添加了 "功能区" 按钮，用于将命令窗口日志保存到文件。
--  。 SelectMany （<projection>）设置为默认的 LINQ 方法集。
+-  。 将 SelectMany （ <projection> ）设置为默认的 LINQ 方法集。
 
 ## <a name="10180711002"></a>1.0.1807.11002
 
@@ -196,7 +257,7 @@ ms.locfileid: "79131204"
 
 如果更喜欢使用命令，可以使用 "$hl" 命令：
 
-`$hl ["someValueHere"]`-突出显示文本（如果已突出显示，则取消突出显示）
+`$hl ["someValueHere"]`-突出显示 "给文本（或突出显示，如果已突出显示）"
 
 `$hl clearAll`-清除所有突出显示的条目
 
@@ -211,16 +272,16 @@ ms.locfileid: "79131204"
 
 **TTD 内存查询**-现在可以查询 TTD 的内存访问，就像现在查询调用的方式一样。 这允许你查找访问特定内存范围的所有读取、写入和执行操作。
 
-读取和写入示例： `dx @$cursession.TTD.Memory(startAddress, endAddress, "rw")`
+读写示例：`dx @$cursession.TTD.Memory(startAddress, endAddress, "rw")`
 
-唯一执行示例： `dx @$cursession.TTD.Memory(startAddress, endAddress, "ec")`
+唯一的执行示例：`dx @$cursession.TTD.Memory(startAddress, endAddress, "ec")`
 
 **设置更改**-WinDbg Preview 现在会自动保存会话之间的设置，包括符号路径和源路径。
 
 **JavaScript 改进**
 
 - 64中的位数字和数值现在包含一个取模方法，该方法允许真正的64位取模运算。
-- JavaScript 中定义的对象现在可以实现自定义可比较或可相等的概念，这些概念将C++使用标准操作员或 LINQ 操作在 dx 中工作。 为了利用这一点，脚本必须在 initializeScript 数组中声明，该脚本通过插入记录 "new apiVersionSupport （1，2）" 来支持新版本的宿主 API。 完成后，可以在任意 "dx" 或数据模型窗口 LINQ 查询中使用这些函数。 如果该方法实现 compareTo （其他），则可比较（比较运算符在 dx 和 LINQ 中工作）。 如果该方法返回一个负值，如 "this < 其他"。 如果该方法返回零，则 "this = = other"。 如果该方法返回正值 "this > other"。 如果该方法实现. equals （其他），则它是可相等（= = 在 dx 和 LINQ 中起作用）。 方法必须返回 true 或 false。
+- JavaScript 中定义的对象现在可以实现自定义可比较或可相等的概念，这些概念将使用标准 c + + 运算符或 LINQ 操作在 dx 中工作。 为了利用这一点，脚本必须在 initializeScript 数组中声明，该脚本通过插入记录 "new apiVersionSupport （1，2）" 来支持新版本的宿主 API。 完成后，可以在任意 "dx" 或数据模型窗口 LINQ 查询中使用这些函数。 如果该方法实现 compareTo （其他），则可比较（比较运算符在 dx 和 LINQ 中工作）。 如果该方法返回一个负值，如 "this < 其他"。 如果该方法返回零，则 "this = = other"。 如果该方法返回正值 "this > other"。 如果该方法实现. equals （其他），则它是可相等（= = 在 dx 和 LINQ 中起作用）。 方法必须返回 true 或 false。
 
 少量更改和 bug 修复：
 
@@ -247,7 +308,7 @@ ms.locfileid: "79131204"
 
 **Javascript 脚本中的元数据**-javascript 扩展现在可以返回属性和其他构造的元数据。 这意味着扩展可以提供帮助字符串、指示值的显示基数等。 通过在对象上放置元数据描述符来提供元数据，方法是使用 metadataDescriptor 或 defineMetadata 的显式调用。 函数返回值、迭代值和其他值上下文可以通过 valueWithMetadata 为其值返回元数据。
 
-**JAVASCRIPT API 更新**-对 JavaScript 提供程序中的 api 进行了一些潜在的源级别重大更改（包括新的对本机对象的方法和属性）。 现有扩展将不会看到任何可能重大的更改，而不会指明它们是否支持新版本的 JsProvider API。 对于新的 API 版本，可通过将 apiVersionSupport 记录置于由 initializeScript 返回的支持版本1.1 的数组中来指示。 可能? . 值为时，指示对版本1.1 的支持。
+**JAVASCRIPT API 更新**-对 JavaScript 提供程序中的 api 进行了一些潜在的源级别重大更改（包括新的对本机对象的方法和属性）。 现有扩展将不会看到任何可能重大的更改，而不会指明它们是否支持新版本的 JsProvider API。 对于新的 API 版本，可通过将 apiVersionSupport 记录置于由 initializeScript 返回的支持版本1.1 的数组中来指示。 可能? .. 值为时，指示对版本1.1 的支持。
 
 API 版本1.1 中的更改包括：
 
@@ -286,6 +347,6 @@ API 版本1.1 中的更改包括：
 
 ## <a name="see-also"></a>另请参阅
 
-[WinDbg 预览版 - 安装](windbg-install-preview.md)
+[WinDbg 预览版–安装](windbg-install-preview.md)
 
-[WinDbg 预览版 - 命令行启动选项](windbg-command-line-preview.md)
+[WinDbg 预览–命令行启动选项](windbg-command-line-preview.md)

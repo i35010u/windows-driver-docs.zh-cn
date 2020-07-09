@@ -1,37 +1,37 @@
 ---
-title: IRP_MJ_DIRECTORY_CONTROL
+title: IRP_MJ_DIRECTORY_CONTROL （IFS）
 description: IRP_MJ_DIRECTORY_CONTROL
 ms.assetid: 27c2de1c-5550-4211-97cc-4c66f18d3b99
 keywords:
 - IRP_MJ_DIRECTORY_CONTROL
 - 安全 WDK 文件系统，添加安全检查
-- 安全检查 WDK 的文件系统，IRP_MJ_DIRECTORY_CONTROL
-- 目录控制 WDK 的文件系统
+- 安全检查 WDK 文件系统，IRP_MJ_DIRECTORY_CONTROL
+- 目录控制 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1455a0d7b5d65c1deeb0cd1931ead06facf9fec7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33a3f4e2a66fae44a8c503694711764c6da43223
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324558"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141330"
 ---
-# <a name="irpmjdirectorycontrol"></a>IRP\_MJ\_DIRECTORY\_控件
+# <a name="irp_mj_directory_control-ifs"></a>IRP \_ MJ \_ 目录 \_ 控件（IFS）
 
 
-安全性是一个考虑因素时处理某些目录控制操作，值得注意的是那些要处理更改通知。 安全关注点是目录更改通知可能会返回有关已更改的特定文件的信息。 如果用户不具有遍历到目录的路径的权限，无法向用户返回有关更改的信息。 否则，该用户现在拥有一种机制，帮助您了解有关用户不应具有的目录的其他信息。
+在处理某些目录控制操作（特别是那些处理更改通知的操作）时，需要考虑安全性。 安全问题是目录更改通知可能返回有关已更改的特定文件的信息。 如果用户没有遍历目录路径的权限，则无法向用户返回有关更改的信息。 否则，用户现在可以使用一种机制来了解有关用户不应具有的目录的其他信息。
 
-支持通过文件系统运行时库的目录更改通知实现文件系统，以指定用于返回目录更改通知前执行的遍历检查的回调函数。 此回调函数包含大量参数。 为了安全起见，以下三个参数非常重要：
+通过文件系统运行库支持目录更改通知，文件系统允许文件系统指定一个回调函数，以便在返回目录更改通知之前执行遍历检查。 此回调函数使用大量参数。 出于安全考虑，以下三个参数非常重要：
 
--   *NotifyContext*-更改通知是 active directory 的上下文。 这将是*FsContext*参数中传递给在调用**FsRtlNotifyFilterChangeDirectory**。 请注意， **FsRtlNotifyFilterChangeDirectory**适用于 Windows XP 及更高版本。 使用 Windows 2000 系统**FsRtlNotifyFullChangeDirectory**函数，这是类似。
+-   *NotifyContext*--更改通知处于活动状态的目录的上下文。 这将是传递给对**FsRtlNotifyFilterChangeDirectory**的调用的*FsContext*参数。 请注意， **FsRtlNotifyFilterChangeDirectory**在 Windows XP 和更高版本上可用。 Windows 2000 系统使用了**FsRtlNotifyFullChangeDirectory**函数，这类似于。
 
--   *TargetContext*-已更改的文件的上下文。 这将是*TargetContext*调用时，通过文件系统传递参数**出现**。
+-   *TargetContext*--已更改的文件的上下文。 这将是文件系统在调用**fsrtlnotifyfilterreportchange 并且**时传递的*TargetContext*参数。
 
--   *SubjectContext*-请求目录的线程的安全上下文更改通知。 这是对目录更改通知调用次捕获的文件系统的使用者安全上下文**FsRtlNotifyFilterChangeDirectory**。
+-   *SubjectContext*-请求目录更改通知的线程的安全上下文。 这是文件系统在对**FsRtlNotifyFilterChangeDirectory**进行目录更改通知调用时捕获的主题安全上下文。
 
-当发生了更改时，文件系统将指示此到文件系统运行时库。 然后，文件系统运行时库将调用回调函数提供的文件系统来验证调用方可以提供有关更改的信息。 请注意，文件系统仅需要注册一个回调函数，如果该检查不需要调用方。 这是这种情况，如果调用方不具有 SeChangeNotifyPrivilege 启用，如标记所示\_HAS\_遍历\_调用方的安全令牌中的特权。
+发生更改时，文件系统会向文件系统运行时库指出这一点。 文件系统运行时库将调用文件系统提供的回调函数，以验证是否可以向调用方提供有关更改的信息。 请注意，如果调用方需要检查，则文件系统只需注册回调函数。 如果调用方未启用 SeChangeNotifyPrivilege，则在调用 \_ \_ \_ 方的安全令牌中，如果令牌具有遍历特权，就会出现这种情况。
 
-在回调函数中，文件系统必须从指定的目录执行遍历检查*NotifyContext*参数，发生更改时，由指定的文件*TargetContext*参数。 下面的示例例程执行此类检查。
+在回调函数内，文件系统必须执行从*NotifyContext*参数指定的目录到由*TargetContext*参数指定的已更改文件的遍历检查。 下面的示例例程执行此类检查。
 
 ```cpp
 BOOLEAN 
@@ -117,7 +117,7 @@ FsdNotifyTraverseCheck (
 }
 ```
 
-此例程很可能差别很大的缓存安全信息的文件系统或具有不同的数据结构，用于跟踪文件和目录 (例如，用于跟踪文件之间的链接使用结构的文件和目录）。 支持链接的文件系统不会考虑在此示例中，以尝试简化的示例。
+对于缓存安全信息或具有不同的数据结构以跟踪文件和目录的文件系统（例如，使用结构跟踪文件和目录之间的链接的文件），此例程可能会有很大的不同。 在此示例中，不会考虑支持链接的文件系统，因为尝试简化示例。
 
  
 

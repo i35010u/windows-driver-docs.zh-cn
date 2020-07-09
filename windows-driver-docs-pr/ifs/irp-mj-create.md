@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_CREATE
+title: IRP_MJ_CREATE （IFS）
 description: IRP\_MJ\_CREATE
 ms.assetid: fdcc81f0-e571-4194-88cd-d0956ca1577e
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47e88c2b95a573b693ad73fb7a562870a9c382c4
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: b8668bb45c502e6bcedc6d28c7b420f3a156f4e2
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852313"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141332"
 ---
-# <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
+# <a name="irp_mj_create-ifs"></a>IRP \_ MJ \_ CREATE （IFS）
 
 
 ## <a name="when-sent"></a>发送时间
@@ -58,7 +58,7 @@ ms.locfileid: "83852313"
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp- &gt; AssociatedIrp. SystemBuffer*  
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp- &gt;AssociatedIrp.SystemBuffer*  
 如果文件对象表示具有扩展属性的文件，则为指向[**文件 \_ 完整的 \_ EA \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)结构化缓冲区的指针。 否则，此成员设置为**NULL**。
 
 <a href="" id="irp--flags"></a>*Irp- &gt; 标志*  
@@ -103,7 +103,7 @@ IRP \_ 同步 \_ API
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
+<th align="left">标志</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -131,7 +131,7 @@ IRP \_ 同步 \_ API
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt;MajorFunction*指定 IRP \_ MJ \_ CREATE。
 
-<a href="" id="irpsp--parameters-create-ealength"></a>*IrpSp- &gt;EaLength* * &gt; AssociatedIrp. SystemBuffer*上的缓冲区大小（以字节为单位）。 如果* &gt; AssociatedIrp*的值为**NULL**，则此成员必须为零。
+<a href="" id="irpsp--parameters-create-ealength"></a>*IrpSp- &gt;EaLength* temBuffer 中的* &gt;AssociatedIrp.Sys*缓冲区大小（以字节为单位）。 如果*Irp &gt;AssociatedIrp.SystemBuffer*的值为**NULL**，则此成员必须为零。
 
 <a href="" id="irpsp--parameters-create-fileattributes"></a>*IrpSp- &gt;FileAttributes*要在创建或打开文件时应用的特性标志的参数。 仅当创建、取代或在某些情况下覆盖了文件时，才应用显式指定的属性。 默认情况下，此值为文件 \_ 属性 \_ NORMAL，可由任何其他标志或兼容标志的运算组合重写。 此成员对应于[**IoCreateFileSpecifyDeviceObjectHint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)的*FileAttributes*参数。
 

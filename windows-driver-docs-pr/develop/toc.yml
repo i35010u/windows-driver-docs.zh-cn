@@ -78,8 +78,6 @@
       href: creating-a-driver-package.md
     - name: 创建设备元数据包
       href: creating-a-device-metadata-package.md
-    - name: 为设备驱动程序启用 DMA 重新映射
-      href: enabling-dma-remapping-for-device-drivers.md
 - name: 为驱动程序签名
   items:
     - name: 为驱动程序签名
@@ -130,8 +128,6 @@
       href: read-the-driver-test-results-log.md
     - name: 如何在运行时通过命令提示符测试驱动程序
       href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
-    - name: 使用 WDK 进行设备基础功能测试的故障排除
-      href: troubleshooting-the-device-fundamental-tests.md
     - name: 如何使用“驱动程序测试”模板编写驱动程序测试
       href: how-to-write-a-driver-test-.md
     - name: 如何添加测试元数据

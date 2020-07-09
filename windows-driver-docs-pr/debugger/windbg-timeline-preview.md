@@ -1,16 +1,16 @@
 ---
-title: WinDbg 预览-时间线
+title: WinDbg 预览版 - 时间线
 description: 本部分介绍如何在 WinDbg Preview 中使用时间段功能。
-ms.date: 01/10/2020
+ms.date: 07/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b20ec4a45d59d8197a7f369d86f13364ecc60df
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: 507991f7e30cc1a1f9706bbd7ef8572cae6fcfbf
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256741"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141322"
 ---
-# <a name="windbg-preview---timelines"></a>WinDbg 预览-时间线
+# <a name="windbg-preview---timelines"></a>WinDbg 预览版 - 时间线
 
 ![带有位模式的 windbg 预览的小徽标](images/windbgx-preview-logo.png)
 
@@ -35,7 +35,7 @@ ms.locfileid: "76256741"
 
 将鼠标悬停在每个事件上，以通过工具提示获取详细信息。 单击某个事件将对该事件运行查询并显示详细信息。 双击某个事件将跳转到 TTD 跟踪文件中的该位置。
 
-### <a name="exceptions"></a>异常
+### <a name="exceptions"></a>例外
 
 当您加载跟踪文件并且时间线处于活动状态时，它会自动显示记录中的任何异常。
 
@@ -59,7 +59,7 @@ ms.locfileid: "76256741"
 
 ### <a name="function-calls"></a>函数调用
 
-可以在时间线上显示函数调用的位置。 为此，请以 `module!function`的形式提供搜索，例如 `TimelineTestCode!multiplyTwo`。 你还可以指定通配符，例如 `TimelineTestCode!m*`。
+可以在时间线上显示函数调用的位置。 为此，请以的形式提供搜索 `module!function` ，例如 `TimelineTestCode!multiplyTwo` 。 例如，您还可以指定通配符 `TimelineTestCode!m*` 。
 
 ![在调试器中添加时间线，并显示类型化的函数调用名称](images/windbgx-timeline-function-calls-dialog.png)
 
@@ -111,7 +111,7 @@ Time Travel Position: CC:0
 @$curprocess.TTD.Events.Where(t => t.Type == "Exception")[0x0].Position.SeekTo()
 ```
 
-选择 "**查看** >> **注册**" 可在时间线中的这一点显示收银机，开始调查。
+选择 "**查看**  >>  **注册**" 可在时间线中的这一点显示收银机，开始调查。
 
 ![调试器中显示异常和寄存器的时间线](images/windbgx-timeline-demo-lab-exception-registers.png)
 
@@ -119,9 +119,9 @@ Time Travel Position: CC:0
 
 正如我们所做的那样，我们将检查局部变量和堆栈的值。
 
-选择 "**查看** >> **局部变量**" 以显示本地值。
+选择 "**查看**  >>  **局部变量**" 以显示本地值。
 
-选择 "**查看** >> **堆栈**" 以显示代码执行堆栈。
+选择 "**查看**  >>  **堆栈**" 可显示代码执行堆栈。
 
 跟踪失败时，通常会在错误处理代码的真正原因后结束几个步骤。 使用时间段，我们可以一次返回一条指令，找出真正的根本原因。
 
@@ -160,7 +160,7 @@ esp=003cf718 ebp=003cf7c8
 
 还需要注意的是，"局部变量" 窗口包含来自目标应用的值，并且 "源代码" 窗口突出显示了在跟踪中这一时刻可以在源代码中执行的代码行。
 
-若要进一步调查，可以打开 "内存" 窗口以查看堆栈指针（esp）内存地址附近的内容。 在此示例中，它的值为003cf7c8。 选择 "**内存**" >> **文本** >> **ascii** ，以显示存储在该地址的 ascii 文本。
+若要进一步调查，可以打开 "内存" 窗口以查看堆栈指针（esp）内存地址附近的内容。 在此示例中，它的值为003cf7c8。 选择 "**内存**  >>  **文本**  >>  **ASCII** " 以显示在该地址存储的 ASCII 文本。
 
 ![显示寄存器堆栈和内存窗口的调试器](images/windbgx-timeline-demo-lab-registers-stack-memory.png)
 
@@ -202,7 +202,7 @@ esp=003cf718 ebp=003cf7c8
 
 ## <a name="function-call-timeline"></a>函数调用时间线
 
-单击 " **+ 添加时间线**"，并填写函数搜索字符串的 `DisplayGreeting!GetCppConGreeting`。
+单击 " **+ 添加时间线**"，并填写 `DisplayGreeting!GetCppConGreeting` 函数搜索字符串的。
 
 "开始位置和结束位置" 复选框指示跟踪中函数调用的开始和结束。
 
@@ -239,8 +239,24 @@ dx @$cursession.TTD.Calls("DisplayGreeting!GetCppConGreeting")[0x0]
 
 查看其他关联和查找可能不需要的东西的功能，将时间线工具与使用命令行命令与时间跟踪跟踪进行交互。
 
+## <a name="timeline-bookmarks"></a>时间线书签
+
+在 WinDbg 将重要的时间旅行位置做成书签，而不是手动将位置粘贴到记事本。 使用书签，可以更轻松地查看相对于其他事件的跟踪中的不同位置，并为其添加批注。
+
+可以为书签提供描述性名称。
+
+![显示问候语应用中第一个 api 调用的示例名称的 "新建书签" 对话框](images/windbgx-timeline-bookmark-new.png)
+
+通过 *> 时间线视图*中提供的 "时间线" 窗口访问书签。 当您将鼠标悬停在某个书签上方时，它将显示书签名称。
+
+![显示在一个显示书签名称的书签上方的三个书签的时间线](images/windbgx-timeline-bookmarks.png)
+
+您可以右键单击书签以到达该位置，重命名或删除书签。
+
+![书签右键单击显示旅行以定位编辑和删除的弹出菜单](images/windbgx-timeline-bookmark-edit.png)
+
 ### <a name="see-also"></a>另请参阅
 
-[使用 WinDbg Preview 进行调试](debugging-using-windbg-preview.md)
+[使用 WinDbg 预览版进行调试](debugging-using-windbg-preview.md)
 
 [行程调试演练](time-travel-debugging-walkthrough.md)

@@ -1,5 +1,5 @@
 ---
-title: 使用设备接口
+title: 使用设备接口（WDF）
 description: 使用设备接口
 ms.assetid: 98199220-947e-462e-a50c-85d81ca50108
 keywords:
@@ -9,14 +9,14 @@ keywords:
 - 设备接口类 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19d76515a1ec5e9cf28f844a21abb5bfce23363e
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: c232576ed3602cb3006f97611e68586a61937e28
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769453"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141326"
 ---
-# <a name="using-device-interfaces"></a>使用设备接口
+# <a name="using-device-interfaces-wdf"></a>使用设备接口（WDF）
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_CLEANUP
+title: IRP_MJ_CLEANUP （IFS）
 description: IRP\_MJ\_CLEANUP
 ms.assetid: e4593d99-a721-4ab1-82a5-b32b9c312b25
 keywords:
@@ -12,22 +12,22 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d5445f23119142ce222be4fefd7aa7da0ffc904
-ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
+ms.openlocfilehash: c40dd8c42f6066e79683f1413b5933496299b47d
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977690"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141315"
 ---
-# <a name="irp_mj_cleanup"></a>IRP\_MJ\_CLEANUP
+# <a name="irp_mj_cleanup-ifs"></a>IRP \_ MJ \_ 清除（IFS）
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-收到 IRP\_MJ\_清除请求时，表示文件对象上的句柄引用计数已达到零。 （换言之，已关闭文件对象的所有句柄。）通常，在用户模式应用程序将最后一个未完成的句柄上的 Microsoft Win32 **CloseHandle**函数（或一个内核模式驱动程序调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)）调用到文件对象时，会发送该函数。
+收到 IRP \_ MJ \_ 清除请求表示文件对象上的句柄引用计数已达到零。 （换言之，已关闭文件对象的所有句柄。）通常，在用户模式应用程序将最后一个未完成的句柄上的 Microsoft Win32 **CloseHandle**函数（或一个内核模式驱动程序调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)）调用到文件对象时，会发送该函数。
 
-需要注意的是，当某个文件对象的所有句柄都已关闭时，这并不一定表示该文件对象不再被使用。 诸如缓存管理器和内存管理器这样的系统组件可能会保留对文件对象的未处理引用。 即使在收到 IRP\_MJ\_清除请求之后，这些组件仍可以从文件读取或写入文件。
+需要注意的是，当某个文件对象的所有句柄都已关闭时，这并不一定表示该文件对象不再被使用。 诸如缓存管理器和内存管理器这样的系统组件可能会保留对文件对象的未处理引用。 即使在 \_ 收到 IRP MJ 清除请求之后，这些组件仍可以从文件读取或写入文件 \_ 。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
@@ -43,9 +43,9 @@ ms.locfileid: "76977690"
 
 否则，筛选器驱动程序应在执行任何所需的处理后将 IRP 向下传递到堆栈中的下一个较低的驱动程序。
 
-文件系统筛选器驱动程序编写器应注意到， [**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)导致 IRP\_MJ\_清理请求发送到卷的文件系统驱动程序堆栈。 由于文件系统通常会将流文件对象创建为 IRP\_MJ\_CREATE 以外的操作的副作用，因此筛选器驱动程序很难可靠地检测流文件对象创建。 因此，筛选器驱动程序应该接收 IRP\_MJ\_清理和 IRP\_MJ\_关闭以前不可见的文件对象的请求。
+文件系统筛选器驱动程序编写器应注意到， [**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)导致 IRP \_ MJ \_ 清理请求被发送到卷的文件系统驱动程序堆栈。 由于文件系统通常会将流文件对象创建为 IRP MJ create 以外的操作的副作用 \_ \_ ，因此筛选器驱动程序很难可靠地检测流文件对象创建。 因此，筛选器驱动程序应该接收 IRP \_ mj \_ 清除和 irp \_ mj \_ 关闭请求，以获取以前不可见的文件对象。
 
-筛选器驱动程序编写器还应注意，与[**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)不同， [**IoCreateStreamFileObjectLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)不会导致 IRP\_MJ\_清理请求发送到文件系统驱动程序堆栈。 出于此原因，由于文件系统通常会将流文件对象创建为 IRP\_MJ\_CREATE 以外的操作的副作用，因此筛选器驱动程序很难可靠地检测流文件对象创建。 因此，筛选器驱动程序应该接收 IRP\_MJ\_关闭对之前不可见的文件对象的请求。
+筛选器驱动程序编写器还应注意，与[**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)不同， [**IoCreateStreamFileObjectLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)不会导致 IRP \_ MJ \_ 清理请求发送到文件系统驱动程序堆栈。 出于此原因，和由于文件系统通常会将流文件对象创建为 IRP MJ create 以外的操作的副作用 \_ \_ ，因此筛选器驱动程序很难可靠地检测流文件对象创建。 因此，筛选器驱动程序应该接收 IRP \_ MJ \_ 关闭请求，才能获得以前不可见的文件对象。
 
 ## <a name="parameters"></a>参数
 
@@ -55,27 +55,27 @@ ms.locfileid: "76977690"
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
 
-<a href="" id="irp--flags"></a>*Irp-&gt;标志*  
+<a href="" id="irp--flags"></a>*Irp- &gt; 标志*  
 已为此请求设置以下标志：
 
-IRP\_关闭\_操作
+IRP \_ 关闭 \_ 操作
 
-IRP\_同步\_API
+IRP \_ 同步 \_ API
 
-<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。
+<a href="" id="irp--iostatus"></a>*Irp- &gt;IoStatus*指向[**IO \_ 状态 \_ 块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构的指针，该结构接收最终完成状态和有关请求的操作的信息。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*指向与*DeviceObject*关联的文件对象的指针。
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt;* 指向与*DeviceObject*关联的文件对象的 FileObject 指针。
 
-*&gt;IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理 IRP\_MJ\_清除期间无效，不应使用。
+*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的**RelatedFileObject**字段在 \_ 处理 IRP \_ MJ 清除期间无效 \_ ，不应使用。
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*指定 IRP\_MJ\_清除。
+<a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt;MajorFunction*指定 IRP \_ MJ \_ 清理。
 
 ## <a name="see-also"></a>另请参阅
 
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
+[**IO \_ 堆栈 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
+[**IO \_ 状态 \_ 块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
 [**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)
 
@@ -85,11 +85,11 @@ IRP\_同步\_API
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_清除（WDK 内核引用）** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)
+[**IRP \_ MJ \_ 清除（WDK 内核引用）**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)
 
-[**IRP\_MJ\_关闭**](irp-mj-close.md)
+[**IRP \_ MJ \_ 关闭**](irp-mj-close.md)
 
-[**IRP\_MJ\_创建**](irp-mj-create.md)
+[**IRP \_ MJ \_ 创建**](irp-mj-create.md)
 
 [**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)
 

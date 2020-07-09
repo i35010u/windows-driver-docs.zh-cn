@@ -45,7 +45,7 @@ HRESULT PrintedPageCount(
 
 此方法返回**HRESULT**值。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 **PrintedPageCount**是读/写方法。 IHV JavaScript **writeData**函数应将打印页计数保持为最新状态，以允许 USBMon 设置作业的正确进度。
 
@@ -61,7 +61,7 @@ HRESULT PrintedPageCount(
 
 **目标平台：** 机
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
 

@@ -1,5 +1,5 @@
 ---
-title: 控制设备访问权限
+title: 控制设备访问（WDM）
 description: 控制设备访问权限
 ms.assetid: b5e562ad-573b-4b0f-9d85-2410fda16e4e
 keywords:
@@ -10,14 +10,14 @@ keywords:
 - 安全描述符 WDK 设备对象
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b888be585678f8ca1877d527a5369fb94eef767b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df64a4461f4768aab2c73b358b60274eae0b974e
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828511"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141271"
 ---
-# <a name="controlling-device-access"></a>控制设备访问权限
+# <a name="controlling-device-access-wdm"></a>控制设备访问（WDM）
 
 
 
@@ -43,7 +43,7 @@ ms.locfileid: "72828511"
 
 3.  否则，PnP 管理器保留每个对象的默认安全描述符不变。 在这种情况下，堆栈的默认安全描述符由 PDO 的设备类型和设备特征确定。
 
-对于大多数设备类型和特征，默认的安全描述符会向管理员提供完全访问权限（通用\_全部）、读取、写入和执行访问（一般\_读取 |泛型\_写入 |一般\_执行）对其他人的访问权限。
+对于大多数设备类型和特征，默认的安全描述符会向管理员提供完全访问权限（一般 \_ 全部）、读取、写入和执行访问（通用 \_ 读取 |泛型 \_ 写入 |一般 \_ 执行）对其他人的访问权限。
 
 有关如何在注册表中设置设备或设备安装程序类的安全描述符的详细信息，请参阅在[注册表中设置设备对象属性](setting-device-object-properties-in-the-registry.md)。
 

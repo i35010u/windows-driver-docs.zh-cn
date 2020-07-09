@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOMODE
-description: KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOMODE 属性允许子模式进行配置。
+title: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE （submode）
+description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE 属性允许配置 submode。
 ms.assetid: B5BE7B11-66FD-476C-8141-C2210B21133C
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE 流式处理媒体设备
+- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE 流媒体设备
 topic_type:
 - apiref
 api_name:
@@ -12,33 +12,33 @@ api_location:
 - Ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 09/11/2018
+ms.date: 07/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dc6d1c9c9a16088fb7579f9e7fd8c7ba85d2af60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8a6d32664d43cd069c47ec0fe0350e6f6bf0cbd
+ms.sourcegitcommit: 8b6d83bcedea8c872ec8c7df874344421a39dd57
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324804"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86128888"
 ---
-# <a name="kspropertycameracontrolextendedphotomode"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOMODE
+# <a name="ksproperty_cameracontrol_extended_photomode-submode"></a>KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE （submode）
 
-KSPROPERTY\_CAMERACONTROL\_扩展\_PHOTOMODE 属性允许子模式进行配置。
+KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ PHOTOMODE 属性允许配置 submode。
 
 ## <a name="usage-summary"></a>使用情况摘要
 
-以下 submodes 定义，如下所示。
+以下 submodes 的定义如下。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_PHOTOMODE_SEQUENCE_SUB_NONE       0x00000000
 #define KSCAMERA_EXTENDEDPROP_PHOTOMODE_SEQUENCE_SUB_VARIABLE   0x00000001
 ```
 
-KSCAMERA\_EXTENDEDPROP\_PHOTOMODE\_序列\_SUB\_无由正则照片序列。
+\_ \_ \_ \_ \_ 常规照片序列将使用 KSCAMERA EXTENDEDPROP PHOTOMODE 序列 SUB NONE。
 
-KSCAMERA\_EXTENDEDPROP\_PHOTOMODE\_序列\_SUB\_变量用于指示照片序列是变量。 如果指定每个帧设置，KSCAMERA\_EXTENDEDPROP\_PHOTOMODE\_序列\_SUB\_将 KSCAMERA 的子模式字段中指定变量标志\_EXTENDEDPROP\_PHOTOMODE 结构来指示变量照片序列，即使没有项目设置中指定 （项计数为 0 表示所有帧）。 当帧计数为 1 和项的计数为 0 时，变量照片序列可以减少到一帧变量照片序列使用全局设置。
+KSCAMERA \_ EXTENDEDPROP \_ PHOTOMODE \_ sequence \_ 子 \_ 变量用于指示照片序列是可变的。 如果指定了每帧设置，则 \_ \_ \_ \_ \_ 将在 KSCAMERA EXTENDEDPROP PHOTOMODE 结构的 submode 字段中指定 KSCAMERA EXTENDEDPROP PHOTOMODE SEQUENCE 子变量标志 \_ ， \_ 以指示可变照片序列，即使未指定任何项目设置（对于所有帧，项计数为0）。 当帧计数为1并且项计数为0时，可变照片序列会使用全局设置减少为一个帧可变照片序列。
 
-下面是一个定义 KSCAMERA\_EXTENDEDPROP\_PHOTOMODE ksmedia.h 中定义的结构
+下面是 KSCAMERA \_ \_ 中定义的 EXTENDEDPROP PHOTOMODE 结构的定义：
 
 ```cpp
 typedef struct tagKSCAMERA_EXTENDEDPROP_PHOTOMODE {  
@@ -49,33 +49,22 @@ typedef struct tagKSCAMERA_EXTENDEDPROP_PHOTOMODE {
 } KSCAMERA_EXTENDEDPROP_PHOTOMODE, *PKSCAMERA_EXTENDEDPROP_PHOTOMODE;
 ```
 
-变量照片序列模式上的照片序列具有以下独特的特征。
+可变照片序列模式对于照片序列具有以下独特特征。
 
--   始终使用有限的照片序列。
+- 始终使用有限照片序列。
 
--   每帧的帧计数大于 0 时，会应用设置。
+- 帧计数大于0时应用每帧设置。
 
--   该驱动程序将自动停止照片序列末尾而无需 KS\_VideoControlFlag\_指定 StopPhotoSequenceCapture 触发器时循环计数大于 0。
+- \_ \_ 如果指定的循环计数大于0，则驱动程序将在结束时自动停止照片序列，而无需使用 KS VideoControlFlag StopPhotoSequenceCapture 触发器。
 
--   最后一个示例必须标有 KSSTREAM\_标头\_OPTIONSF\_ENDOFPHOTOSEQUENCE 标志。
+- 最后一个示例必须标记有 KSSTREAM \_ 标头 \_ OPTIONSF \_ ENDOFPHOTOSEQUENCE 标志。
 
--   捕获管道从驱动程序将不删除任何示例。
+- 捕获管道不会从驱动程序中删除任何示例。
 
--   管道和驱动程序都不\\MFT0 生成任何照片的缩略图。
+- 管道和驱动程序都不会 \\ 生成任何照片缩略图。 MFT0
 
-此属性是异步的不取消。
+此属性是异步的，不可取消。
 
 ## <a name="requirements"></a>要求
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h</td>
-</tr>
-</tbody>
-</table>
+**标头：** Ksmedia （包括 Ksmedia）

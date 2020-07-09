@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_SET_INFORMATION
+title: IRP_MJ_SET_INFORMATION （IFS）
 description: IRP\_MJ\_SET\_INFORMATION
 ms.assetid: cc1b539c-8d39-4f4d-93b1-ce9fcdb8c555
 keywords:
@@ -12,20 +12,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c834b9a5af5d0cbceab057523d94df06c5c2a30
-ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
+ms.openlocfilehash: b116945fa0ab3b1681179a61d6aa47bc8b6029a2
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977656"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141233"
 ---
-# <a name="irp_mj_set_information"></a>IRP\_MJ\_SET\_INFORMATION
+# <a name="irp_mj_set_information-ifs"></a>IRP \_ MJ \_ 集 \_ 信息（IFS）
 
 
 ## <a name="when-sent"></a>发送时间
 
 
-IRP\_MJ\_集\_信息请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 例如，可以在用户模式应用程序调用 Microsoft Win32 函数（如**SetEndOfFile** ）或内核模式组件调用[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)时发送。
+IRP \_ MJ \_ 集 \_ 信息请求由 i/o 管理器和其他操作系统组件以及其他内核模式驱动程序发送。 例如，可以在用户模式应用程序调用 Microsoft Win32 函数（如**SetEndOfFile** ）或内核模式组件调用[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)时发送。
 
 ## <a name="operation-file-system-drivers"></a>操作：文件系统驱动程序
 
@@ -67,40 +67,40 @@ FileValidDataLengthInformation
 <a href="" id="deviceobject"></a>*DeviceObject*  
 指向目标设备对象的指针。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp. SystemBuffer*  
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp- &gt;AssociatedIrp.SystemBuffer*  
 指向包含要设置的文件或目录信息的输入缓冲区的指针。 此信息存储在以下结构之一中：
 
-[**文件\_分配\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
+[**文件 \_ 分配 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
 
-[**文件\_基本\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)
+[**文件 \_ 基本 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)
 
-[**文件\_处置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)
+[**文件 \_ 处置 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)
 
-[**文件\_结束\_\_文件\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)
+[**文件 \_ 末尾 \_ 的 \_ 文件 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)
 
-[**文件\_链接\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)
+[**文件 \_ 链接 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)
 
-[**文件\_位置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)
+[**文件 \_ 位置 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)
 
-[**文件\_重命名\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)
+[**文件 \_ 重命名 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)
 
-[**文件\_有效的\_数据\_长度\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
+[**文件 \_ 有效的 \_ 数据 \_ 长度 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
 
-<a href="" id="irp--iostatus"></a>*Irp-&gt;IoStatus*指向[**IO\_状态的指针\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构，它接收最终完成状态和有关请求的操作的信息。 有关详细信息，请参阅[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)的*IoStatusBlock*参数说明。
+<a href="" id="irp--iostatus"></a>*Irp- &gt;IoStatus*指向[**IO \_ 状态 \_ 块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)结构的指针，该结构接收最终完成状态和有关请求的操作的信息。 有关详细信息，请参阅[**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)的*IoStatusBlock*参数说明。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*指向与*DeviceObject*关联的文件对象的指针。
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt;* 指向与*DeviceObject*关联的文件对象的 FileObject 指针。
 
-*&gt;IrpSp FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件\_对象结构。 文件\_对象结构的**RelatedFileObject**字段在处理 IRP\_MJ\_设置\_信息时无效，不应使用。
+*IrpSp- &gt; FileObject*参数包含指向**RelatedFileObject**字段的指针，该字段也是文件 \_ 对象结构。 文件对象结构的**RelatedFileObject**字段在 \_ 处理 IRP \_ MJ 集信息期间无效 \_ \_ ，不应使用。
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*指定 IRP\_MJ\_设置\_信息。
+<a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt;MajorFunction*指定 IRP \_ MJ \_ 集 \_ 信息。
 
-<a href="" id="irpsp--parameters-setfile-advanceonly"></a>*IrpSp-&gt;参数. SetFile. AdvanceOnly*文件结尾操作的标志。 这会确定在**FileInformationClass** == **FileEndOfFileInformation**时，使用**EndOfFile**成员[**文件\_端\_\_文件\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)结构。 如果**为 TRUE**，则仅当文件增加当前有效数据长度时，才从**EndOfFile**设置新的有效数据长度。 如果**为 FALSE**，则从**EndOfFile**设置新的文件大小。
+<a href="" id="irpsp--parameters-setfile-advanceonly"></a>*IrpSp- &gt;SetFile. AdvanceOnly*用于文件结束操作的标志。 这会确定在**FileInformationClass**FileEndOfFileInformation 时，使用**EndOfFile**成员[**文件的 \_ \_ \_ 文件 \_ 结尾**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)  ==  **FileEndOfFileInformation**。 如果**为 TRUE**，则仅当文件增加当前有效数据长度时，才从**EndOfFile**设置新的有效数据长度。 如果**为 FALSE**，则从**EndOfFile**设置新的文件大小。
 
-<a href="" id="irpsp--parameters-setfile-clustercount"></a>*IrpSp-&gt;参数. SetFile. ClusterCount*保留供系统使用。
+<a href="" id="irpsp--parameters-setfile-clustercount"></a>*IrpSp- &gt;SetFile*保留供系统使用。
 
-<a href="" id="irpsp--parameters-setfile-deletehandle"></a>*IrpSp-&gt;参数. SetFile. DeleteHandle*保留供系统使用。
+<a href="" id="irpsp--parameters-setfile-deletehandle"></a>*IrpSp- &gt;SetFile*保留供系统使用。
 
-<a href="" id="irpsp--parameters-setfile-fileinformationclass"></a>*IrpSp-&gt;参数. SetFile. FileInformationClass*指定要为文件设置的信息类型。 下列情况之一：
+<a href="" id="irpsp--parameters-setfile-fileinformationclass"></a>*IrpSp- &gt;SetFile. FileInformationClass*指定要为文件设置的信息类型。 下列情况之一：
 
 <table>
 <colgroup>
@@ -109,7 +109,7 @@ FileValidDataLengthInformation
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
+<th align="left">值</th>
 <th align="left">含义</th>
 </tr>
 </thead>
@@ -151,11 +151,11 @@ FileValidDataLengthInformation
 
  
 
-<a href="" id="irpsp--parameters-setfile-fileobject"></a>*IrpSp-&gt;SetFile*用于重命名或链接操作。 如果*irp&gt;SystemBuffer&gt;文件名*包含完全限定的文件名，或者*Irp-&gt;AssociatedIrp SystemBuffer-&gt;RootDirectory*为非**NULL**，则此成员是作为操作目标的文件的父目录的文件对象指针。 否则为**NULL**。
+<a href="" id="irpsp--parameters-setfile-fileobject"></a>*IrpSp- &gt;* 用于重命名或链接操作的 SetFile。 如果*irp &gt;AssociatedIrp.SystemBuffer &gt; *包含完全限定的文件名，或者*irp- &gt;AssociatedIrp.SystemBuffer- &gt; RootDirectory*为非**NULL**，则此成员是作为操作目标的文件的父目录的文件对象指针。 否则为**NULL**。
 
-<a href="" id="irpsp--parameters-setfile-length"></a>*IrpSp-&gt;参数. SetFile. 长度*Irp 所指向的缓冲区的长度（以字节为单位） *-&gt;AssociatedIrp. SystemBuffer*。
+<a href="" id="irpsp--parameters-setfile-length"></a>*IrpSp- &gt;SetFile* * &gt; temBuffer 所AssociatedIrp.Sys*指向的缓冲区的长度（以字节为单位）。
 
-<a href="" id="irpsp--parameters-setfile-replaceifexists"></a>*IrpSp-&gt;参数. SetFile. ReplaceIfExists*如果设置为**TRUE** ，则指定如果已存在具有相同名称的文件，则应将其替换为给定的文件。 如果重命名操作在已存在具有给定名称的文件时失败，则设置为**FALSE** 。
+<a href="" id="irpsp--parameters-setfile-replaceifexists"></a>*IrpSp- &gt;SetFile*设置为**TRUE** ，以指定如果已存在具有相同名称的文件，则应将其替换为给定的文件。 如果重命名操作在已存在具有给定名称的文件时失败，则设置为**FALSE** 。
 
 <a name="remarks"></a>备注
 -------
@@ -165,31 +165,31 @@ FileValidDataLengthInformation
 ## <a name="see-also"></a>另请参阅
 
 
-[**文件\_分配\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
+[**文件 \_ 分配 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
 
-[**文件\_基本\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)
+[**文件 \_ 基本 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)
 
-[**文件\_处置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)
+[**文件 \_ 处置 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)
 
-[**文件\_结束\_\_文件\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)
+[**文件 \_ 末尾 \_ 的 \_ 文件 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_end_of_file_information)
 
-[**文件\_链接\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)
+[**文件 \_ 链接 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_link_information)
 
-[**文件\_位置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)
+[**文件 \_ 位置 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_position_information)
 
-[**文件\_重命名\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)
+[**文件 \_ 重命名 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_rename_information)
 
-[**文件\_有效的\_数据\_长度\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
+[**文件 \_ 有效的 \_ 数据 \_ 长度 \_ 信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_valid_data_length_information)
 
-[**IO\_堆栈\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
+[**IO \_ 堆栈 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
+[**IO \_ 状态 \_ 块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
 [**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_查询\_信息**](irp-mj-query-information.md)
+[**IRP \_ MJ \_ 查询 \_ 信息**](irp-mj-query-information.md)
 
 [**ZwSetInformationFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntsetinformationfile)
 

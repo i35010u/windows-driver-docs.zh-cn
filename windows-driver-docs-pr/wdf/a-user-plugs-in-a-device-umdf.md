@@ -1,5 +1,5 @@
 ---
-title: 用户插入设备
+title: 用户插入设备（UMDF 1）
 description: 用户插入设备
 ms.assetid: 1968270b-ce57-4a8c-8b7a-bbd4a972435d
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - 插入设备方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64c5ccdaa14cdee12c6250133683dc0ba1b79745
-ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
+ms.openlocfilehash: e124fb0eaf75b66557abb05f56592f8b7d1967b4
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421380"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141240"
 ---
-# <a name="a-user-plugs-in-a-device"></a>用户插入设备
+# <a name="a-user-plugs-in-a-device-umdf-1"></a>用户插入设备（UMDF 1）
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

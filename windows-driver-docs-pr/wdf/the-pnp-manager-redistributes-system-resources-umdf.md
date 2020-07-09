@@ -1,5 +1,5 @@
 ---
-title: PnP 管理器重新分发系统资源
+title: PnP 管理器重新分发系统资源（UMDF 1）
 description: PnP 管理器重新分发系统资源
 ms.assetid: c8e6277b-b1e5-449f-b5a0-f5a46b46e56e
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - 重新分发系统资源方案 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df830c62538799d67c7faafd66e19e71a494f892
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: b97df9ba28892a51fce9c5c5b53528bd6d3a6e1a
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210825"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141341"
 ---
-# <a name="the-pnp-manager-redistributes-system-resources"></a>PnP 管理器重新分发系统资源
+# <a name="the-pnp-manager-redistributes-system-resources-umdf-1"></a>PnP 管理器重新分发系统资源（UMDF 1）
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "75210825"
 
 若要查看显示这些步骤的关系图，请参阅[断开 a 设备中用户](a-user-unplugs-a-device.md)的有序删除图形。
 
-<a href="" id="power-up-sequence-------"></a>**开机序列**   
+<a href="" id="power-up-sequence-------"></a>**通电顺序**   
 对于支持设备的每个基于 UMDF 的函数和筛选器驱动程序，框架按顺序执行以下操作，一次一个驱动程序，从驱动程序堆栈中最低的驱动程序开始：
 
 1.  框架调用驱动程序的[**IPnpCallbackHardware：： OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)回调函数（如果存在），传递 PnP 管理器已分配给设备的硬件资源的列表。

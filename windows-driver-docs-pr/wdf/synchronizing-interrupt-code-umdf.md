@@ -1,17 +1,17 @@
 ---
-title: 同步中断代码
+title: 同步中断代码（UMDF 1）
 description: 同步中断代码
 ms.assetid: 5E2D0063-2251-40B3-8982-46001E67EB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da2931c7e1e4756c71adb79e5686980386bd1561
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: ab78ca72a19f8d0df956b103f71eb49c555a17e5
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210829"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141337"
 ---
-# <a name="synchronizing-interrupt-code"></a>同步中断代码
+# <a name="synchronizing-interrupt-code-umdf-1"></a>同步中断代码（UMDF 1）
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "75210829"
 
 UMDF 驱动程序可以通过调用[**IWDFDeviceInitialize：： SetLockingConstraint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint) ，并将*LockType*参数设置为**WdfDeviceLevel**，来请求自动回拨同步。
 
-然后，在调用[**CreateInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)之前，驱动程序将其[**WUDF\_中断\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)结构的**AutomaticSerialization**成员设置为**TRUE** 。
+然后，在调用[**CreateInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)之前，驱动程序将其[**WUDF \_ 中断 \_ 配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)结构的**AutomaticSerialization**成员设置为**TRUE** 。
 
 因此，UMDF 使用 i/o 队列、请求取消和文件对象回调例程序列化驱动程序的[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)回调。 在这种情况下，UMDF 使用回调锁，而不是按中断对象锁。
 
