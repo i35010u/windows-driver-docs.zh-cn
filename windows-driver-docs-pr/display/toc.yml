@@ -616,6 +616,8 @@
           href: specialized-monitors.md
         - name: HMD 和专用监视器的 EDID 扩展
           href: specialized-monitors-edid-extension.md
+        - name: 为 HMD 和专用监视器生成自定义排版应用
+          href: specialized-monitors-compositor.md
     - name: 多个监视器和视频呈现网络
       items:
         - name: 多个监视器和视频呈现网络
