@@ -4,12 +4,12 @@ description: Microsoft 硬件 API 中的这些方法可获取注册到开发人�
 ms.topic: article
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d591e217b677454753aac7efef13c06cf11726
-ms.sourcegitcommit: 2efaa8f233b1d19e18faa3387a9c11ef69fe790f
+ms.openlocfilehash: 9c249cbfdbcda158190c10bea937317e24dd156c
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777894"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020024"
 ---
 # <a name="get-product-data"></a>获取产品数据
 
@@ -64,7 +64,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
   "isFlightSign": false,
   "marketingNames": [
     "marketing name 1",
-    " marketing name 2"
+    "marketing name 2"
 ],
   "productName": "product name",
   "selectedProductTypes": {
@@ -77,7 +77,7 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
   ],
   "additionalAttributes": {},
   "testHarness": "hlk",
-  " announcementDate ": "2016-10-22T00:00:00Z",
+  "announcementDate": "2016-10-22T00:00:00Z",
 }
 ```
 
@@ -111,9 +111,9 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
   "id": 1152921504621442000,
   "productId": 13635057453741328,
    "workflowStatus": {
-      "currentStep": " finalizeIngestion",
-      " state": " completed",
-      " messages": []
+      "currentStep": "finalizeIngestion",
+      "state": "completed",
+      "messages": []
     },
   "links": [
     {
@@ -152,9 +152,9 @@ https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 
 ```json
 {
-      "currentStep": " finalizeIngestion",
-      " state": " completed",
-      " messages": []
+      "currentStep": "finalizeIngestion",
+      "state": "completed",
+      "messages": []
     }
 ```
 

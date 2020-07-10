@@ -4,12 +4,12 @@ title: Windows 驱动程序入门
 description: 使用 Windows 驱动程序，可以创建一个同时在 Windows 10X 和 Windows 桌面版中运行的驱动程序。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2039ae8d30b9de3f55aa8e52f80441ba6e1c854
-ms.sourcegitcommit: 9fe9c8309690fd8fe7af50865d3ac216887ab922
+ms.openlocfilehash: da9e24d9f24bccd7742cfcfec628b9284f9fda5f
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85071689"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141274"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows 驱动程序入门
 
@@ -38,7 +38,7 @@ Windows 驱动程序在所有 Window 10 变体中运行，其中包括 Windows 1
 
 下表总结了上述区别：
 
-|                                                                     |Windows 驱动程序|Windows 桌面驱动程序 |
+|     功能                                                         |Windows 驱动程序|Windows 桌面驱动程序 |
 | --------------------------------------------------------------------|:-------------:|:----------------------:|
 | 在 Windows 10 桌面版中运行                                           | 是           | 是                    |
 | 在 Windows 10X 中运行                                                  | 是           | 否                     |
