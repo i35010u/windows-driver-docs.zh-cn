@@ -4,12 +4,12 @@ description: 从 Windows 10 开始，可以通过提供名为扩展 INF 的其�
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04bc03a97e0efb611e58ddbd20e1b756b0d43c29
-ms.sourcegitcommit: ed28d54b986933ce1ab810df361269675e216e33
+ms.openlocfilehash: d354ee7facb4b3d09addfc1812a8f54afc4b087e
+ms.sourcegitcommit: 5148f4ff682a2d9cdf5eafdb76e13400331f5660
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765947"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86272974"
 ---
 # <a name="using-an-extension-inf-file"></a>使用扩展 INF 文件
 
@@ -38,6 +38,8 @@ ms.locfileid: "84765947"
 ## <a name="how-extension-inf-and-base-inf-work-together"></a>扩展 INF 和基本 INF 如何协同工作
 
 扩展 INF 中的设置在基础 INF 中的设置后应用。 因此，如果扩展 INF 和基本 INF 指定了相同的设置，则会应用扩展 INF 中的版本。 同样，如果基本 INF 发生更改，扩展 INF 仍保留，并应用于新的基本 INF。
+
+在描述哪些项可以重写，以及适用的参数值范围和约束的基本 INF 中包含注释很有用。
 
 ## <a name="specifying-extensionid"></a>指定 ExtensionId
 
@@ -82,7 +84,7 @@ ms.locfileid: "84765947"
 
 请注意，组织可能仅使用其拥有的**ExtensionID** 。  有关注册扩展 ID 的信息，请参阅[Windows 硬件开发人员中心仪表板中的管理硬件提交](../dashboard/manage-your-hardware-submissions.md)。     
 
-3.  如果要更新扩展 INF，请将**ExtensionId**保持不变，并递增[**DriverVer**](inf-driverver-directive.md)指令指定的版本或日期（或两者）。 对于给定的**ExtensionId**值，PnP 选择具有最高**DriverVer**的 INF。
+3.  如果要更新扩展 INF，请将**ExtensionId**保留不变，并递增 (或[**) 的版本**](inf-driverver-directive.md)或日期，或同时指定这两个。 对于给定的**ExtensionId**值，PnP 选择具有最高**DriverVer**的 INF。
 
 >[!NOTE]
 > 如果扩展 INF 面向 Windows 10 S，请参阅[S 模式下的 windows 10 驱动程序要求](https://docs.microsoft.com/windows-hardware/drivers/install/windows10sdriverrequirements)，了解有关该版本 Windows 的驱动程序安装的信息。
@@ -97,6 +99,8 @@ ms.locfileid: "84765947"
     或者，扩展 INF 可能会列出与基本 INF 相同的硬件 ID，例如，如果设备的目标非常窄，或者基本 INF 已列出最具体的硬件 ID。
     
     在某些情况下，扩展 INF 可能提供不太具体的设备 ID （例如兼容的 ID），以便在更广泛的设备集中自定义设置。
+
+    如果由四个部分组成的硬件 ID 是不可能的，或者没有足够的限制，则可以使用[子目标](https://docs.microsoft.com/windows-hardware/drivers/bringup/target-a-system-using-chid)。
 
 5.  不要使用定义服务 `SPSVCINST_ASSOCSERVICE` 。  但是，扩展 INF 可以定义其他服务，例如设备的筛选器驱动程序。  有关指定服务的详细信息，请参阅[**INF AddService 指令**](inf-addservice-directive.md)。
 
@@ -113,7 +117,7 @@ ms.locfileid: "84765947"
 
 ## <a name="example-1-using-an-extension-inf-to-set-the-device-friendly-name"></a>示例1：使用扩展 INF 设置设备友好名称
 
-在一个常见的方案中，设备制造商（IHV）提供基础驱动程序和基本 INF，然后系统构建者（OEM）提供一个扩展 INF，在某些情况下会替代基本 INF 的配置和设置。  以下代码片段是一个完整的扩展 INF，演示如何设置设备友好名称。
+在常见方案中，设备制造商 (IHV) 提供基础驱动程序和基本 INF，然后系统构建商 (OEM) 提供一个扩展 INF，在某些情况下会替代基本 INF 的配置和设置。  以下代码片段是一个完整的扩展 INF，演示如何设置设备友好名称。
 
 ```cpp
 [Version]
@@ -233,6 +237,23 @@ REG_EXPAND_SZ = 0x00020000
 FLG_ADDREG_KEYONLY = 0x00000010
 ```
 有关如何使用扩展 INF 安装筛选器驱动程序的信息，请参阅[设备筛选器驱动程序顺序](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)。
+
+若要改善扩展性，建议使用 IHV 将可选功能置于[扩展 INF 模板](using-an-extension-inf-file-template.md)中。
+
+## <a name="backward-compatibility"></a>向后兼容性
+
+对基本 INF 所做的任何更改都必须经过全面测试，以确保它不会中断现有扩展 Inf 的向后兼容性。
+
+管理基本 INF 时，请遵循以下最佳做法：
+
+* 文档参数值范围和约束都在代码注释和设计文档中。 将来的更改必须符合指定的范围。
+* 若要支持新范围，请添加一个可选参数， () 没有默认值。
+
+如果 IHV 将所有功能放在基本 INF 中，则可以通过以下方法确保现有扩展 Inf 继续工作：
+
+1. IHV 提供一个助理应用，用于设置一个注册表标志，默认情况下禁用可选功能。
+2. 基本驱动程序在使用可选功能之前检查是否已启用标志。
+3. OEM 提供的扩展 INF 可通过将标志设置为启用来选择加入。
 
 ##  <a name="submitting-an-extension-inf-for-certification"></a>提交用于认证的扩展 INF
 

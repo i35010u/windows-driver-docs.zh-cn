@@ -3,12 +3,12 @@ Description: 为 USB 功能控制器开发 Windows 驱动程序的概述
 title: 为 USB 功能控制器开发 Windows 驱动程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fae4e4aacb28a1cb4ec4b665c0e4cd7c2d3b7e5a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f8fd03bf824f4f910a3bcf36d266fef6f796006b
+ms.sourcegitcommit: 5040ef6a71dffaf2e2749d6533e27b76e5e42f33
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842392"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86269614"
 ---
 # <a name="overview-of-developing-windows-drivers-for-usb-function-controllers"></a>为 USB 功能控制器开发 Windows 驱动程序的概述
 
@@ -21,29 +21,29 @@ ms.locfileid: "72842392"
 <tbody>
 <tr class="odd">
 <td><p><strong>用途</strong></p>
-<p>本部分介绍 Windows 操作系统中的支持，用于开发与 Microsoft 提供的 USB 函数控制器扩展（UFX）通信的通用串行总线（USB）函数控制器驱动程序。</p>
+<p>本部分介绍 Windows 操作系统中的支持，用于开发通用串行总线 (USB) 函数控制器驱动程序，该驱动程序与 Microsoft 提供的 USB 函数控制器扩展 (UFX) 通信。</p>
 <p><strong>开发工具和 Microsoft 提供的二进制文件</strong></p>
-<p>Windows 驱动程序工具包（WDK）包含驱动程序开发所需的资源，如标头、库、工具和示例。</p>
+<p>Windows 驱动程序工具包 (WDK) 包含开发驱动程序所需的资源，如头文件、库、工具和示例。</p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=617155" data-raw-source="[Download kits and tools for Windows](https://go.microsoft.com/fwlink/p/?linkid=617155)">下载适用于 Windows 的工具包和工具</a></p>
-<p>若要编写函数控制器驱动程序，需要：</p>
+<p>Windows 提供了收件箱 USB 函数控制器驱动程序，如 Synopsys IP 控制器硬件的 UfxSynopsys.sys。 它们通常需要平台级别的更改和验证，这些更改通常由硬件合作伙伴或 Oem 在启动平台时执行。 此启动过程可能包括与 ACPI 的集成，以通知系统驱动程序 USB 连接/分离事件，并使用 Microsoft 提供的 HLK 测试执行其他验证。 若要编写自己的控制器驱动程序，需要：</p>
 <ul>
-<li>UFX （Ufx01000）已加载为 FDO。 此驱动程序包含在 Windows 中。</li>
-<li>指向存根库（Ufx01000）的链接。 该存根库在 WDK 中。 库转换由函数控制器驱动程序发出的调用，并将其传递给 UFX。</li>
+<li>UFX ( # A0) 加载为 FDO。 此驱动程序包含在 Windows 中。</li>
+<li>链接到存根库 (Ufx01000) 。 该存根库在 WDK 中。 库转换由函数控制器驱动程序发出的调用，并将其传递给 UFX。</li>
 <li>在 WDK 中包括 Ufxclient。</li>
 </ul>
 <p>若要从用户模式发送请求，需要：</p>
 <ul>
-<li>GenericUSBFn 加载为 USB 函数类驱动程序。 此驱动程序包含在 Windows 中。</li>
+<li>GenericUSBFn.sys 加载为 USB 函数类驱动程序。 此驱动程序包含在 Windows 中。</li>
 <li>在 WDK 中包括 Genericusbfnioctl。</li>
 </ul>
 <p>若要从 USB 类驱动程序发送请求，需要：</p>
 <ul>
-<li>UFX （Ufx01000）已加载为 FDO。 此驱动程序包含在 Windows 中。</li>
+<li>UFX ( # A0) 加载为 FDO。 此驱动程序包含在 Windows 中。</li>
 <li>在 WDK 中包括 Usbfnioctl。</li>
 </ul>
 若要编写一个筛选器驱动程序来处理通过专用充电器进行的充电，需要：
 <ul>
-<li>将 UfxChipidea 或 Ufxsynopsys 作为客户端驱动程序加载到 UFX。</li>
+<li>UfxChipidea.sys 或 Ufxsynopsys.sys 作为客户端驱动程序加载到 UFX。</li>
 <li>在 WDK 中包括 Ufxproprietarycharger。</li>
 </ul></td>
 <td><p><strong>UFX 的体系结构</strong></p>
