@@ -4,16 +4,16 @@ description: 该度量将 7 天滑动窗口中的遥测数据聚合为通信和�
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 318abc2f57cda797b647a9dd6e4b61c90eead082
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: c219625a0ba3882cfeefb8c90a4d89bf2857130a
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336388"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86036020"
 ---
-# <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal"></a>按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标
+# <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal-ecosystem"></a>按使用时间规范化的通信和协作应用程序中用户模式崩溃的次数小于等于基线目标（生态系统）
 
-## <a name="description"></a>说明
+## <a name="description"></a>描述
 
 该度量计算在通信和协作应用程序上下文中发生的显示器驱动程序的崩溃次数，并计算具有更新的驱动程序的所有计算机上此类应用程序的运行时。 然后，该度量按累积应用程序运行时（以年为单位）来规范化崩溃计数（HOART 表示命中应用程序运行时）
 

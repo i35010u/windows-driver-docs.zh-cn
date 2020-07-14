@@ -4,12 +4,12 @@ description: 在 Microsoft 硬件 API 中使用此方法创建新的硬件产品
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bea184cab181b3a92713957d7a643a6164df11
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 31e32fa44d981da56e848bf9fc3ba9e67780fc62
+ms.sourcegitcommit: f68ab92a8f1c13502e070297cf5410f6bbe4a9dc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072182"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86213174"
 ---
 # <a name="create-a-new-product"></a>创建新产品
 
@@ -30,9 +30,9 @@ ms.locfileid: "77072182"
 
 ### <a name="request-header"></a>请求头
 
-| Header | 类型 | 说明 |
+| 标头 | 在任务栏的搜索框中键入 | 描述 |
 |:--|:--|:--|
-| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | accept | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 
@@ -55,7 +55,6 @@ ms.locfileid: "77072182"
   "isTestSign": false,
   "isFlightSign": false,  
   "marketingNames": [],
-  "productName": "VST_apdevtest1",
   "selectedProductTypes": {
     "windows_v100_RS3": "Unclassified"
   },

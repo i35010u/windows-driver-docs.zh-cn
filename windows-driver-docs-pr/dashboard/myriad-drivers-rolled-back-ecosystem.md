@@ -4,16 +4,16 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为大量�
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 12bffc6d4a7d693f4c06688628a6a62e290158fa
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: 4e6c0cf929fcb8ced4e7bcbaef10c51df478dd3e
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84110243"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035997"
 ---
-# <a name="myriad-of-drivers-that-were-rolled-back-or-re-installed-within-2-days-of-installation"></a>在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量
+# <a name="myriad-of-drivers-that-were-rolled-back-or-re-installed-within-2-days-of-installation-ecosystem"></a>在安装后的 2 天内回滚或重新安装的驱动程序的巨大数量（生态系统）
 
-## <a name="description"></a>说明
+## <a name="description"></a>描述
 
 该度量跟踪驱动程序在安装后 2 天内是回滚还是通过安装另一驱动程序才能成功（不由 WU 启动）。 此类操作表示用户遇到足够严重的驱动程序以致于需要使用另一个驱动程序。
 

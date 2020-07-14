@@ -82,6 +82,8 @@
           href: using-a-universal-inf-file.md
         - name: 使用扩展 INF 文件
           href: using-an-extension-inf-file.md
+        - name: 使用扩展 INF 文件模板
+          href: using-an-extension-inf-file-template.md
         - name: 使用 Windows 更新更新设备固件
           href: updating-device-firmware-using-windows-update.md
         - name: INF 节摘要
