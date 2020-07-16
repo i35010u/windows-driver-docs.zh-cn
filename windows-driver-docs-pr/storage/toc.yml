@@ -388,6 +388,8 @@
               href: interlocked-operations-in-storport-miniport-drivers.md
             - name: 注册表项
               href: registry-entries-for-storport-miniport-drivers.md
+            - name: Storport 微型端口驱动程序中的 DMA 重映射支持
+              href: storport-miniport-dma-remapping-support.md
             - name: 升级为 NVMe 设备的固件
               href: upgrading-firmware-for-an-nvme-device.md
             - name: StorNVMe 微型端口驱动程序
