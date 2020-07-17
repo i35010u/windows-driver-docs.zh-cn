@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2a992ae713e7c04ba205ccbcdf2a872b43ad223f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae6b702b53327c48673ac201c0167e8fdeecaea5
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378234"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418562"
 ---
-# <a name="devpkeydevicefirstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
+# <a name="devpkey_device_firstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
 
 
-DEVPKEY_Device_FirstInstallDate 设备属性指定的时间戳时在系统中首次安装设备实例。
+DEVPKEY_Device_FirstInstallDate 设备属性指定设备实例首次安装到系统中时的时间戳。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_Device_FirstInstallDate 设备属性指定的时间戳时在系统中首
 <td align="left"><p><a href="devprop-type-filetime.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_FILETIME&lt;/strong&gt;](devprop-type-filetime.md)"><strong>DEVPROP_TYPE_FILETIME</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问。</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,13 +62,13 @@ DEVPKEY_Device_FirstInstallDate 设备属性指定的时间戳时在系统中首
 <a name="remarks"></a>备注
 -------
 
-Windows 设置 DEVPKEY_Device_FirstInstallDate 的具有指定首次在系统中安装的设备实例的时间戳的值。
+Windows 将 DEVPKEY_Device_FirstInstallDate 的值设置为时间戳，该时间戳指定第一次在系统中安装设备实例的时间。
 
-**请注意**  与不同[ **DEVPKEY_Device_InstallDate** ](devpkey-device-installdate.md)属性，DEVPKEY_Device_FirstInstallDate 属性的值不会更改与每个后续的更新设备驱动程序。 例如，通过 Windows Update 已更新的驱动程序不会更改此属性的值
+**注意**   与[**DEVPKEY_Device_InstallDate**](devpkey-device-installdate.md)属性不同，每次更新设备驱动程序时，DEVPKEY_Device_FirstInstallDate 属性的值不会更改。 例如，通过 Windows 更新更新的驱动程序不会更改此属性的值。
 
  
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_FirstInstallDate 属性的值。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_FirstInstallDate 属性的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,12 +80,12 @@ Windows 设置 DEVPKEY_Device_FirstInstallDate 的具有指定首次在系统中
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>

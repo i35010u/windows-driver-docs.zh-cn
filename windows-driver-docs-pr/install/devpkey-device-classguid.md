@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 35eb2b96a12df929ada5207a96d147c1573cfbf6
-ms.sourcegitcommit: e018ef208a38bc871b25d9fb72c2501fe4a5f965
+ms.openlocfilehash: b51bc01e06d70bbf366695efd0d2e36ac8cde1a9
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77476338"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418499"
 ---
 # <a name="devpkey_device_classguid"></a>DEVPKEY_Device_ClassGuid
 
@@ -31,6 +31,12 @@ DEVPKEY_Device_ClassGuid 设备属性表示设备实例所属的[设备安装程
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,7 +47,7 @@ DEVPKEY_Device_ClassGuid 设备属性表示设备实例所属的[设备安装程
 <td align="left"><p><a href="devprop-type-guid.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_GUID&lt;/strong&gt;](devprop-type-guid.md)"><strong>DEVPROP_TYPE_GUID</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
+<td align="left"><p><strong>和</strong></p></td>
 <td align="left"><p>由安装应用程序和安装程序只读</p></td>
 </tr>
 <tr class="even">
@@ -50,7 +56,7 @@ DEVPKEY_Device_ClassGuid 设备属性表示设备实例所属的[设备安装程
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>各种?</strong></p></td>
-<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,27 +75,13 @@ Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>版本</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
-</tr>
-</tbody>
-</table>
-
-## <a name="see-also"></a>另请参阅
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
 
 
-[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
+## <a name="see-also"></a>请参阅
+
+
+[**INF Version 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

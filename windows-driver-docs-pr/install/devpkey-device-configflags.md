@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7f36716c221755204745b626ce7cc203f1f455d9
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: 95eb0d42058752b7dded22e1bde0fdbacba97ea7
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262180"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418366"
 ---
 # <a name="devpkey_device_configflags"></a>DEVPKEY_Device_ConfigFlags
 
@@ -31,6 +31,12 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_INT32&lt;/strong&gt;](devprop-type-int32.md)"><strong>DEVPROP_TYPE_INT32</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
+<td align="left"><p><strong>和</strong></p></td>
 <td align="left"><p>安装应用程序和安装程序的读取和写入访问权限</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>对应的 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
+<td align="left"><p><strong>对应 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
 <td align="left"><p>SPDRP_CONFIGFLAGS</p></td>
 </tr>
 <tr class="odd">
@@ -70,22 +76,8 @@ DEVPKEY_Device_ConfigFlags 设备属性表示为设备实例设置的配置标�
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 

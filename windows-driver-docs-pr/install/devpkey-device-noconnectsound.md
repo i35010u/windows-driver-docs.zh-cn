@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a800a2716c24894e986fb14b035b7f7117803060
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c5085d3603e278cd5b85145532d327d2078abfc2
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378179"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418557"
 ---
-# <a name="devpkeydevicenoconnectsound"></a>DEVPKEY_Device_NoConnectSound
+# <a name="devpkey_device_noconnectsound"></a>DEVPKEY_Device_NoConnectSound
 
 
-DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示是否禁止显示 Microsoft Windows 操作系统以指示可移动设备到达或已删除的播放的声音。
+DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示是否禁止 Microsoft Windows 操作系统播放的声音指示可移动设备已到达或已被删除。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示�
 <td align="left"><p><a href="devprop-type-boolean.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BOOLEAN&lt;/strong&gt;](devprop-type-boolean.md)"><strong>DEVPROP_TYPE_BOOLEAN</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>读取和写入访问权限通过安装应用程序和安装程序</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的读取和写入访问权限</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,38 +62,24 @@ DEVPKEY_Device_NoConnectSound 设备属性表示一个布尔值，该值指示�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_NoConnectSound 的值设置为 DEVPROP_TRUE 取消播放声音。 否则，该属性的值设置为 DEVPROP_FALSE。
+DEVPKEY_Device_NoConnectSound 的值设置为 DEVPROP_TRUE 以取消播放声音。 否则，属性的值将设置为 DEVPROP_FALSE。
 
-DEVPKEY_Device_NoConnectSound 属性通常由设置[ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)设备 INF 文件中。
+DEVPKEY_Device_NoConnectSound 属性通常由设备 INF 文件中的[**Inf AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)设置。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)或[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)要检索或设置 DEVPKEY_Device_ 的值NoConnectSound。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)或[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来检索或设置 DEVPKEY_Device_NoConnectSound 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
+Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 
 
-[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
+[**INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

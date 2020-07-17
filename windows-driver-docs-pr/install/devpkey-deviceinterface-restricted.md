@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e697bd3380989536f432424292f369e6a807d4a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4d5f6c8bbea6dc8dd859a4e134968b9f2122aa6
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377287"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418235"
 ---
-# <a name="devpkeydeviceinterfacerestricted"></a>DEVPKEY_DeviceInterface_Restricted
+# <a name="devpkey_deviceinterface_restricted"></a>DEVPKEY_DeviceInterface_Restricted
 
 
-DEVPKEY_DeviceInterface_Restricted 设备接口属性指示设备接口在其已存在并设置为 TRUE 时，应遵循设置的系统组件视为具有特权访问权限。
+DEVPKEY_DeviceInterface_Restricted 设备接口属性指示其所在的设备接口并设置为 TRUE，应由遵循该设置的系统组件的特权访问进行处理。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示设备接口在其已
 <td align="left"><p><a href="devprop-type-boolean.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BOOLEAN&lt;/strong&gt;](devprop-type-boolean.md)"><strong>DEVPROP_TYPE_BOOLEAN</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,7 +62,7 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示设备接口在其已
 <a name="remarks"></a>备注
 -------
 
-您可以调用[ **SetupDiGetDeviceInterfaceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)检索 DEVPKEY_DeviceInterface_Restricted 值。
+可以调用[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_DeviceInterface_Restricted 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,12 +74,12 @@ DEVPKEY_DeviceInterface_Restricted 设备接口属性指示设备接口在其已
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>从 Windows 8 开始可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>

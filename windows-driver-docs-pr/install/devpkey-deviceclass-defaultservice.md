@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d5fd1be85ac24b22d45115bdaac40579c2b7a1cb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5103acf282202b5a28a4987601ee844d1903fc4c
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378085"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418548"
 ---
-# <a name="devpkeydeviceclassdefaultservice"></a>DEVPKEY_DeviceClass_DefaultService
+# <a name="devpkey_deviceclass_defaultservice"></a>DEVPKEY_DeviceClass_DefaultService
 
 
-DEVPKEY_DeviceClass_DefaultService 设备属性表示的默认服务名称[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
+DEVPKEY_DeviceClass_DefaultService 设备属性表示[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)的默认服务的名称。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,15 +47,15 @@ DEVPKEY_DeviceClass_DefaultService 设备属性表示的默认服务名称[设�
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>相应的注册表值名称</strong></p></td>
+<td align="left"><p><strong>对应的注册表值名称</strong></p></td>
 <td align="left"><p><strong>默认服务</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -60,38 +66,24 @@ DEVPKEY_DeviceClass_DefaultService 设备属性表示的默认服务名称[设�
 <a name="remarks"></a>备注
 -------
 
-如果设备安装程序类安装的默认服务和设备不会安装特定于设备的服务[ **INF ClassInstall32.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)的安装类的 INF 文件安装设备的类默认服务。
+如果为设备安装程序类安装了默认服务，且设备未安装特定于设备的服务，则安装该类的 INF 文件的[**Inf ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)会为设备安装类默认服务。
 
-DEVPKEY_DeviceClass_DefaultService 的值为的值**默认服务**类注册表项下的注册表值。
+DEVPKEY_DeviceClass_DefaultService 的值是类注册表项下的**默认服务**注册表值的值。
 
-您可以调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)检索 DEVPKEY_DeviceClass_ 值DefaultService。
+可以调用[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_DefaultService 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_DefaultService 属性键。 可以通过访问对应访问此属性的值**默认服务**类注册表项下的注册表值。 有关如何对访问类注册表项下的值项的信息，请参阅[访问注册表项值下类注册表项](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceClass_DefaultService 属性键。 您可以通过访问类注册表项下的相应**默认服务**注册表值访问此属性的值。 有关如何访问类注册表项下的值项的信息，请参阅[访问类注册表项下的注册表项值](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 
 
-[**INF ClassInstall32.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)
+[**INF ClassInstall32.Services 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-services-section)
 
 [**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 

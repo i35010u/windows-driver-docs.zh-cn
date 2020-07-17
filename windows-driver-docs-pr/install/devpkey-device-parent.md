@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 78b67a2f912c15c27b103fa6f9f4cda3138e7942
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc7b8d0d5fa1334dcd84ea17ad3dd5d8036177e6
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378155"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418467"
 ---
-# <a name="devpkeydeviceparent"></a>DEVPKEY_Device_Parent
+# <a name="devpkey_device_parent"></a>DEVPKEY_Device_Parent
 
 
-DEVPKEY_Device_Parent 设备属性表示设备实例的父级的设备实例的标识符。
+DEVPKEY_Device_Parent 设备属性表示设备实例的父项的设备实例标识符。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_Device_Parent 设备属性表示设备实例的父级的设备实例的�
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>不适用</p></td>
 </tr>
 </tbody>
@@ -56,29 +62,15 @@ DEVPKEY_Device_Parent 设备属性表示设备实例的父级的设备实例的�
 <a name="remarks"></a>备注
 -------
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Parent 属性的值。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_Parent 属性的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持此属性。 有关如何检索这些早期版本的 Windows 上的设备的关系属性的信息，请参阅[检索设备关系](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-device-relations)。
+Windows Server 2003、Windows XP 和 Windows 2000 不直接支持此属性。 有关如何在这些早期版本的 Windows 上检索设备关系属性的信息，请参阅[检索设备关系](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-device-relations)。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 

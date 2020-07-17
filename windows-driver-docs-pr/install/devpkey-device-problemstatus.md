@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 02/28/2020
-ms.openlocfilehash: c5b6247f02b042cc29d590b4ca7a22f79f62b4db
-ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
+ms.openlocfilehash: 4b21eb008c706078255d77a767a52c1a37062a83
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279452"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418451"
 ---
 # <a name="devpkey_device_problemstatus"></a>DEVPKEY_Device_ProblemStatus
 
@@ -32,6 +32,12 @@ DEVPKEY_Device_ProblemStatus 设备属性是在生成问题代码时设置的 NT
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -42,12 +48,12 @@ DEVPKEY_Device_ProblemStatus 设备属性是在生成问题代码时设置的 NT
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_NTSTATUS&lt;/strong&gt;](devprop-type-ntstatus.md)"><strong>DEVPROP_TYPE_NTSTATUS</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
+<td align="left"><p><strong>和</strong></p></td>
 <td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>各种?</strong></p></td>
-<td align="left"><p>是</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +89,7 @@ DEVPKEY_Device_ProblemStatus 设备属性是在生成问题代码时设置的 NT
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
 [**CM_Get_DevNode_Status**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)

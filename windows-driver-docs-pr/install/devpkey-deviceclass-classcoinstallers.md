@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aa225fade9b9efd4be7a01954a10434a04c72032
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1fdea47391934c145f50a21d8ec1bec8bbdbd1dc
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362992"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418518"
 ---
-# <a name="devpkeydeviceclassclasscoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
+# <a name="devpkey_deviceclass_classcoinstallers"></a>DEVPKEY_DeviceClass_ClassCoInstallers
 
 
-DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序安装了一系列[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。
+DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示为[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)安装的类共同安装程序的列表。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -42,18 +48,18 @@ DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>数据格式</strong></p></td>
-<td align="left"><p>"<em>coinstaller1.dll</em>,<em>coinstaller1-entry-point</em>\0…<em>coinstallerN.dll</em>,<em>coinstallerN-entry-point</em>\0\0"</p></td>
+<td align="left"><p>"<em>coinstaller1.dll</em>，<em>coinstaller1</em>\ 0 .。。<em>coinstallerN.dll</em>，<em>coinstallerN</em>\ 0 \ 0 "</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>读取和写入访问权限通过安装应用程序和安装程序</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的读取和写入访问权限</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>相应的注册表值名称</strong></p></td>
-<td align="left"><p><strong>HLM\System\CurrentControlSet\Control\CoDeviceInstallers{</strong><em>device-setup-class-guid</em><strong>}</strong></p></td>
+<td align="left"><p><strong>对应的注册表值名称</strong></p></td>
+<td align="left"><p><strong>HLM\System\CurrentControlSet\Control\CoDeviceInstallers {</strong><em>设备-安装程序-类-guid</em><strong>}</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -68,29 +74,15 @@ DEVPKEY_DeviceClass_ClassCoInstallers 设备属性表示的类共同安装程序
 
 有关如何安装类共同安装程序的信息，请参阅[注册类共同安装程序](https://docs.microsoft.com/windows-hardware/drivers/install/registering-a-class-co-installer)。
 
-可以通过调用检索的值 DEVPKEY_DeviceClass_ClassCoInstallers [ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[ **SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw). 可以通过调用设置 DEVPKEY_DeviceClass_ClassCoInstallers [ **SetupDiSetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)或[ **SetupDiSetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw).
+可以通过调用[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_ClassCoInstallers 的值。 可以通过调用[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)或[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_ClassCoInstallers。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_DeviceClass_ClassCoInstallers 属性键。 有关如何访问这些早期版本的 Windows 上的相应信息的信息，请参阅[访问的设备安装程序类将共同安装程序注册表项值](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceClass_ClassCoInstallers 属性键。 有关如何访问这些早期版本的 Windows 上相应信息的信息，请参阅[访问设备安装程序类的共同安装程序注册表项值](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-co-installers-registry-entry-value-of-a-device-setup-cla)。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 

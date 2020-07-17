@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 46c034a594c3ced9344e3e3a8259c8e6e9119f5e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eb0c2c2ddcf91eb338b9dda2a86ddc8dcdf2acaf
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363025"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418421"
 ---
-# <a name="devpkeydeviceresourcepickertags"></a>DEVPKEY_Device_ResourcePickerTags
+# <a name="devpkey_device_resourcepickertags"></a>DEVPKEY_Device_ResourcePickerTags
 
 
-DEVPKEY_Device_ResourcePickerTags 设备属性表示资源选取器标记为设备实例。
+DEVPKEY_Device_ResourcePickerTags 设备属性表示设备实例的资源选取器标记。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,8 +47,8 @@ DEVPKEY_Device_ResourcePickerTags 设备属性表示资源选取器标记为设�
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>对应的注册表值标识符和注册表值名称</strong></p></td>
@@ -50,7 +56,7 @@ DEVPKEY_Device_ResourcePickerTags 设备属性表示资源选取器标记为设�
 <p><strong>ResourcePickerTags</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -61,31 +67,17 @@ DEVPKEY_Device_ResourcePickerTags 设备属性表示资源选取器标记为设�
 <a name="remarks"></a>备注
 -------
 
-可以使用设置的值 DEVPKEY_Device_ResourcePickerTags [ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)包含在[ **INF *DDInstall*一节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)安装设备的 INF 文件。
+你可以使用安装设备的 INF 文件的[**Inf *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)中包含的[**inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)来设置 DEVPKEY_Device_ResourcePickerTags 的值。
 
-可以通过调用检索的值 PKEY_Device_ResourcePickerTags [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
+可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 PKEY_Device_ResourcePickerTags 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 支持此属性，但不是支持 DEVPKEY_Device_ResourcePickerTags 属性键。 在这些早期版本的 Windows 中，您可以访问此属性的值，通过访问对应**ResourcePickerTags**设备实例软件项下的注册表值。 有关如何访问这些早期版本的 Windows 上此属性的值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_ResourcePickerTags 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应**ResourcePickerTags**注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 

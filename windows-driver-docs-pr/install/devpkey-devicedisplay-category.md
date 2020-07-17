@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d77e358b158540f392fdf811dc9ac7471ccf8954
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bfd0af0d8bcc3b1ad202e04a8291f2ff75e1ec28
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378041"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418241"
 ---
-# <a name="devpkeydevicedisplaycategory"></a>DEVPKEY_DeviceDisplay_Category
+# <a name="devpkey_devicedisplay_category"></a>DEVPKEY_DeviceDisplay_Category
 
 
 DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个或多个功能类别。
@@ -31,6 +31,12 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 <td align="left"><p><a href="devprop-type-string-list.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING_LIST&lt;/strong&gt;](devprop-type-string-list.md)"><strong>DEVPROP_TYPE_STRING_LIST</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问。</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,19 +62,19 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 <a name="remarks"></a>备注
 -------
 
-通过指定物理设备的设备类别[ **DeviceCategory** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))中的 XML 元素[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。 该设备在系统中的每个实例将继承该物理设备的设备类别。
+物理设备的设备类别通过[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中的[**device.devicecategory**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
 
-每个物理设备可以具有一个或多功能类别中指定[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)。 每个类别的 Windows 设备和打印机用于分组到一个已识别的设备类别的设备实例。
+每台物理设备可以在[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中指定一个或多个功能类别。 Windows 设备和打印机使用每个类别将设备实例组合到识别的设备类别之一中。
 
-多功能设备通常会识别为每个设备支持的硬件功能的多个功能类别。 例如，多功能设备无法识别打印机、 传真、 扫描程序和可移动存储设备功能的功能的类别。
+对于设备支持的每个硬件功能，多功能设备通常会标识多个功能类别。 例如，多功能设备可以标识打印机、传真、扫描仪和可移动存储设备功能的功能类别。
 
-第一个功能类别中的字符串[ **DEVPROP_TYPE_STRING_LIST** ](devprop-type-string-list.md)指定物理设备的主要功能类别。 主要功能类别是由独立硬件供应商 (IHV) 来指定播发设备是如何定义、 打包、 销售的和最终用户标识。
+[**DEVPROP_TYPE_STRING_LIST**](devprop-type-string-list.md)中的第一个功能类别字符串指定物理设备的主要功能类别。 "主要功能" 类别由独立硬件供应商（IHV）定义，以指定用户如何播发、打包、销售和最终标识设备。
 
-如果 DEVPKEY_DeviceDisplay_Category 设备属性指定多个功能类别字符串，请按照第一个字符串的剩余字符串指定物理设备的辅助功能类别。
+如果 DEVPKEY_DeviceDisplay_Category 设备属性指定了多个功能类别字符串，则在第一个字符串之后的剩余字符串将指定物理设备的辅助功能类别。
 
-**设备和打印机**控制面板中的用户界面中显示主要和辅助功能类别的设备实例。 这些类别 DEVPKEY_DeviceDisplay_Category 设备属性中指定的顺序显示。
+控制面板中的 "**设备和打印机**" 用户界面显示设备实例的主要和次要功能类别。 这些类别按照 DEVPKEY_DeviceDisplay_Category 设备属性中指定的顺序显示。
 
-可以通过调用访问 DEVPKEY_DeviceDisplay_Category 属性[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
+可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)访问 DEVPKEY_DeviceDisplay_Category 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -80,12 +86,12 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>
@@ -93,7 +99,7 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 ## <a name="see-also"></a>请参阅
 
 
-[**DeviceCategory**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
+[**Device.devicecategory**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

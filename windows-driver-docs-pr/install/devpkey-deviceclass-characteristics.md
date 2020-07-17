@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a5b9c1cdb7274cc982d3b44ac21b3b874ff665ae
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 76626789ba0a361c4329a9980461fa6b3c0c416c
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840641"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418464"
 ---
 # <a name="devpkey_deviceclass_characteristics"></a>DEVPKEY_DeviceClass_Characteristics
 
@@ -31,6 +31,12 @@ DEVPKEY_DeviceClass_Characteristics 设备属性表示[设备安装程序类](ht
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,16 +47,16 @@ DEVPKEY_DeviceClass_Characteristics 设备属性表示[设备安装程序类](ht
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_INT32&lt;/strong&gt;](devprop-type-int32.md)"><strong>DEVPROP_TYPE_INT32</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
+<td align="left"><p><strong>和</strong></p></td>
 <td align="left"><p>安装应用程序和安装程序后，安装应用程序和安装程序的只读访问权限</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>对应的 SPCRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
+<td align="left"><p><strong>对应 SPCRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
 <td align="left"><p>SPCRP_CHARACTERISTICS</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>各种?</strong></p></td>
-<td align="left"><p>无</p></td>
+<td align="left"><p>否</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,40 +66,26 @@ DEVPKEY_DeviceClass_Characteristics 设备属性表示[设备安装程序类](ht
 <a name="remarks"></a>备注
 -------
 
-仅当安装了设备安装程序类时，才应设置 DEVPKEY_DeviceClass_Characteristics，以后不应进行修改。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[**INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)和有关注册表项值**DeviceCharacteristics**的信息，该信息在 "特殊" [**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)的值-名称关键字" 部分。
+仅当安装了设备安装程序类而不是稍后进行修改时，才应设置 DEVPKEY_DeviceClass_Characteristics。 有关如何安装设备安装程序类和设置此属性的信息，请参阅[**Inf ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)和有关注册表项值**DeviceCharacteristics**的信息，请参阅[**Inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)的 "特殊的*值-名称*关键字" 部分。
 
 可以调用[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_Characteristics 的值。
 
-Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_DeviceClass_Characteristics 属性键。 在这些早期版本的 Windows 上，可以使用 SPCRP_CHARACTERISTICS 标识符访问此属性的值。 有关如何访问此属性的值的信息，请参阅[检索设备安装程序类 SPCRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)。
+Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_DeviceClass_Characteristics 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_CHARACTERISTICS 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅[检索设备安装程序类 SPCRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>版本</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
 
-## <a name="see-also"></a>另请参阅
+
+## <a name="see-also"></a>请参阅
 
 
 [**IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
 
 [**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
+[**INF ClassInstall32 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
 
 [**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 

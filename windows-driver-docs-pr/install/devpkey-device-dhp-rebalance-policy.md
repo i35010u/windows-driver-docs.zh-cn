@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d71e712213acfed590eb998bfe758dddabe5323c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4d271cec462f2e2b286f6056837412eefaddd4e
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387080"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418351"
 ---
-# <a name="devpkeydevicedhprebalancepolicy"></a>DEVPKEY_Device_DHP_Rebalance_Policy
+# <a name="devpkey_device_dhp_rebalance_policy"></a>DEVPKEY_Device_DHP_Rebalance_Policy
 
 
-DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备是否将参与资源重新平衡以下[动态硬件分区 (DHP)](https://docs.microsoft.com/windows-hardware/drivers/kernel/dynamic-hardware-partitioning-techniques)处理器热添加操作。
+DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，该值指示在[动态硬件分区（DHP）](https://docs.microsoft.com/windows-hardware/drivers/kernel/dynamic-hardware-partitioning-techniques)处理器热添加操作后设备是否参与资源重新平衡。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备�
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_INT32&lt;/strong&gt;](devprop-type-int32.md)"><strong>DEVPROP_TYPE_INT32</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>读取和写入应用程序和服务的访问。</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>按应用程序和服务进行读取和写入访问。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,23 +62,23 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备�
 <a name="remarks"></a>备注
 -------
 
-正在运行 Windows Server 2008 或更高版本的 Windows Server，则操作系统将启动系统范围资源的动态可分区服务器上重新平衡新处理器动态添加到系统时。 DEVPKEY_Device_DHP_Rebalance_Policy 设备属性确定设备是否参与此类资源重新平衡。 该设备出现在中，在下列情况下重新平衡资源：
+在运行 Windows Server 2008 或更高版本的 Windows Server 的动态分区服务器上，每当将新处理器动态添加到系统时，操作系统就会启动系统范围的资源重新平衡。 DEVPKEY_Device_DHP_Rebalance_Policy 设备属性决定设备是否参与此类资源重新平衡。 在下列情况下，设备会参与资源重新平衡：
 
 -   DEVPKEY_Device_DHP_Rebalance_Policy 设备属性不存在。
 
--   设备属性存在并且未设置设备属性的值。
+-   设备属性存在，但未设置设备属性的值。
 
--   设备属性存在且设备属性的值设置为 2。
+-   设备属性存在，设备属性的值已设置为2。
 
-如果存在 DEVPKEY_Device_DHP_Rebalance_Policy 设备属性和属性的值设置为 1，设备将不参与重新平衡新处理器动态添加到系统时的资源。
+如果 DEVPKEY_Device_DHP_Rebalance_Policy 设备属性存在并且属性的值设置为1，则在将新处理器动态添加到系统时，设备不会参与资源重新平衡。
 
-设备的[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)中指定[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)的设备的 INF 文件。
+设备的[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)是在设备 inf 文件的 " [**Inf 版本" 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)中指定的。
 
-网络适配器中的设备的默认行为 (类 = Net) 设备安装程序类是类的成员不会参与资源重新平衡新处理器动态添加到系统时。 所有其他设备安装程序类中的设备的默认行为是成员参与资源重新平衡新处理器动态添加到系统时。
+网络适配器（类 = Net）设备安装程序类中的设备的默认行为是，将新处理器动态添加到系统时，该类的成员不参与资源重新平衡。 所有其他设备安装程序类中的设备的默认行为是在将新处理器动态添加到系统时成员参与资源重新平衡。
 
-此设备属性不会影响是否由于其他原因而启动资源重新平衡将加入设备。
+此设备属性不影响设备是否会参与出于其他原因而启动的资源重新平衡。
 
-可以通过调用访问 DEVPKEY_Device_DHP_Rebalance_Policy 属性[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)并[ **SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw).
+可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)和[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_DHP_Rebalance_Policy 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -84,12 +90,12 @@ DEVPKEY_Device_DHP_Rebalance_Policy 设备属性表示一个值，指示设备�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Server 2008 和更高版本的 Windows Server 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>Windows Server 2008 和更高版本的 Windows Server 中提供。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>

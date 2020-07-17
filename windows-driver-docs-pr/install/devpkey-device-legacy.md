@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cfd560ba0fc661fa803fc40119776b9bf2692e23
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b3a105c79c64c1ecff6946c4015bc705a8b0ac5c
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378201"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418331"
 ---
-# <a name="devpkeydevicelegacy"></a>DEVPKEY_Device_Legacy
+# <a name="devpkey_device_legacy"></a>DEVPKEY_Device_Legacy
 
 
-DEVPKEY_Device_Legacy 设备属性表示一个布尔值，指示设备是否为根枚举设备的设备的非 PnP 驱动程序加载时自动创建插即用 (PnP) 管理器。
+DEVPKEY_Device_Legacy 设备属性表示一个布尔值，该值指示设备是否为根枚举设备，该设备在加载设备的非 PnP 驱动程序时自动创建即插即用（PnP）管理器。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,11 +47,11 @@ DEVPKEY_Device_Legacy 设备属性表示一个布尔值，指示设备是否为�
 <td align="left"><p><a href="devprop-type-boolean.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BOOLEAN&lt;/strong&gt;](devprop-type-boolean.md)"><strong>DEVPROP_TYPE_BOOLEAN</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,31 +62,17 @@ DEVPKEY_Device_Legacy 设备属性表示一个布尔值，指示设备是否为�
 <a name="remarks"></a>备注
 -------
 
-即插即用 manager DEVPKEY_Device_Reported 将值设置为 DEVPROP_TRUE 如果 PnP 管理器自动创建该设备为根枚举设备的非 PnP 设备驱动程序加载时。 否则，即插即用管理器将属性的值设置为 DEVPROP_FALSE。
+PnP 管理器将 DEVPKEY_Device_Reported 的值设置为 DEVPROP_TRUE 如果在加载设备的非 PnP 驱动程序时，PnP 管理器自动将设备创建为根枚举设备。 否则，PnP 管理器会将属性的值设置为 DEVPROP_FALSE。
 
-您可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Device_Legacy 值。
+可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_Legacy 的值。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
+Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
-</tr>
-</tbody>
-</table>
+**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+
 
 ## <a name="see-also"></a>请参阅
 

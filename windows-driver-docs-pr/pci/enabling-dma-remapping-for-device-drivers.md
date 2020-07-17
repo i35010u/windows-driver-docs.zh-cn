@@ -4,12 +4,12 @@ description: 启动并选择直接内存访问 (DMA) 重新映射功能，确保
 ms.date: 07/10/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7c53e633b4e56528a088bafad1b65037f056cf32
-ms.sourcegitcommit: 3b69a8db54229c2fcf150015c47a89d65dc775ab
+ms.openlocfilehash: 815474d5466642ef0cdebf2ef61871494426f482
+ms.sourcegitcommit: 1ab8fc6d15fac78ce243f3852d86733ebfca40dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86301473"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86436881"
 ---
 # <a name="enabling-dma-remapping-for-device-drivers"></a>为设备驱动程序启用 DMA 重新映射
 
@@ -17,7 +17,7 @@ ms.locfileid: "86301473"
 
 设备驱动程序的 DMA 重新映射可防止内存损坏和恶意 DMA 攻击，并为设备提供更高级别的兼容性。 此外，具有 DMA 重新映射兼容驱动程序的设备可以启动和执行 DMA，而不考虑锁定屏幕状态。
 
-在启用内核 DMA 保护的系统上，DMAGuard 策略可能会阻止设备，其中包含 DMA 重新映射-不兼容的驱动程序，连接到[外部](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports#identifying-externally-exposed-pcie-root-ports) / [公开](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports#identifying-internal-pcie-ports-accessible-to-users-and-requiring-dma-protection)的 PCIe 端口 (例如，闪电™) ，具体取决于系统管理员设置的策略值。
+在启用内核 DMA 保护的系统上，DMAGuard 策略可能会阻止设备，其中包含 DMA 重新映射-不兼容的驱动程序，连接到[外部](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports#identifying-externally-exposed-pcie-root-ports) / [公开](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports#identifying-internal-pcie-ports-accessible-to-users-and-requiring-dma-protection)的 PCIe 端口（例如，闪电™），具体取决于系统管理员设置的策略值。
 
 ## <a name="driver-requirements-for-enabling-and-opting-into-dma-remapping"></a>启用和选择 DMA 重映射的驱动程序要求
 
@@ -36,11 +36,11 @@ ms.locfileid: "86301473"
   
 **DmaRemappingCompatible**的有效值为：
 
-| 值 | 含义 |
+| “值” | 含义 |
 | ----- | ------- |
 | 0     | 选择退出。这向系统表明你的驱动程序与 DMA 重新映射不兼容。 |
 | 1     | 选择启用。 这向系统表明你的驱动程序与 DMA 重新映射完全兼容。 |
-| 2     | 选择启用，但仅当满足以下一个或多个条件时：。如果设备是外部设备 (例如，则为。 闪电) ;B. 如果在驱动程序验证程序中启用 DMA 验证。 |
+| 2     | 选择启用，但仅当满足以下一个或多个条件时： A. 如果设备是外部设备（例如 闪电）;B. 如果在驱动程序验证程序中启用 DMA 验证。 |
 | 无注册表项 | 让系统确定策略。 |
 
 测试驱动程序时，请启用驱动程序验证程序。 对于在驱动程序验证程序下进行测试，用于在外部设备中选择的 INF 指令的值将提升为1。
@@ -52,13 +52,7 @@ ms.locfileid: "86301473"
 
 ## <a name="validating-that-dma-remapping-is-enabled-for-a-specific-device-driver-instance"></a>验证是否为特定的设备驱动程序实例启用了 DMA 重新映射
 
-若要检查特定驱动程序是否已选择性加入 DMA 重新映射，请在设备的 "**详细信息**" 选项卡中查找与 dma 重新映射策略属性对应的值设备管理器。 显示的属性对应于**DEVPKEY_Device_DmaRemappingPolicy**。 此属性的值指示哪些 DMA 重新映射策略处于活动状态，并且可以是下列值之一：
-
-| 值 | 含义 |
-| ----- | ------- |
-| 2     | 当前针对特定设备实例强制进行 DMA 重新映射。 |
-| 1     | 设备驱动程序明确选择退出 DMA 重新映射。 |
-| 0或 DMA 重新映射策略属性不可见 | INF 文件中未指定 DMA 重新映射 INF 指令。 不会为此设备强制执行 DMA 重新映射。 |
+若要检查特定驱动程序是否已选择性加入 DMA 重新映射，请在设备的 "**详细信息**" 选项卡中查找与 dma 重新映射策略属性对应的值设备管理器。 驱动程序可以查询这些值的[**DEVPKEY_Device_DmaRemappingPolicy**](../install/devpkey-device-dmaremappingpolicy.md)属性。
 
 ![“设备管理器详细信息”选项卡](images/device-details-tab-1903.png)
 

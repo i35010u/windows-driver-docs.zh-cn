@@ -14,23 +14,29 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6fd92b523af1bffd23524dbde1840f36d4dbd4c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c288741b17c1bf085859c6e770d566f9d24e1eb0
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387110"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418277"
 ---
-# <a name="devpkeydevicebasecontainerid"></a>DEVPKEY_Device_BaseContainerId
+# <a name="devpkey_device_basecontainerid"></a>DEVPKEY_Device_BaseContainerId
 
 
-DEVPKEY_Device_BaseContainerId 设备属性表示*GUID*基容器标识符的值 (*ID*)。Windows 即插即用和 Play (PnP) 管理器将此值分配给设备节点 (*devnode*)。
+DEVPKEY_Device_BaseContainerId 设备属性表示基容器标识符（*ID*）的*GUID*值。Windows 即插即用（PnP）管理器将此值分配给设备节点（*devnode*）。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>Value</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>属性键</strong></p></td>
@@ -41,15 +47,15 @@ DEVPKEY_Device_BaseContainerId 设备属性表示*GUID*基容器标识符的值 
 <td align="left"><a href="devprop-type-guid.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_GUID&lt;/strong&gt;](devprop-type-guid.md)"><strong>DEVPROP_TYPE_GUID</strong></a></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>相应 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
+<td align="left"><p><strong>对应 SPDRP_</strong><em>Xxx</em> <strong>标识符</strong></p></td>
 <td align="left"><p>SPDRP_BASE_CONTAINERID</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -60,35 +66,35 @@ DEVPKEY_Device_BaseContainerId 设备属性表示*GUID*基容器标识符的值 
 <a name="remarks"></a>备注
 -------
 
-PnP 管理器通过使用以下方法之一来确定 devnode 的容器 ID:
+PnP 管理器使用以下方法之一确定 devnode 的容器 ID：
 
--   总线驱动程序提供容器 id。
+-   总线驱动程序提供容器 ID。
 
-    当 PnP 管理器将容器 ID 分配给 devnode 时，它首先检查是否 devnode 的总线驱动程序可以提供一个容器 id。 总线驱动程序提供容器 ID 通过[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)使用的查询请求**Parameters.QueryId.IdType**字段设置为**BusQueryContainerID**。
+    当 PnP 管理器将容器 ID 分配给 devnode 时，它会首先检查 devnode 的总线驱动程序是否可以提供容器 ID。 总线驱动程序通过[**IRP_MN_QUERY_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)查询请求提供容器 ID，并将**IdType**字段设置为**BusQueryContainerID**。
 
--   PnP 管理器通过使用可移动设备功能生成的容器 ID。
+-   PnP 管理器使用可移动设备功能生成容器 ID。
 
-    如果总线驱动程序不能为它枚举 devnode 提供容器的 ID，即插即用管理器使用可移动设备功能生成枚举设备的所有 devnodes 的容器 ID。 总线驱动程序报告此设备功能，以响应[ **IRP_MN_QUERY_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)请求。
+    如果总线驱动程序无法为其枚举的 devnode 提供容器 ID，则 PnP 管理器使用可移动设备功能为该设备枚举的所有 devnodes 生成容器 ID。 总线驱动程序报告此设备的功能，以响应[**IRP_MN_QUERY_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)的请求。
 
--   PnP 管理器通过使用可移动设备功能的重写生成的容器 ID。
+-   PnP 管理器使用可移动设备功能的替代生成容器 ID。
 
-    尽管替代机制不会更改可移动设备功能的值，它会强制 PnP 管理器中，若要生成设备的容器 Id 时使用替代设置而不是可移动设备功能的值。
+    尽管替代机制不会更改可移动设备功能的值，但它会强制 PnP 管理器使用替代设置，而不是在为设备生成容器 Id 时使用可移动设备功能的值。
 
-有关这些方法的详细信息，请参阅[生成如何容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)。
+有关这些方法的详细信息，请参阅[如何生成容器 id](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)。
 
-而不考虑如何获取容器的 ID 值，即插即用管理器将值分配给 devnode DEVPKEY_Device_BaseContainerId 属性。
+不管如何获取容器 ID 值，PnP 管理器都将值分配给 devnode 的 DEVPKEY_Device_BaseContainerId 属性。
 
-DEVPKEY_Device_BaseContainerId 属性可用于强制与系统中存在其他 devnodes 新 devnode 的分组。 这使您可以使用新 devnode 作为父 (或*基*) 适用于其他容器 ID 相关 devnodes。 若要执行此操作，你必须首先获取现有 devnode DEVPKEY_Device_BaseContainerID GUID。 然后，必须在响应中返回容器的新 devnode ID GUID 到[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)查询请求具有**Parameters.QueryId.IdType**字段设置为**BusQueryContainerID**。
+DEVPKEY_Device_BaseContainerId 属性可用于强制将新的 devnode 与系统中存在的其他 devnodes 进行分组。 这使你可以将新的 devnode 用作其他相关 devnodes 的父（或*基*）容器 ID。 为此，必须首先获取现有 devnode 的 DEVPKEY_Device_BaseContainerID GUID。 然后，必须返回新 devnode 的容器 ID GUID，以响应[**IRP_MN_QUERY_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)查询请求，该请求将**QueryId**字段设置为**BusQueryContainerID**。
 
-**请注意**   DEVPKEY_Device_BaseContainerId 的查询返回的值或[ **DEVPKEY_Device_ContainerId** ](devpkey-device-containerid.md)属性可以是不同的相同 devnode.
-
- 
-
-**请注意**  不使用 DEVPKEY_Device_BaseContainerId 属性来重新构建系统中的设备容器分组。 使用[ **DEVPKEY_Device_ContainerId** ](devpkey-device-containerid.md)属性改为。
+**注意**   DEVPKEY_Device_BaseContainerId 或[**DEVPKEY_Device_ContainerId**](devpkey-device-containerid.md)属性的查询所返回的值可能不同于同一 devnode 的值。
 
  
 
-有关容器 Id 的详细信息，请参阅[容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)。
+**注意**   不要使用 DEVPKEY_Device_BaseContainerId 属性在系统中重新构建设备容器分组。 请改用[**DEVPKEY_Device_ContainerId**](devpkey-device-containerid.md)属性。
+
+ 
+
+有关容器 Id 的详细信息，请参阅[容器 id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)。
 
 <a name="requirements"></a>要求
 ------------
@@ -100,12 +106,12 @@ DEVPKEY_Device_BaseContainerId 属性可用于强制与系统中存在其他 dev
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows 7 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows 7 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey （包括 Devpkey）</td>
 </tr>
 </tbody>
 </table>
