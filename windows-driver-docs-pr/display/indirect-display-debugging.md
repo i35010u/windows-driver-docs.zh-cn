@@ -1,31 +1,32 @@
 ---
 title: 调试间接显示驱动程序
-description: 介绍间接显示的调试技术
+description: 介绍间接显示驱动程序的调试技术
 ms.assetid: a343812d-03d0-4a95-9c36-7e6b5a404088
-ms.date: 04/22/2020
+ms.date: 07/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c3acb5f719859e8f219cbc90adfafd53d94331
-ms.sourcegitcommit: 49d7f27a24360559456063092ac35b2ba1aba7b1
+ms.openlocfilehash: 632e4c8e00de634fd9a9644dfd82e8d2fc1b9a7a
+ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82742619"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86459213"
 ---
-# <a name="debugging-indirect-displays"></a>调试间接显示
+# <a name="debugging-indirect-display-drivers"></a>调试间接显示驱动程序
 
-间接显示驱动程序是 UMDF 驱动程序，因此，UMDF 调试文档是一个很好的起点，[这里](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)是该部分中某个页面的示例。  此页将提供间接显示特定的调试信息。
+间接显示驱动程序（IDDs）是 UMDF 驱动程序，因此，UMDF 调试文档是一个很好的[起点（这](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)是该部分中的页面示例）。  本页提供间接显示特定的调试信息。
 
-## <a name="span-idregistry_controlspanspan-idregistry_controlspanspan-idregistry_controlspanregistry-control"></a><span id="Registry_Control"></span><span id="registry_control"></span><span id="Registry_Control"></span>注册表控件
+## <a name="registry-control"></a>注册表控件
 
-IddCx 具有一些可用于帮助调试间接显示驱动程序的注册表设置。  所有注册表值都位于**HKLM\System\CurrentControlSet\Control\GraphicsDrivers**注册表项下。
-
+间接显示驱动程序类扩展（IccDx）具有一些可用于帮助调试 IDDs 的注册表设置。 所有注册表值都位于**HKLM\System\CurrentControlSet\Control\GraphicsDrivers**注册表项下。
 
 | 值名称               | 详细信息 |
 |--------------------------|---------|
-| TerminateIndirectOnStall | 如果此值为零，则将禁用终止该驱动程序的监视程序（如果它未在10秒内提供可用帧）。  任何其他值都将使监视程序处于启用状态。 |
-| IddCxDebugCtrl           | 启用 IddCx 的不同调试方面的位域，请参阅下表 |
+| TerminateIndirectOnStall | 如果此值为零，则将禁用终止该驱动程序的监视程序（如果它未在10秒内提供可用帧）。 任何其他值都将使监视程序处于启用状态。 |
+| IddCxDebugCtrl           | 启用 IddCx 的不同调试方面的位域。 请参阅下表。 |
 
-**注意**如果使用 "TerminateIndirectOnStall" 注册表值禁用监视程序，则会失败。
+> [!NOTE]
+>
+> 如果将 TerminateIndirectOnStall 注册表值用于禁用监视程序，则 HLK 测试将失败。
 
 ### <a name="iddcxdebugctrl-values"></a>IddCxDebugCtrl 值
 
@@ -41,20 +42,22 @@ IddCx 具有一些可用于帮助调试间接显示驱动程序的注册表设�
 | 0x0080 | 禁用 DDI 监视程序，在 DDI 调用中终止驱动程序的时间过长 |
 | 0x0100 | 未使用 |
 | 0x0200 | 启用调试覆盖，如下所示 |
-| 0x0400 | 覆盖帧中超出脏 rect 的彩色 alpha 框，需要设置0x0200 |
-| 0x0800 | 将 pref 统计信息覆盖到帧中需要设置0x0200 |
+| 0x0400 | 覆盖帧中脏 rect 上方的彩色 alpha 框;需要设置0x0200 |
+| 0x0800 | 将 pref 统计信息覆盖到帧;需要设置0x0200 |
 
-**注意**对于任何用于处理驱动程序创建的 Direct3D 设备并传递给 IddCxSwapChainSetDevice （）的覆盖函数，都必须使用 D3D11_CREATE_DEVICE_BGRA_SUPPORT 标志来创建。
+> [!NOTE]
+>
+> 要使任何覆盖功能正常工作，必须使用**D3D11_CREATE_DEVICE_BGRA_SUPPORT**标志创建驱动程序创建的 Direct3D 设备并将其传递给[**IddCxSwapChainSetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxswapchainsetdevice) 。
 
-## <a name="span-ididdcx_wpp_tracesspanspan-ididdcx_wpp_tracesspanspan-ididdcx_wpp_tracesspaniddcx-wpp-traces"></a><span id="IddCx_WPP_traces"></span><span id="iddcx_wpp_traces"></span><span id="IddCx_WPP_traces"></span>IddCx WPP 跟踪
+## <a name="iddcx-wpp-traces"></a>IddCx WPP 跟踪
 
-Iddcx 使用 WPP 基础结构记录调试信息。  可以将 WPP 信息捕获到文件中，并且在此捕获正在进行中时，可以在内核调试器中显示它。
+Iddcx 使用[WPP 基础结构](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)记录调试信息。 可以将 WPP 信息捕获到文件，并且在此捕获正在进行时，可以在内核调试器中显示它。
 
 ### <a name="capturing-iddcx-wpp-tracing"></a>捕获 IddCx WPP 跟踪
 
-可以通过多种方式来启用 WPP 跟踪，其中一种方法是使用 logman 程序中的生成。  如果将以下行复制到批处理文件中并从提升的命令提示符处运行，则会将 IddCx WPP 跟踪收集到 IddCx 文件中。
+可以通过多种方式来启用 WPP 跟踪。 一种简便方法是使用[*logman.exe*](https://docs.microsoft.com/windows-server/administration/windows-commands/logman)程序中的生成。 如果将以下行复制到批处理文件中，并在提升的命令提示符下运行，则会将 IddCx WPP 跟踪收集到*IddCx*文件中。
 
-```
+```console
 @echo off  
 echo Starting WPP tracing....
 logman create trace IddCx -o IddCx.etl -ets -ow -mode sequential -p  {D92BCB52-FA78-406F-A9A5-2037509FADEA} 0x4f4 0xFF
@@ -65,21 +68,12 @@ logman -stop IddCx -ets
 ```
 
 #### <a name="controlling-what-is-captured"></a>控制捕获的内容
-Logman （在本例中为0x4f4）的 Flags 参数控制 WPP 消息 IddCx 日志。  此的含义值在 Windows 版本19041及更高版本中发生了更改。
 
-##### <a name="flags-meaning-prior-to-windows-build-19041"></a>Windows build 19041 之前的标志含义
-标志被视为一个级别，每个递增的级别都会添加一条新消息类型以及以前级别的所有消息。
-
-| 标志级别值  | 捕获的消息类型 |
-|:------------------:|-----------------------|
-| 1                  | 未使用              |
-| 2                  | 错误                |
-| 3                  | 警告              |
-| 4                  | 信息           |
-| 5                  | “详细”               |
+*logman.exe* （在本例中为0x4f4）的 Flags 参数控制 WPP 消息 IddCx 日志。  此的含义值在 Windows 版本19041及更高版本中发生了更改。
 
 ##### <a name="flags-meaning-for-windows-build-19041-and-above"></a>Windows 版本19041及更高版本的标志含义
-标志是位域，每个位控制是否捕获消息类型。
+
+标志是一个位域，其中每个位控制是否捕获消息类型。
 
 | 标志位 | 捕获的消息类型  |
 |:---------:|------------------------|
@@ -96,30 +90,48 @@ Logman （在本例中为0x4f4）的 Flags 参数控制 WPP 消息 IddCx 日志�
 | 0x400     | 从内核到 IddCx 的调用 |
 | 0x800     | 从 IddCx 调用到内核 |
 
-对于普通日志记录方案，0x0f4 是一个很好的起点，若要查看每帧信息，0x1f4 是一个很好的起点。
+0x0f4 的普通日志记录方案是一种很好的起点。 如果要查看每帧信息，0x1f4 是一个很好的起点。
+
+##### <a name="flags-meaning-prior-to-windows-build-19041"></a>Windows build 19041 之前的标志含义
+
+标志被视为一个级别，每个递增的级别都会添加一条新消息类型以及以前级别的所有消息。
+
+| 标志级别值  | 捕获的消息类型 |
+|:------------------:|-----------------------|
+| 1                  | 未使用              |
+| 2                  | 错误                |
+| 3                  | 警告              |
+| 4                  | 信息           |
+| 5                  | “详细”               |
 
 ### <a name="decoding-iddcx-wpp-tracing"></a>解码 IddCx WPP 跟踪
-与所有 WPP 跟踪一样，WPP 信息存储在 pdb 文件中，因此可以访问 pdb，其中包含的信息需要解码。  在 Windows 生成19560之前，公共符号服务器上的 IddCx**不**包含必要的 wpp 信息以启用 wpp 解码。 对于 Windows 版本19560及更高版本，公共符号服务器上的 IddCx 包含解码 WPP 消息所需的 WPP 信息。
+
+与所有 WPP 跟踪一样，WPP 信息存储在*pdb*文件中，因此可以访问*pdb*，其中包含的信息需要解码。 从 Windows build 19560 开始，公共符号服务器上的*IddCx*包含解码 wpp 消息所需的 wpp 信息。 在 Windows 生成19560之前，公共符号服务器上的*IddCx* *不*包含必要的 WPP 信息以启用 wpp 解码。
 
 任何标准 WPP 解码工具都可用于对消息进行解码和显示。
 
-## <a name="span-iddebugging_iddcx_errorsspanspan-iddebugging_iddcx_errorsspanspan-iddebugging_iddcx_errorsspandebugging-iddcx-errors"></a><span id="Debugging_IddCx_errors"></span><span id="debugging_iddcx_errors"></span><span id="Debugging_IddCx_errors"></span>调试 IddCx 错误
-开发间接显示驱动程序时，在 IddCx 检测到错误时获取其他信息通常很有用。  使用上述部分，你可以将 IddCx 配置为在 IddCx 检测到错误时中断到调试器，但也可以在最后几个跟踪消息中显示 IddCx 错误消息以了解错误的上下文。
-使用上述部分，你可以使用 logman 启用 WPP 跟踪，以下信息将在出现故障时显示内核调试器中的内存中 WPP 缓冲区。
-**注意**为此，需要使用内核调试器（而非用户模式调试器）和 Windows build 19560 或更高版本，以便调试器获取包含 WPP 解码信息的 IddCx。
+## <a name="debugging-iddcx-errors"></a>调试 IddCx 错误
 
-在下面的示例中，间接显示驱动程序具有调用 IddCxMonitorArrival （），并且作为处理 IddCx 的一部分调用驱动程序的 EvtIddCxMonitorQueryTargetModes （） DDI，在此示例中，驱动程序返回 DISPLAYCONFIG_VIDEO_SIGNAL_INFO 模式。AdditionalSignalInfo 设置为零，这是无效的，将导致错误。
+开发间接显示驱动程序时，在 IddCx 检测到错误时获取其他信息通常很有用。 如上所述，你可以将 IddCx 配置为在 IddCx 检测到错误时进入调试器，但在最后几个跟踪消息中显示 IddCx 错误消息以了解错误的上下文也很有用。
+
+使用上述部分，可以使用*logman.exe*启用 WPP 跟踪，并使用以下信息在故障点显示内核调试器中的内存中 WPP 缓冲区。
+
+> [!NOTE]
+>
+> 为此，需要使用内核调试器（而非用户模式调试器）和 Windows build 19560 或更高版本，以便调试器获取包含 WPP 解码信息的*IddCx。*
+
+在下面的示例中，间接显示驱动程序调用[**IddCxMonitorArrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorarrival)。 作为处理的一部分，IddCx 调用驱动程序的[**EvtIddCxMonitorQueryTargetModes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_query_target_modes) DDI。 在此示例中，驱动程序返回的模式 DISPLAYCONFIG_VIDEO_SIGNAL_INFO。AdditionalSignalInfo 设置为零，这是无效的，将导致错误。
 
 下面是所使用的调试程序命令列表：
 
 | 命令                             | 含义  |
 |-------------------------------------|----------|
-| !wmitrace.bufdump                   | 列出所有日志记录缓冲区和名称，IddCx 是我们的名称，来自 logman 命令行 |
-| !wmitrace.logdump<Log buffer name> | 对指定日志记录缓冲区的内容进行解码并显示其内容（在本示例中为 IddCx） |
+| !wmitrace.bufdump                   | 列出所有日志记录缓冲区和名称，IddCx 是我们的名称，来自 logman.exe 命令行 |
+| ！ wmitrace. logdump *LogBufferName*   | 对指定日志记录缓冲区的内容进行解码，并显示以下示例中的 IddCx |
 
 下面是此示例的调试器输出：
 
-```
+```dbgcmd
 0: kd> !wmitrace.bufdump
 (WmiTrace) BufDump
     LoggerContext Array @ 0xFFFFE6055EB0AC40 [64 Elements]
