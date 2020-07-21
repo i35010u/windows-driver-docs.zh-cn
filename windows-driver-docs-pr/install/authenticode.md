@@ -4,35 +4,35 @@ description: 验证码数字签名
 ms.assetid: b4cddf64-dc1a-47b7-803d-afb1e175c9d5
 keywords:
 - 验证码 WDK 驱动程序签名
-- 驱动程序签名 WDK，验证码
-- 签署驱动程序 WDK，验证码
-- 数字签名 WDK，验证码
-- 签名 WDK，验证码
+- 驱动程序签名 WDK，Authenticode
+- 对驱动程序进行签名 WDK，Authenticode
+- 数字签名 WDK，Authenticode
+- 签名 WDK，Authenticode
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40529ece337b1b32c1b3107204b933f3bb2f0eb1
-ms.sourcegitcommit: ba351c01be491b8ab5c74d778ab02c8766a5667a
+ms.openlocfilehash: 3e944c9ffb96488b18ffbb42808bb570ec6f9c66
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041374"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557762"
 ---
 # <a name="authenticode-digital-signatures"></a>验证码数字签名
 
 
-验证码是标识的验证码签名软件发布者的 Microsoft 代码签名技术。 此外将验证码验证的软件具有未被篡改由于签名和发布。
+Authenticode 是一项 Microsoft 代码签名技术，用于标识 Authenticode 签名软件的发布者。 Authenticode 还会验证软件是否在经过签名和发布后被篡改。
 
-验证码使用加密技术来验证发布服务器标识和代码完整性。 它结合了数字签名，受信任的实体，包括证书颁发机构 (Ca)，以确保驱动程序产生的用户从规定的发布服务器的基础结构。 验证码，用户可以通过链接到受信任的根证书的数字签名中的证书来验证软件发布者的标识。
+Authenticode 使用加密技术来验证发行者标识和代码完整性。 它结合了数字签名与受信任实体（包括证书颁发机构（Ca））的基础结构，以确保用户的驱动程序来自于所述的发布者。 Authenticode 允许用户通过将数字签名中的证书链接到受信任的根证书来验证软件发行者的身份。
 
-使用验证码，软件发布者进行签名的驱动程序或[驱动程序包](driver-packages.md)，其与标记[数字证书](digital-certificates.md)的验证的发布服务器的标识，并还提供了的接收方可验证的代码完整性的代码。 证书是一组标识的软件发布服务器的数据。 只有在该颁发机构已验证软件发布者的标识后，它是由 CA 颁发。 证书数据包括发布者的公用加密密钥。 证书通常是最终引用已知 CA （如 verisign） 到此类证书链的一部分。
+使用 Authenticode，软件发行者签署驱动程序或[驱动程序包](driver-packages.md)，使用验证发行者身份的[数字证书](digital-certificates.md)对其进行标记，并为代码的接收方提供验证代码完整性的能力。 证书是用于标识软件发行者的一组数据。 仅在该颁发机构验证了软件发行者的身份后，才由 CA 颁发此证书。 证书数据包括发行者的公共加密密钥。 此证书通常是此类证书链的一部分，最终引用的是众所周知的 CA （如 VeriSign）。
 
-验证码签名不会更改驱动程序的可执行部分。 相反，它执行以下任务：
+Authenticode 代码签名不会改变驱动程序的可执行部分。 相反，它执行以下操作：
 
--   带有嵌入签名证书，签名过程中嵌入的驱动程序文件 nonexecution 一部分中的数字签名。 有关此过程的详细信息，请参阅[驱动程序文件中嵌入签名](embedded-signatures-in-a-driver-file.md)。
+-   使用嵌入签名，签名过程在驱动程序文件的 nonexecution 部分中嵌入数字签名。 有关此过程的详细信息，请参阅[驱动程序文件中的嵌入签名](embedded-signatures-in-a-driver-file.md)。
 
--   使用数字签名[编录文件](catalog-files.md)( *.cat*)，则签名过程需要在每个文件的内容从生成文件哈希值[驱动程序包](driver-packages.md)。 此哈希值包含在目录文件。 使用嵌入式签名然后签名的编录文件。 这样一来，目录文件是一种分离签名。
+-   对于经过数字签名的[目录文件](catalog-files.md)（*.cat*），签名过程需要从[驱动程序包](driver-packages.md)中每个文件的内容生成文件哈希值。 此哈希值包含在目录文件中。 然后，使用嵌入的签名对该目录文件进行签名。 通过这种方式，目录文件是一种分离签名。
 
-**请注意**  [硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)具有不同的设备类型的测试类别。 可以在找到的测试类别列表[HLK API 参考](https://docs.microsoft.com/windows-hardware/test/hlk/api/hlk-api-reference)。 如果此列表中包含的设备类型的测试类别，应获取软件发行者[WHQL 版本签名](whql-release-signature.md)有关[驱动程序包](driver-packages.md)但是，如果 HCK 不具有适用于的测试计划设备类型的软件发布者可以通过使用 Microsoft Authenticode 技术签名驱动程序包。 有关此过程的详细信息，请参阅[公开发布的版本的签名驱动程序](signing-drivers-for-public-release.md)。
+**注意**   [硬件认证工具包（HCK）](https://go.microsoft.com/fwlink/p/?linkid=227016)包含各种设备类型的测试类别。 可在[HLK API 参考](https://docs.microsoft.com/windows-hardware/test/hlk/api/hlk-api-reference)中找到测试类别的列表。 如果此列表中包含设备类型的测试类别，则软件发行者应为[驱动程序包](driver-packages.md)获取[WHQL 版本签名](whql-release-signature.md)，但如果 HCK 没有设备类型的测试程序，则软件发布者可以使用 Microsoft Authenticode 技术对驱动程序包进行签名。 有关此过程的详细信息，请参阅[签署公用版驱动程序](signing-drivers-for-public-release--windows-vista-and-later-.md)。
 
  
 

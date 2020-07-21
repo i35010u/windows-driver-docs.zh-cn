@@ -4,12 +4,12 @@ description: 本机调试器对象表示调试器环境的各种构造。 本主
 ms.assetid: A8E12564-D083-43A7-920E-22C4D627FEE9
 ms.date: 01/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a96d0222a5715394edbdf924ab2dda506f53922d
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: db50e1fdea070bae8383c8295371589798a5eb92
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76315111"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557742"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---debugger-object-details"></a>JavaScript 扩展中的本机调试器对象 - 调试器对象详细信息
 
@@ -41,24 +41,24 @@ ms.locfileid: "76315111"
 
 **属性访问**
 
-尽管对象上存在一些属性，这些属性由 JavaScript 提供程序本身放置，但用于输入 JavaScript 的本机对象上的大多数属性都是由数据模型提供的。 这意味着，对于属性访问---对象名称或对象\[propertyName\]，将发生以下情况。
+尽管对象上存在一些属性，这些属性由 JavaScript 提供程序本身放置，但用于输入 JavaScript 的本机对象上的大多数属性都是由数据模型提供的。 这意味着，对于属性访问---对象名称或对象属性 \[ 名称 \] ，将发生以下情况。
 
 -   如果*属性名称是*由 JavaScript 提供程序自身投影到对象的属性的名称，则先将其解析为 this;本来
 -   如果*propertyName*是由数据模型（另一个可视化工具）投影到对象的键的名称，则它将解析为此名称 second;本来
 -   如果*propertyName*是本机对象的字段名称，则它将解析为第三个名称;本来
 -   如果对象是指针，则将取消引用指针，以上的循环将继续（已取消引用的对象的投影属性，后跟一个后跟一个本地字段的键）
 
-JavaScript 中的属性访问的常规方法--对象. propertyName 和 object\[propertyName\]--将访问对象的基础本机字段，这与调试器中的 "dx" 命令非常相似。
+JavaScript 中的属性访问的常规方法--对象名称和对象 \[ 属性名称 \] --将访问对象的基础本机字段，与调试器中的 "dx" 命令非常相似。
 
 **投影名称**
 
 以下属性（和方法）投影到输入 JavaScript 的本机对象。
 
-| 方法             | 签名                  | 描述                                                                                                                                |
+| 方法             | 签名                  | 说明                                                                                                                                |
 |--------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| hostContext        | 属性                   | 返回一个对象，它表示对象中的上下文 (地址空间、 调试目标，等等...)                              |
-| targetLocation     | 属性                   | 返回一个对象是一个抽象概念的其中对象是在地址空间内 (虚拟地址、 注册、 子寄存器，等等...) |
-| targetSize         | 属性                   | 返回对象的大小（有效： sizeof （&lt;类型的对象&gt;）                                                                |
+| hostContext        | 属性                   | 返回一个对象，该对象表示对象所在的上下文（地址空间、调试目标等）                              |
+| targetLocation     | 属性                   | 返回一个对象，该对象是对象在地址空间（虚拟地址、寄存器、子寄存器等）中的抽象 |
+| targetSize         | 属性                   | 返回对象的大小（有效： sizeof （ &lt; 对象的类型 &gt; ）                                                                |
 | addParentModel     | . addParentModel （object）    | 向对象添加新的父模型（类似于数据模型端的 JavaScript 原型）                                          |
 | removeParentModel  | . removeParentModel （object） | 从对象中移除给定的父模型                                                                                               |
 | runtimeTypedObject | 属性                   | 对对象执行分析，并尝试将其转换为运行时（最常派生的）类型                                                 |
@@ -66,10 +66,10 @@ JavaScript 中的属性访问的常规方法--对象. propertyName 和 object\[p
 
 如果对象是指针，则将以下属性（和方法）投影到用于输入 JavaScript 的指针：
 
-| 属性名称 | 签名      | 描述                                                                    |
+| 属性名称 | 签名      | 说明                                                                    |
 |---------------|----------------|--------------------------------------------------------------------------------|
-| 添加           | 。添加（值）    | 在指针和指定的值之间执行指针数学加法运算     |
-| 地址       | 属性       | 将指针的地址作为64位序号对象返回（库类型） |
+| add           | 。添加（值）    | 在指针和指定的值之间执行指针数学加法运算     |
+| address       | 属性       | 将指针的地址作为64位序号对象返回（库类型） |
 | 取消引用   | 。取消引用（） | 取消引用指针并返回基础对象                     |
 | isNull        | 属性       | 返回指针值是否为 nullptr （0）                        |
 
@@ -79,9 +79,9 @@ JavaScript 中的属性访问的常规方法--对象. propertyName 和 object\[p
 
 从本机对象的 targetLocation 属性返回的 location 对象包含以下属性（和方法）。
 
-| 属性名称 | 签名        | 描述                                          |
+| 属性名称 | 签名        | 说明                                          |
 |---------------|------------------|------------------------------------------------------|
-| 添加           | 。添加（值）      | 向位置添加绝对字节偏移量。        |
+| add           | 。添加（值）      | 向位置添加绝对字节偏移量。        |
 | 减 (subtract)      | . 减法（值） | 从位置减去绝对字节偏移量。 |
 
 **其他属性**
@@ -107,7 +107,7 @@ function iterateNative(nativeObject)
 
 **可索引性**
 
-通过序数（例如：本机数组）在一个维度中理解为可编制索引的对象可在 JavaScript 中通过标准属性访问运算符--object\[索引\]进行索引编制。 如果按名称对对象进行索引或在多个维度中可编制索引，则会将 getValueAt 和 setValueAt 方法投影到对象，以便 JavaScript 代码可以利用索引器。
+通过序数（例如：本机数组）在一个维度中理解为可索引的对象可在 JavaScript 中通过标准属性访问运算符--对象索引进行索引编制 \[ \] 。 如果按名称对对象进行索引或在多个维度中可编制索引，则会将 getValueAt 和 setValueAt 方法投影到对象，以便 JavaScript 代码可以利用索引器。
 
 ```javascript
 function indexNative(nativeArray)
@@ -141,7 +141,7 @@ function stringifyNative(nativeObject)
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">签名</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -180,10 +180,10 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 
 部分关键功能直接位于主机对象下。 余数为带命名空间。 命名空间包括以下各项。
 
-| 命名空间   | 描述                                                              |
+| 命名空间   | 说明                                                              |
 |-------------|--------------------------------------------------------------------------|
 | 诊断 | 有助于诊断和调试脚本代码的功能    |
-| memory      | 用于在调试目标内启用内存读写功能的功能 |
+| 内存      | 用于在调试目标内启用内存读写功能的功能 |
 
 **根级别**
 
@@ -191,17 +191,17 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 
 <table>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="30%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left">名称</th>
 <th align="left">签名</th>
 <th align="left">存在阶段</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -284,7 +284,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 <td align="left">要放置在从<strong>initializeScript</strong>返回的数组中的对象的构造函数，这表示通过已知名称将 JavaScript 原型或 ES6 类注册为数据模型，以便其他扩展可以查找和扩展</td>
 </tr>
 <tr class="even">
-<td align="left">命名空间</td>
+<td align="left">namespace</td>
 <td align="left"><p>属性</p></td>
 <td align="left">2</td>
 <td align="left">提供对调试器的根命名空间的直接访问。 例如，可以通过主机访问第一个调试目标的进程列表。第一个（）。使用此属性的进程</td>
@@ -350,7 +350,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 
 宿主对象的诊断子命名空间包含以下各项。
 
-| 名称     | 签名           | 存在阶段 | 描述                                                                                                                                                                                                                                                                                                                                                   |
+| 名称     | 签名           | 存在阶段 | 说明                                                                                                                                                                                                                                                                                                                                                   |
 |----------|---------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | debugLog | debugLog （对象 ...） | 1             | 这为脚本扩展提供了 printf 样式的调试。 目前，debugLog 的输出将路由到调试器的输出控制台。 在以后的某个时间点，还提供了一些计划以灵活地路由此输出。 注意：不应将其用作将用户输出打印到控制台的方法。 将来可能不会将其路由。 |
 
@@ -370,7 +370,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 <th align="left">名称</th>
 <th align="left">签名</th>
 <th align="left">存在阶段</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -385,14 +385,14 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 <td align="left"><p>readString （location，[contextInheritor]）</p>
 <p>readString （location，[length]，[contextInheritor]）</p></td>
 <td align="left">2</td>
-<td align="left">这会从调试目标的地址空间读取一个窄（当前代码页）字符串，将其转换为 UTF-16，并将结果作为 JavaScript 字符串返回。 如果无法读取内存，则可能会引发异常。 提供的位置可以是地址（64位值）、位置对象或本机 char<em>。 如果提供了可选的<em>contextInheritor</em>参数，则将在参数指示的上下文中读取内存（例如：地址空间和调试目标）;否则，将从调试器的当前上下文中读取它。 如果提供了可选<em>长度</em>参数，则读取字符串将为指定长度。</td>
+<td align="left">这会从调试目标的地址空间读取一个窄（当前代码页）字符串，将其转换为 UTF-16，并将结果作为 JavaScript 字符串返回。 如果无法读取内存，则可能会引发异常。 提供的位置可以是地址（64位值）、位置对象或本机 char <em> 。 如果提供了可选的<em>contextInheritor</em>参数，则将在参数指示的上下文中读取内存（例如：地址空间和调试目标）;否则，将从调试器的当前上下文中读取它。 如果提供了可选<em>长度</em>参数，则读取字符串将为指定长度。</td>
 </tr>
 <tr class="odd">
 <td align="left">readWideString</td>
 <td align="left"><p>readWideString （location，[contextInheritor]）</p>
 <p>readWideString （location，[length]，[contextInheritor]）</p></td>
 <td align="left">2</td>
-<td align="left">这会从调试目标的地址空间读取宽（UTF-16）字符串，并将结果作为 JavaScript 字符串返回。 如果无法读取内存，则可能会引发异常。 提供的位置可以是地址（64位值）、位置对象或本机 wchar_t</em>。 如果提供了可选的<em>contextInheritor</em>参数，则将在参数指示的上下文中读取内存（例如：地址空间和调试目标）;否则，将从调试器的当前上下文中读取它。 如果提供了可选<em>长度</em>参数，则读取字符串将为指定长度。</td>
+<td align="left">这会从调试目标的地址空间读取宽（UTF-16）字符串，并将结果作为 JavaScript 字符串返回。 如果无法读取内存，则可能会引发异常。 提供的位置可以是地址（64位值）、位置对象或本机 wchar_t </em> 。 如果提供了可选的<em>contextInheritor</em>参数，则将在参数指示的上下文中读取内存（例如：地址空间和调试目标）;否则，将从调试器的当前上下文中读取它。 如果提供了可选<em>长度</em>参数，则读取字符串将为指定长度。</td>
 </tr>
 </tbody>
 </table>
@@ -406,7 +406,7 @@ JavaScript 提供程序将一个名为 host 的对象插入到它加载的每个
 | 概念                 | 本机接口             | JavaScript 等效项                                                |
 |-------------------------|------------------------------|----------------------------------------------------------------------|
 | 字符串转换       | IStringDisplayableConcept    | standard： toString （...）{...}                                         |
-| Iterability             | IIterableConcept             | 标准： \[符号. iterator\]（） {...}                                 |
+| Iterability             | IIterableConcept             | 标准： \[ Symbol. iterator \] （） {...}                                 |
 | 可索引性            | IIndexableConcept            | protocol： getDimensionality （...）/getValueAt （...）/setValueAt （...） |
 | 运行时类型转换 | IPreferredRuntimeTypeConcept | protocol： getPreferredRuntimeTypedObject （...）                        |
 
@@ -429,7 +429,7 @@ class myObject
 
 **Iterability**
 
-数据模型的概念：对象是可迭代还是不映射到对象是否为可迭代的 ES6 协议。 具有 \[符号的任何对象\] 方法被视为可迭代。 此类的实现将使对象可迭代。
+数据模型的概念：对象是可迭代还是不映射到对象是否为可迭代的 ES6 协议。 具有符号的任何对象 \[ 。 iterator \] 方法被视为可迭代。 此类的实现将使对象可迭代。
 
 仅可迭代的对象可以具有如下实现。
 
@@ -476,7 +476,7 @@ class myObject
 
 **可索引性**
 
-与 JavaScript 不同，数据模型在属性访问和索引编制之间做出非常明显的区别。 希望在数据模型中表现为可编制索引的任何 JavaScript 对象必须实现一个协议，该协议包含 getDimensionality 方法，该方法返回索引器的维数和可选的 getValueAt 和 setValueAt 方法对。在提供的索引执行对象的读取和写入。 如果对象为只读或只写，则可接受省略 getValueAt 或 setValueAt 方法
+与 JavaScript 不同，数据模型在属性访问和索引编制之间做出非常明显的区别。 希望在数据模型中表现为可编制索引的任何 JavaScript 对象都必须实现一个协议，该协议将返回索引器的维数和一个可选的 getValueAt 和 setValueAt 方法，这些方法在提供的索引执行对象的读取和写入操作。 如果对象为只读或只写，则可接受省略 getValueAt 或 setValueAt 方法
 
 ```javascript
 class myObject

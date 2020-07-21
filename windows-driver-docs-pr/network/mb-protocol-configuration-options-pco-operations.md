@@ -6,12 +6,12 @@ keywords:
 - MB PCO 选项，移动宽带 PCO 选项，MB 协议配置选项，移动宽带协议配置选项，WDK 网络驱动程序，MBB 微型端口驱动程序
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 833bb6114ad36b39a8080dff25988eead22efb7d
-ms.sourcegitcommit: adccef85b24a37b1caa51e1b3435741a2f022cd5
+ms.openlocfilehash: b1bf9a72e9b9f1cd50de65a04ff99a4fa38c546f
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724412"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557712"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB 协议配置选项（PCO）操作
 
@@ -88,9 +88,9 @@ InformationBuffer 包含唯一相关字段为*SessionId*的**MBIM_PCO_VALUE** �
 
 未经请求的事件包含一个 MBIM_PCO_VALUE，并在新的 PCO 值到达激活的连接时发送。
 
-#### <a name="parameters"></a>parameters
+#### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | MBIM_PCO_VALUE | 不适用 |
 | 响应 | 不适用 | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
@@ -99,7 +99,7 @@ InformationBuffer 包含唯一相关字段为*SessionId*的**MBIM_PCO_VALUE** �
 
 ##### <a name="mbim_pco_type"></a>MBIM_PCO_TYPE
 
-| 类型 | Value | 说明 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MBIMPcoTypeComplete | 0 | 指定完整的 PCO 结构将在从网络接收的情况下传递，而标头实际反映在 3GPP TS 24.008 规范中定义的 PCO 结构的八进制3中的协议。 |
 | MBIMPcoTypePartial | 1 | 指定该调制解调器将只传递从网络接收的 PCO 结构的一个子集。 标头与 3GPP TS 24.008 规范中定义的 PCO 结构相匹配，但八进制3的 "配置协议" 可能无效。 |

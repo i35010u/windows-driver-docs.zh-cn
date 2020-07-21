@@ -2,14 +2,14 @@
 title: 安装测试证书
 description: 安装测试证书
 ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
-ms.date: 04/20/2017
+ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 86112b64c75ac238e7370328971fb527edbdeb3f
-ms.sourcegitcommit: 701e4a41860877cc1134e139bc0bd4a9f7270443
+ms.openlocfilehash: 5108d21db519137367cbb618fdb9640c64495cf1
+ms.sourcegitcommit: 41bc8d70b5aff5a30c33bcc571b3718c0232e68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86453986"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86543089"
 ---
 # <a name="installing-test-certificates"></a>安装测试证书
 
@@ -36,11 +36,25 @@ certmgr /add ContosoTest.cer /s /r localMachine root
 
 -   *Root*指定本地计算机的目标存储的名称，该名称是指定受信任的根证书颁发机构证书存储或***Trustedpublisher***以指定受信任的发布者证书存储区的***根***。
 
-将证书复制到 "受信任的根证书颁发机构" 证书存储区后，可以通过 Microsoft 管理控制台（MMC）证书管理单元查看该证书，如[查看测试证书](viewing-test-certificates.md)中所述。
+成功的运行将生成以下输出：
 
-以下屏幕截图显示了 "受信任的根证书颁发机构" 证书存储中的 "Contoso" （测试）证书。
+```cmd
+certmgr /add ContosoTest.cer /s /r localMachine root
+CertMgr Succeeded
+```
+
+将证书复制到 "受信任的根证书颁发机构" 证书存储（计算机存储，*而不*是用户存储）后，可以通过 Microsoft 管理控制台（MMC）证书管理单元查看该证书，如[查看测试证书](viewing-test-certificates.md)中所述。
+
+以下屏幕截图显示了 "受信任的根证书颁发机构" 证书存储中的 Contoso （测试）证书。
 
 ![mmc "证书" 管理单元中 "受信任的根证书颁发机构" 证书存储的屏幕截图](images/certstore2.png)
+
+你还可以在命令提示符处查看该证书：
+
+```cmd
+certutil -store root | findstr Contoso
+certutil -store root <SHA-1 id of certificate>
+```
 
 有关 Certmgr.msc 及其命令行参数的详细信息，请参阅[**certmgr.msc**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)。
 

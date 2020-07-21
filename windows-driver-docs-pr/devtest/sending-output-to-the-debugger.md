@@ -12,11 +12,11 @@ keywords:
 ms.date: 06/04/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b0096388d1c43baaafde7532c18737413e523d5
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428346"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86568062"
 ---
 # <a name="sending-output-to-the-debugger"></a>将输出发送到调试器
 

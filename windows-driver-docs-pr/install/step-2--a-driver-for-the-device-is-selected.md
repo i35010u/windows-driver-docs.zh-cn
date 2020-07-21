@@ -1,29 +1,29 @@
 ---
-title: 选择该设备的步骤 2 驱动程序
-description: 选择该设备的步骤 2 驱动程序
+title: 步骤2选择设备的驱动程序
+description: 步骤2选择设备的驱动程序
 ms.assetid: 2134cab6-58ea-4258-9a45-09bf54156e0a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3263a15f4171e48f3ed27ca04bf00ae5b062cb1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cce40c6cc81d3c3ad2664536cda736568a95c17b
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385874"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557786"
 ---
 # <a name="step-2-a-driver-for-the-device-is-selected"></a>步骤 2：选择设备的驱动程序
 
 
-检测到新设备并将其标识 Windows 后并将其[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))请执行以下步骤：
+检测到新设备并进行识别后，Windows 及其[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))将执行以下步骤：
 
-1.  Windows 搜索的相应[驱动程序包](driver-packages.md)设备。 有关此步骤的详细信息，请参阅[为驱动程序包搜索](#searching-for-the-driver)。
-2.  Windows 从一个或多个驱动程序包中选择最适用于设备的驱动程序。 有关此步骤的详细信息，请参阅[选择该驱动程序](#selecting-the-driver)。
+1.  Windows 将在设备上搜索合适的[驱动程序包](driver-packages.md)。 有关此步骤的详细信息，请参阅[搜索驱动程序包](#searching-for-the-driver)。
+2.  Windows 从一个或多个驱动程序包中为设备选择最适合的驱动程序。 有关此步骤的详细信息，请参阅[选择驱动程序](#selecting-the-driver)。
 
-### <a href="" id="searching-for-the-driver"></a>搜索驱动程序包
+### <a name="searching-for-the-driver-package"></a><a href="" id="searching-for-the-driver"></a>搜索驱动程序包
 
-使用[硬件标识符 (ID)](hardware-ids.md)总线或中心驱动程序，Windows 搜索报告[驱动程序包](driver-packages.md)与设备相匹配。 驱动程序包与设备相匹配，如果硬件 ID 相匹配的硬件 ID 或[兼容 ID](compatible-ids.md)中[ **INF*模型*部分**](inf-models-section.md)的条目驱动程序包[INF 文件](overview-of-inf-files.md)。
+使用总线或集线器驱动程序报告的[硬件标识符（ID）](hardware-ids.md) ，Windows 会搜索与设备匹配的[驱动程序包](driver-packages.md)。 如果硬件 ID 与驱动程序包的[inf 文件](overview-of-inf-files.md)的 " [**INF*模型*" 部分**](inf-models-section.md)条目中的硬件 id 或[兼容 ID](compatible-ids.md)相匹配，则驱动程序包与设备匹配。
 
-具体取决于操作系统版本，Windows 搜索匹配的以下表中所述的不同位置中的驱动程序包。
+根据操作系统版本，Windows 会在不同位置中搜索匹配的驱动程序包，如下表所述。
 
 <table>
 <colgroup>
@@ -35,19 +35,19 @@ ms.locfileid: "67385874"
 <tr class="header">
 <th align="left">搜索阶段</th>
 <th align="left">Windows 7</th>
-<th align="left">Windows 8 和更高版本的 Windows</th>
+<th align="left">Windows 8 及更高版本的 Windows</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">之前安装驱动程序</td>
+<td align="left">安装驱动程序之前</td>
 <td align="left"><p>DevicePath</p>
 <p>Windows 更新</p>
-<p><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">驱动程序存储区</a></p></td>
-<td align="left"><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">驱动程序存储区</a></td>
+<p><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">驱动程序存储</a></p></td>
+<td align="left"><a href="driver-store.md" data-raw-source="[Driver store](driver-store.md)">驱动程序存储</a></td>
 </tr>
 <tr class="even">
-<td align="left">选定后初始驱动程序</td>
+<td align="left">选择初始驱动程序之后</td>
 <td align="left"><p>不适用</p></td>
 <td align="left"><p>DevicePath</p>
 <p>Windows 更新</p></td>
@@ -57,51 +57,51 @@ ms.locfileid: "67385874"
 
  
 
-例如，如果用户运行的 Windows 7 的计算机上的 USB 集线器的端口将无线局域网 (WLAN) 适配器，则执行以下步骤：
+例如，如果用户在运行 Windows 7 的计算机上将无线局域网（WLAN）适配器插入 USB 集线器的端口，则会执行以下步骤：
 
--   USB 集线器驱动程序创建一个用于将 WLAN 适配器的硬件 Id 的列表后，Windows 将首先搜索[驱动程序存储区](driver-store.md)匹配[驱动程序包](driver-packages.md)设备。
+-   USB 集线器驱动程序创建 WLAN 适配器的硬件 Id 列表后，Windows 会先在[驱动程序存储区](driver-store.md)中搜索设备的匹配[驱动程序包](driver-packages.md)。
 
--   设备安装过程中搜索匹配的驱动程序包从以下位置之一：
+-   设备安装过程从下列位置之一搜索匹配的驱动程序包：
 
-    -   通用命名约定 (*UNC*) 由标识的路径**DevicePath**的注册表值**HKEY_LOCAL_MACHINE\\软件\\Microsoft\\Windows\\CurrentVersion**。
+    -   通用命名约定（*UNC*）路径，由**HKEY_LOCAL_MACHINE \\ Software \\ Microsoft \\ Windows \\ CurrentVersion**的**DevicePath**注册表值标识。
 
     -   Windows 更新
 
-    -   独立硬件供应商 (IHV) 提供的设备分发媒体。
+    -   为设备提供独立硬件供应商（IHV）的分布介质。
 
-    如果找到驱动程序包，则 Windows 将从其安装在设备的驱动程序在驱动程序存储中暂存程序包。
+    如果找到了驱动程序包，Windows 会将包暂存到驱动程序存储区中，将在该驱动程序存储区中安装设备驱动程序。
 
-**请注意**  从 Windows Vista 开始，在操作系统始终安装[驱动程序包](driver-packages.md)从[驱动程序存储区](driver-store.md)。 如果匹配的驱动程序包位于在另一个位置中，Windows 驱动程序程序包存储之前会安装设备驱动程序的第一个阶段。
+**注意**   从 Windows Vista 开始，操作系统始终从[驱动程序存储区](driver-store.md)安装[驱动程序包](driver-packages.md)。 如果在其他位置找到了匹配的驱动程序包，则 Windows 首先会将包安装到驱动程序存储区，然后再安装设备驱动程序。
 
  
 
-另举一例，如果用户运行 Windows 8 的计算机上的 USB 集线器的端口将 WLAN 适配器将执行以下步骤：
+再举一个例子，如果用户将 WLAN 适配器插入运行 Windows 8 的计算机上的 USB 集线器端口，则会执行以下步骤：
 
--   USB 集线器驱动程序创建将 WLAN 适配器的硬件 ID 后，Windows 将首先搜索匹配的驱动程序存储区[驱动程序包](driver-packages.md)设备。 如果在驱动程序存储区中找到驱动程序的程序包，Windows 会将其安装在设备上。 这样，若要开始快速工作的设备。
+-   USB 集线器驱动程序为 WLAN 适配器创建硬件 ID 后，Windows 会先在驱动程序存储区中搜索设备的匹配[驱动程序包](driver-packages.md)。 如果在驱动程序存储区中找到了驱动程序包，则 Windows 将在设备上安装该程序包。 这允许设备快速开始工作。
 
--   单独的进程，在 Windows 搜索 Windows Update 和更好地匹配的驱动程序 DevicePath 比已安装。 如果找到一个，则驱动程序暂存到驱动程序存储区，，，然后安装在设备上。
+-   在单独的进程中，Windows 会搜索 Windows 更新和 DevicePath，以便获得比安装更好的驱动程序。 如果找到一个，驱动程序将暂存到驱动程序存储区中，然后安装到设备上。
 
-有关详细信息[驱动程序包](driver-packages.md)搜索过程，请参阅[其中 Windows 搜索驱动程序](where-setup-searches-for-drivers.md)。
+有关[驱动程序包](driver-packages.md)搜索过程的详细信息，请参阅[Windows 搜索驱动程序的位置](where-setup-searches-for-drivers.md)。
 
 ### <a name="selecting-the-driver"></a>选择驱动程序
 
-只要 Windows 已找到一个或多个匹配[驱动程序包](driver-packages.md)对于设备，Windows 会通过执行以下步骤选择最适合的驱动程序：
+一旦 Windows 找到了设备的一个或多个匹配的[驱动程序包](driver-packages.md)，windows 会按照以下步骤选择最佳驱动程序：
 
-1.  如果 Windows 已找到一个匹配的驱动程序包，会从设备该包安装驱动程序。
+1.  如果 Windows 只找到一个匹配的驱动程序包，则会从该设备的该包中安装驱动程序。
 
-2.  如果 Windows 已找到多个匹配的驱动程序包，Windows 先将分配一个排名值给驱动程序从每个驱动程序包。 如果只有一个驱动程序具有最低的排名值，它将从设备该包安装驱动程序。
+2.  如果 Windows 找到多个匹配的驱动程序包，则 Windows 首先会将排名值从每个驱动程序包分配给驱动程序。 如果仅有一个驱动程序的排名值最低，则会从该设备的该程序包安装驱动程序。
 
-    有关排序过程的详细信息，请参阅[如何 Windows Ranks Drivers](how-setup-ranks-drivers.md)。
+    有关排名过程的详细信息，请参阅[Windows 如何对驱动程序进行排名](how-setup-ranks-drivers--windows-vista-and-later-.md)。
 
-3.  如果多个驱动程序具有相同最低排名值，Windows 将使用以下条件来选择该设备的最佳驱动程序：
+3.  如果多个驱动程序具有相同的最低排名值，Windows 将使用以下条件来选择设备的最佳驱动程序：
 
-    -   是否进行数字签名的驱动程序。 从 Windows Vista 开始，Windows 始终选择签名的驱动程序而不是未签名的驱动程序，而不考虑其他选择条件。 有关数字签名的驱动程序的详细信息，请参阅[驱动程序签名](driver-signing.md)。
+    -   驱动程序是否已进行数字签名。 从 Windows Vista 开始，无论其他选择条件如何，Windows 始终会选择签名的驱动程序而不是未签名的驱动程序。 有关驱动程序的数字签名的详细信息，请参阅[驱动程序签名](driver-signing.md)。
 
-    -   驱动程序日期和版本，其中由指定的日期和版本[ **INF DriverVer 指令**](inf-driverver-directive.md)驱动程序包中包含的[INF 文件](overview-of-inf-files.md)。
+    -   驱动程序日期和版本，其中的日期和版本由驱动程序包的[inf 文件](overview-of-inf-files.md)中包含的[**INF DriverVer 指令**](inf-driverver-directive.md)指定。
 
-一旦 Windows，已选中设备的驱动程序，Windows 安装驱动程序，如中所述[步骤 3:安装设备的驱动程序](step-3--the-driver-for-the-device-is-installed.md)。
+Windows 选择设备驱动程序后，Windows[会按照步骤3：安装设备驱动程序](step-3--the-driver-for-the-device-is-installed.md)中所述安装驱动程序。
 
-有关如何为设备选择驱动程序的详细信息，请参阅[Windows 中如何选择驱动程序](how-setup-selects-drivers.md)。
+有关如何为设备选择驱动程序的详细信息，请参阅[Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
 
  
 

@@ -19,11 +19,11 @@ keywords:
 ms.date: 06/04/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f3620a5dac393eb6cca43dbbcdd8ba705445855
-ms.sourcegitcommit: 188596c90e03a5619b5cbf0bff4276fc94777253
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84519848"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86568064"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>读取和筛选调试消息
 

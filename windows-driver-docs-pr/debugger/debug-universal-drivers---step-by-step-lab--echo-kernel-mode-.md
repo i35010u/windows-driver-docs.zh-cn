@@ -6,16 +6,16 @@ keywords:
 - 调试实验室
 - 循序渐进
 - ECHO
-ms.date: 02/27/2020
+ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0216532ea7df9fa89a2d55658a2daf5e90dd2147
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 967afeedef7b2eaa72234ebd654c05ca9eedf520
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235392"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557784"
 ---
-# <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序-逐步骤实验室（回显内核模式）
+# <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
 
 此实验室引入了 WinDbg 内核调试器。 WinDbg 用于调试回显内核模式示例驱动程序代码。
 
@@ -176,7 +176,7 @@ Approximate round trip times in milli-seconds:
 
 **&lt;-在主机系统上**
 
-1. 在主计算机上，以管理员身份打开命令提示符窗口。 我们将使用 Windows 驱动程序工具包（WDK）中的 x64 版本，该版本已作为 Windows 工具包安装的一部分进行安装。 默认情况下，它位于此处。
+1. 在主计算机上，以管理员身份打开命令提示符窗口。 我们将使用 Windows 驱动程序工具包（WDK）中的 x64 版本的 WinDbg.exe，该版本作为 Windows 工具包安装的一部分进行安装。 默认情况下，它位于此处。
 
     ```console
     C:\> Cd C:\Program Files(x86)\Windows Kits\10\Debuggers\x64 
@@ -357,9 +357,9 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-    b. 将主 .zip 文件下载到本地硬盘驱动器。
+    b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-    c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，你可以将*C： \\ DriverSamples \\ *指定为要将文件提取到的新文件夹。
+    c. 右键单击*Windows-driver-samples-master.zip*，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，你可以将*C： \\ DriverSamples \\ *指定为要将文件提取到的新文件夹。
 
     d. 提取文件后，导航到以下子文件夹。
 
@@ -407,14 +407,14 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
     | 文件     | 说明                                                                       |
     |----------|-----------------------------------------------------------------------------------|
-    | Sys.databases | 驱动程序文件。                                                                  |
+    | Echo.sys | 驱动程序文件。                                                                  |
     | 回显 .inf | 一个信息（INF）文件，其中包含安装驱动程序所需的信息。 |
 
-    此外，还生成了 echoapp 文件，该文件应位于以下位置： *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf \\ exe \\ x64 \\ 调试*
+    此外，还生成 echoapp.exe 文件，该文件应位于以下位置： *C： \\ DriverSamples \\ 常规 \\ echo \\ kmdf \\ exe \\ x64 \\ 调试*
 
     | 文件        | 说明                                                                       |
     |-------------|-----------------------------------------------------------------------------------|
-    | EchoApp | 与 echo 驱动程序通信的命令提示符可执行文件测试文件。 |     
+    | EchoApp.exe | 与 echo.sys 驱动程序通信的命令提示符可执行文件测试文件。 |     
 
 8.  找到 USB 拇指驱动器或设置网络共享，以将构建的驱动程序文件和测试 EchoApp 从主机复制到目标系统。
 
@@ -424,15 +424,15 @@ Unable to enumerate user-mode unloaded modules, Win32 error 0n30
 
 *在第4部分中，你将使用 devcon 安装 echo 示例驱动程序。*
 
-**-&gt;在目标系统上**
-
 安装驱动程序的计算机称为*目标计算机*或*测试计算机*。 通常，这是与你开发和构建驱动程序包的计算机不同的计算机。 开发和构建驱动程序的计算机称为 "*主机*"。
 
-将驱动程序包移动到目标计算机并安装驱动程序的过程称为 "*部署*驱动程序"。 可以自动或手动部署示例回显驱动程序。
+将驱动程序包移动到目标计算机并安装驱动程序的过程称为 "*部署*驱动程序"。
 
-手动部署驱动程序之前，必须通过启用测试签名来准备目标计算机。 还需要在 WDK 安装中找到 DevCon 工具。 之后，就可以运行生成的驱动程序示例了。
+在部署测试签名驱动程序之前，必须通过启用测试签名来准备目标计算机。 还需要在 WDK 安装中找到 DevCon 工具，并将其复制到目标系统。
 
 若要在目标系统上安装驱动程序，请执行以下步骤。
+
+**-&gt;在目标系统上**
 
 **启用测试签名驱动程序**
 
@@ -444,20 +444,23 @@ b. 在 "更新和安全性" 中，选择 "**恢复**"。
 
 c. 在 "高级启动" 下，单击 "**立即重新启动**"。
 
-d. 重新启动计算机时，请选择 "**启动选项**"。 在 Windows 10 中， **Troubleshoot**选择 "  >  **高级选项**  >  " "**启动设置**故障排除"，然后单击 "重新启动" 按钮。 
+d. 重新启动计算机时，请选择 "**启动选项**"。 在 Windows 10 中， **Troubleshoot**选择 "  >  **高级选项**  >  " "**启动设置**故障排除"，然后单击 "重新启动" 按钮。
 
 e. 按**F7**键，选择 "禁用驱动程序签名强制"。
 
 f. 重新启动目标计算机。
 
-
 **&lt;-在主机系统上**
 
 导航到 WDK 安装中的 "工具" 文件夹，并找到 DevCon 工具。 例如，在以下文件夹中查看：
 
-*C： \\Program Files （x86） \\ Windows 工具包 \\ 10 \\ 工具 \\ x64 \\ * appcmd.exe 在目标上为生成的驱动程序包创建一个文件夹（例如， *C： \\ EchoDriver*）。 复制主机计算机上前面介绍的生成驱动程序中的所有文件，并将它们保存到在目标计算机上创建的文件夹。
+*C:\\Program Files (x86)\\Windows Kits\\10\\Tools\\x64\\devcon.exe*
 
-在主机系统上找到 .cer 证书，该证书位于主计算机上包含生成的驱动程序文件的文件夹中的相同文件夹中。 在目标计算机上，右键单击证书文件，然后单击 "**安装**"，然后按照提示安装测试证书。
+在目标上为生成的驱动程序包创建一个文件夹（例如， *C： \\ EchoDriver*）。 将 devcon.exe 复制到目标系统。 在主机系统上找到 .cer 证书，该证书位于主计算机上包含生成的驱动程序文件的文件夹中的相同文件夹中。 复制主机计算机上前面介绍的生成驱动程序中的所有文件，并将它们保存到你在目标计算机上创建的同一个文件夹中。
+
+**-&gt;在目标系统上**
+
+在目标计算机上，右键单击证书文件，然后单击 "**安装**"，然后按照提示安装测试证书。
 
 如果需要有关设置目标计算机的更详细说明，请参阅为[手动驱动程序部署准备计算机](../develop/preparing-a-computer-for-manual-driver-deployment.md)。
 
@@ -467,17 +470,21 @@ f. 重新启动目标计算机。
 
 下面的说明演示了如何安装和测试示例驱动程序。 以下是将用于安装驱动程序的 devcon 工具的常规语法：
 
-devcon install &lt;INF 文件&gt; &lt;硬件 ID&gt; 
+devcon install &lt;INF 文件&gt; &lt;硬件 ID&gt;
 
-安装此驱动程序所需的 INF 文件为 " *echo*"。 Inf 文件包含用于安装*echo*的硬件 ID。 对于 echo 示例，硬件 ID 是**根 \\ echo**。
+安装此驱动程序所需的 INF 文件为 " *echo*"。 Inf 文件包含用于安装*echo.sys*的硬件 ID。 对于 echo 示例，硬件 ID 是**根 \\ echo**。
 
 在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到驱动程序包文件夹，然后输入以下命令：
 
 **devcon 安装 echo 根目录 \\回显**如果收到有关无法识别*devcon*的错误消息，请尝试将路径添加到*devcon*工具。 例如，如果将该文件复制到名为*C： \\ Tools*的文件夹，请尝试使用以下命令：
 
-**c： \\ 工具 \\ devcon install echo root \\ echo**将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 单击“仍然安装此驱动程序”  以继续。
+**c： \\ 工具 \\ devcon install echo root \\ echo**将出现一个对话框，指示测试驱动程序是未签名的驱动程序。 单击“仍然安装此驱动程序”以继续。
 
 ![windows 安全警告-windows 无法验证此驱动程序软件的发布者](images/debuglab-image-install-security-warning.png)
+
+>[!TIP]
+> 如果安装有任何问题，请查看以下文件以了解详细信息。
+`%windir%\inf\setupapi.dev.log`
 
 有关更多详细说明，请参阅[配置计算机以进行驱动程序部署、测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 
@@ -1095,7 +1102,7 @@ ba r 4 0x0003f7bf0
 
 6. **-&gt;在目标系统上**
 
-   在目标系统上运行 EchoApp 驱动程序测试程序。
+   在目标系统上运行 EchoApp.exe 驱动程序测试程序。
 
 7. **&lt;-在主机系统上**
 
@@ -1107,7 +1114,7 @@ ba r 4 0x0003f7bf0
    fffff801`0bf95810 4c89442418      mov     qword ptr [rsp+18h],r8
    ```
 
-8. 使用 **！ process**命令显示运行 echoapp 所涉及的当前进程。
+8. 使用 **！ process**命令显示运行 echoapp.exe 涉及的当前进程。
 
    ```dbgcmd
    0: kd> !process
@@ -1135,9 +1142,9 @@ ba r 4 0x0003f7bf0
            THREAD ffffe00080e32080  Cid 03c4.0ec0  Teb: 00007ff7cfece000 Win32Thread: 0000000000000000 RUNNING on processor 1
    ```
 
-   此输出显示该进程与 echoapp 关联，该进程是在命中驱动程序写入事件上的断点时运行的。 有关详细信息，请参阅[**！ process**](-process.md)。
+   此输出显示该进程与在命中驱动程序写入事件上的断点时正在运行的 echoapp.exe 相关联。 有关详细信息，请参阅[**！ process**](-process.md)。
 
-9. 使用 **！ process 0 0**显示所有进程的摘要信息。 在输出中，使用 CTRL + F 定位与 echoapp 映像关联的进程的相同进程地址。 在下面所示的示例中，进程地址为 ffffe0007e6a7780。
+9. 使用 **！ process 0 0**显示所有进程的摘要信息。 在输出中，使用 CTRL + F 定位与 echoapp.exe 映像关联的进程的相同进程地址。 在下面所示的示例中，进程地址为 ffffe0007e6a7780。
 
    ```dbgcmd
    ...
@@ -1150,11 +1157,11 @@ ba r 4 0x0003f7bf0
    ...
    ```
 
-10. 记录与 echoapp 关联的进程 ID 以在此实验室稍后使用。 你还可以使用 CTRL + C 将地址复制到复制缓冲区以供以后使用。
+10. 记录与 echoapp.exe 关联的进程 ID 以在此实验室稍后使用。 你还可以使用 CTRL + C 将地址复制到复制缓冲区以供以后使用。
 
-    \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_（echoapp 进程地址）
+    \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_（echoapp.exe 进程地址）
 
-11. 在调试器中将**g**输入为必需，以便向前运行代码，直到 echoapp 运行完毕。 它会多次命中读写事件中的断点。 当 echoapp 完成时，按 CTRL + ScrLk （Ctrl + Break）中断到调试器。
+11. 在调试器中将**g**输入为必需，以便向前运行代码，直到 echoapp.exe 结束运行。 它会多次命中读写事件中的断点。 当 echoapp.exe 完成时，按 CTRL + ScrLk （Ctrl + Break）来中断调试器。
 
 12. 使用 **！ process**命令确认现在正在运行不同的进程。 在下面显示的输出中，具有*系统*映像值的进程不同于*Echo* Image 值。
 
@@ -1173,14 +1180,14 @@ ba r 4 0x0003f7bf0
 
     上面的输出显示系统进程 ffffe0007b65d900 在停止操作系统时运行。
 
-13. 现在，使用 **！ process**命令尝试查看与之前记录的 echoapp 关联的进程 ID。 提供之前记录的 echoapp 进程地址，而不是如下所示的示例进程地址。
+13. 现在，使用 **！ process**命令尝试查看与之前记录的 echoapp.exe 关联的进程 ID。 提供之前记录的 echoapp.exe 进程地址，而不是如下所示的示例过程地址。
 
     ```dbgcmd
     0: kd> !process ffffe0007e6a7780
     TYPE mismatch for process object at 82a9acc0
     ```
 
-    进程对象不再可用，因为 echoapp 进程不再运行。
+    由于 echoapp.exe 进程不再运行，因此进程对象不再可用。
 
 ### <a name="span-idthreadsspanspan-idthreadsspanspan-idthreadsspanthreads"></a><span id="Threads"></span><span id="threads"></span><span id="THREADS"></span>线程
 
@@ -1195,7 +1202,7 @@ ba r 4 0x0003f7bf0
 
 2.  **-&gt;在目标系统上**
 
-    在目标系统上运行 EchoApp 驱动程序测试程序。
+    在目标系统上运行 EchoApp.exe 驱动程序测试程序。
 
 3.  **&lt;-在主机系统上**
 
@@ -1220,9 +1227,9 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    请注意*echoapp*的映像名称，表示我们正在查看与该测试应用相关联的线程。
+    记下*echoapp.exe*的图像名称，这表示我们正在查看与测试应用程序关联的线程。
 
-5.  4. 使用 **！ process**命令确定这是否是在与 echoapp 关联的进程中运行的唯一线程。 请注意，进程中正在运行的线程的线程号就是运行的、！ thread 命令所运行的线程数。
+5.  4. 使用 **！ process**命令确定这是否是在与 echoapp.exe 关联的进程中运行的唯一线程。 请注意，进程中正在运行的线程的线程号就是运行的、！ thread 命令所运行的线程数。
 
     ```dbgcmd
     0: kd> !process
@@ -1254,7 +1261,7 @@ ba r 4 0x0003f7bf0
 
     Cmd.exe：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-    EchoApp：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    EchoApp.exe：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
     ```dbgcmd
     0: kd> !process 0 0 
@@ -1310,7 +1317,7 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    此示例输出适用于之前记录的 echoapp 进程 ID。
+    此示例输出适用于先前记录的 echoapp.exe 进程 ID。
 
     ```dbgcmd
     0: kd>  !process ffffe0008096c900
@@ -1346,7 +1353,7 @@ ba r 4 0x0003f7bf0
 
     Cmd.exe：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-    EchoApp：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+    EchoApp.exe：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 9.  使用 **！** 用于显示有关当前线程的信息的线程命令。
 
@@ -1362,7 +1369,7 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    与预期一样，当前线程是与 echoapp 关联的线程，并且它处于运行状态。
+    与预期一样，当前线程是与 echoapp.exe 相关联的线程，并且它处于运行状态。
 
 10. 使用 **！** 用于显示与 cmd.exe 进程关联的线程相关信息的线程命令。 提供前面记录的线程地址。
 
@@ -1389,9 +1396,9 @@ ba r 4 0x0003f7bf0
     ...
     ```
 
-    此线程与 cmd.exe 关联并且处于等待状态。
+    此线程与 cmd.exe 相关联，并且处于等待状态。
 
-11. 提供等待 CMD.EXE 线程的线程地址以将上下文更改为该等待线程。
+11. 提供等待线程的线程地址以将上下文更改为该等待线程的 CMD.exe 线程。
 
     ```dbgcmd
     0: kd> .Thread ffffe0007cf34880

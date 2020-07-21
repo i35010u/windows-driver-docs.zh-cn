@@ -3,203 +3,203 @@ title: MB 预配上下文操作
 description: MB 预配上下文操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 825eec779751cb37fa0d672ca9d8a05a075b9346
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cee79df1a940215e800a7405b5596f0c09572fff
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374047"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557770"
 ---
 # <a name="mb-provisioned-context-operations"></a>MB 预配上下文操作
 
-预配是移动电话网络可连接的设备来说至关重要，因为每个移动运营商具有不同的 APN 配置其网络。 APN 配置通常将拆分为两个类别：
+预配对于其网络具有不同的 APN 配置，因此对于移动设备可连接设备而言是至关重要的。 接入点配置通常可以分为两个类别：
 
-1. 由于应用程序或上面所需的这些连接的操作系统的客户端，因此已知于 OS 的 APN 配置。
-2. 不会将已知的操作系统因为不供操作系统和其客户端的连接的调制解调器在内部使用的 APN 配置。
+1. 操作系统已知的接入点配置，因为操作系统上存在需要这些连接的应用程序或客户端。
+2. 不是操作系统所熟知的接入点配置，因为它们由调制解调器在内部使用，用于不能由 OS 及其客户端使用的连接。
 
-理想情况下，调制解调器应仅将存储操作系统无需知道的 APN 配置。 但是，IHV 和 OEM 合作伙伴传统上提供的 Internet 和采购 APNs，已知的 OS 中的调制解调器的配置。 在 Windows 10，版本 1703 的发行版之前 Windows 只能读取的 Internet 和采购 APN 配置从调制解调器建立 Internet 连接。 从 Windows 10，版本 1703，开始可能有其他情况下，在该调制解调器的 APN 配置必须由 Windows，尤其是当想要更改移动电话网络配置等用户设置的操作系统或 OMA DM 中的客户端。 这进而还可能会影响调制解调器的 APN 配置。 例如，可能有 IMS 堆栈中正在使用 IMS APN 适用于 SMS IMS 通过调制解调器。 通常情况下，对操作系统，但 IMS APN 配置可能需要更改某些情况下，不公开这些连接。 此更改无法通过 OS。 为了支持此功能，从 Windows 10，版本 1703 OS 可以配置不同类型的 APNs 插入调制解调器。
+理想情况下，该调制解调器应该只存储该操作系统不需要知道的接入点配置。 但在传统上，IHV 和 OEM 合作伙伴在调制解调器中也提供了 Internet 和购买 APNs （操作系统已知的配置）。 在 Windows 10 版本1703的版本之前，Windows 只读取 Internet，并从调制解调器购买 APN 配置以建立 Internet 连接。 从 Windows 10 版本1703开始，可能会有一些其他情况，在这种情况下，必须由 Windows 管理调制解调器的接入点配置，特别是当操作系统中有客户端（如用户设置）或需要更改蜂窝配置的 OMA DM。 这反过来也可能影响调制解调器的接入点配置。 例如，在使用 ims over IMS 的 IMS 接入点的调制解调器中可能有 IMS 堆栈。 通常情况下，这些连接不会暴露给操作系统，但在某些情况下，可能必须更改 IMS 接入点配置。 此更改可以通过 OS 完成。 为了支持这一点，从 Windows 10 开始，版本1703，操作系统可将不同类型的 APNs 配置到调制解调器。
 
-USB 论坛 MBIM 1.0 和 Microsoft NDIS 各有一个现有的 CID 和 OID 分别以允许操作系统来设置和查询中的调制解调器的 APN 配置。 MBIM 1.0 做到这一点通过 MBIM_CID_PROVISIONED_CONTEXT 时 ndis 做到这一点通过[OID_WWAN_PROVISIONED_CONTEXTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)。 但是，现有的 CID 和 OID 的设计并未明确指导如何调制解调器的是预期行为在各种情况下，如电源周期或 SIM 交换。 需要的设备支持的 OS 配置和更新的调制解调器预配的上下文，今后将需要在 Windows 10，版本 1703年中实现的 CID 和 OID 的较新版本。 若要确保向后兼容性，为要在早于 1703年的 OS 版本上支持新硬件/Ihv Oem，他们将需要继续支持现有 MBIM_CID_PROVISIONED_CONTEXT 和 OID_WWAN_PROVISIONED_CONTEXTS。  从 Windows 10 开始，版本 1703，如果设备支持的 CID 和 OID 然后 OS 的新版本将仅使用较新版本的命令来查询和设置 APN 上下文配置调制解调器。 
+USB 论坛的 MBIM 1.0 和 Microsoft NDIS 分别有一个现有的 CID 和 OID，以允许 OS 设置和查询调制解调器中的 APN 配置。 对于 MBIM 1.0，它通过 MBIM_CID_PROVISIONED_CONTEXT 执行此过程，而 NDIS 则通过[OID_WWAN_PROVISIONED_CONTEXTS](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-provisioned-contexts)完成此过程。 但是，现有的 CID 和 OID 并未设计清楚地指导如何在各种情况下使用调制解调器，如电源周期或 SIM 卡交换。 如果设备要支持操作系统的配置和更新，则需要在 Windows 10 版本1703中实现新版本的 CID 和 OID。 若要确保向后兼容性，适用于想要在1703以前的操作系统版本上支持新硬件的 Ihv/Oem，它们必须继续支持现有 MBIM_CID_PROVISIONED_CONTEXT 和 OID_WWAN_PROVISIONED_CONTEXTS。  从 Windows 10 版本1703开始，如果设备支持新版本的 CID 和 OID，则操作系统将只使用较新版本的命令来查询和设置调制解调器中的 APN 上下文配置。 
 
-## <a name="mb-interface-update-for-provisioned-context-operations"></a>预配的上下文操作 MB 界面更新
+## <a name="mb-interface-update-for-provisioned-context-operations"></a>用于预配上下文操作的 MB 接口更新
 
-虽然 MBIM 用于检索和替换上下文存储在调制解调器的命令，它不具有"禁用"或"启用"配置文件的字段。  因此，现有 MBIM_CID_PROVISIONED_CONTEXT 必须更新适用于 Windows 10，版本 1703 引入此功能。 MBIM 没有版本控制机制，因为新的 MSFT 专有 CID 被指 MBIM_CID_MS_PROVISIONED_CONTEXT_V2。
+尽管 MBIM 具有用于检索和替换存储在调制解调器中的上下文的命令，但它没有用于 "禁用" 或 "启用" 配置文件的字段。  因此，必须更新 Windows 10 版本1703中的现有 MBIM_CID_PROVISIONED_CONTEXT 以包含此功能。 由于 MBIM 没有版本控制机制，因此新的 MSFT 专用 CID 定义为 MBIM_CID_MS_PROVISIONED_CONTEXT_V2。
 
-服务名称 = **Basic 连接扩展**
+服务名称 =**基本连接扩展**
 
 UUID = **UUID_BASIC_CONNECT_EXTENSIONS**
 
-UUID Value = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
+UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
-| CID | 命令代码 | 最低 OS 版本 |
+| CID | 命令代码 | 最低操作系统版本 |
 | --- | --- | --- |
 | MBIM_CID_MS_PROVISIONED_CONTEXT_V2 | 1 | Windows 10 版本 1703 |
 
-### <a name="mbimcidmsprovisionedcontextv2"></a>MBIM_CID_MS_PROVISIONED_CONTEXT_V2
+### <a name="mbim_cid_ms_provisioned_context_v2"></a>MBIM_CID_MS_PROVISIONED_CONTEXT_V2
 
-#### <a name="description"></a>描述
+#### <a name="description"></a>说明
 
-尽管 MBIM 1.0 已定义 MBIM_CID_PROVISIONED_CONTEXT OS，其上限的客户端用来管理传统上预配的上下文中的调制解调器，Windows 仅查询的上下文中调制解调器，但未将其设置与操作系统。 从 Windows 10，版本 1703，开始没有操作系统能够在调制解调器中配置上下文的不断增长的需要。 例如，如果在对操作系统是不透明的调制解调器 IMS 堆栈，OS 应能够指定应使用调制解调器 IMS APN。 因为每个调制解调器 IHV 可以有其自己的专有方式将上下文存储在调制解调器，就无法管理 ContextId 级别 MBIM_CID_PROVISIONED_CONTEXT 可能会建议的方法上的配置文件的操作系统。 相反，从操作系统的角度来看是更重要，规定要用于每个上下文类型的上下文。 返回到 IMS 示例，而无需考虑如何许多现有的预配的上下文在调制解调器，如果 OS 设置的上下文中具有 MBIM_CONTEXT_TYPE = IMS 仅应在该上下文上尝试启动调制解调器的所有 IMS 通信。
+尽管 MBIM 1.0 定义了 OS 的 MBIM_CID_PROVISIONED_CONTEXT 及其上层的客户端来管理调制解调器中预配的上下文，但 Windows 通常仅在调制解调器中查询了上下文，但没有从操作系统中进行设置。 从 Windows 10 版本1703开始，操作系统需要更多的需求才能在调制解调器中配置上下文。 例如，如果在调制解调器中有一个不透明的 IMS 堆栈，则 OS 应该能够指定调制解调器应使用的 IMS 接入点。 由于每个调制解调器 IHV 都可以有自己的专有方式来将上下文存储在调制解调器中，因此 OS 无法在 ContextId 级别管理配置文件，MBIM_CID_PROVISIONED_CONTEXT 可能会建议这样做。 相反，从操作系统的角度来看，更重要的是指出要用于每个上下文类型的上下文。 返回到 IMS 示例，无论在调制解调器的现有预配上下文有多少，如果 OS 设置的上下文都具有 MBIM_CONTEXT_TYPE = IMS，则只应在该上下文上尝试使用该上下文启动的所有 IMS 通信。
 
-MBIM 1.0 指定 MBIM_CID_PROVISIONED_CONTEXT 仅可以对与插入 SIM 卡的提供程序 ID （MCC/mnc 对） 匹配的上下文调用查询。 对于组请求 MBIM_CID_PROVISIONED_CONTEXT 可以指定上下文，其目的是要存储的提供程序 ID。  MBIM_CID_MS_PROVISIONED_CONTEXT_V2 指定从 MBIM 1.0 相似但不同行为。 为每个查询，OS 将继续期望调制解调器以便只返回插入 SIM 卡提供程序 ID 匹配的上下文。 对于集，该命令将不再启用与 SIM 卡中的当前提供程序 ID 不匹配的组上下文的操作系统。 应设置请求是要显示的 SIM 卡的当前提供程序 id 创建上下文。 例如，用户交换 SIM 1 为 SIM 2，然后再减少到 SIM 1。 应，第一个的 SIM 交换期间调制解调器应解析它的所有上下文之前为 SIM 2 加载上下文。 当用户交换回 SIM 1 时，应还原 SIM 1 工厂默认配置。  不需要的调制解调器，若要在 SIM 交换保存运行时配置。
+MBIM 1.0 指定 MBIM_CID_PROVISIONED_CONTEXT 只能对与插入的 SIM 卡的提供程序 ID （MCC/MNC 对）匹配的上下文调用查询。 对于 Set 请求，MBIM_CID_PROVISIONED_CONTEXT 可以指定要存储的上下文的提供程序 ID。  MBIM_CID_MS_PROVISIONED_CONTEXT_V2 指定类似但不同于 MBIM 1.0 的行为。 对于每个查询，操作系统继续预期调制解调器只返回与插入的 SIM 卡的提供程序 ID 匹配的上下文。 对于 "设置" 命令，该命令将不再允许 OS 设置与 SIM 卡中当前提供程序 ID 不匹配的上下文。 此设置请求应为所提供的 SIM 卡的当前提供程序 ID 创建上下文。 例如，用户从 SIM 1 调换为 SIM 2，然后再切换回 SIM 1。 预期是在第一个 SIM 交换期间，调制解调器应在为 SIM 2 加载上下文之前解析其所有上下文。 当用户调换回 SIM 1 时，应还原 SIM 1 的出厂默认配置。  对于调制解调器，无需通过 SIM 交换保存运行时配置。
 
-下图说明了当用户从切换一个 SIM 到另一个，然后再减少到第一个示例流。
+下图显示了用户从一个 SIM 切换到另一个 SIM 并返回第一个 SIM 的示例流。
 
-![预配 SIM 交换示例的调制解调器上下文](images/Context_Provision_modem_context_1.png "调制解调器上下文预配 SIM 交换示例")
+![调制解调器上下文设置 SIM 交换示例](images/Context_Provision_modem_context_1.png "调制解调器上下文设置 SIM 交换示例")
 
-Oem 和 Ihv 预先配置了调制解调器应保持原始配置，工厂，防止 OS 或用户想要在调制解调器将上下文设置还原为原始设置。 应还原仅的原始工厂上下文当前插入的 SIM 的提供程序 ID。 OS 的配置应永远不会覆盖原始出厂设置预配置的上下文。 在用户选择要恢复出厂设置时下, 图是为示例流：
+预配置了调制解调器的 Oem 和 Ihv 应保留原始出厂配置，以防操作系统或用户要将调制解调器中的上下文设置还原为原始设置。 只应还原当前插入的 SIM 提供程序 ID 的原始工厂上下文。 原始出厂设置预配置上下文永远不会被操作系统配置覆盖。 下图是用户选择还原出厂设置时的示例流：
 
-![预配工厂的调制解调器上下文重置示例](images/Context_Provision_modem_context_2.png "预配工厂的调制解调器上下文重置示例")
+![调制解调器上下文预配出厂重置示例](images/Context_Provision_modem_context_2.png "调制解调器上下文预配出厂重置示例")
 
-期望的调制解调器，若要查询或一组请求失败时 SIM 是丢失、 被锁定，或无法访问提供程序 ID。 调制解调器应该具有每个上下文 _ 类型每个提供程序 id。 只能有一个上下文 如果 IHV 或 OEM 决定预配置调制解调器的调制解调器上下文，很重要，以确保为它选择为此，每个提供程序正确配置了上下文。 在这种情况中，插入的 SIM 卡没有 IHV 预配的上下文，调制解调器不应有任何上下文而无需操作系统的配置。 Ihv 和 Oem 必须进行确保 MBIM_MS_CONTEXT_SOURCE = MbimMsContextSourceModemProvisioned，因此操作系统将进行连接，请使用调制解调器的上下文，如果存在，并不会从 Windows 的 APN 数据库覆盖它。
+如果 SIM 丢失、锁定或提供程序 ID 不可访问，则调制解调器应该会使查询或设置请求失败。 对于每个提供程序 ID，该调制解调器的每个 CONTEXT_TYPE 应只有一个上下文。 如果 IHV 或 OEM 决定将调制解调器上下文预配置到调制解调器中，请务必确保正确地为其选择的每个提供程序配置上下文。 如果插入的 SIM 卡没有 IHV 预配置上下文，则调制解调器不应在没有操作系统配置的情况下提供任何上下文。 Ihv 和 Oem 必须确保 MBIM_MS_CONTEXT_SOURCE = MbimMsContextSourceModemProvisioned，以便操作系统使用调制解调器的连接上下文（如果存在），而不会从 Windows 的 APN 数据库覆盖它。
 
-调制解调器映射如何处理上下文并将其返回到现有 MBIM_CID_PROVISIONED_CONTEXT 呈现取决于每个 IHV，超出本文档讨论范围。
+调制解调器映射如何处理上下文，并通过现有的 MBIM_CID_PROVISIONED_CONTEXT 使其返回给每个 IHV，并超出了本文档的范围。
 
-新 MBIM_CID_MS_PROVISONED_CONTEXT_V2 命令几乎等同于 MBIM 1.0 现有 MBIM_CID_PROVISIONED_CONTEXT 命令，但有几个新增功能。 第一个提供了启用或禁用与调制解调器中的上下文类型关联的上下文的功能的操作系统。 时上下文已禁用在调制解调器，调制解调器应不用于存储的上下文和网络，即使他们没有意识到 OS 的任何连接。 如果操作系统的请求匹配的调制解调器中的已禁用的上下文的连接，调制解调器应请求立即失败而无需信号传输到网络。 匹配过程应匹配 MBIM_MS_CONTEXT_V2 结构中的所有字段。
+New MBIM_CID_MS_PROVISONED_CONTEXT_V2 命令与 MBIM 1.0 的现有 MBIM_CID_PROVISIONED_CONTEXT 命令几乎完全相同，但有几个附加项。 第一种方式是使 OS 能够启用或禁用与调制解调器中的上下文类型相关联的上下文。 如果在调制解调器中禁用了上下文，则调制解调器应该不会将存储的上下文用于与网络的任何连接，即使它们不能识别操作系统。 如果 OS 请求与调制解调器中已禁用的上下文相匹配的连接，则调制解调器应立即导致请求失败，而不会向网络发出信号。 匹配过程应匹配 MBIM_MS_CONTEXT_V2 结构中的所有字段。
 
-从 MBIM 1.0 MBIM_CONTEXT_IP_TYPE 结构仅用于 MBIM_CID_CONNECT。 在 MBIM_CID_MS_PROVISIONED_CONTEXT_V2，Microsoft 添加了 IP 类型作为为每个上下文参数之一。 如果不将其配置为给定的上下文，调制解调器应报告 MBIMContextIPTypeDefault。 
+MBIM 1.0 中的 MBIM_CONTEXT_IP_TYPE 结构仅用于 MBIM_CID_CONNECT。 在 MBIM_CID_MS_PROVISIONED_CONTEXT_V2 中，Microsoft 已添加了 IP 类型作为每个上下文的参数之一。 如果没有为给定的上下文配置，则调制解调器应报告 MBIMContextIPTypeDefault。 
 
-在 Windows 10 中，使用新的硬件支持 MBIM_CID_MS_PROVISIONED_CONTEXT_V2，版本 1703，旧 MBIM_CID_PROVISIONED_CONTEXT 将不使用从第一方组件。 如果向 MBIM_CID_PROVISIONED_CONTEXT 下发送其他旧的客户端 OS 组件，调制解调器需要像在早于 Windows 10，版本 1703年的 Windows 版本中返回的结果。
+在 Windows 10 版本1703中，如果新硬件支持 MBIM_CID_MS_PROVISIONED_CONTEXT_V2，则不会在第一方组件中使用旧 MBIM_CID_PROVISIONED_CONTEXT。 如果有其他旧的客户端/OS 组件向下发送 MBIM_CID_PROVISIONED_CONTEXT，则调制解调器应返回比 Windows 10 版本1703之前的 Windows 版本中的结果。
 
 ##### <a name="query"></a>查询
 
-MBIM_MS_PROVISIONED_CONTEXTS_INFO InformationBuffer 中查询和设置完整的消息返回。 
+MBIM_MS_PROVISIONED_CONTEXTS_INFO 在 InformationBuffer 中从查询和设置完整消息返回。 
 
-对于查询，InformationBuffer 为 null。
+对于 Query，InformationBuffer 为 null。
 
 ##### <a name="set"></a>设置
 
-对于集，InformationBuffer 包含 MBIM_MS_SET_PROVISIONED_CONTEXT_V2 结构。 在设置操作中，因为每个调制解调器 IHV 可以有管理上下文存储的专有方法不再操作系统指定的 ContextId 字段并需要调制解调器将映射到适当的插槽的上下文。 当 OS 集上下文，它预期要用于匹配给定上下文的 MBIM_CONTEXT_TYPE 的所有连接的调制解调器。 如果调制解调器不能识别 MBIM_CONTEXT_TYPE，它仍应将其存储即使它可能不能与其连接。
+对于 Set，InformationBuffer 包含 MBIM_MS_SET_PROVISIONED_CONTEXT_V2 结构。 在设置操作中，因为每个调制解调器 IHV 都可以具有管理上下文存储的专有方法，所以 OS 不再指定 ContextId 字段，并期望调制解调器将上下文映射到相应的槽。 当 OS 设置上下文时，它需要调制解调器将其用于与给定上下文的 MBIM_CONTEXT_TYPE 匹配的所有连接。 如果调制解调器不能识别 MBIM_CONTEXT_TYPE，即使它可能无法与它进行连接，它仍应该存储。
 
-##### <a name="unsolicited-event"></a>未经请求的事件
+##### <a name="unsolicited-event"></a>主动事件
 
-事件 InformationBuffer 包含 MBIM_MS_PROVISIONED_CONTEXTS_INFO_V2 结构。 在某些情况下，预配的上下文的列表是由网络中更新任一无线 (OTA) 或通过短信服务 (SMS)，不需要通过 MBIM_CID_MS_PROVISIONED_CONTEXT_V2 命令从操作系统。 该函数必须更新预配的上下文中的列表，并标记 MBIM_MS_CONTEXT_SOURCE 相应地 = MbimMsContextSourceOperatorProvisioned。 此后，函数必须通知主机有关更新的更新列表中使用此事件。
+事件 InformationBuffer 包含 MBIM_MS_PROVISIONED_CONTEXTS_INFO_V2 结构。 在某些情况下，已设置上下文的列表由网络通过无线（OTA）或短消息服务（SMS）（不会通过操作系统的 MBIM_CID_MS_PROVISIONED_CONTEXT_V2 命令）进行更新。 函数必须相应地更新预配上下文和标记 MBIM_MS_CONTEXT_SOURCE = MbimMsContextSourceOperatorProvisioned 的列表。 之后，函数必须使用此事件以及更新后的列表通知宿主有关更新的信息。
 
-#### <a name="parameters"></a>Parameters
+#### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_SET_MS_PROVISIONED_CONTEXT_V2 | 不适用 | 不适用 |
+| 命令 | MBIM_SET_MS_PROVISIONED_CONTEXT_V2 | 不适用 | 不适用 |
 | 响应 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 | MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 |
 
 #### <a name="data-structures"></a>数据结构
 
 ##### <a name="query"></a>查询
 
-InformationBuffer 应为 NULL，并且将 InformationBufferLength 应该为零。
+InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 
 ##### <a name="set"></a>设置
 
-应在 InformationBuffer 中使用以下 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 数据结构。
+以下 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 数据结构应在 InformationBuffer 中使用。
 
 
-| 偏移量 | 大小 |       字段        |              在任务栏的搜索框中键入               |                                                                                                                                                                                                                                                                                                   描述                                                                                                                                                                                                                                                                                                   |
+| Offset | 大小 |       字段        |              类型               |                                                                                                                                                                                                                                                                                                   说明                                                                                                                                                                                                                                                                                                   |
 |--------|------|--------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   0    |  4   |     操作      |   MBIM_MS_CONTEXT_OPERATIONS    |                                             指定的操作使用 SET 命令的类型。 如果设置为 MbimMsContextOperationDelete 则指定的上下文 MBIM_CONTEXT_TYPES 应被删除，应忽略 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 中的所有其他字段。  如果设置为 MbimMsContextOperationRestoreFactory 则应删除所有 OS 创建或修改上下文时，应加载默认的工厂预配置上下文，并应忽略 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 中的所有其他字段。                                              |
-|   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                                                                指定要表示; 上下文的类型例如，Internet 连接、 VPN （到企业网络的连接） 或 IP 语音 (VOIP)。 有关详细信息，请参阅 MBIM_CONTEXT_TYPES 表。                                                                                                                                                                                                |
-|   20   |  4   |       IPType       |      MBIM_CONTEXT_IP_TYPES      |                                                                                                                                                                                               指定要表示; 上下文的类型例如，Internet 连接、 VPN （到企业网络的连接） 或 IP 语音 (VOIP)。 有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPES 表。                                                                                                                                                                                               |
-|   24   |  4   |       启用       |     MBIM_MS_CONTEXT_ENABLE      |                                                                                                                                                                     指定上下文是否可以使用的调制解调器。 如果它设置为 MbimMsContextDisabled，应不到网络信号的情况下失败与上下文匹配任何 OS 连接请求。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ENABLE 表。                                                                                                                                                                     |
-|   28   |  4   |      Roaming       | MBIM_MS_CONTEXT_ROAMING_CONTROL |                                                                                                                                                                                                                                       指定是否允许漫游或不适用于此上下文中。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ROAMING_CONTROL 表。                                                                                                                                                                                                                                        |
-|   32   |  4   |     MediaType      |   MBIM_MS_CONTEXT_MEDIA_TYPE    |                                                                                                                                                                                                                                         指定上下文使用的媒体传输的类型。 有关详细信息，请参阅 MBIM_MS_CONTEXT_MEDIA_TYPE 表。                                                                                                                                                                                                                                         |
-|   36   |  4   |       Source       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                    指定上下文的创建源。 有关详细信息，请参阅 MBIM_MS_CONTEXT_SOURCE 表。                                                                                                                                                                                                                                                    |
-|   40   |  4   | AccessStringOffset |             偏移量              | 在为一个字符串，AccessString，可以访问网络的数据缓冲区的偏移量。 对于基于 GSM 的网络，这将是"data.thephone company.com"等的访问点名称 (APN) 字符串。 对于基于 CDMA 的网络，这可能是一个特殊拨号代码，如"#777"或网络访问标识符 (NAI) 如"foo@thephone-company.com"。 此成员可以为 NULL，以请求网络分配默认 APN。 注意：并非所有网络都支持此 NULL APN 约定，因此引起的无效 APN 连接故障的可能结果。 字符串的大小不应超过 100 个字符。 |
-|   44   |  4   |  AccessStringSize  |          SIZE(0..200)           |                                                                                                                                                                                                                                                                                           用于 AccessString 的大小。                                                                                                                                                                                                                                                                                           |
-|   48   |  4   |   UserNameOffset   |             偏移量              |                                                                                                                                                                                                                         以字节为单位，此结构，从头计算为一个字符串，表示要进行身份验证的用户名的用户名的偏移量。 此成员可以为 NULL。                                                                                                                                                                                                                         |
-|   52   |  4   |    UserNameSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                            用于用户名的大小。                                                                                                                                                                                                                                                                                             |
-|   56   |  4   |   PasswordOffset   |             偏移量              |                                                                                                                                                                                                                           以字节为单位，计算为一个字符串，密码，此结构的开头的偏移量，它表示用户名的密码。 此成员可以为 NULL。                                                                                                                                                                                                                            |
-|   60   |  4   |    PasswordSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                             用于密码的大小。                                                                                                                                                                                                                                                                                             |
-|   64   |  4   |    压缩     |        MBIM_COMPRESSION         |                                                                                                                                                                         指定要使用的数据连接中的标头和数据的压缩。 此成员仅适用于基于 GSM 的设备。 主机为基于 CDMA 的设备将此成员设置为 MBIMCompressionNone。 有关详细信息，请参阅 MBIM_COMPRESSION 表。                                                                                                                                                                          |
-|   68   |  4   |    AuthProtocol    |       MBIM_AUTH_PROTOCOL        |                                                                                                                                                                                                                                                   要用于 PDP 激活的身份验证类型。 有关详细信息，请参阅 MBIM_AUTH_PROTOCOL 表。                                                                                                                                                                                                                                                    |
-|   72   |  4   |     DataBuffer     |           DATABUFFER            |                                                                                                                                                                                                                                                                       包含 AccessString、 用户名和密码的数据缓冲区。                                                                                                                                                                                                                                                                       |
+|   0    |  4   |     Operation      |   MBIM_MS_CONTEXT_OPERATIONS    |                                             指定使用 SET 命令的操作的类型。 如果设置为 MbimMsContextOperationDelete，则应删除指定 MBIM_CONTEXT_TYPES 的上下文，并忽略 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 中的其他所有字段。  如果设置为 MbimMsContextOperationRestoreFactory，则应删除所有 OS 创建的或修改的上下文，应加载默认工厂预配置上下文，并且应忽略 MBIM_SET_MS_PROVISIONED_CONTEXT_V2 中的所有其他字段。                                              |
+|   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                                                                指定正在表示的上下文的类型;例如，Internet 连接、VPN （连接到公司网络）或 IP 语音（VOIP）。 有关详细信息，请参阅 MBIM_CONTEXT_TYPES 表。                                                                                                                                                                                                |
+|   20   |  4   |       IPType       |      MBIM_CONTEXT_IP_TYPES      |                                                                                                                                                                                               指定正在表示的上下文的类型;例如，Internet 连接、VPN （连接到公司网络）或 IP 语音（VOIP）。 有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPES 表。                                                                                                                                                                                               |
+|   24   |  4   |       启用       |     MBIM_MS_CONTEXT_ENABLE      |                                                                                                                                                                     指定该调制解调器是否可以使用该上下文。 如果将其设置为 MbimMsContextDisabled，则与上下文匹配的任何 OS 连接请求都应失败，而不会向网络发出信号。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ENABLE 表。                                                                                                                                                                     |
+|   28   |  4   |      漫游       | MBIM_MS_CONTEXT_ROAMING_CONTROL |                                                                                                                                                                                                                                       指定是否允许漫游。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ROAMING_CONTROL 表。                                                                                                                                                                                                                                        |
+|   32   |  4   |     MediaType      |   MBIM_MS_CONTEXT_MEDIA_TYPE    |                                                                                                                                                                                                                                         指定使用上下文的媒体传输类型。 有关详细信息，请参阅 MBIM_MS_CONTEXT_MEDIA_TYPE 表。                                                                                                                                                                                                                                         |
+|   36   |  4   |       源       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                    指定上下文的创建源。 有关详细信息，请参阅 MBIM_MS_CONTEXT_SOURCE 表。                                                                                                                                                                                                                                                    |
+|   40   |  4   | AccessStringOffset |             OFFSET              | 数据缓冲区中的偏移量到字符串 AccessString （用于访问网络）。 对于基于 GSM 的网络，这将是访问点名称（APN）字符串，例如 "data.thephone-company.com"。 对于基于 CDMA 的网络，这可能是一种特殊的拨号代码，如 "#777" 或网络访问标识符（NAI）（如 " foo@thephone-company.com "）。 此成员可为空，请求网络分配默认 APN。 注意：并非所有网络都支持此 NULL APN 约定，因此无效的 APN 导致的连接失败是可能的结果。 字符串的大小不应超过100个字符。 |
+|   44   |  4   |  AccessStringSize  |          大小（0-200）           |                                                                                                                                                                                                                                                                                           用于 AccessString 的大小。                                                                                                                                                                                                                                                                                           |
+|   48   |  4   |   UserNameOffset   |             OFFSET              |                                                                                                                                                                                                                         从该结构的开头算起的偏移量（以字节为单位），表示要进行身份验证的用户名。 此成员可以为 NULL。                                                                                                                                                                                                                         |
+|   52   |  4   |    UserNameSize    |          大小（0. 510）           |                                                                                                                                                                                                                                                                                            用于用户名的大小。                                                                                                                                                                                                                                                                                             |
+|   56   |  4   |   PasswordOffset   |             OFFSET              |                                                                                                                                                                                                                           从该结构的开头算起的偏移量（以字节为单位），表示该用户名的密码。 此成员可以为 NULL。                                                                                                                                                                                                                            |
+|   60   |  4   |    PasswordSize    |          大小（0. 510）           |                                                                                                                                                                                                                                                                                             用于密码的大小。                                                                                                                                                                                                                                                                                             |
+|   64   |  4   |    压缩     |        MBIM_COMPRESSION         |                                                                                                                                                                         指定要用于标头和数据的数据连接的压缩。 此成员仅适用于基于 GSM 的设备。 主机将此成员设置为基于 CDMA 的设备的 MBIMCompressionNone。 有关详细信息，请参阅 MBIM_COMPRESSION 表。                                                                                                                                                                          |
+|   68   |  4   |    AuthProtocol    |       MBIM_AUTH_PROTOCOL        |                                                                                                                                                                                                                                                   用于 PDP 激活的身份验证类型。 有关详细信息，请参阅 MBIM_AUTH_PROTOCOL 表。                                                                                                                                                                                                                                                    |
+|   72   |  4   |     DataBuffer     |           DATABUFFER            |                                                                                                                                                                                                                                                                       包含 AccessString、用户名和密码的数据缓冲区。                                                                                                                                                                                                                                                                       |
 
-前面的表中使用以下数据结构。
+前面的表中使用了以下数据结构。
 
-MBIM_MS_CONTEXT_ROAMING_CONTROL 指定每个上下文漫游策略。 操作系统可以指定在漫游时是否可启用给定的上下文。 如果漫游状态不符合指定的条件，调制解调器应自激活而无需 OS 干预的上下文。 在中的调制解调器不支持合作伙伴，则所有合作伙伴配置的情况下应被视为等效到主页。
+MBIM_MS_CONTEXT_ROAMING_CONTROL 指定每个上下文漫游策略。 OS 可以指定是否可以在漫游期间启用给定的上下文。 如果漫游状态不满足指定的条件，则调制解调器不应自行激活上下文，而无需 OS 干预。 如果调制解调器不支持合作伙伴，则所有伙伴配置应视为等效于 home。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MbimMsContextRoamingControlHomeOnly | 0 | 指示是否仅允许在上下文或不在家庭网络中使用。 |
-| MbimMsContextRoamingControlPartnerOnly | 1 | 指示是否仅允许在上下文或不在合作伙伴漫游网络中使用。 |
-| MbimMsContextRoamingControlNonPartnerOnly | 2 | 指示是否仅允许在上下文或不在非合作伙伴漫游网络中使用。 | 
-| MbimMsContextRoamingControlHomeAndPartner | 3 | 指示上下文是否允许在家庭和合作伙伴漫游网络中使用。 |
-| MbimMsContextRoamingControlHomeAndNonPartner | 4 | 指示上下文是否允许在家庭和非合作伙伴漫游网络中使用。 |
-| MbimMsContextRoamingControlPartnerAndNonPartner | 5 | 指示上下文是否允许合作伙伴和非合作伙伴漫游网络中使用。 |
-| MbimMsContextRoamingControlAllowAll | 6 | 指示上下文是否允许在任何漫游条件中使用。 |
+| MbimMsContextRoamingControlHomeOnly | 0 | 指示是否只允许在家庭网络中使用该上下文。 |
+| MbimMsContextRoamingControlPartnerOnly | 1 | 指示是否只允许在合作伙伴漫游网络中使用该上下文。 |
+| MbimMsContextRoamingControlNonPartnerOnly | 2 | 指示是否只允许在非合作伙伴漫游网络中使用该上下文。 | 
+| MbimMsContextRoamingControlHomeAndPartner | 3 | 指示是否允许在家庭和合作伙伴漫游网络中使用该上下文。 |
+| MbimMsContextRoamingControlHomeAndNonPartner | 4 | 指示是否允许在家庭和非合作伙伴漫游网络中使用该上下文。 |
+| MbimMsContextRoamingControlPartnerAndNonPartner | 5 | 指示是否允许在合作伙伴和非合作伙伴漫游网络中使用该上下文。 |
+| MbimMsContextRoamingControlAllowAll | 6 | 指示是否允许在任何漫游条件中使用该上下文。 |
 
-添加了 MBIM_MS_CONTEXT_MEDIA_TYPE 能够指定是否为移动电话网络使用的上下文或 iWLAN Wi-fi 卸载时将成为受支持的将来平台。 例如，如果上下文设置为移动电话和调制解调器目前 Wi-fi 然后卸载它不应启动的连接使用该上下文。
+添加了 MBIM_MS_CONTEXT_MEDIA_TYPE，以便在将来的平台中支持 Wi-fi 卸载时，指定上下文是否用于蜂窝或 iWLAN。 例如，如果将某个上下文设置为手机网络，并且该调制解调器当前为 Wi-fi 卸载，则它不应使用该上下文启动连接。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MbimMsContextMediaTypeCellularOnly | 0 | 指示是否仅允许上下文用于注册通过移动电话网络。 |
-| MbimMsContextMediaTypeWifiOnly | 1 | 指示是否仅允许上下文用于注册通过 iWLAN （Wi-fi 卸载）。 |
-| MbimMsContextMediaTypeAll | 2 | 指示是否允许上下文用于注册通过移动电话或 Wi-fi。 |
+| MbimMsContextMediaTypeCellularOnly | 0 | 指示是否只允许在通过手机网络注册时使用上下文。 |
+| MbimMsContextMediaTypeWifiOnly | 1 | 指示是否只允许在通过 iWLAN （Wi-fi 卸载）注册时使用上下文。 |
+| MbimMsContextMediaTypeAll | 2 | 指示是否允许在通过手机网络或 Wi-fi 注册时使用上下文。 |
 
-MBIM_MS_CONTEXT_ENABLE 指定是启用还是禁用了上下文。
+MBIM_MS_CONTEXT_ENABLE 指定是启用还是禁用上下文。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MbimMsContextDisabled | 0 | 禁用预配的上下文。 调制解调器不应启用此上下文从操作系统和本身上的激活。 |
-| MbimMsContextEnabled | 1 | 启用预配的上下文。 如果满足其他条件; 可以启用上下文例如，如果漫游不允许则上下文应不启用漫游过程。 |
+| MbimMsContextDisabled | 0 | 已设置的上下文处于禁用状态。 调制解调器不应在此上下文中从操作系统和本身启用激活。 |
+| MbimMsContextEnabled | 1 | 已启用设置的上下文。 如果满足其他条件，则可以启用上下文;例如，如果不允许漫游，则漫游期间不应启用上下文。 |
 
-添加了 MBIM_MS_CONTEXT_SOURCE，以提供对调制解调器上下文的创建方式 OS 可见性。 这有助于在各种情况下，例如恢复出厂设置后正常运行的操作系统，因此它可以知道什么应保持不变并为默认状态基于各种运算符要求应返回的内容。
+添加了 MBIM_MS_CONTEXT_SOURCE，以便为操作系统提供有关如何创建调制解调器上下文的可见性。 这有助于操作系统在各种情况下（如恢复出厂设置）正常运行，因此它可以根据各种操作员要求了解应保留哪些内容以及应返回到默认状态的内容。
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MbimMsContextSourceAdmin | 0 | 上下文已通过从操作系统的企业 IT 管理员。 |
-| MbimMsContextSourceUser | 1 | 由用户通过 OS 设置已创建了上下文。 | 
-| MbimMsContextSourceOperator | 2 | 上下文是由通过 OMA DM 或其他渠道运算符创建的。 |
-| MbimMsContextSourceModem | 3 | 上下文是由 IHV 或 OEM 所包含的调制解调器固件创建的。 |
-| MbimMsContextSourceDevice | 4 | 由 OS APN 数据库创建上下文。 |
+| MbimMsContextSourceAdmin | 0 | 上下文是由操作系统的企业 IT 管理员创建的。 |
+| MbimMsContextSourceUser | 1 | 上下文是用户通过 OS 设置创建的。 | 
+| MbimMsContextSourceOperator | 2 | 该上下文是由运算符通过 OMA DM 或其他通道创建的。 |
+| MbimMsContextSourceModem | 3 | 上下文是由在调制解调器固件附带的 IHV 或 OEM 创建的。 |
+| MbimMsContextSourceDevice | 4 | 上下文是由 OS APN 数据库创建的。 |
 
-MBIM_MS_CONTEXT_OPERATIONS 指定操作系统的操作可以执行在调制解调器中配置上下文。
+MBIM_MS_CONTEXT_OPERATIONS 指定 OS 可以执行的操作，以在调制解调器中配置上下文。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MbimMsContextOperationDefault | 0 | 默认操作包括添加或替换现有上下文在调制解调器。 |
-| MbimMsContextOperationDelete | 1 | 删除操作需要删除现有上下文在调制解调器的调制解调器。 | 
-| MbimMsContextOperationRestoreFactory | 2 | 还原当前插入 SIM 的提供程序 id 的工厂预配置的上下文。 替换还是由操作系统创建的所有上下文应删除和替换。 如果没有为当前插入 SIM 提供程序 ID，无默认值预先配置的 OS 上下文，则应删除调制解调器中预配的上下文。 |
+| MbimMsContextOperationDefault | 0 | 默认操作，包括添加或替换调制解调器中现有的上下文。 |
+| MbimMsContextOperationDelete | 1 | 删除操作要求调制解调器删除调制解调器中现有的上下文。 | 
+| MbimMsContextOperationRestoreFactory | 2 | 为当前插入的 SIM 的提供程序 ID 还原工厂预配置上下文。 应删除并替换由 OS 替换或创建的所有上下文。 如果当前插入的 SIM 提供程序 ID 没有默认预配置的操作系统上下文，则应删除该调制解调器中预配的上下文。 |
 
-MBIM 1.0 从原始 MBIM_CONTEXT_TYPES 仍然有效。 随着更多类型的上下文引入的自定义 MBIM 1.0 以来，Microsoft 将添加附加的上下文类型。 下表定义正在引入的新类型。 Ihv 和 Oem 可以定义其他唯一的 UUID 值不会由操作系统识别为其自身的用途与其他专有上下文类型。
+MBIM 1.0 的原始 MBIM_CONTEXT_TYPES 仍有效。 由于定义了 MBIM 1.0，Microsoft 添加了更多的上下文类型。 下表定义了要引入的新类型。 Ihv 和 Oem 可以使用其他唯一 UUID 值定义其他专用的上下文类型，操作系统不能识别这些值来实现自己的目的。
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
 | MBIMMsContextTypeAdmin | 5f7e4c2e-e80b-40a9-a239-f0abcfd11f4b | 上下文用于管理目的，例如设备管理。 |
-| MBIMMSContextTypeApp | 74d88a3d-dfbd-4799-9a8c-7310a37bb2ee | 上下文用于通过移动运营商的特定应用程序加入允许列表。 |
-| MBIMMsContextTypeXcap | 50d378a7-baa5-4a50-b872-3fe5bb463411 | XCAP 预配 IMS 服务上使用的上下文。 |
+| MBIMMSContextTypeApp | 74d88a3d-dfbd-4799-9a8c-7310a37bb2ee | 上下文用于移动运营商的某些应用程序白名单。 |
+| MBIMMsContextTypeXcap | 50d378a7-baa5-4a50-b872-3fe5bb463411 | 上下文用于 IMS 服务上的 XCAP 预配。 |
 | MBIMMsContextTypeTethering | 5e4e0601-48dc-4e2b-acb8-08b4016bbaac | 上下文用于移动热点 tethering。 |
-| MBIMMsContextTypeEmergencyCalling | 5f41adb8-204e-4d31-9da8-b3c970e360f2 | 上下文用于 IMS 拨打紧急电话。 |
+| MBIMMsContextTypeEmergencyCalling | 5f41adb8-204e-4d31-9da8-b3c970e360f2 | 上下文用于 IMS 紧急呼叫。 |
 
 ##### <a name="response"></a>响应
 
-应在 InformationBuffer 中使用以下 MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 结构。
+以下 MBIM_MS_PROVISIONED_CONTEXT_INFO_V2 结构应在 InformationBuffer 中使用。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | ElementCount (EC) | UINT32 | 按照中 DataBuffer MBIM_MS_CONTEXT_V2 计数结构。 |
-| 4 | 8 * EC | MsProvisionedContextV2RefList | OL_PAIR_LIST | 该对的第一个元素是一个 4 字节偏移量以字节为单位，从一开始 （偏移量为 0） 的此 MBIM_MS_PROVISIONED_CONTEXTS_INFO_V2 结构，计算向 MBIM_MS_CONTEXT_V2 结构 （有关详细信息，请参阅 MBIM_MS_CONTEXT_V2 表）。 该对的第二个元素是指针的指向相应 MBIM_MS_CONTEXT_V2 结构的 4 字节大小。 |
+| 0 | 4 | Elementcount 多于（EC） | UINT32 | DataBuffer 中后面的 MBIM_MS_CONTEXT_V2 结构的计数。 |
+| 4 | 8 * EC | MsProvisionedContextV2RefList | OL_PAIR_LIST | 该对的第一个元素是以字节为单位的4字节偏移量，从该 MBIM_MS_PROVISIONED_CONTEXTS_INFO_V2 结构的开始（偏移量0）计算到 MBIM_MS_CONTEXT_V2 结构（有关详细信息，请参阅 MBIM_MS_CONTEXT_V2 表）。 对的第二个元素是指向相应 MBIM_MS_CONTEXT_V2 结构的指针的大小为4字节。 |
 | 4 + 8 * EC |  | DataBuffer | DATABUFFER | MBIM_MS_CONTEXT_V2 structuers 的数组。 |
 
-MBIM_MS_CONTEXT_V2，使用在上表中，提供有关给定的上下文信息。
+上表中使用的 MBIM_MS_CONTEXT_V2 提供有关给定上下文的信息。
 
 
-| 偏移量 | 大小 |       字段        |              在任务栏的搜索框中键入               |                                                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                                                  |
+| Offset | 大小 |       字段        |              类型               |                                                                                                                                                                                                                                                                                                 描述                                                                                                                                                                                                                                                                                                  |
 |--------|------|--------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   0    |  4   |     ContextId      |             UINT32              |                                                                                                                                                                                                                                                                                        此上下文的唯一 ID。                                                                                                                                                                                                                                                                                         |
-|   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                      指定要表示; 上下文的类型例如，Internet 连接、 VPN （到企业网络的连接） 或 IP 语音 (VOIP)。 设备应为空或未设置上下文指定 MBIMContextTypeNone。 有关详细信息，请参阅 MBIM_CONTEXT_TYPES 表。                                                                                                                                                       |
+|   4    |  16  |    ContextType     |       MBIM_CONTEXT_TYPES        |                                                                                                                                                      指定正在表示的上下文的类型;例如，Internet 连接、VPN （连接到公司网络）或 IP 语音（VOIP）。 设备应为空或未预配的上下文指定 MBIMContextTypeNone。 有关详细信息，请参阅 MBIM_CONTEXT_TYPES 表。                                                                                                                                                       |
 |   20   |  4   |       IPType       |      MBIM_CONTEXT_IP_TYPES      |                                                                                                                                                                                                                                                                         有关详细信息，请参阅 MBIM_CONTEXT_IP_TYPES 表。                                                                                                                                                                                                                                                                          |
-|   24   |  4   |       启用       |     MBIM_MS_CONTEXT_ENABLE      |                                                                                                                                                                   指定上下文是否可以使用的调制解调器。 如果它设置为 MbimMsContextDisabled，应不到网络信号的情况下失败与上下文匹配任何 OS 连接请求。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ENABLE 表。                                                                                                                                                                    |
-|   28   |  4   |      Roaming       | MBIM_MS_CONTEXT_ROAMING_CONTROL |                                                                                                                                                                                                                                      指定是否允许漫游或不适用于此上下文中。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ROAMING_CONTROL 表。                                                                                                                                                                                                                                      |
-|   32   |  4   |     MediaType      |   MBIM_MS_CONTEXT_MEDIA_TYPE    |                                                                                                                                                                                                                                       指定上下文使用的媒体传输的类型。 有关详细信息，请参阅 MBIM_MS_CONTEXT_MEDIA_TYPE 表。                                                                                                                                                                                                                                        |
-|   36   |  4   |       Source       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                  指定上下文的创建源。 有关详细信息，请参阅 MBIM_MS_CONTEXT_SOURCE 表。                                                                                                                                                                                                                                                   |
-|   40   |  4   | AccessStringOffset |             偏移量              | 为一个字符串，AccessString，可以访问网络的数据缓冲区中的偏移量。 对于基于 GSM 的网络，这将是"data.thephone company.com"等的访问点名称 (APN) 字符串。 对于基于 CDMA 的网络，这可能是一个特殊拨号代码，如"#777"或网络访问标识符 (NAI) 如"foo@thephone-company.com"。 此成员可以为 NULL，以请求网络分配默认 APN。 注意：并非所有网络都支持此 NULL APN 约定，因此引起的无效 APN 连接故障的可能结果。 字符串的大小不应超过 100 个字符。 |
-|   44   |  4   |  AccessStringSize  |          SIZE(0..200)           |                                                                                                                                                                                                                                                                                         用于 AccessString 的大小。                                                                                                                                                                                                                                                                                          |
-|   48   |  4   |   UserNameOffset   |             偏移量              |                                                                                                                                                                                                                       以字节为单位，此结构，从头计算为一个字符串，表示要进行身份验证的用户名的用户名的偏移量。 此成员可以为 NULL。                                                                                                                                                                                                                        |
-|   52   |  4   |    UserNameSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                           大小使用的用户名。                                                                                                                                                                                                                                                                                           |
-|   56   |  4   |   PasswordOffset   |             偏移量              |                                                                                                                                                                                                                          以字节为单位，计算为一个字符串，密码，此结构的开头的偏移量，它表示用户名的密码。 此成员可以为 NULL。                                                                                                                                                                                                                          |
-|   60   |  4   |    PasswordSize    |          SIZE(0..510)           |                                                                                                                                                                                                                                                                                           用于密码的大小。                                                                                                                                                                                                                                                                                            |
-|   64   |  4   |    压缩     |        MBIM_COMPRESSION         |                                                                                                                                                                        指定要使用的数据连接中的标头和数据的压缩。 此成员仅适用于基于 GSM 的设备。 主机为基于 CDMA 的设备将此成员设置为 MBIMCompressionNone。 有关详细信息，请参阅 MBIM_COMPRESSION 表。                                                                                                                                                                        |
-|   68   |  4   |    AuthProtocol    |       MBIM_AUTH_PROTOCOL        |                                                                                                                                                                                                                                                  要用于 PDP 激活的身份验证类型。 有关详细信息，请参阅 MBIM_AUTH_PROTOCOL 表。                                                                                                                                                                                                                                                  |
-|   72   |      |     DataBuffer     |           DATABUFFER            |                                                                                                                                                                                                                                                                     包含 AccessString、 用户名和密码的数据缓冲区。                                                                                                                                                                                                                                                                      |
+|   24   |  4   |       启用       |     MBIM_MS_CONTEXT_ENABLE      |                                                                                                                                                                   指定该调制解调器是否可以使用该上下文。 如果将其设置为 MbimMsContextDisabled，则与上下文匹配的任何 OS 连接请求都应失败，而不会向网络发出信号。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ENABLE 表。                                                                                                                                                                    |
+|   28   |  4   |      漫游       | MBIM_MS_CONTEXT_ROAMING_CONTROL |                                                                                                                                                                                                                                      指定是否允许漫游。 有关详细信息，请参阅 MBIM_MS_CONTEXT_ROAMING_CONTROL 表。                                                                                                                                                                                                                                      |
+|   32   |  4   |     MediaType      |   MBIM_MS_CONTEXT_MEDIA_TYPE    |                                                                                                                                                                                                                                       指定使用上下文的媒体传输类型。 有关详细信息，请参阅 MBIM_MS_CONTEXT_MEDIA_TYPE 表。                                                                                                                                                                                                                                        |
+|   36   |  4   |       源       |     MBIM_MS_CONTEXT_SOURCE      |                                                                                                                                                                                                                                                  指定上下文的创建源。 有关详细信息，请参阅 MBIM_MS_CONTEXT_SOURCE 表。                                                                                                                                                                                                                                                   |
+|   40   |  4   | AccessStringOffset |             OFFSET              | 数据缓冲区中的偏移量到字符串 AccessString （用于访问网络）。 对于基于 GSM 的网络，这将是访问点名称（APN）字符串，例如 "data.thephone-company.com"。 对于基于 CDMA 的网络，这可能是一种特殊的拨号代码，如 "#777" 或网络访问标识符（NAI）（如 " foo@thephone-company.com "）。 此成员可以为 NULL，以请求网络分配默认 APN。 注意：并非所有网络都支持此 NULL APN 约定，因此无效的 APN 导致的连接失败是可能的结果。 字符串的大小不应超过100个字符。 |
+|   44   |  4   |  AccessStringSize  |          大小（0-200）           |                                                                                                                                                                                                                                                                                         用于 AccessString 的大小。                                                                                                                                                                                                                                                                                          |
+|   48   |  4   |   UserNameOffset   |             OFFSET              |                                                                                                                                                                                                                       从该结构的开头算起的偏移量（以字节为单位），表示要进行身份验证的用户名。 此成员可以为 NULL。                                                                                                                                                                                                                        |
+|   52   |  4   |    UserNameSize    |          大小（0. 510）           |                                                                                                                                                                                                                                                                                           用于用户名的大小。                                                                                                                                                                                                                                                                                           |
+|   56   |  4   |   PasswordOffset   |             OFFSET              |                                                                                                                                                                                                                          从该结构的开头算起的偏移量（以字节为单位），表示该用户名的密码。 此成员可以为 NULL。                                                                                                                                                                                                                          |
+|   60   |  4   |    PasswordSize    |          大小（0. 510）           |                                                                                                                                                                                                                                                                                           用于密码的大小。                                                                                                                                                                                                                                                                                            |
+|   64   |  4   |    压缩     |        MBIM_COMPRESSION         |                                                                                                                                                                        指定要用于标头和数据的数据连接的压缩。 此成员仅适用于基于 GSM 的设备。 主机将此成员设置为基于 CDMA 的设备的 MBIMCompressionNone。 有关详细信息，请参阅 MBIM_COMPRESSION 表。                                                                                                                                                                        |
+|   68   |  4   |    AuthProtocol    |       MBIM_AUTH_PROTOCOL        |                                                                                                                                                                                                                                                  用于 PDP 激活的身份验证类型。 有关详细信息，请参阅 MBIM_AUTH_PROTOCOL 表。                                                                                                                                                                                                                                                  |
+|   72   |      |     DataBuffer     |           DATABUFFER            |                                                                                                                                                                                                                                                                     包含 AccessString、用户名和密码的数据缓冲区。                                                                                                                                                                                                                                                                      |
 
 ##### <a name="notification"></a>通知
 
@@ -207,18 +207,18 @@ MBIM_MS_CONTEXT_V2，使用在上表中，提供有关给定的上下文信息�
 
 #### <a name="status-codes"></a>状态代码
 
-对于查询和设置的操作：
+对于查询和设置操作：
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
 | MBIM_STATUS_READ_FAILURE | 操作失败，因为设备无法检索预配的上下文。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 操作失败，因为设备不支持该操作。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 操作失败，因为设备不支持此操作。 |
 
-对于集合运算：
+仅适用于集操作：
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
 | MBIM_STATUS_INVALID_PARAMETERS | 由于参数无效，操作失败。 |
-| MBIM_STATUS_WRITE_FAILURE | 操作失败，因为在更新请求未成功。 |
+| MBIM_STATUS_WRITE_FAILURE | 操作失败，因为更新请求不成功。 |
 
 

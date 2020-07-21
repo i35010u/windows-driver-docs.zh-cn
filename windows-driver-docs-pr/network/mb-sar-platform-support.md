@@ -3,12 +3,12 @@ title: MB SAR 平台支持
 description: MB SAR 平台支持
 ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a43b54916dbfef9c96b30c06c7571544906956
-ms.sourcegitcommit: f4f861a9f833ef1389ff5c08e2b9de0d3df81bef
+ms.openlocfilehash: d604c45320edca15ab45d15bdca157cc35126cf2
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84974149"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557792"
 ---
 # <a name="mb-sar-platform-support"></a>MB SAR 平台支持
 
@@ -66,9 +66,9 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SAR_CONFIG。 MBIM_MS_S
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_SAR_CONFIG | 不适用 | 不适用 |
+| 命令 | MBIM_MS_SET_SAR_CONFIG | 不适用 | 不适用 |
 | 响应 | MBIM_MS_SAR_CONFIG | MBIM_MS_SAR_CONFIG | 不适用 |
 
 ### <a name="data-structures"></a>数据结构
@@ -173,9 +173,9 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SET_TRANSMISSION_STATUS
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_TRANSMISSION_STATUS | 不适用 | 不适用 |
+| 命令 | MBIM_MS_SET_TRANSMISSION_STATUS | 不适用 | 不适用 |
 | 响应 | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO |
 
 ### <a name="data-structures"></a>数据结构

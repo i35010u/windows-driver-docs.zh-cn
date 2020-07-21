@@ -3,12 +3,12 @@ title: MB 多 SIM 操作
 description: MB 多 SIM 操作
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3f386758f6a241f78f09f4b94f3f8085ab7095
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 943146bc13f2457489b5a8a8cbf31d8b8f42e412
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243024"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557798"
 ---
 # <a name="mb-multi-sim-operations"></a>MB 多 SIM 操作
 
@@ -46,7 +46,7 @@ NDIS 6.7 中的 Windows 桌面调制解调器接口模型不能容纳此类体�
 * 该模型假定只有一个 UICC 卡与调制解调器硬件直接关联。
 * UICC 被视为单个应用程序 SIM 卡。
 
-与此相反，Windows Mobile 上的 Microsoft 无线接口层（RIL）接口显式公开这些假设的重数。 Windows Mobile 中的移动宽带接口公开通过单独的微型端口进行注册的功能，并假定已通过 RIL 接口完成了设备的某些基本配置。 若要提供等效的功能，Windows Desktop 必须提供机制来发现执行器和槽的数量，单独访问执行器，定义执行器与槽之间的映射，并定义映射的中的应用程序每个执行器将使用的 UICC 卡片。
+与此相反，Windows Mobile 上的 Microsoft 无线接口层（RIL）接口显式公开这些假设的重数。 Windows Mobile 中的移动宽带接口公开通过单独的微型端口进行注册的功能，并假定已通过 RIL 接口完成了设备的某些基本配置。 若要提供等效的功能，Windows Desktop 必须提供机制来发现执行器和槽的数量，单独访问执行器，定义执行器与槽之间的映射，并定义每个执行器将使用的映射 UICC 卡中的应用程序。
 
 有关手机结构的详细信息以及 Windows 10 移动版和桌面版之间的差异，请参阅[移动设备体系结构和实施](cellular-architecture-and-driver-model.md)。
 
@@ -72,7 +72,7 @@ NDIS 6.7 中的 Windows 桌面调制解调器接口模型不能容纳此类体�
 
 ![调制解调器特定的命令和通知](images/multi-SIM_4_modemSpecificCommands.png "调制解调器特定的命令和通知")
 
-将对与微型端口实例关联的调制解调器和执行程序执行发出到微型端口实例的所有 OID 集或查询请求。 同样，从微型端口实例发送的所有未经请求的通知和未请求的设备服务事件都适用于与该小型应用程序实例关联的调制解调器和执行程序。 例如，来自微型端口的未经请求的 NDIS_STATUS_WWAN_REGISTER_STATE 或 NDIS_STATUS_WWAN_PACKET_SERVICE 通知指示关联的调制解调器的注册（或数据包服务状态）和执行器，并且与的状态无关其他调制解调器或其他执行器。 
+将对与微型端口实例关联的调制解调器和执行程序执行发出到微型端口实例的所有 OID 集或查询请求。 同样，从微型端口实例发送的所有未经请求的通知和未请求的设备服务事件都适用于与该小型应用程序实例关联的调制解调器和执行程序。 例如，来自微型端口的未经请求的 NDIS_STATUS_WWAN_REGISTER_STATE 或 NDIS_STATUS_WWAN_PACKET_SERVICE 通知指示关联的调制解调器的注册（或数据包服务状态）和执行器，并且与其他调制解调器或其他执行程序的状态无关。 
 
 如果设备中有多个调制解调器和/或多个执行程序，则与该调制解调器和执行器组合关联的物理微型端口适配器将发出与特定调制解调器和执行器组合相关的非特定于上下文的未经请求的通知。 
 
@@ -80,7 +80,7 @@ NDIS 6.7 中的 Windows 桌面调制解调器接口模型不能容纳此类体�
 
 对于具有多个调制解调器和/或多个执行器的设备，与调制解调器和执行器组合关联的物理微型端口适配器实例可以接收非特定于上下文的 OID 集请求。 微型端口驱动程序应跟踪此类请求的进度。 如果在任何适配器中有一个此类设置请求正在进行，并且尚未完成，则在完成前一个请求后，将对第二个此类请求尝试进行排队并进行处理。 
 
-Windows 10 desktop WMBCLASS 驱动程序遵循上一段中所述的规范来处理此集请求争用条件，但如果在调制解调器层出现争用情况，则调制解调器应遵循相同的指南来排队冲突MBIM 函数上的设备范围的命令（如果它仍在处理链接到同一基础设备的另一个函数）。
+Windows 10 desktop WMBCLASS 驱动程序遵循上一段中所述的规范来处理此设置请求争用条件，但是，如果在调制解调器层发生争用条件，则调制解调器应遵循相同的指南来对 MBIM 函数上的冲突设备范围内的命令进行排队（如果它仍在处理链接到同一基础设备的另一个函数）。
 
 ## <a name="oids-for-set-and-query-requests"></a>Set 和 Query 请求的 Oid
 
@@ -142,7 +142,7 @@ Windows 10 desktop WMBCLASS 驱动程序遵循上一段中所述的规范来处�
 
 ## <a name="mbim-interface-update-for-multi-sim-operations"></a>多 SIM 操作的 MBIM 接口更新
 
-对于非 Windows Mobile 操作系统，多执行程序的调制解调器显示为具有多个 MBIM 函数的一个 USB 复合设备。 每个 MBIM 函数都表示一个可以维护注册的执行器。 执行器特定的命令和通知通过表示该执行器的 MBIM 函数进行交换，而调制解调器特定的命令（即，不是特定于执行程序的命令）及其相应的通知可以发送到或传入来自属于同一基础 USB 复合设备的任何 MBIM 函数。 
+对于非 Windows Mobile 操作系统，多执行程序的调制解调器显示为具有多个 MBIM 函数的一个 USB 复合设备。 每个 MBIM 函数都表示一个可以维护注册的执行器。 执行器特定的命令和通知通过表示该执行器的 MBIM 函数进行交换，而调制解调器特定的命令（即非执行器特定的命令）及其相应的通知可以发送到或来自属于同一基础 USB 复合设备的任何 MBIM 函数。 
 
 向 MBIM 函数发出的所有 CID 集或查询请求均针对与该微型端口实例关联的调制解调器和执行器执行;同样，通过 MBIM 函数发送的所有未经请求的通知都适用于与 MBIM 函数关联的调制解调器和执行程序。 同样，从微型端口实例发送的所有未请求的设备服务事件都适用于与 MBIM 函数关联的调制解调器和执行程序。 例如，未经请求的 MBIM_CID_REGISTER_STATE 或来自 MBIM 函数的 MBIM_CID_PACKET_SERVICE 通知仅指示关联的调制解调器/执行器的注册或数据包服务状态，并且与其他调制解调器或其他执行器的状态无关。 
 
@@ -195,9 +195,9 @@ MBIM_COMMAND_MSG 上的 InformationBuffer 包含 MBIM_MS_SYS_CAPS_INFO 的响应
 
 #### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SYS_CAPS_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -214,7 +214,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_SYS_CAPS_INFO 结构应在 InformationBuffer 中使用。
 
-| 偏移 | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NumberOfExecutors | UINT32 | 此调制解调器报告的 MBB 实例数 |
 | 4 | 4 | NumberOfSlots | UINT32 | 此调制解调器上可用的物理 UICC 槽数 |
@@ -243,9 +243,9 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 #### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 不适用 | 不适用 |
+| 命令 | 不适用 | 不适用 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_DEVICE_CAPS_INFO_V2 | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -262,7 +262,7 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_DEVICE_CAPS_INFO_V2 结构应在 InformationBuffer 中使用。 与公共 USB MBIM standard 的10.5.1 部分中定义的 MBIM_CID_DEVICE_CAPS 结构相比，以下结构包含名为*DeviceIndex*的新字段。 除非在此处说明，否则此处将应用公共 USB MBIM standard 的表10-14 中的字段说明。
 
-| 偏移 | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | DeviceType | MBIM_DEVICE_TYPE |  |
 | 4 | 4 | CellularClass | MBIM_CELLULAR_CLASS |  |
@@ -271,14 +271,14 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 | 16 | 4 | Microsoft.visualstudio.ordesigner.dataclass. | MBIM_DATA_CLASS |  |
 | 20 | 4 | SmsCaps | MBIM_SMS_CAPS |  |
 | 24 | 4 | ControlCaps | MBIM_CTRL_CAPS |  |
-| 28 | 4 | 最大会话数 | UINT32 |  |
-| 32 | 4 | CustomDataClassOffset | 抵销 |  |
+| 28 | 4 | MaxSessions | UINT32 |  |
+| 32 | 4 | CustomDataClassOffset | OFFSET |  |
 | 36 | 4 | CustomDataClassSize | 大小（0到22） |  |
-| 40 | 4 | DeviceIdOffset | 抵销 |  |
+| 40 | 4 | DeviceIdOffset | OFFSET |  |
 | 44 | 4 | DeviceIdSize | 大小（0到26） |  |
-| 48 | 4 | FirmwareInfoOffset | 抵销 |  |
+| 48 | 4 | FirmwareInfoOffset | OFFSET |  |
 | 52 | 4 | FirmwareInfoSize | 大小（0-60） |  |
-| 56 | 4 | HardwareInfoOffset | 抵销 |  |
+| 56 | 4 | HardwareInfoOffset | OFFSET |  |
 | 60 | 4 | HardwareInfoSize | 大小（0-60） |  |
 | 64| 4 | ExecutorIndex | UINT32 | 执行器索引。 它的范围为*0*到*n-1* ，其中*n*是 MBIM 调制解调器中包含的 MBB 实例的数目。 它的值始终保持不变，并且与枚举顺序无关。 |
 | 68 |  | DataBuffer | DATABUFFER | 包含*CustomDataClass*、 *DeviceId*、 *FirmwareInfo*和*HardwareInfo*成员的数据缓冲区。 |
@@ -307,9 +307,9 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_DEVICE_SLOT_MAPPING_INFO�
 
 #### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
+| 命令 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 不适用 |
 
 #### <a name="data-structures"></a>数据结构
@@ -322,10 +322,10 @@ InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 以下 MBIM_MS_DEVICE_SLOT_MAPPING_INFO 结构应在 InformationBuffer 中使用。
 
-| 偏移 | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MapCount （MC） | UINT32 | 映射的数量，始终等于设备/执行器的数目。 |
-| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | 此列表的*第 i*对，其中（0 < = i < = （MC 1））记录当前映射到*第 i 个*设备/执行器的槽的索引。 该对中的第一个元素是一个4字节字段，其偏移量为 DataBuffer 的偏移量，计算方式为此 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 结构的开始（偏移量为0）到 UINT32。 对的第二个元素是 record 元素的4字节大小。 由于槽索引的类型为 UINT32，因此对中的第二个元素始终为4。 |
+| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | 此列表的*第 i*对，其中（0 <= i <= （MC 1））记录当前映射到*第 i 个*设备/执行器的槽的索引。 该对中的第一个元素是一个4字节字段，其偏移量为 DataBuffer 的偏移量，计算方式为此 MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 结构的开始（偏移量为0）到 UINT32。 对的第二个元素是 record 元素的4字节大小。 由于槽索引的类型为 UINT32，因此对中的第二个元素始终为4。 |
 | 4 + （8 * MC） | 4 * MC | DataBuffer | DATABUFFER | 包含*SlotMapList*的数据缓冲区。 由于槽的大小为4个字节，并且 MC 等于槽索引的数目，因此 DataBuffer 的总大小为 4 * MC。 |
 
 ##### <a name="response"></a>响应
@@ -361,9 +361,9 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 #### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
+| 命令 | 不适用 | MBIM_MS_SLOT_INFO_REQ | 不适用 |
 | 响应 | 不适用 | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
 
 #### <a name="data-structures"></a>数据结构
@@ -372,7 +372,7 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 以下 MBIM_MS_SLOT_INFO_REQ 结构应在 InformationBuffer 中使用。
 
-| 偏移 | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 要查询的槽的索引。 |
 
@@ -384,10 +384,10 @@ MBIM_COMMAND_MSG 的 InformationBuffer 包含 MBIM_MS_SLOT_INFO_REQ 的结构。
 
 以下 MBIM_MS_SLOT_INFO 结构应在 InformationBuffer 中使用。
 
-| 偏移 | 大小 | 字段 | 类型 | 说明 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 槽的索引。 |
-| 4 | 4 | State | MBIM_MS_UICC_SLOT_STATE | 槽和卡的状态（如果适用）。 |
+| 4 | 4 | 状态 | MBIM_MS_UICC_SLOT_STATE | 槽和卡的状态（如果适用）。 |
 
 以下 MBIM_MS_UICCSLOT_STATE 结构描述了槽的可能状态。
 

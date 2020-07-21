@@ -3,28 +3,28 @@ title: MB 低级别 UICC 访问
 description: MB 低级别 UICC 访问
 ms.assetid: AD0E9F20-9C95-4102-94EF-054D45E2C597
 keywords:
-- MB 低级别 UICC 访问，移动宽带低级别 UICC 访问，移动宽带微型端口驱动程序低级别 UICC、 MB UICC ATR、 MB UICC 应答到重置、 MB UICC 打开通道、 MB UICC 关闭通道，MB UICC APDU MB UICC 终端功能、 MB UICC 重置
+- MB 低级别 UICC 访问，移动宽带低级别 UICC 访问，移动宽带微型端口驱动程序低级 UICC，MB UICC ATR，MB UICC 重置答案，MB UICC 打开通道，MB UICC 关闭通道，MB UICC APDU，MB UICC 终端功能，MB UICC 重置
 ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e31353e294746506f6470973eb368d8d1336feaa
-ms.sourcegitcommit: 970845120208f29b874066f2b8b7e97078088013
+ms.openlocfilehash: c3e33884b3c66879bde5f5c755a5f84805246eb9
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66806829"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557760"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低级别 UICC 访问
 
 ## <a name="overview"></a>概述
 
-移动宽带接口模型修订版本 1.0 或 MBIM1，定义某一主机设备和移动电话网络数据调制解调器之间的 OEM 和 IHV 未知接口。
+移动宽带接口型号版本1.0 或 MBIM1 定义了主机设备与蜂窝数据调制解调器之间的 OEM 和 IHV 无关的接口。
 
-MBIM1 函数包括 UICC 智能卡，并提供访问某些数据和内部状态。 但是，智能卡可能具有其他功能超越 MBIM 接口定义。 这些附加功能包括对基于近场通信的移动付款解决方案或将整个 UICC 配置文件的远程预配的安全元素的支持。
+MBIM1 函数包括 UICC 智能卡，并提供对其某些数据和内部状态的访问。 不过，智能卡可能包含了 MBIM 接口定义以外的其他功能。 这些附加功能包括支持基于近现场通信的移动支付解决方案的安全元素，或用于整个 UICC 配置文件的远程设置。
 
-在移动宽带启用 Windows 设备，除了单选接口层 (RIL) 界面使用 MBIM 接口。 RIL 所提供的功能之一是对 UICC 低级别访问的接口。 本主题介绍一系列 MBIM 描述 MBIM 接口在此附加功能的 Microsoft 扩展。
+在启用移动宽带的 Windows 设备中，除了使用收音机接口层（RIL）接口外，还使用了 MBIM 接口。 RIL 提供的功能之一是用于访问 UICC 的低级别访问的接口。 本主题介绍 MBIM 中的一组 Microsoft 扩展，这些扩展介绍了 MBIM 接口上的此附加功能。
 
-Microsoft 扩展包含一组设备 （集和查询） 的服务命令和通知。 这些扩展不包含新用途的设备服务流。
+Microsoft 扩展包含一组设备服务命令（Set 和 Query）和通知。 这些扩展不包括设备服务流的任何新使用。
 
 ## <a name="mbim-service-and-cid-values"></a>MBIM 服务和 CID 值
 
@@ -32,59 +32,59 @@ Microsoft 扩展包含一组设备 （集和查询） 的服务命令和通知�
 | --- | --- | --- |
 | Microsoft 低级别 UICC 访问 | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
 
-下表为每个 CID，以及是否支持 CID 设置指定的命令代码，查询或事件 （通知） 请求。 请参阅在本主题中详细了解其参数、 数据结构和通知的每个 CID 的各个部分。 
+下表指定了每个 CID 的命令代码，以及 CID 是否支持设置、查询或事件（通知）请求。 有关其参数、数据结构和通知的详细信息，请参阅本主题中的每个 CID 的各个部分。 
 
 | CID | 命令代码 | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- | --- |
 | MBIM_CID_MS_UICC_ATR | 1 | N | Y | N |
 | MBIM_CID_MS_UICC_OPEN_CHANNEL | 2 | Y | N | N |
 | MBIM_CID_MS_UICC_CLOSE_CHANNEL | 3 | Y | N | N |
-| MBIM_CID_MS_UICC_APDU) | 4 | Y | N | N |
-| MBIM_CID_MS_UICC_TERMINAL_CAPABILITY | 5 | Y | Y | N |
-| MBIM_CID_MS_UICC_RESET | 6 | Y | Y | N |
+| MBIM_CID_MS_UICC_APDU） | 4 | Y | N | N |
+| MBIM_CID_MS_UICC_TERMINAL_CAPABILITY | 5 | 是 | Y | N |
+| MBIM_CID_MS_UICC_RESET | 6 | 是 | Y | N |
 
 ## <a name="status-codes"></a>状态代码
 
-MBIM 状态代码定义中的部分 9.4.5 [MBIM 标准](https://go.microsoft.com/fwlink/p/?linkid=842064)。 此外，定义了以下附加的故障状态代码：
+MBIM 状态代码在[MBIM 标准](https://go.microsoft.com/fwlink/p/?linkid=842064)的9.4.5 节中定义。 此外，还定义了下列附加的失败状态代码：
 
-| 状态代码 | 值 （十六进制） | 描述 |
+| 状态代码 | 值（十六进制） | 说明 |
 | --- | --- | --- |
-| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 87430001 | 打开逻辑频道未成功，因为没有逻辑通道位于 UICC （它不支持或所有这些都在使用）。 |
-| MBIM_STATUS_MS_SELECT_FAILED | 87430002 | 打开逻辑频道未成功，因为选择失败。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 87430003 | 逻辑频道号无效 （它不通过 MBIM_CID_MS_UICC_OPEN_CHANNEL 打开）。 |
+| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 87430001 | 逻辑通道打开失败，因为 UICC 上没有可用的逻辑通道（不支持它们，或者所有逻辑通道均在使用中）。 |
+| MBIM_STATUS_MS_SELECT_FAILED | 87430002 | 由于选择失败，逻辑通道打开失败。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 87430003 | 逻辑通道号无效（MBIM_CID_MS_UICC_OPEN_CHANNEL 未打开它）。 |
 
-### <a name="mbimsubscriberreadystate"></a>MBIM_SUBSCRIBER_READY_STATE
+### <a name="mbim_subscriber_ready_state"></a>MBIM_SUBSCRIBER_READY_STATE
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MBIMSubscriberReadyStateNoEsimProfile | 7 | 卡已准备但不具有任何已启用配置文件。 |
+| MBIMSubscriberReadyStateNoEsimProfile | 7 | 该卡已准备就绪，但没有任何已启用的配置文件。 |
 
 ## <a name="uicc-responses-and-status"></a>UICC 响应和状态
 
-UICC 可实现基于字符的或基于记录的接口中，或两者。 虽然的特定机制不同，但结果是 UICC 响应具有两个状态字节 （名为 SW1 和 SW2） 和响应 （这可能为空） 的每个命令。 正常的成功状态将由 90 00。 但是，如果 UICC 支持卡应用程序工具包和 UICC 想要将主动命令发送到终端，将由 91 XX （其中 XX 而异） 的状态指示成功返回。 MBIM 函数或终端，负责处理此主动命令，就像它会处理任何其他 UICC 操作过程 （将发送一次提取到 UICC、 处理主动命令，或将其发送到主机，MBIM_ 收到主动命令CID_STK_PAC)。 MBIM 主机发送 MBIM_CID_MS_UICC_OPEN_CHANNEL 或 MBIM_CID_MS_UICC_APDU 时应考虑这两个 90 00 和 91 XX 为正常状态。
+UICC 可以实现基于字符或基于记录的接口，也可以同时实现两者。 尽管特定机制有所不同，但结果是 UICC 响应每个具有两个状态字节（名为 SW1 和 SW2）的命令和响应（可能为空）。 正常成功状态由 90 00 指示。 但是，如果 UICC 支持卡应用程序工具包，并且 UICC 希望向终端发送一个主动命令，则成功的返回将由 91 XX （其中 XX 个不同）的状态指示。 MBIM 函数（或终端）负责处理此主动命令，就像它处理在任何其他 UICC 操作期间接收到的主动命令一样（将提取发送到 UICC，处理主动命令，或将其发送到带有 MBIM_CID_STK_PAC 的主机）。 当 MBIM 主机发送 MBIM_CID_MS_UICC_OPEN_CHANNEL 或 MBIM_CID_MS_UICC_APDU 时，应将 90 00 和 91 XX 视为正常状态。
 
-命令必须能够返回大于 256 个字节的响应。 此机制部分所述 5.1.3 [ISO/IEC 7816-4:2013 标准](https://go.microsoft.com/fwlink/p/?linkid=864596)。 在这种情况下，卡将返回状态字 SW1 SW2 61 XX，而不是 90 00，其中 XX 为剩余的字节数或 00 是否有 256 个字节或剩余的详细信息。 调制解调器必须发出 GET 响应相同的类字节重复之前收到所有数据。 这将由最终状态字 90 00。 序列必须不间断地在特定的逻辑频道中。 其他 Apdu 应在调制解调器处理，并且应该是透明的主机。 如果在主机中处理，则某些其他 APDU Apdu 顺序期间可能会以异步方式引用卡无法保证。
+命令必须能够返回大于256字节的响应。 此机制在[ISO/IEC 7816-4:2013 标准](https://go.microsoft.com/fwlink/p/?linkid=864596)的5.1.3 部分中进行了介绍。 在这种情况下，该卡将返回 61 XX 的 SW1 SW2 状态字，而不是 90 00，其中 XX 是剩余字节数或00（如果有256字节或更多剩余）。 必须重复使用相同的类字节发出 GET 响应，直到接收到所有数据为止。 最终状态字词为 90 00。 序列必须在特定的逻辑通道内不间断。 其他 Apdu 应在调制解调器上处理，并且应对主机是透明的。 如果在主机中进行了处理，则不能保证在 Apdu 序列中，某些其他 APDU 可能会以异步方式引用卡。
 
-## <a name="comparison-to-ihvril"></a>与 IHVRIL 之间的比较
+## <a name="comparison-to-ihvril"></a>与 IHVRIL 的比较
 
-部分 5.2.3.3.10 通过 5.2.3.3.14 IHVRIL 规范的定义类似此规范所基于的界面。 包括一些差异：
+IHVRIL 规范的5.2.3.3.10 到5.2.3.3.14 部分定义了此规范所基于的类似接口。 一些差异包括：
 
-- RIL 接口不提供任何方式来指定安全消息传送。 MBIM 命令来交换 Apdu 指定这作为显式参数。
-- RIL 接口不清楚地定义 APDU 中的类字节解释。 必须从主机发送的类字节 MBIM 规范状态存在但未使用 （并改为 MBIM 函数将构造此字节）。
-- 该 RIL 界面使用单独的函数来关闭所有 UICC 通道在组中，而 MBIM 接口来实现此目的带有单个 CID 的变体参数。
-- MBIM 错误状态和 UICC 状态 (SW1 SW2) 之间的关系是更清楚地定义比 RIL 错误和 UICC 状态之间的关系。
-- MBIM 接口用于区分从故障来选择指定的应用程序分配一个新的逻辑通道失败。
-- MBIM 接口允许将调制解调器发送要发送到卡的终端的功能对象。
+- RIL 接口不提供指定安全消息传送的方法。 MBIM 命令到 exchange Apdu 将此参数指定为显式参数。
+- RIL 接口不清楚地定义 APDU 内类字节的解释。 MBIM 规范规定，从主机发送的类字节必须存在，但未使用（而 MBIM 函数构造此字节）。
+- RIL 接口使用单独的函数关闭组中的所有 UICC 通道，而 MBIM 接口使用单个 CID 的变量参数实现此功能。
+- 与 RIL 错误和 UICC 状态之间的关系相比，MBIM 错误状态和 UICC 状态（SW1 SW2）之间的关系更清晰地定义。
+- MBIM 接口将无法从失败分配新的逻辑通道以选择指定的应用程序。
+- MBIM 接口允许发送要发送到卡的调制解调器终端功能对象。
 
-## <a name="mbimcidmsuiccatr"></a>MBIM_CID_MS_UICC_ATR
+## <a name="mbim_cid_ms_uicc_atr"></a>MBIM_CID_MS_UICC_ATR
 
-应答到重置 (ATR) 是执行重置之后，由 UICC 发送的字节数的第一个字符串。 它描述的功能卡，如逻辑它支持的通道数。 MBIM 函数必须保存 ATR 收到从 UICC。 随后，主机可能会使用 MBIM_CID_MS_UICC_ATR 命令检索 ATR。
+Reset 应答（ATR）是在执行重置后 UICC 发送的第一个字符串。 它描述了卡的功能，如它支持的逻辑通道数。 MBIM 函数在从 UICC 接收到 ATR 时必须保存它。 随后，主机可以使用 MBIM_CID_MS_UICC_ATR 命令来检索 ATR。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |   | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | 不适用 | 空 | 不适用 |
+| 命令 | 不适用 | 空 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_ATR_INFO | 不适用 |
 
 ### <a name="query"></a>查询
@@ -97,14 +97,14 @@ UICC 可实现基于字符的或基于记录的接口中，或两者。 虽然�
 
 ### <a name="response"></a>响应
 
-MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_ATR_INFO 结构描述为附加到此函数 UICC 重置的答案。
+MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_ATR_INFO 结构，该结构描述为附加到此函数的 UICC 重置的答案。
 
-#### <a name="mbimmsatrinfo"></a>MBIM_MS_ATR_INFO
+#### <a name="mbim_ms_atr_info"></a>MBIM_MS_ATR_INFO
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | AtrSize | SIZE(0..33) | 长度**AtrData**。 |
-| 4 | 4 | AtrOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到调用的字节数组**AtrData** ，其中包含 ATR 数据。 |
+| 0 | 4 | AtrSize | 大小（0 ... 33） | **AtrData**的长度。 |
+| 4 | 4 | AtrOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为**AtrData**的字节数组，其中包含 ATR 数据。 |
 | 8 | AtrSize | DataBuffer | DATABUFFER | **AtrData**字节数组。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
@@ -113,33 +113,33 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_ATR_INFO 结构描述�
 
 ### <a name="status-codes"></a>状态代码
 
-下面的状态代码都适用。
+以下状态代码适用。
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_BUSY | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_FAILURE | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为 UICC 缺少。 |
+| MBIM_STATUS_SUCCESS | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_BUSY | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_FAILURE | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为缺少 UICC。 |
 | MBIM_STATUS_BAD_SIM | 无法执行 UICC 操作，因为 UICC 处于错误状态。 |
 | MBIM_STATUS_NOT_INITIALIZED | 无法执行 UICC 操作，因为 UICC 尚未完全初始化。 |
 
-## <a name="mbimcidmsuiccopenchannel"></a>MBIM_CID_MS_UICC_OPEN_CHANNEL
+## <a name="mbim_cid_ms_uicc_open_channel"></a>MBIM_CID_MS_UICC_OPEN_CHANNEL
 
-主机使用 MBIM_CID_MS_UICC_OPEN_CHANNEL 命令请求函数打开一个新的逻辑通道 UICC 卡上，并选择指定的 UICC 应用程序 （由其应用程序 ID 指定）。
+主机使用 MBIM_CID_MS_UICC_OPEN_CHANNEL 命令请求函数在 UICC 卡上打开新的逻辑通道，并选择指定的 UICC 应用程序（由其应用程序 ID 指定）。
 
-函数实现此 MBIM 命令中用一系列 UICC 命令：
+函数使用 UICC 命令序列实现此 MBIM 命令：
 
-1.  该函数将管理通道命令发送到 UICC，如 11.1.17 部分中所述[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)，以创建新的逻辑通道。 如果此命令会失败，该函数返回与 SW1 SW2 MBIM_STATUS_MS_NO_LOGICAL_CHANNELS 状态，并不执行任何进一步的操作。 
-2.  如果管理通道命令成功，UICC 函数报告的新逻辑通道的通道数。 该函数将发送 SELECT [名称] 命令其中 P1 = 04 中，如 11.1.1 部分中所述[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)。 如果此操作失败，该函数将管理通道命令发送到 UICC 关闭逻辑通道，并从 SELECT 返回 SW1 SW2 的 MBIM_STATUS_MS_SELECT_FAILED 状态。
-3.  如果选择命令成功，该函数记录逻辑频道号和供将来参考 host 所指定的通道组。 它会返回逻辑频道号、 SW1 SW2 从选择中，并响应从 SELECT 到主机。
+1.  函数向 UICC 发送管理通道命令，如[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的第11.1.17 节所述，创建新的逻辑通道。 如果此命令失败，则该函数返回 SW1 SW2 的 MBIM_STATUS_MS_NO_LOGICAL_CHANNELS 状态，而不执行进一步的操作。 
+2.  如果 "管理通道" 命令成功，则 UICC 报告该函数的新逻辑通道的通道号。 函数按[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的节11.1.1 中所述发送 P1 = 04 的 SELECT [by name] 命令。 如果此操作失败，则此函数会将 "管理通道" 命令发送到 UICC，以关闭逻辑通道，并通过 SELECT 返回 SW1 SW2 的 MBIM_STATUS_MS_SELECT_FAILED 状态。
+3.  如果 SELECT 命令成功，则该函数将记录由主机指定的逻辑通道号和通道组，以供将来参考。 然后，它将从 SELECT 返回逻辑通道号，SW1 SW2，并将响应从 SELECT 返回到主机。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_UICC_OPEN_CHANNEL | 不适用 | 不适用 |
+| 命令 | MBIM_MS_SET_UICC_OPEN_CHANNEL | 不适用 | 不适用 |
 | 响应 | MBIM_MS_UICC_OPEN_CHANNEL_INFO | 不适用 | 不适用 |
 
 ### <a name="query"></a>查询
@@ -148,33 +148,33 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_ATR_INFO 结构描述�
 
 ### <a name="set"></a>设置
 
-MBIM_COMMAND_MSG InformationBuffer 包含以下 MBIM_MS_SET_UICC_OPEN_CHANNEL 结构。
+MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_OPEN_CHANNEL 结构。
 
-#### <a name="mbimmssetuiccopenchannel"></a>MBIM_MS_SET_UICC_OPEN_CHANNEL
+#### <a name="mbim_ms_set_uicc_open_channel"></a>MBIM_MS_SET_UICC_OPEN_CHANNEL
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | AppIdSize | SIZE(0..32) | 应用程序 ID (AppId) 的大小。 |
-| 4 | 4 | AppIdOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到调用的字节数组**AppId** ，它定义要选择的 AppId。 |
-| 8 | 4 | SelectP2Arg | UINT32(0..255) | *P2* SELECT 命令的参数。 |
+| 0 | 4 | AppIdSize | 大小（0-32） | 应用程序 ID （AppId）的大小。 |
+| 4 | 4 | AppIdOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为**appid**的字节数组，用于定义要选择的 appid。 |
+| 8 | 4 | SelectP2Arg | UINT32 （0 .0） | 选择命令的*P2*参数。 |
 | 12 | 4 | ChannelGroup | UINT32 | 标识此通道的通道组的标记值。 |
 | 16 | AppIdSize | DataBuffer | DATABUFFER | **AppId**字节数组。 |
 
 ### <a name="response"></a>响应
 
-MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_OPEN_CHANNEL_INFO 结构。
+MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_OPEN_CHANNEL_INFO 结构。
 
-#### <a name="mbimmsuiccopenchannelinfo"></a>MBIM_MS_UICC_OPEN_CHANNEL_INFO
+#### <a name="mbim_ms_uicc_open_channel_info"></a>MBIM_MS_UICC_OPEN_CHANNEL_INFO
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 状态 | BYTE[2] | SW1 和 SW2，此字节顺序。 有关详细信息，请参阅此表后面的说明。 |
-| 4 | 4 | 通道 | UINT32(0..19) | 逻辑通道标识符。 如果此成员为 0，操作失败。 |
-| 8 | 4 | ResponseLength | SIZE(0..256) | 响应长度 （字节）。 |
-| 12 | 4 | ResponseOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到调用的字节数组**响应**包含从选择的响应。 |
+| 0 | 4 | 状态 | BYTE [2] | SW1 和 SW2，以字节顺序排列。 有关详细信息，请参阅此表后面的说明。 |
+| 4 | 4 | 通道 | UINT32 （0. 19） | 逻辑通道标识符。 如果此成员是0，则操作失败。 |
+| 8 | 4 | ResponseLength | 大小（0-256） | 响应长度（以字节为单位）。 |
+| 12 | 4 | ResponseOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为**response**的字节数组，其中包含来自 SELECT 的响应。 |
 | 16 | - | DataBuffer | DATABUFFER | **响应**字节数组数据。 |
 
-如果该命令将返回 MBIM_STATUS_MS_NO_LOGICAL_CHANNELS，**状态**字段应包含 UICC 状态中的单词 SW1 和 SW2 管理通道命令，剩余的字段将为零。 如果该命令将返回 MBIM_STATUS_MS_SELECT_FAILED，**状态**字段应包含 UICC 状态中的单词 SW1 和 SW2 SELECT 命令，剩余的字段将为零。 对于任何其他状态，InformationBuffer 应为空。
+如果命令返回 MBIM_STATUS_MS_NO_LOGICAL_CHANNELS，则 "**状态**" 字段应包含 "管理通道" 命令中的 "UICC 状态字词 SW1" 和 "SW2"，其余字段将为零。 如果命令返回 MBIM_STATUS_MS_SELECT_FAILED，则 "**状态**" 字段应包含 "SELECT" 命令中的 "UICC 状态 SW1" 和 "SW2"，其余字段将为零。 对于任何其他状态，InformationBuffer 应为空。
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -182,33 +182,33 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_OPEN_CHANNEL_INFO 
 
 ### <a name="status-codes"></a>状态代码
 
-下面的状态代码均适用：
+以下状态代码适用：
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_BUSY | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_FAILURE | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为 UICC 缺少。 |
+| MBIM_STATUS_SUCCESS | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_BUSY | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_FAILURE | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为缺少 UICC。 |
 | MBIM_STATUS_BAD_SIM | 无法执行 UICC 操作，因为 UICC 处于错误状态。 |
 | MBIM_STATUS_NOT_INITIALIZED | 无法执行 UICC 操作，因为 UICC 尚未完全初始化。 |
-| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 打开逻辑通道失败，因为没有逻辑通道位于 UICC （它不支持或所有这些都在使用）。 |
-| MBIM_STATUS_MS_SELECT_FAILED | 打开逻辑频道未成功，因为选择失败。 |
+| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 逻辑通道打开失败，因为 UICC 上没有可用的逻辑通道（不支持它们，或者所有逻辑通道均在使用中）。 |
+| MBIM_STATUS_MS_SELECT_FAILED | 由于选择失败，逻辑通道打开失败。 |
 
-## <a name="mbimcidmsuiccclosechannel"></a>MBIM_CID_MS_UICC_CLOSE_CHANNEL
+## <a name="mbim_cid_ms_uicc_close_channel"></a>MBIM_CID_MS_UICC_CLOSE_CHANNEL
 
-主机将 MBIM_CID_MS_UICC_CLOSE_CHANNEL 发送到函数，以关闭逻辑上 UICC 通道。 主机可以指定频道号，或可以指定通道组。
+主机将 MBIM_CID_MS_UICC_CLOSE_CHANNEL 发送到函数以关闭 UICC 上的逻辑通道。 主机可以指定频道号，也可以指定通道组。
 
-如果该主机指定频道号，该函数应检查此通道已打开的上一个 MBIM_CID_MS_UICC_OPEN_CHANNEL。 如果是这样，它将向 UICC 以关闭通道，返回的状态为 MBIM_STATUS_SUCCESS，并从管理通道返回 SW1 SW2 发送管理通道命令。 如果不是，它应执行任何操作并返回 MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL 失败状态。
+如果主机指定了通道号，则该函数应检查该通道是否已由上一个 MBIM_CID_MS_UICC_OPEN_CHANNEL 打开。 如果是这样，则应将 "管理通道" 命令发送到 UICC 以关闭通道，返回 MBIM_STATUS_SUCCESS 状态，并从管理通道返回 SW1 SW2。 如果不是，则应不执行任何操作并返回 MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL 故障状态。
 
-如果该主机指定通道组，此函数将确定其 （如果有） 逻辑通道打开与该通道组并将管理通道命令发送到每个此类通道 UICC。 它返回与最后一个管理通道 SW1 SW2 MBIM_STATUS_SUCCESS 状态。 如果没有通道已关闭，则它应返回 90 00。
+如果主机指定了一个通道组，则该函数将确定使用该通道组打开的逻辑通道（如果有），并为每个此类通道的 UICC 发送一个 "管理通道" 命令。 它将返回 MBIM_STATUS_SUCCESS 状态 SW1，其中包含上一个管理通道的 SW2。 如果通道未关闭，则它应返回 90 00。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_UICC_CLOSE_CHANNEL | 不适用 | 不适用 |
+| 命令 | MBIM_MS_SET_UICC_CLOSE_CHANNEL | 不适用 | 不适用 |
 | 响应 | MBIM_MS_UICC_CLOSE_CHANNEL_INFO | 不适用 | 不适用 |
 
 ### <a name="query"></a>查询
@@ -217,24 +217,24 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_OPEN_CHANNEL_INFO 
 
 ### <a name="set"></a>设置
 
-MBIM_COMMAND_MSG InformationBuffer 包含以下 MBIM_MS_SET_UICC_CLOSE_CHANNEL 结构。
+MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_CLOSE_CHANNEL 结构。
 
-#### <a name="mbimmssetuiccclosechannel"></a>MBIM_MS_SET_UICC_CLOSE_CHANNEL
+#### <a name="mbim_ms_set_uicc_close_channel"></a>MBIM_MS_SET_UICC_CLOSE_CHANNEL
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 通道 | UINT32(0..19) | 如果非零值，指定要关闭的通道。 如果为零，指定与相关联的频道**ChannelGroup**是要关闭。 |
-| 4 | 4 | ChannelGroup | UINT32 | 如果**通道**为零，这将指定的标记值和具有此标记的所有通道已关闭。 如果**通道**为非零值，则忽略此字段。
+| 0 | 4 | 通道 | UINT32 （0. 19） | 如果为非零，则指定要关闭的通道。 如果为零，则指定要关闭与**ChannelGroup**关联的通道。 |
+| 4 | 4 | ChannelGroup | UINT32 | 如果**通道**为零，此值将指定一个标记值，并关闭带有此标记的所有通道。 如果**通道**为非零，则忽略此字段。
 
 ### <a name="response"></a>响应
 
-MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_CLOSE_CHANNEL_INFO 结构。
+MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_CLOSE_CHANNEL_INFO 结构。
 
-#### <a name="mbimmsuiccclosechannelinfo"></a>MBIM_MS_UICC_CLOSE_CHANNEL_INFO
+#### <a name="mbim_ms_uicc_close_channel_info"></a>MBIM_MS_UICC_CLOSE_CHANNEL_INFO
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 状态 | BYTE[2] | SW1 和 SW2 由代表此命令的函数执行的最后一个管理通道。 |
+| 0 | 4 | 状态 | BYTE [2] | 由函数代表此命令执行的最后一个管理通道的 SW1 和 SW2。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -242,41 +242,41 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_CLOSE_CHANNEL_INFO
 
 ### <a name="status-codes"></a>状态代码
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_BUSY | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_FAILURE | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为 UICC 缺少。 |
+| MBIM_STATUS_SUCCESS | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_BUSY | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_FAILURE | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为缺少 UICC。 |
 | MBIM_STATUS_BAD_SIM | 无法执行 UICC 操作，因为 UICC 处于错误状态。 |
 | MBIM_STATUS_NOT_INITIALIZED | 无法执行 UICC 操作，因为 UICC 尚未完全初始化。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 逻辑频道号不是有效 （即，它不打开与 MBIM_CID_MS_UICC_OPEN_CHANNEL）。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 逻辑信道号无效（也就是说，它不是用 MBIM_CID_MS_UICC_OPEN_CHANNEL 打开的）。 |
 
-## <a name="mbimcidmsuiccapdu"></a>MBIM_CID_MS_UICC_APDU
+## <a name="mbim_cid_ms_uicc_apdu"></a>MBIM_CID_MS_UICC_APDU
 
-主机使用 MBIM_CID_MS_UICC_APDU APDU 命令发送到指定的逻辑通道上 UICC 并接收响应。 MBIM 函数应确保使用 MBIM_CID_MS_UICC_OPEN_CHANNEL 以前已经打开逻辑通道，如果它不是状态 MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL 失败。
+主机使用 MBIM_CID_MS_UICC_APDU 将命令 APDU 发送到 UICC 上的指定逻辑通道，并接收响应。 MBIM 函数应确保该逻辑通道以前是用 MBIM_CID_MS_UICC_OPEN_CHANNEL 打开的，如果不是，则会失败，状态为 MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL。
 
-主机必须将完整 APDU 发送到该函数。 可能使用的第 4 节中的第一个 interindustry 定义中定义的类字节值发送 APDU [ISO/IEC 7816-标准 4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596)，或中的扩展定义中的部分 10.1.1 [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)。 APDU 可能会发送，但不包含安全消息传送或安全消息传送。 未经过身份验证命令标头。 主机指定的类字节、 逻辑频道号，和安全消息传送以及 APDU 的类型。
+主机必须向函数发送一个完全 APDU。 可以使用[ISO/IEC 7816-4:2013 标准](https://go.microsoft.com/fwlink/p/?linkid=864596)的第4部分中的第一个 interindustry 定义中定义的一个类字节值，也可以在[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的部分10.1.1 的扩展定义中发送 APDU。 可以在没有安全消息传送的情况下发送 APDU，也可以通过安全消息传送。 未验证命令头。 主机指定类字节、逻辑通道号和安全消息传送的类型以及 APDU。
 
-该命令的第一个字节 APDU 是编码的第四部分所定义的类字节[ISO/IEC 7816-标准 4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596)符或分节的 10.1.1 [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)。 主机可能会发送 0 X、 4 X、 6 X、 8 X，CX，或 EX 类字节。 但是，该函数没有通过直接向 UICC 此字节。 相反，然后将 APDU 发送到 UICC 函数会从主机的第一个字节将替换为新类字节 (编码为定义的第四部分[ISO/IEC 7816-标准 4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596)符或分节的 10.1.1 [ETSI TS102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)) 基于 host 所指定的类型、 通道和 SecureMessaging 值：
+Command APDU 的第一个字节是类 byte，编码为由[ISO/IEC 7816-4:2013 标准](https://go.microsoft.com/fwlink/p/?linkid=864596)或[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的节10.1.1 的第4部分定义。 主机可以发送0X、4X、6倍、8X、CX 或 EX 类字节。 但是，此函数不会将此字节直接传递到 UICC。 相反，在将 APDU 发送到 UICC 之前，该函数会将主机中的第一个字节替换为新的类字节（按照[ISO/IEC 7816-4:2013 标准](https://go.microsoft.com/fwlink/p/?linkid=864596)的第4节或[ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)的节10.1.1 的定义），基于主机指定的类型、通道和 SecureMessaging 值：
 
-| 字节类 | 描述 |
+| Byte 类 | 说明 |
 | --- | --- |
-| 0X | 7816 4 interindustry，1 < = 通道 < = 3，如果相关编码低位元组中的安全性 |
-| 4X | 7816 4 interindustry，4 < = 通道 < = 19，不安全消息传送 |
-| 6X | 7816 4 interindustry，4 < = 通道 < = 19，安全 （未经过身份验证标头） |
-| 8X | 102 221 扩展，1 < = 通道 < = 3，如果相关编码低位元组中的安全性 |
-| CX | 102 221 扩展，4 < = 通道 < = 19，不安全消息传送 |
-| EX | 102 221 扩展，4 < = 通道 < = 19，安全 （未经过身份验证标头） |
+| 0X | 7816-4 interindustry，1 <= 通道 <= 3，则编码低位字节的安全性（如果相关） |
+| 4X | 7816-4 interindustry，4 <= 通道 <= 19，无安全消息 |
+| 6倍 | 7816-4 interindustry，4 <= 通道 <= 19，安全（标头未经过身份验证） |
+| .8X | 102 221 扩展，1<= 通道 <= 3，则编码低位字节的安全性（如果相关） |
+| CX | 102 221 扩展，4 <= 通道 <= 19，无安全消息传送 |
+| EX | 102 221 扩展，4 <= 通道 <= 19，安全（标头未经过身份验证） |
 
-该函数应返回状态、 SW1 SW2 和响应从 UICC 到主机。
+函数应返回状态 SW1 SW2 和从 UICC 到主机的响应。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_UICC_APDU | 不适用 | 不适用 |
+| 命令 | MBIM_MS_SET_UICC_APDU | 不适用 | 不适用 |
 | 响应 | MBIM_MS_UICC_APDU_INFO | 不适用 | 不适用 |
 
 ### <a name="query"></a>查询
@@ -285,46 +285,46 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_CLOSE_CHANNEL_INFO
 
 ### <a name="set"></a>设置
 
-MBIM_COMMAND_MSG InformationBuffer 包含以下 MBIM_MS_SET_UICC_APDU 结构。
+MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_APDU 结构。
 
-#### <a name="mbimmssetuiccapdu"></a>MBIM_MS_SET_UICC_APDU
+#### <a name="mbim_ms_set_uicc_apdu"></a>MBIM_MS_SET_UICC_APDU
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 通道 | UINT32(1..19) | 指定用于发送 APDU 的通道。 |
+| 0 | 4 | 通道 | UINT32 （1. 19） | 指定要将 APDU 发送到的通道。 |
 | 4 | 4 | SecureMessaging | MBIM_MS_UICC_SECURE_MESSAGING | 指定是否使用安全消息交换 APDU。 |
-| 8 | 4 | 在任务栏的搜索框中键入 | MBIM_MS_UICC_CLASS_BYTE_TYPE | 指定类字节定义的类型。 |
-| 12 | 4 | CommandSize | UINT32(0..261) | **命令**长度以字节为单位。 |
-| 16 | 4 | CommandOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到调用的字节数组**命令**，其中包含 APDU。 |
+| 8 | 4 | 类型 | MBIM_MS_UICC_CLASS_BYTE_TYPE | 指定类字节定义的类型。 |
+| 12 | 4 | CommandSize | UINT32 （0） | **命令**长度（字节）。 |
+| 16 | 4 | CommandOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量为一个名为的**命令**，该数组包含 APDU。 |
 | 20 | - | DataBuffer | DATABUFFER | **命令**字节数组。 |
 
-MBIM_MS_SET_UICC_APDU 结构使用以下 MBIM_MS_UICC_SECURE_MESSAGING 和 MBIM_MS_UICC_CLASS_BYTE_TYPE 数据结构。
+MBIM_MS_SET_UICC_APDU 结构使用以下 MBIM_MS_UICC_SECURE_MESSAGING 和 MBIM_MS_UICC_CLASS_BYTE_TYPE 的数据结构。
 
-##### <a name="mbimmsuiccsecuremessaging"></a>MBIM_MS_UICC_SECURE_MESSAGING
+##### <a name="mbim_ms_uicc_secure_messaging"></a>MBIM_MS_UICC_SECURE_MESSAGING
 
-| 在任务栏的搜索框中键入 | 值 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MBIMMsUiccSecureMessagingNone | 0 | 没有安全消息传送。 |
-| MBIMMsUiccSecureMessagingNoHdrAuth | 1 | 安全消息传送，未经过身份验证的命令标头。 |
+| MBIMMsUiccSecureMessagingNone | 0 | 无安全消息。 |
+| MBIMMsUiccSecureMessagingNoHdrAuth | 1 | 安全消息传送，未对命令头进行身份验证。 |
 
-##### <a name="mbimmsuiccclassbytetype"></a>MBIM_MS_UICC_CLASS_BYTE_TYPE
+##### <a name="mbim_ms_uicc_class_byte_type"></a>MBIM_MS_UICC_CLASS_BYTE_TYPE
 
-| 在任务栏的搜索框中键入 | ReplTest1 | 描述 |
+| 类型 | 值 | 说明 |
 | --- | --- | --- |
-| MBIMMsUiccInterindustry | 0 | ISO 7816 4 中的第一个 interindustry 定义根据定义。 |
-| MBIMMsUiccExtended | 1 | ETSI 102 221 中的扩展定义根据定义。 |
+| MBIMMsUiccInterindustry | 0 | 根据 ISO 7816-4 中的第一个 interindustry 定义定义。 |
+| MBIMMsUiccExtended | 1 | 根据 ETSI 102 221 中的扩展定义定义。 |
 
 ### <a name="response"></a>响应
 
-MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_APDU_INFO 结构。
+MBIM_COMMAND_DONE 的 InformationBuffer 包含以下 MBIM_MS_UICC_APDU_INFO 结构。
 
-#### <a name="mbimmsuiccapduinfo"></a>MBIM_MS_UICC_APDU_INFO
+#### <a name="mbim_ms_uicc_apdu_info"></a>MBIM_MS_UICC_APDU_INFO
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 状态 | BYTE[2] | 主机运行命令 SW1 和 SW2 状态字。 |
-| 4 | 4 | ResponseLength | 大小 | 响应长度 （字节）。 |
-| 8 | 4 | ResponseOffset | 偏移量 | 以字节为单位，偏移量计算从此结构的开头到调用的字节数组**响应**包含从选择的响应。 |
+| 0 | 4 | 状态 | BYTE [2] | 命令生成的 SW1 和 SW2 状态字词。 |
+| 4 | 4 | ResponseLength | SIZE | 响应长度（以字节为单位）。 |
+| 8 | 4 | ResponseOffset | OFFSET | 从该结构的开头算起的偏移量（以字节为单位），该偏移量是一个名为**response**的字节数组，其中包含来自 SELECT 的响应。 |
 | 12 | - | DataBuffer | DATABUFFER | **响应**字节数组。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
@@ -333,59 +333,59 @@ MBIM_COMMAND_DONE InformationBuffer 包含以下 MBIM_MS_UICC_APDU_INFO 结构�
 
 ### <a name="status-codes"></a>状态代码
 
-下面的状态代码均适用：
+以下状态代码适用：
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_BUSY | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_FAILURE | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为 UICC 缺少。 |
+| MBIM_STATUS_SUCCESS | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_BUSY | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_FAILURE | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为缺少 UICC。 |
 | MBIM_STATUS_BAD_SIM | 无法执行 UICC 操作，因为 UICC 处于错误状态。 |
 | MBIM_STATUS_NOT_INITIALIZED | 无法执行 UICC 操作，因为 UICC 尚未完全初始化。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 逻辑频道号不是有效 （即，它不打开与 MBIM_CID_MS_UICC_OPEN_CHANNEL）。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 逻辑信道号无效（也就是说，它不是用 MBIM_CID_MS_UICC_OPEN_CHANNEL 打开的）。 |
 
-如果该函数可以将 APDU 发送到 UICC，它将返回 MBIM_STATUS_SUCCESS 以及 SW1 SW2 状态字和 UICC （如果有） 的响应。 主机必须检查的状态 (SW1 SW2) 来确定上 UICC APDU 命令是否已成功或失败的原因。
+如果函数可以将 APDU 发送到 UICC，它将返回 MBIM_STATUS_SUCCESS 以及 SW1 SW2 状态字和来自 UICC 的响应（如果有）。 主机必须检查状态（SW1 SW2），以确定是否在 UICC 上成功或失败的原因。
 
-## <a name="mbimcidmsuiccterminalcapability"></a>MBIM_CID_MS_UICC_TERMINAL_CAPABILITY
+## <a name="mbim_cid_ms_uicc_terminal_capability"></a>MBIM_CID_MS_UICC_TERMINAL_CAPABILITY
 
-主机发送 MBIM_CID_MS_UICC_TERMINAL_CAPABILITY 通知调制解调器有关主机的功能。 11.1.19 节中指定终端功能 APDU [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)，（如果支持），则选择第一个应用程序之前，必须向卡发送。 因此，该主机不能直接发送终端功能 APDU 但而是将发送 MBIM_CID_MS_UICC_TERMINAL_CAPABILITY 命令包含一个或多个终端的功能对象将调制解调器进行永久存储。 在下一步卡插入或重置之后 ATR，调制解调器将选择 MF 并检查是否支持终端功能。 如果是这样，调制解调器将发送终端功能 APDU MBIM_CID_MS_UICC_TERMINAL_CAPABILITY 命令，以及任何调制解调器生成信息由指定的信息。
+主机发送 MBIM_CID_MS_UICC_TERMINAL_CAPABILITY 来通知调制解调器主机的功能。 在选择第一个应用程序之前，必须将 " [ETSI TS 102 221 技术规范](https://go.microsoft.com/fwlink/p/?linkid=864594)" 的 "11.1.19" 部分中指定的终端功能 APDU 发送到卡（如果支持）。 因此，主机不能直接发送终端功能 APDU，而是发送 MBIM_CID_MS_UICC_TERMINAL_CAPABILITY 命令，该命令包含一个或多个将永久存储在调制解调器上的终端功能对象。 在下一个卡插入或重置时，在 ATR 后，调制解调器会选择 MF 并检查是否支持终端功能。 如果是这样，则调制解调器将与 MBIM_CID_MS_UICC_TERMINAL_CAPABILITY 命令指定的信息以及任何调制解调器生成的信息一起发送终端功能 APDU。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_UICC_TERMINAL_CAPABILITY | 空 | 不适用 |
+| 命令 | MBIM_MS_SET_UICC_TERMINAL_CAPABILITY | 空 | 不适用 |
 | 响应 | 不适用 | MBIM_MS_TERMINAL_CAPABILITY_INFO | 不适用 |
 
 ### <a name="query"></a>查询
 
-InformationBuffer 应为 null，并且 InformationBufferLength 应该为零。
+InformationBuffer 应为 null，而 InformationBufferLength 应为零。
 
 ### <a name="set"></a>设置
 
-MBIM_COMMAND_MSG InformationBuffer 包含以下 MBIM_MS_SET_UICC_TERMINAL_CAPABILITY 结构。
+MBIM_COMMAND_MSG 的 InformationBuffer 包含以下 MBIM_MS_SET_UICC_TERMINAL_CAPABILITY 结构。
 
-#### <a name="mbimmssetuiccterminalcapability"></a>MBIM_MS_SET_UICC_TERMINAL_CAPABILITY
+#### <a name="mbim_ms_set_uicc_terminal_capability"></a>MBIM_MS_SET_UICC_TERMINAL_CAPABILITY
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | ElementCount | UINT32 | 终端的功能对象的元素计数。 |
-| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 每个终端的功能对象 TLV 偏移量长度对列表。 |
-| 4 + 8 * EC | - | DataBuffer | DATABUFFER | 实际的终端功能对象 TLVs 一个字节数组。 |
+| 0 | 4 | Elementcount 多于 | UINT32 | 终端功能对象的元素计数。 |
+| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 每个终端功能对象 TLV 的偏移长度对列表。 |
+| 4 + 8 * EC | - | DataBuffer | DATABUFFER | 实际终端功能对象 TLVs 的字节数组。 |
 
 ### <a name="response"></a>响应
 
-响应将包含到调制解调器的最后一个发送终端功能对象的确切集命令。 因此，MBIM_MS_TERMINAL_CAPABILITY_INFO 等同于 MBIM_MS_SET_UICC_TERMINAL_CAPABILITY。
+响应将包含与上次发送的终端功能对象连接到调制解调器的完全相同的 SET 命令。 因此，MBIM_MS_TERMINAL_CAPABILITY_INFO 与 MBIM_MS_SET_UICC_TERMINAL_CAPABILITY 相同。
 
-#### <a name="mbimmsterminalcapabilityinfo"></a>MBIM_MS_TERMINAL_CAPABILITY_INFO
+#### <a name="mbim_ms_terminal_capability_info"></a>MBIM_MS_TERMINAL_CAPABILITY_INFO
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | ElementCount | UINT32 | 终端的功能对象的元素计数。 |
-| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 每个终端的功能对象 TLV 偏移量长度对列表。 |
-| 4 + 8 * EC | - | DataBuffer | DATABUFFER | 实际的终端功能对象 TLVs 一个字节数组。 |
+| 0 | 4 | Elementcount 多于 | UINT32 | 终端功能对象的元素计数。 |
+| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 每个终端功能对象 TLV 的偏移长度对列表。 |
+| 4 + 8 * EC | - | DataBuffer | DATABUFFER | 实际终端功能对象 TLVs 的字节数组。 |
 
 ### <a name="unsolicited-events"></a>未经请求的事件
 
@@ -393,74 +393,74 @@ MBIM_COMMAND_MSG InformationBuffer 包含以下 MBIM_MS_SET_UICC_TERMINAL_CAPABI
 
 ### <a name="status-codes"></a>状态代码
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_BUSY | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_FAILURE | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为 UICC 缺少。 |
+| MBIM_STATUS_SUCCESS | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_BUSY | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_FAILURE | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | 无法执行 UICC 操作，因为缺少 UICC。 |
 | MBIM_STATUS_BAD_SIM | 无法执行 UICC 操作，因为 UICC 处于错误状态。 |
 | MBIM_STATUS_NOT_INITIALIZED | 无法执行 UICC 操作，因为 UICC 尚未完全初始化。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 逻辑频道号不是有效 （即，它不打开与 MBIM_CID_MS_UICC_OPEN_CHANNEL）。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 逻辑信道号无效（也就是说，它不是用 MBIM_CID_MS_UICC_OPEN_CHANNEL 打开的）。 |
 
-## <a name="mbimcidmsuiccreset"></a>MBIM_CID_MS_UICC_RESET
+## <a name="mbim_cid_ms_uicc_reset"></a>MBIM_CID_MS_UICC_RESET
 
-主机将 MBIM_CID_MS_UICC_RESET 发送到 MBIM 函数将重置 UICC 或者将查询函数的传递状态。
+主机将 MBIM_CID_MS_UICC_RESET 发送到 MBIM 函数，以重置 UICC 或查询函数的传递状态。
 
-当主机请求此功能重置 UICC 时，它指定传递操作。
+当宿主请求函数重置 UICC 时，它将指定一个传递操作。
 
-如果指定了主机*MBIMMsUICCPassThroughEnable*传递操作，该函数将重置 UICC，并 UICC 加电时，将 UICC 像在直通模式下，可实现主机和 UICC （之间的通信即使 UICC 有没有电信 UICC 文件系统）。 该函数不会向卡发送任何 Apdu 并不会干扰任何时候在主机和 UICC 之间的通信。
+如果主机指定了*MBIMMsUICCPassThroughEnable* passthrough 操作，则该函数将重置 UICC，并在 UICC 开启后将该 UICC 视为处于可启用主机和 UICC 之间通信的直通模式（即使 UICC 没有电信 UICC 文件系统）。 此函数不会将任何 Apdu 发送到卡，并且不会在主机与 UICC 之间的通信的任何时候干扰。
 
-如果指定了主机*MBIMMsUICCPassThroughDisable*传递操作，该函数将重置 UICC，UICC 加电时，将视为常规电信 UICC UICC 并且需要存在于 UICC 电信 UICC 文件系统.
+如果主机指定了*MBIMMsUICCPassThroughDisable* passthrough 操作，则该函数将重置 UICC，并在 UICC 开启后将该 UICC 视为常规电信 UICC，并期望在 UICC 上存在一个电信 UICC 文件系统。
 
-当主机查询函数来确定传递状态，如果该函数使用响应*MBIMMsUICCPassThroughEnabled*状态，则表示启用该直通模式。 如果使用该函数响应*MBIMMsUICCPassThroughDisabled*状态，它表示该传递模式下处于禁用状态。
+当主机查询函数来确定 passthrough 状态时，如果函数以*MBIMMsUICCPassThroughEnabled*状态响应，则表示启用了直通模式。 如果函数以*MBIMMsUICCPassThroughDisabled*状态进行响应，则表示已禁用直通模式。
 
-### <a name="parameters"></a>Parameters
+### <a name="parameters"></a>参数
 
 |   | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| Command | MBIM_MS_SET_UICC_RESET | 空 | 不适用 |
+| 命令 | MBIM_MS_SET_UICC_RESET | 空 | 不适用 |
 | 响应 | MBIM_MS_UICC_RESET_INFO | MBIM_MS_UICC_RESET_INFO | 不适用 |
 
 ### <a name="query"></a>查询
 
-InformationBuffer 应为空并*InformationBufferLength*应该为零。
+InformationBuffer 应为 null，而*InformationBufferLength*应为零。
 
 ### <a name="set"></a>设置
 
-#### <a name="mbimsetmsuiccreset"></a>MBIM_SET_MS_UICC_RESET
+#### <a name="mbim_set_ms_uicc_reset"></a>MBIM_SET_MS_UICC_RESET
 
-MBIM_SET_MS_UICC_RESET 结构包含指定主机的传递操作。
+MBIM_SET_MS_UICC_RESET 结构包含由主机指定的通过操作。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 有关详细信息，请参阅[MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)。 |
 
-#### <a name="mbim_ms_uicc_passthrough_action">MBIM_MS_UICC_PASSTHROUGH_ACTION</a>
+#### <a name=""></a><a name="mbim_ms_uicc_passthrough_action">MBIM_MS_UICC_PASSTHROUGH_ACTION</a>
 
-MBIM_MS_UICC_PASSTHROUGH_ACTION 枚举定义 MBIM 函数传递操作，主机可以指定的类型。
+MBIM_MS_UICC_PASSTHROUGH_ACTION 枚举定义宿主可以指定给 MBIM 函数的传递操作的类型。
 
-| 类型 | ReplTest1 |
+| 类型 | 值 |
 | --- | --- |
 | MBIMMsUiccPassThroughDisable | 0 |
 | MBIMMsUiccPassThroughEnable | 1 |
 
 ### <a name="response"></a>响应
 
-#### <a name="mbimmsuiccresetinfo"></a>MBIM_MS_UICC_RESET_INFO
+#### <a name="mbim_ms_uicc_reset_info"></a>MBIM_MS_UICC_RESET_INFO
 
 MBIM_MS_UICC_RESET_INFO 结构包含 MBIM 函数的传递状态。
 
-| 偏移量 | 大小 | 字段 | 在任务栏的搜索框中键入 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 描述 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 有关详细信息，请参阅[MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)。 |
 
-#### <a name="mbim_ms_uicc_passthrough_status">MBIM_MS_UICC_PASSTHROUGH_STATUS</a> 
+#### <a name=""></a><a name="mbim_ms_uicc_passthrough_status">MBIM_MS_UICC_PASSTHROUGH_STATUS</a> 
 
-MBIM_MS_UICC_PASSTHROUGH_STATUS 枚举定义主机的传递状态 MBIM 函数指定的类型。
+MBIM_MS_UICC_PASSTHROUGH_STATUS 枚举定义 MBIM 函数指定给主机的传递状态的类型。
 
-| 类型 | ReplTest1 |
+| 类型 | 值 |
 | --- | --- |
 | MBIMMsUiccPassThroughDisabled | 0 |
 | MBIMMsUiccPassThroughEnabled | 1 |
@@ -471,15 +471,15 @@ MBIM_MS_UICC_PASSTHROUGH_STATUS 枚举定义主机的传递状态 MBIM 函数指
 
 ### <a name="status-codes"></a>状态代码
 
-| 状态代码 | 描述 |
+| 状态代码 | 说明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | 基本 MBIM 状态为已定义的所有命令。 |
-| MBIM_STATUS_BUSY | 设备正在使用。 |
-| MBIM_STATUS_FAILURE | 操作失败。 |
+| MBIM_STATUS_SUCCESS | 为所有命令定义的基本 MBIM 状态。 |
+| MBIM_STATUS_BUSY | 设备处于繁忙状态。 |
+| MBIM_STATUS_FAILURE | 此操作失败。 |
 | MBIM_STATUS_NO_DEVICE_SUPPORT | 设备不支持此操作。 |
 
-### <a name="oidwwanuiccreset"></a>OID_WWAN_UICC_RESET
+### <a name="oid_wwan_uicc_reset"></a>OID_WWAN_UICC_RESET
 
-MBIM_CID_MS_UICC_RESET NDIS 等效项是[OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)。 
+[OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)MBIM_CID_MS_UICC_RESET 的 NDIS 等效项。 
 
 

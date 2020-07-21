@@ -7,12 +7,12 @@ keywords:
 ms.date: 03/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 32c9d8e34abeb3a8c58edaf0cf1750f51764f449
-ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
+ms.openlocfilehash: 4fcee2ae2d2d1b6915814577cdfa3344369a8858
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85382738"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557766"
 ---
 # <a name="mb-uicc-application-and-file-system-access"></a>MB UICC 应用程序和文件系统访问权限
 
@@ -42,7 +42,7 @@ UICC 文件系统可视为目录树的林。 旧的 SIM 树以 Master 文件（M
 
 ## <a name="mbim-service-and-cid-values"></a>MBIM 服务和 CID 值
 
-| Service name | UUID | UUID 值 |
+| 服务名称 | UUID | UUID 值 |
 | --- | --- | --- |
 | Microsoft 低级别 UICC 访问 | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
 | Microsoft 基本 IP 连接扩展插件 | UUID_BASIC_CONNECT_EXTENSIONS | 3D01DCC5-FEF5-4D05-9D3A-BEF7058E9AAF |
@@ -63,7 +63,7 @@ UICC 文件系统可视为目录树的林。 旧的 SIM 树以 Master 文件（M
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | 空 | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_APP_LIST | 不适用 |
@@ -147,7 +147,7 @@ MBIM_COMMAND_DONE 中的 InformationBuffer 包含以下 MBIM_UICC_APP_LIST 结�
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | MBIM_UICC_FILE_PATH | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_FILE_STATUS | 不适用 |
@@ -271,7 +271,7 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | MBIM_UICC_ACCESS_BINARY | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_RESPONSE | 不适用 |
@@ -339,7 +339,7 @@ MBIM_PIN_TYPE_EX 枚举用于前面的 MBIM_UICC_FILE_STATUS 结构。
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | 不适用 | MBIM_UICC_ACCESS_RECORD | 不适用 |
 | 响应 | 不适用 | MBIM_UICC_RESPONSE | 不适用 |
@@ -397,7 +397,7 @@ MBIM_UICC_RESPONSE 结构在 InformationBuffer 中使用。
 
 ### <a name="parameters"></a>参数
 
-|  | 设置 | 查询 | 通知 |
+| Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
 | 命令 | MBIM_SET_PIN_EX | MBIM_PIN_APP | 不适用 |
 | 响应 | MBIM_PIN_INFO_EX | MBIM_PIN_INFO_EX | 不适用 |

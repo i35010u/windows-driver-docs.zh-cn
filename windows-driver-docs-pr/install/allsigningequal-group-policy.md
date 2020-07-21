@@ -9,12 +9,12 @@ keywords:
 - AllSigningEq
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fde3803c053634ddc0d8fed4c123fafccf996692
-ms.sourcegitcommit: 63402c9cd10f909e355172037f9bd2d58813303c
+ms.openlocfilehash: 02229a24e20c07bb6cb781126e1e710bfa235040
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82885434"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557790"
 ---
 # <a name="allsigningequal-group-policy"></a>AllSigningEqual 组策略
 
@@ -39,7 +39,7 @@ ms.locfileid: "82885434"
 
 网络管理员可以通过启用**AllSigningEqual**组策略来更改此行为。 这会将 Windows 配置为在选择与设备最匹配的驱动程序时，将所有 Microsoft 签名类型和 Authenticode 签名视为相等，并按级别进行排序。
 
-**注意**  从 Windows 7 开始，默认情况下启用**AllSigningEqual**组策略。
+**注意**   从 Windows 7 开始，默认情况下启用**AllSigningEqual**组策略。
 
  
 
@@ -75,13 +75,13 @@ ms.locfileid: "82885434"
 
 若要确保在目标系统上更新设置，请执行以下操作：
 
-1.  创建*cmd.exe*的桌面快捷方式，右键单击*cmd.exe*快捷方式，然后选择 "以**管理员身份运行**"。
+1.  创建*Cmd.exe*的桌面快捷方式，右键单击*Cmd.exe*快捷方式，然后选择 "以**管理员身份运行**"。
 
-2.  在命令提示符窗口中，运行组策略更新实用工具， *GPUpdate*。
+2.  在命令提示符窗口中，运行组策略更新实用工具， *GPUpdate.exe*。
 
 此配置更改将进行一次，并适用于计算机上的所有后续驱动程序安装，直到重新配置 AllSigningEqual。
 
-有关驱动程序排名的详细信息，请参阅[Windows 如何对驱动程序](how-setup-ranks-drivers.md)进行排名。
+有关驱动程序排名的详细信息，请参阅[Windows 如何对驱动程序](how-setup-ranks-drivers--windows-vista-and-later-.md)进行排名。
 
  
 

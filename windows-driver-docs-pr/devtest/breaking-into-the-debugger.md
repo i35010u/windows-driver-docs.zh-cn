@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/04/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 583e7206e3e5a7c1ef25942ac26947c69031e162
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428334"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86568066"
 ---
 # <a name="breaking-into-the-debugger"></a>突入调试器
 
