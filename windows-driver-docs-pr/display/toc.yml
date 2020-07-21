@@ -644,7 +644,7 @@
           href: indirect-display-driver-model-overview.md
         - name: IddCx 对象
           href: iddcx-objects.md
-        - name: 调试
+        - name: 调试间接显示驱动程序
           href: indirect-display-debugging.md
     - name: Windows 显示驱动程序模型 (WDDM) 中的任务
       items:
@@ -662,10 +662,10 @@
           href: manipulating-3-d-virtual-textures-directly-from-hardware.md
         - name: 注册硬件信息
           href: registering-hardware-information.md
-    - name: Windows 显示驱动程序模型 (WDDM) 的调试提示
+    - name: 调试 Windows 显示驱动程序模型 (WDDM)
       items:
-        - name: Windows 显示驱动程序模型 (WDDM) 的调试提示
-          href: debugging-tips-for-the-windows-vista-display-driver-model.md
+        - name: WDDM 驱动程序的调试提示
+          href: debugging-tips-for-wddm-drivers.md
         - name: 安装已检查的二进制文件
           href: installing-checked-binaries.md
         - name: 更改用于调试的 GPU 计划程序的行为
@@ -1172,8 +1172,6 @@
           href: synchronization-issues-for-display-drivers.md
         - name: 调试显示驱动程序
           items:
-            - name: 调试显示驱动程序
-              href: debugging-display-drivers.md
             - name: 禁用 EA 恢复
               href: disabling-ea-recovery.md
             - name: 测试显示驱动程序时禁用监视计时器
