@@ -82,8 +82,6 @@
   items:
     - name: 为驱动程序签名
       href: signing-a-driver.md
-    - name: 对内核驱动程序进行证明签名以便公开发布
-      href: attestation-signing-a-kernel-driver-for-public-release.md
     - name: 在开发和测试期间为驱动程序签名
       href: signing-a-driver-during-development-and-testing.md
     - name: 为驱动程序签名以便公开发布

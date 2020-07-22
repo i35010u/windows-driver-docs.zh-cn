@@ -2668,14 +2668,6 @@
                   href: debugging-code-overview.md
                 - name: 条件编译和生成环境
                   href: conditional-compilation-and-the-build-environment.md
-                - name: 突入调试器
-                  href: breaking-into-the-debugger.md
-                - name: 将输出发送到调试器
-                  href: sending-output-to-the-debugger.md
-                - name: 读取和筛选调试消息
-                  href: reading-and-filtering-debugging-messages.md
-                - name: 确定是否已附加调试器
-                  href: determining-if-a-debugger-is-attached.md
             - name: 解释 Bug 检查代码
               href: interpreting-a-bug-check-code.md
         - name: 使用调试器

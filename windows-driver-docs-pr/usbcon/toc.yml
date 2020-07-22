@@ -374,8 +374,6 @@
           items:
             - name: 枚举 USB 复合设备上的接口集合的概述
               href: support-for-interface-collections.md
-            - name: 对无线移动通信设备类的支持
-              href: support-for-the-wireless-mobile-communication-device-class--wmcdc-.md
         - name: Usbccgp.sys 中的内容安全功能
           href: content-security-features-in-the-composite-client-generic-parent-drive.md
     - name: Winusb.sys

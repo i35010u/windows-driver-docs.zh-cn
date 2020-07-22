@@ -932,7 +932,7 @@
           href: e.md
         - name: F
           href: f.md
-        - name: H 上执行碎片合并
+        - name: H
           href: h.md
         - name: I
           href: i.md
@@ -1164,7 +1164,7 @@
           href: using-debugger-extension-commands.md
         - name: 编写新的调试器扩展
           href: writing-new-debugger-extensions.md
-    - name: 远程调试
+    - name: Remote Debugging
       items:
         - name: 远程调试
           href: remote-debugging.md
@@ -3392,8 +3392,6 @@
               href: '-dml-proc.md'
             - name: '!dumpfa'
               href: '-dumpfa.md'
-            - name: '!elog_str'
-              href: '-elog-str.md'
             - name: '!envvar'
               href: '-envvar.md'
             - name: '!error'

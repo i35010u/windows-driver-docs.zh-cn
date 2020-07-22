@@ -148,13 +148,9 @@
           items:
             - name: “游戏杆支持”概述
               href: joystick-support.md
-            - name: 游戏杆驱动程序模型
-              href: joystick-driver-model.md
-            - name: 微型驱动程序提供的回调
-              href: minidriver-supplied-callbacks.md
-            - name: ' 原始接口'
+            - name: 原始接口
               href: original-interface.md
-            - name: ' DirectX 5.0 接口'
+            - name: DirectX 5.0 接口
               href: directx-5-0-interface.md
             - name: 创建 INF 文件
               href: creating-an-inf-file.md
