@@ -8,12 +8,12 @@ keywords:
 - ECHO
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 967afeedef7b2eaa72234ebd654c05ca9eedf520
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: a14d525f369aa573ae8bbddc8760000fc0526489
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557784"
+ms.locfileid: "86873866"
 ---
 # <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>调试 Windows 驱动程序 - 分步实验室（Echo 内核模式）
 
@@ -485,8 +485,6 @@ devcon install &lt;INF 文件&gt; &lt;硬件 ID&gt;
 >[!TIP]
 > 如果安装有任何问题，请查看以下文件以了解详细信息。
 `%windir%\inf\setupapi.dev.log`
-
-有关更多详细说明，请参阅[配置计算机以进行驱动程序部署、测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 
 成功安装示例驱动程序后，就可以对其进行测试了。
 

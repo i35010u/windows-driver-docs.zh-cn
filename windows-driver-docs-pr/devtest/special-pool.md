@@ -1,24 +1,20 @@
 ---
-title: 特殊池
-description: 特殊池
+title: 驱动程序验证器中的特殊池内存损坏检测
+description: 若要检测内存损坏情况，驱动程序验证程序可以从特殊池分配驱动程序内存，并监视该池是否有不正确的访问权限。
 ms.assetid: b1381a75-279a-42b7-b18d-43aba796424b
 keywords:
 - 特殊池功能 WDK 驱动程序验证程序
 - 内存损坏 WDK 驱动程序验证程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f7bd117f5b3070ef40b9ec13182948c80dac023
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ff0e87f3ee7169c6ebdc204326bcc7791e7020a9
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839324"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873870"
 ---
-# <a name="special-pool"></a>特殊池
-
-
-## <span id="ddk_special_memory_pool_tools"></span><span id="DDK_SPECIAL_MEMORY_POOL_TOOLS"></span>
-
+# <a name="special-pool-memory-corruption-detection-in-driver-verifier"></a>驱动程序验证器中的特殊池内存损坏检测
 
 内存损坏是常见的驱动程序问题。 出现错误后，驱动程序错误可能导致过长。 最常见的错误是访问已释放的内存，并分配*n*个字节，然后访问*n*+ 1 个字节。
 
@@ -58,7 +54,7 @@ ms.locfileid: "72839324"
 
 若要为池标记或大小范围请求特殊的池，请使用 Gflags，它是*Windows 调试工具*中包含的工具。 有关详细信息，请参阅[使用全局标志实用程序](using-the-global-flags-utility.md)。
 
-可以同时使用驱动程序验证程序的特殊池功能和 Gflags 的特殊池功能。 如果执行此操作，请记住，特殊池会受到限制，这并不是所有尝试从特殊池进行分配的操作都将成功，并且 Windows 会为失败尝试分配成功状态，尝试从常规内存的分配满足分配的条件库.
+可以同时使用驱动程序验证程序的特殊池功能和 Gflags 的特殊池功能。 如果执行此操作，请记住，特殊池会受到限制，这并不是所有尝试从特殊池进行分配的操作都将成功，并且 Windows 将返回成功的失败尝试状态，尝试从常规内存池中的分配满足的特定池进行分配。
 
 ### <a name="span-idspecial_pool_efficiencyspanspan-idspecial_pool_efficiencyspanspecial-pool-efficiency"></a><span id="special_pool_efficiency"></span><span id="SPECIAL_POOL_EFFICIENCY"></span>特殊池效率
 
@@ -66,13 +62,13 @@ ms.locfileid: "72839324"
 
 使多个小内存请求的单个驱动程序也可以耗尽此池。 如果发生这种情况，最好将池标记分配给驱动程序的内存分配，并将特殊池一次专用于一个池标记。
 
-特殊池的大小增加了系统上的物理内存量;理想情况下，应至少为1千兆字节（GB）。 在 x86 计算机上，由于使用了虚拟（除了物理）空间，因此请不要使用[ **/3gb**](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-3gb) boot 选项。 最好是将页面文件的最小/最大数量提高一倍。
+特殊池的大小增加了系统上的物理内存量;理想情况下，应至少为1千兆字节（GB）。 在 x86 计算机上，由于使用了虚拟（除了物理）空间，因此请不要使用[**/3gb**](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-3gb) boot 选项。 最好是将页面文件的最小/最大数量提高一倍。
 
 若要确保正在测试驱动程序的所有分配，建议使用长时间压力过大驱动程序。
 
 ### <a name="span-idmonitoring_the_special_poolspanspan-idmonitoring_the_special_poolspanmonitoring-the-special-pool"></a><span id="monitoring_the_special_pool"></span><span id="MONITORING_THE_SPECIAL_POOL"></span>监视特殊池
 
-可以监视与池分配相关的统计信息。 驱动程序验证程序管理器、Verifier 命令行或日志文件可显示这些项。 有关详细信息，请参阅[监视全局计数器](monitoring-global-counters.md)。
+可以监视与池分配相关的统计信息。 驱动程序验证程序管理器、Verifier.exe 命令行或日志文件可显示这些项。 有关详细信息，请参阅[监视全局计数器](monitoring-global-counters.md)。
 
 如果 "**在特殊池分配成功**" 计数器与 "**池分配成功**" 计数器相等，则特殊池足以涵盖所有内存分配。 如果前一个计数器小于后一个计数器，则已至少用完一次特殊池。
 
@@ -84,9 +80,9 @@ ms.locfileid: "72839324"
 
 ### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>激活此选项
 
-你可以通过使用驱动程序验证器管理器或 Verifier 命令行为一个或多个驱动程序激活特殊池功能。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
+你可以通过使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活特殊池功能。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
-**请注意**  按池标记或分配大小激活特殊池功能，或设置**验证开始**（检测不足）并**验证结束**（检测溢出）对齐情况，请使用[全局标志实用程序](using-the-global-flags-utility.md);这些对齐设置适用于所有特殊池分配。
+**注意**   若要按池标记或分配大小激活特殊池功能，或者要设置**验证开始**（检测不足）并**验证结束**（检测溢出）对齐方式，请使用[全局标志实用程序](using-the-global-flags-utility.md);这些对齐设置适用于所有特殊池分配。
 
  
 

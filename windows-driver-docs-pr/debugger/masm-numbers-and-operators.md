@@ -3,67 +3,63 @@ title: MASM 数字和运算符
 description: MASM 数字和运算符
 ms.assetid: 9aeb3ef2-d83a-4f99-9a55-4bbd8a7e11b5
 keywords:
-- 表达式中，MASM 表达式语法
-- 数值表达式 (MASM)
-- 数字的 MASM 表达式
-- MASM 表达式、 运算符
-- 运算符 (MASM)
+- 表达式，MASM 表达式语法
+- 数值表达式（MASM）
+- MASM 表达式，数值
+- MASM 表达式，运算符
+- 运算符（MASM）
 - （MASM 前缀）
 - 二元运算符
 - 移位运算符
 - 一元运算符
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9cddbd0bba9cb6f60254aa16dd1648067d644be
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 9b19be1872c67d7228822a6262cf9bcfa976ba70
+ms.sourcegitcommit: 67fb9981ca51df198dfb6af9bf4987843266f8ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161455"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86879087"
 ---
 # <a name="masm-numbers-and-operators"></a>MASM 数字和运算符
 
+在适用于 Windows 包的调试工具4.0 版、NTSD、CDB、KD 和 WinDbg 之前，只使用了 Microsoft 宏汇编程序（MASM）表达式语法。
 
-## <span id="ddk_masm_numbers_and_operators_dbg"></span><span id="DDK_MASM_NUMBERS_AND_OPERATORS_DBG"></span>
+## <a name="numbers-in-masm-expressions"></a>MASM 表达式中的数字
 
+可以在 base64、10、8或2中将数字放入 MASM 表达式中。
 
-在 4.0 版的 Windows 调试工具软件包之前, NTSD、 CDB、 KD 和 WinDbg 使用仅 Microsoft Macro Assembler (MASM) 的表达式语法。
+使用[**n （设置数字基）**](n--set-number-base-.md)命令可将默认基数设置为16、10或8。 然后，在此基准中解释所有没有前缀数字。 可以通过指定**0x**前缀（十六进制）、 **0n**前缀（decimal）、 **0t**前缀（八进制）或**w..1 ....** 前缀（二进制）来覆盖默认基数。
 
-### <a name="span-idnumbersinmasmexpressionsspanspan-idnumbersinmasmexpressionsspannumbers-in-masm-expressions"></a><span id="numbers_in_masm_expressions"></span><span id="NUMBERS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的数字
+还可以通过在数字后添加**h**来指定十六进制数。 可以在数字中使用大写或小写字母。 例如，"0x4AB3"、"0X4aB3"、"4AB3h"、"4AB3h" 和 "4aB3H" 的含义相同。
 
-可以将数字放在基 16、 10、 8 或 2 的 MASM 表达式中。
+如果未在表达式中的前缀后面添加数字，则该数字将读取为0。 因此，你可以将0写入0，前缀后跟0，并且仅限前缀。 例如，在十六进制中，"0"、"0x0" 和 "0x" 的含义相同。
 
-使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令，将默认基数为 16、 10 或 8。 然后此基中解释没有前缀的所有数字。 可以通过指定重写默认基数**0x**前缀 （十六进制） **0n**前缀 （十进制） **0t**前缀 （八进制） 或**0y**前缀 （二进制）。
+可以采用**xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \` **格式输入十六进制64位值。 还可以省略抑音符（ \` ）。 如果包含 "抑音符"，则会禁用[自动符号扩展](sign-extension.md)。
 
-此外可以通过添加指定十六进制数字**h**数后。 可以使用大写或小写字母数字中。 例如，"0x4AB3"、"0X4aB3"，"4AB3h"、"4ab3h"和"4aB3H"具有相同的含义。
+## <a name="symbols-in-masm-expressions"></a>MASM 表达式中的符号
 
-如果不在表达式中的前缀后添加一个数字，是读取数为 0。 因此，您可以为 0 时，前缀后跟 0，并且仅前缀编写 0。 例如，以十六进制格式，"0"、"0x0"和"0x"具有相同的含义。
+在 MASM 表达式中，任何符号的数字值都是它的内存地址。 根据符号引用的内容，此地址是全局变量、局部变量、函数、段、模块或任何其他可识别标签的地址。
 
-可以输入中的十六进制 64 位值**xxxxxxxx\`xxxxxxxx**格式。 也可以省略重读符号 (\`)。 如果包括抑音符[自动符号扩展](sign-extension.md)被禁用。
+若要指定与该地址关联的模块，请在该符号的名称之前包含模块名称和惊叹号（！）。 如果符号可以解释为十六进制数，请在符号名之前包含模块名称和感叹号，或只包含一个惊叹号。 有关符号识别的详细信息，请参阅[符号语法和符号匹配](symbol-syntax-and-symbol-matching.md)。
 
-### <a name="span-idsymbolsinmasmexpressionsspanspan-idsymbolsinmasmexpressionsspansymbols-in-masm-expressions"></a><span id="symbols_in_masm_expressions"></span><span id="SYMBOLS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的符号
+使用两个冒号（：:)或使用两个下划线（ \_ \_ ）来指示类的成员。
 
-MASM 表达式中任何符号的数字值是其内存地址。 具体取决于符号所引用的内容，此地址是全局变量、 本地变量、 函数、 段、 模块或任何其他可识别的标签的地址。
+\`仅当在符号名称中添加了一个模块名称和感叹号时，才在符号名称中使用抑音符（）或撇号（'）。
 
-若要指定的地址是与相关联的模块，包括模块名称和感叹号 （！） 的符号名称之前。 如果该符号可以解释为十六进制数，包括模块名称和感叹点或只是感叹号符号名称前。 有关符号识别的详细信息，请参阅[符号语法和符号匹配](symbol-syntax-and-symbol-matching.md)。
+## <a name="numeric-operators-in-masm-expressions"></a>MASM 表达式中的数字运算符
 
-使用两个冒号 （:）或两个下划线 (\_\_) 以指示类的成员。
+您可以通过使用一元运算符来修改表达式的任何组件。 可以通过使用二元运算符组合使用任意两个组件。 一元运算符优先于二元运算符。 当使用多个二元运算符时，运算符遵循下表中所述的固定优先规则。
 
-使用重读音符 (\`) 或撇号 （'） 中的符号名称只有在添加的模块名称和感叹号符号之前。
+始终可以使用括号覆盖优先规则。
 
-### <a name="span-idnumericoperatorsinmasmexpressionsspanspan-idnumericoperatorsinmasmexpressionsspannumeric-operators-in-masm-expressions"></a><span id="numeric_operators_in_masm_expressions"></span><span id="NUMERIC_OPERATORS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的数字运算符
+如果将 MASM 表达式的一部分括在括号中，且在表达式之前出现两个 at 符号（@ @），则根据[c + + 表达式规则](c---numbers-and-operators.md)解释该表达式。 不能在两个 at 符号和左括号之间添加空格。 还可以通过使用 **@ @c + + （...）** 或 **@ @masm （...）** 来指定[表达式计算器](evaluating-expressions.md)。
 
-使用一元运算符，可以修改的表达式的任何组件。 使用二元运算符，可以组合任意两个组件。 一元运算符优先于二元运算符。 当使用多个二元运算符时，运算符将遵循以下表中所述的固定的优先顺序规则。
+执行算术计算时，MASM 表达式计算器会将所有数字和符号视为 ULONG64 类型。
 
-您始终可以使用括号替代优先顺序规则。
+一元地址运算符假设 DS 作为地址的默认段。 表达式按运算符优先级的顺序进行计算。 如果相邻运算符具有相等的优先级，则按从左至右的顺序计算表达式。
 
-如果 MASM 表达式的一部分括在括号中，并且两个 at 符号 （@ @） 出现在表达式之前，该表达式将解释根据[C++表达式规则](c---numbers-and-operators.md)。 无法添加这两个 at 符号和左括号之间有空格。 此外可以指定[表达式计算器](evaluating-expressions.md)通过使用 **@@c+ + （...）** 或 **@@masm（...）** .
-
-当你执行算术运算时，MASM 表达式计算器将所有数字和符号视为 ULONG64 类型。
-
-一元地址运算符假设地址的默认段为 DS。 运算符优先级的顺序计算表达式。 如果相邻的运算符具有相同的优先级，计算表达式从左到右。
-
-可以使用下列一元运算符。
+您可以使用以下一元运算符。
 
 <table>
 <colgroup>
@@ -86,63 +82,62 @@ MASM 表达式中任何符号的数字值是其内存地址。 具体取决于�
 <td align="left"><p>一元负</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>非</p></td>
-<td align="left"><p>如果参数为零，则返回 1。 任何非零值的参数，则返回零。</p></td>
+<td align="left"><p>not</p></td>
+<td align="left"><p>如果参数为零，则返回1。 对于任何非零参数，返回零。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>hi</strong></p></td>
-<td align="left"><p>高 16 位</p></td>
+<td align="left"><p>高16位</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>low</strong></p></td>
-<td align="left"><p>低 16 位</p></td>
+<td align="left"><p><strong>低级</strong></p></td>
+<td align="left"><p>低16位</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>by</strong></p></td>
-<td align="left"><p>从指定的地址的低序位字节。</p></td>
+<td align="left"><p>来自指定地址的低序位字节。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$pby</strong></p></td>
-<td align="left"><p>与相同<strong>通过</strong>，但前者的物理地址。 可以读取仅使用默认缓存行为的物理内存。</p></td>
+<td align="left"><p>与相同<strong>，只不过它</strong>使用物理地址。 只能读取使用默认缓存行为的物理内存。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>wo</strong></p></td>
-<td align="left"><p>从指定的地址的低序位字。</p></td>
+<td align="left"><p>指定地址中的低序位字。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$pwo</strong></p></td>
-<td align="left"><p>与相同<strong>wo</strong> ，但前者的物理地址。 可以读取仅使用默认缓存行为的物理内存。</p></td>
+<td align="left"><p>与<strong>wo</strong>相同，只不过它使用物理地址。 只能读取使用默认缓存行为的物理内存。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dwo</strong></p></td>
-<td align="left"><p>从指定的地址双字。</p></td>
+<td align="left"><p>指定地址中的双字。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$pdwo</strong></p></td>
-<td align="left"><p>与相同<strong>dwo</strong> ，但前者的物理地址。 可以读取仅使用默认缓存行为的物理内存。</p></td>
+<td align="left"><p>与<strong>dwo</strong>相同，只不过它使用物理地址。 只能读取使用默认缓存行为的物理内存。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>qwo</strong></p></td>
-<td align="left"><p>从指定的地址四字。</p></td>
+<td align="left"><p>指定地址中的四字。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$pqwo</strong></p></td>
-<td align="left"><p>与相同<strong>qwo</strong> ，但前者的物理地址。 可以读取仅使用默认缓存行为的物理内存。</p></td>
+<td align="left"><p>与<strong>qwo</strong>相同，只不过它使用物理地址。 只能读取使用默认缓存行为的物理内存。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>poi</strong></p></td>
-<td align="left"><p>从指定的地址指针大小的数据。 指针大小为 32 位或 64 位。 在内核调试，此大小基于的处理器<em>目标</em>计算机。 在用户模式下调试在基于 Itanium 的计算机上，此大小为 32 位或 64 位，具体取决于目标应用程序。 因此， <strong>poi</strong>是要使用如果你想指针大小的数据的最佳运算符。</p></td>
+<td align="left"><p>指定地址中的指针大小的数据。 指针大小为32位或64位。 在内核调试中，此大小基于<em>目标</em>计算机的处理器。 在基于 Itanium 的计算机上的用户模式调试中，此大小为32位或64位，具体取决于目标应用程序。 因此，如果需要使用指针大小的数据， <strong>poi</strong>是最佳运算符。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>$ppoi</strong></p></td>
-<td align="left"><p>与相同<strong>poi</strong> ，但前者的物理地址。 可以读取仅使用默认缓存行为的物理内存。</p></td>
+<td align="left"><p>与<strong>poi</strong>相同，只不过它使用物理地址。 只能读取使用默认缓存行为的物理内存。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
 
-可以使用以下二进制运算符。 每个单元格中的运算符优先于较小的单元中。 相同单元中的运算符均属于相同的优先级，从左到右进行分析。
+您可以使用以下二元运算符。 每个单元中的运算符优先于位于较低单元格中的运算符。 相同单元中的运算符具有相同的优先级，并且是从左向右分析的。
 
 <table>
 <colgroup>
@@ -159,24 +154,24 @@ MASM 表达式中任何符号的数字值是其内存地址。 具体取决于�
 <tr class="odd">
 <td align="left"><p>*</p>
 <p>/</p>
-<p><strong>mod</strong> （或 %）</p></td>
+<p><strong>mod</strong> （或%）</p></td>
 <td align="left"><p>乘法</p>
 <p>整数除法</p>
-<p>取模 （余数）</p></td>
+<p>取模（余数）</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>+</p>
 <p>-</p></td>
-<td align="left"><p>添加</p>
+<td align="left"><p>加法</p>
 <p>减法</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>&lt;&lt;</p>
 <p>&gt;&gt;</p>
 <p>&gt;&gt;&gt;</p></td>
-<td align="left"><p>左的移</p>
+<td align="left"><p>左移</p>
 <p>逻辑右移位</p>
-<p>算术右移位运算</p></td>
+<p>算术右移位</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>= （或 = =）</p>
@@ -189,33 +184,32 @@ MASM 表达式中任何符号的数字值是其内存地址。 具体取决于�
 <p>小于</p>
 <p>大于</p>
 <p>小于或等于</p>
-<p>大于或等于</p>
+<p>大于等于</p>
 <p>不等于</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>和</strong>(或 &)</p></td>
+<td align="left"><p><strong>和</strong>（或 &）</p></td>
 <td align="left"><p>位与</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xor</strong> (或 ^)</p></td>
+<td align="left"><p><strong>xor</strong> （或 ^）</p></td>
 <td align="left"><p>按位 XOR （异或）</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>或</strong>(或 |)</p></td>
-<td align="left"><p>按位 OR 运算符</p></td>
+<td align="left"><p><strong>or</strong> （或 |）</p></td>
+<td align="left"><p>按位“或”</p></td>
 </tr>
 </tbody>
 </table>
 
- 
 
-&lt;， &gt;、 =、 = =、 和 ！ = 的比较运算符计算结果为 1，如果表达式为 true 或为零，如果表达式为 false。 单个等号 （=） 是双等号 （= =） 相同。 不能使用副作用或 MASM 表达式中的分配。
+如果表达式为 true，则 &lt; 、 &gt; 、=、= = 和！ = 比较运算符的计算结果为 1; 如果表达式为 false，则计算结果为零。 单个等号（=）与双等号（= =）相同。 不能在 MASM 表达式中使用副作用或赋值。
 
-在"操作数错误"中无效的操作 （如被零除） 结果返回到[调试器命令窗口](debugger-command-window.md)。
+无效操作（如被零除）将导致 "操作数错误" 返回到[调试器命令窗口](debugger-command-window.md)。
 
-### <a name="span-idnonnumericoperatorsinmasmexpressionsspanspan-idnonnumericoperatorsinmasmexpressionsspannon-numeric-operators-in-masm-expressions"></a><span id="non_numeric_operators_in_masm_expressions"></span><span id="NON_NUMERIC_OPERATORS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的非数字运算符
+### <a name="span-idnon_numeric_operators_in_masm_expressionsspanspan-idnon_numeric_operators_in_masm_expressionsspannon-numeric-operators-in-masm-expressions"></a><span id="non_numeric_operators_in_masm_expressions"></span><span id="NON_NUMERIC_OPERATORS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的非数字运算符
 
-此外可以在 MASM 表达式中使用以下其他运算符。
+还可以在 MASM 表达式中使用以下附加运算符。
 
 <table>
 <colgroup>
@@ -230,53 +224,43 @@ MASM 表达式中任何符号的数字值是其内存地址。 具体取决于�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>$fnsucc(</strong><em>FnAddress</em>, <em>RetVal</em>, <em>Flag</em><strong>)</strong></p></td>
-<td align="left"><p>解释<em>RetVal</em>位于函数的返回值的值<em>FnAddress</em>地址。 如果此返回值被返回成功代码，称为<strong>$fnsucc</strong>返回<strong>TRUE</strong>。 否则为<strong>$fnsucc</strong>返回<strong>FALSE</strong>。</p>
-<p>如果返回类型为布尔值、 bool、 句柄、 HRESULT 或 NTSTATUS， <strong>$fnsucc</strong>正确理解是否在指定的返回值被称为成功代码。 返回类型是否为指针，所有值，而<strong>NULL</strong>才会被视为成功代码。 成功的值对于任何其他类型进行定义<em>标志</em>。 如果<em>标志</em>为 0，一个非零值的<em>RetVal</em>为 success。 如果<em>标志</em>为 1，零值的<em>RetVal</em>为 success。</p></td>
+<td align="left"><p><strong>$fnsucc （</strong><em>FnAddress</em>， <em>RetVal</em>，<em>标志</em><strong>）</strong></p></td>
+<td align="left"><p>将<em>RetVal</em>值解释为位于<em>FnAddress</em>地址的函数的返回值。 如果此返回值限定为成功代码， <strong>$fnsucc</strong>将返回<strong>TRUE</strong>。 否则， <strong>$fnsucc</strong>返回<strong>FALSE</strong>。</p>
+<p>如果返回类型为 BOOL、bool、HANDLE、HRESULT 或 NTSTATUS， <strong>$fnsucc</strong>会正确了解指定的返回值是否限定为成功代码。 如果返回类型是一个指针，则除<strong>NULL</strong>之外的所有值都将符合成功代码。 对于任何其他类型，success 都是通过 "<em>标志</em>" 的值来定义的。 如果<em>标志</em>为0，则非零值<em>RetVal</em>为 success。 如果<em>标志</em>为1，则值为0的<em>RetVal</em>为 success。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>$iment (</strong><em>地址</em><strong>)</strong></p></td>
-<td align="left"><p>加载的模块列表中返回映像入口点的地址。 <em>地址</em>指定的可移植可执行文件 (PE) 映像基址。 通过查找映像的 PE 映像标头中的映像入口点找到该项，<em>地址</em>指定。</p>
-<p>您可以使用此函数的是已在模块列表中，并设置这两个模块<a href="unresolved-breakpoints---bu-breakpoints-.md" data-raw-source="[unresolved breakpoints](unresolved-breakpoints---bu-breakpoints-.md)">无法解析的断点</a>通过使用<strong><a href="bp--bu--bm--set-breakpoint-.md" data-raw-source="[bu](bp--bu--bm--set-breakpoint-.md)">bu</a></strong>命令。</p></td>
+<td align="left"><p><strong>$iment （</strong><em>地址</em><strong>）</strong></p></td>
+<td align="left"><p>返回已加载的模块列表中的图像入口点地址。 <em>Address</em>指定可移植可执行（PE）映像基址。 可通过在<em>地址</em>指定的图像的 PE 映像标头中查找图像入口点来找到条目。</p>
+<p>可以将此函数用于模块列表中已存在的两个模块，并使用<strong><a href="bp--bu--bm--set-breakpoint-.md" data-raw-source="[bu](bp--bu--bm--set-breakpoint-.md)">bu</a></strong>命令设置<a href="unresolved-breakpoints---bu-breakpoints-.md" data-raw-source="[unresolved breakpoints](unresolved-breakpoints---bu-breakpoints-.md)">未解析的断点</a>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>$scmp("</strong><em>String1</em><strong>", "</strong><em>String2</em><strong>")</strong></p></td>
-<td align="left"><p>计算结果为-1、 0 或 1，如<strong>strcmp</strong> C 函数。</p></td>
+<td align="left"><p><strong>$scmp （"</strong><em>String1</em><strong>"，"</strong><em>string2</em><strong>"）</strong></p></td>
+<td align="left"><p>计算结果为-1、0或1，如<strong>strcmp</strong> C 函数。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>$sicmp("</strong><em>String1</em><strong>", "</strong><em>String2</em><strong>")</strong></p></td>
-<td align="left"><p>计算结果为-1、 0 或 1，如<strong>stricmp</strong> Microsoft Win32 函数。</p></td>
+<td align="left"><p><strong>$sicmp （"</strong><em>String1</em><strong>"，"</strong><em>string2</em><strong>"）</strong></p></td>
+<td align="left"><p>计算结果为-1、0或1，如<strong>stricmp</strong> Microsoft Win32 函数。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>$spat("</strong><em>String</em><strong>", "</strong><em>Pattern</em><strong>")</strong></p></td>
-<td align="left"><p>计算结果为<strong>，则返回 TRUE</strong>或<strong>FALSE</strong>取决于是否<em>字符串</em>匹配<em>模式</em>。 匹配不区分大小写。 <em>模式</em>可以包含各种通配符和说明符。 有关语法的详细信息，请参阅<a href="string-wildcard-syntax.md" data-raw-source="[String Wildcard Syntax](string-wildcard-syntax.md)">字符串通配符语法</a>。</p></td>
+<td align="left"><p><strong>$spat （"</strong><em>String</em><strong>"、"</strong><em>Pattern</em><strong>"）</strong></p></td>
+<td align="left"><p>计算结果为<strong>TRUE</strong>或<strong>FALSE</strong> ，具体取决于<em>字符串</em>是否匹配<em>模式</em>。 匹配不区分大小写。 <em>模式</em>可以包含各种通配符和说明符。 有关语法的详细信息，请参阅<a href="string-wildcard-syntax.md" data-raw-source="[String Wildcard Syntax](string-wildcard-syntax.md)">字符串通配符语法</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>$vvalid(</strong><em>Address</em><strong>,</strong> <em>Length</em><strong>)</strong></p></td>
-<td align="left"><p>确定是否内存范围的开始处<em>地址</em>，并为扩展<em>长度</em>字节是否有效。 如果有效，内存<strong>$vvalid</strong>的计算结果为 1。 如果内存是无效的<strong>$vvalid</strong>计算结果为 0。</p></td>
+<td align="left"><p><strong>$vvalid （</strong><em>Address</em><strong>，</strong> <em>Length</em><strong>）</strong></p></td>
+<td align="left"><p>确定从<em>Address</em>开始并为<em>长度</em>字节扩展的内存范围是否有效。 如果内存有效， <strong>$vvalid</strong>的计算结果为1。 如果内存无效， <strong>$vvalid</strong>的计算结果为0。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+## <a name="registers-and-pseudo-registers-in-masm-expressions"></a>在 MASM 表达式中注册和伪寄存器
 
-### <a name="span-idregistersandpseudoregistersinmasmexpressionsspanspan-idregistersandpseudoregistersinmasmexpressionsspanregisters-and-pseudo-registers-in-masm-expressions"></a><span id="registers_and_pseudo_registers_in_masm_expressions"></span><span id="REGISTERS_AND_PSEUDO_REGISTERS_IN_MASM_EXPRESSIONS"></span>寄存器和伪寄存器中的 MASM 表达式
+可以在 MASM 表达式中使用寄存器和伪寄存器。 可以在所有寄存器和伪寄存器之前添加 at 符号（@）。 At 符号使调试器能够更快地访问该值。 基于 x86 的最常见寄存器不需要此 at 符号。 对于其他寄存器和伪寄存器，建议你添加 at 符号，但实际上并不是必需的。 如果在不太常用的寄存器上省略 at 符号，则调试器会尝试将文本解析为十六进制数，然后将其作为符号，最后作为寄存器进行分析。
 
-可以使用寄存器和伪寄存器中的 MASM 表达式。 您可以添加 at 符号 (@) 之前所有寄存器和伪寄存器。 At 符号会使调试器能够更快地访问值。 在登录这不是必需的最常见的基于 x86 的寄存器。 有关其他寄存器和伪寄存器，我们建议您添加 at 符号，但并不真正需要。 如果省略不太常见的寄存器的符号，调试器会尝试分析的文本为十六进制数字，然后作为一个符号，最后为寄存器。
+还可以使用句点（.）指示当前指令指针。 不应在此时间段之前添加 at 符号，也不能将句点用作[**r 命令**](r--registers-.md)的第一个参数。 此时间段与 **$ip**伪寄存器具有相同的含义。
 
-此外可以使用句点 （.） 以指示当前指令指针。 不应将添加在登录之前此段，并且您不能使用一段的第一个参数作为[ **r 命令**](r--registers-.md)。 此时间段与具有相同含义 **$ip**伪寄存器。
+有关寄存器和伪寄存器的详细信息，请参阅[注册语法](register-syntax.md)和[伪寄存器语法](pseudo-register-syntax.md)。
 
-有关寄存器和伪寄存器的详细信息，请参阅[注册语法](register-syntax.md)并[伪寄存器语法](pseudo-register-syntax.md)。
+## <a name="source-line-numbers-in-masm-expressions"></a>MASM 表达式中的源行号
 
-### <a name="span-idsourcelinenumbersinmasmexpressionsspanspan-idsourcelinenumbersinmasmexpressionsspansource-line-numbers-in-masm-expressions"></a><span id="source_line_numbers_in_masm_expressions"></span><span id="SOURCE_LINE_NUMBERS_IN_MASM_EXPRESSIONS"></span>MASM 表达式中的源行号
-
-可以使用源代码文件和行号中的表达式的 MASM 表达式。 必须将这些表达式使用抑音符 (\`)。 有关语法的详细信息，请参阅[源行语法](source-line-syntax.md)。
-
- 
-
- 
-
-
-
-
+您可以使用 MASM 表达式中的源文件和行号表达式。 必须使用抑音符重音（）将这些表达式括起来 \` 。 有关语法的详细信息，请参阅[源行语法](source-line-syntax.md)。
 

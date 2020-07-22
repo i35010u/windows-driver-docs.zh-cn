@@ -1,60 +1,60 @@
 ---
-title: 创建 UWP 设备应用的照相机驱动程序 MFT
-description: UWP 设备应用程序还允许设备制造商上与相机驱动程序 MFT （媒体基础转换） 的照相机的视频流应用自定义设置和特殊效果。
+title: 为 UWP 设备应用创建照相机驱动程序 MFT
+description: UWP 设备应用允许设备制造商使用相机驱动程序 MFT （media foundation 转换）对照相机的视频流应用自定义设置和特殊影响。
 ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 842c15524c0e3517c15a666666719fcfb67f8954
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 452a5e9f56624f1a14b3be47b50959ecccef8594
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63339762"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873862"
 ---
-# <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>创建 UWP 设备应用的照相机驱动程序 MFT
+# <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>为 UWP 设备应用创建照相机驱动程序 MFT
 
 > [!IMPORTANT]
-> 本主题已弃用。 请参阅[设备 MFT 设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/dmft-design)更新的指南。
+> 本主题已被弃用。 请参阅[设备 MFT 设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/dmft-design)了解更新的指南。
 
-UWP 设备应用程序还允许设备制造商上与相机驱动程序 MFT （媒体基础转换） 的照相机的视频流应用自定义设置和特殊效果。 本主题介绍驱动程序 Mft 并使用[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例来演示如何创建一个。 若要在一般情况下了解有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+UWP 设备应用允许设备制造商使用相机驱动程序 MFT （media foundation 转换）对照相机的视频流应用自定义设置和特殊影响。 本主题介绍了驱动程序 MFTs，并使用了[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例演示如何创建一个。 若要详细了解 UWP 设备应用的详细信息，请参阅了解[uwp 设备应用](meet-uwp-device-apps.md)。
 
 ## <a name="the-driver-mft"></a>驱动程序 MFT
 
-本部分介绍 Media Foundation 转换 (MFT) 创建将效果应用于来自摄像头的媒体捕获流。 这是如何为颜色效果、 方案模式和真正将您的照相机区别于其他的人脸跟踪效果提供转换。 此 MFT，称为驱动程序 MFT，首先将应用于已连接的视频流时的 UWP 应用开始视频捕获来自照相机驱动程序。 当该应用程序调用**照相机选项**UI 中，Windows 会自动提供与任何接口访问驱动程序 MFT 实现用于控制其自定义效果。
+本部分介绍创建的用于将效果应用于照相机的媒体捕获流的媒体基础转换（MFT）。 这就是你为颜色效果、方案模式和人脸跟踪效果提供转换的方式，这些效果将相机与其他人区分开来。 当 UWP 应用开始视频捕获时，此 MFT 称为 "驱动程序 MFT" 将首先应用于照相机驱动程序所连接的视频流。 当应用程序调用**相机选项**UI 时，Windows 将自动提供对驱动程序 MFT 为控制其自定义效果而实现的任何接口的访问。
 
-![照相机的驱动程序 mft 有助于 windows 应用商店设备应用程序提供自定义效果。](images/372783-camera-drivermft-overview.png)
+![相机驱动程序 mft 可帮助 windows 应用商店设备应用提供自定义效果。](images/372783-camera-drivermft-overview.png)
 
-驱动程序 MFT 不需要对 UWP 设备应用。 设备制造商可以选择实现一个 UWP 设备应用，而无需驱动程序 MFT，只是为了提供与众不同的用户界面包含适用于的品牌硬件，而无需将自定义设置和特殊效果应用于视频流。
+UWP 设备应用不需要驱动程序 MFT。 设备制造商可以选择在不使用驱动程序 MFT 的情况下实现 UWP 设备应用，只需为其硬件提供一个包含品牌的区分用户界面，而无需对视频流应用自定义设置和特殊效果。
 
 ### <a name="how-a-driver-mft-is-used"></a>如何使用驱动程序 MFT
 
-用于相机的 UWP 设备的应用程序比调用从 Microsoft Store 应用程序的不同进程中运行[CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=317985) API。 若要控制驱动程序 MFT 的 Microsoft Store 设备应用，必须出现一系列特定的不同进程空间中的事件。
+照相机的 UWP 设备应用在不同于从[CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=317985) API 调用它的 Microsoft Store 应用程序的进程中运行。 要使 Microsoft Store 设备应用控制驱动程序 MFT，必须在不同的进程空间中出现一系列特定的事件。
 
-1. UWP 应用程序想要捕获照片，这样它便可以调用[CaptureFileAsync](https://go.microsoft.com/fwlink/p/?LinkId=317986)方法
-2. Windows 请求驱动程序 MFT 指针和照相机的设备 ID
-3. 驱动程序 MFT 指针传递给设置主机
-4. 在主机中的 Microsoft Store 设备应用使用照相机 （每个设备元数据） 相关联的应用程序 ID 查询设备属性
-5. 如果不找到任何 UWP 设备应用，则默认浮出控件与捕获引擎进行交互
-6. 如果找到 UWP 设备应用，则它激活和设置主机将驱动程序 MFT 指针传递给它
-7. UWP 设备应用程序控制驱动程序 MFT 使用通过指针所公开的接口
+1. UWP 应用想要捕获照片，因此它将调用[CaptureFileAsync](https://go.microsoft.com/fwlink/p/?LinkId=317986)方法
+2. Windows 请求驱动程序 MFT 指针和相机的设备 ID
+3. 将驱动程序 MFT 指针传递到设置主机
+4. 主机查询与相机关联的 Microsoft Store 设备应用的应用 ID 的设备属性（每个设备的元数据）
+5. 如果未找到 UWP 设备应用，则默认飞出会与捕获引擎交互
+6. 如果找到了 UWP 设备应用，则会将其激活，设置主机会将驱动程序 MFT 指针传递给它
+7. UWP 设备应用使用通过指针公开的接口控制驱动程序 MFT
 
-![用于调用 windows 应用商店设备应用程序进程交互。](images/372798-cameradrivermft-internals.png)
+![用于调用 windows 应用商店设备应用程序的进程交互。](images/372798-cameradrivermft-internals.png)
 
 ### <a name="avstream-driver-model-requirement"></a>AvStream 驱动程序模型要求
 
-照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AVStream 驱动程序模型的详细信息，请参阅[AVStream 微型驱动程序设计指南](https://go.microsoft.com/fwlink/p/?LinkID=228585)。
+照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AVStream 驱动程序模型的详细信息，请参阅[AVStream 微型驱动程序 Design Guide](https://go.microsoft.com/fwlink/p/?LinkID=228585)。
 
-### <a name="how-the-driver-mft-is-exposed-to-apps"></a>如何向应用程序公开的驱动程序 MFT
+### <a name="how-the-driver-mft-is-exposed-to-apps"></a>如何将驱动程序 MFT 公开给应用
 
-驱动程序 MFT 已注册 Windows 为 COM 接口，以便实现转换可以应用于来自特定设备，如摄像头的媒体流。
+驱动程序 MFT 注册为 Windows 作为 COM 接口，以便可以将其实现的转换应用于特定设备（如相机）中的媒体流。
 
-**请注意**驱动程序不应使用注册 MFT`MFTRegister`函数，因为它是特定的设备并不是通用 MFT。 注册表项的信息，请参阅[安装和注册的驱动程序 MFT](#installing-and-registering-the-driver-mft)本主题后面的部分。
+**注意** 不应使用该函数注册驱动程序 MFT `MFTRegister` ，因为它是特定于设备，而不是常规用途的 mft。 有关注册表项的信息，请参阅本主题后面的[安装和注册驱动程序 MFT](#installing-and-registering-the-driver-mft)部分。
 
-当应用启动时视频捕获时，Media Foundation 源读取器实例化提供视频流。 此媒体源设备注册表项中读取的注册表值。 如果注册表值中找到驱动程序 MFT 的 COM 类的 CLSID，则源读取器实例化驱动程序 MFT，并将其插入到媒体管道。
+应用启动视频捕获时，会实例化媒体基础源读取器来提供视频流。 此媒体源从设备注册表项读取注册表值。 如果在注册表值中找到驱动程序 MFT 的 COM 类的 CLSID，则源读取器将实例化驱动程序 MFT，并将其插入到媒体管道中。
 
-除了 UWP 的设备应用程序，与它关联的设备用于捕获视频使用以下 Api 时，可以访问驱动程序 MFT 功能：
+除了 UWP 设备应用外，还可以在使用关联的设备使用以下 Api 捕获视频时访问驱动程序 MFT 功能：
 
-- HTML5&lt;视频&gt;使用 HTML 的 UWP 应用中的标记。 转换的驱动程序 MFT 已启用，会影响使用正在播放的视频&lt;视频&gt;元素，如以下代码示例所示：
+- &lt; &gt; 使用 HTML 的 UWP 应用中的 HTML5 视频标记。 驱动程序 MFT 启用的转换会影响使用视频元素播放的视频 &lt; &gt; ，如以下代码示例所示：
 
     ```cpp
     var video = document.getElementById('myvideo');
@@ -62,31 +62,31 @@ UWP 设备应用程序还允许设备制造商上与相机驱动程序 MFT （�
         video.play();
     ```
 
-- 使用 Windows 运行时的 UWP 应用中 Windows.Media.MediaCapture API。 有关如何使用此 API 的详细信息，请参阅[媒体捕获](https://go.microsoft.com/fwlink/p/?LinkId=243997)示例。
+- 使用 Windows 运行时的 UWP 应用中的 MediaCapture API。 有关如何使用此 API 的详细信息，请参阅[媒体捕获](https://go.microsoft.com/fwlink/p/?LinkId=243997)示例。
 
-- 媒体基础源读取器，用于处理媒体数据的应用程序。 驱动程序 MFT 会公开给应用程序作为第一个 （第 0 个） MFT 调用时`IMFSourceReaderEx::GetTransformForStream`。 将返回该类别是`MFT_CATEGORY_VIDEO_EFFECT`。
+- 媒体基础的源读取器，用于处理媒体数据的应用程序。 调用时，驱动程序 MFT 将作为第一个（第0个） MFT 向应用程序公开 `IMFSourceReaderEx::GetTransformForStream` 。 将返回的类别为 `MFT_CATEGORY_VIDEO_EFFECT` 。
 
-    ![媒体捕获中的源读取器的角色。](images/372842-cameracaptureengine.png)
+    ![源读取器在媒体捕获中的角色。](images/372842-cameracaptureengine.png)
 
-### <a name="multi-pin-cameras"></a>在多针相机
+### <a name="multi-pin-cameras"></a>多 pin 相机
 
-如果您有三个 pin 或其他多针相机，请参阅[多针相机上的驱动程序 Mft 的注意事项](driver-mfts-on-multi-pin-cameras.md)。
+如果有三针或其他多 pin 相机，请参阅[有关多 pin 相机上的驱动程序 MFTs 的注意事项](driver-mfts-on-multi-pin-cameras.md)。
 
 ## <a name="driver-mft-implementation"></a>驱动程序 MFT 实现
 
-本部分提供有关实施您的驱动程序 MFT 的信息。 有关驱动程序 MFT 一起使用的 UWP 设备应用程序的完整示例，请参阅[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例。
+本部分提供了有关实施驱动程序 MFT 的信息。 有关与 UWP 设备应用一起工作的驱动程序 MFT 的完整示例，请参阅[驱动程序 mft](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例。
 
 ### <a name="development-tools"></a>开发工具
 
 Microsoft Visual Studio Professional 或 Microsoft Visual Studio Ultimate 是必需的。
 
-### <a name="driver-mft-characteristics"></a>驱动程序 MFT 特征
+### <a name="driver-mft-characteristics"></a>驱动程序 MFT 特性
 
-驱动程序 MFT 是实例化每个流。 每个流照相机支持，在 MFT 的实例已实例化并连接到它。 驱动程序 MFT 应具有单个输入的流和单个输出流。 驱动程序 MFT 可能是同步的 MFT 或异步 MFT。
+驱动程序 MFT 按流实例化。 对于相机支持的每个流，会实例化 MFT 的实例并将其连接到该实例。 驱动程序 MFT 应有单个输入流和一个输出流。 驱动程序 MFT 可以是同步 MFT，也可以是异步 MFT。
 
 ### <a name="communication-between-the-camera-and-the-driver-mft"></a>照相机和驱动程序 MFT 之间的通信
 
-若要启用的媒体源和驱动程序 MFT 之间的双向通信，源流的属性存储的指针上设置驱动程序 MFT 的输入的流属性存储为`MFT_CONNECTED_STREAM_ATTRIBUTE`。 通过启用通过公开的握手过程将发生这种情况`MFT_ENUM_HARDWARE_URL_Attribute`在驱动程序 MFT，如以下示例所示：
+若要在媒体源和驱动程序 MFT 之间启用双向通信，则将驱动程序 MFT 的输入流属性存储中的指针设置为，并将其设置为源流的属性存储 `MFT_CONNECTED_STREAM_ATTRIBUTE` 。 这种情况是通过在驱动程序 MFT 中公开而启用的握手过程来实现的 `MFT_ENUM_HARDWARE_URL_Attribute` ，如以下示例中所示：
 
 ```cpp
 HRESULT CDriverMft::GetAttributes(IMFAttributes** ppAttributes)
@@ -107,11 +107,11 @@ HRESULT CDriverMft::GetAttributes(IMFAttributes** ppAttributes)
 }
 ```
 
-在此示例中，`MFT_CONNECTED_STREAM_ATTRIBUTE`驱动程序 MFT 属性中存储设置以指向设备源流的属性存储。 请参阅[硬件握手序列](https://go.microsoft.com/fwlink/p/?LinkId=320139)，详细了解如何设置照相机和 MFT 之间的通信。
+在此示例中， `MFT_CONNECTED_STREAM_ATTRIBUTE` 驱动程序 MFT 的属性存储中的设置为指向设备源流的属性存储。 请参阅[硬件握手序列](https://go.microsoft.com/fwlink/p/?LinkId=320139)，详细了解如何设置照相机与 MFT 之间的通信。
 
 ### <a name="how-to-access-device-source-information"></a>如何访问设备源信息
 
-以下代码示例演示如何驱动程序 MFT 可以获取指向源转换从其输入的属性存储区。 然后，驱动程序 MFT 可用源指针来获取设备源信息。
+下面的代码示例演示了驱动程序 MFT 如何从其输入属性存储获取指向源转换的指针。 然后，驱动程序 MFT 可以使用源指针获取设备源信息。
 
 ```cpp
 if(!m_pSourceTransform && m_pInputAttributes) {
@@ -131,13 +131,13 @@ if(!m_pSourceTransform && m_pInputAttributes) {
       }
 ```
 
-### <a name="how-to-implement-passthrough-mode"></a>如何实现直通模式
+### <a name="how-to-implement-passthrough-mode"></a>如何实现 passthrough 模式
 
-若要将驱动程序 MFT 放在直通模式下，指定输入和输出流的相同媒体类型。 `ProcessInput` 和`ProcessOutput`仍可进行对 MFT 的调用。 它是应由驱动程序 MFT 实现，以决定在直通模式下进行任何处理。
+若要将驱动程序 MFT 置于直通模式，请为输入流和输出流指定相同的媒体类型。 `ProcessInput`并且 `ProcessOutput` 仍将对 MFT 调用。 此方法留给了驱动程序 MFT 实现，以确定是否在 passthrough 模式下进行任何处理。
 
-### <a name="header-files-to-include"></a>要包含的标头文件
+### <a name="header-files-to-include"></a>要包含的头文件
 
-将需要包含的标头文件`IInspectable`和`IMFTransform`驱动程序 MFT 必须实现的方法。 要包含的标头文件的列表，请参阅**stdafx.h**中**SampleMFT0**目录[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。
+需要包含 `IInspectable` `IMFTransform` 驱动程序 MFT 必须实现的和方法的标头文件。 有关要包括的标头文件的列表，请参阅[适用于照相机的 UWP 设备应用](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例的**SampleMFT0**目录中的**stdafx.h。**
 
 ```cpp
 // required for IInspectable
@@ -146,15 +146,15 @@ if(!m_pSourceTransform && m_pInputAttributes) {
 
 ### <a name="how-to-implement-iinspectable"></a>如何实现 IInspectable
 
-驱动程序 MFT 的目标是使用从照相机的 UWP 设备应用程序必须实现的方法的`IInspectable`，以便 Microsoft Store 设备应用可以访问指向驱动程序 MFT 启动时的指针。 您的驱动程序 MFT 应实现的方法`IInspectable`，如下所示：
+旨在从照相机的 UWP 设备应用程序使用的驱动程序 MFT 必须实现的方法， `IInspectable` 以便 Microsoft Store 设备应用程序在启动时可以访问指向驱动程序 MFT 的指针。 驱动程序 MFT 应实现的方法， `IInspectable` 如下所示：
 
-- **IInspectable::GetIids**应返回 null，在*iid* out 参数，并返回 0 *iidCount* out 参数。
+- **IInspectable：： GetIids**应在*iid* out 参数中返回 Null，并在*iidCount* out 参数中返回0。
 
-- **IInspectable::GetRuntimeClassName**应返回 null，在输出参数。
+- **IInspectable：： GetRuntimeClassName**应在 out 参数中返回 null。
 
-- **IInspectable::GetRuntiGetTrustLevel**应返回`TrustLevel::BaseTrust`输出参数中。
+- **IInspectable：： GetRuntiGetTrustLevel**应 `TrustLevel::BaseTrust` 在 out 参数中返回。
 
-下面的代码示例演示如何将`IInspectable`中的示例驱动程序 MFT 实现方法。 此代码可在**Mft0.cpp**文件中，在**SampleMFT0**示例的目录。
+下面的代码示例演示如何 `IInspectable` 在示例驱动程序 MFT 中实现这些方法。 此代码可在示例的**SampleMFT0**目录中的**Mft0**文件中找到。
 
 ```cpp
 // Mft0.cpp
@@ -200,7 +200,7 @@ STDMETHODIMP CMft0::GetTrustLevel(
 
 ### <a name="com-implementation"></a>COM 实现
 
-每个接口驱动程序 MFT 实现应实现和派生自`IUnknown`，以便正确封送到相机的 UWP 设备应用程序。 以下是一个示例 **.idl**驱动程序 MFT 演示此文件。
+驱动程序 MFT 实现的每个接口都应该实现并从中派生 `IUnknown` ，以便正确地封送到照相机的 UWP 设备应用。 下面是一个说明此的驱动程序 MFT 的 .idl 文件示例 **。**
 
 ```cpp
 // SampleMft0.idl : IDL source for SampleMft0
@@ -245,38 +245,38 @@ library SampleMft0Lib
 };
 ```
 
-**请注意**驱动程序 MFT 是一个常规的 COM 类，可以使用创建`CoCreateInstance`。 不应使用`MFTRegister`函数以将其注册，因为它不是常规用途 MFT。
+**注意** 驱动程序 MFT 是常规的 COM 类，可以使用创建 `CoCreateInstance` 。 不应使用 `MFTRegister` 函数进行注册，因为它不是通用 MFT。
 
 ### <a name="creating-a-proxy"></a>创建代理
 
-驱动程序 MFT 是一个进程外服务器。 若要在 UWP 设备应用中使用它，必须提供代理中的封送处理支持，以便在驱动程序 MFT 接口可以使用跨进程边界。 您可以找到出现在这种[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例。 此示例使用 MIDL 编译器来生成无存根代理。
+驱动程序 MFT 是进程外服务器。 若要在 UWP 设备应用中使用它，必须在代理中提供封送支持，以便可以跨进程边界使用驱动程序 MFT 接口。 可以在[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例中找到此示例。 该示例使用 MIDL 编译器生成无存根代理。
 
-### <a name="exposing-the-driver-mft-to-apps"></a>公开到应用程序的驱动程序 MFT
+### <a name="exposing-the-driver-mft-to-apps"></a>向应用程序公开驱动程序 MFT
 
-若要在中编写的 UWP 设备应用程序C#或与驱动程序 MFT 交互的 JavaScript，则需进行 Microsoft Store 设备应用的 Microsoft Visual Studio 项目中创建一个附加组件。 此组件是公开可见的 Microsoft Store 设备应用到 Windows 运行时组件中的驱动程序 MFT 接口的包装。
+若要在 c # 或 JavaScript 中编写与驱动程序 MFT 交互的 UWP 设备应用，需要在 Microsoft Store 设备应用的 Microsoft Visual Studio 项目中创建一个附加组件。 此组件是一个包装，该包装程序在 Microsoft Store 设备应用程序可见的 Windows 运行时组件中公开驱动程序 MFT 接口。
 
-中的包装器子项目[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例举例说明如何将您的驱动程序 MFT 到 Windows 运行时公开，以便可以使用它从 UWP 设备应用中实现C#或 JavaScript。 它用于处理一起[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例。 请参阅[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)有关安装、 运行和测试示例的分步指南的示例页面。
+[适用于照相机的 UWP 设备应用](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例中的包装子项目提供了一个示例，说明如何向 Windows 运行时公开驱动程序 MFT，以便可以从使用 c # 或 JavaScript 实现的 UWP 设备应用程序中使用它。 它设计为与[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例一起使用。 请参阅[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例页，获取有关安装、运行和测试示例的分步指南。
 
-## <a name="installing-and-registering-the-driver-mft"></a>安装和注册的驱动程序 MFT
+## <a name="installing-and-registering-the-driver-mft"></a>安装和注册驱动程序 MFT
 
 本部分列出了安装驱动程序 MFT 的步骤：
 
-1. 必须在以下位置中的子目录中安装驱动程序 MFT DLL:
-    - %Systemdrive%\\程序文件\\
-2. 您相机的安装程序通过调用注册的驱动程序 MFT **regsvr32**上您的驱动程序 MFT DLL，或通过安装程序使用来注册该 DLL 的清单 (.man) 文件提供一个驱动程序。
-3. 设置`CameraPostProcessingPluginCLSID`照相机的注册表项中的值。 INF 文件应通过设置设备，设备类注册表项中指定的驱动程序 MFT CLSID`CameraPostProcessingPluginCLSID`到驱动程序 MFT 类的 CLSID 的 GUID 值。 以下是从填充照相机的注册表项的 INF 文件条目示例：
+1. 驱动程序 MFT DLL 必须安装在以下位置的子目录中：
+    - % SystemDrive% \\ Program 文件\\
+2. 照相机安装程序通过在驱动程序 MFT DLL 上调用**regsvr32**来注册驱动程序 mft，或为安装程序用于注册的 DLL 提供驱动程序清单（man）文件。
+3. 设置 `CameraPostProcessingPluginCLSID` 相机的注册表项中的值。 INF 文件应通过将 `CameraPostProcessingPluginCLSID` 值设置为驱动程序 mft 类的 CLSID GUID 来指定设备的设备类注册表项中的驱动程序 mft 的 clsid。 下面是一个用于填充相机的注册表项的 INF 文件条目的示例：
 
-    ```cpp
-    KSCATEGORY_VIDEO_CAMERA:
+```inf
+KSCATEGORY_VIDEO_CAMERA:
 
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{E5323777-F976-4f5b-9B55-B94699C46E44}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{E5323777-F976-4f5b-9B55-B94699C46E44}\#GLOBAL\Device Parameters]
-    "CLSID"="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
-    "FriendlyName"="USB Video Device"
-    "RTCFlags"=dword:00000010
-    "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}" 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{E5323777-F976-4f5b-9B55-B94699C46E44}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{E5323777-F976-4f5b-9B55-B94699C46E44}\#GLOBAL\Device Parameters]
+"CLSID"="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+"FriendlyName"="USB Video Device"
+"RTCFlags"=dword:00000010
+"CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}" 
+```
 
-
-
+```inf
 KSCATEGORY_CAPTURE:
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{ 65E8773D-8F56-11D0-A3B9-00A0C9223196}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{65E8773D-8F56-11D0-A3B9-00A0C9223196}\#GLOBAL\Device Parameters]
@@ -286,49 +286,49 @@ KSCATEGORY_CAPTURE:
 "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}"
 ```
 
-**请注意**`KSCATEGORY_VIDEO_CAMERA`建议针对相机。 通常情况下将只需要一个注册表项，具体取决于如何注册设备。
+**注意** `KSCATEGORY_VIDEO_CAMERA`对于照相机，建议使用。   通常只需要一个注册表项，具体取决于设备的注册方式。
 
 
-## <a name="associate-your-app-with-the-camera"></a>将您的应用程序与相机关联
+## <a name="associate-your-app-with-the-camera"></a>将你的应用与相机关联
 
-本部分包含标识您的照相机和 Windows 注册表中的设备元数据所需的步骤的信息。 此元数据使您能够对 UWP 设备应用，并标识您的应用程序，以便可将其下载无缝第一次连接照相机。
+本部分包含有关在设备元数据和 Windows 注册表中标识相机所需的步骤的信息。 此元数据可让你配对 UWP 设备应用并标识应用，以便在第一次连接照相机时可以无缝下载该应用。
 
 ### <a name="updates"></a>更新
 
-在应用程序首次安装，如果用户下载更新的版本的应用程序中，然后更新会自动集成到相机捕获体验。 但是，更新将不会自动下载。 用户必须从 Microsoft Store 中，下载更多的应用更新，因为此应用经[自动安装](auto-install-for-uwp-device-apps.md)仅在第一个连接。 对 UWP 设备应用的主页可以提供通知更新可用，并提供链接以下载更新。
+第一次安装应用程序后，如果用户下载应用程序的更新版本，则更新会自动集成到相机捕获体验中。 但是，不会自动下载更新。 用户必须从 Microsoft Store 下载附加的应用程序更新，因为应用仅在第一次连接时[自动安装](auto-install-for-uwp-device-apps.md)。 UWP 设备应用的主页可以提供更新可用的通知，并提供下载更新的链接。
 
-**重要**更新的应用程序应使用通过 Windows 更新分配任何更新的驱动程序。
+**重要提示** 更新后的应用应与通过 Windows 更新分发的任何更新的驱动程序配合使用。
 
 ### <a name="multiple-cameras"></a>多个照相机
 
-多个相机模型可以声明相同的 UWP 设备应用在其设备元数据。 如果一个系统有多个内部嵌入的相机，照相机必须共享相同的 UWP 设备应用程序。 该应用包含用于确定哪个相机正在使用中，可以显示不同的 UI 中的每个相机逻辑及其**更多选项**体验。 有关自定义这种体验的详细信息，请参阅[如何自定义照相机选项](how-to-customize-camera-options.md)。
+多个相机型号可以在其设备元数据中声明同一 UWP 设备应用。 如果系统中有多个内部嵌入的相机，则照相机必须共享同一 UWP 设备应用。 该应用包含确定正在使用哪种照相机的逻辑，并且可以在**更多的选项**体验中为每个相机显示不同的 UI。 有关自定义该体验的详细信息，请参阅[如何自定义相机选项](how-to-customize-camera-options.md)。
 
-### <a name="internal-cameras"></a>内部相机
+### <a name="internal-cameras"></a>内部照相机
 
-UWP 应用的内部相机的设备应用程序有资格[自动安装](auto-install-for-uwp-device-apps.md)从 Microsoft Store 中，但它们预装最无缝用户体验的建议。 一些支持内部相机并将其与关联的 UWP 设备应用程序所需的其他步骤。 有关详细信息，请参阅[确定内部相机的位置](identifying-the-location-of-internal-cameras.md)。
+用于内部相机的 UWP 设备应用可以从 Microsoft Store 进行[自动安装](auto-install-for-uwp-device-apps.md)，但建议预先安装这些应用以获得最无缝的用户体验。 还需要执行其他步骤来支持内部相机并将 UWP 设备应用与它们相关联。 有关详细信息，请参阅[标识内部照相机的位置](identifying-the-location-of-internal-cameras.md)。
 
 ### <a name="creating-the-device-metadata-package"></a>创建设备元数据包
 
-用于内部和外部相机，您需要创建设备元数据包。 当你照相机的 UWP 设备应用程序提交到 Microsoft Store （或预安装使用 OPK，在内部相机的情况下），除了应用自身，将需要提供包含以下元数据：
+对于内部和外部照相机，都需要创建设备元数据包。 当你将照相机的 UWP 设备应用提交到 Microsoft Store （或使用 OPK （对于内部相机）预安装它时，你将需要提供包含以下内容的元数据：
 
 - 应用程序发布者名称
 - 应用程序包名称
 - 应用程序元素标识符
 - 设备体验标识符
 
-有关如何使用设备元数据来将您的应用程序与你的设备相关联的详细信息，请参阅[构建 UWP 设备应用](the-workflow.md)。
+有关如何使用设备元数据将应用程序与设备关联的详细信息，请参阅[构建 UWP 设备应用](the-workflow.md)。
 
 ## <a name="related-topics"></a>相关主题
 
-[构建 UWP 设备应用程序](the-workflow.md)
+[构建 UWP 设备应用](the-workflow.md)
 
 [UWP 设备应用的自动安装](auto-install-for-uwp-device-apps.md)
 
-[硬件握手序列 (硬件 Mft)](https://go.microsoft.com/fwlink/p/?LinkId=320139)
+[硬件握手序列（硬件 MFTs）](https://go.microsoft.com/fwlink/p/?LinkId=320139)
 
 [AVStream 微型驱动程序设计指南](https://go.microsoft.com/fwlink/p/?LinkID=228585)
 
-[用于相机示例的 UWP 设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)
+[适用于照相机的 UWP 设备应用示例](https://go.microsoft.com/fwlink/p/?LinkID=227865)
 
 [驱动程序 MFT 示例](https://go.microsoft.com/fwlink/p/?LinkID=251566)
 

@@ -4,12 +4,12 @@ description: 静态驱动程序验证程序（SDV）可以支持 WDM、KMDF、ND
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f409b0f5c75d672e7fa9bd30f20abcdb6f7c95
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: d5288a967f39f8b02cd446704dcde08b10f72513
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916103"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873818"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>确定静态驱动程序验证程序是否支持你的驱动程序或库
 
@@ -26,7 +26,7 @@ ms.locfileid: "72916103"
 
 如果你的驱动程序在上述条件以外，则 SDV 会将驱动程序视为 "通用"，并运行有限的一组检查。
 
-此外，请注意，由 SDV 验证的库必须是内核模式驱动程序库，而不是常规C++ C 或库。  
+此外，请注意，由 SDV 验证的库必须是内核模式驱动程序库，而不是一般 C 或 c + + 库。  
 
 静态驱动程序验证程序支持通过这些条件的驱动程序或库，即使驱动程序或库链接到多个[实用程序库](#utility-libraries)。
 
@@ -88,7 +88,7 @@ ms.locfileid: "72916103"
 <td align="left">看门程序</td>
 </tr>
 <tr class="odd">
-<td align="left">ath_hwpci</td>
+<td align="left">ath_hwpci .lib</td>
 <td align="left">hidparse</td>
 <td align="left">rpcxdr</td>
 <td align="left">win32k.sys</td>
@@ -101,7 +101,7 @@ ms.locfileid: "72916103"
 </tr>
 <tr class="odd">
 <td align="left">battc</td>
-<td align="left">ipmidrv_hrmcust</td>
+<td align="left">ipmidrv_hrmcust .lib</td>
 <td align="left">scsiport</td>
 <td align="left">WMBBCLASS</td>
 </tr>
@@ -160,7 +160,7 @@ ms.locfileid: "72916103"
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">csr_vfp_avdtp</td>
+<td align="left">csr_vfp_avdtp .lib</td>
 <td align="left">msrpc</td>
 <td align="left">磁带 .lib</td>
 <td align="left"></td>
@@ -220,7 +220,7 @@ ms.locfileid: "72916103"
 
 如果驱动程序或库符合[驱动程序或库要求](#driver-or-library-requirements)，则静态驱动程序验证程序支持具有指向多个实用工具库的链接的驱动程序或库。
 
-|                     |
+| 文件名           |
 |---------------------|
 | BufferOverflowK |
 | hal .lib             |

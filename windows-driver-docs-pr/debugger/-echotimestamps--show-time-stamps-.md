@@ -1,12 +1,12 @@
 ---
 title: .echotimestamps（显示时间戳）
-description: .Echotimestamps 命令打开或关闭显示器的时间戳信息。
+description: Echotimestamps 命令打开或关闭时间戳信息的显示。
 ms.assetid: c70dc71b-83c2-41de-90f3-638e231c0476
 keywords:
-- 显示时间戳 (.echotimestamps) 命令
+- 显示时间戳（. echotimestamps）命令
 - 时间戳
 - DbgPrint 时间戳
-- .echotimestamps （显示时间戳） Windows 调试
+- . echotimestamps （显示时间戳） Windows 调试
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -15,17 +15,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3351684dc4188c654286079f5bfddfab03a590
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0d76511842c15cb50b2a2757a23dcb5fc3f769f5
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336803"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873826"
 ---
 # <a name="echotimestamps-show-time-stamps"></a>.echotimestamps（显示时间戳）
 
 
-**.Echotimestamps**命令打开或关闭显示器的时间戳信息。
+**Echotimestamps**命令打开或关闭时间戳信息的显示。
 
 ```dbgcmd
 .echotimestamps 0 
@@ -33,14 +33,14 @@ ms.locfileid: "63336803"
 .echotimestamps 
 ```
 
-## <a name="span-idddkmetashowtimestampsdbgspanspan-idddkmetashowtimestampsdbgspanparameters"></a><span id="ddk_meta_show_time_stamps_dbg"></span><span id="DDK_META_SHOW_TIME_STAMPS_DBG"></span>参数
+## <a name="span-idddk_meta_show_time_stamps_dbgspanspan-idddk_meta_show_time_stamps_dbgspanparameters"></a><span id="ddk_meta_show_time_stamps_dbg"></span><span id="DDK_META_SHOW_TIME_STAMPS_DBG"></span>参数
 
 
-<span id="_______0______"></span> **0**   
-关闭所显示的时间戳信息。 这是在调试器的默认行为。
+<span id="_______0______"></span>**0**   
+关闭时间戳信息的显示。 这是调试器的默认行为。
 
-<span id="_______1______"></span> **1**   
-打开所显示的时间戳信息。
+<span id="_______1______"></span>**1**   
+启用时间戳信息的显示。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -51,12 +51,12 @@ ms.locfileid: "63336803"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
@@ -67,20 +67,20 @@ ms.locfileid: "63336803"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关详细信息**DbgPrint**， **KdPrint**， **DbgPrintEx**，以及**KdPrintEx**，请参阅[DbgPrint 缓冲区](reading-and-filtering-debugging-messages.md#the-dbgprint-buffer)或，请参阅 Microsoft Windows Driver Kit (WDK) 文档。
+有关**DbgPrint**、 **KdPrint**、 **DbgPrintEx**和**KdPrintEx**的详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)中的 "DbgPrint Buffer"。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-当你使用 **.echotimestamps**命令不带参数，显示的时间戳打开或关闭，并显示新状态。
+使用不带参数的**echotimestamps**命令时，将打开或关闭时间戳的显示，并显示新状态。
 
-如果打开此显示时，调试器将显示模块加载、 线程创建、 异常和其他事件时间的戳。
+如果打开此显示，调试器将显示模块加载、线程创建、异常和其他事件的时间戳。
 
-**DbgPrint**， **KdPrint**， **DbgPrintEx**，以及**KdPrintEx**内核模式例程将格式化的字符串发送到主机上的缓冲区计算机。 字符串显示在[调试器命令窗口](debugger-command-window.md)（除非禁用了此类打印）。 此外可以通过使用显示带格式的字符串[ **！ dbgprint** ](-dbgprint.md)扩展命令。
+**DbgPrint**、 **KdPrint**、 **DbgPrintEx**和**KdPrintEx**内核模式例程将格式化字符串发送到主计算机上的缓冲区。 此字符串将显示在[调试器命令窗口](debugger-command-window.md)中（除非已禁用此类打印功能）。 还可以通过使用[**！ dbgprint**](-dbgprint.md) extension 命令显示带格式的字符串。
 
-当你使用 **.echotimestamps**开启的时间戳、 时间和日期的每个注释中显示**DbgPrint**显示缓冲区。
+当使用**echotimestamps**打开时间戳的显示时，将显示**DbgPrint**缓冲区中每个注释的时间和日期。
 
  
 

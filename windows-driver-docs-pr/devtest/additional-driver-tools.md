@@ -6,20 +6,20 @@ keywords:
 - 驱动程序开发工具 WDK，测试驱动程序
 - 驱动程序测试 WDK，工具
 - 测试驱动程序 WDK，工具
-- 在系统发生崩溃测试 WDK
+- 系统崩溃测试 WDK
 - 崩溃测试 WDK
 ms.date: 06/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 28def66fd2909abf231bd152c4249f8623394332
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab554476c5a5ad9d1f31b1c54e3895e40e86f7f2
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332043"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873842"
 ---
-# <a name="tools-for-testing-drivers"></a>用于测试驱动程序的工具
+# <a name="additional-tools-for-testing-drivers"></a>用于测试驱动程序的其他工具
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>本部分中的内容
 
 - [用于生成驱动程序的工具](tools-for-building-drivers.md)
  
@@ -31,7 +31,7 @@ ms.locfileid: "63332043"
 
 - [驱动程序调试工具](tools-for-debugging-drivers.md)
  
-- [设备元数据包的工具](tools-for-device-metadata-packages.md)
+- [用于处理设备元数据包的工具](tools-for-device-metadata-packages.md)
  
 
  

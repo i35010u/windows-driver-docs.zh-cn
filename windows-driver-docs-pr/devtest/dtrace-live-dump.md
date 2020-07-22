@@ -1,5 +1,5 @@
 ---
-title: DTrace ETW
+title: DTrace 实时转储
 description: DTrace 通过使用 LKD （）支持创建实时转储文件。
 ms.assetid: bbf23d76-423d-4d1e-afde-83739015bbf1
 keywords:
@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fb9b1539cd693b044cd0faa228c66191bc27ae
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 6edb4d356c2c11923454c6fa21f4a74a0d9155e4
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209459"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873864"
 ---
 # <a name="dtrace-live-dump"></a>DTrace 实时转储
 
@@ -81,17 +81,17 @@ CPU     ID                    FUNCTION:NAME
 Triggering LiveDump
 ```
 
-创建的转储文件通常位于 `C:\Windows\LiveKernelReports`。
+创建的转储文件通常位于 `C:\Windows\LiveKernelReports` 。
 
-如果转储文件的位置已更改，该值将存储在以下注册表项中： `hklm\system\currentcontrolset\control\crashcontrol\livekernelreports`
+如果转储文件的位置已更改，该值将存储在以下注册表项中：`hklm\system\currentcontrolset\control\crashcontrol\livekernelreports`
 
 如上所述，使用 WinDbg 处理转储文件。
 
-## <a name="troubleshooting"></a>“疑难解答”
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="viewing-live-dump-related-events"></a>查看实时转储相关事件
 
-打开 Windows 事件查看器：请参阅：应用程序和服务日志-> Microsoft > Windows-> Livedump-> 操作
+打开 Windows 事件查看器：请参阅：应用程序和服务日志->Microsoft >Windows->Livedump->操作
 
 如果找不到任何日志，请从命令提示符或事件查看器中启用分析通道，如下所述。
 

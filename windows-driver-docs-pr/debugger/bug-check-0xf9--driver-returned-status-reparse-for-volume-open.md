@@ -5,7 +5,7 @@ ms.assetid: 60eeb24a-accf-4db8-ba5b-1738a9aa4b46
 keywords:
 - Bug 检查 0xF9 DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
 - DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
-ms.date: 05/23/2017
+ms.date: 07/21/2020
 topic_type:
 - apiref
 api_name:
@@ -13,24 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 295f9f42e0b6cc99fb9acb58713bfafa9d12b5cb
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6060ec2a0b66c9efcd124163bf73897585533a75
+ms.sourcegitcommit: 67fb9981ca51df198dfb6af9bf4987843266f8ac
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534786"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86879089"
 ---
 # <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>Bug 检查0xF9：驱动 \_ 程序 \_ 返回 \_ \_ 的 \_ 卷 \_ 打开状态重新分析
-
 
 驱动程序 \_ 返回了 " \_ \_ \_ \_ 卷 \_ 打开 bug 检查的状态重新分析" 的值为 "0x000000F9"。 这表明驱动程序将状态重新 \_ 分析返回给 IRP \_ MJ \_ CREATE 请求，但没有尾随名称。
 
 > [!IMPORTANT]
 > 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
 
-
 ## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>驱动 \_ 程序 \_ 返回 \_ \_ \_ 卷 \_ 开放参数的状态重新分析
-
 
 <table>
 <colgroup>
@@ -63,18 +60,10 @@ ms.locfileid: "84534786"
 </tbody>
 </table>
 
- 
-
-<a name="remarks"></a>注解
--------
+## <a name="remarks"></a>注解
 
 [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
-\_仅应为 IRP \_ MJ \_ CREATE requests 返回带有尾随名称的状态重新分析，因为该驱动程序支持名称空间。
 
- 
+\_仅应为 IRP \_ MJ \_ CREATE requests 返回带有尾随名称的状态重新分析，因为该驱动程序支持名称空间。 
 
- 
-
-
-
-
+有关使用文件系统驱动程序的详细信息，请参阅[文件系统驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/ifs/)。 有关 IRP \_ MJ CREATE 请求的信息， \_ 请参阅[IRP_MJ_CREATE （IFS）](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)。

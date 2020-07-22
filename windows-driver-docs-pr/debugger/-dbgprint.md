@@ -1,6 +1,6 @@
 ---
 title: dbgprint
-description: Dbgprint 扩展显示以前已发送到 DbgPrint 缓冲区的字符串。
+description: Dbgprint 扩展显示以前发送到 DbgPrint 缓冲区的字符串。
 ms.assetid: bf25ac2a-5a07-43df-946b-3b2237b1816b
 keywords:
 - dbgprint Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 00281b2d5f6a389d1dd15c02d9015e4fddabfc79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609e4f68f38d5c7a56d25b43c0ffd21544b485f4
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336861"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873832"
 ---
 # <a name="dbgprint"></a>!dbgprint
 
 
-**！ Dbgprint**扩展插件都会显示以前已发送到一个字符串**DbgPrint**缓冲区。
+**！ Dbgprint** extension 显示以前发送到**dbgprint**缓冲区的字符串。
 
 ```dbgcmd
 !dbgprint
@@ -31,7 +31,7 @@ ms.locfileid: "63336861"
 ## <span id="ddk__dbgprint_dbg"></span><span id="DDK__DBGPRINT_DBG"></span>
 
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ ms.locfileid: "63336861"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -52,18 +52,18 @@ ms.locfileid: "63336861"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-璝惠**DbgPrint**， **KdPrint**， **DbgPrintEx**，并**KdPrintEx**，请参阅[将输出发送到调试器](sending-output-to-the-debugger.md)。
+有关**DbgPrint**、 **KdPrint**、 **DbgPrintEx**和**KdPrintEx**的信息，请参阅将[输出发送到调试器](sending-output-to-the-debugger.md)。
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-内核模式例程**DbgPrint**， **KdPrint**， **DbgPrintEx**，以及**KdPrintEx**将格式化的字符串发送到目标系统上的缓冲区计算机。 字符串会自动显示在主计算机上的调试器命令窗口，除非禁用此类打印。
+内核模式例程**DbgPrint**、 **KdPrint**、 **DbgPrintEx**和**KdPrintEx**向目标计算机上的缓冲区发送格式化的字符串。 除非禁用了此类打印，否则该字符串会自动显示在主计算机上的调试器命令窗口中。
 
-通常情况下，在调试器命令窗口中自动显示发送到此缓冲区的消息。 但是，可以通过全局标志 (gflags.exe) 实用程序禁用此显示。 此外，此显示不会不自动显示在本地内核调试过程中。 有关详细信息，请参阅[DbgPrint 缓冲区](reading-and-filtering-debugging-messages.md#the-dbgprint-buffer)。
+通常，发送到此缓冲区的消息将自动显示在调试器命令窗口中。 但是，可以通过全局标志（gflags.exe）实用工具禁用此显示。 此外，在本地内核调试过程中不会自动显示此显示。 有关详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)中的 "DbgPrint Buffer"。
 
-**！ Dbgprint**扩展会导致此缓冲区 （而不考虑是否自动打印已被禁用） 显示的内容。 它不会显示已筛选出基于其组件和重要性级别的消息。 (有关此筛选的详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)。)
+**！ Dbgprint**扩展会导致显示此缓冲区的内容（无论是否禁用了自动打印功能）。 它不会显示基于其组件和重要性级别筛选掉的消息。 （有关此筛选的详细信息，请参阅[读取和筛选调试消息](reading-and-filtering-debugging-messages.md)。）
 
  
 
