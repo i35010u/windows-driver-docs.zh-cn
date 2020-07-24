@@ -4,12 +4,12 @@ description: 如果要构建通用或移动驱动程序包，则必须使用通�
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b099889203e9d3e00e0eb16348ef67d8bb9b256
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 6d58ee54df9114a67c2ed61f77765cdd0f70d8e9
+ms.sourcegitcommit: 5e5f3491e29f99b11a12b45da870043e0e92ddc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235394"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949035"
 ---
 # <a name="using-a-universal-inf-file"></a>使用通用 INF 文件
 
@@ -37,6 +37,8 @@ ms.locfileid: "83235394"
 -   [**INF DDInstall.LogConfigOverride 节**](inf-ddinstall-logconfigoverride-section.md)
 
 只要**TargetOSVersion**修饰不包含**ProductType**标志或**SuiteMask**标志， [**INF 制造商部分**](inf-manufacturer-section.md)就有效。
+
+例如，仅当[**INF DefaultInstall 部分**](inf-defaultinstall-section.md)具有体系结构修饰时，它才有效 `[DefaultInstall.NTAMD64]` 。
 
 ## <a name="which-inf-directives-are-invalid-in-a-universal-inf-file"></a>通用 INF 文件中哪些 INF 指令无效？
 
@@ -80,5 +82,5 @@ ms.locfileid: "83235394"
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows 驱动程序的入门](../develop/getting-started-with-windows-drivers.md)
+* [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)
 * [InfVerif](../devtest/infverif.md)

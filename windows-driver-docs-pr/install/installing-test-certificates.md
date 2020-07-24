@@ -4,12 +4,12 @@ description: 安装测试证书
 ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5108d21db519137367cbb618fdb9640c64495cf1
-ms.sourcegitcommit: 41bc8d70b5aff5a30c33bcc571b3718c0232e68e
+ms.openlocfilehash: c433aad292c490f831f81b0bc8250e894df13567
+ms.sourcegitcommit: 6914901515545eda08b2c35bef816e6e2711a5b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543089"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86944619"
 ---
 # <a name="installing-test-certificates"></a>安装测试证书
 
@@ -43,7 +43,7 @@ certmgr /add ContosoTest.cer /s /r localMachine root
 CertMgr Succeeded
 ```
 
-将证书复制到 "受信任的根证书颁发机构" 证书存储（计算机存储，*而不*是用户存储）后，可以通过 Microsoft 管理控制台（MMC）证书管理单元查看该证书，如[查看测试证书](viewing-test-certificates.md)中所述。
+将证书复制到 "受信任的根证书颁发机构" 证书存储（本地计算机的根存储区，*而不*是用户存储）后，可以通过 Microsoft 管理控制台（MMC）证书管理单元查看该证书，如[查看测试证书](viewing-test-certificates.md)中所述。
 
 以下屏幕截图显示了 "受信任的根证书颁发机构" 证书存储中的 Contoso （测试）证书。
 
@@ -55,6 +55,14 @@ CertMgr Succeeded
 certutil -store root | findstr Contoso
 certutil -store root <SHA-1 id of certificate>
 ```
+
+或者，从 PowerShell：
+
+```cmd
+Get-ChildItem -path cert: \LocalMachine\My | findstr Contoso
+```
+
+Certmgr.exe 工具是 Windows SDK 的一部分，通常安装到 `C:\Program Files (x86)\Windows Kits\10\bin\<build>\x86\certmgr.exe` 。
 
 有关 Certmgr.msc 及其命令行参数的详细信息，请参阅[**certmgr.msc**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)。
 

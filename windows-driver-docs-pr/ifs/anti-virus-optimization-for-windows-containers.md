@@ -4,12 +4,12 @@ description: 本主题介绍防病毒产品在 Windows 容器中运行时可使�
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
 ms.date: 03/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ad3e19dfe98751845928b4ff58d89611453ccef4
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: cb32050e0171207446f461cdbf31d24d1c0d8092
+ms.sourcegitcommit: 5e5f3491e29f99b11a12b45da870043e0e92ddc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910385"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949031"
 ---
 # <a name="anti-virus-optimization-for-windows-containers"></a>用于 Windows 容器的防病毒优化
 
@@ -26,7 +26,7 @@ Windows 容器功能旨在简化应用程序的分发和部署。 有关详细�
 
 从任意数量的包层构造容器。 Windows 基本操作系统包构成第一层。
 
-每个容器都有一个独立的卷，它表示该容器的系统卷。 容器隔离筛选器（*wcifs*）可将包层的虚拟覆盖到此容器卷上。 使用占位符（重新分析点）实现覆盖。 该卷在容器第一次访问 overlain 路径之前带有占位符。 占位符文件的读取被定向到后备包文件。 通过这种方式，多个容器卷可以访问相同的基础包文件数据流。
+每个容器都有一个独立的卷，它表示该容器的系统卷。 容器隔离筛选器（*wcifs.sys*）可将包层的虚拟覆盖到此容器卷上。 使用占位符（重新分析点）实现覆盖。 该卷在容器第一次访问 overlain 路径之前带有占位符。 占位符文件的读取被定向到后备包文件。 通过这种方式，多个容器卷可以访问相同的基础包文件数据流。
 
 如果容器修改文件，隔离筛选器将执行写入时复制，并将占位符替换为包文件的内容。 这会将 "链接" 拆分为该特定容器的包文件。
 
@@ -60,22 +60,22 @@ AV 产品中需要进行以下更改：
 
 - **在 "创建后" 中，如果已确认 ECP，请检查 ECP 重定向标志。** 标志将指示是从包层还是从临时根（新文件或已修改的文件）为打开的服务。 标志还会指示包层是否已注册以及它是否为远程。
 
-  - *对于从远程层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
+  - *对于从远程层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
 
     可以假定远程层已在远程主机上进行扫描。 Hyper-v 容器包与托管容器的实用工具 VM 远程。 当实用工具 VM 通过 SMB 环回对这些包进行访问时，它们将在 Hyper-v 主机上正常扫描。
 
     由于 VolumeGUID 和 FileId 不适用于远程，因此将不会设置这些字段。
 
-  - *对于从已注册层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
+  - *对于从已注册层提供服务的打开*，AV 应跳过扫描文件。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
 
     包安装期间和签名更新之后，应以异步方式扫描已注册的层。
 
     >[!NOTE]
     > 将来，系统可能不会标识已注册的层。 在这种情况下，必须对本地层文件进行单独标识，如最后一个项目符号中所述。
 
-  - *对于从本地包层提供服务的打开*，AV 应使用所提供的层文件的 VolumeGUID 和 FileId 来确定是否需要扫描该文件。 这可能需要 AV 构建按卷 GUID 和 FileId 索引的扫描文件的缓存。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
+  - *对于从本地包层提供服务的打开*，AV 应使用所提供的层文件的 VolumeGUID 和 FileId 来确定是否需要扫描该文件。 这可能需要 AV 构建按卷 GUID 和 FileId 索引的扫描文件的缓存。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
 
-  - *对于暂存位置中的新文件/修改后的文件*，AV 产品应该扫描文件并执行其常规的修正。 重定向标志表明这一点： `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
+  - *对于暂存位置中的新文件/修改后的文件*，AV 产品应该扫描文件并执行其常规的修正。 重定向标志表明这一点：`WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
 
     由于在这种情况下没有层文件，因此将不设置 VolumeGUID 和 FileId。
 
@@ -87,7 +87,7 @@ AV 产品中需要进行以下更改：
 
 已用于注册包层的注册表位置：
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Virtualization\LayerRootLocations`
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\LayerRootLocations`
 
 ## <a name="benefits-and-risks"></a>优点和风险
 

@@ -11,12 +11,12 @@ keywords:
 - 缓冲区内存分配 WDK 内核
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e8c4c6a8d5f305af00d5e649de9e14e282c47a2
-ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
+ms.openlocfilehash: 1f5c1efa80979791025c01101d17128a730f24be
+ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84882324"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972156"
 ---
 # <a name="pool_flags"></a>POOL_FLAGS
 
@@ -78,9 +78,7 @@ ULONG64 类型的值，指定池内存的类型以及必需和可选属性。 �
 
 ## <a name="requirements"></a>要求
 
-| &nbsp; | &nbsp; |
-| ---- |:---- |
-|标题|wdm .h （包括 Wdm、Ntddk、Ntifs、Wudfwdm）。|
+**标头**： wdm .h （包括 Wdm、Ntddk、Ntifs、Wudfwdm）
 
 ## <a name="see-also"></a>另请参阅
 

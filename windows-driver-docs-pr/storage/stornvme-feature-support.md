@@ -1,17 +1,17 @@
 ---
-title: StorNVMe 支持的 NVMe 功能
-description: StorNVMe 支持的 NVMe 功能
+title: StorNVMe 功能支持
+description: 介绍 StorNVMe 支持的 NVMe 功能
 ms.assetid: 96b62fbb-bcf3-402d-ba29-0a61dc95c92c
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 54b7529f57bcab5c970ee0d4c4ca08df431bb3e3
-ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
+ms.openlocfilehash: 81fc10cf71d3801dd9f10fe2af5b6d9039fe50c6
+ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83642592"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949673"
 ---
-# <a name="nvme-features-supported-by-stornvme"></a>StorNVMe 支持的 NVMe 功能
+# <a name="stornvme-feature-support"></a>StorNVMe 功能支持
 
 下表列出了 NVME 功能，并指出了在 Windows 10 版本1903及更高版本上由**StorNVMe**提供的支持。
 

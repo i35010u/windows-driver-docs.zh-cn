@@ -1,15 +1,15 @@
 ---
 title: StorNVMe 命令集支持
-description: StorNVMe 命令集支持
+description: 介绍 StoreNVMe 提供的命令集支持
 ms.assetid: c0bcee11-ea66-4726-99a2-ad18256cf616
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d8085c82690b07a198411a7c93b92cb423322a0b
-ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
+ms.openlocfilehash: 1c2aec6c6a39439bef884f0d14ec05aa2b48b7dd
+ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83642597"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949747"
 ---
 # <a name="stornvme-command-set-support"></a>StorNVMe 命令集支持
 
@@ -32,8 +32,8 @@ ms.locfileid: "83642597"
 | 啊      | 获取功能                | 内部驱动程序使用情况;IOCTL_STORAGE_QUERY_PROPERTY |   |
 | 48      | 异步事件请求  | 内部驱动程序使用情况 |   |   |
 | Dh      | 命名空间管理        | IOCTL_STORAGE_PROTOCOL_COMMAND | 仅在 Win PE 模式下为 IOCTL_STORAGE_PROTOCOL_COMMAND 启用 |
-| 10h     | 固件提交             | IOCTL_STORAGE_FIRMWARE_ACTIVATE | |
-| 11h     | 固件映像下载     | IOCTL_STORAGE_FIRMWARE_DOWNLOAD | |
+| 10h     | 固件提交             | IOCTL_STORAGE_FIRMWARE_ACTIVATE  | |
+| 11h     | 固件映像下载     | IOCTL_STORAGE_FIRMWARE_DOWNLOAD  | |
 | 14h     | 设备自检            | IOCTL_STORAGE_PROTOCOL_COMMAND  | |
 | 15h     | 命名空间附件        | IOCTL_STORAGE_PROTOCOL_COMMAND | 仅在 Win PE 模式下为 IOCTL_STORAGE_PROTOCOL_COMMAND 启用 |
 | 19h     | 指令发送              | 内部驱动程序使用情况 |   |

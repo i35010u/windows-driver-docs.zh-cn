@@ -1,5 +1,5 @@
 ---
-title: 创建设备对象
+title: 创建设备对象（Windows 筛选平台）
 description: 创建设备对象
 ms.assetid: 9474e080-b2c3-4c1b-af19-bf269d1c94d4
 keywords:
@@ -11,14 +11,14 @@ keywords:
 - 基于 WDF 的标注驱动程序 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d5838c55acf4e34a8ab7bc6d6c9f7ee4637803
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 88c511695e98662d629345d336c0ee57c3d9e9b2
+ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838168"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972154"
 ---
-# <a name="creating-a-device-object"></a>创建设备对象
+# <a name="creating-a-device-object-windows-filtering-platform"></a>创建设备对象（Windows 筛选平台）
 
 
 标注驱动程序必须先创建一个设备对象，然后才能使用筛选器引擎注册其标注。 标注驱动程序如何创建设备对象取决于标注驱动程序是基于 Windows 驱动模型（WDM）还是 Windows 驱动程序框架（WDF）。
