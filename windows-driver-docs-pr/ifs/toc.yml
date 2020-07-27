@@ -516,7 +516,7 @@
           href: security-features-for-file-systems.md
         - name: 安全描述符
           items:
-            - name: 概述
+            - name: 文件系统中的安全描述符
               href: security-descriptors.md
             - name: 安全标识符
               href: security-identifier.md
@@ -526,7 +526,7 @@
               href: access-control-entry.md
             - name: 访问控制列表
               href: access-control-list.md
-        - name: 权限
+        - name: 管理文件系统中的权限
           href: privileges.md
         - name: 审核
           href: auditing.md
@@ -558,13 +558,13 @@
               href: media-validation.md
         - name: 安全检查
           items:
-            - name: 概述
+            - name: 文件系统中的安全检查
               href: security-checks.md
             - name: 将安全描述符应用到设备对象上
               href: applying-security-descriptors-on-the-device-object.md
             - name: IRP_MJ_CREATE 调度例程
               items:
-                - name: 概述
+                - name: IRP_MJ_CREATE 上的安全检查
                   href: irp-mj-create-dispatch-routine.md
                 - name: 检查 IRP_MJ_CREATE 上的遍历特权
                   href: checking-for-traverse-privilege-on-irp-mj-create.md
@@ -578,13 +578,13 @@
                   href: assigning-security-to-a-new-file-on-irp-mj-create.md
                 - name: 处理 IRP_MJ_CREATE 上的配额
                   href: handling-quotas-on-irp-mj-create.md
-            - name: IRP_MJ_QUERY_SECURITY 和 IRP_MJ_SET_SECURITY
+            - name: IRP_MJ_QUERY_SECURITY 和 IRP_MJ_SET_SECURITY 上的安全检查
               href: irp-mj-query-security-and-irp-mj-set-security.md
-            - name: IRP_MJ_DIRECTORY_CONTROL
+            - name: IRP_MJ_DIRECTORY_CONTROL 上的安全检查
               href: irp-mj-directory-control2.md
-            - name: IRP_MJ_FILE_SYSTEM_CONTROL
+            - name: IRP_MJ_FILE_SYSTEM_CONTROL 上的安全检查
               href: irp-mj-file-system-control3.md
-            - name: IRP_MJ_SET_INFORMATION
+            - name: IRP_MJ_SET_INFORMATION 上的安全检查
               href: irp-mj-set-information3.md
             - name: 模拟
               href: impersonation.md

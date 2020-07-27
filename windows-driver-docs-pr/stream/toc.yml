@@ -36,6 +36,8 @@
       href: infrared-stream-support-in-uvc.md
     - name: 通用相机驱动程序的相机类 INF 文件设置
       href: camera-driver-inf-file-class-setting.md
+    - name: 相机 UVC 控件缓存的驱动程序支持
+      href: camera-device-uvc-control-cache.md
     - name: USB 视频类 1.5 规范的 Microsoft 扩展
       href: uvc-extensions-1-5.md
 - name: Windows Hello 相机驱动程序启动指南

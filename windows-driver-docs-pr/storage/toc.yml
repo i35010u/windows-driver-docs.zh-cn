@@ -488,7 +488,7 @@
           href: overview.md
         - name: 定义
           href: definitions.md
-        - name: 要求
+        - name: 接收器驱动程序系统要求
           href: requirements.md
         - name: 体系结构
           href: architecture.md
