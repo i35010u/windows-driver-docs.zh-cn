@@ -1,17 +1,17 @@
 ---
-title: 评估要求 HVCI 驱动程序兼容性
+title: 评估 HVCI 驱动程序兼容性
 description: 请按照以下步骤来评估驱动程序代码的要求 HVCI 驱动程序兼容性。
 ms.assetid: ''
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1f4331474b7dc9093483ee762e3059f13cce60
-ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
+ms.openlocfilehash: 49032c0843f3f0e1015abe50a1faf5ae1fffcf7e
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153163"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264462"
 ---
-# <a name="evaluate-hvci-driver-compatibility"></a>评估要求 HVCI 驱动程序兼容性
+# <a name="evaluate-hvci-driver-compatibility"></a>评估 HVCI 驱动程序兼容性
 
 ## <a name="overview"></a>概述
 
@@ -41,9 +41,8 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 
 以下 DDIs 列表未保留给系统使用可能会受到影响：
 
-|                                                                                                      |
+|       DDI 名称                                                                                                  |
 |------------------------------------------------------------------------------------------------------|
-| DDI 名称                                                                                             |
 | [**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)                                                          |
 | [**ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)                                        |
 | [**ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquotatag)                                  |
@@ -172,7 +171,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
 
     屏幕的输出为彩色编码。
 
-    |                   |                                                                                                   |
+    |       类别    |  描述                                                                                      |
     |-------------------|---------------------------------------------------------------------------------------------------|
     | 红色-错误      | 元素缺失或未配置，将阻止启用和使用 DG/CG。                |
     | 黄色-警告 | 此设备可用于启用和使用 DG/CG，但不会有更多的安全优势。 |
@@ -199,7 +198,7 @@ DGReadiness 工具旨在检查多种需求，用于创建支持各种安全增�
         Reason: execute pool type count:                3
     ```
 
-    在上面所示的示例中，两个驱动程序被标识为不兼容。 TestDriver1 的内存部分对齐失败，TestDriver2 具有配置为使用可执行内存区域的池。
+    在上面所示的示例中，两个驱动程序被标识为不兼容。 TestDriver1.sys 的内存部分对齐失败，TestDriver2.sys 具有配置为使用可执行内存区域的池。
 
     使用！ verifier 调试器扩展时，还可以使用7种类型的设备驱动程序不兼容的统计信息。 有关！ verifier 扩展的详细信息，请参阅[**！ verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)。
 

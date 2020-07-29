@@ -4,14 +4,14 @@ description: 本主题介绍 OID_TCP_OFFLOAD_CURRENT_CONFIG 对象标识符（OI
 ms.assetid: 8DC81A41-1E4D-4F78-80D1-54C79F974CE3
 keywords:
 - OID_TCP_OFFLOAD_CURRENT_CONFIG，WDK Oid，WDK 网络对象标识符，WDK 网络 Oid
-ms.date: 11/01/2017
+ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9083238d253e4bd9c37c75e0a692766536e98a
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: e02308cedd70ce7dac411536a8f1d147cac32914
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917643"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264442"
 ---
 # <a name="oid_tcp_offload_current_config"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -43,10 +43,9 @@ NDIS 处理微型端口驱动程序的此 OID。 微型端口驱动程序报告�
 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)  
 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
 [NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)  
-[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)    
+[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2) 
 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
 
 ## <a name="requirements"></a>要求
 
 **版本**： Windows Vista 和更高版本的**标头**： Ntddndis （包括 Ndis .h）
-

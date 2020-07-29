@@ -6,12 +6,12 @@ keywords:
 - 驱动程序签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 839cac6ab06b61c20054efa133a65b4e9126e8a5
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: a93512443a4fb412a8f02e9a85b6cda6c7a93665
+ms.sourcegitcommit: 9342720249c59946ef2196dd2c833a1667129929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557728"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295836"
 ---
 # <a name="driver-signing"></a>驱动程序签名
 
@@ -29,7 +29,6 @@ Windows 设备安装使用[数字签名](digital-signatures.md)来验证驱动�
 ## <a name="in-this-section"></a>在本节中
 
 
--   [适用于驱动程序安装的数字签名概述](overview-of-digital-signatures-for-driver-installation.md)
 -   [Windows 10 S 模式驱动程序要求](Windows10SDriverRequirements.md)
 -   [管理签名过程](managing-the-signing-process.md)
 -   [在开发和测试期间签署驱动程序](signing-drivers-during-development-and-test.md)
