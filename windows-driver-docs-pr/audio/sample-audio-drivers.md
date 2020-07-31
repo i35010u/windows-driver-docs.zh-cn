@@ -16,12 +16,12 @@ keywords:
 - Stdunk 示例音频驱动程序 WDK 音频
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9242bb43973280df23a142e33f86d53f411ab811
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: 74077d4c3c08d1301e6f3e1fde09595a82a7e995
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925536"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402266"
 ---
 # <a name="sample-audio-drivers"></a>示例音频驱动程序
 
@@ -69,24 +69,24 @@ a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动�
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b. 将主 .zip 文件下载到本地硬盘驱动器。
+b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-c. 右键单击 " *Windows-driver-samples-master*"，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C：\\DriverSamples\\ *作为要将文件提取到的新文件夹。
+c. 右键单击*Windows-driver-samples-master.zip*，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ DriverSamples \\ *作为要将文件提取到的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹。
 
-*C：\\DriverSamples\\音频\\Sysvad*
+*C： \\ DriverSamples \\ 音频 \\ Sysvad*
 
 **在 Visual Studio 中打开驱动程序解决方案**
 
-在 Microsoft Visual Studio 中，单击 "**文件** &gt; " "**打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C\\：\\\\DriverSamples Audio Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
+在 Microsoft Visual Studio 中，单击 "**文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C： \\ DriverSamples \\ Audio \\ Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
 
 在 Visual Studio 中找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，你可以看到一个包含六个项目的解决方案。
 
 ## <a name="span-idsample_audio_driversspanspan-idsample_audio_driversspanarchived-audio-samples"></a><span id="sample_audio_drivers"></span><span id="SAMPLE_AUDIO_DRIVERS"></span>存档的音频示例
 
 
-这些音频示例支持以前版本的 Microsoft Windows 驱动程序工具包（WDK）。 在[此处](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)提供的 zip 文件下载中提供了这些文件。
+这些音频示例支持以前版本的 Microsoft Windows 驱动程序工具包（WDK）。 它们作为[zip 文件下载](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)的一部分提供。
 
 -   **Microsoft 虚拟音频设备驱动程序示例（Msvad）**
 

@@ -11,15 +11,14 @@ keywords:
 - 下游存储（符号服务器）
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec394624406cf4cf4d4844bff2ecd6ec3cc46740
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 698135f29b8db0db31452578dd1d53618e7b9b86
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533960"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402300"
 ---
 # <a name="advanced-symsrv-use"></a>SymSrv 的高级用法
-
 
 SymSrv 可以传递集中符号存储区中的符号文件。 此存储可以包含任意数量的符号文件，它们对应于任意数量的程序或操作系统。 存储还可以包含二进制文件（这在调试小型转储时非常有用）。
 
@@ -31,16 +30,16 @@ SymSrv 还可用于将大符号存储区分隔为适用于专用调试任务的�
 
 ### <a name="span-idsetting_the_symbol_pathspanspan-idsetting_the_symbol_pathspansetting-the-symbol-path"></a><span id="setting_the_symbol_path"></span><span id="SETTING_THE_SYMBOL_PATH"></span>设置符号路径
 
-若要使用此符号服务器，symsrv 必须与调试器安装在同一个目录中。 可以按如下所示设置符号路径：
+若要使用此符号服务器，symsrv.dll 必须与调试器安装在同一个目录中。 可以设置符号路径，如以下代码所示：
 
 ```console
-set _NT_SYMBOL_PATH = symsrv*ServerDLL*DownstreamStore*\\Server\Share 
+set _NT_SYMBOL_PATH = symsrv*ServerDLL*DownstreamStore*\\Server\Share
 
-set _NT_SYMBOL_PATH = symsrv*ServerDLL*\\Server\Share 
+set _NT_SYMBOL_PATH = symsrv*ServerDLL*\\Server\Share
 
-set _NT_SYMBOL_PATH = srv*DownstreamStore*\\Server\Share 
+set _NT_SYMBOL_PATH = srv*DownstreamStore*\\Server\Share
 
-set _NT_SYMBOL_PATH = srv*\\Server\Share 
+set _NT_SYMBOL_PATH = srv*\\Server\Share
 ```
 
 本语法的组成部分如下所述：
@@ -49,10 +48,10 @@ set _NT_SYMBOL_PATH = srv*\\Server\Share
 此关键字必须始终出现在第一位。 它向调试器指示此项是符号服务器，而不只是普通符号目录。
 
 <span id="ServerDLL"></span><span id="serverdll"></span><span id="SERVERDLL"></span>*ServerDLL*  
-指定符号服务器 DLL 的名称。 如果使用的是 SymSrv 符号服务器，这将始终为 SymSrv。
+指定符号服务器 DLL 的名称。 如果使用的是 SymSrv 符号服务器，将始终 symsrv.dll。
 
 <span id="srv"></span><span id="SRV"></span>**srv**  
-这是**symsrv \* symsrv**的速记形式。
+这是**symsrv \*symsrv.dll**的简写形式。
 
 <span id="DownstreamStore"></span><span id="downstreamstore"></span><span id="DOWNSTREAMSTORE"></span>*DownstreamStore*  
 指定下游存储区。 这是将用于缓存各个符号文件的本地目录或网络共享。
@@ -104,7 +103,7 @@ set _NT_SYMBOL_PATH=srv*\\localserver\myshare\mycache*https://www.company.com/ma
 
 ### <a name="span-idcompressed_filesspanspan-idcompressed_filesspancompressed-files"></a><span id="compressed_files"></span><span id="COMPRESSED_FILES"></span>压缩文件
 
-SymSrv 与包含压缩文件的符号存储区兼容，前提是已使用压缩 .exe 工具完成此压缩，[此处](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=17657)提供了此压缩。 压缩的文件应将一个下划线作为其文件扩展名中的最后一个字符（例如，module1 \_ 或 module2 \_ ）。 有关详细信息，请参阅[SymStore](symstore.md)。
+SymSrv 与包含压缩文件的符号存储区兼容，前提是已使用 compress.exe 工具（可从[Microsoft 下载中心](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=17657)获取）完成此压缩。 压缩的文件应将一个下划线作为其文件扩展名中的最后一个字符（例如，module1 \_ 或 module2 \_ ）。 有关详细信息，请参阅[SymStore](symstore.md)。
 
 如果存储中的文件已压缩，则必须使用下游存储。 SymSrv 会在将所有文件缓存到下游存储之前对其进行解压缩。
 
@@ -146,11 +145,11 @@ srv**\\interim\store*https://internetsite
 
 如果找到该文件，则会将该文件从（上游）符号服务器复制到以前的（下游）符号服务器。 这对于每个（下游）符号服务器都是重复的。 这样，使用符号服务器的所有客户端的总体工作就会填充（共享）下游符号服务器。
 
-尽管可以在没有 SRV 前缀的情况下使用链式 UNC 路径 \* ，但建议指定 SRV， \* 以便使用 symsrv 的高级错误处理。
+尽管可以在没有 SRV 前缀的情况下使用链式 UNC 路径 \* ，但建议 \* 指定 SRV 以便使用 symsrv.dll 的高级错误处理。
 
 如果路径中包含 HTTP 符号服务器，则只能指定一个（每个链），并且它必须位于路径的末尾（因为它不能作为缓存来编写）。 如果基于 HTTP 的符号存储区位于商店列表的中间或左侧，则不能将找到的任何文件复制到该位置，并且链将断开。 此外，由于符号处理程序无法从网站打开文件，因此，基于 HTTP 的存储区不应在列表中最左端或仅存储。 如果 SymSrv 曾经出现过此符号路径，则它将尝试通过将文件复制到默认的下游存储并将其打开来进行恢复，而不管是否在符号路径中指示默认的下游存储区。
 
-仅当使用 SRV \* 前缀（由 symsrv 符号处理程序实现）时，才支持 HTTP。
+仅当使用 SRV \* 前缀（由 symsrv.dll 符号处理程序实现）时，才支持 HTTP。
 
 **示例 HTTP 和 SMB 共享符号服务器方案**
 

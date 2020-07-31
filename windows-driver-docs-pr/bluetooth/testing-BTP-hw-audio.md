@@ -1,33 +1,33 @@
 ---
-title: Microsoft 蓝牙测试平台
+title: Microsoft 蓝牙测试平台-支持音频的外设无线电
 description: 支持蓝牙测试平台（BTP）的硬件（音频）。
 ms.assetid: a6beeecb-5967-4e08-bfe2-b8aae26861ad
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d7a525e57dcee8187c3c98194a023e10ea85379
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: a0e32fd4bb85ce12fe403499198857773235af85
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528911"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412526"
 ---
-# <a name="audio-capable-peripheral-radios"></a>支持音频的外设无线收发器 #
+# <a name="audio-capable-peripheral-radios"></a>支持音频的外设无线收发器
 
 蓝牙测试平台（BTP） Traduci 板需要一个12针连接器来与任何收音机模块通信。 此处列出的音频无线电和取得突破采用收音机模块，并将所需的 pin 分解为所需的12针布局。
 
-| 广播 | 功能 | 参数 |
+| 单选 | 功能 | 参数 |
 | --- | --- | --- |
-| RN52 | 基本速率（BR）广播 | rn52 （例如 RunPairingTests rn52） |
+| RN52 | 基本速率（BR）广播 | rn52 （例如 RunPairingTests.bat rn52） |
 
-## <a name="audio-sled-rn52-radio"></a>音频滑板（RN52 收音机） ##
+## <a name="audio-sled-rn52-radio"></a>音频滑板（RN52 收音机）
 
 RN52 是来自漫游网络的基本费率（BR），可以表现为音频外设，如扬声器或耳机。 目前计划在即将推出的 BTP 音频测试中支持。 可以通过[**微芯片**](https://www.microchip.com/wwwproducts/en/RN52)中的 RN52 页找到详细信息。 此滑板打破了无线电的音频输出数据，并将其路由到 Traduci 上的音频编解码器和音频处理 FPGA，以帮助验证。
 
-### <a name="rn52-radio"></a>RN52 广播 ###
+### <a name="rn52-radio"></a>RN52 广播
 
 ![RN52 收音机的照片](images/RN52.png)
 
-### <a name="rn52-radio-on-btp-compatible-sled"></a>BTP 兼容的滑板上的 RN52 收音机 ###
+### <a name="rn52-radio-on-btp-compatible-sled"></a>BTP 兼容的滑板上的 RN52 收音机
 
 ![滑板上 RN52 收音机的照片](images/Traduci_and_RN52.jpg)
 

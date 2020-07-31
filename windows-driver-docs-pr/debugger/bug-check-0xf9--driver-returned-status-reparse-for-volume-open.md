@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bceffbbf536a832d5f1422ce320547eeddf4d270
-ms.sourcegitcommit: 8584ffc0ebe497f9fa9e0e8692285549eaa64fa6
+ms.openlocfilehash: c1f9ee94e7f764d71c4c62f3e378ca7e87e7a522
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87113693"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402308"
 ---
 # <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>Bug 检查0xF9：驱动 \_ 程序 \_ 返回 \_ \_ 的 \_ 卷 \_ 打开状态重新分析
 
@@ -26,9 +26,6 @@ ms.locfileid: "87113693"
 
 > [!IMPORTANT]
 > 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
-
-> [!NOTE]
-> 未启用驱动程序验证程序时，可以观察到 E6 的主要错误检查代码。 如果你遇到此代码，但未启用驱动程序验证程序，请参阅[DMA 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/dma-verification)页。 
 
 
 ## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>驱动 \_ 程序 \_ 返回 \_ \_ \_ 卷 \_ 开放参数的状态重新分析
@@ -41,7 +38,7 @@ ms.locfileid: "87113693"
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

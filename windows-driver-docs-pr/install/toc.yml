@@ -180,6 +180,8 @@
           href: how-to-test-sign-a-driver-package.md
         - name: 创建测试证书
           href: creating-test-certificates.md
+        - name: 安装测试证书
+          href: installing-test-certificates.md
         - name: 查看测试证书
           href: viewing-test-certificates.md
         - name: 创建用于对驱动程序包进行测试签名的目录文件
@@ -198,8 +200,6 @@
           href: the-testsigning-boot-configuration-option.md
         - name: 启用代码完整性事件日志记录和系统审核
           href: enabling-code-integrity-event-logging-and-system-auditing.md
-        - name: 安装测试证书
-          href: installing-test-certificates.md
         - name: 验证测试签名
           href: verifying-the-test-signature.md
         - name: 在测试计算机上安装进行了测试签名的驱动程序包

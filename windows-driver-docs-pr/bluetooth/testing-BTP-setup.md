@@ -1,27 +1,27 @@
 ---
 title: Microsoft 蓝牙测试平台安装程序
-description: BTP 安装程序
+description: 如何设置 Microsoft 蓝牙测试平台安装程序
 ms.date: 2/14/2020
 ms.assetid: 85ac7c5b-b5f7-49e0-85f8-72e191c00974
 ms.localizationpriority: medium
-ms.openlocfilehash: ce704690920609c319b6cbfe89f36c5dbe7135fb
-ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
+ms.openlocfilehash: 5dde498fdc72eb0bf98474788ec3e3c46026caf8
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82138642"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412524"
 ---
-# <a name="setting-up-the-bluetooth-test-platform-btp"></a>设置蓝牙测试平台（BTP） #
+# <a name="setting-up-the-bluetooth-test-platform-btp"></a>设置蓝牙测试平台（BTP）
 
-## <a name="hardware-setup"></a>硬件设置 ##
+## <a name="hardware-setup"></a>硬件设置
 
-### <a name="connecting-traduci-to-the-pc"></a>将 Traduci 连接到电脑 ###
+### <a name="connecting-traduci-to-the-pc"></a>将 Traduci 连接到电脑
 
 使用提供的 USB A 到 B 电缆，将 Traduci 插入到正在测试的系统（SUT）上的 USB 端口中。 如果将 Traduci 直接插入 PC 上的某个端口，并且 Traduci 由[9v，2a power adapter](https://www.digikey.com/product-detail/en/qualtek/QFWB-18-9-US01/Q1181-ND/8260129)通过 USB 连接器右侧的圆筒形连接器供电，则性能最佳。 请勿将 Traduci 连接到 USB 集线器。
 
 ![显示 USB 和电源端口的 Traduci](images/Traduci_USBPortSidejpg.jpg)
 
-### <a name="connecting-peripherals-to-the-traduci"></a>将外围设备连接到 Traduci ###
+### <a name="connecting-peripherals-to-the-traduci"></a>将外围设备连接到 Traduci
 
 Traduci 具有 4 12 针端口（标记为 JA、作业、JC、JD）用于测试外围设备。
 
@@ -34,13 +34,13 @@ Traduci 具有 4 12 针端口（标记为 JA、作业、JC、JD）用于测试�
 
 ![已插入外设的 Traduci](images/Traduci_and_DigilentRN42.jpg)
 
-## <a name="software-setup"></a>软件设置 ##
+## <a name="software-setup"></a>软件设置
 
 1. 下载[Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk#download-icon-step-2-install-wdk-for-windows-10-version-1903)。
 
-2. 安装 WDK 后，[测试创作和执行框架（TAEF）](https://docs.microsoft.com/windows-hardware/drivers/taef/)安装文件（* .msi 和 * .cab 文件）位于`%ProgramFiles%\Windows Kits\10\Testing\Runtimes`目录中。
+2. 安装 WDK 后，[测试创作和执行框架（TAEF）](https://docs.microsoft.com/windows-hardware/drivers/taef/)安装文件（* .msi 和 * .cab 文件）位于 `%ProgramFiles%\Windows Kits\10\Testing\Runtimes` 目录中。
 
-3. 下载 BTP 软件包，该[软件包](testing-BTP-software-package.md)会将所有所需的`C:\BTP`文件安装到目录。
+3. 下载 BTP 软件包，该[软件包](testing-BTP-software-package.md)会将所有所需的文件安装到 `C:\BTP` 目录。
 
 4. 确保**禁用**[安全启动](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-secure-boot)。
 
@@ -48,10 +48,10 @@ Traduci 具有 4 12 针端口（标记为 JA、作业、JC、JD）用于测试�
 
 6. 确保将 Traduci 板插入 SUT。
 
-7. 在 SUT 上提升的命令行中，导航到该`C:\BTP`目录，然后`ConfigureMachineForBTP.bat`运行以配置测试计算机。 可能需要重新启动。
+7. 在 SUT 上提升的命令行中，导航到该 `C:\BTP` 目录，然后运行 `ConfigureMachineForBTP.bat` 以配置测试计算机。 可能需要重新启动。
 
 8. 请参阅[BTP 测试](testing-BTP-Tests.md)，以在包中运行测试脚本。
 
-## <a name="known-issues"></a>已知问题 ##
+## <a name="known-issues"></a>已知问题
 
 - 电源：如果设备插入到未接通电源的集线器或 VCC 无法提供5V，可能会出现间歇性故障。 在这些情况下，请使用已通电的 USB 集线器或使用9V 的 AC-DC 圆筒适配器。

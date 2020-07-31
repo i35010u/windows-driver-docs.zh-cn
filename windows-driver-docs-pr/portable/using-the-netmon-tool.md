@@ -1,46 +1,41 @@
 ---
-Description: 网络监视工具 (NetMon.exe) 是基于 Windows 的应用程序，可用于查看来自 WPD 组件的跟踪。
+Description: 网络监视器工具（NetMon.exe）是一个基于 Windows 的应用程序，可用于从 WPD 组件查看跟踪。
 title: 使用网络监视器工具
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0de82fbc512572af5f18e1524fe032adbed34a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3270b86853196087d49b90ab1d5fad869c35337
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370471"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402304"
 ---
 # <a name="using-the-network-monitor-tool"></a>使用网络监视器工具
 
+网络监视器工具（*NetMon.exe*）是一个基于 Windows 的应用程序，可用于从 WPD 组件查看跟踪。 该工具替换*WpdMon.exe* ，并提供一种在 Windows 8 中收集和查看 WPD 跟踪的新方法。
 
-网络监视器工具 (*NetMon.exe*) 是一个基于 Windows 的应用程序，可用于查看来自 WPD 组件的跟踪。 该工具将替换*WpdMon.exe* ，并提供新的收集和查看 WPD 跟踪在 Windows 8 中。
+## <a name="installing-and-configuring-netmonexe"></a>安装和配置 NetMon.exe
 
-## <a name="span-idinstallingandconfiguringnetmonexespanspan-idinstallingandconfiguringnetmonexespaninstalling-and-configuring-netmonexe"></a><span id="installing_and_configuring_netmon.exe"></span><span id="INSTALLING_AND_CONFIGURING_NETMON.EXE"></span>安装和配置 NetMon.exe
+若要安装和配置网络监视器工具，请完成以下步骤。
 
+1. 下载并安装[*NetMon.exe*](https://go.microsoft.com/fwlink/p/?linkid=248501)。
+2. 下载并安装[Windows 驱动程序工具包](https://go.microsoft.com/fwlink/p/?linkid=178709)。
+3. 通过使用*管理员*权限启动*Powershell.exe*实例并运行以下命令序列，在开发计算机上安装 WPD 分析器。
+   1. PowerShell-Set-executionpolicy RemoteSigned
+   2. cd " \\ Program Files （x86） \\ Windows 工具包 \\ 8.0 \\ Tools \\ x86 \\ 网络监视器分析程序 \\ usb"
+   3. ..\\NplAutoProfile.ps1
+   4. cd。 \\wpd
+   5. ..\\NplAutoProfile.ps1**注意**，    WPD 分析程序包含在 Windows 驱动程序工具包中。
 
-若要安装和配置网络监视工具，请完成以下步骤。
+4. 使用 "工具/选项" 对话框配置*NetMon.exe*选项：
+   1. 在 "**常规**" 选项卡中，选中 "**在框架摘要框中使用固定宽度字体**"。
+   2. 在 "**颜色规则**" 选项卡中，选择 "**打开**"，然后选择 " \\ Program Files （x86） \\ Windows 工具包 \\ 8.0 \\ Tools \\ x86 \\ 网络监视器分析程序 \\ wpd \\ wpd. nmcr"。 单击 "**打开**"，然后单击 **"确定"。**
 
-1.  下载并安装*NetMon.exe*从[此处](https://go.microsoft.com/fwlink/p/?linkid=248501)。
-2.  下载并安装 Windows 驱动程序工具包从[此处](https://go.microsoft.com/fwlink/p/?linkid=178709)。
-3.  通过启动的实例在开发计算机上安装 WPD 分析器*Powershell.exe*与*管理员*权限并运行以下命令序列。
-    1.  PowerShell -ExecutionPolicy RemoteSigned
-    2.  cd"\\Program Files (x86)\\Windows 工具包\\8.0\\工具\\x86\\网络监视器分析器\\usb"
-    3.  ..\\NplAutoProfile.ps1
-    4.  cd ..\\wpd
-    5.  ..\\NplAutoProfile.ps1**注意**  WPD 分析器包含 Windows 驱动程序工具包中。
+完成这些步骤后， *NetMon.exe*准备好检查 WPD 跟踪文件。 若要开始收集跟踪，请按照下一节收集跟踪中的说明进行操作。
 
-         
+## <a name="collecting-traces"></a>收集跟踪
 
-4.  配置*NetMon.exe*通过使用工具/选项对话框的选项：
-    1.  在中**常规**选项卡上，选中**帧摘要中的使用固定的宽度字体**框。
-    2.  在中**颜色规则**选项卡上，选择**打开**，然后选择\\Program Files (x86)\\Windows 工具包\\8.0\\工具\\x86\\网络监视器分析器\\wpd\\wpd.nmcr。 单击**开放**后, 跟**确定。**
-
-完成这些步骤后*NetMon.exe*已准备好检查 WPD 跟踪文件。 若要开始收集跟踪，请按照下一部分中，收集跟踪。
-
-## <a name="span-idcollectingtracesspanspan-idcollectingtracesspanspan-idcollectingtracesspancollecting-traces"></a><span id="Collecting_Traces"></span><span id="collecting_traces"></span><span id="COLLECTING_TRACES"></span>收集跟踪
-
-
-若要生成的跟踪，你将需要创建命令脚本。 将以下内容复制到文本文件并将其保存.cmd 文件扩展名。
+若要生成跟踪，需要创建命令脚本。 将以下内容复制到文本文件，并使用 .cmd 文件扩展名保存该文件。
 
 ```cmd
 echo off
@@ -65,7 +60,7 @@ logman update -ets WPD -p Microsoft-Windows-WPD-MTPBT          -bs 100 -nb 128 6
 logman update -ets WPD -p Microsoft-Windows-USB-USBPORT        -bs 100 -nb 128 640
 logman update -ets WPD -p Microsoft-Windows-USB-USBHUB         -bs 100 -nb 128 640
 logman update -ets WPD -p Microsoft-Windows-Kernel-IoTrace 0 2
-echo. 
+echo.
 echo Please run your scenario now and
 pause
 
@@ -73,53 +68,43 @@ pause
 logman stop -ets WPD
 ```
 
-创建命令文件后，请从提升的命令会话在 Windows 8 计算机上运行它。
+创建命令文件后，从提升的命令会话在 Windows 8 计算机上运行它。
 
-如果使用的示例命令文件的内容，跟踪将存储在文件 wpd\_trace.etl。
+如果使用了示例命令文件的内容，则跟踪将存储在文件 wpd 中 \_ 。
 
-## <a name="span-idviewingtracesspanspan-idviewingtracesspanspan-idviewingtracesspanviewing-traces"></a><span id="Viewing_Traces"></span><span id="viewing_traces"></span><span id="VIEWING_TRACES"></span>查看跟踪内容
+## <a name="viewing-traces"></a>查看跟踪
 
+若要查看跟踪，请启动*NetMon.exe*，选择 "文件"/"打开"/"捕获" 菜单，并打开 \_ 上面收集的 wpd trace .etl 文件。 打开跟踪文件时，您将看到 NetMon.exe 显示不同层的跟踪：
 
-若要查看跟踪，请启动*NetMon.exe*，选择文件 / 打开 / 捕获菜单，然后打开 wpd\_trace.etl 文件收集上面。 打开跟踪文件时将看到 NetMon.exe 在各层显示跟踪：
+- WPDAPI –通过 WPD 命令和响应显示 WPD API 级别的信息
+- WPDMTP –用 MTP 命令和响应显示 MTP 级别的信息
+- Transport （WPDMTPUS 或 WPDMTPIP 或 WPDMTPBT）–显示传输级别数据包
 
--   WPDAPI – 从 WPD API 级别有 WPD 命令和响应显示信息
--   WPDMTP – 从 MTP 级别与 MTP 命令和响应显示信息
--   传输 （WPDMTPUS 或 WPDMTPIP 或 WPDMTPBT） – 显示传输级别的数据包
+下图显示了 API 级别的 WPDAPI 请求。 请求以 MTP 请求的形式通过 WPDMTP 进行传输，然后向上冒泡。
 
-下图显示了在 API 级别的 WPDAPI 请求。 请求通过 WPDMTP 传输形式的 MTP 请求到达的传输，然后向上冒泡。
+![查看跟踪](images/framesummary1.png)
 
-![查看跟踪内容](images/framesummary1.png)
+- 传输级日志记录在数据阶段不记录实际数据。 检查在**GetDeviceInfo**或**SendObjectPropList**等命令期间发送或接收的数据集的 WPDMTP 响应消息。
+- 如果在 "**帧摘要**" 窗口中单击 WPDMTP 响应行，则相应的项将在 "**帧详细信息**" 窗口中展开。
+- 单击 "**帧详细信息**" 窗口中的 "+" 以进一步展开并浏览。 如果 MTP 操作具有 dataphase，则从设备接收的数据集将在 WPDMTP 响应项的**DataSetOfDataPhase**字段下提供。
 
--   传输级日志记录不在数据阶段期间记录的实际数据。 检查 WPDMTP 响应消息的发送或接收的命令，例如期间的数据集**GetDeviceInfo**或**SendObjectPropList**。
--   如果在 WPDMTP 响应行中单击**帧摘要**窗口中，相应的项目中会展开**帧详细信息**窗口。
--   单击中的"+"s**帧详细信息**窗口可以进一步展开和探索。 如果某个 MTP 操作具有 dataphase，从设备收到的数据集位于下**DataSetOfDataPhase** WPDMTP 响应项的字段。
+![查看跟踪](images/framedetails1.png)
 
-![查看跟踪内容](images/framedetails1.png)
+- 可以单击展开这些项，并看到 "**帧详细信息**" 窗口显示 WPD/MTP 友好消息。 编写 WPD 分析器时遵循的约定是，你将能够在标头级别查看详细信息摘要。 例如，在 GetServiceCapabilities 调用中， **DataSetOfDataPhase**字段显示在它的旁边，这是该数据集中的格式数。
+- 您可以删除 "**帧摘要**" 窗口中的 "**源**" 和 "**目标**" 列以提高清晰度
+- 单击 "**帧详细信息**" 窗口中的某个字段时，会在 "**十六进制详细信息**" 窗口中突出显示相应的值。
 
--   您可以单击以展开的项并看到**帧详细信息**窗口会显示 WPD/MTP 友好消息。 编写 WPD 分析器是您将能够查看在标头级别的详细信息的摘要时，将遵循约定。 例如，在 GetServiceCapabilities 调用中， **DataSetOfDataPhase**字段显示下一步，向其中该数据集格式的数字。
--   您可以删除**源**并**目标**中的列**帧摘要**窗口以提高清晰度
--   当您单击中的字段**帧详细信息**窗口中，相应的值中突出显示**Hex 详细信息**窗口。
+## <a name="filtering-with-netmonexe"></a>用 NetMon.exe 进行筛选
 
-## <a name="span-idfilteringwithnetmonexespanspan-idfilteringwithnetmonexespanfiltering-with-netmonexe"></a><span id="filtering_with_netmon.exe"></span><span id="FILTERING_WITH_NETMON.EXE"></span>使用 NetMon.exe 进行筛选
+网络监视器工具提供多个筛选功能。
 
+- 若要仅显示 MTP 跟踪，请在 "**显示筛选器**" 窗口中键入 **！ wpdmtp** ，并单击 "**应用**"。
+- 筛选驱动程序返回错误的情况：
+  - 在 "**显示筛选器**" 窗口中键入**wpderror！ = 0** ，然后单击 "**应用**"。
+- 可以筛选给定方案的所有方法调用。 例如，以下筛选器将检索对 GetServiceProperties 的所有调用：
 
-网络监视工具提供了多个筛选功能。
+    WPDMTP.CorrespondingCommand. MTPOpcode = = 0x9304
 
--   若要显示仅 MTP 跟踪，请键入 **！ wpdmtp**中**显示筛选器**窗口，然后单击**应用**。
--   若要筛选的情况下，驱动程序返回了一个错误：
-    -   类型**wpderror ！ = 0**中**显示筛选器**窗口，然后单击**应用**。
--   您可以筛选所有针对给定方案的方法调用。 例如，以下筛选器会检索所有 GetServiceProperties 对的调用：
+- 同样，以下筛选器将检索相同的方法调用：
 
-    WPDMTP.CorrespondingCommand.MTPOpcode == 0x9304
-
--   同样地，以下筛选器将检索相同的方法调用：
-
-    WPDMTP.CorrespondingCommand.MTPOpcode == MTP\_OPCODE\_GETSERVICEPROPERTIES
-
- 
-
- 
-
-
-
-
+    WPDMTP.CorrespondingCommand. MTPOpcode = = MTP \_ 操作码 \_ GETSERVICEPROPERTIES

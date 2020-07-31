@@ -1,15 +1,15 @@
 ---
-title: Microsoft 蓝牙测试平台
+title: Microsoft 蓝牙测试平台-HID
 description: 蓝牙测试平台（BTP） HID 测试。
 ms.assetid: b5b039bb-af0f-446f-9657-aa0e137a3437
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 62dd2fbdbbafef0e8e73534c4ef4a1ae33338599
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: 22c35e13beba1d5618712f22adab395047df37a2
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528927"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412516"
 ---
 # <a name="btp-hid-tests"></a>BTP HID 测试 #
 
@@ -23,14 +23,14 @@ BTP HID 测试将测试本地系统如何通过 BR/EDR 或 LE 与远程收音机
 
 ## <a name="running-the-hid-tests"></a>运行 HID 测试 ##
 
-导航到从中提取 BTP 包的文件夹。 它通常位于 `C:\BTP`。 在以包的版本命名的文件夹中，你将找到下面引用的脚本。 然后运行以下任一操作：
+导航到从中提取 BTP 包的文件夹。 它通常位于下 `C:\BTP` 。 在以包的版本命名的文件夹中，你将找到下面引用的脚本。 然后运行以下任一文件：
 
-- 从提升的命令提示符中 `RunHidTests.bat <radio name>` 或
-- 从提升权限的 PowerShell 控制台 `RunHidTests.ps1 <radio name>`
+- `RunHidTests.bat <radio name>`从提升的命令提示符或
+- `RunHidTests.ps1 <radio name>`从提升权限的 PowerShell 控制台
 
-可在[此处](testing-BTP-hw.md#supported-radios)找到有关可用的无线电名称参数的信息
+可以找到有关可用的无线电名称参数的信息[蓝牙测试平台支持的硬件](testing-BTP-hw.md#supported-radios)
 
-你还可以在末尾添加可选参数 `-VerboseLogs`，以获取 BTP 的内部操作的更详细的输出。
+你还可以在末尾添加可选参数 `-VerboseLogs` ，以获取 BTP 的内部操作的更详细输出。
 
 当测试开始时，12针适配器旁边的红色 LED 将打开，一旦测试中的命令已发送给无线电，就会打开。 每次测试结束时，此 LED 都将关闭。 如果在上一次测试失败时，它在下一次测试开始时处于打开状态，我们将尝试关闭电源，并重新开机，使其返回到已知状态。 如果电源周期失败，则测试将失败，因为无线电处于未知状态。
 

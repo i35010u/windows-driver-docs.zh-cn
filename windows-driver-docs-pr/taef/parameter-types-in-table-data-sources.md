@@ -4,32 +4,63 @@ description: 表数据源中的参数类型
 ms.assetid: 034F171E-716F-4795-9B07-46A109052227
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3004599456191567616a82ae54546f5ac447f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fd03548bd9009cfe6fb3208bcfc2da2a7020808
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355473"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425733"
 ---
 # <a name="parameter-types-in-table-data-sources"></a>表数据源中的参数类型
 
+下表是基于表的数据源中可用的各种参数类型的摘要，以及可用于使数据源文件在本机、托管和脚本测试中兼容的类型字符串。
 
-下表的提供摘要表中可用的各种参数类型的基于数据源和字符串的类型可用于使数据源文件兼容在纯模式、 管理和编写脚本的测试。
+>[!NOTE]
+>"String"、"int"、"bool"、"double"、" \_ \_ int64"、"无符号 \_ \_ INT64" 和 "XML" 类型可用于所有、托管、本机或脚本测试。
 
-本机管理脚本 ParameterType LanguageType ParameterType LanguageType ParameterType LanguageType"String"WEX::Common::String"String"字符串"String"或"BSTR"VT\_BSTR"int"int"Int32"或"int"int"int"VT\_INT"unsigned 的 int"unsigned int"uint"或"uint32"uint"unsigned 的 int"或"uint"VT\_UINT"bool"bool"bool"boolean"bool"bool"VT\_BOOL"双击"double"double"或"小数"十进制"double"VT\_R8"\_\_int64" \_ \_int64"\_\_int64"或"int64"int64"\_\_int64"VT\_I8"无符号\_ \_int64"无符号\_ \_int64"无符号\_ \_int64"或"uint64"uint64"无符号\_ \_int64"VT\_UI8"DWORD"DWORD"DWORD"uint"大小\_t"大小\_t"NoThrowString"WEX::Common::NoThrowString"XML"WEX::Common::String"XML"字符串"XML"VT\_BSTR
- 
+默认情况下，如果未指定类型，则假定该类型为 "String"。 请参阅每个表中的第一行。
 
-注意："String"、"int"、"bool"、"double"，"\_\_int64"，"无符号\_ \_int64"，并可以在"XML"类型中，托管，本机或编写脚本的测试。
+若要将数组类型与以上指定的任何类型一起指定，只需在该类型的末尾追加 " \[ \] "。
 
-默认情况下，如果未指定类型，则假定类型为"String"。 请参阅上面的第一个行。
+## <a name="for-native-tests"></a>对于本机测试
 
-若要使用上面指定的任何类型跟在指定数组类型，只需追加"\[\]"到类型的末尾。
+|ParameterType|LanguageType|
+|----|----|
+|类似|WEX：： Common：： String|
+|整形|int|
+|"无符号 int"|unsigned int|
+|型|bool|
+|仔细|Double|
+|" \_ \_ int64"|\_\_int64|
+|"无符号 \_ \_ int64"|无符号 \_ \_ int64|
+|DWORD|DWORD|
+|"size \_ t"|大小 \_ t|
+|"NoThrowString"|WEX：： Common：： NoThrowString|
+|XML|WEX：： Common：： String|
 
- 
+## <a name="for-managed-tests"></a>对于托管测试
 
- 
+|ParameterType|LanguageType|
+|----|----|
+|类似|string|
+|"Int32" 或 "int"|int|
+|"uint" 或 "uint32"|uint|
+|"bool" 或 "boolean"|bool|
+|"double" 或 "decimal"|Decimal|
+|" \_ \_ int64" 或 "int64"|int64|
+|"无符号 \_ \_ int64" 或 "uint64"|uint64|
+|DWORD|uint|
+|XML|string|
 
+## <a name="for-script-tests"></a>对于脚本测试
 
-
-
-
+|ParameterType|LanguageType|
+|----|----|
+|"String" 或 "BSTR"|VT \_ BSTR|
+|整形|VT \_ INT|
+|"无符号 int" 或 "uint"|VT \_ UINT|
+|型|VT \_ BOOL|
+|仔细|VT \_ R8|
+|" \_ \_ int64"|VT \_ I8|
+|"无符号 \_ \_ int64"|VT \_ UI8|
+|XML|VT \_ BSTR|

@@ -4,12 +4,12 @@ description: 创建测试证书
 ms.assetid: 4e6daa96-029c-4e1c-b483-b900cb836858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30b8d68e952c4efaa6eba5c7d3cb510f385e80f0
-ms.sourcegitcommit: 701e4a41860877cc1134e139bc0bd4a9f7270443
+ms.openlocfilehash: b7b6fb48d9afc559d50397167155d773d0da4181
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86453982"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412546"
 ---
 # <a name="creating-test-certificates"></a>创建测试证书
 
@@ -52,7 +52,10 @@ makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.
 
 有关 MakeCert 工具及其命令行参数的详细信息，请参阅[**MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)。
 
-另请参阅 Windows 驱动程序工具包（WDK）的* \\ selfsign*目录中的自述文件*Selfsign_readme.htm* 。
+> [!NOTE]
+> 创建测试证书后，使用 Certmgr.msc 工具将其添加到 "受信任的根证书颁发机构" 证书存储中。 有关详细信息，请参阅[安装测试证书](installing-test-certificates.md)。
+
+另请参阅 `Selfsign_readme.htm` `bin\selfsign` Windows 驱动程序工具包（WDK）目录中的自述文件。
 
  
 

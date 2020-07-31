@@ -1,41 +1,29 @@
 ---
-title: 运行方式
-description: 运行方式
+title: RunAs
+description: RunAs
 ms.assetid: 47183A50-513C-4bc5-8DC4-33065323F584
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 439d001b07d66c7d80b6691b7936b046ea249f39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52a8be4e9412f4c06df88ed2133d9425fed43f56
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380205"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425731"
 ---
-# <a name="runas"></a>运行方式
+# <a name="runas"></a>RunAs
 
+TAEF 提供了一种机制，用于以本地系统或在低完整性过程中执行提升、受限制的测试。
 
-TAEF 提供了一种机制来执行测试提升，受限制的作为本地系统或低完整性进程内。
+## <a name="prerequisites"></a>先决条件
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
+- [Te](te-service.md)必须在计算机上安装并运行服务，以便从非提升的进程运行提升的测试，从提升的进程运行未提升的测试，或者将测试作为本地系统运行。
 
+## <a name="runas-types"></a>RunAs 类型
 
--   [Te.Service](te-service.md)必须安装和运行在计算机上，若要从非提升过程中，从已提升进程中运行非提升测试运行提升的测试或作为本地系统运行测试。
+TAEF 支持以下 RunAs 类型，这些类型通过测试元数据或命令提示符指定。
 
-## <a name="span-idrunastypesspanspan-idrunastypesspanspan-idrunastypesspanrunas-types"></a><span id="RunAs_Types"></span><span id="runas_types"></span><span id="RUNAS_TYPES"></span>运行方式类型
-
-
-TAEF 支持通过测试元数据或命令提示符下指定以下运行方式类型。
-
--   [运行方式提升](runas-elevated.md)
--   [运行方式 LowIL](runas-lowil.md)
--   [受限制的运行方式](runas-restricted.md)
--   [运行方式系统](runas-system.md)
-
- 
-
- 
-
-
-
-
-
+- [RunAs Elevated](runas-elevated.md)
+- [RunAs LowIL](runas-lowil.md)
+- [RunAs Restricted](runas-restricted.md)
+- [RunAs System](runas-system.md)

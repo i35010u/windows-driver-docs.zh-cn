@@ -4,17 +4,17 @@ description: 数组支持数据驱动的测试示例
 ms.assetid: ECCDE395-C887-4485-8C8F-312EFCFD16A2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 362c60743ed9db0252e7e42da1f871ba1e530af9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
-ms.translationtype: HT
+ms.openlocfilehash: 80891fa370f9e172e713001cd3582ba7886965e3
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56545502"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402290"
 ---
 # <a name="array-support-data-driven-test-example"></a>数组支持数据驱动的测试示例
 
 
-本部分介绍了数据驱动测试例举的操作的一些高级的功能。 如果仍是否涵盖了基础知识，您可能开始想[简单的数据驱动示例](data-driven-testing.md)。
+本部分介绍了通过示例进行的数据驱动测试的一些高级功能。 如果你仍在介绍基础知识，你可能想要从一个[简单的数据驱动的示例](data-driven-testing.md)着手。
 
 引用的示例：
 
@@ -22,16 +22,16 @@ ms.locfileid: "56545502"
 
 -   CSharpDataDrivenArraySupportExample
 
-前面部分已经提到数据驱动测试创作和执行的基础知识。 以下列表介绍了的含义**数组**TAEF 数据驱动测试的意义上说：
+前面几节已介绍数据驱动的测试创作和执行的基本知识。 下面的列表讨论 TAEF 数据驱动的测试意义中**数组**的含义：
 
--   **数组为可变长度，将被视为单个参数的元素的同类类型集。**
--   **若要指定数组类型，您需要显式 ParameterTypes 块中指定的参数类型并添加一个数组 ="true"属性。**
+-   **数组是可变长度、同类类型的元素，这些元素将被视为单个参数。**
+-   **若要指定数组类型，需要显式指定 ParameterTypes 块中的参数类型，并添加 Array = "true" 属性。**
 
-列出了支持的参数类型[此处](parameter-types-in-table-data-sources.md)。
+[表数据源的参数类型](parameter-types-in-table-data-sources.md)中列出了支持的参数类型。
 
-如果指定任何其他数据类型，则测试将引发警告，并就会认为它是一个字符串。 对于数组，将视为数据类型为类型字符串\[\]。
+如果指定任何其他数据类型，则测试将引发警告，并将其视为一个字符串。 对于数组，数据类型将被视为字符串类型 \[ \] 。
 
-下面的示例演示如何指定该参数是一种基本类型的数组。 务必要注意的是，没有默认类型允许在数组-的情况下必须显式指定类型并设置**数组**参数为 true 的属性。
+下面的示例演示如何指定该参数是一个基本类型的数组。 需要注意的是，在数组的情况下不允许使用默认类型-必须显式指定类型并将参数的**数组**特性设置为 true。
 
 ```cpp
 1  <?xml version="1.0"?>
@@ -76,16 +76,16 @@ ms.locfileid: "56545502"
 40 </Data>
 ```
 
-检查**值**标记和**数组**上面的示例中的属性。 首先，您必须显式指定类型为**大小**并**颜色**参数，并指定这些参数是数组，通过设置**数组**属性 **，则返回 true**。 然后指定在其值 **&lt;值&gt;...&lt;/值&gt;** 标记。 可以有任意多个&lt;值&gt;标记可以根据需要指定任意数量的给定的行的参数数组中的值。
+在上面的示例中检查**值**标记和**数组**特性。 首先，必须显式指定**大小**和**颜色**参数的类型，并指定这些参数是数组，方法是将**数组**特性设置为**true**。 然后，将值指定为** &lt; ... &gt; &lt;/Value &gt; **标记。 您可以根据需要为任意数量 &lt; &gt; 的值标记指定数组中给定行的参数的任意数目的值。
 
-请注意 9、 10、 30 和 33 上面的 XML 示例中的行。 这些条目是单个值的数组元素。 换而言之，**可以指定单个值的数组元素中直接&lt;参数&gt;标记，而无需额外&lt;值&gt;标记。** 此外，**即使行中的参数具有只有一个值，它仍被视为一个元素的数组和无法否则检索。**
+请注意上面的 XML 示例中的第9、10、30和33行。 这些项是单值数组元素。 换言之，**您可以在参数标记中直接指定单个值数组元素 &lt; ， &gt; 而无需其他 &lt; 值 &gt; 标记。** 此外，**即使行中的参数只有一个值，仍会将其视为一个元素的数组，否则无法进行检索。**
 
-现在，看看 Api 的检索。
+现在，请看一下检索 Api。
 
-## <a name="span-idnativeretrievalspanspan-idnativeretrievalspanspan-idnativeretrievalspannative-retrieval"></a><span id="Native_Retrieval"></span><span id="native_retrieval"></span><span id="NATIVE_RETRIEVAL"></span>本机检索
+## <a name="span-idnative_retrievalspanspan-idnative_retrievalspanspan-idnative_retrievalspannative-retrieval"></a><span id="Native_Retrieval"></span><span id="native_retrieval"></span><span id="NATIVE_RETRIEVAL"></span>本机检索
 
 
-数组元素可以在本机代码中，通过使用来检索**WEX::TestExecution::TestDataArray&lt; &gt;** 模板类。 请参阅已发布标头 TestData.h，有关详细信息。 **TestDataArray**类管理数组元素的生存期并提供有用的 Api 来检索数组中的特定值：
+可以使用**WEX：： testexecution.completed &lt; &gt; ：： TestDataArray**模板类在本机代码中检索数组元素。 有关详细信息，请参阅发布的标头 TestData。 **TestDataArray**类管理数组元素的生存期，并提供有用的 api 来检索数组中的特定值：
 
 ```cpp
 1  namespace WEX { namespace TestExecution
@@ -106,9 +106,9 @@ ms.locfileid: "56545502"
 16 } /* namespace TestExecution */ } /* namespace WEX */
 ```
 
-可以通过调用获取数组的长度**GetSize** ，并可以通过使用运算符获取的特定元素 **\[ \]** 。
+可以通过调用**GetSize**来获取数组的长度，并使用运算符获取特定元素 **\[\]** 。
 
-下一步的示例演示如何在代码中使用这些函数。 本机的示例中的 cpp 文件，请考虑：
+下一个示例演示如何在代码中使用这些函数。 请考虑本机示例中的 cpp 文件：
 
 ```cpp
 1  TestDataArray<int> sizes;
@@ -132,11 +132,11 @@ ms.locfileid: "56545502"
 19 }
 ```
 
-首先，定义数组类型的本地 TestDataArray。 在这种情况下，**大小**是 int 类型的数组并**颜色**是 WEX::Common::String 类型的数组。 若要检索一组 API 是类似于检索的任何变量。 在调用**TestData::TryGetValue**，要求它检索参数**大小**，并将值放入本地变量**大小**。
+首先，定义数组类型的本地 TestDataArray。 在这种情况下，**大小**是 int 类型的数组，**颜色**是 WEX：： Common：： String 类型的数组。 用于检索数组的 API 与检索任何变量的 API 类似。 调用**TestData：： TryGetValue**，请求它检索参数**大小**，并将该值放入本地变量**大小**。
 
-**请注意，尝试检索非数组指定到一个数组的参数将导致错误，则测试失败。同样，尝试检索到非数组变量中，一个数组，即使数组只有一个元素，将导致错误。**
+**请注意，尝试将未指定的非数组指定参数检索到数组中会导致错误并导致测试失败。同样，即使数组只包含一个元素，也会尝试将数组检索到非数组变量中，这会导致错误。**
 
-如果数组参数中未指定 XML 行根本，尝试检索参数失败。 例如，如果某行查看，如：
+如果根本没有在 XML 行中指定数组参数，则尝试检索参数会失败。 例如，如果某行如下所示：
 
 ```cpp
        <Row>
@@ -147,9 +147,9 @@ ms.locfileid: "56545502"
        </Row>
 ```
 
-请注意，参数**大小**，它数组中，未指定的行中。 如果您尝试检索**大小**代码，从 API 调用将返回失败返回代码。 您可以使用此定义默认数组值。
+请注意，行中未指定参数**大小**，即数组。 如果尝试从代码中检索**大小**，则 API 调用将返回失败的返回代码。 您可以使用此定义一个默认的数组值。
 
-但是，通过指定一个空的参数标记可以指定一个空数组**大小**，如下所示：
+另一方面，可以指定一个空数组，方法是指定**大小**为的空参数标记，如下所示：
 
 ```cpp
        <Row>
@@ -161,12 +161,12 @@ ms.locfileid: "56545502"
        </Row>
 ```
 
-在这种情况下，尝试检索**大小**会成功，但数组大小将为 0。
+在这种情况下，尝试检索**大小**会成功，但数组大小为0。
 
-## <a name="span-idmanagedretrievalspanspan-idmanagedretrievalspanspan-idmanagedretrievalspanmanaged-retrieval"></a><span id="Managed_Retrieval"></span><span id="managed_retrieval"></span><span id="MANAGED_RETRIEVAL"></span>托管的检索
+## <a name="span-idmanaged_retrievalspanspan-idmanaged_retrievalspanspan-idmanaged_retrievalspanmanaged-retrieval"></a><span id="Managed_Retrieval"></span><span id="managed_retrieval"></span><span id="MANAGED_RETRIEVAL"></span>托管检索
 
 
-托管的检索像以前一样仍几乎相同-只有你需要确保检索到适当的数组类型的本地变量的值。 请考虑下面的托管的示例：
+托管检索与之前完全相同，需要确保将值检索到适当数组类型的局部变量中。 请考虑以下托管示例：
 
 ```cpp
 1  Int32[] sizes = m_testContext.DataRow["Size"] as Int32[];
@@ -183,7 +183,7 @@ ms.locfileid: "56545502"
 12 }
 ```
 
-类似于本机检索，如果数组参数未指定所有尝试检索的 XML 行中该参数返回类型的对象**System.DBNull**。 例如，如果某行查看，如：
+与本机检索类似，如果根本没有在 XML 行中指定数组参数，则尝试检索参数将返回类型为**DBNull**的对象。 例如，如果某行如下所示：
 
 ```cpp
        <Row>
@@ -194,9 +194,9 @@ ms.locfileid: "56545502"
        </Row>
 ```
 
-请注意，参数**大小**，它数组中，未指定的行中。 如果您尝试检索**大小**代码，从 API 调用将返回类型的对象**DBNull**。 如果表中有任何此类值，你可能想要它们从上下文转换为对象首先检索和比较针对对象的类型后采取适当步骤**typeof(System.DBNull)** 或您的类型exepecting 它为。
+请注意，行中未指定参数**大小**，即数组。 如果尝试从代码中检索**大小**，则 API 调用会返回类型为**DBNull**的对象。 如果表中有任何此类值，则可能需要先将它们从上下文中检索到对象，然后在将对象类型与**typeof （exepecting）** 或要将其转换为的类型进行比较之后采取适当的措施。
 
-但是，您可以通过指定一个空的参数标记指定一个空数组**大小**，如下所示：
+另一方面，你可以指定一个空数组，方法是指定**大小**为的空参数标记，如下所示：
 
 ```cpp
        <Row>
@@ -208,14 +208,14 @@ ms.locfileid: "56545502"
        </Row>
 ```
 
-在这种情况下，尝试检索**大小**succeessfully 返回类型的空数组**System.Int32\[\]** 。
+在这种情况下，尝试检索**大小**succeessfully 将返回类型为**system.object \[ \] **的空数组。
 
-## <a name="span-idexecutionspanspan-idexecutionspanspan-idexecutionspanexecution"></a><span id="Execution"></span><span id="execution"></span><span id="EXECUTION"></span>执行
+## <a name="span-idexecutionspanspan-idexecutionspanspan-idexecutionspanexecution"></a><span id="Execution"></span><span id="execution"></span><span id="EXECUTION"></span>操作
 
 
-执行数据驱动测试支持数组是从执行任何其他数据驱动的测试没有什么不同。 仅要点的区别是，**在数组数据参数，而不是"等于"表示"包含"的情况下的选择条件更改 sematics。**
+执行支持数组的数据驱动的测试与执行任何其他数据驱动的测试没有区别。 唯一的关键点在于，**在数组数据参数的情况下，选择条件的 sematics 会更改为表示 "contains" 而不是 "等于"。**
 
-若要查看这意味着，假设你想要选择所有数据驱动测试位置**颜色**数组包含值**白色**。 若要执行此操作，运行：
+若要查看这意味着什么，假设要选择**颜色**数组包含值**白色**的所有数据驱动的测试。 若要执行此操作，请运行：
 
 ``` syntax
 TE.exe Examples\CSharp.DataDriven.Example.dll /select:"@Name='*Array* And @Data:Color='White'"
@@ -225,9 +225,9 @@ TE.exe Examples\CSharp.DataDriven.Example.dll /select:"@Name='*Array* And @Data:
 TE.exe Examples\CPP.DataDriven.Example.dll /select:"@Name='*Array* And @Data:Color='White'"
 ```
 
-此命令将运行数据驱动的测试具有索引\#0 和\#3 在两个以上的方案。
+\#在上述两种情况下，此命令将运行索引为0和3的数据驱动的测试 \# 。
 
-您可以生成更复杂查询的说，例如，在其中选择仅测试**颜色**数组包含**白色**并**颜色**数组包含**黑色**，这会仅选择数据驱动测试具有索引\#3。 作为一个练习，请尝试编写并执行此查询自己。
+您可以生成更复杂的查询，例如，仅选择**color**数组包含**白色**的测试，**颜色**数组包含**黑色**，这只会选择带有索引3的数据驱动的测试 \# 。 作为练习，尝试自行编写和执行此查询。
 
  
 

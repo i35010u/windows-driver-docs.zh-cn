@@ -1,17 +1,17 @@
 ---
 title: Microsoft 蓝牙测试平台
-description: BTP 测试概述。
+description: 蓝牙测试平台（BTP）测试类别的列表
 ms.assetid: b5b039bb-af0f-446f-9657-aa0e137a3437
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d5206a7e0d875d95bfb759a6955a5178523e8749
-ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
+ms.openlocfilehash: e5f7acd5b26eb869ebcd38052086e0b61ced5a16
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82138634"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412530"
 ---
-# <a name="currently-supported-btp-tests"></a>当前支持的 BTP 测试 #
+# <a name="currently-supported-btp-tests"></a>当前支持的 BTP 测试
 
 这些是当前支持的测试。 其他测试是计划内的和正在开发的。 当更新可用时，此处将列出这些更新。
 

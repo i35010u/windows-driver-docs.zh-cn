@@ -4,16 +4,16 @@ description: 介绍间接显示驱动程序的调试技术
 ms.assetid: a343812d-03d0-4a95-9c36-7e6b5a404088
 ms.date: 07/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 632e4c8e00de634fd9a9644dfd82e8d2fc1b9a7a
-ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
+ms.openlocfilehash: 8ae9551a699e3015718bcffeca075e4a6ffd4166
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86459213"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402288"
 ---
 # <a name="debugging-indirect-display-drivers"></a>调试间接显示驱动程序
 
-间接显示驱动程序（IDDs）是 UMDF 驱动程序，因此，UMDF 调试文档是一个很好的[起点（这](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)是该部分中的页面示例）。  本页提供间接显示特定的调试信息。
+间接显示驱动程序（IDDs）是一种 UMDF 驱动程序，因此，UMDF 调试文档（如[确定导致 UMDF 驱动程序无法加载或启动 Umdf 设备](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)时）是一个很好的起点。  本页提供间接显示特定的调试信息。
 
 ## <a name="registry-control"></a>注册表控件
 
