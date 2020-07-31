@@ -1834,6 +1834,8 @@
                       href: color-coding-in-the-trace-tree-pane.md
                     - name: 跟踪树窗格中的操作
                       href: trace-tree-pane-actions.md
+                    - name: 保存缺陷跟踪
+                      href: saving-defect-traces.md
                 - name: 源代码窗格
                   items:
                     - name: 源代码窗格

@@ -108,6 +108,10 @@
       href: windbg-scripting-preview.md
     - name: WinDbg 预览版 - 说明、命令、存储和源菜单
       href: windbg-notes-etc-preview.md
+    - name: WinDbg 预览版基础知识
+      items:
+        - name: WinDbg 预览版基础知识
+          href: windbg-preview-basics.md
     - name: 时间旅行调试
       items:
         - name: 时光穿越调试 - 概述
@@ -156,6 +160,10 @@
               href: time-travel-debugging-range-objects.md
             - name: 时光穿越调试 - 线程对象
               href: time-travel-debugging-thread-objects.md
+            - name: 时光穿越调试 - 模块对象
+              href: time-travel-debugging-module-objects.md
+            - name: 时光穿越调试 - 集合对象
+              href: time-travel-debugging-collection-objects.md
         - name: 时光穿越调试 - JavaScript 自动化
           href: time-travel-debugging-javascript-automation.md
 - name: 调试资源
@@ -3751,7 +3759,7 @@
             - name: '!ppmperfpolicy'
               href: '-ppmperfpolicy.md'
             - name: '!ppmsettings'
-              href: '-ppmstate.md'
+              href: '-ppmsettings.md'
             - name: '!ppmstate'
               href: '-ppmstate.md'
             - name: '!prcb'

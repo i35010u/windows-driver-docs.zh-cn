@@ -1988,6 +1988,8 @@
                   href: receiving-network-data-with-ipsec-offload-version-2.md
             - name: 卸载大型 TCP 数据包的段
               href: offloading-the-segmentation-of-large-tcp-packets.md
+            - name: UDP 分段卸载 (USO)
+              href: udp-segmentation-offload-uso-.md
         - name: 连接卸载
           items:
             - name: 连接卸载概述
