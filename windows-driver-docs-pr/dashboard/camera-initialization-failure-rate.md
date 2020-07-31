@@ -4,12 +4,12 @@ description: 该度量将 7 天滑动窗口中的遥测数据聚合为相机设�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4410cd826e6735d7b5ad57033f5d06e3a3d3d83c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: bb35618cdca31d30820e9c4d60afe10457eeb6b6
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017083"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425726"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>相机初始化失败次数百分比
 
@@ -21,12 +21,12 @@ ms.locfileid: "71017083"
 
 |属性|值|
 |----|----|
-|受众 |Standard|
-|时间段 |7 天滑动窗口|
-|度量标准 |实例的聚合|
-|最小总体数量 |10 个实例|
-|通过标准 |<= 5% 的实例导致初始化失败|
-|度量 ID |16998810|
+|受众|Standard|
+|时间段|7 天滑动窗口|
+|度量标准|实例的聚合|
+|最小总体数量|10 个实例|
+|通过标准|<= 5% 的实例导致初始化失败|
+|度量 ID|16998810|
 
 ## <a name="calculation"></a>计算
 
@@ -36,16 +36,18 @@ ms.locfileid: "71017083"
 
 2. 实例类型：
 
-   a. 成功的初始化事件 = 0% 失败 
+   a. 成功的初始化事件 = 0% 失败
 
-       i. MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0
+     i. `MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0`
 
-   b. 失败的初始化事件 = 100% 失败 
+   b. 失败的初始化事件 = 100% 失败
 
-         i. MF_E_NO_CAPTURE_DEVICES_AVAILABLE
-        ii. E_ACCESSDENIED
-       iii. ERROR_BAD_UNIT
+     i. `MF_E_NO_CAPTURE_DEVICES_AVAILABLE`
+
+     ii. `E_ACCESSDENIED`
+
+     iii. `ERROR_BAD_UNIT`
 
 ### <a name="final-calculation"></a>最终计算
 
-相机初始化失败率 = 平均值（所有实例） 
+相机初始化失败率 = 平均值（所有实例）

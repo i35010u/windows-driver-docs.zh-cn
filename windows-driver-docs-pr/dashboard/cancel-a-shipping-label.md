@@ -4,12 +4,12 @@ description: 在 Microsoft 硬件 API 中使用此方法可请求取消处于“
 ms.topic: article
 ms.date: 11/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7532f0275676300aa320449823c62dd70db21333
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d40a2be514185ab4470f5c8abe854cf83de26c7b
+ms.sourcegitcommit: 3a2a28d1e7f0dfd799b7b87f02bc2bea9129c10d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072168"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87335383"
 ---
 # <a name="cancel-a-shipping-label"></a>取消发货标签
 
@@ -33,16 +33,16 @@ ms.locfileid: "77072168"
 
 | Header | 类型 | 说明 |
 |:--|:--|:--|
-| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** \<token\>。 |
+| Authorization | 字符串 | 必需。 Azure AD 访问令牌的格式为 Bearer \<token\>。 |
 | 接受 | 字符串 | 可选。 指定内容的类型。 允许的值是“application/json” |
 
 ### <a name="request-parameters"></a>请求参数
 
-请勿为此方法提供请求参数。 
+请勿为此方法提供请求参数。
 
 ### <a name="request-body"></a>请求正文
 
-请勿为此方法提供请求正文。 
+请勿为此方法提供请求正文。
 
 ### <a name="request-examples"></a>请求示例
 
