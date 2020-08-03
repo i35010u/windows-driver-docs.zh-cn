@@ -3,12 +3,12 @@ Description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a623c332d791f450810b230faa4de07b2551c2be
-ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
+ms.openlocfilehash: 04049fa103cd92251c84c52408f06e74c5f81260
+ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87412548"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87479133"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -91,15 +91,19 @@ ms.locfileid: "87412548"
   2. 在主计算机上，在 Visual Studio 中打开你的解决方案。
   3. 在 main 中，.cpp 将此行添加到 OpenDevice 调用之前。
 
-        `system ("pause")`
+  ```syntax
+  system ("pause")
+  ```
 
-        该行会使应用程序在启动时暂停。 这对于远程调试非常有用。
-
+  该行会使应用程序在启动时暂停。 这对于远程调试非常有用。
+  
   4. 在 pch 中包括以下行：
 
-        `#include <cstdlib>`
+  ```syntax
+  #include <cstdlib>
+  ```
 
-        `system()`上一步中的调用需要此 include 语句。
+  `system()`上一步中的调用需要此 include 语句。
 
   5. 在 "**解决方案资源管理器**" 窗口中，右键单击 "Application1 包"，然后选择 "**属性**"。
   6. 在 " **USB Application1 包属性页**" 窗口的左窗格中，导航到 "**配置属性 &gt; 驱动程序安装 &gt; 部署**"，如以下屏幕截图所示。

@@ -11,12 +11,12 @@ keywords:
 - 兼容 Id WDK 设备安装
 ms.date: 05/29/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 95522d53487e2f9dc182e88c9797573082393b08
-ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
+ms.openlocfilehash: 1da5bb7750b2a8a24e322faf6a705fb80d987fb3
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86972158"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473759"
 ---
 # <a name="identifiers-for-pci-devices"></a>PCI 设备的标识符
 
@@ -41,23 +41,23 @@ PCI\\VEN_v(4)&DEV_d(4)&CC_c(2)s(2)
 
 其中：
 
--   v （4）是由四个字符组成的 PCI SIG 为设备供应商提供的标识符，其中，术语 "*设备*" （遵循 PCI SIG 使用）指的是特定 pci 芯片。
+- v （4）是由四个字符组成的 PCI SIG 为设备供应商提供的标识符，其中，术语 "*设备*" （遵循 PCI SIG 使用）指的是特定 pci 芯片。
 
--   d （4）是设备的由四个字符提供商定义的标识符。
+- d （4）是设备的由四个字符提供商定义的标识符。
 
--   s （4）是由四个字符提供商定义的子系统标识符。
+- s （4）是由四个字符提供商定义的子系统标识符。
 
--   n （4）是由四个字符组成的 PCI SIG 为子系统供应商指定的标识符。
+- n （4）是由四个字符组成的 PCI SIG 为子系统供应商指定的标识符。
 
--   r （2）是两字符的修订号。
+- r （2）是两字符的修订号。
 
--   c （2）是来自配置空间的双字符基类代码。
+- c （2）是来自配置空间的双字符基类代码。
 
--   s （2）是两字符子类代码。
+- s （2）是两字符子类代码。
 
--   p （2）是编程接口代码。
+- p （2）是编程接口代码。
 
-下面是便携计算机上显示适配器的硬件 ID 的示例。 此硬件 ID 的格式为 PCI \\ VEN_v （4） &DEV_d （4） &SUBSYS_s &（2）。
+下面是便携计算机上显示适配器的硬件 ID 的示例。 此硬件 ID 的格式为 PCI \\ VEN_v （4） &DEV_d （4） &SUBSYS_s （4） n （4） &REV_r （2）：
 
 `PCI\\VEN_102C&DEV_00E0&SUBSYS_00000000&REV_04`
 
@@ -65,7 +65,8 @@ PCI\\VEN_v(4)&DEV_d(4)&CC_c(2)s(2)
 
 `PCI\\VEN_102C&DEV_00E0&SUBSYS_00000000`
 
-**注意**在 Windows 10 中，以前出现在 "硬件 Id" 列表中的一些 Id 现在会显示在兼容 Id 列表中。
+>[!NOTE]
+>在 Windows 10 中，以前出现在 "硬件 Id" 列表中的一些 Id 现在会显示在兼容 Id 列表中。
 
 ## <a name="reporting-compatible-ids"></a>报告兼容 Id
 
@@ -93,11 +94,11 @@ PCI\\CC_c(2)s(2)\`
 
 其中：
 
--   兼容 ID 中以下字段的定义与硬件 ID 中使用的相应字段的定义相同： *v （4）*、 *r （2）*、 *c （2）*、 *s （2）* 和*p （2）*。
+- 兼容 ID 中以下字段的定义与硬件 ID 中使用的相应字段的定义相同： *v （4）*、 *r （2）*、 *c （2）*、 *s （2）* 和*p （2）*。
 
--   "DEV_*d （4）* " 字段中的*d （4* ）是设备的由四个字符提供商定义的标识符。
+- "DEV_*d （4）* " 字段中的*d （4* ）是设备的由四个字符提供商定义的标识符。
 
--   在 "DT_*d （4）* " 字段中， *d （4* ）是由四个字符表示的设备类型，如 PCI Express 基准规范中所指定。
+- 在 "DT_*d （4）* " 字段中， *d （4* ）是由四个字符表示的设备类型，如 PCI Express 基准规范中所指定。
 
 对于便携式计算机上显示适配器的示例，以下任何兼容 Id 都将与该适配器的 INF 文件中的信息相匹配：
 
@@ -122,11 +123,3 @@ PCI\\CC_030000
 
 PCI\\CC_0300
 ```
- 
-
- 
-
-
-
-
-

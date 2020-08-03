@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2d0d800e5ab51fe0de76f7b077a3bd7de4dcca9c
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 53d09037d633a6003b9a5471a5f9ecb5350e017f
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243028"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473757"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>将 NDIS 微型端口驱动程序移植到 NetAdapterCx
 
@@ -24,10 +24,10 @@ ms.locfileid: "79243028"
 
 在 Visual Studio 中打开现有的 NDIS 微型端口驱动程序项目，并使用以下步骤将其转换为 KMDF 项目。
 
-1. 首先，导航到 "**配置属性-> 驱动程序设置-> 驱动程序模型**"，并验证 "**驱动程序类型**" 是否设置为 "KMDF"，并且 " **KMDF 版本**" 和 " **KMDF" 版本**都为空。
-2. 在项目属性中，打开 "**驱动程序设置-> 网络适配器驱动程序**"，并将**网络适配器类扩展的链接**设置为 **"是"** 。
-   * 如果转换后的驱动程序仍将调用 NDIS Api，请继续链接 `ndis.lib`。
-3. 删除 NDIS 预处理器宏，如 `NDIS650_MINIPORT=1`。
+1. 首先，导航到 "**配置属性->驱动程序设置->驱动程序模型**"，并验证 "**驱动程序类型**" 是否设置为 "KMDF"，并且 " **KMDF 版本**" 和 " **KMDF" 版本**都为空。
+2. 在项目属性中，打开 "**驱动程序设置->网络适配器驱动程序**"，并将**网络适配器类扩展的链接**设置为 **"是"**。
+   * 如果转换后的驱动程序仍将调用 NDIS Api，请继续与链接 `ndis.lib` 。
+3. 删除 NDIS 预处理器宏，如 `NDIS650_MINIPORT=1` 。
 4. 将以下标头添加到每个源文件（或添加到公共/预编译头）：
   
    ```C++
@@ -93,7 +93,7 @@ if (!NT_SUCCESS(status)) {
 
 ## <a name="reading-configuration-from-the-registry"></a>正在从注册表读取配置
 
-接下来，将对[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)和相关函数的调用替换为 `NetConfiguration*` 方法。 `NetConfiguration*` 方法与 `Ndis*Configuration*` 函数相似，无需重构代码。
+接下来，将对[**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)和相关函数的调用替换为 `NetConfiguration*` 方法。 这些 `NetConfiguration*` 方法类似于 `Ndis*Configuration*` 函数，无需重构代码。
 
 有关详细信息，请参阅[访问配置信息](accessing-configuration-information.md)。
 
@@ -105,7 +105,7 @@ if (!NT_SUCCESS(status)) {
 
 最简单的方法是通过从客户端的[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调调用[**WdfControlDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)来创建控制设备对象。 有关详细信息，请参阅[使用控制设备对象](../wdf/using-control-device-objects.md)。
 
-但是，建议的解决方法是创建设备接口，如[使用设备接口](using-device-interfaces.md)中所述。
+但是，建议的解决方法是创建设备接口，如[使用设备接口](../wdf/using-device-interfaces.md)中所述。
 
 ## <a name="finishing-device-initialization"></a>完成设备初始化
 
@@ -154,7 +154,7 @@ WDF 客户端驱动程序不会收到电源状态更改的[**OID_PNP_SET_POWER**
 * [*EVT_RXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)回调类似于 NDIS 1.x 中[**MINIPORT_RETURN_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists) 。
 * [*EVT_TXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nc-nettxqueue-evt_txqueue_advance)回调类似于 NDIS 1.x 中[**MINIPORT_SEND_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 。
 
-## <a name="device-removal"></a>删除设备
+## <a name="device-removal"></a>设备删除
 
 WDF NIC 驱动程序的设备删除与任何其他 WDF 设备驱动程序中的相同，无需进行网络特定的处理。 网络数据路径首先关闭，然后是 WDF 设备。 有关 WDF 关闭的信息，请参阅[断开 a 设备的用户](../wdf/a-user-unplugs-a-device.md)。
 
@@ -166,7 +166,7 @@ WDF 客户端无需删除它创建的 Get-netadapter 或任何 OID 和数据路�
 
 ## <a name="ndis-wdf-function-equivalents"></a>NDIS-WDF 函数等效项
 
-大多数 `NdisXxx` 函数可以替换为 WDF 等效项。 通常，您应该会发现您需要从 `NDIS.SYS`导入的功能非常少。
+大多数 `NdisXxx` 函数可以替换为 WDF 等效项。 通常，您应该会发现您需要从中导入的功能非常少 `NDIS.SYS` 。
 
 有关函数等效项的列表，请参阅[NDIS-WDF 函数等效项](ndis-wdf-function-equivalents.md)。
 

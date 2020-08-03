@@ -8,61 +8,47 @@ keywords:
 - COD_Type 子项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08e9f13edd8d2e5e831f46f91baa135ad086c6e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5298f160a02d80ff6d04a61ce374e8130d2fb09
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364661"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473723"
 ---
 # <a name="bluetooth-registry-entries"></a>蓝牙注册表项
 
+本部分介绍适用于蓝牙驱动程序堆栈的设备类（货到日志）注册表子项和条目。
 
-本部分介绍的类的设备 (CoD) 注册表子项和适用于蓝牙驱动程序堆栈的条目。
+## <a name="cod-major-and-cod-type-values"></a>"带货货的主要" 和 "货货类型" 值
 
-### <a name="span-idcodtypesubkeyspanspan-idcodtypesubkeyspancod-major-and-cod-type-values"></a><span id="cod_type_subkey"></span><span id="COD_TYPE_SUBKEY"></span>"COD 主要"和"COD 类型"值
+原始设备制造商（Oem）可以使用 "**货到付款**" 的 "主要" 和 "**货货" 类型**值来指示已启用 Bluetooth 的 Windows 设备的设备类。 Bluetooth 类安装程序根据这些注册表值设置设备类后，远程设备可以确定它是连接到便携式计算机、台式计算机、电话等。
 
-原始设备制造商 (Oem) 可以使用**COD 主要**并**COD 类型**值以指示已启用蓝牙的 Windows 设备的设备类。 蓝牙类安装程序将根据这些注册表值的设备类设置后，远程设备可以确定是否连接到一台便携式计算机、 台式计算机，phone 等。
+指向**货到货**到货到货货货的**类型**值的注册表路径为：
 
-注册表路径**COD 主要**并**COD 类型**值是：
+HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ Services \\ BTHPORT \\ 参数
 
-HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\BTHPORT\\Parameters
+请注意，设置这些值将更改系统的设备的蓝牙类，而不考虑可能附加的蓝牙收音机。 你可以将**货到货**到货**到货到**货到货到货 `DWORD` 到的[Bluetooth SIG Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)
 
-请注意，设置这些值更改为系统，可能无论哪个附加蓝牙无线设备蓝牙类。 可以设置**COD 主要**并**COD 类型**到`DWORD`设备类定义的值中的字段值[蓝牙 SIG 分配数字](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)。
+蓝牙配置文件驱动程序 BthPort.sys，读取 "**货至货到货货货货货货货货货货货货货****货"** 这些值仅影响 `COD_MAJOR_XXX` `COD_XXX_MINOR_XXX` 设备类的和位。 `COD_SERVICE_XXX`此注册表项不影响位。
 
-蓝牙配置文件驱动程序 BthPort.sys，读取**COD 主要**并**COD 类型**值，以确定如何对设备查询响应。 这些值只会影响`COD_MAJOR_XXX`和`COD_XXX_MINOR_XXX`设备类的位。 `COD_SERVICE_XXX` Bits 不受此注册表项。
+如果 "**货到货货货货货货货货货货货货货货货****的值"** 或设置为无效值，则蓝牙类安装程序会将这些值分别设置为 `COD_MAJOR_COMPUTER` 和 `COD_COMPUTER_MINOR_DESKTOP` 。
 
-如果**COD 主要**并**COD 类型**值未设置或者被设置为无效值、 蓝牙类安装程序会将这些值设置为`COD_MAJOR_COMPUTER`和`COD_COMPUTER_MINOR_DESKTOP`分别。
+## <a name="scanning-parameterization-settings"></a>扫描参数化设置
 
-### <a name="span-idscanningparameterizationsettingsspanspan-idscanningparameterizationsettingsspanspan-idscanningparameterizationsettingsspanscanning-parameterization-settings"></a><span id="Scanning_Parameterization_Settings"></span><span id="scanning_parameterization_settings"></span><span id="SCANNING_PARAMETERIZATION_SETTINGS"></span>扫描参数化设置
+配置文件驱动程序可以在其配置文件驱动程序的 INF 文件中指定其设备的扫描参数设置，以根据给定设备方案的特定需求进行定制。
 
-配置文件驱动程序可以在其配置文件驱动程序的 INF 文件，以根据给定的设备方案的特定需求来定制指定扫描参数设置为其设备。
+可以通过将下面列出的一个或多个以下扫描参数提供给 AddReg 指令来覆盖默认系统扫描参数。 有关如何使用此指令的详细信息，请参阅[INF AddReg 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
 
-您可以重写默认系统扫描参数通过提供一个或多个以下的扫描参数下面列出到 AddReg 指令。 如何使用此指令的详细信息可在[INF AddReg 指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+| 值名称                | 类型          | 最小值 | 最大值                                                                      |
+|----|----|----|----|
+| HighDutyCycleScanWindow   | DWORD 0x10001 | 0x0004    | 0x4000. 应等于或小于 HighDutyCycleScanInterval 参数 |
+| HighDutyCycleScanInterval | DWORD 0x10001 | 0x0004    | 0x4000                                                                         |
+| LowDutyCycleScanWindow    | DWORD 0x10001 | 0x0004    | 0x4000. 应小于 LowDutyCycleScanInterval 参数           |
+| LowDutyCycleScanInterval  | DWORD 0x10001 | 0x0004    | 0x4000                                                                         |
+| LinkSupervisionTimeout    | DWORD 0x10001 | 0x000A    | 0x0C80                                                                         |
+| ConnectionLatency         | DWORD 0x10001 | 0x0000    | 0x01F4                                                                         |
+| ConnectionIntervalMin     | DWORD 0x10001 | 0x0006    | 0x0C80. 应小于或等于 ConnectionIntervalMax                     |
+| ConnectionIntervalMax     | DWORD 0x10001 | 0x0006    | 0x0C80                                                                         |
 
-|                           |               |           |                                                                                |
-|---------------------------|---------------|-----------|--------------------------------------------------------------------------------|
-| 值名称                | 在任务栏的搜索框中键入          | 最小值 | 最大值                                                                      |
-| HighDutyCycleScanWindow   | DWORD 0X10001 | 0x0004    | 0x4000。 等于或小于 HighDutyCycleScanInterval 参数应为 |
-| HighDutyCycleScanInterval | DWORD 0X10001 | 0x0004    | 0x4000                                                                         |
-| LowDutyCycleScanWindow    | DWORD 0X10001 | 0x0004    | 0x4000。 应小于 LowDutyCycleScanInterval 参数           |
-| LowDutyCycleScanInterval  | DWORD 0X10001 | 0x0004    | 0x4000                                                                         |
-| LinkSupervisionTimeout    | DWORD 0X10001 | 0x000A    | 0x0C80                                                                         |
-| ConnectionLatency         | DWORD 0X10001 | 0x0000    | 0x01F4                                                                         |
-| ConnectionIntervalMin     | DWORD 0X10001 | 0x0006    | 0x0C80. 应为小于或等于 ConnectionIntervalMax                     |
-| ConnectionIntervalMax     | DWORD 0X10001 | 0x0006    | 0x0C80                                                                         |
-
- 
-
-**请注意**  对扫描参数的更改对性能的蓝牙驱动产生全局影响。 不允许对以编程方式扫描参数进行更改。 使用低占空比扫描太过积极的参数可以不只产生负面影响到可用的带宽用于其他蓝牙低能耗的连接，而且还可以为蓝牙 b R/edr 规范连接。
-
- 
-
- 
-
- 
-
-
-
-
-
+>[!NOTE]
+>更改扫描参数会对蓝牙堆栈的性能产生全局影响。 不允许以编程方式对扫描参数进行更改。 使用太低的低责任循环扫描参数不仅会对其他蓝牙低能耗连接的可用带宽产生负面影响，还会对蓝牙 BR/EDR 连接产生负面影响。
