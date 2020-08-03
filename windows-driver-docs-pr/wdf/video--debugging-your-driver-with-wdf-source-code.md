@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 735D71FC-0B35-4C79-8C0A-F3C762095C06
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd9703ca9adebf2a77f8bc6c9c5ec020db70180
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: d0e6196a03009c62caee5d4220c26f0188951507
+ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141190"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87479121"
 ---
 # <a name="video-debugging-your-driver-with-wdf-source-code"></a>视频：使用 WDF 源代码调试驱动程序
 
@@ -74,8 +74,6 @@ WDF 源调试允许无需下载 WDF 源代码即可随意单步执行框架代�
 
 请确保已启用[源模式下的调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-in-source-mode)。 打开 "调试" 菜单，确认已选中 "源" 模式。
 
-
- 
 ### <a name="clear-stale-symbols-cache"></a>清除过时符号缓存
 
 如果以前为同一个 Windows 目标调试了 WDF 驱动程序，则可能使用本地缓存的不是源索引的 WDF 符号。 可以通过！ lmi 命令进行检查：
@@ -110,6 +108,3 @@ C:\...\Wdf01000.pdb\...\Wdf01000.pdb
 ```
 
 您可以使用 WDF 源级调试来实现实时调试和分析故障转储，还可以通过设置核心函数（如 IRP 调度程序和浏览后续代码路径）上的断点来了解有关框架内部的详细信息。
-
-
-
