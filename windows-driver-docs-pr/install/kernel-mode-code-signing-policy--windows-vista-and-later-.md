@@ -13,12 +13,12 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa60068e0cca799467ad4fa2148dc44c3a98cd0
-ms.sourcegitcommit: f6aebb32c045b9da7da4bf9b3fd8d6fad05e9deb
+ms.openlocfilehash: 8c93477e4a4604041473fc3931f746e4b80fd7db
+ms.sourcegitcommit: a59b63e84e6790af4c17b232f11a2f50f875c97a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114632"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87527886"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
@@ -63,7 +63,7 @@ ms.locfileid: "77114632"
 
 请注意，安全启动不适用于 Windows Vista 和 Windows 7。
 
-|适用范围：|Windows Vista、Windows 7;Windows 8 +，并关闭安全启动|Windows 8、Windows 8.1、Windows 10、版本1507、1511、安全启动|Windows 10 版本1607、1703、1709、安全启动|Windows 10，版本 1803 +，启用安全启动|
+|适用于：|Windows Vista、Windows 7;Windows 8 +，并关闭安全启动|Windows 8、Windows 8.1、Windows 10、版本1507、1511、安全启动|Windows 10 版本1607、1703、1709、安全启动|Windows 10，版本 1803 +，启用安全启动|
 |--- |--- |--- |--- |--- |
 |**架构**|仅限64位，无需32位的签名|64位，32位|64位，32位|64位，32位|
 |**需要签名：**|嵌入文件或目录文件|嵌入文件或目录文件|嵌入文件或目录文件|嵌入文件或目录文件|
@@ -74,10 +74,23 @@ ms.locfileid: "77114632"
 
 有关对 ELAM 驱动程序进行签名的信息，请参阅[提前启动反恶意软件](https://docs.microsoft.com/windows/desktop/w8cookbook/secured-boot)。
 
+## <a name="signing-a-driver-for-internal-distribution-only"></a>仅针对内部分发对驱动程序进行签名
+
+在某些情况下，可能需要在内部（而不是通过 Windows 更新）在内部分发驱动程序。  若要执行此操作而无需运行它的计算机处于测试模式，请使用以下过程：
+
+1. [注册硬件开发人员中心](https://docs.microsoft.com/windows-hardware/drivers/dashboard/register-for-the-hardware-program)。
+2. 查看[硬件开发人员中心常见问题解答]((https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-dashboard-faq))并签署相应协议。
+3. 上传 codesign 证书。
+4. 使用非 EV codesign 证书在本地对驱动程序进行签名。
+5. 包中的驱动程序，并使用上面的 codesign 证书对 CAB 进行签名。
+6. 将 CAB 提交给硬件开发人员中心进行签名。
+7. 如果提交已获批准，则硬件开发人员中心将使用 Microsoft 签名返回驱动程序。
+8. 内部分发驱动程序。
+
 ## <a name="see-also"></a>另请参阅
 
 * [在开发和测试过程中安装未签名的驱动程序包](installing-an-unsigned-driver-during-development-and-test.md)
-* [公开发布的签名驱动程序](signing-drivers-for-public-release--windows-vista-and-later-.md)
-* [开发和测试期间对驱动程序进行签名](signing-drivers-during-development-and-test.md)
+* [为驱动程序签名以便公开发布](signing-drivers-for-public-release--windows-vista-and-later-.md)
+* [在开发和测试期间签署驱动程序](signing-drivers-during-development-and-test.md)
 * [数字签名](driver-signing.md)
-* [排查签名驱动程序包的安装和加载问题](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)
+* [排查已签名驱动程序包的安装和加载问题](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)

@@ -4,12 +4,12 @@ description: UWP 设备应用允许设备制造商使用相机驱动程序 MFT �
 ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 452a5e9f56624f1a14b3be47b50959ecccef8594
-ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
+ms.openlocfilehash: 66f8cbbc979756e8cae28787310a1f5217aaf2cd
+ms.sourcegitcommit: a59b63e84e6790af4c17b232f11a2f50f875c97a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873862"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87527888"
 ---
 # <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>为 UWP 设备应用创建照相机驱动程序 MFT
 
@@ -276,7 +276,7 @@ KSCATEGORY_VIDEO_CAMERA:
 "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}" 
 ```
 
-```inf
+```cpp
 KSCATEGORY_CAPTURE:
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{ 65E8773D-8F56-11D0-A3B9-00A0C9223196}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{65E8773D-8F56-11D0-A3B9-00A0C9223196}\#GLOBAL\Device Parameters]
@@ -286,7 +286,8 @@ KSCATEGORY_CAPTURE:
 "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}"
 ```
 
-**注意** `KSCATEGORY_VIDEO_CAMERA`对于照相机，建议使用。   通常只需要一个注册表项，具体取决于设备的注册方式。
+>[!NOTE]
+>`KSCATEGORY_VIDEO_CAMERA`对于照相机，建议使用。 通常只需要一个注册表项，具体取决于设备的注册方式。
 
 
 ## <a name="associate-your-app-with-the-camera"></a>将你的应用与相机关联
