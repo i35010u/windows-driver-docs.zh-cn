@@ -3,12 +3,12 @@ title: WinDbg 预览版 - 安装
 description: 本部分介绍如何安装 WinDbg 预览版调试程序。
 ms.date: 03/30/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 32d4efebef4cfff9698f51d55de3a6b7536ebe26
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 5fbf4f401195993efecca5eca2337a93825eeb65
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80812513"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402286"
 ---
 # <a name="windbg-preview---installation"></a>WinDbg 预览版 - 安装
 
@@ -18,14 +18,13 @@ ms.locfileid: "80812513"
 
 本部分介绍如何安装 WinDbg 预览版调试程序。
 
-Microsoft Store 中提供了 WinDbg 预览版调试程序。 需要安装 Windows 10 周年更新。 要安装该更新，请打开 Microsoft Store 并搜索“WinDbg 预览版”，或在此处单击 [](
-https://www.microsoft.com/store/apps/9pgjgd53tn86)。
+Microsoft Store 中提供了 WinDbg 预览版调试程序。 需要安装 Windows 10 周年更新。 若要安装，请打开 Microsoft Store 并搜索“WinDbg 预览版”，或者使用以下链接直接导航到 [WinDbg 预览版](https://www.microsoft.com/store/apps/9pgjgd53tn86)。
 
 找到应用后，单击应用以下载并安装它。
 
 ## <a name="checking-for-updates"></a>检查更新
 
-1. 打开 Microsoft Store 应用，并单击搜索框旁边的帐户图片。 
+1. 打开 Microsoft Store 应用，并单击搜索框旁边的帐户图片。
 
 2. 单击“下载和更新”以检查更新  。
 

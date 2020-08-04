@@ -4,12 +4,12 @@ description: WinDbg 是包含在 Windows 调试工具中的内核模式和用户
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 06/05/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 892d859314e414c27a539e8c7ae209bc24f778fe
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 4e45ddb13f02a0a2d7f8e76f70aeb818e6c39e4d
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534368"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402310"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
@@ -19,20 +19,20 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
 安装调试工具后，找到 64 位 (x64) 和 32 位 (x86) 版本工具的安装目录。 例如：
 
--   C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64
--   C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x86
+- C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64
+- C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x86
 
-## <a name="span-idlaunch_notepad_and_attach_windbgspanspan-idlaunch_notepad_and_attach_windbgspanspan-idlaunch_notepad_and_attach_windbgspanlaunch-notepad-and-attach-windbg"></a><span id="Launch_Notepad_and_attach_WinDbg"></span><span id="launch_notepad_and_attach_windbg"></span><span id="LAUNCH_NOTEPAD_AND_ATTACH_WINDBG"></span>启动记事本并附加 WinDbg
+## <a name="launch-notepad-and-attach-windbg"></a>启动记事本并附加 WinDbg
 
-1.  导航到安装目录，然后打开 WinDbg.exe。
+1. 导航到安装目录，然后打开 WinDbg.exe。
 
-2.  调试器文档也可以在以下[在线位置](https://docs.microsoft.com/windows-hardware/drivers/debugger/)找到。
+2. 也可在线 ([docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers/debugger/)) 找到调试程序文档。
 
-3.  在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（例如，C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 单击“打开”  。
+3. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（例如，C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 单击“打开”  。
 
     ![启动记事本后 windbg 的屏幕截图](images/windbggetstart01.png)
 
-4.  在 WinDbg 窗口底部的命令行中，输入以下命令：
+4. 在 WinDbg 窗口底部的命令行中，输入以下命令：
 
     [.sympath srv\*](-sympath--set-symbol-path-.md)
 
@@ -49,7 +49,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     [.reload](-reload--reload-module-.md)
 
-5.  若要查看 Notepad.exe 模块的符号，请输入以下命令：
+5. 若要查看 Notepad.exe 模块的符号，请输入以下命令：
 
     [x notepad!*](x--examine-symbols-.md)
 
@@ -58,7 +58,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     若要查看 Notepad.exe 模块中包含 main 的符号，请输入以下命令：
 
     [x notepad!\*main\*](x--examine-symbols-.md)
- 
+
     输出类似于以下内容：
 
     ```dbgcmd
@@ -66,7 +66,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     ...
     ```
 
-6.  在记事本上设置 notepad!WinMain，输入以下命令：
+6. 在记事本上设置 notepad!WinMain，输入以下命令：
 
     [bu notepad!WinMain](bp--bu--bm--set-breakpoint-.md)
 
@@ -80,11 +80,12 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     0 e 00007ff6`32825f64     0001 (0001)  0:**** notepad!WinMain
     ```
 
-7.  若要启动记事本运行，请输入以下命令：
+7. 若要启动记事本运行，请输入以下命令：
 
     [g](g--go-.md)
 
     记事本将一直运行，直到进入“WinMain”函数，然后中断到调试器  。
+
     ```dbgcmd
     Breakpoint 0 hit
     notepad!WinMain:
@@ -101,25 +102,25 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     0:000> lm
     start             end                 module name
     00007ff6`32820000 00007ff6`3285a000   notepad    (pdb symbols)          C:\...\notepad.pdb
-    00007ffc`ab7e0000 00007ffc`ab85b000   WINSPOOL   (deferred)             
-    00007ffc`aba10000 00007ffc`abc6a000   COMCTL32   (deferred)             
-    00007ffc`adea0000 00007ffc`adf3f000   SHCORE     (deferred)             
-    00007ffc`af490000 00007ffc`af59f000   KERNELBASE   (deferred)             
-    00007ffc`af7d0000 00007ffc`af877000   msvcrt     (deferred)             
-    00007ffc`af880000 00007ffc`b0c96000   SHELL32    (deferred)             
-    00007ffc`b0e40000 00007ffc`b0ef7000   OLEAUT32   (deferred)             
-    00007ffc`b0f00000 00007ffc`b0f57000   sechost    (deferred)             
-    00007ffc`b0f60000 00007ffc`b1005000   ADVAPI32   (deferred)             
-    00007ffc`b1010000 00007ffc`b1155000   GDI32      (deferred)             
-    00007ffc`b1160000 00007ffc`b1296000   RPCRT4     (deferred)             
-    00007ffc`b12a0000 00007ffc`b1411000   USER32     (deferred)             
-    00007ffc`b1420000 00007ffc`b15f6000   combase    (deferred)             
-    00007ffc`b16c0000 00007ffc`b17f9000   MSCTF      (deferred)             
-    00007ffc`b1800000 00007ffc`b189a000   COMDLG32   (deferred)             
-    00007ffc`b18a0000 00007ffc`b18f1000   SHLWAPI    (deferred)             
-    00007ffc`b1b60000 00007ffc`b1cd8000   ole32      (deferred)             
+    00007ffc`ab7e0000 00007ffc`ab85b000   WINSPOOL   (deferred)
+    00007ffc`aba10000 00007ffc`abc6a000   COMCTL32   (deferred)
+    00007ffc`adea0000 00007ffc`adf3f000   SHCORE     (deferred)
+    00007ffc`af490000 00007ffc`af59f000   KERNELBASE   (deferred)
+    00007ffc`af7d0000 00007ffc`af877000   msvcrt     (deferred)
+    00007ffc`af880000 00007ffc`b0c96000   SHELL32    (deferred)
+    00007ffc`b0e40000 00007ffc`b0ef7000   OLEAUT32   (deferred)
+    00007ffc`b0f00000 00007ffc`b0f57000   sechost    (deferred)
+    00007ffc`b0f60000 00007ffc`b1005000   ADVAPI32   (deferred)
+    00007ffc`b1010000 00007ffc`b1155000   GDI32      (deferred)
+    00007ffc`b1160000 00007ffc`b1296000   RPCRT4     (deferred)
+    00007ffc`b12a0000 00007ffc`b1411000   USER32     (deferred)
+    00007ffc`b1420000 00007ffc`b15f6000   combase    (deferred)
+    00007ffc`b16c0000 00007ffc`b17f9000   MSCTF      (deferred)
+    00007ffc`b1800000 00007ffc`b189a000   COMDLG32   (deferred)
+    00007ffc`b18a0000 00007ffc`b18f1000   SHLWAPI    (deferred)
+    00007ffc`b1b60000 00007ffc`b1cd8000   ole32      (deferred)
     00007ffc`b1cf0000 00007ffc`b1e2a000   KERNEL32   (pdb symbols)          C:\...\kernel32.pdb
-    00007ffc`b1eb0000 00007ffc`b1ee4000   IMM32      (deferred)             
+    00007ffc`b1eb0000 00007ffc`b1ee4000   IMM32      (deferred)
     00007ffc`b1f50000 00007ffc`b20fa000   ntdll      (private pdb symbols)  C:\...\ntdll.pdb
     ```
 
@@ -138,11 +139,11 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
     00000048`4e0cf7a0 00000000`00000000 ntdll!RtlUserThreadStart+0x1d ...
     ```
 
-8.  若要再次启动记事本运行，请输入以下命令：
+8. 若要再次启动记事本运行，请输入以下命令：
 
     [g](g--go-.md)
 
-9.  若要中断记事本，请从“调试”菜单中选择“中断”。
+9. 若要中断记事本，请从“调试”菜单中选择“中断”。
 
 10. 若要在 ZwWriteFile 设置并验证断点，请输入以下命令  ：
 
@@ -207,8 +208,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
     [qd](qd--quit-and-detach-.md)
 
-## <a name="span-idlaunch_your_own_application_and_attach_windbgspanspan-idlaunch_your_own_application_and_attach_windbgspanspan-idlaunch_your_own_application_and_attach_windbgspanlaunch-your-own-application-and-attach-windbg"></a><span id="Launch_your_own_application_and_attach_WinDbg"></span><span id="launch_your_own_application_and_attach_windbg"></span><span id="LAUNCH_YOUR_OWN_APPLICATION_AND_ATTACH_WINDBG"></span> 启动自己的应用程序并附加 WinDbg
-
+## <a name="launch-your-own-application-and-attach-windbg"></a>启动自己的应用程序并附加 WinDbg
 
 假设你已编写并生成此小型控制台应用程序。
 
@@ -231,10 +231,10 @@ void main ()
 
 对于本练习，我们将假设生成的应用程序 (MyApp.exe) 和符号文件 (MyApp.pdb) 位于 C:\\MyApp\\x64\\Debug。 我们还将假设应用程序源代码位于 C:\\MyApp\\MyApp 中，并且目标计算机编译了 MyApp.exe。
 
-1.  打开 WinDbg。
+1. 打开 WinDbg。
 
-2.  在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到 C:\\MyApp\\x64\\Debug。 输入 MyApp.exe 作为“文件名称”  。 单击“打开”  。
-3.  输入以下命令：
+2. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到 C:\\MyApp\\x64\\Debug。 输入 MyApp.exe 作为“文件名称”  。 单击“打开”  。
+3. 输入以下命令：
 
     [.symfix](-symfix--set-symbol-store-path-.md)
 
@@ -242,7 +242,7 @@ void main ()
 
     现在，WinDbg 知道在何处可以找到应用程序的符号和源代码。 在这种情况下，不需要用 [.srcpath](-srcpath---lsrcpath--set-source-path-.md) 设置源代码位置，因为符号具有指向源文件的完全限定路径。
 
-4.  输入以下命令：
+4. 输入以下命令：
 
     [.reload](-reload--reload-module-.md)
 
@@ -256,7 +256,7 @@ void main ()
 
     ![windbg 中源代码的屏幕截图](images/windbggetstart03.png)
 
-5.  在“调试”菜单上，选择“单步调试”（或按“F11”）    。 继续单步调试，直到进入 MyFunction  。 单步调试 `y = x / p2` 行时，应用程序将崩溃并中断到调试器。 输出类似于以下内容：
+5. 在“调试”菜单上，选择“单步调试”（或按“F11”）    。 继续单步调试，直到进入 MyFunction  。 单步调试 `y = x / p2` 行时，应用程序将崩溃并中断到调试器。 输出类似于以下内容：
 
     ```dbgcmd
     (1450.1424): Integer divide-by-zero - code c0000094 (first chance)
@@ -266,14 +266,14 @@ void main ()
     00007ff6`3be11064 f77c2428    idiv  eax,dword ptr [rsp+28h] ss:00000063`2036f808=00000000
     ```
 
-6.  输入此命令：
+6. 输入此命令：
 
     [!analyze -v](-analyze.md)
 
     WinDbg 显示问题的分析（在这种情况下除以 0）。
 
     ```dbgcmd
-    FAULTING_IP: 
+    FAULTING_IP:
     MyApp!MyFunction+44 [c:\myapp\myapp\myapp.cpp @ 7]
     00007ff6`3be11064 f77c2428        idiv    eax,dword ptr [rsp+28h]
 
@@ -293,7 +293,7 @@ void main ()
 
     STACK_COMMAND: dt ntdll!LdrpLastDllInitializer BaseDllName ;dt ntdll!LdrpFailureData ;.cxr 0x0 ;kb
 
-    FOLLOWUP_IP: 
+    FOLLOWUP_IP:
     MyApp!MyFunction+44 [c:\myapp\myapp\myapp.cpp @ 7]
     00007ff6`3be11064 f77c2428        idiv    eax,dword ptr [rsp+28h]
 
@@ -310,35 +310,34 @@ void main ()
          6:     long y = 0;
     >    7:  y = x / p2;
          8: }
-         9: 
+         9:
         10: void main ()
         11: {
         12:     long a = 2;
     ...
     ```
 
-## <a name="span-idsummary_of_commandsspanspan-idsummary_of_commandsspanspan-idsummary_of_commandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span> 命令摘要
+## <a name="summary-of-commands"></a>命令摘要
 
+- “帮助”菜单上的“内容”命令
+- [.sympath（设置符号路径）](-sympath--set-symbol-path-.md)
+- [.reload（重新加载模块）](-reload--reload-module-.md)
+- [x（检查符号）](x--examine-symbols-.md)
+- [g（转到）](g--go-.md)
+- 在“调试”菜单上“中断”命令
+- [lm（列出已加载的模块）](lm--list-loaded-modules-.md)
+- [k（显示堆栈回溯）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
+- [bu（设置断点）](bp--bu--bm--set-breakpoint-.md)
+- [bl（断点列表）](bl--breakpoint-list-.md)
+- [~（线程状态）](---thread-status-.md)
+- [~s（设置当前线程）](-s--set-current-thread-.md)
+- [.sympath+（设置符号路径）附加到现有符号路径](-sympath--set-symbol-path-.md)
+- [srcpath（设置源路径）](-srcpath---lsrcpath--set-source-path-.md)
+- “调试”菜单上的“单步调试”命令 (F11)
+- [!analyze -v](-analyze.md)
+- [qd（退出和分离）](qd--quit-and-detach-.md)
 
--   “帮助”菜单上的“内容”命令  
--   [.sympath（设置符号路径）](-sympath--set-symbol-path-.md)
--   [.reload（重新加载模块）](-reload--reload-module-.md)
--   [x（检查符号）](x--examine-symbols-.md)
--   [g（转到）](g--go-.md)
--   在“调试”菜单上“中断”命令  
--   [lm（列出已加载的模块）](lm--list-loaded-modules-.md)
--   [k（显示堆栈回溯）](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)
--   [bu（设置断点）](bp--bu--bm--set-breakpoint-.md)
--   [bl（断点列表）](bl--breakpoint-list-.md)
--   [~（线程状态）](---thread-status-.md)
--   [~s（设置当前线程）](-s--set-current-thread-.md)
--   [.sympath+（设置符号路径）附加到现有符号路径](-sympath--set-symbol-path-.md)
--   [srcpath（设置源路径）](-srcpath---lsrcpath--set-source-path-.md)
--   “调试”菜单上的“单步调试”命令 (F11)
--   [!analyze -v](-analyze.md)
--   [qd（退出和分离）](qd--quit-and-detach-.md)
-
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="related-topics"></a>相关主题
 
 [Getting Started with WinDbg (Kernel-Mode)](getting-started-with-windbg--kernel-mode-.md)（WinDbg 入门（内核模式））
 

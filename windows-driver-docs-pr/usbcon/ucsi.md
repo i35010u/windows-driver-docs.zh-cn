@@ -3,12 +3,12 @@ Description: Microsoft 提供与 USB 类型 C 连接器系统软件接口 (UCSI)
 title: USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: bb4c1969370147e8298eabd32aef3befb2cee2e6
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d2301377daf1057a90220785404b459182499f86
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007631"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402270"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 
@@ -63,7 +63,7 @@ Microsoft 为 ACPI 传输提供与 USB 类型 C 连接器系统软件接口 (UCS
 
 -   **USB 连接器管理器**
 
-    Microsoft 提供带有 Windows (UcmUcsiCx.sys) 的 UCSI 随机驱动程序，该驱动程序实现了在[此处](https://go.microsoft.com/fwlink/p/?LinkId=703713)可用的 UCSI 规范所定义的功能。 该规范介绍了 UCSI 的功能，并说明了硬件组件设计师、系统组装商和设备驱动程序开发人员的寄存器和数据结构。
+    Microsoft 提供带有 Windows (UcmUcsiCx.sys) 的 UCSI 随机驱动程序，它实现了在 [USB Type-C 连接器系统软件接口规范](https://go.microsoft.com/fwlink/p/?LinkId=703713)中定义的功能。 该规范介绍了 UCSI 的功能，并说明了硬件组件设计师、系统组装商和设备驱动程序开发人员的寄存器和数据结构。
 
     此驱动程序适用于具有嵌入式控制器的系统。 此驱动程序是 Microsoft 提供的 USB 连接器管理器类扩展驱动程序 (Ucmcx.sys) 的客户端。 驱动程序处理任务（例如，启动对固件的请求）以更改数据或电源角色，并获取向用户提供故障排除消息所需的信息。
 
