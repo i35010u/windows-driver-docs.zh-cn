@@ -1,10 +1,10 @@
 ---
-title: Context.requestcompleted 规则（kmdf）
-description: DeferredRequestCompleted 规则指定对于非筛选器驱动程序，必须完成提供给该驱动程序的默认 i/o 队列的每个请求，除非该请求被延迟或转发，或者调用 WdfRequestStopAcknowledge。
+title: 'Context.requestcompleted 规则 (kmdf) '
+description: Context.requestcompleted 规则指定对于非筛选器驱动程序，必须完成提供给该驱动程序的默认 i/o 队列的每个请求，除非该请求被延迟或转发，或者调用 WdfRequestStopAcknowledge。
 ms.assetid: fb034d81-d49d-43a5-92b9-9b4e3f3056ee
 ms.date: 05/21/2018
 keywords:
-- Context.requestcompleted 规则（kmdf）
+- 'Context.requestcompleted 规则 (kmdf) '
 topic_type:
 - apiref
 api_name:
@@ -12,25 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c74c81128af8901d6cb3ccdb30e6deec52cfc98
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 93fdfa5d07dafd1df80ddf4a71b3d2adeff08229
+ms.sourcegitcommit: b5dff6cdc5cba0e87c9c37153558cd4fe79d1847
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918215"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87819623"
 ---
-# <a name="requestcompleted-rule-kmdf"></a>Context.requestcompleted 规则（kmdf）
+# <a name="requestcompleted-rule-kmdf"></a>Context.requestcompleted 规则 (kmdf) 
 
 
-[**DeferredRequestCompleted**](kmdf-deferredrequestcompleted.md)规则指定对于非筛选器驱动程序，必须完成提供给该驱动程序的默认 i/o 队列的每个请求，除非该请求被延迟或转发，或者调用[**WdfRequestStopAcknowledge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge) 。
+**Context.requestcompleted**规则指定对于非筛选器驱动程序，必须完成提供给该驱动程序的默认 i/o 队列的每个请求，除非该请求被延迟或转发，或者调用[**WdfRequestStopAcknowledge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge) 。
 
 通过其中一个队列回调函数向驱动程序的默认队列发出的 i/o 请求必须先完成，然后才能从 i/o 请求回调函数中退出，但以下情况除外：
 
--   请求已延迟（例如，对于 DPC 或工作项）。 在这种情况下，可以使用[DeferredRequestCompleted](kmdf-deferredrequestcompleted.md)规则。
+-   请求已延迟 (DPC 或工作项，例如) 。 在这种情况下，可以使用[DeferredRequestCompleted](kmdf-deferredrequestcompleted.md)规则。
 
 -   请求已转发到 i/o 目标或其他队列
 
--   请求已传递到框架（通过调用[**WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)）
+-   请求已通过调用[**WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)传递到框架 () 
 
 -   已调用[**WdfRequestStopAcknowledge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge)
 
@@ -65,7 +65,7 @@ ms.locfileid: "85918215"
 <td align="left"><p>运行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静态驱动程序验证程序</a>并指定<strong>context.requestcompleted</strong>规则。</p>
 使用以下步骤来运行代码分析：
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码（使用角色类型声明）。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">准备你的代码 (使用) 的角色类型声明。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">运行静态驱动程序验证程序。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">查看并分析结果。</a></li>
 </ol>
