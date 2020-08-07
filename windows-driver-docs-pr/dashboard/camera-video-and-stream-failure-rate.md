@@ -4,12 +4,12 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为相机�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 05d400468f06d0dd7ee0af6db136b968c01ec937
-ms.sourcegitcommit: 191da92cfb33775b02ca160b4657d409635bd60c
+ms.openlocfilehash: cde6258407cf5dd809b8b20cbc11ff489179d731
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86898731"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473751"
 ---
 # <a name="percent-of-camera-video-and-stream-failures"></a>相机视频和流故障次数百分比
 
@@ -38,19 +38,19 @@ ms.locfileid: "86898731"
 
    a. 成功的视频和流式处理事件 = 0% 故障   
 
-      ```cpp
-      MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STARTED)
-      ```
+```cpp
+MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STARTED)
+```
 
    b. 失败的视频和流式处理事件 = 100% 故障 
 
-      ```cpp
-      i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_ERROR)
-      ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STOPPED)
-      iii. MFCaptureEngineSessionStop
-      iv. OnEvent_RecordStop_Failure
-      v. Timed Out
-      ```
+```cpp
+i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_ERROR)
+ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STOPPED)
+iii. MFCaptureEngineSessionStop
+iv. OnEvent_RecordStop_Failure
+v. Timed Out
+```
 
 ### <a name="final-calculation"></a>最终计算
 

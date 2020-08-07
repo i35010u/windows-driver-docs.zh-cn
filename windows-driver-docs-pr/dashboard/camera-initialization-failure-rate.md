@@ -4,12 +4,12 @@ description: 该度量将 7 天滑动窗口中的遥测数据聚合为相机设�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bb35618cdca31d30820e9c4d60afe10457eeb6b6
-ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
+ms.openlocfilehash: 24c5e22e06aa906562bfe8b818e7ba7b3214db67
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87425726"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473745"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>相机初始化失败次数百分比
 
@@ -38,15 +38,19 @@ ms.locfileid: "87425726"
 
    a. 成功的初始化事件 = 0% 失败
 
-     i. `MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0`
+```cpp
+MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0
+```
 
-   b. 失败的初始化事件 = 100% 失败
+   b. 失败的初始化事件 = 100% 失败 
 
-     i. `MF_E_NO_CAPTURE_DEVICES_AVAILABLE`
+```cpp
+i. MF_E_NO_CAPTURE_DEVICES_AVAILABLE
 
-     ii. `E_ACCESSDENIED`
+ii. E_ACCESSDENIED
 
-     iii. `ERROR_BAD_UNIT`
+iii. ERROR_BAD_UNIT
+```
 
 ### <a name="final-calculation"></a>最终计算
 

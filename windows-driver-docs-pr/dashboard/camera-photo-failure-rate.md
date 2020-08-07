@@ -4,12 +4,12 @@ description: 该度量将来自 7 天滑动窗口的遥测数据聚合为相机�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e5be9197499104417f1170e138f519bba302140c
-ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
+ms.openlocfilehash: 567d55f242c88e5a5617b0cd373d8c0e315a178a
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87425729"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473749"
 ---
 # <a name="percent-of-camera-photo-capture-failures"></a>相机照片捕获失败次数百分比
 
@@ -38,17 +38,21 @@ ms.locfileid: "87425729"
 
    a. 成功的照片事件 = 0% 失败
 
-     i. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN)`
+```cpp
+i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN)
 
-     ii. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED)`
+ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED)
+```
 
-    b. 失败的照片事件 = 100% 失败
+b. 失败的照片事件 = 100% 失败
 
-     i. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN) HRESULT !=0`
+```cpp
+i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN) HRESULT !=0
 
-     ii. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED) HRESULT !=0`
+ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED) HRESULT !=0
 
-     iii. 超时
+iii. Timed Out
+```
 
 ### <a name="final-calculation"></a>最终计算
 
