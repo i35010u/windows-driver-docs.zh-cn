@@ -4,18 +4,18 @@ description: 以下列表提供了指向行业标准、规范和技术文章的�
 ms.assetid: D25FB8AF-D227-4940-8740-D1AFF9BE3AC3
 ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ca6a41c974ea3a77e29ffa3ffae37d99fd06c6
-ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
+ms.openlocfilehash: 7c9c2d7f4908ca57e11fecc5892f821e8b772b23
+ms.sourcegitcommit: 40aa0786a52dd7b830e0ce1ed062ca0ba4e05f63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83553326"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88022993"
 ---
 # <a name="print-schema-references"></a>打印架构参考
 
 以下列表提供了指向行业标准、规范和技术文章的参考和链接。
 
-## <a name="bnf-rfc-2234"></a>BNF （RFC 2234）
+## <a name="bnf-rfc-2234"></a>BNF (RFC 2234) 
 
 Crocker，Overell，P. "为语法规范扩充 BNF： ABNF"。 Internet 社会。 1997。
 
@@ -29,7 +29,7 @@ Crocker，Overell，P. "为语法规范扩充 BNF： ABNF"。 Internet 社会。
 
 ## <a name="ieee-754-1985"></a>IEEE 754-1985
 
-电气和电子工程师协会（IEEE）。 "用于二元浮点运算的 IEEE 标准"。 1985。
+电气和电子工程师协会，Inc. (IEEE) 。 "用于二元浮点运算的 IEEE 标准"。 1985。
 
 [https://ieeexplore.ieee.org/document/30711](https://ieeexplore.ieee.org/document/30711)
 
@@ -37,7 +37,7 @@ Crocker，Overell，P. "为语法规范扩充 BNF： ABNF"。 Internet 社会。
 
 Microsoft Corporation。 "打印架构规格"。
 
-[打印架构规范（ZIP 下载）](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
+[ (ZIP 下载) 打印架构规范](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
 
 ## <a name="rfc-2119"></a>RFC 2119
 
@@ -57,22 +57,22 @@ Unicode 联盟。 Unicode 标准版本4.0.0，由定义： Unicode 标准版本4
 
 ## <a name="xml"></a>XML
 
-Bray、Tim、前夕 Maler、Jean Paoli、。 Sperlberg-McQueen 和 François Yergeau （编辑器）。 "可扩展标记语言（XML）1.0 （第五版）。" 万维网联合会。 2008。
+Bray、Tim、前夕 Maler、Jean Paoli、。 Sperlberg McQueen 和 François Yergeau (编辑器) 。 "可扩展标记语言 (XML) 1.0 (第五版) "。 万维网联合会。 2008。
 
-[http://www.w3.org/TR/2008/REC-xml-20081126/](http://www.w3.org/TR/2008/REC-xml-20081126/)
+[https://www.w3.org/TR/2008/REC-xml-20081126/](https://www.w3.org/TR/2008/REC-xml-20081126/)
 
 ## <a name="xml-namespaces"></a>XML 命名空间
 
-Bray、Tim、Dave Hollander、Andrew 外行和 Richard Tobin （编辑器）。 "XML 1.0 （第三版）中的命名空间"。 万维网联合会。 2009。
+Bray、Tim、Dave Hollander、Andrew 外行和 Richard Tobin (编辑器) 。 "XML 1.0 中的命名空间 (第三版) 。" 万维网联合会。 2009。
 
-[http://www.w3.org/TR/2009/REC-xml-names-20091208/](http://www.w3.org/TR/2009/REC-xml-names-20091208/)
+[https://www.w3.org/TR/2009/REC-xml-names-20091208/](https://www.w3.org/TR/2009/REC-xml-names-20091208/)
 
 ## <a name="xml-schema"></a>XML 架构
 
-Beech、David、Murray Maloney、Noah Mendelsohn 和 Henry）。 "XML 架构第1部分：结构"，第二版。 万维网联合会。 2004。
+Beech、David、Murray Maloney、Noah Mendelsohn 和 Henry (编辑器) 。 "XML 架构第1部分：结构"，第二版。 万维网联合会。 2004。
 
 [https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/](https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/)
 
-Biron、Paul Ashok Malhotra （编辑器）。 "XML 架构第2部分：数据类型，第二版。 万维网联合会。 2004。
+Biron、Paul Ashok Malhotra (编辑器) 。 "XML 架构第2部分：数据类型，第二版。 万维网联合会。 2004。
 
 [https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/](https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/)

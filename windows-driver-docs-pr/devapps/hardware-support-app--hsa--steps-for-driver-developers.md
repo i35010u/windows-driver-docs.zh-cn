@@ -1,6 +1,6 @@
 ---
-title: 驱动程序开发人员的硬件支持应用（HSA）步骤
-description: 创建用于将驱动程序与硬件支持应用配对的自定义功能（HSA）
+title: 硬件支持应用 (为驱动程序开发人员) 步骤 HSA
+description: '创建自定义功能，将驱动程序与硬件支持应用配对 (HSA) '
 keywords:
 - 自定义，功能
 - UWP 应用
@@ -9,36 +9,36 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c18ff9030cd7dcdc95e747e8736a641016d1a793
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: c6c4d38b348c8f1e8d3d78af59112bda22e25a8a
+ms.sourcegitcommit: 40aa0786a52dd7b830e0ce1ed062ca0ba4e05f63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235423"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88023003"
 ---
-# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用（HSA）：驱动程序开发人员的步骤
+# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA) ：驱动程序开发人员的步骤
 
-硬件支持应用（HSA）是一种与特定驱动程序或[RPC （远程过程调用）](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)终结点配对的设备特定的应用程序。
+硬件支持应用 (HSA) 是设备特定的应用，与特定驱动程序或[RPC (远程过程调用) ](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)终结点配对。
 
 若要将应用商店应用与驱动程序相关联，请首先保留称为 "自定义功能" 的特殊值。 然后，允许访问广告功能并向应用开发人员提供功能的应用。  本页介绍了驱动程序开发人员的这些步骤。
 
-应用开发人员的步骤在[硬件支持应用（HSA）中进行了说明：应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+应用开发人员的步骤在硬件支持应用中进行了介绍[ (HSA) ：适用于应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
-HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)的三个（"DCH"）设计原则之一。
+HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)) 设计原则的三个 ( "DCH" 中的一种。
 
 ## <a name="reserving-a-custom-capability"></a>保留自定义功能
 
 首先，保留自定义功能：
 
-1.  电子邮件 Microsoft 硬件支持应用评审（ <HSAReview@microsoft.com> ），其中包含以下信息：
+1.  电子邮件 Microsoft 硬件支持应用查看 (<HSAReview@microsoft.com>) ，并提供以下信息：
 
     * 联系信息
     * 公司名称
-    * 功能的名称（必须唯一并引用所有者）
+    * 功能 (的名称必须是唯一的，并引用所有者) 
     * 功能需要访问哪些资源？
     * 任何安全或隐私问题
     * 将向合作伙伴处理哪些数据事件？
-      * 这些事件是否包括个人标识符（如精确的用户位置、密码、IP 地址、PUID、设备 ID、CID、用户名和联系人数据）？
+      * 这些事件是否包括个人标识符，如精确的用户位置、密码、IP 地址、PUID、设备 ID、CID、用户名和联系人数据) ？
       * 数据事件是停留在用户设备上，还是发送到合作伙伴？
     * 你的功能提供了哪些数据？
     * 此功能的最终用户权益是什么？
@@ -52,7 +52,7 @@ HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md
 
 若要允许对具有自定义功能的 UWP 应用访问 RPC 终结点，请执行以下步骤：
 
-1.  调用[**DeriveCapabilitySidsFromName**](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname)将自定义功能名称转换为安全 ID （SID）。
+1.  调用[**DeriveCapabilitySidsFromName**](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
 2.  将 SID 添加到 access 允许的 ACE 以及 RPC 终结点安全描述符所需的任何其他 Sid。
 3.  使用安全描述符中的信息创建 RPC 终结点。
 
@@ -100,9 +100,9 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 有关上面所示的驱动程序代码示例，请参阅[适用于通用驱动程序的驱动程序包安装工具包](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)。
 
-## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>准备已签名的自定义功能描述符（SCCD）文件
+## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>准备 (SCCD) 文件的已签名自定义功能描述符
 
-已签名的自定义功能描述符（SCCD）文件是一个已签名的 XML 文件，授权使用一个或多个自定义功能。  驱动程序或 RPC 终结点的所有者通过提供此文件向应用开发人员授予自定义功能。
+已签名的自定义功能描述符 (SCCD) 文件是一个签名的 XML 文件，授权使用一个或多个自定义功能。  驱动程序或 RPC 终结点的所有者通过提供此文件向应用开发人员授予自定义功能。
 
 若要准备 SCCD 文件，请首先更新自定义功能字符串。  使用以下示例作为起点：
 
@@ -119,13 +119,13 @@ Status = WdfDeviceAssignInterfaceProperty(
 </CustomCapabilityDescriptor>
 ```
 
-接下来，自定义功能所有者将从应用开发人员处获取包系列名称（PFN）和签名哈希，并在 SCCD 文件中更新这些字符串。
+接下来，自定义功能所有者将从应用开发人员那里获取包系列名称 (PFN) 和签名哈希，并在 SCCD 文件中更新这些字符串。
 
 **注意：** 应用无需直接使用证书进行签名，但指定的证书必须是对应用进行签名的证书链的一部分。
 
 完成 SCCD 后，功能所有者会将其通过电子邮件发送给 Microsoft 进行签名。  Microsoft 将向功能所有者返回已签名的 SCCD。
 
-然后，功能所有者将 SCCD 发送到应用开发人员。  应用程序开发人员在应用程序清单中包含已签名的 SCCD。  若要了解应用开发人员需要执行的操作，请参阅[硬件支持应用（HSA）：应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+然后，功能所有者将 SCCD 发送到应用开发人员。  应用程序开发人员在应用程序清单中包含已签名的 SCCD。  若要了解应用开发人员需要执行的操作，请参阅[硬件支持应用 (HSA) ：应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
 ## <a name="limiting-the-scope-of-an-sccd"></a>限制 SCCD 的范围
 
@@ -151,7 +151,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 ## <a name="allowing-any-app-to-use-a-custom-capability"></a>允许任何应用使用自定义功能
 
-建议指定可使用自定义功能的授权实体（应用）。 但是，在某些情况下，你可能希望允许任何应用包括 SCCD。  从 Windows 10 版本1809开始，可以通过将**AllowAny**添加到 AuthorizedEntities 元素来实现此目的。 由于最好的做法是在 SCCD 文件中声明授权的实体，因此，请在提交你的 SCCD 以由 Microsoft 签名时，提供使用**AllowAny**的理由。
+建议指定可使用自定义功能)  (应用的授权实体。 但是，在某些情况下，你可能希望允许任何应用包括 SCCD。  从 Windows 10 版本1809开始，可以通过将**AllowAny**添加到 AuthorizedEntities 元素来实现此目的。 由于最好的做法是在 SCCD 文件中声明授权的实体，因此，请在提交你的 SCCD 以由 Microsoft 签名时，提供使用**AllowAny**的理由。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -170,7 +170,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 从 Windows 10 版本1803开始，应用可声明一个或多个 SCCD 文件中的自定义功能。 将 SCCD 文件放置在应用包的根目录中。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 下图总结了上述顺序：
 
@@ -178,10 +178,10 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows 驱动程序的入门](../develop/getting-started-with-windows-drivers.md)
+* [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)
 * [通用 Windows 平台简介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
-* [应用程序功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
+* [应用功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
 * [使用 Visual Studio 开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
 * [将驱动程序与通用 Windows 平台 (UWP) 应用配对](../install/pairing-app-and-driver-versions.md)
 * [开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
@@ -198,7 +198,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
   targetNamespace="http://schemas.microsoft.com/appx/2016/sccd"
   xmlns:s="http://schemas.microsoft.com/appx/2016/sccd"
   xmlns="http://schemas.microsoft.com/appx/2016/sccd">
@@ -299,7 +299,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
   targetNamespace="http://schemas.microsoft.com/appx/2018/sccd"
   xmlns:s="http://schemas.microsoft.com/appx/2018/sccd"
   xmlns="http://schemas.microsoft.com/appx/2018/sccd">
