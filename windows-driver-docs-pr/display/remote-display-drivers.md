@@ -1,22 +1,25 @@
 ---
 title: 远程显示驱动程序
-description: 远程显示器驱动程序基于 Windows 2000 镜像驱动程序模型，用于在远程会话中呈现到桌面。
+description: 远程显示驱动程序基于 Windows 2000 镜像驱动程序模型，用于在远程会话中呈现桌面。
 ms.assetid: 249528D3-B5F1-41D8-86BF-B9DC623FB480
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9004d7a0d53ff2ac5438e8d41e27b2580a44ab0a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1ca416a7e5dfadb01b2f7ed9241c6a827555fbee
+ms.sourcegitcommit: 799eda3332a500427d7a82ef513fe367dbf72e41
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386442"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88001390"
 ---
 # <a name="remote-display-drivers"></a>远程显示驱动程序
 
+> [!NOTE]
+>
+> Windows 10 版本2004中已删除对 GDI 远程显示驱动程序的支持。 但是，仍然可以通过构建自定义[远程协议提供](/windows/win32/termserv/creating-a-custom-remote-protocol)程序和[间接显示驱动](indirect-display-driver-model-overview.md)程序来创建远程显示解决方案。
 
-一个*远程显示器驱动程序*基于 Windows 2000[镜像驱动程序](mirror-drivers.md)模型和用于呈现到桌面的远程会话中。
+*远程显示驱动程序*基于 Windows 2000[镜像驱动程序](mirror-drivers.md)模型，用于在远程会话中呈现桌面。
 
-若要成功安装并运行从 Windows 8 开始，远程显示器驱动程序必须实现仅以下设备驱动程序接口 (DDIs) 和没有更多。
+若要成功地安装和运行 Windows 8，远程显示驱动程序必须仅实现 (DDIs) 的以下设备驱动程序接口，不能再实现。
 
 -   [**DrvAssertMode**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvassertmode)
 -   [**DrvBitBlt**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvbitblt)
@@ -32,12 +35,3 @@ ms.locfileid: "67386442"
 -   [**DrvMovePointer**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvmovepointer)
 -   [**DrvResetPDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvresetpdev)
 -   [**DrvSetPointerShape**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpointershape)
-
- 
-
- 
-
-
-
-
-
