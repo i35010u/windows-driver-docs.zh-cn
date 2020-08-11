@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 218f3bb861995adaf4125d3098c3498416e10272
-ms.sourcegitcommit: 65b0a70e00c319b18f86a5b451908798ce2026a5
+ms.openlocfilehash: 35cc9a188b4dc7e36c1d265d6f290edab4bf0579
+ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448514"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87479131"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -55,7 +55,7 @@ WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，�
 
 如果已安装 Visual Studio 2019，则可以使用 Visual Studio 安装中的“修改”按钮来安装 Windows 10 SDK (10.0.19041.1)。
 
-WDK 默认启用了 Spectre 缓解，但需要为要开发的每个体系结构将 Spectre 缓解库安装在 Visual Stuido 中。 此外，开发适用于 ARM/ARM64 的驱动程序还需要这些体系结构的生成工具也安装在 Visual Studio 中。 若要查找这些项，需要知道系统上安装的 MSVC 的最新版本。
+WDK 默认启用了 Spectre 缓解，但需要为要开发的每个体系结构将 Spectre 缓解库安装在 Visual Studio 中。 此外，开发适用于 ARM/ARM64 的驱动程序还需要这些体系结构的生成工具也安装在 Visual Studio 中。 若要查找这些项，需要知道系统上安装的 MSVC 的最新版本。
 
 若要查找系统上安装的最新版 MSVC，请在 Visual Studio 安装程序中转到“工作负荷”页，在右侧窗格的“安装详细信息”下展开“使用 C++ 的桌面开发”，然后找到“MSVC v142 - VS 2019 C++ x64/x86 生成工具(V14.xx)”（请注意，其中的 xx 应该就是可用的最高版本）。 
 

@@ -5,18 +5,18 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5428bfce09d725cd1bd781d393054faa0f0de2c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a16658be2ec62477a889506bae73597a78a7d567
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "68533206"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473741"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
 
 本文提供了有关合作伙伴中心的常见问题解答。
 
-## <a name="how-do-i-contact-partner-center-support"></a>如何联系合作伙伴中心支持部门？
+## <a name="contacting-partner-center-support"></a>联系合作伙伴中心支持部门
 
 如果你在访问仪表板时遇到问题或需要仪表板支持，请在此处开具支持票证： https://developer.microsoft.com/windows/support 。  
 
@@ -30,12 +30,12 @@ ms.locfileid: "68533206"
 
 对与组织关联的证书（EV 和标准证书）数量没有限制。
 
-## <a name="what-agreements-need-to-be-signed"></a>需要签署哪些协议？
+## <a name="required-agreements-that-need-to-be-signed"></a>必须签署的协议
 
 在注册过程中，可能会签署以下协议。
 
 > [!NOTE]
-> 所有注册都必须签署 Windows 兼容性计划和驱动程序质量证明测试协议。 其他所有协议都是可选的，除非你使用其他关联协议中所述的功能或资产。 
+> 所有注册都必须签署 Windows 兼容性计划和驱动程序质量证明测试协议。 其他所有协议都是可选的，除非你使用其他关联协议中所述的功能或资产。
 
 * Windows 兼容性计划和驱动程序质量证明测试协议（2.0 版）
 
@@ -49,29 +49,29 @@ ms.locfileid: "68533206"
 
 * Windows 桌面应用程序计划协议（1.0 版）
 
-## <a name="how-do-i-add-additional-users-or-grant-additional-roles-to-users-in-my-company"></a>如何添加其他用户或对公司中的用户授予其他角色？
+## <a name="adding-additional-users-or-grant-additional-roles-to-users-in-my-company"></a>添加其他用户或向公司中的用户授予其他角色
 
 有关详细信息，请参阅[管理用户角色](managing-user-roles.md)。
 
 ## <a name="managing-submissions"></a>管理提交
 
-### <a name="what-is-the-hardware-certification-submission-processing-time"></a>硬件认证提交处理时间为多久？
+### <a name="submission-processing-time-for-hardware-certification"></a>硬件认证的提交处理时间
 
 提交到仪表板的硬件将在五个工作日或更少时间内进行处理，具体取决于提交是否需要手动检查。 如果提交测试失败、没有应用有效筛选器或由于内部业务策略的原因，可能需要手动检查。
 
-### <a name="why-do-i-see-a-difference-in-download-signed-files"></a>在下载的已签名文件中，为何存在差异？
+### <a name="potential-differences-noticed-in-download-signed-files"></a>在下载的已签名文件中注意到的可能差异
 
 为了使 Windows 10 更加安全并且性能不受影响，所有二进制文件现在均要接收嵌入式签名。 这适用于认证的所有提交，而不仅限于 Windows 10 提交。
 
-### <a name="how-to-get-a-single-cat-file-if-drivers-are-uniform-for-all-operating-systems"></a>如果驱动程序在所有操作系统中均相同，如何获取单个 cat 文件
+### <a name="getting-a-single-cat-file-if-drivers-are-uniform-for-all-operating-systems"></a>在驱动程序对所有操作系统都统一的情况下获取单个 cat 文件
 
 请在“程序包”  选项卡上确保最终的程序包具有单个驱动程序文件夹，并且该驱动程序的属性包含你已测试过的所有操作系统。 有关详细信息，请参阅[演练：如何获取由 Microsoft 签名的适用于多个版本的 Windows 的驱动程序](get-drivers-signed-by-microsoft-for-multiple-windows-versions.md)。
 
-### <a name="im-unable-to-add-new-marketing-names-to-the-approved-submission"></a>无法将新的营销名称添加到已批准的提交
+### <a name="adding-new-marketing-names-to-the-approved-submission"></a>在批准的提交中添加新的营销名称
 
 检查已设置的发布日期。 如果发布日期已过，将无法添加新的名称。
 
-### <a name="how-can-i-share-a-link-to-a-windows-certification-verification-report"></a>如何共享 Windows 认证验证报告的链接？
+### <a name="sharing-a-link-to-a-windows-certification-verification-report"></a>共享 Windows 认证验证报告的链接
 
 * 可共享 URL 包含三个由斜杠分隔的标识号，如下所示：`https://developer.microsoft.com/dashboard/hardware/driver/DownloadCertificationReport/SellerID/PrivateProductID/SubmissionID`
 
