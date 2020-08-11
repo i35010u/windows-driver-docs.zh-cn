@@ -1,17 +1,17 @@
 ---
 title: WinDbg 预览版 - 新增功能
 description: 本主题提供有关 WinDbg 预览调试器的新增功能的 inofmration。
-ms.date: 07/02/2020
+ms.date: 08/06/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: cad1e49a7da21301b0faaa98d4d4072d22154050
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: b427e9eca84273c23c68424bdea4a2f1f5e7c678
+ms.sourcegitcommit: 53a947d6ada18ca70f40f4e73a6a6c6f3abd31f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141301"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88057012"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg 预览版 - 新增功能
 
@@ -72,8 +72,7 @@ ms.locfileid: "86141301"
 
 **便携 PDB 支持**
 
-添加了便携 PDB 支持。 可移植 PDB （程序数据库）格式描述由公共语言基础结构（CLI）语言的编译器生成的调试信息的编码，并由调试器和其他工具使用。 有关详细信息，请参阅[可移植 PDB v1.0：格式规范](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
-
+添加了便携 PDB 支持。 可移植 PDB (程序数据库) 格式介绍了由公共语言基础结构的编译器生成的调试信息的编码 (CLI) 语言，并由调试器和其他工具使用。 有关详细信息，请参阅[可移植的 PDB 符号](symbols-portable-pdb.md)。
 
 **其他更改和 bug 修补程序**
 
@@ -82,7 +81,7 @@ ms.locfileid: "86141301"
 
 ## <a name="10191211001"></a>1.0.1912.11001
 
-**TTD 时间线**-我们添加了一个新窗口，该窗口显示跟踪中重要事件的可视化表示形式：异常、断点、函数调用和内存访问。 时间线将自动打开并显示异常（如果存在）和断点。 有关详细信息，请参阅[WinDbg 预览-时间线](windbg-timeline-preview.md)。
+**TTD 时间线**-我们添加了一个新窗口，该窗口显示跟踪中重要事件的可视化表示形式：异常、断点、函数调用和内存访问。 如果存在) 和断点，则时间线将自动打开并显示异常 (。 有关详细信息，请参阅[WinDbg 预览-时间线](windbg-timeline-preview.md)。
 
 **切换到默认窗口镶边**-我们使用的自定义窗口 chrome，尽管外观会导致某些规模的用户缩放并调整其大小，因此我们已选择在此时间删除它。
 
@@ -100,22 +99,22 @@ ms.locfileid: "86141301"
 
 **对 TTD 的改进调用对象**  - [调用查询](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)现在包括参数名称、类型和值。 当跨函数调用的跟踪进行查询时，可以获取完全类型的参数及其值，以便于按参数对结果进行筛选。
 
-**支持 Open Enclave** -WinDbg 预览版现在可以调试打开的 ENCLAVE （OE）应用程序，你可以在[打开的 Enclave 文档](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/Windows_windbg.md)中找到如何执行此操作的说明。
+**支持 Open Enclave** -WinDbg Preview 现在可以调试打开的 ENCLAVE (OE) 应用程序。有关详细信息，请参阅[打开 Enclave 调试](open-enclave-debugging.md)) 。
 
 **VS Code 扩展**-为了更轻松地为开放式 Enclave 进行开发，我们发布了一个基本的 VS Code 扩展，以实现更快的内部循环。 "变量"、"监视" 和 "调用堆栈" 窗口所有工作以及断点和源窗口，任何更深入的调试都需要使用控制台窗口。
  
 可以在[VS Code Marketplace](https://aka.ms/CDBVSCode)中找到该扩展，并向我们的[WinDbg 反馈 GitHub](https://aka.ms/dexex)报告任何问题。 请注意，虽然扩展可能适用于其他方案，但我们只是在此时解决与 OE 方案相关的问题。
 
-**ELF 核心转储**-作为支持的开放 Enclave 的一部分，WinDbg 可以从 DWARF 和 Linux 应用程序打开 ELF Core 转储和二进制文件（目前不支持 Enclaves 5）。 当从非 Windows 应用程序打开核心转储时，基本窗口和命令都应正常运行，但大多数扩展和 Windows 特定的命令将不起作用。 按照[此处定义的关键约定](https://github.com/dotnet/symstore/blob/master/docs/specs/SSQP_Key_Conventions.md)，将从符号服务器下载 ELF 和 DWARF 文件。 Enclaves 是唯一受支持的方案，但我们在打开其他 Linux core 转储时提供反馈。
+**ELF 核心转储**-作为支持 Open Enclave 的一部分，WinDbg 可以打开 ELF 核心转储和二进制文件以及 DWARF 符号 (DWARF 和 Linux 应用程序当前不) 支持 Enclaves 5。 当从非 Windows 应用程序打开核心转储时，基本窗口和命令都应正常运行，但大多数扩展和 Windows 特定的命令将不起作用。 按照[此处定义的关键约定](https://github.com/dotnet/symstore/blob/master/docs/specs/SSQP_Key_Conventions.md)，将从符号服务器下载 ELF 和 DWARF 文件。 Enclaves 是唯一受支持的方案，但我们在打开其他 Linux core 转储时提供反馈。
 
-**TTD 文件格式更改**-对于中断向前兼容性的 TTD 跟踪，我们已对文件格式进行了重大更新。 以前版本的 WinDbg Preview 将无法打开此（以及将来）版本的 WinDbg Preview 记录的跟踪，但此（和更未来）版本将能够打开新的和旧的跟踪。
+**TTD 文件格式更改**-对于中断向前兼容性的 TTD 跟踪，我们已对文件格式进行了重大更新。 以前版本的 WinDbg Preview 将无法打开通过此 (和未来的) 版本的 WinDbg Preview 记录的跟踪，但此 (和将来的) 版本将能够打开新的和旧的跟踪。
 
 **其他更改**
 
 * TTD 现在将使用64位引擎进行索引编制，并使用相应的调试器引擎位重放来最大程度地减少在重播时索引和 SOS 问题时可能出现的内存问题。
 * 在没有任何参数的情况下运行 "dx" 现在会显示根命名空间，以便更轻松 browsability。
 * 现在可以通过 "设置" 菜单修改默认符号和源缓存位置。
-* 改善了对录制 AVX-512 的支持（AVX-512 的记录将导致比正常的慢）。
+* 提高了对记录 512 AVX (记录的支持（AVX-512）将导致比正常的慢) 。
 * 已启用[脱机许可](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)。
 
 ## <a name="10190512001"></a>1.0.1905.12001
@@ -132,13 +131,13 @@ ms.locfileid: "86141301"
 
 **默认符号和源缓存设置**-将选项添加到 "**调试设置**" 下的 "设置" 菜单，以更改符号的缓存位置。 **注意**-有一个已知问题，此问题会导致源加载失败。 我们将添加验证，以防止此情况在未来版本中发生。
 
-**-pv fix** -修复了在某些情况下可能阻止的 bug （pv （非侵害性连接）。
+**-pv fix** -修复了可能已阻止的 bug-pv (非侵害性附加) 在某些情况下工作。
 
 ## <a name="10190418001"></a>1.0.1904.18001
 
 **修复 SymSetDiaSession 错误**-我们有一段时间的报告，此错误会阻止在某些情况下启动 WinDbg Preview。 在加载某个版本的 Dbghelp.dll 之前，有几个外部应用程序会尝试将该版本注入到我们的进程中。 其中一些用户使用的是具有缺少的功能的 Dbghelp.dll 版本，在我们尝试使用这些功能时会导致此错误。 我们为此添加了修复程序，如果仍出现此问题，则会进行跟踪。
 
-**字体控件**-我们添加了用于控制字体和字体大小的设置。 有两个不同的设置，一个用于文本窗口（如 "反汇编"、"源"、"命令" 等），另一个用于工具窗口（局部变量、堆栈等）。 还有几个区域不受这些选项的影响，这些选项将在将来更新。
+**字体控件**-我们添加了用于控制字体和字体大小的设置。 有两个不同的设置，一种用于文本窗口 (以单点分隔窗口（如反汇编、源、命令等） ) ，一个用于工具窗口 (局部变量、堆栈等 ) 。 还有几个区域不受这些选项的影响，这些选项将在将来更新。
 
 **突出显示改进**-"命令" 窗口中的文本持久突出显示现在也会在 "源" 和 "备注" 窗口中突出显示文本。
 
@@ -173,7 +172,7 @@ ms.locfileid: "86141301"
 
 - 可从 "文件" 菜单或 Home 功能区访问的 "新建设置" 对话框。 
 - "事件和异常设置" 对话框。 此菜单更改调试器处理事件和异常的方式，等效于 "sx" 命令或 WinDbg 的事件筛选器对话框。 选择 "主页" 功能区上的 "设置"，然后点击左侧的 "事件和异常" 来管理这些**设置**。
-- 提高了 TTD 索引器的性能。 这会提高索引 TTD 跟踪文件的性能，使索引过程的速度快得多（在2倍之间），同时使索引文件更小（约50%）。 对于大小超过4GB 的跟踪，或使用具有多个 CPU 核心（8 +）的计算机，性能改进最明显。 新的索引器使调试非常大的跟踪（50GB +）变得更可行。
+- 提高了 TTD 索引器的性能。 这会提高索引 TTD 跟踪文件的性能，使索引过程在2到 10-10) 之间更快 (，同时使索引文件 (~ 50% 的) 更小。 对于大小超过4GB 的跟踪，或使用具有多个 CPU 核心的计算机 (8 +) ，性能改进最明显。 新的索引器可更好地调试 (50GB +) 的超大型跟踪。
 - 用于指定体系结构的 New *debugArch*启动标志。 WinDbg 预览版尝试将具有正确位数的调试器引擎启动到目标，以更好地支持调试托管代码。 在某些情况下，它不能确定正确的位数，或者您可能想要重写它所决定的位数。 使用-debugArch x86 | amd64 控制调试器引擎的体系结构。
 
 其他更改和 bug 修复：
@@ -185,13 +184,13 @@ ms.locfileid: "86141301"
 -  现在，未编制索引的 TTD 跟踪将更清楚地表明它们未编入索引。
 -  提高了 "局部变量" 窗口的性能
 -  添加了 "功能区" 按钮，用于将命令窗口日志保存到文件。
--  。 将 SelectMany （ <projection> ）设置为默认的 LINQ 方法集。
+-  。 SelectMany (<projection>) 为默认的 LINQ 方法集。
 
 ## <a name="10180711002"></a>1.0.1807.11002
 
 此版本包含这些更新。
 
-**自动保存和加载断点**。 这是替换工作区的第一步。 我们将通过启用断点的保存和加载来开始路由。 从 "文件" 菜单上的 "最近" 选项卡中启动以前调试过的内容后，将从该会话加载断点。 计划是扩展此功能，以便在多个会话中保留更多信息。 当前未保存针对断点（如线程和进程特定上下文以及条件）的硬件断点（ba）和其他各种属性。
+**自动保存和加载断点**。 这是替换工作区的第一步。 我们将通过启用断点的保存和加载来开始路由。 从 "文件" 菜单上的 "最近" 选项卡中启动以前调试过的内容后，将从该会话加载断点。 计划是扩展此功能，以便在多个会话中保留更多信息。 硬件断点 (ba) 和断点上的其他各种属性，如线程和进程特定的上下文以及当前未保存的条件。
  
 少量更改和 bug 修复：
 
@@ -235,8 +234,8 @@ ms.locfileid: "86141301"
 
 **JSPROVIDER api 版本 1.2** -适用于声明支持 API 版本1.2 的 JavaScript 扩展：
 
-- 如果任何对象的 compareTo 方法退出脚本，则该对象的自定义比较运算符（比较运算符将在 DX 计算器和其他地方工作：例如： IModelObject：： Compare）
-- 如果任何对象的. equals 方法退出脚本，则该对象的自定义相等运算符（= = 和！ = 将在 DX 计算器和其他地方工作：例如： IModelObject：： IsEqualTo）
+- 使用 compareTo 方法（退出脚本）的任何对象都具有自定义的比较运算符， (比较运算符将在 DX 计算器和其他地方工作：例如： IModelObject：： Compare) 
+- 如果任何对象的. equals 方法退出脚本，则该对象的自定义相等运算符 (= = 和！ = 将在 DX 计算器和其他地方工作：例如： IModelObject：： IsEqualTo) 
 - 输入脚本的本机或数据模型对象将对其使用 compareTo 和. equals，以允许访问任何自定义比较运算符或自定义相等实现。
  
 少量更改和 bug 修复：
@@ -257,11 +256,11 @@ ms.locfileid: "86141301"
 
 如果更喜欢使用命令，可以使用 "$hl" 命令：
 
-`$hl ["someValueHere"]`-突出显示 "给文本（或突出显示，如果已突出显示）"
+`$hl ["someValueHere"]`-突出显示已突出显示的文本 (或取消突出显示) 
 
 `$hl clearAll`-清除所有突出显示的条目
 
-`$hl caseSensitive [1|0]`-将突出显示匹配设置为区分大小写或不区分大小写（默认情况下不区分大小写）
+`$hl caseSensitive [1|0]`-将突出显示匹配设置为区分大小写或不区分大小写 (默认情况下不区分大小写) 
 
 此版本还包括一些次要 bug 修补程序。
 
@@ -281,7 +280,7 @@ ms.locfileid: "86141301"
 **JavaScript 改进**
 
 - 64中的位数字和数值现在包含一个取模方法，该方法允许真正的64位取模运算。
-- JavaScript 中定义的对象现在可以实现自定义可比较或可相等的概念，这些概念将使用标准 c + + 运算符或 LINQ 操作在 dx 中工作。 为了利用这一点，脚本必须在 initializeScript 数组中声明，该脚本通过插入记录 "new apiVersionSupport （1，2）" 来支持新版本的宿主 API。 完成后，可以在任意 "dx" 或数据模型窗口 LINQ 查询中使用这些函数。 如果该方法实现 compareTo （其他），则可比较（比较运算符在 dx 和 LINQ 中工作）。 如果该方法返回一个负值，如 "this < 其他"。 如果该方法返回零，则 "this = = other"。 如果该方法返回正值 "this > other"。 如果该方法实现. equals （其他），则它是可相等（= = 在 dx 和 LINQ 中起作用）。 方法必须返回 true 或 false。
+- JavaScript 中定义的对象现在可以实现自定义可比较或可相等的概念，这些概念将使用标准 c + + 运算符或 LINQ 操作在 dx 中工作。 为了利用这一点，脚本必须在 initializeScript 数组中声明，该脚本通过插入记录 "new apiVersionSupport (1，2) " 来支持宿主 API 的新版本。 完成后，可以在任意 "dx" 或数据模型窗口 LINQ 查询中使用这些函数。 如果该方法实现. compareTo (其他) ，则它可以与 dx 和 LINQ) 中的 (比较运算符相同。 如果该方法返回一个负值，如 "this < 其他"。 如果该方法返回零，则 "this = = other"。 如果该方法返回正值 "this > other"。 如果该方法实现. equals (其他) ，则 (= = 在 dx 和 LINQ) 中运行。 方法必须返回 true 或 false。
 
 少量更改和 bug 修复：
 
@@ -308,20 +307,20 @@ ms.locfileid: "86141301"
 
 **Javascript 脚本中的元数据**-javascript 扩展现在可以返回属性和其他构造的元数据。 这意味着扩展可以提供帮助字符串、指示值的显示基数等。 通过在对象上放置元数据描述符来提供元数据，方法是使用 metadataDescriptor 或 defineMetadata 的显式调用。 函数返回值、迭代值和其他值上下文可以通过 valueWithMetadata 为其值返回元数据。
 
-**JAVASCRIPT API 更新**-对 JavaScript 提供程序中的 api 进行了一些潜在的源级别重大更改（包括新的对本机对象的方法和属性）。 现有扩展将不会看到任何可能重大的更改，而不会指明它们是否支持新版本的 JsProvider API。 对于新的 API 版本，可通过将 apiVersionSupport 记录置于由 initializeScript 返回的支持版本1.1 的数组中来指示。 可能? .. 值为时，指示对版本1.1 的支持。
+**JAVASCRIPT API 更新**-对 JavaScript 提供程序中的 api 进行了一些潜在的源级别重大更改 (包括) 本机对象的新投影方法和属性。 现有扩展将不会看到任何可能重大的更改，而不会指明它们是否支持新版本的 JsProvider API。 对于新的 API 版本，可通过将 apiVersionSupport 记录置于由 initializeScript 返回的支持版本1.1 的数组中来指示。 可能? .. 值为时，指示对版本1.1 的支持。
 
 API 版本1.1 中的更改包括：
 
 - getModuleSymbol 和 getModuleType 如果无法找到符号而不是引发异常，则返回 null。
 - 除外，所有本机对象的 address 属性都是 targetLocation。 如果该对象没有地址，则在访问属性时将引发异常。
-- 所有本机对象均对其使用 getObjectValue 和 setObjectValue 方法来访问对象上的属性，这可能与对象上的名称 JavaScript 位置（例如： ' address '）冲突。
+- 所有本机对象均对其使用 getObjectValue 和 setObjectValue 方法来访问对象上的属性，这可能与对象上的 JavaScript 位置 (例如： "address" ) 。
 
 **其他 JavaScript 更改**
 
 - JavaScript 扩展现在可以通过 defineProperty 和 delete 运算符在数据模型对象上添加和移除属性。 将 JavaScript 类作为父模型或类型签名添加或注册仍是处理对象模型的首选方法。
 - JavaScript 扩展现在可以通过新的 setModuleSymbol API 修改调试目标中的模块内的全局变量。
-- 所有位于64位库类型上的数学函数（例如：. 加法、. 减法、. 乘法、除法等）现在也存在于 JavaScript 编号上。
-- JavaScript 函数和属性现在可以返回通过自定义封送处理枚举的值。 函数或属性访问器可以返回 typeSystem （value，type ...），以便调用它此类自定义封送处理。
+- 64位库类型上的所有数学函数 (例如：. 加法、. 减法、. 乘法、除法等 ) 现在也存在于 JavaScript 编号上。
+- JavaScript 函数和属性现在可以返回通过自定义封送处理枚举的值。 函数或属性访问器可以返回 typeSystem (值，类型 ) ，以便调用它此类自定义封送处理。
 - 脚本调试器中的 "断点" 命令现在可以在函数名称和行/列位置之外进行中断。
 - JavaScript 扩展中的类型对象可以通过 containingModule 属性访问其包含模块。
 
@@ -332,14 +331,14 @@ API 版本1.1 中的更改包括：
 - 与 CTRL + F 的性能和行为的各种修复。
 - 在尝试使用 TTD 之前，在运行未提升的状态时添加了警告。
 - 添加了替代自动目标位数检测的选项。
-- 禁用了不同的 "文件" 菜单和功能区选项（在转储文件中时为 "执行"）。
+- 禁用各种文件菜单和功能区选项，在转储文件) 时，它们不能 (如 "开始"）使用。
 
 已知问题：
 - SOS 在 x86 跟踪上不起作用。
 
 ## <a name="10130"></a>1.0.13.0
 
-此版本添加了时间行程跟踪。 使用行程调试，可以记录进程，然后在以后向前和向后重播。 旅行调试（TTD）可让您通过 "倒带" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。 有关详细信息，请参阅[时间行程调试 - 概述](time-travel-debugging-overview.md)。
+此版本添加了时间行程跟踪。 使用行程调试，可以记录进程，然后在以后向前和向后重播。 使用行程调试 (TTD) 可以通过使你 "后退" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。 有关详细信息，请参阅[时间行程调试 - 概述](time-travel-debugging-overview.md)。
 
 ## <a name="10120"></a>1.0.12.0
 
@@ -349,4 +348,4 @@ API 版本1.1 中的更改包括：
 
 [WinDbg 预览版–安装](windbg-install-preview.md)
 
-[WinDbg 预览–命令行启动选项](windbg-command-line-preview.md)
+[WinDbg 预览版 - 命令行启动选项](windbg-command-line-preview.md)
