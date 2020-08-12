@@ -8,14 +8,14 @@ keywords:
 - DEBUG_BREAK_WRITE
 - DEBUG_BREAK_EXECUTE
 - DEBUG_BREAK_IO
-ms.date: 05/23/2017
+ms.date: 05/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 924291f98860cd57880e0679b54be08158b7dd84
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d7c1f87f55b094f93c36b3185d65b995c5062330
+ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837820"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88148498"
 ---
 # <a name="controlling-breakpoint-flags-and-parameters"></a>控制断点标志和参数
 
@@ -27,7 +27,7 @@ ms.locfileid: "72837820"
 
 -   [**GetId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getid)返回断点 ID。
 
--   [**GetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-gettype)返回断点类型（软件或处理器）和在其上设置断点的有效处理器的类型。
+-   [**GetType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-gettype)返回 (软件或处理器) 的断点类型和在其上设置断点的有效处理器的类型。
 
 -   [**GetAdder**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getadder)返回添加了断点的客户端。
 
@@ -47,19 +47,19 @@ ms.locfileid: "72837820"
 
 断点标志构成位域。 可在此位字段中使用的可能标志及其含义如下：
 
-<span id="DEBUG_BREAKPOINT_ENABLED"></span><span id="debug_breakpoint_enabled"></span>\_启用调试\_断点  
+<span id="DEBUG_BREAKPOINT_ENABLED"></span><span id="debug_breakpoint_enabled"></span>调试 \_ 断点 \_ 已启用  
 设置此标志后，断点将处于*启用状态*，并将具有正常效果。 如果未设置此标志，则将*禁用*该断点并且不会产生任何影响。 如果希望暂时停用一个断点，可以删除此标志;然后，在想要重新启用此断点时，可以轻松地添加此标志。
 
-<span id="DEBUG_BREAKPOINT_ADDER_ONLY"></span><span id="debug_breakpoint_adder_only"></span>仅调试\_\_断点\_  
-设置此标志后，断点将是一个*专用断点*。 此断点仅对添加它的客户端可见。 在这种情况下，其他客户端将无法查询该断点的引擎，该引擎将不会向其他客户端发送断点生成的事件。 与此断点相关的所有回调（事件和[输出](using-input-and-output.md#output)）将仅发送到此客户端。 请参阅[**GetAdder**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getadder)。
+<span id="DEBUG_BREAKPOINT_ADDER_ONLY"></span><span id="debug_breakpoint_adder_only"></span>\_仅调试 \_ 断点 \_  
+设置此标志后，断点将是一个*专用断点*。 此断点仅对添加它的客户端可见。 在这种情况下，其他客户端将无法查询该断点的引擎，该引擎将不会向其他客户端发送断点生成的事件。 与此断点相关的所有回调 (事件和[输出](using-input-and-output.md#output)) 只发送到此客户端。 请参阅[**GetAdder**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getadder)。
 
-<span id="DEBUG_BREAKPOINT_GO_ONLY"></span><span id="debug_breakpoint_go_only"></span>调试\_断点\_仅\_中转  
+<span id="DEBUG_BREAKPOINT_GO_ONLY"></span><span id="debug_breakpoint_go_only"></span>调试 \_ 断点 \_ \_ 仅适用于  
 设置此标志后，仅当目标处于无限制执行时才会触发断点。 如果引擎正在单步执行目标中的说明，则不会触发此操作。
 
-<span id="DEBUG_BREAKPOINT_ONE_SHOT"></span><span id="debug_breakpoint_one_shot"></span>\_一个\_快照调试\_断点  
+<span id="DEBUG_BREAKPOINT_ONE_SHOT"></span><span id="debug_breakpoint_one_shot"></span>调试 \_ 断点 \_ 一个 \_ 快照  
 设置此标志后，在第一次触发断点时，断点会自动删除。
 
-<span id="DEBUG_BREAKPOINT_DEFERRED"></span><span id="debug_breakpoint_deferred"></span>\_延迟调试\_断点  
+<span id="DEBUG_BREAKPOINT_DEFERRED"></span><span id="debug_breakpoint_deferred"></span>已 \_ 延迟调试断点 \_  
 设置此标志后，断点会*延迟*。 当使用符号表达式指定断点的偏移量并且引擎无法计算表达式时，引擎将设置此标志。 每当模块加载或 unleaded 在目标中时，引擎将尝试重新计算其位置使用表达式指定的所有断点的表达式。 无法评估的标记将标记为延迟。 任何客户端都不能修改此标志。
 
 ### <a name="span-idother_breakpoint_parametersspanspan-idother_breakpoint_parametersspanother-breakpoint-parameters"></a><span id="other_breakpoint_parameters"></span><span id="OTHER_BREAKPOINT_PARAMETERS"></span>其他断点参数
@@ -67,7 +67,7 @@ ms.locfileid: "72837820"
 断点参数还包括：
 
 <span id="Pass_count"></span><span id="pass_count"></span><span id="PASS_COUNT"></span>*传递计数*  
-如果断点有一个与之关联的传递计数，则在目标已将断点传递到指定次数之前，将不会激活该断点。 最初设置的传递计数可通过使用[**GetPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getpasscount)来查找。 在激活之前，引擎将在断点之前传递断点的[**次数。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getcurrentpasscount) 通过使用[**SetPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setpasscount)，可以将传递计数重置为新值。
+如果断点有一个与之关联的传递计数，则在目标已将断点传递到指定次数之前，将不会激活该断点。 最初设置的传递计数可通过使用[**GetPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getpasscount)来查找。 在激活之前，引擎将在断点之前传递断点的[**次数。**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getcurrentpasscount) 通过使用[**SetPassCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setpasscount)，可以将传递计数重置为新值。
 
 <span id="Match_thread"></span><span id="match_thread"></span><span id="MATCH_THREAD"></span>*匹配线程*  
 如果该断点有一个关联的线程，则在任何其他线程遇到该断点时，它将被其忽略。 可以通过使用[**GetMatchThreadId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-getmatchthreadid)找到该线程，并且可以使用[**SetMatchThreadId**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugbreakpoint2-setmatchthreadid)更改该线程。
@@ -92,8 +92,8 @@ ms.locfileid: "72837820"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">描述</th>
+<th align="left">值</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -116,32 +116,16 @@ DEBUG_BREAK_READ |DEBUG_BREAK_WRITE</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DEBUG_BREAK_IO</p></td>
-<td align="left"><p>当访问断点内存块中的 i/o 端口时，将触发断点。 （仅限 Windows XP 和 Microsoft Windows Server 2003，仅限内核模式，仅限 x86）</p></td>
+<td align="left"><p>当访问断点内存块中的 i/o 端口时，将触发断点。 仅 (Windows XP 和 Microsoft Windows Server 2003，仅限内核模式，x86 仅) </p></td>
 </tr>
 </tbody>
 </table>
 
- 
 
 并非所有的访问类型和大小都在所有处理器上都受支持。 支持以下访问类型和大小：
 
 <span id="x86"></span><span id="X86"></span>x86  
-支持所有访问类型。 调试\_BREAK\_读取行为类似于调试\_中断\_读取 |调试\_BREAK\_写入。 大小必须为1、2或4。 断点的地址必须为大小的倍数。
+支持所有访问类型。 调试 \_ 中断 \_ 读取的行为类似于调试 \_ 中断 \_ 读取 |调试 \_ 中断 \_ 写入。 大小必须为1、2或4。 断点的地址必须为大小的倍数。
 
 <span id="x64"></span><span id="X64"></span>64  
-支持所有访问类型。 调试\_BREAK\_读取行为类似于调试\_中断\_读取 |调试\_BREAK\_写入。 大小必须为1、2、4或8。 断点的地址必须为大小的倍数。
-
-<span id="Itanium"></span><span id="itanium"></span><span id="ITANIUM"></span>安腾  
-支持除 DEBUG\_BREAK\_IO 之外的所有访问类型。 大小必须是2的幂;对于调试\_BREAK\_EXECUTE，大小必须为16。 断点的地址必须为大小的倍数。
-
-<span id="Itanium_running_in_x86_mode"></span><span id="itanium_running_in_x86_mode"></span><span id="ITANIUM_RUNNING_IN_X86_MODE"></span>X86 模式下运行的 Itanium  
-与 x86 的相同，不同之处在于不支持调试\_BREAK\_IO。
-
- 
-
- 
-
-
-
-
-
+支持所有访问类型。 调试 \_ 中断 \_ 读取的行为类似于调试 \_ 中断 \_ 读取 |调试 \_ 中断 \_ 写入。 大小必须为1、2、4或8。 断点的地址必须为大小的倍数。

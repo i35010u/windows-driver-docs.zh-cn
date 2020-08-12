@@ -1,9 +1,9 @@
 ---
 title: ur（取消汇编实际模式 BIOS）
-description: 你的命令显示指定的 16 位实模式代码程序集转换。
+description: 你的命令将显示指定的16位实模式代码的程序集转换。
 ms.assetid: 7ea3421a-3841-47ea-ab40-99d10516bb14
 keywords:
-- 你 (反汇编实模式下 BIOS) Windows 调试
+- " (Unassemble 实模式 BIOS) Windows 调试"
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5922e23340d416f45f37fa88917f8e20afe7322e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9036924b8e1984f80ac5c843fdad61ae793c1388
+ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383750"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88148371"
 ---
 # <a name="ur-unassemble-real-mode-bios"></a>ur（取消汇编实际模式 BIOS）
 
 
-**你**命令显示指定的 16 位实模式代码程序集转换。
+**你**的命令将显示指定的16位实模式代码的程序集转换。
 
 ```dbgcmd
 ur Range 
@@ -30,14 +30,14 @@ ur Address
 ur 
 ```
 
-## <a name="span-idddkcmdunassemblerealmodebiosdbgspanspan-idddkcmdunassemblerealmodebiosdbgspanparameters"></a><span id="ddk_cmd_unassemble_real_mode_bios_dbg"></span><span id="DDK_CMD_UNASSEMBLE_REAL_MODE_BIOS_DBG"></span>参数
+## <a name="span-idddk_cmd_unassemble_real_mode_bios_dbgspanspan-idddk_cmd_unassemble_real_mode_bios_dbgspanparameters"></a><span id="ddk_cmd_unassemble_real_mode_bios_dbg"></span><span id="DDK_CMD_UNASSEMBLE_REAL_MODE_BIOS_DBG"></span>参数
 
 
-<span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span> *Range*   
-指定包含要拆装的说明进行操作的内存范围。 有关语法的详细信息，请参阅[地址和地址范围语法](address-and-address-range-syntax.md)。
+<span id="_______Range______"></span><span id="_______range______"></span><span id="_______RANGE______"></span>*范围*   
+指定包含要拆装的指令的内存范围。 有关语法的详细信息，请参阅 [address 和 Address Range 语法](address-and-address-range-syntax.md)。
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *Address*   
-指定要拆装的内存范围的起始时间。 未组装的八个的说明 （基于 x86 处理器） 或 （在基于 Itanium 处理器上） 的九个说明。 有关语法的详细信息，请参阅[地址和地址范围语法](address-and-address-range-syntax.md)。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*地址*   
+指定要反汇编的内存范围的开始位置。 基于 x86 的 processorare unassembled 上的八个说明。 有关语法的详细信息，请参阅 [address 和 Address Range 语法](address-and-address-range-syntax.md)。
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>环境
 
@@ -48,36 +48,36 @@ ur
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>模式</strong></p></td>
-<td align="left"><p>用户模式下，内核模式</p></td>
+<td align="left"><p><strong>交货</strong></p></td>
+<td align="left"><p>用户模式，内核模式</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>目标</strong></p></td>
-<td align="left"><p>实时、 崩溃转储</p></td>
+<td align="left"><p>实时，故障转储</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>平台</strong></p></td>
-<td align="left"><p>全部</p></td>
+<td align="left"><p>All</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关如何调试 BIOS 代码的详细信息，请参阅[调试 BIOS 代码](debugging-bios-code.md)。
+有关如何调试 BIOS 代码的详细信息，请参阅 [调试 Bios 代码](debugging-bios-code.md)。
 
 <a name="remarks"></a>备注
 -------
 
-如果未指定*范围*或*地址*，反汇编当前地址处开始并扩展了八个的说明 （基于 x86 处理器） 或 （在基于 Itanium 处理器上） 的九个说明。
+如果不指定 *范围* 或 *地址*，则反汇编将从当前地址开始，并在基于 x86 的处理器上扩展八个指令。
 
-如果你正在检查 16 位实模式代码在基于 x86 的处理器上，同时**你**命令和[ **u （反汇编）** ](u--unassemble-.md)命令提供正确的结果。
+如果要在基于 x86 的处理器上检查16位实模式代码， **则命令和** [**u (Unassemble) **](u--unassemble-.md) 命令均会获得正确的结果。
 
-但是，如果在调试程序不是的位置存在实模式代码应为它 （例如，非 x86 或的计算机是运行模拟以插件卡从基于 x86 的 BIOS 代码），则必须使用**你**正确反汇编这代码。
+但是，如果实模式代码存在于调试器不期望的位置 (例如，运行或通过插件卡模拟基于 x86 的 BIOS 代码的非 x86 计算机) ，则 **必须使用来正确地拆装** 此代码。
 
-如果您使用**你**命令尝试在 32 位或 64 位代码中，反汇编代码，就好像 16 位代码。 这种情况下会产生无意义的结果。
+如果使用的是32位或64位代码，则该 **命令将尝试** 反汇编代码，就像它是16位代码一样。 这种情况会产生无意义的结果。
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: irql 扩展命令
-description: Irql 扩展显示在调试器中断之前目标计算机上的处理器的中断请求级别（IRQL）。
+description: Irql 扩展显示在调试器中断之前目标计算机上的处理器的中断请求级别 (IRQL) 。
 ms.assetid: 52dd3b9f-c03c-4b90-a01b-25289de67f5a
 keywords:
 - IRQL
@@ -14,23 +14,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e2db8736b25b6615c793625f5f2248e47ccb4629
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9d8cc9dcd2d30f6e378189d7168d6812f97542df
+ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826687"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88148451"
 ---
 # <a name="irql"></a>!irql
 
 
-**！ Irql**扩展在调试器中断之前显示目标计算机上的处理器的中断请求级别（irql）。
+在调试程序中断之前，在目标计算机上的处理器上，% **irql**扩展显示处理器的中断请求级别 (irql) 。
 
 ```dbgcmd
 !irql [Processor] 
 ```
 
-## <a name="span-idddk__irql_dbgspanspan-idddk__irql_dbgspanparameters"></a><span id="ddk__irql_dbg"></span><span id="DDK__IRQL_DBG"></span>Parameters
+## <a name="span-idddk__irql_dbgspanspan-idddk__irql_dbgspanparameters"></a><span id="ddk__irql_dbg"></span><span id="DDK__IRQL_DBG"></span>参数
 
 
 <span id="_______Processor______"></span><span id="_______processor______"></span><span id="_______PROCESSOR______"></span>*处理器*   
@@ -48,15 +48,15 @@ ms.locfileid: "72826687"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p><strong>Windows XP</strong></p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>Windows Server 2003 及更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ ms.locfileid: "72826687"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 IRQLs 的信息，请参阅 Windows 驱动程序工具包（WDK）文档和*Microsoft Windows 内部*内容，并将标记 Russinovich 和 David 所罗门群岛。
+有关 IRQLs 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部机制*，Mark Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
@@ -74,9 +74,9 @@ ms.locfileid: "72826687"
 
 同样，当发生 bug 检查并创建故障转储文件时，保存在崩溃转储文件中的 IRQL 是在 bug 检查之前立即发生的，而不是执行[**KeBugCheckEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kebugcheckex)例程时的 irql。
 
-在这两种情况下，将会引发当前的 IRQL 来调度\_级别，但 x86 体系结构除外。 因此，如果发生多个此类事件，则显示的 IRQL 还会派\_级别，使其在调试时毫无用处。
+在这两种情况下，当前 IRQL 会引发到调度 \_ 级别，但 x86 体系结构除外。 因此，如果发生多个此类事件，则显示的 IRQL 还会成为调度 \_ 级别，使其在调试时毫无用处。
 
-[ **！ Pcr**](-pcr.md)扩展在所有版本的 Windows 上显示当前的 irql，但当前的 irql 通常不起作用。 紧靠 bug 检查或调试器连接之前存在的 IRQL 更有趣，这仅显示为 **！！** 。
+[**！ Pcr**](-pcr.md)扩展在所有版本的 Windows 上显示当前的 irql，但当前的 irql 通常不起作用。 紧靠 bug 检查或调试器连接之前存在的 IRQL 更有趣，这仅显示为 **！！**。
 
 如果提供了无效的处理器号，或者内核已损坏，则调试器会显示消息 "无法获取 PRCB 地址"。
 
@@ -90,12 +90,7 @@ kd> !irql 1
 Debugger saved IRQL for processor 0x1 -- 0 (LOW_LEVEL)
 ```
 
-如果调试器处于详细模式，则包含 IRQL 本身的说明。 下面是 Itanium 处理器的示例：
-
-```dbgcmd
-kd> !irql
-Debugger saved IRQL for processor 0x0 -- 12 (PC_LEVEL) [Performance counter level]
-```
+如果调试器处于详细模式，则包含 IRQL 本身的说明。
 
 IRQL 数字的含义通常取决于处理器。 下面是 x64 处理器的示例。 请注意，IRQL 号码与上一个示例中的相同，但 IRQL 含义不同：
 

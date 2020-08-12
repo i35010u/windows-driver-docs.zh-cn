@@ -1,12 +1,12 @@
 ---
 title: idt
-description: Idt 扩展显示指定中断调度表 (IDT) 的中断服务例程 (Isr)。
+description: Idt 扩展显示)  (的中断服务例程 (IDT) 的指定中断调度表。
 ms.assetid: 6b289fde-85a3-4a40-8354-db6861ca8cb2
 keywords:
-- ISR (中断服务例程)
-- IDT (中断调度表)
+- 'ISR (中断服务例程) '
+- 'IDT (中断调度表) '
 - idt Windows 调试
-ms.date: 05/23/2017
+ms.date: 05/13/2020
 topic_type:
 - apiref
 api_name:
@@ -14,17 +14,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 667bfdf8cb59d41bea4b7795d5f0c6c5c3985747
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 69afcb7baf46c911eeddcbac8930a505f1050397
+ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025235"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88148458"
 ---
 # <a name="idt"></a>!idt
 
 
-**! Idt** extension 显示指定中断调度表 (idt) 的中断服务例程 (isr)。
+**！ Idt** extension 显示 (idt) 的指定中断调度表 (isr) 的中断服务例程。
 
 ```dbgcmd
 !idt IDT 
@@ -38,10 +38,10 @@ ms.locfileid: "70025235"
 <span id="_______IDT______"></span><span id="_______idt______"></span>*IDT*   
 指定要显示的 IDT。
 
-<span id="_______-a______"></span><span id="_______-A______"></span> **-a**   
-如果未指定*IDT* , 则调试器将以缩写格式显示目标计算机上的所有处理器的 IDTs。 如果指定 **-a** , 则还会显示每个 IDT 的 isr。
+<span id="_______-a______"></span><span id="_______-A______"></span>**-a**   
+如果未指定 *IDT* ，则调试器将以缩写格式显示目标计算机上的所有处理器的 IDTs。 如果指定 **-a** ，则还会显示每个 IDT 的 isr。
 
-<span id="_______-_______"></span> **-?**    
+<span id="_______-_______"></span> **-?**   
 在调试器中显示此扩展的帮助命令窗口。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
@@ -54,29 +54,25 @@ ms.locfileid: "70025235"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Unavailable</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 和更高版本</strong></p></td>
-<td align="left"><p>Kdexts</p></td>
+<td align="left"><p><strong>Windows XP 及更高版本</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
-
- 
 
 此扩展命令只能与基于 x64 或基于 x86 的目标计算机一起使用。
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
 
-有关 Isr 和 IDTs 的信息, 请参阅 Windows 驱动程序工具包 (WDK) 文档和*Microsoft Windows 内部*: Mark Russinovich 和 David 所罗门群岛。
-
-有关如何在 Itanium 目标计算机上显示中断向量表的详细信息, 请参阅[ **! ivt**](-ivt.md)。
+有关 Isr 和 IDTs 的信息，请参阅 Windows 驱动程序工具包 (WDK) 文档和 *Microsoft Windows 内部* ，并标记 Russinovich 和 David 所罗门群岛。
 
 <a name="remarks"></a>备注
 -------
 
-下面是此扩展的输出示例:
+下面是此扩展的输出示例：
 
 ```dbgcmd
 0: kd> !idt

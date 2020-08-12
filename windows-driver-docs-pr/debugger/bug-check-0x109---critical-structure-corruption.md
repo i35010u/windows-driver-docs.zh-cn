@@ -5,7 +5,7 @@ ms.assetid: 38d4d722-a915-4f17-899b-2a0b4aa69d95
 keywords:
 - Bug 检查 0x109 CRITICAL_STRUCTURE_CORRUPTION
 - CRITICAL_STRUCTURE_CORRUPTION
-ms.date: 05/23/2017
+ms.date: 05/13/2020
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1d3a0577d7b6481c146fa1cb7c11c8ae167313
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: d542d66e4338c4febcb82a217b5adb1c784bbabb
+ms.sourcegitcommit: bb3b62a57ba3aea4a0adeefd2d81993367b7b334
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534664"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88148500"
 ---
 # <a name="bug-check-0x109-critical_structure_corruption"></a>Bug 检查0x109：严重 \_ 结构 \_ 损坏
 
@@ -26,7 +26,7 @@ ms.locfileid: "84534664"
 "关键 \_ 结构 \_ 损坏 bug 检查" 的值为 "0x00000109"。 这表示内核检测到关键内核代码或数据损坏。
 
 > [!IMPORTANT]
-> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
 ## <a name="critical_structure_corruption-parameters"></a>关键 \_ 结构 \_ 损坏参数
@@ -58,7 +58,7 @@ ms.locfileid: "84534664"
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>损坏区域的类型。 （请参见本页后面的下表。）</p></td>
+<td align="left"><p>损坏区域的类型。  (在此页后面的部分中，请参阅下表。 ) </p></td>
 </tr>
 </tbody>
 </table>
@@ -85,15 +85,15 @@ ms.locfileid: "84534664"
 </tr>
 <tr class="even">
 <td align="left"><p>0x1</p></td>
-<td align="left"><p>函数修改或基于 Itanium 的函数位置</p></td>
+<td align="left"><p>函数修改</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>处理器中断调度表（IDT）</p></td>
+<td align="left"><p>处理器中断调度表 (IDT) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>处理器全局描述符表（GDT）</p></td>
+<td align="left"><p>处理器全局描述符表 (GDT) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
@@ -253,7 +253,7 @@ ms.locfileid: "84534664"
 </tr>
 <tr class="even">
 <td align="left"><p>0x102</p></td>
-<td align="left"><p>Win32k.sys 的修改</p></td>
+<td align="left"><p>修改 win32k.sys</p></td>
 </tr>
 </tbody>
 </table>
@@ -265,9 +265,9 @@ ms.locfileid: "84534664"
 
 此 bug 检查通常有三个不同的原因：
 
-1.  驱动程序无意或有意修改了关键内核代码或数据。 对于基于 x64 的计算机，Microsoft Windows Server 2003 Service Pack 1 （SP1）和更高版本的 Windows 不允许对内核进行修补，除非通过授权的 Microsoft 发起的热修补程序。
+1.  驱动程序无意或有意修改了关键内核代码或数据。 对于基于 x64 的计算机，Microsoft Windows Server 2003 Service Pack 1 (SP1) 和更高版本的 Windows 不允许对内核进行修补，除非已获得授权的 Microsoft 修补程序。
 
-2.  开发人员试图使用系统启动时未连接的内核调试器来设置普通内核断点。 只有在启动时附加了调试器，才能设置普通断点（[**bp**](bp--bu--bm--set-breakpoint-.md)）。 处理器断点（[**ba**](ba--break-on-access-.md)）可以随时设置。
+2.  开发人员试图使用系统启动时未连接的内核调试器来设置普通内核断点。 只有在启动时附加调试器，才能设置 ([**bp**](bp--bu--bm--set-breakpoint-.md)) 的常规断点。 可以随时设置 ([**ba**](ba--break-on-access-.md)) 的处理器断点。
 
 3.  发生硬件损坏。 例如，内核代码或数据可能存储在失败的内存中。
 
@@ -276,7 +276,7 @@ ms.locfileid: "84534664"
 
 [**！分析**](-analyze.md)调试扩展显示有关 bug 检查的信息，可帮助确定根本原因。
 
-若要开始，请使用[**k、kb、glm-kc-qnw、kd、kp、kp、kv （显示堆栈 Backtrace）**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)命令检查堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
+若要开始，请使用 [**k、kb、glm-kc-qnw、kd、kp、kp、kv (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) 命令来查看堆栈跟踪。 可以指定处理器编号来检查所有处理器上的堆栈。
 
 你还可以在代码中设置一个断点，使其导致此 stop 代码，并尝试单步执行出错的代码。
 
@@ -290,13 +290,13 @@ ms.locfileid: "84534664"
 
 -   如果驱动程序标识在错误检查消息中，禁用该驱动程序或咨询驱动程序更新的制造商。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后单击 "**诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后单击 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
--   确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在[Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
+-   确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在 [Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
 
--   有关其他常规疑难解答信息，请参阅[**蓝屏数据**](blue-screen-data.md)。
+-   有关其他常规疑难解答信息，请参阅 [**蓝屏数据**](blue-screen-data.md)。
 
  
 
