@@ -6,16 +6,16 @@ keywords:
 - 转储文件，用户模式
 ms.date: 12/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a0d2f9e217d5d33331924d6f6619335eed8a0371
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 9fca7340bd0ecf95556f64cc05d675d3539c23e7
+ms.sourcegitcommit: e0bec5347825e04fb3b2309d04156b01a83fa593
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861926"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88090112"
 ---
 # <a name="user-mode-dump-files"></a>用户模式转储文件
 
-本部分包括：
+本节包括：
 
 - [各种用户模式转储文件](#varieties)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74861926"
 
 这些转储文件之间的差异是大小之一。 小型转储通常更紧凑，可轻松发送到分析师。
 
-**请注意**，可以通过分析转储文件来获取   多的信息。 但是，任何转储文件都不能提供与实际使用调试器直接调试故障一样多的信息。
+**注意**   可以通过分析转储文件来获取很多信息。 但是，任何转储文件都不能提供与实际使用调试器直接调试故障一样多的信息。
 
 ## <a name="span-idfullspanspan-idfullspanfull-user-mode-dumps"></a><span id="full"></span><span id="FULL"></span>完全用户模式转储
 
@@ -41,11 +41,11 @@ ms.locfileid: "74861926"
 
 此转储文件包括进程的整个内存空间、程序的可执行文件映像本身、句柄表以及在重新构建转储时使用的内存时对调试器有用的其他信息。
 
-可以将完整的用户模式转储文件 "收缩" 到小型转储。 只需将转储文件加载到调试器中，然后使用 "[**转储" （创建转储文件）** ](-dump--create-dump-file-.md)命令以小型转储格式保存新转储文件。
+可以将完整的用户模式转储文件 "收缩" 到小型转储。 只需将转储文件加载到调试器中，然后使用[**. dump (创建转储文件) **](-dump--create-dump-file-.md)命令，以小型转储格式保存新转储文件。
 
-  **请注意**，尽管名称相同，但最大的 "小型转储" 文件实际上包含了比完整用户模式转储更多的信息。 例如， **dump/mf**或 **/ma**将创建比**dump/f**更大、更完整的文件。
+**注意**   尽管名称相同，但最大的 "小型转储" 文件实际上包含了比完整用户模式转储更多的信息。 例如， **dump/mf**或 **/ma**将创建比**dump/f**更大、更完整的文件。
 
-在用户模式下， **\[** <em>MiniOptions</em> **\]** 是最佳选择。 用此开关创建的转储文件的大小可能会很小到非常大。 通过指定正确的*MiniOptions* ，你可以精确控制所包含的信息。
+在用户模式下，**转储/m \[ **<em>MiniOptions</em> **\]** 是最佳选择。 用此开关创建的转储文件的大小可能会很小到非常大。 通过指定正确的*MiniOptions* ，你可以精确控制所包含的信息。
 
 ## <a name="span-idminidumpsspanspan-idminidumpsspanminidumps"></a><span id="minidumps"></span><span id="MINIDUMPS"></span>小型转储
 
@@ -53,7 +53,7 @@ ms.locfileid: "74861926"
 
 小型转储文件的大小和内容因正在转储的程序和执行转储的应用程序而异。 通常，小型转储文件相当大，并且包括完整的内存和句柄表。 其他情况下，它会小得多，例如，它可能只包含单个线程的相关信息，或者只包含有关堆栈中实际引用的模块的信息。
 
-名称 "小型转储" 会产生误导性，因为最大的小型转储文件实际包含的信息比 "完全" 用户模式转储多。 例如， **dump/mf**或 **/ma**将创建比**dump/f**更大、更完整的文件。 出于此原因，为所有用户模式转储文件创建，请使用**转储/m**\[*MiniOptions*\] **。**
+名称 "小型转储" 会产生误导性，因为最大的小型转储文件实际包含的信息比 "完全" 用户模式转储多。 例如， **dump/mf**或 **/ma**将创建比**dump/f**更大、更完整的文件。 出于此原因， **.dump /m**为 \[ *MiniOptions* \] 所有用户模式转储文件 **.dump /f**创建建议使用转储/m MiniOptions。
 
 如果要使用调试器创建小型转储文件，则可以准确选择要包括的信息。 简单的 "**转储"/m**命令将包含有关构成目标进程、线程信息和堆栈信息的已加载模块的基本信息。 这可以使用以下任一选项进行修改：
 
@@ -91,7 +91,7 @@ ms.locfileid: "74861926"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>/mt</strong></p></td>
-<td align="left"><p>向小型转储添加其他线程信息。 这包括线程时间，在调试小型转储时，可以使用<strong><a href="-ttime--display-thread-times-.md" data-raw-source="[.ttime (Display Thread Times)](-ttime--display-thread-times-.md)">ttime （显示线程时间）</a></strong>来显示线程时间。</p></td>
+<td align="left"><p>向小型转储添加其他线程信息。 这包括线程时间，在调试小型转储时，可以使用<strong><a href="-ttime--display-thread-times-.md" data-raw-source="[.ttime (Display Thread Times)](-ttime--display-thread-times-.md)"> (ttime 显示线程时间) </a></strong> 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>/mi</strong></p></td>
@@ -99,7 +99,7 @@ ms.locfileid: "74861926"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>/mp</strong></p></td>
-<td align="left"><p>将进程环境块（PEB）和线程环境块（TEB）数据添加到小型转储。 如果需要访问有关应用程序进程和线程的 Windows 系统信息，这会很有用。</p></td>
+<td align="left"><p>添加进程环境块 (PEB) 和线程环境块 (TEB) 数据添加到小型转储。 如果需要访问有关应用程序进程和线程的 Windows 系统信息，这会很有用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>/mw</strong></p></td>
@@ -115,7 +115,7 @@ ms.locfileid: "74861926"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>/mr</strong></p></td>
-<td align="left"><p>从小型转储中删除堆栈的部分，并存储用于重新创建堆栈跟踪的内存。 还会删除本地变量和其他数据类型值。 此选项不会使小型转储更小（因为这些内存部分只是归零），但如果你想要保护其他应用程序的隐私，则此选项很有用。</p></td>
+<td align="left"><p>从小型转储中删除堆栈的部分，并存储用于重新创建堆栈跟踪的内存。 还会删除本地变量和其他数据类型值。 此选项不会使小型转储 (小型，因为这些内存部分只是归零) ，但如果你想要保护其他应用程序的隐私，则此选项很有用。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>/mR</strong></p></td>
@@ -123,12 +123,12 @@ ms.locfileid: "74861926"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>/mk "</strong> <em>FileName</em> <strong>"</strong></p></td>
-<td align="left"><p>（仅适用于 Windows Vista）除了用户模式小型转储，还会创建一个内核模式小型转储。 内核模式小型转储将限制为存储在用户模式小型转储中的相同线程。 <em>文件名</em>必须用引号引起来。</p></td>
+<td align="left"><p> (Windows Vista 仅) 除了创建用户模式小型转储外，还会创建一个内核模式小型转储。 内核模式小型转储将限制为存储在用户模式小型转储中的相同线程。 <em>文件名</em>必须用引号引起来。</p></td>
 </tr>
 </tbody>
 </table>
 
-这些选项可以组合在一起。 例如， **/mfiu**可用于创建相当大的小型转储，或命令 **。转储/mrR**可用于创建保留用户隐私的小型转储。 有关完整的语法详细信息，请参阅[**dump （创建转储文件）** ](-dump--create-dump-file-.md)。
+这些选项可以组合在一起。 例如， **/mfiu**可用于创建相当大的小型转储，或命令 **。转储/mrR**可用于创建保留用户隐私的小型转储。 有关完整的语法详细信息，请参阅[**。 dump (创建转储文件) **](-dump--create-dump-file-.md)。
 
 ## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>创建用户模式转储文件
 
@@ -136,7 +136,7 @@ ms.locfileid: "74861926"
 
 ## <a name="span-idprocdumpspanspan-idprocdumpspanprocdump"></a><span id="procdump"></span><span id="Procdump"></span>ProcDump
 
-ProcDump 是一个命令行实用程序，其主要用途是监视应用程序的 CPU 峰值，并在高峰期间生成故障转储，管理员或开发人员可以使用这些功能来确定高峰的原因。 ProcDump 还包括挂起的窗口监视（使用 Windows 和任务管理器使用的窗口挂起定义）、未经处理的异常监视，并可基于系统性能计数器的值生成转储。 它还可以用作可嵌入到其他脚本中的常规进程转储实用工具。
+ProcDump 是一个命令行实用程序，其主要用途是监视应用程序的 CPU 峰值，并在高峰期间生成故障转储，管理员或开发人员可以使用这些功能来确定高峰的原因。 ProcDump 还包括挂起的窗口监视 (使用 Windows 和任务管理器使用) 、未经处理的异常监视的相同定义，并可基于系统性能计数器的值生成转储。 它还可以用作可嵌入到其他脚本中的常规进程转储实用工具。
 
 有关使用 Sysinternals ProcDump 实用工具创建用户模式转储文件的信息，请参阅[ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)。
 
@@ -150,7 +150,7 @@ CDB 和 WinDbg 可以通过多种方式创建用户模式转储文件。
 
 ### <a name="span-idcreating_dump_files_while_debuggingspanspan-idcreating_dump_files_while_debuggingspancreating-dump-files-while-debugging"></a><span id="creating_dump_files_while_debugging"></span><span id="CREATING_DUMP_FILES_WHILE_DEBUGGING"></span>在调试时创建转储文件
 
-当 CDB 或 WinDbg 正在调试用户模式应用程序时，您还可以使用[**dump （创建转储文件）** ](-dump--create-dump-file-.md)命令创建转储文件。
+当 CDB 或 WinDbg 正在调试用户模式应用程序时，还可以使用[**dump (创建转储文件) **](-dump--create-dump-file-.md)命令创建转储文件。
 
 此命令不会导致目标应用程序终止。 通过选择适当的命令选项，你可以创建包含所需信息的完全相同的小型转储文件。
 
@@ -158,12 +158,12 @@ CDB 和 WinDbg 可以通过多种方式创建用户模式转储文件。
 
 CDB 和 WinDbg 还可用于*收缩*转储文件。 为此，请开始调试现有转储文件，然后使用**dump**命令创建大小较小的转储文件。
 
-## <a name="span-idcdb-windbgspanspan-idcdb-windbgspan-time-travel-debugging-ttd"></a><span id="cdb-windbg"></span><span id="CDB-WINDBG"></span>行程调试（TTD）
+## <a name="span-idcdb-windbgspanspan-idcdb-windbgspan-time-travel-debugging-ttd"></a><span id="cdb-windbg"></span><span id="CDB-WINDBG"></span>行程调试 (TTD) 
 
-除了 CDB、WinDbg 和 Procdump 以外，调试用户模式应用程序的另一个选项是时间旅行调试（TTD）。 时间行程调试是一种工具，可让你记录正在运行的进程的执行，然后在以后向前和向后重播。 旅行调试（TTD）可让您通过 "倒带" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。
+除了 CDB、WinDbg 和 Procdump 以外，调试用户模式应用程序的另一个选项是 (TTD) 的时间行程调试。 时间行程调试是一种工具，可让你记录正在运行的进程的执行，然后在以后向前和向后重播。 使用行程调试 (TTD) 可以通过使你 "后退" 调试器会话来更轻松地调试问题，而无需在发现 bug 之前重现问题。
 
 TTD 可让你返回时间，以便更好地了解导致错误的条件并多次重播，以了解如何最好地解决问题。
 
 与故障转储文件相比，TTD 具有更多优点，这通常会导致最终失败导致的代码执行。
 
-有关时间行程调试（TTD）的详细信息，请参阅[行程调试-概述](time-travel-debugging-overview.md)。
+有关 (TTD) 的时间段的详细信息，请参阅[行程调试-概述](time-travel-debugging-overview.md)。
