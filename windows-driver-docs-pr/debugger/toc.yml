@@ -1076,6 +1076,8 @@
       href: controlling-the-target.md
     - name: 启用事后调试
       href: enabling-postmortem-debugging.md
+    - name: 打开 Enclave 调试
+      href: open-enclave-debugging.md
     - name: 使用调试器命令窗口
       items:
         - name: 使用调试器命令窗口
@@ -1172,7 +1174,7 @@
           href: using-debugger-extension-commands.md
         - name: 编写新的调试器扩展
           href: writing-new-debugger-extensions.md
-    - name: Remote Debugging
+    - name: 远程调试
       items:
         - name: 远程调试
           href: remote-debugging.md
@@ -1670,6 +1672,8 @@
           href: symbols-and-symbol-files.md
         - name: 公共和专用符号
           href: public-and-private-symbols.md
+        - name: 可移植 PDB 符号
+          href: symbols-portable-pdb.md
     - name: 访问调试符号
       items:
         - name: 访问调试符号
