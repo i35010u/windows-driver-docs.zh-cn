@@ -22,8 +22,6 @@
       href: power-down-sequence-for-a-netadaptercx-client-driver.md
 - name: 访问配置信息
   href: accessing-configuration-information.md
-- name: 处理控制请求
-  href: handling-control-requests.md
 - name: 调试 NetAdapterCx 客户端驱动程序
   href: debugging-a-netadaptercx-client-driver.md
 - name: 传输网络数据

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 08ef2051b123dc40525b5d9756208b75f1352a40
-ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
+ms.openlocfilehash: a6caf891b9e06fe3547747ec678f043ac3eeb755
+ms.sourcegitcommit: 174e6f03c1f4945f262d49d1ae2112ef2e13581f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473737"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217780"
 ---
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>网络适配器 WDF 类扩展 (NetAdapterCx)
 
@@ -51,7 +51,6 @@ ms.locfileid: "87473737"
 * [NetAdapterCx 客户端驱动程序的 INF 文件](inf-files-for-netadaptercx-client-drivers.md)
 * [管理 NetAdapterCx 中对象的生存期](summary-of-netadaptercx-objects.md)
 * [访问配置信息](accessing-configuration-information.md)
-* [处理控制请求](handling-control-requests.md)
 * [调试 NetAdapterCx 客户端驱动程序](debugging-a-netadaptercx-client-driver.md)
 * [传输网络数据](transferring-network-data.md)
 * [NetAdapterCx 接收方缩放 (RSS)](netadaptercx-receive-side-scaling-rss-.md)
