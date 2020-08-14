@@ -7,26 +7,26 @@ keywords:
 ms.date: 11/04/2019
 ms.localizationpriority: medium
 ms.custom: Vib
-ms.openlocfilehash: c34a3f491f7c16c315c24455bc984f77e9025035
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 19470692809a031d05c0d1b0eed8461ca53dba23
+ms.sourcegitcommit: 174e6f03c1f4945f262d49d1ae2112ef2e13581f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209034"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217782"
 ---
 # <a name="packet-descriptors-and-extensions"></a>数据包描述符和扩展
 
-在 NetAdapterCx 中，*数据包描述符*是用于描述网络数据包的小型、精简、运行时可扩展的结构。 每个数据包都需要以下各项：
+在 NetAdapterCx 中， *数据包描述符* 是用于描述网络数据包的小型、精简、运行时可扩展的结构。 每个数据包都需要以下各项：
 
 - 一个核心描述符 
 - 一个或多个片段说明符
 - 零个或多个数据包扩展 
 
-数据包的*核心描述符*是[**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
+数据包的 *核心描述符* 是 [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet) 结构。 它仅包含适用于所有数据包的最基本的元数据，例如给定包的组帧布局和数据包的第一个段描述符的索引。   
 
-每个数据包还必须有一个或多个*片段描述符*或[**NET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment)结构，它们描述数据包数据所在的系统内存中的位置。
+每个数据包还必须有一个或多个 *片段描述符*或 [**NET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment) 结构，它们描述数据包数据所在的系统内存中的位置。
 
-*扩展名*是可选的，可为特定于方案的功能保留每个数据包或每个片段的元数据。 例如，数据包扩展可以保存校验和的卸载信息、大型发送卸载（LSO）和接收段合并（RSC），也可以保存特定于应用程序的详细信息。 片段扩展可以保存虚拟地址信息、逻辑 DMA 地址信息或片段的其他信息。
+*扩展名* 是可选的，可为特定于方案的功能保留每个数据包或每个片段的元数据。 例如，数据包扩展可以保存校验和的卸载信息、 (LSO) 的大量发送卸载以及接收段合并 (RSC) ，也可以保存特定于应用程序的详细信息。 片段扩展可以保存虚拟地址信息、逻辑 DMA 地址信息或片段的其他信息。
 
 这些描述符和扩展共同保存了有关网络数据包的所有元数据。 下面是两个示例，说明了如何描述数据包。 第一张图显示了这样一种情况：整个数据包存储在单个内存片段内，并已启用校验和卸载。
 
@@ -39,9 +39,9 @@ ms.locfileid: "75209034"
 
 ## <a name="packet-descriptor-storage-and-access"></a>数据包描述符存储和访问
 
-数据包描述符和片段描述符均存储在**NET_RING**结构中。 NIC 客户端驱动程序通过调入网络环迭代器接口来访问网络环并对其执行操作，从而使驱动程序可以使用 NetAdapterCx 将网络数据发布到硬件，并将已完成的数据排出回操作系统。 
+数据包描述符和片段描述符均存储在 **NET_RING** 结构中。 NIC 客户端驱动程序通过调入网络环迭代器接口来访问网络环并对其执行操作，从而使驱动程序可以使用 NetAdapterCx 将网络数据发布到硬件，并将已完成的数据排出回操作系统。 
 
-有关网络环和 Net 环形迭代器接口的详细信息，请参阅[净环简介](introduction-to-net-rings.md)。
+有关网络环和 Net 环形迭代器接口的详细信息，请参阅 [净环简介](introduction-to-net-rings.md)。
 
 ## <a name="packet-descriptor-extensibility"></a>数据包描述符扩展性
 
@@ -53,7 +53,7 @@ ms.locfileid: "75209034"
 
 ![查询核心数据包描述符扩展的偏移量](images/packet-descriptors-2-offset-query.png)
 
-一旦创建了数据包队列及其描述符，系统就保证它们的所有扩展偏移都是固定的，因此，驱动程序不必经常重新查询偏移量。 此外，由于在初始化数据包队列时，所有扩展都由系统中的系统预分配，因此，无需对块进行运行时分配，搜索列表中的特定描述符，或者必须存储指向每个数据包的指针拓.
+一旦创建了数据包队列及其描述符，系统就保证它们的所有扩展偏移都是固定的，因此，驱动程序不必经常重新查询偏移量。 此外，由于在初始化数据包队列时，所有扩展都由系统预分配，因此不需要块的运行时分配，不需要在列表中搜索特定描述符，或者必须存储指向每个数据包扩展的指针。
 
 ## <a name="packet-descriptor-versionability"></a>数据包描述符 versionability
 
@@ -75,26 +75,26 @@ ms.locfileid: "75209034"
 2. 没有指针取消引用，因此只有偏移算法，因为扩展插件为内联，这不仅节省空间，还有助于 CPU 缓存命中。 
 3. 在创建队列时将分配扩展，因此驱动程序无需在活动数据路径中分配和释放内存，也无需处理后备链表的上下文块列表。
 
-## <a name="using-packet-extensions"></a>使用包扩展 
+## <a name="using-packet-extensions"></a>使用包扩展
 
 > [!IMPORTANT]
-> 目前，客户端驱动程序仅限于[操作系统定义的预先存在的数据包扩展](#predefined-packet-extension-constants-and-helper-methods)。
+> 目前，客户端驱动程序仅限于 [操作系统定义的预先存在的数据包扩展](#predefined-packet-extension-constants-and-helper-methods)。
 
 ### <a name="registering-packet-extensions"></a>正在注册包扩展
 
 使用 NIC 客户端驱动程序中的数据包扩展的第一步是声明受支持的硬件卸载。 当你播发对卸载（如校验和和 LSO）的支持时，NetAdapterCx 会以你的名义自动注册关联的数据包扩展。
 
-有关为校验和和 LSO 公布硬件卸载的代码示例，请参阅[NetAdapterCx 硬件卸载](netadaptercx-hardware-offloads.md)。
+有关为校验和和 LSO 公布硬件卸载的代码示例，请参阅 [NetAdapterCx 硬件卸载](netadaptercx-hardware-offloads.md)。
 
 ### <a name="querying-packet-extension-offsets-for-datapath-queues"></a>查询数据路径队列的数据包扩展偏移量
 
-通过声明硬件卸载支持来注册数据包扩展后，在处理数据包时，需要使用扩展偏移量来访问每个包。 若要减少对驱动程序的调用并提高性能，可以在*EvtNetAdapterCreateTx （Rx）队列*回调函数期间查询扩展的偏移量，并将偏移信息存储在队列上下文中。 
+通过声明硬件卸载支持来注册数据包扩展后，在处理数据包时，需要使用扩展偏移量来访问每个包。 若要减少对驱动程序的调用并提高性能，可以在 *EvtNetAdapterCreateTx (Rx) 队列* 回调函数期间查询扩展的偏移量，并在队列上下文中存储偏移信息。
 
-有关查询扩展偏移并将其存储在队列上下文中的示例，请参阅[传输和接收队列](transmit-and-receive-queues.md)。
+有关查询扩展偏移并将其存储在队列上下文中的示例，请参阅 [传输和接收队列](transmit-and-receive-queues.md)。
 
 ### <a name="getting-packet-extensions-at-runtime"></a>在运行时获取数据包扩展
 
-在队列上下文中存储了扩展偏移量后，只要需要扩展中的信息，就可以使用它们。 例如，你可以在将描述符编程到传输队列的硬件时调用[**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum)方法：
+在队列上下文中存储了扩展偏移量后，只要需要扩展中的信息，就可以使用它们。 例如，你可以在将描述符编程到传输队列的硬件时调用 [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) 方法：
 
 ```C++
     // Get the extension offset from the device context
@@ -121,17 +121,42 @@ ms.locfileid: "75209034"
 
 NetAdapterCx 提供已知包扩展常量的定义。
 
-| Constant | 定义 |
+| 常数 | 定义 |
 | --- | --- |
 | NET_PACKET_EXTENSION_INVALID_OFFSET | 防止偏移大小无效。 |
-| <ul><li>NET_PACKET_EXTENSION_CHECKSUM_NAME</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1_SIZE</li></ul> | 校验和数据包扩展的名称、版本和大小。 |
-| <ul><li>NET_PACKET_EXTENSION_LSO_NAME</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1</li><li>NET_PACKET_EXTENSION_LSO_VERSION_1_SIZE</li></ul> | 大型发送卸载（LSO）数据包扩展的名称、版本和大小。 |
-| <ul><li>NET_PACKET_EXTENSION_RSC_NAME</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1</li><li>NET_PACKET_EXTENSION_RSC_VERSION_1_SIZE</li></ul> | 接收段合并（RSC）数据包扩展的名称、版本和大小。 |
+| NET_PACKET_EXTENSION_CHECKSUM_NAME NET_PACKET_EXTENSION_CHECKSUM_VERSION_1| 校验和数据包扩展的名称和版本。 |
+| NET_PACKET_EXTENSION_LSO_NAME NET_PACKET_EXTENSION_LSO_VERSION_1 | 大规模发送卸载 (LSO) 数据包扩展的名称和版本。 |
+| NET_PACKET_EXTENSION_RSC_NAME NET_PACKET_EXTENSION_RSC_VERSION_1 | 接收段的名称和版本合并 (RSC) 数据包扩展。 |
 
-此外，NetAdapterCx 还提供了三种帮助器方法，它们充当[**NetExtensionGetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extension/nf-extension-netextensiongetdata)方法的包装器。 其中每个方法都返回指向适当结构类型的指针。
+此外，NetAdapterCx 还提供了三种帮助器方法，它们充当 [**NetExtensionGetData**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extension/nf-extension-netextensiongetdata) 方法的包装器。 其中每个方法都返回指向适当结构类型的指针。
 
 | 方法 | 结构 |
 | --- | --- |
 | [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
 | [**NetExtensionGetLso**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlso) | [**NET_PACKET_LSO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_lso)
 | [**NetExtensionGetPacketRsc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketrsc) | [**NET_PACKET_RSC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_rsc) |
+
+## <a name="using-fragment-extensions"></a>使用片段扩展
+
+> [!IMPORTANT]
+> 目前，客户端驱动程序仅限于操作系统定义的预先存在的片段扩展。
+
+### <a name="registering-fragment-extensions"></a>注册片段扩展
+
+NetAdapterCx 通过解释驱动程序的表示功能来自动注册大多数片段扩展。 例如，如果驱动程序表示它支持 DMA，框架将自动添加 DMA 编程所需的 NET_FRAGMENT_LOGICAL_ADDRESS 扩展。
+
+### <a name="querying-fragment-extension-offsets-for-datapath-queues"></a>查询数据路径队列的片段扩展偏移量
+
+若要访问片段扩展，可以遵循相同的过程来访问在 [数据路径队列的查询数据包扩展偏移量](#querying-packet-extension-offsets-for-datapath-queues)中概述的数据包扩展。
+
+## <a name="predefined-fragment-extension-constants"></a>预定义片段扩展常量
+
+NetAdapterCx 提供已知片段扩展常量的定义。
+
+| 常数 | 定义 |
+| --- | --- |
+| NET_FRAGMENT_EXTENSION_DATA_BUFFER_NAME NET_FRAGMENT_EXTENSION_DATA_BUFFER_VERSION_1 | 数据缓冲区片段扩展的名称和版本。 |
+| NET_FRAGMENT_EXTENSION_LOGICAL_ADDRESS_NAME NET_FRAGMENT_EXTENSION_LOGICAL_ADDRESS_VERSION_1 | 逻辑地址片段扩展的名称和版本。 |
+| NET_FRAGMENT_EXTENSION_MDL_NAME NET_FRAGMENT_EXTENSION_MDL_VERSION_1 | MDL 片段扩展的名称和版本。 |
+| NET_FRAGMENT_EXTENSION_RETURN_CONTEXT_NAME NET_FRAGMENT_EXTENSION_RETURN_CONTEXT_VERSION_1 | 返回上下文片段扩展的名称和版本。 |
+| NET_FRAGMENT_EXTENSION_VIRTUAL_ADDRESS_NAME NET_FRAGMENT_EXTENSION_VIRTUAL_ADDRESS_VERSION_1 | 虚拟地址片段扩展的名称和版本。 |
