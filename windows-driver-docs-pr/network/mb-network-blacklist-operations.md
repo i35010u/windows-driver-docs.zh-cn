@@ -3,14 +3,20 @@ title: MB 网络阻止列表操作
 description: MB 网络阻止列表操作
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba4fe888402bc5e5ec3fd22439f14dd66cb16065
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: 93fb367013022b307da9cd67e83bd87966947a13
+ms.sourcegitcommit: 803b1a521b69f45b5580789d9b1ba9c7467e60e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557720"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88242883"
 ---
 # <a name="mb-network-blacklist-operations"></a>MB 网络阻止列表操作
+
+> [!IMPORTANT]
+>
+> ### <a name="bias-free-communication"></a>无偏差通信
+>
+> Microsoft 支持多样化的包容性环境。 本文包含对 word 黑名单的引用。 Microsoft 的[无偏差通信风格指南](https://docs.microsoft.com/style-guide/bias-free-communication)将其视为排他性单词。 本文中使用的词是为了保持一致，因为它当前是软件中出现的单词。 如果软件更新后删除了该单词，则本文也将更新以保持一致。
 
 在各种情况下，设备可能需要不注册到网络，例如插入特定 SIM 卡或设备不想注册到特定网络。 为了应对这些情况，Windows 10 1703 版正在添加调制解调器接口，以使操作系统能够为 SIM 卡和网络提供程序配置黑名单。
 
@@ -20,7 +26,7 @@ ms.locfileid: "86557720"
 
 已创建一个新的 MBIM 命令，以使 OS 能够查询和设置在设备上存在匹配的 SIM 卡或网络提供程序时调制解调器不应尝试注册的 MCC 和 MNC 对。 对于此命令，已将新的 MSFT 专用 CID 定义为 MBIM_CID_MS_NETWORK_BLACKLIST。
 
-服务名称 =**基本连接扩展**
+服务名称 = **基本连接扩展**
 
 UUID = **UUID_BASIC_CONNECT_EXTENSIONS**
 
@@ -55,11 +61,11 @@ UUID 值 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 如果任何黑名单状态已从 "开始" 改为 "未开始" （反之亦然），则应为未经请求的事件。例如，如果插入的 SIM 与 SIM 提供程序黑名单匹配，则为。
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | Operation | 设置 | 查询 | 通知 |
 | --- | --- | --- | --- |
-| 命令 | MBIM_MS_NETWORK_BLACKLIST_INFO | 不适用 | 不适用 |
+| Command | MBIM_MS_NETWORK_BLACKLIST_INFO | 不适用 | 不适用 |
 | 响应 | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO | MBIM_MS_NETWORK_BLACKLIST_INFO |
 
 ### <a name="data-structures"></a>数据结构
@@ -75,9 +81,9 @@ InformationBuffer 应为 NULL，而 InformationBufferLength 应为零。
 | Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | BlacklistState | MBIM_MS_NETWORK_BLACKLIST_STATE | 指示是否满足任何黑名单条件，导致调制解调器未向网络注册。 有关详细信息，请参阅 MBIM_MS_NETWORK_BLACKLIST_STATE 表。 |
-| 4 | 4 | Elementcount 多于（EC） | UINT32 | DataBuffer 中后面的 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的计数。 |
-| 8 | 8 * EC | BlacklistProviderRefList | OL_PAIR_LIST | 该对的第一个元素为4字节的偏移量，该偏移量是从此 MBIM_MS_NETWORK_BLACKLIST_INFO 结构的开始（偏移量0）计算到 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的。 有关详细信息，请参阅 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 表。  对的第二个元素是指向相应 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的指针的大小为4字节。 |
-| 8 + （8 * EC） |  | DataBuffer | DATABUFFER | MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的数组。 |
+| 4 | 4 | Elementcount 多于 (EC)  | UINT32 | DataBuffer 中后面的 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的计数。 |
+| 8 | 8 * EC | BlacklistProviderRefList | OL_PAIR_LIST | 该对的第一个元素为4字节偏移量，从该 MBIM_MS_NETWORK_BLACKLIST_INFO 结构的开始 (偏移量 0) 计算到 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构。 有关详细信息，请参阅 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 表。  对的第二个元素是指向相应 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的指针的大小为4字节。 |
+| 8 + (8 * EC)  |  | DataBuffer | DATABUFFER | MBIM_MS_NETWORK_BLACKLIST_PROVIDER 结构的数组。 |
 
 前面的表中使用了以下数据结构。
 
@@ -91,7 +97,7 @@ MBIM_MS_NETWORK_BLACKLIST_STATE 描述两个不同黑名单的可能状态。
 
 MBIM_MS_NETWORK_BLACKLIST_PROVIDER 指定黑名单的提供者。
 
-| Offset | 大小 | 字段 | 类型 | 描述 |
+| Offset | 大小 | 字段 | 类型 | 说明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MCC | UINT32 | 如3GPP 所指定，MCC 是 IMSI 的一部分，它指定了提供商的国家/地区。 |
 | 4 | 4 | MNC | UINT32 | 由3GPP 指定，MNC 是 IMSI 的一部分并指定提供程序的网络。 |
