@@ -1,122 +1,122 @@
 ---
 title: 文件共享 (SMB) 符号服务器
-description: 运行 SMB 符号服务器是只需创建文件共享和授予用户对该文件共享的访问权限。
+description: 运行 SMB 符号服务器只是创建文件共享并向用户授予对该文件共享的访问权限。
 ms.assetid: C5CF9665-9289-48EB-AA12-8881F812488A
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2bbaeed3a565e8854074439b410d2cc17494fff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2df08a39bc66f7d5ede833b1a911204b992b9a2e
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348478"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253079"
 ---
 # <a name="file-share-smb-symbol-server"></a>文件共享 (SMB) 符号服务器
 
 
-运行 SMB 符号服务器是只需创建文件共享和授予用户对该文件共享的访问权限。
+运行 SMB 符号服务器只是创建文件共享并向用户授予对该文件共享的访问权限。
 
-## <a name="span-idcreatingasmbfilesharesymbolstorespanspan-idcreatingasmbfilesharesymbolstorespanspan-idcreatingasmbfilesharesymbolstorespancreating-a-smb-file-share-symbol-store"></a><span id="Creating_a_SMB_File_Share_Symbol_Store_"></span><span id="creating_a_smb_file_share_symbol_store_"></span><span id="CREATING_A_SMB_FILE_SHARE_SYMBOL_STORE_"></span>创建 SMB 文件共享符号存储区
-
-
-使用 Windows 资源管理器或计算机管理来创建文件共享并将安全性分配。 这些步骤假定符号，将位于*d:\\SymStore\\符号*。 完成这些步骤使用 Windows 资源管理器：
-
-1. 打开**Windows 资源管理器**。
-
-2. 右键单击*d:\\SymStore\\符号*，然后选择**属性**。
-
-3. 单击**共享**选项卡。
-
-4. 单击**高级共享**... .
-
-5. 检查*共享此文件夹*。
-
-6. 单击**权限**。
-
-7. 删除*每个人都*组。
-
-8. 使用**添加...**，添加需要访问权限的用户/安全组。
-
-9. 添加每个用户/安全组、 授予读取或读取 / 更改访问权限。
-
-10. 单击**确定**（权限对话框）。
-
-11. 单击**确定**（高级共享对话框）。
-
-12. 按**关闭**（属性对话框）。
-
-完成这些步骤使用计算机管理：
-
-1. 类型*计算机*窗口启动 （解析为 Windows 8 中的此电脑） 中。
-
-2. 右键单击并选择*管理*。
-
-3. 导航到*系统工具 |共享文件夹 |共享*。
-
-4. 右键单击并选择**新建 |共享。** .
-
-5. 按**下一步**（创建共享文件夹向导对话框）。
-
-6. 输入**d:\\SymStore\\符号**作为文件夹路径。
-
-7. 按**下一步**两次。
-
-8. 选择**自定义权限**。
-
-9. 按**自定义...** .
-
-10. 删除*每个人都*。
-
-11. 使用**添加...**，添加需要访问权限的用户/安全组。
-
-12. 添加每个用户/安全组、 授予读取或读取 / 更改访问权限。
-
-13. 按**确定**（自定义权限对话框）。
-
-14. 按**完成**两次以完成该过程。
-
-## <a name="span-idtestthesmbfilesharespanspan-idtestthesmbfilesharespanspan-idtestthesmbfilesharespantest-the-smb-file-share"></a><span id="Test_The_SMB_File_Share"></span><span id="test_the_smb_file_share"></span><span id="TEST_THE_SMB_FILE_SHARE"></span>测试 SMB 文件共享
+## <a name="span-idcreating_a_smb_file_share_symbol_store_spanspan-idcreating_a_smb_file_share_symbol_store_spanspan-idcreating_a_smb_file_share_symbol_store_spancreating-a-smb-file-share-symbol-store"></a><span id="Creating_a_SMB_File_Share_Symbol_Store_"></span><span id="creating_a_smb_file_share_symbol_store_"></span><span id="CREATING_A_SMB_FILE_SHARE_SYMBOL_STORE_"></span>创建 SMB 文件共享符号存储区
 
 
-配置调试程序要使用此符号路径：
+使用 Windows 资源管理器或 "计算机管理" 来创建文件共享并分配安全性。 这些步骤假设符号位于 *D： \\ SymStore \\ 符号*中。 使用 Windows 资源管理器完成以下步骤：
+
+1. 打开 **Windows 资源管理器**。
+
+2. 选择并按住 (或右键单击) *D： \\ SymStore \\ 符号* ，然后选择 " **属性**"。
+
+3. 选择 " **共享** " 选项卡。
+
+4. 选择 **高级共享**.。。 .
+
+5. 选中 " *共享此文件夹*"。
+
+6. 选择“权限”。
+
+7. 删除 *Everyone* 组。
+
+8. 使用 " **添加 ...**" 添加需要访问权限的用户/安全组。
+
+9. 对于添加的每个用户/安全组，授予 "读取" 或 "读取/更改" 访问权限。
+
+10. 选择 **"确定"** (权限 "对话框) 。
+
+11. 选择 **"确定" ("** 高级共享" 对话框) 。
+
+12. 按) **关闭** (属性 "对话框。
+
+使用 "计算机管理" 完成以下步骤：
+
+1. 在 Windows 8) 中，键入 " *计算机* 在 Windows 启动 (解析为此电脑"。
+
+2. 选择并按住 (或右键单击) 并选择 " *管理*"。
+
+3. 导航到 " *系统工具" |共享文件夹 |共享*。
+
+4. 选择并按住 (或右键单击) 并选择 " **新建" |共享 ...** .
+
+5. 按 **下** (创建共享文件夹向导对话框) 。
+
+6. 输入 **D： \\ SymStore \\ 符号** 作为文件夹路径。
+
+7. 按两次 " **下一步** "。
+
+8. 选择 " **自定义权限**"。
+
+9. 按 "**自定义 ...** " .
+
+10. 删除 *所有人*。
+
+11. 使用 " **添加 ...**" 添加需要访问权限的用户/安全组。
+
+12. 对于添加的每个用户/安全组，授予 "读取" 或 "读取/更改" 访问权限。
+
+13. 按 **"确定" ("** 自定义权限" 对话框) 。
+
+14. 按两次 " **完成** " 以完成该过程。
+
+## <a name="span-idtest_the_smb_file_sharespanspan-idtest_the_smb_file_sharespanspan-idtest_the_smb_file_sharespantest-the-smb-file-share"></a><span id="Test_The_SMB_File_Share"></span><span id="test_the_smb_file_share"></span><span id="TEST_THE_SMB_FILE_SHARE"></span>测试 SMB 文件共享
+
+
+将调试器配置为使用此符号路径：
 
 ```text
 srv*C:\Symbols*\\MachineName\Symbols
 ```
 
-若要查看正在引用在调试器中的 Pdb 的位置，请使用 lm （模块列表） 命令。 Pdb 的路径应所有开始使用 c:\\符号。 通过运行"！ 干扰性的符号"，".reload /f"，会看到大量的符号的符号和中的映像的下载的日志记录\\ \\MachineName\\符号文件服务器到 c:\\符号。
+若要查看在调试器中引用的 Pdb 的位置，请使用 lm (list 模块) 命令。 Pdb 的路径应以 C： \\ 符号开头。 通过运行 "！符号干扰" 和 "reload.sql/f"，你将看到从 \\ \\ MachineName \\ 符号文件服务器到 C：符号下载符号和图像的广泛的符号日志记录 \\ 。
 
-## <a name="span-idfilesharesymbolpathspanspan-idfilesharesymbolpathspanspan-idfilesharesymbolpathspanfile-share-symbol-path"></a><span id="File_Share_Symbol_Path"></span><span id="file_share_symbol_path"></span><span id="FILE_SHARE_SYMBOL_PATH"></span>文件共享符号路径
+## <a name="span-idfile_share_symbol_pathspanspan-idfile_share_symbol_pathspanspan-idfile_share_symbol_pathspanfile-share-symbol-path"></a><span id="File_Share_Symbol_Path"></span><span id="file_share_symbol_path"></span><span id="FILE_SHARE_SYMBOL_PATH"></span>文件共享符号路径
 
 
-有多个方法可用于配置调试器的符号路径 (.sympath) 若要使用文件共享。 符号路径的语法确定本地或不是，将缓存符号文件和缓存位置。
+可以通过多种方式配置调试器的符号路径， ( sympath) 使用文件共享。 符号路径的语法确定符号文件是在本地缓存，还是在缓存中缓存。
 
-（无本地缓存） 的直接文件共享使用：
+直接文件共享使用 (没有本地缓存) ：
 
 ```text
 srv*\\MachineName\Symbols
 ```
 
-本地缓存的文件共享的文件复制到特定的本地文件夹 (例如 c:\\符号):
+文件共享的文件到特定本地文件夹的本地缓存 (例如 c： \\ 符号) ：
 
 ```text
 srv*c:\Symbols*\\MachineName\Symbols
 ```
 
-本地缓存的文件共享的文件复制到 %dbghelp\_主目录 %\\符号文件夹：
+将文件共享的文件本地缓存到% DBGHELP.DLL \_ HOMEDIR% \\ 符号文件夹中：
 
 ```text
 srv**\\MachineName\Symbols
 ```
 
-第二个"\*"在如上所示示例中，表示默认的本地服务器缓存。
+\*上面所示的示例中的第二个 "" 表示默认的本地服务器缓存。
 
-如果 DBGHELP\_HOMEDIR 变量未设置，DBGHELP\_HOMEDIR 默认为调试器可执行文件文件夹 (例如 c:\\Program Files\\Windows 工具包\\10.0\\调试器\\x86)，并使缓存以 c： 驱动器中发生\\Program Files\\Windows 工具包\\10.0\\调试器\\x86\\Sym.
+如果 \_ 未设置 Dbghelp.dll HOMEDIR 变量，则 Dbghelp.dll \_ HOMEDIR 默认为 "调试器可执行文件" 文件夹 (例如 C： \\ Program files \\ windows 工具包 \\ 10.0 \\ 调试器 \\ x86) 并导致在 c： program files 中发生缓存 \\ \\ windows 工具包 \\ 10.0 \\ 调试器 \\ x86 \\ 符号。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
-[符号存储区文件夹树](symbol-store-folder-tree.md)
+[符号存储文件夹树](symbol-store-folder-tree.md)
 
  
 

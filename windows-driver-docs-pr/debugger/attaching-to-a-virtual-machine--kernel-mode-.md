@@ -8,23 +8,23 @@ keywords:
 - VMware 调试
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ec551a5bedc59e0ca45d8fc81b9f75a3f4e4f7
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 7ef8b9fb890dde9d85f6496a93b15ac2f475fa06
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533908"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252917"
 ---
 # <a name="setting-up-kernel-mode-debugging-of-a-virtual-machine-manually-using-a-virtual-com-port"></a>使用虚拟 COM 端口手动设置虚拟机的内核模式调试
 
 适用于 Windows 的调试工具支持虚拟机的内核调试。 虚拟机可以与调试器位于同一台物理计算机上，也可以位于连接到同一网络的其他计算机上。 本主题介绍如何通过 KDCOM 使用虚拟 COM 端口手动设置虚拟机的调试。
 
-使用 KDNET 虚拟网络是一种更快的选择，建议使用。 有关详细信息，请参阅[使用 KDNET 设置虚拟机的网络调试](setting-up-network-debugging-of-a-virtual-machine-host.md)。
+使用 KDNET 虚拟网络是一种更快的选择，建议使用。 有关详细信息，请参阅 [使用 KDNET 设置虚拟机的网络调试](setting-up-network-debugging-of-a-virtual-machine-host.md)。
 
 
 ## <a name="span-idsetting_up_the_target_virtual_machinespanspan-idsetting_up_the_target_virtual_machinespanspan-idsetting_up_the_target_virtual_machinespansetting-up-the-target-virtual-machine"></a><span id="Setting_Up_the_Target_Virtual_Machine"></span><span id="setting_up_the_target_virtual_machine"></span><span id="SETTING_UP_THE_TARGET_VIRTUAL_MACHINE"></span>设置目标虚拟机
 
-运行调试器的计算机称为*主机计算机*，被调试的虚拟机称为*目标虚拟机*。
+运行调试器的计算机称为 *主机计算机*，被调试的虚拟机称为 *目标虚拟机*。
 
 > [!IMPORTANT]
 > 使用 BCDEdit 更改启动信息之前，您可能需要在测试电脑上暂时挂起 Windows 安全功能，例如 BitLocker 和安全启动。
@@ -36,7 +36,7 @@ ms.locfileid: "84533908"
 
    **bcdedit/dbgsettings 串行 debugport：**<em>n</em> **波特率： 115200**
 
-   其中， *n*是虚拟机上的 COM 端口的编号。 
+   其中， *n* 是虚拟机上的 COM 端口的编号。 
 
 2. 在虚拟机中，将 COM 端口配置为映射到命名管道。 调试器将通过此管道进行连接。 有关如何创建此管道的详细信息，请参阅虚拟机的文档。
 
@@ -45,17 +45,17 @@ ms.locfileid: "84533908"
 
 ## <a name="span-idstarting_the_debuggerspanspan-idstarting_the_debuggerspanstarting-the-debugging-session-using-windbg"></a><span id="starting_the_debugger"></span><span id="STARTING_THE_DEBUGGER"></span>使用 WinDbg 启动调试会话
 
-在主计算机上，以管理员身份打开 WinDbg。 在通过串行管道调试 VM 时，必须在提升模式下运行调试器。 在 "**文件**" 菜单上，选择 "**内核调试**"。 在 "内核调试" 对话框中，打开 " **COM** " 选项卡。选中 "**管道**" 框，并选中 "**重新连接**" 框。 对于**波特率**，请输入115200。 对于 "**重置**"，请输入0。
+在主计算机上，以管理员身份打开 WinDbg。 在通过串行管道调试 VM 时，必须在提升模式下运行调试器。 在 " **文件** " 菜单上，选择 " **内核调试**"。 在 "内核调试" 对话框中，打开 " **COM** " 选项卡。选中 " **管道** " 框，并选中 " **重新连接** " 框。 对于 **波特率**，请输入115200。 对于 " **重置**"，请输入0。
 
-如果调试器在虚拟机所在的同一台计算机上运行，请输入以下端口作为**端口**。
+如果调试器在虚拟机所在的同一台计算机上运行，请输入以下端口作为 **端口**。
 
 **\\\\.\\管道 \\ **<em>PipeName</em>。
 
-如果调试器在不同于虚拟机的计算机上运行，请输入以下**端口作为端口**。
+如果调试器在不同于虚拟机的计算机上运行，请输入以下 **端口作为端口**。
 
 **\\\\**<em>VMHost</em>** \\ 管道 \\ **<em>PipeName</em>
 
-单击 **“确定”** 。
+选择“确定”。
 
 还可以在命令行中启动 WinDbg。 如果调试器在虚拟机所在的物理计算机上运行，请在命令提示符窗口中输入以下命令。
 
@@ -68,7 +68,7 @@ ms.locfileid: "84533908"
 ## <a name="span-idstarting_the_debugging_session_using_kdspanspan-idstarting_the_debugging_session_using_kdspanspan-idstarting_the_debugging_session_using_kdspanstarting-the-debugging-session-using-kd"></a><span id="Starting_the_Debugging_Session_Using_KD"></span><span id="starting_the_debugging_session_using_kd"></span><span id="STARTING_THE_DEBUGGING_SESSION_USING_KD"></span>使用 KD 启动调试会话
 
 
-若要调试与调试器运行在同一物理计算机上的虚拟机，请在*提升*的命令提示符窗口中输入以下命令。
+若要调试与调试器运行在同一物理计算机上的虚拟机，请在 *提升* 的命令提示符窗口中输入以下命令。
 
 **kd-k com： pipe、port = \\ \\ 。 \\管道 \\ **<em>PipeName</em>**，重置 = 0，重新连接**
 
@@ -86,12 +86,12 @@ ms.locfileid: "84533908"
 指定在虚拟机上创建的管道的名称。
 
 <span id="resets_0"></span><span id="RESETS_0"></span>**重置 = 0**  
-指定当主机和目标正在同步时，可以将不限数量的重置数据包发送到目标。 对 Microsoft Virtual PC 和管道丢弃多余字节的其他虚拟机使用**重置 = 0**参数。 不要将此参数用于 VMware 或其他不删除多余字节的虚拟机。
+指定当主机和目标正在同步时，可以将不限数量的重置数据包发送到目标。 对 Microsoft Virtual PC 和管道丢弃多余字节的其他虚拟机使用 **重置 = 0** 参数。 不要将此参数用于 VMware 或其他不删除多余字节的虚拟机。
 
 <span id="________reconnect"></span><span id="________RECONNECT"></span>*重新连接*  
-如果发生读/写失败，则使调试器自动断开连接并重新连接管道。 此外，如果调试器在启动调试器时找不到命名管道，则*reconnect*参数会使调试器等待名为*PipeName*的管道出现。 在计算机重新启动期间，对虚拟 PC 和其他销毁并重新创建管道的虚拟机使用*重新连接*。 不要将此参数用于 VMware 或其他虚拟机，这些虚拟机在计算机重新启动时保留其管道。
+如果发生读/写失败，则使调试器自动断开连接并重新连接管道。 此外，如果调试器在启动调试器时找不到命名管道，则 *reconnect* 参数会使调试器等待名为 *PipeName* 的管道出现。 在计算机重新启动期间，对虚拟 PC 和其他销毁并重新创建管道的虚拟机使用 *重新连接* 。 不要将此参数用于 VMware 或其他虚拟机，这些虚拟机在计算机重新启动时保留其管道。
 
-有关其他命令行选项的详细信息，请参阅[**KD 命令行**](kd-command-line-options.md)选项或[**WinDbg 命令行选项**](windbg-command-line-options.md)。
+有关其他命令行选项的详细信息，请参阅 [**KD 命令行**](kd-command-line-options.md) 选项或 [**WinDbg 命令行选项**](windbg-command-line-options.md)。
 
 ## <a name="span-idgeneration_2_virtual_machinesspanspan-idgeneration_2_virtual_machinesspangeneration-2-virtual-machines"></a><span id="generation_2_virtual_machines"></span><span id="GENERATION_2_VIRTUAL_MACHINES"></span>第2代虚拟机
 
@@ -104,7 +104,7 @@ ms.locfileid: "84533908"
 
    **Set-vmfirmware – Vmname** *Vmname* **– EnableSecureBoot Off**
 
-   其中， *VmName*是虚拟机的名称。
+   其中， *VmName* 是虚拟机的名称。
 
 2. 输入以下 PowerShell 命令，将 COM 端口添加到虚拟机：
 
@@ -119,7 +119,7 @@ ms.locfileid: "84533908"
 
 4. 完成配置更改更新后，重新启用安全启动。
 
-有关第2代 Vm 的详细信息，请参阅[第2代虚拟机概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282285(v=ws.11))。
+有关第2代 Vm 的详细信息，请参阅 [第2代虚拟机概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282285(v=ws.11))。
 
 
 ## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
@@ -132,7 +132,7 @@ ms.locfileid: "84533908"
 
 ## <a name="span-idfirewallsspantroubleshooting-firewalls-and-network-access-issues"></a><span id="Firewalls"></span>防火墙和网络访问问题疑难解答
 
-调试器（WinDbg 或 KD）必须具有通过防火墙的访问权限。 这甚至是网络适配器支持的虚拟串行端口的情况。
+你的调试器 (WinDbg 或 KD) 必须具有通过防火墙的访问权限。 这甚至是网络适配器支持的虚拟串行端口的情况。
 
 如果在加载调试器时 Windows 提示你关闭防火墙，请选择所有三个框。
 
@@ -140,12 +140,12 @@ ms.locfileid: "84533908"
 
 **Windows 防火墙**
 
-可以使用 "控制面板" 允许通过 Windows 防火墙进行访问。 打开 "控制面板 > 系统和安全"，然后选择 "允许应用通过 Windows 防火墙"。 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器*" 和 " *windows 内核调试器*"。 使用此复选框可以通过防火墙允许这两个应用程序。 重新启动调试应用程序（WinDbg 或 KD）。
+可以使用 "控制面板" 允许通过 Windows 防火墙进行访问。 打开 "控制面板 > 系统和安全"，然后选择 "允许应用通过 Windows 防火墙"。 在应用程序列表中，找到 " *WINDOWS GUI 符号调试器* " 和 " *windows 内核调试器*"。 使用此复选框可以通过防火墙允许这两个应用程序。  (WinDbg 或 KD) 重新启动调试应用程序。
 
 
 ## <a name="span-idthird_party_vmsspanthird-party-vms"></a><span id="Third_Party_VMs"></span>第三方 Vm
 
-**VMWare**   如果使用 VMWare 设施重启虚拟机（例如，重置按钮），请退出 WinDbg，然后重新启动 WinDbg 以继续调试。 在虚拟机调试期间，VMWare 通常会消耗100% 的 CPU。
+**VMWare**   如果使用 VMWare 设施重启虚拟机 (例如，"重置" 按钮) "，请退出 WinDbg，然后重新启动 WinDbg 以继续调试。 在虚拟机调试期间，VMWare 通常会消耗100% 的 CPU。
 
  
 

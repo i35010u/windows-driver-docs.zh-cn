@@ -1,6 +1,6 @@
 ---
 title: Bug 检查 0x1C7 STORE_DATA_STRUCTURE_CORRUPTION
-description: STORE_DATA_STRUCTURE_CORRUPTION bug 检查具有 0x000001C7 值。 它指示，存储组件在其数据结构中检测到损坏。
+description: STORE_DATA_STRUCTURE_CORRUPTION bug 检查的值为0x000001C7。 它指示存储区组件检测到其数据结构有损坏。
 keywords:
 - Bug 检查 0x1C7 STORE_DATA_STRUCTURE_CORRUPTION
 - STORE_DATA_STRUCTURE_CORRUPTION
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bb88f819aba66830ae6e6b3e3f6fe11d6b1080e5
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 652c2d2e60ed258361f94bcee68b1cf7e395cac8
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866510"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253046"
 ---
-# <a name="bug-check-0x1c7-storedatastructurecorruption"></a>Bug 检查 0x1C7：应用商店\_数据\_结构\_损坏
+# <a name="bug-check-0x1c7-store_data_structure_corruption"></a>Bug 检查0x1C7：存储 \_ 数据 \_ 结构 \_ 损坏
 
-应用商店\_数据\_结构\_损坏错误检查的值为 0x000001C7。 它指示，存储组件在其数据结构中检测到损坏。
+存储 \_ 数据 \_ 结构 \_ 损坏 bug 检查的值为0x000001C7。 它指示存储区组件检测到其数据结构有损坏。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
 
  
 
-## <a name="storedatastructurecorruption-parameters"></a>应用商店\_数据\_结构\_损坏参数
+## <a name="store_data_structure_corruption-parameters"></a>存储 \_ 数据 \_ 结构 \_ 损坏参数
 
 |参数|描述|
 |-------- |---------- |
-|1|损坏 id。 请参阅下面的值。 |
+|1|损坏 ID。 请参阅下面的值。 |
 |2| 请参阅下面的值。 |
 |3| 请参阅下面的值。 |
 |4| 请参阅下面的值。 |
@@ -65,26 +65,26 @@ ms.locfileid: "67866510"
 ## <a name="cause"></a>原因
 -----
 
-存储组件在其数据结构中检测到损坏。
+存储区组件检测到其数据结构损坏。
 
-可以通过由于物理内存访问的内存损坏会发生此错误检查。 物理内存损坏的原因包括：
+由于物理内存访问导致内存损坏，可能会发生此错误检测。 物理内存损坏的原因包括：
 
-1.  出现故障的 RAM 硬件
-2.  驱动程序或设备不当地修改通过 DMA 操作不正确或关联的 MDL 物理页。
-3.  硬件设备或固件损坏内存，例如固件非法跨电源转换修改物理页引起的损坏。
+1.  RAM 硬件故障
+2.  驱动程序或设备通过不正确的 DMA 操作或关联的 MDL 错误地修改物理页。
+3.  硬件设备或固件损坏内存导致的损坏，如固件在电源转换中非法修改物理页。
 
-Windows 内存管理器的详细信息，请参阅[第 1 部分 Windows 内部结构第七版](https://docs.microsoft.com/sysinternals/learn/windows-internals)通过 Pavel Yosifovich、 Mark E.Russinovich、 David A.Solomon 和 Alex Ionescu。
+有关 Windows 内存管理器的详细信息，请参阅 [Windows 内部版本第1部分](https://docs.microsoft.com/sysinternals/learn/windows-internals) ，按 Pavel Yosifovich，标记 Russinovich，David，David，Alex Ionescu。
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 -----
 
 **Windows 内存诊断工具**
 
-若要调查如果此 bug 检查由有故障 RAM 的硬件，运行 Windows 内存诊断工具。 在控件面板的搜索框中，键入内存，然后单击*诊断您的计算机的内存问题*。在测试运行后，使用事件查看器查看系统日志下的结果。 寻找*MemoryDiagnostics 结果*条目以查看结果。
+若要调查此 bug 检查是否是由 RAM 硬件故障引起的，请运行 Windows 内存诊断工具。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " *诊断计算机的内存问题*"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 ----------
 
 [Bug 检查代码参考](bug-check-code-reference2.md)
 
-[Windows Kernel-Mode Memory Manager](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)
+[Windows 内核模式内存管理器](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-memory-manager)

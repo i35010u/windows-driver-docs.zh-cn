@@ -12,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 22af6e8eeab67c6d536ab7cdf48c00bce8bf435d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: bf761adeb81a225032c6a228edce06e727fb6486
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533928"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253121"
 ---
 # <a name="blue-screen-data"></a>蓝屏数据
 
 
-**注意**   本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
+**注意**   本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)。
 
  
 
 **注意**   如果你是 IT 专业人员或支持代理，请参阅此文，了解其他信息、[排查 "蓝屏" 问题或停止错误问题，然后再联系 Microsoft 支持部门](https://support.microsoft.com/help/3106831/)。
 
-当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为*系统崩溃*、*内核错误*或*停止错误*。
+当 Microsoft Windows 遇到损害安全系统操作的情况时，系统将会挂起。 此条件称为 " *bug 检查*"。 通常也称为 *系统崩溃*、 *内核错误*或 *停止错误*。
 
 如果在操作系统完整性泄露后允许操作系统继续运行，则它可能会损坏数据或危及系统的安全。
 
@@ -36,7 +36,7 @@ ms.locfileid: "84533928"
 
 如果内核调试器已附加并且处于活动状态，则系统会导致中断，以便可以使用调试器来调查故障。
 
-如果未附加调试器，则会出现蓝色文本屏幕，其中包含有关错误的信息。 此屏幕称为*蓝屏*、 *bug 检查屏幕*或*停止屏幕*。
+如果未附加调试器，则会出现蓝色文本屏幕，其中包含有关错误的信息。 此屏幕称为 *蓝屏*、 *bug 检查屏幕*或 *停止屏幕*。
 
 如果使用的是 Windows 的内部版本，则会在绿色背景上显示文本。
 
@@ -46,9 +46,9 @@ ms.locfileid: "84533928"
 
 ![bug 检查示例 windows 10 blue screen with qr 代码](images/bug-check-example-blue-screen-page-fault.png)
 
-在[** \_ \_ \_ 非分页 \_ 区域**](bug-check-0x50--page-fault-in-nonpaged-area.md)显示 stop 代码，如页错误。 当它可用时，还会显示正在执行的代码的模块名称，例如 AcmeVideo。
+在 [** \_ \_ \_ 非分页 \_ 区域**](bug-check-0x50--page-fault-in-nonpaged-area.md)显示 stop 代码，如页错误。 当它可用时，还会显示正在执行的代码的模块名称，如 AcmeVideo.sys。
 
-如果已写入[内核模式转储文件](kernel-mode-dump-files.md)，则会在写入转储时，按百分比完成计数来指示这一点。
+如果已写入 [内核模式转储文件](kernel-mode-dump-files.md) ，则会在写入转储时，按百分比完成计数来指示这一点。
 
 与 " [Bug 检查代码参考](bug-check-code-reference2.md)" 中列出的每个 "stop" 代码相关联的停止代码十六进制值。
 
@@ -57,13 +57,13 @@ ms.locfileid: "84533928"
 
 ### <a name="span-idgathering_the_stop_code_parametersspanspan-idgathering_the_stop_code_parametersspanspan-idgathering_the_stop_code_parametersspangathering-the-stop-code-parameters"></a><span id="Gathering_the_Stop_Code_Parameters"></span><span id="gathering_the_stop_code_parameters"></span><span id="GATHERING_THE_STOP_CODE_PARAMETERS"></span>正在收集停止代码参数
 
-每个 bug 检查代码都具有四个提供附加信息的关联参数。 每个 stop 代码的[Bug 检查代码引用](bug-check-code-reference2.md)中介绍了这些参数。
+每个 bug 检查代码都具有四个提供附加信息的关联参数。 每个 stop 代码的 [Bug 检查代码引用](bug-check-code-reference2.md) 中介绍了这些参数。
 
 有多种方法可以收集四个停止代码参数。
 
--   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅[Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
+-   在事件查看器中检查 Windows 系统日志。 错误检查的事件属性将列出四个停止代码参数。 有关详细信息，请参阅 [Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。
 
--   加载生成的转储文件，并在附加调试器中使用[**！ "分析**](-analyze.md)" 命令。 有关详细信息，请参阅[使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
+-   加载生成的转储文件，并在附加调试器中使用 [**！ "分析**](-analyze.md) " 命令。 有关详细信息，请参阅 [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)。
 
 -   将内核调试器附加到出错的 PC。 当发生停止代码时，调试器输出将在停止代码十六进制值之后包含四个参数。
 
@@ -84,11 +84,11 @@ ms.locfileid: "84533928"
 
 ### <a name="span-idbug_check_symbolic_namesspanspan-idbug_check_symbolic_namesspanbug-check-symbolic-names"></a><span id="bug_check_symbolic_names"></span><span id="BUG_CHECK_SYMBOLIC_NAMES"></span>Bug 检查符号名称
 
-[**驱动程序 \_电源 \_ 状态 \_ 故障**](bug-check-0x9f--driver-power-state-failure.md)是错误检查符号名称，其关联 Bug 检查代码为9f。 与 Bug 检查符号名称关联的停止代码十六进制值列在 " [Bug 检查代码参考](bug-check-code-reference2.md)" 中。
+[**驱动程序 \_电源 \_ 状态 \_ 故障**](bug-check-0x9f--driver-power-state-failure.md) 是错误检查符号名称，其关联 Bug 检查代码为9f。 与 Bug 检查符号名称关联的停止代码十六进制值列在 " [Bug 检查代码参考](bug-check-code-reference2.md)" 中。
 
 ### <a name="span-idreading_bug_check_information_from_the_debuggerspanspan-idreading_bug_check_information_from_the_debuggerspanreading-bug-check-information-from-the-debugger"></a><span id="reading_bug_check_information_from_the_debugger"></span><span id="READING_BUG_CHECK_INFORMATION_FROM_THE_DEBUGGER"></span>从调试器读取 Bug 检查信息
 
-如果附加了调试器，则 bug 检查将导致目标计算机中断到调试器。 在这种情况下，蓝屏可能不会立即出现，此故障的完整详细信息将发送到调试器并显示在调试器窗口中。 若要再次查看此信息，请使用 "[**错误检查（显示 Bug 检查数据）**](-bugcheck--display-bug-check-data-.md) " 命令或 " [**！分析**](-analyze.md)扩展" 命令。
+如果附加了调试器，则 bug 检查将导致目标计算机中断到调试器。 在这种情况下，蓝屏可能不会立即出现，此故障的完整详细信息将发送到调试器并显示在调试器窗口中。 若要第二次查看此信息，请使用 [**错误检查 (显示 Bug 检查数据) **](-bugcheck--display-bug-check-data-.md) 命令或 " [**！分析**](-analyze.md) 扩展" 命令。
 
 **内核调试和故障转储分析**
 
@@ -104,18 +104,18 @@ ms.locfileid: "84533928"
 
 [使用 WinDbg 分析内核模式转储文件](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-[使用！分析扩展](using-the--analyze-extension.md)和[！分析](-analyze.md)
+[使用！分析扩展](using-the--analyze-extension.md) 和 [！分析](-analyze.md)
 
-在第9频道上显示的碎片整理工具-<https://channel9.msdn.com/Shows/Defrag-Tools>
+在第9频道上显示的碎片整理工具- <https://channel9.msdn.com/Shows/Defrag-Tools>
 
 ### <a name="span-idusing_driver_verifier_to_gather_informationspanspan-idusing_driver_verifier_to_gather_informationspanspan-idusing_driver_verifier_to_gather_informationspanusing-driver-verifier-to-gather-information"></a><span id="Using_Driver_Verifier_to_Gather_Information"></span><span id="using_driver_verifier_to_gather_information"></span><span id="USING_DRIVER_VERIFIER_TO_GATHER_INFORMATION"></span>使用驱动程序验证器收集信息
 
-据估计，蓝屏的三个季度由错误驱动程序引起。 驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源的使用情况，例如内存池。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符下键入*verifier* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+据估计，蓝屏的三个季度由错误驱动程序引起。 驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 例如，驱动程序验证程序检查内存资源的使用情况，例如内存池。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符下键入 *verifier* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 ## <a name="span-idtips_for_software_engineersspanspan-idtips_for_software_engineersspanspan-idtips_for_software_engineersspantips-for-software-engineers"></a><span id="Tips_for_Software_Engineers"></span><span id="tips_for_software_engineers"></span><span id="TIPS_FOR_SOFTWARE_ENGINEERS"></span>软件工程师的技巧
 
 
-当 bug 检查作为你编写的代码的结果发生时，你应该使用内核调试器来分析问题，然后修复代码中的 bug。 有关完整详细信息，请参阅[Bug 检查代码参考](bug-check-code-reference2.md)部分中的各个 bug 检查代码。
+当 bug 检查作为你编写的代码的结果发生时，你应该使用内核调试器来分析问题，然后修复代码中的 bug。 有关完整详细信息，请参阅 [Bug 检查代码参考](bug-check-code-reference2.md) 部分中的各个 bug 检查代码。
 
 但是，您可能还会遇到不是由您自己的代码所导致的 bug 检查。 在这种情况下，你可能无法修复问题的实际原因，因此你的目标应该是解决该问题，如果可能，请隔离并删除出错的硬件或软件组件。
 
@@ -127,30 +127,30 @@ ms.locfileid: "84533928"
 
 -   如果最近添加了新的设备驱动程序或系统服务，请尝试删除或更新它们。 尝试确定系统中发生了导致新 bug 检查代码的更改。
 
--   查看**设备管理器**，查看是否有任何设备标记为惊叹号（！）。 查看在驱动程序属性中显示的任何错误驱动程序的事件日志。 请尝试更新相关驱动程序。
+-   查看 **设备管理器** 查看是否有任何设备标记为惊叹号 (！ ) 。 查看在驱动程序属性中显示的任何错误驱动程序的事件日志。 请尝试更新相关驱动程序。
 
--   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅[Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在与蓝色屏幕相同的时间范围内查找系统日志中的严重错误。
+-   检查中的系统日志事件查看器是否有其他错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。 有关详细信息，请参阅 [Open 事件查看器](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)。 在与蓝色屏幕相同的时间范围内查找系统日志中的严重错误。
 
 -   你可以尝试运行系统制造商提供的硬件诊断。
 
--   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后单击 "**诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+-   运行 Windows 内存诊断工具来测试内存。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
 
--   确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在[Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
+-   确认安装的任何新硬件都与安装的 Windows 版本兼容。 例如，可以在 [Windows 10 规范](https://www.microsoft.com/windows/windows-10-specifications)中获取有关所需硬件的信息。
 
 -   运行病毒检测程序。 病毒可能会感染为 Windows 格式化的所有类型的硬盘，导致磁盘损坏可能生成系统 bug 检查代码。 请确保病毒检测程序检查主启动记录中是否有病毒感染。
 
--   使用扫描磁盘实用工具确认没有文件系统错误。 右键单击要扫描的驱动器，然后选择 "**属性**"。 单击 "**工具**"。 单击 "**立即检查**" 按钮。
--   使用系统文件检查器工具修复丢失或损坏的系统文件。 系统文件检查器是 Windows 中的一个实用工具，它允许用户在 Windows 系统文件中扫描损坏并还原损坏的文件。 使用以下命令运行系统文件检查器工具（SFC）。
+-   使用扫描磁盘实用工具确认没有文件系统错误。 选择并按住 (或右键单击要扫描的驱动器) ，然后选择 " **属性**"。 选择 " **工具**"。 选择 " **立即检查** " 按钮。
+-   使用系统文件检查器工具修复丢失或损坏的系统文件。 系统文件检查器是 Windows 中的一个实用工具，它允许用户在 Windows 系统文件中扫描损坏并还原损坏的文件。 使用以下命令 ( # A0) 运行系统文件检查器工具。
 
     ```console
     SFC /scannow
     ```
 
-    有关详细信息，请参阅[使用系统文件检查器工具修复丢失或损坏的系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
+    有关详细信息，请参阅 [使用系统文件检查器工具修复丢失或损坏的系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
 -   确认硬盘上有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求会有所不同，但通常最好使用10% 到15% 的可用空间。
 
--   验证系统是否已安装最新的 Service Pack。 若要检测系统上安装的 Service Pack （如果有），请单击 "**开始**"，再单击 "**运行**"，键入**winver**，然后按 enter。 "**关于 windows** " 对话框显示 windows 版本号和 Service Pack 的版本号（如果已安装）。
+-   验证系统是否已安装最新的 Service Pack。 若要检测系统上安装了哪个 Service Pack （如果有），select **启动**，select **运行**，键入 **winver**，然后按 enter。 " **关于 windows** " 对话框显示 windows 版本号和 Service Pack 的版本号（如果已安装）。
 
 -   请与制造商联系，查看是否有更新的系统 BIOS 或固件可用。
 
@@ -160,14 +160,14 @@ ms.locfileid: "84533928"
 
 **使用安全模式**
 
-删除或禁用组件时，请考虑使用安全模式。 使用安全模式仅加载 Windows 启动过程中所需的最少驱动程序和系统服务。 若要进入安全模式，请使用 "设置" 中的 "**更新和安全**"。 选择 "**恢复** - &gt; **高级启动**" 以启动到维护模式。 在出现的菜单中，**选择 "** - &gt; **高级选项**" "启动  - &gt; **设置**  - &gt; **重新启动**"。 Windows 重启到 "**启动设置**" 屏幕后，选择 "选项"、"4"、"5" 或 "6" 以启动到安全模式。
+删除或禁用组件时，请考虑使用安全模式。 使用安全模式仅加载 Windows 启动过程中所需的最少驱动程序和系统服务。 若要进入安全模式，请使用 "设置" 中的 " **更新和安全** "。 选择 "**恢复** - &gt; **高级启动**" 以启动到维护模式。 在出现的菜单中，**选择 "** - &gt; **高级选项**" "启动  - &gt; **设置**  - &gt; **重新启动**"。 Windows 重启到 " **启动设置** " 屏幕后，选择 "选项"、"4"、"5" 或 "6" 以启动到安全模式。
 
 可以通过在启动时按功能键来提供安全模式，例如 F8。 请参阅制造商提供的有关特定启动选项的信息。
 
 ## <a name="span-idforced_kebugcheckspanspan-idforced_kebugcheckspanspan-idforced_kebugcheckspanforced-kebugcheck"></a><span id="Forced_KeBugCheck"></span><span id="forced_kebugcheck"></span><span id="FORCED_KEBUGCHECK"></span>强制 KeBugCheck
 
 
-若要有意从内核模式驱动程序中引发 bug 检查，需要将 bug 检查的符号名称传递给**KeBugCheck**或**KeBugCheckEx**函数。 只有在没有其他选项可用的情况下，才应执行此操作。 有关这些函数的更多详细信息，请参阅 Windows 驱动程序工具包。
+若要有意从内核模式驱动程序中引发 bug 检查，需要将 bug 检查的符号名称传递给 **KeBugCheck** 或 **KeBugCheckEx** 函数。 只有在没有其他选项可用的情况下，才应执行此操作。 有关这些函数的更多详细信息，请参阅 Windows 驱动程序工具包。
 
  
 

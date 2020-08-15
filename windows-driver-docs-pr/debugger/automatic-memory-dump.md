@@ -4,12 +4,12 @@ description: 自动内存转储
 ms.assetid: A2C71497-7865-4DC8-B760-6121B224737A
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae6b84d1c38f32e048c752f2a92d9dc1dbc31109
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d34cbad11a770496890a73e0722bea9fae518f38
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354410"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252903"
 ---
 # <a name="automatic-memory-dump"></a>自动内存转储
 
@@ -17,35 +17,35 @@ ms.locfileid: "63354410"
 ## <span id="ddk_kernel_memory_dump_dbg"></span><span id="DDK_KERNEL_MEMORY_DUMP_DBG"></span>
 
 
-*自动内存转储*包含相同的信息[内核内存转储](kernel-memory-dump.md)。 两者之间的差异是不在转储文件本身，而 Windows 设置的系统分页文件大小的方式。
+*自动内存转储*包含与[内核内存转储](kernel-memory-dump.md)相同的信息。 这两者之间的差异不是转储文件本身，而是 Windows 设置系统分页文件大小的方式。
 
-如果系统分页文件大小设置为**系统管理的大小**，和内核模式崩溃转储设置为**自动内存转储**，则 Windows 可以将页面文件的大小设置为小于 RAM 大小。 在这种情况下，Windows 设置足够大，保证内核内存转储可捕获大多数情况下页面文件的大小。
+如果系统分页文件大小设置为 **系统管理的大小**，并且内核模式故障转储设置为 **自动内存转储**，则 Windows 可以将页面文件的大小设置为小于 RAM 大小。 在这种情况下，Windows 会设置足够大的页面文件大小，以确保大多数时间都可以捕获内核内存转储。
 
-如果计算机崩溃和分页文件不是足够大，以捕获内核内存转储，Windows 会增加的大小的分页文件为至少 RAM 的大小。 在注册表中此处记录此事件的时间：
+如果计算机崩溃且页面文件不够大，无法捕获内核内存转储，Windows 会将页面文件的大小增加到至少大小的 RAM。 此事件的时间记录在注册表中：
 
-**HKLM**\\**SYSTEM**\\**CurrentControlSet**\\**Control**\\**CrashControl**\\**LastCrashTime**
+**HKLM** \\**系统** \\**CurrentControlSet** \\**控件** \\**CrashControl** \\**LastCrashTime**
 
-增加的页面文件的大小保持在位置 4 周，然后返回到较小的大小。 如果你想要返回到较小的分页文件前 4 周，可以删除注册表项。
+增加的分页文件大小将保留4周，然后返回到较小的大小。 如果要在4周之前返回到较小的页面文件，可以删除注册表项。
 
-若要查看分页文件设置，请转到**Control Panel&gt;系统和安全&gt;系统&gt;高级系统设置**。 在“性能”下，单击“设置”。 上**高级**选项卡上，在**虚拟内存**，单击**更改**。 在虚拟内存对话框中，可以看到的页面文件设置。
+若要查看页面文件设置，请参阅 **"控制面板 &gt; 系统和安全 &gt; 系统 &gt; 高级系统设置**"。 在 " **性能**" 下，选择 " **设置**"。 在 " **高级** " 选项卡上的 " **虚拟内存**" 下，选择 " **更改**"。 在 "虚拟内存" 对话框中，可以看到页面文件设置。
 
-![虚拟内存对话框的屏幕截图。](images/virtualmemorydialog.png)
+!["虚拟内存" 对话框的屏幕截图。](images/virtualmemorydialog.png)
 
-自动内存转储文件写入到 %systemroot%\\Memory.dmp 默认情况下。
+默认情况下，自动内存转储文件写入% SystemRoot% \\ Memory。
 
-自动内存转储是推出 Windows 8 及更高版本。
+Windows 8 及更高版本中提供自动内存转储。
 
-**请注意**  若要自动的内存转储调试时，禁止显示缺失的页错误消息，请使用[ **.ignore\_缺少\_页**](-ignore-missing-pages--suppress-missing-page-errors-.md)命令。
+**注意**   若要在调试自动内存转储时取消丢失页错误消息，请使用 "[**忽略 \_ 缺少的 \_ 页**](-ignore-missing-pages--suppress-missing-page-errors-.md)" 命令。
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
-[类型的内核模式转储文件](varieties-of-kernel-mode-dump-files.md)
+[内核模式转储文件的种类](varieties-of-kernel-mode-dump-files.md)
 
 [内核模式转储文件](kernel-mode-dump-files.md)
 
-[正在创建内核模式转储文件](creating-a-kernel-mode-dump-file.md)
+[创建内核模式转储文件](creating-a-kernel-mode-dump-file.md)
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: PLMDebug
-description: PLMDebug 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理（PLM）下运行。
+description: PLMDebug.exe 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理 (PLM) 下运行。
 ms.assetid: 68BE8F5D-6425-43E2-B5BC-C1D35614AB32
 keywords:
 - PLMDebug Windows 调试
@@ -12,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cd4f8f2fcd1eab3ec3105890e1580a3d0234449e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c827e7f6ec2874f538a75a5ff09da6e1e5161503
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534436"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253109"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
-PLMDebug 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理（PLM）下运行。 使用 PLMDebug，可以手动控制挂起、继续和终止 Windows 应用。
+PLMDebug.exe 是一种工具，使您可以使用 Windows 调试器调试 Windows 应用程序，该应用程序在进程生命周期管理 (PLM) 下运行。 使用 PLMDebug，可以手动控制挂起、继续和终止 Windows 应用。
 
-**提示**   使用 Windows 10 版本1607或更高版本，可以使用 UWP 命令（如 createpackageapp）调试 UWP 应用。 有关详细信息，请参阅[使用 WinDbg 调试 UWP 应用](debugging-a-uwp-app-using-windbg.md)。
+**提示**   使用 Windows 10 版本1607或更高版本，可以使用 UWP 命令（如 createpackageapp）调试 UWP 应用。 有关详细信息，请参阅 [使用 WinDbg 调试 UWP 应用](debugging-a-uwp-app-using-windbg.md)。
 
 **从何处获取 PLMDebug**
 
-PLMDebug 包含在[Windows 调试工具](index.md)中。
+PLMDebug.exe 包含在 [Windows 调试工具](index.md)中。
 
 ```console
 plmdebug /query [Package]
@@ -55,10 +55,10 @@ plmdebug /activateBgTaskTaskId "{TaskID}"
 `"\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"`
 
 <span id="________query_Package"></span><span id="________query_package"></span><span id="________QUERY_PACKAGE"></span>**/query** \[*包*\]  
-显示已安装包的运行状态。 如果未指定*Package* ，此命令将显示所有已安装包的运行状态。
+显示已安装包的运行状态。 如果未指定 *Package* ，此命令将显示所有已安装包的运行状态。
 
 <span id="________enableDebug_Package_DebuggerCommandLine"></span><span id="________enabledebug_package_debuggercommandline"></span><span id="________ENABLEDEBUG_PACKAGE_DEBUGGERCOMMANDLINE"></span>**/enableDebug** *包* \[ *DebuggerCommandLine*\]  
-递增包的调试引用计数。 如果包具有非零的调试引用计数，则从 PLM 策略中免除。 对 **/enableDebug**的每次调用都必须与对/**disableDebug**的调用配对。 如果指定*DebuggerCommandLine*，则在启动包的任何应用时，调试器将附加。
+递增包的调试引用计数。 如果包具有非零的调试引用计数，则从 PLM 策略中免除。 对 **/enableDebug** 的每次调用都必须与对/**disableDebug**的调用配对。 如果指定 *DebuggerCommandLine*，则在启动包的任何应用时，调试器将附加。
 
 <span id="________terminate_Package"></span><span id="________terminate_package"></span><span id="________TERMINATE_PACKAGE"></span>**/Terminate** *包*  
 终止包。
@@ -89,9 +89,9 @@ plmdebug /activateBgTaskTaskId "{TaskID}"
 <a name="remarks"></a>备注
 -------
 
-调用任何 "挂起"、"继续" 或 "终止" 函数之前，必须先调用**plmdebug/enableDebug** 。
+调用任何 "挂起"、"继续" 或 "终止" 函数之前，必须先调用 **plmdebug/enableDebug** 。
 
-PLMDebug 工具调用[IPackageDebugSettings 接口](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)的方法。 利用此接口，你可以对应用程序的流程生命周期管理进行手动控制。 通过此接口（通过此工具，通过此工具），您可以挂起、恢复和终止您的 Windows 应用程序。 请注意， [IPackageDebugSettings 接口](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)的方法适用于整个包。 挂起、继续和终止会影响包中当前正在运行的所有应用。
+PLMDebug 工具调用 [IPackageDebugSettings 接口](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)的方法。 利用此接口，你可以对应用程序的流程生命周期管理进行手动控制。 通过此接口 (，因此通过此工具) ，你可以挂起、恢复和终止 Windows 应用程序。 请注意， [IPackageDebugSettings 接口](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings) 的方法适用于整个包。 挂起、继续和终止会影响包中当前正在运行的所有应用。
 
 <a name="examples"></a>示例
 --------
@@ -118,7 +118,7 @@ Package state: Terminated
 
 递增包的调试引用计数，并指定在启动应用程序时希望将 WinDbg 附加到。
 
-**plmdebug/enableDebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c "C： \\ Program Files （x86） \\ Windows 工具包 \\ 8.0 \\ 调试器 \\ x64 \\ WinDbg"**
+**plmdebug/enableDebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c "C： \\ Program Files (x86) \\ Windows 工具包 \\ 8.0 \\ 调试器 \\ x64 \\WinDbg.exe"**
 
 当你启动应用程序时，WinDbg 会附加并中断。
 
@@ -130,13 +130,13 @@ Package state: Terminated
 
 **将调试程序附加到已在运行的应用程序**
 
-假设要将 WinDbg 附加到已在运行的 MyApp。 在 WinDbg 的 "**文件**" 菜单上，选择 "**附加到进程**"。 记下 MyApp 的进程 ID。 假设进程 ID 为4816。
+假设要将 WinDbg 附加到已在运行的 MyApp。 在 WinDbg 的 " **文件** " 菜单上，选择 " **附加到进程**"。 记下 MyApp 的进程 ID。 假设进程 ID 为4816。
 
 为包含 MyApp 的包增加调试引用计数。
 
 **plmdebug/enableDebug 4816**
 
-在 WinDbg 的 "**附加到进程**" 对话框中，选择 "处理 4816"，然后单击 **"确定"**。 WinDbg 将附加到 MyApp。
+在 WinDbg 的 " **附加到进程** " 对话框中，选择 "处理 4816"，然后选择 **"确定"**。 WinDbg 将附加到 MyApp。
 
 完成调试 MyApp 后，分离调试器。 然后，减小包的调试引用计数。
 

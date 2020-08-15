@@ -3,7 +3,7 @@ title: dx（显示调试器对象模型表达式）
 description: Dx 命令显示使用 NatVis 扩展模型的 c + + 表达式。 Dx 命令适用于调试器对象。
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
-- dx （显示调试器对象模型表达式） Windows 调试
+- dx (显示) Windows 调试的调试器对象模型表达式
 ms.date: 05/28/2019
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1906e00abd0942ef0771ff31c0a3616d4fd38400
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 7d23cfc4122f62d3dcd5f74f5ecd2b71d9511815
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968190"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253049"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx（显示调试器对象模型表达式）
 
 
-**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅[创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
+**Dx**命令显示使用 NatVis 扩展模型的 c + + 表达式。 有关 NatVis 的详细信息，请参阅 [创建本机对象的自定义视图](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
@@ -38,29 +38,29 @@ dx [{-?}|{-h}]
 <span id="_______-g______"></span><span id="_______-G______"></span>**-g**   
 显示为可迭代的数据网格对象。 每个迭代元素都是网格中的一行，这些元素的每个显示子级都是一个列。 这使您可以查看结构数组，如结构数组，其中每个数组元素都显示在行中，结构的每个字段都显示在一列中。
 
-左键单击列名称（其中有可用的 DML 链接）将按该列进行排序。 如果已按该列进行排序，则将反转排序顺序。
+选择一个列名称 (其中包含可用的 DML 链接) 将按该列进行排序。 如果已按该列进行排序，则将反转排序顺序。
 
-任何可迭代的对象都将有一个通过称为 "显示为网格" 的 DML 添加的右键单击上下文菜单项。 右键单击 "输出" 窗口中的某个对象并选择此项将在网格视图中显示该对象，而不是标准树视图。
+任何可迭代的对象都具有 select 和 hold (或右键单击通过 "显示为网格" 的 DML 添加) 上下文菜单项。 选择并按住 (或右键单击 "输出" 窗口中的某个对象) 并选择此项将在网格视图中显示该对象，而不是标准树视图。
 
-列名称显示的（+）同时提供右键单击和左键单击的行为。
+列名称显示的 (+) 既提供了选择的 (，也提供了右键单击) 和选择行为。
 
--   单击此列会将该列分解到其自己的表中。 您将看到原始行加上展开列的子级。
--   右键单击提供 "扩展到网格"，它将列添加回当前表，作为最右侧的列。
+-   选择 "提取该列" 并将其分解为自己的表。 您将看到原始行加上展开列的子级。
+-   选择并按住 (或右键单击) 提供 "扩展到网格"，它将列，并将其作为最大列添加回当前表。
 
 <span id="_______-gc________"></span><span id="_______-GC________"></span>**-gc \# **   
-显示为网格，并将网格单元大小限制为指定数量的（ \# ）字符。
+显示为网格，并将网格单元大小限制为指定数量的 (\#) 字符。
 
 <span id="_______-c________"></span><span id="_______-C________"></span>**-c \# **   
-显示容器延续（跳过 \# 容器的元素）。此选项通常用于自定义输出自动化方案，并提供 "..."列表底部的继续符元素。
+显示容器继续 (跳过 \# 容器) 的元素。此选项通常用于自定义输出自动化方案，并提供 "..."列表底部的继续符元素。
 
 <span id="_______-n______"></span><span id="_______-N______"></span>**-n**   
-可以通过两种方式来呈现数据。 使用 NatVis 可视化（默认值）或使用基础本机 C/c + + 结构。 使用纯 C/c + + 结构而不是 NatVis 可视化对象指定-n 参数以呈现输出。
+可以通过两种方式来呈现数据。 使用 NatVis 可视化 (默认) 或使用基础本机 C/c + + 结构。 使用纯 C/c + + 结构而不是 NatVis 可视化对象指定-n 参数以呈现输出。
 
 <span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
 显示包括方法和其他非典型对象的详细信息。
 
 <span id="_______-r_______"></span><span id="_______-R_______"></span>**-r**<em>\#</em>   
-以递归方式显示最多级别的子类型（字段） *\#* 。 如果 *\#* 未指定，则递归级别为1，默认值为。
+以递归方式显示) 多个级别的子类型 (字段 *\#* 。 如果 *\#* 未指定，则递归级别为1，默认值为。
 
 <span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span>** \[ &lt; ， &gt; FormatSpecifier \] **   
 使用以下任意格式说明符修改默认呈现。
@@ -73,9 +73,9 @@ dx [{-?}|{-h}]
 
 **，b**：以二进制形式显示序号
 
-**，en**：仅按名称显示枚举（无值）
+**，en**：仅按名称显示枚举 (没有值) 
 
-**，c**：显示为单个字符（不是字符串）
+**，c**：显示为单个字符 (不是字符串) 
 
 **，s**：将8位字符串显示为 ASCII 引号
 
@@ -89,13 +89,13 @@ dx [{-?}|{-h}]
 
 **，sub**：显示16位字符串作为 utf-16 unqouted
 
-**，！**：仅在原始模式下显示对象（例如： no NatVis）
+**，！**：仅在原始模式下显示对象 (例如： no NatVis) 
 
-**， \# **：指定指针/数组/容器的长度作为文本值 \# （替换为数值）
+**， \# **：指定指针/数组/容器的长度作为文本值 \# (替换为数值) 
 
 **,\[&lt;&gt;expression \] **：指定指针/数组/容器的长度作为表达式 &lt; 表达式&gt;
 
-**，nd**：找不到对象的派生（runtype）类型。 仅显示静态值
+**，nd**：找不到对象的派生 (runtype) 类型。 仅显示静态值
 
 
 <span id="_______dx_-_______"></span><span id="_______DX_-_______"></span>**dx** {**-？**}   
@@ -193,7 +193,7 @@ Debugger.Sessions.First().Processes.First().Threads.First().Stack.Frames :
     [0x8]            : nt!KiIdleLoop + 0x1a
 ```
 
-使用-g 选项将输出显示为数据网格。 单击要排序的列。
+使用-g 选项将输出显示为数据网格。 选择要排序的列。
 
 ```dbgcmd
 kd> dx -g @$curprocess.Modules
@@ -280,7 +280,7 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
     ...
 ```
 
-使用。First （）函数，用于显示有关第一个句柄的信息。
+使用。首先 ( # A1 函数以显示有关第一个句柄的信息。
 
 ```dbgcmd
 0: kd> dx -r2 @$curprocess.Io.Handles.First()
@@ -349,17 +349,17 @@ dx (nt!_EPROCESS *)&nt!PsIdleProcess
     [+0x2f8 ( 0: 0)] JobNotReallyActive : 0x0 [Type: unsigned long]
 ```
 
-Dx 命令不支持用 @ @ MASM 语法切换表达式计算器。 有关表达式计算器的详细信息，请参阅[计算表达式](evaluating-expressions.md)。
+Dx 命令不支持用 @ @ MASM 语法切换表达式计算器。 有关表达式计算器的详细信息，请参阅 [计算表达式](evaluating-expressions.md)。
 
 ## <a name="using-linq-with-the-debugger-objects"></a>将 LINQ 与调试器对象配合使用
 
-LINQ 语法可以与调试器对象结合使用来搜索和操作数据。 LINQ 在概念上类似于用于查询数据库的结构化查询语言（SQL）。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 有关将 LINQ 与调试器对象结合使用的信息，请参阅[将 Linq 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)。
+LINQ 语法可以与调试器对象结合使用来搜索和操作数据。 LINQ 在概念上类似于用于查询数据库 (SQL) 的结构化查询语言。 可以使用多个 LINQ 方法搜索、筛选和分析调试数据。 有关将 LINQ 与调试器对象结合使用的信息，请参阅 [将 Linq 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)。
 
 ## <a name="using-debugger-objects-with-natvis-and-javascript"></a>将调试器对象用于 NatVis 和 JavaScript
 
-有关将调试器对象与 NatVis 结合使用的信息，请参阅[NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。
+有关将调试器对象与 NatVis 结合使用的信息，请参阅 [NatVis 中的本机调试器对象](native-debugger-objects-in-natvis.md)。
 
-有关将调试器对象与 JavaScript 一起使用的信息，请参阅[Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
+有关将调试器对象与 JavaScript 一起使用的信息，请参阅 [Javascript 扩展中的本机调试器对象](native-objects-in-javascript-extensions.md)。
 
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅

@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0x24 NTFS_FILE_SYSTEM
-description: NTFS_FILE_SYSTEM bug 检查具有 0x00000024 值。 这表示 ntfs.sys，使系统能够读取和写入到 NTFS 驱动器的驱动程序文件中出现问题。
+title: Bug 检查 0x24 NTFS_FILE_SYSTEM
+description: NTFS_FILE_SYSTEM bug 检查的值为0x00000024。 这表明 ntfs.sys 中出现问题，该驱动程序文件允许系统读写 NTFS 驱动器。
 ms.assetid: 9d2dd8a8-b550-4392-b663-6902a015ef7b
 keywords:
-- Bug Check 0x24 NTFS_FILE_SYSTEM
+- Bug 检查 0x24 NTFS_FILE_SYSTEM
 - NTFS_FILE_SYSTEM
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b8e9a7e606143255558821f7575090b7578a3e
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: f3f517d71ad60a58bf7b6960e3346d53eb4ce9f3
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519585"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253093"
 ---
-# <a name="bug-check-0x24-ntfsfilesystem"></a>Bug 检查 0x24：NTFS\_FILE\_SYSTEM
+# <a name="bug-check-0x24-ntfs_file_system"></a>Bug 检查0x24： NTFS \_ 文件 \_ 系统
 
 
-NTFS\_文件\_检查系统错误的值为 0x00000024。 这表示 ntfs.sys，使系统能够读取和写入到 NTFS 驱动器的驱动程序文件中出现问题。
+NTFS \_ 文件 \_ 系统 bug 检查的值为0x00000024。 这表明 ntfs.sys 中出现问题，该驱动程序文件允许系统读写 NTFS 驱动器。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你已使用计算机时收到一个蓝色的屏幕，错误代码的客户，请参阅[疑难解答蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
 
 
-## <a name="ntfsfilesystem-parameters"></a>NTFS\_文件\_系统参数
+## <a name="ntfs_file_system-parameters"></a>NTFS \_ 文件 \_ 系统参数
 
 
 <table>
@@ -46,15 +46,15 @@ NTFS\_文件\_检查系统错误的值为 0x00000024。 这表示 ntfs.sys，使
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>指定源代码文件和行号信息。 高 16 位 （"0x"后的前四个十六进制数字） 标识由其标识符编号的源代码文件。 低 16 位标识发生错误检查的文件中的源行。</p></td>
+<td align="left"><p>指定源文件和行号信息。 高16位 ("0x" 后的前四个十六进制数字 ) 按其标识符号识别源文件。 低16位标识文件中发生错误检查的源行。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>如果<strong>NtfsExceptionFilter</strong>是在堆栈上，此参数指定的地址的异常记录。</p></td>
+<td align="left"><p>如果 <strong>NtfsExceptionFilter</strong> 位于堆栈上，则此参数指定异常记录的地址。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p>如果<strong>NtfsExceptionFilter</strong>是在堆栈上，此参数指定的上下文记录的地址。</p></td>
+<td align="left"><p>如果 <strong>NtfsExceptionFilter</strong> 位于堆栈上，则此参数指定上下文记录的地址。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
@@ -68,37 +68,37 @@ NTFS\_文件\_检查系统错误的值为 0x00000024。 这表示 ntfs.sys，使
 <a name="cause"></a>原因
 -----
 
-此 bug 检查的一个可能的原因是磁盘损坏。 NTFS 文件系统或在硬盘上的坏扇区 （扇区） 中的损坏可导致此错误。 损坏的硬盘驱动器 (SATA/IDE) 驱动程序可能会反过来影响系统的能够读取和写入到磁盘，从而导致错误。
+此错误检查的一个可能原因是磁盘损坏。 NTFS 文件系统损坏或硬盘上的坏块 (扇区) 会导致此错误。 损坏的硬盘驱动器 (SATA/IDE) 驱动程序也可能对系统读写磁盘的能力产生负面影响，从而导致错误。
 
-<a name="resolution"></a>分辨率
+<a name="resolution"></a>解决方法
 ----------
 
-**若要调试此问题：** 使用[ **.cxr （显示上下文记录）** ](-cxr--display-context-record-.md)命令参数 3 中，并使用[ **kb （显示堆栈回溯）** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
+**若要调试此问题：** 使用参数 3 [** (显示上下文记录) **](-cxr--display-context-record-.md) 命令，然后使用 [**Kb (显示 Stack Backtrace) **](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)。
 
-**若要解决磁盘损坏问题：**
+**解决磁盘损坏问题：**
 
--   事件查看器检查系统日志，可帮助找出设备或导致错误的驱动程序中出现的硬盘驱动器与相关的错误消息。
+-   事件查看器检查 "系统" 日志中显示的与硬盘驱动器相关的错误消息，这些错误消息可能有助于找出导致错误的设备或驱动程序。
 
--   请尝试禁用任何病毒扫描程序、 备份程序或持续监视系统的磁盘碎片整理程序工具。
+-   尝试禁用持续监视系统的任何病毒扫描程序、备份程序或磁盘碎片整理程序工具。
 
--   您还应运行硬件诊断与存储子系统相关的系统制造商提供。
+-   还应运行系统制造商提供的与存储子系统相关的硬件诊断。
 
--   使用扫描磁盘实用程序以确认没有任何文件系统错误。 右键单击你想要扫描，并选择在驱动器上**属性**。 单击**工具**。 单击**立即检查**按钮。
--   确认在硬盘上没有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求各不相同，但它通常是最好有可用的 10%到 15%可用空间。
+-   使用扫描磁盘实用工具确认没有文件系统错误。 选择并按住 (或右键单击要扫描的驱动器) ，然后选择 " **属性**"。 选择 " **工具**"。 选择 " **立即检查** " 按钮。
+-   确认硬盘上有足够的可用空间。 操作系统和某些应用程序需要足够的可用空间来创建交换文件和其他功能。 根据系统配置，具体要求会有所不同，但通常最好使用10% 到15% 的可用空间。
 
--   使用系统文件检查器工具来修复丢失或损坏系统文件。 系统文件检查器是一个实用程序允许用户在 Windows 系统文件损坏扫描和还原 Windows 中的损坏的文件。 使用以下命令运行系统文件检查器 (SFC.exe)。
+-   使用系统文件检查器工具修复丢失或损坏的系统文件。 系统文件检查器是 Windows 中的一个实用工具，它允许用户在 Windows 系统文件中扫描损坏并还原损坏的文件。 使用以下命令 ( # A0) 运行系统文件检查器工具。
 
     ```console
     SFC /scannow
     ```
 
-    有关详细信息，请参阅[使用的系统文件检查器工具来修复丢失或损坏系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
+    有关详细信息，请参阅 [使用系统文件检查器工具修复丢失或损坏的系统文件](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)。
 
 -   **驱动程序验证程序**
 
-    驱动程序验证程序是一种工具，运行实时检查驱动程序的行为。 如果它看到错误的驱动程序代码执行过程中，它会主动创建例外以允许驱动程序代码以进行进一步仔细检查该部分。 驱动程序验证程序管理器内置于 Windows，可在所有 Windows Pc 上。 若要启动驱动程序验证程序管理器，请键入*Verifer*在命令提示符。 可以配置你想要验证的驱动程序。 验证驱动程序的代码将添加开销在运行，因此请尝试并验证尽可能最少数量的驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+    驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符处键入 *Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
-在过去，此停止代码的另一个可能原因是非分页缓冲的池内存耗尽。 如果完全耗尽的非分页缓冲的池内存，则此错误可以停止系统。 但是，在索引过程中，如果可用的非分页缓冲的池内存量为非常低，需要非分页缓冲的池内存的另一个内核模式驱动程序还可以触发此错误。
+过去，此停止代码的另一个可能原因是消耗了未分页的池内存。 如果非分页池内存完全耗尽，此错误可能会停止系统。 但是，在索引过程中，如果可用的非分页池内存量非常低，则另一个需要非分页池内存的内核模式驱动程序也会触发此错误。
 
  
 

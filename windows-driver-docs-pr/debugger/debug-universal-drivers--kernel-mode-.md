@@ -1,5 +1,5 @@
 ---
-title: 调试驱动程序-分步实验室（Sysvad 内核模式）
+title: '调试驱动程序-分步实验室 (Sysvad 内核模式) '
 description: 此实验室提供练习，演示如何调试 Sysvad 音频内核模式设备驱动程序。
 ms.assetid: 4A31451C-FC7E-4C5F-B4EB-FBBAC8DADF9E
 keywords:
@@ -8,27 +8,27 @@ keywords:
 - SYSVAD
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9969117b36fa135378653580b41fe26991181ba7
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: 252642ff0df273f7f014955085c5aa807dcb0acd
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557781"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253089"
 ---
-# <a name="span-iddebuggerdebug_universal_drivers__kernel-mode_spandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序-逐步骤实验室（Sysvad 内核模式）
+# <a name="span-iddebuggerdebug_universal_drivers__kernel-mode_spandebug-drivers---step-by-step-lab-sysvad-kernel-mode"></a><span id="debugger.debug_universal_drivers__kernel-mode_"></span>调试驱动程序-逐步骤实验室 (Sysvad 内核模式) 
 
 此实验室提供练习，演示如何调试 Sysvad 音频内核模式设备驱动程序。
 
-Microsoft Windows 调试器（WinDbg）是一个功能强大的基于 Windows 的调试工具，可用于执行用户模式和内核模式调试。 WinDbg 为 Windows 内核、内核模式驱动程序和系统服务以及用户模式应用程序和驱动程序提供源级调试。
+Microsoft Windows 调试器 (WinDbg) 是一个功能强大的基于 Windows 的调试工具，可用于执行用户模式和内核模式调试。 WinDbg 为 Windows 内核、内核模式驱动程序和系统服务以及用户模式应用程序和驱动程序提供源级调试。
 
-WinDbg 可以单步执行源代码、设置断点、查看变量（包括 c + + 对象）、堆栈跟踪和内存。 它的调试器命令窗口允许用户发出多种命令。
+WinDbg 可以单步执行源代码、设置断点、查看变量 (包括 c + + 对象) 、堆栈跟踪和内存。 它的调试器命令窗口允许用户发出多种命令。
 
 ## <a name="span-idlab_setupspanlab-setup"></a><span id="lab_setup"></span>实验室设置
 
 你将需要以下硬件才能完成实验室：
 
--   运行 Windows 10 的便携式计算机或台式计算机（主机）
--   运行 Windows 10 的便携式计算机或台式计算机（目标）
+-   运行 Windows 10 (主机) 的便携式计算机或台式计算机
+-   运行 Windows 10 (目标) 的便携式计算机或台式计算机
 -   用于连接两台电脑的网络集线器/路由器和网络电缆
 -   访问 internet 以下载符号文件
 
@@ -36,10 +36,10 @@ WinDbg 可以单步执行源代码、设置断点、查看变量（包括 c + + 
 
 -   Microsoft Visual Studio 2017
 -   适用于 Windows 10 的 Windows 软件开发工具包 (SDK)
--   适用于 Windows 10 的 windows 驱动程序工具包（WDK）
+-   适用于 Windows 10 的 windows 驱动程序工具包 (WDK) 
 -   适用于 Windows 10 的示例 Sysvad 音频驱动程序
 
-有关下载和安装 WDK 的信息，请参阅[下载 Windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+有关下载和安装 WDK 的信息，请参阅 [ (WDK) 下载 Windows 驱动程序工具包 ](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
 
 ## <a name="span-idsysvad_debugging_walkthrough_overviewspansysvad-debugging-walkthrough"></a><span id="sysvad_debugging_walkthrough_overview"></span>Sysvad 调试演练
 
@@ -64,7 +64,7 @@ WinDbg 可以单步执行源代码、设置断点、查看变量（包括 c + + 
 ## <a name="span-idecho_driver_labspanecho-driver-lab"></a><span id="echo_driver_lab"></span>回显驱动程序实验室
 
 
-回显驱动程序是一个更简单的驱动程序，然后是 Sysvad 音频驱动程序。 如果你不熟悉 WinDbg，可能需要考虑首先完成[调试通用驱动程序-分步实验室（回显内核模式）](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。 此实验室重用该实验室的安装方向，因此，如果完成了该实验，则可以跳过此处的第1和第2部分。
+回显驱动程序是一个更简单的驱动程序，然后是 Sysvad 音频驱动程序。 如果你不熟悉 WinDbg，可能需要考虑首先完成 [调试通用驱动程序-分步实验室 (Echo 内核模式) ](debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)。 此实验室重用该实验室的安装方向，因此，如果完成了该实验，则可以跳过此处的第1和第2部分。
 
 ## <a name="span-idconnecttospansection-1-connect-to-a-kernel-mode-windbg-session"></a><span id="connectto"></span>第1节：连接到内核模式 WinDbg 会话
 
@@ -73,13 +73,13 @@ WinDbg 可以单步执行源代码、设置断点、查看变量（包括 c + + 
 
 此实验室中的电脑需要配置为使用以太网网络连接进行内核调试。
 
-此实验室使用两台计算机。 WinDbg 在*主机*系统上运行，Sysvad 驱动程序在*目标*系统上运行。
+此实验室使用两台计算机。 WinDbg 在 *主机* 系统上运行，Sysvad 驱动程序在 *目标* 系统上运行。
 
  使用网络集线器/路由器和网络电缆连接两台 Pc。
 
 ![使用双箭头连接的两台电脑](images/debuglab-image-targethostdrawing1.png)
 
-若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅[使用 WinDbg 入门（内核模式）](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅[为手动驱动程序部署准备计算机](https://docs.microsoft.com/windows-hardware/drivers)和[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
+若要使用内核模式应用程序并使用 WinDbg，建议使用 KDNET over 以太网传输。 有关如何使用以太网传输协议的信息，请参阅 [使用 WinDbg (内核模式) 入门 ](getting-started-with-windbg--kernel-mode-.md)。 有关设置目标计算机的详细信息，请参阅 [为手动驱动程序部署准备计算机](https://docs.microsoft.com/windows-hardware/drivers) 和 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
 ### <a name="span-idconfigure__kernel_mode_debugging_using_ethernetspanconfigure-kernelmode-debugging-using-ethernet"></a><span id="configure__kernel_mode_debugging_using_ethernet"></span>使用以太网配置内核-模式调试
 
@@ -87,7 +87,7 @@ WinDbg 可以单步执行源代码、设置断点、查看变量（包括 c + + 
 
 **&lt;-在主机系统上**
 
-1. 在主机系统上打开命令提示符，然后键入**ipconfig/all**来确定其 IP 地址。
+1. 在主机系统上打开命令提示符，然后键入 **ipconfig/all** 来确定其 IP 地址。
 
 ```console
 C:\>ipconfig /all
@@ -104,13 +104,13 @@ Ethernet adapter Ethernet:
    Default Gateway . . . . . . . . . :
 ```
 
-2. 记录主机系统的 IP 地址：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2. 记录主机系统的 IP 地址： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-3. 记录主机系统的主机名：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+3. 记录主机系统的主机名： \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**-&gt;在目标系统上**
+**-&gt; 在目标系统上**
 
-4. 在目标系统上打开命令提示符，并使用**ping**命令确认两个系统之间的网络连接。 使用所记录主机系统的实际 IP 地址，而不是示例输出中所示的169.182.1.1。
+4. 在目标系统上打开命令提示符，并使用 **ping** 命令确认两个系统之间的网络连接。 使用所记录主机系统的实际 IP 地址，而不是示例输出中所示的169.182.1.1。
 
 ```console
 C:\> ping 169.182.1.1
@@ -131,10 +131,10 @@ Approximate round trip times in milli-seconds:
 
 1. 在主机系统上，找到 WDK KDNET 目录。 默认情况下，它位于此处。
 
-   C:\Program Files （x86） \Windows Kits\10\Debuggers\x64
+   C:\Program 文件 (x86) \Windows Kits\10\Debuggers\x64
 
 > [!NOTE]
-> 此实验假设两台 Pc 同时运行 Windowson 的64位版本的。 如果不是这种情况，最好的方法是在目标正在运行的主机上运行相同的工具 "位数"。 例如，如果目标运行的是32位 Windows，请在主机上运行调试器的32版本。 有关详细信息，请参阅[选择32位或64位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
+> 此实验假设两台 Pc 同时运行 Windowson 的64位版本的。 如果不是这种情况，最好的方法是在目标正在运行的主机上运行相同的工具 "位数"。 例如，如果目标运行的是32位 Windows，请在主机上运行调试器的32版本。 有关详细信息，请参阅 [选择32位或64位调试工具](choosing-a-32-bit-or-64-bit-debugger-package.md)。
 > 
 
 2. 找到这两个文件，并将它们复制到网络共享或拇指驱动器上，以便它们将在目标计算机上可用。
@@ -185,7 +185,7 @@ The operation completed successfully.
 **注意**   
 **防火墙和调试器**
 
-如果收到来自防火墙的弹出消息，并且想要使用调试器，请选中**所有三**个框。
+如果收到来自防火墙的弹出消息，并且想要使用调试器，请选中 **所有三** 个框。
 
 ![windows 安全警报-windows 防火墙阻止了此应用的某些功能](images/debuglab-image-firewall-dialog-box.png)
  
@@ -216,9 +216,9 @@ C:\> WinDbg –k net:port=50010,key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1s
 
 调试器命令窗口是 WinDbg 的主调试信息窗口。 您可以在此窗口中输入调试器命令并查看命令输出。
 
-调试器命令窗口拆分为两个窗格。 您可以在窗口底部的小窗格（命令条目窗格）中键入命令，然后在窗口顶部更大的窗格中查看命令输出。
+调试器命令窗口拆分为两个窗格。 在窗口底部的 "命令条目" 窗格)  ("命令条目" 窗格中键入命令，然后在窗口顶部的更大窗格中查看命令输出。
 
-在 "命令项" 窗格中，使用向上键和向下键滚动浏览命令历史记录。 显示命令时，你可以对其进行编辑或按**enter**运行该命令。
+在 "命令项" 窗格中，使用向上键和向下键滚动浏览命令历史记录。 显示命令时，你可以对其进行编辑或按 **enter** 运行该命令。
 
 ## <a name="span-idkernelmodedebuggingcommandsandtechniquesspansection-2-kernel-mode-debugging-commands-and-techniques"></a><span id="kernelmodedebuggingcommandsandtechniques"></span>第2部分：内核模式调试命令和技术
 
@@ -227,11 +227,11 @@ C:\> WinDbg –k net:port=50010,key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1s
 
 **&lt;-在主机系统上**
 
-**使用启用调试器标记语言（DML）。优先使用 \_ DML**
+**使用 (DML) 启用调试器标记语言。首选 \_ DML**
 
-某些调试命令使用调试器标记语言显示文本，您可以单击该语言来快速收集详细信息。
+某些调试命令使用调试器标记语言显示文本，您可以选择该语言来快速收集详细信息。
 
-1. 使用 WinDBg 中的 Ctrl + Break （滚动锁定）来中断目标系统上运行的代码。 目标系统可能需要一些时间才能响应。
+1. 在 WinDBg 中使用 Ctrl + Break (滚动锁定) ，以中断目标系统上运行的代码。 目标系统可能需要一些时间才能响应。
 2. 键入以下命令，在调试器中启用 DML 命令窗口。
 
 ```dbgcmd
@@ -241,7 +241,7 @@ DML versions of commands on by default
 
 **使用 hh 获取帮助**
 
-您可以使用**hh**命令访问 reference 命令帮助。
+您可以使用 **hh** 命令访问 reference 命令帮助。
 
 3. 键入以下命令以查看的命令参考帮助 **。首选 \_ dml**。
    ```dbgcmd
@@ -254,7 +254,7 @@ DML versions of commands on by default
 
 **显示目标系统上的 Windows 版本**
 
-5. 在 WinDbg 窗口中键入[**vertarget （显示目标计算机版本）**](vertarget--show-target-computer-version-.md)命令，以显示目标系统上的详细版本信息。
+5. 通过在 WinDbg 窗口中键入 [**vertarget (显示目标计算机版本) **](vertarget--show-target-computer-version-.md) 命令，在目标系统上显示详细的版本信息。
 
 ```dbgcmd
 0: kd> vertarget
@@ -269,7 +269,7 @@ System Uptime: 0 days 01:31:58.931
 
 **列出已加载的模块**
 
-6. 您可以通过在 WinDbg 窗口中键入 " [**lm （列表已加载的模块）**](lm--list-loaded-modules-.md) " 命令，来验证是否正在使用正确的内核模式进程。
+6. 您可以通过在 WinDbg 窗口中键入 " [**lm (List" 已加载的模块) **](lm--list-loaded-modules-.md) "命令来验证是否正在使用正确的内核模式进程。
 
 ```dbgcmd
 0: Kd> lm
@@ -316,7 +316,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-    b. 右键单击*Windows-driver-samples-master.zip*，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ WDK \_ 示例 \\ *作为要将文件提取到的新文件夹。
+    b. 选择并按住 (或右键单击)  *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ WDK \_ 示例 \\ *作为要将文件提取到的新文件夹。
 
     c. 提取文件后，导航到以下子文件夹。
 
@@ -324,15 +324,15 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 2.  **在 Visual Studio 中打开驱动程序解决方案**
 
-    在 Visual Studio 中，单击 "**文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C： \\ WDK \_ 示例 \\ Sysvad*）。 双击*Syvad*解决方案文件。
+    在 Visual Studio 中，选择 " **文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含提取的文件的文件夹 (例如， *C： \\ WDK \_ Samples \\ Sysvad*) 。 双击 *Syvad* 解决方案文件。
 
-    在 Visual Studio 中找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，你可以看到一个包含多个项目的解决方案，并且示例中包含的内容将在不同时间发生变化。 
+    在 Visual Studio 中找到解决方案资源管理器。  (如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 ) 解决方案资源管理器中，你可以看到一个具有多个项目的解决方案，并且示例中包含的内容将在不同时间发生变化。 
         
     ![带有从 sysvad 项目加载的设备 .c 文件的 visual studio](images/sysvad-lab-visual-studio-solution.png)
 
 3.  **设置示例的配置和平台**
 
-    在解决方案资源管理器中，右键单击 "**解决方案 ' sysvad ' （7个项目）"**，然后选择 " **Configuration Manager**"。 请确保这四个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
+    在解决方案资源管理器中，选择并按住 (或右键单击) **解决方案 "sysvad" (7 项目) **，然后选择 " **Configuration Manager**"。 请确保这四个项目的配置和平台设置相同。 默认情况下，将配置设置为 "Win10 调试"，并将所有项目的平台设置为 "Win64"。 如果对一个项目进行任何配置和/或平台更改，则必须为其余三个项目进行相同的更改。
 
     **注意**   此实验室假设正在使用64位 Windows。 如果使用的是32位 Windows，请生成32位的驱动程序。
 
@@ -340,17 +340,17 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 4.  **检查驱动程序签名**
 
-    找到 TabletAudioSample。 打开 Sysvad 驱动程序的属性页，确保将**驱动程序签名** &gt; **模式**设置为 "*测试签名*"。
+    找到 TabletAudioSample。 打开 Sysvad 驱动程序的属性页，确保将 **驱动程序签名** &gt; **模式** 设置为 " *测试签名*"。
 
 5.  **使用 Visual Studio 生成示例**
 
-    在 Visual Studio 中，单击 "**生成**" "生成 &gt; **解决方案**"。
+    在 Visual Studio 中，选择 " **生成**" "生成 &gt; **解决方案**"。
 
     生成窗口应显示一条消息，指示已成功生成所有六个项目。
 
 6.  **找到生成的驱动程序文件**
 
-    在 "文件资源管理器" 中，导航到包含示例提取的文件的文件夹。 例如，如果是前面指定的文件夹，请导航到*C： \\ WDK \_ 示例 \\ Sysvad*。 在该文件夹中，编译的驱动程序文件的位置根据你在**Configuration Manager**中选择的配置和平台设置而有所不同。 例如，如果将默认设置保持不变，则已编译的驱动程序文件将保存到一个名为* \\ x64 \\ 调试*的名为 "64 位，调试生成" 的文件夹中。
+    在 "文件资源管理器" 中，导航到包含示例提取的文件的文件夹。 例如，如果是前面指定的文件夹，请导航到 *C： \\ WDK \_ 示例 \\ Sysvad*。 在该文件夹中，编译的驱动程序文件的位置根据你在 **Configuration Manager**中选择的配置和平台设置而有所不同。 例如，如果将默认设置保持不变，则已编译的驱动程序文件将保存到一个名为* \\ x64 \\ 调试*的名为 "64 位，调试生成" 的文件夹中。
 
     导航到包含 TabletAudioSample 驱动程序的生成文件的文件夹：
 
@@ -362,7 +362,7 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     |-----------------------------------|-----------------------------------------------------------------------------------|
     | TabletAudioSample.sys             | 驱动程序文件。                                                                  |
     | TabletAudioSample .pdb             | 驱动程序符号文件。                                                           |
-    | tabletaudiosample .inf             | 一个信息（INF）文件，其中包含安装驱动程序所需的信息。 |
+    | tabletaudiosample .inf             |  (INF) 包含安装驱动程序所需的信息的信息。 |
     | KeywordDetectorContosoAdapter  | 示例关键字检测器。                                                        |
     | KeywordDetectorContosoAdapter .pdb | 示例关键字探测器符号文件。                                          |
     | lSwapAPO.dll                      | 用于管理的 UI 的示例驱动程序扩展插件。                                |
@@ -379,11 +379,11 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 *在第4部分中，你将使用 devcon 安装 Sysvad 音频驱动程序。*
 
-**-&gt;在目标系统上**
+**-&gt; 在目标系统上**
 
-安装驱动程序的计算机称为*目标计算机*或*测试计算机*。 通常，这是与你开发和构建驱动程序包的计算机不同的计算机。 开发和构建驱动程序的计算机称为 "*主机*"。
+安装驱动程序的计算机称为 *目标计算机* 或 *测试计算机*。 通常，这是与你开发和构建驱动程序包的计算机不同的计算机。 开发和构建驱动程序的计算机称为 " *主机*"。
 
-将驱动程序包移动到目标计算机并安装驱动程序的过程称为 "*部署*驱动程序"。
+将驱动程序包移动到目标计算机并安装驱动程序的过程称为 " *部署* 驱动程序"。
 
 在部署驱动程序之前，必须通过启用测试签名来准备目标计算机。  之后，就可以在目标系统上运行生成的驱动程序示例了。
 
@@ -395,28 +395,28 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
     1. 打开 Windows 设置。
 
-    2. 在 "**更新和安全性**" 中，选择 "**恢复**"。
+    2. 在 " **更新和安全性**" 中，选择 " **恢复**"。
 
-    3. 在 "**高级启动**" 下，单击 "**立即重新启动**"。
+    3. 在 " **高级启动**" 下，选择 " **立即重新启动**"。
 
-    4. 重新启动计算机后，选择 "**疑难解答**"。
+    4. 重新启动计算机后，选择 " **疑难解答**"。
 
-    5. 然后选择 "**高级选项**"、"**启动设置**"，然后单击 "**重新启动**"。
+    5. 然后选择 " **高级选项**"、" **启动设置** "，然后选择 " **重新启动**"。
 
-    6. 按**F7**键，选择 "禁用驱动程序签名强制"。
+    6. 按 **F7** 键，选择 "禁用驱动程序签名强制"。
 
     7. 电脑将从新值开始。
 
 
-3.  **-&gt;在目标系统上**
+3.  **-&gt; 在目标系统上**
 
     **安装驱动程序**
 
     下面的说明演示了如何安装和测试示例驱动程序。
 
-    安装此驱动程序所需的 INF 文件为*TabletAudioSample*。 在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到 "驱动程序包" 文件夹，右键单击 "TabletAudioSample" 文件，然后选择 "**安装**"。
+    安装此驱动程序所需的 INF 文件为 *TabletAudioSample*。 在目标计算机上，以管理员身份打开“命令提示符”窗口。 导航到 "驱动程序包" 文件夹，右键单击 "TabletAudioSample" 文件，然后选择 " **安装**"。
 
-    此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 单击“仍然安装此驱动程序”以继续。
+    此时将显示一个对话框，指示测试驱动程序是未签名驱动程序。 选择 "仍要继续 **安装此驱动程序** "。
 
     ![windows 安全警告-windows 无法验证发布服务器](images/debuglab-image-install-security-warning.png)
 
@@ -425,17 +425,17 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     `%windir%\inf\setupapi.dev.log`
     >
      
-    有关更多详细说明，请参阅[配置计算机以进行驱动程序部署、测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
+    有关更多详细说明，请参阅 [配置计算机以进行驱动程序部署、测试和调试](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)。
 
-    INF 文件包含用于安装*tabletaudiosample.sys*的硬件 ID。 对于 Syvad 示例，硬件 ID 为：`root\sysvad_TabletAudioSample`
+    INF 文件包含用于安装 *tabletaudiosample.sys*的硬件 ID。 对于 Syvad 示例，硬件 ID 为： `root\sysvad_TabletAudioSample`
 
 4.  **查看设备管理器中的驱动程序**
 
-    在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开设备管理器。 在设备管理器的 "视图" 菜单上，选择 "**设备（按类型**）"。
+    在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开设备管理器。 在设备管理器的 "视图" 菜单上，选择 " **设备（按类型**）"。
 
-    在设备树中的 "音频设备" 节点中找到 "*虚拟音频设备（WDM）-平板电脑" 示例*。 这通常位于 "**声音、视频和游戏控制器**" 节点下。 确认它已安装并处于活动状态。
+    在设备树中的 "音频设备" 节点 * (WDM) 中找到 "虚拟音频设备* "。 这通常位于 " **声音、视频和游戏控制器** " 节点下。 确认它已安装并处于活动状态。
 
-    突出显示设备管理器计算机上的实际硬件的驱动程序。 然后右键单击该驱动程序，然后单击 "禁用" 以禁用该驱动程序。
+    突出显示设备管理器计算机上的实际硬件的驱动程序。 然后选择并按住 (或右键单击该驱动程序) ，然后选择 "禁用" 以禁用该驱动程序。
 
     确认音频硬件驱动程序设备管理器，并显示向下箭头，指示已将其禁用。
 
@@ -445,10 +445,10 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
 
 **测试 Sysvad 音频驱动程序**
 
-1. 在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开设备管理器。 在设备管理器的 "**视图**" 菜单上，选择 "**设备（按类型**）"。 在设备树中，找到 "*虚拟音频设备（WDM）-平板电脑示例*"。
+1. 在目标计算机上的命令提示符窗口中，输入 " **devmgmt.msc** " 以打开设备管理器。 在设备管理器的 " **视图** " 菜单上，选择 " **设备（按类型**）"。 在设备树中，找到 *虚拟音频设备 (WDM) -平板电脑示例*。
 
-2. 打开 "控制面板"，导航到 "**硬件和声音** &gt; **管理音频设备**"。 在 "声音" 对话框中，选择标记为 "*虚拟音频设备（WDM）-平板电脑示例*" 的扬声器图标，然后单击 "**设置默认值**"，但不要单击 **"确定"**。 这会使 "声音" 对话框处于打开状态。
-3. 在目标计算机上找到 MP3 或其他音频文件，然后双击以播放该文件。 然后，在 "声音" 对话框中，验证卷级别指示器中是否存在与*虚拟音频设备（WDM）-平板电脑示例*驱动程序相关联的活动。
+2. 打开 "控制面板"，导航到 " **硬件和声音** &gt; **管理音频设备**"。 在 "声音" 对话框中，选择标记为 " *虚拟音频设备 (WDM) -平板电脑*" 的扬声器图标，然后选择 " **设置为默认值**"，但不要选择 **"确定"**。 这会使 "声音" 对话框处于打开状态。
+3. 在目标计算机上找到 MP3 或其他音频文件，然后双击以播放该文件。 然后，在 "声音" 对话框中，验证卷级别指示器中是否存在与 *虚拟音频设备 (WDM) -平板电脑示例* 驱动程序相关联的活动。
 
 ## <a name="span-idusewindbgtodisplayinformationspansection-5-use-windbg-to-display-information-about-the-driver"></a><span id="usewindbgtodisplayinformation"></span>第5节：使用 WinDbg 显示有关驱动程序的信息
 
@@ -467,11 +467,11 @@ fffff801`094d9000 fffff801`09561000   CI         (export symbols)       CI.dll
     C:\> WinDbg –k net:port=50010,key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
     ```
 
-2.  使用 Ctrl + Break （滚动锁定）进入目标系统上运行的代码。
+2.  使用 Ctrl + Break (滚动锁定) ，以中断目标系统上运行的代码。
 
 **设置符号路径**
 
-1.  若要在 WinDbg 环境中将符号路径设置为 Microsoft 符号服务器，请使用**symfix**命令。
+1.  若要在 WinDbg 环境中将符号路径设置为 Microsoft 符号服务器，请使用 **symfix** 命令。
 
     ```dbgcmd
     0: kd> .symfix
@@ -502,14 +502,14 @@ Type “.hh dbgerr005” for details.
 **注意**   
 **符号服务器**
 
-有多种方法可用于处理符号。 在许多情况下，可以将 PC 配置为从 Microsoft 在需要时提供的符号服务器访问符号。 本演练假定将使用此方法。 如果你的环境中的符号位于不同的位置，请修改这些步骤以使用该位置。 有关其他信息，请参阅[符号存储和符号服务器](symbol-stores-and-symbol-servers.md)。
+有多种方法可用于处理符号。 在许多情况下，可以将 PC 配置为从 Microsoft 在需要时提供的符号服务器访问符号。 本演练假定将使用此方法。 如果你的环境中的符号位于不同的位置，请修改这些步骤以使用该位置。 有关其他信息，请参阅 [符号存储和符号服务器](symbol-stores-and-symbol-servers.md)。
 
  
 
 **注意**   
 **了解源代码符号要求**
 
-若要执行源调试，必须生成已选中（调试）的二进制文件版本。 编译器将创建符号文件（.pdb 文件）。 这些符号文件将显示调试器与源行的对应关系。 实际的源文件本身还必须可供调试器访问。
+若要执行源调试，必须生成已选中 (调试的二进制文件版本) 版本。 编译器将 ( .pdb 文件) 创建符号文件。 这些符号文件将显示调试器与源行的对应关系。 实际的源文件本身还必须可供调试器访问。
 
 符号文件不包含源代码的文本。 对于调试，最好是链接器不优化代码。 如果代码已经过优化，则源调试和对本地变量的访问更难，有时可能几乎不可能。 如果在查看本地变量或源行时遇到问题，请设置以下生成选项。
 
@@ -535,10 +535,10 @@ Type “.hh dbgerr005” for details.
     ...  
     ```
 
-    有关详细信息，请参阅[**lm**](lm--list-loaded-modules-.md)。
+    有关详细信息，请参阅 [**lm**](lm--list-loaded-modules-.md)。
 
-2.  单击 "调试输出" 中的 "**浏览所有全局符号**" 链接，以显示以字母 a 开头的项符号的相关信息。
-3.  由于已启用 DML，因此输出的某些元素是热链接，你可以单击该链接。 在调试输出中单击 "*数据*" 链接，以显示以字母 a 开头的项符号的相关信息。
+2.  选择 "调试输出" 中的 " **浏览所有全局符号** " 链接，以显示以字母 a 开头的项符号的相关信息。
+3.  由于已启用 DML，因此输出的某些元素是可供选择的热链接。 选择 "调试输出" 中的 " *数据* " 链接，以显示以字母 a 开头的项符号的相关信息。
 
     ```dbgcmd
     0: kd> x /D /f tabletaudiosample!a*
@@ -547,7 +547,7 @@ Type “.hh dbgerr005” for details.
     fffff806`9adb1000 tabletaudiosample!AddDevice (struct _DRIVER_OBJECT *, struct _DEVICE_OBJECT *)
     ```
 
-    有关信息，请参阅[**x （检查符号）**](x--examine-symbols-.md)。
+    有关信息，请参阅 [**x (检查符号) **](x--examine-symbols-.md)。
 
 4.  **！ Lmi**扩展显示有关模块的详细信息。 键入 **！ lmi tabletaudiosample**。 输出应类似于下面所示的文本。
 
@@ -574,7 +574,7 @@ Type “.hh dbgerr005” for details.
                      C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\sym\TabletAudioSample.pdb\5395F0C5AE504C56AD31DD5473BD318F1\TabletAudioSample.pdb
     ```
 
-5.  使用 **！ dh**扩展显示标头信息，如下所示。
+5.  使用 **！ dh** 扩展显示标头信息，如下所示。
 
     ```dbgcmd
     0: kd> !dh tabletaudiosample 
@@ -601,11 +601,11 @@ Type “.hh dbgerr005” for details.
 
 有关故障排除的详细信息，请查看即插即用设备树中的设备驱动程序。 例如，如果设备驱动程序不在设备树中，则设备驱动程序的安装可能会出现问题。
 
-有关设备节点调试扩展的详细信息，请参阅[**！ devnode**](-devnode.md)。
+有关设备节点调试扩展的详细信息，请参阅 [**！ devnode**](-devnode.md)。
 
 **&lt;-在主机系统上**
 
-1. 若要查看即插即用设备树中的所有设备节点，请输入 **！ devnode 0 1**命令。 此命令可能需要一到两分钟的时间才能运行。 在此期间，" \* 忙碌" 将显示在 WinDbg 的 "状态" 区域中。
+1. 若要查看即插即用设备树中的所有设备节点，请输入 **！ devnode 0 1** 命令。 此命令可能需要一到两分钟的时间才能运行。 在此期间，" \* 忙碌" 将显示在 WinDbg 的 "状态" 区域中。
 
    ```dbgcmd
    0: kd> !devnode 0 1
@@ -683,7 +683,7 @@ Type “.hh dbgerr005” for details.
        Previous State = DeviceNodeStartPostWork (0x307)
    ```
 
-4. 前一个命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO，在此示例中为*0xffffe00089c575a0*。 输入 **！ devobj**<em> &lt; PDO address &gt; </em>命令以显示与 Sysvad 设备驱动程序关联即插即用信息。 使用 **！ devnode**在你的电脑上显示的 PDO 地址，而不是此处显示的地址。
+4. 前一个命令中显示的输出包含与驱动程序的正在运行的实例关联的 PDO，在此示例中为 *0xffffe00089c575a0*。 输入 **！ devobj**<em> &lt; PDO address &gt; </em>命令以显示与 Sysvad 设备驱动程序关联即插即用信息。 使用 **！ devnode** 在你的电脑上显示的 PDO 地址，而不是此处显示的地址。
 
    ```dbgcmd 
    0: kd> !devobj 0xffffe00089c575a0
@@ -697,7 +697,7 @@ Type “.hh dbgerr005” for details.
    Device queue is not busy.
    ```
 
-5. **！ Devobj**命令中显示的输出包含附加设备的名称： \\ Driver \\ sysvad \_ tabletaudiosample。 使用带有位掩码2的 **！ drvobj**命令来显示与连接的设备关联的信息。
+5. **！ Devobj**命令中显示的输出包含附加设备的名称： \\ Driver \\ sysvad \_ tabletaudiosample。 使用带有位掩码2的 **！ drvobj** 命令来显示与连接的设备关联的信息。
 
    ```dbgcmd 
    0: kd> !drvobj \Driver\sysvad_tabletaudiosample 2
@@ -739,7 +739,7 @@ Type “.hh dbgerr005” for details.
    [1b] IRP_MJ_PNP                         fffff80114b5f7d0 tabletaudiosample!PnpHandler
    ```
 
-6. 输入 **！ devstack**<em> &lt; PDO address &gt; </em>命令以显示与设备驱动程序相关即插即用信息。 **！ Devnode 0 1**命令中显示的输出包含与驱动程序的运行实例相关联的 PDO 地址。 在此示例中，它是*0xffffe00089c575a0*。 使用 **！ devnode**在你的电脑上显示的 PDO 地址，而不是以下显示的地址。
+6. 输入 **！ devstack**<em> &lt; PDO address &gt; </em>命令以显示与设备驱动程序相关即插即用信息。 **！ Devnode 0 1**命令中显示的输出包含与驱动程序的运行实例相关联的 PDO 地址。 在此示例中，它是 *0xffffe00089c575a0*。 使用 **！ devnode** 在你的电脑上显示的 PDO 地址，而不是以下显示的地址。
 
    ```dbgcmd
    0: kd> !devstack 0xffffe00089c575a0
@@ -771,7 +771,7 @@ Type “.hh dbgerr005” for details.
 
 断点用于在特定代码行处停止执行代码。 然后，可以从该点开始前进，以调试该代码的特定部分。
 
-若要使用调试命令设置断点，请使用下列**b**命令之一。
+若要使用调试命令设置断点，请使用下列 **b** 命令之一。
 
 <table>
 <colgroup>
@@ -789,7 +789,7 @@ Type “.hh dbgerr005” for details.
 </tr>
 <tr class="odd">
 <td align="left"><p>bm.exe</p></td>
-<td align="left"><p>设置符号的断点。 此命令将适当地使用 bu 或 bp，并允许使用通配符 * 来设置每个匹配的符号（如类中的所有方法）上的断点。</p></td>
+<td align="left"><p>设置符号的断点。 此命令将适当地使用 bu 或 bp，并允许使用通配符 * 来设置与) 类中的所有方法相同 (的每个符号上的断点。</p></td>
 </tr>
 </tbody>
 </table>
@@ -818,7 +818,7 @@ Type “.hh dbgerr005” for details.
     0: kd> ed nt!Kd_DEFAULT_MASK 0xFFFFFFFF
     ```
 
-5.  使用**bm.exe**命令设置断点，使用驱动程序名称，后跟要设置断点的函数名称（AddDevice），用感叹号分隔。
+5.  使用 **bm.exe** 命令设置断点，使用驱动程序名称，后跟函数名称 (AddDevice) 要设置断点的位置，用感叹号分隔。
 
     ```dbgcmd
     0: kd> bm tabletaudiosample!AddDevice
@@ -826,22 +826,22 @@ Type “.hh dbgerr005” for details.
       1: fffff801`14b5f000 @!"tabletaudiosample!AddDevice"
     ```
 
-    您可以结合使用不同语法和设置变量，如 &lt; module &gt; ！ &lt;symbol &gt; 、 &lt; class &gt; ：： &lt; 方法 &gt; 、" &lt; file .cpp &gt; ： &lt; 行号 &gt; "，或跳过次数 &lt; 条件 &gt; &lt; \# &gt; 。 有关详细信息，请参阅[使用断点](using-breakpoints.md)。
+    您可以结合使用不同语法和设置变量，如 &lt; module &gt; ！ &lt;symbol &gt; 、 &lt; class &gt; ：： &lt; 方法 &gt; 、" &lt; file .cpp &gt; ： &lt; 行号 &gt; "，或跳过次数 &lt; 条件 &gt; &lt; \# &gt; 。 有关详细信息，请参阅 [使用断点](using-breakpoints.md)。
 
-6.  列出当前断点以确认是否通过键入**bl**命令设置了断点。
+6.  列出当前断点以确认是否通过键入 **bl** 命令设置了断点。
 
     ```dbgcmd
     0: kd> bl
     1 e fffff801`14b5f000     0001 (0001) tabletaudiosample!AddDevice
     ```
 
-7.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令**g**。
+7.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令 **g**。
 
 8.  **-&gt;在目标系统上**
 
-    在 Windows 中，通过使用图标或输入**mmc devmgmt.msc**打开设备管理器。 在**设备管理器**展开 "**声音、视频和游戏控制器**" 节点。 右键单击虚拟音频驱动程序条目，然后从菜单中选择 "**禁用**"。
+    在 Windows 中，通过使用图标或输入 **mmc devmgmt.msc**打开设备管理器。 在 **设备管理器** 展开 " **声音、视频和游戏控制器** " 节点。 选择并按住 (或右键单击) 虚拟音频驱动程序条目，然后从菜单中选择 " **禁用** "。
 
-9.  再次右键单击 "虚拟音频驱动程序" 条目，然后从菜单中选择 "**启用**"。
+9.  选择并按住 (或右键单击 "虚拟音频驱动程序" 条目) ，然后从菜单中选择 " **启用** "。
 10. **&lt;-在主机系统上**
 
     这会导致 Windows 重新加载驱动程序，这将调用 AddDevice。 这将导致触发 AddDevice 调试断点，并应终止目标系统上的驱动程序代码的执行。
@@ -887,13 +887,13 @@ Type “.hh dbgerr005” for details.
     } // AddDevice
     ```
 
-11. 通过在代码中键入**p**命令或按 F10 来逐行执行代码。 可以从 sysvad AddDevice 代码单步执行到 PpvUtilCall、PnpCallAddDevice，然后转到 PipCallDriverAddDevice Windows 代码。 您可以向**p**命令提供一个数字，以单步执行多行（例如*p 5*）。
+11. 通过在代码中键入 **p** 命令或按 F10 来逐行执行代码。 可以从 sysvad AddDevice 代码单步执行到 PpvUtilCall、PnpCallAddDevice，然后转到 PipCallDriverAddDevice Windows 代码。 您可以向 **p** 命令提供一个数字，以单步执行多行（例如 *p 5*）。
 
-12. 完成代码的单步执行后，使用 "转到" 命令**g**在目标系统上重新开始执行。
+12. 完成代码的单步执行后，使用 "转到" 命令 **g** 在目标系统上重新开始执行。
 
 **设置内存访问断点**
 
-还可以设置在访问内存位置时激发的断点。 使用以下语法，使用 " **ba** （访问时中断）" 命令。
+还可以设置在访问内存位置时激发的断点。 使用 " **ba** (在 access) 上中断" 命令，使用以下语法。
 
 ```dbgcmd
 ba <access> <size> <address> {options}
@@ -907,28 +907,28 @@ ba <access> <size> <address> {options}
 <thead>
 <tr class="header">
 <th align="left">选项</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>e</p></td>
-<td align="left"><p>execute （当 CPU 从地址提取指令时）</p></td>
+<td align="left"><p>CPU 从地址提取指令时执行 () </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>r</p></td>
-<td align="left"><p>读/写（CPU 读取或写入地址时）</p></td>
+<td align="left"><p>读/写 (CPU 读取或写入地址时的) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>w</p></td>
-<td align="left"><p>写入（CPU 写入地址时）</p></td>
+<td align="left"><p>当 CPU 写入地址时写入 () </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-请注意，在任何给定的时间只能设置四个数据断点，并由您来确保正确对齐数据或不触发断点（单词必须以2为界限的地址结束，dword 必须可被4整除，并 quadwords 0 或8）
+请注意，在任何给定时间，只能设置四个数据断点，并由您确保正确对齐数据或不触发断点 (单词必须以2为界限，而 dword 必须可被4整除，并 quadwords 0 或 8) 
 
 例如，若要在特定内存地址上设置读/写断点，请使用如下所示的命令。
 
@@ -967,7 +967,7 @@ ba r 4 fffff800`7bc9eff0
 
  
 
-此外，也可以通过单击 "**编辑**断点" 来修改断点 &gt; **breakpoints**。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
+此外，也可以通过选择 "**编辑**断点" 来修改断点 &gt; **breakpoints**。 请注意，"断点" 对话框仅适用于现有的断点。 必须从命令行设置新断点。
 
 **在 MixerVolume 上设置断点**
 
@@ -1003,9 +1003,9 @@ ba r 4 fffff800`7bc9eff0
     1 e fffff801`177b26a0 [c:\WDK_Samples\audio\sysvad\common.cpp @ 1668]    0001 (0001) tabletaudiosample!CAdapterCommon::MixerVolumeWrite
     ```
 
-5.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令**g**。
+5.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令 **g**。
 
-6.  在 "控制面板" 中，选择 "**硬件和声音**" &gt; **Sound**。 右键单击 "**接收器说明示例**"，然后选择 "**属性**"。 选择 "**级别**" 选项卡。调整滑块音量。
+6.  在 "控制面板" 中，选择 "**硬件和声音**" &gt; **Sound**。 选择并按住 (或右键单击) **接收器说明示例** ，然后选择 " **属性**"。 选择 " **级别** " 选项卡。调整滑块音量。
 
 7.  这会导致触发 SetMixerVolume 调试断点，并使目标系统上的驱动程序代码执行停止。
 
@@ -1037,31 +1037,31 @@ ba r 4 fffff800`7bc9eff0
             lVolume = 0n24
     ```
 
-9.  按**F10**单步执行代码。
+9.  按 **F10** 单步执行代码。
 
-10. 按**F5**完成 MixerVolumeWrite 代码的执行。
+10. 按 **F5** 完成 MixerVolumeWrite 代码的执行。
 
 **摘要-逐句通过调试器中的代码命令窗口**
 
-以下命令可用于单步执行代码（使用括号中显示的关联键盘短切削）。
+以下命令可用于单步执行代码，并使用括号) 中显示的关联键盘短暂切口 (。
 
--   中断（Ctrl + Break）-只要系统正在运行且与 WinDbg 通信，则此命令将中断系统（内核调试器中的序列为 Ctrl + C）。
+-   中断 (Ctrl + Break) -只要系统正在运行且与 WinDbg 通信，则此命令将中断系统 (内核调试器中的序列是 Ctrl + C) 。
 
--   逐过程执行（F10）–此命令可使代码执行一次一条语句或一个指令。 如果遇到调用，代码执行将通过调用而不输入被调用的例程。 （如果编程语言为 C 或 c + +，WinDbg 为源模式，则可以使用**调试** &gt; 来打开或关闭源模式**源模式**）。
+-   逐过程执行 (F10) –此命令会导致代码执行一次执行一个语句或一个指令。 如果遇到调用，代码执行将通过调用而不输入被调用的例程。  (如果编程语言为 c 或 c + + 并且 WinDbg 处于源模式，则可以使用**调试** &gt; **源模式**) 打开或关闭源模式。
 
--   单步执行（F11）–此命令类似于 "逐过程"，不同之处在于执行调用的操作进入被调用例程。
+-    (F11) 中的步骤–此命令类似于 "逐过程"，不同之处在于执行调用会进入被调用例程。
 
--   跳出（Shift + F11）-此命令将执行运行并从当前例程（位于调用堆栈中的当前位置）中退出。 如果你已看到足够的例程，这会很有用。
+-   跳出 (Shift + F11) –此命令会使执行运行到，并从当前例程退出 (调用堆栈) 中的当前位置。 如果你已看到足够的例程，这会很有用。
 
--   "运行到光标处" （F7 或 Ctrl + F10）–将光标放在要中断执行的源或反汇编窗口中，然后按 F7;代码执行将运行到该点。 请注意，如果代码执行流未到达光标指示的点（例如，不执行 IF 语句），则 WinDbg 不会中断，因为代码执行不会到达指示的点。
+-   运行到光标 (F7 或 Ctrl + F10) –将光标置于要执行中断的源或反汇编窗口中，然后按 F7;代码执行将运行到该点。 请注意，如果代码执行流不会到达游标所指示的点 (例如，IF 语句不会执行) ，WinDbg 不会中断，因为代码执行不会到达指示的点。
 
--   运行（F5）–直到遇到断点或发生错误检查等事件时运行。
+-   运行 (F5) –运行，直到遇到断点或发生错误检查之类的事件。
 
 **高级选项**
 
--   将指令设置为当前行（Ctrl + Shift + I）–在源窗口中，您可以将光标放在一行上，输入此键盘快捷方式，然后在您允许继续操作（例如，使用 F5 或 F10）后，代码执行将从该点开始。 如果要重试序列，这会很方便，但需要小心。 例如，寄存器和变量不会设置为，前提是代码执行在自然到达该行。
+-   将指令设置为当前行 (Ctrl + Shift + I) –在源窗口中，你可以将光标放在一行上，输入此键盘快捷方式，然后，只要你允许使用 F5 或 F10) ，就会立即从该点开始代码执行 (。 如果要重试序列，这会很方便，但需要小心。 例如，寄存器和变量不会设置为，前提是代码执行在自然到达该行。
 
--   Eip 注册的直接设置-可将值放入 eip 寄存器，并在按 F5 （或 F10，F11，等等）后立即从该地址开始执行。 这类似于将指令设置为游标指定的当前行，只不过指定了程序集指令的地址。
+-   Eip 注册的直接设置-可将值放入 eip 寄存器，并在按 F5 (或 F10、F11 等 ) ，从该地址开始执行。 这类似于将指令设置为游标指定的当前行，只不过指定了程序集指令的地址。
 
 可以更方便地逐句通过 UI，而不是使用命令行，因此建议使用此方法。 如有必要，可在命令行中使用以下命令单步执行源文件：
 
@@ -1079,7 +1079,7 @@ ba r 4 fffff800`7bc9eff0
 
 -   p-执行一个源行。
 
-有关详细信息，请参阅调试参考文档[中的 WinDbg 中的源代码调试](source-window.md)。
+有关详细信息，请参阅调试参考文档 [中的 WinDbg 中的源代码调试](source-window.md) 。
 
 **在代码中设置断点**
 
@@ -1129,7 +1129,7 @@ ba r 4 fffff800`7bc9eff0
 
 在代码执行时检查变量以确认代码按预期方式工作可能非常有用。 此实验室检查变量，因为音频驱动程序产生声音。
 
-1.  使用**dv**命令检查与 tabletaudiosample 关联的区域设置变量！CMiniportWaveRT：： New \* 。
+1.  使用 **dv** 命令检查与 tabletaudiosample 关联的区域设置变量！CMiniportWaveRT：： New \* 。
 
     ```dbgcmd
     kd> dv tabletaudiosample!CMiniportWaveRT::New*
@@ -1148,11 +1148,11 @@ ba r 4 fffff800`7bc9eff0
       1: fffff801`177dffc0 @!"tabletaudiosample!CMiniportWaveRT::NewStream"
     ```
 
-4.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令**g**。
+4.  在目标系统上重新启动代码执行，方法是键入 "开始" 命令 **g**。
 
-5.  **-&gt;在目标系统上**
+5.  **-&gt; 在目标系统上**
 
-    找到一个小媒体文件（如带有 .wav 文件扩展名的 Windows 通知声音文件），然后单击该文件进行播放。 例如，可以使用位于 Windows Media 目录中的 Ring05。 \\
+    查找小的媒体文件 (例如带有 .wav 文件扩展名的 Windows 通知声音文件) 并选择要播放的文件。 例如，可以使用位于 Windows Media 目录中的 Ring05。 \\
 
 6.  **&lt;-在主机系统上**
 
@@ -1199,7 +1199,7 @@ ba r 4 fffff800`7bc9eff0
 
 7.  **局部变量**
 
-    您可以通过键入**dv**命令显示给定帧的所有局部变量的名称和值。
+    您可以通过键入 **dv** 命令显示给定帧的所有局部变量的名称和值。
 
     ```dbgcmd
     0: kd> dv
@@ -1216,7 +1216,7 @@ ba r 4 fffff800`7bc9eff0
 
 8.  **使用 DML 显示变量**
 
-    若要使用 DML 浏览变量，请单击带下划线的元素。 单击操作生成可用于向下钻取嵌套数据结构的[**dx （显示 NatVis 表达式）**](dx--display-visualizer-variables-.md)命令。
+    若要使用 DML 浏览变量，请选择带下划线的元素。 "选择" 操作将生成一个 [**dx (显示 NatVis 表达式) **](dx--display-visualizer-variables-.md) 命令，可用于向下钻取嵌套的数据结构。
 
     ```dbgcmd
     0: kd> dx -r1 (*((tabletaudiosample!CMiniportWaveRT *)0xffffe001d10b8380))
@@ -1260,7 +1260,7 @@ ba r 4 fffff800`7bc9eff0
     Evaluate expression: -52768896396472 = ffffd001`c8acd348
     ```
 
-10. 这会返回变量的内存位置，在本例中为*ffffd001 \` c8acd348*。 通过使用上一命令返回的内存位置转储键入**dd**命令的位置值，可以查看内存位置的内容。
+10. 这会返回变量的内存位置，在本例中为 *ffffd001 \` c8acd348*。 通过使用上一命令返回的内存位置转储键入 **dd** 命令的位置值，可以查看内存位置的内容。
 
     ```dbgcmd
     0: kd> dd ffffd001`c8acd348
@@ -1274,7 +1274,7 @@ ba r 4 fffff800`7bc9eff0
     ffffd001`c8acd3b8  18adc7f9 fffff801 495972a0 ffffe000
     ```
 
-11. 还可以将变量名称与**dd**命令一起使用。
+11. 还可以将变量名称与 **dd** 命令一起使用。
 
     ```dbgcmd
     0: kd> dd signalProcessingMode
@@ -1294,7 +1294,7 @@ ba r 4 fffff800`7bc9eff0
 
     ![显示示例代码局部变量和命令窗口的 windbg](images/sysvad-lab-display-variables.png)
 
-13. 在突出显示 ntStatus = IsFormatSupported （引脚，Capture，DataFormat）的情况下，使用 p 或 F10 向前单步执行代码中的10行;代码行。
+13. 在突出显示 ntStatus = IsFormatSupported (Pin、捕获、DataFormat) 的情况下，使用 p 或 F10 前进到代码中的10行：代码行。
 
     ```cpp
         PAGED_CODE();
@@ -1337,7 +1337,7 @@ ba r 4 fffff800`7bc9eff0
     ...
     ```
 
-14. 使用**dv**命令显示给定帧的所有局部变量的名称和值。 请注意，所需的值与上一次运行此命令时的值不同，因为已运行更改本地变量的其他代码，但某些变量现在不在当前框架中，或者其值已更改。
+14. 使用 **dv** 命令显示给定帧的所有局部变量的名称和值。 请注意，所需的值与上一次运行此命令时的值不同，因为已运行更改本地变量的其他代码，但某些变量现在不在当前框架中，或者其值已更改。
 
     ```dbgcmd
     2: kd> dv
@@ -1355,7 +1355,7 @@ ba r 4 fffff800`7bc9eff0
 ## <a name="span-idviewingcallstacksspansection-9-view-call-stacks"></a><span id="viewingcallstacks"></span>第9节：查看调用堆栈
 
 
-*在第9节中，你将查看调用堆栈以检查调用方/(代码。*
+*在第9节中，你将查看调用堆栈以检查调用方/ (代码。*
 
 调用堆栈是已导致程序计数器当前位置的函数调用的链。 调用堆栈上的 top 函数是当前函数，下一个函数是调用当前函数的函数，依此类推。
 
@@ -1384,7 +1384,7 @@ ba r 4 fffff800`7bc9eff0
 
  
 
-如果要保留可用的调用堆栈，可以单击 "**查看** &gt; **调用堆栈**" 以查看它。 单击窗口顶部的列可以切换其他信息的显示。
+如果要保留可用的调用堆栈，可选择 "**查看** &gt; **调用堆栈**" 以查看。 选择窗口顶部的列以切换其他信息的显示。
 
 !["windbg 调用堆栈" 窗口](images/sysvad-lab-call-stack.png)
 
@@ -1413,7 +1413,7 @@ ba r 4 fffff800`7bc9eff0
 11 00000000`00000000 : 00000000`00000000 00000000`00000000 00000000`00000080 00000000`00000000 : 0x12e
 ```
 
-可以使用 DML 进一步浏览代码。 单击第一个00条目时，将使用 "[**框架（设置本地上下文）**](-frame--set-local-context-.md) " 命令设置上下文，然后 " [**Dv （显示局部变量）**](dv--display-local-variables-.md) " 命令将显示局部变量。
+可以使用 DML 进一步浏览代码。 选择第一个00条目时， [**. frame (设置本地上下文) **](-frame--set-local-context-.md) 命令用于设置上下文，然后， [**Dv (显示本地变量) **](dv--display-local-variables-.md) 命令显示局部变量。
 
 ```dbgcmd
 0: kd> .frame 0n0;dv /t /v
@@ -1434,7 +1434,7 @@ ffffd001`c3098218 class CMiniportWaveRTStream * stream = 0x00000000`00000000
 
 *在第10节中，您将使用调试器命令来显示进程和线程。*
 
-**Process**
+**处理**
 
 若要更改当前进程上下文，请使用. process &lt; process &gt; 命令。 下面的示例演示如何识别进程并向其切换上下文。
 
@@ -1493,7 +1493,7 @@ PROCESS ffffe001d147c840
 
 请注意，与此进程关联的一个线程处于 "正在运行" 状态。 此线程支持在命中断点时播放媒体剪辑。
 
-使用 **！ process 0 0**命令显示所有进程的摘要信息。 在命令输出中，使用 CTRL + F 查找与 audiodg.exe 映像关联的进程的进程 ID。 在下面所示的示例中，进程 ID 为*ffffe001d147c840*。
+使用 **！ process 0 0** 命令显示所有进程的摘要信息。 在命令输出中，使用 CTRL + F 查找与 audiodg.exe 映像关联的进程的进程 ID。 在下面所示的示例中，进程 ID 为 *ffffe001d147c840*。
 
 记录与计算机上 audiodg.exe 相关联的进程 ID，以便稍后在本实验室中使用。 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -1507,7 +1507,7 @@ PROCESS ffffe001d147c840
 ...
 ```
 
-将 g 输入到调试器中，以便向前运行代码，直到媒体剪辑完成播放。 然后，通过按 Ctrl + ScrLk （Ctrl + Break）来中断调试器，使用！ process 命令确认现在正在运行不同的进程。
+将 g 输入到调试器中，以便向前运行代码，直到媒体剪辑完成播放。 然后，通过按 Ctrl + ScrLk (Ctrl + Break) 来中断调试器，使用！ process 命令确认现在正在运行不同的进程。
 
 ```dbgcmd
 !process
@@ -1540,9 +1540,9 @@ PROCESS ffffe001cd0ad040
 ...
 ```
 
-以上输出显示， *ffffe001cd0ad040*的其他系统进程正在运行。 映像名称显示系统，而不是 audiodg.exe。
+以上输出显示， *ffffe001cd0ad040* 的其他系统进程正在运行。 映像名称显示系统，而不是 audiodg.exe。
 
-现在使用！ process 命令切换到与 audiodg.exe 关联的进程。 在此示例中，进程 ID 为*ffffe001d147c840*。 将示例中的进程 ID 替换为之前记录的进程 ID。
+现在使用！ process 命令切换到与 audiodg.exe 关联的进程。 在此示例中，进程 ID 为 *ffffe001d147c840*。 将示例中的进程 ID 替换为之前记录的进程 ID。
 
 ```dbgcmd
 0: kd> !process  ffffe001d147c840
@@ -1621,18 +1621,18 @@ PROCESS ffffe001d147c840
 
 **线程**
 
-用于查看和设置线程的命令与进程的命令非常相似。 使用[**！ thread**](-thread.md)命令查看线程。 使用[**. thread**](-thread--set-register-context-.md)设置当前线程。
+用于查看和设置线程的命令与进程的命令非常相似。 使用 [**！ thread**](-thread.md) 命令查看线程。 使用 [**. thread**](-thread--set-register-context-.md) 设置当前线程。
 
 若要浏览与 media player 关联的线程，请再次播放媒体剪辑。 如果在上一节中描述的断点仍存在，则将在 audiodg.exe 的上下文中停止。
 
-使用！ thread-1 0 显示当前线程的简短信息。 这会显示线程地址、线程和进程 Id、线程环境块（TEB）地址、创建线程所要运行的 Win32 函数的地址（如果有）以及线程的计划状态。
+使用！ thread-1 0 显示当前线程的简短信息。 这会显示线程地址、线程和进程 Id、线程环境块 (TEB) 地址、Win32 函数的地址 (（如果创建了要运行的线程的任何) ）以及线程的计划状态。
 
 ```dbgcmd
 0: kd> !thread -1 0
 THREAD ffffe001d3a27040  Cid 10f0.17f4  Teb: 000000ee6cf9d000 Win32Thread: 0000000000000000 RUNNING on processor 0
 ```
 
-若要查看有关正在运行的线程的详细信息，请键入[**！ thread**](-thread.md)。 应显示类似于以下内容的信息。
+若要查看有关正在运行的线程的详细信息，请键入 [**！ thread**](-thread.md)。 应显示类似于以下内容的信息。
 
 ```dbgcmd
 0: kd> !thread
@@ -1697,7 +1697,7 @@ ffffd001`c70c6bd0 00007fff`69805b74 : 00007fff`487484e6 0000029b`00000003 000000
 11 000000ee`6d37c580 00000000`00000000 0x12e
 ```
 
-将 g 输入到调试器中，以便向前运行代码，直到媒体剪辑完成播放。 然后，通过按 Ctrl-ScrLk （Ctrl + Break）来中断调试器，使用！ thread 命令确认现在正在运行不同的线程。
+将 g 输入到调试器中，以便向前运行代码，直到媒体剪辑完成播放。 然后，通过按下 Ctrl-ScrLk (Ctrl-Break) 来中断调试器，使用！ thread 命令确认现在正在运行不同的线程。
 
 ```dbgcmd
 0: kd> !thread
@@ -1758,7 +1758,7 @@ ffffd001`cd16add0 00007fff`674c1494 : 00007fff`674b1e97 0000a7c6`daee0559 000000
 
 **&lt;-在主机系统上**
 
-中断请求级别（IRQL）用于管理中断服务的优先级。 每个处理器都有一个可以提高或降低线程的 IRQL 设置。 在处理器的 IRQL 设置下或之下发生的中断会被屏蔽，并且不会影响当前操作。 超出处理器的 IRQL 设置的中断优先于当前操作。 在调试程序发生中断之前， [**！ irql**](-irql.md)扩展会在目标计算机的当前处理器上显示中断请求级别（irql）。 当目标计算机中断到调试器时，IRQL 会发生更改，但在调试器中断之前有效的 IRQL 会被保存，并由！ IRQL 显示。
+中断请求级别 (IRQL) 用于管理中断服务的优先级。 每个处理器都有一个可以提高或降低线程的 IRQL 设置。 在处理器的 IRQL 设置下或之下发生的中断会被屏蔽，并且不会影响当前操作。 超出处理器的 IRQL 设置的中断优先于当前操作。 在调试程序发生中断之前，在目标计算机的当前处理器上，此 [**！ irql**](-irql.md) 扩展显示中断请求级别 (irql) 。 当目标计算机中断到调试器时，IRQL 会发生更改，但在调试器中断之前有效的 IRQL 会被保存，并由！ IRQL 显示。
 
 ```dbgcmd
 0: kd> !irql
@@ -1769,7 +1769,7 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 
 **查看寄存器**
 
-使用[**r （寄存器）**](r--registers-.md)命令显示当前处理器上的当前线程的寄存器内容。
+使用 [**r (寄存器) **](r--registers-.md) 命令在当前处理器上显示当前线程的注册内容。
 
 ```dbgcmd
 0: kd> r
@@ -1785,21 +1785,21 @@ nt!DbgBreakPointWithStatus:
 fffff803`bb757020 cc              int     3
 ```
 
-或者，您可以通过单击 "**查看**寄存器" 来显示寄存器内容 &gt; **Registers**。
+或者，您可以通过选择 "**查看**寄存器" 来显示寄存器内容 &gt; **Registers**。
 
 ![显示大约12个寄存器的 "windbg 寄存器" 窗口](images/sysvad-lab-audio-display-registers.png)
 
-在单步执行汇编语言代码执行和其他情况时，查看寄存器的内容会很有帮助。 有关详细信息，请参阅[**r （寄存器）**](r--registers-.md)。
+在单步执行汇编语言代码执行和其他情况时，查看寄存器的内容会很有帮助。 有关详细信息，请参阅 [**r (寄存器) **](r--registers-.md)。
 
-有关寄存器内容的信息，请参阅[X86 体系结构](x86-architecture.md)和[x64 体系结构](x64-architecture.md)。
+有关寄存器内容的信息，请参阅 [X86 体系结构](x86-architecture.md) 和 [x64 体系结构](x64-architecture.md)。
 
 **反汇编**
 
-可以通过单击 "**查看**反汇编" 来反汇编正在执行的代码，以查看正在运行的程序集语言代码 &gt; **Disassembly**。
+您可以通过选择 "**查看**反汇编" 来反汇编正在执行的代码，以查看正在运行的程序集语言代码 &gt; **Disassembly**。
 
 ![windbg 反汇编窗口](images/sysvad-lab-audio-disassembly-window.png)
 
-有关汇编语言反汇编的详细信息，请参阅[带批注的 X86 反汇编](annotated-x86-disassembly.md)和[带批注的 x64 反汇编](annotated-x64-disassembly.md)。
+有关汇编语言反汇编的详细信息，请参阅 [带批注的 X86 反汇编](annotated-x86-disassembly.md) 和 [带批注的 x64 反汇编](annotated-x64-disassembly.md)。
 
 ## <a name="span-idworkingwithmemoryspansection-12-work-with-memory"></a><span id="workingwithmemory"></span>第12部分：使用内存
 
@@ -1822,7 +1822,7 @@ fffff803`bb757020 cc              int     3
 </tr>
 <tr class="even">
 <td align="left"><p>dd</p></td>
-<td align="left"><p>将数据显示为双层字（4字节）。</p></td>
+<td align="left"><p>将数据显示为双宽字 (4 个字节) 。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>du</p></td>
@@ -1830,18 +1830,18 @@ fffff803`bb757020 cc              int     3
 </tr>
 <tr class="even">
 <td align="left"><p>dw</p></td>
-<td align="left"><p>将数据显示为 word 值（2个字节）和 ASCII 字符。</p></td>
+<td align="left"><p>将数据显示为字值 (2 个字节) 和 ASCII 字符。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注意**   如果尝试显示无效地址，则其内容将显示为问号（？）。
+**注意**   如果尝试显示无效地址，则其内容将显示为问号 (？ ) 。
 
  
 
-或者，您可以通过单击 "**查看**内存" 来查看内存 &gt; **Memory**。 使用**显示格式**向下下拉以更改显示内存的方式。
+或者，您可以通过选择 "**查看**内存" 来查看内存 &gt; **Memory**。 使用 **显示格式** 向下下拉以更改显示内存的方式。
 
 ![windbg "查看内存" 窗口](images/sysvad-lab-audio-memory-display.png)
 
@@ -1865,7 +1865,7 @@ fffff803`bb757020 cc              int     3
       1: fffff80f`02c3a4b0 @!"tabletaudiosample!CMiniportWaveRT::SetDeviceChannelVolume"
     ```
 
-4.  使用**g**命令重新启动代码执行。
+4.  使用 **g** 命令重新启动代码执行。
 
     在目标系统上，调整系统托盘中的卷。 这将导致引发断点。
 
@@ -1877,7 +1877,7 @@ fffff803`bb757020 cc              int     3
 
 5.  使用 "**查看** &gt; **本地**" 菜单项可显示局部变量。 记下 IVolume 变量的当前值。
 
-6.  通过键入**dt**命令和变量的名称，可以在示例代码中显示 IVolume 变量的数据类型和当前值。
+6.  通过键入 **dt** 命令和变量的名称，可以在示例代码中显示 IVolume 变量的数据类型和当前值。
 
     ```dbgcmd
     kd> dt lVolume
@@ -1906,7 +1906,7 @@ fffff803`bb757020 cc              int     3
     }
     ```
 
-8.  尝试使用[**dt （显示类型）**](dt--display-type-.md)命令在 IVolume 的内存位置显示值。
+8.  尝试使用 [**dt (显示类型) **](dt--display-type-.md) 命令在内存位置显示值。
 
     ```dbgcmd
     kd> dt dt lVolume
@@ -1922,7 +1922,7 @@ fffff803`bb757020 cc              int     3
         return ntStatus;
     ```
 
-10. 使用[**dt （显示类型）**](dt--display-type-.md)命令在 IVolume 的内存位置显示值。
+10. 使用 [**dt (显示类型) **](dt--display-type-.md) 命令，在内存位置显示值。
 
     ```dbgcmd
     kd> dt lVolume
@@ -1932,14 +1932,14 @@ fffff803`bb757020 cc              int     3
 
     变量处于活动状态，此时将在此示例中显示值6291456。
 
-11. 还可以使用 "IVolume" 显示内存位置[**。（计算表达式）**](---evaluate-expression-.md)command.
+11. 还可以通过使用 [**？ (计算 Expression) **](---evaluate-expression-.md) 命令来显示 IVolume 的内存位置。
 
     ```dbgcmd
     kd> ? lVolume
     Evaluate expression: -79711507126684 = ffffb780`b7eee664
     ```
 
-12. 显示的地址*ffffb780 \` B7eee664*是 lVolume 变量的地址。 使用 dd 命令显示该位置的内存内容。
+12. 显示的地址 *ffffb780 \` B7eee664* 是 lVolume 变量的地址。 使用 dd 命令显示该位置的内存内容。
 
     ```dbgcmd
     kd>  dd ffffb780`b7eee664
@@ -1960,7 +1960,7 @@ fffff803`bb757020 cc              int     3
     ffffb780`b7eee664  ffa00000 00000018 00000000 c52d7008
     ```
 
-14. 若要查看显示的不同类型的内存输出，请键入**du**、 **da**和**db**命令。
+14. 若要查看显示的不同类型的内存输出，请键入 **du**、 **da** 和 **db** 命令。
 
     ```dbgcmd
     kd> du ffffb780`b7eee664 
@@ -1980,7 +1980,7 @@ fffff803`bb757020 cc              int     3
     ffffae01`5ff976d4  00 00 00 00 28 00 00 00-00 00 00 00 02 00 00 00  ....(...........
     ```
 
-    使用 df float 选项可将数据显示为单精度浮点数（4字节）。
+    使用 df float 选项可将数据显示为单精度浮点数， (4 个字节) 。
 
     ```dbgcmd
     df ffffb780`b7eee664 
@@ -2001,22 +2001,22 @@ fffff803`bb757020 cc              int     3
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">命令</th>
-<th align="left">说明</th>
+<th align="left">Command</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>ea</p></td>
-<td align="left"><p>ASCII 字符串（不以 NULL 结尾）</p></td>
+<td align="left"><p>不以 NULL 结尾的 ASCII 字符串 () </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eu</p></td>
-<td align="left"><p>Unicode 字符串（不以 NULL 结尾</p></td>
+<td align="left"><p>Unicode 字符串 (不以 NULL 结尾</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>new</p></td>
-<td align="left"><p>Word 值（2个字节）</p></td>
+<td align="left"><p>字值 (2 个字节) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eza</p></td>
@@ -2032,7 +2032,7 @@ fffff803`bb757020 cc              int     3
 </tr>
 <tr class="odd">
 <td align="left"><p>ed</p></td>
-<td align="left"><p>双字值（4字节）</p></td>
+<td align="left"><p>双字值 (4 个字节) </p></td>
 </tr>
 </tbody>
 </table>
@@ -2048,13 +2048,13 @@ fffff803`bb757020 cc              int     3
     Evaluate expression: -79711507126684 = ffffb780`b7eee664
     ```
 
-2.  使用**eb**命令覆盖包含新字符的内存地址。
+2.  使用 **eb** 命令覆盖包含新字符的内存地址。
 
     ```dbgcmd
     kd> eb 0xffffb780`b7eee664 11 11 11 11 11
     ```
 
-3.  显示内存位置，以确认已通过键入**db**命令覆盖了这些字符。
+3.  显示内存位置，以确认已通过键入 **db** 命令覆盖了这些字符。
 
     ```dbgcmd
     kd> db 0xffffb780`b7eee664
@@ -2075,15 +2075,15 @@ fffff803`bb757020 cc              int     3
 
 **&lt;-在主机系统上**
 
-若要结束用户模式调试会话，请将调试器返回到休眠模式，然后将目标应用程序设置为再次运行，请输入**qd** （Quit 并分离）命令。
+若要结束用户模式调试会话，请将调试器返回到休眠模式，然后将目标应用程序设置为再次运行，请输入 **qd** (Quit 并分离) 命令。
 
-请确保并使用**g**命令让目标计算机运行代码，使其可以使用。 使用 * * bc * * * 清除任何断点也是一个不错的主意 \\ ，这样，目标计算机将不会中断，而会尝试连接到主机计算机调试器。
+请确保并使用 **g** 命令让目标计算机运行代码，使其可以使用。 使用 * * bc * * * 清除任何断点也是一个不错的主意 \\ ，这样，目标计算机将不会中断，而会尝试连接到主机计算机调试器。
 
 ```dbgcmd
 0: kd> qd
 ```
 
-有关详细信息，请参阅调试参考文档[中的在 WinDbg 结束调试会话](ending-a-debugging-session-in-windbg.md)。
+有关详细信息，请参阅调试参考文档 [中的在 WinDbg 结束调试会话](ending-a-debugging-session-in-windbg.md) 。
 
 ## <a name="span-idwindowsdebuggingresourcesspansection-14-windows-debugging-resources"></a><span id="windowsdebuggingresources"></span>第14节： Windows 调试资源
 
@@ -2096,15 +2096,15 @@ fffff803`bb757020 cc              int     3
 
 -   *在 Windows 调试中：通过 Tarik Soulami 在 windows®中调试和跟踪策略的实用指南*
 
--   *Windows 内部机制*，Russinovich，David 为所罗门群岛和 Alex Ionescu
+-   *Windows 内部机制* ，Russinovich，David 为所罗门群岛和 Alex Ionescu
 
 **视频**
 
-碎片整理工具显示 WinDbg 剧集13-29<https://channel9.msdn.com/Shows/Defrag-Tools>
+碎片整理工具显示 WinDbg 剧集13-29 <https://channel9.msdn.com/Shows/Defrag-Tools>
 
 **培训供应商：**
 
-OSR<https://www.osr.com/>
+OSR <https://www.osr.com/>
 
 
 ## <a name="see-also"></a>另请参阅

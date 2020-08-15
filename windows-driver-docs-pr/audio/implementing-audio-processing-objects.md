@@ -1,31 +1,31 @@
 ---
 title: 实现音频处理对象
-description: 本主题介绍如何实现音频处理对象（APO）。 有关的一般信息，请参阅音频处理对象体系结构。
+description: 本主题介绍如何 (APO) 实现音频处理对象。 有关的一般信息，请参阅音频处理对象体系结构。
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 76048630b02aff0e535a30c31e9df9f04ba09eac
-ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
+ms.openlocfilehash: a884b6f0ef5b9a025228ba2446cd676968bb31ef
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85829028"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252929"
 ---
 # <a name="implementing-audio-processing-objects"></a>实现音频处理对象
 
-本主题介绍如何实现音频处理对象（APO）。 有关的一般信息，请参阅[音频处理对象体系结构](audio-processing-object-architecture.md)。
+本主题介绍如何 (APO) 实现音频处理对象。 有关的一般信息，请参阅 [音频处理对象体系结构](audio-processing-object-architecture.md)。
 
 ## <a name="implementing-custom-apos"></a>实现自定义
 
-自定义的是作为进程内 COM 对象实现的，因此它们在用户模式下运行，并打包在动态链接库（DLL）中。 有三种类型的 APO，它们是在信号处理图形中插入的位置。
+自定义的是作为进程内 COM 对象实现的，因此它们在用户模式下运行，并打包在动态链接库中 (DLL) 。 有三种类型的 APO，它们是在信号处理图形中插入的位置。
 
-- 流效果（SFX）
-- 模式效果（MFX）
-- 终结点效果（EFX）
+-  (SFX) 的流效果
+- MFX)  (模式效果
+- EFX)  (的端点效果
 
-每个逻辑设备可以与每个类型的一个 APO 关联。 有关模式和效果的详细信息，请参阅[音频信号处理模式](audio-signal-processing-modes.md)。
+每个逻辑设备可以与每个类型的一个 APO 关联。 有关模式和效果的详细信息，请参阅 [音频信号处理模式](audio-signal-processing-modes.md)。
 
-可以通过将自定义类基于在 Baseaudioprocessingobject 文件中声明的 CBaseAudioProcessingObject 基类来实现 APO。 此方法涉及到在 CBaseAudioProcessingObject 基类中添加新功能，以创建自定义的 APO。 CBaseAudioProcessingObject 基类实现 APO 所需的大部分功能。 它为所需的三个接口中的大多数方法提供默认实现。 主要的例外是[**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)方法。
+可以通过将自定义类基于在 Baseaudioprocessingobject 文件中声明的 CBaseAudioProcessingObject 基类来实现 APO。 此方法涉及到在 CBaseAudioProcessingObject 基类中添加新功能，以创建自定义的 APO。 CBaseAudioProcessingObject 基类实现 APO 所需的大部分功能。 它为所需的三个接口中的大多数方法提供默认实现。 主要的例外是 [**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 方法。
 
 执行以下步骤以实现自定义的。
 
@@ -38,7 +38,7 @@ ms.locfileid: "85829028"
 所有自定义项必须具有以下常规特性：
 
 - APO 必须有一个输入和一个输出连接。 这些连接是音频缓冲区，可以有多个通道。
-- APO 只能修改通过其[**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)例程传递给它的音频数据。 APO 无法更改基础逻辑设备的设置，包括其 KS 拓扑。
+- APO 只能修改通过其 [**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 例程传递给它的音频数据。 APO 无法更改基础逻辑设备的设置，包括其 KS 拓扑。
 - 除 IUnknown 外，其中必须公开以下接口：
 
   - [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 处理安装任务（例如初始化和格式协商）的接口。
@@ -82,27 +82,27 @@ a. 您可以使用 GitHub 工具来处理示例。 你还可以将通用驱动�
 
 b. 将 master.zip 文件下载到本地硬盘驱动器。
 
-c. 右键单击*Windows-driver-samples-master.zip*，然后选择 "**全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ DriverSamples \\ *作为要将文件提取到的新文件夹。
+c. Selecct 并按住 (或右键单击) *Windows-driver-samples-master.zip*，然后选择 " **全部提取**"。 指定一个新文件夹，或浏览到将存储所提取文件的现有文件夹。 例如，可以指定*C： \\ DriverSamples \\ *作为要将文件提取到的新文件夹。
 
 d. 提取文件后，导航到以下子文件夹： *C： \\ DriverSamples \\ 音频 \\ Sysvad*
 
 ### <a name="open-the-driver-solution-in-visual-studio"></a>在 Visual Studio 中打开驱动程序解决方案
 
-在 Microsoft Visual Studio 中，单击 "**文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹（例如， *C： \\ DriverSamples \\ Audio \\ Sysvad*）。 双击 " *Sysvad* " 解决方案文件以将其打开。
+在 Microsoft Visual Studio 中，选择 " **文件**" " &gt; **打开** &gt; **项目/解决方案 ...** "，然后导航到包含所提取文件的文件夹 (例如， *C： \\ DriverSamples \\ Audio \\ Sysvad*) 。 双击 " *Sysvad* " 解决方案文件以将其打开。
 
-在 Visual Studio 中找到解决方案资源管理器。 （如果尚未打开，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。）在解决方案资源管理器中，你可以看到一个包含六个项目的解决方案。
+在 Visual Studio 中找到解决方案资源管理器。  (如果尚未打开，则从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。 ) 解决方案资源管理器中，你可以看到一个包含六个项目的解决方案。
 
 ### <a name="swapapo-example-code"></a>SwapAPO 示例代码
 
 SYSVAD 示例中有五个项目，其中一项是 APO 开发人员的主要兴趣。
 
-|**Project**|**说明**|
+|**项目**|**说明**|
 |----|----|
 |SwapAPO|示例 APO 的示例代码|
 
 下面总结了 Sysvad 示例中的其他项目。
 
-|**Project**|**说明**|
+|**项目**|**说明**|
 |----|----|
 | PhoneAudioSample       | 移动音频驱动程序的示例代码。     |
 | TabletAudioSample      | 备用音频驱动程序的示例代码。 |
@@ -111,7 +111,7 @@ SYSVAD 示例中有五个项目，其中一项是 APO 开发人员的主要兴�
 
 SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元素。
 
-|**文件**|**说明**|
+|**File**|**说明**|
 |----|----|
 | 交换 .cpp             | 包含交换 APO 的实现的 c + + 代码。        |
 | SwapAPOMFX .cpp       | CSwapAPOMFX 的实现                                     |
@@ -123,15 +123,15 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
 
 ## <a name="implementing-the-com-object-audio-processing-code"></a>实现 COM 对象音频处理代码
 
-可以通过将自定义类基于在 Baseaudioprocessingobject 文件中声明的**CBaseAudioProcessingObject**基类来包装系统提供的 APO。 此方法涉及到在**CBaseAudioProcessingObject**基类中引入新功能，以创建自定义的 APO。 **CBaseAudioProcessingObject**基类实现 APO 所需的大部分功能。 它为所需的三个接口中的大多数方法提供默认实现。 主要的例外是[**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)方法。
+可以通过将自定义类基于在 Baseaudioprocessingobject 文件中声明的 **CBaseAudioProcessingObject** 基类来包装系统提供的 APO。 此方法涉及到在 **CBaseAudioProcessingObject** 基类中引入新功能，以创建自定义的 APO。 **CBaseAudioProcessingObject**基类实现 APO 所需的大部分功能。 它为所需的三个接口中的大多数方法提供默认实现。 主要的例外是 [**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 方法。
 
-通过使用**CBaseAudioProcessingObject**，你可以更轻松地实现 APO。 如果 APO 没有特殊的格式要求并且操作所需的 float32 格式，则**CBaseAudioProcessingObject**中包含的接口方法的默认实现应足以满足需要。 给定默认实现，只能实现三个主要方法： [**IAudioProcessingObject：： IsInputFormatSupported**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)、 [**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)和**ValidateAndCacheConnectionInfo**。
+通过使用 **CBaseAudioProcessingObject**，你可以更轻松地实现 APO。 如果 APO 没有特殊的格式要求并且操作所需的 float32 格式，则 **CBaseAudioProcessingObject** 中包含的接口方法的默认实现应足以满足需要。 给定默认实现，只能实现三个主要方法： [**IAudioProcessingObject：： IsInputFormatSupported**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)、 [**IAudioProcessingObjectRT：： APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)和 **ValidateAndCacheConnectionInfo**。
 
-若要基于**CBaseAudioProcessingObject**类开发您的，请执行以下步骤：
+若要基于 **CBaseAudioProcessingObject** 类开发您的，请执行以下步骤：
 
-1. 创建从**CBaseAudioProcessingObject**继承的类。
+1. 创建从 **CBaseAudioProcessingObject**继承的类。
 
-    下面的 c + + 代码示例演示如何创建从**CBaseAudioProcessingObject**继承的类。 对于此概念的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapo*文件。
+    下面的 c + + 代码示例演示如何创建从 **CBaseAudioProcessingObject**继承的类。 对于此概念的实际实现，请按照 **音频处理对象驱动程序示例** 部分中的说明操作，转到交换示例，然后引用 *Swapapo* 文件。
 
     ```cpp
     // Custom APO class - LFX
@@ -153,7 +153,7 @@ SwapAPO 示例的主头文件为 SwapAPO。 下面总结了其他主要代码元
 
     - **ValidateAndCacheConnectionInfo**。 此方法分配内存以存储格式详细信息，例如，通道计数、采样率、样本深度和通道掩码。
 
-下面的 c + + 代码示例演示了在步骤1中创建的示例类的[**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)方法的实现。 对于此概念的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapolfx*文件。
+下面的 c + + 代码示例演示了在步骤1中创建的示例类的 [**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 方法的实现。 对于此概念的实际实现，请按照 **音频处理对象驱动程序示例** 部分中的说明操作，转到交换示例，然后引用 *Swapapolfx* 文件。
 
 ```cpp
 // Custom implementation of APOProcess method
@@ -165,7 +165,7 @@ STDMETHODIMP_ (Void) MyCustomAPOLFX::APOProcess (...)
 }
 ```
 
-下面的代码示例演示**ValidateAndCacheConnectionInfo**方法的实现。 若要实现此方法的实际实现，请按照**音频处理对象驱动程序示例**部分中的说明操作，转到交换示例，然后引用*Swapapogfx*文件。
+下面的代码示例演示 **ValidateAndCacheConnectionInfo** 方法的实现。 若要实现此方法的实际实现，请按照 **音频处理对象驱动程序示例** 部分中的说明操作，转到交换示例，然后引用 *Swapapogfx* 文件。
 
 ```cpp
 // Custom implementation of the ValidateAndCacheConnectionInfo method.
@@ -179,7 +179,7 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 
 **注意**   类继承自**CBaseAudioProcessingObject**的剩余接口和方法在 Audioenginebaseapo 文件中进行了详细介绍。
 
-对于台式计算机，可以提供一个用户界面，用于配置添加到自定义 APO 的功能。 有关此方面的详细信息，请参阅[实现用于配置的 UI](implementing-a-ui-for-configuring-sapos.md)。
+对于台式计算机，可以提供一个用户界面，用于配置添加到自定义 APO 的功能。 有关此方面的详细信息，请参阅 [实现用于配置的 UI](implementing-a-ui-for-configuring-sapos.md)。
 
 ## <a name="replacing-system-supplied-apos"></a>替换系统提供的
 
@@ -211,9 +211,9 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 为 COM 组件实现以下接口和方法：
 
-- [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 此接口所需的方法为： [**Initialize**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)和[**IsInputFormatSupported。**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
-- [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 此接口的必需方法为： [**LockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)和[**UnlockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-unlockforprocess)
-- [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 此接口所需的方法是[**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)的，它是实现 DSP 算法的方法。
+- [IAudioProcessingObject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 此接口所需的方法为： [**Initialize**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize) 和 [**IsInputFormatSupported。**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
+- [IAudioProcessingObjectConfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 此接口的必需方法为： [**LockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess) 和 [**UnlockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-unlockforprocess)
+- [IAudioProcessingObjectRT](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 此接口所需的方法是 [**APOProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess) 的，它是实现 DSP 算法的方法。
 - [IAudioSystemEffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)。 此接口使音频引擎可以将 DLL 识别为 APO。
 
 ## <a name="working-with-visual-studio-and-apos"></a>使用 Visual Studio 和
@@ -224,15 +224,15 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 面向 Windows 10 的驱动程序应动态地链接到通用 CRT。
 
-如果需要支持 Windows 8，1，请通过在 C/c + + 中设置项目属性，代码生成启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd*设置为用于调试版本。 进行此更改的原因是，对于驱动程序，很难再分发 MSVCRT.LIB &lt; 的 &gt; 二进制文件。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息，请参阅[/md、/mt、/ld （使用运行时库）](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 。
+如果需要支持 Windows 8，1，请通过在 C/c + + 中设置项目属性，代码生成启用静态链接。 对于发布版本，请将 "运行时库" 设置为 */mt* ，或将 */MTd* 设置为用于调试版本。 进行此更改的原因是，对于驱动程序，很难再分发 MSVCRT.LIB &lt; 的 &gt; 二进制文件。 解决方案是以静态方式链接 libcmt.dll。 有关详细信息，请参阅 [/md、/mt、/ld (使用运行时库) ](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 。
 
 ### <a name="disable-use-of-an-embedded-manifest"></a>禁止使用嵌入清单
 
-通过设置 APO 项目的项目属性，禁止使用嵌入清单。 选择 "**清单工具**"、"**输入和输出**"。 然后将 "嵌入清单" 从默认的 *"是*" 更改为 "*否*"。 如果有嵌入的清单，则会触发在受保护环境内禁止使用某些 Api。 这意味着你的 APO 将在 DisableProtectedAudioDG = 1 的情况下运行，但在删除此测试密钥时，你的 APO 将无法加载，即使已对其进行了 WHQL 签名也是如此。
+通过设置 APO 项目的项目属性，禁止使用嵌入清单。 选择 " **清单工具**"、" **输入和输出**"。 然后将 "嵌入清单" 从默认的 *"是* " 更改为 " *否*"。 如果有嵌入的清单，则会触发在受保护环境内禁止使用某些 Api。 这意味着你的 APO 将在 DisableProtectedAudioDG = 1 的情况下运行，但在删除此测试密钥时，你的 APO 将无法加载，即使已对其进行了 WHQL 签名也是如此。
 
 ## <a name="packaging-your-apo-with-a-driver"></a>将 APO 与驱动程序一起打包
 
-当你开发自己的音频驱动程序并包装或替换系统提供的时，你必须提供用于安装驱动程序的驱动程序包。 对于 Windows 10，请参阅适用[于音频的通用 Windows 驱动程序](audio-universal-drivers.md)。 音频相关的驱动程序包应遵循详细说明的策略和打包模型。  
+当你开发自己的音频驱动程序并包装或替换系统提供的时，你必须提供用于安装驱动程序的驱动程序包。 对于 Windows 10，请参阅适用 [于音频的通用 Windows 驱动程序](audio-universal-drivers.md)。 音频相关的驱动程序包应遵循详细说明的策略和打包模型。  
 
 自定义 APO 打包为 DLL，并且任何配置 UI 打包为单独的 UWP 或桌面桥应用。 APO 设备 INF 将 Dll 复制到关联的 INF CopyFile 指令中指定的系统文件夹。 包含 AddReg 的 DLL 必须在 INF 文件中包含一个部分，自行注册。
 
@@ -242,7 +242,7 @@ Sysvad 示例附带的 inf 文件演示了如何注册 SwapApo.dll。
 
 ## <a name="registering-apos-for-processing-modes-and-effects-in-the-inf-file"></a>在 INF 文件中注册用于处理模式和效果的
 
-可以使用某些允许的注册表项组合来注册特定模式的。 若要详细了解哪些效果可用以及有关中的常规信息，请参阅[音频处理对象体系结构](audio-processing-object-architecture.md)。
+可以使用某些允许的注册表项组合来注册特定模式的。 若要详细了解哪些效果可用以及有关中的常规信息，请参阅 [音频处理对象体系结构](audio-processing-object-architecture.md)。
 
 请参阅以下参考主题，了解有关每个 APO INF 文件设置的信息。
 
@@ -258,7 +258,7 @@ Sysvad 示例附带的 inf 文件演示了如何注册 SwapApo.dll。
 
 [\_ \_ \_ 支持 \_ \_ 流式处理的 PKEY EFX ProcessingModes](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-efx-processingmodes-supported-for-streaming)
 
-以下 INF 文件示例说明了如何为特定模式注册音频处理对象（中）。 它们说明了此列表中可用的可能组合。
+以下 INF 文件示例说明了如何在特定模式下为) 注册音频处理对象 (。 它们说明了此列表中可用的可能组合。
 
 - PKEY \_ FX \_ STREAMEFFECTCLSID with PKEY \_ SFX \_ ProcessingModes \_ 支持 \_ \_ 流式处理
 - PKEY \_ FX \_ MODEEFFECTCLSID with PKEY \_ MFX \_ ProcessingModes \_ Suppoted \_ For \_ 流式处理
@@ -306,7 +306,7 @@ HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDI
 
 ### <a name="componentized-apo-installation"></a>组件化 APO 安装
 
-从 Windows 10 开始，版本1809，使用音频引擎 APO 注册使用组件化音频驱动程序模型。 使用音频组件化创建更平稳、更可靠的安装体验，并更好地支持组件服务。 有关详细信息，请参阅[创建组件化音频驱动程序安装](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)。
+从 Windows 10 开始，版本1809，使用音频引擎 APO 注册使用组件化音频驱动程序模型。 使用音频组件化创建更平稳、更可靠的安装体验，并更好地支持组件服务。 有关详细信息，请参阅 [创建组件化音频驱动程序安装](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)。
 
 下面的示例代码从公共 ComponentizedAudioSampleExtension 和 ComponentizedApoSample 提取。 请参阅 GitHub 上提供的 SYSVAD 音频示例，网址为： <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> 。
 
@@ -327,8 +327,8 @@ Capabilities = 0x00000008 ; SWDeviceCapabilitiesDriverRequired
 此 APO 设备在 SYSVAD 示例中触发了 APO INF 的第二部分，这是在 ComponentizedApoSample 中完成的。 此 INF 文件专用于 APO 设备。 它将设备类指定为 AudioProcessingObject，并添加用于 CLSID 注册的所有 APO 属性，并向音频引擎注册。
 
 >[!NOTE]
-> 在大多数情况下，通过使用 HKR 注册表项，显示的 INF 文件示例支持驱动程序包隔离。 前面的示例使用 HKCR 存储持久值。 例外情况是注册组件对象模型（COM）对象时，可能会在 HKCR 下写入密钥。
-有关详细信息，请参阅[使用通用 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)。
+> 在大多数情况下，通过使用 HKR 注册表项，显示的 INF 文件示例支持驱动程序包隔离。 前面的示例使用 HKCR 存储持久值。 例外情况是， (COM) 对象的组件对象模型的注册，可以在 HKCR 下编写一个密钥。
+有关详细信息，请参阅 [使用通用 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)。
 
 ```inf
 [Version]
@@ -496,7 +496,7 @@ SWAP_FX_STREAM_CLSID   = "{B48DEA3F-D962-425a-8D9A-9A5BB37A9904}"
 
 ## <a name="apo-registration"></a>APO 注册
 
-APO 注册用于支持使用加权计算动态匹配终结点效果的进程。 加权计算使用以下属性存储区。 每个音频接口都有零个或多个*终结点属性存储*，并影响通过 .inf 或在运行时注册的*属性存储*。 最特定的终结点属性存储和最具体的影响属性存储具有最大权重，并使用。 所有其他属性存储将被忽略。
+APO 注册用于支持使用加权计算动态匹配终结点效果的进程。 加权计算使用以下属性存储区。 每个音频接口都有零个或多个 *终结点属性存储* ，并影响通过 .inf 或在运行时注册的 *属性存储* 。 最特定的终结点属性存储和最具体的影响属性存储具有最大权重，并使用。 所有其他属性存储将被忽略。
 
 具体计算方式如下：
 
@@ -514,11 +514,11 @@ APO 注册用于支持使用加权计算动态匹配终结点效果的进程。 
 3. 具有特定 KSNODETYPE 的 MSEP
 4. MSEP with KSNODETYPE \_ ANY
 
-数字必须从0开始，并按顺序递增： MSEP \\ 0、MSEP \\ 1、...、MSEP \\ n 如果（例如）缺少 ep \\ 3，则 WINDOWS 将停止查找 ep \\ n，而不会看到 ep \\ 4，即使存在
+数字必须从0开始，并按顺序递增： MSEP \\ 0、MSEP \\ 1、...、MSEP \\ n 如果 (例如) EP \\ 3 缺失，则 WINDOWS 将停止查找 ep \\ n，即使存在，也不会看到 ep \\ 4
 
-\_与 KSPINDESCRIPTOR 相比，PKEY FX association 的值 \_ （适用于效果属性存储）或 PKEY \_ EP \_ 关联（适用于终结点属性存储）。信号路径的硬件端的固定工厂的类别值（由内核流公开）。
+"效果" 属性的 PKEY \_ FX \_ association (的值用于 \_ \_ 将终结点) 属性存储) 或 PKEY EP 关联 (与 KSPINDESCRIPTOR 进行比较。信号路径的硬件端的固定工厂的类别值（由内核流公开）。
 
-只有 Microsoft 收件箱类驱动程序（可以由第三方开发人员包装）应使用 MSEP 和 MSFX;所有第三方驱动程序应使用 EP 和 FX。
+只有第三方开发人员 (可以包装的 Microsoft 收件箱类驱动程序) 应使用 MSEP 和 MSFX;所有第三方驱动程序应使用 EP 和 FX。
 
 ### <a name="apo-node-type-compatibility"></a>APO 节点类型的兼容性
 
@@ -535,7 +535,7 @@ PKEY_FX_Association = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},0"
 HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_ANY%
 ```
 
-由于音频适配器能够支持多个输入和输出，因此必须显式指示与自定义 APO 兼容的内核流式处理（KS）节点类型。 在上述 INF 文件片段中，APO 显示为与 KS 节点类型% KSNODETYPE \_ ANY% 关联。 稍后在本 INF 文件中，KSNODETYPE \_ ANY 定义如下：
+由于音频适配器能够支持多个输入和输出，因此您必须显式指示与您的自定义 APO 兼容的内核流式处理 (KS) 节点类型。 在上述 INF 文件片段中，APO 显示为与 KS 节点类型% KSNODETYPE \_ ANY% 关联。 稍后在本 INF 文件中，KSNODETYPE \_ ANY 定义如下：
 
 ```inf
 [Strings]
@@ -573,9 +573,9 @@ HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
 
 - LockForProcess
 
-每次返回失败代码时，APO 的失败计数值都将递增。 当 APO 返回的代码指示已成功将其合并到音频图形中时，失败计数将重置为零。 成功调用[**LockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)方法是一种很好的方法，指出已成功添加 APO。
+每次返回失败代码时，APO 的失败计数值都将递增。 当 APO 返回的代码指示已成功将其合并到音频图形中时，失败计数将重置为零。 成功调用 [**LockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess) 方法是一种很好的方法，指出已成功添加 APO。
 
-特别是对于[**CoCreateInstance**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-cocreateinstance) ，返回的 HRESULT 代码可能表明失败的原因有很多。 这三个主要原因如下：
+特别是对于 [**CoCreateInstance**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-cocreateinstance) ，返回的 HRESULT 代码可能表明失败的原因有很多。 这三个主要原因如下：
 
 - 该图形正在运行受保护的内容，但 APO 未正确签名。
 

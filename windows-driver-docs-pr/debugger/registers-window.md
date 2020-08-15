@@ -1,113 +1,113 @@
 ---
 title: 在 WinDbg 中查看和编辑寄存器
-description: 在 WinDbg 中，您可以查看和编辑寄存器，通过输入命令、 通过使用寄存器窗口中，或通过使用监视窗口。
+description: 在 WinDbg 中，可以通过输入命令、使用 "寄存器" 窗口或使用 "监视" 窗口来查看和编辑寄存器。
 ms.assetid: bd7ced3b-7f71-4ea5-a45b-38339dc3e87c
 keywords:
-- 调试信息窗口，寄存器窗口
-- 寄存器窗口
-- 寄存器，寄存器窗口
+- 调试信息窗口，"寄存器" 窗口
+- “寄存器”窗口
+- 寄存器，"寄存器" 窗口
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 434e682405af1bff8054c49c5e6c915040a5bfd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cba6fb78dbb273b1c7c08b879061ccb79110af86
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353655"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253103"
 ---
 # <a name="viewing-and-editing-registers-in-windbg"></a>在 WinDbg 中查看和编辑寄存器
 
 
-寄存器是位于在 CPU 的小易失性内存单位。 许多寄存器专用于特定用途，并可用于用户模式应用程序使用的其他寄存器。 基于 x86 和基于 x64 的处理器在有可用的寄存器的不同集合。 在每个处理器寄存器的详细信息，请参阅[处理器体系结构](processor-architecture.md)。
+寄存器是位于 CPU 上的小型易失性内存单元。 许多注册专用于特定用途，其他寄存器可供用户模式应用程序使用。 基于 x86 和基于 x64 的处理器具有不同的可用寄存器集合。 有关每个处理器上寄存器的详细信息，请参阅 [处理器体系结构](processor-architecture.md)。
 
-在 WinDbg 中，您可以查看和编辑寄存器，通过输入命令、 通过使用寄存器窗口中，或通过使用监视窗口。
+在 WinDbg 中，可以通过输入命令、使用 "寄存器" 窗口或使用 "监视" 窗口来查看和编辑寄存器。
 
 ## <a name="span-idcommandsspanspan-idcommandsspanspan-idcommandsspancommands"></a><span id="Commands"></span><span id="commands"></span><span id="COMMANDS"></span>命令
 
 
-你可以查看和编辑通过输入的寄存器[ **r （寄存器）** ](r--registers-.md)命令在调试器命令窗口中。 可以使用多个选项或使用自定义显示[ **rm （注册掩码）** ](rm--register-mask-.md)命令。
+可以通过在调试器命令窗口中输入 [**r (寄存器) **](r--registers-.md) 命令来查看和编辑寄存器。 您可以使用多个选项或通过使用 [**rm (注册掩码) **](rm--register-mask-.md) 命令自定义显示。
 
-寄存器也会自动显示每个目标停止的时间。 如果在逐句通过代码[ **p （步骤）** ](p--step-.md)或[ **t (Trace)** ](t--trace-.md)命令，你将看到一个函数注册表，显示每个步骤。 若要停止此显示，请使用**r**选项时使用这些命令。
+每次目标停止时，也会自动显示寄存器。 如果你使用 [**p (步骤) **](p--step-.md) 或 [**t (Trace) **](t--trace-.md) 命令单步执行代码，则会看到每个步骤的寄存器显示。 若要停止此显示，请在使用这些命令时使用 **r** 选项。
 
-在基于 x86 的处理器上， **r**选项还可以控制多个名为标志的一位寄存器。 若要更改这些标志，您可以使用比时更改常规寄存器略有不同的语法。 有关这些标志和此语法的说明的详细信息，请参阅[x86 标志](x86-architecture.md#x86-flags)。
+在基于 x86 的处理器上， **r** 选项还控制多个称为标志的一位寄存器。 若要更改这些标志，使用的语法略有不同。 有关这些标志的详细信息以及此语法的说明，请参阅 [X86 标志](x86-architecture.md#x86-flags)。
 
-## <a name="span-idtheregisterswindowspanspan-idtheregisterswindowspanspan-idtheregisterswindowspanthe-registers-window"></a><span id="The_Registers_Window"></span><span id="the_registers_window"></span><span id="THE_REGISTERS_WINDOW"></span>寄存器窗口
+## <a name="span-idthe_registers_windowspanspan-idthe_registers_windowspanspan-idthe_registers_windowspanthe-registers-window"></a><span id="The_Registers_Window"></span><span id="the_registers_window"></span><span id="THE_REGISTERS_WINDOW"></span>"寄存器" 窗口
 
 
-### <a name="span-idopeningtheregisterswindowspanspan-idopeningtheregisterswindowspanspan-idopeningtheregisterswindowspanopening-the-registers-window"></a><span id="Opening_the_Registers_Window"></span><span id="opening_the_registers_window"></span><span id="OPENING_THE_REGISTERS_WINDOW"></span>打开寄存器窗口
+### <a name="span-idopening_the_registers_windowspanspan-idopening_the_registers_windowspanspan-idopening_the_registers_windowspanopening-the-registers-window"></a><span id="Opening_the_Registers_Window"></span><span id="opening_the_registers_window"></span><span id="OPENING_THE_REGISTERS_WINDOW"></span>打开 "寄存器" 窗口
 
-若要打开或切换到寄存器窗口，请选择**注册**从**视图**菜单。 (还可以按 ALT + 4，或单击**注册**按钮 (![寄存器按钮的屏幕截图](images/tbreg.png)) 工具栏上。 ALT + SHIFT + 4 关闭寄存器窗口。）
+若要打开或切换到 "寄存器" 窗口，请从 "**视图**" 菜单中选择 "**注册**"。  (你还可以按 ALT + 4，或在**Registers** ![ ](images/tbreg.png) 工具栏上) "寄存器" 按钮的屏幕截图 (选择 "注册" 按钮。 ALT + SHIFT + 4 关闭 "寄存器" 窗口。 ) 
 
-以下屏幕截图显示寄存器窗口的示例。
+以下屏幕截图显示了 "寄存器" 窗口的示例。
 
-![寄存器窗口的屏幕截图](images/window-registers.png)
+!["寄存器" 窗口的屏幕截图](images/window-registers.png)
 
-寄存器窗口包含两个列。 **Reg**列列出了所有目标处理器的寄存器。 **值**列显示每个注册的当前值。 此窗口还包含**自定义**按钮在工具栏上，打开**自定义注册列表**对话框。
+"寄存器" 窗口包含两列。 **Reg**列列出了目标处理器的所有寄存器。 " **值** " 列显示每个寄存器的当前值。 此窗口还包含工具栏上的 " **自定义** " 按钮，用于打开 " **自定义注册列表** " 对话框。
 
-### <a name="span-idusingtheregisterswindowspanspan-idusingtheregisterswindowspanspan-idusingtheregisterswindowspanusing-the-registers-window"></a><span id="Using_the_Registers_Window"></span><span id="using_the_registers_window"></span><span id="USING_THE_REGISTERS_WINDOW"></span>使用寄存器窗口
+### <a name="span-idusing_the_registers_windowspanspan-idusing_the_registers_windowspanspan-idusing_the_registers_windowspanusing-the-registers-window"></a><span id="Using_the_Registers_Window"></span><span id="using_the_registers_window"></span><span id="USING_THE_REGISTERS_WINDOW"></span>使用 "寄存器" 窗口
 
-在寄存器窗口中，可以执行以下操作：
+在 "寄存器" 窗口中，您可以执行以下操作：
 
--   **值**列显示每个注册的当前值。 以红色文本显示的最近更改的寄存器的值。
-    -   若要输入新值，请双击**值**单元格，然后键入新值或编辑旧值。 （剪切、 复制和粘贴命令是可用来进行编辑。）
+-   " **值** " 列显示每个寄存器的当前值。 最近更改的寄存器的值显示为红色文本。
+    -   若要输入新值，请双击 **值** 单元，然后键入新值或编辑旧值。  ("剪切"、"复制" 和 "粘贴" 命令可用于编辑。 ) 
     -   若要保存新值，请按 ENTER。
-    -   若要放弃的新值，请按 ESC。
-    -   如果键入无效的值，按 ENTER 键时，将重新出现的旧值。
--   寄存器值显示在当前的基数，并且必须在相同的基数中键入新值。 若要更改当前的基数，请使用[ **n (设置数量 Base)** ](n--set-number-base-.md)命令在调试器命令窗口中。
+    -   若要放弃新值，请按 ESC。
+    -   如果键入的值无效，则按 ENTER 时，旧值将再次出现。
+-   注册值显示在当前基数内，必须在同一基数内键入新值。 若要更改当前基数，请使用调试器命令窗口中的 [**n (Set Number Base) **](n--set-number-base-.md) 命令。
 
--   在用户模式下，寄存器窗口显示与当前线程相关联的寄存器。 有关当前线程的详细信息，请参阅[控制进程和线程](controlling-processes-and-threads.md)。
+-   在用户模式下，"寄存器" 窗口显示与当前线程关联的寄存器。 有关当前线程的详细信息，请参阅 [控制进程和线程](controlling-processes-and-threads.md)。
 
--   在内核模式下，寄存器窗口显示与当前相关联的寄存器[注册上下文](changing-contexts.md#register-context)。 可以设置寄存器上下文以匹配特定线程、 上下文记录或捕获帧。 实际显示仅指定的寄存器上下文的最重要寄存器;不能更改它们的值。
+-   在内核模式下，"寄存器" 窗口显示与当前 [注册上下文](changing-contexts.md#register-context)关联的寄存器。 您可以将注册上下文设置为与特定线程、上下文记录或捕获帧匹配。 实际上只显示指定注册上下文的最重要的寄存器;不能更改其值。
 
-寄存器窗口已包含一个工具栏**自定义**按钮和具有带其他命令的快捷菜单。 若要访问菜单，请右键单击标题栏或单击窗口右上角附近的图标 (![用于显示寄存器窗口快捷菜单的按钮图标的屏幕截图](images/tbreg.png))。 工具栏和菜单包含以下按钮和命令：
+"寄存器" 窗口包含一个工具栏，其中包含一个 " **自定义** " 按钮，并具有包含附加命令的快捷菜单。 若要访问菜单，请选择并按住 (右键单击标题栏) ，或选择窗口右上角附近的图标 (![ 用于显示 "寄存器" 窗口快捷) 菜单的 "按钮" 图标的屏幕截图 ](images/tbreg.png) 。 工具栏和菜单包含以下按钮和命令：
 
--   （工具栏和菜单）**自定义**会打开**自定义注册列表**对话框中，在本主题中的以下部分中所述。
+-    (工具栏和菜单) **自定义** 打开 " **自定义注册列表** " 对话框，本主题中的以下部分对此进行了说明。
 
--   （仅限菜单）**工具栏**工具栏，开启和关闭。
+-   仅 (菜单) **工具栏** 打开和关闭工具栏。
 
--   （仅限菜单）**停靠**或**取消停靠**将使窗口进入或离开停靠的状态。
+-   仅) **停靠** 或 **取消停靠 (菜单会导致** 窗口进入或离开停靠状态。
 
--   （仅限菜单）**移到新停靠**寄存器窗口将关闭，并将其打开新的平台中。
+-   仅) **移动到新的停靠** (菜单关闭 "寄存器" 窗口并在新的停靠中打开它。
 
--   （仅限菜单）**设置为选项卡形式停靠为窗口中，键入目标**不可用于寄存器窗口。 此选项才可用的源或内存窗口。
+-   仅 (菜单) " **设置为" 窗口类型的选项卡停靠目标对于** "寄存器" 窗口不可用。 此选项仅适用于源或内存窗口。
 
--   （仅限菜单）**始终浮点**将使窗口停靠，即使仍拖到停靠位置。
+-    ("仅) " **始终浮动** "菜单会导致窗口保持未停靠，即使将其拖动到停靠位置。
 
--   （仅限菜单）**移动与帧**将使窗口移动时移动的 WinDbg 帧，即使在窗口已解除固定。 停靠和浮动的选项卡式，windows 的详细信息，请参阅[定位 Windows](positioning-the-windows.md)。
+-   仅 (菜单) **移动** 时，会导致在删除 WinDbg 帧时窗口移动，即使该窗口未停靠也是如此。 有关停靠窗口、选项卡式窗口和浮动窗口的详细信息，请参阅 [定位窗口](positioning-the-windows.md)。
 
--   （仅限菜单）**帮助**有关 Windows 调试工具文档中打开此主题。
+-   仅 (菜单) **帮助** 在 Windows 调试工具文档中打开此主题。
 
--   （仅限菜单）**关闭**关闭此窗口。
+-   仅) 关闭 (菜单 **关闭** 此窗口。
 
-### <a name="span-idcustomizeregisterlistdialogboxspanspan-idcustomizeregisterlistdialogboxspancustomize-register-list-dialog-box"></a><span id="customize_register_list_dialog_box"></span><span id="CUSTOMIZE_REGISTER_LIST_DIALOG_BOX"></span>自定义注册列表对话框
+### <a name="span-idcustomize_register_list_dialog_boxspanspan-idcustomize_register_list_dialog_boxspancustomize-register-list-dialog-box"></a><span id="customize_register_list_dialog_box"></span><span id="CUSTOMIZE_REGISTER_LIST_DIALOG_BOX"></span>"自定义注册列表" 对话框
 
-若要更改显示的寄存器的列表，请单击**自定义**按钮。 **自定义注册列表**对话框将出现。
+若要更改显示的寄存器列表，请选择 " **自定义** " 按钮。 将显示 " **自定义注册列表** " 对话框。
 
-在此对话框中，可以编辑的寄存器，若要更改的寄存器的显示的顺序的列表。 （不能实际从列表中删除注册; 如果这样做，它将结束时重新出现。）注册名称之间必须留一个空格。
+在此对话框中，您可以编辑寄存器列表，以更改寄存器的显示顺序。  (实际上不能从列表中删除寄存器;如果这样做，则会重新出现在结尾处。 ) 寄存器名称之间必须有空格。
 
-如果选择**修改显示首次注册值**复选框，其值已更改的寄存器最近显示在顶部。
+如果选中了 " **首先显示已修改的寄存器值** " 复选框，则其值最近更改过的寄存器会出现在顶部。
 
-如果选择**不会显示 subregisters**复选框，subregisters 不会显示。 例如， **eax**将显示，但不是**ax**， **ah**，或者**al**。
+如果选中 " **不显示 subregisters** " 复选框，则不会显示 subregisters。 例如，将显示 **eax** ，而不是 **ax**、 **ah**或 **al**。
 
-单击**确定**以保存所做的更改或**取消**放弃所做的更改。
+选择 **"确定"** 以保存更改，或选择 " **取消** " 放弃更改。
 
-如果你正在调试多个类型的处理器的多处理器计算机，WinDbg 将单独存储每个处理器类型的自定义设置。 这种分离使您可以同时自定义的每个处理器的寄存器的显示。
+如果正在调试具有多种类型的处理器的多处理器计算机，则 WinDbg 分别存储每个处理器类型的自定义设置。 通过这种分离，你可以同时自定义每个处理器寄存器的显示。
 
-## <a name="span-idddkdebuggingbioscodedbgspanspan-idddkdebuggingbioscodedbgspanthe-watch-window"></a><span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>监视窗口
-
-
-在 WinDbg 中，可以使用监视窗口显示寄存器。 不能使用监视窗口更改的寄存器的值。
-
-若要打开监视窗口，请选择**Watch**从**视图**菜单。 此外可以按 ALT + 2，或单击**Watch**工具栏上的按钮：![监视按钮的屏幕截图](images/tbwatch.png)。 ALT + SHIFT + 2 将关闭监视窗口。
-
-下面的屏幕截图显示了监视窗口的示例。
-
-![监视窗口的屏幕截图 ](images/window-watch.png)
-
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>其他信息
+## <a name="span-idddk_debugging_bios_code_dbgspanspan-idddk_debugging_bios_code_dbgspanthe-watch-window"></a><span id="ddk_debugging_bios_code_dbg"></span><span id="DDK_DEBUGGING_BIOS_CODE_DBG"></span>"监视" 窗口
 
 
-有关寄存器上下文和其他上下文设置的详细信息，请参阅[更改上下文](changing-contexts.md)。
+在 WinDbg 中，可以使用监视窗口显示寄存器。 不能使用监视窗口更改寄存器的值。
+
+若要打开监视窗口，请从 "**视图**" 菜单中选择 "**监视**"。 还可以按 ALT + 2，或选择工具栏上的 **"监视" 按钮：** ![ "监视" 按钮的屏幕截图 ](images/tbwatch.png) 。 ALT + SHIFT + 2 关闭监视窗口。
+
+下面的屏幕截图显示了一个监视窗口的示例。
+
+!["监视" 窗口的屏幕截图 ](images/window-watch.png)
+
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>附加信息
+
+
+有关注册上下文和其他上下文设置的详细信息，请参阅 [更改上下文](changing-contexts.md)。
 
  
 

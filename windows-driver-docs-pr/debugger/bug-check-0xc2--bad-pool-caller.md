@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a73283dc4f97acf51c13be7a7bc10e609f31a08
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: dbf827c0b9006ef3554baaa0b4445298de968f32
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601717"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252851"
 ---
-# <a name="bug-check-0xc2-bad_pool_caller"></a>Bug 检查0xC2：错误的\_池\_调用方
+# <a name="bug-check-0xc2-bad_pool_caller"></a>Bug 检查0xC2：错误的 \_ 池 \_ 调用方
 
-错误的\_池\_调用方 bug 检查的值为0x000000C2。 这表示当前线程发出错误的池请求。
+错误 \_ 的池 \_ 调用方 bug 检查的值为0x000000C2。 这表示当前线程发出错误的池请求。
 
 > [!IMPORTANT]
-> 本主题面向程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅[排查蓝屏错误](https://www.windows.com/stopcode)。
+> 本主题适用于程序员。 如果你是在使用计算机时收到蓝屏错误代码的客户，请参阅 [排查蓝屏错误](https://www.windows.com/stopcode)。
 
-## <a name="bad_pool_caller-parameters"></a>\_调用方参数\_池错误
+## <a name="bad_pool_caller-parameters"></a>错误的 \_ 池 \_ 调用方参数
 
-**参数 1**指示违规类型。
+**参数 1** 指示违规类型。
 
 <table>
 <colgroup>
@@ -99,7 +99,7 @@ ms.locfileid: "77601717"
 <td align="left"><p>分配器的标记</p></td>
 <td align="left"><p>尝试免费使用的标记</p></td>
 <td align="left"><p>当前线程尝试使用错误的标记来释放池内存。</p>
-<p>（内存可以属于另一个组件。）</p></td>
+<p> (内存可能属于另一个组件。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0X0B</p>
@@ -173,7 +173,7 @@ ms.locfileid: "77601717"
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>当前线程尝试释放无效的连续内存地址。</p>
-<p>（ <strong>MmFreeContiguousMemory</strong>的调用方正在传递错误指针。）</p></td>
+<p> (<strong>MmFreeContiguousMemory</strong> 的调用方正在传递错误的指针。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x99</p></td>
@@ -181,7 +181,7 @@ ms.locfileid: "77601717"
 <td align="left"><p>0</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>当前线程尝试使用无效地址的池。</p>
-<p>（此代码还可以指示池标头中的损坏。）</p></td>
+<p> (此代码还可能指示池标头中的损坏。 ) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x9A</p></td>
@@ -189,7 +189,7 @@ ms.locfileid: "77601717"
 <td align="left"><p>请求的字节数</p></td>
 <td align="left"><p>池标记</p></td>
 <td align="left"><p>当前线程已将分配请求标记 MUST_SUCCEED。</p>
-<p>（不再支持此池类型。）</p></td>
+<p> (不再支持此池类型。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x9B</p></td>
@@ -197,7 +197,7 @@ ms.locfileid: "77601717"
 <td align="left"><p>请求的字节数</p></td>
 <td align="left"><p>调用方地址</p></td>
 <td align="left"><p>当前线程尝试分配标记为0的池</p>
-<p>（这会是时差的，可能损坏现有的标记表。）</p></td>
+<p> (这将是时差的，可能损坏现有的标记表。 ) </p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x9C</p></td>
@@ -205,7 +205,7 @@ ms.locfileid: "77601717"
 <td align="left"><p>请求的字节数</p></td>
 <td align="left"><p>调用方地址</p></td>
 <td align="left"><p>当前线程尝试分配标记为 "BIG" 的池。</p>
-<p>（这会是时差的，可能会损坏现有的标记表。）</p></td>
+<p> (这将是时差的，可能会损坏现有的标记表。 ) </p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x9D</p></td>
@@ -224,20 +224,20 @@ ms.locfileid: "77601717"
 </tbody>
 </table>
 
-\_池\_类型代码在 Ntddk 中进行枚举。 具体而言，0表示非分页池，1表示页面缓冲池。
+\_池 \_ 类型代码在 Ntddk 中进行枚举。 具体而言，0表示非分页池，1表示页面缓冲池。
 
 ## <a name="cause"></a>原因
 
 当前线程发出了无效的池请求。 通常，这是一个错误的 IRQL 级别，或者两次释放相同的内存分配等。
 
-## <a name="resolution"></a>分辨率
+## <a name="resolution"></a>解决方法
 
 激活启用了内存池选项的驱动程序验证程序，以获取有关这些错误的详细信息并找到错误驱动程序。
 
 **驱动程序验证程序**
 
-驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符处键入*Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
+驱动程序验证程序是一种实时运行的工具，用于检查驱动程序的行为。 如果发现驱动程序代码执行过程中出现错误，它会主动创建一个例外，以允许进一步审查驱动程序代码的一部分。 驱动程序验证器管理器内置于 Windows 中，在所有 Windows Pc 上都可用。 若要启动驱动程序验证器管理器，请在命令提示符处键入 *Verifer* 。 你可以配置要验证的驱动程序。 验证驱动程序的代码会在运行时增加开销，因此请尝试并尽可能多地验证驱动程序。 有关详细信息，请参阅 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)。
 
 **Windows 内存诊断**
 
-具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后单击 "**诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
+具体而言，对于内存池损坏的情况，请运行 Windows 内存诊断工具，尝试将物理内存作为一个原因进行隔离。 在 "控制面板" 搜索框中键入 "内存"，然后选择 " **诊断计算机的内存问题**"。运行测试后，使用事件查看器查看系统日志下的结果。 查找 " *MemoryDiagnostics* " 项，查看结果。
