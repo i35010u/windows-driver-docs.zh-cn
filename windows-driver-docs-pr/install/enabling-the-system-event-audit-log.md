@@ -8,12 +8,12 @@ keywords:
 - 系统审核策略 WDK 驱动程序签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17628840a7d2bc6d7bda4d9399fa82b1c02fb4fa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 26d0831e98d24401f37c1bf896dc35662045f5fd
+ms.sourcegitcommit: 72535665bb80c28ee09331844cd0e15da8084e19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357760"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623500"
 ---
 # <a name="enabling-the-system-event-audit-log"></a>启用系统事件审核日志
 
@@ -22,35 +22,35 @@ ms.locfileid: "63357760"
 
 [如何启用安全审核策略](#how-to-enable-security-audit-policy)
 
-[如何启用详细日志记录的代码完整性诊断事件](#how-to-enable-verbose-logging-of-code-integrity-diagnostic-events)
+[如何启用代码完整性诊断事件的详细日志记录](#how-to-enable-verbose-logging-of-code-integrity-diagnostic-events)
 
-### <a href="" id="how-to-enable-security-audit-policy"></a> 如何启用安全审核策略
+### <a name="how-to-enable-security-audit-policy"></a><a href="" id="how-to-enable-security-audit-policy"></a> 如何启用安全审核策略
 
-若要启用安全审核策略，以捕获在审核日志中的加载失败，请执行以下步骤：
+若要启用安全审核策略来捕获审核日志中的加载失败，请执行以下步骤：
 
-1.  打开提升的命令提示符窗口。 若要打开提升的命令提示符窗口，请创建桌面快捷方式*Cmd.exe*，右键单击*Cmd.exe*快捷方式，然后选择**以管理员身份运行**。
+1.  打开提升的命令提示符窗口。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe*的桌面快捷方式，选择并按住 (或右键单击 *Cmd.exe* 快捷方式) ，然后选择 " **以管理员身份运行**"。
 
-2.  在提升的命令提示符窗口中，运行以下命令：
+2.  在提升的命令提示符窗口中运行以下命令：
 
     ```cpp
     Auditpol /set /Category:System /failure:enable
     ```
 
-3.  重新启动计算机，更改才能生效。
+3.  重新启动计算机以使更改生效。
 
-下面的屏幕截图显示一个如何使用 Auditpol 启用安全审核。
+以下屏幕截图显示了如何使用 Auditpol 启用安全审核。
 
-![说明如何使用 auditpol 启用安全审核的命令提示符窗口的屏幕截图](images/driver-signing-enable-auditpol.png)
+![命令提示符窗口的屏幕截图，说明如何使用 auditpol 启用安全审核](images/driver-signing-enable-auditpol.png)
 
-### <a href="" id="how-to-enable-verbose-logging-of-code-integrity-diagnostic-events"></a> 如何启用详细日志记录的代码完整性诊断事件
+### <a name="how-to-enable-verbose-logging-of-code-integrity-diagnostic-events"></a><a href="" id="how-to-enable-verbose-logging-of-code-integrity-diagnostic-events"></a> 如何启用代码完整性诊断事件的详细日志记录
 
 若要启用详细日志记录，请执行以下步骤：
 
 1.  打开提升的命令提示符窗口。
 
-2.  运行*Eventvwr.exe*命令行上。
+2.  在命令行上运行 *Eventvwr.exe* 。
 
-3.  下**事件查看器**文件夹中的事件查看器中，左窗格中展开以下一系列子文件夹：
+3.  在事件查看器左窗格中的 " **事件查看器** " 文件夹下，展开以下子文件夹序列：
 
     1.  **应用程序和服务日志**
 
@@ -58,17 +58,17 @@ ms.locfileid: "63357760"
 
     3.  **Windows**
 
-4.  展开**代码完整性**下的子文件夹**Windows**文件夹以显示其上下文菜单。
+4.  展开 " **Windows** " 文件夹下的 "**代码完整性**" 子文件夹，以显示其上下文菜单。
 
-5.  选择**视图**。
+5.  选择 " **查看**"。
 
-6.  选择**显示分析和调试日志**。 事件查看器将显示包含的子树**Operational**文件夹和一个**Verbose**文件夹。
+6.  选择 " **显示分析和调试日志**"。 然后事件查看器将显示一个包含 **操作** 文件夹和一个 **详细** 文件夹的子树。
 
-7.  右键单击**Verbose** ，然后选择**属性**弹出上下文菜单中。
+7.  选择并按住 (或右键单击) **详细** "，然后从弹出上下文菜单中选择" **属性** "。
 
-8.  选择**常规**选项卡上**属性**对话框中，并选择**启用日志记录**中间附近的属性页的选项。 这将启用详细日志记录。
+8.  选择 "**属性**" 对话框中的 "**常规**" 选项卡，然后选择属性页中间附近的 "**启用日志记录**" 选项。 这将启用详细日志记录。
 
-9.  重新启动计算机，更改才能生效。
+9.  重新启动计算机以使更改生效。
 
  
 
