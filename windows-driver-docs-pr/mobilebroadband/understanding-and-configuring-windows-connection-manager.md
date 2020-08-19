@@ -4,17 +4,17 @@ description: 了解和配置 Windows 连接管理器
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0046844b912bdaebb3766d188bbf3383a7adf4fa
-ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
+ms.openlocfilehash: 72826c198767445cf773bb9ac55018b6c9107e93
+ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84681679"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88615085"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>了解和配置 Windows 连接管理器
 
 > [!IMPORTANT]
-> 本主题适用于可配置 Windows 如何连接到其网络的 Microsoft 移动运营商（MO）合作伙伴。 如果你是遇到 Windows 网络连接问题的客户，请参阅[修复 windows 中的网络连接问题](https://support.microsoft.com/help/10741/windows-fix-network-connection-issues)。
+> 本主题适用于可配置 Windows 如何连接到其网络的 (MO) 合作伙伴的 Microsoft 移动运营商。 如果你是遇到 Windows 网络连接问题的客户，请参阅 [修复 windows 中的网络连接问题](https://support.microsoft.com/help/10741/windows-fix-network-connection-issues)。
 
 Windows 8 中引入的自动连接管理通过查看以太网、Wi-fi 和移动宽带接口做出连接决策。 这些决策将导致 Wi-fi 和移动宽带接口上的自动连接和断开操作。
 
@@ -29,15 +29,15 @@ Windows 8 中引入的自动连接管理通过查看以太网、Wi-fi 和移动�
 
 ## <a name="span-idconnection_management_policiesspanspan-idconnection_management_policiesspanspan-idconnection_management_policiesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>连接管理策略
 
-Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理的策略。 这些策略不会在 Windows 用户界面中公开，但可以使用[WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 或组策略进行配置。
+Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理的策略。 这些策略不会在 Windows 用户界面中公开，但可以使用 [WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 或组策略进行配置。
 
 ### <a name="span-idminimize_simultaneous_connectionsspanspan-idminimize_simultaneous_connectionsspanspan-idminimize_simultaneous_connectionsspanminimize-simultaneous-connections"></a><span id="Minimize_simultaneous_connections"></span><span id="minimize_simultaneous_connections"></span><span id="MINIMIZE_SIMULTANEOUS_CONNECTIONS"></span>同时最小化连接
 
-此策略使用**fMinimizeConnections**组策略进行配置。 默认情况下，它在 Windows 8、Windows 8.1 和 Windows 10 上处于启用状态。
+此策略使用 **fMinimizeConnections** 组策略进行配置。 默认情况下，它在 Windows 8、Windows 8.1 和 Windows 10 上处于启用状态。
 
 #### <a name="versions-of-windows-before-windows-10-version-1809-build-17763404"></a>Windows 10 之前的 Windows 版本1809，版本17763.404
 
-在 windows 8、Windows 8.1 和 windows 10 版本1809之前的 windows 10 版本17763.404 中，此策略是一个可以使用组策略或[WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 修改的布尔值。
+在 windows 8、Windows 8.1 和 windows 10 版本1809之前的 windows 10 版本17763.404 中，此策略是一个可以使用组策略或 [WcmSetProperty](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetproperty) API 修改的布尔值。
 
 如果禁用此策略，则行为类似于 Windows 7 的行为，在这种情况下，每个接口会连接到最优先的网络（在范围内），而不考虑其他接口的连接状态。
 
@@ -59,19 +59,19 @@ Windows 8、Windows 8.1 和 Windows 10 提供了许多用于控制连接管理�
 
 此策略设置确定一台计算机能否有多个连接到 Internet、Windows 域或两个连接。 如果允许多个连接，则策略将确定如何路由网络流量。
 
-如果将此策略设置为**0**，则计算机可以同时连接到 Internet、Windows 域或两者。 Internet 流量可以通过任何连接进行路由，包括蜂窝连接或任何按流量计费的网络。 在 Windows 10 版本1809之前的 Windows 版本中17663.404，此策略设置以前是此策略设置的*禁用*状态。 此选项在 Windows 8 中首次可用。
+如果将此策略设置为 **0**，则计算机可以同时连接到 Internet、Windows 域或两者。 Internet 流量可以通过任何连接进行路由，包括蜂窝连接或任何按流量计费的网络。 在 Windows 10 版本1809之前的 Windows 版本中17663.404，此策略设置以前是此策略设置的 *禁用* 状态。 此选项在 Windows 8 中首次可用。
 
-如果此策略设置为**1**，则在计算机至少有一个与首选网络类型的活动 Internet 连接时，将阻止任何新的自动 Internet 连接。 优先顺序如下：
+如果此策略设置为 **1**，则在计算机至少有一个与首选网络类型的活动 Internet 连接时，将阻止任何新的自动 Internet 连接。 优先顺序如下：
 
 1. 以太网
 2. WLAN
 3. 移动电话
 
-连接时，以太网始终是首选的。 用户仍可手动连接到任何网络。 在 Windows 10 版本1809之前的 Windows 版本中17763.404，此策略设置以前是此策略设置的 "*已启用*" 状态。 此选项在 Windows 8 中首次可用。
+连接时，以太网始终是首选的。 用户仍可手动连接到任何网络。 在 Windows 10 版本1809之前的 Windows 版本中17763.404，此策略设置以前是此策略设置的 " *已启用* " 状态。 此选项在 Windows 8 中首次可用。
 
-如果此策略设置设置为**2**，则该行为在设置为**1**时类似于。 但是，如果手机网络数据连接可用，则该连接将始终保持连接，以获取需要蜂窝连接的服务。 当用户连接到 WLAN 或以太网连接时，不会通过移动电话连接来路由 Internet 流量。 此选项最初在 Windows 10 版本1703中提供。
+如果此策略设置设置为 **2**，则该行为在设置为 **1**时类似于。 但是，如果手机网络数据连接可用，则该连接将始终保持连接，以获取需要蜂窝连接的服务。 当用户连接到 WLAN 或以太网连接时，不会通过移动电话连接来路由 Internet 流量。 此选项最初在 Windows 10 版本1703中提供。
 
-如果此策略设置设置为**3**，则该行为在设置为**2**时类似于。 但是，如果有以太网连接，Windows 将不允许用户手动连接到 WLAN。 如果没有以太网连接，WLAN 只能连接（自动或手动）。
+如果此策略设置设置为 **3**，则该行为在设置为 **2**时类似于。 但是，如果有以太网连接，Windows 将不允许用户手动连接到 WLAN。 只有在没有以太网连接时，WLAN 才能 (自动连接或手动) 。
 
 ### <a name="span-idsoft_disconnectspanspan-idsoft_disconnectspanspan-idsoft_disconnectspansoft-disconnect"></a><span id="Soft_disconnect"></span><span id="soft_disconnect"></span><span id="SOFT_DISCONNECT"></span>软断开
 
@@ -142,7 +142,7 @@ Windows 按下列顺序为连接排定优先级：
 
 ### <a name="span-idsignal_strengthspanspan-idsignal_strengthspanspan-idsignal_strengthspansignal-strength"></a><span id="Signal_strength"></span><span id="signal_strength"></span><span id="SIGNAL_STRENGTH"></span>信号强度
 
-对于 Windows 8 和 Windows 8.1，如果 Windows 检测到当前连接的 Wi-fi 网络的信号强度非常低，则可以选择连接移动宽带网络（如果策略允许）以避免中断网络连接。 这有助于在用户离开无线接入点时平滑转换。
+对于 Windows 8 和 Windows 8.1，如果 Windows 检测到当前连接的 Wi-fi 网络的信号强度非常低，则可能会选择连接移动宽带网络 (如果策略允许) ，以避免中断网络连接。 这有助于在用户离开无线接入点时平滑转换。
 
 Windows 不会断开更喜欢的 Wi-fi 网络，直到信号强度无法维持连接。 如果信号强度提高，Windows 可能会对移动宽带适配器进行软断开连接。
 
@@ -158,15 +158,15 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 以下用户操作修改首选网络列表：
 
--   **最初连接到网络**新的网络将添加到网络列表中。 用户指定将来是否会自动连接网络。
+-   **最初连接到网络** 新的网络将添加到网络列表中。 用户指定将来是否会自动连接网络。
 
     -   第一次连接到新的 Wi-fi 网络后，网络就会成为列表中最优先的网络。
 
     -   首次连接到新的移动宽带网络，使网络成为列表中首选的最小网络。
 
--   **手动连接到 wi-fi 网络**列表中较高范围内的任何其他 Wi-fi 网络将移动到列表中新连接的网络下。 用户指定网络将来是否自动连接。
+-   **手动连接到 wi-fi 网络** 列表中较高范围内的任何其他 Wi-fi 网络将移动到列表中新连接的网络下。 用户指定网络将来是否自动连接。
 
--   **断开与网络的连接**Windows 将来不会自动连接到该网络。 它保留在网络列表中，以防用户在将来修改此设置。
+-   **断开与网络的连接** Windows 将来不会自动连接到该网络。 它保留在网络列表中，以防用户在将来修改此设置。
 
 ### <a name="span-idgroup_policyspanspan-idgroup_policyspanspan-idgroup_policyspangroup-policy"></a><span id="Group_Policy"></span><span id="group_policy"></span><span id="GROUP_POLICY"></span>组策略
 
@@ -174,9 +174,9 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 ### <a name="span-idcarrier-provisioning_metadataspanspan-idcarrier-provisioning_metadataspanspan-idcarrier-provisioning_metadataspancarrier-provisioning-metadata"></a><span id="Carrier-provisioning_metadata"></span><span id="carrier-provisioning_metadata"></span><span id="CARRIER-PROVISIONING_METADATA"></span>运营商-设置元数据
 
-移动宽带和 Wi-fi 热点操作员使用[**ProvisioningAgent**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)或[**MsProvisionNetworks**](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) api 为 Windows 提供一系列移动宽带和 wi-fi 配置文件。
+移动宽带和 Wi-fi 热点操作员使用 [**ProvisioningAgent**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent) 或 [**MsProvisionNetworks**](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) api 为 Windows 提供一系列移动宽带和 wi-fi 配置文件。
 
-初始预配时，操作员创建的配置文件将添加到现有网络列表的顶部（仅适用于 Wi-fi）或底部（如果包含移动宽带）。 不能影响用户在网络列表中设置的网络位置。 但是，你可以在网络列表中定义其网络的相对顺序。
+初始预配时，操作员创建的配置文件将添加到顶部 (仅限 Wi-fi) 或底部 (如果移动宽带包含在现有网络列表) 。 不能影响用户在网络列表中设置的网络位置。 但是，你可以在网络列表中定义其网络的相对顺序。
 
 用户的操作可能会在预配元数据的应用程序之间修改网络列表。 重新应用预配元数据时，所需的网络顺序将被还原。 但是，重新排序的网络集会移到用户已将任何网络移动到的最小位置。
 
@@ -184,7 +184,7 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 1.  每个网络配置文件的可选优先级属性
 
-2.  媒体类型（Wi-fi 比移动宽带更首选）
+2.  媒体类型 (比移动宽带更喜欢 Wi-fi) 
 
 3.  XML 文件中指定的顺序
 
@@ -196,39 +196,39 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
 ### <a name="span-iduser_interfacespanspan-iduser_interfacespanspan-iduser_interfacespanuser-interface"></a><span id="User_interface"></span><span id="user_interface"></span><span id="USER_INTERFACE"></span>用户界面
 
-若要在配置文件处于范围内时从首选网络列表中删除配置文件，请右键单击该网络，然后选择 "**忘记此网络**"。 不在范围内的网络不能通过用户界面从列表中删除。
+若要从首选网络列表中删除处于范围内的配置文件，请选择并按住 (或右键单击网络) ，然后选择 " **忘记此网络**"。 不在范围内的网络不能通过用户界面从列表中删除。
 
 ### <a name="span-idwin32_apisspanspan-idwin32_apisspanspan-idwin32_apisspanwin32-apis"></a><span id="Win32_APIs"></span><span id="win32_apis"></span><span id="WIN32_APIS"></span>Win32 Api
 
 应用程序可以使用适当的媒体特定 API 在网络列表中创建新的配置文件：
 
--   对于 Wi-fi 网络，使用[**WlanSetProfile**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofile)函数。
+-   对于 Wi-fi 网络，使用 [**WlanSetProfile**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofile) 函数。
 
--   对于移动宽带网络，请使用[**IMbnConnectionProfileManager：： CreateConnectionProfile**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofilemanager-createconnectionprofile)方法。
+-   对于移动宽带网络，请使用 [**IMbnConnectionProfileManager：： CreateConnectionProfile**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofilemanager-createconnectionprofile) 方法。
 
-若要修改网络列表的顺序，请使用[**WcmSetProfileList**](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetprofilelist)函数。 不建议使用[**WlanSetProfileList**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofilelist)函数，因为它可能会以意外的方式干扰网络列表中移动宽带配置文件的位置。
+若要修改网络列表的顺序，请使用 [**WcmSetProfileList**](https://docs.microsoft.com/windows/desktop/api/wcmapi/nf-wcmapi-wcmsetprofilelist) 函数。 不建议使用 [**WlanSetProfileList**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlansetprofilelist) 函数，因为它可能会以意外的方式干扰网络列表中移动宽带配置文件的位置。
 
 若要从网络列表中删除配置文件，请使用相应的媒体特定 API：
 
--   对于 Wi-fi 网络，使用[**WlanDeleteProfile**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile)函数。
+-   对于 Wi-fi 网络，使用 [**WlanDeleteProfile**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile) 函数。
 
--   对于移动宽带网络，请使用[**IMbnConnectionProfile：:D e)**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)方法。
+-   对于移动宽带网络，请使用 [**IMbnConnectionProfile：:D e) **](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete) 方法。
 
 ### <a name="span-idcommand-linespanspan-idcommand-linespanspan-idcommand-linespancommand-line"></a><span id="Command-line"></span><span id="command-line"></span><span id="COMMAND-LINE"></span>命令行
 
 用户或脚本可以通过使用相应的媒体特定命令，在网络列表中创建新的配置文件：
 
--   对于 Wi-fi 网络，请使用**netsh wlan add profile**命令。
+-   对于 Wi-fi 网络，请使用 **netsh wlan add profile** 命令。
 
--   对于移动宽带网络，请使用**netsh mbn add profile**命令。
+-   对于移动宽带网络，请使用 **netsh mbn add profile** 命令。
 
-可以使用**netsh wlan set profileorder**命令修改网络列表中的 wi-fi 配置文件的顺序。 但是，不建议这样做，并且可能会以意外的方式扰乱列表中移动宽带配置文件的位置。
+可以使用 **netsh wlan set profileorder** 命令修改网络列表中的 wi-fi 配置文件的顺序。 但是，不建议这样做，并且可能会以意外的方式扰乱列表中移动宽带配置文件的位置。
 
 若要从网络列表中删除配置文件，请使用相应的媒体特定命令：
 
--   对于 Wi-fi 网络，请使用**netsh wlan delete profile**命令。
+-   对于 Wi-fi 网络，请使用 **netsh wlan delete profile** 命令。
 
--   对于移动宽带网络，请使用**netsh mbn delete profile**命令。
+-   对于移动宽带网络，请使用 **netsh mbn delete profile** 命令。
 
 ### <a name="span-idconflict_resolutionspanspan-idconflict_resolutionspanspan-idconflict_resolutionspanconflict-resolution"></a><span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>冲突解决
 
@@ -240,7 +240,7 @@ Windows 8、Windows 8.1 和 Windows 10 会根据用户操作自动更新首选�
 
     2.  所有用户配置文件优于单一用户配置文件。
 
-2.  **接口到达**将使用最近安装的接口上的配置文件。
+2.  **接口到达** 将使用最近安装的接口上的配置文件。
 
  
 

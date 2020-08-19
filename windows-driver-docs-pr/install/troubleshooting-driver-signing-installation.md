@@ -1,71 +1,71 @@
 ---
 title: 排查驱动程序签名安装问题
-description: 安装已发布签名的驱动程序是在安装、 卸载和加载 Test-Signed 驱动程序包中测试签名，除了需要安装有使用任何所述的四个方法时的其他两个步骤中所述相同。
+description: 安装版本签名驱动程序与在测试签名中安装、卸载和加载测试签名驱动程序包中所述的相同，只是安装时需要执行两个额外步骤，使用此处所述的任何一种方法来安装。
 ms.assetid: 36624611-1FE6-4B88-B785-44D6A81F61FF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77573df2ecf15c599886487fef6ea5d84a1c102e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 38e12b86af7988cde0a8e070580343683a5fabec
+ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356314"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88615089"
 ---
 # <a name="troubleshooting-driver-signing-installation"></a>排查驱动程序签名安装问题
 
 
-安装已发布签名的驱动程序是在中所述的相同**安装、 卸载和加载 Test-Signed 驱动程序包**中[测试签名](test-signing.md)，除了其他两个步骤所需时安装那里使用任何所述的四个方法。 使用添加硬件向导安装已发布签名的驱动程序显示了其他两个步骤，包括的一些常见安装问题。
+安装版本签名驱动程序与在[测试签名](test-signing.md)中**安装、卸载和加载测试签名驱动程序包**中所述的相同，只是安装时需要执行两个额外步骤，使用此处所述的任何一种方法来安装。 使用 "添加硬件向导" 安装版本签名的驱动程序会显示其他两个步骤，其中包括一些常见安装问题。
 
 1.  打开提升的命令窗口
-2.  运行 hdwwiz.cpl 以启动添加硬件向导，请转到第二页旁边单击
-3.  选择高级选项，然后单击下一步
-4.  选择显示在列表框中的所有设备，单击下一步
-5.  选择从磁盘安装选项
-6.  输入包含在 c： 驱动器的文件夹的路径\\toaster 驱动程序包
-7.  选择的 inf 文件，然后单击打开
+2.  运行 hdwwiz.cpl 以启动添加硬件向导，然后单击 "下一步" 以切换到第二页
+3.  选择 "高级" 选项并单击 "下一步"
+4.  从列表框中选择 "显示所有设备"，然后单击 "下一步"
+5.  选择 "具有磁盘" 选项
+6.  输入包含 C： \\ toaster 驱动程序包的文件夹的路径
+7.  选择 inf 文件并单击 "打开"
 8.  单击“确定”
-9.  在接下来的两页中，单击下一步，然后单击完成以完成安装
-10. 单击安装对话框，询问"您想要安装此设备软件？"
-11. 单击完成以完成安装。
+9.  在接下来的两页中单击 "下一步"，然后单击 "完成" 以完成安装
+10. 在询问 "是否要安装此设备软件？" 的对话框中单击 "安装"。
+11. 单击“完成”完成安装。
 
-步骤 10 显示了以下 Windows 安全对话框。
+步骤10显示了下面的 "Windows 安全性" 对话框。
 
-![显示 windows 安全性对话框的屏幕截图](images/tutorialwindowssecurityinstalldialog.png)
+![显示 "windows 安全" 对话框的屏幕截图](images/tutorialwindowssecurityinstalldialog.png)
 
-选中复选框将显示此对话框中的计算机中如果再次安装该驱动程序是否出于任何原因删除驱动程序。
+如果出于任何原因删除了驱动程序，则选中该复选框将不会在计算机中再次显示此对话框。
 
-**请注意**  系统将验证发布服务器信息是准确基于用于对目录进行签名的 SPC。 如果发布服务器的信任级别未知-Contoso.com—the 系统显示对话框中一样将为 true。 若要继续安装，用户必须单击安装。 有关信任和驱动程序安装的详细信息，请参阅[代码签名最佳做法](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
+**注意**   系统会根据用于对目录进行签名的 SPC 验证发行者信息是否准确。 如果发布服务器信任级别是未知的，则对于 Contoso .com，系统将显示该对话框。 要继续安装，用户必须单击 "安装"。 有关信任和驱动程序安装的详细信息，请参阅 [代码签名最佳做法](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653556(v=vs.85))。
 
  
 
-未签名的驱动程序而将显示以下对话框中，这样用户就可以安装未签名的驱动程序，这可能无法在 x64 版本的 Windows。
+另一方面，未签名的驱动程序将显示以下对话框，该对话框允许用户安装未签名的驱动程序，该驱动程序在 x64 版本的 Windows 中可能无效。
 
-![显示 windows 安全警告对话框的屏幕截图](images/tutorialwindowssecurityinstallwarning.png)
+![显示 "windows 安全警告" 对话框的屏幕截图](images/tutorialwindowssecurityinstallwarning.png)
 
-## <a name="verify-that-the-release-signed-driver-is-operating-correctly"></a>验证正确运行 Release-Signed 驱动程序
-
-
-使用设备管理器查看驱动程序属性，如之前所述测试签名驱动程序方面。 下面是屏幕截图显示如果驱动程序可正常工作。
-
-![设备管理器中显示 toaster 设备的屏幕截图](images/tutorialtoasterpackageindevicemgr.png)
-
-## <a name="troubleshoot-release-signed-drivers"></a>对版本签名的驱动程序进行故障排除
+## <a name="verify-that-the-release-signed-driver-is-operating-correctly"></a>验证 Release 签名驱动程序是否正常运行
 
 
-以下列表提供了几个常见的方式来加载已签名的问题进行故障排除或测试签名的驱动程序：
+使用设备管理器查看与测试签名驱动程序相关的驱动程序属性。 下面是屏幕截图，显示驱动程序是否正常运行。
 
--   使用添加硬件向导或设备管理器检查驱动程序是否已加载和签名，如中所述**验证 Test-Signed 驱动程序是操作系统正确**的[测试签名](test-signing.md)。
--   打开 Windows 中创建的 setupapi.dev.log 文件\\inf 目录后驱动程序安装。 请参阅上设置注册表项和安装驱动程序之前 setupapi.dev.log 文件重命名部分。
+![在设备管理器中显示 toaster 设备的屏幕截图](images/tutorialtoasterpackageindevicemgr.png)
+
+## <a name="troubleshoot-release-signed-drivers"></a>排除版本签名驱动程序的故障
+
+
+下面的列表提供了几种常见方法来解决加载已签名或测试签名驱动程序时遇到的问题：
+
+-   使用 "添加硬件向导" 或设备管理器来检查是否已加载并签署了驱动程序，如**验证测试签名的驱动程序是否正常运行**[测试签名](test-signing.md)中所述。
+-   打开 \\ 驱动程序安装后在 Windows inf 目录中创建的 setupapi.log 文件。 请参阅设置注册表项和重命名 setupapi.log 文件部分，然后再安装驱动程序。
 -   检查 Windows 安全审核日志和代码完整性事件日志。
 
-## <a name="analyzing-the-setupapidevlog-file"></a>分析 Setupapi.dev.log 文件
+## <a name="analyzing-the-setupapidevlog-file"></a>分析 Setupapi.log 文件
 
 
-如之前所述，将 Windows 中的 setupapi.dev.log 文件 （追加） 记录的任何驱动程序安装信息\\inf 目录。 如果之前安装驱动程序，重命名该文件，将生成一个新的日志文件。 新的日志文件将更轻松地查找重要的新的驱动程序安装日志。 在记事本应用程序中打开该日志文件。
+如之前所述，将记录任何驱动程序安装信息， (追加) Windows inf 目录中的 setupapi.log 文件。 \\ 如果在安装驱动程序之前重命名该文件，则将生成新的日志文件。 对于新的驱动程序安装，新的日志文件更易于查找重要的日志。 该日志文件将在记事本应用程序中打开。
 
-第一个保留大多数列可能有一个感叹号"！" 或多个感叹号"!!!"。 单个标记类型的一条警告消息，但三重感叹号将是发生故障的征兆。
+第一个最左侧的列可能有一个感叹号 "！" 或多个感叹号 "!!!"。 单标记是一条警告消息，而三次感叹号表示失败。
 
-你将看到以下单个标记了感叹号安装使用 CA 供应商签名的驱动程序包版本时提供的 SPC 证书。 它们只是警告，以指示，cat 文件尚未验证尚未。
+安装使用 CA 供应商提供的 SPC 证书签名的驱动程序包版本时，你将看到以下单个感叹号。 这只是警告，指示 cat 文件尚未验证。
 
 ```cpp
 !    sig:                Verifying file against specific (valid) catalog failed! (0x800b0109)
@@ -74,39 +74,39 @@ ms.locfileid: "67356314"
      sig:                Error 0xe0000242: The publisher of an Authenticode(tm) signed catalog has not yet been established as trusted.
 ```
 
-如果您现在到步骤 10 驱动程序安装的参考，并单击"安装"按钮，你将看到以下日志后，在大多数情况下，驱动程序将安装并正常加载。 设备管理器将不报告任何错误或驱动程序，显示黄色感叹号。
+如果你现在引用 "驱动程序安装" 的步骤10，并单击 "安装" 按钮，则在大多数情况下，驱动程序将会安装和加载正常。 设备管理器不会报告驱动程序的任何错误或黄色惊叹号。
 
 ```cpp
 !    sto:           Driver package signer is unknown but user trusts the signer.
 ```
 
-尽管上述为止获取驱动程序可能不会加载如果另请参阅以下的错误记录在日志文件中。
+尽管有上述点，但如果日志文件中还显示以下错误日志，则可能不会加载驱动程序。
 
-Setupapi.dev.log 文件也报告了以下错误：
+Setupapi.log 文件也报告以下错误：
 
 ```cpp
 !!!  dvi:                          Device not started: Device has problem: 0x34: CM_PROB_UNSIGNED_DRIVER.
 ```
 
-请注意，0x34 代码 52。
+请注意，0x34 赋是代码52。
 
-此时可能会返回在日志文件，并尝试查找是否用任何感叹号发出信号任何驱动程序二进制文件。 可以提供一些线索。 否则，甚至应运行所述的"signtool 验证"命令之前 cat 文件和其他嵌入签名的二进制文件以确保签名驱动程序中不存在任何问题。
+若要进行故障排除，请查看日志文件并查找驱动程序二进制文件旁边的感叹号。 `signtool verify`对 cat 文件和其他嵌入的已签名二进制文件运行该命令。
 
-大多数情况下日志文件信息就足以解决此问题。 如果上述检查未能找到根本原因，然后下一种方法是检查 Windows 安全审核日志和代码完整性事件日志即下一节中所述。
+大多数情况是日志文件信息足以解决该问题。 如果上述检查未能找到根本原因，则下一种方法是检查 Windows 安全审核日志和代码完整性事件日志，如下一节中所述。
 
-Setupapi.dev.log 文件还可帮助跟踪驱动程序文件复制和提交时间信息，以防如果找到一个驱动程序服务无法启动与服务二进制文件复制尚未提交但操作系统尝试启动服务。 但重新启动已成功启动服务。 请参阅下面的日志文件中的操作序列。
+如果发现驱动程序服务无法启动，setupapi.log 文件还有助于跟踪驱动程序文件复制和提交时间信息，因为该文件已被提交，但操作系统会尝试启动该服务。 但重新启动成功启动了服务。 请参阅下面的日志文件中的操作顺序。
 
 ```cpp
 >>>  Section start 2014/02/08 14:54:56.463
 ```
 
-下一步，在更高版本时：
+稍后在下一次：
 
 ```cpp
 !    inf:                     Could not start service 'toaster'.
 ```
 
-然后，我们可以文件复制操作：
+接下来，我们有文件复制操作：
 
 ```cpp
 <snip>
@@ -118,7 +118,7 @@ flq:                {FILE_QUEUE_COPY}
      flq:                     TargetFilename - 'toaster.exe'
 ```
 
-接下来，该文件是已提交。 比较开始时间的结束时间。
+接下来将提交文件。 将结束时间与开始时间进行比较。
 
 ```cpp
 flq:           {_commit_file_queue} 14:54:56.711
@@ -138,65 +138,65 @@ flq:           {_commit_file_queue} 14:54:56.711
 <<<  [Exit status: SUCCESS]
 ```
 
-以上是 bug 的驱动程序更新的 Windows 7 中正常工作，但是在 Windows 8.0 和 8.1，发现导致失败的情况。
+以上是在 Windows 7 中正常运行的驱动程序更新的情况，但在 Windows 8.0 和8.1 中失败，这会导致发现 bug。
 
 ## <a name="using-the-windows-security-audit-log"></a>使用 Windows 安全审核日志
 
 
-如果驱动程序未能加载，因为它不具备有效的签名，则审核失败事件会记录在 Windows 安全日志，该值指示代码完整性无法验证驱动程序文件的映像哈希。 日志条目包括驱动程序文件的完整路径名称。 仅当本地安全审核策略，则系统失败事件的记录生成安全日志审核事件。
+如果由于缺少有效的签名而导致驱动程序加载失败，则会在 Windows 安全日志中记录审核失败事件，指示代码完整性无法验证驱动程序文件的映像哈希。 日志项包含驱动程序文件的完整路径名称。 仅当本地安全审核策略启用了系统失败事件的日志记录时，才会生成安全日志审核事件。
 
-**请注意**  必须显式启用安全审核日志。 有关详细信息，请参阅[附录 3:启用代码完整性事件日志记录和审核系统](appendix-3--enable-code-integrity-event-logging-and-system-auditing.md)。
+**注意**   必须显式启用安全审核日志。 有关详细信息，请参阅 [附录3：启用代码完整性事件日志记录和系统审核](appendix-3--enable-code-integrity-event-logging-and-system-auditing.md)。
 
  
 
-安全日志中检查：
+检查安全日志：
 
 1.  打开提升的命令窗口。
-2.  若要启动 Windows 事件查看器，请运行 Eventvwr.exe。 也可以从控件面板计算机管理应用程序启动事件查看器。
+2.  若要启动 Windows 事件查看器，请运行 Eventvwr.exe。 也可以从 "控制面板" 的 "计算机管理" 应用程序中启动事件查看器。
 3.  打开 Windows 安全审核日志。
-4.  检查具有事件 ID 为 5038 的系统完整性事件日志。
-5.  双击日志项以显示其事件属性对话框中，提供事件的详细的说明。
+4.  检查日志中是否存在事件 ID 为5038的系统完整性事件。
+5.  双击日志条目以显示其 "事件属性" 对话框，该对话框提供事件的详细说明。
 
-下面的屏幕快照显示了已导致的未签名的 Toaster.sys 文件的安全审核日志事件事件属性对话框。
+下面的屏幕截图显示了由未签名的 Toaster.sys 文件引起的安全审核日志事件的 "事件属性" 对话框。
 
-![屏幕截图 showig 事件属性对话框](images/tutorialeventprops.png)
+!["事件属性" 对话框的屏幕截图 showig](images/tutorialeventprops.png)
 
 ## <a name="using-the-code-integrity-event-operational-event-log"></a>使用代码完整性事件操作事件日志
 
 
-如果驱动程序未能加载，因为它未签名或生成映像验证错误，代码完整性代码完整性 operational 事件日志中记录事件。 始终启用代码完整性操作事件。
+如果由于未对驱动程序进行签名或生成了图像验证错误而无法加载该驱动程序，则代码完整性将在代码完整性操作事件日志中记录这些事件。 代码完整性操作事件始终处于启用状态。
 
-可以使用事件查看器查看的代码完整性事件。
+可以通过事件查看器查看代码完整性事件。
 
-## <a name="to-examine-the-code-integrity-operational-log"></a>代码完整性操作日志中检查
+## <a name="to-examine-the-code-integrity-operational-log"></a>检查代码完整性操作日志
 
 
 1.  打开提升的命令窗口。
-2.  若要启动 Windows 事件查看器，请运行 Eventvwr.exe。 也可以从计算机管理控制面板应用程序启动事件查看器。
+2.  若要启动 Windows 事件查看器，请运行 Eventvwr.exe。 也可以从 "计算机管理" 控制面板应用程序中启动事件查看器。
 3.  打开 Windows 代码完整性日志。
-4.  双击日志项以显示其事件属性对话框中，提供事件的详细的说明。
+4.  双击日志条目以显示其 "事件属性" 对话框，该对话框提供事件的详细说明。
 
-下面的屏幕快照显示了已导致的未签名的 Toaster.sys 文件的代码完整性运行日志事件事件属性对话框。
+下面的屏幕截图显示了由未签名的 Toaster.sys 文件引起的代码完整性操作日志事件的 "事件属性" 对话框。
 
-![显示在事件查看器的屏幕截图](images/tutorialeventvwr.png)
+![显示事件查看器的屏幕截图](images/tutorialeventvwr.png)
 
-## <a name="using-the-informational-events-in-the-code-integrity-verbose-log"></a>使用中的代码完整性详细日志的信息性事件
+## <a name="using-the-informational-events-in-the-code-integrity-verbose-log"></a>使用代码完整性详细日志中的信息性事件
 
 
-代码完整性信息性日志的详细视图跟踪针对所有内核模式映像验证检查的事件。 这些事件显示在系统上的所有驱动程序加载的图像成功验证。
+代码完整性信息日志的详细视图跟踪所有内核模式映像验证检查的事件。 这些事件显示系统上加载的所有驱动程序的成功图像验证。
 
-若要启用代码完整性详细视图：
+启用代码完整性详细视图：
 
-1.  启动事件查看器中，如前面的示例中所示。
-2.  单击代码完整性节点以使其获得焦点。
-3.  右键单击代码完整性，并从快捷菜单中选择的视图项。
-4.  选择显示分析和调试日志。 这将创建具有两个其他节点的子树：操作和 Verbose。
-5.  右键单击详细节点，然后从快捷菜单中选择的属性。
-6.  在常规选项卡，选择启用日志记录，若要启用详细日志记录模式。
-7.  重新启动系统重新加载所有内核模式二进制文件。
-8.  在重启之后, 打开计算机管理 MMC 管理单元并查看代码完整性详细事件日志。
+1.  开始事件查看器，如前面的示例中所示。
+2.  单击 "代码完整性" 节点，使其成为焦点。
+3.  右键单击 "代码完整性"，然后从快捷菜单中选择 "查看项"。
+4.  选择 "显示分析和调试日志"。 这将创建一个具有两个附加节点的子树： "操作" 和 "详细"。
+5.  右键单击详细节点，然后从快捷菜单中选择 "属性"。
+6.  在 "常规" 选项卡上，选择 "启用日志记录" 以启用详细日志记录模式。
+7.  重新启动系统以重新加载所有内核模式的二进制文件。
+8.  重新启动后，打开 MMC "计算机管理" 管理单元，并查看代码完整性详细事件日志。
 
-中介绍了几个其他已知的驱动程序签名问题[附录 4:驱动程序签名问题](appendix-4--driver-signing-issues.md)。
+[附录4：驱动程序签名问题](appendix-4--driver-signing-issues.md)中介绍了几个额外的已知驱动程序签名问题。
 
  
 

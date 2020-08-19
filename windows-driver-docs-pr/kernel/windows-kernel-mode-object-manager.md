@@ -4,31 +4,31 @@ description: Windows 内核模式对象管理器
 ms.assetid: f10561a3-d831-4c13-9edf-be40fb1db403
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d27c51d02b3c7ad393278f14170782cdc772c766
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 984df7a548b7f2838ac86364410a5ba8cd82ad5a
+ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374172"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88615081"
 ---
 # <a name="windows-kernel-mode-object-manager"></a>Windows 内核模式对象管理器
 
 
-Windows 内核模式对象管理器组件管理*对象*。 文件、 设备、 的同步机制、 注册表项和等等，都表示为在内核模式下的对象。 每个对象都*标头*（包含有关其名称、 类型和位置等对象的信息），和一个*正文*（包含数据格式由每种类型的对象）。
+Windows 内核模式对象管理器组件管理 *对象*。 文件、设备、同步机制、注册表项等均表示为内核模式下的对象。 每个对象都有一个 *标头* (，其中包含有关对象的信息，如其名称、类型和位置) ，以及一个 *正文* (，其中包含由每种类型的对象) 确定的格式的数据。
 
-Windows 具有 25 个以上类型的对象。 几个类型是：
+Windows 有25多种类型的对象。 下面是几种类型：
 
 -   文件
 
 -   设备
 
--   线程
+-   线程数
 
 -   进程
 
--   Events
+-   事件
 
--   互斥锁
+-   Mutexes
 
 -   信号量
 
@@ -42,23 +42,23 @@ Windows 具有 25 个以上类型的对象。 几个类型是：
 
 -   符号链接
 
-对象管理器管理 Windows 中的对象执行以下主要任务：
+对象管理器通过执行以下主要任务来管理 Windows 中的对象：
 
--   管理创建和销毁的对象。
+-   管理对象的创建和析构。
 
--   保留用于跟踪的对象信息的对象命名空间数据库。
+-   为跟踪对象信息保留对象命名空间数据库。
 
--   持续跟踪的资源分配给每个进程。
+-   跟踪分配给每个进程的资源。
 
--   跟踪的特定对象提供安全的访问权限。
+-   跟踪特定对象的访问权限以提供安全性。
 
--   管理对象的生存期，并确定当销毁的对象将自动回收资源空间。
+-   管理对象的生存期，并确定何时将自动销毁对象以回收资源空间。
 
-有关在 Windows 中的对象的详细信息，请参阅[设备对象和设备堆栈](device-objects-and-device-stacks.md)。
+有关 Windows 中的对象的详细信息，请参阅 [管理内核对象](managing-kernel-objects.md)。
 
-向对象管理器提供直接接口的例程都通常带有前缀字母"**Ob**"; 例如， **ObGetObjectSecurity**。 对象管理器例程的列表，请参阅[对象管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557759(v=vs.85))。
+向对象管理器提供直接接口的例程通常以字母 "**Ob**" 作为前缀;例如， **ObGetObjectSecurity**。 有关对象管理器例程的列表，请参阅 [对象管理器例程](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557759(v=vs.85))。
 
-请注意，Windows 使用对象作为一种抽象的资源。 但是，Windows 不是面向对象的在传统C++一词的含义。 Windows 是*基于对象的*。 Windows 基于对象的含义的更多信息，请参阅[基于对象的](object-based.md)。
+请注意，Windows 使用对象作为资源的抽象。 但是，Windows 并不是面向对象的，它采用的是传统的 c + + 含义。 Windows 是 *基于对象*的。 有关 Windows 的基于对象的方法的详细信息，请参阅 [基于对象](object-based.md)。
 
  
 
