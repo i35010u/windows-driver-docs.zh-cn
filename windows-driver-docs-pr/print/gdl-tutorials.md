@@ -10,22 +10,22 @@ keywords:
 - GDL WDK，教程
 ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e04ad7d2194a5a2194acecd4d8ba20c6b93d43
-ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
+ms.openlocfilehash: 63afc03f3309c29c4a4e7438f1dba4432daaebc4
+ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455545"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88644017"
 ---
 # <a name="gdl-tutorials"></a>GDL 教程
 
 本部分包含几个练习，其中介绍了一些简单架构的设计和定义，以及如何通过 GDL 模板实现它们。 练习还考虑了多个架构扩展方案。
 
-您可以使用[Windows 硬件认证工具包（HCK）](https://go.microsoft.com/fwlink/p/?LinkId=733613)中的 GDL 正确性测试来验证每个解决方案的正确性。
+你可以通过使用 GDL 正确性测试（ [ (HCK)  (EXE 下载) 中的 Windows 硬件认证工具包 ](https://go.microsoft.com/fwlink/p/?LinkId=733613)的一部分来验证每个解决方案的正确性。
 
 > [!NOTE]
 > HCK 不适用于 Windows 10。
-> 如果要开发适用于 Windows 10 的硬件或驱动程序，则需要适用于 Windows 10 的新[Windows 硬件实验室工具包（HLK）](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit) 。
+> 如果要开发适用于 Windows 10 的硬件或驱动程序，则需要新的 [Windows 硬件实验室工具包 (](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit) 用于 windows 10 的 HLK) 。
 
 本节包括：
 

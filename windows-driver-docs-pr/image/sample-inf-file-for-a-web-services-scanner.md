@@ -4,21 +4,21 @@ description: Web 服务扫描仪的示例 INF 文件
 ms.assetid: 1e65739f-9216-4962-9108-60ba291ff052
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: eea1fda2c71bc8446e4e7492d68d88ff55694bf8
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: 4ca82dc9b5a05d711d63bfbec57c43071921cf63
+ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223554"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88643999"
 ---
 # <a name="sample-inf-file-for-a-web-services-scanner"></a>Web 服务扫描仪的示例 INF 文件
 
-以下 INF 文件*Sti*演示如何安装 WIA 驱动程序。 将突出显示*WSDScan*所需的项。
+以下 INF 文件 *Sti*演示如何安装 WIA 驱动程序。 突出显示 *WSDScan.sys* 所需的项。
 
 > [!NOTE]
-> " [Pnp-x 实施者指南](https://go.microsoft.com/fwlink/p/?linkid=242570)" 中介绍了在以下 INF 示例中引用的设备硬件 Id 和**PKEY \_ 设备 \_ HardwareIds**属性的要求。
+> [ (DOC 下载) ](https://go.microsoft.com/fwlink/p/?linkid=242570)中介绍了在以下 INF 示例中引用的设备硬件 Id 和**PKEY \_ 设备 \_ HardwareIds**属性的要求。
 
-```INF
+```inf
 ;
 ; MyWSScanner.inf - sample installation file that shows how
 ; to install a WIA driver for a WS scanner by using the inbox

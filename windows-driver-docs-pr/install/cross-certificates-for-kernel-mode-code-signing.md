@@ -4,12 +4,12 @@ description: 此信息介绍如何获取和使用 Microsoft Windows 的代码签
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a34a2bdbf14135a394429939b7f5c15b22b511
-ms.sourcegitcommit: c4f15f33d57d360f0868abe43a018248b97d5656
+ms.openlocfilehash: 27f78375495e67e3f8b2e2bdb70616704f5d5d44
+ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85311620"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88644021"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>用于内核模式代码签名的交叉证书
 
@@ -17,24 +17,24 @@ ms.locfileid: "85311620"
 此信息介绍如何获取和使用 Microsoft Windows 的代码签名内核模式二进制文件的交叉证书。
 
 > [!NOTE]
-> 请查看 Microsoft 安全公告（[2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823)） "弃用 Microsoft 根证书计划的 Sha-1 哈希算法"，其中描述了 microsoft 将不再允许根证书颁发机构使用 sha-1 哈希算法颁发 x.509 证书以便在2016年1月1日使用 sha-1 哈希算法进行 SSL 和代码签名的策略更改。
+> 请查看 Microsoft 安全公告 ([2880823](https://docs.microsoft.com/security-updates/SecurityAdvisories/2016/2880823)) "弃用适用于 Microsoft 根证书计划的 Sha-1 哈希算法"，其中描述了在年1月 1 2016 日之后，Microsoft 将不再允许根证书颁发机构使用 sha-1 哈希算法颁发 x.509 证书的策略更改。
 
 > [!NOTE]
-> [Microsoft 受信任的根程序](https://docs.microsoft.com/security/trusted-root/program-requirements)不再支持具有内核模式签名功能的根证书。 有关详细信息，请参阅[弃用软件发行者证书、商业发布证书和商业测试证书](deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md)。
+> [Microsoft 受信任的根程序](https://docs.microsoft.com/security/trusted-root/program-requirements)不再支持具有内核模式签名功能的根证书。 有关详细信息，请参阅 [弃用软件发行者证书、商业发布证书和商业测试证书](deprecation-of-software-publisher-certificates-and-commercial-release-certificates.md)。
 
 ## <a name="cross-certificates-overview"></a>交叉证书概述
 
 
-交叉证书是由一个证书颁发机构（CA）颁发的数字证书，用于对其他证书颁发机构的根证书的公钥进行签名。 跨证书提供了一种方法，用于创建从一个受信任的根 CA 到多个其他 Ca 的信任链。
+交叉证书是由一个证书颁发机构颁发的数字证书 (CA) 用于对另一个证书颁发机构的根证书的公钥进行签名。 跨证书提供了一种方法，用于创建从一个受信任的根 CA 到多个其他 Ca 的信任链。
 
 在 Windows 中，交叉证书：
 
 -   允许操作系统内核具有单个受信任的 Microsoft 根证书颁发机构。
--   向颁发软件发行者证书（SPCs）的多个商业 Ca 扩展信任链，该证书用于在 Windows 上进行分发、安装和加载的代码签名软件
+-   向颁发软件发行者证书的多个商业 Ca 扩展信任链 (SPCs) ，用于在 Windows 上分发、安装和加载代码签名软件
 
-此处提供的交叉证书适用于 Windows 驱动程序工具包（WDK）代码签名工具，用于对内核模式软件进行正确的签名。 对内核模式软件进行数字签名类似于对 Windows 发布的任何软件进行代码签名。 在对内核模式软件进行签名时，开发人员或软件发行者会将交叉证书添加到数字签名。 代码签名工具将跨证书本身添加到二进制文件或目录的数字签名。
+此处提供的交叉证书适用于 Windows 驱动程序工具包 (WDK) 代码签名工具，用于对内核模式软件进行正确的签名。 对内核模式软件进行数字签名类似于对 Windows 发布的任何软件进行代码签名。 在对内核模式软件进行签名时，开发人员或软件发行者会将交叉证书添加到数字签名。 代码签名工具将跨证书本身添加到二进制文件或目录的数字签名。
 
-有关如何使用交叉证书对第三方加密服务提供程序（Csp）进行签名的详细信息，请参阅[第三方 csp 的 Authenticode 签名](authenticode-signing-of-csps.md)。
+有关如何使用交叉证书对第三方加密服务提供程序进行签名的详细信息，请参阅 [第三方 csp 的 Authenticode 签名](authenticode-signing-of-csps.md) (csp) 。
 
 ## <a name="selecting-the-correct-cross-certificate"></a>选择正确的交叉证书
 
@@ -43,22 +43,22 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
 
 按照以下步骤标识 CA，然后下载相关的交叉证书。
 
-1.  打开 Microsoft 管理控制台（MMC）并添加 "证书" 管理单元：
-    1.  单击 "开始" 按钮，在搜索框中键入 "mmc"，然后按 "返回"。 如果出现“用户帐户控制”对话框，请单击“是”。
+1.  打开 Microsoft 管理控制台 (MMC) 并添加 "证书" 管理单元：
+    1.  选择 "开始" 按钮，在搜索框中键入 "mmc"，然后从搜索结果中选择 "mmc"。 如果出现“用户帐户控制”对话框，请单击“是”。
     2.  从 MMC 的 "文件" 菜单中，选择 "添加/删除管理单元 ..."
-    3.  选择 "证书" 管理单元，然后单击 "添加"。
-    4.  选择 "我的用户帐户"，然后单击 "完成"。
-    5.  再次选择 "证书" 管理单元，然后单击 "添加"。
-    6.  选择 "计算机帐户"，然后单击 "下一步"。
-    7.  选择 "本地计算机"，然后单击 "完成"。
+    3.  选择 "证书" 管理单元，然后选择 "添加"。
+    4.  选择 "我的用户帐户"，然后选择 "完成"。
+    5.  再次选择 "证书" 管理单元，然后选择 "添加"。
+    6.  选择 "计算机帐户"，然后选择 "下一步"。
+    7.  选择 "本地计算机"，然后选择 "完成"。
 
 2.  在证书存储中找到 SPC，然后双击它。 证书在以下两个位置之一列出，具体取决于证书的安装方式。
     -   当前用户、个人证书存储区或
     -   本地计算机个人证书存储区
 
-3.  在 "**证书**" 对话框中，单击 "**证书路径**" 选项卡，然后在证书路径中选择最顶层的证书。 这是适用于 SPC 的根颁发机构的 CA。
-4.  单击 "**查看证书**" 按钮，然后单击 "新建**证书**" 对话框的 "**详细信息**" 选项卡，查看根证书颁发机构证书。
-5.  查找此证书的**颁发者**和**指纹**。 然后在下面的列表中找到此 CA 对应的条目。
+3.  在 " **证书** " 对话框中，选择 " **证书路径** " 选项卡，然后在证书路径中选择最顶层的证书。 这是适用于 SPC 的根颁发机构的 CA。
+4.  选择 "**查看证书**" 按钮，然后选择 "新建**证书**" 对话框的 "**详细信息**" 选项卡，以查看根证书颁发机构证书。
+5.  查找此证书的 **颁发者** 和 **指纹** 。 然后在下面的列表中找到此 CA 对应的条目。
 6.  下载 CA 的相关交叉证书，并在对内核模式代码进行数字签名时，将此跨证书与 SPC 一起使用
 
 ## <a name="cross-certificate-list"></a>交叉证书列表
@@ -78,8 +78,8 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
 | GeoTrust 主证书颁发机构– G3                | b2 bb bd fa c8 f1 a8 ad 58 95 cd 49 38 4b 22 ca 19 db 2d 1f | 2021/02/22    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321776) |
 | GlobalSign 根 CA                                           | cc 1d ee bf 6d 55 c2 c9 06 1b a1 6f 10 a0 bf a6 97 9a-z 4a 32 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321777) |
 | 中转 Daddy 根证书颁发机构– G2                     | 84 2c 5c b3 4b 73 bb c5 ed 85 64 bd ed a7 86 96 7d 7b 42 ef | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321778) |
-| NetLock Arany （类金牌）                                   | 89 4f 1d 28 97 aa 4c 07 4d cd 85 c5 fc 09 ee 73 b9 51 04 d8 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321779) |
-| NetLock Platina （白金类）                             | 97 dd 74 97 16 20 57 29 41 dc 80 0c 2f d8 0a 48 07 7d 10 b0 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321780) |
+| NetLock Arany (类金牌)                                    | 89 4f 1d 28 97 aa 4c 07 4d cd 85 c5 fc 09 ee 73 b9 51 04 d8 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321779) |
+| NetLock Platina (类白金)                              | 97 dd 74 97 16 20 57 29 41 dc 80 0c 2f d8 0a 48 07 7d 10 b0 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321780) |
 | 安全通信 RootCA1                               | 41 f2 8c e5 6f d8 b9 cb 46 7f b5 03 2a 3c ae 1c 1c 9d 86 48 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321781) |
 | Starfield 根证书颁发机构– G2                    | 40 c2 0a 9a-z 33 fa d0 36 ac bf e8 2d 6c bb ee 1b 42 9b 86 de | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321782) |
 | StartCom 证书颁发机构                             | e6 06 9e 04 8 d ea 8 d 81 7a fc 41 88 b1 为 f1 d8 88 d0 af 17 | 2021/04/15    | [下载](https://go.microsoft.com/fwlink/p/?linkid=321783) |
