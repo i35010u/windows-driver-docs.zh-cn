@@ -4,12 +4,12 @@ description: WinDbg 是包含在 Windows 调试工具中的内核模式和用户
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 06/05/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 4e45ddb13f02a0a2d7f8e76f70aeb818e6c39e4d
-ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
+ms.openlocfilehash: b86dc5237f49d3385e668022ed47aee0b88f0b34
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87402310"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252871"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg 入门（用户模式）
 
@@ -28,7 +28,7 @@ WinDbg 是包含在 Windows 调试工具中的内核模式和用户模式调试�
 
 2. 也可在线 ([docs.microsoft.com](https://docs.microsoft.com/windows-hardware/drivers/debugger/)) 找到调试程序文档。
 
-3. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（例如，C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 单击“打开”  。
+3. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到包含 notepad.exe 的文件夹（例如，C:\\Windows\\System32）。 输入 notepad.exe 作为“文件名称”  。 选择“打开”  。
 
     ![启动记事本后 windbg 的屏幕截图](images/windbggetstart01.png)
 
@@ -233,7 +233,7 @@ void main ()
 
 1. 打开 WinDbg。
 
-2. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到 C:\\MyApp\\x64\\Debug。 输入 MyApp.exe 作为“文件名称”  。 单击“打开”  。
+2. 在“文件”菜单上，选择“打开可执行文件”   。 在“打开可执行文件”对话框中，导航到 C:\\MyApp\\x64\\Debug。 输入 MyApp.exe 作为“文件名称”  。 选择“打开”  。
 3. 输入以下命令：
 
     [.symfix](-symfix--set-symbol-store-path-.md)
