@@ -3,64 +3,64 @@ title: 在开发和测试期间安装未签名驱动程序
 description: 在开发和测试期间安装未签名驱动程序
 ms.assetid: b7b08d5a-40cf-498f-8645-6b02d803f62f
 keywords:
-- 驱动程序签名 WDK，未签名驱动程序
-- 签署驱动程序 WDK，未签名驱动程序
-- 数字签名 WDK，未签名驱动程序
-- 签名 WDK，未签名驱动程序
-- 测试签名驱动程序 WDK，未签名驱动程序
-- 未签名驱动程序安装 WDK 驱动程序签名
+- 驱动程序签名 WDK，未签名的驱动程序
+- 对驱动程序进行签名 WDK，未签名的驱动程序
+- 数字签名 WDK，未签名的驱动程序
+- 签名 WDK，未签名的驱动程序
+- 测试签名驱动程序 WDK，未签名的驱动程序
+- 未签名的驱动程序安装 WDK 驱动程序签名
 - 内核调试器 WDK 驱动程序签名
 - 内核模式驱动程序签名 WDK
-- F8 键 WDK 它签名
+- F8 密钥 WDK drvier 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 03d34534f308fc97938ac456eb8948f95ab250e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0c9c39399555161334f098dae456bf40fa86680
+ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358801"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88712212"
 ---
 # <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
 
-默认情况下，64 位版本的 Windows Vista 和更高版本的 Windows 将加载的内核模式驱动程序仅当内核可以验证驱动程序签名。 但是，在早期驱动程序开发期间以及非自动测试到已禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用加载时强制实施有效的驱动程序签名。 但是，若要完全自动执行测试的情况下插即用 (PnP) 安装的驱动程序[编录文件](catalog-files.md)必须签名的驱动程序。 签名驱动程序是必需的因为 Windows Vista 和更高版本的 Windows 显示驱动程序签名需要系统管理员进行授权的驱动程序安装的未签名驱动程序的对话框中，这可能会导致无需任何用户从安装驱动程序以及使用该设备的必要权限。 不能在 Windows Vista 和更高版本的 Windows 上禁用此即插即用驱动程序安装行为。
+默认情况下，仅当内核可以验证驱动程序签名时，Windows Vista 和更高版本的 windows 的64位版本才会加载内核模式驱动程序。 但是，在早期的驱动程序开发和非自动测试过程中，可以禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用有效驱动程序签名的加载时间强制。 但是，若要完全自动测试即插即用 (PnP) 安装的驱动程序，则必须对该驱动程序的 [编录文件](catalog-files.md) 进行签名。 需要对驱动程序进行签名的原因是 Windows Vista 和更高版本的 Windows 将为需要系统管理员授权安装驱动程序的无符号驱动程序显示 "驱动程序签名" 对话框，这可能会阻止没有必要权限的用户安装驱动程序和使用设备。 无法在 Windows Vista 和更高版本的 Windows 上禁用此 PnP 驱动程序安装行为。
 
-### <a name="use-the-f8-advanced-boot-option"></a>**使用 F8 高级启动选项**
+### <a name="use-the-f8-advanced-boot-option"></a>**使用 "F8 高级启动" 选项**
 
-Windows Vista 和更高版本的 Windows 支持的 F8 高级启动选项-"禁用强制驱动程序签名"-禁用强制内核模式驱动程序的加载时间签名仅为当前的系统会话。 在系统重启后不保留此设置。
+Windows Vista 和更高版本的 Windows 支持 F8 高级启动选项--"禁用驱动程序签名强制"--该选项仅对当前系统会话禁用内核模式驱动程序的加载时签名强制。 此设置不会在系统重新启动期间保持。
 
-### <a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a> 附加内核调试器来禁用签名验证
+### <a name="attach-a-kernel-debugger-to-disable-signature-verification"></a><a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a> 附加内核调试器以禁用签名验证
 
-将活动内核调试程序附加到开发或测试计算机禁用内核模式驱动程序的强制加载时签名。 若要使用此调试配置，将调试的计算机附加到需要开发或测试计算机，并启用内核调试上开发或通过运行以下命令测试计算机：
+将活动内核调试器附加到开发或测试计算机会禁用内核模式驱动程序的加载时签名强制。 若要使用此调试配置，请将调试计算机附加到开发或测试计算机，然后通过运行以下命令在开发或测试计算机上启用内核调试：
 
 ```cpp
 bcdedit -debug on
 ```
 
-若要使用 BCDEdit，用户必须是系统上的 Administrators 组的成员并从提升的命令提示符运行命令。 若要打开提升的命令提示符窗口，请创建桌面快捷方式*Cmd.exe*，右键单击该快捷方式，然后选择**以管理员身份运行**。
+若要使用 BCDEdit，用户必须是系统上 Administrators 组的成员，并从提升的命令提示符运行该命令。 若要打开提升的命令提示符窗口，请创建 *Cmd.exe*的桌面快捷方式，选择并按住 (或右键单击该快捷方式) ，然后选择 " **以管理员身份运行**"。
 
-### <a href="" id="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a> 强制在调试模式下的内核的内核模式签名验证
+### <a name="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a><a href="" id="enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode"></a> 在内核调试模式下强制执行内核模式签名验证
 
-但是，有些情况下在其中一名开发人员可能需要附加，内核调试器，但还需要维护强制加载时签名。 例如，当驱动程序堆栈 （例如筛选器驱动程序） 无法加载未签名驱动程序时，这可能会使整个堆栈。 由于附加调试程序允许加载未签名驱动程序，将出现此问题已附加调试器时，就立即消失。 调试此类问题可能很难。
+但是，在某些情况下，开发人员可能需要附加内核调试器，还需要维护加载时签名的执行。 例如，当驱动程序堆栈具有未签名的驱动程序 (例如无法加载的筛选器驱动程序) 时，可能会使整个堆栈无效。 由于附加调试器允许加载未签名的驱动程序，因此，一旦附加调试器，问题就会消失。 调试此类问题可能比较困难。
 
-为了便于调试此类问题[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)支持以下注册表值：
+为了便于调试此类问题， [内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 支持以下注册表值：
 
 ```cpp
 HKLM\SYSTEM\CurrentControlSet\Control\CI\DebugFlags
 ```
 
-此注册表值为类型[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)，并且可以分配基于一个或多个下列标志的按位 OR 的值：
+此注册表值的类型为 [REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)，可以根据一个或多个以下标志的按位 "或" 指定值：
 
 <a href="" id="0x00000001"></a>**0x00000001**  
-此标志值配置中断调试器，如果驱动程序是无符号的内核。 开发人员或测试人员然后可以选择要加载未签名的驱动程序通过输入**g**调试器提示符处。
+此标志值将内核配置为在驱动程序未签名时中断到调试器。 然后，开发人员或测试人员可以通过在调试器提示符下输入 **g** 来选择加载未签名的驱动程序。
 
 <a href="" id="0x00000010"></a>**0x00000010**  
-此标志值将配置为忽略调试器存在并将始终阻止加载未签名驱动程序的内核。
+此标志值将内核配置为忽略调试器的状态，并始终阻止未签名的驱动程序加载。
 
-如果此注册表值在注册表中不存在或不基于前面所述的标志的值，内核将始终加载内核调试模式，而无论是否签名驱动程序中的驱动程序。
+如果注册表中不存在此注册表值，或者其值不基于前面所述的标志，则内核将始终在内核调试模式下加载驱动程序，而不管驱动程序是否已签名。
 
-**请注意**  此注册表值中不存在注册表默认情况下。 若要调试内核模式签名验证，必须创建值。
+**注意**   默认情况下，注册表中不存在此注册表值。 必须创建值才能调试内核模式签名验证。
 
  
 
