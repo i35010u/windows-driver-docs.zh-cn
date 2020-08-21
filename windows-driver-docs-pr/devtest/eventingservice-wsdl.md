@@ -3,34 +3,33 @@ title: EventingService WSDL
 description: EventingService WSDL
 ms.assetid: 2071f4db-6a5a-4e9f-b53f-f50d4d99772a
 keywords:
-- WSDBIT 工具 WDK WSDL
-- WSDAPI 基本互操作性工具 WDK WSDL
+- WSDBIT 工具 WDK，WSDL
+- WSDAPI 基本互操作性工具 WDK、WSDL
 - EventingService 服务 WDK WSDBIT
 - WSDBIT 工具 WDK，服务
-- WSDAPI 基本互操作性工具 WDK 服务
+- WSDAPI 基本互操作性工具 WDK，服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fc0b81475c47a3513cdaffd6269bdd9282feea0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5652534dff1eb8fa45c6ef86b3689845f738cdf5
+ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344786"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714595"
 ---
 # <a name="eventingservice-wsdl"></a>EventingService WSDL
 
+下面的代码示例演示了 EventingService WSDL。
 
-下面的代码示例显示了 EventingService WSDL。
-
-```
-<wsdl:definitions 
- targetNamespace="http://schemas.example.org/EventingService" 
+```xml
+<wsdl:definitions
+ targetNamespace="http://schemas.example.org/EventingService"
  xmlns:tns="http://schemas.example.org/EventingService"
- xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" 
+ xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
- xmlns:wsdp="http://schemas.xmlsoap.org/ws/2005/05/devprof" 
- xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing" 
- xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+ xmlns:wsdp="http://schemas.xmlsoap.org/ws/2005/05/devprof"
+ xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
+ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
  xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
@@ -44,18 +43,18 @@ ms.locfileid: "63344786"
  </wsp:Policy>
 
  <wsdl:types>
- <xs:schema 
+ <xs:schema
    targetNamespace="http://schemas.example.org/EventingService"
-   xmlns:tns="http://schemas.example.org/EventingService" 
+   xmlns:tns="http://schemas.example.org/EventingService"
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" 
+   elementFormDefault="qualified"
    blockDefault="#all">
 
  <xs:element name="SimpleEvent" type="tns:SimpleEventType" />
  <xs:complexType name="SimpleEventType">
      <xs:sequence/>
  </xs:complexType>
- 
+
  <xs:element name="IntegerEvent" type="tns:IntegerEventType" />
  <xs:complexType name="IntegerEventType">
  <xs:sequence>
@@ -112,8 +111,8 @@ ms.locfileid: "63344786"
  </wsdl:binding>
 
  <wsdl:service name="EventingService">
- <wsdl:port 
-   name="EventingPort" 
+ <wsdl:port
+   name="EventingPort"
    binding="tns:EventingServiceSoap12Binding">
  <wsoap12:address
  location="http://localhost/WebService/Eventing.asmx" />
@@ -122,12 +121,3 @@ ms.locfileid: "63344786"
 
 </wsdl:definitions>
 ```
-
- 
-
- 
-
-
-
-
-

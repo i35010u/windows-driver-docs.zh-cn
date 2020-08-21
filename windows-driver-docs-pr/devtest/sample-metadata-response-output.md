@@ -3,27 +3,25 @@ title: 示例元数据响应输出
 description: 示例元数据响应输出
 ms.assetid: e31cdc1f-21eb-4121-9618-2d8e3d6775dc
 keywords:
-- WSDBIT 工具 WDK 示例
-- WSDAPI 基本互操作性工具 WDK 示例
+- WSDBIT 工具 WDK，示例
+- WSDAPI 基本互操作性工具 WDK，示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9c588a1e963f18d09e0c6832e8a1a5824e4aaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f031c204b52d751476c85595cf4639b08531b4ea
+ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340230"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714699"
 ---
 # <a name="sample-metadata-response-output"></a>示例元数据响应输出
 
+如果 \_ 将 wsdbit 客户端与 wsdbit \_ 服务器一起使用，以下代码示例将显示客户端上的元数据响应输出的外观。
 
-如果 wsdbit\_客户端所用 wsdbit\_服务器，下面的代码示例显示了客户端上的元数据响应输出将如下所示。
+>[!NOTE]
+>每次运行服务器时，主机地址终结点都将不同。
 
-**请注意**  每次运行服务器时，将不同主机地址终结点。
-
- 
-
-```
+```command
 -Dialect:       http://schemas.xmlsoap.org/ws/2006/02/devprof/ThisDevice
 Device Metadata
         -FriendlyName [-----]: WSDAPI Basic Interop Server
@@ -69,12 +67,3 @@ Relationship Metadata
          -Any:         (absent)
 End Relationship Metadata
 ```
-
- 
-
- 
-
-
-
-
-
