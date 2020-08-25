@@ -8,12 +8,12 @@ keywords:
 - 属性表页 WDK 打印
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e14ef057b94ec7d0ffdb43064c635b40f60a805
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8d7ca1f70199b05106e737ea21a575ef033cb571
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843263"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802609"
 ---
 # <a name="adding-new-property-sheet-pages"></a>添加新的属性表页
 
@@ -25,13 +25,13 @@ ms.locfileid: "72843263"
 
 -   [**IPrintOemUI：:D evicePropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-devicepropertysheets)
 
-    用于添加到打印机属性表，当用户从打印机文件夹或打印机窗口中选择 "**属性**" 菜单项时，或者当应用程序调用 PrinterProperties 函数时（在 Windows SDK 文档中介绍），将显示该属性表.
+    用于添加到打印机属性表，当用户从打印机文件夹或打印机窗口中选择 " **属性** " 菜单项时，或者当应用程序调用 PrinterProperties 函数时，它将在 Windows SDK 文档) 中 (说明的情况下显示。
 
 -   [**IPrintOemUI：:D ocumentPropertySheets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui-documentpropertysheets)
 
-    用于将页面添加到文档属性表，当用户从打印机文件夹或打印机窗口中选择**打印机首选项**菜单项时，或者当应用程序调用 DocumentProperties 或 AdvancedDocumentProperties 时，将显示此页。函数（如 Windows SDK 文档中所述）。
+    用于将页面添加到文档属性表中，当用户从打印机文件夹或打印机窗口中选择 **打印机首选项** 菜单项时，或者当应用程序调用 DocumentProperties 或 AdvancedDocumentProperties 函数时，这些页面将在 Windows SDK 文档) 中 (所述。
 
-如果实现其中一种方法，通常还会提供[ **\_CPSUICALLBACK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback)类型的回调函数来处理用户修改。 如果与用户界面设置关联的值已修改（如果设置的值存储在驱动程序的[**DEVMODEW**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构中），则此回调函数必须调用[**IPrintOemDriverUI：:D rvupdateuisetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriverui-drvupdateuisetting)以通知驱动程序注册表项。
+如果实现其中一种方法，通常还会提供[** \_ CPSUICALLBACK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/compstui/nc-compstui-_cpsuicallback)类型的回调函数来处理用户修改。 如果与用户界面设置关联的值已修改（如果设置的值存储在驱动程序的[**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)结构或注册表项中），则此回调函数必须调用[**IPrintOemDriverUI：:D rvupdateuisetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemdriverui-drvupdateuisetting)以通知驱动程序。
 
  
 

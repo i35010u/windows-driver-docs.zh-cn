@@ -8,23 +8,23 @@ keywords:
 - PoolMon，查找内存泄漏
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a6487d067042aab9835519579fdf0b552f566f1b
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 04ff18c4aacb890050383e581365d24f3d3d9ae2
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534750"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802795"
 ---
 # <a name="using-poolmon-to-find-a-kernel-mode-memory-leak"></a>使用 PoolMon 查找内核模式内存泄漏
 
 
 如果怀疑存在内核模式内存泄漏，确定与该泄漏关联的池标记的最简单方法是使用 PoolMon 工具。
 
-PoolMon （Poolmon）按池标记名称监视池内存使用情况。 此工具包含在 Windows 驱动程序工具包（WDK）中。 有关完整说明，请参阅 WDK 文档中的[PoolMon](https://docs.microsoft.com/windows-hardware/drivers/devtest/poolmon) 。
+PoolMon ( # A0) 按池标记名称监视池内存使用情况。 此工具包含在 Windows 驱动程序工具包 (WDK) 中。 有关完整说明，请参阅 WDK 文档中的 [PoolMon](https://docs.microsoft.com/windows-hardware/drivers/devtest/poolmon) 。
 
-### <a name="span-idenable_pool_tagging__windows_2000_and_windows_xp_spanspan-idenable_pool_tagging__windows_2000_and_windows_xp_spanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>启用池标记（Windows 2000 和 Windows XP）
+### <a name="span-idenable_pool_tagging__windows_2000_and_windows_xp_spanspan-idenable_pool_tagging__windows_2000_and_windows_xp_spanenable-pool-tagging-windows-2000-and-windows-xp"></a><span id="enable_pool_tagging__windows_2000_and_windows_xp_"></span><span id="ENABLE_POOL_TAGGING__WINDOWS_2000_AND_WINDOWS_XP_"></span>启用 (Windows 2000 和 Windows XP 的池标记) 
 
-在 Windows 2000 和 Windows XP 上，必须先使用 GFlags 来启用池标记。 GFlags 包含在 Windows 调试工具中。 启动 GFlags，选择 "**系统注册表**" 选项卡，选中 "**启用池标记**" 框，然后单击 "**应用**"。 您必须重新启动 Windows 才能使此设置生效。 有关更多详细信息，请参阅[GFlags](gflags.md)。
+在 Windows 2000 和 Windows XP 上，必须先使用 GFlags 来启用池标记。 GFlags 包含在 Windows 调试工具中。 启动 GFlags，选择 " **系统注册表** " 选项卡，选中 " **启用池标记** " 框，然后选择 " **应用**"。 您必须重新启动 Windows 才能使此设置生效。 有关更多详细信息，请参阅 [GFlags](gflags.md)。
 
 在 Windows Server 2003 和更高版本的 Windows 上，始终启用池标记。
 
@@ -57,13 +57,13 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 <thead>
 <tr class="header">
 <th align="left">命令键</th>
-<th align="left">Operation</th>
+<th align="left">操作</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>P</strong></p></td>
-<td align="left"><p>将显示的标记限制为非分页池、页面缓冲池或两者。 按顺序重复按下每个选项来重复按下<strong>P</strong> 。</p></td>
+<td align="left"><p>将显示的标记限制为非分页池、页面缓冲池或两者。 按顺序重复按下每个选项来重复按下 <strong>P</strong> 。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>B</strong></p></td>
@@ -90,7 +90,7 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 <td align="left"><p>按自由操作对标记排序。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>些</strong></p></td>
+<td align="left"><p><strong>S</strong></p></td>
 <td align="left"><p>按分配和释放之间的差异对标记排序。</p></td>
 </tr>
 <tr class="odd">
@@ -108,9 +108,9 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 
 1.  开始 PoolMon。
 
-2.  如果确定在非分页池内发生了泄漏，请按**P**一次;如果已确定它出现在页面缓冲池中，**请按两**次。 如果你不知道，请不要按**P** ，这两种类型的池都包括在内。
+2.  如果确定在非分页池内发生了泄漏，请按 **P** 一次;如果已确定它出现在页面缓冲池中， **请按两** 次。 如果你不知道，请不要按 **P** ，这两种类型的池都包括在内。
 
-3.  按**B**按最大字节使用排序显示。
+3.  按 **B** 按最大字节使用排序显示。
 
 4.  开始测试。 拍摄屏幕截图，并将其复制到记事本。
 
@@ -122,7 +122,7 @@ PoolMon 具有根据各种条件对输出进行排序的命令键。 按下与�
 
 ### <a name="span-idaddressing_the_leakspanspan-idaddressing_the_leakspanaddressing-the-leak"></a><span id="addressing_the_leak"></span><span id="ADDRESSING_THE_LEAK"></span>解决泄漏
 
-确定与该泄漏关联的池标记后，这可能会显示你需要了解的有关泄露的全部信息。 如果需要确定分配例程的哪个特定实例导致了泄漏，请参阅[使用内核调试器查找内核模式的内存泄漏](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
+确定与该泄漏关联的池标记后，这可能会显示你需要了解的有关泄露的全部信息。 如果需要确定分配例程的哪个特定实例导致了泄漏，请参阅 [使用内核调试器查找内核模式的内存泄漏](using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak.md)。
 
  
 

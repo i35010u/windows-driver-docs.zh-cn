@@ -6,33 +6,33 @@ keywords:
 - PrintTicket 文档 WDK
 - 打印票证 WDK，PrintTicket 文档
 - 文档说明 WDK 打印
-- 打印作业 WDK、 打印票证
 - 打印作业 WDK，打印票证
+- 作业 WDK 打印，打印票证
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdf5e71986cd69251c55ad8f74ad18aa7ead099
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 55e2a2929c9b44c2190470bd9aeaf118e9dc37ee
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363996"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802541"
 ---
 # <a name="print-ticket"></a>打印票证
 
 
-PrintTicket 文档是介绍如何将文档或文档部件是要打印的 XML 文档。 PrintTicket 文档可以与打印作业、 文档或文档中的页面相关联。 可以添加到 XPS 文档作为 PrintTicket 一部分 PrintTicket 文档，并将其保存与文档内容的文件中。 PrintTicket 文档还可以添加到文档，如应用程序后台处理打印的文档。
+PrintTicket 文档是一个 XML 文档，用于描述如何打印文档或文档部分。 PrintTicket 文档可与文档中的打印作业、文档或页相关联。 可以将 PrintTicket 文档作为 PrintTicket 部分添加到 XPS 文档中，并随文件中的文档内容一起保存。 当应用程序对文档进行后台打印以便打印时，还可以将 PrintTicket 文档添加到文档中。
 
-转换函数使您能够在 Microsoft Win32 应用程序中的打印票证使用。 函数是可用于将转换到的打印票证[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构和 DEVMODEW 结构回打印票证。
+转换函数使您能够在 Microsoft Win32 应用程序中打印票证使用情况。 函数可用于将打印票证转换为 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构，并将 DEVMODEW 结构转换回打印票证。
 
-本部分包含以下主题：
+本节包含下列主题：
 
-[打印票证的组织](print-ticket-organization.md)
+[打印票证组织](print-ticket-organization.md)
 
-[与 Win 32 应用程序的打印票证兼容性](print-ticket-compatibility-with-win-32-applications.md)
+[打印票证与 Win 32 应用程序的兼容性](print-ticket-compatibility-with-win-32-applications.md)
 
-[打印中打印驱动程序的处理的票证](print-ticket-processing-in-the-print-driver.md)
+[打印驱动程序中的打印票证处理](print-ticket-processing-in-the-print-driver.md)
 
-[打印 Unidrv 和 PScript5 打印驱动程序中的票证支持](print-ticket-support-in-unidrv-and-pscript5-print-drivers.md)
+[Unidrv 和 PScript5 打印驱动程序中的打印票证支持](print-ticket-support-in-unidrv-and-pscript5-print-drivers.md)
 
  
 

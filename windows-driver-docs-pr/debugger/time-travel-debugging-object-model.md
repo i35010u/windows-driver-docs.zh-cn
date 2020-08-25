@@ -3,12 +3,12 @@ title: 时光穿越调试 - 时光穿越调试对象简介
 description: 本部分介绍如何使用数据模型查询时间行程跟踪。
 ms.date: 04/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 80012c5dc98ad8c049ef18fb53158857ff9c4b2a
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 5e18d3c839a1610f23f45557415ba5a3b0772a61
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916186"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802503"
 ---
 # <a name="introduction-to-time-travel-debugging-objects"></a>行程调试对象简介
 
@@ -20,7 +20,7 @@ ms.locfileid: "72916186"
 * 在跟踪中创建/终止线程的时间
 * 跟踪中运行时间最长的线程是多少？
 
-存在将数据添加到*会话*并*处理*数据模型对象的 TTD 扩展。 可以通过[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)命令、WinDbg Preview 的模型窗口、JavaScript 和C++来访问 TTD 数据模型对象。 调试时间行程跟踪时，会自动加载 TTD 扩展。
+存在将数据添加到 *会话* 并 *处理* 数据模型对象的 TTD 扩展。 可以通过 [dx (显示调试器对象模型表达式) ](dx--display-visualizer-variables-.md) 命令、WinDbg 预览的模型窗口、JavaScript 和 c + + 来访问 TTD 数据模型对象。 调试时间行程跟踪时，会自动加载 TTD 扩展。
 
 ## <a name="process-objects"></a>处理对象
 
@@ -35,21 +35,21 @@ ms.locfileid: "72916186"
     SetPosition      [Sets the debugger to point to the given position on this process.]
 ```
 
-有关使用 LINQ 查询和调试器对象的常规信息，请参阅[将 Linq 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)。
+有关使用 LINQ 查询和调试器对象的常规信息，请参阅 [将 Linq 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)。
 
-### <a name="properties"></a>“属性”
+### <a name="properties"></a>属性
 
-| 对象 | 描述 |
+| 对象 | 说明 |
 | --- | --- |
-| 生存期 | 描述整个跟踪的生存期的[TTD 范围对象](time-travel-debugging-range-objects.md)。 |
-| 线程 | 包含[TTD 线程对象](time-travel-debugging-thread-objects.md)的集合，每个线程在跟踪的整个生存期内都一个。 |
-| 事件 | 包含[TTD 事件对象](time-travel-debugging-event-objects.md)的集合，其中每个事件都对应于跟踪中的每个事件。 |
+| 生存期 | 描述整个跟踪的生存期的 [TTD 范围对象](time-travel-debugging-range-objects.md) 。 |
+| 线程数 | 包含 [TTD 线程对象](time-travel-debugging-thread-objects.md)的集合，每个线程在跟踪的整个生存期内都一个。 |
+| 事件 | 包含 [TTD 事件对象](time-travel-debugging-event-objects.md)的集合，其中每个事件都对应于跟踪中的每个事件。 |
 
 ### <a name="methods"></a>方法
 
-| 方法 | 描述 |
+| 方法 | 说明 |
 | --- | --- |
-| SetPosition （） | 采用0到100之间的整数或以 N：N 形式表示的字符串作为输入，并将跟踪跳转到该位置。 有关详细信息，请参阅[！ tt](time-travel-debugging-extension-tt.md) 。|
+| SetPosition ( # A1 | 采用0到100之间的整数或以 N：N 形式表示的字符串作为输入，并将跟踪跳转到该位置。 有关详细信息，请参阅 [！ tt](time-travel-debugging-extension-tt.md) 。|
 
 ## <a name="session-objects"></a>会话对象
 可在任何*会话*对象的*TTD*命名空间中找到添加到*会话*对象的主对象。 例如，`@$cursession.TTD`。
@@ -73,16 +73,16 @@ ms.locfileid: "72916186"
 
 ### <a name="methods"></a>方法
 
-| 方法 | 描述 |
+| 方法 | 说明 |
 | --- | --- |
-| 数据集（） | 在跟踪过程中分配的[堆对象](time-travel-debugging-heap-objects.md)的集合。 请注意，这是一个执行计算的函数，因此需要一段时间才能运行。|
-| 调用（） | 返回一个集合，该集合调用与输入字符串匹配的[对象](time-travel-debugging-calls-objects.md)。 输入字符串可以包含通配符。 请注意，这是一个执行计算的函数，因此需要一段时间才能运行。  |
-| 内存（） | 此方法采用 beginAddress、endAddress 和 dataAccessMask 参数，并返回[内存对象](time-travel-debugging-memory-objects.md)的集合。 请注意，这是一个执行计算的函数，因此需要一段时间才能运行。  |
+| 数据。堆 ( # A1 | 在跟踪过程中分配的 [堆对象](time-travel-debugging-heap-objects.md) 的集合。 请注意，这是一个执行计算的函数，因此需要一段时间才能运行。|
+| 调用 ( # A1 | 返回一个集合，该集合调用与输入字符串匹配的 [对象](time-travel-debugging-calls-objects.md) 。 输入字符串可以包含通配符。 请注意，这是一个执行计算的函数，因此需要一段时间才能运行。  |
+| 内存 ( # A1 | 此方法采用 beginAddress、endAddress 和 dataAccessMask 参数，并返回 [内存对象](time-travel-debugging-memory-objects.md)的集合。 请注意，这是一个执行计算的函数，因此需要一段时间才能运行。  |
 
 
 ## <a name="sorting-query-output"></a>排序查询输出
 
-使用 OrderBy （）方法对一个或多个列从查询返回的行进行排序。 此示例按 TimeStart 按升序排序。
+使用 OrderBy ( # A1 方法对一个或多个列从查询返回的行进行排序。 此示例按 TimeStart 按升序排序。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("kernelbase!GetLastError").OrderBy(c => c.TimeStart)
@@ -111,7 +111,7 @@ ms.locfileid: "72916186"
         Parameters  
 ```
 
-若要显示数据模型对象的其他深度，请使用-r2 递归级别选项。 有关 dx 命令选项的详细信息，请参阅[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)。
+若要显示数据模型对象的其他深度，请使用-r2 递归级别选项。 有关 dx 命令选项的详细信息，请参阅 [dx (显示调试器对象模型表达式) ](dx--display-visualizer-variables-.md)。
 
 此示例按 TimeStart 按降序排序。
 
@@ -163,7 +163,7 @@ ms.locfileid: "72916186"
 
 ## <a name="filtering-in-a-query"></a>查询中的筛选
 
-使用 Select （）方法可选择要查看和修改列显示名称的列。
+使用 Select ( # A1 方法选择要查看和修改列显示名称的列。
 
 此示例返回 ReturnValue 不为零的行，并选择显示具有自定义显示名称和错误的 TimeStart 和 ReturnValue 列。
 
@@ -185,7 +185,7 @@ ms.locfileid: "72916186"
 
 ## <a name="grouping"></a>分组
 
-使用 GroupBy （）方法对查询返回的数据进行分组，以使用结构化结果执行分析。此示例按错误号对时间位置进行分组。
+使用 GroupBy ( # A1 方法对查询返回的数据进行分组，以便使用结构化结果执行分析。此示例按错误号对时间位置进行分组。
 
 ```dbgcmd
 0:000> dx -r2 @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c => c.ReturnValue != 0).Select(c => new { Time = c.TimeStart, Error = c.ReturnValue }).GroupBy(x => x.Error)
@@ -214,7 +214,7 @@ ms.locfileid: "72916186"
 dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c => c.ReturnValue != 0).Select(c => new { Time = c.TimeStart, Error = c.ReturnValue })
 ```
 
-使用 dx 命令可使用-g 网格选项显示新创建的变量。 有关 dx 命令选项的详细信息，请参阅[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)。
+使用 dx 命令可使用-g 网格选项显示新创建的变量。 有关 dx 命令选项的详细信息，请参阅 [dx (显示调试器对象模型表达式) ](dx--display-visualizer-variables-.md)。
 
 ```dbgcmd
 0:000> dx -g @$myResults
@@ -235,7 +235,7 @@ dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c =
 
 ### <a name="querying-for-exceptions"></a>查询异常
 
-此 LINQ 查询使用[TTD。](time-travel-debugging-event-objects.md)用于显示跟踪中的所有异常的事件对象。
+此 LINQ 查询使用 [TTD。](time-travel-debugging-event-objects.md) 用于显示跟踪中的所有异常的事件对象。
 
 ```dbgcmd
 0:000> dx @$curprocess.TTD.Events.Where(t => t.Type == "Exception").Select(e => e.Exception)
@@ -247,7 +247,7 @@ dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c =
 
 ### <a name="querying-for-specific-api-calls"></a>查询特定的 API 调用
 
-请使用[TTD。调用对象](time-travel-debugging-calls-objects.md)以查询特定的 API 调用。 在此示例中，调用 user32 时出错 *！MessageBoxW*，WINDOWS API 用于显示消息框。 我们列出了对 MessageBoxW 的所有调用，按函数的开始时间对其进行排序，然后选择最后一个调用。
+请使用 [TTD。调用对象](time-travel-debugging-calls-objects.md) 以查询特定的 API 调用。 在此示例中，调用 user32 时出错 *！MessageBoxW*，WINDOWS API 用于显示消息框。 我们列出了对 MessageBoxW 的所有调用，按函数的开始时间对其进行排序，然后选择最后一个调用。
 
 ```dbgcmd
 0:000> dx @$cursession.TTD.Calls("user32!MessageBoxW").OrderBy(c => c.TimeStart).Last()
@@ -267,7 +267,7 @@ dx -r2 @$myResults = @$cursession.TTD.Calls("kernelbase!GetLastError").Where(c =
 
 ### <a name="querying-for-the-load-event-of-a-specific-module"></a>查询特定模块的 load 事件
 
-首先，使用 " [lm （列表加载的模块）](lm--list-loaded-modules-.md) " 命令显示已加载的模块。
+首先，使用 " [lm (列出加载的模块") ](lm--list-loaded-modules-.md) 命令来显示已加载的模块。
 
 ```dbgcmd
 0:000> lm
@@ -291,7 +291,7 @@ dx @$curprocess.TTD.Events.Where(t => t.Type == "ModuleLoaded").Where(t => t.Mod
     [0x0]            : Module Loaded at position: A:0 
 ```
 
-此 LINQ 查询显示特定模块的加载事件。
+此 LINQ 查询显示特定模块 (s) 的 load 事件。
 
 ```dbgcmd
 0:000> dx @$curprocess.TTD.Events.Where(t => t.Type == "ModuleUnloaded").Where(t => t.Module.Name.Contains("ntdll.dll")) 
@@ -321,7 +321,7 @@ FFFFFFFFFFFFFFFE 的地址：0指示跟踪的结束。
 
 ### <a name="querying-for-the-time-position-in-the-trace-when-threads-were-created"></a>在创建线程时查询跟踪中的时间位置
 
-使用此 dx 命令以网格格式（-g）显示跟踪中的所有事件。
+使用此 dx 命令以网格格式 (-g) 中显示跟踪中的所有事件。
 
 ```dbgcmd
 0:000> dx -g @$curprocess.TTD.Events
@@ -355,9 +355,9 @@ FFFFFFFFFFFFFFFE 的地址：0指示跟踪的结束。
 ==================================================================================================================================================================================================
 ```
 
-单击带有 + 号的任何列以对输出进行排序。
+选择包含 "+" 符号的任何列以对输出进行排序。
 
-使用此 LINQ 查询以网格格式显示，在创建线程时跟踪跟踪中的时间位置（键入 = = "ThreadCreated"）。
+使用此 LINQ 查询以网格格式显示、创建线程时跟踪中的时间位置 (Type = = "ThreadCreated" ) 。
 
 ```dbgcmd
 dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => t.Thread) 
@@ -370,7 +370,7 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
 ===========================================================================================================
 ```
 
-使用此 LINQ 查询以网格格式显示，当线程终止时跟踪跟踪中的时间位置（Type = = "ThreadTerminated"）。
+使用此 LINQ 查询以网格格式显示，当线程终止时跟踪跟踪中的时间位置 (Type = = "ThreadTerminated" ) 。
 
 ```dbgcmd
 0:000> dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadTerminated").Select(t => t.Thread) 
@@ -413,9 +413,9 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
 
 ### <a name="querying-for-read-accesses-to-a-memory-range"></a>查询对内存范围的读访问 
 
-请使用[TTD。](time-travel-debugging-memory-objects.md)用于查询以查询对内存范围的读取访问的内存对象。
+请使用 [TTD。](time-travel-debugging-memory-objects.md) 用于查询以查询对内存范围的读取访问的内存对象。
 
-线程环境块（TEB）是一个结构，其中包含有关线程状态的所有信息，包括 GetLastError （）返回的结果。 您可以通过为当前线程运行 `dx @$teb` 来查询此数据结构。 TEB 的成员之一是 LastErrorValue 变量，大小为4个字节。 使用此语法，可以引用 TEB 中的 LastErrorValue 成员。 `dx &@$teb->LastErrorValue`。
+线程环境块 (TEB) 是一个结构，其中包含有关线程状态的所有信息，包括 GetLastError ( # A3 返回的结果。 您可以通过为当前线程运行来查询此数据结构 `dx @$teb` 。 TEB 的成员之一是 LastErrorValue 变量，大小为4个字节。 使用此语法，可以引用 TEB 中的 LastErrorValue 成员。 `dx &@$teb->LastErrorValue`.
 
 示例查询显示了如何在内存中查找在该范围内完成的每个读取操作，选择在创建对话框之前发生的所有读取，然后对结果进行排序以查找上次读取操作。
 
@@ -428,7 +428,7 @@ dx -g @$curprocess.TTD.Events.Where(t => t.Type == "ThreadCreated").Select(t => 
     [0x3]     
 ```
 
-如果在跟踪中发生了 "对话" 事件，则可以运行查询来查找在内存中该范围内完成的每个读取操作，选择创建该对话框之前发生的所有读取，然后对结果进行排序以查找上次读取操作。 然后，通过在生成的时间位置调用 SeekTo （），将时间移动到该时间点。
+如果在跟踪中发生了 "对话" 事件，则可以运行查询来查找在内存中该范围内完成的每个读取操作，选择创建该对话框之前发生的所有读取，然后对结果进行排序以查找上次读取操作。 然后，通过在生成的时间位置上调用 SeekTo ( # A1，将时间移动到该时间点。
 
 ```dbgcmd
 
@@ -442,7 +442,7 @@ ModLoad: 76cc0000 76cce000   C:\WINDOWS\System32\MSASN1.dll
 
 ## <a name="github-ttd-query-lab"></a>GitHub TTD 查询实验室
 
-有关如何使用时间行程调试记录C++调试代码的教程，请参阅使用查询查找有关如何执行有问题的代码的信息的详细信息，请参阅 https://github.com/Microsoft/WinDbg-Samples/blob/master/TTDQueries/tutorial-instructions.md 。
+有关如何使用时间段调试记录调试 c + + 代码的教程，请参阅使用查询查找有关如何执行有问题的代码的信息。有关详细信息，请参阅 https://github.com/Microsoft/WinDbg-Samples/blob/master/TTDQueries/tutorial-instructions.md 。
 
 实验室中使用的所有代码都可在此处找到： https://github.com/Microsoft/WinDbg-Samples/tree/master/TTDQueries/app-sample 。
 
@@ -461,19 +461,19 @@ ModLoad: 76cc0000 76cce000   C:\WINDOWS\System32\MSASN1.dll
 
 查询不会返回任何内容来调用 DLL，这可能有多种原因。
 
-- 调用的语法不是很正确。  尝试使用 x 命令验证调用语法： "x <call>"。 如果 x 返回的模块名称采用大写形式，则使用该名称。
+- 调用的语法不是很正确。  尝试使用 x 命令验证调用语法： "x <call> "。 如果 x 返回的模块名称采用大写形式，则使用该名称。
 - DLL 尚未加载，稍后会在跟踪中加载。 若要解决此情况，请在加载 DLL 后的某个时间点执行此操作，然后重做查询。
 - 调用是内联的，查询引擎无法跟踪。
 - 查询模式使用返回太多函数的通配符。  请尝试使该查询模式更为具体，使匹配函数的数量足够小。
 
 ## <a name="see-also"></a>另请参阅
 
-[将 LINQ 用于调试器对象](using-linq-with-the-debugger-objects.md)
+[将 LINQ 与调试器对象配合使用](using-linq-with-the-debugger-objects.md)
 
-[dx （显示调试器对象模型表达式）](dx--display-visualizer-variables-.md)
+[dx (显示调试器对象模型表达式) ](dx--display-visualizer-variables-.md)
 
-[行程调试-概述](time-travel-debugging-overview.md)
+[时光穿越调试 - 概述](time-travel-debugging-overview.md)
 
-[行程调试-JavaScript 自动化](time-travel-debugging-javascript-automation.md)
+[时光穿越调试 - JavaScript 自动化](time-travel-debugging-javascript-automation.md)
 
 ---

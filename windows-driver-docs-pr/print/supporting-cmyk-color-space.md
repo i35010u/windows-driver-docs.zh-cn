@@ -3,17 +3,17 @@ title: 支持 CMYK 色彩空间
 description: 支持 CMYK 色彩空间
 ms.assetid: b8ac5f1a-c903-4313-b7de-0335f4c44367
 keywords:
-- CMYK 颜色空间 WDK 打印
+- CMYK 色彩空间 WDK 打印
 - BR_CMYKCOLOR
 - XO_FROM_CMYK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d8265864dce8a711d202a8fe6396a074a46e0be
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db31c197d4589e19d4f344ed953888cf09dacff9
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354464"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802363"
 ---
 # <a name="supporting-cmyk-color-space"></a>支持 CMYK 色彩空间
 
@@ -21,13 +21,13 @@ ms.locfileid: "67354464"
 
 
 
-而不考虑是否颜色管理是正在处理的应用程序、 系统、 驱动程序或设备，打印机图形 DLL 颜色空间。 这是通过设置 GCAPS\_CMYKCOLOR 标志[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构。 如果设置此标志和 CMYK 配置文件正在使用中，GDI 将 CMYK 颜色数据，而不是 RGB 数据发送到打印机图形 DLL 的位图、 画笔和钢笔中。 GDI 还会设置以下标志：
+无论应用程序、系统、驱动程序或设备是否正在处理颜色管理，打印机图形 DLL 的颜色空间都是如此。 这是通过 \_ 在 [**lnk-devinfo**](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-tagdevinfo) 结构中设置 GCAPS CMYKCOLOR 标志来完成的。 如果设置了此标志并使用了 CMYK 配置文件，则 GDI 会将 CMYK 颜色数据（而不是 RGB 数据）发送到位图、画笔和笔的打印机图形 DLL。 GDI 还设置以下标志：
 
--   BR\_CMYKCOLOR 标志**flColorType**的成员[ **BRUSHOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_brushobj)结构。
+-   \_ [**BRUSHOBJ**](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-_brushobj)结构的**FLCOLORTYPE**成员中的 BR CMYKCOLOR 标志。
 
--   XO\_FROM\_CMYK 标志**flXlate**的成员[ **XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)结构。
+-   \_ \_ [**XLATEOBJ**](https://docs.microsoft.com/windows/win32/api/winddi/ns-winddi-_xlateobj)结构的**flXlate**成员中的来自 CMYK 标志的 XO。
 
-请注意，是否该驱动程序支持 CMYK 颜色空间，它还必须支持半色调。 因此如果驱动程序设置 GCAPS\_CMYKCOLOR 标志在 DEVINFO，它必须设置 GCAPS\_半色调。
+请注意，如果驱动程序支持 CMYK 颜色空间，则它还必须支持半色调。 因此，如果驱动程序 \_ 在 lnk-devinfo 中设置 GCAPS CMYKCOLOR 标志，还必须设置 GCAPS \_ 半色调。
 
  
 

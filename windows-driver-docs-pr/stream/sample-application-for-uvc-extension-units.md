@@ -7,22 +7,22 @@ keywords:
 - 示例代码 WDK USB 视频类，UVC 扩展单元
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 68144abcaf7519e88f58a6e7461a30e5b4c0bcbc
-ms.sourcegitcommit: 31fa7dbbcd051d7ec1ea3e05a4c0340af9d3b8a7
+ms.openlocfilehash: 11374359c3942363623aa1c1d4f9f010af477913
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85073426"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802789"
 ---
 # <a name="sample-application-for-uvc-extension-units"></a>UVC 扩展单元的示例应用程序
 
 本主题包含可用于支持扩展单元的示例应用程序代码。
 
-应用程序通过使用[**IKsTopologyInfo：： CreateNodeInstance**](https://docs.microsoft.com/previous-versions/windows/desktop/api/Vidcap/nf-vidcap-ikstopologyinfo-createnodeinstance) ，然后调用节点对象上的**QueryInterface**以获取所需的 COM API 来访问接口。 有关详细信息，请参阅[**IKsTopologyInfo**](https://docs.microsoft.com/previous-versions/windows/desktop/api/Vidcap/nn-vidcap-ikstopologyinfo)。
+应用程序通过使用 [**IKsTopologyInfo：： CreateNodeInstance**](https://docs.microsoft.com/previous-versions/windows/win32/api/Vidcap/nf-vidcap-ikstopologyinfo-createnodeinstance) ，然后调用节点对象上的 **QueryInterface** 以获取所需的 COM API 来访问接口。 有关详细信息，请参阅 [**IKsTopologyInfo**](https://docs.microsoft.com/previous-versions/windows/win32/api/Vidcap/nn-vidcap-ikstopologyinfo)。
 
 在应用程序源中包含名为 TestApp 的以下代码。
 
-还包括在 TestApp 中所示的代码，[支持带有扩展单元的自动更新事件](supporting-autoupdate-events-with-extension-units.md)。
+还包括在 TestApp 中所示的代码， [支持带有扩展单元的自动更新事件](supporting-autoupdate-events-with-extension-units.md)。
 
 ```cpp
   // pUnkOuter is the unknown associated with the base filter
@@ -80,6 +80,6 @@ ms.locfileid: "85073426"
      pbPropertyValue));
 ```
 
-在这种情况下， **pUnkOuter**应是指向捕获筛选器的指针，该对象表示 USB 视频类（UVC）设备。 将捕获筛选器添加到筛选器关系图后，可以查询**IKsTopologyInfo**接口的筛选器，如下面的示例代码所示。
+在这种情况下， **pUnkOuter** 应为指向捕获筛选器的指针，该指针表示) 设备 (UVC 的 USB 视频类。 将捕获筛选器添加到筛选器关系图后，可以查询 **IKsTopologyInfo** 接口的筛选器，如下面的示例代码所示。
 
-编写**FindExtensionNode**函数的代码以查找必需的扩展单元节点并在*dwExtensionNode*中返回其 ID。 此 ID 在此示例代码中对**IKsTopologyInfo：： CreateNodeInstance**方法的后续调用中使用。
+编写 **FindExtensionNode** 函数的代码以查找必需的扩展单元节点并在 *dwExtensionNode*中返回其 ID。 此 ID 在此示例代码中对 **IKsTopologyInfo：： CreateNodeInstance** 方法的后续调用中使用。

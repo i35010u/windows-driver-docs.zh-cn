@@ -3,26 +3,25 @@ title: SimpleService WSDL
 description: SimpleService WSDL
 ms.assetid: 4fb5fcb7-9821-47c8-ae0d-3e73f8ee30c5
 keywords:
-- WSDBIT 工具 WDK WSDL
-- WSDAPI 基本互操作性工具 WDK WSDL
+- WSDBIT 工具 WDK，WSDL
+- WSDAPI 基本互操作性工具 WDK、WSDL
 - SimpleService 服务 WDK WSDBIT
 - WSDBIT 工具 WDK，服务
-- WSDAPI 基本互操作性工具 WDK 服务
+- WSDAPI 基本互操作性工具 WDK，服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c258f0f8e303a07c2a5d176730a4958e30e5c11f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc468a2552826d99a317e9940c5a826a3c840add
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378024"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802629"
 ---
 # <a name="simpleservice-wsdl"></a>SimpleService WSDL
 
+下面的代码示例演示了 SimpleService WSDL。
 
-下面的代码示例显示了 SimpleService WSDL。
-
-```
+```xml
 <wsdl:definitions
     targetNamespace="http://schemas.example.org/SimpleService"
     xmlns:tns="http://schemas.example.org/SimpleService"
@@ -34,11 +33,11 @@ ms.locfileid: "63378024"
     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
     xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
     xmlns:wsf="http://schemas.xmlsoap.org/ws/2004/09/transfer">
- 
+
     <wsp:Policy wsu:Id="Simple">
         <wsdp:Profile />
     </wsp:Policy>
- 
+
     <wsdl:types>
         <xs:schema
             targetNamespace="http://schemas.example.org/SimpleService"
@@ -174,7 +173,7 @@ ms.locfileid: "63378024"
         <wsdl:part name="parameters" element="tns:AnyCheckResponse" />
     </wsdl:message>
 
- 
+
     <wsdl:portType name="SimpleService">
         <wsdl:operation name="OneWay">
             <wsdl:input
@@ -206,7 +205,7 @@ ms.locfileid: "63378024"
                 wsa:Action="http://schemas.example.org/SimpleService/AnyCheckResponse"/>
         </wsdl:operation>
     </wsdl:portType>
- 
+
     <wsdl:binding name="SimpleServiceSoap12Binding" type="tns:SimpleService">
         <wsoap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
         <wsp:PolicyReference URI="#Simple" wsdl:required="true" />
@@ -248,7 +247,7 @@ ms.locfileid: "63378024"
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
- 
+
     <wsdl:service name="SimpleService">
         <wsdl:port
             name="SimplePort"
@@ -256,15 +255,6 @@ ms.locfileid: "63378024"
             <wsoap12:address location="http://localhost/WebService/Simple.asmx" />
         </wsdl:port>
     </wsdl:service>
- 
-</wsdl:definitions> 
+
+</wsdl:definitions>
 ```
-
- 
-
- 
-
-
-
-
-

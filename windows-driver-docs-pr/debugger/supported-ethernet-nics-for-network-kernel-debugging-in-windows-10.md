@@ -1,21 +1,21 @@
 ---
 title: Windows 10 中的网络内核调试支持的以太网 NIC
-description: 当目标计算机运行 Windows 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡（NIC）或网络适配器。
+description: 当目标计算机运行 Windows 时，可以通过以太网网络电缆进行内核调试。 目标计算机必须具有支持的网络接口卡 (NIC) 或网络适配器。
 ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
 ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e755edd79137b8f4d293d9e67fc6c48c5df2e82
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 4cba196086f8387971f177c04eaa5dfb88e7de08
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593965"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802673"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 中的网络内核调试支持的以太网 NIC
 
-若要通过以太网网络电缆进行内核调试，目标计算机必须具有支持的网络接口卡（NIC）。
+若要通过以太网网络电缆进行内核调试，目标计算机必须具有支持的网络接口卡 (NIC) 。
 
-在内核调试过程中，运行调试器的计算机称为*主机计算机*，被调试的计算机称为*目标计算机*。 有关详细信息，请参阅[自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
+在内核调试过程中，运行调试器的计算机称为 *主机计算机*，被调试的计算机称为 *目标计算机*。 有关详细信息，请参阅 [自动设置 KDNET 网络内核调试](setting-up-a-network-debugging-connection-automatically.md)。
 
 若要通过网络电缆进行内核调试，目标计算机必须具有支持的网络适配器。 当目标计算机运行 Windows 时，此处列出的网络适配器支持内核调试。
 
@@ -23,26 +23,26 @@ ms.locfileid: "85593965"
 
 本主题列出了以下 Windows 版本支持的适配器
 
-- Windows 10 版本2004（20H1）版本19041
+- Windows 10 版本 2004 (20H1) 版本19041
 - Windows Server 2019
 
 ## <a name="adapter-support-for-previous-releases-of-windows-10"></a>Windows 10 以前版本的适配器支持
 
 请参阅以下主题，了解以前版本的 Windows 10 中的 Nic 支持的版本。
 
-[Windows 10-1909 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1909.md)
+[Windows 10 版本 1909 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1909.md)
 
-[Windows 10-1903 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1903.md)
+[Windows 10 版本 1903 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1903.md)
 
-[Windows 10-1809 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1809.md)
+[Windows 10 版本 1809 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1809.md)
 
-[Windows 10-1803 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1803.md)
+[Windows 10 版本 1803 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1803.md)
 
-[Windows 10-1709 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1709.md)
+[Windows 10 版本 1709 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1709.md)
 
-[Windows 10-1703 中用于网络内核调试的受支持以太网 Nic](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1703.md)
+[Windows 10 版本 1703 中的网络内核调试支持的以太网 NIC](supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1703.md)
 
-**使用 VerifiedNicList.xml确定 NIC 支持**  
+**使用 VerifiedNicList.xml确定 NIC 支持 **  
 
 若要确定适用于任何特定版本的 Windows 的 Nic 集，请检查 `VerifiedNicList.xml` 由该特定版本的 windows 附带的 WDK 安装的 "调试器" 目录中的文件。 对于64位 Windows，默认情况下，它将安装在此目录中：
 
@@ -54,10 +54,10 @@ ms.locfileid: "85593965"
 
 查找目标计算机上的网络适配器的供应商 ID 和设备 ID。
 
-- 在目标计算机上，打开设备管理器（在命令提示符窗口中输入**devmgmt.msc** ）。
+- 在目标计算机上，打开设备管理器 (在命令提示符窗口中输入 **devmgmt.msc**) "。
 - 在设备管理器中，找到要用于调试的网络适配器。
-- 右键单击网络适配器节点，然后选择 "**属性**"。
-- 在 "**详细信息**" 选项卡的 "**属性**" 下，选择 "**硬件 id**"。
+- 选择并按住 (或右键单击 "网络适配器" 节点) ，然后选择 " **属性**"。
+- 在 " **详细信息** " 选项卡的 " **属性**" 下，选择 " **硬件 id**"。
 
 供应商和设备 Id 显示为即使 \_ *VENDORID*和 DEV \_ *DeviceID*。 例如，如果你看到 PCI \\ 即使 \_ 8086&DEV \_ 104B，则供应商 id 为8086，设备 id 为104B。
 
@@ -85,7 +85,7 @@ ms.locfileid: "85593965"
 
 1062 1063 1073 1083 1090 1091 10A0 10A1 10B0 10B1 10C0 10C1 10D0 10D1 10E0 10E1 10F0 10F1 2060 2062 E091 E0A1 E0B1 E0C1 E0D1 E0E1 E0F1
 
-### <a name="vendor-id-19a2-serverengines-emulex"></a>供应商 ID 19A2，ServerEngines （Emulex）
+### <a name="vendor-id-19a2-serverengines-emulex"></a>供应商 ID 19A2，ServerEngines (Emulex) 
 
 对于供应商 ID 19A2，支持以下设备 Id：
 

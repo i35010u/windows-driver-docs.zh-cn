@@ -3,33 +3,32 @@ title: AttachmentService WSDL
 description: AttachmentService WSDL
 ms.assetid: 1a886bd8-5eb4-4990-9d39-bacbbbbe3d3d
 keywords:
-- WSDBIT 工具 WDK WSDL
-- WSDAPI 基本互操作性工具 WDK WSDL
+- WSDBIT 工具 WDK，WSDL
+- WSDAPI 基本互操作性工具 WDK、WSDL
 - AttachmentService 服务 WDK WSDBIT
 - WSDBIT 工具 WDK，服务
-- WSDAPI 基本互操作性工具 WDK 服务
+- WSDAPI 基本互操作性工具 WDK，服务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87b5d017eff6782668e8a539e6bc40ceb32f29a8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03297db4e7aa7d80dfd347238308cd3e0826ec1b
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361287"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802747"
 ---
 # <a name="attachmentservice-wsdl"></a>AttachmentService WSDL
 
+下面的代码示例演示了 AttachmentService WSDL。
 
-下面的代码示例显示了 AttachmentService WSDL。
-
-```
-<wsdl:definitions 
- targetNamespace="http://schemas.example.org/AttachmentService" 
+```command
+<wsdl:definitions
+ targetNamespace="http://schemas.example.org/AttachmentService"
  xmlns:tns="http://schemas.example.org/AttachmentService"
- xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" 
- xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
- xmlns:wsdp="http://schemas.xmlsoap.org/ws/2005/05/devprof" 
- xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+ xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:wsdp="http://schemas.xmlsoap.org/ws/2005/05/devprof"
+ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
  xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
@@ -41,23 +40,23 @@ ms.locfileid: "63361287"
  </wsp:Policy>
 
  <wsdl:types>
- <xs:schema 
+ <xs:schema
    targetNamespace="http://schemas.example.org/AttachmentService"
-   xmlns:tns="http://schemas.example.org/AttachmentService" 
+   xmlns:tns="http://schemas.example.org/AttachmentService"
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified" 
+   elementFormDefault="qualified"
    blockDefault="#all" >
  <xs:element name="OneWayAttachment" type="tns:AttachmentType" />
  <xs:complexType name="AttachmentType" >
  <xs:sequence>
  <xs:element name="Param" type="xs:base64Binary" />
- <xs:any minOccurs="0" maxOccurs="unbounded" 
+ <xs:any minOccurs="0" maxOccurs="unbounded"
  namespace="##other" processContents="lax" />
  </xs:sequence>
  <xs:anyAttribute namespace="##other"
  processContents="lax" />
  </xs:complexType>
- <xs:element name="TwoWayAttachmentRequest"    
+ <xs:element name="TwoWayAttachmentRequest"
  type="tns:AttachmentType" />
  <xs:element name="TwoWayAttachmentResponse"
  type="tns:AttachmentType" />
@@ -116,7 +115,7 @@ ms.locfileid: "63361287"
  </wsdl:binding>
 
  <wsdl:service name="AttachmentService">
- <wsdl:port 
+ <wsdl:port
  name="AttachmentPort"
  binding="tns:AttachmentServiceSoap12Binding">
  <wsoap12:address
@@ -126,12 +125,3 @@ ms.locfileid: "63361287"
 
 </wsdl:definitions>
 ```
-
- 
-
- 
-
-
-
-
-

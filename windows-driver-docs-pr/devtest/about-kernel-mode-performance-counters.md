@@ -2,33 +2,31 @@
 title: 关于内核模式性能计数器
 description: 关于内核模式性能计数器
 ms.assetid: 57655e65-6db4-487d-8831-282e8d30d84e
-ms.date: 04/20/2017
+ms.date: 08/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80fce5d09c2d60eaa2432de0a89d5eb2f2d74990
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: e579e7ee2866560b635a9bb71e54ab0d53350d8a
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769421"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802571"
 ---
 # <a name="about-kernel-mode-performance-counters"></a>关于内核模式性能计数器
 
+性能计数器是组件发布的值，以允许系统管理员和开发人员了解组件的状态。 例如，网络组件可能会发布通过网络连接发送的数据包数。
 
-Windows 性能计数器（PCW）与系统中的不同组件进行交互，并跟踪内核模式组件提供的计数器集（及其实例）。 此外，PCW 通过检查计数器集并返回所请求的数据，来跟踪使用者的服务请求。
+Windows 性能计数器系统允许各种不同的组件通过一致且可发现的接口发布性能计数器。 Windows 性能计数器发布服务器通过 GUI 工具 (（例如 perfmon) 、命令行工具 (如 typeperf) ）和 Api (（例如 PDH 和 WMI) ）使用。 有关详细信息，请参阅 [性能计时器](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal)。 发布性能计数器的组件称为性能计数器提供程序。
 
-内核模式 PCW 提供程序在系统中安装为性能计数器库（PERFLIB）（版本2提供程序），这允许浏览其计数器，并允许数据收集和实例枚举。 使用者无需修改使用者代码即可使用 PDH 和 PERFLIB 版本1查询 KM PCW 提供程序。 有关详细信息，请参阅 [性能计时器](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal)。
+可以通过三种方式发布性能计数器值。
 
-在内核模式下运行的提供程序通过使用内核模式 PCW 提供程序 API 来注册其计数器集。 提供程序可以管理已注册计数器集的实例，并在发生与性能计数器相关的各种事件时（例如，使用者添加、删除或收集计数器时）通知通知。
+1. 用户模式组件 (例如，服务) 可以通过 [PerfLib api](https://docs.microsoft.com/windows/win32/perfctrs/providing-counter-data-using-version-2-0)发布计数器。
+2. 内核模式组件 (例如，驱动程序) 可以通过 [PCW api](using-kernel-mode-performance-counters.md)发布计数器。
+3. 进程内 [性能扩展 DLL](https://docs.microsoft.com/windows/win32/perfctrs/providing-counter-data-using-a-performance-dll) 可执行自定义集合。 请注意，进程内性能扩展 Dll 已弃用，由于性能和可靠性问题，新组件 **不应使用** 它们。
 
-**注意**   Windows 7 中引入的内核模式 PCW 提供程序 API （PERFLIB 版本2）目前不支持会话空间驱动程序。
+Windows (PCW 的性能计数器) 跟踪内核模式组件提供的 countersets。 它将使用者数据收集请求路由到相应的内核模式组件，并将请求的数据返回给用户模式使用者。
 
- 
+## <a name="related-topics"></a>相关主题
 
- 
+[使用内核模式性能计数器](using-kernel-mode-performance-counters.md)
 
- 
-
-
-
-
-
+[性能计数器门户](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal)

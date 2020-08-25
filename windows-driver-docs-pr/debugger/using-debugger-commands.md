@@ -1,16 +1,16 @@
 ---
 title: 使用调试器命令
-description: 本部分介绍如何使用调试器命令。 输入命令提示符窗口的底部。
+description: 本部分介绍如何使用调试器命令。 在窗口底部的提示符下输入命令。
 ms.assetid: 64dcc364-53b5-41d3-9266-abcfe4b328f4
-keywords: 命令、 调试器命令和元命令
+keywords: 命令，调试器命令，元命令
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 77bf91529add011f250f17e483bc37311015597b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eda0b83310158a373655ec71425b87e20e72c683
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371631"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802499"
 ---
 # <a name="using-debugger-commands"></a>使用调试器命令
 
@@ -18,133 +18,133 @@ ms.locfileid: "63371631"
 ## <span id="ddk_using_debugger_commands_dbg"></span><span id="DDK_USING_DEBUGGER_COMMANDS_DBG"></span>
 
 
-对于 KD 或 CDB，"调试器命令窗口"是指整个窗口。 输入命令提示符窗口的底部。 如果命令有任何输出，窗口将显示输出，然后再次显示提示符。
+对于 KD 或 CDB，"调试器命令窗口" 指的是整个窗口。 在窗口底部的提示符下输入命令。 如果命令有任何输出，则该窗口将显示输出，并再次显示该提示。
 
-有关 Visual Studio 中，"调试器命令窗口"是指一个窗口，其中在标题栏中标记为"调试器即时窗口"。 此窗口具有两个窗格：
+对于 Visual Studio，"调试器命令窗口" 是指标题栏中标记为 "调试器即时窗口" 的窗口。 此窗口有两个窗格：
 
--   在小型的底部窗格中，输入命令。
+-   在小的底部窗格中，输入命令。
 
--   在大型、 上部窗格中，您可以查看命令输出。
+-   在大、上部窗格中，你可以查看命令输出。
 
-有关的 WinDbg 中，"调试器命令窗口"是指将在标题栏中标记为"命令"窗口。 此窗口包含两个窗格：
+对于 WinDbg，"调试器命令窗口" 是指标题栏中标记为 "Command" 的窗口。 此窗口包含两个窗格：
 
--   在小型的底部窗格中，输入命令。
+-   在小的底部窗格中，输入命令。
 
--   在大型、 上部窗格中，您可以查看命令输出。
+-   在大、上部窗格中，你可以查看命令输出。
 
-调试会话开始时已始终打开此窗口。 您可以重新打开或切换到此窗口，通过单击**命令**上**视图**菜单中，按 ALT + 1，或单击**命令 (Alt + 1)** 按钮 (![屏幕截图调试器命令窗口按钮的](images/tbcmd.png)) 工具栏上。
+此窗口始终在调试会话开始时打开。 通过选择 "**视图**" 菜单上的 "**命令**"，按 ALT + 1，或在工具栏上的 "调试器命令窗口" 按钮)  (屏幕截图** (alt + 1) ** "按钮，可以重新打开或切换到此窗口 ![ ](images/tbcmd.png) 。
 
-可以使用向上键和向下箭头键可以滚动查看命令历史记录。 前一命令出现时，可以对其进行编辑，然后按 ENTER 以执行前一命令 （或上一命令的已编辑的版本）。 游标没有要在此过程才能正常工作行的末尾。
+您可以使用向上键和向下键在命令历史记录中滚动。 出现上一个命令后，可以编辑它，然后按 ENTER 执行上一个命令 (或) 的上一个命令的编辑版本。 光标不一定要位于行的末尾，此过程才能正常工作。
 
-### <a name="span-iddebuggercommandwindowpromptspanspan-iddebuggercommandwindowpromptspandebugger-command-window-prompt"></a><span id="debugger_command_window_prompt"></span><span id="DEBUGGER_COMMAND_WINDOW_PROMPT"></span>调试器命令窗口提示符
+### <a name="span-iddebugger_command_window_promptspanspan-iddebugger_command_window_promptspandebugger-command-window-prompt"></a><span id="debugger_command_window_prompt"></span><span id="DEBUGGER_COMMAND_WINDOW_PROMPT"></span>调试器命令窗口提示
 
-当执行用户模式下时调试在调试器命令提示符窗口类似于下面的示例。
+执行用户模式调试时，调试器中的提示符命令窗口如下面的示例所示。
 
 `2:005>`
 
-在前面的示例中，2 是当前的进程数，和 005 是当前的线程数。
+在前面的示例中，2是当前进程编号，而005是当前线程号。
 
-如果将调试器附加到多台计算机，进程和线程数，如以下示例所示之前包括系统编号。
+如果将调试器附加到多台计算机，则系统号将包含在进程和线程号之前，如以下示例中所示。
 
 `3:2:005>`
 
-在此示例中，3 是当前的系统编号，2 是当前进程号，005 是当前的线程数。
+在此示例中，3是当前系统号，2是当前进程编号，005是当前线程号。
 
-时要执行内核模式调试的目标计算机只有一个处理器上，提示符类似于下面的示例。
+当你在只有一个处理器的目标计算机上执行内核模式调试时，提示符将如以下示例中所示。
 
 `kd>`
 
-但是，如果目标计算机具有多个处理器，出现提示时，如以下示例所示之前就会显示当前的处理器数。
+但是，如果目标计算机有多个处理器，则当前处理器的数目将显示在提示符之前，如下面的示例中所示。
 
 `0: kd> `
 
-如果调试器正忙于处理以前颁发的命令，新的命令将暂时不会处理，尽管可以将它们添加到命令缓冲区。 此外，仍可以使用[控制密钥](control-keys.md)在 KD 和 CDB，和你仍然可以使用菜单命令和[键盘快捷方式](keyboard-shortcuts.md)在 WinDbg 中。 当 KD 或 CDB 处于此忙碌状态时，不显示任何提示。 此忙碌状态 WinDbg 时，将取代在提示符下显示以下指标：
+如果调试器忙于处理以前发出的命令，则不会处理新命令，但可以将其添加到命令缓冲区中。 此外，还可以在 KD 和 CDB 中使用 [控制键](control-keys.md) ，并且仍可以在 WinDbg 中使用菜单命令和 [快捷键](keyboard-shortcuts.md) 。 当 KD 或 CDB 处于此繁忙状态时，不会显示提示。 当 WinDbg 处于此繁忙状态时，将显示以下指示器来代替提示符：
 
 `*BUSY* `
 
-可以使用[ **.pcmd （设置在命令提示符）** ](-pcmd--set-prompt-command-.md)命令将文本添加到此提示。
+你可以使用 [**. pcmd (Set Prompt 命令) **](-pcmd--set-prompt-command-.md) 命令向此提示符中添加文本。
 
-### <a name="span-idkindsofcommandsspanspan-idkindsofcommandsspankinds-of-commands"></a><span id="kinds_of_commands"></span><span id="KINDS_OF_COMMANDS"></span>类型的命令
+### <a name="span-idkinds_of_commandsspanspan-idkinds_of_commandsspankinds-of-commands"></a><span id="kinds_of_commands"></span><span id="KINDS_OF_COMMANDS"></span>命令种类
 
-WinDbg 和 KD、 CDB 支持不同的命令。 调试器之间共享的一些命令，而有些则仅在一个或两个调试器上可用。
+WinDbg、KD 和 CDB 支持多种命令。 某些命令在调试器之间共享，某些命令仅在一个或两个调试器上可用。
 
-仅在实时调试中，有一些命令和其他命令仅在调试转储文件后才可用。
+某些命令仅可用于实时调试，而其他命令仅在调试转储文件时可用。
 
-仅在用户模式下调试过程提供了一些命令，并仅在内核模式调试过程提供了其他命令。
+某些命令仅在用户模式调试期间可用，而其他命令仅在内核模式调试过程中可用。
 
-只有当目标特定的处理器上运行时提供了一些命令。 有关的所有命令和它们的限制的详细信息，请参阅[调试器命令](debugger-commands.md)。
+某些命令仅在目标在特定处理器上运行时才可用。 有关所有命令及其限制的详细信息，请参阅 [调试器命令](debugger-commands.md)。
 
-### <a name="span-ideditingrepeatingandcancelingcommandsspanspan-ideditingrepeatingandcancelingcommandsspanediting-repeating-and-canceling-commands"></a><span id="editing__repeating__and_canceling_commands"></span><span id="EDITING__REPEATING__AND_CANCELING_COMMANDS"></span>编辑、 重复和取消命令
+### <a name="span-idediting__repeating__and_canceling_commandsspanspan-idediting__repeating__and_canceling_commandsspanediting-repeating-and-canceling-commands"></a><span id="editing__repeating__and_canceling_commands"></span><span id="EDITING__REPEATING__AND_CANCELING_COMMANDS"></span>编辑、重复和取消命令
 
-当你输入命令时，可以使用标准的编辑键：
+输入命令时，可以使用标准编辑键：
 
--   使用向上键和向下箭头键来查找前面的命令。
+-   使用向上键和向下键可查找上一个命令。
 
--   使用退格符、 DELETE、 INSERT 和向左键和向右箭头键编辑当前命令。
+-   用 BACKSPACE、DELETE、INSERT、左箭头和右箭头键编辑当前命令。
 
 -   按 ESC 键以清除当前行。
 
-可以按 TAB 键自动完成文本输入。 在任何调试程序中，输入至少一个字符来自动完成命令后按 TAB 键。 按 TAB 键重复以循环文本完成选项，并按住 SHIFT 键并按 tab 键向后循环。 此外可以在文本中使用通配符，并按 TAB 展开为完整的文本完成选项集。 例如，如果键入**fo\*！ ba** ，然后按 TAB 键，调试器将扩展到开头"ba"模块名称以"fo"开头的所有模块中的所有符号的集。 作为另一个示例中，你可以完成通过键入中都有"prcb"的所有扩展命令 **！\*prcb** ，然后按 TAB。
+可以按 TAB 键自动完成文本输入。 在任意调试中，在输入至少一个字符后按 TAB 键自动完成命令。 重复按 TAB 键以循环浏览文本完成选项，按住 SHIFT 键，并按 TAB 键向后循环。 你还可以在文本中使用通配符，并按 TAB 键以展开到完整的文本完成选项集。 例如，如果键入 **fo \* ！ ba** ，然后按 tab，则调试器会将以 "ba" 开头的所有符号的集合扩展为以 "fo" 开头的模块名称的所有模块。 作为另一个示例，你可以通过键入 **！ \* 来完成所有扩展名为 "prcb" 的命令：prcb** ，然后按 tab。
 
-当使用 TAB 键来执行文本完成功能，如果文本片段以句点 （.） 开头时，会将文本与点命令进行匹配。 如果文本片段以带感叹号 （！），则会将文本与扩展命令进行匹配。 否则，与符号匹配文本。 当您使用 TAB 键输入符号，按 TAB 键完成代码和类型符号和模块名称。 如果没有模块名称是很明显，完成本地符号和模块名称。 如果未指定模块或模块模式，符号完成完成中的所有匹配项的代码和类型符号。
+使用 TAB 键执行文本完成时，如果文本片段以句点开头 ( ) ，则将文本与点命令匹配。 如果文本片段以感叹号开头 (！ ) ，则文本与扩展命令匹配。 否则，文本将与符号匹配。 当 usee TAB 键输入符号时，按 TAB 键完成代码，然后键入符号和模块名称。 如果没有明显的模块名称，则会完成本地符号和模块名称。 如果给定了模块或模块模式，则符号完成完成代码并键入所有匹配项的符号。
 
-您可以右键单击来自动粘贴剪贴板的内容到正在键入的命令在调试器命令窗口中。
+您可以选择并按住 (或右键单击调试器命令窗口) ，以自动将剪贴板的内容粘贴到您正在键入的命令中。
 
-最大命令长度为 4096 个字符。 但是，如果要[控制用户模式下的调试程序与内核调试程序](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)，最大行长度为 512 个字符。
+最大命令长度为4096个字符。 但是，如果要 [从内核调试器控制用户模式调试器](controlling-the-user-mode-debugger-from-the-kernel-debugger.md)，则最大行长度为512个字符。
 
-在 CDB 和 KD，本身重复前一命令中按 ENTER 键。 在 WinDbg 中，可以启用或禁用此行为。 有关此行为的详细信息，请参阅[ **ENTER （重复执行最后一个命令）**](enter--repeat-last-command-.md)。
+在 CDB 和 KD 中，按 ENTER 键以重复上一个命令。 在 WinDbg 中，可以启用或禁用此行为。 有关此行为的详细信息，请参阅 [**ENTER (重复最后一个命令) **](enter--repeat-last-command-.md)。
 
-如果您发出的最后一个命令显示长，并且你想要关闭使用剪切[ **CTRL + C** ](ctrl-c--break-.md) CDB 或 KD 中的键。 在 WinDbg 中，使用[调试 |中断](debug---break.md)或按 CTRL + BREAK。
+如果你发出的最后一个命令显示长时间，并且你想要将其剪切掉，请在 CDB 或 KD 中使用 [**CTRL + C**](ctrl-c--break-.md) 键。 在 WinDbg 中，使用 " [调试" |中断](debug---break.md) 或按 CTRL + break。
 
-在内核模式调试中，可以从目标计算机的键盘命令取消通过按[ **CTRL + C**](ctrl-c--break-.md)。
+在内核模式调试中，可以通过按 [**CTRL + C**](ctrl-c--break-.md)从目标计算机的键盘取消命令。
 
-可以使用[ **.cls （清除屏幕）** ](-cls--clear-screen-.md)命令，以清除所有从文本[调试器命令窗口](debugger-command-window.md)。 此命令将清除整个命令历史记录。 在 WinDbg 中，可以通过使用清除命令历史记录[编辑 |清除命令输出](edit---clear-command-output.md)命令，或通过单击**清除命令输出**调试器命令窗口的快捷菜单上。
+您可以使用 [**. cls (Clear Screen) **](-cls--clear-screen-.md) 命令从 [调试器命令窗口](debugger-command-window.md)中清除所有文本。 此命令清除整个命令历史记录。 在 WinDbg 中，可以通过使用 " [编辑" |清除 "命令输出](edit---clear-command-output.md) " 命令，或选择调试器的快捷菜单上的 " **清除命令输出** " 命令窗口。
 
-### <a name="span-idexpressionsyntaxspanspan-idexpressionsyntaxspanexpression-syntax"></a><span id="expression_syntax"></span><span id="EXPRESSION_SYNTAX"></span>表达式语法
+### <a name="span-idexpression_syntaxspanspan-idexpression_syntaxspanexpression-syntax"></a><span id="expression_syntax"></span><span id="EXPRESSION_SYNTAX"></span>表达式语法
 
-许多命令和扩展命令接受*表达式*作为其参数。 调试器执行命令前将计算这些表达式。 有关表达式的详细信息，请参阅[评估表达式](evaluating-expressions.md)。
+许多命令和扩展命令接受 *表达式* 作为其参数。 调试器将在执行命令之前计算这些表达式。 有关表达式的详细信息，请参阅 [计算表达式](evaluating-expressions.md)。
 
 ### <a name="span-idaliasesspanspan-idaliasesspanaliases"></a><span id="aliases"></span><span id="ALIASES"></span>别名
 
-*别名*是可用于避免无需重新键入复杂的短语的文本宏。 有两种类型的别名。 有关别名的详细信息，请参阅[Using 别名](using-aliases.md)。
+*别名* 是文本宏，可用于避免重新键入复杂短语。 有两种类型的别名。 有关别名的详细信息，请参阅 [使用别名](using-aliases.md)。
 
-### <a name="span-idselfrepeatingcommandsspanspan-idselfrepeatingcommandsspanself-repeating-commands"></a><span id="self_repeating_commands"></span><span id="SELF_REPEATING_COMMANDS"></span>自重复命令
+### <a name="span-idself_repeating_commandsspanspan-idself_repeating_commandsspanself-repeating-commands"></a><span id="self_repeating_commands"></span><span id="SELF_REPEATING_COMMANDS"></span>自重复命令
 
-可以使用以下命令以重复执行操作或有条件地执行其他命令：
+可以使用以下命令重复操作或有条件地执行其他命令：
 
--   [ **J (执行 If-else)** ](j--execute-if---else-.md)条件命令
+-   [**如果-Else) 条件命令，j (执行**](j--execute-if---else-.md)
 
--   [ **Z （执行时）** ](z--execute-while-.md)条件命令
+-   [**当) 条件命令时，z (执行**](z--execute-while-.md)
 
--   [ **~ E （特定于线程的命令）** ](-e--thread-specific-command-.md)命令限定符
+-   [**~ E (线程特定的命令) **](-e--thread-specific-command-.md)命令限定符
 
--   [ **！ 列表**](-list.md)扩展命令
+-   [**！ List**](-list.md) extension 命令
 
-有关每个命令的详细信息，请参阅单个命令主题。
+有关每个命令的详细信息，请参阅各个命令主题。
 
-### <a name="span-idcontrollingscrollingspanspan-idcontrollingscrollingspancontrolling-scrolling"></a><span id="controlling_scrolling"></span><span id="CONTROLLING_SCROLLING"></span>控制滚动
+### <a name="span-idcontrolling_scrollingspanspan-idcontrolling_scrollingspancontrolling-scrolling"></a><span id="controlling_scrolling"></span><span id="CONTROLLING_SCROLLING"></span>控制滚动
 
-可以使用滚动条来查看上一命令和相应的输出。
+您可以使用滚动条查看以前的命令及其输出。
 
-当使用 CDB 或 KD 时，自动使调试器命令窗口返回到底部的向下滚动任何键盘输入。
+使用 CDB 或 KD 时，任何键盘输入都将自动向下滚动调试器命令窗口向下滚动。
 
-在 WinDbg 中，显示，自动滚动到底部的命令生成的输出或按 ENTER 键时。 如果你想要禁用此自动滚动，单击[选项](view---options.md)上**视图**菜单，然后清除**自动滚动**复选框。
+在 WinDbg 中，每当命令生成输出或按下 ENTER 键时，显示都会自动向下滚动到底部。 如果要禁用此自动滚动，请在 "**视图**" 菜单上选择[选项](view---options.md)，然后清除 "**自动滚动**" 复选框。
 
-### <a name="span-idwindbgtextfeaturesspanspan-idwindbgtextfeaturesspanwindbg-text-features"></a><span id="windbg_text_features"></span><span id="WINDBG_TEXT_FEATURES"></span>WinDbg 文本功能
+### <a name="span-idwindbg_text_featuresspanspan-idwindbg_text_featuresspanwindbg-text-features"></a><span id="windbg_text_features"></span><span id="WINDBG_TEXT_FEATURES"></span>WinDbg 文本功能
 
-在 WinDbg 中，可以使用其他几项功能，若要更改文本中的显示方式[调试器命令窗口](debugger-command-window.md)。 可以访问一些 WinDbg 窗口中的这些功能，一些在调试器命令窗口中，在快捷菜单和一些通过单击相应的菜单图标。
+在 WinDbg 中，您可以使用几个附加功能来更改文本在调试器中的显示方式 [命令窗口](debugger-command-window.md)。 您可以在 WinDbg 窗口中访问其中的某些功能，在调试器的快捷菜单中命令窗口一些功能，还可以通过选择相应的菜单图标来访问某些功能。
 
--   **自动换行**命令的快捷菜单上，开启和关闭 word 自动换行状态。 此命令会影响整个窗口，不仅能使用此状态更改后的命令。 由于许多命令和扩展生成带格式的显示，我们通常不建议自动换行。
+-   快捷菜单上的 " **自动换行** " 命令会打开和关闭 "自动换行" 状态。 此命令会影响整个窗口，而不仅是在此状态更改后使用的命令。 由于许多命令和扩展都生成格式的显示，因此，我们通常不推荐自动换行。
 
--   [编辑 |将添加到命令输出](edit---add-to-command-output.md)菜单命令在调试器命令窗口中添加注释。 **将添加到命令输出**快捷菜单上的命令具有相同的效果。
+-   [编辑 |"添加到命令输出](edit---add-to-command-output.md)" 菜单命令在调试器命令窗口中添加注释。 快捷菜单上的 " **添加到命令输出** " 命令具有相同的效果。
 
--   可以自定义用于文本和调试器命令窗口的背景的颜色。 可以指定不同的颜色不同类型的文本。 例如，可以在另一种颜色，显示的一种颜色中的自动注册输出、 错误消息和**DbgPrint**中的消息的第三个颜色。 有关此自定义的详细信息，请参阅[视图 |选项](view---options.md)。
+-   您可以自定义用于文本的颜色和调试器命令窗口的背景。 您可以为不同类型的文本指定不同的颜色。 例如，您可以用一种颜色显示自动注册输出，以另一种颜色显示错误消息，并以第三种颜色 **DbgPrint** 消息。 有关此自定义的详细信息，请参阅 [View |选项](view---options.md)。
 
--   您可以使用的所有常见功能到 WinDbg 的调试信息窗口，如自定义字体和使用特殊的编辑命令。 有关这些功能的详细信息，请参阅[使用调试信息 Windows](using-debugging-information-windows.md)。
+-   您可以使用 WinDbg 的调试信息窗口通用的所有功能，例如自定义字体和使用特殊的编辑命令。 有关这些功能的详细信息，请参阅 [使用调试信息窗口](using-debugging-information-windows.md)。
 
-### <a name="span-idremotedebuggingspanspan-idremotedebuggingspanremote-debugging"></a><span id="remote_debugging"></span><span id="REMOTE_DEBUGGING"></span>远程调试
+### <a name="span-idremote_debuggingspanspan-idremote_debuggingspanremote-debugging"></a><span id="remote_debugging"></span><span id="REMOTE_DEBUGGING"></span>远程调试
 
-当您在执行远程调试通过调试器时，调试客户端可以访问有限的数量的命令。 若要更改的客户端可以访问的命令数，请使用 **-clines** [命令行选项](command-line-options.md)或\_NT\_调试\_历史记录\_大小[环境变量](environment-variables.md)。
+通过调试器执行远程调试时，调试客户端可以访问有限数量的命令。 若要更改客户端可以访问的命令数，请使用 **-clines** [命令行选项](command-line-options.md) 或 " \_ NT \_ 调试 \_ 历史记录 \_ 大小" [环境变量](environment-variables.md)。
 
  
 

@@ -1,13 +1,13 @@
 ---
 title: IPrinterScriptUsbJobContextReturnCodes 接口
-description: IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 已定义的 JavaScript 函数的返回代码的数组。
+description: IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数定义的一系列返回代码。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
 ms.assetid: 8E34748E-B9F9-4404-9B40-04EA72EEA322
 keywords:
 - IPrinterScriptUsbJobContextReturnCodes 接口打印设备
-- IPrinterScriptUsbJobContextReturnCodes 接口所述的打印设备
+- IPrinterScriptUsbJobContextReturnCodes 接口打印设备，描述
 topic_type:
 - apiref
 api_name:
@@ -16,29 +16,29 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 09802d98945e348e23c02d4377f4b09b607c5a59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d8581aa17e04a8db23ae4a1b0ee195789a4067f0
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349199"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802449"
 ---
 # <a name="iprinterscriptusbjobcontextreturncodes-interface"></a>IPrinterScriptUsbJobContextReturnCodes 接口
 
-IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 已定义的 JavaScript 函数的返回代码的数组。
+IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 为其 JavaScript 函数定义的一系列返回代码。
 
-此接口将返回由[ **IPrinterScriptUsbJobContext::ReturnCodes** ](iprinterscriptusbjobcontext-returncodes.md)方法。
+此接口由 [**IPrinterScriptUsbJobContext：： ReturnCodes**](iprinterscriptusbjobcontext-returncodes.md) 方法返回。
 
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContextReturnCodes**接口继承自[ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContextReturnCodes**还具有这些类型的成员：
+**IPrinterScriptUsbJobContextReturnCodes**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContextReturnCodes** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
 ### <a name="methods"></a>方法
 
-**IPrinterScriptUsbJobContextReturnCodes**接口提供以下方法。
+**IPrinterScriptUsbJobContextReturnCodes**接口具有这些方法。
 
 <table>
 <colgroup>
@@ -48,29 +48,29 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 已定义的 JavaScript 
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="iprinterscriptusbjobcontextreturncodes-abortthejob.md" data-raw-source="[&lt;strong&gt;AbortTheJob&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-abortthejob.md)"><strong>AbortTheJob</strong></a></td>
-<td><p>返回的值为"4"，以通知 USBMon 必须中止该打印作业。</p></td>
+<td><p>返回值 "4"，通知 USBMon 必须中止打印作业。</p></td>
 </tr>
 <tr class="even">
 <td><a href="iprinterscriptusbjobcontextreturncodes-devicebusy.md" data-raw-source="[&lt;strong&gt;DeviceBusy&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-devicebusy.md)"><strong>DeviceBusy</strong></a></td>
-<td><p>返回一个值"3"，以通知 USBMon 设备通信通道这次不接受数据。</p></td>
+<td><p>返回值 "3"，通知 USBMon 设备通信通道目前不接受数据。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="iprinterscriptusbjobcontextreturncodes-failure.md" data-raw-source="[&lt;strong&gt;Failure&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-failure.md)"><strong>失败</strong></a></td>
-<td><p>返回一个值"1"，以通知 USBMon 方法调用失败。</p></td>
+<td><a href="iprinterscriptusbjobcontextreturncodes-failure.md" data-raw-source="[&lt;strong&gt;Failure&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-failure.md)"><strong>否则</strong></a></td>
+<td><p>返回值 "1"，通知 USBMon 方法调用失败。</p></td>
 </tr>
 <tr class="even">
-<td><a href="iprinterscriptusbjobcontextreturncodes-retry.md" data-raw-source="[&lt;strong&gt;Retry&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-retry.md)"><strong>Retry</strong></a></td>
-<td><p>返回"2"，以通知 USBMon 方法调用已成功，与更多工作要完成的值。</p></td>
+<td><a href="iprinterscriptusbjobcontextreturncodes-retry.md" data-raw-source="[&lt;strong&gt;Retry&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-retry.md)"><strong>后</strong></a></td>
+<td><p>返回值 "2"，通知 USBMon 方法调用成功，同时完成更多的工作。</p></td>
 </tr>
 <tr class="odd">
-<td><a href="iprinterscriptusbjobcontextreturncodes-success.md" data-raw-source="[&lt;strong&gt;Success&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-success.md)"><strong>Success</strong></a></td>
-<td><p>返回值为零 (0) 以通知 USBMon 函数调用已成功完成。</p></td>
+<td><a href="iprinterscriptusbjobcontextreturncodes-success.md" data-raw-source="[&lt;strong&gt;Success&lt;/strong&gt;](iprinterscriptusbjobcontextreturncodes-success.md)"><strong>成功</strong></a></td>
+<td><p>返回值为零 (0) 通知 USBMon 函数调用已成功完成。</p></td>
 </tr>
 </tbody>
 </table>
@@ -86,7 +86,7 @@ IPrinterScriptUsbJobContextReturnCodes 接口表示 IHV 已定义的 JavaScript 
 <tbody>
 <tr class="odd">
 <td><p>最低受支持的客户端</p></td>
-<td><p>Windows 8.1</p></td>
+<td><p>Windows 8.1</p></td>
 </tr>
 <tr class="even">
 <td><p>最低受支持的服务器</p></td>

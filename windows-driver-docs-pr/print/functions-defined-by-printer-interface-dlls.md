@@ -7,12 +7,12 @@ keywords:
 - 功能 WDK 打印机接口 DLL
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96617e358c0e116efb6287cba51e12c6dea848ec
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4ee41cfa13dd961d3b93496fb70702e2cc64466c
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845298"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802761"
 ---
 # <a name="functions-defined-by-printer-interface-dlls"></a>按打印机接口 DLL 定义的函数
 
@@ -36,11 +36,11 @@ ms.locfileid: "72845298"
 <tbody>
 <tr class="odd">
 <td><p><strong>DllEntryPoint</strong></p></td>
-<td><p>初始 DLL 入口点，通常称为 DLLMain （如 Microsoft Windows SDK 文档中所述）。</p></td>
+<td><p>初始 DLL 入口点通常称为 DLLMain (Microsoft Windows SDK 文档) 中所述。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvconvertdevmode" data-raw-source="[&lt;strong&gt;DrvConvertDevMode&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvconvertdevmode)"><strong>DrvConvertDevMode</strong></a></p></td>
-<td><p>将指定的<a href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)"><strong>DEVMODEW</strong></a>结构从一个版本转换到另一个版本。</p></td>
+<td><p>将指定的 <a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew" data-raw-source="[&lt;strong&gt;DEVMODEW&lt;/strong&gt;](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)"><strong>DEVMODEW</strong></a> 结构从一个版本转换到另一个版本。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities" data-raw-source="[&lt;strong&gt;DrvDeviceCapabilities&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicecapabilities)"><strong>DrvDeviceCapabilities</strong></a></p></td>
@@ -48,15 +48,15 @@ ms.locfileid: "72845298"
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets" data-raw-source="[&lt;strong&gt;DrvDevicePropertySheets&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdevicepropertysheets)"><strong>DrvDevicePropertySheets</strong></a></p></td>
-<td><p>调用<a href="common-property-sheet-user-interface.md" data-raw-source="[CPSUI](common-property-sheet-user-interface.md)">CPSUI</a>创建描述打印机属性的属性表页。</p></td>
+<td><p>调用 <a href="common-property-sheet-user-interface.md" data-raw-source="[CPSUI](common-property-sheet-user-interface.md)">CPSUI</a> 创建描述打印机属性的属性表页。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent" data-raw-source="[&lt;strong&gt;DrvDocumentEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentevent)"><strong>DrvDocumentEvent</strong></a></p></td>
-<td><p>可有可无允许打印机接口 DLL 指定与打印文档将处理的文档相关联的事件。</p></td>
+<td><p> (可选) 允许打印机接口 DLL 指定与打印文档将处理的文档相关联的事件。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdriverevent" data-raw-source="[&lt;strong&gt;DrvDriverEvent&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdriverevent)"><strong>DrvDriverEvent</strong></a></p></td>
-<td><p>可有可无允许打印机接口 DLL 响应来自特定于特定驱动程序事件的后台处理程序的通知。</p></td>
+<td><p> (可选) 允许打印机接口 DLL 响应来自特定于特定驱动程序事件的后台处理程序的通知。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets" data-raw-source="[&lt;strong&gt;DrvDocumentPropertySheets&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets)"><strong>DrvDocumentPropertySheets</strong></a></p></td>
@@ -68,11 +68,11 @@ ms.locfileid: "72845298"
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvquerycolorprofile" data-raw-source="[&lt;strong&gt;DrvQueryColorProfile&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvquerycolorprofile)"><strong>DrvQueryColorProfile</strong></a></p></td>
-<td><p>可有可无允许打印机接口 DLL 指定用于颜色管理的 ICC 配置文件。</p></td>
+<td><p> (可选) 允许打印机接口 DLL 指定用于颜色管理的 ICC 配置文件。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes" data-raw-source="[&lt;strong&gt;DrvQueryJobAttributes&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvqueryjobattributes)"><strong>DrvQueryJobAttributes</strong></a></p></td>
-<td><p>可有可无允许打印机接口 DLL 为在物理页面上打印多个文档页面（"N 向上" 打印）、打印每个页面的多个副本以及对页面进行分页的功能指定支持。</p></td>
+<td><p> (可选) 使打印机接口 DLL 能够指定支持在物理页面上打印多个文档页面的功能， ( "N 向上" 打印) ，打印每个页面的多个副本，以及对页面进行分页。</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-devqueryprintex" data-raw-source="[&lt;strong&gt;DevQueryPrintEx&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-devqueryprintex)"><strong>DevQueryPrintEx</strong></a></p></td>
@@ -84,7 +84,7 @@ ms.locfileid: "72845298"
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvupgradeprinter" data-raw-source="[&lt;strong&gt;DrvUpgradePrinter&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvupgradeprinter)"><strong>DrvUpgradePrinter</strong></a></p></td>
-<td><p>可有可无当新版本的驱动程序添加到系统时，更新打印机的注册表设置。</p></td>
+<td><p> (可选) 在将新版本的驱动程序添加到系统时更新打印机的注册表设置。</p></td>
 </tr>
 </tbody>
 </table>

@@ -10,12 +10,12 @@ keywords:
 - 打印机驱动程序 WDK，体系结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8475113b5d684cf49f09b7effbcddd96522dece
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 17333849b2f44dfd6cc4f5a46501a86f6ba6bee5
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380634"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802755"
 ---
 # <a name="printer-driver-architecture"></a>打印机驱动程序体系结构
 
@@ -23,29 +23,29 @@ ms.locfileid: "67380634"
 
 
 
-通过 Microsoft Win32 GDI，或在 Windows Vista 中，Windows Presentation Foundation (WPF) 函数的调用由应用程序会创建打印作业。 Win32 函数后台处理应用程序数据作为 EMF，或它们可以立即呈现每个文档页面的可打印图像。 WPF 的函数为 XPS 假脱机文件后台处理应用程序数据。
+打印作业由应用程序通过调用 Microsoft Win32 GDI 或在 Windows Vista 中 Windows Presentation Foundation (WPF) 函数创建。 Win32 函数以 EMF 形式处理应用程序数据，或者它们可以立即呈现每个文档页的可打印图像。 WPF 以 XPS 假脱机文件的形式处理应用程序数据。
 
-在 Windows Vista 之前的应用程序传递到打印机的打印机设置通过使用[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构。 Windows Vista 中的打印票证和打印功能技术通信打印机设置，以便在打印机和应用程序的打印机设置都是更加兼容。
+在 Windows Vista 之前，应用程序使用 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构将打印机设置传达给打印机。 在 Windows Vista 中，打印票证和打印功能技术将打印机设置进行通信，以便在打印机和应用程序之间更兼容打印机设置。
 
-图像呈现是否执行立即或在打印处理期间在执行打印驱动程序：
+图像呈现，无论是立即执行还是在打印处理过程中，都在打印驱动程序中执行：
 
--   一个[基于 GDI 的打印机驱动程序](gdi-printer-drivers.md)图像呈现的 EMF 记录播放时执行从假脱机文件，并受 GDI 呈现引擎。 在呈现操作时，GDI 呈现引擎以获得帮助调用相应的 Windows 2000 和更高版本的打印机驱动程序。
+-   [基于 gdi 的打印机驱动程序](gdi-printer-drivers.md)在从假脱机文件中播放 EMF 记录时执行图像呈现，由 GDI 呈现引擎控制。 在呈现操作期间，GDI 呈现引擎将调用相应的 Windows 2000 和更高版本的打印机驱动程序以获得帮助。
 
--   [XPSDrv 打印驱动程序](xpsdrv-printer-drivers.md)使用一系列处理筛选器来处理输出到打印机的 XPS 假脱机文件内容。
+-   [XPSDrv 打印驱动程序](xpsdrv-printer-drivers.md) 使用一系列处理筛选器来处理 XPS 假脱机文件内容，以便输出到打印机。
 
-Windows 2000 和更高版本基于 GDI 的打印机驱动程序必须：
+Windows 2000 和更高版本的基于 GDI 的打印机驱动程序必须：
 
--   帮助提供特定于打印机的绘图功能，以支持 GDI 不能通过 GDI 呈现打印作业。
+-   通过提供 GDI 无法支持的特定于打印机的绘图功能，帮助 GDI 呈现打印作业。
 
--   将呈现的图像数据流发送到打印后台处理程序。
+-   将呈现的图像的数据流发送到打印后台处理程序。
 
--   提供与打印机和打印文档，作为其输入和输出选择送纸器，如副本、 图像分辨率和方向，数和其他操作的可修改的配置参数的用户界面。
+-   提供与打印机和打印文档关联的可修改配置参数的用户界面，如选择的输入和输出送纸器、副本的数量、图像分辨率和方向等。
 
-XPSDrv 的打印机驱动程序相同的用户界面负责为基于 GDI 的驱动程序，也要负责处理打印作业数据和将数据发送到打印机。 XPSDrv 的打印机驱动程序，但是，不需要使用 GDI 呈现为打印机的页面映像。
+XPSDrv 打印机驱动程序与基于 GDI 的驱动程序具有相同的用户界面责任，还负责处理打印作业数据并将数据发送到打印机。 但 XPSDrv 打印机驱动程序无需使用 GDI 来呈现打印机的页面图像。
 
-Windows 2000 和更高版本的打印机驱动程序组成的一套[打印机驱动程序组件](gdi-printer-drivers.md)，可将划分到单独的 Dll 的驱动程序的绘图和用户界面的操作。 XPSDrv 的打印机驱动程序还组成划分的配置和绘制和呈现为单独的对象的函数的组件。
+Windows 2000 和更高版本的打印机驱动程序由一组 [打印机驱动程序组件](gdi-printer-drivers.md) 组成，这些组件将驱动程序的绘图和用户界面操作划分为单独的 dll。 XPSDrv 打印机驱动程序也由组件组成，这些组件将配置和绘制和呈现功能分为单独的对象。
 
-本部分旨在帮助你了解不同类型的打印机驱动程序的 Windows 2000 和更高版本操作系统支持，但还应记住以下三个打印机驱动程序都附带有操作系统：
+本部分旨在帮助你了解 Windows 2000 和更高版本操作系统支持的不同类型的打印机驱动程序，但你还应记住，操作系统附带了以下三个打印机驱动程序：
 
 [Microsoft 通用打印机驱动程序](microsoft-universal-printer-driver.md)
 
@@ -53,11 +53,11 @@ Windows 2000 和更高版本的打印机驱动程序组成的一套[打印机驱
 
 [Microsoft 绘图仪驱动程序](microsoft-plotter-driver.md)
 
-以下三个的驱动程序支持大多数最终用户可以立即购买的打印设备。 您需要编写的打印机驱动程序仅打印设备是否不与相应的 Microsoft 提供的驱动程序兼容。 您可以通过只需添加支持大多数新打印机[打印机数据文件](printer-data-files.md)到一个 Microsoft 提供的驱动程序。 可能需要新的驱动程序的设备包括这些控制的专有命令序列的包含硬件绘制加速器。
+这三个驱动程序支持最终用户可以立即购买的大多数打印设备。 仅当打印设备与相应的 Microsoft 提供的驱动程序不兼容时，才需要编写打印机驱动程序。 只需将 [打印机数据文件](printer-data-files.md) 添加到 Microsoft 提供的某个驱动程序，即可支持大多数新打印机。 可能需要新驱动程序的设备包括包含由专有命令序列控制的硬件绘图加速器的设备。
 
-本部分包含以下主题，描述 Windows 打印体系结构。
+本部分包含以下主题，其中介绍了 Windows 打印体系结构。
 
-[XPSDrv 的打印机驱动程序](xpsdrv-printer-drivers.md)
+[XPSDrv 打印机驱动程序](xpsdrv-printer-drivers.md)
 
 [GDI 打印机驱动程序](gdi-printer-drivers.md)
 

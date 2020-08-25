@@ -3,17 +3,17 @@ title: Hostfont 注册表项
 description: Hostfont 注册表项
 ms.assetid: f7ce2591-197a-4094-8b21-5e0cc48506ea
 keywords:
-- 打印的 postScript 打印机驱动程序 WDK HostFontXxx 注册表项
+- PostScript 打印机驱动程序 WDK 打印，HostFontXxx 注册表项
 - Pscript WDK 打印，HostFontXxx 注册表项
 - HostFontXxx 注册表项 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5315ae20c417bddc4aca6391adcb2e7b85164c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1759dd19c4c09bd43301a708221c419f9a0e9eeb
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378589"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802373"
 ---
 # <a name="hostfont-registry-entries"></a>Hostfont 注册表项
 
@@ -21,9 +21,9 @@ ms.locfileid: "67378589"
 
 
 
-插件的 OEM 可以通知 Pscript5 驱动程序 %hostfont%就绪 PostScript 解释器，有一组的字体和 CIDFonts 可供使用，它们是与 Pscript5 驱动程序可能在打印作业的过程中下载的相同。 通知字体的要处理这种方式是通过将密钥放在注册表中。 Pscript5 驱动程序将查看新的信息的注册表时其[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)调用函数。 该插件可以然后，确保数据是最新，然后才能启用 PDEV。
+OEM 插件可以通知 Pscript5 驱动程序% hostfont% ready PostScript 解释器具有一组可供使用的字体和 CIDFonts，它们与 Pscript5 驱动程序可能会在打印作业中下载的字体和相同。 通过在注册表中放置密钥来以这种方式处理哪些字体。 当调用 Pscript5 驱动程序的 [**DrvEnablePDEV**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvenablepdev) 函数时，该驱动程序将检查注册表中是否有新的信息。 在启用 PDEV 之前，该插件可以确保数据是最新的。
 
-下表列出了 %hostfont%注册表条目名称、 其类型和它们的值。 插件 OEM 应调用 SetPrinterData （Microsoft Windows SDK 文档中所述） 来设置这些项的名称。 HostFont*Xxx*条目名称是互相排斥。 也就是说，只有一个下列条目名称可以注册表中存在在任何给定时间。
+下表列出了% hostfont% 注册表项名称、它们的类型及其值。 OEM 插件应调用 Microsoft Windows SDK 文档) 中所述的 SetPrinterData (，以设置这些项名称。 HostFont*Xxx* 条目名称互斥。 也就是说，在任何给定时间，注册表中只能存在以下条目名称之一。
 
 <table>
 <colgroup>
@@ -35,52 +35,52 @@ ms.locfileid: "67378589"
 <tr class="header">
 <th>注册表项名称</th>
 <th>类型和值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>HostFontExceptCIDFonts</p></td>
 <td><p>REG_BINARY</p>
-<p>可以包含多个，其中包含 PostScript CIDFont 名称的以 NULL 结尾的 ASCII 字符串。 最终的字符串由一个额外的 null 字符终止。</p></td>
-<td><p>类似 HostFontExceptFonts，只不过它将应用于 CIDFonts。</p></td>
+<p>可以包含多个以 NULL 结尾的 ASCII 字符串，其中包含 PostScript CIDFont 名称。 最终字符串由一个额外的 null 字符终止。</p></td>
+<td><p>类似于 HostFontExceptFonts，只不过它适用于 CIDFonts。</p></td>
 </tr>
 <tr class="even">
 <td><p>HostFontExceptFonts</p></td>
 <td><p>REG_BINARY</p>
-<p>可以包含多个，其中包含 PostScript 字体名称的以 NULL 结尾的 ASCII 字符串。 最终的字符串由一个额外的 null 字符终止。</p></td>
-<td><p>Pscript5 驱动程序看不到""作为可用，并且两者 %hostfont%就绪 PostScript 解释器中的这些字体的字体。 Pscript5 驱动程序下载仅这些字体。</p></td>
+<p>可以包含多个以 NULL 结尾的 ASCII 字符串，其中包含 PostScript 字体名称。 最终字符串由一个额外的 null 字符终止。</p></td>
+<td><p>Pscript5 驱动程序未 "查看" 的字体，并且与% hostfont%-ready PostScript 解释器中的字体完全相同。 Pscript5 驱动程序仅下载这些字体。</p></td>
 </tr>
 <tr class="odd">
 <td><p>HostFontHasMostFonts</p></td>
 <td><p>REG_DWORD</p>
 <p>可以是任何值。</p></td>
-<td><p>将所有字体视为 %hostfont%-可以。 如果此条目名称将显示包含的任何值，Pscript5 驱动程序不会下载任何字体。</p></td>
+<td><p>将所有字体视为% hostfont%。 如果此项名称与任何值一起显示，则 Pscript5 驱动程序不会下载任何字体。</p></td>
 </tr>
 <tr class="even">
 <td><p>HostFontIncludesCIDFonts</p></td>
 <td><p>REG_BINARY</p>
-<p>可以包含多个，其中包含 PostScript CIDFont 名称的以 NULL 结尾的 ASCII 字符串。 最终的字符串由一个额外的 null 字符终止。</p></td>
-<td><p>类似 HostFontIncludesFonts，只不过它将应用于 CIDFonts。</p></td>
+<p>可以包含多个以 NULL 结尾的 ASCII 字符串，其中包含 PostScript CIDFont 名称。 最终字符串由一个额外的 null 字符终止。</p></td>
+<td><p>类似于 HostFontIncludesFonts，只不过它适用于 CIDFonts。</p></td>
 </tr>
 <tr class="odd">
 <td><p>HostFontIncludesFonts</p></td>
 <td><p>REG_BINARY</p>
-<p>可以包含多个，其中包含 PostScript 字体名称的以 NULL 结尾的 ASCII 字符串。 最终的字符串由一个额外的 null 字符终止。</p></td>
-<td><p>Pscript5 驱动程序"看到"与唯一的可用且 %hostfont%就绪 PostScript 解释器在完全相同的字体。 Pscript5 驱动程序不会下载这些字体。</p></td>
+<p>可以包含多个以 NULL 结尾的 ASCII 字符串，其中包含 PostScript 字体名称。 最终字符串由一个额外的 null 字符终止。</p></td>
+<td><p>Pscript5 驱动程序 "看到" 唯一可用且在% hostfont%-ready PostScript 解释器中相同的字体。 Pscript5 驱动程序不会下载这些字体。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="additional-notes-on-hostfont-registry-entry-names"></a>有关 Hostfont 注册表条目名称的其他说明
+### <a name="additional-notes-on-hostfont-registry-entry-names"></a>有关 Hostfont 注册表项名称的其他说明
 
-HostFontExceptFonts 是 REG\_包含的序列包含基于 TTF 基于 OTF 或基于 PFB 的编码的标志符号的名称-基于和字体的 PostScript findfont 名称以 NULL 结尾的单字节字符串的二进制数据。 名称列出顺序不分先后;由两个 null 值终止的最后一个名称和 null 值后有任何字节。 仅当找不到 HostFontHasMostFonts 时检查此项名称。
+HostFontExceptFonts 是 \_ 包含以 NULL 结尾的单字节字符串序列的 REG 二进制数据，其中包含基于 .ttf、OTF 或 PFB 的基于编码和字形的字体的 PostScript findfont 名称。 名称以无特定顺序列出;姓氏以两个 Null 值终止，空值之后没有字节。 仅当找不到 HostFontHasMostFonts 时，才会检查此项名称。
 
-具有分配给它的任何值的 HostFontHasMostFonts 键存在意味着该驱动程序应假定所有基于 TTF 的、 基于 OTF PFB 基于主机的字体的形式提供的"本机"格式，即 PostScript 字体或作为 CIDFont 格式目标解释器上适当。
+如果存在具有分配给它的任何值的 HostFontHasMostFonts 键，则表明驱动程序应假定所有基于 .TTF、OTF 和 PFB 的主机字体都在目标解释器上以其 "本机" 格式提供，即，作为 PostScript 字体或 CIDFont 格式提供。
 
-HostFontIncludesFonts 具有类似于 HostFontExceptFonts，只不过它显式列出目标解释器上可用的 PostScript 字体名称。
+HostFontIncludesFonts 类似于 HostFontExceptFonts，只不过它显式列出了目标解释器上可用的 PostScript 字体名称。
 
  
 

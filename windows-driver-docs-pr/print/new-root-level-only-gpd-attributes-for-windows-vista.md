@@ -3,21 +3,21 @@ title: 适用于 Windows Vista 的仅限根级别的新 GPD 属性
 description: 适用于 Windows Vista 的仅限根级别的新 GPD 属性
 ms.assetid: 09f38459-6062-4d2a-9aee-929aa60193cf
 keywords:
-- 仅限根级别属性 WDK Unidrv
+- 仅限根级别的属性 WDK Unidrv
 - 常规打印机属性 WDK Unidrv，仅限根级别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be9818337085ee2f556040fc2e90978c63844c5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce989feb0a1879e64abff0dc4c32b16424f8347f
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384522"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802383"
 ---
 # <a name="new-root-level-only-gpd-attributes-for-windows-vista"></a>适用于 Windows Vista 的仅限根级别的新 GPD 属性
 
 
-以下列表介绍开始使用 Windows Vista 新增的 GPD 特性。 为了保持向后兼容性与早于 Windows Vista 版本的 Windows，应当在以下代码使用这些属性。
+以下列表描述了从 Windows Vista 开始的新的 GPD 属性。 若要保持与 Windows Vista 以前版本的向后兼容性，应将这些属性包含在以下代码中。
 
 ```cpp
 *Ifdef: WINNT_60 ... *Endif: WINNT_60 blocks
@@ -25,27 +25,27 @@ ms.locfileid: "67384522"
 
 ### <a name="printprocduplexoptions"></a>PrintProcDuplexOptions
 
-**PrintProcDuplexOptions**属性可以控制打印处理器中的各种进行双面打印选项。 此特性可具有以下值之一：
+**PrintProcDuplexOptions**属性控制打印处理器中的各种双工选项。 此属性可以具有以下值之一：
 
-1：反向页反向双工
+1：反向双工页
 
-2：如有可能取消生成的额外的空白页
+2：如果可能，禁止生成额外的空白页
 
-3：这两个以上
+3：上述两个
 
-0:以上都不是
+0：以上均不是
 
-如果**PrintProcDuplexOptions**为 1，它控制打印处理器是否应在反向双工反向页。
+如果 **PrintProcDuplexOptions** 为1，则它控制打印处理器是否应反转双工上的页面。
 
-假定您已打印四页文档与每张 = 1，并且你想要使用反向打印和双面打印。 由于您想要反向打印，你想要打印的第一页之前的最后一页。 由于您希望双面打印，你想要在一张纸上打印两页。 打印处理器可以播放页中 （其中每个对数字指示将打印在纸张的一张纸的两个方面的两个页面） 以下两种格式之一：
+假设您必须打印一个包含 n-up = 1 的四页文档，并且您想要使用反转打印和双工打印。 由于需要进行反向打印，因此需要在第一页之前打印最后一页。 由于需要双面打印，因此需要在一张纸上打印两页。 打印处理器可以使用以下两种格式中的一种来播放页 (其中，每对数字表示将在单张纸的两面上打印的两页) ：
 
--   格式 1:(4,3),(2,1)
+-   格式1： (4，3) ， (2，1) 
 
--   格式 2:(3,4),(1,2)
+-   格式2： (3，4) ， (1，2) 
 
-在 Windows Vista 之前的打印处理器可能会打印格式 2 中的顺序\[(3,4),(1,2)\]。 但在 Windows Vista 及更高版本，默认格式是格式 1 \[(4,3),(2,1)\]。 此更改发生，因为许多打印机有使用 2; 格式不正确的输出也就是说，打印的页未按正确的顺序排序。
+在 Windows Vista 之前，打印处理器会按 "格式 2 \[ (3，4) ， (1，2) 来打印订单 \] 。 但在 Windows Vista 和更高版本中，默认格式为 format 1 \[ (4，3) ， (2，1) \] 。 发生此更改的原因是许多打印机的输出格式不正确，格式为 2;也就是说，打印的页面未按正确顺序排列。
 
-但如果您的打印机与格式 1 一起正常运行，您不需要更改任何内容适用于 Windows Vista 及更高版本。 但是，如果您的打印机未正确使用格式 1 并想要恢复为格式 2，添加下面的代码示例 GPD 文件。
+但是，如果您的打印机在格式为1的情况下正常工作，则不需要为 Windows Vista 和更高版本更改任何内容。 但是，如果您的打印机的格式不正确，并且您想要恢复为格式2，请将下面的代码示例添加到您的 GPD 文件中。
 
 ```cpp
 *Ifdef: WINNT_60
@@ -53,38 +53,38 @@ ms.locfileid: "67384522"
 *Endif: WINNT_60
 ```
 
-格式 1 可能在某些方向中更好地运行，或输入和输出纸和格式 2 的某些组合可能在其他组合中更好地运行。 因此，您可以将放**PrintProcDuplexOptions**开关/用例构造中的属性。
+格式1在某些方向或输入和输出送纸器组合时可能更好，格式2在其他组合中可能更好。 因此，可以将 **PrintProcDuplexOptions** 属性放入交换机/case 构造。
 
-早于 Windows Vista Unidrv 驱动程序，如果您有了早于 Windows Vista 打印处理器，格式 2 是默认值，并不能更改格式;否则为如果您有了 Windows Vista 打印处理器，格式 1 是默认值，并且不能更改的格式。
+对于 Windows Vista 之前的 Unidrv 驱动程序，如果您具有 Windows Vista 以前的打印处理器，则默认情况下，"格式 2" 为默认值，不能更改格式;否则，如果你有 Windows Vista 打印处理器，则默认情况下将使用格式1，并且无法更改格式。
 
-对于 Windows Vista Unidrv 驱动程序，如果您有了早于 Windows Vista 打印处理器，格式 2 是默认情况下，和 GPD 特性将被忽略;否则为如果您使用的 Windows Vista 打印处理器、 格式 1 是默认值，但可以通过更改格式**PrintProcDuplexOptions**属性。
+对于 Windows Vista Unidrv 驱动程序，如果使用的是 Windows Vista 以前的打印处理器，则默认值为 "格式 2"，将忽略 "GPD" 属性;否则，如果你有 Windows Vista 打印处理器，则默认情况下使用格式1，但你可以使用 **PrintProcDuplexOptions** 属性更改格式。
 
-如果**PrintProcDuplexOptions**为 2，它会阻止生成的某些双工方案中的空白页。
+如果 **PrintProcDuplexOptions** 为2，则会阻止在某些双工方案中生成空白页。
 
-此属性控制是否应向发送额外的空白页打印机执行双面打印时。 例如，如果作业是一个页作业和双工模式是在 (假设每张 = 1)，仅在工作表的一端需要打印。 目前，打印机将打印一侧，然后生成在反向端空空白页。 (由于打印作业是使用双工 = 弹出工作表之前，打印机，需要两个页面。 如果第二页无法打印，某些打印机继续等待。）当前解决方案的缺点是：
+此属性控制在执行双工打印时是否应向打印机发送额外的空白页。 例如，如果作业为单页作业，并且双工处于开启状态 (假设 n 向上 = 1) ，则只需打印工作表的一侧。 目前，打印机将打印一侧，然后在反面生成空的空白页。  (因为打印作业是以双工 = on 启动的，所以打印机在弹出工作表之前需要两个页面。 如果第二页未打印，则某些打印机会继续等待。 ) 当前解决方案的缺点：
 
--   生成的页会计软件和打印机中的页计数器中导致不准确的页计数。
+-   生成的页面导致记帐软件中的页计数不正确，并在打印机中出现页计数器。
 
--   从打印机 （在某些 Hewlett Packard DeskJet 样式打印机） 的中间页时，用户可能会尝试时打印机会尝试将它重新将其拉出。 这种情况下可能会导致硬件问题。
+-   如果页面上的 Hewlett Packard DeskJet) 打印机中的页面的 (一半，则用户可能会尝试将其拉出，同时打印机会尝试将其取回。 这种情况可能导致硬件问题。
 
-可以通过指定避免上述问题\* **PrintProcDuplexOptions**:2 GPD 文件中。
+可以通过 \* 在 GPD 文件中指定**PrintProcDuplexOptions**：2来避免上述问题。
 
-请注意，即使设置此属性，则空白页优化仅在以下特定情况下执行：
+请注意，即使设置了此属性，仅在以下有限情况下才会执行空白页面优化：
 
-1.  用于反向打印，仅当整个作业可以放入纸的单面上时，才执行空白页优化 (例如，具有 n 个向上的一页作业 = 1 或每张多页四作业 = 4)。 如果作业需要多个表，则不会执行优化，（因为将不准确的顺序打印打印机页）。 例如，对于三页作业，页面可能会打印 3,2,1，顺序&lt;空白&gt;而不是 4,3,2，&lt;空白&gt;。
+1.  对于反向打印，仅当整个作业可以放在纸张单面上时，才会执行空白页优化 (例如，一页作业，其中包含 n 个（n） = 1 或四页作业，其中包含 n 个) 。 如果作业需要多个工作表，则不会执行优化 (因为打印机页将按不准确的顺序打印) 。 例如，对于三页作业，可以按订单3、2、1、 &lt; 空白 &gt; 而不是4，3，2，将页面打印为 &lt; 空白 &gt; 。
 
-2.  如果打印处理器具有用于模拟副本，则不执行空白页优化。 打印处理器模拟副本，如果所需的副本数不只是可以进行打印处理器的副本数。
+2.  如果打印处理器必须模拟副本，则不执行空白页优化。 如果所需的副本数大于打印处理器可以制作的副本数，打印处理器会模拟副本。
 
-    以下这种情况是时模拟发生并且 （如果需要），会生成空白页的示例：
+    以下情况是发生模拟的一个示例，并 (如有必要) 生成空白页：
 
-    -   无法创建副本的打印机的两个副本
+    -   不能制作副本的打印机的两个副本
 
-    在以下情况下是 examles 的时模拟不会发生，并且可以取消额外的页生成的：
+    以下情况 examles 不发生模拟时的情况，您可以取消额外的页面生成：
 
-    -   无法创建副本的打印机的单个副本作业
-    -   可以使多个复制的打印机的五个复制作业
+    -   不能制作副本的打印机的单个复制作业
+    -   5-复制作业，适用于可生成多个 copys 的打印机
 
-**Usage of PrintProcDuplexOptions**
+**PrintProcDuplexOptions 的用法**
 
 ```cpp
 *Ifdef: WINNT_60
@@ -92,65 +92,65 @@ ms.locfileid: "67384522"
 *Endif: WINNT_60 
 ```
 
-在某些情况下，可能不介意额外的页打印时在其他情况下，执行。 因此，可以放置**PrintProcDuplexOptions**开关/用例构造中的属性。
+在某些情况下，在其他情况下，您可能不介意进行额外的页面打印。 因此，可以将 **PrintProcDuplexOptions** 属性放入交换机/case 构造。
 
-早于 Windows Vista Unidrv 驱动程序，如果使用的是早于 Windows Vista 打印处理器，打印机将打印一个额外的空白页面上，如果认为有必要，并且不能更改此行为;否则为如果您使用的 Windows Vista 打印处理器，打印机将打印一个额外的空白页面上，如果认为有必要，并且不能更改此行为。
+对于 Windows Vista 以前的 Unidrv 驱动程序，如果有 Windows Vista 以前的打印处理器，打印机将打印一个额外的空白页面（如果有必要），并且无法更改此行为;否则，如果有 Windows Vista 打印处理器，打印机将打印额外的空白页面（如果有必要），并且无法更改此行为。
 
-对于 Windows Vista Unidrv 驱动程序，如果使用的是早于 Windows Vista 打印处理器、 打印机将打印一个额外的空白页面上，如果认为有必要，和 GPD 特性将被忽略;否则为如果您使用的 Windows Vista 的打印处理器，并相应 GPD 属性和正确的条件是否存在 （即，有关防止前面所述的条件保留为空页打印），打印机将不打印空白页。
+对于 Windows Vista Unidrv 驱动程序，如果你具有 Windows Vista 以前的打印处理器，则打印机将打印一个额外的空白页面（如果有必要），并且将忽略 GPD 属性;否则，如果你有 Windows Vista 打印处理器，并且存在适当的 GPD 属性和适当的条件 (即，先前介绍的用于防止空白页面打印) 的情况下，打印机将不会打印空白页面。
 
 ### <a name="preanalysisoptions"></a>PreAnalysisOptions
 
 **PreAnalysisOptions**属性可以具有以下值之一：
 
-0:禁用所有预分析模式。
+0：禁用所有预分析模式。
 
-1：默认模式。 启用单色的 z 顺序的文本分析和空白外优化。 有关使用可下载的字体或设备字体支持和高分辨率设备启用此模式 (600 dpi 或更高版本)、 24 bpp 呈现模式。
+1：默认模式。 启用 "单色 z 顺序文本分析" 和 "空白带优化"。 对于具有可下载字体或设备字体支持的设备，以及高分辨率 (600 dpi 或更高分辨率) 24 bpp 渲染模式，会启用此模式。
 
-2：启用 1 bpp 优化 24 bpp ImageProcessing 回调函数。
+2：为 24 bpp ImageProcessing 回调函数启用 1 bpp 优化。
 
-4:启用设备 StretchBlt 支持。
+4：启用设备 StretchBlt 支持。
 
-8:启用供应商预分析模式。
+8：启用供应商预分析模式。
 
-16:启用 1 bpp 其中带区之前转换为 24 bpp 调用 ImageProcessing 回调函数的调试模式。
+16：在调用 ImageProcessing 回调函数之前，启用 1 bpp 的调试模式，其中带区转换为 24 bpp。
 
 ### <a name="usebmpfontcompression"></a>UseBMPFontCompression?
 
-**UseBMPFontCompression？** 属性控制是否 Unidrv 字体下载为位图时应压缩的数据。 默认值**UseBMPFontCompression？** 是**FALSE**，这意味着如果此属性不存在 GPD 文件中，Unidrv 不会执行压缩。 此默认值维护与较旧版本的 Unidrv 不具有的位图字体压缩功能的兼容性。 应将此属性设置为 **，则返回 TRUE**仅当您的打印机支持的位图字体 compressionThe 压缩位图字符数据是以运行长度与行重复的压缩格式。
+**UseBMPFontCompression？** 属性控制在将字体作为位图下载时，Unidrv 是否应压缩数据。 **UseBMPFontCompression？** 的默认值为**FALSE**，这意味着如果 GPD 文件中不存在此属性，则 Unidrv 不会进行压缩。 此默认值与不具有位图字体压缩功能的较旧版本的 Unidrv 保持兼容。 仅当打印机支持位图字体 compressionThe 压缩位图字符数据采用压缩的运行时间长度的行重复格式时，才应将此属性设置为 **TRUE** 。
 
-### <a name="usemode5compression"></a>UseMode5Compression？
+### <a name="usemode5compression"></a>UseMode5Compression?
 
-**UseMode5Compression？** 属性控制是否 UniDrv 应使用模式 5 压缩。 模式 5 （或方法 5） 压缩是允许多个其他压缩方法 （如 Unencoded、 TIFF 或增量行） 组合的使用的自适应压缩。 默认值**UseMode5Compression？** 是**FALSE**，这意味着 Unidrv 将不会执行自适应压缩，如果此属性不存在 GPD 中。 此默认值维护与较旧版本的 Unidrv 不具有自适应的压缩功能的兼容性。 应将此属性设置为 **，则返回 TRUE**仅当您的打印机支持自适应压缩。
+**UseMode5Compression？** 属性控制 UniDrv 是否应使用模式5压缩。 模式 5 (或方法 5) 压缩是自适应压缩，它允许结合使用多种其他压缩 (方法，如未编码、TIFF 或增量行) 。 **UseMode5Compression？** 的默认值为**FALSE**，这意味着如果 GPD 中不存在此属性，则 Unidrv 不会执行自适应压缩。 此默认值将保持与较旧版本的 Unidrv 的兼容性，这些版本没有自适应压缩功能。 仅当打印机支持自适应压缩时，才应将此属性设置为 **TRUE** 。
 
 ### <a name="usehpglpolylineencoding"></a>UseHPGLPolylineEncoding?
 
-**UseHPGLPolylineEncoding？** 属性控制是否 Unidrv 应使用 polyline 编码。 HP/2 最多可支持笔 / 向下笔/绘制向量绘制相对绝对/绘图命令。 折线编码 (PE) 命令是表示矢量的更高效的方法。
+**UseHPGLPolylineEncoding？** 属性控制 Unidrv 是否应使用折线编码。 HP-GL/2 支持笔向上/向下/向下/向下绘制/绘制相对于绘图向量的相对命令。  (PE) 命令编码的折线是表示向量的更高效方法。
 
-默认值为**UseHPGLPolylineEncoding？** 是**FALSE**，这意味着如果此属性中不存在 GPD，Unidrv 不会使用 PE 命令。 此默认值维护与较旧版本的 Unidrv 不具有对 PE 命令支持的兼容性。 您应将该值设置 **，则返回 TRUE**仅当您的打印机支持编码的折线。
+**UseHPGLPolylineEncoding**的默认值为**FALSE**，这意味着如果 GPD 中不存在此属性，UNIDRV 将不使用 PE 命令。 此默认值保持与早期版本的 Unidrv 的兼容性，这些版本不支持 PE 命令。 仅当打印机支持折线编码时，才应将此值设置为 **TRUE** 。
 
 ### <a name="printschemaprivatenamespaceuri"></a>PrintSchemaPrivateNamespaceURI
 
-**PrintSchemaPrivateNamespaceURI**属性定义的专用命名空间 URI，核心驱动程序应使用它来公开私有 PPD 功能或 PrintTicket 或 PrintCapabilities 中的选项。 该属性必须出现在 GPD 文档的根，并且包含将用于在 Printticket 和 PrintCapabilities 文档中定义一个命名空间 URI 的 ASCII 表示形式。 URI，反过来，将与相关联的所有功能和不具有显式映射到公共架构，或核心驱动程序不能识别的选项。
+**PrintSchemaPrivateNamespaceURI**特性定义核心驱动程序用于公开 PrintTicket 或 PrintCapabilities 中的私有 PPD 功能或选项的专用命名空间 URI。 该属性必须出现在 GPD 文档的根目录中，并包含将用于定义 Printticket 和 PrintCapabilities 文档中的命名空间的 URI 的 ASCII 表示形式。 该 URI 反过来会与不具有到公共架构的显式映射的所有功能和选项关联，或者核心驱动程序无法识别。
 
 ### <a name="printschemakeywordmap"></a>PrintSchemaKeywordMap
 
-**PrintSchemaKeywordMap**属性将会显示在功能和选项下，构造 GPD 文件中。 此属性指示应使用的打印机定义功能什么公共打印架构名称。 您可以重命名在 GPD 文件中，除双工和逐份打印，使用 PrintTicket 中的指定任何选项**PrintSchemaKeywordMap**属性。
+**PrintSchemaKeywordMap**属性显示在 GPD 文件中的功能和选项构造下。 此属性指示应在打印机定义的功能中使用的公共打印架构名称。 您可以通过使用 **PrintSchemaKeywordMap** 属性，重命名在 PrintTicket 中指定的任何选项（在 GPD 文件中除外和 Collate 除外）。
 
-**请注意**   GPD 分析器将忽略此属性显式识别，包括页面大小和颜色的功能。
-
- 
-
-所有值应都括在引号中。 如果有使用 GPD 中指定的代码页，将为 Unicode 转换它们。 作为其他 GPD 属性相同的方式解决的任何特性的重复的定义：读取的最后一个定义优先。
-
-**重要**  相应 PrintCapabilities 文档如果向已在使用 GPD 文件中的打印架构关键字映射一项功能，可能会超过一次列出该功能。 多个匹配项可能令人困惑，因此不应将功能映射到 GPD 文件中使用的打印架构关键字。
+**注意**   对于显式识别的功能（包括页面大小和颜色），GPD 分析器将忽略此属性。
 
  
 
-**请注意**  GPD 分析器自动生成 InputBin 功能 FORMSOURCE 选项，并将其映射到打印架构中的自动选择关键字。 如果 GPD 文件包含使用 InputBin 选项**PrintSchemaKeywordMap**属性将映射到打印架构关键字的选项，请打印架构中的功能将包含的设备命名空间中的 FORMSOURCE 选项。 自动选择将出现在 PrintCapabilities 文档和中指定的选项是指**PrintSchemaKeywordMap** GPD 文件的属性。
+所有值都应该用引号引起来。 它们将使用 GPD 中指定的代码页（如果有）转换为 Unicode。 任何属性的重复定义的解析方式与其他 GPD 属性相同：将优先处理读取的最后一个定义。
+
+**重要提示**   如果将功能映射到已在 GPD 文件中使用的 Print Schema 关键字，则相应的 PrintCapabilities 文档可能会多次列出该功能。 多次出现可能会造成混淆，因此不应将功能映射到 GPD 文件中使用的打印架构关键字。
 
  
 
-下面的代码示例显示了完整的 GPD 文件以显示布局。
+**注意**   GPD 分析器会自动生成 InputBin 功能的 FORMSOURCE 选项，并将其映射到打印架构中的 "自动选择" 关键字。 如果 GPD 文件包含 InputBin 选项，该选项使用 **PrintSchemaKeywordMap** 属性将选项映射到 print schema 关键字，则打印架构中的功能将在设备命名空间中包含 FORMSOURCE 选项。 "自动选择" 将显示在 PrintCapabilities 文档中，并引用 GPD 文件的 **PrintSchemaKeywordMap** 属性中指定的选项。
+
+ 
+
+下面的代码示例演示了用于显示布局的部分 GPD 文件。
 
 ```cpp
 *Feature: HPSTAPLER
@@ -181,15 +181,15 @@ ms.locfileid: "67384522"
 *IsXPSDriver?: TRUE | FALSE
 ```
 
-您可以使用 Windows Vista Unidrv 配置模块 (Unidrvui.dll) Microsoft Win32 GDI 驱动程序和新[XPSDrv 驱动程序](xpsdrv-printer-drivers.md)。 若要使用 XPSDrv 驱动程序 Unidrv 配置模块，请在 XPSDrv 驱动程序的 gpd 分析数据文件必须指定**IsXPSDriver**属性，并将其值设置为**TRUE**。
+可以为 Microsoft Win32 GDI 驱动程序和新的 [XPSDrv 驱动程序](xpsdrv-printer-drivers.md)使用 Windows Vista Unidrv 配置模块 ( # A0) 。 若要将 Unidrv 配置模块用于 XPSDrv 驱动程序，XPSDrv 驱动程序的 GPD 数据文件必须指定 **IsXPSDriver** 属性，并将其值设置为 **TRUE**。
 
-例如，如果您有的 XPS 驱动程序，使用下面的代码。
+例如，如果您有 XPS 驱动程序，请使用以下代码。
 
 ```cpp
 *IsXPSDriver?: TRUE
 ```
 
-若要使用 Win32 GDI 驱动程序 Unidrv 配置模块，你不必指定此属性。
+若要将 Unidrv 配置模块用于 Win32 GDI 驱动程序，无需指定此属性。
 
 ### <a name="useimageforhatchbrush"></a>UseImageForHatchBrush?
 
@@ -201,9 +201,9 @@ ms.locfileid: "67384522"
 *Endif: WINNT_60 
 ```
 
-在 Microsoft Windows Server 2003 或 Windows XP 中，当 Unidrv 打印在 HP/2 模式下，如果在收到阴影画笔[ **DrvRealizeBrush** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvrealizebrush)函数，以便打印机选择 Unidrv 发送命令相应的阴影画笔。 Unidrv 不控制阴影画笔的呈现方式。 例如，通过解析通常控制线之间的间距。 在更高的分辨率，间距获取小，同时在较低的分辨率，间距为更高版本。 因此，文档可能以不同方式打印如果使用不同的解决方法。
+在 Microsoft Windows Server 2003 或 Windows XP 中，当 Unidrv 在 HP-UX/2 模式下进行打印时，如果 [**DrvRealizeBrush**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvrealizebrush) 函数中收到影线画笔，则 Unidrv 将发送一个命令，以便打印机选择合适的阴影画笔。 Unidrv 不控制阴影画笔的呈现方式。 例如，行之间的间距通常由分辨率控制。 在较高的分辨率下，间距会变小，而在较低的分辨率下，间距会更大。 因此，如果使用不同的分辨率，文档可能会以不同的方式打印。
 
-在 Windows Vista 中，如果指定了 GPD **UseImageForHatchBrush？** 特性 Unidrv 呈现一个位图表面上的阴影画笔，然后将该位图发送到设备。 Unidrv，因此，有一些控件上的阴影画笔的呈现方式。
+在 Windows Vista 中，如果 GPD 指定了 **UseImageForHatchBrush？** 属性，则 Unidrv 会将阴影画笔呈现到位图图面上，然后将该位图发送到设备。 因此，Unidrv 对阴影画笔的呈现方式有一些控制。
 
 ### <a name="reversebandorder"></a>ReverseBandOrder?
 
@@ -215,21 +215,21 @@ ms.locfileid: "67384522"
 *Endif: WINNT_60 
 ```
 
-值**ReverseBandOrder？** 是**TRUE**或**FALSE**指示是否启用反向条带。 此属性会导致条带将按相反的顺序执行。 例如，对于纵向页上，条带会发生从底部到顶部而不是从上到下。
+**ReverseBandOrder**的值为**TRUE**或**FALSE** ，指示是否启用了反向条带。 此属性会导致按相反的顺序进行分级。 例如，对于纵向页面，将从下到上（而不是从上到下）进行分级。
 
-此属性实质上是相同 ReverseBandOrderForEvenPages？，只不过**ReverseBandOrder？** 甚至被视为如果双工不处于活动状态 (**ReverseBandOrderForEvenPages？** works 仅当双工为 ON），并且它适用于所有页 (**ReverseBandOrderForEvenPages？** 仅适用于偶数页)。 有关如何使用的详细信息**ReverseBandOrder？** 和其他相关的信息，请参阅\* **ReverseBandOrderForEvenPages？** 。 尤其注意插件必须撤消扫描行和扫描行中的位。
+此属性实质上与 ReverseBandOrderForEvenPages？相同，不同之处在于即使双工不 (处于活动状态，也会考虑使用 **ReverseBandOrder？** 仅当双工在) **上时才有效，** 并且它适用于所有页 (**ReverseBandOrderForEvenPages？** 仅在) 的偶数页上工作。 有关如何使用**ReverseBandOrder？** 和其他相关信息的详细信息，请参阅 \* **ReverseBandOrderForEvenPages？**。 特别要注意的是，插件必须反转扫描行和扫描行中的位。
 
-可以使用的组合\*ReverseBandOrderForEvenPages？ 和\* **ReverseBandOrder？** 。
+可以结合使用 \* ReverseBandOrderForEvenPages？和 \* **ReverseBandOrder？**。
 
-当仅**ReverseBandOrder？** 设置为**TRUE**，条带将反转的所有页面。
+如果仅将 **ReverseBandOrder** 设置为 **TRUE**，则将对所有页面反转条带。
 
-当仅**ReverseBandOrderForEvenPages？** 设置为**TRUE**，条带将反转为甚至 pagesonly 如果打印机正在打印，双工。 如果未设置双工， **ReverseBandOrderForEvenPages？** 设置将被忽略。
+如果仅将 **ReverseBandOrderForEvenPages** 设置为 **TRUE**，则在打印机打印双面时，对 pagesonly 进行反向分级。 如果未设置双工，则忽略 **ReverseBandOrderForEvenPages？** 设置。
 
-当同时**ReverseBandOrder？** 并**ReverseBandOrderForEvenPages？** 设置，将发生以下情况：
+如果设置了 **ReverseBandOrder？** 和 **ReverseBandOrderForEvenPages？** ，则会发生以下情况：
 
--   如果双工为 ON，将反向条带执行奇数页 （即 1、 3、 5、 7 和等等）。
+-   如果双工处于开启，则为奇数页（ (为1、3、5、7等) 执行反向分级。
 
--   如果双工为 OFF，则反向法执行的所有页面。
+-   如果双工处于关闭状态，则对所有页面执行反向分级。
 
 ### <a name="bidiqueryfile"></a>BidiQueryFile
 
@@ -239,9 +239,9 @@ ms.locfileid: "67384522"
 *BidiQueryFile: <GPD or GDL file name>
 ```
 
-使用**BidiQueryFile**若要指定 GPD 或 GDL 文件名称，其中包含打印机驱动程序的自动配置**BidiQuery**或**BidiResponse**数据。 GPD 或 GDL 文件名称不应指定任何路径。 如果自动配置数据包含在驱动程序的数据文件 GPD 文件，还可以作为的值指定该 GPD 文件**BidiQueryFile**属性。
+使用 **BidiQueryFile** 指定 GPD 或 GDL 文件名，其中包含打印机驱动程序的自动配置 **BidiQuery** 或 **BidiResponse** 数据。 GPD 或 GDL 文件名不应指定任何路径。 如果自动配置数据包含在驱动程序的数据文件 GPD 文件中，还可以将该 GPD 文件指定为 **BidiQueryFile** 特性的值。
 
-下面的代码示例演示分部 GPD 文件中此属性的一个示例。
+下面的代码示例显示了一个部分 GPD 文件中的此属性的示例。
 
 ```cpp
 *Ifdef: WINNT_60

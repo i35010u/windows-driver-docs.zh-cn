@@ -9,28 +9,28 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c4d38b348c8f1e8d3d78af59112bda22e25a8a
-ms.sourcegitcommit: 40aa0786a52dd7b830e0ce1ed062ca0ba4e05f63
+ms.openlocfilehash: 93eb718561e212e07347961d854f8977ca9b6e6a
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88023003"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802489"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA) ：驱动程序开发人员的步骤
 
-硬件支持应用 (HSA) 是设备特定的应用，与特定驱动程序或[RPC (远程过程调用) ](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)终结点配对。
+硬件支持应用 (HSA) 是设备特定的应用，与特定驱动程序或 [RPC (远程过程调用) ](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page) 终结点配对。
 
 若要将应用商店应用与驱动程序相关联，请首先保留称为 "自定义功能" 的特殊值。 然后，允许访问广告功能并向应用开发人员提供功能的应用。  本页介绍了驱动程序开发人员的这些步骤。
 
-应用开发人员的步骤在硬件支持应用中进行了介绍[ (HSA) ：适用于应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+应用开发人员的步骤在硬件支持应用中进行了介绍 [ (HSA) ：适用于应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
-HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)) 设计原则的三个 ( "DCH" 中的一种。
+HSA 是 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.md)) 设计原则的三个 ( "DCH" 中的一种。
 
 ## <a name="reserving-a-custom-capability"></a>保留自定义功能
 
 首先，保留自定义功能：
 
-1.  电子邮件 Microsoft 硬件支持应用查看 (<HSAReview@microsoft.com>) ，并提供以下信息：
+1. 电子邮件 Microsoft 硬件支持应用查看 (<HSAReview@microsoft.com>) ，并提供以下信息：
 
     * 联系信息
     * 公司名称
@@ -42,9 +42,9 @@ HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md
       * 数据事件是停留在用户设备上，还是发送到合作伙伴？
     * 你的功能提供了哪些数据？
     * 此功能的最终用户权益是什么？
-    * 包括 Microsoft Store 应用发行者 ID。  若要获取一个，请在 Microsoft Store 页上创建一个主干应用项。 有关保留应用 PFN 的详细信息，请参阅[通过保留名称创建应用](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
+    * 包括 Microsoft Store 应用发行者 ID。  若要获取一个，请在 Microsoft Store 页上创建一个主干应用项。 有关保留应用 PFN 的详细信息，请参阅 [通过保留名称创建应用](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 
-2.  如果批准了请求，Microsoft 将通过电子邮件返回**capabilityName \_ PublisherID**格式的唯一自定义功能字符串名称。
+2. 如果批准了请求，Microsoft 将通过电子邮件返回 **capabilityName \_ PublisherID**格式的唯一自定义功能字符串名称。
 
 现在，你可以使用自定义功能来允许访问 RPC 终结点或驱动程序。
 
@@ -52,9 +52,9 @@ HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md
 
 若要允许对具有自定义功能的 UWP 应用访问 RPC 终结点，请执行以下步骤：
 
-1.  调用[**DeriveCapabilitySidsFromName**](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
-2.  将 SID 添加到 access 允许的 ACE 以及 RPC 终结点安全描述符所需的任何其他 Sid。
-3.  使用安全描述符中的信息创建 RPC 终结点。
+1. 调用 [**DeriveCapabilitySidsFromName**](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
+2. 将 SID 添加到 access 允许的 ACE 以及 RPC 终结点安全描述符所需的任何其他 Sid。
+3. 使用安全描述符中的信息创建 RPC 终结点。
 
 在[自定义功能示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)的[RPC 服务器代码](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomCapability/Service/Server/RpcServer.cpp)中，可以看到上述的实现。
 
@@ -65,40 +65,40 @@ HSA 是[Windows 驱动程序](../develop/getting-started-with-windows-drivers.md
 在 INF 文件中指定自定义功能，如下所示：
 
 ```cpp
-[WDMPNPB003_Device.NT.Interfaces] 
-AddInterface= {zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz},,AddInterfaceSection 
- 
-[AddInterfaceSection] 
-AddProperty= AddInterfaceSection.AddProps 
- 
-[AddInterfaceSection.AddProps] 
-; DEVPKEY_DeviceInterface_UnrestrictedAppCapabilities 
+[WDMPNPB003_Device.NT.Interfaces]
+AddInterface= {zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz},,AddInterfaceSection
+
+[AddInterfaceSection]
+AddProperty= AddInterfaceSection.AddProps
+
+[AddInterfaceSection.AddProps]
+; DEVPKEY_DeviceInterface_UnrestrictedAppCapabilities
 {026e516e-b814-414b-83cd-856d6fef4822}, 8, 0x2012,, "CompanyName.myCustomCapabilityNameTBD_MyStorePubId"
 ```
 
 或者，在驱动程序中执行以下操作：
 
 ```c++
-WDF_DEVICE_INTERFACE_PROPERTY_DATA PropertyData = {}; 
-WCHAR customCapabilities[] = L”CompanyName.myCustomCapabilityNameTBD_MyStorePubId\0”; 
- 
-WDF_DEVICE_INTERFACE_PROPERTY_DATA_INIT( 
-   &PropertyData, 
-   &m_VendorDefinedSubType, 
-   &DEVPKEY_DeviceInterface_UnrestrictedAppCapabilities); 
- 
-Status = WdfDeviceAssignInterfaceProperty( 
-    m_FxDevice, 
-    &PropertyData, 
-    DEVPROP_TYPE_STRING_LIST, 
-    ARRAYSIZE(customCapabilities), 
-    reinterpret_cast<PVOID>(customCapabilities)); 
+WDF_DEVICE_INTERFACE_PROPERTY_DATA PropertyData = {};
+WCHAR customCapabilities[] = L”CompanyName.myCustomCapabilityNameTBD_MyStorePubId\0”;
+
+WDF_DEVICE_INTERFACE_PROPERTY_DATA_INIT(
+   &PropertyData,
+   &m_VendorDefinedSubType,
+   &DEVPKEY_DeviceInterface_UnrestrictedAppCapabilities);
+
+Status = WdfDeviceAssignInterfaceProperty(
+    m_FxDevice,
+    &PropertyData,
+    DEVPROP_TYPE_STRING_LIST,
+    ARRAYSIZE(customCapabilities),
+    reinterpret_cast<PVOID>(customCapabilities));
 
 ```
 
-替换为 `zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz` 要公开的接口的 GUID。  请将 " *myCustomCapabilityNameTBD* *" 替换为*公司名称，将 "名称" 替换为公司中唯一的名称，并将 " *MyStorePubId* " 替换为你的发布者存储区 ID。 
+替换为 `zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz` 要公开的接口的 GUID。  请将 " *myCustomCapabilityNameTBD* *" 替换为*公司名称，将 "名称" 替换为公司中唯一的名称，并将 " *MyStorePubId* " 替换为你的发布者存储区 ID。
 
-有关上面所示的驱动程序代码示例，请参阅[适用于通用驱动程序的驱动程序包安装工具包](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)。
+有关上面所示的驱动程序代码示例，请参阅 [适用于通用驱动程序的驱动程序包安装工具包](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)。
 
 ## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>准备 (SCCD) 文件的已签名自定义功能描述符
 
@@ -121,17 +121,18 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 接下来，自定义功能所有者将从应用开发人员那里获取包系列名称 (PFN) 和签名哈希，并在 SCCD 文件中更新这些字符串。
 
-**注意：** 应用无需直接使用证书进行签名，但指定的证书必须是对应用进行签名的证书链的一部分。
+>[!NOTE]
+>应用无需直接使用证书进行签名，但指定的证书必须是对应用进行签名的证书链的一部分。
 
 完成 SCCD 后，功能所有者会将其通过电子邮件发送给 Microsoft 进行签名。  Microsoft 将向功能所有者返回已签名的 SCCD。
 
-然后，功能所有者将 SCCD 发送到应用开发人员。  应用程序开发人员在应用程序清单中包含已签名的 SCCD。  若要了解应用开发人员需要执行的操作，请参阅[硬件支持应用 (HSA) ：应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
+然后，功能所有者将 SCCD 发送到应用开发人员。  应用程序开发人员在应用程序清单中包含已签名的 SCCD。  若要了解应用开发人员需要执行的操作，请参阅 [硬件支持应用 (HSA) ：应用开发人员的步骤](hardware-support-app--hsa--steps-for-app-developers.md)。
 
 ## <a name="limiting-the-scope-of-an-sccd"></a>限制 SCCD 的范围
 
 出于测试目的，自定义功能所有者可以限制在开发人员模式下将硬件支持应用安装到计算机。
 
-为此，请在获取由 Microsoft 签署的 SCCD 之前添加**DeveloperModeOnly**：
+为此，请在获取由 Microsoft 签署的 SCCD 之前添加 **DeveloperModeOnly**：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -147,11 +148,11 @@ Status = WdfDeviceAssignInterfaceProperty(
 </CustomCapabilityDescriptor>
 ```
 
-生成的已签名 SCCD 仅适用于以[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)运行的设备。 
+生成的已签名 SCCD 仅适用于以 [开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)运行的设备。
 
 ## <a name="allowing-any-app-to-use-a-custom-capability"></a>允许任何应用使用自定义功能
 
-建议指定可使用自定义功能)  (应用的授权实体。 但是，在某些情况下，你可能希望允许任何应用包括 SCCD。  从 Windows 10 版本1809开始，可以通过将**AllowAny**添加到 AuthorizedEntities 元素来实现此目的。 由于最好的做法是在 SCCD 文件中声明授权的实体，因此，请在提交你的 SCCD 以由 Microsoft 签名时，提供使用**AllowAny**的理由。
+建议指定可使用自定义功能)  (应用的授权实体。 但是，在某些情况下，你可能希望允许任何应用包括 SCCD。  从 Windows 10 版本1809开始，可以通过将 **AllowAny** 添加到 AuthorizedEntities 元素来实现此目的。 由于最好的做法是在 SCCD 文件中声明授权的实体，因此，请在提交你的 SCCD 以由 Microsoft 签名时，提供使用 **AllowAny** 的理由。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -164,7 +165,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 </CustomCapabilityDescriptor>
 ```
 
-生成的已签名 SCCD 将在任何应用包中进行验证。 
+生成的已签名 SCCD 将在任何应用包中进行验证。
 
 ## <a name="multiple-sccds"></a>多个 SCCDs
 
@@ -193,7 +194,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 ## <a name="sccd-xml-schema"></a>SCCD XML 架构
 
-下面是 SCCD 文件的正式 XML XSD 架构。  提交 SCCD 之前，请使用此架构验证你的。  有关导入架构和使用 IntelliSense 进行验证的信息，请参阅[架构缓存](https://docs.microsoft.com/visualstudio/xml-tools/schema-cache)和[XML 文档验证](https://docs.microsoft.com/visualstudio/xml-tools/xml-document-validation)。
+下面是 SCCD 文件的正式 XML XSD 架构。  提交 SCCD 之前，请使用此架构验证你的。  有关导入架构和使用 IntelliSense 进行验证的信息，请参阅 [架构缓存](https://docs.microsoft.com/visualstudio/xml-tools/schema-cache) 和 [XML 文档验证](https://docs.microsoft.com/visualstudio/xml-tools/xml-document-validation) 。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +295,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 </xs:schema>
 ```
 
-在 Windows 10 版本1809中，下面的架构也是有效的。  它允许 SCCD 将任何应用包声明为授权实体。 
+在 Windows 10 版本1809中，下面的架构也是有效的。  它允许 SCCD 将任何应用包声明为授权实体。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

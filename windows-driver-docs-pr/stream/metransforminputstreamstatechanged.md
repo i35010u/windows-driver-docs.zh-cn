@@ -1,47 +1,47 @@
 ---
 title: METransformInputStreamStateChanged
-description: METransformInputStreamStateChanged 事件指示输入流状态，或者必须更改媒体类型。
+description: METransformInputStreamStateChanged 事件表示必须更改输入流状态或媒体类型。
 ms.assetid: 734080DD-8D96-4AF3-BB13-FDA8E0398C0B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b746febc87b7cf95bade05b77df736d0451d35
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1acc0cc257027b31c76d2d32d8ea56c45f2fa639
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363302"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802529"
 ---
 # <a name="metransforminputstreamstatechanged"></a>METransformInputStreamStateChanged
 
 
-**METransformInputStreamStateChanged**事件指示输入流状态，或者必须更改媒体类型。
+**METransformInputStreamStateChanged**事件表示必须更改输入流状态或媒体类型。
 
-## <a name="span-idwhensentspanspan-idwhensentspanspan-idwhensentspanwhen-sent"></a><span id="When_sent"></span><span id="when_sent"></span><span id="WHEN_SENT"></span>发送时
-
-
-更改设备 MFT 输出后，相关的输入的流状态可能还需要进行更改。 出现此情况时，生成设备 MFT **METransformInputStreamStateChanged**事件。
-
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>参数
+## <a name="span-idwhen_sentspanspan-idwhen_sentspanspan-idwhen_sentspanwhen-sent"></a><span id="When_sent"></span><span id="when_sent"></span><span id="WHEN_SENT"></span>发送时间
 
 
-| 参数              | 描述                                                                     |
+更改设备 MFT 输出时，可能还需要更改相关的输入流状态。 出现这种情况时，设备 MFT 会生成一个 **METransformInputStreamStateChanged** 事件。
+
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
+
+
+| 参数              | 说明                                                                     |
 |------------------------|---------------------------------------------------------------------------------|
-| **输入的流索引** | 必须上 IMFMediaEvent 属性存储设置的输入的流索引。 |
+| **输入流索引** | 必须在 IMFMediaEvent 的属性存储上设置输入流索引。 |
 
  
 
 ## <a name="remarks"></a>备注
 
 
-在响应此事件，设备转换管理器 (DTM) 将调用[ **GetInputStreamPreferredState** ](https://docs.microsoft.com/windows/desktop/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate)上设备 MFT 具有指定的输入的流索引。 设备 MFT 将返回的首选的状态和媒体类型。
+对于此事件，设备转换管理器 (DTM) 将在具有指定输入流索引的设备 MFT 上调用 [**GetInputStreamPreferredState**](https://docs.microsoft.com/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate) 。 设备 MFT 将返回首选的状态和媒体状态。
 
-DTM 将 devproxy 输出流上设置请求的媒体类型，然后将它转换成请求的流式处理状态。 如果成功，然后 DTM 将设备 MFT 输入流设置相同的媒体类型，并将它转换成请求的状态。
+DTM 会在 devproxy 输出流上设置请求的媒体状态，然后将其转换为请求的流状态。 如果此方法成功，则 DTM 将在设备 MFT 输入流上设置相同的媒体状态，并将其转换为请求的状态。
 
-如果在此过程中没有错误，然后**SetInputStreamStatedwStatus**参数将包含所发生的错误。 设备 MFT 应传播到相应 DTM 错误。
+如果在此过程中出现错误，则 **SetInputStreamStatedwStatus** 参数将包含发生的错误。 设备 MFT 应适当地将错误传播到 DTM。
 
-指定的流处于已停止或正在运行状态时，可能会生成此事件。 如果流已处于停止状态，设备转换管理器将查询该设备 MFT 输入流的首选的类型，并将其设置到 Devproxy 的输出。 如果此操作成功，DTM 将设备 MFT 的输入设置相同的首选媒体类型。
+当指定的流处于停止或运行状态时，可能会生成此事件。 如果流处于停止状态，则设备转换管理器将查询该设备 MFT 输入流的首选类型，并将其设置为 Devproxy 的输出。 如果成功，则 DTM 会在设备 MFT 的输入上设置相同的首选媒体类型。
 
-当设备 MFT 生成此事件流式处理，进一步示例传递将停止，而将输入设备 MFT 上请求首选媒体类型。 Devproxy 输出和输入设备 MFT 上设置此媒体类型。 该流将自动重新启动上 Devproxy 输出流和示例将发送到设备 MFT 输入流。 当新的示例，设备 MFT 会将这些示例传送到相关的输出流。
+当设备 MFT 在流式处理时生成此事件时，将停止进一步的示例传递，并将在设备 MFT 输入上请求首选的媒体源。 这种媒体源设置在 Devproxy 的输出和设备 MFT 的输入上设置。 流将在 Devproxy 输出流上自动重新启动，并将示例传递到设备 MFT 输入流。 当新示例到达时，设备 MFT 会将示例传递到相关的输出流。
 
  
 

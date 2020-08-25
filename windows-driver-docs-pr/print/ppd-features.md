@@ -8,12 +8,12 @@ keywords:
 - 驱动程序功能 WDK Pscript
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac55da640f6ec044c738095eadaf58f40f0de35
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2b76d9ce4957e10902d50473242496de12aaa4dc
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373793"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802439"
 ---
 # <a name="ppd-features"></a>PPD 功能
 
@@ -21,17 +21,17 @@ ms.locfileid: "67373793"
 
 
 
-中的 PPD 文件内定义 PPD 功能 **\*OpenUI**/ **\*CloseUI**结构关键字对和中的处理方式类似某些 PPD 关键字Pscript 驱动程序。 尽管**EnumFeatures**列出了 **\*LeadingEdge**并 **\*UseHWMargins**关键字，它们不定义内 PPD  **\*OpenUI**/ **\*CloseUI**结构关键字对。 因此， **GetOptions**并**SetOptions**方法会忽略这些关键字，如果它们出现在功能列表。 PPD 功能/选项关键字是区分大小写。
+Ppd 功能在** \* OpenUI** / ** \* CloseUI**结构关键字对中的 ppd 文件中定义，并在与 Pscript 驱动程序类似的某些 PPD 关键字中定义。 尽管**EnumFeatures**列出了** \* LeadingEdge**和** \* UseHWMargins**关键字，但没有在 PPD ** \* OpenUI** / ** \* CloseUI**结构关键字对中定义它们。 因此，如果这些关键字出现在功能列表中，则 **GetOptions** 和 **SetOptions** 方法将忽略它们。 PPD 功能/选项关键字区分大小写。
 
-**SetOptions**以特殊方式处理某些 PPD 功能：
+**SetOptions** 以特殊方式处理某些 PPD 功能：
 
--   如果打印机的 PPD 文件包含 **\*OutputOrder**功能关键字和**SetOptions**调用以更改选项选择此功能，则 **%pageorder**驱动程序功能设置将更改以匹配新的输出顺序。 这样做是为了防止执行不必要的页顺序模拟后台处理程序。
+-   如果打印机的 PPD 文件包含** \* OutputOrder** feature 关键字，而调用**SetOptions**来更改此功能的选项，则将更改 **% PageOrder**驱动程序功能设置以匹配新的输出顺序。 这样做是为了防止后台处理程序执行不必要的页面顺序模拟。
 
--   如果打印机的 PPD 文件包含 **\*OutputBin**功能关键字和**SetOptions**调用以更改的当前设置的这项功能及更改原因的选项选择 **%pageorder**驱动程序功能以相反的顺序，打印机的页面并 **%metafilespooling**为"False"，则 **%metafilespooling**将重置为"True"。
+-   如果打印机的 PPD 文件包含** \* OutputBin** feature 关键字，并调用**SetOptions**来更改此功能的选项，并且更改导致 **% PageOrder**驱动程序功能的当前设置与打印机的页面顺序相反，而 **% MetafileSpooling**为 "False"，则 **% MetafileSpooling**将重置为 "True"。
 
--   启用后台处理程序 EMF 后台处理，并**逐份打印**设置为"True"(此值可以设置中的公共部分直接[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构，或通过调用**SetOptions**上的 PPD **\*逐份打印**功能关键字)，但**逐份打印**功能不是目前不可用，和 **%MetafileSpooling**为"False"，则 **%metafilespooling**将重置为"True"。 这是所有请求中的设置时**SetOptions**应用调用。
+-   当后台处理程序启用了 EMF 假脱机功能，并且将**collate**设置为 "true" 时 (可以直接在[**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew)结构的公共部分中设置此值，也可以通过对 PPD 的** \* Collate**排序功能) 关键字调用**SetOptions**来进行设置，但**collate**功能当前不可**用，%** **MetafileSpooling**将重置为 "True"。 在应用 **SetOptions** 调用中的所有请求的设置时，将执行此操作。
 
--   如果**双工**设置为单工 (这设置可以直接在 DEVMODE 结构的或通过调用的公共部分**SetOptions**上的 PPD **\*双工**功能关键字)，但 **%pagepersheet**设置为"手册"，然后 **%pagepersheet**将更改为"2"。 这是所有请求中的设置时**SetOptions**应用调用。
+-   如果将 "**双工**" 设置为 "单工 (则可以直接在 DEVMODE 结构的公共部分中设置此项，也可以通过对 PPD 的** \* 双工**功能关键字) 调用**SetOptions** ，但将 **% PagePerSheet**设置为" 手册 "，然后将 **% PagePerSheet**更改为" 2 "。 在应用 **SetOptions** 调用中的所有请求的设置时，将执行此操作。
 
  
 

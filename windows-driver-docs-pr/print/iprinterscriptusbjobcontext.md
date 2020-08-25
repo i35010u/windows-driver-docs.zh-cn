@@ -16,21 +16,21 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0477bdc5096f06394f4131147bfca3fa47c25866
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 10b521ad8d1b50b75b9480cac14b6f920e2e12e8
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837858"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802757"
 ---
 # <a name="iprinterscriptusbjobcontext-interface"></a>IPrinterScriptUsbJobContext 接口
 
-IPrinterScriptUsbJobContext 接口作为参数传递给**startPrintJob** JavaScript 函数。
+IPrinterScriptUsbJobContext 接口作为参数传递给 **startPrintJob** JavaScript 函数。
 
 <a name="members"></a>成员
 -------
 
-**IPrinterScriptUsbJobContext**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext**还具有下列类型的成员：
+**IPrinterScriptUsbJobContext**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterScriptUsbJobContext** 还具有下列类型的成员：
 
 -   [方法](#methods)
 
@@ -46,7 +46,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给**startPrintJob** JavaScr
 <thead>
 <tr class="header">
 <th>方法</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +68,7 @@ IPrinterScriptUsbJobContext 接口作为参数传递给**startPrintJob** JavaScr
 </tr>
 <tr class="odd">
 <td><a href="iprinterscriptusbjobcontext-temporarystreams.md" data-raw-source="[&lt;strong&gt;TemporaryStreams&lt;/strong&gt;](iprinterscriptusbjobcontext-temporarystreams.md)"><strong>TemporaryStreams</strong></a></td>
-<td><p>返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream" data-raw-source="[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)">IPrinterScriptableSequentialStream</a>接口的数组。</p></td>
+<td><p>返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream" data-raw-source="[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)">IPrinterScriptableSequentialStream</a> 接口的数组。</p></td>
 </tr>
 </tbody>
 </table>

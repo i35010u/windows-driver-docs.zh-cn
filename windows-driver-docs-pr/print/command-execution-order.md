@@ -7,12 +7,12 @@ keywords:
 - 序列号 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d5203480878d5c8fac31f2d642276fdad5425dbd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ff9f9da1fbf6ba92d821a49ae0af2a7824716cf
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385982"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802453"
 ---
 # <a name="command-execution-order"></a>命令执行顺序
 
@@ -20,43 +20,43 @@ ms.locfileid: "67385982"
 
 
 
-必须将打印机命令发送到打印机硬件有意义的顺序。 对于大多数 GPD 语言中定义的命令名称，Unidrv 知道何时向打印机发送命令的转义序列。 有两种例外情况：
+必须以有意义的顺序将打印机命令发送到打印机硬件。 对于在 GPD 语言中定义的大多数命令名称，Unidrv 知道何时将命令的转义序列发送到打印机。 有两种例外情况：
 
 [选项选择命令](option-selection-command.md)
 
 [打印机配置命令](printer-configuration-commands.md)
 
-对于这两种命令类型，必须指定应在执行命令的顺序。
+对于这两种命令类型，都必须指定命令的执行顺序。
 
-命令执行顺序由两个组件--作业部分名称和一个序号顺序组成。 Unidrv 驱动程序将每个打印作业划分为六个部分。 对于每个部分中，Unidrv 发送打印机分配到的部分中，指定序列中的命令。 定义以下各节：
+命令执行顺序由两个组件组成：一个作业部分名称和一个序列顺序号。 Unidrv 驱动程序将每个打印作业分为六部分。 对于每个部分，Unidrv 将按指定顺序向打印机发送分配给部分的命令。 定义了下列部分：
 
-<a href="" id="job-setup"></a>作业\_安装程序  
-分配给作业的命令\_设置部分发送一次每个作业。 它们是发送一个新的作业开始时的第一个命令。 这些命令从发送 Unidrv 的实现的内部[ **DrvStartDoc** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartdoc)函数。
+<a href="" id="job-setup"></a>作业 \_ 设置  
+分配给作业 \_ 设置部分的命令将每个作业发送一次。 它们是新作业开始时发送的第一个命令。 这些命令是从 Unidrv 的 [**DrvStartDoc**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstartdoc) 函数实现中发送的。
 
-<a href="" id="doc-setup"></a>DOC\_安装程序  
-命令分配给文档\_发送文档的第一页之前发送设置部分。 将命令发送从 DrvStartDoc 函数 Unidrv 的实现中。 （这些命令也会发送后应用程序调用 Win32 ResetDC 函数。 在本部分中的命令必须不删除下载的信息，例如软字体和模式。）
+<a href="" id="doc-setup"></a>文档 \_ 设置  
+分配给 "文档设置" 部分的命令 \_ 将在发送文档的第一页之前发送。 命令是从 Unidrv 的 DrvStartDoc 函数实现中发送的。  (这些命令也会在应用程序调用 Win32 ResetDC 函数后发送。 本部分中的命令不得删除已下载的信息，如软字体和模式。 ) 
 
-<a href="" id="page-setup"></a>页\_安装程序  
-命令分配给该页\_设置部分在每个新页的开头发送之前开始绘制。 这些命令从发送 Unidrv 的实现的内部[ **DrvStartPage** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvstartpage)函数。
+<a href="" id="page-setup"></a>页面 \_ 设置  
+在 \_ 开始绘制之前，将在每个新页面的开头发送分配给 "页面设置" 部分的命令。 这些命令是从 Unidrv 的 [**DrvStartPage**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvstartpage) 函数实现中发送的。
 
-<a href="" id="page-finish"></a>PAGE\_FINISH  
-命令分配给该页\_完成部分绘制完成后发送的每个页上，末尾。 这些命令从发送 Unidrv 的实现的内部[ *DrvSendPage* ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsendpage)函数。
+<a href="" id="page-finish"></a>页面 \_ 完成  
+\_绘制完成后，会在每个页面的末尾发送分配给 "页面完成" 部分的命令。 这些命令是从 Unidrv 的 [*DrvSendPage*](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvsendpage) 函数实现中发送的。
 
-<a href="" id="doc-finish"></a>DOC\_完成  
-命令分配给文档\_发送文档的最后一页之后发送完成部分。 将命令发送从 Unidrv 的实现的内部[ **DrvEndDoc** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenddoc)函数。 （在本部分中的命令必须删除已下载的信息，例如软字体和模式）。
+<a href="" id="doc-finish"></a>文档 \_ 完成  
+分配给 "文档完成" 部分的命令 \_ 将在发送文档的最后一页后发送。 命令是从 Unidrv 的 [**DrvEndDoc**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvenddoc) 函数实现中发送的。 此部分中 (命令不得删除已下载的信息，如软字体和模式。 ) 
 
-<a href="" id="job-finish"></a>作业\_完成  
-分配给作业的命令\_完成部分发送一次每个作业。 它们是在作业结束时发送的最后一个命令。 这些命令从发送 DrvEndDoc 函数 Unidrv 的实现中。
+<a href="" id="job-finish"></a>作业 \_ 完成  
+分配给 "作业完成" 部分的命令 \_ 将每个作业发送一次。 它们是作业结束时发送的最后一条命令。 这些命令是从 Unidrv 的 DrvEndDoc 函数实现中发送的。
 
-在这些部分中，通过其序列号指示的顺序执行命令。
+在上述每个部分中，命令按序列号所指示的顺序执行。
 
-若要指定命令的部分和序列号，请使用 **\*顺序**属性中所述[命令属性](command-attributes.md)。 格式为：
+若要指定命令的部分和序列号，请使用[命令属性](command-attributes.md)中所述的** \* Order**属性。 格式为：
 
-**\*顺序**:*SectionName*。*序列号*
+** \* 顺序**： *SectionName*。*SequenceNumber*
 
-其中*SectionName*是作业之一\_安装程序、 文档\_安装程序页\_安装过程中，页\_完成、 DOC\_完成或作业\_完成，和*SequenceNumber*是数字值。
+其中， *SectionName* 是作业 \_ 安装、DOC \_ 设置、页面 \_ 设置、页面 \_ 完成、文档 \_ 完成或作业完成的其中一个 \_ ， *SequenceNumber* 为数值。
 
-序列号不需要是连续的但在某一部分指定每个数字必须是唯一的。 部分中执行命令从最低序列号的最高。 例如，以下条目表示的选项**InputBin**， **PaperSize**，并**解析**功能分配给文档\_安装程序部分并发送指定的顺序：
+序列号不必是连续的，但部分中指定的每个数字必须是唯一的。 部分中的命令将从其序列号最小的序列号到最高的顺序执行。 例如，以下条目指示将 **InputBin**、 **PaperSize**和 **解决** 功能的选项分配给 "文档 \_ 设置" 部分，并按指定顺序发送：
 
 ```cpp
 *Feature: InputBin

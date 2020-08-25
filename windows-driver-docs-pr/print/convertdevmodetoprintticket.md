@@ -1,26 +1,26 @@
 ---
 title: ConvertDevModeToPrintTicket 概述
-description: ConvertDevModeToPrintTicket 方法调用的每个打印驱动程序插件已安装。
+description: 对于安装的每个打印驱动程序插件，将调用 ConvertDevModeToPrintTicket 方法。
 ms.assetid: 71387d8b-60ce-4deb-a20b-9d7b0b7be230
 keywords:
 - ConvertDevModeToPrintTicket
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f6d07230ca976330dd9f45683661227bc767bf39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2303afe1be8e0654ca111f3fc0168108bd254ea9
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374667"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802615"
 ---
 # <a name="convertdevmodetoprintticket-overview"></a>ConvertDevModeToPrintTicket 概述
 
 
-Unidrv 和 PScript5 打印驱动程序使用的公共和私有部分中的元素创建打印票证[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)驱动程序支持的结构。 [ **IPrintOemPrintTicketProvider::ConvertDevModeToPrintTicket** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553161(v=vs.85))为每个打印驱动程序插件已安装的调用方法。
+Unidrv 和 PScript5 打印驱动程序通过使用驱动程序所支持的 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构的公共和私有部分中的元素来创建打印票证。 对于安装的每个打印驱动程序插件，都将调用 [**IPrintOemPrintTicketProvider：： ConvertDevModeToPrintTicket**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff553161(v=vs.85)) 方法。
 
-下图显示对 IPrintOemPrintTicketProvider::ConvertDevModeToPrintTicket 调用的顺序时，驱动程序调用 ConvertDevModeToPrintTicket。
+下图显示了驱动程序调用 ConvertDevModeToPrintTicket 时，对 IPrintOemPrintTicketProvider：： ConvertDevModeToPrintTicket 的调用的顺序。
 
-![convertdevmodetoprintticket 调用的序列](images/ptpcdm2pt-uml.gif)
+![convertdevmodetoprintticket 调用序列](images/ptpcdm2pt-uml.gif)
 
  
 

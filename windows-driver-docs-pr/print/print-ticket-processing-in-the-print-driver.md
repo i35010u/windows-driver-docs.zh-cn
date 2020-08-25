@@ -3,28 +3,28 @@ title: 打印驱动程序中的打印票证处理
 description: 打印驱动程序中的打印票证处理
 ms.assetid: a7295632-0133-4133-b62e-5526dcc12c7d
 keywords:
-- 打印票证 WDK、 打印驱动程序处理
+- 打印入场券 WDK，打印驱动程序处理
 - 打印票证 WDK，XPSDrv
-- 打印票证 WDK，基于 GDI 的打印驱动程序
+- 打印入场券 WDK，基于 GDI 的打印驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aff80f8e99642a166167d3e564e9b515aa4f92c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e0f0edbd861fa8c44db3ce0b98bdc1fd9cbee3a9
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354918"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802583"
 ---
 # <a name="print-ticket-processing-in-the-print-driver"></a>打印驱动程序中的打印票证处理
 
 
-PrintTicket 对象中的验证的设置用于配置打印 XPSDrv 打印机驱动程序执行的处理。 组件的打印驱动程序，因此，必须阅读并解释驱动程序执行任何处理，因此驱动程序可以处理这些设置根据文档前打印票证中的设置。
+PrintTicket 对象中经过验证的设置用于配置 XPSDrv 打印驱动程序执行的打印处理。 因此，打印驱动程序的组件必须在驱动程序执行任何处理之前读取和解释打印票证中的设置，以便驱动程序可以根据这些设置处理文档。
 
-XPSDrv 打印驱动程序的打印驱动程序的打印处理筛选器中执行此处理。
+XPSDrv 打印驱动程序在打印驱动程序的打印处理筛选器中执行此处理。
 
-基于 GDI 的打印驱动程序继续使用[ **DEVMODEW** ](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构由于 Windows Vista 中内置了兼容性支持的设置打印子系统。 有关这种支持的详细信息，请参阅[Win 32 应用程序的打印票证兼容性](print-ticket-compatibility-with-win-32-applications.md)。
+由于内置于 Windows Vista 打印子系统中的兼容性支持，基于 GDI 的打印驱动程序将继续使用 [**DEVMODEW**](https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-devmodew) 结构进行设置。 有关此支持的详细信息，请参阅 [打印票证与 Win 32 应用程序的兼容性](print-ticket-compatibility-with-win-32-applications.md)。
 
-有关实现打印机驱动程序中处理的打印票证的详细信息，请参阅[XPSDrv 呈现模块中的打印票证支持](print-ticket-support-in-the-xpsdrv-render-module.md)。
+有关在打印驱动程序中实现打印票证处理的详细信息，请参阅 [XPSDrv Render 模块中的打印票证支持](print-ticket-support-in-the-xpsdrv-render-module.md)。
 
  
 

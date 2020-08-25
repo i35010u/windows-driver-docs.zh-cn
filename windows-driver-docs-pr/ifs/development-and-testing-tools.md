@@ -3,118 +3,69 @@ title: 开发和测试工具
 description: 开发和测试工具
 ms.assetid: 6cc81509-27e1-4d5b-996c-6a7bbfd0ddcf
 keywords:
-- 筛选器管理器 WDK 文件系统微筛选器工具
+- 筛选器管理器 WDK 文件系统微筛选器，工具
 - Fltmc.exe WDK 文件系统微筛选器
 - fltkd 调试器扩展 WDK 文件系统微筛选器
 - 筛选器验证程序 WDK 文件系统微筛选器
 - 验证程序实用工具
-ms.date: 04/20/2017
+ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e295dea65a5b3742a2ac9c5483479b21fd6b81
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 77b56f7b166a3a2c666244c9d027c72fbf98903e
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386101"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802461"
 ---
 # <a name="development-and-testing-tools"></a>开发和测试工具
 
+可以使用多个筛选器管理器工具。 还鼓励微筛选器驱动程序开发人员使用一般用途的内核模式开发和测试工具，如使用驱动程序特定的规则 PREfast。
 
-在本部分中所述的筛选器管理器工具提供了 IFS 工具包的 Windows Server 2003 sp1 和中 Windows Driver Kit (WDK) 适用于 Windows Vista 及更高版本。
+## <a name="fltmcexe-command"></a>Fltmc.exe 命令
 
-微筛选器驱动程序开发人员也是建议使用常规用途的内核模式下开发和测试工具，如 PREfast 使用特定于驱动程序的规则。
+*Fltmc.exe*程序是系统提供的用于常见微筛选器驱动程序管理操作的命令行实用程序。 开发人员可以使用 *Fltmc.exe* 来加载和卸载微筛选器驱动程序、附加或分离微筛选器驱动程序和枚举微筛选器驱动程序、实例和卷。 在具有管理员权限的命令提示符下，键入 ```fltmc help``` 以查看完整的命令列表。
 
-### <a name="span-idfltmcexecontrolprogramspanspan-idfltmcexecontrolprogramspanspan-idfltmcexecontrolprogramspanfltmcexe-control-program"></a><span id="Fltmc.exe_Control_Program"></span><span id="fltmc.exe_control_program"></span><span id="FLTMC.EXE_CONTROL_PROGRAM"></span>Fltmc.exe 控件程序
+## <a name="fsutilexe-command"></a>Fsutil.exe 命令
 
-Fltmc.exe 控件程序是用于常见微筛选器驱动程序管理操作的命令行实用工具。 开发人员可以使用 Fltmc.exe 加载和卸载微筛选器驱动程序、 微筛选器驱动程序附加到卷或卷，从分离它们并枚举微筛选器驱动程序、 实例和卷。
+[*Fsutil.exe*](https://docs.microsoft.com/windows-server/administration/windows-commands/fsutil-file)程序是系统提供的命令行实用程序，用于对文件执行各种操作。 开发人员可以键入， ```fsutil file layout foo.md``` 以美观的方式打印文件的所有详细信息，如属性、时间戳、流等。
 
-### <a name="span-idfltkddebuggerextensionspanspan-idfltkddebuggerextensionspanspan-idfltkddebuggerextensionspanfltkd-debugger-extension"></a><span id="_fltkd_Debugger_Extension"></span><span id="_fltkd_debugger_extension"></span><span id="_FLTKD_DEBUGGER_EXTENSION"></span>！ fltkd 调试器扩展
+## <a name="fltkd-debugger-extension"></a>！ fltkd 调试器扩展
 
-！ 中提供 fltkd 调试器扩展[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)工具。 常用的命令如下所示：
+[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)工具中提供了！ fltkd 调试器扩展。 常用命令包括以下内容：
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Command</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><strong>!cbd</strong></p></td>
-<td align="left"><p>筛选器管理器等效于 ！ irp</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>!filter</strong></p></td>
-<td align="left"><p>列出有关指定的筛选器的详细的信息</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>!filters</strong></p></td>
-<td align="left"><p>列出所有附加微筛选器驱动程序</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>!frames</strong></p></td>
-<td align="left"><p>列表管理器框架的所有过滤器和附加微筛选器驱动程序</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>!instance</strong></p></td>
-<td align="left"><p>列出有关的指定实例的详细的信息</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><strong>!volume</strong></p></td>
-<td align="left"><p>列出有关指定卷的详细的信息</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><strong>!volumes</strong></p></td>
-<td align="left"><p>列出所有卷并已附加微筛选器驱动程序实例</p></td>
-</tr>
-</tbody>
-</table>
+| 命令 | 说明 |
+| ------- | ----------- |
+| **!cbd** | 筛选器管理器等效于！ irp |
+| **！筛选器** | 列出有关指定筛选器的详细信息 |
+| **！筛选器** | 列出所有附加的微筛选器驱动程序 |
+| **！帧** | 列出所有筛选器管理器框架和附加的微筛选器驱动程序 |
+| **！实例** | 列出有关指定实例的详细信息 |
+| **！卷** | 列出有关指定卷的详细信息 |
+| **！卷** | 列出所有卷和连接的微筛选器驱动程序实例 |
 
- 
+在 WinDbg 中，键入 **！ fltkd** 作为完整命令列表的帮助。
 
-有关更多调试帮助测试微筛选器驱动程序通过 Fltmgr.sys，其中包含大量的 ASSERT 语句捕获常见错误的调试版本。
+## <a name="filter-verifier"></a>筛选器验证程序
 
-### <a name="span-idfilterverifierspanspan-idfilterverifierspanspan-idfilterverifierspanfilter-verifier"></a><span id="Filter_Verifier"></span><span id="filter_verifier"></span><span id="FILTER_VERIFIER"></span>筛选器验证工具
+筛选器验证[程序是驱动程序验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)器中的一个[i/o 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-verification)选项，用于验证筛选器管理器功能的微筛选器驱动程序使用情况。 筛选器验证程序与筛选器管理器一起安装。 开发人员应始终启用驱动程序验证程序和筛选器验证程序，开发微筛选器驱动程序。
 
-筛选器验证工具是[I/O 验证](https://docs.microsoft.com/windows-hardware/drivers/devtest/i-o-verification)选项[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)验证微筛选器驱动程序使用的筛选器管理器函数。 使用筛选器管理器安装筛选器验证程序。 开发人员应始终开发微筛选器驱动程序与 Driver Verifier 和筛选器验证程序已启用。
+要使用筛选器验证程序，请在驱动程序验证程序中指定微筛选器驱动程序的名称并启用 i/o 验证选项 (*Verifier.exe*) 。 当微筛选器驱动程序向筛选器管理器注册时，将开始验证。
 
-若要使用筛选器验证器，指定微筛选器驱动程序的名称，并启用驱动程序验证程序 (Verifier.exe) 中的 I/O 验证选项。 验证开始时向筛选器管理器注册微筛选器驱动程序。
+筛选器验证器在微筛选器驱动程序中验证以下用法：
 
-筛选器验证程序验证微筛选器驱动程序中的以下用法：
+* 正确使用参数和调用上下文
+* Preoperation 和 postoperation 回调例程的正确返回值
+* 回调数据中参数的一致和连贯更改
 
--   正确使用方法的参数和调用上下文
+筛选器验证器跟踪以下筛选器管理器对象：
 
--   正确从 preoperation 和 postoperation 回调例程的返回值
+* 上下文
+* 回调数据结构
+* 已排队的工作项
+* NameInformation 结构
+* 文件对象
+* 筛选对象
+* 实例对象
+* 卷对象
 
--   统一且一致的更改到回调数据中的参数
-
-筛选器验证工具跟踪以下筛选器管理器对象：
-
--   上下文
-
--   回调数据结构
-
--   排队的工作项
-
--   NameInformation 结构
-
--   File 对象
-
--   筛选器对象
-
--   实例对象
-
--   Volume 对象
-
- 
-
- 
-
-
-
-
+在命令提示符下，键入 ```verifier /?``` 以查看语法和参数的完整列表。

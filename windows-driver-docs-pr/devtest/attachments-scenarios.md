@@ -10,89 +10,27 @@ keywords:
 - 附件方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 246240232095a3660908b4d338bda7bebd8f8b4b
-ms.sourcegitcommit: 289b5f97aff1b9ea1fefc9a8731e0fc16533073b
+ms.openlocfilehash: 5f395f9dc7b1890a0b263d4fb6242cf352f2a177
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67492521"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802639"
 ---
 # <a name="attachments-scenarios"></a>附件方案
 
-
 附件方案测试发送和接收附件。
 
-此方案的目标不是承载的服务终结点的发现。 此方案假定这些终结点已发现或在此方案开始之前提供。
+此方案的目标不是托管服务终结点的发现。 此方案假定在开始此方案之前发现或提供了这些终结点。
 
-在所有情况下，发送到 TestDevice 附件将 Dpws1.jpg 并且 TestDevice 从收到的附件将 Dpws2.jpg。 应通过加载到内存中预期的附件的副本并执行操作上收到的附件的字节的字节的内存比较验证附件。
+在每种情况下，发送到 TestDevice 的附件都将 Dpws1.jpg，并将 Dpws2.jpg 从 TestDevice 收到的附件。 应通过将预期的附件的副本加载到内存中，并对收到的附件执行字节的内存比较来验证附件。
 
-有关详细信息，请参阅中的初始测试设备安装程序关系图[WSDBIT 测试环境](wsdbit-testing-environment.md)。
+有关详细信息，请参阅 [WSDBIT 测试环境](wsdbit-testing-environment.md)中的初始测试设备安装程序关系图。
 
-本例中客户端操作服务器操作启用通过/失败条件**3.1**
-
-**调用 OneWay 附件方法**
-
-3.1.1
-
-调用**OneWay**与 AttachmentService 方法
-
--   **wsa:Action = = http://schemas.example.org/AttachmentService/OneWayAttachment**
-
--   Http:\//testdevice.interop/AttachmentService1 服务将使用。
-
--   请参阅[AttachmentService WSDL](attachmentservice-wsdl.md)。
-
--   使用 Dpws1.jpg 作为数据发送到设备的附件。
-
-验证附件数据。
-
-在服务器正确验证附件的数据。 服务器接收 Dpws1.jpg。
-
-**3.2**
-
-**调用 TwoWay 附件方法**
-
-3.2.1
-
-调用**TwoWay**与 AttachmentService 方法：
-
--   **wsa:Action = = http://schemas.example.org/AttachmentService/TwoWayAttachmentRequest**
-
--   Http:\//testdevice.interop/AttachmentService1 服务将使用。
-
--   请参阅[AttachmentService WSDL](attachmentservice-wsdl.md)。
-
--   使用 Dpws1.jpg 作为附件发送到设备的数据。
-
-<!-- -->
-
--   验证附件数据。
-
--   发送**TwoWayAttachmentResponse**。
-
--   **wsa:Action = = http://schemas.example.org/AttachmentService/TwoWayAttachmentResponse**
-
--   请参阅[AttachmentService WSDL](attachmentservice-wsdl.md)。
-
--   使用 Dpws2.jpg 作为数据返回到客户端的附件。
-
-服务器正确验证附件数据和客户端接收的响应。 服务器接收 Dpws1.jpg。
-
-3.2.2
-
-验证中收到的附件数据**TwoWayAttachmentResponse**。 客户端收到 Dpws2.jpg。
-
-无。
-
-客户端正确验证附件的数据。
-
- 
-
- 
-
- 
-
-
-
-
-
+|案例|客户端操作|服务器操作|通过失败的条件|
+|----|----|----|----|
+|**3.1**|**调用单向附件方法**| | |
+|3.1.1|调用 AttachmentService 的 **单向** 方法</br>- **wsa： Action = = http://schemas.example.org/AttachmentService/OneWayAttachment**</br>- \/ 将使用 http：/testdevice.interop/AttachmentService1 服务。</br>-请参阅 [ATTACHMENTSERVICE WSDL](attachmentservice-wsdl.md)。</br>-将 Dpws1.jpg 用作发送到设备的附件的数据。|验证附件数据。|服务器会正确验证附件数据。 服务器接收 Dpws1.jpg。|
+|**3.2**|**调用双向附件方法**| | |
+|3.2.1|调用 AttachmentService 的 **双向** 方法：</br>- **wsa： Action = = http://schemas.example.org/AttachmentService/TwoWayAttachmentRequest**</br>- \/ 将使用 http：/testdevice.interop/AttachmentService1 服务。</br>-请参阅 [ATTACHMENTSERVICE WSDL](attachmentservice-wsdl.md)。</br>-将 Dpws1.jpg 用作发送到设备的附件的数据。|-验证附件数据。</br>-Send **TwoWayAttachmentResponse**。</br>- **wsa： Action = = http://schemas.example.org/AttachmentService/TwoWayAttachmentResponse**</br>-请参阅 [ATTACHMENTSERVICE WSDL](attachmentservice-wsdl.md)。</br>-将 Dpws2.jpg 用作返回给客户端的附件的数据。|服务器会正确验证附件数据，客户端会收到响应。 服务器接收 Dpws1.jpg。|
+|3.2.2|验证 **TwoWayAttachmentResponse**中收到的附件数据。 客户端接收 Dpws2.jpg。|无变化。|客户端正确验证附件数据。|

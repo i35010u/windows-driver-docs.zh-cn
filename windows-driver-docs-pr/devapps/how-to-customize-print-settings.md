@@ -1,74 +1,69 @@
 ---
-title: 如何自定义打印设置 （UWP 设备应用）
-description: 本主题介绍在高级打印设置浮出控件，并演示如何将C#版本的打印设置和打印示例使用自定义的浮出控件替换默认浮出控件的通知。
+title: '如何自定义 (UWP 设备应用的打印设置) '
+description: '本主题介绍 "高级打印设置" 浮出控件，并演示 c # 版本的 "打印设置" 和 "打印通知" 示例如何使用自定义浮出控件替换默认浮出控件。'
 ms.assetid: 099BD9B2-1AA6-49A5-AB84-0AF6FA0EFB26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 653724ee75540e1bcff7b23853696cd43d53edd1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 222f06d94c2d17a5664b5ce3f7c8a4d68c99ad2d
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330678"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802487"
 ---
-# <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义打印设置 （UWP 设备应用）
+# <a name="how-to-customize-print-settings-uwp-device-apps"></a>如何自定义 (UWP 设备应用的打印设置) 
 
+在 Windows 8.1 中，UWP 设备应用允许打印机制造商自定义显示高级打印设置的浮出控件。 本主题介绍 "高级打印设置" 浮出控件，并演示 c # 版本的 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例如何使用自定义浮出控件替换默认浮出控件。 若要详细了解 UWP 设备应用的详细信息，请参阅了解 [uwp 设备应用](meet-uwp-device-apps.md)。
 
-在 Windows 8.1 UWP 设备应用程序允许自定义高级打印设置显示的 flyout 的打印机制造商。 本主题介绍在高级打印设置浮出控件，并演示如何将C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例使用自定义的浮出控件替换默认浮出控件。 若要在一般情况下了解有关 UWP 的设备应用程序的详细信息，请参阅[满足 UWP 设备应用](meet-uwp-device-apps.md)。
+" [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例的 c # 版本使用 " **首选项 .xaml** " 页演示高级打印设置的自定义浮出控件的 UI。 打印帮助程序类用于创建设备上下文 (IPrinterExtensionContext) 并执行设备查询。 **PrinterHelperClass.cs**文件在**DeviceAppForPrintersLibrary**项目中，并使用**PrinterExtensionLibrary**项目中定义的 api。 打印机扩展库提供了一种便捷的方式来访问 v4 打印驱动程序的打印机扩展接口。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
 
-C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)的示例使用**Preferences.xaml**页以显示自定义浮出控件的 UI 高级打印设置。 打印帮助器类用于创建设备上下文 (IPrinterExtensionContext)，并执行设备查询。 **PrinterHelperClass.cs**文件位于**DeviceAppForPrintersLibrary**项目，然后使用 Api 中定义**PrinterExtensionLibrary**项目。 打印机扩展库提供了方便地访问 v4 打印驱动程序的打印机扩展插件接口。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
+>[!NOTE]
+>本主题中所示的代码示例基于 c # 版本的 [打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) 示例。 此示例在 JavaScript 和 c + + 中也可用。 请注意，由于 c + + 可以直接访问 COM，因此该示例的 c + + 版本不包括代码库项目。 下载示例以查看最新版本的代码。
 
-**请注意**  本主题中所示的代码示例基于C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。 此示例也会出现在 JavaScript 和C++。 请注意，由于C++可以直接访问 COMC++示例的版本不包括代码库项目。 下载示例，请参阅最新版本的代码。
+## <a name="advanced-print-settings"></a>高级打印设置
 
- 
+高级打印设置体验是指当用户想要选择 "打印" 窗口中未提供的打印设置时打印机提供的功能。 可以通过 "打印" 窗口中的 " **其他设置** " 链接来访问它。 它不是全屏体验，但在弹出窗口中显示，它是一个控件，用于显示在用户单击或点击它时消除的轻型上下文用户界面。
 
-## <a name="span-idadvancedprintsettingsspanspan-idadvancedprintsettingsspanspan-idadvancedprintsettingsspanadvanced-print-settings"></a><span id="Advanced_print_settings"></span><span id="advanced_print_settings"></span><span id="ADVANCED_PRINT_SETTINGS"></span>高级打印设置
+这种体验可用于突出显示打印机的不同功能，如将水印应用于文档页面、提供安全打印选项或图像增强选项的功能。
 
+当未为打印机安装 UWP 设备应用时，Windows 将提供默认的打印设置体验。 如果 Windows 检测到已为你的打印机安装了 UWP 设备应用，并且该应用已选择 `windows.printTaskSettings` 扩展，则你的应用将替换 Windows 提供的默认体验。
 
-高级打印设置体验是打印机提供当用户想要选择不在打印窗口中提供的打印设置的功能。 它是可通过访问**更多设置**打印窗口中的链接。 它不是一种的全屏体验，但显示中弹出一个窗口，也就是用于显示用户单击或点击外部时关闭的轻量、 上下文的用户界面的控件。
+若要为高级打印设置调用浮出控件：
 
-这种体验可用于突出显示不同的功能如打印机将水印应用于文档页，提供安全的打印选项或图像增强功能选项。
+1. 打开支持打印的 UWP 应用
+2. 在屏幕右侧 (或使用 Windows 徽标键 + C) 访问超级按钮。
+3. 点击 " **设备** " 超级按钮
+4. 点击 **打印**
+5. 点击打印机
+6. " **打印** " 窗口打开
+7. 单击 "**打印**" 窗口上的 "**其他设置**" 链接
+8. "高级打印设置" 浮出控件随即打开
+   - 未安装打印机的 UWP 设备应用时，将显示 *默认的弹出* 窗口
+   - 当安装了打印机的 UWP 设备应用时，将显示 *自定义弹出* 窗口
 
-当没有为打印机安装 UWP 设备应用时，Windows 提供的默认打印设置体验。 如果 Windows 检测到为您的打印机，安装的 UWP 设备应用程序和应用程序具有中选择的`windows.printTaskSettings`扩展，您的应用程序取代了 Windows 提供的默认体验。
+![高级打印设置的默认和自定义浮出控件的示例。](images/373072-printer-settings-launch.png)
 
-若要调用的飞出式高级打印设置：
+## <a name="prerequisites"></a>先决条件
 
-1.  打开支持打印的 UWP 应用
-2.  通过在屏幕右侧轻扫 （或通过使用 Windows 徽标键 + C） 来访问超级按钮
-3.  点击**设备**超级按钮
-4.  点击**打印**
-5.  点击打印机
-6.  **打印**窗口随即打开
-7.  单击**更多的设置**链接**打印**窗口
-8.  高级打印的设置浮出控件打开
-    -   *默认浮出控件*安装打印机无 UWP 设备应用会出现
-    -   一个*自定义浮出控件*安装打印机的 UWP 设备应用程序会出现
+准备工作：
 
-![默认和自定义浮出控件的高级打印设置的示例。](images/373072-printer-settings-launch.png)
+1. 请确保您的打印机是使用 v4 打印驱动程序安装的。 有关详细信息，请参阅 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
+2. 设置开发 PC。 有关下载工具和创建开发人员帐户的信息[，请参阅入门。](getting-started.md)
+3. 将应用与应用商店相关联。 请参阅 [创建 UWP 设备应用](step-1--create-a-uwp-device-app.md) 了解相关信息。
+4. 为打印机创建将其与应用程序关联的设备元数据。 有关详细信息，请参阅 [创建设备元数据](step-2--create-device-metadata.md) 。
+5. 构建应用程序主页的 UI。 所有 UWP 设备应用都可以从 "开始" 启动，它们将全屏显示。 使用 "开始体验" 以与设备的特定品牌和功能匹配的方式突出显示你的产品或服务。 它可以使用的 UI 控件类型没有任何特殊限制。 若要开始设计全屏体验，请参阅 [Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
+6. 如果正在编写的是用 c # 或 JavaScript 编写应用，请将 **PrinterExtensionLibrary** 和 **DeviceAppForPrintersLibrary** 项目添加到 UWP 设备应用解决方案。 可以在 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例中找到这些项目。
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
+>[!NOTE]
+>由于 c + + 可以直接访问 COM，因此，c + + 应用不需要单独的库即可使用基于 COM 的打印机设备上下文。
 
+## <a name="step-1-register-the-extension"></a>步骤1：注册扩展
 
-开始之前：
+为了使 Windows 能够识别应用程序可以为高级打印设置提供自定义浮出控件，它必须注册 "打印任务" 设置扩展。 此扩展在元素中声明 `Extension` ， `Category` 特性设置为的值 `windows.printTaskSettings` 。 在 c # 和 c + + 示例中， `Executable` 特性设置为 `$targetnametoken$.exe` ， `EntryPoint` 特性设置为 `DeviceAppForPrinters.App` 。
 
-1.  请确保使用 v4 打印驱动程序安装您的打印机。 有关详细信息，请参阅[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。
-2.  获取对开发计算机设置。 请参阅[入门](getting-started.md)有关下载工具和创建开发人员帐户信息。
-3.  将你的应用与应用商店相关联。 请参阅[创建 UWP 设备应用](step-1--create-a-uwp-device-app.md)有关的信息。
-4.  创建设备元数据为您将其与您的应用程序关联的打印机。 请参阅[创建设备元数据](step-2--create-device-metadata.md)有关的详细信息。
-5.  构建您的应用程序的主页上的 UI。 可以从开始，它们将显示的全屏启动所有 UWP 设备应用程序。 使用入门体验突出显示你的产品或匹配特定品牌的方式和你的设备的功能中的服务。 没有任何特殊限制可以使用 UI 控件的类型。 若要开始使用的设计的全屏体验，请参阅[Microsoft Store 设计原则](https://go.microsoft.com/fwlink/p/?LinkID=299845)。
-6.  如果您正在编写您编写的应用程序与C#或 JavaScript 中，添加**PrinterExtensionLibrary**并**DeviceAppForPrintersLibrary**到您 UWP 设备应用程序解决方案的项目。 您可以找到这些项目中的每个[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例。
-    **请注意**  由于C++可以直接访问 COMC++应用程序不需要单独的库以使用基于 COM 的打印机设备上下文。
+可以在 Microsoft Visual Studio 中的清单设计器的 " **声明** " 选项卡上添加 "打印任务设置" 扩展。 你还可以使用 XML (文本) 编辑器手动编辑应用包清单 XML。 右键单击**解决方案资源管理器**中的**appxmanifest.xml**文件以编辑选项。
 
-     
-
-## <a name="span-idstep1registertheextensionspanspan-idstep1registertheextensionspanspan-idstep1registertheextensionspanstep-1-register-the-extension"></a><span id="Step_1__Register_the_extension"></span><span id="step_1__register_the_extension"></span><span id="STEP_1__REGISTER_THE_EXTENSION"></span>步骤 1：注册扩展
-
-
-为了使 Windows 能够识别应用程序可以提供高级打印设置的自定义浮出控件，它必须注册打印任务设置扩展。 此扩展中声明`Extension`元素中，使用`Category`属性设置为值为`windows.printTaskSettings`。 在C#和C++示例中，`Executable`属性设置为`$targetnametoken$.exe`并且`EntryPoint`属性设置为`DeviceAppForPrinters.App`。
-
-可以在添加打印任务设置扩展**声明**清单设计器在 Microsoft Visual Studio 中的选项卡。 您还可以编辑的应用程序包清单 XML 手动，使用 XML （文本） 编辑器。 右键单击**Package.appxmanifest**中的文件**解决方案资源管理器**的编辑选项。
-
-此示例演示中的打印任务设置扩展`Extension`元素，因为它在应用包清单文件中，将出现**Package.appxmanifest**。
+此示例显示元素中的 "打印任务设置" 扩展 `Extension` ，因为它显示在应用包清单文件 **appxmanifest.xml**中。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -105,35 +100,33 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
 </Package>
 ```
 
-## <a name="span-idstep2buildtheuispanspan-idstep2buildtheuispanspan-idstep2buildtheuispanstep-2-build-the-ui"></a><span id="Step_2__Build_the_UI"></span><span id="step_2__build_the_ui"></span><span id="STEP_2__BUILD_THE_UI"></span>步骤 2：生成 UI
+## <a name="step-2-build-the-ui"></a>步骤2：生成 UI
 
+在构建你的应用程序之前，你应与你的设计人员和营销团队合作来设计用户体验。 用户体验应投影公司的品牌方面，并帮助你建立与用户的连接。
 
-生成你的应用之前, 应适用于您的设计人员和营销团队设计用户体验。 用户体验应项目贵公司的品牌方面，并帮助您构建与你的用户的连接。
+### <a name="design-guidelines"></a>设计准则
 
-### <a name="span-iddesignguidelinesspanspan-iddesignguidelinesspanspan-iddesignguidelinesspandesign-guidelines"></a><span id="Design_guidelines"></span><span id="design_guidelines"></span><span id="DESIGN_GUIDELINES"></span>设计指南
+在设计自定义浮出控件之前，请务必查看 [UWP 应用飞出指南](https://go.microsoft.com/fwlink/p/?LinkId=317078) 。 本指南可帮助确保你的浮出控件提供与其他 UWP 应用一致的直观体验。
 
-务必要查看[UWP 应用浮出控件准则](https://go.microsoft.com/fwlink/p/?LinkId=317078)设计自定义的浮出控件之前。 指导帮助确保在浮出控件提供直观的体验与其他 UWP 应用一致的。
+在应用程序的主页上，请记住，Windows 8.1 可以在单个监视器上以各种大小显示多个应用。 请参阅以下准则，详细了解应用程序如何在屏幕大小、窗口大小和方向之间进行适当的重新排列。
 
-为您的应用程序的主页，请注意 Windows 8.1，可以在一台监视器上的各种大小显示多个应用。 请参阅以下指南以了解有关如何应用可以重排正常之间屏幕尺寸、 窗口大小和方向详细信息。
+- [窗口大小和屏幕缩放的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
+- [将窗口调整为高度和缩小布局的准则](https://go.microsoft.com/fwlink/p/?LinkId=311831)
 
--   [窗口大小和扩展到屏幕的准则](https://go.microsoft.com/fwlink/p/?LinkId=311830)
--   [重设大小、 高和窄布局的 windows 的准则](https://go.microsoft.com/fwlink/p/?LinkId=311831)
+### <a name="flyout-dimensions"></a>飞出尺寸
 
-### <a name="span-idflyoutdimensionsspanspan-idflyoutdimensionsspanspan-idflyoutdimensionsspanflyout-dimensions"></a><span id="Flyout_dimensions"></span><span id="flyout_dimensions"></span><span id="FLYOUT_DIMENSIONS"></span>浮出控件维度
+显示高级打印设置的浮出控件的宽度为646像素，且至少768像素 (实际高度取决于用户屏幕) 的分辨率。 弹出窗口标题区域中的 "后退" 按钮由 Windows 提供。 "应用标题" 文本是应用程序清单中的应用程序标题。 标题区域高度为80像素，为自定义浮出控件的可查看区域保留688像素。
 
-浮出控件显示高级打印设置是 646 像素宽和高至少 768 像素 （实际高度取决于用户屏幕的分辨率）。 由 Windows 提供浮出控件的标题区中后退按钮。 "应用程序标题"文本是从应用程序清单的应用程序标题。 标题区为 80 像素高，离开期间耗时 688 像素为单位的自定义浮出控件的可视区域。
+![高级打印机设置的飞出尺寸。](images/439446-printer-options-layout.png)
 
-![高级的打印机设置的浮出控件尺寸。](images/439446-printer-options-layout.png)
+>[!NOTE]
+>如果自定义浮出控件的高度超过688像素，则用户可以滑动或滚动查看可查看区域上方或下方的弹出窗口部分。
 
-**请注意**  如果自定义的浮出控件是多个期间耗时 688 像素高，用户可能会滑动或向下滚动以查看的浮出控件是高于还是低于可视区域的部分。
+### <a name="defining-the-app-title-color-and-icon"></a>定义应用程序标题颜色和图标
 
- 
+自定义弹出窗口中的标题、背景色、文本颜色和小徽标取自 `VisualElements` 应用包清单文件中的元素。
 
-### <a name="span-iddefiningtheapptitlecolorandiconspanspan-iddefiningtheapptitlecolorandiconspanspan-iddefiningtheapptitlecolorandiconspandefining-the-app-title-color-and-icon"></a><span id="Defining_the_app_title_color_and_icon"></span><span id="defining_the_app_title_color_and_icon"></span><span id="DEFINING_THE_APP_TITLE_COLOR_AND_ICON"></span>定义应用程序标题颜色和图标
-
-标题、 背景色、 文本颜色和自定义浮出控件上的小徽标来自`VisualElements`应用包清单文件中的元素。
-
-此示例演示的标题和图标，如中所定义`VisualElements`元素中的，在应用包清单文件 (**Package.appxmanifest**)。
+此示例显示了 `VisualElements` 应用包清单文件 () 中的元素中定义的标题和图标。 **Package.appxmanifest**
 
 ```XML
       <VisualElements DisplayName="Device App For Printers C# sample" Logo="Assets\squareTile-sdk.png" SmallLogo="Assets\smallTile-sdk.png" Description="DeviceAppForPrinters C# sample" ForegroundText="light" BackgroundColor="#00b2f0" ToastCapable="true">
@@ -142,30 +135,28 @@ C#的版本[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?Link
       </VisualElements>
 ```
 
-### <a name="span-idbestpracticesspanspan-idbestpracticesspanspan-idbestpracticesspanbest-practices"></a><span id="Best_practices"></span><span id="best_practices"></span><span id="BEST_PRACTICES"></span>最佳做法
+### <a name="best-practices"></a>最佳实践
 
--   **保留相同的外观和感觉。** 对齐开始体验 （您的应用程序的 Main 页），该设计与你自定义浮出控件包括字体、 颜色和控件元素。 应用应该感到很熟悉而不考虑它们调用从它的人。
+- **保持相同的外观。** 将您的自定义浮出控件与入门体验的设计保持一致 (您的应用) 程序的主页面，包括字体、颜色和控件等元素。 无论用户在何处调用该应用，都应熟悉该应用。
 
--   **简化的交互。** 避免耗时或复杂交互。 在大多数情况下，操作，例如设置打印机、 查看状态、 排序墨迹和故障排除是最佳开始体验内执行。
+- **保持交互简单。** 避免使用耗时或复杂的交互。 在大多数情况下，最好在启动体验内完成诸如设置打印机、查看状态、订购墨迹和故障排除等操作。
 
--   **保持在最低限度的导航。** 避免让您自定义的浮出控件中的多个页面之间来回导航的用户。 相反，使用垂直滚动或内联控件，如渐进式公开控件、 下拉列表和内联错误消息。
+- **保持导航到最小值。** 避免使用户在自定义飞出的多个页面之间来回导航。 相反，请使用垂直滚动或内联控件，如渐进式公开控件、下拉控件和内联错误消息。
 
--   **不使用 light 解除浮出控件。** 打印体验已使用一个指示灯解除浮出控件。 包括另一个光消除中您的自定义元素浮出控件可以将你的用户相混淆。
+- **请勿使用浅消除浮出控件。** 打印体验已使用轻量 "取消" 弹出窗口。 在自定义浮出控件中包含另一个光源消除元素会使用户感到困惑。
 
--   **禁用链接会导致用户离开不打印体验。** 当用户打印内容时，则应采取措施以确保它们保持在打印的上下文中。 例如，如果您的应用程序会导致您的应用程序 （如有关主页上或购买墨迹页） 的其他区域的链接，则应禁用它们使用户不会意外地将留在高级打印设置体验。
+- **禁用导致用户离开打印体验的链接。** 用户打印内容时，应采取措施确保它们保留在打印上下文中。 例如，如果你的应用程序具有可导致应用的其他区域的链接 (例如，到主页或用于购买墨迹) 的页面，则你应禁用这些链接，这样用户就不会意外退出高级打印设置体验。
 
-## <a name="span-idstep3spanspan-idstep3spanstep-3-handle-activation"></a><span id="step3"></span><span id="STEP3"></span>步骤 3:处理激活
+## <a name="step-3-handle-activation"></a>步骤3：处理激活
 
+如果你的应用已声明打印任务设置扩展，则它必须实现一个 `OnActivated` 方法来处理应用激活事件。 应用程序激活是指当应用程序启动时，应用程序可以选择要启动的页面。 对于已声明打印任务设置扩展的应用程序，Windows 将在激活的事件参数中传递打印任务扩展上下文： Windows.applicationmodel.resources.core. IActivatedEventArgs。
 
-如果您的应用程序已声明打印任务设置扩展，它必须实现`OnActivated`方法以处理应用程序激活事件。 应用程序激活时，您的应用程序可以选择哪一页将为该应用启动时启动。 对于具有声明打印任务设置扩展的应用程序，Windows 将打印任务扩展上下文传递 Activated 事件参数中：Windows.ApplicationModel.Activation.IActivatedEventArgs.
+UWP 设备应用可以确定激活适用于高级打印设置 (如果某个人只是在 "打印设置" 对话框中点击了 **更多选项**) 则事件参数的 `kind` 属性等于 windows.applicationmodel.resources.core. printTaskSettings。
 
-UWP 设备应用程序可以确定的激活适用于高级打印设置 (的人只是点击**更多选项**在打印设置对话框) 时将事件参数的`kind`属性是否等于Windows.ApplicationModel.Activation.ActivationKind.printTaskSettings。
+>[!NOTE]
+>在某些情况下，如果用户在启动后立即关闭应用，则可能会在激活处理程序中引发异常。 为避免出现这种情况，请确保激活处理程序能够高效地完成，而不会占用大量资源。
 
-**请注意**  在某些情况下，如果在用户启动后后立即, 关闭应用程序可能会引发异常的处理程序的激活。 若要避免此问题，请确保您激活的处理程序高效地完成，而不会执行占用大量资源的处理。
-
- 
-
-此示例演示中的激活事件处理程序`OnActivated`方法，因为它将出现在**Constants.cs**文件。 然后，事件参数会转换为 Windows.ApplicationModel.Activation.PrintTaskSettingsActivatedEventArgs。 尽管该示例包含在此代码**Constants.cs**文件，它是实际的也在中定义的应用程序类的一部分**App.xaml.cs**文件。
+此示例显示方法中的激活事件处理程序 `OnActivated` ，如 **Constants.cs** 文件中所示。 然后，将事件参数强制转换为 Windows.applicationmodel.resources.core. PrintTaskSettingsActivatedEventArgs。 尽管该示例在 **Constants.cs** 文件中包含此代码，但它实际上是在 **App.xaml.cs** 文件中定义的应用类的一部分。
 
 ```CSharp
 partial class App : Application
@@ -191,17 +182,16 @@ partial class App : Application
 }
 ```
 
-## <a name="span-idstep4displaysettingsspanspan-idstep4displaysettingsspanspan-idstep4displaysettingsspanstep-4-display-settings"></a><span id="Step_4__Display_settings"></span><span id="step_4__display_settings"></span><span id="STEP_4__DISPLAY_SETTINGS"></span>步骤 4：“显示设置”
+## <a name="step-4-display-settings"></a>步骤4：显示设置
 
+`LoadAdvancedPrintSettingsContext`调用方法时，打印任务配置上下文将分配给 MainPage 类的变量。 这将允许自定义浮出控件在启动时访问打印设置。
 
-当`LoadAdvancedPrintSettingsContext`方法调用时，打印任务配置上下文分配给 MainPage 类的变量。 这将允许在启动时访问的打印设置的自定义的浮出控件。
+传递给方法的事件参数可 `LoadAdvancedPrintSettingsContext` 公开用于访问和控制打印机的属性：
 
-传递到的事件参数`LoadAdvancedPrintSettingsContext`方法，用于访问和控制打印机公开属性：
+- **args.configu**属性提供了类型为 PrintTaskConfiguration 的对象。 此对象提供对打印任务扩展上下文的访问权限，并且还允许您添加一个事件处理程序来更新打印票证。
+- **args.configu. printerExtensionContext**属性提供了类型为 printerExtensionContext 的对象。 此对象是指向打印架构、PrintTicket 和打印队列信息的 PrinterExtensionLibrary 接口的指针。 如果未公开任何接口，则此值将为 null。 有关详细信息，请参阅 [打印机扩展库概述](printer-extension-library-overview.md)。
 
--   **Args.configuration**属性提供类型 Windows.Devices.Printers.Extensions.PrintTaskConfiguration 的对象。 此对象提供了访问打印任务扩展上下文，并还允许您添加事件处理程序更新的打印票证。
--   **Args.configuration.printerExtensionContext**属性提供类型 Windows.Devices.Printers.Extensions.PrinterExtensionContext 的对象。 此对象是指向打印架构，PrintTicket，PrinterExtensionLibrary 接口的指针，打印队列的信息。 如果没有接口的公开方式，它将为 null。 有关详细信息，请参阅[打印机扩展库概述](printer-extension-library-overview.md)。
-
-此示例演示`LoadAdvancedPrintSettingsContext`方法，因为它将出现在**Constants.cs**文件。
+此示例显示了 `LoadAdvancedPrintSettingsContext` 方法，因为它显示在 **Constants.cs** 文件中。
 
 ```CSharp
 public PrintTaskConfiguration Config;
@@ -215,9 +205,9 @@ public void LoadAdvancedPrintSettingsContext(PrintTaskSettingsActivatedEventArgs
 }
 ```
 
-在自定义浮出控件页**Preferences.xaml.cs**，一个名为类`rootPage`充当指向 MainPage 类的指针，以便可以从浮出控件访问打印任务扩展上下文和打印机设备上下文。
+在自定义飞出页 **Preferences.xaml.cs**上，名为的类 `rootPage` 充当指向 MainPage 类的指针，以便可以从弹出窗口中访问打印任务扩展上下文和打印机设备上下文。
 
-此示例显示指针中的一部分`Preferences`类中，从**Preferences.xaml.cs**文件。 下载[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例，请参阅完整代码。
+此示例显示了 `Preferences` **Preferences.xaml.cs** 文件的类中的指针。 下载 " [打印设置" 和 "打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例以查看完整代码。
 
 ```CSharp
 public sealed partial class Preferences : SDKTemplate.Common.LayoutAwarePage
@@ -241,11 +231,11 @@ public sealed partial class Preferences : SDKTemplate.Common.LayoutAwarePage
     // . . .
 ```
 
-时的页构造函数**Preferences.xaml.cs**是调用，对象创建为打印任务的扩展上下文 (`PrintTaskConfiguraton`名为对象`configuration`) 和打印机设备上下文 (`PrintHelperClass`名为对象`printHelper`).
+调用 **Preferences.xaml.cs** 的页构造函数时，将为打印任务扩展上下文创建对象， (名为 `PrintTaskConfiguraton`) 的对象 `configuration` 和 (`PrintHelperClass` 名为) 的对象的打印机设备上下文 `printHelper` 。
 
-创建这些对象后，在使用打印机设备上下文`DisplaySettings`方法以加载 Textblock 和 ComboBoxs。 请注意，与 JavaScript 不同，所选内容中的更改不会与其他应用程序在同一线程上触发。 您必须维护用户选择要用于更高版本的本地缓存。
+创建这些对象后，将在方法中使用打印机设备上下文 `DisplaySettings` 来加载 textblock 和 ComboBoxs。 请注意，与 JavaScript 不同的是，所选内容的更改不会在应用程序的其他线程上触发。 您必须维护用户选择的本地缓存，以供以后使用。
 
-此示例显示了自定义浮出控件页构造函数中， `DisplaySettings`，和中的其他帮助器方法**Preferences.xaml.cs**文件。
+此示例显示了 Preferences.xaml.cs 文件中的自定义飞出页构造函数、 `DisplaySettings` 和其他帮助器方法。 **Preferences.xaml.cs**
 
 ```CSharp
 public Preferences()
@@ -351,12 +341,11 @@ private void OnFeatureOptionsChanged(object sender, SelectionChangedEventArgs ar
 }
 ```
 
-## <a name="span-idstep5savesettingsspanspan-idstep5savesettingsspanspan-idstep5savesettingsspanstep-5-save-settings"></a><span id="Step_5__Save_settings"></span><span id="step_5__save_settings"></span><span id="STEP_5__SAVE_SETTINGS"></span>步骤 5：保存设置
+## <a name="step-5-save-settings"></a>步骤5：保存设置
 
+当用户完成设置高级打印设置时，Microsoft Store 设备应用需要在用户返回到 " **打印** " 窗口之前保存更改。 若要执行此操作，应用程序需要在用户点击 " **后退** " 按钮时从自定义弹出页面)  (进行侦听。 发生这种情况时，将 `SaveRequested` 触发打印任务扩展上下文 (`configuration` 对象) 的事件。
 
-当用户完成设置高级打印设置时，Microsoft Store 设备应用程序需要以保存所做的更改，用户将恢复为之前**打印**窗口。 为此，应用程序需要在用户点击时侦听**回**（从自定义浮出控件页） 按钮。 在这种情况，`SaveRequested`打印任务扩展上下文的事件 (`configuration`对象) 触发。
-
-此示例中显示的事件侦听器`SaveRequested`，添加到中`OnNavigatedTo`的自定义浮出控件的事件处理程序，请在**Preferences.xaml.cs**文件。 当`SaveRequested`触发事件时，`OnSaveRequested`将调用方法 (该方法也是在**Preferences.xaml.cs**文件)。
+此示例显示了的事件侦听器 `SaveRequested` ，它是在 `OnNavigatedTo` **Preferences.xaml.cs** 文件中的自定义浮出控件的事件处理程序中添加的。 `SaveRequested`触发事件时， `OnSaveRequested` 将调用方法， (该方法也**Preferences.xaml.cs**文件中) 。
 
 ```CSharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -372,13 +361,12 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-在中`OnSaveRequested`方法，该应用程序首次使用`printHelper`打印机扩展上下文上设置的每个功能的当前所选的选项的对象。 然后，调用`Save`方法`request`对象作为参数传入`OnSaveRequested`方法。 `Save`方法，从 Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest 类中，使用打印机扩展上下文验证的打印票证和保存打印任务配置。
+在 `OnSaveRequested` 方法中，应用程序首先使用 `printHelper` 对象为打印机扩展上下文上的每个功能设置当前选定的选项。 然后，它对 `Save` `request` 作为参数传递给方法的对象调用方法 `OnSaveRequested` 。 `Save`PrintTaskConfigurationSaveRequest 类中的方法使用打印机扩展上下文来验证打印票证，并保存打印任务配置（& e）。
 
-**重要**  如果的打印票证无效以任何方式`Save`方法将引发应用程序必须处理的异常。 如果应用程序不处理异常，该流已停止，强制对光线用户解除浮出控件，并且重新启动打印流。
+>[!IMPORTANT]
+>如果打印票证以任何方式无效，则该 `Save` 方法将引发应用程序必须处理的异常。 如果应用程序不处理此异常，则会停止流，并强制用户停止弹出窗口并重新启动打印流。
 
- 
-
-此示例演示`OnSaveRequested`中的方法**Preferences.xaml.cs**文件。 因为`SaveRequested`不会在 UI 线程上引发事件，它需要使用 Windows.UI.Core.CoreDispatcher 将消息发布到 UI 线程要验证和保存票证时显示相应的消息。
+此示例显示了 `OnSaveRequested` **Preferences.xaml.cs** 文件中的方法。 由于 `SaveRequested` 事件不是在 ui 线程上引发的，因此它需要使用 CoreDispatcher 将消息发布到 UI 线程，以便在验证和保存票证时显示相应的消息。
 
 ```CSharp
 async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequestedEventArgs args)
@@ -425,7 +413,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
         // The printerExtensionContext object is updated with each iteration of this loop
         printHelper.SetFeatureOption(features[i], selections[i]);
     }
-    
+
     bool ticketSaved;
     try
     {
@@ -433,7 +421,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
         // When the exception is thrown, the app flyout will remain.
         // If you want the flyout to remain regardless of outcome, you can call
         // request.Cancel(). This should be used sparingly, however, as it could
-        // disrupt the entire the print flow and will force the user to 
+        // disrupt the entire the print flow and will force the user to
         // light dismiss to restart the entire experience.
         request.Save(printerExtensionContext);
 
@@ -469,15 +457,15 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
 }
 ```
 
-### <a name="span-idsavingoptionsthatrequireuserinputspanspan-idsavingoptionsthatrequireuserinputspanspan-idsavingoptionsthatrequireuserinputspansaving-options-that-require-user-input"></a><span id="Saving_options_that_require_user_input"></span><span id="saving_options_that_require_user_input"></span><span id="SAVING_OPTIONS_THAT_REQUIRE_USER_INPUT"></span>正在保存需要用户输入的选项
+### <a name="saving-options-that-require-user-input"></a>正在保存需要用户输入的选项
 
-[打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862)示例演示如何设置已定义的功能，涵盖大多数打印选项。 但是，有些选项需要自定义的用户界面，以获取用户指定的值。 例如，如果应用使用高级打印设置来指定自定义页面大小，它将执行以下步骤将保存的用户指定的值：
+" [打印设置和打印通知](https://go.microsoft.com/fwlink/p/?LinkID=242862) " 示例演示如何设置定义的功能，这些功能涵盖大多数打印选项。 但是，某些选项需要自定义 UI 才能获取用户指定的值。 例如，如果应用使用 "高级打印" 设置来指定自定义页面大小，则需要执行以下步骤来保存用户指定的值：
 
-1.  在应用激活过程中检索的打印票证。 前面部分中所述的打印设置的应用程序激活[步骤 3:处理激活](#step3)。
+1. 在应用程序激活过程中检索打印票证。 [步骤3：处理激活](#step3)中前面介绍了 "打印设置" 应用程序激活。
 
-2.  检查是否已指定页大小选项。 在C#或 JS 应用程序打印的帮助器类可以检查此选项。 在C++应用程序中，在 IPrintSchemaOption 检索 IPrintSchemaPageMediaSizeOption 上调用 QueryInterface。
+2. 检查是否指定了 "页面大小" 选项。 在 c # 或 JS 应用程序中，print helper 类可以检查此选项。 在 c + + 应用程序中，对 IPrintSchemaOption 调用 QueryInterface 以检索 IPrintSchemaPageMediaSizeOption。
 
-    如果指定页大小选项，则将检查打印帮助程序类中，此示例演示一种方法。
+    此示例显示了打印帮助程序类中的一个方法，用于检查是否指定了 "页面大小" 选项。
 
     ```CSharp
     public bool ShouldShowCustomUI(string index)
@@ -487,7 +475,7 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
             string feature = "PageMediaSize";
             int i = int.Parse(index);
             IPrintSchemaOption selectedOption = GetCachedFeatureOptions(feature)[i];
-            if (selectedOption.Name.Equals("CustomMediaSize", StringComparison.CurrentCulture) 
+            if (selectedOption.Name.Equals("CustomMediaSize", StringComparison.CurrentCulture)
                 || selectedOption.Name.Equals("PSCustomMediaSize", StringComparison.CurrentCulture))
             {
                 return true;
@@ -497,9 +485,9 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
     }
     ```
 
-3.  自定义的浮出控件中显示一个自定义 UI，要求用户提供的页面高度和宽度，并从 IPrintSchemaPageMediaSizeOption 检索用户指定高度和宽度。
+3. 在 "自定义" 弹出窗口中，显示一个自定义 UI，该 UI 要求用户提供页面高度和宽度，并从 IPrintSchemaPageMediaSizeOption 中检索用户指定的高度和宽度。
 
-    此示例演示一种方法要求用户提供有关页面高度和宽度的自定义弹出窗口。
+    此示例显示了一个方法，该方法用于向用户询问页面的高度和宽度。
 
     ```CSharp
     private void ShowCustomPageMediaSizeUI(string index, bool keepValue)
@@ -531,9 +519,9 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
     }
     ```
 
-4.  更新`IPrintSchemaPageMediaSizeOption`对象使用用户指定的值，并验证的高度和宽度匹配的用户指定的值。
+4. `IPrintSchemaPageMediaSizeOption`用用户指定的值更新对象，并验证高度和宽度是否与用户指定的值匹配。
 
-    此示例是一个帮助器方法用于更新`IPrintSchemaPageMediaSizeOption`打印机帮助程序类中的对象。 `OnSaveRequested`自定义浮出控件中的处理程序将调用此函数，如果确定请求了一个自定义页面大小选项。
+    此示例是一个帮助器方法，用于更新 `IPrintSchemaPageMediaSizeOption` 打印机帮助器类中的对象。 `OnSaveRequested`如果自定义弹出窗口中的处理程序确定请求了自定义页面大小选项，则该处理程序将调用此函数。
 
     ```CSharp
     public void SetCustomMediaSizeDimensions(string width, string height)
@@ -572,9 +560,9 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
       string pskPrefix = ticketRootXElement.GetPrefixOfNamespace(pskNs);
 
       // Modify the MediaSizeHeight and MediaSizeWidth
-      IEnumerable<XElement> parameterInitCollection = 
+      IEnumerable<XElement> parameterInitCollection =
         from c in ticketRootXElement.Elements(psfNs + "ParameterInit")
-                                                                
+
       select c;
 
       foreach (XElement parameterInit in parameterInitCollection)
@@ -604,82 +592,66 @@ async private void OnSaveRequested(object sender, PrintTaskConfigurationSaveRequ
     }
     ```
 
-## <a name="span-idtestingspanspan-idtestingspanspan-idtestingspantesting"></a><span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>测试
+## <a name="testing"></a>测试
 
+在可以测试 UWP 设备应用之前，必须使用设备元数据将其链接到您的打印机。
 
-你可以测试 UWP 设备应用之前，它必须链接到您的打印机使用的设备元数据。
+- 你需要打印机的设备元数据包的副本，以便向其添加设备应用信息。 如果没有设备元数据，可以使用 **设备元数据创作向导** 生成它，如主题为 [UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)中所述。
 
--   需要打印机的位置，若要向其中添加设备应用信息的设备元数据包的副本。 如果没有设备元数据，您可以使用生成它**设备元数据创建向导**主题中所述[创建 UWP 设备应用的设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
+    >[!NOTE]
+    >若要使用 **设备元数据创作向导**，在完成本主题中的步骤之前，必须安装 Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate 或 [独立的 SDK for Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)。 为 Windows 安装 Microsoft Visual Studio Express 会安装不包括向导的 SDK 版本。
 
-    **请注意**  若要使用**设备元数据创建向导**，则必须安装 Microsoft Visual Studio Professional，Microsoft Visual Studio Ultimate，或[独立 SDK 的 Windows 8.1](https://go.microsoft.com/fwlink/p/?linkid=309209)之前完成本主题中的步骤。 安装 Microsoft Visual Studio Express 的 Windows 安装不包括在向导的 sdk 版本。
+以下步骤生成应用并安装设备元数据。
 
-     
+1. 启用测试签名。
+    1. 双击 "DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* Windows 工具包 8.1 bin **X86 启动设备元数据创作向导** \\ \\ \\ \\ **DeviceMetadataWizard.exe**
+    2. 从 " **工具** " 菜单中，选择 " **启用测试签名**"。
 
-以下步骤生成您的应用程序并安装设备元数据。
+2. 重新启动计算机
+3. 通过打开解决方案 ( .sln) 文件来生成解决方案。 加载示例后，按 F7 或从顶部菜单中转到 " **生成- &gt; 生成解决方案** "。
+4. 断开连接并卸载打印机。 此步骤是必需的，以便 Windows 将在下一次检测到设备时读取更新的设备元数据。
+5. 编辑并保存设备元数据。 若要将设备应用链接到设备，你必须将设备应用关联到设备
+    >[!NOTE]
+    >如果尚未创建设备元数据，请参阅 [为 UWP 设备应用创建设备元数据](https://go.microsoft.com/fwlink/p/?LinkId=313644)。
 
-1.  启用测试签名。
-    1.  启动**设备元数据创建向导**从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**
-    2.  从**工具**菜单中，选择**启用测试签名**。
+    1. 如果**设备元数据创作向导**尚未打开，请通过双击 "DeviceMetadataWizard.exe" 从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动它。
+    2. 单击 " **编辑设备元数据**"。 这将允许你编辑现有的设备元数据包。
+    3. 在 " **打开** " 对话框中，找到与 UWP 设备应用关联的设备元数据包。  (其文件扩展名为 **devicemetadata** 。 ) 
+    4. 在 " **指定 uwp 设备应用信息** " 页上，在 " **UWP 设备应用** " 框中输入 Microsoft Store 应用信息。 单击 " **导入 UWP 应用程序清单文件** " 以自动输入 **包名称**、 **发布者名称**和 **UWP 应用 ID**。
+    5. 如果你的应用正在注册打印机通知，请填写 **通知处理程序** 框。 在 " **事件 ID**" 中，输入打印事件处理程序的名称。 在 " **事件资产**" 中，输入代码所在的文件的名称。
+    6. 完成后，单击 " **下一步** "，直到到达 " **完成** " 页。
+    7. 在 " **查看设备元数据包** " 页上，确保所有设置均正确，并选中 "将 **设备元数据包复制到本地计算机上的元数据存储区** " 复选框。 然后单击“保存”  。
 
-2.  重新启动计算机
-3.  通过打开解决方案 (.sln) 文件生成解决方案。 按 F7，或转至**生成-&gt;生成解决方案**从顶部菜单中加载示例之后。
+6. 重新连接打印机，以便 Windows 在连接设备时读取更新的设备元数据。
 
-4.  断开连接并卸载打印机。 此步骤是必需的以便 Windows 将在下一次检测到设备读取更新的设备元数据。
-5.  编辑并保存设备元数据。 若要链接到你的设备的设备应用，必须将设备应用程序与你的设备**注意**  如果尚未创建设备元数据，请参阅[创建设备元数据为 UWP 设备应用](https://go.microsoft.com/fwlink/p/?LinkId=313644).
+## <a name="troubleshooting"></a>疑难解答
 
-     
+### <a name="issue-advanced-print-settings-shows-default-flyout-instead-of-custom-flyout"></a>问题：高级打印设置显示默认浮出控件，而不是自定义飞出
 
-    1.  如果**设备元数据创建向导**未打开，启动从 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，也可由双击**DeviceMetadataWizard.exe**。
-    2.  单击**编辑设备元数据**。 这样就可以编辑现有的设备元数据包。
-    3.  在中**打开**对话框框中，找到与 UWP 设备应用程序相关联的设备元数据包。 (它具有**devicemetadata ms**文件扩展名。)
-    4.  上**指定 UWP 设备应用信息**页上，输入中的 Microsoft Store 应用信息**UWP 设备应用**框。 单击**导入 UWP 应用程序清单文件**自动输入**包名称**，**发布服务器的名称**，以及**UWP 应用程序 ID**。
-    5.  如果您的应用程序注册的打印机通知，填写**通知处理程序**框。 在中**事件 ID**，输入打印事件处理程序的名称。 在中**事件资产**，输入该代码所在的位置的文件的名称。
+如果 "高级打印设置" 浮出控件显示默认浮出控件，而不是应用程序实现的自定义浮出控件 .。。
 
-    6.  完成后，单击**下一步**直至到达**完成**页。
-    7.  上**查看设备元数据包**页面上，确保所有设置都正确，然后选择**复制到本地计算机上的元数据存储设备元数据包**复选框。 然后单击**保存**。
+- **可能的原因：** 未启用测试签名。 请参阅本主题中的调试部分，了解有关如何打开它的信息。
 
-6.  重新连接您的打印机，以便在设备连接时，该 Windows 读取更新的设备元数据。
+- **可能的原因：** 应用未查询正确的包系列名称。 在代码中检查包系列名称。 在 Visual Studio 中打开 **appxmanifest.xml** ，并确保要查询的包系列名称与 " **打包** " 选项卡上的 "包系列名称" 字段中的相同。
 
-## <a name="span-idtroubleshootingspanspan-idtroubleshootingspanspan-idtroubleshootingspantroubleshooting"></a><span id="Troubleshooting"></span><span id="troubleshooting"></span><span id="TROUBLESHOOTING"></span>故障排除
+- **可能的原因：** 设备元数据不与包系列名称关联。 使用 **设备元数据创作向导** 打开设备元数据，并检查包系列名称。 双击DeviceMetadataWizard.exe，从 *% ProgramFiles (x86) %* \\ Windows 工具包 \\ 8.1 \\ bin \\ x86 **DeviceMetadataWizard.exe**启动向导。
 
+### <a name="issue-app-is-launched-in-flyout-then-is-immediately-dismissed"></a>问题：应用程序在浮出控件中启动，然后立即解除
 
-### <a name="span-idissueadvancedprintsettingsshowsdefaultflyoutinsteadofcustomflyoutspanspan-idissueadvancedprintsettingsshowsdefaultflyoutinsteadofcustomflyoutspanspan-idissueadvancedprintsettingsshowsdefaultflyoutinsteadofcustomflyoutspanissue-advanced-print-settings-shows-default-flyout-instead-of-custom-flyout"></a><span id="Issue__Advanced_print_settings_shows_default_flyout_instead_of_custom_flyout"></span><span id="issue__advanced_print_settings_shows_default_flyout_instead_of_custom_flyout"></span><span id="ISSUE__ADVANCED_PRINT_SETTINGS_SHOWS_DEFAULT_FLYOUT_INSTEAD_OF_CUSTOM_FLYOUT"></span>问题：高级打印设置显示默认浮出控件而不是自定义浮出控件
+如果高级打印设置的自定义浮出控件在启动后立即消失 .。。
 
-如果高级打印设置浮出控件将显示默认浮出控件而不是以比您的应用程序实现自定义浮出控件...
+- **可能的原因：** 在 Windows 8 中，有一个已知问题，即在弹出窗口中，UWP 应用将在调试器下解除。 一旦知道激活有效，就关闭调试。 如果需要调试保存打印票证，请在激活后附加调试器。
 
--   **可能的原因：** 未打开测试签名。 请参阅本主题了解如何将其打开的调试部分。
-
--   **可能的原因：** 应用程序不查询的正确包系列名称。 检查你的代码中的包系列名称。 打开**package.appxmanifest**在 Visual Studio 并确保包系列名称要查询的匹配中的一个**打包**选项卡上，包系列名称字段中的。
-
--   **可能的原因：** 设备元数据所关联的包系列名称。 使用**设备元数据创建向导**要打开设备元数据并检查包系列名称。 从启动该向导 *%programfiles （x86） %*\\Windows 工具包\\8.1\\bin\\x86，通过双击**DeviceMetadataWizard.exe**。
-
-### <a name="span-idissueappislaunchedinflyoutthenisimmediatelydismissedspanspan-idissueappislaunchedinflyoutthenisimmediatelydismissedspanspan-idissueappislaunchedinflyoutthenisimmediatelydismissedspanissue-app-is-launched-in-flyout-then-is-immediately-dismissed"></a><span id="Issue__App_is_launched_in_flyout_then_is_immediately_dismissed"></span><span id="issue__app_is_launched_in_flyout_then_is_immediately_dismissed"></span><span id="ISSUE__APP_IS_LAUNCHED_IN_FLYOUT_THEN_IS_IMMEDIATELY_DISMISSED"></span>问题：应用在浮出控件中启动，然后立即关闭
-
-对于高级打印设置在自定义浮出控件消失后立即启动...
-
--   **可能的原因：** 在 Windows 8 中，是一个已知的问题，在浮出控件，UWP 应用将关闭在调试器下。 关闭调试一旦知道激活有效运行。 如果需要调试正在保存的打印票证，请在激活后附加调试器。
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="related-topics"></a>相关主题
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 
-[打印机扩展插件接口 （v4 打印驱动程序）](https://go.microsoft.com/fwlink/p/?LinkID=299887)
+[ (v4 打印驱动程序的打印机扩展接口) ](https://go.microsoft.com/fwlink/p/?LinkID=299887)
 
 [双向通信](https://go.microsoft.com/fwlink/p/?LinkId=317192)
 
 [UWP 应用入门](getting-started.md)
 
-[创建 UWP 设备应用程序 （分步指南）](step-1--create-a-uwp-device-app.md)
+[ (分步指南创建 UWP 设备应用) ](step-1--create-a-uwp-device-app.md)
 
-[创建设备元数据对 UWP 设备应用 （分步指南）](step-2--create-device-metadata.md)
-
- 
-
- 
-
-
-
-
-
-
+[ (分步指南创建 UWP 设备应用的设备元数据) ](step-2--create-device-metadata.md)

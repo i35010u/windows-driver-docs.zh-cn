@@ -3,18 +3,18 @@ title: 选择用户模式或内核模式
 description: 选择用户模式或内核模式
 ms.assetid: 1e63d01e-8cf2-488a-89e8-d4a3ff5cfe19
 keywords:
-- 打印机图形 DLL WDK，用户模式和内核模式对比
-- 图形 DLL WDK 打印机，用户模式和内核模式对比
-- 用户模式下执行 WDK 打印机图形
+- 打印机图形 DLL WDK、用户模式与内核模式
+- 图形 DLL WDK 打印机、用户模式与内核模式
+- 用户模式执行 WDK 打印机图形
 - 内核模式执行 WDK 打印机图形
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b01cc556652bbb66876366047d447470b9ab91
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40035a787242a7e37e4855b68b9bafc2c0f01931
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364923"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802649"
 ---
 # <a name="choosing-user-mode-or-kernel-mode"></a>选择用户模式或内核模式
 
@@ -22,23 +22,23 @@ ms.locfileid: "67364923"
 
 
 
-用户模式下执行的打印机图形 Dll 提供了对内核模式下执行以下优点：
+与内核模式执行相比，在用户模式下执行打印机图形 Dll 具有以下优势：
 
--   不受限制的堆栈空间。
+-   无限堆栈空间。
 
 -   对 Win32 Api 的访问。
 
--   更低的可能导致系统崩溃。
+-   导致系统崩溃的可能性更小。
 
--   方便调试，用于用户模式下调试程序。
+-   通过用户模式调试器更容易调试。
 
--   更好地浮点功能，因为不需要使用 DDI 浮点函数的图形。
+-   更好的浮点功能，因为不需要使用图形 DDI 浮点函数。
 
--   调用不是所述的 Microsoft Windows 2000 和更高版本的打印机驱动程序体系结构的一部分的任何自定义的供应商提供的用户模式 Dll 的能力
+-   能够调用任何不属于所述 Microsoft Windows 2000 和更高版本的打印机驱动程序体系结构的自定义供应商提供的用户模式 Dll
 
-在 Windows Vista 中，不能安装内核模式打印机驱动程序。 如果应用程序尝试执行此操作，（Windows SDK 文档中所述） 的 AddPrinterDriver 和 AddprinterDriverEx 函数将失败，错误代码错误\_KM\_驱动程序\_已阻止。
+在 Windows Vista 中，无法安装内核模式打印机驱动程序。 如果应用程序尝试执行此操作，则 Windows SDK) 文档中所述的 AddPrinterDriver 和 AddprinterDriverEx 函数 (将失败，并阻止错误代码错误 \_ KM \_ 驱动程序 \_ 。
 
-下表显示允许的打印机驱动程序的执行模式：
+下表显示了允许的打印机驱动程序执行模式：
 
 <table>
 <colgroup>
@@ -48,60 +48,60 @@ ms.locfileid: "67364923"
 <thead>
 <tr class="header">
 <th>操作系统版本</th>
-<th>允许使用的打印机图形 DLL 的执行模式</th>
+<th>允许的打印机图形 DLL 执行模式</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>Windows NT 4.0</p></td>
-<td><p>内核</p></td>
+<td><p>内核 (kernel)</p></td>
 </tr>
 <tr class="even">
 <td><p>Windows 2000</p></td>
 <td><p>用户或内核</p></td>
 </tr>
 <tr class="odd">
-<td><p>Windows XP 和 Server 2003</p></td>
-<td><p>内核模式可用于现有打印机;为新的打印机安装所需的用户模式</p></td>
+<td><p>Windows XP 和服务器2003</p></td>
+<td><p>适用于现有打印机的内核模式;新打印机安装所需的用户模式</p></td>
 </tr>
 <tr class="even">
 <td>Windows Vista</td>
-<td><p>用户</p></td>
+<td><p>user</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="using-the-graphics-ddi-in-user-mode"></a>在用户模式下使用 DDI 的图形
+### <a name="using-the-graphics-ddi-in-user-mode"></a>在用户模式下使用图形 DDI
 
-用户模式打印机图形 DLL 并不局限于调用[GDI 支持服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services)和其他 Eng 前缀图形 DDI 回调函数。 但是，有一些必须遵循的规则：
+用户模式打印机图形 DLL 并不局限于调用 [GDI 支持服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services) 和其他 Eng 的图形 DDI 回调函数。 但是，有一些必须遵循的规则：
 
--   如内核模式图形 Dll、 用户模式下的图形 Dll 必须调用图形 DDIs 创建或修改绘图图面。 这些回调函数是 GDI 支持服务，并且不允许调用这些绘图函数的 Win32 等效项。
+-   与内核模式图形 Dll 一样，用户模式图形 Dll 必须调用图形 DDIs 来创建或修改绘图图面。 这些回调函数是 GDI 支持服务，不允许调用这些绘图函数的 Win32 等效项。
 
-    对于用户模式 Dll，对这些绘图的回调函数的调用都会被截获由用户模式下 GDI 客户端，然后将传递对 GDI 的内核模式图形呈现引擎 (GRE) 的调用。
+    对于用户模式 Dll，对这些绘图回调函数的调用会被用户模式 GDI 客户端截获，后者随后将调用传递到 GDI 的内核模式图形呈现引擎 (GRE) 。
 
--   不能由用户模式 Dll 调用以下 Eng 前缀图形 DDI 函数的列表：
+-   用户模式 Dll 不能调用下面的 Eng 前缀图形 DDI 函数列表：
 
-    [**EngCreatePath**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepath)
+    [**EngCreatePath**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-engcreatepath)
 
-    [**EngGetType1FontList**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-enggettype1fontlist)
+    [**EngGetType1FontList**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-enggettype1fontlist)
 
-    [**EngMapModule**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engmapmodule)
+    [**EngMapModule**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-engmapmodule)
 
-    [**EngDebugBreak**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdebugbreak)
+    [**EngDebugBreak**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-engdebugbreak)
 
--   为函数的 Dll 可以继续使用 DDI 的图形的用户模式打印机图形[GDI 浮点服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)。
+-   用户模式打印机图形 Dll 可以继续对 [GDI 浮点服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)使用图形 DDI 函数。
 
-### <a name="converting-an-existing-printer-graphics-dll-to-user-mode"></a>将现有的打印机图形 DLL 转换为用户模式
+### <a name="converting-an-existing-printer-graphics-dll-to-user-mode"></a>将现有打印机图形 DLL 转换为用户模式
 
-如果您以前开发了打印机图形在内核模式下执行的 DLL，您可以将该 DLL 转换为用户模式下执行。 若要转换，只需添加[ **DrvQueryDriverInfo** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvquerydriverinfo)函数的 dll，然后按照规则[构建打印机图形 DLL](building-a-printer-graphics-dll.md)。
+如果你之前开发了在内核模式下执行的打印机图形 DLL，则可以将该 DLL 转换为用户模式执行。 若要进行转换，只需将 [**DrvQueryDriverInfo**](https://docs.microsoft.com/windows/win32/api/winddi/nf-winddi-drvquerydriverinfo) 函数添加到 DLL，然后按照 [生成打印机图形 DLL](building-a-printer-graphics-dll.md)的规则。
 
 ### <a name="creating-a-new-printer-graphics-dll-in-user-mode"></a>在用户模式下创建新的打印机图形 DLL
 
-若要开发新的打印机图形在用户模式下执行的 DLL，您可以继续使用使用的内核模式的 Dll 的所有图形 DDI 函数。 但是，你还具有以下选项：
+若要开发在用户模式下执行的新打印机图形 DLL，可以继续使用内核模式 Dll 使用的所有图形 DDI 函数。 但是，您还可以使用以下选项：
 
--   对于 Eng 前缀的函数具有确切 Win32 等效项，强烈建议您调用 Win32 函数。 下表列出了这些 Eng 前缀的函数，以及它们的 Win32 等效项。
+-   对于具有完全 Win32 等效项的 Eng 前缀函数，强烈建议调用 Win32 函数。 下表列出了这些 Eng 前缀的函数及其等效的 Win32 函数。
 
     <table>
     <colgroup>
@@ -110,7 +110,7 @@ ms.locfileid: "67364923"
     </colgroup>
     <thead>
     <tr class="header">
-    <th>Eng 前缀函数</th>
+    <th>Eng-带前缀的函数</th>
     <th>Win32 等效项</th>
     </tr>
     </thead>
@@ -190,7 +190,7 @@ ms.locfileid: "67364923"
 
 <!-- -->
 
--   对于 Eng 前缀的函数使用类似的功能对应于 Win32 函数，也强烈建议您调用 Win32 函数。 下表列出了几种这些 Eng 前缀的函数，以及它们的 Win32 对应项。
+-   对于与具有类似功能的 Win32 函数相对应的 Eng 前缀函数，还强烈建议调用 Win32 函数。 下表列出了其中几个 Eng 前缀的函数及其 Win32 对应项。
 
     <table>
     <colgroup>
@@ -199,7 +199,7 @@ ms.locfileid: "67364923"
     </colgroup>
     <thead>
     <tr class="header">
-    <th>Eng 前缀函数</th>
+    <th>Eng-带前缀的函数</th>
     <th>Win32 等效项</th>
     </tr>
     </thead>
@@ -210,7 +210,7 @@ ms.locfileid: "67364923"
     </tr>
     <tr class="even">
     <td><p>EngCreateSemaphore</p></td>
-    <td><p>分配 CRITICAL_SECTION 对象，并将其使用对 Win32 InitializeCriticalSection 函数的调用初始化。</p></td>
+    <td><p>分配 CRITICAL_SECTION 对象，并通过调用 Win32 InitializeCriticalSection 函数对其进行初始化。</p></td>
     </tr>
     <tr class="odd">
     <td><p>EngDeleteSemaphore</p></td>
@@ -218,7 +218,7 @@ ms.locfileid: "67364923"
     </tr>
     <tr class="even">
     <td><p>EngFindResource</p></td>
-    <td><p>FindResource</p></td>
+    <td><p>System.windows.frameworkelement.findresource</p></td>
     </tr>
     <tr class="odd">
     <td><p>EngFreeModule</p></td>
@@ -251,9 +251,9 @@ ms.locfileid: "67364923"
 
 <!-- -->
 
--   对于函数，创建或修改绘制的服务，新的驱动程序必须继续调用[GDI 支持服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services)不及其 Win32 等效项。
+-   对于创建或修改绘图服务的函数，新驱动程序必须继续调用 [GDI 支持服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-support-services) ，而不是其 Win32 等效项。
 
--   为 DDI 函数而不是使用图形[GDI 浮点服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)，可以使用 FLOAT 数据类型。
+-   您可以使用 FLOAT 数据类型，而不是对 [GDI 浮点服务](https://docs.microsoft.com/windows-hardware/drivers/display/gdi-floating-point-services)使用图形 DDI 函数。
 
  
 
