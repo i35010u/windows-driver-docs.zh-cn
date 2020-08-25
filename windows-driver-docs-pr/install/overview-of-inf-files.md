@@ -11,12 +11,12 @@ keywords:
 - 使用 INF 文件安装驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 78dfa6c2a5df5e01417f0bf53275fbe3a1c4a98d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 057bb856b0a681bfcf6f2569851623a31887c220
+ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007587"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88712206"
 ---
 # <a name="overview-of-inf-files"></a>INF 文件概述
 
@@ -35,4 +35,4 @@ INF 文件是一个文本文件，其中包含[设备安装组件](https://docs.
 可以使用 INX  文件来自动创建 INF 文件。 INX 文件是一个 INF 文件，其中包含表示版本信息的字符串变量。 生成实用工具和 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf) 工具将 INX 文件中的字符串变量替换为表示特定硬件体系结构或框架版本的文本字符串。 有关 INX 文件的详细信息，请参阅[使用 INX 文件创建 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-inx-files-to-create-inf-files)。
 
 
-有关 INF 文件格式的完整说明，请参阅 [INF 文件部分和指令](inf-file-sections-and-directives.md)。
+有关 INF 文件格式的完整说明，请参阅 [INF 文件部分](inf-classinstall32-section.md)和 [INF 文件指令](inf-addcomponent-directive.md)。

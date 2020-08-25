@@ -5,12 +5,12 @@ ms.author: webreidi
 ms.topic: article
 ms.date: 03/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 09d97659a6f4246c85e16ce6005655514bc919a2
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0b51bb20af44f5e3adfcd2b65fad05f51e425571
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79083141"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253023"
 ---
 # <a name="gradual-rollout"></a>逐步推出
 
@@ -84,7 +84,7 @@ ms.locfileid: "79083141"
 
 所有受限制的驱动程序，不管它们的限制百分比最初是 1% 还是 100%，都会受到监视至少 30 天。 驱动程序在以任何受限制状态发布给零售群体后，立即开始进入监视期。
 
-在此 30 天推出和监视阶段，发货标签将被锁定以进行任何编辑。 可以单击发货标签上的“取消”按钮取消发货标签。 
+在此 30 天推出和监视阶段，发货标签将被锁定以进行任何编辑。 可以选择发货标签上的“取消”按钮取消发货标签。
 
 如果 Microsoft 需要**暂停**驱动程序进行调查，此 30 天期限可能会延长。
 

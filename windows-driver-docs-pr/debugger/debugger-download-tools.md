@@ -7,12 +7,12 @@ keywords:
 - 下载
 ms.date: 05/01/2020
 ms.localizationpriority: High
-ms.openlocfilehash: f12bff2ee48bf0fd2912755c2a3be300b1534447
-ms.sourcegitcommit: c74025e4ac60c3eb42ae80ab0d9806858527d228
+ms.openlocfilehash: e9e9a5897ca51c3bc770d39ea4602422e0e9f77e
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726261"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253051"
 ---
 # <a name="download-debugging-tools-for-windows"></a>下载 Windows 调试工具
 
@@ -40,7 +40,7 @@ WinDbg Preview 是 WinDbg 的新版本，具有更现代的视觉效果、更快
 
 ### <a name="adding-the-debugging-tools-for-windows-if-the-sdk-is-already-installed"></a>如果已安装 SDK，则添加用于 Windows 的调试工具
 
-如果 Windows SDK 已安装，请打开“设置”  ，导航到“应用和功能”  ，选择“Windows 软件开发工具包”  ，然后单击“修改”  对安装进行更改，以便添加“Windows调试工具”。 
+如果 Windows SDK 已安装，请打开“设置”，导航到“应用和功能”，选择“Windows 软件开发工具包”，然后选择“修改”对安装进行更改，以便添加“Windows 调试工具”。
 
 -------------------
 

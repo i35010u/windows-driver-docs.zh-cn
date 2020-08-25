@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: c161f61dd3a5b08aa69dcfa8edb170eb31612dae
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 422a1d261f72506bfba0149a0af9620e55a3a249
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78402345"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252853"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>Bug 检查 0x50：PAGE\_FAULT\_IN\_NONPAGED\_AREA
 
@@ -109,7 +109,7 @@ PAGE\_FAULT\_IN\_NONPAGED\_AREA bug 检查的值为 0x00000050。 这表明引�
 
 **解决损坏的 NTFS 卷问题：** 运行“Chkdsk/f/r”来检测和修复磁盘错误  。 在系统分区上开始磁盘扫描之前，必须重启系统。 请与硬盘驱动器系统制造商联系，找到他们为硬盘驱动子系统提供的任何诊断工具。
 
-**Windows 内存诊断：** 运行 Windows 内存诊断工具，测试物理内存。 单击“开始”按钮，再单击“控制面板”。 在搜索框中，键入“内存”，然后单击“诊断计算机的内存问题”  。运行测试后，使用事件查看器在系统日志下查看结果。 查找“内存诊断结果”条目以查看结果  。
+**Windows 内存诊断：** 运行 Windows 内存诊断工具，测试物理内存。 选择“开始”按钮，再选择“控制面板”。 在搜索框中，键入“内存”，然后选择“诊断计算机的内存问题”。运行测试后，使用事件查看器在系统日志下查看结果。 查找“内存诊断结果”条目以查看结果  。
 
 **解决硬件问题：** 如果最近在系统中添加了硬件，请将其删除以查看错误是否再次出现。 如果现有硬件出现故障，请卸下或更换故障部件。 你应运行系统制造商提供的硬件诊断。 有关这些过程的详细信息，请参阅计算机的用户手册。
 

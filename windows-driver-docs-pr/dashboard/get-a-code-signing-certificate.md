@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aa376e34cb96f62cdab31785874caa60b5a05ee
-ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
+ms.openlocfilehash: c856273572ccb96ec93b9ac17df274031db8148e
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153172"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253025"
 ---
 # <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
@@ -42,7 +42,7 @@ ms.locfileid: "84153172"
 
   1. 在“Sysdevs 的 DigiCert 代码签名证书”页上，单击“开始”。
 
-  2. 在“DigiCert 订单”页上（步骤 1）的“代码签名”部分中，单击“EV 代码签名证书”、填写其余的表单，然后单击“继续”。
+  2. 在“DigiCert 订单”页上（步骤 1）的“代码签名”部分中，选择“EV 代码签名证书”、填写其余的表单，然后选择“继续”。
 
   3. 按照 DigiCert 提供的说明购买证书。
 

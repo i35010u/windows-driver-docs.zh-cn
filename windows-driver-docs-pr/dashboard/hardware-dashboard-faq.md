@@ -5,12 +5,12 @@ ms.assetid: AA3D1147-7015-4D21-84A6-D127F57DDC97
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a16658be2ec62477a889506bae73597a78a7d567
-ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
+ms.openlocfilehash: dbc344aafeb335626b231013fb9dad398c2de185
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473741"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252989"
 ---
 # <a name="hardware-dashboard-faq"></a>硬件仪表板常见问题
 
@@ -103,7 +103,7 @@ ms.locfileid: "87473741"
 1. 将当前的 .hckx/hlkx 文件重命名为 .zip。
 2. 解压缩到某个文件夹。
 3. 打开该文件夹。
-4. 选择所有项目，然后右键单击并选择“发送到压缩 zip 文件夹”  。
+4. 选择所有项目，然后选择并按住（或右键单击）并选择“发送到压缩 zip 文件夹”。
 5. 将新的 .zip 文件夹重命名为 .hckx/.hlkx。
 6. 上载新的 .hckx/.hlkx 文件。
 

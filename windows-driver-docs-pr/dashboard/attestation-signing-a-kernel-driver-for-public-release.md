@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7968318382051721240c83d4a99cf633abcfee15
-ms.sourcegitcommit: a59b63e84e6790af4c17b232f11a2f50f875c97a
+ms.openlocfilehash: 2d43692f01b711cecd38109d96cc9a1487a63fd3
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87527841"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253017"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -160,7 +160,7 @@ Time:                     0.20 seconds ( 0 hr  0 min  0.20 sec)
 Throughput:              86.77 Kb/second
 ```
 
-5. 在 Disk1 子目录中找到 cab 文件。 可以在文件资源管理器中单击 cab 文件，以验证它是否包含预期的文件。
+5. 在 Disk1 子目录中找到 cab 文件。 可以在文件资源管理器中选择 cab 文件，以验证它是否包含预期的文件。
 
 ## <a name="sign-the-submission-cab-file-with-your-ev-certificate"></a>使用 EV 证书对提交 CAB 文件签名
 
@@ -203,7 +203,7 @@ C:\Echo> SignTool verify /pa /ph /v /d Echo.Sys
 ```
 
 4. 若要确认驱动程序的 EKU，请完成以下步骤。
-a. 打开 Windows 资源管理器并找到二进制文件。 右键单击该文件并选择“属性”  。
+a. 打开 Windows 资源管理器并找到二进制文件。 选择并按住（或右键单击）该文件并选择“属性”。
 b. 在“数字签名”  选项卡上，选择“签名列表”中列出的项。
 c. 选择“详细信息”  按钮，然后选择“查看证书”  。
 d. 在“详细信息”  选项卡上，选择“增强型密钥用法”  字段。
@@ -217,7 +217,7 @@ d. 在“详细信息”  选项卡上，选择“增强型密钥用法”  字�
 
 使用以下说明安装示例驱动程序。
 
-1. 打开设备管理器、右键单击计算机图标，然后选择“添加过时硬件”。 按照提示完成驱动程序的安装。
+1. 打开设备管理器、选择并按住（或右键单击）计算机图标，然后选择“添加过时硬件”。 按照提示完成驱动程序的安装。
 
 2. 或者，以管理员身份打开“命令提示符”窗口并使用 devcon 安装驱动程序。 导航到你的驱动程序包文件夹，然后输入以下命令。
 

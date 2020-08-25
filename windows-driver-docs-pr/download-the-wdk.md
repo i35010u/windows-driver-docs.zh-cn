@@ -7,15 +7,15 @@ keywords:
 - WDK
 - 下载
 - 驱动程序
-ms.date: 03/16/2020
+ms.date: 08/17/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 35cc9a188b4dc7e36c1d265d6f290edab4bf0579
-ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
+ms.openlocfilehash: 3ddec8858052616c07d7d60a1270ea6dd7b0babd
+ms.sourcegitcommit: a6dde266b92d088a97398d119f7cac5744cb3df6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87479131"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512210"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>下载 Windows 驱动程序工具包 (WDK)
 
@@ -24,7 +24,7 @@ WDK 用于开发、测试和部署 Windows 驱动程序。
 * [了解驱动程序开发中的新增内容](what-s-new-in-driver-development.md)
 * [查看已知问题](https://go.microsoft.com/fwlink/?linkid=872986)
 
-[加入 Windows 预览体验计划](https://insider.windows.com/)以获取 [WDK Insider Preview 版本](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)。 有关 Windows Insider Preview 版本的安装说明，请参阅[安装 Windows 驱动程序工具包 (WDK) 的预览版本](installing-preview-versions-wdk.md)。
+[加入 Windows 预览体验计划](https://insider.windows.com/)以获取 [WDK Insider Preview 版本](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)。 有关 Windows Insider Preview 版本的安装说明，请参阅[安装 Windows 驱动程序工具包 (WDK) 的预览版本](installing-preview-versions-wdk.md)。
 
 ## <a name="runtime-requirements"></a>运行时要求
 
@@ -41,7 +41,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 ### <a name="download-icon-step-1-install-visual-studio-2019"></a>![“下载”图标](images/download-install.png) 步骤 1：安装 Visual Studio 2019
 
-WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅 [Visual Studio 2019 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。 
+WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，请参阅 [Visual Studio 2019 系统要求](https://docs.microsoft.com/visualstudio/releases/2019/system-requirements)。
 
 以下版本的 Visual Studio 2019 支持针对此发行版进行驱动程序开发：
 
@@ -51,19 +51,19 @@ WDK 需要 Visual Studio。 有关 Visual Studio 系统要求的详细信息，�
 
 安装 Visual Studio 2019 时，选择“使用 C++ 的桌面开发”工作负荷。 Windows 10 软件开发工具包 (SDK) 会自动包括在内，并显示在右侧的“摘要”窗格中。 请注意，与适用于 Windows 10 版本 2004 的 WDK 兼容的 SDK 版本可能不是默认的 SDK。 若要选择正确的 SDK：
 
-在 Visual Studio 安装程序中的“单个组件”选项卡上，搜索“Windows 10 SDK (10.0.19041.0)”，选择此版本，然后继续安装。 
+在 Visual Studio 安装程序中的“单个组件”选项卡上，搜索“Windows 10 SDK (10.0.19041.0)”，选择此版本，然后继续安装。 请注意，Visual Studio 将在计算机上自动安装 Windows 10 SDK (10.0.19041.1)。
 
 如果已安装 Visual Studio 2019，则可以使用 Visual Studio 安装中的“修改”按钮来安装 Windows 10 SDK (10.0.19041.1)。
 
 WDK 默认启用了 Spectre 缓解，但需要为要开发的每个体系结构将 Spectre 缓解库安装在 Visual Studio 中。 此外，开发适用于 ARM/ARM64 的驱动程序还需要这些体系结构的生成工具也安装在 Visual Studio 中。 若要查找这些项，需要知道系统上安装的 MSVC 的最新版本。
 
-若要查找系统上安装的最新版 MSVC，请在 Visual Studio 安装程序中转到“工作负荷”页，在右侧窗格的“安装详细信息”下展开“使用 C++ 的桌面开发”，然后找到“MSVC v142 - VS 2019 C++ x64/x86 生成工具(V14.xx)”（请注意，其中的 xx 应该就是可用的最高版本）。 
+若要查找系统上安装的最新版 MSVC，请在 Visual Studio 安装程序中转到“工作负荷”页，在右侧窗格的“安装详细信息”下展开“使用 C++ 的桌面开发”，然后找到“MSVC v142 - VS 2019 C++ x64/x86 生成工具(V14.xx)”（请注意，其中的 xx 应该就是可用的最高版本）。
 
-有了此信息 (v14.xx)，转到“单个组件”，然后搜索“v14.xx”。 这会返回所有体系结构的工具集，包括 Spectre 缓解库。 选择要为其开发的驱动程序体系结构。 
+有了此信息 (v14.xx)，转到“单个组件”，然后搜索“v14.xx”。 这会返回所有体系结构的工具集，包括 Spectre 缓解库。 选择要为其开发的驱动程序体系结构。
 
 例如，搜索 v14.25 返回以下内容：
 
-```
+```console
 MSVC v142 - VS 2019 C++ ARM build tools (v14.25)
 MSVC v142 - VS 2019 C++ ARM Spectre-mitigated libs (v14.25)
 MSVC v142 - VS 2019 C++ ARM64 build tools (v14.25)
@@ -76,7 +76,7 @@ MSVC v142 - VS 2019 C++ x64/x86 Spectre-mitigated libs (v14.25)
 
 * [下载适用于 Windows 10 版本 2004 的 WDK](https://go.microsoft.com/fwlink/?linkid=2128854)
 
-WDK Visual Studio 扩展包含在默认 WDK 安装中。 
+WDK Visual Studio 扩展包含在默认 WDK 安装中。
 
 ## <a name="enterprise-wdk-ewdk-for-windows-10-version-2004"></a>适用于 Windows 10 版本 2004 的企业版 WDK (EWDK)
 
@@ -88,7 +88,6 @@ EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要
 
 * [下载适用于 Windows 10 版本 2004 的 EWDK](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019)
 
-
 ## <a name="driver-samples-for-windows-10"></a>Windows 10 驱动程序示例
 
 要下载驱动程序示例，请执行以下任一操作：
@@ -99,7 +98,7 @@ EWDK 还需要 .NET Framework 版本 4.7.2。 有关 .NET Framework 的其他要
 
 ## <a name="related-downloads"></a>相关下载
 
-* [下载 WDK Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
+* [下载 WDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 * [下载以前版本的 WDK](other-wdk-downloads.md)
 * [下载 Windows 评估和部署工具包 (Windows ADK)](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 * [下载 Windows HLK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)

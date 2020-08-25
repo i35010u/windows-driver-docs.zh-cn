@@ -10,12 +10,12 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be1a9d7c92062aef7cf0420ecd5b1856d02611a
-ms.sourcegitcommit: 8af4ad1d9829787d07f9c413ba3e5a24947cf0cc
+ms.openlocfilehash: 21e5b5d729f31b855a75ff82ba59e5754432410e
+ms.sourcegitcommit: 72535665bb80c28ee09331844cd0e15da8084e19
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872934"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623494"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>安装 Windows 驱动程序工具包 (WDK) 的预览版本
 
@@ -60,7 +60,7 @@ EWDK 是一种用于生成驱动程序的独立自包含命令行环境。  它�
 
 [获取企业版 Windows 驱动程序工具包 (WDK) Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
-若要开始使用，请装载 ISO 并单击“LaunchBuildEnv”。 
+若要开始使用，请装载 ISO 并选择“LaunchBuildEnv”。 
 
 ## <a name="run-time-requirements-for-the-wdk-and-the-ewdk"></a>WDK 和 EWDK 的运行时要求
 

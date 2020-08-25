@@ -4,12 +4,12 @@ description: “Microsoft 硬件 API”以编程方式在组织的合作伙伴�
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cec191850f774186b0c564eecd36137881217e7
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8c6424417329a6542bb7f807be01f7215e3b8fd0
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75209249"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253003"
 ---
 # <a name="hardware-dashboard-api"></a>硬件仪表板 API
 
@@ -44,7 +44,7 @@ ms.locfileid: "75209249"
 
 2. 在“用户”页面上，选择“Azure AD 应用程序”，然后选择特定的 Azure AD 应用程序，即用于访问合作伙伴中心帐户的已提交内容的应用或服务。    
 
-3. 在此页面上，在“角色”  下，单击“硬件”  。
+3. 在此页面上的“角色”下，选择“硬件”。
 
     ![一个显示了“角色”部分中的“硬件”选项卡的图像](images/hardware-tab-in-roles-section.png)
 

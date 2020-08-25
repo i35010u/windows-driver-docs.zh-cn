@@ -3,12 +3,12 @@ title: 使用 WinDbg 预览版进行调试
 description: 本部分介绍如何使用 WinDbg 预览版调试程序执行基本的调试任务。
 ms.date: 01/16/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 319542f71ee71f5d3c1913484eab29d752e30fdb
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0b0eff43cd9d414112d2f2a98817a74c27d17ae5
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76256698"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88253065"
 ---
 # <a name="debugging-using-windbg-preview"></a>使用 WinDbg 预览版进行调试
 
@@ -91,7 +91,7 @@ WinDbg 预览版是 WinDbg 的最新版本，在重要位置构建有可扩展�
 
 ### <a name="debugging-app-packages"></a>调试应用包
 
-现在，只需单击一下即可调试通用应用或后台任务。
+现在，只需单击一下或一次选择即可调试通用应用或后台任务。
 
 ![“启动应用包”的“应用程序”选项卡，显示了搜索框中的“cal”，并列出了三个应用](images/windbgx-launch-app-package.png)
 

@@ -4,12 +4,12 @@ description: 本主题介绍如何控制 Windows 更新何时分发驱动程序�
 ms.date: 05/28/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38052a3ea40526dd32913c7a395be865e3268ef6
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a52e9e4e476b1f4dc099d4c60f8b2813a410c5ea
+ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "66307868"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252995"
 ---
 # <a name="understanding-windows-update-automatic-and-optional-rules-for-driver-distribution"></a>了解适用于驱动程序分发的 Windows 更新自动和可选规则
 
@@ -28,7 +28,7 @@ ms.locfileid: "66307868"
 
 ## <a name="automatic-updates"></a>自动更新
 
-在计划的更新期间或在用户单击“更新与安全性”  设置菜单中的“检查更新”  时，Windows 更新将仅分发适用于系统设备的排名最高的**自动驱动程序**。 **自动驱动程序**是提供基本设备功能的系统驱动程序或自带的驱动程序。 如果存在以下情况，Windows 更新只会分发**可选的**驱动程序：
+在计划的更新期间或在用户选择“更新与安全性”设置菜单中的“检查更新”时，Windows 更新将仅分发适用于系统设备的排名最高的自动驱动程序。 **自动驱动程序**是提供基本设备功能的系统驱动程序或自带的驱动程序。 如果存在以下情况，Windows 更新只会分发**可选的**驱动程序：
 
 * 设备在驱动程序存储中没有任何适用的驱动程序（“未找到驱动程序”）
 * 或者，只有本地可用的驱动程序是通用的，即，只有本地可用的驱动程序是系统提供的驱动程序，该驱动程序只提供基本设备功能。 
