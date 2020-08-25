@@ -5,14 +5,14 @@ ms.assetid: 7f01bd14-bcc5-4c26-a9b8-a12aa1ffe242
 keywords:
 - 用户界面插件 WDK 打印，关于用户界面插件
 - UI 插件 WDK 打印，关于用户界面插件
-ms.date: 04/20/2017
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f9fb3254611ac644a5397883828e086f04fad880
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: d9dca259504cd6840e56f2ba8113bd8425e2fc4b
+ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644022"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88850211"
 ---
 # <a name="introduction-to-user-interface-plug-ins"></a>用户界面插件简介
 
@@ -25,7 +25,7 @@ UI 插件可以通过在属性表的 " **设备设置** " 页中添加、删除�
 如果使用的是 Windows Vista 中的 Unidrv，则可以在插件中实现 [**IPrintOemUI2：： HideStandardUI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nf-prcomoem-iprintoemui2-hidestandardui) 方法，以隐藏标准驱动程序提供的所有打印机配置属性页。 如果要为打印机提供完全自定义的打印机配置用户界面，则可以使用此方法。
 
 > [!IMPORTANT]
-> Windows 帮助 ( # A0) 是使用户能够查看 .hlp 文件的应用程序。 从 Windows Vista 开始，windows 帮助应用程序不作为 Windows 操作系统的一部分包含在内。 开发依赖于 .hlp 文件的应用程序的软件开发人员应将其文件转换为其他帮助格式，如 .chm、. hxs、.html 或 .xml 文件。 有关详细信息，请参阅 Windows 知识库文章中 [不再包含 Windows 帮助程序 ( # A0) ](https://support.microsoft.com/en-us/help/917607/feature-not-included-help-not-supported-error-opening-help-windows) 。
+> Windows 帮助 ( # A0) 是使用户能够查看 .hlp 文件的应用程序。 从 Windows Vista 开始，windows 帮助应用程序不作为 Windows 操作系统的一部分包含在内。 开发依赖于 .hlp 文件的应用程序的软件开发人员应将其文件转换为其他帮助格式，如 .chm、. hxs、.html 或 .xml 文件。 有关详细信息，请参阅 Windows 知识库文章中 [不再包含 Windows 帮助程序 ( # A0) ](https://support.microsoft.com/help/917607/feature-not-included-help-not-supported-error-opening-help-windows) 。
 
 [打印机接口 DLL](printer-interface-dll.md)使用一组 COM 接口调用 Unidrv 或 PSCRIPT 的 UI 插件。 打印机接口 Dll 是使用 CPSUI 实现的，UI 插件通过驱动程序的打印机接口 DLL 与 CPSUI 间接交互。 因此，在开发 UI 插件之前，应阅读 [CPSUI](common-property-sheet-user-interface.md) 部分。
 

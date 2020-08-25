@@ -1,42 +1,33 @@
 ---
 title: 电池的特定于设备的方法
-description: 本主题介绍 _DSM 控件方法和被动热量电池管理的参数。
+description: 本主题介绍 _DSM 控制方法和参数，以实现被动式热量电池管理。
 ms.assetid: 622803F4-2548-4E8A-A330-179ABDF374AD
-ms.date: 05/16/2018
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d31df93181b72a9c42767fe2e494ea5c5a8962e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 17b19b5ac685b3c4ba540c16561ecf321d732e8b
+ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328105"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88850253"
 ---
 # <a name="battery-device-specific-method"></a>电池的特定于设备的方法
 
+为了支持平台被动热量管理，Microsoft 定义了一个 \_ DSM 方法，用于与平台固件通信，这是由电池热区设置的散热限制。
 
-若要支持电池的被动热量管理平台，Microsoft 定义\_DSM 方法进行通信平台固件散热限制限制由电池的散热区域设置。
+有关详细信息，请参阅[ACPI 定义的设备](acpi-defined-devices.md#thermal-zones)主题中的**热区域**部分。
 
-有关详细信息，请参阅**热量区域**主题中[ACPI 定义设备](acpi-defined-devices.md#thermal)主题。
+## <a name="function-1-battery-thermal-limit"></a>函数1：电池温度限制
 
-## <a name="function-1-battery-thermal-limit"></a>函数 1:电池散热限制
-
-
-\_DSM 控件方法参数为电池充电散热限制函数如下所示：
+\_电池充电温度限制功能的 DSM 控制方法参数如下：
 
 ### <a name="arguments"></a>参数
 
--   **Arg0:** UUID = 4c2067e3-887d-475c-9720-4af1d3ed602e
--   **Arg1:** 修订 = 0
--   **Arg2:** 函数索引 = 1
--   **Arg3:** 热感限制 （整数值从 0 到 100）
+- **Arg0：** UUID = 4c2067e3-887d-475c-9720-4af1d3ed602e
+- **Arg1：** 修订号 = 0
+- **Arg2：** 函数 index = 1
+- **Arg3：** 温度限制 (从0到100的整数值) 
 
 ### <a name="return"></a>返回
 
-无。 固件负责具有吸引力的收费，如果能考虑当前的散热限制。
- 
-
- 
-
-
-
-
+无。 固件负责在充电时考虑当前热量限制。

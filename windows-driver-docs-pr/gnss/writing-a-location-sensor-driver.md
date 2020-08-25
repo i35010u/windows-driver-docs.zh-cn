@@ -4,18 +4,16 @@ description: 为 Windows 8.1 编写位置传感器驱动程序
 ms.assetid: 18852282-6529-4934-a448-b699e01987de
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a7ad93d66cd087d1780d60e31e6a9540d6e724
-ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
+ms.openlocfilehash: 0a7aceacedfe2b8a01a9e825dd6abc8fb0aaf9a2
+ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122701"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88850275"
 ---
 # <a name="writing-a-location-sensor-driver-for-windows-81"></a>为 Windows 8.1 编写位置传感器驱动程序
 
-本部分提供有关为提供位置数据的设备编写驱动程序的特定指导。 除了本部分中包含的信息以外，位置驱动程序作者还必须了解和应用在[写入传感器设备驱动程序](https://docs.microsoft.com/windows-hardware/drivers/sensors/writing-a-sensor-device-driver)中提供的信息。
-
-传感器和位置平台提供 Windows 定位 API，使软件开发人员能够轻松地将位置功能添加到其程序中。 如果要为位置传感器编写驱动程序，则必须了解如何使驱动程序与位置 API 兼容，并遵循[位置驱动程序指南中有关电源和性能](location-driver-guidelines-for-power-and-performance.md)的指导原则。
+传感器和位置平台提供 Windows 定位 API，使软件开发人员能够轻松地将位置功能添加到其程序中。 如果要为位置传感器编写驱动程序，则必须了解如何使驱动程序与位置 API 兼容，并遵循 [位置驱动程序指南中有关电源和性能](location-driver-guidelines-for-power-and-performance.md)的指导原则。
 
 ## <a name="windows-hardware-certification-program-requirements"></a>Windows 硬件认证计划要求
 
@@ -25,7 +23,7 @@ Windows 硬件认证计划允许硬件制造商接收其设备符合使用 Windo
 
 - 位置传感器必须支持至少一个内置数据报表类型所需的数据字段。
 
-通常，此 WDK 文档中的建议与认证计划要求相匹配。 但是，在创建要提交以供审批的传感器驱动程序时，必须查看官方认证计划文档。 有关 Windows 硬件认证计划的详细信息，请参阅[Windows 硬件开发人员中心](https://developer.microsoft.com/windows/hardware)网站。
+通常，此 WDK 文档中的建议与认证计划要求相匹配。 但是，在创建要提交以供审批的传感器驱动程序时，必须查看官方认证计划文档。 有关 Windows 硬件认证计划的详细信息，请参阅 [Windows 硬件开发人员中心](https://developer.microsoft.com/windows/hardware) 网站。
 
 ## <a name="location-api-requirements"></a>位置 API 要求
 
@@ -49,7 +47,7 @@ Windows 硬件认证计划允许硬件制造商接收其设备符合使用 Windo
 
 ## <a name="identifying-the-category"></a>标识类别
 
-通过[**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用此方法时，请将**WPD \_ 功能 \_ 对象 \_ 类别**属性值设置为**传感器 \_ 类别 \_ 位置**。 下面的代码示例演示如何将此常量设置为指向名为 pValues 的[IPortableDeviceValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)的指针。
+通过 [**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用此方法时，请将 **WPD \_ 功能 \_ 对象 \_ 类别** 属性值设置为 **传感器 \_ 类别 \_ 位置**。 下面的代码示例演示如何将此常量设置为指向名为 pValues 的 [IPortableDeviceValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 的指针。
 
 ```cpp
 hr = pValues->SetGuidValue(WPD_FUNCTIONAL_OBJECT_CATEGORY, SENSOR_CATEGORY_LOCATION);
@@ -57,7 +55,7 @@ hr = pValues->SetGuidValue(WPD_FUNCTIONAL_OBJECT_CATEGORY, SENSOR_CATEGORY_LOCAT
 
 ## <a name="setting-the-location-sensor-type"></a>设置位置传感器类型
 
-通过[**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用它时，请将 "**传感器 \_ 属性 \_ 类型**" 属性值设置为正确的值。 下面的代码示例演示如何使用**传感器 \_ 类型 \_ 位置 \_ GPS**常量通过指向名为 pValues 的[IPortableDeviceValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues)的指针来设置传感器类型。
+通过 [**ISensorDriver：： OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)调用它时，请将 " **传感器 \_ 属性 \_ 类型** " 属性值设置为正确的值。 下面的代码示例演示如何使用 **传感器 \_ 类型 \_ 位置 \_ GPS** 常量通过指向名为 pValues 的 [IPortableDeviceValues](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicevalues) 的指针来设置传感器类型。
 
 ```cpp
 hr = pValues->SetGuidValue(SENSOR_PROPERTY_TYPE, SENSOR_TYPE_LOCATION_GPS);
@@ -81,7 +79,7 @@ Location API 定义两种类型的位置报告。 这些是组织位置数据的
 
 若要查看完整的平台定义位置数据字段集，请参阅[Windows 传感器参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)部分中的[**传感器 \_ 类别 \_ 位置**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-category-loc)。
 
-通过[**ISensorDriver：： OnGetSupportedDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)调用它们时，将支持的数据字段属性键常量添加到通过*ppSupportedDataFields*参数返回的[IPortableDeviceKeyCollection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 。 下面的代码示例演示如何通过名为 pKeyCollection 的变量向[IPortableDeviceKeyCollection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection)添加邮政编码数据字段。
+通过[**ISensorDriver：： OnGetSupportedDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetsupporteddatafields)调用它们时，将支持的数据字段属性键常量添加到通过*ppSupportedDataFields*参数返回的[IPortableDeviceKeyCollection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 。 下面的代码示例演示如何通过名为 pKeyCollection 的变量向 [IPortableDeviceKeyCollection](https://docs.microsoft.com/windows-hardware/drivers/ddi/portabledevicetypes/nn-portabledevicetypes-iportabledevicekeycollection) 添加邮政编码数据字段。
 
 ```cpp
 pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
@@ -89,7 +87,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="support-the-required-properties"></a>支持所需的属性
 
-与其他传感器驱动程序一样，定位驱动程序通过一组属性提供有关传感器本身的信息。 Windows 硬件认证计划指定位置传感器必须支持的最低属性集。 有关传感器属性、其含义以及传感器驱动程序所需的属性的详细信息，请参阅[**传感器属性**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-properties)。 下面的列表包含所需的属性：
+与其他传感器驱动程序一样，定位驱动程序通过一组属性提供有关传感器本身的信息。 Windows 硬件认证计划指定位置传感器必须支持的最低属性集。 有关传感器属性、其含义以及传感器驱动程序所需的属性的详细信息，请参阅 [**传感器属性**](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-properties)。 下面的列表包含所需的属性：
 
 - WPD \_ 功能 \_ 对象 \_ 类别
 
@@ -115,11 +113,11 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="providing-data"></a>提供数据
 
-位置驱动程序通过与其他传感器驱动程序相同的机制提供数据。 也就是说，传感器类扩展通过[**ISensorDriver：： OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields)调用驱动程序，驱动程序通过*ppDataValues*参数返回值。
+位置驱动程序通过与其他传感器驱动程序相同的机制提供数据。 也就是说，传感器类扩展通过 [**ISensorDriver：： OnGetDataFields**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetdatafields) 调用驱动程序，驱动程序通过 *ppDataValues* 参数返回值。
 
 以下要求适用于从位置传感器提供数据：
 
-- 通过同步请求和通过[引发事件](https://docs.microsoft.com/windows-hardware/drivers/sensors/raising-events)来提供数据。
+- 通过同步请求和通过 [引发事件](https://docs.microsoft.com/windows-hardware/drivers/sensors/raising-events)来提供数据。
 
 - 维护最新数据报表的副本。 如果在你请求时新数据不可用，则返回缓存的报表。 不要更新时间戳。
 
@@ -131,7 +129,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 - 如果你的驱动程序支持纬度/经度和市政地址报告，则这些报告中的位置数据应对应于同一个物理位置。
 
-下表描述了与 Location API 数据报表字段对应的[传感器数据字段](https://docs.microsoft.com/windows-hardware/drivers/sensors/sensor-categories--types--and-data-fields)。 在为某个位置提供数据报表时使用这些数据字段常量。
+下表描述了与 Location API 数据报表字段对应的传感器数据字段。 在为某个位置提供数据报表时使用这些数据字段常量。
 
 | 传感器常量 | Location API 方法和属性 |
 | --- | --- |
@@ -149,7 +147,7 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="managing-state-transitions"></a>管理状态转换
 
-传感器驱动程序可随时处于很多状态之一。 传感器状态由[**SensorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001)枚举定义。 若要正确使用 Location API，位置传感器必须遵循这些规则来处理状态转换。
+传感器驱动程序可随时处于很多状态之一。 传感器状态由 [**SensorState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/ne-sensorsclassextension-__midl___midl_itf_windowssensorclassextension_0000_0000_0001) 枚举定义。 若要正确使用 Location API，位置传感器必须遵循这些规则来处理状态转换。
 
 - 始终在传感器 \_ 状态 \_ 初始化状态下启动，但在启动时不会引发状态更改事件。
 
@@ -177,13 +175,13 @@ pKeyCollection->Add(SENSOR_DATA_TYPE_POSTALCODE);
 
 ## <a name="raising-data-updated-and-state-changed-events"></a>引发数据更新和状态更改事件
 
-Location API 需要位置传感器（如 GPS 传感器）来引发提供数据和状态更改信息的事件。 有关引发传感器事件的详细信息，请参阅[关于传感器驱动程序事件](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-driver-events)。
+Location API 需要位置传感器（如 GPS 传感器）来引发提供数据和状态更改信息的事件。 有关引发传感器事件的详细信息，请参阅 [关于传感器驱动程序事件](https://docs.microsoft.com/windows-hardware/drivers/sensors/about-sensor-driver-events)。
 
 引发这些事件时，位置驱动程序必须遵循以下规则：
 
-- 通过调用传感器类扩展的[**ISensorClassExtension：:P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange)方法引发状态更改事件。 不要调用[**PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)来引发状态更改事件。
+- 通过调用传感器类扩展的 [**ISensorClassExtension：:P oststatechange**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-poststatechange) 方法引发状态更改事件。 不要调用 [**PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent) 来引发状态更改事件。
 
-- 通过调用[**PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)引发数据更新事件。
+- 通过调用 [**PostEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensorclassextension-postevent)引发数据更新事件。
 
 - 仅当数据是最新的且准确时才引发数据更新事件。
 
@@ -197,7 +195,7 @@ Location API 需要位置传感器（如 GPS 传感器）来引发提供数据�
 
 - 不要提供不完整的数据报告。
 
-- 你可能没有所需的数据字段的当前数据，如 GPS 传感器丢失修补程序的时间。 在这种情况下，您可能仍希望提供有关扩展数据字段（如传感器 \_ 数据 \_ 类型 \_ NMEA 句子）更新的通知 \_ 。 若要提供此类通知，必须使用自定义事件类型并仅引发自定义事件，直到所需数据字段的数据可用。 有关如何定义自定义类型的信息，请参阅[定义常量的自定义值](https://docs.microsoft.com/windows-hardware/drivers/sensors/defining-custom-values-for-constants)。
+- 你可能没有所需的数据字段的当前数据，如 GPS 传感器丢失修补程序的时间。 在这种情况下，您可能仍希望提供有关扩展数据字段（如传感器 \_ 数据 \_ 类型 \_ NMEA 句子）更新的通知 \_ 。 若要提供此类通知，必须使用自定义事件类型并仅引发自定义事件，直到所需数据字段的数据可用。 有关如何定义自定义类型的信息，请参阅 [定义常量的自定义值](https://docs.microsoft.com/windows-hardware/drivers/sensors/defining-custom-values-for-constants)。
 
 ## <a name="related-topics"></a>相关主题
 

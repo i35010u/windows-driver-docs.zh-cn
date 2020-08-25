@@ -4,12 +4,12 @@ description: Windows 支持通过使用 UpdateCapsule 函数处理的驱动程�
 ms.assetid: 9F0D22FB-3C83-4F90-8E24-2205EEF9D5F7
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c2c0e6398f6ba534e61209a1c6875ab59c622e
-ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
+ms.openlocfilehash: 6fac600e06540d5cf2b19d4cad08bc5cce26358a
+ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122691"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88850268"
 ---
 # <a name="windows-uefi-firmware-update-platform"></a>Windows UEFI 固件更新平台
 
@@ -30,7 +30,7 @@ UEFI 固件更新平台指南适用于正在构建运行 Windows 的硬件平台
 
 Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更新过程更新 UEFI 固件。 运行 Windows 10 移动版的设备只能在不能使用二进制更新过程的情况下使用基于 UpdateCapsule 的过程。 例如，如果设备的分区布局阻止 UEFI 固件通过使用二进制更新包进行更新，则为。
 
-有关适用于 Windows 10 移动版的 spkg 包的详细信息，请参阅[创建包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))和[更新](https://docs.microsoft.com/windows-hardware/service/mobile/index)。
+有关适用于 Windows 10 移动版的 spkg 包的详细信息，请参阅 [创建包](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))。
 
 ## <a name="overview-of-the-uefi-firmware-update-platform"></a>UEFI 固件更新平台概述
 
@@ -38,7 +38,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
 ### <a name="system-firmware-updates"></a>系统固件更新
 
-基于 UEFI 的系统的系统固件更新将部署为设备驱动程序包（Inf）。 Windows 将使用平台提供的信息，以确保更新包仅适用于相应系统。 固件更新包包含包含系统固件映像的二进制文件。 固件更新包位于最终用户的系统上之后，Windows 将使用 UEFI UpdateCapsule 函数将固件负载移交给平台固件以进行处理。
+基于 UEFI 的系统的系统固件更新将作为设备驱动程序包部署 (Inf) 。 Windows 将使用平台提供的信息，以确保更新包仅适用于相应系统。 固件更新包包含包含系统固件映像的二进制文件。 固件更新包位于最终用户的系统上之后，Windows 将使用 UEFI UpdateCapsule 函数将固件负载移交给平台固件以进行处理。
 
 将更新部署为驱动程序包可以使固件更新过程与许多现有的部署和服务工具保持一致，并确保为硬件供应商编写简单的更新包。
 
@@ -55,7 +55,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
     建议使用离散固件更新驱动程序包更新设备固件，但也可以使用系统固件更新设备固件，作为单一固件更新驱动程序包的一部分。
 
-    **注意**   不应使用 UEFI 来更新外围设备。 UEFI 要求在重新启动过程中存在设备，以应用无法保证（外部、可移动）外围设备的固件更新。
+    **注意**   不应使用 UEFI 来更新外围设备。 UEFI 要求在重新启动过程中存在设备，以应用固件更新，但无法保证 (外部可移动) 外围设备的固件更新。
 
 - 驱动程序可更新的设备固件。
 
@@ -65,7 +65,7 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
 为了使系统与 Windows 固件更新机制兼容，它必须满足以下要求：
 
-- 系统必须按照[UEFI 规范](https://uefi.org/specifications)的7.5.3 节中的定义来实现 UpdateCapsule 和 QueryCapsuleCapabilities。
+- 系统必须按照 [UEFI 规范](https://uefi.org/specifications)的7.5.3 节中的定义来实现 UpdateCapsule 和 QueryCapsuleCapabilities。
 
     UpdateCapsule 用于通过 Windows 和平台固件传递固件更新负载。
 
@@ -73,15 +73,15 @@ Microsoft 强烈建议运行 Windows 10 移动版的设备应使用二进制更�
 
     系统固件和某些设备固件类必须可使用此过程进行更新。 固件代码可识别传递给 UpdateCapsule 的固件更新有效负载，并启动更新过程。 该实现由合作伙伴拥有。
 
-- 必须在 EFI 系统资源表（ESRT）中指定固件资源
+- 必须在 EFI 系统资源表中指定固件资源 (ESRT) 
 
     通过固件资源，Windows 可以通过硬件 ID （将用于将系统或设备固件更新定向到适当的系统和设备）来呈现设备实例。 它还描述当前固件版本，并提供以前更新的状态。
 
     系统固件更新存在单个条目。 具有可更新固件的所有设备都必须在 ESRT 中指定资源，除非设备的固件作为系统固件更新的一部分进行更新。
 
-    有关详细信息，请参阅[ESRT 表定义](esrt-table-definition.md)。
+    有关详细信息，请参阅 [ESRT 表定义](esrt-table-definition.md)。
 
-## <a name="in-this-section"></a>在此部分中
+## <a name="in-this-section"></a>在本节中
 
 - [通过固件驱动程序包进行的系统和设备固件更新](system-and-device-firmware-updates-via-a-firmware-driver-package.md)
 

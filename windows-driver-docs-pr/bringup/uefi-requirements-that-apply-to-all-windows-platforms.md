@@ -2,22 +2,22 @@
 title: SoC 平台上 Windows 的 UEFI 要求
 description: 本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家庭、专业版、企业版和教育版) 以及 Windows 10 移动版。
 ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
-ms.date: 06/09/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ee1b155177521e308ed424ee23144624408eeb8c
-ms.sourcegitcommit: 40aa0786a52dd7b830e0ce1ed062ca0ba4e05f63
+ms.openlocfilehash: 8fb77e9f53120dd3833b900d75c83f2c07f2fe29
+ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88023001"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88850285"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
 
-本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家庭、专业版、企业版和教育版) 以及 Windows 10 移动版。 有关仅适用于 Windows 10 移动版的其他要求，请参阅[Windows 10 移动版的 UEFI 要求](uefi-requirements-specific-to-windows-mobile.md)。
+本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家庭、专业版、企业版和教育版) 以及 Windows 10 移动版。 有关仅适用于 Windows 10 移动版的其他要求，请参阅 [Windows 10 移动版的 UEFI 要求](uefi-requirements-specific-to-windows-mobile.md)。
 
 ## <a name="summary-of-requirements"></a>要求摘要
 
-下表列出了 uefi 规范 (第2.6 节中定义的 uefi 的所有当前要求（在 UEFI 2.3.1 规范) 中定义）。 在此表中，术语 "*显式 Windows 要求*" 标识 windows 组件直接调用的任何协议或服务。 虽然 Windows 只显式使用这些服务，但核心固件实现、EFI 设备驱动程序或开发和部署工具链可能会隐式或显式地要求使用其他列出的服务和协议。
+下表列出了 uefi 规范 (第2.6 节中定义的 uefi 的所有当前要求（在 UEFI 2.3.1 规范) 中定义）。 在此表中，术语 " *显式 Windows 要求* " 标识 windows 组件直接调用的任何协议或服务。 虽然 Windows 只显式使用这些服务，但核心固件实现、EFI 设备驱动程序或开发和部署工具链可能会隐式或显式地要求使用其他列出的服务和协议。
 
 Microsoft 欢迎您对此组要求的实施人员提供反馈和意见。 对于确定不由操作系统或固件要求的 UEFI 符合性要求，我们打算通过 UEFI.org 来处理此类设备的这些符合性要求。
 
@@ -214,10 +214,10 @@ EFI 系统表必须符合所实现的版本级别中的标准定义。 EFI 系�
 <td>图形输出协议</td>
 <td><p>Windows 要求 (GOP) 的图形输出协议。 特定帧缓冲区要求如下：</p>
 <ul>
-<li><p>对于集成显示器， <em>HorizontalResolution</em>和<em>VerticalResoluton</em>必须是面板的本机分辨率。</p></li>
-<li><p>对于外部显示器， <em>HorizontalResolution</em>和<em>VerticalResoluton</em>必须为显示器的本机分辨率，或者，如果不支持，则为视频适配器和连接显示支持的最高值。</p></li>
-<li><p><em>PixelsPerScanLine</em>必须等于<em>HorizontalResolution</em>。</p></li>
-<li><p><em>PixelFormat</em>必须为<em>PixelBlueGreenRedReserved8BitPerColor</em>。 请注意，需要物理帧缓冲区;不支持<em>PixelBltOnly</em> 。</p></li>
+<li><p>对于集成显示器， <em>HorizontalResolution</em> 和 <em>VerticalResoluton</em> 必须是面板的本机分辨率。</p></li>
+<li><p>对于外部显示器， <em>HorizontalResolution</em> 和 <em>VerticalResoluton</em> 必须为显示器的本机分辨率，或者，如果不支持，则为视频适配器和连接显示支持的最高值。</p></li>
+<li><p><em>PixelsPerScanLine</em> 必须等于 <em>HorizontalResolution</em>。</p></li>
+<li><p><em>PixelFormat</em> 必须为 <em>PixelBlueGreenRedReserved8BitPerColor</em>。 请注意，需要物理帧缓冲区;不支持 <em>PixelBltOnly</em> 。</p></li>
 </ul>
 <p>在将执行移交给 UEFI 引导应用程序时，固件启动管理器和固件不得将帧缓冲区用于任何目的。 启动服务退出后，必须继续扫描帧缓冲区。</p></td>
 </tr>
@@ -281,7 +281,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>要求3：必填。 在 UEFI v1.0 第27节中定义的安全引导必须附带启用并且签名数据库 (EFI_IMAGE_SECURITY_DATABASE) 安全预配的计算机必需的。 签名数据库的初始内容取决于所需的第三方 UEFI 驱动程序、恢复需求以及计算机上安装的 OS 启动加载程序，但应包括 Microsoft 提供的 EFI_CERT_X509 签名。 不应存在其他签名。</p></li>
 <li><p>要求4：必填。 缺少 UEFI "已禁止" 的签名数据库 (EFI_IMAGE_SECURITY_DATABASE1) 是必需的。</p></li>
 <li><p>要求5：必填。 由 Microsoft 提供的 UEFI KEK 应包括在 UEFI KEK 数据库中。 不应存在其他 Kek。 Microsoft 将以 EFI_CERT_X509 签名的形式提供 KEK。</p></li>
-<li><p>要求6：必填。 PK<em><sub>pub</sub></em>密钥应存在并存储在固件闪存中。</p>
+<li><p>要求6：必填。 PK<em><sub>pub</sub></em> 密钥应存在并存储在固件闪存中。</p>
 <div class="alert">
 <strong>注意</strong>   由于 PK<em><sub>特权</sub></em> (pk<em><sub>pub</sub></em>的私钥对应) 控制使用 pk<em><sub>pub</sub></em>预配的所有设备上的安全启动策略，因此必须严格保护其保护和使用。
 </div>
@@ -291,10 +291,10 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>要求7：必填。 初始的签名数据库应存储在固件刷新中，只能通过 OEM 签名的固件更新或通过 UEFI 身份验证的变量写入来进行更新。</p></li>
 <li><p>要求8：必填。 不能执行签名验证失败的启动路径中的映像，并且应将失败原因添加到 EFI_IMAGE_EXECUTION_TABLE。 此外，在这种情况下，建议的方法是 UEFI 启动管理器根据特定于 OEM 的策略启动恢复。</p></li>
 <li><p>要求9：必填。 对于未通过签名验证的 UEFI 映像，不得允许实际存在的用户覆盖。</p></li>
-<li><p>要求10：可选。 OEM 可以为物理上的用户实现此功能，使其能够使用 PK<em><sub>特权</sub></em>访问或通过固件设置物理状态关闭安全启动。 可以通过特定于平台的方式保护对固件设置的访问， (管理员密码、智能卡、静态配置等 ) </p></li>
+<li><p>要求10：可选。 OEM 可以为物理上的用户实现此功能，使其能够使用 PK<em><sub>特权</sub></em> 访问或通过固件设置物理状态关闭安全启动。 可以通过特定于平台的方式保护对固件设置的访问， (管理员密码、智能卡、静态配置等 ) </p></li>
 <li><p>要求11：实现要求10时是必需的。 如果关闭安全引导，则所有现有 UEFI 变量都不应访问。</p></li>
 <li><p>要求12：可选。 OEM 可以为物理上的用户实现在固件设置中选择两种安全启动模式的功能： "自定义" 和 "标准"。 自定义模式允许更灵活，如以下所示。</p></li>
-<li><p>要求13：如果实现了要求12，则为必需。 可以通过设置特定于所有者的<em>PK</em>，在自定义模式下重新启用禁用的安全启动。 管理应按照 UEFI 规范（2.3.1：固件/OS 密钥交换）的27.5 节中的定义继续进行。 在自定义模式下，设备所有者可以在签名数据库中设置他们选择的签名。</p></li>
+<li><p>要求13：如果实现了要求12，则为必需。 可以通过设置特定于所有者的 <em>PK</em>，在自定义模式下重新启用禁用的安全启动。 管理应按照 UEFI 规范（2.3.1：固件/OS 密钥交换）的27.5 节中的定义继续进行。 在自定义模式下，设备所有者可以在签名数据库中设置他们选择的签名。</p></li>
 <li><p>要求14：如果实现了要求12，则为必需。 固件设置应指出是否启用了安全启动，以及是否在标准或自定义模式下操作。 固件设置应提供一个选项，以从自定义模式返回到标准模式。</p></li>
 <li><p>要求15：必填。 如果固件设置被重置为出厂默认值，则应删除所有自定义集的受保护的变量，并且应与原始的制造商预配的签名数据库一起重新建立原始 PK<em><sub>pub</sub></em> 。</p></li>
 <li><p>要求16：必填。 驱动程序签名应使用 Authenticode 选项 (WIN_CERT_TYPE_PKCS_SIGNED_DATA) 。</p></li>
@@ -310,22 +310,22 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <td><p>以下要求并不意味着需要 TCG TPM 实现;但它们却意味着需要对受影响的区域使用等效功能。</p>
 <p>平台支持可以通过在安全执行环境中执行的 TPM 的固件实现来提供，在加密加速引擎之上进行分层，并利用独立存储。 Microsoft 可能会提供供供应商使用的此类 TPM 实现的参考软件。 这会进一步讨论。</p>
 <ul>
-<li><p>要求22：必填。 平台应符合<a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 Efi 协议</a>中指定的 efi 协议。</p></li>
+<li><p>要求22：必填。 平台应符合 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 Efi 协议</a>中指定的 efi 协议。</p></li>
 <li><p>要求23：必填。 平台应遵循 TCG EFI 平台规范，其中添加了以下内容：</p>
 <ul>
-<li><p>在支持在 TrEE EFI 协议中定义的接口的平台上，PK<em><sub>pub</sub></em>的摘要应扩展为 TPM PCR [03] 作为 EV_EFI_VARIABLE_CONFIG 事件。</p></li>
+<li><p>在支持在 TrEE EFI 协议中定义的接口的平台上，PK<em><sub>pub</sub></em> 的摘要应扩展为 TPM PCR [03] 作为 EV_EFI_VARIABLE_CONFIG 事件。</p></li>
 <li><p>授权的签名数据库内容的摘要 (参阅 UEFI 规范 v4.0) 列表的第27.8 部分必须在以 EV_EFI_VARIABLE_CONFIG 事件的度量启动中扩展。 "扩展" 操作应为 "TPM PCR [03]"。</p></li>
 <li><p>UEFI 客户端应可以使用 EFI_IMAGE_SECURITY_DATABASE 变量来读取和解析证书列表，并根据扩展值验证摘要。</p></li>
 <li><p>TCG_PCR_EVENT 摘要值应为 SHA-256，而不是 SHA-1。</p></li>
 </ul></li>
-<li><p>要求24：必填。 平台必须实现<a href="https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf" data-raw-source="[TCG Platform Reset Attack Mitigation Specification](https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)">TCG 平台重置攻击缓解规范</a>中定义的 MemoryOverwriteRequestControl。</p></li>
+<li><p>要求24：必填。 平台必须实现 <a href="https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf" data-raw-source="[TCG Platform Reset Attack Mitigation Specification](https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)">TCG 平台重置攻击缓解规范</a>中定义的 MemoryOverwriteRequestControl。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
-<td>Cryptography</td>
+<td>加密</td>
 <td><ul>
 <li><p>要求25：强制。 平台应为卸载加密哈希操作提供 EFI_HASH_PROTOCOL (UEFI v1.0) 27.4 部分。 必须支持 SHA-256。</p></li>
-<li><p>要求26：必填。 平台应支持 Microsoft 定义的<a href="uefi-entropy-gathering-protocol.md" data-raw-source="[EFI_RNG_PROTOCOL](uefi-entropy-gathering-protocol.md)">EFI_RNG_PROTOCOL</a> ，以进行 OS 预操作系统读取。</p></li>
+<li><p>要求26：必填。 平台应支持 Microsoft 定义的 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[EFI_RNG_PROTOCOL](uefi-entropy-gathering-protocol.md)">EFI_RNG_PROTOCOL</a> ，以进行 OS 预操作系统读取。</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -343,10 +343,10 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <td>其他安全要求</td>
 <td><p>Windows 上的 SoC 平台需要以下附加要求。</p>
 <ul>
-<li><p>Microsoft 定义了从 UEFI 平台收集平均信息量的协议。 尽管不是 UEFI 要求，但 Windows 在 SoC 平台上是必需的。 有关此协议的详细信息，请参阅<a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">UEFI 熵收集协议</a>。</p></li>
+<li><p>Microsoft 定义了从 UEFI 平台收集平均信息量的协议。 尽管不是 UEFI 要求，但 Windows 在 SoC 平台上是必需的。 有关此协议的详细信息，请参阅 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">UEFI 熵收集协议</a>。</p></li>
 <li><p>UEFI 签名数据库更新。 在 UEFI 2.3.1 的第27节中采用了用于更新已验证的变量的一种新机制。 Windows 需要此机制。</p></li>
 <li><p>受信任的执行环境。 Microsoft 已开发了一个 EFI 协议，用于与受信任的执行环境交互 (树) ，与受信任计算组的子集 (TCG) 受信任的平台模块 (TPM) 的功能类似。 EFI 协议利用受信任的计算组，使用较大的 "TCG EFI 协议" 版本1.2 修订版1.00 （6月9日2006）。</p>
-<p>有关详细信息，请参阅<a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 EFI 协议</a>。</p></li>
+<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 EFI 协议</a>。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -364,7 +364,7 @@ UEFI ARM 绑定包括特定于 ARM 平台的要求，这些要求必须符合 UE
 
 ## <a name="uefi-arm-multiprocessor-startup-requirements"></a>UEFI ARM 多处理器启动要求
 
-Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持[)  (PSCI 的电源状态协调接口](https://infocenter.arm.com/help/topic/com.arm.doc.den0022d/Power_State_Coordination_Interface_PDD_v1_1_DEN0022D.pdf)。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构 (ACPICA) 网站上的[基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP Startup for ARM platforms.docx)文档。
+Microsoft 已开发了一个协议，用于在多处理器 UEFI 平台上启动多个 ARM 核心。 ARM 平台上的 Windows 需要此协议，但不支持 [)  (PSCI 的电源状态协调接口 ](https://static.docs.arm.com/den0022/d/Power_State_Coordination_Interface_PDD_v1_1_DEN0022D.pdf)。 支持 PSCI 的平台不能使用此协议。 有关此协议的详细信息，请参阅 ACPI 组件体系结构 (ACPICA) 网站上的 [基于 UEFI ARM 平台的多处理器启动](https://acpica.org/sites/acpica/files/MP%20Startup%20for%20ARM%20platforms.docx) 文档。
 
 ## <a name="platform-setup-requirements"></a>平台设置要求
 
@@ -408,7 +408,7 @@ Windows 要求 OS 分区驻留在 GPT 分区的存储解决方案上。 可以�
 
 ## <a name="hardware-security-test-interface-hsti-requirement"></a>硬件安全测试界面 (HSTI) 要求
 
-平台必须实现硬件安全测试接口，并且需要平台来共享[硬件安全测试规范](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)中指定的文档和工具。
+平台必须实现硬件安全测试接口，并且需要平台来共享 [硬件安全测试规范](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)中指定的文档和工具。
 
 ## <a name="related-topics"></a>相关主题
 
