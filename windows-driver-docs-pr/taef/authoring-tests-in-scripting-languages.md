@@ -4,29 +4,26 @@ description: 使用脚本语言创作测试
 ms.assetid: 4F5328E4-4817-4391-BF56-EC9E7F469AA7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c40c7d17649f9cc3274d41b2b33ca766ee1c89a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b8a3ccc486752f839ea8c9108daaa3a687ac57cb
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373021"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902392"
 ---
 # <a name="authoring-tests-in-scripting-languages"></a>使用脚本语言创作测试
 
+除了 c + + 和 c # 外，TAEF 还支持编写脚本语言的测试。
 
-除了C++和C#、 TAEF 支持创作脚本语言中的测试。
+使用支持 Microsoft COM 脚本接口的任何脚本语言创建脚本组件。 支持这些接口的脚本语言包括 JScript、Microsoft Visual Basic Scripting Edition (VBScript) 、PERLScript、PScript、Ruby 和 Python。
 
-创建脚本组件使用支持脚本编写 Microsoft COM 接口的任何脚本语言。 脚本语言支持这些接口包括 JScript、 Microsoft Visual Basic Scripting Edition (VBScript)、 PERLScript、 PScript、 Ruby 和 Python。
+## <a name="current-limitations-of-the-script-test-authoring"></a>脚本测试创作的当前限制
 
-## <a name="span-idcurrentlimitationsofthescripttestauthoringspanspan-idcurrentlimitationsofthescripttestauthoringspanspan-idcurrentlimitationsofthescripttestauthoringspancurrent-limitations-of-the-script-test-authoring"></a><span id="Current_Limitations_of_the_Script_Test_Authoring"></span><span id="current_limitations_of_the_script_test_authoring"></span><span id="CURRENT_LIMITATIONS_OF_THE_SCRIPT_TEST_AUTHORING"></span>该脚本的当前限制测试创作
+Windows 只支持 JScript 和 VBScript。
 
+## <a name="script-test-file-format"></a>脚本测试文件格式
 
-默认情况下，Windows JScript 和 VBScript 仅支持。
-
-## <a name="span-idscripttestfileformatspanspan-idscripttestfileformatspanspan-idscripttestfileformatspanscript-test-file-format"></a><span id="Script_Test_File_Format"></span><span id="script_test_file_format"></span><span id="SCRIPT_TEST_FILE_FORMAT"></span>脚本的测试文件格式
-
-
-对于脚本语言的测试，TAEF 使用略有修改[Windows 脚本组件](https://docs.microsoft.com/previous-versions/07zhfkh8(v=vs.85))文件格式。 下面的示例显示了包含 VBScript 和 JScript 测试类的测试文件。
+对于脚本语言测试，TAEF 使用略微修改 [Windows 脚本组件](https://docs.microsoft.com/previous-versions/07zhfkh8(v=vs.85)) 文件格式。 下面的示例演示一个包含 VBScript 和 JScript 测试类的测试文件。
 
 ```cpp
 1   <?xml version="1.0" ?>
@@ -138,46 +135,37 @@ ms.locfileid: "67373021"
 107 </package>
 ```
 
-此示例是一个 XML 文件，并启动与普通的 XML 标头：
+此示例是一个 XML 文件，并以普通 XML 标头开头：
 
 ```cpp
 <?xml version="1.0" ?>
 ```
 
-为你的文件中设置的特性配置调试设置**错误**并**调试**:
+通过设置属性 " **错误** " 和 " **调试**"，为文件配置调试设置：
 
 ```cpp
 <?component error="true" debug="true"?>
 ```
 
--   设置**错误**到*true*若要在脚本组件中显示的语法或运行时错误的详细的错误消息。
--   设置**调试**到*true*以启用调试。 如果未启用调试，不能启动脚本调试程序的脚本 (如使用**调试**JScript 代码中的关键字)。
+- 将 " **错误** " 设置为 " *true* " 将显示脚本组件中的语法或运行时错误的详细错误消息。
+- 将 " **调试** " 设置为 " *true* " 以启用调试。 如果未启用调试，则无法启动脚本的脚本调试程序 (例如，使用 JScript 代码) 中的 **debug** 关键字。
 
-**&lt;包&gt;** 元素包含中的测试类定义 **.wsc**文件。 此元素后，可以插入模块级元数据通过添加**ModuleProperty**元素：
+** &lt; Package &gt; **元素在**wsc**文件中包含 test 类定义。 在此元素后，可以通过添加 **ModuleProperty** 元素插入模块级元数据：
 
 ```cpp
 <ModuleProperty name = "Owner" value = "Someone"/>
 ```
 
-**ModuleProperty**元素必须包括**名称**并**值**属性。
+**ModuleProperty**元素必须包括**name**和**value**属性。
 
-**组件**元素的开始脚本测试类的声明。 此元素应始终具有**id**设置为类名称的属性。
+**Component**元素启动脚本测试类的声明。 此元素应始终具有设置为类名的 **id** 属性。
 
-之后**组件**元素中，可以使用插入类级别的元数据**TestClassProperty**元素。 如同**ModuleProperty**元素，它必须具有**名称**并**值**属性。
+在 **Component** 元素之后，可以通过使用 **TestClassProperty** 元素插入类级元数据。 与 **ModuleProperty** 元素一样，它必须具有 **name** 和 **value** 属性。
 
-此时，您还可以创建对象并定义对对象的引用。 请参阅[其他组件部分](https://docs.microsoft.com/previous-versions/ye6w00x4(v=vs.85))有关详细信息。 15、 18、 49、 和中的 XML 示例的第 52 行显示了如何引用和初始化**WEX。Logger.Log**对象。
+此时，您还可以创建对象并定义对对象的引用。 有关详细信息，请参阅 [其他组件部分](https://docs.microsoft.com/previous-versions/ye6w00x4(v=vs.85)) 。 XML 示例中的第15、18、49和52行说明了如何引用和初始化**WEX。记录对象。**
 
-**&lt;公共&gt;** 元素包含测试脚本模块的测试方法声明。 通过指定测试方法名称中的声明一个测试方法**名称**的属性 **&lt;方法&gt;** 元素。 您还可以添加测试方法属性内的 **&lt;方法&gt;** 元素。 与在其他级别的属性，并不总是这样。 但是，如果将其添加，则必须包括**名称**并**值**属性。
+** &lt; 公共 &gt; **元素包含测试脚本模块的测试方法声明。 通过在** &lt; &gt; 方法**元素的**name**特性中指定测试方法名称来声明测试方法。 你还可以在** &lt; 方法 &gt; **元素中添加 "测试方法" 属性。 与其他级别的属性一样，它不是必需的。 但是，如果添加它，则必须包含 **名称** 和 **值** 属性。
 
-**&lt;脚本&gt;** 元素标识的测试脚本语言，并且包含了测试方法的实现。
+** &lt; Script &gt; **元素标识测试脚本语言，并包含测试方法的实现。
 
-**&lt;！\[CDATA\[ \] \] &gt;** 部分包含测试的实际实现中的脚本语言编写的代码。 在本部分中，您可以实现中声明的测试方法 **&lt;公共&gt; &lt;/public&gt;** 部分。
-
- 
-
- 
-
-
-
-
-
+** &lt; ！ \[\[CDATA \] 节 \] 包含测试的实际实现-用脚本语言编写的代码。 &gt; ** 在本部分中，你将实现在** &lt; public &gt; &lt; /public &gt; **节中声明的测试方法。

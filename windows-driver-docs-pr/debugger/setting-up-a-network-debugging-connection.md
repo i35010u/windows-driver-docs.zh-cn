@@ -9,12 +9,12 @@ keywords:
 - 通过网络电缆手动设置内核模式调试
 ms.date: 12/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e2d30445da9cd7464882f0fdd80a9ced411fb22
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 9ab28327ef97e4120af8b352a2b107483abc7f13
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253085"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902656"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-manually"></a>手动设置 KDNET 网络内核调试
 
@@ -95,7 +95,7 @@ ms.locfileid: "88253085"
 
     **注意**   强烈建议使用自动生成的密钥。 不过，你可以创建自己的密钥，如后面的 "创建自己的密钥" 部分所述。
 
-5. 如果目标计算机中存在多个网络适配器，请使用设备管理器来确定要用于调试的适配器的 PCI 总线、设备和功能号。 然后在提升的命令提示符窗口中输入以下命令，其中 *b*、 *d*和 *f* 是适配器的总线号码、设备号和功能号：
+5. 使用设备管理器确定要用于调试的适配器的 PCI 总线、设备和功能号。 这些值将显示在 "*常规*" 选项卡上的 "*位置*" 下设备管理器。 然后在提升的命令提示符窗口中输入以下命令，其中*b*、 *d*和*f*是适配器的总线号码、设备号和功能号：
 
     ```console
     bcdedit /set "{dbgsettings}" busparams b.d.f
@@ -204,7 +204,7 @@ bcdedit /dbgsettings net hostip:w.x.y.z port:YourDebugPort
 
 ### <a name="always-specify-busparams-when-setting-up-kdnet-on-a-physical-machine-with-a-pci-based-nic"></a>在使用基于 PCI 的 NIC 的物理计算机上设置 KDNET 时，始终指定 busparams
 
-如果要在使用基于 PCI 或 PCIe 的 NIC 的物理计算机上设置 KDNET，应始终为要用于 KDNET 的 NIC 指定 busparams。 若要指定总线参数，请打开设备管理器，然后找到要用于调试的网络适配器。 打开网络适配器的属性页，并记下 "总线号"、"设备号" 和 "功能编号"。 在提升的命令提示符窗口中，输入以下命令，其中 *b*、 *d*和 *f* 是以十进制格式表示的总线、设备和函数编号：
+如果要在使用基于 PCI 或 PCIe 的 NIC 的物理计算机上设置 KDNET，应始终为要用于 KDNET 的 NIC 指定 busparams。 若要指定总线参数，请打开设备管理器，然后找到要用于调试的网络适配器。 打开网络适配器的属性页，并记下 "*常规*" 选项卡上 "*位置*" 下显示的 "总线号码"、"设备编号" 和 "功能编号"。在提升的命令提示符窗口中，输入以下命令，其中*b*、 *d*和*f*是以十进制格式表示的总线、设备和函数编号：
 
 ```console
 bcdedit /set "{dbgsettings}" busparams b.d.f

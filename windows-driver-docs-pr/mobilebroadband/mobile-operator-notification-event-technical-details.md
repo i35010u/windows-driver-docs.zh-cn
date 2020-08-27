@@ -4,138 +4,60 @@ description: 移动运营商通知事件技术详细信息
 ms.assetid: 639f238a-4bb4-4ac0-9b59-92a761dbc351
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c81c7eb80b3bccf5af0ae11c499d8b89ea97134
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4473794b1a9400d70f501e5c24356909e7448e4f
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364959"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902477"
 ---
 # <a name="mobile-operator-notification-event-technical-details"></a>移动运营商通知事件技术详细信息
 
+本主题介绍移动运营商通知事件的技术详细信息。
 
-本主题说明移动运营商通知事件的技术详细信息。
+- [事件负载](#event-payload)
 
--   [事件负载](#eventpl)
+- [使用元数据注册 MobileOperatorNotification 事件](#register-for-the-mobileoperatornotification-event-by-using-metadata)
 
--   [通过使用元数据注册 MobileOperatorNotification 事件](#regmd)
+- [在预配 XML 中定义筛选规则](#define-filtering-rules-in-provisioning-xml)
 
--   [在预配 XML 中定义的筛选规则](#deffilter)
+## <a name="event-payload"></a>事件负载
 
-## <a name="span-ideventplspanspan-ideventplspanevent-payload"></a><span id="eventpl"></span><span id="EVENTPL"></span>事件负载
+MobileOperatorNotification 事件负载包括以下字段：
 
+|字段|说明|
+|----|----|
+|**MessageType**|触发事件的消息的枚举。|
+|**Interface**|与事件关联的物理接口对应的 GUID。|
+|**EncodingType**|如果 **MessageType** 为 SMS/USSD，则为消息编码方法。|
+|**MessageDataSize**|如果 **MessageType** 为 SMS/USSD，则为消息大小（以字节为单位）。|
+|**消息**|如果 **MessageType** 为 SMS/USSD，则接收到的原始消息。|
 
-MobileOperatorNotification 事件有效负载包括以下字段：
+MobileOperatorNotification 事件通过使用事件负载中的**MessageType**字段，来区分[移动运营商通知方案](mobile-operator-notification-scenarios.md)中描述的每个方案。 **MessageType**的枚举如下：
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>字段</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>MessageType</strong></p></td>
-<td><p>触发事件的消息的枚举。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Interface</strong></p></td>
-<td><p>对应于与事件相关联的物理接口的 GUID。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>EncodingType</strong></p></td>
-<td><p>如果编码方法的消息<strong>MessageType</strong>是 SMS/USSD。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>MessageDataSize</strong></p></td>
-<td><p>大小的消息，以字节为单位，如果<strong>MessageType</strong>是 SMS/USSD。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Message</strong></p></td>
-<td><p>收到时，如果原始消息<strong>MessageType</strong>是 SMS/USSD。</p></td>
-</tr>
-</tbody>
-</table>
+|枚举|类型|
+|----|----|
+|0|GSM 短信|
+|1|CDMA 短信|
+|2|USSD|
+|3|DataPlanThresholdReached|
+|4|DataPlanReset|
+|5|DataPlanDeleted|
+|6|ProfileConnected|
+|7|ProfileDisconnected|
+|8|RegisteredRoaming|
+|9|RegisteredHome|
+|10|TetheringEntitlementCheck|
 
- 
+与 MobileOperatorNotification 事件相关联的工作项应以有效区分 **MessageType**的逻辑开始，并为每个方案运行相应的代码。
 
-MobileOperatorNotification 事件，每个方案中所述[移动运营商通知方案](mobile-operator-notification-scenarios.md)加以区分使用**MessageType**事件中字段有效负载。 **MessageType**s 枚举，如下所示：
+### <a name="gsmcdma-sms-and-ussd"></a>GSM/CDMA 短信和 USSD
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>枚举</th>
-<th>在任务栏的搜索框中键入</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0</p></td>
-<td><p>GSM SMS</p></td>
-</tr>
-<tr class="even">
-<td><p>1</p></td>
-<td><p>CDMA SMS</p></td>
-</tr>
-<tr class="odd">
-<td><p>2</p></td>
-<td><p>USSD</p></td>
-</tr>
-<tr class="even">
-<td><p>3</p></td>
-<td><p>DataPlanThresholdReached</p></td>
-</tr>
-<tr class="odd">
-<td><p>4</p></td>
-<td><p>DataPlanReset</p></td>
-</tr>
-<tr class="even">
-<td><p>5</p></td>
-<td><p>DataPlanDeleted</p></td>
-</tr>
-<tr class="odd">
-<td><p>6</p></td>
-<td><p>ProfileConnected</p></td>
-</tr>
-<tr class="even">
-<td><p>7</p></td>
-<td><p>ProfileDisconnected</p></td>
-</tr>
-<tr class="odd">
-<td><p>8</p></td>
-<td><p>RegisteredRoaming</p></td>
-</tr>
-<tr class="even">
-<td><p>9</p></td>
-<td><p>RegisteredHome</p></td>
-</tr>
-<tr class="odd">
-<td><p>10</p></td>
-<td><p>TetheringEntitlementCheck</p></td>
-</tr>
-</tbody>
-</table>
+传入的操作员消息（包括短信和 USSD）将触发 MobileOperatorNotification 事件以及相应的 **MessageType**。 这些类型的独特之处是 **EncodingType**、 **MessageDataSize**和 **Message**。
 
- 
+### <a name="dataplanthresholdreached"></a>DataPlanThresholdReached
 
-与 MobileOperatorNotification 事件相关联的工作项应以有效地区分的逻辑开头**MessageType**，并运行每个方案的相应代码。
-
-### <a name="span-idgsmetcspanspan-idgsmetcspangsmcdma-sms-and-ussd"></a><span id="gsmetc"></span><span id="GSMETC"></span>GSM/CDMA SMS 和 USSD
-
-传入运算符消息，包括短信和 USSD，触发 MobileOperatorNotification 事件与适当的对应**MessageType**s。 这些类型的特有功能都**EncodingType**， **MessageDataSize**，并**消息**。
-
-### <a name="span-iddataplanthresholdreachedspanspan-iddataplanthresholdreachedspanspan-iddataplanthresholdreachedspandataplanthresholdreached"></a><span id="DataPlanThresholdReached"></span><span id="dataplanthresholdreached"></span><span id="DATAPLANTHRESHOLDREACHED"></span>DataPlanThresholdReached
-
-默认情况下，禁用此消息类型。 你可以通过使用预配的元数据指定启用它[ **DataUsageInMobileOperatorNotificationEnabled** ](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-datausageinmobileoperatornotificationenabled)字段，如下所示。
+默认情况下，此消息类型处于禁用状态。 可以通过使用预配元数据指定 [**DataUsageInMobileOperatorNotificationEnabled**](https://docs.microsoft.com/uwp/schemas/mobilebroadbandschema/plans/element-datausageinmobileoperatornotificationenabled) 字段来启用此功能，如下所示。
 
 ``` syntax
 <?xml version="1.0"?>
@@ -168,54 +90,51 @@ MobileOperatorNotification 事件，每个方案中所述[移动运营商通知�
 </CarrierProvisioning>
 ```
 
-帐户预配的元数据的详细信息，请参阅[帐户预配](account-provisioning.md)。
+有关帐户预配元数据的详细信息，请参阅 [帐户预配](account-provisioning.md)。
 
-与此生成事件**MessageType**移动宽带接口上的本地数据计数器时估计使用情况 （发送和接收字节） 5%自以来已更改最后一个匹配项，除在以下情况下：
+如果本地数据计数器预计在移动宽带接口上发送和接收的字节数 (在移动宽带接口上发送和) 接收的字节数在上次发生后5% 发生了更改（在以下情况下除外），则将使用此 **MessageType** 生成事件：
 
-1.  当连接到家庭网络 （非漫游），如果尚未指定数据的计划限制，则触发此事件在每个 100 MB 的本地数据使用情况。
+1. 当连接到家庭网络 (非漫游) 时，如果尚未指定数据计划限制，则将每隔 100 MB 的本地数据使用触发此事件。
 
-2.  连接到漫游网络时，数据计划限制不适用，并且在每个 5 MB 的本地数据使用情况触发此事件。
+2. 连接到漫游网络后，数据计划限制不适用，并且每隔 5 MB 的本地数据会触发此事件。
 
-在 Windows 8 中的本地数据计数器会更新每分钟一次;最多，生成此事件是每分钟在所有方案中所述的一次。 在 Windows 8.1 中时实时发送事件已达到 5%阈值。
+Windows 8 中的本地数据计数器每分钟更新一次;在所有描述的方案中，此事件最多每分钟生成一次。 在 Windows 8.1 达到5% 阈值时，会实时传递事件。
 
-**请注意**  尽管此信息是一个很好的一级，Windows 无法解释为未出单流量，或者使用共享 （如系列计划或 SIM 交换） 相同的数据限制其他设备上。 移动运营商应用程序应使用本地数据计数器仅以操作员的计费系统与在上次同步后估计使用情况。 对于已处理的数据使用情况，计费系统应将视为权威标准。
+>[!NOTE]
+>尽管此信息是一个不错的第一本指南，但 Windows 无法在共享相同数据限制 (例如系列计划或 SIM 交换) 的其他设备上考虑未开票流量或使用情况。 移动运营商应用只应使用本地数据计数器来估算自上次同步到操作员自己的计费系统后的使用量。 对于已处理的数据使用，计费系统应视为权威系统。
 
- 
+### <a name="dataplanreset"></a>DataPlanReset
 
-### <a name="span-iddataplanresetspanspan-iddataplanresetspanspan-iddataplanresetspandataplanreset"></a><span id="DataPlanReset"></span><span id="dataplanreset"></span><span id="DATAPLANRESET"></span>DataPlanReset
+在计划重置日期，数据使用量和订阅管理器 (DUSM) 将用户的当前本地数据使用量重置为零。
 
-计划重置日期后，数据使用情况和订阅管理器 (DUSM) 重置用户的当前本地数据使用情况为零。
+### <a name="dataplandeleted"></a>DataPlanDeleted
 
-### <a name="span-iddataplandeletedspanspan-iddataplandeletedspanspan-iddataplandeletedspandataplandeleted"></a><span id="DataPlanDeleted"></span><span id="dataplandeleted"></span><span id="DATAPLANDELETED"></span>DataPlanDeleted
+对于具有固定到期日期的预先支付的数据计划，DUSM 会删除与帐户相关联的到期日期的连接配置文件，并使用此 **MessageType**触发 MobileOperatorNotification 事件。 当连接配置文件被删除后，Windows 连接管理器不再尝试自动连接到连接配置文件描述的网络。
 
-对于有固定的到期日期的预先付费的数据计划，DUSM 删除到期日期是与帐户关联的连接配置文件，并通过使用此触发 MobileOperatorNotification 事件**MessageType**. 删除连接配置文件时，Windows 连接管理器不再尝试自动连接到网络的连接配置文件描述。
+### <a name="profileconnected-and-profiledisconnected"></a>ProfileConnected 和 ProfileDisconnected
 
-### <a name="span-idprofileconnectedandprofiledisconnectedspanspan-idprofileconnectedandprofiledisconnectedspanspan-idprofileconnectedandprofiledisconnectedspanprofileconnected-and-profiledisconnected"></a><span id="ProfileConnected_and_ProfileDisconnected"></span><span id="profileconnected_and_profiledisconnected"></span><span id="PROFILECONNECTED_AND_PROFILEDISCONNECTED"></span>ProfileConnected 和 ProfileDisconnected
+当 Windows 连接管理器连接到由操作员体验元数据提供的网络配置文件时，将使用这些 **MessageType**生成 MobileOperatorNotification 事件。 此事件在每次连接和断开连接时触发，包括睡眠/恢复之后的初始连接。 如果在下载和安装应用和服务元数据时设备已连接，也会触发此情况。
 
-MobileOperatorNotification 事件生成具有这些**MessageType**s Windows 连接管理器连接到提供的运营商体验元数据的网络配置文件时。 此事件在每个连接时触发，断开连接，包括遵循睡眠/恢复的初始连接。 它也会触发如果设备已连接时下载和安装应用程序和服务元数据。
+ProfileConnected MessageType 在移动宽带接口的 L2 连接上触发。
 
-在移动宽带接口的 L2 连接时触发 ProfileConnected MessageType。
+>[!NOTE]
+>此触发器在网络标识完成之前发生。 当网络标识确定网络的连接级别时，将生成[**System.net.networkinformation**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API)  (部分的[**NetworkStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)事件。 有关网络标识的详细信息，请参阅 [快速入门：检索网络连接信息](https://docs.microsoft.com/previous-versions/windows/apps/hh452990(v=win.10)) 和 **system.net.networkinformation** 类。
 
-**请注意**  网络标识完成之前，将发生此触发器。 [ **NetworkStatusChanged** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged)事件 (属于[ **NetworkInformation** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.NetworkInformation) API) 生成时的网络标识确定网络的连接级别。 有关网络标识的详细信息，请参阅[快速入门：检索网络连接信息](https://docs.microsoft.com/previous-versions/windows/apps/hh452990(v=win.10))并**NetworkInformation**类。
+### <a name="registeredroaming-and-registeredhome"></a>RegisteredRoaming 和 RegisteredHome
 
- 
+当 Windows 连接管理器注册到漫游网络时，将使用这些 **MessageType**生成 MobileOperatorNotification 事件。 此事件在每次注册时触发，包括在睡眠/恢复之后初始注册。 如果在下载和安装应用和服务元数据时，设备已注册到网络，也会触发此情况。
 
-### <a name="span-idregisteredroamingandregisteredhomespanspan-idregisteredroamingandregisteredhomespanspan-idregisteredroamingandregisteredhomespanregisteredroaming-and-registeredhome"></a><span id="RegisteredRoaming_and_RegisteredHome"></span><span id="registeredroaming_and_registeredhome"></span><span id="REGISTEREDROAMING_AND_REGISTEREDHOME"></span>RegisteredRoaming 和 RegisteredHome
+应用只应在用户注册漫游网络时通知用户一次，并在其返回到家庭网络时通知用户。 由于此事件在每次注册时触发，因此应用负责跟踪应用会话数据中以前注册的状态。
 
-MobileOperatorNotification 事件生成具有这些**MessageType**当 Windows 连接管理器将会注册到漫游网络时。 每个注册，包括初始注册后睡眠/恢复上触发此事件。 如果设备已注册到网络时下载和安装应用程序和服务元数据，它还会触发。
+### <a name="tetheringentitlementcheck"></a>TetheringEntitlementCheck
 
-应用程序应仅通知用户漫游网络注册时的一次，一次当用户返回到其家庭网络。 因为在每个注册时会触发此事件，则应用负责跟踪的应用程序的会话数据中的上一个已注册的状态。
+当用户开启 Internet 共享时，将生成带有此 **MessageType**的 MobileOperatorNotification 事件。 只要移动运营商已将服务元数据架构中的 [AllowTethering](allowtethering.md) 元素设置为 **EntitlementCheckRequired**，就会在用户每次尝试使用 Internet 共享时触发事件。 有关服务元数据架构的详细信息，请参阅 [服务元数据包架构参考](mobilebroadbandinfo-xml-schema.md)。
 
-### <a name="span-idtetheringentitlementcheckspanspan-idtetheringentitlementcheckspanspan-idtetheringentitlementcheckspantetheringentitlementcheck"></a><span id="TetheringEntitlementCheck"></span><span id="tetheringentitlementcheck"></span><span id="TETHERINGENTITLEMENTCHECK"></span>TetheringEntitlementCheck
+应用应运行移动运营商网络支持的适当的权限检查机制，并使用[**NetworkOperatorNotificationEventDetails**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)类的[**AuthorizeTethering**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails#Windows_Networking_NetworkOperators_NetworkOperatorNotificationEventDetails_AuthorizeTethering_System_Boolean_System_String_)方法将结果发送到[**系统。**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators) 如果应用无法运行权利检查，则移动运营商应将服务元数据 [AllowTethering](allowtethering.md) 元素更改为 **Always** 或 **never**，以便永远不会生成该事件。
 
-MobileOperatorNotification 事件生成与此**MessageType**的用户打开时 Internet 共享。 每次用户尝试使用 Internet 共享，只要移动运营商已设置时，都会触发该事件[AllowTethering](allowtethering.md)服务元数据架构中的元素**EntitlementCheckRequired**。 有关服务的元数据架构的详细信息，请参阅[服务的元数据数据包架构参考](service-metadata-package-schema-reference.md)。
+## <a name="register-for-the-mobileoperatornotification-event-by-using-metadata"></a>使用元数据注册 MobileOperatorNotification 事件
 
-应用应运行支持的移动运营商网络的相应权利检查机制并将结果发送到系统中，通过使用[ **AuthorizeTethering** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails#Windows_Networking_NetworkOperators_NetworkOperatorNotificationEventDetails_AuthorizeTethering_System_Boolean_System_String_)方法[ **NetworkOperatorNotificationEventDetails** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.NetworkOperatorNotificationEventDetails)类[ **Windows.Networking.NetworkOperators** ](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators)命名空间。 如果应用不具有运行权利检查的功能，移动运营商应更改服务元数据[AllowTethering](allowtethering.md)元素**始终**或**从不**，以便永远不会生成事件。
-
-## <a name="span-idregmdspanspan-idregmdspanregister-for-the-mobileoperatornotification-event-by-using-metadata"></a><span id="regmd"></span><span id="REGMD"></span>通过使用元数据注册 MobileOperatorNotification 事件
-
-
-一般情况下，应用必须由用户运行之前它可以向系统事件代理注册的工作项的至少一次。 但是，因为完成密钥的移动宽带方案所需的 MobileOperatorNotification 事件，此事件是与移动宽带应用关联通过使用服务元数据。 在服务元数据，配置[DeviceCompanionApplications](devicecompanionapplications.md)元素。
+通常，应用必须至少运行一次，然后才能将工作项注册到系统事件代理。 不过，由于需要 MobileOperatorNotification 事件来完成关键移动宽带方案，因此此事件通过使用服务元数据与移动宽带应用相关联。 在服务元数据中，配置 [DeviceCompanionApplications](devicecompanionapplications.md) 元素。
 
 ``` syntax
 <DeviceCompanionApplications>
@@ -231,29 +150,28 @@ MobileOperatorNotification 事件生成与此**MessageType**的用户打开时 I
 </DeviceCompanionApplications>
 ```
 
-**EventID**属性通知系统的哪种设备时会出现的情况的事件。 值**EventAsset**属性应指向实现后台任务的入口点。 这将告知系统要运行该特定事件发生时的任务。
+**EventID**特性告诉系统要从设备获得的事件类型。 **EventAsset**属性的值应指向实现后台任务的入口点。 这会告知系统当发生特定事件时要运行的任务。
 
-使用此示例中，系统将创建并注册特定于该设备的事件。 它还会注册此事件的移动宽带应用。 应用程序必须具有一个名为 backgroundtask.js 是由系统每次运行它收到的操作员通知的 JavaScript 文件。
+使用此示例，系统创建并注册特定于该设备的事件。 它还为此事件注册移动宽带应用。 应用必须具有名为 backgroundtask.js 的 JavaScript 文件，该文件在每次收到操作员通知时由系统运行。
 
-如果移动宽带应用以C#，事件资产必须指向实现 backgroundtask 接口的运行时类。
+如果移动宽带应用是用 c # 编写的，则事件资产必须指向实现 backgroundtask 接口的运行时类。
 
 ``` syntax
 <DeviceNotificationHandlers>
   <DeviceNotificationHandler EventID="MobileOperatorNotificationHandler" EventAsset="MNOMessageBackground.OperatorNotification" />
 ```
 
-服务元数据和应用程序在下载时，设备安装程序管理器之前运行该应用注册相应的工作项与系统事件代理。 立即注册工作项，如果移动宽带设备是注册，或者连接到网络后，将 MobileOperatorNotification 事件触发与相应**MessageType**。
+下载服务元数据和应用时，设备安装管理器会在运行应用之前向系统事件代理注册相应的工作项。 注册工作项后，如果移动宽带设备已注册或连接到网络，则会立即触发 MobileOperatorNotification 事件和相应的 **MessageType**。
 
-### <a name="span-idchangebackgroundtaskregistrationinmetadataspanspan-idchangebackgroundtaskregistrationinmetadataspanspan-idchangebackgroundtaskregistrationinmetadataspanchange-background-task-registration-in-metadata"></a><span id="Change_background_task_registration_in_metadata"></span><span id="change_background_task_registration_in_metadata"></span><span id="CHANGE_BACKGROUND_TASK_REGISTRATION_IN_METADATA"></span>更改元数据中的后台任务注册
+### <a name="change-background-task-registration-in-metadata"></a>在元数据中更改后台任务注册
 
-如果在移动宽带的应用程序的更新版本中更改的后台任务入口点[DeviceNotificationHandler](devicenotificationhandler.md)也必须更改服务元数据中的元素。
+如果在移动宽带应用的更新版本中更改了后台任务入口点，则还必须更改服务元数据中的 [DeviceNotificationHandler](devicenotificationhandler.md) 元素。
 
-运行 Windows 8、 Windows 8.1 和 Windows 10 的计算机上自动更新服务元数据。 移动宽带应用程序会在 Microsoft Store 中更新。 应避免更改[DeviceNotificationHandler](devicenotificationhandler.md)后台服务元数据中的任务注册。 如果需要更改，服务元数据应包含对所有不同的背景任务入口点使用所有的移动宽带应用程序的受支持版本中保留的用户未更新移动宽带功能的引用应用程序。
+服务元数据在运行 Windows 8、Windows 8.1 和 Windows 10 的计算机上自动更新。 移动宽带应用在 Microsoft Store 中进行了更新。 应避免更改服务元数据中的 [DeviceNotificationHandler](devicenotificationhandler.md) 后台任务注册。 如果需要进行更改，服务元数据应包含对所有支持的移动宽带应用程序版本中使用的所有不同后台任务入口点的引用，以保留尚未更新移动宽带应用的用户的功能。
 
-## <a name="span-iddeffilterspanspan-iddeffilterspandefine-filtering-rules-in-provisioning-xml"></a><span id="deffilter"></span><span id="DEFFILTER"></span>在预配 XML 中定义的筛选规则
+## <a name="define-filtering-rules-in-provisioning-xml"></a>在预配 XML 中定义筛选规则
 
-
-Windows 接受你的基于 XML 的预配文件。 置备 XML 的示例版本如下所示：
+Windows 接受来自基于 XML 的预配文件。 设置 XML 的示例版本如下所示：
 
 ``` syntax
 <?xml version="1.0" encoding="utf-8"?>
@@ -304,31 +222,20 @@ Windows 接受你的基于 XML 的预配文件。 置备 XML 的示例版本如�
         </Message>
       </Messages>
   </MBNProfiles>
-  <Provisioning /> 
+  <Provisioning />
 </CarrierProvisioning>
 ```
 
-帐户预配的元数据的详细信息，请参阅[帐户预配](account-provisioning.md)。
+有关帐户预配元数据的详细信息，请参阅 [帐户预配](account-provisioning.md)。
 
-要识别的短信，可以在此 XML 中定义的运算符消息的规则。
+可在此 XML 中定义用于将文本消息标识为操作员消息的规则。
 
--   **允许发件人**发件人属性指定该通知允许到达保留发件人地址。 （此数字必须完全符合接收 SMS 消息，包括国际格式中的发件人号）。
+- **允许的发送方** Sender 属性指定允许通知到达的保留发送方地址。  (此数字必须与 SMS 消息中收到的发送方号码完全匹配，包括国际格式) 。
 
--   **模式**正则表达式以标识和 （可选） 的文本消息中提取数据字段。 若要匹配所有消息从发送方，使用模式`[^]*`。
+- **模式** 用于标识并选择性地从文本消息中提取数据字段的正则表达式。 若要匹配发送方的所有消息，请使用模式 `[^]*` 。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="related-topics"></a>相关主题
 
 [启用移动运营商通知和系统事件](enabling-mobile-operator-notifications-and-system-events.md)
 
 [创建和配置 Internet 共享体验](creating-and-configuring-internet-sharing-experiences.md)
-
- 
-
- 
-
-
-
-
-
-

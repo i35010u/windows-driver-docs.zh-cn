@@ -4,157 +4,143 @@ description: 服务元数据概述
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 40b3982d992a1ddc03fbbcfecb696656b77b9ec6
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.openlocfilehash: bd80c43fe7c468c0fe582cfa432729a76d5f1b94
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608506"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902445"
 ---
 # <a name="service-metadata-overview"></a>服务元数据概述
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-可以创建和提交服务元数据包，以创建与 Windows 深度集成的体验。 当 Windows 检测到匹配的运算符的服务元数据包的移动宽带硬件时，它会自动下载服务元数据和指定的移动宽带应用程序。
+你可以创建和提交服务元数据包，以创建与 Windows 深度集成的体验。 当 Windows 检测到与操作员的服务元数据包匹配的移动宽带硬件时，它会自动下载服务元数据和指定的移动宽带应用。
 
-服务元数据包含描述一种服务，包括以下信息：
+服务元数据包含描述服务的信息，包括以下内容：
 
--   服务提供程序名称
+- 服务提供商名称
 
--   一个或多个服务类别
+- 一个或多个服务类别
 
--   移动宽带特有的信息
+- 移动宽带特定的信息
 
--   移动宽带应用
+- 移动宽带应用
 
--   移动宽带的配置文件
+- 移动宽带配置文件
 
--   预配 XML 的受信任的证书
+- 用于预配 XML 的可信证书
 
--   [DeviceNotificationHandler](devicenotificationhandler.md)元素
+- [DeviceNotificationHandler](devicenotificationhandler.md) 元素
 
--   [PrivilegedApplications](privilegedapplications.md)元素
+- [PrivilegedApplications](privilegedapplications.md) 元素
 
-元数据中的信息用于自定义的 Windows 8、 Windows 8.1 和 Windows 10 用户体验方面，并提供与移动宽带应用程序，以前称为移动运营商应用程序集成。
+元数据中的信息用于自定义 Windows 8、Windows 8.1 和 Windows 10 用户体验的各个方面，并提供与移动宽带应用（以前称为移动运营商应用程序）的集成。
 
-服务元数据包包含.devicemetadata ms 文件中存储的多个 XML 文档。 每个文档指定服务的属性的各种的组件。 这些 XML 文档提供 Windows 连接管理器显示的自定义操作用户，以及网络配置信息。
+服务元数据包由 devicemetadata-ms 文件中存储的多个 XML 文档组成。 每个文档都指定了服务属性的各种组件。 这些 XML 文档向 Windows 连接管理器提供了向用户显示的自定义，以及网络配置信息。
 
-有关服务元数据包中的 XML 文档的参考信息，请参阅[服务的元数据数据包架构参考](service-metadata-package-schema-reference.md)。
+有关服务元数据包中 XML 文档的参考信息，请参阅 [服务元数据包架构参考](service-metadata-package-schema-reference.md)。
 
-## <a name="span-idservmdconspanspan-idservmdconspanservice-metadata-contents"></a><span id="servmdcon"></span><span id="SERVMDCON"></span>服务元数据内容
+## <a name="service-metadata-contents"></a>服务元数据内容
 
-
-以下摘要描述的一些最有趣的字段都包含和内部服务元数据包定义：
+下面的摘要介绍了服务元数据包中包含并定义的一些最感兴趣的字段：
 
 - **硬件 Id**  
-  对于 GSM 网络，可以提交元数据包，描述要用来匹配在服务元数据包的 IMSI 或 ICCID 范围。 如果你是 MVNO，可以指定一个或多个范围的 IMSIs 或已从 m n O 租用的 SIM ICC Id。 对于 CDMA 网络，可以使用提供程序 ID (SID/NID) 或提供程序名称来提交包。 硬件 Id 对应于[HardwareID](hardwareid.md)服务元数据包架构中的元素。 有关如何规划硬件标识 (HWID) 范围 m n O 和 MVNO 方案的详细信息，请参阅[对于 Mvno 传送体验](delivering-experiences-for-mvnos.md)
+  对于 GSM 网络，可以提交一个元数据包，用于描述你希望服务元数据包匹配的 IMSI 或 ICCID 范围。 如果你是 MVNO，则可以指定一个或多个从 o 租赁的 IMSIs 或 SIM ICC Id 范围。 对于 CDMA 网络，可以使用提供程序 ID (SID/NID) 或提供程序名称提交包。 硬件 Id 对应于服务元数据包架构中的 [HardwareID](hardwareid.md) 元素。 有关如何规划硬件标识的详细信息 (HWID) 范围用于 o 和 MVNO 方案，请参阅为 [Mvno 提供体验](delivering-experiences-for-mvnos.md)
 
 - **服务编号**  
-  移动宽带服务提供程序的唯一 ID。 此 GUID 还用于确定运算符使用预配帐户的元数据时。 如果更新设备元数据包，此 GUID 必须保持不变。 该服务数字对应于[ServiceNumber](servicenumber.md)服务元数据包架构中的元素。
+  移动宽带服务提供商的唯一 ID。 使用帐户预配元数据时，此 GUID 还用于标识操作员。 如果更新设备元数据包，则此 GUID 必须保持不变。 服务编号对应于服务元数据包架构中的 [ServiceNumber](servicenumber.md) 元素。
 
-- **运算符徽标**   
-  Windows 连接管理器中显示网络条目旁边的自定义徽标。 （徽标时处于隐藏状态用户漫游网络上。）运算符徽标对应于[ServiceIconFile](serviceiconfile.md)服务元数据包架构中的元素。 有关徽标要求的详细信息，请参阅[服务图标要求](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。  
+- **运算符徽标** 出现在网络条目旁边的 "Windows 连接管理器" 中的自定义徽标。  (在用户处于漫游网络上时隐藏徽标。 ) 操作员徽标对应于服务元数据包架构中的 [ServiceIconFile](serviceiconfile.md) 元素。 有关徽标要求的详细信息，请参阅 [服务图标要求](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。  
   > [!IMPORTANT]
-  > 在 Windows 10 版本 1709年及更高版本，此字段已替换为通过 COSA 品牌。 品牌 COSA 中的字段上的说明[规划你的桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)。 如果你面向的 Windows 10，版本 1709 之前, 的 Windows 版本仍会创建元数据包在本部分中所述。 有关 COSA 详细信息，请参阅[COSA 概述](cosa-overview.md)。 
+  > 在 Windows 10 版本1709及更高版本中，此字段已通过 COSA 的品牌替换。 COSA for 署名中的字段在 [规划桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中进行了介绍。 如果在 Windows 10 版本1709之前面向 Windows 版本，则仍将创建此部分中所述的元数据包。 有关 COSA 的详细信息，请参阅 [COSA 概述](cosa-overview.md)。
 
 - **移动宽带应用**  
-  UWP 设备应用会自动下载并应用于计算机。 此应用程序可以提供键体验计划购买、 数据使用情况和帮助和支持，例如，可以突出显示的增值服务。
+  自动下载并应用于计算机的 UWP 设备应用。 此应用程序可提供重要的体验，例如规划购买、数据使用、帮助和支持，并可以突出显示增值服务。
 
-- **MB 采购配置文件**  
-  购买用于建立购买订阅的连接受到限制的配置文件。
+- **MB 购买配置文件**  
+  用于建立用于购买订阅的有限连接性的购买配置文件。
 
-  如果您是有用于所有订阅服务器只有一个采购 APN GSM 操作员，可以使用服务元数据来设置的计算机。 如果你有多个购买 APNs，应使用帐户预配的元数据来设置相应的购买 APN。 或者，您可以不执行任何操作，并使用存储在要提供 APN 连接信息的 APN 数据库条目。
+  如果你是一位 GSM 操作员，其中只有一个购买 APN 用于所有订阅者，则可以使用服务元数据将其预配到计算机。 如果有多个购买 APNs，则应使用帐户预配元数据来设置相应的购买 APN。 或者，你可以不执行任何操作，而使用存储在 APN 数据库中的条目来提供 APN 连接信息。
 
 - **MB Internet 配置文件**  
-  每个移动宽带订阅可以有一个用于连接到家庭网络运算符的默认配置文件。 Windows 连接管理器使用此配置文件进行自动连接到网络。
+  每个移动宽带订阅可以有一个用于连接到家庭网络操作员的默认配置文件。 Windows 连接管理器使用此配置文件自动连接到网络。
 
-  如果您是有用于所有订阅服务器只有一个 Internet APN GSM 操作员，可以使用服务元数据来设置计算机。 如果有多个 Internet APNs，应使用预配的元数据的帐户设置适当的 internet APN。 或者，您可以不执行任何操作，并使用存储在要提供 APN 连接信息的 APN 数据库条目。
+  如果你是一个 GSM 操作员，其中只有一个 Internet APN 用于所有订阅者，则可以使用服务元数据来设置计算机。 如果有多个 Internet APNs，则应使用帐户预配元数据来设置相应的 internet APN。 或者，你可以不执行任何操作，而使用存储在 APN 数据库中的条目来提供 APN 连接信息。
 
 - **证书数据**  
-  用于预配的证书信息。 这包括证书颁发者名称和使用者名称。 此信息用于确保启动的网站的帐户预配操作由受信任的操作员。
+  用于预配的证书信息。 这包括证书颁发者名称和使用者名称。 此信息用于确保由网站启动的帐户预配操作由受信任的操作员颁发。
 
-- **自定义的运算符名称**  
-  移动宽带设备通常提供 Windows Windows 连接管理器中显示的运算符名称。 可以通过在元数据中指定自定义名称来覆盖此名称。 此名称将显示仅当用户在家庭网络且不在漫游网络。 显示漫游的网络名称基于从设备收到的信息。 这对应于[ServiceProvider](serviceprovider.md)服务包元数据架构中的元素。  
+- **自定义操作员名称**  
+  移动宽带设备通常提供操作员名称，Windows 连接管理器中显示该名称。 可以通过在元数据中指定自定义名称来覆盖此名称。 仅当用户在家庭网络上且不在漫游网络上时，才显示此名称。 显示的漫游网络名称基于从设备接收的信息。 这对应于服务包元数据架构中的 [ServiceProvider](serviceprovider.md) 元素。  
   > [!IMPORTANT]
-  > 在 Windows 10 版本 1709年及更高版本，此字段已替换为通过 COSA 品牌。 品牌 COSA 中的字段上的说明[规划你的桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)。 如果你面向的 Windows 10，版本 1709 之前, 的 Windows 版本仍会创建元数据包在本部分中所述。 有关 COSA 详细信息，请参阅[COSA 概述](cosa-overview.md)。 
+  > 在 Windows 10 版本1709及更高版本中，此字段已通过 COSA 的品牌替换。 COSA for 署名中的字段在 [规划桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中进行了介绍。 如果在 Windows 10 版本1709之前面向 Windows 版本，则仍将创建此部分中所述的元数据包。 有关 COSA 的详细信息，请参阅 [COSA 概述](cosa-overview.md)。 
 
 - **设备通知处理程序**  
-  一般情况下，应用必须由用户运行之前它可以向系统事件代理注册的工作项的至少一次。 但是，移动宽带应用程序可能需要接收重要事件之前用户可以运行该应用。 您可以指定[DeviceNotificationHandler](devicenotificationhandler.md)服务元数据，Windows 将使用注册某些关键事件中的元素。 有关短信通知的详细信息，请参阅[交付体验来 Mvno](delivering-experiences-for-mvnos.md)。
+  通常，应用必须至少运行一次，然后才能将工作项注册到系统事件代理。 但是，移动宽带应用可能需要在用户可以运行应用之前接收重要事件。 你可以在服务元数据中指定 [DeviceNotificationHandler](devicenotificationhandler.md) 元素，Windows 将使用它来注册某些关键事件。 有关 SMS 通知的详细信息，请参阅 [提供 mvno 体验](delivering-experiences-for-mvnos.md)。
 
-- **特权应用有权访问移动宽带的受限接口列表**  
-  移动宽带 Api 和接口 （包括帐户预配和短信） 到移动宽带应用程序只是受限制和可用。 可以在服务元数据包中指定的特权的应用程序有权访问这些特权的 Api 列表[PrivilegedApplications](privilegedapplications.md)元素。 特权的应用可以调试或测试应用程序;它们不需要通过 Microsoft Store 进行分发。
+- **有权访问移动宽带限制接口的特权应用的列表**  
+  移动宽带 Api 和接口 (包括帐户预配和 SMS) 受限且仅可用于移动宽带应用。 可在 [PrivilegedApplications](privilegedapplications.md) 元素的服务元数据包中指定具有这些特权 api 访问权限的特权应用的列表。 特权应用可以是调试或测试应用;不需要通过 Microsoft Store 来分发它们。
 
-## <a name="span-idservicemetadatapackagestructurespanspan-idservicemetadatapackagestructurespanspan-idservicemetadatapackagestructurespanservice-metadata-package-structure"></a><span id="Service_Metadata_Package_Structure"></span><span id="service_metadata_package_structure"></span><span id="SERVICE_METADATA_PACKAGE_STRUCTURE"></span>服务元数据包结构
+## <a name="span-idservice_metadata_package_structurespanspan-idservice_metadata_package_structurespanspan-idservice_metadata_package_structurespanservice-metadata-package-structure"></a><span id="Service_Metadata_Package_Structure"></span><span id="service_metadata_package_structure"></span><span id="SERVICE_METADATA_PACKAGE_STRUCTURE"></span>服务元数据包结构
 
 
-存储在压缩的 cab 文件以及必须具有文件扩展名的组件的服务元数据包 **.devicemetadata ms**。 服务元数据包将使用此文件扩展名，因为它们使用相同的基础平台作为设备元数据包。 在创建之前 **.devicemetadata ms**文件，必须先创建元数据包的全局唯一标识符 (GUID)。 然后，必须使用以下命名约定创建.devicemetadata ms 文件时： **&lt;GUID&gt;.devicemetadata ms**。
+服务元数据包的组件存储在压缩的 cab 文件中，并且其文件扩展名必须为 **devicemetadata-ms**。 服务元数据包使用此文件扩展名，因为它们使用与设备元数据包相同的基础平台。 在创建 **devicemetadata-ms** 文件之前，必须先为元数据包创建 (GUID) 的全局唯一标识符。 然后，在创建 devicemetadata-ms 文件时，必须使用以下命名约定： ** &lt; &gt; devicemetadata-ms**。
 
-**请注意**  虽然的 cab 文件的常用文件扩展名 **.cab**，服务元数据包文件的文件扩展名必须是 **.devicemetadata ms**。 这是为了强调这一事实，最终用户不能解压缩或修改这些包。
+**注意**   尽管 cabinet 文件的常规文件扩展名为 **.cab**，但服务元数据包文件的文件扩展名必须是 **. devicemetadata-ms**。 这是为了使最终用户不能解压缩或修改这些包这一事实。
 
- 
+有两种类型的服务元数据包：单一区域设置服务元数据包和多区域设置服务元数据包。
 
-有两种类型的服务元数据包： 一个区域设置服务元数据包和多个区域设置服务元数据包。
+### <a name="single-locale-service-metadata-package"></a>单个区域设置服务元数据包
 
-### <a name="span-idsinglelocaleservicemetadatapackagespanspan-idsinglelocaleservicemetadatapackagespanspan-idsinglelocaleservicemetadatapackagespansingle-locale-service-metadata-package"></a><span id="Single_Locale_Service_Metadata_Package"></span><span id="single_locale_service_metadata_package"></span><span id="SINGLE_LOCALE_SERVICE_METADATA_PACKAGE"></span>单个区域设置服务元数据包
-
-服务元数据包中的可本地化资源是在 Windows 连接管理器和显示在它旁边的服务图标中显示的运算符名称。 如果不需要本地化你的名称或更改您基于从 PC 的区域设置信息的图标，创建单一的区域设置服务元数据包。 无论用户使用其 PC 的哪些区域设置，它们将获取运算符名称和服务在单个区域设置的服务元数据包中定义的图标。
+服务元数据包中的可本地化资源是在 Windows 连接管理器中显示的操作员名称，以及显示在它旁边的 "服务" 图标。 如果不需要根据电脑中的区域设置信息本地化名称或更改图标，请创建单个区域设置服务元数据包。 无论用户在自己的 PC 上使用何种区域设置，他们都将获取在单个区域设置服务元数据包中定义的 "操作员名称" 和 "服务" 图标。
 
 单个区域设置服务元数据包必须具有以下文件结构：
 
-![单个区域设置服务的元数据包结构](images/mb-xmlref-singlelocalesmp.jpg)
+![单个区域设置服务元数据包结构](images/mb-xmlref-singlelocalesmp.jpg)
 
 单个区域设置元数据包的一些注意事项：
 
--   图标文件可以有任何文件名。 但是，必须命名为单独 XML 文档**PackageInfo.xml**， **ServiceInfo.xml**， **WindowsInfo.xml**，和**SoftwareInfo.xml**.
+- 图标文件可以有任何文件名。 但是，必须将各个 XML 文档命名为 **PackageInfo.xml**、 **ServiceInfo.xml**、 **WindowsInfo.xml**和 **SoftwareInfo.xml**。
 
--   名称**MobileBroadbandInfo.xml**文件中定义**ServiceInfo.xml**。 应使用该文件本文档中列出的名称。
+- **MobileBroadbandInfo.xml**文件的名称是在**ServiceInfo.xml**中定义的。 应为该文件使用本文档中列出的名称。
 
--   **.Devicemetadata ms**文件不能包含"{"或"}"在名称中。 对于每个元数据包文件的名称 GUID 必须是唯一的。 当创建新的或修改服务元数据包时，必须创建新的 GUID，即使所做的更改是很微小的。
+- **Devicemetadata-ms**文件不能在名称中包含 "{" 或 "}"。 每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的服务元数据包时，你必须创建新的 GUID，即使这些更改很小。
 
--   Windows 可识别的文件扩展名为服务元数据包 **.devicemetadata ms**。
+- Windows 将识别文件扩展名为 **devicemetadata-ms**的服务元数据包。
 
-### <a name="span-idmultiplelocaleservicemetadatapackagestructurespanspan-idmultiplelocaleservicemetadatapackagestructurespanspan-idmultiplelocaleservicemetadatapackagestructurespanmultiple-locale-service-metadata-package-structure"></a><span id="Multiple_Locale_Service_Metadata_Package_Structure"></span><span id="multiple_locale_service_metadata_package_structure"></span><span id="MULTIPLE_LOCALE_SERVICE_METADATA_PACKAGE_STRUCTURE"></span>多个区域设置服务元数据包结构
+### <a name="multiple-locale-service-metadata-package-structure"></a>多区域设置服务元数据包结构
 
-服务元数据包在一个包中支持多个区域设置文件。 如果为你的服务支持多个区域设置，您可以将多个区域设置文件放在一个服务元数据程序包。
+服务元数据包在一个包中支持多个区域设置文件。 如果为服务支持多个区域设置，则可以将多个区域设置文件放入一个服务元数据包。
 
-如果您希望以显示你的服务的本地化的名称在网络列表 Windows 连接管理器中或为您的网络会显示不同的徽标 Windows 连接管理器中，可以使用多个本地服务元数据包。 Windows 将显示本地化的网络名称和徽标基于系统首选语言，在 Windows 安装过程通常会对其进行配置。 即使当前用户的语言不同于系统首选语言，图标和网络名称始终会出现在系统首选语言。 如果服务元数据包不包含区域设置，将显示的语言中性说明从根服务元数据包。 对于大多数用户自己的语言将匹配系统首选语言。
+如果要在 Windows 连接管理器网络列表中显示服务的本地化名称，或者在 Windows 连接管理器中显示网络的不同徽标，则可以使用多个本地服务元数据包。 Windows 将根据系统首选语言显示本地化网络名称和徽标，通常在 Windows 安装程序过程中配置此语言。 即使当前用户的语言与系统首选语言不同，该图标和网络名称始终会以系统首选语言显示。 如果服务元数据包不包含区域设置，则将显示服务元数据包的根目录中的非特定语言说明。 对于大多数用户，其语言将与系统首选语言匹配。
 
-多个区域设置服务元数据包必须具有以下文件结构：
+多区域设置服务元数据包必须具有以下文件结构：
 
-![多区域设置服务的元数据包结构](images/mb-xmlref-multiplelocalesmp.jpg)
+![多区域设置服务元数据包结构](images/mb-xmlref-multiplelocalesmp.jpg)
 
-多个区域设置元数据包的一些注意事项：
+多区域设置元数据包的一些注意事项：
 
--   在每个文件夹中创建的区域设置名称文件夹并将相关的文件的 XML 文件放在区域设置名称文件夹中。
+- 在每个文件夹中创建区域设置名称文件夹，并将 XML 文件或相关文件放在区域设置名称文件夹中。
 
--   您仍然必须具有的顶级 XML 文件和相关文件，例如图标文件，每个文件夹的顶层。 在服务元数据包不包含区域设置时，这提供回退机制。
+- 你仍必须在每个文件夹的顶层有顶级 XML 文件和相关文件，例如图标文件。 这会在服务元数据包中未包含区域设置时提供回退机制。
 
--   请确保所有必需的文件和这些文件中的字段完全填充在您创建的每个区域设置特定文件夹内。 其中不包括每个文件夹的最高级别中的内容。 例如， [ServiceNumber](servicenumber.md)必须填写 ServiceInfo.xml 中的元素，并将其复制和创建每个特定于区域设置的文件夹中的顶级文件夹。 如果不这样做会导致错误。
+- 确保所有必需的文件和这些文件中的字段已完全填充到你创建的每个区域设置特定的文件夹中。 这是对每个文件夹顶层内容的补充。 例如，ServiceInfo.xml 中的 [ServiceNumber](servicenumber.md) 元素必须在顶级文件夹中以及创建的每个特定于区域设置的文件夹中进行填充和复制。 否则将导致错误。
 
--   SoftwareInformation XML 文档不支持多个区域设置，因为不能指定每个区域设置的不同 SoftwareInfo.xml 文件。
+- SoftwareInformation XML 文档不支持多个区域设置，因为不能为每个区域设置指定不同的 SoftwareInfo.xml 文件。
 
-## <a name="span-idmsdsubspanspan-idmsdsubspanservice-metadata-submission-and-maintenance"></a><span id="msdsub"></span><span id="MSDSUB"></span>服务元数据提交和维护
+## <a name="service-metadata-submission-and-maintenance"></a>服务元数据提交和维护
 
+有关如何向 Windows 开发人员中心仪表板（硬件）提交服务元数据包的详细信息，请参阅 [创建服务元数据的开发人员指南](developer-guide-for-creating-service-metadata.md)。
 
-有关如何将提交到 Windows 开发人员中心仪表板 – 硬件，服务元数据包的详细信息请参阅[用于创建服务元数据的开发人员指南](developer-guide-for-creating-service-metadata.md)。
+重要的是，将元数据包保持为最新，以了解它们的描述方式以及它们匹配的 IMSI 和 ICCID 或 CDMA 提供程序名称或 SID 值。 这可能需要 o 或 MVNO 来实现一个新的工作流，该工作流是 SIM 或设备获取的一部分，用于跟踪新的 Sim 顺序，以及要向其提供 Iccid 或 IMSIs 的 o 或 MVNO。
 
-请务必保留包根据如何描述最新的 IMSI 和 ICCID 或 CDMA 提供程序名称或 SID 值匹配的元数据。 这可能需要的 MNO 或 MVNO，以实现新的工作流是 SIM 或设备获取跟踪的 Sim 和 MNO 或 MVNO 到这些 ICCIDs 或 IMSIs 所提供的新订单的一部分。
+最佳做法是，通过保留 o 和 MVNO 的 ICCID 或 IMSI 范围 (或 CDMA SIM/提供程序名称) ，避免对服务元数据进行频繁的更改，以便在购买新的 Sim (或 CDMA) 设备时，它们已在服务元数据包中考虑。
 
-它是最佳做法，避免进行频繁服务元数据通过保留 ICCID 或 IMSI 范围 （或 CDMA SIM/提供程序名称） 对 m n O 和更改 MVNO 提前，因此，当新 SIMs （或 CDMA 的设备） 是采购，它们已实现你服务元数据包。
+如果需要更新在 Windows 开发人员中心硬件仪表板上注册的服务标识符，请参阅 [服务标识符所有权更新](service-identifier-ownership-updates.md)。
 
-如果你需要更新你在 Windows 开发人员中心硬件仪表板注册的服务标识符，请参阅[服务标识符所有权更新](service-identifier-ownership-updates.md)。
+在 Windows 查询 WMIS 是否有更新的元数据更新时，将基于内部 Windows (逻辑，以无提示方式应用元数据更新) 。
 
-元数据更新是以无提示方式应用基于内部 Windows 逻辑 （通常每隔 8 天） 时 Windows 查询 WMIS 是否有更新元数据更新。
+应用应设计为处理其引用的以前版本的元数据，直到将最新的元数据应用到系统。
 
-应用程序应设计为处理与它所引用的直到最新的元数据应用到系统的元数据的以前的版本。
-
-[设计用户体验的移动宽带应用](designing-the-user-experience-of-a-mobile-broadband-app.md)提供了有关如何设计用户指南体验扩展到地址常见错误情况，例如缺少或无法识别该设备时。
-
- 
-
- 
-
-
-
-
-
+[设计移动宽带应用的用户体验](designing-the-user-experience-of-a-mobile-broadband-app.md) 提供了有关如何设计用户体验来解决常见错误情况（如设备丢失或无法识别）的指导。

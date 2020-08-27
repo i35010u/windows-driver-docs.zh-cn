@@ -4,24 +4,22 @@ description: 使用 AXE 创作测试
 ms.assetid: B042FE1B-98E4-48ae-BE2C-15C71EC6640A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 336bf4b0eff08ceda7b978660bcd2bf5dab9141b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ff87e70579a89403434cd91aaa8ff1d6e6d3b52a
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372742"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902394"
 ---
 # <a name="authoring-tests-in-axe"></a>使用 AXE 创作测试
 
+TAEF 支持创作测试，这些测试在评估执行引擎 (AXE) 上执行。
 
-TAEF 支持创作测试执行与将评估执行引擎 （斧头磨快）。
+TAEF 中的 AXE 支持使 TAEF 可以执行 AXE 评估清单。 它主要设计用于将传统测试（编写为命令行 Exe）包装到基于 XML 的 AXE 评估清单中。 这样，这些旧测试就可以通过 TAEF 执行，而无需重写测试来 TAEF 本机、托管或脚本测试。
 
-斧头磨快中 TAEF 支持 TAEF 执行斧头磨快评估清单。 它主要用于包装旧测试，作为命令行的 Exe，写入到基于 XML 的斧头磨快评估清单。 在这种方式，这些旧测试会成为 TAEF 与可执行文件而无需重写到 TAEF 本机，测试管理，或编写脚本的测试。
+## <a name="axe-tests-layout"></a>AXE 测试布局
 
-## <a name="span-idaxetestslayoutspanspan-idaxetestslayoutspanspan-idaxetestslayoutspanaxe-tests-layout"></a><span id="AXE_Tests_Layout"></span><span id="axe_tests_layout"></span><span id="AXE_TESTS_LAYOUT"></span>斧头磨快测试布局
-
-
-尽管常规 TAEF 测试文件可以包含多个测试类和测试，但 TAEF 斧头磨快测试 （由斧头磨快评估清单定义的测试） 可以包含一个测试，因为将该清单将对单个可执行文件。 因此，当 TAEF 斧头磨快测试文件中查看测试，将始终看到测试文件 （这是你正在查看的斧头磨快评估清单），包含单个测试类和一个测试：
+尽管常规 TAEF 测试文件可以包含多个测试类和测试，但 TAEF AXE 测试 (由 AXE 评估清单定义的测试) 只能包含单个测试，因为清单会包装单个可执行文件。 因此，在 TAEF AXE 测试文件中查看测试时，您将始终看到测试文件 (这是您正在查看的 AXE 评估清单) 、包含单个测试类和单个测试：
 
 ``` syntax
 te Examples\AXE.Basic.Examples.manifest /list
@@ -34,17 +32,15 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 
 ```
 
-斧头磨快测试也不支持安装或清理的任何方法。
+AXE 测试还不支持任何安装或清理方法。
 
-## <a name="span-idauthoringaxetestsspanspan-idauthoringaxetestsspanspan-idauthoringaxetestsspanauthoring-axe-tests"></a><span id="Authoring_AXE_Tests"></span><span id="authoring_axe_tests"></span><span id="AUTHORING_AXE_TESTS"></span>创作斧头磨快测试
+## <a name="authoring-axe-tests"></a>创作 AXE 测试
 
+对于 AXE 测试，TAEF 使用 AXE 评估清单文件格式。
 
-对于斧头磨快测试，TAEF 使用斧头磨快评估清单文件格式。
+## <a name="minimal-axe-test-file"></a>最小 AXE 测试文件
 
-## <a name="span-idminimalaxetestfilespanspan-idminimalaxetestfilespanspan-idminimalaxetestfilespanminimal-axe-test-file"></a><span id="Minimal_AXE_Test_File"></span><span id="minimal_axe_test_file"></span><span id="MINIMAL_AXE_TEST_FILE"></span>最小斧头磨快测试文件
-
-
-斧头磨快评估清单架构旨在支持非常丰富的复杂评估说明复杂的方案。 但是，清单还可以非常简单因为有很少的必需节点。 下面的示例显示了包含所有必需的标记的最小清单。
+AXE 评估清单架构旨在支持非常丰富的复杂方案的复杂评估说明。 不过，这些清单也可能非常简单，因为有很少的必需节点。 下面的示例演示包含所有必需标记的最小清单。
 
 ```cpp
 1<?xml version="1.0" encoding="utf-8"?>
@@ -82,15 +78,15 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 33</AxeAssessmentManifest>
 ```
 
-将斧头磨快测试评估文件是一个 XML 文件。 因此，它将开始使用普通的 XML 标头 (**行 1**)。
+AXE 测试评估文件是一个 XML 文件。 因此，它从普通 XML 标头开始 (**第1行**) 。
 
-**第 2 行**标识斧头磨快清单的 XML 文件。
+**第2行将** XML 文件标识为 AXE 清单。
 
-**行 3 10**标识和可用于唯一标识该测试的版本都进行测试。
+**3-10 行** 为测试指定可用于唯一标识测试的标识和版本。
 
-**行 12-19**指定斧头磨快将解释此清单并运行测试所需的最低版本。
+**第 12-19 行** 指定解释此清单和运行测试所需的 AXE 的最低版本。
 
-**行 20 到 24 个**人工可读名称和简短的工具提示说明都进行测试。 请注意，当您查看测试属性，你的测试类名称和你的测试名称将对应于**ProgrammaticName**元素的值：
+**20-24 行** 为测试指定一个可读的名称和一个简短的工具提示说明。 请注意，查看测试属性时，测试类名称和测试名称将对应于 **ProgrammaticName** 元素值：
 
 ``` syntax
 D:\enddev2.binaries.amd64chk\WexTest\CuE\TestExecution>te Examples\AXE.Basic.Examples.manifest /list
@@ -103,7 +99,7 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 
 ```
 
-用户可读名称分配给**DisplayName**属性。 此分配是由于内部 TAEF 体系结构和设计。
+用户可读名称将分配给 **DisplayName** 属性。 这是由内部 TAEF 体系结构和设计引起的。
 
 ``` syntax
 Te Examples\AXE.Basic.Examples.manifest /listproperties
@@ -122,16 +118,15 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 
 ```
 
-此评估包装一个简单的和现有测试名为 EXE **AssessmentSample.exe**。 **AssessmentSample.exe**使用通用约定返回零表示成功和失败的一个非零值的进程退出代码。
+此评估会将名为 **AssessmentSample.exe**的简单的现有测试 EXE 打包。 **AssessmentSample.exe** 使用常见约定返回一个成功的进程退出代码，并返回一个非零值以指示失败。
 
-**行 25 27**告诉斧头磨快和 TAEF 为退出值时为零表示测试成功，任何其他值表示失败。
+**25-27 行** 告诉 AXE 和 TAEF，exit 值为零表示测试成功，任何其他值表示失败。
 
-最后，**行 28-32**指示斧头磨快使用 Win32 API createprocess （） 来执行**AssessmentSample.exe**。
+最后， **28-32 行** 指示 AXE 使用 Win32 API CreateProcess ( # A1 来执行 **AssessmentSample.exe**。
 
-## <a name="span-idusingmetadatainaxetestfilespanspan-idusingmetadatainaxetestfilespanspan-idusingmetadatainaxetestfilespanusing-metadata-in-axe-test-file"></a><span id="Using_Metadata_in_AXE_Test_File"></span><span id="using_metadata_in_axe_test_file"></span><span id="USING_METADATA_IN_AXE_TEST_FILE"></span>使用斧头磨快测试文件中的元数据
+## <a name="using-metadata-in-axe-test-file"></a>在 AXE 测试文件中使用元数据
 
-
-与任何其他 TAEF 测试一样，向 TAEF 斧头磨快测试，还可以应用元数据。 请考虑如下所示的示例。
+对于任何其他 TAEF 测试，还可以将元数据应用于 TAEF AXE 测试。 请看下面所示的示例。
 
 ```cpp
 1<?xml version="1.0" encoding="utf-8"?>
@@ -174,7 +169,7 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 38</AxeAssessmentManifest>
 ```
 
-**行 25 日-29**演示可以如何应用 TAEF 标准和自定义元数据到斧头磨快的测试。 下**AxeAssessmentManifest** XML 节点是**属性**节点。 单个级别 XML 标记下**属性**节点识别为元数据 （属性）。 所有单个级别 XML 标记下**属性**解释为属性名称和其值被解释为属性值的文本。 在上述示例中，**所有者**被解释为属性名称和**有人**作为属性值。 在这些元素中没有文本的 XML 标记将被解释为它的值等于空字符串的元素 (例如，  **&lt;SimpleTagWithNoText /&gt;**)。 多级 XML 标记下**属性**忽略 （例如，多层的标签，如
+第**25-29 行**演示了如何将 TAEF 标准和自定义元数据应用于 AXE 测试。 " **AxeAssessmentManifest** XML" 节点下的 " **属性** " 节点。 " **属性** " 节点下的单个级别 XML 标记被识别为元数据 (属性) 。 " **属性** " 下的所有单级 XML 标记均被解释为属性名称，其文本值被解释为属性值。 在上面的示例中，" **所有者** " 解释为属性名称，而 " **用户** " 作为属性值。 这些元素中没有文本的 XML 标记被解释为其值等于空字符串的元素 (例如** &lt; SimpleTagWithNoText/ &gt; **) 。 忽略 **属性** 下的多级 XML 标记 (例如，多级标记，如
 
 ```cpp
 <VerifyOSVersion>
@@ -184,7 +179,7 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 </VerifyOSVersion>
 ```
 
-将被忽略）。 使用与任何其他 TAEF 测试类似， **/listProperties**选项以显示 TAEF 元数据：
+将忽略) 。 类似于任何其他 TAEF 测试，可使用 **/listProperties** 选项显示 TAEF 元数据：
 
 ``` syntax
 te Examples\AXE.CustomMetadata.Examples.manifest /listProperties
@@ -206,23 +201,22 @@ Test Authoring and Execution Framework v2.7 Build 6.2.7918.0 (1320) For x64
 
 ```
 
-## <a name="span-idaxetestsmetadatasupportlimitationsspanspan-idaxetestsmetadatasupportlimitationsspanspan-idaxetestsmetadatasupportlimitationsspanaxe-tests-metadata-support-limitations"></a><span id="AXE_Tests_Metadata_Support_Limitations"></span><span id="axe_tests_metadata_support_limitations"></span><span id="AXE_TESTS_METADATA_SUPPORT_LIMITATIONS"></span>斧头磨快测试元数据支持限制
+## <a name="axe-tests-metadata-support-limitations"></a>AXE 测试元数据支持限制
 
+>[!NOTE]
+>并非所有 TAEF 标准测试元数据都可与 TAEF AXE 测试一起使用。
 
-注意：使用 TAEF 斧头磨快测试，可以使用不是所有 TAEF 标准测试元数据。
+- 旨在修改执行进程的环境（例如 **ActivationContext** 和 **ThreadingModel**）的所有元数据不能用于 AXE 测试。 AXE 不使用 TAEF 的进程来执行测试，而是创建一个新的进程，在该进程中，它会运行 AXE 测试文件指定的可执行程序， (AXE 评估清单) 。 由于同样的原因，数据驱动的 TAEF 测试 (数据 **源** 属性) 无法与 AXE TAEF 测试一起使用。
+- 同样，由于 TAEF AXE 测试文件只能封装一个测试，因此，修改与其他测试（如 **ExecutionGroup**）相关的测试行为的 TAEF 元数据也将不起作用。
+- 由于 AXE 的体系结构，AXE 只能运行提升的进程。 因此，正如你在上面的 TAEF AXE test "属性中看到的那样，每个 TAEF AXE 测试都具有已应用的 **属性 \[ RunAs \] =** 。
 
--   修改执行的环境中的过程，如旨在所有元数据**ActivationContext**并**ThreadingModel**，不会使用斧头磨快测试。 斧头磨快不使用 TAEF 的过程来执行测试，但创建一个新的进程在其中运行指定的可执行程序斧头磨快测试文件 （斧头磨快评估清单）。 出于相同原因，数据驱动 TAEF 测试 (**数据源**属性) 并不适用于斧头磨快 TAEF 测试或者。
--   类似地，因为 TAEF 斧头磨快测试文件可以封装仅一个测试，TAEF 元数据的修改与其他测试，测试的行为如**ExecutionGroup**，也不会工作。
--   由于斧头磨快体系结构，斧头磨快只能运行提升的进程。 因此，正如您看到从上述 TAEF 斧头磨快测试属性，每个 TAEF 斧头磨快测试都有**属性\[RunAs\] = 提升**应用。
+## <a name="axe-test-file-with-runtime-parameters"></a>包含运行时参数的 AXE 测试文件
 
-## <a name="span-idaxetestfilewithruntimeparametersspanspan-idaxetestfilewithruntimeparametersspanspan-idaxetestfilewithruntimeparametersspanaxe-test-file-with-runtime-parameters"></a><span id="AXE_Test_File_with_Runtime_Parameters"></span><span id="axe_test_file_with_runtime_parameters"></span><span id="AXE_TEST_FILE_WITH_RUNTIME_PARAMETERS"></span>使用运行时参数斧头磨快测试文件
+TAEF AXE 测试还支持运行时参数。 若要将 TAEF 的运行时参数用于 AXE 测试，需要在 AXE 测试文件中定义要传递到可执行程序的参数名称。
 
+它超出了本文档的范围，描述所有详细信息中所有可能的 AXE 清单参数功能。 有关此信息，请参阅 AXE 评估文档。 本文档将仅涵盖最常见和有用的参数应用程序。
 
-TAEF 斧头磨快测试还支持运行时参数。 若要使用斧头磨快测试 TAEF 的运行时参数，需要斧头磨快测试文件中定义要传递给可执行程序的参数名称。
-
-它不在本文档描述的所有可能的斧头磨快清单参数功能中的所有详细信息的范围。 有关该信息，请参阅斧头磨快评估文档。 本文档仅涵盖最常见和有用参数应用程序。
-
-下面的示例演示一个更复杂的斧头磨快评估清单。
+下面的示例演示一个更复杂的 AXE 评估清单。
 
 ```cpp
 1<?xml version="1.0" encoding="utf-8"?>
@@ -298,19 +292,19 @@ TAEF 斧头磨快测试还支持运行时参数。 若要使用斧头磨快测�
 71</AxeAssessmentManifest>
 ```
 
-**行 25 62**是描述由 TAEF 和斧头磨快用于将数据传递到评估可执行文件的参数的参数定义。
+**行 25-62** 是一些参数定义，用于描述 TAEF 和 AXE 用于将数据传递到评估可执行文件的参数。
 
-最简单的参数定义是在**行 26 36**。 它包含一种必要**说明**正是与相同的部分**说明**上文所述的清单的部分。 然后，请参阅**类型**定义的参数数据类型的标记。 （请参阅所有受支持的数据类型斧头磨快评估文档）。
+最简单的参数定义位于 **26-36 行**。 它包含与清单的 "**描述**" 部分完全相同的必需**说明**部分，如上所述。 然后，会看到定义参数数据类型的 **类型** 标记。  (请参阅 AXE 评估文档以了解所有支持的数据类型。 ) 
 
-可选**CommandLineFormat**部分介绍如何评估命令行设置评估参数的格式。 此 XML 节点必须包含有效的.NET 格式设置字符串的非空字符串。 评估参数值将传递给格式化程序的唯一对象。 这意味着在格式设置字符串必须包含一个且只有一个复合格式设置与索引零开始的项。 下面是一些示例:-输入{0}，/affinity:0 x {0，X}，或-输入文件 ="{0}"。
+可选的 **CommandLineFormat** 部分介绍了如何为评估命令行设置评估参数的格式。 此 XML 节点必须包含一个为有效 .NET 格式字符串的非空字符串。 评估参数值将是传递到格式化程序的唯一对象。 这意味着，格式字符串必须包含一个且只能包含一个索引为零的复合格式项。 一些示例包括：-input {0} 、/affinity： 0x {0，X} 或-InputFile = " {0} "。
 
-下一个参数定义上**行 37 48**和参数是必需的。 在上一个参数从其定义中的唯一区别是一个可选**所需**标记。 此标记指示斧头磨快需要让用户在斧头磨快测试执行过程中传递此参数。 如果省略此参数，然后参数的数据类型的默认值将用作 （例如，int 类型的零、 空字符串的字符串，等等）。
+下一个参数在 **行 37-48** 上定义，并且是必需的参数。 它在上一个参数中的定义的唯一区别是可选的 **必需** 标记。 此标记指示 AXE 要求用户在 AXE 测试执行期间传递此参数。 如果省略此参数，则将使用该参数的数据类型的默认值 (例如，INT 表示 INT，空字符串表示字符串，等等) 。
 
-最后，在示例中的最后一个参数指定一个可选**DefaultValue**标记，它描述参数的默认值。 如果此节点为空，参数的数据类型的默认值将用作默认值。 上面的示例使用"%assessmentresultspath%"，这是由斧头磨快评估开始执行时设置的环境变量。 适用于所有受支持斧头磨快环境变量，请参阅斧头磨快评估文档。
+最后，该示例中的最后一个参数指定一个可选的 **DefaultValue** 标记，该标记描述参数的默认值。 如果此节点为空，则将参数的数据类型的默认值用作默认值。 上面的示例使用 "% AssessmentResultsPath%"，这是一个在评估开始执行时由 AXE 设置的环境变量。 同样，请参阅 AXE 评估文档以了解所有支持的 AXE 环境变量。
 
-传递到其定义的相反顺序的可执行文件的参数-在文件中定义的参数上一次传递可执行文件的第一次。
+参数按定义的反向顺序传递到可执行文件-在文件中定义的参数将首先传递到可执行文件。
 
-执行 TAEF 斧头磨快[运行时参数](runtime-parameters.md)为使用运行时参数的任何其他 TAEF 测试的测试 (通过使用 **/p**命令行选项):
+通过使用 **/p**命令行选项) ，你可以将 TAEF AXE[运行时参数](runtime-parameters.md)测试作为任何其他使用运行时 (参数的 TAEF 测试执行：
 
 ``` syntax
 te AXE.ExplicitRuntimeParameters.Examples.manifest /p:SimpleParameter=Test1 /p:RequiredParameterWithoutDefaultValue=10
@@ -333,23 +327,12 @@ EndGroup: ExplicitRuntimeParameters::ExplicitRuntimeParameters [Passed]
 
 ```
 
-## <a name="span-idaxetestcrossmachineexecutionspanspan-idaxetestcrossmachineexecutionspanspan-idaxetestcrossmachineexecutionspanaxe-test-cross-machine-execution"></a><span id="AXE_Test_Cross_Machine_Execution"></span><span id="axe_test_cross_machine_execution"></span><span id="AXE_TEST_CROSS_MACHINE_EXECUTION"></span>跨计算机执行斧头磨快测试
+## <a name="axe-test-cross-machine-execution"></a>AXE 测试跨计算机执行
 
+[对于跨计算机执行方案](cross-machine-execution.md)，TAEF 将尝试确定需要部署的测试依赖项，以及测试是否成功执行。 对于 AXE 测试文件，TAEF 会将位于同一文件夹中的所有文件都与 TAEF AXE 测试一起复制到远程计算机上执行。
 
-[对于跨计算机执行方案](cross-machine-execution.md)，TAEF 尝试确定需要与成功的测试执行的测试一起部署的测试依赖项。 斧头磨快测试文件中，对于 TAEF 将复制与 TAEF 斧头磨快测试到远程计算机上执行的相同文件夹中的所有文件。
+当前不支持跨计算机执行 AXE 测试到 ARM 平台。
 
-跨计算机执行到 ARM 斧头磨快测试平台是当前不支持。
+## <a name="taef-axe-support-dependencies"></a>TAEF AXE 支持依赖项
 
-## <a name="span-idtaefaxesupportdependenciesspanspan-idtaefaxesupportdependenciesspanspan-idtaefaxesupportdependenciesspantaef-axe-support-dependencies"></a><span id="TAEF_AXE_Support_Dependencies"></span><span id="taef_axe_support_dependencies"></span><span id="TAEF_AXE_SUPPORT_DEPENDENCIES"></span>TAEF 斧头磨快支持依赖项
-
-
-斧头磨快未随 Windows。 若要能够执行斧头磨快测试，需要复制**axecore.dll**并**Microsoft.Assessment.dll** TAEF 或 TAEF 斧头磨快测试目录。
-
-
-
-
-
-
-
-
-
+AXE 不随 Windows 提供。 若要执行 AXE 测试，需要将 **axecore.dll** 和 **Microsoft.Assessment.dll** 复制到 TAEF 或 TAEF AXE 测试目录。

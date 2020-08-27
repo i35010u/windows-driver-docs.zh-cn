@@ -12,20 +12,20 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2909e571302eff8b01f2ddd3399415e476b67f59
-ms.sourcegitcommit: 1b77487f8ef5dcf8219df05524e322c27f9dcad8
+ms.openlocfilehash: 6ae2c4d58cacdace882b6948232461ac192213f7
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83707708"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902485"
 ---
 # <a name="bcdedit-dbgsettings"></a>BCDEdit /dbgsettings
 
 
-**/Dbgsettings**选项设置或显示计算机的当前全局调试器设置。 若要启用或禁用内核调试器，请使用[**BCDEdit/debug**](bcdedit--debug.md)选项。
+**/Dbgsettings**选项设置或显示计算机的当前全局调试器设置。 若要启用或禁用内核调试器，请使用 [**BCDEdit/debug**](bcdedit--debug.md) 选项。
 
 > [!NOTE]
-> 设置 BCDEdit 选项之前，你可能需要在计算机上禁用或暂停 BitLocker 和安全启动。
+> 设置 BCDEdit 选项之前，可能需要禁用或暂停计算机上的 BitLocker 和安全启动。
 
 
 ``` syntax
@@ -45,33 +45,33 @@ bcdedit /dbgsettings 1394 [CHANNEL:channel] [/start startpolicy] [/noumex] NOTE:
 
 ## <a name="net"></a>NET
 
-指定目标计算机和主机将使用以太网网络连接进行调试。 使用此选项时，还必须包含**HOSTIP**和**PORT**参数。 目标计算机必须具有 Windows 调试工具支持的网络适配器。 
+指定目标计算机和主机将使用以太网网络连接进行调试。 使用此选项时，还必须包含 **HOSTIP** 和 **PORT** 参数。 目标计算机必须具有 Windows 调试工具支持的网络适配器。 
 
 **HOSTIP：**<em>ip</em>   
 对于网络调试，指定主机调试器的 IP 地址。
 
 **键：**<em>键</em>   
-对于网络调试，指定用于对连接进行加密的密钥。 \[\] \[ 仅允许0-9 和 a-z \] 。 如果已指定**newkey**参数，请不要指定此参数。
+对于网络调试，指定用于对连接进行加密的密钥。 只允许 0-9 和 a-z 中的字符\[\]\[\]。 如果已指定 **newkey** 参数，请不要指定此参数。
 
 **端口：**<em>端口</em>  
-对于 "网络调试"，指定要在主机调试器上与之通信的端口。 应为49152或更高版本。
+对于 "网络调试"，指定要在主机调试器上与之通信的端口。 必须是 49152 或以上。
 
 **newkey**   
-对于网络调试，指定应为连接生成新的加密密钥。 如果已指定**密钥**参数，请不要指定此参数。
+对于网络调试，指定应为连接生成新的加密密钥。 如果已指定 **密钥** 参数，请不要指定此参数。
 
 **nodhcp**
 
-设置*nodhcp*可防止使用 DHCP 获取目标 IP 地址。 很少需要此选项，因为较小的路由器为 DHCP 提供了支持。 仅当你知道网络上没有 DHCP 服务器时，才应使用*nodhcp*选项。  在大多数情况下，如果未设置此选项，并且启用了 DHCP，则 KDNET 传输的效果最佳。
+设置 *nodhcp* 可防止使用 DHCP 获取目标 IP 地址。 很少需要此选项，因为较小的路由器为 DHCP 提供了支持。 仅当你知道网络上没有 DHCP 服务器时，才应使用 *nodhcp* 选项。  在大多数情况下，如果未设置此选项，并且启用了 DHCP，则 KDNET 传输的效果最佳。
 
-**busparams** =当存在多个控制器时，" *Bus* " 指定目标控制器。 *总线*指定总线号，*设备*指定设备号，*函数*指定功能号。  
+**busparams** =*Bus. Function*指定目标控制器。 Bus 指定总线号，Device 指定设备号，Function 指定功能号  。  
 
-若要指定总线参数，请打开设备管理器，然后找到要用于调试的网络适配器。 打开网络适配器的属性页，并记下 "总线号"、"设备号" 和 "功能编号"。 在提升的命令提示符窗口中，输入以下命令，其中 b、d 和 f 是以十进制格式表示的总线、设备和函数编号：
+若要指定总线参数，请打开设备管理器，然后找到要用于调试的网络适配器。 打开网络适配器的属性页，并记下 "总线号"、"设备号" 和 "功能编号"。 这些值将显示在 "*常规*" 选项卡上的 "*位置*" 下设备管理器。在提升的命令提示符窗口中，输入以下命令，其中 b、d 和 f 是以十进制格式表示的总线、设备和函数编号：
 
 ```console
 bcdedit /set "{dbgsettings}" busparams b.d.f
 ```
 
-如果要手动配置调试器连接，则必须指定总线参数。 有关详细信息，请参阅手动[设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)，并[通过 USB 3.0 电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-usb-3-0-debug-cable-connection)。
+如果要手动配置调试器连接，则必须指定总线参数。 有关详细信息，请参阅手动 [设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection) ，并 [通过 USB 3.0 电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-usb-3-0-debug-cable-connection)。
 
 ### <a name="examples"></a>示例
 
@@ -89,9 +89,9 @@ bcdedit /dbgsettings NET HOSTIPV6:2001:48:d8:2f:5e:c0:42:28:4f5b PORT:50000
 
  > [!IMPORTANT]
 > 手动设置网络调试是一种复杂且容易出错的过程。
-> 若要自动设置网络调试，请参阅[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。 **强烈**建议所有调试器用户使用 KDNET 实用程序。
+> 若要自动设置网络调试，请参阅 [自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。 **强烈**建议所有调试器用户使用 KDNET 实用程序。
 
-有关手动设置的详细信息，请参阅[通过网络电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)。
+有关手动设置的详细信息，请参阅 [通过网络电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection)。
 
 
 ## <a name="local"></a>LOCAL
@@ -108,17 +108,17 @@ bcdedit /dbgsettings LOCAL
 
 本地选项在 Windows 8.0 和 Windows Server 2012 及更高版本中可用。
 
-有关手动设置本地内核模式调试的信息，请参阅[手动设置单台计算机的本地内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-local-kernel-debugging-of-a-single-computer-manually)。
+有关手动设置本地内核模式调试的信息，请参阅 [手动设置单台计算机的本地内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-local-kernel-debugging-of-a-single-computer-manually)。
 
 ## <a name="serial"></a>串行
 
-指定目标计算机和主机将使用串行连接进行调试。 使用此选项时，应指定**DEBUGPORT**和**波特率**参数。
+指定目标计算机和主机将使用串行连接进行调试。 使用此选项时，应指定 **DEBUGPORT** 和 **波特率** 参数。
 
 **波特率：**<em>波特</em>   
-指定要使用的波特率。 该参数为可选参数。 *波特*的有效值为9600、19200、38400、57600和115200。 默认波特速率为 115200 bps。
+指定要使用的波特率。 此参数是可选的。 *波特*的有效值为9600、19200、38400、57600和115200。 默认波特速率为 115200 bps。
 
 **DEBUGPORT：**<em>端口</em>   
- 指定要用作调试端口的串行端口。 这是一个可选设置。 默认端口为**1** （COM 1）。
+ 指定要用作调试端口的串行端口。 这是一个可选设置。 默认端口为 **1** (COM 1) 。
 
 ### <a name="example"></a>示例
 
@@ -127,16 +127,16 @@ bcdedit /dbgsettings LOCAL
 ``` console
 bcdedit /dbgsettings serial debugport:1 baudrate:115200
 ```
-有关详细信息，请参阅[通过串行电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-null-modem-cable-connection)。
+有关详细信息，请参阅 [通过串行电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-null-modem-cable-connection)。
 
 ## <a name="usb"></a>USB   
-指定目标计算机和主机将使用 USB 2.0 或 USB 3.0 连接进行调试。 使用此选项时，还必须包含**TARGETNAME**参数。 
+指定目标计算机和主机将使用 USB 2.0 或 USB 3.0 连接进行调试。 使用此选项时，还必须包含 **TARGETNAME** 参数。 
 
 **Targetname：** <em>targetname</em>   
 指定要用于目标名称的字符串值。 请注意，TargetName 不必是目标计算机的正式名称;它可以是您创建的任何字符串，只要它满足以下限制：
 
 - 字符串不得以大写或小写的任意组合包含在 TargetName 中任意位置的 "debug"。 例如，如果在 targetname 中的任何位置使用 "调试" 或 "调试"，则调试将不会正常工作。
-- 字符串中的唯一字符是连字符（-）、下划线（_）、0到9的数字以及从 A 到 Z 的字母（大写或小写）。
+- 字符串中的唯一字符是连字符 (-) 、下划线 (_) 、数字0到9以及字母 A 到 Z (大写或小写。
 - 字符串的最大长度为24个字符。
 
 
@@ -158,20 +158,20 @@ bcdedit /dbgsettings usb targetname:myTarget
 ## <a name="1394"></a>1394   
 
 > [!IMPORTANT]
-> 1394传输可用于 Windows 10 版本1607及更早版本。 它在更高版本的 Windows 中不可用。 应使用以太网将项目转换为其他传输，如 KDNET。 有关该传输的详细信息，请参阅[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
+> 1394 传输可用于 Windows 10 版本 1607 及更低版本。 它在 Windows 的更高版本中不可用。 应将项目转换为其他传输，例如使用以太网的 KDNET。 有关该传输的详细信息，请参阅[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
 >
 
-指定目标计算机和主机将使用 IEEE 1394 （FireWire）连接进行调试。 使用此选项时，还可以包含**通道**参数。 
+指定目标计算机和主机将使用 IEEE 1394 (火线) 连接进行调试。 使用此选项时，还可以包含 **通道** 参数。 
 
 **通道：**<em>通道</em>   
-（仅在连接类型为**1394**时使用。）指定要使用的1394通道。 *通道*的值必须是0到62（含）之间的十进制整数，并且必须与主计算机使用的通道号匹配。 此参数中指定的通道不依赖于在适配器上选择的物理1394端口。 *通道*的默认值为0。
+仅当连接类型为 **1394**时才使用 (。 ) 指定要使用的1394通道。 *通道*的值必须是0到62（含）之间的十进制整数，并且必须与主计算机使用的通道号匹配。 此参数中指定的通道不依赖于在适配器上选择的物理1394端口。 *通道*的默认值为0。
 
-有关详细信息，请参阅[通过1394电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-1394-cable-connection)。
+有关详细信息，请参阅 [通过1394电缆手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-1394-cable-connection)。
 
 ## <a name="general-debugger-settings"></a>常规调试器设置
 
 **/start** <em>startpolicy</em>   
-此选项指定调试器启动策略。 下表显示了*startpolicy*的选项。
+此选项指定调试器启动策略。 下表显示了 *startpolicy*的选项。
 
 |选项|说明|
 |--- |--- |
@@ -183,27 +183,27 @@ bcdedit /dbgsettings usb targetname:myTarget
 如果未指定启动策略，则默认为 "活动"。
 
 **/noumex**   
-指定内核调试器忽略用户模式异常。 默认情况下，内核调试器中断某些用户模式异常，如状态 \_ 断点和 \_ 单 \_ 步执行状态。 仅当没有用户模式调试器附加到进程时， **/noumex**参数才有效。
+指定内核调试器忽略用户模式异常。 默认情况下，内核调试器中断某些用户模式异常，如状态 \_ 断点和 \_ 单 \_ 步执行状态。 仅当没有用户模式调试器附加到进程时， **/noumex** 参数才有效。
 
 ### <a name="comments"></a>注释
 
-**/Dbgsettings**选项配置调试设置，但不启用调试。 必须使用 **/debug**选项启用特定启动项的调试。 如果没有为特定启动项指定调试设置，则使用默认的调试设置。 
+**/Dbgsettings**选项配置调试设置，但不启用调试。 必须使用 **/debug** 选项启用特定启动项的调试。 如果没有为特定启动项指定调试设置，则使用默认的调试设置。 
 
 下表显示了 dbgsettings 的默认值。
 
 |dbgsetting 参数|默认值|
 |--- |--- |
-|debugtype|本地|
+|debugtype|Local|
 |debugstart|活动|
 |noumex|是|
 
 
-<a name="see-also"></a>另请参阅
+<a name="see-also"></a>请参阅
 --------
 
-有关 Windows 调试工具的信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。 
+有关 Windows 调试工具的信息，请参阅 [Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。 
 
-有关设置和配置内核模式调试会话的信息，请参阅[手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd)和[自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
+有关设置和配置内核模式调试会话的信息，请参阅 [手动设置内核模式调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd) 和 [自动设置 KDNET 网络内核调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)。
 
 
 

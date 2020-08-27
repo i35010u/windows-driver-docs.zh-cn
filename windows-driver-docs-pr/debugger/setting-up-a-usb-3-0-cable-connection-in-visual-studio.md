@@ -4,12 +4,12 @@ description: 你可以使用 Microsoft Visual Studio 通过 USB 3.0 电缆设置
 ms.assetid: F8DD0475-13CE-464A-A491-AEFA962A96DB
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae6733447c388e56abba2f6566657dcfa1423e30
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: f3e2976780120218e4c43e5f02526c9f47d2a766
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252863"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902563"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-usb-30-cable-in-visual-studio"></a>在 Visual Studio 中设置通过 USB 3.0 线缆进行的内核模式调试
 
@@ -77,7 +77,7 @@ ms.locfileid: "88252863"
     -   字符串的最大长度为24个字符。
     -   字符串中的唯一字符是连字符 (-) 、下划线 (\_) 、数字0到9以及字母 A 到 Z (大写或小写。
 
-    如果目标计算机上有多个 USB 主机控制器，请输入**总线参数**值*b*。*d.**f*，其中*b*、 *d*和*f*是要用于在目标计算机上进行调试的 USB 主机控制器的总线、设备和功能号。 总线、设备和函数编号必须采用 decimal 格式 (例如： 48.0.0) 。
+    输入**总线参数**值*b*。*d.**f*，其中*b*、 *d*和*f*是要用于在目标计算机上进行调试的 USB 主机控制器的总线、设备和功能号。 总线、设备和函数编号必须采用 decimal 格式 (例如： 48.0.0) 。 这些值将显示在 "*常规*" 选项卡上的 "*位置*" 下设备管理器。  
 
 4.  配置过程需要几分钟的时间，并且可能会自动重启目标计算机一次或两次。 完成此过程后，选择 " **完成**"。
 
@@ -102,7 +102,7 @@ busparams               48.0.0
 
 验证 *debugtype* 是否为 USB， *targetname* 是否为主机应该上的 Visual Studio 中指定的名称。 可以忽略 *debugport* 和 *波特率*的值;它们不适用于通过 USB 进行调试。
 
-如果在 Visual Studio 中输入了 **总线参数** ，请验证 *busparams* 是否与指定的总线参数匹配。
+验证 *busparams* 是否与指定的总线参数匹配。
 
 如果看不到为 **总线参数**输入的值，请输入以下命令：
 

@@ -3,29 +3,17 @@ title: 文件系统筛选器驱动程序中的内存映射文件
 description: 文件系统筛选器驱动程序中的内存映射文件
 ms.assetid: 0915167a-f8ac-4222-bece-76d7fc8a3823
 keywords:
-- 安全 WDK 文件系统、 内存映射文件
-- 内存映射文件 WDK 的文件系统
+- 安全 WDK 文件系统，内存映射文件
+- 内存映射文件 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cef17d2e49f4664adab20de77d0291a833298f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 066e20156d90aa25289971dbf7a84acb21a9c3c8
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375966"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902536"
 ---
 # <a name="memory-mapped-files-in-a-file-system-filter-driver"></a>文件系统筛选器驱动程序中的内存映射文件
 
-
-## <span id="ddk_memory_mapped_files_in_a_file_system_filter_driver_if"></span><span id="DDK_MEMORY_MAPPED_FILES_IN_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
-
-
-文件系统筛选器驱动程序必须确定的这一事实文件可以进行访问，通过虚拟内存映射文件，而不是通过读取和写入路径。 监视文件中的更改的文件系统筛选器驱动程序将丢失对此类文件的更改。 一般情况下想要使用内存映射 I/O 处理的文件系统筛选器驱动程序必须筛选分页 I/O。 许多方法解决此问题将在 Windows 文件系统开发人员列表中讨论[(NTFSD)](http://www.osronline.com/cf.cfm^PageURL=showlists.cfm^list=NTFSD.htm%253f.htm)由 OSR 承载的新闻组。
-
- 
-
- 
-
-
-
-
+文件系统筛选器驱动程序必须 cognizant，因为可以通过文件的虚拟内存映射来访问文件，而不是通过读取和写入路径访问文件。 文件系统筛选器驱动程序监视文件中的更改将丢失对此类文件的更改。 通常，要处理内存映射 i/o 的文件系统筛选器驱动程序必须筛选分页 i/o。 Minifilters 托管的 [Windows 文件系统和开发人员](https://community.osr.com/) 新闻组中讨论了用于处理此情况的许多技术。

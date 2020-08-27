@@ -10,12 +10,12 @@ keywords:
 - 事件方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a8c4b4d344cd039af04094a890e64bcc3010c0a6
-ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
+ms.openlocfilehash: 3970a1bf517b508bbb8383f74798ef9752bb07d5
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714596"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902421"
 ---
 # <a name="eventing-scenarios"></a>事件方案
 
@@ -30,20 +30,20 @@ ms.locfileid: "88714596"
 |案例|客户端操作|服务器操作|通过失败的条件|
 |----|----|----|----|
 |**4.1**|**事件的订阅和续订。**| | |
-|4.1.1|订阅 SimpleEvent：</br>- **wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"**</br>- **wse： Filter = = http://schemas.example.org/EventingService/SimpleEvent**</br>客户端可以包括类型为 **xs： duration**的过期时间。|发送有效期足以完成步骤4.1.2 的 SubscribeResponse。 过期时间必须是 **xs： duration**类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，并可跳到步骤4.1.2。|
+|4.1.1|订阅 SimpleEvent：</br>- `wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"`</br>- `wse:Filter == http://schemas.example.org/EventingService/SimpleEvent`</br>客户端可以包括类型为 **xs： duration**的过期时间。|发送有效期足以完成步骤4.1.2 的 SubscribeResponse。 过期时间必须是 **xs： duration**类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，并可跳到步骤4.1.2。|
 |4.1.2|无|激发 SimpleEvent。|在客户端接收到事件。|
 |4.1.3|将续订发送到 SimpleEvent。</br>当客户端发送事件的续订时，他们可以选择手动启动续订，或在原始 SubscribeResponse 消息中指定的续订期的一半时间已过时自动发送续订。|发送有效期长度足以完成步骤4.1.4 的 RenewResponse。 过期时间必须是 **xs： duration**类型。|响应会在客户端接收，并可跳到步骤4.1.4。|
 |4.1.4|无|激发 SimpleEvent。|在客户端接收到事件。|
 |4.1.5|将取消订阅发送到 SimpleEvent 的 TestDevice。|发送 UnsubscribeResponse。|客户端接收响应，可以前往步骤4.1.6。|
 |4.1.6|无|激发 SimpleEvent。|不会在客户端收到事件。|
 |**4.2**|**具有 expiries 的订阅**| | |
-|4.2.1|使用过期订阅订阅 SimpleEvent：</br>- **wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"**</br>- **wse： Filter = = http://schemas.example.org/EventingService/SimpleEvent**</br>-过期持续时间必须足够长，才能完成步骤4.2.2。 过期时间必须为 **xs： duration**。</br>wsdbit \_ 客户端使用60分钟作为持续时间。|向发送 SubscribeResponse：</br>-在订阅请求中发送的过期时间将在 SubscribeResponse 中返回。|客户端接收具有正确过期的响应，并可执行步骤4.2.2。|
+|4.2.1|使用过期订阅订阅 SimpleEvent：</br>- `wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"`</br>- `wse:Filter == http://schemas.example.org/EventingService/SimpleEvent`</br>-过期持续时间必须足够长，才能完成步骤4.2.2。 过期时间必须为 **xs： duration**。</br>wsdbit \_ 客户端使用60分钟作为持续时间。|向发送 SubscribeResponse：</br>-在订阅请求中发送的过期时间将在 SubscribeResponse 中返回。|客户端接收具有正确过期的响应，并可执行步骤4.2.2。|
 |4.2.2|无|激发 SimpleEvent。|客户端接收到事件。|
 |4.2.3|对于其 SimpleEvent 订阅，将续订，其中包含过期时间到 TestDevice。 过期持续时间必须足够长，才能完成步骤4.2.4。 过期时间必须为 **xs： duration**。</br>当客户端发送事件的续订时，他们可以选择手动启动续订，或在原始 SubscribeResponse 消息中指定的续订期的一半时间已过时自动发送续订。|向发送 RenewResponse：</br>-在 RenewResponse 中返回续订请求中发送的过期时间。|客户端接收具有正确过期的响应，并可执行步骤4.2.4。|
 |4.2.4|无|激发 SimpleEvent。|客户端接收到事件。|
 |**4.3**|**多个事件源的订阅、续订和 expiries**| | |
-|4.3.1|订阅 SimpleEvent</br>- **wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"**</br>- **wse： Filter = = http://schemas.example.org/EventingService/SimpleEvent**</br>客户端可以选择包括 " **xs： duration**" 类型的过期时间。|发送有效期长度足以完成步骤4.3.3 的 SubscribeResponse。 过期时间必须是 xs： duration 类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，可以执行步骤4.3.3。|
-|4.3.2|订阅 SimpleEvent：</br>- **wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"**</br>- **wse： Filter = = http://schemas.example.org/EventingService/IntegerEvent**</br>客户端可以选择包括 " **xs： duration**" 类型的过期时间。|发送有效期长度足以完成步骤4.3.4 的 SubscribeResponse。 过期时间必须是 **xs： duration**类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，可以执行步骤4.3.4。|
+|4.3.1|订阅 SimpleEvent</br>- `wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"`</br>- `wse:Filter == http://schemas.example.org/EventingService/SimpleEvent`</br>客户端可以选择包括 " **xs： duration**" 类型的过期时间。|发送有效期长度足以完成步骤4.3.3 的 SubscribeResponse。 过期时间必须是 xs： duration 类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，可以执行步骤4.3.3。|
+|4.3.2|订阅 SimpleEvent：</br>- `wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"`</br>- `wse:Filter == http://schemas.example.org/EventingService/IntegerEvent`</br>客户端可以选择包括 " **xs： duration**" 类型的过期时间。|发送有效期长度足以完成步骤4.3.4 的 SubscribeResponse。 过期时间必须是 **xs： duration**类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，可以执行步骤4.3.4。|
 |4.3.3|无|激发 SimpleEvent。|客户端接收到事件。|
 |4.3.4|无|激发 IntegerEvent。|在客户端接收事件，并显示正确的整数。|
 |4.3.5|将续订发送到 IntegerEvent。</br>当客户端发送事件的续订时，他们可以选择手动启动续订，或在原始 SubscribeResponse 消息中指定的续订期的一半时间已过时自动发送续订。|发送有效期长度足以完成步骤4.3.8 的 RenewResponse。 过期时间必须是 **xs： duration**类型。|在客户端接收响应。|
@@ -53,4 +53,4 @@ ms.locfileid: "88714596"
 |4.3.9|将取消订阅发送到 IntegerEvent 的 TestDevice。|发送 UnsubscribeResponse。|客户端接收响应，可以前往步骤4.3.10。|
 |4.3.10|无|激发 IntegerEvent。|不会在客户端收到事件。|
 |**4.4**|**订阅失败和故障**| | |
-|4.4.1|订阅 FaultingEvent：</br>- **wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"**</br>- **wse： Filter = = http://schemas.example.org/EventingService/FaultingEvent**|由于不支持此事件，因此必须发送 **wsdp： FilterActionNotSupported** SOAP 错误。|在客户端观察到订阅失败。|
+|4.4.1|订阅 FaultingEvent：</br>- `wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"`</br>- `wse:Filter == http://schemas.example.org/EventingService/FaultingEvent`|由于不支持此事件，因此必须发送 **wsdp： FilterActionNotSupported** SOAP 错误。|在客户端观察到订阅失败。|

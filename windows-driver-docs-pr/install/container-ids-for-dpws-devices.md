@@ -4,23 +4,21 @@ description: DPWS 设备的容器 ID
 ms.assetid: b613a25e-bedf-481c-8c86-9486af01b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9694d53ac64ea133009fb4c3f1aa4b88b50fb785
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d91b04536745d444374cefb865fe21a7fa3f3f30
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346805"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902397"
 ---
 # <a name="container-ids-for-dpws-devices"></a>DPWS 设备的容器 ID
 
+从 Windows 7 开始，支持 PnP 扩展 ( (DPWS) 的 pnp) 和设备配置文件的设备可以通过在设备元数据文档中包括 **ContainerId** XML 元素来指定容器 ID。 有关 DPWS 和 DPWS 设备元数据文档的详细信息，请参阅 [DPWS 规范。](https://go.microsoft.com/fwlink/p/?linkid=142400)
 
-从 Windows 7，设备开始，支持的即插即用扩展 (PNP-X) 和设备配置文件的 Web 服务 (DPWS) 可以通过包含指定的容器 ID **ContainerId**设备元数据文档中的 XML 元素。 有关 DPWS 和 DPWS 设备元数据文档的详细信息，请参阅[DPWS 规范。](https://go.microsoft.com/fwlink/p/?linkid=142400)
+>[!NOTE]
+>从 Windows 10 开始，系统将忽略设备提供的容器 ID，而是自行生成。 它通过使用设备的终结点引用地址 (EPR) 中的 GUID 或设备的 EPR)  (的 SHA-1 哈希来实现此功能。
 
-**请注意**  从 Windows 10 开始，系统将忽略由设备提供的容器 ID，而是会生成一个本身。 这是通过使用设备的终结点引用地址 (EPR) 或设备的 EPR （如果不是一个 GUID） 的 sha-1 哈希中的 GUID。
-
- 
-
-**ContainerId** XML 元素声明，如下所示：
+**ContainerId** XML 元素声明如下：
 
 ```cpp
 <df:ContainerId xmlns:df="">
@@ -28,9 +26,9 @@ ms.locfileid: "63346805"
 </df:ContainerId>
 ```
 
-**ContainerId** XML 元素类型是一个字符串，其值为全局唯一标识符 (*GUID*) 格式。 此字符串的格式设置为 *{xxxxxxxx xxxx-xxxx-xxxx-在左右加上}*。
+**ContainerId** XML 元素类型是一个字符串，其值是全局唯一标识符 (*GUID*) 格式设置。 此字符串的格式为 *{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}*。
 
-以下是一种**ContainerId** XML 元素。
+下面是一个 **ContainerId** XML 元素的示例。
 
 ```cpp
 <df:ContainerId xmlns:df="">
@@ -38,11 +36,10 @@ ms.locfileid: "63346805"
 </df:ContainerId>
 ```
 
-&lt;ContainerId&gt; XML 元素必须为处于&lt;ThisDevice&gt;设备元数据交换简单对象访问协议 (SOAP) 消息部分。 下面的示例显示了正确的位置&lt;ContainerId&gt;元数据交换消息中的元素。
+&lt; &gt; 需要在 &lt; &gt; 设备元数据交换简单对象访问协议 (SOAP) 消息的 ThisDevice 部分中输入 ContainerId XML 元素。 下面的示例显示了 &lt; &gt; 元数据交换消息中的 ContainerId 元素的正确位置。
 
-**请注意**  这不是完整的 DPWS 元数据交换文档。 DPWS 有关的详细信息，请参阅[DPWS 规范。](https://go.microsoft.com/fwlink/p/?linkid=142400)
-
- 
+>[!NOTE]
+>这不是完整的 DPWS 元数据交换文档。 有关 DPWS 的详细信息，请参阅 [DPWS 规范。](https://go.microsoft.com/fwlink/p/?linkid=142400)
 
 ```cpp
 <soap:Envelope
@@ -55,7 +52,7 @@ ms.locfileid: "63346805"
 
     <soap:Header>
         <!-- Place SOAP header information here.-->
-    </soap:Header> 
+    </soap:Header>
 
     <soap:Body>
         <wsx:Metadata>
@@ -76,13 +73,4 @@ ms.locfileid: "63346805"
 </soap:Envelope>
 ```
 
-如果 DPWS 设备元数据文档不包括**ContainerId** XML 元素，插 (PnP) 管理器使用的设备的终结点引用地址的值作为容器 id。
-
- 
-
- 
-
-
-
-
-
+如果 DPWS 设备元数据文档不包含 **ContainerId** XML 元素，则即插即用 (PnP) 管理器将设备终结点引用地址的值用作容器 ID。

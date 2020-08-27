@@ -4,12 +4,12 @@ description: ServiceInfo XML 架构定义
 ms.assetid: c5d6aa78-b494-4931-bdfc-6acaab5c570f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd9077bbf1185fdab6e27b51e9a66908e4a5c52
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 033f12c8f85e0c7c36773713fec787ff86b71007
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323721"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902576"
 ---
 # <a name="serviceinfo-xml-schema-definition"></a>ServiceInfo XML 架构定义
 
@@ -113,12 +113,3 @@ http://schemas.microsoft.com/windows/2010/05/DeviceMetadata/ServiceInfo
 
 </xs:schema>
 ```
-
- 
-
- 
-
-
-
-
-

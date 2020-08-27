@@ -1,55 +1,56 @@
 ---
 title: 指示器实现
-description: 本主题介绍指示器实现。
+description: 本主题介绍指标实现。
 ms.assetid: 60BCE8C7-416E-4D5B-9B32-9B398CEA6A8A
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8c8774c64672b171c9e8e1825a0ce60ebdb1c5d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 21e2cb936c3dc6feea73d50da32beadcb3f44583
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323363"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902543"
 ---
 # <a name="indicator-implementation"></a>指示器实现
 
-本主题介绍指示器实现。
+本主题介绍指标实现。
 
-因为传感器位置和相关的逻辑因系统而异，务必要更新的模式时系统执行所有相关的 power 过渡，如下所示：
+由于传感器布局和相关逻辑是特定于系统的，因此，在系统执行任何相关的电源转换（如下所示）时，请务必更新模式：
 
-- 来自连接待机
-- 带即将进入睡眠或休眠状态
+- 已连接待机
+- 进入睡眠或休眠状态
 - 启动后
 
-这强制实施正确的状态，并确保刷新到用户界面层。
+这会强制使用正确的状态，并确保刷新用户界面层。
 
-## <a name="laptopslate-mode---implementation-for-convertibles"></a>便携式计算机/盖板模式-实现双用型
+## <a name="laptopslate-mode---implementation-for-convertibles"></a>笔记本电脑/石板模式-改装的实现
 
-*图 1 可转换为实现选项*显示转换的系统上实现 GPIO 指示器的选项。
+*图1可转换的实现选项* 显示在转换的系统上实现 GPIO 指示器的选项。
 
-![转换实现选项](images/implementationconvertibles.jpg)
+![可转换的实现选项](images/implementationconvertibles.jpg)
 
-图 1 转换实现选项
+图1可转换实现选项
 
-## <a name="laptopslate-mode---implementation-for-laptops"></a>便携式计算机/盖板模式-实现的便携式计算机
+## <a name="laptopslate-mode---implementation-for-laptops"></a>笔记本电脑/石板模式-便携式计算机的实现
 
-*图 2 便携式计算机实现选项*显示了用于实现 GPIO 指示器的便携式计算机系统上的选项。
+*图2笔记本电脑实现选项* 显示用于在便携式系统上实施 GPIO 指示器的选项。
 
-![便携式计算机实现选项](images/implementationlaptops.jpg)
+![笔记本电脑实现选项](images/implementationlaptops.jpg)
 
-图 2 便携式计算机实现选项
+图2笔记本电脑实现选项
 
-ConvertibleSlateMode[无人参与 Windows 安装程序](https://go.microsoft.com/fwlink/p/?linkid=276788)设置允许 Oem 到便携式计算机模式下的静态标志闭合包装到作为映像自定义而无需实现注入机制。
+使用 ConvertibleSlateMode [无人参与 Windows 安装程序](https://go.microsoft.com/fwlink/p/?linkid=276788) 设置，oem 可以在不实现注入机制的情况下将 clamshells 以静态方式标记为作为图像自定义的便携式计算机模式。
 
-此功能面向具有永久附加的键盘 （它用户可以在任何时候使用） 的触摸屏系统。 下面已没有 GPIO 指示器的触摸屏蛤所提供的示例 / 注入可用。
+此功能面向具有永久连接键盘 (的触摸屏系统，用户可以随时使用) 。 此处提供的示例是没有可用的 GPIO 指示器/注入的触摸屏 clamshell。
 
-此设置必须应用专用的配置阶段的一部分，并且可以应用于所有 Windows 客户端操作系统。 请参阅[标识无人参与设置传递](http://sharepoint/sites/cba/Wiki Pages/Identifying Unattend Setting Passes.aspx)有关详细信息。
+此设置必须作为专用配置阶段的一部分应用，并且可以应用于所有 Windows 客户端操作系统。 有关详细信息，请参阅 [确定无人参与设置传递](https://sharepoint/sites/cba/Wiki Pages/Identifying Unattend Setting Passes.aspx) 。
 
-代码示例，请参阅。
+有关代码示例，请参阅。
 
 > [!NOTE]
-> - GPIO 按钮驱动程序加载重写中引入了无人参与设置的值。
-> - 可与 Windows 8.1 系统注入机制。
-> - ConvertibleSlateMode 无人参与设置不影响 Windows 8 到 Windows 8.1 升级方案。
-> - 如果 ConvertibleSlateMode 无人参与设置不存在和未实现 GPIO 指示器，系统默认盖板模式。
+>
+> - 加载 GPIO 按钮驱动程序会替代通过无人参与设置引入的值。
+> - 注入机制可与 Windows 8.1 系统一起使用。
+> - ConvertibleSlateMode 无人参与设置不影响 Windows 8 Windows 8.1 升级方案。
+> - 如果 ConvertibleSlateMode 无人参与设置不存在并且未实现 GPIO 指示器，则系统默认为石板模式。
 > - ConvertibleSlateMode 无人参与设置不适用于 Windows Server 操作系统。

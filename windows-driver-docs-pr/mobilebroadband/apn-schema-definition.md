@@ -4,16 +4,17 @@ description: APN 架构定义
 ms.assetid: ae552bb5-702e-443f-8a97-c143859b127d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ca8efbd4588bbf9aa09f8ba7b2e750b7ef306be
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c317459a407fea164a2c5b9bc444003ea02bafd5
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351353"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902404"
 ---
 # <a name="apn-schema-definition"></a>APN 架构定义
 
-**注意**  该 XML 文档必须使用 UTF-8 编码进行保存。
+>[!NOTE]
+>该 XML 文档必须使用 UTF-8 编码进行保存。
 
 下面是 APN 架构的定义。
 
@@ -140,12 +141,3 @@ ms.locfileid: "63351353"
   </xs:simpleType>
 </xs:schema>
 ```
-
- 
-
- 
-
-
-
-
-

@@ -4,25 +4,25 @@ description: WindowsInfo XML 架构定义
 ms.assetid: d14e0537-0b95-4986-a11c-67645bd88b26
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51d7b1edc174e7ba5c664033929679df38204740
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a14a4df01c2bbc277ca68939d88ce94ff1d498c9
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323668"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902640"
 ---
 # <a name="windowsinfo-xml-schema-definition"></a>WindowsInfo XML 架构定义
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-以下是 WindowsInfo XML 架构的命名空间：
+下面是 WindowsInfo XML 架构的命名空间：
 
 ``` syntax
 http://schemas.microsoft.com/windows/DeviceMetadata/WindowsInfo/2007/11/
 http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/WindowsInfov2
 ```
 
-以下是 WindowsInfo XML 架构定义：
+下面是 WindowsInfo XML 架构的定义：
 
 ``` syntax
 <?xml version="1.0" encoding="UTF-8"?>
@@ -42,10 +42,10 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/WindowsInfov2
     </xs:sequence>
   </xs:complexType>
 
-</xs:schema> 
+</xs:schema>
 ```
 
-以下是 WindowsInfov2 XML 架构定义：
+下面是 WindowsInfov2 XML 架构的定义：
 
 ``` syntax
 <?xml version="1.0" encoding="UTF-8"?>
@@ -166,12 +166,3 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/WindowsInfov2
   
 </xs:schema>
 ```
-
- 
-
- 
-
-
-
-
-

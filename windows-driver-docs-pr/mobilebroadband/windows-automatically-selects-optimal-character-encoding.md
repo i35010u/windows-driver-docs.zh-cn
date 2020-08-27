@@ -4,19 +4,18 @@ description: Windows 自动选择最佳字符编码
 ms.assetid: 3fde6e89-c9ea-43d2-a999-506686b223f4
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2495041a5e4825c9a7c20af70004eaebc2f0810
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d028841c6c15ee9691b101695b8c1e0e8a322ba0
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377625"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902389"
 ---
 # <a name="windows-automatically-selects-optimal-character-encoding"></a>Windows 自动选择最佳字符编码
 
+Windows 8、Windows 8.1 和 Windows 10 根据消息内容支持的最有效编码选择发送 SMS 消息时要使用的最佳字符编码。 SMS 以7位字符集进行编码，除非它至少包含一个无效字符，在这种情况下，将以 Unicode 编码整个消息。
 
-Windows 8、 Windows 8.1 和 Windows 10 选择的最佳字符编码时发送短信，最高效编码支持的消息内容的基础使用。 SMS 编码中的 7 位字符，除非它包含至少一个无效的字符，以 Unicode 编码用例的整个消息。
-
-**发送 SMS 消息使用文本模式界面的 JavaScript 代码示例**
+## <a name="javascript-code-example-for-sending-sms-messages-using-text-mode-interface"></a>使用文本模式接口发送短信的 JavaScript 代码示例
 
 ``` syntax
 try
@@ -43,64 +42,20 @@ try
 }
 ```
 
-（可选） 可以重写最佳的编码功能，并指定要使用哪个字符集。
+还可以选择覆盖最佳编码功能，并指定要使用的字符集。
 
-Windows 8、 Windows 8.1 和 Windows 10 支持的常见字符设置与 GSM (3GPP) 和 CDMA (3GPP2) 网络兼容的移动宽带网络适配器。
+Windows 8、Windows 8.1 和 Windows 10 支持适用于与 GSM (3GPP) 和 CDMA (3GPP2) 网络兼容的移动宽带网络适配器的常见字符集。
 
 下表列出了文本模式 API 支持的字符编码：
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>网络类型</th>
-<th>字符集</th>
-<th>单个 SMS 段的字符数限制</th>
-<th>多个部分组成的 SMS 段的字符数限制</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>GSM</p></td>
-<td><p>GSM 7 位默认字母表和 GSM 7 位默认字母表扩展表</p></td>
-<td><p>160</p></td>
-<td><p>142</p></td>
-</tr>
-<tr class="even">
-<td><p>CDMA</p></td>
-<td><p>7 位 ASCII</p></td>
-<td><p>160 （可能因网络）</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>CDMA</p></td>
-<td><p>Unicode</p></td>
-<td><p>70 （可能因网络）</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+|网络类型|字符集|单个短信段的字符限制|多部分 SMS 段的字符限制|
+|----|----|----|----|
+|GSM|GSM 7 位默认字母和 GSM 7 位默认字母表扩展表|160|142|
+|CDMA|7位 ASCII|160 (可能因网络) | |
+|CDMA|Unicode|70 (可能因网络) | |
 
- 
+GSM 字符集定义 [3GPP TS 23.038： "字母和语言特定信息"](https://www.3gpp.org/DynaReport/23038.md)。 CDMA 字符集是在 [3GPP2 R1001](http://www.3gpp2.org/Public_html/specs/C.R1001-D_v1.0_110403.pdf)中定义的。
 
-定义 GSM 字符集[3GPP TS 23.038:"字母和特定于语言的信息"](https://www.3gpp.org/DynaReport/23038.md)。 在中定义 CDMA 字符集[3GPP2 C.R1001-D](http://www.3gpp2.org/Public_html/specs/C.R1001-D_v1.0_110403.pdf)。
+## <a name="related-topics"></a>相关主题
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
-
-[使用文本模式界面发送短信](send-sms-by-using-the-text-mode-interface.md)
-
- 
-
- 
-
-
-
-
-
-
+[使用文本模式界面读取收到的短信](read-received-sms-by-using-the-text-mode-interface.md)

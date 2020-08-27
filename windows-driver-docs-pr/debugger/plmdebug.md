@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c827e7f6ec2874f538a75a5ff09da6e1e5161503
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: 3f818f3f66c88c0a9e814e73e8630ff20aa3b29c
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253109"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902416"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
@@ -39,7 +39,7 @@ plmdebug /suspend Package
 plmdebug /resume Package
 plmdebug /disableDebug Package
 plmdebug /enumerateBgTasks Package
-plmdebug /activateBgTaskTaskId "{TaskID}"
+plmdebug /activateBgTask "{TaskID}"
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
@@ -185,7 +185,7 @@ SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
 
 **plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [在 Visual Studio 中调试 UWP 应用时如何触发挂起、继续和后台事件](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 

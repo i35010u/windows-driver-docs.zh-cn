@@ -4,19 +4,18 @@ description: UPnP 设备的容器 ID
 ms.assetid: 29d2ed0e-e746-4f0a-88f3-bd07d5750485
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab9e222fe45049ba9f563266192954f8c9b27669
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 668e6638aea1f962424e45ffbb064884dbc1a527
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363450"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902605"
 ---
 # <a name="container-ids-for-upnp-devices"></a>UPnP 设备的容器 ID
 
+从 Windows 7 开始，支持 PnP 扩展 (Pnp-id) 和通用 PnP (UPnP) 的设备可以通过在设备说明文档中包含 **X_containerId** XML 元素来指定容器 ID。 有关 UPnP 和 UPnP 设备说明文档的详细信息，请参阅 [Upnp 设备体系结构规范。](https://go.microsoft.com/fwlink/p/?linkid=142402)
 
-从 Windows 7 开始，支持即插即用扩展 (PNP-X) 和通用即插即用 (UPnP) 的设备可指定一个容器 ID 通过包括**X_containerId**设备说明文档中的 XML 元素。 有关 UPnP 和 UPnP 设备说明文档的详细信息，请参阅[UPnP 设备体系结构规范。](https://go.microsoft.com/fwlink/p/?linkid=142402)
-
-**X_containerId** XML 元素声明，如下所示：
+**X_containerId** XML 元素声明如下：
 
 ```cpp
 <df:X_containerId xmlns:df="">
@@ -24,9 +23,9 @@ ms.locfileid: "63363450"
 </df:X_containerId>
 ```
 
-**X_containerId** XML 元素类型是一个字符串，其值为全局唯一标识符 (*GUID*)。 此字符串的格式设置为 *{xxxxxxxx xxxx-xxxx-xxxx-在左右加上}*。
+**X_containerId** XML 元素类型是一个字符串，其值是全局唯一标识符 (*GUID*) 。 此字符串的格式为 *{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}*。
 
-以下是一种**X_containerId** XML 元素。
+下面是 **X_containerId** XML 元素的一个示例。
 
 ```cpp
 <df:X_containerId xmlns:df="">
@@ -34,25 +33,24 @@ ms.locfileid: "63363450"
 </df:X_containerId>
 ```
 
-**X_containerId** XML 元素必须为处于&lt;设备&gt;UPnP 设备说明文档的部分。 下面的示例显示了正确的位置**X_containerId**设备说明文档中的元素。
+**X_containerId** XML 元素必须位于 &lt; &gt; "UPnP 设备说明" 文档的 "设备" 部分中。 下面的示例演示设备说明文档中 **X_containerId** 元素的正确位置。
 
-**请注意**  这不是完整的 UPnP 设备说明文档。 有关 UPnP 的详细信息，请参阅[UPnP 设备体系结构规范。](https://go.microsoft.com/fwlink/p/?linkid=142402)
-
- 
+>[!NOTE]
+>这不是完整的 UPnP 设备说明文档。 有关 UPnP 的详细信息，请参阅 [Upnp 设备体系结构规范。](https://go.microsoft.com/fwlink/p/?linkid=142402)
 
 ```cpp
-<?xml version="1.0" ?> 
-<root 
+<?xml version="1.0" ?>
+<root
  xmlns="urn:schemas-upnp-org:device-1-0"
  xmlns:df=
  "http://schemas.microsoft.com/windows/2008/09/devicefoundation">
 
  <specVersion>
-        <major>major version number</major> 
-        <minor>minor version number</minor> 
+        <major>major version number</major>
+        <minor>minor version number</minor>
     </specVersion>
 
-    <URLBase>device URL</URLBase> 
+    <URLBase>device URL</URLBase>
 
     <device>
  <!-- Place device metadata here. See UPnP spec for details.-->
@@ -65,13 +63,4 @@ ms.locfileid: "63363450"
 </root>
 ```
 
-如果 UPnP 设备说明文档不包括**X_containerId** XML 元素，插 (PnP) 管理器生成的容器 ID 通过设备的唯一设备名称 (UDN)。
-
- 
-
- 
-
-
-
-
-
+如果 UPnP 设备说明文档未包括 **X_containerId** XML 元素，则即插即用 (PnP) manager 将通过设备的唯一设备名称 (UDN) 生成一个容器 ID。

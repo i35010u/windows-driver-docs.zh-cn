@@ -4,26 +4,25 @@ description: PackageInfo XML 示例
 ms.assetid: 4e514e79-d450-4cae-a40d-16ce86f95e43
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a3eb1ab27d978d8eaa79d9fdcfe7ad1b24637d2b
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: fa6387877e18a8bd1c13b9f65e25b27f9cd4b57c
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323730"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902468"
 ---
 # <a name="packageinfo-xml-example"></a>PackageInfo XML 示例
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-下面的 XML 文档使用[PACKAGEINFO xml 架构](packageinfo-xml-schema.md)来指定供应商的元数据包的组件。
+下面的 XML 文档使用 [PACKAGEINFO xml 架构](packageinfo-xml-schema.md) 来指定供应商的元数据包的组件。
 
 包适用于具有以下硬件 ID 的服务：
 
-MBAE:0:L9@E}} DT2。\*F65MQA57Y + L
+MBAE:0:L9@E}} DT2。 \*F65MQA57Y + L
 
-**请   注意**，PackageInfo 中包含的硬件 id 必须添加 "DOID：" 前缀。
-
- 
+>[!NOTE]
+>PackageInfo.xml 中包含的硬件 Id 必须将 "DOID：" 前缀添加到其中。
 
 包还用于 EN-US 区域设置，该区域设置将文档设置为元数据包组件的默认区域设置。
 
@@ -49,12 +48,3 @@ MBAE:0:L9@E}} DT2。\*F65MQA57Y + L
     </PackageStructure>
 </PackageInfo>
 ```
-
- 
-
- 
-
-
-
-
-

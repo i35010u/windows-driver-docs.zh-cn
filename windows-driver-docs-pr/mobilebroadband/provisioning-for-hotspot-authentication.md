@@ -4,17 +4,16 @@ description: 针对热点身份验证的预配
 ms.assetid: bfb4e1ec-9887-4b25-bfcc-be642b1a0101
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c7c4492aa45e671f3ab9edc36c43169f2463bb01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ba902f2f0edcabf737275fba02fdbc1889a87c8e
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391039"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902568"
 ---
 # <a name="provisioning-for-hotspot-authentication"></a>针对热点身份验证的预配
 
-
-热点身份验证过程中参与的应用，它必须先创建一个或多个配置文件的 Wi-fi 热点。 这是通过使用中所述的预配代理接口[使用元数据来配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)。 作用点必须使用开放式身份验证，并且必须包括**HotspotProfile**元素。 以下预配文件示例演示如何将 SSID 与您的应用程序相关联：
+要使应用参与热点身份验证过程，必须先为 Wi-fi 热点创建一个或多个配置文件。 这是通过使用 [元数据配置移动宽带体验](using-metadata-to-configure-mobile-broadband-experiences.md)中讨论的预配代理界面来实现的。 热点必须使用开放式身份验证，并且必须包含 **HotspotProfile** 元素。 以下预配文件示例显示了如何将 SSID 与应用关联：
 
 ``` syntax
 <WLANProfile xmlns="http://www.microsoft.com/networking/CarrierControl/WLAN/v1">
@@ -45,73 +44,20 @@ ms.locfileid: "63391039"
 </WLANProfile>
 ```
 
-扩展 Id 字段包含生成热点凭据的应用包系列名称。 Visual Studio 自动生成包系列名称。 若要查找你的应用程序的包系列名称，打开**package.appxmanifest** Visual Studio 解决方案文件，并转到打包窗口中。
+ExtensionId 字段包含生成热点凭据的应用的包系列名称。 包系列名称由 Visual Studio 自动生成。 若要查找应用程序的包系列名称，请打开 Visual Studio 解决方案中的 **appxmanifest.xml** 文件，并中转到 "打包" 窗口。
 
-处理预配文件后，必须注册有包系列名称"YourAppIdGoesHere"的应用的热点身份验证事件。 这是必需的预配文件首先处理以授予对此事件的指定的应用程序访问权限。 应用可以注册此事件的单个处理程序。 只要至少一个引用相应的应用程序的配置文件将保持有效事件注册。
+处理预配文件后，具有包系列名称 "YourAppIdGoesHere" 的应用必须注册热点身份验证事件。 需要首先处理预配文件，以便向指定的应用授予对此事件的访问权限。 应用可以为此事件注册单个处理程序。 只要至少有一个引用相应应用的配置文件，事件注册就会保持有效。
 
-## <a name="span-idsignspanspan-idsignspansign-the-provisioning-file"></a><span id="sign"></span><span id="SIGN"></span>预配文件进行签名
+## <a name="sign-the-provisioning-file"></a>签署预配文件
 
+由于预配修改了用户退出或卸载应用后保留的系统设置，因此需要对大多数 Api 进行更严格的验证。 此验证由操作员特定硬件的组合提供 (SIM) 、加密签名和用户确认。 下表列出了验证要求：
 
-预配修改后用户已退出，或即使卸载应用程序保留的系统设置，因为更严格的验证度量值都需要比大多数 Api。 此验证提供的特定于运算符的硬件 (SIM)、 加密签名和用户进行确认的组合。 下表列出了验证要求：
+|存在 SIM|设置源|签名要求|用户确认要求|
+|----|----|----|----|
+|是，MB 提供程序|移动宽带应用|无|无|
+|是，MB 提供程序|Operator 网站|证书必须：</br>-链式返回到受信任的根 CA</br>-与 APN 数据库中的移动宽带硬件或体验元数据关联|无|
+|否，Wi-fi 提供程序|移动宽带应用或网站|证书必须：</br>-链式返回到受信任的根 CA</br>-已标记为进行扩展验证|首次使用证书时，系统会提示用户确认;无。|
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>SIM 存在</th>
-<th>设置源</th>
-<th>签名要求</th>
-<th>用户确认要求</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>是的 MB 提供程序</p></td>
-<td><p>移动宽带应用</p></td>
-<td><p>无</p></td>
-<td><p>无</p></td>
-</tr>
-<tr class="even">
-<td><p>是的 MB 提供程序</p></td>
-<td><p>运算符 web 站点</p></td>
-<td><p>证书必须：</p>
-<ul>
-<li><p>后向链接到受信任的根 CA</p></li>
-<li><p>与 APN 数据库中的移动宽带硬件相关联或体验元数据</p></li>
-</ul></td>
-<td><p>无</p></td>
-</tr>
-<tr class="odd">
-<td><p>否，Wi-fi 提供程序</p></td>
-<td><p>移动宽带应用或网站</p></td>
-<td><p>证书必须：</p>
-<ul>
-<li><p>后向链接到受信任的根 CA</p></li>
-<li><p>标记为要扩展的验证</p></li>
-</ul></td>
-<td><p>系统会提示用户确认第一次使用该证书;此后 none。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
-
+## <a name="related-topics"></a>相关主题
 
 [WISPr 身份验证](wispr-authentication.md)
-
- 
-
- 
-
-
-
-
-
-

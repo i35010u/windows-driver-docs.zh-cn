@@ -4,12 +4,12 @@ description: PackageInfo XML 架构定义
 ms.assetid: b0e4f800-816a-4d8b-a68b-56dc468caf52
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36abf2dce152e816551fc8ea9c6d95ca9a41c0be
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 2d05d4996d7d097d718ccfefce2bd19283f5e85e
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323606"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902648"
 ---
 # <a name="packageinfo-xml-schema-definition"></a>PackageInfo XML 架构定义
 
@@ -85,7 +85,7 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/PackageInfov2
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
       <xs:maxLength value="207" />
-      <xs:pattern value="^([a-zA-Z0-9!#$%&()*+\-./:;&lt;=&gt;?@[\\\]^_`{|}~])*$" /> 
+      <xs:pattern value="^([a-zA-Z0-9!#$%&()*+\-./:;&lt;=&gt;?@[\\\]^_`{|}~])*$" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -144,7 +144,7 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/PackageInfov2
 </xs:schema>
 ```
 
-下面是 PackageInfo v2 XML 架构元数据（packageinfov2）：
+下面是 PackageInfo v2 XML 架构元数据 (packageinfov2) ：
 
 ``` syntax
 <?xml version="1.0" encoding="UTF-8"?>
@@ -159,12 +159,3 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/PackageInfov2
 
 </xs:schema>
 ```
-
- 
-
- 
-
-
-
-
-

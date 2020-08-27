@@ -4,12 +4,12 @@ description: MobileBroadbandInfo XML 架构定义
 ms.assetid: 4d4a8f0a-99e5-429b-bc56-fdc4818b0a91
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bc1712c19494684d3bd01704eaaa5337948663be
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 9f0360ce57e4e1539227bfc9788c726f38fbbc94
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323670"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902502"
 ---
 # <a name="mobilebroadbandinfo-xml-schema-definition"></a>MobileBroadbandInfo XML 架构定义
 
@@ -109,12 +109,3 @@ http://schemas.microsoft.com/windows/2010/12/DeviceMetadata/MobileBroadbandInfo
 
 </xs:schema>
 ```
-
- 
-
- 
-
-
-
-
-

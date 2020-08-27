@@ -1,36 +1,34 @@
 ---
 title: ACPI 按钮设备
-description: 泛型按钮设备是标准 reporting 按钮事件通过硬件中断的设备。
+description: 通用按钮设备是一个标准设备，用于通过硬件中断报告按钮事件。
 ms.assetid: 8FC78CE5-CBE6-479C-9373-1D8189E263B2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e78331e0903d02f1b7cdee6606b66fbc692d6090
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c9a893ff3008d805840f2273adcdb785a2bcb0dd
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390402"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902611"
 ---
 # <a name="acpi-button-device"></a>ACPI 按钮设备
 
+通用按钮设备是一种标准设备，用于通过硬件中断报告按钮事件，并将这些中断映射到在人体学接口设备 (HID) 规范中定义的特定使用情况。
 
-泛型按钮设备已报告通过硬件中断的按钮事件的标准设备并将这些中断映射到特定用法人体学接口设备 (HID) 规范中定义。
+若要将按钮的功能表达给操作系统，需要两条信息：
 
-为了表示操作系统到按钮的功能，两条信息是必需的：
+- HID 控件的用法
+- 控件所属的 HID 集合的使用情况
 
--   HID 控件的使用情况
--   在其中控件所属的 HID 集合的使用情况
+用法是使用页面和使用 ID 的组合。 例如，"音量向上" 按钮被标识为 " (使用量" 页上的 "使用情况 Id 0xE9)  (使用情况页0x0C，用法 Id 0x01) 中的" 使用情况 Id "页。
 
-使用情况是组合的使用情况页面和使用情况 id。 例如，提高音量按钮被标识为卷设置中的使用情况 （使用情况页 0x0C，用法 Id 0xE9） 使用者控件集合 （使用情况页 0x0C，用法 Id 0x01）。
+通用按钮设备的 ACPI 设备 Id 为 ACPI0011。 Windows 将加载 Microsoft 提供的内置驱动程序，Hidinterrupt.sys 设备。
 
-ACPI 设备泛型按钮设备 Id 是 ACPI0011。 Windows 加载由 Microsoft 提供现成的驱动程序，Hidinterrupt.sys 为该设备。
+有关通用按钮设备的详细信息，请访问 [统一可扩展固件接口](https://uefi.org/specifications) 规范网站，并下载 *ACPI 规范6.0 版* PDF 文档。 然后，使用左侧窗格导航到 **9.19 节**。
 
-有关泛型按钮设备详细信息，请访问[统一可扩展固件接口](http://uefi.org/specifications)规范网站，并下载*ACPI 规范版本 6.0* PDF 文档。 然后使用左侧窗格中导航到**部分 9.19**。
+## <a name="sample-buttons-acpi-for-phonetablet"></a>手机/平板电脑的示例按钮 ACPI
 
-## <a href="" id="acpi-button-phone"></a>示例按钮 ACPI 手机/平板电脑
-
-
-描述在 ACPI 中为运行 Windows 10 移动版的手机/平板电脑设备的按钮的示例。
+用于描述运行 Windows 10 移动版的手机/平板电脑中的按钮的示例。
 
 ```cpp
 // Sample Buttons ACPI for Phone/Tablet device running Windows 10 Mobile.
@@ -54,63 +52,63 @@ Device(BTNS)
         //Data structure for this UUID:
         Package(9) {
             Package(5) {
-                0,    // This is a Collection 
+                0,    // This is a Collection
                 1,    // Unique ID for this Collection
                 0,    // This is a Top-Level Collection
                 0x01, // Usage Page ("Generic Desktop Page")
                 0x0D  // Usage ("Portable Device Control")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 0,    // Interrupt index in _CRS for Power Button
                 1,    // Unique ID of Parent Collection
                 0x01, // Usage Page ("Generic Desktop Page")
                 0x81  // Usage ("System Power Down")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 1,    // Interrupt index in _CRS for Volume Up Button
                 1,    // Unique ID of Parent Collection
                 0x0C, // Usage Page ("Consumer Page")
                 0xE9  // Usage ("Volume Increment")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 2,    // Interrupt index in _CRS for Volume Down Button
                 1,    // Unique ID of Parent Collection
                 0x0C, // Usage Page ("Consumer Page")
                 0xEA  // Usage ("Volume Decrement")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 3,    // Interrupt index in _CRS for Camera Auto-focus Button
                 1,    // Unique ID of Parent Collection
                 0x90, // Usage Page ("Camera Control Page")
                 0x20  // Usage ("Camera Auto-focus")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 4,    // Interrupt index in _CRS for Camera Shutter Button
                 1,    // Unique ID of Parent Collection
                 0x90, // Usage Page ("Camera Control Page")
                 0x21  // Usage ("Camera Shutter")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 5,    // Interrupt index in _CRS for Back Button
                 1,    // Unique ID of Parent Collection
                 0x0C, // Usage Page ("Consumer Page")
                 0x224 // Usage ("AC Back")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 6,    // Interrupt index in _CRS for Windows/Home Button
                 1,    // Unique ID of Parent Collection
                 0x07, // Usage Page ("Keyboard Page")
                 0xE3  // Usage ("Keyboard Left GUI")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 7,    // Interrupt index in _CRS for Search Button
                 1,    // Unique ID of Parent Collection
                 0x0C, // Usage Page ("Consumer Page")
@@ -161,7 +159,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -174,7 +172,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -187,7 +185,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -200,7 +198,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -213,7 +211,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -226,7 +224,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -239,7 +237,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -252,7 +250,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -287,7 +285,7 @@ UCHAR ReportDescriptor[] = {
     0x15, 0x00,         //   LOGICAL_MINIMUM (0)
     0x25, 0x01,         //   LOGICAL_MAXIMUM (1)
     0x75, 0x01,         //   REPORT_SIZE (1)
-    0x95, 0x09,         //   REPORT_COUNT (3) 
+    0x95, 0x09,         //   REPORT_COUNT (3)
     0x81, 0x02,         //   INPUT (Data,Var,Abs)
     0x95, 0x07,         //   REPORT_COUNT (5)     // 5 unused bits in 8-bit Input Report.
     0x81, 0x03,         //   INPUT (Cnst,Var,Abs)
@@ -295,10 +293,9 @@ UCHAR ReportDescriptor[] = {
 };
 ```
 
-## <a href="" id="acpi-button-desktop"></a>示例按钮 ACPI 桌面
+## <a name="sample-buttons-acpi-for-desktop"></a>示例按钮桌面版 ACPI
 
-
-描述在 ACPI 对于桌面版本 （主页、 专业版、 企业版和教育） 为运行 Windows 10 手机/平板电脑设备的按钮的示例。
+介绍如何在运行 Windows 10 for desktop edition (Home、Pro、Enterprise 和教育) 中介绍适用于运行 Windows 10 的设备的手机/平板电脑设备的按钮的示例。
 
 ```cpp
 Device(BTNS)
@@ -317,42 +314,42 @@ Device(BTNS)
         //Data structure for this UUID:
         Package(6) {
             Package(5) {
-                0,    // This is a Collection 
+                0,    // This is a Collection
                 1,    // Unique ID for this Collection
                 0,    // This is a Top-Level Collection
                 0x01, // Usage Page ("Generic Desktop Page")
                 0x0D  // Usage ("Portable Device Control")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 0,    // Interrupt index in _CRS for Power Button
                 1,    // Unique ID of Parent Collection
                 0x01, // Usage Page ("Generic Desktop Page")
                 0x81  // Usage ("System Power Down")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 1,    // Interrupt index in _CRS for Volume Up Button
                 1,    // Unique ID of Parent Collection
                 0x0C, // Usage Page ("Consumer Page")
                 0xE9  // Usage ("Volume Increment")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 2,    // Interrupt index in _CRS for Volume Down Button
                 1,    // Unique ID of Parent Collection
                 0x0C, // Usage Page ("Consumer Page")
                 0xEA  // Usage ("Volume Decrement")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 3,    // Interrupt index in _CRS for Windows/Home Button
                 1,    // Unique ID of Parent Collection
                 0x07, // Usage Page ("Keyboard Page")
                 0xE3  // Usage ("Keyboard Left GUI")
             },
             Package(5) {
-                1,    // This is a Control 
+                1,    // This is a Control
                 4,    // Interrupt index in _CRS for Rotation Lock Button
                 1,    // Unique ID of Parent Collection
                 0x01, // Usage Page ("Generic Desktop Page")
@@ -403,7 +400,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -416,7 +413,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -429,7 +426,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -442,7 +439,7 @@ UCHAR ReportDescriptor[] = {
     95, 01,         //     REPORT_COUNT (1)
     81, 02,         //     INPUT (Data,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     C0,             //     END_COLLECTION
@@ -457,7 +454,7 @@ UCHAR ReportDescriptor[] = {
     95, 06,         //     REPORT_COUNT (3)                     // 3 unused bits in 8-bit Input Report
     81, 03,         //     INPUT (Cnst,Var,Abs)
     05, 01,         //     USAGE_PAGE (Generic Desktop)
-    09, CB,         //     USAGE (Control Enable)           
+    09, CB,         //     USAGE (Control Enable)
     95, 01,         //     REPORT_COUNT (1)
     B1, 02,         //     FEATURE (Data,Var,Abs)
     95, 06,         //     REPORT_COUNT (3)                     // 3 unused bits in 8-bit Feature Report
@@ -467,11 +464,3 @@ UCHAR ReportDescriptor[] = {
     C0              //  END_COLLECTION
 };
 ```
-
-
-
-
-
-
-
-

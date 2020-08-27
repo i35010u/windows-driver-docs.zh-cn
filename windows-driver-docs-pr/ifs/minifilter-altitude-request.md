@@ -4,83 +4,38 @@ description: 微筛选器等级请求
 ms.assetid: 4861E5FC-9883-455F-A925-EBAFC890F568
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e04b07a95c8f7946baafe256f32261c713bbb4ae
-ms.sourcegitcommit: 944535d8e00393531f6b265317a64da3567e4f2c
+ms.openlocfilehash: 35459292f47e0e6284aab66993122d5bb510f250
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106368"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902530"
 ---
 # <a name="minifilter-altitude-request"></a>微筛选器等级请求
 
-文件系统微筛选器驱动程序开发到筛选器管理器模型必须具有名为海拔高度，用于定义其位置相对于存在于文件系统堆栈中其他微筛选器的唯一标识符。
+开发到筛选器管理器模型的文件系统微筛选器驱动程序必须具有唯一的标识符，该标识符被称为定义其相对于文件系统堆栈中存在的其他 minifilters 的位置的高度。
 
-若要请求微筛选器海拔高度标识符，对 ASCII 文本电子邮件中发送电子邮件[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)与该主题："微筛选器海拔高度请求"。 电子邮件的正文必须包含以下字段和相应的信息。
+若要请求微筛选器海拔标识符，请将 ASCII 文本电子邮件中的电子邮件发送到 [fsfcomm@microsoft.com](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request) 主题： "微筛选器限制请求"。 电子邮件的正文必须包含以下字段和相应信息。
 
-然后，此筛选器的海拔高度将通过电子邮件发送回指定联系人的电子邮件地址。
+然后，将通过电子邮件将此筛选器发回到指定的联系人电子邮件地址。
 
-您还可以发送电子邮件至[ fsfcomm@microsoft.com ](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request)更新与现有海拔地区相关联的信息。
+你还可以将电子邮件发送到 [fsfcomm@microsoft.com](mailto:fsfcomm@microsoft.com?subject=Minifilter%20altitude%20request) 以更新与现有高度关联的信息。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">字段</th>
-<th align="left">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">公司名称：</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">联系人电子邮件：</td>
-<td align="left">提供长期公司电子邮件别名，而不是个人电子邮件。</td>
-</tr>
-<tr class="odd">
-<td align="left">产品名称：</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">产品 URL:</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">产品/筛选器说明：</td>
-<td align="left">一个段落摘要，帮助 Microsoft 确定适当的海拔高度的筛选器。</td>
-</tr>
-<tr class="even">
-<td align="left">筛选器文件名：</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">筛选器类型：</td>
-<td align="left">下列值之一：注册表、 文件系统，同时</td>
-</tr>
-<tr class="even">
-<td align="left">启动类型的筛选器：</td>
-<td align="left">下列值之一：启动、 系统、 自动需求</td>
-</tr>
-<tr class="odd">
-<td align="left">请求的筛选器加载顺序组：</td>
-<td align="left">请参阅<a href="allocated-altitudes.md" data-raw-source="[File System Minifilter Allocated Altitudes](allocated-altitudes.md)">文件系统微筛选器分配海拔地区</a>为可用的加载顺序组。</td>
-</tr>
-<tr class="even">
-<td align="left">请求的海拔高度：</td>
-<td align="left">Microsoft 保留权分配不同于请求海拔高度，具体取决于海拔高度可用性和筛选器驱动程序功能海拔高度。</td>
-</tr>
-<tr class="odd">
-<td align="left">其他信息：</td>
-<td align="left">使用此字段，让我们知道是否有你想 Microsoft 将海拔高度分配给此筛选器时要考虑的任何信息。</td>
-</tr>
-</tbody>
-</table>
+|字段|评论|
+|----|----|
+|公司名称：| |
+|联系人电子邮件：|提供长期公司电子邮件别名，而不是单独的电子邮件。|
+|产品名称：| |
+|产品 URL：| |
+|产品/筛选器描述：|一个段落摘要，可帮助 Microsoft 确定筛选器的适当高度。|
+|筛选器文件名：| |
+|滤波器类型：|以下值之一：注册表、FileSystem、Both|
+|筛选启动类型：|以下值之一：启动、系统、自动、要求|
+|请求的筛选器加载顺序组：|请参阅为可用的加载顺序组 [分配的文件系统微筛选](allocated-altitudes.md) 器。|
+|请求海拔：|Microsoft 保留分配不同于所请求海拔高度的权限，具体取决于高度可用性和筛选器驱动程序功能。|
+|其他信息：|使用此字段，告知我们在向此筛选器分配海拔时是否有任何要考虑的信息。|
 
-下面是一个示例，用于分配请求电子邮件的正文。
+下面是分配请求电子邮件正文的示例。
 
 ``` syntax
 Hi,
@@ -104,8 +59,7 @@ Thanks,
 FilterDev
 ```
 
-## <a name="note"></a>注意
-
-* 必须填写所有字段。
-* 它可能需要 Microsoft 到两周，以处理并分配海拔的地区。 任何缺少的信息可能会延迟赋值。
-* 已分配的海拔高度最终会反映在海拔中列出的地区[文件系统微筛选器分配海拔地区](allocated-altitudes.md)。 请注意，Microsoft 仅更新此列表每年一次。
+>[!NOTE]
+>- 必须填写所有字段。
+>- 最多可能需要两周的时间来处理和分配高度。 缺少的任何信息可能会延迟分配。
+>- 分配的海拔将最终反映在 " [文件系统微筛选](allocated-altitudes.md)器" 中列出的高度。 请注意，Microsoft 每年仅更新此列表。

@@ -4,18 +4,18 @@ description: ServiceInfo XML 示例
 ms.assetid: b2114044-ca4b-4c1e-ab2e-73f4f56142b5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80211e10f4a905c80c6d23dadd7412fc305e32f4
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: f6d502d71a7eaeba74bdca4ec46b984487ff5d32
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323724"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902577"
 ---
 # <a name="serviceinfo-xml-example"></a>ServiceInfo XML 示例
 
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
-以下 XML 文档使用[SERVICEINFO XML 架构](serviceinfo-xml-schema.md)指定 Contoso 无线服务的属性：
+以下 XML 文档使用 [SERVICEINFO XML 架构](serviceinfo-xml-schema.md) 指定 Contoso 无线服务的属性：
 
 ``` syntax
 <DeviceInfo xmls="http://schemas.microsoft.com/windows/2010/05/DeviceMetadata/ServiceInfo">
@@ -31,12 +31,3 @@ ms.locfileid: "72323724"
     <ServiceSpecificExtension namespace="http://schemas.microsoft.com/windows/2010/12/DeviceMetadata/MobileBroadbandInfo">MobileBroadbandInfo.xml</ServiceSpecificExtension>
 </ServiceInfo>
 ```
-
- 
-
- 
-
-
-
-
-

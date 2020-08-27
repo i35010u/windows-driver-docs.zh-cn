@@ -4,26 +4,24 @@ description: Windows 64 位版本要求在内核模式（包括驱动程序）�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6bf20bbc7dd77ebf02c69367083ced1bc5fedf
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: e3a455e5a3925bae3ada65264c0541c00ba01d4a
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644029"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902538"
 ---
 # <a name="test-signing"></a>测试签名
-
 
 从 Windows Vista 开始，Windows 基于 x64 的版本要求在内核模式（包括驱动程序）下运行的所有软件都要进行数字签名。 最初，你可以在每次启动时使用 F8 开关 (，在 Windows 加载) 之前，暂时禁用需要驱动程序中的有效签名的加载时间强制。 但这在第一次使用后将变得枯燥乏味。 您可以将内核调试器附加到您的测试计算机上，这将在您使用正确的 BCDEdit 命令后禁用相同的加载时间强制检查。 但是，最终需要在其开发期间对驱动程序进行测试签名，并最终在将驱动程序发布给用户之前对其进行签名。
 
 ## <a name="installing-an-unsigned-driver-during-development-and-test"></a>在开发和测试期间安装未签名驱动程序
 
-
 在[开发和测试过程中安装未签名驱动程序](installing-an-unsigned-driver-during-development-and-test.md)*的摘录*：
 
 默认情况下，仅当内核可以验证驱动程序签名时，Windows Vista 和更高版本的 windows 的64位版本才会加载内核模式驱动程序。 但是，在早期的驱动程序开发和非自动测试期间，可以禁用此默认行为。 开发人员可以使用以下机制之一来暂时禁用有效驱动程序签名的加载时间强制。 但是，若要完全自动测试即插即用 (PnP) 安装的驱动程序，则必须对该驱动程序的 [编录文件](catalog-files.md) 进行签名。 需要对驱动程序进行签名的原因是 Windows Vista 和更高版本的 Windows 将为需要系统管理员授权安装驱动程序的无符号驱动程序显示 "驱动程序签名" 对话框，这可能会阻止没有必要权限的用户安装驱动程序和使用设备。 无法在 Windows Vista 和更高版本的 Windows 上禁用此 PnP 驱动程序安装行为。
 
-### <a name="use-the-f8-advanced-boot-option"></a>**使用 "F8 高级启动" 选项**
+## <a name="use-the-f8-advanced-boot-option"></a>使用 "F8 高级启动" 选项
 
 Windows Vista 和更高版本的 Windows 支持 F8 高级启动选项--"禁用驱动程序签名强制"--该选项仅对当前系统会话禁用内核模式驱动程序的加载时签名强制。 此设置不会在系统重新启动期间保持。
 
@@ -31,7 +29,7 @@ Windows Vista 和更高版本的 Windows 支持 F8 高级启动选项--"禁用�
 
 ![显示 f8 高级启动选项的屏幕截图](images/tutorialf8.png)
 
-### <a name="attach-a-kernel-debugger-to-disable-signature-verification"></a><a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a> 附加内核调试器以禁用签名验证
+### <a name="attach-a-kernel-debugger-to-disable-signature-verification"></a>附加内核调试器以禁用签名验证
 
 将活动内核调试器附加到开发或测试计算机会禁用内核模式驱动程序的加载时签名强制。 若要使用此调试配置，请将调试计算机附加到开发或测试计算机，然后通过运行以下命令在开发或测试计算机上启用内核调试：
 
@@ -45,53 +43,49 @@ bcdedit -debug on
 
 ## <a name="test-sign-a-driver-package"></a>测试对驱动程序包进行签名
 
-
 最好的方法是测试对驱动程序包的签名，而不是使用上述两种方法来绕过驱动程序签名强制要求。 测试签名和驱动程序安装可以在开发计算机上完成，但您可能需要使用两台计算机，一个用于开发和签名，另一个用于测试。
 
 *Excerpt from* [如何对驱动程序包进行测试签名](how-to-test-sign-a-driver-package.md)：
 
-<a href="" id="signing-computer"></a>**正在为计算机签名**  
+### <a name="signing-computer"></a>正在为计算机签名
+
 此计算机用于对 Windows Vista 和更高版本的 Windows 的驱动程序包进行测试签名。 此计算机必须运行 Windows XP SP2 或更高版本的 Windows。 为了使用 [驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)，此计算机必须安装 windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 。 这也可以是开发计算机。
 
-<a href="" id="test-computer"></a>**测试计算机**  
+### <a name="test-computer"></a>测试计算机
+
 此计算机用于安装和测试测试签名的驱动程序包。 此计算机必须运行 Windows Vista 或更高版本的 Windows。
 
 ## <a name="test-signing-procedure"></a>测试签名过程
-
 
 驱动程序包将包含驱动程序二进制文件、INF 文件、CAT 文件和任何其他必要的文件。 如果驱动程序是为多个目标处理器类型构建的，则驱动程序包可能包含 x86、AMD64、IA64 等子目录。 使用开发/签名计算机执行这些步骤。
 
 下面的过程介绍了对驱动程序包进行签名的步骤：
 
-1.  生成目标的驱动程序。 如果要构建适用于 Windows 8.0 或 Windows 8.1 的驱动程序，请分别使用 Visual Studio 2012 或与相应的 WDK （例如，Windows 8.0 或 8.1 WDK）一起使用 Visual Studio 2013。
+1. 生成目标的驱动程序。 如果要构建适用于 Windows 8.0 或 Windows 8.1 的驱动程序，请分别使用 Visual Studio 2012 或与相应的 WDK （例如，Windows 8.0 或 8.1 WDK）一起使用 Visual Studio 2013。
 
     下面所述的所有命令工具都应从相应的工具/生成命令窗口 Visual Studio 2012 或 Visual Studio 2013 中使用。
 
-    **注意**  适用于 Visual Studio 的命令工具位于安装目录 C： \\ Program Files (x86) \\ Microsoft Visual Studio 12.0 \\ Common7 \\ 工具 \\ 快捷方式
-
-
-
+   >[!NOTE]
+   >适用于 Visual Studio 的命令工具位于安装目录 C： \\ Program Files (x86) \\ Microsoft Visual Studio 12.0 \\ Common7 \\ 工具 \\ 快捷方式
 
 命令提示符的五个快捷方式中的任何一个都将具有、makecert.exe、inf2cat.exe、signtool.exe、certmgr.exe 等命令。
 
 你可以选择最常见的 "开发人员命令提示 for VS2013"。 快捷方式可以固定到任务栏以方便访问。
 
-**注意**  请注意，使用 Visual Studio 时，你还可以使用 Visual Studio 2013 开发环境， (也称为 IDE) 对驱动程序包进行签名。 有关详细信息，请参阅 [附录2：用 Visual Studio 为驱动程序签名](appendix-2--signing-drivers-with-visual-studio.md) 。
+>[!NOTE]
+>请注意，使用 Visual Studio 时，你还可以使用 Visual Studio 2013 开发环境， (也称为 IDE) 对驱动程序包进行签名。 有关详细信息，请参阅 [附录2：用 Visual Studio 为驱动程序签名](appendix-2--signing-drivers-with-visual-studio.md) 。
 
-
-
-
-2.  创建驱动程序包文件夹并复制驱动程序文件，并保留所需的任何子目录，例如 C： \\ DriverTestPackage。
-3.  为驱动程序包创建一个 inf 文件。 使用 inf 文件中的 [InfVerif](../devtest/infverif.md) 工具测试 inf 文件，以便不报告错误。
-4.  *Excerpt from* [创建测试证书](creating-test-certificates.md)摘录：
+2. 创建驱动程序包文件夹并复制驱动程序文件，并保留所需的任何子目录，例如 C： \\ DriverTestPackage。
+3. 为驱动程序包创建一个 inf 文件。 使用 inf 文件中的 [InfVerif](../devtest/infverif.md) 工具测试 inf 文件，以便不报告错误。
+4. *Excerpt from* [创建测试证书](creating-test-certificates.md)摘录：
 
     以下命令行示例使用 MakeCert 来完成以下任务：
 
-    -   * (测试) *中创建名为 "Contoso.com" 的自签名测试证书。 此证书对使用者名称和证书颁发机构 (CA) 使用相同的名称。
+   - * (测试) *中创建名为 "Contoso.com" 的自签名测试证书。 此证书对使用者名称和证书颁发机构 (CA) 使用相同的名称。
 
-    -   将证书的副本放入名为 *ContosoTest*的输出文件中。
+   - 将证书的副本放入名为 *ContosoTest*的输出文件中。
 
-    -   将证书的副本放入名为 *PrivateCertStore*的证书存储中。 如果将测试证书放在 *PrivateCertStore* 中，则会将其与系统上的其他证书隔离开来。
+   - 将证书的副本放入名为 *PrivateCertStore*的证书存储中。 如果将测试证书放在 *PrivateCertStore* 中，则会将其与系统上的其他证书隔离开来。
 
     使用以下 MakeCert 命令创建 *Contoso.com (测试) * 证书：
 
@@ -101,23 +95,23 @@ bcdedit -debug on
 
     其中：
 
-    -   **-R**选项创建一个自签名证书，该证书具有相同的颁发者和使用者名称。
+   - **-R**选项创建一个自签名证书，该证书具有相同的颁发者和使用者名称。
 
-    -   **-Pe**选项指定可以导出与证书关联的私钥。
+   - **-Pe**选项指定可以导出与证书关联的私钥。
 
-    -   **-Ss**选项指定包含测试证书 (*PrivateCertStore*) 的证书存储的名称。
+   - **-Ss**选项指定包含测试证书 (*PrivateCertStore*) 的证书存储的名称。
 
-    -   **-N CN =** option 指定证书的名称，Contoso.com (Test) 。 此名称与 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 工具一起用于标识证书。
+   - **-N CN =** option 指定证书的名称，Contoso.com (Test) 。 此名称与 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 工具一起用于标识证书。
 
-    -   *ContosoTest* 是包含测试证书的副本的文件名，Contoso.com (测试) 。 证书文件用于将证书添加到 "受信任的根证书颁发机构" 证书存储和 "受信任的发布者" 证书存储中。
+   - *ContosoTest* 是包含测试证书的副本的文件名，Contoso.com (测试) 。 证书文件用于将证书添加到 "受信任的根证书颁发机构" 证书存储和 "受信任的发布者" 证书存储中。
 
     *Excerpt from* [查看测试证书](viewing-test-certificates.md)摘录：
 
     创建证书并将副本放入证书存储区后，可以使用 Microsoft 管理控制台 (MMC) 证书管理单元来查看该证书。 执行以下操作以通过 MMC " **证书** " 管理单元查看证书：
 
-    1.  若要启动 "证书" 管理单元，请运行 Certmgr.msc。
+    1. 若要启动 "证书" 管理单元，请运行 Certmgr.msc。
 
-    2.  在 "证书" 管理单元的左窗格中，展开 "PrivateCertStore" 证书存储文件夹，然后双击 "证书"。
+    2. 在 "证书" 管理单元的左窗格中，展开 "PrivateCertStore" 证书存储文件夹，然后双击 "证书"。
 
     以下屏幕截图显示了 **PrivateCertStore** 证书存储文件夹的 "证书" 管理单元视图。
 
@@ -129,7 +123,7 @@ bcdedit -debug on
 
     请注意，"证书" 对话框状态： "此 CA 根证书不受信任。 若要启用信任，请在受信任的根证书颁发机构存储中安装此证书。 " 这是预期的行为。 无法验证证书，因为 Windows 不信任证书颁发机构，默认情况下，"Contoso.com (Test) "。
 
-5.  )  ( 创建编录文件。 使用如下所示的 inf2cat 工具来创建目录文件。 请注意，开关不允许有空格，/driver： &lt; 没有空间 &gt; &lt; 完整路径 &gt; ，/os：： &lt; no space &gt; &lt; os1 name &gt; ，： &lt; no space &gt; &lt; os2 name &gt; 。
+5. )  ( 创建编录文件。 使用如下所示的 inf2cat 工具来创建目录文件。 请注意，开关不允许有空格，/driver： &lt; 没有空间 &gt; &lt; 完整路径 &gt; ，/os：： &lt; no space &gt; &lt; os1 name &gt; ，： &lt; no space &gt; &lt; os2 name &gt; 。
 
     ```cpp
     inf2cat  /v  /driver:C:\DriverTestPackage  /os:7_64,7_x86 ,XP_X86
@@ -191,15 +185,15 @@ bcdedit -debug on
 
     建议检查 cat 文件以验证是否包含驱动程序文件和所选操作系统。 如果添加或删除了任何驱动程序文件，则已修改 INF 文件，必须重新创建并重新签名该 cat 文件。 此处的任何省略都将导致安装错误，这些错误将报告在 Vista 和更高版本上的安装日志文件 (setupapi.log 或 XP) 的 setupapi.log 文件中。
 
-6.  针对[驱动程序包的目录文件的测试签名](test-signing-a-driver-package-s-catalog-file.md)*摘录*：
+6. 针对[驱动程序包的目录文件的测试签名](test-signing-a-driver-package-s-catalog-file.md)*摘录*：
 
     以下命令行说明了如何运行 SignTool 来执行以下操作：
 
-    -   对*toastpkg.inf*示例[驱动程序包](driver-packages.md)的*tstamd64.cat*目录文件进行测试签名。 有关如何创建此 [目录文件](catalog-files.md) 的详细信息，请参阅 [创建用于对驱动程序包进行测试签名的目录文件](creating-a-catalog-file-for-test-signing-a-driver-package.md)。
+   - 对*toastpkg.inf*示例[驱动程序包](driver-packages.md)的*tstamd64.cat*目录文件进行测试签名。 有关如何创建此 [目录文件](catalog-files.md) 的详细信息，请参阅 [创建用于对驱动程序包进行测试签名的目录文件](creating-a-catalog-file-for-test-signing-a-driver-package.md)。
 
-    -   使用 Contoso.com (测试 PrivateCertStore 中的) 证书来测试签名。 有关如何创建此证书的详细信息，请参阅 [创建测试证书](creating-test-certificates.md)。
+   - 使用 Contoso.com (测试 PrivateCertStore 中的) 证书来测试签名。 有关如何创建此证书的详细信息，请参阅 [创建测试证书](creating-test-certificates.md)。
 
-    -   通过时间戳颁发机构 (TSA) 来标记数字签名。
+   - 通过时间戳颁发机构 (TSA) 来标记数字签名。
 
     若要对 *tstamd64.cat* 目录文件进行测试签名，请运行以下命令行：
 
@@ -209,28 +203,26 @@ bcdedit -debug on
 
     其中：
 
-    -   **Sign**命令将 SignTool 配置为对指定的编录文件 tstamd64.cat 进行签名。
+   - **Sign**命令将 SignTool 配置为对指定的编录文件 tstamd64.cat 进行签名。
 
-    -   **/V**选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
+   - **/V**选项启用详细操作，其中，SignTool 显示成功执行和警告消息。
 
-    -   **/S**选项指定包含测试证书的证书存储 (*PrivateCertStore) *的名称。
+   - **/S**选项指定包含测试证书的证书存储 (*PrivateCertStore) *的名称。
 
-    -   **/N**选项指定在指定的证书存储中安装的 (*Contoso.com (测试) # B3*的证书的名称。
+   - **/N**选项指定在指定的证书存储中安装的 (*Contoso.com (测试) # B3*的证书的名称。
 
-    -   **/T**选项指定了 *http://timestamp.digicert.com* 用于对数字签名进行时间戳的 TSA () 的 URL。
-        **重要提示**   包含时间戳会提供密钥吊销所需的信息，以防签名者的代码签名私钥泄漏。
+   - **/T**选项指定了 `http://timestamp.digicert.com` 用于对数字签名进行时间戳的 TSA () 的 URL。
 
+   >[!IMPORTANT]
+   >包含时间戳会提供密钥吊销所需的信息，以防签名者的代码签名私钥泄漏。
 
-
-
--   *tstamd64.cat* 指定将进行数字签名的目录文件的名称。
+- *tstamd64.cat* 指定将进行数字签名的目录文件的名称。
 
 tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所述，你可以打开 cat 文件
 
+7. *修改后的摘录*： [通过嵌入的签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)：
 
-7.  *修改后的摘录*： [通过嵌入的签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)：
-
-    -   在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求必须具有嵌入签名。 无论驱动程序的驱动程序包是否有经过数字签名的目录文件，此项都是必需的。
+   - 在 Windows Vista 和更高版本的 windows 的64位版本中，内核模式代码签名要求必须具有嵌入签名。 无论驱动程序的驱动程序包是否有经过数字签名的目录文件，此项都是必需的。
 
     下面是用于嵌入对内核模式驱动程序二进制文件进行嵌入的命令。
 
@@ -256,7 +248,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
 以下过程描述了在任一计算机上用于测试驱动程序的步骤：
 
-1.  在提升的命令窗口中运行以下命令：
+1. 在提升的命令窗口中运行以下命令：
 
     ```cpp
     bcdedit  /set  testsigning  on
@@ -264,7 +256,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     重新启动计算机。
 
-2.  [使用 certmgr.msc 在测试计算机上安装测试证书](using-certmgr-to-install-test-certificates-on-a-test-computer.md)*所选的摘录*：
+2. [使用 certmgr.msc 在测试计算机上安装测试证书](using-certmgr-to-install-test-certificates-on-a-test-computer.md)*所选的摘录*：
 
     将证书 (*.cer*) 文件（用于对驱动程序进行 [测试签名](test-signing-driver-packages.md) ）复制到测试计算机。 可以将证书文件复制到测试计算机上的任何目录中。
 
@@ -300,7 +292,7 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
     重新启动计算机。 你现在可以运行 Certmgr.msc，并验证 ContosoTest 在上述两个位置是否可见。 如果不可见，则安装证书的另一种方法是打开证书，并将其安装在上述两个节点上，并再次验证。
 
-3.  验证 cat 文件和 sys 文件的签名。 打开提升的命令窗口，假定计算机中提供了 signtool.exe，请访问 cat、inf 和 sys 文件所在的驱动程序包目录。 在相应的目录中执行以下命令
+3. 验证 cat 文件和 sys 文件的签名。 打开提升的命令窗口，假定计算机中提供了 signtool.exe，请访问 cat、inf 和 sys 文件所在的驱动程序包目录。 在相应的目录中执行以下命令
 
     [验证编录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)：
 
@@ -336,20 +328,19 @@ tstamd64.cat 指定将进行数字签名的目录文件的名称。 如前面所
 
 ## <a name="installing-uninstalling-and-loading-the-test-signed-driver-package"></a>安装、卸载和加载测试签名的驱动程序包
 
-
 在步骤2中重新启动系统后，可以安装并加载测试签名的驱动程序包。 安装驱动程序包的方法有四种：
 
-1.  使用 Dpinst ( # A0) 工具，它是一个用于安装驱动程序的 WDK 命令行工具，可再分发。
-2.  使用 Devcon ( # A0) 工具，它是用于安装驱动程序的 WDK 命令行工具，但不可再发行。 WDK 中提供了 Devcon 工具的示例代码。 若要重新分发，可以从示例代码实现自己的 Devcon 工具，然后重新发布该工具的版本。
-3.  使用 OS 提供的 Pnputil ( # A0) 工具。
-4.  使用 "Windows 添加硬件向导"。
+1. 使用 Dpinst ( # A0) 工具，它是一个用于安装驱动程序的 WDK 命令行工具，可再分发。
+2. 使用 Devcon ( # A0) 工具，它是用于安装驱动程序的 WDK 命令行工具，但不可再发行。 WDK 中提供了 Devcon 工具的示例代码。 若要重新分发，可以从示例代码实现自己的 Devcon 工具，然后重新发布该工具的版本。
+3. 使用 OS 提供的 Pnputil ( # A0) 工具。
+4. 使用 "Windows 添加硬件向导"。
 
 Dpinst 和 Pnputil 预安装驱动程序包，而在 Devcon 和 Windows 添加硬件向导中，还可以安装驱动程序和设备。 在设备连接到计算机时，预安装驱动程序有助于操作系统查找驱动程序。
 
-**使用 DPInst 安装 (并卸载驱动程序包) **
+### <a name="to-install-and-uninstall-the-driver-package-by-using-dpinst"></a>使用 DPInst 安装 (并卸载驱动程序包) 
 
-1.  打开提升的命令窗口，并将默认目录设置为 c： \\ toaster。
-2.  在 WDK 再发行目录中提供了 Dpinst.exe x86 版本、amd64 版本和 ia64 版本。 将相关版本复制到 c： \\ toaster 目录，并运行以下命令。
+1. 打开提升的命令窗口，并将默认目录设置为 c： \\ toaster。
+2. 在 WDK 再发行目录中提供了 Dpinst.exe x86 版本、amd64 版本和 ia64 版本。 将相关版本复制到 c： \\ toaster 目录，并运行以下命令。
 
     ```cpp
     dpinst.exe  /PATH  c:\toaster
@@ -363,10 +354,10 @@ Dpinst 和 Pnputil 预安装驱动程序包，而在 Devcon 和 Windows 添加�
     dpinst.exe  /U  toaster.inf
     ```
 
-**使用 DevCon 安装驱动程序包**
+### <a name="to-install-the-driver-package-by-using-devcon"></a>使用 DevCon 安装驱动程序包
 
-1.  打开提升的命令窗口，并将默认目录设置为 c： \\ toaster。
-2.  在 WDK 工具目录中提供了 Devcon.exe x86 版本、amd64 版本和 ia64 版本。 将相关版本复制到 c： \\ toaster 目录，并运行以下命令。 此命令将安装驱动程序和设备。
+1. 打开提升的命令窗口，并将默认目录设置为 c： \\ toaster。
+2. 在 WDK 工具目录中提供了 Devcon.exe x86 版本、amd64 版本和 ia64 版本。 将相关版本复制到 c： \\ toaster 目录，并运行以下命令。 此命令将安装驱动程序和设备。
 
     ```cpp
     devcon.exe  install <inf> <hwid>
@@ -423,12 +414,13 @@ Dpinst 和 Pnputil 预安装驱动程序包，而在 Devcon 和 Windows 添加�
     devcon.exe dp_delete oem39.inf
     ```
 
-**使用 PnpUtil 安装驱动程序包**
+### <a name="to-install-the-driver-package-by-using-pnputil"></a>使用 PnpUtil 安装驱动程序包
 
-1.  打开提升的命令窗口，并将默认目录设置为 c： \\ toaster。
-2.  运行以下命令，该命令将显示所有可用的开关。 开关的使用一目了然，无需显示任何示例。
-    ```cpp
-    C:\Windows\System32\pnputil.exe /?
+1. 打开提升的命令窗口，并将默认目录设置为 c： \\ toaster。
+2. 运行以下命令，该命令将显示所有可用的开关。 开关的使用一目了然，无需显示任何示例。
+
+   ```cpp
+   C:\Windows\System32\pnputil.exe /?
 
     Microsoft PnP Utility
     Usage:
@@ -444,41 +436,32 @@ Dpinst 和 Pnputil 预安装驱动程序包，而在 Devcon 和 Windows 添加�
     pnputil.exe -?                           -> This usage screen
     ```
 
-**使用 "添加硬件向导" 安装驱动程序包**
+### <a name="to-install-the-driver-package-by-using-the-add-hardware-wizard"></a>使用 "添加硬件向导" 安装驱动程序包
 
-1.  打开提升的命令窗口
-2.  运行 hdwwiz.cpl 以启动添加硬件向导，然后选择 "下一步" 以前往第二页
-3.  选择 "高级" 选项并选择 "下一步"
-4.  从列表框中选择 "显示所有设备"，然后选择 "下一步"
-5.  选择 "具有磁盘" 选项
-6.  输入包含 C： \\ toaster 驱动程序包的文件夹的路径
-7.  选择 inf 文件，然后选择 "打开"。
-8.  选择“确定”
-9.  在接下来的两页中选择 "下一步"，然后选择 "完成" 以完成安装
+1. 打开提升的命令窗口
+2. 运行 hdwwiz.cpl 以启动添加硬件向导，然后选择 "下一步" 以前往第二页
+3. 选择 "高级" 选项并选择 "下一步"
+4. 从列表框中选择 "显示所有设备"，然后选择 "下一步"
+5. 选择 "具有磁盘" 选项
+6. 输入包含 C： \\ toaster 驱动程序包的文件夹的路径
+7. 选择 inf 文件，然后选择 "打开"。
+8. 选择“确定”
+9. 在接下来的两页中选择 "下一步"，然后选择 "完成" 以完成安装
 
-**验证测试签名的驱动程序是否正常运行**
+### <a name="verify-that-the-test-signed-driver-is-operating-correctly"></a>验证测试签名的驱动程序是否正常运行
 
 若要验证 Toastpkg.inf 是否正常运行：
 
-1.  开始设备管理器
-2.  从设备列表中选择 "Toaster"。 有关示例，请参阅下面的屏幕截图。
+1. 开始设备管理器
+2. 从设备列表中选择 "Toaster"。 有关示例，请参阅下面的屏幕截图。
 
     ![在设备管理器中显示 toaster 设备的屏幕截图](images/tutorialtoasterpackageindevicemgr.png)
 
-3.  若要打开驱动程序的 "属性" 对话框，请双击 "Toaster Package Sample Toaster" 并选择 "属性"
-4.  若要确认 Toaster 是否正常工作，请在 "常规" 选项卡上选中 "设备状态" 框
+3. 若要打开驱动程序的 "属性" 对话框，请双击 "Toaster Package Sample Toaster" 并选择 "属性"
+4. 若要确认 Toaster 是否正常工作，请在 "常规" 选项卡上选中 "设备状态" 框
 
 设备管理器可用于从 "属性" 对话框中卸载设备和驱动程序。
 
-**如何排查测试签名驱动程序问题**
+### <a name="how-to-troubleshoot-test-signed-drivers"></a>如何排查测试签名驱动程序问题
 
 如果遇到这些过程的任何困难，请参阅 [驱动程序签名安装疑难解答](troubleshooting-driver-signing-installation.md) 。
-
-
-
-
-
-
-
-
-

@@ -1,98 +1,97 @@
 ---
-title: 构建测试工具 (MALT) 的光
+title: " (MALT) 构建轻型测试工具"
 author: windows-driver-content
-description: 本主题提供有关如何使用 MALT （Microsoft 环境光工具） 的说明作为测试解决方案的光。
+description: 本主题提供有关如何使用 MALT (Microsoft 环境光线工具) 作为轻测试解决方案的说明。
 ms.assetid: d045b771-b536-457c-897b-ecb6517bf0a8
 ms.date: 12/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b4a443d60da8a6f9da38439a97c15ab85bbb3d59
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d52bbc50f82008212d322d4a4ed482c821454a5
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385707"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902635"
 ---
-# <a name="building-a-light-testing-tool-malt"></a>构建测试工具 (MALT) 的光
+# <a name="building-a-light-testing-tool-malt"></a> (MALT) 构建轻型测试工具
 
-本主题说明和要求提供有关如何使用 （以及构建如有必要） 以进行测试和校准屏幕亮度的工具。 MALT (**M**icrosoft **A**mbient **L**右键**T**ool) 供参考。 
+本主题提供有关如何使用 (和生成的说明和要求) 用于测试和校准屏幕亮度的工具。 MALT (**M**icrosoft **A**mbient **L**右键 **T**ool) 用于引用。
 
-请利用你的测试解决方案的想法和理念按这些说明进行操作。 微型控制器 API 发布，以便进一步利用测试已发布的 HLK 中和其他位置。 你的反馈将帮助改进本指南。
+请使用这些说明来利用您的测试解决方案。 发布微控制器 API，以便进一步利用在 HLK 和其他位置发布的测试。 你的反馈将有助于改进本指南。
 
 ![malt 设备](images/MALT.png)
 
 ## <a name="prerequsites"></a>先决条件
 
-本指南假定编程，和焊接，电子设备，在具有基本知识。
+本指南假定你在电子、编程和焊接方面具有基本知识。
 
 ## <a name="components"></a>组件
 
-您将需要以下组件。
+你将需要以下组件。
 
-* [Microcontroller](https://store.arduino.cc/mega-2560-r3)
-* [足够多的已校准的光源 / 范围](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/)
-* [光源的电源](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/#tab/PowerSupplies/subtab/powersupply)
-* [数字模拟转换器 (DAC) 到](https://www.microchip.com/wwwproducts/en/MCP4821)
-* 2 [Ambient 光传感器 （例如 TI OPT3001 或更高）](https://www.ti.com/product/OPT3001)
-* 2[颜色传感器](https://www.digikey.com/product-detail/en/ams/TCS34727FN/TCS34727FNCT-ND/3737677)
-* [浅机箱](#step-1---assemble-light-enclosure)
+* [微控制器](https://store.arduino.cc/mega-2560-r3)
+* [校准了足够范围/色谱的光源](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/)
+* [用于光源的电源](https://www.superbrightleds.com/moreinfo/led-panel-light/square-12v-led-panel-light-fixture-1ft-x-1ft-35w/2184/#tab/PowerSupplies/subtab/powersupply)
+* [将数字转换为模拟转换器 (DAC) ](https://www.microchip.com/wwwproducts/en/MCP4821)
+* 2个 [环境光线传感器 (EX TI OPT3001 或更好) ](https://www.ti.com/product/OPT3001)
+* 2 [彩色传感器](https://www.digikey.com/product-detail/en/ams/TCS34727FN/TCS34727FNCT-ND/3737677)
+* [灯具机箱](#step-1---assemble-light-enclosure)
 
-## <a name="instructions"></a>说明
+## <a name="instructions"></a>Instructions
 
-### <a name="step-1---assemble-light-enclosure"></a>步骤 1-组装 light 机箱
+### <a name="step-1---assemble-light-enclosure"></a>步骤 1-组装灯具机箱
 
-控制灯公开给待测系统 (SUT) 是关键准确地进行测试。 机箱必须与正在使用浅色面板和 SUT 相匹配。 这将包括 top，用于可控制光源和为 SUT 下方留出空间 aperture 具有的框。
+控制公开给受测系统 (SUT) 是准确测试的关键。 机箱需要与正在使用的灯光面板和 SUT 匹配。 这将包含一个框，其中的口径位于其下方的可控制光源和空间。
 
-![浅机箱](images/box.png)
+![灯具机箱](images/box.png)
 
-我们使用的便携式计算机的机箱是 16"x 16"x12"，使用 10 个"x 10"aperture 顶部的机箱。  [模型](https://github.com/Microsoft/busiotools/tree/master/sensors/Tools/MALT/Schematics/enclosure)可以 3D 打印。 
+用于便携式计算机的机箱是 16 "x16" x12，机箱顶部有10个 "x10" 口径。  可以对 [模型](https://github.com/Microsoft/busiotools/tree/master/sensors/Tools/MALT/Schematics/enclosure) 进行三维打印。
 
-#### <a name="light-enclosure-tips"></a>浅机箱提示
+#### <a name="light-enclosure-tips"></a>轻型机箱提示
 
-一个有效的浅机箱将提供从受控光源和不是环境下测试面板 （或设备） 上的光线强制转换将在其中没有影响浅色环境。 浅框的示例如下。
+有效的光线箱将提供一个取证的光源环境，在此环境中，面板 (或设备) 在测试的光源环境将来自受控光源而不是环境。 下面是灯光方框的示例。
 
-* [自定义 3D 打印的用例](https://github.com/Microsoft/busiotools/tree/master/sensors/Tools/MALT/Schematics/enclosure)
-* [存储 Tote](http://www.sterilite.com/SelectProduct.html?id=955&ProductCategory=182&section=1)
-* 纸板框
+* [自定义三维打印事例](https://github.com/Microsoft/busiotools/tree/master/sensors/Tools/MALT/Schematics/enclosure)
+* [存储 Tote](https://www.sterilite.com/SelectProduct.html?id=955&ProductCategory=182&section=1)
+* Cardboard 框
 
-机箱与主机箱需要有足够的 SUT，并从外部浅影响浅装置可以置于顶部或装载主机箱中删除它。
+机箱必须足够大，可用于 SUT，并将其从外部光源中删除，光装置可以放置在机箱的顶部或装入机箱内。
 
-如果浅装置框外部装载 （在最前面），请确保 aperture 将容纳装置，并提供足够轻度到中 SUT 光线传感器。
+如果光装置安装在机箱外 (顶部) 上，请确保口径可容纳装置，并向 SUT 中的光线传感器提供充足的光源。
 
-#### <a name="assembly-tips"></a>程序集的提示
+#### <a name="assembly-tips"></a>程序集提示
 
-* 如果程序集需要是粘附或磁带，则我们建议使用粘附或[粗面纸黑色 gaffer 磁带](https://en.wikipedia.org/wiki/Gaffer_tape)。
-* 检查机箱与工作图面放置在机箱齐平。 应存在任何外部浅泄漏。
-* 使用从 MALT （和浅机箱中的没有 SUT） 以确定是否存在入机箱的外部环境光线泄漏传感器。
-* 如果光源需要 aperture，请使用大小适当的漏洞，使你光可以而无需故障或泄露 light 鼠标框之上。
+* 如果 box 组件需要粘附或磁带，则建议使用胶水或 [粗糙黑色 gaffer 磁带](https://en.wikipedia.org/wiki/Gaffer_tape)。
+* 检查机箱与机箱所在的工作图面是否齐齐。 不应存在外部轻型泄露。
+* 使用 MALT (中的传感器，不使用灯具机箱) 中的 SUT 来确定机箱中是否存在外部环境光泄漏。
+* 如果光源需要口径，请使用适当大小的孔，使光线可以在机箱上停留，而不会穿透或泄漏光。
 
-### <a name="step-2---assemble-sensors"></a>步骤 2-组合传感器
+### <a name="step-2---assemble-sensors"></a>步骤 2-组装传感器
 
-MALT 使用两个光线传感器 （一个来测量屏幕亮度），另一个用于测量环境亮度和两个颜色传感器 （一个来测量屏幕颜色），另一个用于度量值的环境颜色。 若要同时实现这些操作，将这些过程，这样一个光线传感器和一种颜色传感器背其他两个传感器。 当屏幕传感器正面临着向下 （坐在屏幕上），其他传感器正面临着向上来测量环境光线。
+MALT 使用两个光源传感器 (一个传感器来测量屏幕亮度，使用一个传感器来测量) 的环境亮度，并使用两个彩色传感器来测量屏幕颜色，将两个彩色传感器 (一个用于测量屏幕颜色，另一个用于测量环境颜色) 。 若要同时实现这些目的，请将其连接到一个光传感器，并使一个彩色传感器远离其他两个传感器。 屏幕传感器朝下 (在屏幕) 上时，其他传感器朝上朝上来测量环境光线。
 
-![传感器远程测试机组](images/sensor.png)
+![传感器 rig](images/sensor.png)
 
-连接到电源供应的 LED 指示灯面板并将其连接到 DAC。 微型控制器必须能够控制发送到浅色面板以便控制其强度，实现使用 DAC 的电压。 我们使用下面显示了该工具如何对连接的示意图。 可以在传感器 PCB KiCad 项目中找到更多详细信息。
+将 LED 灯面板连接到电源，并将其连接到 DAC。 微控制器必须能够控制发送到光源面板的电压，以便控制其强度，这是使用 DAC 实现的。 以下示意图显示了如何为我们使用的工具建立连接。 有关更多详细信息，请参阅传感器 PCB KiCad 项目。
 
 ![传感器示意图](images/SensorPCB.png)
 
+### <a name="step-3---connect-the-microcontroller"></a>步骤 3-连接微控制器
 
-### <a name="step-3---connect-the-microcontroller"></a>步骤 3-连接微型控制器
+将传感器连接到微控制器，并将微控制器连接到 PC。 出于我们的目的，我们将计算机控制测试与测试 (的系统) 。
 
-将传感器连接到微型控制器和到 PC 微控制器。 对于我们的目的，我们提供控制测试作为待测系统 (SUT) 相同的 PC。
+下图显示了 MALT 的各个部分的连接方式。
 
-下图显示了如何各个组成部分 MALT 连接。
+![块示意图](images/BlockDiagram.png)
 
-![框图](images/BlockDiagram.png)
-
-通过 MALT PCB，我们将能够连接到传感器 PCB arduino 开发板和光源。 可以在 MALT PCB KiCad 项目中找到更多详细信息。
+通过 MALT PCB，我们可以将 Arduino 板连接到传感器 PCB 和光源。 有关更多详细信息，请参阅 MALT PCB KiCad 项目。
 
 ![MALT 示意图](images/MaltPCB.png)
 
-### <a name="step-4--start-testing"></a>步骤 4 开始测试
+### <a name="step-4--start-testing"></a>步骤 4-开始测试
 
-请参阅[测试系统亮度响应](testing-MALT-system-brightness-response.md)有关设置和使用 MALT 只收集组的详细信息。
+有关设置和使用刚刚组合的 MALT 的详细信息，请参阅 [测试系统亮度响应](testing-MALT-system-brightness-response.md) 。
 
-#### <a name="test-scenarios-to-cover"></a>测试方案，以涵盖
+#### <a name="test-scenarios-to-cover"></a>要涵盖的测试方案
 
 * [测试自动亮度](testing-MALT-auto-brightness.md)
 
@@ -101,4 +100,4 @@ MALT 使用两个光线传感器 （一个来测量屏幕亮度），另一个�
 * [测试系统方案](testing-MALT-system-scenarios.md)
 
 请参考  
-[微型控制器命令](testing-MALT-microcontroller-commands.md)MALT 有关创建自定义测试时使用的 api。
+用于创建自定义测试的[微控制器命令](testing-MALT-microcontroller-commands.md)api。

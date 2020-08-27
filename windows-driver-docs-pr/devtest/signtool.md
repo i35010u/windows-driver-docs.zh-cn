@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d416b6d64ed54434cd4f8eb147c08329e3902612
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 319e1f8a9e623a0517bccdb2f8520770fb5fbe5e
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802637"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902613"
 ---
 # <a name="signtool"></a>SignTool
 
@@ -29,7 +29,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windo
 
 ## <a name="partial-list-of-operations-options-and-arguments"></a>操作、选项和参数的部分列表
 
-### <a name="operations"></a>操作
+### <a name="operations"></a>Operations
 
 **catdb**  
 配置 SignTool 以更新目录数据库。 SignTool 可以将目录文件添加到数据库中，也可以从数据库中删除目录。 默认情况下， **catdb** 命令会将文件（其名称由 *FileName* 参数指定）添加到系统组件 (驱动程序) 数据库。
@@ -241,7 +241,7 @@ SignTool ( # A0) 是一个命令行 [CryptoAPI](https://docs.microsoft.com/windo
 
 对于 **catdb** 命令，文件必须是 [驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)的编录文件。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 SignTool 支持大量选项。 本主题中所述的选项仅限于可用于对驱动程序包或驱动程序文件进行签名或验证的选项。
 
@@ -255,7 +255,7 @@ SignTool 的32位版本位于 WDK 的 "bin" \\ 文件夹中。 此工具的64位
 
 下面的示例演示如何使用软件发行者证书 (SPC) 和相应的交叉证书对 [驱动程序包的](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages) 目录文件进行签名。 此示例适用于对64位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名，这将强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 AbcCatFileName.cat 进行签名。 若要对编录文件进行签名，该示例使用了交叉证书 AbcCrossCertificate 和 AbcSPCCertificate 证书。 AbcSPCCertificate 证书位于 AbcCertificateStore 证书存储区中。
 
-该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供，其 URL 为 http://timestamp.digicert.com 。
+该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供，其 URL 为 `http://timestamp.digicert.com` 。
 
 ```command
 SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertificate /t http://timestamp.digicert.com AbcCatFileName.cat
@@ -269,7 +269,7 @@ SignTool sign /ac AbcCrossCertificate.cer /s AbcCertificateStore /n AbcSPCCertif
 
 下面的示例演示如何使用[商业发布证书](https://docs.microsoft.com/windows-hardware/drivers/install/commercial-release-certificate)或[商业测试证书](https://docs.microsoft.com/windows-hardware/drivers/install/commercial-test-certificate)对[驱动程序包的](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)目录文件进行签名。 此示例适用于对32位版本的 Windows Vista 和更高版本的 Windows 的驱动程序包进行签名，这不会强制实施内核模式代码签名策略。 该示例对驱动程序包的目录文件 CatalogFileName.cat 进行签名。 该示例使用位于 TestCertificateStore 证书存储区中的 AbcTestCertificate 测试证书对编录文件进行签名。
 
-该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供，其 URL 为 http://timestamp.digicert.com 。
+该示例还使用公开提供的时间戳服务器对目录文件进行签名。 时间戳服务器由 DigiCert 提供，其 URL 为 `http://timestamp.digicert.com` 。
 
 ```command
 SignTool sign /s TestCertificateStore /n AbcTestCertificate /t http://timestamp.digicert.com CatalogFileName.cat

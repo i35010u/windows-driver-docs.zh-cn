@@ -4,12 +4,12 @@ description: SoftwareInfo XML 架构定义
 ms.assetid: 7b09ffc6-0f69-4710-988b-4952823da72e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe68a2d10fd1fc68fb79a7c4e819471540cb028d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 445710da56387728ee430a934aba298e9e1fd91f
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323689"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902415"
 ---
 # <a name="softwareinfo-xml-schema-definition"></a>SoftwareInfo XML 架构定义
 
@@ -175,12 +175,12 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/SoftwareInfo
   </xs:simpleType>
 
   <xs:simpleType name="UnicodeIdentifierType">
-    <xs:restriction base="tns:UnicodeIdentifierCharSetType" /> 
+    <xs:restriction base="tns:UnicodeIdentifierCharSetType" />
   </xs:simpleType>
 
   <xs:simpleType name="UnicodeIdentifierCharSetType">
   <xs:restriction base="tns:AllowedUnicodeCharSetType">
-    <xs:pattern value="[^!#$%'()\*\+,/:;=\?@\[\\\]^_`\|]+" /> 
+    <xs:pattern value="[^!#$%'()\*\+,/:;=\?@\[\\\]^_`\|]+" />
   </xs:restriction>
   </xs:simpleType>
 
@@ -287,12 +287,3 @@ http://schemas.microsoft.com/windows/2010/08/DeviceMetadata/SoftwareInfo
 
 </xs:schema>
 ```
-
- 
-
- 
-
-
-
-
-

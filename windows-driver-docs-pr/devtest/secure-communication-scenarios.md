@@ -10,12 +10,12 @@ keywords:
 - 安全通信方案 WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34a75d6df2d934c2472c3f4e1dda2cb11adce57a
-ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
+ms.openlocfilehash: dfbe3cf3cc1dfb4094ecd2d38ae97840cd561ec1
+ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714697"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88902529"
 ---
 # <a name="secure-communication-scenarios"></a>安全通信方案
 
@@ -38,7 +38,7 @@ ms.locfileid: "88714697"
 |5.2.1|发送通配符探测作为 HTTPS 请求，使用：</br>-使用默认匹配规则。</br>-无 wsd： Types 元素</br>-无 wsd：范围元素</br>-提供了 HTTP 地址。|使用 HTTPS 响应响应 ProbeMatches。</br>**注意：**   如果提供了**wsd： XAddrs** ，则此地址必须为 https URI， **wsa： EndpointReference/wsa： address**必须与**wsd： XAddrs**相同。|确认 TestDevice 的 **wsa： EndpointReference/wsa： Address** 正确。|
 |**5.3**|**将事件订阅和续订到安全设备**| | |
 |安全设备的发现通过使用在5.1 或5.2 中测试的方法来确定。| | | |
-|5.3.1|订阅 SimpleEvent：</br>- **wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"**</br>- **wse： Filter = = http://schemas.example.org/EventingService/SimpleEvent**</br>客户端可以选择包括 " **xs： duration**" 类型的过期时间。|发送有效期长度足以完成步骤5.3.2 的 SubscribeResponse。 过期时间必须是 **xs： duration**类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，可以执行步骤5.3.2。|
+|5.3.1|订阅 SimpleEvent：</br>- `wse:Filter/@Dialect == "<http://schemas.xmlsoap.org/ws/2006/02/devprof/Action>"`</br>- `wse:Filter == http://schemas.example.org/EventingService/SimpleEvent`</br>客户端可以选择包括 " **xs： duration**" 类型的过期时间。|发送有效期长度足以完成步骤5.3.2 的 SubscribeResponse。 过期时间必须是 **xs： duration**类型。</br>对于此测试，服务器不需要使用从客户端请求的相同 **xs： duration** 。|客户端接收响应，可以执行步骤5.3.2。|
 |5.3.2|无|激发 SimpleEvent。|在客户端接收到事件。|
 |5.3.3|将续订发送到 SimpleEvent。</br>当客户端发送事件的续订时，他们可以选择手动启动续订，或在原始 SubscribeResponse 消息中指定的续订期的一半时间已过时自动发送续订。|发送有效期长度足以完成步骤5.3.4 的 RenewResponse。 过期时间必须是 **xs： duration**类型。|响应会在客户端接收，并可跳到步骤5.3.4。|
 |5.3.4|无|激发 SimpleEvent。|在客户端接收到事件。|
