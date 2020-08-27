@@ -1,19 +1,19 @@
 ---
-Description: 功能-对象检索
+description: 功能-对象检索
 title: 功能-对象检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b04095aa98d365cc8dbd4109df8510033ab2efe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f71cb6e897459b65046f826ead76df815341c327
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378164"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969500"
 ---
 # <a name="functional-object-retrieval"></a>功能-对象检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetFunctionalObjects**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetFunctionalObjects**中的方法示例驱动程序。 后一种方法创建**IPortableDevicePropVariantCollection**驱动程序将请求的功能对象存储到其中的对象。 对于示例驱动程序，支持只有两个对象类型：WPD\_设备\_对象\_ID 或存储\_对象\_id。 根据请求的功能类别，此方法可以返回一个或这两种类型。
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetFunctionalObjects** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetFunctionalObjects** 方法的调用。 后一种方法会创建一个 **IPortableDevicePropVariantCollection** 对象，驱动程序将在其中存储所请求的功能对象。 对于示例驱动程序，只支持两种对象类型： WPD \_ 设备 \_ 对象 \_ id 或存储 \_ 对象 \_ id。 此方法可能返回这两种类型中的一种或两种类型，具体取决于所请求的功能类别。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetFunctionalObjects(

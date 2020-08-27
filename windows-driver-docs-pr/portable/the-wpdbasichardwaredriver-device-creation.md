@@ -1,27 +1,27 @@
 ---
-Description: 创建传感器设备
+description: 创建传感器设备
 title: 创建传感器设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 741968915d47f5ef980e7b2327c2b9e3cba77c15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31925027973ed4ee345890098ce5ba6e3bb2225d
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378203"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968918"
 ---
 # <a name="creating-the-sensor-devices"></a>创建传感器设备
 
 
-传感器线路基于在其传感器数据工作表中提供的示例线路。 这些线路设计为与视差 BS2 可编程微控制器的每个传感器。
+传感器线路基于其传感器数据表中的视差提供的示例线路。 这些线路旨在将每个传感器与视差 BS2 可编程微控制器集成。
 
-例如，以下线路关系图和图像显示了 Ultrasonic 距离传感器数据表：
+例如，"Ultrasonic 距离" 传感器的数据表显示以下线路图和图像：
 
 ![ultrasonic 距离传感器](images/ping_datasheet.png)
 
-在此图中，Pin 15 BS2 上接收的传感器数据。 为每个传感器的固件是非常相似。 它包含两个主要功能：PollSensor 和 RetrieveInterval。
+在此图中，BS2 上的引脚15接收传感器数据。 每个传感器的固件非常类似。 它包含两个主要函数： PollSensor 和 RetrieveInterval。
 
-PollSensor 函数中找到的代码各不相同传感器传感器。 对于 Ultrasonic 距离传感器 PollSensor 函数与 ultrasonic transducer 发出 pulse，侦听的响应，然后测量要发生的响应所花费的时间。
+PollSensor 函数中找到的代码随传感器的不同而异。 对于 Ultrasonic 距离传感器，PollSensor 函数会发出与 Ultrasonic 传感器的脉冲，侦听响应，然后测量响应发生所需要的时间时间。
 
 ```cpp
 PollSensor:
@@ -31,7 +31,7 @@ PollSensor:
 RETURN
 ```
 
-RetrieveInterval 函数是完全相同的每个传感器。 此函数检索新的时间间隔数据包从 WPD 驱动程序 （如果其中一个已发送），然后相应地更新间隔属性在固件中。 如果没有时间间隔已收到来自驱动程序，RetrieveInterval 函数将调用默认超时值函数。 此函数将传送回 WPD 驱动程序的传感器数据。
+每个传感器的 RetrieveInterval 函数都是相同的。 此函数从 WPD 驱动程序检索新的间隔数据包 (如果) 发送了该驱动程序，然后在固件中相应地更新 interval 属性。 如果未收到驱动程序的间隔，则 RetrieveInterval 函数将调用默认超时函数。 此函数将传感器数据传输回 WPD 驱动程序。
 
 ```cpp
 RetrieveInterval:
@@ -42,7 +42,7 @@ RetrieveInterval:
 RETURN
 ```
 
-超时函数具有以下格式：
+Timeout 函数的格式如下：
 
 ```cpp
 Timeout:
@@ -50,7 +50,7 @@ Timeout:
 GOTO Main
 ```
 
-请注意，超时函数会返回到主例程，调用 PollSensor。
+请注意，Timeout 函数返回到调用 PollSensor 的主例程。
 
 ```cpp
 Main:
@@ -109,7 +109,7 @@ RetrieveInterval:
 RETURN
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

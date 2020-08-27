@@ -1,25 +1,25 @@
 ---
-Description: 本主题提供有关如何查看 USB ETW 日志中捕获的事件的时间线的信息。
+description: 本主题提供有关如何查看在 USB ETW 日志中捕获的事件的时间线的信息。
 title: 使用 Xperf 和 Netmon 分析 USB 性能问题
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f14a2fc092b8055d6062247aad1e4f3836cd88
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 060ffa378237bf3c1803cb95292914ee0d27abd2
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375173"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969474"
 ---
 # <a name="analyzing-usb-performance-issues-by-using-xperf-and-netmon"></a>使用 Xperf 和 Netmon 分析 USB 性能问题
 
 
-本主题提供有关如何查看 USB ETW 日志中捕获的事件的时间线的信息。
+本主题提供有关如何查看在 USB ETW 日志中捕获的事件的时间线的信息。
 
-Xperf 提供一组内核事件用于分析性能问题。 它记录这些事件，并在关系图中显示它们。
+Xperf 提供了一组用于分析性能问题的内核事件。 它记录这些事件，并将它们显示在图形中。
 
-如果你熟悉使用 Xperf 和 USB ETW 事件，可以创建 USB ETW 日志和问题的情景的 Xperf 日志、 合并两个日志文件，并放在一起分析。 使用 Xperf 和 Netmon 一起，可查看系统事件 (Xperf) 和针对给定方案的 USB 事件 (Netmon)。
+如果你熟悉 Xperf 和 USB ETW 事件，则可以创建一个 USB ETW 日志和一个 Xperf 日志，其中包含问题方案，合并两个日志文件，并将它们一起进行分析。 结合使用 Xperf 和 Netmon，可以查看给定方案 (Netmon) 的系统事件 (Xperf) 和 USB 事件。
 
-通过发出以下命令从提升的命令提示符中并行启动两个跟踪：
+通过从提升的命令提示符发出以下命令，并行启动两个跟踪：
 
 ```cpp
 Xperf –on Diag
@@ -29,7 +29,7 @@ Logman start Usbtrace -p Microsoft-Windows-USB-USBPORT -o usbtrace.etl -ets -nb 
 Logman update Usbtrace -p Microsoft-Windows-USB-USBHUB –ets
 ```
 
-该问题的情景，执行的操作，并发出以下命令从提升的命令提示符，然后停止跟踪：
+针对问题方案执行操作，然后通过从提升权限的命令提示符发出以下命令来停止跟踪：
 
 ```cpp
 Logman stop Usbtrace -ets
@@ -37,39 +37,39 @@ Logman stop Usbtrace -ets
 Xperf –stop
 ```
 
-通过使用以下命令 （权限不是必需的） 合并到单个文件中的两个跟踪日志文件：
+使用以下命令将两个跟踪日志文件合并到一个文件中 (不需要权限) ：
 
 ```cpp
 Xperf –merge usbtrace.etl C:\kernel.etl merged.etl
 ```
 
-此示例创建名为 merged.etl 合并的文件。 使用 Xperf 性能分析器或使用 Netmon，您可以打开此文件。 若要在 Xperf 中打开该文件，运行以下命令：
+此示例创建一个名为 "已合并" 的合并文件。 可以通过 Xperf 性能分析器或 Netmon 来打开此文件。 若要在 Xperf 中打开该文件，请运行以下命令：
 
 ```cpp
 Xperf merged.etl
 ```
 
-Xperf 专门针对显示图表范围广泛的内核事件，此图中所示。 有关详细信息 Xperf 录制选项和 Xperf GUI [Xperf 命令行工具详细](https://msdn.microsoft.com/library/cc305221.aspx)并[Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/cc305187.aspx)。
+Xperf 显示了一系列内核事件的专门图形，如图所示。 有关 Xperf 录制选项和 Xperf GUI 的详细信息，请 [Xperf 命令行工具的详细](https://msdn.microsoft.com/library/cc305221.aspx) 信息和 [Windows 性能分析器 (WPA) ](https://msdn.microsoft.com/library/cc305187.aspx)。
 
 ![windows 性能分析器](images/xperf3.png)
 
-若要打开合并的跟踪日志中 Netmon，运行 Netmon，单击**文件-&gt;打开-&gt;捕获**，然后选择该文件。 Xperf 和 Netmon 可以同时打开合并的文件。 您可以切换 Xperf GUI 和 Netmon 分析发生的情况在系统中，USB 堆栈中一段特定时间。 您可以查看 USB 事件在 Xperf，除了系统事件，但 USB 事件可以更轻松地在 Netmon 中读取。
+若要在 Netmon 中打开合并的跟踪日志，请运行 Netmon，单击 "文件"-" ** &gt; &gt; 捕获**"，然后选择该文件。 Xperf 和 Netmon 可以同时打开合并的文件。 可以在 Xperf GUI 和 Netmon 之间切换，以便分析在特定时间段内系统和 USB 堆栈中发生的情况。 除了系统事件之外，你还可以查看 Xperf 中的 USB 事件，但在 Netmon 中，USB 事件会更易于阅读。
 
-默认情况下，网络监视器显示到合并的跟踪文件中的所有事件。 若要显示仅 USB 事件，应用筛选器如下所示：
+默认情况下，Netmon 显示合并跟踪文件中的所有事件。 若要仅显示 USB 事件，请应用如下所示的筛选器：
 
 ```cpp
 ProtocolName == "USBHub_MicrosoftWindowsUSBUSBHUB" OR ProtocolName == "USBPort_MicrosoftWindowsUSBUSBPORT"
 ```
 
-可以在网络监视器筛选器显示窗格中输入此筛选器文本。 使用 Netmon 中筛选器的详细信息，请参阅"USB Netmon 筛选器"在此[案例研究：使用 ETW 和 Netmon 未知的 USB 设备进行故障排除](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)。
+可以在 "Netmon 筛选器" 显示窗格中输入此筛选器文本。 有关在 Netmon 中使用筛选器的详细信息，请参阅本例中的 "USB Netmon 筛选器" [：使用 ETW 和 Netmon 对未知 USB 设备进行故障排除](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)。
 
-若要分析的 USB 事件计时，可以查看网络监视器中显示的事件之间的时差。
+若要分析 USB 事件的时间，可以查看 Netmon 中显示的事件之间的时间差。
 
-**若要查看显示的事件的时间差异**
+**查看所显示事件的时间差**
 
-1.  在中**帧摘要**窗格中，右键单击列标题，然后选择**选择列**。
-2.  在中**禁用列**列表中，选择**时间增量**，单击**添加**，然后单击**确定**。
-3.  编写显示仅想要查看其计时事件的筛选器。 例如，若要查看非重叠大容量传输调度和完成事件数之间的延迟问题，请添加以下筛选器：
+1.  在 " **帧摘要** " 窗格中，右键单击列标题，然后选择 " **选择列**"。
+2.  在 " **禁用的列** " 列表中，选择 " **时间增量**"，单击 " **添加**"，然后单击 **"确定"**。
+3.  编写一个筛选器，该筛选器仅显示要查看其时间的事件。 例如，若要查看非重叠大容量传输调度和完成事件之间的延迟，请添加以下筛选器：
     ```cpp
     Description == "USBPort_MicrosoftWindowsUSBUSBPORT:Dispatch URB_FUNCTION_BULK_OR_INTERRUPT_TRANSFER" 
     OR Description == "USBPort_MicrosoftWindowsUSBUSBPORT:Complete URB_FUNCTION_BULK_OR_INTERRUPT_TRANSFER" 
@@ -77,12 +77,12 @@ ProtocolName == "USBHub_MicrosoftWindowsUSBUSBHUB" OR ProtocolName == "USBPort_M
 
     ```
 
-    1.  可以在跟踪中显示的事件从选择的事件 Id （说明）。
-    2.  若要使用的事件 ID 筛选器中，右键单击某一事件的说明**帧摘要**窗格，然后选择**添加到显示筛选器的说明**。
+    1.  可以从跟踪中显示的事件)  (说明中选择事件 Id。
+    2.  若要在筛选器中使用事件 ID，请在 " **帧摘要** " 窗格中右键单击某个事件的说明，然后选择 " **添加说明以显示筛选器**"。
 
 ## <a name="related-topics"></a>相关主题
-[USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  
-[使用 USB ETW 使用 Xperf](using-xperf-with-usb-etw.md)  
+[Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)  
+[将 Xperf 与 USB ETW 配合使用](using-xperf-with-usb-etw.md)  
 
 
 

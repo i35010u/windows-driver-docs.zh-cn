@@ -1,19 +1,19 @@
 ---
-Description: 支持的属性检索
+description: 支持的属性检索
 title: 支持的属性检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a93b0e31aa3a7d511ff134de60fa21c76307e36
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 40f33e7b966cdd2e50a42d10361e20f8b02a8d7e
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362457"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969520"
 ---
 # <a name="supported-property-retrieval"></a>支持的属性检索
 
 
-当 WPD 程序调用**IPortableDeviceProperties::GetSupportedProperties**方法，此方法，反过来，触发调用**WpdObjectProperties::OnGetSupportedProperties**中的示例驱动程序的方法。 后一种方法创建**IPortableDeviceKeyCollection**驱动程序将属性存储到其中的对象为给定对象支持的属性的密钥。
+当 WPD 应用程序调用 **IPortableDeviceProperties：： GetSupportedProperties** 方法时，此方法将触发对示例驱动程序中的 **WpdObjectProperties：： OnGetSupportedProperties** 方法的调用。 后一种方法会创建一个 **IPortableDeviceKeyCollection** 对象，驱动程序会将给定对象支持的属性的属性键存储到其中。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::OnGetSupportedProperties(

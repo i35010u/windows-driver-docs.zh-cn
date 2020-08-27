@@ -1,37 +1,37 @@
 ---
-Description: 本主题介绍所需的使用 Windows.Devices.Usb 命名空间的 Windows 应用的设备功能。
+description: 本主题介绍使用 Windows Usb 命名空间的 Windows 应用程序所需的设备功能。
 title: 如何将 USB 设备功能添加到应用部件清单
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c3cd0db64cf5fe520efc1fefe5d18853380f7a3b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3ff01f3619976ed2c475cce0b27adc5e2a0f77dc
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368762"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968768"
 ---
 # <a name="how-to-add-usb-device-capabilities-to-the-app-manifest"></a>如何将 USB 设备功能添加到应用部件清单
 
 
 **摘要**
 
--   使用 USB 设备功能，必须更新 Package.appxmanifest。
--   设备类必须是一个受支持的类。
+-   必须用 USB 设备功能更新 appxmanifest.xml。
+-   设备类必须是受支持的类之一。
 
-本主题介绍使用 Windows 应用所需的设备功能[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间。
+本主题介绍使用 [**Windows Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) 命名空间的 windows 应用程序所需的设备功能。
 
 ## <a name="usb-device-capability-usage"></a>USB 设备功能使用情况
 
 
-USB 应用必须包括在某些设备功能及其[应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)指定设备有关的关键信息。 以下是所需的元素层次结构顺序：
+USB 应用必须在其 [应用程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) 中包含某些设备功能，以指定有关设备的关键信息。 下面是按层次顺序排列的必需元素：
 
-[ **&lt;DeviceCapability&gt;** ](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability):**名称**属性必须为"usb"。
+[** &lt; DeviceCapability &gt; **](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)： **Name**属性必须是 "usb"。
 
-**&lt;设备&gt;** :**Id**属性必须指定供应商/产品 Id，也可以是"any"，以允许访问的函数类型匹配的任何设备。
+** &lt; 设备 &gt; **： **Id**属性必须指定供应商/产品 Id 或 "任何"，以允许访问与该函数类型匹配的任何设备。
 
-**&lt;函数&gt;** :**类型**特性可以指定设备类代码、 名称或设备接口的 GUID。
+** &lt; 函数 &gt; **： **Type**特性可以指定设备类代码、名称或设备接口 GUID。
 
-**请注意**  不能修改 Microsoft Visual Studio 2013 中的 USB 设备功能。 您必须右键单击 Package.appxmanifest 文件中的**解决方案资源管理器**，然后选择**打开方式...** ，然后**XML （文本） 编辑器**。 在纯 XML 中打开该文件。
+**注意**   无法在 Microsoft Visual Studio 2013 中修改 USB 设备功能。 必须右键单击 **解决方案资源管理器** 中的 appxmanifest.xml 文件，然后选择 " **打开方式 ...**"，然后选择 " **XML (文本) 编辑器**"。 文件以纯 XML 格式打开。
 
  
 
@@ -45,10 +45,10 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
 </DeviceCapability>
 ```
 
-## <a name="supported-usb-device-classes"></a>受支持的 USB 设备类
+## <a name="supported-usb-device-classes"></a>支持的 USB 设备类
 
 
--   名称和受支持的设备类的代码值如下所示：
+-   支持的设备类的名称和代码值如下所示：
 
     -   `name:cdcControl,           classId:02 * *`
     -   `name:physical, classId:05 * *`
@@ -60,30 +60,30 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
     -   `name:measurement,          classId:fe 03 *`
     -   `name:vendorSpecific,       classId:ff * *`
 
-    **请注意**  属于 DeviceFirmwareUpdate 类的设备只能访问由该电脑的显式声明由 OEM 的特权应用。
+    **注意**   属于 DeviceFirmwareUpdate 类的设备只能由 OEM 为该 PC 显式声明的特权应用程序访问。
 
      
 
--   由于这些是未知的接口，则必须应用，以指定这些类代码的供应商/产品 id。
+-   由于这些是未知接口，因此应用需要为这些类代码指定供应商/产品 id。
 
-    -   CDC (0x02)
-    -   CDC 数据 (0x0A)
-    -   杂项 (0xEF)
-    -   特定于应用程序 (0xFE)
-    -   特定于供应商 (0xFF)
+    -   CDC (0x02) 
+    -   CDC-data (0x0A) 
+    -   0xEF) 的其他 (
+    -   特定于应用程序 (0xFE) 
+    -   特定于供应商 (0xFF) 
 -   不支持这些 USB 设备类：
 
-    -   无效的类 (0x00)
-    -   音频类 (0x01)
-    -   HID 的 class(0x03)
-    -   图像类 (0x06:sp)
-    -   打印机类 (0x07)
-    -   大容量存储类 (0x08)
-    -   智能卡类 (0x0B)
-    -   音频/视频类 (0x10)
-    -   无线 (0xE0) 的控制器 （例如，无线 USB 主机/集线器）
+    -    (0x00 的类无效) 
+    -   音频类 (0x01) 
+    -   HID 类 (0x03) 
+    -   Image 类 (0x06) 
+    -   Printer 类 (0x07) 
+    -   大容量存储类 (0x08) 
+    -   智能卡类 (0x0B) 
+    -   音频/视频类 (0x10) 
+    -   无线控制器 (如无线 USB 主机/集线器)  (0xE0) 
 
-## <a name="usb-device-capability-example"></a>USB 设备功能的示例
+## <a name="usb-device-capability-example"></a>USB 设备功能示例
 
 
 下面是用于定义 USB 设备功能的一些示例：
@@ -96,7 +96,7 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
 <thead>
 <tr class="header">
 <th>示例</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -107,7 +107,7 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
     &lt;Function Type="name:stillImage"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
-<td><p>允许应用程序访问在任何设备上的任何 ActiveSync 或 StillImage 接口。 应用程序不需要指定供应商/产品标识符，因为这些已知类类型。</p></td>
+<td><p>允许应用访问任何设备上的任何 ActiveSync 或 StillImage 接口。 应用无需指定供应商/产品标识符，因为这些是已知类类型。</p></td>
 </tr>
 <tr class="even">
 <td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
@@ -115,7 +115,7 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
     &lt;Function Type="name:vendorSpecific"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
-<td><p>允许应用程序访问 OSR USB Fx2 设备上的特定于供应商的接口。</p></td>
+<td><p>允许应用访问 OSR USB Fx2 设备上的特定于供应商的接口。</p></td>
 </tr>
 <tr class="odd">
 <td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
@@ -123,7 +123,7 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
     &lt;Function Type="classId:ff * <em>"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
-<td><p>允许应用程序访问其他版本的 OSR USB Fx2 设备上的特定于供应商的接口。 请注意 classId 格式:"ff * *"。 类代码是"ff"后跟一个通配符 (</em>) 以包含任何代码，子类和协议。</p></td>
+<td><p>允许应用程序在不同版本的 OSR USB Fx2 设备上访问供应商特定的接口。 请注意 classId 格式： "ff * *"。 类代码是 "ff" 后跟通配符 (</em>) 以包括任何子类和协议代码。</p></td>
 </tr>
 <tr class="even">
 <td><pre class="syntax" space="preserve"><code class="language-xml">&lt;DeviceCapability Name="usb"&gt;
@@ -131,15 +131,15 @@ USB 应用必须包括在某些设备功能及其[应用程序包清单](https:/
     &lt;Function Type="winUsbId:"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"/&gt;
   &lt;/Device&gt;
 &lt;/DeviceCapability&gt;</code></pre></td>
-<td><p>允许应用程序访问 MS OS 描述符中或在设备 INF 中定义的 GUID 的设备接口的设备。</p>
-<p>在这种情况下，设备 Id 值必须等于"any"。</p></td>
+<td><p>允许应用使用在 MS OS 描述符或设备 INF 中定义的设备接口 GUID 来访问设备。</p>
+<p>在这种情况下，设备 Id 值不得等于 "任何"。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**应用清单 CustomUsbDeviceAccess 示例包**
+**CustomUsbDeviceAccess 示例的应用程序清单包**
 
 ```xml
   <Capabilities>

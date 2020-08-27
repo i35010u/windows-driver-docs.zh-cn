@@ -1,48 +1,48 @@
 ---
-Description: 定义服务对象
+description: 定义服务对象
 title: 定义服务对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 965836fb50baeb873f8f5edee9be2c618fc5cdcd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5ff3a18ac4c185d4f21ccf1030a1268ab66461cc
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370631"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969476"
 ---
 # <a name="defining-the-service-objects"></a>定义服务对象
 
 
-WPD，在设备上的逻辑实体都称为对象。 对象可以表示设备的信息性消息或功能的部分。 任何对象都具有一个或多个属性。 您可以将属性作为对象说明元数据。 例如，联系人服务对象上的示例驱动程序支持指定服务的友好名称的名称属性。
+在 WPD 中，设备上的逻辑实体称为对象。 对象可以表示设备的信息性部分或功能部分。 任何对象都具有一个或多个属性。 可以将属性视为对象描述元数据。 例如，示例驱动程序上的 "联系人" 服务对象支持名称属性，该属性指定服务的友好名称。
 
-WpdHelloWorldDriver 支持下表中所示的对象。
+WpdHelloWorldDriver 支持下表中显示的对象。
 
-| Object  | 描述                                                                                                       |
+| 对象  | 说明                                                                                                       |
 |---------|-------------------------------------------------------------------------------------------------------------------|
-| 设备  | 包含描述性属性，如固件版本、 型号和友好名称的根对象。 |
-| 存储 | 一个对象，公开属性，如存储容量、 文件系统类型和可用的字节数。         |
-| 文件夹  | 一个对象，公开属性，如文件夹名称。                                                             |
-| 文件    | 一个对象，公开属性，如文件名称和实际的文件内容。                                      |
+| 设备  | 包含描述属性（如固件版本、模型和友好名称）的根对象。 |
+| 存储 | 一个对象，该对象公开存储容量等属性、文件系统类型和可用字节数。         |
+| 文件夹  | 公开属性（如文件夹名称）的对象。                                                             |
+| 文件    | 一个对象，该对象公开文件名称和实际文件内容等属性。                                      |
 
  
 
-类似于 WpdHelloWorldDriver，WpdServiceSampleDriver 继续以支持存储对象。 但是，因为该示例不支持文件夹或文件 （为简单起见），我们删除这些对象，并且它们替换为对应于联系人的单个对象。 下表列出了新的驱动程序支持的对象。
+与 WpdHelloWorldDriver 类似，WpdServiceSampleDriver 继续支持存储对象。 但是，由于该示例不支持文件夹或文件 (为简单起见) ，因此删除了这些对象并将其替换为对应于联系人的单个对象。 下表列出了新的驱动程序支持的对象。
 
-| Object   | 描述                                                                                                            |
+| 对象   | 说明                                                                                                            |
 |----------|------------------------------------------------------------------------------------------------------------------------|
-| 设备   | 包含描述性属性，如固件版本、 型号和友好名称的根对象。      |
-| 存储  | 一个对象，公开属性，如存储容量、 文件系统类型和可用的字节数。              |
-| 联系人 | 包含属性，如对象标识符、 永久唯一 ID (PUID)、 名称和等等的服务对象。 |
+| 设备   | 包含描述属性（如固件版本、模型和友好名称）的根对象。      |
+| 存储  | 一个对象，该对象公开存储容量等属性、文件系统类型和可用字节数。              |
+| 联系人 | 一个服务对象，其中包含对象标识符等属性、永久性唯一 ID (PUID) 、名称等。 |
 
  
 
-在 WPD，对象标识的字符串。 中定义的设备对象的字符串标识符*Portabledevice.h*标头文件：
+在 WPD 中，对象由字符串标识。 设备对象的字符串标识符是在 *Portabledevice* 头文件中定义的：
 
 ```cpp
 #define WPD_DEVICE_OBJECT_ID  L"DEVICE"
 ```
 
-在中定义的存储对象的字符串标识符*FakeStorage.h*标头文件：
+存储对象的字符串标识符是在 *FakeStorage* 头文件中定义的：
 
 ```cpp
 #define STORAGE_OBJECT_ID                                 L"123ABC"
@@ -56,7 +56,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
 #define STORAGE_TYPE                                      WPD_STORAGE_TYPE_FIXED_ROM
 ```
 
-在中定义的联系人对象的字符串标识符*FakeContactsServiceContent.h*标头文件：
+联系人对象的字符串标识符是在 *FakeContactsServiceContent* 头文件中定义的：
 
 ```cpp
 #define CONTACTS_SERVICE_OBJECT_ID                        L"789DEF"
@@ -69,7 +69,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
 #define NUM_CONTACT_OBJECTS                               10
 ```
 
-这些对象标识符常量传递给处理功能对象检索的源模块中的方法 (*FakeDevice.cpp*)。 中的以下节选**FakeDevice::GetFunctionalObjects**方法演示了如何使用联系人\_服务\_对象\_支持功能的对象 （ID 生成的集合服务\_中定义联系人*ContactsDeviceService.h*标头文件，代表功能类别的服务对象):
+这些对象标识符常量会传递到源模块中处理 (*FakeDevice*) 的函数对象检索的方法。 下面的 **FakeDevice：： GetFunctionalObjects** 方法摘录演示了如何使用 CONTACTS \_ 服务 \_ 对象 \_ ID 生成支持的功能对象集合， (服务 \_ 联系人在 *ContactsDeviceService* 头文件中定义，并表示服务对象) 的功能类别：
 
 ```cpp
     // Add CONTACTS_SERVICE_OBJECT_ID to the functional object identifiers collection
@@ -86,7 +86,7 @@ WpdHelloWorldDriver 支持下表中所示的对象。
     }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

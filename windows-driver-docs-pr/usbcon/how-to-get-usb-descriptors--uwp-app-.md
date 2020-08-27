@@ -1,14 +1,14 @@
 ---
-Description: 一个与 USB 设备进行交互的主要任务是获取有关它的信息。
+description: 与 USB 设备交互的主要任务之一就是获取相关信息。
 title: 如何获取 USB 描述符（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b136f289dadca0f3692ac908a3161a2c1b44b129
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16a2cd2ee35df4e1a21bb3fe5af6f39d43fc0f96
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378321"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969414"
 ---
 # <a name="how-to-get-usb-descriptors-uwp-app"></a>如何获取 USB 描述符（UWP 应用）
 
@@ -25,34 +25,34 @@ ms.locfileid: "67378321"
 -   [**UsbConfigurationDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor)
 -   [**UsbDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor)
 
-一个与 USB 设备进行交互的主要任务是获取有关它的信息。 所有 USB 设备都提供的多个数据结构称为描述符窗体中的信息。 本主题介绍如何为 UWP 应用可以从终结点、 接口、 配置和设备级别的设备获取描述符。
+与 USB 设备交互的主要任务之一就是获取相关信息。 所有 USB 设备都以几个称为描述符的数据结构形式提供信息。 本主题介绍 UWP 应用如何从设备上的终结点、接口、配置和设备级别获取描述符。
 
 ## <a name="usb-descriptors"></a>USB 描述符
 
 
-USB 设备描述了其功能在两个主要的描述符： 设备描述符和配置描述符。
+USB 设备在两个主要描述符中描述了其功能：设备描述符和配置描述符。
 
-USB 设备必须提供*设备描述符*，包含有关 USB 设备作为一个整体的信息。 如果设备不提供该描述符，或提供的格式不正确的描述符，Windows 将无法加载设备驱动程序。 描述符中的最重要信息是设备的*硬件 ID*设备 (组合**供应商 ID**并**产品 ID**字段)。 它基于 Windows 能够匹配设备的现成驱动程序的信息。 另一个是键的信息是*最大数据包大小*的默认终结点 (**MaxPacketSize0**)。 默认终结点是所有的目标请求，主机将发送到设备对其进行配置。
+USB 设备必须提供一个 *设备描述符* ，其中包含作为一个整体的 USB 设备的信息。 如果设备不提供该描述符或提供格式不正确的描述符，则 Windows 无法加载设备驱动程序。 描述符中最重要的信息是设备的 *硬件 ID* (**供应商 ID** 和 **产品 ID** 字段) 的组合。 这取决于 Windows 能够匹配设备的内置驱动程序的信息。 另一个是密钥的信息是默认终结点的 *最大数据包大小* (**MaxPacketSize0**) 。 默认终结点是主机发送到设备以对其进行配置的所有控制请求的目标。
 
-设备描述符的长度被固定。
+设备描述符的长度是固定的。
 
-USB 设备还必须提供一个完整*配置描述符*。 此描述符的开头部分已修复的 9 个字节的长度，其余部分是可变长度具体取决于大量接口和终结点支持这些接口。 固定长度部分提供了有关 USB 配置的信息： 数目的接口支持和功率消耗时在设备处于该配置。 这些初始的 9 个字节后跟的可变部分提供有关所有 USB 接口信息的描述符。 每个设置组成一组终结点和每个接口包含一个或多个接口设置。 描述符的接口、 替代设置和终结点包含在变量部分。
+USB 设备还必须提供完整的 *配置描述符*。 此描述符的开始部分的固定长度为9个字节，rest 是可变长度的，具体取决于这些接口支持的接口和终结点的数量。 固定长度部分提供有关 USB 配置的信息：设备支持的接口数量，以及设备处于该配置时的功率消耗。 这些初始9个字节后面是描述符的可变部分，它提供了有关所有 USB 接口的信息。 每个接口都由一个或多个接口设置组成，每个设置由一组终结点组成。 变量部分包含了接口、替代设置和终结点的说明符。
 
-有关设备布局的详细说明，请参阅[标准 USB 描述符](standard-usb-descriptors.md)。
+有关设备布局的详细说明，请参阅 [标准 USB 描述符](standard-usb-descriptors.md)。
 
 ## <a name="before-you-start"></a>开始之前...
 
 
--   您必须打开设备并获取[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象。 读取[如何连接到 USB 设备 （UWP 应用）](how-to-connect-to-a-usb-device--uwp-app-.md)。
--   可以看到在 CustomUsbDeviceAccess 示例中，Scenario5 本主题中所示的完整代码\_UsbDescriptors 文件。
--   获取有关设备布局的信息。 **Usbview.exe** （包括针对 Windows 8 的 Windows 软件开发工具包 (SDK) 中） 是使您能够浏览所有 USB 控制器和连接到它们的 USB 设备的应用程序。 对于每个连接的设备，可以查看设备、 配置、 接口和终结点描述符，以了解有关设备的功能。
+-   必须已打开设备并获得 [**UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice) 对象。 阅读 [如何)  (UWP 应用连接到 USB 设备 ](how-to-connect-to-a-usb-device--uwp-app-.md)。
+-   在 CustomUsbDeviceAccess 示例，Scenario5 UsbDescriptors 文件中，可以看到本主题中所示的完整代码 \_ 。
+-   获取有关设备布局的信息。 适用于 windows) 8 的 Windows 软件开发工具包 (SDK) 中包含**Usbview.exe** (，它是一个应用程序，它使你能够浏览所有 USB 控制器和连接到它们的 usb 设备。 对于每个连接的设备，你可以查看设备、配置、接口和终结点描述符，以了解有关设备功能的信息。
 
 ## <a name="how-to-get-the-device-descriptor"></a>如何获取设备描述符
 
 
-UWP 应用可以从以前获取获取设备描述符[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象通过获取[ **UsbDevice.DeviceDescriptor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)属性值。
+UWP 应用可通过获取[**UsbDevice DeviceDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DeviceDescriptor)属性值从以前获取的[**UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象获取设备描述符。
 
-此代码示例演示如何填充从设备描述符字段值的字符串。
+此代码示例演示如何使用设备描述符中的字段值填充字符串。
 
 ```CSharp
 String GetDeviceDescriptorAsString (UsbDevice device)
@@ -80,14 +80,14 @@ String GetDeviceDescriptorAsString (UsbDevice device)
 ## <a name="how-to-get-the-configuration-descriptor"></a>如何获取配置描述符
 
 
-若要配置描述符的固定的部分获得以前获得[ **UsbDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)对象，
+若要从以前获取的 [**UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice) 对象获取配置描述符的固定部分，
 
-1.  获取[ **UsbConfiguration** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)对象[ **UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)。 **UsbConfiguration**表示设备定义的第一个 USB 配置和基础设备驱动程序还选择默认情况下。
-2.  获取[ **UsbConfiguration.ConfigurationDescriptor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor)属性值。
+1.  从[**UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice)获取[**UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)对象。 **UsbConfiguration** 表示设备定义的第一个 USB 配置，并且在默认情况下由基础设备驱动程序选择。
+2.  获取 [**UsbConfiguration.ConfigurationDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_ConfigurationDescriptor) 属性值。
 
-配置描述符的固定的部分指示设备的 power 特征。 例如，确定设备是否从总线或外部源消耗电源 (请参阅[ **UsbConfigurationDescriptor.SelfPowered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_SelfPowered))。 如果设备总线消耗电源，（以 milliamp 为单位） 多少能源消耗 (请参阅[ **UsbConfigurationDescriptor.MaxPowerMilliamps**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_MaxPowerMilliamps))。 此外，确定设备是否能够通过获取唤醒本身或从低功耗状态，系统[ **UsbConfigurationDescriptor.RemoteWakeup** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_RemoteWakeup)值。
+配置描述符的固定部分指示设备的电源特征。 例如，你可以确定设备是否从总线或外部源中消耗电源 (请参阅 [**SelfPowered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_SelfPowered)) 。 如果设备消耗的是总线的电源，milliamp 单元中的电量 ()  (参阅 [**MaxPowerMilliamps**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_MaxPowerMilliamps)) 。 此外，还可以通过获取 [**RemoteWakeup**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor#Windows_Devices_Usb_UsbConfigurationDescriptor_RemoteWakeup) 值，确定设备是否能够从低功率状态唤醒或系统。
 
-此代码示例演示如何在字符串中获取配置描述符的固定的部分。
+此代码示例演示如何获取字符串中配置描述符的固定部分。
 
 ```CSharp
 String GetConfigurationDescriptorAsString(UsbDevice device)
@@ -115,21 +115,21 @@ String GetConfigurationDescriptorAsString(UsbDevice device)
 ## <a name="how-to-get-interface-descriptors"></a>如何获取接口描述符
 
 
-接下来，可以获取有关 USB 接口的一部分配置的信息。
+接下来，你可以获取有关作为配置的一部分的 USB 接口的信息。
 
-USB 接口是界面设置的集合。 这种情况下没有任何描述符来描述整个接口。 术语*接口描述符*指示描述了界面中的设置的数据结构。
+USB 接口是接口设置的集合。 因此，没有描述整个接口的说明符。 术语 *接口描述符* 指示用于描述接口中的设置的数据结构。
 
-[ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间公开了可用于获取有关每个 USB 接口的信息的对象和所有接口 （适用于替代设置） 该接口中包含的描述符。 和描述符从配置描述符的长度可变的部分。
+[**Windows. u**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)命名空间公开的对象可用于获取有关每个 Usb 接口的信息以及该接口中包含的备用设置)  (的所有接口描述符。 和来自配置描述符的可变长度部分的说明符。
 
-若要获取从接口描述符[ **UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)，
+若要从 [**UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)获取接口描述符，
 
-1.  通过获取获取配置中的接口的数组[ **UsbConfiguration.UsbInterfaces** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces)属性。
-2.  为每个接口 ([**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface))，获取此信息：
-    -   大容量和中断管道的处于活动状态并可将数据传输。
-    -   在界面中的替代设置的数组。
+1.  获取 [**UsbConfiguration UsbInterfaces**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration#Windows_Devices_Usb_UsbConfiguration_UsbInterfaces) 属性，获取配置中的接口数组。
+2.  对于每个接口 ([**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)) ，请获取以下信息：
+    -   处于活动状态并可以传输数据的批量和中断管道。
+    -   接口中的替代设置的数组。
     -   接口描述符的数组。
 
-此代码示例获取所有[ **UsbInterface** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)配置对象。 每个对象，从帮助器方法获取替代设置和打开的大容量和界面管道的数。 如果设备支持多个接口，设备类、 子类和协议的每个接口的代码可能有所不同。 但是，替代设置的所有接口描述符必须都指定相同的代码。 在此示例中，该方法可获取设备类、 子类和协议代码的第一个设置，以确定整个界面的代码的接口描述符中。
+此代码示例获取配置的所有 [**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface) 对象。 在每个对象中，帮助器方法获取替代设置的数目，并打开大容量和接口管道。 如果设备支持多个接口，则每个接口的设备类、子类和协议代码可能会有所不同。 但是，替代设置的所有接口描述符必须指定相同的代码。 在此示例中，方法从第一个设置的接口描述符中获取设备类、子类和协议代码，以确定整个接口的代码。
 
 ```CSharp
 String GetInterfaceDescriptorsAsString(UsbDevice device)
@@ -168,21 +168,21 @@ String GetInterfaceDescriptorsAsString(UsbDevice device)
 ## <a name="how-to-get-endpoint-descriptors"></a>如何获取终结点描述符
 
 
-（除默认控制终结点） 的所有 USB 终结点必须都具有终结点描述符。 若要获取特定终结点的终结点描述符，您必须知道该接口并替代终结点属于的设置。
+除了默认控制终结点) 之外，所有 USB 终结点都必须具有终结点描述符 (。 若要获取特定终结点的终结点描述符，必须知道终结点属于哪个接口和备用设置。
 
-1.  获取[ **UsbInterface** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)包含终结点的对象。
-2.  通过获取获取替代设置的数组[ **UsbInterface.InterfaceSettings**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings)。
-3.  该数组中找到的设置 ([**UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)) 使用终结点。
-4.  在每个设置，通过枚举大容量和中断描述符数组中找到此终结点。
+1.  获取包含终结点的 [**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface) 对象。
+2.  通过获取 [**InterfaceSettings**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_InterfaceSettings)获取备用设置的数组。
+3.  在数组中，查找使用终结点 ([**UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)) 的设置。
+4.  在每个设置中，通过枚举大容量和中断描述符数组查找终结点。
 
-    由这些对象表示终结点描述符：
+    终结点描述符由以下对象表示：
 
     -   [**UsbBulkInEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkInEndpointDescriptor)
     -   [**UsbBulkOutEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbBulkOutEndpointDescriptor)
     -   [**UsbInterruptInEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptInEndpointDescriptor)
     -   [**UsbInterruptOutEndpointDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor)
 
-如果你的设备具有只有一个接口，则可以使用[ **UsbDevice.DefaultInterface** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DefaultInterface)来获得接口，在此示例代码所示。 在这里，帮助器方法获取使用字符串填充 active 界面设置管道与相关联的终结点描述符。
+如果设备只有一个接口，则可以使用 [**UsbDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDevice#Windows_Devices_Usb_UsbDevice_DefaultInterface) 来获取接口，如下面的示例代码所示。 此处，helper 方法获取使用与活动接口设置的管道关联的终结点描述符来填充字符串。
 
 ```CSharp
 private String GetEndpointDescriptorsAsString(UsbDevice device)
@@ -247,22 +247,22 @@ private String GetEndpointDescriptorsAsString(UsbDevice device)
 
 ![usb 终结点描述符](images/endpoint-desc-app.png)
 
-## <a name="how-to-get-custom-descriptors"></a>如何获取自定义说明符
+## <a name="how-to-get-custom-descriptors"></a>如何获取自定义描述符
 
 
-请注意， [ **UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)， [ **UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)，并[ **UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting)对象，每个公开名为的属性**描述符**。 属性值检索由表示描述符的数组[ **UsbDescriptor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor)对象。 **UsbDescriptor**对象允许应用在缓冲区中获取描述符的数据。 [**UsbDescriptor.DescriptorType** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor#Windows_Devices_Usb_UsbDescriptor_DescriptorType)并[ **UsbDescriptor.Length** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor#Windows_Devices_Usb_UsbDescriptor_Length)属性存储的类型和保存描述符所需的缓冲区的长度。
+请注意， [**UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfiguration)、 [**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface)和 [**UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting) 对象每个都公开一个名为 **描述符**的属性。 该属性值检索由 [**UsbDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor) 对象表示的描述符的数组。 **UsbDescriptor**对象允许应用获取缓冲区中的描述符数据。 [**UsbDescriptor. DescriptorType**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor#Windows_Devices_Usb_UsbDescriptor_DescriptorType) 和 [**UsbDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbDescriptor#Windows_Devices_Usb_UsbDescriptor_Length) 属性存储保存描述符所需的缓冲区的类型和长度。
 
-**请注意**  前两个字节的所有描述符缓冲区还指示的类型和长度的描述符。
+**注意**   所有描述符缓冲区的前两个字节还指示描述符的类型和长度。
 
  
 
-例如， [ **UsbConfiguration.Descriptors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors)属性获取的完整配置描述符 （固定和可变长度的分区） 的数组。 该数组中的第一个元素是固定长度配置描述符 (与相同[ **UsbConfigurationDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor))，第二个元素是第一个备用设置，接口描述符等等。
+例如， [**UsbConfiguration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors) 属性获取完整配置描述符的数组， (固定长度和可变长度部分) 。 该数组中的第一个元素是固定长度的配置描述符 (与 [**UsbConfigurationDescriptor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbConfigurationDescriptor)) 相同，第二个元素是第一个备用设置的接口描述符，依此类推。
 
-同样， [ **UsbInterface.Descriptors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors)属性获取的接口的所有描述符和相关终结点描述符的数组。 [ **UsbInterfaceSetting.Descriptors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Descriptors)属性获取的所有描述符的数组，该设置，例如终结点描述符。
+同样， [**UsbInterface**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterface#Windows_Devices_Usb_UsbInterface_Descriptors) 属性获取所有接口描述符和相关终结点描述符的数组。 [**UsbInterfaceSetting**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb.UsbInterfaceSetting#Windows_Devices_Usb_UsbInterfaceSetting_Descriptors)属性获取该设置的所有描述符（如终结点描述符）的数组。
 
-获取描述符的这种方式时，应用程序需要检索自定义说明符或其他终结点配套描述符的 SuperSpeed 设备等描述符。
+当应用程序想要检索自定义描述符或其他描述符（如 SuperSpeed 设备的终结点伴随描述符）时，这种获取描述符的方法非常有用。
 
-此代码示例演示如何在配置描述符从缓冲区获取描述符数据。 示例将获取配置描述符集并分析该集内包含的所有描述符。 每个描述符，它使用 DataReader 对象来读取缓冲区，并显示描述符长度和类型。 在此示例中所示，可以获取自定义描述符。
+此代码示例演示如何从配置描述符获取缓冲区中的描述符数据。 该示例获取配置描述符集，并分析该集中包含的所有描述符。 对于每个描述符，它使用 DataReader 对象读取缓冲区，并显示描述符长度和类型。 可以获取自定义描述符，如本示例中所示。
 
 ```CSharp
 private String GetCustomDescriptorsAsString(UsbDevice device)

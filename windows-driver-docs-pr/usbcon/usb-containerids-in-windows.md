@@ -1,66 +1,66 @@
 ---
-Description: 本白皮书提供有关 USB ContainerIDs Windows 操作系统的信息。 它包括进行编程，以便它们可以正确检测 Windows 其多功能的 USB 设备的设备制造商的指导原则。
+description: 本文提供了有关 Windows 操作系统的 USB ContainerIDs 的信息。 它包含设备制造商对其多功能 USB 设备进行编程以使其能够由 Windows 正确检测的指导原则。
 title: Windows 中的 USB ContainerID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d512704e7ceb8eab8714def96d50b42c11a2cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f8c1bdfbf9d21294d63f4f7cd3e2779226943a3d
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369516"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969428"
 ---
 # <a name="usb-containerids-in-windows"></a>Windows 中的 USB ContainerID
 
 
-本白皮书介绍有关 USB **ContainerID**的 Windows 操作系统。 它包括进行编程，以便它们可以正确检测 Windows 其多功能的 USB 设备的设备制造商的指导原则。
+本文提供有关 Windows 操作系统的 USB **ContainerID**的信息。 它包含设备制造商对其多功能 USB 设备进行编程以使其能够由 Windows 正确检测的指导原则。
 
-从 Windows 7 开始，用户可以充分利用连接到他们的计算机的设备的所有功能。 这包括多功能设备，如组合打印机、 扫描仪和复制器设备。 Windows 7 包括对合并的所有功能在单个物理设备到设备容器的支持。 设备容器是物理设备的虚拟表示。 通过分配来实现这种整合**ContainerID**属性设置为物理设备枚举每个设备函数。 通过分配相同**ContainerID**到每个设备函数，Windows 7 的值可以识别设备的所有函数都属于同一个物理设备。
+从 Windows 7 开始，用户可以利用连接到其计算机的设备的所有功能。 这包括多功能设备，如打印机、扫描仪和复印机设备的组合。 Windows 7 支持将单个物理设备的所有功能合并到设备容器。 设备容器是物理设备的虚拟表示。 此合并通过将 **ContainerID** 属性分配给为物理设备枚举的每个设备函数来实现。 通过为每个设备函数指定相同的 **ContainerID** 值，Windows 7 将识别出所有设备函数属于同一物理设备。
 
-所有类型的设备连接到通过其他总线类型的计算机可以都支持的设备容器。 但是，并非所有的总线类型使用相同的机制来生成**ContainerID**。 对于 USB 设备，设备供应商可以使用**ContainerID**描述符来描述**ContainerID** 。 对于物理设备。 一个**ContainerID**描述符是可以存储在 USB 设备的固件的 Microsoft 操作系统功能描述符。 USB 设备制造商必须正确实现这些**ContainerID**在其设备，以便充分利用 Windows 7 中提供的新设备功能的描述符。 USB 设备制造商需要实现只有一个**ContainerID**为每个物理设备，而不考虑设备支持多少设备函数。
+通过不同总线类型连接到计算机的所有设备类型都可以支持设备容器。 但是，并非所有总线类型都使用相同的机制来生成 **ContainerID**。 对于 USB 设备，设备供应商可以使用 **ContainerID** 描述符来描述物理设备的 **containerid** 。 **ContainerID**描述符是可以存储在 USB 设备固件中的 Microsoft 操作系统功能描述符。 USB 设备制造商必须正确实现其设备中的这些 **ContainerID** 描述符，才能利用 Windows 7 中提供的新设备功能。 无论设备支持多少设备功能，USB 设备制造商都需要为每个物理设备仅实现一个 **ContainerID** 。
 
-有关合并的所有功能的单个设备的设备容器到详细信息，请参阅[生成如何容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)。
+有关将单个设备的所有功能合并到设备容器中的详细信息，请参阅 [如何生成容器 id](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)。
 
-有关 Microsoft 操作系统描述符的 USB 设备的详细信息，请参阅[USB 设备的 Microsoft 操作系统描述符](microsoft-defined-usb-descriptors.md)。
+有关适用于 USB 设备的 Microsoft OS 描述符的详细信息，请参阅 [MICROSOFT Os 描述符 FOR Usb 设备](microsoft-defined-usb-descriptors.md)。
 
 ## <a name="how-a-usb-containerid-is-generated"></a>如何生成 USB ContainerID
 
 
-以下是两种方法来生成**ContainerID** USB 设备：
+以下是为 USB 设备生成 **ContainerID** 的两种方式：
 
--   指定的 USB 设备制造商**ContainerID**中通过使用 Microsoft 操作系统的设备的固件**ContainerID**描述符。
--   Microsoft USB 集线器驱动程序会自动创建**ContainerID**从设备的产品 ID (PID) 的组合、 供应商 ID (VID)、 修订号和序列号的设备。 在这种情况下，Microsoft USB 集线器驱动程序将创建**ContainerID**具有最小功能。 此方法仅适用于具有唯一的序列号的设备。
+-   USB 设备的制造商通过使用 Microsoft 操作系统**ContainerID**描述符在设备的固件中指定**ContainerID** 。
+-   Microsoft USB 集线器驱动程序会自动为设备创建一个 **ContainerID** ，从设备的产品 ID 组合 (PID) 、供应商 ID (VID) 、修订号和序列号。 在这种情况下，Microsoft USB 集线器驱动程序使用最少的功能创建一个 **ContainerID** 。 此方法仅适用于具有唯一序列号的设备。
 
 ## <a name="usb-containerid-contents"></a>USB ContainerID 内容
 
 
-USB **ContainerID**提供给全局唯一标识符 (UUID) 字符串的窗体中的操作系统。 **ContainerID**中包含 UUID **ContainerID**描述符。 一个**ContainerID**描述符是设备级 Microsoft 操作系统功能描述符。 在这种情况下，当操作系统请求 USB **ContainerID**，描述符请求 wValue 字段必须始终设置为零。 有关 Microsoft 操作系统功能描述符和描述符请求的详细信息，请参阅[Microsoft 操作系统 1.0 描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617519)。
+USB **ContainerID** 以全局唯一标识符 (UUID) 字符串形式提供给操作系统。 **Containerid** UUID 包含在**containerid**描述符中。 **ContainerID**描述符是设备级 Microsoft OS 功能描述符。 因此，当操作系统请求使用 USB **ContainerID**时，描述符请求的 wValue 字段必须始终设置为零。 有关 Microsoft 操作系统功能描述符和描述符请求的详细信息，请参阅 [MICROSOFT os 1.0 描述符规范](https://go.microsoft.com/fwlink/p/?linkid=617519)。
 
-一个**ContainerID**描述符包含的表头部分。
+**ContainerID**描述符由标头部分组成。
 
-| 偏移量 | 字段          | 大小 | 在任务栏的搜索框中键入           | 描述                                                                                                                                                                                                                                                                                                                                                                                         |
+| Offset | 字段          | 大小 | 类型           | 说明                                                                                                                                                                                                                                                                                                                                                                                         |
 |--------|----------------|------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0      | **dwLength**   | 4    | 无符号的 DWord | 长度，以字节为单位的整个**ContainerID**描述符。 此字段必须始终设置为从 0x18 的值。                                                                                                                                                                                                                                                                                   |
-| 4      | **bcdVersion** | 2    | BCD            | 版本号**ContainerID**中二进制编码的十进制 (BCD)，其中每个半字节对应于一个数字的描述符。 最高有效字节 (MSB) 包含小数点，前面的两位数字，最低有效字节 (LSB) 包含小数点后两位数字。 例如，版本 1.00 表示为 0x0100。 此字段必须始终设置为 0x0100 中。 |
-| 6      | **wIndex**     | 2    | Word           | 此字段始终设置为 6 的 USB **ContainerID**描述符。                                                                                                                                                                                                                                                                                                                                  |
+| 0      | **dwLength**   | 4    | 无符号 DWord | 整个 **ContainerID** 说明符的长度（以字节为单位）。 此字段必须始终设置为0x18 值。                                                                                                                                                                                                                                                                                   |
+| 4      | **bcdVersion** | 2    | BCD            | 以二进制编码的十进制 (BCD) 中的 **ContainerID** 描述符版本号，其中每个半值对应于一个数字。 最高有效字节 (MSB) 在小数点之前包含两位数，并且最小有效字节 (LSB) 包含小数点后两位数字。 例如，版本1.00 表示为0x0100。 此字段必须始终设置为0x0100。 |
+| 6      | **wIndex**     | 2    | 字           | 对于 USB **ContainerID** 描述符，此字段始终设置为6。                                                                                                                                                                                                                                                                                                                                  |
 
  
 
-一个**ContainerID**描述符包含 ContainerID 部分。
+**Containerid**描述符包含一个 containerid 部分。
 
-| 偏移量 | 字段            | 大小 | 在任务栏的搜索框中键入           | 描述           |
+| Offset | 字段            | 大小 | 类型           | 说明           |
 |--------|------------------|------|----------------|-----------------------|
-| 0      | **bContainerID** | 16   | 无符号的 DWord | **ContainerID**数据。 |
+| 0      | **bContainerID** | 16   | 无符号 DWord | **ContainerID** 数据。 |
 
  
 
-设备制造商有责任确保设备的每个实例具有全局唯一的 16 字节值**ContainerID**。 此外，设备必须报告相同**ContainerID**提供支持每次值。
-有几个已建立的算法用于生成 Uuid 与几乎为零的重复的可能性。 设备制造商可以选择最适合其需求的 UUID 生成算法。 并不重要，只要是唯一的结果使用的 UUID 生成算法。
+设备制造商负责确保设备的每个实例都具有唯一的16字节的 **ContainerID**值。 此外，在每次打开设备时，设备必须报告相同的 **ContainerID** 值。
+有多个已建立的用于生成 Uuid 的算法，几乎不会发生重复。 设备制造商可以选择最适合其需求的 UUID 生成算法。 只要结果是唯一的，就可以使用什么 UUID 生成算法，这并不重要。
 
 ## <a name="usb-containerid-syntax"></a>USB ContainerID 语法
 
 
-一个**ContainerID**中 {xxxxxxxx xxxx-xxxx-xxxx-在左右加上} 标准的 UUID 字符串格式报告。 以下是有关 0 的 C B4 A7 固件中的示例表示 2c D1 7B 25 4F B5 73 A1 3A 97 5D DC 07 USB **ContainerID**，其格式为 {2CA7B40C-7BD1-4F25-B573-A13A975DDC07} UUID 字符串。
+将使用 {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} 的标准 UUID 字符串格式报告一个 **ContainerID** 。 下面是固件中 0C B4 A7 2C D1 7B 25 4F B5 73 A1 3A 97 5D 的示例表示形式的示例表示 **形式，格式**为 {2CA7B40C-7BD1-4F25-B573-A13A975DDC07} UUID string。
 
 ```cpp
 UCHAR Example<mark type="member">ContainerID</mark>Descriptor[24] =
@@ -76,14 +76,14 @@ UCHAR Example<mark type="member">ContainerID</mark>Descriptor[24] =
 }
 ```
 
-格式化为 UUID 字符串时，请注意第一个 8 字节的字节顺序的更改。
+请注意，在格式化为 UUID 字符串时，前8个字节的字节顺序发生变化。
 
-## <a name="microsoft-os-descriptor-changes"></a>Microsoft 操作系统描述符更改
+## <a name="microsoft-os-descriptor-changes"></a>Microsoft OS 描述符更改
 
 
-若要保留旧**ContainerID**的功能，已添加到可用于指示对支持的 Microsoft 操作系统字符串描述符字段新标志**ContainerID**描述符。
+为了保留旧的 **ContainerID** 功能，已向 Microsoft OS 字符串描述符添加了一个新的标志字段，该字段可用于指示对 **ContainerID** 描述符的支持。
 
-Microsoft 操作系统字符串描述符的当前定义包含一个 1 字节填充的字段， **bPad**，通常设置为零的描述符的末尾。 为支持新的 USB 设备**ContainerID**，则**bPad**字段重新定义为标记字段**bFlags**。 此字段的 1 位用于指示支持**ContainerID**描述符。 表 3 介绍了 USB 设备的 Microsoft 操作系统字符串描述符字段。
+Microsoft OS 字符串描述符的当前定义包含1个字节的 pad 字段 **bPad**，该字段通常设置为零。 对于支持新 **ContainerID**的 USB 设备， **bPad** 字段将重新定义为标志字段 **bFlags**。 此字段的第1位用于指示对 **ContainerID** 描述符的支持。 表3描述了用于 USB 设备的 Microsoft 操作系统字符串描述符的字段。
 
 <table>
 <colgroup>
@@ -95,9 +95,9 @@ Microsoft 操作系统字符串描述符的当前定义包含一个 1 字节填�
 <thead>
 <tr class="header">
 <th>字段</th>
-<th>长度 （字节）</th>
-<th>值</th>
-<th>描述</th>
+<th>长度 (字节) </th>
+<th>“值”</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -111,12 +111,12 @@ Microsoft 操作系统字符串描述符的当前定义包含一个 1 字节填�
 <td><strong>bDescriptorType</strong></td>
 <td>1</td>
 <td>0x03</td>
-<td>描述符类型。 0x03 的值表示 Microsoft 操作系统字符串描述符。</td>
+<td>描述符类型。 值0x03 指示 Microsoft 操作系统字符串描述符。</td>
 </tr>
 <tr class="odd">
 <td><strong>qwSignature</strong></td>
 <td>14</td>
-<td>‘MSFT100’</td>
+<td>'MSFT100'</td>
 <td>签名字段。</td>
 </tr>
 <tr class="even">
@@ -129,50 +129,50 @@ Microsoft 操作系统字符串描述符的当前定义包含一个 1 字节填�
 <td><strong>bFlags</strong></td>
 <td>1</td>
 <td>0x02</td>
-<td><p>位 0:保留</p>
-<p>1 位：<strong>ContainerID</strong>支持</p>
+<td><p>位0：保留</p>
+<p>第1位： <strong>ContainerID</strong> 支持</p>
 <ul>
-<li>0:不支持<strong>ContainerID</strong></li>
-<li>1：支持<strong>ContainerID</strong></li>
+<li>0：不支持 <strong>ContainerID</strong></li>
+<li>1：支持 <strong>ContainerID</strong></li>
 </ul>
-<p>位 2 – 7:保留</p></td>
+<p>Bits 2 –7：保留</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-当前传送支持 Microsoft 操作系统描述符，但不是支持的 USB 设备**ContainerID**描述符具有**bPad**字段设置为 0x00。 USB 集线器驱动程序不会查询此类设备的 USB **ContainerID**描述符。
+目前，提供支持 Microsoft OS 描述符但不支持 **ContainerID** 描述符的 USB 设备的 **bPad** 字段设置为0x00。 USB 集线器驱动程序不会在此类设备上查询 USB **ContainerID** 说明符。
 ## <a name="container-view-of-a-usb-multifunction-device"></a>USB 多功能设备的容器视图
 
 
-**ContainerID**提供一些信息以合并多功能 USB 设备的设备。 图 1 显示了如何的示例中的多功能打印机的所有设备都合并到单个设备容器在产品内的所有单个设备使用相同**ContainerID**。
+**ContainerID**提供了用于整合设备的设备 USB 设备的信息。 图1显示了一个示例，演示如何在产品中的所有单个设备使用同一个 **ContainerID**时，将多功能打印机中的所有设备合并为一个设备容器。
 
 ![多功能打印机中的所有设备的合并](images/containerid-multifunction.png)
 
-通过合并有关多功能的 USB 设备的所有设备，物理产品可以显示为单个设备中设备和 Windows 7 中的打印机。 图 2 显示了 USB 多功能键盘和鼠标设备显示为单个设备中设备和打印机的示例。
+通过整合多功能 USB 设备的所有设备，可以在 Windows 7 的 "设备和打印机" 中将该物理产品显示为单一设备。 图2显示了在 "设备和打印机" 中显示为单个设备的 USB 多功能键盘和鼠标设备的示例。
 
-![在设备和打印机的多功能设备](images/containerid-multifunction1.png)
+![设备和打印机中的多功能设备](images/containerid-multifunction1.png)
 
 ## <a name="usb-containerid-hck-requirements"></a>USB ContainerID HCK 要求
 
 
-设备制造商必须确保它们生成的设备的每个实例具有全局唯一**ContainerID**值，以便 Windows 可以成功合并的每个 USB 多功能设备的功能。 Windows 硬件认证 Windows 硬件认证工具包包含一项要求，说明 0034，用于 USB **ContainerID**如果在设备中实现。 如果设备实现 USB **ContainerID**、 Windows 硬件认证测试**ContainerID**作为 Microsoft 操作系统描述符的一部分测试，并检查是否**ContainerID**是全局唯一的值。 这些 Windows 硬件认证要求的更多详细信息，请参阅 Windows 硬件认证网站。
+设备制造商必须确保它们生成的设备的每个实例都具有全局唯一的 **ContainerID** 值，以便 Windows 能够成功合并每个 USB 多功能设备的功能。 Windows 硬件 CertificationWindows 硬件认证工具包包括一项 DEVFUND-0034，适用于在设备中实现的 USB **ContainerID** 。 如果设备实现 USB **ContainerID**，Windows 硬件认证会将 **Containerid** 测试为 Microsoft OS 描述符测试的一部分，并检查 **containerid** 值是否全局唯一。 有关这些 Windows 硬件认证要求的详细信息，请参阅 Windows 硬件认证网站。
 
-建议用于实现 USB **ContainerID**以下是有关设计、 制造，和交付 USB 设备的设备供应商的建议：
+有关实现 USB **ContainerID** 的建议以下是适用于设计、制造和发运 usb 设备的设备供应商的建议：
 
--   了解 Windows 7 如何改进支持多功能和使用的多个传输的 USB 设备**ContainerID**。 我们建议你先阅读"多功能设备支持和 Windows 7 中的设备容器分组。"
--   请确保每个 USB 设备上的序列号是唯一的。 Windows 硬件认证要求规定，是否你的设备包括序列号，序列号必须是唯一的设备的每个实例。
--   未提供**ContainerID**系统中内嵌的 USB 设备。 集成的 USB 设备应依赖于 ACPI BIOS 设置或 USB 集线器描述符**DeviceRemovable**位的端口。
--   请确保附加到系统的所有 USB 设备都具有唯一**ContainerID**值。 不共享**ContainerID**值或不同产品系列间的 USB 序列号。
--   请确保设置正确让你的设备的可移动设备功能。
-    **请注意**  添加 USB 的设备供应商**ContainerID**描述符添加到以前传送的 USB 设备必须递增设备发行版号 (**bcdDevice**) 中的设备设备描述符。 这是必需的因为 USB 集线器驱动程序缓存 Microsoft OS 描述符 （或缺乏一个），它基于设备的供应商 ID、 产品 ID 和设备发行版号的字符串。 如果您也不会增加设备发行版号，中心驱动程序不会查询 USB **ContainerID**的新设备，如果它之前枚举实例具有相同的供应商 ID、 产品 ID 和设备发行版号的设备不支持 USB **ContainerID**描述符。
+-   了解 Windows 7 如何通过使用 **ContainerID**来改善对多功能和多个传输 USB 设备的支持。 建议首先阅读 Windows 7 中的 "多功能设备支持和设备容器组合"。
+-   请确保每个 USB 设备上的序列号都是唯一的。 Windows 硬件认证要求表明，如果设备包含序列号，则设备的每个实例的序列号都必须是唯一的。
+-   不要为嵌入在系统中的 USB 设备提供 **ContainerID** 。 集成 USB 设备应依赖 ACPI BIOS 设置或端口的 USB 集线器描述符 **DeviceRemovable** 位。
+-   确保附加到系统的所有 USB 设备都具有唯一的 **ContainerID** 值。 请勿在产品系列之间共享 **ContainerID** 值或 USB 序列号。
+-   请确保为设备正确设置可移动设备功能。
+    **注意**   将 USB **ContainerID**描述符添加到之前提供的 usb 设备的设备供应商必须在设备的设备描述符中 (**bcdDevice**) 增加设备发布号。 这是必需的，因为 USB 集线器驱动程序会根据设备的供应商 ID、产品 ID 和设备版本号来缓存 Microsoft OS 字符串描述符 (或缺少一个) 。 如果未递增设备版本号，则集线器驱动程序在以前使用同一供应商 ID、产品 ID 和设备发行版（不支持 USB **ContainerID**描述符）枚举设备的实例时，不会查询新设备的 USB **ContainerID** 。
 
      
 
 ## <a name="related-topics"></a>相关主题
-[针对 Windows 构建的 USB 设备](building-usb-devices-for-windows.md)  
-[USB 设备的容器 Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids-for-usb-devices)  
+[为 Windows 构建 USB 设备](building-usb-devices-for-windows.md)  
+[USB 设备的容器 ID](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids-for-usb-devices)  
 
 
 

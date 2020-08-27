@@ -1,19 +1,19 @@
 ---
-Description: 属性-值检索
+description: 属性-值检索
 title: 属性-值检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab9ceae3b642ececd2ad222bf9f2a3dbfd12f3db
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f02205c92ae9d26c09988e8f6d2616cd91ff567
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376233"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969582"
 ---
 # <a name="property-value-retrieval"></a>属性-值检索
 
 
-当 WPD 程序调用**IPortableDeviceProperties::GetValues**方法，此方法，反过来，触发的一个调用**WpdObjectProperties::OnGetPropertyValues**或**WpdObjectProperties::OnGetAllPropertyValues**中的示例驱动程序的方法。 如果调用后一种方法的第二个参数**IPortableDeviceProperties::GetValues**是**NULL**。 这些方法的示例驱动程序中创建**IPortableDeviceValues**驱动程序将请求的属性的属性值存储到其中的对象。 下面的示例摘自示例驱动程序包含的代码**WpdObjectProperties::OnGetPropertyValues**方法。
+当 WPD 应用程序调用 **IPortableDeviceProperties：： GetValues** 方法时，此方法将触发对示例驱动程序中的 **WpdObjectProperties：： OnGetPropertyValues** 或 **WpdObjectProperties：： OnGetAllPropertyValues** 方法的调用。 如果 **IPortableDeviceProperties：： GetValues** 的第二个参数为 **NULL**，则调用后一种方法。 示例驱动程序中的这些方法会创建一个 **IPortableDeviceValues** 对象，驱动程序将在其中存储所请求的属性的属性值。 示例驱动程序中的以下示例包含 **WpdObjectProperties：： OnGetPropertyValues** 方法的代码。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::OnGetPropertyValues(

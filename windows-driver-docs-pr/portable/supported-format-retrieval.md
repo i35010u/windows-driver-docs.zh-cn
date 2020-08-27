@@ -1,19 +1,19 @@
 ---
-Description: 支持的格式检索
+description: 支持的格式检索
 title: 支持的格式检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d66ee2d63beb61e30e36fa0c3a8b0c86ff91b76
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 629888eaa3f138dc22366793520159215e36e84f
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376193"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968744"
 ---
 # <a name="supported-format-retrieval"></a>支持的格式检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetSupportedFormats**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetSupportedFormats**中的方法示例驱动程序。 后一种方法创建**IPortableDevicePropVariantCollection**驱动程序将为给定的内容类型支持的格式存储到其中的对象。
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetSupportedFormats** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetSupportedFormats** 方法的调用。 后一种方法会创建一个 **IPortableDevicePropVariantCollection** 对象，驱动程序将在其中存储给定内容类型支持的格式。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetSupportedFormats(

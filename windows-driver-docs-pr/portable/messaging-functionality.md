@@ -1,27 +1,27 @@
 ---
-Description: 消息传送功能
+description: 消息传送功能
 title: 消息传送功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e26f3940b5f9a6d9de90344635be8ef2d9faca0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 522176284035b06123eddace55f7a4d198ca0966
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376253"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969588"
 ---
 # <a name="messaging-functionality"></a>消息传送功能
 
 
-消息传递函数**WpdBaseDriver::DispatchWpdMessage**，处理消息到相应的驱动程序组件的分布。 如果已进行编程之前的 Windows，您可以将**DispatchWpdMessage**函数与类似于基于 Windows 的应用程序**WindowProc**函数。
+消息传递函数 **WpdBaseDriver：:D ispatchwpdmessage**，处理消息分发到适当的驱动程序组件。 如果之前已对 Windows 编程，则可以将 **DispatchWpdMessage** 函数视为类似于基于 Windows 的应用程序的 **WindowProc** 函数。
 
-**WpdBaseDriver::DispatchWpdMessage**函数会检查 WPD\_命令类别来确定它应在其中发送给定的消息。 随后将传递到相应的组件 （枚举、 属性、 资源或功能中找到的组件驱动程序） 此消息。
+**WpdBaseDriver：:D ispatchwpdmessage**函数检查 WPD \_ 命令类别，以确定应将给定的消息发送到的位置。 然后，它将此消息传递到 (在驱动程序) 中找到的枚举、属性、资源或功能组件的相应组件。
 
-*PParams*自变量指向**IPortableDeviceValues**集合，其中包含给定命令的反序列化的参数。
+*PParams*参数指向包含给定命令的反序列化参数的**IPortableDeviceValues**集合。
 
-*PResults*自变量指向的空集合**IPortableDeviceValues**函数填充给定命令后进行处理。
+*PResults*参数指向**IPortableDeviceValues**的空集合，在处理给定命令后，该函数将填充该集合。
 
-以下内容摘自示例驱动程序包含的代码**WpdBaseDriver::DispatchWpdMessage。**
+以下摘自示例驱动程序的代码包含**WpdBaseDriver：:D ispatchwpdmessage**的代码。
 
 ```ManagedCPlusPlus
 HRESULT WpdBaseDriver::DispatchWpdMessage(IPortableDeviceValues* pParams,

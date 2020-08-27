@@ -1,5 +1,5 @@
 ---
-Description: 本文介绍如何将命令发送和接收来自音频设备模块更改通知。 从通用 Windows 平台 (UWP) 应用。
+description: 本文介绍如何从音频设备模块发送命令和接收更改通知。 从通用 Windows 平台 (UWP) 应用。
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: 配置和查询音频设备模块
 label: Configure and query audio device modules
@@ -8,19 +8,19 @@ ms.author: drewbat
 ms.date: 06/28/2017
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 608926ac8c1eab801eecb31027c9261e4041134a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7522a6840ccb7acfe467baea7ce17832891888b8
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333922"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968822"
 ---
 # <a name="configure-and-query-audio-device-modules"></a>配置和查询音频设备模块 
 
-本文介绍如何将命令发送和接收来自音频设备模块从 UWP 应用的更改通知。 音频设备模块可能处理单元或定义的音频驱动程序的任何其他音频配置模块的硬件效果。 此功能旨在启用模块提供程序，以创建允许用户控制，并从运行在 DSP 中的音频处理模块获取状态信息的 UWP 应用。 若要使用的音频设备模块这篇文章中所示的 Api，必须指定的受限*audioDeviceConfiguration*应用包清单中的功能。
+本文介绍如何从 UWP 应用发送命令和接收来自音频设备模块的更改通知。 音频设备模块可以是硬件效果处理单元或音频驱动程序定义的任何其他音频配置模块。 此功能旨在使模块提供程序能够创建 UWP 应用，这些应用允许用户控制和获取 DSP 中运行的音频处理模块的状态信息。 若要使用本文中所示的音频设备模块 Api，必须在应用包清单中指定受限的 *audioDeviceConfiguration* 功能。
 
 ## <a name="get-an-instance-of-the-audiodevicemodulesmanager-class"></a>获取 AudioDeviceModulesManager 类的实例
-在本文中所示的所有音频设备模块操作开始通过获取的实例 **[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** 。 执行此操作通过第一个调用静态 **[GetDefaultAudioRenderId](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getdefaultaudiorenderid)** 方法 **[MediaDevice](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice)** 类。 这将返回默认音频渲染设备，然后传递到构造函数的 ID **AudioDeviceModulesManager**创建与音频设备相关联的类的实例。
+本文中所示的所有音频设备模块操作都首先获取 **[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** 的实例。 首先调用**[MediaDevice](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice)** 类的静态**[GetDefaultAudioRenderId](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getdefaultaudiorenderid)** 方法来执行此操作。 这会返回默认音频呈现设备的 ID，该 ID 随后会传递到 **AudioDeviceModulesManager** 的构造函数中，以创建与音频设备关联的类的实例。
 
 C#
 ```csharp
@@ -28,9 +28,9 @@ var endpointId = MediaDevice.GetDefaultAudioRenderId(AudioDeviceRole.Default);
 var audioModuleManager = new AudioDeviceModulesManager(endpointId);
 ```
 
-## <a name="query-for-installed-audio-device-modules"></a>已安装的音频设备模块的查询
+## <a name="query-for-installed-audio-device-modules"></a>查询安装的音频设备模块
 
-查询对所有通过调用已安装的音频设备模块 **[FindAll](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findall)** 的 **[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** 类。 查询的一组特定的音频设备模块通过调用 **[FindAllById](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findallbyid)** 并传入请求的模块的 ID。 下面的示例定义一个 ID 为一组模块，调用**FindAllById**若要检索的列表 **[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** 对象，并输出每个详细信息，然后到调试输出的模块。
+通过调用**[AudioDeviceModulesManager](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager)** 类的**[FindAll](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findall)** ，查询所有已安装的音频设备模块。 通过调用 **[FindAllById](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.findallbyid)** 并传入请求的模块的 ID，查询特定的一组音频设备模块。 下面的示例定义一组模块的 ID，调用 **FindAllById** 来检索 **[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** 对象的列表，然后将每个模块的详细信息输出到调试输出。
 
 C#
 ```csharp
@@ -54,12 +54,12 @@ foreach (var module in modules)
         Debug.WriteLine($"{classId} : {name} : {minorVersion} : {majorVersion} : {instanceId}");
 }
 ``` 
-## <a name="send-a-command-to-an-audio-device-module-and-receive-result-data"></a>将命令发送到音频设备模块和接收结果数据
-将命令发送到一个音频设备模块，通过调用 **[SendCommandAsync](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** 上 **[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** 对象。 **SendCommandAsync**方法采用字节数组作为参数。 此字节数组通常包含后跟与命令关联的数据的命令标识符，但命令格式和值是完全供应商定义的由系统被视为透明。
+## <a name="send-a-command-to-an-audio-device-module-and-receive-result-data"></a>向音频设备模块发送命令并接收结果数据
+通过对**[AudioDeviceModule](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule)** 对象调用**[SendCommandAsync](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** ，将命令发送到音频设备模块。 **SendCommandAsync**方法采用字节数组作为参数。 通常，此字节数组包含一个命令标识符，后跟与命令相关联的数据，但命令格式和值完全由供应商定义，并被系统视为透明。
 
-**SendCommandAsync**方法返回的异步操作，完成后，返回 **[ModuleCommandResult](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** 对象，表示的结果命令。 **[状态](https://docs.microsoft.com/uwp/api/windows.media.devices.modulecommandresult.status)** 属性包含一个枚举值，指示系统是否能够执行命令。 这并不一定表示音频设备模块已能够成功执行该命令。 **[结果](https://docs.microsoft.com/uwp/api/windows.media.devices.modulecommandresult.result)** 属性包含一个字节数组，返回的音频设备模块，以指示该命令的状态。 通常情况下，这将是一个值，指示成功或失败后跟命令的数据结果。 与模块命令一样，模块响应格式和值是供应商定义。
+**SendCommandAsync**方法返回一个异步操作，该操作在完成后返回表示命令结果的**[ModuleCommandResult](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.sendcommandasync)** 对象。 **[Status](https://docs.microsoft.com/uwp/api/windows.media.devices.modulecommandresult.status)** 属性包含一个枚举值，该值指示系统是否可以执行该命令。 这并不一定表示音频设备模块已成功执行命令。 **[Result](https://docs.microsoft.com/uwp/api/windows.media.devices.modulecommandresult.result)** 属性包含一个字节数组，该数组由音频设备模块返回，用于指示命令的状态。 通常，这将是一个值，指示成功或失败后跟命令的数据结果。 与模块命令一样，模块响应格式和值都是由供应商定义的。
 
-下面的示例调用**FindAllAsync**检索一组音频设备模块。 一个 **[DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)** 用于创建包含示例命令和数据的字节数组。 **SendCommandAsync**调用来发送命令缓冲区和异步操作完成之后, **ModuleCommandResult**返回。 如果命令执行成功， **[DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader)** 首次用于读取从模块返回一个整数状态。 如果此值是供应商定义的成功值，其余的结果数据读取，并使用应用程序中，如更新 UI。
+下面的示例调用 **FindAllAsync** 来检索一组音频设备模块。 **[DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)** 用于创建包含示例命令和数据的字节数组。 调用**SendCommandAsync**以发送命令缓冲区，并在异步操作完成后返回**ModuleCommandResult** 。 如果命令执行成功，则首先使用 **[DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader)** 来读取从模块返回的整数状态值。 如果此值是供应商定义的成功值，则将读取并使用应用程序（如）更新 UI。
 
 
 C#
@@ -100,8 +100,8 @@ foreach (var module in modules)
 }
 ```
 
-## <a name="receive-notifications-when-audio-device-modules-are-modified"></a>音频设备模块进行修改时接收通知
-音频设备模块已更新由注册时，应用可以接收通知 **[ModuleNotificationReceived](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.modulenotificationreceived)** 事件。 
+## <a name="receive-notifications-when-audio-device-modules-are-modified"></a>修改音频设备模块时接收通知
+通过注册 **[ModuleNotificationReceived](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager.modulenotificationreceived)** 事件来更新音频设备模块后，应用可以接收通知。 
 
 C#
 ```csharp
@@ -111,7 +111,7 @@ var audioModuleManager = new AudioDeviceModulesManager(endpointId);
 audioModuleManager.ModuleNotificationReceived += AudioModuleManager_ModuleNotificationReceived;
 ``` 
 
-**ModuleNotificationReceived**将修改与当前的音频设备相关联的任何音频设备模块时引发。 若要确定事件是否与特定模块相关联，请获取的实例**AudioDeviceModule**通过访问 **[模块](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulenotificationeventargs.module)** 属性 **[AudioDeviceModuleNoticiationEventArgs](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulenotificationeventargs)** 传递到事件处理程序，然后检查 **[ClassId](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.classid)** 属性，标识的模块。 与事件关联的数据进行传递的字节数组中存储 **[NotificationData](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulenotificationeventargs.notificationdata)** 事件参数的属性。 与命令和结果，返回的字节数组的格式是供应商定义的。 在下面的示例中，如果通知数据的第一个字节包含模块的混响级别设置的示例值是读取数据，用来更新 UI。
+当修改与当前音频设备关联的任何音频设备模块时，将引发**ModuleNotificationReceived** 。 若要确定事件是否与特定模块关联，请通过访问传递到事件处理程序中的**[AudioDeviceModuleNoticiationEventArgs](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulenotificationeventargs)** 的**[module](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulenotificationeventargs.module)** 属性，然后检查标识该模块的**[ClassId](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodule.classid)** 属性来获取**AudioDeviceModule**的实例。 与事件关联的数据将作为存储在事件参数的 **[NotificationData](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulenotificationeventargs.notificationdata)** 属性中的字节数组传递。 与命令和结果一样，返回的字节数组的格式为供应商定义的格式。 在以下示例中，如果通知数据的第一个字节包含模块的 "回响级别" 设置的示例值，则将读取并使用该数据来更新 UI。
 
 C#
 ```csharp

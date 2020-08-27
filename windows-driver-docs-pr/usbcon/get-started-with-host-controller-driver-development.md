@@ -1,38 +1,38 @@
 ---
-Description: 本部分介绍高级概念和任务的主机驱动程序开发。
-title: USB 主机控制器扩展 (UCX) 的体系结构
+description: 本部分介绍了用于宿主驱动程序开发的高级概念和任务。
+title: 'USB 主机控制器扩展 (UCX 的体系结构) '
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 51ad026cd95f0d3ee838145e9020f4d5c2c99e98
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60f94e5564a14b8a4933b5272c66ca6d07269507
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378341"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969390"
 ---
 # <a name="architecture-usb-host-controller-extension-ucx"></a>体系结构：USB 主控制器扩展 (UCX)
 
 
-本部分介绍高级概念和任务的主机驱动程序开发。 如果你正在编写新的主机与 Microsoft 提供的 USB 主控制器扩展驱动程序 (Ucx01000.sys) 控制器驱动程序进行通信，部分适用于您。
+本部分介绍了用于宿主驱动程序开发的高级概念和任务。 如果你正在编写与 Microsoft 提供的 USB 主机控制器扩展驱动程序 ( # A0) 通信的新主机控制器驱动程序，则此部分适用于你。
 
-下面是修改后的版本的关系图中所示[USB 宿主端驱动程序在 Windows 中的](usb-3-0-driver-stack-architecture.md)。 此版本将隐藏 USB 客户端驱动程序层，这不是与主机控制器驱动程序开发相关的详细的信息。
+下面是 [Windows 中 USB 主机端驱动程序](usb-3-0-driver-stack-architecture.md)中显示的图表的修改版本。 此版本隐藏与主机控制器驱动程序开发无关的 USB 客户端驱动程序层的详细信息。
 
 ![ucx 体系结构](images/ucx.png)
 
 在上图中，
 
--   **USB 集线器驱动程序 (Usbhub3.sys)** 是 KMDF 驱动程序。 中心驱动程序负责管理 USB 集线器和它们的端口、 枚举和创建的 USB 设备和其他中心的物理设备对象 (PDOs) 可能会连接到其下游的端口。
--   **USB 主机控制器扩展 (Ucx01000.sys)** 是到上面的中心驱动程序堆栈中的抽象层，并提供对基础主机控制器驱动程序的排队请求的通用机制。
--   **USB 主控制器驱动程序**管理硬件。 Usbxhci.sys 是由 Microsoft，该目标 xHCI 规范兼容 USB 控制器的硬件，特别是提供一个此类驱动程序。 可能有必要为独立硬件开发人员能够编写它们自己的主机控制器的驱动程序，而不使用收件箱 Usbxhci.sys。 例如，对于不是完全符合规范，因此不能使用 Usbxhci.sys XHCI 硬件或非 XHCI 硬件，如 USB 通过 TCP 连接。
+-   **USB 集线器驱动程序 ( # A0) ** 是 KMDF 驱动程序。 集线器驱动程序负责管理 USB 集线器及其端口、枚举和创建物理设备对象 (PDOs) USB 设备以及其他可能附加到下游端口的集线器。
+-   **USB 主机控制器扩展 ( # A0) ** 是堆栈中上面的集线器驱动程序的抽象层，并提供将请求排队到基础主机控制器驱动程序的通用机制。
+-   **USB 主机控制器驱动程序** 管理硬件。 Usbxhci.sys 是 Microsoft 提供的一个此类驱动程序，特别是针对 xHCI 规范兼容 USB 控制器硬件。 独立硬件开发人员可能需要编写自己的主机控制器驱动程序，而不是使用收件箱 Usbxhci.sys。 例如，对于不完全符合规范的 XHCI 硬件，因此不能使用 Usbxhci.sys 或用于非 XHCI 硬件，例如 USB over TCP 连接。
 
-通过使用采用控制器驱动程序的 UCX 与主机之间的双向通信进行[USB 主机控制器扩展 (UCX) 编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))。 编译该驱动程序时，每个驱动程序静态链接到由 Microsoft 提供存根 （stub） 库 (Ucx01000.lib) 中的入口点。
+使用 [USB 主机控制器扩展 (UCX) 编程接口](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))，在 UCX 与主机控制器驱动程序之间进行双向通信。 在编译驱动程序时，每个驱动程序都静态链接到 Microsoft 提供的存根库 (Ucx01000) 中的入口点。
 
 下面是为主机控制器驱动程序加载的设备堆栈：
 
 ![ucx 设备堆栈](images/ucx-device-stack.png)
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB) 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)  
+[ (USB) 驱动程序的通用串行总线](https://docs.microsoft.com/windows-hardware/drivers/)  
 [USB 驱动程序开发指南](usb-driver-development-guide.md)  
 
 

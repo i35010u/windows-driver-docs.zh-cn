@@ -1,39 +1,39 @@
 ---
-Description: USB 接口关联描述符 (IAD) 允许设备连接到属于函数的组接口。
+description: USB 接口关联描述符 (IAD) 允许设备对属于某个函数的接口进行分组。
 title: USB 接口关联描述符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1972b9b5a47db4d38c6feb0032bcfa8dab087af8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7848a314f287853f60c713f8fe605e409e071923
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350722"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968608"
 ---
 # <a name="usb-interface-association-descriptor"></a>USB 接口关联描述符
 
 
-USB 接口关联描述符 (IAD) 允许设备连接到属于函数的组接口。 本主题介绍客户端驱动程序可以确定设备是否包含一个函数 IAD。
+USB 接口关联描述符 (IAD) 允许设备对属于某个函数的接口进行分组。 本主题介绍客户端驱动程序如何确定设备是否包含用于函数的 IAD。
 
-通用串行总线规范，修订版本 2.0 中，不支持对多个接口的一个函数内的复合设备进行分组。 但是，USB 设备使用组 (DWG) 创建 USB 设备类，使具有多个接口的函数和 USB 实现器的论坛发出定义分组接口的一种机制工程更改通知 (ECN)。
+通用串行总线规范版本2.0 不支持将复合设备的多个接口分组到一个函数中。 但是，USB 设备工作组 (DWG) 创建了允许使用多个接口的功能的 USB 设备类，而 USB 实现器的论坛发出了一个工程更改通知 (ECN) ，定义了用于分组接口的机制。
 
-ECN 指定名为接口关联描述符 (IAD)，它允许硬件制造商定义的接口分组的 USB 描述符。 最有可能使用下列设备类包括：
+ECN 指定一个 USB 描述符（称为接口关联描述符 (IAD) ），该描述符允许硬件制造商定义接口分组。 最有可能使用 IADs 的设备类包括：
 
--   USB 视频类规范 （类代码-0x0E）
+-   USB 视频类规范 (类代码-0x0E) 
 
--   USB 音频类规范 （类代码-0x01）
+-   USB 音频类规范 (类代码-0x01) 
 
--   USB 蓝牙类规范 （类代码-0xE0）
+-   USB 蓝牙类规范 (类代码-0xE0) 
 
-Windows 7、 Windows Server 2008、 Windows Vista、 Microsoft Windows Server 2003 Service Pack 1 (SP1) 和 Microsoft Windows XP Service Pack 2 (SP2) 支持 Iad。
+Windows 7、Windows Server 2008、Windows Vista、Microsoft Windows Server 2003 Service Pack 1 (SP1) 和 Microsoft Windows XP Service Pack 2 (SP2) 支持 IADs。
 
-以下各小节介绍有关如何使用下列信息。
+以下小节介绍有关如何使用 IADs 的信息。
 
-### <a href="" id="how-should-a-composite-device-alert-the-operating-system-that-it-has-i"></a>如何应复合设备警报操作系统它在其固件中具有 Iad？
+### <a name="how-should-a-composite-device-alert-the-operating-system-that-it-has-iads-in-its-firmware"></a><a href="" id="how-should-a-composite-device-alert-the-operating-system-that-it-has-i"></a>复合设备应该如何向操作系统提醒其固件中已 IADs？
 
-复合设备制造商通常将分配到的设备类的零值 (*bDeviceClass*)，子类 (*bDeviceSubClass*)，和协议 (*bDeviceProtocol*) 的设备描述符，指定的通用串行总线规范中的字段。 这样，制造商联系，以将每个单独的接口与不同的设备类和协议相关联。
+复合设备制造商通常会将零值分配给设备类 (*bDeviceClass*) 、子类 (*bDeviceSubClass*) 和协议 (*BDeviceProtocol* ，这是由通用串行总线规范指定的设备描述符中) 字段。 这允许制造商将各个接口与不同的设备类和协议相关联。
 
-U-如果核心团队设计了特殊的类和协议代码集，通知操作系统的一个或多个 Iad 都位于设备固件。 设备的设备描述符必须具有下表中显示的值，否则操作系统将检测设备的 Iad 或正确组合设备的接口。
+USB 假设核心团队已经设计了一个特殊的类和协议代码集，用于通知操作系统一个或多个 IADs 存在于设备固件中。 设备的设备描述符必须具有下表中显示的值，否则，操作系统将不会检测到设备的 IADs，也不会正确地对设备的接口进行分组。
 
 <table>
 <colgroup>
@@ -64,13 +64,13 @@ U-如果核心团队设计了特殊的类和协议代码集，通知操作系统
 
  
 
-这些代码值提醒的 Windows 不支持下列安装正确枚举设备的特殊用途总线驱动程序的版本。 而无需设备描述符中的这些代码，系统可能无法枚举该设备，或者设备可能无法正常工作。
+这些代码值还提醒 Windows 版本，这些版本不支持 IADs 来安装正确枚举设备的专用总线驱动程序。 如果设备描述符中没有这些代码，系统可能无法枚举设备，或者设备可能无法正常工作。
 
-设备可具有多个 IAD。 每个 IAD 必须位于之前 IAD 描述的接口组中的接口。
+一个设备可以有多个 IAD。 每个 IAD 必须紧跟在 IAD 所描述的接口组中的接口之前。
 
-函数类 (*bFunctionClass*)，子类 (*bFunctionSubclassClass*)，和协议 (*bFunctionProtocol*) IAD 字段必须包含的值指定的 USB 设备类描述在函数中的接口。
+函数类 (*bFunctionClass*) 、子类 (*bFunctionSubclassClass*) 和协议 (BFUNCTIONPROTOCOL) 字段。 IAD 的*bFunctionProtocol*字段必须包含由描述函数中的接口的 USB 设备类指定的值。
 
-IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的类和子类字段匹配。 但是，Microsoft 建议的集合的第一个接口具有与 IAD 的事件类和子类字段匹配的类和子类字段。 下表指示哪些字段应匹配。
+IAD 的 "类" 和 "子类" 字段不需要匹配 IAD 所描述的接口集合中接口的 "类" 和 "子类" 字段。 但是，Microsoft 建议集合的第一个接口具有与 IAD 的 "类" 和 "子类" 字段匹配的 "类" 和 "子类" 字段。 下表指示哪些字段应该匹配。
 
 <table>
 <colgroup>
@@ -80,7 +80,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
 <thead>
 <tr class="header">
 <th>IAD 字段</th>
-<th>相应的界面字段</th>
+<th>对应的接口字段</th>
 </tr>
 </thead>
 <tbody>
@@ -97,27 +97,27 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
 
  
 
-*BFirstInterface* IAD 字段指示的函数中的第一个接口。 *BInterfaceCount* IAD 字段指示接口集合中有多少个接口。 必须是连续的 IAD 接口集合中的接口 （可以有接口号码列表中的无间隔），因此，与第一个接口数字计数是不足以在集合中指定的所有接口。
+IAD 的 *bFirstInterface* 字段指示函数中第一个接口的编号。 IAD 的 *bInterfaceCount* 字段指示接口集合中有多少个接口。 IAD 接口集合中的接口必须是连续的 (在) 的接口号列表中不能有间隔，因此具有第一个接口号的计数足以指定集合中的所有接口。
 
-### <a name="accessing-the-contents-of-an-iad"></a>访问 IAD 内容
+### <a name="accessing-the-contents-of-an-iad"></a>访问 IAD 的内容
 
-客户端驱动程序不能直接访问 IAD 描述符。 IAD 工程更改通知 (ECN) 指定必须在设备返回一个请求收到配置描述符 （GetDescriptor 配置） 的主机软件时的配置信息中包含下列。 主机软件不能直接与 GetDescriptor 请求检索 Iad。
+客户端驱动程序无法直接访问 IAD 描述符。 IAD 工程更改通知 (ECN) 指定 IADs 必须包括在设备接收来自主机软件的请求时返回的配置信息， (GetDescriptor Configuration) 。 主机软件无法直接使用 GetDescriptor 请求检索 IADs。
 
-但是，客户端驱动程序可以查询设备的硬件标识符 (Id) 的 USB 设备的父驱动程序和设备的硬件 Id 包含嵌入的字段的 IAD 的信息。
+但是，客户端驱动程序可以在 USB 设备的父驱动程序中查询设备的硬件标识符 (Id) ，设备的硬件 Id 包含有关 IAD 字段的嵌入信息。
 
 ### <a name="usb-interface-association-descriptor-example"></a>USB 接口关联描述符示例
 
-以下说明了复合的 USB 设备的描述符布局。 示例设备有两种功能：
+下面演示了复合 USB 设备的描述符布局。 该示例设备有两个功能：
 
-<a href="" id="function-1--video-class"></a>**函数 1:视频类**  
-此函数由接口关联描述符 (IAD) 定义，并且包含两个接口： 零 (0) 和接口一 （1） 的接口。
+<a href="" id="function-1--video-class"></a>**函数1： Video 类**  
+此函数由接口关联描述符 (IAD) 定义，其中包含两个接口： interface 0 (0) 和 interface one (1) 。
 
-系统生成的硬件和兼容标识符 (Id) 对于函数，如中所述[支持无线移动通信设备类](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)。 匹配相应的 INF 文件之后, 在系统加载视频类驱动程序堆栈。
+系统将为函数)  (Id 生成硬件和兼容标识符，如对 [无线移动通信设备类的支持](support-for-the-wireless-mobile-communication-device-class--wmcdc-.md)中所述。 匹配适当的 INF 文件后，系统会加载视频类驱动程序堆栈。
 
-<a href="" id="function-2--human-input-device"></a>**函数 2:人工输入的设备**  
-该函数包含只有一个接口： 接口两 （2）。
+<a href="" id="function-2--human-input-device"></a>**函数2：人体输入设备**  
+此函数只包含一个接口： interface 2 (2) 。
 
-系统生成的硬件和兼容 Id 对于函数，如中所述[枚举的接口集合 USB 复合设备上](support-for-interface-collections.md)。 匹配相应的 INF 文件之后, 在系统加载人工输入设备 (HID) 类驱动程序。
+系统会为该函数生成硬件和兼容 Id，如 [USB 复合设备上的接口集合枚举](support-for-interface-collections.md)中所述。 匹配适当的 INF 文件后，系统会 (HID) 类驱动程序加载人体输入设备。
 
 描述符如下所示：
 
@@ -166,7 +166,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     BYTE  iFunction      0x04
 ```
 
-### <a name="interface-descriptor-video-control"></a>接口描述符 （视频控件）：
+### <a name="interface-descriptor-video-control"></a>接口描述符 (视频控制) ：
 
 ```cpp
     BYTE  bLength      0x09
@@ -180,7 +180,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     BYTE  iInterface      0x05
 ```
 
-### <a name="class-specific-descriptors"></a>类特定 Descriptor(s):
+### <a name="class-specific-descriptors"></a>)  (类特定描述符：
 
 ``` syntax
     . . . .
@@ -188,7 +188,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     . . . .
 ```
 
-### <a name="endpoint-descriptors"></a>终结点 Descriptor(s):
+### <a name="endpoint-descriptors"></a>终结点描述符 (s) ：
 
 ``` syntax
     . . . .
@@ -196,7 +196,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     . . . .
 ```
 
-### <a name="interface-descriptor-video-streaming"></a>接口 （视频流式处理） 的描述符：
+### <a name="interface-descriptor-video-streaming"></a>接口描述符 (视频流式处理) ：
 
 ```cpp
     BYTE  bLength      0x09
@@ -210,7 +210,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     BYTE  iInterface      0x06
 ```
 
-### <a href="" id="class-specific-descriptor-s--video"></a>类特定 Descriptor(s):
+### <a name="class-specific-descriptors"></a><a href="" id="class-specific-descriptor-s--video"></a>)  (类特定描述符：
 
 ``` syntax
     . . . .
@@ -218,7 +218,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     . . . .
 ```
 
-### <a href="" id="endpoint-descriptor-s--video"></a>终结点 Descriptor(s):
+### <a name="endpoint-descriptors"></a><a href="" id="endpoint-descriptor-s--video"></a>终结点描述符 (s) ：
 
 ``` syntax
     . . . .
@@ -226,7 +226,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     . . . .
 ```
 
-### <a name="interface-descriptor-human-input-devices"></a>接口描述符 （人工输入设备）：
+### <a name="interface-descriptor-human-input-devices"></a>)  (人输入设备的接口描述符：
 
 ```cpp
     BYTE  bLength      0x09
@@ -240,7 +240,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     BYTE  iInterface      0x07
 ```
 
-### <a href="" id="class-specific-descriptor-s--hid"></a>类特定 Descriptor(s):
+### <a name="class-specific-descriptors"></a><a href="" id="class-specific-descriptor-s--hid"></a>)  (类特定描述符：
 
 ``` syntax
     . . . .
@@ -248,7 +248,7 @@ IAD 的类和子类字段不需要与 IAD 描述的接口集合中的接口的�
     . . . .
 ```
 
-### <a href="" id="endpoint-descriptor-s--hid"></a>终结点 Descriptor(s):
+### <a name="endpoint-descriptors"></a><a href="" id="endpoint-descriptor-s--hid"></a>终结点描述符 (s) ：
 
 ``` syntax
     . . . .

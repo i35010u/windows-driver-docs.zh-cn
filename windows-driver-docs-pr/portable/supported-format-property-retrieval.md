@@ -1,19 +1,19 @@
 ---
-Description: 支持的格式-属性检索
+description: 支持的格式-属性检索
 title: 支持的格式-属性检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13b9f56445c052333adcf74069fcd12412d8cfdf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 97d837f8d1fff32b18b34d81fdfe95627083f921
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376191"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969538"
 ---
 # <a name="supported-format-property-retrieval"></a>支持的格式-属性检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetSupportedFormatProperties**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetSupportedFormatProperties**中的示例驱动程序的方法。 后一种方法创建**IPortableDeviceKeyCollection**驱动程序将支持的以给定格式的对象的属性存储到其中的对象。
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetSupportedFormatProperties** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetSupportedFormatProperties** 方法的调用。 后一种方法会创建一个 **IPortableDeviceKeyCollection** 对象，驱动程序会将其支持的属性存储到给定格式的对象。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetSupportedFormatProperties(

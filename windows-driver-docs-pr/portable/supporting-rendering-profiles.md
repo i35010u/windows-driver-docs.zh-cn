@@ -1,25 +1,25 @@
 ---
-Description: 支持呈现配置文件
+description: 支持呈现配置文件
 title: 支持呈现配置文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f63bf4649bc0e378f0784a6e4a51c63f13c0b47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 512a154e12764ee4f42ffdc8d8ea19e62226ed69
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380845"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969470"
 ---
 # <a name="supporting-rendering-profiles"></a>支持呈现配置文件
 
 
-音频或视频设备可能支持特定呈现配置文件。 例如，音频流式处理设备可能通过多个通道流式特定类型的特定比特率的内容。 内容类型、 流式处理比特率和通道计数称为*呈现配置文件*。
+音频或视频设备可能支持特定的渲染配置文件。 例如，音频流式处理设备可能会在多个通道上按特定比特率流式传输特定类型的内容。 内容类型、流式比特率和通道计数称为 *呈现配置文件*。
 
-WPD 应用程序通常将从驱动程序检索呈现配置文件。 有关如何应用程序中检索呈现配置文件的详细信息，请参阅[呈现功能支持的设备中检索](https://go.microsoft.com/fwlink/p/?linkid=150363)WPD SDK 中的主题。
+WPD 应用程序通常会从驱动程序中检索呈现配置文件。 有关应用程序如何检索呈现配置文件的详细信息，请参阅 WPD SDK 中的 [检索设备支持的呈现功能](https://go.microsoft.com/fwlink/p/?linkid=150363) 主题。
 
-本主题介绍如何 WpdWudfSampleDriver 驱动程序实现中的流式处理的音频支持*Helpers.cpp*模块。
+本主题介绍 WpdWudfSampleDriver 驱动程序如何实现对 *帮助程序 .cpp* 模块中音频流的支持。
 
-当应用程序请求的呈现配置文件时，该驱动程序会收到 WPD\_命令\_对象\_属性\_GET 命令与命令类别的 WPD\_类别\_对象\_属性和 WPD\_属性\_对象\_属性\_对象\_RenderingInformation 的 ID。 在示例驱动程序，此命令的回执触发 SetRenderingProfile 函数中调用*Helpers.cpp*模块。
+当应用程序请求呈现配置文件时，驱动程序将接收 WPD \_ 命令 \_ 对象 \_ 属性 \_ GET 命令，其中包含 WPD 类别对象属性的命令类别 \_ \_ \_ 和 WPD \_ 属性 \_ 对象 \_ 属性 \_ 对象 \_ ID RenderingInformation。 在示例驱动程序中，此命令的接收将触发对 *SetRenderingProfile 模块中的* 函数的调用。
 
 ```ManagedCPlusPlus
 HRESULT SetRenderingProfiles(
@@ -88,7 +88,7 @@ HRESULT SetRenderingProfiles(
 }
 ```
 
-**SetRenderingProfiles**函数，又调用 GetPreferredAudioProfile helper 函数在 IPortableDeviceValues 对象中返回的实际配置文件信息。
+**SetRenderingProfiles**函数反过来调用 GetPreferredAudioProfile helper 函数，该函数将在 IPortableDeviceValues 对象中返回实际的配置文件信息。
 
 ```ManagedCPlusPlus
 HRESULT GetPreferredAudioProfile(

@@ -1,43 +1,43 @@
 ---
-Description: 本部分介绍由 Microsoft 提供的复合设备 Usbccgp.sys 驱动程序。
+description: 本部分介绍 Microsoft 为复合设备提供的 Usbccgp.sys 驱动程序。
 title: USB 常规父驱动程序 (Usbccgp.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0ecd4e815027c763921b339e3c0fb20b4f41867
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3eec142f567fe1afcaab1ca740d70cf6e6e477a2
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355041"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969596"
 ---
 # <a name="usb-generic-parent-driver-usbccgpsys"></a>USB 常规父驱动程序 (Usbccgp.sys)
 
 
-本部分介绍由 Microsoft 提供的复合设备 Usbccgp.sys 驱动程序。
+本部分介绍 Microsoft 为复合设备提供的 Usbccgp.sys 驱动程序。
 
-很多 USB 设备公开多个*USB 接口*。 这些设备在 USB 术语中称为*复合设备*。 Microsoft Windows 2000 和 Windows 98 的操作系统包括 USB 总线驱动程序中 (Usbhub.sys) 公开该复合设备是一个单独的设备的每个接口的泛型父设施。 在 Microsoft Windows XP 和 Windows Me 中，简化并改进了通过将它传输到独立的驱动程序调用此工具*USB 泛型父驱动程序*(Usbccgp.sys)。 使用泛型父驱动程序的功能，设备供应商可以进行一些接口的选择性使用 Microsoft 提供的驱动程序支持。
+许多 USB 设备公开多个 *usb 接口*。 在 USB 术语中，这些设备称为 *复合设备*。 Microsoft Windows 2000 和 Windows 98 操作系统包含 USB 总线驱动程序中的通用父设施 ( # A0) 将复合设备的每个接口公开为单独的设备。 在 Microsoft Windows XP 和 Windows Me 中，此功能通过将其传输到称为 *USB 通用父驱动程序* 的独立驱动程序 ( # A0) 来简化和改进。 使用通用父驱动程序的功能，设备供应商可以对某些接口选择性地使用 Microsoft 提供的驱动程序支持。
 
-独立运行的一些复合设备接口。 例如，带电源按钮的复合 USB 键盘可能有一个接口适用于键盘和的电源按钮的另一个接口。 USB 泛型父驱动程序会枚举这些接口的每个作为一个单独的设备。 Microsoft 提供键盘驱动程序管理键盘界面和 Microsoft 提供 power 密钥驱动程序来管理电源密钥接口加载操作系统。
+某些复合设备的接口独立运行。 例如，带有电源按钮的复合 USB 键盘可能有一个键盘接口，还有一个用于电源按钮的接口。 USB 通用父驱动程序将每个接口枚举为单独的设备。 操作系统加载 Microsoft 提供的键盘驱动程序来管理键盘接口，并加载 Microsoft 提供的电源密钥驱动程序以管理电源密钥接口。
 
-如果复合设备具有本机 Windows 驱动程序不支持的接口，设备的供应商应提供一个驱动程序接口和一个 INF 文件。 INF 文件应具有 INF *DDInstall*接口设备 ID 相匹配的部分。 INF 文件不得匹配复合设备本身，设备 ID，因为这会阻止加载泛型父驱动程序。 操作系统加载 USB 泛型父驱动程序的方式的说明，请参阅[枚举的 USB 复合设备](enumeration-of-the-composite-parent-device.md)。
+如果复合设备具有本机 Windows 驱动程序不支持的接口，则该设备的供应商应为接口和 INF 文件提供驱动程序。 INF 文件应具有与接口的设备 ID 匹配的 INF *DDInstall* 部分。 INF 文件不能与复合设备本身的设备 ID 匹配，因为这会阻止通用父驱动程序加载。 有关操作系统如何加载 USB 通用父驱动程序的说明，请参阅 [Usb 复合设备的枚举](enumeration-of-the-composite-parent-device.md)。
 
-到某些设备组接口*接口集合*协同工作以执行特定*函数*。 当接口分为不同的接口集合时，泛型父驱动程序将每个集合，而不是每个单独的接口，处理为设备。 有关泛型父驱动程序管理接口集合的方式的详细信息，请参阅[枚举的接口集合 USB 复合设备上](support-for-interface-collections.md)。
+某些设备将接口组合到一起工作以执行特定*功能*的*接口集合*。 当接口在接口集合中分组时，一般父驱动程序将每个集合（而不是每个单独的接口）视为一个设备。 有关泛型父驱动程序如何管理接口集合的详细信息，请参阅 [USB 复合设备上的接口集合枚举](support-for-interface-collections.md)。
 
-操作系统加载的复合设备接口的客户端驱动程序后，泛型父驱动程序多路复用客户端驱动程序，合并到单个数据流复合设备的这些单独交互的数据流。 泛型的父级是整个复合设备和其所有接口的电源策略所有者。 它还管理同步和即插即用的请求。
+操作系统加载复合设备接口的客户端驱动程序之后，一般父驱动程序将从客户端驱动程序多路复用数据流，并将这些单独的交互合并为复合设备的单个数据流。 一般父代为整个复合设备及其所有接口的电源策略所有者。 它还管理同步和 PnP 请求。
 
-如果 Microsoft 提供的驱动程序支持某些接口而不是其他泛型父驱动程序可以简化的复合硬件供应商的任务工作。 此类设备的供应商只需要提供驱动程序不受支持的接口，因为泛型父驱动程序便于使用 Microsoft 提供的驱动程序的受支持的接口。
+如果 Microsoft 提供的驱动程序支持某些接口，而通用父驱动程序可以简化复合硬件供应商的任务。 此类设备的供应商只需为不受支持的接口提供驱动程序，因为通用父驱动程序有助于为支持的接口使用 Microsoft 提供的驱动程序。
 
-以下部分介绍的特性和功能的泛型父驱动程序：
+以下各节介绍通用父驱动程序的特性和功能：
 
-[枚举的复合的 USB 设备](enumeration-of-the-composite-parent-device.md)
+[枚举 USB 复合设备](enumeration-of-the-composite-parent-device.md)
 
-[在 USB 复合设备上的描述符](descriptors-on-composite-usb-devices.md)
+[USB 复合设备上的描述符](descriptors-on-composite-usb-devices.md)
 
-[复合的 USB 设备上的接口的枚举](enumeration-of-interfaces-not-grouped-in-collections.md)
+[枚举 USB 复合设备上的接口](enumeration-of-interfaces-not-grouped-in-collections.md)
 
-[复合的 USB 设备上的接口集合的枚举](support-for-interface-collections.md)
+[枚举 USB 复合设备上的接口集合](support-for-interface-collections.md)
 
-[Usbccgp.sys 中的内容的安全功能](content-security-features-in-the-composite-client-generic-parent-drive.md)
+[Usbccgp.sys 中的内容安全功能](content-security-features-in-the-composite-client-generic-parent-drive.md)
 
 ## <a name="related-topics"></a>相关主题
 [Microsoft 提供的 USB 驱动程序](system-supplied-usb-drivers.md)  

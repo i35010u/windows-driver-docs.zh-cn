@@ -1,21 +1,21 @@
 ---
-Description: 关闭资源
+description: 关闭资源
 title: 关闭资源
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 338a3dc252b900fe66163ba75dbf6c69ad146924
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8051eebdfee8963b93de8f9a05a63b5ef3562dc
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378184"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969560"
 ---
 # <a name="closing-a-resource"></a>关闭资源
 
 
-应用程序通过使用完成读取或写入操作后给定**IStream**对象，它通过调用关闭流**IStream::Release**或**IStream::Commit**（若要保存更改资源的写入请求）。 在应用程序级别触发器的关闭请求**WpdObjectResources::OnCloseResource**驱动程序的方法。
+在应用程序使用给定的 **IStream** 对象完成读取或写入操作后，它会通过调用 **Istream：： Release** 或 **IStream：： Commit** (关闭流，以便保存) 资源写入请求的更改。 应用程序级别的关闭请求会触发驱动程序的 **WpdObjectResources：： OnCloseResource** 方法。
 
-主要工作**WpdObjectResources::OnCloseResource**方法是从客户端上下文映射中删除资源的上下文数据并释放关联的任何内存。
+**WpdObjectResources：： OnCloseResource**方法的主要工作是从客户端上下文映射中删除资源上下文数据，并释放任何关联的内存。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectResources::OnCloseResource(

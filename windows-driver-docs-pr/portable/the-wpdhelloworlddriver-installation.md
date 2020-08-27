@@ -1,45 +1,45 @@
 ---
-Description: 安装 WpdHelloWorldDriver 示例
+description: 安装 WpdHelloWorldDriver 示例
 title: 安装 WpdHelloWorldDriver 示例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f92b35ecd1881a67f9bd03bfd51bdfca6fd55a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0571fd3312065786f17abaa3e3ad91c403354ee5
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387280"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969438"
 ---
 # <a name="installing-the-wpdhelloworlddriver-sample"></a>安装 WpdHelloWorldDriver 示例
 
 
-与其他 WPD 示例类似，此示例驱动程序将安装为根枚举设备。 它将显示在**便携设备**或**WPD**中的节点**设备管理器**，与设备 ID 的根\\WPD\\NNNN。
+类似于其他 WPD 示例，此示例驱动程序作为根枚举设备安装。 它显示在**设备管理器**中的**便携设备**或**WPD**节点下，其设备 ID 为 ROOT \\ WPD \\ NNNN。
 
-### <a name="span-iddriverinstallationstepsspanspan-iddriverinstallationstepsspanspan-iddriverinstallationstepsspandriver-installation-steps"></a><span id="Driver_Installation_Steps"></span><span id="driver_installation_steps"></span><span id="DRIVER_INSTALLATION_STEPS"></span>驱动程序安装步骤
+### <a name="span-iddriver_installation_stepsspanspan-iddriver_installation_stepsspanspan-iddriver_installation_stepsspandriver-installation-steps"></a><span id="Driver_Installation_Steps"></span><span id="driver_installation_steps"></span><span id="DRIVER_INSTALLATION_STEPS"></span>驱动程序安装步骤
 
-以下列表标识应完成若要安装的示例驱动程序的步骤：
+以下列表标识了为了安装示例驱动程序而应完成的步骤：
 
-1.  启动从所需的生成环境**启动**菜单。
-2.  生成示例 ("build-cZ")。
-3.  复制 UMDF 共同安装程序中， *WUDFUpdate\_0xxxx.dll*，为包含驱动程序 DLL 的目录。 可以在找到共同安装程序&lt;WDK 安装路径&gt;\\redist\\wdf\\&lt;体系结构&gt;目录。
-4.  安装驱动程序 ("devcon 安装 wpdhelloworlddriver.inf WUDF\\WpdHelloWorld")
+1.  从 " **开始** " 菜单启动所需的生成环境。
+2.  生成 ( "build – cZ" ) 的示例。
+3.  将 UMDF 共同安装程序 *WUDFUpdate \_0xxxx.dll*复制到包含驱动程序 DLL 的目录中。 可以在 &lt; WDK 安装路径的 &gt; \\ \\ wdf \\ &lt; 结构 &gt; 目录中找到共同安装程序。
+4.  安装驱动程序 ( "devcon install wpdhelloworlddriver WUDF \\ WpdHelloWorld" ) 
 
-请注意 devcon 命令的最后一个参数对应于在驱动程序的 INF 文件中找到以下条目。
+请注意，devcon 命令的最后一个参数对应于驱动程序的 INF 文件中的以下条目。
 
 ```ManagedCPlusPlus
 [Microsoft.NTx86]
 %BasicDeviceName%=Basic_Install,WUDF\WpdHelloWorld
 ```
 
-### <a name="span-iddriverremovalstepsspanspan-iddriverremovalstepsspanspan-iddriverremovalstepsspandriver-removal-steps"></a><span id="Driver_Removal_Steps"></span><span id="driver_removal_steps"></span><span id="DRIVER_REMOVAL_STEPS"></span>驱动程序删除步骤
+### <a name="span-iddriver_removal_stepsspanspan-iddriver_removal_stepsspanspan-iddriver_removal_stepsspandriver-removal-steps"></a><span id="Driver_Removal_Steps"></span><span id="driver_removal_steps"></span><span id="DRIVER_REMOVAL_STEPS"></span>驱动程序删除步骤
 
-以下列表标识应完成若要删除的示例驱动程序的步骤。
+以下列表标识了删除示例驱动程序应完成的步骤。
 
 1.  打开 Windows 设备管理器。
-2.  单击下的驱动程序**便携设备**节点。
-3.  单击“卸载” 。
+2.  单击 " **可移植设备** " 节点下的驱动程序。
+3.  单击“卸载”  。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

@@ -1,23 +1,23 @@
 ---
-Description: 本主题列出了写入 Windows 驱动模型（WDM） USB 客户端驱动程序所需的标头和库。
+description: 本主题列出了写入 Windows 驱动模型 (WDM) USB 客户端驱动程序所需的标头和库。
 title: USB 客户端驱动程序所需的标头和库
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce12d6cdfd4b3f3862f6f352a869694c41b8333
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b58d10ab9c04c7f37b9daa3967c20a00665f8cfc
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844998"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969482"
 ---
 # <a name="headers-and-libraries-required-by-a-usb-client-driver"></a>USB 客户端驱动程序所需的标头和库
 
 
-本主题列出了写入 Windows 驱动模型（WDM） USB 客户端驱动程序所需的标头和库。
+本主题列出了写入 Windows 驱动模型 (WDM) USB 客户端驱动程序所需的标头和库。
 
-若要查找特定设备驱动程序接口（DDI）的标头和库，请参阅[USB 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/)中的参考页。
+若要查找特定设备驱动程序接口的标头和库 (DDI) ，请参阅 [USB 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/)中的参考页。
 
-## <a name="headers"></a>标题
+## <a name="headers"></a>标头
 
 
 <table>
@@ -29,10 +29,10 @@ ms.locfileid: "72844998"
 </colgroup>
 <thead>
 <tr class="header">
-<th>标头文件</th>
+<th>头文件</th>
 <th>路径</th>
-<th>涵盖</th>
-<th>描述</th>
+<th>包括</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -46,7 +46,7 @@ ms.locfileid: "72844998"
 <td>usb。h</td>
 <td>Include\shared</td>
 <td></td>
-<td>为客户端驱动程序向 USB 驱动程序堆栈发送请求所需的 USB 请求块（URBs）定义<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a>结构。</td>
+<td>定义客户端驱动程序向 USB 驱动程序堆栈发送请求所需的 (URBs) USB 请求块的 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb" data-raw-source="[&lt;strong&gt;URB&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)"><strong>URB</strong></a> 结构。</td>
 </tr>
 <tr class="odd">
 <td>usb100</td>
@@ -64,7 +64,7 @@ ms.locfileid: "72844998"
 <td>usbbusif</td>
 <td>Include\km</td>
 <td></td>
-<td>定义为需要直接链接到端口驱动程序（而不是直接链接到 Usbd）的 USB 客户端驱动程序（FDO）定义的总线接口。</td>
+<td>定义要直接链接到端口驱动程序（而不是直接链接到 Usbd.sys） (FDO) 为 USB 客户端驱动程序定义的总线接口。</td>
 </tr>
 <tr class="even">
 <td>usbdi</td>
@@ -105,7 +105,7 @@ ms.locfileid: "72844998"
 <td>usbkern</td>
 <td>Include\km</td>
 <td><p>usbioctl</p></td>
-<td>已弃用。</td>
+<td>已否决。</td>
 </tr>
 <tr class="even">
 <td>usbrpmif</td>
@@ -132,14 +132,14 @@ ms.locfileid: "72844998"
 <td>Include\um</td>
 <td><p>winapifamily</p>
 <p>winusbio</p></td>
-<td>定义由 Winusb 公开的<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>，应用程序使用该函数将请求发送到安装为 USB 设备的函数驱动程序的 WinUSB。</td>
+<td>定义由 Winusb.dll 公开的 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a> ，这些函数由想要将请求发送到作为 USB 设备的函数驱动程序的 Winusb.sys 的应用程序使用。</td>
 </tr>
 <tr class="even">
 <td>winusbio</td>
 <td>Include\shared</td>
 <td><p>winapifamily</p>
 <p>usb。h</p></td>
-<td>定义<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>的标志。</td>
+<td>定义 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb" data-raw-source="[WinUSB functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)">WinUSB 函数</a>的标志。</td>
 </tr>
 </tbody>
 </table>
@@ -159,40 +159,40 @@ ms.locfileid: "72844998"
 <tr class="header">
 <th>库</th>
 <th>路径</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>usbd</td>
-<td><p>\Lib\win8\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\win7\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&gt;&lt;</em></p></td>
+<td><p>\Lib\win8\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\win7\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\winv6.3\km &lt; em &gt; &lt; 拱&gt;</em></p></td>
 <td>提供帮助程序例程，用于从 USB 驱动程序堆栈获取信息并为请求设置 URBs 格式。</td>
 </tr>
 <tr class="even">
 <td>usbrpm</td>
-<td><p>\Lib\win8\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\win7\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&gt;&lt;</em></p></td>
+<td><p>\Lib\win8\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\win7\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\winv6.3\km &lt; em &gt; &lt; 拱&gt;</em></p></td>
 <td>为应用程序提供用于执行将 Microsoft 提供的驱动程序替换为第三方 RPM 驱动程序的操作的函数。</td>
 </tr>
 <tr class="odd">
 <td>usbdex</td>
-<td><p>\Lib\win8\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\win7\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&gt;&lt;</em></p></td>
+<td><p>\Lib\win8\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\win7\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\winv6.3\km &lt; em &gt; &lt; 拱&gt;</em></p></td>
 <td>提供客户端驱动程序的帮助程序例程，用于向基础 USB 驱动程序堆栈发送请求。 生成库时，库将加载并静态链接到客户端驱动程序模块。 调用这些例程的客户端驱动程序可以在 Windows Vista 和更高版本的 Windows 上运行。</td>
 </tr>
 <tr class="even">
 <td>winusb</td>
-<td><p>\Lib\win8\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\win8\um&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\win7\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\win7\um&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\winv6.3\km&lt;em&gt;&gt;&lt;</em></p>
-<p>\Lib\winv6.3\um&lt;em&gt;&gt;&lt;</em></p></td>
-<td>为用户模式客户端驱动程序或应用程序提供用于与已加载 Winusb 作为其函数驱动程序的 USB 设备进行通信的函数。</td>
+<td><p>\Lib\win8\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\win8\um &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\win7\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\win7\um &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\winv6.3\km &lt; em &gt; &lt; 拱&gt;</em></p>
+<p>\Lib\winv6.3\um &lt; em &gt; &lt; 拱&gt;</em></p></td>
+<td>为用户模式客户端驱动程序或应用程序提供与将 Winusb.sys 加载为其函数驱动程序的 USB 设备通信的函数。</td>
 </tr>
 </tbody>
 </table>
@@ -202,7 +202,7 @@ ms.locfileid: "72844998"
 ## <a name="header-changes-in-windows8"></a>Windows 8 中的标头更改
 
 
-从适用于 Windows 8 的 Windows 驱动程序工具包（WDK）开始，标头文件 usbspec 将替换 USBProtocolDefs。
+从 windows 驱动程序工具包开始 (WDK) 对于 Windows 8，头文件 usbspec 将替换 USBProtocolDefs。
 
 新标头文件 usbspec 为定义的 DDIs 提供协议定义，这是根据正式的 USB 规范提供的。 标头文件包括用于 USB 3.0 规格的 DDIs。
 

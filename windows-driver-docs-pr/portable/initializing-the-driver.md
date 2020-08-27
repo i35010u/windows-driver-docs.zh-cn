@@ -1,21 +1,21 @@
 ---
-Description: 初始化驱动程序
+description: 初始化驱动程序
 title: 初始化驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6145c0b10ae249d1335753ddcdf1f7b86593d14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 735fccdf1f43e77719f02983ac9de4089f81ca1a
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365381"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968546"
 ---
 # <a name="initializing-the-driver"></a>初始化驱动程序
 
 
-初始化函数， **WpdBaseDriver::Initialize**并**WpdBaseDriver::Uninitialize** WpdHelloWorldDriver 示例中为空。 **初始化**函数只需返回 S\_确定和**Uninitialize**函数不执行任何操作。
+在 WpdHelloWorldDriver 示例中，初始化函数 **WpdBaseDriver：： Initialize** 和 **WpdBaseDriver：：** Initialize 为空。 **Initialize**函数只返回 S \_ OK，而取消**初始化**函数不执行任何操作。
 
-以下内容摘自示例驱动程序包含的代码**WpdBaseDriver::Initialize**并**WpdBaseDriver::Uninitialize**。
+以下摘自示例驱动程序的代码包含 **WpdBaseDriver：： Initialize** 和 **WpdBaseDriver：：** Initialize 的代码。
 
 ```ManagedCPlusPlus
 /**
@@ -39,7 +39,7 @@ VOID WpdBaseDriver::Uninitialize()
 }
 ```
 
-如果你想要移植此示例，以支持在真实设备 — 例如，已启用蓝牙的移动电话-添加中的功能**初始化**函数以初始化驱动程序的 I/O 库。 哪些问题设备的命令。 在移动电话的情况下此库可能包括命令枚举电话薄，或者要设置或检索手机的存储中的文件。 在最低限度**初始化**函数会建立设备的网络地址。 **WPDBaseDriver::Uninitialize**函数会执行任何所需的清理。
+如果你想要移植此示例以支持实际设备（例如启用了 Bluetooth 的移动电话），则应在 **initialize** 函数中添加功能，以便初始化驱动程序的 i/o 库。 这会发出设备命令。 对于移动电话，此库可能包含用于枚举电话簿的命令，或用于设置或检索手机存储中的文件的命令。 **Initialize**函数至少将建立设备的网络地址。 **WPDBaseDriver：：取消初始化**函数将执行任何所需的清除操作。
 
  
 

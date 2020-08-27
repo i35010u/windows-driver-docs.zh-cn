@@ -1,21 +1,21 @@
 ---
-Description: 对象枚举
+description: 对象枚举
 title: 对象枚举
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b76e6bcb84752836934c6f5863c3d59c26e4e2
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 3119d586e9b8e677a8d08e08c5720de4979f00d7
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968186"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969586"
 ---
 # <a name="object-enumeration"></a>对象枚举
 
 
 *WpdObjectEnum*和*WpdObjectEnum*文件包含枚举设备支持的对象的成员函数。
 
-当基于 Windows 的应用程序调用**IPortableDeviceContent：： EnumObject**或**IEnumPortableDeviceObjectIDs**接口的两种方法之一时，此调用反过来会触发**WpdObjectEnumerator**类中三个命令处理程序之一。 下表标识了应用程序方法到**WpdObjectEnumerator**驱动程序方法的映射。
+当基于 Windows 的应用程序调用**IPortableDeviceContent：： EnumObject** 或 **IEnumPortableDeviceObjectIDs** 接口的两种方法之一时，此调用反过来会触发 **WpdObjectEnumerator** 类中三个命令处理程序之一。 下表标识了应用程序方法到 **WpdObjectEnumerator** 驱动程序方法的映射。
 
 IPortableDeviceContent 方法 * * * * *： **WpdObjectEnumerator 命令处理程序**
 

@@ -1,19 +1,19 @@
 ---
-Description: Advanced Tasks
+description: 高级任务
 title: 高级任务
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86524c217e04989ed87577b56169a2a12917be86
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 8951f904ed19826233d858f706b23f4bb9badd84
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56568688"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969562"
 ---
 # <a name="advanced-tasks"></a>高级任务
 
 
-某些任务完成的 WpdWudfSampleDriver 专为高级 Windows 便携式设备 (WPD) 驱动程序开发人员。 以下主题中描述了这些任务。
+WpdWudfSampleDriver 完成的某些任务是为高级 Windows 便携式设备编写的， (WPD) 驱动程序开发人员。 以下主题对这些任务进行了介绍。
 
  
 

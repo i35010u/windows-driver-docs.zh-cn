@@ -1,19 +1,19 @@
 ---
-Description: 支持的内容-类型检索
+description: 支持的内容-类型检索
 title: 支持的内容-类型检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eadd713397859d635404ad4ea72447ab34e7712f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 816029f126cccafc06cab9fe4a62e43fb494ea9a
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376205"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969522"
 ---
 # <a name="supported-content-type-retrieval"></a>支持的内容-类型检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetSupportedContentTypes**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetSupportedContentTypes**中的示例驱动程序的方法。 后一种方法创建**IPortableDevicePropVariantCollection**驱动程序在其中存储的内容类型，它支持指定功能类别的对象。 （如果该驱动程序不支持给定功能类别的内容类型，它将返回一个空集合。）
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetSupportedContentTypes** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetSupportedContentTypes** 方法的调用。 后一种方法会创建一个 **IPortableDevicePropVariantCollection** 对象，驱动程序会将其支持的内容类型存储在指定的功能类别中。  (如果驱动程序不支持给定功能类别的内容类型，则返回一个空集合。 ) 
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetSupportedContentTypes(

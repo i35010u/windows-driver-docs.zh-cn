@@ -1,29 +1,29 @@
 ---
-Description: WPD 基础结构 (WpdBasicHardwareDriverSample) 的支持
-title: WPD 基础结构 (WpdBasicHardwareDriverSample) 的支持
+description: '支持 WPD 基础结构 (WpdBasicHardwareDriverSample) '
+title: '支持 WPD 基础结构 (WpdBasicHardwareDriverSample) '
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4716963f8530b5b4adc7865996c81387010c1392
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f267113fa509b400afa9e80338332e5d665c21d4
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387310"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969448"
 ---
-# <a name="support-for-wpd-infrastructure-wpdbasichardwaredriversample"></a>WPD 基础结构 (WpdBasicHardwareDriverSample) 的支持
+# <a name="support-for-wpd-infrastructure-wpdbasichardwaredriversample"></a>支持 WPD 基础结构 (WpdBasicHardwareDriverSample) 
 
 
-WPD 基础结构是驱动的命令。 当 WPD 应用程序调用的方法之一在给定的接口时，WPD 序列化程序 （进程内 COM 服务器） 将它发送到该驱动程序的一个或多个命令转换为方法调用。 然后，驱动程序处理这些命令，并返回响应。 有关基础结构的详细信息，请参阅[体系结构概述](architecture-overview.md)主题。
+WPD 基础结构是命令驱动的。 当 WPD 应用程序调用给定接口中的方法之一时，WPD 序列化程序 (进程内 COM 服务器) 将方法调用转换为它发送到驱动程序的一个或多个命令。 然后，驱动程序将处理这些命令并返回响应。 有关基础结构的详细信息，请参阅 [体系结构概述](architecture-overview.md) 主题。
 
-下图的*WpdMon.exe*工具显示的应用程序调用结果**IPortableDeviceProperties::GetPropertyAttributes**方法来检索该属性的属性温度和湿度传感器。
+以下 *WpdMon.exe* 工具的图像显示了调用 **IPortableDeviceProperties：： GetPropertyAttributes** 方法的应用程序的结果，以检索温度和湿度传感器的属性特性。
 
 ![wpd 监视器 ](images/wpdmon_get_attributes.png)
 
-在上图中，转换 WPD 序列化程序**GetPropertyAttributes**调入 WPD\_命令\_对象\_属性\_获取\_属性命令和相应的参数。 该驱动程序处理此命令，并且颁发 WPD API 的响应。
+在上图中，WPD 序列化程序将 **GetPropertyAttributes** 调用转换为 WPD \_ COMMAND \_ OBJECT \_ PROPERTIES \_ \_ 命令和相应的参数。 驱动程序处理了此命令，并向 WPD API 发出了响应。
 
-WPD\_命令\_对象\_属性\_获取\_属性命令首先处理中**WpdObjectProperties::DispatchWpdMessage**方法。 此方法，反过来，调用**WpdObjectProperties::OnGetPropertyAttributes**方法。 这两种方法中找到*WpdObjectProperties.cpp*源文件。
+WPD \_ 命令 \_ 对象属性 \_ " \_ 获取 \_ 属性" 命令首先在 **WpdObjectProperties：:D ispatchwpdmessage** 方法中进行处理。 此方法反过来会调用 **WpdObjectProperties：： OnGetPropertyAttributes** 方法。 这两种方法都位于 *WpdObjectProperties* 源文件中。
 
-中的以下节选**WpdObjectProperties::DispatchWpdMessage**中的方法*WpdObjectProperties.cpp*演示了调用**WpdObjectProperties::OnGetPropertyAttributes**用于检索属性的特性的处理程序。 **DispatchWpdMessage**方法将命令参数传递给处理程序。 这些参数包括驱动程序应检索其属性的对象的对象标识符。 此外，参数包括标识要检索的属性的属性键的集合。
+下面的 **WpdObjectProperties:D：** *WpdObjectProperties* 中的 ispatchwpdmessage 方法的以下摘录显示了对 **WpdObjectProperties：： OnGetPropertyAttributes** 处理程序的调用，以便检索属性特性。 **DispatchWpdMessage**方法将命令参数传递给处理程序。 这些参数包括驱动程序应检索其属性的对象的对象标识符。 此外，参数还包括一个属性键的集合，这些属性键用于标识要检索的特性。
 
 ```cpp
 HRESULT WpdObjectProperties::DispatchWpdMessage(
@@ -61,9 +61,9 @@ HRESULT WpdObjectProperties::DispatchWpdMessage(
 }
 ```
 
-**WpdObjectProperties::OnGetPropertyAttributes**方法返回的请求的属性集合中的设备值 (IPortableDeviceValues) 的集合。
+**WpdObjectProperties：： OnGetPropertyAttributes**方法返回 (IPortableDeviceValues) 的设备值集合中请求的属性的集合。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

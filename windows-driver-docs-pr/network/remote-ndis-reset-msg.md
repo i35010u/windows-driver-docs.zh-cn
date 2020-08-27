@@ -1,20 +1,20 @@
 ---
 title: REMOTE_NDIS_RESET_MSG
-Description: 此消息发送给远程 NDIS 设备的主机以将设备重置并返回状态。
+description: 此消息将从主机发送到远程 NDIS 设备，以重置设备并返回状态。
 ms.assetid: b5938b0d-75bf-497f-afeb-9950b383af5e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: beed2ca885a5d76af4f43c1efc58411b215e3bc9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cfa815c5df7846e6b85845606f424fd69c58f194
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351259"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969590"
 ---
-# <a name="remotendisresetmsg"></a>远程\_NDIS\_重置\_消息
+# <a name="remote_ndis_reset_msg"></a>远程 \_ NDIS \_ 重置 \_ 消息
 
 
-此消息发送给远程 NDIS 设备的主机以将设备重置并返回状态。 主机可能会发送远程\_NDIS\_重置\_通过在设备处于状态由远程 NDIS 初始化任何时间控制通道向设备的消息。 远程 NDIS 设备将通过发送一个远程来响应此消息\_NDIS\_重置\_CMPLT 到主机。
+此消息将从主机发送到远程 NDIS 设备，以重置设备并返回状态。 当 \_ 设备处于远程 ndis 初始化的状态时，主机可能会 \_ 通过控制通道向设备发送远程 ndis 重置 \_ 消息。 远程 NDIS 设备将通过 \_ 向主机发送远程 ndis \_ 重置 CMPLT 来响应此消息 \_ 。
 
 <table>
 <colgroup>
@@ -25,10 +25,10 @@ ms.locfileid: "63351259"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -36,18 +36,18 @@ ms.locfileid: "63351259"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>MessageType</p></td>
-<td><p>指定发送消息的类型。 将设置为 0x00000006。</p></td>
+<td><p>指定要发送的消息的类型。 设置为0x00000006。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
 <td><p>MessageLength</p></td>
-<td><p>以字节为单位，指定该消息的开始的这封邮件的总长度。</p></td>
+<td><p>指定从消息开头开始的此消息的总长度（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
 <td><p>4</p></td>
-<td><p>保留</p></td>
+<td><p>预留</p></td>
 <td><p>保留。 设置为零。</p></td>
 </tr>
 </tbody>
@@ -66,11 +66,11 @@ ms.locfileid: "63351259"
 <tbody>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
+<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Rndis.h （包括 Rndis.h）</td>
+<td><p>标头</p></td>
+<td>Rndis (包含 Rndis) </td>
 </tr>
 </tbody>
 </table>

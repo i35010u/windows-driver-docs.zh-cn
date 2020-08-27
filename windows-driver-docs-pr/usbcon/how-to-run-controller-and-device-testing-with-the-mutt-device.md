@@ -1,49 +1,49 @@
 ---
-Description: 测试控制器的目标是从中心和设备生成一组完整的可能的通信模式。
-title: USB 主控制器使用 MUTT 设备进行测试
+description: 控制器测试的目标是从集线器和设备生成一组完整的可能的流量模式。
+title: USB 主机控制器测试与 MUTT 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 421a89918c90555b84e5dfb6afe7a3a6f626408e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f200694a1e219ddaa59e157e560abf9a92b2df8
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363919"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968956"
 ---
-# <a name="usb-host-controller-testing-with-mutt-devices"></a>USB 主控制器使用 MUTT 设备进行测试
+# <a name="usb-host-controller-testing-with-mutt-devices"></a>USB 主机控制器测试与 MUTT 设备
 
 
-测试控制器的目标是从中心和设备生成一组完整的可能的通信模式。 这样，控制器和其固件要完全测试的内部状态。 MUTT 设备提供自动的方法，以生成各种可能的协议方案，可帮助测试。
+控制器测试的目标是从集线器和设备生成一组完整的可能的流量模式。 这允许完全测试控制器及其固件的内部状态。 MUTT 设备可提供一种自动化方法来生成各种可能的协议方案，从而帮助进行测试。
 
 ## <a name="usb-host-controller-testing-prerequisites"></a>USB 主机控制器测试先决条件
 
 
-在提升的命令提示符运行 MUTT 测试命令之前，请确保满足以下要求：
+在提升权限的命令提示符下运行 MUTT test 命令之前，请确保满足以下要求：
 
--   测试系统必须运行 Windows 8 的最新版本。
--   设置和配置 MUTT 设备并安装固件。 有关详细信息，请参阅[如何进行准备，测试系统运行的测试工具的 MUTT](mutt-testing-options.md)。
+-   测试系统必须运行最新版本的 Windows 8。
+-   设置并配置 MUTT 设备并安装固件。 有关详细信息，请参阅 [如何准备测试系统以运行 MUTT 测试工具](mutt-testing-options.md)。
 
 ## <a name="recommended-usb-host-controller-tests"></a>推荐的 USB 主机控制器测试
 
 
--   USB IF 电气测试。 所有我们的测试都是协议和已设定焦点的状态。 请参阅[USB-如果符合性计划](https://www.usb.org/compliance)的电气测试的详细信息。
--   MUTT 压力和传输测试包含在 MUTT 软件包 MUTT 设备连接的 USB 控制器建议的配置中。 **RunTest.bat**运行压力和传输的测试。 请参阅[如何运行压力和传输 MUTT 设备的性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md)。
--   SuperMUTT 性能测试。 请参阅[如何运行超级 MUTT 性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md#supermutt-perf)。
--   设备基本测试。 有关详细信息，请参阅[如何为 MUTT 设备运行 Visual Studio 中的说明测试](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)。
--   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅[USB-如果证书验证测试 （控制器）](https://go.microsoft.com/fwlink/p/?linkid=316509)。
--   对于主机控制器，在部分中的 Windows 测试指南文档中找到的手动测试用例。
+-   如果是电气测试，则为 USB。 所有测试都是以协议和状态为重点的。 有关电气测试的详细信息，请参阅 [USB-IF 合规性计划](https://www.usb.org/compliance) 。
+-   在 MUTT 设备附带的设备连接到 USB 控制器的建议配置中时，MUTT 应力和传输测试。 **RunTest.bat** 同时运行压力测试和传输测试。 请参阅 [如何为 MUTT 设备运行压力和传输性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md)。
+-   SuperMUTT 性能测试。 请参阅 [如何运行超级 MUTT 性能测试](how-to-run-stress-and-transfer-and-super-mutt-performance-tests-for-mutt-devices.md#supermutt-perf)。
+-   设备基础测试。 有关详细信息，请参阅 [如何在 Visual Studio FOR MUTT 设备中运行 devfund 测试](how-to-run-device-fundamental-tests-in-visual-studio-for-connected-mutt-devices.md)。
+-   控制器 Windows 硬件认证工具包测试。 有关详细信息，请参阅 [USB-IF 认证验证测试 (控制器) ](https://go.microsoft.com/fwlink/p/?linkid=316509)。
+-   宿主控制器的手动测试用例，如部分的 Windows 测试指南文档中所示。
 
-## <a name="topologies-for-usb-host-controller-testing-with-mutt-devices"></a>USB 主控制器使用 MUTT 设备进行测试的拓扑
+## <a name="topologies-for-usb-host-controller-testing-with-mutt-devices"></a>用于通过 MUTT 设备进行 USB 主机控制器测试的拓扑
 
 
-请考虑待测试的 xHCI 控制器的以下配置：
+对于受测的 xHCI 控制器，请考虑以下配置：
 
 -   将 MUTT 设备附加到所有可用端口。
--   划分可用端口，以便 SuperMUTT 和 MUTT 包设备的数目相同。 MUTT 包将附加下游 MUTT 设备。
--   将 Supermutt 附加到一半的可用端口。 将 SuperMUTT 包设备附加到剩余的端口。 SuperMUTT 包将附加下游 SuperMUTT 设备。
--   可以具有的复杂拓扑。 例如，考虑具有四个端口的控制器。 下图显示了示例拓扑。
+-   划分可用端口，使 SuperMUTT 和 MUTT Pack 设备数相等。 对于 MUTT 包，附加下游 MUTT 设备。
+-   将 Supermutt 附加到一半可用端口。 将 SuperMUTT Pack 设备附加到剩余端口。 对于 SuperMUTT 包，附加下游 SuperMUTT 设备。
+-   您可以使用复杂的拓扑。 例如，考虑一个具有四个端口的控制器。 下图显示了一个示例拓扑。
 
-    ![xhci 控制器的示例拓扑](images/fig12-xhci-controller-topology.png)
+    ![示例 xhci 控制器拓扑](images/fig12-xhci-controller-topology.png)
 
 ## <a name="related-topics"></a>相关主题
 [USB](https://docs.microsoft.com/windows-hardware/drivers/)  

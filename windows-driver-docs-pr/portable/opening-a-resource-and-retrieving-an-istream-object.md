@@ -1,26 +1,26 @@
 ---
-Description: 打开资源并检索 IStream 对象
+description: 打开资源并检索 IStream 对象
 title: 打开资源并检索 IStream 对象
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 63ef19d94bc7d5c224f8e069d417d19810942cec
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20fa28e82a9e4636ca359b4b232aaadc156a292c
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376241"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968504"
 ---
 # <a name="opening-a-resource-and-retrieving-an-istream-object"></a>打开资源并检索 IStream 对象
 
 
-当应用程序资源从中读取数据或写入到设备的资源数据时，它开始通过调用**IPortableDeviceResources::GetStream**方法。 此方法检索**IStream**应用程序使用的相应的读取和写入操作的接口。 ( **IStream**接口将返回由 WPD API 不是驱动程序。)
+当应用程序必须从设备读取资源数据或将其写入到设备时，将首先调用 **IPortableDeviceResources：： system.resources.resourcemanager.getstream** 方法。 此方法检索一个 **IStream** 接口，应用程序使用该接口进行相应的读取和写入操作。  (，则 WPD API 将返回 **IStream** 接口，而不是驱动程序。 ) 
 
-在调用**IPortableDeviceResources::GetStream**方法将触发对调用**WpdObjectResources::OnOpenResource**命令处理程序中的示例驱动程序。 此处理程序创建驱动程序用于读取操作的资源上下文。 在此特定情况下的资源上下文包括以下各项：
+调用 **IPortableDeviceResources：： system.resources.resourcemanager.getstream** 方法将触发对示例驱动程序中的 **WpdObjectResources：： OnOpenResource** 命令处理程序的调用。 此处理程序创建用于读取操作的驱动程序所使用的资源上下文。 在此特定情况下，资源上下文包括以下项：
 
--   包含资源对象的对象标识符
+-   包含资源的对象的对象标识符
 -   资源 PROPERTYKEY
--   （用于读取操作） 传输的字节数
--   整个资源，以字节为单位的大小
+-   用于读取操作 (传输的字节数) 
+-   整个资源的大小（以字节为单位）
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectResources::OnOpenResource(

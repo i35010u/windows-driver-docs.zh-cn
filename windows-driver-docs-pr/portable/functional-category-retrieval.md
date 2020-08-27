@@ -1,19 +1,19 @@
 ---
-Description: 功能-类别检索
+description: 功能-类别检索
 title: 功能-类别检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2703ee629fc030a754d98fcf2a6e7e974585d9ee
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 8330bd4c179c66006411e043fd179e5742ae18da
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57349426"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969196"
 ---
 # <a name="functional-category-retrieval"></a>功能-类别检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetFunctionalCategories**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetFunctionalCategories**中的示例驱动程序的方法。 该方法将创建**IPortableDevicePropVariantCollection**驱动程序将两个受支持的类别存储到其中的对象 (WPD\_功能\_类别\_设备和 WPD\_功能\_类别\_存储)。
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetFunctionalCategories** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetFunctionalCategories** 方法的调用。 方法会创建一个 **IPortableDevicePropVariantCollection** 对象，驱动程序会在其中将两个受支持的类别（ (WPD \_ 功能 \_ 类别 \_ 设备和 WPD \_ 功能 \_ 类别 \_ 存储) 。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetFunctionalCategories(

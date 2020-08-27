@@ -1,19 +1,19 @@
 ---
-Description: 属性删除
+description: 属性删除
 title: 属性删除
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f9c98d137279b62ebdd8a212fe437495f5d08437
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: 7eadc16240814d461d258ebf7d163ccfa980cb29
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750012"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969584"
 ---
 # <a name="property-deletion"></a>属性删除
 
 
-当 Windows 便携设备（WPD）应用程序调用**IPortableDeviceProperties：:D e)** 方法时，此方法将触发对示例驱动程序中的**WpdObjectProperties：： OnDelete**方法的调用。 由于示例驱动程序中不能删除任何对象属性，因此此方法只返回 E\_ACCESSDENIED。
+当 (WPD) 应用程序的 Windows 便携式设备调用 **IPortableDeviceProperties：:D e) ** 方法时，此方法反过来会触发对示例驱动程序中的 **WpdObjectProperties：： OnDelete** 方法的调用。 由于示例驱动程序中不能删除任何对象属性，因此此方法只返回 E \_ ACCESSDENIED。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::OnDeleteProperties(

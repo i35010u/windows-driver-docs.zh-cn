@@ -1,50 +1,50 @@
 ---
-Description: 安装示例驱动程序
+description: 安装示例驱动程序
 title: 安装示例驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b941ddd5d1ee3bc51b8b9e5a3b4fa69184725b0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f4f5bde9854c5b2fdae53cd1b7c10bf3be631ad
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378629"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969338"
 ---
 # <a name="installing-the-sample-driver"></a>安装示例驱动程序
 
 
-与其他 Windows 便携式设备 (WPD) 示例类似，此示例驱动程序将安装为根枚举设备。 在便携式设备或 WPD 节点下中将出现**设备管理器**，并且具有设备 ID 的根\\WPD\\NNNN。
+类似于其他 Windows 便携式设备 (WPD) 示例，此示例驱动程序作为根枚举设备安装。 它显示在 **设备管理器**中的便携设备或 WPD 节点下，并且具有 WPD 的设备 ID \\ \\ 。
 
-安装根枚举设备时，可以获取始终连接的设备。 因此，即使从 RS-232 端口传感器设备被拔出，设备节点 (devnode) 不会删除。 若要支持 devnode 到达 （或删除） 时 RS-232 连接插入 （或拔出），必须提供插即用 (PnP) 总线枚举器。 WDK Toaster 示例随附了示例总线枚举器。
+安装根枚举设备时，将获得一个始终连接的设备。 因此，即使传感器设备已从 RS-232 端口中拔出，也不会删除 (devnode) 的设备节点。 若要支持 (或删除) RS-232 连接接通电源 (或拔下) ，则必须提供即插即用 (PnP) 总线枚举器。 随 WDK Toaster 示例提供了示例总线枚举器。
 
-安装 INF 文件中的示例驱动程序基于为 WpdHelloWorldDriver 的 INF 文件。 所做的更改的大多数都涉及使用 WpdBasicHardwareDriver WpdHelloWorldDriver 的字符串替换。 以下各节中总结了更显著的更改。
+示例驱动程序的安装 INF 文件基于 WpdHelloWorldDriver 的 INF 文件。 大多数更改都涉及到 WpdHelloWorldDriver 的字符串替换 WpdBasicHardwareDriver。 在以下各节中汇总了更重要的更改。
 
-### <a name="span-idenablingfile-handletargetsspanspan-idenablingfile-handletargetsspanspan-idenablingfile-handletargetsspanenabling-file-handle-targets"></a><span id="Enabling_File-Handle_Targets"></span><span id="enabling_file-handle_targets"></span><span id="ENABLING_FILE-HANDLE_TARGETS"></span>启用文件句柄目标
+### <a name="span-idenabling_file-handle_targetsspanspan-idenabling_file-handle_targetsspanspan-idenabling_file-handle_targetsspanenabling-file-handle-targets"></a><span id="Enabling_File-Handle_Targets"></span><span id="enabling_file-handle_targets"></span><span id="ENABLING_FILE-HANDLE_TARGETS"></span>启用文件句柄目标
 
-下添加以下条目\[*基本\_Install.Wdf* \]来使文件句柄基于 UMDF I/O 目标。 这些 I/O 目标用于通过使用 RS 232 端口来与设备交换数据。 有关 I/O 目标的详细信息，请参阅[支持 I/O](the-wpdbasichardwaredriver-supporting-io.md)。
+将在 "基本" Install 下添加以下条目 \[ * \_ * \] ，以启用基于文件句柄的 UMDF i/o 目标。 这些 i/o 目标用于通过 RS 232 端口与设备交换数据。 有关 i/o 目标的详细信息，请参阅 [支持 i/o](the-wpdbasichardwaredriver-supporting-io.md)。
 
 ```cpp
 UmdfDispatcher = FileHandle
 ```
 
-### <a name="span-iddisablinglegacywiasupportspanspan-iddisablinglegacywiasupportspanspan-iddisablinglegacywiasupportspandisabling-legacy-wia-support"></a><span id="Disabling_Legacy_WIA_Support"></span><span id="disabling_legacy_wia_support"></span><span id="DISABLING_LEGACY_WIA_SUPPORT"></span>禁用旧版 WIA 支持
+### <a name="span-iddisabling_legacy_wia_supportspanspan-iddisabling_legacy_wia_supportspanspan-iddisabling_legacy_wia_supportspandisabling-legacy-wia-support"></a><span id="Disabling_Legacy_WIA_Support"></span><span id="disabling_legacy_wia_support"></span><span id="DISABLING_LEGACY_WIA_SUPPORT"></span>禁用旧版 WIA 支持
 
-以下行注释掉，以禁用 Windows 图像采集 (WIA) 访问此驱动程序，因为示例驱动程序不支持图像内容的旧版应用程序：
+以下行被注释掉，以禁用 Windows 图像采集 (WIA) 旧版应用程序访问此驱动程序，因为示例驱动程序不支持图像内容：
 
 ```cpp
 ;HKR,,”EnableLegacySupport”,0x10001,1
 ```
 
-### <a name="span-idinstallingthedriverspanspan-idinstallingthedriverspanspan-idinstallingthedriverspaninstalling-the-driver"></a><span id="Installing_the_Driver"></span><span id="installing_the_driver"></span><span id="INSTALLING_THE_DRIVER"></span>安装驱动程序
+### <a name="span-idinstalling_the_driverspanspan-idinstalling_the_driverspanspan-idinstalling_the_driverspaninstalling-the-driver"></a><span id="Installing_the_Driver"></span><span id="installing_the_driver"></span><span id="INSTALLING_THE_DRIVER"></span>安装驱动程序
 
-若要安装的示例驱动程序，请完成以下步骤：
+若要安装示例驱动程序，请完成以下步骤：
 
-1.  从**启动**菜单中，打开所需的生成环境。
-2.  生成示例 ("build-cZ")。
-3.  复制*WUDFUpdate\_0xxxx.dll*从&lt;WDK 安装位置&gt;\\redist\\wdf\\&lt;体系结构&gt;目录更改为包含驱动程序的 DLL 的目录。
-4.  安装驱动程序 ("devcon 安装*Wpdbasichardwaredriver.inf* WUDF\\WpdBasicHardware")
+1.  从 " **开始** " 菜单中，打开所需的生成环境。
+2.  生成 ( "build – cZ" ) 的示例。
+3.  将*WUDFUpdate \_0xxxx.dll*从 &lt; WDK 安装位置 "已再发行的 &gt; \\ \\ wdf \\ &lt; 体系结构" &gt; 目录复制到包含驱动程序的 DLL 的目录中。
+4.  安装驱动程序 ( "devcon install *Wpdbasichardwaredriver* WUDF \\ WpdBasicHardware" ) 
 
-**请注意**  devcon 命令的最后一个参数从驱动程序的 INF 文件对应于以下摘录。
+**注意**   Devcon 命令的最后一个参数对应于驱动程序的 INF 文件中的以下摘录。
 
  
 
@@ -53,14 +53,14 @@ UmdfDispatcher = FileHandle
 %BasicDeviceName%=Basic_Install,WUDF\WpdBasicHardware
 ```
 
-### <a name="span-idremovingthedriverspanspan-idremovingthedriverspanspan-idremovingthedriverspanremoving-the-driver"></a><span id="Removing_the_Driver"></span><span id="removing_the_driver"></span><span id="REMOVING_THE_DRIVER"></span>删除驱动程序
+### <a name="span-idremoving_the_driverspanspan-idremoving_the_driverspanspan-idremoving_the_driverspanremoving-the-driver"></a><span id="Removing_the_Driver"></span><span id="removing_the_driver"></span><span id="REMOVING_THE_DRIVER"></span>删除驱动程序
 
-若要删除的示例驱动程序，请完成以下步骤：
+若要删除示例驱动程序，请完成以下步骤：
 
 1.  打开 Windows 设备管理器。
-2.  右键单击在驱动程序**便携设备**节点，然后单击**卸载**。
+2.  右键单击 " **可移植设备** " 节点下的驱动程序，然后单击 " **卸载**"。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

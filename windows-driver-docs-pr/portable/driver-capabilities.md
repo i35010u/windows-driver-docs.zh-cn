@@ -1,21 +1,21 @@
 ---
-Description: 驱动程序功能
+description: 驱动程序功能
 title: 驱动程序功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cd4e0ef946c35f2b8a6cb29f7c44033db4cbf2f2
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: eb7f9a3620f12ba4d4b57382495511e0e0f161f9
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968584"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969184"
 ---
 # <a name="driver-capabilities"></a>驱动程序功能
 
 
 *WpdCapabilities*和*WpdCapabilities*文件包含用于检索支持的命令、命令选项、函数类别等的命令处理程序。
 
-当基于 Windows 的应用程序调用**IPortableDeviceCapabilities**接口中的方法之一时，此调用反过来会触发**WpdCapabilities**类中的八个命令处理程序之一。 下表标识了**IPortableDeviceCapabilities**方法到**WpdCapabilities**命令处理程序的映射。
+当基于 Windows 的应用程序调用 **IPortableDeviceCapabilities** 接口中的方法之一时，此调用反过来会触发 **WpdCapabilities** 类中的八个命令处理程序之一。 下表标识了 **IPortableDeviceCapabilities** 方法到 **WpdCapabilities** 命令处理程序的映射。
 
 IPortableDeviceCapabilities 方法 * * * * *： **WpdCapabilities 事件处理程序**
 
@@ -42,7 +42,7 @@ IPortableDeviceCapabilities：： GetEventOptions * * * *： **OnGetEventOptions
 
  
 
-WpdCapabilities 命令处理程序由**WpdCapabilities：:D ispatchmessage**方法调用。 以下摘自示例驱动程序的代码包含**WpdCapabilities：:D ispatchmessage**的代码。
+WpdCapabilities 命令处理程序由 **WpdCapabilities：:D ispatchmessage** 方法调用。 以下摘自示例驱动程序的代码包含 **WpdCapabilities：:D ispatchmessage**的代码。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::DispatchWpdMessage(const PROPERTYKEY&      Command,

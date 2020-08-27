@@ -1,41 +1,41 @@
 ---
-Description: 对属性命令 (WpdBasicHardwareDriverSample) 的支持
-title: 对属性命令 (WpdBasicHardwareDriverSample) 的支持
+description: 支持 (WpdBasicHardwareDriverSample) 的属性命令
+title: 支持 (WpdBasicHardwareDriverSample) 的属性命令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f274fbb67066cc9a3e5937f13079b3d77c255d41
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: efb2a0b432f155a192cca19a8c21c4e9181cb5d6
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387284"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969442"
 ---
-# <a name="supporting-wpd-property-commands-wpdbasichardwaredriversample"></a>支持 WPD 属性命令 (WpdBasicHardwareDriverSample)
+# <a name="supporting-wpd-property-commands-wpdbasichardwaredriversample"></a>支持 WPD 属性命令 (WpdBasicHardwareDriverSample) 
 
 
-示例驱动程序支持六个属性命令。 这些命令处理最初由**WpdObjectProperties::DispatchMessage**方法，反过来，将调用相应的命令处理程序。 **DispatchMessage**方法和单个处理程序全部位于*WpdObjectProperties.cpp*文件。
+示例驱动程序支持六个属性命令。 这些命令最初由 **WpdObjectProperties：:D ispatchmessage** 方法进行处理，该方法反过来会调用相应的命令处理程序。 **DispatchMessage**方法和单独的处理程序都位于*WpdObjectProperties*文件中。
 
-下表中的信息描述了每个受支持的属性的命令，以及处理程序的名称， **WpdObjectProperties::DispatchMessage**处理给定的命令时调用。
+下表中的信息介绍了每个受支持的属性命令，以及 **WpdObjectProperties：:D ispatchmessage** 在处理给定命令时调用的处理程序的名称。
 
-| Command                                           | 处理程序                  | 描述                                                                                          |
+| Command                                           | Handler                  | 说明                                                                                          |
 |---------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------|
-| WPD\_命令\_对象\_属性\_获取\_支持  | OnGetSupportedProperties | 返回给定对象的属性键的数组。                                              |
-| WPD\_命令\_对象\_属性\_获取             | OnGetPropertyValues      | 返回提供给该驱动程序的属性键相对应的属性值的集合。 |
-| WPD\_命令\_对象\_属性\_获取\_所有        | OnGetAllProperties       | 返回给定对象的所有属性值。                                                  |
-| WPD\_命令\_对象\_属性\_设置             | OnSetPropertyValues      | 在设备上设置指定的属性值。                                                     |
-| WPD\_命令\_对象\_属性\_获取\_属性 | OnGetPropertyAttributes  | 返回给定对象上的一个或多个属性的特性的集合。                     |
-| WPD\_命令\_对象\_属性\_删除          | OnDeleteProperties       | 删除由给定的属性键标识的属性。                               |
+| \_支持 WPD \_ 命令 \_ 对象 \_ 属性 \_  | OnGetSupportedProperties | 返回给定对象的属性键的数组。                                              |
+| WPD \_ 命令 \_ 对象 \_ 属性 \_ GET             | OnGetPropertyValues      | 返回属性值的集合，这些属性值对应于提供给驱动程序的属性键。 |
+| WPD \_ 命令 \_ 对象 \_ 属性 \_ 获取 \_ 全部        | OnGetAllProperties       | 返回给定对象的所有属性值。                                                  |
+| WPD \_ 命令 \_ 对象 \_ 属性 \_ 集             | OnSetPropertyValues      | 在设备上设置指定的属性值。                                                     |
+| WPD \_ 命令 \_ 对象 \_ 属性 \_ 获取 \_ 属性 | OnGetPropertyAttributes  | 返回给定对象的一个或多个属性的特性集合。                     |
+| WPD \_ 命令 \_ 对象 \_ 属性 \_ 删除          | OnDeleteProperties       | 删除由指定的属性键标识的属性。                               |
 
 
 
-## <a name="span-idwpdcommandobjectpropertiesgetsupportedspanspan-idwpdcommandobjectpropertiesgetsupportedspanwpdcommandobjectpropertiesgetsupported"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED"></span><span id="wpd_command_object_properties_get_supported"></span>WPD\_命令\_对象\_属性\_获取\_支持
+## <a name="span-idwpd_command_object_properties_get_supportedspanspan-idwpd_command_object_properties_get_supportedspanwpd_command_object_properties_get_supported"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET_SUPPORTED"></span><span id="wpd_command_object_properties_get_supported"></span>\_支持 WPD \_ 命令 \_ 对象 \_ 属性 \_
 
 
-驱动程序调用**WpdObjectProperties::OnGetSupportedProperties**处理程序以响应 WPD\_命令\_对象\_属性\_获取\_支持的命令。 该处理程序依次调用**AddSupportedPropertyKeys**方法来检索所请求的对象的受支持的密钥。
+驱动程序调用 **WpdObjectProperties：： OnGetSupportedProperties** 处理程序来响应 WPD \_ command \_ 对象属性 " \_ \_ 获取支持" \_ 命令。 处理程序依次调用 **AddSupportedPropertyKeys** 方法来检索所请求的对象的受支持的键。
 
-因为示例设备不支持在 WpdHelloWorldSample 驱动程序存储、 文件夹或文件对象，因为新的驱动程序支持原始驱动程序中找不到的对象，更新**AddSupportedPropertyKeys**的方法是有必要。
+由于示例设备不支持 WpdHelloWorldSample 驱动程序中的存储、文件夹或文件对象，并且由于新的驱动程序支持在原始驱动程序中找不到的对象，因此需要更新 **AddSupportedPropertyKeys** 方法。
 
-执行下面的代码从修改后**AddSupportedPropertyKeys**方法。 此方法调用两个支持的方法 (**AddDevicePropertyKeys**并**AddSensorPropertyKeys**) 来检索所请求的对象的密钥：
+以下代码取自修改后的 **AddSupportedPropertyKeys** 方法。 此方法将调用两个支持方法 (**AddDevicePropertyKeys** 和 **AddSensorPropertyKeys**) 检索所请求对象的密钥：
 
 ```cpp
 HRESULT AddSupportedPropertyKeys(
@@ -76,14 +76,14 @@ HRESULT AddSupportedPropertyKeys(
 }
 ```
 
-## <a name="span-idwpdcommandobjectpropertiesgetspanspan-idwpdcommandobjectpropertiesgetspanwpdcommandobjectpropertiesget"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET"></span><span id="wpd_command_object_properties_get"></span>WPD\_命令\_对象\_属性\_获取
+## <a name="span-idwpd_command_object_properties_getspanspan-idwpd_command_object_properties_getspanwpd_command_object_properties_get"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET"></span><span id="wpd_command_object_properties_get"></span>WPD \_ 命令 \_ 对象 \_ 属性 \_ GET
 
 
-驱动程序调用**WpdObjectProperties::OnGetPropertyValues**处理程序以响应 WPD\_命令\_对象\_属性\_GET 命令。 该处理程序，反过来，调用**GetPropertyValuesForObject**方法来检索请求的属性的当前值。 因为传感器设备不支持在 WpdHelloWorldSample 驱动程序中, 找到的存储、 文件夹或文件对象，因为新的驱动程序支持的原始的驱动程序中未找到的对象，更新此方法是必需的。
+驱动程序调用 **WpdObjectProperties：： OnGetPropertyValues** 处理程序来响应 WPD \_ COMMAND \_ OBJECT \_ PROPERTIES \_ GET 命令。 进而，处理程序将调用 **GetPropertyValuesForObject** 方法来检索所请求的属性的当前值。 由于传感器设备不支持在 WpdHelloWorldSample 驱动程序中找到的存储、文件夹或文件对象，并且由于新的驱动程序支持在原始驱动程序中找不到的对象，因此需要更新此方法。
 
-返回设备对象的属性的代码保持不变。 这是返回固件版本、 功率级别、 电源、 设备协议、 设备模型等的代码。
+返回的设备对象属性的代码保持不变。 这是返回固件版本、电源级别、电源、设备协议、设备型号等的代码。
 
-虽然此代码不变，但设备模型 （和其他相似的属性） 返回的示例驱动程序将不同于由 WpdHelloWorldSample 驱动程序返回的属性值。 这是因为我们更新中的定义*WpdObjectProperties.h*:
+尽管此代码不变，但该示例驱动程序返回的设备型号 (和其他类似属性) 不同于 WpdHelloWorldSample 驱动程序返回的属性值。 这是因为我们更新了 *WpdObjectProperties*中的定义：
 
 ```cpp
 #define DEVICE_PROTOCOL_VALUE                L"Sensor Protocol ver 1.00"
@@ -96,26 +96,26 @@ HRESULT AddSupportedPropertyKeys(
 #define DEVICE_SUPPORTS_NONCONSUMABLE_VALUE  FALSE
 ```
 
-下表列出了中的定义*WpdObjectProperties.h*，WpdHelloWorldSample 中的原始值和新的示例驱动程序中指定的值。
+下表列出了 *WpdObjectProperties*中的定义、WpdHelloWorldSample 中的原始值以及示例驱动程序中指定的新值。
 
 | 定义                             | 原始值              | 新值                   |
 |----------------------------------------|-----------------------------|-----------------------------|
-| 设备\_协议\_值                | Hello World Protocol v1.00  | 传感器协议 v1.00       |
-| 设备\_固件\_版本              | 1.0.0.0                     | 1.0.0.0                     |
-| DEVICE\_POWER\_LEVEL                   | 100                         | 100                         |
-| 设备\_模型\_值                   | 世界您好！                | RS-232 传感器               |
-| 设备\_友好\_名称                 | 世界您好！                | 视差 BS2 传感器         |
-| 设备\_制造商\_值            | WPD 组                   | WPD 组                   |
-| DEVICE\_SERIAL\_NUMBER\_VALUE          | 012345678901234567890123456 | 012345678901234567890123456 |
-| 设备\_支持\_NONCONSUMABLE\_值 | **FALSE**                   | **FALSE**                   |
+| 设备 \_ 协议 \_ 值                | Hello World 协议5v  | 传感器协议5v       |
+| 设备 \_ 固件 \_ 版本              | 1.0.0.0                     | 1.0.0.0                     |
+| 设备 \_ 电源 \_ 级别                   | 100                         | 100                         |
+| 设备 \_ 型号 \_ 值                   | Hello World!                | RS-232 传感器               |
+| 设备 \_ 友好 \_ 名称                 | Hello World!                | 视差 BS2 传感器         |
+| 设备 \_ 制造商 \_ 值            | WPD 组                   | WPD 组                   |
+| 设备 \_ 序列 \_ 号 \_ 值          | 012345678901234567890123456 | 012345678901234567890123456 |
+| 设备 \_ 支持 \_ NONCONSUMABLE \_ 值 | **FALSE**                   | **FALSE**                   |
 
 
 
-最重大更改**GetPropertyValuesForObject**方法检索传感器属性部分中没有发生。 此代码检索中定义的多个值*WpdObjectProperties.h*如对象名称、 其格式、 其内容类型是否可以将其删除。
+检索传感器属性的部分中发生了对 **GetPropertyValuesForObject** 方法的最重大更改。 此代码检索 *WpdObjectProperties* 中定义的多个值，例如对象名称、其格式、其内容类型以及是否可将其删除。
 
-此外，此代码还会检索当前的传感器读数和传感器更新间隔。 通过调用两个帮助程序函数检索这些最后两个属性：**GetSensorReading**并**GetUpdateInterval**。
+此外，此代码还会检索当前传感器读数和传感器更新间隔。 这最后两个属性是通过调用以下两个 helper 函数检索的： **GetSensorReading** 和 **GetUpdateInterval**。
 
-中的以下节选**GetPropertyValuesForObject**方法包含检索的传感器对象的属性的代码：
+**GetPropertyValuesForObject**方法中的以下摘录包含用于检索传感器对象属性的代码：
 
 ```cpp
 // Retrieve the sensor properties
@@ -229,7 +229,7 @@ CHECK_HR(hr, "Failed to set WPD_OBJECT_CONTENT_TYPE");
         } // end else if
 ```
 
-**GetSensorReading**帮助程序函数检索最新的传感器读数 (DWORD) 的数字格式中：
+**GetSensorReading** helper 函数以数字 (DWORD) 格式检索最新的传感器读数：
 
 ```cpp
 LONGLONG WpdObjectProperties::GetSensorReading()
@@ -241,11 +241,11 @@ LONGLONG WpdObjectProperties::GetSensorReading()
 }
 ```
 
-**请注意**临界区是防止并发访问的所需*m\_llSensorReading*成员变量。 每次 RS232 读取以异步方式完成时，会覆盖此值，每当读取传感器\_WPD 应用程序检索读取属性。
+**注意**  若要防止对 *m \_ llSensorReading* 成员变量的并发访问，必须使用临界区。 此值在每个 RS232 读异步完成时被覆盖，并在 \_ WPD 应用程序检索传感器读取属性时被读取。
 
 
 
-**GetUpdateInterval**帮助程序函数执行相同操作： 它将访问*m\_dwUpdateInterval*成员变量并返回它是否格式的数字 (DWORD) 值可用：
+**GetUpdateInterval** helper 函数执行相同的操作：它访问*m \_ dwUpdateInterval*成员变量，并以数字 (DWORD) 格式返回值（如果可用）：
 
 ```ManagedCPlusPlus
 DWORD WpdObjectProperties::GetUpdateInterval()
@@ -254,21 +254,21 @@ DWORD WpdObjectProperties::GetUpdateInterval()
 }
 ```
 
-请注意， *m\_dwUpdateInterval*成员变量必须受关键部分，如果多个线程将访问此值 （如果为例，而不是顺序使用 WDF 并行调度队列调度队列，或者如果**WpdBaseDriver::ProcessReadData**修改设置多次而不是在初始化过程中一次的更新间隔)。 为简单起见，省略了关键部分。
+请注意，如果有多个线程访问此 (值，则 *m \_ dwUpdateInterval* 成员变量必须受临界区的保护。例如，如果使用了 WDF 并行调度队列而不是顺序调度队列，或 **WpdBaseDriver：:P rocessreaddata** 修改为在初始化) 期间多次设置更新间隔，而不是一次，则为。 为简单起见，将省略临界区。
 
-## <a name="span-idwpdcommandobjectpropertiesgetallspanspan-idwpdcommandobjectpropertiesgetallspanwpdcommandobjectpropertiesgetall"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL"></span><span id="wpd_command_object_properties_get_all"></span>WPD\_命令\_对象\_属性\_获取\_所有
-
-
-驱动程序调用**WpdObjectProperties::OnGetAllPropertyValues**处理程序以响应 WPD\_命令\_对象\_属性\_获取\_所有命令. 处理程序，反过来，检索所有属性的给定对象的密钥，然后调用**GetPropertyValuesForObject**帮助程序函数检索请求的属性的当前值。
-
-## <a name="span-idwpdcommandobjectpropertiessetspanspan-idwpdcommandobjectpropertiessetspanwpdcommandobjectpropertiesset"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_SET"></span><span id="wpd_command_object_properties_set"></span>WPD\_命令\_对象\_属性\_设置
+## <a name="span-idwpd_command_object_properties_get_allspanspan-idwpd_command_object_properties_get_allspanwpd_command_object_properties_get_all"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET_ALL"></span><span id="wpd_command_object_properties_get_all"></span>WPD \_ 命令 \_ 对象 \_ 属性 \_ 获取 \_ 全部
 
 
-驱动程序调用**WpdObjectProperties::OnSetPropertyValues**处理程序以响应 WPD\_命令\_对象\_属性\_SET 命令。 可以编写 （或设置） 中的示例驱动程序的唯一属性是传感器\_更新\_间隔。
+驱动程序将调用 **WpdObjectProperties：： OnGetAllPropertyValues** 处理程序来响应 WPD \_ command \_ 对象属性 \_ " \_ 获取 \_ 全部" 命令。 进而，处理程序会检索给定对象的所有属性键，然后调用 **GetPropertyValuesForObject** helper 函数来检索所请求的属性的当前值。
 
-该处理程序首先会检查给定属性的对象标识符，然后检查本身的属性键。 如果对象标识符设置为传感器\_对象\_ID 和属性键是传感器\_更新\_间隔，处理程序调用**SendUpdateIntervalToDevice**帮助程序若要更新的值的函数。
+## <a name="span-idwpd_command_object_properties_setspanspan-idwpd_command_object_properties_setspanwpd_command_object_properties_set"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_SET"></span><span id="wpd_command_object_properties_set"></span>WPD \_ 命令 \_ 对象 \_ 属性 \_ 集
 
-**SendUpdateIntervalToDevice**帮助程序函数通过检查有效的输入值、 格式设置写入请求具有此值，并将发送到设备的写入请求执行写入操作。
+
+驱动程序调用 **WpdObjectProperties：： OnSetPropertyValues** 处理程序以响应 WPD \_ command \_ OBJECT \_ PROPERTIES \_ SET 命令。 在示例驱动程序中可以编写 (或设置) 的唯一属性是传感器 \_ 更新 \_ 间隔。
+
+处理程序首先检查给定属性的对象标识符，然后检查属性键本身。 如果对象标识符设置为传感器 \_ 对象 \_ ID，并且属性键为传感器 \_ 更新 \_ 间隔，则处理程序将调用 **SendUpdateIntervalToDevice** helper 函数以更新值。
+
+**SendUpdateIntervalToDevice** helper 函数通过检查有效的输入值、使用该值格式化写入请求，然后将写入请求发送到设备来执行写入操作。
 
 ```cpp
 HRESULT WpdObjectProperties::SendUpdateIntervalToDevice(DWORD dwNewInterval)
@@ -329,14 +329,14 @@ HRESULT WpdObjectProperties::SendUpdateIntervalToDevice(DWORD dwNewInterval)
 }
 ```
 
-## <a name="span-idwpdcommandobjectpropertiesgetattributesspanspan-idwpdcommandobjectpropertiesgetattributesspanwpdcommandobjectpropertiesgetattributes"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES"></span><span id="wpd_command_object_properties_get_attributes"></span>WPD\_命令\_对象\_属性\_获取\_属性
+## <a name="span-idwpd_command_object_properties_get_attributesspanspan-idwpd_command_object_properties_get_attributesspanwpd_command_object_properties_get_attributes"></a><span id="WPD_COMMAND_OBJECT_PROPERTIES_GET_ATTRIBUTES"></span><span id="wpd_command_object_properties_get_attributes"></span>WPD \_ 命令 \_ 对象 \_ 属性 \_ 获取 \_ 属性
 
 
-驱动程序调用**WpdObjectProperties::OnGetPropertyAttributes**处理程序以响应 WPD\_命令\_对象\_属性\_获取\_属性命令。 该处理程序，反过来，调用**GetPropertyAttributesForObject** helper 函数来检索给定对象的属性。
+驱动程序将调用 **WpdObjectProperties：： OnGetPropertyAttributes** 处理程序以响应 WPD \_ COMMAND \_ 对象属性 \_ " \_ 获取 \_ 属性" 命令。 然后，处理程序将调用 **GetPropertyAttributesForObject** helper 函数来检索给定对象的属性。
 
-在原始 WpdHelloWorldSample 驱动程序，每个属性的属性完全相同，所有属性都是只读的。 但是，在更新的驱动程序，传感器\_更新\_间隔是读/写，而这两个传感器\_更新\_间隔和传感器\_读取具有窗体 WPD\_属性\_特性\_窗体\_范围。 因此，此帮助器函数中要求细微的更改。
+在原始 WpdHelloWorldSample 驱动程序中，每个属性的属性都是相同的，并且所有属性都是只读的。 但是，在更新的驱动程序中，传感器 \_ 更新 \_ 间隔为读/写，并且传感器 \_ 更新 \_ 间隔和传感器 \_ 读数的格式为 "WPD \_ 属性" \_ \_ \_ 。 因此，此 helper 函数需要进行少量更改。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

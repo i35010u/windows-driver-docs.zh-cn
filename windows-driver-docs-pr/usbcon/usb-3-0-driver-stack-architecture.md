@@ -1,130 +1,130 @@
 ---
-Description: 本主题提供了通用串行总线 (USB) 驱动程序堆栈体系结构的概述。
+description: 本主题概述了通用串行总线 (USB) 驱动程序堆栈体系结构。
 title: Windows 中的 USB 宿主端驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f08ec897a7632e230616d7b054c470b2fb4d929a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a6fe32c43cceea80dd4b639e2d87c89b6db51369
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368783"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968762"
 ---
 # <a name="usb-host-side-drivers-in-windows"></a>Windows 中的 USB 宿主端驱动程序
 
 
-本主题提供了通用串行总线 (USB) 驱动程序堆栈体系结构的概述。
+本主题概述了通用串行总线 (USB) 驱动程序堆栈体系结构。
 
-下图显示 Windows 8 的 USB 驱动程序堆栈体系结构的框图。 在关系图显示了 USB 2.0 和 USB 3.0 的单独的 USB 驱动程序堆栈。 设备附加到 xHCI 控制器时，Windows 将加载 USB 3.0 驱动程序堆栈。 USB 3.0 堆栈是 Windows 8 中的新增功能。
+下图显示了适用于 Windows 8 的 USB 驱动程序堆栈的体系结构块关系图。 此图显示了适用于 USB 2.0 和 USB 3.0 的单独 USB 驱动程序堆栈。 当设备连接到 xHCI 控制器时，Windows 将加载 USB 3.0 驱动程序堆栈。 USB 3.0 堆栈是 Windows 8 中的新堆栈。
 
-Windows 将加载到 eHCI、 oHCI 或 uHCI 控制器附加设备的 USB 2.0 驱动程序堆栈。 在 Windows XP Service Pack 1 (SP1) 和更高版本的 Windows 操作系统中随附的 USB 2.0 驱动程序堆栈。
+Windows 将为连接到 eHCI、oHCI 或 uHCI 控制器的设备加载 USB 2.0 驱动程序堆栈。 在 Windows XP Service Pack 1 (SP1) 和更高版本的 Windows 操作系统中附带了 USB 2.0 驱动程序堆栈。
 
-![usb 2.0 和 3.0 驱动程序堆栈的体系结构的框图](images/usb-driver-stack-3.png)
+![usb 2.0 和3.0 驱动程序堆栈的体系结构块示意图](images/usb-driver-stack-3.png)
 
 -   [USB 3.0 驱动程序堆栈](#usb-30-driver-stack)
-    -   [USB 3.0 主机控制器驱动程序 (Usbxhci.sys)](#usb-30-host-controller-driver-usbxhcisys)
-    -   [USB 主机控制器扩展 (Ucx01000.sys)](#-usb-host-controller-extension-ucx01000sys)
-    -   [USB 集线器驱动程序 (Usbhub3.sys)](#usb-hub-driver-usbhub3sys)
+    -   [USB 3.0 主机控制器驱动程序 ( # A0) ](#usb-30-host-controller-driver-usbxhcisys)
+    -   [USB 主机控制器扩展 ( # A0) ](#-usb-host-controller-extension-ucx01000sys)
+    -   [USB 集线器驱动程序 ( # A0) ](#usb-hub-driver-usbhub3sys)
 -   [USB 2.0 驱动程序堆栈](#usb-20-driver-stack)
--   [USB 常见类泛型父驱动程序 (Usbccgp.sys)](#usb-common-class-generic-parent-driver-usbccgpsys)
+-   [USB 公共类泛型父驱动程序 ( # A0) ](#usb-common-class-generic-parent-driver-usbccgpsys)
 -   [WinUSB (Winusb.sys)](#winusb-winusbsys)
 -   [USB 客户端驱动程序](#usb-client-driver)
--   [客户端驱动程序的帮助程序库](#helper-libraries-for-client-drivers)
+-   [适用于客户端驱动程序的帮助程序库](#helper-libraries-for-client-drivers)
 -   [相关主题](#related-topics)
 
 ## <a name="usb-30-driver-stack"></a>USB 3.0 驱动程序堆栈
 
 
-USB 3.0 堆栈是 Windows 8 中的新增功能。 Microsoft 使用内核模式驱动程序框架 (KMDF) 接口来创建新的驱动程序。 KMDF 驱动程序模型可以降低复杂性并提高了稳定性。
+USB 3.0 堆栈是 Windows 8 中的新堆栈。 Microsoft 使用内核模式驱动程序框架 (KMDF) 接口创建了新驱动程序。 KMDF 驱动程序模型降低了复杂性，并提高了稳定性。
 
-### <a href="" id="usb-30-host-controller-driver-usbxhcisys"></a>USB 3.0 主机控制器驱动程序 (Usbxhci.sys)
+### <a name="usb-30-host-controller-driver-usbxhcisys"></a><a href="" id="usb-30-host-controller-driver-usbxhcisys"></a>USB 3.0 主机控制器驱动程序 ( # A0) 
 
-XHCI 驱动程序是 USB 3.0 主机控制器驱动程序。 XHCI 驱动程序的责任包括初始化 MMIO 寄存器和 xHCI 控制器硬件的主机基于内存的数据结构映射传输到传输请求的块，从较高层驱动程序请求和提交将请求发送到硬件。 完成后传输，驱动程序处理从硬件传输完成事件并将事件驱动程序堆栈中向上传播。 它还可以控制 xHCI 控制器设备槽和终结点上下文。
+XHCI 驱动程序是 USB 3.0 主机控制器驱动程序。 XHCI 驱动程序的责任包括为 xHCI 控制器硬件初始化 MMIO 寄存器和基于主机内存的数据结构、将上层驱动程序的传输请求映射到传输请求块，以及向硬件提交请求。 完成传输后，驱动程序将处理来自硬件的传输完成事件，并在驱动程序堆栈上传播事件。 它还控制 xHCI 控制器设备槽和终结点上下文。
 
-XHCI 驱动程序是 Windows 8 中的新增功能并不是扩展了早期版本的操作系统中提供的 eHCI 微型端口驱动程序。 新的驱动程序通过使用内核模式驱动程序框架 (KMDF) 接口编写，并为所有控制器电源管理和即插即用事件使用 KMDF。 Windows 加载 xHCI 驱动程序作为函数设备对象 (FDO) 在主控制器设备堆栈中。
+XHCI 驱动程序是 Windows 8 中的新增功能，并且不是早期版本的操作系统中可用的 eHCI 微型端口驱动程序的扩展。 新驱动程序通过使用内核模式驱动程序框架 (KMDF) 接口写入，并为所有控制器电源管理和 PnP 事件使用 KMDF。 Windows 将 xHCI 驱动程序加载为主机控制器的设备堆栈中 (FDO) 的函数设备对象。
 
-### <a href="" id="-usb-host-controller-extension-ucx01000sys"></a> USB 主机控制器扩展 (Ucx01000.sys)
+### <a name="usb-host-controller-extension-ucx01000sys"></a><a href="" id="-usb-host-controller-extension-ucx01000sys"></a> USB 主机控制器扩展 ( # A0) 
 
-USB 主控制器扩展驱动程序 （KMDF 的扩展） 为基础的类特定于主机控制器驱动程序，如 xHCI 驱动程序的新扩展。 新的驱动程序是可扩展的旨在支持其他类型的预期在将来开发的主控制器驱动程序。 中心驱动程序的常见抽象的接口提供对主机控制器驱动程序，队列请求的通用机制和重写某些所选的函数用作 USB 主机控制器扩展。 所有 I/O 请求由上部的驱动程序覆盖范围都启动主机控制器扩展驱动程序之前 xHCI 驱动程序。 收到的 I/O 请求时，主机控制器扩展验证请求，然后将请求转发到与目标终结点关联的正确 KMDF 队列。 XHCI 驱动程序，当准备好进行处理，请求从队列中检索。 USB 主控制器扩展驱动程序的任务是：
+USB 主机控制器扩展驱动程序 (扩展 KMDF) 是特定于基础类的主机控制器驱动程序（如 xHCI 驱动程序）的新扩展。 新的驱动程序是可扩展的，旨在支持将来开发的其他类型的主机控制器驱动程序。 USB 主机控制器扩展充当集线器驱动程序的通用抽象接口，提供一种通用机制，用于将请求排队到主机控制器驱动程序，并替代某些选定的函数。 由上层驱动程序启动的所有 i/o 请求都将在 xHCI 驱动程序之前到达主机控制器扩展驱动程序。 接收到 i/o 请求后，主机控制器扩展将验证请求，然后将请求转发到与目标终结点关联的正确的 KMDF 队列。 XHCI 驱动程序在准备好进行处理时，将从队列中检索请求。 USB 主机控制器扩展驱动程序的责任是：
 
--   提供到 xHCI 驱动程序的特定于 USB 的对象。
--   提供到 xHCI 驱动程序 KMDF 事件回调例程。
--   管理和控制与主机控制器相关联的根中心的操作。
--   客户端驱动程序，可配置的实现功能，如链接 MDLs、 流和等等。
+-   向 xHCI 驱动程序提供 USB 特定的对象。
+-   向 xHCI 驱动程序提供 KMDF 事件回调例程。
+-   管理和控制与主机控制器关联的根集线器的操作。
+-   实现可由客户端驱动程序（如链式 MDLs、流等）配置的功能。
 
-### <a href="" id="usb-hub-driver-usbhub3sys"></a>USB 集线器驱动程序 (Usbhub3.sys)
+### <a name="usb-hub-driver-usbhub3sys"></a><a href="" id="usb-hub-driver-usbhub3sys"></a>USB 集线器驱动程序 ( # A0) 
 
-新的中心驱动程序，在 3.0 版的设备的 USB 驱动程序堆栈使用 KMDF 驱动程序模型。 中心驱动程序主要执行以下任务：
+新的集线器驱动程序在3.0 设备的 USB 驱动程序堆栈中使用 KMDF 驱动程序模型。 集线器驱动程序主要执行以下任务：
 
--   管理 USB 集线器和它们的端口。
--   枚举设备和其他连接到其下游端口的集线器。
--   创建枚举的设备和中心的物理设备对象 (PDOs)。
+-   管理 USB 集线器及其端口。
+-   枚举附加到下游端口的设备和其他中心。
+-   为枚举的设备和中心创建 (PDOs) 的物理设备对象。
 
-Windows 为中心的设备堆栈中 FDO 加载中心驱动程序。 通过一系列状态机实现了设备枚举和新的驱动程序中的中心管理。 中心驱动程序依赖 KMDF 电源管理和即插即用的函数。 除了中心管理的中心驱动程序还执行初步检查和发送 USB 客户端驱动程序层的某些请求的处理。 例如，中心驱动程序分析选择配置请求，以确定该请求将配置的终结点。 分析信息之后, 中心驱动程序提交到 USB 主机控制器扩展或进一步处理请求。
+Windows 将集线器驱动程序加载为中心设备堆栈中的 FDO。 新驱动程序中的设备枚举和中心管理通过一组状态机实现。 集线器驱动程序依赖于 KMDF 进行电源管理和 PnP 功能。 除集线器管理外，集线器驱动程序还会执行初步检查并处理 USB 客户端驱动程序层发送的某些请求。 例如，集线器驱动程序将分析一个选择配置请求，以确定请求将配置哪些终结点。 分析信息后，集线器驱动程序会将请求提交到 USB 主机控制器扩展或进一步处理。
 
 ## <a name="usb-20-driver-stack"></a>USB 2.0 驱动程序堆栈
 
 
-Windows 将加载到 eHCI、 oHCI 或 uHCI 控制器附加设备的 USB 2.0 驱动程序堆栈。 在 Windows XP SP1 和更高版本的 Windows 操作系统中提供的 USB 2.0 驱动程序堆栈中的驱动程序。 USB 2.0 驱动程序堆栈旨在提供高速 USB 设备方便 USB 2.0 规范中定义。
+Windows 将为连接到 eHCI、oHCI 或 uHCI 控制器的设备加载 USB 2.0 驱动程序堆栈。 USB 2.0 驱动程序堆栈中的驱动程序随附于 Windows XP SP1 和更高版本的 Windows 操作系统中。 USB 2.0 驱动程序堆栈旨在加速 USB 2.0 规范中定义的高速 USB 设备。
 
-底部的 USB 驱动程序堆栈是主机控制器驱动程序。 它包括端口驱动程序、 Usbport.sys，和一个或多个同时运行的三个微型端口驱动程序。 当系统检测到主机控制器硬件时，它会加载一个微型端口驱动程序。 微型端口驱动程序，它加载后，将加载端口驱动程序，Usbport.sys。 端口驱动程序处理这些方面都独立于特定协议的主机控制器驱动程序的职责。
+USB 驱动程序堆栈的底部是主机控制器驱动程序。 它包含端口驱动程序、Usbport.sys 以及同时运行的三个或多个小型端口驱动程序中的一个或多个。 当系统检测到主机控制器硬件时，它会加载其中一个微型端口驱动程序。 加载微型端口驱动程序后，会加载端口驱动程序，Usbport.sys。 端口驱动程序处理主机控制器驱动程序的与特定协议无关的职责。
 
-Usbuhci.sys （通用主机控制器接口） 微型端口驱动程序将替换为 Windows 2000 附带的 Uhcd.sys miniclass 驱动程序。 Usbohci.sys （打开主机控制器接口） 微型端口驱动程序将替换 Openhci.sys。 Usbehci.sys 微型端口驱动程序支持高速 USB 设备和 Windows XP SP1 和更高版本和 Windows Server 2003 和更高版本操作系统中引入了。
+Usbuhci.sys (通用主机控制器接口) 微型端口驱动程序替换了随 Windows 2000 提供的 Uhcd.sys miniclass 驱动程序。 Usbohci.sys (打开主机控制器接口) 微型端口驱动程序替换 Openhci.sys。 Usbehci.sys 微型端口驱动程序支持高速 USB 设备，并在 Windows XP SP1 和更高版本以及 Windows Server 2003 及更高版本的操作系统中引入。
 
-在所有版本的 Windows 支持 USB 2.0，操作系统是能够同时管理 USB 1.1 和 USB 2.0 主机控制器。 只要操作系统检测到控制器的两种类型都存在，它将创建两个单独的设备节点，一个用于每个主机控制器。 Windows 随后加载的 USB 2.0 兼容的主机控制器硬件和是 Usbohci.sys Usbehci.sys 微型端口驱动程序或 Openhci.sys USB 1.1 兼容硬件，具体取决于系统配置。
+在支持 USB 2.0 的所有 Windows 版本中，操作系统能够同时管理 USB 1.1 和 USB 2.0 主机控制器。 每当操作系统检测到两种类型的控制器都存在时，它将创建两个单独的设备节点，每个节点对应一个主机控制器。 Windows 随后会加载适用于 USB 2.0 兼容主机控制器硬件的 Usbehci.sys 微型端口驱动程序，并为与 USB 1.1 兼容的硬件 Usbohci.sys 或 Openhci.sys，具体取决于系统配置。
 
-端口上方驱动程序是 USB 总线驱动程序 Usbhub.sys，也称为中心驱动程序。 这是在系统上每个中心的设备驱动程序。
+上述端口驱动程序为 USB 总线驱动程序，Usbhub.sys （也称为集线器驱动程序）。 这是系统中每个集线器的设备驱动程序。
 
-## <a name="usb-common-class-generic-parent-driver-usbccgpsys"></a>USB 常见类泛型父驱动程序 (Usbccgp.sys)
+## <a name="usb-common-class-generic-parent-driver-usbccgpsys"></a>USB 公共类泛型父驱动程序 ( # A0) 
 
 
-USB 的常见类泛型父驱动程序是复合设备由 Microsoft 提供的父驱动程序。 中心驱动程序枚举和加载父复合驱动程序，如果**deviceClass**为 0 或 0xef 和**numInterfaces**大于 1 的设备描述符中。 中心驱动程序将生成为父复合驱动程序的兼容 ID"USB\\复合"。 Usbccgp.sys 使用 Windows 驱动程序模型 (WDM) 例程。
+USB 公共类通用父驱动程序是 Microsoft 提供的用于复合设备的父驱动程序。 如果 **deviceClass** 为0或0xef，且设备描述符中的 **numInterfaces** 大于1，则集线器驱动程序会枚举并加载父复合驱动程序。 集线器驱动程序生成父复合驱动程序的兼容 ID 作为 "USB \\ 复合"。 Usbccgp.sys 使用 Windows 驱动模型 (WDM) 例程。
 
-父复合驱动程序枚举复合设备中的所有函数，并创建每个 PDO。 这将导致相应的类或客户端驱动程序加载的设备中的每个函数。 每个函数驱动程序 （子 PDO） 将请求发送到父驱动程序，可以将其提交给 USB 集线器驱动程序。
+父复合驱动程序枚举复合设备中的所有函数，并为每个函数创建一个 PDO。 这将导致为设备中的每个函数加载适当的类或客户端驱动程序。 每个功能驱动程序 (子 PDO) 将请求发送到父驱动程序，后者会将请求提交到 USB 集线器驱动程序。
 
-Usbccgp.sys 随 Windows XP SP1 和更高版本的 Windows 操作系统。 在 Windows 8 中，已更新，该驱动程序以实现函数挂起和远程唤醒功能在 USB 3.0 规范中定义。
+Windows XP SP1 和更高版本的 Windows 操作系统中包含 Usbccgp.sys。 在 Windows 8 中，驱动程序已更新为可实现 "功能挂起" 和 "远程唤醒" 功能（如 USB 3.0 规范中所定义）。
 
-有关详细信息，请参阅[USB 通用父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)。
+有关详细信息，请参阅 [USB 通用父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md)。
 
 ## <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 
 
-Windows USB (WinUSB) 是适用于 USB 设备由 Microsoft 提供通用驱动程序。 WinUSB 体系结构由内核模式驱动程序 (Winusb.sys) 和用户模式动态链接库 (Winusb.dll) 组成。 对于不需要自定义功能驱动程序的设备，Winusb.sys 可以安装在设备的内核模式堆栈为功能驱动程序。 用户模式进程然后可以通过使用一系列设备 I/O 控制请求或调用与 Winusb.sys 通信**WinUsb\_Xxx**函数。 有关详细信息，请参阅[WinUSB](winusb.md)。
+Windows USB (WinUSB) 是 Microsoft 提供的用于 USB 设备的通用驱动程序。 WinUSB 体系结构包含内核模式驱动程序 ( # A0) 和用户模式的动态链接库 ( # A1) 。 对于不需要自定义函数驱动程序的设备，Winusb.sys 可以作为函数驱动程序安装在设备的内核模式堆栈中。 然后，用户模式进程可以通过使用一组设备 i/o 控制请求或通过调用 **WinUsb \_ Xxx** 函数与 Winusb.sys 进行通信。 有关详细信息，请参阅 [WinUSB](winusb.md)。
 
-在 Windows 8 中，WinUSB，Winusb.inf，由 Microsoft 提供的信息 (INF) 文件包含 USB\\MS\_COMP\_WINUSB 作为设备标识符字符串。 这允许 Winusb.sys 作为具有匹配的 WinUSB 兼容 ID MS OS 描述符中的这些设备的函数驱动程序自动加载。 此类设备称为 WinUSB 设备。 硬件制造商不需要分发其 WinUSB 设备 INF 文件为最终用户简化驱动程序安装过程。 有关详细信息，请参阅[WinUSB 设备](automatic-installation-of-winusb.md)。
+在 Windows 8 中，Microsoft 提供的信息 (INF) file for WinUSB，Winusb，包含 USB \\ MS \_ COMP \_ WinUSB 作为设备标识符字符串。 这允许 Winusb.sys 自动加载为在 MS OS 描述符中具有匹配 WinUSB 兼容 ID 的设备的函数驱动程序。 此类设备称为 WinUSB 设备。 硬件制造商不需要为其 WinUSB 设备分发 INF 文件，因此，为最终用户简化驱动程序的安装过程。 有关详细信息，请参阅 [WinUSB 设备](automatic-installation-of-winusb.md)。
 
 ## <a name="usb-client-driver"></a>USB 客户端驱动程序
 
 
-每个 USB 设备，复合或非组合键，由客户端驱动程序管理。 USB 客户端驱动程序是一个类或设备的驱动程序的客户端的 USB 驱动程序堆栈。 此类驱动程序包括类和特定于设备的驱动程序从 Microsoft 或第三方供应商。 若要查看由 Microsoft 提供的类驱动程序的列表，请参阅[支持 USB 设备类的驱动程序](supported-usb-classes.md)。 客户端驱动程序创建请求，以与设备通信通过调用公共接口公开的 USB 驱动程序堆栈。
+每个 USB 设备（复合或非复合）都由客户端驱动程序管理。 USB 客户端驱动程序是一种作为 USB 驱动程序堆栈的客户端的类或设备驱动程序。 此类驱动程序包括 Microsoft 或第三方供应商提供的类和设备特定驱动程序。 若要查看 Microsoft 提供的类驱动程序的列表，请参阅 [支持的 USB 设备类的驱动程序](supported-usb-classes.md)。 客户端驱动程序通过调用 USB 驱动程序堆栈公开的公共接口来创建与设备通信的请求。
 
-复合设备的客户端驱动程序是与用于非复合设备，除了在驱动程序堆栈中的位置的客户端驱动程序没有什么不同。
+复合设备的客户端驱动程序与非复合设备的客户端驱动程序没有区别，但其在驱动程序堆栈中的位置除外。
 
-非复合设备的客户端驱动程序直接上中心驱动程序进行分层。
+非复合设备的客户端驱动程序直接在集线器驱动程序的上方分层。
 
-对于复合的 USB 设备，用于公开多个函数并不具有父类驱动程序，Windows 将加载[USB 泛型父驱动程序 (Usbccgp.sys)](usb-common-class-generic-parent-driver.md)中心驱动程序和客户端驱动程序层之间。 父驱动程序创建一个单独的 PDO 复合设备的每个函数。 在泛型父驱动程序加载客户端驱动程序 (FDOs 函数)。 供应商可以选择为每个函数提供单独的客户端驱动程序。
+对于公开多个功能并且没有父类驱动程序的复合 USB 设备，Windows 将在集线器驱动程序和客户端驱动程序层之间加载 [USB 通用父驱动程序 ( # A0) ](usb-common-class-generic-parent-driver.md) 。 父驱动程序为复合设备的每个函数创建一个单独的 PDO。 ) 的客户端驱动程序 (加载到泛型父驱动程序之上。 供应商可能会选择为每个功能提供单独的客户端驱动程序。
 
-USB 客户端驱动程序可以运行在用户模式或内核模式，具体取决于驱动程序的要求。 可以通过使用 KMDF、 UMDF 或 WDM 例程编写 USB 客户端驱动程序。
+USB 客户端驱动程序可以在用户模式或内核模式下运行，具体取决于驱动程序的要求。 USB 客户端驱动程序可以通过使用 KMDF、UMDF 或 WDM 例程来编写。
 
-## <a name="helper-libraries-for-client-drivers"></a>客户端驱动程序的帮助程序库
+## <a name="helper-libraries-for-client-drivers"></a>适用于客户端驱动程序的帮助程序库
 
 
-Microsoft 提供了以下的帮助程序库，以帮助内核模式驱动程序和应用程序与 USB 驱动程序堆栈进行通信：
+Microsoft 提供了以下帮助程序库，用于帮助内核模式驱动程序和应用程序与 USB 驱动程序堆栈进行通信：
 
 -   Usbd.sys
 
-    Microsoft 提供了导出的客户端的 USB 驱动程序例程的 Usbd.sys 库。 帮助器例程简化客户端驱动程序的操作任务。 例如，通过使用的帮助器例程，USB 客户端驱动程序可以建立[USB 请求块 (URBs)](communicating-with-a-usb-device.md)对于某些特定操作，如选择一个配置，并将提交这些 URBs 到 USB 驱动程序堆栈。
+    Microsoft 提供了导出 USB 客户端驱动程序例程的 Usbd.sys 库。 帮助器例程简化了客户端驱动程序的操作任务。 例如，通过使用 helper 例程，USB 客户端驱动程序可以为某些特定操作（如选择配置） [ (URBs) 生成 Usb 请求块 ](communicating-with-a-usb-device.md) ，并将这些 URBs 提交到 USB 驱动程序堆栈。
 
--   Usbdex.lib
+-   Usbdex
 
-    此帮助程序库是 Windows 8 的新增功能。 库导出主要用于分配和构建 URBs 例程。 这些例程替换一些旧例程由 Usbd.sys 导出。 新的例程需要客户端驱动程序注册到 USB 驱动程序堆栈，这会保存注册的句柄。 该句柄用于对其他 Usbdex.lib 例程的调用。 由新例程分配某些 URBs 具有更好地跟踪和处理的 USB 驱动程序使用 URB 上下文。 有关详细信息，请参阅[Allocating 和构建 URBs](how-to-add-xrb-support-for-client-drivers.md)。
+    此帮助程序库是适用于 Windows 8 的新的。 库导出主要用于分配和生成 URBs。 这些例程将替换 Usbd.sys 导出的某些旧例程。 新例程要求客户端驱动程序注册到 USB 驱动程序堆栈，后者维护注册的句柄。 该句柄用于对其他 Usbdex 例程的调用。 新例程分配的某些 URBs 具有一个 URB 上下文，USB 驱动程序使用该上下文来更好地进行跟踪和处理。 有关详细信息，请参阅 [分配和生成 URBs](how-to-add-xrb-support-for-client-drivers.md)。
 
 -   Winusb.dll
 
-    Winusb.dll 是公开的用户模式 DLL [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)用于与 Winusb.sys 进行通信，这作为设备的功能在内核模式下的驱动程序中加载。 应用程序使用这些函数来配置设备，检索有关设备的信息和执行 I/O 操作。 有关使用这些函数的信息，请参阅[如何访问由使用 WinUSB 函数 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
+    Winusb.dll 是一种用户模式 DLL，该 DLL 公开用于与 Winusb.sys 通信的 [WinUSB 函数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) ，该函数作为内核模式下的设备功能驱动程序加载。 应用程序使用这些功能来配置设备、检索有关设备的信息以及执行 i/o 操作。 有关使用这些功能的信息，请参阅 [如何使用 WinUSB 功能访问 USB 设备](using-winusb-api-to-communicate-with-a-usb-device.md)。
 
 ## <a name="related-topics"></a>相关主题
-[通用串行总线 (USB) 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/)  
+[ (USB) 驱动程序的通用串行总线](https://docs.microsoft.com/windows-hardware/drivers/)  
 [USB 驱动程序开发指南](usb-driver-development-guide.md)  
 
 

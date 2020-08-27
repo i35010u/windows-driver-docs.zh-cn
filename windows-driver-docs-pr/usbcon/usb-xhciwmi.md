@@ -1,19 +1,19 @@
 ---
-Description: XHCIWMI 是一个工具用于诊断目的。 此工具仅在 Windows 8 上运行并收集信息时与设备附加到 xHCI 端口和 Windows 加载 Microsoft USB 3.0 驱动程序堆栈。
+description: XHCIWMI 是用于诊断的工具。 此工具仅在 Windows 8 上运行，并在设备连接到 xHCI 端口并加载 Microsoft USB 3.0 驱动程序堆栈时收集信息。
 title: USB XHCIWMI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 546e4c461c116ad532ab55c7fe6869ea81f455a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b4800dec9fe7ff6a6f8a851155018b723e51902d
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356688"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968586"
 ---
 # <a name="usb-xhciwmi"></a>USB XHCIWMI
 
 
-XHCIWMI 是一个工具用于诊断目的。 此工具仅在 Windows 8 上运行并收集信息时与设备附加到 xHCI 端口和 Windows 加载 Microsoft USB 3.0 驱动程序堆栈。
+XHCIWMI 是用于诊断的工具。 此工具仅在 Windows 8 上运行，并在设备连接到 xHCI 端口并加载 Microsoft USB 3.0 驱动程序堆栈时收集信息。
 
 ## <a name="xhciwmi"></a>XHCIWMI
 
@@ -22,11 +22,11 @@ XHCIWMI 是一个工具用于诊断目的。 此工具仅在 Windows 8 上运行
 
 **Xhciwmi.exe**
 
-该工具在命令窗口中显示的当前固件修订版本和有关控制器的信息。 运行以下命令以验证控制器和针对已知问题的中心的固件：
+该工具在 "命令" 窗口中显示当前的固件修订版本和有关控制器的信息。 运行以下命令，针对已知问题验证控制器和集线器的固件：
 
-**Xhciwmi.exe –verify**
+**Xhciwmi.exe –验证**
 
-我们建议使用 **– 验证**检查控制器并已连接的中心的选项。
+建议使用 **– verify** 选项检查控制器和连接的中心。
 
 ## <a name="related-topics"></a>相关主题
 [USB 测试工具](usb-test-tools.md)  

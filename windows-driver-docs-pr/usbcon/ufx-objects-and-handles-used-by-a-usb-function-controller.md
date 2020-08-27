@@ -1,14 +1,14 @@
 ---
-Description: USB 函数类扩展（UFX）使用 WDF 对象功能来定义这些特定于 USB 的 UFX 对象。
+description: USB 函数类扩展 (UFX) 使用 WDF 对象功能来定义这些特定于 USB 的 UFX 对象。
 title: USB 功能客户端驱动程序使用的 UFX 对象和句柄
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a559cb9c824be474c781810481255c8910d3143b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 58b7d470157aa7ba26bfa294dae26d8a25f1b1f3
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844336"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969416"
 ---
 # <a name="ufx-objects-and-handles-used-by-a-usb-function-client-driver"></a>USB 功能客户端驱动程序使用的 UFX 对象和句柄
 
@@ -20,7 +20,7 @@ ms.locfileid: "72844336"
 
 **适用于**
 
--   Windows 10
+-   Windows 10
 
 **上次更新时间**
 
@@ -31,9 +31,9 @@ ms.locfileid: "72844336"
 -   [**UfxDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicecreate)
 -   [**UfxEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxendpointcreate)
 
-USB 函数类扩展（UFX）使用 WDF 对象功能来定义这些特定于 USB 的 UFX 对象。
+USB 函数类扩展 (UFX) 使用 WDF 对象功能来定义这些特定于 USB 的 UFX 对象。
 
-这些对象是 WDF 对象的句柄，由 UFX 在函数客户端驱动程序请求时创建。 （可选）客户端驱动程序可以将上下文与可以在创建时传递的这些对象相关联。 UFX 创建的每个 WDF 对象可能有两个设备上下文：在对象创建时由 UFX 设置的一个设备上下文;由客户端驱动程序传入的其他设备上下文，在 WDF 对象创建后使用[**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext)在 UFX 中进行设置。
+这些对象是 WDF 对象的句柄，由 UFX 在函数客户端驱动程序请求时创建。 （可选）客户端驱动程序可以将上下文与可以在创建时传递的这些对象相关联。 UFX 创建的每个 WDF 对象可能有两个设备上下文：在对象创建时由 UFX 设置的一个设备上下文;由客户端驱动程序传入的其他设备上下文，在 WDF 对象创建后使用 [**WdfObjectAllocateContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectallocatecontext) 在 UFX 中进行设置。
 
 ## <a name="usb-device-object"></a>USB 设备对象
 
@@ -42,40 +42,40 @@ USB 函数类扩展（UFX）使用 WDF 对象功能来定义这些特定于 USB 
 
 表示由控制器创建的 USB 设备。 对象负责根据 USB 协议规范管理 USB 状态，并管理与 USB 设备关联的一个或多个终结点。 函数控制器驱动程序通过调用[**UfxDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicecreate)方法在[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调中创建此对象。
 
-[ *.EVT\_UFX\_设备\_主机\_连接*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_host_connect)  
+[*.EVT \_ UFX \_ 设备 \_ 主机 \_ 连接*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_host_connect)  
 启动与主机的连接。
 
-[ *.EVT\_UFX\_设备\_主机\_断开连接*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_host_disconnect)  
+[*.EVT \_ UFX \_ 设备 \_ 主机 \_ 断开连接*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_host_disconnect)  
 禁用函数控制器与宿主的通信。
 
-[ *\_设备\_的\_UFX*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_addressed)  
+[*.EVT \_ UFX \_ 设备 \_ 寻址*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_addressed)  
 在函数控制器上分配一个地址。
 
-[ *\_设备\_\_的 .EVT\_添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_endpoint_add)  
+[*.EVT \_ UFX \_ 设备 \_ 终结点 \_ 添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_endpoint_add)  
 创建默认终结点对象。
 
-[ *.EVT\_UFX\_设备\_默认\_终结点\_添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_default_endpoint_add)  
+[*.EVT \_ UFX \_ 设备 \_ 默认 \_ 终结点 \_ 添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_default_endpoint_add)  
 创建默认终结点对象。
 
-[ *.EVT\_UFX\_设备\_USB\_状态\_更改*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_usb_state_change)  
+[*.EVT \_ UFX \_ 设备 \_ USB \_ 状态 \_ 更改*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_usb_state_change)  
 更新 USB 设备的状态。
 
-[ *.EVT\_UFX\_设备\_端口\_更改*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_port_change)  
+[*.EVT \_ UFX \_ 设备 \_ 端口 \_ 更改*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_port_change)  
 更新 USB 设备连接到的新端口的类型。
 
-[ *.EVT\_UFX\_设备\_端口\_检测*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_port_detect)  
+[*.EVT \_ UFX \_ 设备 \_ 端口 \_ 检测*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_port_detect)  
 启动端口检测。
 
-[ *.EVT\_UFX\_设备\_远程\_唤醒\_信号*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_remote_wakeup_signal)  
+[*.EVT \_ UFX \_ 设备 \_ 远程 \_ 唤醒 \_ 信号*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_remote_wakeup_signal)  
 在函数控制器上启动远程唤醒。
 
-[ *.EVT\_UFX\_设备\_检测\_专用\_充电器*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_detect)  
+[*.EVT \_ UFX \_ 设备 \_ 检测 \_ 专有 \_ 充电器*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_detect)  
 启动专有充电器检测。
 
-[ *.EVT\_UFX\_设备\_专用\_充电器\_RESET*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_reset)  
+[*.EVT \_ UFX \_ 设备 \_ 专有 \_ 充电器 \_ 重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_reset)  
 重置专用充电器。
 
-[ *.EVT\_UFX\_设备\_专用\_充电器\_设置\_属性*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_set_property)  
+[*.EVT \_ UFX \_ 设备 \_ 专有 \_ 充电器 \_ 集 \_ 属性*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_proprietary_charger_set_property)  
 设置用于启用通过 USB 进行充电的充电器信息。
 
 ## <a name="usb-endpoint-object"></a>USB 终结点对象
@@ -83,7 +83,7 @@ USB 函数类扩展（UFX）使用 WDF 对象功能来定义这些特定于 USB 
 
 **UFXENDPOINT**
 
-表示主机与设备之间的逻辑连接。 对象负责将数据传入/传出主机。 对于每个设备对象，可以有一个或多个终结点。 默认终结点始终是控件终结点，rest 是类驱动程序特定的对象。 函数控制器驱动程序在[ *\_设备\_终结点*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_endpoint_add)中创建\_的对象\_通过调用[**UfxEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxendpointcreate)方法添加回调。
+表示主机与设备之间的逻辑连接。 对象负责将数据传入/传出主机。 对于每个设备对象，可以有一个或多个终结点。 默认终结点始终是控件终结点，rest 是类驱动程序特定的对象。 函数控制器驱动程序通过调用[**UfxEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxendpointcreate)方法在[*.Evt \_ UFX \_ 设备 \_ 终结 \_ 点*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nc-ufxclient-evt_ufx_device_endpoint_add)中创建对象。
 
 ## <a name="related-topics"></a>相关主题
 [为 USB 功能控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-function-controllers.md)  

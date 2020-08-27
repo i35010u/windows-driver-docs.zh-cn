@@ -1,20 +1,20 @@
 ---
 title: REMOTE_NDIS_RESET_CMPLT
-Description: 远程 NDIS 设备将响应 REMOTE_NDIS_RESET_MSG 消息从主机通过将设备重置并 REMOTE_NDIS_RESET_CMPLT 消息中返回请求的状态。
+description: 远程 NDIS 设备将通过重置设备并返回 REMOTE_NDIS_RESET_CMPLT 消息中请求的状态来响应来自主机的 REMOTE_NDIS_RESET_MSG 消息。
 ms.assetid: 80ab998f-9690-49d3-bb47-1937c832d13e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 853e8d4fc849662eeda2426c504b50e570b238c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 956f701bc4f36d228bfd047b27d0dc8529606eb9
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388125"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969434"
 ---
-# <a name="remotendisresetcmplt"></a>远程\_NDIS\_重置\_CMPLT
+# <a name="remote_ndis_reset_cmplt"></a>远程 \_ NDIS \_ 重置 \_ CMPLT
 
 
-远程 NDIS 设备将响应[**远程\_NDIS\_重置\_MSG** ](remote-ndis-reset-msg.md)从主机通过将设备重置并返回请求的状态消息在远程\_NDIS\_重置\_CMPLT 消息。
+远程 NDIS 设备将通过重置设备并返回远程 ndis 重置 CMPLT 消息中的请求状态来响应来自主机的 [**远程 \_ ndis \_ 重置 \_ **](remote-ndis-reset-msg.md) 消息 \_ 消息 \_ \_ 。
 
 <table>
 <colgroup>
@@ -25,10 +25,10 @@ ms.locfileid: "63388125"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -36,13 +36,13 @@ ms.locfileid: "63388125"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>MessageType</p></td>
-<td><p>指定发送消息的类型。 将设置为 0x80000006。</p></td>
+<td><p>指定要发送的消息的类型。 设置为0x80000006。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
 <td><p>MessageLength</p></td>
-<td><p>以字节为单位，指定该消息的开始的这封邮件的总长度。</p></td>
+<td><p>指定从消息开头开始的此消息的总长度（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
@@ -54,7 +54,7 @@ ms.locfileid: "63388125"
 <td><p>12</p></td>
 <td><p>4</p></td>
 <td><p>AddressingReset</p></td>
-<td><p>指示是否寻址 （多路广播的地址列表，数据包筛选器） 的信息已丢失结束重置操作过程。 如果设备需要主机重新发送寻址信息，此字段设置为 1;否则将其设置为零。</p></td>
+<td><p>指示在执行 "重置" 操作期间是否丢失了寻址信息 (多播地址列表、数据包筛选器) 。 如果设备要求主机重新发送寻址信息，请将此字段设置为 1;否则将其设置为零。</p></td>
 </tr>
 </tbody>
 </table>
@@ -72,11 +72,11 @@ ms.locfileid: "63388125"
 <tbody>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
+<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Rndis.h （包括 Rndis.h）</td>
+<td><p>标头</p></td>
+<td>Rndis (包含 Rndis) </td>
 </tr>
 </tbody>
 </table>

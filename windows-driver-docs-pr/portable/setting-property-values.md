@@ -1,19 +1,19 @@
 ---
-Description: 设置属性值
+description: 设置属性值
 title: 设置属性值
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 214d50bc3d70a8ffd27ff5f48d93477fe583a426
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: abf221d36cf3aed6a0d46122e3de2c41c99fdf44
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376219"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969524"
 ---
 # <a name="setting-property-values"></a>设置属性值
 
 
-当 WPD 程序调用**IPortableDeviceProperties::SetValues**方法，此方法，反过来，触发调用**WpdObjectProperties::OnSetPropertyValues**中的示例驱动程序的方法. 此方法创建**IPortableDeviceValues**对象编写的新值。 但是，因为示例驱动程序不允许对其属性的任何更新，则此方法写入电子\_中每个条目的 ACCESSDENIED **IPortableDeviceValues**对象。
+当 WPD 应用程序调用 **IPortableDeviceProperties：： SetValues** 方法时，此方法将触发对示例驱动程序中的 **WpdObjectProperties：： OnSetPropertyValues** 方法的调用。 此方法将创建一个 **IPortableDeviceValues** 对象，在其中写入新值。 但是，由于示例驱动程序不允许对其任何属性进行更新，因此此方法会 \_ 将 E ACCESSDENIED 写入 **IPortableDeviceValues** 对象中的每个条目。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::OnSetPropertyValues(

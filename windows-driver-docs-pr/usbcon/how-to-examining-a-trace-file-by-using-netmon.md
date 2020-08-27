@@ -1,77 +1,77 @@
 ---
-Description: 本主题介绍如何为示例的事件跟踪文件使用网络监视器。
+description: 本主题说明如何使用 Netmon 来举例说明如何使用事件跟踪文件。
 title: 如何在 Netmon 中查看 USB ETW 跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26caa503bf8ed3601146c15c2f5e73db5ac6a888
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 78710e3b153cc5d6112989bc4005166d21ed06a6
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405044"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968852"
 ---
 # <a name="how-to-view-a-usb-etw-trace-in-netmon"></a>如何在 Netmon 中查看 USB ETW 跟踪
 
-本主题介绍如何为示例的事件跟踪文件使用网络监视器。
+本主题说明如何使用 Netmon 来举例说明如何使用事件跟踪文件。
 
-安装 Netmon 并将其配置为使用 USB ETW 的文件，如中所述后[如何安装 Netmon 和 USB ETW 分析程序](how-to-install-netmon-and-the-netmon-usb-parser.md)，可以使用它来检查跟踪文件。
+安装 Netmon 并将其配置为与 USB ETW 文件一起使用时，如 [如何安装 Netmon 和 USB Etw 分析器](how-to-install-netmon-and-the-netmon-usb-parser.md)中所述，你可以使用它来检查跟踪文件。
 
 ## <a name="opening-an-etw-file"></a>打开 ETW 文件
 
-若要查看跟踪文件中网络监视器，在开始屏幕上，键入"网络监视器"以打开网络监视器。 通过使用以下方法之一打开跟踪文件：
+若要在 Netmon 中查看跟踪文件，请在 "开始" 屏幕上键入 "netmon" 以打开 Netmon。 使用以下方法之一打开跟踪文件：
 
-* 上**文件**菜单上，单击**打开**，单击**捕获**，然后选择.etl 文件。
-* 单击**打开捕获**按钮，然后选择.etl 文件。
-* 按 CTRL + O，并选择.etl 文件。
+* 在 " **文件** " 菜单上，单击 " **打开**"，单击 " **捕获**"，然后选择 .etl 文件。
+* 单击 " **打开捕获** " 按钮，然后选择 .etl 文件。
+* 按 CTRL + O 并选择 .etl 文件。
 
-事件跟踪由单个事件，其中每个表示该驱动程序堆栈中所发生情况的部分组成。 每个事件符合定义的驱动程序堆栈的多个类型之一。
+事件跟踪由单个事件组成，每个事件都指示驱动程序堆栈中发生的情况。 每个事件都符合驱动程序堆栈定义的多种类型中的一种。
 
 ![microsoft 网络监视器](images/netmon-ui-intro.png)
 
-观察中列出了事件**帧摘要**窗格。 上图显示了 evens 从 USB 2.0 驱动程序堆栈。 请注意此窗格中的以下列：
+观察 " **帧摘要** " 窗格中列出的事件。 上图显示了来自 USB 2.0 驱动程序堆栈的能够。 注意此窗格中的以下各列：
 
-* **时间偏移量**:指定为从该日志的开始时间的偏移量的事件的时间戳。
-* **协议名称**:记录事件驱动程序。 对于 USB 事件，该驱动程序是 USB 集线器或 USB 端口。
-* 描述：事件的描述性名称。
+* **时间偏移量**：事件的时间戳，指定为日志开始时间的偏移量。
+* **协议名称**：记录事件的驱动程序。 对于 USB 事件，驱动程序为 USB 集线器或 USB 端口。
+* **说明**：事件的描述性名称。
 
-选择中的事件**帧摘要**窗格。 Netmon 显示中的事件的详细信息**帧详细信息**并**Hex 详细信息**窗格。 在中**帧详细信息**窗格中，展开要检查的事件详细信息的项。
-有关使用 Netmon 检查 USB 跟踪文件的示例，请参阅[案例研究：使用 ETW 和 Netmon 未知的 USB 设备进行故障排除](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)。
+在 " **帧摘要** " 窗格中选择一个事件。 Netmon 在 " **帧详细信息** " 和 " **十六进制详细信息** " 窗格中显示事件的详细信息。 在 " **帧详细信息** " 窗格中，展开项以检查事件的详细信息。
+有关使用 Netmon 检查 USB 跟踪文件的示例，请参阅 [案例研究：使用 ETW 和 Netmon 排查未知 USB 设备问题](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)。
 
-## <a name="new-columns-the-usb-etw-parser-for-usb-30-driver-stack"></a>新列 USB 3.0 驱动程序的 USB ETW 分析器堆栈
+## <a name="new-columns-the-usb-etw-parser-for-usb-30-driver-stack"></a>新列 USB 3.0 驱动程序堆栈的 USB ETW 分析器
 
-USB 3.0 驱动程序堆栈中还定义重要的 USB 2.0 驱动程序堆栈中的事件的类型。 但是，有这些类型之间的细微差异。 例如，考虑 USB 控制传输完成事件类型 (**说明**:USBPort： 完成 URB\_函数\_控制\_传输\_EX 与数据):
+Usb 2.0 驱动程序堆栈中的重要事件类型也是在 USB 3.0 驱动程序堆栈中定义的。 但是，这两种类型之间存在细微的差异。 例如，考虑 USB 控件传输完成事件类型 (**说明** ： USBPort： Complete URB \_ 函数 \_ 控制 \_ 传输 \_ ，例如数据) ：
 
-对于 USB 2.0 驱动程序堆栈事件类型，**帧详细信息**窗格会显示 idVendor (也称为 USB VID) 和 idProduct (也称为 USB PID)。 此图显示了连接到 USB 2.0 主控制器的 USB 2.0 设备的事件跟踪。
+对于 USB 2.0 驱动程序堆栈事件类型，" **帧详细信息** " 窗格显示 idVendor (也称为 usb VID) 和 idProduct (也称为 usb PID) 。 此图像显示连接到 USB 2.0 主机控制器的 USB 2.0 设备的事件跟踪。
 
 ![microsoft 网络监视器](images/vid-pid-usb2-0.png)
 
-对于 USB 3.0 驱动程序堆栈事件类型，**帧详细信息**窗格中未包含 idVendor 或 idPid。 信息是通过添加到新列可用**帧摘要**窗格此图中所示。
+对于 USB 3.0 驱动程序堆栈事件类型，" **帧详细信息** " 窗格不包含 IdVendor 或 idPid。 可以通过将新列添加到 " **帧摘要** " 窗格中来获取该信息，如图所示。
 
-请注意，这些新的列：
+请注意以下新列：
 
 * **USB 设备描述**
-* **USB 视频**
+* **USB Vid**
 * **USB Pid**
 * **USB 长度**
 * **USB 请求持续时间**
 
 ![microsoft 网络监视器](images/usb-3-netmon.png)
 
-所有 USB 事件跟踪 （USB 2.0 和 USB 3.0） 现在显示有关请求的信息为每个 URB 完成。 注意，在值，例如"41 255" **USB 长度**。 这些值表示在完成每个 URB 的实际传输长度，总请求长度 (原始 TransferBufferLength 指定的客户端驱动程序) 的上下文。 另请参阅 （以秒为单位） 所用的时间下，完成的请求**USB 请求持续时间**列。
+ (USB 2.0 和 USB 3.0) 的所有 USB 事件跟踪现在会在每个 URB 完成时显示有关请求的详细信息。 请注意，在 " **USB 长度**" 下的值为 "41 of 255"。 这些值指示每个 URB 完成时的实际传输长度，其中包含客户端驱动程序) 指定的请求总长度 (原始 TransferBufferLength 的上下文。 此外，还可以查看 " **USB 请求持续时间** " 列下请求完成所用的时间长度（以秒为单位）)  (。
 
-## <a name="adding-filters-to-the-display-filter-pane"></a>将筛选器添加到显示筛选器窗格
+## <a name="adding-filters-to-the-display-filter-pane"></a>将筛选器添加到 "显示筛选器" 窗格
 
-可以使用捕获筛选器以缩小特定方案的事件跟踪。 从 USB 2.0 和 USB 3.0 驱动程序堆栈，可以编写新的事件跟踪的筛选器：
+您可以使用捕获筛选器来缩小特定方案的事件跟踪。 可以从 USB 2.0 和 USB 3.0 驱动程序堆栈为事件跟踪编写新的筛选器：
 
 ```syntax
 USBIsError == 1      // Any error events from the USB drivers
 USBIsDisconnect == 1 // Show when any device disconnected
 ```
 
-可以筛选的所有列。 若要创建筛选器，右键单击一个单元格，然后选择**添加"&lt;列名&gt;"显示筛选器到**。 Netmon 创建基于其值和列名称的筛选器，并将其下添加**显示筛选器**窗格。
+所有列都可以进行筛选。 若要创建筛选器，请右键单击某个单元，然后选择 **" &lt; 列名称 &gt; " 以显示筛选器**。 Netmon 基于其值和列名创建筛选器，并将其添加到 " **显示筛选器** " 窗格下。
 
 ## <a name="related-topics"></a>相关主题
 
 [使用 USB ETW](using-usb-etw.md)  
-[USB Windows 事件跟踪](usb-event-tracing-for-windows.md)  
-[案例研究：使用 ETW 和 Netmon 未知的 USB 设备进行故障排除](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)  
+[Windows 的 USB 事件跟踪](usb-event-tracing-for-windows.md)  
+[案例研究：使用 ETW 和 Netmon 排查未知 USB 设备的问题](case-study--troubleshooting-an-unknown-usb-device-by-using-etw-and-netmon.md)  

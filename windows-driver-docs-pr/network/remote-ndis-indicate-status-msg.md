@@ -1,20 +1,20 @@
 ---
 title: REMOTE_NDIS_INDICATE_STATUS_MSG
-Description: 此消息是从远程 NDIS 设备发送到主机以指示设备的状态中的更改。
+description: 此消息将从远程 NDIS 设备发送到主机，以指示设备的状态发生更改。
 ms.assetid: 768aad13-3da6-436c-a7ba-d420af34643e
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26c27b3fb61aacdfc6e9463f47b8041e31a1731f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9074e785e15d668d3e75a63126d70eb4a72f29b5
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350883"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968890"
 ---
-# <a name="remotendisindicatestatusmsg"></a>远程\_NDIS\_指示\_状态\_消息
+# <a name="remote_ndis_indicate_status_msg"></a>远程 \_ NDIS \_ 指示 \_ 状态 \_ 消息
 
 
-此消息是从远程 NDIS 设备发送到主机以指示设备的状态中的更改。 远程\_NDIS\_指示\_状态\_MSG 消息还可以用来表示发生了错误事件，如无法识别的消息。 远程 NDIS 设备可能处于状态由远程 NDIS 初始化任何时候发送此消息。 为此邮件没有响应。
+此消息将从远程 NDIS 设备发送到主机，以指示设备的状态发生更改。 远程 \_ NDIS \_ 指示 \_ 状态 \_ 消息消息还可用于指示错误事件，例如无法识别的消息。 远程 NDIS 设备可以在任何时候发送此消息，因为它处于由远程 NDIS 初始化的状态。 此消息没有响应。
 
 <table>
 <colgroup>
@@ -25,10 +25,10 @@ ms.locfileid: "63350883"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -36,13 +36,13 @@ ms.locfileid: "63350883"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>MessageType</p></td>
-<td><p>指定发送消息的类型。 将设置为 0x00000007。</p></td>
+<td><p>指定要发送的消息的类型。 设置为0x00000007。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
 <td><p>MessageLength</p></td>
-<td><p>以字节为单位，指定该消息的开始的这封邮件的总长度。</p></td>
+<td><p>指定从消息开头开始的此消息的总长度（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
@@ -54,25 +54,25 @@ ms.locfileid: "63350883"
 <td><p>12</p></td>
 <td><p>4</p></td>
 <td><p>StatusBufferLength</p></td>
-<td><p>以字节为单位指定的状态数据的长度。</p></td>
+<td><p>指定状态数据的长度（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>16</p></td>
 <td><p>4</p></td>
 <td><p>StatusBufferOffset</p></td>
-<td><p>指定的字节偏移量，从一开始此消息，请为设备可能 Rndis_Diagnostic_Info 状态数据所在位置。</p></td>
+<td><p>指定设备指示 Rndis_Diagnostic_Info 状态数据位于此消息开头的字节偏移量。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-最常用的远程\_NDIS\_指示\_状态\_消息是指示 802.3 设备的链接的状态。 将 status 值为 RNDIS\_状态\_媒体\_CONNECT 指示从过渡断开连接 （例如没有 802.3 链接脉冲） 到已连接的状态 (检测到 pulse 802.3 链接)。 将 status 值为 RNDIS\_状态\_媒体\_断开连接指示从连接到断开连接状态的转换。 设备必须发送远程\_NDIS\_指示\_状态\_消息与下列任一值每次 802.3 链接状态发生更改。 没有状态缓冲区需要返回这些两个常见的指示。
+远程 NDIS 最常见的用途 \_ \_ 是指示 \_ 状态 \_ 消息，指示802.3 设备的链接的状态。 Status 值 RNDIS \_ status \_ MEDIA \_ CONNECT 指示从断开连接 (（例如，无 802.3 link 脉冲) 连接状态） (802.3 link 脉冲检测到) 。 "RNDIS \_ 状态 \_ 媒体断开连接" 状态值 \_ 指示从连接到断开状态的转换。 \_ \_ \_ \_ 每次802.3 链接状态发生更改时，设备必须发送远程 NDIS 指示状态消息，并显示其中一个值。 不需要状态缓冲区即可返回这两个常见的指示。
 
-在其中为主机的设备无法处理的消息的响应中发送此消息的特定情况下*状态*字段必须设置为 RNDIS\_状态\_无效\_数据和 Rndis\_诊断\_信息状态缓冲区格式，如下所示。
+在为响应设备无法处理的主机消息而发送此消息的特定情况下，" *状态* " 字段必须设置为 "RNDIS \_ 状态 \_ 无效 \_ 数据"，并且 RNDIS \_ 诊断 \_ 信息状态缓冲区的格式如下所示。
 
 <table>
 <colgroup>
@@ -83,10 +83,10 @@ ms.locfileid: "63350883"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -94,26 +94,26 @@ ms.locfileid: "63350883"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>DiagStatus</p></td>
-<td><p>包含有关与错误本身 (例如，RNDIS_STATUS_NOT_SUPPORTED) 的状态信息</p></td>
+<td><p>包含有关错误本身的状态信息 (例如，RNDIS_STATUS_NOT_SUPPORTED) </p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
 <td><p>ErrorOffset</p></td>
-<td><p>在其中检测到错误的原始消息中指定的从零开始的字节偏移量。</p></td>
+<td><p>指定原始消息中检测到错误的位置的从零开始的字节偏移量。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-如果由远程 NDIS 消息引起的错误条件 （例如，设备不能识别特定 RNDIS 消息），则设备应追加的原始消息，以上面定义的状态消息的末尾。
+如果错误条件是由远程 NDIS 消息引起的 (例如，设备无法识别特定的 RNDIS 消息) ，则设备应在上面定义的状态消息末尾追加原始消息。
 
-此消息用于报告错误条件仅在环境中的设备不能够生成包含相应的状态的响应消息。 相应的使用情况的示例包括：
+此消息仅用于在设备无法生成具有适当状态的响应消息时报告错误条件。 适当用法的示例如下：
 
--   在使用不受支持的消息类型接收一条消息。
+-   接收到消息类型不受支持的消息。
 
--   在收到[**远程\_NDIS\_数据包\_MSG** ](remote-ndis-packet-msg.md)不可接受的内容。
+-   接收到带有不可接受内容的 [**远程 \_ NDIS \_ 数据包 \_ 消息**](remote-ndis-packet-msg.md) 时。
 
 <a name="requirements"></a>要求
 ------------
@@ -126,11 +126,11 @@ ms.locfileid: "63350883"
 <tbody>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
+<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Rndis.h （包括 Rndis.h）</td>
+<td><p>标头</p></td>
+<td>Rndis (包含 Rndis) </td>
 </tr>
 </tbody>
 </table>

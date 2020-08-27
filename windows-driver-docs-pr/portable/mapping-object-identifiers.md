@@ -1,21 +1,21 @@
 ---
-Description: 映射对象标识符
+description: 映射对象标识符
 title: 映射对象标识符
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86d2edebc8fbd0ff7704cdb47c2d68d942d0f543
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 50431920ba55816acdc42b2b8d7b5ede6fbd1e37
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324483"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969552"
 ---
 # <a name="mapping-object-identifiers"></a>映射对象标识符
 
 
-映射函数**WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs**，处理到持久标识符的对象标识符的映射。 在 WPD 驱动程序模型中，对象标识符是为给定的设备会话才有效的标识符。 设备的所有会话是有效的永久标识符。
+Mapping 函数 **WpdBaseDriver：： OnGetObjectIDsFromPersistentUniqueIDs**处理对象标识符到永久性标识符的映射。 在 WPD 驱动程序模型中，对象标识符是仅对给定设备会话有效的标识符。 永久性标识符在所有设备会话中有效。
 
-以下内容摘自示例驱动程序包含的代码**WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs。**
+示例驱动程序的以下摘录包含**WpdBaseDriver：： OnGetObjectIDsFromPersistentUniqueIDs**的代码。
 
 ```ManagedCPlusPlus
 HRESULT WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs(
@@ -109,9 +109,9 @@ HRESULT WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs(
 }
 ```
 
-某些设备可能存储在对象中的永久标识符、 一些可能会生成基于哈希对象数据的永久标识符和其他人可能会将其对象标识符作为持久标识符 （因为它们将永远不会更改）。 WpdHelloWorldDriver 示例实现此后一种情况。
+某些设备可能会在对象中存储永久性标识符，某些设备可能会根据对象数据的哈希生成永久性标识符，而其他设备可能会将其对象标识符视为永久性标识符 (因为它们永远不会更改) 。 WpdHelloWorldDriver 示例实现此后一种情况。
 
-当客户端应用程序调用**IPortableDeviceContent::GetObjectIDsFromPersistentUniqueIDs**方法，该驱动程序，都依次调用**WpdBaseDriver::OnGetObjectIDsFromPersistentUniqueIDs**.
+当客户端应用程序调用 **IPortableDeviceContent：： GetObjectIDsFromPersistentUniqueIDs** 方法时，驱动程序依次调用 **WpdBaseDriver：： OnGetObjectIDsFromPersistentUniqueIDs**。
 
  
 

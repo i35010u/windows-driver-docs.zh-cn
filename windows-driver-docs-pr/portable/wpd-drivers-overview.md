@@ -1,25 +1,25 @@
 ---
-Description: WPD 驱动程序概述
+description: WPD 驱动程序概述
 title: WPD 驱动程序概述
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f150170c1681775deff98e6bf93c2e88162a47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc81b675eded446f766c06130275c7116b5d8dca
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370415"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969378"
 ---
 # <a name="wpd-drivers-overview"></a>WPD 驱动程序概述
 
 
-Windows 便携式设备 (WPD) 提供了基础结构，使存储各种媒体和非媒体内容的多功能设备。 多功能设备的一个示例是移动电话的包含内置缩放照相机 （数字照相机函数） 并支持音乐同步和播放 （便携式媒体播放器函数）。 此外，WPD 使这些设备可访问从基于 Windows 的计算机。
+Windows 便携式设备 (WPD) 提供一个基础结构，用于实现存储各种媒体和非媒体内容的多功能设备。 多功能设备的一个示例是包含内置缩放相机 (数字相机功能的手机号码) 并支持 (便携式 media player 函数) 进行音乐同步和播放。 此外，WPD 使这些设备从基于 Windows 的计算机上可访问。
 
-基于对象的设备驱动程序接口 (DDI) 使得具有收敛性的设备，最初侧重于智能存储设备，例如便携式媒体播放机、 数字静态相机和移动电话。 以及 DDI WPD 实现以下标准协议和传输的类驱动程序解决方案：
+基于对象的设备驱动程序接口 (DDI) 启用收敛性设备（最初集中于智能存储设备，如便携式媒体播放机、数字相机和移动电话）。 除了 DDI 以外，WPD 还为以下标准协议和传输实现了类驱动程序解决方案：
 
--   通过 USB、 IP 和蓝牙的图片传输协议 (PTP)
--   媒体传输协议 (MTP) 通过 USB、 IP 和蓝牙
--   通过 USB 大容量存储类 (MSC)
+-   图片传输协议 (通过 USB、IP 和蓝牙的 PTP) 
+-   媒体传输协议 (通过 USB、IP 和蓝牙进行的 MTP) 
+-   大容量存储类通过 USB (MSC) 
 
  
 

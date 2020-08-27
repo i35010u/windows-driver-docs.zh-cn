@@ -1,25 +1,25 @@
 ---
-Description: 重点介绍 Windows 10 中的通用串行总线（USB）的新功能和改进。
+description: 重点介绍 Windows 10 中通用串行总线 (USB) 的新增功能和改进。
 title: Windows 10-USB 的新增功能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 350ca79e1e23c2ad0be68f04d9df57ca2eebd5ca
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ecdece85c2228884c7673eb5c9f30b69ed7b80b7
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843581"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969054"
 ---
-# <a name="windows-10-whats-new-for-usb"></a>Windows 10： USB 的新增功能
+# <a name="windows-10-whats-new-for-usb"></a>Windows 10：USB 的新增功能
 
 
-本主题重点介绍 Windows 10 中的通用串行总线（USB）的新功能和改进。
+本主题重点介绍 Windows 10 中的通用串行总线 (USB) 的新增功能和改进。
 
--  **UCSI 驱动程序扩展**从 Windows 10 1809 版开始，添加了一个新的 UCSI （UcmUcsiCx）类扩展，该扩展以与传输无关的方式实现 UCSI 规范。 只需编写极少量的代码，驱动程序（即 UcmUcsiCx 的客户端）即可通过非 ACPI 传输来与 USB 类型 C 硬件通信。 本主题介绍 UCSI 类扩展提供的服务，以及客户端驱动程序的预期行为。
+-  **UCSI 驱动程序扩展** 从 Windows 10 1809 版开始，添加了一个适用于 UCSI ( # A0) 的新类扩展，该扩展以与传输无关的方式实现 UCSI 规范。 只需编写极少量的代码，驱动程序（即 UcmUcsiCx 的客户端）即可通过非 ACPI 传输来与 USB 类型 C 硬件通信。 本主题介绍 UCSI 类扩展提供的服务，以及客户端驱动程序的预期行为。
 
 -   **USB 类型-C 端口控制器接口** 
 
-    Windows 10 版本1703提供支持通用串行总线类型 C 端口控制器接口规范的类扩展（UcmTcpciCx）。 USB 类型 C 连接器驱动程序不需要保留任何内部的 PD/类型 C 状态。 
+    Windows 10 版本1703提供 ( # A0) 的类扩展，该扩展插件支持通用串行总线类型 C 端口控制器接口规范。 USB 类型 C 连接器驱动程序不需要保留任何内部的 PD/类型 C 状态。 
     管理 USB C 型连接器和 USB 电源输送 (PD) 状态机时存在的复杂性由系统处理。 你只需编写一个客户端驱动程序，以便通过该类扩展将硬件事件传送给系统即可。 
 
     [USB 类型 C 端口控制器接口驱动程序类扩展参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))
@@ -32,11 +32,11 @@ ms.locfileid: "72843581"
 
     [USB 双角色驱动程序堆栈体系结构](usb-dual-role-driver-stack-architecture.md)
 
-    [USB dual-role controller driver programming reference](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))（USB 双角色控制器驱动程序编程参考）
+    [USB 双角色控制器驱动程序编程参考](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628026(v=vs.85))
 
 -   **用于开发 USB 类型 C 连接器驱动程序的一组新的编程接口。**
 
-    此版本引入了对 usb 3.1 规范中定义的 USB 类型 C 的本机支持。 此功能可让设备使用可逆连接器、对称电缆、更快的充电和通过 USB 电缆运行的备用模式。 这些编程接口允许您为连接器（在本部分中称为客户端驱动程序）编写与 Microsoft 提供的类扩展模块通信的驱动程序： UcmCx 来处理与类型 C 连接器相关的方案，例如，哪些端口支持类型-C，支持电源交付的端口。
+    此版本引入了对 usb 3.1 规范中定义的 USB 类型 C 的本机支持。 此功能可让设备使用可逆连接器、对称电缆、更快的充电和通过 USB 电缆运行的备用模式。 通过这些编程接口，您可以在本部分中为连接器 (称为客户端驱动程序的驱动程序) 与 Microsoft 提供的类扩展模块通信： UcmCx 来处理与类型 C 连接器相关的方案，例如，哪些端口支持类型 C，哪些端口支持电源传送。
 
     [为 USB 类型 C 连接器开发 Windows 驱动程序](developing-windows-drivers-for-usb-type-c-connectors.md)
 
@@ -52,7 +52,7 @@ ms.locfileid: "72843581"
 
 -   **用于开发 USB 主机控制器驱动程序的一组新的编程接口。**
 
-    如果你的硬件不符合规范 xHCI 或正在写入虚拟主机控制器，则可以开发主机控制器，如通过 TCP 连接将 USB 流量路由到连接到设备的外围设备的控制器。 主机控制器驱动程序是 USB 主机控制器扩展的客户端，它是一个遵循框架类扩展模型的系统提供的驱动程序。 在[MICROSOFT USB 3.0 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ddi/index#usb-3-0-driver-stack)中，UCX 提供了帮助主机控制器驱动程序管理 USB 主机控制器设备的功能。
+    如果你的硬件不符合规范 xHCI 或正在写入虚拟主机控制器，则可以开发主机控制器，如通过 TCP 连接将 USB 流量路由到连接到设备的外围设备的控制器。 主机控制器驱动程序是 USB 主机控制器扩展的客户端，它是一个遵循框架类扩展模型的系统提供的驱动程序。 在 [MICROSOFT USB 3.0 驱动程序堆栈](https://docs.microsoft.com/windows-hardware/drivers/ddi/index#usb-3-0-driver-stack)中，UCX 提供了帮助主机控制器驱动程序管理 USB 主机控制器设备的功能。
 
     [为 USB 主控制器开发 Windows 驱动程序](developing-windows-drivers-for-usb-host-controllers.md)
 
@@ -60,11 +60,11 @@ ms.locfileid: "72843581"
 
 -   **用于开发 USB 函数控制器驱动程序的一组新的编程接口。**
 
-    可以编写与 USB 函数类扩展（UFX）通信的客户端驱动程序，并实现控制器特定的操作。 UFX 处理所有 USB 函数控制器通用的 USB 函数逻辑。
+    可以编写一个客户端驱动程序，该驱动程序与 USB 函数类扩展 (UFX) 并实现控制器特定的操作。 UFX 处理所有 USB 函数控制器通用的 USB 函数逻辑。
 
     [Windows 中的 USB 设备端驱动程序](usb-device-side-drivers-in-windows.md)
 
-    [UFX USB 函数客户端驱动程序使用的对象和句柄](ufx-objects-and-handles-used-by-a-usb-function-controller.md)
+    [USB 功能客户端驱动程序使用的 UFX 对象和句柄](ufx-objects-and-handles-used-by-a-usb-function-controller.md)
 
     [函数控制器客户端驱动程序的任务](function-client-driver.md)
 
@@ -76,11 +76,11 @@ ms.locfileid: "72843581"
 
     [用于支持专用充电器的 USB 筛选器驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188012(v=vs.85))
 
--   **改善了 USB CDC （串行）设备的体验。**
+-   **提高了 USB CDC (串行) 设备的体验。**
 
-    通过 Usbser 驱动程序，允许与 USB 通信设备类（类\_02 & 子类\_02）兼容的设备使用 Windows 10。 不再需要设备制造商编写自定义 INF 即可安装该驱动程序。
+    使用 Usbser.sys 驱动程序，允许与 USB 通信设备类兼容的设备 (类 \_ 02 & 子类 \_ 02) 使用 Windows 10。 不再需要设备制造商编写自定义 INF 即可安装该驱动程序。
 
-    [USB 串行驱动程序（Usbser）](usb-driver-installation-based-on-compatible-ids.md)
+    [USB 串行驱动程序 (Usbser.sys)](usb-driver-installation-based-on-compatible-ids.md)
 
  
 

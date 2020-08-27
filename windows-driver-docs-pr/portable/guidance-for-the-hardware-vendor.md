@@ -1,26 +1,26 @@
 ---
-Description: 硬件供应商指南
+description: 硬件供应商指南
 title: 硬件供应商指南
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 56f5dddc0b11c2139c132d0ac410d11b980c2316
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c38425e307d73a5701fe8a2133fbe921c3b21967
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378159"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969108"
 ---
 # <a name="guidance-for-the-hardware-vendor"></a>硬件供应商指南
 
 
-如果制造便携式设备，并需要与 Windows 建立连接，您具有以下选项：
+如果制造便携式设备并需要与 Windows 建立连接，则可以使用以下选项：
 
--   对于与非类协议的设备，提供 WPD 驱动程序。 例如，如果你的设备上 RS232 使用自定义协议与计算机进行通信，必须提供 WPD 驱动程序，以便 WPD 应用程序可以访问该设备。
--   对于便携式音乐播放机设备，实现类协议，例如 MTP 设备上。 这将使你能够与 WPD，而无需提供一个驱动程序 （因为 Microsoft 提供了一个） 兼容的设备。
--   对于数字静态相机实现 PTP/MTP 类协议。 MTP PTP，通过提供增强功能，因此较好的选择。 但是，出于兼容性原因，建议您 MTP 的实现是与 PTP 向后的兼容。
--   移动电话和其他多功能设备，实现类协议，如 MTP，在设备上。
+-   对于具有非类协议的设备，请提供 WPD 驱动程序。 例如，如果设备使用的自定义协议超过 RS232 来与计算机通信，则必须提供 WPD 驱动程序，以便 WPD 应用程序能够访问设备。
+-   对于便携式音乐播放机设备，请在设备上实现类协议，如 MTP。 这将使你的设备与 WPD 兼容，而无需提供驱动程序 (因为 Microsoft 提供了一个) 。
+-   对于数字相机，实现类协议，如 PTP/MTP。 MTP 提供了对 PTP 的增强功能，因此是最佳选择。 然而，出于兼容性原因，建议你的 MTP 实现与 PTP 向后兼容。
+-   对于移动电话和其他多功能设备，请在设备上实现类协议，如 MTP。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 [**WPD 驱动程序概述**](wpd-drivers-overview.md)

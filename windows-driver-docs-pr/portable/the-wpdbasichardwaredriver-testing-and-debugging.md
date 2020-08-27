@@ -1,14 +1,14 @@
 ---
-Description: 测试和调试示例驱动程序
+description: 测试和调试示例驱动程序
 title: 测试和调试示例驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54429252d457fa8fe3d9695302c04161a0274bef
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 7ca1fd84217e102ceaf5fce006ffa6c1187cec3b
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85967860"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969444"
 ---
 # <a name="testing-and-debugging-the-sample-driver"></a>测试和调试示例驱动程序
 
@@ -26,27 +26,27 @@ WDK 包含三个可用于测试和调试 WPD 驱动程序的工具。 下表描�
 
  
 
-有关这些工具及其用法的详细信息，请参阅 WDK 文档中的[WPD 驱动程序开发工具](familiarizing-yourself-with-the-sample-driver.md)。
+有关这些工具及其用法的详细信息，请参阅 WDK 文档中的 [WPD 驱动程序开发工具](familiarizing-yourself-with-the-sample-driver.md) 。
 
 ## <a name="span-idtracking_the_sensor_reading_event_by_using_wpdinfoexespanspan-idtracking_the_sensor_reading_event_by_using_wpdinfoexespantracking-the-sensor-reading-event-by-using-wpdinfoexe"></a><span id="tracking_the_sensor_reading_event_by_using_wpdinfo.exe"></span><span id="TRACKING_THE_SENSOR_READING_EVENT_BY_USING_WPDINFO.EXE"></span>使用 WpdInfo.exe 跟踪传感器读取事件
 
 
-在开始*WpdInfo.exe*之前，请更新 WpdInfo 文件，其中包含将传感器读数的 PROPERTYKEYS \_ 和传感器 \_ 更新 \_ 间隔属性映射到相应友好字符串的条目。
+在开始 *WpdInfo.exe*之前，请更新 WpdInfo 文件，其中包含将传感器读数的 PROPERTYKEYS \_ 和传感器 \_ 更新 \_ 间隔属性映射到相应友好字符串的条目。
 
 ```ManagedCPlusPlus
 {a7ef4367-6550-4055-b66f-be6fdacf4e9f}.2, SENSOR_READING, VT_UI8
 {a7ef4367-6550-4055-b66f-be6fdacf4e9f}.3, SENSOR_UPDATE_INTERVAL, VT_UI4
 ```
 
-WpdInfo 文件在与*WpdInfo.exe*相同的文件夹中。 如果此文件不存在，请运行*WpdInfo.exe*一次来生成该文件。
+WpdInfo 文件在与 *WpdInfo.exe*相同的文件夹中。 如果此文件不存在，请运行 *WpdInfo.exe* 一次来生成该文件。
 
-当你开始*WpdInfo.exe*时，它会提示你从已安装 WPD 设备的列表中选择一个便携式设备。 选择传感器设备后，该工具会在其窗口的下窗格中记录事件。
+当你开始 *WpdInfo.exe*时，它会提示你从已安装 WPD 设备的列表中选择一个便携式设备。 选择传感器设备后，该工具会在其窗口的下窗格中记录事件。
 
 ![wpd 信息工具](images/wpdinfo_temphumidity_object.png)
 
 在上一示例中触发传感器读数事件时，以下信息为 true：
 
--   传感器读数传感器读数 \_ 为2170720417。 此值指示2的传感器标识符（对应于 Sensiron 温度和湿度传感器）、计数为1个元素、每个元素7个字节、温度为72.0 华氏度和41.7% 的相对湿度。
+-   传感器读数传感器读数 \_ 为2170720417。 此值指示 2 (的传感器标识符，该标识符对应于 Sensiron 温度和湿度传感器) 、1个元素的计数、每个元素7个字节的大小、72.0 度的温度以及41.7% 的相对湿度。
 -   其 interval 属性 "传感器 \_ 更新 \_ 间隔" 设置为2000。
 
 ## <a name="span-idupdating_the_interval_property_by_using_wpdinfoexespanspan-idupdating_the_interval_property_by_using_wpdinfoexespanupdating-the-interval-property-by-using-wpdinfoexe"></a><span id="updating_the_interval_property_by_using_wpdinfo.exe"></span><span id="UPDATING_THE_INTERVAL_PROPERTY_BY_USING_WPDINFO.EXE"></span>使用 WpdInfo.exe 更新 Interval 属性
@@ -55,7 +55,7 @@ WpdInfo 文件在与*WpdInfo.exe*相同的文件夹中。 如果此文件不存�
 选择视差 BS2 传感器设备后，可以使用该工具将间隔属性（传感器 \_ 更新 \_ 间隔）从其默认值 2000 ms 更改为其他值，介于2到60秒之间。
 
 1.  第一个步骤要求从 "枚举" 窗格中选择 TempHumidity 函数对象，以显示该对象的所有属性值。 可以在最左侧的窗格中找到此对象作为设备对象的直接子对象。
-2.  接下来，单击 "**传感器 \_ 更新 \_ 间隔**"，这将打开 "**编辑**" 对话框，你可以在其中将新值键入为 VT \_ UI4 类型。
+2.  接下来，单击 " **传感器 \_ 更新 \_ 间隔**"，这将打开 " **编辑** " 对话框，你可以在其中将新值键入为 VT \_ UI4 类型。
 
 ![wpd 信息工具](images/wpdinfo_interval.png)
 
@@ -64,24 +64,24 @@ WpdInfo 文件在与*WpdInfo.exe*相同的文件夹中。 如果此文件不存�
 ## <a name="span-iddebugging_the_driver_with_visual_studio_8spanspan-iddebugging_the_driver_with_visual_studio_8spanspan-iddebugging_the_driver_with_visual_studio_8spandebugging-the-driver-with-visual-studio-8"></a><span id="Debugging_the_Driver_with_Visual_Studio_8"></span><span id="debugging_the_driver_with_visual_studio_8"></span><span id="DEBUGGING_THE_DRIVER_WITH_VISUAL_STUDIO_8"></span>用 Visual Studio 8 调试驱动程序
 
 
-WPD 驱动程序基于 Windows 驱动程序框架（WDF） UMDF 平台。 与内核模式驱动程序相比，UMDF 驱动程序提供更强的稳定性和安全性，以及性能可比较。 而且，UMDF 驱动程序允许使用用户模式调试器，如 Visual Studio 8。 在用户模式下调试驱动程序往往比在内核模式下调试更快，因为错误只影响当前进程而不影响整个计算机。
+WPD 驱动程序基于 Windows 驱动程序框架 (WDF) UMDF 平台。 与内核模式驱动程序相比，UMDF 驱动程序提供更强的稳定性和安全性，以及性能可比较。 而且，UMDF 驱动程序允许使用用户模式调试器，如 Visual Studio 8。 在用户模式下调试驱动程序往往比在内核模式下调试更快，因为错误只影响当前进程而不影响整个计算机。
 
 安装驱动程序后，可以通过执行以下步骤，在 Visual Studio 8 中创建调试项目：
 
-1.  以提升的权限（以管理员身份运行）打开 Visual Studio 8，并 &lt; &gt; 从现有代码路径导航到 "文件" "新建项目"。
+1.  以提升的权限打开 Visual Studio 8 (以管理员身份运行) 并 &lt; &gt; 从现有代码路径导航到 "新建项目"。
     **注意**   必须以提升的权限打开 Visual Studio 8，因为 LocalService 帐户需要这些权限。 WUDFHost 进程在 LocalService 帐户中运行。 使用 Visual Studio 8 可以调试驱动程序项目。
 
      
 
-2.  按照**欢迎使用 "从现有代码文件创建项目" 向导**中的步骤进行操作。 请确保指定语言、驱动程序源文件的位置、项目名称，等等。
+2.  按照 **欢迎使用 "从现有代码文件创建项目" 向导**中的步骤进行操作。 请确保指定语言、驱动程序源文件的位置、项目名称，等等。
 3.  打开新创建的项目。
-4.  在 "**调试"/"附加到进程**" 菜单上的 "**附加到进程**" 对话框中显示的 "**可用进程**" 列表中，选择 " *WudfHost.exe* "。 如果有多个*WudfHost.exe*过程的实例，请选择已加载驱动程序 DLL 的实例。
+4.  在 "**调试"/"附加到进程**" 菜单上的 "**附加到进程**" 对话框中显示的 "**可用进程**" 列表中，选择 " *WudfHost.exe* "。 如果有多个 *WudfHost.exe* 过程的实例，请选择已加载驱动程序 DLL 的实例。
 5.  完成前面的步骤后，可以在源代码中设置断点并调试驱动程序。
 
 ## <a name="span-idtips_for_debugging_wpd_driver_initialization_codespanspan-idtips_for_debugging_wpd_driver_initialization_codespanspan-idtips_for_debugging_wpd_driver_initialization_codespantips-for-debugging-wpd-driver-initialization-code"></a><span id="Tips_for_Debugging_WPD_Driver_Initialization_Code"></span><span id="tips_for_debugging_wpd_driver_initialization_code"></span><span id="TIPS_FOR_DEBUGGING_WPD_DRIVER_INITIALIZATION_CODE"></span>调试 WPD 驱动程序初始化代码的技巧
 
 
-WPD 驱动程序的初始化代码（例如，在打包到 WDK 的两个 WPD 示例驱动程序的**WpdBaseDriver：： Initialize**中找到的代码）在安装驱动程序以调试此初始化代码时运行，你应该使用 Windows 驱动程序工具包随附的*您尚未 wdfverifier*工具。 此工具使用户模式调试器可以在主机进程启动时自动启动，也可以在驱动程序加载时自动启动。
+WPD 驱动程序的初始化代码（例如，在打包到 WDK 的两个 WPD 示例驱动程序的 **WpdBaseDriver：： Initialize** 中找到的代码）在安装驱动程序以调试此初始化代码时运行，你应该使用 Windows 驱动程序工具包随附的 *您尚未 wdfverifier* 工具。 此工具使用户模式调试器可以在主机进程启动时自动启动，也可以在驱动程序加载时自动启动。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 

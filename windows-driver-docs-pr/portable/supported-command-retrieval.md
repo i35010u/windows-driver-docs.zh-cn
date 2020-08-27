@@ -1,19 +1,19 @@
 ---
-Description: 支持的命令检索
+description: 支持的命令检索
 title: 支持的命令检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cee426cc7ae542818325e98cbf3411e368f2270a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6416ac29fdbf1f7b7d95e20db1e55ac48856d177
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376211"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968630"
 ---
 # <a name="supported-command-retrieval"></a>支持的命令检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetSupportedCommands**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetSupportedCommands**中的方法示例驱动程序。 后一种方法创建**IPortableDeviceKeyCollection**驱动程序将支持的命令列表存储到其中的对象。 对于示例驱动程序，四个类别有 22 受支持的命令。
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetSupportedCommands** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetSupportedCommands** 方法的调用。 后一种方法会创建一个 **IPortableDeviceKeyCollection** 对象，驱动程序将在其中存储该驱动程序所支持的命令的列表。 对于示例驱动程序，在四个类别中提供了22个受支持的命令。
 
 ```ManagedCPlusPlus
 const PROPERTYKEY g_SupportedCommands[] =
@@ -50,7 +50,7 @@ const PROPERTYKEY g_SupportedCommands[] =
 };
 ```
 
-中的以下节选*WpdCapabilities.cpp*文件包含的代码**OnGetSupportedCommands**方法。
+以下来自 *WpdCapabilities* 文件的摘录包含 **OnGetSupportedCommands** 方法的代码。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetSupportedCommands(

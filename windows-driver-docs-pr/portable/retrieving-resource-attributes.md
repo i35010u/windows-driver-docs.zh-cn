@@ -1,19 +1,19 @@
 ---
-Description: 检索资源特性
+description: 检索资源特性
 title: 检索资源特性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2df0c06a25c298f8bb1fcd8fff03547c86d7cde1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8aaf0561202d4117346d45d09b307dd75aa8555e
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376228"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969462"
 ---
 # <a name="retrieving-resource-attributes"></a>检索资源特性
 
 
-当应用程序需要检索一组给定的资源支持的属性时，它将调用**IPortableDeviceResources::GetResourceAttributes**方法并传递一个字符串，指定的标识符相关资源。 此 API 调用，进而触发**WpdObjectResources::OnGetResourceAttributes**命令处理程序中的示例驱动程序。 此方法创建**IPortableDeviceValues**它将资源支持的每个属性的 PROPERTYKEY/PROPVARIANT 对插入到其中的对象。
+当应用程序需要检索给定资源支持的属性列表时，它会调用 **IPortableDeviceResources：： GetResourceAttributes** 方法，并传递一个字符串，该字符串指定了相关资源的标识符。 此 API 调用反过来会触发示例驱动程序中的 **WpdObjectResources：： OnGetResourceAttributes** 命令处理程序。 此方法将创建一个 **IPortableDeviceValues** 对象，该对象将为资源支持的每个属性插入 PROPERTYKEY/PROPVARIANT 对。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectResources::OnGetResourceAttributes(

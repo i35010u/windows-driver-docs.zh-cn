@@ -1,60 +1,60 @@
 ---
-Description: 对功能命令 （WpdBasicHardwareDriver 示例） 的支持
-title: 对功能命令 （WpdBasicHardwareDriver 示例） 的支持
+description: 支持 (WpdBasicHardwareDriver 示例) 的功能命令
+title: 支持 (WpdBasicHardwareDriver 示例) 的功能命令
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c40f06cebbc17e6d45918cb502b4e4fc6b2930
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 956140d9fba7f680d1c2edf6da5cc36d9743f265
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387301"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969450"
 ---
-# <a name="support-for-capability-commands-wpdbasichardwaredriver-sample"></a>对功能命令 （WpdBasicHardwareDriver 示例） 的支持
+# <a name="support-for-capability-commands-wpdbasichardwaredriver-sample"></a>支持 (WpdBasicHardwareDriver 示例) 的功能命令
 
 
-示例驱动程序支持十个功能命令。 这些命令处理最初由**WpdCapabilities::DispatchMessage**方法，反过来，将调用相应的命令处理程序。 **DispatchMessage**方法和单个处理程序中找到*WpdCapabilities.cpp*文件。
+示例驱动程序支持十个功能命令。 这些命令最初由 **WpdCapabilities：:D ispatchmessage** 方法进行处理，该方法反过来会调用相应的命令处理程序。 在*WpdCapabilities*文件中可以找到**DispatchMessage**方法和单个处理程序。
 
-下表中的信息描述了每个受支持的属性命令处理程序的名称以及该**DispatchMessage**处理给定的命令时调用。
+下表中的信息介绍了每个受支持的属性命令，以及在处理给定命令时 **DispatchMessage** 调用的处理程序的名称。
 
-| Command                                                            | 处理程序                        | 描述                                                                                                                                     |
+| Command                                                            | Handler                        | 说明                                                                                                                                     |
 |--------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| WPD\_命令\_功能\_获取\_支持\_命令               | OnGetSupportedCommands         | 应用程序尝试检索的设备支持的命令集时，发出。                                           |
-| WPD\_命令\_功能\_获取\_命令\_选项                  | OnGetCommandOptions            | 应用程序尝试检索受给定命令的选项时，发出。                                              |
-| WPD\_命令\_功能\_获取\_支持\_功能\_类别 | OnGetFunctionalCategories      | 应用程序尝试检索的设备支持的功能类别组时，发出。                              |
-| WPD\_命令\_功能\_获取\_功能\_对象               | OnGetFunctionalObjects         | 应用程序尝试检索受给定功能分类的函数对象的组时，发出。                |
-| WPD\_命令\_功能\_获取\_支持\_内容\_类型         | OnGetSupportedContentTypes     | 应用程序尝试检索给定功能分类支持的内容类型时，发出。                            |
-| WPD\_命令\_功能\_获取\_支持\_格式                | OnGetSupportedFormats          | 当应用程序尝试检索组的支持给定的内容类型的格式时发出。                                  |
-| WPD\_命令\_功能\_获取\_支持\_格式\_属性     | OnGetSupportedFormatProperties | 应用程序尝试检索给定格式支持的属性集时，发出。                                     |
-| WPD\_命令\_功能\_获取\_FIXED\_属性\_属性       | OnGetFixedPropertyAttributes   | 当应用程序尝试检索的属性完全相同 （或固定） 的属性集时，发出针对给定格式的所有对象。 |
-| WPD\_命令\_功能\_获取\_事件\_选项                    | OnGetEventOptions              | 应用程序尝试检索与给定的事件相关联的选项时，发出。                                             |
-| WPD\_命令\_功能\_获取\_支持\_事件                 | OnGetEventOptions              | 当应用程序尝试检索一组支持的设备的事件时发出。                                               |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 命令               | OnGetSupportedCommands         | 当应用程序尝试检索设备支持的一组命令时发出。                                           |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 命令 \_ 选项                  | OnGetCommandOptions            | 当应用程序尝试检索给定命令支持的选项时发出。                                              |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 受支持的 \_ 功能 \_ 类别 | OnGetFunctionalCategories      | 当应用程序尝试检索设备支持的功能类别集时发出。                              |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 功能 \_ 对象               | OnGetFunctionalObjects         | 当应用程序尝试检索给定功能类别所支持的一组功能对象时发出。                |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 受支持的 \_ 内容 \_ 类型         | OnGetSupportedContentTypes     | 当应用程序尝试检索给定功能类别所支持的内容类型时发出。                            |
+| WPD \_ 命令 \_ 功能 \_ 获得 \_ 支持的 \_ 格式                | OnGetSupportedFormats          | 当应用程序尝试检索给定内容类型支持的一组格式时发出。                                  |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 格式 \_ 属性     | OnGetSupportedFormatProperties | 当应用程序尝试检索给定格式支持的属性集时发出。                                     |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 固定 \_ 属性 \_ 特性       | OnGetFixedPropertyAttributes   | 当应用程序尝试检索与给定格式的所有对象 (或固定) 相同的属性属性集时发出。 |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 事件 \_ 选项                    | OnGetEventOptions              | 当应用程序尝试检索与给定事件关联的选项时发出。                                             |
+| WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 事件                 | OnGetEventOptions              | 当应用程序尝试检索设备支持的一组事件时发出。                                               |
 
  
 
-示例驱动程序，该代码仍然保持不变以与以下命令相关联的处理程序：
+对于示例驱动程序，代码在与以下命令相关联的处理程序中保持不变：
 
--   WPD\_命令\_功能\_获取\_命令\_选项
--   WPD\_命令\_功能\_获取\_支持\_格式\_属性
--   WPD\_命令\_功能\_获取\_FIXED\_属性\_属性
--   WPD\_命令\_功能\_获取\_支持\_格式\_属性
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 命令 \_ 选项
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 格式 \_ 属性
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 固定 \_ 属性 \_ 特性
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 格式 \_ 属性
 
-但是，在代码中修改以下处理程序：
+但是，为以下处理程序修改了代码：
 
--   WPD\_命令\_功能\_获取\_支持\_命令
--   WPD\_命令\_功能\_获取\_支持\_功能\_类别
--   WPD\_命令\_功能\_获取\_功能\_对象
--   WPD\_命令\_功能\_获取\_支持\_内容\_类型
--   WPD\_命令\_功能\_获取\_支持\_格式
--   WPD\_命令\_功能\_获取\_支持\_事件
--   WPD\_命令\_功能\_获取\_事件\_选项
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 命令
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 受支持的 \_ 功能 \_ 类别
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 功能 \_ 对象
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 受支持的 \_ 内容 \_ 类型
+-   WPD \_ 命令 \_ 功能 \_ 获得 \_ 支持的 \_ 格式
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 事件
+-   WPD \_ 命令 \_ 功能 \_ 获取 \_ 事件 \_ 选项
 
-## <a name="span-idwpdcommandcapabilitiesgetsupportedcommandsspanspan-idwpdcommandcapabilitiesgetsupportedcommandsspanwpdcommandcapabilitiesgetsupportedcommands"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS"></span><span id="wpd_command_capabilities_get_supported_commands"></span>WPD\_命令\_功能\_获取\_支持\_命令
+## <a name="span-idwpd_command_capabilities_get_supported_commandsspanspan-idwpd_command_capabilities_get_supported_commandsspanwpd_command_capabilities_get_supported_commands"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_COMMANDS"></span><span id="wpd_command_capabilities_get_supported_commands"></span>WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 命令
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetSupportedCommands**处理程序以响应 WPD\_命令\_功能\_获取\_支持\_命令的命令。 处理程序，反过来，返回有关受支持的命令标识符的数组。
+驱动程序调用 **WpdObjectCapabilities：： OnGetSupportedCommands** 处理程序来响应 WPD \_ 命令功能 " \_ \_ 获取支持的命令" \_ \_ 命令。 然后，处理程序返回支持的命令的标识符数组。
 
-虽然它已不需要修改该处理程序，已更新的开头显示的受支持的命令数组所要*WpdCapabilities.cpp*文件。 这些修改需要执行删除的对象资源类别的命令，因为传感器设备和驱动程序都不支持资源：
+尽管不需要修改处理程序，但需要更新出现在 *WpdCapabilities* 文件开头的支持命令的数组。 这些修改引起删除命令的对象资源类别，因为传感器设备和驱动程序都不支持资源：
 
 ```cpp
 const PROPERTYKEY g_SupportedCommands[] =
@@ -82,12 +82,12 @@ const PROPERTYKEY g_SupportedCommands[] =
 };
 ```
 
-## <a name="span-idwpdcommandcapabilitiesgetsupportedfunctionalcategoriesspanspan-idwpdcommandcapabilitiesgetsupportedfunctionalcategoriesspanwpdcommandcapabilitiesgetsupportedfunctionalcategories"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES"></span><span id="wpd_command_capabilities_get_supported_functional_categories"></span>WPD\_命令\_功能\_获取\_支持\_功能\_类别
+## <a name="span-idwpd_command_capabilities_get_supported_functional_categoriesspanspan-idwpd_command_capabilities_get_supported_functional_categoriesspanwpd_command_capabilities_get_supported_functional_categories"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FUNCTIONAL_CATEGORIES"></span><span id="wpd_command_capabilities_get_supported_functional_categories"></span>WPD \_ 命令 \_ 功能 \_ 获取 \_ 受支持的 \_ 功能 \_ 类别
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetFunctionalCategories**处理程序以响应 WPD\_命令\_功能\_获取\_支持\_功能\_类别命令。 处理程序，反过来，返回有关受支持的类别的标识符的数组。
+驱动程序调用 **WpdObjectCapabilities：： OnGetFunctionalCategories** 处理程序来响应 WPD \_ 命令功能 " \_ \_ 获取支持 \_ 的 \_ 功能 \_ 类别" 命令。 然后，处理程序返回支持的类别的标识符数组。
 
-虽然它已不需要修改该处理程序，已更新的开头显示的受支持的类别数组所要*WpdCapabilities.cpp*文件。 删除存储类别并将它替换传感器类别，需要执行以下修改：
+尽管不需要修改处理程序，但需要更新出现在 *WpdCapabilities* 文件开头的支持类别的数组。 这些修改引起删除存储类别，并将其替换为传感器类别：
 
 ```cpp
 const GUID g_SupportedFunctionalCategories[] =
@@ -97,14 +97,14 @@ const GUID g_SupportedFunctionalCategories[] =
 };
 ```
 
-示例驱动程序定义自定义功能类别 GUID (功能\_类别\_传感器\_示例) 来描述传感器功能对象。
+示例驱动程序定义了一个自定义功能类别 GUID (功能 \_ 类别 \_ 传感器 \_ 示例) 描述传感器功能对象。
 
-## <a name="span-idwpdcommandcapabilitiesgetfunctionalobjectsspanspan-idwpdcommandcapabilitiesgetfunctionalobjectsspanwpdcommandcapabilitiesgetfunctionalobjects"></a><span id="WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS"></span><span id="wpd_command_capabilities_get_functional_objects"></span>WPD\_命令\_功能\_获取\_功能\_对象
+## <a name="span-idwpd_command_capabilities_get_functional_objectsspanspan-idwpd_command_capabilities_get_functional_objectsspanwpd_command_capabilities_get_functional_objects"></a><span id="WPD_COMMAND_CAPABILITIES_GET_FUNCTIONAL_OBJECTS"></span><span id="wpd_command_capabilities_get_functional_objects"></span>WPD \_ 命令 \_ 功能 \_ 获取 \_ 功能 \_ 对象
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetFunctionalObjects**处理程序以响应 WPD\_命令\_功能\_获取\_功能\_对象的命令。 处理程序，反过来，返回受支持的功能对象的标识符的数组。
+驱动程序调用 **WpdObjectCapabilities：： OnGetFunctionalObjects** 处理程序来响应 WPD \_ 命令 \_ 功能 \_ 获取 \_ 功能 \_ 对象命令。 然后，处理程序返回受支持的功能对象的标识符数组。
 
-对修改**OnGetFunctionalObjects**包含不再支持的存储对象，这不会包括在 WpdBasicHardwareDriver，以及增加对传感器对象支持的处理程序：
+对 **OnGetFunctionalObjects** 处理程序的修改包含删除对存储对象的支持，而不包括在 WpdBasicHardwareDriver 中，并且添加了对传感器对象的支持：
 
 ```cpp
 HRESULT WpdCapabilities::OnGetFunctionalObjects(
@@ -184,12 +184,12 @@ HRESULT WpdCapabilities::OnGetFunctionalObjects(
 }
 ```
 
-## <a name="span-idwpdcommandcapabilitiesgetsupportedcontenttypesspanspan-idwpdcommandcapabilitiesgetsupportedcontenttypesspanwpdcommandcapabilitiesgetsupportedcontenttypes"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES"></span><span id="wpd_command_capabilities_get_supported_content_types"></span>WPD\_命令\_功能\_获取\_支持\_内容\_类型
+## <a name="span-idwpd_command_capabilities_get_supported_content_typesspanspan-idwpd_command_capabilities_get_supported_content_typesspanwpd_command_capabilities_get_supported_content_types"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_CONTENT_TYPES"></span><span id="wpd_command_capabilities_get_supported_content_types"></span>WPD \_ 命令 \_ 功能 \_ 获取 \_ 受支持的 \_ 内容 \_ 类型
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetSupportedContentTypes**处理程序以响应 WPD\_命令\_功能\_获取\_支持\_内容\_类型命令。 因为传感器设备不支持的所有内容类型，此处理程序返回一个空集合。
+驱动程序调用 **WpdObjectCapabilities：： OnGetSupportedContentTypes** 处理程序来响应 WPD \_ 命令功能 " \_ \_ 获取支持 \_ 的 \_ 内容 \_ 类型" 命令。 由于传感器设备不支持任何内容类型，因此此处理程序返回一个空集合。
 
-对修改**OnGetSupportedContentTypes**处理程序包含 WpdHelloWorldSample 驱动程序的文档和文件夹的内容类型添加到返回的集合中删除代码：
+对 **OnGetSupportedContentTypes** 处理程序的修改包含删除 WpdHelloWorldSample 驱动程序中的代码，将文档和文件夹内容类型添加到返回的集合：
 
 ```cpp
 HRESULT WpdCapabilities::OnGetSupportedContentTypes(
@@ -239,12 +239,12 @@ HRESULT WpdCapabilities::OnGetSupportedContentTypes(
 }
 ```
 
-## <a name="span-idwpdcommandcapabilitiesgetsupportedformatsspanspan-idwpdcommandcapabilitiesgetsupportedformatsspanwpdcommandcapabilitiesgetsupportedformats"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS"></span><span id="wpd_command_capabilities_get_supported_formats"></span>WPD\_命令\_功能\_获取\_支持\_格式
+## <a name="span-idwpd_command_capabilities_get_supported_formatsspanspan-idwpd_command_capabilities_get_supported_formatsspanwpd_command_capabilities_get_supported_formats"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_FORMATS"></span><span id="wpd_command_capabilities_get_supported_formats"></span>WPD \_ 命令 \_ 功能 \_ 获得 \_ 支持的 \_ 格式
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetSupportedFormats**处理程序以响应 WPD\_命令\_功能\_获取\_支持\_格式命令。 传感器设备不支持的所有内容类型，因为存在会被不受支持的格式。 因此，此处理程序也会返回一个空集合。
+驱动程序调用 **WpdObjectCapabilities：： OnGetSupportedFormats** 处理程序来响应 WPD \_ 命令功能 " \_ \_ 获取支持的格式" \_ \_ 命令。 由于传感器设备不支持任何内容类型，因此不支持任何格式。 因此，此处理程序还会返回一个空集合。
 
-对修改**OnGetSupportedContentTypes**处理程序需要在添加到集合中的文本格式的 WpdHelloWorldSample 驱动程序中删除该代码。 文档内容类型已支持文本格式：
+对 **OnGetSupportedContentTypes** 处理程序的修改涉及到删除 WpdHelloWorldSample 驱动程序中将文本格式添加到集合的代码。 文档内容类型支持文本格式：
 
 ```cpp
 HRESULT WpdCapabilities::OnGetSupportedFormats(
@@ -290,12 +290,12 @@ HRESULT WpdCapabilities::OnGetSupportedFormats(
 }
 ```
 
-## <a name="span-idwpdcommandcapabilitiesgetsupportedeventsspanspan-idwpdcommandcapabilitiesgetsupportedeventsspanwpdcommandcapabilitiesgetsupportedevents"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS"></span><span id="wpd_command_capabilities_get_supported_events"></span>WPD\_命令\_功能\_获取\_支持\_事件
+## <a name="span-idwpd_command_capabilities_get_supported_eventsspanspan-idwpd_command_capabilities_get_supported_eventsspanwpd_command_capabilities_get_supported_events"></a><span id="WPD_COMMAND_CAPABILITIES_GET_SUPPORTED_EVENTS"></span><span id="wpd_command_capabilities_get_supported_events"></span>WPD \_ 命令 \_ 功能 \_ 获取 \_ 支持的 \_ 事件
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetSupportedEvents**处理程序以响应 WPD\_命令\_功能\_获取\_支持\_事件命令。 因为传感器设备支持自定义传感器读数已更新的事件 (事件\_传感器\_读取\_更新)，需要更新的源文件。
+驱动程序调用 **WpdObjectCapabilities：： OnGetSupportedEvents** 处理程序来响应 WPD \_ 命令功能 " \_ \_ 获取支持的事件" \_ \_ 命令。 由于传感器设备支持自定义的传感器读取更新事件 (事件 \_ 感应器 \_ 读取 \_ 更新的事件) ，因此有必要更新源文件。
 
-第一次修改涉及到添加 g\_SupportedEvents 数组，其中包含一个支持事件的标识符：
+第一次修改涉及到添加一个 g \_ SupportedEvents 数组，其中包含一个受支持事件的标识符：
 
 ```cpp
 const GUID g_SupportedEvents[] =
@@ -304,7 +304,7 @@ const GUID g_SupportedEvents[] =
 };
 ```
 
-第二个修改为**OnGetSupportedEvents**处理程序中，涉及到添加填充支持的事件集合的代码：
+第二次修改到 **OnGetSupportedEvents** 处理程序，涉及添加填充支持的事件集合的代码：
 
 ```cpp
 HRESULT WpdCapabilities::OnGetSupportedEvents(
@@ -363,10 +363,10 @@ HRESULT WpdCapabilities::OnGetSupportedEvents(
 }
 ```
 
-## <a name="span-idwpdcommandcapabilitiesgeteventoptionsspanspan-idwpdcommandcapabilitiesgeteventoptionsspanwpdcommandcapabilitiesgeteventoptions"></a><span id="WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS"></span><span id="wpd_command_capabilities_get_event_options"></span>WPD\_命令\_功能\_获取\_事件\_选项
+## <a name="span-idwpd_command_capabilities_get_event_optionsspanspan-idwpd_command_capabilities_get_event_optionsspanwpd_command_capabilities_get_event_options"></a><span id="WPD_COMMAND_CAPABILITIES_GET_EVENT_OPTIONS"></span><span id="wpd_command_capabilities_get_event_options"></span>WPD \_ 命令 \_ 功能 \_ 获取 \_ 事件 \_ 选项
 
 
-驱动程序调用**WpdObjectCapabilities::OnGetEventOptions**处理程序以响应 WPD\_命令\_功能\_获取\_事件\_选项命令。 传感器设备支持更新读取事件，它是广播的事件，因为它是需要添加一个标志，指示，此选项 (WPD\_事件\_选项\_IS\_广播\_事件) 是 **，则返回 TRUE**:
+驱动程序调用 **WpdObjectCapabilities：： OnGetEventOptions** 处理程序来响应 WPD \_ 命令 \_ 功能 \_ 获取 \_ 事件 \_ 选项命令。 由于传感器设备支持读取更新事件（这是一个广播事件），因此有必要添加一个标志，指示此选项 (WPD \_ 事件 \_ 选项 \_ 是 \_ 广播 \_ 事件) 为 **TRUE**：
 
 ```cpp
 HRESULT WpdCapabilities::OnGetEventOptions(
@@ -424,7 +424,7 @@ HRESULT WpdCapabilities::OnGetEventOptions(
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

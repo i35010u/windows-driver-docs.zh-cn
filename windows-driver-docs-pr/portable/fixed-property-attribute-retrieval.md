@@ -1,19 +1,19 @@
 ---
-Description: 固定的属性-特性检索
+description: 固定的属性-特性检索
 title: 固定的属性-特性检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61f8a57acb7d91fe37daa32b9fe93bf0560f7d0d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 882f19b4e3ae4b39fce2e43cca4a961fe98b6578
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378169"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969106"
 ---
 # <a name="fixed-property-attribute-retrieval"></a>固定的属性-特性检索
 
 
-当 WPD 程序调用**IPortableDeviceCapabilities::GetFixedPropertyAttributes**方法，此方法，反过来，触发调用**WpdCapabilities::OnGetFixedPropertyAttributes**中的示例驱动程序的方法。 后一种方法创建**IPortableDeviceValues**驱动程序将请求的属性存储到其中的对象。
+当 WPD 应用程序调用 **IPortableDeviceCapabilities：： GetFixedPropertyAttributes** 方法时，此方法将触发对示例驱动程序中的 **WpdCapabilities：： OnGetFixedPropertyAttributes** 方法的调用。 后一种方法会创建一个 **IPortableDeviceValues** 对象，驱动程序将在其中存储所请求的属性。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::OnGetFixedPropertyAttributes(

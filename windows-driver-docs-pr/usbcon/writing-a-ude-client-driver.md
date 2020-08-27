@@ -1,14 +1,14 @@
 ---
-Description: 介绍 USB 设备仿真（UDE）类扩展的行为和客户端驱动程序必须为其附加的模拟主机控制器执行的任务。
+description: 描述 (UDE) 类扩展和客户端驱动程序必须为其附加的设备执行的客户端驱动程序的 USB 设备仿真的行为。
 title: 编写 UDE 客户端驱动程序
 ms.date: 01/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 84973b34e70b02981b5f0d90d9ceb8c90c7e98ca
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 323945b855a4bc73c245c3c18265aeba99ced2bb
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843662"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968578"
 ---
 # <a name="write-a-ude-client-driver"></a>编写 UDE 客户端驱动程序
 
@@ -18,7 +18,7 @@ ms.locfileid: "72843662"
 - 使用功能创建模拟主机控制器以查询控制器功能并重置控制器。
 - 创建虚拟 USB 设备，通过终结点设置电源管理和数据传输。
 
-**适用对象：**
+**适用于：**
 
 - Windows 10
 
@@ -30,48 +30,48 @@ ms.locfileid: "72843662"
 
 - [Emulated USB host controller driver programming reference](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt628025(v=vs.85))（模拟 USB 主控制器驱动程序编程参考）
 
-介绍 USB 设备仿真（UDE）类扩展的行为和客户端驱动程序必须为其附加的模拟主机控制器执行的任务。 它提供有关类驱动程序和类扩展如何通过一组例程和回调函数与每个进行通信的信息。 它还描述了客户端驱动程序应该实现的功能。
+描述 (UDE) 类扩展和客户端驱动程序必须为其附加的设备执行的客户端驱动程序的 USB 设备仿真的行为。 它提供有关类驱动程序和类扩展如何通过一组例程和回调函数与每个进行通信的信息。 它还描述了客户端驱动程序应该实现的功能。
 
-## <a name="before-you-begin"></a>开始之前
+## <a name="before-you-begin"></a>在开始之前
 
-- [安装](https://go.microsoft.com/fwlink/p/?LinkID=733614)最新的 Windows 驱动程序工具包（WDK）您的开发计算机。 工具包具有编写 UDE 客户端驱动程序所需的头文件和库，具体而言，你将需要：
-  - 存根库（Udecxstub）。 库转换客户端驱动程序发出的调用，并将其传递给 UdeCx。
+-  (WDK) 你的开发计算机上[安装](https://go.microsoft.com/fwlink/p/?LinkID=733614)最新的 Windows 驱动程序工具包。 工具包具有编写 UDE 客户端驱动程序所需的头文件和库，具体而言，你将需要：
+  - 存根库， (Udecxstub) 。 库转换客户端驱动程序发出的调用，并将其传递给 UdeCx。
   - 标头文件 Udecx。
 - 在目标计算机上安装 Windows 10。
-- 熟悉 UDE。 请参阅[体系结构： USB 设备仿真（UDE）](usb-emulated-device--ude--architecture.md)。
-- 熟悉 Windows Driver Foundation （WDF）。 建议读物：[开发带有 Windows Driver Foundation 的驱动程序]( https://go.microsoft.com/fwlink/p/?LinkId=691676)（由 "Orwick" 和 "专家 Smith" 编写）。
+- 熟悉 UDE。 请参阅 [体系结构： USB 设备仿真 (UDE) ](usb-emulated-device--ude--architecture.md)。
+- 熟悉 Windows Driver Foundation (WDF) 。 建议读物： [开发带有 Windows Driver Foundation 的驱动程序]( https://go.microsoft.com/fwlink/p/?LinkId=691676)（由 "Orwick" 和 "专家 Smith" 编写）。
 
 ## <a name="ude-objects-and-handles"></a>UDE 对象和句柄
 
 UDE 类扩展和客户端驱动程序使用表示仿真主机控制器和虚拟设备的特定 WDF 对象，其中包括用于在设备和主机之间传输数据的终结点和 URBs。 客户端驱动程序请求创建对象，并通过类扩展来管理对象的生存期。
 
-- **仿真主机控制器对象（WDFDEVICE）**
+- ** (WDFDEVICE 的仿真主机控制器对象) **
 
     表示仿真主机控制器，是 UDE 类扩展和客户端驱动程序之间的主句柄。
 
-- **UDE 设备对象（UDECXUSBDEVICE）**
+- **UDE 设备对象 (UDECXUSBDEVICE) **
 
     表示连接到仿真主机控制器上某个端口的虚拟 USB 设备。
 
-- **UDE 终结点对象（UDECXUSBENDPOINT）**
+- **UDE 终结点对象 (UDECXUSBENDPOINT) **
 
     表示 USB 设备的顺序数据管道。 用于接收用于在终结点上发送或接收数据的软件请求。
 
 ## <a name="initialize-the-emulated-host-controller"></a>初始化仿真主机控制器
 
-下面是客户端驱动程序检索仿真主机控制器的 WDFDEVICE 句柄的序列的摘要。 建议驱动程序在其[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中执行这些任务。
+下面是客户端驱动程序检索仿真主机控制器的 WDFDEVICE 句柄的序列的摘要。 建议驱动程序在其 [*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数中执行这些任务。
 
-1. 调用[**UdecxInitializeWdfDeviceInit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxinitializewdfdeviceinit) ，方法是将引用传递给框架传递的[WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init) 。
-2. 将[WDFDEVICE\_INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)结构初始化为安装程序信息，使此设备与其他 USB 主机控制器类似。 例如，分配 FDO 名称和符号链接，将设备接口注册为 Microsoft 提供的 GUID\_DEVINTERFACE\_USB\_主机\_控制器 GUID 作为设备接口 GUID，以便应用程序能够打开装置.
-3. 调用[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)以创建框架设备对象。
-4. 调用[**UdecxWdfDeviceAddUsbDeviceEmulation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)并注册客户端驱动程序的回调函数。
+1. 通过将引用传递给框架传递的[WDFDEVICE \_ INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)调用[**UdecxInitializeWdfDeviceInit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxinitializewdfdeviceinit) 。
+2. 将 [WDFDEVICE \_ INIT](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init) 结构初始化为安装程序信息，使此设备与其他 USB 主机控制器类似。 例如，分配 FDO 名称和符号链接，将设备接口注册为 Microsoft 提供的 GUID \_ DEVINTERFACE \_ USB \_ 主机 \_ 控制器 GUID 作为设备接口 guid，以便应用程序可以打开设备的句柄。
+3. 调用 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate) 以创建框架设备对象。
+4. 调用 [**UdecxWdfDeviceAddUsbDeviceEmulation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation) 并注册客户端驱动程序的回调函数。
 
     下面是与宿主控制器对象关联的回调函数，由 UDE 类扩展调用。 这些函数必须由客户端驱动程序实现。
 
-    [ *.EVT\_UDECX\_WDF\_设备\_查询\_USB\_功能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)  
+    [*.EVT \_ UDECX \_ WDF \_ 设备 \_ 查询 \_ USB \_ 功能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)  
     确定主机控制器支持的、客户端驱动程序必须向类扩展报告的功能。
 
-    [ *.EVT\_UDECX\_WDF\_设备\_重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)  
+    [*.EVT \_ UDECX \_ WDF \_ 设备 \_ 重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)  
     可选。 重置主机控制器和/或连接的设备。
 
     ```cpp
@@ -254,9 +254,9 @@ UDE 类扩展和客户端驱动程序使用表示仿真主机控制器和虚拟�
 
 ## <a name="handle-user-mode-ioctl-requests-sent-to-the-host-controller"></a>处理发送到主机控制器的用户模式 IOCTL 请求
 
-在初始化期间，UDE 客户端驱动程序\_USB\_主机\_控制器设备接口 GUID 公开 GUID\_。 这样，驱动程序便可从使用该 GUID 打开设备句柄的应用程序接收 IOCTL 请求。 有关 IOCTL 控制代码的列表，请参阅[Usb IOCTLs for applications and service](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#um-ioctl) with 设备 interface GUID： GUID\_DEVINTERFACE\_USB\_HOST\_控制器。
+在初始化期间，UDE 客户端驱动程序将公开 GUID \_ DEVINTERFACE \_ USB \_ 主机 \_ 控制器设备接口 guid。 这样，驱动程序便可从使用该 GUID 打开设备句柄的应用程序接收 IOCTL 请求。 有关 IOCTL 控制代码的列表，请参阅 [Usb IOCTLs for applications and service](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#um-ioctl) with 设备 interface GUID： guid \_ DEVINTERFACE \_ USB \_ HOST \_ CONTROLLER。
 
-为了处理这些请求，客户端驱动程序将注册[*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)事件回调。 在实现中，驱动程序可以选择将请求转发到 UDE 类扩展以便进行处理，而不是处理请求。 若要转发请求，驱动程序必须调用[**UdecxWdfDeviceTryHandleUserIoctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdevicetryhandleuserioctl)。 如果收到的 IOCTL 控制代码对应于标准请求，如检索设备描述符，则类扩展会处理并成功完成请求。 在这种情况下， **UdecxWdfDeviceTryHandleUserIoctl**将以 TRUE 作为返回值完成。 否则，调用将返回 FALSE，并且驱动程序必须确定如何完成请求。 在最简单的实现中，驱动程序可以通过调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来完成请求，并提供相应的失败代码。
+为了处理这些请求，客户端驱动程序将注册 [*EvtIoDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control) 事件回调。 在实现中，驱动程序可以选择将请求转发到 UDE 类扩展以便进行处理，而不是处理请求。 若要转发请求，驱动程序必须调用 [**UdecxWdfDeviceTryHandleUserIoctl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdevicetryhandleuserioctl)。 如果收到的 IOCTL 控制代码对应于标准请求，如检索设备描述符，则类扩展会处理并成功完成请求。 在这种情况下， **UdecxWdfDeviceTryHandleUserIoctl** 将以 TRUE 作为返回值完成。 否则，调用将返回 FALSE，并且驱动程序必须确定如何完成请求。 在最简单的实现中，驱动程序可以通过调用 [**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来完成请求，并提供相应的失败代码。
 
 ```cpp
 
@@ -307,7 +307,7 @@ exit:
 ## <a name="report-the-capabilities-of-the-host-controller"></a>报告主机控制器的功能
 
 
-在上层驱动程序可以使用 USB 主机控制器的功能之前，驱动程序必须确定控制器是否支持这些功能。 驱动程序通过调用[**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)和[**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))发出此类查询。 这些调用将转发到 USB 设备仿真（UDE）类扩展。 收到请求后，类扩展会调用客户端驱动程序的[ *\_UDECX\_WDF\_设备\_查询\_USB\_功能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability)实现。 此调用仅在[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)完成后（通常在[*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)中，而不是在[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)后）进行。 这是必需的回调函数。
+在上层驱动程序可以使用 USB 主机控制器的功能之前，驱动程序必须确定控制器是否支持这些功能。 驱动程序通过调用 [**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability) 和 [**USBD \_ QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))发出此类查询。 这些调用将转发到 USB 设备仿真 (UDE) 类扩展。 收到请求后，类扩展会调用客户端驱动程序的 [*.Evt \_ UDECX \_ WDF \_ 设备 \_ 查询 \_ USB \_ 功能*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_query_usb_capability) 实现。 此调用仅在 [*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 完成后（通常在 [*EvtDevicePrepareHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware) 中，而不是在 [*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)后）进行。 这是必需的回调函数。
 
 在实现中，客户端驱动程序必须报告它是否支持请求的功能。 UDE （如静态流）不支持某些功能。
 
@@ -351,30 +351,30 @@ Controller_EvtControllerQueryUsbCapability(
 
 ## <a name="create-a-virtual-usb-device"></a>创建虚拟 USB 设备
 
-虚拟 USB 设备的行为类似于 USB 设备。 它支持具有多个接口的配置，并且每个接口都支持备用设置。 每个设置可以有一个以上的终结点用于数据传输。 所有描述符（设备、配置、接口、终结点）都是通过 UDE 客户端驱动程序设置的，因此，设备可以像真实的 USB 设备一样报告信息。
+虚拟 USB 设备的行为类似于 USB 设备。 它支持具有多个接口的配置，并且每个接口都支持备用设置。 每个设置可以有一个以上的终结点用于数据传输。 所有描述符 (设备、配置、接口、终结点) 由 UDE 客户端驱动程序设置，以便设备能够报告信息，这与真正的 USB 设备非常类似。
 
 > [!NOTE]
 > UDE 客户端驱动程序不支持外部集线器
 
-下面是客户端驱动程序为 UDE 设备对象创建 UDECXUSBDEVICE 句柄的序列的摘要。 驱动程序在检索到仿真主机控制器的 WDFDEVICE 句柄之后，必须执行这些步骤。 建议驱动程序在其[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中执行这些任务。
+下面是客户端驱动程序为 UDE 设备对象创建 UDECXUSBDEVICE 句柄的序列的摘要。 驱动程序在检索到仿真主机控制器的 WDFDEVICE 句柄之后，必须执行这些步骤。 建议驱动程序在其 [*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数中执行这些任务。
 
-1. 调用[**UdecxUsbDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitallocate)以获取一个指针，该指针指向创建设备所需的初始化参数。 此结构由 UDE 类扩展分配。
-2. 通过将 UDECX 的成员设置[ **\_USB\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/ns-udecxusbdevice-_udecx_usb_device_state_change_callbacks)来注册事件回调函数\_更改\_回调，然后调用[**UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)。 下面是与 UDE 设备对象相关联的回调函数，由 UDE 类扩展调用。
+1. 调用 [**UdecxUsbDeviceInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitallocate) 以获取一个指针，该指针指向创建设备所需的初始化参数。 此结构由 UDE 类扩展分配。
+2. 通过设置 [**UDECX \_ USB \_ 设备 \_ 状态 \_ 更改 \_ 回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/ns-udecxusbdevice-_udecx_usb_device_state_change_callbacks) 的成员，然后调用 [**UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)来注册事件回调函数。 下面是与 UDE 设备对象相关联的回调函数，由 UDE 类扩展调用。
 
     这些函数由客户端驱动程序实现，以创建或配置终结点。
 
-   - [ *.EVT\_UDECX\_USB\_设备\_默认\_终结点\_添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)
-   - [ *.EVT\_UDECX\_USB\_设备\_终结点\_添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)
-   - [ *.EVT\_UDECX\_USB\_设备\_终结点\_配置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)
+   - [*.EVT \_ UDECX \_ USB \_ 设备 \_ 默认 \_ 终结点 \_ 添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)
+   - [*.EVT \_ UDECX \_ USB \_ 设备 \_ 终结点 \_ 添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)
+   - [*.EVT \_ UDECX \_ USB \_ 设备 \_ 终结点 \_ 配置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)
 
      <!-- -->
 
-   - [ *.EVT\_UDECX\_USB\_设备\_D0\_条目*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)
-   - [ *.EVT\_UDECX\_USB\_设备\_D0\_退出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)
-   - [ *.EVT\_UDECX\_USB\_设备\_设置\_函数\_挂起\_和\_唤醒*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)
+   - [*.EVT \_ UDECX \_ USB \_ 设备 \_ D0 \_ 条目*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)
+   - [*.EVT \_ UDECX \_ USB \_ 设备 \_ D0 \_ 出口*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)
+   - [*.EVT \_ UDECX \_ USB \_ 设备 \_ 集 \_ 函数 \_ 挂起 \_ 和 \_ 唤醒*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)
 
-3. 调用[**UdecxUsbDeviceInitSetSpeed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetspeed)设置 usb 设备速度以及设备类型、usb 2.0 或 SuperSpeed 设备。
-4. 调用[**UdecxUsbDeviceInitSetEndpointsType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetendpointstype)可指定设备支持的终结点类型：简单或动态。 如果客户端驱动程序选择创建简单的终结点，则驱动程序必须在插入设备之前创建所有终结点对象。 设备只能有一个配置，并且每个接口只需要一个接口设置。 对于动态终结点，驱动程序可以在设备接收到[ *\_UDECX\_USB\_设备\_终结点\_配置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)事件回调时，随时创建终结点。 请参阅[创建动态终结点](#create-dynamic-endpoints)。
+3. 调用 [**UdecxUsbDeviceInitSetSpeed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetspeed) 设置 usb 设备速度以及设备类型、usb 2.0 或 SuperSpeed 设备。
+4. 调用 [**UdecxUsbDeviceInitSetEndpointsType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetendpointstype) 可指定设备支持的终结点类型：简单或动态。 如果客户端驱动程序选择创建简单的终结点，则驱动程序必须在插入设备之前创建所有终结点对象。 设备只能有一个配置，并且每个接口只需要一个接口设置。 对于动态终结点，驱动程序可以在设备接收到 [*.Evt \_ UDECX \_ USB \_ 设备 \_ 终结点 \_ *](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure) 时随时创建终结点。 请参阅 [创建动态终结点](#create-dynamic-endpoints)。
 5. 调用这些方法中的任何一种，将所需的描述符添加到设备。
 
    - [**UdecxUsbDeviceInitAddDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitadddescriptor)
@@ -382,26 +382,26 @@ Controller_EvtControllerQueryUsbCapability(
    - [**UdecxUsbDeviceInitAddStringDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitaddstringdescriptor)
    - [**UdecxUsbDeviceInitAddStringDescriptorRaw**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitaddstringdescriptorraw)
 
-     如果 UDE 类扩展接收到客户端驱动程序在初始化期间通过使用上述方法之一提供的标准描述符的请求，则类扩展会自动完成该请求。 类扩展不会将该请求转发到客户端驱动程序。 此设计减少了驱动程序处理控制请求所需的请求数。 此外，它还无需驱动程序实现描述符逻辑，需要对安装包进行大量分析并正确处理**wLength**和**TransferBufferLength** 。 此列表包含标准请求。 客户端驱动程序不需要检查这些请求（仅当调用前面的方法来添加描述符时）：
+     如果 UDE 类扩展接收到客户端驱动程序在初始化期间通过使用上述方法之一提供的标准描述符的请求，则类扩展会自动完成该请求。 类扩展不会将该请求转发到客户端驱动程序。 此设计减少了驱动程序处理控制请求所需的请求数。 此外，它还无需驱动程序实现描述符逻辑，需要对安装包进行大量分析并正确处理 **wLength** 和 **TransferBufferLength** 。 此列表包含标准请求。 仅当调用前面的方法来添加描述符) ，客户端驱动程序才需要检查这些请求 (：
 
-   - USB\_请求\_获取\_描述符
-   - USB\_请求\_集\_配置
-   - USB\_请求\_集\_接口
-   - USB\_请求\_集\_地址
-   - USB\_请求\_设置\_功能
-   - USB\_功能\_函数\_挂起
-   - USB\_功能\_远程\_唤醒
-   - USB\_请求\_清楚\_功能
-   - USB\_功能\_终结点\_停止
-   - USB\_请求\_集\_SEL
-   - USB\_请求\_ISOCH\_延迟
+   - USB \_ 请求 \_ 获取 \_ 描述符
+   - USB \_ 请求 \_ 设置 \_ 配置
+   - USB \_ 请求 \_ 集 \_ 接口
+   - USB \_ 请求 \_ 集 \_ 地址
+   - USB \_ 请求 \_ 集 \_ 功能
+   - USB \_ 功能 \_ 函数 \_ 挂起
+   - USB \_ 功能 \_ 远程 \_ 唤醒
+   - USB \_ 请求 \_ 清除 \_ 功能
+   - USB \_ 功能 \_ 终结点 \_ 停止
+   - USB \_ 请求 \_ 集 \_ SEL
+   - USB \_ 请求 \_ ISOCH \_ 延迟
 
-     但是，对于接口、类特定或供应商定义的描述符的请求，UDE 类扩展会将它们转发到客户端驱动程序。 驱动程序必须处理 GET\_描述符请求。
+     但是，对于接口、类特定或供应商定义的描述符的请求，UDE 类扩展会将它们转发到客户端驱动程序。 驱动程序必须处理这些 GET \_ 说明符请求。
 
-6. 调用[**UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate)创建 UDE 设备对象并检索 UDECXUSBDEVICE 句柄。
-7. 通过调用[**UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)创建静态终结点。 请参阅[创建简单终结点](#create-simple-endpoints)。
-8. 调用[**UdecxUsbDevicePlugIn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugin) ，向 UDE 类扩展指示设备已连接，并可在终结点上接收 i/o 请求。 在此调用之后，类扩展还可以对终结点和 USB 设备调用回调函数。
-    **注意** 如果 USB 设备需要在运行时删除，则客户端驱动程序可以调用[**UdecxUsbDevicePlugOutAndDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugoutanddelete)。 如果驱动程序要使用该设备，则必须通过调用[**UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate)来创建它。
+6. 调用 [**UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate) 创建 UDE 设备对象并检索 UDECXUSBDEVICE 句柄。
+7. 通过调用 [**UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)创建静态终结点。 请参阅 [创建简单终结点](#create-simple-endpoints)。
+8. 调用 [**UdecxUsbDevicePlugIn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugin) ，向 UDE 类扩展指示设备已连接，并可在终结点上接收 i/o 请求。 在此调用之后，类扩展还可以对终结点和 USB 设备调用回调函数。
+    **注意**  如果 USB 设备需要在运行时删除，则客户端驱动程序可以调用 [**UdecxUsbDevicePlugOutAndDelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceplugoutanddelete)。 如果驱动程序要使用该设备，则必须通过调用 [**UdecxUsbDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicecreate)来创建它。
 
 在此示例中，说明符声明被假定为全局变量，如此处所示，作为示例：
 
@@ -578,48 +578,48 @@ exit:
 ## <a name="power-management-of-the-usb-device"></a>USB 设备的电源管理
 
 
-当 UDE 类扩展接收到将设备发送到低功耗状态或使其恢复正常工作状态的请求时，将调用客户端驱动程序的回调函数。 支持唤醒的 USB 设备需要这些回调函数。 客户端驱动程序在先前对[**UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)的调用中注册了其实现。
+当 UDE 类扩展接收到将设备发送到低功耗状态或使其恢复正常工作状态的请求时，将调用客户端驱动程序的回调函数。 支持唤醒的 USB 设备需要这些回调函数。 客户端驱动程序在先前对 [**UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)的调用中注册了其实现。
 
-有关详细信息，请参阅[USB 设备电源状态](comparing-usb-device-states-to-wdm-device-states.md)。
+有关详细信息，请参阅 [USB 设备电源状态](comparing-usb-device-states-to-wdm-device-states.md)。
 
-[ *.EVT\_UDECX\_USB\_设备\_D0\_条目*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)  
+[*.EVT \_ UDECX \_ USB \_ 设备 \_ D0 \_ 条目*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_entry)  
 客户端驱动程序将设备从 Dx 状态转换为 D0 状态。
 
-[ *.EVT\_UDECX\_USB\_设备\_D0\_退出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)  
+[*.EVT \_ UDECX \_ USB \_ 设备 \_ D0 \_ 出口*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)  
 客户端驱动程序将设备从 D0 状态转换为 Dx 状态。
 
-[ *.EVT\_UDECX\_USB\_设备\_设置\_函数\_挂起\_和\_唤醒*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)  
+[*.EVT \_ UDECX \_ USB \_ 设备 \_ 集 \_ 函数 \_ 挂起 \_ 和 \_ 唤醒*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)  
 客户端驱动程序更改虚拟 USB 3.0 设备的指定接口的函数状态。
 
-USB 3.0 设备允许各个功能进入较低的电源状态。 每个函数还能够发送唤醒信号。 UDE 类扩展通过[ *\_调用\_USB\_设备\_设置\_函数\_暂停\_和\_唤醒*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)来通知客户端驱动程序。 此事件表示函数电源状态更改，并向客户端驱动程序通知该函数是否可以从新状态中唤醒。 在函数中，类扩展传递正在唤醒的函数的接口号。
-客户端驱动程序可以模拟虚拟 USB 设备的操作，该设备从低链路电源状态和/或函数挂起启动自己的唤醒。 对于 USB 2.0 设备，驱动程序必须调用[**UdecxUsbDeviceSignalWake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalwake)，如果驱动程序在最新的 .EVT\_UDECX 中启用了设备唤醒[ *\_USB\_设备\_D0\_退出*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)。 对于 USB 3.0 设备，驱动程序必须调用[**UdecxUsbDeviceSignalFunctionWake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalfunctionwake) ，因为 USB 3.0 唤醒功能是每个函数的。 如果整个设备处于低功耗状态，或进入此类状态， **UdecxUsbDeviceSignalFunctionWake**将唤醒设备。
+USB 3.0 设备允许各个功能进入较低的电源状态。 每个函数还能够发送唤醒信号。 UDE 类扩展通过调用 [*.Evt \_ UDECX \_ USB \_ 设备 \_ 集 \_ 函数 \_ 挂起 \_ 和 \_ 唤醒*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_set_function_suspend_and_wake)通知客户端驱动程序。 此事件表示函数电源状态更改，并向客户端驱动程序通知该函数是否可以从新状态中唤醒。 在函数中，类扩展传递正在唤醒的函数的接口号。
+客户端驱动程序可以模拟虚拟 USB 设备的操作，该设备从低链路电源状态和/或函数挂起启动自己的唤醒。 对于 USB 2.0 设备，如果驱动程序已在最新的[*.Evt \_ UDECX \_ USB \_ 设备 \_ D0 \_ 出口*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_d0_exit)启用设备唤醒，则驱动程序必须调用[**UdecxUsbDeviceSignalWake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalwake)。 对于 USB 3.0 设备，驱动程序必须调用 [**UdecxUsbDeviceSignalFunctionWake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdevicesignalfunctionwake) ，因为 USB 3.0 唤醒功能是每个函数的。 如果整个设备处于低功耗状态，或进入此类状态， **UdecxUsbDeviceSignalFunctionWake** 将唤醒设备。
 
 ## <a name="create-simple-endpoints"></a>创建简单终结点
 
 
 客户端驱动程序创建 UDE 终结点对象来处理传入和传出 USB 设备的数据传输。 驱动程序在创建 UDE 设备后以及将设备报告为接通电源之前，会创建简单的终结点。
 
-下面是客户端驱动程序为 UDE 终结点对象创建 UDECXUSBENDPOINT 句柄的序列的摘要。 驱动程序在检索虚拟 USB 设备的 UDECXUSBDEVICE 句柄之后必须执行这些步骤。 建议驱动程序在其[*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中执行这些任务。
+下面是客户端驱动程序为 UDE 终结点对象创建 UDECXUSBENDPOINT 句柄的序列的摘要。 驱动程序在检索虚拟 USB 设备的 UDECXUSBDEVICE 句柄之后必须执行这些步骤。 建议驱动程序在其 [*EvtDriverDeviceAdd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数中执行这些任务。
 
-1. 调用[**UdecxUsbSimpleEndpointInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbsimpleendpointinitallocate)以获取指向类扩展所分配的初始化参数的指针。
-2. 调用[**UdecxUsbEndpointInitSetEndpointAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress) ，以在初始化参数中设置终结点地址。
-3. 调用[**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)以注册客户端驱动程序实现的回调函数。
+1. 调用 [**UdecxUsbSimpleEndpointInitAllocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbsimpleendpointinitallocate) 以获取指向类扩展所分配的初始化参数的指针。
+2. 调用 [**UdecxUsbEndpointInitSetEndpointAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress) ，以在初始化参数中设置终结点地址。
+3. 调用 [**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks) 以注册客户端驱动程序实现的回调函数。
 
     这些函数由客户端驱动程序实现以处理对终结点的队列和请求。
 
-    [ *.EVT\_UDECX\_USB\_终结点\_重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)  
+    [*.EVT \_ UDECX \_ USB \_ 终结点 \_ 重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)  
     重置虚拟 USB 设备的终结点。
 
-    [ *.EVT\_UDECX\_USB\_终结点\_启动*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)  
+    [*.EVT \_ UDECX \_ USB \_ 终结点 \_ 启动*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)  
     可选。 开始处理 i/o 请求
 
-    [ *.EVT\_UDECX\_USB\_终结点\_清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)  
+    [*.EVT \_ UDECX \_ USB \_ 终结点 \_ 清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)  
     可选。 停止对终结点队列的 i/o 请求进行排队并取消未处理的请求。
 
-4. 调用[**UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)创建终结点对象并检索 UDECXUSBENDPOINT 句柄。
-5. 调用[**UdecxUsbEndpointSetWdfIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue) ，将框架队列对象与终结点相关联。 如果适用，则可以通过设置适当的属性，将终结点对象设置为队列的 WDF 父对象。
+4. 调用 [**UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate) 创建终结点对象并检索 UDECXUSBENDPOINT 句柄。
+5. 调用 [**UdecxUsbEndpointSetWdfIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue) ，将框架队列对象与终结点相关联。 如果适用，则可以通过设置适当的属性，将终结点对象设置为队列的 WDF 父对象。
 
-    每个终结点对象都有一个框架队列对象，以便处理传输请求。 对于类扩展接收的每个传输请求，它会将框架请求对象排队。 队列的状态（已启动、已清除）由 UDE 类扩展管理，客户端驱动程序不能更改该状态。 每个请求对象都包含一个包含传输详细信息的 USB 请求块（[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)）。
+    每个终结点对象都有一个框架队列对象，以便处理传输请求。 对于类扩展接收的每个传输请求，它会将框架请求对象排队。 队列状态 (已启动，已清除) 由 UDE 类扩展管理，客户端驱动程序不得更改该状态。 每个请求对象都包含一个 USB 请求块 (包含传输详细信息的 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)) 。
 
 在此示例中，客户端驱动程序将创建默认的控制终结点。
 
@@ -703,30 +703,30 @@ exit:
 ## <a name="create-dynamic-endpoints"></a>创建动态终结点
 
 
-客户端驱动程序可以在 UDE 类扩展的请求（代表集线器驱动程序和客户端驱动程序）创建动态终结点。 类扩展通过调用以下任一回调函数发出请求：
+客户端驱动程序可 (代表集线器驱动程序和客户端驱动程序) 在请求 UDE 类扩展时创建动态终结点。 类扩展通过调用以下任一回调函数发出请求：
 
-[ *.EVT\_UDECX\_USB\_设备\_默认\_终结点\_添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)  
-客户端驱动程序创建默认控制终结点（终结点0）
+[*.EVT \_ UDECX \_ USB \_ 设备 \_ 默认 \_ 终结点 \_ 添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_default_endpoint_add)  
+客户端驱动程序将创建默认的控制终结点 (端点 0) 
 
-[ *.EVT\_UDECX\_USB\_设备\_终结点\_添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)  
+[*.EVT \_ UDECX \_ USB \_ 设备 \_ 终结点 \_ 添加*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoint_add)  
 客户端驱动程序创建动态端点。
 
-[ *.EVT\_UDECX\_USB\_设备\_终结点\_配置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)  
+[*.EVT \_ UDECX \_ USB \_ 设备 \_ 终结点 \_ 配置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)  
 客户端驱动程序通过选择替代设置、禁用当前终结点或添加动态终结点来更改配置。
 
-客户端驱动程序在其对[**UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)的调用过程中注册了前面的回调。 请参阅创建[虚拟 USB 设备](#create-a-virtual-usb-device)。
-此机制允许客户端驱动程序在设备上动态更改 USB 配置和接口设置。 例如，如果需要终结点对象，或者必须释放现有终结点对象，则类扩展会将[ *.evt\_UDECX\_USB\_设备\_终结点\_配置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)。
+客户端驱动程序在其对 [**UdecxUsbDeviceInitSetStateChangeCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nf-udecxusbdevice-udecxusbdeviceinitsetstatechangecallbacks)的调用过程中注册了前面的回调。 请参阅创建 [虚拟 USB 设备](#create-a-virtual-usb-device)。
+此机制允许客户端驱动程序在设备上动态更改 USB 配置和接口设置。 例如，需要终结点对象或必须释放现有终结点对象时，类扩展将调用 [* \_ UDECX \_ USB \_ 设备 \_ 终结点 \_ *](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbdevice/nc-udecxusbdevice-evt_udecx_usb_device_endpoints_configure)。
 
 下面是客户端驱动程序在其回调函数实现中为终结点对象创建 UDECXUSBENDPOINT 句柄的序列的摘要。
 
-1. 调用[**UdecxUsbEndpointInitSetEndpointAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress) ，以在初始化参数中设置终结点地址。
-2. 调用[**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)以注册客户端驱动程序实现的回调函数。 与简单终结点类似，驱动程序可以注册以下回调函数：
-    - [ *.Evt\_UDECX\_USB\_终结点\_重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)（必需）。
-    - [ *.EVT\_UDECX\_USB\_终结点\_启动*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)
-    - [ *.EVT\_UDECX\_USB\_终结点\_清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)
+1. 调用 [**UdecxUsbEndpointInitSetEndpointAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetendpointaddress) ，以在初始化参数中设置终结点地址。
+2. 调用 [**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks) 以注册客户端驱动程序实现的回调函数。 与简单终结点类似，驱动程序可以注册以下回调函数：
+    - [*.Evt \_UDECX \_ USB \_ 终结点 \_ 重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset) (需要) 。
+    - [*.EVT \_ UDECX \_ USB \_ 终结点 \_ 启动*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)
+    - [*.EVT \_ UDECX \_ USB \_ 终结点 \_ 清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)
 
-3. 调用[**UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate)创建终结点对象并检索 UDECXUSBENDPOINT 句柄。
-4. 调用[**UdecxUsbEndpointSetWdfIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue) ，将框架队列对象与终结点相关联。
+3. 调用 [**UdecxUsbEndpointCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointcreate) 创建终结点对象并检索 UDECXUSBENDPOINT 句柄。
+4. 调用 [**UdecxUsbEndpointSetWdfIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointsetwdfioqueue) ，将框架队列对象与终结点相关联。
 
 在此示例实现中，客户端驱动程序创建动态的默认控制终结点。
 
@@ -787,37 +787,37 @@ exit:
 ## <a name="perform-error-recovery-by-resetting-an-endpoint"></a>通过重置终结点来执行错误恢复
 
 
-有时，数据传输会因各种原因而失败，例如终结点中的延迟情况。 如果传输失败，则直到清除错误条件后，终结点才能处理请求。 当 UDE 类扩展遇到失败的数据传输时，它将调用客户端驱动程序的[ *.evt\_UDECX\_USB\_终结点\_重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset)回调函数，该函数将在上一次调用[**中注册的驱动程序UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)。 在实现中，驱动程序可以选择清除管道的暂停状态，并采取其他必要的步骤来清除错误情况。
+有时，数据传输会因各种原因而失败，例如终结点中的延迟情况。 如果传输失败，则直到清除错误条件后，终结点才能处理请求。 当 UDE 类扩展遇到失败的数据传输时，它将调用客户端驱动程序的 [*.Evt \_ UDECX \_ USB \_ 终结点 \_ 重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_reset) 回调函数，该函数将在之前对 [**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)的调用中注册该函数。 在实现中，驱动程序可以选择清除管道的暂停状态，并采取其他必要的步骤来清除错误情况。
 
-此调用是异步的。 使用重置操作完成客户端之后，驱动程序必须通过调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来完成请求，并提供相应的失败代码。 该调用会向 UDE 客户端扩展通知完成重置操作的状态。
+此调用是异步的。 使用重置操作完成客户端之后，驱动程序必须通过调用 [**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)来完成请求，并提供相应的失败代码。 该调用会向 UDE 客户端扩展通知完成重置操作的状态。
 
-**注意** 如果错误恢复需要复杂的解决方案，则客户端驱动程序可以选择重置主机控制器。 此逻辑可[ *\_在\_WDF\_设备\_重置*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)回调函数中的 UDECX 中实现，驱动程序在其[**UdecxWdfDeviceAddUsbDeviceEmulation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)调用中注册了该函数。 如果适用，驱动程序可以重置主机控制器和所有下游设备。 如果客户端驱动程序不需要重置控制器但重置所有下游设备，则驱动程序必须在注册过程中在配置参数中指定**UdeWdfDeviceResetActionResetEachUsbDevice** 。 在这种情况下，类扩展会为每个已连接的设备调用一个 *\_UDECX\_WDF\_设备\_重置*。
+**注意**  如果错误恢复需要复杂的解决方案，则客户端驱动程序可以选择重置主机控制器。 此逻辑可在该驱动程序在其[**UdecxWdfDeviceAddUsbDeviceEmulation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nf-udecxwdfdevice-udecxwdfdeviceaddusbdeviceemulation)调用中注册的[*.Evt \_ UDECX \_ WDF \_ 设备 \_ RESET*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxwdfdevice/nc-udecxwdfdevice-evt_udecx_wdf_device_reset)回调函数中实现。 如果适用，驱动程序可以重置主机控制器和所有下游设备。 如果客户端驱动程序不需要重置控制器但重置所有下游设备，则驱动程序必须在注册过程中在配置参数中指定 **UdeWdfDeviceResetActionResetEachUsbDevice** 。 在这种情况下，类扩展会为每个连接的设备调用 *.Evt \_ UDECX \_ WDF \_ 设备 \_ 重置* 。
 
 ## <a name="implement-queue-state-management"></a>实现队列状态管理
 
-与 UDE 终结点对象关联的框架队列对象的状态由 UDE 类扩展管理。 但是，如果客户端驱动程序将来自终结点队列的请求转发到其他内部队列，则客户端必须实现逻辑来处理终结点的 i/o 流中的更改。 这些回调函数已注册到[**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)。
+与 UDE 终结点对象关联的框架队列对象的状态由 UDE 类扩展管理。 但是，如果客户端驱动程序将来自终结点队列的请求转发到其他内部队列，则客户端必须实现逻辑来处理终结点的 i/o 流中的更改。 这些回调函数已注册到 [**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)。
 
 ### <a name="endpoint-purge-operation"></a>终结点清除操作
 
-每个终结点有一个队列的 UDE 客户端驱动程序可以实现[ *\_USB\_终结\_点\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge) ，如以下示例中所示：
+每个终结点有一个队列的 UDE 客户端驱动程序可以实现 [*.Evt \_ UDECX \_ USB \_ 终结点 \_ 清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge) ，如以下示例中所示：
 
-在[ *.evt\_UDECX\_USB\_终结点\_清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)实现中，需要客户端驱动程序以确保从终结点队列转发的所有 i/o 都已完成，并且在客户端调用了驱动程序的[ *.evt\_UDECX\_USB\_终结点\_START*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start) 。 这些要求是通过调用[**UdecxUsbEndpointPurgeComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointpurgecomplete)来实现的，这可确保所有已转发的 i/o 已完成，且将来的已转发 i/o 失败。
+在 [*.Evt \_ UDECX \_ USB \_ 终结点 \_ 清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge) 实现中，需要客户端驱动程序，以确保已完成从终结点队列转发的所有 i/o，并且在调用客户端驱动程序的 [*.evt \_ UDECX \_ USB \_ 终结点 \_ 启动*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start) 之前，新转发的 i/o 也会失败。 这些要求是通过调用 [**UdecxUsbEndpointPurgeComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointpurgecomplete)来实现的，这可确保所有已转发的 i/o 已完成，且将来的已转发 i/o 失败。
 
 ### <a name="endpoint-start-operation"></a>终结点启动操作
 
-在[ *.evt\_UDECX\_USB\_终结点\_开始*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start)实现，需要客户端驱动程序开始处理终结点队列上的 i/o 以及接收终结点的已转发 i/o 的任何队列。 创建终结点后，在此回调函数返回后，它不会接收任何 i/o。 此回调将终结点返回到在[ *\_UDECX\_USB\_终结点*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge)之后处理 i/o 的状态\_清除完成。
+在 [*.Evt \_ UDECX \_ USB \_ 终结点 \_ 启动*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_start) 实现中，需要客户端驱动程序来开始处理终结点队列上的 i/o 以及接收终结点的已转发 i/o 的任何队列。 创建终结点后，在此回调函数返回后，它不会接收任何 i/o。 此回调将终结点返回到在 [* \_ UDECX \_ USB \_ 终结点 \_ 清除*](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nc-udecxusbendpoint-evt_udecx_usb_endpoint_purge) 完成后处理 i/o 状态。
 
 
-## <a name="handling-data-transfer-requests-urbs"></a>处理数据传输请求（URBs）
+## <a name="handling-data-transfer-requests-urbs"></a>处理数据传输请求 (URBs) 
 
 
-若要处理发送到客户端设备终结点的 USB i/o 请求，请在将队列与终结点关联时，截获与[**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)一起使用的队列对象上的[EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调。 在此回调中，为[IOCTL\_内部\_USB\_提交\_URB](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) IoControlCode （请参阅[URB 处理方法](#urb-handling-methods)下的示例代码）。
+若要处理发送到客户端设备终结点的 USB i/o 请求，请在将队列与终结点关联时，截获与[**UdecxUsbEndpointInitSetCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/udecxusbendpoint/nf-udecxusbendpoint-udecxusbendpointinitsetcallbacks)一起使用的队列对象上的[EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_internal_device_control)回调。 在此回调中，对 [IOCTL \_ 内部 \_ USB \_ SUBMIT \_ URB](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) IoControlCode 的 i/o 进行处理 (参阅 [URB 处理方法](#urb-handling-methods)) 下的示例代码。
 
 
 ## <a name="urb-handling-methods"></a>URB 处理方法
 
 
-作为通过 IOCTL 处理 URBs 的一部分[\_内部\_USB\_提交](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb)与虚拟设备上的终结点相关联的队列\_URB，UDE 客户端驱动程序可以使用这些方法
+作为通过 [IOCTL \_ 内部 \_ USB \_ 提交 \_ URB](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_urb) 的 URBs 的一部分，与虚拟设备上的终结点相关联的队列，UDE 客户端驱动程序可以使用以下方法获取指向 i/o 请求传输缓冲区的指针：
 
 这些函数由客户端驱动程序实现以处理对终结点的队列和请求。
 
@@ -891,6 +891,6 @@ exit:
 
 客户端驱动程序可以在单独的 DPC 上完成 i/o 请求。 遵循以下最佳实践：
 
-- 若要确保与现有 USB 驱动程序兼容，UDE 客户端必须在调度\_级别调用[**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 。
-- 如果[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)已添加到终结点的队列中，并且驱动程序开始在调用驱动程序的线程或 DPC 上同步处理它，则请求不得同步完成。 此用途需要单独的 DPC，驱动程序将通过调用[**WdfDpcEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpcenqueue)进行排队。
-- 当 UDE 类扩展调用[*EvtIoCanceledOnQueue*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue)或[*EvtRequestCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)时，客户端驱动程序必须在来自调用方的线程或 dpc 的单独 DPC 上完成收到的 URB。 为此，驱动程序必须为其[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)队列提供*EvtIoCanceledOnQueue*回调。
+- 若要确保与现有 USB 驱动程序兼容，UDE 客户端必须在派单级别调用 [**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) \_ 。
+- 如果 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb) 已添加到终结点的队列中，并且驱动程序开始在调用驱动程序的线程或 DPC 上同步处理它，则请求不得同步完成。 此用途需要单独的 DPC，驱动程序将通过调用 [**WdfDpcEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdpc/nf-wdfdpc-wdfdpcenqueue)进行排队。
+- 当 UDE 类扩展调用 [*EvtIoCanceledOnQueue*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_canceled_on_queue) 或 [*EvtRequestCancel*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_cancel)时，客户端驱动程序必须在来自调用方的线程或 dpc 的单独 DPC 上完成收到的 URB。 为此，驱动程序必须为其[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)队列提供*EvtIoCanceledOnQueue*回调。

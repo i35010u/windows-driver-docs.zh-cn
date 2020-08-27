@@ -1,20 +1,20 @@
 ---
 title: REMOTE_NDIS_SET_CMPLT
-Description: 远程 NDIS 设备将响应将 REMOTE_NDIS_SET_MSG 消息 REMOTE_NDIS_SET_CMPLT 消息。
+description: 远程 NDIS 设备将使用 REMOTE_NDIS_SET_CMPLT 消息响应 REMOTE_NDIS_SET_MSG 消息。
 ms.assetid: 97436a5f-7516-46cf-b789-a6b1c8c067a2
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3664bd100a640d6ece3441b68a3f1242c60e595
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aa66422aebd42b05a1334835f4fa28986ed940f0
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343221"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969354"
 ---
-# <a name="remotendissetcmplt"></a>远程\_NDIS\_设置\_CMPLT
+# <a name="remote_ndis_set_cmplt"></a>远程 \_ NDIS \_ 设置 \_ CMPLT
 
 
-远程 NDIS 设备将响应[**远程\_NDIS\_设置\_MSG** ](remote-ndis-set-msg.md)带有远程邮件\_NDIS\_集\_CMPLT 消息。 此消息用于中继到主机设置设备的操作参数的值的结果。
+远程 ndis 设备将使用远程 ndis set CMPLT 消息对 [**远程 \_ ndis \_ set \_ MSG**](remote-ndis-set-msg.md) 消息做出响应 \_ \_ \_ 。 此消息用于中继将设备操作参数的值设置为主机的结果。
 
 <table>
 <colgroup>
@@ -25,10 +25,10 @@ ms.locfileid: "63343221"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -36,19 +36,19 @@ ms.locfileid: "63343221"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>MessageType</p></td>
-<td><p>指定发送消息的类型。 将设置为 0x80000005。</p></td>
+<td><p>指定要发送的消息的类型。 设置为0x80000005。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
 <td><p>MessageLength</p></td>
-<td><p>以字节为单位，指定该消息的开始的这封邮件的总长度。</p></td>
+<td><p>指定从消息开头开始的此消息的总长度（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
 <td><p>4</p></td>
 <td><p>RequestId</p></td>
-<td><p>指定远程 NDIS 消息 ID 值。 从响应 REMOTE_NDIS_SET_MSG 复制此值。</p></td>
+<td><p>指定远程 NDIS 消息 ID 值。 此值从要响应的 REMOTE_NDIS_SET_MSG 复制。</p></td>
 </tr>
 <tr class="even">
 <td><p>12</p></td>
@@ -72,11 +72,11 @@ ms.locfileid: "63343221"
 <tbody>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
+<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Rndis.h （包括 Rndis.h）</td>
+<td><p>标头</p></td>
+<td>Rndis (包含 Rndis) </td>
 </tr>
 </tbody>
 </table>

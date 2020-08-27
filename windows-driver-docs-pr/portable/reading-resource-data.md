@@ -1,21 +1,21 @@
 ---
-Description: 读取资源数据
+description: 读取资源数据
 title: 读取资源数据
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c50ef5912266fdb8420ee0edf9aaea2ed3b0b8cd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: de7cb750d6f76e3a5c764b8c1eca8b7d50113d99
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376221"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968788"
 ---
 # <a name="reading-resource-data"></a>读取资源数据
 
 
-已检索应用程序后**IStream**对象，它可以执行所需的读取或写入操作使用**IStream::Read**或**IStream::Write**方法。 （在示例驱动程序的情况下仅支持读取的操作）。 当应用程序调用**IStream::Read**方法，此方法，反过来，触发到设备驱动程序的调用**WpdObjectResources::OnReadResource**方法，用于执行实际读操作。
+在应用程序检索到 **istream** 对象后，它可以通过使用 **IStream：： read** 或 **istream：： write** 方法执行所需的读取或写入操作。  (在示例驱动程序中，只支持读取操作) 。 当应用程序调用 **IStream：： Read** 方法时，此方法将触发对设备驱动程序的 **WpdObjectResources：： OnReadResource** 方法的调用，该方法执行实际的读取操作。
 
-**WpdObjectResources::OnReadResource**方法请求的字节数读入目标缓冲区，并使用已传输的字节计数更新资源上下文。
+**WpdObjectResources：： OnReadResource**方法将请求的字节数读入目标缓冲区，然后用已传输的字节数更新资源上下文。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectResources::OnReadResource(

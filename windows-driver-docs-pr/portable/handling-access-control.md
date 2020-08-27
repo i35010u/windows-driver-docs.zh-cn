@@ -1,35 +1,35 @@
 ---
-Description: 处理访问控制
+description: 处理访问控制
 title: 处理访问控制
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2c685e7d494b481e3e809ad9ea601fd65d1c1f6
-ms.sourcegitcommit: b3859d56cb393e698c698d3fb13519ff1522c7f3
+ms.openlocfilehash: 2d4e1d8281e4e398884e8990091f7f1e2ca732c4
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57348758"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968804"
 ---
 # <a name="handling-access-control"></a>处理访问控制
 
 
-WPD 驱动程序必须验证 WPD 命令有效负载已发送具有正确的 I/O 控制代码 (IOCTL) 以确保 I/O 管理器执行适当的 ACL 检查。 每个驱动程序必须执行此验证，因为 WPD 提供宏来自动执行该过程。
+WPD 驱动程序必须验证 WPD 命令负载是否与正确的 i/o 控制代码 (IOCTL) 一起发送，以确保 i/o 管理器执行了相应的 ACL 检查。 由于每个驱动程序都必须执行此验证，因此 WPD 会提供宏来自动执行此过程。
 
-文件中定义这些宏*PortableDevice.h*。 它们是下表中所述。
+这些宏在文件 *PortableDevice*中定义。 下表对它们进行了说明。
 
 | 宏                                            | 描述                                                                                                                                  |
 |--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| 开始\_WPD\_命令\_访问\_映射                 | 定义命令访问表的开头。                                                                                           |
-| 声明\_验证\_WPD\_命令\_访问            | 声明用于验证给定的 WPD 命令使用适当的访问权限标记在 IOCTL 发送该函数的实例。 |
-| 声明\_WPD\_标准\_命令\_访问\_条目 | 声明的所有标准 WPD 命令中包含的条目*PortableDevice.h*。                                                 |
-| 结束\_WPD\_命令\_访问\_映射                   | 定义命令访问表的末尾。                                                                                                 |
-| 是\_WPD\_IOCTL                                   | 确定给定的 IOCTL 是特定于 WPD。                                                                                         |
-| 验证是否\_WPD\_命令\_访问                     | 比较给定的 IOCTL 和针对一个驱动程序模块中定义的命令访问表及其参数。                     |
-| WPD\_命令\_访问\_条目                      | 将自定义条目添加到命令访问表。                                                                                             |
+| BEGIN \_ WPD \_ 命令 \_ 访问 \_ 映射                 | 定义命令访问表的开头。                                                                                           |
+| DECLARE \_ VERIFY \_ WPD \_ 命令 \_ 访问            | 声明函数的实例，该函数用于验证是否随 IOCTL 中的相应访问标志一起发送了给定的 WPD 命令。 |
+| 声明 \_ WPD \_ 标准 \_ 命令 \_ 访问 \_ 项 | 声明 *PortableDevice*中包含的所有标准 WPD 命令的条目。                                                 |
+| 结束 \_ WPD \_ 命令 \_ 访问 \_ 映射                   | 定义命令访问表的末尾。                                                                                                 |
+| 是 \_ WPD \_ IOCTL                                   | 确定给定的 IOCTL 是否特定于 WPD。                                                                                         |
+| 验证 \_ WPD \_ 命令 \_ 访问                     | 将给定的 IOCTL 及其参数与某个驱动程序模块中定义的命令访问表进行比较。                     |
+| WPD \_ 命令 \_ 访问 \_ 项                      | 向命令访问表中添加一个自定义项。                                                                                             |
 
  
 
-在示例驱动程序，在中执行的访问控制验证**CQueue::OnDeviceIoControl**并**CQueue::ProcessWpdMessage**方法。 这些方法都位于*Queue.cpp*文件。 此外，此文件包含的命令访问表，列出了 WPD，以及任何自定义 Ioctl 和及其访问级别。
+在示例驱动程序中，访问控制验证在 **CQueue：： OnDeviceIoControl** 和 **CQueue：:P rocesswpdmessage** 方法中执行。 这些方法位于 *队列 .cpp* 文件中。 此外，此文件还包含一个命令访问表，其中列出了 WPD 以及任何自定义 IOCTLs 及其访问级别。
 
 ```ManagedCPlusPlus
 // Add table used to lookup the Access required for Wpd Commands
@@ -43,7 +43,7 @@ END_WPD_COMMAND_ACCESS_MAP
 DECLARE_VERIFY_WPD_COMMAND_ACCESS;
 ```
 
-**OnDeviceIoControl**方法使用 IS\_WPD\_IOCTL 宏来标识 WPD Ioctl，并处理通过调用**ProcessWpdMessage**方法。
+**OnDeviceIoControl**方法使用 IS \_ WPD \_ IOCTL 宏来识别 WPD IOCTLs，然后通过调用**ProcessWpdMessage**方法对其进行处理。
 
 ```ManagedCPlusPlus
 STDMETHODIMP_ (void)
@@ -129,7 +129,7 @@ CQueue::OnDeviceIoControl(
 }
 ```
 
-**ProcessWpdMessage**方法使用验证\_WPD\_命令\_访问宏，以检查 IOCTL 和命令参数针对命令访问表定义中的开头*Queue.cpp*。
+**ProcessWpdMessage**方法使用 VERIFY \_ WPD \_ 命令 \_ 访问宏来对照在*Queue*开头定义的命令访问表检查 IOCTL 和命令参数。
 
 ```ManagedCPlusPlus
 HRESULT CQueue::ProcessWpdMessage(
@@ -167,7 +167,7 @@ HRESULT CQueue::ProcessWpdMessage(
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

@@ -1,19 +1,19 @@
 ---
-Description: 检索支持的资源的列表
+description: 检索支持的资源的列表
 title: 检索支持的资源的列表
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ff05f45b7dfb4c46fe67a5f9c761453c43e0ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd73fcd83b4710eac5fa07171f2685a61a4e5008
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376225"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969464"
 ---
 # <a name="retrieving-a-list-of-supported-resources"></a>检索支持的资源的列表
 
 
-当应用程序需要检索给定对象支持的资源的列表时，它将调用**IPortableDeviceResources::GetSupportedResources**方法并传入一个字符串，指定对象的标识符中的问题。 此 API 调用，进而触发**WpdObjectResources::OnGetSupportedResources**命令处理程序中的示例驱动程序。 此方法创建**IPortableDeviceKeyCollection**对象支持的每个资源的 PROPERTYKEY 值复制到该命令。
+当应用程序需要检索给定对象支持的资源列表时，它将调用 **IPortableDeviceResources：： GetSupportedResources** 方法并传递一个字符串，该字符串指定了相关对象的标识符。 此 API 调用反过来会触发示例驱动程序中的 **WpdObjectResources：： OnGetSupportedResources** 命令处理程序。 此方法创建 **IPortableDeviceKeyCollection** 命令，该命令为对象支持的每个资源复制 PROPERTYKEY 值。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectResources::OnGetSupportedResources(

@@ -1,24 +1,24 @@
 ---
 title: REMOTE_NDIS_PACKET_MSG
-Description: REMOTE_NDIS_PACKET_MSG 封装 NDIS 数据包，以形成单个数据消息。
+description: REMOTE_NDIS_PACKET_MSG 封装 NDIS 数据包以构成单个数据消息。
 ms.assetid: cc4efe94-6e2c-4201-b251-10e76cf5a553
 ms.date: 07/31/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6a990e578f3e14634bac684270755004e2afaa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74713b788a2a14fee5bedff3f7c7148d1a8e6a16
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350828"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968640"
 ---
-# <a name="remotendispacketmsg"></a>远程\_NDIS\_数据包\_消息
+# <a name="remote_ndis_packet_msg"></a>远程 \_ NDIS \_ 数据包 \_ 消息
 
 
-远程\_NDIS\_数据包\_MSG 封装 NDIS 数据包，以形成单个数据消息。
+远程 \_ NDIS \_ 数据包 \_ 消息封装 NDIS 数据包，以形成单个数据消息。
 
-串联多个远程\_NDIS\_数据包\_MSG 元素窗体 multipacket 消息。 每个单个远程\_NDIS\_数据包\_MSG 组件构造如下所述。 从单个数据包消息的区别在于*MessageLength*字段中每个远程\_NDIS\_数据包\_消息标头包括某些附加的填充字节。 这些填充字节追加到最后一个远程除\_NDIS\_数据包\_消息，以便后续远程\_NDIS\_数据包\_MSG 相应字节边界处开始。 对于从设备发送到主机的消息，此填充应该产生的每个远程\_NDIS\_数据包\_消息开始的字节偏移量，它是从 multipacket 消息开始的 8 字节的倍数。 当主机将 multipacket 消息发送到设备时，将遵守*PacketAlignmentFactor*设备指定。
+串联多个远程 \_ NDIS \_ 数据包 \_ 消息元素将形成一个 multipacket 消息。 \_按如下所述构造每个单独的远程 NDIS \_ 数据包 \_ 消息组件。 与单数据包消息不同的是，每个远程 NDIS 数据包消息标头中的 *MessageLength* 字段都 \_ \_ \_ 包含一些额外的填充字节。 这些填充字节将追加到除最后一个远程 ndis 数据包消息以外的所有字符， \_ \_ \_ 以使后续远程 \_ ndis \_ 数据包 \_ 消息在适当的字节边界处启动。 对于从设备发送到主机的消息，这种填充应该会导致每个远程 \_ NDIS \_ 数据包消息从 \_ multipacket 消息开头开始的字节偏移量开始的字节偏移量。 当主机向设备发送 multipacket 消息时，它将遵循设备指定的 *PacketAlignmentFactor* 。
 
-在远程\_NDIS\_数据包\_MSG 格式定义如下表中。
+远程 \_ NDIS \_ 数据包 \_ 消息格式在下表中定义。
 
 <table>
 <colgroup>
@@ -29,10 +29,10 @@ ms.locfileid: "63350828"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -40,66 +40,66 @@ ms.locfileid: "63350828"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>MessageType</p></td>
-<td><p>指定发送消息的类型。 设置为 0x1。</p></td>
+<td><p>指定要发送的消息的类型。 设置为0x1。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
 <td><p>MessageLength</p></td>
-<td><p>消息长度以字节为单位，包括附加的数据包数据、 OOB 数据、 每个数据包信息数据和内部和外部填充。</p></td>
+<td><p>消息长度（以字节为单位），包括追加的数据包数据、OOB 数据、每个数据包的信息数据以及内部和外部空白。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
 <td><p>4</p></td>
-<td><p>DataOffset</p></td>
-<td><p>此消息的 DataOffset 字段开头字节数据的开始到指定的偏移量。 这是一个整数 4 的倍数。</p></td>
+<td><p>数据偏移量</p></td>
+<td><p>指定从此消息的数据偏移量字段开头到数据开始处的偏移量（以字节为单位）。 这是4的整数倍。</p></td>
 </tr>
 <tr class="even">
 <td><p>12</p></td>
 <td><p>4</p></td>
 <td><p>DataLength</p></td>
-<td><p>此消息的数据内容中指定字节的数。</p></td>
+<td><p>指定此消息的数据内容中的字节数。</p></td>
 </tr>
 <tr class="odd">
 <td><p>16</p></td>
 <td><p>4</p></td>
 <td><p>OOBDataOffset</p></td>
-<td><p>以字节为单位的开始处的第一个 OOB 数据记录指定的偏移量<em>DataOffset</em>此消息的字段。 设置为零，如果没有 OOB 数据。 否则，这就是一个整数 4 的倍数。</p></td>
+<td><p>指定从此消息的 <em>数据偏移量</em> 字段开头开始的第一个 OOB 数据记录的偏移量（以字节为单位）。 如果没有 OOB 数据，则设置为零。 否则，这是4的整数倍。</p></td>
 </tr>
 <tr class="even">
 <td><p>20</p></td>
 <td><p>4</p></td>
 <td><p>OOBDataLength</p></td>
-<td><p>以字节为单位指定的 OOB 数据的总长度。</p></td>
+<td><p>指定 OOB 数据的总长度（以字节为单位）。</p></td>
 </tr>
 <tr class="odd">
 <td><p>24</p></td>
 <td><p>4</p></td>
 <td><p>NumOOBDataElements</p></td>
-<td><p>此消息中指定 OOB 记录的数。</p></td>
+<td><p>指定此消息中的 OOB 记录数。</p></td>
 </tr>
 <tr class="even">
 <td><p>28</p></td>
 <td><p>4</p></td>
 <td><p>PerPacketInfoOffset</p></td>
-<td><p>以字节为单位指定从开头的偏移量<em>DataOffset</em>字段的每个数据包信息数据的第一个记录开始将 REMOTE_NDIS_PACKET_MSG 数据消息中。 如果没有每个数据包数据，则设置为零。 否则，这就是一个整数 4 的倍数。</p></td>
+<td><p>指定从 REMOTE_NDIS_PACKET_MSG 数据消息中的 <em>数据偏移量</em> 字段开始到第一个每个数据包信息数据记录开始的偏移量（以字节为单位）。 如果没有每个数据包数据，则设置为零。 否则，这是4的整数倍。</p></td>
 </tr>
 <tr class="odd">
 <td><p>32</p></td>
 <td><p>4</p></td>
 <td><p>PerPacketInfoLength</p></td>
-<td><p>以字节为单位指定此消息中包含的每个数据包信息的总长度。</p></td>
+<td><p>指定此消息中包含的每个数据包的总长度（以字节为单位）。</p></td>
 </tr>
 <tr class="even">
 <td><p>36</p></td>
 <td><p>4</p></td>
 <td><p>VcHandle</p></td>
-<td><p>保留的面向连接的设备。 设置为零。</p></td>
+<td><p>为面向连接的设备保留。 设置为零。</p></td>
 </tr>
 <tr class="odd">
 <td><p>40</p></td>
 <td><p>4</p></td>
-<td><p>保留</p></td>
+<td><p>预留</p></td>
 <td><p>保留。 设置为零。</p></td>
 </tr>
 </tbody>
@@ -107,7 +107,7 @@ ms.locfileid: "63350828"
 
  
 
-下表中指示的单个 OOB 数据记录的格式。
+下表指示了单个 OOB 数据记录的格式。
 
 <table>
 <colgroup>
@@ -118,10 +118,10 @@ ms.locfileid: "63350828"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -129,22 +129,22 @@ ms.locfileid: "63350828"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>大小</p></td>
-<td><p>以字节为单位的此 OOB 标头和追加 OOB 数据和填充的长度。 这是一个整数 4 的倍数。</p></td>
+<td><p>此 OOB 标头的长度（以字节为单位），并追加了 OOB 数据和填充。 这是4的整数倍。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
-<td><p>在任务栏的搜索框中键入</p></td>
-<td><p>未定义适用于 802.3 设备。</p></td>
+<td><p>类型</p></td>
+<td><p>无为802.3 设备定义。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
 <td><p>4</p></td>
 <td><p>ClassInformationOffset</p></td>
-<td><p>字节偏移量从一开始此 OOB 数据记录到 OOB 数据的起始位置。</p></td>
+<td><p>从此 OOB 数据记录的开始到 OOB 数据开头的字节偏移量。</p></td>
 </tr>
 <tr class="even">
-<td><p>(N)</p></td>
+<td><p> (N) </p></td>
 <td><p>...</p></td>
 <td><p>OOB 数据</p></td>
 <td><p>OOB 数据;有关详细信息，请参阅 Microsoft Windows 驱动程序开发工具包 (DDK) 文档。</p></td>
@@ -154,11 +154,11 @@ ms.locfileid: "63350828"
 
  
 
-**请注意**   (N) 等于的值*ClassInformationOffset*。
+**注意**    (N) 等于*ClassInformationOffset*的值。
 
  
 
-下表定义的每个数据包信息数据记录的格式。
+下表定义了每个数据包的信息数据记录的格式。
 
 <table>
 <colgroup>
@@ -169,10 +169,10 @@ ms.locfileid: "63350828"
 </colgroup>
 <thead>
 <tr class="header">
-<th>偏移量</th>
+<th>Offset</th>
 <th>大小</th>
 <th>字段</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -180,51 +180,51 @@ ms.locfileid: "63350828"
 <td><p>0</p></td>
 <td><p>4</p></td>
 <td><p>大小</p></td>
-<td><p>以字节为单位的此每个数据包标头和追加的每个数据包数据和填充的长度。 此值是一个整数 4 的倍数。</p></td>
+<td><p>此每个数据包标头的长度（以字节为单位），并追加每个数据包的数据和填充。 此值为4的整数倍。</p></td>
 </tr>
 <tr class="even">
 <td><p>4</p></td>
 <td><p>4</p></td>
-<td><p>在任务栏的搜索框中键入</p></td>
-<td><p>设置为一个合法值 NDIS_PER_PACKET_INFO_FROM_PACKET，在 Windows 2000 驱动程序开发工具包 (DDK) 所述。</p></td>
+<td><p>类型</p></td>
+<td><p>设置为 NDIS_PER_PACKET_INFO_FROM_PACKET 的合法值之一，如 Windows 2000 驱动程序开发工具包 (的 DDK) 中所述。</p></td>
 </tr>
 <tr class="odd">
 <td><p>8</p></td>
 <td><p>4</p></td>
 <td><p>PerPacketInformationOffset</p></td>
-<td><p>字节偏移量从一开始此每个数据包的信息的数据记录到每个数据包信息数据的开头。</p></td>
+<td><p>从每个数据包的信息数据记录开始到每个数据包信息数据的开头的字节偏移量。</p></td>
 </tr>
 <tr class="even">
-<td><p>(N)</p></td>
+<td><p> (N) </p></td>
 <td><p>...</p></td>
-<td><p>每个数据包数据</p></td>
-<td><p>每个数据包数据;有关详细信息，请参阅 Windows 2000 DDK 文档。</p></td>
+<td><p>每个数据包的数据</p></td>
+<td><p>每个数据包的数据;有关详细信息，请参阅 Windows 2000 DDK 文档。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**请注意**   (N) 等于的值*PerPacketInformationOffset*。
+**注意**    (N) 等于*PerPacketInformationOffset*的值。
 
  
 
-<a name="remarks"></a>备注
+<a name="remarks"></a>注解
 -------
 
-每个远程\_NDIS\_数据包\_消息可能包含一个或多个 OOB 数据记录。 *NumOOBDataElements*指示此消息中的 OOB 数据记录数。 OOB 数据记录必须出现在序列中。 *OOBDataLength*字段指示整个 OOB 数据块的长度以字节为单位。 *OOBDataOffset*字段指示从开始处的字节偏移量*DataOffset*字段到 OOB 数据块的开头。 OOB 包的数据有关的详细信息，请参阅 Windows 2000 DDK 中的 NDIS 规范。
+每个远程 \_ NDIS \_ 数据包 \_ 消息可能包含一个或多个 OOB 数据记录。 *NumOOBDataElements* 指示此消息中的 OOB 数据记录数。 OOB 数据记录必须按顺序显示。 *OOBDataLength*字段指示整个 OOB 数据块的长度（以字节为单位）。 *OOBDataOffset*字段指示从*数据偏移量*字段开头到 OOB 数据块开始的字节偏移量。 有关 OOB 数据包数据的详细信息，请参阅 Windows 2000 DDK 中的 NDIS 规范。
 
-如果多个 OOB 数据块附加到远程\_NDIS\_数据包\_MSG 消息，每个后续的 OOB 数据记录必须紧跟以前 OOB 记录的数据。
+如果将多个 OOB 数据块附加到远程 \_ NDIS \_ 数据包消息 \_ 消息，则每个后续 oob 数据记录必须紧跟上一个 oob 记录的数据。
 
-当前为 802.3 设备定义没有 OOB 信息。
+当前没有为802.3 设备定义 OOB 信息。
 
-每个远程\_NDIS\_数据包\_消息可能包含一个或多个每个数据包信息数据记录。 每个数据包信息用于传达数据包元数据，例如 TCP 校验和。 *PerPacketInfoOffset*字段指示从开始处的字节偏移量*DataOffset*字段的每个数据包信息数据记录的开头。 *OOBDataLength*字段指示每个数据包信息数据记录的字节长度。 有关每个数据包信息数据的详细信息，请参阅 Windows 2000 DDK。
+每个远程 \_ NDIS \_ 数据包 \_ 消息可能包含一个或多个每个数据包信息的数据记录。 每个数据包的信息用于传递包元数据，例如 TCP 校验和。 *PerPacketInfoOffset*字段指示从*数据偏移量*字段开头到每个数据包信息数据记录开始的字节偏移量。 *OOBDataLength*字段指示每个数据包的信息数据记录的字节长度。 有关每个数据包的信息数据的详细信息，请参阅 Windows 2000 DDK。
 
-如果有多个每个数据包信息数据块，每个后续的每个数据包信息数据记录必须紧跟以前每个数据包的信息记录的数据。
+如果有多个每个数据包的信息数据块，则每个数据包的后续信息数据记录必须紧跟在上一个每个数据包信息记录的数据中。
 
-远程 NDIS 设备必须发送和接收通过 NDIS 数据包数据。 设备使用的总线确定这些数据包如何从主机到设备和设备传递到主机。 可能是共享的内存，它或在 USB、 Isoch 和大容量的情况下通过管道传递。 NDIS 数据包还可能包含带外 (OOB) 数据，以及放在网络上的数据。
+远程 NDIS 设备必须通过 NDIS 数据包发送和接收数据。 设备使用的总线确定如何将这些数据包从主机传递到设备和设备到主机。 它可以是共享内存，也可以是 USB、Isoch 和大容量管道。 NDIS 数据包也可能包含带外 (OOB) 数据以及跨网络的数据。
 
-远程 NDIS 设备将传输封装与的 NDIS 数据包**远程\_NDIS\_数据包\_MSG**跨整个数据通道。 无连接 （例如，802.3) 和面向连接的网站 （如 ATM) 设备使用同一数据包消息结构，以便处理数据包的通用代码。 每个**远程\_NDIS\_数据包\_MSG**消息包含有关单个网络数据单元 （此类 s 以太网 802.3 帧） 的信息。
+远程 NDIS 设备传输 NDIS 数据包，这些数据包封装为数据通道中的 **远程 \_ NDIS \_ 数据包 \_ 消息** 。 无连接 (（例如 802.3) 和面向连接的 (，例如 ATM) 设备）使用相同的数据包消息结构来简化包处理的通用代码。 每个 **远程 \_ NDIS \_ 数据包 \_ ** 消息消息都包含一个网络数据单元的相关信息 (例如，) 以太网802.3 帧。
 
 有关带外数据包数据或每个数据包信息数据的详细信息，请参阅 Windows 2000 DDK NDIS 部分。
 
@@ -239,11 +239,11 @@ ms.locfileid: "63350828"
 <tbody>
 <tr class="odd">
 <td><p>Version</p></td>
-<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 也可在 Windows 2000 中作为可再发行组件的二进制文件。</p></td>
+<td><p>在 Microsoft Windows XP 和更高版本的 Windows 操作系统中可用。 在 Windows 2000 中也可以作为可再发行二进制文件。</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Rndis.h （包括 Rndis.h）</td>
+<td><p>标头</p></td>
+<td>Rndis (包含 Rndis) </td>
 </tr>
 </tbody>
 </table>

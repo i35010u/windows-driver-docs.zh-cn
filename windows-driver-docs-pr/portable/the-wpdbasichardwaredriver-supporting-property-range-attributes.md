@@ -1,23 +1,23 @@
 ---
-Description: 支持属性范围特性
+description: 支持属性范围特性
 title: 支持属性范围特性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 692759b656b8e2cfd10c8a29910492772413b39c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29d798880d0e1d898861b60bbce7a5f4b630686b
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387302"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969168"
 ---
 # <a name="supporting-the-property-range-attributes"></a>支持属性范围特性
 
 
-示例驱动程序支持两个属性： 更新间隔 (传感器\_更新\_间隔) 和当前的传感器读数 (传感器\_读取)。 每个属性支持一的组常规属性 （删除、 可读、 可写，等等）。 此外，这些属性支持特定范围属性 （最小值、 最大值和步长值）。
+示例驱动程序支持两个属性：更新间隔 (传感器 \_ 更新 \_ 间隔) 和当前传感器读数 (传感器 \_ 读数) 。 其中每个属性都支持 (删除、可读、可写等) 的一组常规属性。 此外，这些属性还支持)  (最小值、最大值和步长值的特定范围属性。
 
-对于传感器读数，该属性表示为一个范围 (WPD\_属性\_特性\_窗体\_范围)。
+对于传感器读数，属性表示为范围 (WPD \_ 属性 \_ 属性 \_ 窗体 \_ 范围) 。
 
-属性属性分别对应于中的条目*Rs232connection.h*文件。 这些条目指定设备支持以及它在给定范围内的将属性设置时，可以使用应用程序的步骤值的最小值和最大值：
+属性特性对应于 *rs232connection.cpp* 文件中的项。 这些条目指定设备支持的最小值和最大值，以及应用程序在给定范围内设置属性时可以使用的步长值：
 
 ```cpp
 #define SENSOR_READING_MIN 1  
@@ -25,7 +25,7 @@ ms.locfileid: "63387302"
 #define SENSOR_READING_STEP 1   
 ```
 
-设置这些范围特性的代码位于 WpdObjectProperties::GetPropertyAttributesForObject (在*Wpdobjectproperties.cpp*模块)。 此代码使用在中定义的值*Rs232connection.h*设置以下属性：
+可在 *WpdObjectProperties* 模块) 中的 WpdObjectProperties：： GetPropertyAttributesForObject (中找到设置这些范围属性的代码。 此代码使用 *rs232connection.cpp* 中定义的值来设置以下属性：
 
 ```cpp
 else if (IsEqualPropertyKey(Key, SENSOR_READING))
@@ -57,7 +57,7 @@ else if (IsEqualPropertyKey(Key, SENSOR_READING))
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

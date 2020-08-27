@@ -1,21 +1,21 @@
 ---
-Description: 属性支持
+description: 属性支持
 title: 属性支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 445700819101499437251fbaff795a6730994a74
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 49ba534dc883672372932627552bf21a92056a51
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85967858"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969512"
 ---
 # <a name="property-support"></a>属性支持
 
 
 *WpdObjectProperties*和*WpdObjectProperties*文件包含用于在设备上设置和检索对象属性的成员函数。
 
-当 Windows 应用程序调用**IPortableDeviceProperties**接口中的五种方法之一时，此调用反过来会触发**WpdObjectProperty**类中的五个命令处理程序之一。 下表标识了应用程序方法到**WpdObjectProperties**驱动程序方法的映射。
+当 Windows 应用程序调用 **IPortableDeviceProperties** 接口中的五种方法之一时，此调用反过来会触发 **WpdObjectProperty** 类中的五个命令处理程序之一。 下表标识了应用程序方法到 **WpdObjectProperties** 驱动程序方法的映射。
 
 IPortableDeviceProperties 方法 * * * * *： **WpdObjectProperties 命令处理程序**
 
@@ -32,7 +32,7 @@ IPortableDeviceProperties：： SetValues * * * *： **OnSetPropertyValues**
 
  
 
-WpdObjectProperties 命令处理程序由**WpdObjectProperty：:D ispatchwpdmessage**方法调用。 示例驱动程序的以下摘录包含用于 WpdObjectProperty 的代码 **：:D ispatchwpdmessage：**
+WpdObjectProperties 命令处理程序由 **WpdObjectProperty：:D ispatchwpdmessage** 方法调用。 示例驱动程序的以下摘录包含用于 WpdObjectProperty 的代码 **：:D ispatchwpdmessage：**
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::DispatchWpdMessage(

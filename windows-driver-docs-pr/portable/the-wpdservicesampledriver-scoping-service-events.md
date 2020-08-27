@@ -1,21 +1,21 @@
 ---
-Description: 限定服务事件的范围
+description: 限定服务事件的范围
 title: 限定服务事件的范围
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 048b2a54edc0fd92f504c1d31b0c8290d0a0acbd
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bfa5f8eebc0a6fe41d49e40a561f0db50ca70dd4
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384516"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969574"
 ---
 # <a name="scoping-service-events"></a>限定服务事件的范围
 
 
-默认情况下，WPD 广播到所有客户端应用程序 （甚至的客户端连接到其他服务） 的服务事件。 若要限制的广播范围，驱动程序必须设置 WPD\_对象\_容器\_功能\_对象\_ID 事件参数应为其广播的服务的 ObjectID有限。
+默认情况下，WPD 会将服务事件广播到所有客户端应用程序， (甚至是连接到其他服务) 的客户端。 若要限制广播的作用域，驱动程序必须将 WPD \_ 对象 \_ 容器 \_ 功能 \_ 对象 \_ ID 事件参数设置为广播应受限到的服务的 ObjectID。
 
-下面的代码示例演示如何**WPD\_对象\_容器\_功能\_位于\_ID**添加到中的事件参数**FakeDevice::SetPropertyValues**，以指示已更新对象：
+下面的代码示例演示如何将 **WPD \_ 对象 \_ 容器 \_ 功能 \_ OBEJCT \_ ID** 添加到 **FakeDevice：： SetPropertyValues**中的事件参数，以指示对象已更新：
 
 ```ManagedCPlusPlus
         if (SUCCEEDED(hr) && (*pbObjectChanged)) 
@@ -34,9 +34,9 @@ ms.locfileid: "63384516"
         }
 ```
 
-联系人服务内的对象*pContent-&gt;ContainerFunctionalObjectID*包含联系人服务的对象标识符。 如果指定此参数，则 WPD 匹配此事件参数和筛选事件，以便连接到同一个联系人服务其他客户端将会收到此事件。
+对于联系人服务中的对象， *pContent- &gt; ContainerFunctionalObjectID* 包含联系人服务的对象标识符。 如果指定此参数，WPD 将与此事件参数匹配并筛选事件，以便仅连接到同一联系人服务的其他客户端将收到此事件。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****

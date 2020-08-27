@@ -1,26 +1,26 @@
 ---
-Description: USBTCD 是用户模式应用程序和内核模式驱动程序的组合。
+description: USBTCD 是用户模式应用程序和内核模式驱动程序的组合。
 title: USBTCD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d8e248fed9356c98e46843caed4f538cfaf3faa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 286565c8a01870834fc5c8e4ee10d9a5785b377c
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333947"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968576"
 ---
 # <a name="usbtcd"></a>USBTCD
 
 
-USBTCD 是用户模式应用程序和内核模式驱动程序的组合。 此工具将执行读取和写入操作。 初始化控件，大容量、 等时，数据传输的各种传输长度与测试设备。 对于 SuperMUTT 设备，USBTCD 将数据传输到流支持的大容量终结点。 它还可以作为链接 MDLs 发送的传输缓冲区。 在这种情况下，您可以传输缓冲区中指定的段数。
+USBTCD 是用户模式应用程序和内核模式驱动程序的组合。 该工具执行读写操作。 它启动与测试设备之间的各种传输长度的控制、大容量、同步数据传输。 对于 SuperMUTT 设备，USBTCD 将数据传输到大容量终结点支持的流。 它还可以将传输缓冲区作为链式 MDLs 发送。 在这种情况下，可以指定传输缓冲区中的段数。
 
-USBTCD 文件包含在[MUTT 软件包](https://msdn.microsoft.com/windows/hardware/jj590752)。
+USBTCD 文件包含在 [MUTT](https://msdn.microsoft.com/windows/hardware/jj590752)软件包中。
 
 ## <a name="usbtcd"></a>USBTCD
 
 
-若要使用这些命令，必须为该设备的功能驱动程序加载 USBTCD 驱动程序 (USBTCD.sys)。 若要加载的设备驱动程序，运行 MUTTUtil 并指定**USBTCD.inf**。 此工具加载**USBTCD.sys**的所有连接的 USB 设备。
+若要使用这些命令，必须将 USBTCD 驱动程序 ( # A0) 作为设备的函数驱动程序加载。 若要加载设备的驱动程序，请运行 MUTTUtil 并指定 **USBTCD**。 此工具为所有连接的 USB 设备加载 **USBTCD.sys** 。
 
 ``` syntax
 c:\Program Files (x86)\USBTest\x64>MuttUtil.exe -UpdateDriver usbtcd.inf
@@ -33,33 +33,33 @@ DEVICE :  0 : USB\VID_045E&PID_078E&REV_8011 :             0  : USBTCD
 Return value: 1
 ```
 
-可以使用以下命令来度量 SuperMUTT 设备的大容量终结点相互传输的性能。
+你可以使用以下命令来测量与 SuperMUTT 设备的大容量终结点之间的传输性能。
 
-**Usbtcd – 性能 – 读取 1 100 2 10240000 0**
+**Usbtcd – perf –读取 1 100 2 10240000 0**
 
-**Usbtcd – 性能 – 编写 1 100 0 10240000 0**
+**Usbtcd – perf –写入 1 100 0 10240000 0**
 
-在上述命令中，USBTCD 从管道 2 读取使用 10240000 字节。 在第二个命令中，USBTCD 开始写操作使用 10240000 字节发送管道 0 到何处。 这两个命令，该工具执行 100 次的操作，且未指定超时值。
+在上述命令中，USBTCD 从管道2读取10240000字节。 在第二个命令中，USBTCD 开始一个写入操作，其中10240000字节发送到管道0。 对于这两个命令，该工具执行操作100次，并且不指定超时值。
 
-这些命令用于衡量性能的大容量的 MUTT 设备的终结点。 请注意，在这种情况下减少了传输大小。
+这些命令用于测量 MUTT 设备的批量终结点的性能。 请注意，在这种情况下，传输大小会降低。
 
-**Usbtcd – 性能 – 读取 1 100 2 512000 0**
+**Usbtcd – perf –读取 1 100 2 512000 0**
 
-**Usbtcd – 性能 – 编写 1 100 0 512000 0**
+**Usbtcd – perf –写入 1 100 0 512000 0**
 
-这些命令测量数据流的大容量的 SuperMUTT 设备的终结点的数据传输的性能。 目前，设备固件尝试切换流每隔一毫秒发送新的流数以及 ERDY 到主机。 使用计时器在设备内实现。
+这些命令测量 SuperMUTT 设备的批量终结点流的数据传输性能。 目前，设备固件每隔一毫秒就会尝试切换流，同时向主机发送一个 ERDY 和新的流号。 使用设备内的计时器实现。
 
-**Usbtcd – sread 1 100 7 1 1024年 0**
+**Usbtcd – sread 1 100 7 1 1024 0**
 
-**Usbtcd – 程序书写 1 100 6 1 1024年 0**
+**Usbtcd – swrite 1 100 6 1 1024 0**
 
-在上述命令，USBTCD 读取和写入 SuperMUTT 设备在大容量终结点中的特定流。 在第一个命令中，此工具将启动一个工作线程，从流使用的管道 7 关联的 1 中读取 1024 字节。 同样，第二个命令写入 1024 个字节进行流式处理 1 与管道 6 关联。 这两个命令，该工具执行 100 次的操作，且未指定超时值。
+在上述命令中，USBTCD 读取和写入 SuperMUTT 设备的大容量终结点中的特定流。 在第一个命令中，该工具启动一个工作线程，该工作线程读取与管道7关联的流1中的1024个字节。 同样，第二个命令将1024字节写入与管道6关联的流1。 对于这两个命令，该工具执行操作100次，并且不指定超时值。
 
-若要查看上 USBTCD 帮助，请运行以下命令：
+若要查看有关 USBTCD 的帮助，请运行以下命令：
 
 **usbtcd -?**
 
-该命令显示有关命令行选项的信息。 可以在命令行上指定传输大小、 详细级别、 传输超时和的详细信息。
+命令显示有关命令行选项的信息。 可以在命令行上指定传输大小、详细级别、传输超时等。
 
 ## <a name="related-topics"></a>相关主题
 [USB 测试工具](usb-test-tools.md)  

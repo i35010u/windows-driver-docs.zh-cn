@@ -1,19 +1,19 @@
 ---
-Description: 属性-特性检索
+description: 属性-特性检索
 title: 属性-特性检索
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfbd7395b50e7513069886b2d2a1a872318d8053
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e0c11a6e4aa57ffc3dbd0fa5ffa2e55c28c50f9c
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392885"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968514"
 ---
 # <a name="property-attribute-retrieval"></a>属性-特性检索
 
 
-当 WPD 程序调用**IPortableDeviceProperties::GetPropertyAttributes**方法，此方法，反过来，触发调用**WpdObjectProperties::OnGetPropertyAttributes**方法中的示例驱动程序。 后一种方法创建**IPortableDeviceValues**驱动程序将为给定属性的属性存储到其中的对象。
+当 WPD 应用程序调用 **IPortableDeviceProperties：： GetPropertyAttributes** 方法时，此方法将触发对示例驱动程序中的 **WpdObjectProperties：： OnGetPropertyAttributes** 方法的调用。 后一种方法会创建一个 **IPortableDeviceValues** 对象，驱动程序会将给定属性的属性存储到其中。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::OnGetPropertyAttributes(

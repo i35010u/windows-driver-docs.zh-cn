@@ -1,47 +1,47 @@
 ---
-Description: 定义传感器属性
+description: 定义传感器属性
 title: 定义传感器属性
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d36174949ef6b5dd40e0f6b53c3e3270219500af
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c324357ecdf8d7358e572b7935d62d95b0ae9a29
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378665"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969156"
 ---
 # <a name="defining-the-sensor-properties"></a>定义传感器属性
 
 
-Windows 便携式设备 (WPD) 属性是对象说明的元数据。 本部分介绍的示例驱动程序支持的属性。 设备对象支持 18 属性，并且每个传感器对象支持 10 个属性。 某些对象属性所需的驱动程序的功能，例如 WPD\_对象\_ID 和 WPD\_对象\_的永久\_UNIQUE\_id。 存在其他属性来提供信息，用于描述对象，如 WPD\_设备\_制造商。
+ (WPD) 属性的 Windows 便携式设备是对象描述元数据。 本部分介绍了示例驱动程序支持的属性。 设备对象支持18个属性，单独的传感器对象支持10个属性。 驱动程序功能需要某些对象属性，如 WPD \_ 对象 \_ ID 和 WPD \_ 对象持久的 \_ \_ 唯一 \_ ID。 存在其他属性以提供描述对象的信息，如 WPD \_ 设备 \_ 制造商。
 
-WDK WPD 驱动程序开发人员对于包含多种工具。 这些工具之一*WpdInfo.exe*，使开发人员若要检查的对象和由给定的驱动程序公开的属性。 以下屏幕截图*WpdInfo.exe*工具显示的属性驱动程序中的设备对象支持。
+WDK 包含用于 WPD 驱动程序开发人员的多个工具。 *WpdInfo.exe*使用其中一种工具，开发人员可以检查由给定驱动程序公开的对象和属性。 以下 *WpdInfo.exe* 工具的屏幕截图显示了驱动程序中设备对象支持的属性。
 
 ![wpd 信息工具](images/wpdinfo_device_object.png)
 
-在上图中，最左边的列的顶部窗格中列出的驱动程序支持的对象。 中心窗格中列出的设备对象的驱动程序支持的 18 属性。 在此窗格中的第一列列出属性名称、 第二列列出了该属性的值、 第三个列，列出的类型，依此类推。 下部窗格显示了返回的事件的驱动程序支持的信息。
+在上图中，最左侧窗格中的最左侧列列出了驱动程序支持的对象。 中间窗格列出设备对象的驱动程序支持的18个属性。 此窗格中的第一列列出属性名称，第二列列出属性的值，第三列列出类型，依此类推。 下窗格显示了驱动程序支持的事件返回的信息。
 
-以下屏幕截图*WpdInfo.exe*工具显示的属性的 TempHumidity 对象支持。
+以下 *WpdInfo.exe* 工具的屏幕截图显示了 TempHumidity 对象支持的属性。
 
 ![wpd 信息工具](images/wpdinfo_temphumidity_object.png)
 
-此对象支持 10 个属性。 其中，传感器\_读取和传感器\_更新\_间隔是由 WpdBasicHardwareDriver，定义并表示数据由传感器固件颁发的自定义属性。 在此示例中，传感器\_读取属性标识传感器 (2 = Sensiron 温度和湿度传感器)，元素计数 (1)、 元素大小 （7 字节）、 当前温度 (74.4 F) 和相对湿度 （37.3%)。 传感器\_更新\_间隔属性指定该设备会触发事件的频率。 指示 2 秒更新间隔以毫秒为单位，指定此值，02000。 固件支持更新间隔介于 2 到 60 秒之间的配置。
+此对象支持10个属性。 其中的传感器 \_ 读取和传感器 \_ 更新 \_ 间隔是由 WpdBasicHardwareDriver 定义的自定义属性，表示传感器固件发出的数据。 在此示例中，传感器 \_ 读数属性标识传感器 (2 = Sensiron 温度和湿度传感器) ，元素计数 (1) ，元素大小 (7 字节) ，当前温度 (74.4 F) ，相对湿度 (37.3% ) 。 传感器 \_ 更新 \_ 间隔属性指定设备触发事件的频率。 此值为02000，以毫秒为单位指定，这表示更新间隔为2秒。 固件支持将更新间隔配置为2到60秒。
 
-WPD，在由 PROPERTYKEY 数据结构表示属性。 此结构由两部分组成： 一个 GUID 和一个 dword 值。 全局唯一标识符 (GUID) 标识属性类别和 DWORD 标识该类别中的特定属性。 PROPERTYKEY 结构的详细信息，请参阅[PROPERTYKEYs 和 WPD 中的 Guid](propertykeys-and-guids-in-windows-portable-devices.md) Windows Driver Kit (WDK) 文档中。
+在 WPD 中，属性由 PROPERTYKEY 数据结构表示。 此结构由两部分组成： GUID 和 DWORD。 全局唯一标识符 (GUID) 标识属性类别，而 DWORD 标识该类别中的特定属性。 有关 PROPERTYKEY 结构的详细信息，请参阅 Windows 驱动程序工具包 (WDK) 文档中的 WPD 中的 [PROPERTYKEYs 和 guid](propertykeys-and-guids-in-windows-portable-devices.md) 。
 
-使用 DECLARE\_PROPERTYKEY 宏，您可以在您的驱动程序中声明一个新的属性的 PROPERTYKEY 结构。 下面的示例演示声明 PROPERTYKEY 传感器\_读取属性。 此示例显示在*WpdObjectProperties.cpp*文件。
+通过使用 DECLARE \_ PROPERTYKEY 宏，可以在驱动程序中声明新属性的 PROPERTYKEY 结构。 下面的示例演示了传感器读取属性的 PROPERTYKEY 声明 \_ 。 此示例显示在 *WpdObjectProperties* 文件中。
 
 ```cpp
 DECLARE_PROPERTYKEY(SENSOR_READING, 0xa7ef4367, 0x6550, 0x4055, 0xb6, 0x6f, 0xbe, 0x6f, 0xda, 0xcf, 0x4e, 0x9f, 2);
 ```
 
-除了声明 PROPERTYKEY 时，必须定义该密钥。 定义的传感器\_读取项将显示在*Stdafx.h*文件。
+除了声明 PROPERTYKEY 外，还必须定义键。 传感器读取密钥的定义 \_ 将出现在 *stdafx.h* 文件中。
 
 ```cpp
 DEFINE_PROPERTYKEY(SENSOR_READING, 0xa7ef4367, 0x6550, 0x4055, 0xb6, 0x6f, 0xbe, 0x6f, 0xda, 0xcf, 0x4e, 0x9f, 2);
 ```
 
-*WpdObjectProperties.cpp*文件包含的 PROPERTKEY 结构定义的三个数组。 这些列阵标识相关的、 支持的属性的集合。 第一个是 PROPERTYKEYs 标识设备和传感器对象所共有的属性的数组。
+*WpdObjectProperties*文件包含 PROPERTKEY 结构的三个数组的定义。 这些阵列标识相关的、支持的属性的集合。 第一种是标识设备和传感器对象共有的属性的 PROPERTYKEYs 数组。
 
 ```cpp
 const PROPERTYKEY g_SupportedCommonProperties[] =
@@ -56,9 +56,9 @@ const PROPERTYKEY g_SupportedCommonProperties[] =
 };
 ```
 
-如果您使用*WpdInfo.exe*工具检索当前的设备和传感器属性时，你将注意到前一个数组中的属性显示在两个列表。
+如果使用 *WpdInfo.exe* 工具检索当前设备和传感器属性，则会注意到这两个列表中的属性都显示在前面的数组中。
 
-第二个数组是 PROPERTYKEYS 标识设备对象支持的属性的数组。
+第二个数组是 PROPERTYKEYS 的数组，用于标识设备对象支持的属性。
 
 ```cpp
 const PROPERTYKEY g_SupportedDeviceProperties[] =
@@ -77,7 +77,7 @@ const PROPERTYKEY g_SupportedDeviceProperties[] =
 };
 ```
 
-分配给此数组中的各种静态属性的值中定义*WpdObjectProperties.h*。
+分配给此数组中各种静态属性的值是在 *WpdObjectProperties*中定义的。
 
 ```cpp
 #define DEVICE_PROTOCOL_VALUE            L"Sensor Protocol ver 1.00"
@@ -90,9 +90,9 @@ const PROPERTYKEY g_SupportedDeviceProperties[] =
 #define DEVICE_SUPPORTS_NONCONSUMABLE_VALUE    FALSE
 ```
 
-在为这些值分配**WpdObjectProperties::GetPropertyValuesForObject**方法。
+这些值是在 **WpdObjectProperties：： GetPropertyValuesForObject** 方法中赋值的。
 
-例如，以下内容摘自此方法将设备模型字符串 （视差 BS2 传感器） 分配给 WPD\_设备\_模型属性。
+例如，此方法中的以下摘录将 (视差 BS2 传感器) 的设备模型字符串分配到 WPD \_ 设备 \_ 模型属性。
 
 ```cpp
 if (IsEqualPropertyKey(Key, WPD_DEVICE_MODEL))
@@ -102,7 +102,7 @@ if (IsEqualPropertyKey(Key, WPD_DEVICE_MODEL))
 }
 ```
 
-第三个数组是 PROPERTYKEYS 标识支持的传感器对象，以及常见的对象属性的属性的数组。
+第三个数组是 PROPERTYKEYS 的数组，用于标识传感器对象支持的属性，以及通用对象属性。
 
 ```cpp
 const PROPERTYKEY g_SupportedSensorProperties[] =
@@ -113,9 +113,9 @@ const PROPERTYKEY g_SupportedSensorProperties[] =
 };
 ```
 
-这些值也在分配**WpdObjectProperties::GetPropertyValuesForObject**方法。 但是，分配到传感器的值\_读取和传感器\_更新\_间隔属性不是常量; 相反，它们是两个 helper 函数来检索在真实时间中的值：**WpdObjectProperties::GetSensorReading**并**WpdObjectProperties::GetUpdateInterval**。
+这些值也是在 **WpdObjectProperties：： GetPropertyValuesForObject** 方法中赋值的。 但是，分配给传感器 \_ 读数和传感器 \_ 更新 \_ 间隔属性的值不是常量，而是通过两个 helper 函数实时检索值： **WpdObjectProperties：： GetSensorReading** 和 **WpdObjectProperties：： GetUpdateInterval**。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>相关主题
 
 
 ****
