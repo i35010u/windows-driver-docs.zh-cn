@@ -1,16 +1,16 @@
 ---
-Description: 音频设备设计指南
+description: 音频设备设计指南
 title: 音频设备设计指南
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: e5000e3658365a5a8806797b346377566a6f0add
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 22112cdf6f5d5c5245f20122c1ba989a04d1539a
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "63333425"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968826"
 ---
 # <a name="audio-devices-design-guide"></a>音频设备设计指南
 
@@ -20,7 +20,7 @@ ms.locfileid: "63333425"
 
 本部分介绍了如何设计 Microsoft Windows 驱动模型 (WDM) 音频驱动程序。 这些驱动程序控制音频适配器，音频适配器以波形和 MIDI 格式呈现和捕获包含音频数据的流。
 
-论述了以下主题：
+本文讨论了以下主题：
 
 [Windows 10：音频驱动程序的新增功能](windows-threshold--what-s-new-for-audio.md)
 

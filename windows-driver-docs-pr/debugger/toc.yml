@@ -1740,8 +1740,6 @@
           href: symstore-transactions.md
         - name: 文件系统参考和符号文件
           href: file-system-references-and-symbol-files.md
-        - name: SymStore 压缩文件
-          href: symstore-compressed-files.md
         - name: 符号存储格式
           href: symbol-storage-format.md
     - name: 调试器如何识别符号
