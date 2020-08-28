@@ -1,21 +1,30 @@
 ---
-title: 为供应商提供的系统定义的设备安装程序类
-description: 为供应商提供的系统定义的设备安装程序类
+title: INF 版本部分的类和 ClassGuid 条目
+description: INF 版本部分的类和 ClassGuid 条目
 ms.assetid: d4b8a964-f843-4960-9077-46746af27a61
-ms.date: 05/08/2018
+ms.date: 08/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b56335f3c2a136451a7fc698147ae148bfad704f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.custom: contperfq1
+ms.openlocfilehash: 5aa9bea204b025946b8c3ec888258424c398eca4
+ms.sourcegitcommit: c4483d7b55a39aac0baf18dc1aa2aa4d6c8a2db9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837360"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992028"
 ---
-# <a name="system-defined-device-setup-classes-available-to-vendors"></a>为供应商提供的系统定义的设备安装程序类  
-  
-  
-以下类和 Guid 由操作系统定义。 除非另有说明，否则这些类和 Guid 可用于在 Windows 2000 和更高版本的 Windows 上安装设备（或驱动程序）：  
-  
+# <a name="class-and-classguid-entries-for-inf-version-section"></a>INF 版本部分的类和 ClassGuid 条目  
+
+如果要为特定设备类别编写 Windows 设备驱动程序，可以使用以下列表来选择正确的预定义值，以用于 `Class` `ClassGuid` 驱动程序 INF 文件的 [版本部分](inf-version-section.md) 中的和条目。
+
+若要查看这些条目在 INF 文件中的显示方式，请查看[Windows 驱动程序示例](https://github.com/microsoft/Windows-driver-samples)存储库中的 " [cdrom](https://github.com/microsoft/Windows-driver-samples/blob/aaeca58c5e7b67740a603a3150db225670b42bb6/storage/class/cdrom/src/cdrom.inf#L7-L8) "。
+
+除非特别指出，列表中的值可用于在 Windows 2000 和更高版本上安装设备驱动程序。
+
+> [!NOTE]
+> 如果你正在寻找有关排查 CD 或 DVD 驱动器问题的信息，请参阅 [cd 驱动器或 dvd 驱动器无法按预期工作](https://support.microsoft.com/help/929461/the-cd-drive-or-the-dvd-drive-does-not-work-as-expected-on-a-computer)。
+
+## <a name="device-categories-and-class-values"></a>设备类别和类值 
+
 **电池设备**  
 类 = 电池  
 ClassGuid = {72631e54-78a4-11d0-bcf7-00aa00b7b32a}  
@@ -24,17 +33,17 @@ ClassGuid = {72631e54-78a4-11d0-bcf7-00aa00b7b32a}
 **生物识别设备**  
 类 = 生物识别  
 ClassGuid = {53D29EF7-377C-4D14-864B-EB3A85769359}  
-（Windows Server 2003 和更高版本的 Windows）此类包括所有基于生物识别的个人标识设备。  
+ (Windows Server 2003 及更高版本的 Windows) 此类包括所有基于生物识别的个人标识设备。  
   
 **蓝牙设备**  
 类 = 蓝牙  
 ClassGuid = {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}  
-（Windows XP SP1 和更高版本的 Windows）此类包括所有蓝牙设备。  
+ (Windows XP SP1 及更高版本的 Windows) 此类包括所有蓝牙设备。  
   
 **照相机设备**  
 类 = 相机  
 ClassGuid = {ca3e7ab9-b4c3-4ae6-8251-579ef933890f}  
-（Windows 10 版本1709及更高版本的 Windows）此类包括通用照相机驱动程序。  
+ (Windows 10 1709 版及更高版本的 Windows) 此类包含通用照相机驱动程序。  
   
 **Cd-rom 驱动器**  
 类 = CDROM  
@@ -54,7 +63,7 @@ ClassGuid = {4d36e968-e325-11ce-bfc1-08002be10318}
 **扩展 INF**  
 类 = 扩展  
 ClassGuid = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}  
-（Windows 10 和更高版本的 Windows）此类包括需要自定义的所有设备。 有关更多详细信息，请参阅[使用扩展 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)。  
+ (Windows 10 及更高版本的 Windows) 此类包括需要自定义的所有设备。 有关更多详细信息，请参阅 [使用扩展 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/using-an-extension-inf-file)。  
   
 <a href="" id="floppy-disk-controllers-"></a>**软盘控制器**  
 类 = FDC  
@@ -71,10 +80,10 @@ ClassGuid = {4d36e980-e325-11ce-bfc1-08002be10318}
 ClassGuid = {4d36e96a-e325-11ce-bfc1-08002be10318}  
 此类包括硬盘控制器（包括 ATA/ATAPI 控制器），但不包括 SCSI 和 RAID 磁盘控制器。  
   
-**人体学接口设备（HID）**  
+**人体学接口设备 (HID) **  
 类 = HIDClass  
 ClassGuid = {745a17a0-74d3-11d0-b6fe-00a0c90f57da}  
-此类包括由系统提供的[HID 类驱动程序](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的[USB HID 标准](../hid/hid-over-usb.md)和非 usb 设备的 usb 设备。 有关详细信息，请参阅[HIDClass 设备安装程序类](../hid/minidriver-operations.md)。 （另请参阅此列表后面的键盘或鼠标类。）  
+此类包括由系统提供的 [HID 类驱动程序](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))操作的交互式输入设备。 这包括符合使用 HID 微型驱动程序的 [USB HID 标准](../hid/hid-over-usb.md) 和非 usb 设备的 usb 设备。 有关详细信息，请参阅 [HIDClass 设备安装程序类](../hid/minidriver-operations.md)。  (另请参阅此列表后面的键盘或鼠标类。 )   
   
 **IEEE 1284.4 设备**  
 类 = Dot4  
@@ -91,7 +100,7 @@ ClassGuid = {49ce6ac8-6f86-11d2-b1e5-0080c72e74a2}
 ClassGuid = {7ebefbc0-3200-11d2-b4c2-00a0C9697d07}  
 此类包括支持 IEC-61883 协议设备类的 IEEE 1394 设备。  
   
-61883组件包括*61883*协议驱动程序，该驱动程序通过1394总线传输各种音频和视频数据流。 目前包括标准/高/低质量 DV、MPEG2、DSS 和音频。 这些数据流由 IEC-61883 规范定义。  
+61883组件包含通过1394总线传输各种音频和视频数据流的 *61883.sys* 协议驱动程序。 目前包括标准/高/低质量 DV、MPEG2、DSS 和音频。 这些数据流由 IEC-61883 规范定义。  
   
 **支持 AVC 协议的 IEEE 1394 设备**  
 类 = AVC  
@@ -121,7 +130,7 @@ ClassGuid = {6bdd1fc5-810f-11d0-bec7-08002be2092f}
 **键盘**  
 类 = 键盘  
 ClassGuid = {4d36e96b-e325-11ce-bfc1-08002be10318}  
-此类包括所有键盘。 也就是说，还必须在枚举的子 HID 键盘设备的（辅助） INF 中指定它。  
+此类包括所有键盘。 也就是说，还必须在枚举的子 HID 键盘设备 (辅助) INF 中指定它。  
   
 **媒体转换器**  
 类 = MediumChanger  
@@ -136,17 +145,17 @@ ClassGuid = {4d36e970-e325-11ce-bfc1-08002be10318}
 <a href="" id="modem-"></a>**R**  
 类 = 调制解调器  
 ClassGuid = {4d36e96d-e325-11ce-bfc1-08002be10318}  
-此类包括调制解调器设备或*软件调制解调器*。 这些设备会在调制解调器设备和设备驱动程序之间拆分功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动模型（WDM）调制解调器设备的详细信息，请参阅[调制解调器 Inf 文件概述](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542559(v=vs.85))和[添加 WDM 调制解调器支持](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
+此类包括调制解调器设备或 *软件调制解调器*。 这些设备会在调制解调器设备和设备驱动程序之间拆分功能。 有关调制解调器 INF 文件和 Microsoft Windows 驱动模型 (WDM) 调制解调器设备的详细信息，请参阅 [调制解调器 Inf 文件概述](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff542559(v=vs.85)) 和 [添加 WDM 调制解调器支持](https://docs.microsoft.com/previous-versions/windows/hardware/modem/ff541218(v=vs.85))。  
   
 <a href="" id="monitor-"></a>**监控器**  
 类 = 监视器  
 ClassGuid = {4d36e96e-e325-11ce-bfc1-08002be10318}  
-此类包括显示器。 此类设备的 INF 不会安装任何设备驱动程序，而是指定要存储在注册表中供视频适配器驱动程序使用的特定监视器功能。 （监视器被枚举为显示适配器的子设备。）  
+此类包括显示器。 此类设备的 INF 不 (s) 安装设备驱动程序，而是指定要存储在注册表中的特定监视器的功能，以供视频适配器驱动程序使用。  (监视器将被枚举为显示适配器的子设备。 )   
   
 <a href="" id="mouse-"></a>**鼠标键**  
 类 = 鼠标  
 ClassGuid = {4d36e96f-e325-11ce-bfc1-08002be10318}  
-此类包括所有鼠标设备和其他类型的指针设备，如 trackballs。 也就是说，还必须在已枚举的子 HID 鼠标设备的（辅助） INF 中指定此类。  
+此类包括所有鼠标设备和其他类型的指针设备，如 trackballs。 也就是说，还必须在已枚举的子 HID 鼠标设备的 (辅助) INF 中指定此类。  
   
 **多功能设备**  
 类 = 多功能  
@@ -161,12 +170,12 @@ ClassGuid = {4d36e96c-e325-11ce-bfc1-08002be10318}
 **多端口串行适配器**  
 类 = MultiportSerial  
 ClassGuid = {50906cb8-ba12-11d1-bf5d-0000f805f530}  
-此类包括智能多端口串行卡，但不包括连接到其端口的外围设备。 它不包括 unintelligent （16550类型）多端口串行控制器或单端口串行控制器（请参阅 port 类）。  
+此类包括智能多端口串行卡，但不包括连接到其端口的外围设备。 它不包括 unintelligent (16550) 多端口串行控制器或单端口串行控制器 (参阅 port 类) 。  
   
 <a href="" id="network-adapter-"></a>**网络适配器**  
 类 = Net  
 ClassGuid = {4d36e972-e325-11ce-bfc1-08002be10318}  
-此类包含网络适配器驱动程序。  这些驱动程序必须调用[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)或[**NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)。  不使用 NDIS 或 Get-netadapter 的驱动程序应使用不同的安装程序类。
+此类包含网络适配器驱动程序。  这些驱动程序必须调用 [**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver) 或 [**NetAdapterCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptercreate)。  不使用 NDIS 或 Get-netadapter 的驱动程序应使用不同的安装程序类。
   
 <a href="" id="network-client-"></a>**网络客户端**  
 类 = NetClient  
@@ -177,7 +186,7 @@ ClassGuid = {4d36e973-e325-11ce-bfc1-08002be10318}
   
    
   
-**网络服务**  
+**Network Service**  
 类 = 空间  
 ClassGuid = {4d36e974-e325-11ce-bfc1-08002be10318}  
 此类包含网络服务，如重定向器和服务器。  
@@ -190,14 +199,14 @@ ClassGuid = {4d36e975-e325-11ce-bfc1-08002be10318}
 **PCI SSL 加速器**  
 类 = SecurityAccelerator  
 ClassGuid = {268c95a1-edfe-11d3-95c3-0010dc4050a5}  
-此类包括加速安全套接字层（SSL）加密处理的设备。  
+此类包括加速安全套接字层 (SSL) 加密处理的设备。  
   
 <a href="" id="pcmcia-adapters-"></a>**PCMCIA 适配器**  
 类 = PCMCIA  
 ClassGuid = {4d36e977-e325-11ce-bfc1-08002be10318}  
 此类包括 PCMCIA 和 CardBus 主机控制器，但不包括 PCMCIA 或 CardBus 外设。 此类的驱动程序是系统提供的。  
   
-<a href="" id="ports--com---lpt-ports--"></a>**端口（COM & LPT 端口）**  
+<a href="" id="ports--com---lpt-ports--"></a>**端口 (COM & LPT 端口) **  
 类 = 端口  
 ClassGuid = {4d36e978-e325-11ce-bfc1-08002be10318}  
 此类包括串行和并行端口设备。 另请参阅 MultiportSerial 类。  
@@ -220,12 +229,12 @@ ClassGuid = {50127dc3-0f36-415e-a6cc-4cb3be910b65}
 <a href="" id="scsi-and-raid-controllers-"></a>**SCSI 和 RAID 控制器**  
 类 = SCSIAdapter  
 ClassGuid = {4d36e97b-e325-11ce-bfc1-08002be10318}  
-此类包括 SCSI Hba （主机总线适配器）和磁盘阵列控制器。  
+此类包括 (主机总线适配器) 和磁盘阵列控制器的 SCSI Hba。  
   
 **传感器**  
 类 = 传感器  
 ClassGuid = {5175d334-c371-4806-b3ba-71fd53c9258d}  
-（Windows 7 和更高版本的 Windows）此类包括传感器和位置设备，如 GPS 设备。  
+ (Windows 7 及更高版本的 Windows) 此类包括传感器和位置设备，如 GPS 设备。  
   
 **智能卡读卡器**  
 类 = SmartCardReader  
@@ -235,7 +244,7 @@ ClassGuid = {50dd5230-ba8a-11d1-bf5d-0000f805f530}
 **软件组件**  
 类 = SoftwareComponent  
 ClassGuid = {5c4c3332-344d-483c-8739-259e934c9cc8}  
-（Windows 10 版本1703及更高版本的 Windows）此类包括用于封装软件组件的虚拟子设备。 有关更多详细信息，请参阅[使用 INF 文件添加软件组件](https://docs.microsoft.com/windows-hardware/drivers/install/adding-software-components-with-an-inf-file)。  
+ (Windows 10 1703 版及更高版本的 Windows) 此类包括用于封装软件组件的虚拟子设备。 有关更多详细信息，请参阅 [使用 INF 文件添加软件组件](https://docs.microsoft.com/windows-hardware/drivers/install/adding-software-components-with-an-inf-file)。  
   
 <a href="" id="storage-volumes-"></a>**存储卷**  
 类 = 卷  
@@ -262,17 +271,17 @@ USBDevice 包括不属于另一类的所有 USB 设备。 此类不用于 USB �
 ClassGuid = {25dbce51-6c8f-4a72-8a6d-b54c2b4fc835}  
 此类包括 Windows CE ActiveSync 设备。  
   
-WCEUSBS 安装程序类支持个人计算机与 USB 上的 Windows CE ActiveSync 驱动程序（通常为 PocketPC 设备）兼容的设备之间的通信。  
+WCEUSBS 安装程序类支持个人计算机与与 Windows CE ActiveSync 驱动程序 (兼容的设备之间的通信。通常，PocketPC 设备通过 USB) 。  
   
-**Windows 便携设备（WPD）**  
+**Windows 便携式设备 (WPD) **  
 类 = WPD  
 ClassGuid = {eec5ad98-8080-425f-922a-dabf3de3f69a}  
-（Windows Vista 和更高版本的 Windows）此类包括 WPD 设备。  
+ (Windows Vista 及更高版本的 Windows) 此类包括 WPD 设备。  
   
-**Windows 边栏显示**  
+**Windows SideShow**  
 类 = 边栏显示  
 ClassGuid = {997b5d8d-c442-4f2e-baf3-9c8e671e9e21}  
-（Windows Vista 和更高版本的 Windows）此类包括与 Windows 边栏显示兼容的所有设备。  
+ (Windows Vista 及更高版本的 Windows) 此类包括与 Windows 边栏显示兼容的所有设备。  
   
    
   
