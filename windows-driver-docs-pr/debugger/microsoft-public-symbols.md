@@ -9,12 +9,12 @@ keywords:
 - Microsoft 符号存储
 ms.date: 04/26/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 01d18916e96b2d96aab3b839e85b0fdfb7a7dcaf
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 0b73c5c5b6cf9a61fd4cc4cb84fed4c4b755c302
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72980746"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969410"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft 公共符号服务器
 
@@ -57,7 +57,7 @@ Expanded Symbol search path is: cache*c:\MyCache;SRV*https://msdl.microsoft.com/
 
 Microsoft 符号服务器提供压缩版符号文件。 这些文件在文件扩展名的末尾有一条下划线，表示它们是压缩的。 例如，ntdll.dll 的 PDB 以 ntdll.pd\_ 形式提供。 SymProxy 在下载压缩文件时，会将其存储在本地文件系统中。 可以通过设置 DontUncompress 注册表项在 SymProxy 中禁用此行为。
 
-请参阅调试程序主题 [SymStore](symstore.md)，了解如何使用 SymStore.exe /compress 在符号服务器上存储自己的已压缩符号。
+
 
  
 

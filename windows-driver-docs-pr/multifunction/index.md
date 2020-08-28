@@ -12,16 +12,16 @@ keywords:
 - 多功能设备 WDK, 安装
 - 父总线 WDK 多功能设备
 - INF 文件 WDK 多功能设备
-ms.date: 04/20/2017
+ms.date: 08/25/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 69588e8e53ad6872c779898765cc6ff15fa5059f
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: e9ef77ef6360135b463599dabb9a2ef72a377e56
+ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223556"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88850192"
 ---
 # <a name="multifunction-device-driver-design-guide"></a>多功能设备驱动程序设计指南
 
@@ -65,6 +65,6 @@ ms.locfileid: "84223556"
 
 [为多功能设备创建资源映射](creating-resource-maps-for-a-multifunction-device.md)
 
-有关 INF 文件语法的信息，请参阅 [INF File Sections and Directives](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)（INF 文件节和指令）。
+有关 INF 文件语法的信息，请参阅 [INF 文件节和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)及 [INF 文件指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addcomponent-directive)。
 
 Windows 驱动程序工具包 (WDK) 包括一个单独的部分，介绍如何支持[多功能音频设备](https://docs.microsoft.com/windows-hardware/drivers/audio/multifunction-audio-devices)。

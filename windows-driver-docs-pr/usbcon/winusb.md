@@ -1,14 +1,14 @@
 ---
-Description: 此部分介绍 Microsoft 为所有 USB 设备提供的通用 WinUSB 驱动程序 (Winusb.sys) 及其用户模式组件 (Winusb.dll)。
+description: 此部分介绍 Microsoft 为所有 USB 设备提供的通用 WinUSB 驱动程序 (Winusb.sys) 及其用户模式组件 (Winusb.dll)。
 title: WinUSB (Winusb.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 420c7656d81c1849bb51237cab2d700f65950a8c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 44b82b6bad0ac92a84c89dd8b0851cb1d033e78b
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007618"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969222"
 ---
 # <a name="winusb-winusbsys"></a>WinUSB (Winusb.sys)
 

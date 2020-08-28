@@ -1,14 +1,14 @@
 ---
-Description: 本主题提供了一些准则，用于确定是应该编写 UWP 应用还是 Windows 桌面应用来与 USB 设备进行通信。
+description: 本主题提供了一些准则，用于确定是应该编写 UWP 应用还是 Windows 桌面应用来与 USB 设备进行通信。
 title: 为 USB 设备开发 Windows 应用程序的概述
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 88e3dcae013cfc9d644ee8507ed77149c6b80e28
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: c293e5ec38eae9fc54ddb2e8483a2c117862ae0d
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007544"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969094"
 ---
 # <a name="overview-of-developing-windows-applications-for-usb-devices"></a>为 USB 设备开发 Windows 应用程序的概述
 

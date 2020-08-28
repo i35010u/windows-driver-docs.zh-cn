@@ -1,14 +1,14 @@
 ---
-Description: Microsoft 提供与 USB 类型 C 连接器系统软件接口 (UCSI) 规范兼容的驱动程序。
+description: Microsoft 提供与 USB 类型 C 连接器系统软件接口 (UCSI) 规范兼容的驱动程序。
 title: USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: d2301377daf1057a90220785404b459182499f86
-ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
+ms.openlocfilehash: c22042dbbec05e4f917a6790cb9d3d3d562667d8
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87402270"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969422"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB 类型 C 连接器系统软件接口 (UCSI) 驱动程序
 

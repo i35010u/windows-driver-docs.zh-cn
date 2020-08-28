@@ -1,14 +1,14 @@
 ---
-Description: 本主题列出了支持的 USB 设备类的 Microsoft 提供的驱动程序。
+description: 本主题列出了支持的 USB 设备类的 Microsoft 提供的驱动程序。
 title: 包含在 Windows 中的 USB 设备类驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: ce0646add1764f938ce2931262492afcb2fa03ca
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 9810087e8fc06faa201053f820f4737ccb787e9b
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80998075"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88968694"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>包含在 Windows 中的 USB 设备类驱动程序
 

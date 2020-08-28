@@ -1,14 +1,14 @@
 ---
-Description: 用途：本部分介绍 Windows 操作系统中的通用串行总线 (USB) 支持，以便你开发可与 Windows 互操作的 USB 设备驱动程序。
+description: 用途：本部分介绍 Windows 操作系统中的通用串行总线 (USB) 支持，以便你开发可与 Windows 互操作的 USB 设备驱动程序。
 title: 为 USB 设备开发 Windows 客户端驱动程序的概述
 ms.date: 01/07/2019
 ms.localizationpriority: High
-ms.openlocfilehash: a34a004df40b1c5b8bf8e7a0445047d7931a1a11
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 694f988c796f6b68d78bd1778321b0140371998e
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72843460"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969362"
 ---
 # <a name="overview-of-developing-windows-client-drivers-for-usb-devices"></a>为 USB 设备开发 Windows 客户端驱动程序的概述
 

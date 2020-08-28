@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d43692f01b711cecd38109d96cc9a1487a63fd3
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: d38f6e0548787de1008f10723a1570b75d93c03c
+ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253017"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88802807"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>对内核驱动程序进行证明签名以便公开发布
 
@@ -18,6 +18,7 @@ ms.locfileid: "88253017"
 
 > [!Note]
 > 证明签名具有下列属性。
+>
 > - 证明签名支持 Windows 10 桌面版内核模式和用户模式驱动程序。 尽管用户模式驱动程序无需由适用于 Windows 10 的 Microsoft 进行签名，但相同的证明过程可以同时用于用户和内核模式驱动程序。
 > - 证明签名不会返回 **ELAM** 的正确 PE 级别或 **Windows Hello** PE 二进制文件。  它们必须经过测试，并且以 .hlkx 包的形式提交，以便接收额外的签名属性。
 > - 证明签名需要使用 EV 证书，才能将驱动程序提交到合作伙伴中心（硬件开发人员中心仪表板）。
@@ -86,7 +87,8 @@ ms.locfileid: "88253017"
 
   > [!NOTE]
   > CAB 文件中的每个驱动程序文件夹都必须支持同一组体系结构。 例如，它们必须支持 x86、x64，或者全都必须同时支持 x86 和 x64。
-  > - 引用驱动程序位置 (\\\server\share) 时，请勿使用 UNC 文件共享路径。  必须使用映射的驱动器号才能使 CAB 有效。 
+  >
+  > 引用驱动程序位置 (\\\server\share) 时，请勿使用 UNC 文件共享路径。  必须使用映射的驱动器号才能使 CAB 有效。
 
 2. 使用 MakeCab.exe 处理 DDF 文件并创建 cab 文件。
 
@@ -137,7 +139,6 @@ MAKECAB [/V[n]] [/D var=value ...] /F directive_file [...]
 C:\Echo\Echo.Inf
 C:\Echo\Echo.Sys
 ```
- 
 
 4. 调用 makecab 实用工具，并使用 /f 选项将 ddf 文件作为输入提供。
 
@@ -177,9 +178,9 @@ C:\Echo> SignTool sign /ac "C:\MyEVCert.cer" /s MY /n "Company Name" /fd sha256 
 
 1. 使用合作伙伴中心提交 EV 签名的 CAB 文件。 有关详细信息，请参阅[驱动程序签名属性](https://docs.microsoft.com/windows-hardware/drivers/develop/driver-signing-properties)。
 
-   * 在完成证明提交的过程中，请勿勾选在下面突出显示的任何测试签名框。  让它们保持取消选中状态。
+   - 在完成证明提交的过程中，请勿勾选在下面突出显示的任何测试签名框。  让它们保持取消选中状态。
 
-   * 以下屏幕截图显示了用于提交回显驱动程序进行签名的选项。
+   - 以下屏幕截图显示了用于提交回显驱动程序进行签名的选项。
     ![显示用于提交回显驱动程序进行签名的选项的屏幕截图](images/Attestation-Flow.PNG)
 
 2. 签名过程完成后，请从硬件仪表板下载已签名的驱动程序。

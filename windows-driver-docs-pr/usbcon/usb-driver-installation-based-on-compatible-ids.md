@@ -1,14 +1,14 @@
 ---
-Description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动程序 (Usbser.sys)。
+description: 用于通信和 CDC 控制设备的 Microsoft 提供的内置驱动程序 (Usbser.sys)。
 title: USB 串行驱动程序 (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 2e54bba6c5ba56376f41693ab12050d9932738aa
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: b8ffa51eee0f97c011c092102a5791a497e37045
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76892194"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969144"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB 串行驱动程序 (Usbser.sys)
 

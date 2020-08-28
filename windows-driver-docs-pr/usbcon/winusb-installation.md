@@ -1,14 +1,14 @@
 ---
-Description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，将其作为 USB 设备的功能驱动程序，而不是实现驱动程序。
+description: 将 WinUSB (Winusb.sys) 安装在设备的内核模式堆栈中，将其作为 USB 设备的功能驱动程序，而不是实现驱动程序。
 title: WinUSB (Winusb.sys) 安装
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: d2157430a1e220e693d9ae88c3a3a36ce3fd3d2e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a3586830cde7cd720e92603e071099d018cfe533
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79437068"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969386"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) 安装
 

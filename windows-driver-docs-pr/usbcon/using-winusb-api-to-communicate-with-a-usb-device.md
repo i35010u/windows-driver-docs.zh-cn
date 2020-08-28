@@ -1,14 +1,14 @@
 ---
-Description: 本主题包括一个详细演练，用于说明如何使用 WinUSB 函数来与使用 Winusb.sys 作为其函数驱动程序的 USB 设备进行通信。
+description: 本主题包括一个详细演练，用于说明如何使用 WinUSB 函数来与使用 Winusb.sys 作为其函数驱动程序的 USB 设备进行通信。
 title: 如何通过 WinUSB 函数访问 USB 设备
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 214dfc6d36eef05f533aa4eed749ef1a998d1bc8
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 53b6d580fc664903ceccab7da36a58afe06f2c56
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79437066"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969088"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>如何通过 WinUSB 函数访问 USB 设备
 

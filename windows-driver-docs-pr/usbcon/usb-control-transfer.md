@@ -1,14 +1,14 @@
 ---
-Description: 本主题介绍控制传输的结构以及客户端驱动程序应如何将控制请求发送到设备。
+description: 本主题介绍控制传输的结构以及客户端驱动程序应如何将控制请求发送到设备。
 title: 如何发送 USB 控制传输
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 23cf718b0797d6ca04ea4f96a91b59b1564e3d39
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d7591ec5658e8d49767b7280eae0ae64f95e71a8
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72844833"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969364"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>如何发送 USB 控制传输
 
