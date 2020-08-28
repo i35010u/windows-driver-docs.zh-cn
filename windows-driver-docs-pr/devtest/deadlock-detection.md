@@ -9,24 +9,24 @@ keywords:
 - 线程锁定 WDK 驱动程序验证程序
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4251ae6424c19b02af40d47de5ca5253b53d869a
-ms.sourcegitcommit: 8f693fbfca7705f138442fb22411edbcc8850d31
+ms.openlocfilehash: 4a30943b3e97647608c7b22de47505bc98ced6a9
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85191766"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043155"
 ---
 # <a name="deadlock-detection"></a>死锁检测
 
 死锁检测会监视驱动程序对需要锁定的资源的使用情况，即自旋锁、互斥体和快速 mutex。 此驱动程序验证程序选项将检测可能会在将来某个点导致死锁的代码逻辑。
 
-驱动程序验证程序的死锁检测选项与 **！死锁**内核调试器扩展一样，是一种有效的工具，可确保代码避免使用这些资源。
+驱动程序验证程序的死锁检测选项与 **！死锁** 内核调试器扩展一样，是一种有效的工具，可确保代码避免使用这些资源。
 
 只有 Windows XP 和更高版本的 Windows 支持死锁检测。
 
 ## <a name="causes-of-deadlocks"></a>死锁的原因
 
-当两个或多个线程在某个资源上发生冲突时，就会发生*死锁*，因为这样做可能无法执行。
+当两个或多个线程在某个资源上发生冲突时，就会发生 *死锁* ，因为这样做可能无法执行。
 
 当两个或多个线程等待另一个线程拥有的资源时，会出现最常见的死锁。 如下所示：
 
@@ -47,9 +47,9 @@ ms.locfileid: "85191766"
 
 ## <a name="resources-that-can-cause-deadlocks"></a>可能导致死锁的资源
 
-最明确的死锁是*拥有*资源的结果。 其中包括自旋锁、互斥体、快速 mutex 和 ERESOURCEs。
+最明确的死锁是 *拥有* 资源的结果。 其中包括自旋锁、互斥体、快速 mutex 和 ERESOURCEs。
 
-发出信号而不是获得的资源（例如事件和 LPC 端口）往往会导致更不明确的死锁。 当然，对于滥用这些资源的代码而言，这种情况可能是一种可行的，因为这种情况下，两个线程将结束无限期等待完成。 但是，由于这些资源实际上不是任何一个线程所拥有，因此不能在任何程度上确定拖欠线程。
+发出信号的资源，而不是获取 (例如事件和 LPC 端口，) 往往导致更不明确的死锁。 当然，对于滥用这些资源的代码而言，这种情况可能是一种可行的，因为这种情况下，两个线程将结束无限期等待完成。 但是，由于这些资源实际上不是任何一个线程所拥有，因此不能在任何程度上确定拖欠线程。
 
 驱动程序验证程序的 "死锁检测" 选项将查找涉及旋转锁、互斥体和快速 mutex 的潜在死锁。 它不会监视 ERESOURCEs 的使用情况，也不会监视 nonowned 资源的使用情况。
 
@@ -68,9 +68,9 @@ ms.locfileid: "85191766"
 
 -   锁层次结构冲突涉及两个或多个线程
 
--   尝试以独占方式获取其已为其共享所有者的资源的线程（可通过共享方式获取独占拥有的资源; 无法以独占方式获取共享资源）。
+-   尝试以独占方式获取其已成为共享所有者 (独占的资源的线程，可以共享。无法以独占方式获取共享资源) 。
 
-- 尝试获取同一资源两次（自死锁）的线程
+- 尝试获取同一资源的线程两次 (自死锁) 
 
 - 在未首先获取的情况下发布的资源
 
@@ -82,24 +82,24 @@ ms.locfileid: "85191766"
 
 - 从 Windows 7 开始，驱动程序验证程序可以预测可能的死锁。 例如，尝试将相同的 KSPIN \_ 锁数据结构同时用作常规旋转锁和堆栈排队自旋锁。
 
-有关错误检查参数的列表，请参阅[**Bug 检查 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) （DRIVER \_ VERIFIER \_ 检测到 \_ 冲突）。
+有关错误检查参数的列表，请参阅 [**Bug 检查 0xC4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (驱动程序 \_ 验证器 \_ 检测到 \_ 冲突) 。
 
 ## <a name="monitoring-deadlock-detection"></a>监视死锁检测
 
-死锁检测发现冲突后，可使用 **！死锁**内核调试器扩展来准确调查所发生的情况。 它可以显示锁层次结构拓扑以及最初获取锁时每个线程的调用堆栈。
+死锁检测发现冲突后，可使用 **！死锁** 内核调试器扩展来准确调查所发生的情况。 它可以显示锁层次结构拓扑以及最初获取锁时每个线程的调用堆栈。
 
-有关详细信息，请参阅 "适用于 Windows 的调试工具" 包中的 "[**死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)扩展" 和 "调试器扩展的常规信息"。 有关详细信息，请参阅[Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)。
+有关详细信息，请参阅 "适用于 Windows 的调试工具" 包中的 " [**死锁**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock) 扩展" 和 "调试器扩展的常规信息"。 有关详细信息，请参阅 [Windows 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/index) 。
 
 ### <a name="activating-this-option"></a>激活此选项
 
 > [!NOTE]
 > 此选项与[内核同步延迟模糊](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)处理不兼容
 
-您可以使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活死锁检测功能。 有关详细信息，请参阅[选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
+您可以使用驱动程序验证器管理器或 Verifier.exe 命令行为一个或多个驱动程序激活死锁检测功能。 有关详细信息，请参阅 [选择驱动程序验证程序选项](selecting-driver-verifier-options.md)。
 
 - **在命令行中**
 
-    在命令行中，死锁检测选项以**位5（0x20）** 表示。 若要激活死锁检测，请使用值为0x20 的标志值或将0x20 添加到标志值。 例如：
+    在命令行中，死锁检测选项由 **第5个 (0x20) **表示。 若要激活死锁检测，请使用值为0x20 的标志值或将0x20 添加到标志值。 例如：
 
     ```console
     verifier /flags 0x20 /driver MyDriver.sys
@@ -107,13 +107,13 @@ ms.locfileid: "85191766"
 
     此功能将在下一次启动后处于活动状态。
 
-    在 Windows Vista 和更高版本的 Windows 上，还可以通过将 **/volatile**参数添加到命令，来激活和停用死锁检测而无需重新启动计算机。 例如：
+    在 Windows Vista 和更高版本的 Windows 上，还可以通过将 **/volatile** 参数添加到命令，来激活和停用死锁检测而无需重新启动计算机。 例如：
 
     ```console
     verifier /volatile /flags 0x20 /adddriver MyDriver.sys
     ```
 
-    此设置将立即生效，但当你关闭或重新启动计算机时，此设置会丢失。 有关详细信息，请参阅[使用可变设置](using-volatile-settings.md)。
+    此设置将立即生效，但当你关闭或重新启动计算机时，此设置会丢失。 有关详细信息，请参阅 [使用可变设置](using-volatile-settings.md)。
 
     "死锁检测" 功能也包含在标准设置中。 例如：
 
@@ -123,10 +123,10 @@ ms.locfileid: "85191766"
 
 - **使用驱动程序验证器管理器**
 
-    1. 选择 "**创建自定义设置（对于代码开发人员）** "，然后单击 "**下一步**"。
+    1. 选择 " **为代码开发人员 (创建自定义设置") ** ，然后选择 " **下一步**"。
 
-    1. 选择 "**从完整列表中选择单个设置**"。
+    1. 选择 " **从完整列表中选择单个设置**"。
 
-    1. 选择（检查）**死锁检测**。
+    1. 选择 (检查) **死锁检测**。
 
-"死锁检测" 功能也包含在标准设置中。 若要使用此功能，请在**驱动程序验证器管理器**中单击 "**创建标准设置**"。
+"死锁检测" 功能也包含在标准设置中。 若要使用此功能，请在 **驱动程序验证器管理器**中选择 " **创建标准设置**"。

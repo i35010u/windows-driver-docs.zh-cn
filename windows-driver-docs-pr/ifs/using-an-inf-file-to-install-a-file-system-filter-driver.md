@@ -3,15 +3,15 @@ title: 使用 INF 文件安装文件系统筛选器驱动程序
 description: 使用 INF 文件安装文件系统筛选器驱动程序
 ms.assetid: 0bc70cdb-d115-4329-9fcc-a085a57c5f78
 keywords:
-- INF 文件 WDK 文件系统、 安装步骤
+- INF 文件系统和安装步骤
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc33292c5b1e054d9c559ee2c556a51dc430fe20
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c45a8f8aace70bc9aed422e2918088a73efc4e1d
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380289"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043141"
 ---
 # <a name="using-an-inf-file-to-install-a-file-system-filter-driver"></a>使用 INF 文件安装文件系统筛选器驱动程序
 
@@ -19,49 +19,49 @@ ms.locfileid: "67380289"
 ## <span id="ddk_using_an_inf_file_to_install_a_file_system_filter_driver_if"></span><span id="DDK_USING_AN_INF_FILE_TO_INSTALL_A_FILE_SYSTEM_FILTER_DRIVER_IF"></span>
 
 
-您创建了一个 INF 文件后，可以使用它来安装、 升级和卸载你文件系统筛选器驱动程序。 可以单独或一起批处理文件或用户模式下安装应用程序使用 INF 文件。
+创建 INF 文件后，可以使用它来安装、升级和卸载文件系统筛选器驱动程序。 您可以单独使用 INF 文件，或将其与批处理文件或用户模式安装应用程序一起使用。
 
-### <a name="span-idright-clickinstallspanspan-idright-clickinstallspanspan-idright-clickinstallspanright-click-install"></a><span id="Right-Click_Install"></span><span id="right-click_install"></span><span id="RIGHT-CLICK_INSTALL"></span>右键单击安装
+### <a name="span-idright-click_installspanspan-idright-click_installspanspan-idright-click_installspanright-click-install"></a><span id="Right-Click_Install"></span><span id="right-click_install"></span><span id="RIGHT-CLICK_INSTALL"></span>右键单击 "安装"
 
-若要执行[ **DefaultInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)并[ **DefaultInstall.Services** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)部分的 INF 文件中，您应执行以下操作：
+若要执行 INF 文件的 [**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section) 和 [**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section) 部分，应执行以下操作：
 
-1.  在 Windows 资源管理器中，右键单击的 INF 文件的名称。 将显示快捷菜单。
+1.  在 Windows 资源管理器中，选择并按住 (或右键单击) INF 文件名。 将显示一个快捷菜单。
 
-2.  单击“安装”  。
+2.  选择“安装”。
 
-**请注意**  仅当 INF 文件包含，将出现快捷菜单**DefaultInstall**部分。
+**注意**   仅当 INF 文件包含**DefaultInstall**部分时，才会显示快捷菜单。
 
  
 
-### <a name="span-idcommand-lineorbatchfileinstallspanspan-idcommand-lineorbatchfileinstallspanspan-idcommand-lineorbatchfileinstallspancommand-line-or-batch-file-install"></a><span id="Command-Line_or_Batch_File_Install"></span><span id="command-line_or_batch_file_install"></span><span id="COMMAND-LINE_OR_BATCH_FILE_INSTALL"></span>命令行或批处理文件安装
+### <a name="span-idcommand-line_or_batch_file_installspanspan-idcommand-line_or_batch_file_installspanspan-idcommand-line_or_batch_file_installspancommand-line-or-batch-file-install"></a><span id="Command-Line_or_Batch_File_Install"></span><span id="command-line_or_batch_file_install"></span><span id="COMMAND-LINE_OR_BATCH_FILE_INSTALL"></span>命令行或批处理文件安装
 
-若要执行**DefaultInstall**并**DefaultInstall.Services** INF 文件在命令行上或通过使用批处理文件安装的部分在命令提示符下键入以下命令或创建并运行批处理文件，其中包含此命令：
+若要在命令行上执行 INF 文件的 **DefaultInstall** 和 **DefaultInstall** 部分或使用批处理文件安装，请在命令提示符下键入以下命令，或创建并运行包含此命令的批处理文件：
 
 ```cpp
 RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultInstall 132 path-to-inf\infname.inf
 ```
 
-工具和安装程序和系统管理中所述"Rundll32"和"InstallHinfSection"部分，分别，Microsoft Windows SDK 文档。
+"Rundll32.exe" 和 "InstallHinfSection" 分别在 Microsoft Windows SDK 文档的 "工具" 和 "设置" 和 "系统管理" 部分中进行了介绍。
 
-### <a name="span-idsetupapplicationspanspan-idsetupapplicationspanspan-idsetupapplicationspansetup-application"></a><span id="Setup_Application"></span><span id="setup_application"></span><span id="SETUP_APPLICATION"></span>安装应用程序
+### <a name="span-idsetup_applicationspanspan-idsetup_applicationspanspan-idsetup_applicationspansetup-application"></a><span id="Setup_Application"></span><span id="setup_application"></span><span id="SETUP_APPLICATION"></span>安装应用程序
 
-[**InstallHinfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)也可以调用此从安装程序应用程序，如下面的代码示例中所示：
+[**InstallHinfSection**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 也可以从安装应用程序调用，如下面的代码示例所示：
 
 ```cpp
 InstallHinfSection(NULL,NULL,TEXT("DefaultInstall 132 path-to-inf\infname.inf"),0); 
 ```
 
-如果使用安装程序应用程序来安装您的驱动程序，应遵守以下原则：
+如果使用安装应用程序来安装驱动程序，请遵循以下准则：
 
 -   若要准备最终卸载，安装应用程序应将驱动程序 INF 文件复制到卸载目录。
 
--   如果在安装应用程序和驱动程序安装在用户模式应用程序，此应用程序应列出在添加或删除控制面板中的程序，以便用户可以在必要时卸载它。 应列出只有一项，它表示应用程序和驱动程序。
+-   如果安装应用程序使用驱动程序安装用户模式应用程序，则应在 "控制面板" 的 "添加或删除程序" 中列出此应用程序，以便用户可以在需要时将其卸载。 只应列出一项，表示应用程序和驱动程序。
 
-    有关如何列出你的应用程序中添加或删除程序的详细信息，Windows SDK 文档的安装程序和系统管理部分中看到"删除应用程序"。
+    有关如何在 "添加或删除程序" 中列出应用程序的详细信息，请参阅 Windows SDK 文档的 "设置和系统管理" 部分中的 "删除应用程序"。
 
--   安装应用程序应永远不会将驱动程序 INF 文件复制到 Windows INF 文件目录 ( *%windir%\\INF*)。 安装程序 Api 自动复制那里的文件作为的一部分[ **InstallHinfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)调用。
+-   安装程序不应将驱动程序 INF 文件复制到 Windows INF 文件目录 (*% windir% \\ INF*) 。 Setupapi.log 会在 [**InstallHinfSection**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 调用中自动复制其中的文件。
 
-有关安装应用程序的详细信息，请参阅[编写设备安装应用程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)。
+有关安装应用程序的详细信息，请参阅 [编写设备安装应用程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)。
 
  
 

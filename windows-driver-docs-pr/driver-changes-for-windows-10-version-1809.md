@@ -1,15 +1,15 @@
 ---
-title: Windows 10 版本1809的驱动程序开发更改
+title: Windows 10 版本 1809 的驱动程序开发变更
 description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 764bcd98-c123-45e2-9dd1-44d54bb1addc
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc1e1b963d05c79707011bcff981b6b650444f9
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 265750308d6c25e12cdeedf8e037f2a563c0c989
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270416"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043095"
 ---
 # <a name="whats-new-in-windows-10-version-1809"></a>Windows 10 版本 1809 中的新增功能
 
@@ -174,7 +174,7 @@ MBBCx 电源管理方法已简化。
 
 * [IsApiSetImplemented](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented)
 
-此现有主题已得到增强，其中介绍了如何使用灵活链接来满足 [DCHU 驱动程序设计原则](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers#design-principles)的 U 要求：
+此现有主题已得到增强，其中介绍了如何使用灵活链接来满足 [DCHU 驱动程序设计原则](https://docs.microsoft.com/windows-hardware/drivers/develop/dch-principles-best-practices)的 U 要求：
 
 * [针对 OneCore 生成](https://docs.microsoft.com/windows-hardware/drivers/develop/building-for-onecore)
 

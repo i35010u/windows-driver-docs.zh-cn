@@ -13,12 +13,12 @@ keywords:
 - 跟踪消息格式化文件 WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c9c8799c9dcf3ef177ba24b894a24b821fd1be3d
-ms.sourcegitcommit: 80e40a2d0434c0c2904e6fe31626ca643de3ea00
+ms.openlocfilehash: c0a699112132e517f24bdb2284af31cb14b5245c
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714599"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043111"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上的 DTrace
 
@@ -49,7 +49,7 @@ Windows Github 站点上的 DTrace 位于此处：
 
 使用反馈中心请求新功能，或使用 Windows DTrace 报告任何问题或错误。
 
-1. 通过单击此链接从 Windows 电脑启动反馈中心 [https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053) 。
+1. 通过选择此链接从 Windows 电脑启动反馈中心 [https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053) 。
 2. 选择 " *添加新反馈*"。
 3. 提供问题的详细特定说明或建议。
 
@@ -399,7 +399,7 @@ C:\> dtrace -qn "pid$target:::entry { @k[probemod] = count();} tick-10s{printa(@
 
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [DTrace Windows 编程](dtrace-programming.md)
 

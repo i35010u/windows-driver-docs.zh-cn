@@ -4,12 +4,12 @@ description: 本文为驱动程序开发人员提供了驱动程序安全核对�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fc90f40bdf87dc56db42938b2adb3fea8cb28ceb
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 6d994ca56bcc840a190e588da0b958aac195f0ca
+ms.sourcegitcommit: 9e5a99dc75dfee3caa9a242adc0ed22ae4df9f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902622"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043149"
 ---
 # <a name="driver-security-checklist"></a>驱动程序安全清单
 
@@ -143,7 +143,7 @@ Ihv 和 Oem 可以使用安全开发生命周期 (SDL) 最佳实践和相关工�
 
 Windows 驱动程序的主要职责之一是在用户模式应用程序和系统设备之间传输数据。 下表显示了用于访问数据缓冲区的三种方法。
 
-|IOCTL 缓冲区类型 | 总结                                    | 更多信息 |  
+|IOCTL 缓冲区类型 | 摘要                                    | 更多信息 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
 | METHOD_BUFFERED  |建议用于大多数 situtations            | [使用缓冲 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
 | METHOD_IN_DIRECT 或 METHOD_OUT_DIRECT |用于某些高速硬件 i/o    |[使用直接 I/O](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
@@ -446,9 +446,9 @@ AC (Application Container)
 
 4. 在 Visual Studio 中的 "生成输出" 窗口的 " **错误列表** " 选项卡中查看警告。
 
-单击每个警告的说明，以查看代码中有问题的区域。
+选择每个警告的说明，以查看代码中有问题的区域。
 
-单击链接的警告代码可查看其他信息。
+选择链接的警告代码以查看其他信息。
 
 确定是否需要更改你的代码，或者是否需要添加批注以允许代码分析引擎正确遵循你的代码的意图。 有关代码批注的详细信息，请参阅 [使用 SAL 注释减少 C/c + + 代码缺陷](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015) 和 [适用于 Windows 驱动程序的 SAL 2.0 批注](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)。
 
@@ -477,11 +477,11 @@ AC (Application Container)
 
    尽管默认规则发现许多常见问题，但也请考虑运行更全面的 " *所有驱动程序规则* " 规则集。
 
-6. 在 SDV 的 *主* 选项卡上，单击 " *启动*"。
+6. 在 SDV 的 *主* 选项卡上，选择 " *启动*"。
 
 7. 当 SDV 完成时，查看输出中的任何警告。 *主*选项卡显示发现的缺陷总数。
 
-8. 单击每个警告以加载 "SDV 报表" 页，并检查与可能的代码漏洞关联的信息。 使用报表调查验证结果，并确定驱动程序中 SDV 验证失败的路径。 有关详细信息，请参阅 [静态驱动程序验证程序报表](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)。
+8. 选择每个警告以加载 "SDV 报表" 页，并检查与可能的代码漏洞关联的信息。 使用报表调查验证结果，并确定驱动程序中 SDV 验证失败的路径。 有关详细信息，请参阅 [静态驱动程序验证程序报表](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)。
 
 ## <a name="check-code-with-the-binskim-binary-analyzer"></a>用 BinSkim 二进制分析器检查代码
 
@@ -505,9 +505,9 @@ BinSkim 是一个开源工具，它会生成使用静态分析结果交换格式
 
 2. 下载 BinSkim 的方法有很多，例如 NuGet 包。 在此示例中，我们将从此处下载包含 BinSkim 的 zip 文件： <https://github.com/microsoft/binskim> 并将其安装在64位 WINDOWS 电脑上。
 
-3. 单击上的 " **克隆或下载** " 按钮 <https://github.com/microsoft/binskim> ，然后选择 " **下载 Zip**"。
+3. 选择上的 " **克隆或下载** " 按钮 <https://github.com/microsoft/binskim> ，然后选择 " **下载 Zip**"。
 
-4. 单击下载的 zip 文件并将其解压缩，例如 `C:\binskim-master` 。
+4. 选择已下载的 zip 文件并将其解压缩，例如 `C:\binskim-master` 。
 
 5. 确认已安装 Visual Studio。 有关下载和安装 Visual Studio 的信息，请参阅 [安装 Visual studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019)。
 
