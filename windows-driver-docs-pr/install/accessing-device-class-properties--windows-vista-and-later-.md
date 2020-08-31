@@ -4,37 +4,31 @@ description: 访问设备类属性
 ms.assetid: 51eef1f4-ca7d-46ab-a33f-be53de277541
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e583302d1feebb5f57d8d5ba26b80425a92a21b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1d107d4303e336ed6b437ff3395589e9d58204d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385633"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095857"
 ---
 # <a name="accessing-device-class-properties"></a>访问设备类属性
 
 
-在 Windows Vista 和更高版本的 Windows 中，应用程序和安装程序可以访问[设备安装程序类属性](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))并[设备接口类属性](https://docs.microsoft.com/previous-versions/ff541406(v=vs.85))通过调用以下安装程序 Api函数：
+在 Windows Vista 和更高版本的 Windows 中，应用程序和安装程序可以通过调用以下 Setupapi.log 函数来访问 [设备安装程序类属性](/previous-versions/ff542239(v=vs.85)) 和 [设备接口类属性](/previous-versions/ff541406(v=vs.85)) ：
 
--   [**SetupDiGetClassPropertyKeys** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)并[ **SetupDiGetClassPropertyKeysEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertykeysexw)
+-   [**SetupDiGetClassPropertyKeys**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertykeys)和[ **SetupDiGetClassPropertyKeysEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertykeysexw)
 
-    **SetupDiGetClassPropertyKeys**函数检索标识的类属性的当前设置在本地计算机上的设备安装程序类或设备接口类的类属性键的数组。 **SetupDiGetClassPropertyKeysEx**函数执行本地计算机或远程计算机上相同的操作。 有关如何确定哪些属性设置为设备类的信息，请参阅[确定该属性设置为设备类](determining-which-properties-are-set-for-a-device-class.md)。
+    **SetupDiGetClassPropertyKeys**函数检索类属性键的数组，这些键用于标识当前为设备安装程序类或本地计算机上的设备接口类设置的类属性。 **SetupDiGetClassPropertyKeysEx**函数在本地计算机或远程计算机上执行相同的操作。 有关如何确定为设备类设置的属性的信息，请参阅确定为 [设备类设置的属性](determining-which-properties-are-set-for-a-device-class.md)。
 
--   [**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+-   [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-    **SetupDiGetClassProperty**函数[检索类属性](retrieving-a-device-class-property-value.md)设备安装程序类或设备接口类。 [ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)函数执行本地计算机上相同的操作方式与其在远程计算机上。
+    **SetupDiGetClassProperty**函数检索设备安装程序类或设备接口类的[类属性](retrieving-a-device-class-property-value.md)。 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)函数在本地计算机上执行与在远程计算机上执行相同的操作。
 
--   [**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
+-   [**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
-    **SetupDiSetClassProperty**函数[设置为设备安装程序类或设备接口类的类属性](setting-a-device-class-property-value.md)。 [ **SetupDiSetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)函数执行本地计算机上相同的操作方式与其在远程计算机上。
+    **SetupDiSetClassProperty**函数[为设备安装程序类或设备接口类设置类属性](setting-a-device-class-property-value.md)。 [**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)函数在本地计算机上执行与在远程计算机上执行相同的操作。
 
-有关如何访问设备类属性对 Windows Server 2003、 Windows XP 和 Windows 2000 上的信息，请参阅[访问设备安装程序类属性](accessing-device-setup-class-properties.md)和[访问设备接口类属性](accessing-device-interface-class-properties.md).
-
- 
+有关如何在 Windows Server 2003、Windows XP 和 Windows 2000 上访问设备类属性的信息，请参阅 [访问设备安装程序类属性](accessing-device-setup-class-properties.md) 和 [访问设备接口类属性](accessing-device-interface-class-properties.md)。
 
  
-
-
-
-
 

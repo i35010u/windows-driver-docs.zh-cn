@@ -14,21 +14,21 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a35321a8e88c8b05d2d95edfc6c011c455df9c00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2078bbd7db968618268e4bf8f9b7a3da3c46d91e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375311"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096291"
 ---
-# <a name="difunremove"></a>DIF_UNREMOVE
+# <a name="dif_unremove"></a>DIF_UNREMOVE
 
 
-DIF_UNREMOVE 请求通知安装程序，Windows 将要恢复中给定的硬件配置文件的设备，并使安装程序有机会参与操作。 Windows 仅发送非 PnP 设备的此请求。
+DIF_UNREMOVE 请求通知安装程序，Windows 将在给定的硬件配置文件中恢复设备，并为安装程序提供参与操作的机会。 Windows 只为非 PnP 设备发送此请求。
 
 ### <a name="when-sent"></a>发送时间
 
-根枚举，非 PnP 设备硬件配置文件恢复过程。
+根枚举时，非 PnP 设备将恢复为硬件配置文件。
 
 ### <a name="who-handles"></a>谁处理
 
@@ -58,16 +58,16 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将要恢复中给定的硬件�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含该设备。
+提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识设备中设备的信息集的结构。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
 
-<a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_UNREMOVEDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_unremovedevice_params)与关联结构*DeviceInfoData*。 **作用域**字段必须设置为 DI_UNREMOVEDEVICE_CONFIGSPECIFIC，并且必须指定硬件配置文件**HwProfile**字段。
+<a href="" id="class-installation-parameters"></a>类安装参数  
+[**SP_UNREMOVEDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_unremovedevice_params)结构与*DeviceInfoData*关联。 必须将 " **作用域** " 字段设置为 "DI_UNREMOVEDEVICE_CONFIGSPECIFIC"，并且必须在 **hwprofile 中** 字段中指定硬件配置文件。
 
 ### <a name="installer-output"></a>安装程序输出
 
@@ -75,29 +75,29 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将要恢复中给定的硬件�
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
-辅助安装程序可以返回 NO_ERROR、 ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
+共同安装程序可以返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-如果类安装程序已成功处理此请求并[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)应随后调用默认处理程序类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理此请求，并且 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
-类安装程序类安装程序将成功处理此请求，包括直接调用默认处理程序，如果应返回 NO_ERROR 并**SetupDiCallClassInstaller**随后不会调用默认处理程序电子邮件了。
+如果类安装程序成功处理此请求（包括直接调用默认处理程序），则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。
 
-**请注意**  类安装程序可以直接调用默认处理程序，但类安装程序应永远不会尝试取代默认处理程序的操作。
+**注意**   类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
  
 
-调用默认处理程序的详细信息，请参阅[调用默认 DIF 代码处理程序](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)。
+有关调用默认处理程序的详细信息，请参阅 [调用默认的 DIF 代码处理程序](./calling-the-default-dif-code-handlers.md)。
 
-安装程序类安装程序遇到错误，如果应返回相应的 Win32 错误代码和**SetupDiCallClassInstaller**随后不会调用默认处理程序。
+如果类安装程序遇到错误，则安装程序应返回相应的 Win32 错误代码，并且 **SetupDiCallClassInstaller** 将不会随后调用默认处理程序。
 
-### <a name="default-dif-code-handler"></a>默认 DIF 代码处理程序
+### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
-[**SetupDiUnremoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiunremovedevice)
+[**SetupDiUnremoveDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiunremovedevice)
 
 ### <a name="installer-operation"></a>安装程序操作
 
-"Unremoving"设备基本上意味着 Windows 清除以前标记为"不存在"的设备特定的硬件配置文件中的标志。
+"Unremoving" 设备基本上意味着，Windows 会在特定硬件配置文件中清除先前标记为 "不存在" 的标志。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
+有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -109,33 +109,26 @@ DIF_UNREMOVE 请求通知安装程序，Windows 将要恢复中给定的硬件�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h （包括 Setupapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Setupapi.log (包含 Setupapi.log) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiUnremoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiunremovedevice)
+[**SetupDiUnremoveDevice**](/windows/desktop/api/setupapi/nf-setupapi-setupdiunremovedevice)
 
-[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_UNREMOVEDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_unremovedevice_params)
-
- 
+[**SP_UNREMOVEDEVICE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_unremovedevice_params)
 
  
-
-
-
-
-
 

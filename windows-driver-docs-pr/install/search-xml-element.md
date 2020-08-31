@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 341faceba86aeea5b85aadf63447d2205aaf7653
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e2a54b8de3979161026c1d54b6e0bed8068f7e22
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374213"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096613"
 ---
 # <a name="search-xml-element"></a>search XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**搜索**XML 元素将定向 DPInst INF 文件往复搜索指定 DPInst 工作目录下的子目录中。 由一个或多个指定子目录[**子目录子元素**](subdirectory-xml-element.md)。
+**Search** XML 元素指示 DPInst 在 DPInst 工作目录下的指定子目录中以递归方式搜索 INF 文件。 子目录由一个或多个 [**子目录子元素**](subdirectory-xml-element.md)指定。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,11 +32,11 @@ ms.locfileid: "67374213"
 <search>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
-### <a name="element-information"></a>**元素的信息**
+### <a name="element-information"></a>**元素信息**
 
 <table>
 <colgroup>
@@ -50,10 +50,10 @@ ms.locfileid: "67374213"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
-<td align="left"><p><a href="subdirectory-xml-element.md" data-raw-source="[&lt;strong&gt;subDirectory&lt;/strong&gt;](subdirectory-xml-element.md)"><strong>子目录</strong></a> （零个或多个）</p></td>
+<td align="left"><p><a href="subdirectory-xml-element.md" data-raw-source="[&lt;strong&gt;subDirectory&lt;/strong&gt;](subdirectory-xml-element.md)"><strong>子目录</strong></a> (零个或多个) </p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -65,9 +65,9 @@ ms.locfileid: "67374213"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**搜索**元素，其中包含一个**子目录**指定的 XML 元素*i386*子目录。 DPInst 将以递归方式搜索[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)中*i386* DPInst 工作目录的子目录。 指定自定义的子目录的文本所示粗体的字体样式。
+下面的代码示例演示一个**搜索**元素，该元素包含一个指定*I386*子目录的**子目录**XML 元素。 DPInst 将以递归方式在 DPInst 工作目录的*i386*子目录中搜索[驱动程序包](./driver-packages.md)。 指定自定义子目录的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -79,23 +79,16 @@ ms.locfileid: "67374213"
 </dpinst>
 ```
 
-**请注意**  因为重复的子元素不允许使用，每个**子目录**的子元素**搜索**元素必须是唯一的。
+**注意**   由于不允许使用重复的子元素，因此**搜索**元素**的每个子元素都必须**是唯一的。
 
  
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
-[**subDirectory**](subdirectory-xml-element.md)
+[**光标**](subdirectory-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

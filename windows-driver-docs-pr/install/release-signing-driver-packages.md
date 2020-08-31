@@ -3,124 +3,118 @@ title: 对驱动程序包进行发布签名
 description: 对驱动程序包进行发布签名
 ms.assetid: 57125c3b-55f0-4b60-b4d9-1408e26faccb
 keywords:
-- 驱动程序签名 WDK、 驱动程序包
-- 签署驱动程序 WDK、 驱动程序包
-- 数字签名 WDK、 驱动程序包
-- WDK、 驱动程序包签名
+- 驱动程序签名 WDK，驱动程序包
+- 对驱动程序进行签名 WDK，驱动程序包
+- 数字签名 WDK，驱动程序包
+- 签名 WDK，驱动程序包
 - CAT 文件
 - .cat 文件
-- 目录文件 WDK 驱动程序签名，签名版本
-- 公开发布的版本驱动程序签名 WDK，有关对版本进行签名
-- 发布有关版本签名签名 WDK，
+- 目录文件 WDK 驱动程序签名，发布签名
+- 公共版本驱动程序签名 WDK，关于发布签名
+- release 签名 WDK，关于发布签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdac7632ebb4ca2a2ce85a8deaa501051d56abbf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 511a6cd1844a52e2d656a8bc1e419a6d47a8b8d7
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387311"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095639"
 ---
 # <a name="release-signing-driver-packages"></a>对驱动程序包进行发布签名
 
 
-在本部分中，对在 Windows Vista 和更高版本的 Windows 驱动程序进行签名的计算机被称为*签名计算机*。 签名的计算机必须运行 Windows XP SP2 或更高版本的 Windows 操作系统。 例如，适用于 Windows 7 上的发布的驱动程序可以运行的 Windows Vista 的计算机上进行签名。
+在本部分中，在 Windows Vista 和更高版本的 Windows 上对发布的驱动程序进行签名的计算机称为 *签名计算机*。 签名计算机必须运行 Windows XP SP2 或更高版本的 Windows 操作系统。 例如，可在运行 Windows Vista 的计算机上登录用于 Windows 7 上的发布的驱动程序。
 
-此外，签名的计算机必须具有[驱动程序签名工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)安装。
+此外，签名计算机必须安装 [驱动程序签名工具](../devtest/tools-for-signing-drivers.md) 。
 
-**请注意**  必须使用的新版[ **SignTool** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) Windows Vista 和更高版本的 Windows Driver Kit (WDK) 中提供的工具。 此工具的早期版本不支持内核模式代码签名策略适用于 Windows Vista 和更高版本的 Windows。
-
- 
-
-若要符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)并[插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)的 Windows Vista 和更高版本的 Windows 中，登录用于作为版本的驱动程序如下所示，驱动程序的类型。
-
-**请注意**   Windows 代码签名策略要求的已签名[编录文件](catalog-files.md)驱动程序会安装在系统组件和驱动程序数据库中。 即插即用设备安装会自动安装驱动程序数据库中的即插即用驱动程序的目录文件。 但是，如果使用签名的编录文件进行签名的非 PnP 驱动程序，将安装驱动程序的安装应用程序还必须安装目录文件驱动程序数据库中。
+**注意**   您必须使用 Windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 中提供的[**SignTool**](../devtest/signtool.md)工具版本。 此工具的早期版本不支持 Windows Vista 和更高版本的 Windows 的内核模式代码签名策略。
 
  
 
-### <a href="" id="pnp-kernel-mode-boot-start-driver"></a> PnP Kernel-Mode Boot-Start Driver
+若要符合 [内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 和即插即用 (PnP) windows Vista 和更高版本的 [设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md) ，请根据驱动程序的类型为 release 签署一个驱动程序。
 
-若要符合内核模式代码签名策略文件，如下所示：
+**注意**   Windows 代码签名策略要求将驱动程序的签名[目录文件](catalog-files.md)安装在系统组件和驱动程序数据库中。 PnP 设备安装会在驱动程序数据库中自动安装 PnP 驱动程序的编录文件。 但是，如果使用已签名的目录文件对非 PnP 驱动程序进行签名，则安装驱动程序的安装应用程序还必须在驱动程序数据库中安装目录文件。
 
-1.  [发布符号的驱动程序文件](release-signing-a-driver-file.md)与[软件发布者证书 (SPC)](software-publisher-certificate.md)。
+ 
+
+### <a name="pnp-kernel-mode-boot-start-driver"></a><a href="" id="pnp-kernel-mode-boot-start-driver"></a> PnP 内核模式启动-启动驱动程序
+
+符合内核模式代码签名策略文件，如下所示：
+
+1.  使用软件发行者证书对[驱动程序文件进行发布签名](release-signing-a-driver-file.md) [ (SPC) ](software-publisher-certificate.md)。
 
 2.  [验证驱动程序文件的 SPC 签名](verifying-the-signature-of-a-release-signed-driver-file.md)。
 
-从 Windows Vista，嵌入在签名开始*引导启动驱动程序*文件是可选的 32 位版本的 Windows。 尽管 Windows 将检查内核模式驱动程序文件是否具有嵌入式的签名，则不需要的嵌入式的签名。
+从 Windows Vista 开始，在 *启动启动驱动程序* 文件中嵌入签名对于32位版本的 Windows 是可选的。 尽管 Windows 将检查内核模式驱动程序文件是否具有嵌入签名，但不需要嵌入的签名。
 
-若要符合[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)的 Windows Vista 和更高版本的 Windows 中，你必须获取一个已签名[编录文件](catalog-files.md)或签署的编录文件[驱动程序包](driver-packages.md)。 如果驱动程序文件还将包括的嵌入式的签名，签名文件中嵌入驱动程序之前对驱动程序包的目录文件进行签名。
+若要符合 Windows Vista 和更高版本的 Windows 的 [PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md) ，你必须获取已签名的 [目录文件](catalog-files.md) 或对 [驱动程序包](driver-packages.md)的编录文件进行签名。 如果驱动程序文件还将包含嵌入的签名，则在对驱动程序包的目录文件进行签名之前，将签名嵌入驱动程序文件中。
 
-如果[硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)具有测试程序驱动程序中，获取[WHQL 版本签名](whql-release-signature.md)驱动程序包。 如果 HCK 不具有该驱动程序，测试程序[创建编录文件](creating-a-catalog-file-for-a-pnp-driver-package.md)并登录[编录文件](catalog-files.md)，如下所示：
+如果 [硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016) 包含驱动程序的测试程序，请获取驱动程序包的 [WHQL 版本签名](whql-release-signature.md) 。 如果 HCK 没有适用于该驱动程序的测试程序，请 [创建一个编录文件](creating-a-catalog-file-for-a-pnp-driver-package.md) ，并按如下所示对该 [目录文件](catalog-files.md) 进行签名：
 
-**签名 64 位版本的目录文件**
+**为64位版本的目录文件签名**
 
-你可以签署编录文件的 64 位操作系统，如下所示：
+可以按如下所示为64位操作系统的目录文件签名：
 
-1.  [签署编录文件与 SPC](signing-a-catalog-file-with-an-spc.md)用于驱动程序文件中嵌入签名。
+1.  使用[SPC 签署目录文件](signing-a-catalog-file-with-an-spc.md)，该文件用于在驱动程序文件中嵌入签名。
 
-2.  [验证目录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。 你可以验证目录文件的签名或可以验证签名的编录文件中的单个文件条目。
+2.  [验证编录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。 您可以验证目录文件的签名，也可以验证目录文件中单个文件项的签名。
 
-**签名目录文件以 32 位版本**
+**为32位版本的目录文件签名**
 
-你可以注册[编录文件](catalog-files.md)与一个 SPC，对于 64 位版本，或使用的部分中所述[商业版本发布证书](commercial-release-certificate.md)，如下所示：
+您可以使用 SPC 为 [目录文件](catalog-files.md) 签名，如64位版本部分中所述，或使用 [商业发布证书](commercial-release-certificate.md) 进行签名，如下所示：
 
-1.  [使用商业版本发布证书目录文件进行签名](signing-a-catalog-file-with-a-commercial-release-certificate.md)。
+1.  [使用商业版本证书对目录文件进行签名](signing-a-catalog-file-with-a-commercial-release-certificate.md)。
 
-2.  [验证目录文件的签名](verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-relea.md)。 你可以验证目录文件的签名或可以验证签名的编录文件中的单个文件条目。
+2.  [验证目录文件的签名](verifying-the-signature-of-a-catalog-file-signed-by-a-commercial-relea.md)。 您可以验证目录文件的签名，也可以验证目录文件中单个文件项的签名。
 
-### <a href="" id="non-pnp-kernel-mode-boot-start-driver"></a> 非 PnP 内核模式引导启动驱动程序
+### <a name="non-pnp-kernel-mode-boot-start-driver"></a><a href="" id="non-pnp-kernel-mode-boot-start-driver"></a> 非 PnP 内核模式启动驱动程序
 
-若要符合内核模式代码签名的 64 位版本的 Windows Vista 和更高版本的 Windows 的策略，将嵌入在签名*引导启动驱动程序*文件，如下所示：
+若要符合 Windows Vista 和更高版本的 windows 版本的内核模式代码签名64策略，请将签名嵌入 *启动驱动程序* 文件中，如下所示：
 
-1.  [发布符号的驱动程序文件](release-signing-a-driver-file.md)与一个 SPC。
+1.  [发布-使用 SPC 对驱动程序文件进行签名](release-signing-a-driver-file.md) 。
 
 2.  [验证驱动程序文件的 SPC 签名](verifying-the-signature-of-a-release-signed-driver-file.md)。
 
-从 Windows Vista，嵌入在签名开始*引导启动驱动程序*文件是可选的 32 位版本的 Windows。 尽管 Windows 将检查内核模式驱动程序文件是否具有嵌入式的签名，则不需要的嵌入式的签名。
+从 Windows Vista 开始，在 *启动启动驱动程序* 文件中嵌入签名对于32位版本的 Windows 是可选的。 尽管 Windows 将检查内核模式驱动程序文件是否具有嵌入签名，但不需要嵌入的签名。
 
-即插即用设备安装签名要求不适用于非 PnP 驱动程序。
+PnP 设备安装签名要求不适用于非 PnP 驱动程序。
 
-### <a href="" id="pnp-kernel-mode-driver-that-is-not-a-boot-start-driver"></a> 即插即用的内核模式驱动程序，它不是一个引导启动驱动程序
+### <a name="pnp-kernel-mode-driver-that-is-not-a-boot-start-driver"></a><a href="" id="pnp-kernel-mode-driver-that-is-not-a-boot-start-driver"></a> 不是启动驱动程序的 PnP 内核模式驱动程序
 
-内核模式代码签名 64 位版本的 Windows Vista 和更高版本的 Windows 上的策略不需要非启动即插即用驱动程序具有嵌入式的签名。 但是，如果驱动程序文件中包含的嵌入式的签名，签名驱动程序在文件中嵌入签名前[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)。
+64位版本的 Windows Vista 和更高版本的 Windows 上的内核模式代码签名策略不需要非引导 PnP 驱动程序具有嵌入签名。 但是，如果驱动程序文件将包含嵌入的签名，则在对 [驱动程序包的](driver-packages.md) [目录文件](catalog-files.md)进行签名之前，将签名嵌入驱动程序文件中。
 
-若要符合即插即用设备安装签名要求，你必须获取签名的编录文件或驱动程序包的目录文件进行签名。
+若要符合 PnP 设备安装签名要求，你必须获取已签名的目录文件或对驱动程序包的编录文件进行签名。
 
-如果硬件认证工具包 (HCK)。
+如果硬件认证工具包 (HCK) 。
 
-### <a href="" id="non-pnp-kernel-mode-driver-that-is-not-a-boot-start-driver"></a> 非 PnP 内核模式驱动程序，它不是一个引导启动驱动程序
+### <a name="non-pnp-kernel-mode-driver-that-is-not-a-boot-start-driver"></a><a href="" id="non-pnp-kernel-mode-driver-that-is-not-a-boot-start-driver"></a> 非 PnP 内核模式驱动程序，不是启动启动驱动程序
 
-若要符合内核模式代码签名策略的 64 位版本 Windows Vista 和更高版本的 Windows，驱动程序文件中嵌入签名或签名的编录文件[驱动程序包](driver-packages.md)。
+若要符合64位版本 Windows Vista 和更高版本的 Windows 的内核模式代码签名策略，请在驱动程序文件中嵌入签名，或为 [驱动程序包](driver-packages.md)签名目录文件。
 
-从 Windows Vista 开始，在驱动程序文件中嵌入签名是可选的 32 位版本的 Windows。 尽管 Windows 将检查内核模式驱动程序文件是否具有嵌入式的签名，则不需要的嵌入式的签名。
+从 Windows Vista 开始，将签名嵌入驱动程序文件对于32位版本的 Windows 是可选的。 尽管 Windows 将检查内核模式驱动程序文件是否具有嵌入签名，但不需要嵌入的签名。
 
-即插即用设备安装签名要求不适用于非 PnP 驱动程序。
+PnP 设备安装签名要求不适用于非 PnP 驱动程序。
 
-**请注意**  使用嵌入式的签名是通常更为简单且更高效比使用签名的编录文件。 有关使用嵌入式的签名与签名的编录文件的优缺点的详细信息，请参阅[测试签名驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/signing-a-driver)。
+**注意**   使用嵌入的签名通常比使用已签名的目录文件更简单、更有效。 有关使用嵌入的签名与签名的目录文件的优点和缺点的详细信息，请参阅对 [驱动程序进行测试签名](../develop/signing-a-driver.md)。
 
  
 
-若要在非 PnP 内核模式驱动程序不是文件中嵌入版本签名*引导启动驱动程序*，请执行以下步骤：
+若要在非 PnP 内核模式驱动程序的文件中嵌入版本签名，而该驱动程序不是 *启动启动驱动*程序，请执行以下步骤：
 
-1.  [驱动程序文件进行签名](release-signing-a-driver-file.md)与一个 SPC。
+1.  使用 SPC[对驱动程序文件进行签名](release-signing-a-driver-file.md)。
 
 2.  [验证驱动程序文件的签名](verifying-the-signature-of-a-release-signed-driver-file.md)。
 
-对版本签名目录文件非 PnP 内核模式驱动程序不是*引导启动驱动程序*，请执行以下步骤：
+若要为非 PnP 内核模式驱动程序（不是 *启动启动驱动程序*）发布目录文件，请执行以下步骤：
 
-1.  [创建非 PnP 驱动程序的目录文件](creating-a-catalog-file-for-a-non-pnp-driver-package.md)。
+1.  [为非 PnP 驱动程序创建目录文件](creating-a-catalog-file-for-a-non-pnp-driver-package.md)。
 
-2.  [签署编录文件与一个 SPC](signing-a-catalog-file-with-an-spc.md)。
+2.  [使用 SPC 对编录文件进行签名](signing-a-catalog-file-with-an-spc.md)。
 
-3.  [验证目录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。
+3.  [验证编录文件的 SPC 签名](verifying-the-spc-signature-of-a-catalog-file.md)。
 
-如果此类型的驱动程序都有一个已签名[编录文件](catalog-files.md)安装驱动程序的安装应用程序必须在系统组件和驱动程序数据库中的编录文件安装而不是嵌入式签名。 有关详细信息，请参阅[为非 PnP 驱动程序安装 Release-Signed 目录文件](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)。
-
- 
+如果此类型的驱动程序具有已签名的 [目录文件](catalog-files.md) 而不是嵌入的签名，则安装驱动程序的安装应用程序必须在系统组件和驱动程序数据库中安装目录文件。 有关详细信息，请参阅为 [非 PnP 驱动程序安装发布签名的目录文件](installing-a-release-signed-catalog-file-for-a-non-pnp-driver.md)。
 
  
-
-
-
-
 

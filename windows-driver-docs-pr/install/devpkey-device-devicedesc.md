@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: fb8a5e39c63dae087401769e11d4d521f2897d20
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 80392b55ca45ff6e98c18b4feee47d1aee974e51
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418357"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095597"
 ---
 # <a name="devpkey_device_devicedesc"></a>DEVPKEY_Device_DeviceDesc
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_DeviceDesc 设备属性表示设备实例的说明。
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -66,35 +66,28 @@ DEVPKEY_Device_DeviceDesc 设备属性表示设备实例的说明。
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DeviceDesc 的值由安装设备的 INF 文件的 " [**Inf 模型" 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)提供的*设备说明*条目值设置。
+DEVPKEY_Device_DeviceDesc 的值由安装设备的 INF 文件的 " [**Inf 模型" 部分**](./inf-models-section.md)提供的*设备说明*条目值设置。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DEVICE_DeviceDesc 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_DeviceDesc 的值。
 
-可以检索 " [**DEVPKEY_NAME**](devpkey-name--device-instance-.md)设备实例" 属性的值，以检索设备在用户界面项中应出现的名称。
+可以检索 " [**DEVPKEY_NAME**](devpkey-name--device-instance-.md) 设备实例" 属性的值，以检索设备在用户界面项中应出现的名称。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DeviceDesc 属性键。 相反，这些早期版本的 Windows 将使用相应的 SPDRP_DEVICEDESC 标识符来访问属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[SPDRP_Xxx 属性访问设备实例](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DeviceDesc 属性键。 相反，这些早期版本的 Windows 将使用相应的 SPDRP_DEVICEDESC 标识符来访问属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DEVPKEY_NAME（设备实例）**](devpkey-name--device-instance-.md)
 
-[**INF Models 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
+[**INF Models 节**](./inf-models-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

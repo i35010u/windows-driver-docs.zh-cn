@@ -4,72 +4,66 @@ description: 内核模式代码签名要求
 ms.assetid: da02fcb3-d073-42cd-8247-71e2e9e93f65
 keywords:
 - 驱动程序签名 WDK，内核模式代码签名要求
-- 签署驱动程序 WDK，内核模式代码签名要求
+- 对驱动程序进行签名 WDK，内核模式代码签名要求
 - 数字签名 WDK，内核模式代码签名要求
 - 签名 WDK，内核模式代码签名要求
 - 内核模式代码签名要求 WDK
 - 内核模式驱动程序签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 442d37abc86ca0b8936032b859602b9da69175e5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c55624a8d1edea10ac43b247b53d363644233b8c
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364956"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096331"
 ---
 # <a name="kernel-mode-code-signing-requirements"></a>内核模式代码签名要求
 
 
-从 Windows Vista，内核模式代码签名的策略控制是否将加载的内核模式驱动程序开始。 签名要求取决于 Windows 操作系统的版本以及是否驱动程序是正被签名的公开发布的版本或由开发团队在开发和测试驱动程序的过程。 此外，还有[签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)，适用于安装的即插即用设备和驱动程序。
+从 Windows Vista 开始，内核模式代码签名策略控制是否将加载内核模式驱动程序。 签名要求取决于 Windows 操作系统的版本，以及在开发和测试驱动程序的过程中是否对驱动程序进行公共发布或开发团队签名。 还有与 PnP 设备和驱动程序安装有关的 [签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md) 。
 
-虚拟驱动程序必须与实际的硬件驱动程序相同的要求。 换而言之，它们必须符合对于它们的目标为其操作系统版本要求。
+虚拟驱动程序与实际硬件驱动程序具有相同的要求。 换句话说，它们必须符合针对的操作系统版本的要求。
 
-有关签名和仪表板提交的信息，请参阅[获取多个 Windows 版本的 Microsoft 签名的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions)。
+有关签名和仪表板提交的信息，请参阅 [获取 Microsoft 为多个 Windows 版本签名的驱动程序](../dashboard/get-drivers-signed-by-microsoft-for-multiple-windows-versions.md)。
 
-### <a href="" id="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a> 内核模式代码签名的驱动程序的公开发布版本要求
+### <a name="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a><a href="" id="kernel-mode-code-signing-requirements-for-public-release-of-a-driver"></a> 公共版本驱动程序的内核模式代码签名要求
 
 > [!NOTE]
-> 从 Windows 10，版本 1607，Windows 将不会加载任何新的内核模式驱动程序不由 Microsoft 通过签名这[硬件开发人员中心](https://docs.microsoft.com/windows-hardware/drivers/dashboard/register-for-the-hardware-program)。  可以通过以下任一方法获取有效的签名[硬件认证](https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-certification-submissions)或[证明](https://docs.microsoft.com/windows-hardware/drivers/dashboard/attestation-signing-a-kernel-driver-for-public-release)。 
+> 从 Windows 10 版本1607开始，Windows 将不会加载任何新的内核模式驱动程序，这些驱动程序未由 Microsoft 通过 [硬件开发人员中心](../dashboard/register-for-the-hardware-program.md)进行签名。  有效的签名可通过 [硬件认证](../dashboard/hardware-certification-submissions.md) 或 [证明](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)获得。 
 
 
-<a href="" id="--------64-bit-versions-of-windows-starting-with-"></a> **64 位版本的 Windows 与 Windows Vista 一起启动**  
-内核模式代码签名策略要求内核模式驱动程序进行签名，如下所示：
+<a href="" id="--------64-bit-versions-of-windows-starting-with-"></a>**64 位版本的 windows （从 Windows Vista 开始）**  
+内核模式代码签名策略要求对内核模式驱动程序进行签名，如下所示：
 
--   内核模式引导启动驱动程序必须具有嵌入[软件发布者证书 (SPC)](software-publisher-certificate.md)签名。 这适用于任何类型的即插即用或为非 PnP 内核模式下启动开始驱动程序。
+-   内核模式启动驱动程序必须将嵌入式 [软件发行者证书 (SPC) ](software-publisher-certificate.md) 签名。 这适用于任何类型的 PnP 或非 PnP 内核模式启动驱动程序。
 
--   不是一个引导启动驱动程序的非 PnP 内核模式驱动程序必须拥有[编录文件](catalog-files.md)一个 SPC 签名或驱动程序文件必须包含嵌入的 SPC 签名。
+-   非 PnP 内核模式驱动程序不是启动启动驱动程序必须具有具有 SPC 签名的 [目录文件](catalog-files.md) ，或者驱动程序文件必须包含嵌入的 SPC 签名。
 
--   不是一个引导启动驱动程序的即插即用的内核模式驱动程序必须具有任一的嵌入式的 SPC 签名的编录文件[WHQL 版本签名](whql-release-signature.md)，或使用 SPC 签名目录文件。 虽然内核模式代码签名策略不需要即插即用驱动程序的目录文件进行签名，即插即用设备安装会将驱动程序，因为签名才还签名的驱动程序的目录文件。
+-   不是启动启动驱动程序的 PnP 内核模式驱动程序必须具有嵌入的 SPC 签名、具有 [WHQL 版本签名](whql-release-signature.md)的目录文件或具有 SPC 签名的目录文件。 尽管内核模式代码签名策略不要求对 PnP 驱动程序的编录文件进行签名，但 PnP 设备安装仅当驱动程序的编录文件也已签名时才将驱动程序视为已签名。
 
-<a href="" id="32-bit-versions-of-windows"></a>**32 位版本的 Windows**  
-Windows Vista 和更高版本的 Windows 强制实施仅对以下驱动程序的内核模式驱动程序签名策略：
+<a href="" id="32-bit-versions-of-windows"></a>**32位版本的 Windows**  
+Windows Vista 和更高版本的 Windows 仅对以下驱动程序强制实施内核模式驱动程序签名策略：
 
--   流式传输受保护的媒体的驱动程序。 有关这些要求的详细信息，请参阅[代码签名的受保护的媒体组件 （Windows Vista 和更高版本）](https://go.microsoft.com/fwlink/p/?linkid=69258)
+-   流式传输受保护媒体的驱动程序。 有关这些要求的详细信息，请参阅 [Windows Vista 和更高版本 (受保护媒体组件的代码签名) ](https://go.microsoft.com/fwlink/p/?linkid=69258)
 
--   内核模式*引导启动驱动程序*。
+-   内核模式 *启动-启动驱动程序*。
 
-### <a href="" id="kernel-mode-code-signing-requirements-during-development-and-test"></a> 内核模式代码签名要求在开发和测试过程
+### <a name="kernel-mode-code-signing-requirements-during-development-and-test"></a><a href="" id="kernel-mode-code-signing-requirements-during-development-and-test"></a> 开发和测试期间的内核模式代码签名要求
 
-<a href="" id="--------64-bit-versions-of-windows-starting-with-"></a> **64 位版本的 Windows 与 Windows Vista 一起启动**  
-内核模式代码签名策略要求内核模式驱动程序[测试签名](test-signing-driver-packages.md)并且该测试签名[启用](the-testsigning-boot-configuration-option.md)。 测试签名可以采取[WHQL 测试签名](whql-test-signature-program.md)或者由内部生成[测试证书](test-certificates.md)。 驱动程序必须进行测试签名，如下所示：
+<a href="" id="--------64-bit-versions-of-windows-starting-with-"></a>**64 位版本的 windows （从 Windows Vista 开始）**  
+内核模式代码签名策略要求对内核模式驱动程序进行 [测试签名](test-signing-driver-packages.md) ，并 [启用](the-testsigning-boot-configuration-option.md)测试签名。 测试签名可以是 [WHQL 测试签名](whql-test-signature-program.md) ，也可以由 [测试证书](./makecert-test-certificate.md)内部生成。 驱动程序必须对其进行测试签名，如下所示：
 
--   内核模式*引导启动驱动程序*必须具有嵌入的测试签名。 这适用于任何类型的即插即用或为非 PnP 内核模式驱动程序。
+-   内核模式 *启动启动驱动程序* 必须具有嵌入的测试签名。 这适用于任何类型的 PnP 或非 PnP 内核模式驱动程序。
 
--   不是内核模式驱动程序*引导启动驱动程序*必须具有任一测试签名[编录文件](catalog-files.md)或驱动程序文件必须包含嵌入式的测试签名。 这适用于任何类型的即插即用或为非 PnP 内核模式驱动程序。
+-   不是 *启动启动驱动程序* 的内核模式驱动程序必须包含测试签名的 [目录文件](catalog-files.md) 或驱动程序文件必须包含嵌入的测试签名。 这适用于任何类型的 PnP 或非 PnP 内核模式驱动程序。
 
-<a href="" id="32-bit-versions-of-windows"></a>**32 位版本的 Windows**  
-Windows Vista 和更高版本的 Windows 强制实施仅对以下驱动程序的内核模式驱动程序签名策略：
+<a href="" id="32-bit-versions-of-windows"></a>**32位版本的 Windows**  
+Windows Vista 和更高版本的 Windows 仅对以下驱动程序强制实施内核模式驱动程序签名策略：
 
--   流式传输受保护的媒体的驱动程序。 有关这些要求的详细信息，请参阅[代码签名的受保护的媒体组件 （Windows Vista 和更高版本）](https://go.microsoft.com/fwlink/p/?linkid=69258)
+-   流式传输受保护媒体的驱动程序。 有关这些要求的详细信息，请参阅 [Windows Vista 和更高版本 (受保护媒体组件的代码签名) ](https://go.microsoft.com/fwlink/p/?linkid=69258)
 
--   内核模式*引导启动驱动程序*。
-
- 
+-   内核模式 *启动-启动驱动程序*。
 
  
-
-
-
-
 

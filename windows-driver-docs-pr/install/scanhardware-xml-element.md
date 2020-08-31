@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5375092c38ca70da652fd98d53e45fa8fafb91f2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ccd201b232c32921aba4af3bfc953e7eefc6795
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374209"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096617"
 ---
 # <a name="scanhardware-xml-element"></a>scanHardware XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**ScanHardware** XML 元素为空元素，用于设置**scanHardware**标志为 ON。 将此标志设置为 ON 配置 DPInst 安装[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)插即用 (PnP) 函数驱动程序仅当驱动程序包与匹配的计算机中配置的设备和驱动程序包是一个更适合的比当前安装在设备的驱动程序包的设备。
+**ScanHardware** XML 元素是一个空元素，用于将**scanHardware**标志设置为 ON。 将此标志设置为 "开" 可将 DPInst 配置为仅当驱动程序包与计算机中配置的设备匹配并且驱动程序包比设备上当前安装的驱动程序包更匹配时，才为即插即用 (PnP) 函数驱动程序安装 [驱动程序包](./driver-packages.md) 。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67374209"
 <scanHardware>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -53,7 +53,7 @@ ms.locfileid: "67374209"
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -65,11 +65,11 @@ ms.locfileid: "67374209"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下**scanHardware**标志设置为 OFF。 可以设置**scanHardware**通过包括标志为 ON **scanHardware**作为子元素的 XML 元素**dpinst** DPInst 描述符文件中或通过使用 XML 元素 **/sh** 命令行开关。
+默认情况下， **scanHardware** 标志设置为 OFF。 可以通过将**scanHardware** XML 元素包含为 dpinst 描述符文件中**dpinst** XML 元素的子元素或使用 **/sh**命令行开关，将**scanHardware**标志设置为 ON   。
 
-下面的代码示例演示**scanHardware**元素。
+下面的代码示例演示了 **scanHardware** 元素。
 
 ```cpp
 <dpinst>
@@ -80,10 +80,4 @@ ms.locfileid: "67374209"
 ```
 
  
-
- 
-
-
-
-
 

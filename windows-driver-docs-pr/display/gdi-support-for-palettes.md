@@ -4,21 +4,21 @@ description: 调色板的 GDI 支持
 ms.assetid: 8c6ebf1e-6c83-45d9-bf83-f0684d28fc32
 keywords:
 - DrvEnablePDEV
-- GDI WDK Windows 2000 显示颜色
-- 图形驱动程序 WDK Windows 2000 显示颜色
+- GDI WDK Windows 2000 显示，颜色
+- 图形驱动程序 WDK Windows 2000 显示，颜色
 - 颜色管理 WDK GDI
-- 显示调色板 WDK Windows 2000
+- 调色板 WDK Windows 2000 显示
 - 绘制 WDK GDI，颜色
 - DrvSetPalette
 - 颜色索引 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e700bcc35b583dfc7d0dfda679a225c74395c98
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 904a18d9a28e44643d9f5d9548cf38eea1dd8d01
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358654"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064242"
 ---
 # <a name="gdi-support-for-palettes"></a>调色板的 GDI 支持
 
@@ -26,15 +26,15 @@ ms.locfileid: "67358654"
 ## <span id="ddk_gdi_support_for_palettes_gg"></span><span id="DDK_GDI_SUPPORT_FOR_PALETTES_GG"></span>
 
 
-GDI 可以完成大部分调色板管理方面的工作。 当调用 GDI [ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)函数，该驱动程序返回其默认调色板 GDI 作为的一部分[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构。 该驱动程序必须创建使用此调色板[ **EngCreatePalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)函数。
+GDI 可以完成与调色板管理有关的大部分工作。 当 GDI 调用 [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev) 函数时，驱动程序会将其默认调色板作为 [**lnk-devinfo**](/windows/desktop/api/winddi/ns-winddi-tagdevinfo) 结构的一部分返回到 GDI。 驱动程序必须使用 [**EngCreatePalette**](/windows/desktop/api/winddi/nf-winddi-engcreatepalette) 函数创建此调色板。
 
-调色板有效地将映射的 32 位*颜色索引*为 24 位的 RGB 颜色值，这是 GDI 使用调色板的方法。 驱动程序指定其调色板，因此 GDI 可以确定如何将不同颜色索引将显示在设备上。
+调色板有效地将32位 *颜色索引* 映射为24位 RGB 颜色值，这是 GDI 使用调色板的方式。 驱动程序指定其调色板，以便 GDI 可以确定不同的颜色索引在设备上的显示方式。
 
-只要它使用驱动程序不需要处理的大多数调色板操作和计算[ **XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj) GDI 提供。
+驱动程序无需处理大多数调色板操作和计算，只要它使用 GDI 提供的 [**XLATEOBJ**](/windows/desktop/api/winddi/ns-winddi-_xlateobj) 。
 
-如果设备支持的可修改的调色板，它应实现该函数[ **DrvSetPalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette)。 GDI 调用*DrvSetPalette*时应用程序更改控制板的设备，并将生成新的调色板传递给驱动程序。 该驱动程序应设置其内部硬件调色板以尽可能接近地匹配新的调色板。
+如果设备支持可修改的调色板，则它应实现函数 [**DrvSetPalette**](/windows/desktop/api/winddi/nf-winddi-drvsetpalette)。 当应用程序更改设备的调色板并将生成的新调色板传递到驱动程序时，GDI 将调用 *DrvSetPalette* 。 驱动程序应设置其内部硬件调色板，使其尽可能与新调色板匹配。
 
-下表中列出两个不同的格式之一，可以为 GDI 定义调色板。
+可以使用下表中列出的两种不同格式之一为 GDI 定义调色板。
 
 <table>
 <colgroup>
@@ -44,24 +44,24 @@ GDI 可以完成大部分调色板管理方面的工作。 当调用 GDI [ **Drv
 <thead>
 <tr class="header">
 <th align="left">调色板格式</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>编制索引</p></td>
-<td align="left"><p>颜色索引是一个 RGB 值数组的索引。 数组可以是小，例如，包含 16 色索引，也很大，包含，例如，4096 颜色或更多索引。</p></td>
+<td align="left"><p>已编制索引</p></td>
+<td align="left"><p>颜色索引是 RGB 值数组的索引。 数组可以很小，例如16色索引或大，其中包含4096颜色索引或更多。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>位域</p></td>
-<td align="left"><p>颜色索引中的位域中的每种颜色指定 R、 G 和 B 的量方面的颜色。 例如，5 位可为每个，提供介于 0 到 31 之间的值为每种颜色。 5 位的值将进行扩展以将转换为 RGB 时覆盖每个组件 0 到 255 的范围。 （常用 RGB 表示形式本身定义的位域中）。</p></td>
+<td align="left"><p>颜色索引中的位域在每种颜色的 R、G 和 B 的数量方面指定颜色。 例如，5位可用于每个，并为每种颜色提供一个介于0到31之间的值。 转换为 RGB 时，5位值会向上扩展，以涵盖每个组件的范围为0到255。  (通常由位域定义的 RGB 表示形式本身。 ) </p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-GDI 相反的顺序通常使用的调色板映射。 也就是说，应用程序指定绘制的 RGB 颜色和 GDI 必须找到会导致设备以显示该颜色的颜色索引。 下一个表中所示，GDI 将两个主要调色板服务功能提供用于创建和删除调色板，以及某些服务函数与相关联[ **PALOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_palobj)和[**XLATEOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_xlateobj)用于转换之间两个调色板的颜色索引。
+GDI 通常会反向使用调色板映射。 也就是说，应用程序为绘图和 GDI 指定 RGB 颜色必须找到导致设备显示该颜色的颜色索引。 正如下表中所示，GDI 提供了两个主要的调色板服务函数用于创建和删除调色板，还提供了一些与 [**PALOBJ**](/windows/desktop/api/winddi/ns-winddi-_palobj) 和 [**XLATEOBJ**](/windows/desktop/api/winddi/ns-winddi-_xlateobj) 相关的服务功能，用于在两个调色板之间转换颜色索引。
 
 <table>
 <colgroup>
@@ -71,45 +71,45 @@ GDI 相反的顺序通常使用的调色板映射。 也就是说，应用程序
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette" data-raw-source="[&lt;strong&gt;EngCreatePalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette)"><strong>EngCreatePalette</strong></a></p></td>
-<td align="left"><p>创建调色板。 驱动程序通过返回到的调色板的句柄来与设备关联调色板<a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo" data-raw-source="[&lt;strong&gt;DEVINFO&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)"> <strong>DEVINFO</strong> </a>结构。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engcreatepalette" data-raw-source="[&lt;strong&gt;EngCreatePalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-engcreatepalette)"><strong>EngCreatePalette</strong></a></p></td>
+<td align="left"><p>创建调色板。 驱动程序通过在 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo" data-raw-source="[&lt;strong&gt;DEVINFO&lt;/strong&gt;](/windows/desktop/api/winddi/ns-winddi-tagdevinfo)"><strong>lnk-devinfo</strong></a> 结构中返回调色板的句柄，将调色板与设备相关联。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletepalette" data-raw-source="[&lt;strong&gt;EngDeletePalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletepalette)"><strong>EngDeletePalette</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdeletepalette" data-raw-source="[&lt;strong&gt;EngDeletePalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-engdeletepalette)"><strong>EngDeletePalette</strong></a></p></td>
 <td align="left"><p>删除给定的调色板。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdithercolor" data-raw-source="[&lt;strong&gt;EngDitherColor&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdithercolor)"><strong>EngDitherColor</strong></a></p></td>
-<td align="left"><p>返回指定的 RGB 颜色近似于标准 8x8 抖动。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engdithercolor" data-raw-source="[&lt;strong&gt;EngDitherColor&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-engdithercolor)"><strong>EngDitherColor</strong></a></p></td>
+<td align="left"><p>返回近似于指定 RGB 颜色的标准8x8 仿色。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerypalette" data-raw-source="[&lt;strong&gt;EngQueryPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerypalette)"><strong>EngQueryPalette</strong></a></p></td>
-<td align="left"><p>查询其属性的调色板。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engquerypalette" data-raw-source="[&lt;strong&gt;EngQueryPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-engquerypalette)"><strong>EngQueryPalette</strong></a></p></td>
+<td align="left"><p>在调色板中查询其特性。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors" data-raw-source="[&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors)"><strong>PALOBJ_cGetColors</strong></a></p></td>
-<td align="left"><p>使驱动程序从索引调色板下载 RGB 颜色。 中的显示驱动程序通过调用<a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette" data-raw-source="[&lt;strong&gt;DrvSetPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette)"> <strong>DrvSetPalette</strong> </a>函数。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors" data-raw-source="[&lt;strong&gt;PALOBJ_cGetColors&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-palobj_cgetcolors)"><strong>PALOBJ_cGetColors</strong></a></p></td>
+<td align="left"><p>允许驱动程序从索引调色板下载 RGB 颜色。 由 <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvsetpalette" data-raw-source="[&lt;strong&gt;DrvSetPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-drvsetpalette)"><strong>DrvSetPalette</strong></a> 函数中的显示驱动程序调用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_cgetpalette" data-raw-source="[&lt;strong&gt;XLATEOBJ_cGetPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_cgetpalette)"><strong>XLATEOBJ_cGetPalette</strong></a></p></td>
-<td align="left"><p>检索 24 位的 RGB 颜色或已索引的源调色板中的颜色的位域格式。 该驱动程序可以使用此函数以从要执行混合颜色的调色板中获取信息。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_cgetpalette" data-raw-source="[&lt;strong&gt;XLATEOBJ_cGetPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-xlateobj_cgetpalette)"><strong>XLATEOBJ_cGetPalette</strong></a></p></td>
+<td align="left"><p>检索索引源调色板中颜色的24位 RGB 颜色或位域格式。 驱动程序可以使用此函数从调色板获取信息以执行颜色混合。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_hgetcolortransform" data-raw-source="[&lt;strong&gt;XLATEOBJ_hGetColorTransform&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_hgetcolortransform)"><strong>XLATEOBJ_hGetColorTransform</strong></a></p></td>
-<td align="left"><p>返回指定的转换对象的颜色转换。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_hgetcolortransform" data-raw-source="[&lt;strong&gt;XLATEOBJ_hGetColorTransform&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-xlateobj_hgetcolortransform)"><strong>XLATEOBJ_hGetColorTransform</strong></a></p></td>
+<td align="left"><p>返回指定的翻译对象的颜色转换。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_ixlate" data-raw-source="[&lt;strong&gt;XLATEOBJ_iXlate&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_ixlate)"><strong>XLATEOBJ_iXlate</strong></a></p></td>
-<td align="left"><p>将转换为单个源颜色索引到目标颜色索引。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_ixlate" data-raw-source="[&lt;strong&gt;XLATEOBJ_iXlate&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-xlateobj_ixlate)"><strong>XLATEOBJ_iXlate</strong></a></p></td>
+<td align="left"><p>将单个源颜色索引转换为目标颜色索引。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_pivector" data-raw-source="[&lt;strong&gt;XLATEOBJ_piVector&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_pivector)"><strong>XLATEOBJ_piVector</strong></a></p></td>
-<td align="left"><p>检索已索引的源调色板中的转换向量。 驱动程序可以使用此向量来执行其自己的目标索引的源索引转换。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-xlateobj_pivector" data-raw-source="[&lt;strong&gt;XLATEOBJ_piVector&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-xlateobj_pivector)"><strong>XLATEOBJ_piVector</strong></a></p></td>
+<td align="left"><p>从索引源调色板中检索转换向量。 驱动程序可以使用此向量执行其自己的源索引到目标索引的翻译。</p></td>
 </tr>
 </tbody>
 </table>
@@ -117,10 +117,4 @@ GDI 相反的顺序通常使用的调色板映射。 也就是说，应用程序
  
 
  
-
- 
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: da5d3433eb6603bacf3c76370a73f38446ef27d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 346db5f2cb7a4cceb51aa3677f8999929b996c1f
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377286"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095847"
 ---
-# <a name="devpkeydrvpkgdetaileddescription"></a>DEVPKEY_DrvPkg_DetailedDescription
+# <a name="devpkey_drvpkg_detaileddescription"></a>DEVPKEY_DrvPkg_DetailedDescription
 
 
-DEVPKEY_DrvPkg_DetailedDescription 设备属性表示的设备实例功能的详细的说明。
+DEVPKEY_DrvPkg_DetailedDescription 设备属性表示设备实例的功能的详细说明。
 
 <table>
 <colgroup>
@@ -42,14 +42,14 @@ DEVPKEY_DrvPkg_DetailedDescription 设备属性表示的设备实例功能的详
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>数据格式</strong></p></td>
-<td align="left"><p>有限的 XML 标记</p></td>
+<td align="left"><p>一组有限的 XML 标记</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问权限</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>是</p></td>
 </tr>
 </tbody>
@@ -60,20 +60,20 @@ DEVPKEY_DrvPkg_DetailedDescription 设备属性表示的设备实例功能的详
 <a name="remarks"></a>备注
 -------
 
-详细的说明字符串是以 XML 格式。 XML 格式使 Windows 以基于支持的超文本标记语言 (HTML) 标记的以下子集的信息的显示格式。 这些标记的操作如下所示的 HTML 标记的操作。
+详细的描述字符串采用 XML 格式。 XML format 使 Windows 可以基于以下受支持的超文本标记语言子集（ (HTML) 标记）来设置信息显示的格式。 这些标记的操作类似于 HTML 标记的操作。
 
 <a href="" id="heading-level-tags"></a>标题级别标记  
-&lt;h1&gt;， &lt;h2&gt;， &lt;h3&gt;
+&lt;h1 &gt; 、 &lt; h2 &gt; 、 &lt; h3&gt;
 
-<a href="" id="list-tags"></a>列表标记  
-&lt;ul&gt;， &lt;ol&gt;， &lt;l i&gt;
+<a href="" id="list-tags"></a>列出标记  
+&lt;ul &gt; ， &lt; ol &gt; ， &lt; li&gt;
 
 <a href="" id="paragraph-tag"></a>段落标记  
-&lt;p&gt;
+p&lt;&gt;
 
-可以设置的值由 DEVPKEY_DrvPkg_DetailedDescription [ **INF AddProperty 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)包含在[ **INF *DDInstall*一节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的安装设备的 INF 文件。 可以通过调用检索的值 DEVPKEY_DrvPkg_DetailedDescription [ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)。
+可以设置 AddProperty 的 DEVPKEY_DrvPkg_DetailedDescription 值，该 [**指令**](./inf-addproperty-directive.md) 包含在安装设备的 inf 文件的 [**inf *DDInstall* 部分**](./inf-ddinstall-section.md) 中。 可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DrvPkg_DetailedDescription 的值。
 
-下面是举例说明如何使用 INF **AddProperty**指令，若要设置的情况下 INF 安装的设备实例值的 DEVPKEY_DrvPkg_DetailedDescription *DDInstall*部分"SampleDDInstallSection":
+下面的示例演示如何使用 INF **AddProperty** 指令为 INF *DDInstall* 部分为 "SampleDDInstallSection" 安装的设备实例设置 DEVPKEY_DrvPkg_DetailedDescription 值：
 
 ```cpp
 [SampleDDinstallSection]
@@ -96,31 +96,24 @@ DeviceDetailedDescription,,,,"<xml><h1>Microsoft DiscoveryCam 530</h1><h2>Overvi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddProperty Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addproperty-directive)
+[**INF AddProperty 指令**](./inf-addproperty-directive.md)
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

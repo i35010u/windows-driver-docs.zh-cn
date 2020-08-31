@@ -3,17 +3,17 @@ title: 扩展的 Blt 标志
 description: 扩展的 Blt 标志
 ms.assetid: 9c2f7013-dd58-4a61-b452-d263f5caf0d0
 keywords:
-- 扩展的 blt 标志 WDK DirectX 9.0
+- 扩展 blt 标志 WDK DirectX 9。0
 - DDBLT_EXTENDED_FLAGS
-- blt 标志扩展 WDK DirectX 9.0
+- blt 标志扩展 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aa0d709eff31f60608734c3e7a7e9d2e6780f0a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7b3469be82ba616f03e67169983a3ac88024dd9
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381882"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066708"
 ---
 # <a name="extended-blt-flags"></a>扩展的 Blt 标志
 
@@ -21,13 +21,7 @@ ms.locfileid: "67381882"
 ## <span id="ddk_extended_blt_flags_gg"></span><span id="DDK_EXTENDED_BLT_FLAGS_GG"></span>
 
 
-DirectX 9.0 使用 DDBLT\_扩展\_标志 blt 标志来扩展使用 DDBLT\_*Xxx* blt 标志，它们位于**dwFlags** 成员[ **DD\_BLTDATA** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)结构。 当 DirectX 9.0 运行时调用显示器驱动程序[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)函数来执行 blt 操作中，运行时可以组合 DDBLT\_扩展\_DDBLT的标志\_*Xxx*标志使用位或运算来创建新的含义的标志。 该驱动程序然后确定是否存在 DDBLT\_扩展\_标志，重新解释的标志的含义，并相应地执行 blt 操作。 驱动程序时它会确定是否它应使用此机制[执行灰度校正](performing-gamma-correction-on-swap-chains.md)期间从后台缓冲区到桌面 blt 线性颜色空间上。 驱动程序还使用扩展的 blt 标志确定是否[延伸 blit 操作](supporting-stretch-blit-operations.md)请求。
+DirectX 9.0 使用 DDBLT \_ 扩展 \_ 标志 blt 标志来扩展使用 DDBLT \_ *Xxx* blt 标志，这些标志在[**DD \_ dwFlags**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_bltdata)结构的**BLTDATA**成员中可用。 当 DirectX 9.0 运行时调用显示器驱动程序的[*DdBlt*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)函数来执行 blt 操作时，运行时可以 \_ \_ 使用按位 "or" 将 DDBLT 扩展标志与 DdBlt \_ *Xxx*标志合并，以创建标志的新含义。 然后，该驱动程序将确定 DDBLT \_ 扩展 \_ 标志的状态，重新解释标志的含义，并相应地执行 blt 操作。 驱动程序在 blt 从后台缓冲区到桌面时，使用此机制来确定是否应在线性颜色空间上 [执行伽玛更正](performing-gamma-correction-on-swap-chains.md) 。 驱动程序还使用扩展 blt 标志来确定是否请求了 [stretch array.blit 操作](supporting-stretch-blit-operations.md) 。
 
  
-
- 
-
-
-
-
 

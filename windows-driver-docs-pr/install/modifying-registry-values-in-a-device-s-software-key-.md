@@ -3,21 +3,21 @@ title: 修改设备的软件键中的注册表值
 description: 修改设备的软件键中的注册表值
 ms.assetid: 4DBDB53D-CA64-4c19-84A5-FBE1529FD0C5
 keywords:
-- 修改设备的软件项中的注册表值的注册表 WDK 设备安装
+- 注册表 WDK 设备安装，修改设备的软件密钥中的注册表值
 - 修改注册表值 WDK 设备安装，设备软件密钥
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d9b829fed68a0653c733f77d56819fa17263d77
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b51b5d3ea4bed5c98b1e09752a72c986be6d717a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386231"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095901"
 ---
 # <a name="modifying-registry-values-in-a-devices-software-key"></a>修改设备的软件键中的注册表值
 
 
-您必须修改以下注册表项的值 (*设备属性*) 中的设备*软件密钥*:
+不得在设备的*软件密钥*)  (*设备属性*中修改以下注册表项的值：
 
 -   DriverDate
 
@@ -39,27 +39,21 @@ ms.locfileid: "67386231"
 
 -   EnumPropPages32
 
-这些设备属性表示的设备安装状态。 直接修改这些属性可能导致设备的安装状态无效。 例如，与更改信息相关[INF 文件](overview-of-inf-files.md)使设备和驱动程序签名信息等属性与关联的驱动程序文件的信息。 更改驱动程序版本或驱动程序日期可能会中断 Windows 更新功能。
+这些设备属性表示设备的安装状态。 直接修改这些属性可能会使设备的安装状态无效。 例如，更改与 [INF 文件](overview-of-inf-files.md) 相关的信息会使与此类属性相关联的驱动程序文件的信息失效，作为设备和驱动程序的签名信息。 更改驱动程序版本或驱动程序日期可能会损坏 Windows 更新功能。
 
-**请注意**  从 Windows Vista 开始，操作系统施加了"仅安装时间"访问限制为这些属性。 值可以复制的兼容性，并直接修改的值在设备安装过程中不会影响内部状态。
-
- 
-
-若要安全地修改设备的软件密钥中的其他注册表条目的值，请遵循以下准则：
-
--   使用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)并[ **SetupDiSetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)检索和设置标准或自定义属性。
-
-    有关详细信息，请参阅[访问设备驱动程序属性](accessing-device-driver-properties.md)。
-
--   设置由操作系统不保留这些设备属性。
-
-    例如，若要更改显示给用户的设备的名称，更改其[ **DEVPKEY_Device_FriendlyName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-friendlyname)设备属性。
+**注意**   从 Windows Vista 开始，操作系统对这些属性施加 "仅安装时间" 访问限制。 可以复制值以实现兼容性，在设备安装过程中直接修改值不会影响内部状态。
 
  
 
+若要安全修改设备的软件密钥中其他注册表项的值，请遵循以下准则：
+
+-   使用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw) 检索和设置标准或自定义属性。
+
+    有关详细信息，请参阅 [访问设备驱动程序属性](accessing-device-driver-properties.md)。
+
+-   仅设置操作系统未保留的设备属性。
+
+    例如，要更改向用户显示的设备名称，请更改其 [**DEVPKEY_Device_FriendlyName**](./devpkey-device-friendlyname.md) 设备属性。
+
  
-
-
-
-
 

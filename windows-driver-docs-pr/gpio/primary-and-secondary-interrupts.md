@@ -4,26 +4,21 @@ description: GPIO 中断处理本质上是一个两阶段过程。
 ms.assetid: 731B0E36-4480-4B69-931E-1F7B40B18911
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc3c4ec862e9464efa353949f34b8b1e0aacbfd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 06f0bbb2d066552312971ee9b52f55cc835c0839
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363565"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064442"
 ---
 # <a name="primary-and-secondary-interrupts"></a>主要和次要中断
 
 
-GPIO 中断处理本质上是一个两阶段过程。 调用从常规用途的 I/O (GPIO) 控制器，它将导致 GPIO framework 扩展 (GpioClx) 中断服务例程 (ISR) 运行，中断*主中断*。 此 ISR 将中断的 GPIO 插针映射到的全球系统中断 (GSI)，并将此 GSI 传递给硬件抽象层 (HAL)。 生成 HAL*辅助中断*运行之间存在逻辑连接到的 GPIO 插针此 GSI 通过第二个 ISR。 此过程在关系图中所示[GPIO 驱动程序支持概述](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-driver-support-overview#gpio-block-diagram)。
+GPIO 中断处理本质上是一个两阶段过程。 从常规用途 i/o (GPIO) 控制器的中断会导致 GPIO framework 扩展 (GpioClx) 中断服务例程 (ISR) 运行，被称为 *主中断*。 此 ISR 将中断的 GPIO pin 映射到全局系统中断 (GSI) ，并将此 GSI 传递到硬件抽象层 (HAL) 。 HAL 通过此 GSI 生成一个 *辅助中断* ，以运行通过逻辑方式连接到 GPIO pin 的第二个 ISR。 此过程显示在 [GPIO 驱动程序支持概述](./gpio-driver-support-overview.md)的关系图中。
 
-GpioClx 实现 ISR GPIO 控制器配置为中断输入的 GPIO 插针通过收到的服务中断请求。 当外围设备断言的 GPIO 插针，中断并中断已启用，且未掩码 GPIO 控制器中时，GPIO 控制器硬件断言处理器中断。 在此中断响应，ISR GpioClx 查询中的 GPIO 控制器来确定生成中断，，然后确定哪些 GSI 的 GPIO 插针分配给此 pin。 GpioClx ISR 传递到 HAL 和 HAL 此 GSI 调用以逻辑方式连接到 GSI ISR。
+GpioClx 实现 ISR 来服务中断请求，GPIO 控制器通过使用配置为中断输入的 GPIO pin 接收该请求。 当外围设备在 gpio pin 上断言中断，并且在 GPIO 控制器中启用并取消阻止中断时，GPIO 控制器硬件会对处理器断言中断。 为响应此中断，GpioClx 中的 ISR 会查询 GPIO 控制器以标识生成中断的 GPIO pin，然后确定分配给此 pin 的 GSI。 GpioClx ISR 将此 GSI 传递到 HAL，HAL 调用以逻辑方式连接到 GSI 的 ISR。
 
-通常情况下，此第二个 ISR 属于断言的 GPIO 插针中断外围设备的驱动程序。 有关如何将外围设备驱动程序以逻辑方式连接其 ISR GPIO 中断 pin 信息，请参阅[GPIO-Based 中断资源](https://docs.microsoft.com/windows-hardware/drivers/gpio/gpio-based-interrupt-resources)。
-
- 
+通常，此第二个 ISR 属于外围设备的驱动程序，该驱动程序已在 GPIO pin 上断言中断。 有关外围设备驱动程序如何以逻辑方式将其 ISR 连接到 GPIO 中断 pin 的信息，请参阅 [基于 gpio 的中断资源](./gpio-based-interrupt-resources.md)。
 
  
-
-
-
 

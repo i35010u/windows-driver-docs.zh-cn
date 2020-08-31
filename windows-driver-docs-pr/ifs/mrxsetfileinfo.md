@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a85cc8f971150a38a5d8d1cdf73bcdac455f0f23
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2dfeb0de1cd3247e05d051f8fbec12ecd39bb641
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841079"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066872"
 ---
 # <a name="mrxsetfileinfo-routine"></a>MRxSetFileInfo 例程
 
 
-*MRxSetFileInfo*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，请求网络小型重定向程序在文件系统对象上设置文件信息。
+*MRxSetFileInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序在文件系统对象上设置文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetFileInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetFileInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxSetFileInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -106,15 +106,15 @@ NTSTATUS MRxSetFileInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxSetFileInfo*的调用，以响应接收[**IRP\_MJ\_设置\_信息**](irp-mj-set-information.md)请求。
+RDBSS 发出对 *MRxSetFileInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ 信息**](irp-mj-set-information.md) 请求。
 
-在调用*MRxSetFileInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxSetFileInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**FileInformationClass**成员设置为**IrpSp&gt;FILEINFORMATIONCLASS**，\_类值的指定文件\_信息。
+**FileInformationClass**成员设置为**IrpSp- &gt; SetFile. FileInformationClass**，即指定的文件 \_ 信息 \_ 类值。
 
-**Info. Buffer**成员设置为**Irp-&gt;AssociatedIrp. SystemBuffer**。
+**Info. Buffer**成员设置为**Irp- &gt;AssociatedIrp.SystemBuffer**。
 
-**信息. Length**成员设置为**IrpSp-&gt;SetFile**。
+**信息. length**成员设置为 IrpSp. ** &gt; SetFile**。
 
 <a name="requirements"></a>要求
 ------------
@@ -127,11 +127,11 @@ RDBSS 发出对*MRxSetFileInfo*的调用，以响应接收[**IRP\_MJ\_设置\_�
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -139,7 +139,7 @@ RDBSS 发出对*MRxSetFileInfo*的调用，以响应接收[**IRP\_MJ\_设置\_�
 ## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -164,11 +164,4 @@ RDBSS 发出对*MRxSetFileInfo*的调用，以响应接收[**IRP\_MJ\_设置\_�
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

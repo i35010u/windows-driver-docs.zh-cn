@@ -3,23 +3,23 @@ title: 绘制文本
 description: 绘制文本
 ms.assetid: e5bf4673-93c4-4cc5-b74d-e0e3a487ec3d
 keywords:
-- GDI WDK Windows 2000 显示、 文本输出
-- 图形驱动程序 WDK Windows 2000 显示、 文本输出
+- GDI WDK Windows 2000 显示，文本输出
+- 图形驱动程序 WDK Windows 2000 显示，文本输出
 - 文本输出 WDK 图形
 - DrvTextOut
 - DrvGetGlyphMode
-- 图面上的文本输出 WDK GDI
-- GDI WDK Windows 2000 显示、 文本输出，绘制
-- 显示图形驱动程序 WDK Windows 2000，绘制的文本输出
-- WDK GDI 绘制文本
+- 表面文本输出 WDK GDI
+- GDI WDK Windows 2000 显示、文本输出、绘制
+- 图形驱动程序 WDK Windows 2000 显示、文本输出、绘制
+- 绘制文本 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 66a9922884d19bdd50cf77049859c31e13eadb12
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47551b6995f1964999a1c152a2e09e4797dd8210
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365721"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064330"
 ---
 # <a name="drawing-text"></a>绘制文本
 
@@ -27,37 +27,31 @@ ms.locfileid: "67365721"
 ## <span id="ddk_drawing_text_gg"></span><span id="DDK_DRAWING_TEXT_GG"></span>
 
 
-文本输出函数调用仅对*设备管理面*（设备位图或图面），或如果该驱动程序已挂钩中的调用 GDI 托管面的[ **EngAssociateSurface**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engassociatesurface)函数。 文本的图形输出基元是的功能：
+仅对 *设备管理的图面* (设备位图或图面) ，或如果驱动程序已在 [**EngAssociateSurface**](/windows/desktop/api/winddi/nf-winddi-engassociatesurface) 函数中挂接了调用，则仅对设备管理的图面调用文本输出函数。 文本的图形输出基元是函数：
 
-[**DrvTextOut**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvtextout)
+[**DrvTextOut**](/windows/desktop/api/winddi/nf-winddi-drvtextout)
 
-[**DrvGetGlyphMode**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetglyphmode)
+[**DrvGetGlyphMode**](/windows/desktop/api/winddi/nf-winddi-drvgetglyphmode)
 
-GDI 调用**DrvTextOut**来呈现标志符号的文本输出指定位置处的一组像素。 许多**DrvTextOut**功能定义与 GCAPS 位[ **DEVINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-tagdevinfo)返回的结构[ **DrvEnablePDEV** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev)函数。
+GDI 调用 **DrvTextOut** 来呈现文本输出的指定位置的一组标志符号的像素。 许多**DrvTextOut**功能都是使用[**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev)函数返回的[**lnk-devinfo**](/windows/desktop/api/winddi/ns-winddi-tagdevinfo)结构的 GCAPS 位来定义的。
 
-输入的参数的**DrvTextOut**定义两个集的像素为单位*前台*并*不透明*。 该驱动程序将呈现图面提供了以下结果：
+**DrvTextOut**的输入参数定义了两组像素：*前景*和不*透明*。 驱动程序呈现图面以提供以下结果：
 
-1.  首先，使用不透明画笔呈现不透明的像素为单位。
+1.  不透明像素首先呈现，不透明画笔。
 
-2.  然后使用前景画笔呈现前台像素。
+2.  然后，将用前景画笔呈现前景像素。
 
-在中执行的每个这些呈现操作*剪辑区域*。 不能受影响的剪辑区域外部的像素。
+其中每个渲染操作都在 *剪辑区域*中执行。 剪辑区域外的像素不会受到影响。
 
-驱动程序必须呈现图面，使计算，图面上首先绘制不透明画笔的不透明的像素为单位。 然后前台像素为单位计算和呈现的前景画笔。 这些操作受到剪辑。
+驱动程序必须呈现图面，以便在表面上首先使用不透明画笔计算并绘制不透明像素。 然后，使用前台画笔来计算和渲染前景像素。 其中每个操作都受剪辑限制。
 
-前景色和不透明像素构成了一个掩码，通过该颜色碰在图面。 一种字体的标志符号，本身，没有颜色。 像素的前景色集定义为标志符号的像素为单位和用来模拟带删除线或下划线某些额外矩形的像素为单位的并集。 不透明的像素为单位定义由不透明的矩形。
+前景和不透明像素组成了一个掩码，通过它可以将颜色刷到表面上。 字体的字形本身不具有颜色。 前景像素组定义为标志符号像素的并集，以及用于模拟删除线或下划线的某些额外矩形的像素。 不透明像素由不透明矩形定义。
 
-**DrvTextOut**选择使用指针，pfo，查询当前的指定的字体[ **FONTOBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_fontobj)结构。 此过程可以包括下载软字体或字体替换或任何其他设备所需的字体优化。
+**DrvTextOut** 使用指针 pfo 选择指定的字体，以查询当前 [**FONTOBJ**](/windows/desktop/api/winddi/ns-winddi-_fontobj) 结构。 此过程可能包括下载软字体或字体替换或设备所需的任何其他字体优化。
 
-如果驱动程序具有可缩放字体，则应调用[ **FONTOBJ\_pxoGetXform** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-fontobj_pxogetxform)当前 FONTOBJ 结构，以返回关联的字体的名义设备转换函数. 这是必需的驱动程序所提供的字体。 名义上的空间是设备字体的设计空间。 例如，PostScript 字体定义 1000年-1000年单元字符单元格。 度量值中返回的大多数[ **IFIMETRICS** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_ifimetrics)结构都将转换为名义上的空间，这就是名义上设备转换是必要的原因。
+如果驱动程序具有可缩放字体，则它应为当前 FONTOBJ 结构调用 [**FONTOBJ \_ pxoGetXform**](/windows/desktop/api/winddi/nf-winddi-fontobj_pxogetxform) 函数，以返回关联字体的名义到设备转换。 这对于驱动程序提供的字体是必需的。 名义空间是设备字体的设计空间。 例如，PostScript 字体在 1000 x 1000 单元字符单元中定义。 [**IFIMETRICS**](/windows/desktop/api/winddi/ns-winddi-_ifimetrics)结构中返回的大部分指标都转换为名义空间，这就是需要进行名义到设备转换的原因。
 
-图形引擎通过调用函数查询驱动程序[ **DrvGetGlyphMode** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetglyphmode)若要了解如何在内部应缓存其字体信息。 它可以缓存单个标志符号位图、 大纲中，或都不 （的正确选择设备字体）。
-
- 
+图形引擎通过调用函数 [**DrvGetGlyphMode**](/windows/desktop/api/winddi/nf-winddi-drvgetglyphmode) 来查询驱动程序，以了解它如何在内部缓存其字体信息。 它可以将单独的字形缓存为位图、轮廓，或者两者都不 () 的设备字体的正确选择。
 
  
-
-
-
-
 

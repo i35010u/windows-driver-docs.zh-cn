@@ -9,21 +9,21 @@ keywords:
 - 延迟的上下文 WDK Windows Server 2008 R2 显示，不包括 DDI 函数
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f572f85efdad974bbb20415498a31c688d59ad5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ca7ae43a6e11a566ebd9ef494d184f36012f7a73
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839702"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066730"
 ---
 # <a name="excluding-ddi-functions-for-deferred-contexts"></a>排除延迟上下文的 DDI 函数
 
 
 本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-当 Microsoft Direct3D 运行时调用用户模式显示驱动程序的[**CreateDeferredContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext)函数来创建延迟的上下文时，驱动程序将提供运行时可为该延迟上下文调用的函数。 驱动程序将填充[**D3D11DDIARG\_CREATEDEFERREDCONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createdeferredcontext)结构的**p11ContextFuncs**成员指向的[**D3D11DDI\_DEVICEFUNCS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)结构的成员。 驱动程序只为延迟上下文提供一小部分功能，因为驱动程序会直接执行上下文。
+当 Microsoft Direct3D 运行时调用用户模式显示驱动程序的 [**CreateDeferredContext**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createdeferredcontext) 函数来创建延迟的上下文时，驱动程序将提供运行时可为该延迟上下文调用的函数。 驱动程序将填充[**D3D11DDIARG \_ CREATEDEFERREDCONTEXT**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createdeferredcontext)结构的**P11ContextFuncs**成员指向的[**D3D11DDI \_ DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)结构的成员。 驱动程序只为延迟上下文提供一小部分功能，因为驱动程序会直接执行上下文。
 
-驱动程序通过将 D3D11DDI 的以下成员（ [ **\_DEVICEFUNCS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs)或[**D3D11\_1DDI\_DEVICEFUNCS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs)设置为**NULL**，排除延迟上下文的许多函数：
+驱动程序通过将 [**D3D11DDI \_ DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_devicefuncs) 或 [**D3D11 \_ 1DDI \_ DEVICEFUNCS**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11_1ddi_devicefuncs) 的以下成员设置为 **NULL**，排除延迟上下文的许多函数：
 
 ```cpp
 typedef struct D3D11DDI_DEVICEFUNCS {
@@ -104,10 +104,4 @@ typedef struct D3D11_1DDI_DEVICEFUNCS {
 ```
 
  
-
- 
-
-
-
-
 

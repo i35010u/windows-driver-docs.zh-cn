@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bf2af5c130fbd34266662c1c9f2387971434e214
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 9c78d46ec7e6705ff9ad75bc0b141b38a70a984d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418514"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096465"
 ---
 # <a name="devpkey_device_busreporteddevicedesc"></a>DEVPKEY_Device_BusReportedDeviceDesc
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_BusReportedDeviceDesc 设备属性表示设备实例的总线驱�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,9 +62,9 @@ DEVPKEY_Device_BusReportedDeviceDesc 设备属性表示设备实例的总线驱�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_BusReportedDeviceDesc 的值由 Windows 即插即用（PnP）设置，其字符串值为设备实例的总线驱动程序报告的字符串值。 在用[**IRP_MN_QUERY_DEVICE_TEXT**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-text)进行查询时，总线驱动程序会返回此值。
+DEVPKEY_Device_BusReportedDeviceDesc 的值由 Windows 即插即用设置 (PnP) ，其中包含由设备实例的总线驱动程序报告的字符串值。 在用 [**IRP_MN_QUERY_DEVICE_TEXT**](../kernel/irp-mn-query-device-text.md)进行查询时，总线驱动程序会返回此值。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_BusReportedDeviceDesc 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_BusReportedDeviceDesc 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,22 +81,15 @@ DEVPKEY_Device_BusReportedDeviceDesc 的值由 Windows 即插即用（PnP）设�
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

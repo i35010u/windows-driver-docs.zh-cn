@@ -4,12 +4,12 @@ description: 将 SPC 导入证书存储
 ms.assetid: 4640b48c-e56f-4c6b-8943-f8b6fc3e37d7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 54478f0b973395672fac1ece3e2d1c5c4f3938d0
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 35632ef0cc3d771ca3fbd743fcda68a1323711f5
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644027"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095709"
 ---
 # <a name="importing-an-spc-into-a-certificate-store"></a>将 SPC 导入证书存储
 
@@ -38,13 +38,7 @@ certutil -user -p pfxpassword -importPFX abc.pfx
 
 -   **-ImportPFX**选项指定 *.pfx*文件 (的名称 *) 。*
 
-一旦将 *.pfx* 文件导入到签名计算机上的个人证书存储中，就可以使用 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 对 [驱动程序包](driver-packages.md)进行发布签名。
+一旦将 *.pfx* 文件导入到签名计算机上的个人证书存储中，就可以使用 [**SignTool**](../devtest/signtool.md) 对 [驱动程序包](driver-packages.md)进行发布签名。
 
  
-
- 
-
-
-
-
 

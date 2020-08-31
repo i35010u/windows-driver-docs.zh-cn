@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: bfd0af0d8bcc3b1ad202e04a8291f2ff75e1ec28
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 4e5da0ac1cb9342e50b24b5f5f2c2464e6d4eb34
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418241"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096661"
 ---
 # <a name="devpkey_devicedisplay_category"></a>DEVPKEY_DeviceDisplay_Category
 
@@ -33,8 +33,8 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,19 +62,19 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 <a name="remarks"></a>备注
 -------
 
-物理设备的设备类别通过[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中的[**device.devicecategory**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
+物理设备的设备类别通过[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中的[**device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85)) XML 元素进行指定。 系统中该设备的每个实例都继承该物理设备的设备类别。
 
-每台物理设备可以在[设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中指定一个或多个功能类别。 Windows 设备和打印机使用每个类别将设备实例组合到识别的设备类别之一中。
+每台物理设备可以在 [设备元数据包](https://docs.microsoft.com/windows-hardware/drivers/install/device-metadata-packages)中指定一个或多个功能类别。 Windows 设备和打印机使用每个类别将设备实例组合到识别的设备类别之一中。
 
 对于设备支持的每个硬件功能，多功能设备通常会标识多个功能类别。 例如，多功能设备可以标识打印机、传真、扫描仪和可移动存储设备功能的功能类别。
 
-[**DEVPROP_TYPE_STRING_LIST**](devprop-type-string-list.md)中的第一个功能类别字符串指定物理设备的主要功能类别。 "主要功能" 类别由独立硬件供应商（IHV）定义，以指定用户如何播发、打包、销售和最终标识设备。
+[**DEVPROP_TYPE_STRING_LIST**](devprop-type-string-list.md)中的第一个功能类别字符串指定物理设备的主要功能类别。 主要功能类别由独立硬件供应商 (IHV) 来指定如何播发、打包、销售和最终由用户标识设备。
 
 如果 DEVPKEY_DeviceDisplay_Category 设备属性指定了多个功能类别字符串，则在第一个字符串之后的剩余字符串将指定物理设备的辅助功能类别。
 
-控制面板中的 "**设备和打印机**" 用户界面显示设备实例的主要和次要功能类别。 这些类别按照 DEVPKEY_DeviceDisplay_Category 设备属性中指定的顺序显示。
+控制面板中的 " **设备和打印机** " 用户界面显示设备实例的主要和次要功能类别。 这些类别按照 DEVPKEY_DeviceDisplay_Category 设备属性中指定的顺序显示。
 
-可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)访问 DEVPKEY_DeviceDisplay_Category 属性。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)访问 DEVPKEY_DeviceDisplay_Category 属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,24 +91,17 @@ DEVPKEY_DeviceDisplay_Category 设备属性表示应用于设备实例的一个�
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**Device.devicecategory**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
+[**Device.devicecategory**](/previous-versions/windows/hardware/metadata/ff541101(v=vs.85))
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

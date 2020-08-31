@@ -1,20 +1,20 @@
 ---
-title: NewDisp 动态重新加载的显示器驱动程序
-description: NewDisp 动态重新加载的显示器驱动程序
+title: 显示驱动程序的 NewDisp 动态重新加载
+description: 显示驱动程序的 NewDisp 动态重新加载
 ms.assetid: 0f8ac27c-8a42-4032-9974-89a7463dccbb
 keywords:
 - newdisp.exe
-- 动态驱动程序将重新加载 WDK Windows 2000 显示
-- 动态重新加载驱动程序 WDK Windows 2000 显示
-- 重新启动动态重新加载 WDK Windows 2000 显示通过预防
+- 动态驱动程序重新加载 WDK Windows 2000 显示器
+- 重新加载驱动程序动态 WDK Windows 2000 显示器
+- 动态重载 WDK Windows 2000 显示器的重启防护
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 227d1b6e018315d23f339d6810d532410e411648
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b73d05deafd3ebd2356d03c338bc6d588399761a
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372817"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066468"
 ---
 # <a name="newdisp-dynamic-reload-of-a-display-driver"></a>NewDisp：显示驱动程序的动态重新加载
 
@@ -22,37 +22,31 @@ ms.locfileid: "67372817"
 ## <span id="ddk_newdisp_dynamic_reload_of_a_display_driver_gg"></span><span id="DDK_NEWDISP_DYNAMIC_RELOAD_OF_A_DISPLAY_DRIVER_GG"></span>
 
 
-驱动程序开发工具包 (DDK) 提供了一个工具，使显示驱动程序而无需重新启动动态重新加载。 此工具叫做*newdisp.exe*，加快了显示器驱动程序在开发过程中测试更新显示驱动程序代码时，从而不需要重新启动。
+驱动程序开发工具包 (DDK) 提供一种可在不重新启动的情况下动态重新加载显示驱动程序的工具。 此工具称为 *newdisp.exe*，它通过在更新显示器驱动程序代码时不必要地重新启动，加速了在开发期间显示驱动程序测试。
 
-**请注意**  此工具不是在 Windows Vista 和更高版本的 Windows Driver Kit (WDK) 中可用。
+**注意**   此工具不适用于 windows Vista 和更高版本的 Windows 驱动程序工具包 (WDK) 。
 
  
 
-**若要运行*newdisp.exe***
+**运行 *newdisp.exe***
 
 1.  关闭所有 Direct3D 和 OpenGL 应用程序。
 
-2.  将复制到的最新的显示驱动程序的 DLL  *\\system32*目录。
+2.  将已更新的显示驱动程序的 DLL 复制到* \\ system32*目录中。
 
-3.  运行*newdisp* （不带任何参数）。
+3.  运行不带任何参数) 的 *newdisp* (。
 
-每次*newdisp*是调用，它将重新加载显示器驱动程序。 假定在调用时不存在任何驱动程序引用*newdisp*来实现功能的动态重新加载：
+每次调用 *newdisp* 时，它会重新加载显示驱动程序。 假设在调用时不存在任何驱动程序引用， *newdisp* 将通过以下方式完成动态重载：
 
--   调用**ChangeDisplaySettings**使用 640 x 480 x 16 颜色，这会导致系统加载和运行 16 色 VGA 显示器驱动程序 DLL，并在相同的原因旧显示驱动程序无法从内存卸载 DLL。
+-   通过640x480x16 颜色调用 **ChangeDisplaySettings** ，这会导致系统加载并运行16色 VGA 显示驱动程序 dll，同时会导致旧的显示驱动程序 dll 从内存中卸载。
 
--   立即执行另一个**ChangeDisplaySettings**为原始模式，这会导致新的显示驱动程序 DLL 被加载从回调 *\\system32*目录和 16 种颜色VGA 显示器驱动程序无法卸载 DLL。
+-   立即对原始模式执行另一个**ChangeDisplaySettings**回调，这会导致从* \\ system32*目录加载新的显示驱动程序 dll，并卸载16色 VGA 显示驱动程序 dll。
 
-对驱动程序实例的引用存在驱动程序是否 active Direct3D [ **WNDOBJ**](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_wndobj)，或[ **DRIVEROBJ** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_driverobj)对象。 当*newdisp*运行时对驱动程序实例的引用存在，旧的显示器驱动程序 DLL 将永远不会被卸载，并且相应地将永远不会加载新的显示驱动程序 DLL。
+如果驱动程序具有活动的 Direct3D、 [**WNDOBJ**](/windows/desktop/api/winddi/ns-winddi-_wndobj)或 [**DRIVEROBJ**](/windows/desktop/api/winddi/ns-winddi-_driverobj) 对象，则存在对驱动程序实例的引用。 当 *newdisp* 在对驱动程序实例的引用存在时运行时，将永远不会卸载旧的显示驱动程序 dll，并且将永远不会加载新的显示驱动程序 dll。
 
-*Newdisp*依赖于加载到 Windows 2000 和更高版本时避免重新启动; 重新加载该驱动程序已添加的功能的动态驱动程序因此，它不适用于在 Windows NT 4.0 和早期操作系统版本上。 它也不会不起作用的 VGA 驱动程序无法加载图形在设备上，或如果本机显示驱动程序支持的模式，640 x 480 x 16 颜色而不是让该模式由 VGA 驱动程序处理。
+*Newdisp* 依赖于动态驱动程序加载功能，该功能已添加到 Windows 2000 和更高版本，无需重新启动就重新加载驱动程序;因此，它在 Windows NT 4.0 和以前的操作系统版本上不起作用。 如果无法在图形设备上加载 VGA 驱动程序，或者本机显示驱动程序支持640x480x16 颜色模式，而不是让 VGA 驱动程序处理该模式，则它也不起作用。
 
-请注意， *newdisp*不支持的原因要重新加载的微型端口驱动程序。 如果更改微型端口驱动程序，则必须重新启动系统安装并对其进行测试。
-
- 
+请注意， *newdisp* 当前不会导致重新加载视频微型端口驱动程序。 如果更改了微型端口驱动程序，则必须重新启动系统才能进行安装和测试。
 
  
-
-
-
-
 

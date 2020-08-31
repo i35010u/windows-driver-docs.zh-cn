@@ -4,43 +4,43 @@ description: 指定模型 ID 的最佳做法
 ms.assetid: ed0cdfb4-1de8-4b4f-8bab-7c5e06cf96f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0382d8ac10b20f315667855571f715eed15df303
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 77fab517101adeca6565d51e162497ff36f009a2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385296"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095793"
 ---
 # <a name="best-practices-for-specifying-model-ids"></a>指定模型 ID 的最佳做法
 
 
-模型 Id 基于物理设备的业务定义或股票保留单位 (SKU)。 每个模型 ID 必须是唯一的所有品牌和型号的物理设备。
+模型 Id 基于业务定义或 (SKU) 的物理设备。 每个模型 ID 对于物理设备的所有构成和型号都必须是唯一的。
 
-以下列表描述了硬件 Id 和模型 Id。 对于物理设备之间的差异：
+以下列表描述了物理设备的硬件 Id 和型号 Id 之间的差异：
 
--   [硬件 Id](hardware-ids.md)通过使用一个或多个指定[ **HardwareID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546114(v=vs.85))内的 XML 元素[ **HardwareIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546121(v=vs.85)) XML元素。 每个**HardwareID**值指定硬件函数基于特定于总线的值。 硬件 Id 可以用于将设备驱动程序映射到设备实例。
+-   [硬件 id](hardware-ids.md)是使用[**HardwareIDList**](/previous-versions/windows/hardware/metadata/ff546121(v=vs.85)) xml 元素中的一个或多个[**HardwareID**](/previous-versions/windows/hardware/metadata/ff546114(v=vs.85)) xml 元素指定的。 每个 **HardwareID** 值指定基于特定于总线的值的硬件函数。 硬件 Id 可用来将设备驱动程序映射到设备实例。
 
-    例如，具有相同的硬件 ID 的两个设备共享相同的驱动程序使用的功能接口。
+    例如，两个具有相同硬件 ID 的设备共享同一驱动程序使用的功能接口。
 
--   通过使用一个或多个指定模型 Id [ **ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))中的 XML 元素[ **ModelIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85)) XML 元素。 模型 Id 允许原始设备制造商 (OEM) 或独立硬件供应商 (IHV) 来唯一标识的总线或接口技术独立的物理设备。
+-   模型 Id 是使用[**ModelIDList**](/previous-versions/windows/hardware/metadata/ff549303(v=vs.85)) xml 元素中的一个或多个[**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85)) xml 元素指定的。 模型 Id 允许原始设备制造商 (OEM) 或独立硬件供应商 (IHV) ，以唯一标识与总线或接口技术无关的物理设备。
 
-    例如，具有不同的模型 Id 的两个设备可能有其组件的相同硬件 Id。
+    例如，两个具有不同模型 Id 的设备可能为其组件具有相同的硬件 Id。
 
--   [硬件 Id](hardware-ids.md)用于将设备元数据包映射到特定的总线或接口上的设备实例。
+-   [硬件 id](hardware-ids.md) 用于将设备元数据包映射到特定总线或接口上的设备实例。
 
--   模型 Id 用于将设备元数据包映射到物理设备，而不考虑如何将设备连接到计算机。
+-   模型 Id 用于将设备元数据包映射到物理设备，无论设备连接到计算机的方式如何。
 
-[ **ModelIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85)) XML 元素是必需的仅当[ **HardwareIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546121(v=vs.85))元素中未指定[**PackageInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549574(v=vs.85)) XML 数据。 如果指定了它，则**ModelIDList**元素必须包含一个或多个[ **ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))元素，以指定每个设备支持的函数的唯一模型 ID。
+仅当[**PackageInfo**](/previous-versions/windows/hardware/metadata/ff549574(v=vs.85)) xml 数据中未指定[**HardwareIDList**](/previous-versions/windows/hardware/metadata/ff546121(v=vs.85))元素时，才需要[**ModelIDList**](/previous-versions/windows/hardware/metadata/ff549303(v=vs.85)) xml 元素。 如果已指定，则 **ModelIDList** 元素必须包含一个或多个 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85)) 元素，以便为设备支持的每个函数指定唯一的模型 ID。
 
-如果[ **PackageInfo** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549574(v=vs.85)) XML 数据包含[ **HardwareIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff546121(v=vs.85))并[ **ModelIDList**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85))元素，它确定设备是否由设备元数据包时操作系统使用的以下规则：
+如果 [**PackageInfo**](/previous-versions/windows/hardware/metadata/ff549574(v=vs.85)) XML 数据包含 [**HardwareIDList**](/previous-versions/windows/hardware/metadata/ff546121(v=vs.85)) 和 [**ModelIDList**](/previous-versions/windows/hardware/metadata/ff549303(v=vs.85)) 元素，则当操作系统确定设备元数据包是否指定了设备时，操作系统将使用以下规则：
 
--   如果设备有一个模型 ID，操作系统不会搜索中的匹配项**HardwareIDList**元素。
+-   如果设备具有模型 ID，操作系统将不会在 **HardwareIDList** 元素中搜索匹配项。
 
--   否则，操作系统将搜索**HardwareIDList**设备硬件 ID 的匹配项的元素。
+-   否则，操作系统会在 **HardwareIDList** 元素中搜索设备的硬件 ID 的匹配项。
 
-如果你的设备元数据包支持多个设备模型或模型 Id，可以指定[ **ModelID** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))为每个设备模型的元素。
+如果设备元数据包支持多个设备模型或模型 Id，则可以为每个设备模型指定一个 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85)) 元素。
 
-以下是一种[ **ModelIDList** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549303(v=vs.85))元素中有多个**ModelID**元素：
+下面是包含多个**ModelID**元素的[**ModelIDList**](/previous-versions/windows/hardware/metadata/ff549303(v=vs.85))元素的示例：
 
 ```cpp
 <ModelIDList>
@@ -49,13 +49,7 @@ ms.locfileid: "67385296"
 </ModelIDList>
 ```
 
-有关格式的要求的详细信息**ModelID** XML 元素，请参阅[ **ModelID**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
+有关 **ModelID** XML 元素的格式要求的详细信息，请参阅 [**ModelID**](/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))。
 
  
-
- 
-
-
-
-
 

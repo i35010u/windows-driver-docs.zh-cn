@@ -4,17 +4,17 @@ description: 用户界面函数
 ms.assetid: 30ec0628-cac7-46ab-a9f2-c81ca3ad7125
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9934d982dbeab42b29e0b734c5b6e0c937cf869
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 943a073633e6c29baa7f02accb18c6ef0c33200e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380452"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096549"
 ---
 # <a name="user-interface-functions"></a>用户界面函数
 
 
-可以使用以下类安装程序和共同安装程序中的常规安装程序函数来确定当前进程是否可以与用户交互。
+你可以在类安装程序和共同安装程序中使用以下常规安装函数来确定当前进程是否可以与用户交互。
 
 <table>
 <colgroup>
@@ -24,17 +24,17 @@ ms.locfileid: "67380452"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupGetNonInteractiveMode&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode)"><strong>SetupGetNonInteractiveMode</strong></a></p></td>
-<td align="left"><p>返回一个 SetupAPI 非交互式标志，指示调用方的过程是否可以与通过用户界面组件，例如，对话框的用户交互的值。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupGetNonInteractiveMode&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupgetnoninteractivemode)"><strong>SetupGetNonInteractiveMode</strong></a></p></td>
+<td align="left"><p>返回 Setupapi.log 非交互式标志的值，该值指示调用方的进程是否可以通过用户界面组件（如对话框）与用户交互。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupSetNonInteractiveMode&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode)"><strong>SetupSetNonInteractiveMode</strong></a></p></td>
-<td align="left"><p>设置用于确定是否可以与调用方的上下文中的用户交互 SetupAPI 的非交互式 SetupAPI 标志。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode" data-raw-source="[&lt;strong&gt;SetupSetNonInteractiveMode&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetnoninteractivemode)"><strong>SetupSetNonInteractiveMode</strong></a></p></td>
+<td align="left"><p>设置非交互式 Setupapi.log 标志，该标志确定 Setupapi.log 是否可以与用户在调用方的上下文中交互。</p></td>
 </tr>
 </tbody>
 </table>
@@ -42,10 +42,4 @@ ms.locfileid: "67380452"
  
 
  
-
- 
-
-
-
-
 

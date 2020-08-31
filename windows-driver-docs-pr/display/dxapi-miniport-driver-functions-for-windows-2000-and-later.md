@@ -4,18 +4,18 @@ description: Windows 2000 和更高版本的 DxApi 微型端口驱动程序函�
 ms.assetid: e9a41e27-930c-49a2-b5e3-0b709b873bb3
 keywords:
 - DxApi 微型端口驱动程序 WDK DirectDraw
-- DxApi 微型端口驱动程序 WDK DirectDraw 有关 DxApi 微型端口驱动程序
+- DxApi 微型端口驱动程序 WDK DirectDraw，关于 DxApi 微型端口驱动程序
 - autoflipping WDK DirectDraw
-- 正在跳过 WDK DirectDraw 字段
+- 跳过 WDK DirectDraw 的字段
 - 总线控制 WDK DirectDraw
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a442ce47fac9f6414ada2387a1adcbff86efb37c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f1ed6d83658b8802dbbd65260f8a73353bb399ed
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381069"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064310"
 ---
 # <a name="dxapi-miniport-driver-functions-for-windows-2000-and-later"></a>Windows 2000 和更高版本的 DxApi 微型端口驱动程序函数
 
@@ -23,23 +23,17 @@ ms.locfileid: "67381069"
 ## <span id="ddk_dxapi_miniport_driver_functions_for_windows_2000_and_later_gg"></span><span id="DDK_DXAPI_MINIPORT_DRIVER_FUNCTIONS_FOR_WINDOWS_2000_AND_LATER_GG"></span>
 
 
-支持中的 DxApi 界面[微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md)仅支持 Windows 2000 和更高版本。
+仅 Windows 2000 和更高版本支持 [视频微型端口驱动程序](video-miniport-drivers-in-the-windows-2000-display-driver-model.md) 中的 DxApi 接口。
 
 DxApi 接口支持可用于以下操作：
 
--   使用适用于设备不支持硬件 autoflipping 或具有限制，使其 undependable IRQ Autoflipping。 这允许 DirectDraw 硬件 autoflipping 不可用时始终恢复到软件 autoflipping。
+-   Autoflipping 对不支持硬件 Autoflipping 的设备或具有使其 undependable 的限制的设备使用 IRQ。 这允许 DirectDraw 在硬件 autoflipping 不可用时始终还原为软件 autoflipping。
 
--   正在跳过使用 IRQ 支持 MPEG 驱动程序，可以撤消的 MPEG 数据最初从电影采样 3:2 下拉列表的字段。
+-   字段跳过使用 IRQ 来支持 MPEG 驱动程序，该驱动程序最初从胶片中采样的 MPEG 数据的3:2 下拉。
 
--   总线掌握，使设备可以持续将数据传输而无需致电[ *DdLock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock) / [*DdUnlock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_unlock)为每一帧。 这是特别有用，因为这些设备的驱动程序 WDM 驱动程序。
+-   总线主控，因此设备可以持续传输数据而无需为[*DdLock*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)  /  每个帧调用 DdLock[*DdUnlock*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_unlock) 。 这特别有用，因为这些设备的驱动程序是 WDM 驱动程序。
 
--   捕获视频并 VBI。 在微型端口驱动程序，它很容易捕获视频的基于硬件的视频端口 IRQ 或图形 IRQ。
-
- 
+-   捕获视频和 VBI。 在微型端口驱动程序中，可以轻松捕获基于硬件视频端口 IRQ 或图形 IRQ 的视频。
 
  
-
-
-
-
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7be1b9dbd3bf7a1420e374fdcbb59ef69e90493d
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 198ed76150cd4a5297a62f6ef262c993645c90af
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418229"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096791"
 ---
 # <a name="devpkey_device_physicaldevicelocation"></a>DEVPKEY_Device_PhysicalDeviceLocation
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_PhysicalDeviceLocation 设备属性将设备固件提供的物理
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -68,7 +68,7 @@ DEVPKEY_Device_PhysicalDeviceLocation 设备属性将设备固件提供的物理
 
 Windows 将 DEVPKEY_Device_PhysicalDeviceLocation 的值设置为物理设备位置信息。 信息的格式在 ACPI 4.0 a 规范中的6.1.6 部分定义。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_PhysicalDeviceLocation 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_PhysicalDeviceLocation 的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -85,22 +85,15 @@ Windows 将 DEVPKEY_Device_PhysicalDeviceLocation 的值设置为物理设备位
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

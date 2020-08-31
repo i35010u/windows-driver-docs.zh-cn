@@ -6,50 +6,44 @@ keywords:
 - INF 文件 WDK 设备安装，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8243684a9a4d0bda25a6119325b8cc44f9c0e377
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 37adc3f5505c9d964cf20d6c74cca24981b4e134
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387332"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095725"
 ---
 # <a name="general-guidelines-for-inf-files"></a>INF 文件常规指南
 
 
 
 
-INF 文件具有许多常见的部分，并遵循单一的语法规则集。 但是，它们也是为作为支持的 Microsoft Windows 设备的各种不同的。 当您编写的 INF 文件时，请参阅以下信息源：
+INF 文件有许多常见部分，并遵循一组语法规则。 但是，它们也与 Microsoft Windows 支持的各种设备相同。 编写 INF 文件时，请参阅以下信息源：
 
--   本部分和[INF 文件的部分和指令](inf-file-sections-and-directives.md)参考资料。
+-   本部分以及 [INF 文件部分和指令](inf-file-sections-and-directives.md) 参考材料。
 
--   你的设备类的文档。
+-   设备类别的文档。
 
-    例如，如果你的设备是打印机，请参阅[安装和配置打印机驱动程序](https://docs.microsoft.com/windows-hardware/drivers/print/installing-and-configuring-printer-drivers)。
+    例如，如果设备是打印机，请参阅 [安装和配置打印机驱动程序](../print/installing-and-configuring-printer-drivers.md)。
 
--   WDK 的 INF 文件的工具。
+-   用于 INF 的 WDK 工具文件。
 
-    有关详细信息，请参阅[INF 文件的工具](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-inf-files)。 这些工具包括在\\WDK 的 Tools 子目录。
+    有关详细信息，请参阅 [用于 INF 文件的工具](../devtest/tools-for-inf-files.md)。 这些工具包含在 WDK 的 \\ tools 子目录中。
 
--   示例 INF 文件和类似的设备的 INF 文件。
+-   类似设备的示例 INF 文件和 INF 文件。
 
-    WDK 包括的示例驱动程序的 INF 文件。 浏览示例驱动程序，以查看是否有设备 INF 文件类似于你的设备。
+    WDK 包含其示例驱动程序的 INF 文件。 查看示例驱动程序，查看设备是否有与设备类似的 INF 文件。
 
-您可以创建或使用在其中您可以控制的换行插入任何文本编辑器来修改 INF 文件。 如果你 INF 包含非 ASCII 字符，将文件另存 Unicode 文件。
+可以通过使用任何文本编辑器来创建或修改 INF 文件，在该编辑器中，可以控制换行符的插入。 如果 INF 中包含非 ASCII 字符，请将该文件保存为 Unicode 文件。
 
-INF 文件附带 Windows 7 和更早的操作系统必须具有的文件名称<em>xxxxxxxx</em> **.inf**，其中"*xxxxxxxx*"不超过 8 个字符。 从操作系统是单独发售的 INF 文件的名称不局限于八个字符。
+Windows 7 及更早版本的操作系统附带的 INF 文件的文件名必须为 <em>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</em>**，其中**"*xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx*" 不能超过八个字符。 与操作系统分开提供的 INF 文件的名称不能超过八个字符。
 
-从 Windows 8 开始，INF 文件的名称不受限制为八个字符，而不考虑如果或不提供与操作系统。
+从 Windows 8 开始，INF 文件名的长度不能超过8个字符，而不管它们是否随操作系统一起提供。
 
-不要随意修改你的 INF 文件的时间戳作为版本控制机制。 版本控制的 INF 文件应基于中指定的日期和版本号[ **INF 版本部分**](inf-version-section.md)。
+不要以版本控制机制任意修改 INF 文件的时间戳。 INF 文件的版本控制应基于在 [**INF 版本部分**](inf-version-section.md)中指定的日期和版本号。
 
-## <a name="best-practices-for-naming-and-versioning-your-inf-file"></a>命名的最佳实践和版本控制您的 INF 文件
+## <a name="best-practices-for-naming-and-versioning-your-inf-file"></a>对 INF 文件进行命名和版本控制的最佳做法
 
-- 可使用 Inf 冲突的可能性减少来自其他供应商的方式，应命名为 INF 名称。  例如，INF 名称可以在其中，作为前缀或后缀，包括你的公司名称的缩写词。
-- 如果您有两个不同变量的不同方面，如品牌字符串、 设置等的相同驱动程序包，两个驱动程序包，应具有唯一的名称。
-- 每次更新 INF 或任何 INF 文件的引用，应更新的日期和 INF 中的版本。
- 
-
-
-
-
-
+- INF 名称的命名方式应降低其他供应商与 Inf 发生冲突的可能性。  例如，INF 名称可以包含在其中，可以是前缀或后缀，即公司名称的缩写。
+- 如果有两个不同的驱动程序包变体不同（如品牌字符串、设置等），则这两个驱动程序包应该具有唯一的名称。
+- 每次更新 inf 或 INF 引用的任何文件时，都应更新 INF 中的日期和版本。

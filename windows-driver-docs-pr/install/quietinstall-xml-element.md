@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c26850c3949f9cc69d7cf55ab2b51b2f6bf990c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 253376a3bd755ffeb5b55ee9e2911fc9984db069
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386401"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095821"
 ---
 # <a name="quietinstall-xml-element"></a>quietInstall XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**QuietInstall** XML 元素为空元素，用于设置**quietInstall**标志为 ON，将配置 DPInst 禁止显示的向导页和大多数其他用户消息。
+**QuietInstall** XML 元素是一个空元素，该元素将**quietInstall**标志设置为 ON，这会将 DPInst 配置为禁止显示向导页和大多数其他用户消息。
 
 ### <a name="element-tag"></a>**元素标记**
 
@@ -32,7 +32,7 @@ ms.locfileid: "67386401"
 <quietInstall>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -53,7 +53,7 @@ ms.locfileid: "67386401"
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -65,11 +65,11 @@ ms.locfileid: "67386401"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下**quietInstall**标志设置为 OFF。 可以设置**quietInstall**通过包括标志为 ON **quietInstall**元素 DPInst 描述符文件中或通过使用 **/q** 命令行开关。 **QuietInstall**标志适用于的 EULA 页面是否存在并**suppressEulaPage**标志。
+默认情况下， **quietInstall** 标志设置为 OFF。 可以通过在 DPInst 描述符文件中包含**quietInstall**元素或使用 **/q**命令行开关，将**quietInstall**标志设置为 ON   。 **QuietInstall**标志用于处理 EULA 页和**suppressEulaPage**标志。
 
-下面的代码示例演示**quietInstall**元素
+下面的代码示例演示了 **quietInstall** 元素
 
 ```cpp
 <dpinst>
@@ -79,17 +79,10 @@ ms.locfileid: "67386401"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

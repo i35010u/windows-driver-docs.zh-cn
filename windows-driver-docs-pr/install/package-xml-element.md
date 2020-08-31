@@ -1,9 +1,9 @@
 ---
 title: package XML 元素
-description: 包 XML 元素指定的驱动程序包的 INF 文件。元素标记包 XML AttributespathThe INF 文件路径的驱动程序包。
+description: Package XML 元素为驱动程序包指定 INF 文件。元素标记包 XML AttributespathThe 驱动程序包的 INF 文件的路径。
 ms.assetid: c7089e58-50c7-46ec-a9bf-c8e2d2bd354a
 keywords:
-- 包的 XML 元素设备和驱动程序安装
+- 包 XML 元素设备和驱动程序安装
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 215cc82ab29f8dfce9c397a37d052fedb820c112
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ab8fb9ac426da31f19220867b8071941a2379175
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384250"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095895"
 ---
 # <a name="package-xml-element"></a>package XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**包**XML 元素指定用于的 INF 文件[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)。
+**Package** XML 元素为[驱动程序包](./driver-packages.md)指定 INF 文件。
 
 **元素标记**
 
@@ -42,14 +42,14 @@ ms.locfileid: "67384250"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>路径</strong></p></td>
-<td align="left"><p>驱动程序包 INF 文件的路径。 该路径是相对于 DPInst 工作目录。</p></td>
+<td align="left"><p>驱动程序包的 INF 文件的路径。 路径相对于 DPInst 工作目录。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**元素的信息**
+**元素信息**
 
 <table>
 <colgroup>
@@ -66,7 +66,7 @@ ms.locfileid: "67384250"
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -80,7 +80,7 @@ ms.locfileid: "67384250"
 
 **注释**
 
-下面的代码示例演示**包**元素，它指定 DirAbc\\为的 INF 文件 Abc.inf[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)。
+下面的代码示例演示了一个 **package** 元素，该元素将 DirAbc \\ Abc 指定为 [驱动程序包](./driver-packages.md)的 inf 文件。
 
 ```cpp
 <dpinst>
@@ -92,17 +92,10 @@ ms.locfileid: "67384250"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**group**](group-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

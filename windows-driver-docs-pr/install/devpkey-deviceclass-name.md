@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 73ead09e33e267238d5560f1881a24018b75b76c
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: eb85c7453c0229cc846724a3181a33cb9ea1495e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418529"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096701"
 ---
 # <a name="devpkey_deviceclass_name"></a>DEVPKEY_DeviceClass_Name
 
 
-DEVPKEY_DeviceClass_Name 设备属性表示[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)的友好名称。
+DEVPKEY_DeviceClass_Name 设备属性表示 [设备安装程序类](./overview-of-device-setup-classes.md)的友好名称。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_DeviceClass_Name 设备属性表示[设备安装程序类](https://docs.
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,37 +62,30 @@ DEVPKEY_DeviceClass_Name 设备属性表示[设备安装程序类](https://docs.
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DeviceClass_Name 的值是由安装类的[**Inf ClassInstall32 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)中包含的[**inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)设置的。 若要设置类的友好名称，请使用**AddReg**指令设置类的 **（默认）** 注册表项值。
+DEVPKEY_DeviceClass_Name 的值是由安装类的[**Inf ClassInstall32 部分**](./inf-classinstall32-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)设置的。 若要设置类的友好名称，请使用 **AddReg** 指令设置类的 ** (默认) ** 注册表项值。
 
-可以调用[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_Name 的值。
+可以调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 来检索 DEVPKEY_DeviceClass_Name 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceClass_Name 属性键。 有关如何在 Windows Server 2003、Windows XP 和 Windows 2000 上访问设备安装程序类的友好名称的信息，请参阅[访问设备安装程序类的友好名称和类名](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-the-friendly-name-and-class-name-of-a-device-setup-class)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceClass_Name 属性键。 有关如何在 Windows Server 2003、Windows XP 和 Windows 2000 上访问设备安装程序类的友好名称的信息，请参阅 [访问设备安装程序类的友好名称和类名](./accessing-the-friendly-name-and-class-name-of-a-device-setup-class.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
+[**INF AddReg 指令**](./inf-addreg-directive.md)
 
-[**INF ClassInstall32 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)
+[**INF ClassInstall32 节**](./inf-classinstall32-section.md)
 
-[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
+[**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiGetClassDescriptionEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa)
-
- 
+[**SetupDiGetClassDescriptionEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdescriptionexa)
 
  
-
-
-
-
-
 

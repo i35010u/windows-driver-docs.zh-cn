@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 09ea62dc8c85e8d88182283169f2efefe696470c
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 9e4247b29ffde242ccbed38065b608ddb4433587
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418200"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096785"
 ---
 # <a name="devpkey_device_powerdata"></a>DEVPKEY_Device_PowerData
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_PowerData 设备属性表示有关设备实例的电源信息。
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -66,31 +66,24 @@ DEVPKEY_Device_PowerData 设备属性表示有关设备实例的电源信息。
 <a name="remarks"></a>备注
 -------
 
-Windows 设置 DEVPKEY_Device_PowerData 的值。 DEVPKEY_Device_PowerData 的值包含[**CM_POWER_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-cm_power_data_s)的结构。
+Windows 设置 DEVPKEY_Device_PowerData 的值。 DEVPKEY_Device_PowerData 的值包含 [**CM_POWER_DATA**](/windows-hardware/drivers/ddi/wdm/ns-wdm-cm_power_data_s) 的结构。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_PowerData 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_PowerData 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_PowerData 属性键。 相反，你可以使用相应的 SPDRP_DEVICE_POWER_DATA 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[SPDRP_Xxx 属性访问设备实例](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_PowerData 属性键。 相反，你可以使用相应的 SPDRP_DEVICE_POWER_DATA 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**CM_POWER_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-cm_power_data_s)
+[**CM_POWER_DATA**](/windows-hardware/drivers/ddi/wdm/ns-wdm-cm_power_data_s)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

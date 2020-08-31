@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d71693a5818db7396c7de7b6fd4cd5a2ba7dbb4e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0548d15d92aaf67f25463799a5324ab68b90c9c6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383737"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095677"
 ---
-# <a name="kscategorypreferredwaveindevice"></a>KSCATEGORY_PREFERRED_WAVEIN_DEVICE
+# <a name="kscategory_preferred_wavein_device"></a>KSCATEGORY_PREFERRED_WAVEIN_DEVICE
 
 
-KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能的首选的批输入设备类别。
+为首选波形输入设备的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://docs.microsoft.com/w
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://docs.microsoft.com/w
 <a name="remarks"></a>备注
 -------
 
-用户在控制面板中的多媒体属性页中选择首选的批输入的设备。
+用户在控制面板的多媒体属性页中选择首选的 wave 输入设备。
 
-此功能的类别保留供独占使用的系统提供[WDM 音频组件](https://docs.microsoft.com/windows-hardware/drivers/audio/wdm-audio-components)。
+此功能类别保留供系统提供的 [WDM 音频组件](../audio/wdm-audio-components.md)独占使用。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,21 +68,15 @@ KSCATEGORY_PREFERRED_WAVEIN_DEVICE[设备接口类](https://docs.microsoft.com/w
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Server 2003、 Windows XP、 Windows 2000 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows Server 2003、Windows XP、Windows 2000 及更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

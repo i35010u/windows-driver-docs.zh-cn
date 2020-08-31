@@ -6,12 +6,12 @@ keywords:
 - 复制保护 WDK 视频微型端口，设置
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e643811e5a227b40cbfa34435db34faa8603e3d6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3b9e967138ffd8dcd4254ab2251544ae102116ae
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829504"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066642"
 ---
 # <a name="setting-copy-protection-hardware"></a>设置复制保护硬件
 
@@ -19,21 +19,15 @@ ms.locfileid: "72829504"
 ## <span id="ddk_setting_copy_protection_hardware_gg"></span><span id="DDK_SETTING_COPY_PROTECTION_HARDWARE_GG"></span>
 
 
-返回 VP\_标志的微型端口驱动程序\_在 VP\_命令的[**VIDEOPARAMETERS**](https://docs.microsoft.com/windows/desktop/api/tvout/ns-tvout-_videoparameters)的**DWFLAGS**成员中受保护\_GET 应执行以下操作，以响应 VP\_命令\_SET 命令，具体取决于 VIDEOPARAMETERS 结构的**dwCPCommand**成员：
+在 \_ \_ vp 命令获取中，在 [**VIDEOPARAMETERS**](/windows/desktop/api/tvout/ns-tvout-_videoparameters)的 **dwFlags** 成员中保护的、返回的带 vp 标志的微型端口驱动程序 \_ \_ 应执行以下操作，以响应 VP \_ 命令 \_ 集命令，具体取决于 VIDEOPARAMETERS 结构的 **dwCPCommand** 成员：
 
--   如果**dwCPCommand 是**的 VP\_CP\_CMD\_ACTIVATE，微型端口驱动程序应打开复制保护，并生成并返回**dwCPKey**中的唯一复制保护密钥。
+-   如果 **dwCPCommand** 是将 \_ CP \_ CMD \_ ACTIVATE 激活，微型端口驱动程序应打开复制保护，并在 **dwCPKey**中生成并返回唯一的复制保护密钥。
 
--   如果**dwCPCommand 是**的 VP\_CP\_CMD\_停用，并且**dwCPKey**中的复制保护密钥有效，则微型端口驱动程序应关闭复制保护。
+-   如果 **dwCPCommand** 是 \_ \_ \_ 在 **dwCPKey** 中启用的 "CP" CMD "停用" 和 "复制保护密钥"，则微型端口驱动程序应关闭复制保护。
 
--   如果**dwCPCommand 是**的副总裁\_CP\_CMD\_更改并且**dwCPKey**中的复制保护密钥有效，则微型端口驱动程序应基于**bCP\_APSTriggerBits 中的触发器数据根据中的数据更改复制保护。** .
+-   如果 **dwCPCommand** 是 ""，则 " \_ CP \_ CMD \_ 更改" 和 " **dwCPKey** 中的复制保护密钥" 有效，微型端口驱动程序应基于 **bCP \_ APSTriggerBits**中的触发器数据根据中的数据更改复制保护。
 
-不具有复制保护硬件的设备的微型端口驱动程序只应在[**VRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)的**StatusBlock**的 "**状态**" 字段中返回 "无\_错误"。
-
- 
+不具有复制保护硬件的设备的微型端口驱动程序只应 \_ 在[**VRP**](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)的**StatusBlock**的 "**状态**" 字段中返回 "无错误"。
 
  
-
-
-
-
 

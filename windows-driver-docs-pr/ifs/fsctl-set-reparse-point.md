@@ -1,6 +1,6 @@
 ---
 title: FSCTL_SET_REPARSE_POINT 控制代码
-description: FSCTL\_将\_重新分析\_点控制代码设置文件或目录的重新分析点。
+description: FSCTL \_ SET 重新 \_ 分析 \_ 点控制代码设置文件或目录的重新分析点。
 ms.assetid: db38cc62-845e-4690-a430-a9c834382b56
 keywords:
 - FSCTL_SET_REPARSE_POINT 控制代码可安装的文件系统驱动程序
@@ -14,40 +14,40 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f775fab2d807a393dfcd0d8663b124eec45c45
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 24c4bfeb524702868e2a1727b73ab8fe09861a17
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841245"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066966"
 ---
-# <a name="fsctl_set_reparse_point-control-code"></a>FSCTL\_设置\_重新分析\_点控制代码
+# <a name="fsctl_set_reparse_point-control-code"></a>FSCTL \_ 设置重新 \_ 分析 \_ 点控制代码
 
 
-FSCTL\_将\_重新分析\_点控制代码设置文件或目录的重新分析点。
+FSCTL \_ SET 重新 \_ 分析 \_ 点控制代码设置文件或目录的重新分析点。
 
-若要执行此操作，请调用具有以下参数的[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。
+若要执行此操作，请调用具有以下参数的 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-Minifilters 应使用[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)而不是 FSCTL\_设置\_重新分析\_点来设置重新分析点。
+Minifilters 应使用 [**FltTagFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile) 而不是 FSCTL 集的重新 \_ \_ 分析 \_ 点来设置重新分析点。
 
-有关重新分析点和 FSCTL\_设置\_重新分析\_点控制代码的详细信息，请参阅 Microsoft Windows SDK 文档。
+有关重新分析点和 FSCTL \_ 设置重新 \_ 分析点控制代码的详细信息 \_ ，请参阅 Microsoft Windows SDK 文档。
 
-**Parameters**
+**参数**
 
 <a href="" id="filehandle"></a>*FileHandle*  
-要设置重新分析点的文件或目录的文件句柄。 此参数是必需的，不能为**NULL**。
+要设置重新分析点的文件或目录的文件句柄。 此参数是必需的，不能为 **NULL**。
 
 <a href="" id="fscontrolcode"></a>*FsControlCode*  
-操作的控制代码。 使用 FSCTL\_设置此操作\_重新分析\_点。
+操作的控制代码。 使用 FSCTL \_ 设置 \_ \_ 此操作的重新分析点。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-一个指针，指向分配给调用方的重新[**分析\_GUID\_数据\_缓冲区**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)或重新[**分析\_数据\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)包含重新分析点数据的缓冲区结构。 如果正在修改现有的重新分析点，则此结构的**ReparseTag**成员中指定的标记必须与要修改的重新分析点的标记相匹配。 此外，如果重新分析点为第三方（非 Microsoft）重新分析点，则结构的**ReparseGuid**成员中指定的 guid 是\_GUID\_数据的重新分析，\_缓冲区结构必须与重新分析点的 guid 匹配。要修改的。
+一个指针，指向分配给调用方的重新分析 [** \_ GUID \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer) 或重新 [**分析 \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer) 结构，其中包含重新分析点数据。 如果正在修改现有的重新分析点，则此结构的 **ReparseTag** 成员中指定的标记必须与要修改的重新分析点的标记相匹配。 此外，如果重新分析点为第三方 (非 Microsoft) 重新分析点，则结构的 **ReparseGuid** 成员中指定的 guid 是重新分析 \_ GUID \_ 数据 \_ 缓冲区结构，必须与要修改的重新分析点的 guid 匹配。
 
 <a href="" id="inputbufferlength"></a>*InputBufferLength*  
-*InputBuffer*参数指向的缓冲区的大小（以字节为单位）。 对于重新分析\_GUID\_数据\_缓冲结构，此值必须至少是\_GUID\_数据\_缓存\_数据\_缓冲区大小，加上用户定义数据的大小，它必须小于或等于最大\_重新分析\_数据\_缓冲区\_大小。 若要重新分析\_数据\_缓冲区结构，此值必须至少是\_数据的重新分析数据\_缓冲区\_大小，加上用户定义数据的大小，并且必须小于或等于最大值\_\_缓冲区\_大小的重新分析\_数据。
+*InputBuffer*参数指向的缓冲区的大小（以字节为单位）。 对于重新分析 \_ guid \_ 数据 \_ 缓冲区结构，此值必须至少为重新分析 \_ guid \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小，加上用户定义数据的大小，并且必须小于或等于最大重新 \_ 分析 \_ 数据 \_ 缓冲区 \_ 大小。 对于重新分析 \_ 数据 \_ 缓冲区结构，此值必须至少为重新分析 \_ 数据 \_ 缓冲区 \_ 标头 \_ 大小，加上用户定义数据的大小，并且必须小于或等于最大重新 \_ 分析 \_ 数据 \_ 缓冲区 \_ 大小。
 
 <a href="" id="outputbuffer"></a>*OutputBuffer*  
-不与此操作一起使用;设置为**NULL**。
+不与此操作一起使用;设置为 **NULL**。
 
 <a href="" id="outputbufferlength"></a>*OutputBufferLength*  
 不与此操作一起使用;设置为零。
@@ -55,7 +55,7 @@ Minifilters 应使用[**FltTagFile**](https://docs.microsoft.com/windows-hardwar
 <a name="status-block"></a>状态块
 ------------
 
-[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回成功\_状态，或使用适当的 NTSTATUS 值（如下所示）：
+[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 返回状态 \_ "成功" 或相应的 NTSTATUS 值，如下所示：
 
 <table>
 <colgroup>
@@ -65,7 +65,7 @@ Minifilters 应使用[**FltTagFile**](https://docs.microsoft.com/windows-hardwar
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -109,42 +109,35 @@ Minifilters 应使用[**FltTagFile**](https://docs.microsoft.com/windows-hardwar
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Ntifs （包括 Ntifs 或 Fltkernel）</td>
+<td align="left">Ntifs (包含 Ntifs 或 Fltkernel) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**用于 IRP\_MJ\_文件\_系统\_控制的 FLT\_参数**](flt-parameters-for-irp-mj-file-system-control.md)
+[**\_IRP \_ MJ \_ 文件 \_ 系统 \_ 控件的 FLT 参数**](flt-parameters-for-irp-mj-file-system-control.md)
 
-[**FltTagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)
+[**FltTagFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-flttagfile)
 
-[**FltUntagFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltuntagfile)
+[**FltUntagFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltuntagfile)
 
-[**FSCTL\_删除\_重新分析\_点**](fsctl-delete-reparse-point.md)
+[**FSCTL \_ 删除重新 \_ 分析 \_ 点**](fsctl-delete-reparse-point.md)
 
-[**FSCTL\_获取\_重新分析\_点**](fsctl-get-reparse-point.md)
+[**FSCTL \_ 获取重新 \_ 分析 \_ 点**](fsctl-get-reparse-point.md)
 
-[**IRP\_MJ\_文件\_系统\_控件**](irp-mj-file-system-control.md)
+[**IRP \_ MJ \_ 文件 \_ 系统 \_ 控制**](irp-mj-file-system-control.md)
 
-[**IsReparseTagMicrosoft**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagmicrosoft)
+[**IsReparseTagMicrosoft**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagmicrosoft)
 
-[**IsReparseTagNameSurrogate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagnamesurrogate)
+[**IsReparseTagNameSurrogate**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-isreparsetagnamesurrogate)
 
-[ **\_缓冲区\_重新分析数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)
+[**重新分析 \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_data_buffer)
 
-[ **\_数据\_缓冲区中的重新分析\_GUID**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)
+[**重新分析 \_ GUID \_ 数据 \_ 缓冲区**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_reparse_guid_data_buffer)
 
-[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
-
- 
+[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))
 
  
-
-
-
-
-
 

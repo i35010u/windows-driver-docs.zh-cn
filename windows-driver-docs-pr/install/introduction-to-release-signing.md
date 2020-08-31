@@ -4,59 +4,53 @@ description: 发布签名简介
 ms.assetid: 87583d0a-f7c9-49f0-953a-f51891260d75
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aa5257be05265c900a5047f786ecd9c173817d4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a0731df1cca478003e7ad0447b2d973e6c4dd170
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364298"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096337"
 ---
 # <a name="introduction-to-release-signing"></a>发布签名简介
 
 
-[驱动程序包](driver-packages.md)应为已发布签名原因如下：
+由于以下原因，[驱动程序包](driver-packages.md)应为 release 签名：
 
--   若要确保真实性、 完整性和可靠性的驱动程序包。
+-   确保驱动程序包的可靠性、完整性和可靠性。
 
-    Windows 使用数字签名来验证发布服务器的身份并验证该驱动程序发布以来未被修改。
+    Windows 使用数字签名来验证发行者的身份，并验证自发布后该驱动程序是否已更改。
 
--   若要通过促进自动驱动程序安装可提供最佳用户体验。
+-   通过促进自动驱动程序安装来提供最佳用户体验。
 
-    如果未签名驱动程序，[插即用 (PnP) 驱动程序安装策略](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md)要求，系统管理员将手动授权的未签名的驱动程序，安装与安装过程中添加一个额外的步骤。 这个额外的步骤可能可能令人困惑且为一般用户讨厌。
+    如果驱动程序未签名，则 [即插即用 (PnP) 驱动程序安装策略](digital-signatures-and-pnp-device-installation--windows-vista-and-late.md) 要求系统管理员手动授权安装未签名的驱动程序，并在安装过程中添加额外的步骤。 这一额外步骤可能会令用户感到困惑，并难点用户。
 
--   若要在 64 位版本的 Windows Vista 和更高版本的 Windows 上运行内核模式驱动程序。
+-   在 Windows Vista 和更高版本的 Windows 的64位版本上运行内核模式驱动程序。
 
-    [内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)适用于 64 位版本的 Windows Vista 及更高版本要求内核模式驱动程序进行签名，以便操作系统加载该驱动程序。
+    64位版本的 Windows Vista 和更高版本的 [内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 要求对内核模式驱动程序进行签名，以便操作系统加载驱动程序。
 
--   若要播放某些返回类型的下一代高级内容，必须对 Windows Vista 和更高版本的 Windows 中的所有内核模式组件进行都签名。 此外，所有用户模式和内核模式组件中受保护的媒体路径 (PMP) 必须都符合 PMP 签名策略。 有关信息 PMP 签名策略，请参阅白皮书[受保护的媒体中的组件 Windows Vista 代码签名](https://go.microsoft.com/fwlink/p/?linkid=69258)。
+-   若要播放特定类型的下一代高级内容，Windows Vista 和更高版本的 Windows 中的所有内核模式组件都必须进行签名。 此外，受保护媒体路径 (PMP) 中的所有用户模式和内核模式组件必须符合 PMP 签名策略。 有关 PMP 签名策略的信息，请参阅 [Windows Vista 中的针对受保护媒体组件的白皮书代码签名](https://go.microsoft.com/fwlink/p/?linkid=69258)。
 
-[硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)已[测试类别](https://go.microsoft.com/fwlink/p/?linkid=189178)多种设备类型。 如果此列表中包含的设备类型的测试类别，应获取驱动程序发行者[WHQL 版本签名](whql-release-signature.md)驱动程序包。
+[硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016)包含各种设备类型的[测试类别](https://go.microsoft.com/fwlink/p/?linkid=189178)。 如果此列表中包含设备类型的测试类别，则驱动程序发行者应获取驱动程序包的 [WHQL 版本签名](whql-release-signature.md) 。
 
-**请注意**  Windows Server 2003 上、 Windows XP 和 Windows 2000 中，从 WHQL 签名的 INF 文件[驱动程序包](driver-packages.md)必须使用[设备安装程序类](device-setup-classes.md)中定义 *%SystemRoot%/inf/Certclas.inf*。 否则，Windows 将视为未签名的驱动程序包。
-
- 
-
-如果驱动程序包是由 WHQL 进行数字签名，才能通过 Windows 更新程序或其他 Microsoft 支持分发机制进行分发。 WHQL 签名 64 位处理器的驱动程序包目录文件，驱动程序发布服务器必须也[嵌入签名](embedded-signatures-in-a-driver-file.md)内核模式驱动程序文件，然后再提交到 WHQL 驱动程序包中。
-
-如果[硬件认证工具包 (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)不具有[测试类别](https://go.microsoft.com/fwlink/p/?linkid=189178)对于你的设备类型，必须使用以下类型的数字签名[发行登录](release-signing-driver-packages.md)在 Windows Vista 和更高版本的 Windows 上的驱动程序包：
-
--   若要符合内核模式代码签名策略，只需签署驱动程序包[编录文件](catalog-files.md)。 引导启动驱动程序，你必须在内核模式驱动程序文件中嵌入的 SPC 签名并 （可选） 还签署驱动程序包的目录文件。
-
--   若要符合[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)的 32 位版本的 Windows Vista 和更高版本的 Windows，可以使用任一一个 SPC 或[商业版本发布证书](commercial-release-certificate.md)进行签名内核模式驱动程序包的目录文件。 这些后一种两个签名类型验证的真实性和完整性的驱动程序，但与 WHQL 版本签名，不会验证该驱动程序的可靠性。
-
-一个 SPC 和商业版本发布证书统称为[发布证书](release-certificates.md)和生成和发布证书的签名被称为*版本签名*。
-
-有关版本签名要求和过程的详细信息，请参阅[版本签名驱动程序包](release-signing-driver-packages.md)。
-
-**请注意**  若要了解版本签名驱动程序包中涉及的步骤，请参阅[如何发布签名驱动程序包](how-to-release-sign-a-driver-package.md)。 本主题提供了摘要版本签名过程中，并指导逐步许多版本签名的示例通过使用*ToastPkg*示例驱动程序包中 Windows Driver Kit (WDK)。
+**注意**   在 Windows Server 2003、Windows XP 和 Windows 2000 上，WHQL 签名的[驱动程序包](driver-packages.md)中的 INF 文件必须使用 *% SystemRoot%/inf/Certclas.inf*中定义的[设备安装程序类](./overview-of-device-setup-classes.md)。 否则，Windows 会将驱动程序包视为无符号。
 
  
+
+如果通过 WHQL 对驱动程序包进行了数字签名，则可以通过 Windows 更新程序或其他 Microsoft 支持的分发机制来分发该程序包。 WHQL 签署了64位处理器的驱动程序包目录文件，驱动程序发布者还必须在将驱动程序包提交给 WHQL 之前，在内核模式驱动程序文件中 [嵌入签名](embedded-signatures-in-a-driver-file.md) 。
+
+如果 [硬件认证工具包 (HCK) ](https://go.microsoft.com/fwlink/p/?linkid=227016) 没有适用于你的设备类型的 [测试类别](https://go.microsoft.com/fwlink/p/?linkid=189178) ，则必须使用以下类型的数字签名在 windows Vista 和更高版本的 windows 上对驱动程序包进行 [发布签名](release-signing-driver-packages.md) ：
+
+-   为了符合内核模式代码签名策略，你只需对驱动程序包的 [目录文件](catalog-files.md)进行签名。 对于启动启动驱动程序，必须在内核模式驱动程序文件中嵌入 SPC 签名，还可以选择对驱动程序包的目录文件进行签名。
+
+-   若要符合 Windows Vista 和更高版本的 windows Vista 和更高版本的 [PnP 设备安装签名32要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md) ，你可以使用 SPC 或 [商业发行版证书](commercial-release-certificate.md) 对内核模式驱动程序包的目录文件进行签名。 后两种签名类型验证驱动程序的真实性和完整性，但不同于 WHQL 版本签名，请不要验证驱动程序的可靠性。
+
+SPC 和商业发布证书统称为 [发布证书](release-certificates.md) ，使用发布证书生成的签名称为 *发布签名*。
+
+有关发布签名要求和过程的详细信息，请参阅 [发布签名驱动程序包](release-signing-driver-packages.md)。
+
+**注意**   若要了解 release 签名驱动程序包中所涉及的步骤，请参阅[如何对驱动程序包进行发布签名](how-to-release-sign-a-driver-package.md)。 本主题提供了版本签名过程的摘要，并通过使用 Windows 驱动程序工具包 (WDK) 中的 *toastpkg.inf* 示例驱动程序包，逐步完成了发布签名的许多示例。
 
  
 
  
-
-
-
-
 

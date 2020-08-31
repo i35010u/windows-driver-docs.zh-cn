@@ -1,6 +1,6 @@
 ---
 title: FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS 控制代码
-description: FSCTL\_将\_REFS\_SMR\_卷\_GC\_参数控制代码控制 Shingled 磁性记录（SMR）卷上的垃圾回收。
+description: FSCTL \_ SET \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS 控制代码控制对 Shingled 磁性记录 (SMR) 卷的垃圾回收。
 ms.assetid: 782542C4-CFC5-4BF7-AF38-3247A3AC6AB9
 keywords:
 - FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS 控制代码可安装的文件系统驱动程序
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7931a45815cf4ce94eae34e7ceb52252e793675d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f899502239efd5c92a1c0f267e63cef413be8fde
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841249"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066964"
 ---
-# <a name="fsctl_set_refs_smr_volume_gc_parameters-control-code"></a>FSCTL\_设置\_REFS\_SMR\_卷\_GC\_参数控制代码
+# <a name="fsctl_set_refs_smr_volume_gc_parameters-control-code"></a>FSCTL \_ 设置 \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS 控制代码
 
 
-**FSCTL\_将\_REFS\_SMR\_卷\_GC\_参数**控制代码控制 Shingled 磁性记录（SMR）卷上的垃圾回收。
+**FSCTL \_ SET \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS**控制代码控制对 Shingled 磁性记录 (SMR) 卷的垃圾回收。
 
 ```ManagedCPlusPlus
 BOOL
@@ -38,45 +38,45 @@ BOOL
                     (LPOVERLAPPED) lpOverlapped );  // OVERLAPPED structure
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-\] 中的*hDevice* \[  
-设备的句柄。 若要获取设备句柄，请调用[**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数。
+*hDevice* \[中\]  
+设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数。
 
-\] 中的*dwIoControlCode* \[  
-操作的控制代码。 使用**FSCTL\_设置\_REFS\_SMR\_卷\_GC\_** 用于此操作的参数。
+*dwIoControlCode* \[中\]  
+操作的控制代码。 对于此操作，请使用 **FSCTL \_ SET \_ REFS \_ SMR \_ VOLUME \_ GC \_ PARAMETERS** 。
 
 *lpInBuffer*   
-指向分配给调用方的引用的指针， [ **\_SMR\_VOLUME\_GC\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_refs_smr_volume_gc_parameters)结构。
+一个指针，指向分配给调用方的 [**REFS 的 \_ \_ 卷 \_ GC \_ 参数**](/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_refs_smr_volume_gc_parameters) 结构。
 
-\] 中的*nInBufferSize* \[  
+*nInBufferSize* \[中\]  
 输入缓冲区的大小（以字节为单位）。
 
-*lpOutBuffer* \[out\]  
-不与此操作一起使用;设置为**NULL**。
+*lpOutBuffer* \[弄\]  
+不与此操作一起使用;设置为 **NULL**。
 
-\] 中的*nOutBufferSize* \[  
+*nOutBufferSize* \[中\]  
 不与此操作一起使用;设置为零。
 
-*lpBytesReturned* \[out\]  
-不与此操作一起使用;设置为**NULL**。
+*lpBytesReturned* \[弄\]  
+不与此操作一起使用;设置为 **NULL**。
 
-\] 中的*lpOverlapped* \[  
-指向[**重叠**](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)的结构的指针。
+*lpOverlapped* \[中\]  
+指向 [**重叠**](/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped) 的结构的指针。
 
-如果在未指定**文件\_标志**的情况下打开*hDevice*\_重叠，则将忽略*lpOverlapped* 。
+如果在未指定**文件 \_ 标志 \_ 重叠**的情况下打开*hDevice* ，则将忽略*lpOverlapped* 。
 
-如果*hDevice*是使用**文件\_标志打开的\_重叠**标志，则以重叠（异步）操作的方式执行该操作。 在这种情况下， *lpOverlapped*必须指向包含事件对象句柄的有效[**重叠**](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)结构。 否则，函数将会失败。
+如果使用**FILE \_ 标记 \_ 交叠**标志打开*hDevice* ，则操作将作为 (异步) 操作的重叠进行。 在这种情况下， *lpOverlapped* 必须指向包含事件对象句柄的有效 [**重叠**](/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped) 结构。 否则，函数将会失败。
 
-对于重叠操作， [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)将立即返回，并且在操作完成后会发出事件对象。 否则，在操作完成或发生错误之前，函数不会返回。
+对于重叠操作， [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 将立即返回，并且在操作完成后会发出事件对象。 否则，在操作完成或发生错误之前，函数不会返回。
 
 <a name="return-value"></a>返回值
 ------------
 
-如果操作成功完成，则[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)将返回一个非零值。
+如果操作成功完成，则 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 将返回一个非零值。
 
-如果操作失败或挂起，则[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)将返回零。 若要获取扩展的错误信息，请调用[**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)。
+如果操作失败或挂起，则 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 将返回零。 若要获取扩展的错误信息，请调用 [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)。
 
 <a name="requirements"></a>要求
 ------------
@@ -101,14 +101,7 @@ BOOL
 ## <a name="see-also"></a>另请参阅
 
 
-[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
+[**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
 
  
-
- 
-
-
-
-
-
 

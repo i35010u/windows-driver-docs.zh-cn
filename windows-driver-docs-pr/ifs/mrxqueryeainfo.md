@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75056b9a71e5fa8aba216b0df9297bf05154ba39
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7cad7123b0f5591f19d68945343b749f0bf1a856
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841089"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066884"
 ---
 # <a name="mrxqueryeainfo-routine"></a>MRxQueryEaInfo 例程
 
 
-*MRxQueryEaInfo*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
+*MRxQueryEaInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向器查询文件系统对象上的扩展属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryEaInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQueryEaInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxQueryEaInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -69,12 +69,12 @@ NTSTATUS MRxQueryEaInfo(
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
 <td align="left"><p>用于接收扩展属性信息的缓冲区太小。</p>
-<p>应将此返回值视为成功，并且应尽可能多的有效数据返回到由<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中。</p></td>
+<p>应将此返回值视为成功，并尽可能多地在<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中返回尽可能多的数据。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
 <td align="left"><p>缓冲区太小，无法接收请求的数据。</p>
-<p>如果返回此值，则<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员应设置为预期缓冲区的最小大小，以便调用成功。</p></td>
+<p>如果返回此值，则应将<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员设置为预期缓冲区的最小大小，以便调用成功。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_CONNECTION_DISCONNECTED</strong></td>
@@ -116,27 +116,27 @@ NTSTATUS MRxQueryEaInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxQueryEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-mj-query-ea.md)请求。
+RDBSS 发出对 *MRxQueryEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ EA**](irp-mj-query-ea.md) 请求。
 
-在调用*MRxQueryEaInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxQueryEaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
 **信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;QueryEa**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryEa**。
 
-**UserEaList**成员设置为**IrpSp&gt;QueryEa. EaList**。
+**QueryEa. UserEaList**成员设置为**IrpSp-QueryEa. &gt; EaList**。
 
-**UserEaListLength**成员设置为**IrpSp&gt;QueryEa. EaListLength**。
+**QueryEa. UserEaListLength**成员设置为**IrpSp-QueryEa. &gt; EaListLength**。
 
-**UserEaIndex**成员设置为**IrpSp&gt;QueryEa. EaIndex**。
+**QueryEa. UserEaIndex**成员设置为**IrpSp-QueryEa. &gt; EaIndex**。
 
-如果**IrpSp&gt;标志**具有 SL\_RESTART\_扫描位，则将**QueryEa**成员设置为非零值。
+如果**QueryEa.RestartScan** IrpSp 在上具有 SL ** &gt; ** \_ RESTART \_ 扫描位，则 RestartScan 成员将设置为非零值。
 
-如果**IrpSp&gt;标志**具有 SL\_返回上\_单一\_项位，则将**QueryEa**成员设置为非零值。
+如果**QueryEa.ReturnSingleEntry** **IrpSp &gt; ** \_ \_ \_ 在上返回单比 bit，则 ReturnSingleEntry 成员将设置为非零值。
 
-如果**IrpSp&gt;标志**的\_索引\_指定的位，则将**QueryEa**成员设置为非零值。
+如果** &gt; IrpSp**在上指定了 SL 索引，则**QueryEa IndexSpecified**成员将设置为非零值 \_ \_ 。
 
-成功后， *MRxQueryEaInfo*应将 RX\_上下文结构的**LengthRemaininging**成员设置为返回的扩展属性信息的长度，同时更新**Fobx&gt;OffsetOfNextEaToReturn**职员. 如果对*MRxQueryEaInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 **&gt;IrpSp** ，并将 RX\_**上下文的 QueryEa 成员减**。
+成功后， *MRxQueryEaInfo* 应将 RX 上下文结构的 **LengthRemaininging** 成员设置 \_ 为返回的扩展属性信息的长度，同时更新 **Fobx &gt; ** 成员。 如果对*MRxQueryEaInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 IrpSp，而不是 RX 上下文的**QueryEa**成员。 ** &gt; ** \_
 
 <a name="requirements"></a>要求
 ------------
@@ -149,11 +149,11 @@ RDBSS 发出对*MRxQueryEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](ir
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -161,7 +161,7 @@ RDBSS 发出对*MRxQueryEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](ir
 ## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -186,11 +186,4 @@ RDBSS 发出对*MRxQueryEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](ir
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

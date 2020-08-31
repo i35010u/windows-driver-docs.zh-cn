@@ -12,17 +12,17 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb6ae4da095e1a830f4e0318d9d738de9bd026d
-ms.sourcegitcommit: 5b0d2b7a3a4efa3bc4f94a769bf41d58d3321d50
+ms.openlocfilehash: a469ad7754b6454a8591aa5652a5de2c9bd42db6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390720"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096243"
 ---
 # <a name="inf-signatureattributes-section"></a>INF SignatureAttributes 节
 
 
-此部分允许用户根据某些认证方案的要求请求其他签名。 例如，以下方案需要此部分：受保护的环境媒体播放、[初期启动反恶意软件](https://docs.microsoft.com/windows-hardware/drivers/install/elam-driver-submission)和第三方 HAL 扩展。 仅当硬件认证工具包包包含正确的功能并通过测试时才会应用这些附加签名。
+此部分允许用户根据某些认证方案的要求请求其他签名。 例如，以下方案需要此部分：受保护的环境媒体播放、 [初期启动反恶意软件](./elam-driver-submission.md)和第三方 HAL 扩展。 仅当硬件认证工具包包包含正确的功能并通过测试时才会应用这些附加签名。
 
 ```inf
 [SignatureAttributes]
@@ -32,10 +32,10 @@ FileOne = SignatureAttributes.SigType
 Attribute = Value
 ```
 
-## <a name="entries"></a>条目
+## <a name="entries"></a>项
 
 
-<a href="" id="sigtype-signature-type"></a>**SigType =** <em>签名类型</em>  
+<a href="" id="sigtype-signature-type"></a>**SigType =**<em>签名类型</em>  
 定义需要将哪些签名或目录属性应用于文件。 应为以下各项之一：
 
 -   Elam
@@ -44,7 +44,7 @@ Attribute = Value
 -   DRM
 -   WindowsHello
 
-<a href="" id="attribute-attribute-name"></a>**Attribute =** <em>属性名称</em>  
+<a href="" id="attribute-attribute-name"></a>**Attribute =**<em>属性名称</em>  
 每个签名类型都有相应的属性和值，如下所示。 将以下定义用于 SignatureAttributes 子节：
 
 -   **SignatureAttributes. Elam**： Elam = true
@@ -56,7 +56,7 @@ Attribute = Value
 <a name="remarks"></a>备注
 -------
 
-仅当硬件认证工具包包包含正确的功能并通过测试时才会应用这些附加签名。 这些是硬件认证的正常行为以及 Elam、HalExt、PETrust 和 DRM 的相应认证要求的补充。 有关详细信息，请参阅[Windows 硬件实验室工具包](https://docs.microsoft.com/windows-hardware/test/hlk/)。
+仅当硬件认证工具包包包含正确的功能并通过测试时才会应用这些附加签名。 这些是硬件认证的正常行为以及 Elam、HalExt、PETrust 和 DRM 的相应认证要求的补充。 有关详细信息，请参阅 [Windows 硬件实验室工具包](/windows-hardware/test/hlk/)。
 
 当请求其他签名时，应使用这些 INF 部分，而不考虑目标操作系统。
 
@@ -121,14 +121,7 @@ WindowsHello=true
 ## <a name="see-also"></a>另请参阅
 
 
-[仪表板帮助](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)
+[仪表板帮助](../dashboard/index.yml)
 
  
-
- 
-
-
-
-
-
 

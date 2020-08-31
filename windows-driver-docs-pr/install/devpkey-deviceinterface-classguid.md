@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: b2eb5d11203fb0b6f43c95a4295311ea45606dcc
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 79c71c7f2e7013a387c7b60e5d7432e538ae9235
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418216"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096657"
 ---
 # <a name="devpkey_deviceinterface_classguid"></a>DEVPKEY_DeviceInterface_ClassGuid
 
@@ -33,8 +33,8 @@ DEVPKEY_DeviceInterface_ClassGuid 设备属性表示标识设备接口类的 GUI
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -64,33 +64,26 @@ DEVPKEY_DeviceInterface_ClassGuid 设备属性表示标识设备接口类的 GUI
 
 {*设备接口类*} 密钥值的格式为 "{*nnnnnnnn* - *nnnn* - *nnnn* - *nnnn* - *nnnnnnnnnnnn*}"，其中每个*n*是一个十六进制数字。
 
-可以调用[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_DeviceInterface_ClassGuid 的值。
+可以调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 来检索 DEVPKEY_DeviceInterface_ClassGuid 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceInterface_ClassGuid 属性键。 有关如何在这些早期版本的 Windows 上检索设备接口的类 GUID 的信息，请参阅有关如何使用在[访问设备接口属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-interface-properties)中提供的[**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)的信息。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceInterface_ClassGuid 属性键。 有关如何在这些早期版本的 Windows 上检索设备接口的类 GUID 的信息，请参阅有关如何使用在[访问设备接口属性](./accessing-device-interface-properties.md)中提供的[**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)的信息。
 
-有关如何安装和访问设备接口的信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)和[**INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)。
+有关如何安装和访问设备接口的信息，请参阅 [设备接口类](./overview-of-device-interface-classes.md) 和 [**INF AddInterface 指令**](./inf-addinterface-directive.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
+[**INF AddInterface 指令**](./inf-addinterface-directive.md)
 
-[**SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)
+[**SetupDiEnumDeviceInterfaces**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
-
- 
+[**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
-
-
-
-
-
 

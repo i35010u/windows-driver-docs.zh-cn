@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 01e2080f56d99b5914242e8fd342d9e94dc8982d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9f288f533d662c5a114c0a62177513214aa8f249
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387325"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095711"
 ---
-# <a name="guidbthportdeviceinterface"></a>GUID_BTHPORT_DEVICE_INTERFACE
+# <a name="guid_bthport_device_interface"></a>GUID_BTHPORT_DEVICE_INTERFACE
 
 
-GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[Bluetooth 无线电收发器](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))。
+为[蓝牙无线电收发](/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))器定义了 GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,7 +54,7 @@ GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/window
 <a name="remarks"></a>备注
 -------
 
-驱动程序[Bluetooth 无线电收发器](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))注册通知的操作系统和应用程序的蓝牙无线收发器是否存在此设备接口类的实例。
+[蓝牙无线电](/previous-versions/windows/hardware/drivers/ff536596(v=vs.85))设备的驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在蓝牙无线电收发器。
 
 <a name="requirements"></a>要求
 ------------
@@ -66,21 +66,15 @@ GUID_BTHPORT_DEVICE_INTERFACE[设备接口类](https://docs.microsoft.com/window
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>在 Windows Vista、 Windows XP SP2 和更高版本的 Windows 中可用。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 windows Vista、Windows XP SP2 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Bthdef.h （包括 Bthdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Bthdef (包含 Bthdef) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

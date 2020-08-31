@@ -1,55 +1,49 @@
 ---
-title: 处理压缩在 SysMem 中创建的纹理图面
+title: 处理在 SysMem 中创建的压缩纹理图面
 description: 处理在系统内存中创建的压缩纹理图面
 ms.assetid: 773962ce-f459-4dc5-8311-c43ae33cfb7c
 keywords:
-- 绘制压缩纹理 WDK DirectDraw，系统内存的注意事项
-- DirectDraw 显示压缩的纹理 WDK Windows 2000，系统内存的注意事项
-- 压缩的纹理图面 WDK DirectDraw，系统内存的注意事项
-- WDK DirectDraw，压缩的纹理的图面
-- 纹理 WDK DirectDraw 压缩
-- 绘制压缩纹理 WDK DirectDraw，宽度
-- DirectDraw 显示压缩的纹理 WDK Windows 2000 宽度
-- 压缩的纹理图面 WDK DirectDraw，宽度
+- 绘制压缩纹理 WDK DirectDraw，系统内存注意事项
+- DirectDraw 压缩纹理 WDK Windows 2000 显示，系统内存注意事项
+- 压缩的纹理面 WDK DirectDraw，系统内存注意事项
+- 表面 WDK DirectDraw，压缩纹理
+- 纹理 WDK DirectDraw，压缩
+- 绘制压缩纹理 WDK DirectDraw，width
+- DirectDraw 压缩纹理 WDK Windows 2000 显示，宽度
+- 压缩的纹理面 WDK DirectDraw，width
 - 绘制压缩纹理 WDK DirectDraw，高度
-- DirectDraw 显示压缩的纹理 WDK Windows 2000 高度
-- 压缩的纹理图面 WDK DirectDraw，高度
+- DirectDraw 压缩纹理 WDK Windows 2000 显示，高度
+- 压缩的纹理面 WDK DirectDraw，高度
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: 0ffab42f64f4247c745d736b0553d3fca18da742
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f2cd394dc0cc36c0a80186cef985f9c044ec1d30
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382322"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064126"
 ---
 # <a name="handling-compressed-texture-surfaces-created-in-system-memory"></a>处理在系统内存中创建的压缩纹理图面
 
 **本主题仅适用于基于 Windows NT 的操作系统。**
 
-若要强制分配合适的内存数量的内核模式下运行时的用户模式下运行时更改的宽度和高度压缩纹理图面在系统内存中创建。 显示驱动程序必须撤消此更改，以防止此故障的图面执行的后续操作。 每当 DirectDraw 运行时调用的驱动程序[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)函数创建压缩纹理图面，该驱动程序必须还原的宽度和高度的面其未更改的状态。
+用户模式运行时将更改在系统内存中创建的压缩纹理表面的宽度和高度，以强制内核模式运行时分配适当的内存量。 显示驱动程序必须撤消此改变，以防止在此表面上执行的后续操作失败。 每当 DirectDraw 运行时调用驱动程序的 [**D3dCreateSurfaceEx**](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) 函数来创建压缩纹理图面时，驱动程序必须将其宽度和高度恢复为未修改的状态。
 
-在驱动程序*D3dCreateSurfaceEx*函数接收表面的宽度、 音调、 和高度更改，如下所示：
+驱动程序的 *D3dCreateSurfaceEx* 函数接收图面的宽度、间距和高度的更改，如下所示：
 
--   宽度和间距包含 4 × 4 中的块数乘以块大小的行数。
+-   Width 和螺距包含行中4x4 块的数目乘以块大小。
 
--   高则包含的列中的 4 × 4 块的数目。
+-   Height 包含列中的4x4 块的数目。
 
-下面的代码段显示了该驱动程序必须执行还原的宽度和高度的图面中的计算：
+下面的代码片段演示了驱动程序为还原图面的宽度和高度而必须执行的计算：
 
 ```cpp
 RealWidth = (Width / Block size) * 4;
 RealHeight = Height * 4;
 ```
 
-该驱动程序应将已还原的宽度和高度值分配给在内核中的成员[ **DD\_面\_全局**](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global)呈现结构。 这样做会阻止 DirectDraw 内核模式下的运行时从拒绝 DXT 纹理下载 blts 因为宽度和高度值不匹配。 也就是说，如果驱动程序将在更改后的大小，则**wWidth**并**wHeight** DD 的成员\_图面\_全局、 DirectDraw 内核模式下运行时拒绝从 blt更改到视频内存面上的系统内存图面，因为的宽度和高度的源，即未更改的坐标，似乎是"外部"更改 DD\_面\_全局大小。
+驱动程序应将还原的宽度和高度值分配给内核的 [**DD \_ 表面 \_ 全局**](/windows/desktop/api/ddrawint/ns-ddrawint-_dd_surface_global) surface 结构中的成员。 这样做可以防止 DirectDraw 内核模式运行时拒绝 DXT 纹理下载 blts，因为宽度和高度值不匹配。 也就是说，如果驱动程序在 DD surface GLOBAL 的 **wWidth** 和 **wHeight** 成员中保留了修改后的大小 \_ \_ ，则 DirectDraw 内核模式运行时将拒绝从已更改的系统内存图面到视频内存图面的 blt，因为源的宽度和高度在改变的 DD \_ 表面全局大小看来为 "外部" \_ 。
 
  
-
- 
-
-
-
-
 

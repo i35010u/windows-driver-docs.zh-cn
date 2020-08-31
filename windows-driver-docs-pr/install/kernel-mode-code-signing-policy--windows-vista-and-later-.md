@@ -13,19 +13,19 @@ keywords:
 - 包数字签名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a8b2ff54b67d9b806986b810f5ef216d71c9bb
-ms.sourcegitcommit: 4801d5c3767daf77743dd0f4016116ecaf54cd55
+ms.openlocfilehash: 80be15b20691a41e152b2d18faa8e01e1c51a12a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838455"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096333"
 ---
 # <a name="driver-signing-policy"></a>驱动程序签名策略
 
 > [!NOTE]
-> 从 Windows 10 版本1607开始，Windows 将不会加载开发人员门户未签名的任何新的内核模式驱动程序。  若要对驱动程序进行签名，请首先[注册 Windows 硬件开发人员中心计划](https://docs.microsoft.com/windows-hardware/drivers/dashboard/register-for-the-hardware-program)。 请注意，需要使用[EV 代码签名证书](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate)来建立仪表板帐户。
+> 从 Windows 10 版本1607开始，Windows 将不会加载开发人员门户未签名的任何新的内核模式驱动程序。  若要对驱动程序进行签名，请首先 [注册 Windows 硬件开发人员中心计划](../dashboard/register-for-the-hardware-program.md)。 请注意，需要使用 [EV 代码签名证书](../dashboard/get-a-code-signing-certificate.md) 来建立仪表板帐户。
 
-可以通过多种不同的方式将驱动程序提交到门户。  对于生产驱动程序，应按如下所述提交 HLK/HCK 测试日志。  对于仅限 Windows 10 客户端的系统进行测试，你可以提交用于[证明签名](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)的驱动程序，这不需要进行 HLK 测试。  或者，你可以提交你的驱动程序以进行测试签名，如[创建新的硬件提交](../dashboard/create-a-new-hardware-submission.md)页中所述。
+可以通过多种不同的方式将驱动程序提交到门户。  对于生产驱动程序，应按如下所述提交 HLK/HCK 测试日志。  对于仅限 Windows 10 客户端的系统进行测试，你可以提交用于 [证明签名](../dashboard/attestation-signing-a-kernel-driver-for-public-release.md)的驱动程序，这不需要进行 HLK 测试。  或者，你可以提交你的驱动程序以进行测试签名，如 [创建新的硬件提交](../dashboard/create-a-new-hardware-submission.md) 页中所述。
 
 ## <a name="exceptions"></a>例外
 
@@ -43,11 +43,11 @@ ms.locfileid: "87838455"
 
 1. 对于要在其上验证的每个版本的 Windows 10，下载适用于该版本的 Windows HLK (硬件实验室包) ，并针对该版本的客户端运行完整的证书传递。 每个版本都有一个日志。
 2. 如果有多个日志，请使用最新的 HLK 将它们合并到单个日志中。
-3. 将驱动程序和合并的 HLK 测试结果提交给[Windows 硬件开发人员中心仪表板门户](../dashboard/index.yml)。
+3. 将驱动程序和合并的 HLK 测试结果提交给 [Windows 硬件开发人员中心仪表板门户](../dashboard/index.yml)。
 
-有关特定于版本的详细信息，请查看要作为目标的 Windows 版本的[WHCP (Windows 硬件兼容性计划) 策略](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-specifications-policies)。
+有关特定于版本的详细信息，请查看要作为目标的 Windows 版本的 [WHCP (Windows 硬件兼容性计划) 策略](/windows-hardware/design/compatibility/whcp-specifications-policies) 。
 
-若要对 Windows 7、Windows 8 或 Windows 8.1 的驱动程序进行签名，请使用相应的 HCK (硬件认证工具包) 。  有关详细信息，请参阅[Windows 硬件认证包用户指南](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124227(v=vs.85))。
+若要对 Windows 7、Windows 8 或 Windows 8.1 的驱动程序进行签名，请使用相应的 HCK (硬件认证工具包) 。  有关详细信息，请参阅 [Windows 硬件认证包用户指南](/previous-versions/windows/hardware/hck/jj124227(v=vs.85))。
 
 ## <a name="signing-a-driver-for-earlier-versions-of-windows"></a>为 Windows 早期版本的驱动程序签名
 
@@ -55,7 +55,7 @@ ms.locfileid: "87838455"
 
 * 内核模式设备驱动程序
 * 用户模式设备驱动程序
-* 流式处理受保护内容的驱动程序。 这包括使用受保护的用户模式音频 (PUMA) 的音频驱动程序和用于处理受保护视频路径-输出保护管理的视频设备驱动程序)  (用于处理受保护视频路径-输出保护管理 (命令。 有关详细信息，请参阅[受保护媒体组件的代码签名](https://go.microsoft.com/fwlink/p/?linkid=74262)。
+* 流式处理受保护内容的驱动程序。 这包括使用受保护的用户模式音频 (PUMA) 的音频驱动程序和用于处理受保护视频路径-输出保护管理的视频设备驱动程序)  (用于处理受保护视频路径-输出保护管理 (命令。 有关详细信息，请参阅 [受保护媒体组件的代码签名](https://go.microsoft.com/fwlink/p/?linkid=74262)。
 
 ## <a name="signing-requirements-by-version"></a>按版本的签名要求
 
@@ -70,16 +70,16 @@ ms.locfileid: "87838455"
 |**签名算法：**|SHA2|SHA2|SHA2|SHA2|
 |**证书**|受代码完整性信任的标准根|受代码完整性信任的标准根|Microsoft 根证书颁发机构2010，microsoft 根证书颁发机构，Microsoft 根证书颁发机构|Microsoft 根证书颁发机构2010，microsoft 根证书颁发机构，Microsoft 根证书颁发机构|
 
-除驱动程序代码签名外，还需要满足用于安装驱动程序的 PnP 设备安装签名要求。  有关详细信息，请参阅[即插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
+除驱动程序代码签名外，还需要满足用于安装驱动程序的 PnP 设备安装签名要求。  有关详细信息，请参阅 [即插即用 (PnP) 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
-有关对 ELAM 驱动程序进行签名的信息，请参阅[提前启动反恶意软件](https://docs.microsoft.com/windows/desktop/w8cookbook/secured-boot)。
+有关对 ELAM 驱动程序进行签名的信息，请参阅 [提前启动反恶意软件](/windows/desktop/w8cookbook/secured-boot)。
 
 ## <a name="signing-a-driver-for-internal-distribution-only"></a>仅针对内部分发对驱动程序进行签名
 
 在某些情况下，可能需要在内部（而不是通过 Windows 更新）在内部分发驱动程序。  若要执行此操作而无需运行它的计算机处于测试模式，请使用以下过程：
 
 1. [注册硬件开发人员中心](../dashboard/register-for-the-hardware-program.md)。
-2. 查看[硬件仪表板 FAQ](../dashboard/hardware-dashboard-faq.md)并签署相应协议。
+2. 查看 [硬件仪表板 FAQ](../dashboard/hardware-dashboard-faq.md) 并签署相应协议。
 3. 上传 codesign 证书。
 4. 使用非 EV codesign 证书在本地对驱动程序进行签名。
 5. 包中的驱动程序，并使用上面的 codesign 证书对 CAB 进行签名。
@@ -91,6 +91,6 @@ ms.locfileid: "87838455"
 
 * [在开发和测试过程中安装未签名的驱动程序包](installing-an-unsigned-driver-during-development-and-test.md)
 * [为驱动程序签名以便公开发布](signing-drivers-for-public-release--windows-vista-and-later-.md)
-* [在开发和测试期间签署驱动程序](signing-drivers-during-development-and-test.md)
+* [在开发和测试期间签署驱动程序](./introduction-to-test-signing.md)
 * [数字签名](driver-signing.md)
-* [排查已签名驱动程序包的安装和加载问题](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)
+* [排查已签名驱动程序包的安装和加载问题](./detecting-driver-load-errors.md)

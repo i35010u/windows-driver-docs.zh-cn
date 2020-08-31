@@ -1,46 +1,40 @@
 ---
-title: 设备属性表示形式 (Windows Server 2003，Windows XP)
+title: Windows Server 2003、Windows XP)  (设备属性表示形式
 description: 设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
 ms.assetid: 124172d7-52a4-423c-a1fd-eec554f328d6
 keywords:
 - 设备属性 WDK 设备安装，表示形式
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7099e50f751f2d618a829cf599d1fe2254cb3825
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d65fc2df55b0a5e22ab9532873738f68604f2b5
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387120"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096485"
 ---
 # <a name="device-property-representations-windows-server-2003-windows-xp-and-windows-2000"></a>设备属性表示形式（Windows Server 2003、Windows XP 和 Windows 2000）
 
 
-不支持 Windows Server 2003、 Windows XP 和 Windows 2000[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)该 Windows Vista 和更高版本的 Windows 支持。 但是，大部分[系统定义的设备属性](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))所包含统一的设备属性模型中具有相应的表示形式，这些早期版本的 Windows 支持。 在这些早期版本的 Windows 中，表示设备属性的方式，，种机制，用于访问属性，依赖于的组件类型和属性类型。 这些表示形式和机制包括：
+Windows Server 2003、Windows XP 和 Windows 2000 不支持 Windows Vista 和更高版本的 Windows 支持的 [统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md) 。 但是，统一设备属性模型中包含的大多数 [系统定义的设备属性](/previous-versions/ff553413(v=vs.85)) 具有这些早期版本的 Windows 支持的相应表示形式。 在这些早期版本的 Windows 上，表示设备属性的方式和用于访问属性的机制取决于组件类型和属性类型。 这些表示形式和机制包括：
 
--   设备属性由系统定义的输入参数中提供的标识符[SetupAPI 函数](setupapi.md)访问的设备属性。
+-   设备属性由系统定义的标识符表示，该标识符作为输入参数提供给 [setupapi.log 函数](setupapi.md) 以访问设备属性。
 
--   设备属性不具有显式表示形式。 但是，与设备属性关联的信息可以通过对安装程序 Api 函数的调用来检索或即插即用 (PnP) 的配置管理器函数。
+-   设备属性没有显式表示形式。 但是，可以通过调用 Setupapi.log 函数或即插即用 (PnP) configuration manager 函数来检索与设备属性相关联的信息。
 
--   可以通过使用 Windows 注册表函数访问的注册表条目值由表示设备属性。
+-   设备属性由可使用 Windows 注册表函数访问的注册表项值表示。
 
--   INF 文件条目的值修改设备属性。
+-   INF 文件条目值修改设备属性。
 
-以下主题提供有关如何访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备属性的信息：
+以下主题提供有关如何在 Windows Server 2003、Windows XP 和 Windows 2000 上访问设备属性的信息：
 
-[INF 文件条目的值修改设备属性](inf-file-entry-values-that-modify-device-properties.md)
+[用于修改设备属性的 INF 文件输入值](inf-file-entry-values-that-modify-device-properties.md)
 
-[使用 SetupAPI 和 Configuration Manager 以访问设备的属性](using-setupapi-and-configuration-manager-to-access-device-properties.md)
+[使用 SetupAPI 和 Configuration Manager 访问设备属性](using-setupapi-and-configuration-manager-to-access-device-properties.md)
 
-**请注意**  为了保持与这些早期版本的 Windows 兼容性，Windows Vista 和更高版本还支持这些机制。 但是，您应使用统一的设备属性模型访问在 Windows Vista 和更高版本上的设备属性。
-
- 
+**注意**   为了保持与这些早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持这些机制。 但是，你应该使用统一设备属性模型来访问 Windows Vista 和更高版本上的设备属性。
 
  
 
  
-
-
-
-
 

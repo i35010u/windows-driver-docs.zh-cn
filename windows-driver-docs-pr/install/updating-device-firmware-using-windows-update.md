@@ -1,29 +1,29 @@
 ---
 title: 使用 Windows 更新更新设备固件
-description: 本主题介绍如何使用 Windows 更新（WU）服务更新设备的固件。
+description: 本主题介绍如何使用 Windows 更新 (WU) 服务来更新设备的固件。
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 902a765ed4680cb210f3d9ac5e671b1d8bf63e84
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 647159bf28fcab15225295c1713e432cab7da8f6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235406"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096559"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>使用 Windows 更新更新设备固件
 
-本主题介绍如何使用 Windows 更新（WU）服务更新可移动或机箱内设备的固件。  有关更新系统固件的信息，请参阅[WINDOWS UEFI 固件更新平台](../bringup/windows-uefi-firmware-update-platform.md)。
+本主题介绍如何使用 Windows 更新 (WU) 服务来更新可移动或机箱设备的固件。  有关更新系统固件的信息，请参阅 [WINDOWS UEFI 固件更新平台](../bringup/windows-uefi-firmware-update-platform.md)。
 
-为此，你将提供一个作为设备驱动程序实现的更新机制，其中包括固件负载。  如果设备使用供应商提供的驱动程序，则可以选择将固件更新逻辑和负载添加到现有的函数驱动程序，或者提供单独的固件更新驱动程序包。  如果设备使用 Microsoft 提供的驱动程序，则必须提供单独的固件更新驱动程序包。  在这两种情况下，固件更新驱动程序包必须是通用的。  有关通用驱动程序的详细信息，请参阅[Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。  驱动程序二进制文件可以使用[KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md)或[Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)。 
+为此，你将提供一个作为设备驱动程序实现的更新机制，其中包括固件负载。  如果设备使用供应商提供的驱动程序，则可以选择将固件更新逻辑和负载添加到现有的函数驱动程序，或者提供单独的固件更新驱动程序包。  如果设备使用 Microsoft 提供的驱动程序，则必须提供单独的固件更新驱动程序包。  在这两种情况下，固件更新驱动程序包必须是通用的。  有关通用驱动程序的详细信息，请参阅 [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)。  驱动程序二进制文件可以使用 [KMDF](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md) 或 [Windows 驱动模型](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)。 
 
-由于 WU 无法执行软件，因此固件更新驱动程序必须将固件安装到即插即用（PnP）才能进行安装。
+由于 WU 无法执行软件，固件更新驱动程序必须将固件手动即插即用 (PnP) 安装。
 
 ## <a name="firmware-update-driver-actions"></a>固件更新驱动程序操作
 
 通常，固件更新驱动程序是一种轻型设备驱动程序，它执行以下操作：
 
-* 在设备启动或驱动程序的[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)回调函数中：
+* 在设备启动或驱动程序的 [*EVT_WDF_DRIVER_DEVICE_ADD*](/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add) 回调函数中：
 
     1. 确定要连接到的设备。
     2. 确定驱动程序的固件版本是否低于当前在设备硬件上闪存的固件版本。
@@ -41,7 +41,7 @@ ms.locfileid: "83235406"
 
 * [通用驱动程序 INF](using-a-universal-inf-file.md)
 * 驱动程序目录
-* 函数驱动程序（.sys 或 .dll）
+* 函数驱动程序 ( .sys 或 .dll) 
 * 固件更新负载二进制
 
 提交固件更新包作为单独的驱动程序提交。
@@ -60,7 +60,7 @@ ms.locfileid: "83235406"
 
 有几种方法可以创建第二个设备节点。  某些设备类型能够在一个物理设备（如 USB）上公开另一个设备节点。  你可以使用此功能创建不再的设备节点，并在其上安装固件更新驱动程序。  但许多设备类型不允许单个物理设备枚举多个设备节点。
 
-在这种情况下，请使用指定[AddComponent](../install/inf-addcomponent-directive.md)指令的扩展 INF，以创建可 Windows 更新并在其上安装固件更新驱动程序的设备节点。  INF 文件中的以下代码片段显示了如何执行此操作：
+在这种情况下，请使用指定 [AddComponent](../install/inf-addcomponent-directive.md) 指令的扩展 INF，以创建可 Windows 更新并在其上安装固件更新驱动程序的设备节点。  INF 文件中的以下代码片段显示了如何执行此操作：
 
 ```cpp
 [Manufacturer]
@@ -85,7 +85,7 @@ ComponentIDs = ComponentDeviceId
 
 ## <a name="best-practices"></a>最佳做法
 
-* 在固件更新驱动程序 INF 中，指定[DIRID 13](using-dirids.md)以使 PnP 将文件保留在 DriverStore 中的驱动程序包中：
+* 在固件更新驱动程序 INF 中，指定 [DIRID 13](using-dirids.md) 以使 PnP 将文件保留在 DriverStore 中的驱动程序包中：
 
     ```cpp
     [Firmware_AddReg]
@@ -104,6 +104,6 @@ ComponentIDs = ComponentDeviceId
 
 * 若要查找另一个设备节点，固件驱动程序应使设备树相对于其自身，而不是枚举所有设备节点进行匹配。  用户可能已连接到设备的多个实例，并且固件驱动程序只应更新与其关联的设备。  通常，要定位的设备节点是安装固件驱动程序的设备节点的父节点或同级节点。 例如，在上面的关系图中，有两个设备节点，固件更新驱动程序可以查找同级设备以查找函数驱动程序。  在上面的关系图中，固件驱动程序可以查找父设备，查找需要与其通信的主要设备。
 
-* 驱动程序在系统上的多个实例（可能有多个不同的固件版本）上应该是可靠的。  例如，可能有一个设备已连接并更新多次的实例;然后，可能会插入一台全新设备，其中有多个固件版本旧。  这意味着，必须将状态（如当前版本）存储在设备上，而不是存储在全局位置。
+* 驱动程序在系统上的多个实例（可能有多个不同的固件版本）上应该是可靠的。  例如，可能有一个设备已连接并更新多次的实例;然后，可能会插入一台全新设备，其中有多个固件版本旧。  这意味着，必须将状态 (例如，当前版本) 必须存储在设备上，而不是存储在全局位置。
 
-* 如果有现有的更新固件（例如 EXE 或共同安装程序）的方法，您可以很大程度地重复使用 UMDF 驱动程序中的更新代码。
+* 如果现有方法更新固件 (EXE 或共同安装程序，例如) ，则可以很大程度地重复使用 UMDF 驱动程序中的更新代码。

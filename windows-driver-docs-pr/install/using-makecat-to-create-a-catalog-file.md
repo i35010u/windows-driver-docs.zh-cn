@@ -4,39 +4,39 @@ description: 使用 MakeCat 创建目录文件
 ms.assetid: c9f9360b-2b1d-4060-af4d-8d281319e181
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7d12ed9e28314a71e4496a2375935f9d43da99
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 02f48a8fb860c1e13c350a3e612f2bacf7558d9a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384758"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096389"
 ---
 # <a name="using-makecat-to-create-a-catalog-file"></a>使用 MakeCat 创建目录文件
 
 
-可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具来创建[编录文件](catalog-files.md)有关[驱动程序包](driver-packages.md)。
+可以使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具为[驱动程序包](driver-packages.md)创建[编录文件](catalog-files.md)。
 
-必须使用 MakeCat 工具只是为了创建目录文件的情况下使用 INF 文件不安装的驱动程序包。 如果要安装驱动程序包，请使用 INF 文件，使用[ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)工具创建目录文件。 Inf2Cat 自动包含在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅[使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
+只有使用 MakeCat 工具才能为未使用 INF 文件安装的驱动程序包创建编录文件。 如果使用 INF 文件安装了驱动程序包，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
-**请注意**  而不是创建和签名目录文件，则也可以嵌入一个签名的内核模式二进制文件中您[驱动程序包](driver-packages.md)，如驱动程序和包可能会提供任何.dll 文件。 有关此过程的详细信息，请参阅[测试签名的驱动程序通过嵌入式签名](test-signing-a-driver-through-an-embedded-signature.md)。
+**注意**   你还可以将签名嵌入[驱动程序包](driver-packages.md)的内核模式二进制文件（如驱动程序和包可能提供的任何 .dll 文件），而不是创建和签名目录文件。 有关此过程的详细信息，请参阅 [通过嵌入签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)。
 
  
 
-若要创建一个目录文件，您必须首先手动创建目录定义文件 ( *.cdf*)，用于说明目录标头属性和文件条目。 此文件创建后，可以运行[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具创建目录文件。 MakeCat 工具处理时将执行以下 *.cdf*文件：
+若要创建目录文件，必须首先手动创建目录定义文件 (*cdf*) ，其中描述了目录标头属性和文件项。 创建该文件后，你可以运行 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 工具来创建编录文件。 MakeCat 工具在处理 *cdf* 文件时执行以下操作：
 
--   验证的每个文件中列出的属性列表 *.cdf*文件。
+-   验证在 *cdf* 文件中列出的每个文件的属性列表。
 
--   将添加到列出的属性[编录文件](catalog-files.md)。
+-   将列出的属性添加到 [目录文件](catalog-files.md)中。
 
--   生成加密哈希，或*指纹*，每个列出的文件。
+-   为列出的每个文件生成加密哈希或 *指纹*。
 
--   目录文件中存储的每个文件的指纹。
+-   将每个文件的指纹存储在目录文件中。
 
-本主题介绍如何创建 *.cdf* 64 位内核模式二进制文件的文件*ToastPkg*示例驱动程序包。 在 WDK 安装目录中，这些二进制文件都位于*src\\常规\\toaster\\toastpkg\\toastcd\\amd64*目录。
+本主题介绍如何为*toastpkg.inf*示例驱动程序包的64位内核模式二进制文件创建一个文件 *。* 在 WDK 安装目录中，这些二进制文件位于 *src \\ general \\ toaster \\ toastpkg.inf \\ toastcd \\ amd64* 目录中。
 
-若要创建 *.cdf*适用于文件*ToastPkg*示例[驱动程序包](driver-packages.md)，执行以下操作：
+若要为*toastpkg.inf*示例[驱动程序包](driver-packages.md)创建一个*cdf*文件，请执行以下操作：
 
-1.  启动记事本并复制以下示例中的文本。 它包含要被编录，以及其属性的文件列表。
+1.  启动记事本并复制以下示例中的文本。 它包含要分类的文件的列表及其属性。
 
     ```cpp
     [CatalogHeader]
@@ -55,28 +55,22 @@ ms.locfileid: "67384758"
     <hash>File8=amd64\tostrco2.pdb
     ```
 
-2.  将该文件作为*tstamd64.cdf*驱动程序包所在的文件夹中。
-    **请注意**  时生成的多个平台的驱动程序，创建每个平台的单独目录文件。
+2.  将该文件另存为与驱动程序包相同的文件夹中的*tstamd64。*
+    **注意**   为多个平台构建驱动程序时，为每个平台创建一个单独的目录文件。
 
      
 
-下面的命令行演示如何创建编录文件通过[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)使用的工具*tstamd64.cdf*文件：
+以下命令行说明了如何通过 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 工具使用 *tstamd64* 文件创建目录文件：
 
 ```cpp
 makecat -v tstamd64.cdf
 ```
 
-在运行该工具，名为的文件后*tstamd64.cat*创建。
+运行该工具后，将创建一个名为 *tstamd64.cat* 的文件。
 
-有关 MakeCat 工具和其命令行自变量的详细信息，请参阅[使用 MakeCat](https://go.microsoft.com/fwlink/p/?linkid=70086)网站。
+有关 MakeCat 工具及其命令行参数的详细信息，请参阅 [使用 MakeCat](https://go.microsoft.com/fwlink/p/?linkid=70086) 网站。
 
-有关如何使用 MakeCat 工具的详细信息，请参阅[为非 PnP 驱动程序包创建编录文件](creating-a-catalog-file-for-a-non-pnp-driver-package.md)。
-
- 
+有关如何使用 MakeCat 工具的详细信息，请参阅 [为非 PnP 驱动程序包创建编录文件](creating-a-catalog-file-for-a-non-pnp-driver-package.md)。
 
  
-
-
-
-
 

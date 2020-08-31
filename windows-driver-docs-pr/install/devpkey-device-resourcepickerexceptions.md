@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 30b3382ae2d82f99ce657812ef579f075a56ac13
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 35e31fb878bbbac846bd96e2c5ae27d0c9344948
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418429"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096747"
 ---
 # <a name="devpkey_device_resourcepickerexceptions"></a>DEVPKEY_Device_ResourcePickerExceptions
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_ResourcePickerExceptions 设备属性表示设备实例允许的�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -67,33 +67,26 @@ DEVPKEY_Device_ResourcePickerExceptions 设备属性表示设备实例允许的�
 <a name="remarks"></a>备注
 -------
 
-你可以使用安装设备的 INF 文件的[**Inf *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)中包含的[**inf AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)来设置 DEVPKEY_Device_ResourcePickerExceptions 的值。
+你可以使用安装设备的 INF 文件的[**Inf *DDInstall*部分**](./inf-ddinstall-section.md)中包含的[**inf AddReg 指令**](./inf-addreg-directive.md)来设置 DEVPKEY_Device_ResourcePickerExceptions 的值。
 
-可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_ResourcePickerExceptions 的值。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_ResourcePickerExceptions 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_ResourcePickerExceptions 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应**ResourcePickerExceptions**注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_ResourcePickerExceptions 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应 **ResourcePickerExceptions** 注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [访问设备驱动程序属性](./accessing-device-driver-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
+[**INF AddReg 指令**](./inf-addreg-directive.md)
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

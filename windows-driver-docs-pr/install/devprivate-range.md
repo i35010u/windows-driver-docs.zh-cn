@@ -12,27 +12,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 5dbaa1836ce122750d195dd10474f508fb1c72a0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d94975a38bd4ad66b00841b3ecf8f09d2def71a2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376813"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095929"
 ---
-# <a name="devprivaterange"></a>DEVPRIVATE_RANGE
+# <a name="devprivate_range"></a>DEVPRIVATE_RANGE
 
 
-**请注意**  此结构是仅供内部使用。
-
- 
-
-DEVPRIVATE_RANGE 结构指定了描述的设备实例专用的特定于设备的资源使用情况的资源要求列表。 有关资源要求列表的详细信息，请参阅[硬件资源](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources)。
+**注意**   此结构仅供内部使用。
 
  
 
+DEVPRIVATE_RANGE 结构指定资源需求列表，该列表描述设备实例的专用于设备的专用资源使用情况。 有关资源需求列表的详细信息，请参阅 [硬件资源](../kernel/hardware-resources.md)。
+
  
-
-
-
-
 

@@ -3,69 +3,63 @@ title: SetDisplayConfig 摘要和方案
 description: SetDisplayConfig 摘要和方案
 ms.assetid: f9bce5d4-b511-475c-8e0a-eb60765a3326
 keywords:
-- 连接显示 WDK Windows 7 显示 SetDisplayConfig 在 CCD Api
-- 连接显示 WDK Windows Server 2008 R2 显示 SetDisplayConfig 在 CCD Api
-- 配置显示 WDK Windows 7 显示 SetDisplayConfig 在 CCD Api
-- 配置显示 WDK Windows Server 2008 R2 显示 SetDisplayConfig 在 CCD Api
-- CCD 概念 WDK Windows 7 显示 SetDisplayConfig
-- CCD 概念 WDK Windows Server 2008 R2 显示 SetDisplayConfig
+- 连接显示 WDK Windows 7 显示、CCD Api、SetDisplayConfig
+- 连接显示 WDK Windows Server 2008 R2 display、CCD Api、SetDisplayConfig
+- 配置显示 WDK Windows 7 显示、CCD Api、SetDisplayConfig
+- 配置显示 WDK Windows Server 2008 R2 display、CCD Api、SetDisplayConfig
+- CCD 概念 WDK Windows 7 显示，SetDisplayConfig
+- CCD 概念 WDK Windows Server 2008 R2 显示，SetDisplayConfig
 - SetDisplayConfig WDK Windows 7 显示
 - SetDisplayConfig WDK Windows Server 2008 R2 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 165248a1b71258c94ef524603cce17d60637c5fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d48f0c268188dac9129bc5a7fea549e6050d0a7
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365588"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066650"
 ---
 # <a name="setdisplayconfig-summary-and-scenarios"></a>SetDisplayConfig 摘要和方案
 
 
-本部分仅适用于 Windows 7 及更高版本、 和 Windows Server 2008 R2 和更高版本的 Windows 操作系统。
+本部分仅适用于 Windows 7 和更高版本，以及 windows Server 2008 R2 及更高版本的 Windows 操作系统。
 
-以下部分汇总了如何使用调用方[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) CCD 函数，并提供了有关使用方案**SetDisplayConfig**。
+以下部分概述了调用方如何使用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) CCD 函数并提供使用 **SetDisplayConfig**的方案。
 
-### <a name="span-idsetdisplayconfigsummaryspanspan-idsetdisplayconfigsummaryspansetdisplayconfig-summary"></a><span id="setdisplayconfig_summary"></span><span id="SETDISPLAYCONFIG_SUMMARY"></span>SetDisplayConfig 摘要
+### <a name="span-idsetdisplayconfig_summaryspanspan-idsetdisplayconfig_summaryspansetdisplayconfig-summary"></a><span id="setdisplayconfig_summary"></span><span id="SETDISPLAYCONFIG_SUMMARY"></span>SetDisplayConfig 摘要
 
-可以使用调用方[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)应用以及其他显示设置拓扑。 也就是说，可以使用调用方**SetDisplayConfig**若要设置拓扑、 布局、 方向、 纵横比，位深度，依次类推。 可以使用调用方**SetDisplayConfig**来执行以下操作：
+调用方可以使用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 与其他显示设置一起应用拓扑。 也就是说，调用方可以使用 **SetDisplayConfig** 来设置拓扑、布局、方向、纵横比、位深度等。 调用方可以使用 **SetDisplayConfig** 来执行以下操作：
 
--   设置源和目标的特定的拓扑。
+-   设置源和目标的特定拓扑。
 
--   定义布局、 方向和缩放系数以及每个路径的源和目标模式。
+-   定义每个路径的源和目标模式，以及布局、方向和比例因子。
 
--   在应用的显示设置时，更新数据库。
+-   应用显示设置时更新数据库。
 
--   测试是否可能通过使用枚举的路径已构造的特定的拓扑。
+-   测试是否可以使用枚举路径构造的特定拓扑。
 
--   直接将应用从数据库映射到四个选项之一从热键的最后一个已知的设置。
+-   直接应用从数据库映射到热键中四个选项之一的最后一个已知设置。
 
--   启用强制的投影的目标。
+-   在目标上启用强制投影。
 
--   调用新操作系统的最佳模式逻辑。
+-   调用新的操作系统最佳模式逻辑。
 
-### <a name="span-idsetdisplayconfigscenariosspanspan-idsetdisplayconfigscenariosspansetdisplayconfig-scenarios"></a><span id="setdisplayconfig_scenarios"></span><span id="SETDISPLAYCONFIG_SCENARIOS"></span>SetDisplayConfig 方案
+### <a name="span-idsetdisplayconfig_scenariosspanspan-idsetdisplayconfig_scenariosspansetdisplayconfig-scenarios"></a><span id="setdisplayconfig_scenarios"></span><span id="SETDISPLAYCONFIG_SCENARIOS"></span>SetDisplayConfig 方案
 
-[**SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)在以下情况下调用：
+在以下情况下，将调用[**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) ：
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)若要测试所有可能的选项来填充**多监视器**下拉列表框。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来测试所有可能的选项，以填充 " **multimon** " 下拉框。
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)将用户从下拉列表菜单中选择该设置。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来应用用户从下拉菜单中选择的设置。
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)以便将用户选择了从用户界面的设置。 这些设置包括解析、 布局、 方向、 缩放、 主、 位深度，并刷新频率。
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来应用用户从用户界面中选择的设置。 这些设置包括分辨率、布局、方向、缩放、主要、比特率和刷新频率。
 
--   显示用户进行选择后，热键调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)应用从持久性数据库的相应设置。
+-   用户做出选择后，显示热键将调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) ，以应用持久性数据库中的相应设置。
 
--   控制面板用户下的任务接口调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)应用适当的设置基于任务的类型。
+-   "控制面板" 用户界面下的任务调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来应用适当的设置，该设置基于任务的类型。
 
--   显示控件面板小程序调用[ **SetDisplayConfig** ](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setdisplayconfig)启动或停止特定目标上强制的投影。
-
- 
+-   显示控制面板小程序调用 [**SetDisplayConfig**](/windows/desktop/api/winuser/nf-winuser-setdisplayconfig) 来启动或停止特定目标上的强制投影。
 
  
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
 title: DEVPROPKEY 结构
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROPKEY 结构表示统一的设备属性模型中的设备属性的设备属性键。
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROPKEY 结构表示统一设备属性模型中设备属性的设备属性键。
 ms.assetid: 98986d43-84c0-44e6-83f9-08e872ea5e6d
 keywords:
 - DEVPROPKEY 结构设备和驱动程序安装
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 00435311f4ee55af17d7a5d7c6f342d9c72796b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d38055cc0474b8aea6af6c3e2391f0677058141
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372733"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095749"
 ---
 # <a name="devpropkey-structure"></a>DEVPROPKEY 结构
 
 
-在 Windows Vista 和更高版本的 Windows，DEVPROPKEY 结构表示中的设备属性的设备属性键[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)。
+在 Windows Vista 和更高版本的 Windows 中，DEVPROPKEY 结构表示 [统一设备属性模型](./unified-device-property-model--windows-vista-and-later-.md)中设备属性的设备属性键。
 
 <a name="syntax"></a>语法
 ------
@@ -40,18 +40,18 @@ struct DEVPROPKEY {
 -------
 
 **fmtid**  
-DEVPROPGUID 类型的一个值，指定的属性类别。
+指定属性类别的 DEVPROPGUID 类型的值。
 
-DEVPROPGUID 数据类型的定义如下：
+DEVPROPGUID 数据类型定义为：
 
 ```cpp
 typedef GUID  DEVPROPGUID, *PDEVPROPGUID;
 ```
 
-**pid**  
-一个 DEVPROPID 类型化值，该值唯一标识内的属性类别的属性。 内部系统方面的考虑，属性标识符必须大于或等于 2。
+pid  
+一个 DEVPROPID 类型的值，该值唯一标识属性类别中的属性。 由于内部系统原因，属性标识符必须大于或等于2。
 
-DEVPROPID 数据类型的定义如下：
+DEVPROPID 数据类型定义为：
 
 ```cpp
 typedef ULONG DEVPROPID, *PDEVPROPID;
@@ -60,11 +60,11 @@ typedef ULONG DEVPROPID, *PDEVPROPID;
 <a name="remarks"></a>备注
 -------
 
-DEVPROPKEY 结构属于[统一的设备属性模型](https://docs.microsoft.com/windows-hardware/drivers/install/unified-device-property-model--windows-vista-and-later-)。
+DEVPROPKEY 结构是 [统一设备属性模型](./unified-device-property-model--windows-vista-and-later-.md)的一部分。
 
-中定义一组基本的系统提供的设备属性键*Devpkey.h*。
+系统提供的设备属性键的基本集是在 *Devpkey*中定义的。
 
-[**定义\_DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)宏创建 DEVPROPKEY 结构，它表示设备属性键的实例。
+[**DEFINE \_ DEVPROPKEY**](./define-devpropkey.md)宏创建表示设备属性键的 DEVPROPKEY 结构的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,23 +76,16 @@ DEVPROPKEY 结构属于[统一的设备属性模型](https://docs.microsoft.com/
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**DEFINE\_DEVPROPKEY**](https://docs.microsoft.com/windows-hardware/drivers/install/define-devpropkey)
-
- 
+[**定义 \_ DEVPROPKEY**](./define-devpropkey.md)
 
  
-
-
-
-
-
 

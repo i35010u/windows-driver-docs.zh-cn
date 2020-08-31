@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9c24e1a67d6523642224bdf2854c9b03b7614996
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b1ca5ad9e318ef18f963c2cc78ad54b1a7d73717
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376805"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095931"
 ---
-# <a name="devpkeynumaproximitydomain"></a>DEVPKEY_Numa_Proximity_Domain
+# <a name="devpkey_numa_proximity_domain"></a>DEVPKEY_Numa_Proximity_Domain
 
 
-DEVPKEY_Numa_Proximity_Domain 设备属性表示的邻近域的非统一内存体系结构 (NUMA)。
+DEVPKEY_Numa_Proximity_Domain 设备属性表示 (NUMA) 的非一致性内存体系结构的邻近域。
 
 <table>
 <colgroup>
@@ -41,11 +41,11 @@ DEVPKEY_Numa_Proximity_Domain 设备属性表示的邻近域的非统一内存�
 <td align="left"><p><a href="devprop-type-int32.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_INT32&lt;/strong&gt;](devprop-type-int32.md)"><strong>DEVPROP_TYPE_INT32</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序; 的只读访问权限读取和写入访问的设备驱动程序</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问权限;设备驱动程序的读取和写入访问权限</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>否</p></td>
 </tr>
 </tbody>
@@ -56,17 +56,17 @@ DEVPKEY_Numa_Proximity_Domain 设备属性表示的邻近域的非统一内存�
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Numa_Proximity_Domain 的值是数字值，该值表示域 id。
+DEVPKEY_Numa_Proximity_Domain 的值是表示域 ID 的数字值。
 
-通常情况下，操作系统通过从系统固件中检索相应信息来设置 DEVPKEY_Numa_Proximity_Domain 的值。
+通常，操作系统通过从系统固件检索相应的信息来设置 DEVPKEY_Numa_Proximity_Domain 的值。
 
-可以通过调用检索的值 DEVPKEY_Numa_Proximity_Domain **IoSetDevicePropertyData**或**IoGetDevicePropertyData**设备驱动程序中。
+可以通过在设备驱动程序中调用 **IoSetDevicePropertyData** 或 **IoGetDevicePropertyData** 来检索 DEVPKEY_Numa_Proximity_Domain 的值。
 
-您还可以调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)检索 DEVPKEY_Numa_Proximity_Domain 值。
+你还可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Numa_Proximity_Domain 的值。
 
-此属性的值应由驱动程序和应用程序以只读方式处理和拥有的 Windows。
+此属性的值由 Windows 所有，并应由驱动程序和应用程序视为只读。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
+Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,21 +78,15 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不支持此属性。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>提供与 Windows Vista 一起启动。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>可从 Windows Vista 开始使用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

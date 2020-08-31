@@ -3,12 +3,12 @@ description: 编写与 USB 设备通信的 Windows 桌面应用程序的最简�
 title: 编写基于 WinUSB 模板的 Windows 桌面应用
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: acdefb4d7f9227bf0288a26a5ab3ac52c69d67b9
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: a32dac432cc2ea421ac529bf9f143f4283e4ab50
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969396"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056971"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>编写基于 WinUSB 模板的 Windows 桌面应用
 
@@ -25,8 +25,8 @@ ms.locfileid: "88969396"
 
 1. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2. 在中间窗格中，选择 " **WinUSB Application (通用) **"。
-3. 单击“下一步”。
-4. 输入项目名称，选择 "保存位置"，然后单击 " **创建**"。
+3. 选择“**下一页**”。
+4. 输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
     以下屏幕截图显示了 WinUSB 应用程序的 " **新建项目** " 对话框 ** (通用) ** 模板。
 
@@ -42,14 +42,14 @@ ms.locfileid: "88969396"
 
     USB Application1 项目具有应用程序的源文件。 若要查看应用程序源代码，可以打开 " **源文件**" 下显示的任何文件。  
 
-5. 向解决方案添加驱动程序包项目。 右键单击解决方案 (解决方案 "USB Application1" ) ，然后单击 " **添加** \> **新项目** "，如以下屏幕截图所示。
+5. 向解决方案添加驱动程序包项目。 选择并按住 (或右键单击) 解决方案 (解决方案 "USB Application1" ) ，然后选择 " **添加** \> **新项目** "，如以下屏幕截图所示。
 
     ![winusb 模板创建第二个项目添加](images/winusb-template-creation-3.png)
 
 6. 在 " **新建项目** " 对话框顶部的 "搜索" 框中，再次键入 " **USB"。**
 7. 在中间窗格中，选择 " **WINUSB INF 驱动程序包**"。
-8. 单击“下一步”。
-9. 输入项目名称，然后单击 " **创建**"。
+8. 选择“**下一页**”。
+9. 输入项目名称，然后选择 " **创建**"。
 
     以下屏幕截图显示了**WINUSB INF 驱动程序包**模板的 "**新建项目**" 对话框。
 
@@ -68,7 +68,7 @@ ms.locfileid: "88969396"
 10. 在 INF 文件 USBApplication1 中，找到以下代码：   `%DeviceName% =USB_Install, USB\VID_vvvv&PID_pppp`
 
 11. 将 VID \_ vvvv&PID \_ pppp 替换为设备的硬件 ID。 从设备管理器获取硬件 ID。 在设备管理器中，查看设备属性。 在 " **详细信息** " 选项卡上，查看 " **硬件 id** " 属性值。
-12. 在 " **解决方案资源管理器** " 窗口中，右键单击 " **解决方案 ' USB Application1 ' (2 个) 2 个项目 **，然后选择" **Configuration Manager**"。 为应用程序项目和包项目选择配置和平台。 在此练习中，我们选择 "调试" 和 "x64"，如下面的屏幕截图所示。
+12. 在 " **解决方案资源管理器** " 窗口中，选择并按住 (或右键单击) **解决方案 "USB Application1" (2 个项目) **，然后选择 " **Configuration Manager**"。 为应用程序项目和包项目选择配置和平台。 在此练习中，我们选择 "调试" 和 "x64"，如下面的屏幕截图所示。
 
 ![winusb 应用程序模板](images/winusb-template-configuration-manager.png)
 
@@ -105,11 +105,11 @@ ms.locfileid: "88969396"
 
   `system()`上一步中的调用需要此 include 语句。
 
-  5. 在 " **解决方案资源管理器** " 窗口中，右键单击 "Application1 包"，然后选择 " **属性**"。
+  5. 在 " **解决方案资源管理器** " 窗口中，选择并按住 (或右键单击) USB Application1 包，然后选择 " **属性**"。
   6. 在 " **USB Application1 包属性页** " 窗口的左窗格中，导航到 " **配置属性 &gt; 驱动程序安装 &gt; 部署**"，如以下屏幕截图所示。
   7. 选中“部署前删除以前的驱动程序版本”。
   8. 对于**远程计算机名**，请选择配置用于测试和调试的计算机名。 在此练习中，我们将使用名为 dbg 目标的计算机。
-  9. 选择 " **安装/重新安装并验证**"。 单击“应用”。
+  9. 选择 " **安装/重新安装并验证**"。 选择“应用”。
 
         ![winusb 模板部署](images/winusb-template-deployment.png)
 
@@ -141,7 +141,7 @@ Deployment may take a few minutes...
 
     ![winusb 模板调试设置](images/winusb-template6.png)
 
-6. 从 **可用进程** 列表中选择应用程序，然后单击 " **附加**"。 你现在可以使用 " **即时" 窗口** 或使用 " **调试** " 菜单中的选项进行调试。
+6. 从 **可用进程** 列表中选择应用程序，并选择 " **附加**"。 你现在可以使用 " **即时" 窗口** 或使用 " **调试** " 菜单中的选项进行调试。
 
 上述说明使用 **Windows 调试工具调试应用程序–远程调试器**。 如果要使用 **远程 Windows 调试器** (包含在 Visual Studio) 中的调试器，请按照以下说明操作：
 
@@ -150,7 +150,7 @@ Deployment may take a few minutes...
 3. 创建工作文件夹，例如 C： \\ remotetemp。
 4. 将 UsbApplication1.exe 的应用程序复制到目标计算机上的工作文件夹。
 5. 在主计算机上的 Visual Studio 中，右键单击 **USB Application1 包** 项目，然后选择 " **卸载项目**"。
-6. 右键单击 **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后单击 " **调试**"。
+6. 选择并按住 (或右键单击) **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后选择 " **调试**"。
 7. 更改 **调试器以启动** 到 **远程 Windows 调试器**。
 8. 按照 [远程调试本地生成的项目](https://docs.microsoft.com/visualstudio/debugger/remote-debugging?view=vs-2015)中提供的说明更改项目设置以在远程计算机上运行可执行文件。 请确保 " **工作目录** " 和 " **远程命令** 属性" 反映目标计算机上的文件夹。
 9. 若要调试应用程序，请在 " **生成** " 菜单中选择 " **启动调试**"，或按 **F5。**
@@ -164,9 +164,9 @@ Deployment may take a few minutes...
 
         **注意**  包中没有任何驱动程序文件。 这是因为 INF 文件引用 Windows System32 文件夹中的内置驱动程序 Winusb.sys \\ 。
   3. 手动安装驱动程序。 在设备管理器中，通过在包中指定 INF 来更新驱动程序。 指向位于解决方案文件夹中的驱动程序包，如上一节所示。
-  4. 右键单击 **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后单击 " **调试**"。
+  4. 选择并按住 (或右键单击) **USB Application1** 项目，在 "项目属性" 中展开 " **配置属性** " 节点，然后选择 " **调试**"。
   5. 更改 **调试器以启动** 到 **本地 Windows 调试器**。
-  6. 右键单击 USB Application1 包项目，然后选择 " **卸载项目**"。
+  6. 选择并按住 (或右键单击 USB Application1 包项目) ，然后选择 " **卸载项目**"。
   7. 若要调试应用程序，请在 " **生成** " 菜单中选择 " **启动调试**"，或按 **F5**。
 
 ## <a name="template-code-discussion"></a>模板代码讨论

@@ -1,6 +1,6 @@
 ---
 title: DEVPROP_MASK_TYPEMOD
-description: 在 Windows Vista 和更高版本的 Windows，DEVPROP_MASK_TYPEMOD 掩码可以与结合使用中的按位 AND 属性数据类型标识符从提取 DEVPROP_TYPEMOD_Xxx 属性数据类型修饰符的属性数据类型标识符。
+description: 在 Windows Vista 和更高版本的 Windows 中，DEVPROP_MASK_TYPEMOD 掩码可以在按位 "与" 属性数据类型标识符组合在一起，以便从属性数据类型标识符提取 DEVPROP_TYPEMOD_Xxx 的属性数据类型修饰符。
 ms.assetid: 9ed153d7-dd37-4978-9e03-44efac2ab97a
 keywords:
 - DEVPROP_MASK_TYPEMOD 设备和驱动程序安装
@@ -14,24 +14,24 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 624b55141bcb68b2e54a7b1276b5a4444fe4490b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 300415646e2f9023baf5156676e1d09d90b16e0a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376793"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095923"
 ---
-# <a name="devpropmasktypemod"></a>DEVPROP_MASK_TYPEMOD
+# <a name="devprop_mask_typemod"></a>DEVPROP_MASK_TYPEMOD
 
 
-可以在 Windows Vista 和更高版本的 Windows 中，在使用按位 AND 中组合 DEVPROP_MASK_TYPEMOD 掩码[属性数据类型标识符](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))提取 DEVPROP_TYPEMOD_*Xxx*  [**属性数据类型修饰符**](https://docs.microsoft.com/previous-versions/ff549770(v=vs.85))从属性数据类型标识符。
+在 Windows Vista 和更高版本的 Windows 中，可以在按位 "与" 的 [属性数据类型标识符](/previous-versions/ff541476(v=vs.85)) 中组合 DEVPROP_MASK_TYPEMOD 掩码，以便从属性数据类型标识符提取 DEVPROP_TYPEMOD_*Xxx* [**属性数据类型修饰符**](/previous-versions/ff549770(v=vs.85)) 。
 
 <a name="remarks"></a>备注
 -------
 
-此掩码不能用作基本数据类型标识符、 属性数据类型修饰符或属性数据类型标识符。
+不能将此掩码用作基本数据类型标识符、属性数据类型修饰符或属性数据类型标识符。
 
-了解如何提取[**基本数据类型标识符**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))从属性数据类型标识符，请参阅[ **DEVPROP_MASK_TYPE** ](devprop-mask-type.md).
+有关如何从属性数据类型标识符提取 [**基本数据类型标识符**](/previous-versions/ff537793(v=vs.85)) 的信息，请参阅 [**DEVPROP_MASK_TYPE**](devprop-mask-type.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -43,23 +43,16 @@ ms.locfileid: "67376793"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpropdef.h （包括 Devpropdef.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpropdef (包含 Devpropdef) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DEVPROP_MASK_TYPE**](devprop-mask-type.md)
 
  
-
- 
-
-
-
-
-
 

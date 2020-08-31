@@ -4,17 +4,17 @@ description: SetupAPI 日志记录函数
 ms.assetid: d27bd44c-41c1-4546-b463-11ed3f5c7d84
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 15e228720c9372bcb6352a3f03f617b8a1776b40
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4188f2fb2aacf9e70c6ab44053b46ab06f768017
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386392"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096629"
 ---
 # <a name="setupapi-logging-functions"></a>SetupAPI 日志记录函数
 
 
-从 Windows Vista、 插即用 (PnP) 设备安装应用程序、 类安装程序和共同安装程序可以使用以下函数以将日志项写入[SetupAPI 文本日志](setupapi-text-logs.md)。
+从 Windows Vista 开始，即插即用 (PnP) 设备安装应用程序、类安装程序和共同安装程序可以使用以下函数将日志条目写入 [setupapi.log 文本日志](setupapi-text-logs.md)。
 
 <table>
 <colgroup>
@@ -24,29 +24,29 @@ ms.locfileid: "67386392"
 <thead>
 <tr class="header">
 <th align="left">函数</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupGetThreadLogToken&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)"><strong>SetupGetThreadLogToken</strong></a></p></td>
-<td align="left"><p>检索<a href="log-tokens.md" data-raw-source="[log token](log-tokens.md)">日志令牌</a>的线程的调用<a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupGetThreadLogToken&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)"> <strong>SetupGetThreadLogToken</strong></a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupGetThreadLogToken&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)"><strong>SetupGetThreadLogToken</strong></a></p></td>
+<td align="left"><p>检索名为<a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupGetThreadLogToken&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupgetthreadlogtoken)"><strong>SetupGetThreadLogToken</strong></a>的线程的<a href="log-tokens.md" data-raw-source="[log token](log-tokens.md)">日志标记</a>。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupSetThreadLogToken&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken)"><strong>SetupSetThreadLogToken</strong></a></p></td>
-<td align="left"><p>设置调用的线程的日志标记<a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupSetThreadLogToken&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken)"> <strong>SetupSetThreadLogToken</strong></a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupSetThreadLogToken&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken)"><strong>SetupSetThreadLogToken</strong></a></p></td>
+<td align="left"><p>设置名为 <a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken" data-raw-source="[&lt;strong&gt;SetupSetThreadLogToken&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupsetthreadlogtoken)"><strong>SetupSetThreadLogToken</strong></a>的线程的日志令牌。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog" data-raw-source="[&lt;strong&gt;SetupWriteTextLog&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)"><strong>SetupWriteTextLog</strong></a></p></td>
-<td align="left"><p>写入日志项<a href="setupapi-text-logs.md" data-raw-source="[SetupAPI text log](setupapi-text-logs.md)">SetupAPI 文本日志</a>。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog" data-raw-source="[&lt;strong&gt;SetupWriteTextLog&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)"><strong>SetupWriteTextLog</strong></a></p></td>
+<td align="left"><p>在 <a href="setupapi-text-logs.md" data-raw-source="[SetupAPI text log](setupapi-text-logs.md)">setupapi.log 文本日志</a>中写入日志项。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror" data-raw-source="[&lt;strong&gt;SetupWriteTextLogError&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)"><strong>SetupWriteTextLogError</strong></a></p></td>
-<td align="left"><p>有关特定于安装程序 Api 的错误或 Win32 错误 SetupAPI 文本日志中的写入信息。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror" data-raw-source="[&lt;strong&gt;SetupWriteTextLogError&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlogerror)"><strong>SetupWriteTextLogError</strong></a></p></td>
+<td align="left"><p>在 Setupapi.log 文本日志中写入有关 Setupapi.log 特定错误或 Win32 错误的信息。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextloginfline" data-raw-source="[&lt;strong&gt;SetupWriteTextLogInfLine&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextloginfline)"><strong>SetupWriteTextLogInfLine</strong></a></p></td>
-<td align="left"><p>包含指定的 INF 文件行的文本了 SetupAPI 文本日志中写入日志项。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextloginfline" data-raw-source="[&lt;strong&gt;SetupWriteTextLogInfLine&lt;/strong&gt;](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextloginfline)"><strong>SetupWriteTextLogInfLine</strong></a></p></td>
+<td align="left"><p>在 Setupapi.log 文本日志中写入一个日志项，该日志项包含指定的 INF 文件行的文本。</p></td>
 </tr>
 </tbody>
 </table>
@@ -54,10 +54,4 @@ ms.locfileid: "67386392"
  
 
  
-
- 
-
-
-
-
 

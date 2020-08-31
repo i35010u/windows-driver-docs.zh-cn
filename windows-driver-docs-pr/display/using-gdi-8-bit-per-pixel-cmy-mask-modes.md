@@ -3,19 +3,19 @@ title: 使用 GDI 每像素 8 位 CMY 掩码模式
 description: 使用 GDI 每像素 8 位 CMY 掩码模式
 ms.assetid: 0631f292-c1f1-4627-b116-0b54a34ea295
 keywords:
-- GDI WDK Windows 2000 显示、 半色调
-- 图形驱动程序 WDK Windows 2000 显示、 半色调
-- 绘制 WDK GDI、 半色调
+- GDI WDK Windows 2000 显示，半色调
+- 图形驱动程序 WDK Windows 2000 显示，半色调
+- 绘制 WDK GDI，半色调
 - 半色调 WDK GDI
-- 每像素 8 位 CMY 掩码模式 WDK GDI
+- 8位每像素 CMY 掩码模式 WDK GDI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cdb2ffafb7fe1edc6fdc286f9dbdaf4de5cfeb52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41a255763fc1e0febef9cb1cc77edb13cc2b406e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370619"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067092"
 ---
 # <a name="using-gdi-8-bit-per-pixel-cmy-mask-modes"></a>使用 GDI 每像素 8 位 CMY 掩码模式
 
@@ -23,21 +23,21 @@ ms.locfileid: "67370619"
 ## <span id="ddk_using_gdi_8_bit_per_pixel_cmy_mask_modes_gg"></span><span id="DDK_USING_GDI_8_BIT_PER_PIXEL_CMY_MASK_MODES_GG"></span>
 
 
-在 Microsoft Windows 2000 [ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数返回 8 位 / 像素的单色或 CMY 调色板。 此函数在 Windows XP 及更高版本，已修改以致它还会返回倒排索引 CMY 调色板时*Use8BPPMaskPal*参数设置为**TRUE**。 返回的调色板的类型取决于存储中的值*pPaletteEntry*\[0\]时**HT\_Get8BPPMaskPalette**调用。 如果*pPaletteEntry*\[0\]设置倒排索引调色板返回到 RGB0。 如果*pPaletteEntry*\[0\]设置为 0，返回正常 CMY 调色板。
+在 Microsoft Windows 2000 中， [**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette) 函数返回每像素8位单色或调色板。 在 Windows XP 和更高版本中，此函数已被修改，因此当 *Use8BPPMaskPal* 参数设置为 **TRUE**时，它还会返回已反转索引的 CMY 调色板。 返回的调色板的类型取决于*pPaletteEntry* \[ \] 调用**HT \_ Get8BPPMaskPalette**时存储在 pPaletteEntry 0 中的值。 如果*pPaletteEntry* \[ 0 \] 设置为 "RGB0"，则返回一个反转索引调色板。 如果*pPaletteEntry* \[ 0 \] 设置为0，则返回正常的 CMY 调色板。
 
-此行为的更改的原因**HT\_Get8BPPMaskPalette**是，当 Windows GDI 使用 ROPs，基于调色板中的索引而不是在调色板颜色，它假定该索引 0 的调色板的始终是黑色和最后一个索引始终为白色。 GDI 不会检查调色板条目。 在此更改**HT\_Get8BPPMaskPalette**可确保正确 ROP 输出，而不是相反的结果。
+此更改的 ** \_ Get8BPPMaskPalette** 是因为当 Windows GDI 使用的 ROPs （基于调色板中的索引，而不是调色板颜色）时，它会假定调色板的索引0始终为黑色，最后一个索引始终为白色。 GDI 不检查调色板项。 此 **超线程 \_ Get8BPPMaskPalette** 中的这一更改可确保正确的 ROP 输出，而不是相反的结果。
 
-若要更正的 GDI ROP 行为，GDI 中 Windows XP 及更高版本支持特殊 CMY 调色板组合格式中的 CMY 掩码调色板条目开始时间索引 255 （白色） 和 0 （白色） 和到 25 的索引开始，逐渐到索引 0 （黑色），而不是从索引处开始工作5 （黑色）。 反转 CMY 模式还将所有 CMY 掩码颜色条目都移动到的完整 256 输入面板中，使用的开头和结尾使用等量的黑色和白色条目填充的调色板的中间。
+若要更正 GDI ROP 行为，Windows XP 和更高版本中的 GDI 支持特殊的 CMY 调色板组合格式，在该格式中，CMY 掩码调色板项从索引255开始 (白色) 并向下移动到索引 0 (黑色) ，而不是从索引0开始，而不是从索引 255 0 开始 (黑色) 。 CMY 反转模式还会将所有 CMY 掩码颜色项移到完整256项调色板的中间，并且调色板的开头和结尾用相等的黑色和白色项进行填充。
 
-**请注意**  中的讨论中，术语*CMY 模式*的以前的实现中支持的模式是指[ **HT\_Get8BPPMaskPalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette). 术语*CMY\_结模式*仅支持 Windows XP 和更高版本的 GDI，在其中此函数反转的位掩码的模式是指索引时*pPaletteEntry*\[0\]设置为 RGB0。
+**注意**   在下面的讨论中，术语 " *CMY" 模式*是指在以前的[**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)实现中支持的模式。 术语*CMY \_ 反转模式*是指仅在 Windows XP 和更高版本的 GDI 上支持的模式，在此模式下，当*pPaletteEntry* \[ 0 \] 设置为 "RGB0" 时，此函数将反转位掩码索引。
 
  
 
-以下步骤所需的所有 Windows XP 和更高版本的驱动程序使用 Windows GDI 半色调每像素 8 位 CMY 掩码模式。 如果正在开发用于 Windows 2000 的驱动程序，应限制为 8 位 / 像素的单色调色板的驱动程序的使用。
+所有 Windows XP 和更高版本的驱动程序都需要以下步骤，这些驱动程序使用 Windows GDI 半色调8位每像素 CMY 掩码模式。 如果要开发适用于 Windows 2000 的驱动程序，应将驱动程序的使用限制为每像素8位单色调色板。
 
-1.  设置**flHTFlags**的成员[ **GDIINFO** ](https://docs.microsoft.com/windows/desktop/api/winddi/ns-winddi-_gdiinfo)结构到 HT\_标志\_反转\_8BPP\_位掩码\_IDX 以便该 GDI 将呈现图像中一个 CMY\_结模式。
+1.  将[**GDIINFO**](/windows/desktop/api/winddi/ns-winddi-_gdiinfo)结构的**flHTFlags**成员设置为超线程 \_ 标志 \_ 反转 \_ 8BPP \_ 位掩码 \_ IDX，使 GDI 将以 CMY 反转模式之一呈现图像 \_ 。
 
-2.  设置*pPaletteEntry*\[0\] ，如下所示之前调用**HT\_Get8BPPMaskPalette**:
+2.  *pPaletteEntry* \[ \] 调用**HT \_ Get8BPPMaskPalette**之前，请将 pPaletteEntry 0 设置为以下内容：
 
     ```cpp
     pPaletteEntry[0].peRed   = 'R';
@@ -46,25 +46,25 @@ ms.locfileid: "67370619"
     pPaletteEntry[0].peFlags = '0';
     ```
 
-    若要执行此操作，调用方应使用**HT\_设置\_BITMASKPAL2RGB**宏 (在中定义*winddi.h*)。 下面是一个示例，演示使用此宏：
+    为此，调用方应使用*winddi*) 中定义 (的**HT \_ SET \_ BITMASKPAL2RGB**宏。 下面是演示如何使用此宏的示例：
 
     ```cpp
     HT_SET_BITMASKPAL2RGB(pPaletteEntry)
     ```
 
-    这里*pPaletteEntry*是一个指针指向为调用中传递 PALETTEENTRY **HT\_Get8BPPMaskPalette**函数。 当此宏完成执行时， *pPaletteEntry*\[0\]将包含字符串 RGB0。
+    此处的 *pPaletteEntry* 是指向在对 **HT \_ Get8BPPMaskPalette** 函数的调用中传递的 PALETTEENTRY 的指针。 此宏完成执行时， *pPaletteEntry* \[ 0 \] 将包含字符串 "RGB0"。
 
-3.  检查*pPaletteEntry*参数从调用返回[ **HT\_Get8BPPMaskPalette** ](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)使用**HT\_IS\_BITMASKPALRGB**中定义的宏*winddi.h*。 下面是一个示例，演示使用此宏。
+3.  [**使用 Get8BPPMaskPalette \_ **](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)在*winddi*中定义的** \_ \_ BITMASKPALRGB**宏来检查从调用中返回的*pPaletteEntry*参数。 下面的示例演示如何使用此宏。
 
     ```cpp
     InvCMYSupported = HT_IS_BITMASKPALRGB(pPaletteEntry)
     ```
 
-    在此表达式中， *pPaletteEntry*是一个指针指向传递给 PALETTEENTRY **HT\_Get8BPPMaskPalette**函数。 如果此宏将返回 **，则返回 TRUE**，然后 GDI *does*支持倒排的 CMY 8 位每像素位掩码模式。 调用方必须使用转换表将转换为的墨水量的面板索引。 请参阅[转换 8 位的每像素的墨水量的半色调索引](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md)有关生成此转换表的函数的示例。
+    在此表达式中， *pPaletteEntry* 是指向传递给 **HT \_ Get8BPPMaskPalette** 函数的 PALETTEENTRY 的指针。 如果此宏返回 **TRUE**， *则 GDI 支持* CMY 的每像素反位掩码模式反转。 调用方必须使用转换表将调色板索引转换为墨迹级别。 有关生成此转换表的函数的示例，请参阅 [将每像素8位半色调索引转换为墨迹级别](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md) 。
 
-    如果此宏将返回**FALSE**，然后当前版本的 GDI*却不*支持倒排的 CMY 8 位每像素位掩码模式。 在这种情况下，GDI 支持仅较旧 CMY noninverted 模式。
+    如果此宏返回 **FALSE**，则当前版本 *的 GDI 不* 支持反转 CMY 8 位每像素位掩码模式。 在这种情况下，GDI 仅支持较早的 CMY noninverted 模式。
 
-对于 GDI 版本支持每像素 8 位 CMY\_结模式的含义*CMYMask*参数值传递给[ **HT\_Get8BPPMaskPalette**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数进行了更改。 下表汇总了所做的更改：
+对于支持每像素8位 CMY 反转模式的 GDI 版本 \_ ，传递到[**HT \_ Get8BPPMaskPalette**](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)函数的*CMYMask*参数值的含义已更改。 下表总结了这些更改：
 
 <table>
 <colgroup>
@@ -79,167 +79,167 @@ ms.locfileid: "67370619"
  
 </div>
 值</th>
-<th align="left">CMY 模式下索引
+<th align="left">CMY 模式索引
 <div>
  
 </div>
-(pPaletteEntry[0] != 'RGB0')</th>
-<th align="left">CMY_INVERTED 模式下索引
+ (pPaletteEntry [0]！ = ' RGB0 ' ) </th>
+<th align="left">CMY_INVERTED 模式索引
 <div>
  
 </div>
-(pPaletteEntry[0] == 'RGB0')</th>
+ (pPaletteEntry [0] = = ' RGB0 ' ) </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0</p></td>
-<td align="left"><p>0:白色</p>
+<td align="left"><p>0：白色</p>
 <div>
  
 </div>
-1 到 254 个：浅灰色-&gt;深灰色
+1到254：浅灰色- &gt; 灰色灰色
 <div>
  
 </div>
-255:黑色</td>
+255：黑色</td>
 <td align="left"><p>0-黑色</p>
 <div>
  
 </div>
-1 到 254 个：深灰色-&gt;浅灰色
+1到254：深色灰色- &gt; 浅灰色
 <div>
  
 </div>
-255:白色</td>
+255：白色</td>
 </tr>
 <tr class="even">
 <td align="left"><p>1</p></td>
-<td align="left"><p>0:白色</p>
+<td align="left"><p>0：白色</p>
 <div>
  
 </div>
-1 到 123:123 5 x 5 x 5 种颜色
+1到123： 123 5x5x5 颜色
 <div>
  
 </div>
-124 到 255:黑色</td>
-<td align="left"><p>0 到 65:黑色</p>
+124到255：黑色</td>
+<td align="left"><p>0到65：黑色</p>
 <div>
  
 </div>
-66 到 189:123 5 x 5 x 5 加上一个重复进行着色。 127 索引处的项复制到索引 128。
+66到189： 123 5x5x5 色加一个重复项。 索引127处的项将复制到索引128。
 <div>
  
 </div>
-190 到 255:白色
+190到255：白色
 <div>
  
 </div>
 <div>
  
 </div>
-在索引 127 和 128 的值被复制，以确保 XOR ROP 正常运行。</td>
+索引为127和128的值是重复的，以确保 XOR ROP 工作正常。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>2</p></td>
-<td align="left"><p>0:白色</p>
+<td align="left"><p>0：白色</p>
 <div>
  
 </div>
-1 到 214:214 x 6 x 6 颜色 6
+1到214： 214 6x6x6 颜色
 <div>
  
 </div>
-215 到 255:黑色</td>
-<td align="left"><p>0 到 20:黑色</p>
+215到255：黑色</td>
+<td align="left"><p>0到20：黑色</p>
 <div>
  
 </div>
-21 到 234:214 x 6 x 6 颜色 6
+21到234： 214 6x6x6 颜色
 <div>
  
 </div>
-235 到 255:白色</td>
+235到255：白色</td>
 </tr>
 <tr class="even">
-<td align="left"><p>3 到 255</p></td>
-<td align="left"><p>0:白色</p>
+<td align="left"><p>3到255</p></td>
+<td align="left"><p>0：白色</p>
 <div>
  
 </div>
-1 到 254 个：CxMxY 颜色位掩码
+1到254： CxMxY 色阶
 <div>
  
 </div>
-255:黑色
-<div>
- 
-</div>
-<div>
- 
-</div>
-在上述产品中，C、 M 和 Y 的青、 品红和黄，级别数分别表示。
+255：黑色
 <div>
  
 </div>
 <div>
  
 </div>
-<strong>注意</strong>：对于这些模式的有效组合不得具有任何青色、 洋红色、 或黄色的墨水量等于零。 对于此类组合中， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"> <strong>HT_Get8BPPMaskPalette</strong> </a>通过返回的零计数调色板中指示的错误条件及其<em>pPaletteEntry</em>参数。</td>
-<td align="left"><p>0:黑色</p>
-<div>
- 
-</div>
-1 到 254 个：居中的 CxMxY 颜色使用黑色的开头和末尾的空白填充
-<div>
- 
-</div>
-CxMxY 是否为奇数，128 索引处的项是一个的重复的索引 127 处。
-<div>
- 
-</div>
-255:白色
+在上述产品中，C、M 和 Y 分别表示青色、洋红色和黄色的级别数。
 <div>
  
 </div>
 <div>
  
 </div>
-在上述产品中，C、 M 和 Y 的青、 品红和黄，级别数分别表示。
+<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
+<td align="left"><p>0：黑色</p>
+<div>
+ 
+</div>
+1到254：在结尾处以黑色填充的居中 CxMxY 颜色
+<div>
+ 
+</div>
+如果 CxMxY 是奇数，则索引128处的条目是索引127处的条目。
+<div>
+ 
+</div>
+255：白色
 <div>
  
 </div>
 <div>
  
 </div>
-<strong>注意：</strong> 256 条目调色板中的操作中心 (x M x Y C) 索引。 即，有相等数量的黑色条目填充低端的调色板和白色填充的高端的条目。
+在上述产品中，C、M 和 Y 分别表示青色、洋红色和黄色的级别数。
 <div>
  
 </div>
 <div>
  
 </div>
-<strong>注意</strong>：对于这些模式的有效组合不得具有任何青色、 洋红色、 或黄色的墨水量等于零。 对于此类组合中， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"> <strong>HT_Get8BPPMaskPalette</strong> </a>通过返回的零计数调色板中指示的错误条件及其<em>pPaletteEntry</em>参数。</td>
+<strong>注意：</strong> (C x M x Y) 索引在256项调色板中居中。 也就是说，将在调色板的低端填充相同数量的黑色条目，并且空白条目会填充高端。
+<div>
+ 
+</div>
+<div>
+ 
+</div>
+<strong>注意</strong>：对于这些模式，有效的组合不得具有任何青色、洋红色或黄色墨迹级别等于零。 对于这种组合， <a href="https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette" data-raw-source="[&lt;strong&gt;HT_Get8BPPMaskPalette&lt;/strong&gt;](/windows/desktop/api/winddi/nf-winddi-ht_get8bppmaskpalette)"><strong>HT_Get8BPPMaskPalette</strong></a> 通过在其 <em>pPaletteEntry</em> 参数中返回一个零计数调色板来指示错误条件。</td>
 </tr>
 </tbody>
 </table>
 
  
 
--   值*CMYMask*为 0 （灰度） 时，调用方可以处理 CMY 模式或 CMY\_结模式。 但请注意，仅在 CMY 中被正确处理了 GDI ROPs\_结模式。
+-   对于 *CMYMask* 为 0 (灰色刻度) 的值，调用方可以处理 CMY 模式或 CMY \_ 反转模式。 但请注意，仅在 CMY 反转模式下正确处理 GDI ROPs \_ 。
 
-    CMY 模式：索引 0 到 255 表示从白色到黑色灰度。
+    CMY 模式：索引0到255表示从白色到黑色的灰色刻度。
 
-    CMY\_结模式：索引 0 到 255 表示灰色刻度范围从黑色到白色。
+    CMY \_ 反转模式：索引0到255表示灰色刻度，范围为黑色到白色。
 
--   有关的任何有效值*CMYMask*从 1 到 255，调用方应使用示例函数中所示[转换 8 位的每像素的墨水量的半色调索引](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md)转换到的墨水量的索引。
+-   对于从1到255的任何有效值 *CMYMask* ，调用方应使用将 [8 位每像素半色调索引转换为墨迹级别](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md) 中所示的示例函数，将索引转换为墨迹级别。
 
--   有关的任何有效值*CMYMask*从 1 到 255，CMY\_结模式填充数组的开头和相同数量的数组的末尾的白色条目的黑色项调色板。 在数组中间使用其他颜色进行填充。 这会确保所有 256 色调色板条目的平衡地都分布因此该 GDI ROPs，这是基于索引的、 不基于颜色的工作正常。 颜色是平衡地分布时索引处的颜色*N*就是索引处的颜色 (256 个字符- *N*)。 一种颜色和及其反转打印在一起，则结果为黑色。 换而言之，对于给定的颜色和及其反转，两个的青色墨水量添加到最大青色墨迹级别中，两个的洋红色墨水量和两个的黄色墨水量一样。 生成的墨水量对应于黑色。
+-   对于从1到255的任何有效值 *CMYMask* ，CMY \_ 反转模式使用数组开头的黑色条目填充调色板，并在数组的末尾插入相同数量的空白项。 数组的中间部分用其他颜色填充。 这可确保所有256的调色板项都以对称方式分发，以便基于索引的 GDI ROPs （而不是基于颜色的）能够正常工作。 当索引为 *N* 的颜色为索引 (256- *N*) 处的颜色反转时，颜色将对称分布。 当彩色及其逆色一起打印时，结果为黑色。 换而言之，对于给定颜色及其反转，两个青色墨迹级别将添加到最大蓝绿色墨迹级别，就是两个洋红色墨迹级别和两个黄色墨迹级别。 生成的墨迹级别对应于黑色。
 
-    例如，共有的 27 (3 x 3 x 3) 具有三个级别每个的青、 品红和黄 CMY 调色板的颜色，包括黑色和白色的索引。 因为 27 数为奇数并且 GDI 需要 CMY\_结模式面板将填充以黑色或白色条目数相等，GDI 重复中间索引 （索引 13 为 27 颜色） 处的项。 在索引 13 和 14 现在的条目相同的现在调色板将具有 28 的颜色。 若要填充调色板，GDI 调色板 （索引 0 到 113） 的开始处放置 114 黑色条目、 会放到 28 颜色索引 114 （黑色） 通过 141 （白色），并使用白色 （索引 142 到 255） 填充剩余 114 项。 这样，总共 256 条目 (114 + 28 + 114 = 256 个条目)。 索引此布局可确保所有 ROPs 将正确都呈现。 中的示例函数[转换 8 位的每像素的墨水量的半色调索引](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md)说明了如何生成墨水量，以及 Windows 2000 CMY332 索引转换表。
+    例如，每个绿色、洋红色和黄色都具有三个级别的 CMY 调色板总共有27个 (3 x 3 x 3) 的颜色（包括黑色和白色）索引。 因为27是奇数，并且因为 GDI 要求 \_ 使用相等的黑白项号填充 CMY 反转模式调色板，所以 gdi 会将中间索引处的条目复制 (第27种颜色) 的索引为13。 如果索引为13和14的条目现在相同，调色板现在将具有28种颜色。 为了填充调色板，GDI 会将调色板114上的黑色条目 (索引0到 113) ，将28个颜色置于索引 114 (黑色) 到 141 (白色) ，并使用白色 (索引) 到114来填充剩余的142条目。 这会生成256项， (114 + 28 + 114 = 256 项) 。 此索引布局可确保正确呈现所有 ROPs。 将 [每像素8位半色调索引转换为墨迹级别](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md) 的示例函数说明了如何生成墨迹级别以及 WINDOWS 2000 CMY332 索引转换表。
 
-    下表列出了对 3 x 3 个调色板中前面段落所述的 3 倍的青色、 洋红色和黄色级别。 256 色调色板，中间使用等量的黑色填充内容的开头和末尾的白色填充内容嵌入 28 颜色 （27 原始调色板颜色加上一个重复）。 是对称的这意味着，如果索引处的墨水量的调色板*N*添加到这些索引处 (256 个字符- *N*)，结果将显示为黑色 (青色、 洋红色和黄色级别 = 2)。
+    下表列出了上一段中所述的 3 x 3 x 3 调色板的青色、洋红色和黄色级别。 28个颜色 (27 个原始调色板颜色加上一个重复的) 嵌入在256调色板的中间，并在结尾处有相同的黑色填充量，最后空白填充。 调色板是对称的，这意味着，如果将索引为 *N* 的墨迹级别添加到索引 (256- *N*) ，则结果将为黑色 (青色、洋红色和黄色 = 2) 。
 
     <table>
     <colgroup>
@@ -250,194 +250,194 @@ CxMxY 是否为奇数，128 索引处的项是一个的重复的索引 127 处�
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">调色板索引 (3 x 3 x 3 个索引)</th>
-    <th align="left">青色级别 0 到 2</th>
-    <th align="left">洋红色级别 0 到 2</th>
-    <th align="left">黄色级别 0 到 2</th>
+    <th align="left">调色板索引 (3x3x3 索引) </th>
+    <th align="left">青色 Level0 为2</th>
+    <th align="left">洋红色 Level0 为2</th>
+    <th align="left">黄色 Level0 为2</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left"><p>0 到 113</p>
+    <td align="left"><p>0到113</p>
     <p>黑色</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>114 (0)</p>
+    <td align="left"><p>114 (0) </p>
     <p>黑色</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>115 (1)</p></td>
+    <td align="left"><p>115 (1) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>116 (2)</p></td>
+    <td align="left"><p>116 (2) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>117 (3)</p></td>
+    <td align="left"><p>117 (3) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>118 (4)</p></td>
+    <td align="left"><p>118 (4) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>119 (5)</p></td>
+    <td align="left"><p>119 (5) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>120 (6)</p></td>
+    <td align="left"><p>120 (6) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>121 (7)</p></td>
+    <td align="left"><p>121 (7) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>122 (8)</p></td>
+    <td align="left"><p>122 (8) </p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>123 (9)</p></td>
+    <td align="left"><p>123 (9) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>124 (10)</p></td>
+    <td align="left"><p>124 (10) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>125 (11)</p></td>
+    <td align="left"><p>125 (11) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>126 (12)</p></td>
+    <td align="left"><p>126 (12) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>127 (13)</p>
-    <p>复制到索引 128</p></td>
+    <td align="left"><p>127 (13) </p>
+    <p>已复制到索引128</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>128 (14)</p>
-    <p>重复的索引 127 处的项</p></td>
+    <td align="left"><p>128 (14) </p>
+    <p>索引127处的条目重复</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>129 (15)</p></td>
+    <td align="left"><p>129 (15) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>130 (16)</p></td>
+    <td align="left"><p>130 (16) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>131 (17)</p></td>
+    <td align="left"><p>131 (17) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>132 (18)</p></td>
+    <td align="left"><p>132 (18) </p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>133 (19)</p></td>
+    <td align="left"><p>133 (19) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>134 (20)</p></td>
+    <td align="left"><p>134 (20) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>135 (21)</p></td>
+    <td align="left"><p>135 (21) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>2</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>136 (22)</p></td>
+    <td align="left"><p>136 (22) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>137 (23)</p></td>
+    <td align="left"><p>137 (23) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>138 (24)</p></td>
+    <td align="left"><p>138 (24) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>1</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>139 (25)</p></td>
+    <td align="left"><p>139 (25) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>2</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>140 (26)</p></td>
+    <td align="left"><p>140 (26) </p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>1</p></td>
     </tr>
     <tr class="odd">
-    <td align="left"><p>141 (27)</p>
+    <td align="left"><p>141 (27) </p>
     <p>白色</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
     </tr>
     <tr class="even">
-    <td align="left"><p>142 到 255</p>
+    <td align="left"><p>142至255</p>
     <p>白色</p></td>
     <td align="left"><p>0</p></td>
     <td align="left"><p>0</p></td>
@@ -450,7 +450,7 @@ CxMxY 是否为奇数，128 索引处的项是一个的重复的索引 127 处�
 
 <!-- -->
 
--   如果请求的调色板是 CMY 模式调色板 (不 CMY\_结模式调色板)，然后针对的值*CMYMask*呈现每像素 8 位字节索引位 3 到 255 之间，具有以下含义。 在这种情况下，位模式表示可在直接未转换的墨水量。 这同样适用时 CMY\_结模式字节索引映射到 CMY 模式下使用的转换表**CMY332Idx**成员。 请参阅[转换 8 位的每像素的墨水量的半色调索引](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md)有关详细信息。
+-   如果请求的调色板是 CMY 模式调色板 (不是 CMY \_ 反转模式调色板) ，则 *CMYMask* 的值从3到255，则呈现的8位每像素字节索引位具有以下含义。 在这种情况下，位模式表示无需转换即可直接使用的墨迹级别。 当 \_ 使用平移表的 **CMY332Idx** 成员将 CMY 反转模式字节索引映射到 CMY 模式时，这同样适用。 有关详细信息，请参阅 [将每像素8位半色调索引转换为墨迹级别](translating-8-bit-per-pixel-halftone-indexes-to-ink-levels.md) 。
 
 ```cpp
   Bit     7 6 5 4 3 2 1 0
@@ -465,10 +465,4 @@ CxMxY 是否为奇数，128 索引处的项是一个的重复的索引 127 处�
 ```
 
  
-
- 
-
-
-
-
 

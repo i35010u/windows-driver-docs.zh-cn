@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 406c326784aa2a1c9f1060d4b3c7dc5ddd71fcab
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1051af1a1f4d69d27ff61c9fc17128baab025e13
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374225"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095679"
 ---
-# <a name="kscategorymultiplexer"></a>KSCATEGORY_MULTIPLEXER
+# <a name="kscategory_multiplexer"></a>KSCATEGORY_MULTIPLEXER
 
 
-KSCATEGORY_MULTIPLEXER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 功能的多路复用器设备类别。
+为多路复用器设备的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_MULTIPLEXER[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_MULTIPLEXER[设备接口类](https://docs.microsoft.com/windows-hardw
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,13 +54,13 @@ KSCATEGORY_MULTIPLEXER[设备接口类](https://docs.microsoft.com/windows-hardw
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_MULTIPLEXER 向操作系统指示设备支持 KSCATEGORY_MULTIPLEXER 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_MULTIPLEXER 的实例，以向操作系统指示设备支持 KSCATEGORY_MULTIPLEXER 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
 
-多路复用器有关的信息，请参阅[拓扑筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/topology-filters)。
+有关 multiplexers (的信息，请参阅 [拓扑筛选器](../audio/topology-filters.md)。
 
-有关 KSCATEGORY_MULTIPLEXER 功能类别的详细信息，请参阅[编码器安装和注册](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-installation-and-registration)。
+有关 KSCATEGORY_MULTIPLEXER 功能类别的详细信息，请参阅 [编码器安装和注册](../stream/encoder-installation-and-registration.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,17 +72,11 @@ KS 设备的驱动程序注册 KSCATEGORY_MULTIPLEXER 向操作系统指示设�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

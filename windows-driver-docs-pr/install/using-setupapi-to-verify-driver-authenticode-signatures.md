@@ -3,20 +3,20 @@ title: 使用 SetupAPI 验证驱动程序验证码签名
 description: 使用 SetupAPI 验证驱动程序验证码签名
 ms.assetid: 2019d77d-2d98-4bae-8d9d-aa41e47f3811
 keywords:
-- 安装程序 Api 函数 WDK，验证签名
-- 验证码签名 WDK
-- 签名 WDK，验证码
-- 数字签名 WDK，验证码
-- 验证 Authenticode 签名
-- 检查验证码签名
+- Setupapi.log 函数 WDK，验证签名
+- Authenticode 签名 WDK
+- 签名 WDK，Authenticode
+- 数字签名 WDK，Authenticode
+- 验证验证码签名
+- 检查 Authenticode 签名
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95400f0eea3f1b1fbc86a0e94d271863735384a1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fb1c223df91d19e02e2b33c80228465e80643d5d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384754"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096383"
 ---
 # <a name="using-setupapi-to-verify-driver-authenticode-signatures"></a>使用 SetupAPI 验证驱动程序验证码签名
 
@@ -24,55 +24,49 @@ ms.locfileid: "67384754"
 
 
 
-您可以使用以下过程验证驱动程序包含有效的验证码[数字签名](digital-signatures.md)。 从 Microsoft Windows Server 2003 支持这些过程。
+你可以使用以下过程来验证驱动程序是否具有有效的验证码 [数字签名](digital-signatures.md)。 从 Microsoft Windows Server 2003 开始支持这些过程。
 
-### <a name="to-determine-whether-a-driver-has-a-valid-authenticode-signature"></a>若要确定驱动程序是否包含有效的 Authenticode 签名
+### <a name="to-determine-whether-a-driver-has-a-valid-authenticode-signature"></a>确定驱动程序是否具有有效的 Authenticode 签名
 
 检查 DNF_AUTHENTICODE_SIGNED 标志。
 
-Windows 驱动程序包含有效的 Authenticode 签名，如果设置此标志**标志**驱动程序节点的成员[ **SP_DRVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构。 (此外请注意，Windows，如果该驱动程序设置 DNF_INF_IS_SIGNED 标志[WHQL 版本签名](whql-release-signature.md)，如果系统提供的驱动程序，或如果它包含验证码签名。)
+如果驱动程序具有有效的 Authenticode 签名，则 Windows 将此标志设置为驱动程序节点[**SP_DRVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_drvinstall_params)结构的**Flags**成员。  (还应注意，如果驱动程序具有 [WHQL 版本签名](whql-release-signature.md)（如果它是系统提供的驱动程序）或具有 Authenticode 签名，则 Windows 将设置 DNF_INF_IS_SIGNED 标志。 ) 
 
-### <a name="to-verify-that-an-inf-file-has-a-valid-authenticode-signature"></a>若要验证的 INF 文件具有有效的 Authenticode 签名
+### <a name="to-verify-that-an-inf-file-has-a-valid-authenticode-signature"></a>验证 INF 文件是否具有有效的 Authenticode 签名
 
-1.  调用[INF 文件处理函数](inf-file-processing-functions.md) **SetupVerifyInfFile**。
+1.  调用 [INF 文件处理函数](inf-file-processing-functions.md) **SetupVerifyInfFile**。
 
 2.  检查函数返回的错误代码。
 
-    INF 文件不是系统提供，并且没有有效的 WHQL 数字签名，但它具有一个有效的 Authenticode 签名，如果**SetupVerifyInfFile**返回**FALSE**和[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)返回以下错误代码之一：
+    如果 INF 文件不是系统提供的，并且没有有效的 WHQL 数字签名，但它具有有效的 Authenticode 签名，则 **SetupVerifyInfFile** 将返回 **FALSE** ，且 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 返回以下错误代码之一：
 
     <a href="" id="error-authenticode-trusted-publisher"></a>ERROR_AUTHENTICODE_TRUSTED_PUBLISHER  
-    指示由于发布服务器的证书安装在发布服务器是受信任[受信任的发行者证书存储区](trusted-publishers-certificate-store.md)。
+    指示发布服务器受信任，因为发行者的证书安装在 " [受信任的发行者" 证书存储](trusted-publishers-certificate-store.md)中。
 
     <a href="" id="error-authenticode-trust-not-established"></a>ERROR_AUTHENTICODE_TRUST_NOT_ESTABLISHED  
-    表示由于发布服务器的签名证书未安装受信任的发行者证书存储中不能自动建立信任。 但是，这不一定表示出现错误。 相反，它表示调用方必须应用特定于调用方的策略中发布服务器建立信任。
+    指示由于不在受信任的发布者证书存储中安装发布服务器的签名证书，无法自动建立信任。 但是，这并不一定表示出现了错误。 相反，它指示调用方必须应用调用方特定的策略以在发布服务器中建立信任。
 
-INF 文件具有有效的 Authenticode 签名，如果**SetupVerifyInfFile**也 SP_INF_SIGNER_INFO 输出结构中会返回以下信息：
-
--   **DigitalSigner**成员设置为签名者的名称。
-
--   **CatalogFile**成员设置为相应的签名的编录文件的完整路径。
-
-但是，请注意， **SetupVerifyInfFile**不会返回中的版本**DigitalSignerVersion**成员。
-
-### <a name="to-verify-that-a-file-has-a-valid-authenticode-signature"></a>若要验证文件具有有效的 Authenticode 签名
-
-调用安装程序 Api 函数**SetupScanFileQueue**使用 SPQ_SCAN_USE_CALLBACK_SIGNERINFO 标志。
-
-**SetupScanFileQueue**将 SPFILENOTIFY_QUEUESCAN_SIGNERINFO 请求发送到调用方的回调例程，并将指针传递给 FILEPATHS_SIGNERINFO 结构。 如果文件已签名使用有效的 Authenticode 签名，该函数设置的错误代码为适当的 ERROR_AUTHENTICODE_Xxx 值的文件调用回调例程之前。 函数还将 FILEPATHS_SIGNERINFO 结构中设置的以下信息：
+如果 INF 文件具有有效的 Authenticode 签名，则 **SetupVerifyInfFile** 还会在 SP_INF_SIGNER_INFO 输出结构中返回以下信息：
 
 -   **DigitalSigner**成员设置为签名者的名称。
 
--   **CatalogFile**成员设置为相应的签名的编录文件的完整路径。
+-   **CatalogFile**成员设置为相应的已签名目录文件的完整路径。
 
-但是，请注意版本中未设置**版本**成员。
+但请注意， **SetupVerifyInfFile** 不返回 **DigitalSignerVersion** 成员中的版本。
 
-**SetupScanFileQueue** ERROR_AUTHENTICODE_Xxx 错误代码设置相同的方式，如本主题中前面所述**SetupVerifyInfFile**。
+### <a name="to-verify-that-a-file-has-a-valid-authenticode-signature"></a>验证文件是否具有有效的 Authenticode 签名
+
+使用 SPQ_SCAN_USE_CALLBACK_SIGNERINFO 标志调用 Setupapi.log 函数 **SetupScanFileQueue** 。
+
+**SetupScanFileQueue** 将 SPFILENOTIFY_QUEUESCAN_SIGNERINFO 请求发送到调用方的回调例程，并传递指向 FILEPATHS_SIGNERINFO 结构的指针。 如果使用有效的验证码签名对文件进行签名，则在调用文件的回调例程之前，函数会将错误代码设置为相应的 ERROR_AUTHENTICODE_Xxx 值。 函数还在 FILEPATHS_SIGNERINFO 结构中设置以下信息：
+
+-   **DigitalSigner**成员设置为签名者的名称。
+
+-   **CatalogFile**成员设置为相应的已签名目录文件的完整路径。
+
+但请注意，版本不是在 **版本** 成员中设置的。
+
+**SetupScanFileQueue** 按照本主题中前面所述的 **SetupVerifyInfFile**设置 ERROR_AUTHENTICODE_Xxx 错误代码。
 
  
-
- 
-
-
-
-
 

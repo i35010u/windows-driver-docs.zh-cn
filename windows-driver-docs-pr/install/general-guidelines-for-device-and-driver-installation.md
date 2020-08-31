@@ -7,35 +7,29 @@ keywords:
 - 驱动程序安装 WDK，一般指导原则
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 711cf27328b9f07961ac0074498dbf4510594605
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f73f30a2ec56226c3311e7e4d93c40d155f6505
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387339"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095723"
 ---
 # <a name="general-guidelines-for-device-and-driver-installation"></a>设备和驱动程序安装常规指南
 
 
-设备和驱动程序安装在 Windows 操作系统上的基本目标是使过程尽可能轻松为用户。 安装过程和组件的你[驱动程序包](driver-packages.md)应与操作系统的无缝协作[设备安装组件](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))。
+在 Windows 操作系统上安装设备和驱动程序的基本目标是尽可能使用户尽可能轻松地完成此过程。 安装过程和 [驱动程序包](driver-packages.md) 的组件应与操作系统的 [设备安装组件](/previous-versions/ff541277(v=vs.85))无缝配合使用。
 
-若要提供最佳用户体验，请使用以下指导原则来设计和实现您的安装过程：
+若要提供最佳的用户体验，请使用以下准则来设计和实现你的安装过程：
 
--   不会自动重新启动系统或要求用户在执行此操作，除非绝对必要。
+-   除非绝对必要，否则不要自动重新启动系统或要求用户执行此操作。
 
--   始终使用[INF 文件](overview-of-inf-files.md)设备安装的。 请确保所有的 INF 文件格式正确，并使用正确的语法。
+-   始终使用 [INF 文件](overview-of-inf-files.md) 进行设备安装。 请确保所有 INF 文件的格式正确并使用正确的语法。
 
--   安装; 完成后将保留在系统上的 INF 文件不要删除这些文件。 不仅设备或驱动程序是首次安装时，而且还在一个驱动程序的用户请求更新通过设备管理器中，使用 INF 文件。
+-   安装后在系统上保留 INF 文件;不要删除它们。 INF 文件不仅在第一次安装设备或驱动程序时使用，还在用户通过设备管理器请求驱动程序更新时使用。
 
--   使用之一[系统定义设备安装程序类](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))。 除非有充足的理由这样做，则未定义您自己的安装程序类。
+-   使用 [系统定义的设备安装程序类](/previous-versions/ff553419(v=vs.85))之一。 除非有很有说服力的原因，否则不要定义自己的安装类。
 
--   不要假设位置、 格式或注册表项或值的含义。 有关注册表项和树的详细信息，请参阅[注册表树和设备和驱动程序的密钥](registry-trees-and-keys.md)。
-
- 
+-   不要对注册表项或值的位置、格式或含义做出假设。 有关注册表项和树的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 
  
-
-
-
-
 

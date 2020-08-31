@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7e5aab5edc2715073ba0281b024fa69b369441f2
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 7e73fc8f155843e316b336e1837277dcfce343c1
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418218"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096653"
 ---
 # <a name="devpkey_deviceinterfaceclass_defaultinterface"></a>DEVPKEY_DeviceInterfaceClass_DefaultInterface
 
@@ -33,8 +33,8 @@ DEVPKEY_DeviceInterfaceClass_DefaultInterface 设备属性表示设备接口类�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,35 +62,28 @@ DEVPKEY_DeviceInterfaceClass_DefaultInterface 设备属性表示设备接口类�
 <a name="remarks"></a>备注
 -------
 
-有关如何安装和使用设备接口的信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)和[**INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)。
+有关如何安装和使用设备接口的信息，请参阅 [设备接口类](./overview-of-device-interface-classes.md) 和 [**INF AddInterface 指令**](./inf-addinterface-directive.md)。
 
-可以通过调用[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_DeviceInterfaceClass_DefaultInterface 的值。 可以通过调用[**SetupDiSetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)来设置 DEVPKEY_DeviceInterfaceClass_DefaultInterface。
+可以通过调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_DeviceInterfaceClass_DefaultInterface 的值。 可以通过调用 [**SetupDiSetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)来设置 DEVPKEY_DeviceInterfaceClass_DefaultInterface。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceInterfaceClass_DefaultInterface 属性键。 有关如何在这些早期版本的 Windows 上访问设备接口类的默认接口的信息，请参阅[访问设备接口类属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-interface-class-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_DeviceInterfaceClass_DefaultInterface 属性键。 有关如何在这些早期版本的 Windows 上访问设备接口类的默认接口的信息，请参阅 [访问设备接口类属性](./accessing-device-interface-class-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
+[**INF AddInterface 指令**](./inf-addinterface-directive.md)
 
-[**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)
+[**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
+[**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
-[**SetupDiSetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)
-
- 
+[**SetupDiSetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinterfacepropertyw)
 
  
-
-
-
-
-
 

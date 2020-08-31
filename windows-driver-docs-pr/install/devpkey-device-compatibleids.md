@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 51a0be8b3c411a55f1860840d850b9abd6de7480
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 1411916da3f4a11b22fad97b4d6cf772ec2e4d6e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418501"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095851"
 ---
 # <a name="devpkey_device_compatibleids"></a>DEVPKEY_Device_CompatibleIds
 
@@ -33,8 +33,8 @@ DEVPKEY_DEVICE_CompatibleIds 设备属性表示设备实例的兼容标识符的
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -70,31 +70,24 @@ DEVPKEY_DEVICE_CompatibleIds 设备属性表示设备实例的兼容标识符的
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_DEVICE_CompatibleIds 的值由在安装设备的 INF 文件的 " [**Inf 模型" 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)中为设备提供的*兼容 id*输入值设置。
+DEVPKEY_DEVICE_CompatibleIds 的值由在安装设备的 INF 文件的 " [**Inf 模型" 部分**](./inf-models-section.md)中为设备提供的*兼容 id*输入值设置。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_DEVICE_CompatibleIds 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_DEVICE_CompatibleIds 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_CompatibleIds 属性键。 相反，你可以使用相应的 SPDRP_COMPATIBLEIDS 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[SPDRP_Xxx 属性访问设备实例](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_CompatibleIds 属性键。 相反，你可以使用相应的 SPDRP_COMPATIBLEIDS 标识符来访问这些早期版本的 Windows 上的属性值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [SPDRP_Xxx 属性访问设备实例](./accessing-device-instance-spdrp-xxx-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF Models 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)
+[**INF Models 节**](./inf-models-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

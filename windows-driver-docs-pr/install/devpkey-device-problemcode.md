@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 02/28/2020
-ms.openlocfilehash: 223d5e811b400f1aa0869a43a382c6f2101c39bb
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: a7f895d9f067b826c0a919e7ddd31fd6024da85b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418466"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096779"
 ---
 # <a name="devpkey_device_problemcode"></a>DEVPKEY_Device_ProblemCode
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_ProblemCode 设备属性表示设备实例的问题代码。
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,35 +62,28 @@ DEVPKEY_Device_ProblemCode 设备属性表示设备实例的问题代码。
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_ProblemCode 的值是在 Cfg 中定义的 CM_PROB_*Xxx*的问题代码之一。
+DEVPKEY_Device_ProblemCode 的值是在 Cfg 中定义的 CM_PROB_*Xxx* 的问题代码之一。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_ProblemCode 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_ProblemCode 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 不直接支持此属性。 有关如何访问这些早期版本的 Windows 上的设备实例的问题代码的信息，请参阅[检索设备实例的状态和问题代码](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-the-status-and-problem-code-for-a-device-instance)。
+Windows Server 2003、Windows XP 和 Windows 2000 不直接支持此属性。 有关如何访问这些早期版本的 Windows 上的设备实例的问题代码的信息，请参阅 [检索设备实例的状态和问题代码](./retrieving-the-status-and-problem-code-for-a-device-instance.md)。
 
-有关查找设备管理器或内核调试器中的问题状态的信息，请参阅[检索设备实例的状态和问题代码](retrieving-the-status-and-problem-code-for-a-device-instance.md)。
+有关查找设备管理器或内核调试器中的问题状态的信息，请参阅 [检索设备实例的状态和问题代码](retrieving-the-status-and-problem-code-for-a-device-instance.md)。
 
-有关可帮助解决问题的其他信息，请参阅[**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)。
+有关可帮助解决问题的其他信息，请参阅 [**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**CM_Get_DevNode_Status**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
+[**CM_Get_DevNode_Status**](/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_status)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
 [**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)
-
- 
-
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c3bc2a83f0c671b9ab88daf223494c9863578555
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 0cecd56aa53063daeb883cf3606d7a075f1a0fce
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418255"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096459"
 ---
 # <a name="devpkey_device_driverprovider"></a>DEVPKEY_Device_DriverProvider
 
 
-DEVPKEY_Device_DriverProvider 设备属性表示设备实例的[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)的访问接口的名称。
+DEVPKEY_Device_DriverProvider 设备属性表示设备实例的 [驱动程序包](./driver-packages.md) 的访问接口的名称。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_Device_DriverProvider 设备属性表示设备实例的[驱动程序包]
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -67,31 +67,24 @@ DEVPKEY_Device_DriverProvider 设备属性表示设备实例的[驱动程序包]
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverProvider 的值由设备 INF 文件的[**INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)中包含的**提供程序**指令提供。
+DEVPKEY_Device_DriverProvider 的值由设备 INF 文件的[**INF 版本部分**](./inf-driverver-directive.md)中包含的**提供程序**指令提供。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_DriverProvider 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DriverProvider 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DriverProvider 属性键。 在这些早期版本的 Windows 上，你可以访问此属性的值，方法是在设备实例的软件密钥下访问相应的**ProviderName**注册表值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DriverProvider 属性键。 在这些早期版本的 Windows 上，你可以访问此属性的值，方法是在设备实例的软件密钥下访问相应的 **ProviderName** 注册表值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [访问设备驱动程序属性](./accessing-device-driver-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF Version 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)
+[**INF Version 节**](./inf-driverver-directive.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

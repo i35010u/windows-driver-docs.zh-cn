@@ -4,42 +4,36 @@ description: 检索设备接口属性值
 ms.assetid: 2a845adc-6965-420d-9e0a-20935d20577a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ca3685b78652bd2e5e4a3bc631343961d95a410
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8a334b048b23e91e252373a702f137d3d905ebaa
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378037"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095627"
 ---
 # <a name="retrieving-a-device-interface-property-value"></a>检索设备接口属性值
 
 
-从 Windows Vista 开始按照以下步骤检索的值[设备接口属性](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85)):
+从 Windows Vista 开始，按照以下步骤检索 [设备接口属性](/previous-versions/ff541409(v=vs.85))的值：
 
-1.  调用[ **SetupDiGetDeviceInterfaceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来确定数据类型和大小 （字节） 的属性值。 提供以下参数值：
+1.  调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
 
-    -   设置*DeviceInfoSet*到设备的信息集，其中包含要检索的设备接口属性键列表的设备接口的句柄。
-    -   设置*DeviceInterfaceData*指向的[ **SP_DEVICE_INTERFACE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)结构，它表示要为其检索一组设备的设备接口属性键。
-    -   设置*PropertyKey*指向的[ **DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpropkey)结构，它表示该属性。
-    -   设置*PropertyType*指向的[ **DEVPROPKEY**](https://docs.microsoft.com/windows-hardware/drivers/install/devpropkey)-类型化的变量中。
-    -   设置*PropertyBuffer*到**NULL**。
-    -   设置*PropertyBufferSize*为零。
-    -   设置*RequiredSize*到 DWORD 类型的变量。
+    -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索设备接口属性密钥列表的设备接口。
+    -   将 *DeviceInterfaceData* 设置为指向 [**SP_DEVICE_INTERFACE_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data) 结构的指针，该结构表示要为其检索设备属性键列表的设备接口。
+    -   将 *PropertyKey* 设置为指向表示属性的 [**DEVPROPKEY**](./devpropkey.md) 结构的指针。
+    -   将 *PropertyType* 设置为指向 [**DEVPROPKEY**](./devpropkey.md)类型的变量的指针。
+    -   将 *PropertyBuffer* 设置为 **NULL**。
+    -   将 *PropertyBufferSize* 设置为零。
+    -   将 *RequiredSize* 设置为 DWORD 类型化变量。
     -   将标志设置为零。
 
-    在首次调用的响应[ **SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)， **SetupDiGetDeviceInterfaceProperty**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回最近记录的错误代码。
+    在对[**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)的第一次调用时， **SetupDiGetDeviceInterfaceProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
-2.  调用**SetupDiGetDeviceInterfaceProperty**试并提供相同的参数值提供到第一个调用时，除了以下更改：
-    -   设置*PropertyBuffer*到指向该缓冲区用于接收的属性值的指针。
-    -   设置*PropertyBufferSize*到所需的大小，以字节为单位的*PropertyBuffer*缓冲区。 首次调用**SetupDiGetDeviceInterfaceProperty**检索所需的大小*PropertyBuffer*中的缓冲区\* *RequiredSize*。
+2.  再次调用 **SetupDiGetDeviceInterfaceProperty** ，并提供与第一次调用提供的参数值相同的参数值，如下所示：
+    -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
+    -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的所需大小（以字节为单位）。 第一次调用**SetupDiGetDeviceInterfaceProperty**时，检索到 RequiredSize 中的*PropertyBuffer*缓冲区的所需大小 \* *RequiredSize*。
 
-如果第二个调用**SetupDiGetDeviceInterfaceProperty**成功， **SetupDiGetDeviceInterfaceProperty**设置\* *PropertyType*到属性数据类型标识符的属性，设置*PropertyBuffer*属性值设置到缓冲区\* *RequiredSize*到大小 （字节） 属性已检索，并返回值 **，则返回 TRUE**。 如果函数调用失败， **SetupDiGetDeviceInterfaceProperty**返回**FALSE**并调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回的记录的错误代码。
-
- 
+如果对**SetupDiGetDeviceInterfaceProperty**的第二次调用成功，则**SetupDiGetDeviceInterfaceProperty**将 \* *PropertyType*设置为属性的属性数据类型标识符，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceInterfaceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
  
-
-
-
-
 

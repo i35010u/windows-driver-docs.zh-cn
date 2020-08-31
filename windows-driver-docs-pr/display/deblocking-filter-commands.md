@@ -7,12 +7,12 @@ keywords:
 - deblocking 筛选器命令 WDK DirectX VA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0d505f6ea91b98045aac12e0279c16a73e3beeb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 857ef0b0a3c8324a340b3b347e78eafc13f22e9e
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839764"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066496"
 ---
 # <a name="deblocking-filter-commands"></a>除块筛选器命令
 
@@ -24,9 +24,9 @@ ms.locfileid: "72839764"
 
 下面是两种不同类型的 deblocking 筛选器命令缓冲区：
 
--   需要访问和修改当前 deblocking 筛选器命令缓冲区（ [ **\_DXVA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)的**bPicDeblockConfined**成员为零时）的 macroblocks 的的值的缓冲区。
+-   如果[**DXVA \_ PictureParameters**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_pictureparameters)结构的**bPicDeblockConfined**成员为零) ，则需要访问和修改当前 deblocking 筛选器命令缓冲区 (以外的 macroblocks 的值。
 
--   不需要访问和修改当前 deblocking 筛选器命令缓冲区（ **bPicDeblockConfined**为1）以外的 macroblocks 的值。
+-   当 **bPicDeblockConfined** 为 1) 时，不需要访问和修改当前 deblocking 筛选器命令缓冲区 (以外的 macroblocks 的值。
 
 若要处理第一种类型的 deblocking 命令缓冲区，加速器必须确保对影响当前缓冲区中控制的 macroblocks 的 macroblocks 的所有缓冲区完成宏块重构。 必须在处理当前缓冲区中的 deblocking 命令之前完成此操作。
 
@@ -38,15 +38,9 @@ ms.locfileid: "72839764"
 
 -   使用残留差异数据缓冲区以协调方式处理 deblocking 命令缓冲区。 在这种情况下，将在向目标图片图面写入重构的输出值之前处理 deblocking 命令缓冲区。
 
-**请注意**   Deblocked 图片的目标图片表面可能不同于在 deblocking 之前重建图片的位置。 然后，这将支持 "在循环外" deblocking 作为 postdecoding 进程，该进程不影响用于预测下一个图片的示例值。
+**注意**   Deblocked 图片的目标图片表面可能不同于在 deblocking 之前重建图片的位置。 然后，这将支持 "在循环外" deblocking 作为 postdecoding 进程，该进程不影响用于预测下一个图片的示例值。
 
  
 
  
-
- 
-
-
-
-
 

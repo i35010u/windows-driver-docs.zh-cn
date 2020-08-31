@@ -4,12 +4,12 @@ description: 通过嵌入式签名对驱动程序进行测试签名
 ms.assetid: 862e89e0-f84a-4058-a32f-09ae3043b884
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94b767779fde86dd33c07ced19c4d3f44c517876
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 657c398b55a24f2e7fa621bfcb61a6fd0b8aaac9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902581"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096415"
 ---
 # <a name="test-signing-a-driver-through-an-embedded-signature"></a>通过嵌入式签名对驱动程序进行测试签名
 
@@ -21,7 +21,7 @@ ms.locfileid: "88902581"
 
 - 驱动程序通过不包含目录文件的驱动程序包进行安装。
 
-对于 [目录文件](catalog-files.md)， [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 用于通过使用测试证书嵌入内核模式二进制文件中的数字签名。 以下命令行说明了如何运行 SignTool 来执行以下操作：
+对于 [目录文件](catalog-files.md)， [**SignTool**](../devtest/signtool.md) 用于通过使用测试证书嵌入内核模式二进制文件中的数字签名。 以下命令行说明了如何运行 SignTool 来执行以下操作：
 
 - 对64位版本的 Toastpkg.inf 示例二进制文件进行测试签名，toaster.sys。 在 WDK 安装目录中，此文件位于 *src \\ general \\ toaster \\ toastpkg.inf \\ toastcd \\ amd64* 目录中。
 
@@ -54,6 +54,6 @@ Signtool sign /v /fd sha256 /s PrivateCertStore /n Contoso.com(Test) /t http://t
 
 - *amd64 \\toaster.sys* 指定将被嵌入签名的内核模式二进制文件的名称。
 
-有关 SignTool 及其命令行参数的详细信息，请参阅 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)。
+有关 SignTool 及其命令行参数的详细信息，请参阅 [**SignTool**](../devtest/signtool.md)。
 
 有关如何使用嵌入的签名对驱动程序进行测试签名的详细信息，请参阅对 [驱动程序文件进行测试签名](test-signing-a-driver-file.md)。

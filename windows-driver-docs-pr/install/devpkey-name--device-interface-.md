@@ -3,7 +3,7 @@ title: DEVPKEY_NAME（设备接口）
 description: DEVPKEY_NAME（设备接口）
 ms.assetid: 276862d0-8ab9-4914-9e57-834cc17d0e59
 keywords:
-- DEVPKEY_NAME （设备接口） 设备和驱动程序安装
+- ) 设备和驱动程序安装 DEVPKEY_NAME (设备接口
 topic_type:
 - apiref
 api_name:
@@ -14,14 +14,14 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 9a64b029bdae02a5e9c0437c9a6156fa6c6c44c4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d1292c3abf3d2374f7fc4102c7646e97833fbd08
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377258"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095937"
 ---
-# <a name="devpkeyname-device-interface"></a>DEVPKEY_NAME（设备接口）
+# <a name="devpkey_name-device-interface"></a>DEVPKEY_NAME（设备接口）
 
 
 DEVPKEY_NAME 设备接口属性表示设备接口的名称。
@@ -41,11 +41,11 @@ DEVPKEY_NAME 设备接口属性表示设备接口的名称。
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性访问</strong></p></td>
-<td align="left"><p>通过安装应用程序和安装程序的只读访问。</p></td>
+<td align="left"><p><strong>和</strong></p></td>
+<td align="left"><p>安装应用程序和安装程序的只读访问。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>本地化？</strong></p></td>
+<td align="left"><p><strong>各种?</strong></p></td>
 <td align="left"><p>是</p></td>
 </tr>
 </tbody>
@@ -56,15 +56,15 @@ DEVPKEY_NAME 设备接口属性表示设备接口的名称。
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_NAME 的值应该用于标识用户界面项目中的最终用户的接口。
+DEVPKEY_NAME 的值应用于标识用户界面项中的最终用户的接口。
 
-DEVPKEY_NAME 的值是相同的值[ **DEVPKEY_DeviceInterface_FriendlyName** ](devpkey-deviceinterface-friendlyname.md)设备属性，如果 DEVPKEY_DeviceInterface_FriendlyName 设置。 否则，DEVPKEY_NAME 不存在。
+如果设置了 DEVPKEY_DeviceInterface_FriendlyName，则 DEVPKEY_NAME 的值与 [**DEVPKEY_DeviceInterface_FriendlyName**](devpkey-deviceinterface-friendlyname.md) 设备属性的值相同。 否则，DEVPKEY_NAME 不存在。
 
-可以通过调用检索的值 DEVPKEY_NAME [ **SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)。
+可以通过调用 [**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)来检索 DEVPKEY_NAME 的值。
 
-有关设备接口的信息，请参阅[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)并[ **INF AddInterface 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)。
+有关设备接口的信息，请参阅 [设备接口类](./overview-of-device-interface-classes.md) 和 [**INF AddInterface 指令**](./inf-addinterface-directive.md)。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name 属性。 但是，这些早期版本的 Windows 支持到 DEVPKEY_DeviceInterface_FriendlyName 相对应的属性。
+Windows Server 2003、Windows XP 和 Windows 2000 不直接支持相应的名称属性。 但是，这些早期版本的 Windows 确实支持与 DEVPKEY_DeviceInterface_FriendlyName 相对应的属性。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,31 +76,24 @@ Windows Server 2003、 Windows XP 和 Windows 2000 不直接支持相应的 name
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows Vista 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h （包括 Devpkey.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DEVPKEY_DeviceInterface_FriendlyName**](devpkey-deviceinterface-friendlyname.md)
 
-[**INF AddInterface Directive**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive)
+[**INF AddInterface 指令**](./inf-addinterface-directive.md)
 
-[**SetupDiGetDeviceInterfaceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
-
- 
+[**SetupDiGetDeviceInterfaceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)
 
  
-
-
-
-
-
 

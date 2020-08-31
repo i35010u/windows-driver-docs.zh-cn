@@ -3,12 +3,12 @@ description: 使用随 Microsoft Visual Studio 提供的 USB 用户模式驱动�
 title: 如何编写第一个 USB 客户端驱动程序 (UMDF)
 ms.date: 06/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b5467d8891fa2415d9b699717f507ebb33a7f874
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: fc85ed2f567e3ed4ea368d9eafc851798f044853
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969336"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056969"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-umdf"></a>如何编写第一个 USB 客户端驱动程序 (UMDF)
 
@@ -67,8 +67,8 @@ ms.locfileid: "88969336"
 
 1.  在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2.  在中间窗格中，选择 " **用户模式驱动程序"，USB (UMDF V2) **。
-3.  单击“下一步”。
-4.  输入项目名称，选择 "保存位置"，然后单击 " **创建**"。
+3.  选择“**下一页**”。
+4.  输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
 以下屏幕截图显示了**USB 用户模式驱动程序**模板的 "**新建项目**" 对话框。
 
@@ -100,7 +100,7 @@ ms.locfileid: "88969336"
 2.  打开 **设备管理器** 并打开设备的 "属性"。
 3.  在 " **详细信息** " 选项卡上，选择 "属性" 下的 **Hardward id** **。**
 
-    设备的硬件 ID 显示在列表框中。 右键单击并复制硬件 ID 字符串。
+    设备的硬件 ID 显示在列表框中。 选择并按住 (或右键单击) 并复制硬件 ID 字符串。
 
 4.  在 **解决方案资源管理器**中，展开 " **驱动程序文件**"，然后打开 INF。
 5.  将以下硬件 ID 字符串替换为。
@@ -147,11 +147,11 @@ ms.locfileid: "88969336"
 **构建驱动程序**
 
 1.  在 Visual Studio 2019 中打开驱动程序项目或解决方案。
-2.  右键单击 " **解决方案资源管理器** 中的解决方案，然后选择" **Configuration Manager**"。
+2.  选择并按住 (或右键单击) **解决方案资源管理器** 中的解决方案，然后选择 " **Configuration Manager**"。
 3.  从 " **Configuration Manager**中，选择 **活动解决方案配置** (例如，" **调试** "或" **发布** ") 和 **活动解决方案平台** (例如，与你感兴趣的生成类型相对应的" **Win32**) "。
 4.  在整个项目中验证你的设备接口 GUID 是否准确。 
     - 设备接口 GUID 是在 node.js 中定义的，并且在中从设备的引用。 `MyUSBDriverUMDFCreateDevice` 创建名为 "MyUSBDriver UMDF" 的项目时 \_ \_ ，Visual Studio 2019 将定义具有名称的设备接口 GUID， `GUID_DEVINTERFACE_MyUSBDriver_UMDF_` 但会调用 `WdfDeviceCreateDeviceInterface` 不正确的参数 "GUID_DEVINTERFACE_MyUSBDriverUMDF"。 将不正确的参数替换为在 Trace .h 中定义的名称，以确保正确生成驱动程序。 
-4.  在“生成”**** 菜单中，单击“生成解决方案”****。
+4.  在 " **生成** " 菜单中，选择 " **生成解决方案**"。
 
 有关详细信息，请参阅 [构建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
@@ -212,12 +212,12 @@ ms.locfileid: "88969336"
 
 ### <a name="step-6-deploy-the-driver-on-the-target-computer"></a><a href="" id="deploy-the-driver-on-the-target-computer"></a>步骤6：在目标计算机上部署驱动程序
 
-1. 在 "**解决方案资源管理器**" 窗口中，右键单击<em> &lt; 项目 &gt; 名称</em>**包**，然后选择 "**属性**"。
+1. 在 "**解决方案资源管理器**" 窗口中，选择并按住 (或右键单击 " <em> &lt; 项目名称 &gt; </em>**包**") ，然后选择 "**属性**"。
 2. 在左窗格中，导航到 " **配置属性 &gt; 驱动程序安装 &gt; 部署**"。
 3. 选中 "启用部署"，并选中 "导入到驱动程序存储区"。
 4. 对于 " **远程计算机名称**"，指定目标计算机的名称。
 5. 选择“安装并验证”  。
-6. 单击“确定” 。
+6. 选择“确定”  。
 7. 在“调试”  菜单上，选择“开始调试”  或按键盘上的 **F5**。
 
 **注意**   请*不要*在**硬件 Id 驱动程序更新**下指定设备的硬件 id。 只有驱动程序的信息 (INF) 文件中，才能指定硬件 ID。
@@ -258,7 +258,7 @@ ms.locfileid: "88969336"
 [1]0744.05F0::00/00/0000-00:00:00.000 [MyUSBDriver_UMDF_]CMyDevice::Configure Exit
 ```
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 让我们看看框架和客户端驱动程序如何协同工作以与 Windows 交互，并处理发送到 USB 设备的请求。 此图显示了在系统中为基于 UMDF 的 USB 客户端驱动程序加载的模块。

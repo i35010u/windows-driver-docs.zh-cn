@@ -8,19 +8,19 @@ keywords:
 - 版本编号 WDK 显示，Direct3D 版本10。1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a56ddd184d08d7046fef04d4403df799516bfe6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0fa380913f55137ee456a950f192123251f8c536
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829214"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067044"
 ---
 # <a name="version-numbers-for-direct3d-version-101"></a>Direct3D 版本 10.1 的版本号
 
 
-Direct3D 版本10.0 和10.1 供应 \#定义用户模式显示驱动程序用于版本控制。 用户模式显示驱动程序必须检查[**D3D10DDIARG\_OPENADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)， [**D3D10DDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)和 D3D10DDIARG 的**Interface**成员， [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_calcprivatedevicesize)驱动程序接收到[**OpenAdapter10**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)、 [**CreateDevice （D3D10）** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)和[**CalcPrivateDeviceSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatedevicesize)函数的调用，以确定 DIRECT3D 运行时支持的 direct3d DDI 版本。 **接口**成员最有效的16位是 Direct3D DDI 主版本的数目。 对于 Direct3D 版本10.0 和10.1，此数为10。 **接口**成员的最小有效16位是 Direct3D DDI 次要版本。 此次要版本值在引入 Direct3D DDI 重大更改时已升级。 此次要版本值还可以已升级人为表示更强的版本更改。 以下 \#定义与已发布版本号（即，D3D10\_0 = = x，D3D10\_1 = = y，其中 y &gt; x）关联的 Direct3D DDI 次版本。
+Direct3D 版本10.0 和10.1 提供 \# 定义用户模式显示驱动程序用于版本控制。 用户模式显示驱动程序必须检查[**D3D10DDIARG \_ OPENADAPTER**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)、 [**D3D10DDIARG \_ CREATEDEVICE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)和[**D3D10DDIARG \_ CALCPRIVATEDEVICESIZE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_calcprivatedevicesize)结构的**接口**成员，驱动程序会在调用[**OpenAdapter10**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)、 [**CREATEDEVICE (D3D10) **](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)和[**CALCPRIVATEDEVICESIZE**](/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivatedevicesize)函数时接收该成员，以确定 direct3d 运行时支持的 direct3d DDI 版本。 **接口**成员最有效的16位是 Direct3D DDI 主版本的数目。 对于 Direct3D 版本10.0 和10.1，此数为10。 **接口**成员的最小有效16位是 Direct3D DDI 次要版本。 此次要版本值在引入 Direct3D DDI 重大更改时已升级。 此次要版本值还可以已升级人为表示更强的版本更改。 下面的 \# 定义将 DIRECT3D DDI 次要版本与已发布版本号 (即，D3D10 \_ 0 = = x，D3D10 \_ 1 = = y，其中，y &gt; x) 相关联。
 
-用户模式显示驱动程序只应检查[**D3D10DDIARG\_OPENADAPTER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)、 [**D3D10DDIARG\_CREATEDEVICE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)和 D3D10DDIARG 的**版本**成员的最重要16位[ **\_CALCPRIVATEDEVICESIZE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_calcprivatedevicesize)结构来确定 Direct3D 运行时的生成时间。 此值将在每次发生非中断的 Direct3D DDI 更改时手动已升级。 驱动程序可能取决于每次不间断的 DDI 更改。 因此，驱动程序应确保传入的 DDI 生成版本大于或等于 \*\_生成当前驱动程序的\_版本，并在驱动程序不兼容的情况下（可能同时提供注册表解决方法时）进行故障排除。 **版本**成员的16位最低有效版本为 DDI 版本。 最小有效的16位**版本**通常用于基于 Direct3D API 中存在的 bug 的特殊情况。 对于所有值，驱动程序必须成功创建。 但是，驱动程序可能会根据特定值更改行为。 应使用 &gt;= 来比较这些值，因为这些数字可能会因为运行时修复而任意增加。 此外，不应使用 "&gt; （以前的损坏版本）" （而不是 "&gt;= 工作版本"），因为新版本可能会显示在两个已知数字之间有版本号，并且不包含所需的修补程序。 以下 \#用于 Direct3D DDI 版本控制：
+用户模式显示驱动程序只应检查[**D3D10DDIARG \_ OPENADAPTER**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_openadapter)、 [**D3D10DDIARG \_ CREATEDEVICE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_createdevice)和[**D3D10DDIARG \_ CALCPRIVATEDEVICESIZE**](/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddiarg_calcprivatedevicesize)结构的**版本**成员的最高有效16位，才能确定 Direct3D 运行时的生成时间。 此值将在每次发生非中断的 Direct3D DDI 更改时手动已升级。 驱动程序可能取决于每次不间断的 DDI 更改。 因此，当驱动程序不兼容时，驱动程序应确保传入的 DDI 生成版本大于或等于 \* \_ \_ 当前驱动程序的内部版本，如果驱动程序不兼容 (可能会失败，同时还提供注册表解决方法) 。 **版本**成员的16位最低有效版本为 DDI 版本。 最小有效的16位 **版本** 通常用于基于 Direct3D API 中存在的 bug 的特殊情况。 对于所有值，驱动程序必须成功创建。 但是，驱动程序可能会根据特定值更改行为。 应使用 = 比较这些值， &gt; 因为这些数字可能会因为运行时修复而任意增加。 此外，不应使用 " &gt; (以前的损坏版本) " (而不是 " &gt; = 工作版本" ) ，因为新版本可能出现在两个已知数字之间且不包含所需的修补程序。 以下 \# 定义适用于 DIRECT3D DDI 版本管理：
 
 ```cpp
 #define D3D10_DDI_MAJOR_VERSION 10
@@ -47,10 +47,4 @@ Direct3D 版本10.0 和10.1 供应 \#定义用户模式显示驱动程序用于�
 ```
 
  
-
- 
-
-
-
-
 

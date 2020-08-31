@@ -3,24 +3,24 @@ title: 构建设备元数据包
 description: 构建设备元数据包
 ms.assetid: 8b95a88e-430c-4250-959f-43536fdc1824
 keywords:
-- 设备元数据包 WDK 构建
+- 设备元数据包 WDK，生成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b31847458599f3bfc7a617f3c5400bfb49ce790
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 587ac39658a193f51a859ae3beec2706f44a32e6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385292"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095777"
 ---
 # <a name="building-device-metadata-packages"></a>构建设备元数据包
 
 
-本主题提供有关如何构建设备元数据包的指南。
+本主题提供有关如何生成设备元数据包的准则。
 
-### <a href="" id="device-metadata-package-file-names"></a> 设备元数据的包文件名称
+### <a name="device-metadata-package-file-names"></a><a href="" id="device-metadata-package-file-names"></a> 设备元数据包文件名
 
-在创建设备元数据的包文件之前，必须首先创建元数据包的全局唯一标识符 (GUID)。 若要执行此操作，使用 Guidgen 工具 *(Guidgen.exe*) 中介绍[生成 GUID](https://go.microsoft.com/fwlink/p/?linkid=145426)网站。
+创建设备元数据包文件之前，必须先为元数据包创建 (GUID) 全局唯一标识符。 为此，请使用[GUID 生成](https://go.microsoft.com/fwlink/p/?linkid=145426)网站中所述* ( # B0*) 的 guidgen.exe 工具。
 
 设备元数据包的文件名必须使用以下命名约定：
 
@@ -28,33 +28,33 @@ ms.locfileid: "67385292"
 <GUID>.devicemetadata-ms
 ```
 
-例如，如果您创建的值为 {20f001a99-4675-8707-248ca-187dfd9} 的 GUID，你使用该 GUID 来创建以下设备元数据的包文件：
+例如，如果你创建的 GUID 的值为 {20f001a99-4675-8707-248ca-187dfd9}，则使用该 GUID 创建以下设备元数据包文件：
 
 ```cpp
 20f001a99-4675-8707-248ca-187dfd9.devicemetadata-ms
 ```
 
-**请注意**  操作系统识别出设备元数据包，仅当具有后缀。*devicemetadata ms*。
+**注意**   仅当设备元数据包具有后缀时，操作系统才会将其识别。*devicemetadata-ms*。
 
  
 
-以下规则适用于设备元数据的包文件：
+以下规则适用于设备元数据包文件：
 
--   对于每个元数据包文件的名称 GUID 必须是唯一的。 创建新的或修改元数据包时，必须创建新的 GUID，即使所做的更改是很微小的。
+-   每个元数据包文件名的 GUID 都必须是唯一的。 当你创建新的或已修改的元数据包时，你必须创建新的 GUID，即使更改很小。
 
--   元数据的每个包可以支持只有一个区域设置。 如果你的设备支持多个区域设置，则必须创建单独元数据包的每个区域设置，每个元数据文件，包具有其自己的 GUID。 有关详细信息，请参阅[**区域设置 XML 元素**](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548647(v=vs.85))。
+-   每个元数据包只能支持一个区域设置。 如果你的设备支持多个区域设置，则必须为每个区域设置创建单独的元数据包，其中每个元包都具有自己的 GUID。 有关详细信息，请参阅 [**LOCALE XML 元素**](/previous-versions/windows/hardware/metadata/ff548647(v=vs.85))。
 
-    **请注意**  如果为你的设备需要多个特定于区域设置的设备元数据的包文件，则可以通过创建一个非特定语言标识符分组的所有文件。 此标识符是 GUID，并可以在中指定相同的 GUID [ **LanguageNeutralIdentifier** ](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff548617(v=vs.85))对于同一设备的所有元数据包内的 XML 元素。
+    **注意**   如果你的设备需要多个特定于区域设置的设备元数据包文件，则可以通过创建非特定语言标识符来对所有文件进行分组。 此标识符是一个 GUID，可以在同一设备的所有元数据包内的 [**LanguageNeutralIdentifier**](/previous-versions/windows/hardware/metadata/ff548617(v=vs.85)) XML 元素中指定相同的 guid。
 
      
 
--   *&lt;GUID&gt;* 设备元数据包文件名称的前缀必须指定而无需 GUID {或} 的分隔符。
+-   设备元数据包文件名的* &lt; guid &gt; *前缀必须指定不带 "{" 或 "}" 分隔符的 guid。
 
 ### <a name="creating-a-device-metadata-package-file"></a>创建设备元数据包文件
 
-[的设备元数据包组件](device-metadata-package-components.md)存储在使用 Cabarc 压缩来压缩文件 (*Cabarc.exe*) 工具。 有关此工具的详细信息，请参阅[Cabarc 概述](https://go.microsoft.com/fwlink/p/?linkid=145395)网站。
+[设备元数据包的组件](device-metadata-package-components.md)存储在使用 Cabarc (*Cabarc.exe*) 工具压缩的文件中。 有关此工具的详细信息，请参阅 [Cabarc 概述](https://go.microsoft.com/fwlink/p/?linkid=145395) 网站。
 
-下面的代码示例演示如何使用 Cabarc 工具来创建设备元数据包文件。 在此示例中，元数据包的组件位于名为的本地目录中*MyMetadataPackage*。 以下列表显示了子目录和文件内*MyMetadataPackage*目录：
+下面的代码示例演示如何使用 Cabarc 工具创建设备元数据包文件。 在此示例中，元数据包的组件位于名为 *MyMetadataPackage*的本地目录中。 以下列表显示了 *MyMetadataPackage* 目录中的子目录和文件：
 
 ```cpp
 .\MyMetadataPackages
@@ -64,11 +64,11 @@ ms.locfileid: "67385292"
 .\MyMetadataPackage\WindowsInformation\WindowsInfo.xml
 ```
 
-首先，为设备元数据包创建的 GUID 值为 {f4ea2b40-77ff-443d-8212-be7e74a344ae}。 下图显示了如何使用 Guidgen 工具创建的 GUID:
+首先，为设备元数据包创建值为 {f4ea2b40-77ff-443d-8212-be7e74a344ae} 的 GUID。 下图显示了如何使用 Guidgen.exe 工具创建 GUID：
 
-![屏幕截图： guidgen 创建 guid 对话框的](images/dmrc.png)
+![guidgen.exe "创建 guid" 对话框的屏幕截图](images/dmrc.png)
 
-然后，以下命令使用 Cabarc 工具在一个名为的本地目录中创建新的设备元数据包文件*MyDeviceMetadataPackage*:
+然后，下面的命令使用 Cabarc 工具在名为 *MyDeviceMetadataPackage*的本地目录中创建新的设备元数据包文件：
 
 ```cpp
 Cabarc.exe -r -p -P .\MyMetadataPackage\ 
@@ -79,15 +79,9 @@ Cabarc.exe -r -p -P .\MyMetadataPackage\
     .\MyMetadataPackage\WindowsInformation\WindowsInfo.xml
 ```
 
-**请注意**  元数据的每个包可以支持只有一个区域设置。 如果你的设备支持多个区域设置，则必须创建单独元数据包的每个区域设置，每个元数据文件，包具有其自己的 GUID。
+**注意**   每个元数据包只能支持一个区域设置。 如果你的设备支持多个区域设置，则必须为每个区域设置创建单独的元数据包，其中每个元包都具有自己的 GUID。
 
  
 
  
-
- 
-
-
-
-
 

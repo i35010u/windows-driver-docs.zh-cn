@@ -4,45 +4,39 @@ description: 检索设备实例标识符
 ms.assetid: 6382fdf6-109a-430a-b6b5-322d3eebc4a1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e218b76363a216c01dde86b97d8d45a94fadccc4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8bcb36a9c9b259b2f580498aac4774b32f171c6d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387310"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095633"
 ---
 # <a name="retrieving-a-device-instance-identifier"></a>检索设备实例标识符
 
 
-在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)支持表示设备实例标识符的设备属性。 统一的设备属性模型使用[ **DEVPKEY_Device_InstanceId**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-instanceid) [属性键](property-keys.md)来表示此属性。
+在 Windows Vista 和更高版本的 Windows 中， [统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md) 支持表示设备实例标识符的设备属性。 统一设备属性模型使用 [**DEVPKEY_Device_InstanceId**](./devpkey-device-instanceid.md) [属性键](property-keys.md) 来表示此属性。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 也支持此属性。 但是，这些早期的 Windows 版本不支持统一的设备属性模型的项的属性。 相反，可以通过调用检索这些早期版本的 Windows 上的设备实例标识符[ **SetupDiGetDeviceInstanceId**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)。 若要保持与这些早期版本的 Windows 兼容性，Windows Vista 和更高版本还支持**SetupDiGetDeviceInstanceId**。 但是，应使用密钥来访问此属性在 Windows Vista 及更高版本的相应属性。
+Windows Server 2003、Windows XP 和 Windows 2000 还支持此属性。 但是，这些早期版本的 Windows 版本不支持统一设备属性模型的属性键。 相反，可以通过调用 [**SetupDiGetDeviceInstanceId**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)在这些早期版本的 Windows 上检索设备实例标识符。 为了保持与这些早期版本的 Windows 的兼容性，Windows Vista 及更高版本也支持 **SetupDiGetDeviceInstanceId**。 但是，在 Windows Vista 和更高版本中，你应使用相应的属性键来访问此属性。
 
-有关如何使用属性键来访问在 Windows Vista 和更高版本上的设备驱动程序属性的信息，请参阅[访问设备实例属性 （Windows Vista 和更高版本）](accessing-device-instance-properties--windows-vista-and-later-.md)。
+有关如何使用属性键访问 Windows Vista 和更高版本上的设备驱动程序属性的信息，请参阅 [ (Windows vista 和更高版本) 访问设备实例属性 ](accessing-device-instance-properties--windows-vista-and-later-.md)。
 
-若要检索的设备实例标识符在 Windows Server 2003、 Windows XP 和 Windows 2000 上，执行以下步骤：
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索设备实例标识符，请执行以下步骤：
 
-1.  调用**SetupDiGetDeviceInstanceId**检索大小 （字节） 的设备实例标识符。 提供以下参数值：
+1.  调用 **SetupDiGetDeviceInstanceId** 可检索设备实例标识符的大小（以字节为单位）。 提供以下参数值：
 
-    -   设置*DeviceInfoSet*到包含要为其检索请求的设备实例标识符的设备信息元素的设备信息集的句柄。
-    -   设置*DeviceInfoData*指向的[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)结构，它表示要为其检索设备实例的设备信息元素标识符。
-    -   设置*DeviceInstanceId*到**NULL**。
-    -   设置*DeviceInstanceIdSize*为零。
-    -   设置*RequiredSize*为指向一个 DWORD 类型的变量来接收的以 NULL 结尾的设备实例标识符存储所需的字符数。
+    -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索请求的设备实例标识符的设备信息元素。
+    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其检索设备实例标识符的设备信息元素。
+    -   将 *DeviceInstanceId* 设置为 **NULL**。
+    -   将 *DeviceInstanceIdSize* 设置为零。
+    -   将 *RequiredSize* 设置为指向 DWORD 类型的变量的指针，该变量接收存储以 NULL 结尾的设备实例标识符所需的字符数。
 
-    在首次调用的响应[ **SetupDiGetDeviceInstanceId**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)， **SetupDiGetDeviceInstanceId**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)返回最近记录的错误代码。
+    在对[**SetupDiGetDeviceInstanceId**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)的第一次调用时， **SetupDiGetDeviceInstanceId**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
-2.  调用**SetupDiGetDeviceInstanceId**试并提供在第一个调用中，除以下更改外提供了相同的参数值：
-    -   设置*DeviceInstanceId*到指向接收的设备信息元素与关联的以 NULL 结尾的设备实例标识符的字符串缓冲区的指针。
-    -   设置*DeviceInstanceIdSize*大小，以字符为单位的*DeviceInstanceId*缓冲区。 首次调用**SetupDiGetDeviceInstanceId**检索所需的大小*DeviceInstanceId*中的缓冲区\* *RequiredSize*。
+2.  再次调用 **SetupDiGetDeviceInstanceId** ，并提供在第一次调用中提供的相同参数值，但以下更改除外：
+    -   将 *DeviceInstanceId* 设置为指向字符串缓冲区的指针，该字符串缓冲区接收与设备信息元素关联的以 NULL 结尾的设备实例标识符。
+    -   将 *DeviceInstanceIdSize* 设置为 *DeviceInstanceId* 缓冲区的大小（以字符为字符）。 第一次调用**SetupDiGetDeviceInstanceId**时，检索到 RequiredSize 中的*DeviceInstanceId*缓冲区的所需大小 \* *RequiredSize*。
 
-如果第二个调用**SetupDiGetDeviceInstanceId**成功， **SetupDiGetDeviceInstanceId**设置*DeviceInstanceId*设备实例标识符，缓冲区设置\* *RequiredSize*大小，以字符为单位的设备实例标识符用于已检索，并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceInstanceId**返回**FALSE**并调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)返回的记录的错误代码。
-
- 
+如果对**SetupDiGetDeviceInstanceId**的第二次调用成功，则**SetupDiGetDeviceInstanceId**将*DeviceInstanceId*缓冲区设置为设备实例标识符，将 \* *RequiredSize*设置为检索到的设备实例标识符的大小（以字符为字符），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceInstanceId** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
  
-
-
-
-
 

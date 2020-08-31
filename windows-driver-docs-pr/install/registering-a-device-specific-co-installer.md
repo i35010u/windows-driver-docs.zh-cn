@@ -3,16 +3,16 @@ title: 注册特定于设备的辅助安装程序
 description: 注册特定于设备的辅助安装程序
 ms.assetid: 7a80bc60-e2f0-4447-bd73-4ce12fcfc2e3
 keywords:
-- 特定于设备的共同安装程序 WDK 设备安装
+- 设备特定的共同安装程序 WDK 设备安装
 - 注册特定于设备的共同安装程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab7e8a3ff040d26938a099d52b91ff6d58ad263
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 24a7b4c8e1393d699149b3c05f3d02d49ded2702
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373893"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095671"
 ---
 # <a name="registering-a-device-specific-co-installer"></a>注册特定于设备的辅助安装程序
 
@@ -20,7 +20,7 @@ ms.locfileid: "63373893"
 
 
 
-若要注册的特定于设备的共同安装程序，请将以下各节添加到设备的 INF 文件：
+若要注册特定于设备的共同安装程序，请将以下部分添加到设备的 INF 文件中：
 
 ```cpp
 ;  :
@@ -42,13 +42,13 @@ HKR,,CoInstallers32,0x00010000,"XxxCoInstall.dll, \
  XxxCoInstallEntryPoint"
 ```
 
-中的条目**DestinationDirs**部分指定文件中列出*Xxx*CopyFilesSection 将复制到系统目录。 *Xxx*前缀标识驱动程序、 设备或一组设备 (例如，cdrom_CopyFilesSection)。 *Xxx*前缀应是唯一的。
+" **DestinationDirs** " 部分中的条目指定 *Xxx*CopyFilesSection 中列出的文件将复制到系统目录中。 *Xxx*前缀标识 (例如 cdrom_CopyFilesSection) 的驱动程序、设备或设备组。 *Xxx*前缀应是唯一的。
 
-*安装部分名称*条目共同安装程序可以使用可选操作系统/体系结构扩展 (例如，cdrom_install 修饰。NTx86.CoInstallers)。 有关详细信息，请参阅[ **INF *DDInstall*部分**](inf-ddinstall-section.md)。
+共同安装程序的 *安装节名称* 项可使用可选的 OS/体系结构扩展进行修饰 (例如 cdrom_install。NTx86. CoInstallers) 。 有关详细信息，请参阅 [**INF *DDInstall* 部分**](inf-ddinstall-section.md)。
 
-中的条目<em>Xxx</em>**_AddReg**部分创建**CoInstallers32**值中设备的条目*驱动程序键*。 该条目包含共同安装程序 DLL 和 （可选） 指定入口点。 如果省略的入口点，默认值为 CoDeviceInstall。 十六进制 flags 参数 (0x00010000) 指定，这是[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)值项目。
+<em>Xxx</em>**_AddReg**部分中的条目在设备的*驱动程序密钥*中创建**CoInstallers32**值条目。 该条目包含共同安装程序 DLL 和（可选）特定入口点。 如果省略入口点，则默认值为 CoDeviceInstall。 十六进制标志参数 (0x00010000) 指定这是一个 [REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types) 的值项。
 
-若要注册多个特定于设备的共同安装程序的设备，请将文件复制为每个共同安装程序并在注册表项中包含多个字符串。 例如，若要注册两个共同安装程序，创建 INF 部分如下所示：
+若要为某个设备注册多个特定于设备的共同安装程序，请复制每个辅助安装程序的文件，并在注册表项中包含多个字符串。 例如，要注册两个共同安装程序，请创建如下所示的 INF 部分：
 
 ```cpp
 ;   :
@@ -73,13 +73,7 @@ HKR,,CoInstallers32,0x00010000,                 \
                                          \\ add both to registry
 ```
 
-特定于设备的共同安装程序会在过程中安装一台设备，共同安装程序 INF 部分处理时的注册。 SetupAPI 然后调用共同安装程序在安装过程的每个后续步骤。 如果多个共同安装程序已注册的设备，SetupAPI 的注册表中的列的顺序调用它们。
+当处理 Coinstallers INF 部分时，将在安装设备的过程中注册特定于设备的共同安装程序。 然后，Setupapi.log 会在安装过程的每个后续步骤调用共同安装程序。 如果为某个设备注册了多个共同安装程序，则 Setupapi.log 会按照它们在注册表中列出的顺序调用它们。
 
  
-
- 
-
-
-
-
 

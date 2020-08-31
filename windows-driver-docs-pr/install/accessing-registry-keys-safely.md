@@ -3,41 +3,41 @@ title: 安全地访问注册表项
 description: 安全地访问注册表项
 ms.assetid: 81203790-66CB-42ee-82F8-2F0FFF04DF10
 keywords:
-- 注册表 WDK 设备安装，安全地访问注册表项
-- 访问注册表密钥安全地 WDK 设备安装
+- 注册表 WDK 设备安装，安全访问注册表项
+- 在安全的 WDK 设备安装中访问注册表项
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c096e156a2432fb372de612248605991926047d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4dd3a6b1c97a98c0f322723ad70cd9ba0e83fed6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386050"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096281"
 ---
 # <a name="accessing-registry-keys-safely"></a>安全地访问注册表项
 
 
-客户问题频繁跟踪到了过外部组件，如第三方[设备安装应用程序](writing-a-device-installation-application.md)，执行以下操作：
+客户问题经常被跟踪到外部组件（例如第三方 [设备安装应用程序](writing-a-device-installation-application.md)），这些组件执行以下操作：
 
--   删除关键注册表项。
+-   删除关键的注册表项。
 
 -   修改关键注册表项的访问权限。
 
-很多与外部组件出现的问题而引起的注册表项使用 KEY_ALL_ACCESS 访问权限。 从 Windows Server 2003 [ **SetupDiCreateDevRegKey** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya)授予访问权限和不 KEY_ALL_ACCESS 唯一 KEY_READ 和 KEY_WRITE。 从 Windows Vista 开始，都会强制执行其他 KEY_ALL_ACCESS 限制。
+外部组件出现的许多问题都是通过对注册表项的 KEY_ALL_ACCESS 访问权限而引起的。 从 Windows Server 2003 开始， [**SetupDiCreateDevRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedevregkeya) 仅授予 KEY_READ 和 KEY_WRITE 访问权限，而不 KEY_ALL_ACCESS。 从 Windows Vista 开始，将强制实施其他 KEY_ALL_ACCESS 限制。
 
-请遵循以下准则可以安全地访问注册表项：
+遵循以下准则以安全访问注册表项：
 
--   使用 SetupAPI 并*软件密钥*设备。
+-   对设备使用 Setupapi.log 和 *software 密钥* 。
 
-    这些函数解决常见的问题而导致的访问权限的限制。
+    这些函数解决了对访问权限的限制导致的常见问题。
 
--   Windows 不同版本之间可能会更改的位置和注册表项的格式。 不要假设位置、 格式或含义的注册表项或值用于设备和驱动程序安装。
+-   不同版本的 Windows 之间的注册表项的位置和格式可能会发生变化。 不要假设用于设备和驱动程序安装的注册表项或值的位置、格式或含义。
 
-    有关注册表项和树的详细信息，请参阅[注册表树和设备和驱动程序的密钥](registry-trees-and-keys.md)。
+    有关注册表项和树的详细信息，请参阅 [设备和驱动程序的注册表树和密钥](registry-trees-and-keys.md)。
 
--   不要使用注册表来直接访问或修改设备的内部设置。
+-   不要使用注册表直接访问或修改设备的内部设置。
 
--   请求所需的每个任务，如下所示的最小访问权限：
+-   仅请求每个任务所需的最小访问权限，如下所示：
 
     -   KEY_SET_VALUE
 
@@ -47,31 +47,23 @@ ms.locfileid: "67386050"
 
     -   KEY_ENUMERATE_SUB_KEYS
 
--   不要直接打开设备安装程序类项在注册表中。 与任何注册表项，可能会更改的 Windows 不同版本之间的位置和设备安装程序类项的名称。
+-   不要直接在注册表中打开设备安装程序类键。 与任何注册表项一样，设备安装程序类键的位置和名称在不同版本的 Windows 中可能会发生变化。
 
     若要安全地打开设备安装程序类密钥，请遵循以下准则：
 
-    -   使用[ **SetupDiOpenClassRegKey**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)。
+    -   请使用 [**SetupDiOpenClassRegKey**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkey)。
 
-    -   使用[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)并设置 DIOCR_INSTALLER*标志*参数。
+    -   使用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 并在 *Flags* 参数中设置 DIOCR_INSTALLER。
 
--   不要直接打开设备接口的类密钥在注册表中。 与任何注册表项，可能会更改的 Windows 不同版本之间的位置和设备接口的类密钥的名称。
+-   不要直接打开注册表中的设备接口类键。 与任何注册表项一样，设备接口类键的位置和名称在不同版本的 Windows 中可能会发生变化。
 
-    若要安全地打开设备接口的类密钥，请使用[ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)并设置 DIOCR_INSTALLER*标志*参数。
+    若要安全地打开设备接口类密钥，请使用 [**SetupDiOpenClassRegKeyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) 并在 *Flags* 参数中设置 DIOCR_INSTALLER。
 
--   使用仅 INF 指令来修改由操作系统使用的保留的注册表项。 有关详细信息，请参阅[INF 指令摘要](summary-of-inf-directives.md)。
+-   仅使用 INF 指令来修改保留供操作系统使用的注册表项。 有关详细信息，请参阅 [INF 指令摘要](summary-of-inf-directives.md)。
 
--   *类安装程序*并*共同安装程序*不能调用注册表函数来创建、 更改或删除由操作系统保留供使用的注册表值。
+-   *类安装* 程序和 *共同安装程序* 不能调用注册表功能来创建、更改或删除保留供操作系统使用的注册表值。
 
-    有关详细信息，请参阅[访问共同安装程序类安装程序进行注册表](accessing-the-registry-by-class-installers-and-co-installers.md)。
-
-有关注册表项的访问权限的详细信息，请参阅[注册表项安全和访问权限](https://go.microsoft.com/fwlink/p/?linkid=194542)。
+有关注册表项的访问权限的详细信息，请参阅 [注册表项安全性和访问权限](https://go.microsoft.com/fwlink/p/?linkid=194542)。
 
  
-
- 
-
-
-
-
 

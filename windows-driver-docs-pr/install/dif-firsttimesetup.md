@@ -14,23 +14,23 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 351cc3ee4fda06893f835b389b6a643c2d35f8e8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7de1bb6a3d2a4193018bea81c350ab7db6d9534b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386903"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095589"
 ---
-# <a name="diffirsttimesetup"></a>DIF_FIRSTTIMESETUP
+# <a name="dif_firsttimesetup"></a>DIF_FIRSTTIMESETUP
 
 
-此差异代码保留供系统使用。 供应商提供的安装程序必须处理此请求，除非在供应商提供的安装程序必须检测到非 PnP 设备。
+此 DIF 代码保留供系统使用。 供应商提供的安装程序不得处理此请求，除非供应商提供必须由安装程序检测到的非 PnP 设备。
 
-DIF_FIRSTTIMESETUP 请求指示安装程序来执行必须在操作系统的初始安装过程中完成的任何特定于类的安装任务。
+DIF_FIRSTTIMESETUP 请求指示安装程序执行任何特定于类的安装任务，这些任务必须在操作系统的初始安装过程中完成。
 
 ### <a name="when-sent"></a>发送时间
 
-在 GUI 模式下安装程序。
+GUI 模式安装过程中。
 
 ### <a name="who-handles"></a>谁处理
 
@@ -60,54 +60,54 @@ DIF_FIRSTTIMESETUP 请求指示安装程序来执行必须在操作系统的初�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄的设备信息设置。 没有[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)与关联*DeviceInfoSet*。
+提供设备信息集的句柄。 存在与*DeviceInfoSet*关联的[设备安装程序类](./overview-of-device-setup-classes.md)。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
 无
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoSet*。
+与*DeviceInfoSet*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
 
-<a href="" id="class-installation-parameters"></a>类的安装参数  
+<a href="" id="class-installation-parameters"></a>类安装参数  
 无
 
 ### <a name="installer-output"></a>安装程序输出
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-安装程序将添加到的设备信息元素*DeviceInfoSet*为每个检测到它想要安装的设备。 安装程序还可能会生成一个全局类驱动程序列表。
+对于要安装的每个检测到的设备，安装程序将设备信息元素添加到 *DeviceInfoSet* 中。 安装程序还可以生成全局类驱动程序列表。
 
 <a href="" id="device-installation-parameters"></a>设备安装参数  
-安装程序可以修改的设备安装参数*DeviceInfoSet*或为其创建的新设备信息元素。
+安装程序可以修改 *DeviceInfoSet* 的设备安装参数，也可以修改它所创建的新设备信息元素的设备安装参数。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
-类共同安装程序可以在预处理或后处理过程中检测到设备。 此类共同安装程序 （适用于后续处理） 返回 ERROR_DI_POSTPROCESSING_REQUIRED 和/或其检测操作之后，返回 NO_ERROR 或 Win32 错误代码。 如果共同安装程序不会检测设备，则返回 NO_ERROR 从其预处理阶段。
+类共同安装程序可以在预处理或后处理期间检测设备。 此类共同安装程序返回 ERROR_DI_POSTPROCESSING_REQUIRED (，用于后处理) 和/或在其检测操作后返回 NO_ERROR 或 Win32 错误代码。 如果共同安装程序未检测到设备，它将从其预处理传递返回 NO_ERROR。
 
-如果类安装程序检测到设备时，安装程序将返回 NO_ERROR 或相应的 Win32 错误代码。 如果类安装程序不处理此 DIF 请求，安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序检测到设备，安装程序将返回 NO_ERROR 或适当的 Win32 错误代码。 如果类安装程序不处理此 DIF 请求，则安装程序将返回 ERROR_DI_DO_DEFAULT。
 
-### <a name="default-dif-code-handler"></a>默认 DIF 代码处理程序
+### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
 无
 
 ### <a name="installer-operation"></a>安装程序操作
 
-若要在 GUI 模式下安装过程中检测到非 PnP 设备，安装程序必须处理 DIF_FIRSTTIMESETUP 请求。 GUI 模式下安装程序不会发送[ **DIF_DETECT** ](dif-detect.md)到安装程序的请求。
+若要在 GUI 模式安装过程中检测非 PnP 设备，安装程序必须处理 DIF_FIRSTTIMESETUP 请求。 GUI 模式安装程序不会向安装程序发送 [**DIF_DETECT**](dif-detect.md) 请求。
 
-GUI 模式下安装程序将发送一个空的 DIF_FIRSTTIMESETUP 请求*DeviceInfoSet*。 安装程序可以执行非 PnP 设备的旧检测并将其添加到*DeviceInfoSet*。 从 Windows 9 迁移旧的设备安装时，系统提供的安装程序还可以处理此 DIF 请求 x / Me 或 Windows NT 到 Microsoft Windows 2000 和更高版本的 Windows。
+GUI 模式安装程序发送一个 DIF_FIRSTTIMESETUP 请求，其中包含空的 *DeviceInfoSet*。 安装程序可以对非 PnP 设备执行旧式检测，并将其添加到 *DeviceInfoSet*中。 系统提供的安装程序还可以在将旧式设备安装从 Windows 9x/Me 或 Windows NT 迁移到 Microsoft Windows 2000 及更高版本的 Windows 时处理此 DIF 请求。
 
-安装程序检测到基于注册表的信息，通过调入内核模式检测组件，或通过咨询其安装程序类的新设备*unattend.txt*迁移期间运行的 DLL 时存储的信息操作系统升级。
+安装程序会根据注册表信息、通过调用内核模式检测组件来检测其安装程序类的新设备，或通过咨询 *unattend.txt* 在操作系统升级过程中运行迁移 DLL 时存储的信息。
 
-安装程序安装程序检测到非 PnP 设备，如果应按如下所示选择设备的驱动程序： 创建设备信息元素 ([**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa))，设置 SPDRP_HARDWAREID通过调用[ **SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)，调用[ **SetupDiBuildDriverInfoList**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)，然后调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)发送[ **DIF_SELECTBESTCOMPATDRV** ](dif-selectbestcompatdrv.md)请求。
+如果安装程序检测到非 PnP 设备，则安装程序应为设备选择驱动程序，如下所示：创建设备信息元素 ([**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)) ，通过调用 [**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)设置 SPDRP_HARDWAREID 属性，调用 [**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)，然后调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 发送 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md) 请求。
 
-如果一个或多个安装程序检测到此 DIF 代码的响应中的设备，GUI 模式下安装程序将尝试安装设备。 GUI 模式下安装程序将尝试在列表中; 安装所有设备如果安装程序返回以前配置的设备，GUI 模式下安装程序将两次安装该设备。
+如果一个或多个安装程序检测到设备 (s) 以响应此 DIF 代码，GUI 模式安装程序将尝试安装 () 的设备。 GUI 模式安装程序将尝试安装列表中的所有设备;如果安装程序返回先前配置的设备，GUI 模式安装程序将安装两次设备。
 
-安装程序必须以无提示方式处理此差异的请求。 也就是说，而不会向用户显示 UI。
+安装程序必须以无提示方式处理此 DIF 请求。 也就是说，不向用户显示 UI。
 
-安装程序不应执行的任务在其处理要求计算机重新启动此 DIF 请求。 例如，类安装程序不应设置在下次启动时用于确定哪些驱动程序成功完成后重新启动时加载的驱动程序。
+如果安装程序处理需要重新启动计算机的此 DIF 请求，则不应执行任务。 例如，在下一次启动时，类安装程序不应将驱动程序设置为加载，目的是在重新启动后确定哪些驱动程序成功。
 
-若要在 GUI 模式下安装过程中检测到非 PnP 设备，安装程序必须处理此请求。 GUI 模式下安装程序不发送 DIF_DETECT 请求。
+若要在 GUI 模式安装过程中检测非 PnP 设备，安装程序必须处理此请求。 GUI 模式安装程序不发送 DIF_DETECT 请求。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
+有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -119,39 +119,32 @@ GUI 模式下安装程序将发送一个空的 DIF_FIRSTTIMESETUP 请求*DeviceI
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h （包括 Setupapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Setupapi.log (包含 Setupapi.log) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**DIF_SELECTBESTCOMPATDRV**](dif-selectbestcompatdrv.md)
 
-[**SetupDiBuildDriverInfoList**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
+[**SetupDiBuildDriverInfoList**](/windows/desktop/api/setupapi/nf-setupapi-setupdibuilddriverinfolist)
 
-[**SetupDiCallClassInstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)
+[**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)
 
-[**SetupDiCreateDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
+[**SetupDiCreateDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfoa)
 
-[**SetupDiSetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
+[**SetupDiSetDeviceRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceregistrypropertya)
 
-[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
-
- 
+[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
  
-
-
-
-
-
 

@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c8943c2801c5309928be455b0e8675c6923a7ffc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ad0ec44fed4d746ae4f036fd9085399aea1a89a2
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841081"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066882"
 ---
 # <a name="mrxseteainfo-routine"></a>MRxSetEaInfo 例程
 
 
-[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetEaInfo*例程来请求网络小型重定向程序设置文件系统对象上的扩展属性信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxSetEaInfo*例程来请求网络小型重定向程序设置文件系统对象上的扩展属性信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetEaInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IPR。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IPR。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetEaInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxSetEaInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -72,7 +72,7 @@ NTSTATUS MRxSetEaInfo(
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_FILE_CLOSED</strong></td>
-<td align="left"><p>SRV_OPEN 结构已关闭。</p></td>
+<td align="left"><p>已关闭 SRV_OPEN 结构。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
@@ -118,13 +118,13 @@ NTSTATUS MRxSetEaInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxSetEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-mj-set-ea.md)请求。
+RDBSS 发出对 *MRxSetEaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ EA**](irp-mj-set-ea.md) 请求。
 
-在调用*MRxSetEaInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxSetEaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
 **信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;QueryEa**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryEa**。
 
 <a name="requirements"></a>要求
 ------------
@@ -137,11 +137,11 @@ RDBSS 发出对*MRxSetEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -149,7 +149,7 @@ RDBSS 发出对*MRxSetEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-
 ## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -174,11 +174,4 @@ RDBSS 发出对*MRxSetEaInfo*的调用，以响应接收[**IRP\_\_MJ\_EA**](irp-
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

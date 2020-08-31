@@ -1,31 +1,25 @@
 ---
-title: 附录 2 使用 Visual Studio 的签名驱动程序
-description: 介绍如何注册 Windows 设备驱动程序使用 Microsoft Visual Studio。
+title: 附录2用 Visual Studio 为驱动程序签名
+description: 描述如何使用 Microsoft Visual Studio 对 Windows 设备驱动程序进行签名。
 ms.assetid: 4021543C-A3F3-421D-A6C2-087DA350B21D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 764c736f0e15d0c4d66fc4131f5e1dad436eac78
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6b21ebdbc9bb6d146fdbf2fb7bbb9fb9e3f9844e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375349"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096245"
 ---
 # <a name="appendix-2-signing-drivers-with-visual-studio"></a>附录 2：使用 Visual Studio 签署驱动程序
 
 
-## <a name="driver-signing-using-visual-studio-development-environment"></a>驱动程序签名使用 Visual Studio 开发环境
+## <a name="driver-signing-using-visual-studio-development-environment"></a>使用 Visual Studio 开发环境进行驱动程序签名
 
 
-较新版本的 WDK 与 Visual Studio 支持驱动程序签名在 IDE 中直接集成：
+与 Visual Studio 集成的新的 WDK 版本支持直接在 IDE 中进行驱动程序签名：
 
-[签名驱动程序开发和测试期间](https://docs.microsoft.com/windows-hardware/drivers)
-[身份公开发布的版本的驱动程序](https://docs.microsoft.com/windows-hardware/drivers)
+[在开发和测试](/windows-hardware/drivers) 
+ 期间对驱动程序进行签名[为公用版本的驱动程序签名](/windows-hardware/drivers)
  
-
- 
-
-
-
-
 

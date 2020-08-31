@@ -4,12 +4,12 @@ description: 完成测试签名并验证驱动程序是否已准备好进行发�
 ms.assetid: 71499A0A-95D0-411C-84D1-C4B91FA4E6B1
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1556a5ce192e6f1ba6abac41e2c4aec832525ee9
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: e70ef9a059f996f255dd9976ad9bf5aaca8e1d47
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902461"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095637"
 ---
 # <a name="release-signing"></a>发布签名
 
@@ -19,7 +19,7 @@ ms.locfileid: "88902461"
 
 内核模式二进制文件通过以下任一方法进行释放：
 
-1. Windows 硬件质量实验室 (WHQL 也称为 Winqual) 以发布对驱动程序包的签名。 WHQL 版本签名通过 Windows 认证计划获取。 下面的链接描述了从 Windows 认证计划开始到完成的五个步骤。 有关此选项的更多详细信息，请参阅 [Windows 硬件认证：从此处开始](https://docs.microsoft.com/previous-versions/hh833792(v=msdn.10)) 。 以上链接中的步骤的任何问题都应该定向到 <sysdev@microsft.com> 别名。
+1. Windows 硬件质量实验室 (WHQL 也称为 Winqual) 以发布对驱动程序包的签名。 WHQL 版本签名通过 Windows 认证计划获取。 下面的链接描述了从 Windows 认证计划开始到完成的五个步骤。 有关此选项的更多详细信息，请参阅 [Windows 硬件认证：从此处开始](/previous-versions/hh833792(v=msdn.10)) 。 以上链接中的步骤的任何问题都应该定向到 <sysdev@microsft.com> 别名。
 2. 驱动程序开发人员和供应商可以对驱动程序包进行签名，而不是使用 WHQL 程序。 此程序已从 Vista OS 版本开始。 版本签名是通过软件发行者证书 (SPC) 创建的。 SPC 是从 Microsoft 授权的第三方证书颁发机构 () CA 颁发的，以颁发此类证书。 此类 SPC 生成的签名还符合 Windows Vista 和更高版本的 windows Vista 和32位版本的 PnP 驱动程序签名64要求
 
 接下来介绍为方法2发布签名驱动程序包所需的步骤。
@@ -73,7 +73,7 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
 
 来创建。*pfx* 文件，请按照以下说明进行操作：
 
-- 若要将 *pvk* 文件和 *.spc* 文件转换为 *.pfx* 文件，请在命令提示符处使用以下 [**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) 命令：
+- 若要将 *pvk* 文件和 *.spc* 文件转换为 *.pfx* 文件，请在命令提示符处使用以下 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 命令：
 
     ```cpp
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc myspcfile.spc -pfx mypfxfile.pfx -po pfxpassword -f
@@ -85,7 +85,7 @@ CA 可能会颁发包含所需证书信息的 *.pfx* 文件。 如果是这样�
     Pvk2Pfx -pvk mypvkfile.pvk -pi mypvkpassword -spc mycerfile.cer -pfx mypfxfile.pfx -po pfxpassword -f
     ```
 
-下面介绍了 [**Pvk2Pfx**](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) 命令中使用的参数：
+下面介绍了 [**Pvk2Pfx**](../devtest/pvk2pfx.md) 命令中使用的参数：
 
 - **-Pvk**  *mypvkfile. pvk*参数指定*pvk*文件。
 

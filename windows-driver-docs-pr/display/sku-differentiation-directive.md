@@ -1,22 +1,22 @@
 ---
 title: SKU 差分指令
-description: 使用 Windows Server 2008 和 Windows Vista SP1，在框中显示驱动程序 Inf 已修改为包括一个新值，表示为仅客户端，这意味着将驱动程序将不在服务器 Sku 的 Windows 上安装的驱动程序。
+description: 对于 Windows Server 2008 和 Windows Vista SP1，已修改内置的显示驱动程序 Inf，使其包含仅将驱动程序表示为客户端的新值，也就是说，驱动程序将不会安装在 Windows 的服务器 Sku 上。
 ms.assetid: 9E31BD57-41B6-40DF-AF27-8EAC66BDFE09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81557e368bf9e6cca606d82250b7d7809dacc07b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce37d064d0b7f91d12088e68ad38770303268949
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360329"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066602"
 ---
 # <a name="sku-differentiation-directive"></a>SKU 差分指令
 
 
-使用 Windows Server 2008 和 Windows Vista SP1 中，框中显示驱动程序 Inf 已修改为包括一个新值，表示作为驱动程序*客户端仅*，驱动程序将不在服务器 Sku 的 Windows 安装的含义。 此指令时在 Windows 8 中的所有显示器驱动程序的要求。
+对于 Windows Server 2008 和 Windows Vista SP1，已修改内置的显示驱动程序 Inf，使其包含仅将驱动程序表示为 *客户端*的新值，也就是说，驱动程序将不会安装在 Windows 的服务器 sku 上。 Windows 8 中的所有显示器驱动程序都需要此指令。
 
-在 Windows Vista SP1 之前，使用以下值：
+在 SP1 之前的 Windows Vista 中，使用了以下值：
 
 ``` syntax
 X86:
@@ -39,16 +39,16 @@ X64:
 [ATI.Mfg.NTamd64...1]
 ```
 
-对于 Windows 8 中，使用适用于 Windows Vista SP1 和 Windows Server 2008 使用的相同值。
+对于 Windows 8，将使用 Windows Vista SP1 和 Windows Server 2008 所用的相同值。
 
-## <a name="span-idskudifferentiationfordevicedriversspanspan-idskudifferentiationfordevicedriversspanspan-idskudifferentiationfordevicedriversspansku-differentiation-for-device-drivers"></a><span id="SKU_differentiation_for_device_drivers__"></span><span id="sku_differentiation_for_device_drivers__"></span><span id="SKU_DIFFERENTIATION_FOR_DEVICE_DRIVERS__"></span>SKU 差异化的设备驱动程序
+## <a name="span-idsku_differentiation_for_device_drivers__spanspan-idsku_differentiation_for_device_drivers__spanspan-idsku_differentiation_for_device_drivers__spansku-differentiation-for-device-drivers"></a><span id="SKU_differentiation_for_device_drivers__"></span><span id="sku_differentiation_for_device_drivers__"></span><span id="SKU_DIFFERENTIATION_FOR_DEVICE_DRIVERS__"></span>设备驱动程序的 SKU 差异
 
 
-独立硬件供应商 (Ihv) 可以使用 ProductType INF 值以指示给定的 INF 是有效的服务器或客户端平台。 此过程适用于 Windows XP 和更高版本的操作系统，并且这些更改将实现相对简单。
+独立硬件供应商 (Ihv) 可以使用 ProductType INF 值来指示给定 INF 对于服务器或客户端平台仅有效。 这适用于 Windows XP 及更高版本的操作系统，并且更改相对简单，可实现。
 
-因此，即使某个服务器系统的驱动程序存储区中存在的客户端的驱动程序包，该驱动程序不是可安装。
+因此，即使服务器系统的驱动程序存储中存在仅限客户端的驱动程序包，也无法安装该驱动程序。
 
-[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)主题演示如何添加*TargetOSVersion*到筛选器基于各种条件的设备安装。 这些条件之一是*ProductType*，这可用于指定可以在其安装包的 Sku 的类别。 定义以下值*ProductType*:
+[**INF 制造商部分**](../install/inf-manufacturer-section.md)主题显示了如何添加*TargetOSVersion* ，以根据各种标准筛选设备安装。 其中一个条件是 *ProductType*，可用于指定可在其上安装包的 sku 类别。 为 *ProductType*定义了以下值：
 
 ``` syntax
 0x0000001 (VER_NT_WORKSTATION)
@@ -56,7 +56,7 @@ X64:
 0x0000003 (VER_NT_SERVER) 
 ```
 
-对于任何给定的体系结构，典型 INF 修饰上任何 SKU 安装如下所示：
+对于任何指定的体系结构，都采用以下方法将典型 INF 修饰为在任何 SKU 上安装：
 
 ``` syntax
 [Manufacturer]
@@ -66,7 +66,7 @@ X64:
 <models entries>
 ```
 
-为了限制客户端上安装此 INF 仅，需要将添加为"1"ProductType 到修饰。 可能为十进制或十六进制表示的数字。 此文档介绍十六进制的但我将在示例中为简单起见使用小数。
+若要将此 INF 限制为仅在客户端上安装，需要将 "1" 的 ProductType 添加到修饰。 该数字可以表示为十进制或十六进制。 该文档显示十六进制，但为了简单起见，我将在示例中使用小数。
 
 ``` syntax
 [Manufacturer]
@@ -77,7 +77,7 @@ X64:
 <models entries>
 ```
 
-对于服务器，语法将分解它在客户端和普通服务器上安装。 每个具有其自己的产品类型。 遗憾的是 INF 语法要求你同时涵盖两种情况下指定。 因此，您需要重复整个的模型部分，以真正覆盖服务器 SKU:
+对于服务器，语法会将其中断，以便在客户端和普通服务器上安装。 其中每个都有其自己的产品类型。 遗憾的是，INF 语法要求您同时指定这两者以涵盖这两种情况。 因此，您需要复制整个模型部分，以真正涵盖服务器 SKU：
 
 ``` syntax
 [Manufacturer]
@@ -97,10 +97,4 @@ IHV_DeviceName.ZZZ = "Foo Datacenter Name (Microsoft Corporation - WDDM v1.2)"
 ```
 
  
-
- 
-
-
-
-
 

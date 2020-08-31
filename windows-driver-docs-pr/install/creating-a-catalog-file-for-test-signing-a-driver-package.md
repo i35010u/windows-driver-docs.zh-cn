@@ -3,45 +3,39 @@ title: 创建用于对驱动程序包进行测试签名的目录文件
 description: 创建用于对驱动程序包进行测试签名的目录文件
 ms.assetid: 0bbb4dfa-d203-4618-946e-95d2896081ac
 keywords:
-- 测试签名驱动程序包 WDK，目录文件
+- 测试签名驱动程序包 WDK，编录文件
 - 目录文件 WDK 驱动程序签名，创建
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdabfc33b725e0e875cc09e01f9c760a0490fdd2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 25841fba2465fa52e7cd7709f2c54613915939d9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356329"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095755"
 ---
 # <a name="creating-a-catalog-file-for-test-signing-a-driver-package"></a>创建用于对驱动程序包进行测试签名的目录文件
 
 
-目录 ( *.cat*) 文件包含的所有文件都是一部分的数字签名的[驱动程序包](driver-packages.md)。 有关详细信息，请参阅[目录文件](catalog-files.md)。
+目录 (*类*) 文件包含属于 [驱动程序包](driver-packages.md)的所有文件的数字签名。 有关详细信息，请参阅 [编录文件](catalog-files.md)。
 
-有两种方法来创建[编录文件](catalog-files.md):
+可以通过两种方法创建 [目录文件](catalog-files.md)：
 
--   如果通过 INF 文件安装的驱动程序包，则使用[ **Inf2Cat** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat)工具创建目录文件。 Inf2Cat 自动包含在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅[使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
+-   如果驱动程序包是通过 INF 文件安装的，请使用 [**Inf2Cat**](../devtest/inf2cat.md) 工具创建编录文件。 Inf2Cat 自动包括在包的 INF 文件中引用的驱动程序包中的所有文件。 有关如何使用 Inf2Cat 工具的详细信息，请参阅 [使用 Inf2Cat 创建编录文件](using-inf2cat-to-create-a-catalog-file.md)。
 
--   如果通过 INF 文件未安装驱动程序包，则使用[MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922)工具，用于通过使用手动创建目录定义文件创建编录文件 ( *.cdf*)。
+-   如果未通过 INF 文件安装驱动程序包，请使用 [MakeCat](https://go.microsoft.com/fwlink/p/?linkid=104922) 工具，通过使用手动创建的目录定义文件 (*cdf*) 来创建目录文件。
 
-    例如，如果通过应用程序安装的驱动程序包，则您可能想要创建编录文件进行数字签名的包，如驱动程序以及任何支持的所有内核模式二进制组件 *.dll*文件。 有关如何使用 MakeCat 工具的详细信息，请参阅[使用 MakeCat 创建编录文件](using-makecat-to-create-a-catalog-file.md)。
+    例如，如果驱动程序包是通过应用程序安装的，则可能要创建一个编录文件来对包的所有内核模式二进制组件进行数字签名，如驱动程序和任何支持 *.dll* 文件。 有关如何使用 MakeCat 工具的详细信息，请参阅 [使用 MakeCat 创建编录文件](using-makecat-to-create-a-catalog-file.md)。
 
-目录文件时不需要安装以下类型的驱动程序：
+安装以下类型的驱动程序不需要目录文件：
 
--   一个*引导启动驱动程序*。
+-   *启动启动驱动程序*。
 
--   通过使用不使用的应用程序安装的驱动程序[编录文件](catalog-files.md)。
+-   使用不使用 [目录文件](catalog-files.md)的应用程序安装的驱动程序。
 
-对于这些类型的驱动程序，您必须嵌入在驱动程序中的数字签名。 有关此过程的详细信息，请参阅[测试签名的驱动程序通过嵌入式签名](test-signing-a-driver-through-an-embedded-signature.md)。
+对于这些类型的驱动程序，必须将数字签名嵌入驱动程序中。 有关此过程的详细信息，请参阅 [通过嵌入签名对驱动程序进行测试签名](test-signing-a-driver-through-an-embedded-signature.md)。
 
-有关如何创建目录文件的详细信息，请参阅[为 Test-Signed 驱动程序包创建编录文件](creating-a-catalog-file-for-a-test-signed-driver-package.md)。
-
- 
+有关如何创建目录文件的详细信息，请参阅为 [测试签名的驱动程序包创建编录文件](creating-a-catalog-file-for-a-test-signed-driver-package.md)。
 
  
-
-
-
-
 

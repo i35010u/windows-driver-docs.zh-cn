@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 94dad8e818a01e24fb20c6c657be4044a4594fbe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3eb9aea9f98835ac70f69a9063e2b97e42fc983e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377677"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095801"
 ---
 # <a name="mediumchangerclassguid"></a>MediumChangerClassGuid
 
 
-MediumChangerClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)媒体更换器设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_MEDIUMCHANGER** ](guid-devinterface-cdchanger.md)此类的新实例的类标识符。
+MediumChangerClassGuid 是用于中型转换器设备的 [设备接口类](./overview-of-device-interface-classes.md) 的过时标识符。 从 Microsoft Windows 2000 开始，使用此类的新实例 [**GUID_DEVINTERFACE_MEDIUMCHANGER**](guid-devinterface-cdchanger.md) 类标识符。
 
 <a name="requirements"></a>要求
 ------------
@@ -36,27 +36,20 @@ MediumChangerClassGuid 是已过时标识符[设备接口类](https://docs.micro
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_MEDIUMCHANGER。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_MEDIUMCHANGER。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_MEDIUMCHANGER**](guid-devinterface-cdchanger.md)
 
  
-
- 
-
-
-
-
-
 

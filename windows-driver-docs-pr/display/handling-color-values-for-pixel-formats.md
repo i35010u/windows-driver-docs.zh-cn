@@ -7,12 +7,12 @@ keywords:
 - 像素格式颜色值 WDK DirectX 9。0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95e0e7be16adcb2d0181f9ad6e90ef7a9b345b76
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6d9133b41164c0da14ae172afe57e3259f81bce6
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839665"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064128"
 ---
 # <a name="handling-color-values-for-pixel-formats"></a>处理像素格式的颜色值
 
@@ -22,9 +22,9 @@ ms.locfileid: "72839665"
 
 **本主题适用于 DirectX 7.0 和更高版本。**
 
-显示驱动程序必须转换颜色格式的 ARGB 和 YUV 类的输入颜色值，因为应用程序以统一的方式请求具有这些格式的图面上的颜色填充和清除操作。 但是，驱动程序必须直接从其他类格式使用颜色值。 例如，应用程序使用 A8R8G8B8 作为 alpha （A）、红色（R）、绿色（G）和蓝色（B）分量的8位的所有表面的统一颜色值;驱动程序必须通过复制具有最高重要性的位，将 A8R8G8B8 颜色转换为特定于实际 ARGB 格式的颜色值。
+显示驱动程序必须转换颜色格式的 ARGB 和 YUV 类的输入颜色值，因为应用程序以统一的方式请求具有这些格式的图面上的颜色填充和清除操作。 但是，驱动程序必须直接从其他类格式使用颜色值。 例如，应用程序使用 A8R8G8B8 作为 alpha (的所有表面的统一颜色值：) ，红色 (R) ，绿色 (G) 和蓝色 () 组件;驱动程序必须通过复制具有最高重要性的位，将 A8R8G8B8 颜色转换为特定于实际 ARGB 格式的颜色值。
 
-显示驱动程序在处理 D3DDP2OP 时接收颜色值，在其[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)函数中处理\_CLEAR 和 D3DDP2OP\_COLORFILL 操作代码。
+显示驱动程序在处理 \_ 其 D3dDrawPrimitives2 函数中的 D3DDP2OP CLEAR 和 D3DDP2OP \_ COLORFILL 操作代码[**D3dDrawPrimitives2**](/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)时接收颜色值。
 
 显示驱动程序可以使用以下代码来转换 ARGB 和 YUV 类格式的颜色值：
 
@@ -161,10 +161,4 @@ DWORD CPixel::ConvertFromARGB(D3DCOLOR  InputColor,
 ```
 
  
-
- 
-
-
-
-
 

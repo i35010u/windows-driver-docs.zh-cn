@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a69e14017082dade0e7773461e86d178190a69c3
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 18697beec4ac2e4bf5e15e3f0d7ed9e0eaf8067e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418433"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096749"
 ---
 # <a name="devpkey_device_reported"></a>DEVPKEY_Device_Reported
 
 
-DEVPKEY_Device_Reported 设备属性表示一个布尔值，该值指示设备实例是否为根枚举设备，设备的驱动程序通过调用[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)向即插即用（PnP）管理器报告该设备。
+DEVPKEY_Device_Reported 设备属性表示一个布尔值，该值指示设备实例是否为根枚举设备，设备的驱动程序通过调用 [**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)将其报告给即插即用 (PnP) 管理器。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_Device_Reported 设备属性表示一个布尔值，该值指示设备�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -64,29 +64,22 @@ DEVPKEY_Device_Reported 设备属性表示一个布尔值，该值指示设备�
 
 PnP 管理器将 DEVPKEY_Device_Reported 的值设置为 DEVPROP_TRUE 如果设备是一个根枚举设备，则设备的驱动程序会通过调用 IoReportDetectedDevice 向 PnP 管理器报告该设备。 否则，PnP 管理器会将属性的值设置为 DEVPROP_FALSE。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_Reported 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_Reported 的值。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**IoReportDetectedDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)
+[**IoReportDetectedDevice**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioreportdetecteddevice)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

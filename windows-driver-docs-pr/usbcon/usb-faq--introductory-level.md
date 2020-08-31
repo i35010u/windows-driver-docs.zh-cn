@@ -3,12 +3,12 @@ description: 本主题为驱动程序开发人员提供了一些常见问题，�
 title: Windows 中的 USB - 常见问题解答
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 034b9a89bf2a5d12c2c5521118c228e4910f9e31
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: f7dda29a6cca6db8751a531036a72a71c545bf7b
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968654"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056973"
 ---
 # <a name="usb-in-windows---faq"></a>Windows 中的 USB - 常见问题解答
 
@@ -81,7 +81,7 @@ Windows 8 和 Windows Server 2012 包括对 USB 3.0 的支持。
 
 如果你在运行早于 Windows 8 的 Windows 版本的计算机上添加了 u 3.0 控制器卡，则必须安装由控制器卡制造商提供的驱动程序。
 
-在 Windows 8 中，Microsoft 提供的 USB 3.0 驱动程序集 (USB 驱动程序堆栈) 适用于大多数主机控制器。 Microsoft USB 3.0 驱动程序堆栈无法与 Fresco 逻辑 FL1000 控制器一起使用。 若要确定是否有 FL1000 控制器，请打开设备管理器并展开 " **通用串行总线控制器**"。 右键单击控制器节点，查看控制器属性。 在 " **详细信息** " 选项卡上，选择列表中的 " **硬件 id** " 属性。 如果硬件 ID 以 PCI \\ 即使1B73 开头 \_&开发 \_ 1000，则为 FL1000。 对于该控制器，请从您的 PC 或控制器卡制造商处下载并安装驱动程序。
+在 Windows 8 中，Microsoft 提供的 USB 3.0 驱动程序集 (USB 驱动程序堆栈) 适用于大多数主机控制器。 Microsoft USB 3.0 驱动程序堆栈无法与 Fresco 逻辑 FL1000 控制器一起使用。 若要确定是否有 FL1000 控制器，请打开设备管理器并展开 " **通用串行总线控制器**"。 通过选择并按住 (或右键单击控制器节点) 来查看控制器属性。 在 " **详细信息** " 选项卡上，选择列表中的 " **硬件 id** " 属性。 如果硬件 ID 以 PCI \\ 即使1B73 开头 \_&开发 \_ 1000，则为 FL1000。 对于该控制器，请从您的 PC 或控制器卡制造商处下载并安装驱动程序。
 
 ## <a name="why-do-i-see-several-host-controllers-on-my-system"></a>为什么我在我的系统上看到了几个主机控制器？
 
@@ -193,7 +193,7 @@ USB 3.0 xHCI 主机控制器完全向后兼容所有 USB 设备速度、SuperSpe
 
 ## <a name="is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware"></a>是否可以在一个硬件中创建复合设备和复合设备？
 
-是。 具有三端口总线供电集线器的 Microsoft 自然键盘专业人员是复合复合 USB 设备的一个示例。 设备已将复合设备连接到端口1。 另外两个端口向最终用户公开。
+是的。 具有三端口总线供电集线器的 Microsoft 自然键盘专业人员是复合复合 USB 设备的一个示例。 设备已将复合设备连接到端口1。 另外两个端口向最终用户公开。
 
 附加到端口1的设备是低速复合设备。 设备有两个接口，两者都符合 (HID) 的用户界面设备的 USB 标准设备类定义。 复合设备提供两个 HID 接口，而不是通过使用顶级集合在单个 HID 接口上对所有集合进行多路复用。 选择此设计是为了与较旧的 BIOSs 兼容。
 
@@ -477,17 +477,17 @@ USB 设备无法唤醒 Windows from S3 的原因有多种，其中包括：
 
 1. 按照第一个问题的答案中所述的过程来验证你的计算机是否安装了 USB 2.0 端口，并且是否需要为增强型主机控制器安装驱动程序。
 2. 在 "设备管理器" 窗口中，展开第一个问题中所述的 " **其他设备** " 部分，然后双击 " **通用串行总线 (USB) 控制器**。
-3. 在 "属性" 对话框的 " **常规** " 选项卡上，单击 " **重新安装驱动程序**"。
+3. 在 "属性" 对话框的 " **常规** " 选项卡上，选择 " **重新安装驱动程序**"。
 
     ![重新安装驱动程序](images/usb-reinstall-driver.jpg)
 
-4. 在 "添加新硬件" 向导中，选择 **"自动安装软件 (建议) **，然后单击" **下一步**"。 继续执行向导，接受所有默认选项，直到到达向导的最后一页，然后单击 " **完成**"。 可能需要重新启动计算机才能完成安装。
+4. 在 "添加新硬件" 向导中，选择 **"自动安装软件 (建议) **"，然后选择 " **下一步**"。 继续执行向导，接受所有默认选项，直到到达向导的最后一页，然后选择 " **完成**"。 可能需要重新启动计算机才能完成安装。
 
 **注意**   若要确保已在计算机上安装了最新更新，请定期访问 Windows 更新。
 
 ## <a name="can-i-disable-the-hi-speed-usb-device-plugged-into-non-hi-speed-usb-port-notice"></a>能否禁用 "将高速 USB 设备插入非高速 USB 端口" 通知？
 
-Windows XP 和更高版本的 Windows 在高速 USB 设备插入不支持高速的 USB 端口时创建一个弹出通知。 若要从设备获得最快的性能，用户必须单击该通知并按照屏幕上的说明进行操作。
+Windows XP 和更高版本的 Windows 在高速 USB 设备插入不支持高速的 USB 端口时创建一个弹出通知。 若要从设备获得最快的性能，用户必须选择通知并按照屏幕上的说明进行操作。
 
 若要禁用该通知，请执行以下步骤：
 
@@ -595,7 +595,7 @@ Needs = Composite.Dev
 
 ## <a name="does-windows-support-interface-association-descriptors"></a>Windows 是否支持接口关联描述符？
 
-是。 USB 2.0 接口关联描述符 (IAD) 工程更改通知 (ECN) 引入了新的标准方法，用于描述函数中的一组接口及其备用设置。 IAD 可用于标识一个函数中的两个或多个连续接口和备用设置。
+是的。 USB 2.0 接口关联描述符 (IAD) 工程更改通知 (ECN) 引入了新的标准方法，用于描述函数中的一组接口及其备用设置。 IAD 可用于标识一个函数中的两个或多个连续接口和备用设置。
 
 Microsoft 目前正在使用 Ihv 来开发支持 IAD 的设备。 以下操作系统支持 IAD：
 
@@ -609,7 +609,7 @@ Windows 附带的 USB 3.0 驱动程序堆栈支持此功能。
 
 ## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>某个驱动程序是否可以在 IRP 中具有多个 URB？
 
-不行。 Windows 附带的 USB stack 不支持此功能。
+不是。 Windows 附带的 USB stack 不支持此功能。
 
 ## <a name="does-windows-support-usb-composite-hubs"></a>Windows 是否支持 USB 复合中心？
 

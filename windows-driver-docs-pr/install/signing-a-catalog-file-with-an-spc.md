@@ -4,16 +4,16 @@ description: 使用 SPC 对目录文件进行签名
 ms.assetid: 8fe1fc32-73c9-4c09-96bd-93effb35c061
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fe4edcc5b2a2e7942627d74ccf091a255bb9e29c
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 3b51c54ade142dad5e4a72ba4180b3fb99407c08
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902407"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095813"
 ---
 # <a name="signing-a-catalog-file-with-an-spc"></a>使用 SPC 对目录文件进行签名
 
-使用以下[**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令通过[软件发行者证书 (SPC) ](software-publisher-certificate.md)对内核模式[驱动程序包](driver-packages.md)的[目录文件](catalog-files.md)进行签名。 对于64位版本的 Windows Vista 和更高版本的 Windows，没有 [WHQL 版本签名](whql-release-signature.md) 的内核模式驱动程序包必须使用 SPC 签名进行签名，以符合 [内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 和 [PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
+使用以下[**SignTool**](../devtest/signtool.md)命令通过[软件发行者证书 (SPC) ](software-publisher-certificate.md)对内核模式[驱动程序包](driver-packages.md)的[目录文件](catalog-files.md)进行签名。 对于64位版本的 Windows Vista 和更高版本的 Windows，没有 [WHQL 版本签名](whql-release-signature.md) 的内核模式驱动程序包必须使用 SPC 签名进行签名，以符合 [内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md) 和 [PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
 ```cpp
 SignTool sign /v /ac CrossCertificateFile /s SPCCertificateStore /n SPCCertificateName /t http://timestamp.digicert.com CatalogFileName.cat

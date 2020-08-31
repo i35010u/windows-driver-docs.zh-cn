@@ -9,16 +9,16 @@ keywords:
 - 硬件
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93eb718561e212e07347961d854f8977ca9b6e6a
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 4ad0864b0a153a5d90169645ea6a87e792932b41
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802489"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096569"
 ---
 # <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>硬件支持应用 (HSA) ：驱动程序开发人员的步骤
 
-硬件支持应用 (HSA) 是设备特定的应用，与特定驱动程序或 [RPC (远程过程调用) ](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page) 终结点配对。
+硬件支持应用 (HSA) 是设备特定的应用，与特定驱动程序或 [RPC (远程过程调用) ](/windows/desktop/Rpc/rpc-start-page) 终结点配对。
 
 若要将应用商店应用与驱动程序相关联，请首先保留称为 "自定义功能" 的特殊值。 然后，允许访问广告功能并向应用开发人员提供功能的应用。  本页介绍了驱动程序开发人员的这些步骤。
 
@@ -42,7 +42,7 @@ HSA 是 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.m
       * 数据事件是停留在用户设备上，还是发送到合作伙伴？
     * 你的功能提供了哪些数据？
     * 此功能的最终用户权益是什么？
-    * 包括 Microsoft Store 应用发行者 ID。  若要获取一个，请在 Microsoft Store 页上创建一个主干应用项。 有关保留应用 PFN 的详细信息，请参阅 [通过保留名称创建应用](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
+    * 包括 Microsoft Store 应用发行者 ID。  若要获取一个，请在 Microsoft Store 页上创建一个主干应用项。 有关保留应用 PFN 的详细信息，请参阅 [通过保留名称创建应用](/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 
 2. 如果批准了请求，Microsoft 将通过电子邮件返回 **capabilityName \_ PublisherID**格式的唯一自定义功能字符串名称。
 
@@ -52,7 +52,7 @@ HSA 是 [Windows 驱动程序](../develop/getting-started-with-windows-drivers.m
 
 若要允许对具有自定义功能的 UWP 应用访问 RPC 终结点，请执行以下步骤：
 
-1. 调用 [**DeriveCapabilitySidsFromName**](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
+1. 调用 [**DeriveCapabilitySidsFromName**](/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname) ，将自定义功能名称转换为 (SID) 的安全 ID。
 2. 将 SID 添加到 access 允许的 ACE 以及 RPC 终结点安全描述符所需的任何其他 Sid。
 3. 使用安全描述符中的信息创建 RPC 终结点。
 
@@ -148,7 +148,7 @@ Status = WdfDeviceAssignInterfaceProperty(
 </CustomCapabilityDescriptor>
 ```
 
-生成的已签名 SCCD 仅适用于以 [开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)运行的设备。
+生成的已签名 SCCD 仅适用于以 [开发人员模式](/windows/uwp/get-started/enable-your-device-for-development)运行的设备。
 
 ## <a name="allowing-any-app-to-use-a-custom-capability"></a>允许任何应用使用自定义功能
 
@@ -180,21 +180,21 @@ Status = WdfDeviceAssignInterfaceProperty(
 ## <a name="see-also"></a>另请参阅
 
 * [Windows 驱动程序入门](../develop/getting-started-with-windows-drivers.md)
-* [通用 Windows 平台简介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [通用 Windows 平台 (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
-* [应用功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
-* [使用 Visual Studio 开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
+* [通用 Windows 平台简介](/windows/uwp/get-started/universal-application-platform-guide)
+* [通用 Windows 平台 (UWP)](/windows/uwp/design/basics/design-and-ui-intro)
+* [应用功能](/windows/uwp/packaging/app-capability-declarations)
+* [使用 Visual Studio 开发 UWP 应用](/windows/uwp/develop/)
 * [将驱动程序与通用 Windows 平台 (UWP) 应用配对](../install/pairing-app-and-driver-versions.md)
-* [开发 UWP 应用](https://docs.microsoft.com/windows/uwp/develop/)
-* [使用 Desktop App Converter 将应用打包（桌面桥）](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+* [开发 UWP 应用](/windows/uwp/develop/)
+* [使用 Desktop App Converter 将应用打包（桌面桥）](/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 * [自定义功能示例应用](https://go.microsoft.com/fwlink/p/?LinkId=846904)
 * [自定义功能驱动程序示例](https://aka.ms/customcapabilitydriversample )
-* [Windows 10 中的旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+* [Windows 10 中的旁加载应用](/windows/deploy/sideload-apps-in-windows-10)
 * [自定义功能常见问题](FAQ-on-custom-capabilities.md)
 
 ## <a name="sccd-xml-schema"></a>SCCD XML 架构
 
-下面是 SCCD 文件的正式 XML XSD 架构。  提交 SCCD 之前，请使用此架构验证你的。  有关导入架构和使用 IntelliSense 进行验证的信息，请参阅 [架构缓存](https://docs.microsoft.com/visualstudio/xml-tools/schema-cache) 和 [XML 文档验证](https://docs.microsoft.com/visualstudio/xml-tools/xml-document-validation) 。
+下面是 SCCD 文件的正式 XML XSD 架构。  提交 SCCD 之前，请使用此架构验证你的。  有关导入架构和使用 IntelliSense 进行验证的信息，请参阅 [架构缓存](/visualstudio/xml-tools/schema-cache) 和 [XML 文档验证](/visualstudio/xml-tools/xml-document-validation) 。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

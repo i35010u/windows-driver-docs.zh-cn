@@ -4,23 +4,23 @@ description: 验证目录文件的 SPC 签名
 ms.assetid: 57bc65fe-1c31-4ebb-a1bc-e1fe275f8d10
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10e451ae07320829812481745e60d1d8965cac43
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d4461648080407b5ba43cfec353cf48a99765ff7
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380416"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095888"
 ---
 # <a name="verifying-the-spc-signature-of-a-catalog-file"></a>验证目录文件的 SPC 签名
 
 
-若要确认[编录文件](catalog-files.md)由有效签名[软件发行者证书 (SPC)](software-publisher-certificate.md)和相应交叉证书，使用以下[ **SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)命令：
+若要验证 [目录文件](catalog-files.md) 是否已由有效的 [软件发行者证书签名 (SPC) ](software-publisher-certificate.md) 和相应的交叉证书，请使用以下 [**SignTool**](../devtest/signtool.md) 命令：
 
 ```cpp
 SignTool verify /v /kp CatalogFileName.cat 
 ```
 
-若要验证的中列出的文件[驱动程序包](driver-packages.md) [编录文件](catalog-files.md)由签名[软件发行者证书 (SPC)](software-publisher-certificate.md)和相应交叉证书使用以下 SignTool 命令：
+若要验证 [驱动程序包的](driver-packages.md) [目录文件](catalog-files.md) 中列出的文件是否由 [软件发行者证书 (SPC) ](software-publisher-certificate.md) 和相应的交叉证书进行签名，请使用以下 SignTool 命令：
 
 ```cpp
 SignTool verify /v /kp /c CatalogFileName.cat DriverFileName
@@ -28,35 +28,29 @@ SignTool verify /v /kp /c CatalogFileName.cat DriverFileName
 
 其中：
 
--   **验证**命令将配置 SignTool 验证的签名[驱动程序包](driver-packages.md)编录文件*CatalogFileName.cat*或驱动程序文件*DriverFileName*。
+-   **Verify**命令将 SignTool 配置为验证[驱动程序包](driver-packages.md)的目录文件的签名*CatalogFileName.cat*或驱动程序文件*DriverFileName*。
 
--   **/V**选项配置 SignTool 打印执行消息和警告消息。
+-   **/V**选项将 SignTool 配置为打印执行和警告消息。
 
--   **/Kp**选项配置 SignTool 验证文件签名符合[内核模式代码签署策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)和[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)的 Windows Vista 和更高版本的 Windows。
+-   **/Kp**选项将 SignTool 配置为验证文件的签名是否符合[内核模式代码签名策略](kernel-mode-code-signing-policy--windows-vista-and-later-.md)和 windows Vista 和更高版本的 windows 的[PnP 设备安装签名要求](pnp-device-installation-signing-requirements--windows-vista-and-later-.md)。
 
--   *CatalogFileName.cat*是驱动程序包的编录文件的名称。
+-   *CatalogFileName.cat* 是驱动程序包的编录文件的名称。
 
--    ***/C*** *CatalogFileName.cat*选项指定包含该文件的条目的目录文件*DriverFileName*。
+-   *The* ***/C*** *CatalogFileName.cat*选项指定目录文件，其中包含文件*DriverFileName*的条目。
 
--   *DriverFileName*编录文件中有条目的文件的名称*CatalogFileName.cat*。
+-   *DriverFileName* 是包含目录文件 *CatalogFileName.cat*中的条目的文件的名称。
 
-例如，以下命令验证*Tstamd64.cat*具有符合内核模式代码签名策略和即插即用设备安装签名要求适用于 Windows Vista 及更高版本的数字签名Windows 的版本。 在此示例中， *Tstam64.cat*是在其中运行该命令的相同目录中。
+例如，以下命令验证 *Tstamd64.cat* 的数字签名是否符合内核模式代码签名策略和 windows Vista 和更高版本 Windows 的 PnP 设备安装签名要求。 在此示例中， *Tstam64.cat* 位于运行命令的同一目录中。
 
 ```cpp
 SignTool verify /kp tstamd64.cat
 ```
 
-在下一步的示例中，以下命令验证*Toastpkg.inf*，这在编录文件中没有条目*Tstamd64.cat*，具有符合内核模式代码签名的数字签名策略和签名要求的 Windows Vista 和更高版本的 Windows 即插即用设备安装。 在此示例中， *Tstam64.cat*并*Toastpkg.inf*是在其中运行该命令的相同目录中。
+在下一个示例中，以下命令验证 *toastpkg.inf*在目录文件 *Tstamd64.cat*中是否有条目，其数字签名符合内核模式代码签名策略和 windows Vista 和更高版本 windows 的 PnP 设备安装签名要求。 在此示例中， *Tstam64.cat* 和 *toastpkg.inf* 在运行该命令的同一目录中。
 
 ```cpp
 SignTool verify /kp /c tstamd64.cat toastpkg.inf
 ```
 
  
-
- 
-
-
-
-
 

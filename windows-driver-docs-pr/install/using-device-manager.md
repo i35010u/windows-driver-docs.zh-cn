@@ -7,12 +7,12 @@ keywords:
 - 设备管理器 WDK，关于设备管理器
 ms.date: 10/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a3ef1c8638df66ecc71d23344cb2b854d993c24c
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: dd2047aa3406b90b4012b1e575b2bac25d953209
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056941"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096413"
 ---
 # <a name="using-device-manager"></a>使用设备管理器
 
@@ -20,7 +20,7 @@ ms.locfileid: "89056941"
 
 设备管理器显示有关每个设备的信息。 这包括设备类型、设备状态、制造商、设备特定的属性以及有关设备驱动程序的信息。
 
-如果你的设备需要启动计算机，则设备安装的问题可能会阻止计算机启动。 在这些情况下，必须使用内核调试器对设备安装进行故障排除。 有关详细信息，请参阅 [ (内核模式) 入门 ](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-)。
+如果你的设备需要启动计算机，则设备安装的问题可能会阻止计算机启动。 在这些情况下，必须使用内核调试器对设备安装进行故障排除。 有关详细信息，请参阅 [ (内核模式) 入门 ](../debugger/getting-started-with-windbg--kernel-mode-.md)。
 
 如果您的设备不需要启动计算机，设备管理器会在设备管理器对话框中的设备名称旁边放置一个黄色惊叹号。 设备管理器还提供了一个描述该问题的错误消息。 有关错误消息的详细信息，请参阅 [设备管理器错误消息](device-manager-error-messages.md)。
 

@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: debf67c3e3b03604448ab9e8ced10e0fdbdeb969
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 5f038f387b6a3e519a0c905d1e6ed2e9aacb41df
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418418"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096737"
 ---
 # <a name="devpkey_device_saferemovalrequiredoverride"></a>DEVPKEY_Device_SafeRemovalRequiredOverride
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,19 +62,19 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 <a name="remarks"></a>备注
 -------
 
-此设备属性可用于重写 Windows 即插即用（PnP）用于计算[**DEVPKEY_Device_SafeRemovalRequired**](devpkey-device-saferemovalrequired.md)设备属性值的启发式结果。 执行此替代的方式如下：
+此设备属性可用于重写 Windows 即插即用 (PnP) 用来计算 [**DEVPKEY_Device_SafeRemovalRequired**](devpkey-device-saferemovalrequired.md) 设备属性值的启发式结果。 执行此替代的方式如下：
 
 -   如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性设置为 "DEVPROP_TRUE 并且设备实例可移动或具有可移动上级，则 PnP 会将 DEVPKEY_Device_SafeRemovalRequired 设备属性设置为 DEVPROP_TRUE，并且不使用试探法。
 
-    **注意**   如果设置了其可移动设备功能，则会将设备实例视为可移动设备。 有关详细信息，请参阅[可移动设备功能的概述](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-the-removable-device-capability)。
+    **注意**   如果设置了其可移动设备功能，则会将设备实例视为可移动设备。 有关详细信息，请参阅 [可移动设备功能的概述](./overview-of-the-removable-device-capability.md)。
 
      
 
--   如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性设置为 DEVPROP_TRUE 并且设备实例（或祖先）不可删除，则 PnP 会将 DEVPKEY_Device_SafeRemovalRequired 设置为 DEVPROP_FALSE，并且不使用试探法。
+-   如果将 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性设置为 DEVPROP_TRUE 并且)  (不可移动的设备实例，则 PnP 会将 DEVPKEY_Device_SafeRemovalRequired 设置为 DEVPROP_FALSE，而不使用试探法。
 
 -   如果 DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性未设置或设置为 DEVPROP_FALSE，则 PnP 会将 DEVPKEY_Device_SafeRemovalRequired 设备属性设置为使用试探法确定的值。
 
-可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_SafeRemovalRequiredOverride 的值。 还可以通过调用[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_SafeRemovalRequiredOverride 的值。 还可以通过调用 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)来设置此值。
 
 <a name="requirements"></a>要求
 ------------
@@ -91,24 +91,17 @@ DEVPKEY_Device_SafeRemovalRequiredOverride 设备属性表示设备实例的安�
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
-
- 
+[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
-
-
-
-
-
 

@@ -4,57 +4,51 @@ description: 检索设备类属性值
 ms.assetid: 50b16bd9-7f38-4128-af8f-8b39b099931f
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a15eac946f28a7c095561112a00531f2a24590de
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f0d9cc51651b91f032d8b2f11091c1d74e404708
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387306"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095635"
 ---
 # <a name="retrieving-a-device-class-property-value"></a>检索设备类属性值
 
 
-以下主题介绍如何检索 Windows Vista 和更高版本的 Windows 中的设备类属性值：
+以下主题介绍如何在 Windows Vista 和更高版本的 Windows 中检索设备类属性值：
 
 [检索本地计算机上的设备类属性值](#retrieving-a-device-class-property-value-on-a-local-computer)
 
 [检索远程计算机上的设备类属性值](#retrieving-a-device-class-property-value-on-a-remote-computer)
 
-### <a href="" id="retrieving-a-device-class-property-value-on-a-local-computer"></a> 检索本地计算机上的设备类属性值
+### <a name="retrieving-a-device-class-property-value-on-a-local-computer"></a><a href="" id="retrieving-a-device-class-property-value-on-a-local-computer"></a> 检索本地计算机上的设备类属性值
 
-若要检索本地计算机上的设备类属性的值，请按照下列步骤：
+若要检索本地计算机上设备类属性的值，请执行以下步骤：
 
-1.  调用[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)来确定数据类型和大小 （字节） 的属性值。 提供以下参数值：
+1.  调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
 
-    -   设置*ClassGuid*标识的 GUID 是指向[设备安装程序类](device-setup-classes.md)或[设备接口类](device-interface-classes.md)要检索的类属性，为设备设置类。
-    -   设置*PropertyKey*指向的[ **DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpropkey)结构，它表示该属性。
-    -   设置*PropertyType*指向的[ **DEVPROPTYPE**](https://docs.microsoft.com/previous-versions/ff543546(v=vs.85))-类型化的变量中。
-    -   设置*PropertyBuffer*到**NULL**。
-    -   设置*PropertyBufferSize*为零。
-    -   设置*RequiredSize*到 DWORD 类型的变量。
-    -   如果设备安装程序类的设备类，则设置*标志*DICLASSPROP_INSTALLER 到。 否则，如果设备接口类的设备类，则设置*标志*DICLASSPROP_INTERFACE 到。
+    -   将 *ClassGuid* 设置为指向 GUID 的指针，该 GUID 标识要为其检索为设备类设置的类属性的 [设备安装程序类](./overview-of-device-setup-classes.md) 或 [设备接口类](./overview-of-device-interface-classes.md) 。
+    -   将 *PropertyKey* 设置为指向表示属性的 [**DEVPROPKEY**](./devpropkey.md) 结构的指针。
+    -   将 *PropertyType* 设置为指向 [**DEVPROPTYPE**](/previous-versions/ff543546(v=vs.85))类型的变量的指针。
+    -   将 *PropertyBuffer* 设置为 **NULL**。
+    -   将 *PropertyBufferSize* 设置为零。
+    -   将 *RequiredSize* 设置为 DWORD 类型化变量。
+    -   如果设备类是设备安装程序类，请将 *Flags* 设置为 DICLASSPROP_INSTALLER。 否则，如果设备类是设备接口类，请将 *Flags* 设置为 DICLASSPROP_INTERFACE。
 
-    在此第一次调用的响应[ **SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)， **SetupDiGetClassProperty**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回最近记录的错误代码。
+    在对[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)的第一次调用时， **SetupDiGetClassProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
-2.  调用**SetupDiGetClassProperty**试并提供相同的第一个调用中，除以下更改外中提供的参数：
-    -   设置*PropertyBuffer*到指向该缓冲区用于接收的属性值的指针。
-    -   设置*PropertyBufferSize*到所需的大小，以字节为单位的*PropertyBuffer*缓冲区。 首次调用**SetupDiGetClassProperty**检索所需的大小*PropertyBuffer*中的缓冲区\* *RequiredSize*。
+2.  再次调用 **SetupDiGetClassProperty** ，并提供在第一次调用中提供的相同参数，但以下更改除外：
+    -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
+    -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的所需大小（以字节为单位）。 第一次调用**SetupDiGetClassProperty**时，检索到 RequiredSize 中的*PropertyBuffer*缓冲区的所需大小 \* *RequiredSize*。
 
-如果第二个调用**SetupDiGetClassProperty**成功， **SetupDiGetClassProperty**设置\* *PropertyType*为属性数据类型标识符对于属性，设置*PropertyBuffer*属性值设置到缓冲区\* *RequiredSize*大小，以字节为单位，属性值用于已检索，并返回 **，则返回 TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty**返回**FALSE**并调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回的记录的错误代码。
+如果对**SetupDiGetClassProperty**的第二次调用成功，则**SetupDiGetClassProperty**将 \* *PropertyType*设置为属性的属性数据类型标识符，将*PropertyBuffer*缓冲区设置为属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
-### <a href="" id="retrieving-a-device-class-property-value-on-a-remote-computer"></a> 检索远程计算机上的设备类属性值
+### <a name="retrieving-a-device-class-property-value-on-a-remote-computer"></a><a href="" id="retrieving-a-device-class-property-value-on-a-remote-computer"></a> 检索远程计算机上的设备类属性值
 
-若要检索远程计算机上的设备类属性值，请先按照相同的步骤，如中所述[检索本地计算机上的设备类属性值](#retrieving-a-device-class-property-value-on-a-local-computer)并进行以下修改：
+若要检索远程计算机上的设备类属性值，请遵循在 [本地计算机上检索设备类属性值](#retrieving-a-device-class-property-value-on-a-local-computer) 中所述的相同过程进行以下修改：
 
--   调用[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)而不是**SetupDiGetClassProperty**。
+-   调用 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) 而不是 **SetupDiGetClassProperty**。
 
--   除了提供参数值**SetupDiGetDevicePropertyEx**并**SetupDiGetClassProperty**这两种需要，提供*MachineName*参数，它必须设置为指向以 NULL 结尾的字符串包含 UNC 名称，包括\\\\前缀，一台计算机。
-
- 
+-   除了提供**SetupDiGetDevicePropertyEx**和**SetupDiGetClassProperty**都需要的参数值，还需要提供*MachineName*参数，该参数必须设置为指向以 NULL 结尾的字符串的指针，该字符串包含计算机的 UNC 名称，包括 \\ \\ 前缀。
 
  
-
-
-
-
 

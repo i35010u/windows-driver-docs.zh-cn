@@ -22,19 +22,19 @@ keywords:
 - FsRec
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 740187d7bdfa5770d7bde74d6804beb9c7cc643d
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: be750a140f86fb5fdf5ef3fac6a9b670ccc54bf7
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910444"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066910"
 ---
 # <a name="what-happens-to-file-systems-during-system-boot"></a>文件系统在系统启动期间会发生什么情况
 
 > [!NOTE]
-> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的[文件系统微筛选器驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅[迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
+> 为了获得最佳的可靠性和性能，请使用带有筛选器管理器支持的 [文件系统微筛选器驱动程序](./filter-manager-concepts.md) ，而不是使用旧的文件系统 若要将旧驱动程序移植到微筛选器驱动程序，请参阅 [迁移旧筛选器驱动程序的准则](guidelines-for-porting-legacy-filter-drivers.md)。
 
-文件系统在系统启动过程中进行初始化;具体而言，在 i/o 系统初始化过程中。 I/o 管理器会创建全局文件系统队列，并初始化操作系统（OS）加载程序和 PnP 管理器加载的文件系统和旧筛选器驱动程序。
+文件系统在系统启动过程中进行初始化;具体而言，在 i/o 系统初始化过程中。 I/o 管理器会创建全局文件系统队列，并初始化 (操作系统) 加载器和 PnP 管理器加载的文件系统和旧筛选器驱动程序。
 
 ## <a name="system-boot-process"></a>系统启动过程
 
@@ -48,36 +48,36 @@ ms.locfileid: "78910444"
 
 2. I/o 管理器会创建一个具有四个段的全局文件系统队列，每个段分别用于 CD-ROM、磁盘、磁带设备和网络文件系统。 稍后，当注册每个文件系统时，其控制设备对象将添加到此队列的适当段。 然而，此时尚未注册任何文件系统，因此队列为空。
 
-3. PnP 管理器调用原始文件系统和所有 SERVICE_BOOT_START 驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程。
+3. PnP 管理器调用原始文件系统和所有 SERVICE_BOOT_START 驱动程序的 [**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize) 例程。
 
    如果 SERVICE_BOOT_START 驱动程序依赖于其他驱动程序，则也会加载并启动这些驱动程序。
 
-   PnP 管理器通过调用启动设备驱动程序的[**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程来启动启动设备。 如果启动设备具有子设备，则会枚举这些设备。 如果子设备的驱动程序是启动启动驱动程序，也会配置并启动子设备。 如果设备的驱动程序并非所有启动启动驱动程序，则 PnP 管理器会为设备创建 devnode，但不会启动设备。
+   PnP 管理器通过调用启动设备驱动程序的 [**AddDevice**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device) 例程来启动启动设备。 如果启动设备具有子设备，则会枚举这些设备。 如果子设备的驱动程序是启动启动驱动程序，也会配置并启动子设备。 如果设备的驱动程序并非所有启动启动驱动程序，则 PnP 管理器会为设备创建 devnode，但不会启动设备。
 
    此时会加载所有启动驱动程序并启动启动设备。
 
-4. PnP 管理器遍历[pnp 设备树](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)，查找并加载与每个 devnode 相关联但尚未运行的驱动程序。
+4. PnP 管理器遍历 [pnp 设备树](../kernel/device-tree.md)，查找并加载与每个 devnode 相关联但尚未运行的驱动程序。
 
    每个 PnP 设备启动时，PnP 管理器会枚举设备的子节点（如果有）。 PnP 管理器配置子设备，加载其设备驱动程序，并启动设备。
 
-   PnP 管理器加载每个设备的驱动程序，*而不考虑*驱动程序的 " **StartType**"、" **LoadOrderGroup**" 或 "**依赖项**" 值。
+   PnP 管理器加载每个设备的驱动程序， *而不考虑* 驱动程序的 " **StartType**"、" **LoadOrderGroup**" 或 " **依赖项** " 值。
 
    在此步骤中，PnP 管理器仅配置并启动可 PnP 枚举的设备。 如果设备不是 PnP 可枚举设备，则 PnP 管理器会忽略设备，并且不会枚举其子代，即使子设备是 PnP 可枚举的。
 
 5. PnP 管理器加载并初始化尚未加载 SERVICE_SYSTEM_START 类型的驱动程序。
 
-   此时将加载文件系统识别器（FsRec）。 请注意，尽管它位于 "启动文件系统" 加载顺序组，但 FsRec 不是启动文件系统。 实际启动文件系统（即装载启动卷的文件系统）是在启动过程开始时加载的。
+   此时将加载文件系统识别器 (FsRec) 。 请注意，尽管它位于 "启动文件系统" 加载顺序组，但 FsRec 不是启动文件系统。 实际启动文件系统（即装载启动卷的文件系统）是在启动过程开始时加载的。
 
-   稍后在 SERVICE_SYSTEM_START 阶段，将加载 "文件系统" 加载顺序组中的文件系统。 这包括命名管道文件系统（NPFS）和 Mailslot 文件系统（MSFS）。 它不包括基于媒体的文件系统，例如 NTFS、FAT、CDFS 或 UDF。
+   稍后在 SERVICE_SYSTEM_START 阶段，将加载 "文件系统" 加载顺序组中的文件系统。 这包括命名管道文件系统 (NPFS) 和 Mailslot File System (MSFS) 。 它不包括基于媒体的文件系统，例如 NTFS、FAT、CDFS 或 UDF。
 
    "网络" 加载顺序组中的网络文件系统也会在此阶段加载。
 
-6. 在启动时加载的所有驱动程序都已初始化后，i/o 管理器将调用具有这些驱动程序的任何驱动程序的重新初始化例程。 重新*初始化例程*是由启动驱动程序注册的回调例程，该启动驱动程序需要在启动过程中指定额外的处理时间。 重新初始化例程是通过调用[**IoRegisterBootDriverReinitialization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterbootdriverreinitialization)或[**IoRegisterDriverReinitialization**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization)注册的。
+6. 在启动时加载的所有驱动程序都已初始化后，i/o 管理器将调用具有这些驱动程序的任何驱动程序的重新初始化例程。 重新 *初始化例程* 是由启动驱动程序注册的回调例程，该启动驱动程序需要在启动过程中指定额外的处理时间。 重新初始化例程是通过调用 [**IoRegisterBootDriverReinitialization**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterbootdriverreinitialization) 或 [**IoRegisterDriverReinitialization**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioregisterdriverreinitialization)注册的。
 
 7. 服务控制管理器加载尚未加载 SERVICE_AUTO_START 类型的驱动程序。
 
 ## <a name="file-system-recognizer"></a>文件系统识别器
 
-系统启动后，将加载并启动附加到系统的所有卷的存储设备驱动程序。 但是，并非所有内置文件系统都已加载，且并非所有文件系统卷都已装入。 文件系统识别器（FsRec）根据需要执行这些任务来处理[**IRP_MJ_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)请求。
+系统启动后，将加载并启动附加到系统的所有卷的存储设备驱动程序。 但是，并非所有内置文件系统都已加载，且并非所有文件系统卷都已装入。 文件系统识别器 (FsRec) 按照需要执行这些任务来处理 [**IRP_MJ_CREATE**](./irp-mj-create.md) 请求。
 
 FsRec 在系统启动的 SERVICE_SYSTEM_START 阶段中加载。 请注意，尽管它位于 "启动文件系统" 加载顺序组，但 FsRec 不是启动文件系统。 实际启动文件系统（即装载启动卷的文件系统）是在启动过程开始时加载的。

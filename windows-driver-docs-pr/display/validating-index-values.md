@@ -8,12 +8,12 @@ keywords:
 - 索引验证 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2da094953a3d386da5eab1e636cc7981b7307729
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f5a9e0d185720dbcb47f16af386d3f2f7c5a2a6b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829237"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067054"
 ---
 # <a name="validating-index-values"></a>验证索引值
 
@@ -22,17 +22,11 @@ ms.locfileid: "72829237"
 
 应考虑以下事项：
 
--   当使用顶点缓冲区呈现时，DirectX 8.0 和 DirectX 9.0 应用程序可以传递步幅值0。 在这种情况下，只应引用顶点0。 跨距值是在调用用户模式显示驱动程序的[**SETSTREAMSOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setstreamsource)函数的[**D3DDDIARG\_SETSTREAMSOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_setstreamsource)结构的**stride**成员中设置的。
+-   当使用顶点缓冲区呈现时，DirectX 8.0 和 DirectX 9.0 应用程序可以传递步幅值0。 在这种情况下，只应引用顶点0。 跨距值是在对用户模式显示驱动程序的[**SETSTREAMSOURCE**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setstreamsource)函数的调用中，在[**D3DDDIARG \_ SETSTREAMSOURCE**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_setstreamsource)结构的**stride**成员中设置的。
 
--   对驱动程序的[**SetStreamSourceUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setstreamsourceum)函数的调用不包括顶点数据的大小。 即，用户内存缓冲区的大小，该缓冲区提供未指定*SetStreamSourceUM*指向的*pUMBuffer*参数的顶点数据。
+-   对驱动程序的 [**SetStreamSourceUM**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_setstreamsourceum) 函数的调用不包括顶点数据的大小。 即，用户内存缓冲区的大小，该缓冲区提供未指定*SetStreamSourceUM*指向的*pUMBuffer*参数的顶点数据。
 
--   调用驱动程序的[**DRAWINDEXEDPRIMITIVE2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_drawindexedprimitive)或[**DRAWINDEXEDPRIMITIVE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_drawindexedprimitive2)函数时， [**D3DDDIARG\_DRAWINDEXEDPRIMITIVE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_drawindexedprimitive)或[**D3DDDIARG\_DRAWINDEXEDPRIMITIVE2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_drawindexedprimitive2)结构的**NumVertices**成员从不设置为0。 驱动程序应将允许的最大索引数设置为（NumVerticesÂ1）。
-
- 
+-   调用驱动程序的[**DRAWINDEXEDPRIMITIVE2**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_drawindexedprimitive)或[**DRAWINDEXEDPRIMITIVE**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_drawindexedprimitive2)函数时， [**D3DDDIARG \_ DRAWINDEXEDPRIMITIVE**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_drawindexedprimitive)或[**D3DDDIARG \_ DRAWINDEXEDPRIMITIVE2**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_drawindexedprimitive2)结构的**NumVertices**成员从不设置为0。 驱动程序应将允许的最大索引设置为 (NumVerticesÂ-1) 。
 
  
-
-
-
-
 

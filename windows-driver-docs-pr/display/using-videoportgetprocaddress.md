@@ -7,12 +7,12 @@ keywords:
 - VideoPortGetProcAddress
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c90318c70415fe2eddea702cfa9fcf5b4598d5fb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 804df0d238ddcd09b1a6a2ec091b672963bb49da
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829239"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067062"
 ---
 # <a name="using-videoportgetprocaddress"></a>使用 VideoPortGetProcAddress
 
@@ -22,7 +22,7 @@ ms.locfileid: "72829239"
 
 只要微型端口驱动程序不尝试使用特定于较新操作系统版本的功能，就可以在一个基于 NT 的操作系统版本上开发的视频微型端口驱动程序加载并运行。
 
-加载视频微型端口驱动程序时，视频\_端口的**VideoPortGetProcAddress**成员[ **\_CONFIG\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)结构包含视频端口驱动程序导出[**的回调例程的地址。VideoPortGetProcAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nc-video-pvideo_port_get_proc_address)。 微型端口驱动程序可以使用此回调例程查找从*videoprt*导出的视频端口函数的地址。 当微型端口驱动程序具有此函数的地址后，它可以使用此地址调用函数。 下面的示例代码对此进行了演示。
+加载视频微型端口驱动程序时，[**视频 \_ 端口 \_ 配置 \_ 信息**](/windows-hardware/drivers/ddi/video/ns-video-_video_port_config_info)结构的**VideoPortGetProcAddress**成员包含视频端口驱动程序导出的回调例程的地址[**VideoPortGetProcAddress**](/windows-hardware/drivers/ddi/video/nc-video-pvideo_port_get_proc_address)。 微型端口驱动程序可以使用此回调例程查找从 *videoprt.sys*导出的视频端口函数的地址。 当微型端口驱动程序具有此函数的地址后，它可以使用此地址调用函数。 下面的示例代码对此进行了演示。
 
 ```cpp
   // Useful typedef for a function pointer type
@@ -54,13 +54,7 @@ else {
 } 
 ```
 
-执行完*VideoPortGetProcAddress*回调例程的调用后， *pVPFunction*为**NULL**或包含**VideoPortCreateSecondaryDisplay**函数的地址。 如果*pVPFunction*为**NULL**，则视频端口驱动程序不会导出你要查找的函数，并且微型端口驱动程序不得尝试使用它。 如果*pVPFunction*不为**NULL**，则可以使用此指针调用**VideoPortCreateSecondaryDisplay** ，如前面的示例中所示。
+执行完 *VideoPortGetProcAddress* 回调例程的调用后， *pVPFunction* 为 **NULL** 或包含 **VideoPortCreateSecondaryDisplay** 函数的地址。 如果 *pVPFunction* 为 **NULL**，则视频端口驱动程序不会导出你要查找的函数，并且微型端口驱动程序不得尝试使用它。 如果 *pVPFunction* 不为 **NULL**，则可以使用此指针调用 **VideoPortCreateSecondaryDisplay** ，如前面的示例中所示。
 
  
-
- 
-
-
-
-
 

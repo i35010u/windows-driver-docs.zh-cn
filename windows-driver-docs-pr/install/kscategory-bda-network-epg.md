@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 208952b75db421324bd981882ce816195ae91426
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1f4401ffd7ce20329e29d4183c702d268e5fe6e1
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828763"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095697"
 ---
 # <a name="kscategory_bda_network_epg"></a>KSCATEGORY_BDA_NETWORK_EPG
 
 
-KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)是针对[广播驱动程序体系结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)（BDA）中的电子节目指南（EPG）的[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)（KS）功能类别定义的。
+KSCATEGORY_BDA_NETWORK_EPG[设备接口类](./overview-of-device-interface-classes.md)是在[广播驱动程序体系结构](/windows-hardware/drivers/ddi/_stream/index)) BDA (中的电子节目指南 (EPG) 的 "[核心流式处理](../stream/streaming-minidrivers2.md) (KS) 功能" 类别中定义的。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://docs.microsoft.com/windows-h
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">属性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://docs.microsoft.com/windows-h
 <a name="remarks"></a>备注
 -------
 
-用于 BDA 设备的驱动程序注册 KSCATEGORY_BDA_NETWORK_EPG 的实例，以向操作系统指明设备支持的是 BDA EPG 筛选器。
+用于 BDA 设备的驱动程序将注册 KSCATEGORY_BDA_NETWORK_EPG 的实例，以指示操作系统设备支持的是 BDA EPG 筛选器。
 
-有关详细信息，请参阅[BDA 筛选器类别 guid](https://docs.microsoft.com/windows-hardware/drivers/stream/bda-filter-category-guids)。
+有关详细信息，请参阅 [BDA 筛选器类别 guid](../stream/bda-filter-category-guids.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -73,16 +73,10 @@ KSCATEGORY_BDA_NETWORK_EPG[设备接口类](https://docs.microsoft.com/windows-h
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Bdamedia （包括 Bdamedia）</td>
+<td align="left">Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

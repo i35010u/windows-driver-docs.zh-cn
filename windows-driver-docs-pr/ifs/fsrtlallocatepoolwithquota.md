@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64a552d1201105b46903c996f9e2915ceacd9d72
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8dd4f052f2509c5842e9693e718f0ff6fb3b001f
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841235"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066928"
 ---
 # <a name="fsrtlallocatepoolwithquota"></a>FsRtlAllocatePoolWithQuota
 
@@ -25,13 +25,7 @@ ms.locfileid: "72841235"
 
 
 
-**FsRtlAllocatePoolWithQuota**例程已过时，但会导出以支持现有的驱动程序二进制文件。 改用[**FsRtlAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlallocatepoolwithquotatag) 。
+**FsRtlAllocatePoolWithQuota**例程已过时，但会导出以支持现有的驱动程序二进制文件。 改用 [**FsRtlAllocatePoolWithQuotaTag**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-fsrtlallocatepoolwithquotatag) 。
 
  
-
- 
-
-
-
-
 

@@ -4,42 +4,36 @@ description: 检索设备实例属性值
 ms.assetid: 4cec9132-5a28-492d-bbb1-39e388413ad0
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1107eaeb575cfd7524e5ee4003e8b18ad7604824
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 52be5009d95e484af5cda8c70fe20cb6188709ac
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387305"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095629"
 ---
 # <a name="retrieving-a-device-instance-property-value"></a>检索设备实例属性值
 
 
-若要检索的 Windows Vista 上的设备实例属性值和更高版本的 Windows，请执行以下步骤：
+若要在 Windows Vista 和更高版本的 Windows 上检索设备实例属性的值，请执行以下步骤：
 
-1.  调用[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来确定数据类型和大小 （字节） 的属性值。 提供以下参数值：
+1.  调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 以确定属性值的数据类型和大小（以字节为单位）。 提供以下参数值：
 
-    -   设置*DeviceInfoSet*到设备的信息集，其中包含要为其检索属性的设备实例的句柄。
-    -   设置*DeviceInfoData*指向的[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)结构，它表示要为其检索属性的设备实例。
-    -   设置*PropertyKey*指向的[ **DEVPROPKEY** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpropkey)结构，它表示该属性。
-    -   设置*PropertyType*指向的[ **DEVPROPTYPE**](https://docs.microsoft.com/previous-versions/ff543546(v=vs.85))-类型化的变量中。
-    -   设置*PropertyBuffer*到**NULL**。
-    -   设置*PropertyBufferSize*为零。
-    -   设置*RequiredSize*到指向 DWORD 类型的变量的指针。
-    -   设置*标志*为零。
+    -   将 *DeviceInfoSet* 设置为设备信息集的句柄，其中包含要为其检索属性的设备实例。
+    -   将 *DeviceInfoData* 设置为指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构表示要为其检索属性的设备实例。
+    -   将 *PropertyKey* 设置为指向表示属性的 [**DEVPROPKEY**](./devpropkey.md) 结构的指针。
+    -   将 *PropertyType* 设置为指向 [**DEVPROPTYPE**](/previous-versions/ff543546(v=vs.85))类型的变量的指针。
+    -   将 *PropertyBuffer* 设置为 **NULL**。
+    -   将 *PropertyBufferSize* 设置为零。
+    -   将 *RequiredSize* 设置为指向 DWORD 类型化变量的指针。
+    -   将 *标志* 设置为零。
 
-    在首次调用的响应[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)， **SetupDiGetDeviceProperty**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回最近记录的错误代码。
+    在对[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)的第一次调用时， **SetupDiGetDeviceProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
-2.  调用**SetupDiGetDeviceProperty**试并提供在第一个调用中，除以下更改外提供了相同的参数值：
-    -   设置*PropertyBuffer*到指向该缓冲区用于接收的属性值的指针。
-    -   设置*PropertyBufferSize*到所需的大小，以字节为单位的*PropertyBuffer*缓冲区。 首次调用**SetupDiGetDeviceProperty**检索所需的大小*PropertyBuffer*中的缓冲区\* *RequiredSize*。
+2.  再次调用 **SetupDiGetDeviceProperty** ，并提供在第一次调用中提供的相同参数值，但以下更改除外：
+    -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
+    -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的所需大小（以字节为单位）。 第一次调用**SetupDiGetDeviceProperty**时，检索到 RequiredSize 中的*PropertyBuffer*缓冲区的所需大小 \* *RequiredSize*。
 
-如果第二个调用**SetupDiGetDeviceProperty**成功， **SetupDiGetDeviceProperty**设置\* *PropertyType*为属性数据类型属性标识符中的属性值返回*PropertyBuffer*缓冲集\* *RequiredSize*的大小，以字节为单位，属性值的表格是检索，并返回 **，则返回 TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty**返回**FALSE**并调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回的记录的错误代码。
-
- 
+如果对**SetupDiGetDeviceProperty**的第二次调用成功，则**SetupDiGetDeviceProperty**将 \* *PropertyType*设置为属性的属性数据类型标识符，返回*PropertyBuffer*缓冲区中的属性值，将 \* *RequiredSize*设置为检索到的属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetDeviceProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
  
-
-
-
-
 

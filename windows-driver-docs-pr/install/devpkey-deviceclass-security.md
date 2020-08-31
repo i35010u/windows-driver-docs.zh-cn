@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f2218fa5cb800499582277696d00ce3cabce8484
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 08ae13fba33f3f87f2d3178d3f54859c280f128e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418381"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096679"
 ---
 # <a name="devpkey_deviceclass_security"></a>DEVPKEY_DeviceClass_Security
 
 
-DEVPKEY_DeviceClass_Security 设备属性表示[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)的安全描述符结构。
+DEVPKEY_DeviceClass_Security 设备属性表示 [设备安装程序类](./overview-of-device-setup-classes.md)的安全描述符结构。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_DeviceClass_Security 设备属性表示[设备安装程序类](https://d
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -66,35 +66,28 @@ DEVPKEY_DeviceClass_Security 设备属性表示[设备安装程序类](https://d
 <a name="remarks"></a>备注
 -------
 
-可以在安装应用程序安装设备安装程序类的过程中或之后设置 DEVPKEY_DeviceClass_Security 的值。 有关如何设置此属性的详细信息，请参阅[创建安全设备安装](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)。
+可以在安装应用程序安装设备安装程序类的过程中或之后设置 DEVPKEY_DeviceClass_Security 的值。 有关如何设置此属性的详细信息，请参阅 [创建安全设备安装](./creating-secure-device-installations.md)。
 
-可以通过调用[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)或[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_Security 的值。 可以通过调用[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)或[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_Security。
+可以通过调用 [**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw) 或 [**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)来检索 DEVPKEY_DeviceClass_Security 的值。 可以通过调用 [**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw) 或 [**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)来设置 DEVPKEY_DeviceClass_Security。
 
-Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_DeviceClass_Security 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_SECURITY 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅[检索设备安装程序类 SPCRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-spcrp-xxx-properties)和[设置设备安装程序类 SPCRP_Xxx 属性](https://docs.microsoft.com/windows-hardware/drivers/install/setting-spcrp-xxx-properties)。
+Windows Server 2003 和 Windows XP 支持此属性，但不支持 DEVPKEY_DeviceClass_Security 属性键。 在这些早期版本的 Windows 中，可以使用 SPCRP_SECURITY 标识符来访问此属性的值。 有关如何访问此属性的值的信息，请参阅 [检索设备安装程序类 SPCRP_Xxx 属性](./retrieving-spcrp-xxx-properties.md) 和 [设置设备安装程序类 SPCRP_Xxx 属性](./setting-spcrp-xxx-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
+[**SetupDiGetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)
 
-[**SetupDiGetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
+[**SetupDiGetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)
 
-[**SetupDiSetClassProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
+[**SetupDiSetClassProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyw)
 
-[**SetupDiSetClassPropertyEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
-
- 
+[**SetupDiSetClassPropertyEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclasspropertyexw)
 
  
-
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
 title: deleteBinaries XML 元素
-description: DeleteBinaries XML 元素是空元素，用于 deleteBinaries 标志设置为 ON，将配置 DPInst 安装驱动程序包时复制到系统的系统从删除二进制文件。元素标记 deleteBinaries XML AttributesNoneElement 信息父 elementsdpinstChild elementsNoneData contentsNone permittedDuplicate 子 elementsNone 允许说明默认情况下，deleteBinaries 标志设置为 OFF。 若要将 deleteBinaries 标志设置为 ON，作为 dpinst 元素的子元素包括 deleteBinaries 元素，或使用 /d DPInst 命令行开关。 下面的代码示例演示 deleteBinaries 元素。 dpinst...deleteBinaries /.../ dpinst 注意从 Windows 7 中，操作系统会忽略为 deleteBinaries XML 元素设置为 ON。 当已安装驱动程序包时，不再可以通过使用 DPInst 删除已复制到系统二进制文件。
+description: DeleteBinaries XML 元素是一个空元素，该元素将 deleteBinaries 标志设置为 ON，后者将配置 DPInst，以删除系统中的二进制文件，这些文件是在安装驱动程序包时复制到系统的。元素标记 deleteBinaries XML AttributesNoneElement Information Parent elementsdpinstChild elementsNoneData contentsNone permittedDuplicate child elementsNone 允许 RemarksBy 默认情况下，deleteBinaries 标志设置为 OFF。 若要将 deleteBinaries 标志设置为 ON，请将 deleteBinaries 元素包含为 dpinst 元素的子元素，或使用/d DPInst 命令行开关。 下面的代码示例演示了 deleteBinaries 元素。 dpinst .。。deleteBinaries/.../dpinst 注意从 Windows 7 开始，操作系统会忽略 deleteBinaries XML 元素的的设置。 安装驱动程序包后，将无法再使用 DPInst 删除已复制到系统中的二进制文件。
 ms.assetid: 2711b2c2-b1ec-41cb-aeb2-1d9078740075
 keywords:
 - deleteBinaries XML 元素设备和驱动程序安装
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 967902313e3bf1678105a58efc4e8c0e91c1bb00
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f05694ba3c63601aa0df5327c51632c0857e3109
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358218"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89096303"
 ---
 # <a name="deletebinaries-xml-element"></a>deleteBinaries XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**DeleteBinaries** XML 元素为空元素，用于设置**deleteBinaries**标志为 ON，将配置从一个系统，已复制到系统时删除二进制文件的DPInst[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)已安装。
+**DeleteBinaries** XML 元素是一个空元素，该元素将**deleteBinaries**标志设置为 ON，后者将配置 DPInst，以删除系统中的二进制文件，这些文件是在安装[驱动程序包](./driver-packages.md)时复制到系统的。
 
 **元素标记**
 
@@ -36,7 +36,7 @@ ms.locfileid: "67358218"
 
 无
 
-**元素的信息**
+**元素信息**
 
 <table>
 <colgroup>
@@ -53,7 +53,7 @@ ms.locfileid: "67358218"
 <td align="left"><p>无</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -67,9 +67,9 @@ ms.locfileid: "67358218"
 
 **注释**
 
-默认情况下**deleteBinaries**标志设置为 OFF。 若要设置**deleteBinaries**标志为 ON，包括**deleteBinaries**作为子元素的元素**dpinst**元素或使用 **/d** DPInst 命令行开关。
+默认情况下， **deleteBinaries** 标志设置为 OFF。 若要将**deleteBinaries**标志设置为 ON，请将**deleteBinaries**元素包含为**dpinst**元素的子元素，或使用 **/d**   dpinst 命令行开关。
 
-下面的代码示例演示**deleteBinaries**元素。
+下面的代码示例演示了 **deleteBinaries** 元素。
 
 ```cpp
 <dpinst>
@@ -79,21 +79,14 @@ ms.locfileid: "67358218"
 </dpinst>
 ```
 
-**请注意**  从 Windows 7 开始，操作系统会忽略设置为 ON **deleteBinaries** XML 元素。 已复制到系统的二进制文件时[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)已安装，不能再使用 DPInst 被删除。
+**注意**   从 Windows 7 开始，操作系统会忽略**deleteBinaries** XML 元素的的设置。 安装 [驱动程序包](./driver-packages.md) 后，将无法再使用 DPInst 删除已复制到系统中的二进制文件。
 
  
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

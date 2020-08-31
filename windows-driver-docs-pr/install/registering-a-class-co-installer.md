@@ -1,44 +1,44 @@
 ---
-title: 注册类共同安装程序
-description: 注册类共同安装程序
+title: 注册类辅助安装程序
+description: 注册类辅助安装程序
 ms.assetid: a86a4302-ec37-4117-aa5c-4fa84fbb7902
 keywords:
 - 类共同安装程序 WDK
 - 注册类共同安装程序
-- 安装程序类 GUID WDK 设备安装
+- 安装类-GUID WDK 设备安装
 - CoDeviceInstallers
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db8f5fd54dfac5dd5b0f4f7e9d5fcded5d177a69
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 64407d67ce2cd6e0d43f0f19edc2210717585d2d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56547675"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095807"
 ---
-# <a name="registering-a-class-co-installer"></a>注册类共同安装程序
+# <a name="registering-a-class-co-installer"></a>注册类辅助安装程序
 
 
 
 
 
-若要注册特定的安装程序类的每个设备的共同安装程序，创建如下所示的下一个注册表项**HKLM\\系统\\CurrentControlSet\\控制\\CoDeviceInstallers**子项：
+若要为特定安装程序类的每个设备注册一个共同安装程序，请在 **HKLM \\ System \\ CurrentControlSet \\ Control \\ CoDeviceInstallers** 子项下创建类似于下面的注册表项：
 
 ```cpp
 {setup-class-GUID}: REG_MULTI_SZ : "XyzCoInstall.dll,XyzCoInstallEntryPoint\0\0"
 ```
 
-系统会创建**CoDeviceInstallers**密钥。 *安装程序类 GUID*指定的 GUID[设备安装程序类](device-setup-classes.md)。 如果共同安装程序适用于多个设备的类，创建每个安装程序类的单独值项。
+系统将创建 **CoDeviceInstallers** 键。 *安装程序类-guid* 指定 [设备安装程序类](./overview-of-device-setup-classes.md)的 guid。 如果共同安装程序适用于多个类的设备，请为每个安装程序类创建一个单独的值项。
 
-您一定不能覆盖以前写入到其他共同安装程序*安装程序类 GUID*密钥。 读取注册表项，你共同安装程序将字符串追加到[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)列表，并将密钥返回写入注册表。
+不能覆盖之前已写入到 *安装程序类 GUID* 密钥的其他共同安装程序。 读取密钥，将你的共同安装程序字符串附加到 [REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types) 列表，然后将该密钥写回注册表。
 
-如果省略*CoInstallEntryPoint*，默认值是 CoDeviceInstall。
+如果省略 *CoInstallEntryPoint*，则默认值为 CoDeviceInstall。
 
-此外必须将共同安装程序 DLL 复制到系统目录。
+共同安装程序 DLL 也必须复制到系统目录中。
 
-类共同安装程序是可复制文件并将注册表条目后调用相关设备和服务。
+一旦复制了文件并创建了注册表项，就可以为相关设备和服务调用类共同安装程序。
 
-而不是手动创建注册表条目以注册类共同安装程序，则可以注册使用 INF 文件如下所示：
+您可以使用如下所示的 INF 文件来注册类共同安装程序，而不是手动创建注册表项：
 
 ```cpp
 [version]
@@ -57,15 +57,9 @@ HKLM,System\CurrentControlSet\Control\CoDeviceInstallers, \
 ; above line uses the line continuation character ()
 ```
 
-此示例 INF 会将文件复制*classXcoinst.dll*到系统目录，并进行条目*安装程序类 GUID*类下**CoDeviceInstallers**密钥。 中的条目*Xxx*_AddReg 节指定两个标记:"00010000"标志指定的项是[REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)，并"00000008"标志指定是要追加到任何新值（如果新值已不在字符串中存在） 的现有值。
+此示例 INF 将文件*classXcoinst.dll*复制到系统目录，并在**CoDeviceInstallers**项下为*安装程序类 GUID*类生成一个条目。 *Xxx*_AddReg 部分中的条目指定两个标志： "00010000" 标志指定该条目是一个[REG_MULTI_SZ](/windows/desktop/SysInfo/registry-value-types)，而 "00000008" 标志指定将新值追加到任何现有值 (如果该新值尚未出现在字符串) 中。
 
-右键单击安装或通过调用的应用程序，可以激活此类注册类共同安装程序的 INF **SetupInstallFromInfSection**。
-
- 
+注册类共同安装程序的此类 INF 可以通过右键单击 "安装" 或通过调用 **SetupInstallFromInfSection**的应用程序激活。
 
  
-
-
-
-
 

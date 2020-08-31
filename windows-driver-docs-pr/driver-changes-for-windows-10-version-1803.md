@@ -1,15 +1,15 @@
 ---
-title: Windows 10 版本1803的驱动程序开发更改
+title: Windows 10 版本 1803 的驱动程序开发变更
 description: 本部分介绍 Windows 10 中驱动程序开发的新增功能。
 ms.assetid: 73ba8c40-d605-4dba-a965-0a87d80b9126
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b86d647cc1ae42e8a6221860fe63869b61a044a
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: fa3811172b72c28bd696a41d11be1fd2cef3a999
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270420"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066552"
 ---
 # <a name="whats-new-in-windows-10-version-1803"></a>Windows 10 版本 1803 中的新增功能
 
@@ -21,29 +21,29 @@ Windows 10 版本 1803 包含 ACPI DDI 的更新，支持平台功能和物理�
 
 ## <a name="audio"></a><a name="audio-1803"></a>音频
 
-[语音激活](https://docs.microsoft.com/windows-hardware/drivers/audio/voice-activation)主题已更新，包括有关 APO 要求的附加信息。
+[语音激活](./audio/voice-activation.md)主题已更新，包括有关 APO 要求的附加信息。
 
 ## <a name="bluetooth"></a><a name="bluetooth-1803"></a>蓝牙
 
 Windows 10 版本 1803 引入了迅速配对的支持。 用户不再需要在设置应用中导航并查找外设即可配对。 Windows 可以自动为用户完成配对。当附近出现新的外设并且该设备准备就绪时，Windows 会弹出一条通知。 确保外设进行迅速配对需要满足两套要求。 一套要求与外设的行为相关，另一套要求与 Microsoft 定义的供应商播发部分中的结构和值相关。 有关更多信息，请参阅：
 
-* [蓝牙迅速配对](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth-swift-pair)
-* [蓝牙功能和建议](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)
+* [蓝牙迅速配对](/windows-hardware/design/component-guidelines/bluetooth-swift-pair)
+* [蓝牙功能和建议](/windows-hardware/design/component-guidelines/bluetooth)
 
-Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信息，请参阅 [Windows 10 中的蓝牙版本和配置文件支持](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/general-bluetooth-support-in-windows)。
+Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信息，请参阅 [Windows 10 中的蓝牙版本和配置文件支持](./bluetooth/general-bluetooth-support-in-windows.md)。
 
 ## <a name="camera"></a><a name="camera-1803"></a>相机
 
 对相机驱动程序开发的更新包括：
 
-* [适用于 UVC 设备的 DShow (DirectShow) 桥实施指南](https://docs.microsoft.com/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices) - 有关配置符合 USB 视频类 (UVC) 规范的相机和设备的 DShow 桥的实施指南。 平台使用 USB 总线标准中的 Microsoft OS 描述符来配置 DShow 桥。 扩展属性 OS 描述符是 USB 标准描述符的扩展，USB 设备使用它来返回尚未通过标准规范启用的 Windows 特定设备属性。
-* [全景相机视频捕获](https://docs.microsoft.com/windows-hardware/drivers/stream/360-camera-video-capture) - 使用现有的 MediaCapture API 提供全景相机预览、捕获和记录支持。 平台可以使用此功能来公开球形帧源（例如 equirectangular 帧），使应用能够检测和处理全景视频相机流，以及提供全景拍摄体验。
+* [适用于 UVC 设备的 DShow (DirectShow) 桥实施指南](./stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices.md) - 有关配置符合 USB 视频类 (UVC) 规范的相机和设备的 DShow 桥的实施指南。 平台使用 USB 总线标准中的 Microsoft OS 描述符来配置 DShow 桥。 扩展属性 OS 描述符是 USB 标准描述符的扩展，USB 设备使用它来返回尚未通过标准规范启用的 Windows 特定设备属性。
+* [全景相机视频捕获](./stream/360-camera-video-capture.md) - 使用现有的 MediaCapture API 提供全景相机预览、捕获和记录支持。 平台可以使用此功能来公开球形帧源（例如 equirectangular 帧），使应用能够检测和处理全景视频相机流，以及提供全景拍摄体验。
 
 ## <a name="debugging"></a>调试
 
 对 Windows 10 版本1803的调试器进行的更改包括：
 
-[WinDbg 预览版时光穿越调试 (TTD) 动手实验](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-walkthrough) - 此实验使用一个存在代码缺陷的示例小程序介绍时光穿越调试 (TTD)。 TTD 用于调试、识别问题及分析其根本原因。
+[WinDbg 预览版时光穿越调试 (TTD) 动手实验](./debugger/time-travel-debugging-walkthrough.md) - 此实验使用一个存在代码缺陷的示例小程序介绍时光穿越调试 (TTD)。 TTD 用于调试、识别问题及分析其根本原因。
 
 ## <a name="display"></a><a name="display-1803"></a>显示
 
@@ -90,7 +90,7 @@ Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信�
 
 ## <a name="driver-security"></a><a name="security-1803"></a>驱动程序安全性
 
-对 [Windows 驱动程序安全指南](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/)和[驱动程序安全清单](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/driver-security-checklist)做了更新，为驱动程序开发人员提供驱动程序安全清单。
+对 [Windows 驱动程序安全指南](./driversecurity/index.md)和[驱动程序安全清单](./driversecurity/driver-security-checklist.md)做了更新，为驱动程序开发人员提供驱动程序安全清单。
 
 ## <a name="windows-kernel"></a><a name="kernel-1803"></a>Windows 内核
 
@@ -102,19 +102,19 @@ Windows 10 版本 1803 支持蓝牙版本 5.0。 有关配置文件支持的信�
 
 有不同的位置用于存储特定于驱动程序内部组件或特定于设备的文件状态。 对于包含文件状态的驱动程序，可以确定写入到磁盘的状态是：
 
-* 驱动程序状态 ([IoGetDriverDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory))：可能正在控制多个设备的驱动程序的全局状态，还是
+* 驱动程序状态 ([IoGetDriverDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory))：可能正在控制多个设备的驱动程序的全局状态，还是
 
-* 设备状态 ([IoGetDeviceDirectory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory))：特定于驱动程序控制的单个设备，其他设备可能对类似的状态使用不同的值。
+* 设备状态 ([IoGetDeviceDirectory](/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdevicedirectory))：特定于驱动程序控制的单个设备，其他设备可能对类似的状态使用不同的值。
 
 现在，当功能驱动程序 (FDO) 的相应 PCIe 设备处于 D3Cold 状态时，可与其他电源协商。 这包括：
 
-* 辅助电源要求 [D3COLD_REQUEST_AUX_POWER](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_aux_power)。
-* 核心电源导轨 [D3COLD_REQUEST_CORE_POWER_RAIL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_core_power_rail)。
-* 在从 PCI Express 下游端口收到消息，到相应终结点或 PCI Express 下游端口在系统处于 ACPI 工作状态时转换为 D3cold 期间平台将 PERST# 断言到插槽的固定延迟时间要求。 请参阅 [D3COLD_REQUEST_PERST_DELAY](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_perst_delay)。
+* 辅助电源要求 [D3COLD_REQUEST_AUX_POWER](/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_aux_power)。
+* 核心电源导轨 [D3COLD_REQUEST_CORE_POWER_RAIL](/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_core_power_rail)。
+* 在从 PCI Express 下游端口收到消息，到相应终结点或 PCI Express 下游端口在系统处于 ACPI 工作状态时转换为 D3cold 期间平台将 PERST# 断言到插槽的固定延迟时间要求。 请参阅 [D3COLD_REQUEST_PERST_DELAY](/windows-hardware/drivers/ddi/wdm/nc-wdm-d3cold_request_perst_delay)。
 
-NT 服务以及内核模式和用户模式驱动程序可以使用 [RtlRaiseCustomSystemEventTrigger](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlraisecustomsystemeventtrigger) 函数针对设备引发自定义触发器。 驱动程序开发人员拥有的自定义触发器通知系统事件代理使用自定义触发器标识符标识的触发器启动关联的后台任务。
+NT 服务以及内核模式和用户模式驱动程序可以使用 [RtlRaiseCustomSystemEventTrigger](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlraisecustomsystemeventtrigger) 函数针对设备引发自定义触发器。 驱动程序开发人员拥有的自定义触发器通知系统事件代理使用自定义触发器标识符标识的触发器启动关联的后台任务。
 
-现在，可以在激发通知时注册活动会话更改通知并获取回调。 作为此通知的一部分，某些数据还会与调用方共享。 这些关联的数据通过 [PO_SPR_ACTIVE_SESSION_DATA 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntpoapi/ns-ntpoapi-_po_spr_active_session_data)传送。
+现在，可以在激发通知时注册活动会话更改通知并获取回调。 作为此通知的一部分，某些数据还会与调用方共享。 这些关联的数据通过 [PO_SPR_ACTIVE_SESSION_DATA 结构](/windows-hardware/drivers/ddi/ntpoapi/ns-ntpoapi-_po_spr_active_session_data)传送。
 
 ## <a name="networking"></a><a name="networking-1803"></a>网络
 
@@ -124,29 +124,29 @@ NT 服务以及内核模式和用户模式驱动程序可以使用 [RtlRaiseCust
 
 NDIS 的更新包括：
 
-* [接收端缩放 V2](https://docs.microsoft.com/windows-hardware/drivers/network/receive-side-scaling-version-2-rssv2-in-ndis-6-80) 已更新，包括有关操纵参数的更多详细信息
-* [同步 OID 接口](https://docs.microsoft.com/windows-hardware/drivers/network/synchronous-oid-request-interface-in-ndis-6-80)现在支持 NDIS 轻型筛选器驱动程序
+* [接收端缩放 V2](./network/receive-side-scaling-version-2-rssv2-in-ndis-6-80.md) 已更新，包括有关操纵参数的更多详细信息
+* [同步 OID 接口](./network/synchronous-oid-request-interface-in-ndis-6-80.md)现在支持 NDIS 轻型筛选器驱动程序
 
 下面是网络适配器 WDF 类扩展 (NetAdapterCx) 的新主题：
 
-* [NetAdapterCx 1.2 简介](https://docs.microsoft.com/windows-hardware/drivers/netcx/introduction-to-netadaptercx-1-2)
-* [数据包描述符和扩展](https://docs.microsoft.com/windows-hardware/drivers/netcx/packet-descriptors-and-extensions)
-* [网络数据缓冲区管理](https://docs.microsoft.com/windows-hardware/drivers/netcx/network-data-buffer-management)
-* [NetAdapterCx 接收端缩放 (RSS)](https://docs.microsoft.com/windows-hardware/drivers/netcx/netadaptercx-receive-side-scaling-rss-)
+* [NetAdapterCx 1.2 简介](./netcx/index.md)
+* [数据包描述符和扩展](./netcx/packet-descriptors-and-extensions.md)
+* [网络数据缓冲区管理](./netcx/network-data-buffer-management.md)
+* [NetAdapterCx 接收端缩放 (RSS)](./netcx/netadaptercx-receive-side-scaling-rss-.md)
 
 此外，为仅限预览的功能 - 移动宽带类扩展 (MBBCx) 提供了新的主题。该功能使用 NetAdapterCx 模型建立移动宽带连接。
 
-* [移动宽带类扩展 (MBBCx)](https://docs.microsoft.com/windows-hardware/drivers/netcx/mobile-broadband-mbb-wdf-class-extension-mbbcx-)
-  * [编写 MBBCx 客户端驱动程序](https://docs.microsoft.com/windows-hardware/drivers/netcx/writing-an-mbbcx-client-driver)
-  * [MBBCx API 参考](https://docs.microsoft.com/windows-hardware/drivers/netcx/mbbcx-api-reference)
+* [移动宽带类扩展 (MBBCx)](./netcx/mobile-broadband-mbb-wdf-class-extension-mbbcx.md)
+  * [编写 MBBCx 客户端驱动程序](./netcx/writing-an-mbbcx-client-driver.md)
+  * [MBBCx API 参考](/windows-hardware/drivers/ddi/_netvista/)
 
 ## <a name="mobile-broadband"></a><a name="mobilebroadband-1803"></a>移动宽带
 
-在移动宽带中，提供了详细介绍 [MB 低级别 UICC 访问](https://docs.microsoft.com/windows-hardware/drivers/network/mb-low-level-uicc-access)的新主题。
+在移动宽带中，提供了详细介绍 [MB 低级别 UICC 访问](./network/mb-low-level-uicc-access.md)的新主题。
 
 ## <a name="mobile-operators"></a>移动运营商
 
-[桌面版 COSA](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings#desktop-cosa-only-settings) 现在包括新的热点和 AppID 设置。 强烈建议移动运营商从使用 [Sysdev 元数据包](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata)的宽带应用体验过渡到 [MO UWP 应用](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/uwp-mobile-broadband-apps)和 [COSA 数据库](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings)。
+[桌面版 COSA](./mobilebroadband/desktop-cosa-apn-database-settings.md#desktop-cosa-only-settings) 现在包括新的热点和 AppID 设置。 强烈建议移动运营商从使用 [Sysdev 元数据包](./mobilebroadband/service-metadata.md)的宽带应用体验过渡到 [MO UWP 应用](./mobilebroadband/uwp-mobile-broadband-apps.md)和 [COSA 数据库](./mobilebroadband/desktop-cosa-apn-database-settings.md)。
 
 ## <a name="pcie"></a><a name="pci-1803"></a>PCIe
 
@@ -156,16 +156,16 @@ NDIS 的更新包括：
 * 在 D3 中识别支持热插拔的 PCIe 根端口
 * 识别外部公开的 PCIe 根端口
 
-有关信息，请参阅 [ACPI 接口：PCIe 根端口的设备特定数据 (_DSD)](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports)。
+有关信息，请参阅 [ACPI 接口：PCIe 根端口的设备特定数据 (_DSD)](./pci/dsd-for-pcie-root-ports.md)。
 
 ## <a name="sensors"></a><a name="sensors-1803"></a>传感器
 
-添加了 [SENSOR_CONNECTION_TYPES 枚举](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_connection_types)用于澄清连接类型属性。
+添加了 [SENSOR_CONNECTION_TYPES 枚举](/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_connection_types)用于澄清连接类型属性。
 
 ## <a name="usb"></a><a name="usb-1803"></a>USB
 
-添加了新的 API 用于模拟共享连接器的分离。 如果 USB 设备已附加到主机，或者在删除堆栈时包含共享连接器，则你可以模拟分离事件。 此时已禁用所有附加/分离通知机制。 有关详细信息，请参阅 [UfxDeviceNotifyFinalExit 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicenotifyfinalexit)。
+添加了新的 API 用于模拟共享连接器的分离。 如果 USB 设备已附加到主机，或者在删除堆栈时包含共享连接器，则你可以模拟分离事件。 此时已禁用所有附加/分离通知机制。 有关详细信息，请参阅 [UfxDeviceNotifyFinalExit 函数](/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicenotifyfinalexit)。
 
 ## <a name="wi-fi"></a><a name="wifi-1803"></a>Wi-Fi
 
-Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源保护程序 (NAPS) 高级电源管理的 TLV 功能](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-os-power-management-features)，以及对平台级设备恢复服务 (PLDR) 的更新。
+Wi-Fi 驱动程序开发的更新包括添加了新的[用于 NIC 自动电源保护程序 (NAPS) 高级电源管理的 TLV 功能](./network/wdi-tlv-os-power-management-features.md)，以及对平台级设备恢复服务 (PLDR) 的更新。

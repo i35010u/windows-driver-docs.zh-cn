@@ -3,33 +3,33 @@ title: 写入缩进日志条目
 description: 写入缩进日志条目
 ms.assetid: 8ce6b433-a004-43f6-9481-9c23c5e7e8da
 keywords:
-- 缩进的日志条目 WDK SetupAPI
-- 格式 WDK SetupAPI 日志记录
-- 文本日志 WDK SetupAPI，缩进的日志条目
+- 缩进日志条目 WDK Setupapi.log
+- 格式化 WDK Setupapi.log 日志记录
+- 文本日志 WDK Setupapi.log，缩进的日志条目
 - SetupWriteTextLog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b02b1ba366a32f50ae5e74cadc899b5b68c70ec7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b5c84e6c00b6662630d286fad7194efbed3991f7
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363480"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095887"
 ---
 # <a name="writing-indented-log-entries"></a>写入缩进日志条目
 
 
-中所述[格式的文本日志部分正文](format-of-a-text-log-section-body.md)，在正文部分的日志条目的格式[SetupAPI 文本日志](setupapi-text-logs.md)包含以下字段：
+如 [文本日志节正文的格式](format-of-a-text-log-section-body.md)中所述， [setupapi.log 文本日志](setupapi-text-logs.md) 中节正文日志条目的格式由以下字段组成：
 
 ```cpp
 entry_prefix time_stamp event_category indentation formatted_message
 ```
 
-可以使用*缩进*字段中日志条目以缩进*formatted_message*以便轻松地阅读和理解的日志条目的字段。 缩进字段中的缩进量取决于为部分中设置的缩进深度。 缩进深度是缩进单位，其中缩进单位可以是五个等宽字体文本空格数。 例如，缩进深度为 1 会导致的 5 个空格，缩进缩进深度为 2 会导致 10 个空格和等等的缩进。 最小的缩进深度为 0，最大的缩进深度为 16。
+您可以使用日志条目中的 " *缩进* " 字段缩进 *formatted_message* 字段，以使日志条目更易于阅读和理解。 缩进字段中的缩进量取决于为节设置的缩进深度。 缩进深度是缩进单位数，其中缩进单位为5个等宽文本空间。 例如，缩进深度为1将产生5个空格的缩进，缩进深度为2将导致缩进10个空格，依此类推。 最小缩进深度为零，最大缩进深度为16。
 
-默认情况下，一个部分的缩进深度为零。 如果缩进深度为零， *formatted_message*字段将不会进行缩进。 如果应用程序增加缩进深度编写一系列缩进的节条目，该应用程序还必须编写一组对应的节条目重置为零的缩进深度，随后可以编写应用程序之前不缩进的其他节条目。
+默认情况下，节的缩进深度为零。 如果缩进深度为零，则不会缩进 *formatted_message* 字段。 如果应用程序增加缩进深度以写入缩进节条目的序列，则该应用程序还必须编写相应的节条目集，以将缩进深度重置为零，然后应用程序才能写入未缩进的其他节条目。
 
-若要更改某个部分的缩进深度，请调用 SetupAPI 日志记录函数，并使用以下系统定义的清单常量之一提供给 SetupAPI 日志记录函数的标志参数之间的按位 OR。
+若要更改某一节的缩进深度，请调用 Setupapi.log 日志记录函数并在以下系统定义的清单常量和提供给 Setupapi.log 日志记录函数的 flags 参数之间使用按位 "或"。
 
 <table>
 <colgroup>
@@ -39,28 +39,28 @@ entry_prefix time_stamp event_category indentation formatted_message
 <thead>
 <tr class="header">
 <th align="left">清单常量</th>
-<th align="left">更改缩进深度</th>
+<th align="left">缩进深度更改</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>TXTLOG_DEPTH_INCR</p></td>
-<td align="left"><p>缩进深度增加 1 表示当前的日志条目，所有后续的日志条目。</p></td>
+<td align="left"><p>对于当前日志条目和所有后续日志条目，缩进深度将增加1。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>TXTLOG_DEPTH_DECR</p></td>
-<td align="left"><p>缩进深度减少了 1 表示当前的日志条目，所有后续的日志条目。</p></td>
+<td align="left"><p>对于当前日志条目和所有后续日志条目，缩进深度将减少1。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>TXTLOG_TAB_1</p></td>
-<td align="left"><p>缩进深度增加 1 仅为当前的日志条目。</p></td>
+<td align="left"><p>对于当前日志项，缩进深度仅增加1。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-例如，下面的调用序列[ **SetupWriteTextLog** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog)将序列的缩进的日志条目写入部分标头之后其*section_title*字段"缩进示例"且*instance_identifier*字段是"实例 0"。
+例如，以下对 [**SetupWriteTextLog**](/windows/desktop/api/setupapi/nf-setupapi-setupwritetextlog) 的调用序列会在节标头后写入一系列缩进的日志条目，其 *section_title* 字段为 "缩进示例"，其 *instance_identifier* 字段为 "instance 0"。
 
 ```cpp
 // The LogToken value was previously returned by a call to 
@@ -92,9 +92,9 @@ SetupWriteTextLog(LogToken, Category, Flags | TXTLOG_DEPTH_DECR, TEXT("End of Su
 SetupWriteTextLog(LogToken, Category, Flags | TXTLOG_DEPTH_DECR, TEXT("End of Subsection A"));
 ```
 
-如果文本日志事件的事件级别是大于或等于 TXTLOG_DETAILS 和文本日志启用了事件类别 TXTLOG_VENDOR，上面的代码将部分标头之后编写以下日志条目。
+如果文本日志的事件级别大于或等于 TXTLOG_DETAILS 并且为文本日志启用了事件类别 TXTLOG_VENDOR，则前面的代码会在节标头后写入以下日志项。
 
-在下面的示例中，省略号 （...） 表示在相同级别的缩进与先前的日志条目的零个或多个其他日志项。 时间戳将替换为实际的时间戳。
+在下面的示例中，省略号 ( ... ) 表示与前一个日志条目处于相同缩进级别的零个或多个附加日志条目。 时间戳将替换为实际时间戳。
 
 ```cpp
 >>>  [Indentation Example - Instance 0]
@@ -112,13 +112,7 @@ SetupWriteTextLog(LogToken, Category, Flags | TXTLOG_DEPTH_DECR, TEXT("End of Su
         : End of Subsection A
 ```
 
-另一个示例中的缩进的节条目拍摄从实际文本日志，请参阅[格式的文本日志部分正文](format-of-a-text-log-section-body.md)。
+有关从实际文本日志中提取的缩进节条目的另一个示例，请参阅 [文本日志节正文的格式](format-of-a-text-log-section-body.md)。
 
  
-
- 
-
-
-
-
 

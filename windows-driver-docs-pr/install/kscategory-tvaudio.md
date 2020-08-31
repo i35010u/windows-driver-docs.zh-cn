@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 528a83c13ba086a2557a1ce68b4be3ce83bfa6f8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3d397a694a6d34b0954d30508db07ba431d568db
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366675"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095804"
 ---
-# <a name="kscategorytvaudio"></a>KSCATEGORY_TVAUDIO
+# <a name="kscategory_tvaudio"></a>KSCATEGORY_TVAUDIO
 
 
-KSCATEGORY_TVAUDIO[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)电视音频设备 (KS) 功能类别。
+为 TV 音频设备的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_TVAUDIO[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_TVAUDIO[设备接口类](https://docs.microsoft.com/windows-hardware/
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,11 +54,11 @@ KSCATEGORY_TVAUDIO[设备接口类](https://docs.microsoft.com/windows-hardware/
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册此 KSCATEGORY_TVAUDIO 向操作系统指示设备支持 KSCATEGORY_TVAUDIO 功能分类的实例。
+KS 设备的驱动程序注册此 KSCATEGORY_TVAUDIO 的实例，以向操作系统指示设备支持 KSCATEGORY_TVAUDIO 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Bdan.inf* INF 文件，包括中的软件调谐器示例*src/swtuner/algtuner* WDK 的目录。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src/swtuner/algtuner*目录中的软件调谐器示例附带的*Bdan* inf 文件。
 
-视频设备有关的信息，请参阅[视频捕获设备](https://docs.microsoft.com/windows-hardware/drivers/stream/video-capture-devices)，[筛选器关系图示例](https://docs.microsoft.com/windows-hardware/drivers/stream/filter-graph-examples)，并[编码器设备](https://docs.microsoft.com/windows-hardware/drivers/stream/encoder-devices)。
+有关视频设备的信息，请参阅 [视频捕获设备](../stream/video-capture-devices.md)、 [筛选器图示例](../stream/filter-graph-examples.md)和 [编码器设备](../stream/encoder-devices.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,23 +70,16 @@ KS 设备的驱动程序注册此 KSCATEGORY_TVAUDIO 向操作系统指示设备
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**KSCATEGORY_TVTUNER**](kscategory-tvtuner.md)
 
  
-
- 
-
-
-
-
-
 

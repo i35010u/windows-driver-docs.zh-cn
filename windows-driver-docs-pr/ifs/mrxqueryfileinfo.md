@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 982ad1abf13c3115cf3593b764d96b043eee5013
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 35a11a4ba5c5564e2ac04eba311f61f39734272c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841091"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89066880"
 ---
 # <a name="mrxqueryfileinfo-routine"></a>MRxQueryFileInfo 例程
 
 
-[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxQueryFileInfo*例程来请求一个有关文件系统对象的网络微重定向程序查询文件信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxQueryFileInfo*例程来请求一个有关文件系统对象的网络微重定向程序查询文件信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxQueryFileInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxQueryFileInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxQueryFileInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -69,12 +69,12 @@ NTSTATUS MRxQueryFileInfo(
 <tr class="even">
 <td align="left"><strong>STATUS_BUFFER_OVERFLOW</strong></td>
 <td align="left"><p>用于接收文件信息的缓冲区太小。</p>
-<p>应将此返回值视为成功，并且应尽可能多的有效数据返回到由<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中。</p></td>
+<p>应将此返回值视为成功，并尽可能多地在<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>信息. Buffer</strong>成员中返回尽可能多的数据。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_BUFFER_TOO_SMALL</strong></td>
 <td align="left"><p>缓冲区太小，无法接收请求的数据。</p>
-<p>如果返回此值，则<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员应设置为预期缓冲区的最小大小，以便调用成功。</p></td>
+<p>如果返回此值，则应将<em>RxContext</em>参数指向的 RX_CONTEXT 结构的<strong>InformationToReturn</strong>成员设置为预期缓冲区的最小大小，以便调用成功。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
@@ -87,7 +87,7 @@ NTSTATUS MRxQueryFileInfo(
 <tr class="even">
 <td align="left"><strong>STATUS_INVALID_PARAMETER</strong></td>
 <td align="left"><p>指定的参数无效。</p>
-<p>如果传递 RX_CONTEXT 中的<strong>FileInformationClass</strong>成员的值无效，则可以返回此值。 如果指定的<strong>FileInformationClass</strong>成员用于<strong>FileStreamInformation</strong> ，而远程文件系统不支持流，也可以返回此值。</p></td>
+<p>如果 RX_CONTEXT 中的 <strong>FileInformationClass</strong> 成员的值无效，则会返回此值。 如果指定的 <strong>FileInformationClass</strong> 成员用于 <strong>FileStreamInformation</strong> ，而远程文件系统不支持流，也可以返回此值。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>STATUS_OBJECT_NAME_NOT_FOUND</strong></td>
@@ -101,27 +101,27 @@ NTSTATUS MRxQueryFileInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxQueryFileInfo*的调用，以响应接收[**IRP\_\_MJ\_信息**](irp-mj-query-information.md)请求。
+RDBSS 发出对 *MRxQueryFileInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 查询 \_ 信息**](irp-mj-query-information.md) 请求。
 
-在调用*MRxQueryFileInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxQueryFileInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**FileInformationClass**成员设置为**IrpSp&gt;FileInformationClass**，请求的文件\_信息\_类值。
+**FileInformationClass**成员设置为**IrpSp- &gt; QueryFile。 FILEINFORMATIONCLASS**，请求的文件 \_ 信息 \_ 类值。
 
 **信息. buffer**成员设置为 i/o 请求数据包中的用户缓冲区。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;QueryFile**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. QueryFile**。
 
-**FileIndex**成员设置为**IrpSp&gt;QueryDirectory. FileIndex**。
+**QueryDirectory. FileIndex**成员设置为**IrpSp-QueryDirectory. &gt; FileIndex**。
 
-如果**IrpSp&gt;标志**具有 SL\_RESTART\_扫描位集，则设置**RestartScan**成员。
+如果**IrpSp &gt; **设置了 SL RESTART 扫描位集，则设置**QueryDirectory RestartScan**成员 \_ \_ 。
 
-如果**IrpSp&gt;标志**具有 SL\_返回\_单一\_条目位集，则设置**ReturnSingleEntry**成员。
+如果**QueryDirectory.ReturnSingleEntry** **IRPSP &gt; 标记**有 SL \_ 返回 \_ 单 \_ 项位集，则设置 ReturnSingleEntry 成员。
 
-如果**Fobx&gt;UnicodeQueryTemplate**为**NULL** ，并且**Fobx&gt;标志**没有 FOBX\_标志\_匹配\_所有位集，则设置**InitialQuery**成员。
+如果 Fobx 为**NULL** ，则设置** &gt; ** **QueryDirectory.InitialQuery**成员，并且**Fobx &gt; 标记**不会将 Fobx \_ 标志 \_ 与 \_ 所有位集匹配。
 
-成功时，网络小型重定向程序应将\_RX 的**LengthRemaining**成员设置为**info。 length**成员减去返回的文件信息的长度。 如果对*MRxQueryFileInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 **&gt;IrpSp** ，并将 RX\_**上下文的 QueryFile 成员减**。
+成功时，网络小型重定向程序应将 RX 上下文结构的 **LengthRemaining** 成员设置 \_ 为 **info。 length** 成员减去返回的文件信息的长度。 如果对*MRxQueryFileInfo*的调用成功，则 RDBSS 会将 IRP 的**IoStatus**成员设置为 IrpSp，而不是 RX 上下文的**QueryFile**成员。 ** &gt; ** \_
 
-RDBSS 不支持具有 SL\_索引的请求\_指定的位 **&gt;IrpSp 标记**集。 网络小型重定向程序将不会使用 SL\_索引\_指定的位 **&gt;标志**集接收对*MRxQueryFileInfo*的调用。
+RDBSS 不支持具有 SL \_ 索引 \_ 指定位的 **IrpSp &gt; ** 集的请求。 网络小型重定向程序将不会接收到 *MRxQueryFileInfo* 的调用，其中 SL \_ 索引 \_ 指定的位为 **IrpSp &gt; ** 集。
 
 <a name="requirements"></a>要求
 ------------
@@ -134,11 +134,11 @@ RDBSS 不支持具有 SL\_索引的请求\_指定的位 **&gt;IrpSp 标记**集�
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
@@ -146,7 +146,7 @@ RDBSS 不支持具有 SL\_索引的请求\_指定的位 **&gt;IrpSp 标记**集�
 ## <a name="see-also"></a>另请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -171,11 +171,4 @@ RDBSS 不支持具有 SL\_索引的请求\_指定的位 **&gt;IrpSp 标记**集�
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

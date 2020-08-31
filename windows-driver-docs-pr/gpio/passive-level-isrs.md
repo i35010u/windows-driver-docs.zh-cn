@@ -1,40 +1,35 @@
 ---
 title: 被动级别 ISR
-description: 作为一个选项，从 Windows 8、 内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以注册其中断服务例程 (Isr) 在被动级别运行。
+description: 从 Windows 8 开始，内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以选择将其中断服务例程注册 (Isr) 以在被动级别运行。
 ms.assetid: E7556046-D85C-4CD1-8C27-578BF5CAFF2B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39258d98e11655456236ef66f5edb3125f2ae24c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f15fc3f3df2bdb1283531b5d4bbb0a92bd86badb
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383423"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064444"
 ---
 # <a name="passive-level-isrs"></a>被动级别 ISR
 
 
-作为一个选项，从 Windows 8、 内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以注册其中断服务例程 (Isr) 在被动级别运行。
+从 Windows 8 开始，内核模式驱动程序框架 (KMDF) 和用户模式驱动程序框架 (UMDF) 驱动程序可以选择将其中断服务例程注册 (Isr) 以在被动级别运行。
 
-有关被动级别 Isr KMDF 和 UMDF 驱动程序的详细信息，请参阅以下主题：
+有关 KMDF 和 UMDF 驱动程序的被动级别 Isr 的详细信息，请参阅以下主题：
 
--   [支持被动级别中断](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-passive-level-interrupts)
--   [访问硬件和处理中断](https://docs.microsoft.com/windows-hardware/drivers/wdf/accessing-hardware-and-handling-interrupts)
+-   [支持被动级别中断](../wdf/supporting-passive-level-interrupts.md)
+-   [访问硬件和处理中断](../wdf/accessing-hardware-and-handling-interrupts.md)
 
-如果外围设备使用常规用途的 I/O (GPIO) pin 进行中继到处理器的中断请求，Windows 中断抽象方便地允许忽略特定于硬件的详细信息的 GPIO 控制器到此设备的驱动程序属于此 pin。 内核的陷阱处理程序运行以响应 GPIO 中继中断时从设备请求，此处理程序会自动清除或掩码，为必需的 GPIO 硬件寄存器中的中断。 此外，内核的陷阱处理程序直接调用设备的 ISR 或安排此 ISR 在另一个线程中运行。
+如果外围设备使用常规用途 i/o (GPIO) pin 来向处理器中继中断请求，则 Windows 中断抽象可方便地使此设备的驱动程序忽略此 pin 所属的 GPIO 控制器的特定于硬件的详细信息。 当内核陷阱处理程序运行以响应来自设备的 GPIO 中继中断请求时，此处理程序将根据需要自动清除或屏蔽 GPIO 硬件注册中的中断。 此外，内核陷阱处理程序要么直接调用设备的 ISR，要么计划此 ISR 在另一个线程中运行。
 
-通常情况下，内存映射的 GPIO 硬件寄存器，在这种情况下内核的陷阱处理程序可以直接访问它们在 DIRQL。 但是，在硬件注册外围设备的设备可能不是内存映射，在这种情况下，外围设备驱动程序必须使用 I/O 请求来对其进行访问。 如果外围设备驱动程序 ISR 因此，必须运行在 IRQL = 被动\_级别，以便它可以使用 I/O 请求提示中断或执行初始服务的中断。 被动级别 ISR 都可以同步发送的 I/O 请求，并如有必要，阻塞，直到完成该请求。
+通常，GPIO 硬件寄存器是内存映射的，在这种情况下，内核陷阱处理程序可以在 DIRQL 上直接访问它们。 但是，外围设备的硬件寄存器可能未进行内存映射，在这种情况下，外设驱动程序必须使用 i/o 请求来访问它们。 如果是这样，则外设驱动程序的 ISR 必须以 IRQL = 被动级别运行， \_ 以便它可以使用 i/o 请求来静默中断，或者执行中断的初始维护。 被动级别 ISR 可以同步发送 i/o 请求，如有必要，在请求完成前阻止。
 
-若要生成的边缘触发中断请求信号的外围设备支持被动级别 ISR，内核的陷阱处理程序清除在 GPIO 插针，挂起的中断，然后安排 ISR 在被动级别内核线程中运行。
+若要为外设提供支持边缘触发的中断请求信号的被动级别 ISR，内核陷阱处理程序将清除 GPIO pin 中的挂起中断，然后将 ISR 计划为在被动级别内核线程中运行。
 
-若要支持外围设备的生成级别触发中断请求信号被动级别 ISR，内核的陷阱处理程序会屏蔽在 GPIO 插针，挂起的中断，然后安排 ISR 在被动级别内核线程中运行。 ISR 负责清除外围设备中的中断请求。 ISR 返回后，内核线程解除屏蔽 GPIO pin 处中断。
+若要为外设提供支持的被动级别 ISR，使其生成级别触发的中断请求信号，内核陷阱处理程序会在 GPIO pin 处屏蔽挂起中断，然后将 ISR 计划为在被动级别内核线程中运行。 ISR 负责在外围设备中清除中断请求。 ISR 返回后，内核线程会将中断解除在 GPIO pin 上。
 
-因为中断前 ISR 仍保持掩码返回时，设备的被动级别 ISR 应执行仅限初始服务的中断，然后返回以避免延迟被动级别 Isr 为其他设备。 通常情况下，该驱动程序应推迟到中断工作线程，其运行速度比 ISR 较低优先级的其他中断相关处理
-
- 
+由于在 ISR 返回之前中断会保持屏蔽状态，因此设备的被动级别 ISR 应仅执行中断的初始维护，然后返回以避免延迟其他设备的被动级别 Isr。 通常，驱动程序应将与中断相关的其他处理延迟为中断工作线程，该线程的运行优先级低于 ISR。
 
  
-
-
-
 
