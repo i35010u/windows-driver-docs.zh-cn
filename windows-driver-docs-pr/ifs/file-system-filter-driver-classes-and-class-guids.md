@@ -6,16 +6,16 @@ keywords:
 - Guid WDK 文件系统
 - 类 Guid WDK 文件系统
 - 类 WDK 文件系统
-- 筛选器驱动程序 WDK 文件系统类
-- 文件系统筛选器驱动程序 WDK，类
+- 筛选器驱动程序 WDK 文件系统，类
+- 文件系统筛选器驱动程序 WDK、类
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc508e492f70e77466e50fcf475d95bf318dcfaf
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8bea2bfadda64385422894aed55e724372f114ab
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385552"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063668"
 ---
 # <a name="file-system-filter-driver-classes-and-class-guids"></a>文件系统筛选器驱动程序类和类 GUID
 
@@ -23,17 +23,17 @@ ms.locfileid: "67385552"
 ## <span id="ddk_file_system_filter_driver_classes_and_class_guids_if"></span><span id="DDK_FILE_SYSTEM_FILTER_DRIVER_CLASSES_AND_CLASS_GUIDS_IF"></span>
 
 
-Microsoft Windows XP 和更高版本操作系统为文件系统筛选器驱动程序安装程序类。 这些类提供系统提供的设备安装程序类提供的硬件设备的功能的子集。 (有关硬件设备安装程序类的详细信息，请参阅[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)。)
+Microsoft Windows XP 和更高版本的操作系统为文件系统筛选器驱动程序提供了安装程序类。 这些类提供系统提供的设备安装程序类为硬件设备提供的功能的子集。  (有关硬件设备安装程序类的详细信息，请参阅 [设备安装程序类](../install/overview-of-device-setup-classes.md)。 ) 
 
-每个安装程序类是与类 GUID 相关联。 Guid devguid.h 中定义的系统定义的类中。
+每个安装程序类都与一个类 GUID 相关联。 系统定义的类 Guid 是在 devguid 中定义的。
 
-本主题列出了文件系统筛选器驱动程序的安装程序类。 为每个类定义中**类**并**ClassGuid**条目包含应在指定值[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)筛选器的 INF 文件。 筛选器驱动程序应使用类和匹配驱动程序的 INF 文件中指定的加载顺序组的 GUID。
+本主题列出了文件系统筛选器驱动程序的安装程序类。 在每个类的定义中， **class** 和 **ClassGuid** 项包含应在筛选器的 Inf 文件的 [**inf 版本部分**](../install/inf-version-section.md) 中指定的值。 筛选器驱动程序应使用与驱动程序的 INF 文件中指定的加载顺序组相匹配的类和 GUID。
 
-提供的设备，而非或除此之外的 INF 文件中的适当的类 GUID 值**类** = *类名*条目，显著提高的性能搜索系统 INF 文件。
+在 INF 文件中为设备（而不是**类**类名称条目）提供适当的类 GUID 值，  =  *class-name*可以显著提高搜索系统 INF 文件的性能。
 
-以下列表包含系统定义的类和文件系统筛选器驱动程序的类 Guid。 此列表中的项对应于针对 Windows XP 和更高版本操作系统中的文件系统筛选器驱动程序而创建的加载顺序组。
+以下列表包括文件系统筛选器驱动程序的系统定义的类和类 Guid。 此列表中的条目对应于在 Windows XP 和更高版本的操作系统中为文件系统筛选器驱动程序创建的加载顺序组。
 
-**请注意**  三个加载顺序组不会出现在列表中，因为它们不会安装程序类，因此不会有类分配给他们的 Guid:筛选器、 FSFilter 上边框和 FSFilter 底部。
+**注意**   三个加载顺序组不会显示在列表中，因为它们不被视为安装类，因此不会为它们分配类 Guid： Filter、FSFilter Top 和 FSFilter 底端。
 
  
 
@@ -41,19 +41,19 @@ Microsoft Windows XP 和更高版本操作系统为文件系统筛选器驱动�
 类 = ActivityMonitor<br/>
 ClassGuid = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}
 
-<span id="FSFilter_Undelete"></span><span id="fsfilter_undelete"></span><span id="FSFILTER_UNDELETE"></span>FSFilter 撤消删除<br/>
+<span id="FSFilter_Undelete"></span><span id="fsfilter_undelete"></span><span id="FSFILTER_UNDELETE"></span>FSFilter 删除<br/>
 类 = 撤消删除<br/>
 ClassGuid = {fe8f1572-c67a-48c0-bbac-0b5c6d66cafb}
 
-<span id="FSFilter_Anti-Virus"></span><span id="fsfilter_anti-virus"></span><span id="FSFILTER_ANTI-VIRUS"></span>FSFilter 防病毒软件<br/>
-类 = 防病毒软件<br/>
+<span id="FSFilter_Anti-Virus"></span><span id="fsfilter_anti-virus"></span><span id="FSFILTER_ANTI-VIRUS"></span>FSFilter 防病毒<br/>
+类 = 防病毒<br/>
 ClassGuid = {b1d1a169-c54f-4379-81db-bee7d88d7454}
 
 <span id="FSFilter_Replication"></span><span id="fsfilter_replication"></span><span id="FSFILTER_REPLICATION"></span>FSFilter 复制<br/>
 类 = 复制<br/>
 ClassGuid = {48d3ebc4-4cf8-48ff-b869-9c68ad42eb9f}
 
-<span id="FSFilter_Continuous_Backup"></span><span id="fsfilter_continuous_backup"></span><span id="FSFILTER_CONTINUOUS_BACKUP"></span>FSFilter 持续备份<br/>
+<span id="FSFilter_Continuous_Backup"></span><span id="fsfilter_continuous_backup"></span><span id="FSFILTER_CONTINUOUS_BACKUP"></span>FSFilter 连续备份<br/>
 类 = ContinuousBackup<br/>
 ClassGuid = {71aa14f8-6fad-4622-ad77-92bb9d7e6947}
 
@@ -66,7 +66,7 @@ ClassGuid = {3e3f0674-c83c-4558-bb26-9820e1eba5c5}
 ClassGuid = {8503c911-a6c7-4919-8f79-5028f5866b0c}
 
 <span id="FSFilter_Cluster_File_System"></span><span id="fsfilter_cluster_file_system"></span><span id="FSFILTER_CLUSTER_FILE_SYSTEM"></span>FSFilter 群集文件系统<br/>
-Class = CFSMetaDataServer<br/>
+类 = CFSMetaDataServer<br/>
 ClassGuid = {cdcf0939-b75b-4630-bf76-80f7ba655884}
 
 <span id="FSFilter_HSM"></span><span id="fsfilter_hsm"></span><span id="FSFILTER_HSM"></span>FSFilter HSM<br/>
@@ -89,7 +89,7 @@ ClassGuid = {6a0a8e78-bba6-4fc4-a709-1e33cd09d67e}
 类 = OpenFileBackup<br/>
 ClassGuid = {f8ecafa6-66d1-41a5-899b-66585d7216b7}
 
-<span id="FSFilter_Security_Enhancer"></span><span id="fsfilter_security_enhancer"></span><span id="FSFILTER_SECURITY_ENHANCER"></span>FSFilter 安全不得不<br/>
+<span id="FSFilter_Security_Enhancer"></span><span id="fsfilter_security_enhancer"></span><span id="FSFILTER_SECURITY_ENHANCER"></span>FSFilter Security 不得不一直<br/>
 类 = SecurityEnhancer<br/>
 ClassGuid = {d02bc3da-0c8e-4945-9bd5-f1883c226c8c}
 
@@ -105,9 +105,4 @@ ClassGuid = {5d1b9aaa-01e2-46af-849f-272b3f324c46}
 类 = 基础结构<br/>
 ClassGuid = {e55fa6f9-128c-4d04-abab-630c74b1453a}
  
-
- 
-
-
-
 

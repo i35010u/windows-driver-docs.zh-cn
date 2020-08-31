@@ -12,21 +12,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 71aadbb2643f2a46fa729bea8ac9c9cc4c9ab4fe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 300e6eb68587934e202f30dd2fe0a38288ce9a92
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385870"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094849"
 ---
 # <a name="suppressaddremoveprograms-xml-element"></a>suppressAddRemovePrograms XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**SuppressAddRemovePrograms** XML 元素为空元素，用于设置**suppressAddRemovePrograms**标志为 ON，将配置 DPInst 若要禁止显示的项添加**程序和功能**控制面板中。 这些条目都代表[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)和 DPInst 安装驱动程序包组。
+**SuppressAddRemovePrograms** XML 元素是一个空元素，该元素将**suppressAddRemovePrograms**标志设置为 ON，这会将 DPInst 配置为禁止将条目添加到控制面板中的 "**程序和功能**"。 这些条目表示 DPInst 安装的 [驱动程序包](./driver-packages.md) 和驱动程序包组。
 
-**请注意**  在版本的 Windows 早于 Windows Vista，DPInst 添加到驱动程序包的条目**添加或删除程序**控制面板中。
+**注意**   在早于 Windows Vista 的 Windows 版本中，DPInst 将驱动程序包条目添加到控制面板中的 "**添加或删除程序**"。
 
  
 
@@ -36,7 +36,7 @@ ms.locfileid: "67385870"
 <suppressAddRemovePrograms>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -50,14 +50,14 @@ ms.locfileid: "67385870"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong> </a>或<a href="group-xml-element.md" data-raw-source="[&lt;strong&gt;group&lt;/strong&gt;](group-xml-element.md)"><strong>组</strong></a></p></td>
+<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong></a>或<a href="group-xml-element.md" data-raw-source="[&lt;strong&gt;group&lt;/strong&gt;](group-xml-element.md)"> <strong>group</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -69,11 +69,11 @@ ms.locfileid: "67385870"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下**suppressAddRemovePrograms**标志设置为 OFF。 若要设置**suppressAddRemovePrograms**为开 DPInst 安装，包括所有驱动程序中的驱动程序的所有标志[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)组，包括**suppressAddRemovePrograms**元素的子元素作为**dpinst** DPInst 描述符文件中或使用中的 XML 元素 **/sa** 命令行开关。 若要设置**suppressAddRemoverPrograms**标志仅对特定的驱动程序包组的包括**suppressAddRemovePrograms**作为子元素的相应元素**组** DPInst 描述符文件中的 XML 元素。
+默认情况下， **suppressAddRemovePrograms** 标志设置为 OFF。 若要为 DPInst 安装的所有驱动程序（包括[驱动程序包](./driver-packages.md)组中的所有驱动程序）将**suppressAddRemovePrograms**标志设置为 ON，请在 DPInst 描述符文件中包含**suppressAddRemovePrograms**元素作为**DPInst** XML 元素的子元素，或使用 **/sa**   命令行开关。 若要仅为特定驱动程序包组设置**suppressAddRemoverPrograms**标志，请在 DPInst 描述符文件中的相应**组**XML 元素的子元素中包括**suppressAddRemovePrograms**元素。
 
-下面的代码示例演示**suppressAddRemovePrograms**是子元素的元素**dpinst**元素。
+下面的代码示例演示了作为**dpinst**元素的子元素的**suppressAddRemovePrograms**元素。
 
 ```cpp
 <dpinst>
@@ -83,7 +83,7 @@ ms.locfileid: "67385870"
 </dpinst>
 ```
 
-下面的代码示例演示**suppressAddRemovePrograms**是子元素的元素**组**元素。
+下面的代码示例演示一个作为**group**元素的子元素的**suppressAddRemovePrograms**元素。
 
 ```cpp
 <dpinst>
@@ -97,7 +97,7 @@ ms.locfileid: "67385870"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
@@ -105,11 +105,4 @@ ms.locfileid: "67385870"
 [**group**](group-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

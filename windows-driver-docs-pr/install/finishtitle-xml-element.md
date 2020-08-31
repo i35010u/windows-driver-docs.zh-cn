@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d8580cc4ac00744c39de0c1f24d2493b7fd9a3d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 937e51954b5e129921a97c452ede064515b47e38
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360303"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095527"
 ---
 # <a name="finishtitle-xml-element"></a>finishTitle XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**FinishTitle** XML 元素自定义显示在 DPInst 完成页顶部的完成标题的文本。
+**FinishTitle** XML 元素自定义显示在 DPInst 完成页顶部的 "完成" 标题的文本。
 
 ### <a name="element-tag"></a>**元素标记**
 
@@ -36,7 +36,7 @@ ms.locfileid: "67360303"
 
 无
 
-### <a name="element-information"></a>**元素的信息**
+### <a name="element-information"></a>**元素信息**
 
 <table>
 <colgroup>
@@ -46,15 +46,15 @@ ms.locfileid: "67360303"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
-<td align="left"><p>自定义完成页顶部的标题文本的字符串。</p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
+<td align="left"><p>自定义 "完成" 页顶部的标题文本的字符串。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>重复的子元素</strong></p></td>
@@ -65,9 +65,9 @@ ms.locfileid: "67360303"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**finishTitle**自定义完成页顶部的标题文本的元素。 指定的自定义标题文本的文本所示粗体的字体样式。
+下面的代码示例演示了自定义 "完成" 页顶部的标题文本的 **finishTitle** 元素。 指定自定义标题文本的文本以粗体显示。
 
 ```cpp
 dpinst>
@@ -81,21 +81,14 @@ dpinst>
 </dpinst>
 ```
 
-如果**finishTitle**元素未指定，DPInst 显示默认值完成页显示的默认标题文本。
+如果未指定 **finishTitle** 元素，则 DPInst 将显示默认的 "完成" 页上显示的默认标题文本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**finishText**](finishtext-xml-element.md)
 
-[**language**](language-xml-element.md)
+[**语言**](language-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

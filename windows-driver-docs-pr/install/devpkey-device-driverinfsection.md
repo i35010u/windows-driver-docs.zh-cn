@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: efede61600eb4adf55c848a97d816fca9890d1b6
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 7854b39ffe57eb4065e82582f8db01da4f2c7587
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418224"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095105"
 ---
 # <a name="devpkey_device_driverinfsection"></a>DEVPKEY_Device_DriverInfSection
 
 
-DEVPKEY_Device_DriverInfSection 设备属性表示为设备实例安装驱动程序的[**INF DDInstall 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)的名称。
+DEVPKEY_Device_DriverInfSection 设备属性表示为设备实例安装驱动程序的 [**INF DDInstall 部分**](./inf-ddinstall-section.md) 的名称。
 
 <table>
 <colgroup>
@@ -33,8 +33,8 @@ DEVPKEY_Device_DriverInfSection 设备属性表示为设备实例安装驱动程
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -69,29 +69,22 @@ DEVPKEY_Device_DriverInfSection 设备属性表示为设备实例安装驱动程
 
 Windows 设置 PKEY_Device_DriverInfSection 属性的值。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 PKEY_Device_DriverInfSection 的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 PKEY_Device_DriverInfSection 的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 PKEY_Device_DriverInfSection 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应**InfSection**注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 PKEY_Device_DriverInfSection 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应 **InfSection** 注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [访问设备驱动程序属性](./accessing-device-driver-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF DDInstall 节**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF DDInstall 节**](./inf-ddinstall-section.md)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

@@ -3,35 +3,29 @@ title: 枚举已安装的设备
 description: 枚举已安装的设备
 ms.assetid: 98EF9A16-6415-4778-BB5D-C0B7160C1509
 keywords:
-- 枚举已安装的设备 WDK
-- 安装的设备 WDK，枚举
+- 枚举安装的设备 WDK
+- 已安装的设备 WDK，枚举
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 817033cd9b6f49b01e36cb408f6c527dd0d969ef
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c90a4d4f275c19b0b2d9ffc30b3241c953ca827e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379471"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095371"
 ---
 # <a name="enumerating-installed-devices"></a>枚举已安装的设备
 
 
-不应直接使用注册表项来枚举设备。 注册表项不包含所需的信息，以枚举在系统上的已安装的设备。 此信息，例如设备是否真的存在还是虚拟设备 （一种未插入），由[插即用 (PnP) 管理器](pnp-manager.md)。 PnP 管理器还执行其他筛选的注册表信息。
+不应直接使用注册表项来枚举设备。 注册表项不包含枚举系统上已安装设备所需的信息。 此信息（如设备实际是否存在，或者是否为虚拟设备 (未接通) 的设备）由 [即插即用 (PnP) 管理器](pnp-manager.md)保留。 PnP 管理器还会对注册表信息执行其他筛选。
 
-若要安全地枚举已安装的设备，请执行以下步骤：
+若要安全地枚举安装的设备，请执行以下步骤：
 
-1.  使用[ **SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw)或[ **SetupDiGetClassDevsEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa)检索一组属于指定的设备信息设备安装程序类。 若要检索仅适用于系统中存在的设备的信息，请在中设置 DIGCF_PRESENT*标志*参数。
+1.  使用 [**SetupDiGetClassDevs**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsw) 或 [**SetupDiGetClassDevsEx**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa) 检索属于指定设备安装程序类的一组设备的信息。 若要仅检索系统中存在的设备的信息，请在 *Flags* 参数中设置 DIGCF_PRESENT。
 
-2.  使用[ **SetupDiEnumDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)要枚举一组中的设备。
+2.  使用 [**SetupDiEnumDeviceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo) 枚举集中的设备。
 
-3.  使用[ **SetupDiGetDeviceInstanceId** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida)检索唯一[设备实例标识符 (Id)](device-instance-ids.md)。
-
- 
+3.  使用 [**SetupDiGetDeviceInstanceId**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstanceida) 检索 [)  (id 的唯一设备实例标识符 ](device-instance-ids.md)。
 
  
-
-
-
-
 

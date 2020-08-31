@@ -1,10 +1,10 @@
 ---
-title: FLT_PARAMETERS for IRP_MJ_VOLUME_MOUNT union
-description: 当 FLT\_IO\_参数\_块结构的操作为 IRP\_MJ\_卷\_装载时，使用以下联合组件。
+title: IRP_MJ_VOLUME_MOUNT 联合的 FLT_PARAMETERS
+description: 当操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 卷 \_ 装入时，将使用以下联合组件。
 ms.assetid: 3fcc20da-b985-4d08-a0f7-9d95ddfb79d8
 keywords:
-- FLT_PARAMETERS for IRP_MJ_VOLUME_MOUNT union 可安装的文件系统驱动程序
-- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- IRP_MJ_VOLUME_MOUNT 联合可安装文件系统驱动程序的 FLT_PARAMETERS
+- FLT_PARAMETERS 联合可安装文件系统驱动程序
 - PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dd5f9da26fd0557af4d0dc7ace12f1ee80d490a3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d5b89ee1b65d5579c632f0539bcfbff14fbc0e4b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841340"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063410"
 ---
-# <a name="flt_parameters-for-irp_mj_volume_mount-union"></a>用于 IRP\_MJ\_卷\_装载联合的 FLT\_参数
+# <a name="flt_parameters-for-irp_mj_volume_mount-union"></a>\_IRP \_ MJ \_ 卷 \_ 装载联合的 FLT 参数
 
 
-当[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)**结构的操作**为 IRP\_MJ\_卷\_装载时，使用以下联合组件。
+当操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ 卷装入时，将使用以下联合组件 \_ 。
 
 <a name="syntax"></a>语法
 ------
@@ -48,20 +48,20 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **DeviceType**  
-新装入的卷的文件系统卷设备对象的设备类型。 下列情况之一：
+新装入的卷的文件系统卷设备对象的设备类型。 下列类型作之一：
 
-文件\_设备\_CD\_ROM\_文件\_系统
+文件 \_ 设备 \_ CD \_ ROM \_ 文件 \_ 系统
 
-文件\_设备\_磁盘\_文件\_系统
+文件 \_ 设备 \_ 磁盘 \_ 文件 \_ 系统
 
-文件\_设备\_网络\_文件\_系统
+文件 \_ 设备 \_ 网络 \_ 文件 \_ 系统
 
 <a name="remarks"></a>备注
 -------
 
-IRP\_MJ\_卷\_装入操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含由回调数据（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）结构表示的卷装入操作的参数。 它包含在 FLT\_IO\_参数\_块结构。
+IRP MJ 卷装入操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ 包含由回调数据表示的卷装入操作的参数) 结构中 ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data) 。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
-IRP\_MJ\_卷\_装载是一种快速的 i/o 操作。
+IRP \_ MJ \_ 卷 \_ 装载是一种快速的 i/o 操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,7 +74,7 @@ IRP\_MJ\_卷\_装载是一种快速的 i/o 操作。
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Fltkernel （包括 Fltkernel）</td>
+<td align="left">Fltkernel (包含 Fltkernel) </td>
 </tr>
 </tbody>
 </table>
@@ -82,26 +82,19 @@ IRP\_MJ\_卷\_装载是一种快速的 i/o 操作。
 ## <a name="see-also"></a>另请参阅
 
 
-[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[**FLT \_ 是 \_ FASTIO \_ 操作**](/windows-hardware/drivers/ddi/index)
 
-[**FLT\_\_FS\_筛选器\_操作**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT \_ 为 \_ FS \_ 筛选器 \_ 操作**](/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT \_ 是 \_ IRP \_ 操作**](/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IRP\_MJ\_文件\_系统\_控件**](irp-mj-file-system-control.md)
-
- 
+[**IRP \_ MJ \_ 文件 \_ 系统 \_ 控制**](irp-mj-file-system-control.md)
 
  
-
-
-
-
-
 

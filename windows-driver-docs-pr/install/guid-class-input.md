@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c23cc8dd32f4ab78ce09499b0da07b470357233b
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 59d46d3b5aefaf7fd2eae38c9269b3980328fba9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393427"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094941"
 ---
-# <a name="guidclassinput"></a>GUID_CLASS_INPUT
+# <a name="guid_class_input"></a>GUID_CLASS_INPUT
 
 
-GUID_CLASS_INPUT 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)有关[HID 集合](https://docs.microsoft.com/windows-hardware/drivers/hid/hid-collections)。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_HID** ](guid-devinterface-hid.md)此类的新实例的类标识符。
+GUID_CLASS_INPUT 是[HID 集合](../hid/hid-collections.md)的[设备接口类](./overview-of-device-interface-classes.md)的过时标识符。 从 Microsoft Windows 2000 开始，使用此类的新实例 [**GUID_DEVINTERFACE_HID**](guid-devinterface-hid.md) 类标识符。
 
 <a name="requirements"></a>要求
 ------------
@@ -36,27 +36,20 @@ GUID_CLASS_INPUT 是已过时标识符[设备接口类](https://docs.microsoft.c
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_HID。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_HID。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Hidclass.h （包括 Hidclass.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Hidclass (包含 Hidclass) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_HID**](guid-devinterface-hid.md)
 
  
-
- 
-
-
-
-
-
 

@@ -7,12 +7,12 @@ keywords:
 - 部分 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 798e6158a08660f2d844591afe42cef383d80f05
-ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
+ms.openlocfilehash: 8d35ac8e784246ff5e3ed596d9ff6c664f83dfd6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88712202"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094829"
 ---
 # <a name="summary-of-inf-sections"></a>INF 节摘要
 
@@ -90,13 +90,13 @@ INF 的此部分定义一组要在硬件认证中嵌入签名的文件。 具有
 
  
 
-此部分用于创建 [替代配置](https://docs.microsoft.com/windows-hardware/drivers/kernel/hardware-resources#logical-configuration-types-for-resource-requirements-lists)，该配置将覆盖即插即用设备的总线驱动程序报告的硬件资源要求。
+此部分用于创建 [替代配置](../kernel/hardware-resources.md#logical-configuration-types-for-resource-requirements-lists)，该配置将覆盖即插即用设备的总线驱动程序报告的硬件资源要求。
 
 <a href="" id="ddinstall-interfaces-section"></a>[***DDInstall*.接口部分**](inf-ddinstall-interfaces-section.md)  
 如果驱动程序导出设备接口类的功能，从而创建接口类的新实例（如内核流式处理静止映像捕获或数据解压缩），则其 INF 文件可包含此部分。
 
 <a href="" id="interfaceinstall32-section"></a>[**InterfaceInstall32 部分**](inf-interfaceinstall32-section.md)  
-如果要安装的组件（如新的类驱动程序）将一个或多个新的 [设备接口类](device-interface-classes.md) 提供给更高级别的组件，则其 INF 文件将包含此部分。 实际上，此部分通过设置使用接口类提供的功能所需的任何内容，为新类引导一组设备接口。
+如果要安装的组件（如新的类驱动程序）将一个或多个新的 [设备接口类](./overview-of-device-interface-classes.md) 提供给更高级别的组件，则其 INF 文件将包含此部分。 实际上，此部分通过设置使用接口类提供的功能所需的任何内容，为新类引导一组设备接口。
 
 <a href="" id="defaultinstall-section"></a>[**DefaultInstall 部分**](inf-defaultinstall-section.md)  
 如果在选择并按住 (或右键单击 INF 文件名) 后，用户选择 "安装" 菜单项，则将访问 INF 文件的 **DefaultInstall** 节。
@@ -116,10 +116,4 @@ INF 的此部分定义一组要在硬件认证中嵌入签名的文件。 具有
 ** \[ 版本 \] ** ... \[**Provider =%**<em>INF-creator</em> **%** \] .。。** \[ 版本 \] **部分中的**提供程序**条目是可选的，因为它不是每个 INF 文件中的必需条目。
 
  
-
- 
-
-
-
-
 

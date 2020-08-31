@@ -7,12 +7,12 @@ keywords:
 - 电池类驱动程序 WDK，安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db85b577dee4fd28db8750063c8e90243a01d99e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7a18003ef5926e8fddde6c851a7aed8b77a060a8
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364749"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056903"
 ---
 # <a name="installing-a-battery-driver"></a>安装电池驱动程序
 
@@ -20,15 +20,15 @@ ms.locfileid: "67364749"
 ## <span id="ddk_installing_a_battery_driver_dg"></span><span id="DDK_INSTALLING_A_BATTERY_DRIVER_DG"></span>
 
 
-电池驱动程序的 INF 文件指定有关该驱动程序和它控制的设备的信息。 所有电池设备电池类的成员并且电池类安装程序会安装该驱动程序。
+电池驱动程序的 INF 文件指定有关驱动程序及其控制的设备的信息。 所有电池设备都是电池类的成员，电池类安装程序将安装驱动程序。
 
-本部分介绍特定于电池的 INF 文件中的条目。 有关创建和分发 INF 文件和安装驱动程序的详细信息，请参阅[创建一个 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)并[INF 文件的部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
+本部分介绍 INF 文件中特定于电池的条目。 有关创建和分发 INF 文件和安装驱动程序的详细信息，请参阅 [创建 Inf 文件](../install/overview-of-inf-files.md) 和 [inf 文件部分和指令](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)。
 
-电池驱动程序的 INF 文件包含如下所述的部分。
+电池驱动程序的 INF 文件包括下面所述的部分。
 
 ### <a name="span-idversionspanspan-idversionspanspan-idversionspanversion"></a><span id="Version"></span><span id="version"></span><span id="VERSION"></span>版本
 
-电池驱动程序的 INF 文件指定电池类和其 GUID，使用[ **INF 版本部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)，如以下示例所示：
+电池驱动程序的 INF 文件使用 [**INF 版本部分**](../install/inf-version-section.md)指定电池类及其 GUID，如以下示例中所示：
 
 ``` syntax
 [Version]
@@ -38,29 +38,29 @@ ClassGuid={72631e54-78a4-11d0-bcf7-00aa00b7b32a}
 Provider=%MyCo%
 ```
 
-请注意 %%必须中定义的 MyCo [ **INF 字符串部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section) （未显示）。
+请注意，必须在 [**INF 字符串部分**](../install/inf-strings-section.md) 中定义% MyCo% (未显示) 。
 
 ### <a name="span-iddestinationdirsspanspan-iddestinationdirsspanspan-iddestinationdirsspandestinationdirs"></a><span id="DestinationDirs"></span><span id="destinationdirs"></span><span id="DESTINATIONDIRS"></span>DestinationDirs
 
-在中[ **INF DestinationDirs 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)，电池驱动程序的 INF 驱动程序目录 (12) 指定的所有文件的默认值。
+在 [**Inf DestinationDirs 部分**](../install/inf-destinationdirs-section.md)中，电池驱动程序的 Inf 指定驱动程序目录 (12) 作为所有文件的默认设置。
 
 ``` syntax
 [DestinationDirs]
 DefaultDestDir = 12
 ```
 
-### <a name="span-idmanufacturerspanspan-idmanufacturerspanspan-idmanufacturerspanmanufacturer"></a><span id="Manufacturer"></span><span id="manufacturer"></span><span id="MANUFACTURER"></span>制造商
+### <a name="span-idmanufacturerspanspan-idmanufacturerspanspan-idmanufacturerspanmanufacturer"></a><span id="Manufacturer"></span><span id="manufacturer"></span><span id="MANUFACTURER"></span>提供
 
-[ **INF 制造商部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-manufacturer-section)定义设备制造商。
+[**INF 制造商部分**](../install/inf-manufacturer-section.md)定义设备的制造商。
 
 ``` syntax
 [Manufacturer]
 %MyCo%=MyCompany
 ```
 
-### <a name="span-idmodelsspanspan-idmodelsspanspan-idmodelsspanmodels"></a><span id="Models"></span><span id="models"></span><span id="MODELS"></span>*模型*
+### <a name="span-idmodelsspanspan-idmodelsspanspan-idmodelsspanmodels"></a><span id="Models"></span><span id="models"></span><span id="MODELS"></span>*机型*
 
-[ **INF*模型*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-models-section)指定电池的即插即用硬件 ID (显示为*pnpid*在示例中)。 如果通过 ACPI 枚举设备时，本部分还必须指定 EISA 样式 ID (此处所示*acpidevnum*)。 有关创建这些 Id 的信息，请参阅*高级配置和电源接口规范*，可通过[ACPI / 电源管理](https://uefi.org/acpi/specs)网站。
+" [**INF *模型* " 部分**](../install/inf-models-section.md) 指定在示例) 中显示为 *pnpid* 的电池 (PnP 硬件 ID。 如果通过 ACPI 枚举设备，此部分还必须指定显示为 *acpidevnum*) 的 EISA 样式 ID (。 有关创建这些 Id 的信息，请参阅 *高级配置和电源接口规范*，可通过 [ACPI/电源管理](https://uefi.org/acpi/specs) 网站获得。
 
 ``` syntax
 [MyCompany]
@@ -70,7 +70,7 @@ DefaultDestDir = 12
 
 ### <a name="span-idddinstallspanspan-idddinstallspanspan-idddinstallspanddinstall"></a><span id="DDInstall"></span><span id="ddinstall"></span><span id="DDINSTALL"></span>*DDInstall*
 
-在[ **INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section) (名为 NewBatt\_独占指令在示例中)，则[ **INF CopyFiles 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)将复制的电池类驱动程序 (*Battc.sys*) 和新 miniclass 驱动程序 (*NewBatt.sys*) 中指定的目标为**DestinationDirs**指令。
+在示例) 的 " [**Inf *DDInstall* " 部分**](../install/inf-ddinstall-section.md) 中 (名为 \_ "NewBatt 指令" 时， [**inf CopyFiles 指令**](../install/inf-copyfiles-directive.md) 会将电池类驱动程序 (*Battc.sys*) 并将新的 miniclass 驱动程序 (*NewBatt.sys) * 到 **DestinationDirs** 指令中指定的目标。
 
 ``` syntax
 [NewBatt_Inst]
@@ -78,9 +78,9 @@ CopyFiles = @NewBatt.sys
 CopyFiles = @battc.sys
 ```
 
-### <a name="span-idddinstallservicesspanspan-idddinstallservicesspanspan-idddinstallservicesspanddinstallservices"></a><span id="DDInstall.Services"></span><span id="ddinstall.services"></span><span id="DDINSTALL.SERVICES"></span>*DDInstall*.Services
+### <a name="span-idddinstallservicesspanspan-idddinstallservicesspanspan-idddinstallservicesspanddinstallservices"></a><span id="DDInstall.Services"></span><span id="ddinstall.services"></span><span id="DDINSTALL.SERVICES"></span>*DDInstall*。服务器
 
-[ **INF *DDInstall*。服务部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)包括[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive) ，它指定有关电池的驱动程序的其他信息。 电池驱动程序的 INF 文件应指示驱动程序是使用正常的错误处理和启动的操作系统的初始化过程的内核驱动程序。 电池驱动程序指定加载顺序组扩展基。
+[**INF *DDInstall*。服务部分**](../install/inf-ddinstall-services-section.md)包括一个[**INF AddService 指令**](../install/inf-addservice-directive.md)，该指令指定有关电池驱动程序的其他信息。 电池驱动程序的 INF 文件应指示该驱动程序是一个内核驱动程序，该驱动程序使用正常的错误处理并在操作系统初始化期间启动。 电池驱动程序指定负载顺序组扩展基准。
 
 ``` syntax
 [NewBatt_Inst.Services]
@@ -95,9 +95,4 @@ ServiceBinary  = %12%\NewBatt.sys
 ```
 
  
-
- 
-
-
-
 

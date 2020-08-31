@@ -4,40 +4,34 @@ description: 为 WBDI 驱动程序签名
 ms.assetid: 1BE83F60-4A04-457E-BD31-5E6F104A3505
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd484b2aac839ec3227de9f0fde097b245cf6c8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ecb5a0fd99632d3fdd284fa3f1da9c4b584a0899
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328365"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095415"
 ---
 # <a name="signing-wbdi-drivers"></a>为 WBDI 驱动程序签名
 
 
-WBDI 驱动程序的特定代码签名要求取决于是否使用用户模式驱动程序框架 (UMDF)、 内核模式驱动程序框架 (KMDF) 或 Windows 驱动程序模型 (WDM) 实现 WBDI 驱动程序。 除了需要进行签名的编录文件，某些 dll 需要使用特定的属性进行签名。 有关详细信息，请参阅[提交指纹驱动程序的步骤](https://docs.microsoft.com/windows-hardware/design/device-experiences/windows-hello-driver-signing)。
+WBDI 驱动程序的特定代码签名要求取决于 WBDI 驱动程序是否是使用用户模式驱动程序框架（ (UMDF) 、内核模式驱动程序框架 (KMDF) 或 Windows 驱动模型 (WDM) 实现的。 除了需要签名的目录文件外，某些 dll 还需要使用特定属性进行签名。 有关详细信息，请参阅 [提交指纹驱动程序的步骤](/windows-hardware/design/device-experiences/windows-hello-driver-signing)。
 
-必须通过 WHQL 门户中，签名 WBDI 的所有驱动程序包，以确保它已不被篡改。 这种签名是必需的驱动程序运行在内核模式下或在用户模式下。 不需要在包中的每个单个文件进行签名。 相反，创建包含在包中，每个文件的哈希值的目录文件和目录文件进行签名。 INF 在 CatalogFile 指令指示该文件的名称。 对于大多数 WBDI 驱动程序，目录文件签名是签名的唯一所需的类型。
+所有 WBDI 驱动程序包必须通过 WHQL 门户进行签名，以确保其未被篡改。 无论驱动程序在内核模式下运行还是在用户模式下运行，都需要此类签名。 不需要对包中的每个文件进行签名。 相反，你可以创建一个包含包中每个文件的哈希值的编录文件，并对该目录文件进行签名。 INF 中的 CatalogFile 指令指示该文件的名称。 对于大多数 WBDI 驱动程序，目录文件签名是唯一需要的签名类型。
 
-对于某些 WBDI 驱动程序，需要使用多个签名。 内核模式引导启动驱动程序，它是 Windows 加载程序在启动过程中加载的驱动程序，需要在 x86 和 x64 平台上的其他嵌入式的签名。 因此，通常必须通过两种方式签名的引导启动驱动程序：
+对于某些 WBDI 驱动程序，需要多个签名。 内核模式启动驱动程序是 Windows 加载程序在启动过程中加载的驱动程序，在 x86 和 x64 平台上都需要额外的嵌入签名。 因此，启动启动驱动程序通常必须通过两种方式进行签名：
 
--   使用 INF 安装的引导启动驱动程序包必须具有签名的编录文件，就像其他类型的驱动程序。 编录文件用于在安装过程中的签名验证。
--   引导启动驱动程序的二进制文件必须是通过一个 SPC 使用相应的交叉证书中嵌入签名。 交叉证书是由另一个 CA，为多个其他 Ca 从单一的受信任的根 CA 创建的信任链的根证书的公钥进行签名的 CA （称为受信任的根） 颁发的。
+-   与其他类型的驱动程序一样，使用 INF 安装的引导启动驱动程序包必须具有签名的目录文件。 目录文件用于安装期间的签名验证。
+-   启动启动驱动程序的二进制文件必须使用具有相应交叉证书的 SPC 进行嵌入签名。 交叉证书由称为 "受信任的根) " 的 (CA 颁发，该证书用于对另一个 CA 的根证书的公钥进行签名，这会创建一个从受信任的根 CA 到多个其他 ca 的信任链。
 
-您通常嵌入签名的驱动程序二进制文件后创建和包的目录文件进行签名。
+你通常在创建并签署包的目录文件后对驱动程序二进制文件进行嵌入签名。
 
 引导启动驱动程序具有以下特征：
 
--   驱动程序的 INF 中指定的启动类型为"启动 = 0"。
--   内核服务配置了**ServiceType**内核驱动程序或文件系统驱动程序的和已**StartMode**设置为"启动"。
+-   驱动程序的 INF 将启动类型指定为 "Start = 0"。
+-   内核服务配置为具有内核驱动程序或文件系统驱动程序的 **ServiceType** ，并将 **StartMode** 设置为 "boot"。
 
 
-本主题不涉及驱动程序签名要求或过程的详细信息。 有关驱动程序签名要求的常规信息，请参阅[驱动程序签名](https://go.microsoft.com/fwlink/p/?linkid=201836)。
-
- 
+本主题不涉及驱动程序签名要求或过程的详细信息。 有关驱动程序的签名要求的常规信息，请参阅 [驱动程序签名](https://go.microsoft.com/fwlink/p/?linkid=201836)。
 
  
-
-
-
-
 

@@ -3,12 +3,12 @@ description: 本主题提供有关使用 Logman 工具捕获 USB ETW 事件跟�
 title: 如何使用 Logman 捕获 USB 事件跟踪
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e1925c93a21da1666b361a0c04e89f149aa129
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: bdbbf4a786e28d3d5000dfd5cd6a92a15ed43935
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969384"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056957"
 ---
 # <a name="how-to-capture-a-usb-event-trace-with-logman"></a>如何使用 Logman 捕获 USB 事件跟踪
 
@@ -31,7 +31,7 @@ USB 3.0 驱动程序堆栈中的事件跟踪类似于 Windows 7 中引入的 USB
 
 **收集 USB 跟踪事件**
 
-1.  打开具有管理权限的命令提示符窗口。 为此，请单击 "开始"，在搜索框中键入 **cmd** ，右键单击 "cmd.exe"，然后选择 " **以管理员身份运行**"。
+1.  打开具有管理权限的命令提示符窗口。 为此，请选择 "开始"，在搜索框中键入 **cmd** ，选择并按住 (或右键单击) cmd.exe，然后选择 " **以管理员身份运行**"。
 2.  在命令提示符窗口中，输入以下命令以启动捕获会话：
 
     ```cpp
@@ -64,7 +64,7 @@ USB 3.0 驱动程序堆栈中的事件跟踪类似于 Windows 7 中引入的 USB
 
 此文件包含来自 USB 3.0 和 USB 2.0 驱动程序堆栈的事件跟踪。 如果要将事件跟踪减少到一个 USB 驱动程序堆栈，请从下一个跟踪会话中删除其他驱动程序堆栈。 为此，可以修改步骤2中所示的命令序列，删除与要从跟踪会话中删除的驱动程序堆栈相对应的 "logman 更新" 行。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **USB 3.0 驱动程序堆栈事件的捕获筛选器**

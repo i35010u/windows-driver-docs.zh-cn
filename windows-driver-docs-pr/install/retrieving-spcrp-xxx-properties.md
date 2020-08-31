@@ -4,52 +4,46 @@ description: 检索 SPCRP_Xxx 属性
 ms.assetid: a5d52da9-a593-42bd-aeaf-8ab203bc3d21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd557f70585b4b3903503d170c39f80621526140
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f077e79bf8d35e2eb521b21e2daf0e41a7e871b1
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382278"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094974"
 ---
-# <a name="retrieving-spcrpxxx-properties"></a>检索 SPCRP_Xxx 属性
+# <a name="retrieving-spcrp_xxx-properties"></a>检索 SPCRP_Xxx 属性
 
 
-在 Windows Vista 和更高版本的 Windows，[统一的设备属性模型](unified-device-property-model--windows-vista-and-later-.md)支持的设备实例属性中定义的 SPCRP_Xxx 标识符对应*Setupapi.h*. 这些属性描述的特征[设备安装程序类](device-setup-classes.md)。 统一的设备属性模型使用[属性键](property-keys.md)来表示这些属性。
+在 Windows Vista 和更高版本的 Windows 中， [统一设备属性模型](unified-device-property-model--windows-vista-and-later-.md) 支持与 *setupapi.log*中定义的 SPCRP_Xxx 标识符对应的设备实例属性。 这些属性描述 [设备安装程序类](./overview-of-device-setup-classes.md)的特征。 统一设备属性模型使用 [属性键](property-keys.md) 来表示这些属性。
 
-Windows Server 2003、 Windows XP 和 Windows 2000 还支持大部分设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一的设备属性模型属性键。 相反，这些版本的 Windows 版本使用 SPCRP_*Xxx*标识符表示并访问设备安装程序类属性。 若要保持与早期版本的 Windows 兼容性，Windows Vista 和更高版本还支持使用 SPCRP_*Xxx*标识符，以访问设备安装程序类属性。 但是，应使用统一的设备属性模型属性键来访问设备安装程序类属性。
+Windows Server 2003、Windows XP 和 Windows 2000 还支持其中的大多数设备安装程序类属性。 但是，这些早期版本的 Windows 不支持统一设备属性模型的属性键。 相反，这些版本的 Windows 版本使用 SPCRP_*Xxx* 标识符来表示和访问设备安装程序类属性。 为了保持与早期版本的 Windows 的兼容性，Windows Vista 及更高版本还支持使用 SPCRP_*Xxx* 标识符来访问设备安装程序类属性。 但是，你应该使用统一设备属性模型的属性键来访问设备安装程序类属性。
 
-系统定义的设备安装程序类属性的列表，请参阅[设备安装程序类属性，对应于 SPCRP_Xxx 标识符](https://docs.microsoft.com/previous-versions/ff542245(v=vs.85))。 属性的密钥标识符用于访问在 Windows Vista 和更高版本中的属性按列出的设备安装程序类属性。 与属性键一起提供的信息还包括相应 SPCRP_*Xxx*可用于访问 Windows Server 2003、 Windows XP 和 Windows 2000 上的属性的标识符。
+有关系统定义的设备安装程序类属性的列表，请参阅 [与 SPCRP_Xxx 标识符对应的设备安装程序类属性](/previous-versions/ff542245(v=vs.85))。 设备安装程序类属性由用于访问 Windows Vista 和更高版本中的属性的属性键标识符列出。 使用属性键提供的信息还包括相应的 SPCRP_*Xxx* 标识符，可用于访问 windows Server 2003、windows XP 和 windows 2000 上的属性。
 
-有关如何使用属性键来访问在 Windows Vista 和更高版本的设备安装程序类属性的信息，请参阅[访问设备类属性 （Windows Vista 和更高版本）](accessing-device-class-properties--windows-vista-and-later-.md)。
+有关如何使用属性键访问 Windows Vista 和更高版本中的设备安装程序类属性的信息，请参阅 [访问设备类属性 (Windows vista 和更高版本) ](accessing-device-class-properties--windows-vista-and-later-.md)。
 
-若要检索在 Windows Server 2003、 Windows XP 和 Windows 2000 上的设备安装程序类属性，请使用[ **SetupDiGetClassRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)函数。
+若要在 Windows Server 2003、Windows XP 和 Windows 2000 上检索设备安装程序类属性，请使用 [**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya) 函数。
 
-若要使用 SetupDiGetClassRegistryProperty 检索与 SPCRP_Xxx 标识符相对应的属性，请按照下列步骤：
+若要使用 SetupDiGetClassRegistryProperty 检索与 SPCRP_Xxx 标识符对应的属性，请执行以下步骤：
 
-1.  调用**SetupDiGetClassRegistryProperty**并提供以下参数值：
+1.  调用 **SetupDiGetClassRegistryProperty** 并提供以下参数值：
 
-    -   设置*ClassGuid*为指向表示要为其检索属性的设备安装程序类的 GUID。
-    -   设置*属性*到带前缀"SPCRP_"的属性标识符为其检索属性值的大小。
-    -   设置*PropertyRegDataType*到**NULL**。
-    -   设置*PropertyBuffer*到**NULL**。
-    -   设置*PropertyBufferSize*为零。
-    -   设置*RequiredSize*到指向 DWORD 类型的变量接收大小，以字节为单位的所请求的属性。
-    -   设置*MachineName*到的计算机的名称。
-    -   设置为保留**NULL**。
+    -   将 *ClassGuid* 设置为指向表示要为其检索属性的设备安装程序类的 GUID 的指针。
+    -   将 *属性* 设置为要检索其属性值大小的前缀为 "SPCRP_" 的属性标识符。
+    -   将 *PropertyRegDataType* 设置为 **NULL**。
+    -   将 *PropertyBuffer* 设置为 **NULL**。
+    -   将 *PropertyBufferSize* 设置为零。
+    -   将 *RequiredSize* 设置为指向 DWORD 类型的变量的指针，该变量接收所请求属性的大小（以字节为单位）。
+    -   将 *MachineName* 设置为计算机的名称。
+    -   将保留设置为 **NULL**。
 
-    以响应对的调用[ **SetupDiGetClassRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)， **SetupDiGetClassRegistryProperty**设置\* *RequiredSize*大小，以字节为单位，检索属性值，所需的缓冲区的记录的错误代码 ERROR_INSUFFICIENT_BUFFER，并返回**FALSE**。 随后调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回最近记录的错误代码。
+    在响应对[**SetupDiGetClassRegistryProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassregistrypropertya)的调用时， **SetupDiGetClassRegistryProperty**将 \* *RequiredSize*设置为检索属性值所需的缓冲区大小（以字节为单位），记录错误代码 ERROR_INSUFFICIENT_BUFFER 并返回**FALSE**。 对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的后续调用将返回最近记录的错误代码。
 
-2.  调用**SetupDiGetClassRegistryProperty**再次以检索属性值，并提供相同的第一个调用中，除以下更改外中提供的参数：
-    -   设置*PropertyBuffer*到指向该缓冲区用于接收的属性值的指针。
-    -   设置*PropertyBufferSize*到的大小，以字节为单位的*PropertyBuffer*缓冲区。 首次调用**SetupDiGetClassRegistryProperty**检索所需的大小*PropertyBuffer*中的缓冲区\* *RequiredSize*。
+2.  再次调用 **SetupDiGetClassRegistryProperty** 来检索属性值，并提供在第一个调用中提供的相同参数，但以下更改除外：
+    -   将 *PropertyBuffer* 设置为指向接收属性值的缓冲区的指针。
+    -   将 *PropertyBufferSize* 设置为 *PropertyBuffer* 缓冲区的大小（以字节为单位）。 第一次调用**SetupDiGetClassRegistryProperty**时，检索到 RequiredSize 中的*PropertyBuffer*缓冲区的所需大小 \* *RequiredSize*。
 
-如果第二个调用**SetupDiGetClassRegistryProperty**成功， **SetupDiGetClassRegistryProperty**设置\* *PropertyRegDataType*到注册表数据类型，设置*PropertyBuffer*属性值设置到缓冲区\* *PropertyBufferSize*大小，以字节为单位，属性值，并返回**TRUE**。 如果函数调用失败， **SetupDiGetClassRegistryProperty**返回**FALSE**并调用[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)将返回的记录的错误代码。
-
- 
+如果对**SetupDiGetClassRegistryProperty**的第二次调用成功，则**SetupDiGetClassRegistryProperty**将 \* *PropertyRegDataType*设置为 registry 数据类型，将*PropertyBuffer*缓冲区设置为属性值，将 \* *PropertyBufferSize*设置为属性值的大小（以字节为单位），并返回**TRUE**。 如果函数调用失败， **SetupDiGetClassRegistryProperty** 将返回 **FALSE** ，并且对 [GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416) 的调用将返回记录的错误代码。
 
  
-
-
-
-
 

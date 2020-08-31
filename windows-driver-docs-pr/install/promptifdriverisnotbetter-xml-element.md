@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 0a9c6d95db60d5cce48b0c27013bf199a58e249f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e0b97b4dd2fe4201fc797726ac521558201b051c
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380469"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094843"
 ---
 # <a name="promptifdriverisnotbetter-xml-element"></a>promptIfDriverIsNotBetter XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**PromptIfDriverIsNotBetter** XML 元素为空元素，用于设置**promptIfDriverIsNotBetter**标志为 ON，将配置 DPInst 以显示一个对话框中，如果新的驱动程序不是更好的匹配项到比当前安装在设备的驱动程序的设备。 对话框告知用户这种情况下的，并提供了一个选项以替换与新的驱动程序在设备当前安装的驱动程序。
+**PromptIfDriverIsNotBetter** XML 元素是一个空元素，该元素将**promptIfDriverIsNotBetter**标志设置为 ON，这会将 DPInst 配置为在新驱动程序比设备上当前安装的驱动程序不能比设备更好地匹配时显示对话框。 此对话框通知用户这种情况，并提供一个选项，用于将设备上当前安装的驱动程序替换为新的驱动程序。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67380469"
 <promptIfDriverIsNotBetter>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -53,7 +53,7 @@ ms.locfileid: "67380469"
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -65,11 +65,11 @@ ms.locfileid: "67380469"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下**promptIfDriverIsNotBetter**标志设置为 OFF。 可以设置**promptIfDriverIsNotBetter**通过包括标志为 ON **promptIfDriverIsNotBetter**中的 XML 元素*DPInst.xml*文件或通过使用 **/ p** 命令行开关。
+默认情况下， **promptIfDriverIsNotBetter** 标志设置为 OFF。 可以通过在*DPInst.xml*文件中包含**promptIfDriverIsNotBetter** XML 元素或使用 **/P**命令行开关将**promptIfDriverIsNotBetter**标志设置为 ON   。
 
-下面的代码示例演示**promptIfDriverIsNotBetter**元素。
+下面的代码示例演示了 **promptIfDriverIsNotBetter** 元素。
 
 ```cpp
 <dpinst>
@@ -79,17 +79,10 @@ ms.locfileid: "67380469"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

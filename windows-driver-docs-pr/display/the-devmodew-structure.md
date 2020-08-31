@@ -10,12 +10,12 @@ keywords:
 - 绘制 WDK GDI，DEVMODEW 结构
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c5d761890c02a33fb0891b83950406adeb4e37
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 276b79119cc3dcf369da895f4242c25f863aa1b5
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825511"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063778"
 ---
 # <a name="the-devmodew-structure"></a>DEVMODEW 结构
 
@@ -23,15 +23,15 @@ ms.locfileid: "72825511"
 ## <span id="ddk_the_devmodew_structure_gg"></span><span id="DDK_THE_DEVMODEW_STRUCTURE_GG"></span>
 
 
-[**DEVMODEW**](https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构是 DEVMODE 结构的 Unicode 版本，如 Microsoft Windows SDK 文档中所述。 （DEVMODEW 上的 "W" 后缀表示 "宽" 或 Unicode 字符。）尽管应用程序可以使用这两种结构，但驱动程序需要使用 DEVMODEW 结构而不是 DEVMODE 结构。
+[**DEVMODEW**](/windows/desktop/api/wingdi/ns-wingdi-_devicemodew)结构是 DEVMODE 结构的 Unicode 版本，如 Microsoft Windows SDK 文档中所述。  ("DEVMODEW" 上的 "W" 后缀表示 "宽" 或 Unicode 字符。 ) 虽然应用程序可以使用这两种结构，但驱动程序需要使用 DEVMODEW 结构，而不是 DEVMODE 结构。
 
 ### <a name="span-idpublic_and_private_membersspanspan-idpublic_and_private_membersspanpublic-and-private-members"></a><span id="public_and_private_members"></span><span id="PUBLIC_AND_PRIVATE_MEMBERS"></span>公有和私有成员
 
-紧跟在 DEVMODEW 结构的已定义成员（通常称为公共 DEVMODEW 成员）之后，可以有一组驱动程序定义的成员（其私有 DEVMODEW 成员）。 下图显示了 public 部分（实际的 DEVMODEW 结构本身）和私有部分。
+紧跟 DEVMODEW 结构的定义成员后 (通常称为其公共 DEVMODEW 成员) ，可以有一组 (其专用 DEVMODEW 成员) 的驱动程序定义成员。 下图显示了 (实际 DEVMODEW 结构自身) 和私有部分的公共部分。
 
 ![说明 devmodew 结构的公共和私有部分的示意图](images/devmode.png)
 
-通常，专用成员仅用于打印机驱动程序。 驱动程序提供**dmDriverExtra**成员中此专用区域的大小（以字节为单位）。 驱动程序定义的私有成员专用于驱动程序。
+通常，专用成员仅用于打印机驱动程序。 驱动程序提供 **dmDriverExtra** 成员中此专用区域的大小（以字节为单位）。 驱动程序定义的私有成员专用于驱动程序。
 
 对于打印机驱动程序，DEVMODEW 结构用于指定打印文档的用户选择。 它还用于为打印机指定这些选项的默认值，例如要打印的份数、纸张大小和其他属性。 对于显示设备，DEVMODEW 结构指定显示属性，如每个像素的位数、像素维度和显示频率。
 
@@ -41,21 +41,21 @@ ms.locfileid: "72825511"
 
 -   显示驱动程序 DEVMODEW 初始化
 
-    显示驱动程序的[**DrvGetModes**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvgetmodes)入口点将 DEVMODEW 结构的所有成员初始化为零。 然后， *DrvGetModes*将显示驱动程序 DLL 的名称复制到**dmDeviceName**成员，用 DEVMODEW 结构的版本填充**dmSpecVersion**和**dmDriverVersion**成员，并复制显示属性向适当的成员信息。
+    显示驱动程序的 [**DrvGetModes**](/windows/desktop/api/winddi/nf-winddi-drvgetmodes) 入口点将 DEVMODEW 结构的所有成员初始化为零。 然后， *DrvGetModes*将显示驱动程序 DLL 的名称复制到**dmDeviceName**成员，用 DEVMODEW 结构的版本填充**dmSpecVersion**和**dmDriverVersion**成员，并将显示属性信息复制到相应成员。
 
 -   打印机驱动程序 DEVMODEW 初始化
 
-    当应用程序调用**DocumentProperties** （Microsoft Windows SDK 文档中所述的打印机接口 DLL 函数）或[**DRVDOCUMENTPROPERTYSHEETS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) （基于 NT 的操作系统图形 DDI）时，DEVMODEW 结构是用默认值创建的。 然后，应用程序可以自由修改任何公用 DEVMODEW 成员。 在进行任何更改后，应用程序随后应对它调用的同一函数进行第二次调用，以便将已更改的成员与驱动程序的内部 DEVMODEW 结构的成员合并。 第二次调用是必需的，因为某些更改可能无法正常工作;若要更正 DEVMODEW 结构，必须调用打印机驱动程序。 打印文档时，应用程序会将合并的 DEVMODEW 结构传递到**CreateDC** （Microsoft Windows SDK 文档中所述），这会将其传递到[**DrvEnablePDEV**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI。 当时，驱动程序的呈现 DLL 会在执行打印作业之前验证 DEVMODEW 结构并进行修复（如有必要）。
+    当应用程序调用 **DocumentProperties** (打印机接口 DLL 函数（在 Microsoft Windows SDK 文档) 或 [**DRVDOCUMENTPROPERTYSHEETS**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvdocumentpropertysheets) (基于 NT 的操作系统图形 DDI) 中介绍）时，将使用默认值创建 DEVMODEW 结构。 然后，应用程序可以自由修改任何公用 DEVMODEW 成员。 在进行任何更改后，应用程序随后应对它调用的同一函数进行第二次调用，以便将已更改的成员与驱动程序的内部 DEVMODEW 结构的成员合并。 第二次调用是必需的，因为某些更改可能无法正常工作;若要更正 DEVMODEW 结构，必须调用打印机驱动程序。 打印文档时，应用程序会将合并的 DEVMODEW 结构传递到 Microsoft Windows SDK 文档) 中所述的 **CreateDC** (，并将其传递到 [**DrvEnablePDEV**](/windows/desktop/api/winddi/nf-winddi-drvenablepdev) DDI。 当时，驱动程序的呈现 DLL 会在执行打印作业之前验证 DEVMODEW 结构并进行修复（如有必要）。
 
 ### <a name="span-idusing_a_devmodew_structurespanspan-idusing_a_devmodew_structurespanusing-a-devmodew-structure"></a><span id="using_a_devmodew_structure"></span><span id="USING_A_DEVMODEW_STRUCTURE"></span>使用 DEVMODEW 结构
 
-许多 Api 和图形 DDIs 使用 DEVMODEW 结构中的信息来实现此目的，如打印、查询设备功能、显示用户界面等。 例如， [**DrvConvertDevMode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvconvertdevmode)是将 DEVMODEW 结构从一个操作系统版本转换到另一个版本的打印后台处理程序图形 DDI。 如果打印机驱动程序从另一台运行在不同操作系统版本上的计算机获取 DEVMODEW 结构，则可能需要执行此操作。
+许多 Api 和图形 DDIs 使用 DEVMODEW 结构中的信息来实现此目的，如打印、查询设备功能、显示用户界面等。 例如， [**DrvConvertDevMode**](/windows-hardware/drivers/ddi/winddiui/nf-winddiui-drvconvertdevmode) 是将 DEVMODEW 结构从一个操作系统版本转换到另一个版本的打印后台处理程序图形 DDI。 如果打印机驱动程序从另一台运行在不同操作系统版本上的计算机获取 DEVMODEW 结构，则可能需要执行此操作。
 
 ### <a name="span-idmodifying_a_devmodew_structurespanspan-idmodifying_a_devmodew_structurespanmodifying-a-devmodew-structure"></a><span id="modifying_a_devmodew_structure"></span><span id="MODIFYING_A_DEVMODEW_STRUCTURE"></span>修改 DEVMODEW 结构
 
 应用程序和驱动程序可自由请求 DEVMODEW 结构并直接修改其公共部件。 不过，只有驱动程序才允许修改私有 DEVMODEW 结构成员。
 
-为了修改 private DEVMODEW 结构成员，驱动程序必须首先确定专用数据开始处的偏移量。 给定指向此结构的开头的指针，并在**dmSize**成员（它包含结构的公共部分的大小）中找到该私有部分的开头。 下面的示例演示如何初始化指向私有部分开头的指针。 在此示例中， *pdm*指向 DEVMODEW 结构的开头。
+为了修改 private DEVMODEW 结构成员，驱动程序必须首先确定专用数据开始处的偏移量。 给定指向此结构的开头的指针，并在 **dmSize** 成员（它包含结构的公共部分的大小）中找到该私有部分的开头。 下面的示例演示如何初始化指向私有部分开头的指针。 在此示例中， *pdm* 指向 DEVMODEW 结构的开头。
 
 ```cpp
 PVOID pvDriverData = (PVOID)  (((BYTE *) pdm) + (pdm -> dmSize));
@@ -71,7 +71,7 @@ DEVMODEW 结构成员分为三个类别：
 
 -   打印机和显示器驱动程序使用的成员
 
-下表列出了一些*仅*供打印机驱动程序使用的公共 DEVMODEW 成员：
+下表列出了一些 *仅* 供打印机驱动程序使用的公共 DEVMODEW 成员：
 
 <table>
 <colgroup>
@@ -106,7 +106,7 @@ DEVMODEW 结构成员分为三个类别：
 
  
 
-下一个表列出了几个*仅*由显示驱动程序使用的公共 DEVMODEW 成员：
+下一个表列出了几个 *仅* 由显示驱动程序使用的公共 DEVMODEW 成员：
 
 <table>
 <colgroup>
@@ -169,7 +169,7 @@ DEVMODEW 结构成员分为三个类别：
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dmFields</strong></p></td>
-<td align="left"><p>指定位标志，用于识别跟随其后的 DEVMODEW 成员。 例如，当<strong>dmBitsPerPel</strong>成员包含有效数据时，将设置 DM_BITSPERPEL 标志。</p></td>
+<td align="left"><p>指定位标志，用于识别跟随其后的 DEVMODEW 成员。 例如，如果 <strong>dmBitsPerPel</strong> 成员包含有效数据，则会设置 DM_BITSPERPEL 标志。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dmSize</strong></p></td>
@@ -185,10 +185,4 @@ DEVMODEW 结构成员分为三个类别：
  
 
  
-
- 
-
-
-
-
 

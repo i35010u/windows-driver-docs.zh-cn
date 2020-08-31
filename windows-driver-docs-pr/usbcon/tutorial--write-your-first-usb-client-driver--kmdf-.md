@@ -3,12 +3,12 @@ description: 在本主题中，你将使用随 Microsoft Visual Studio Professio
 title: 如何编写第一个 USB 客户端驱动程序 (KMDF)
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f64bec810df26fe72e4a0da61914f796f61850ac
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 8fb1b77546d2e8f62cca072280d1bb742b9b2220
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969268"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056947"
 ---
 # <a name="how-to-write-your-first-usb-client-driver-kmdf"></a>如何编写第一个 USB 客户端驱动程序 (KMDF)
 
@@ -61,8 +61,8 @@ ms.locfileid: "88969268"
 
 1.  在 " **新建项目** " 对话框顶部的 "搜索" 框中，键入 " **USB"。**
 2.  在中间窗格中，选择 " **内核模式驱动程序"、"USB (KMDF) " **。
-3.  单击“下一步”。
-4.  输入项目名称，选择 "保存位置"，然后单击 " **创建**"。
+3.  选择“**下一页**”。
+4.  输入项目名称，选择 "保存位置"，然后选择 " **创建**"。
 
 以下屏幕截图显示了**USB 内核模式驱动程序**模板的 "**新建项目**" 对话框。
 
@@ -97,7 +97,7 @@ ms.locfileid: "88969268"
 2.  打开 **设备管理器** 并打开设备的 "属性"。
 3.  在 " **详细信息** " 选项卡上，选择 "属性" 下的 **Hardward id** **。**
 
-    设备的硬件 ID 显示在列表框中。 右键单击并复制硬件 ID 字符串。
+    设备的硬件 ID 显示在列表框中。 选择并按住 (或右键单击) 并复制硬件 ID 字符串。
 
 4.  \\ \_ 将以下行中的 USB VID VVVV&PID \_ pppp 替换为硬件 ID 字符串。
 
@@ -108,9 +108,9 @@ ms.locfileid: "88969268"
 **构建驱动程序**
 
 1.  在 Visual Studio Professional 2019 中打开驱动程序项目或解决方案
-2.  右键单击 " **解决方案资源管理器** 中的解决方案，然后选择" **Configuration Manager**"。
+2.  选择并按住 (或右键单击) **解决方案资源管理器** 中的解决方案，然后选择 " **Configuration Manager**"。
 3.  从 " **Configuration Manager**中，选择" **活动解决方案配置** " (例如， **Windows 8 调试** 或 **Windows 8 版本**) 和 **活动解决方案平台** (例如，Win32) 对应于你感兴趣的版本类型。
-4.  在“生成”**** 菜单中，单击“生成解决方案”****。
+4.  在 " **生成** " 菜单中，选择 " **生成解决方案**"。
 
 有关详细信息，请参阅 [构建驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)。
 
@@ -171,12 +171,12 @@ ms.locfileid: "88969268"
 
 ### <a name="step-6-deploy-the-driver-on-the-target-computer"></a><a href="" id="deploy-the-driver-on-the-target-computer"></a>步骤6：在目标计算机上部署驱动程序
 
-1. 在 "**解决方案资源管理器**" 窗口中，右键单击<em> &lt; 项目 &gt; 名称</em>**包**，然后选择 "**属性**"。
+1. 在 "**解决方案资源管理器**" 窗口中，选择并按住 (或右键单击 " <em> &lt; 项目名称 &gt; </em>**包**") ，然后选择 "**属性**"。
 2. 在左窗格中，导航到 " **配置属性 &gt; 驱动程序安装 &gt; 部署**"。
 3. 选中 "启用部署"，并选中 "导入到驱动程序存储区"。
 4. 对于 " **远程计算机名称**"，指定目标计算机的名称。
 5. 选择“安装并验证”  。
-6. 单击“确定” 。
+6. 选择“确定”  。
 7. 在“调试”  菜单上，选择“开始调试”  或按键盘上的 **F5**。
 
 **注意**   请*不要*在**硬件 Id 驱动程序更新**下指定设备的硬件 id。 只有驱动程序的信息 (INF) 文件中，才能指定硬件 ID。

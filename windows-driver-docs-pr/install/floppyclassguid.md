@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3826c82d3cc380e3d650e7b9ece1421ce1ab5ce8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8f9aca0ed7f85d770e8d0daafee67d6769ab6851
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360283"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095511"
 ---
 # <a name="floppyclassguid"></a>FloppyClassGuid
 
 
-FloppyClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)的软盘[存储设备](https://docs.microsoft.com/windows-hardware/drivers/storage/index)。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_FLOPPY** ](guid-devinterface-floppy.md)此类的新实例的类标识符。
+FloppyClassGuid 是适用于软盘[存储设备](../storage/index.md)的[设备接口类](./overview-of-device-interface-classes.md)的过时标识符。 启动 Microsoft Windows 2000，使用此类的新实例 [**GUID_DEVINTERFACE_FLOPPY**](guid-devinterface-floppy.md) 类标识符。
 
 <a name="remarks"></a>备注
 -------
 
-存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK 中包括[软盘驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256192)此示例使用 FloppyClassGuid 来注册此设备接口类的实例。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括使用 FloppyClassGuid 注册此设备接口类的实例的 [软盘驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256192) 示例。
 
 <a name="requirements"></a>要求
 ------------
@@ -41,27 +41,20 @@ FloppyClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.co
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_FLOPPY。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_FLOPPY。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_FLOPPY**](guid-devinterface-floppy.md)
 
  
-
- 
-
-
-
-
-
 

@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c8a35b93a43ece29fe71fd93606356eb6f984eb
-ms.sourcegitcommit: bba54f7ba385ee0b5bd4a2b8660486bc269cf02f
+ms.openlocfilehash: a7815ca13061b63e99e6f0371aa0f58027583125
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88712209"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095073"
 ---
 # <a name="inf-defaultinstall-section"></a>INF DefaultInstall 节
 
@@ -115,7 +115,7 @@ Needs= KS.Registration[,KSCAPTUR.Registration |
 有关详细信息，请参阅 [**INF DelReg 指令**](inf-delreg-directive.md)。
 
 <a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg =**<em>位注册表-节</em> \[ **，**<em>位注册表-节</em> \] .。。  
-此指令引用一个或多个由 INF 写入器定义的部分，其中 [REG_BINARY](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) 的类型的现有注册表值项被修改。 有关详细信息，请参阅 [**INF AddReg 指令**](inf-addreg-directive.md)。
+此指令引用一个或多个由 INF 写入器定义的部分，其中 [REG_BINARY](/windows/desktop/SysInfo/registry-value-types) 的类型的现有注册表值项被修改。 有关详细信息，请参阅 [**INF AddReg 指令**](inf-addreg-directive.md)。
 
 此类注册表部分中的**HKR**规范指定了 **。类 \\ **<em>SetupClassGUID</em> **\\** 用户可访问的驱动程序的<em>设备实例 id</em>注册表路径。 这种类型的 **HKR** 规范也称为。 "软件密钥"。
 
@@ -151,7 +151,7 @@ Needs= KS.Registration[,KSCAPTUR.Registration |
 
 有关详细信息，请参阅 [**INF UnregisterDlls 指令**](inf-unregisterdlls-directive.md)。
 
-<a name="remarks"></a>注解
+<a name="remarks"></a>备注
 -------
 
 **DefaultInstall** 部分不能用于设备安装。 仅将 **DefaultInstall** 部分用于安装类筛选器驱动程序、类 co 安装程序、文件系统筛选器和不与设备节点 (*devnode*) 相关联的内核驱动程序服务。
@@ -199,11 +199,4 @@ AddReg=MyAppRegEntries
 [**LogConfig**](inf-logconfig-directive.md)
 
  
-
- 
-
-
-
-
-
 

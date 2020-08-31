@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa544c2a60c3906b3a4737df4761c43bff92305
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 78e9e021016d92abd7119cfefcc70c31ffdcfc96
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841071"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063292"
 ---
 # <a name="mrxsetvolumeinfo-routine"></a>MRxSetVolumeInfo 例程
 
 
-[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用*MRxSetVolumeInfo*例程来请求网络小型重定向程序设置卷信息。
+[RDBSS](./the-rdbss-driver-and-library.md)调用*MRxSetVolumeInfo*例程来请求网络小型重定向程序设置卷信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetVolumeInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetVolumeInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxSetVolumeInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -98,15 +98,15 @@ NTSTATUS MRxSetVolumeInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxSetVolumeInfo*的调用，以响应接收[**IRP\_MJ\_设置\_卷\_信息**](irp-mj-set-volume-information.md)请求。
+RDBSS 发出对 *MRxSetVolumeInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ 卷 \_ 信息**](irp-mj-set-volume-information.md) 请求。
 
-在调用*MRxSetVolumeInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxSetVolumeInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
-**FsInformationClass**成员设置为**IrpSp-&gt;SetVolume. FsInformationClass**。
+**FsInformationClass**成员设置为**IrpSp- &gt; SetVolume. FsInformationClass**。
 
-**Info. Buffer**成员设置为**Irp-&gt;AssociatedIrp. SystemBuffer**。
+**Info. Buffer**成员设置为**Irp- &gt;AssociatedIrp.SystemBuffer**。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;SetVolume**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. SetVolume**。
 
 <a name="requirements"></a>要求
 ------------
@@ -119,19 +119,19 @@ RDBSS 发出对*MRxSetVolumeInfo*的调用，以响应接收[**IRP\_MJ\_设置\_
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -156,11 +156,4 @@ RDBSS 发出对*MRxSetVolumeInfo*的调用，以响应接收[**IRP\_MJ\_设置\_
 [**MRxSetSdInfo**](mrxsetsdinfo.md)
 
  
-
- 
-
-
-
-
-
 

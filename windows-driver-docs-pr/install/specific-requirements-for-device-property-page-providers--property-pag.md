@@ -4,56 +4,50 @@ description: 设备属性页提供程序（属性页扩展 DLL）的特定要求
 ms.assetid: bc48d848-a216-442e-97ca-f990f8d243ac
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2bb049acf85ad490d152ea43e38f750cadd6f2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7bcf3f4eb74d7a5ea3772f11aa666de7101e066e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385890"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095115"
 ---
 # <a name="specific-requirements-for-device-property-page-providers-property-page-extension-dlls"></a>设备属性页提供程序（属性页扩展 DLL）的特定要求
 
 
-本主题如何创建和安装属性页面扩展 DLL。
+本主题介绍如何创建和安装属性页扩展 DLL。
 
 ### <a name="creating-a-property-page-extension-dll"></a>创建属性页扩展 dll
 
-属性页扩展 DLL 提供自定义属性页必须处理请求，以便添加属性页。 通过发出此请求**AddPropSheetPageProc**回调函数。
+提供自定义属性页的属性页扩展 DLL 必须处理添加属性页的请求。 此请求通过 **AddPropSheetPageProc** 回调函数发出。
 
-以响应此请求，DLL 提供了有关每个自定义属性页的信息、 创建页，并将已创建的页添加到设备的动态属性页的列表。
+作为对此请求的响应，DLL 提供有关其每个自定义属性页的信息，创建页面，并将创建的页添加到设备的动态属性页列表中。
 
-有关如何创建自定义设备属性页的属性页面扩展 DLL 的信息，请参阅[设备属性页提供程序的常规要求](general-requirements-for-device-property-page-providers.md)。
+有关如何通过属性页扩展 DLL 创建自定义设备属性页的信息，请参阅 [设备属性页提供程序的一般要求](general-requirements-for-device-property-page-providers.md)。
 
 ### <a name="installing-a-device-property-page"></a>安装设备属性页
 
-使用中的以下指令安装 DLL 的属性页扩展[INF 文件](overview-of-inf-files.md)的[驱动程序包](driver-packages.md):
+使用[驱动程序包](driver-packages.md)的[INF 文件](overview-of-inf-files.md)中的以下指令安装属性页扩展 DLL：
 
-1.  使用*添加注册表部分*，这由指定[ **INF AddReg 指令**](inf-addreg-directive.md)中[ **INF *DDInstall*一节**](inf-ddinstall-section.md)，以添加**EnumPropPages32**的设备条目。 **EnumPropPages32**项指定以下[REG_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)值：
+1.  使用由[**Inf *DDInstall*部分**](inf-ddinstall-section.md)中的[**inf AddReg 指令**](inf-addreg-directive.md)指定的 "*添加注册表" 部分*，为设备添加**EnumPropPages32**条目。 **EnumPropPages32**项指定以下[REG_SZ](/windows/desktop/SysInfo/registry-value-types)值：
 
-    -   将导出的 DLL 的名称**ExtensionPropSheetPageProc**回调函数。
-    -   名称**ExtensionPropSheetPageProc**由 DLL 实现回调函数。
+    -   导出 **ExtensionPropSheetPageProc** 回调函数的 DLL 的名称。
+    -   DLL 实现的 **ExtensionPropSheetPageProc** 回调函数的名称。
 
-    下面的代码示例演示*添加注册表部分*，它将**EnumPropPages32**指定的 DLL 的名称的条目 (*MyPropProvider.dll*) 和回调函数 (*MyCallbackFunction*):
+    下面的代码示例演示了一个 " *添加注册表" 部分* ，该部分添加了 **EnumPropPages32** 项来指定 DLL 的名称， (*MyPropProvider.dll*) 和回调函数 (*MyCallbackFunction*) ：
 
     ```cpp
     HKR, , EnumPropPages32, 0, "MyPropProvider.dll, MyCallbackFunction"
     ```
 
-    **重要**  DLL 和回调函数名称必须一起用引号 ("")。
+    **重要提示**   DLL 和回调函数的名称必须括在引号内 ( "" ) 。
 
      
 
-2.  包括[ **INF CopyFiles 指令**](inf-copyfiles-directive.md) ，将属性页扩展 DLL 复制到 *%systemroot%\\System32*目录。
+2.  包括将属性页扩展 DLL 复制到 *% SystemRoot% \\ System32*目录的[**INF CopyFiles 指令**](inf-copyfiles-directive.md)。
 
-3.  如果该设备是网络适配器，则必须作为一个指定 NCF_HAS_UI**特征**中的值[ **INF DDInstall 部分**](inf-ddinstall-section.md)。 此值指示适配器支持用户界面。
+3.  如果设备是网络适配器，则必须将 NCF_HAS_UI 指定为[**INF DDInstall 部分**](inf-ddinstall-section.md)中的某个**特性**值。 此值指示适配器支持用户界面。
 
-    有关详细信息，请参阅[的自定义属性页指定网络适配器](https://docs.microsoft.com/windows-hardware/drivers/network/specifying-custom-property-pages-for-network-adapters)。
-
- 
+    有关详细信息，请参阅为 [网络适配器指定自定义属性页](../network/specifying-custom-property-pages-for-network-adapters.md)。
 
  
-
-
-
-
 

@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ef93d1ad010614582d93016a5bc2be761f5012
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f98cf5cd500a1ff15409f6911feb9f5b4627d8d4
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840977"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063232"
 ---
 # <a name="rxassert-routine"></a>RxAssert 例程
 
 
-如果安装了 RxAssert，则在已安装的 RDBSS 版本上，会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
+如果安装了 RxAssert，则在已安装的 RDBSS 版本上， **RxAssert**会将断言字符串发送到内核调试器。 对于 RDBSS 的零售版本，对此例程的调用将进行 bug 检查。
 
 <a name="syntax"></a>语法
 ------
@@ -38,19 +38,19 @@ VOID RxAssert(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-\] 中的*FailedAssertion* \[  
+*FailedAssertion* \[中\]  
 失败的断言。
 
-*文件名*\[\]  
-调用**RxAssert**或**RtlAssert**的源文件的名称。
+*FileName* \[中\]  
+调用 **RxAssert** 或 **RtlAssert** 的源文件的名称。
 
-\] 中的*LineNumber* \[  
-源文件中调用了**RxAssert**或**RtlAssert**的行号。
+*LineNumber* \[中\]  
+源文件中调用了 **RxAssert** 或 **RtlAssert** 的行号。
 
-*消息*\[in，可选\]  
+*消息* \[in，可选\]  
 可选消息。
 
 <a name="return-value"></a>返回值
@@ -61,9 +61,9 @@ VOID RxAssert(
 <a name="remarks"></a>备注
 -------
 
-使用*rxassert*包含文件时，将重新定义 Windows 内核 RtlAssert 调用以调用此 rxassert 例程。
+使用 *rxassert* 包含文件时，将重新定义 Windows 内核 RtlAssert 调用以调用此 rxassert 例程。
 
-在零售版本中， **RxAssert**将调用**KeBugCheckEx**值0xa55a0000 运算中的值，并将行号作为 BugCheckParamater1。
+在零售版本中， **RxAssert** 将调用 **KeBugCheckEx** 值0xa55a0000 运算中的值，并将行号作为 BugCheckParamater1。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,11 +76,11 @@ VOID RxAssert(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Rxassert （包括 Rxassert）</td>
+<td align="left">Rxassert (包含 Rxassert) </td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
@@ -92,18 +92,11 @@ VOID RxAssert(
 ## <a name="see-also"></a>另请参阅
 
 
-[**断言**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))
+[**断言**](/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))
 
-[RtlAssert](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[RtlAssert](/windows-hardware/drivers/ddi/index)
 
 [**RxDbgBreakPoint**](rxdbgbreakpoint.md)
 
  
-
- 
-
-
-
-
-
 

@@ -1,40 +1,34 @@
 ---
 title: 顶点声明中的默认纹理坐标
-description: 显示驱动程序的显示设备支持可编程像素着色器必须提供默认值的顶点声明中缺少任何纹理坐标。
+description: 显示设备支持可编程像素着色器的显示驱动程序必须为顶点声明中缺少的任何纹理坐标提供默认值。
 ms.assetid: 5e346e7e-7460-41d9-aee1-dcc72fc642c1
 keywords:
-- 顶点声明 WDK DirectX 9.0
-- 纹理坐标 WDK DirectX 9.0
+- 顶点声明 WDK DirectX 9。0
+- 纹理协调 WDK DirectX 9。0
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: fd7552fa89331397c2676c81c7d69a81ff1daeda
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 684a943e151b63e482433fe9b06cf4b9370d1e53
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383090"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064008"
 ---
 # <a name="default-texture-coordinates-in-vertex-declarations"></a>顶点声明中的默认纹理坐标
 
 
-**本主题适用于 DirectX 8.0 及更高版本。**
+**本主题适用于 DirectX 8.0 和更高版本。**
 
-显示驱动程序的显示设备支持可编程像素着色器必须提供默认值的顶点声明中缺少任何纹理坐标。 向像素着色器提供的纹理坐标必须具有四个组件 （u、 v、 w，q）。 如果 u、 v 或 w 分量缺少，硬件或驱动程序必须提供默认值为 0 到该组件。 如果问题与解答组件缺少，硬件或驱动程序必须提供默认值为 1 到该组件。 因此，如果缺少的所有组件，(0,0,0,1) 是默认值。 例如，如果 2D 纹理坐标是发送到使用三维纹理坐标的像素着色器然后硬件或驱动程序提供默认值为 0 和 1 到第三和第四个组件分别。
+显示设备支持可编程像素着色器的显示驱动程序必须为顶点声明中缺少的任何纹理坐标提供默认值。 提供给像素着色器的纹理坐标必须具有四个组件 (u、v、w、q) 。 如果缺少 u、v 或 w 组件，则硬件或驱动程序必须将默认值0提供给该组件。 如果缺少 q 组件，则硬件或驱动程序必须将默认值1提供给该组件。 因此，如果所有组件都丢失， (0，0，0，1) 为默认值。 例如，如果将二维纹理坐标发送到使用三维纹理坐标的像素着色器，则硬件或驱动程序将分别向第三个和第四个组件提供默认值0和1。
 
-为异常[源参数标记](https://docs.microsoft.com/windows-hardware/drivers/display/source-parameter-token)是使用以下指令：
+[源参数标记](./source-parameter-token.md)的例外情况如下：
 
 `
 // D3DSIO_DEF c#,f0,f1,f2,f2
 `
 
-为此指令中，源参数标记 (f\#) 作为 32 位浮点数。
+对于此说明，将 (f) 的源参数标记 \# 取为32位浮点。
 
  
-
- 
-
-
-
-
 

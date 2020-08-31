@@ -8,12 +8,12 @@ keywords:
 - 设备对象标志 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0cdb2070bb47306e271fe66ba396d93d0ad696a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 82d78c08ff074e4fdec63a4936e41ce7f930743b
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841051"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063024"
 ---
 # <a name="operations-that-can-be-irp-based-or-fast-io"></a>操作，可以是基于 IRP 的操作或快速的 I/O 操作
 
@@ -23,24 +23,19 @@ ms.locfileid: "72841051"
 
 以下类型的操作可以是基于 IRP 的操作，也可以是快速 i/o 操作：
 
--   IRP\_MJ\_设备\_控件。 （请注意，IRP\_MJ\_内部\_设备\_控件始终基于 IRP。）
+-   IRP \_ MJ \_ 设备 \_ 控制。  (请注意，IRP \_ MJ \_ 内部 \_ 设备 \_ 控制始终基于 irp。 ) 
 
--   IRP\_MJ\_查询\_信息。 如果**FileInformationClass**参数为**FileBasicInformation**、 **FileStandardInformation**或**FileNetworkOpenInformation**，此操作可为快速 i/o。
+-   IRP \_ MJ \_ 查询 \_ 信息。 如果 **FileInformationClass** 参数为 **FileBasicInformation**、 **FileStandardInformation**或 **FileNetworkOpenInformation**，此操作可为快速 i/o。
 
--   IRP\_MJ\_读取。 微筛选器驱动程序可以将 FLTFL\_操作设置\_注册\_跳过[**FLT\_操作\_注册**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_operation_registration)结构中\_缓存\_IO 标志，以避免接收快速 i/o IRP\_MJ\_读取操作和缓存的基于 IRP 的读取。
+-   IRP \_ MJ \_ 读取。 微筛选器驱动程序可以 \_ \_ \_ \_ \_ 在 [**FLT \_ 操作 \_ 注册**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_operation_registration) 结构中设置 FLTFL 操作注册 SKIP 缓存的 IO 标志，以避免接收快速 I/O IRP \_ MJ \_ 读取操作和缓存的基于 IRP 的读取。
 
--   IRP\_MJ\_写入。 微筛选器驱动程序可以将 FLTFL\_操作设置\_注册\_跳过\_注册结构中\_缓存\_IO 标志，以避免接收快速 i/o IRP\_MJ\_写入操作和缓存的基于 IRP 的写入。
+-   IRP \_ MJ \_ 写入。 微筛选器驱动程序可以 \_ \_ \_ \_ \_ 在 FLT 操作注册结构中设置 FLTFL 操作注册 SKIP 缓存 IO 标记， \_ \_ 以避免接收快速 i/o IRP \_ MJ \_ 写入操作和缓存的基于 IRP 的写入。
 
 当这些操作中的任何一种都是快速 i/o 操作时，它将始终不使用缓冲和直接 i/o，即使等效的基于 IRP 的操作使用不同的缓冲方法。
 
-当 IRP\_MJ\_设备\_控件是快速 i/o 操作时，不管 IOCTL 的传输类型如何，它都始终使用未缓冲和直接的 i/o。
+当 IRP \_ MJ \_ 设备 \_ 控件是快速 i/o 操作时，不管 IOCTL 的传输类型如何，它都始终使用未缓冲和直接的 i/o。
 
-尽管 IRP\_MJ\_锁定\_控件可以是基于 IRP 或快速 i/o 操作，但它没有缓冲区。
-
- 
+尽管 IRP \_ MJ \_ 锁定 \_ 控制可以是基于 IRP 或快速 i/o 操作的，但它没有缓冲区。
 
  
-
-
-
 

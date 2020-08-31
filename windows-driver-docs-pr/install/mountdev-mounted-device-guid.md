@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3da28329f4f87fbc77df61ee812183d64ffd7cee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b65a6acee5bfb74460d791fe55d2ecbb52492c98
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371923"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095005"
 ---
-# <a name="mountdevmounteddeviceguid"></a>MOUNTDEV_MOUNTED_DEVICE_GUID
+# <a name="mountdev_mounted_device_guid"></a>MOUNTDEV_MOUNTED_DEVICE_GUID
 
 
-MOUNTDEV_MOUNTED_DEVICE_GUID[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为卷设备定义。
+为卷设备定义 MOUNTDEV_MOUNTED_DEVICE_GUID [设备接口类](./overview-of-device-interface-classes.md) 。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ MOUNTDEV_MOUNTED_DEVICE_GUID[设备接口类](https://docs.microsoft.com/windows
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ MOUNTDEV_MOUNTED_DEVICE_GUID[设备接口类](https://docs.microsoft.com/windows
 <a name="remarks"></a>备注
 -------
 
-此设备接口类的 MOUNTDEV_MOUNTED_DEVICE_GUID 标识符是其别名[ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)设备接口类。
+此设备接口类的 MOUNTDEV_MOUNTED_DEVICE_GUID 标识符是 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 设备接口类的别名。
 
-存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK 中包括[classpnp 会存储类驱动程序库](https://go.microsoft.com/fwlink/p/?linkid=256095)，它使用 MOUNTDEV_MOUNTED_DEVICE_GUID 注册 GUID_DEVINTERFACE_VOLUME 设备接口的实例类。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括 [ClassPnP 存储类驱动程序库，该程序库](https://go.microsoft.com/fwlink/p/?linkid=256095) 使用 MOUNTDEV_MOUNTED_DEVICE_GUID 来注册 GUID_DEVINTERFACE_VOLUME 设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,23 +68,16 @@ MOUNTDEV_MOUNTED_DEVICE_GUID[设备接口类](https://docs.microsoft.com/windows
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Mountmgr.h （包括 Mountmgr.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Mountmgr (包含 Mountmgr) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)
 
  
-
- 
-
-
-
-
-
 

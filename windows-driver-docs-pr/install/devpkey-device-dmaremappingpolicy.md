@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 07/15/2020
-ms.openlocfilehash: f53b7c0810291b05f3c57f32ad12760fb31a251b
-ms.sourcegitcommit: 1ab8fc6d15fac78ce243f3852d86733ebfca40dc
+ms.openlocfilehash: f37f1de9153b87abafe4d146bc202845cfbc9b88
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86436887"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095233"
 ---
 # <a name="devpkey_device_dmaremappingpolicy"></a>DEVPKEY_Device_DmaRemappingPolicy
 
@@ -34,30 +34,28 @@ DEVPKEY_Device_DmaRemappingPolicy 设备属性的值指示设备的 DMA 重新�
 <a name="remarks"></a>备注
 -------
 
-| “值” | 含义 |
+| 值 | 含义 |
 | ----- | ------- |
 | 2     | 此设备上的驱动程序可以使用 DMA 重新映射。 |
 | 1     | 此设备上至少有一个驱动程序选择退出 DMA 重新映射。 |
 | 0或 DMA 重新映射策略属性不可见 | INF 文件中未指定 DMA 重新映射 INF 指令。 不会为此设备强制执行 DMA 重新映射。 |
 
 
-可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)和[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_DmaRemappingPolicy 属性。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_DmaRemappingPolicy 属性。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**：在 Windows 10 中提供，版本1803（Redstone 4）  
-**标头**： Devpkey （包括 Devpkey）  
+**版本**：在 Windows 10 中提供，版本 1803 (Redstone 4)   
+**标头**： Devpkey (包含 Devpkey)   
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [为设备驱动程序启用 DMA 重新映射](../pci/enabling-dma-remapping-for-device-drivers.md)
 
-[内核 DMA 保护](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+[内核 DMA 保护](/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
-
-
+[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)

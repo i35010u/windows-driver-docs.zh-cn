@@ -1,6 +1,6 @@
 ---
 title: FSCTL_ENUM_EXTERNAL_BACKING 控制代码
-description: FSCTL\_枚举\_外部\_后备控制代码开始或继续枚举具有后备源的卷上的文件。
+description: FSCTL \_ 枚举 \_ 外部 \_ 后备控制代码开始或继续枚举具有后备源的卷上的文件。
 ms.assetid: 86B07858-2F10-48EF-AEB5-7F4A23A55F7F
 keywords:
 - FSCTL_ENUM_EXTERNAL_BACKING 控制代码可安装的文件系统驱动程序
@@ -14,53 +14,53 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da606fa058d4b545d0d037d9206cad2d278c9ee8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 61c16e380c04b135b579d07d42a9d9d942853d22
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841317"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063406"
 ---
-# <a name="fsctl_enum_external_backing-control-code"></a>FSCTL\_枚举\_外部\_后备控制代码
+# <a name="fsctl_enum_external_backing-control-code"></a>FSCTL \_ 枚举 \_ 外部 \_ 后备控制代码
 
 
-**FSCTL\_枚举\_外部\_后备**控制代码开始或继续枚举具有后备源的卷上的文件。 对于每个成功完成的请求，将返回支持的文件的标识符。 所有支持的文件都将被枚举，而不管哪个外部提供程序正在对其进行备份。 需要 **\_外部\_后备请求的后续 FSCTL\_枚举**来枚举卷上的所有支持的文件。
+**FSCTL \_ 枚举 \_ 外部 \_ 后备**控制代码开始或继续枚举具有后备源的卷上的文件。 对于每个成功完成的请求，将返回支持的文件的标识符。 所有支持的文件都将被枚举，而不管哪个外部提供程序正在对其进行备份。 需要连续 **FSCTL \_ 枚举 \_ 外部 \_ 后备** 请求来枚举卷上的所有支持文件。
 
-若要执行此操作，请调用具有以下参数的[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。
+若要执行此操作，请调用具有以下参数的 [**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 或 [**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。
 
-**Parameters**
+**参数**
 
 <a href="" id="instance--in-"></a>*实例 \[\]*  
-仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为**NULL**。
+仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 调用方的不透明实例指针。 此参数是必需的，不能为 **NULL**。
 
-<a href="" id="fileobject--in-"></a>*FileObject \[\]*  
-仅[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要卸除的卷。 此参数是必需的，不能为**NULL**。
+<a href="" id="fileobject--in-"></a>*FileObject \[ in\]*  
+仅[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile) 。 文件指针对象，指定要卸除的卷。 此参数是必需的，不能为 **NULL**。
 
-<a href="" id="filehandle--in-"></a> *\]中的 FileHandle \[*  
-仅[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462) 。 要卸除的卷的文件句柄。 此参数是必需的，不能为**NULL**。
+<a href="" id="filehandle--in-"></a>*FileHandle \[\]*  
+仅[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85)) 。 要卸除的卷的文件句柄。 此参数是必需的，不能为 **NULL**。
 
-<a href="" id="fscontrolcode--in-"></a> *\]中的 FsControlCode \[*  
-操作的控制代码。 使用**FSCTL\_枚举\_外部\_** 为此操作提供支持。
+<a href="" id="fscontrolcode--in-"></a>*FsControlCode \[\]*  
+操作的控制代码。 对于此操作，请使用 **FSCTL \_ 枚举 \_ 外部 \_ 后备** 。
 
 <a href="" id="inputbuffer"></a>*InputBuffer*  
-无。 设置为**NULL**。
+无。 设置为 **NULL**。
 
-<a href="" id="inputbufferlength--in-"></a> *\]中的 InputBufferLength \[*  
+<a href="" id="inputbufferlength--in-"></a>*InputBufferLength \[\]*  
 设置为0。
 
-<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[out\]*  
-指向输出缓冲区的指针，该指针的大小必须足够大，以接收一个或多个**WOF\_外部\_文件\_ID**结构。
+<a href="" id="outputbuffer--out-"></a>*OutputBuffer \[\]*  
+指向输出缓冲区的指针，该缓冲区的大小必须足够大，才能接收一个或多个 **WOF \_ 外部 \_ 文件 \_ ID** 结构。
 
-<a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[out\]*  
-*OutputBuffer*指向的输出缓冲区的大小。 *OutputBufferLength*必须 &gt;= **sizeof**（WOF\_外部\_文件\_ID）。
+<a href="" id="outputbufferlength--out-"></a>*OutputBufferLength \[\]*  
+*OutputBuffer*指向的输出缓冲区的大小。 *OutputBufferLength*必须为 &gt; =  **sizeof** (WOF \_ EXTERNAL \_ FILE \_ ID) 。
 
-<a href="" id="lengthreturned--out-"></a>*LengthReturned \[out\]*  
-指定成功完成后写入到*OutputBuffer*中的字节数。
+<a href="" id="lengthreturned--out-"></a>*LengthReturned \[\]*  
+指定成功完成后写入到 *OutputBuffer* 中的字节数。
 
 <a name="status-block"></a>状态块
 ------------
 
-如果操作成功，则[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)返回状态\_成功。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
+如果操作成功，则[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)或[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))返回状态 \_ SUCCESS。 否则，相应的函数可能会返回以下 NTSTATUS 值之一。
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ ms.locfileid: "72841317"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -102,7 +102,7 @@ ms.locfileid: "72841317"
 <a name="remarks"></a>备注
 -------
 
-在*OutputBuffer*中返回的**WOF\_外部\_文件\_ID**结构包含用于已备份文件的唯一文件标识符。 结构在 ntifs 中定义如下。
+*OutputBuffer*中返回的**WOF \_ EXTERNAL \_ file \_ ID**结构包含用于已备份文件的唯一文件标识符。 结构在 ntifs 中定义如下。
 
 ```ManagedCPlusPlus
 typedef struct _WOF_EXTERNAL_FILE_ID {
@@ -110,7 +110,7 @@ typedef struct _WOF_EXTERNAL_FILE_ID {
 } WOF_EXTERNAL_FILE_ID, *PWOF_EXTERNAL_FILE_ID;
 ```
 
-**FSCTL\_枚举\_外部\_后备**请求会连续发出，以检索具有后备源的卷上的每个文件的标识符。 枚举所有文件后，将返回状态\_不\_更多\_文件状态代码。
+**FSCTL \_ 枚举 \_ 外部 \_ 后备**请求会连续发出，以检索具有后备源的卷上的每个文件的标识符。 枚举所有文件后，将 \_ 不再 \_ 返回状态 \_ 代码。
 
 <a name="requirements"></a>要求
 ------------
@@ -127,26 +127,19 @@ typedef struct _WOF_EXTERNAL_FILE_ID {
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Ntifs （包括 Ntifs 或 Fltkernel）</td>
+<td align="left">Ntifs (包含 Ntifs 或 Fltkernel) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
+[**FltFsControlFile**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)
 
-[**ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)
+[**ZwFsControlFile**](/previous-versions/ff566462(v=vs.85))
 
-[**FSCTL\_获取\_外部\_后备**](fsctl-get-external-backing.md)
-
- 
+[**FSCTL \_ 获取 \_ 外部 \_ 支持**](fsctl-get-external-backing.md)
 
  
-
-
-
-
-
 

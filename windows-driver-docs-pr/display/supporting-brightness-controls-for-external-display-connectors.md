@@ -10,17 +10,17 @@ keywords:
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: be8d15297579d5a34a3c672c1dee7a2f52c04783
-ms.sourcegitcommit: 544405905a98b83c5ccf812ae14b438b9736b674
+ms.openlocfilehash: 60726633ca04cf691b3a9da262e3e6a5f36c5f16
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87840802"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063462"
 ---
 # <a name="supporting-brightness-controls-for-external-display-connectors"></a>支持外部显示连接器的亮度控件
 
 某些 OEM 系统具有使用外部连接器（如 HDMI）连接的内部显示器。 对于这些配置，Windows 能够仅指定一个显示面板来支持系统软件亮度控件。
-此功能仅允许 Oem 向 Windows 指示外部连接器显示支持亮度控制;Oem 仍必须实现硬件亮度控件，并将其与图形驱动程序集成，就好像它们适用于[集成连接器显示](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-brightness-controls-on-integrated-display-panels)一样。 此功能也不支持在多个显示面板上控制各个面板亮度。
+此功能仅允许 Oem 向 Windows 指示外部连接器显示支持亮度控制;Oem 仍必须实现硬件亮度控件，并将其与图形驱动程序集成，就好像它们适用于 [集成连接器显示](./supporting-brightness-controls-on-integrated-display-panels.md)一样。 此功能也不支持在多个显示面板上控制各个面板亮度。
 
 ## <a name="general-requirements"></a>一般要求
 

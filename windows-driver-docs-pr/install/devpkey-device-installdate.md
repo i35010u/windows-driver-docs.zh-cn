@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 1dd4610c402634ecf6c3d62eb996035d37250013
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: fd1c3a8d9b5bd5706a2295ef256e021829e857a3
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418283"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094895"
 ---
 # <a name="devpkey_device_installdate"></a>DEVPKEY_Device_InstallDate
 
@@ -33,8 +33,8 @@ ms.locfileid: "86418283"
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ Windows 将 DEVPKEY_Device_InstallDate 的值设置为时间戳，该时间戳�
 
 对于每次更新设备驱动程序，此时间戳值都会发生变化。 例如，此时间戳报告上次通过 Windows 更新更新设备驱动程序的日期和时间。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_FirstInstallDate 属性的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_FirstInstallDate 属性的值。
 
 <a name="requirements"></a>要求
 ------------
@@ -83,22 +83,15 @@ Windows 将 DEVPKEY_Device_InstallDate 的值设置为时间戳，该时间戳�
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Devpkey （包括 Devpkey）</td>
+<td align="left">Devpkey (包含 Devpkey) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
-
- 
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
-
-
-
-
 

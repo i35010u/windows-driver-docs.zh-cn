@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3f14b87c0f216509f9c3fd34951c746bef0326d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8d9f8f43c33da258a35f2831d2a30207b2570ea1
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370019"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095499"
 ---
 # <a name="installallornone-xml-element"></a>installAllOrNone XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**InstallAllOrNone** XML 元素为空元素，用于设置**installAllOrNone**为开，这会将配置 DPInst 安装驱动程序中的标志[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)仅如果在安装包中的驱动程序包可以安装，或可以安装所有驱动程序程序包组中的驱动程序包。
+**InstallAllOrNone** XML 元素是一个空元素，该元素将**installAllOrNone**标志设置为 ON，这会将 DPInst 配置为仅当安装包中的所有驱动程序包都可安装时，或者如果驱动程序包组中的所有驱动程序包都可以安装，才将配置为在[驱动程序包](./driver-packages.md)中安装驱动程序。
 
 ### <a name="element-tag"></a>**元素标记**
 
@@ -36,7 +36,7 @@ ms.locfileid: "67370019"
 
 无
 
-### <a name="element-information"></a>**元素的信息**
+### <a name="element-information"></a>**元素信息**
 
 <table>
 <colgroup>
@@ -46,14 +46,14 @@ ms.locfileid: "67370019"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong> </a>或<a href="group-xml-element.md" data-raw-source="[&lt;strong&gt;group&lt;/strong&gt;](group-xml-element.md)"><strong>组</strong></a></p></td>
+<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong></a>或<a href="group-xml-element.md" data-raw-source="[&lt;strong&gt;group&lt;/strong&gt;](group-xml-element.md)"> <strong>group</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -65,11 +65,11 @@ ms.locfileid: "67370019"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-默认情况下**installAllOrNone**标志设置为 OFF。 若要设置**installAllOrNone**为开的所有标志[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)，包括中的包的驱动程序组，包括**installAllOrNone**子元素元素**dpinst** XML 元素，或使用 **/a** 命令行开关。 若要设置**installAllOrNone**标记为特定的驱动程序包组仅可为 ON，包括**installAllOrNone**作为子元素的相应元素**组**XML 元素。
+默认情况下， **installAllOrNone** 标志设置为 OFF。 若要为所有驱动程序包（包括驱动程序包组中的[驱动程序包](./driver-packages.md)）将**installAllOrNone**标志设置为 ON，请将**installAllOrNone**元素包含为**dpinst** XML 元素的子元素，或使用 **/a**   命令行开关。 若要将 **installAllOrNone** 标志设置为仅对特定驱动程序包组启用，请将 **installAllOrNone** 元素包含为相应 **组** XML 元素的子元素。
 
-下面的代码示例演示**installAllOrNone**元素的子元素**dpinst**元素。
+下面的代码示例演示作为**dpinst**元素的子元素的**installAllOrNone**元素。
 
 ```cpp
 <dpinst>
@@ -79,7 +79,7 @@ ms.locfileid: "67370019"
 </dpinst>
 ```
 
-下面的代码示例演示**installAllOrNone**元素的子元素**组**元素。
+下面的代码示例演示一个作为**group**元素的子元素的**installAllOrNone**元素。
 
 ```cpp
 <dpinst>
@@ -93,7 +93,7 @@ ms.locfileid: "67370019"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
@@ -101,11 +101,4 @@ ms.locfileid: "67370019"
 [**group**](group-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

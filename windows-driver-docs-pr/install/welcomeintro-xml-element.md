@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 097cc2ec5d8c38a3fb243965c99467fa51f4fec9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7aa3ef3d3e64ee92e1977410dfa79161668123f9
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362925"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094811"
 ---
 # <a name="welcomeintro-xml-element"></a>welcomeIntro XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**WelcomeIntro** XML 元素自定义的 DPInst 欢迎页上的主文本。
+**WelcomeIntro** XML 元素自定义 DPInst 欢迎页上的主文本。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,11 +32,11 @@ ms.locfileid: "67362925"
 <welcomeIntro>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
-### <a name="element-information"></a>**元素的信息**
+### <a name="element-information"></a>**元素信息**
 
 <table>
 <colgroup>
@@ -46,14 +46,14 @@ ms.locfileid: "67362925"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>自定义欢迎页上的主文本的字符串</p></td>
 </tr>
 <tr class="even">
@@ -65,9 +65,9 @@ ms.locfileid: "67362925"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**welcomeIntro**自定义欢迎页上的主文本的元素。 指定自定义欢迎使用引入的文本所示粗体的字体样式。
+下面的代码示例演示了自定义欢迎页上的主文本的 **welcomeIntro** 元素。 指定自定义欢迎简介的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -81,19 +81,12 @@ ms.locfileid: "67362925"
 </dpinst>
 ```
 
-如果**welcomeIntro**元素未指定，DPInst 显示默认的欢迎页显示的默认主文本。
+如果未指定 **welcomeIntro** 元素，则 DPInst 将显示默认的 "欢迎使用" 页上显示的默认主文本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**language**](language-xml-element.md)
-
- 
+[**语言**](language-xml-element.md)
 
  
-
-
-
-
-
 

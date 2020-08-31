@@ -3,65 +3,59 @@ title: 如何处理 Finish-Install 操作
 description: 如何处理 Finish-Install 操作
 ms.assetid: 028cce46-018d-496e-bc99-c8bf6158c898
 keywords:
-- 完成安装操作 WDK 设备安装
-- 默认值完成安装操作
-- 服务器端的安装 WDK
+- 完成-安装操作 WDK 设备安装
+- 默认完成-安装操作
+- 服务器端安装 WDK
 - CONFIG_FINISHINSTALL
-- WDK 完成安装操作
+- 操作 WDK 完成-安装
 - DI_FLAGSEX_FINISHINSTALL_ACTION
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bef923a0bc63beee143a72971e7fdb35674384f7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eab4a45a09ad340f9a201aaf15d35d90477182e2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386404"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095275"
 ---
 # <a name="how-finish-install-actions-are-processed"></a>如何处理 Finish-Install 操作
 
 
-在通过相同的方式处理设备的完成安装操作*安装程序*（安装程序类、 类共同安装程序中或设备共同安装程序），而不考虑安装是否[ *硬件第一个安装*](hardware-first-installation.md)或通过运行安装程序，如发现新硬件向导、 更新驱动程序软件向导或供应商提供的安装程序 (来启动安装[*软件的第一个安装*](software-first-installation.md))。
+完成-设备的安装操作的处理方式与 *安装程序* (类安装程序相同。类共同安装程序或设备共同安装程序) ，无论安装是 [*硬件首次安装*](hardware-first-installation.md) ，还是通过运行安装程序（例如 "找到新硬件向导"、"更新驱动程序软件向导" 或供应商提供的安装程序）启动安装， ([*软件优先安装*](software-first-installation.md)) 。
 
-**请注意**  在 Windows 8、 Windows 8.1 和 Windows 10 中，完成安装操作必须在操作中心中完成的管理员 （或受限的用户可以提供管理员凭据对 UAC 提示）。 用户必须单击"完成安装设备软件"。
-
- 
-
-Windows 处理完成安装操作后所有其他安装操作已完成，并且设备已开始，包括：
-
--   核心设备安装 (也称为*服务器端安装*)，而在该设备的驱动程序安装并加载系统的插即用 (PnP) 管理器组件。
-
-Windows 完成以下步骤来处理的安装程序完成安装操作：
-
-1.  在核心设备安装结束时，Windows 将调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)发送[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)到设备的安装程序的请求。
-
-    DIF_NEWDEVICEWIZARD_FINISHINSTALL 是这两个上下文中的核心设备安装和客户端上下文中发送的唯一差异代码。 因此，安装程序类、 类共同安装程序或设备共同安装程序必须指示它具有完成安装操作 DIF_NEWDEVICEWIZARD_FINISHINSTALL 在处理期间，而不是在 DIF_INSTALLDEVICE 处理过程。
-
-2.  如果安装程序提供了完成安装操作，则将 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置以响应[ **DIF_NEWDEVICEWIZARD_FINISHINSTALL** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-newdevicewizard-finishinstall)请求。 如果 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置的所有安装程序处理完 DIF_NEWDEVICEWIZARD_FINISHINSTALL 请求后，设备将标记执行完成安装操作。
-
-    有关此操作的详细信息，请参阅[将标记为具有执行完成安装操作设备](setting-the-configflag-finishinstall-action-device-configuration-flag.md)。
-
-3.  核心设备安装设备完成后，Windows 将检查设备是否已标记以执行完成安装操作。 如果是，Windows 将排队执行特定于设备的完成安装操作完成安装过程。 在用户的上下文中执行该过程。
-
-    在 Windows 8 和更高版本中，完成安装操作不会自动运行设备安装的一部分。 相反，管理员 （或可以提供管理员凭据对 UAC 提示的受限的用户） 必须转到操作中心并解决要运行的完成安装操作的"完成安装设备软件"维护项。 在此之前，完成安装操作将不运行。 例如，如果用户插入设备安装的驱动程序，包括完成安装操作，完成安装操作将不会自动在该时间运行。 当用户手动启动它时，在以后运行该完成安装操作。 Windows 运行时完成安装操作，操作都有该单个机会运行。 如果此操作将失败，它必须采取适当措施来允许用户以重试并完成更高版本。 安装应附带驱动程序的支持软件仍可以使用完成安装操作，但它也不会安装自动。
-
-    在 Windows 7 中，完成安装过程仅在上下文中运行的具有管理员凭据的用户在以下时间：
-
-    -   具有管理员凭据的用户登录时连接该设备的下一次。
-    -   当重新连接设备。
-    -   当用户选择**扫描检测硬件改动**设备管理器中。
-
-    如果用户没有管理权限登录，Windows 将提示用户同意的情况下以及凭据才能在管理员上下文中运行的完成安装操作输入。
-
-4.  当完成安装操作的运行，在完成安装过程开始和完成设备，任何完成安装向导页，然后调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)发送[ **DIF_FINISHINSTALL_ACTION** ](https://docs.microsoft.com/windows-hardware/drivers/install/dif-finishinstall-action)中所述对该设备，为所有安装程序的请求[运行完成安装操作](running-finish-install-actions.md)。
-
-5.  安装程序完成其完成安装操作后，Windows 运行默认的完成安装操作，如中所述[运行默认完成安装操作](running-the-default-finish-install-action.md)。
+**注意**   在 Windows 8、Windows 8.1 和 Windows 10 中，必须由管理员 (或可向 UAC 提示符) 提供管理员凭据的受限用户在操作中心完成安装操作。 用户必须单击 "完成安装设备软件"。
 
  
 
+Windows 进程完成-在所有其他安装操作完成并且设备已启动之后安装操作，包括：
+
+-   核心设备安装 (也称为 *服务器端安装*) ，在这种安装中，系统的即插即用 (PnP) manager 组件安装并加载了设备驱动程序。
+
+Windows 完成了以下步骤来处理安装程序的完成安装操作：
+
+1.  核心设备安装结束时，Windows 将调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求发送到设备的安装程序。
+
+    DIF_NEWDEVICEWIZARD_FINISHINSTALL 是在核心设备安装环境和客户端上下文中都发送的唯一 DIF 代码。 因此，类安装程序、类共同安装程序或设备共同安装程序必须指示在 DIF_NEWDEVICEWIZARD_FINISHINSTALL 处理期间（而不是在 DIF_INSTALLDEVICE 处理期间）具有完成安装操作。
+
+2.  如果安装程序提供了完成安装操作，则会将 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志设置为响应 [**DIF_NEWDEVICEWIZARD_FINISHINSTALL**](./dif-newdevicewizard-finishinstall.md) 请求。 如果在所有安装程序都已处理 DIF_NEWDEVICEWIZARD_FINISHINSTALL 请求后设置了 DIF_FLAGSEX_FINISHINSTALL_ACTION 标志，则将对设备进行标记以执行 "完成安装" 操作。
+
+    有关此操作的详细信息，请参阅将 [设备标记为具有完成安装操作要执行的操作](setting-the-configflag-finishinstall-action-device-configuration-flag.md)。
+
+3.  设备的核心设备安装完成后，Windows 会检查设备是否已标记为执行完成安装操作。 如果有，Windows 将对完成安装过程进行排队，该过程将执行特定于设备的完成安装操作。 此过程在用户的上下文中执行。
+
+    在 Windows 8 及更高版本中，"完成-安装" 操作不会在设备安装过程中自动运行。 相反，管理员 (或可以向 UAC 提示符提供管理员凭据) 的受限用户必须转到操作中心，并解决 "完成安装" 操作要运行的 "完成安装设备软件" 维护项目的要求。 在此之前，"完成-安装" 操作将不会运行。 例如，如果用户插入安装包含 "完成安装" 操作的驱动程序的设备，则 "完成-安装" 操作将不会在该时间自动运行。 "完成-安装" 操作在用户手动启动时运行。 当 Windows 运行 "完成-安装" 操作时，该操作具有运行的单一机会。 如果操作失败，则必须采取适当的措施来允许用户重试并稍后完成。 仍可使用 "完成-安装" 操作来安装应随附驱动程序的支持软件，但它也不会自动安装。
+
+    在 Windows 7 中，仅在以下时间之一使用管理员凭据在用户的上下文中运行完成安装过程：
+
+    -   下一次在附加设备时具有管理员凭据的用户登录的时间。
+    -   重新附加设备时。
+    -   当用户在设备管理器中选择 " **扫描硬件更改** " 时。
+
+    如果用户在没有管理权限的情况下登录，则 Windows 将提示用户提供许可和凭据，以便在管理员上下文中运行完成安装操作。
+
+4.  当完成安装操作运行时，完成安装过程将启动并完成设备的任何完成安装向导页面，然后调用 [**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller) 将 [**DIF_FINISHINSTALL_ACTION**](./dif-finishinstall-action.md) 请求发送到设备的所有安装程序，如 [运行 "完成-安装" 操作](running-finish-install-actions.md)中所述。
+
+5.  安装程序完成其完成安装操作后，Windows 将运行默认的 "完成安装" 操作，如 [运行默认的 "完成安装" 操作](running-the-default-finish-install-action.md)中所述。
+
  
-
-
-
-
 

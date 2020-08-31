@@ -10,14 +10,14 @@ keywords:
 - IOCTL_VIDEO_XXX 请求 WDK 视频微型端口
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33bb4fe9a28878c97099c2a6bcf123f569c6097f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: abce6988b654dd718214160ffa3dabd88a4f7e9c
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825509"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063960"
 ---
-# <a name="system-defined-ioctl_video_xxx-requests"></a>系统定义的 IOCTL\_视频\_XXX 请求
+# <a name="system-defined-ioctl_video_xxx-requests"></a>系统定义的 IOCTL \_ 视频 \_ XXX 请求
 
 
 ## <span id="ddk_system_defined_ioctl_video_xxx_requests_gg"></span><span id="DDK_SYSTEM_DEFINED_IOCTL_VIDEO_XXX_REQUESTS_GG"></span>
@@ -25,93 +25,87 @@ ms.locfileid: "72825509"
 
 通常，大多数视频微型端口驱动程序支持以下请求：
 
-[**IOCTL\_视频\_QUERY\_\_可用\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_num_avail_modes)
+[**IOCTL \_ 视频 \_ 查询 \_ 的 \_ 可用 \_ 模式**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_num_avail_modes)
 
-[ **\_可用\_模式的 IOCTL\_视频\_查询**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_avail_modes)
+[**IOCTL \_ 视频 \_ 查询 \_ 可用 \_ 模式**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_avail_modes)
 
-[**IOCTL\_视频\_QUERY\_当前\_模式**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_current_mode)
+[**IOCTL \_ 视频 \_ 查询 \_ 当前 \_ 模式**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_current_mode)
 
-[ **\_视频\_设置\_当前\_模式的 IOCTL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_current_mode)
+[**IOCTL \_ 视频 \_ 设置 \_ 当前 \_ 模式**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_current_mode)
 
-[**IOCTL\_视频\_重置\_设备**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_reset_device)
+[**IOCTL \_ 视频 \_ 重置 \_ 设备**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_reset_device)
 
-[**IOCTL\_视频\_地图\_视频\_内存**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_map_video_memory)
+[**IOCTL \_ 视频 \_ 映射 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_map_video_memory)
 
-[**IOCTL\_视频\_取消\_视频\_内存**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_unmap_video_memory)
+[**IOCTL \_ 视频取消 \_ 映射 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_unmap_video_memory)
 
-[**IOCTL\_视频\_共享\_视频\_内存**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_share_video_memory)
+[**IOCTL \_ 视频 \_ 共享 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_share_video_memory)
 
-[**IOCTL\_视频\_取消\_视频\_内存的共享**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_unshare_video_memory)
+[**IOCTL \_ 视频取消 \_ 共享 \_ 视频 \_ 内存**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_unshare_video_memory)
 
-[**IOCTL\_视频\_查询\_公共\_ACCESS\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_public_access_ranges)
+[**IOCTL \_ 视频 \_ 查询 \_ 公共 \_ 访问 \_ 范围**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_public_access_ranges)
 
-[**IOCTL\_视频\_免费\_公共\_ACCESS\_范围**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_free_public_access_ranges)
+[**IOCTL \_ 视频 \_ 免费 \_ 公共 \_ 访问 \_ 范围**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_free_public_access_ranges)
 
-[**IOCTL\_视频\_获取\_电源\_管理**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_get_power_management)
+[**IOCTL \_ 视频 \_ 获取 \_ 电源 \_ 管理**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_get_power_management)
 
-[**IOCTL\_视频\_集\_电源\_管理**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_power_management)
+[**IOCTL \_ 视频 \_ 集 \_ 电源 \_ 管理**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_power_management)
 
-[**IOCTL\_视频\_获取\_子\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_get_child_state)
+[**IOCTL \_ 视频 \_ 获取 \_ 子 \_ 状态**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_get_child_state)
 
-[**IOCTL\_视频\_设置\_子\_状态\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_child_state_configuration)
+[**IOCTL \_ 视频 \_ 设置 \_ 子 \_ 状态 \_ 配置**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_child_state_configuration)
 
-[**IOCTL\_视频\_验证\_子\_状态\_配置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_validate_child_state_configuration)
+[**IOCTL \_ 视频 \_ 验证 \_ 子 \_ 状态 \_ 配置**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_validate_child_state_configuration)
 
 根据适配器的功能，视频微型端口驱动程序可以支持以下附加请求：
 
-[**IOCTL\_视频\_查询\_颜色\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_color_capabilities)
+[**IOCTL \_ 视频 \_ 查询 \_ 颜色 \_ 功能**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_color_capabilities)
 
-[**IOCTL\_视频\_设置\_颜色\_寄存器**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_color_registers)（设备具有调色板时需要）
+[**IOCTL \_如果设备具有调色板，则视频 \_ 设置 \_ 颜色 \_ 寄存器**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_color_registers) (必需) 
 
-[**IOCTL\_视频\_禁用\_指针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_disable_pointer)
+[**IOCTL \_ 视频 \_ 禁用 \_ 指针**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_disable_pointer)
 
-[**IOCTL\_视频\_启用\_指针**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_enable_pointer)
+[**IOCTL \_ 视频 \_ 启用 \_ 指针**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_enable_pointer)
 
-[**IOCTL\_视频\_查询\_指针\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_pointer_capabilities)
+[**IOCTL \_ 视频 \_ 查询 \_ 指针 \_ 功能**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_pointer_capabilities)
 
-[**IOCTL\_视频\_查询\_指针\_ATTR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_pointer_attr)
+[**IOCTL \_ 视频 \_ 查询 \_ 指针 \_ ATTR**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_pointer_attr)
 
-[**IOCTL\_视频\_设置\_指针\_ATTR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_pointer_attr)
+[**IOCTL \_ 视频 \_ 集 \_ 指针 \_ ATTR**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_pointer_attr)
 
-[**IOCTL\_视频\_查询\_指针\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_pointer_position)
+[**IOCTL \_ 视频 \_ 查询 \_ 指针 \_ 位置**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_pointer_position)
 
-[**IOCTL\_视频\_设置\_指针\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_pointer_position)
+[**IOCTL \_ 视频 \_ 集 \_ 指针 \_ 位置**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_pointer_position)
 
-[**IOCTL\_视频\_句柄\_VIDEOPARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)
+[**IOCTL \_ 视频 \_ 句柄 \_ VIDEOPARAMETERS**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters)
 
-[**IOCTL\_视频\_开关\_双屏**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_switch_dualview)
+[**IOCTL \_ 视频 \_ 开关 \_ 双屏**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_switch_dualview)
 
 需要 VGA 兼容的 SVGA 微型端口驱动程序来支持以下附加请求：
 
-[**IOCTL\_视频\_保存\_硬件\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_save_hardware_state)
+[**IOCTL \_ 视频 \_ 保存 \_ 硬件 \_ 状态**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_save_hardware_state)
 
-[**IOCTL\_视频\_还原\_硬件\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_restore_hardware_state)
+[**IOCTL \_ 视频 \_ 还原 \_ 硬件 \_ 状态**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_restore_hardware_state)
 
-[**IOCTL\_视频\_禁用\_光标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_disable_cursor)
+[**IOCTL \_ 视频 \_ 禁用 \_ 光标**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_disable_cursor)
 
-[**IOCTL\_视频\_启用\_光标**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_enable_cursor)
+[**IOCTL \_ 视频 \_ 启用 \_ 光标**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_enable_cursor)
 
-[**IOCTL\_视频\_QUERY\_CURSOR\_ATTR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_cursor_attr)
+[**IOCTL \_ 视频 \_ 查询 \_ 游标 \_ ATTR**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_cursor_attr)
 
-[**IOCTL\_视频\_设置\_CURSOR\_ATTR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_cursor_attr)
+[**IOCTL \_ 视频 \_ 集 \_ CURSOR \_ ATTR**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_cursor_attr)
 
-[**IOCTL\_视频\_查询\_光标\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_cursor_position)
+[**IOCTL \_ 视频 \_ 查询 \_ 游标 \_ 位置**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_query_cursor_position)
 
-[**IOCTL\_视频\_集\_光标\_位置**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_cursor_position)
+[**IOCTL \_ 视频 \_ 设置 \_ 光标 \_ 位置**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_cursor_position)
 
-[**IOCTL\_视频\_获取\_银行\_选择\_代码**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_get_bank_select_code)
+[**IOCTL \_ 视频 \_ 获取 \_ 银行 \_ 选择 \_ 代码**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_get_bank_select_code)
 
-[**IOCTL\_视频\_集\_寄存器\_组件**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_palette_registers)
+[**IOCTL \_ 视频 \_ 集 \_ 调色板 \_ 寄存器**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_set_palette_registers)
 
-[**IOCTL\_视频\_负载\_和\_设置\_字体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_load_and_set_font)
+[**IOCTL \_ 视频 \_ 加载 \_ 和 \_ 设置 \_ 字体**](/windows-hardware/drivers/ddi/ntddvdeo/ni-ntddvdeo-ioctl_video_load_and_set_font)
 
-有关每个 IOCTL 的详细信息，请参阅[视频微型端口驱动程序 I/o 控制代码](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。 微型端口驱动程序编写器不应使用未记录的系统定义的 IOCTLs。
-
- 
+有关每个 IOCTL 的详细信息，请参阅 [视频微型端口驱动程序 I/o 控制代码](/windows-hardware/drivers/ddi/index)。 微型端口驱动程序编写器不应使用未记录的系统定义的 IOCTLs。
 
  
-
-
-
-
 

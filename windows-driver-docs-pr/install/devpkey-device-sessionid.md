@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 25b3459514199b3c06ff0105b3ae4bcfa42812e7
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: a5b1cf53858fe25319325603a08bcea1e64ce73b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418528"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095151"
 ---
 # <a name="devpkey_device_sessionid"></a>DEVPKEY_Device_SessionId
 
@@ -33,8 +33,8 @@ DEVPKEY_Device_SessionId 设备属性表示一个值，该值指示可在其中�
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +62,7 @@ DEVPKEY_Device_SessionId 设备属性表示一个值，该值指示可在其中�
 <a name="remarks"></a>备注
 -------
 
-终端服务器功能支持即插即用（PnP）设备重定向。 设备重定向确定设备是否可由所有终端服务会话内的应用程序和服务访问，或者是否只能在特定终端服务会话中访问设备。 终端服务会话中的设备的可访问性由设备的 DEVPKEY_Device_SessionId 设置确定，如下所示：
+终端服务器功能支持即插即用 (PnP) 设备重定向。 设备重定向确定设备是否可由所有终端服务会话内的应用程序和服务访问，或者是否只能在特定终端服务会话中访问设备。 终端服务会话中的设备的可访问性由设备的 DEVPKEY_Device_SessionId 设置确定，如下所示：
 
 -   如果 DEVPKEY_Device_SessionId 属性不存在，或者属性存在，但未设置属性的值，则可以在所有活动终端服务会话中访问设备。
 
@@ -70,29 +70,22 @@ DEVPKEY_Device_SessionId 设备属性表示一个值，该值指示可在其中�
 
 -   如果 DEVPKEY_Device_SessionId 属性存在并且属性的值设置为零，则只能通过服务访问设备。 会话零是一种特殊会话，其中只能运行服务。
 
-可以通过调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)和[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_SessionId 属性。
+可以通过调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 和 [**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)访问 DEVPKEY_Device_SessionId 属性。
 
 Windows Server 2003、Windows XP 和 Windows 2000 不支持此属性。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
-[**SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
-
- 
+[**SetupDiSetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)
 
  
-
-
-
-
-
 

@@ -4,12 +4,12 @@ description: 已分配访问最佳实践的展台应用
 ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a62c254755065423725beb2f1a4c0216fe888d04
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 207961227c161c3482fbbe8cc312ae3669d827b8
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902637"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056943"
 ---
 # <a name="kiosk-apps-for-assigned-access-best-practices"></a>分配有访问权限的展台应用：最佳实践
 
@@ -43,7 +43,7 @@ Windows 10 中分配的访问权限利用了锁框架。 当分配的访问权�
 
 使用 **aboveLockScreen** ，kiosk 应用程序可以访问 [LockApplicationHost](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost) 运行时类，这使应用程序能够了解其在锁定 (以上运行的时间，并以展台体验) 运行。 如果无法返回实例，则该应用将在常规桌面上下文中运行。
 
-当 lock framework 在锁定之上启动展台应用并且应用具有 **aboveLockScreen** 扩展名时，lock framework 会自动在锁定之上创建新的辅助视图。 主视图位于锁定下。 此辅助视图将包含应用的内容以及用户看到的内容。 此附加视图可与扩展结合使用，以定制展台体验。 例如，可以：
+当 lock framework 在锁定之上启动展台应用并且应用具有 **aboveLockScreen** 扩展名时，lock framework 会自动在锁定之上创建新的辅助视图。 主视图位于锁定下。 此辅助视图将包含应用的内容以及用户看到的内容。 此附加视图可与扩展结合使用，以定制展台体验。 例如，你能够：
 
 * 通过创建单独的页面来显示仅限展台的内容，[保护展台体验](#secure-your-information)。
 
@@ -58,7 +58,7 @@ Windows 10 中分配的访问权限利用了锁框架。 当分配的访问权�
 > [!NOTE]
 > 从 Windows 10 版本1607开始，对通用 Windows 平台 (UWP) 扩展不再有限制，因此，当用户配置分配的访问权限时，大多数应用程序都可以在 " **设置** " 中显示。
 
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 > [!NOTE]
 > 本部分适用于使用 **aboveLockScreen** 扩展的展台应用程序。
@@ -162,7 +162,7 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 
 ### <a name="add-a-way-out-of-assigned-access"></a>添加超出分配的访问权限
 
-在某些情况下，可能未在键盘上启用或使用用于停止应用程序的 "电源" 按钮、"取消" 按钮或其他按钮。 在这些情况下，提供一种停止分配的访问权限（例如软件密钥）的方法。 下面的事件处理程序演示如何通过响应可由软件密钥触发的按钮单击事件来停止分配的访问模式。
+在某些情况下，可能未在键盘上启用或使用用于停止应用程序的 "电源" 按钮、"取消" 按钮或其他按钮。 在这些情况下，提供一种停止分配的访问权限（例如软件密钥）的方法。 下面的事件处理程序演示如何通过响应按钮选择可能由软件密钥触发的事件来停止分配的访问模式。
 
 ```cpp
 LockApplicationHost^ lockHost = LockApplicationHost::GetForCurrentView();
@@ -258,8 +258,8 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 通常，如果展台应用无法在锁屏界面应用上方激活，可以在锁定屏幕中找到激活错误代码。 使用错误代码通过查找 Windows [系统错误代码](https://docs.microsoft.com/windows/desktop/Debug/system-error-codes)来发现问题。 此外事件查看器包含有关激活失败的详细信息。 为此，请执行以下操作：
 
 1. 打开“**事件查看器**”。 查找激活错误有两个可能的位置。
-2. 在 " **事件查看器 (本地) ** " 窗格中，展开 " **Windows 日志**"，然后单击 " **应用程序**"。
-3. 此外，在 **事件查看器 (本地) **，展开 " **应用程序和服务日志**"，展开 " **Windows**"，展开 " **应用**"，然后单击 " **TWinUI/操作**"。
+2. 在 " **事件查看器 (本地) ** " 窗格中，展开 " **Windows 日志**"，然后选择 " **应用程序**"。
+3. 此外，在 **事件查看器 (本地) **，展开 " **应用程序和服务日志**"，展开 " **Windows**"，展开 " **应用**"，然后选择 " **TWinUI/操作**"。
 
 请注意，由于具有分配的访问权限的展台应用不会在全屏模式下运行，因此 **w. GetForCurrentView ( # A1。IsFullScreenMode** 将返回 false。
 

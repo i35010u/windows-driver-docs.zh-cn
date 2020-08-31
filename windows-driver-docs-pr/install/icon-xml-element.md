@@ -12,21 +12,21 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c83d970e2c003df13ebfbd1c382b6c57d22d3c4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a53fb5e15c9b0e43282f28a65b00560f6fb60329
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360835"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095243"
 ---
 # <a name="icon-xml-element"></a>icon XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**图标**XML 元素指定 DPInst DPInst EULA 页面显示一个自定义图标的源文件。 DPInst 使用此图标来表示 DPInst 桌面 Microsoft Windows 任务栏上。 DPInst 还使用此图标表示的项[驱动程序包](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)，这将增加 DPInst**程序和功能**控制面板中
+**Icon** XML 元素指定 DPInst 在 DPInst EULA 页上显示的自定义图标的源文件。 DPInst 使用此图标在 Microsoft Windows 任务栏和桌面上表示 DPInst。 DPInst 还为代表 [驱动程序包](./driver-packages.md)的条目使用此图标，DPInst 将其添加到控制面板中的 " **程序和功能** "
 
-**请注意**  在 Windows Vista 之前 DPInst 添加到驱动程序包的条目**添加或删除程序**控制面板中。
+**注意**   在 Windows Vista 之前，DPInst 将驱动程序包条目添加到控制面板中的 "**添加或删除程序**"。
 
  
 
@@ -36,7 +36,7 @@ ms.locfileid: "67360835"
 <icon>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -50,15 +50,15 @@ ms.locfileid: "67360835"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong> </a>或<a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
+<td align="left"><p><a href="dpinst-xml-element.md" data-raw-source="[&lt;strong&gt;dpinst&lt;/strong&gt;](dpinst-xml-element.md)"><strong>dpinst</strong></a>或<a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"> <strong>language</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
-<td align="left"><p>指定包含 DPInst DPInst EULA 页面显示的图标的源文件的字符串。 图标文件必须位于 DPInst 根目录下，这是包含 DPInst 可执行文件的目录 (<em>DPInst.exe</em>)，或在 DPInst 根目录下的子目录中。 如果图标文件的子目录中，指定是相对于 DPInst 根目录的完全限定的文件名。</p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
+<td align="left"><p>指定源文件的字符串，该文件包含 DPInst 在 DPInst EULA 页面上显示的图标。 图标文件必须位于 DPInst 根目录中，该目录包含 DPInst 可执行文件 (<em>DPInst.exe</em>) ，或位于 DPInst 根目录下的子目录中。 如果图标文件位于子目录中，请指定一个相对于 DPInst 根目录的完全限定文件名。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>重复的子元素</strong></p></td>
@@ -69,11 +69,11 @@ ms.locfileid: "67360835"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-**图标**自定义，但未进行本地化，如果它是子元素的元素**dpinst** XML 元素。 **图标**元素是自定义的如果它是子元素的已本地化**语言**XML 元素。
+如果 **icon** 元素是 **dpinst** XML 元素的子元素，则它是自定义的，但未进行本地化。 如果 **icon** 元素为 **language** XML 元素的子元素，则该元素将被自定义和本地化。
 
-下面的代码示例演示**图标**元素，它指定数据\\Small.ico 作为 DPInst DPInst EULA 页面上显示的自定义图标源。 指定自定义图标文件的文本所示粗体的字体样式。
+下面的代码示例演示了一个 **icon** 元素，该元素将数据 \\ 小 .Ico 指定为 DPINST 在 DPInst EULA 页面上显示的自定义图标的源。 指定自定义图标文件的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -83,21 +83,14 @@ ms.locfileid: "67360835"
 </dpinst>
 ```
 
-如果**图标**元素未指定，DPInst 显示默认图标。 不能更改此图标的位置。
+如果未指定 **icon** 元素，DPInst 将显示默认图标。 不能更改此图标的位置。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
-[**language**](language-xml-element.md)
+[**语言**](language-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

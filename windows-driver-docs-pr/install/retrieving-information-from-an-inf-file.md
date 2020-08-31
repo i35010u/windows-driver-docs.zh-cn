@@ -4,16 +4,16 @@ description: 从 INF 文件中检索信息
 ms.assetid: 4174357f-bca3-43b8-8ad6-331b9accd905
 keywords:
 - INF 文件 WDK 设备安装，检索信息
-- 检索 INF 文件信息
+- 正在检索 INF 文件信息
 - 状态信息 WDK INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 450bc5bc7cc5a7c02918c42a745def6afde25d95
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7bea78a426b680a1da7baa895aeec999b4475e1e
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382286"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094973"
 ---
 # <a name="retrieving-information-from-an-inf-file"></a>从 INF 文件中检索信息
 
@@ -21,17 +21,11 @@ ms.locfileid: "67382286"
 
 
 
-后一个句柄到 INF 文件，可以从它在不同的方式来检索信息。 之类的函数[ **SetupGetInfInformation**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetinfinformationa)， [ **SetupQueryInfFileInformation**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueryinffileinformationa)，并[ **SetupQueryInfVersionInformation** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupqueryinfversioninformationa)检索有关指定的 INF 文件的信息。
+获得 INF 文件的句柄后，可以通过多种方式从该句柄中检索信息。 [**SetupGetInfInformation**](/windows/desktop/api/setupapi/nf-setupapi-setupgetinfinformationa)、 [**SetupQueryInfFileInformation**](/windows/desktop/api/setupapi/nf-setupapi-setupqueryinffileinformationa)和[**SetupQueryInfVersionInformation**](/windows/desktop/api/setupapi/nf-setupapi-setupqueryinfversioninformationa)等函数检索有关指定 INF 文件的信息。
 
-其他函数，如[ **SetupGetSourceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetsourceinfoa)并[ **SetupGetTargetPath**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgettargetpatha)，获取有关在源代码文件的信息和目标目录。
+其他函数（如 [**SetupGetSourceInfo**](/windows/desktop/api/setupapi/nf-setupapi-setupgetsourceinfoa) 和 [**SetupGetTargetPath**](/windows/desktop/api/setupapi/nf-setupapi-setupgettargetpatha)）获取有关源文件和目标目录的信息。
 
-之类的函数[ **SetupGetLineText** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetlinetexta)并[ **SetupGetStringField** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetstringfielda)使你能够直接访问存储中的信息行或字段的 INF 文件。 这些函数内部使用的更高级别的[SetupAPI](setupapi.md)函数但是如果您需要直接访问级别的行或字段信息可用。
-
- 
+[**SetupGetLineText**](/windows/desktop/api/setupapi/nf-setupapi-setupgetlinetexta)和[**SetupGetStringField**](/windows/desktop/api/setupapi/nf-setupapi-setupgetstringfielda)等函数使你能够直接访问存储在 INF 文件的行或字段中的信息。 这些函数由较高级别的 [setupapi.log](setupapi.md) 函数在内部使用，但如果必须直接访问行级或字段级别的信息，则可以使用这些函数。
 
  
-
-
-
-
 

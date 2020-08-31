@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a3642dc07bee9be83f0bd59ee6d4e0f1de6c83e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4412a2b1c44cb8552954439758841a61f78ac275
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375275"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095201"
 ---
-# <a name="guiddevinterfaceimage"></a>GUID_DEVINTERFACE_IMAGE
+# <a name="guid_devinterface_image"></a>GUID_DEVINTERFACE_IMAGE
 
 
-GUID_DEVINTERFACE_IMAGE[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[WIA 的设备和仍映像 (STI) 设备](https://docs.microsoft.com/windows-hardware/drivers/image/index)，包括数字照相机和扫描仪。
+GUID_DEVINTERFACE_IMAGE [设备接口类](./overview-of-device-interface-classes.md) 是为 WIA 设备定义的， [而) 设备的静止图像 (](../image/index.md)，包括数字照相机和扫描仪。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ GUID_DEVINTERFACE_IMAGE[设备接口类](https://docs.microsoft.com/windows-hard
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ GUID_DEVINTERFACE_IMAGE[设备接口类](https://docs.microsoft.com/windows-hard
 <a name="remarks"></a>备注
 -------
 
-WIA 的设备的系统提供的内核模式驱动程序注册通知的操作系统和应用程序的 WIA 的设备存在此设备接口类的实例。
+系统提供的用于 WIA 设备的内核模式驱动程序注册此设备接口类的实例，通知操作系统和应用程序是否存在 WIA 设备。
 
-WIA 驱动程序和 STI 驱动程序有关的信息，请参阅[Windows 图像采集驱动程序](https://docs.microsoft.com/windows-hardware/drivers/image/windows-image-acquisition-drivers)。
+有关 WIA 驱动程序和 STI 驱动程序的信息，请参阅 [Windows 映像获取驱动程序](../image/windows-image-acquisition-drivers.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,21 +68,15 @@ WIA 驱动程序和 STI 驱动程序有关的信息，请参阅[Windows 图像�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
+<td align="left"><p>版本</p></td>
 <td align="left"><p>在 Windows XP 和更高版本的 Windows 中可用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Wiaintfc.h （包括 Wiaintfc.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Wiaintfc (包含 Wiaintfc) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

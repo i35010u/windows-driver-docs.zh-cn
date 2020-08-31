@@ -4,38 +4,38 @@ description: 此部分介绍相机的 UWP 设备应用。
 ms.assetid: 6CF13679-BCF3-443C-A864-4BBC54B8DA1C
 ms.date: 09/14/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c9376950a595c6a9cc1a8cde59870cf4cb7bc8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d01bbd86f345ca32e88ec16d04df4f3d783188a
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369339"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095197"
 ---
 # <a name="uwp-device-apps-for-cameras"></a>适用于相机的 UWP 设备应用
 
 
-此部分介绍相机的 UWP 设备应用。 设备应用程序可以突出显示自定义的相机设置和特殊的照相机效果通过照相机的特殊的功能。
+此部分介绍相机的 UWP 设备应用。 设备应用可以通过自定义相机设置和特殊相机效果突出显示相机的特殊功能。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | ----- | ----------- |
-| [如何自定义照相机选项](how-to-customize-camera-options.md) | 在 Windows 8.1 UWP 设备应用程序允许设备制造商自定义某些相机应用中显示更多的照相机选项浮出控件。 本主题介绍<strong>更多选项</strong>浮出控件，显示由 CameraCatureUI API，并显示如何将C#的版本[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例将替换与默认浮出控件自定义浮出控件。 |
-| [创建一个照相机驱动程序 MFT](creating-a-camera-driver-mft.md) | 在 Windows 8.1 UWP 设备应用程序允许设备制造商上与相机驱动程序 MFT （媒体基础转换） 的照相机的视频流应用自定义设置和特殊效果。 本主题介绍驱动程序 Mft 并使用[驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例来演示如何创建一个。<br><br> **重要：** 本主题已弃用。 请参阅[设备 MFT 设计指南](https://docs.microsoft.com/windows-hardware/drivers/stream/dmft-design)更新的指南。
-| [多针相机上的驱动程序 Mft 的注意事项](driver-mfts-on-multi-pin-cameras.md) | 某些摄像机的预览版、 捕获和仍可提供独立引脚。 这些多针口相机会给开发人员带来独特的挑战。 本主题介绍了要开发多针相机上的照相机驱动程序 MFT 时考虑的一些要点。 |
-| [确定内部相机的位置](identifying-the-location-of-internal-cameras.md) | 本主题提供有关在 Windows 8.1 中的系统上支持内部相机的信息。 它介绍了如何识别的内置相机物理位置，以便它们能够正常运行的 UWP 应用。 它还介绍了如何设置模型 ID，以使照相机适用于 UWP 的设备应用程序。 |
+| [如何自定义相机选项](how-to-customize-camera-options.md) | 在 Windows 8.1 中，UWP 设备应用允许设备制造商自定义在某些照相机应用中显示更多相机选项的弹出窗口。 本主题介绍了 CameraCatureUI API 显示的 " <strong>更多选项</strong> " 弹出窗口，并演示了 c # 版本的 [UWP 设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865) 示例如何使用自定义浮出控件替换默认浮出控件。 |
+| [创建相机驱动程序 MFT](creating-a-camera-driver-mft.md) | 在 Windows 8.1 中，UWP 设备应用允许设备制造商通过相机驱动程序 MFT 将自定义设置和特殊效果应用于照相机的视频流， (media foundation 转换) 。 本主题介绍了驱动程序 MFTs，并使用了 [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566) 示例演示如何创建一个。<br><br> **重要提示：** 本主题已弃用。 请参阅 [设备 MFT 设计指南](../stream/dmft-design.md) 了解更新的指南。
+| [多针相机上的驱动程序 MFT 的注意事项](driver-mfts-on-multi-pin-cameras.md) | 有些相机为预览、捕获和静止相机提供不同的 pin。 这些多 pin 相机为开发人员带来了独特的挑战。 本主题介绍在多 pin 相机上开发照相机驱动程序 MFT 时要考虑的一些要点。 |
+| [识别内部相机的位置](identifying-the-location-of-internal-cameras.md) | 本主题提供有关在 Windows 8.1 中的系统上支持内部相机的信息。 它介绍如何识别内置相机的物理位置，使其能够正常使用 UWP 应用。 它还介绍了如何设置模型 ID，以便相机与 UWP 设备应用程序一起工作。 |
 
 
 ## <a name="windows81-samples"></a>Windows 8.1 示例
 
 
--   [UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例提供了控制由驱动程序 MFT 实现的效果的 UWP 设备应用程序。
+-   [适用于照相机的 uwp 设备应用](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例提供了一个 UWP 设备应用，该应用控制驱动程序 MFT 实现的效果。
 
--   [驱动程序 MFT](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例提供了用于相机的 UWP 设备应用程序的驱动程序 MFT。 驱动程序 MFT 是捕获视频时使用特定照相机使用媒体基础转换。 驱动程序 MFT 也称为是 MFT0，因为它是第一个 MFT 应用于从照相机中捕获的视频流。 捕获照片或视频从摄像机时，此 MFT 可以提供视频效果或其他处理。 可以与照相机的驱动程序包一起分发。
+-   [驱动程序 mft](https://go.microsoft.com/fwlink/p/?LinkID=251566)示例提供用于照相机的 UWP 设备应用程序的驱动程序 mft。 驱动程序 MFT 是在捕获视频时用于特定相机的媒体基础转换。 驱动程序 MFT 也称为 MFT0，因为它是应用于从照相机捕获的视频流的第一个 MFT。 从相机捕获照片或视频时，此 MFT 可提供视频效果或其他处理。 它可以与照相机的驱动程序包一起分发。
 
--   [摄像头捕获 UI](https://go.microsoft.com/fwlink/p/?linkid=228589)示例演示如何使用[Windows.Media.Capture.CameraCaptureUI](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) API，后者会显示全屏显示 UI 的捕获照片或视频。 摄像头捕获 UI 提供了用于从照片切换到视频、 使时间延迟拍摄的照片，计时器和相机设置调节照相机选项控件的控件。
+-   [相机捕获 UI](https://go.microsoft.com/fwlink/p/?linkid=228589)示例演示如何使用[CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) API，该 API 显示用于捕获照片或视频的全屏幕 UI。 相机捕获 UI 提供了用于从照片切换到视频的控件、用于拍摄延迟照片的计时器以及用于调整照相机设置的相机选项控制。
 
-    可以使用此示例以调用[UWP 用于相机的设备应用程序](https://go.microsoft.com/fwlink/p/?LinkID=227865)示例。
+    您可以使用此示例调用 [UWP 设备应用程序的相机](https://go.microsoft.com/fwlink/p/?LinkID=227865) 示例。
 
 -   [相机选项 UI](https://go.microsoft.com/fwlink/p/?linkid=228588)示例演示如何在 UWP 设备应用中使用相机选项。

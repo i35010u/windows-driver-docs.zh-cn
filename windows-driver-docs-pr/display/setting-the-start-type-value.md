@@ -3,23 +3,23 @@ title: 设置启动类型值
 description: 设置启动类型值
 ms.assetid: dcc38a36-4755-472b-94c8-dfed892460ee
 keywords:
-- INF 文件 WDK 显示的启动类型值
-- 启动 WDK 显示类型值
+- INF 文件，WDK 显示，开始类型值
+- 开始类型值 WDK 显示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 26451d4fe3bea772584cbcefe3bba4c89599987e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5397a456c5f221497918cebc8563698ce2059235
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365523"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063812"
 ---
 # <a name="setting-the-start-type-value"></a>设置启动类型值
 
 
-应将设置写入到 Windows 显示驱动程序模型 (WDDM) 开始运行按需在 Windows Vista 和更高版本，而不是在操作系统初始化过程中那样，仅仅在操作系统运行的显示器驱动程序使用的显示器驱动程序Windows Vista 之前。 此更改是由于清单和未出现在 Windows Vista 之前的操作系统上的基于映像的安装功能。 应设置为值**StartType**到服务的条目\_需\_而不是服务启动 (3)\_系统\_启动 (1)。
+应将写入的显示驱动程序设置为 Windows 显示驱动程序模型 (WDDM) ，以便在 Windows Vista 和更高版本上（而不是在运行 Windows Vista 之前的操作系统上运行的显示驱动程序）开始按需运行。 此更改的原因在于，在 Windows Vista 之前的操作系统中不存在基于清单和映像的安装功能。 应将 **StartType** 条目的值设置为 "服务 \_ 需求 \_ 开始 (3) 而不是" 服务 \_ 系统 \_ 启动 (1) 。
 
-下面的示例演示一个服务安装部分的值与**StartType**条目设置为服务\_需\_开始以指示是否显示微型端口驱动程序已启动按需：
+下面的示例演示了一个服务安装部分，其中包含 " **StartType** " 项设置为 "服务需求开始" 的值， \_ \_ 以指示按需启动显示微型端口驱动程序：
 
 ```inf
 ;
@@ -34,13 +34,7 @@ LoadOrderGroup = Video
 ServiceBinary  = %12%\r200.sys
 ```
 
-详细了解与之关联的服务安装部分**AddService**指令，请参阅[ **INF AddService 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)。
+有关与 **AddService** 指令关联的服务安装节的详细信息，请参阅 [**INF AddService 指令**](../install/inf-addservice-directive.md)。
 
  
-
- 
-
-
-
-
 

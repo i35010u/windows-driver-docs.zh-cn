@@ -7,12 +7,12 @@ keywords:
 - 检索 DirectX VA 设备
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d72f5c8004c6ce12349110ddf1922b71dbca18f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e4da929b4d4094e8330d92917a0b90a806041405
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365660"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064016"
 ---
 # <a name="retrieving-directx-va-devices"></a>检索 DirectX VA 设备
 
@@ -20,7 +20,7 @@ ms.locfileid: "67365660"
 ## <span id="ddk_retrieving_directx_va_devices_gg"></span><span id="DDK_RETRIEVING_DIRECTX_VA_DEVICES_GG"></span>
 
 
-使用下面的代码示例检索 DirectX VA 设备。 此代码是实现[ *DdMoCompGetGuids* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids)回调函数。 **GetMoCompGuids**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构指向回调函数。
+使用以下示例代码检索 DirectX VA 设备。 此代码是 [*DdMoCompGetGuids*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_getguids) 回调函数的实现。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**GetMoCompGuids**成员指向回调函数。
 
 ```cpp
 DWORD g_dwDXVANumSupportedGUIDs = 4;
@@ -59,10 +59,4 @@ DWORD APIENTRY
 ```
 
  
-
- 
-
-
-
-
 

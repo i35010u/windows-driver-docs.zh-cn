@@ -4,37 +4,31 @@ description: HKLM\SYSTEM\CurrentControlSet\Services 注册表树存储有关系�
 ms.assetid: c966b029-8171-4db7-9fbb-3a4222ff184b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a507b41ff97b6c1057922bd73813abbc67ad37
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 408c30b51c7dfd4801d4272f5cd47eb092d16941
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837488"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095279"
 ---
-# <a name="hklmsystemcurrentcontrolsetservices-registry-tree"></a>HKLM\\SYSTEM\\CurrentControlSet\\Services 注册表树
+# <a name="hklmsystemcurrentcontrolsetservices-registry-tree"></a>HKLM \\ SYSTEM \\ CurrentControlSet \\ Services 注册表树
 
 
 
 
 
-**HKLM\\SYSTEM\\CurrentControlSet\\服务**注册表树存储系统上每个服务的相关信息。 每个驱动程序都有一个格式为**HKLM\\SYSTEM\\CurrentControlSet\\服务\\** <em>DriverName</em>的键。 PnP 管理器在调用驱动程序的[**DriverEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程时，会在*RegistryPath*参数中传递该驱动程序的路径。 驱动程序可以将全局驱动程序定义的数据存储在**服务**树中其键的**Parameters**子项下。 此密钥下存储的信息可在其初始化过程中供驱动程序使用。
+**HKLM \\ system \\ CurrentControlSet \\ Services**注册表树存储有关系统上的每个服务的信息。 每个驱动程序都有一个格式为**HKLM \\ SYSTEM \\ CurrentControlSet \\ Services \\ **<em>DriverName</em>的键。 PnP 管理器在调用驱动程序的[**DriverEntry**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)例程时，会在*RegistryPath*参数中传递该驱动程序的路径。 驱动程序可以将全局驱动程序定义的数据存储在**服务**树中其键的**Parameters**子项下。 此密钥下存储的信息可在其初始化过程中供驱动程序使用。
 
 以下密钥和值项特别感兴趣：
 
 <a href="" id="imagepath"></a>**ImagePath**  
-一个值项，它指定驱动程序的映像文件的完全限定路径。 Windows 使用驱动程序的 INF 文件中的所需**ServiceBinary**项来创建此值。 此项位于驱动程序的[**INF AddService 指令**](inf-addservice-directive.md)引用的*服务安装部分*。 此路径的典型值为 *% SystemRoot%* \\*System32\\驱动程序\\DriverName*，其中*DriverName*是驱动程序的**服务**密钥的名称。
+一个值项，它指定驱动程序的映像文件的完全限定路径。 Windows 使用驱动程序的 INF 文件中的所需 **ServiceBinary** 项来创建此值。 此项位于驱动程序的[**INF AddService 指令**](inf-addservice-directive.md)引用的*服务安装部分*。 此路径的典型值为 *% SystemRoot%* \\ *system32 driver \\ \\ DriverName*，其中*DriverName*是驱动程序的**服务**密钥的名称。
 
 <a href="" id="parameters"></a>**Parameters**  
-用于存储特定于驱动程序的数据的键。 对于某些类型的驱动程序，系统需要查找特定的值项。 您可以使用驱动程序的 INF 文件中的**AddReg**条目向此子项添加值项。
+用于存储特定于驱动程序的数据的键。 对于某些类型的驱动程序，系统需要查找特定的值项。 您可以使用驱动程序的 INF 文件中的 **AddReg** 条目向此子项添加值项。
 
 <a href="" id="performance"></a>**性能**  
-一个键，用于指定可选性能监视的信息。 此项下的值指定驱动程序的性能 DLL 的名称，以及该 DLL 中某些导出函数的名称。 您可以使用驱动程序的 INF 文件中的**AddReg**条目向此子项添加值项。
+一个键，用于指定可选性能监视的信息。 此项下的值指定驱动程序的性能 DLL 的名称，以及该 DLL 中某些导出函数的名称。 您可以使用驱动程序的 INF 文件中的 **AddReg** 条目向此子项添加值项。
 
  
-
- 
-
-
-
-
 

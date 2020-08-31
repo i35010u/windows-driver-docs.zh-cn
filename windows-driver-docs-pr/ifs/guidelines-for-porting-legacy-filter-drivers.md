@@ -8,12 +8,12 @@ keywords:
 - 旧筛选器驱动程序 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 647e80068c821c53c682a4815405641cd80011bc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1d48fbdd2b1cb16d4c102197b6635121798f7cb3
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841227"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063354"
 ---
 # <a name="guidelines-for-porting-legacy-filter-drivers"></a>旧筛选器驱动程序移植指南
 
@@ -69,83 +69,83 @@ ms.locfileid: "72841227"
 <td align="left"><p>无完成例程的传递操作</p></td>
 <td align="left"><p>如果你的微筛选器驱动程序绝不能处理此类型的 i/o 操作，则不要为此操作注册 preoperation 或 postoperation 回调例程。</p>
 <p>否则，请从为此操作注册的 preoperation 回调例程返回 FLT_PREOP_SUCCESS_NO_CALLBACK。</p>
-<p>请参阅<a href="returning-flt-preop-success-no-callback.md" data-raw-source="[Returning FLT_PREOP_SUCCESS_NO_CALLBACK](returning-flt-preop-success-no-callback.md)">返回 FLT_PREOP_SUCCESS_NO_CALLBACK</a>。</p></td>
+<p>请参阅 <a href="returning-flt-preop-success-no-callback.md" data-raw-source="[Returning FLT_PREOP_SUCCESS_NO_CALLBACK](returning-flt-preop-success-no-callback.md)">返回 FLT_PREOP_SUCCESS_NO_CALLBACK</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>使用完成例程传递操作</p></td>
 <td align="left"><p>从 preoperation 回调例程返回 FLT_PREOP_SUCCESS_WITH_CALLBACK。</p>
-<p>请参阅<a href="returning-flt-preop-success-with-callback.md" data-raw-source="[Returning FLT_PREOP_SUCCESS_WITH_CALLBACK](returning-flt-preop-success-with-callback.md)">返回 FLT_PREOP_SUCCESS_WITH_CALLBACK</a>。</p></td>
+<p>请参阅 <a href="returning-flt-preop-success-with-callback.md" data-raw-source="[Returning FLT_PREOP_SUCCESS_WITH_CALLBACK](returning-flt-preop-success-with-callback.md)">返回 FLT_PREOP_SUCCESS_WITH_CALLBACK</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Preoperation 回调例程中的挂起操作</p></td>
-<td align="left"><p>根据需要调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)"><strong>FltLockUserBuffer</strong></a> ，以确保所有用户缓冲区均已正确锁定，以便可以在工作线程中访问它们。</p>
-<p>通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem" data-raw-source="[&lt;strong&gt;FltAllocateDeferredIoWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem)"><strong>FltAllocateDeferredIoWorkItem</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem" data-raw-source="[&lt;strong&gt;FltQueueDeferredIoWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem)"><strong>FltQueueDeferredIoWorkItem</strong></a>等支持例程，将工作排队到工作线程中。</p>
+<td align="left"><p>根据需要调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)"><strong>FltLockUserBuffer</strong></a> ，以确保所有用户缓冲区均已正确锁定，以便可以在工作线程中访问它们。</p>
+<p>通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem" data-raw-source="[&lt;strong&gt;FltAllocateDeferredIoWorkItem&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocatedeferredioworkitem)"><strong>FltAllocateDeferredIoWorkItem</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem" data-raw-source="[&lt;strong&gt;FltQueueDeferredIoWorkItem&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuedeferredioworkitem)"><strong>FltQueueDeferredIoWorkItem</strong></a>等支持例程，将工作排队到工作线程中。</p>
 <p>从 preoperation 回调例程返回 FLT_PREOP_PENDING。</p>
-<p>准备好将 i/o 操作返回到筛选器管理器后，请调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)"><strong>FltCompletePendedPreOperation</strong></a>。</p>
-<p>请参阅<a href="pending-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Pending an I/O Operation in a Preoperation Callback Routine](pending-an-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中挂起 I/o 操作</a>。</p></td>
+<p>准备好将 i/o 操作返回到筛选器管理器后，请调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)"><strong>FltCompletePendedPreOperation</strong></a>。</p>
+<p>请参阅 <a href="pending-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Pending an I/O Operation in a Preoperation Callback Routine](pending-an-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中挂起 I/o 操作</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Postoperation 回调例程中的挂起操作</p></td>
-<td align="left"><p>在 preoperation 回调例程中调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)"><strong>FltLockUserBuffer</strong></a> ，以确保已正确锁定用户缓冲区以便可以在工作线程中访问它们。</p>
-<p>通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocategenericworkitem" data-raw-source="[&lt;strong&gt;FltAllocateGenericWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocategenericworkitem)"><strong>FltAllocateGenericWorkItem</strong></a>和<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuegenericworkitem" data-raw-source="[&lt;strong&gt;FltQueueGenericWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuegenericworkitem)"><strong>FltQueueGenericWorkItem</strong></a>等支持例程，将工作排队到工作线程中。</p>
+<td align="left"><p>在 preoperation 回调例程中调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer" data-raw-source="[&lt;strong&gt;FltLockUserBuffer&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltlockuserbuffer)"><strong>FltLockUserBuffer</strong></a> ，以确保已正确锁定用户缓冲区以便可以在工作线程中访问它们。</p>
+<p>通过调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocategenericworkitem" data-raw-source="[&lt;strong&gt;FltAllocateGenericWorkItem&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltallocategenericworkitem)"><strong>FltAllocateGenericWorkItem</strong></a> 和 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuegenericworkitem" data-raw-source="[&lt;strong&gt;FltQueueGenericWorkItem&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltqueuegenericworkitem)"><strong>FltQueueGenericWorkItem</strong></a>等支持例程，将工作排队到工作线程中。</p>
 <p>从 postoperation 回调例程返回 FLT_POSTOP_MORE_PROCESSING_REQUIRED。</p>
-<p>准备好将 i/o 操作返回到筛选器管理器后，请调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPostOperation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation)"><strong>FltCompletePendedPostOperation</strong></a>。</p>
-<p>请参阅<a href="pending-an-i-o-operation-in-a-postoperation-callback-routine.md" data-raw-source="[Pending an I/O Operation in a Postoperation Callback Routine](pending-an-i-o-operation-in-a-postoperation-callback-routine.md)">在 Postoperation 回调例程中挂起 I/o 操作</a>。</p></td>
+<p>准备好将 i/o 操作返回到筛选器管理器后，请调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPostOperation&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpostoperation)"><strong>FltCompletePendedPostOperation</strong></a>。</p>
+<p>请参阅 <a href="pending-an-i-o-operation-in-a-postoperation-callback-routine.md" data-raw-source="[Pending an I/O Operation in a Postoperation Callback Routine](pending-an-i-o-operation-in-a-postoperation-callback-routine.md)">在 Postoperation 回调例程中挂起 I/o 操作</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>同步操作</p></td>
 <td align="left"><p>从 preoperation 回调例程返回 FLT_PREOP_SYNCHRONIZE。</p>
-<p>请参阅<a href="returning-flt-preop-synchronize.md" data-raw-source="[Returning FLT_PREOP_SYNCHRONIZE](returning-flt-preop-synchronize.md)">返回 FLT_PREOP_SYNCHRONIZE</a>。</p></td>
+<p>请参阅 <a href="returning-flt-preop-synchronize.md" data-raw-source="[Returning FLT_PREOP_SYNCHRONIZE](returning-flt-preop-synchronize.md)">返回 FLT_PREOP_SYNCHRONIZE</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>在 preoperation 回调例程中完成操作</p></td>
-<td align="left"><p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>IoStatus</strong>成员中设置最终操作状态和信息。</p>
+<td align="left"><p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>IoStatus</strong>成员中设置最终操作状态和信息。</p>
 <p>从 preoperation 回调例程返回 FLT_PREOP_COMPLETE。</p>
-<p>请参阅<a href="completing-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Completing an I/O Operation in a Preoperation Callback Routine](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中完成 I/o 操作</a>。</p></td>
+<p>请参阅 <a href="completing-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Completing an I/O Operation in a Preoperation Callback Routine](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中完成 I/o 操作</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>在 preoperation 回调例程中挂起操作后完成该操作</p></td>
-<td align="left"><p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>IoStatus</strong>成员中设置最终操作状态和信息。</p>
-<p>从处理 i/o 操作的工作线程调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)"><strong>FltCompletePendedPreOperation</strong></a> ，并将 FLT_PREOP_COMPLETE 作为<em>CallbackStatus</em>参数传递。</p>
-<p>请参阅<a href="completing-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Completing an I/O Operation in a Preoperation Callback Routine](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中完成 I/o 操作</a>。</p></td>
+<td align="left"><p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>IoStatus</strong>成员中设置最终操作状态和信息。</p>
+<p>从处理 i/o 操作的工作线程调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation" data-raw-source="[&lt;strong&gt;FltCompletePendedPreOperation&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcompletependedpreoperation)"><strong>FltCompletePendedPreOperation</strong></a> ，将 FLT_PREOP_COMPLETE 传递为 <em>CallbackStatus</em> 参数。</p>
+<p>请参阅 <a href="completing-an-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Completing an I/O Operation in a Preoperation Callback Routine](completing-an-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中完成 I/o 操作</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>完成完成例程中的所有完成工作</p></td>
 <td align="left"><p>从 postoperation 回调例程返回 FLT_POSTOP_FINISHED_PROCESSING。</p>
-<p>请参阅<a href="writing-postoperation-callback-routines.md" data-raw-source="[Writing Postoperation Callback Routines](writing-postoperation-callback-routines.md)">编写 Postoperation 回调例程</a>。</p></td>
+<p>请参阅 <a href="writing-postoperation-callback-routines.md" data-raw-source="[Writing Postoperation Callback Routines](writing-postoperation-callback-routines.md)">编写 Postoperation 回调例程</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>在安全 IRQL 上完成工作</p></td>
-<td align="left"><p>从 postoperation 回调例程调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe" data-raw-source="[&lt;strong&gt;FltDoCompletionProcessingWhenSafe&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe)"><strong>FltDoCompletionProcessingWhenSafe</strong></a> 。</p>
-<p>请参阅<a href="ensuring-that-completion-processing-is-performed-at-safe-irql.md" data-raw-source="[Ensuring that Completion Processing is Performed at Safe IRQL](ensuring-that-completion-processing-is-performed-at-safe-irql.md)">确保在安全的 IRQL 处执行完成处理</a>。</p></td>
+<td align="left"><p>从 postoperation 回调例程调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe" data-raw-source="[&lt;strong&gt;FltDoCompletionProcessingWhenSafe&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltdocompletionprocessingwhensafe)"><strong>FltDoCompletionProcessingWhenSafe</strong></a> 。</p>
+<p>请参阅 <a href="ensuring-that-completion-processing-is-performed-at-safe-irql.md" data-raw-source="[Ensuring that Completion Processing is Performed at Safe IRQL](ensuring-that-completion-processing-is-performed-at-safe-irql.md)">确保在安全的 IRQL 处执行完成处理</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>向完成例程通知事件</p></td>
-<td align="left"><p>从 preoperation 回调例程返回此操作的 FLT_PREOP_SYNCHRONIZE。</p>
-<p>筛选器管理器将在与 preoperation 回调例程相同的线程上下文中调用 postoperation 回调例程，在 IRQL &lt;= APC_LEVEL。</p>
-<p>请参阅<a href="returning-flt-preop-synchronize.md" data-raw-source="[Returning FLT_PREOP_SYNCHRONIZE](returning-flt-preop-synchronize.md)">返回 FLT_PREOP_SYNCHRONIZE</a>。</p></td>
+<td align="left"><p>从此操作的 preoperation 回调例程返回 FLT_PREOP_SYNCHRONIZE。</p>
+<p>筛选器管理器将在与 preoperation 回调例程相同的线程上下文中调用 postoperation 回调例程，以 IRQL &lt; = APC_LEVEL。</p>
+<p>请参阅 <a href="returning-flt-preop-synchronize.md" data-raw-source="[Returning FLT_PREOP_SYNCHRONIZE](returning-flt-preop-synchronize.md)">返回 FLT_PREOP_SYNCHRONIZE</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>未能成功创建操作</p></td>
-<td align="left"><p>从 postoperation 回调例程调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen" data-raw-source="[&lt;strong&gt;FltCancelFileOpen&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)"><strong>FltCancelFileOpen</strong></a> ，以进行创建操作。</p>
-<p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>IoStatus</strong>成员中设置相应的错误 NTSTATUS 值。</p>
+<td align="left"><p>从 postoperation 回调例程调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen" data-raw-source="[&lt;strong&gt;FltCancelFileOpen&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)"><strong>FltCancelFileOpen</strong></a> ，以进行创建操作。</p>
+<p>在操作<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>IoStatus</strong>成员中设置相应的错误 NTSTATUS 值。</p>
 <p>返回 FLT_POSTOP_FINISHED_PROCESSING。</p>
-<p>请参阅<a href="failing-an-i-o-operation-in-a-postoperation-callback-routine.md" data-raw-source="[Failing an I/O Operation in a Postoperation Callback Routine](failing-an-i-o-operation-in-a-postoperation-callback-routine.md)">Postoperation 回调例程中的 I/o 操作失败</a>。</p></td>
+<p>请参阅 <a href="failing-an-i-o-operation-in-a-postoperation-callback-routine.md" data-raw-source="[Failing an I/O Operation in a Postoperation Callback Routine](failing-an-i-o-operation-in-a-postoperation-callback-routine.md)">Postoperation 回调例程中的 I/o 操作失败</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>通过 i/o 操作的快速 i/o 路径禁止 i/o</p></td>
-<td align="left"><p>从操作的 preoperation 回调例程返回 FLT_STATUS_DISALLOW_FAST_IO。</p>
-<p>请参阅<a href="disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Disallowing a Fast I/O Operation in a Preoperation Callback Routine](disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中禁用快速 I/o 操作</a>。</p></td>
+<td align="left"><p>从 preoperation 回调例程返回 FLT_STATUS_DISALLOW_FAST_IO 操作。</p>
+<p>请参阅 <a href="disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md" data-raw-source="[Disallowing a Fast I/O Operation in a Preoperation Callback Routine](disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md)">在 Preoperation 回调例程中禁用快速 I/o 操作</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>修改 i/o 操作的参数</p></td>
-<td align="left"><p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>Iopb</strong>成员中设置修改后的参数值。</p>
-<p>通过调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetcallbackdatadirty" data-raw-source="[&lt;strong&gt;FltSetCallbackDataDirty&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetcallbackdatadirty)"><strong>FltSetCallbackDataDirty</strong></a>将 FLT_CALLBACK_DATA 结构标记为已更新，除非修改了 FLT_CALLBACK_DATA 结构的<strong>IoStatus</strong>成员的内容。</p>
-<p>请参阅<a href="modifying-the-parameters-for-an-i-o-operation.md" data-raw-source="[Modifying the Parameters for an I/O Operation](modifying-the-parameters-for-an-i-o-operation.md)">修改 I/o 操作的参数</a>。</p></td>
+<td align="left"><p>在操作的<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data" data-raw-source="[&lt;strong&gt;FLT_CALLBACK_DATA&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)"><strong>FLT_CALLBACK_DATA</strong></a>结构的<strong>Iopb</strong>成员中设置修改后的参数值。</p>
+<p>调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetcallbackdatadirty" data-raw-source="[&lt;strong&gt;FltSetCallbackDataDirty&lt;/strong&gt;](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsetcallbackdatadirty)"><strong>FltSetCallbackDataDirty</strong></a>，将 FLT_CALLBACK_DATA 结构标记为已更新，除非修改了 FLT_CALLBACK_DATA 结构的 <strong>IoStatus</strong> 成员的内容。</p>
+<p>请参阅 <a href="modifying-the-parameters-for-an-i-o-operation.md" data-raw-source="[Modifying the Parameters for an I/O Operation](modifying-the-parameters-for-an-i-o-operation.md)">修改 I/o 操作的参数</a>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>锁定操作的用户缓冲区</p></td>
-<td align="left"><p>使用在<a href="accessing-the-user-buffers-for-an-i-o-operation.md" data-raw-source="[Accessing the User Buffers for an I/O Operation](accessing-the-user-buffers-for-an-i-o-operation.md)">访问 I/o 操作的用户缓冲区</a>中所述的技术和指导原则。</p></td>
+<td align="left"><p>使用在 <a href="accessing-the-user-buffers-for-an-i-o-operation.md" data-raw-source="[Accessing the User Buffers for an I/O Operation](accessing-the-user-buffers-for-an-i-o-operation.md)">访问 I/o 操作的用户缓冲区</a>中所述的技术和指导原则。</p></td>
 </tr>
 </tbody>
 </table>
@@ -153,9 +153,4 @@ ms.locfileid: "72841227"
  
 
  
-
- 
-
-
-
 

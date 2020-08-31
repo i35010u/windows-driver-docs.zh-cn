@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 783685464251a6d6f0ad95a142b53b2f399665b8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 39953b7b6eb1aaf68761c76557874f4934f221bd
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841074"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063294"
 ---
 # <a name="mrxsetquotainfo-routine"></a>MRxSetQuotaInfo 例程
 
 
-*MRxSetQuotaInfo*例程由[RDBSS](https://docs.microsoft.com/windows-hardware/drivers/ifs/the-rdbss-driver-and-library)调用，请求网络小型重定向程序设置文件系统对象的配额信息。
+*MRxSetQuotaInfo*例程由[RDBSS](./the-rdbss-driver-and-library.md)调用，请求网络小型重定向程序设置文件系统对象的配额信息。
 
 <a name="syntax"></a>语法
 ------
@@ -39,16 +39,16 @@ NTSTATUS MRxSetQuotaInfo(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*RxContext* \[in，out\]  
-指向 RX\_上下文结构的指针。 此参数包含请求操作的 IRP。
+*RxContext* \[in、out\]  
+指向 RX \_ 上下文结构的指针。 此参数包含请求操作的 IRP。
 
 <a name="return-value"></a>返回值
 ------------
 
-*MRxSetQuotaInfo*返回成功的状态\_成功或使用适当的 NTSTATUS 值，如以下之一：
+*MRxSetQuotaInfo* 返回成功的状态 \_ 成功或适当的 NTSTATUS 值，如以下之一：
 
 <table>
 <colgroup>
@@ -90,13 +90,13 @@ NTSTATUS MRxSetQuotaInfo(
 <a name="remarks"></a>备注
 -------
 
-RDBSS 发出对*MRxSetQuotaInfo*的调用，以响应接收[**IRP\_MJ\_设置\_配额**](irp-mj-set-quota.md)请求。
+RDBSS 发出对 *MRxSetQuotaInfo* 的调用，以响应接收 [**IRP \_ MJ \_ 集 \_ 配额**](irp-mj-set-quota.md) 请求。
 
-在调用*MRxSetQuotaInfo*之前，RDBSS 会修改 RX\_由*RxContext*参数指向的上下文结构：
+在调用 *MRxSetQuotaInfo*之前，RDBSS 会修改 \_ *RXCONTEXT* 参数指向的 RX 上下文结构中的以下成员：
 
 *信息. buffer*成员设置为 i/o 请求数据包中的用户缓冲区。 如果需要，此缓冲区已被 RDBSS 锁定。
 
-**LengthRemaining**成员设置为**IrpSp-&gt;SetQuota**。
+**LengthRemaining**成员设置为**IrpSp &gt; 参数. SetQuota**。
 
 <a name="requirements"></a>要求
 ------------
@@ -109,19 +109,19 @@ RDBSS 发出对*MRxSetQuotaInfo*的调用，以响应接收[**IRP\_MJ\_设置\_�
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Mrx （包括 Mrx）</td>
+<td align="left">Mrx (包含 Mrx) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 
-[**MRxIsValidDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
+[**MRxIsValidDirectory**](/windows-hardware/drivers/ddi/mrx/nc-mrx-pmrx_chkdir_calldown)
 
 [**MRxQueryDirectory**](mrxquerydirectory.md)
 
@@ -146,11 +146,4 @@ RDBSS 发出对*MRxSetQuotaInfo*的调用，以响应接收[**IRP\_MJ\_设置\_�
 [**MRxSetVolumeInfo**](mrxsetvolumeinfo.md)
 
  
-
- 
-
-
-
-
-
 

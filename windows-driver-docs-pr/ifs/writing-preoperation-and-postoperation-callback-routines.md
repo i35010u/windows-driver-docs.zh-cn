@@ -16,12 +16,12 @@ keywords:
 - 筛选 i/o 操作 WDK 文件系统微筛选器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61de2e292567ee882dd94ff962c20cd712e1b3ce
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ed332e8c91d4584fa48f95f443ee70ca979970fd
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840919"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062984"
 ---
 # <a name="writing-preoperation-and-postoperation-callback-routines"></a>编写预操作和后操作回调例程
 
@@ -29,7 +29,7 @@ ms.locfileid: "72840919"
 ## <span id="ddk_writing_preoperation_and_postoperation_callback_routines_if"></span><span id="DDK_WRITING_PREOPERATION_AND_POSTOPERATION_CALLBACK_ROUTINES_IF"></span>
 
 
-在其**DriverEntry**例程中，微筛选器驱动程序最多可注册一个[**preoperation 回调例程**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback)，最多可注册一个[**postoperation 回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback)例程，用于需要进行筛选的每种类型的 i/o 操作。
+在其 **DriverEntry** 例程中，微筛选器驱动程序最多可注册一个 [**preoperation 回调例程**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_pre_operation_callback) ，最多可注册一个 [**postoperation 回调**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_post_operation_callback) 例程，用于需要进行筛选的每种类型的 i/o 操作。
 
 与旧式文件系统筛选器驱动程序不同，微筛选器驱动程序可以选择要筛选的 i/o 操作的类型。 微筛选器驱动程序可以为给定类型的 i/o 操作注册一个 preoperation 回调例程，而无需注册 postoperation 回调，反之亦然。 微筛选器驱动程序只接收其已注册 preoperation 或 postoperation 回调例程的 i/o 操作。
 
@@ -37,7 +37,7 @@ ms.locfileid: "72840919"
 
 *Postoperation 回调例程*类似于旧筛选器驱动程序模型中的完成例程。 I/o 管理器将操作传递到文件系统，并将操作的已注册完成例程的旧筛选器传递给文件系统和旧筛选器后，开始处理 i/o 操作。 完成这些完成例程后，筛选器管理器将执行该操作的完成处理。 然后，筛选器管理器将在为此类型的 i/o 操作注册了一个微筛选器驱动程序实例堆栈中的每个微筛选器驱动程序中调用 postoperation 回调例程。 堆栈中的底部微筛选器驱动程序（即，其实例具有最低级别的驱动程序）首先接收操作。 当该微筛选器驱动程序完成处理操作时，它会将操作返回到筛选器管理器，然后将操作传递到下一个最小的微筛选器驱动程序，等等。
 
-本部分包括：
+本节包括：
 
 [注册 Preoperation 和 Postoperation 回调例程](registering-preoperation-and-postoperation-callback-routines.md)
 
@@ -54,9 +54,4 @@ ms.locfileid: "72840919"
 [访问 i/o 操作的用户缓冲区](accessing-the-user-buffers-for-an-i-o-operation.md)
 
  
-
- 
-
-
-
 

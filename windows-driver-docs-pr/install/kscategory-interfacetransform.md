@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d1bbca65c595a0157428ad7be6dce0b2e2decf2d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 75b2a6df4cf222ef0e9a8a0851ba80c033b30690
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383748"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095013"
 ---
-# <a name="kscategoryinterfacetransform"></a>KSCATEGORY_INTERFACETRANSFORM
+# <a name="kscategory_interfacetransform"></a>KSCATEGORY_INTERFACETRANSFORM
 
 
-KSCATEGORY_INTERFACETRANSFORM[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)(KS) 转换的设备接口的功能类别。
+为转换设备接口的[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_INTERFACETRANSFORM[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_INTERFACETRANSFORM[设备接口类](https://docs.microsoft.com/window
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,9 +54,9 @@ KSCATEGORY_INTERFACETRANSFORM[设备接口类](https://docs.microsoft.com/window
 <a name="remarks"></a>备注
 -------
 
-KS 设备的驱动程序注册 KSCATEGORY_INTERFACETRANSFORM 向操作系统指示设备支持 KSCATEGORY_INTERFACETRANSFORM 功能分类的实例。
+KS 设备的驱动程序将注册 KSCATEGORY_INTERFACETRANSFORM 的实例，以向操作系统指示设备支持 KSCATEGORY_INTERFACETRANSFORM 功能类别。
 
-KSCATEGORY_INTERFACETRANSFORM 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEGORIES** ](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)功能类别。
+KSCATEGORY_INTERFACETRANSFORM 功能类别是 [**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md) 功能类别之一。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,23 +68,16 @@ KSCATEGORY_INTERFACETRANSFORM 功能类别是之一[ **KSPROPERTY_TOPOLOGY_CATEG
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ks.h （包括 Ks.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY_TOPOLOGY_CATEGORIES**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-topology-categories)
-
- 
+[**KSPROPERTY_TOPOLOGY_CATEGORIES**](../stream/ksproperty-topology-categories.md)
 
  
-
-
-
-
-
 

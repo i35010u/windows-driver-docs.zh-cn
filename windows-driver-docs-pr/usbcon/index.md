@@ -1,16 +1,16 @@
 ---
-Description: 通用串行总线 (USB) 提供了一个可扩展且可热插拔的即插即用串行接口，可确保为键盘、鼠标、游戏杆、打印机、扫描仪、存储设备、调制解调器和视频会议摄像机之类的外设提供标准的低成本连接。 对于所有使用旧端口（例如 PS/2 端口、串行端口和并行端口）的外围设备，建议迁移到 USB。 USB-IF 是一个特别兴趣组 (SIG)，负责维护官方 USB 规范、测试规范和工具。 Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规范的设备和系统提供本机支持。 Windows 还提供编程接口，用于开发可与 USB 设备通信的设备驱动程序和应用程序。
+description: 通用串行总线 (USB) 提供了一个可扩展且可热插拔的即插即用串行接口，可确保为键盘、鼠标、游戏杆、打印机、扫描仪、存储设备、调制解调器和视频会议摄像机之类的外设提供标准的低成本连接。 对于所有使用旧端口（例如 PS/2 端口、串行端口和并行端口）的外围设备，建议迁移到 USB。 USB-IF 是一个特别兴趣组 (SIG)，负责维护官方 USB 规范、测试规范和工具。 Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规范的设备和系统提供本机支持。 Windows 还提供编程接口，用于开发可与 USB 设备通信的设备驱动程序和应用程序。
 title: 通用串行总线 (USB)
 ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 6cf4935ac0532d4db9b0e603a6707e5201e0720a
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 9ac359a34b685e5e0c4614665dd0061bf8c911bc
+ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75210649"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969334"
 ---
 # <a name="universal-serial-bus-usb"></a>通用串行总线 (USB)
 
@@ -194,8 +194,7 @@ Windows 操作系统为 USB 主控制器、集线器以及符合官方 USB 规�
     </li>
     </ul>
 </p>
-<strong>编写 UWP 应用</strong>
-<p>提供如何在 UWP 应用中实现 USB 功能的分步说明。 若要为 USB 设备编写此类应用，需要使用 Visual Studio 和 Microsoft Windows 软件开发工具包 (SDK)。</p>
+<strong>编写 UWP 应用</strong><p>提供如何在 UWP 应用中实现 USB 功能的分步说明。 若要为 USB 设备编写此类应用，需要使用 Visual Studio 和 Microsoft Windows 软件开发工具包 (SDK)。</p>
 <p><a href="talking-to-usb-devices-start-to-finish.md" data-raw-source="[Talk to USB devices, start to finish](talking-to-usb-devices-start-to-finish.md)">与 USB 设备通信，从开始到完成</a></p>
 <p><a href="https://docs.microsoft.com/uwp/api/Windows.Devices.Usb" data-raw-source="[&lt;strong&gt;Windows.Devices.Usb&lt;/strong&gt;](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)"><strong>Windows.Devices.Usb</strong></a></p>
 <strong>编写 Windows 桌面应用</strong>

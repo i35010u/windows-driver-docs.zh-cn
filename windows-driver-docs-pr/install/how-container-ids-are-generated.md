@@ -4,61 +4,52 @@ description: 如何生成容器 ID
 ms.assetid: baa3c045-05ee-4012-97a3-c6e575c897be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f58a9839611130670b1b6c9bf0236530ba8e3b51
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fe08d259f3354aff62e3fe8d4100bd22f811d36b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386408"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095273"
 ---
 # <a name="how-container-ids-are-generated"></a>如何生成容器 ID
 
 
-从 Windows 7 开始，插即用 (PnP) 管理器生成的设备节点的容器 ID (*devnode*) 通过三种机制之一：
+从 Windows 7 开始，即插即用 (PnP) manager PnP 管理器通过以下三种机制之一为设备节点生成容器 ID (*devnode*) ：
 
--   总线驱动程序提供容器 id。
+-   总线驱动程序提供容器 ID。
 
-    将容器 ID 分配给 devnode，即插即用管理器首先检查是否 devnode 的总线驱动程序可以提供一个容器 id。 总线驱动程序提供容器 ID 通过[ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)请求**Parameters.QueryId.IdType**字段设置为**BusQueryContainerID**.
+    将容器 ID 分配给 devnode 时，PnP 管理器首先检查 devnode 的总线驱动程序是否可以提供容器 ID。 总线驱动程序通过 [**IRP_MN_QUERY_ID**](../kernel/irp-mn-query-id.md) 请求提供容器 ID， **IdType** 字段设置为 **BusQueryContainerID**。
 
-    总线驱动程序可以获取物理设备硬件中嵌入的正版容器 ID 或使用来自设备硬件的特定于总线的唯一 ID 生成的容器 id。 特定于总线的唯一 Id 的一些示例包括设备的序列号或设备的固件中的媒体访问控制 (MAC) 地址。
+    总线驱动程序可以获取嵌入到物理设备硬件中的正版容器 ID，或使用设备硬件中特定于总线的唯一 ID 生成容器 ID。 特定于总线的唯一 Id 的一些示例包括设备的序列号或设备固件中 (MAC) 地址的媒体访问控制。
 
-    **请注意**独立硬件供应商 (IHV) 负责容器 ID 由总线驱动程序报告的唯一性。
-
-
-
-
-有关详细信息，请参阅[从特定于总线的唯一 ID 生成的容器 Id](container-ids-generated-from-a-bus-specific-unique-id.md)。
-
-
--   PnP 管理器生成通过可移动设备功能的容器 ID。
-
-    如果总线驱动程序不能为它枚举 devnode 提供容器的 ID，即插即用 manager 将使用可移动设备功能来生成所有 devnodes 枚举设备的容器 ID。 总线驱动程序报告此设备功能，以响应[ **IRP_MN_QUERY_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)请求。
-
-    有关详细信息，请参阅[从可移动设备功能生成的容器 Id](container-ids-generated-from-the-removable-device-capability.md)。
-
--   PnP 管理器生成的可移动设备功能重写通过容器 ID。
-
-    **请注意**在 Windows 10 中，DPWS 设备将始终生成使用此方法在设备的容器 ID。
+    **注意**  独立硬件供应商 (IHV) 负责总线驱动程序报告的容器 ID 的唯一性。
 
 
 
 
-尽管替代机制不会更改可移动设备功能的值，它会强制 PnP 管理器中，替代设置而不是可移动设备功能的值生成时要使用设备的容器 Id。
-
-例如，如果可移动设备功能的重写指定设备为可移动，即插即用 manager 会生成所有 devnodes 枚举设备的容器 ID。 无论是否在设备自身报告为可移动或不执行此操作。
-
-IHV 可以使用密钥重写由设备报告了可移动设备功能填充注册表。 此替代机制可用于不支持可移动设备功能或者错误地报告的旧设备。
-
-有关详细信息，请参阅[从可移动设备功能替代生成的容器 Id](container-ids-generated-from-a-removable-device-capability-override.md)。
+有关详细信息，请参阅 [从特定于总线的唯一 ID 生成的容器 id](container-ids-generated-from-a-bus-specific-unique-id.md)。
 
 
-除了这些方法，系统使用 ACPI BIOS 对象设置指定设备容器分组。 有关详细信息，请参阅[使用的设备容器分组的 ACPI](using-acpi-for-device-container-grouping.md)。
+-   PnP 管理器通过可移动设备功能生成容器 ID。
 
+    如果总线驱动程序无法为其枚举的 devnode 提供容器 ID，则 PnP 管理器使用可移动设备功能为设备枚举的所有 devnodes 生成容器 ID。 总线驱动程序报告此设备的功能，以响应 [**IRP_MN_QUERY_CAPABILITIES**](../kernel/irp-mn-query-capabilities.md) 的请求。
 
+    有关详细信息，请参阅 [从可移动设备功能生成的容器 id](container-ids-generated-from-the-removable-device-capability.md)。
 
+-   PnP 管理器通过替代可移动设备功能生成容器 ID。
 
+    **注意**  在 Windows 10 中，DPWS 设备将始终使用此方法生成设备的容器 ID。
 
 
 
 
+尽管替代机制不会更改可移动设备功能的值，但它会强制 PnP 管理器使用替代设置，而不是在为设备生成容器 Id 时使用可移动设备功能的值。
 
+例如，如果 "可移动设备" 功能的替代指定设备可移动，则 PnP 管理器将为该设备的所有 devnodes 实例生成一个容器 ID。 无论设备是否将自身报告为可移动，都将执行此操作。
+
+IHV 可以使用替代设备报告的可移动设备功能的密钥来填充注册表。 这种替代机制适用于不支持可移动设备功能或错误报告的传统设备。
+
+有关详细信息，请参阅 [从可移动设备功能重写生成的容器 id](container-ids-generated-from-a-removable-device-capability-override.md)。
+
+
+除了这些方法，系统还使用 ACPI BIOS 对象设置来指定设备容器分组。 有关详细信息，请参阅将 [ACPI 用于设备容器分组](using-acpi-for-device-container-grouping.md)。

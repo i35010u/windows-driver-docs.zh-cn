@@ -7,21 +7,21 @@ keywords:
 - 安装生物识别驱动程序 WDK 生物识别
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: afbeb83c9de5d926bd509e9c434798e46d344069
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5ef55de86857b02d6665a06bab207a5357c447b6
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364702"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095421"
 ---
 # <a name="installing-a-biometric-driver"></a>安装生物识别驱动程序
 
 
-供应商可以提供要安装 WBDI 驱动程序的 INF 文件。
+供应商可以提供一个 INF 文件来安装 WBDI 驱动程序。
 
-下面是有关生物识别设备安装指南的列表。 本主题中的代码示例摘自的 WudfBioUsbSample.inx 文件[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver):
+下面是用于安装生物识别设备的准则列表。 本主题中的代码示例取自 [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)的 WudfBioUsbSample 文件 inx 文件：
 
--   WBDI 驱动程序应指定一个类的"生物识别"。 设置 ClassGuid 等于相对应的值为 GUID\_DEVCLASS\_Devguid.h 中的生物识别：
+-   WBDI 驱动程序应指定类 "生物识别"。 设置 ClassGuid 等于 DEVCLASS \_ 中 GUID 生物识别的值 \_ ：
 
     ```cpp
     [Version]
@@ -30,7 +30,7 @@ ms.locfileid: "67364702"
     ClassGuid={53D29EF7-377C-4D14-864B-EB3A85769359}
     ```
 
--   在你。硬件部分中，提供 AddReg 指令来指定三个部分，包含要添加到注册表项：
+-   在中。HW 部分，提供 AddReg 指令来指定三个包含要添加到注册表中的项的部分：
 
     ```cpp
     [Biometric_Install.NT.hw]
@@ -38,7 +38,7 @@ ms.locfileid: "67364702"
     AddReg=DriverPlugInAddReg, DatabaseAddReg
     ```
 
--   提供命名的部分中引用。硬件部分。 \[生物识别\_设备\_AddReg\]部分设置生物识别设备，包括独占标志和系统唤醒/设备空闲状态的值。 要被识别 Windows 生物识别框架，基于 UMDF WBDI 驱动程序必须将"独占"值设置为 1。 前两行\[生物识别\_设备\_AddReg\]节中指定访问控制列表 (ACL) 权限，以便该设备只能打开由管理员或本地系统帐户。 当指定这些 ACL 权限时，第三方应用程序不能打开设备并 WinBio 服务未运行时捕获指纹数据。 例如：
+-   提供中提到的命名节。HW 部分。 \[生物识别 \_ 设备 \_ AddReg \] 部分设置生物识别设备的值，包括独占标志和系统唤醒/设备空闲。 若要通过 Windows Biometric Framework 识别，基于 UMDF 的 WBDI 驱动程序必须将 "独占" 值设置为1。 \[生物识别设备 AddReg 部分的前两行 \_ \_ \] (ACL) 权限指定访问控制列表，使设备只能由管理员或本地系统帐户打开。 当你指定这些 ACL 权限时，第三方应用程序无法在 WinBio 服务未运行时打开设备并捕获指纹数据。 例如：
 
     ```cpp
     [Biometric_Device_AddReg]
@@ -53,11 +53,11 @@ ms.locfileid: "67364702"
     HKR,,"DefaultIdleTimeout",0x00010001,5000
     ```
 
-    向旧版 (非 WBDI) 生物识别堆栈公开功能的 WBDI 驱动程序应排他值设置为零。 如果此值设置为零，Windows 生物识别框架不会尝试控制设备和设备未通过 WBF 公开。
+    ) 生物识别堆栈 (公开功能的 WBDI 驱动程序将独占值设置为零。 如果此值设置为零，则 Windows Biometric Framework 不会尝试控制设备，并且不会通过 WBF 公开设备。
 
-    供应商可以有单独的驱动程序二进制文件，可以使用旧堆栈和 WBF，但不能同时运行这两个。 如果设备可以打开使用独占访问权，将仅运行 WBF。
+    供应商可以有单个驱动程序二进制文件，它可以处理旧式堆栈和 WBF，但这两者不能同时运行。 仅当可以使用独占访问权限打开设备时，WBF 才会运行。
 
--   第二个名为的部分包含插件适配器注册表的值。 此示例使用由 Microsoft 提供的传感器适配器和存储适配器。 本部分还支持 Windows 登录名通过 SystemSensor 值设置：
+-   第二个命名节包含插件适配器的注册表值。 该示例使用 Microsoft 提供的传感器适配器和存储适配器。 本部分还通过设置 SystemSensor 值来启用 Windows 登录支持：
 
     ```cpp
     [DriverPlugInAddReg]
@@ -70,7 +70,7 @@ ms.locfileid: "67364702"
     HKR,WinBio\Configurations\0,DatabaseId,,"6E9D4C5A-55B4-4c52-90B7-DDDC75CA4D50"  ; Unique database GUID
     ```
 
--   最后，第三个区域设置的数据库服务的以下注册表值。 标识 GUID 必须是唯一的特定格式的每个供应商数据库。 例如，在此示例中的代码示例，更改为自己唯一的 GUID INF 文件中的 6E9D4C5A-55B4-4c52-90B7-DDDC75CA4D50。
+-   最后，第三部分为数据库服务设置以下注册表值。 标识 GUID 对于特定格式的每个供应商数据库必须是唯一的。 例如，在此示例中，在此代码示例中，将6E9D4C5A-55B4-4c52-90B7-DDDC75CA4D50 更改为你在 INF 文件中的唯一 GUID。
 
     ```cpp
     [DatabaseAddReg]
@@ -84,11 +84,11 @@ ms.locfileid: "67364702"
     HKLM,System\CurrentControlSet\Services\WbioSrvc\Databases\{6E9D4C5A-55B4-4c52-90B7-DDDC75CA4D50},ConnectionString,,""
     ```
 
--   若要区分 WBDI 和旧驱动程序，供应商必须设置特征评分驱动程序 INX 文件中。 中未设置特征评分[WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)示例。 有关设置特征评分的详细信息，请参阅[排名生物识别驱动程序在 Windows 更新上](ranking-a-biometric-driver-on-windows-update.md)。
+-   为区分 WBDI 和旧驱动程序，供应商必须在 INX 文件中为驱动程序设置功能分数。 [WudfBioUsbSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/biometrics/driver)示例中未设置功能分数。 有关设置功能分数的详细信息，请参阅 [对 Windows 更新上的生物识别驱动程序进行排名](ranking-a-biometric-driver-on-windows-update.md)。
 
-有关 INX 文件和它们之间的区别 INF 文件中的信息，请参阅[使用 INX 文件转换为创建 INF 文件](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-inx-files-to-create-inf-files)。
+有关 INX 文件及其与 INF 文件的区别的信息，请参阅 [使用 INX 文件创建 Inf 文件](../wdf/using-inx-files-to-create-inf-files.md)。
 
-若要替换旧驱动程序为 WBDI 驱动程序，使用以下过程：
+若要将 WBDI 驱动程序替换为旧驱动程序，请使用以下过程：
 
 1.  关闭所有当前处于活动状态的 WBF 应用程序。
 
@@ -99,10 +99,4 @@ ms.locfileid: "67364702"
 4.  安装旧驱动程序。
 
  
-
- 
-
-
-
-
 

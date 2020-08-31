@@ -6,12 +6,12 @@ keywords:
 - 电池标记 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6d55947ad46b05c3780241a7a998ade62017b2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a7b0f4e7aa61fe4b3488193fa4f722396245afbb
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364719"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056857"
 ---
 # <a name="responding-to-battery-tag-queries"></a>响应电池标记查询
 
@@ -19,9 +19,9 @@ ms.locfileid: "67364719"
 ## <span id="ddk_responding_to_battery_tag_queries_dg"></span><span id="DDK_RESPONDING_TO_BATTERY_TAG_QUERIES_DG"></span>
 
 
-电池标记是 ULONG 计数初始化和递增 miniclass 驱动程序。 电池类驱动程序调用[ *BatteryMiniQueryTag* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback)请求标记的当前值。
+电池标记是由 miniclass 驱动程序初始化并递增的 ULONG 计数器。 电池类驱动程序调用 [*BatteryMiniQueryTag*](/windows/desktop/api/batclass/nc-batclass-bclass_query_tag_callback) 来请求标记的当前值。
 
-此 miniclass 驱动程序例程声明，如下所示：
+此 miniclass 驱动程序例程的声明如下所示：
 
 ```cpp
 typedef
@@ -32,18 +32,13 @@ NTSTATUS
     );
 ```
 
-*上下文*参数是指向 miniclass 驱动程序分配和传递给电池中的类驱动程序的上下文区域\_微型端口\_在设备初始化 (信息结构[**BatteryClassInitializeDevice**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice))。 *BatteryTag*值是由创建和维护 miniclass 驱动程序。
+*上下文*参数是指向上下文区域的指针，该上下文区域由 miniclass 驱动程序分配，并在 \_ \_ 设备初始化 ([**BatteryClassInitializeDevice**](/windows/desktop/api/batclass/nf-batclass-batteryclassinitializedevice)) 时，将其传递到电池微型端口信息结构中的类驱动程序。 *BatteryTag*值由 miniclass 驱动程序创建和维护。
 
-每次插入电池，miniclass 驱动程序必须递增的值的标记，而不管是否这是新电池或以前存在于同一个电池。
+每次插入电池时，miniclass 驱动程序都必须递增标记的值，无论这是新电池还是以前出现的相同电池。
 
-如果没有电池存在，或者如果 miniclass 驱动程序无法确定电池是否存在，则 miniclass 驱动程序应返回状态\_没有\_SUCH\_设备和设置，则值为电池标记\_标记\_无效。
+如果没有电池存在，或者如果 miniclass 驱动程序无法确定是否存在电池，则 miniclass 驱动程序应返回 " \_ 无 \_ 此类设备" 状态， \_ 并将标记的值设置为 "电池 \_ 标记 \_ 无效"。
 
-类驱动程序使用电池标记在内部，然后对 miniclass 驱动程序的调用中标识电池的特定实例。 Miniclass 驱动程序应检查传递给其标准的例程，以确保它对应于当前的电池的每个电池标记的值。 如果标记不正确，则 miniclass 驱动程序应返回状态\_否\_SUCH\_设备。
-
- 
+类驱动程序在内部和对 miniclass 驱动程序的调用中使用电池标记来识别电池的特定实例。 Miniclass 驱动程序应检查要传递给每个标准例程的电池标记的值，以确保它与当前电池对应。 如果标记不正确，则 miniclass 驱动程序应返回 " \_ 无 \_ 此类设备" 状态 \_ 。
 
  
-
-
-
 

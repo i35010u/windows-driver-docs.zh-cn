@@ -9,12 +9,12 @@ keywords:
 - 电池类驱动程序 WDK，通知
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d12ac75e3f1de5695eae4bd79b43866f2c7e001
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5c3ee9e5950f5829b1e9ddd68b9ea7765dd18d6
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67354060"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056891"
 ---
 # <a name="interaction-of-battery-status-and-notification-routines"></a>电池状态和通知例程的交互
 
@@ -22,28 +22,23 @@ ms.locfileid: "67354060"
 ## <span id="ddk_interaction_of_battery_status_and_notification_routines_dg"></span><span id="DDK_INTERACTION_OF_BATTERY_STATUS_AND_NOTIFICATION_ROUTINES_DG"></span>
 
 
-在类驱动程序可以请求并接收电池状态-和 miniclass 驱动程序可以提供电池状态-几种方式。
+类驱动程序可以请求和接收电池状态--miniclass 驱动程序可以通过几种方式提供电池状态。
 
-如果 miniclass 驱动程序提供了[ *BatteryMiniSetStatusNotify* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback)例程，类驱动程序可以注册或时，电池容量超过或低于指定的范围，通知其电源状态更改。 当发生任何已注册的情况时，miniclass 驱动程序会调用[ **BatteryClassStatusNotify**](https://docs.microsoft.com/windows/desktop/api/batclass/nf-batclass-batteryclassstatusnotify)。
+如果 miniclass 驱动程序提供 [*BatteryMiniSetStatusNotify*](/windows/desktop/api/batclass/nc-batclass-bclass_set_status_notify_callback) 例程，则可以注册类驱动程序，以便在电池容量超出指定范围或其电源状态更改时收到通知。 出现任何已注册的条件时，miniclass 驱动程序将调用 [**BatteryClassStatusNotify**](/windows/desktop/api/batclass/nf-batclass-batteryclassstatusnotify)。
 
-请注意， **BatteryClassStatusNotify**不提供状态信息; 其唯一的参数是触发通知的电池的上下文。 它只是通知电池的状态已更改的类驱动程序。 反过来，在类驱动程序调用[ *BatteryMiniQueryStatus* ](https://docs.microsoft.com/windows/desktop/api/batclass/nc-batclass-bclass_query_status_callback)是否需要详细信息。
+请注意， **BatteryClassStatusNotify** 不提供状态信息;其唯一参数是触发通知的电池的上下文。 它仅通知类驱动程序电池的状态已更改。 如果需要详细信息，类驱动程序将调用 [*BatteryMiniQueryStatus*](/windows/desktop/api/batclass/nc-batclass-bclass_query_status_callback) 。
 
-如果 miniclass 驱动程序不支持*BatteryMiniSetStatusNotify*，在类驱动程序通过调用对状态轮询*BatteryMiniQueryStatus*例程在正则但很少发生的时间间隔。
+如果 miniclass 驱动程序不支持 *BatteryMiniSetStatusNotify*，则类驱动程序会通过定期调用 *BatteryMiniQueryStatus* 例程来轮询状态，但不常发生时间间隔。
 
-独立于任何通知的请求时，miniclass 驱动程序必须调用**BatteryClassStatusNotify**每当发生的以下任何一个：
+与任何通知请求无关，miniclass 驱动程序必须在出现以下任何情况时调用 **BatteryClassStatusNotify** ：
 
--   电池将联机或脱机。
+-   电池处于联机或脱机状态。
 
--   电池电量变得严重不足。
+-   电池容量严重不足。
 
--   电池更改电源状态： 启动充电、 放电将启动、 停止充电时，或停止放电。
+-   电池的电源状态发生变化：它开始充电、开始放电、停止充电或停止放电。
 
-报告严重不足、 放电电池之前, miniclass 驱动程序应尝试解决该问题，如前面所述[响应的电池状态查询](responding-to-battery-status-queries.md)。
-
- 
+在报告严重不足的电池放电之前，miniclass 驱动程序应尝试解决此问题，如前文所述的 [响应电池状态查询](responding-to-battery-status-queries.md)中所述。
 
  
-
-
-
 

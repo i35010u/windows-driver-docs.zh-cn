@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 98f33723e12d72c03118cab036ad67601eded469
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2085b4c806c4ed783aa78fdbbe008d7077415d68
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366683"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095193"
 ---
-# <a name="kscategorytopology"></a>KSCATEGORY_TOPOLOGY
+# <a name="kscategory_topology"></a>KSCATEGORY_TOPOLOGY
 
 
-KSCATEGORY_TOPOLOGY[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)音频设备的内部拓扑 (KS) 功能类别。
+对于音频设备的内部拓扑，为[内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别定义 KSCATEGORY_TOPOLOGY[设备接口类](./overview-of-device-interface-classes.md)。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_TOPOLOGY[设备接口类](https://docs.microsoft.com/windows-hardware
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,13 +54,13 @@ KSCATEGORY_TOPOLOGY[设备接口类](https://docs.microsoft.com/windows-hardware
 <a name="remarks"></a>备注
 -------
 
-KS 音频适配器设备驱动程序注册 KSCATEGORY_TOPOLOGY 向操作系统指示设备支持 KSCATEGORY_TOPOLOGY 功能分类的实例。
+适用于 KS 音频适配器设备的驱动程序将 KSCATEGORY_TOPOLOGY 的实例注册，以指示操作系统设备支持 KSCATEGORY_TOPOLOGY 功能类别。
 
-有关设备的音频的适配器的接口类的信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
+有关音频适配器的设备接口类的信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)。
 
-[AC'97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075)中提供的 WDK 枚举 KSCATEGORY_TOPOLOGY 设备接口类的实例。
+在 WDK 中提供的 [交流电 "97 示例驱动程序](https://go.microsoft.com/fwlink/p/?linkid=256075) " 枚举 KSCATEGORY_TOPOLOGY 设备接口类的实例。
 
-WDK 中的 sysfx 示例注册此设备接口类的实例。 Sysfx 示例位于*src\\音频\\sysfx directory* WDK。
+WDK 中的 sysfx 示例将注册此设备接口类的实例。 Sysfx 示例位于 WDK 的 *src \\ 音频 \\ sysfx 目录* 中。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,17 +72,11 @@ WDK 中的 sysfx 示例注册此设备接口类的实例。 Sysfx 示例位于*s
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

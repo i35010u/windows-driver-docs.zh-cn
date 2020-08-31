@@ -1,64 +1,58 @@
 ---
-title: 概述安装专用生成的收件箱驱动程序
-description: 概述安装专用生成的收件箱驱动程序
+title: 安装收件箱驱动程序的专用版本概述
+description: 安装收件箱驱动程序的专用版本概述
 ms.assetid: eec9474c-5aad-4b81-b7df-5e89cbfe92ab
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 81b932c128bc20b87c13ad617e99ef47ea6ebbf6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00238a45878e9a4acba50a03e8bc34599988fae2
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330224"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095453"
 ---
-# <a name="overview-of-installing-private-builds-of-inbox-drivers"></a>概述安装专用生成的收件箱驱动程序
+# <a name="overview-of-installing-private-builds-of-inbox-drivers"></a>安装收件箱驱动程序的专用版本概述
 
 
-从开始 Windows Vista 的计算机系统上安装插即用 (PnP) 设备时，Windows 选择驱动程序基于几个因素，例如[硬件 ID](hardware-ids.md)或[兼容 ID](compatible-ids.md)，日期，和版本。 Windows 分析这些因素分配指示驱动程序与设备的匹配程度的排名。 越低排名，更好的匹配驱动程序是用于设备。
+从 Windows Vista 开始，当计算机系统上安装了即插即用 (PnP) 设备时，Windows 会根据多种因素（如 [硬件 ID](hardware-ids.md) 或 [兼容 ID](compatible-ids.md)、日期和版本）选择驱动程序。 Windows 会分析这些因素，以便分配一个指示驱动程序与设备的匹配程度的级别。 排名越低，设备的驱动程序匹配就越好。
 
-此外，Windows vista 中，从开始，如果驱动程序包含来自 Windows 签名颁发机构 （Microsoft 签名） 的签名，Windows 进行排名其优于另一个驱动程序签名时使用的同一个设备：
+此外，从 Windows Vista 开始，如果驱动程序具有来自 Windows 签名颁发机构的签名 (Microsoft 签名) ，Windows 会将其排名好于使用签名的同一设备的另一个驱动程序：
 
--   第三方发布的签名。 使用生成此类型的签名[软件发布者证书](software-publisher-certificate.md)从 Microsoft 授权颁发证书，此类第三方证书颁发机构 (CA) 获取。
+-   第三方版本签名。 这种类型的签名是使用从第三方证书颁发机构获取的 [软件发行者证书](software-publisher-certificate.md) 生成的，该证书由 Microsoft 授权 () CA 颁发此类证书。
 
--   早于的 Windows 版本的 Microsoft 签名[LowerLogoVersion](lowerlogoversion.md)驱动程序的值[设备安装程序类](device-setup-classes.md)。
+-   早于驱动程序的[设备安装程序类](./overview-of-device-setup-classes.md)的[LowerLogoVersion](lowerlogoversion.md)值的 Windows 版本的 Microsoft 签名。
 
-Microsoft 签名类型包括：
+Microsoft 签名类型包括以下内容：
 
 -   高级 WHQL 签名和标准 WHQL 签名
 
--   收件箱驱动程序签名
+-   收件箱驱动程序的签名
 
--   Windows 可持续工程 (Windows SE) 签名
+-   Windows (Windows SE) 签名的 windows 持续工程设计
 
--   相同的 Windows 版本的 WHQL 签名或更高版本比指定的 Windows 版本[LowerLogoVersion](lowerlogoversion.md)为驱动程序的设备安装程序类设置的值
+-   Windows 版本的 WHQL 签名，该签名与为驱动程序的设备安装程序类设置的 [LowerLogoVersion](lowerlogoversion.md) 值指定的 windows 版本相同或更高
 
-**请注意**  Windows 即使具有第三方签名的驱动程序是设备的更好地匹配项，选择具有 Microsoft 签名的驱动程序。 使用发布服务器标识证书\[PIC\]的第三方签名不会更改此行为。
-
- 
-
-从 Windows Vista 开始[ **AllSignersEqual**组策略](allsignersequal-group-policy--windows-vista-and-later-.md)控制 Windows 进行 Microsoft 签名的驱动程序和第三方签名的驱动程序的排名。 当**AllSignersEqual**是启用，Windows 将所有 Microsoft 签名和第三方签名视为等方面排名时选择的驱动程序是设备的最佳匹配项。
-
-**请注意**  在 Windows Vista 和 Windows Server 2008 **AllSignersEqual**组策略在默认情况下处于禁用状态。 从 Windows 7 开始，默认情况下启用此组策略。
+**注意**   即使具有第三方签名的驱动程序比设备更匹配，Windows 也会选择包含 Microsoft 签名的驱动程序。 使用 publisher 标识证书 \[ PIC \] 作为第三方签名不会更改此行为。
 
  
 
-若要安装的收件箱驱动程序对专用生成，必须执行以下操作：
+从 Windows Vista 开始， [ **AllSignersEqual**组策略](./allsigningequal-group-policy.md)控制 Windows 如何排名 Microsoft 签署的驱动程序和第三方签名的驱动程序。 如果启用了 **AllSignersEqual** ，则在选择最匹配设备的驱动程序时，Windows 会将所有 Microsoft 签名和第三方签名视为相等，并按级别进行排序。
 
--   生成的收件箱驱动程序的专用版本。 您必须确保，专用生成优先于 Microsoft 签名版本时签名都被同等对待。 专用生成也必须进行数字签名通过使用提供的工具和 WDK 中。
-
-    有关详细信息，请参阅[创建收件箱驱动程序对专用生成](creating-a-private-build-of-an-in-box-driver.md)。
-
--   启用[AllSignersEqual 组策略](allsignersequal-group-policy--windows-vista-and-later-.md)目标系统上，以便操作系统查看所有 Microsoft 签名类型和秩等于作为第三方签名选择驱动程序时，是设备的最佳匹配项。
-
-    有关详细信息，请参阅[配置到同样上排名驱动程序签名的 Windows](configuring-windows-to-rank-driver-signatures-equally.md)。
-
-有关 Windows 驱动程序的级别的详细信息，请参阅[Windows 中如何选择驱动程序](how-setup-selects-drivers.md)。
+**注意**   在 Windows Vista 和 Windows Server 2008 中，默认情况下， **AllSignersEqual**组策略处于禁用状态。 从 Windows 7 开始，默认情况下会启用此组策略。
 
  
 
+若要安装收件箱驱动程序的专用版本，必须执行以下操作：
+
+-   构建收件箱驱动程序的专用版。 当签名被同等对待时，必须确保专用生成先 Microsoft 签名版本。 还必须使用随 WDK 提供的工具对专用生成进行数字签名。
+
+    有关详细信息，请参阅 [创建收件箱驱动程序的专用生成](creating-a-private-build-of-an-in-box-driver.md)。
+
+-   启用目标系统上的 [AllSignersEqual 组策略](./allsigningequal-group-policy.md) ，以便在选择最匹配设备的驱动程序时，操作系统会查看所有 Microsoft 签名类型和第三方签名的排名是否相等。
+
+    有关详细信息，请参阅 [将 Windows 配置为平等排列驱动程序签名](configuring-windows-to-rank-driver-signatures-equally.md)。
+
+有关 Windows 如何对驱动程序进行排名的详细信息，请参阅 [Windows 如何选择驱动程序](how-setup-selects-drivers.md)。
+
  
-
-
-
-
 

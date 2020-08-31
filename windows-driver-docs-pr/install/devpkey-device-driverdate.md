@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 95f4ffc083e128e165d9620dea3ef5a7b3be301d
-ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
+ms.openlocfilehash: 1c26bc79aa9b520bbd63fc6ce076292c612f1384
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86418496"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095231"
 ---
 # <a name="devpkey_device_driverdate"></a>DEVPKEY_Device_DriverDate
 
@@ -33,8 +33,8 @@ PKEY_Device_DriverDate 设备属性表示当前为设备实例安装的驱动程
 </colgroup>
 <thead>
 <tr>
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
@@ -67,34 +67,27 @@ PKEY_Device_DriverDate 设备属性表示当前为设备实例安装的驱动程
 <a name="remarks"></a>备注
 -------
 
-DEVPKEY_Device_DriverDate 的值是由 inf [**DriverVer 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)提供的，inf 版本部分包括在安装设备的 inf**版本部分**中，也包括在安装设备的[**inf *DDINSTALL*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)中的设备特定 inf **DriverVer**指令中。
+DEVPKEY_Device_DriverDate 的值是由 inf [**DriverVer 指令**](./inf-driverver-directive.md)提供的，inf 版本部分包括在安装设备的 inf**版本部分**中，也包括在安装设备的[**inf *DDINSTALL*部分**](./inf-ddinstall-section.md)中的设备特定 inf **DriverVer**指令中。
 
-可以调用[**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)来检索 DEVPKEY_Device_DriverDate 属性的值。
+可以调用 [**SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) 来检索 DEVPKEY_Device_DriverDate 属性的值。
 
-Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DriverDate 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应**DriverDateData**注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅[访问设备驱动程序属性](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)。
+Windows Server 2003、Windows XP 和 Windows 2000 支持此属性，但不支持 DEVPKEY_Device_DriverDate 属性键。 在这些早期版本的 Windows 上，可以通过访问设备实例的软件密钥下的相应 **DriverDateData** 注册表值来访问此属性的值。 有关如何在这些早期版本的 Windows 上访问此属性值的信息，请参阅 [访问设备驱动程序属性](./accessing-device-driver-properties.md)。
 
 <a name="requirements"></a>要求
 ------------
 
-**版本**： windows Vista 和更高版本的 windows**头**： Devpkey （包括 Devpkey）
+**版本**： windows Vista 和更高版本的 windows **标题**： Devpkey (包含 Devpkey) 
 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**INF *DDInstall*部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *DDInstall* 部分**](./inf-ddinstall-section.md)
 
-[**INF DriverVer 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive)
+[**INF DriverVer 指令**](./inf-driverver-directive.md)
 
 **INF 版本部分** 
-[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
+[ **SetupDiGetDeviceProperty**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 
  
-
- 
-
-
-
-
-
 

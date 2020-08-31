@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c6d5ec84305baccb83b0928add12dd636a111553
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3be0874c97881b9669c65ec62845ba08f01f292c
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360318"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095357"
 ---
 # <a name="eulayesbutton-xml-element"></a>eulaYesButton XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**EulaYesButton** XML 元素自定义与 DPInst EULA 页上的接受选项按钮相关联的文本。
+**EulaYesButton** XML 元素自定义与 DPInst EULA 页面上的 "接受" 选项按钮关联的文本。
 
 ### <a name="element-tag"></a>**元素标记**
 
@@ -36,7 +36,7 @@ ms.locfileid: "67360318"
 
 无
 
-### <a name="element-information"></a>**元素的信息**
+### <a name="element-information"></a>**元素信息**
 
 <table>
 <colgroup>
@@ -46,15 +46,15 @@ ms.locfileid: "67360318"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
-<td align="left"><p>自定义与 DPInst EULA 页上的接受选项按钮相关联的文本的字符串</p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
+<td align="left"><p>自定义与 DPInst EULA 页面上 "接受" 选项按钮关联的文本的字符串</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>重复的子元素</strong></p></td>
@@ -65,9 +65,9 @@ ms.locfileid: "67360318"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**eulaYesButton**自定义 DPInst EULA 页面上的接受选项按钮文本的元素。 指定接受选项按钮的自定义文本的文本所示粗体的字体样式。
+下面的代码示例演示了自定义 DPInst EULA 页面上的 "接受" 选项按钮文本的 **eulaYesButton** 元素。 指定 "接受" 选项按钮的自定义文本的文本以粗体显示。
 
 ```cpp
 <dpinst>
@@ -81,23 +81,16 @@ ms.locfileid: "67360318"
 </dpinst>
 ```
 
-如果**eulaYesButton**元素未指定，DPInst 显示默认 DPInst EULA 页面显示的默认选项按钮文本。
+如果未指定 **eulaYesButton** 元素，则 DPInst 将显示默认 DPInst EULA 页上显示的默认选项按钮文本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**eula**](eula-xml-element.md)
+[**协议**](eula-xml-element.md)
 
 [**eulaNoButton**](eulanobutton-xml-element.md)
 
-[**language**](language-xml-element.md)
+[**语言**](language-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

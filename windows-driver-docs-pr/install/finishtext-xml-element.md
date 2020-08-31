@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 3d212acd002799e79b48ad3a0869a59968e46a86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a7ca46aad152dd1c4050816b4ce5172db5ccfaa
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360295"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095531"
 ---
 # <a name="finishtext-xml-element"></a>finishText XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**FinishText** XML 元素自定义 DPInst DPInst 完成页显示的主文本。
+**FinishText** XML 元素自定义 DPInst 在 DPInst 完成页上显示的主文本。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67360295"
 <finishText>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 无
 
@@ -46,15 +46,15 @@ ms.locfileid: "67360295"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
-<td align="left"><p>自定义完成页上的主文本的字符串</p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
+<td align="left"><p>自定义 "完成" 页上的主文本的字符串</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>重复的子元素</strong></p></td>
@@ -65,9 +65,9 @@ ms.locfileid: "67360295"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**finishText**自定义 DPInst 显示成功安装的完成页面上的主文本的元素。 指定自定义完成文本的文本所示粗体的字体样式。
+下面的代码示例演示一个 **finishText** 元素，该元素自定义 DPInst 为成功安装显示的 "完成" 页上的主文本。 指定自定义完成文本的文本以粗体显示。
 
 ```cpp
 dpinst>
@@ -81,21 +81,14 @@ dpinst>
 </dpinst>
 ```
 
-如果**finishText**元素未指定，DPInst 显示默认完成文本指示安装是否成功或失败。
+如果未指定 **finishText** 元素，则 DPInst 会显示默认完成文本，指示安装是成功还是失败。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**finishTitle**](finishtitle-xml-element.md)
 
-[**language**](language-xml-element.md)
+[**语言**](language-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

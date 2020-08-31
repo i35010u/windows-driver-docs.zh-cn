@@ -4,12 +4,12 @@ description: 此信息介绍如何获取和使用 Microsoft Windows 的代码签
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f78375495e67e3f8b2e2bdb70616704f5d5d44
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 9d4743a90bf287af3c360900ee573095c30ecf17
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644021"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056955"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>用于内核模式代码签名的交叉证书
 
@@ -44,7 +44,7 @@ Microsoft 为每个 CA 提供了一个特定的交叉证书，用于为代码签
 按照以下步骤标识 CA，然后下载相关的交叉证书。
 
 1.  打开 Microsoft 管理控制台 (MMC) 并添加 "证书" 管理单元：
-    1.  选择 "开始" 按钮，在搜索框中键入 "mmc"，然后从搜索结果中选择 "mmc"。 如果出现“用户帐户控制”对话框，请单击“是”。
+    1.  选择 "开始" 按钮，在搜索框中键入 "mmc"，然后从搜索结果中选择 "mmc"。 如果出现 "用户帐户控制" 对话框，请选择 "是"。
     2.  从 MMC 的 "文件" 菜单中，选择 "添加/删除管理单元 ..."
     3.  选择 "证书" 管理单元，然后选择 "添加"。
     4.  选择 "我的用户帐户"，然后选择 "完成"。

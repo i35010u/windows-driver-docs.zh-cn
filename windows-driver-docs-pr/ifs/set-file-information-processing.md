@@ -4,16 +4,16 @@ description: 设置文件信息处理
 ms.assetid: bda94e8d-0be1-4730-a82e-4aa4d3763cce
 keywords:
 - 安全 WDK 文件系统，语义模型检查
-- 语义模型检查 WDK 的文件系统中，设置文件的信息处理
-- 设置处理 WDK 文件系统的文件信息
+- 语义模型检查 WDK 文件系统，设置文件信息处理
+- 设置文件信息处理 WDK 文件系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9d2fb2a3d3ba376c1b325c7b0266babc408c2c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5ac7afc3c1c10d25b2cac3e6938dc37ecef1f950
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359264"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062998"
 ---
 # <a name="set-file-information-processing"></a>设置文件信息处理
 
@@ -21,12 +21,7 @@ ms.locfileid: "67359264"
 ## <span id="ddk_set_file_information_processing_if"></span><span id="DDK_SET_FILE_INFORMATION_PROCESSING_IF"></span>
 
 
-I/O 管理器执行一些额外的检查的支持的信息类子集[ **IRP\_MJ\_设置\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-set-information)。 具体而言，FileRenameInformation、 FileLinkInformation 和 FileMoveClusterInformation，I/O 管理器发出一个打开的父目录的目标名称，以确保用户具有访问权限之前向下发送创建该父级下的子级IRP\_MJ\_设置\_到文件系统的信息请求。
+I/o 管理器对 [**IRP \_ MJ \_ 集 \_ 信息**](./irp-mj-set-information.md)支持的信息类的子集执行一些额外检查。 具体而言，对于 FileRenameInformation、FileLinkInformation 和 FileMoveClusterInformation，i/o 管理器向目标名称的父目录发出一个打开的，以确保用户在将 IRP \_ MJ \_ 集 \_ 信息请求发送到文件系统之前有权在该父目录下创建一个子节点。
 
  
-
- 
-
-
-
 

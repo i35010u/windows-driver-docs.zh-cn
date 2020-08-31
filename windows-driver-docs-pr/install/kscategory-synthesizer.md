@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: d4e0ef43b9d42bcbf5ff6d9b242c104c2f67338b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 98da80036a799b07105677bf3dc5e50af6f4b391
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366696"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095189"
 ---
-# <a name="kscategorysynthesizer"></a>KSCATEGORY_SYNTHESIZER
+# <a name="kscategory_synthesizer"></a>KSCATEGORY_SYNTHESIZER
 
 
-KSCATEGORY_SYNTHESIZER[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)为定义[内核流式处理](https://docs.microsoft.com/windows-hardware/drivers/stream/streaming-minidrivers2)MIDI 数据转换为波形音频示例或模拟输出信号 (KS) 功能类别。
+KSCATEGORY_SYNTHESIZER [设备接口类](./overview-of-device-interface-classes.md) 定义为 [内核流式处理](../stream/streaming-minidrivers2.md) (KS) 功能类别，该类别将 MIDI 数据转换为波形音频样本或模拟输出信号。
 
 <table>
 <colgroup>
@@ -33,7 +33,7 @@ KSCATEGORY_SYNTHESIZER[设备接口类](https://docs.microsoft.com/windows-hardw
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">特性</th>
+<th align="left">Attribute</th>
 <th align="left">设置</th>
 </tr>
 </thead>
@@ -54,13 +54,13 @@ KSCATEGORY_SYNTHESIZER[设备接口类](https://docs.microsoft.com/windows-hardw
 <a name="remarks"></a>备注
 -------
 
-KS 音频适配器设备驱动程序注册 KSCATEGORY_SYNTHESIZER 向操作系统指示设备支持 KSCATEGORY_SYNTHESIZER 功能分类的实例。
+适用于 KS 音频适配器设备的驱动程序将 KSCATEGORY_SYNTHESIZER 的实例注册，以指示操作系统设备支持 KSCATEGORY_SYNTHESIZER 功能类别。
 
-有关如何在一个 INF 文件中注册此功能的类别的示例，请参阅*Ddksynth.inf*软件合成器示例中包含的 INF 文件*src\\音频\\ddksynth* WDK 的目录。
+有关如何在 INF 文件中注册此功能类别的示例，请参阅 WDK 的*src \\ 音频 \\ Ddksynth*目录中的软件合成器示例附带的*Ddksynth* inf 文件。
 
-合成器的常规信息，请参阅[MIDI 和 DirectMusic 筛选器](https://docs.microsoft.com/windows-hardware/drivers/audio/midi-and-directmusic-filters)。
+有关合成器的一般信息，请参阅 [MIDI 和 DirectMusic 筛选器](../audio/midi-and-directmusic-filters.md)。
 
-有关设备的音频的适配器的接口类的常规信息，请参阅[音频适配器安装设备接口](https://docs.microsoft.com/windows-hardware/drivers/audio/installing-device-interfaces-for-an-audio-adapter)。
+有关音频适配器的设备接口类的常规信息，请参阅 [安装音频适配器的设备接口](../audio/installing-device-interfaces-for-an-audio-adapter.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,17 +72,11 @@ KS 音频适配器设备驱动程序注册 KSCATEGORY_SYNTHESIZER 向操作系�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h （包括 Ksmedia.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
-
 

@@ -7,18 +7,18 @@ keywords:
 - 卸载筛选器驱动程序 WDK 文件系统
 ms.date: 08/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a5ccf9840f4859492463d5741aa0b20b713fdb7
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: be357fa87c2cd7d877568d54127ccc15750680b3
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802657"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062970"
 ---
 # <a name="using-an-inf-file-to-uninstall-a-file-system-filter-driver"></a>使用 INF 文件卸载文件系统筛选器驱动程序
 
 > [!NOTE]
 >
-> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** INF 部分禁止 [ (例外) ](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver#legacy-compatibility)。
+> 从 Windows 10 版本1903开始， **DefaultUninstall** 和 **DefaultUninstall** INF 部分禁止 [ (例外) ](../develop/creating-a-primitive-driver.md#legacy-compatibility)。
 
 在1903版之前的 Windows 10 中， **DefaultUninstall** 和 **DefaultUninstall** 部分是可选的，但建议在卸载驱动程序时使用。 对于这些操作系统版本，你可以通过使用命令行、PowerShell 或批处理文件来卸载筛选器驱动程序，以执行这些 INF 文件部分或用户模式卸载应用程序。
 
@@ -32,7 +32,7 @@ ms.locfileid: "88802657"
 RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultUninstall 132 path-to-uninstall-dir\infname.inf
 ```
 
-有关详细信息，请参阅 [**rundll32.exe**](https://docs.microsoft.com/windows-server/administration/windows-commands/rundll32) 和 [**InstallHinfSection**](https://docs.microsoft.com/windows/win32/api/setupapi/nf-setupapi-installhinfsectiona) 。
+有关详细信息，请参阅 [**rundll32.exe**](/windows-server/administration/windows-commands/rundll32) 和 [**InstallHinfSection**](/windows/win32/api/setupapi/nf-setupapi-installhinfsectiona) 。
 
 ## <a name="powershell-uninstall"></a>Powershell 卸载
 
@@ -42,7 +42,7 @@ RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultUninstall 132 path-to-uninst
 Get-CimInstance Win32_SystemDriver -Filter "name='your_driver_name'" | Invoke-CimMethod -MethodName Delete
 ```
 
-有关详细信息，请参阅 [CimCmdlets](https://docs.microsoft.com/powershell/module/cimcmdlets/?view=powershell-7) 。
+有关详细信息，请参阅 [CimCmdlets](/powershell/module/cimcmdlets/?view=powershell-7) 。
 
 ## <a name="uninstall-application"></a>卸载应用程序
 
@@ -60,4 +60,4 @@ InstallHinfSection(NULL,NULL,TEXT("DefaultUninstall 132 path-to-uninstall-dir\in
 * 卸载应用程序不应从 Windows INF 文件目录 (*% windir% \\ INF*) 中删除 INF 文件 (或其关联的 PNF 文件) 。
 * 卸载应用程序时，不能安全地删除某些筛选器驱动程序文件。 不应在 INF 文件的 **DefaultUninstall** 节中列出这些文件。
 
-有关卸载应用程序的详细信息，请参阅 [编写设备安装应用程序](https://docs.microsoft.com/windows-hardware/drivers/install/writing-a-device-installation-application)。
+有关卸载应用程序的详细信息，请参阅 [编写设备安装应用程序](../install/writing-a-device-installation-application.md)。

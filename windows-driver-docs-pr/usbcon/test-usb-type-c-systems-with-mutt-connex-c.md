@@ -3,12 +3,12 @@ description: MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 
 title: 通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 624bbb25f64e2206d94cb30baca3ee01e2d6f581
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: cb0c8f31447cd147019299ea46a489180b797051
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968716"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056917"
 ---
 # <a name="test-usb-type-c-systems-with-usb-type-c-connex"></a>通过 USB 类型 C ConnEx 测试 USB 类型 C 系统
 
@@ -114,7 +114,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 
 -   安装测试工具需要提升的命令窗口。
 
-    若要打开提升的命令窗口，用户必须是代理控制器上 **Administrators** 组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，右键单击 Cmd.exe 快捷方式，然后选择 " **以管理员身份运行**"。
+    若要打开提升的命令窗口，用户必须是代理控制器上 **Administrators** 组的成员。 若要打开提升的命令提示符窗口，请创建 Cmd.exe 的桌面快捷方式，选择并按住 (或右键单击 Cmd.exe 快捷方式) ，然后选择 " **以管理员身份运行**"。
 
 ### <a name="usb-type-c-connex-tools"></a>USB 类型-C ConnEx 工具
 
@@ -173,7 +173,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
 3.  用 USB 类型-C ConnEx 固件更新微控制器。
     -   打开提升的命令提示符窗口。
     -   导航到 MUTT 软件包的位置，如 C： \\ Program Files (x86) \\ USBTest \\ * &lt; &gt; *。
-    -   运行下面的命令：
+    -   运行以下命令：
 
         **MuttUtil.exe – UpdateTabFirmware**
 
@@ -201,7 +201,7 @@ MUTT 连接试验类型 C (USB Type-C ConnEx) 硬件板是 Arduino 板的自定�
             ![将测试中的系统 (sut) 与 dtmf 一起附加](images/connexc-connect5.png)
 
 7.  请确保在代理控制器上设备管理器识别 USB 类型 C ConnEx。
-    1.  右键单击任务栏中的 "启动" 按钮，然后选择 " **设备管理器**"。
+    1.  选择并按住 (或右键单击任务栏) "开始" 按钮，然后选择 " **设备管理器**"。
     2.  展开 ** (com & LPT) ** 节点上的端口，并记下微控制器使用的 com 端口。 在此示例中，它已连接到 COM 4。
 
         ![设备管理器中的 USB 类型-C ConnEx](images/connexc-connect8.png)

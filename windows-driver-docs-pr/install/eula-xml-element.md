@@ -3,7 +3,7 @@ title: eula XML 元素
 description: eula XML 元素
 ms.assetid: ab647583-b0e1-4f40-86af-9b7923f5535c
 keywords:
-- 最终用户许可协议 XML 元素设备和驱动程序安装
+- eula XML 元素设备和驱动程序安装
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ef066a5513cfbeb3d781701fd75dced5916d0290
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3902e3a715731b7c7facae4236d4f5e4003e84be
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364100"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095373"
 ---
 # <a name="eula-xml-element"></a>eula XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**Eula** XML 元素是否包含指定包含自定义文本 DPInst EULA 页面的最终用户许可协议文本文件的两个属性的空 XML 元素。
+**Eula** xml 元素是一个空 XML 元素，该元素包含两个属性，这些属性指定一个 eula 文本文件，该文件包含 DPInst eula 页面的自定义文本。
 
 ### <a name="element-tag"></a>元素标记
 
@@ -32,7 +32,7 @@ ms.locfileid: "67364100"
 <eula>
 ```
 
-### <a name="xml-attributes"></a>XML 特性
+### <a name="xml-attributes"></a>XML 属性
 
 <table>
 <colgroup>
@@ -41,12 +41,12 @@ ms.locfileid: "67364100"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Type</strong></p></td>
-<td align="left"><p>供应商提供最终用户许可协议的类型。 此属性的值必须设置为字符串"txt"，指示一个纯文本文件。</p></td>
+<td align="left"><p><strong>类型</strong></p></td>
+<td align="left"><p>供应商提供的 EULA 的类型。 此属性的值必须设置为字符串 "txt"，这表示纯文本文件。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Path</strong></p></td>
-<td align="left"><p>一个字符串，标识包含 DPInst EULA 页面的文本的文件的名称。 最终用户许可协议文本文件必须使用 utf-8 编码进行编码。 EULA 文件必须位于 DPInst 根目录下，这是包含 DPInst 可执行文件的目录 (<em>DPInst.exe</em>)，或 DPInst 根目录下的子目录。 如果 EULA 文件的子目录中，指定是相对于 DPInst 根目录的完全限定的文件名。</p></td>
+<td align="left"><p><strong>路径</strong></p></td>
+<td align="left"><p>标识包含 DPInst EULA 页面文本的文件的名称的字符串。 EULA 文本文件必须使用 UTF-8 编码进行编码。 EULA 文件必须位于 DPInst 根目录中，该目录包含 DPInst 可执行文件 (<em>DPInst.exe</em>) ，或 DPInst 根目录下的子目录。 如果 EULA 文件位于子目录中，请指定一个相对于 DPInst 根目录的完全限定文件名。</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,14 +63,14 @@ ms.locfileid: "67364100"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>父元素</strong></p></td>
-<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>language</strong></a></p></td>
+<td align="left"><p><a href="language-xml-element.md" data-raw-source="[&lt;strong&gt;language&lt;/strong&gt;](language-xml-element.md)"><strong>语言</strong></a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>子元素</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -82,9 +82,9 @@ ms.locfileid: "67364100"
 
  
 
-### <a href="" id="comments"></a>备注
+### <a name="remarks"></a><a href="" id="comments"></a>注释
 
-下面的代码示例演示**eula**指定的元素*数据\\Eula409.txt*包含自定义最终用户许可协议文本。 *Eula409.txt*文件位于*数据*目录中，它必须是 DPInst 根目录下的子目录。 下面指定的自定义 EULA 文件的文本是使用&lt;eula&gt;标记。
+下面的代码示例演示一个 **eula** 元素，该元素 *指定 \\Eula409.txt* 包含自定义 eula 文本的数据。 *Eula409.txt*文件位于*Data*目录中，后者必须是 DPInst 根目录下的子目录。 下面显示了使用 EULA 标记指定自定义 EULA 文件的文本 &lt; &gt; 。
 
 ```cpp
 <dpinst>
@@ -98,17 +98,10 @@ ms.locfileid: "67364100"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**language**](language-xml-element.md)
-
- 
+[**语言**](language-xml-element.md)
 
  
-
-
-
-
-
 

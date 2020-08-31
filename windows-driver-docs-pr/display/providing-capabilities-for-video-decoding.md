@@ -15,20 +15,20 @@ keywords:
 - D3DDDICAPS_GETDECODECONFIGURATIONS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 805bdcecd5a8806d70ca77d3401add29c2108baf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d059062ad36fe8685e0fb7685cf31cf31eb4cc02
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829674"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063504"
 ---
 # <a name="providing-capabilities-for-video-decoding"></a>提供视频解码功能
 
 
-调用[**GetCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数时，用户模式显示驱动程序为基于请求类型（在[**D3DDDIARG\_GetCaps**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)结构的**类型**成员中指定的请求类型）提供以下功能：*GetCaps*函数的*pData*参数指向）：
+调用[**GetCaps**](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps)函数时，用户模式显示驱动程序会根据请求类型提供以下功能，这些功能可用于在*GetCaps*函数的*PData*参数指向) 的[**D3DDDIARG \_ GetCaps**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)结构的**type**成员中指定的请求类型 (：
 
-<span id="D3DDDICAPS_GETDECODEGUIDCOUNT_and_D3DDDICAPS_GETDECODEGUIDS_request_types"></span><span id="d3dddicaps_getdecodeguidcount_and_d3dddicaps_getdecodeguids_request_types"></span><span id="D3DDDICAPS_GETDECODEGUIDCOUNT_AND_D3DDDICAPS_GETDECODEGUIDS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODEGUIDCOUNT 和 D3DDDICAPS\_GETDECODEGUIDS 请求类型  
-用户模式显示驱动程序返回其支持的、用于视频加速（VA）解码的以下 Guid 的编号和列表。 Microsoft Direct3D runtime 首先会请求 Guid 数量，然后请求提供支持的 Guid 列表的请求。
+<span id="D3DDDICAPS_GETDECODEGUIDCOUNT_and_D3DDDICAPS_GETDECODEGUIDS_request_types"></span><span id="d3dddicaps_getdecodeguidcount_and_d3dddicaps_getdecodeguids_request_types"></span><span id="D3DDDICAPS_GETDECODEGUIDCOUNT_AND_D3DDDICAPS_GETDECODEGUIDS_REQUEST_TYPES"></span>D3DDDICAPS \_ GETDECODEGUIDCOUNT 和 D3DDDICAPS \_ GETDECODEGUIDS 请求类型  
+用户模式显示驱动程序返回其支持的、视频加速 (VA) 解码的以下 Guid 的列表。 Microsoft Direct3D runtime 首先会请求 Guid 数量，然后请求提供支持的 Guid 列表的请求。
 
 ```cpp
 DEFINE_GUID(DXVADDI_ModeMPEG2_MoComp, 0xe6a9f44b, 0x61b0, 0x4563,0x9e,0xa4,0x63,0xd2,0xa3,0xc6,0xfe,0x66);
@@ -76,20 +76,14 @@ DEFINE_GUID(DXVADDI_ModeVC1_D,   0x1b81beA3, 0xa0c7, 0x11d3,0xb9,0x84,0x00,0xc0,
 #define DXVADDI_ModeH264_VLD_FGT  DXVADDI_ModeH264_F
 ```
 
-<span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_and_D3DDDICAPS_GETDECODERTFORMATS_request_types"></span><span id="d3dddicaps_getdecodertformatcount_and_d3dddicaps_getdecodertformats_request_types"></span><span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_AND_D3DDDICAPS_GETDECODERTFORMATS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODERTFORMATCOUNT 和 D3DDDICAPS\_GETDECODERTFORMATS 请求类型  
-用户模式显示驱动程序将返回该数字以及它支持用于特定 DirectX VA 解码类型的呈现器目标格式列表。 Direct3D 运行时在[**D3DDDIARG\_GETCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)指向的**pInfo**成员的变量中指定特定 DirectX VA 解码类型的 GUID。
+<span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_and_D3DDDICAPS_GETDECODERTFORMATS_request_types"></span><span id="d3dddicaps_getdecodertformatcount_and_d3dddicaps_getdecodertformats_request_types"></span><span id="D3DDDICAPS_GETDECODERTFORMATCOUNT_AND_D3DDDICAPS_GETDECODERTFORMATS_REQUEST_TYPES"></span>D3DDDICAPS \_ GETDECODERTFORMATCOUNT 和 D3DDDICAPS \_ GETDECODERTFORMATS 请求类型  
+用户模式显示驱动程序将返回该数字以及它支持用于特定 DirectX VA 解码类型的呈现器目标格式列表。 Direct3D 运行时在[**D3DDDIARG \_ GETCAPS**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_getcaps)指向的**pInfo**成员变量中指定特定 DIRECTX VA 解码类型的 GUID。
 
-<span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_and_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_request_types"></span><span id="d3dddicaps_getdecodecompressedbufferinfocount_and_d3dddicaps_getdecodecompressedbufferinfo_request_types"></span><span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_AND_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODECOMPRESSEDBUFFERINFOCOUNT 和 D3DDDICAPS\_GETDECODECOMPRESSEDBUFFERINFO 请求类型  
-用户模式显示驱动程序返回有关加快视频解码所需的压缩缓冲区类型的数量和信息。 Direct3D 运行时为 D3DDDIARG\_GETCAPS 的**pInfo**成员指向的变量中的特定 DirectX VA 解码类型指定[**DXVADDI\_DECODEINPUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodeinput)结构。 用户模式显示驱动程序返回与 D3DDDIARG\_GETCAPS 的**pData**成员指定的[ **\_DXVADDI**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferinfo)数组中的压缩缓冲区类型有关的信息。
+<span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_and_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_request_types"></span><span id="d3dddicaps_getdecodecompressedbufferinfocount_and_d3dddicaps_getdecodecompressedbufferinfo_request_types"></span><span id="D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFOCOUNT_AND_D3DDDICAPS_GETDECODECOMPRESSEDBUFFERINFO_REQUEST_TYPES"></span>D3DDDICAPS \_ GETDECODECOMPRESSEDBUFFERINFOCOUNT 和 D3DDDICAPS \_ GETDECODECOMPRESSEDBUFFERINFO 请求类型  
+用户模式显示驱动程序返回有关加快视频解码所需的压缩缓冲区类型的数量和信息。 Direct3D 运行时为 D3DDDIARG GETCAPS 的**pInfo**成员指向的变量中的特定 DirectX VA 解码类型指定[**DXVADDI \_ DECODEINPUT**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodeinput)结构 \_ 。 用户模式显示驱动程序返回与 D3DDDIARG GETCAPS 的**pData**成员指定的[**DXVADDI \_ DECODEBUFFERINFO**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_decodebufferinfo)结构数组中的压缩缓冲区类型有关的信息 \_ 。
 
-<span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_and_D3DDDICAPS_GETDECODECONFIGURATIONS_request_types"></span><span id="d3dddicaps_getdecodeconfigurationcount_and_d3dddicaps_getdecodeconfigurations_request_types"></span><span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_AND_D3DDDICAPS_GETDECODECONFIGURATIONS_REQUEST_TYPES"></span>D3DDDICAPS\_GETDECODECONFIGURATIONCOUNT 和 D3DDDICAPS\_GETDECODECONFIGURATIONS 请求类型  
-用户模式显示驱动程序返回其支持的针对特定 DirectX VA 解码类型的加速解码配置的列表。 Direct3D 运行时为 D3DDDIARG\_GETCAPS 的**pInfo**成员指向的变量中的特定 DirectX VA 解码类型指定 DXVADDI\_DECODEINPUT 结构。 用户模式显示驱动程序将在 D3DDDIARG\_GETCAPS 的**pData**成员指定的[**DXVADDI\_CONFIGPICTUREDECODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_configpicturedecode)结构的数组中返回加速解码配置。
-
- 
+<span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_and_D3DDDICAPS_GETDECODECONFIGURATIONS_request_types"></span><span id="d3dddicaps_getdecodeconfigurationcount_and_d3dddicaps_getdecodeconfigurations_request_types"></span><span id="D3DDDICAPS_GETDECODECONFIGURATIONCOUNT_AND_D3DDDICAPS_GETDECODECONFIGURATIONS_REQUEST_TYPES"></span>D3DDDICAPS \_ GETDECODECONFIGURATIONCOUNT 和 D3DDDICAPS \_ GETDECODECONFIGURATIONS 请求类型  
+用户模式显示驱动程序返回其支持的针对特定 DirectX VA 解码类型的加速解码配置的列表。 Direct3D 运行时 \_ 为 D3DDDIARG GETCAPS 的 **pInfo** 成员指向的变量中的特定 DirectX VA 解码类型指定 DXVADDI DECODEINPUT 结构 \_ 。 用户模式显示驱动程序在 D3DDDIARG GETCAPS 的**pData**成员指定的[**DXVADDI \_ CONFIGPICTUREDECODE**](/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_dxvaddi_configpicturedecode)结构的数组中返回加速解码配置 \_ 。
 
  
-
-
-
-
 

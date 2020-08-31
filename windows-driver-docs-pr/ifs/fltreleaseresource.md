@@ -14,12 +14,12 @@ api_type:
 - DllExport
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0891934ca079c1bbfa929ff5a7cfbfeff803a2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8b15bd3ab9fcb49a8de32720a73441ffcb631594
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841326"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063614"
 ---
 # <a name="fltreleaseresource-routine"></a>FltReleaseResource 例程
 
@@ -35,10 +35,10 @@ VOID FltReleaseResource(
 );
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-\[中的*资源*\]  
+*资源* \[in、out\]  
 指向要释放的资源的不透明 ERESOURCE 结构的指针。
 
 <a name="return-value"></a>返回值
@@ -49,21 +49,21 @@ VOID FltReleaseResource(
 <a name="remarks"></a>备注
 -------
 
-**FltReleaseResource**释放以前通过调用[**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)或[**FltAcquireResourceShared**](fltacquireresourceshared.md)获取的资源。
+**FltReleaseResource** 释放以前通过调用 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md) 或 [**FltAcquireResourceShared**](fltacquireresourceshared.md)获取的资源。
 
-**FltReleaseResource**是[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)的包装器，用于会标准内核 APC 交付。
+**FltReleaseResource** 是 [**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite) 的包装器，用于会标准内核 APC 交付。
 
-由于**FltReleaseResource**会正常内核 APC 传递，因此不需要在调用**FltReleaseResource**后调用[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)或[**FsRtlExitFileSystem**](fsrtlexitfilesystem.md) 。
+由于**FltReleaseResource**会正常内核 APC 传递，因此不需要在调用**FltReleaseResource**后调用[**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)或[**FsRtlExitFileSystem**](fsrtlexitfilesystem.md) 。
 
-若要获取独占访问的资源，请调用[**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)。
+若要获取独占访问的资源，请调用 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)。
 
-若要获取共享访问资源，请调用[**FltAcquireResourceShared**](fltacquireresourceshared.md)。
+若要获取共享访问资源，请调用 [**FltAcquireResourceShared**](fltacquireresourceshared.md)。
 
-若要从系统资源列表中删除资源，请调用[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)。
+若要从系统资源列表中删除资源，请调用 [**ExDeleteResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)。
 
-若要初始化资源以供重用，请调用[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)。
+若要初始化资源以供重用，请调用 [**ExReinitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)。
 
-有关 ERESOURCE 结构的详细信息，请参阅内核体系结构设计指南中的[ERESOURCE 例程简介](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)。
+有关 ERESOURCE 结构的详细信息，请参阅内核体系结构设计指南中的 [ERESOURCE 例程简介](../kernel/introduction-to-eresource-routines.md) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -76,7 +76,7 @@ VOID FltReleaseResource(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">全局</a></td>
+<td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>版本</p></td>
@@ -84,15 +84,15 @@ VOID FltReleaseResource(
 </tr>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Fltkernel （包括 Fltkernel）</td>
+<td align="left">Fltkernel (包含 Fltkernel) </td>
 </tr>
 <tr class="even">
 <td align="left"><p>库</p></td>
-<td align="left">fltMgr</td>
+<td align="left">FltMgr</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>DLL</p></td>
-<td align="left">Fltmgr</td>
+<td align="left">Fltmgr.sys</td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRQL</p></td>
@@ -104,13 +104,13 @@ VOID FltReleaseResource(
 ## <a name="see-also"></a>另请参阅
 
 
-[**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)
+[**ExDeleteResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)
 
-[**ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)
+[**ExInitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)
 
-[**ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)
+[**ExReinitializeResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)
 
-[**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)
+[**ExReleaseResourceLite**](/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)
 
 [**FltAcquireResourceExclusive**](fltacquireresourceexclusive.md)
 
@@ -118,14 +118,7 @@ VOID FltReleaseResource(
 
 [**FsRtlExitFileSystem**](fsrtlexitfilesystem.md)
 
-[**KeLeaveCriticalRegion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)
+[**KeLeaveCriticalRegion**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)
 
  
-
- 
-
-
-
-
-
 

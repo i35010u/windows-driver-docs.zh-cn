@@ -14,23 +14,23 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 82ab69b6fa29526eca5920def495a3dd0ec69f83
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fcf486072739d77e5f2a6e53bbbac177e8d35be
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386901"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095539"
 ---
-# <a name="difpowermessagewake"></a>DIF_POWERMESSAGEWAKE
+# <a name="dif_powermessagewake"></a>DIF_POWERMESSAGEWAKE
 
 
-DIF_POWERMESSAGEWAKE 请求可让安装程序提供自定义 Windows 的设备属性的电源管理属性页显示的文本。
+DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备属性的 "电源管理" 属性页上显示的自定义文本。
 
 ### <a name="when-sent"></a>发送时间
 
-当用户单击的菜单项或选项卡以显示设备的属性。
+当用户单击菜单项或选项卡以显示设备的属性时。
 
-Windows 仅发送此 DIF 请求，如果设备的驱动程序支持电源管理。 否则，Windows 不显示任何设备的 power 属性。
+如果设备的驱动程序支持电源管理，Windows 只会发送此 DIF 请求。 否则，Windows 不会显示设备的任何电源属性。
 
 ### <a name="who-handles"></a>谁处理
 
@@ -60,39 +60,39 @@ Windows 仅发送此 DIF 请求，如果设备的驱动程序支持电源管理�
 ### <a name="installer-input"></a>安装程序输入
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄[设备信息集](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)，其中包含该设备。
+提供包含设备的 [设备信息集](./device-information-sets.md) 的句柄。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识设备中设备的信息集的结构。
+提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>设备安装参数   
-设备安装参数 ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 与关联*DeviceInfoData*。
+与*DeviceInfoData*关联的设备安装参数 ([**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) 。
 
-<a href="" id="class-installation-parameters"></a>类的安装参数  
-[ **SP_POWERMESSAGEWAKE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)与关联结构*DeviceInfoData*。
+<a href="" id="class-installation-parameters"></a>类安装参数  
+[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)结构与*DeviceInfoData*关联。
 
 ### <a name="installer-output"></a>安装程序输出
 
-<a href="" id="class-installation-parameters"></a>类的安装参数  
-安装程序可以修改[ **SP_POWERMESSAGEWAKE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)提供设备的 power 属性页的自定义文本。
+<a href="" id="class-installation-parameters"></a>类安装参数  
+安装程序可以修改 [**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a) 以提供设备的电源属性页的自定义文本。
 
 ### <a name="installer-return-value"></a>安装程序返回值
 
-辅助安装程序通常返回 NO_ERROR、 ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
+共同安装程序通常返回 NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED 或 Win32 错误代码。
 
-类安装程序返回 NO_ERROR，如果它已成功提供 power 属性文本。 否则，类安装程序将返回 ERROR_DI_DO_DEFAULT 或 Win32 错误代码。
+如果类安装程序成功提供了 power properties 文本，则它会返回 NO_ERROR。 否则，类安装程序将返回 ERROR_DI_DO_DEFAULT 或 Win32 错误代码。
 
-### <a name="default-dif-code-handler"></a>默认 DIF 代码处理程序
+### <a name="default-dif-code-handler"></a>默认的 DIF 代码处理程序
 
 无
 
 ### <a name="installer-operation"></a>安装程序操作
 
-DIF_POWERMESSAGEWAKE 请求可让安装程序提供 Windows 设备的 power 属性页显示的文本。
+DIF_POWERMESSAGEWAKE 请求允许安装程序提供 Windows 在设备的电源属性页面上显示的文本。
 
-如果共同安装程序提供电源属性文本，它应在其后续处理阶段中实现。 辅助安装程序时应小心覆盖由处理请求之前共同安装程序的安装程序提供的任何电源属性文本。
+如果共同安装程序提供了电源属性文本，它应在其后处理阶段执行此操作。 在将处理请求的安装程序提供的任何电源属性文本覆盖到共同安装程序之前，共同安装程序应小心。
 
-有关差异代码的详细信息，请参阅[处理 DIF 代码](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)。
+有关 DIF 代码的详细信息，请参阅 [处理 Dif 代码](./handling-dif-codes.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -104,31 +104,24 @@ DIF_POWERMESSAGEWAKE 请求可让安装程序提供 Windows 设备的 power 属�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>Microsoft Windows 2000 和更高版本的 Windows 支持。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>在 Microsoft Windows 2000 和更高版本的 Windows 中受支持。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h （包括 Setupapi.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Setupapi.log (包含 Setupapi.log) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
 
-[**SP_POWERMESSAGEWAKE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)
-
- 
+[**SP_POWERMESSAGEWAKE_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_powermessagewake_params_a)
 
  
-
-
-
-
-
 

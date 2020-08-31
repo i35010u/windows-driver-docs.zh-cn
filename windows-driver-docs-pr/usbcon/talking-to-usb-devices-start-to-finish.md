@@ -3,12 +3,12 @@ description: 使用 Windows 8.1 中引入的 Windows 运行时 Api 编写允许�
 title: 与 USB 设备通信，从开始到完成（UWP 应用）
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64084c547c9c57b63473b7ded5d2360c0eac4a2e
-ms.sourcegitcommit: 15caaf6d943135efcaf9975927ff3933957acd5d
+ms.openlocfilehash: 44966d30756c57880b5bd251b63cc135030de139
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88968680"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056945"
 ---
 # <a name="talking-to-usb-devices-start-to-finish-uwp-app"></a>与 USB 设备通信，从开始到完成（UWP 应用）
 
@@ -120,7 +120,7 @@ ms.locfileid: "88968680"
 <td><p><strong>快速入门：</strong> <a href="updating-the-app-manifest-with-usb-device-capabilities.md" data-raw-source="[How to add USB device capabilities to the app manifest](updating-the-app-manifest-with-usb-device-capabilities.md)">如何将 USB 设备功能添加到应用程序清单</a></p>
 <p>在文本编辑器中打开 appxmanifest.xml 文件，并添加<strong>Name</strong>属性设置为 "usb" 的<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability" data-raw-source="[&lt;strong&gt;DeviceCapability&lt;/strong&gt;](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)"><strong>DeviceCapability</strong></a>元素，如本示例中所示。</p>
 <div class="alert">
-<strong>注意</strong>   无法在 Visual Studio 2013 中修改 USB 设备功能。 必须右键单击 <strong>解决方案资源管理器</strong> 中的 appxmanifest.xml 文件，然后选择 " <strong>打开方式 ...</strong>"，然后选择 " <strong>XML (文本) 编辑器</strong>"。 文件以纯 XML 格式打开。
+<strong>注意</strong>   无法在 Visual Studio 2013 中修改 USB 设备功能。 您必须选择并按住 (或右键单击) <strong>解决方案资源管理器</strong> 中的 appxmanifest.xml 文件，然后选择 " <strong>打开方式 ...</strong>"，然后选择 " <strong>XML (文本) 编辑器</strong>"。 文件以纯 XML 格式打开。
 </div>
 <div>
  
@@ -281,7 +281,7 @@ ms.locfileid: "88968680"
 <div>
  
 </div></li>
-<li>打开 " <strong>完成</strong> " 选项卡。选中 "将 <strong>包复制到系统的本地元数据存储</strong> " 复选框。</li>
+<li>打开 " <strong>完成</strong> " 选项卡。选中 " <strong>将包复制到系统的本地元数据存储</strong> " 复选框。</li>
 <li>连接设备，在 "控制面板" 中，打开 " <strong>查看设备和打印机</strong> " 并验证设备的图标是否正确。</li>
 </ol>
 <p><strong>在示例中找到它：</strong> 请参阅 DeviceMetadata 文件夹。</p></td>

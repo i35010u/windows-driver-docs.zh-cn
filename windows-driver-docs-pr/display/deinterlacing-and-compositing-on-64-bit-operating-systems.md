@@ -8,22 +8,22 @@ keywords:
 - DXVA_DeinterlaceBltEx
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c9cc9c9a11dfe4908148d650801f0b8dcbd2b3d6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7b9fc35163062b2f6a06a461c87a88168aefcd4f
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839760"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063942"
 ---
 # <a name="deinterlacing-and-compositing-on-64-bit-operating-systems"></a>在 64 位操作系统上进行反交错与合成
 
 
 本部分仅适用于 Windows Server 2003 SP1 及更高版本以及 Windows XP SP2 及更高版本。
 
-为了确保由32位应用程序启动的子[流组合操作的取消隔行扫描](performing-deinterlacing-with-substream-compositing-operations.md)在64位操作系统上成功运行，显示驱动程序代码必须首先检测应用程序是32位还是64位。 若要执行检测，驱动程序应检查应用程序通过的[**DXVA\_DeinterlaceBltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex)结构的大小。 如果驱动程序确定初始应用程序为32位，则驱动程序应通过 thunk 处理取消隔行扫描操作。 驱动程序应使用[**DXVA\_VideoSample32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample32)和[**DXVA\_DeinterlaceBltEx32**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex32)结构来执行隔行扫描 thunk。 有关 thunk 的详细信息，请参阅[64 位驱动程序中的支持32位 i/o](https://docs.microsoft.com/windows-hardware/drivers/kernel/supporting-32-bit-i-o-in-your-64-bit-driver)。
+为了确保由32位应用程序启动的子 [流组合操作的取消隔行扫描](performing-deinterlacing-with-substream-compositing-operations.md) 在64位操作系统上成功运行，显示驱动程序代码必须首先检测应用程序是32位还是64位。 若要执行检测，驱动程序应检查应用程序通过的 [**DXVA \_ DeinterlaceBltEx**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex) 结构的大小。 如果驱动程序确定初始应用程序为32位，则驱动程序应通过 thunk 处理取消隔行扫描操作。 驱动程序应使用 [**DXVA \_ VideoSample32**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample32) 和 [**DXVA \_ DeinterlaceBltEx32**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex32) 结构来执行隔行扫描 thunk。 有关 thunk 的详细信息，请参阅 [64 位驱动程序中的支持32位 i/o](../kernel/supporting-32-bit-i-o-in-your-64-bit-driver.md)。
 
-**注意**   在为64位编译驱动程序代码时， [**DXVA\_VideoSample2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)结构包含两个额外的 DWORD 成员，以使32位版本的 DXVA\_VideoSample2 的大小与64位版本不同。 由于有8个字节的对齐方式，32位编译器会向32位版本的末尾添加4个字节的填充，而无需使用这两个额外的 DWORD 成员--使32位版本与64位版本大小相同，甚至考虑指针大小的差异介于32位和64位之间。
-由于 DXVA\_VideoSample2 中包含两个额外的 DWORD 成员用于64位编译，因此该驱动程序可以根据[**DXVA\_DeinterlaceBltEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex)结构的**大小**成员来区分32位和64位版本。
+**注意**   如果为64位编译了驱动程序代码，则[**DXVA \_ VideoSample2**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_videosample2)结构将包含两个额外的 DWORD 成员，以使32位版本的 DXVA VideoSample2 的大小与 \_ 64 位版本不同。 由于有8个字节的对齐方式，32位编译器会向32位版本的末尾添加4个字节的填充，这就不需要这两个额外的 DWORD 成员--使32位版本与64该版本的版本相同，甚至还考虑到指针大小在32与64位之间的差异。
+如果 DXVA VideoSample2 中包含两个额外 \_ 的 DWORD 成员用于64位编译，则驱动程序可以根据[**DXVA \_ DeinterlaceBltEx**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_deinterlacebltex)结构的**大小**成员来区分32位和64位版本。
 
  
 
@@ -50,10 +50,4 @@ case DXVA_DeinterlaceBltExFnCode:
 ```
 
  
-
- 
-
-
-
-
 

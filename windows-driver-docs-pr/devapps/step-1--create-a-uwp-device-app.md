@@ -4,12 +4,12 @@ description: 本主题介绍使用 Microsoft Visual Studio 创建 UWP 设备应�
 ms.assetid: 4D8240AD-F589-4623-BC6E-47E304831250
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c4f753b5f068ad378d6b410d1073749960e817
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: 1c4b7a8e817544f3a4c3867342d2074f704375f5
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968188"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095121"
 ---
 # <a name="step-1-create-a-uwp-device-app"></a>步骤1：创建 UWP 设备应用
 
@@ -18,9 +18,9 @@ ms.locfileid: "85968188"
 
 本主题介绍使用 Microsoft Visual Studio 创建 UWP 设备应用程序的基本过程。 了解所有 UWP 设备应用共用的任务。
 
-UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创建它来充当其内部或外围设备。 通过使用设备元数据，设备应用可以运行特权操作并在设备接通电源时自动安装。 有关 UWP 设备应用的详细信息，请参阅 "[满足 uwp 设备应用](meet-uwp-device-apps.md)"。
+UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创建它来充当其内部或外围设备。 通过使用设备元数据，设备应用可以运行特权操作并在设备接通电源时自动安装。 有关 UWP 设备应用的详细信息，请参阅 " [满足 uwp 设备应用](meet-uwp-device-apps.md)"。
 
-**注意**   本主题是分步序列的一部分。 有关简介，请参阅[构建 UWP 设备应用循序渐进](build-a-uwp-device-app-step-by-step.md)。
+**注意**   本主题是分步序列的一部分。 有关简介，请参阅 [构建 UWP 设备应用循序渐进](build-a-uwp-device-app-step-by-step.md) 。
 
  
 
@@ -31,7 +31,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 ### <a name="span-idcreating_the_windows_store_app_projectspanspan-idcreating_the_windows_store_app_projectspanspan-idcreating_the_windows_store_app_projectspancreating-the-microsoft-store-app-project"></a><span id="Creating_the_Windows_Store_app_project"></span><span id="creating_the_windows_store_app_project"></span><span id="CREATING_THE_WINDOWS_STORE_APP_PROJECT"></span>创建 Microsoft Store 应用项目
 
-在开始之前，需要安装 Visual Studio 并创建一个 UWP 应用项目。 如果尚未执行此操作，可在[此处下载工具](https://go.microsoft.com/fwlink/p/?LinkId=302196)。 若要开始使用 Microsoft Visual Studio，请参阅[使用 Visual Studio 开发 UWP 应用](https://go.microsoft.com/fwlink/p/?LinkID=267230)。
+在开始之前，需要安装 Visual Studio 并创建一个 UWP 应用项目。 如果尚未执行此操作，可在 [此处下载工具](https://go.microsoft.com/fwlink/p/?LinkId=302196)。 若要开始使用 Microsoft Visual Studio，请参阅 [使用 Visual Studio 开发 UWP 应用](https://go.microsoft.com/fwlink/p/?LinkID=267230)。
 
 ### <a name="span-iddevice_driver_requirementsspanspan-iddevice_driver_requirementsspanspan-iddevice_driver_requirementsspandevice-driver-requirements"></a><span id="Device_driver_requirements"></span><span id="device_driver_requirements"></span><span id="DEVICE_DRIVER_REQUIREMENTS"></span>设备驱动程序要求
 
@@ -39,16 +39,16 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 | 设备应用或 API                      | 驱动程序信息                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 适用于照相机的 UWP 设备应用   | 照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AvStream 驱动程序模型的详细信息，请参阅 Windows 驱动程序工具包中的[AvStream 概述](https://go.microsoft.com/fwlink/p/?LinkId=273032)。 可以通过驱动程序安装包提供附加组件（称为 "驱动程序 MFT"），以提供照相机的自定义效果。 有关详细信息，请参阅适用[于照相机的 Windows 应用商店设备应用](uwp-device-apps-for-webcams.md)。 |
-| 适用于打印机的 UWP 设备应用 | 打印机必须使用 v4 打印机驱动程序。 有关详细信息，请参阅[开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)。                                                                                                                                                                                                                                                                                                                                                         |
+| 适用于照相机的 UWP 设备应用   | 照相机的驱动程序必须使用 AvStream 驱动程序模型。 有关 AvStream 驱动程序模型的详细信息，请参阅 Windows 驱动程序工具包中的 [AvStream 概述](https://go.microsoft.com/fwlink/p/?LinkId=273032) 。 其他组件（称为 "驱动程序 MFT" (media foundation 转换) ）可随驱动程序安装包一起提供，以提供照相机的自定义效果。 有关详细信息，请参阅适用 [于照相机的 Windows 应用商店设备应用](uwp-device-apps-for-webcams.md)。 |
+| 适用于打印机的 UWP 设备应用 | 打印机必须使用 v4 打印机驱动程序。 有关详细信息，请参阅 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231) 。                                                                                                                                                                                                                                                                                                                                                         |
 | USB Api                               | 若要使用 Windows 运行时的[Windows Usb](https://go.microsoft.com/fwlink/p/?LinkId=306694)api，你的设备必须与 Winusb.sys 驱动程序兼容。                                                                                                                                                                                                                                                                                                                                      |
-| 人体学接口设备（HID） Api      | HID Api 设计用于 USB、蓝牙、蓝牙智能和 I2C 传输。 若要使用 Windows 运行时[HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) api，你的设备必须与传输所需的 HIDClass.sys 驱动程序和驱动程序兼容。 有关详细信息，请参阅[HID 体系结构](https://docs.microsoft.com/previous-versions/jj126193(v=vs.85))。                                                                                                            |
+| 人体学接口设备 (HID) Api      | HID Api 设计用于 USB、蓝牙、蓝牙智能和 I2C 传输。 若要使用 Windows 运行时[HumanInterfaceDevice](https://go.microsoft.com/fwlink/p/?LinkId=306697) api，你的设备必须与传输所需的 HIDClass.sys 驱动程序和驱动程序兼容。 有关详细信息，请参阅 [HID 体系结构](/previous-versions/jj126193(v=vs.85))。                                                                                                            |
 | 蓝牙 GATT Api                    | 若要使用 Windows 运行时蓝牙 GATT Api， [bluetooth.genericattributeprofile 替换](https://go.microsoft.com/fwlink/p/?LinkId=306698)，设备必须与 BthLEEnum.sys 驱动程序兼容。                                                                                                                                                                                                                                                                                   |
 | 蓝牙 RFCOMM Api                  | 若要使用 Windows 运行时蓝牙 RFCOMM Api， [RFCOMM](https://go.microsoft.com/fwlink/p/?LinkId=306699)，你的设备必须与 Rfcomm.sys 和 BthEnum.sys 驱动程序兼容。                                                                                                                                                                                                                                                                                    |
 
  
 
-**重要提示**   使用自定义驱动程序的设备访问权限需要 Microsoft 的批准。 想要使用自定义驱动程序实现专用设备的设备访问的 Oem 和 Ihv 应该首先联系其 Microsoft 联系人以与 Windows 生态系统团队讨论他们的方案。 有关详细信息，请参阅[适用于 PC 内部专用设备的 UWP 设备应用设计指南](https://go.microsoft.com/fwlink/p/?LinkId=306693)中的 "自定义驱动程序访问模型" 部分。
+**重要提示**   使用自定义驱动程序的设备访问权限需要 Microsoft 的批准。 想要使用自定义驱动程序实现专用设备的设备访问的 Oem 和 Ihv 应该首先联系其 Microsoft 联系人以与 Windows 生态系统团队讨论他们的方案。 有关详细信息，请参阅 [适用于 PC 内部专用设备的 UWP 设备应用设计指南](https://go.microsoft.com/fwlink/p/?LinkId=306693)中的 "自定义驱动程序访问模型" 部分。
 
  
 
@@ -57,14 +57,14 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 需要 Microsoft Store 上的开发人员帐户。 在后续步骤中创作应用程序清单和设备元数据时，需要发布者名称。 创建存储配置文件后，还可以为应用保留一个名称。
 
-若要创建 Microsoft Store 帐户，请在 " [UWP 应用注册" 页上](https://go.microsoft.com/fwlink/p/?LinkId=302197)，单击 "**立即注册**"。
+若要创建 Microsoft Store 帐户，请在 " [UWP 应用注册" 页上](https://go.microsoft.com/fwlink/p/?LinkId=302197) ，单击 " **立即注册**"。
 
-输入**发布者显示名称**后，请输入应用应在 Microsoft Store 中列出的名称。 在帐户验证完成之前，你将无法更改此名称。 仔细挑选名称，因为客户会在浏览时看到此名称，并将通过此名称来了解你的应用。
+输入 **发布者显示名称**后，请输入应用应在 Microsoft Store 中列出的名称。 在帐户验证完成之前，你将无法更改此名称。 仔细挑选名称，因为客户会在浏览时看到此名称，并将通过此名称来了解你的应用。
 
 ## <a name="span-idassociate_your_app_with_the_windows_storespanspan-idassociate_your_app_with_the_windows_storespanspan-idassociate_your_app_with_the_windows_storespanassociate-your-app-with-the-microsoft-store"></a><span id="Associate_your_app_with_the_Windows_Store"></span><span id="associate_your_app_with_the_windows_store"></span><span id="ASSOCIATE_YOUR_APP_WITH_THE_WINDOWS_STORE"></span>将你的应用与 Microsoft Store
 
 
-创建 Microsoft Store 帐户并选择发布者名称后，将应用程序与 Microsoft Store 相关联。 这样做会自动将以下值下载到本地应用包清单文件中，名为**appxmanifest.xml**。
+创建 Microsoft Store 帐户并选择发布者名称后，将应用程序与 Microsoft Store 相关联。 这样做会自动将以下值下载到本地应用包清单文件中，名为 **appxmanifest.xml**。
 
 -   包显示名称
 
@@ -80,17 +80,17 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 **若要将应用与 Microsoft Store**
 
-1.  在**解决方案资源管理器**中，右键单击项目，然后选择 **"将 &gt; 应用与应用商店关联"**。
+1.  在 **解决方案资源管理器**中，右键单击项目，然后选择 **"将 &gt; 应用与应用商店关联"**。
 
-2.  在 "将**应用与 Microsoft Store 关联**" 对话框中，单击 "**下一步**"。 系统将提示你登录到 Microsoft Store。
+2.  在 "将 **应用与 Microsoft Store 关联** " 对话框中，单击 " **下一步**"。 系统将提示你登录到 Microsoft Store。
 
-3.  在 "**登录**" 页上，登录到 Microsoft Store，然后单击 "**下一步**"。
+3.  在 " **登录** " 页上，登录到 Microsoft Store，然后单击 " **下一步**"。
 
-4.  在 "**为此包选择应用程序名称**" 页上，选择保留的**应用名称**。 你还可以单击 "**保留名称**"，以将其保留 Microsoft Store。
+4.  在 " **为此包选择应用程序名称** " 页上，选择保留的 **应用名称** 。 你还可以单击 " **保留名称** "，以将其保留 Microsoft Store。
 
-5.  选择应用名称后，单击 "**下一步**"。
+5.  选择应用名称后，单击 " **下一步**"。
 
-6.  在 "摘要" 页上，查看您选择的值。 如果看上去不错，请单击 "**关联**"。 否则，单击 "**上一**步" 返回并修复任何错误。 单击 "**关联**" 会自动将发布者显示名称和其他值下载到应用程序包清单中。
+6.  在 "摘要" 页上，查看您选择的值。 如果看上去不错，请单击 " **关联**"。 否则，单击 " **上一** 步" 返回并修复任何错误。 单击 " **关联** " 会自动将发布者显示名称和其他值下载到应用程序包清单中。
 
 ## <a name="span-idreview_the_app_package_manifestspanspan-idreview_the_app_package_manifestspanspan-idreview_the_app_package_manifestspanreview-the-app-package-manifest"></a><span id="Review_the_app_package_manifest"></span><span id="review_the_app_package_manifest"></span><span id="REVIEW_THE_APP_PACKAGE_MANIFEST"></span>查看应用程序包清单
 
@@ -99,20 +99,20 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 **查看应用程序包清单**
 
-1.  在**解决方案资源管理器**中，双击**appxmanifest.xml**文件。 这将打开清单设计器。 清单设计器是一个图形 UI，适用于基础 XML 文件。
+1.  在 **解决方案资源管理器**中，双击 **appxmanifest.xml** 文件。 这将打开清单设计器。 清单设计器是一个图形 UI，适用于基础 XML 文件。
 
-2.  在清单设计器中打开该文件后，单击 "**打包**" 选项卡以查看包和发布服务器信息。
+2.  在清单设计器中打开该文件后，单击 " **打包** " 选项卡以查看包和发布服务器信息。
 
-    **注意**   若要查看 XML 中的相同信息，请右键单击**appxmanifest.xml** ，然后选择 "**打开方式 &gt; Xml （文本）编辑器**"。
+    **注意**   若要查看 XML 中的相同信息，请右键单击**appxmanifest.xml** ，然后选择 "**打开方式 &gt; Xml (文本) 编辑器**"。
 
      
 
-3.  记下你的包名称、发布者名称和应用 ID。 下一步需要用到它们，[步骤2：创建设备元数据](step-2--create-device-metadata.md)。
+3.  记下你的包名称、发布者名称和应用 ID。 下一步需要用到它们， [步骤2：创建设备元数据](step-2--create-device-metadata.md)。
 
 ## <a name="span-idchoose_a_publisher_certificatespanspan-idchoose_a_publisher_certificatespanspan-idchoose_a_publisher_certificatespanchoose-a-publisher-certificate"></a><span id="Choose_a_publisher_certificate"></span><span id="choose_a_publisher_certificate"></span><span id="CHOOSE_A_PUBLISHER_CERTIFICATE"></span>选择发布者证书
 
 
-使用清单设计器查看应用程序包清单时，请选择与清单中的**发布者**名称匹配的发行者证书。 当清单设计器打开时，在 "**打包**" 选项卡上，单击 "**选择证书**" 以选择相应的证书。
+使用清单设计器查看应用程序包清单时，请选择与清单中的 **发布者** 名称匹配的发行者证书。 当清单设计器打开时，在 " **打包** " 选项卡上，单击 " **选择证书** " 以选择相应的证书。
 
 ## <a name="span-iddevelop_your_windows_store_device_appspanspan-iddevelop_your_windows_store_device_appspanspan-iddevelop_your_windows_store_device_appspandevelop-your-uwp-device-app"></a><span id="Develop_your_Windows_Store_device_app"></span><span id="develop_your_windows_store_device_app"></span><span id="DEVELOP_YOUR_WINDOWS_STORE_DEVICE_APP"></span>开发 UWP 设备应用
 
@@ -121,15 +121,15 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 
 ### <a name="span-iddevice_capabilitiesspanspan-iddevice_capabilitiesspanspan-iddevice_capabilitiesspandevice-capabilities"></a><span id="Device_capabilities"></span><span id="device_capabilities"></span><span id="DEVICE_CAPABILITIES"></span>设备功能
 
-若要访问你的设备，你可能需要在应用包清单中指定设备功能。 这些是通过应用程序的项目中的 appxmanifest.xml 文件的[DeviceCapability](https://go.microsoft.com/fwlink/p/?LinkId=306696)元素指定的。 请注意，必须手动指定某些设备功能。 有关详细信息，请参阅[如何在包清单中指定设备功能](https://go.microsoft.com/fwlink/p/?LinkID=306695)。
+若要访问你的设备，你可能需要在应用包清单中指定设备功能。 这些是通过应用程序的项目中的 appxmanifest.xml 文件的 [DeviceCapability](https://go.microsoft.com/fwlink/p/?LinkId=306696) 元素指定的。 请注意，必须手动指定某些设备功能。 有关详细信息，请参阅 [如何在包清单中指定设备功能](https://go.microsoft.com/fwlink/p/?LinkID=306695)。
 
 ### <a name="span-idautoplay_for_windows_store_device_appsspanspan-idautoplay_for_windows_store_device_appsspanspan-idautoplay_for_windows_store_device_appsspanautoplay-for-uwp-device-apps"></a><span id="AutoPlay_for_Windows_Store_device_apps"></span><span id="autoplay_for_windows_store_device_apps"></span><span id="AUTOPLAY_FOR_WINDOWS_STORE_DEVICE_APPS"></span>UWP 设备应用的自动播放
 
-设备接通电源时，自动播放会默认启动你的应用。 若要使用此功能，你将需要编辑应用包清单和设备元数据。 有关详细信息，请参阅[UWP 设备应用的自动播放](autoplay-for-uwp-device-apps.md)。
+设备接通电源时，自动播放会默认启动你的应用。 若要使用此功能，你将需要编辑应用包清单和设备元数据。 有关详细信息，请参阅 [UWP 设备应用的自动播放](autoplay-for-uwp-device-apps.md)。
 
 ### <a name="span-idsync_or_update_your_device_in_the_backgroundspanspan-idsync_or_update_your_device_in_the_backgroundspanspan-idsync_or_update_your_device_in_the_backgroundspansync-or-update-your-device-in-the-background"></a><span id="Sync_or_update_your_device_in_the_background"></span><span id="sync_or_update_your_device_in_the_background"></span><span id="SYNC_OR_UPDATE_YOUR_DEVICE_IN_THE_BACKGROUND"></span>在后台同步或更新设备
 
-你可以通过使用设备后台任务从 UWP 设备应用同步或更新设备。 若要使用此功能，需要将应用指定为设备元数据中的特权应用。 有关详细信息，请参阅[UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)。
+你可以通过使用设备后台任务从 UWP 设备应用同步或更新设备。 若要使用此功能，需要将应用指定为设备元数据中的特权应用。 有关详细信息，请参阅 [UWP 设备应用的设备同步和更新](device-sync-and-update-for-uwp-device-apps.md)。
 
 ### <a name="span-idlearn_morespanspan-idlearn_morespanspan-idlearn_morespanlearn-more"></a><span id="Learn_more"></span><span id="learn_more"></span><span id="LEARN_MORE"></span>了解更多信息
 
@@ -147,7 +147,7 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 ## <a name="span-iduse_the_windows_app_certification_kitspanspan-iduse_the_windows_app_certification_kitspanspan-iduse_the_windows_app_certification_kitspanuse-the-windows-app-certification-kit"></a><span id="Use_the_Windows_App_Certification_Kit"></span><span id="use_the_windows_app_certification_kit"></span><span id="USE_THE_WINDOWS_APP_CERTIFICATION_KIT"></span>使用 Windows 应用程序认证工具包
 
 
-若要为应用程序提供认证，请在提交应用程序进行认证并在 Microsoft Store 中列出之前，在计算机上对其进行验证和测试。 有关详细信息，请参阅[Windows 应用程序认证包](https://go.microsoft.com/fwlink/p/?LinkId=273040)。
+若要为应用程序提供认证，请在提交应用程序进行认证并在 Microsoft Store 中列出之前，在计算机上对其进行验证和测试。 有关详细信息，请参阅 [Windows 应用程序认证包](https://go.microsoft.com/fwlink/p/?LinkId=273040)。
 
 ## <a name="span-idnext_stepspanspan-idnext_stepspanspan-idnext_stepspannext-step"></a><span id="Next_step"></span><span id="next_step"></span><span id="NEXT_STEP"></span>下一步
 
@@ -155,10 +155,4 @@ UWP 设备应用是一种特殊类型的 UWP 应用，设备制造商可以创�
 [步骤2：创建设备元数据](step-2--create-device-metadata.md)
 
  
-
- 
-
-
-
-
 

@@ -1,62 +1,62 @@
 ---
 title: 安装传感器驱动程序
-description: 本主题演示如何开发板上安装传感器驱动程序。
+description: 本主题说明如何在开发板上安装传感器驱动程序。
 ms.assetid: 01CC1903-A36B-4ECC-856D-6196EC606973
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cda94f5dc8955bce05a900764d818c967f15779c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e3b6de37a8f089e993272c9512575e31c048a70f
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345256"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056961"
 ---
 # <a name="install-the-sensor-driver"></a>安装传感器驱动程序
 
 
-本主题演示如何在开发板上安装传感器驱动程序后更新辅助系统描述表 (SSDT) 的开发板。
+本主题说明如何在开发板上安装传感器驱动程序，并在为开发面板 (SSDT) 更新辅助系统说明表后安装该驱动程序。
 
-本主题使用 Shark Cove 开发板和 ADXL345 加速感应器作为案例研究，以帮助解释开发板上安装传感器驱动程序的过程。 因此如果你想要执行本主题中介绍的任务，您必须首先在 Shark Cove 上安装操作系统。 有关如何执行此操作的详细信息，请参阅[下载适用于 Windows 10 的工具包和工具](https://docs.microsoft.com/windows-hardware/get-started/adk-install)，并按照说明安装 Windows 10。
+本主题使用带 Cove 开发板和 ADXL345 加速感应器作为案例研究，以帮助说明在开发板上安装传感器驱动程序的过程。 因此，如果要执行本主题中所述的任务，必须先在带 Cove 上安装操作系统。 有关如何执行此操作的详细信息，请参阅 [下载适用于 windows 10 的工具包和工具](https://docs.microsoft.com/windows-hardware/get-started/adk-install)，并按照说明安装 windows 10。
 
-在完成上 Shark Cove，请参阅安装操作系统后[生成传感器驱动程序](build-the-sensor-driver.md)若要了解如何构建在 Microsoft Visual Studio 中的驱动程序。 然后返回此处继续。
+在带 Cove 上完成操作系统的安装后，请参阅 [构建传感器驱动程序](build-the-sensor-driver.md) 以了解如何在 Microsoft Visual Studio 中构建驱动程序。 然后返回此处继续。
 
-加速感应器附加到通过 I2C 总线 Shark Cove。 通过高级配置和电源接口 (ACPI) 枚举连接到 I2C 总线的外围设备。 因此加速感应器的示例驱动程序开发而不是插支持 ACPI。
+加速感应通过 I2C 总线附加到带 Cove。 通过高级配置和电源接口 (ACPI) 枚举连接到 I2C 总线的外围网络。 因此，开发人员的示例驱动程序是为支持 ACPI 而不是即插即用而开发的。
 
-若要使 Shark Cove ACPI 驱动程序的新设备 （加速感应器） 注意 I2C 总线上，必须将加速感应器有关的信息添加到 Shark Cove 在 SSDT 中。 下表描述的硬件资源和中断要求的硬件平台的设备，包括连接的外围设备，加速感应器等。
+若要使带 Cove 的 ACPI 驱动程序知道 (I2C 总线上的加速感应) ，则必须将有关该加速度的信息添加到带 Cove 上的 SSDT。 下表描述硬件平台设备的硬件资源和中断要求，包括与加速感应的连接外围设备。
 
 ## <a name="before-you-begin"></a>开始之前
 
 
-在开始执行如下所述的任务之前，请确保确认 Shark Cove 设置下图中所示：
+在开始执行下面所述的任务之前，请确保已设置带 Cove，如下图所示：
 
-![建议的安装 shark cove 板](images/sharkscove-setup.png)
+![建议用于带 cove 板的设置](images/sharkscove-setup.png)
 
-## <a name="retrieve-and-review-the-default-ssdt"></a>检索和查看默认的 SSDT
+## <a name="retrieve-and-review-the-default-ssdt"></a>检索和查看默认 SSDT
 
 
-本部分演示如何使用 ACPI 源语言 (ASL) 编译器将为 Shark Cove，检索工厂默认 SSDT，然后查看它。 您将学习如何使用已更新替换默认的 SSDT。
+本部分演示如何使用 ACPI 源语言 (ASL) 编译器检索带 Cove 的出厂默认 SSDT，然后查看它。 你还将了解如何使用更新的 SSDT 替换默认值。
 
-1. 在开发计算机上导航到要复制 ASL 编译器的以下位置： **c:\\Program Files (x86)\\Windows 工具包\\10\\工具\\x86\\ACPIVerify**
-2. 复制*Asl.exe*文件，并将其保存到闪存驱动器。
+1. 在开发计算机上，导航到以下位置以将 ASL 编译器： **c： \\ Program 文件复制 (x86) \\ Windows 工具包 \\ 10 \\ Tools \\ x86 \\ ACPIVerify**
+2. 复制 *Asl.exe* 文件，并将其保存到闪存驱动器。
 
-3. 在 Shark Cove 上, 创建**工具**文件夹的根目录中。 然后将闪存驱动器附加到 Shark Cove USB 集线器，并复制*Asl.exe*的文件**工具**文件夹。
+3. 在带 Cove 上，在根目录中创建一个 " **工具** " 文件夹。 然后，将闪存驱动器连接到带 Cove 的 USB 集线器，并将 *Asl.exe* 文件复制到 " **Tools** " 文件夹中。
 
-4. 打开命令提示符窗口，以管理员身份，并输入以下命令： **cd\\工具**
-**dir**请确保*Asl.exe*在目录中列出文件。
+4. 以管理员身份打开命令提示符窗口，然后输入以下命令： **cd \\ 工具** 
+ **目录**确保*Asl.exe*文件列在目录中。
 
-5. 调用 ASL 编译器和 ASL 文件创建通过输入以下命令： **asl /tab = ssdt**
-6. 请确保 ASL 文件已成功创建，可以通过输入以下命令： **dir ssdt.asl**
-7. 在记事本中打开 ASL 文件，通过输入以下命令：**记事本 ssdt.asl**查看 ASL 文件，并请注意，没有到加速感应器或 I2C 总线的引用。
+5. 通过输入以下命令调用 ASL 编译器并创建 ASL 文件： **ASL/tab = ssdt**
+6. 输入以下命令，确保已成功创建 ASL 文件： **dir ssdt. ASL**
+7. 输入以下命令，在记事本中打开 ASL 文件： **记事本 ssdt. ASL** 查看 ASL 文件，并且注意没有对加速感应程序或 I2C 总线的引用。
 
-8. 关闭记事本。 然后输入以下命令，在命令提示符窗口中，若要重命名*ssdt.asl*文件。
-**ren ssdt.asl ssdt old.asl**然后使用**dir**命令，确保该文件现在作为列出*ssdt old.asl*。
+8. 关闭记事本。 然后，在命令提示符窗口中输入以下命令，重命名 *ssdt asl* 文件。
+**ren ssdt. asl ssdt-old. asl** 然后，使用 **dir** 命令确保该文件现在列为 *ssdt-old. asl*。
 
 ## <a name="update-the-default-ssdt"></a>更新默认 SSDT
 
 
-执行以下任务来更新 SSDT，并将其替换工厂默认版本加载。 已更新的 SSDT 将存储在内存中，调用推迟*电池供电 RAM*。 因此请确保与 Shark Cove 一起提供的按钮单元格 （电池） 插入其套接字。
+执行以下任务以更新 SSDT，并将其加载到替换出厂默认版本。 更新后的 SSDT 将存储在称为 *备有电池的 RAM*的内存大中。 因此，请确保带 Cove 附带的按钮单元格 (电池) 插入其插槽中。
 
-1. 复制以下更新的 SSDT 并将其粘贴到记事本的新实例。
+1. 复制以下已更新的 SSDT，并将其粘贴到记事本的新实例中。
 
     ```cpp
     // CreatorID=INTL  CreatorRev=20.14.805
@@ -143,65 +143,65 @@ ms.locfileid: "63345256"
     }
     ```
 
-2. 在记事本中，单击**文件** &gt; **另存为**。 然后单击**另存为类型**下拉列表中，然后选择**的所有文件**。
+2. 在记事本中，选择 " **文件** &gt; **另存为**"。 然后选择 " **保存类型** " 下拉框，并选择 " **所有文件**"。
 
-3. 在中**文件名**框中，键入*ssdt.asl*，然后单击**保存**，并关闭记事本。
+3. 在 " **文件名" 框中** ，键入 *ssdt*，然后选择 " **保存**"，然后关闭记事本。
 
-4. 在命令提示符窗口中，使用**dir**命令，确保您可以看到默认的文件现在列为*ssdt old.asl*，并为列出的新文件*ssdt.asl*。
+4. 在 "命令提示符" 窗口中，使用 **dir** 命令确保你可以看到现在作为 *ssdt-old*列出的默认文件，并将新文件列为 *ssdt. asl*。
 
-5. 编译*ssdt.asl*成 Shark Cove 通过输入以下命令可以理解的格式的文件： **asl ssdt.asl**
-6. 验证是否已编译的文件已成功创建在**第 3 步**通过输入以下命令： **dir ssdt.aml**应会看到*ssdt.aml*工具中列出的文件目录。
+5. 通过输入以下命令，将 *ssdt asl* 文件编译为带 Cove 可以理解的格式： **asl ssdt. asl**
+6. 通过输入以下命令验证是否已在 **步骤 3** 中成功创建已编译的文件： **dir ssdt** ，应会看到 "工具" 目录中列出的 *ssdt* 文件。
 
-7. 将已编译的文件加载到电池供电的 RAM，通过输入以下命令： **asl /loadtable ssdt.aml**
-## <a name="turn-on-testsigning"></a>启用 testsigning
+7. 输入以下命令，将编译后的文件加载到支持电池的 RAM 中： **asl/loadtable ssdt**
+## <a name="turn-on-testsigning"></a>打开 testsigning
 
 
-安装示例传感器驱动程序之前，必须启用 testsigning。 执行以下任务来启用 testsigning。 执行以下步骤安装传感器驱动程序通过**设备管理器**。
+安装示例传感器驱动程序之前，必须打开 testsigning。 执行以下任务以打开 testsigning。 执行以下步骤，通过 **设备管理器**安装传感器驱动程序。
 
-1. 在命令提示符窗口中，输入以下命令以查看是否 testsigning 已打开。<br/>
-**bcdedit /enum**
-2. 如果看到类似于下面的列表，其值设置为显示 testsigning 的条目`yes`然后跳到**第 5 步**。<br/>
-![显示 testsigning 设置为是命令提示符窗口。](images/testsigning.png)
+1. 在 "命令提示符" 窗口中，输入以下命令，查看是否已打开 testsigning。<br/>
+**bcdedit/enum**
+2. 如果看到类似于下面的列表，则显示 testsigning 的条目，并将其值设置为， `yes` 然后跳到 **步骤 5**。<br/>
+![显示 "testsigning" 设置为 "是" 的命令提示符窗口。](images/testsigning.png)
 
-3. 如果你需要启用测试签名，然后输入以下命令： **bcdedit /set testsigning 上**
+3. 如果需要启用测试签名，请输入以下命令： **bcdedit/set testsigning on**
 
-4. 重复**第 1 步**（在此练习中） 来验证 testsigning 系统变量的值现在设置为是 Windows 启动加载程序列表中。
+4. 在本练习) 中重复 **步骤 1** (，验证 testsigning 系统变量的值现在是否在 Windows 启动加载程序列表中设置为 "是"。
 
-5. 重新启动 Shark Cove。 看板重新启动，如保留约 2 秒，卷向上按钮输入系统安装程序 (UEFI) 窗口。
+5. 重新启动带 Cove。 在系统重新启动时，请将音量调高，使其保持约2秒，以输入系统设置 (UEFI) "窗口。
 
-6. 在 UEFI 窗口中，选择**设备管理器** &gt; **System 安装程序** &gt; **启动**，并确保选中**UEFI 安全引导**设置为 **&lt;禁用&gt;** 。
+6. 在 UEFI 窗口中，选择 "**设备管理器** &gt; **系统安装程序** &gt; **启动**"，并确保将 " **UEFI 安全启动**" 设置为 " ** &lt; 禁用 &gt; **"。
 
-7. 保存所做的更改并退出 UEFI 窗口。
+7. 保存更改并退出 UEFI 窗口。
 
 ## <a name="install-the-sensor-driver"></a>安装传感器驱动程序
 
 
-有四种主要的 Shark Cove 板上安装驱动程序方法：
+在带 Cove 板上安装驱动程序的主要方法有四种：
 
--   从网络源到 Shark Cove 上直接下载该驱动程序。
--   使用作为预配客户端连接你 Shark Cove 开发的主机计算机上，传感器驱动程序。 然后，部署到 Shark Cove 驱动程序从主计算机。
--   将驱动程序包复制到闪存驱动器，并将闪存驱动器附加到 Shark Cove。 然后，使用**devcon**命令从命令提示符窗口，若要手动安装驱动程序。
--   将驱动程序包复制到闪存驱动器，并将闪存驱动器附加到 Shark Cove。 然后安装该驱动程序通过手动**设备管理器**。
+-   直接从网络源将驱动程序下载到带 Cove。
+-   在主计算机上开发传感器驱动程序，并将带 Cove 连接为预配的客户端。 然后将该驱动程序从主计算机部署到带 Cove。
+-   将驱动程序包复制到闪存驱动器，并将闪存驱动器连接到带 Cove。 然后，在命令提示符窗口中使用 **devcon** 命令手动安装驱动程序。
+-   将驱动程序包复制到闪存驱动器，并将闪存驱动器连接到带 Cove。 然后通过 **设备管理器**手动安装驱动程序。
 
-为简单起见，我们将使用前面的列表中的最后一个方法。 执行以下步骤手动安装传感器驱动程序通过**设备管理器**。
+为简单起见，我们将使用上一列表中的最后一个方法。 执行以下步骤，通过 **设备管理器**手动安装传感器驱动程序。
 
-在安装传感器驱动程序之前，您必须连接到 Shark Cove 传感器。 璝惠 э ADXL345 加速感应器专题板从 SparkFun，若要获取其可用于示例传感器驱动程序，请参阅[准备在传感器测试板](prepare-your-sensor-test-board.md)。 有关如何将传感器专题开发板连接到 Shark Cove 的信息，请参阅[传感器连接到 Shark Cove 板](connect-your-sensor-to-the-sharks-cove-board.md)。
+在安装传感器驱动程序之前，必须将传感器连接到带 Cove。 若要了解如何从 SparkFun 修改 ADXL345 加速器分类板，以使其使用示例传感器驱动程序，请参阅 [准备传感器测试板](prepare-your-sensor-test-board.md)。 若要了解如何将传感器分类板连接到带 Cove，请参阅 [将传感器连接到带 Cove](connect-your-sensor-to-the-sharks-cove-board.md)。
 
-1. 请确保 ADXL345 加速感应器已连接到 Shark Cove J1C1 连接器，然后打开 Shark Cove 的电源。
+1. 请确保 ADXL345 加速感应连接到带 Cove J1C1 连接器，然后启动带 Cove。
 
-2. 附加到供电的 USB 集线器连接到 Shark Cove 传感器驱动程序的闪存驱动器。 例如，这可以是保存生成的执行中的步骤的驱动程序的闪存驱动器[生成传感器驱动程序](build-the-sensor-driver.md)。
+2. 将带有传感器驱动程序的闪存驱动器连接到连接到带 Cove 的已通电 USB 集线器。 例如，这可以是闪存驱动器，你可以根据 [构建传感器驱动程序](build-the-sensor-driver.md)中的步骤来保存你构建的驱动程序。
 
-3. 打开**设备管理器**，并为"未知设备"查找**其他设备**节点具有一个黄色感叹号符号对其 （请参阅下面的屏幕截图）。<br/>![设备管理器显示的屏幕截图，显示黄色感叹号的未知的设备。](images/dev-manager.png)
+3. 打开 **设备管理器**，并在 " **其他设备** " 节点中查找 "未知设备"，并在其上查找黄色惊叹号符号 (参见以下屏幕截图) 。<br/>![设备管理器屏幕截图，显示未知设备，并显示黄色感叹号。](images/dev-manager.png)
 
-4. 使用黄色惊叹号 （作为未知设备列出），右键单击该设备，然后选择**更新驱动程序软件**，然后单击**浏览计算机以查找驱动程序软件**。
+4. 选择并按住 (或右键单击) 设备，其中黄色惊叹号 (列为未知设备) ，选择 " **更新驱动程序软件**"，然后选择 **"浏览计算机以查找驱动程序软件**"。
 
-5. 浏览到 ADXL345 驱动程序在闪存驱动器，然后单击**下一步**。 按照屏幕提示操作以安装传感器驱动程序。
+5. 浏览到闪存驱动器上的 ADXL345 驱动程序，然后选择 " **下一步**"。 按照屏幕上的提示安装传感器驱动程序。
 
-6. 示例传感器驱动程序已成功安装后，**设备管理器**显示传感器，如以下屏幕截图中所示。<br/>![设备管理器屏幕截图，显示已成功安装的 adxl345 加速感应器的设备节点](images/dev-mgr-sensors.png)
+6. 成功安装示例传感器驱动程序后， **设备管理器** 显示传感器，如以下屏幕截图所示。<br/>![设备管理器屏幕截图，显示成功安装的 adxl345 加速感应器的设备节点](images/dev-mgr-sensors.png)
 
-有关如何使用 Visual Studio 将部署到客户端计算机 （例如 Shark Cove 中) 的驱动程序的信息，请参阅[部署到测试计算机的驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)。
+有关如何使用 Visual Studio 将驱动程序部署到客户端计算机 (如带 Cove) 的信息，请参阅将 [驱动程序部署到测试计算机](https://docs.microsoft.com/windows-hardware/drivers/develop/deploying-a-driver-to-a-test-computer)。
 
-已成功安装后的示例传感器驱动程序，请参阅[测试通用传感器驱动程序](test-your-universal-sensor-driver.md)有关如何测试传感器信息。
+成功安装示例传感器驱动程序后，请参阅 [测试通用传感器驱动程序](test-your-universal-sensor-driver.md) ，了解有关如何测试传感器的信息。
 
  
 

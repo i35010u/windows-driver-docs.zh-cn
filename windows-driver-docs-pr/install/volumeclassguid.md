@@ -14,22 +14,22 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: c7d2684d127ace4921c38df7e238cac73619916e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 497b3c49a7d032a439763bc40d1dc4e54ba08fdb
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380404"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094813"
 ---
 # <a name="volumeclassguid"></a>VolumeClassGuid
 
 
-VolumeClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)卷设备。 从 Microsoft Windows 2000 开始，使用[ **GUID_DEVINTERFACE_VOLUME** ](guid-devinterface-volume.md)此类的新实例的类标识符。
+VolumeClassGuid 是卷设备的 [设备接口类](./overview-of-device-interface-classes.md) 的过时标识符。 从 Microsoft Windows 2000 开始，使用此类的新实例 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 类标识符。
 
 <a name="remarks"></a>备注
 -------
 
-存储[示例](https://go.microsoft.com/fwlink/p/?LinkId=618052)WDK 中包括[Addfilter 存储筛选器工具](https://go.microsoft.com/fwlink/p/?linkid=256076)，它使用 VolumeClassGuid 枚举的实例[ **GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)设备接口类。
+WDK 中的存储 [示例](https://go.microsoft.com/fwlink/p/?LinkId=618052) 包括一个 [Addfilter 存储筛选器工具](https://go.microsoft.com/fwlink/p/?linkid=256076) ，该工具使用 VolumeClassGuid 枚举 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md) 设备接口类的实例。
 
 <a name="requirements"></a>要求
 ------------
@@ -41,27 +41,20 @@ VolumeClassGuid 是已过时标识符[设备接口类](https://docs.microsoft.co
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Version</p></td>
-<td align="left"><p>已过时。 从 Windows 2000 开始，请改用 GUID_DEVINTERFACE_VOLUME。</p></td>
+<td align="left"><p>版本</p></td>
+<td align="left"><p>已过时。 从 Windows 2000 开始，改用 GUID_DEVINTERFACE_VOLUME。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Ntddstor.h （包括 Ntddstor.h）</td>
+<td align="left"><p>标头</p></td>
+<td align="left">Ntddstor (包含 Ntddstor) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**GUID_DEVINTERFACE_VOLUME**](guid-devinterface-volume.md)
 
  
-
- 
-
-
-
-
-
 

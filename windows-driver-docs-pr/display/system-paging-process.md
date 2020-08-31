@@ -4,27 +4,27 @@ description: 大多数分页操作都在系统分页过程的上下文中发生�
 ms.assetid: B010C7E5-6B67-43D2-92A6-5258B132FB5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f65ab98d279e760b50c6d7d60ef02c74746477
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 447cadb2fdc023423a9ced2368d3c21d0b021cbb
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829337"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063966"
 ---
 # <a name="system-paging-process"></a>系统分页进程
 
 
-大多数分页操作都在系统分页过程的上下文中发生。 唯一的例外是[*UpdateGpuVirtualAddress 回调*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)中的页表更新，它在一个特殊的伴随上下文中发生，并在同步呈现时出现。
+大多数分页操作都在系统分页过程的上下文中发生。 唯一的例外是 [*UpdateGpuVirtualAddress 回调*](/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updategpuvirtualaddresscb)中的页表更新，它在一个特殊的伴随上下文中发生，并在同步呈现时出现。
 
 Microsoft DirectX graphics 内核使用系统分页过程来执行分页操作，例如：
 
--   系统和本地图形处理单元（GPU）内存之间的传输分配
+-   在系统和本地图形处理单元之间传输分配 (GPU) 内存
 -   用模式填充分配
 -   更新页表
 -   将分配映射到孔径段
 -   刷新翻译外观缓冲区
 
-分页过程有自己的 GPU 虚拟地址空间、GPU 上下文和直接内存访问（DMA）缓冲区（称为分页缓冲区）。 它有自己的页表，它们固定在物理内存中并且仅在电源转换期间逐出。
+分页过程有自己的 GPU 虚拟地址空间、GPU 上下文和直接内存访问 (DMA) 缓存 (称为分页缓冲区) 。 它有自己的页表，它们固定在物理内存中并且仅在电源转换期间逐出。
 
 分页进程的虚拟地址空间具有预定义的布局，在适配器初始化期间进行初始化，并在每次出现电源转换后的内存内容丢失时进行初始化。
 
@@ -32,21 +32,21 @@ Microsoft DirectX graphics 内核使用系统分页过程来执行分页操作�
 
 DirectX 图形内核在根页表中初始化足够多的页表和页表项，以涵盖 1 GB 的虚拟地址空间。 空闲区用于在传输和填充操作过程中对分页进程虚拟地址空间进行临时映射分配。 如果分配不适合虚拟地址暂存区，则传输操作将以区块完成。
 
-将为分页过程创建系统根页表分配。 它的内容是在初始化过程中设置的，而不会更改（电源转换后除外）。
+将为分页过程创建系统根页表分配。 它的内容是在初始化过程中设置的，在电源转换) 后 (例外。
 
 系统进程的页表分为两部分：
 
-系统将创建一个*系统页表，该表*将*暂存区页表*反射到系统进程的地址空间中。 这允许系统进程在必要时从草稿区修改暂存区页面和映射/取消映射内存。 页表的内容是在适配器初始化期间设置的，永远不会发生更改。
-*草稿区域页*表项用于将分配映射到分页进程的虚拟地址空间。 它们在初始化期间初始化为*无效*，以后用于分页操作。
-分页过程的页表在适配器初始化和开机事件期间通过[*UpdatePageTable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)分页操作进行初始化。 对于这些操作， **PageTableUpdateMode**强制**cpu\_虚拟**，并且必须使用 cpu 立即完成（不应使用分页缓冲区）。
+系统将创建一个 *系统页表，该表* 将 *暂存区页表* 反射到系统进程的地址空间中。 这允许系统进程在必要时从草稿区修改暂存区页面和映射/取消映射内存。 页表的内容是在适配器初始化期间设置的，永远不会发生更改。
+*草稿区域页*表项用于将分配映射到分页进程的虚拟地址空间。 它们在初始化期间初始化为 *无效* ，以后用于分页操作。
+分页过程的页表在适配器初始化和开机事件期间通过 [*UpdatePageTable*](./dxgkddiupdatepagetable.md) 分页操作进行初始化。 对于这些操作， **PageTableUpdateMode** 强制使用 cpu ** \_ 虚拟** ，并且必须使用 cpu 立即完成， (不应) 使用分页缓冲。
 
-所有其他进程的页表项的更新都是使用驱动程序指定的**PageTableUpdateMode**来完成的。 这些更新在分页过程的上下文中完成。
+所有其他进程的页表项的更新都是使用驱动程序指定的 **PageTableUpdateMode** 来完成的。 这些更新在分页过程的上下文中完成。
 
 下面是设置的完成方式：
 
 1.  将创建一个根页表分配和较低级别的页表分配，以涵盖 1 GB 的地址空间。
 2.  分配被提交到内存段。
-3.  将多个[*UpdatePageTable*](https://docs.microsoft.com/windows-hardware/drivers/display/dxgkddiupdatepagetable)分页操作发出给驱动程序，以初始化页表项。
+3.  将多个 [*UpdatePageTable*](./dxgkddiupdatepagetable.md) 分页操作发出给驱动程序，以初始化页表项。
 
 作为分页进程虚拟地址空间初始化的示例，让我们考虑以下参数：
 
@@ -68,10 +68,4 @@ DirectX 图形内核在根页表中初始化足够多的页表和页表项，以
 ![页表初始化](images/system-paging-process.2.png)
 
  
-
- 
-
-
-
-
 

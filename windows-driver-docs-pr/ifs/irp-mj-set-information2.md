@@ -4,12 +4,12 @@ description: 检查 IRP_MJ_SET_INFORMATION 操作的 Oplock 状态
 ms.assetid: d164be8d-cf42-4b96-9883-e0f8223bfde4
 ms.date: 11/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dcf0d3fb97b4db7947861c330dc063f18bb2bef
-ms.sourcegitcommit: 79ff84ffc2faa5fdb3294e1fb5791f6a0ea7ef50
+ms.openlocfilehash: a32dbb85a64992efc694fae1523e5b5afb4b8955
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74543048"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063056"
 ---
 # <a name="checking-the-oplock-state-of-an-irp_mj_set_information-operation"></a>检查 IRP_MJ_SET_INFORMATION 操作的 Oplock 状态
 
@@ -39,13 +39,13 @@ ms.locfileid: "74543048"
 
 ### <a name="conditions-for-all-other-request-types"></a>所有其他请求类型的条件
 
-- 当操作发生在带有 oplock 键的 FILE_OBJECT 上时中断 IRP_MJ_SET_INFORMATION （对于 FileEndOfFileInformation、FileAllocationInformation 和 FileValidDataLengthInformation），该操作与拥有 oplock 的 FILE_OBJECT 的键不同。 如果 oplock 中断，则中断到无。
+- 当操作发生在具有不同于拥有 oplock 的 FILE_OBJECT 的键的操作 FILE_OBJECT 上时，在 FileEndOfFileInformation、FileAllocationInformation 和) FileValidDataLengthInformation 的 IRP_MJ_SET_INFORMATION (中断。 如果 oplock 中断，则中断到无。
 
 - 确认要求不同如下：
 
   - 读取请求：不需要确认;操作会立即继续。
 
-  - 读取句柄请求：尽管需要确认中断，但操作会立即继续（即，无需等待确认）。
+  - 读取句柄请求：尽管需要确认中断，但操作会立即继续 (即，无需等待确认) 。
 
   - 级别1、批处理、筛选器、读写和读写处理请求：必须先收到确认，然后才能继续操作。
 
@@ -69,7 +69,7 @@ ms.locfileid: "74543048"
 
 ### <a name="conditions-for-batch-filter-read-handle-and-read-write-handle-operations"></a>批处理、筛选器、读取句柄和读写句柄操作的条件
 
-- 当操作发生在带有 oplock 键的 FILE_OBJECT 上时中断 IRP_MJ_SET_INFORMATION （对于 FileRenameInformation、FileShortNameInformation 和 FileLinkInformation），该操作与拥有 oplock 的 FILE_OBJECT 的键不同。 如果 oplock 中断：
+- 当操作发生在具有不同于拥有 oplock 的 FILE_OBJECT 的键的操作 FILE_OBJECT 上时，在 FileRenameInformation、FileShortNameInformation 和) FileLinkInformation 的 IRP_MJ_SET_INFORMATION (中断。 如果 oplock 中断：
 
   - 批处理和筛选请求中断到无。
 
@@ -83,7 +83,7 @@ ms.locfileid: "74543048"
 
 当调用方尝试删除文件时，将应用此信息。
 
-- 当操作发生在带有 oplock 键的 FILE_OBJECT 上，而该操作与拥有 oplock 的 FILE_OBJECT 的键不同，**并且**在[FILE_DISPOSITION_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)时，中断 IRP_MJ_SET_INFORMATION （对于 FileDispositionInformation）。DeleteFile 是 * * TRUE * * * *。 如果 oplock 中断：
+- 当操作发生在具有 oplock 键的 FILE_OBJECT 上，而该操作与拥有 oplock 的 FILE_OBJECT 的键不同， **并且** 在 [FILE_DISPOSITION_INFORMATION](/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information)时，IRP_MJ_SET_INFORMATION (对 FileDispositionInformation) 中断。DeleteFile 是 * * TRUE * * * *。 如果 oplock 中断：
 
   - 读取-处理请求中断。
 

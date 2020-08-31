@@ -1,6 +1,6 @@
 ---
 title: suppressWizard XML 元素
-description: SuppressWizard XML 元素是空元素，用于 suppressWizard 标志设置为 ON，将配置 DPInst 禁止显示的向导页和 DPInst 生成其他用户消息。
+description: SuppressWizard XML 元素是一个空元素，用于将 suppressWizard 标志设置为 ON，后者配置 DPInst 以禁止显示向导页和 DPInst 生成的其他用户消息。
 ms.assetid: fb72ff30-7d93-4531-9115-c299fabec7e7
 keywords:
 - suppressWizard XML 元素设备和驱动程序安装
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 36e775a68a1fadd56c48a71d7622109862418489
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 46b2e4109b13e107bc67e7073f697e4af6f7171d
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385868"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094855"
 ---
 # <a name="suppresswizard-xml-element"></a>suppressWizard XML 元素
 
 
-\[DIFx 已被弃用，有关详细信息，请参阅[DIFx 准则](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)。\]
+\[DIFx 已弃用，有关详细信息，请参阅 [DIFx 指导原则](./difx-guidelines.md)。\]
 
-**SuppressWizard** XML 元素为空元素，用于设置**suppressWizard**该 DPInst 标志为 ON，将配置 DPInst 禁止显示的向导页和其他用户消息生成。
+**SuppressWizard** XML 元素是一个空元素，用于将**suppressWizard**标志设置为 ON，后者配置 DPInst 以禁止显示向导页和 DPInst 生成的其他用户消息。
 
 **元素标记**
 
@@ -36,7 +36,7 @@ ms.locfileid: "67385868"
 
 无
 
-**元素的信息**
+**元素信息**
 
 <table>
 <colgroup>
@@ -53,7 +53,7 @@ ms.locfileid: "67385868"
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>数据的内容</strong></p></td>
+<td align="left"><p><strong>数据内容</strong></p></td>
 <td align="left"><p>不允许</p></td>
 </tr>
 <tr class="even">
@@ -67,9 +67,9 @@ ms.locfileid: "67385868"
 
 **注释**
 
-默认情况下**suppressWizard**标志设置为 OFF。 可以设置**suppressWizard**通过包括标志为 ON **suppressWizard**作为子元素的 XML 元素**dpinst** DPInst 描述符文件中或通过使用 XML 元素 **/sw** 命令行开关。 **SuppressWizard**标志适用于**suppressEulaPage**标志。
+默认情况下， **suppressWizard** 标志设置为 OFF。 可以通过将**suppressWizard** XML 元素包含为 dpinst 描述符文件中**dpinst** XML 元素的子元素或使用 **/sw**命令行开关，将**suppressWizard**标志设置为 ON   。 **SuppressWizard**标志适用于**suppressEulaPage**标志。
 
-下面的代码示例演示**suppressWizard**元素。
+下面的代码示例演示了 **suppressWizard** 元素。
 
 ```cpp
 <dpinst>
@@ -79,17 +79,10 @@ ms.locfileid: "67385868"
 </dpinst>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**dpinst**](dpinst-xml-element.md)
 
  
-
- 
-
-
-
-
-
 

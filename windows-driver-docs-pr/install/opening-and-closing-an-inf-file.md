@@ -9,12 +9,12 @@ keywords:
 - 关闭 INF 文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b13f64fa14fc1d9139ab16a39af28c9486ac4ccc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8abfbdb5b0d03f3f51138280611879e932a2bd16
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366661"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094981"
 ---
 # <a name="opening-and-closing-an-inf-file"></a>打开和关闭 INF 文件
 
@@ -22,21 +22,15 @@ ms.locfileid: "67366661"
 
 
 
-之前*设备安装应用程序*可以访问 INF 文件中的信息，它必须通过调用来打开文件[ **SetupOpenInfFile**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupopeninffilea)。 此函数返回的句柄的 INF 文件。
+在 *设备安装应用程序* 可以访问 INF 文件中的信息之前，必须通过调用 [**SetupOpenInfFile**](/windows/desktop/api/setupapi/nf-setupapi-setupopeninffilea)打开该文件。 此函数返回 INF 文件的句柄。
 
-如果不知道需要打开，可使用 INF 文件的名称[ **SetupGetInfFileList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupgetinffilelista)来获取目录中的所有 INF 文件列表。
+如果你不知道必须打开的 INF 文件的名称，请使用 [**SetupGetInfFileList**](/windows/desktop/api/setupapi/nf-setupapi-setupgetinffilelista) 获取目录中所有 inf 文件的列表。
 
-一旦应用程序打开一个 INF 文件，它可以将其他 INF 文件追加到所使用的打开文件[ **SetupOpenAppendInfFile**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupopenappendinffilea)。 当后续[SetupAPI](setupapi.md)函数引用打开的 INF 文件，还将能够访问存储在任何附加的文件中的任何信息。
+应用程序打开 INF 文件后，可以将其他 INF 文件附加到使用 [**SetupOpenAppendInfFile**](/windows/desktop/api/setupapi/nf-setupapi-setupopenappendinffilea)的已打开文件。 当后续 [setupapi.log](setupapi.md) 函数引用打开的 INF 文件时，它们还将能够访问任何附加文件中存储的任何信息。
 
-如果调用时指定没有 INF 文件[ **SetupOpenAppendInfFile**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupopenappendinffilea)，此函数将由指定的文件追加**LayoutFile**中的条目[ **INF 版本部分**](inf-version-section.md) INF 文件的打开到在调用期间[ **SetupOpenInfFile**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupopeninffilea)。
+如果在调用[**SetupOpenAppendInfFile**](/windows/desktop/api/setupapi/nf-setupapi-setupopenappendinffilea)时未指定 inf 文件，则此函数会将**LayoutFile**条目指定的文件追加到在调用[**SetupOpenInfFile**](/windows/desktop/api/setupapi/nf-setupapi-setupopeninffilea)期间打开的 inf 文件的[**inf 版本部分**](inf-version-section.md)中。
 
-当不再需要 INF 文件中的信息时，应用程序应调用[ **SetupCloseInfFile** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupcloseinffile)释放资源分配到在调用期间[ **SetupOpenInfFile**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupopeninffilea)。
-
- 
+当不再需要 INF 文件中的信息时，应用程序应调用 [**SetupCloseInfFile**](/windows/desktop/api/setupapi/nf-setupapi-setupcloseinffile) 来释放在调用 [**SetupOpenInfFile**](/windows/desktop/api/setupapi/nf-setupapi-setupopeninffilea)期间分配的资源。
 
  
-
-
-
-
 

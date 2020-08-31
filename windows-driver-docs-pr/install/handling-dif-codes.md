@@ -9,12 +9,12 @@ keywords:
 - 函数代码 WDK 设备安装
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ec8f1f7e3d9a97af11f835102d0b614149263f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8c7b76c111d9642b18299d4f6ec78515dfecad0b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383848"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095331"
 ---
 # <a name="handling-dif-codes"></a>处理 DIF 代码
 
@@ -22,84 +22,78 @@ ms.locfileid: "67383848"
 
 
 
-*设备安装应用程序*发送[设备安装函数代码](https://docs.microsoft.com/previous-versions/ff541307(v=vs.85))（DIF 代码） 安装程序通过调用[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller). 此函数中，依次调用安装程序的入口点函数。 安装程序入口点的说明，请参阅：
+*设备安装应用程序*通过调用[**SetupDiCallClassInstaller**](/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)，将[设备安装函数代码](/previous-versions/ff541307(v=vs.85)) (的 DIF 代码发送到安装程序) 。 此函数反过来调用安装程序的入口点函数。 有关安装程序入口点的说明，请参阅：
 
-[共同安装程序界面](co-installer-interface.md)
+[辅助安装程序界面](co-installer-interface.md)
 
-每个差异代码的参考页包含以下部分：
+每个 DIF 代码的参考页包含以下部分：
 
-<a href="" id="when-sent"></a>**发送时**  
-介绍了典型的时间时，以及为什么，设备安装应用程序将发送此 DIF 请求的原因。
+<a href="" id="when-sent"></a>**发送时间**  
+描述设备安装应用程序发送此 DIF 请求的典型时间和原因。
 
 <a href="" id="who-handles"></a>**谁处理**  
-指定允许的安装程序来处理此请求。 安装程序包括类安装程序、 类共同安装程序 （安装程序类范围共同安装程序），以及设备共同安装程序 （特定于设备的共同安装程序）。
+指定允许哪些安装程序处理此请求。 安装程序包括类安装程序、类 (安装程序类的共同安装程序) 和设备共同安装程序 (特定于设备的共同安装程序) 。
 
 <a href="" id="installer-input"></a>**安装程序输入**  
-DIF 代码中，除了**SetupDiCallClassInstaller**提供与特定请求相关的其他信息。 使用每个请求提供的信息，请参阅有关详细信息的每个差异代码的参考页。 以下列表包含额外的输入参数的一般描述，并列出[设备安装函数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))(**SetupDi * Xxx*** 函数) 的安装程序可以调用来处理参数：
+除 DIF 代码外， **SetupDiCallClassInstaller** 还提供与特定请求相关的其他信息。 有关每个请求提供的信息的详细信息，请参阅每个 DIF 代码的参考页。 下面的列表包含对其他输入参数的常规说明，并列出了安装程序可以调用来处理参数) 的 [设备安装函数](/previous-versions/ff541299(v=vs.85)) (**SetupDi * Xxx*** 函数：
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-提供的句柄的设备信息设置。
+提供设备信息集的句柄。
 
-不透明句柄。 使用该句柄，例如，若要识别设备信息设置在调用**SetupDi * Xxx*** 函数。
+句柄不透明。 例如，使用句柄标识在调用 **SetupDi * Xxx*** 函数时设置的设备信息。
 
-*DeviceInfoSet*可能有一个关联[设备安装程序类](device-setup-classes.md)。 如果是这样，调用[ **SetupDiGetDeviceInfoListClass** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinfolistclass)若要获取的类 GUID。
+*DeviceInfoSet*可能具有关联的[设备安装程序类](./overview-of-device-setup-classes.md)。 如果是这样，请调用 [**SetupDiGetDeviceInfoListClass**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinfolistclass) 以获取类 GUID。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-根据需要提供一个指向[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)标识的设备中设备的信息集的结构。
+还可以提供一个指向 [**SP_DEVINFO_DATA**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data) 结构的指针，该结构在设备信息集中标识设备。
 
 <a href="" id="device-installation-parameters-"></a>*设备安装参数*   
-这些间接参数提供有关中的设备安装信息[ **SP_DEVINSTALL_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)结构。 如果*DeviceInfoData*不是**NULL**，有设备与关联的安装参数*DeviceInfoData*。 如果*DeviceInfoData*是**NULL**，与之关联的设备安装参数*DeviceInfoSet*。
+这些间接参数以 [**SP_DEVINSTALL_PARAMS**](/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a) 结构提供设备安装的信息。 如果 *DeviceInfoData* 不为 **NULL**，则存在与 *DeviceInfoData*关联的设备安装参数。 如果 *DeviceInfoData* 为 **NULL**，则设备安装参数与 *DeviceInfoSet*相关联。
 
-调用[ **SetupDiGetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa)若要获取设备的安装参数。
+调用 [**SetupDiGetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinstallparamsa) 以获取设备安装参数。
 
-<a href="" id="class-installation-parameters"></a>*类的安装参数*  
-可选的间接参数是特定于特定 DIF 请求。 这些是实质上是"DIF 请求参数。" 例如，SP_REMOVEDEVICE_PARAMS 结构中包含 DIF_REMOVE 安装请求的类安装参数。
+<a href="" id="class-installation-parameters"></a>*类安装参数*  
+可选的间接参数专用于特定的 DIF 请求。 它们实质上是 "DIF 请求参数"。 例如，DIF_REMOVE 安装请求的类安装参数包含在 SP_REMOVEDEVICE_PARAMS 结构中。
 
-每个 SP_*XXX*_PARAMS 结构启动具有固定大小 SP_CLASSINSTALL_HEADER 结构。
+每个 SP_*XXX*_PARAMS 结构都从固定大小的 SP_CLASSINSTALL_HEADER 结构开始。
 
-调用[ **SetupDiGetClassInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa)获取类安装参数。
+调用 [**SetupDiGetClassInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassinstallparamsa) 以获取类安装参数。
 
-如果差异请求具有类安装参数，则与关联的参数集*DeviceInfoSet*另一组相关联的参数*DeviceInfoData* （如果 DIF 请求指定*DeviceInfoData*)。 **SetupDiGetClassInstallParams**返回可用的最特定参数。
+如果某个 DIF 请求具有类安装参数，则如果该 DIF 请求指定*DeviceInfoData*) ，则会有一组与*DeviceInfoSet*关联的参数，以及与*DeviceInfoData* (关联的另一组参数。 **SetupDiGetClassInstallParams** 返回最具体的可用参数。
 
-<a href="" id="context"></a>*上下文*  
-共同安装程序具有的可选上下文参数。
+<a href="" id="context"></a>*快捷*  
+共同安装程序具有一个可选的上下文参数。
 
 <a href="" id="installer-output"></a>**安装程序输出**  
-介绍此 DIF 代码预期的输出。
+描述此 DIF 代码所需的输出。
 
-如果安装程序修改了设备安装参数，安装程序必须调用[ **SetupDiSetDeviceInstallParams** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa)返回之前应用所做的更改。 同样，如果安装程序修改 DIF 代码类安装参数，则安装程序必须调用[ **SetupDiSetClassInstallParams**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)。
+如果安装程序修改了设备安装参数，则安装程序必须调用 [**SetupDiSetDeviceInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetdeviceinstallparamsa) 来应用更改，然后再返回。 同样，如果安装程序修改了 DIF 代码的类安装参数，则安装程序必须调用 [**SetupDiSetClassInstallParams**](/windows/desktop/api/setupapi/nf-setupapi-setupdisetclassinstallparamsa)。
 
 <a href="" id="installer-return-value"></a>**安装程序返回值**  
-指定适当的返回值的差异代码。 请参阅下图，了解有关返回值的详细信息。
+为 DIF 代码指定适当的返回值。 有关返回值的详细信息，请参阅下图。
 
-<a href="" id="default-dif-code-handler"></a>**默认 DIF 代码处理程序**  
-指定**SetupDi * Xxx*** DIF 代码的系统定义的默认操作将执行的函数。 并非所有 DIF 代码都有默认处理程序。 辅助安装程序或类的安装程序不需要步骤防止默认处理程序被调用，除非**SetupDiCallClassInstaller** DIF 代码调用默认处理程序，它会调用类安装程序之后 （但在调用任何之前共同安装程序为后续处理注册）。
+<a href="" id="default-dif-code-handler"></a>**默认的 DIF 代码处理程序**  
+指定为 DIF 代码执行系统定义的默认操作的 **SetupDi * Xxx*** 函数。 并非所有的 DIF 代码都有默认的处理程序。 除非共同安装程序或类安装程序将执行一些步骤来阻止调用默认处理程序，否则，在调用 SetupDiCallClassInstaller 类 (安装程序后， **SetupDiCallClassInstaller**将调用该 DIF 代码的默认处理程序，但在调用为后处理) 注册的所有共同安装程序之前。
 
-如果类安装程序已成功处理 DIF 代码和**SetupDiCallClassInstaller**应随后调用默认处理程序类安装程序将返回 ERROR_DI_DO_DEFAULT。
+如果类安装程序成功处理某个 DIF 代码，并且 **SetupDiCallClassInstaller** 随后应调用默认处理程序，则类安装程序将返回 ERROR_DI_DO_DEFAULT。
 
-类安装程序类安装程序能够成功处理 DIF 代码，包括直接调用默认处理程序，如果应返回 NO_ERROR 并**SetupDiCallClassInstaller**随后不会调用默认处理程序电子邮件了。 请注意，类安装程序可以直接调用默认处理程序，但应永远不会尝试类安装程序来取代默认处理程序的操作。
+如果类安装程序成功处理一个 DIF 代码，包括直接调用默认处理程序，则类安装程序应返回 NO_ERROR 并且 **SetupDiCallClassInstaller** 将不会再次调用默认处理程序。 请注意，类安装程序可以直接调用默认处理程序，但类安装程序永远不会尝试取代默认处理程序的操作。
 
-安装程序类安装程序遇到错误，如果应返回相应的 Win32 错误代码和**SetupDiCallClassInstaller**随后不会调用默认处理程序。
+如果类安装程序遇到错误，则安装程序应返回相应的 Win32 错误代码，并且 **SetupDiCallClassInstaller** 将不会随后调用默认处理程序。
 
-共同安装程序应*不*调用 DIF 代码处理程序的默认值。
+共同安装程序 *不* 应调用默认的 DIF 代码处理程序。
 
 <a href="" id="installer-operation"></a>**安装程序操作**  
-介绍了安装程序可能用来处理 DIF 请求的典型步骤。
+介绍安装程序处理 DIF 请求可能需要执行的典型步骤。
 
 <a href="" id="see-also"></a>**另请参阅**  
-列出了相关信息的源。
+列出相关信息的源。
 
-下图显示了中的事件序列**SetupDiCallClassInstaller**处理 DIF 代码。
+下图显示了 **SetupDiCallClassInstaller** 中用于处理 DIF 代码的事件的顺序。
 
-![说明在 setupdicallclassinstaller 中处理 dif 代码流的关系图](images/dif-flow.png)
+![说明 setupdicallclassinstaller 中的 dif 代码处理流的示意图](images/dif-flow.png)
 
-操作系统执行某些操作为每个差异代码。 供应商提供共同安装程序和类安装程序可以参与的安装活动。 请注意， **SetupDiCallClassInstaller**调用注册的共同安装程序的后续处理即使 DIF 代码失败。
-
- 
+操作系统对每个 DIF 代码执行一些操作。 供应商提供的共同安装程序和类安装程序可参与安装活动。 请注意， **SetupDiCallClassInstaller** 会调用注册为后处理的共同安装程序，即使该 DIF 代码失败也是如此。
 
  
-
-
-
-
 

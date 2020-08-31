@@ -4,19 +4,19 @@ description: 检索图形内存数字
 ms.assetid: ec704093-ad9a-4717-8e9e-537a2848b1c7
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef4b5c3755b6350888e2d2c93d4e0fe64482b8a3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 451a4a961c52d10dee371418d6f35904aaef8e01
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365666"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89064014"
 ---
 # <a name="retrieving-graphics-memory-numbers"></a>检索图形内存数字
 
 
-软件开发人员创建图形应用程序可以使用启动 Windows Vista 中的 Microsoft DirectX 版本 10 Api 来检索运行的计算机上的图形内存数字的精确的一组[Windows 显示器驱动程序模型 (WDDM)](windows-vista-display-driver-model-design-guide.md)显示驱动程序。 以下步骤演示如何检索图形内存号码：
+创建图形应用程序的软件开发人员可以使用 Windows Vista 中的 Microsoft DirectX 版本 10 Api 在运行 [Windows 显示驱动程序模型 (WDDM) ](windows-vista-display-driver-model-design-guide.md) 显示驱动程序的计算机上检索准确的图形内存编号集。 以下步骤演示了如何检索图形内存编号：
 
-1.  由于新的图形内存报告仅在运行 Windows 显示驱动程序模型 (WDDM) 显示器驱动程序的计算机上可用，应用程序必须先调用以下函数以确认驱动程序模型：
+1.  由于新的图形内存报告仅在运行 Windows 显示驱动程序模型 (WDDM) 显示驱动程序的计算机上可用，因此应用程序必须先调用以下函数以确认驱动程序模型：
     ```cpp
     HasWDDMDriver()
     {
@@ -42,7 +42,7 @@ ms.locfileid: "67365666"
     }
     ```
 
-2.  应用程序确定了显示器驱动程序模型是 WDDM 后，应用程序可以使用新的 DirectX 版本 10 Api 来获取图形内存数字。 应用程序从下列选项中获取图形内存数字[ **DXGI\_适配器\_DESC** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ns-dxgi-dxgi_adapter_desc)数据结构，它是位于 Dxgi.h，包含在 DirectX软件开发工具包 (SDK)。
+2.  在应用程序确定显示器驱动程序模型为 WDDM 后，应用程序可以使用新的 DirectX 版本 10 Api 来获取图形内存号。 应用程序从以下 [**dxgi \_ 适配器 \_ DESC**](/windows/desktop/api/dxgi/ns-dxgi-dxgi_adapter_desc) 数据结构中获取图形内存编号，该数据结构存在于 dxgi 中，并包含在 (SDK) 的 DirectX 软件开发工具包中。
     ```cpp
     typedef struct DXGI_ADAPTER_DESC {
         WCHAR Description[ 128 ];
@@ -57,5 +57,4 @@ ms.locfileid: "67365666"
         } DXGI_ADAPTER_DESC;
     ```
 
-由于在 Windows Vista 和更高版本的桌面和 DirectX 游戏图形的广泛使用，运行 Windows Vista 及更高版本的软件应该能够准确地确定可用的图形内存量。 WDDM 管理的虚拟化本身的图形内存，并还将确保准确报告图形内存的各个方面。 应用程序开发人员和软件供应商应充分利用的 DirectX 版本 10 Api 用于检索具有 Windows Vista 的计算机上的图形内存值的精确的一组显示驱动程序。
-
+由于 Windows Vista 及更高版本的桌面版和 DirectX 游戏中的图形广泛使用，在 Windows Vista 和更高版本上运行的软件应能准确确定可用的图形内存量。 WDDM 管理自身的图形内存虚拟化，并且还可以确保准确报告图形内存的各个方面。 应用程序开发人员和软件供应商应当利用 DirectX 版本 10 Api 来检索具有 Windows Vista 显示器驱动程序的计算机上准确的图形内存值集。

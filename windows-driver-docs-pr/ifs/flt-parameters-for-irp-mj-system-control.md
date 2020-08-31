@@ -1,10 +1,10 @@
 ---
-title: FLT_PARAMETERS for IRP_MJ_SYSTEM_CONTROL union
-description: 当 FLT\_IO\_参数\_块结构的操作为 IRP\_MJ\_SYSTEM\_控件时使用的联合组件。
+title: IRP_MJ_SYSTEM_CONTROL 联合的 FLT_PARAMETERS
+description: 操作的 FLT \_ IO \_ 参数块结构的 MajorFunction 字段 \_ 为 IRP \_ MJ \_ 系统 \_ 控制时使用的联合组件。
 ms.assetid: 6f1c34b2-1c79-4372-8b94-afe4b50294d5
 keywords:
-- FLT_PARAMETERS for IRP_MJ_SYSTEM_CONTROL union 可安装的文件系统驱动程序
-- FLT_PARAMETERS 可安装的可安装文件系统驱动程序
+- IRP_MJ_SYSTEM_CONTROL 联合可安装文件系统驱动程序的 FLT_PARAMETERS
+- FLT_PARAMETERS 联合可安装文件系统驱动程序
 - PFLT_PARAMETERS 联合指针可安装的文件系统驱动程序
 topic_type:
 - apiref
@@ -16,17 +16,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 33ffaaa9582216a58117b1f909e8147736113782
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 49ca47d82f182738a663f53c25d3f40f0f0801f8
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841339"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063418"
 ---
-# <a name="flt_parameters-for-irp_mj_system_control-union"></a>IRP\_MJ\_系统\_控制联合的 FLT\_参数
+# <a name="flt_parameters-for-irp_mj_system_control-union"></a>\_IRP \_ MJ \_ 系统 \_ 控制联合的 FLT 参数
 
 
-当[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的操作为 IRP\_MJ\_SYSTEM\_控件时**使用的联合**组件。
+操作的[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MajorFunction**字段为 IRP \_ MJ \_ 系统控制时使用的联合组件 \_ 。
 
 <a name="syntax"></a>语法
 ------
@@ -51,47 +51,47 @@ typedef union _FLT_PARAMETERS {
 包含以下成员的结构。
 
 **ProviderId**  
-此参数的意义取决于操作的次要函数代码。 （请参阅下面的 "备注" 部分。）
+此参数的意义取决于操作的次要函数代码。  (参见下面的 "备注" 部分。 ) 
 
-**数据路径**  
-此参数的意义取决于操作的次要函数代码。 （请参阅下面的 "备注" 部分。）
+**DataPath**  
+此参数的意义取决于操作的次要函数代码。  (参见下面的 "备注" 部分。 ) 
 
 **BufferSize**  
-此参数的意义取决于操作的次要函数代码。 （请参阅下面的 "备注" 部分。）
+此参数的意义取决于操作的次要函数代码。  (参见下面的 "备注" 部分。 ) 
 
-**宽限**  
-此参数的意义取决于操作的次要函数代码。 （请参阅下面的 "备注" 部分。）
+**Buffer**  
+此参数的意义取决于操作的次要函数代码。  (参见下面的 "备注" 部分。 ) 
 
 <a name="remarks"></a>备注
 -------
 
-IRP\_MJ\_系统\_控制操作的[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)结构包含回调数据表示的系统控件操作的参数（[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)）构造. 它包含在 FLT\_IO\_参数\_块结构。
+IRP MJ 系统控制操作的 [**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters) 结构 \_ \_ \_ 包含由回调数据所表示的系统控件操作的参数， ([**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 结构。 它包含在 FLT \_ IO \_ 参数 \_ 块结构中。
 
-IRP\_MJ\_系统\_控制参数的意义取决于次要函数代码。 （请参阅 FLT 的**MinorFunction**成员[ **\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构。）有关详细信息，请参阅以下次要函数代码的参考条目：
+IRP \_ MJ \_ 系统控制参数的意义 \_ 取决于次要函数代码。  (查看[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)结构的**MinorFunction**成员。 ) 有关详细信息，请参阅以下次要函数代码的参考条目：
 
-[**IRP\_MN\_更改\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-instance)
+[**IRP \_ MN \_ 更改 \_ 单一 \_ 实例**](../kernel/irp-mn-change-single-instance.md)
 
-[**IRP\_MN\_更改\_单一\_项**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-item)
+[**IRP \_ MN \_ 更改 \_ 单个 \_ 项目**](../kernel/irp-mn-change-single-item.md)
 
-[**IRP\_MN\_禁用\_集合**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)
+[**IRP \_ MN \_ 禁用 \_ 收集**](../kernel/irp-mn-disable-collection.md)
 
-[**IRP\_MN\_禁用\_事件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)
+[**IRP \_ MN \_ 禁用 \_ 事件**](../kernel/irp-mn-disable-events.md)
 
-[**IRP\_MN\_启用\_收集**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)
+[**IRP \_ MN \_ 启用 \_ 收集**](../kernel/irp-mn-enable-collection.md)
 
-[**IRP\_MN\_启用\_事件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)
+[**IRP \_ MN \_ 启用 \_ 事件**](../kernel/irp-mn-enable-events.md)
 
-[**IRP\_MN\_EXECUTE\_方法**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-execute-method)
+[**IRP \_ MN \_ EXECUTE \_ 方法**](../kernel/irp-mn-execute-method.md)
 
-[**IRP\_MN\_查询\_所有\_数据**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)
+[**IRP \_ MN \_ 查询 \_ 所有 \_ 数据**](../kernel/irp-mn-query-all-data.md)
 
-[**IRP\_MN\_QUERY\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)
+[**IRP \_ MN \_ 查询 \_ 单一 \_ 实例**](../kernel/irp-mn-query-single-instance.md)
 
-[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)
+[**IRP \_ MN \_ REGINFO**](../kernel/irp-mn-reginfo.md)
 
-[**IRP\_MN\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)
+[**IRP \_ MN \_ REGINFO \_ EX**](../kernel/irp-mn-reginfo-ex.md)
 
-IRP\_MJ\_系统\_控件是基于 IRP 的操作。
+IRP \_ MJ \_ 系统 \_ 控件是基于 IRP 的操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -104,7 +104,7 @@ IRP\_MJ\_系统\_控件是基于 IRP 的操作。
 <tbody>
 <tr class="odd">
 <td align="left"><p>标头</p></td>
-<td align="left">Fltkernel （包括 Fltkernel）</td>
+<td align="left">Fltkernel (包含 Fltkernel) </td>
 </tr>
 </tbody>
 </table>
@@ -112,46 +112,39 @@ IRP\_MJ\_系统\_控件是基于 IRP 的操作。
 ## <a name="see-also"></a>另请参阅
 
 
-[**FLT\_回调\_数据**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FLT \_ 回调 \_ 数据**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_IO\_参数\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT \_ IO \_ 参数 \_ 块**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**FLT\_\_FASTIO\_操作**](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+[**FLT \_ 是 \_ FASTIO \_ 操作**](/windows-hardware/drivers/ddi/index)
 
-[**FLT\_\_FS\_筛选器\_操作**](https://docs.microsoft.com/previous-versions/ff544648(v=vs.85))
+[**FLT \_ 为 \_ FS \_ 筛选器 \_ 操作**](/previous-versions/ff544648(v=vs.85))
 
-[**FLT\_\_IRP\_操作**](https://docs.microsoft.com/previous-versions/ff544654(v=vs.85))
+[**FLT \_ 是 \_ IRP \_ 操作**](/previous-versions/ff544654(v=vs.85))
 
-[**FLT\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT \_ 参数**](/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**IRP\_MN\_更改\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-instance)
+[**IRP \_ MN \_ 更改 \_ 单一 \_ 实例**](../kernel/irp-mn-change-single-instance.md)
 
-[**IRP\_MN\_更改\_单一\_项**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-item)
+[**IRP \_ MN \_ 更改 \_ 单个 \_ 项目**](../kernel/irp-mn-change-single-item.md)
 
-[**IRP\_MN\_禁用\_集合**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)
+[**IRP \_ MN \_ 禁用 \_ 收集**](../kernel/irp-mn-disable-collection.md)
 
-[**IRP\_MN\_禁用\_事件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)
+[**IRP \_ MN \_ 禁用 \_ 事件**](../kernel/irp-mn-disable-events.md)
 
-[**IRP\_MN\_启用\_收集**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)
+[**IRP \_ MN \_ 启用 \_ 收集**](../kernel/irp-mn-enable-collection.md)
 
-[**IRP\_MN\_启用\_事件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)
+[**IRP \_ MN \_ 启用 \_ 事件**](../kernel/irp-mn-enable-events.md)
 
-[**IRP\_MN\_EXECUTE\_方法**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-execute-method)
+[**IRP \_ MN \_ EXECUTE \_ 方法**](../kernel/irp-mn-execute-method.md)
 
-[**IRP\_MN\_查询\_所有\_数据**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)
+[**IRP \_ MN \_ 查询 \_ 所有 \_ 数据**](../kernel/irp-mn-query-all-data.md)
 
-[**IRP\_MN\_QUERY\_单一\_实例**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)
+[**IRP \_ MN \_ 查询 \_ 单一 \_ 实例**](../kernel/irp-mn-query-single-instance.md)
 
-[**IRP\_MN\_REGINFO**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)
+[**IRP \_ MN \_ REGINFO**](../kernel/irp-mn-reginfo.md)
 
-[**IRP\_MN\_REGINFO\_EX**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)
-
- 
+[**IRP \_ MN \_ REGINFO \_ EX**](../kernel/irp-mn-reginfo-ex.md)
 
  
-
-
-
-
-
 

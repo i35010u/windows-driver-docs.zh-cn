@@ -3,16 +3,16 @@ title: 执行 ProcAmp 控制和反交错操作
 description: 执行 ProcAmp 控制和反交错操作
 ms.assetid: efef9bb0-4e98-47f9-80bd-e07c8d3b22e5
 keywords:
-- ProcAmp WDK DirectX VA，去隔行操作
-- 取消隔行扫描 WDK DirectX va，因此 ProcAmp
+- ProcAmp WDK DirectX VA，取消隔行扫描操作
+- 取消隔行扫描 WDK DirectX VA，ProcAmp
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e83c1ceb72977a838d98cf1f08a193826aa252
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2dfef1b9519b1597eaa4978deb4f9c3262068972
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385570"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063832"
 ---
 # <a name="performing-procamp-control-and-deinterlacing-operations"></a>执行 ProcAmp 控制和反交错操作
 
@@ -20,7 +20,7 @@ ms.locfileid: "67385570"
 ## <span id="ddk_performing_procamp_control_and_deinterlacing_operations_gg"></span><span id="DDK_PERFORMING_PROCAMP_CONTROL_AND_DEINTERLACING_OPERATIONS_GG"></span>
 
 
-下面的示例代码用于执行 ProcAmp 控件和去隔行操作。 此代码是实现[ *DdMoCompRender* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render)回调函数。 **RenderMoComp**的成员[ **DD\_MOTIONCOMPCALLBACKS** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构指向回调函数。
+使用以下示例代码来执行 ProcAmp 控制和取消隔行扫描操作。 此代码是 [*DdMoCompRender*](/windows/desktop/api/ddrawint/nc-ddrawint-pdd_mocompcb_render) 回调函数的实现。 [**DD \_ MOTIONCOMPCALLBACKS**](/windows/desktop/api/ddrawint/ns-ddrawint-dd_motioncompcallbacks)结构的**RenderMoComp**成员指向回调函数。
 
 ```cpp
 DWORD APIENTRY
@@ -186,10 +186,4 @@ DWORD APIENTRY
 ```
 
  
-
- 
-
-
-
-
 

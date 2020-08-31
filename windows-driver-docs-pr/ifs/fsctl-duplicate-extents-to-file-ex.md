@@ -1,9 +1,9 @@
 ---
 title: FSCTL_DUPLICATE_EXTENTS_TO_FILE_EX 控制代码
-description: FSCTL\_重复\_区\_TO\_文件\_EX 控件代码指示要复制的文件字节范围代表应用程序的文件系统。 目标文件可能是相同或不同源文件中。
+description: 将 FSCTL \_ 复制 \_ \_ 到文件的范围 \_ \_ （如控制代码）指示文件系统代表应用程序复制一系列文件字节。 目标文件可能与源文件相同，或与源文件不同。
 ms.assetid: B13C6415-5593-43CF-90AC-7D2DC844EC41
 keywords:
-- FSCTL_DUPLICATE_EXTENTS_TO_FILE_EX 控制代码可安装文件系统驱动程序
+- FSCTL_DUPLICATE_EXTENTS_TO_FILE_EX 控制代码可安装的文件系统驱动程序
 topic_type:
 - apiref
 api_name:
@@ -15,19 +15,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a85ae95d204437a8e9d3988f44e88ed30ab71d5d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b11b7071ff5a1550fb6cc4cdd3b2ef6a6b338e30
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369243"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063408"
 ---
-# <a name="fsctlduplicateextentstofileex-control-code"></a>FSCTL\_重复\_区\_TO\_文件\_EX 控制代码
+# <a name="fsctl_duplicate_extents_to_file_ex-control-code"></a>\_将重复 \_ 区 FSCTL \_ 到 \_ 文件 \_ EX 控制代码
 
 
-[ **FSCTL\_重复\_扩展盘区\_TO\_文件\_EX** ](fsctl-duplicate-extents-to-file-ex.md)控制代码指示文件系统复制的文件范围代表应用程序的字节数。 目标文件可能是相同或不同源文件中。
+将 [**FSCTL \_ 复制 \_ 到文件的范围（ \_ \_ \_ 如**](fsctl-duplicate-extents-to-file-ex.md) 控制代码）指示文件系统代表应用程序复制一系列文件字节。 目标文件可能与源文件相同，或与源文件不同。
 
-若要执行此操作，调用[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)使用以下参数的函数。
+若要执行此操作，请调用具有以下参数的 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 函数。
 
 ```ManagedCPlusPlus
 BOOL 
@@ -42,56 +42,56 @@ BOOL
                     (LPOVERLAPPED) lpOverlapped );  // OVERLAPPED structure
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
-*hDevice* \[in\]  
-设备句柄。 若要获取设备句柄，请调用[ **CreateFile** ](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)函数。
+*hDevice* \[中\]  
+设备的句柄。 若要获取设备句柄，请调用 [**CreateFile**](/windows/desktop/api/fileapi/nf-fileapi-createfilea) 函数。
 
-*dwIoControlCode* \[in\]  
-操作的控制代码。 使用[ **FSCTL\_重复\_扩展盘区\_TO\_文件\_EX** ](fsctl-duplicate-extents-to-file-ex.md)对于此操作。
+*dwIoControlCode* \[中\]  
+操作的控制代码。 对于此操作，请使用 [**FSCTL 的 \_ 重复 \_ 区 \_ \_ 文件 \_ **](fsctl-duplicate-extents-to-file-ex.md) 。
 
 *lpInBuffer*   
-一个指向**重复\_区\_数据\_EX**结构，它指定的源文件、 源字节范围和目标文件复制到的范围偏移量。
+指向 **重复 \_ 区数据的指针 \_ 数据 \_ EX** 结构，它指定源文件、源字节范围以及要将范围复制到的目标文件偏移量。
 
-*nInBufferSize* \[in\]  
-输入缓冲区，以字节为单位的大小。
+*nInBufferSize* \[中\]  
+输入缓冲区的大小（以字节为单位）。
 
-*lpOutBuffer* \[out\]  
-不使用与此操作。 设置为 NULL。
+*lpOutBuffer* \[弄\]  
+不与此操作一起使用。 设置为 NULL。
 
-*nOutBufferSize* \[in\]  
-不使用与此操作。 设置为零 (0)。
+*nOutBufferSize* \[中\]  
+不与此操作一起使用。 设置为零 (0) 。
 
-*lpBytesReturned* \[out\]  
-指向一个变量来接收数据存储在输出缓冲区，以字节为单位的大小的指针。
+*lpBytesReturned* \[弄\]  
+指向一个变量的指针，该变量接收存储在输出缓冲区中的数据的大小（以字节为单位）。
 
-如果输出缓冲区太小，则调用失败， [ **GetLastError** ](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)返回**错误\_不足\_缓冲区**，和*lpBytesReturned*为零。
+如果输出缓冲区太小，则调用失败， [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 返回 **错误 \_ \_ 缓冲区**，并且 *lpBytesReturned* 为零。
 
-如果*lpOverlapped*是**NULL**， *lpBytesReturned*不能为**NULL**。 甚至当操作不返回任何输出数据和*lpOutBuffer*是**NULL**， [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)利用*lpBytesReturned*。 此类操作的值后*lpBytesReturned*毫无意义。
+如果 *lpOverlapped* 为 **null**，则 *lpBytesReturned* 不能为 **null**。 即使当操作不返回任何输出数据并且 *lpOutBuffer* 为 **NULL**时， [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 使用 *lpBytesReturned*。 此类操作完成后， *lpBytesReturned* 的值没有意义。
 
-如果*lpOverlapped*不是**NULL**， *lpBytesReturned*可以**NULL**。 如果此参数不是**NULL**且该操作返回的数据， *lpBytesReturned*重叠的操作未完成之前没有意义。 若要检索返回的字节数，请调用[ **GetOverlappedResult**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)。 如果*hDevice*参数是与 I/O 完成端口相关联，可以检索通过调用返回的字节数[ **GetQueuedCompletionStatus**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)。
+如果 *lpOverlapped* 不为 **null**，则 *lpBytesReturned* 可以为 **null**。 如果此参数不为 **NULL** ，并且操作返回数据，则在重叠操作完成之前， *lpBytesReturned* 是无意义的。 若要检索返回的字节数，请调用 [**getoverlappedresult 期间**](/windows/desktop/api/ioapiset/nf-ioapiset-getoverlappedresult)。 如果 *hDevice* 参数与 i/o 完成端口关联，则可以通过调用 [**GetQueuedCompletionStatus**](/windows/desktop/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus)检索返回的字节数。
 
-*lpOverlapped* \[in\]  
-一个指向[ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)结构。
+*lpOverlapped* \[中\]  
+指向 [**重叠**](/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped) 的结构的指针。
 
-如果*hDevice*而无需指定打开**文件\_标志\_OVERLAPPED**， *lpOverlapped*将被忽略。
+如果在未指定**文件 \_ 标志 \_ 重叠**的情况下打开*hDevice* ，则将忽略*lpOverlapped* 。
 
-如果*hDevice*以打开**文件\_标志\_OVERLAPPED**重叠 （异步） 操作的形式执行的标志，该操作。 在这种情况下， *lpOverlapped*必须指向有效[ **OVERLAPPED** ](https://docs.microsoft.com/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped)结构，其中包含一个事件对象的句柄。 否则，该函数将失败不可预知的方式。
+如果使用**FILE \_ 标记 \_ 交叠**标志打开*hDevice* ，则操作将作为 (异步) 操作的重叠进行。 在这种情况下， *lpOverlapped* 必须指向包含事件对象句柄的有效 [**重叠**](/windows/desktop/api/minwinbase/ns-minwinbase-_overlapped) 结构。 否则，函数将会失败。
 
-对于重叠操作， [ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)会立即返回，并在操作完成后，发出信号的事件对象。 否则，该函数不返回直到操作完成或发生错误。
+对于重叠操作， [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 将立即返回，并且在操作完成后会发出事件对象。 否则，在操作完成或发生错误之前，函数不会返回。
 
 <a name="return-value"></a>返回值
 ------------
 
-如果操作成功，完成[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)返回非零值。
+如果操作成功完成，则 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 将返回一个非零值。
 
-如果操作失败或已挂起[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)返回零。 若要获得扩展错误信息，请调用[ **GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)。
+如果操作失败或挂起，则 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 将返回零。 若要获取扩展的错误信息，请调用 [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)。
 
 <a name="remarks"></a>备注
 -------
 
-在此操作的 I/O 重叠的含义，请参阅备注部分[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)主题。
+有关此操作上的重叠 i/o 的含义，请参阅 [**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol) 主题的 "备注" 部分。
 
 <a name="requirements"></a>要求
 ------------
@@ -103,8 +103,8 @@ BOOL
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">WinIoctl.h; Ntifs.h</td>
+<td align="left"><p>标头</p></td>
+<td align="left">WinIoctl;Ntifs</td>
 </tr>
 </tbody>
 </table>
@@ -112,12 +112,5 @@ BOOL
 ## <a name="see-also"></a>请参阅
 
 
-[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
-
- 
-
-
-
-
-
+[**DeviceIoControl**](/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)
 

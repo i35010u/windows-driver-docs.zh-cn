@@ -6,12 +6,12 @@ keywords:
 - FilterUnloadCallback
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: feb776ebdf29cf7ab3443d346cf0627f8863670e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0f3518ac482a26a8988937258d2decfc9fa8be07
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840925"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062968"
 ---
 # <a name="writing-a-filterunloadcallback-routine"></a>编写 FilterUnloadCallback 例程
 
@@ -28,19 +28,19 @@ typedef NTSTATUS
     );
 ```
 
-*FilterUnloadCallback*例程有一个输入参数*标志*，该参数可以为**NULL** ，也可以是 FLTFL\_筛选器\_卸载\_必选。 筛选器管理器将此参数设置为 FLTFL\_筛选器\_卸载\_必需，指示卸载操作是必需的。 有关此参数的详细信息，请参阅[**PFLT\_FILTER\_UNLOAD\_回调**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback)。
+*FilterUnloadCallback*例程有一个输入参数*标志*，该参数可以为**NULL** ，也可以是 FLTFL \_ 筛选器 \_ \_ 必需卸载。 筛选器管理器将此参数设置为 FLTFL \_ filter \_ \_ 必需的 unload，以指示卸载操作是必需的。 有关此参数的详细信息，请参阅 [**PFLT \_ 筛选器 \_ 卸载 \_ 回调**](/windows-hardware/drivers/ddi/fltkernel/nc-fltkernel-pflt_filter_unload_callback)。
 
-微筛选器驱动程序的*FilterUnloadCallback*例程必须执行以下步骤：
+微筛选器驱动程序的 *FilterUnloadCallback* 例程必须执行以下步骤：
 
 -   关闭任何打开的内核模式通信服务器端口句柄。
 
--   调用[**FltUnregisterFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunregisterfilter)以注销微筛选器驱动程序。
+-   调用 [**FltUnregisterFilter**](/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltunregisterfilter) 以注销微筛选器驱动程序。
 
 -   执行任何所需的全局清除。
 
 -   返回相应的 NTSTATUS 值。
 
-本部分包括：
+本节包括：
 
 [关闭通信服务器端口](closing-the-communication-server-port.md)
 
@@ -51,9 +51,4 @@ typedef NTSTATUS
 [从 FilterUnloadCallback 例程返回状态](returning-status-from-a-filterunloadcallback-routine.md)
 
  
-
- 
-
-
-
 

@@ -1,49 +1,49 @@
 ---
-title: 在设备安装和驱动程序更新期间避免重启
-description: 在设备安装和驱动程序更新期间避免系统重启
+title: 避免在设备安装和驱动程序更新过程中重新启动
+description: 在设备安装和驱动程序更新过程中避免系统重启
 ms.assetid: b30c9e5f-85af-4e7f-81aa-67fe2df8a178
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41bda6a033b69bd16b4cfad289b32fb1354ef9c8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ddcfa9b6ebff67d213416c6eb94074aa8c9a6764
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385302"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095107"
 ---
-# <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>在设备安装和驱动程序更新期间避免系统重启
+# <a name="avoiding-system-restarts-during-device-installations-and-driver-updates"></a>在设备安装和驱动程序更新过程中避免系统重启
 
 
-若要在设备安装期间避免系统重启，请使用以下规则：
+若要在设备安装过程中避免系统重启，请使用以下规则：
 
--   永远不会使用**重新启动**或**重新启动**中的条目[ **INF DDInstall 部分**](inf-ddinstall-section.md)。 这些指令最初为提供与 Windows 兼容性的 9 倍 / 我，因此不应为 Windows 2000 和更高版本的 Windows。
+-   请勿在[**INF DDInstall 部分**](inf-ddinstall-section.md)中使用 "**重新启动**" 或 "**重新启动**" 条目。 这些指令最初是为与 Windows 9x/Me 兼容而提供的，不应用于 Windows 2000 和更高版本的 Windows。
 
--   执行不使用 COPYFLG_FORCE_FILE_IN_USE 或 COPYFLG_REPLACE_BOOT_FILE 标志与[ **INF CopyFiles 指令**](inf-copyfiles-directive.md)，除非绝对必要。
+-   除非绝对必要，否则不要使用 COPYFLG_FORCE_FILE_IN_USE 或使用 [**INF CopyFiles 指令**](inf-copyfiles-directive.md)COPYFLG_REPLACE_BOOT_FILE 标志。
 
--   将新文件的名称分配给类安装程序或辅助安装程序或服务 DLL 的每个新版本。 如果正在使用中的较旧版本，这样可避免系统重启的需要。 （事实上，如果新的文件名称不用于安装程序更新后的类或类共同安装程序，这些新文件将不会用于安装。）
+-   为类安装程序或共同安装程序或服务 DLL 的每个新版本分配一个新的文件名。 如果使用的是较旧的版本，这就不必重新启动系统。  (事实上，如果新文件名不用于更新的类安装程序或类共同安装程序，则这些新文件将不用于安装。 ) 
 
--   若要更新的设备驱动程序，请执行下列出的规则[更新驱动程序文件](updating-driver-files.md)。
+-   若要更新设备的驱动程序，请遵循 " [更新驱动程序文件](updating-driver-files.md)" 下列出的规则。
 
-## <a name="minimizing-restarts-when-updating-file-backed-drivers"></a>更新支持文件的驱动程序时尽量减少重新启动
+## <a name="minimizing-restarts-when-updating-file-backed-drivers"></a>当更新文件支持的驱动程序时最小化重新启动
 
 
-在 Windows 10 之前所有内核模式驱动程序已由系统分页文件提供都支持。 因此，驱动程序二进制文件可能会覆盖磁盘上运行该驱动程序时，甚至。
+在 Windows 10 之前，所有内核模式驱动程序都是由系统的分页文件支持的。 因此，即使驱动程序正在运行，也可以在磁盘上覆盖驱动程序二进制文件。
 
-若要提高性能，从 Windows 10 开始大多数非引导启动驱动程序改为受支持驱动程序二进制文件在磁盘上。
+为了提高性能，从 Windows 10 开始，大多数非启动启动驱动程序都是由磁盘上的驱动程序二进制文件提供支持。
 
-驱动程序现在是文件备份的启动类型包括：
+现在支持文件的驱动程序启动类型包括：
 
--   SERVICE_SYSTEM_START (0x00000001)
--   SERVICE_AUTO_START (0x00000002)
--   SERVICE_DEMAND_START (0x00000003)
+-    (0x00000001) SERVICE_SYSTEM_START
+-   SERVICE_AUTO_START (0x00000002) 
+-   SERVICE_DEMAND_START (0x00000003) 
 
-启动开始驱动程序将继续由分页文件支持。
+页面文件继续支持启动启动驱动程序。
 
-若要更新的支持文件的驱动程序，请使用以下最佳实践。 否则，更新可能需要两次重启，要替换的文件和第二个要加载新版本的驱动程序的一个。
+若要更新文件备份的驱动程序，请使用下列最佳做法。 否则，更新可能需要两次重启，一个用于替换文件，另一个用于加载新版驱动程序。
 
-如果使用的 INF 文件，请按照下列步骤：
+如果使用的是 INF 文件，请执行以下步骤：
 
-1.  修改驱动程序 INF 文件的**CopyFiles**要使用的部分**COPYFLG_IN_USE_RENAME**，按如下所示：
+1.  修改驱动程序 INF 文件的 **CopyFiles** 部分以使用 **COPYFLG_IN_USE_RENAME**，如下所示：
 
     ```cpp
     [MyDriver_Install.NT]
@@ -53,35 +53,28 @@ ms.locfileid: "67385302"
     MyDriver.sys,,,0x00004000  ; COPYFLG_IN_USE_RENAME
     ```
 
-    如果使用此标志，Windows 将尝试替换为磁盘上的驱动程序文件。 有关详细信息，请参阅[INF CopyFiles 指令](inf-copyfiles-directive.md)。
+    如果使用此标志，则 Windows 将尝试替换磁盘上的驱动程序文件。 有关详细信息，请参阅 [INF CopyFiles 指令](inf-copyfiles-directive.md)。
 
-2.  如果 INF 适用的即插即用驱动程序，请在设备安装 Windows 尝试卸载正在运行的驱动程序并重新启动才能选取新版本的驱动程序使用它的设备。 如果失败，设备安装指示应重新启动系统。
-3.  如果 INF 即插即用驱动程序并不使用一种方法，如[ **InstallHInfSection** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)处理 INF，则手动停止并重新启动该驱动程序：
-    -   关闭所有打开的句柄驱动程序，然后停止驱动程序使用以下项之一：
+2.  如果 INF 用于 PnP 驱动程序，则在设备安装期间，Windows 将尝试卸载正在运行的驱动程序并重新启动使用该驱动程序的设备，以便选取新版本的驱动程序。 如果此操作失败，则设备安装将指示系统应重新启动。
+3.  如果 INF 不适用于 PnP 驱动程序，并且使用 [**InstallHInfSection**](/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona) 等方法来处理 inf，则手动停止并重新启动该驱动程序：
+    -   关闭驱动程序的所有打开的句柄，然后使用以下内容之一停止驱动程序：
 
-        -   **sc.exe stop** *&lt;mydriver&gt;*
-        -   **ControlService(SERVICE_CONTROL_STOP)**
+        -   **sc.exe 停止** * &lt; mydriver &gt; *
+        -   **Control 服务 (SERVICE_CONTROL_STOP) **
 
-        有关详细信息，请参阅[ **control 服务函数**](https://docs.microsoft.com/windows/desktop/api/winsvc/nf-winsvc-controlservice)。
+        有关详细信息，请参阅 [**control 服务函数**](/windows/desktop/api/winsvc/nf-winsvc-controlservice)。
 
-如果不使用 INF 文件，使用以下步骤：
+如果使用的不是 INF 文件，请使用以下步骤：
 
-1.  停止该驱动程序，如上文所述。 替换为新旧驱动程序二进制文件。
-2.  如果您不能停止该驱动程序，重命名现有文件，将新文件复制到的位置，并设置现有文件以在将来删除 (例如，使用[ **MoveFileEx** ](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-movefileexa)与**MOVEFILE_DELAY_UNTIL_REBOOT**标志)。 为了开始使用新版本的驱动程序，系统将需要重新启动。
+1.  如上文所述，停止该驱动程序。 将旧的驱动程序二进制文件替换为新的。
+2.  如果无法停止驱动程序，请重命名现有文件，将新文件复制到该位置，并设置要在将来删除的现有文件 (例如，将 [**MoveFileEx**](/windows/desktop/api/winbase/nf-winbase-movefileexa) 与 **MOVEFILE_DELAY_UNTIL_REBOOT** 标志) 一起使用。 为了开始使用新版本的驱动程序，系统需要重新启动。
 
 ## <a name="related-topics"></a>相关主题
 
 
-[文件备份和支持页的文件部分](https://docs.microsoft.com/windows-hardware/drivers/kernel/file-backed-and-page-file-backed-sections)
+[基于文件和基于页文件的节](../kernel/file-backed-and-page-file-backed-sections.md)
 
-[加载驱动程序时由什么决定](https://docs.microsoft.com/windows-hardware/drivers/ifs/what-determines-when-a-driver-is-loaded)
-
- 
+[如何确定驱动程序的加载时间](../ifs/what-determines-when-a-driver-is-loaded.md)
 
  
-
-
-
-
-
 

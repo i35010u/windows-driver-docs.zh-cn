@@ -7,12 +7,12 @@ keywords:
 - 设备管理器 WDK，关于设备管理器
 ms.date: 10/01/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 74bfd848acfb70b62589be599709723e0f3207f6
-ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
+ms.openlocfilehash: a3ef1c8638df66ecc71d23344cb2b854d993c24c
+ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88615076"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056941"
 ---
 # <a name="using-device-manager"></a>使用设备管理器
 
@@ -26,4 +26,4 @@ ms.locfileid: "88615076"
 
 设备管理器可以显示隐藏的设备。 当你测试新的 PnP 设备的安装时，这会很有帮助。 有关详细信息，请参阅 [查看隐藏的设备](viewing-hidden-devices.md)。
 
-设备管理器提供每个设备的 "属性" 对话框中的详细信息。 右键单击该设备的名称，然后单击 " **属性**"。 " **常规**"、" **驱动程序**"、" **详细信息**" 和 " **事件** " 选项卡包含调试错误时可能有用的信息。 有关详细信息，请参阅 [设备管理器详细信息 "选项卡](device-manager-details-tab.md)。
+设备管理器提供每个设备的 "属性" 对话框中的详细信息。 选择并按住 (或右键单击) 设备名称，然后选择 " **属性**"。 " **常规**"、" **驱动程序**"、" **详细信息**" 和 " **事件** " 选项卡包含调试错误时可能有用的信息。 有关详细信息，请参阅 [设备管理器详细信息 "选项卡](device-manager-details-tab.md)。

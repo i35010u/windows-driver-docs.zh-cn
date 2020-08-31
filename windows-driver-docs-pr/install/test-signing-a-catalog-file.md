@@ -8,16 +8,16 @@ keywords:
 - 测试签名驱动程序包 WDK，编录文件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c96adfe45ef40417f5b48f6a5ca83b27952aec8c
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 3b84b7c94f151664f51ddd803d1d7833692cb412
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902625"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095451"
 ---
 # <a name="test-signing-a-catalog-file"></a>对目录文件进行测试签名
 
-创建并验证 [驱动程序包的](driver-packages.md) [目录文件](catalog-files.md)后，使用 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 对目录文件进行测试签名
+创建并验证 [驱动程序包的](driver-packages.md) [目录文件](catalog-files.md)后，使用 [**SignTool**](../devtest/signtool.md) 对目录文件进行测试签名
 
 ## <a name="using-a-makecert-test-certificate-or-commercial-test-certificate-to-test-sign-a-driver-packages-catalog-file"></a>使用 MakeCert 测试证书或商业测试证书对驱动程序包的目录文件进行测试签名
 

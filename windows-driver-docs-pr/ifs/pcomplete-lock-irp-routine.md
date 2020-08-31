@@ -1,6 +1,6 @@
 ---
-title: PCOMPLETE\_锁定\_IRP\_例程例程
-description: 文件系统筛选器驱动程序（旧筛选器）可以将 PCOMPLETE\_锁定\_IRP\_例程类型例程注册为筛选器的 CompleteLockIrpRoutine 回调。
+title: PCOMPLETE \_ LOCK \_ IRP \_ 例程例程
+description: 文件系统筛选器驱动程序 (旧筛选器) 可以 \_ 将 PCOMPLETE LOCK \_ IRP \_ 例程类型例程注册为筛选器的 CompleteLockIrpRoutine 回调。
 ms.assetid: 400ff351-5906-4e6e-a708-e71441afe3b8
 keywords:
 - CompleteLockIrpRoutine 例程可安装文件系统驱动程序
@@ -15,17 +15,17 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dfa49f57d705f42176307686debca2939c61daf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8d53253251a8eb63bbc1ce30816630a6dfc2f8f6
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841041"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063018"
 ---
-# <a name="pcomplete_lock_irp_routine-routine"></a>PCOMPLETE\_锁定\_IRP\_例程例程
+# <a name="pcomplete_lock_irp_routine-routine"></a>PCOMPLETE \_ LOCK \_ IRP \_ 例程例程
 
 
-文件系统筛选器驱动程序（旧筛选器）可以将 PCOMPLETE\_锁定\_IRP\_例程类型例程注册为筛选器的*CompleteLockIrpRoutine*回调。
+文件系统筛选器驱动程序 (旧筛选器) 可以 \_ 将 PCOMPLETE LOCK \_ IRP \_ 例程类型例程注册为筛选器的 *CompleteLockIrpRoutine* 回调。
 
 <a name="syntax"></a>语法
 ------
@@ -40,36 +40,36 @@ NTSTATUS CompleteLockIrpRoutine(
 { ... }
 ```
 
-<a name="parameters"></a>参数
+<a name="parameters"></a>parameters
 ----------
 
-*上下文*\[\]  
-传递给[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)的上下文指针。
+*上下文* \[中\]  
+传递给 [**FsRtlProcessFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)的上下文指针。
 
-*Irp* \[\]  
-文件锁定 Irp 的 IRP [ **\_MJ\_锁定**](irp-mj-lock-control.md)要完成的\_控制请求。 锁定请求类型将为以下类型之一：
+*Irp* \[中\]  
+用于文件锁定 [**irp \_ MJ \_ 锁定 \_ 控制**](irp-mj-lock-control.md) 请求的 irp 正在完成。 锁定请求类型将为以下类型之一：
 
-IRP\_MN\_锁定
+IRP \_ MN \_ 锁
 
-IRP\_MN\_解锁\_
+IRP \_ MN \_ \_ 全部解锁
 
-IRP\_MN\_通过\_密钥\_所有\_进行解锁
+IRP \_ MN \_ \_ \_ 按密钥解锁 \_
 
-IRP\_MN\_解锁\_单一
+IRP \_ MN \_ \_
 
 <a name="return-value"></a>返回值
 ------------
 
-此例程返回状态\_SUCCESS 或适当的 NTSTATUS 值。 如果它返回不是成功代码的 NTSTATUS 值，则将从文件中删除该文件锁。
+此例程返回状态 \_ 成功或适当的 NTSTATUS 值。 如果它返回不是成功代码的 NTSTATUS 值，则将从文件中删除该文件锁。
 
 <a name="remarks"></a>备注
 -------
 
-文件系统筛选器驱动程序（旧筛选器）可以根据需要指定 PCOMPLETE\_锁\_IRP\_例程类型例程，作为字节范围文件锁的旧筛选器的*CompleteLockIrpRoutine*例程。
+ (旧版筛选器的文件系统筛选器驱动程序) 可以选择指定 PCOMPLETE \_ 锁 \_ IRP \_ 例程类型例程作为旧筛选器的 *CompleteLockIrpRoutine* 例程，用于字节范围文件锁定。
 
-若要指定此例程，旧版筛选器会将例程的指针传递为[**FsRtlAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)或[**FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)的*CompleteLockIrpRoutine*参数。
+若要指定此例程，旧版筛选器会将例程的指针传递为[**FsRtlAllocateFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)或[**FsRtlInitializeFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)的*CompleteLockIrpRoutine*参数。
 
-如果旧筛选器为文件锁指定了*CompleteLockIrpRoutine*例程，则系统会在完成[**IRP\_MJ\_锁定文件锁定\_控制**](irp-mj-lock-control.md)操作时调用此例程。
+如果旧筛选器为文件锁指定了 *CompleteLockIrpRoutine* 例程，则系统会在为文件锁定完成 [**IRP \_ MJ \_ 锁定 \_ 控制**](irp-mj-lock-control.md) 操作时调用此例程。
 
 <a name="requirements"></a>要求
 ------------
@@ -82,11 +82,11 @@ IRP\_MN\_解锁\_单一
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面</td>
+<td align="left">桌面型</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Ntifs （包括 Ntifs）</td>
+<td align="left">Ntifs (包含 Ntifs) </td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>
@@ -98,30 +98,23 @@ IRP\_MN\_解锁\_单一
 ## <a name="see-also"></a>另请参阅
 
 
-[**FsRtlAllocateFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)
+[**FsRtlAllocateFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlallocatefilelock)
 
-[**FsRtlCheckLockForReadAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)
+[**FsRtlCheckLockForReadAccess**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforreadaccess)
 
-[**FsRtlCheckLockForWriteAccess**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforwriteaccess)
+[**FsRtlCheckLockForWriteAccess**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlchecklockforwriteaccess)
 
-[**FsRtlFreeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfreefilelock)
+[**FsRtlFreeFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlfreefilelock)
 
-[**FsRtlInitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)
+[**FsRtlInitializeFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlinitializefilelock)
 
-[**FsRtlProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
+[**FsRtlProcessFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlprocessfilelock)
 
-[**FsRtlUninitializeFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)
+[**FsRtlUninitializeFileLock**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtluninitializefilelock)
 
-[**IRP\_MJ\_锁定\_控件**](irp-mj-lock-control.md)
+[**IRP \_ MJ \_ 锁定 \_ 控制**](irp-mj-lock-control.md)
 
-[**PUNLOCK\_例程**](punlock-routine.md)
-
- 
+[**PUNLOCK \_ 例程**](punlock-routine.md)
 
  
-
-
-
-
-
 

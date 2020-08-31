@@ -4,12 +4,12 @@ description: 自定义加密服务提供程序的第三方验证码签名 (Csp) 
 ms.assetid: DBAA575A-F0B5-4725-A7B1-D6EA84977212
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b5ea6f08de2d1e5d57bcaae223d235e58e16bad
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: ee68eb6544911d39b4918d472e947fff43fbf46b
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902655"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095109"
 ---
 # <a name="authenticode-signing-of-third-party-csps"></a>对第三方 CSP 进行验证码签名
 
@@ -20,7 +20,7 @@ ms.locfileid: "88902655"
 相反，所有第三方 Csp 现在都可以通过执行以下步骤自签名：
 
 1. 从证书颁发机构购买一个代码签名证书， (CA) ，Microsoft 还颁发一个交叉证书。 " [内核模式代码签名的交叉证书](cross-certificates-for-kernel-mode-code-signing.md) " 主题提供了一个 ca 列表，其中 Microsoft 还提供了交叉证书和相应的交叉证书。 请注意，这些是与 Microsoft 颁发的 "Microsoft 代码验证根" 链接的唯一交叉证书，这会使 Windows 运行第三方 Csp。
-2. 获得 CA 颁发的证书和匹配的交叉证书后，可以使用 [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool) 对所有 CSP 二进制文件进行签名。
+2. 获得 CA 颁发的证书和匹配的交叉证书后，可以使用 [**SignTool**](../devtest/signtool.md) 对所有 CSP 二进制文件进行签名。
 3. SignTool 包含在最新版本的 Visual Studio 中。 它还包含在 WDK 版本7.0 和更高版本中。 请注意，早期版本的 WDK 附带的 SignTool 与交叉证书不兼容，不能用于对二进制文件进行签名。
 
 >[!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "88902655"
 
 你可以从命令行对二进制文件进行签名，或在 Visual Studio 2012 和更高版本中作为集成生成步骤签名。
 
-[**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)的命令为：
+[**SignTool**](../devtest/signtool.md)的命令为：
 
 ```cpp
 signtool.exe sign /ac <cross-certificate_from_ms> /sha1 <sha1_hash> /t <timestamp_server> /d <”optional_description_in_double_quotes”> <binary_file.ext>

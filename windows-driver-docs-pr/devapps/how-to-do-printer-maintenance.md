@@ -4,12 +4,12 @@ description: 在 Windows 8.1 中，UWP 设备应用可以执行打印机维护�
 ms.assetid: 52141F66-872A-4381-92C8-B04ABDABA7AD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a3aec453570a9f12680d362002c22c22689f70
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 170aab11fcd69d7d4264b2dbbdaa25c5e78e1331
+ms.sourcegitcommit: 4db5f9874907c405c59aaad7bcc28c7ba8280150
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802477"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89095463"
 ---
 # <a name="how-to-do-printer-maintenance-in-a-uwp-device-app"></a>如何在 UWP 设备应用中进行打印机维护
 
@@ -22,7 +22,7 @@ ms.locfileid: "88802477"
 
 ## <a name="printer-maintenance"></a>打印机维护
 
-Windows 8.1 在 v4 打印机驱动程序中引入了新的打印机扩展接口，可用于实现设备维护： [**IPrinterBidiSetRequestCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [**IPrinterExtensionAsyncOperation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation) 和 [**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)。 通过这些接口，可以将双向请求异步发送到端口监视器，以便将其转换为设备和特定于协议的命令，然后将其发送到打印机。 有关详细信息，请参阅 [设备维护 (V4 打印机驱动程序) ](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)。
+Windows 8.1 在 v4 打印机驱动程序中引入了新的打印机扩展接口，可用于实现设备维护： [**IPrinterBidiSetRequestCallback**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterbidisetrequestcallback)、 [**IPrinterExtensionAsyncOperation**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensionasyncoperation) 和 [**IPrinterQueue2**](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)。 通过这些接口，可以将双向请求异步发送到端口监视器，以便将其转换为设备和特定于协议的命令，然后将其发送到打印机。 有关详细信息，请参阅 [设备维护 (V4 打印机驱动程序) ](../print/device-maintenance.md)。
 
 **提示**   C # 和 JavaScript 应用无法直接与 COM Api 一起使用。 如果要编写 c # 或 JavaScript UWP 设备应用，请使用打印机扩展库来访问这些接口 (如本主题) 中所示。
 
@@ -216,7 +216,7 @@ internal async void OnBidiResponseReceived(object sender, string bidiResponse)
 
 ## <a name="related-topics"></a>相关主题
 
-[设备维护 (v4 打印机驱动程序) ](https://docs.microsoft.com/windows-hardware/drivers/print/device-maintenance)
+[设备维护 (v4 打印机驱动程序) ](../print/device-maintenance.md)
 
 [开发 v4 打印驱动程序](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 

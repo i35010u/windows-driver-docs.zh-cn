@@ -8,12 +8,12 @@ keywords:
 - VA WDK DirectX，关于 DirectX 视频加速
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9cfbd09ebc6abf521333e2eda8990126605bcb3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cf6e6b29945cb12be59b2c8771a11e3af80cb485
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840348"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063916"
 ---
 # <a name="introduction-to-directx-va"></a>DirectX VA 简介
 
@@ -21,11 +21,11 @@ ms.locfileid: "72840348"
 ## <span id="ddk_introduction_to_directx_va_gg"></span><span id="DDK_INTRODUCTION_TO_DIRECTX_VA_GG"></span>
 
 
-DirectX VA 允许硬件加速器执行频繁执行且简单的视频处理操作。 对于加速器而言，受限不太复杂的视频处理操作允许通过对加速器进行最小化自定义来实现各种视频标准的视频解码加速。 不经常执行且更复杂的视频处理操作（如位流分析和可变长度解码（VLD））可在主机 CPU 上执行。
+DirectX VA 允许硬件加速器执行频繁执行且简单的视频处理操作。 对于加速器而言，受限不太复杂的视频处理操作允许通过对加速器进行最小化自定义来实现各种视频标准的视频解码加速。 不经常执行且更复杂的视频处理操作（如位流分析和可变长度解码 (VLD) ）可在主机 CPU 上执行。
 
-DirectX VA API 和相应的[运动补偿](motion-compensation.md)DDI 为以下操作提供支持：
+DirectX VA API 和相应的 [运动补偿](motion-compensation.md) DDI 为以下操作提供支持：
 
--   适用于的[Alpha 混合](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)，如 DVD 子画面支持。
+-   适用于的[Alpha 混合](/windows-hardware/drivers/ddi/index)，如 DVD 子画面支持。
 
 -   对需要它的应用程序进行[加密](encryption-support.md)。
 
@@ -41,19 +41,13 @@ DirectX VA API 和相应的[运动补偿](motion-compensation.md)DDI 为以下�
 
 为了支持 Windows media 格式，必须使用 Windows Media 视频编解码器版本9或更高版本。 Windows XP 提供的 Windows Media 视频编解码器版本8不支持 DirectX VA。
 
-对于使用[取消隔行扫描 DDI](deinterlacing-and-frame-rate-conversion.md)的显示驱动程序，必须将视频内容隔行扫描并正确地标记为交错。 视频混合呈现器（VMR）将 VIDEOINFOHEADER2 结构与取消隔行扫描 DDI 结合使用，以进行取消隔行扫描并执行帧速率转换。 有关 VIDEOINFOHEADER2 结构的详细信息，请参阅 Windows SDK 文档。
+对于使用 [取消隔行扫描 DDI](deinterlacing-and-frame-rate-conversion.md)的显示驱动程序，必须将视频内容隔行扫描并正确地标记为交错。 视频混合呈现器 (VMR) 将 VIDEOINFOHEADER2 结构与取消隔行扫描 DDI 结合使用，以进行取消隔行扫描并执行帧速率转换。 有关 VIDEOINFOHEADER2 结构的详细信息，请参阅 Windows SDK 文档。
 
-[ProcAmp 控件 DDI](procamp-control-processing.md)扩展了 DirectX VA，以支持 ProcAmp 控制，并按图形设备驱动程序对视频内容进行处理。 DDI 映射到现有 DirectDraw 和 DirectX VA DDI。 不能通过**IAMVideoAccelerator**接口访问 DDI。 ProcAmp 控件 DDI 仅在 Microsoft DirectX 9.0 和更高版本中可用。
+[ProcAmp 控件 DDI](procamp-control-processing.md)扩展了 DirectX VA，以支持 ProcAmp 控制，并按图形设备驱动程序对视频内容进行处理。 DDI 映射到现有 DirectDraw 和 DirectX VA DDI。 不能通过 **IAMVideoAccelerator** 接口访问 DDI。 ProcAmp 控件 DDI 仅在 Microsoft DirectX 9.0 和更高版本中可用。
 
-[当前标准的实现](implementation-of-current-standards.md)主题详细介绍了以下各项需要满足的硬件加速器和软件解码器要求： itu-t 261、mpeg-2、mpeg-2 （262）、Itu-t .H、MPEG-2、mpeg-4、、、、、和。MPEG-2 AVC （h.264）和 VC-1。
+[当前标准的实现](implementation-of-current-standards.md)主题详细介绍了以下各项所需满足的硬件加速器和软件解码器要求：261、mpeg-2、MPEG-2、mpeg-2 (262) 、itu-t AVC、mpeg-2、mpeg-4 和)  (，以及 VC-1 的要求和的软件解码器要求的内容的详细信息。
 
 DirectX VA 未提供任何工具。 有关为 Windows media 支持提供的工具的详细信息，请参阅 Windows Media 移植工具包。
 
  
-
- 
-
-
-
-
 

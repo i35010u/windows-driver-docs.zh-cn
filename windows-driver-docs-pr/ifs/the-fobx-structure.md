@@ -17,12 +17,12 @@ keywords:
 - 连接信息 WDK RDBSS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e8c203da55b0c8075f12fb5aa4cf56f9cca365
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 614f2cbe04e9ca3217c56e093b3fdf289c53277a
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840954"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063220"
 ---
 # <a name="the-fobx-structure"></a>FOBX 结构
 
@@ -30,13 +30,13 @@ ms.locfileid: "72840954"
 ## <span id="ddk_the_fobx_structure_if"></span><span id="DDK_THE_FOBX_STRUCTURE_IF"></span>
 
 
-文件对象扩展（FOBX）结构是[**文件\_对象**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_object)结构的 RDBSS 扩展。 FOBX 结构由文件对象中的**FileObjectExtension**字段指向。 FOBX 结构包含以下内容：
+文件对象扩展 (FOBX) 结构是 [**文件 \_ 对象**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_object) 结构的 RDBSS 扩展。 FOBX 结构由文件对象中的 **FileObjectExtension** 字段指向。 FOBX 结构包含以下内容：
 
 -   签名和引用计数
 
 -   关联的 FCB 结构的反向指针
 
--   与 SRV\_开放结构关联的反向指针
+-   关联的 SRV \_ 开放式结构的反向指针
 
 -   有关此开放结构的上下文信息
 
@@ -44,7 +44,7 @@ ms.locfileid: "72840954"
 
 FOBX 结构包含所需的所有信息，每个文件对象通常不是由 i/o 系统存储的。 有关文件对象的信息由 i/o 系统在固定大小的文件系统对象中进行存储。 FOBX 结构通过网络小型重定向程序处理文件对象上所需的其他信息。
 
-文件对象中的**FsContext2**字段引用了任何文件对象的 FOBX 结构。 尽管 FOBX 结构通常是 RDBSS 结构中的终点，但目前仍对 FOBX 结构进行引用计数。
+文件对象中的 **FsContext2** 字段引用了任何文件对象的 FOBX 结构。 尽管 FOBX 结构通常是 RDBSS 结构中的终点，但目前仍对 FOBX 结构进行引用计数。
 
 FOBX 标志拆分为两个组：
 
@@ -55,9 +55,4 @@ FOBX 标志拆分为两个组：
 网络小型重定向器的可见标志包含可能的 FOBX 标志的低16位。 较高的16位保留供 RDBSS 在内部使用。
 
  
-
- 
-
-
-
 

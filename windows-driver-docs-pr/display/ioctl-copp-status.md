@@ -1,5 +1,5 @@
 ---
-title: IOCTL\_COPP\_状态控制代码
+title: IOCTL \_ COPP \_ 状态控制代码
 description: 返回受保护视频会话的状态。
 ms.assetid: 58c841f6-0bc8-4c21-9c0e-fd409817ec91
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e182a03233dc89ee7629cf17d9ee083816590a55
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: af19e9cfa0b44b36f6214bc2ba27bb29d34bb448
+ms.sourcegitcommit: 7b9c3ba12b05bbf78275395bbe3a287d2c31bcf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840334"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89063900"
 ---
-# <a name="ioctl_copp_status-control-code"></a>IOCTL\_COPP\_状态控制代码
+# <a name="ioctl_copp_status-control-code"></a>IOCTL \_ COPP \_ 状态控制代码
 
 
 返回受保护视频会话的状态。
@@ -29,7 +29,7 @@ ms.locfileid: "72840334"
 
 ### <a name="span-idinput_parametersspanspan-idinput_parametersspanspan-idinput_parametersspaninput-parameters"></a><span id="Input_Parameters"></span><span id="input_parameters"></span><span id="INPUT_PARAMETERS"></span>输入参数
 
-[**视频\_请求\_包**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet)（VRP） **InputBuffer**包含从显示驱动程序传递的信息。 例如，显示驱动程序可以将指针传递到 COPP\_IO\_InputBuffer 结构，如下所示：
+[**视频 \_ 请求 \_ 数据包**](/windows-hardware/drivers/ddi/video/ns-video-_video_request_packet) (VRP) **InputBuffer**包含从显示驱动程序传递的信息。 例如，显示驱动程序可以将指针传递给 \_ 定义为的 COPP IO \_ InputBuffer 结构，如下所示：
 
 ```cpp
 typedef struct {
@@ -39,15 +39,15 @@ typedef struct {
 } COPP_IO_InputBuffer;
 ```
 
-**PpThis**成员指向 COPP DirectX VA 设备对象的指针，该对象的状态为 "已检索"。 **InputBuffer**成员设置为一个指向[**DXVA\_COPPStatusInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusinput)结构的指针，该结构包含有关 COPP 状态请求的信息。 应将**phr**成员设置为从[*COPPQueryStatus*](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)函数返回的值。
+**PpThis**成员指向 COPP DirectX VA 设备对象的指针，该对象的状态为 "已检索"。 **InputBuffer**成员设置为指向[**DXVA \_ COPPStatusInput**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusinput)结构的指针，该结构包含有关 COPP 状态请求的信息。 应将 **phr** 成员设置为从 [*COPPQueryStatus*](./coppquerystatus.md) 函数返回的值。
 
 ### <a name="span-idoutput_parametersspanspan-idoutput_parametersspanspan-idoutput_parametersspanoutput-parameters"></a><span id="Output_Parameters"></span><span id="output_parameters"></span><span id="OUTPUT_PARAMETERS"></span>输出参数
 
-微型端口驱动程序返回指向 VRP **OutputBuffer**中的[**DXVA\_COPPStatusOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusoutput)结构的指针。 DXVA\_COPPStatusOutput 结构包含状态。
+微型端口驱动程序返回指向 VRP **OutputBuffer**中的[**DXVA \_ COPPStatusOutput**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusoutput)结构的指针。 DXVA \_ COPPStatusOutput 结构包含状态。
 
 ### <a name="span-idi_o_status_blockspanspan-idi_o_status_blockspanspan-idi_o_status_blockspanio-status-block"></a><span id="I_O_Status_Block"></span><span id="i_o_status_block"></span><span id="I_O_STATUS_BLOCK"></span>I/o 状态块
 
-微型端口驱动程序将[**状态\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/ns-video-_status_block)结构的**信息**成员设置为 Sizeof （DXVA\_COPPStatusOutput）。
+微型端口驱动程序将[**状态 \_ 块**](/windows-hardware/drivers/ddi/video/ns-video-_status_block)结构的**信息**成员设置为 sizeof (DXVA \_ COPPStatusOutput) 。
 
 <a name="requirements"></a>要求
 ------------
@@ -68,18 +68,11 @@ typedef struct {
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[*COPPQueryStatus*](https://docs.microsoft.com/windows-hardware/drivers/display/coppquerystatus)
+[*COPPQueryStatus*](./coppquerystatus.md)
 
-[**DXVA\_COPPStatusInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusinput)
+[**DXVA \_ COPPStatusInput**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusinput)
 
-[**DXVA\_COPPStatusOutput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusoutput)
-
- 
+[**DXVA \_ COPPStatusOutput**](/windows-hardware/drivers/ddi/dxva/ns-dxva-_dxva_coppstatusoutput)
 
  
-
-
-
-
-
 
