@@ -3,27 +3,27 @@ title: 流式处理状态
 description: 流式处理状态
 ms.assetid: 1030e5cd-441b-4f6a-8f6a-21ce11aaca96
 keywords:
-- WDK AVStream 的视频捕获，流状态
-- 捕获视频 WDK AVStream，流式传输状态
+- 视频捕获 WDK AVStream，流状态
+- 捕获视频 WDK AVStream，流状态
 - 流状态 WDK 视频捕获
-- 指出 WDK 视频捕获
+- 状态 WDK 视频捕获
 - 停止状态 WDK 视频捕获
-- 获取 WDK 视频捕获状态
-- WDK 视频捕获的暂停状态
+- 获取状态 WDK 视频捕获
+- 暂停状态 WDK 视频捕获
 - 运行状态 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af5cfb8fd93caf8d757d57cb527dfad278d4ee02
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f7239fd8e7f9b34e8dfb22843cd8bb4e5e6289e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377775"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188341"
 ---
 # <a name="streaming-states"></a>流式处理状态
 
 
-每个流提供的微型驱动程序存在问题的四种状态之一：KSSTATE\_停止、 KSSTATE\_采集、 KSSTATE\_暂停或 KSSTATE\_运行。 在初始化时该流位于，默认情况下**KSSTATE\_停止**状态。 Stream 类接口发送时，将转换为其他状态所做[ **SRB\_设置\_流\_状态**](https://docs.microsoft.com/windows-hardware/drivers/stream/srb-set-stream-state)微型驱动程序的请求。 下表标识并描述了四个流状态。
+微型驱动程序提供的每个流都存在以下四种状态之一： KSSTATE \_ 停止、KSSTATE \_ 获取、KSSTATE \_ 暂停或 KSSTATE \_ 运行。 初始化时，默认情况下，流处于 **KSSTATE \_ 停止** 状态。 当 Stream 类接口向微型驱动程序发送 [**SRB \_ 集 \_ 流 \_ 状态**](./srb-set-stream-state.md) 请求时，将转换为其他状态。 下表标识并描述四种流状态。
 
 <table>
 <colgroup>
@@ -39,19 +39,19 @@ ms.locfileid: "67377775"
 <tbody>
 <tr class="odd">
 <td><p>KSSTATE_STOP</p></td>
-<td><p>当停止流状态时，微型驱动程序使用的资源，绝对最小值和微型驱动程序的队列中没有未完成数据 Srb。</p></td>
+<td><p>当流状态为 "已停止" 时，微型驱动程序使用资源的绝对最小值，且微型驱动程序的队列中没有未完成的数据 SRBs。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSSTATE_ACQUIRE</p></td>
-<td><p>流状态正在获取资源，微型驱动程序会分配所有所需的资源，如 USB 和 IEEE 1394 上的带宽。</p></td>
+<td><p>当流状态正在获取资源时，微型驱动程序将分配所需的所有资源，例如 USB 上的带宽和 IEEE 1394。</p></td>
 </tr>
 <tr class="odd">
 <td><p>KSSTATE_PAUSE</p></td>
-<td><p>流状态已暂停，微型驱动程序时，准备好立即对 KSSTATE_RUN 进行转换。</p></td>
+<td><p>当流状态为 "已暂停" 时，微型驱动程序准备好立即转换为 KSSTATE_RUN。</p></td>
 </tr>
 <tr class="even">
 <td><p>KSSTATE_RUN</p></td>
-<td><p>微型驱动程序时流流状态，填充缓冲区并完成使用 Srb <strong>CompleteStreamSRB</strong>。</p></td>
+<td><p>流状态为流式处理时，微型驱动程序将使用 <strong>CompleteStreamSRB</strong>填充缓冲区并完成 SRBs。</p></td>
 </tr>
 </tbody>
 </table>
@@ -59,9 +59,4 @@ ms.locfileid: "67377775"
  
 
  
-
- 
-
-
-
 

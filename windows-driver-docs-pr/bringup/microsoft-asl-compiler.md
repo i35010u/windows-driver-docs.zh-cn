@@ -1,29 +1,29 @@
 ---
 title: Microsoft ASL 编译器
-description: Microsoft ASL 编译器版本 5.0 ACPI 5.0 规范中支持的功能。
+description: Microsoft ASL 编译器版本5.0 支持 ACPI 5.0 规范中的功能。
 ms.assetid: E6EC168F-DB4B-461A-874A-F5278E8F9200
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d3a148931bc655d706449059289dff6b1a0ed69b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 47b94ee669bfd44deb2c5c59c89d27c2e05544f1
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364520"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189693"
 ---
 # <a name="microsoft-asl-compiler"></a>Microsoft ASL 编译器
 
 
-5\.0 版本的 Microsoft ACPI 源语言 (ASL) 编译器支持高级配置和电源接口规范，修订版本 5.0 中的功能 ([ACPI 5.0 规范](https://uefi.org/specifications))。 ASL 编译器都会使用 Windows Driver Kit (WDK)。 查找工具中 Asl.exe 可执行文件\\arm\\ACPIVerify、 工具\\arm64\\ACPIVerify、 工具\\x86\\ACPIVerify 或工具\\x64\\ACPIVerify 安装 WDK 目录。
+Microsoft ACPI 源语言 (版本 5.0 ASL) 编译器支持高级配置和电源接口规范中的功能，修订 5.0 ([ACPI 5.0 规范](https://uefi.org/specifications)) 。 ASL 编译器随 Windows 驱动程序工具包一起分发 (WDK) 。 在 \\ \\ 已安装 WDK 的 tools ACPIVerify、tools \\ Arm64 \\ ACPIVerify、Tools \\ x86 \\ ACPIVerify 或 tools \\ x64 \\ ACPIVerify 目录中查找 Asl.exe 可执行文件。
 
 ## <a name="command-line-options"></a>命令行选项
 
 
-Microsoft ASL 编译器支持多个命令行选项。 若要列出可用命令行选项，请运行命令"`asl /?`"命令提示符窗口中。
+Microsoft ASL 编译器支持多个命令行选项。 若要列出可用的命令行选项，请 `asl /?` 在命令提示符窗口中运行命令 ""。
 
-### <a name="usage"></a>用法
+### <a name="usage"></a>使用情况
 
-ASL 编译器支持下列命令行选项：
+ASL 编译器支持以下命令行选项：
 
 ```console
 asl /?
@@ -33,55 +33,54 @@ asl [/nologo] /tab=<TabSig> [/c] [/Fa=<ASMfile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>]
 asl [/nologo] [/Fo=<AMLFile>] [/Fa=<ASMFile>] [/Fl=<LSTFile>] [/Fn=<NSDFile>] <ASLFile>
 ```
 
-| Option             | 描述                                                                   |
+| 选项             | 描述                                                                   |
 |--------------------|-------------------------------------------------------------------------------|
 | ?                  | 打印此帮助消息。                                                      |
 | nologo             | 禁止显示徽标横幅。                                                     |
-| Fo=&lt;AMLFile&gt; | 重写中 DefinitionBlock 的 AML 文件名称。                            |
-| Fa=&lt;ASMFile&gt; | 生成。ASM 文件同名&lt;ASMFile&gt;。                           |
-| Fn=&lt;NSDFile&gt; | 生成具有名称的命名空间转储文件&lt;NSDFile&gt;。                 |
-| d                  | 转储以文本形式的二进制文件。                                            |
-| u                  | 反汇编的 AML 文件。ASL 文件 （默认值） 或。LST 文件。               |
-| tab=&lt;TabSig&gt; | 反汇编 ASL 表。ASL 文件 （默认值） 或。LST 文件。 转储到非 ASL 表。TXT 文件。 如果&lt;TabSig&gt;是\*，所有表都转储到 ACPI。TXT。 &lt;TabSig&gt;也可以是表的物理地址。 |
-| c                  | 从表中创建的二进制文件。                                              |
+| Fo = &lt; AMLFile&gt; | 重写 DefinitionBlock 中的 AML 文件名。                            |
+| Fa = &lt; ASMFile&gt; | 生成。名称为 ASMFile 的 ASM &lt; 文件 &gt; 。                           |
+| Fn = &lt; NSDFile&gt; | 生成名为 NSDFile 的命名空间转储 &lt; 文件 &gt; 。                 |
+| d                  | 以文本格式转储二进制文件。                                            |
+| u                  | 将 AML 文件 Unassemble 到。ASL 文件 (默认) 或。.LST 文件。               |
+| tab = &lt; TabSig&gt; | Unassemble ASL 表。ASL 文件 (默认) 或。.LST 文件。 将非 ASL 表转储到。TXT 文件。 如果 &lt; TabSig &gt; 是 " \* "，则所有表都转储到 ACPI.TXT。 &lt;TabSig &gt; 也可以是表的物理地址。 |
+| c                  | 从表中创建二进制文件。                                              |
 
  
-## <a name="using-the-microsoft-asl-compilers-acpi-table-load-feature"></a>使用 Microsoft ASL 编译器的 ACPI 表加载功能
+## <a name="using-the-microsoft-asl-compilers-acpi-table-load-feature"></a>使用 Microsoft ASL 编译器的 ACPI-表加载功能
 
-系统在开发期间，最好有一种方法来模拟各种 ACPI BIOS 构造和开发系统上对其进行测试。 Windows 操作系统允许某些 ACPI 表要从 Windows 注册表，而不是从 PC 的 BIOS rom。 加载 使用此功能需要管理员权限，还需要在系统上启用测试签名。 对于支持 UEFI 安全引导的系统，不能启用测试签名，并且除非禁用 UEFI 安全引导或系统上安装 Windows 调试策略不能使用编译器的表加载功能。
+在系统开发过程中，有一种方法可以模拟各种 ACPI BIOS 构造，并在开发系统中对其进行测试。 Windows 操作系统允许从 Windows 注册表而不是从 PC 的 BIOS ROM 加载某些 ACPI 表。 使用此功能需要管理员权限，并且还要求在系统上启用测试签名。 对于支持 UEFI 安全启动的系统，无法启用测试签名，并且不能使用编译器的表加载功能，除非禁用了 UEFI 安全启动或在系统上安装了 Windows 调试策略。
 
 若要使用表加载功能，要重载的 ACPI 表必须满足以下要求：
 
--   要重载的表必须已经存在于系统的 BIOS rom。 例如，可以重载 DSDT;但是，如果计算机不具有 SSDT，不能强制 SSDT 加载从该注册表替代机制。
--   表必须包含通常由 Windows ACPI 解释器 （Acpi.sys 驱动程序） 的 AML 代码。
--   将加载具有最高版本号的表。 加载到用于测试的注册表中的表必须具有更高版本的版本号高于在同一个表，在 BIOS ROM 中。
--   要加载的表必须是已编译 (AML) 格式和加载到注册表中正确的位置，使用指定的正确参数。 此处所述的机制可以处理加载表和注册表配置的所有方面。
+-   要重载的表在系统的 BIOS ROM 中必须已经存在。 例如，DSDT 可以重载;但是，如果计算机没有 SSDT，则不能强制从该注册表替代机制加载 SSDT。
+-   此表必须包含 Windows ACPI 解释器 (Acpi.sys 驱动程序) 通常使用的 AML 代码。
+-   将加载版本号最高的表。 加载到注册表中用于测试的表的版本号必须高于 BIOS ROM 中的相同表版本号。
+-   要加载的表必须位于编译 (AML) 格式，并加载到正确位置的注册表中，并且指定了正确的参数。 本文中所述的机制旨在处理加载表和配置注册表的各个方面。
 
 > [!WARNING]
-> 本主题中所述的过程可能会使 Windows 系统处于不可启动状态。 确保尝试此处所述的过程之前，在同一台计算机上有对另一个操作系统支持 NTFS 文件系统 （即，"安全生成"） 的访问权限。 此过程为 system 开发人员和测试人员仅提供，不应进行开发或生产重要的任何计算机上使用。
+> 本主题中所述的过程可能使您的 Windows 系统处于无法启动状态。 确保你有权访问具有 NTFS 文件系统支持的另一操作系统， (即，在尝试此处列出的过程之前，同一计算机上的 "安全生成" ) 。 此过程仅针对系统开发人员和测试人员提供，不应用于任何对开发或生产用途至关重要的计算机。
 
 
-### <a name="usage"></a>用法
+### <a name="usage"></a>使用情况
 
-若要将 ACPI 表加载到注册表中为测试目的，ASL 编译器调用，如下所示：
+要出于测试目的将 ACPI 表加载到注册表中，请按如下所示调用 ASL 编译器：
 
 ```console
 asl.exe /loadtable [-v] [-d] <AMLFile>
 ```
 
-其中 AMLFile 是编译 AML 文件包含你想要加载到注册表的表的名称。
+其中，AMLFile 是已编译的 AML 文件的名称，其中包含要加载到注册表中的表。
 
-| Option  | 描述                                                                                              |
+| 选项  | 描述                                                                                              |
 |---------|----------------------------------------------------------------------------------------------------------|
-| -v      | 详细模式。 打开从实用程序的额外的调试输出。                                          |
-| -d      | “删除”。 从注册表中，删除先前加载的 AML 文件并删除所有相关的注册表项。|
+| -v      | 详细模式。 启用实用工具的额外调试输出。                                          |
+| -d      | 删除。 从注册表中删除以前加载的 AML 文件，并删除所有关联的注册表项。|
 
 
 ## <a name="additional-resources"></a>其他资源
 
 -   [ACPICA 文档](https://acpica.org/documentation/)
 -   [ACPI 网站](https://uefi.org/specifications/)
--   [ACPI 调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/acpi-debugging)
--   [Acpi.sys:Windows ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)
--   [电源管理和 ACPI](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614610(v=vs.85))
-
+-   [ACPI 调试](../debugger/acpi-debugging.md)
+-   [Acpi.sysWindows ACPI 驱动程序](../kernel/acpi-driver.md)
+-   [电源管理和 ACPI](/previous-versions/windows/hardware/design/dn614610(v=vs.85))

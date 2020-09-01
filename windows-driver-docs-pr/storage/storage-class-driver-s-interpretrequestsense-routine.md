@@ -4,17 +4,17 @@ description: 存储类驱动程序的 InterpretRequestSense 例程
 ms.assetid: abfb529d-7fab-40f7-b4cd-e6adb4cf643e
 keywords:
 - InterpretRequestSense
-- 请求检测 WDK 存储
+- 请求感知 WDK 存储
 - 错误 WDK 存储
-- 正在重试请求 WDK 存储
+- 正在重试 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2d62ee9909357a9e57ca207ed0d7a08330b3a5f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ff0952aa743a7e220d27a8253c9c507f4c0054ad
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386816"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187511"
 ---
 # <a name="storage-class-drivers-interpretrequestsense-routine"></a>存储类驱动程序的 InterpretRequestSense 例程
 
@@ -22,20 +22,15 @@ ms.locfileid: "67386816"
 ## <span id="ddk_storage_class_drivers_interpretrequestsense_routine_kg"></span><span id="DDK_STORAGE_CLASS_DRIVERS_INTERPRETREQUESTSENSE_ROUTINE_KG"></span>
 
 
-*InterpretRequestSense*例程将解释在 SRB 中返回的数据**SenseInfoBuffer**，确定是否应重试请求，以及如果不是，将错误映射到的 NTSTATUS 值IRP 的 I/O 状态块。
+*InterpretRequestSense*例程解释在 SRB 的**SenseInfoBuffer**中返回的数据，确定是否应重试该请求，如果不是，则将该错误映射到 IRP 的 I/O 状态块的 NTSTATUS 值。
 
-系统端口驱动程序指示请求检测信息是否可通过设置 SRB\_状态\_自动感知\_VALID 还是 SRB\_状态\_请求\_意义上\_中的失败**SrbStatus**。
+系统端口驱动程序指示是否可以通过 \_ 在 SrbStatus 中设置 SRB 状态 "自动 \_ 感知 \_ \_ \_ " "有效" 或 "SRB 状态请求 \_ \_ "。 **SrbStatus**
 
-如果没有请求检测信息不可用， *InterpretRequestSense*应检查**SrbStatus**值以确定是否重试某个给定的请求，或者想要确定的相应映射到NTSTATUS 值。
+如果没有可用的请求感知信息， *InterpretRequestSense* 应检查 **SrbStatus** 值以确定是重试给定请求还是确定到 NTSTATUS 值的相应映射。
 
-*InterpretRequestSense*例程可能会调用一个驱动程序提供错误日志记录例程也。 每当存储类驱动程序日志的 I/O 错误，它应包括**PathId**， **TargetId**， **Lun**，以及**SrbStatus**设置值SRB 中的存储端口驱动程序和，如果可能，作为一部分错误相关的请求检测信息日志条目的**DumpData**。 请注意，不能使用存储类驱动程序**PathId**， **TargetId**，并**Lun**从这种 Srb 解决其他请求。
+*InterpretRequestSense*例程也可能调用驱动程序提供的错误日志记录例程。 每当存储类驱动程序记录 i/o 错误时，它应包含由 SRB 中的存储端口驱动程序设置的 **PathId**、 **TargetId**、 **Lun**和 **SrbStatus** 值，并在可能的情况下包括作为错误日志条目 **DumpData**一部分的相关请求感知信息。 请注意，存储类驱动程序不得使用此类 SRBs 中的 **PathId**、 **TargetId**和 **Lun** 来处理其他请求。
 
-有关日志记录的 I/O 错误的详细信息，请参阅[日志记录错误](https://docs.microsoft.com/windows-hardware/drivers/kernel/logging-errors)。
-
- 
+有关记录 i/o 错误的详细信息，请参阅 [日志记录错误](../kernel/logging-errors.md)。
 
  
-
-
-
 

@@ -4,12 +4,12 @@ description: METransformInputStreamStateChanged 事件表示必须更改输入�
 ms.assetid: 734080DD-8D96-4AF3-BB13-FDA8E0398C0B
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1acc0cc257027b31c76d2d32d8ea56c45f2fa639
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: d166ee4e59b26637be53f389c844846ea56aa7ab
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802529"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189671"
 ---
 # <a name="metransforminputstreamstatechanged"></a>METransformInputStreamStateChanged
 
@@ -24,7 +24,7 @@ ms.locfileid: "88802529"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>Parameters
 
 
-| 参数              | 说明                                                                     |
+| 参数              | 描述                                                                     |
 |------------------------|---------------------------------------------------------------------------------|
 | **输入流索引** | 必须在 IMFMediaEvent 的属性存储上设置输入流索引。 |
 
@@ -33,7 +33,7 @@ ms.locfileid: "88802529"
 ## <a name="remarks"></a>备注
 
 
-对于此事件，设备转换管理器 (DTM) 将在具有指定输入流索引的设备 MFT 上调用 [**GetInputStreamPreferredState**](https://docs.microsoft.com/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate) 。 设备 MFT 将返回首选的状态和媒体状态。
+对于此事件，设备转换管理器 (DTM) 将在具有指定输入流索引的设备 MFT 上调用 [**GetInputStreamPreferredState**](/windows/win32/api/mftransform/nf-mftransform-imfdevicetransform-getinputstreampreferredstate) 。 设备 MFT 将返回首选的状态和媒体状态。
 
 DTM 会在 devproxy 输出流上设置请求的媒体状态，然后将其转换为请求的流状态。 如果此方法成功，则 DTM 将在设备 MFT 输入流上设置相同的媒体状态，并将其转换为请求的状态。
 
@@ -44,10 +44,4 @@ DTM 会在 devproxy 输出流上设置请求的媒体状态，然后将其转换
 当设备 MFT 在流式处理时生成此事件时，将停止进一步的示例传递，并将在设备 MFT 输入上请求首选的媒体源。 这种媒体源设置在 Devproxy 的输出和设备 MFT 的输入上设置。 流将在 Devproxy 输出流上自动重新启动，并将示例传递到设备 MFT 输入流。 当新示例到达时，设备 MFT 会将示例传递到相关的输出流。
 
  
-
- 
-
-
-
-
 

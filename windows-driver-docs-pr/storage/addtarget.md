@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: dce95704322cc9ea0eae5a3f0f48ff8ea99396aa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 696a6299f6bfeec7a58332d6465e749fa587935d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845110"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188029"
 ---
 # <a name="addtarget-function"></a>AddTarget 函数
 
@@ -41,17 +41,17 @@ void AddTarget(
 <a name="parameters"></a>参数
 ----------
 
-*HbaPortWWN\[8\]*    
+*HbaPortWWN \[ 8\]*   
 WMI 客户端将接收其事件的本地端口的全球名称。
 
-*DiscoveredPortWWN\[8\]*    
+*DiscoveredPortWWN \[ 8\]*   
 一个全球名称，指定 WMI 客户端将接收其事件的发现目标。
 
 *AllTargets*   
-要报告的目标事件的范围。 如果此成员为零，则 WMI 客户端将接收与*DiscoveredPortWWN*指示的端口关联的事件。 如果此成员为非零，则 WMI 客户端将接收与所有当前发现的目标以及将来发现的目标关联的所有事件。
+要报告的目标事件的范围。 如果此成员为零，则 WMI 客户端将接收与 *DiscoveredPortWWN*指示的端口关联的事件。 如果此成员为非零，则 WMI 客户端将接收与所有当前发现的目标以及将来发现的目标关联的所有事件。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**AddTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addtarget_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**AddTarget \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addtarget_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -61,7 +61,7 @@ WMI 客户端将接收其事件的本地端口的全球名称。
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -74,11 +74,11 @@ WMI 客户端将接收其事件的本地端口的全球名称。
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 </tbody>
 </table>
@@ -86,16 +86,9 @@ WMI 客户端将接收其事件的本地端口的全球名称。
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**AddTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addtarget_in)
+[**AddTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addtarget_in)
 
-[**AddTarget\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addtarget_out)
-
- 
+[**AddTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_addtarget_out)
 
  
-
-
-
-
-
 

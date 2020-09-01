@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_VIDEOSTABILIZATION
-description: 此扩展属性控件用于控制\\MFT0 的驱动程序中的数字视频稳定。
+title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VIDEOSTABILIZATION
+description: 此扩展属性控件用于控制驱动程序 MFT0 中的数字视频稳定 \\ 。
 ms.assetid: 60F7D1B2-02F1-459A-8F6A-FC61D65705E1
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOSTABILIZATION 流媒体设备
@@ -14,16 +14,16 @@ api_type:
 - HeaderDef
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c85ba2466499f5ccefe7633cbe13824ef37dd4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b6f72f83180832a6a3730994bbb7da4b1ad1348a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826199"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188747"
 ---
-# <a name="ksproperty_cameracontrol_extended_videostabilization"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_VIDEOSTABILIZATION
+# <a name="ksproperty_cameracontrol_extended_videostabilization"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ VIDEOSTABILIZATION
 
-此扩展属性控件用于控制\\MFT0 的驱动程序中的数字视频稳定。
+此扩展属性控件用于控制驱动程序 MFT0 中的数字视频稳定 \\ 。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -35,21 +35,21 @@ ms.locfileid: "72826199"
 </colgroup>
 <thead>
 <tr class="header">
-<th>范围</th>
-<th>控件</th>
-<th>在任务栏的搜索框中键入</th>
+<th>作用域</th>
+<th>控制</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>版本 1</p></td>
-<td><p>大头针</p></td>
+<td><p>Pin</p></td>
 <td><p>同步</p></td>
 </tr>
 </tbody>
 </table>
 
-可放置在 KSCAMERA\_EXTENDEDPROP\_标头中的以下标志。标记字段标志以控制驱动程序\\MFT0 中的数字视频稳定。 默认情况下，驱动程序应关闭视频抖动。
+可放置在 KSCAMERA \_ EXTENDEDPROP 标头中的以下标志 \_ 。标志字段标志以控制驱动程序 MFT0 中的数字视频稳定 \\ 。 默认情况下，驱动程序应关闭视频抖动。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_OFF       0x0000000000000000
@@ -59,14 +59,14 @@ ms.locfileid: "72826199"
 
 如果驱动程序不支持数字视频防抖动，驱动程序不应实现此控制。
 
-如果驱动程序支持此控件，则它必须支持\\OFF 上的 VIDEOSTABILIZATION\_。
+如果驱动程序支持此控件，则它必须支持 VIDEOSTABILIZATION \_ ON \\ OFF。
 
-当视频 pin 处于任何高于 KSSTATE\_停止状态的状态时，对此控件的设置调用不起作用。 如果视频 pin 未处于停止状态并且返回状态\_无效\_设备\_状态，则驱动程序应拒绝收到的设置呼叫。 在 GET 调用中，驱动程序应返回 "标志" 字段中的当前设置。
+当视频 pin 处于任何高于 KSSTATE 停止状态的状态时，对此控件的设置调用不起作用 \_ 。 如果视频 pin 未处于停止状态并且返回状态 " \_ 无效设备状态"，则驱动程序应拒绝收到的设置呼叫 \_ \_ 。 在 GET 调用中，驱动程序应返回 "标志" 字段中的当前设置。
 
 如果在配置文件的上下文中使用此控件，则该配置文件应充当质量模式的驱动程序提示。 此驱动程序可以根据所选的配置文件（例如，视频会议或高质量的视频录制），确定是根据所选的配置文件优化低延迟还是高质量。
 
 > [!NOTE]
-> 适用于 Windows 10 的 PROPSETID\_VIDCAP\_CAMERACONTROL\_视频\_稳定性将会弃用。
+> \_ \_ \_ \_ 适用于 Windows 10 的 PROPSETID VIDCAP CAMERACONTROL 视频稳定性将会弃用。
 
 下表介绍了标志功能。
 
@@ -77,7 +77,7 @@ ms.locfileid: "72826199"
 </colgroup>
 <thead>
 <tr class="header">
-<th>旗帜</th>
+<th>标志</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -100,17 +100,17 @@ ms.locfileid: "72826199"
 > [!NOTE]
 > 根据实现，overscanned 缓冲区可能由驱动程序在内部或管道中分配。
 
-如果驱动程序要分配 overscanned 缓冲区，驱动程序应同时播发常规媒体类型和 overscanned 媒体类型。 MFT0 应公布常规媒体类型。 在 MFT0 的输出媒体类型上设置常规媒体类型时，如果打开了视频稳定，则 MFT0 应从驱动程序将媒体类型作为其输入媒体类型来选择相应的 overscanned 媒体类型。 如果视频稳定处于关闭状态，则 MFT0 应选择常规媒体类型作为其输入媒体类型。 启用视频稳定后，MFT0 应返回 MF\_E\_INVALIDMEDIATYPE （如果 overscanned 媒体类型设置为其输出媒体类型）。
+如果驱动程序要分配 overscanned 缓冲区，驱动程序应同时播发常规媒体类型和 overscanned 媒体类型。 MFT0 应公布常规媒体类型。 在 MFT0 的输出媒体类型上设置常规媒体类型时，如果打开了视频稳定，则 MFT0 应从驱动程序将媒体类型作为其输入媒体类型来选择相应的 overscanned 媒体类型。 如果视频稳定处于关闭状态，则 MFT0 应选择常规媒体类型作为其输入媒体类型。 \_ \_ 如果在视频稳定打开时将 overscanned 媒体类型设置为其输出媒体类型，则 MFT0 应返回 MF E INVALIDMEDIATYPE。
 
 如果 overscanned 缓冲区由驱动程序分配，则驱动程序和 MFT0 都应公布常规媒体类型。 MFT0 应为其输入媒体类型和输出媒体类型设置常规媒体类型。
 
-若要支持基于效果的视频抖动（即，视频抖动在驱动程序和 MFT0 中均未完成），则无论何时，驱动程序和 MFT0 还必须公布 overscanned 媒体类型。 在这种情况下，驱动程序和 MFT0 都公开了 regular 和 overscanned 媒体类型。 以下规则将适用，以确保基于效果的和驱动程序\\基于 MFT0 的视频稳定性是否正常工作。
+为了支持基于视频抖动 (的效果，视频抖动在驱动程序和 MFT0) 中都没有完成，驱动程序和 MFT0 还必须公布 overscanned 媒体类型，而不考虑。 在这种情况下，驱动程序和 MFT0 都公开了 regular 和 overscanned 媒体类型。 以下规则将适用，以确保基于效果的和基于驱动程序 \\ MFT0 的视频抖动都能正常工作。
 
--   如果 overscanned 媒体类型设置为 MFT0 输出媒体类型，而驱动\\基于 MFT0 的视频抖动处于开启，则 MFT0 应返回 MF\_E\_INVALIDMEDIATYPE。
+-   如果 overscanned 媒体类型设置为 MFT0 输出媒体类型，而基于驱动程序 \\ MFT0 的视频抖动处于开启，则 MFT0 应返回 MF \_ E \_ INVALIDMEDIATYPE。
 
 -   如果将常规媒体类型设置为 "MFT0 output media type"，则应用程序应返回一个错误，该错误在基于视频稳定性的情况下尝试启用基于视频抖动的效果时，可能只需要 overscanned 媒体类型。
 
-下表包含在使用视频稳定化控件时[KSCAMERA\_EXTENDEDPROP\_标头](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
+下表包含在使用视频抖动控制时 [KSCAMERA \_ EXTENDEDPROP \_ 标头](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -120,7 +120,7 @@ ms.locfileid: "72826199"
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -133,8 +133,8 @@ ms.locfileid: "72826199"
 <td><p>必须是与视频 pin 关联的 Pin ID。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_VALUE）。</p></td>
+<td><p>大小</p></td>
+<td><p>这必须是 sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -142,11 +142,11 @@ ms.locfileid: "72826199"
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>这必须是前面定义的受支持的 KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX 标志的按位 "或"。</p></td>
+<td><p>这必须是前面定义的受支持 KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX 标志的按位 "或"。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>
-<td><p>这是一个读/写字段。 这可以是上面定义的任何一个 KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX 标志。</p></td>
+<td><p>这是一个读/写字段。 这可以是上面定义的 KSCAMERA_EXTENDEDPROP_VIDEOSTABILIZATION_XXX 标志之一。</p></td>
 </tr>
 </tbody>
 </table>

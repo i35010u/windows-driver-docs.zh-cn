@@ -1,25 +1,25 @@
 ---
-title: MSFC\_TargetEvent WMI 类
-description: MSFC\_TargetEvent WMI 类
+title: MSFC \_ TARGETEVENT WMI 类
+description: MSFC \_ TARGETEVENT WMI 类
 ms.assetid: 251f7526-98e6-495d-a987-83257e968bb8
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: a18e0c5cc644fa2088c998159268ba4e974cf03e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 50d1cbdd32bfc30ca13c8f8af2064dcbc1fc23e0
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845602"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187801"
 ---
-# <a name="msfc_targetevent-wmi-class"></a>MSFC\_TargetEvent WMI 类
+# <a name="msfc_targetevent-wmi-class"></a>MSFC \_ TARGETEVENT WMI 类
 
 
 ## <span id="ddk_msfc_targetevent_wmi_class_kr"></span><span id="DDK_MSFC_TARGETEVENT_WMI_CLASS_KR"></span>
 
 
-WMI 提供程序使用 MSFC\_TargetEvent WMI 类来报告目标事件。
+WMI 提供程序使用 MSFC \_ TARGETEVENT WMI 类来报告目标事件。
 
-*Hbaapi*中的 MSFC\_TargetEvent 类定义如下：
+MSFC \_ TargetEvent 类在 *Hbaapi*中定义如下：
 
 ```cpp
 class MSFC_TargetEvent : WmiEvent {
@@ -37,13 +37,7 @@ class MSFC_TargetEvent : WmiEvent {
 
 由 WMI 工具套件编译时，此类定义生成以下数据结构：
 
-[**MSFC\_TargetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_targetevent)
+[**MSFC \_ TargetEvent**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_msfc_targetevent)
 
  
-
- 
-
-
-
-
 

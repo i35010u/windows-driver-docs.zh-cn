@@ -3,14 +3,14 @@ title: 内存覆盖请求控件 (MOR) LOCK 版本 2
 description: 内存覆盖请求控件 (MOR) LOCK 版本 2
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b3706ffb99d3c8f86f6f19d4b8c42f939c82f14e
-ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
+ms.openlocfilehash: 26c773645d83041ed2cd3c8c6465ede0c44b3e6c
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153175"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189697"
 ---
-# <a name="memory-overwrite-request-control-mor-lock-version-2"></a>内存覆盖请求控制（MOR）锁版本2
+# <a name="memory-overwrite-request-control-mor-lock-version-2"></a>内存覆盖请求控制 (MOR) 锁版本2
 
 为了防止高级内存攻击，将改进现有的系统 BIOS 安全缓解 MemoryOverwriteRequestControl，以支持锁定以应对新的威胁。
 
@@ -28,4 +28,4 @@ ms.locfileid: "84153175"
 
 [TCG 平台重置攻击缓解规范](https://www.trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)
 
-[安全 MOR 实现](https://docs.microsoft.com/windows-hardware/drivers/bringup/device-guard-requirements)
+[安全 MOR 实现](./device-guard-requirements.md)

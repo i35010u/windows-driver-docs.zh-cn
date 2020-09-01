@@ -4,12 +4,12 @@ description: WIA 原始数据标头
 ms.assetid: a2cb3835-7879-4f69-9784-9487df40730a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 458552ca5d8b4362de397e03ce971f5f9a26f05a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 34af7c45c61efaff18f6932e67751d2c86129a70
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355165"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189100"
 ---
 # <a name="wia-raw-data-header"></a>WIA 原始数据标头
 
@@ -40,47 +40,42 @@ DWORD PaletteSize;       // size, in bytes, of color palette table (0 if no pale
 
 ### <a name="additional-header-field-descriptions"></a>其他标头字段说明
 
-<a href="" id="dword-compression"></a>DWORD*压缩*  
-允许压缩的原始格式，如上市的 Nikon 的压缩的 NEF 和 headerless 压缩的传真传输 (组 3.1，3.2d，4) 所用的压缩的数据。 值此字段将是 WIA\_IPA\_压缩常量，可能是供应商特定的专用应用程序。 默认值是 WIA\_压缩\_NONE。
+<a href="" id="dword-compression"></a>DWORD *压缩*  
+允许压缩的原始格式，如 Nikon 的压缩 NEF 和 headerless 压缩的数据，用于压缩的传真传输 (组3.1、3.2 d、4) 。 此字段的值将为 WIA \_ IPA \_ 压缩常量，可能是特定于供应商的特定应用程序。 默认值为 WIA \_ 压缩 \_ NONE。
 
 压缩示例：
 
-G4 压缩数据 (WIA\_压缩\_G4) 可能会传输 TIFF 文件中 (WiaImgFmt\_TIFF) 或使用原始格式 (WiaImgFmt\_RAW)。
+G4 压缩的数据 (WIA \_ 压缩 \_ G4) 可以在 tiff 文件中传输 (WiaImgFmt \_ tiff) 或使用原始格式 (WiaImgFmt \_ raw) 。
 
-JPEG 压缩数据 (WIA\_压缩\_JPEG) 无法使用 JFIF 格式传输 (WiaImgFmt\_JPEG)，EEXIF 格式 (WiaImgFmt\_EXIF)，或 TIFF 格式 (WiaImgFmt\_TIFF). 不能传输 JPEG 数据交换格式之一 （JFIF、 EEXIF） 中使用原始格式的传输格式 (WiaImgFmt\_RAW)-而是必须使用其他 JPEG 兼容格式之一。
+JPEG 压缩数据 (WIA \_ 压缩 \_ jpeg) 可使用 JFIF 格式传输 (WiaImgFmt \_ JPEG) 、EEXIF 格式 (WiaImgFmt \_ EXIF) 或 TIFF 格式 (WiaImgFmt \_ tiff) 。 使用原始格式 (WiaImgFmt raw) ，不能以其中一种交换格式传输 JPEG 数据 (JFIF，EEXIF) ， \_ 而是必须使用其他与 JPEG 兼容的格式之一。
 
-WIA 压缩常量的详细信息，请参阅[ **WIA\_IPA\_压缩**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)属性。
+有关 WIA 压缩常量的详细信息，请参阅 [**wia \_ IPA \_ compression**](./wia-ipa-compression.md) 属性。
 
 <a href="" id="dword-photometricinterp"></a>DWORD *PhotometricInterp*  
-介绍传输图像测光解释。 此字段是黑色和白色 (1bpp) 和 （4bpp 或以上） 的灰度图像所必需的。 这些映像需要指示的值为白色和黑色，任一 WIA\_照片\_白色\_1 (其中白色为 1，黑色，则为 0) 或 WIA\_照片\_白色\_0 (其中白色，则为 0，黑色为 1)。 此字段是可选的彩色图像。
+描述传输的图像的 photometric 解释。 此字段对于黑白 (1bpp) 和灰度 (4bpp 或更多) 图像是必需的。 这些图像需要指示白色和黑色的值、WIA \_ 照片 \_ \_ 1 (其中白色为1，黑色为 0) 或 WIA \_ 照片 \_ \_ 0 (，其中白色为0，黑色为 1) 。 对于彩色图像，此字段是可选的。
 
 <a href="" id="dword-lineorder"></a>DWORD *LineOrder*  
-介绍顶部到底部或下到上是否已排序的行中的图像数据。 在中定义的两个新常量*wiadef.h*此：
+描述图像数据中的行/行是从上到下还是从下到上排序。 为此，在 *wiadef* 中定义了两个新常量：
 
 ```cpp
 #define  WIA_LINE_ORDER_TOP_TO_BOTTOM        0x00000001 
 #define  WIA_LINE_ORDER_BOTTOM_TO_TOP        0x00000002
 ```
 
-没有为此定义新属性。 这不是可配置的扫描设置。 *LingOrder*仅相关问题时执行图像数据传输。
+没有为此定义的新属性。 这不是一个可配置的扫描设置。 *LingOrder* 仅在执行图像数据传输时才有意义。
 
 <a href="" id="dword-rawdatasize"></a>DWORD *RawDataSize*  
-指示大小 （字节） 之后 （不包括可选的调色板） 的标头的原始数据。 应用程序可以使用此字段来验证假定成功图像传输完成。 此信息时是未知的微型驱动程序时开始进行转移 （和标头写入到流）-例如时使用自动边框检测扫描图像-微型驱动程序应该需要填写此字段末尾的 image 数据传输，类似于如何处理大 XExtent 和 YExtent 字段。
+指示标头后的原始数据的大小（以字节为单位） (不包括可选调色板) 。 应用程序可以使用此字段来验证是否已完成假设的成功图像传输。 当传输开始 (且标头写入到) 流时，此信息对微型驱动程序而言是未知的（例如，当使用自动边框检测来扫描图像时），微型驱动程序应需要在图像数据传输的末尾填写此字段，类似于 XExtent 和 YExtent 字段的处理方式。
 
 <a href="" id="dword-paletteoffset"></a>DWORD *PaletteOffset*  
-包含的偏移量，以字节为单位的颜色调色板数据流; 中的开始位置此偏移量 （是同时开始的位置零） 标头的结束位置... 调色板和原始图像数据可以按照任意顺序中的原始标头，不需要时可以省略调色板。
+包含调色板在数据流中的起始位置的偏移量（以字节为单位）;此偏移量在标头结束的位置零) 开始 (。 调色板和原始图像数据可以按任意顺序跟踪原始标头，并且在不需要时可以省略调色板。
 
 <a href="" id="dword-palettesize"></a>DWORD *PaletteSize*  
-包含的大小，以字节为单位的调色板。 当需要附加到原始图像数据时没有调色板时，微型驱动程序应将此字段设置为 0。 此字段不相关的调色板中的条目数。
+包含调色板的大小（以字节为单位）。 当不需要将调色板附加到原始图像数据时，微型驱动程序应将此字段设置为0。 此字段与调色板中的条目数无关。
 
-黑色和白色和灰度数据可省略调色板 (因为构建控制板所需的信息包含在*PhotometricInterpretation*字段)，或提供与优化的调色板*PhotometricInterpretation*字段。
+黑白数据和灰度数据可以省略调色板 (因为生成调色板所需的信息) 包含在 *PhotometricInterpretation* 字段中，或者提供优化调色板和 *PhotometricInterpretation* 字段。
 
-对于索引映像，调色板中的条目数由当前*BitsPerPixel*值 (2 ^ *BitsPerPixel*。 例如，2 个条目 1bpp、 16 个条目为 4bpp、 256 8bpp 条目）。 中的条目数将取决于调色板条目的格式*BitsPerChannel*字段 （字段/通道中的每个调色板条目数） 和*BitsPerChannel* （每个字段将的值包含值中指定完全*BitsPerChannel*字段为各自的通道)。 调色板条目的每个字段必须是字节对齐。
-
- 
+对于索引图像，调色板中的条目数由当前 *ysteminfo.displaysettings.bitsperpixel* 值决定 (2 ^ *ysteminfo.displaysettings.bitsperpixel*。 例如，两个条目用于1bpp，16个条目用于4bpp，256项用于 8bpp) 。 调色板项的格式将由 " *BitsPerChannel* " 字段中的条目数来决定 (每个调色板条目中的字段/通道数) 和 *BitsPerChannel* 值 (每个字段都将包含在各自通道) 的 *BitsPerChannel* 字段中指定的值。 每个调色板输入字段必须按字节对齐。
 
  
-
-
-
 

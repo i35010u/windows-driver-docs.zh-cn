@@ -8,12 +8,12 @@ keywords:
 - 层次结构 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6bcf16db05d2022737aa7b3e63b48be20c0c0a
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: af9c05c5be711e98a7dc9ae7b333b2251013c766
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210771"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188717"
 ---
 # <a name="framework-object-hierarchy"></a>框架对象层次结构
 
@@ -28,21 +28,15 @@ ms.locfileid: "75210771"
 
 -   框架控制对象的创建和析构。
 
-    框架创建并销毁对象，如[驱动程序对象](framework-driver-object.md)和[设备对象](framework-device-object.md)，以响应系统事件。 当用户模式驱动程序调用[**IWDFDriver：： CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)方法来创建设备对象时，驱动程序可以选择注册以便在销毁设备对象之前由框架接收通知。
+    框架创建并销毁对象，如 [驱动程序对象](framework-driver-object.md) 和 [设备对象](framework-device-object.md)，以响应系统事件。 当用户模式驱动程序调用 [**IWDFDriver：： CreateDevice**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice) 方法来创建设备对象时，驱动程序可以选择注册以便在销毁设备对象之前由框架接收通知。
 
 -   框架创建对象;但是，驱动程序会控制释放对象的时间。
 
-    当向驱动程序提供 i/o 时， [i/o 请求对象](framework-i-o-request-object.md)遵循此模式。 框架创建 request 对象，请求对象的生存期有效，直到驱动程序调用[**IWDFIoRequest：： Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)方法。
+    当向驱动程序提供 i/o 时， [i/o 请求对象](framework-i-o-request-object.md) 遵循此模式。 框架创建 request 对象，请求对象的生存期有效，直到驱动程序调用 [**IWDFIoRequest：： Complete**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete) 方法。
 
 -   驱动程序创建对象并将对象与另一个框架对象相关联。
 
-    某些框架对象是通过父框架对象实例公开的，此方法由要与生存期管理的对象关联的父框架对象实例公开。 [**IWDFDevice：： CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)方法是此模式的一个示例。 如果对**IWDFDevice：： CreateIoQueue**的调用成功，则新创建的 i/o 队列将与[IWDFDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)接口表示的设备实例相关联。 当父对象被销毁时，框架会自动清除子实例。 如果驱动程序向框架注册适当的回调函数，则会向驱动程序通知这些事件。
+    某些框架对象是通过父框架对象实例公开的，此方法由要与生存期管理的对象关联的父框架对象实例公开。 [**IWDFDevice：： CreateIoQueue**](/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)方法是此模式的一个示例。 如果对 **IWDFDevice：： CreateIoQueue** 的调用成功，则新创建的 i/o 队列将与 [IWDFDevice](/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice) 接口表示的设备实例相关联。 当父对象被销毁时，框架会自动清除子实例。 如果驱动程序向框架注册适当的回调函数，则会向驱动程序通知这些事件。
 
  
-
- 
-
-
-
-
 

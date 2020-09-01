@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e9eaf74cbb13368bd7935cefaa4fc705b1b44532
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e58c78ac8532da841a3adfc884e681794cec70b4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842710"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189241"
 ---
 # <a name="removelink-function"></a>RemoveLink 函数
 
@@ -39,7 +39,7 @@ void RemoveLink(
 ----------
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**RemoveLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removelink_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**RemoveLink \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removelink_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -49,7 +49,7 @@ void RemoveLink(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_EVENTCONTROL WMI 类](msfc-eventcontrol-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ EventControl WMI 类](msfc-eventcontrol-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -62,11 +62,11 @@ void RemoveLink(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 </tbody>
 </table>
@@ -74,14 +74,7 @@ void RemoveLink(
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemoveLink\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removelink_out)
+[**RemoveLink \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removelink_out)
 
  
-
- 
-
-
-
-
-
 

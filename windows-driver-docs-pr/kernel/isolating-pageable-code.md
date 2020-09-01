@@ -8,12 +8,12 @@ keywords:
 - 旋转锁定 WDK 内存
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 406319d3b82b11288d89c10ccf7a070090d3769d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 71a44630b0616d6888c61dcd1ad48576df19e2fa
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827923"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189317"
 ---
 # <a name="isolating-pageable-code"></a>隔离可分页代码
 
@@ -68,14 +68,9 @@ if (!DeviceObject->ReferenceCount && !DeviceObject->AttachedDevice) {
 } 
 ```
 
-通过将引用旋转锁的几行代码移到单独的例程中，可以对上述例程进行分页（节省大约160个字节）。
+可以通过将引用旋转锁的几行代码移到单独的例程中，使前面的例程可以分页 (节省大约160字节的) 。
 
-此外，请记住，如果驱动程序代码调用任何**Ke * Xxx*** 支持例程（如[**KeReleaseMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex)或[**KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)），其中*Wait*参数设置为**TRUE**，则不得将其标记为可分页。 此类调用在调度\_级别上以 IRQL 返回。
-
- 
+此外，请记住，如果驱动程序代码调用任何 **Ke * Xxx*** 支持例程（如 [**KeReleaseMutex**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex) 或 [**KeReleaseSemaphore**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)），其中 *Wait* 参数设置为 **TRUE**，则不得将其标记为可分页。 此类调用在调度级别以 IRQL 返回 \_ 。
 
  
-
-
-
 

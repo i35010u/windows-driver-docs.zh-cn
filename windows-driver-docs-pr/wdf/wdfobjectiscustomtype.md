@@ -1,17 +1,17 @@
 ---
 title: WdfObjectIsCustomType 宏
-description: WdfObjectIsCustomType 宏确定 framework 对象是否为指定的自定义类型。
+description: WdfObjectIsCustomType 宏确定框架对象是否为指定的自定义类型。
 ms.assetid: EE3CC41D-6FBA-49A2-A2A0-C7E818F6FAAA
 keywords:
 - WdfObjectIsCustomType 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 246314f39cf6478a646b0f882d6832c9648fe6e2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cebeadd6579bb59c39575c8dff8e09ef2397cdbe
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385058"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188685"
 ---
 # <a name="wdfobjectiscustomtype-macro"></a>WdfObjectIsCustomType 宏
 
@@ -30,24 +30,24 @@ BOOLEAN WdfObjectIsCustomType(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>参数
 ----------
 
-*处理*\[中\]  
-Framework 对象的句柄。
+*句柄* \[中\]  
+框架对象的句柄。
 
-*类型*\[中\]  
+*类型* \[中\]  
 自定义类型的符号名称。
 
 <a name="return-value"></a>返回值
 ------------
 
-如果指定的对象的指定自定义类型，则返回 TRUE。 否则，返回 FALSE。
+如果指定的对象属于指定的自定义类型，则返回 TRUE。 否则，返回 FALSE。
 
 <a name="remarks"></a>备注
 -------
 
-有关对象的自定义类型的详细信息，请参阅[Framework 对象的自定义类型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)。
+有关对象自定义类型的详细信息，请参阅 [框架对象自定义类型](./framework-object-custom-types.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -60,24 +60,24 @@ Framework 对象的句柄。
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.11</p></td>
 </tr>
 <tr class="odd">
-<td><p>最低 UMDF 版本</p></td>
+<td><p>最小 UMDF 版本</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wdfobject.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)
@@ -89,11 +89,4 @@ Framework 对象的句柄。
 [**WdfObjectGetCustomTypeData**](wdfobjectgetcustomtypedata.md)
 
  
-
- 
-
-
-
-
-
 

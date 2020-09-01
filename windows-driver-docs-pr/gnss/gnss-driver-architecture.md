@@ -1,23 +1,23 @@
 ---
-title: 全局导航卫星系统（GNSS）驱动程序体系结构
-description: 概述全局导航卫星系统（GNSS） UMDF 2.0 驱动程序体系结构和 i/o 注意事项，并讨论几种类型的跟踪和修复会话。
+title: 全局导航卫星系统 (GNSS) 驱动程序体系结构
+description: 概述全局导航附属系统 (GNSS) UMDF 2.0 驱动程序体系结构和 i/o 注意事项，并讨论几种类型的跟踪和修复会话。
 ms.assetid: 11B54F92-DC84-4D74-9BBE-C85047AD2167
 ms.date: 05/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d2393e7385a60092dc3f1945b62f225cad02fa01
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
+ms.openlocfilehash: 3ef50228f27054816483a3e79ca8f0e39f884ccd
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980700"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188913"
 ---
-# <a name="global-navigation-satellite-system-gnss-driver-architecture"></a>全局导航卫星系统（GNSS）驱动程序体系结构
+# <a name="global-navigation-satellite-system-gnss-driver-architecture"></a>全局导航卫星系统 (GNSS) 驱动程序体系结构
 
-概述全局导航卫星系统（GNSS） UMDF 2.0 驱动程序体系结构和 i/o 注意事项，并讨论几种类型的跟踪和修复会话。
+概述全局导航附属系统 (GNSS) UMDF 2.0 驱动程序体系结构和 i/o 注意事项，并讨论几种类型的跟踪和修复会话。
 
 ## <a name="architecure-overview"></a>Intrarnet 概述
 
-以下高级组件块示意图显示全局导航卫星系统（GNSS） UMDF 2.0 驱动程序如何与 Windows 10 平台集成。
+以下高级组件块示意图显示了全局导航卫星系统 (GNSS) UMDF 2.0 驱动程序如何与 Windows 10 平台集成。
 
 ![显示用户模式 gnss 体系结构的关系图](images/gnss-architecture-4.png)
 
@@ -27,29 +27,29 @@ ms.locfileid: "76980700"
 
 - **测试应用程序：** 用于测试 GNSS 功能的应用程序。
 
-- **GNSS API：** **IGnssAdapter** COM （组件对象模型）接口，该接口将 GNSS 设备的功能公开到位置服务的内部组件，并对应用程序进行测试。 此 API 的确切形状超出了本文档的范围。 Windows 组件通过对**IGnssAdapter** COM 接口进行编程来使用 GNSS 设备。 GNSS API 集是专用于仅限位置平台组件（例如，位置服务和位置测试应用程序）的 api，不适用于其他第一方或第三方应用程序。
+- **GNSS API：****IGnssAdapter** COM (组件对象模型) 接口，该接口将 GNSS 设备的功能公开到位置服务的内部组件，并用于测试应用程序。 此 API 的确切形状超出了本文档的范围。 Windows 组件通过对 **IGnssAdapter** COM 接口进行编程来使用 GNSS 设备。 GNSS API 集是专用于) 平台组件的 API (例如，位置服务和位置测试应用程序，不适用于其他第一方或第三方应用程序。
 
-- **GNSS 适配器：** 这是实现**IGnssAdapter** com 接口的单独 com 对象。 测试应用程序和位置服务的内部组件实例化此对象，并通过**IGnssAdapter**接口使用 GNSS 设备。 位置服务的 GNSS 定位引擎组件实现公开**IGnssAdapter**接口的 COM 类。 位置服务公开工厂机制来测试和其他进程外应用程序，以便在位置服务中实例化 GNSS 适配器 COM 类的单一 COM 对象。 进程外应用程序使用 COM 接口指针针对 GNSS 驱动程序进行编程。
+- **GNSS 适配器：** 这是实现 **IGnssAdapter** com 接口的单独 com 对象。 测试应用程序和位置服务的内部组件实例化此对象，并通过 **IGnssAdapter** 接口使用 GNSS 设备。 位置服务的 GNSS 定位引擎组件实现公开 **IGnssAdapter** 接口的 COM 类。 位置服务公开工厂机制来测试和其他进程外应用程序，以便在位置服务中实例化 GNSS 适配器 COM 类的单一 COM 对象。 进程外应用程序使用 COM 接口指针针对 GNSS 驱动程序进行编程。
 
     > [!NOTE]
-    > COM 处理代理指向进程外应用程序的接口指针，以便应用程序将**IGnssAdapter**接口指针视为进程内 COM 对象，但调用实际上由位置服务中的单一 GNSS 适配器对象处理。
+    > COM 处理代理指向进程外应用程序的接口指针，以便应用程序将 **IGnssAdapter** 接口指针视为进程内 COM 对象，但调用实际上由位置服务中的单一 GNSS 适配器对象处理。
 
-    GNSS 定位引擎使用内部 GNSS 适配器对象向位置服务提供特定于位置的功能。 GNSS 适配器使用**CreateFile** API 打开 GNSS 驱动程序的文件句柄，然后将 GNSS 本机 api 调用包装到适当的**DeviceIoControl**调用，使用 GNSS driver 对象维护状态机，并维持来自上层的各种传入请求的状态。 此组件通过本文档中定义的 public GNSS IOCTL 接口直接与基础 GNSS 设备堆栈交互。 GNSS 设备以逻辑方式被视为独占资源，因此 singleton GNSS 适配器控制对 GNSS 设备的所有访问。
+    GNSS 定位引擎使用内部 GNSS 适配器对象向位置服务提供特定于位置的功能。 GNSS 适配器使用 **CreateFile** API 打开 GNSS 驱动程序的文件句柄，然后将 GNSS 本机 api 调用包装到适当的 **DeviceIoControl** 调用，使用 GNSS driver 对象维护状态机，并维持来自上层的各种传入请求的状态。 此组件通过本文档中定义的 public GNSS IOCTL 接口直接与基础 GNSS 设备堆栈交互。 GNSS 设备以逻辑方式被视为独占资源，因此 singleton GNSS 适配器控制对 GNSS 设备的所有访问。
 
     > [!NOTE]
     > 某些白屏驱动程序测试应用程序还可以直接在非生产环境中使用 GNSS 驱动程序 IOCTL 接口，而不是通过 GNSS 专用 Api 使用 GNSS 适配器。 但是，这些测试应用程序将必须实现其自己的状态机并进行处理，以模拟 GNSS 适配器的某些功能。
 
 - **GNSS 驱动程序：** 使用 UMDF 2.0 实现的由 IHV 提供的驱动程序。 GNSS 驱动程序通过与实际 GNSS 硬件进行交互来支持 GNSS **DeviceIoControl** api。 GNSS 驱动程序还可以作为 SUPL 函数的转存进程/集成器。
 
-- **GNSS 设备/引擎：** 这是一个概念组件，用于封装 GNSS 设备的 SoC 和硬件部分。 IHV 可以选择实现此组件中的大部分 GNSS 功能，从而使 GNSS 驱动程序层非常精简（实质上是用于与 GNSS 设备进行交互的适配器）。
+- **GNSS 设备/引擎：** 这是一个概念组件，用于封装 GNSS 设备的 SoC 和硬件部分。 IHV 可以选择实现此组件中的大部分 GNSS 功能，从而使 GNSS 驱动程序层非常精简 (本质上是适配器，用于与 GNSS 设备) 交互。
 
-## <a name="support-for-global-navigation-satellite-system-gnss-devices-and-drivers-that-follow-the-legacy-windows-model"></a>支持遵循旧版 Windows 模型的全局导航卫星系统（GNSS）设备和驱动程序
+## <a name="support-for-global-navigation-satellite-system-gnss-devices-and-drivers-that-follow-the-legacy-windows-model"></a>支持全局导航卫星系统 (GNSS) 设备和驱动程序，这些设备和驱动程序遵循旧版 Windows 模型
 
-Windows 10 中的位置平台支持通过旧版传感器1.0 类驱动程序集成的 GNSS 设备（请参阅[写入位置传感器驱动程序](writing-a-location-sensor-driver.md)），或通过将[GNSS driver reference](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver)中所述的新 GNSS DDI 集成。
+Windows 10 中的位置平台支持通过旧的传感器1.0 类驱动程序集成的 GNSS 设备 (参阅 [写入位置传感器驱动程序](writing-a-location-sensor-driver.md)) 或通过将 [GNSS driver reference](/windows-hardware/drivers/ddi/gnssdriver)中所述的新 GNSS DDI 集成。
 
-因此，GNSS 设备与 Windows 7、Windows 8 和 Windows 8.1 中存在的传感器1.0 类扩展模型集成的 Windows 设备应在 Windows 10 中继续运行，而无需进行任何更改。 强烈建议将这些驱动程序（以及任何新的驱动程序）发布到 Windows 更新，以便为用户改进升级过程。
+因此，GNSS 设备与 Windows 7、Windows 8 和 Windows 8.1 中存在的传感器1.0 类扩展模型集成的 Windows 设备应在 Windows 10 中继续运行，而无需进行任何更改。 强烈建议 (这些驱动程序并将任何新的驱动程序) 发布到 Windows 更新，以便为用户改进升级过程。
 
-对于 Windows 10 发出的硬件实验室工具包（HLK）中的 GNSS 设备，还会有两组不同的测试：
+硬件实验室包中还会有两个不同的 GNSS 设备测试集， (通过 Windows 10 发出的 HLK) ：
 
 - 一组新的测试，用于在新模型之后验证驱动程序。
 
@@ -59,7 +59,7 @@ Windows 10 中的位置平台支持通过旧版传感器1.0 类驱动程序集�
 
 ![显示 gnss 2.0 驱动程序和适配器通信的示意图](images/gnss-architecture-5.png)
 
-## <a name="coexistence-of-global-navigation-satellite-system-gnss-devices"></a>全局导航卫星系统（GNSS）设备的共存
+## <a name="coexistence-of-global-navigation-satellite-system-gnss-devices"></a>全局导航卫星系统 (GNSS) 设备的共存
 
 在系统中检测到多个 GNSS 设备的罕见情况下，位置平台将仅使用一种设备，这主要是为了降低系统中的总体功率消耗。 考虑下列假设：
 
@@ -77,52 +77,52 @@ Windows 10 中的位置平台支持通过旧版传感器1.0 类驱动程序集�
 
 如果选定的 GNSS 设备支持地理围栏或其他卸载操作，则在使用该设备时，将完成卸载。 GNSS 适配器将不会在多个 GNSS 设备之间拆分此功能。
 
-## <a name="global-navigation-satellite-system-gnss-interface-overview"></a>全局导航卫星系统（GNSS）接口概述
+## <a name="global-navigation-satellite-system-gnss-interface-overview"></a>全局导航卫星系统 (GNSS) 接口概述
 
 GNSS 适配器和 GNSS 驱动程序之间的交互分为以下几类：
 
 ### <a name="capability-information-exchange"></a>功能信息交换
 
-若要在 Windows 平台上支持 GNSS 堆栈的可扩展性和可扩展性，GNSS 适配器和 GNSS 驱动程序会明确了解底层 GNSS 堆栈的各种明确定义的功能，以及由Windows 平台。 这些功能方面由 Microsoft 定义为此 GNSS 界面定义的一部分，随着 GNSS 空间中的更多创新，以及在市场上出现的一组不同的芯片组/驱动程序的不断发展。 GNSS 适配器在初始化或按需时查询基础 GNSS 驱动程序/设备的各种功能，并相应地优化与 GNSS 驱动程序的交互。
+若要在 Windows 平台上支持 GNSS 堆栈的可扩展性和可扩展性，GNSS 适配器和 GNSS 驱动程序会明确了解底层 GNSS 堆栈的各种明确定义的功能，以及 Windows 平台提供的支持。 这些功能方面由 Microsoft 定义为此 GNSS 界面定义的一部分，随着 GNSS 空间中的更多创新，以及在市场上出现的一组不同的芯片组/驱动程序的不断发展。 GNSS 适配器在初始化或按需时查询基础 GNSS 驱动程序/设备的各种功能，并相应地优化与 GNSS 驱动程序的交互。
 
-GNSS 适配器和 GNSS 驱动程序之间的功能信息交换使用控制代码[**IOCTL\_GNSS\_发送\_平台\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_send_platform_capability)和[**IOCTL\_GNSS\_获取\_设备\_功能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_device_capability)。
+GNSS 适配器和 GNSS 驱动程序之间的功能信息交换使用控制代码 [**IOCTL \_ GNSS \_ 发送 \_ 平台 \_ 功能**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_send_platform_capability) 和 [**IOCTL \_ GNSS \_ 获取 \_ 设备 \_ 功能**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_device_capability)。
 
-### <a name="global-navigation-satellite-system-gnss-driver-command-and-configuration"></a>全局导航卫星系统（GNSS）驱动程序命令和配置
+### <a name="global-navigation-satellite-system-gnss-driver-command-and-configuration"></a>全局导航卫星系统 (GNSS) 驱动程序命令和配置
 
-GNSS 适配器可能会对 GNSS 驱动程序执行一次性配置或定期重新配置。 同样，GNSS 适配器可能会通过驱动程序执行特定于 GNSS 的命令。 这是通过在驱动程序和高级操作系统（HLOS）之间定义命令执行协议来实现的。 根据特定的命令类型，预期的操作可能会立即生效，或在系统重新启动后生效。 与 GNSS 设备功能信息类似，Microsoft 还将 GNSS 命令定义得很好地定义为此 GNSS 接口定义的一部分，并且将继续随未来的创新和 GNSS 设备/驱动程序的 diversification 而不断发展。
+GNSS 适配器可能会对 GNSS 驱动程序执行一次性配置或定期重新配置。 同样，GNSS 适配器可能会通过驱动程序执行特定于 GNSS 的命令。 这是通过在驱动程序和高级操作系统 (HLOS) 之间定义命令执行协议来实现的。 根据特定的命令类型，预期的操作可能会立即生效，或在系统重新启动后生效。 与 GNSS 设备功能信息类似，Microsoft 还将 GNSS 命令定义得很好地定义为此 GNSS 接口定义的一部分，并且将继续随未来的创新和 GNSS 设备/驱动程序的 diversification 而不断发展。
 
-使用控制代码 IOCTL 完成设备命令执行和配置， [ **\_GNSS\_发送\_DRIVERCOMMAND**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_send_drivercommand)。
+使用控制代码 [**IOCTL \_ GNSS \_ SEND \_ DRIVERCOMMAND**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_send_drivercommand)完成设备命令执行和配置。
 
 ### <a name="position-information"></a>位置信息
 
-这是底层 GNSS 设备的主要功能。 在最基本的形式中，GNSS 适配器从 GNSS 驱动程序请求设备的当前位置。 位置请求的变体包括（但不限于）以下位置会话类型：
+这是底层 GNSS 设备的主要功能。 在最基本的形式中，GNSS 适配器从 GNSS 驱动程序请求设备的当前位置。 位置请求的变体包括 (，但并不限于) 以下位置会话类型：
 
-- 设备的当前位置（单一快照修复）
+- 设备的当前位置 (单步修复) 
 
-- 连续定期修补流（基于时间的跟踪）
+-  (基于时间的跟踪的连续定期修补流) 
 
-- 基于移动阈值的连续修补程序流（基于距离的跟踪）
+- 基于移动阈值的连续修补程序流 (基于距离的跟踪) 
 
-每个 GNSS 硬件和 GNSS 驱动程序所需的唯一强制位置会话类型为单一快照修复会话类型。 Native （在 GNSS 设备中实现，而不是在 GNSS 驱动程序中或应用程序处理器中运行的服务中实现）、基于时间的跟踪会话以及基于距离的跟踪会话都可以根据需要进行支持。 对于这两种本机跟踪会话而言，这两种类型的本机跟踪会话的主要好处是，通过在 SOC 中执行更多处理来使应用程序处理器（AP）保持休眠状态的时间更长，并且仅在需要时报告更改。 支持基于本机距离的跟踪比基于本机时间的跟踪会话更有影响力，因为它可能会带来更高的节能，因为应用程序的使用越来越广泛。
+每个 GNSS 硬件和 GNSS 驱动程序所需的唯一强制位置会话类型为单一快照修复会话类型。 在 GNSS 设备中实现的本机 (，而不是在 GNSS 驱动程序中实现，也不能在应用程序处理器) 、基于时间的跟踪会话和基于距离的跟踪会话中进行支持（可选）。 对于这两种本机跟踪会话而言，这两种类型的本机跟踪会话的主要好处是，通过在 SOC 中执行更多处理来使应用程序处理器 (AP) 休眠状态更长时间，并且仅在需要时报告更改。 支持基于本机距离的跟踪比基于本机时间的跟踪会话更有影响力，因为它可能会带来更高的节能，因为应用程序的使用越来越广泛。
 
 从 GNSS 驱动程序检索位置信息的行为通过有状态唯一的修复会话进行，包括以下操作：
 
-1. **启动修复会话：** GNSS 适配器启动 "启动修复" 会话（作为来自 "" 应用程序的请求的结果）。 GNSS 适配器设置特定要求和首选项与请求的关联，并 intimates GNSS 驱动程序通过发出控制代码[**IOCTL\_GNSS\_start\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)，来启动引擎以获取修补程序。
+1. **启动修复会话：** GNSS 适配器启动 (作为) 应用程序发出的请求的启动修复会话。 GNSS 适配器设置特定要求和首选项与请求的关联，并 intimates GNSS 驱动程序启动引擎，通过发出控制代码 [**IOCTL \_ GNSS \_ start \_ FIXSESSION**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)来获取修补程序。
 
-1. **获取设备位置（修复数据）：** 启动修复会话后，GNSS 适配器会发出控制代码[**IOCTL\_GNSS\_获取\_FIXDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata) ，开始等待驱动程序的修补程序。 当引擎提供新位置信息时，GNSS 驱动程序将响应此挂起的 get fix 请求。
+1. **获取设备位置 (修复数据) ：** 启动修复会话后，GNSS 适配器会发出控制代码 [**IOCTL \_ GNSS \_ GET \_ FIXDATA**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata) ，开始等待驱动程序的修补程序。 当引擎提供新位置信息时，GNSS 驱动程序将响应此挂起的 get fix 请求。
 
     > [!NOTE]
-    > 如果修复会话类型为 LKG 修补程序（而不是当前修补程序），则位置信息来自驱动程序的缓存。
+    > 如果修复会话类型为 LKG fix (而不是当前修复) ，则位置信息来自驱动程序的缓存。
 
-    GNSS 适配器可确保异步 i/o 请求始终可用于 GNSS 驱动程序，以便在可用时返回修补数据。 根据修补程序的性质，如果需要更多的修补程序数据，GNSS 适配器会发出另一个 i/o 请求（使用相同的 IOCTL），此序列将继续，直到没有更多的数据可用或修复会话停止。
+    GNSS 适配器可确保异步 i/o 请求始终可用于 GNSS 驱动程序，以便在可用时返回修补数据。 根据修补程序的性质，如果需要更多的修补程序数据，GNSS 适配器会使用相同的 IOCTL) 发出另一个 i/o 请求 (，此序列将继续，直到没有更多数据可用或修复会话停止。
 
-1. **修改修补会话：** 如果 GNSS 驱动程序不支持多路复用同一类型的修复会话，GNSS 适配器可能会发出[**IOCTL\_GNSS\_修改**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_modify_fixsession)该修复会话类型的\_FIXSESSION。
+1. **修改修补会话：** 如果 GNSS 驱动程序不支持多路复用同一类型的修复会话，则当 GNSS 适配器在其级别进行多路复用时，适配器可能会为该修复会话类型发出 [**IOCTL \_ GNSS \_ 修改 \_ FIXSESSION**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_modify_fixsession) 。
 
 1. **停止修补会话：** 当不需要与特定修补会话相关的其他位置信息时，GNSS 适配器将发出停止修复会话。
 
 ### <a name="native-geofencing-support"></a>本机地理围栏支持
 
-GNSS DDI 使用在此规范中定义的一组 IOCTLs 支持地域隔离区内卸载方案。 为驱动程序定义了特殊功能标志以指示此支持，只有在 GNSS 堆栈本身支持地理围栏时（即，它在 GNSS 芯片中实现地理围栏，而不是在应用程序处理器中）时，才必须设置此标志。 如果驱动程序不以本机方式支持地域隔离区内，则不应设置标志。 HLOS 已支持基于应用程序处理器（AP）的不理想地域隔离区内跟踪引擎;虽然此解决方案不像本机解决方案那样进行电源优化，但它经过良好的测试和优化，因此不应被 AP 中实现的等效解决方案替换。
+GNSS DDI 使用在此规范中定义的一组 IOCTLs 支持地域隔离区内卸载方案。 为驱动程序定义了特殊功能标志以指示此支持，只有在 GNSS 堆栈支持 (本机地理围栏时，才必须设置此标志，而不是在应用程序处理器) 中实现地理围栏。 如果驱动程序不以本机方式支持地域隔离区内，则不应设置标志。 HLOS 已支持基于 AP) 的地域隔离区内跟踪引擎 (不理想的应用程序处理器;虽然此解决方案不像本机解决方案那样进行电源优化，但它经过良好的测试和优化，因此不应被 AP 中实现的等效解决方案替换。
 
 > [!NOTE]
 > 由 HLOS 进行的地域隔离区内跟踪要求应用程序处理器定期唤醒以检测地域隔离区内违规，从而即使在不违反均衡的情况下也要排出电源。 因此，此实现被视为不理想。
@@ -130,7 +130,7 @@ GNSS DDI 使用在此规范中定义的一组 IOCTLs 支持地域隔离区内卸
 当底层驱动程序由于收到来自本机地域隔离区内跟踪解决方案的错误通知而无法跟踪现成时，HLOS 还使用基于 AP 的地域隔离区内跟踪作为故障转移机制。
 仅当地域隔离区内跟踪完全关闭到 SoC 并且应用程序处理器仅在处理地域隔离区内相关事件时才会唤醒，才能获得本机地理围栏支持。 如果硬件不支持本机地域隔离区内跟踪，则 GNSS 驱动程序不能在驱动程序层尝试实现它。
 
-GNSS 引擎还必须公开已记录的特定于 IHV 的优化参数，以便能够在电源消耗与用户体验之间找到适当的平衡。 此外，支持的现成数应大于在标头文件中定义的**最小\_现成\_必需**的值。 请注意，每个应用程序都定义了**所需的最小\_现成\_** ，因为一个应用程序不知道其他应用程序或移动运营商使用的现成数。
+GNSS 引擎还必须公开已记录的特定于 IHV 的优化参数，以便能够在电源消耗与用户体验之间找到适当的平衡。 此外，支持的现成数应大于标头文件中定义的 **MIN \_ 现成 \_ REQUIRED** 值。 请注意，每个应用程序都定义了 ** \_ \_ 所需的最小现成** ，因为一个应用程序不知道其他应用程序或移动运营商使用的现成数。
 
 地理围栏卸载支持涉及以下要求：
 
@@ -154,9 +154,9 @@ GNSS 引擎还必须公开已记录的特定于 IHV 的优化参数，以便能�
 
   - 如果 GNSS 引擎无法确定用户是否正在移动并且现成边界在100米以内或更低，则 GNSS 引擎需要在一分钟或更短时间内发送跟踪错误。
 
-  - 如果 GNSS 引擎已检测到用户正在移动，则 GNSS 引擎需要在与最近的移动速度和距离最近的地域隔离区内的时间成正比的时间内发送跟踪错误。 建议在 \[（距离到最接近的围栏边界（m）/估计速度（m/s））-15s\]中发送错误。 GNSS 引擎可能使用移动检测指标来确定应发送跟踪错误的时间。
+  - 如果 GNSS 引擎已检测到用户正在移动，则 GNSS 引擎需要在与最近的移动速度和距离最近的地域隔离区内的时间成正比的时间内发送跟踪错误。 建议在 \[ (的距离到最接近的边界 (m 中发送错误) /估算速度 (m/s) # A5-15s \] 。 GNSS 引擎可能使用移动检测指标来确定应发送跟踪错误的时间。
 
-  - 如果 GNSS 引擎无法确定用户是否在移动，则 GNSS 引擎需要在与移动速度非常高的时间与最接近的地域隔离区内之间发送跟踪错误。 建议在 \[距离最接近的围栏边界（m）/343 （m/s）\]中发送错误。
+  - 如果 GNSS 引擎无法确定用户是否在移动，则 GNSS 引擎需要在与移动速度非常高的时间与最接近的地域隔离区内之间发送跟踪错误。 建议在 \[ 最接近的边界边界 (m) /343 (m/s) 中发送错误 \] 。
 
 - 在 GNSS 引擎报告了地域隔离区内跟踪状态错误的时间段内，不应向 HLOS 发送地域隔离区内破坏事件。
 
@@ -168,79 +168,79 @@ GNSS 引擎还必须公开已记录的特定于 IHV 的优化参数，以便能�
 
 - 当 GNSS 驱动程序返回 "跟踪失败" 时，它将使用基于 AP 的跟踪。
 
-- 它将继续将当前在 OS 级别跟踪的现成中的任何更新（添加/删除）推送到驱动程序，以便它们处于同步状态。这将帮助 GNSS 引擎了解 OS 当前跟踪的是哪些现成，它可以根据最新数据来跟踪/不跟踪确定。
+- 它将继续推送 (添加/) 删除当前在 OS 级别跟踪的现成中的任何更新，以使它们处于同步状态。这将帮助 GNSS 引擎了解 OS 当前跟踪的是哪些现成，它可以根据最新数据来跟踪/不跟踪确定。
 
 - 一旦 GNSS 驱动程序在其跟踪功能中发送成功，它会推送基于 AP 跟踪器确定的地域隔离区内状态更改。
 
 ### <a name="driver-notifications-for-assistance-and-helper-data"></a>帮助和帮助程序数据的驱动程序通知
 
-从一开始，GNSS 驱动程序可能需要 GNSS 适配器的帮助数据或帮助器操作。 这包括各种形式的 AGNSS 数据（时间注入、ephemeris、初始粗糙位置）、用户许可弹出窗口（支持网络启动的用户平面定位等）。
+从一开始，GNSS 驱动程序可能需要 GNSS 适配器的帮助数据或帮助器操作。 这包括各种形式的 AGNSS 数据 (时间注入，ephemeris，初始粗位置) ，用户许可弹出窗口，用于支持网络启动的用户平面定位等等。
 
 - GNSS 驱动程序可以获取 GNSS 帮助数据，而无需使用 GNSS 适配器。 尽管如此，建议使用 GNSS 适配器获取帮助数据，并利用 Microsoft 定位服务，原因如下：
 
   - Microsoft 位置堆栈负责建立数据连接，并遵守任何漫游约束、数据首选项、网络安静模式集成等。
 
-  - Microsoft 定位服务可以通过服务器到服务器后端连接来定期获取特定于 IHV 的帮助数据，并将其提供给需要的所有设备，并将 IHV 保存到需要在世界各地部署前端协助服务满足可用性、可伸缩性和响应能力要求。
+  - Microsoft 定位服务可以通过服务器到服务器后端连接来定期获取特定于 IHV 的帮助数据，并将其提供给需要的所有设备，并使 IHV 能够在全球范围内部署用于满足可用性、可伸缩性和响应能力要求的前端协助服务。
 
 - 用于收件箱应用程序隐私的用户同意是操作系统所拥有的。 因此，任何 UI 都可以通知用户网络发起的位置请求，或任何 UI，以请求用户响应网络发起的位置请求，将归 Microsoft 所有。 当收到网络发起的位置请求时，GNSS 驱动程序将通知 GNSS 适配器，如果需要，它会在继续执行满足请求之前，等待用户的响应达到默认时间。
 
-由于 GNSS 驱动程序无法自行启动对上层的请求，因此 GNSS 适配器可主动从 GNSS 驱动程序寻找此类请求，从而始终保留一个或多个挂起的 Irp，使 GNSS dri 可以响应此类挂起的请求。 收到请求以获取帮助/帮助程序日期时，GNSS 适配器将获取数据（或代表 GNSS 驱动程序执行特定操作），然后通过另一个**DeviceIoControl**调用将所需的信息注入 GNSS 驱动程序。
+由于 GNSS 驱动程序无法自行启动对上层的请求，因此 GNSS 适配器可主动从 GNSS 驱动程序中寻找此类请求，从而始终保留一个或多个挂起的 Irp，使 GNSS 驱动程序可以响应此类挂起的请求。 收到请求以获取帮助/帮助程序日期时，GNSS 适配器将) 中获取数据 (或代表 GNSS 驱动程序执行特定操作，然后通过另一个 **DeviceIoControl** 调用将所需的信息注入 GNSS 驱动程序。
 
-来自驱动程序的通知通过公共事件模型进行处理。 例如，对于 GNSS 协助，GNSS 适配器使用控制代码[**IOCTL\_GNSS\_侦听\_AGNSS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_agnss)接收来自 AGNSS 驱动程序的 GNSS 请求。 然后，GNSS 适配器将获取 AGNSS 协助数据，并[ **\_GNSS 发出 IOCTL\_注入\_AGNSS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_inject_agnss) ，将数据推送到 GNSS 驱动程序中。
+来自驱动程序的通知通过公共事件模型进行处理。 例如，对于 GNSS 协助，GNSS 适配器使用控制代码 [**IOCTL \_ GNSS \_ 侦听 \_ AGNSS**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_agnss) 接收来自 AGNSS 驱动程序的 GNSS 请求。 然后，GNSS 适配器将获取 AGNSS 协助数据，并发出 [**IOCTL \_ GNSS \_ 注入 \_ AGNSS**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_inject_agnss) ，将数据推送到 GNSS 驱动程序中。
 
-此通知机制还用于接收与地域隔离区内相关的警报数据和状态更新。 适配器使用控制代码[**IOCTL\_GNSS\_侦听\_地域隔离区内\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert)接收单个地域隔离区内警报的警报，并使用[**IOCTL\_GNSS\_侦听\_现成\_TRACKINGSTATUS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus)接收有关地域隔离区内跟踪总体状态的更改。
+此通知机制还用于接收与地域隔离区内相关的警报数据和状态更新。 适配器使用控制代码 [**IOCTL \_ GNSS \_ 侦听 \_ 地域隔离区内 \_ 警报**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofence_alert) ，以便接收单个地域隔离区内警报，并使用 [**IOCTL \_ GNSS \_ 侦听 \_ 现成 \_ **](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_listen_geofences_trackingstatus) TRACKINGSTATUS 接收有关地域隔离区内跟踪总体状态的更改。
 
-### <a name="global-navigation-satellite-system-gnss-driver-logging"></a>全局导航卫星系统（GNSS）驱动程序日志记录
+### <a name="global-navigation-satellite-system-gnss-driver-logging"></a>全局导航卫星系统 (GNSS) 驱动程序日志记录
 
-出于诊断目的，GNSS 驱动程序应使用下面所述的 Microsoft 规定的日志记录机制（WPP）记录错误和其他诊断信息。 尽管这两种机制都受支持，但建议驱动程序使用 WPP 进行日志记录，而不是使用 ETW。 建议使用 WPP 的原因是可帮助驱动程序调试的工具的可用性。
+出于诊断目的，GNSS 驱动程序应使用 Microsoft 规定的日志记录机制记录错误和其他诊断信息， (WPP) 下面所述或 ETW。 尽管这两种机制都受支持，但建议驱动程序使用 WPP 进行日志记录，而不是使用 ETW。 建议使用 WPP 的原因是可帮助驱动程序调试的工具的可用性。
 
-驱动程序不得记录任何信息，无论通过这种规定的日志记录技术，都不能记录任何信息。 有关详细信息，请参阅[WPP 软件跟踪](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)。
+驱动程序不得记录任何信息，无论通过这种规定的日志记录技术，都不能记录任何信息。 有关详细信息，请参阅 [WPP 软件跟踪](../devtest/wpp-software-tracing.md)。
 
 使用 WPP 软件跟踪来记录消息的方式类似于使用 Windows 事件日志服务。 驱动程序在日志文件中记录消息 ID 和未格式化的二进制数据。 然后，postprocessor 将日志文件中的信息转换为可读的形式。 但是，WPP 软件跟踪支持的消息格式比事件日志记录服务支持的格式更强且更灵活。 例如，WPP 软件跟踪为 IP 地址、Guid、系统 Id、时间戳和其他有用的数据类型提供内置支持。 此外，用户还可以添加与应用程序相关的自定义数据类型。
 
 ### <a name="mobile-operator-protocol-support"></a>移动运营商协议支持
 
-要支持各种移动运营商定位协议（SUPL、UPL、CP，等等），需要提供 IHV GNSS 堆栈（GNSS 驱动程序、GNSS 设备/引擎）。 如果无法这样做，则意味着设备不会通过移动运营商接受，并会明显限制设备的商用化。
+IHV 提供的 GNSS 堆栈 (GNSS 驱动程序，GNSS 设备/引擎) 需要支持 (SUPL、UPL、CP 等) 的各种移动运营商定位协议。 如果无法这样做，则意味着设备不会通过移动运营商接受，并会明显限制设备的商用化。
 
 > [!NOTE]
-> 若要为某些移动运营商发运设备，必须支持这些协议并符合移动运营商要求。 对于大多数非电话平台，支持移动运营商协议可能并不重要，如果平台不包括移动宽带（MBB）支持，则特别如此。
+> 若要为某些移动运营商发运设备，必须支持这些协议并符合移动运营商要求。 对于大多数非电话平台，支持移动运营商协议可能并不重要，如果平台不包括移动宽带 (MBB) 支持。
 
 所有实现部分都在 IHV 堆栈中抽象化，Microsoft HLOS 组件不可知：
 
-- 协议的特定实现细节（例如，协议的工作方式、协议消息的解释等）。
+- 协议的具体实现细节 (例如，协议的工作方式、协议消息的解释等) 。
 
-- 实现堆栈的形状（例如，实现可以位于 GNSS 设备/引擎或 GNSS 驱动程序中，或者如果需要单独的 HLOS 服务，则为。
+- 实现堆栈的形状 (例如，实现可以位于 GNSS 设备/引擎或 GNSS 驱动程序中，或者，如果需要单独的 HLOS 服务) ，则为。
 
-- IHV 拥有的 GNSS 堆栈内的各个部分之间的交互，用于实现协议。 例如，如果 GNSS 驱动程序要求使用 Wi-fi 扫描结果来响应特定的 SUPL 协议消息，则它可以通过专用 IOCTL 调用将 Wi-fi 扫描结果注入到驱动程序，或将此部分作为 UMDF 2.0 驱动器，来实现此目的。r，或在较低级别处理此交互。 Microsoft GNSS HLOS 组件在意 IHV GNSS stack 组件之间的交互。
+- IHV 拥有的 GNSS 堆栈内的各个部分之间的交互，用于实现协议。 例如，如果 GNSS 驱动程序要求使用 Wi-fi 扫描结果来响应特定的 SUPL 协议消息，则它可以通过专用 IOCTL 调用将 Wi-fi 扫描结果注入到驱动程序，或将此部分作为 UMDF 2.0 驱动程序，或在较低级别处理此交互，从而实现此目的。 Microsoft GNSS HLOS 组件在意 IHV GNSS stack 组件之间的交互。
 
-总而言之，IHV 或 OEM 需要提供 SUPL 客户端（如果系统要在中国发货，则可能是 UPL 客户端），并将其与 GNSS 驱动程序中的/集成。 使用 SUPL 客户端的位置平台的所有交互都将通过 GNSS DDI 完成。
+总之，如果系统要在) 中国发货，则 IHV 或 OEM 需要提供 SUPL 客户端 (并且可能为 UPL 客户端，并将其与 GNSS 驱动程序中的/集成。 使用 SUPL 客户端的位置平台的所有交互都将通过 GNSS DDI 完成。
 
 为了便于实现移动运营商协议，并使用特定于平台的技术降低软件开发的负担，GNSS 适配器为 IHV GNSS 堆栈提供了某些功能。 GNSS 驱动程序被视为从 HLOS 组件接收此类功能的中介，例如，GNSS 适配器只与 GNSS 驱动程序交互，而与 IHV GNSS 堆栈的任何其他部分交互。 GNSS driver IOCTLs 定义了 GNSS 驱动程序和 GNSS 适配器之间此类功能的语法和语义。 GNSS 驱动程序负责路由到实现移动运营商协议的特定 IHV 组件。 GNSS 适配器广泛地提供 GNSS 驱动程序的以下功能：
 
 1. **配置：** 移动运营商使用 OMA 协议标准规定的配置机制来预配设备并更改配置。 例如，SUPL standard 需要基于 UICC 和/或使用通过 OMA 或 OMA 获取的 SUPL OMA 配置文件信息完成 SUPL 配置。
 
     > [!NOTE]
-    > 在 Windows 10 之前，电话中用于配置目的的某些功能（OMA DM 和 OMA CP）在其他平台上不可用。 从 Windows 10 开始，所有平台都可以通过 SUPL 配置服务提供程序（CSP）支持 SUPL 配置，就是使用新的 GNSS DDI。 通过 CSP 注入的设置可以来自映像本身（通过 provxml 或 multivariant），也可以通过 OMA 或 OMA CP 从移动运营商处进行。
+    > 出于配置目的，在手机中提供某些功能 (OMA 和 OMA CP) 在 Windows 10 之前不在其他平台中提供。 从 Windows 10 开始，所有平台都可以通过 SUPL 配置服务提供程序 (CSP) 使用新的 GNSS DDI 来支持 SUPL 配置。 通过 CSP 注入的设置可以通过 provxml 或 multivariant) 或通过 OMA 或 OMA CP 从移动运营商那里 (。
 
-    Windows 10 使用配置服务提供程序（CSP）定义一种专用技术和设备管理，用于解释和提取配置数据。 Microsoft 提供 CSP 来使用 OMA 配置，并通过 GNSS 适配器将配置推送到 GNSS 驱动程序。
+    Windows 10 定义了一种专有技术，使用配置服务提供程序 (CSP) 进行设备管理，用于解释和提取配置数据。 Microsoft 提供 CSP 来使用 OMA 配置，并通过 GNSS 适配器将配置推送到 GNSS 驱动程序。
 
     > [!NOTE]
-    > 此外，IHV 还可以编写用户模式组件，使用特定于电话的设备管理技术（Csp）来使用移动运营商配置规范。 但是，这会给 IHV 带来额外的负担，不建议这样做。
+    > 此外，IHV 还可以编写用户模式组件，使用特定于电话的设备管理技术 (Csp) 来使用移动运营商配置规范。 但是，这会给 IHV 带来额外的负担，不建议这样做。
 
-    系统仅支持一个 SUPL 配置，包括两个 SIM 设备的情况。 Microsoft 提供了基于 UICC 和 UICC 更改重新配置 SUPL 的功能。 除此之外，在设备漫游的情况下，HLOS 会将 SUPL 客户端重新配置为在独立模式下工作。 本文档定义了用于推送各种移动操作协议（SUPL 1.0 和2.0、v2UPL 等）的配置数据的 IOCTLs。
+    系统仅支持一个 SUPL 配置，包括两个 SIM 设备的情况。 Microsoft 提供了基于 UICC 和 UICC 更改重新配置 SUPL 的功能。 除此之外，在设备漫游的情况下，HLOS 会将 SUPL 客户端重新配置为在独立模式下工作。 本文档定义了用于推送 (SUPL 1.0 和2.0、v2UPL 等) 的各种移动操作协议的配置数据的 IOCTLs。
 
-1. **用户同意 UI：** 为了满足隐私要求，某些网络启动的定位请求需要用户同意。 不允许 Ihv 编写平台组件的 UI。 因此，GNSS 适配器代表 GNSS 驱动程序处理用户同意的 UI。 GNSS 驱动程序的通知 IOCTLs，用于请求 UI 弹出窗口，GNSS 适配器的 IOCTLs 用于向此类请求传达用户[响应。](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver)
+1. **用户同意 UI：** 为了满足隐私要求，某些网络启动的定位请求需要用户同意。 不允许 Ihv 编写平台组件的 UI。 因此，GNSS 适配器代表 GNSS 驱动程序处理用户同意的 UI。 GNSS 驱动程序的通知 IOCTLs，用于请求 UI 弹出窗口，GNSS 适配器的 IOCTLs 用于向此类请求传达用户[响应。](/windows-hardware/drivers/ddi/gnssdriver)
 
 为了实现完全正常运行的 SUPL 客户端，IHV 堆栈将需要使用中提供的接口或常规功能，以及操作系统平台。 下面是 Windows 10 中的可用功能列表，Ihv 可以利用这些功能来实现其 SUPL 客户端：
 
 > [!NOTE]
->此功能  都不是位置平台或 GNSS DDI 的一部分，但在此处包含它是为了阐明和帮助 GNSS 驱动程序开发人员了解可以从 OS 中利用哪些功能来实现 SUPL 功能。
+> 此功能不是位置平台或 GNSS DDI 的一部分，但在此处包含它是为了阐明和帮助 GNSS 驱动程序开发人员了解可以从 OS 中利用哪些功能来实现 SUPL 功能。
 
 ![SUPL 客户端与 GNSS 驱动程序的交互](images/gnss-architecture-6.png)
 
 - **SMS 路由器：** SMS 路由器允许 SUPL 客户端订阅发送 SUPL NI 请求的 SIP 推送消息的 WAP 推送。
 
-- **连接管理器能够配置哪些连接应用于 SUPL 和 api 来请求此类连接：** 移动运营商可能需要在专用连接中具有 SUPL 流量，或只是与默认 Internet 连接不同的连接。 为此，**连接管理器**提供了：
+- **连接管理器能够配置哪些连接应用于 SUPL 和 api 来请求此类连接：** 移动运营商可能需要在专用连接中具有 SUPL 流量，或只是与默认 Internet 连接不同的连接。 为此， **连接管理器** 提供了：
 
   - 一种配置服务提供程序，OEM 或移动运营商可以使用该提供程序来配置应将哪个连接用于 SUPL 通信。
 
@@ -248,31 +248,31 @@ GNSS 引擎还必须公开已记录的特定于 IHV 的优化参数，以便能�
 
   - 用于建立 SUPL 连接的 API，以及在上一步中获取的参数。
 
-- **手机网络连接配置：** 若要配置不同手机网络连接的参数（例如，SUPL 连接的参数），则 OEM 或移动运营商可以使用配置服务提供程序。 然后，可以在**连接管理器**中将此连接关联到 SUPL 目的。
+- **手机网络连接配置：** 若要配置不同手机网络连接的参数（例如，SUPL 连接的参数），则 OEM 或移动运营商可以使用配置服务提供程序。 然后，可以在 **连接管理器** 中将此连接关联到 SUPL 目的。
 
 - **当 SUPL 连接正在进行时，请求保持活动状态：** 当系统处于连接待机状态时，SUPL 客户端可能需要启动与 HSLP 的连接。 出现这种情况的原因可能是，GNSS 设备在配置为使用基于 Microsoft 的位置时需要获取帮助信息，或者因为移动运营商发送了 NI 请求。 如果是这种情况，SUPL 客户端将需要启动与 HSLP 的连接，并确保在 SUPL 会话完成之前连接处于活动状态。
 
-- **与移动宽带（MBB）模块的交互：** 在 Windows 10 中，没有通过 HLOS 提供的 Api 来检索手机网络度量值，知道何时发出紧急呼叫等。 与 MBB 的任何交互都需要通过与 MBB 的直接集成（通过 AT 命令或其他专有方法）来实现。
+- **与移动宽带 (MBB) 模块的交互：** 在 Windows 10 中，没有通过 HLOS 提供的 Api 来检索手机网络度量值，知道何时发出紧急呼叫等。 与 MBB 的任何交互需要通过直接与 MBB (通过命令或) 的其他专用方法来实现。
 
 ### <a name="manufacturing-testing"></a>生产测试
 
-Oem 需要提供一种方法来在制造时进行验证，同时还需要在客户支持点上验证 GNSS 硬件和 GNSS 堆栈（GNSS 驱动程序和 GNSS 设备/引擎）是否正常运行。 IHV 可以提供专用机制来使 Oem 进行此测试，或者可以选择在 DDI 中实现接口，以使 OEM 能够启动制造测试并获取结果。
+Oem 需要提供一种方法来在制造时进行验证，同时还需要在客户支持点上验证 GNSS 硬件和 GNSS 堆栈 (GNSS 驱动程序和 GNSS 设备/引擎) 是否正常运行。 IHV 可以提供专用机制来使 Oem 进行此测试，或者可以选择在 DDI 中实现接口，以使 OEM 能够启动制造测试并获取结果。
 
 在进行生产测试时，位置框架将被绕过，因为测试的主要重点在于硬件验证或驱动程序验证。 通常，设备将处于一种特殊的 "安全操作系统模式"，其中将加载最小的一组组件和服务。 在此模式下，OEM 可以启动一组会触发测试用例的测试应用程序。 为了在制造过程中提高效率和速度，强烈需要为不同组件内的测试提供并发支持。
 
 用于制造测试的接口包括两种类型的测试：
 
-1. **载波波测试：** 此测试用于验证外部连接/天线测试。 在此测试中，GNSS 引擎必须搜索 CW 信号，并在响应中提供 SNRs （发出噪音比率或载波到干扰 r）度量值。 理想情况下，测试应以 10 Hz 提供回复。
+1. **载波波测试：** 此测试用于验证外部连接/天线测试。 在此测试中，GNSS 引擎必须搜索 CW 信号，并向噪音比率或运营商提供 SNRs (信号，以响应中) 度量值。 理想情况下，测试应以 10 Hz 提供回复。
 
-1. **自检：** 此测试用于验证 GNSS 引擎的基本功能。 自检应能够检测引擎中的基本问题（硬件故障、GNSS 硬件中的连接错误，无需注入任何外部信号）。 此验证的目的是在设备经历更详尽和更昂贵的测试之前，执行这一便宜的测试，并将其用作生产线的门。 在此测试中，GNSS 引擎和驱动程序应对 pin 连接执行自我验证，并返回状态代码，指示所有内容都正常或发生了故障。 故障的错误代码必须指示检测到的错误。 错误代码由 IHV 设置。
+1. **自检：** 此测试用于验证 GNSS 引擎的基本功能。 自检应能够检测引擎中的基本问题， (硬件故障、GNSS 硬件中的连接不正确，且无需注入任何外部信号。 此验证的目的是在设备经历更详尽和更昂贵的测试之前，执行这一便宜的测试，并将其用作生产线的门。 在此测试中，GNSS 引擎和驱动程序应对 pin 连接执行自我验证，并返回状态代码，指示所有内容都正常或发生了故障。 故障的错误代码必须指示检测到的错误。 错误代码由 IHV 设置。
 
 ## <a name="io-considerations"></a>I/o 注意事项
 
-由于 GNSS 功能不会映射到传统文件读取和写入设备驱动程序的请求，因此不会将**ReadFile**和**WRITEFILE**函数用于 GNSS 驱动程序 api。 所有 GNSS 功能都将使用定义明确的 GNSS 设备 i/o 控制（**DeviceIoControl**）请求（也称为 IOCTLs）来实现。
+由于 GNSS 功能不会映射到传统文件读取和写入设备驱动程序的请求，因此不会将 **ReadFile** 和 **WRITEFILE** 函数用于 GNSS 驱动程序 api。 所有 GNSS 功能都将使用定义明确的 GNSS 设备 i/o 控制来实现， (**DeviceIoControl**) 请求（也称为 IOCTLs）。
 
-所有 IOCTLs 将使用\_缓冲的方法作为输入和输出数据的数据传输机制。 由于与 GNSS 相关的数据的大小相对较小，因此额外的缓冲区副本不应影响系统性能。
+所有 IOCTLs 将使用 \_ 缓冲为输入和输出数据的数据传输机制的方法。 由于与 GNSS 相关的数据的大小相对较小，因此额外的缓冲区副本不应影响系统性能。
 
-将使用**CreateFile**函数中 **\_标志\_交叠**选项打开 GNSS 驱动程序。 因此，所有 IOCTLs 都是隐式异步的。 不过，尽管大多数 GNSS IOCTLs 在语义上都是异步的（例如，IOCTL 在驱动程序中触发了某个活动，并以异步方式返回了结果），但有些 IOCTLs 在语义上是同步的，因为没有逻辑此类 IOCTLs 所涉及的异步操作或活动。 这几个 IOCTLs 的同步行为将通过在发出**DeviceIoControl**调用后阻止 GNSS 适配器线程完成，直到 i/o 操作完成。 因此，GNSS 驱动程序的责任是始终完成 IRP，作为处理所有 IOCTLs 的一部分。 GNSS 适配器应仅服从同步调用的协定，并且在发生错误时，可能会也可能不会重试这些命令。 IHV 驱动程序需要确保它已在驱动程序端合并了所有逻辑，然后返回错误。
+将使用**CreateFile**函数中的**文件 \_ 标志 \_ 交叠**选项打开 GNSS 驱动程序。 因此，所有 IOCTLs 都是隐式异步的。 不过，尽管大多数 GNSS IOCTLs 在语义上都是异步的 (例如，IOCTL 会触发驱动程序中的活动，并以异步方式返回结果) ，某些 IOCTLs 在语义上是同步的，因为没有与此 IOCTLs 相关的逻辑异步操作或活动。 这几个 IOCTLs 的同步行为将通过在发出 **DeviceIoControl** 调用后阻止 GNSS 适配器线程完成，直到 i/o 操作完成。 因此，GNSS 驱动程序的责任是始终完成 IRP，作为处理所有 IOCTLs 的一部分。 GNSS 适配器应仅服从同步调用的协定，并且在发生错误时，可能会也可能不会重试这些命令。 IHV 驱动程序需要确保它已在驱动程序端合并了所有逻辑，然后返回错误。
 
 对于请求和响应操作，GNSS 适配器将始终保持挂起的 i/o 操作可用，以便在 GNSS 驱动程序包含数据以作为对以前调用的操作的响应发送数据时，可以通过挂起的 IRP 发送响应。
 
@@ -296,7 +296,7 @@ Oem 需要提供一种方法来在制造时进行验证，同时还需要在客�
 
 **会话2：** 与上面的会话1中相同，但是在这种情况下，引擎将继续进行更好的修复以满足准确性要求，并在两者之间保持发送中间修补程序。 达到会话响应时间限制后，适配器将发出停止修复，应在驱动程序中关闭此会话。 收到的最后一个中间修复程序已发送到应用程序。
 
-实现单步支持时要考虑的一个重要设计方面是，如果不支持基于距离的跟踪会话和基于时间的跟踪会话，GNSS 引擎应在正在接收 stop fix 命令。 这是因为，GNSS 适配器需要通过使用单步修复会话来实现模拟距离的基于距离的跟踪会话和/或基于时间的跟踪会话，如果 GNSS 引擎立即停止跟踪卫星，则大多数 GNSS 设备会在获取时延迟，这使得无法实现满足导航、运行跟踪或映射应用程序需求的模拟跟踪会话。
+实现单步支持时要考虑的一个重要设计方面是，如果不支持基于距离的跟踪会话和基于时间的跟踪会话，则在收到 "停止修补" 命令后，GNSS 引擎应继续跟踪附属的3到5秒。 这是因为，GNSS 适配器需要通过使用单步修复会话来实现模拟距离的基于距离的跟踪会话和/或基于时间的跟踪会话，如果 GNSS 引擎立即停止跟踪卫星，则大多数 GNSS 设备会在获取时延迟，这使得无法实现满足导航、运行跟踪或映射应用程序需求的模拟跟踪会话。
 
 当系统处于连接待机状态时，GNSS 适配器可能会启动单个快照修复请求，而不只是当系统处于活动状态时。 这可能会在应用程序处理器或其他情况下满足后台任务、系统服务、现成跟踪的需要。 GNSS 驱动程序应能够将这些会话请求传递到 GNSS 设备，并满足该请求，或者向 GNSS 适配器提供错误。
 
@@ -306,7 +306,7 @@ Oem 需要提供一种方法来在制造时进行验证，同时还需要在客�
 
 序列说明如下所示：
 
-1. GNSS 适配器使用**CreateFile** API 打开 GNSS 驱动程序。 WDF/KMDF/UMDF 向 GNSS 驱动程序发出所需的可选回调。 返回的文件句柄用于所有后续操作。
+1. GNSS 适配器使用 **CreateFile** API 打开 GNSS 驱动程序。 WDF/KMDF/UMDF 向 GNSS 驱动程序发出所需的可选回调。 返回的文件句柄用于所有后续操作。
 
 1. GNSS 适配器发出 IOCTL，以将各种平台功能传递给驱动程序。 GNSS 驱动程序完成 i/o 操作。
 
@@ -314,31 +314,31 @@ Oem 需要提供一种方法来在制造时进行验证，同时还需要在客�
 
 1. 对于任何特定于驱动程序的配置或命令，GNSS 适配器会发出 IOCTLs。 GNSS 驱动程序执行所需的操作并完成 i/o 操作。
 
-1. GNSS 适配器发出[**IOCTL\_GNSS\_START\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)，以及指定修补程序的类型和其他方面的参数。 收到此 IOCTL 后，GNSS 驱动程序将与基础设备交互以开始接收修补程序，并随后完成 i/o 操作。
+1. GNSS 适配器发出 [**IOCTL \_ GNSS \_ START \_ FIXSESSION**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_fixsession)，以及指定修补程序的类型和其他方面的参数。 收到此 IOCTL 后，GNSS 驱动程序将与基础设备交互以开始接收修补程序，并随后完成 i/o 操作。
 
-1. GNSS 适配器发出[**IOCTL\_GNSS\_获取\_FIXDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata)并等待 i/o 完成。 只要 GNSS 驱动程序具有可用的中间修复程序，它就会通过完成 i/o 操作来返回数据。
+1. GNSS 适配器发出 [**IOCTL \_ GNSS \_ GET \_ FIXDATA**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_get_fixdata) 并等待 i/o 完成。 只要 GNSS 驱动程序具有可用的中间修复程序，它就会通过完成 i/o 操作来返回数据。
 
-1. 将重复步骤6，直到 GNSS 驱动程序指示不需要更多的修补程序（接收到最终修补程序）。
+1. 将重复步骤6，直到 GNSS 驱动程序指示 (收到的最终修复) 不会有更多的修补程序。
 
-1. GNSS 适配器发出[**IOCTL\_GNSS\_停止\_FIXSESSION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_fixsession)。 GNSS 驱动程序执行所需的与原始修复请求相关的清理操作。
+1. GNSS 适配器发出 [**IOCTL \_ GNSS \_ STOP \_ FIXSESSION**](/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_fixsession)。 GNSS 驱动程序执行所需的与原始修复请求相关的清理操作。
 
-1. GNSS 适配器使用**CloseHandle** API 关闭驱动程序文件句柄。
+1. GNSS 适配器使用 **CloseHandle** API 关闭驱动程序文件句柄。
 
-[GNSS 驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/)中详细介绍了 GNSS IOCTLs 及关联的数据结构。
+[GNSS 驱动程序参考](/windows-hardware/drivers/ddi/gnssdriver/)中详细介绍了 GNSS IOCTLs 及关联的数据结构。
 
 ## <a name="distance-based-tracking-session"></a>基于距离的跟踪会话
 
 最终用户应用程序经常使用基于距离的跟踪会话，这是 .NET Api 中唯一可用的会话类型。 值0表示 GNSS 引擎应以尽可能最高的速率提供修补程序。
 
-GNSS 适配器将开始与 GNSS 驱动程序之间的距离跟踪会话，仅当之后指示它具有**SupportDistanceTracking**功能时。
+GNSS 适配器将开始与 GNSS 驱动程序之间的距离跟踪会话，仅当之后指示它具有 **SupportDistanceTracking**功能时。
 
 对距离跟踪会话的驱动程序的 "开始修复" 请求将包含所需的水平准确度和移动阈值，即，在 GNSS 驱动程序提供位置更新之前系统应覆盖的半正矢距离（以米为单位）。 GNSS 引擎可以利用这些值来了解应用程序请求的意图并做出明智的决策，例如调整检查位置的频率。
 
 驱动程序收到启动修复请求后，它应开始返回由该引擎生成的任何中间修复程序，直到获取最后一个修补程序。 这将被视为会话的第一个位置。 在此之后，GNSS 引擎将开始提供修补程序，只要它检测到半正矢距离已大约覆盖了。
 
-如果 GNSS 引擎确定它无法跟踪设备的任何位置（例如，如果卫星看起来不到任何更长的时间），则它应将错误返回到 GNSS 适配器，以便位置平台可以回退到其他机制以提供将更新定位到最终用户应用程序。 GNSS 适配器应在以下时间内提供错误：
+如果 GNSS 引擎确定它无法跟踪设备 (的位置，例如，如果卫星看起来不) ，则它应将错误返回到 GNSS 适配器，以便位置平台可以回退为向最终用户应用程序提供位置更新的其他机制。 GNSS 适配器应在以下时间内提供错误：
 
-\[（距离-"自上次已知位置（m）/估计速度（m/s）"）–5秒\] 或5秒，取两者中的最大值。
+\[ (距离-"自上次已知位置" (m) /估算速度 (m/s) # A5 –5秒 \] 或5秒，以最大值为准。
 
 如果 GNSS 引擎向 GNSS 适配器提供了错误，但 GNSS 适配器尚未停止跟踪会话，则 GNSS 引擎应继续按电源优化的方式进行检查，前提是它可以恢复跟踪位置。 IHV 可以使用优化来实现此检测。 优化的常见方法包括：
 
@@ -370,15 +370,15 @@ GNSS 适配器将开始与 GNSS 驱动程序之间的距离跟踪会话，仅当
 
 ## <a name="time-based-tracking-session"></a>基于时间的跟踪会话
 
-基于时间的跟踪会话可供需要频繁和定期位置更新的应用程序用来刷新用户界面（例如，地图、导航应用程序等）。
+基于时间的跟踪会话可供需要频繁和定期位置更新的应用程序用来刷新用户界面 (例如，地图、导航应用程序等) 。
 
-GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅当后一项指示它具有**SupportContinuousTracking**功能时。
+GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅当后一项指示它具有 **SupportContinuousTracking**功能时。
 
-对于基于时间的跟踪会话，对驱动程序的启动修复请求将包括所需的水平准确度和首选的时间间隔，GNSS 驱动程序应提供位置更新。 GNSS 引擎可以利用这些值来了解应用程序请求的意图并做出明智的决策（例如，调整检查位置的频率），在间隔之前的几秒钟内开始获取卫星，以提供及时更新，等等。
+对于基于时间的跟踪会话，对驱动程序的启动修复请求将包括所需的水平准确度和首选的时间间隔，GNSS 驱动程序应提供位置更新。 GNSS 引擎可以利用这些值来了解应用程序请求的意图并做出明智的决策（例如，调整检查位置的频率），在间隔之前的几秒钟内开始获取卫星，以提供位置更新等。
 
 驱动程序收到启动修复请求后，它应开始返回由该引擎生成的任何中间修复程序，直到获取最后一个修补程序。 这将被视为会话的第一个位置。 在此之后，GNSS 引擎应开始在会话参数所需的时间间隔内提供修补程序。 如果 GNSS 引擎无法以应用程序所需的频率提供位置，则它应以其最大速率提供修补程序。
 
-如果 GNSS 引擎确定它无法跟踪设备的任何位置（例如，如果卫星看不再可见），则它应将错误返回到 GNSS 适配器，以便位置平台可以回退到其他机制来提供位置对最终用户应用程序的更新。
+如果 GNSS 引擎确定它无法跟踪设备 (的位置，例如，如果卫星) ，则它应将错误返回到 GNSS 适配器，以便位置平台可以回退到其他机制来向最终用户应用程序提供位置更新。
 
 如果 GNSS 引擎向 GNSS 适配器提供了错误，但 GNSS 适配器尚未停止跟踪会话，则 GNSS 引擎应继续按电源优化的方式进行检查，前提是它可以恢复跟踪位置。
 
@@ -434,15 +434,15 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <th>TBT 活动？</th>
 <th>案例详细信息</th>
 <th>修补程序的可接受间隔</th>
-<th>说明</th>
+<th>注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>案例1</p></td>
+<td><p>Case 1</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p>在 TBT 定期会话启动时等待的 SS 会话 &gt;时间间隔的剩余时间</p></td>
+<td><p>在 TBT 定期会话启动时，正在等待的 SS 会话以剩余超时 &gt; = 间隔</p></td>
 <td><p>与 TBT 间隔相同</p></td>
 <td><p>SS 会话行为：</p>
 <ul>
@@ -457,10 +457,10 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 </ul></td>
 </tr>
 <tr class="even">
-<td><p>案例2</p></td>
+<td><p>Case 2</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p>在 TBT 定期会话启动时，&lt; 时间间隔的剩余超时时间内进行 SS 会话</p></td>
+<td><p>在 TBT 定期会话启动时，在剩余超时间隔内进行 SS 会话 &lt;</p></td>
 <td><p>间隔保持与 SS 超时相同，直到满足 SS 会话。</p>
 <p>然后，可以将该间隔更新为与 TBT 时间间隔相同</p></td>
 <td><p>SS 会话行为：</p>
@@ -479,7 +479,7 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <td><p>情况3</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p>SS 会话启动时，TBT 定期会话启动时超时 &gt;= interval</p></td>
+<td><p>SS 会话启动时，有一个正在进行的 TBT 定期会话已启动，超时 &gt; = 间隔</p></td>
 <td><p>与 TBT 间隔相同</p></td>
 <td><p>SS 会话行为：</p>
 <ul>
@@ -497,7 +497,7 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <td><p>情况4</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p>SS 会话已启动，因为有一个正在进行的 TBT 定期会话 &lt; 时间间隔超时</p></td>
+<td><p>SS 会话启动时，有一个正在进行的 TBT 定期会话使用超时 &lt; 间隔启动</p></td>
 <td><p>间隔更改为与 SS 超时相同，直到满足 SS 会话。 然后，可以将该间隔更新为与 TBT 时间间隔相同。</p></td>
 <td><p>SS 会话行为：</p>
 <ul>
@@ -532,7 +532,7 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <td><p>情况6</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p>SS 会话正在进行，当前正在进行的 TBT 周期性会话收到时间间隔更改，剩余超时 &gt;= interval</p></td>
+<td><p>SS 会话正在进行，当前正在进行的 TBT 周期性会话收到时间间隔更改，剩余超时 &gt; = 间隔</p></td>
 <td><p>与 TBT 间隔相同</p></td>
 <td><p>SS 会话行为：</p>
 <ul>
@@ -550,7 +550,7 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <td><p>案例7</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p>SS 会话正在进行，当前正在进行的 TBT 周期性会话收到时间间隔更改，剩余超时 &lt; 间隔</p></td>
+<td><p>在正在进行的 TBT 周期性会话收到间隔更改的时间间隔内进行的 SS 会话，剩余超时 &lt; 间隔</p></td>
 <td><p>间隔更改为与 SS 剩余超时值相同，直到满足 SS 会话。 然后，可以将该间隔更新为与 TBT 时间间隔相同。</p></td>
 <td><p>SS 会话行为：</p>
 <ul>
@@ -583,94 +583,94 @@ GNSS 适配器将通过 GNSS 驱动程序开始基于时间的跟踪会话，仅
 <th>SS 准确性</th>
 <th>DBT 或 TBT 准确性</th>
 <th>总体 GNSS 引擎准确性</th>
-<th>说明</th>
+<th>注释</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>案例1</p></td>
-<td><p>中/低--&gt; 高</p></td>
+<td><p>Case 1</p></td>
+<td><p>中/低- &gt; 高</p></td>
 <td><p>不适用</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p><strong>SS 会话行为：</strong>刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p><strong>SS 会话行为：</strong> 刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 <tr class="even">
-<td><p>案例2</p></td>
-<td><p>高--&gt; 中/低</p></td>
+<td><p>Case 2</p></td>
+<td><p>高- &gt; 中等/低</p></td>
 <td><p>不适用</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p><strong>SS 会话行为：</strong>与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p><strong>SS 会话行为：</strong> 与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>情况3</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p>“高”</p></td>
-<td><p>“高”</p></td>
-<td><p><strong>SS 会话行为：</strong>假设 DBT 或 TBT 会话已经存在高准确性会话，则 SS 会话仅提供对 HLOS 的中间进一步修复，直到获取所需的最终准确性或获取最终的修补程序。</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p>高</p></td>
+<td><p>高</p></td>
+<td><p><strong>SS 会话行为：</strong> 假设 DBT 或 TBT 会话已经存在高准确性会话，则 SS 会话仅提供对 HLOS 的中间进一步修复，直到获取所需的最终准确性或获取最终的修补程序。</p></td>
 </tr>
 <tr class="even">
 <td><p>情况4</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p>“高”</p></td>
-<td><p>“高”</p></td>
-<td><p><strong>SS 会话行为：</strong>假设 DBT 或 TBT 会话已经存在高准确性会话，则 SS 会话仅提供对 HLOS 的中间进一步修复，直到获取所需的最终准确性或获取最终的修补程序。</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p>高</p></td>
+<td><p>高</p></td>
+<td><p><strong>SS 会话行为：</strong> 假设 DBT 或 TBT 会话已经存在高准确性会话，则 SS 会话仅提供对 HLOS 的中间进一步修复，直到获取所需的最终准确性或获取最终的修补程序。</p></td>
 </tr>
 <tr class="odd">
 <td><p>情况5</p></td>
-<td><p>中/低--&gt; 高</p></td>
+<td><p>中/低- &gt; 高</p></td>
 <td><p>中/低</p></td>
-<td><p>中/低--&gt; 在 SS 会话完成后返回到中/低</p></td>
-<td><p><strong>SS 会话行为：</strong>刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p>
-<p><strong>DBT 或 TBT 会话行为：</strong>此会话可以暂时获得高准确性结果。 但是，在提供 SS 会话后，此会话的准确性应返回到中/低。</p></td>
+<td><p>中/低-- &gt; 在 SS 会话完成后返回到中/低</p></td>
+<td><p><strong>SS 会话行为：</strong> 刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p>
+<p><strong>DBT 或 TBT 会话行为：</strong> 此会话可以暂时获得高准确性结果。 但是，在提供 SS 会话后，此会话的准确性应返回到中/低。</p></td>
 </tr>
 <tr class="even">
 <td><p>情况6</p></td>
-<td><p>高--&gt; 中/低</p></td>
+<td><p>高- &gt; 中等/低</p></td>
 <td><p>中/低</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p><strong>SS 会话行为：</strong>与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p><strong>SS 会话行为：</strong> 与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>案例7</p></td>
 <td><p>不适用</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p><strong>DBT 或 TBT 会话行为：</strong>刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p><strong>DBT 或 TBT 会话行为：</strong> 刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 <tr class="even">
 <td><p>大小写8</p></td>
 <td><p>不适用</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p><strong>DBT 或 TBT 会话行为：</strong>与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p><strong>DBT 或 TBT 会话行为：</strong> 与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 <tr class="odd">
 <td><p>案例9</p></td>
-<td><p>“高”</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p>“高”</p></td>
-<td><p><strong>DBT 或 TBT 会话行为：</strong>会话已获取高准确性修补程序或中间修补程序，因此没有任何更改。</p></td>
+<td><p>高</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p>高</p></td>
+<td><p><strong>DBT 或 TBT 会话行为：</strong> 会话已获取高准确性修补程序或中间修补程序，因此没有任何更改。</p></td>
 </tr>
 <tr class="even">
 <td><p>情况10</p></td>
-<td><p>“高”</p></td>
-<td><p>高--&gt; 中/低</p></td>
+<td><p>高</p></td>
+<td><p>高- &gt; 中等/低</p></td>
 <td><p>在 SS 会话完成后，"高" 更改为 "中/低"</p></td>
-<td><p><strong>DBT 或 TBT 会话行为：</strong>在 SS 会话完成之前，会话可以继续获取高准确性修复或中间修复。 然后，它应更改为中等/低准确性修复。</p></td>
+<td><p><strong>DBT 或 TBT 会话行为：</strong> 在 SS 会话完成之前，会话可以继续获取高准确性修复或中间修复。 然后，它应更改为中等/低准确性修复。</p></td>
 </tr>
 <tr class="odd">
 <td><p>案例11</p></td>
 <td><p>中/低</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p>中/低--&gt; 高</p></td>
-<td><p><strong>DBT 或 TBT 会话行为：</strong>刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p>中/低- &gt; 高</p></td>
+<td><p><strong>DBT 或 TBT 会话行为：</strong> 刷新或重新启动与 GNSS 设备的会话以获得高准确性结果。 向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 <tr class="even">
 <td><p>情况12</p></td>
 <td><p>中/低</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p>高--&gt; 中/低</p></td>
-<td><p><strong>DBT 或 TBT 会话行为：</strong>与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p>高- &gt; 中等/低</p></td>
+<td><p><strong>DBT 或 TBT 会话行为：</strong> 与 GNSS 设备的会话刷新或重启以获取中等/低准确性结果。 如果已提供满足要求的修补程序，则会以最终修复的形式返回。 否则，会向 HLOS 提供中间修补程序，因为它们可用。</p></td>
 </tr>
 </tbody>
 </table>

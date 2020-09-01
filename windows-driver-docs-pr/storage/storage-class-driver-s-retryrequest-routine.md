@@ -8,12 +8,12 @@ keywords:
 - 错误 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5991d4d6e6dc7aff5da2a9d5ccbad1836ed1a0d4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c9df89e87b84590d1c4997bf8c04fe458ec0ddce
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841609"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187509"
 ---
 # <a name="storage-class-drivers-retryrequest-routine"></a>存储类驱动程序的 RetryRequest 例程
 
@@ -25,26 +25,21 @@ ms.locfileid: "72841609"
 
 存储类驱动程序绝不应尝试重试端口驱动程序由于前面的任何错误而失败的请求。
 
-存储类驱动程序负责重试因设备特定的错误、目标/控制器繁忙、总线重置或请求超时而失败的请求。 通常情况下， *RetryRequest*例程可以将此类 IRP 重新提交到下一个较低的驱动程序，并将 SRB 置于端口驱动程序的 LU 特定队列的开头。
+存储类驱动程序负责重试因设备特定的错误、目标/控制器繁忙、总线重置或请求超时而失败的请求。 通常情况下， *RetryRequest* 例程可以将此类 IRP 重新提交到下一个较低的驱动程序，并将 SRB 置于端口驱动程序的 LU 特定队列的开头。
 
-特别是， *RetryRequest*例程应该执行以下操作：
+特别是， *RetryRequest* 例程应该执行以下操作：
 
 1.  确保部分传输请求具有为起始地址和长度设置的正确值。
 
-2.  零： SRB 的**SrbStatus**和**ScsiStatus**成员。
+2.  零： SRB 的 **SrbStatus** 和 **ScsiStatus** 成员。
 
-3.  根据设备的需要，设置**SrbFlags**成员。
+3.  根据设备的需要，设置 **SrbFlags** 成员。
 
-4.  设置 IRP 中端口驱动程序的 i/o 堆栈位置，如存储类驱动程序的[调度例程](storage-class-driver-s-dispatch-routines.md)通过[存储类驱动程序的 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)所述。
+4.  设置 IRP 中端口驱动程序的 i/o 堆栈位置，如存储类驱动程序的 [调度例程](storage-class-driver-s-dispatch-routines.md) 通过 [存储类驱动程序的 SplitTransferRequest 例程](storage-class-driver-s-splittransferrequest-routine.md)所述。
 
-5.  为 IRP 调用[**IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，因为在 irp 返回之前，驱动程序的[**IoCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)例程必须释放 SRB。 *IoCompletion*例程可能还需要多次重试请求，或调用驱动程序的*InterpretRequestSense*或*ReleaseQueue*例程。
+5.  为 IRP 调用 [**IoSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine) ，因为在 irp 返回之前，驱动程序的 [**IoCompletion**](/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine) 例程必须释放 SRB。 *IoCompletion*例程可能还需要多次重试请求，或调用驱动程序的*InterpretRequestSense*或*ReleaseQueue*例程。
 
-6.  通过[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将请求传递到下一个较低版本的驱动程序。
-
- 
+6.  通过 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)将请求传递到下一个较低版本的驱动程序。
 
  
-
-
-
 

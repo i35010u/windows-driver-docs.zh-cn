@@ -6,12 +6,12 @@ keywords:
 - WDFVERIFY 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fcd41e199a8bb5a4a18aa8b3787f01754ba0d93
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.openlocfilehash: 3ecb9528c22bbc56db10d5f366a3f55ea30400d9
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74261412"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187301"
 ---
 # <a name="wdfverify-macro"></a>WDFVERIFY 宏
 
@@ -32,7 +32,7 @@ VOID WDFVERIFY(
 <a name="parameters"></a>参数
 ----------
 
-*exp*   
+*.exp*   
 WDFVERIFY 测试的逻辑表达式。
 
 <a name="return-value"></a>返回值
@@ -43,11 +43,11 @@ WDFVERIFY 测试的逻辑表达式。
 <a name="remarks"></a>备注
 -------
 
-当你在发布配置或调试配置中构建驱动程序时， **WDFVERIFY**宏的代码将包含在驱动程序的二进制文件中。
+当你在发布配置或调试配置中构建驱动程序时， **WDFVERIFY** 宏的代码将包含在驱动程序的二进制文件中。
 
-仅当在注册表中设置了**VerifyOn**值时， **WDFVERIFY**代码才会进入内核调试器。 有关可用于调试驱动程序的注册表项的详细信息，请参阅[用于调试基于框架的驱动程序的注册表项](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)。
+仅当在注册表中设置了**VerifyOn**值时， **WDFVERIFY**代码才会进入内核调试器。 有关可用于调试驱动程序的注册表项的详细信息，请参阅 [用于调试基于框架的驱动程序的注册表项](./registry-values-for-debugging-kmdf-drivers.md)。
 
-有关调试驱动程序的详细信息，请参阅[调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
+有关调试驱动程序的详细信息，请参阅 [调试 KMDF 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/wdf/debugging-a-wdf-driver)。
 
 <a name="examples"></a>示例
 --------
@@ -70,7 +70,7 @@ WDFVERIFY(NT_SUCCESS(status));
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">全局</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
@@ -78,7 +78,7 @@ WDFVERIFY(NT_SUCCESS(status));
 </tr>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdfassert （包含 Wdf .h）</td>
+<td>Wdfassert (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
@@ -89,11 +89,4 @@ WDFVERIFY(NT_SUCCESS(status));
 [**VERIFY_IS_IRQL_PASSIVE_LEVEL**](verify-is-irql-passive-level.md)
 
  
-
- 
-
-
-
-
-
 

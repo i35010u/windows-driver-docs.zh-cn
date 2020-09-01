@@ -7,12 +7,12 @@ keywords:
 - 存储磁带驱动程序 WDK，关于磁带驱动程序
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f26a5b0a0141be66737fb97ef759fcec38340b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3f86c4fc992af867931220436dc2a1ad69e1f6a6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845372"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189027"
 ---
 # <a name="using-the-tape-class-driver"></a>使用磁带类驱动程序
 
@@ -24,28 +24,23 @@ ms.locfileid: "72845372"
 
 磁带类驱动程序：
 
--   使用 miniclass 驱动程序的**DriverEntry**例程提供的特定于设备的信息来初始化磁带 miniclass 驱动程序，包括为 miniclass 驱动程序及其支持的设备分配和初始化操作系统资源。创建设备对象（FDO）以表示设备并将其附加到设备堆栈，并在从 PnP 管理器收到启动请求时启动设备。
+-   使用 miniclass 驱动程序的 **DriverEntry** 例程提供的特定于设备的信息来初始化磁带 miniclass 驱动程序，包括分配和初始化 miniclass 驱动程序及其支持的设备的操作系统资源，创建设备对象 (FDO) 来表示设备并将设备连接到设备堆栈，并在从 PnP 管理器收到启动请求时启动设备。
 
 -   导出内存分配和初始化例程。
 
 -   根据需要拆分传输请求以容纳 HBA 的最大传输大小。
 
--   处理 IRP\_MJ\_CREATE、IRP\_MJ\_READ、IRP\_MJ\_WRITE、IRP\_MJ\_PNP 和 IRP\_请求。
+-   处理 IRP \_ mj \_ CREATE、irp \_ mj \_ READ、IRP \_ mj \_ WRITE、irp \_ mj \_ PNP 和 IRP \_ mj \_ 电源请求。
 
--   对 IRP\_MJ 执行与设备无关的预处理\_设备\_控制请求并派单发送到磁带 miniclass 驱动程序中相应的特定于设备的例程。
+-   对 IRP \_ MJ 设备控制请求执行与设备无关的预处理 \_ \_ ，并将调度发送到磁带 miniclass 驱动程序中相应的特定于设备的例程。
 
 -   分配 SRBs 并将其发送到基础存储端口驱动程序，之后磁带 miniclass 驱动程序已填充了 CDB 以及任何其他适用于该请求的 SRB 成员。
 
 -   在 Windows NT 状态代码和磁带状态代码之间进行转换，提供与设备无关的特定于磁带的错误处理，并调用磁带 miniclass 驱动程序的特定于设备的错误处理例程。
 
--   分配磁带 miniclass 驱动程序的驱动程序上下文区域（minitape 扩展和命令扩展）。
+-   分配磁带 miniclass 驱动程序的驱动程序上下文区域 (minitape 扩展和命令扩展) 。
 
-有关可由磁带 miniclass 驱动程序调用的 **TapeClass * * Xxx*例程的说明，请参阅[磁带类驱动程序例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)。
-
- 
+有关可由磁带 miniclass 驱动程序调用的 **TapeClass * * Xxx*例程的说明，请参阅[磁带类驱动程序例程](/windows-hardware/drivers/ddi/index)。
 
  
-
-
-
 

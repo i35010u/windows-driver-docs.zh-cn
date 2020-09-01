@@ -4,12 +4,12 @@ description: 支持简单双工的文档送纸器
 ms.assetid: 0807f02a-5bbf-4ed1-b381-63e1f37a0e2e
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: febcb9324b0953de9e8ab3871a46dd9b72016fa5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 140b1faf414c8d7f52ba14be368e1d518967f079
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377330"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189163"
 ---
 # <a name="simple-duplex-capable-document-feeder"></a>支持简单双工的文档送纸器
 
@@ -17,26 +17,21 @@ ms.locfileid: "67377330"
 
 
 
-简单的双工扫描前端和后端页使用相同的页设置。 支持进行双面打印的扫描程序应设置双工标志中[ **WIA\_DPS\_文档\_处理\_选择**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)属性。
+简单的双工扫描使用相同页面设置来用于前后页面。 支持双工的扫描仪应在 [**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md) 属性中设置双工标志。
 
-下图说明了支持简单的双工能力文档送纸器扫描平板扫描仪的 WIA 项树。
+下图说明了平板扫描仪的 WIA 项目树，它支持支持支持双工的文档送纸器扫描。
 
-![说明支持简单的双工能力文档送纸器扫描平板扫描仪项树的关系图](images/wia-feeder-tree3.png)
+![说明支持简单双面支持的文档送纸器扫描的平板扫描仪项树的关系图](images/wia-feeder-tree3.png)
 
-请注意项树中的单独的子项目由表示正面和背面正在扫描的页。 此区别包括分隔不同类别中的[ **WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)属性：WIA\_类别\_前端和 WIA\_类别\_返回。 执行基本的双工扫描的扫描仪，请在前端和后端项目将不会设置单独;它们将设置为完全相同的值。
+请注意，所扫描页面的正面和背面由项树中的单独子项表示。 这种区别包括 [**wia \_ IPA \_ ITEM \_ category**](./wia-ipa-item-category.md) 属性中的单独类别： wia \_ 类别 \_ 前部和 wia \_ 类别 \_ 。 在执行基本双工扫描的扫描程序中，不会单独设置前面和背面项;它们将被设置为完全相同的值。
 
 ### <a name="scanning"></a>扫描
 
-应用程序导航到要执行文档送纸器扫描的送纸器项。 此项是它们将在此处配置的扫描和每个页面的设置的页面数并设置[ **WIA\_DPS\_文档\_处理\_选择**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)到双面打印设置。 页，对应于信任的文档。 请注意，扫描在四个页面中的两个文档结果。
+应用程序将导航到 "送纸器" 项以执行文档送纸器扫描。 在此项中，他们将配置要扫描的页数以及每个页面的设置，并设置 [**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md) "双面" 设置。 页面对应于文档的一侧。 请注意，扫描两个文档会导致四页。
 
 ### <a name="image-acquisition"></a>图像采集
 
-在标准的购买和文件夹获取，WIA 送纸器项目属性设置用于前端和后端页面。 有关标准采集和文件夹获取详细信息，请参阅[高级 ' 双工能力的文档送纸器](advanced-duplex-capable-document-feeder.md)。
+在标准获取和文件夹获取中，WIA 进纸器项属性设置用于前后页面。 有关标准获取和获取文件夹的详细信息，请参阅 [支持高级双工的文档送纸器](advanced-duplex-capable-document-feeder.md)。
 
  
-
- 
-
-
-
 

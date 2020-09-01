@@ -4,18 +4,18 @@ description: 描述定向电源管理框架，或 DFx，它是 Power Framework �
 ms.assetid: 58550c57-3439-4212-b0c6-6a2fbfd38414
 ms.date: 02/21/2020
 ms.custom: 19H1
-ms.openlocfilehash: 0759e31fce138294a61deddb86be642ee993054e
-ms.sourcegitcommit: c9e5aa086b72ae9c1a31bf952d0711383cfd4bbd
+ms.openlocfilehash: eb17fd1e593a7b0da2017fbf7228d7202ff7e028
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77575209"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189345"
 ---
 # <a name="introduction-to-the-directed-power-management-framework"></a>导向式电源管理框架简介
 
-从 Windows 10 1903 版开始，运行时电源管理框架（[PoFx](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)）的版本3提供了一个可选的定向电源模式，即定向 PoFx （DFx）。
+从1903版的 Windows 10 版中开始， ([PoFx](./overview-of-the-power-management-framework.md)) 提供可选的定向电源模式，定向 PoFx (DFx) 。
 
-对于 DFx，操作系统会将设备堆栈定向到进入空闲状态且无[激活](https://docs.microsoft.com/windows-hardware/design/device-experiences/activators)器中转软件活动时进入其适当的低功耗空闲状态，从而使系统能够更可靠地进入低功率。
+对于 DFx，操作系统会将设备堆栈定向到进入空闲状态且无 [激活](/windows-hardware/design/device-experiences/activators)器中转软件活动时进入其适当的低功耗空闲状态，从而使系统能够更可靠地进入低功率。
 
 目标是使系统更具强大的功能，并跨外形规格降低 Windows 设备的能耗。
 
@@ -23,9 +23,9 @@ ms.locfileid: "77575209"
 
 DFx 不会关闭分页或调试设备。
 
-## <a name="requirements-for-wdf-non-miniport-drivers"></a>WDF （非微型端口）驱动程序的要求
+## <a name="requirements-for-wdf-non-miniport-drivers"></a>WDF (非微型端口) 驱动程序的要求
 
-在[WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中指定**SystemManagedIdleTimeout**或**SystemManagedIdleTimeoutWithHint**的 WDF 驱动程序可以通过将以下注册表项添加到[DDInstall 部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)中 INF 的[AddReg 指令部分](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)来选择 DFx：
+在[WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构中指定**SystemManagedIdleTimeout**或**SystemManagedIdleTimeoutWithHint**的 WDF 驱动程序可以通过将以下注册表项添加到[DDInstall 部分](../install/inf-ddinstall-hw-section.md)中 INF 的[AddReg 指令部分](../install/inf-addreg-directive.md)来选择 DFx：
 
 ```
 HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1
@@ -33,24 +33,24 @@ HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1
 
 由于请求系统管理的空闲超时会使 WDF 代表驱动程序注册 PoFx，因此在此方案中，驱动程序不需要注册到 PoFx。
 
-如果驱动程序指定**DriverManagedIdleTimeout**，请考虑切换到系统托管的空闲超时。  如果这不可行，请使用下面 WDM 部分中的指导原则选择加入 DFx。
+如果驱动程序指定 **DriverManagedIdleTimeout**，请考虑切换到系统托管的空闲超时。  如果这不可行，请使用下面 WDM 部分中的指导原则选择加入 DFx。
 
-如果 WDF 驱动程序不使用运行时电源管理，请添加对它的支持并使用系统管理的空闲超时。  为此，请提供[WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)结构作为[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)的输入。
+如果 WDF 驱动程序不使用运行时电源管理，请添加对它的支持并使用系统管理的空闲超时。  为此，请提供 [WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings) 结构作为 [**WdfDeviceAssignS0IdleSettings**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)的输入。
 
-## <a name="requirements-for-wdm-non-miniport-drivers"></a>WDM （非微型端口）驱动程序的要求
+## <a name="requirements-for-wdm-non-miniport-drivers"></a>WDM (非微型端口) 驱动程序的要求
 
-如果你的驱动程序未使用 WDF 提供的系统托管的空闲支持（该驱动程序是使用[驱动程序托管的空闲](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_power_policy_idle_timeout_type)的 WDF 驱动程序，或者是 WDM 驱动程序），则它仍然可以通过向 PoFx 注册自己来获得 DFx 支持。  在此方案中，驱动程序通过实现以下内容向 PoFx 注册：
+如果你的驱动程序未使用 WDF 提供的系统托管的空闲支持 (则该驱动程序是使用 [驱动程序托管的空闲](/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_power_policy_idle_timeout_type)的 WDF 驱动程序，或是 WDM 驱动程序) ，它仍然可以通过向 PoFx 注册自己来获得 DFx 支持。  在此方案中，驱动程序通过实现以下内容向 PoFx 注册：
 
-- [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_down_callback)
-- [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)
+- [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_down_callback)
+- [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)
 
 
-在[PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)结构中提供指向这些回调的指针，该结构是[**PoFxRegisterDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice)函数的输入。
+在 [PO_FX_DEVICE_V3](/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3) 结构中提供指向这些回调的指针，该结构是 [**PoFxRegisterDevice**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice) 函数的输入。
 
 若要获得 DFx 支持，驱动程序必须：
 
-* 注册 PoFx 时提供 `PO_FX_DIRECTED_POWER*` 回调
-* 从 Sx 转换的恢复时，从其[PO_FX_DIRECTED_POWER_UP_CALLBACK](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)回调函数调用[**PoFxReportDevicePoweredOn**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxreportdevicepoweredon)
+* `PO_FX_DIRECTED_POWER*`注册 PoFx 时提供回调
+* 从 Sx 转换的恢复时，从其[PO_FX_DIRECTED_POWER_UP_CALLBACK](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)回调函数调用[**PoFxReportDevicePoweredOn**](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxreportdevicepoweredon)
 
 ## <a name="example"></a>示例
 
@@ -78,7 +78,7 @@ Status = PoFxRegisterDevice(
 }
 ```
 
-如果先前 `PO_FX_VERSION_V1` 指定了驱动程序，请注意，`PO_FX_DEVICE_V3` 结构将 `PO_FX_COMPONENT_V2` 用于组件数组结构。
+如果先前指定了驱动程序 `PO_FX_VERSION_V1` ，请注意， `PO_FX_DEVICE_V3` 结构 `PO_FX_COMPONENT_V2` 对组件数组结构使用。
 
 ## <a name="requirements-for-miniport-drivers"></a>微型端口驱动程序的要求
 
@@ -86,35 +86,35 @@ Status = PoFxRegisterDevice(
 
 ## <a name="testing"></a>测试
 
-Microsoft 为 DFx 提供三个测试： [Windows 驱动程序工具包](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)中用于测试用户指定的设备的单设备测试、设备级的 hlk 测试，以及用于测试系统上所有设备的系统级的 hlk 测试。
+Microsoft 为 DFx 提供三个测试： [Windows 驱动程序工具包](../download-the-wdk.md) 中用于测试用户指定的设备的单设备测试、设备级的 hlk 测试，以及用于测试系统上所有设备的系统级的 hlk 测试。
 
-单设备测试作为 WDK 随附的[PwrTest](https://docs.microsoft.com/windows-hardware/drivers/devtest/pwrtest)工具的一部分提供。  若要访问它，请使用 `/directedfx` 开关运行该工具。  有关详细信息，请参阅[PwrTest DirectedFx 方案](../devtest/pwrtest-directedfx-scenario.md)。
+单设备测试作为 WDK 随附的 [PwrTest](../devtest/pwrtest.md) 工具的一部分提供。  若要访问它，请使用开关运行该工具 `/directedfx` 。  有关详细信息，请参阅 [PwrTest DirectedFx 方案](../devtest/pwrtest-directedfx-scenario.md)。
 
 有关 HLK 测试的信息，请参阅以下页面：
 
-- [定向 FX 单一设备测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
-- [定向 FX 系统验证测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
+- [定向 FX 单一设备测试](/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
+- [定向 FX 系统验证测试](/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
 
-建议在 S4 转换后测试 DFx，以便捕获驱动程序在从 S4 恢复后可能无法正确调用[PoFxReportDevicePoweredOn](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxreportdevicepoweredon)的任何情况。
+建议在 S4 转换后测试 DFx，以便捕获驱动程序在从 S4 恢复后可能无法正确调用 [PoFxReportDevicePoweredOn](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxreportdevicepoweredon) 的任何情况。
 
 ## <a name="dfx-and-s-state-transitions"></a>DFx 和 S 状态转换
 
-- DFx 转换的目标 D 状态应与运行时 D3 （RTD3）的状态匹配，这可能不同于 S3/S4 转换的目标 D 状态。  假设某个设备进入 D2 for RTD3，但进入了用于 S3/S4 的 D3。  在这种情况下，DFx 的目标 D 状态应为 D2。
+- DFx 转换的目标 D 状态应匹配运行时 D3 (RTD3) ，这可能不同于 S3/S4 转换的目标 D 状态。  假设某个设备进入 D2 for RTD3，但进入了用于 S3/S4 的 D3。  在这种情况下，DFx 的目标 D 状态应为 D2。
 - 同样，DFx 的 "用于唤醒的 arm" 行为应与 RTD3 （可能不同于 S3/S4 转换中使用的类型）匹配。  例如，设备可能进入 RTD3 的 D2/唤醒，但对于 S3/S4，请输入 D3/无唤醒。  在此方案中，DFx 转换还应输入 D2/唤醒。
 
-## <a name="dfx-and-runtime-d3-rtd3"></a>DFx 和运行时 D3 （RTD3）
+## <a name="dfx-and-runtime-d3-rtd3"></a>DFx 和运行时 D3 (RTD3) 
 
-- 使用 RTD3，设备进入空闲状态时通常会进入较低的 power D 状态。  如果新工作到达，设备会立即唤醒到 D0。  使用 DFx，设备应继续保持其目标 D 状态（并在其队列中挂起新工作），直到 PoFx 将其打开。
+- 使用 RTD3，设备进入空闲状态时通常会进入较低的 power D 状态。  如果新工作到达，设备会立即唤醒到 D0。  使用 DFx，设备应继续保留其目标 D 状态 (，并挂起其队列中的新工作，) 直到 PoFx 将其打开。
 
 
 ## <a name="see-also"></a>另请参阅
 
-- [为新式待机准备硬件](https://docs.microsoft.com/windows-hardware/design/device-experiences/prepare-hardware-for-modern-standby)
-- [PwrTest](https://docs.microsoft.com/windows-hardware/drivers/devtest/pwrtest)
-- [PO_FX_DEVICE_V3 结构](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)
-- [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_down_callback)
-- [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)
-- [PoFxCompleteDirectedPowerDown 函数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxcompletedirectedpowerdown) 
+- [为新式待机准备硬件](/windows-hardware/design/device-experiences/prepare-hardware-for-modern-standby)
+- [PwrTest](../devtest/pwrtest.md)
+- [PO_FX_DEVICE_V3 结构](/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)
+- [PO_FX_DIRECTED_POWER_DOWN_CALLBACK 回调函数](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_down_callback)
+- [PO_FX_DIRECTED_POWER_UP_CALLBACK 回调函数](/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)
+- [PoFxCompleteDirectedPowerDown 函数](/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxcompletedirectedpowerdown) 
 - [PwrTest DirectedFx 方案](../devtest/pwrtest-directedfx-scenario.md)
-- [定向 FX 单一设备测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
-- [定向 FX 系统验证测试](https://docs.microsoft.com/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)
+- [定向 FX 单一设备测试](/windows-hardware/test/hlk/testref/34cfdfa6-7826-443c-9717-bc28c3166092)
+- [定向 FX 系统验证测试](/windows-hardware/test/hlk/testref/def16163-9118-4d4a-b559-37873befa12e)

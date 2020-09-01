@@ -13,12 +13,12 @@ keywords:
 - 微型驱动程序 WDK 内核流式处理
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c95b5a984dad9fd88835f0f68cf324f658554d5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 48043deabade00d38c52caa2051cdc0f4b5951a4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845560"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189019"
 ---
 # <a name="kernel-streaming"></a>内核流式处理
 
@@ -26,15 +26,15 @@ ms.locfileid: "72845560"
 
 
 
-内核流式处理（KS）是指 Microsoft 提供的服务，支持对流式数据进行内核模式处理。
+内核流式传输 (KS) 指的是 Microsoft 提供的服务，支持对流式数据进行内核模式处理。
 
 Microsoft 提供了三种多媒体类驱动程序模型： port class、stream 类和 AVStream。 供应商编写在这三个类驱动程序模型之一下运行的微型驱动程序。
 
-这些类驱动程序在系统文件*portcls* *、http.sys 和* *ks*中实现为导出驱动程序（内核模式 dll）。 在 Windows XP 和更高版本中， *sys.databases*称为 AVStream。
+这些类驱动程序在系统文件 *portcls.sys*、 *stream.sys*和 *ks.sys*中 (内核模式 dll) 的导出驱动程序实现。 在 Windows XP 和更高版本中， *ks.sys* 称为 AVStream。
 
-在 Windows XP SP2 和更高版本中，Microsoft 提供了[USB 视频类](usb-video-class-driver.md)驱动程序。
+在 Windows XP SP2 和更高版本中，Microsoft 提供了 [USB 视频类](usb-video-class-driver.md) 驱动程序。
 
-本部分包含有关以下主题的旧版文档，这些主题与原始（XP XP XP） *ks*类驱动程序相关：
+本部分包含以下有关与原始 (XP 以前的) *ks.sys* 类驱动程序相关的主题的旧文档：
 
 [KS 微型驱动程序体系结构](ks-minidriver-architecture.md)
 
@@ -44,22 +44,17 @@ Microsoft 提供了三种多媒体类驱动程序模型： port class、stream �
 
 [KS 分配器](ks-allocators.md)
 
-有关*portcls*的详细信息，请参阅[音频驱动程序](https://docs.microsoft.com/windows-hardware/drivers/audio/index)。
+有关 *portcls.sys*的详细信息，请参阅 [音频驱动程序](../audio/index.md)。
 
-若要了解有关*http.sys*驱动程序的信息，请参阅[流式处理微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)。
+若要了解 *stream.sys* 驱动程序，请参阅 [流式处理微型驱动程序](/windows-hardware/drivers/ddi/_stream/index)。
 
-若要阅读有关 AVStream 的信息，请参阅[AVStream 概述](avstream-overview.md)。
+若要阅读有关 AVStream 的信息，请参阅 [AVStream 概述](avstream-overview.md)。
 
-[DVD 解码器微型驱动程序](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)是*http.sys*的客户端。
+[DVD 解码器微型驱动程序](/windows-hardware/drivers/ddi/_stream/index) 是 *stream.sys*的客户端。
 
-[视频捕获微型驱动程序](video-capture-devices.md)*可以是*或*ks*的客户端。
+[视频捕获微型驱动程序](video-capture-devices.md) 可以是 *stream.sys* 或 *ks.sys*的客户端。
 
-[广播驱动程序体系结构微型驱动程序](broadcast-driver-architecture-minidrivers.md)在 AVStream 下运行。
-
- 
+[广播驱动程序体系结构微型驱动程序](broadcast-driver-architecture-minidrivers.md) 在 AVStream 下运行。
 
  
-
-
-
 

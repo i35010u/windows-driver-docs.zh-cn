@@ -15,12 +15,12 @@ keywords:
 - RSM WDK 转换器
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d9092c1f751be325b489f55b85cb638ab81f0674
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 560fa3832877fd625f411ff4b2b2380648377529
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189211"
 ---
 # <a name="the-changer-driver-model"></a>更换器驱动程序模型
 
@@ -34,9 +34,9 @@ ms.locfileid: "72844445"
 
 变换器驱动程序模型
 
-如上图所示，用户数据的传输由更换器驱动器的合适大容量存储驱动程序处理，并使用与独立驱动器相同的 Microsoft Win32 请求。 但是，大容量存储驱动程序必须处理[**IOCTL\_存储\_获取\_媒体\_类型\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_media_types_ex) i/o 请求，才能控制更换器的驱动器。
+如上图所示，用户数据的传输由更换器驱动器的合适大容量存储驱动程序处理，并使用与独立驱动器相同的 Microsoft Win32 请求。 但是，大容量存储驱动程序必须处理 [**IOCTL \_ 存储 \_ 获取 \_ 媒体 \_ 类型（ \_ 例如**](/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_media_types_ex) i/o 请求），才能控制更换器的驱动器。
 
-用户模式应用程序通过名为可移动存储管理器（RSM）的用户模式服务访问转换器的元素。 RSM 是更换器驱动程序的唯一客户端，它保留用于独占使用的转换器。 RSM 向更换器驱动程序发送涉及更换器元素的请求（例如，将驱动器中的一片介质装载到驱动器中）。 用户模式应用程序不能直接将请求发送到更换器驱动程序。 有关 RSM 的详细信息，请参阅 Microsoft Windows SDK 文档。
+用户模式应用程序通过名为可移动存储管理器 (RSM) 的用户模式服务访问转换器的元素。 RSM 是更换器驱动程序的唯一客户端，它保留用于独占使用的转换器。 RSM 发送涉及更换器元素的请求 (例如，将驱动器中的一片介质装载) 到更换器驱动程序。 用户模式应用程序不能直接将请求发送到更换器驱动程序。 有关 RSM 的详细信息，请参阅 Microsoft Windows SDK 文档。
 
 转换器的元素包括：
 
@@ -54,20 +54,15 @@ ms.locfileid: "72844445"
 
 变换器还可以有一个或两个以下元素：
 
--   *导入/导出*（IEport）
+-   *导入/导出* (IEport) 
 
     一个元素，在该元素中，运算符可以在变换器中插入或删除一个或多个（但不是全部）媒体。
 
--   *扇*
+-   *Door*
 
     提供对变换器中所有介质的访问一次。 变换器的门可以是一个操作员打开的物理门，也可以是包含所有介质的单个磁带箱。
 
-当转换器类驱动程序请求时，转换器 miniclass 驱动程序将报告转换器的元素在[**GET\_转换器\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddchgr/ns-ntddchgr-_get_changer_parameters)结构中的类型和数量。 具体而言，miniclass 驱动程序必须根据这些定义报告 IEports 和门，而不考虑元素的物理外观，以便应用程序可以向这些元素发出适当的请求。
+转换器 miniclass 驱动程序在由变换器类驱动程序请求时 [**，将报告转换器 \_ \_ **](/windows-hardware/drivers/ddi/ntddchgr/ns-ntddchgr-_get_changer_parameters) 的元素的类型和数目。 具体而言，miniclass 驱动程序必须根据这些定义报告 IEports 和门，而不考虑元素的物理外观，以便应用程序可以向这些元素发出适当的请求。
 
  
-
- 
-
-
-
 

@@ -11,12 +11,12 @@ keywords:
 - 可选标准例程 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5072f3e8247a174cc4dd700f923cfd4be973e0ad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d118f90bc5e857cba5530d840acd3dc04b42b493
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828177"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188959"
 ---
 # <a name="introduction-to-standard-driver-routines"></a>标准驱动程序例程简介
 
@@ -24,11 +24,11 @@ ms.locfileid: "72828177"
 
 
 
-每个内核模式驱动程序都围绕一组系统定义的标准驱动程序例程构造。 内核模式驱动程序通过调用系统提供的驱动程序支持例程来处理这些标准例程内的*i/o 请求数据包*（irp）。
+每个内核模式驱动程序都围绕一组系统定义的标准驱动程序例程构造。 内核模式驱动程序通过调用系统提供的驱动程序支持例程来处理 (Irp) 在这些标准例程内的 *i/o 请求包* 。
 
 无论驱动程序在附加驱动程序链中的级别如何，所有驱动程序都必须具有一组基本的标准例程才能处理 Irp。 驱动程序是否必须实现额外的标准例程取决于驱动程序是控制物理设备还是控制物理设备驱动程序，以及基础物理设备的性质。 控制物理设备的最低级别驱动程序所需的例程比高级驱动程序要多，后者通常将 Irp 传递到较低的驱动程序以进行处理。
 
-标准驱动程序例程可以分为两组：每个内核模式驱动程序必须具有的组和可选的组，具体取决于*设备堆栈*中的驱动程序类型和位置。
+标准驱动程序例程可以分为两组：每个内核模式驱动程序必须具有的组和可选的组，具体取决于 *设备堆栈*中的驱动程序类型和位置。
 
 本部分介绍所需的标准例程。 其他部分描述了可选例程。
 
@@ -43,7 +43,7 @@ ms.locfileid: "72828177"
 <thead>
 <tr class="header">
 <th>必需的标准驱动程序例程</th>
-<th>用途</th>
+<th>目标</th>
 <th>描述位置</th>
 </tr>
 </thead>
@@ -59,14 +59,14 @@ ms.locfileid: "72828177"
 <td><p><a href="writing-an-adddevice-routine.md" data-raw-source="[Writing an AddDevice Routine](writing-an-adddevice-routine.md)">编写 AddDevice 例程</a></p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines">调度例程</a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines">Dispatch 例程</a></p></td>
 <td><p>接收和处理 Irp。</p></td>
-<td><p><a href="writing-dispatch-routines.md" data-raw-source="[Writing Dispatch Routines](writing-dispatch-routines.md)">编写调度例程</a></p></td>
+<td><p><a href="writing-dispatch-routines.md" data-raw-source="[Writing Dispatch Routines](writing-dispatch-routines.md)">编写 Dispatch 例程</a></p></td>
 </tr>
 <tr class="even">
-<td><p><bpt id="p1">&lt;em&gt;</bpt>Unload<ept id="p1">&lt;/em&gt;</ept></p></td>
+<td><p><em>[</em></p></td>
 <td><p>释放驱动程序获取的系统资源。</p></td>
-<td><p><a href="writing-an-unload-routine.md" data-raw-source="[Writing an Unload Routine](writing-an-unload-routine.md)">编写卸载例程</a></p></td>
+<td><p><a href="writing-an-unload-routine.md" data-raw-source="[Writing an Unload Routine](writing-an-unload-routine.md)">编写 Unload 例程</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -82,15 +82,15 @@ ms.locfileid: "72828177"
 <thead>
 <tr class="header">
 <th>可选标准驱动程序例程</th>
-<th>用途</th>
+<th>目标</th>
 <th>描述位置</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><em>初始化</em></p></td>
-<td><p>如果<strong>DriverEntry</strong>无法完成驱动程序初始化。</p></td>
-<td><p><a href="writing-a-reinitialize-routine.md" data-raw-source="[Writing a Reinitialize Routine](writing-a-reinitialize-routine.md)">编写重新初始化例程</a></p></td>
+<td><p>如果 <strong>DriverEntry</strong> 无法完成驱动程序初始化。</p></td>
+<td><p><a href="writing-a-reinitialize-routine.md" data-raw-source="[Writing a Reinitialize Routine](writing-a-reinitialize-routine.md)">编写 Reinitialize 例程</a></p></td>
 </tr>
 <tr class="even">
 <td><p><em>StartIo</em></p></td>
@@ -105,27 +105,27 @@ ms.locfileid: "72828177"
 <tr class="even">
 <td><p>延迟的过程调用</p></td>
 <td><p>在 ISR 保存设备状态之后完成设备中断的处理。</p></td>
-<td><p><a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](dpc-objects-and-dpcs.md)">DPC 对象和 Dpc</a></p></td>
+<td><p><a href="dpc-objects-and-dpcs.md" data-raw-source="[DPC Objects and DPCs](dpc-objects-and-dpcs.md)">DPC 对象和 DPC</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>SynchCritSection</em></p></td>
 <td><p>同步对驱动程序数据的访问。</p></td>
-<td><p><a href="using-critical-sections.md" data-raw-source="[Using Critical Sections](using-critical-sections.md)">使用关键部分</a></p></td>
+<td><p><a href="using-critical-sections.md" data-raw-source="[Using Critical Sections](using-critical-sections.md)">使用关键节</a></p></td>
 </tr>
 <tr class="even">
 <td><p><em>AdapterControl</em></p></td>
 <td><p>启动 DMA 操作。</p></td>
-<td><p><a href="adapter-objects-and-dma.md" data-raw-source="[Adapter Objects and DMA](adapter-objects-and-dma.md)">适配器对象和 DMA</a></p></td>
+<td><p><a href="adapter-objects-and-dma.md" data-raw-source="[Adapter Objects and DMA](./introduction-to-adapter-objects.md)">适配器对象和 DMA</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>IoCompletion</em></p></td>
 <td><p>完成对 IRP 的处理。</p></td>
-<td><p><a href="completing-irps.md" data-raw-source="[Completing IRPs](completing-irps.md)">完成 Irp</a></p></td>
+<td><p><a href="completing-irps.md" data-raw-source="[Completing IRPs](completing-irps.md)">完成 IRP</a></p></td>
 </tr>
 <tr class="even">
 <td><p><em>取消</em></p></td>
 <td><p>取消驱动程序的 IRP 处理。</p></td>
-<td><p><a href="canceling-irps.md" data-raw-source="[Canceling IRPs](canceling-irps.md)">正在取消 Irp</a></p></td>
+<td><p><a href="canceling-irps.md" data-raw-source="[Canceling IRPs](canceling-irps.md)">取消 IRP</a></p></td>
 </tr>
 <tr class="odd">
 <td><p><em>CustomTimerDpc</em>、 <em>IoTimer</em></p></td>
@@ -139,12 +139,7 @@ ms.locfileid: "72828177"
 
 当前 IRP 和目标设备对象是许多标准例程的输入参数。 每个驱动程序都通过其一组标准例程处理每个 IRP。
 
-按照约定，系统提供的驱动程序会在除**DriverEntry**之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如[驱动程序对象图](introduction-to-driver-objects.md#driver-object-illustration)所示。 遵循此约定可以更轻松地调试和维护驱动程序。
+按照约定，系统提供的驱动程序会在除 **DriverEntry**之外的每个标准例程的名称前面预置标识、驱动程序特定的或特定于设备的前缀。 例如，本文档使用 "DD"，如 [驱动程序对象图](introduction-to-driver-objects.md#driver-object-illustration)所示。 遵循此约定可以更轻松地调试和维护驱动程序。
 
  
-
- 
-
-
-
 

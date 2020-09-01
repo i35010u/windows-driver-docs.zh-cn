@@ -9,12 +9,12 @@ keywords:
 - 示例代码 WDK USB 视频类，UVC INF 文件
 ms.date: 09/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: daee1d82ff9f64741fcb92a843e3bc900c2f8ae4
-ms.sourcegitcommit: 48c4b6d3a504583d2f588ed892a4a281d4b58301
+ms.openlocfilehash: 06d5d7efdc4a8a0f13ccb5c0564027aee8b71492
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70387068"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188002"
 ---
 # <a name="providing-a-uvc-inf-file"></a>提供 UVC INF 文件
 
@@ -26,7 +26,7 @@ ms.locfileid: "70387068"
 
 但请注意，必须使用 INF 文件安装此特定示例。
 
-为此，请将以下代码包含在 INF 文件中，并将其任意命名为*Xuplgin*：
+为此，请将以下代码包含在 INF 文件中，并将其任意命名为 *Xuplgin*：
 
 ```INF
 ; Copyright (c) CompanyName. All rights reserved.
@@ -53,7 +53,7 @@ MyDevice.CopyList=11    ; %systemroot%\system32 on NT-based systems
 %CompanyName%=CompanyName,NT$ARCH$
 ```
 
-设备特定的 INF 文件与基于 VID/PID 标识符的设备匹配。 在这种情况下，特定于设备的 INF 文件优先于*Usbvideo*。
+设备特定的 INF 文件与基于 VID/PID 标识符的设备匹配。 在这种情况下，特定于设备的 INF 文件优先于 *Usbvideo*。
 
 ```INF
 [CompanyName.NT$ARCH$]
@@ -108,13 +108,13 @@ HKR,,FriendlyName,,%MyDevice.DeviceDesc%
 HKR,,RTCFlags,0x00010001,0x00000010
 ```
 
-对于 USB 摄像机，如果设备接口注册表项的位置包含的 DWORD 注册表项**EnableDependentStillPinCapture**的值为非零值，则会将此类相机上的相关 pin 用于照片捕获。 如果注册表项不存在或设置为零，则不会使用该依赖 pin。 相反，照片捕获将使用从预览 pin 拍摄的帧完成。  以下内容启用依赖静止 pin 捕获：
+对于 USB 摄像机，如果设备接口注册表项的位置包含的 DWORD 注册表项 **EnableDependentStillPinCapture** 的值为非零值，则会将此类相机上的相关 pin 用于照片捕获。 如果注册表项不存在或设置为零，则不会使用该依赖 pin。 相反，照片捕获将使用从预览 pin 拍摄的帧完成。  以下内容启用依赖静止 pin 捕获：
 
 ```INF
 HKR,,EnableDependentStillPinCapture,0x00010001,1
 ```
 
-还可以定义一个名为**UvcFlags**的可选注册表值。 **UvcFlags**应为 DWORD 值。 设备接通电源时，UVC 驱动程序将收到即插即用（PnP）启动请求。 然后，驱动程序会在设备注册表项中搜索**UvcFlags** 。 DWORD 值是一个位掩码，可以包含下表中的值。
+还可以定义一个名为 **UvcFlags**的可选注册表值。 **UvcFlags** 应为 DWORD 值。 设备接通电源时，UVC 驱动程序将接收即插即用 (PnP) 启动请求。 然后，驱动程序会在设备注册表项中搜索 **UvcFlags** 。 DWORD 值是一个位掩码，可以包含下表中的值。
 
 <table>
 <colgroup>
@@ -125,7 +125,7 @@ HKR,,EnableDependentStillPinCapture,0x00010001,1
 <tbody>
 <tr class="odd">
 <td><p><strong>位掩码名称</strong></p></td>
-<td><p><strong>ReplTest1</strong></p></td>
+<td><p><strong>值</strong></p></td>
 <td><p><strong>说明</strong></p></td>
 </tr>
 <tr class="even">
@@ -168,7 +168,7 @@ HKR,,UvcFlags,0x00010001,0x00000010
 
 在较低的帧速率条件下，EOF 位的报告完成速度可能比下帧的 FID 位更快。 EOF 位可用于减少在传递 MPEG-2 帧时的延迟。
 
-有关 AddReg 指令的位置语法的详细信息，请参阅[**INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)。
+有关 AddReg 指令的位置语法的详细信息，请参阅 [**INF AddReg 指令**](../install/inf-addreg-directive.md)。
 
 最后一节提供缺少 INF 的定义。
 

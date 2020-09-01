@@ -3,31 +3,27 @@ title: 硬件安全测试接口 (HSTI) 1.1a
 description: 硬件安全测试接口 (HSTI) 1.1a
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f8771c4fd335724f7a3cb412f95d5bb4d3c81aa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f6699a713e5347ad67357af870cfebdadc7b922a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337528"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189001"
 ---
 # <a name="hardware-security-test-interface-hsti-11a"></a>硬件安全测试接口 (HSTI) 1.1a
 
 
-HSTI 指定一个标准测试界面，用于强制执行安全启动 promise （例如，SPI flash 或 eMMC 分区锁定、 正确 SMM 配置、 Intel 启动防护正确配置，等等） 的专有平台安全技术。 芯片和 BIOS 供应商指定，并发布固件中实现必要的测试用例附带的如内置自我测试。
+HSTI 指定了适用于专有平台安全技术的标准测试接口，这些技术强制实施安全启动承诺 (例如，SPI 闪存或 eMMC 分区锁定，正确配置 SMM 配置、正确配置 Intel Boot Guard 等) 。 硅和 BIOS 供应商指定并实现在发布固件中随附的必要测试用例作为内置自检。
 
-到固件的测试接口包含允许知识渊博的专家使用者将以验证存在固件安全功能。
+将测试接口包含在固件中后，知识丰富的使用者可以验证是否存在固件安全功能。
 
-对 HSTI 支持以下版本的 Windows 中包括：
+以下 Windows 版本中包含对 HSTI 的支持：
 
 -   Windows Server Technical Preview 2016
 
--   Windows 10，版本 1607年及更高版本
+-   Windows 10 版本1607及更高版本
 
 
 ## <a name="related-resources"></a>相关资源
 
-[硬件安全可测试性规范](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)
-
-
-
-
+[硬件安全可测试性规范](/windows-hardware/test/hlk/testref/hardware-security-testability-specification)

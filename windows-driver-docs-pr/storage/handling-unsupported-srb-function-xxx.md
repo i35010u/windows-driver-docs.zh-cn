@@ -6,36 +6,31 @@ keywords:
 - SCSI 微型端口驱动程序 WDK 存储，HwScsiStartIo
 - HwScsiStartIo
 - 不支持的 SRB_FUNCTION_XXX
-- 不支持 SRB_FUNCTION_XXX
+- SRB_FUNCTION_XXX 不受支持
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cae8f7c6c8ebf5f7aec914f0c6d3561c6a46eec
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f7d5bde6d90eab0255b30ca3e4583578820b024f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188825"
 ---
-# <a name="handling-unsupported-srb_function_xxx"></a>处理不受支持的 SRB\_函数\_XXX
+# <a name="handling-unsupported-srb_function_xxx"></a>处理不受支持的 SRB \_ 函数 \_ XXX
 
 
 ## <span id="ddk_handling_unsupported_srb_function_xxx_kg"></span><span id="DDK_HANDLING_UNSUPPORTED_SRB_FUNCTION_XXX_KG"></span>
 
 
-每个*HwScsiStartIo*例程必须按如下所示处理收到不支持的 SRB\_函数\_*XXX* ：
+每个*HwScsiStartIo*例程必须处理收到不受支持的 SRB \_ 函数 \_ *XXX* ，如下所示：
 
-1.  将输入 SRB 的**SrbStatus**设置为 SRB\_状态\_无效\_请求。
+1.  将输入 SRB 的 **SrbStatus** 设置为 SRB \_ STATUS \_ REQUEST STATUS 无效 \_ 。
 
-2.  将[**ScsiPortNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification)与*NotificationType * * * RequestComplete** 和输入 SRB 一起调用。
+2.  将 [**ScsiPortNotification**](/windows-hardware/drivers/ddi/srb/nf-srb-scsiportnotification) 与 *NotificationType * * * RequestComplete** 和输入 SRB 一起调用。
 
 3.  如果 HBA 支持标记队列或每个逻辑单元多个请求，请与 * NotificationType ***NextRequest**或**NextLuRequest**一起调用**ScsiPortNotification** 。
 
 4.  返回控件。
 
  
-
- 
-
-
-
 

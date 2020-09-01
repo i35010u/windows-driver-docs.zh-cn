@@ -10,23 +10,23 @@ keywords:
 - WST 数据 WDK 视频捕获
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f1e9d1be8a6889e9def3bc8da5938b84a4a916e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e2169b63471d3168462e28f992853c1eadd87339
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843588"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188323"
 ---
 # <a name="teletext-category"></a>Teletext 类别
 
 
 以下 GUID 对应于 Teletext 类别：
 
--   **PINNAME\_视频\_TELETEXT**
+-   **PINNAME \_ VIDEO \_ TELETEXT**
 
-    Teletext category output 引脚提供解码世界标准 Teletext （WST）数据的流。
+    Teletext category output 引脚提供解码世界标准 Teletext (WST) 数据的流。
 
-指定**PINNAME\_视频\_TELETEXT** pin 时，请使用下表中列出的信息。
+指定 **PINNAME \_ VIDEO \_ TELETEXT** pin 时，使用下表中列出的信息。
 
 <table>
 <colgroup>
@@ -35,14 +35,14 @@ ms.locfileid: "72843588"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>Value</th>
+<th>Attribute</th>
+<th>值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>DataRange 结构</strong></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi" data-raw-source="[&lt;strong&gt;KS_DATARANGE_VIDEO_VBI&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagks_datarange_video_vbi)"><strong>KS_DATARANGE_VIDEO_VBI</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p><strong>DataFormat 结构</strong></p></td>
@@ -86,9 +86,4 @@ ms.locfileid: "72843588"
  
 
  
-
- 
-
-
-
 

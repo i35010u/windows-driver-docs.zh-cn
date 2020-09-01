@@ -4,53 +4,48 @@ description: 处理系统电源状态的 IRP_MN_SET_POWER
 ms.assetid: 21e8e8a7-ca77-445b-a49e-28a53f431a26
 keywords:
 - IRP_MN_SET_POWER
-- 系统电源状态 WDK 内核 IRP_MN_SET_POWER
-- 设置 power Irp WDK 电源管理
+- 系统电源状态 WDK 内核，IRP_MN_SET_POWER
+- 设置电源 Irp WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa8055a2c17d064a0875add70055671a956ecb9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d0f0c5b4d73eefefcb74f94d6a772fc1723f7b6
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383322"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188287"
 ---
-# <a name="handling-irpmnsetpower-for-system-power-states"></a>处理 IRP\_MN\_设置\_的电源可用于系统的电源状态
+# <a name="handling-irp_mn_set_power-for-system-power-states"></a>处理 IRP \_ MN \_ \_ 为系统电源状态设置电源
 
 
 
 
 
-电源管理器发送 power 指定少量的代码的 IRP [ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)和出于以下原因之一的系统电源状态：
+由于以下原因之一，电源管理器将发送一个指定次要代码 [**IRP \_ MN \_ 设置 \_ 电源**](./irp-mn-set-power.md) 和系统电源状态的电源 IRP：
 
--   若要更改系统电源状态。
+-   更改系统电源状态。
 
--   若要在故障后重申的当前电源状态[ **IRP\_MN\_查询\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)请求。
+-   在 [**IRP \_ MN \_ 查询 \_ 电源**](./irp-mn-query-power.md) 请求失败后，重申当前电源状态。
 
-通过 I/O 管理器中，电源管理器将 IRP 发送到设备堆栈在每个 PnP 设备节点中的顶部驱动程序。 IRP 通知正确的系统电源状态的堆栈中的所有驱动程序。
+通过 i/o 管理器，电源管理器将 IRP 发送到设备堆栈中每个 PnP 设备节点上的顶层驱动程序。 IRP 通知所有驱动程序处于正确系统电源状态的堆栈中。
 
-若要确保有序地启动时，电源管理器序列系统强化 Irp，以便父设备最多有幂的机会，其子项执行操作之前。 电源管理器不会发送一个系统之前查询强化 IRP。
+为了确保有序启动，电源管理器序列系统开启 Irp，使父设备有机会在其子级之前启动。 在发送系统通电 IRP 之前，电源管理器不会查询。
 
-同样，若要确保在计算机睡眠或有序地关闭，电源管理器将发送系统中定义的序列，指定睡眠、 休眠或关机的 Irp，以便在接近根设备之前关闭电源较远的根位置的设备。 只要有可能，电源管理器将查询发送此类 IRP 之前。 有关详细信息，请参阅[处理 IRP\_MN\_查询\_的电源可用于系统的电源状态](handling-irp-mn-query-power-for-system-power-states.md)。
+同样，为确保计算机以有序的方式休眠或关闭，电源管理器会发送系统 Irp，该 Irp 指定以定义的顺序进入睡眠、休眠或关闭状态，以便在设备离根设备之前，设备远离根电源。 在发送此类 IRP 之前，电源管理器会尽可能进行查询。 有关详细信息，请参阅 [处理 IRP \_ MN \_ QUERY \_ Power for System POWER 状态](handling-irp-mn-query-power-for-system-power-states.md)。
 
-系统电源 IRP 不是直接请求以更改电源状态 — 这是一个通知。 驱动程序不得更改其设备的电源状态为直接回应*系统*IRP; power 驱动程序仅在响应其设备的电源状态更改*设备*power IRP。 (设备电源策略所有者发送设备电源 IRP; 请参阅[处理设备电源策略所有者中系统集 Power IRP](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)。)
+系统电源 IRP 不是更改电源状态的直接请求-它是一个通知。 驱动程序不得将其设备的电源状态改为直接响应 *系统* 电源 IRP;驱动程序仅在响应 *设备* 电源 IRP 时更改其设备的电源状态。  (设备电源策略所有者发送设备电源 IRP;请参阅 [处理设备电源策略所有者中的系统集-电源 IRP](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)。 ) 
 
-即使设备已对请求的系统电源状态有效的设备电源状态中，每个驱动程序必须将系统不过传递到下一步低驱动程序，直至到达总线驱动程序集 power IRP。 只有总线驱动程序能够完成此 IRP。
+即使设备已处于适用于所请求系统电源状态的设备电源状态，每个驱动程序都必须将系统设置-电源 IRP 传递到下一个较低的驱动程序，直到它到达总线驱动程序。 仅允许总线驱动程序完成此 IRP。
 
-驱动程序处理此 IRP 的方式取决于设备堆栈中其角色以下各节中所述：
+驱动程序处理此 IRP 的方式取决于其在设备堆栈中的角色，如以下部分中所述：
 
-[处理设备电源策略所有者中的系统集 Power IRP](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)
+[处理设备电源策略所有者中的系统 Set-Power IRP](handling-a-system-set-power-irp-in-a-device-power-policy-owner.md)
 
-[处理系统集 Power IRP 总线驱动程序中](handling-a-system-set-power-irp-in-a-bus-driver.md)
+[处理总线驱动程序中的系统 Set-Power IRP](handling-a-system-set-power-irp-in-a-bus-driver.md)
 
-[处理筛选器驱动程序中的系统集 Power IRP](handling-a-system-set-power-irp-in-a-filter-driver.md)
+[处理筛选器驱动程序中的系统 Set-Power IRP](handling-a-system-set-power-irp-in-a-filter-driver.md)
 
-驱动程序不能故障**IRP\_MN\_设置\_POWER**设置系统电源状态请求。 电源管理器将忽略此 IRP 为返回任何失败状态。
-
- 
+驱动程序无法使 **IRP \_ MN 设置 \_ 的 \_ 电源** 请求失败，以设置系统电源状态。 Power manager 将忽略为此 IRP 返回的任何故障状态。
 
  
-
-
-
 

@@ -1,19 +1,19 @@
 ---
 title: 使用 AcpiGenFx 生成 ACPI 表
-description: 使用 ACPI 生成框架（AcpiGenFx）库来编写用于生成 ACPI 表的应用程序。
+description: 使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 表的应用程序。
 ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: faa0b01c0a5f019876a7a44f193524c7a1943d65
-ms.sourcegitcommit: 6bd546fea677833fc20cd802256d030633ac562e
+ms.openlocfilehash: 1045bcf3c0cb6430c565ae0e49732f0d72ee63ec
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84717446"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189029"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>使用 AcpiGenFx 生成 ACPI 表
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>“摘要”
 
 - 创建使用 AcpiGenFx 生成 ACPI 表的 .NET 应用
 
@@ -29,20 +29,20 @@ ms.locfileid: "84717446"
 
 - 使用 Visual Studio 中的 IntelliSense 功能确定方法和属性
 
-使用 ACPI 生成框架（AcpiGenFx）库来编写用于生成 ACPI 表的应用程序。
+使用 ACPI 生成框架 (AcpiGenFx) 库来编写用于生成 ACPI 表的应用程序。
 
-在 Windows 10 中，新的 c # 库 AcpiGenFx 使你可以更轻松地编写应用程序，该应用程序可创建用于描述平台上的硬件设备和资源的 ACPI 表，如中断控制器、SD 主机控制器、GPIO 和 i2c 设备。 通过使用框架对象公开的方法和属性，可以描述设备、资源和依赖关系，而无需知道 ACPI 表的确切语法或引用 ACPI 规范。 AcpiGenFx 不会生成独立于操作系统的 ACPI 机器语言（ASL）代码，它还知道特定于 Windows 的要求。
+在 Windows 10 中，新的 c # 库 AcpiGenFx 使你可以更轻松地编写应用程序，该应用程序可创建用于描述平台上的硬件设备和资源的 ACPI 表，如中断控制器、SD 主机控制器、GPIO 和 i2c 设备。 通过使用框架对象公开的方法和属性，可以描述设备、资源和依赖关系，而无需知道 ACPI 表的确切语法或引用 ACPI 规范。 AcpiGenFx 会生成 ACPI 计算机语言 (ASL 独立于操作系统的) 代码，它还知道特定于 Windows 的要求。
 
-该应用基于这些说明生成相关 ACPI 表文件（ \* . aslc 和 \* asl）。 在生成时，AcpiGenFx 以静态方式分析平台说明，检测循环或未解析的依赖项、设备命名和 UUID 冲突、资源到控制器映射等错误。 因此，生成的 ASL 代码更易于调试，因为 AcpiGenFx 检查最常见的错误，并抽象唯一的 ACPI 实现细节。
+该应用基于这些说明生成相关 ACPI 表文件 (\* aslc 和 \* asl) 。 在生成时，AcpiGenFx 以静态方式分析平台说明，检测循环或未解析的依赖项、设备命名和 UUID 冲突、资源到控制器映射等错误。 因此，生成的 ASL 代码更易于调试，因为 AcpiGenFx 检查最常见的错误，并抽象唯一的 ACPI 实现细节。
 
 AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是用于生成动态运行时方法的。 如果框架未涵盖用例，如先进的外部设备电源管理，则这些方法必须在 Windows 平台扩展驱动程序中实现，或手动添加到 AcpiGenFx 生成的 ASL 代码。
 
 ## <a name="before-you-begin"></a>在开始之前
 
-在 WDK 安装的**AcpiGenFx**文件夹中找到以下文件。
+在 WDK 安装的 **AcpiGenFx** 文件夹中找到以下文件。
 
 > [!NOTE]
-> 在 WDK 的 "工具" 文件夹中提供 AcpiGenFx.dll 和相关的示例。 在 "工具" 目录中，导航到 "目标体系结构" 文件夹，然后导航到 "AcpiGenFx" 文件夹。 例如，x86 版本位于 C:\Program Files （x86） \Windows Kits\10\Tools\x86\ACPIGenFx。
+> 在 WDK 的 "工具" 文件夹中提供 AcpiGenFx.dll 和相关的示例。 在 "工具" 目录中，导航到 "目标体系结构" 文件夹，然后导航到 "AcpiGenFx" 文件夹。 例如，x86 版本位于 C:\Program Files (x86) \Windows Kits\10\Tools\x86\ACPIGenFx。
 
 - AcpiGenFx.dll
 
@@ -60,25 +60,25 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 
-- [适用于 Windows 10 的 windows 驱动程序工具包（WDK）](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
+- [适用于 Windows 10 的 windows 驱动程序工具包 (WDK) ](../download-the-wdk.md)
 
-- [Windows 驱动程序工具包（WDK）示例](https://github.com/Microsoft/Windows-driver-samples)
+- [Windows 驱动程序工具包 (WDK) 示例](https://github.com/Microsoft/Windows-driver-samples)
 
 ## <a name="create-a-platform"></a>创建平台
 
 1. 在 Visual Studio 中，打开一个新的 c # 控制台项目。
 
-1. 向 AutoAcpi.dll 程序集添加引用。 在 "**项目**" 菜单下，单击 "**添加引用**"。 单击 "**浏览**" 并导航到 AutoAcpi.dll 的位置。 单击“确定”。
+1. 向 AutoAcpi.dll 程序集添加引用。 在 " **项目** " 菜单下，单击 " **添加引用**"。 单击 " **浏览** " 并导航到 AutoAcpi.dll 的位置。 单击" **确定**"。
 
-1. 在**解决方案资源管理器**中，展开 "**引用**" 并选择 " **acpigenfx**"。 查看对象浏览器中的对象（"**查看 &gt; 对象浏览器**）"。
+1. 在 **解决方案资源管理器**中，展开 " **引用** " 并选择 " **acpigenfx**"。 查看对象浏览器 (**视图 &gt; 对象浏览器**) 中的对象。
 
-1. 目标 .NET Framework 4.5 或更高版本。 打开项目属性。 在 "**应用程序**" 页上，确保 "**目标框架**" 设置为 **.NET Framework 4.5**。
+1. 目标 .NET Framework 4.5 或更高版本。 打开项目属性。 在 " **应用程序** " 页上，确保 " **目标框架** " 设置为 **.NET Framework 4.5**。
 
 1. `Using`在应用程序的代码开头添加 AutoAcpi 对象的指令。
 
-1. 创建平台对象。 根据你的体系结构，通过调用**CreateArmPlatform**或**Createx86Platform**实例化**平台**对象。 指定*OEMID*、 *OEMTableID*、 *Creator*、 *Revision*和*FileName*。
+1. 创建平台对象。 根据你的体系结构，通过调用**CreateArmPlatform**或**Createx86Platform**实例化**平台**对象。 指定 *OEMID*、 *OEMTableID*、 *Creator*、 *Revision*和 *FileName*。
 
-1. 调用**WriteAsl**以写入文件。
+1. 调用 **WriteAsl** 以写入文件。
 
     此示例演示如何实例化平台。
 
@@ -104,7 +104,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
     }
     ```
 
-1. 单击 "**开始**" 生成并运行应用。 Visual Studio 会在 "**输出**" 窗口中显示生成进度。 （如果不显示 "**输出**" 窗口，请从 "**视图**" 菜单中选择 "**输出**"。）
+1. 单击 " **开始** " 生成并运行应用。 Visual Studio 会在 " **输出** " 窗口中显示生成进度。  (如果 "**输出**" 窗口不可见，请从 "**视图**" 菜单中选择 "**输出**"。 ) 。
 
 1. 打开名为 "*项目* \\ bin \\ *调试" 或 "发布*输出" 的文件夹 \\ 。 Output 文件夹包含由应用程序生成的文件。 查看 SSDT. asl 的内容。
 
@@ -122,7 +122,7 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 
 该应用程序会生成两个其他文件夹： Aslc 和 Bin。 Aslc 包含 Aslc 格式的所有固件表。 Bin 包含二进制 blob 格式的所有固件表。
 
-使用 WDK 中提供的 asl.exe 编译器将 ASL 代码文件编译为 ACPI 机器语言（AML）二进制。
+使用 WDK 中提供的 asl.exe 编译器，将 ASL 代码文件编译为 ACPI 计算机语言 (AML) 二进制。
 
 ## <a name="add-devices-and-resources-in-the-dsdt"></a>在 DSDT 中添加设备和资源
 
@@ -239,18 +239,18 @@ AcpiGenFx 在本质上是声明性的：其输出仅为静态数据，而不是�
 <p><strong>EhciUsbController.AddUsbDevice</strong></p>
 <p><strong>XhciUsbController.AddUsbDevice</strong></p>
 <p><strong>UsbDevice.AddUsbDevice</strong></p></td>
-<td>添加 USB 主机控制器和子设备（包括中心）。</td>
+<td>添加 USB 主机控制器和子设备 (包括集线器) 。</td>
 </tr>
 </tbody>
 </table>
 
-若要查看完整列表，请在**对象浏览器**中打开 AcpiGenFx。 使用 IntelliSense 确定对象公开的方法（以及参数）和属性。 有关演示如何添加类并设置上表中列出的属性的示例代码，请参阅 DSDTSamples 项目。
+若要查看完整列表，请在 **对象浏览器**中打开 AcpiGenFx。 使用 IntelliSense 确定 (的方法和这些对象公开的参数) 和属性。 有关演示如何添加类并设置上表中列出的属性的示例代码，请参阅 DSDTSamples 项目。
 
 ## <a name="add-debug-support"></a>添加调试支持
 
-若要将端口设置为可调试，请将对象的**DebugEnabled**属性设置为 "true"。
+若要将端口设置为可调试，请将对象的 **DebugEnabled** 属性设置为 "true"。
 
-例如，你可能想要使用 USB 调试端口来描述 xHCI 主机控制器。 在应用程序中，调用**AddXhciUsbController**以获取**XhciUsbController**对象，并将**DebugEnabled**属性设置为 "true"。 AcpiGenFx 生成将自动包含在应用的 Output Aslc 文件夹中的 Microsoft DBG2 表 \\ 。
+例如，你可能想要使用 USB 调试端口来描述 xHCI 主机控制器。 在应用程序中，调用 **AddXhciUsbController** 以获取 **XhciUsbController** 对象，并将 **DebugEnabled** 属性设置为 "true"。 AcpiGenFx 生成将自动包含在应用的 Output Aslc 文件夹中的 Microsoft DBG2 表 \\ 。
 
 下面的示例演示如何添加 xHCI 主机控制器并将其声明为可调试。
 
@@ -367,14 +367,14 @@ void * ReferenceDBG2Table(void) {
 
 ## <a name="add-an-acpi-description-for-a-peripheral-device-in-the-ssdt"></a>为 SSDT 中的外围设备添加 ACPI 说明
 
-1. 通过调用**CreateArmPlatform**或**Createx86Platform**创建平台对象。
+1. 通过调用 **CreateArmPlatform** 或 **Createx86Platform**创建平台对象。
 
-1. 将**SSDT**属性设置为 true。 这向框架表明，此表是 SSDT。
+1. 将 **SSDT** 属性设置为 true。 这向框架表明，此表是 SSDT。
 
-1. 创建设备并分配资源。 例如，对于此处显示的传感器设备，示例将调用**AddGenericDevice** ，并指定设备名称、硬件 ID 和唯一实例。 连接到 I-C 串行总线 I2C1 的传感器设备，如 DSDT 中所述。
+1. 创建设备并分配资源。 例如，对于此处显示的传感器设备，示例将调用 **AddGenericDevice** ，并指定设备名称、硬件 ID 和唯一实例。 连接到 I-C 串行总线 I2C1 的传感器设备，如 DSDT 中所述。
 
 > [!NOTE]
-> Microsoft 支持多元化和 inclusionary 的环境。 在本文档中，有对单词从属的引用。 适用于[偏置的通信](https://docs.microsoft.com/style-guide/bias-free-communication)的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
+> Microsoft 支持多样化的包容性环境。 在本文档中，有对单词从属的引用。 适用于 [偏置的通信](/style-guide/bias-free-communication) 的 Microsoft 风格指南将此识别为 exclusionary 的字。 这种措辞使用这种方式，因为它是当前在软件中使用的措辞。
 
 ```asl
 namespace SSDTSample
@@ -452,4 +452,4 @@ bcdedit /set testsigning on
 
 ## <a name="related-topics"></a>相关主题
 
-[ACPI 系统说明表](acpi-system-description-tables.md)  
+[ACPI 系统说明表](acpi-system-description-tables.md)

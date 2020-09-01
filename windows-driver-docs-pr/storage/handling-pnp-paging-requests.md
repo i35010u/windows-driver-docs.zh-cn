@@ -3,18 +3,18 @@ title: 处理 PnP 分页请求
 description: 处理 PnP 分页请求
 ms.assetid: c30c70d9-69c6-42d7-ae69-9c2421ba1d53
 keywords:
-- 存储筛选器驱动程序 WDK，即插即用
-- 筛选驱动程序 WDK 存储，即插即用
-- SFD WDK 存储，即插即用
-- 即插即用 WDK 存储
+- 存储筛选器驱动程序 WDK、PnP
+- 筛选器驱动程序 WDK 存储，PnP
+- SFD WDK 存储，PnP
+- PnP WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fbd0f9ef3a46334b536fb95045b908f3e46108a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 206969b3e874c8b3dc1006507797ccf340d093ec
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378503"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187545"
 ---
 # <a name="handling-pnp-paging-requests"></a>处理 PnP 分页请求
 
@@ -22,54 +22,54 @@ ms.locfileid: "67378503"
 ## <span id="ddk_handling_pnp_paging_requests_kg"></span><span id="DDK_HANDLING_PNP_PAGING_REQUESTS_KG"></span>
 
 
-存储筛选器驱动程序必须处理分页请求即插即用 ([**IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)与[ **IRP\_MN\_设备\_使用情况\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)并**Parameters.UsageNotification.Type**设置为**DeviceUsageTypePaging**) 如果所筛选的功能驱动程序处理此 IRP。
+存储筛选器驱动程序必须使用 Irp [** \_ MJ Pnp (irp MJ \_ pnp**](../kernel/irp-mj-pnp.md)处理 pnp 寻呼请求，并将**UsageNotification**设置为**DeviceUsageTypePaging**) 如果它正在筛选的函数驱动程序处理此 IRP。 [** \_ \_ \_ \_ **](../kernel/irp-mn-device-usage-notification.md)
 
-必须将以下各项添加到筛选器执行的操作的 DeviceExtension:
+必须将以下项添加到筛选器的 DeviceExtension：
 
 ULONG PagingCount;
 
 KEVENT PagingCountEvent;
 
-收到即插即用分页请求时，存储筛选器驱动程序必须更新 PagingCount 和的设置**做\_电源\_PAGABLE**比以筛选器执行。 更新的计时**做\_电源\_PAGABLE**位取决于是否正在该位设置或清除。 如果 IRP 指示应设置的位，则筛选器驱动程序必须将它*之前*转发驱动程序堆栈的下层 IRP。 但如果 IRP 指示应清除位，则筛选器驱动程序应立即清除的位。 必须先将转发 IRP，然后等待较低的驱动程序返回其状态并清除的位低级驱动程序返回时，才**状态\_成功**。
+收到 PnP 寻呼请求后，存储筛选器驱动程序必须更新筛选器中的 PagingCount 和 ** \_ \_ PAGABLE** 位的设置。 更新 " ** \_ \_ PAGABLE** " 位的时间取决于是否设置或清除该位。 如果 IRP 指示应该设置位，则筛选器驱动程序必须在将 IRP 向下转发到驱动程序堆栈 *之前* 对其进行设置。 但如果 IRP 指出应清除该位，则筛选器驱动程序不应立即清除该位。 它必须首先转发 IRP，并等待较低的驱动程序返回其状态，并仅在较低的驱动程序返回 **状态为 \_ 成功**时清除此位。
 
-以下跟踪存储筛选器驱动程序所采取的操作流。 请参阅下面的轮廓，若要查看此大纲 C 代码中的表示形式的伪代码示例：
+下面跟踪存储筛选器驱动程序执行的操作流。 请参阅大纲下紧下方的伪代码示例，以查看 C 代码中此大纲的表示形式：
 
-A. 验证设备已启动。 如果不是，因**状态\_设备\_不\_准备**。
+A. 验证设备是否已启动。 否则，将失败， **状态为 " \_ 设备 \_ 未 \_ 就绪**"。
 
-B. 同步 PagingCountEvent (KeWaitForSingleObject (PagingCountEvent，...))。
+B. 在 PagingCountEvent (KeWaitForSingleObject ( PagingCountEvent 上同步，) # A3。
 
-C. 如果删除最后一个分页设备 (（！ **Parameters.UsageNotification.InPath** & & (PagingCount = = 1)) 然后
-1.  将本地的布尔值设置为 **，则返回 TRUE**，和
+C. 如果删除最后一个寻呼设备 ( (！ **UsageNotification. InPath** &&  (PagingCount = = 1) ) then
+1.  将本地布尔值设置为 **TRUE**，并
 
-2.  如果**做\_电源\_浪涌**位不是设置在筛选器执行操作，则设置**执行\_POWER\_PAGABLE**位。
+2.  如果在筛选器中未设置 " **执行 \_ 电源 \_ 浪涌** " 位，则设置 " **do \_ power \_ PAGABLE** " 位。
 
-    下面解释了为什么**做\_电源\_PAGABLE**位必须设置下的方式，而不用于方法：
+    下面说明了为何必须在 PAGABLE 中设置 **DO \_ POWER \_ ** 位，而不是在上移：
 
-    电源要求指出，如果任何降低设备对象集**做\_电源\_PAGABLE**位，所有更高级别的驱动程序必须执行相同操作。 如果筛选器驱动程序无法设置**做\_电源\_PAGABLE** bit 分页请求 IRP 堆栈在发送之前，它可能违反了这种情况，如下所示：
+    电源要求状态如果任何较低的设备对象设置了 " **DO \_ power \_ PAGABLE** " 位，则所有更高级别的驱动程序都必须执行相同操作。 如果筛选器驱动程序在发送寻呼请求 IRP 之前未能设置 **DO \_ POWER \_ PAGABLE** ，则可能会违反此条件，如下所示：
 
-    筛选器驱动程序不会设置假设**做\_POWER\_PAGABLE**转发到其下的驱动程序堆栈中的驱动程序的分页请求 IRP 之前在其筛选器执行位。 下一步假设较低的驱动程序设置**做\_电源\_PAGABLE**位在其自身执行操作。 最后，假设的 IRP 完成之前由筛选器驱动程序 IRP 发生的幂。 此时，**做\_电源\_PAGABLE**位会清除在筛选器执行，但将设置中执行操作的较低级驱动程序，从而导致系统崩溃。
+    假设筛选器驱动程序不在其筛选器中设置 " **do \_ POWER \_ PAGABLE** " 位，然后将寻呼请求 IRP 转发给驱动程序堆栈中其下的驱动程序。 接下来，请注意，较低的驱动程序会自行设置 **do \_ POWER \_ PAGABLE** 位。 最后，假设在筛选器驱动程序完成 IRP 之前，会发生电源 IRP。 此时，将在筛选器中清除 **do \_ POWER \_ PAGABLE** 位，但会在较低级别的驱动程序中进行设置，从而导致系统崩溃。
 
-    则可以安全地设置**做\_电源\_PAGABLE**位转发堆栈的下层，分页请求之前，因为已不再在筛选器驱动程序的设备，并因此没有更多分页 I/O 活动的页面文件将在它发生。 如果要删除此分页文件的请求成功，则会执行筛选器驱动程序。 如果请求失败，筛选器驱动程序可以通过只需清除还原其标志的原始状态**做\_电源\_PAGABLE** IRP 之前位。 分页文件请求序列化，因为没有的一些其他线程将已修改此位因为筛选器驱动程序上次修改存在风险。
+    在将分页请求按堆栈向下移动之前，可以安全地设置 " **DO \_ POWER \_ PAGABLE** " 位，因为筛选器驱动程序的设备上不再有活动的分页文件，因此不会对其进行分页 i/o。 如果删除此分页文件的请求成功，则将完成筛选器驱动程序。 如果请求失败，筛选器驱动程序可以通过在完成 IRP 之前清除 **DO \_ POWER \_ PAGABLE** bit 来还原其标志的原始状态。 由于分页文件请求将进行序列化，因此，在筛选器驱动程序最后修改此位后，某些其他线程会修改此位。
 
-D. 以同步方式将转发到较低的驱动程序 IRP。
+D. 将 IRP 同步转发到更低的驱动程序。
 
-E。 如果 IRP 将成功完成，然后
+E. 如果 IRP 成功完成，则
 
-1.  调用 IoAdjustPagingPathCount (& PagingCount， **Parameters.UsageNotification.InPath**) 要递增或递减 PagingCount。 IoAdjustPagingPathCount 执行 InterlockedIncrement 或根据中的值 PagingCount InterlockedDecrement **Parameters.UsageNotification.InPath**。 值为 **，则返回 TRUE**指示分页文件被添加，因此，增量 PagingCount; 如果值为**FALSE**指示正在分页文件中删除，因此递减 PagingCount。
+1.  调用 IoAdjustPagingPathCount ( # B0 PagingCount， **UsageNotification InPath**) 递增或递减 PagingCount。 IoAdjustPagingPathCount 对 PagingCount 执行 InterlockedIncrement 或 InterlockedDecrement，具体取决于 **UsageNotification.** InPath 中的值。 如果值为 **TRUE** ，则指示正在添加页面文件，因此递增 PagingCount;如果值为 **FALSE** ，则表示正在删除页面文件，因此减少了 PagingCount。
 
-2.  如果**Parameters.UsageNotification.InPath**是**TRUE**，添加了，因此清除的分页文件**执行\_POWER\_PAGABLE**位。
+2.  如果 **InPath** 为 **TRUE**，则会添加一个分页文件，因此，请清除 " **执行 \_ POWER \_ PAGABLE** " 位。
 
-F. 否则，如果 IRP 失败，则
+F. 否则，如果 IRP 失败，
 
-1.  检查本地的布尔值，以查看是否**做\_电源\_PAGABLE**已设置在方式上的筛选器执行操作。
+1.  检查本地布尔值，查看筛选器中是否设置了 ** \_ \_ PAGABLE** 。
 
-2.  如果**做\_电源\_PAGABLE**已设置的方式，将其清除。
+2.  如果按下了 ** \_ \_ PAGABLE** ，请将其清除。
 
-G. 结束同步 (KeSetEvent (PagingCountEvent，...))。
+G. 结束同步 (KeSetEvent (PagingCountEvent，... ) # A3。
 
-### <a name="span-idpseudocodeexamplespanspan-idpseudocodeexamplespanpseudocode-example"></a><span id="pseudocode_example"></span><span id="PSEUDOCODE_EXAMPLE"></span>伪代码示例
+### <a name="span-idpseudocode_examplespanspan-idpseudocode_examplespanpseudocode-example"></a><span id="pseudocode_example"></span><span id="PSEUDOCODE_EXAMPLE"></span>伪代码示例
 
-部分标记为按字母 ( *//A*， *//B*等) 在上面所述的字母到下面的代码示例图中。
+下面的代码示例中的字母 (*//A*，) *//B*等标记的部分映射到上述大纲的字母。
 
 ```cpp
 case DeviceUsageTypePaging: { 
@@ -130,9 +130,4 @@ case DeviceUsageTypePaging: {
 ```
 
  
-
- 
-
-
-
 

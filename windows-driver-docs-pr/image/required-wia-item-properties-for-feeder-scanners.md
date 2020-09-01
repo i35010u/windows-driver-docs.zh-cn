@@ -4,12 +4,12 @@ description: 送纸器扫描仪的必需 WIA 项属性
 ms.assetid: f9868f05-3c1f-4042-9820-9c1c38af3432
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b5502ba33f2c2525218af0656a5f58face0667
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c5fe04f3af1d80abdf8643e61b5deb61d3e45347
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376482"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187591"
 ---
 # <a name="required-wia-item-properties-for-feeder-scanners"></a>送纸器扫描仪的必需 WIA 项属性
 
@@ -17,84 +17,79 @@ ms.locfileid: "67376482"
 
 
 
-支持以下 WIA 属性需要 WIA 送纸器扫描程序项：
+支持以下 WIA 属性需要 WIA 进纸器扫描器项：
 
-[**WIA\_DPS\_文档\_处理\_选择**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-document-handling-select)
+[**WIA \_ DPS \_ 文档 \_ 处理 \_ 选择**](./wia-dps-document-handling-select.md)
 
-[**WIA\_DPS\_PAGE\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-dps-page-size)
+[**WIA \_ DPS \_ 页面 \_ 大小**](./wia-dps-page-size.md)
 
-[**WIA\_IPA\_访问\_权限**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-access-rights)
+[**WIA \_ IPA \_ 访问 \_ 权限**](./wia-ipa-access-rights.md)
 
-[**WIA\_IPA\_BITS\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-bits-per-channel)
+[**WIA \_ \_ \_ 每通道 IPA 位数 \_**](./wia-ipa-bits-per-channel.md)
 
-[**WIA\_IPA\_项\_类别**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-category)
+[**WIA \_ IPA \_ 项 \_ 类别**](./wia-ipa-item-category.md)
 
-[**WIA\_IPA\_CHANNELS\_PER\_PIXEL**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-channels-per-pixel)
+[**WIA \_ IPA \_ \_ 每像素通道数 \_**](./wia-ipa-channels-per-pixel.md)
 
-[**WIA\_IPA\_压缩**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-compression)
+[**WIA \_ IPA \_ 压缩**](./wia-ipa-compression.md)
 
-[**WIA\_IPA\_DATATYPE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)
+[**WIA \_ IPA \_ 数据类型**](./wia-ipa-datatype.md)
 
-[**WIA\_IPA\_DEPTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)
+[**WIA \_ IPA \_ 深度**](./wia-ipa-depth.md)
 
-[**WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)
+[**WIA \_ IPA \_ 格式**](./wia-ipa-format.md)
 
-[**WIA\_IPA\_FULL\_ITEM\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-full-item-name)
+[**WIA \_ IPA \_ 完整 \_ 项 \_ 名称**](./wia-ipa-full-item-name.md)
 
-[**WIA\_IPA\_ITEM\_NAME**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-name)
+[**WIA \_ IPA \_ 项 \_ 名称**](./wia-ipa-item-name.md)
 
-[**WIA\_IPA\_ITEM\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)
+[**WIA \_ IPA \_ 项 \_ 大小**](./wia-ipa-item-size.md)
 
-[**WIA\_IPA\_PREFERRED\_FORMAT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-preferred-format)
+[**WIA \_ IPA \_ 首选 \_ 格式**](./wia-ipa-preferred-format.md)
 
-[**WIA\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)
+[**WIA \_ IPA \_ TYMED**](./wia-ipa-tymed.md)
 
-[**WIA\_IP\_亮度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-brightness)
+[**WIA \_ IPS \_ 亮度**](./wia-ips-brightness.md)
 
-[**WIA\_IPS\_CONTRAST**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-contrast)
+[**WIA \_ IP \_ 对比**](./wia-ips-contrast.md)
 
-[**WIA\_IPS\_CUR\_INTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-cur-intent)
+[**WIA \_ IP \_ 当前 \_ 意向**](./wia-ips-cur-intent.md)
 
-[**WIA\_IPS\_MAX\_HORIZONTAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-max-horizontal-size)
+[**WIA \_ IPS \_ 最大 \_ 水平 \_ 大小**](./wia-ips-max-horizontal-size.md)
 
-[**WIA\_IPS\_MAX\_VERTICAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-max-vertical-size)
+[**WIA \_ IPS \_ 最大 \_ 垂直 \_ 大小**](./wia-ips-max-vertical-size.md)
 
-[**WIA\_IPS\_MIN\_HORIZONTAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-min-horizontal-size)
+[**WIA \_ IPS \_ 最小 \_ 水平 \_ 大小**](./wia-ips-min-horizontal-size.md)
 
-[**WIA\_IPS\_MIN\_VERTICAL\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-min-vertical-size)
+[**WIA \_ IPS \_ 最小 \_ 垂直 \_ 大小**](./wia-ips-min-vertical-size.md)
 
-[**WIA\_IPS\_OPTICAL\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-optical-xres)
+[**WIA \_ IP \_ 光纤 \_ XRES**](./wia-ips-optical-xres.md)
 
-[**WIA\_IPS\_OPTICAL\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-optical-yres)
+[**WIA \_ IP \_ 光纤 \_ YRES**](./wia-ips-optical-yres.md)
 
-[**WIA\_IPS\_PAGES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-pages)
+[**WIA \_ IP \_ 页面**](./wia-ips-pages.md)
 
-[**WIA\_IPS\_PAGE\_HEIGHT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-height)
+[**WIA \_ IP \_ 页面 \_ 高度**](./wia-ips-page-height.md)
 
-[**WIA\_IPS\_PAGE\_WIDTH**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-page-width)
+[**WIA \_ IP \_ 页面 \_ 宽度**](./wia-ips-page-width.md)
 
-[**WIA\_IPS\_PHOTOMETRIC\_INTERP**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-photometric-interp)
+[**WIA \_ IP \_ PHOTOMETRIC \_ INTERP**](./wia-ips-photometric-interp.md)
 
-[**WIA\_IPS\_XEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xextent)
+[**WIA \_ IP \_ XEXTENT**](./wia-ips-xextent.md)
 
-[**WIA\_IPS\_XPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xpos)
+[**WIA \_ IP \_ XPOS**](./wia-ips-xpos.md)
 
-[**WIA\_IPS\_XRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-xres)
+[**WIA \_ IP \_ XRES**](./wia-ips-xres.md)
 
-[**WIA\_IPS\_YEXTENT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yextent)
+[**WIA \_ IP \_ YEXTENT**](./wia-ips-yextent.md)
 
-[**WIA\_IPS\_YPOS**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-ypos)
+[**WIA \_ IP \_ YPOS**](./wia-ips-ypos.md)
 
-[**WIA\_IPS\_YRES**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-yres)
+[**WIA \_ IP \_ YRES**](./wia-ips-yres.md)
 
-**请注意**   [ **WIA\_IPA\_RAW\_位\_每\_通道**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-raw-bits-per-channel)属性是必需的如果WiaImgFmt\_支持原始格式。 [ **WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)属性必须支持 WiaImgFmt\_BMP 格式。 [ **WIA\_IPS\_阈值**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-threshold)时，属性是必需[ **WIA\_IPA\_深度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)属性设置为 1 的位每像素 (BPP) 时，或者当[ **WIA\_IPA\_数据类型**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)属性设置为 WIA\_数据\_阈值。
-
- 
+**注意**   如果支持 WiaImgFmt raw 格式，则需要 " [**WIA \_ IPA \_ raw \_ BITS \_ PER \_ 通道**](./wia-ipa-raw-bits-per-channel.md)" 属性 \_ 。 [**WIA \_ IPA \_ format**](./wia-ipa-format.md)属性必须支持 WiaImgFmt \_ BMP 格式。 如果[**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md)属性设置为1位/像素 (BPP) 或[**wia \_ IPA \_ DATATYPE**](./wia-ipa-datatype.md)属性设置为 wia 数据阈值，则需要[**wia \_ ip \_ 阈值**](./wia-ips-threshold.md)属性 \_ \_ 。
 
  
 
  
-
-
-
 

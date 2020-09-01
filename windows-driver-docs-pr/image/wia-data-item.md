@@ -4,12 +4,12 @@ description: WIA 数据项
 ms.assetid: 3ce01393-4a0b-4b70-8087-abe989aa00a9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 73119df2bb7643da3501d70cba548b556e67c6d0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5710f928f08454b6f29714c2f5beb37b3d8a588f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375353"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189367"
 ---
 # <a name="wia-data-item"></a>WIA 数据项
 
@@ -19,30 +19,25 @@ ms.locfileid: "67375353"
 
 本主题适用于 Windows Vista 和更高版本。
 
-可用于将数据传输的任何项被视为数据项目。 这包括与标记的项**WiaItemTypeProgrammableDataSource**标志。 任何项标记有**WiaItemTypeTransfer**标志可以公开传输数据的功能。 设置了此标志的任何项必须提供以下 WIA 属性：
+可用于传输数据的任何项都被视为一个数据项。 这包括标记有 **WiaItemTypeProgrammableDataSource** 标志的项。 标记有 **WiaItemTypeTransfer** 标志的任何项都可以公开传输数据的功能。 具有此标志集的任何项都必须提供以下 WIA 属性：
 
-[**WIA\_IPA\_访问\_权限**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-access-rights)
+[**WIA \_ IPA \_ 访问 \_ 权限**](./wia-ipa-access-rights.md)
 
-[**WIA\_IPA\_ITEM\_SIZE**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-item-size)
+[**WIA \_ IPA \_ 项 \_ 大小**](./wia-ipa-item-size.md)
 
-[**WIA\_IPA\_缓冲区\_大小**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-buffer-size)
+[**WIA \_ IPA \_ 缓冲区 \_ 大小**](./wia-ipa-buffer-size.md)
 
-[**WIA\_IPA\_格式**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-format)
+[**WIA \_ IPA \_ 格式**](./wia-ipa-format.md)
 
-[**WIA\_IPA\_PREFERRED\_FORMAT**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-preferred-format)
+[**WIA \_ IPA \_ 首选 \_ 格式**](./wia-ipa-preferred-format.md)
 
-[**WIA\_IPA\_TYMED**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-tymed)
+[**WIA \_ IPA \_ TYMED**](./wia-ipa-tymed.md)
 
-[**WIA\_IPA\_FILENAME\_EXTENSION**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-filename-extension)
+[**WIA \_ IPA \_ 文件 \_ 扩展名**](./wia-ipa-filename-extension.md)
 
-可编程数据源项标记有**WiaItemTypeTransfer**标志必须提供这些 WIA 属性。 例如，平板扫描仪项必须具有这些属性，以正确配置的数据传输。
+用 **WiaItemTypeTransfer** 标志标记的可编程数据源项必须提供这些 WIA 属性。 例如，平台扫描仪项必须具有这些属性才能正确配置数据传输。
 
-WIA 数据项可能具有其他属性，具体取决于项的标志设置。 例如，WIA 项标记有**WiaItemTypeImage**标志应具有特定于映像的信息的属性，例如[ **WIA\_IPA\_深度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)并[ **WIA\_IPA\_数\_OF\_行**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-number-of-lines)。
-
- 
+WIA 数据项可能具有其他属性，具体取决于项的标志设置。 例如，使用 **WiaItemTypeImage** 标志标记的 WIA 项应具有图像特定的信息属性，例如 [**wia \_ IPA \_ DEPTH**](./wia-ipa-depth.md) 和 [**wia \_ IPA \_ \_ \_ 行号**](./wia-ipa-number-of-lines.md)。
 
  
-
-
-
 

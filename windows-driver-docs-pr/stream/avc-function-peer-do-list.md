@@ -1,6 +1,6 @@
 ---
-title: AVC\_函数\_对等\_执行\_列表
-description: AVC\_函数\_对等\_执行\_列表
+title: AVC \_ 函数 \_ 对等 \_ DO \_ LIST
+description: AVC \_ 函数 \_ 对等 \_ DO \_ LIST
 ms.assetid: 80ffd94e-788f-4874-b716-3eb66d90e4aa
 keywords:
 - AVC_FUNCTION_PEER_DO_LIST 流媒体设备
@@ -12,24 +12,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ac01e847714425e15a7875a7ab7a729b7caaf9ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7f4e33c3762a64b174ea9a878f884843497ab6b2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845076"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187491"
 ---
-# <a name="avc_function_peer_do_list"></a>AVC\_函数\_对等\_执行\_列表
+# <a name="avc_function_peer_do_list"></a>AVC \_ 函数 \_ 对等 \_ DO \_ LIST
 
 
 ## <span id="ddk_avc_function_peer_do_list_ks"></span><span id="DDK_AVC_FUNCTION_PEER_DO_LIST_KS"></span>
 
 
-**AVC\_函数\_对等\_DO\_列表**函数代码查找所有非虚拟*AVC*实例。
+**AVC \_ 函数 \_ 对等 \_ DO \_ LIST**函数代码查找所有非*avc.sys*虚拟的实例。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-如果成功，AV/C 协议驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
+如果成功，AV/C 协议驱动程序会将 **Irp &gt; IoStatus** 设置为状态 " \_ 成功"。
 
 可能的其他返回值包括：
 
@@ -41,7 +41,7 @@ ms.locfileid: "72845076"
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -54,9 +54,9 @@ ms.locfileid: "72845076"
 
  
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-此函数使用 AVC\_MULTIFUNC\_IRB 结构的**PeerList**成员，如下所示。
+此函数使用 AVC **PeerList** \_ MULTIFUNC IRB 结构的 PeerList 成员 \_ ，如下所示。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -75,29 +75,23 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在*avc*中声明。 包括*avc*。
+**标头：** 在 *avc*中声明。 包括 *avc*。
 
-### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 输入
+### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
-**常见问题解答**  
-此成员的**函数**submember 必须设置为**AVC\_函数\_对等\_** 从 AVC\_函数枚举执行\_列表。
+**通用**  
+此成员的 **函数** submember 必须设置为 **AVC \_ 函数对等 AVC 函数枚举中的 \_ \_ DO \_ LIST** \_ 。
 
 <span id="PeerList"></span><span id="peerlist"></span><span id="PEERLIST"></span>**PeerList**  
-指定*avc*的所有非虚拟（对等）实例的列表。
+指定 *avc.sys*的所有非虚拟 (对等) 实例的列表。
 
-调用方可以通过对象列表中返回的任何对象提交 GUID\_AVC\_类设备接口请求。 调用方必须释放对这些对象的引用（通过**ObDereferenceObject**），并在完成时释放包含列表的内存（通过**ExFreePool**）。
+调用方可以 \_ \_ 通过对象列表中返回的任何对象提交 GUID AVC 类设备接口请求。 调用方必须释放对这些对象的引用 (通过 **ObDereferenceObject**) ，并在完成时通过 **ExFreePool**) 释放包含列表 (的内存。
 
-此函数代码可在 IRQL &lt;= 调度\_级别调用。
+可以在 IRQL &lt; = 调度级别调用此函数代码 \_ 。
 
 ### <a name="see-also"></a>另请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)， [**AVC\_对等\_DO\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_peer_do_list)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)， [**DEVICE\_OBJECT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)， [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)， [**ExFreePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)
+[**AVC \_MULTIFUNC \_ IRB**](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)、 [**AVC \_ 等 \_ DO \_ LIST**](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_peer_do_list)、 [**AVC \_ FUNCTION**](/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)、 [**DEVICE \_ OBJECT**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_object)、 [**ObDereferenceObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)、 [**ExFreePool**](/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool)
 
  
-
- 
-
-
-
-
 

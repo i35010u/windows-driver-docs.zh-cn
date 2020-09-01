@@ -4,55 +4,50 @@ description: 处理系统电源状态的 IRP_MN_QUERY_POWER
 ms.assetid: 1904a1cb-a220-41cc-8894-5f90919e7383
 keywords:
 - IRP_MN_QUERY_POWER
-- 系统电源状态 WDK 内核 IRP_MN_QUERY_POWER
-- 查询能耗 Irp WDK 电源管理
+- 系统电源状态 WDK 内核，IRP_MN_QUERY_POWER
+- 查询-power Irp WDK 电源管理
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12706c591573a995b3d796d4e22e8d43c35a7e7a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a6ac17933150da437572fcc4a1757a42664e049
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385628"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188289"
 ---
-# <a name="handling-irpmnquerypower-for-system-power-states"></a>处理 IRP\_MN\_查询\_的电源可用于系统的电源状态
+# <a name="handling-irp_mn_query_power-for-system-power-states"></a>处理 IRP \_ MN \_ QUERY \_ Power For System power 状态
 
 
 
 
 
-电源管理器将发送具有细微的 IRP 代码 power IRP [ **IRP\_MN\_查询\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-power)并**SystemPowerState**中**Parameters.Power.Type**以确定是否可以安全地更改到指定的系统电源状态 (S1-S5) 并允许驱动程序，以准备进行此类更改。
+电源管理器使用次要 IRP 代码 [**IRP \_ MN \_ QUERY \_ Power**](./irp-mn-query-power.md) 和 **SystemPowerState** in **Parameters** 发送 power irp，以确定是否可以安全地更改为指定系统电源状态 (S1-S5) 并允许驱动程序准备进行此类更改。
 
-只要有可能，在发送前查询电源管理器[ **IRP\_MN\_设置\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)请求较低 （不太通电） 状态。 但是，在电池故障的情况下或即将断电，电源管理器将发送集 power IRP 而无需首先查询。 电源管理器永远不会发送 IRP 即可使系统处于工作状态 (S0) 之前发送查询。
+只要有可能，电源管理器就会在发送 [**IRP \_ MN \_ 集 \_ 电源**](./irp-mn-set-power.md) 之前查询，请求 (降低) 状态。 但在电池发生故障或电涌丢失的情况下，电源管理器会发送设置电源 IRP，无需先进行查询。 在发送 IRP 之前，power manager 永远不会发送查询以将系统设置为工作状态 (S0) 。
 
-有关设备的电源策略所有者如何处理系统查询能耗请求的信息，请参阅[处理设备电源策略所有者中系统查询能耗 IRP](handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)。
+有关设备的电源策略所有者如何处理系统查询-电源请求的信息，请参阅 [在设备电源策略所有者中处理系统查询-POWER IRP](handling-a-system-query-power-irp-in-a-device-power-policy-owner.md)。
 
-（不在设备的电源策略所有者） 的驱动程序如何处理系统查询能耗请求有关的信息，请参阅：
+有关不是设备的电源策略所有者) 处理系统查询请求的驱动程序 (的信息，请参阅以下内容：
 
-[处理系统查询能耗 IRP 中一个筛选器或功能驱动程序](handling-a-system-query-power-irp-in-a-filter-or-function-driver.md)
+[处理筛选器或函数驱动程序中的系统 Query-Power IRP](handling-a-system-query-power-irp-in-a-filter-or-function-driver.md)
 
-[失败的系统查询能耗 IRP 中一个筛选器或功能驱动程序](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)
+[使筛选器或函数驱动程序中的系统 Query-Power IRP 失败](failing-a-system-query-power-irp-in-a-filter-or-function-driver.md)
 
-[处理系统查询能耗 IRP 总线驱动程序中](handling-a-system-query-power-irp-in-a-bus-driver.md)
+[处理总线驱动程序中的系统 Query-Power IRP](handling-a-system-query-power-irp-in-a-bus-driver.md)
 
-请注意，驱动程序必须永远不会发送设备**IRP\_MN\_设置\_POWER**请求系统查询响应中; 只有在收到系统集 power 请求后，它会请求此类 IRP。
+请注意，驱动程序决不能发送设备 **IRP \_ MN \_ 设置 \_ 电源** 请求来响应系统查询; 它仅在收到系统设置-电源请求后请求此类 irp。
 
-因为电源管理器将发送到系统上每个设备堆栈的系统查询 IRP，就可以一台设备的驱动程序可能会失败的查询，而其他设备的驱动程序成功完成。 从 Windows Vista 开始，对系统电源状态为睡眠状态的更改是关键的电源状态更改。 即使驱动程序出现故障可能仍然会查询能耗 IRP，Windows Vista 中的电源管理器的系统将在系统电源状态更改为睡眠状态。 还有可能，查询处于活动状态，需要立即关闭时，电池可能会过期。 因此后一个查询 IRP，, 驱动程序必须准备好接收任何以下 power Irp:
+由于电源管理器会将系统查询 IRP 发送到系统上的每个设备堆栈，因此一个设备的驱动程序可能会导致查询失败，而其他设备的驱动程序可能会成功完成。 从 Windows Vista 开始，系统电源状态到休眠状态的更改是一种关键电源状态更改。 即使驱动程序未通过系统查询-power IRP，Windows Vista 中的电源管理器仍可能会将系统电源状态更改为睡眠状态。 当查询处于活动状态时，也可能是电池过期，需要立即关闭。 因此，在查询 IRP 之后，驱动程序必须准备好接收以下任何电源 Irp：
 
--   **IRP\_MN\_设置\_POWER**到查询的状态
+-   IRP MN 为查询状态** \_ \_ 设置 \_ 电源**
 
--   **IRP\_MN\_设置\_POWER**到不同的电源状态
+-   **IRP \_ MN \_ 将 \_ 电源设置**为其他电源状态
 
--   **IRP\_MN\_设置\_POWER**的当前电源状态
+-   IRP MN 为当前电源状态** \_ \_ 设置 \_ 电源**
 
--   **IRP\_MN\_查询\_POWER**到任意状态
+-   **IRP \_ MN \_ 查询 \_ **的任何状态
 
-通常情况下，但是，驱动程序收到系统集电源 IRP 遵循系统查询 IRP。 无论如何，驱动程序必须准备好更改系统电源状态，即使该驱动程序失败时查询能耗 IRP。
-
- 
+然而，驱动程序通常会在系统查询 IRP 后收到系统集电源 IRP。 无论如何，驱动程序必须准备好更改系统电源状态，即使驱动程序无法进行查询-电源 IRP 也是如此。
 
  
-
-
-
 

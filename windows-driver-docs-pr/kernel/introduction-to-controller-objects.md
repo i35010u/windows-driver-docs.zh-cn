@@ -9,12 +9,12 @@ keywords:
 - I/o WDK 内核，重叠
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 858f839fa49801d1990a76da984205894a4f7f1f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7ba0ef993936c825fb100705d71625df2209a306
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838631"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189347"
 ---
 # <a name="introduction-to-controller-objects"></a>控制器对象简介
 
@@ -22,9 +22,9 @@ ms.locfileid: "72838631"
 
 
 
-顾名思义，控制器对象通常表示包含附加设备的物理设备控制器。 由物理控制器协调的一组相似设备的最低级别非 WDM 驱动程序可以创建控制器对象，并使用它来同步连接的设备之间的 i/o 操作。 该驱动程序实现[*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049)例程并调用 i/o 管理器的控制器对象支持例程。
+顾名思义，控制器对象通常表示包含附加设备的物理设备控制器。 由物理控制器协调的一组相似设备的最低级别非 WDM 驱动程序可以创建控制器对象，并使用它来同步连接的设备之间的 i/o 操作。 该驱动程序实现 [*ControllerControl*](https://msdn.microsoft.com/library/windows/hardware/ff542049) 例程并调用 i/o 管理器的控制器对象支持例程。
 
-**请注意**，WDM 驱动程序不支持使用控制器对象  。
+**注意**   WDM 驱动程序不支持使用控制器对象。
 
  
 
@@ -34,7 +34,7 @@ ms.locfileid: "72838631"
 
 -   连接到控制器的设备类似。 也就是说，它们不是具有完全不同的物理属性或操作功能的设备，如可以连接到键盘和辅助设备控制器的键盘和鼠标设备。
 
--   驱动程序设计为单一层次：与设备控制器和连接的物理设备相关，而不是设计为端口驱动程序（适用于控制器），其中一个或多个类驱动程序（适用于连接的设备）通过端口进行分层驱动器.
+-   驱动程序设计为单一层次：与设备控制器和连接的物理设备相关，而不是设计为控制器) 的端口驱动程序 ( (用于连接设备的一个或多个类驱动程序，) 通过端口驱动程序进行分层。
 
 具有 i/o 通道和一组逻辑设备对象的设备的驱动程序还可以使用控制器对象来同步其在此类设备的通道之间或其之间的 i/o 操作。
 
@@ -46,11 +46,11 @@ ms.locfileid: "72838631"
 
 -   设置命名设备对象，以表示 i/o 请求的目标设备。
 
--   维护状态信息（可能是每个设备扩展或单个设备扩展中的一组设备繁忙标志），指示哪个设备对象是当前 i/o 操作的目标。
+-   维护状态信息 (可能是每个设备扩展或单个设备扩展中的一组设备忙标志，) 指示哪个设备对象是当前 i/o 操作的目标。
 
 -   执行当前繁忙设备对象的 i/o 操作，并为其他设备对象重新排队传入的 Irp，直到当前 IRP 完成。
 
-以上同步技术为驱动程序的所有目标设备对象序列化 IRP 处理。 请注意，它还强制驱动程序在[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)例程开始处理下一个 irp 之前完成当前 irp，这会降低驱动程序性能。
+以上同步技术为驱动程序的所有目标设备对象序列化 IRP 处理。 请注意，它还强制驱动程序在 [*StartIo*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio) 例程开始处理下一个 irp 之前完成当前 irp，这会降低驱动程序性能。
 
 如果某些设备操作可以重叠，则使用控制器对象可能会增加驱动程序的 i/o 吞吐量，因为此同步技术允许驱动程序在设置物理设备之前确定是否可以重叠操作。 例如，磁盘控制器可能允许驱动程序在一个磁盘上使用另一个磁盘上的读/写操作来重叠查找。
 
@@ -59,9 +59,4 @@ ms.locfileid: "72838631"
 但是，某些设计为与 i/o 操作（如全双工串行控制器或总线主适配器）进行重叠的设备通常具有为 Irp 设置内部队列的驱动程序。
 
  
-
- 
-
-
-
 

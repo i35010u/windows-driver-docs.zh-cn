@@ -4,12 +4,12 @@ description: 本主题介绍适用于适用于 Windows 10 的 UEFI 要求 (家�
 ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
 ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fb77e9f53120dd3833b900d75c83f2c07f2fe29
-ms.sourcegitcommit: d9a9925f790271f4ca2c8377d551d96e8d1e62c7
+ms.openlocfilehash: 5bdc26d3955875e68e08cc962bc29edba0ee9f29
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88850285"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189389"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC 平台上 Windows 版本的 UEFI 要求
 
@@ -310,7 +310,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <td><p>以下要求并不意味着需要 TCG TPM 实现;但它们却意味着需要对受影响的区域使用等效功能。</p>
 <p>平台支持可以通过在安全执行环境中执行的 TPM 的固件实现来提供，在加密加速引擎之上进行分层，并利用独立存储。 Microsoft 可能会提供供供应商使用的此类 TPM 实现的参考软件。 这会进一步讨论。</p>
 <ul>
-<li><p>要求22：必填。 平台应符合 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 Efi 协议</a>中指定的 efi 协议。</p></li>
+<li><p>要求22：必填。 平台应符合 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 Efi 协议</a>中指定的 efi 协议。</p></li>
 <li><p>要求23：必填。 平台应遵循 TCG EFI 平台规范，其中添加了以下内容：</p>
 <ul>
 <li><p>在支持在 TrEE EFI 协议中定义的接口的平台上，PK<em><sub>pub</sub></em> 的摘要应扩展为 TPM PCR [03] 作为 EV_EFI_VARIABLE_CONFIG 事件。</p></li>
@@ -346,7 +346,7 @@ Windows 在安全启动、标准启动、加密和数据保护方面具有安全
 <li><p>Microsoft 定义了从 UEFI 平台收集平均信息量的协议。 尽管不是 UEFI 要求，但 Windows 在 SoC 平台上是必需的。 有关此协议的详细信息，请参阅 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">UEFI 熵收集协议</a>。</p></li>
 <li><p>UEFI 签名数据库更新。 在 UEFI 2.3.1 的第27节中采用了用于更新已验证的变量的一种新机制。 Windows 需要此机制。</p></li>
 <li><p>受信任的执行环境。 Microsoft 已开发了一个 EFI 协议，用于与受信任的执行环境交互 (树) ，与受信任计算组的子集 (TCG) 受信任的平台模块 (TPM) 的功能类似。 EFI 协议利用受信任的计算组，使用较大的 "TCG EFI 协议" 版本1.2 修订版1.00 （6月9日2006）。</p>
-<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 EFI 协议</a>。</p></li>
+<p>有关详细信息，请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI 可信执行环境 EFI 协议</a>。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -408,7 +408,7 @@ Windows 要求 OS 分区驻留在 GPT 分区的存储解决方案上。 可以�
 
 ## <a name="hardware-security-test-interface-hsti-requirement"></a>硬件安全测试界面 (HSTI) 要求
 
-平台必须实现硬件安全测试接口，并且需要平台来共享 [硬件安全测试规范](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)中指定的文档和工具。
+平台必须实现硬件安全测试接口，并且需要平台来共享 [硬件安全测试规范](/windows-hardware/test/hlk/testref/hardware-security-testability-specification)中指定的文档和工具。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -416,4 +416,4 @@ Windows 要求 OS 分区驻留在 GPT 分区的存储解决方案上。 可以�
 
 [Windows 10 移动版的 UEFI 要求](uefi-requirements-specific-to-windows-mobile.md)  
 
-[USB 刷写支持的 UEFI 要求](uefi-requirements-for-usb-flashing-support.md)  
+[USB 刷写支持的 UEFI 要求](uefi-requirements-for-usb-flashing-support.md)

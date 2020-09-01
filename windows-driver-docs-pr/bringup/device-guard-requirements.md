@@ -4,16 +4,16 @@ description: 描述 MemoryOverwriteRequestControlLock UEFI 变量的行为和用
 ms.assetid: 94F42629-3B76-4EB1-A5FA-4FA13C932CED
 ms.date: 08/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c8906b59144c9549a3e7ab0f9505b07157442f55
-ms.sourcegitcommit: 1600bbad585647840839a6f66078c961c337c268
+ms.openlocfilehash: 6135c9924d7bac1e2bdd8e5c2b47b0e3ead42788
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88203667"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188095"
 ---
 # <a name="secure-mor-implementation"></a>安全 MOR 实现
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>“摘要”
 
 - MorLock，修订版2的行为
 
@@ -35,11 +35,11 @@ ms.locfileid: "88203667"
 
 ## <a name="recommended-reading"></a>推荐阅读内容
 
-- [博客文章：保护 BitLocker 免受冷攻击 (和其他威胁) ](https://docs.microsoft.com/archive/blogs/si_team/protecting-bitlocker-from-cold-attacks-and-other-threats)
+- [博客文章：保护 BitLocker 免受冷攻击 (和其他威胁) ](/archive/blogs/si_team/protecting-bitlocker-from-cold-attacks-and-other-threats)
 
 - [白皮书：在 EDKII 中使用 UEFI TPM2 支持的 BIOS 教程](https://github.com/tianocore/edk2-platforms/blob/devel-MinPlatform/Platform/Intel/MinPlatformPkg/Docs/A_Tour_Beyond_BIOS_Open_Source_IA_Firmware_Platform_Design_Guide_in_EFI_Developer_Kit_II%20-%20V2.pdf)
 
-- [使用 Credential Guard 保护派生的域凭据](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+- [使用 Credential Guard 保护派生的域凭据](/windows/security/identity-protection/credential-guard/credential-guard)
 
 ## <a name="overview"></a>概述
 
@@ -157,16 +157,16 @@ SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr);
 
 ![morlock getvariable](images/morlock4.png)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [适用于 SoC 平台上的所有 Windows 版本的 UEFI 要求](uefi-requirements-that-apply-to-all-windows-platforms.md#security-requirements)
 
 [电脑客户端工作组平台重置攻击缓解规范，版本 1.10 (PDF 下载) ](https://trustedcomputinggroup.org/wp-content/uploads/TCG_PlatformResetAttackMitigationSpecification_1.10_published.pdf)
 
-[保护 BitLocker 免受冷攻击 (和其他威胁) ](https://docs.microsoft.com/archive/blogs/si_team/protecting-bitlocker-from-cold-attacks-and-other-threats)  
+[保护 BitLocker 免受冷攻击 (和其他威胁) ](/archive/blogs/si_team/protecting-bitlocker-from-cold-attacks-and-other-threats)  
 
 [在 EDKII 中使用 UEFI TPM2 支持的 BIOS 之外的教程](https://github.com/tianocore/edk2-platforms/blob/devel-MinPlatform/Platform/Intel/MinPlatformPkg/Docs/A_Tour_Beyond_BIOS_Open_Source_IA_Firmware_Platform_Design_Guide_in_EFI_Developer_Kit_II%20-%20V2.pdf)
 
-[使用 Credential Guard 保护派生的域凭据](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+[使用 Credential Guard 保护派生的域凭据](/windows/security/identity-protection/credential-guard/credential-guard)
 
-[UEFI 规范](https://uefi.org/specifications)  
+[UEFI 规范](https://uefi.org/specifications)

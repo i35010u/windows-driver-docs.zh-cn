@@ -8,17 +8,17 @@ keywords:
 - PROPSETID_EXT_TRANSPORT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11321e9e89c46cf09eeb3cf24619d45f01eaf3f0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1283f26e348f88eb9bbf69ce276ce7fc760ccd91
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384102"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188209"
 ---
 # <a name="external-transport-properties"></a>外部传输属性
 
 
-[PROPSETID\_EXT\_传输](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-ext-transport)属性集包含从外部源，例如的信号进行传输和搜索到的类型的控制和传输数据相关的属性特定位置或时间的源媒体上的代码。 下表介绍的属性属于 PROPSETID\_EXT\_传输属性集。
+[PROPSETID \_ 扩展 \_ 传输](./propsetid-ext-transport.md)属性集包含与外部源中的数据的控制和传输相关的属性，例如传输的信号类型和搜索到特定位置或源媒体上的时间码。 下表描述了作为 PROPSETID \_ 扩展传输属性集的一部分的属性 \_ 。
 
 <table>
 <colgroup>
@@ -33,47 +33,47 @@ ms.locfileid: "67384102"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-capabilities" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-capabilities)"><strong>KSPROPERTY_EXTXPORT_CAPABILITIES</strong></a></p></td>
-<td><p>返回信息的功能的外部数据传输，如是否可以弹出设备的介质，或该设备可以向后播放。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-capabilities" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_CAPABILITIES&lt;/strong&gt;](./ksproperty-extxport-capabilities.md)"><strong>KSPROPERTY_EXTXPORT_CAPABILITIES</strong></a></p></td>
+<td><p>返回有关外部数据传输功能的信息，例如是否可以弹出设备的媒体，或者设备能否向后播放。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-input-signal-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-input-signal-mode)"><strong>KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE</strong></a></p></td>
-<td><p>如 525 行，60 赫兹 (NTSC) 标准定义 SD-DV 或 MPEG2 传输流控制传输中，输入的信号模式。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-input-signal-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE&lt;/strong&gt;](./ksproperty-extxport-input-signal-mode.md)"><strong>KSPROPERTY_EXTXPORT_INPUT_SIGNAL_MODE</strong></a></p></td>
+<td><p>控制传输的输入信号模式，如525行、60赫兹 (NTSC) 标准定义 SD-DV 或 MPEG2 传输流。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-output-signal-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_OUTPUT_SIGNAL_MODE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-output-signal-mode)"><strong>KSPROPERTY_EXTXPORT_OUTPUT_SIGNAL_MODE</strong></a></p></td>
-<td><p>控制输出信号模式的传输方式，例如 625 线条 50 赫兹 (PAL) MPEG。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-output-signal-mode" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_OUTPUT_SIGNAL_MODE&lt;/strong&gt;](./ksproperty-extxport-output-signal-mode.md)"><strong>KSPROPERTY_EXTXPORT_OUTPUT_SIGNAL_MODE</strong></a></p></td>
+<td><p>控制传输的输出信号模式，如625线路、50赫兹 (PAL) MPEG。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-load-medium" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_LOAD_MEDIUM&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-load-medium)"><strong>KSPROPERTY_EXTXPORT_LOAD_MEDIUM</strong></a></p></td>
-<td><p>控制负载中的外部设备，如打开任务栏中，关闭送纸器，或弹出。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-load-medium" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_LOAD_MEDIUM&lt;/strong&gt;](./ksproperty-extxport-load-medium.md)"><strong>KSPROPERTY_EXTXPORT_LOAD_MEDIUM</strong></a></p></td>
+<td><p>控制外部设备的负载介质，如 "打开"、"关闭" 或 "弹出"。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-medium-info" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_MEDIUM_INFO&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-medium-info)"><strong>KSPROPERTY_EXTXPORT_MEDIUM_INFO</strong></a></p></td>
-<td><p>返回有关外部设备的介质，例如是否盒式磁带或磁盘，以及是否启用了写保护的信息。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-medium-info" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_MEDIUM_INFO&lt;/strong&gt;](./ksproperty-extxport-medium-info.md)"><strong>KSPROPERTY_EXTXPORT_MEDIUM_INFO</strong></a></p></td>
+<td><p>返回有关外部设备介质的信息，例如它是卡带磁带还是光盘，以及是否启用了写入保护。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-state" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-state)"><strong>KSPROPERTY_EXTXPORT_STATE</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-state" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE&lt;/strong&gt;](./ksproperty-extxport-state.md)"><strong>KSPROPERTY_EXTXPORT_STATE</strong></a></p></td>
 <td><p>控制外部设备的传输模式和状态。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-state-notify" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE_NOTIFY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-state-notify)"><strong>KSPROPERTY_EXTXPORT_STATE_NOTIFY</strong></a></p></td>
-<td><p>控制的外部设备的传输模式下更改或其状态更改的通知。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-state-notify" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_STATE_NOTIFY&lt;/strong&gt;](./ksproperty-extxport-state-notify.md)"><strong>KSPROPERTY_EXTXPORT_STATE_NOTIFY</strong></a></p></td>
+<td><p>控制外部设备的传输模式更改或其状态更改的通知。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-timecode-search" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_TIMECODE_SEARCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-timecode-search)"><strong>KSPROPERTY_EXTXPORT_TIMECODE_SEARCH</strong></a></p></td>
-<td><p>指定到搜索到，包括框架中，第二个、 分钟和小时的时间码。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-timecode-search" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_TIMECODE_SEARCH&lt;/strong&gt;](./ksproperty-extxport-timecode-search.md)"><strong>KSPROPERTY_EXTXPORT_TIMECODE_SEARCH</strong></a></p></td>
+<td><p>指定要搜索的时间码，包括帧、秒、分钟和小时。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-atn-search" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_ATN_SEARCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-atn-search)"><strong>KSPROPERTY_EXTXPORT_ATN_SEARCH</strong></a></p></td>
-<td><p>指定要在磁带上搜索到的绝对跟踪号。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-atn-search" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_ATN_SEARCH&lt;/strong&gt;](./ksproperty-extxport-atn-search.md)"><strong>KSPROPERTY_EXTXPORT_ATN_SEARCH</strong></a></p></td>
+<td><p>指定要在磁带上搜索的绝对磁道号。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-rtc-search" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_RTC_SEARCH&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-rtc-search)"><strong>KSPROPERTY_EXTXPORT_RTC_SEARCH</strong></a></p></td>
-<td><p>指定要在磁带上搜索到的相对时间计数器。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-extxport-rtc-search" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_RTC_SEARCH&lt;/strong&gt;](./ksproperty-extxport-rtc-search.md)"><strong>KSPROPERTY_EXTXPORT_RTC_SEARCH</strong></a></p></td>
+<td><p>指定要在磁带上搜索的相对时间计数器。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-raw-avc-cmd" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_RAW_AVC_CMD&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-raw-avc-cmd)"><strong>KSPROPERTY_EXTXPORT_RAW_AVC_CMD</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-raw-avc-cmd" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_RAW_AVC_CMD&lt;/strong&gt;](./ksproperty-raw-avc-cmd.md)"><strong>KSPROPERTY_EXTXPORT_RAW_AVC_CMD</strong></a></p></td>
 <td><p>控制要发送到外部设备的原始 AV/C 代码。</p></td>
 </tr>
 </tbody>
@@ -82,9 +82,4 @@ ms.locfileid: "67384102"
  
 
  
-
- 
-
-
-
 

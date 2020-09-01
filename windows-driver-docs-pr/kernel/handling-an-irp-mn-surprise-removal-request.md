@@ -7,36 +7,36 @@ keywords:
 - IRP_MN_SURPRISE_REMOVAL
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eeaa38dbcbf7f354a1b0f5ab0eb1084739b4a0e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d07fd5ff296f825ac68dbb86962dcea981ce7423
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836598"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189363"
 ---
-# <a name="handling-an-irp_mn_surprise_removal-request"></a>处理 IRP\_MN\_意外\_删除请求
+# <a name="handling-an-irp_mn_surprise_removal-request"></a>处理 IRP \_ MN \_ 意外 \_ 删除请求
 
 
 
 
 
-Windows 2000 和更高版本的 PnP 管理器发送此 IRP，通知驱动程序设备不再可用于 i/o 操作，并且可能已从计算机上意外删除（"意外删除"）。
+Windows 2000 和更高版本的 PnP 管理器发送此 IRP，通知驱动程序设备不再可用于 i/o 操作，并且可能已从计算机上意外删除 ( "意外删除" ) 。
 
-PnP 管理器发送[**IRP\_MN\_意外\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)请求，原因如下：
+PnP 管理器发送 [**IRP \_ MN \_ 意外 \_ 删除**](./irp-mn-surprise-removal.md) 请求，原因如下：
 
--   如果总线具有热插拔通知，它会通知设备的父总线驱动程序设备已消失。 总线驱动程序调用[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)。 作为响应，PnP 管理器会查询其子管理器的总线驱动程序（[**IRP\_MN\_QUERY\_设备\_关系**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)为**BusRelations**）。 PnP 管理器确定设备不在新子项列表中，并为设备启动其意外删除操作。
+-   如果总线具有热插拔通知，它会通知设备的父总线驱动程序设备已消失。 总线驱动程序调用 [**IoInvalidateDeviceRelations**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)。 作为响应，PnP 管理器将查询其子管理器的总线驱动程序， ([**IRP \_ MN \_ QUERY \_ 设备 \_ 关系**](./irp-mn-query-device-relations.md) for **BusRelations**) 。 PnP 管理器确定设备不在新子项列表中，并为设备启动其意外删除操作。
 
 -   由于另一个原因，会枚举总线，而意外删除的设备不会包含在子列表中。 PnP 管理器启动其意外删除操作。
 
--   设备的函数驱动程序确定设备不再存在（例如，其请求重复超时）。 总线可能可枚举，但它没有热插拔通知。 在这种情况下，函数驱动程序调用[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)。 作为响应，PnP 管理器会将[**IRP\_MN\_QUERY\_PnP\_设备\_状态**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)请求发送到设备堆栈。 函数驱动程序在[**pnp\_设备\_状态**](#about-pnp_device_state)位掩码中设置 PNP\_设备\_failed 标志，指示该设备已失败。
+-   设备的函数驱动程序确定设备不再存在 (因为例如，它的请求) 中重复超时。 总线可能可枚举，但它没有热插拔通知。 在这种情况下，函数驱动程序调用 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)。 在响应中，PnP 管理器会将 [**IRP \_ MN \_ 查询 \_ PnP \_ 设备 \_ 状态**](./irp-mn-query-pnp-device-state.md) 请求发送到设备堆栈。 函数驱动程序 \_ \_ 在 [**pnp \_ 设备 \_ 状态**](#about-pnp_device_state) 位掩码中设置 pnp 设备失败标志，指示该设备已失败。
 
--   驱动程序堆栈已成功完成[**IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)请求，但随后失败的[**irp\_MN\_开始\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求。 在这种情况下，设备可能仍处于连接状态。
+-   驱动程序堆栈已成功完成 [**IRP \_ MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md) 请求，但随后无法 [** \_ \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求。 在这种情况下，设备可能仍处于连接状态。
 
-所有 PnP 驱动程序都必须处理此 IRP，并且必须将**irp&gt;IoStatus**设置为 STATUS\_SUCCESS。 在调用驱动程序的[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程后，PnP 设备的驱动程序必须准备好处理**IRP\_MN\_意外\_删除**。 正确处理 IRP 后，驱动程序和 PnP 管理器可以：
+所有 PnP 驱动程序都必须处理此 IRP，并且必须将 **irp &gt; IoStatus** 设置为状态 " \_ 成功"。 在调用驱动程序的[*AddDevice*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)例程之后，必须准备 PnP 设备的驱动程序，以便随时处理**IRP \_ MN \_ 意外 \_ 删除**。 正确处理 IRP 后，驱动程序和 PnP 管理器可以：
 
 1.  禁用设备，以防设备仍处于连接状态。
 
-    如果驱动程序堆栈成功完成了[**IRP\_MN\_停止\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)请求，但出于某种原因，由于某种原因导致后续[**IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求，必须禁用该设备。
+    如果驱动程序堆栈已成功完成 [**IRP \_ MN \_ 停止 \_ 设备**](./irp-mn-stop-device.md) 请求，但出于某种原因，由于某种原因，后续 [**IRP \_ MN \_ 启动 \_ 设备**](./irp-mn-start-device.md) 请求失败，则必须禁用该设备。
 
 2.  释放分配给设备的硬件资源，并将其提供给其他设备。
 
@@ -46,25 +46,25 @@ PnP 管理器发送[**IRP\_MN\_意外\_删除**](https://docs.microsoft.com/wind
 
     支持热插拔的设备及其驱动程序应该设计为处理意外删除。 用户希望能够随时删除支持热插拔的设备。
 
-PnP 管理器在系统线程的上下文中发送**IRP\_MN\_意外\_删除**，以 IRQL = 被动\_级别。
+PnP 管理器在系统线程的上下文中以 IRQL = 被动级别发送 **IRP \_ MN \_ 意外 \_ 删除** \_ 。
 
-PnP 管理器会在通知用户模式应用程序和其他内核模式组件之前，将此 IRP 发送到驱动程序。 完成 IRP 后，PnP 管理器会将 GUID 为\_目标\_设备的**EventCategoryTargetDeviceChange**通知发送到在上注册此类通知的内核模式组件\_完成\_装置.
+PnP 管理器会在通知用户模式应用程序和其他内核模式组件之前，将此 IRP 发送到驱动程序。 IRP 完成后，PnP 管理器会将 GUID **EventCategoryTargetDeviceChange** \_ 目标设备删除完成的 EventCategoryTargetDeviceChange 通知发送 \_ \_ \_ 到在设备上注册此类通知的内核模式组件。
 
-**IRP\_MN\_惊喜\_删除**irp 首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。
+**IRP \_ MN \_ 意外 \_ 删除**irp 首先由设备堆栈中的顶层驱动程序处理，然后再由下一个较低的驱动程序处理。
 
-为了响应**IRP\_MN\_意外\_删除**，驱动程序必须按照列出的顺序执行以下操作：
+为了响应 **IRP \_ MN \_ 意外 \_ 删除**，驱动程序必须按照列出的顺序执行以下操作：
 
 1.  确定设备是否已删除。
 
     驱动程序必须始终尝试确定设备是否仍处于连接状态。 如果是，则驱动程序必须尝试停止并禁用该设备。
 
-2.  释放设备的硬件资源（中断、i/o 端口、内存寄存器和 DMA 通道）。
+2.  )  (中断、i/o 端口、内存寄存器和 DMA 通道释放设备的硬件资源。
 
-3.  在父总线驱动程序中，如果驱动程序能够执行此操作，请关闭总线槽。 调用[**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)以通知电源管理器。 有关其他信息，请参阅[电源管理](implementing-power-management.md)。
+3.  在父总线驱动程序中，如果驱动程序能够执行此操作，请关闭总线槽。 调用 [**PoSetPowerState**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate) 以通知电源管理器。 有关其他信息，请参阅 [电源管理](./introduction-to-power-management.md)。
 
 4.  防止设备上出现任何新的 i/o 操作。
 
-    驱动程序应处理后续的[**IRP\_MJ\_清理**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)、 [**irp\_mj\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)、 [**irp\_mj\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)和[**IRP\_mj\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)请求，但驱动程序必须阻止任何新的 i/o 操作。 驱动程序必须在设备存在时（除了关闭、清理和 PnP Irp 外），驱动程序可能会处理的任何后续 Irp 失败。
+    驱动程序应处理后续 [**的 irp \_ mj \_ 清理**](./irp-mj-cleanup.md)、 [**irp \_ mj \_ CLOSE**](./irp-mj-close.md)、 [**irp \_ mj \_ 功能**](./irp-mj-power.md)和 [**irp \_ mj \_ PNP**](./irp-mj-pnp.md) 请求，但驱动程序必须阻止任何新的 i/o 操作。 驱动程序必须在设备存在时（除了关闭、清理和 PnP Irp 外），驱动程序可能会处理的任何后续 Irp 失败。
 
     驱动程序可以在设备扩展中设置一个位，以指示设备已被意外删除。 驱动程序的调度例程应检查此位。
 
@@ -72,58 +72,58 @@ PnP 管理器会在通知用户模式应用程序和其他内核模式组件之�
 
 6.  继续向下传递驱动程序未处理设备的任何 Irp。
 
-7.  通过[**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)禁用设备接口。
+7.  通过 [**IoSetDeviceInterfaceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)禁用设备接口。
 
 8.  清理任何特定于设备的分配、内存、事件或其他系统资源。
 
-    驱动程序可以推迟此类清理，直到收到后续[**IRP\_MN\_删除\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)请求，但如果旧组件具有无法关闭的开放句柄，则永远不会发送删除 IRP。
+    驱动程序可以推迟此类清理，直到收到后续的 [**IRP \_ MN \_ REMOVE \_ 设备**](./irp-mn-remove-device.md) 请求，但如果旧组件具有打开的句柄无法关闭，则永远不会发送删除 IRP。
 
 9.  将设备对象保持连接到设备堆栈。
 
-    在后续**IRP\_MN\_删除\_设备**请求之前，请勿分离并删除设备对象。
+    在后续 **IRP \_ MN \_ 删除 \_ 设备** 请求之前，请勿分离并删除设备对象。
 
 10. 完成 IRP。
 
     在函数或筛选器驱动程序中：
 
-    -   将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
+    -   将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"。
 
-    -   用[**IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)设置下一个堆栈位置，并将 IRP 传递到下一个带[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的驱动程序。
+    -   用 [**IoSkipCurrentIrpStackLocation**](./mm-bad-pointer.md) 设置下一个堆栈位置，并将 IRP 传递到下一个带 [**IoCallDriver**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)的驱动程序。
 
-    -   将状态从**IoCallDriver**作为返回状态从[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程传播。
+    -   将状态从 **IoCallDriver** 作为返回状态从 [*DispatchPnP*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程传播。
 
     -   不要完成 IRP。
 
-    在总线驱动程序中（正在为子 PDO 处理此 IRP）：
+    在为子 PDO 处理此 IRP (的总线驱动程序) ：
 
-    -   将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
+    -   将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"。
 
-    -   通过 IO\_不\_递增来完成 IRP （[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)）。
+    -   完成 IRP ([**IoCompleteRequest**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) ，IO \_ 无 \_ 增量。
 
-    -   从*DispatchPnP*例程返回。
+    -   从 *DispatchPnP* 例程返回。
 
-此 IRP 成功并且设备的所有打开的句柄关闭后，PnP 管理器会发送[**IRP\_MN\_删除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)设备堆栈\_请求。 为响应删除 IRP，驱动程序从堆栈中分离其设备对象并将其删除。 如果旧组件具有打开到该设备的句柄，而该句柄仍处于打开状态，但仍有 i/o 故障，则 PnP 管理器从不发送删除 IRP。
+此 IRP 成功并且设备的所有打开的句柄关闭后，PnP 管理器会将 [**IRP \_ MN \_ REMOVE \_ 设备**](./irp-mn-remove-device.md) 请求发送到设备堆栈。 为响应删除 IRP，驱动程序从堆栈中分离其设备对象并将其删除。 如果旧组件具有打开到该设备的句柄，而该句柄仍处于打开状态，但仍有 i/o 故障，则 PnP 管理器从不发送删除 IRP。
 
 所有驱动程序都应该处理此 IRP，并请注意，设备已从计算机中物理删除。 但是，如果不处理 IRP，某些驱动程序将不会产生不良结果。 例如，不使用系统硬件资源并驻留在基于协议的总线上的设备（如 USB 或1394）无法占用硬件资源，因为它不使用任何硬件资源。 由于函数和筛选器驱动程序仅通过父总线驱动程序访问设备，因此在删除设备后，不会有驱动程序尝试访问该设备的风险。 由于总线支持删除通知，因此当设备消失并且总线驱动程序在所有后续尝试访问设备时，会通知父总线驱动程序。
 
-在 Windows 98/Me 上，PnP 管理器不会发送此 IRP。 如果用户在未首先使用相应的用户界面的情况下删除设备，则 PnP 管理器只发送**IRP\_MN\_删除**设备驱动程序\_设备请求。 所有 WDM 驱动程序都必须处理**IRP\_MN\_意外\_删除**和**irp\_MN\_删除\_设备**。 用于**IRP\_MN\_删除\_设备**的代码应检查驱动程序是否收到了以前的意外删除 IRP，并应处理这两种情况。
+在 Windows 98/Me 上，PnP 管理器不会发送此 IRP。 如果用户在未首先使用相应的用户界面的情况下删除设备，则 PnP 管理器仅向设备驱动程序发送 **IRP \_ MN \_ REMOVE \_ 设备** 请求。 所有 WDM 驱动程序都必须处理 **IRP \_ MN \_ 意外 \_ 删除** 和 **irp \_ MN \_ 删除 \_ 设备**。 **IRP \_ MN \_ REMOVE \_ 设备**的代码应检查驱动程序是否收到了以前的意外删除 IRP，并应处理这两种情况。
 
  ## <a name="using-guid_reenumerate_self_interface_standard"></a>使用 GUID_REENUMERATE_SELF_INTERFACE_STANDARD
 
-通过 GUID_REENUMERATE_SELF_INTERFACE_STANDARD 接口，驱动程序可以请求其设备为 reenumerated。
+使用 GUID_REENUMERATE_SELF_INTERFACE_STANDARD 接口，驱动程序可以请求其设备 reenumerated。
 
-若要使用此接口，请使用 InterfaceType = GUID_REENUMERATE_SELF_INTERFACE_STANDARD 将 IRP_MN_QUERY_INTERFACE IRP 发送到总线驱动程序。 总线驱动程序提供一个指向 REENUMERATE_SELF_INTERFACE_STANDARD 结构的指针，该结构包含指向接口的各个例程的指针。 [ReenumerateSelf 例程](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-preenumerate_self)请求总线驱动程序 reenumerate 为子设备。
+若要使用此接口，请使用 InterfaceType = GUID_REENUMERATE_SELF_INTERFACE_STANDARD 将 IRP_MN_QUERY_INTERFACE IRP 发送到总线驱动程序。 总线驱动程序提供一个指向 REENUMERATE_SELF_INTERFACE_STANDARD 结构的指针，该结构包含指向接口的各个例程的指针。 [ReenumerateSelf 例程](/windows-hardware/drivers/ddi/wdm/nc-wdm-preenumerate_self)请求总线驱动程序 reenumerate 为子设备。
 
 
 ## <a name="about-pnp_device_state"></a>关于 PNP_DEVICE_STATE
 
-PNP\_设备\_状态类型是一个位掩码，用于描述设备的 PnP 状态。 驱动程序将返回此类型的值，以响应**IRP\_MN\_QUERY\_PNP\_设备\_状态**请求。
+PNP \_ 设备 \_ 状态类型是一个位掩码，用于描述设备的 PNP 状态。 驱动程序将返回此类型的值，以响应 **IRP \_ MN \_ 查询 \_ PNP \_ 设备 \_ 状态** 请求。
 
 ``` syntax
 typedef ULONG PNP_DEVICE_STATE, *PPNP_DEVICE_STATE;
 ```
 
-PNP\_设备\_状态值中的标志位定义如下。
+PNP 设备状态值中的标志 \_ 位 \_ 定义如下。
 
 <table>
 <colgroup>
@@ -143,17 +143,17 @@ PNP\_设备\_状态值中的标志位定义如下。
 </tr>
 <tr class="even">
 <td>PNP_DEVICE_DONT_DISPLAY_IN_UI</td>
-<td><p>不要在用户界面中显示设备。 设置为在当前配置中不能使用的设备，如便携式计算机断开连接时无法使用的便携式计算机上的游戏端口。 （另请参阅<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities" data-raw-source="[&lt;strong&gt;DEVICE_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)"><strong>DEVICE_CAPABILITIES</strong></a>结构中的<strong>NoDisplayInUI</strong>标志。）</p></td>
+<td><p>不要在用户界面中显示设备。 设置为在当前配置中不能使用的设备，如便携式计算机断开连接时无法使用的便携式计算机上的游戏端口。  (还会在<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities" data-raw-source="[&lt;strong&gt;DEVICE_CAPABILITIES&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)"><strong>DEVICE_CAPABILITIES</strong></a>结构中看到<strong>NoDisplayInUI</strong>标志。 ) </p></td>
 </tr>
 <tr class="odd">
 <td>PNP_DEVICE_FAILED</td>
 <td><p>设备存在，但不能正常工作。</p>
-<p>同时设置此标志和 PNP_DEVICE_RESOURCE_REQUIREMENTS_CHANGED 时，必须先停止设备，然后 PnP 管理器才能分配新的硬件资源（设备不支持不间断重新平衡）。</p></td>
+<p>如果同时设置了此标志和 PNP_DEVICE_RESOURCE_REQUIREMENTS_CHANGED，则必须先停止设备，然后 PnP 管理器才能分配新的硬件资源 (不支持设备) 的不间断重新平衡。</p></td>
 </tr>
 <tr class="even">
 <td>PNP_DEVICE_NOT_DISABLEABLE</td>
 <td><p>计算机启动时需要设备。 不能禁用此类设备。</p>
-<p>驱动程序为适当的系统操作所需的设备设置此位。 例如，如果驱动程序收到有关设备处于寻呼路径（<a href="irp-mn-device-usage-notification.md" data-raw-source="[&lt;strong&gt;IRP_MN_DEVICE_USAGE_NOTIFICATION&lt;/strong&gt;](irp-mn-device-usage-notification.md)"><strong>IRP_MN_DEVICE_USAGE_NOTIFICATION</strong></a> for <strong>DeviceUsageTypePaging</strong>）的通知，则驱动程序将调用<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate" data-raw-source="[&lt;strong&gt;IoInvalidateDeviceState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)"><strong>IoInvalidateDeviceState</strong></a>并在生成<strong>的IRP_MN_QUERY_PNP_DEVICE_STATE</strong>请求。</p>
+<p>驱动程序为适当的系统操作所需的设备设置此位。 例如，如果驱动程序收到通知，表明设备处于寻呼路径 (<a href="irp-mn-device-usage-notification.md" data-raw-source="[&lt;strong&gt;IRP_MN_DEVICE_USAGE_NOTIFICATION&lt;/strong&gt;](irp-mn-device-usage-notification.md)"><strong>IRP_MN_DEVICE_USAGE_NOTIFICATION</strong></a> 用于 <strong>DeviceUsageTypePaging</strong>) ，则驱动程序将调用 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate" data-raw-source="[&lt;strong&gt;IoInvalidateDeviceState&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)"><strong>IoInvalidateDeviceState</strong></a> 并在生成的 <strong>IRP_MN_QUERY_PNP_DEVICE_STATE</strong> 请求中设置此标志。</p>
 <p>如果为设备设置此位，则 PnP 管理器会将此设置传播到设备的父设备、父设备的父设备等。</p>
 <p>如果为根枚举设备设置了此项，则无法禁用或卸载设备。</p></td>
 </tr>
@@ -177,12 +177,8 @@ PNP\_设备\_状态值中的标志位定义如下。
 
  
 
-在启动设备后，PnP 管理器会立即查询设备的 PNP\_设备\_状态，方法是将**IRP\_MN\_查询\_PnP\_设备**请求发送到设备堆栈。 为了响应此 IRP，设备的驱动程序在 PNP\_设备\_状态中设置相应的标志。
+PnP 管理器 \_ \_ 通过将 **IRP \_ MN \_ 查询 \_ PnP \_ 设备 \_ 状态** 请求发送到设备堆栈，在启动设备后立即查询设备的 PnP 设备状态。 为响应此 IRP，设备的驱动程序在 PNP 设备状态中设置相应的 \_ 标志 \_ 。
 
-如果在初始查询后任何状态特征发生更改，驱动程序将通过调用[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)通知 PnP 管理器。 为响应对**IoInvalidateDeviceState**的调用，PnP 管理器会再次查询设备的 PNP\_设备\_状态。
+如果在初始查询后任何状态特征发生更改，驱动程序将通过调用 [**IoInvalidateDeviceState**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)通知 PnP 管理器。 为响应对 **IoInvalidateDeviceState**的调用，PnP 管理器会再次查询设备的 PnP \_ 设备 \_ 状态。
 
-如果设备被标记为 PNP\_设备\_不\_DISABLEABLE，则调试器将显示 devnode 的 DNUF\_\_NOT DISABLEABLE 用户标志。 调试器还显示一个**DisableableDepends**值，该值计算设备无法禁用的原因数。 此值是 X + Y 的总和，其中 X 为1，如果不能禁用设备，Y 是不能禁用的设备子设备的计数。
-
-
-
-
+如果设备被标记为 PNP \_ 设备 \_ 不 \_ DISABLEABLE，则调试器会显示 devnode 的 DNUF \_ NOT \_ DISABLEABLE 用户标志。 调试器还显示一个 **DisableableDepends** 值，该值计算设备无法禁用的原因数。 此值是 X + Y 的总和，其中 X 为1，如果不能禁用设备，Y 是不能禁用的设备子设备的计数。

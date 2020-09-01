@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cd42608261c2a6fc9f4eff82ac5bead090f46bfe
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3358acfb2e15ee8e0565a2bf8e4faa2b0f0f3e64
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842709"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189223"
 ---
 # <a name="removepersistententry-function"></a>RemovePersistentEntry 函数
 
@@ -43,11 +43,11 @@ void RemovePersistentEntry(
 *PortWWN*   
 一个全球名称，它指示将更改其持久性绑定的端口。
 
-*绑定*   
-[**HBAFCPBindingEntry2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)类型的结构，指示要从指示的端口的绑定列表中移除的绑定。
+*Binding*   
+[**HBAFCPBindingEntry2**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_hbafcpbindingentry2)类型的结构，指示要从指示的端口的绑定列表中移除的绑定。
 
 *HBAStatus*   
-返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在[**RemovePersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)结构的**HBAStatus**成员中返回此信息。
+返回时，包含操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在[**RemovePersistentEntry \_ OUT**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)结构的**HBAStatus**成员中返回此信息。
 
 <a name="return-value"></a>返回值
 ------------
@@ -57,7 +57,7 @@ void RemovePersistentEntry(
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于[MSFC\_HBAFCPINFO WMI 类](msfc-hbafcpinfo-wmi-class.md)。
+此 WMI 方法属于 [MSFC \_ HBAFCPInfo WMI 类](msfc-hbafcpinfo-wmi-class.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -70,11 +70,11 @@ void RemovePersistentEntry(
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
-<td align="left">Hbapiwmi （包括 Hbapiwmi、Hbaapi 或 Hbaapi）。</td>
+<td align="left"> (包含 Hbapiwmi、Hbaapi 或 Hbaapi 的 Hbapiwmi) </td>
 </tr>
 </tbody>
 </table>
@@ -82,16 +82,9 @@ void RemovePersistentEntry(
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[**RemovePersistentEntry\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_in)
+[**RemovePersistentEntry \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_in)
 
-[**RemovePersistentEntry\_OUT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)
-
- 
+[**RemovePersistentEntry \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_removepersistententry_out)
 
  
-
-
-
-
-
 

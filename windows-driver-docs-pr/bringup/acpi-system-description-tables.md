@@ -4,12 +4,12 @@ description: " (ACPI) 硬件规范的高级配置和电源接口的实现在基�
 ms.assetid: 6EFCD288-031D-46BB-ABF3-8ADB53E7B4B1
 ms.date: 05/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f8a7e9c36115849abb279bc420d4d572f3e6bf
-ms.sourcegitcommit: a16fd2876383265b4ad336dea624e4b13fc13a1b
+ms.openlocfilehash: 1766c46c17bdf7c8ff319aaef4d7eacd6f704a8e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88644013"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188679"
 ---
 # <a name="acpi-system-description-tables"></a>ACPI 系统说明表
 
@@ -88,17 +88,17 @@ Microsoft 需要在所有系统上都有调试端口。 为了描述内置于平
 
 Windows 使用 DBG2 表中的端口类型值来标识和加载内核调试器 (KD) 传输 (例如，系统需要的 USB 或串行) 。 然后，KD 传输使用 DBG2 表中的端口子类型值来标识端口使用的硬件接口。 DBG2 表中的其他信息指定端口寄存器的系统地址，该地址由硬件接口模块用于指定的子类型。 最后，DBG2 表必须包括对与调试端口对应的 ACPI 命名空间中的设备节点的引用。 此引用使 Windows 能够管理调试使用情况和设备的正常使用情况之间的冲突（如果有），还可将调试器与电源转换集成。
 
-有关详细信息，请参阅 [Microsoft 调试端口表 2 (DBG2) 规范](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn639131(v=vs.85))。
+有关详细信息，请参阅 [Microsoft 调试端口表 2 (DBG2) 规范](/previous-versions/windows/hardware/design/dn639131(v=vs.85))。
 
 ## <a name="differentiated-system-description-table-dsdt"></a>区分系统说明表 (DSDT) 
 
 在 ACPI 中，平台上的外围设备和系统硬件功能在 "区分系统说明" 表中进行了介绍 (DSDT) ，它是在启动时加载的，或者是在启动时加载或在运行时动态加载的辅助系统说明表 (Ssdt) 。 对于 Soc，平台配置通常是静态的，因此 DSDT 可能已足够，尽管 Ssdt 还可用于改进平台说明的模块化。
 
-ACPI 以与 OS 无关的方式 (ACPI 源语言或 ASL) 和执行环境 (ACPI 虚拟机) 来描述系统设备和功能，以及其平台特定的控件。 ASL 用于定义 ACPI 命名空间中的命名对象， [MICROSOFT ASL 编译器](microsoft-asl-compiler.md) 用于生成 acpi 计算机语言 (AML) 字节代码用于传输到 DSDT 中的操作系统。 收件箱 [WINDOWS ACPI 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/kernel/acpi-driver)（Acpi.sys）实现了 ACPI 虚拟机，并解释了 AML 字节代码。 AML 对象可能只返回说明信息。 或者，AML 对象可能是执行计算或执行 i/o 操作的方法。 *控制方法*是一个可执行的 AML 对象，它使用操作系统的设备驱动程序在平台硬件上执行 i/o 操作。 ASL 使用 OpRegions 来抽象操作系统中可访问的各种地址空间。 控制方法执行 i/o 操作，作为与 OpRegions 中声明的命名字段进行的一系列传输。
+ACPI 以与 OS 无关的方式 (ACPI 源语言或 ASL) 和执行环境 (ACPI 虚拟机) 来描述系统设备和功能，以及其平台特定的控件。 ASL 用于定义 ACPI 命名空间中的命名对象， [MICROSOFT ASL 编译器](microsoft-asl-compiler.md) 用于生成 acpi 计算机语言 (AML) 字节代码用于传输到 DSDT 中的操作系统。 收件箱 [WINDOWS ACPI 驱动程序](../kernel/acpi-driver.md)（Acpi.sys）实现了 ACPI 虚拟机，并解释了 AML 字节代码。 AML 对象可能只返回说明信息。 或者，AML 对象可能是执行计算或执行 i/o 操作的方法。 *控制方法*是一个可执行的 AML 对象，它使用操作系统的设备驱动程序在平台硬件上执行 i/o 操作。 ASL 使用 OpRegions 来抽象操作系统中可访问的各种地址空间。 控制方法执行 i/o 操作，作为与 OpRegions 中声明的命名字段进行的一系列传输。
 
 有关 OpRegions 的详细信息，请参阅 [ACPI 5.0 规范](https://uefi.org/specifications)中的 "访问操作区域" 部分。 有关 ASL 和控制方法的详细信息，请参阅 ACPI 5.0 规范中的第5.5 节 "ACPI 命名空间"。
 
-Windows 提供对开发和调试 ASL 代码的支持。 ASL 编译器包含一个拆装器，使实施者能够从调试目标加载命名空间。 然后，可以使用 ASL 编译器将命名空间重新应用于目标以实现快速原型制作和测试，而无需闪现系统固件。 此外，Windows 内核调试器与 checked (的) 版本的 Acpi.sys 驱动程序一起支持跟踪和分析 AML 执行。 有关详细信息，请参阅 [AMLI 调试器](https://docs.microsoft.com/windows-hardware/drivers/debugger/introduction-to-the-amli-debugger)。
+Windows 提供对开发和调试 ASL 代码的支持。 ASL 编译器包含一个拆装器，使实施者能够从调试目标加载命名空间。 然后，可以使用 ASL 编译器将命名空间重新应用于目标以实现快速原型制作和测试，而无需闪现系统固件。 此外，Windows 内核调试器与 checked (的) 版本的 Acpi.sys 驱动程序一起支持跟踪和分析 AML 执行。 有关详细信息，请参阅 [AMLI 调试器](../debugger/introduction-to-the-amli-debugger.md)。
 
 ## <a name="windows-smm-security-mitigations-table-wsmt"></a>Windows SMM 安全缓解表 (WSMT) 
 

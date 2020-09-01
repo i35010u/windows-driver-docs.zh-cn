@@ -13,12 +13,12 @@ keywords:
 - DVD decrypters WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4ff0c369f0512976a4c980fe29977a0676b17c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6e7876ca3cdb29b3f4c5699d0a38a7b83eda98b8
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843590"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188333"
 ---
 # <a name="synchronizing-key-exchange-with-data-flow"></a>将密钥交换与数据流同步
 
@@ -26,14 +26,9 @@ ms.locfileid: "72843590"
 
 
 
-在处理上一个密钥中的所有数据之前，密钥交换过程可能会开始。 这种情况的一个示例是：从尾部标题过渡到在某些电影上设置的主程序标题中。 每个数据包的[**KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的**TypeSpecificFlags**成员中存在一个标志。 此标志为**KS\_AM\_UseNewCSSKey**，这是在*ksmedia*中定义的。 它表示紧接在标头之后的数据示例就是新标题键适用的第一个数据示例。
+在处理上一个密钥中的所有数据之前，密钥交换过程可能会开始。 这种情况的一个示例是：从尾部标题过渡到在某些电影上设置的主程序标题中。 每个数据包的[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)结构的**TypeSpecificFlags**成员中都有一个标志。 此标志为 **KS \_ AM \_ UseNewCSSKey**，它是在 *ksmedia*中定义的。 它表示紧接在标头之后的数据示例就是新标题键适用的第一个数据示例。
 
-如果 decrypter 在仍使用旧密钥的情况下可以处理新的密钥交换，则在接收属性时，DVD 解码器微型驱动程序应处理密钥交换。 如果 decrypter 必须等待，直到处理完需要上一个密钥的所有电影数据后，decrypter 将保留**Set**属性的 SRB。 Decrypter 使用[**ks\_DVDCOPY\_集\_COPY\_状态**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)结构与参数**KS\_DVDCOPYSTATE\_initialize** or **ks\_DVDCOPYSTATE\_初始化\_标题**，直到接收到连接到它的所有流上的**KS\_AM\_UseNewCSSKey**标志。 之后，在该点之前，DVD 解码器微型驱动程序将处理收到的所有数据包。 这可以防止对数据使用不正确的键。
-
- 
+如果 decrypter 在仍使用旧密钥的情况下可以处理新的密钥交换，则在接收属性时，DVD 解码器微型驱动程序应处理密钥交换。 如果 decrypter 必须等待，直到处理完需要上一个密钥的所有电影数据后，decrypter 将保留 **Set** 属性的 SRB。 Decrypter 对参数**ks \_ DVDCOPYSTATE \_ initialize**或**KS \_ DVDCOPYSTATE \_ initialize \_ TITLE**使用[**ks \_ DVDCOPY \_ 集 \_ 复制 \_ 状态**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_dvdcopy_set_copy_state)结构，直到它在连接到它的所有流上收到**KS \_ AM \_ UseNewCSSKey**标志。 之后，在该点之前，DVD 解码器微型驱动程序将处理收到的所有数据包。 这可以防止对数据使用不正确的键。
 
  
-
-
-
 

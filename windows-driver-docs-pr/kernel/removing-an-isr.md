@@ -9,24 +9,19 @@ keywords:
 - 删除 Isr WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d0a102b7b81e855b535eca61f36d148e075ae7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 59f156793b166f15bf14f7eb712106795a6bcf9a
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72836472"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189291"
 ---
 # <a name="removing-an-isr"></a>删除 ISR
 
 
-驱动程序可以通过调用[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)删除注册到[**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)的 ISR。 **IoDisconectInterruptEx**采用单个 parameter 参数，*该参数是*一个指向 IO\_的指针[ **\_中断\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_disconnect_interrupt_parameters)结构。 结构成员所使用的值取决于用于注册 ISR 的版本。
+驱动程序可以通过调用[**IoDisconnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)删除注册到[**IoConnectInterruptEx**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)的 ISR。 **IoDisconectInterruptEx** 采用单个 parameter 参数， *该参数是* 一个指向 [**IO \_ 断开连接 \_ 中断 \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_disconnect_interrupt_parameters) 结构的指针。 结构成员所使用的值取决于用于注册 ISR 的版本。
 
-驱动程序必须在注册 ISR 时保存某些信息，以后再将其删除。 对于 "连接\_行\_" 和 "连接\_完全\_指定版本，驱动程序必须保存**InterruptObject**或**FullySpecified 的**成员中[**提供的值。\_连接\_中断\_参数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_connect_interrupt_parameters)。 对于连接\_基于\_版本的消息，驱动程序必须保存**microsoft.sqlserver.replication.replicationobject.connectioncontext**的**version**和 MessageBased 成员中提供的值， **\_连接\_中断\_参数**。
-
- 
+驱动程序必须在注册 ISR 时保存某些信息，以后再将其删除。 对于基于连接 \_ 线 \_ 并连接 \_ 完全 \_ 指定的版本，驱动程序必须保存在[**IO \_ CONNECT \_ 中断 \_ 参数**](/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_connect_interrupt_parameters)的**LineBased**或**FullySpecified**成员中提供的值。 对于基于连接 \_ 消息的 \_ 版本，驱动程序必须保存 MessageBased 中提供的值**Version** ，以及**IO \_ CONNECT \_ 中断 \_ 参数**的**microsoft.sqlserver.replication.replicationobject.connectioncontext**成员。
 
  
-
-
-
 

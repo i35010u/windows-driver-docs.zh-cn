@@ -10,12 +10,12 @@ keywords:
 - 注册表-密钥对象 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa2b11c0202b8ee8ff4a0d34a333487cfd3fce5b
-ms.sourcegitcommit: 63402c9cd10f909e355172037f9bd2d58813303c
+ms.openlocfilehash: 15c325dcbe244b01df8ea6f213fbcfd6f5c3eb60
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82883716"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187726"
 ---
 # <a name="using-a-handle-to-a-registry-key-object"></a>使用注册表项对象的句柄
 
@@ -39,40 +39,40 @@ ms.locfileid: "82883716"
 <tbody>
 <tr class="odd">
 <td><p>检查注册表项的属性，例如其名称或其子项的数目。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey)"><strong>ZwQueryKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey" data-raw-source="[&lt;strong&gt;ZwQueryKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwquerykey)"><strong>ZwQueryKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>遍历密钥的子项，检查每个子项的属性。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey)"><strong>ZwEnumerateKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey" data-raw-source="[&lt;strong&gt;ZwEnumerateKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratekey)"><strong>ZwEnumerateKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>检查键值的属性，包括值的数据。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey)"><strong>ZwQueryValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey" data-raw-source="[&lt;strong&gt;ZwQueryValueKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwqueryvaluekey)"><strong>ZwQueryValueKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>遍历键的值，检查每个值的属性。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey)"><strong>ZwEnumerateValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey" data-raw-source="[&lt;strong&gt;ZwEnumerateValueKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwenumeratevaluekey)"><strong>ZwEnumerateValueKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>设置与某个键相关联的值的数据。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)"><strong>ZwSetValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey" data-raw-source="[&lt;strong&gt;ZwSetValueKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwsetvaluekey)"><strong>ZwSetValueKey</strong></a></p></td>
 </tr>
 <tr class="even">
 <td><p>删除密钥。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey" data-raw-source="[&lt;strong&gt;ZwDeleteKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletekey)"><strong>ZwDeleteKey</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td><p>删除键值。</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey" data-raw-source="[&lt;strong&gt;ZwDeleteValueKey&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey)"><strong>ZwDeleteValueKey</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey" data-raw-source="[&lt;strong&gt;ZwDeleteValueKey&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwdeletevaluekey)"><strong>ZwDeleteValueKey</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-一旦驱动程序完成其操作，它就必须调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)来关闭句柄，即使它已调用**ZwDeleteKey**来删除密钥。 （删除密钥后，其所有打开的句柄将变为无效，但驱动程序仍须关闭句柄。）
+一旦驱动程序完成其操作，它就必须调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose) 来关闭句柄，即使它已调用 **ZwDeleteKey** 来删除密钥。  (一旦某个密钥被删除，该密钥的所有打开句柄都将变为无效，但驱动程序仍须关闭该句柄。 ) 
 
-下面的代码示例演示了如何为名为** \\\\注册表计算机\\Software\\**<em>MyCompany</em>\\*MyApp*的密钥打开句柄，然后检索密钥数据并关闭句柄。
+下面的代码示例演示了如何为名为** \\ 注册表 \\ 计算机 \\ Software \\ **<em>MyCompany</em>MyApp 的密钥打开句柄 \\ *MyApp*，然后检索密钥数据并关闭句柄。
 
 ```cpp
 //
@@ -174,14 +174,9 @@ if (NULL != handleRegKey)
 }
 ```
 
-系统会将密钥更改缓存在内存中，并每隔几秒将它们写入磁盘。 若要强制更改磁盘的密钥，请调用[**ZwFlushKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwflushkey)。
+系统会将密钥更改缓存在内存中，并每隔几秒将它们写入磁盘。 若要强制更改磁盘的密钥，请调用 [**ZwFlushKey**](/windows-hardware/drivers/ddi/wdm/nf-wdm-zwflushkey)。
 
-若要通过更简单的接口操作注册表，驱动程序还可以调用**Rtl*Xxx*registry * Xxx*** 例程。 有关详细信息，请参阅[注册表运行时库例程](registry-run-time-library-routines.md)。
-
- 
+若要通过更简单的接口操作注册表，驱动程序还可以调用 **Rtl*Xxx*registry * Xxx*** 例程。 有关详细信息，请参阅 [注册表运行时库例程](registry-run-time-library-routines.md)。
 
  
-
-
-
 

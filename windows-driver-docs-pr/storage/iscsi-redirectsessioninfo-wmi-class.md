@@ -1,20 +1,20 @@
 ---
-title: ISCSI\_RedirectSessionInfo WMI 类
-description: ISCSI\_RedirectSessionInfo WMI 类
+title: ISCSI \_ REDIRECTSESSIONINFO WMI 类
+description: ISCSI \_ REDIRECTSESSIONINFO WMI 类
 ms.assetid: eb1ec866-2dcd-4099-a24f-ae1d0c702b95
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: cda9df1cb43db76a03016c39fa4a2ffe820087a3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c447af8ed94ca355de963a7c90adf29382883960
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823688"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188519"
 ---
-# <a name="iscsi_redirectsessioninfo-wmi-class"></a>ISCSI\_RedirectSessionInfo WMI 类
+# <a name="iscsi_redirectsessioninfo-wmi-class"></a>ISCSI \_ REDIRECTSESSIONINFO WMI 类
 
 
-ISCSI\_RedirectSessionInfo WMI 类包含 iSCSI 会话的连接集合。 此类在*管理 mof*中定义为：
+ISCSI \_ REDIRECTSESSIONINFO WMI 类包含 iscsi 会话的连接集合。 此类在*管理 mof*中定义为：
 
 ```cpp
 class ISCSI_RedirectSessionInfo
@@ -47,13 +47,7 @@ class ISCSI_RedirectSessionInfo
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它将生成[**ISCSI\_RedirectSessionInfo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_redirectsessioninfo)数据结构。
+当 WMI 工具套件编译上述类定义时，它将生成 [**ISCSI \_ RedirectSessionInfo**](/windows-hardware/drivers/ddi/iscsimgt/ns-iscsimgt-_iscsi_redirectsessioninfo) 数据结构。
 
  
-
- 
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_连接\_DATAFORMAT
-description: 客户端使用 KSPROPERTY\_连接\_DATAFORMAT 属性来设置当前数据格式。
+title: KSPROPERTY \_ 连接 \_ DATAFORMAT
+description: 客户端使用 KSPROPERTY \_ 连接 \_ DATAFORMAT 属性设置当前数据格式。
 ms.assetid: c5f37f1b-7dc6-46d2-aba2-b6c03f07228d
 keywords:
 - KSPROPERTY_CONNECTION_DATAFORMAT 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aa1e35d2ecf6fe5d855f7a3e24c84af6543d404
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 97e87ba6494045e06ed935ec7924c0f645ed2280
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826798"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188376"
 ---
-# <a name="ksproperty_connection_dataformat"></a>KSPROPERTY\_连接\_DATAFORMAT
+# <a name="ksproperty_connection_dataformat"></a>KSPROPERTY \_ 连接 \_ DATAFORMAT
 
 
-客户端使用 KSPROPERTY\_连接\_DATAFORMAT 属性来设置当前数据格式。
+客户端使用 KSPROPERTY \_ 连接 \_ DATAFORMAT 属性设置当前数据格式。
 
 ## <span id="ddk_ksproperty_connection_dataformat_ks"></span><span id="DDK_KSPROPERTY_CONNECTION_DATAFORMAT_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72826798"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,11 +50,11 @@ ms.locfileid: "72826798"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>无</p></td>
-<td><p>“是”</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
+<td><p>否</p></td>
+<td><p>是</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat" data-raw-source="[&lt;strong&gt;KSDATAFORMAT&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)"><strong>KSDATAFORMAT</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -64,11 +64,11 @@ ms.locfileid: "72826798"
 <a name="remarks"></a>备注
 -------
 
-此属性采用[**KSDATAFORMAT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat)结构来指定所请求的数据格式。
+此属性采用 [**KSDATAFORMAT**](/windows-hardware/drivers/ddi/ks/ns-ks-ksdataformat) 结构来指定所请求的数据格式。
 
 如果 KS 筛选器允许客户端重置当前属性，或如果无法以未完全指定的数据格式进行连接，则该筛选器只需支持此属性。
 
-有关 KSPROPERTY\_连接\_DATAFORMAT 属性的详细信息，请参阅[KS 数据格式和](https://docs.microsoft.com/windows-hardware/drivers/stream/ks-data-formats-and-data-ranges) [AVStream 中](https://docs.microsoft.com/windows-hardware/drivers/stream/data-range-intersections-in-avstream)的数据范围交集。
+有关 KSPROPERTY \_ CONNECTION DATAFORMAT 属性的详细信息 \_ ，请参阅 [KS 数据格式和数据范围](./ks-data-formats-and-data-ranges.md) 和 [AVStream 中的数据范围交集](./data-range-intersections-in-avstream.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -81,7 +81,7 @@ ms.locfileid: "72826798"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ks （包含 Ks）</td>
+<td>Ks (包含 Ks .h) </td>
 </tr>
 </tbody>
 </table>
@@ -89,18 +89,11 @@ ms.locfileid: "72826798"
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSSTREAM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)
+[**KSSTREAM \_ 标头**](/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)
 
-[**KSPROPERTY\_连接\_PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md)
+[**KSPROPERTY \_ 连接 \_ PROPOSEDATAFORMAT**](ksproperty-connection-proposedataformat.md)
 
-[**KSPROPERTY\_PIN\_PROPOSEDATAFORMAT**](ksproperty-pin-proposedataformat.md)
-
- 
+[**KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT**](ksproperty-pin-proposedataformat.md)
 
  
-
-
-
-
-
 

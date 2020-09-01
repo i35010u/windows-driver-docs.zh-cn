@@ -8,12 +8,12 @@ keywords:
 - 自动化表 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ea9dd5581d657bd38a0b274c51c01296d2f1bfc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9176f1cbb6d2d58a27c68a1acf5c049ea6365382
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826209"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188423"
 ---
 # <a name="event-handling-in-avstream"></a>AVStream 中的事件处理
 
@@ -21,20 +21,15 @@ ms.locfileid: "72826209"
 
 
 
-AVStream 筛选器和 pin 说明了其支持的属性、事件和方法，这些属性、事件和方法通过在[**KSFILTER\_说明符**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构的**AutomationTable**成员中提供[**KSAUTOMATION\_表**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksautomation_table_)结构或[**KSPIN\_描述符\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构。 有关详细信息，请参阅[AVStream 描述符](avstream-descriptors.md)。
+AVStream 筛选器和 pin 介绍了其支持的属性、事件和方法，这些属性、事件和方法通过在[**KSFILTER \_ 描述符**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)结构或[**KSPIN \_ 描述符 \_ EX**](/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)结构的**AutomationTable**成员中提供[**KSAUTOMATION \_ 表**](/windows-hardware/drivers/ddi/ks/ns-ks-ksautomation_table_)结构来提供支持。 有关详细信息，请参阅 [AVStream 描述符](avstream-descriptors.md)。
 
-为支持事件，AVStream 微型驱动程序提供了一个 KSEVENT 表中的[ **\_集**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_set)结构的数组。 每个 KSEVENT\_集结构包含一组[**KSEVENT\_项**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_item)结构。 每个 KSEVENT\_项结构都说明了微型驱动程序如何支持特定事件。
+为了支持事件，AVStream 微型驱动程序在自动化表中提供了一个 [**KSEVENT \_ 集**](/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_set) 结构的数组。 每个 KSEVENT \_ 集结构都包含 [**KSEVENT \_ 项**](/windows-hardware/drivers/ddi/ks/ns-ks-ksevent_item) 结构的数组。 每个 KSEVENT \_ 项结构都说明了微型驱动程序如何支持特定事件。
 
-微型驱动程序可以通过在 KSEVENT\_项结构中提供[*AVStrMiniAddEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksaddevent)和[*AVStrMiniRemoveEvent*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksremoveevent)处理程序来自定义事件行为。
+微型驱动程序可以通过在 KSEVENT 项结构中提供 [*AVStrMiniAddEvent*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnksaddevent) 和 [*AVStrMiniRemoveEvent*](/windows-hardware/drivers/ddi/ks/nc-ks-pfnksremoveevent) 处理程序来自定义事件行为 \_ 。
 
-当 AVStream 收到事件 enable 请求时，它会生成一个 KSEVENT\_条目结构。 如果微型驱动程序提供了*AVStrAddEvent*处理程序，AVStream 将在调用*AVSTRADDEVENT*时向 KSEVENT\_条目结构传递一个指针。
+当 AVStream 收到事件 enable 请求时，它将生成 KSEVENT \_ 条目结构。 如果微型驱动程序提供了 *AVStrAddEvent* 处理程序，AVStream \_ 将在对 *AVStrAddEvent*的调用中传递一个指向 KSEVENT 条目结构的指针。
 
-如果未提供*AVStrAddEvent*处理程序，则默认情况下 AVStream 会将事件添加到对象列表中。 你的微型驱动程序不会接收[**KSEVENT\_入口**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksevent_entry)指针。 微型驱动程序可以通过调用[**KsFilterGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksfiltergenerateevents)或[**KsPinGenerateEvents**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingenerateevents)触发事件。
-
- 
+如果未提供 *AVStrAddEvent* 处理程序，则默认情况下 AVStream 会将事件添加到对象列表中。 你的微型驱动程序不会接收 [**KSEVENT \_ 条目**](/windows-hardware/drivers/ddi/ks/ns-ks-_ksevent_entry) 指针。 微型驱动程序可以通过调用 [**KsFilterGenerateEvents**](/windows-hardware/drivers/ddi/ks/nf-ks-ksfiltergenerateevents) 或 [**KsPinGenerateEvents**](/windows-hardware/drivers/ddi/ks/nf-ks-kspingenerateevents)触发事件。
 
  
-
-
-
 

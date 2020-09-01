@@ -9,12 +9,12 @@ keywords:
 - 太空 WDK，请参阅内存 WDK
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ba2e0c5e31b9cc0dd739792343ff2caa810238
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e30e95b83fed02c3545efb193053bc513985f375
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827875"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187931"
 ---
 # <a name="memory-management-for-windows-drivers"></a>Windows 驱动程序的内存管理
 
@@ -24,13 +24,13 @@ ms.locfileid: "72827875"
 
 
 
-*内存管理器*是在 Windows 中执行内存管理操作的内核组件。 有关详细信息，请参阅[Windows 内核模式内存管理器](windows-kernel-mode-memory-manager.md)。
+*内存管理器*是在 Windows 中执行内存管理操作的内核组件。 有关详细信息，请参阅 [Windows 内核模式内存管理器](windows-kernel-mode-memory-manager.md)。
 
-内存管理器实现了多个内核模式支持例程，驱动程序调用来分配和管理内存。 有关详细信息，请参阅[内存分配和缓冲区管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel/#memory-allocation-and-buffer-management)。
+内存管理器实现了多个内核模式支持例程，驱动程序调用来分配和管理内存。 有关详细信息，请参阅 [内存分配和缓冲区管理](/windows-hardware/drivers/ddi/_kernel/#memory-allocation-and-buffer-management)。
 
-内核模式驱动程序的内存管理功能不同于用户模式应用程序的内存管理功能。 有关应用程序的内存管理的详细信息，请参阅[内存管理](https://docs.microsoft.com/windows/desktop/Memory/memory-management)。
+内核模式驱动程序的内存管理功能不同于用户模式应用程序的内存管理功能。 有关应用程序的内存管理的详细信息，请参阅 [内存管理](/windows/desktop/Memory/memory-management)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [Windows 内存空间概述](overview-of-windows-memory-space.md)
@@ -38,18 +38,13 @@ ms.locfileid: "72827875"
 -   [映射寄存器](map-registers.md)
 -   [将总线相对地址映射到虚拟地址](mapping-bus-relative-addresses-to-virtual-addresses.md)
 -   [使用内核堆栈](using-the-kernel-stack.md)
--   [使用后备链表列表](using-lookaside-lists.md)
+-   [使用后备列表](using-lookaside-lists.md)
 -   [使驱动程序可分页](making-drivers-pageable.md)
--   [访问只读系统内存](accessing-read-only-system-memory.md)
+-   [访问只读的系统内存](accessing-read-only-system-memory.md)
 -   [访问用户空间内存](accessing-user-space-memory.md)
--   [非执行（NX）非分页池](no-execute-nonpaged-pool.md)
+-   [非执行 (NX) 非分页缓冲池](no-execute-nonpaged-pool.md)
 -   [节对象和视图](section-objects-and-views.md)
--   [使用 MDLs](using-mdls.md)
+-   [使用 MDL](using-mdls.md)
 
  
-
- 
-
-
-
 

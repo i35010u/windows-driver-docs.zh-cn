@@ -1,6 +1,6 @@
 ---
-title: AVC\_函数\_集\_CONNECTINFO
-description: AVC\_函数\_集\_CONNECTINFO
+title: AVC \_ 函数 \_ 集 \_ CONNECTINFO
+description: AVC \_ 函数 \_ 集 \_ CONNECTINFO
 ms.assetid: e97b525a-2236-44a9-9d49-dc0df760f21e
 keywords:
 - AVC_FUNCTION_SET_CONNECTINFO 流媒体设备
@@ -12,24 +12,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f3d40afa90e1a607b246731dcd1a6d67095c85
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1ae7fb93aa19cb193de56d0cf57faa1a115b4ff9
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845070"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187475"
 ---
-# <a name="avc_function_set_connectinfo"></a>AVC\_函数\_集\_CONNECTINFO
+# <a name="avc_function_set_connectinfo"></a>AVC \_ 函数 \_ 集 \_ CONNECTINFO
 
 
 ## <span id="ddk_avc_function_set_connectinfo_ks"></span><span id="DDK_AVC_FUNCTION_SET_CONNECTINFO_KS"></span>
 
 
-AVC\_函数\_集\_连接\_信息函数代码为每个 pin ID 设置 AVCCONNECTINFO 结构（从零开始）。
+AVC \_ 函数 \_ 集 \_ 连接 \_ 信息函数代码为每个 pin ID 设置 AVCCONNECTINFO 结构， (从零开始) 偏移量。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-如果成功，AV/C 协议驱动程序会将**Irp&gt;IoStatus**设置为 STATUS\_SUCCESS。
+如果成功，AV/C 协议驱动程序会将 **Irp &gt; IoStatus** 设置为状态 " \_ 成功"。
 
 可能的其他返回值包括：
 
@@ -41,7 +41,7 @@ AVC\_函数\_集\_连接\_信息函数代码为每个 pin ID 设置 AVCCONNECTIN
 <thead>
 <tr class="header">
 <th>返回值</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -51,10 +51,10 @@ AVC\_函数\_集\_连接\_信息函数代码为每个 pin ID 设置 AVCCONNECTIN
 </tr>
 <tr class="even">
 <td><p>STATUS_REQUEST_ABORTED</p></td>
-<td><p>当 IRP 完成状态为 "STATUS_REQUEST_ABORTED" 时立即中止。 这表明设备已被删除或在1394总线上不再可用。</p></td>
+<td><p>当 IRP 完成状态为 STATUS_REQUEST_ABORTED 时立即中止。 这表明设备已被删除或在1394总线上不再可用。</p></td>
 </tr>
 <tr class="odd">
-<td><p>STATUS_*</p></td>
+<td><p>STATUS_ *</p></td>
 <td><p>任何其他返回代码指示出现超出 AV/C 协议范围的错误或警告。</p></td>
 </tr>
 </tbody>
@@ -62,9 +62,9 @@ AVC\_函数\_集\_连接\_信息函数代码为每个 pin ID 设置 AVCCONNECTIN
 
  
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-此函数使用 AVC\_MULTIFUNC\_IRB 结构的**SetConnectInfo**成员，如下所示。
+此函数使用 AVC **SetConnectInfo** \_ MULTIFUNC IRB 结构的 SetConnectInfo 成员 \_ ，如下所示。
 
 ```cpp
 typedef struct _AVC_MULTIFUNC_IRB {
@@ -83,33 +83,27 @@ typedef struct _AVC_MULTIFUNC_IRB {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在*avc*中声明。 包括*avc*。
+**标头：** 在 *avc*中声明。 包括 *avc*。
 
-### <a name="avc_multifunc_irb-input"></a>AVC\_MULTIFUNC\_IRB 输入
+### <a name="avc_multifunc_irb-input"></a>AVC \_ MULTIFUNC \_ IRB 输入
 
-**常见问题解答**  
-必须将此成员的**函数**submember 设置为**AVC\_函数\_** 通过 AVC\_函数枚举设置\_CONNECTINFO。
+**通用**  
+此成员的 **函数** submember 必须设置为 AVC 函数枚举中的 **AVC \_ 函数 \_ set \_ CONNECTINFO** \_ 。
 
 <span id="SetConnectInfo"></span><span id="setconnectinfo"></span><span id="SETCONNECTINFO"></span>**SetConnectInfo**  
 指定 AV/C 设备的连接信息。
 
-*Avc*的虚拟实例不支持此函数代码。
+*avc.sys*的虚拟实例不支持此函数代码。
 
-如果子单位驱动程序提供了交叉处理程序，则它必须使用此函数。 AVCCONNECTINFO 结构（包含在 AVC\_集\_CONNECTINFO 结构中）派生自 AVCPRECONNECTINFO 结构，该结构追加到传递给交集处理程序的数据范围。
+如果子单位驱动程序提供了交叉处理程序，则它必须使用此函数。 CONNECTINFO 结构中包含的 AVCCONNECTINFO 结构 (\_ \_) 派生自 AVCPRECONNECTINFO 结构，该结构追加到传递给交集处理程序的数据范围。
 
-确定数据区域兼容后，相交处理程序会生成 AVCCONNECTINFO 结构。 此结构将追加到生成的数据格式，并且还将发送到*avc*。 如果以后再传递建议的数据格式，则不重要，因为*avc*仅缓存一个 AVCCONNECTINFO 结构。
+确定数据区域兼容后，相交处理程序会生成 AVCCONNECTINFO 结构。 此结构将追加到生成的数据格式，并且还将发送到 *avc.sys*。 如果以后再传递建议的数据格式，则不重要，因为 *avc.sys* 仅缓存一个 AVCCONNECTINFO 结构。
 
-此名称必须以 IRQL = 被动\_级别进行调用。
+此名称必须以 IRQL = 被动 \_ 级别调用。
 
 ### <a name="see-also"></a>另请参阅
 
-[**AVC\_MULTIFUNC\_IRB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)， [**AVC\_SETCONNECT\_信息**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avc_setconnect_info)， [**AVCCONNECTINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)， [**AVC\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)， [**AV/C 交集处理程序**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avc/nc-avc-pfnavcintersecthandler)
+[**AVC \_MULTIFUNC \_ IRB**](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_multifunc_irb)， [**AVC \_ SETCONNECT \_ INFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avc_setconnect_info)， [**AVCCONNECTINFO**](/windows-hardware/drivers/ddi/avc/ns-avc-_avcconnectinfo)， [**AVC \_ FUNCTION**](/windows-hardware/drivers/ddi/avc/ne-avc-_tagavc_function)， [**AV/C 交集处理程序**](/windows-hardware/drivers/ddi/avc/nc-avc-pfnavcintersecthandler)
 
  
-
- 
-
-
-
-
 

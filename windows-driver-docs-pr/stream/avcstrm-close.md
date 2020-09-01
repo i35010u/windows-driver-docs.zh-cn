@@ -1,6 +1,6 @@
 ---
-title: AVCSTRM\_关闭
-description: AVCSTRM\_关闭
+title: AVCSTRM \_ 关闭
+description: AVCSTRM \_ 关闭
 ms.assetid: 2487ba06-3577-409e-ba82-f9a0d3453c5d
 keywords:
 - AVCSTRM_CLOSE 流媒体设备
@@ -12,24 +12,24 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a04a8b85743348c4f882b46a9c02ce323726050
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6a5c80094e5c4f320d1c81cee2ea34d22289f4d4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845032"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187433"
 ---
-# <a name="avcstrm_close"></a>AVCSTRM\_关闭
+# <a name="avcstrm_close"></a>AVCSTRM \_ 关闭
 
 
 ## <span id="ddk_avcstrm_close_ks"></span><span id="DDK_AVCSTRM_CLOSE_KS"></span>
 
 
-**AVCSTRM\_CLOSE**函数代码将关闭指定的流，并释放在 AVCSTRM 中分配的所有资源\_打开。
+**AVCSTRM \_ CLOSE**函数代码关闭指定的流，并释放在 AVCSTRM 中分配的所有资源 \_ 。
 
-### <a name="io-status-block"></a>I/O 状态块
+### <a name="io-status-block"></a>I/o 状态块
 
-如果成功， *avcstrm*会将**Irp&gt;IOSTATUS**设置为 STATUS，状态\_SUCCESS。
+如果成功， *avcstrm.sys* 将 **Irp- &gt; IoStatus** 设置为状态 " \_ 成功"。
 
 可能的错误返回值包括：
 
@@ -47,7 +47,7 @@ ms.locfileid: "72845032"
 <tbody>
 <tr class="odd">
 <td><p>STATUS_DEVICE_REMOVED</p></td>
-<td><p>与<strong>AVCSTRM_READ</strong>操作相对应的设备不再存在。</p></td>
+<td><p>与 <strong>AVCSTRM_READ</strong> 操作相对应的设备不再存在。</p></td>
 </tr>
 <tr class="even">
 <td><p>STATUS_CANCELLED</p></td>
@@ -70,9 +70,9 @@ ms.locfileid: "72845032"
 
  
 
-### <a name="comments"></a>备注
+### <a name="comments"></a>注释
 
-此函数使用 AVC\_流\_请求\_块结构中的**CommandData**联合的**AVCStreamContext**成员，如下所示。
+此函数使用 AVC 流请求块结构中的**CommandData**联合的**AVCStreamContext**成员 \_ ，如下 \_ \_ 所示。
 
 ```cpp
 typedef struct _AVC_STREAM_REQUEST_BLOCK {
@@ -89,15 +89,15 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
 
 ### <a name="requirements"></a>要求
 
-**标头：** 在*avcstrm*中声明。 包括*avcstrm*。
+**标头：** 在 *avcstrm*中声明。 包括 *avcstrm*。
 
-### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC\_STREAM\_请求\_块输入
+### <a name="span-idavc_stream_request_block_inputspanspan-idavc_stream_request_block_inputspanavc_stream_request_block-input"></a><span id="avc_stream_request_block_input"></span><span id="AVC_STREAM_REQUEST_BLOCK_INPUT"></span>AVC \_ 流 \_ 请求 \_ 块输入
 
 <span id="SizeOfThisBlock__Version_and_Function"></span><span id="sizeofthisblock__version_and_function"></span><span id="SIZEOFTHISBLOCK__VERSION_AND_FUNCTION"></span>**SizeOfThisBlock、Version 和 Function**  
-使用[**INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化这些成员。 在宏的 Request 参数中传递**AVCSTRM\_CLOSE** 。
+使用 [**INIT \_ AVCSTRM \_ 标头**](/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header) 宏初始化这些成员。 在宏的 Request 参数中传递 **AVCSTRM \_ CLOSE** 。
 
 <span id="AVCStreamContext"></span><span id="avcstreamcontext"></span><span id="AVCSTREAMCONTEXT"></span>**AVCStreamContext**  
-指定要关闭的流的流上下文（句柄）。 如果**AVCSTRM\_CLOSE**成功返回，则此值不再有效。
+指定流上下文 (处理要关闭的流) 。 如果 **AVCSTRM \_ CLOSE** 成功返回，则此值不再有效。
 
 下面是如何指定要关闭的流的示例：
 
@@ -116,23 +116,17 @@ typedef struct _AVC_STREAM_REQUEST_BLOCK {
             );
 ```
 
-子单位驱动程序必须先分配 IRP，并[ **\_流\_请求\_块**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block)结构。 接下来，它应使用[**INIT\_AVCSTRM\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)宏来初始化 AVC\_STREAM\_请求\_块结构，将**AVCSTRM\_** 作为 request 参数传递到宏。 接下来，子单位驱动程序将**AVCStreamContext**成员设置为要关闭的流。
+子单元驱动程序必须首先分配 IRP 和 [**AVC \_ 流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block) 结构。 接下来，它应使用 [**INIT \_ AVCSTRM \_ 标头**](/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header) 宏来初始化 AVC \_ 流 \_ 请求 \_ 块结构，并 **将 \_ AVCSTRM** 作为 REQUEST 参数传递到宏。 接下来，子单位驱动程序将 **AVCStreamContext** 成员设置为要关闭的流。
 
-若要发送此请求，子组会将[**irp\_MJ 提交\_内部\_设备\_控制**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)irp，并将 irp 集的**IoControlCode**成员设置为[**IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class)和**Argument1**IRP 的成员设置为 AVC\_STREAM\_请求\_块结构，用于描述要发生的关闭操作。
+若要发送此请求，子组会 [**将 \_ irp \_ MJ \_ 内部设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md) irp，并将 irp 集的 **IoControlCode** 成员提交给 [**IOCTL \_ AVCSTRM \_ 类**](/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class) ，并将 irp 集的 **Argument1** 成员提交给 \_ \_ \_ 描述要发生的关闭操作的 AVC 流请求块结构。
 
-子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在*avcstrm*中运行挂起的操作。
+子单位驱动程序可能希望此命令同步完成。 结果会立即返回，而不会在 *avcstrm.sys*中挂起操作。
 
-必须在 IRQL = 被动\_级别调用此函数代码。
+必须在 IRQL = 被动级别调用此函数代码 \_ 。
 
 ### <a name="see-also"></a>另请参阅
 
-[**AVC\_STREAM\_请求\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block)， [**INIT\_AVCSTRM\_HEADER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)， [**IRP\_MJ\_内部\_设备\_控件**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)， [**IOCTL\_AVCSTRM\_类**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class)， [**AVCSTRM\_函数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/avcstrm/ne-avcstrm-_avcstrm_function)
+[**AVC \_流 \_ 请求 \_ 块**](/windows-hardware/drivers/ddi/avcstrm/ns-avcstrm-_avc_stream_request_block)， [**INIT \_ AVCSTRM \_ 标头**](/windows-hardware/drivers/ddi/avcstrm/nf-avcstrm-init_avcstrm_header)， [**IRP \_ MJ \_ 内部 \_ 设备 \_ 控制**](../kernel/irp-mj-internal-device-control.md)， [**IOCTL \_ AVCSTRM \_ 类**](/windows-hardware/drivers/ddi/avcstrm/ni-avcstrm-ioctl_avcstrm_class)， [**AVCSTRM \_ 函数**](/windows-hardware/drivers/ddi/avcstrm/ne-avcstrm-_avcstrm_function)
 
  
-
- 
-
-
-
-
 

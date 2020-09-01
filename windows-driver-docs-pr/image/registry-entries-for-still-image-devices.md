@@ -4,12 +4,12 @@ description: 静态图像设备的注册表项
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6534f3acdd55c0f4d7fa029b4367bb3344ce6f4
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 8552495d021554d2ee293c1e2128a43b21978dff
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242952"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188893"
 ---
 # <a name="registry-entries-for-still-image-devices"></a>静态图像设备的注册表项
 
@@ -19,9 +19,9 @@ ms.locfileid: "79242952"
 
 Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应商提供的组件修改。
 
-### <a href="" id="ddk-vendor-modifiable-registry-values-si"></a>供应商可修改的注册表值
+### <a name="vendor-modifiable-registry-values"></a><a href="" id="ddk-vendor-modifiable-registry-values-si"></a>供应商可修改的注册表值
 
-下表列出了预定义的注册表值名称及其含义。 常量在*stireg*中定义。 如果设备支持静止图像[推送模式](creating-push-model-aware-applications.md)，则必须将该值分配给 "TwainDS"。 其他名称的值是可选的。
+下表列出了预定义的注册表值名称及其含义。 常量在 *stireg*中定义。 如果设备支持静止图像 [推送模式](creating-push-model-aware-applications.md)，则必须将该值分配给 "TwainDS"。 其他名称的值是可选的。
 
 <table>
 <colgroup>
@@ -31,9 +31,9 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 </colgroup>
 <thead>
 <tr class="header">
-<th>Constant</th>
+<th>返回的常量</th>
 <th>值名称字符串</th>
-<th>Definition</th>
+<th>定义</th>
 </tr>
 </thead>
 <tbody>
@@ -62,7 +62,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 
  
 
-**StillImage** COM 接口的客户端应调用[**IStillImage：： SetDeviceValue**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543801(v=vs.85))和[**IStillImage：： GetDeviceValue**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543786(v=vs.85))以引用注册表。 静止图像微型驱动程序可以调用 Win32 注册表 API，并指定微型驱动程序的[**IStiUSD：： Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)方法接收的注册表项。 还可以从[INF 文件](inf-files-for-still-image-devices.md)中设置预定义注册表项的值。
+**StillImage** COM 接口的客户端应调用[**IStillImage：： SetDeviceValue**](/previous-versions/windows/hardware/drivers/ff543801(v=vs.85))和[**IStillImage：： GetDeviceValue**](/previous-versions/windows/hardware/drivers/ff543786(v=vs.85))以引用注册表。 静止图像微型驱动程序可以调用 Win32 注册表 API，并指定微型驱动程序的 [**IStiUSD：： Initialize**](/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize) 方法接收的注册表项。 还可以从 [INF 文件](inf-files-for-still-image-devices.md)中设置预定义注册表项的值。
 
 ### <a name="customized-registry-values"></a>自定义注册表值
 
@@ -70,7 +70,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 
 此外，还可以通过包含**DeviceData**项在[INF 文件](inf-files-for-still-image-devices.md)中设置自定义注册表项的值。
 
-### <a href="" id="ddk-non-modifiable-registry-entries-si"></a>不可更改的注册表项
+### <a name="nonmodifiable-registry-entries"></a><a href="" id="ddk-non-modifiable-registry-entries-si"></a>不可更改的注册表项
 
 下表列出了不应由供应商软件修改的注册表项。
 
@@ -82,7 +82,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 <thead>
 <tr class="header">
 <th>注册表项</th>
-<th>Definition</th>
+<th>定义</th>
 </tr>
 </thead>
 <tbody>
@@ -92,7 +92,7 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
 <p>0x1-信息性消息</p>
 <p>0x2-警告消息</p>
 <p>0x4-错误消息</p>
-<p>请参阅<a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85)" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85))"><strong>IStillImage：： WriteToErrorLog</strong></a>。</p></td>
+<p>请参阅 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff543807(v=vs.85)" data-raw-source="[&lt;strong&gt;IStillImage::WriteToErrorLog&lt;/strong&gt;](/previous-versions/windows/hardware/drivers/ff543807(v=vs.85))"><strong>IStillImage：： WriteToErrorLog</strong></a>。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>HKLM\SYSTEM\CurrentControlSet\Control\StillImage\Logging\STIMON</strong></p></td>
@@ -119,9 +119,4 @@ Microsoft STI 利用多个注册表项，其中一些注册表项可以由供应
  
 
  
-
- 
-
-
-
 

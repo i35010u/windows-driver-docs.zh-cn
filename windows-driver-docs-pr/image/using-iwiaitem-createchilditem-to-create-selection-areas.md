@@ -1,15 +1,15 @@
 ---
-title: 使用 IWiaItem CreateChildItem 创建所选内容区域
-description: 使用 IWiaItem CreateChildItem 创建所选内容区域
+title: 使用 IWiaItem CreateChildItem 创建选择区域
+description: 使用 IWiaItem CreateChildItem 创建选择区域
 ms.assetid: c430d15b-51e9-4419-9cdb-904a0f5ef09b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fe63deabf74acb1d3fb1d6140e7dbbbfc44afdb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd1c2baeab21639948714c781145f51d2e1d35c3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371278"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189139"
 ---
 # <a name="using-iwiaitemcreatechilditem-to-create-selection-areas"></a>使用 IWiaItem::CreateChildItem 创建选择区域
 
@@ -17,20 +17,15 @@ ms.locfileid: "67371278"
 
 
 
-WIA 应用程序应阅读[ **WIA\_IPS\_支持\_子\_项\_创建**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-supports-child-item-creation)属性来确定是否扫描项电影支持创建的子项目。 电影扫描程序项可以包含在该项目中的子项目 （即，帧） 树*不能*被删除。 应用程序可以删除与标记的 WIA 项[ **WIA\_IPA\_访问\_RIGHTS** ](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-access-rights)的设置 (WIA\_PROP\_读取 |WIA\_项\_编写 |WIA\_项\_可以\_BE\_已删除)。
+WIA 应用程序应阅读 " [**wia \_ IPS \_ 支持 \_ 子 \_ 项目 \_ 创建**](./wia-ips-supports-child-item-creation.md) " 属性，以确定胶卷扫描项是否支持创建子项。 胶片扫描器项可以包含子项 (也就是说，项树中 *无法* 删除的帧) 。 应用程序可以删除标记为 (WIA 内容读取的 [**wia \_ IPA \_ 访问 \_ 权限**](./wia-ipa-access-rights.md) 设置的 wia 项 \_ \_ |WIA \_ 项 \_ 写入 |\_ \_ 可以 \_ \_) 删除 WIA 项。
 
-### <a name="creating-dynamic-film-items"></a>创建动态电影项
+### <a name="creating-dynamic-film-items"></a>创建动态胶片项
 
-WIA 应用程序调用**IWiaItem::CreateChildItem** （Microsoft Windows SDK 文档中所述） 来创建新的 WIA 应用程序项目 （或帧） 下的电影胶片扫描程序项。 WIA 驱动程序应初始化所需的 WIA 属性并 WIA 应用程序应设置的范围设置和任何其他属性来配置新帧。 有关所需的 WIA 属性的详细信息，请参阅[电影扫描程序所必需的 WIA 项属性](required-wia-item-properties-for-film-scanners.md)。
+WIA 应用程序会调用 Microsoft Windows SDK 文档) 中所述的 **IWiaItem：： CreateChildItem** (来创建位于 "胶片扫描器" 项下的新 WIA 应用程序项 (或帧) 。 WIA 驱动程序应初始化必需的 WIA 属性，WIA 应用程序应设置范围设置和任何其他属性来配置新帧。 有关所需的 WIA 属性的详细信息，请参阅 [胶卷扫描器的必需 Wia 项目属性](required-wia-item-properties-for-film-scanners.md)。
 
-**请注意**   WIA 电影项必须只有一个级别的 WIA 子项目。 电影项可以被设置为一个文件夹中，但文件夹项*不能*电影扫描程序项下创建。
-
- 
+**注意**   WIA 胶卷项必须只有一级子项目。 胶片项可以设置为文件夹，但 *不能* 在 "胶片扫描器" 项下创建文件夹项。
 
  
 
  
-
-
-
 

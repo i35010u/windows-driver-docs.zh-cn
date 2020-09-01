@@ -9,12 +9,12 @@ keywords:
 - 导出 Guid
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c43743ee92cc015deb36be6761ad8bdfad797f54
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bc4012ba8f0f05733a037cc4bf1f9d6689fff525
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377117"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188585"
 ---
 # <a name="defining-and-exporting-new-guids"></a>定义和导出新 GUID
 
@@ -22,21 +22,21 @@ ms.locfileid: "67377117"
 
 
 
-定义新驱动程序将导出到其他系统组件、 驱动程序或应用程序的项的 GUID。 例如，其中一个其设备上定义新的 GUID 的自定义的即插即用事件。 若要定义和导出新的 GUID，必须执行以下操作：
+为驱动程序导出到其他系统组件、驱动程序或应用程序的项目定义新的 GUID。 例如，在其某个设备上为自定义 PnP 事件定义新的 GUID。 若要定义和导出新的 GUID，必须执行以下操作：
 
 1.  选择 GUID 的符号名称。
 
-    选择用于表示 GUID 的用途的名称。 例如，操作系统使用此类名称作为 GUID\_总线\_类型\_PCI 和 PARPORT\_WMI\_分配\_免费\_计数\_GUID。
+    选择表示 GUID 用途的名称。 例如，操作系统使用 GUID \_ 总线 \_ 类型为 \_ PCI 和 PARPORT 的 \_ \_ \_ \_ 名称作为 guid \_ 。
 
-2.  为使用 Uuidgen.exe 或 Guidgen.exe 的 GUID 生成一个值。 在安装 Microsoft Windows SDK 时，会自动安装 Uuidgen.exe。 Guidgen.exe 是可从[Microsoft Exchange Server GUID 生成器](https://go.microsoft.com/fwlink/p/?linkid=121586)下载页。
+2.  使用 Uuidgen.exe 或 Guidgen.exe 生成 GUID 的值。 安装 Microsoft Windows SDK 时，将自动安装 Uuidgen.exe。 可以从 [Microsoft Exchange SERVER GUID 生成器](https://go.microsoft.com/fwlink/p/?linkid=121586) 下载页获取 Guidgen.exe。
 
-    这些实用程序生成一个唯一的、 已格式化的字符串，表示为 128 位值。 "-S"开关 Uuidgen.exe 输出格式化为 C 结构的 GUID。
+    这些实用工具生成一个唯一的格式化字符串，该字符串表示128位值。 Uuidgen.exe 上的 "-s" 开关输出格式为 C 结构的 GUID。
 
-3.  在相应的头文件中定义的 GUID。
+3.  在适当的标头文件中定义 GUID。
 
-    使用**定义\_GUID**宏 (在中定义 Guiddef.h) 以将其值与相关联的 GUID 符号名称 （请参阅示例 1）。
+    使用在 Guiddef 中定义的 " **定义 \_ guid** 宏" () 将 GUID 符号名称与它的值相关联 (参见 Example 1) 。
 
-    **示例 1:仅限 GUID 的标头文件中定义的 Guid**
+    **示例1：在仅 GUID 头文件中定义 Guid**
 
     ```cpp
     :
@@ -49,9 +49,9 @@ ms.locfileid: "67377117"
     :
     ```
 
-    如果在包含非 GUID 定义语句的标头文件中定义 GUID，则必须采取额外的步骤来确保 GUID 实例化包含头文件的驱动程序中。 **定义\_GUID**语句必须出现任何外部 **\#ifdef**避免多次包含的语句。 否则，如果标头文件包含在预编译标头，GUID 不是使用标头文件的驱动程序中实例化。 混合标头文件中的示例 GUID 定义，请参阅示例 2。
+    如果 GUID 是在包含 GUID 定义以外的语句的标头文件中定义的，则必须采取额外的步骤来确保 GUID 在包含头文件的驱动程序中实例化。 **DEFINE \_ GUID**语句必须出现在防止多次包含的任何** \# ifdef**语句的外部。 否则，如果标头文件包含在预编译标头中，则不会在使用标头文件的驱动程序中实例化该 GUID。 有关混合标头文件中的 GUID 定义示例，请参见示例2。
 
-    **示例 2:在混合的标头文件中定义的 Guid**
+    **示例2：在混合头文件中定义 Guid**
 
     ```cpp
     #ifndef _NTDDSER_    // this ex. is from a serial driver .h file
@@ -80,21 +80,16 @@ ms.locfileid: "67377117"
     #endif  // DEFINE_GUID
     ```
 
-    将防止多个包含的语句外部的 GUID 定义不会导致多个实例的 guid 驱动程序由于**定义\_GUID**将 GUID 定义为外部\_C 变量。 允许对外部变量的多个声明，只要的类型匹配。
+    将 guid 定义置于防止多次包含的语句外不会导致驱动程序中 GUID 的多个实例，因为 **定义 \_ GUID** 将 GUID 定义为 EXTERN \_ C 变量。 只要类型匹配，就允许使用外部变量的多个声明。
 
-4.  当创建新的 GUID[设备安装程序类](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)或[设备接口类](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)，适用以下规则：
+4.  为新的 [设备安装程序类](../install/overview-of-device-setup-classes.md) 或 [设备接口类](../install/overview-of-device-interface-classes.md)创建 GUID 时，下列规则适用：
     -   不要使用单个 GUID 来标识设备安装程序类和设备接口类。
 
-    -   在创建时与 GUID 关联的符号名称，使用以下约定：
+    -   创建要与 GUID 关联的符号名称时，请使用以下约定：
 
-        对于设备安装程序类，使用格式 GUID\_DEVCLASS\_*XXX*。
+        对于设备安装程序类，请使用格式 GUID \_ DEVCLASS \_ *XXX*。
 
-        对于设备接口的类，使用 GUID 的格式\_DEVINTERFACE\_*XXX*。
-
- 
+        对于设备接口类，请使用格式 GUID \_ DEVINTERFACE \_ *XXX*。
 
  
-
-
-
 

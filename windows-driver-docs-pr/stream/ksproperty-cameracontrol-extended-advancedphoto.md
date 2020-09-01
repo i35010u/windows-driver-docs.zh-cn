@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_扩展\_ADVANCEDPHOTO
-description: KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上的相片 HDR、flash no flash 和超高亮度合成。 这是仅适用于照片 pin 的 pin 级别控制。
+title: KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ADVANCEDPHOTO
+description: KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ ADVANCEDPHOTO 用于控制驱动程序上的相片 HDR、flash no flash 和超高的低亮度。 这是仅适用于照片 pin 的 pin 级别控制。
 ms.assetid: 88C14C9E-8675-42BF-A606-64232ABD4FD1
 keywords:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_ADVANCEDPHOTO 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c33639634aa3be42a932e01fd0b7911e2bc0944
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fca0d8617d73da00270eea84c7e7949b34cb310f
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843245"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188763"
 ---
-# <a name="ksproperty_cameracontrol_extended_advancedphoto"></a>KSPROPERTY\_CAMERACONTROL\_扩展\_ADVANCEDPHOTO
+# <a name="ksproperty_cameracontrol_extended_advancedphoto"></a>KSPROPERTY \_ CAMERACONTROL \_ 扩展 \_ ADVANCEDPHOTO
 
 
-KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上的相片 HDR、flash no flash 和超高亮度合成。 这是仅适用于照片 pin 的 pin 级别控制。
+KSPROPERTY \_ CAMERACONTROL \_ EXTENDED \_ ADVANCEDPHOTO 用于控制驱动程序上的相片 HDR、flash no flash 和超高的低亮度。 这是仅适用于照片 pin 的 pin 级别控制。
 
 ## <a name="usage-summary-table"></a>使用情况摘要表
 
@@ -37,15 +37,15 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 </colgroup>
 <thead>
 <tr class="header">
-<th>范围</th>
-<th>控件</th>
-<th>在任务栏的搜索框中键入</th>
+<th>作用域</th>
+<th>控制</th>
+<th>类型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>版本 1</p></td>
-<td><p>大头针</p></td>
+<td><p>Pin</p></td>
 <td><p>同步</p></td>
 </tr>
 </tbody>
@@ -53,7 +53,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 
  
 
-下面是可以放置在 KSCAMERA\_EXTENDEDPROP\_标头中的标志。用于控制照片 HDR、闪光无闪光和超高光源合成的标志字段。 默认值应为 KSCAMERA\_EXTENDEDPROP\_ADVANCEDPHOTO\_OFF。
+下面是可放置在 KSCAMERA \_ EXTENDEDPROP 标头中的标志 \_ 。用于控制照片 HDR、闪光无闪光和超高光源合成的标志字段。 默认值应为 KSCAMERA \_ EXTENDEDPROP \_ ADVANCEDPHOTO \_ OFF。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_OFF             0x0000000000000000
@@ -63,11 +63,11 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 #define KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ULTRALOWLIGHT   0x0000000000000008
 ```
 
-如果驱动程序支持此控件，则它必须支持 KSCAMERA\_EXTENDEDPROP\_ADVANCEDPHOTO\_OFF。
+如果驱动程序支持此控件，则它必须支持 KSCAMERA \_ EXTENDEDPROP \_ ADVANCEDPHOTO \_ 。
 
 如果驱动程序不支持任何高级照片捕获，驱动程序不应实现此控制。
 
-当照片 pin KSSTATE\_运行状态时，此控件的设置调用不起作用。 如果照片 pin 处于运行状态并且返回状态\_无效\_设备\_状态，则驱动程序应拒绝收到的设置呼叫。 在 GET 调用中，驱动程序应返回 "标志" 字段中的当前设置。
+当照片 pin KSSTATE 运行状态时，此控件的设置调用不起作用 \_ 。 如果照片锁定处于运行状态并且返回状态 " \_ 无效设备状态"，则驱动程序应拒绝收到的设置呼叫 \_ \_ 。 在 GET 调用中，驱动程序应返回 "标志" 字段中的当前设置。
 
 下表介绍了标志功能。
 
@@ -78,7 +78,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 </colgroup>
 <thead>
 <tr class="header">
-<th>旗帜</th>
+<th>标志</th>
 <th>描述</th>
 </tr>
 </thead>
@@ -108,7 +108,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 
  
 
-下表包含使用控件时[**KSCAMERA\_EXTENDEDPROP\_标头**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)结构字段的说明和要求。
+下表包含使用控件时 [**KSCAMERA \_ EXTENDEDPROP \_ 标头**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) 结构字段的说明和要求。
 
 <table>
 <colgroup>
@@ -118,7 +118,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 <thead>
 <tr class="header">
 <th>成员</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -131,8 +131,8 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 <td><p>必须是与照片 Pin 关联的 Pin ID。</p></td>
 </tr>
 <tr class="odd">
-<td><p>Size</p></td>
-<td><p>这必须是 sizeof （KSCAMERA_EXTENDEDPROP_HEADER） + sizeof （KSCAMERA_EXTENDEDPROP_VALUE）。</p></td>
+<td><p>大小</p></td>
+<td><p>这必须是 sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) 。</p></td>
 </tr>
 <tr class="even">
 <td><p>结果</p></td>
@@ -140,7 +140,7 @@ KSPROPERTY\_CAMERACONTROL\_扩展的\_ADVANCEDPHOTO 用于控制驱动程序上�
 </tr>
 <tr class="odd">
 <td><p>功能</p></td>
-<td><p>必须是前面定义的受支持的 KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ * 标志的按位 "或"。</p></td>
+<td><p>必须是前面定义的受支持 KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ * 标志的按位 "或"。</p></td>
 </tr>
 <tr class="even">
 <td><p>Flags</p></td>

@@ -5,17 +5,17 @@ ms.assetid: b8c43cd3-d4f4-4f1e-b692-8005d845d64a
 keywords:
 - WMI WDK 内核，发布架构
 - 发布 WMI 架构 WDK
-- 发布 WDK WMI 架构
+- 架构发布 WDK WMI
 - MOF 文件 WDK WMI
 - MofImagePath
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bb76d227a5bb056d0afab1d092ad614b7cea909
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5dee7b92e4d21d0bc872f0ce870d37b8eec6beb0
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385854"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188833"
 ---
 # <a name="setting-the-mofimagepath-registry-value"></a>设置 MofImagePath 注册表值
 
@@ -23,15 +23,15 @@ ms.locfileid: "67385854"
 
 
 
-可以通过在单独的文件，如的 DLL，包括已编译的 MOF 资源并设置发布的驱动程序的架构**MofImagePath**到该文件的路径在注册表中。 在这种方式中发布的架构可以无需重新编译该驱动程序更新。
+可以通过在单独的文件（如 DLL）中包含已编译的 MOF 资源并在注册表中将 **MofImagePath** 设置为该文件的路径，来发布驱动程序的架构。 可以更新以这种方式发布的架构，而无需重新编译该驱动程序。
 
-若要在单独的文件中发布的驱动程序的架构：
+在单独的文件中发布驱动程序的架构：
 
-1.  编译 MOF 文件中所述[编译的驱动程序的 MOF 文件](compiling-a-driver-s-mof-file.md)。
+1.  编译 MOF 文件，如 [编译驱动程序的 Mof 文件](compiling-a-driver-s-mof-file.md)中所述。
 
-2.  为如的 DLL 文件中的资源包括编译的 MOF 文件。
+2.  将已编译的 MOF 文件作为资源包括在文件（如 DLL）中。
 
-3.  添加**MofImagePath**驱动程序的服务密钥下的注册表值。 例如，以下显示了名为的驱动程序的注册表值*DriverName*:
+3.  在驱动程序的 "服务" 项下添加 **MofImagePath** 注册表值。 例如，以下示例显示了名为 *DriverName*的驱动程序的注册表值：
 
     ```cpp
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
@@ -39,7 +39,7 @@ ms.locfileid: "67385854"
             MofImagePath    "\SystemRoot\System32\Drivers\DriverNameMof.dll"
     ```
 
-可以设置有关此密钥，驱动程序的 INF 文件，如下所示：
+可以在驱动程序的 INF 文件中设置此密钥，如下所示：
 
 ```cpp
 ; This is the Services section for the driver
@@ -51,12 +51,7 @@ AddReg=Driver_AddReg
 HKR,,MofImagePath,,DriverMof.dll 
 ```
 
-请参阅[ **INF DDInstall.Services 部分**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-services-section)并[ **INF AddReg 指令**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)有关详细信息。
+有关详细信息，请参阅 [**Inf DDInstall 部分**](../install/inf-ddinstall-services-section.md) 和 [**inf AddReg 指令**](../install/inf-addreg-directive.md) 。
 
  
-
- 
-
-
-
 

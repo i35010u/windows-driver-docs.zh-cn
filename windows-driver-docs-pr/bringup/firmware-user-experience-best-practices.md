@@ -3,40 +3,36 @@ title: 固件用户体验 (UX) 最佳做法
 description: 固件用户体验 (UX) 最佳做法
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 402ef054d1a9df0e1f5e113384f6a5350886c245
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b9999b902b1793370c76ebdce2fabb4107cab063
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337617"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187647"
 ---
 # <a name="firmware-user-experience-ux-best-practices"></a>固件用户体验 (UX) 最佳做法
 
 
-固件更新到系统非常重要，仍继续使用该计算机。 Microsoft 希望确保安全地传递固件更新，安装是不间断。 若要执行此操作，我们建议中更详细地描述的以下准则**相关的资源**部分。
+系统的固件更新对于该计算机的持续使用非常重要。 Microsoft 希望确保固件更新安全传送，并且安装不会中断。 为此，我们建议你在 " **相关资源** " 部分中更详细地介绍了以下准则。
 
-1.  进度栏/指示器系统正在安装更新。
+1.  进度栏/指示系统正在安装更新。
 
-2.  Windows 启动加载程序与**UpdateCapsule**函数将提供包含消息的用户的位图。
+2.  使用 **UpdateCapsule** 函数的 Windows 启动加载程序将为用户提供包含消息的位图。
 
-3.  UEFI 检查 AC 电源或足够的电池使用寿命 (RSOC)，或因 ESRT 中记录的错误代码。
+3.  UEFI 检查 AC 电源，或者电池使用充足 (RSOC) 还是出现故障，并在 ESRT 中记录错误代码。
 
-**相关的资源**链接包含有关固件 UX 指南的最新信息。
+**相关资源**链接包含有关固件 UX 指导的最新信息。
 
 ## <a name="related-resources"></a>相关资源
 
-[Windows UEFI 固件更新平台](https://docs.microsoft.com/windows-hardware/drivers/bringup/windows-uefi-firmware-update-platform)
+[Windows UEFI 固件更新平台](./windows-uefi-firmware-update-platform.md)
 
-[无缝危机预防和恢复](https://docs.microsoft.com/windows-hardware/drivers/bringup/seamless-crisis-prevention-and-recovery)
+[无缝危机预防和恢复](./seamless-crisis-prevention-and-recovery.md)
 
-[用户体验的 UEFI 固件更新](https://docs.microsoft.com/windows-hardware/drivers/bringup/user-experience-for-uefi-firmware-updates)
+[UEFI 固件更新的用户体验](./user-experience-for-uefi-firmware-updates.md)
 
-[启动屏幕组件](https://docs.microsoft.com/windows-hardware/drivers/bringup/boot-screen-components)
+[启动屏幕组件](./boot-screen-components.md)
 
-[ESRT 表定义](https://docs.microsoft.com/windows-hardware/drivers/bringup/esrt-table-definition)
+[ESRT 表定义](./esrt-table-definition.md)
 
-[验证 Windows UEFI 固件更新平台功能](https://docs.microsoft.com/windows-hardware/manufacture/desktop/validating-windows-uefi-firmware-update-platform-functionality)
-
-
-
-
+[验证 Windows UEFI 固件更新平台功能](/windows-hardware/manufacture/desktop/validating-windows-uefi-firmware-update-platform-functionality)

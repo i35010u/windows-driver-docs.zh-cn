@@ -9,12 +9,12 @@ keywords:
 - 传递请求 WDK 存储
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a5a4c09f21d5d6f2ad5680fd59f63cb07949f499
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5cceba4833e9da6aab7ea44c538c15bfd19fd293
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826265"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189051"
 ---
 # <a name="handling-scsi-pass-through-requests"></a>处理 SCSI 传递请求
 
@@ -22,24 +22,19 @@ ms.locfileid: "72826265"
 ## <span id="ddk_handling_scsi_pass_through_requests_kg"></span><span id="DDK_HANDLING_SCSI_PASS_THROUGH_REQUESTS_KG"></span>
 
 
-一个类驱动程序，用于生成[**IOCTL\_scsi\_通过请求\_通过**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through)请求或[**IOCTL\_SCSI\_通过\_直接请求通过\_直接**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct)请求负责以下操作：
+类驱动程序通过直接请求生成 [**ioctl \_ scsi \_ 直通 \_ **](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through) 请求或 [**ioctl \_ scsi \_ pass \_ \_ **](/windows-hardware/drivers/ddi/ntddscsi/ni-ntddscsi-ioctl_scsi_pass_through_direct) 的类驱动程序，负责执行以下操作：
 
--   将**DeviceIoControl. InputBufferLength**的用户缓冲区的长度设置为至少为**sizeof**（scsi\_传递\_到）或**sizeof**（scsi\_通过\_直接传递\_）
+-   将**DeviceIoControl. InputBufferLength**上的用户缓冲区的长度设置为至少为**sizeof** (\_ \_ 通过**sizeof** \_ \_ \_ 直接) 将 scsi 传递) 或 sizeof (
 
 -   照常设置存储端口驱动程序的 i/o 堆栈位置
 
--   将 IRP 中的**MinorFunction**设置为 IRP\_MJ\_设备\_控件，该控件将请求标记为已由存储类驱动程序处理。
+-   将 IRP 中的 **MinorFunction** 设置为 irp \_ MJ \_ 设备 \_ 控件，该控件将请求标记为已由存储类驱动程序处理。
 
-收到 IOCTL\_SCSI\_通过\_或 IOCTL\_SCSI\_通过更高级别的驱动程序\_直接请求，存储类驱动程序的[**DispatchDeviceControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程是负责检查嵌入式 SCSI 命令（CDB）的有效性，如果命令对于其设备有效，则将请求发送到存储端口驱动程序。
+在通过 \_ \_ \_ \_ \_ \_ \_ 直接请求从更高级别的驱动程序收到 ioctl scsi pass 或 ioctl scsi pass 时，存储类驱动程序的 [**DispatchDeviceControl**](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程负责检查嵌入的 scsi 命令 (CDB) 的有效性，如果该命令对于其设备有效，则将请求发送到存储端口驱动程序。
 
-如果用于 IOCTL 的端口驱动程序的 i/o 堆栈位置\_SCSI\_\_通过或 IOCTL\_SCSI\_通过\_直接请求未使用 IRP\_MJ 设置其**MinorFunction**字段\_设备\_控制，端口驱动程序假设请求直接来自应用程序，并且目标设备类型不存在类驱动程序。 应用程序错误是将此类请求直接发送到存储类驱动程序所声称的设备的端口驱动程序。
+如果用于 IOCTL scsi 直通的端口驱动程序的 i/o 堆栈位置 \_ \_ \_ 或 \_ \_ 通过直接请求的 ioctl SCSI 直通 \_ 请求没有 \_ 使用 IRP MJ 设备控制设置其 **MinorFunction** 字段 \_ \_ \_ ，则端口驱动程序会假设请求直接来自应用程序，并且不存在针对目标设备类型的类驱动程序。 应用程序错误是将此类请求直接发送到存储类驱动程序所声称的设备的端口驱动程序。
 
 端口驱动程序不会检查嵌入在此类传递请求中的 SCSI 命令的有效性。
 
  
-
- 
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_BDA\_CA\_智能\_卡\_状态
-description: 客户端使用 KSPROPERTY\_BDA\_CA\_智能\_卡\_状态来确定与 ECM 地图节点关联的智能卡读卡器的状态。
+title: KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态
+description: 客户端使用 KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态来确定与 ECM 映射节点关联的智能卡读卡器的状态。
 ms.assetid: a53cea17-0463-4909-839b-6e8ad67dac82
 keywords:
 - KSPROPERTY_BDA_CA_SMART_CARD_STATUS 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aeb59b2c0b9f7c62f49d7180f51375e3ae61d1a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3a876ef24b2763907db53980d894b240dea39a78
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842147"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188151"
 ---
-# <a name="ksproperty_bda_ca_smart_card_status"></a>KSPROPERTY\_BDA\_CA\_智能\_卡\_状态
+# <a name="ksproperty_bda_ca_smart_card_status"></a>KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态
 
 
-客户端使用 KSPROPERTY\_BDA\_CA\_智能\_卡\_状态来确定与 ECM 地图节点关联的智能卡读卡器的状态。
+客户端使用 KSPROPERTY \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态来确定与 ECM 映射节点关联的智能卡读卡器的状态。
 
 ## <span id="ddk_ksproperty_bda_ca_smart_card_status_ks"></span><span id="DDK_KSPROPERTY_BDA_CA_SMART_CARD_STATUS_KS"></span>
 
@@ -41,7 +41,7 @@ ms.locfileid: "72842147"
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,9 +50,9 @@ ms.locfileid: "72842147"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
-<td><p>Filter</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
+<td><p>筛选器</p></td>
 <td><p>KSP_NODE</p></td>
 <td><p>ULONG</p></td>
 </tr>
@@ -77,7 +77,7 @@ ms.locfileid: "72842147"
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Bdamedia （包括 Bdamedia）</td>
+<td>Bdamedia (包含 Bdamedia) </td>
 </tr>
 </tbody>
 </table>
@@ -85,16 +85,9 @@ ms.locfileid: "72842147"
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSEVENT\_BDA\_CA\_智能\_卡\_状态\_更改**](ksevent-bda-ca-smart-card-status-changed.md)
+[**KSEVENT \_ BDA \_ CA \_ 智能 \_ 卡 \_ 状态 \_ 已更改**](ksevent-bda-ca-smart-card-status-changed.md)
 
-[**KSP\_节点**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
-
- 
+[**KSP \_ 节点**](/windows-hardware/drivers/ddi/ks/ns-ks-ksp_node)
 
  
-
-
-
-
-
 

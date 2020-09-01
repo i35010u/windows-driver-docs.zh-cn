@@ -1,24 +1,24 @@
 ---
 title: WdfObjectAddCustomType 宏
-description: WdfObjectAddCustomType 宏将 framework 对象与自定义类型相关联。
+description: WdfObjectAddCustomType 宏将框架对象与自定义类型关联。
 ms.assetid: 750CF669-A436-4571-B474-D5447E0AA64F
 keywords:
 - WdfObjectAddCustomType 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe421c1173819cf2f810334b274eb9b467a7658
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 65bb413376a538f5f9e0b5694cbea8bae90f90e4
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372106"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189699"
 ---
 # <a name="wdfobjectaddcustomtype-macro"></a>WdfObjectAddCustomType 宏
 
 
 \[适用于 KMDF 和 UMDF\]
 
-**WdfObjectAddCustomType**宏将 framework 对象与自定义类型相关联。
+**WdfObjectAddCustomType**宏将框架对象与自定义类型关联。
 
 <a name="syntax"></a>语法
 ------
@@ -30,11 +30,11 @@ NTSTATUS WdfObjectAddCustomType(
 );
 ```
 
-<a name="parameters"></a>Parameters
+<a name="parameters"></a>parameters
 ----------
 
 *_handle*   
-Framework 对象的句柄。
+框架对象的句柄。
 
 *_type*   
 自定义类型的驱动程序定义名称。
@@ -42,7 +42,7 @@ Framework 对象的句柄。
 <a name="return-value"></a>返回值
 ------------
 
-**WdfObjectAddCustomType**返回 STATUS_SUCCESS，如果操作成功。 否则，此方法可能返回以下值之一：
+如果操作成功，则**WdfObjectAddCustomType**返回 STATUS_SUCCESS。 否则，此方法可能会返回以下值之一：
 
 <table>
 <colgroup>
@@ -58,19 +58,19 @@ Framework 对象的句柄。
 <tbody>
 <tr class="odd">
 <td><strong>STATUS_OBJECT_PATH_INVALID</strong></td>
-<td><p>指定句柄不能具有自定义类型添加到它。</p></td>
+<td><p>指定的句柄不能添加自定义类型。</p></td>
 </tr>
 <tr class="even">
 <td><strong>STATUS_INSUFFICIENT_RESOURCES</strong></td>
-<td><p>未能分配自定义的类型。</p></td>
+<td><p>未能分配自定义类型。</p></td>
 </tr>
 <tr class="odd">
 <td><strong>STATUS_OBJECT_NAME_EXISTS</strong></td>
-<td><p>该驱动程序已添加指定的自定义类型。</p></td>
+<td><p>驱动程序已添加指定的自定义类型。</p></td>
 </tr>
 <tr class="even">
 <td><strong>STATUS_DELETE_PENDING</strong></td>
-<td><p>正在删除句柄参数指定的对象。 在此情况下，该框架不会添加自定义的类型。</p></td>
+<td><p>正在删除 Handle 参数指定的对象。 在这种情况下，框架不添加自定义类型。</p></td>
 </tr>
 </tbody>
 </table>
@@ -80,14 +80,14 @@ Framework 对象的句柄。
 <a name="remarks"></a>备注
 -------
 
-**WdfObjectAddCustomType**是一个简化的版的[ **WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)。
+**WdfObjectAddCustomType** 是 [**WdfObjectAddCustomTypeWithData**](wdfobjectaddcustomtypewithdata.md)的简化版本。
 
-有关对象驱动程序类型的详细信息，请参阅[Framework 对象自定义类型](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-custom-types)。
+有关对象驱动程序类型的详细信息，请参阅 [框架对象自定义类型](./framework-object-custom-types.md)。
 
 <a name="examples"></a>示例
 --------
 
-此示例代码演示如何将自定义类型添加到队列。
+此代码示例演示如何将自定义类型添加到队列。
 
 ```cpp
 NTSTATUS                status;
@@ -132,24 +132,24 @@ End:
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">世界</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.11</p></td>
 </tr>
 <tr class="odd">
-<td><p>最低 UMDF 版本</p></td>
+<td><p>最小 UMDF 版本</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
-<td><p>Header</p></td>
-<td>Wdfobject.h （包括 Wdf.h）</td>
+<td><p>标头</p></td>
+<td>Wdfobject (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**WDF_DECLARE_CUSTOM_TYPE**](wdf-declare-custom-type.md)
@@ -161,11 +161,4 @@ End:
 [**WdfObjectIsCustomType**](wdfobjectiscustomtype.md)
 
  
-
- 
-
-
-
-
-
 

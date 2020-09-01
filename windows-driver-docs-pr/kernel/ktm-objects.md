@@ -8,41 +8,41 @@ keywords:
 - 对象 WDK KTM
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a30606c8755b437cbff2bb5b57e2a3ccd8ddf7c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 86beb12f5e0d3e6403cc8b78f0648cce201e929d
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838558"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189318"
 ---
 # <a name="ktm-objects"></a>KTM 对象
 
 
-内核事务管理器（KTM）定义以下四种对象类型：
+内核事务管理器 (KTM) 定义以下四种对象类型：
 
--   [事务管理器对象](transaction-manager-objects.md)，KTM 使用该对象维护有关[*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system)（TPS）的[*日志流*](transaction-processing-terms.md#ktm-term-log-stream)的内存驻留信息。
+-   [事务管理器对象](transaction-manager-objects.md)，KTM 使用该对象维护有关[*事务处理系统*](transaction-processing-terms.md#ktm-term-transaction-processing-system) (TPS) 的[*日志流*](transaction-processing-terms.md#ktm-term-log-stream)的内存驻留信息。
 
--   [资源管理器对象](resource-manager-objects.md)，表示 TPS 内的[*资源管理*](transaction-processing-terms.md#ktm-term-resource-manager)器。
+-   [资源管理器对象](resource-manager-objects.md)，表示 TPS 内的 [*资源管理*](transaction-processing-terms.md#ktm-term-resource-manager) 器。
 
--   [事务对象](transaction-objects.md)，表示[*事务性客户端*](transaction-processing-terms.md#ktm-term-transactional-client)创建的事务。
+-   [事务对象](transaction-objects.md)，表示 [*事务性客户端*](transaction-processing-terms.md#ktm-term-transactional-client) 创建的事务。
 
--   [登记对象](enlistment-objects.md)，这些对象表示提供事务和资源管理器之间的连接的[*登记*](transaction-processing-terms.md#ktm-term-enlistment)。
+-   [登记对象](enlistment-objects.md)，这些对象表示提供事务和资源管理器之间的连接的 [*登记*](transaction-processing-terms.md#ktm-term-enlistment) 。
 
 这四种对象类型都具有以下特征：
 
--   若要创建对象并获取对象句柄， [TPS 组件](understanding-tps-components.md)可以调用*创建*例程。
+-   若要创建对象并获取对象句柄， [TPS 组件](understanding-tps-components.md) 可以调用 *创建* 例程。
 
--   为了获取现有对象的其他对象句柄，TPS 组件可以调用*打开*的例程。
+-   为了获取现有对象的其他对象句柄，TPS 组件可以调用 *打开* 的例程。
 
--   若要获取有关对象的信息，TPS 组件可以调用*查询*例程。
+-   若要获取有关对象的信息，TPS 组件可以调用 *查询* 例程。
 
--   为了关闭对象句柄，TPS 组件调用[**ZwClose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)。
+-   为了关闭对象句柄，TPS 组件调用 [**ZwClose**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)。
 
-KTM 将标识符 GUID 分配给每个对象。 对于事务对象，此标识符 GUID 也称为客户端可以指定的*工作单元（UOW）标识符*。 TPS 组件可使用标识符 Guid 跟踪对象。 创建对象的 TPS 组件可以将对象的标识符 GUID 传递到另一个组件，使后一组件可以打开对象的句柄。
+KTM 将标识符 GUID 分配给每个对象。 对于事务对象，此标识符 GUID 也称为客户端可以指定的 *工作单元 (UOW) 标识符* 。 TPS 组件可使用标识符 Guid 跟踪对象。 创建对象的 TPS 组件可以将对象的标识符 GUID 传递到另一个组件，使后一组件可以打开对象的句柄。
 
-使用 KTM 的任何 TPS 组件都可以调用[**ZwEnumerateTransactionObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntenumeratetransactionobject)来枚举 KTM 对象，但大多数组件不需要调用此例程。
+使用 KTM 的任何 TPS 组件都可以调用 [**ZwEnumerateTransactionObject**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ntenumeratetransactionobject) 来枚举 KTM 对象，但大多数组件不需要调用此例程。
 
-本部分包含以下主题：
+本节包含下列主题：
 
 [事务管理器对象](transaction-manager-objects.md)
 
@@ -53,9 +53,4 @@ KTM 将标识符 GUID 分配给每个对象。 对于事务对象，此标识符
 [登记对象](enlistment-objects.md)
 
  
-
- 
-
-
-
 

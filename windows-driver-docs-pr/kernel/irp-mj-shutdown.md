@@ -6,17 +6,17 @@ ms.assetid: af0b01b5-5f81-42da-aa4b-433bd422a51f
 keywords:
 - IRP_MJ_SHUTDOWN 内核模式驱动程序体系结构
 ms.localizationpriority: medium
-ms.openlocfilehash: 865ea1d3d8190311018c5f576241362cd626f9f6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5bd06f97edfa026efcb33aaf512ab2dfd9dd67fe
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838595"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188245"
 ---
-# <a name="irp_mj_shutdown"></a>IRP\_MJ\_关闭
+# <a name="irp_mj_shutdown"></a>IRP \_ MJ \_ 关闭
 
 
-具有数据内部缓存的大容量存储设备的驱动程序必须在[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)例程中处理此请求。 如果基础驱动程序维护数据的内部缓冲区，则还必须处理此请求，同时分层的大容量存储设备和中间驱动程序的驱动程序也必须处理此请求。
+具有数据内部缓存的大容量存储设备的驱动程序必须在 [*DispatchShutdown*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch) 例程中处理此请求。 如果基础驱动程序维护数据的内部缓冲区，则还必须处理此请求，同时分层的大容量存储设备和中间驱动程序的驱动程序也必须处理此请求。
 
 <a name="when-sent"></a>发送时间
 ---------
@@ -25,7 +25,7 @@ ms.locfileid: "72838595"
 
 当用户注销时，一个或多个文件系统驱动程序可以向此类低级驱动程序发送多个关闭请求，或者当系统出于其他原因而关闭时。
 
-PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
+PnP 管理器以 IRQL 的形式发送此 IRP<= APC_LEVEL 在任意线程上下文中。
 
 ## <a name="input-parameters"></a>输入参数
 
@@ -42,7 +42,7 @@ PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
 
 驱动程序必须完成对设备中当前缓存的任何数据的传输，或在完成关闭请求之前保存在驱动程序的内部缓冲区中。
 
-对于设备对象，驱动程序不会接收**IRP\_MJ\_关闭**请求，除非它使用[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)或[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)注册来执行此操作。
+对于设备对象，驱动程序不会收到 **IRP \_ MJ \_ 关闭** 请求，除非它注册使用 [**IoRegisterShutdownNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification) 或 [**IoRegisterLastChanceShutdownNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)来执行此操作。
 
 <a name="requirements"></a>要求
 ------------
@@ -55,7 +55,7 @@ PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Wdm .h （包括 Wdm、Ntddk 或 Ntifs）</td>
+<td>Wdm.h（包括 Wdm.h、Ntddk.h 或 Ntifs.h）</td>
 </tr>
 </tbody>
 </table>
@@ -63,16 +63,11 @@ PnP 管理器以 IRQL < = APC_LEVEL 在任意线程上下文中发送此 IRP。
 ## <a name="see-also"></a>另请参阅
 
 
-[*DispatchShutdown*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
+[*DispatchShutdown*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)
 
-[**IoRegisterLastChanceShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
+[**IoRegisterLastChanceShutdownNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterlastchanceshutdownnotification)
 
-[**IoRegisterShutdownNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)
-
- 
+[**IoRegisterShutdownNotification**](/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregistershutdownnotification)
 
  
-
-
-
 

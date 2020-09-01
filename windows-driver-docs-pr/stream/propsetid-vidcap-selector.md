@@ -1,43 +1,37 @@
 ---
-title: PROPSETID\_VIDCAP\_选择器
-description: PROPSETID\_VIDCAP\_选择器
+title: PROPSETID \_ VIDCAP \_ 选择器
+description: PROPSETID \_ VIDCAP \_ 选择器
 ms.assetid: a7328f22-be49-48ac-b923-15f66dc38ccb
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3366447bd162cdefe577ccc12c4b31026cac9f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cd007d0cadc25b3b1207dcac22fff4ffadf840ff
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385700"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187351"
 ---
-# <a name="propsetidvidcapselector"></a>PROPSETID\_VIDCAP\_选择器
+# <a name="propsetid_vidcap_selector"></a>PROPSETID \_ VIDCAP \_ 选择器
 
 
 ## <span id="ddk_propsetid_vidcap_selector_ks"></span><span id="DDK_PROPSETID_VIDCAP_SELECTOR_KS"></span>
 
 
-PROPSETID\_VIDCAP\_选择器属性集是用于新[USB 视频类驱动程序](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)。 设置此属性包含实现所需的属性**ISelector**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档）。
+PROPSETID \_ VIDCAP \_ 选择器属性集是与 [USB 视频类驱动程序](./usb-video-class-driver.md)一起使用的新集。 此属性集包含实现 **ISelector** 接口所需的属性 (参阅 Microsoft Windows SDK) 中的 DirectShow 文档。
 
-KSPROPERTY\_VIDCAP\_中的选择器枚举*ksmedia.h*指定此集的属性。
+\_Ksmedia 中的 KSPROPERTY VIDCAP \_ 选择*ksmedia.h*器枚举指定此集的属性。
 
-此属性设置控件当前正在提供可重用功能区输入的节点。 支持设置此属性是可选的应仅由设备提供这些控件的实现。
+此属性集控制当前提供镜头输入的节点。 对此属性集的支持是可选的，只应由提供这些控件的设备来实现。
 
-USB 视频类驱动程序的客户端可以发出以下请求的筛选器或节点：
+USB 视频类驱动程序的客户端可以发出以下筛选器或节点请求：
 
-[**KSPROPERTY\_选择器\_源\_节点\_ID**](ksproperty-selector-source-node-id.md)
+[**KSPROPERTY \_ 选择器 \_ 源 \_ 节点 \_ ID**](ksproperty-selector-source-node-id.md)
 
-[**KSPROPERTY\_NUM\_源**](ksproperty-num-sources.md)
+[**KSPROPERTY \_ NUM \_ 源**](ksproperty-num-sources.md)
 
-### <a name="span-iddirectshowinterfacesspanspan-iddirectshowinterfacesspandirectshow-interfaces"></a><span id="directshow_interfaces"></span><span id="DIRECTSHOW_INTERFACES"></span>DirectShow 接口
+### <a name="span-iddirectshow_interfacesspanspan-iddirectshow_interfacesspandirectshow-interfaces"></a><span id="directshow_interfaces"></span><span id="DIRECTSHOW_INTERFACES"></span>DirectShow 接口
 
-属性在 PROPSETID\_VIDCAP\_选择器属性集访问通过 DirectShow **ISelector**接口 （请参阅 Microsoft Windows SDK 中的 DirectShow 文档）。
-
- 
+PROPSETID \_ VIDCAP \_ 选择器属性集中的属性可通过 DirectShow **ISelector** 接口进行访问 (参阅 Microsoft Windows SDK) 中的 DirectShow 文档。
 
  
-
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_COPY\_MACROVISION
-description: KSPROPERTY\_COPY\_MACROVISION 属性指示数据流的 Macrovision 级别。
+title: KSPROPERTY \_ COPY \_ MACROVISION
+description: KSPROPERTY \_ COPY \_ MACROVISION 属性指示数据流的 MACROVISION 级别。
 ms.assetid: 6863bcf6-06bc-4bd2-896e-43c083aa07d5
 keywords:
 - KSPROPERTY_COPY_MACROVISION 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc20a81b063e1680f9fc701776720a7baa3aaafe
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c09e69fcadf0ba59eec494cb6a1e49e783d98618
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826774"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187368"
 ---
-# <a name="ksproperty_copy_macrovision"></a>KSPROPERTY\_COPY\_MACROVISION
+# <a name="ksproperty_copy_macrovision"></a>KSPROPERTY \_ COPY \_ MACROVISION
 
 
-KSPROPERTY\_COPY\_MACROVISION 属性指示数据流的 Macrovision 级别。
+KSPROPERTY \_ COPY \_ MACROVISION 属性指示数据流的 MACROVISION 级别。
 
 ## <span id="ddk_ksproperty_copy_macrovision_ks"></span><span id="DDK_KSPROPERTY_COPY_MACROVISION_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_COPY\_MACROVISION 属性指示数据流的 Macrovision 级别。
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,23 +50,23 @@ KSPROPERTY\_COPY\_MACROVISION 属性指示数据流的 Macrovision 级别。
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>无</p></td>
-<td><p>“是”</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision" data-raw-source="[&lt;strong&gt;KS_COPY_MACROVISION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)"><strong>KS_COPY_MACROVISION</strong></a></p></td>
+<td><p>否</p></td>
+<td><p>是</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)"><strong>KSPROPERTY</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision" data-raw-source="[&lt;strong&gt;KS_COPY_MACROVISION&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)"><strong>KS_COPY_MACROVISION</strong></a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-属性值（操作数据）是一个 KS\_复制\_MACROVISION 结构，该结构指定数据流的 Macrovision 级别。
+ (操作数据) 的属性值是一个 KS \_ COPY \_ MACROVISION 结构，该结构指定数据流的 MACROVISION 级别。
 
 <a name="remarks"></a>备注
 -------
 
-有关 Macrovision 级别的详细信息，请参阅[DVD 版权保护](https://docs.microsoft.com/windows-hardware/drivers/stream/dvd-copyright-protection)。
+有关 Macrovision 级别的详细信息，请参阅 [DVD 版权保护](./dvd-copyright-protection.md)。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,7 +79,7 @@ KSPROPERTY\_COPY\_MACROVISION 属性指示数据流的 Macrovision 级别。
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -87,14 +87,7 @@ KSPROPERTY\_COPY\_MACROVISION 属性指示数据流的 Macrovision 级别。
 ## <a name="see-also"></a>另请参阅
 
 
-[**KS\_复制\_MACROVISION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)
+[**KS \_ 复制 \_ MACROVISION**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ks_copy_macrovision)
 
  
-
- 
-
-
-
-
-
 

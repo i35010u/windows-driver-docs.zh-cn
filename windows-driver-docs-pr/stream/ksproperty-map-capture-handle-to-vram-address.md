@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS
-description: KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 属性返回捕获驱动程序的 VRAM surface 控点到 VRAM 物理地址的映射。若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。
+title: KSPROPERTY \_ 映射 \_ \_ \_ 到 \_ VRAM 地址的捕获句柄 \_
+description: '\_ \_ VRAM 地址属性的 KSPROPERTY 映射捕获 \_ 句柄 \_ \_ \_ 返回捕获驱动程序将 VRAM surface 控点映射到 VRAM 物理地址。若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。'
 ms.assetid: 071c9152-12f9-4ec1-80d7-6b42fce51bbb
 keywords:
 - KSPROPERTY_MAP_CAPTURE_HANDLE_TO_VRAM_ADDRESS 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0894363f69405b0d71d2dd470e596386fcf9105
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c850bd5bc0777bc09f486f1e5ed17abf8d4dcaa7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838050"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187353"
 ---
-# <a name="ksproperty_map_capture_handle_to_vram_address"></a>KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS
+# <a name="ksproperty_map_capture_handle_to_vram_address"></a>KSPROPERTY \_ 映射 \_ \_ \_ 到 \_ VRAM 地址的捕获句柄 \_
 
 
-KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 属性返回捕获驱动程序的 VRAM surface 控点到 VRAM 物理地址的映射。
+\_ \_ VRAM 地址属性的 KSPROPERTY 映射捕获 \_ 句柄 \_ \_ \_ 返回捕获驱动程序将 VRAM surface 控点映射到 VRAM 物理地址。
 
 若要使用 VRAM 传输，捕获微型驱动程序必须支持此属性。
 
@@ -40,7 +40,7 @@ KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 属性返回捕获驱动程�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -49,10 +49,10 @@ KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 属性返回捕获驱动程�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>无</p></td>
-<td><p>大头针</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info_property_s" data-raw-source="[&lt;strong&gt;VRAM_SURFACE_INFO_PROPERTY_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info_property_s)"><strong>VRAM_SURFACE_INFO_PROPERTY_S</strong></a></p></td>
+<td><p>是</p></td>
+<td><p>否</p></td>
+<td><p>Pin</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info_property_s" data-raw-source="[&lt;strong&gt;VRAM_SURFACE_INFO_PROPERTY_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info_property_s)"><strong>VRAM_SURFACE_INFO_PROPERTY_S</strong></a></p></td>
 <td><p>DWORD</p></td>
 </tr>
 </tbody>
@@ -62,7 +62,7 @@ KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 属性返回捕获驱动程�
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>返回值
 
-KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 返回状态\_SUCCESS 以指示已成功完成。 否则，请求将返回相应的错误代码。
+\_VRAM 地址的 KSPROPERTY 映射 \_ 捕获 \_ 句柄 \_ \_ \_ 返回状态 " \_ 成功" 以指示已成功完成。 否则，请求将返回相应的错误代码。
 
 <a name="remarks"></a>备注
 -------
@@ -80,7 +80,7 @@ KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 返回状态\_SUCCESS 以指
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -88,14 +88,7 @@ KSPROPERTY\_MAP\_捕获\_处理\_到\_VRAM\_ADDRESS 返回状态\_SUCCESS 以指
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
  
-
- 
-
-
-
-
-
 

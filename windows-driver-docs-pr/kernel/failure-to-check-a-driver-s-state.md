@@ -11,12 +11,12 @@ keywords:
 - 设备状态 WDK 内核
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f67b5b97a2eae9fdba1545fd1c6586cc25b8c6
-ms.sourcegitcommit: 01bcf26722f1a51d2b5ebcdcbc08518b3ee08474
+ms.openlocfilehash: 824c81aa0db87cb1e4ca62a40467bae36db3e7b2
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74308543"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189065"
 ---
 # <a name="failure-to-check-a-drivers-state"></a>无法检查驱动程序的状态
 
@@ -24,7 +24,7 @@ ms.locfileid: "74308543"
 
 
 
-在以下示例中，驱动程序使用**ASSERT**宏来检查驱动程序映像的调试版本中是否有正确的设备状态，但不检查同一驱动程序源的零售版本中的设备状态：
+在以下示例中，驱动程序使用 **ASSERT** 宏来检查驱动程序映像的调试版本中是否有正确的设备状态，但不检查同一驱动程序源的零售版本中的设备状态：
 
 ```cpp
    case IOCTL_WAIT_FOR_EVENT:
@@ -37,12 +37,7 @@ ms.locfileid: "74308543"
 
 在调试驱动程序映像中，如果驱动程序已经持有 IRP 挂起，系统将断言。 但在零售版本中，驱动程序不会检查此错误。 对相同 IOCTL 的两次调用会导致驱动程序失去 IRP 跟踪。
 
-在多处理器系统上，此代码片段可能会导致其他问题。 假设在条目上，此例程拥有（操作权限）此 IRP 的所有权。 当例程将**irp**指针保存到全局结构中的**扩展&gt;WaitEventIrp**时，另一个线程可从该全局结构获取 IRP 地址并在 irp 上执行操作。 若要避免此问题，驱动程序应在保存 IRP 之前将 IRP 标记为 "挂起"，并且应包括对[**也**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)的调用和互锁序列中的分配。 可能还需要 IRP 的[*取消*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel)例程。
+在多处理器系统上，此代码片段可能会导致其他问题。 假设在条目上，此例程拥有 (操作) 此 IRP 的权限。 当例程将 **irp** 指针保存在 ** &gt; WaitEventIrp**的全局结构中时，另一个线程可从该全局结构获取 irp 地址并在 irp 上执行操作。 若要避免此问题，驱动程序应在保存 IRP 之前将 IRP 标记为 "挂起"，并且应包括对 [**也**](/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending) 的调用和互锁序列中的分配。 可能还需要 IRP 的 [*取消*](/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_cancel) 例程。
 
  
-
- 
-
-
-
 

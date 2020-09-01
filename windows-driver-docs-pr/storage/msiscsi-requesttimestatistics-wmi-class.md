@@ -1,20 +1,20 @@
 ---
-title: MSiSCSI\_RequestTimeStatistics WMI 类
-description: MSiSCSI\_RequestTimeStatistics WMI 类
+title: MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类
+description: MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类
 ms.assetid: 3e9f3214-3120-41f6-bb06-7ace4f243c5f
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2e38a81799f0ada4c7478ff4cc96522b3714178c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5fa88e317efc98b941d84551e8c72dca547c5c44
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838874"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188501"
 ---
-# <a name="msiscsi_requesttimestatistics-wmi-class"></a>MSiSCSI\_RequestTimeStatistics WMI 类
+# <a name="msiscsi_requesttimestatistics-wmi-class"></a>MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类
 
 
-MSiSCSI\_RequestTimeStatistics WMI 类提供有关 iSCSI 请求的统计信息。 此类在*管理 mof*中定义为：
+MSiSCSI \_ REQUESTTIMESTATISTICS WMI 类提供有关 iSCSI 请求的统计信息。 此类在*管理 mof*中定义为：
 
 ```cpp
 class MSiSCSI_RequestTimeStatistics : Win32_PerfRawData
@@ -69,13 +69,7 @@ class MSiSCSI_RequestTimeStatistics : Win32_PerfRawData
 };
 ```
 
-当 WMI 工具套件编译上述类定义时，它会生成[**MSiSCSI\_RequestTimeStatistics**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_requesttimestatistics)数据结构。
+当 WMI 工具套件编译上述类定义时，它会生成 [**MSiSCSI \_ RequestTimeStatistics**](/windows-hardware/drivers/ddi/iscsiprf/ns-iscsiprf-_msiscsi_requesttimestatistics) 数据结构。
 
  
-
- 
-
-
-
-
 

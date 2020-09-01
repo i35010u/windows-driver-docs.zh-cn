@@ -1,6 +1,6 @@
 ---
-title: SM\_AddTarget 函数
-description: SM\_AddTarget WMI 方法将 WMI 提供程序配置为通知 WMI 客户端与所指示的目标相关联的事件。
+title: SM \_ AddTarget 函数
+description: SM \_ ADDTARGET wmi 方法将 wmi 提供程序配置为通知 wmi 客户端与所指示的目标相关联的事件。
 ms.assetid: 78e19496-1eb0-4d05-8637-f2e6d123208b
 keywords:
 - SM_AddTarget 函数存储设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 800cadec0c88d95eff0f2e6717d1b69840b77155
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9a0fe7cdd73054ce68924622b2c3c4b700bc8933
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842603"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188485"
 ---
-# <a name="sm_addtarget-function"></a>SM\_AddTarget 函数
+# <a name="sm_addtarget-function"></a>SM \_ AddTarget 函数
 
 
-SM\_AddTarget WMI 方法将 WMI 提供程序配置为通知 WMI 客户端与所指示的目标相关联的事件。
+SM \_ ADDTARGET wmi 方法将 wmi 提供程序配置为通知 wmi 客户端与所指示的目标相关联的事件。
 
 <a name="syntax"></a>语法
 ------
@@ -43,19 +43,19 @@ void SM_AddTarget(
 ----------
 
 *HbaPortWWN*   
-WMI 客户端将接收其事件的本地端口的全球名称（WWN）。
+ (的全球名称，它是 WMI 客户端将接收其事件的本地端口的 WWN) 。
 
 *DiscoveredPortWWN*   
-一个全球通用名称（WWN），指定 WMI 客户端将接收其事件的发现目标。
+全球名称 (WWN) 指定 WMI 客户端将接收其事件的发现目标。
 
 *DomainPortWWN*   
-指定 WMI 客户端将接收其事件的本地端口的 SAS 域的全球名称（WWN）。
+全球名称 (WWN) 指定 WMI 客户端将接收其事件的本地端口的全球 SAS 域名称。
 
 *AllTargets*   
 要报告的目标事件的范围。 如果此成员为零，则 WMI 客户端将接收与 DiscoveredPortWWN 指示的端口关联的事件。 如果此成员为非零，则 WMI 客户端将接收与所有当前发现的目标以及将来发现的目标关联的所有事件。
 
 *HBAStatus*   
-操作的状态。 有关允许值及其说明的列表，请参阅[HBA\_状态](hba-status.md)。 微型端口驱动程序在 SM\_AddTarget\_OUT 结构的 HBAStatus 成员中返回此信息。
+操作的状态。 有关允许值及其说明的列表，请参阅 [HBA \_ 状态](hba-status.md)。 微型端口驱动程序在 SM \_ AddTarget OUT 结构的 HBAStatus 成员中返回此信息 \_ 。
 
 <a name="return-value"></a>返回值
 ------------
@@ -65,7 +65,7 @@ WMI 客户端将接收其事件的本地端口的全球名称（WWN）。
 <a name="remarks"></a>备注
 -------
 
-此 WMI 方法属于 MS\_SM\_EventControl WMI 类。
+此 WMI 方法属于 MS \_ SM \_ EventControl WMI 类。
 
 <a name="requirements"></a>要求
 ------------
@@ -78,7 +78,7 @@ WMI 客户端将接收其事件的本地端口的全球名称（WWN）。
 <tbody>
 <tr class="odd">
 <td align="left"><p>目标平台</p></td>
-<td align="left">桌面设备</td>
+<td align="left">“桌面”</td>
 </tr>
 <tr class="even">
 <td align="left"><p>标头</p></td>
@@ -90,18 +90,11 @@ WMI 客户端将接收其事件的本地端口的全球名称（WWN）。
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>另请参阅
 
 
-[HBA\_状态](hba-status.md)
+[HBA \_ 状态](hba-status.md)
 
-[**SM\_AddTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_addtarget_in)
+[**SM \_ AddTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_addtarget_in)
 
-[**SM\_AddTarget\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_addtarget_out)
-
- 
+[**SM \_ AddTarget \_**](/windows-hardware/drivers/ddi/hbapiwmi/ns-hbapiwmi-_sm_addtarget_out)
 
  
-
-
-
-
-
 

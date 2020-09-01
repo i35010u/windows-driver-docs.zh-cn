@@ -11,12 +11,12 @@ keywords:
 - 32位可寻址设备 WDK AVStream
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f3064a9d8cce9a3df542acfb3e97a686f669b5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 09069aff0c4edc2eb4bb10aac2f5e7409c3bd4c7
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837669"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188339"
 ---
 # <a name="supporting-dma-in-64-bit-avstream-drivers"></a>在 64 位 AVStream 驱动程序中支持 DMA
 
@@ -26,9 +26,9 @@ ms.locfileid: "72837669"
 
 AVStream 支持32位和64位可寻址设备上的 DMA。
 
-为 Win64 平台编译的所有驱动程序应使用[**IKsDeviceFunctions：： RegisterAdapterObjectEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-iksdevicefunctions-registeradapterobjectex)而不是[**KsDeviceRegisterAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisteradapterobject)。
+为 Win64 平台编译的所有驱动程序应使用 [**IKsDeviceFunctions：： RegisterAdapterObjectEx**](/windows-hardware/drivers/ddi/ks/nf-ks-iksdevicefunctions-registeradapterobjectex) 而不是 [**KsDeviceRegisterAdapterObject**](/windows-hardware/drivers/ddi/ks/nf-ks-ksdeviceregisteradapterobject)。
 
-**IKsDeviceFunctions：： RegisterAdapterObjectEx**仅在 Microsoft Windows SERVER 2003 SP1 及更高版本中可用。
+**IKsDeviceFunctions：： RegisterAdapterObjectEx** 仅在 Microsoft Windows SERVER 2003 SP1 及更高版本中可用。
 
 下面的代码示例演示了如何在基于 x64 的客户端版本和32位平台上支持 DMA：
 
@@ -80,14 +80,9 @@ sizeof (KSMAPPING)
 ...
 ```
 
-此代码示例适用于64位和32位平台。 如果驱动程序找不到**IKsDeviceFunctions：： RegisterAdapterObjectEx**，它仍然会调用**KsDeviceRegisterAdapter**。
+此代码示例适用于64位和32位平台。 如果驱动程序找不到 **IKsDeviceFunctions：： RegisterAdapterObjectEx**，它仍然会调用 **KsDeviceRegisterAdapter**。
 
 此外，在创作64位 AVStream 驱动程序时，最大限度地减少持有的并发帧锁的数量。 由于 AVStream 在微型驱动程序第一次锁定帧时生成了散点/集合映射，因此，如果不遵循此准则，驱动程序可能会耗尽资源。 特别是，如果您要编写一个要在包含32位卡的 Win64 平台上运行的驱动程序，增加锁的数目会使锁定失败的几率增加，因为内存缓冲区不足是有限的资源。
 
  
-
- 
-
-
-
 

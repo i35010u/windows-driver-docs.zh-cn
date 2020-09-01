@@ -1,8 +1,8 @@
 ---
 title: WIA_IPS_BLANK_PAGES_SENSITIVITY
-description: WIA_IPS_BLANK_PAGES_SENSITIVITY 属性用于将空白页检测触发器更改为较低或更高版本的设备支持的最低和最高敏感度介于。
+description: WIA_IPS_BLANK_PAGES_SENSITIVITY 属性用于将空白页面检测触发器更改为设备支持的最低和最高敏感度之间的较低或较高的值。
 keywords:
-- WIA_IPS_BLANK_PAGES_SENSITIVITY 成像设备
+- WIA_IPS_BLANK_PAGES_SENSITIVITY 图像设备
 topic_type:
 - apiref
 api_name:
@@ -13,33 +13,33 @@ api_type:
 - HeaderDef
 ms.date: 05/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d4c904d592713d7f398ef7c7c4ce458d70f9bc6
-ms.sourcegitcommit: 2ddaca0dbaf96076ad54d39ac1e77d91e644de67
+ms.openlocfilehash: 8559b0c446b697772fecbec95d99ad6ba6336745
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65958681"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189565"
 ---
-# <a name="wiaipsblankpagessensitivity"></a>WIA\_IPS\_空白\_页面\_敏感度
+# <a name="wia_ips_blank_pages_sensitivity"></a>WIA \_ IP \_ 空白 \_ 页 \_ 敏感度
 
-**WIA\_IPS\_空白\_页\_敏感度**属性用于将空白页检测触发器更改为较低或更高版本的最低和最高敏感度介于支持的设备。
+" **WIA \_ ip \_ 空白 \_ 页 \_ 敏感度** " 属性用于将空白页面检测触发器更改为设备支持的最低和最高敏感度之间的较小值和最大值。
 
-WIA 微型驱动程序可以在内部为每个使用单独的敏感度值[ **WIA\_IPA\_数据\_类型**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-datatype)并[ **WIA\_IPA\_深度**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ipa-depth)支持颜色模式组合。
+WIA 小型驱动程序可以在内部为每个 [**wia \_ IPA \_ 数据 \_ 类型**](./wia-ipa-datatype.md) 和 [**wia \_ IPA \_ 深度**](./wia-ipa-depth.md) 支持的颜色模式组合使用不同的敏感度值。
 
-此属性是初始化和维护的 WIA 微型驱动程序。
+此属性由 WIA 迷你驱动程序初始化和维护。
 
-属性类型：VT\_I4
+属性类型： VT \_ I4
 
-有效值：WIA\_PROP\_RANGE
+有效值： WIA 内容 \_ \_ 范围
 
 访问权限：读写
 
 ## <a name="remarks"></a>备注
 
-此属性是可选的仅对送纸器项有效 (WIA\_类别\_送纸器)，仅当[ **WIA\_IP\_空白\_页**](https://docs.microsoft.com/windows-hardware/drivers/image/wia-ips-blank-pages)上至少有一个比另一个值支持**WIA\_空白\_页\_检测\_禁用**。
+此属性是可选的，并且 (仅 \_ \_ 在支持 wia 类别进纸器) 的情况下，仅当支持 [**wia \_ ip \_ 空 \_ 页面**](./wia-ips-blank-pages.md) 时，至少与 **wia \_ 空白 \_ 页 \_ 检测 \_ 禁用**的值相同时，此属性才有效。
 
 ## <a name="requirements"></a>要求
 
 | &nbsp; | &nbsp; |
 | --- |:--- |
-| **标头** | Wiadef.h （包括 Wiadef.h） |
+| **标头** | Wiadef (包含 Wiadef)  |

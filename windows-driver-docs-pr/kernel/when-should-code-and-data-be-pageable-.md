@@ -10,12 +10,12 @@ keywords:
 - 居民代码 WDK 可分页驱动程序
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fa8110999947455f4a2c6e2967cec4c9330eb3e3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b35f5ec8787ca05062965a59b10e7b89400bd445
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838320"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188213"
 ---
 # <a name="when-should-code-and-data-be-pageable"></a>代码和数据何时应可分页？
 
@@ -27,13 +27,13 @@ ms.locfileid: "72838320"
 
 执行以下任何一项的驱动程序代码都必须驻留在内存中。 也就是说，此代码必须位于非分页的部分或在代码运行时在内存中锁定的分页部分。
 
--   在 IRQL = 调度\_级别或更高版本上运行。
+-   运行时间为 IRQL = 调度 \_ 级别。
 
 -   获取旋转锁。
 
--   调用任何内核的对象支持例程（如[**KeReleaseMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex)或[**KeReleaseSemaphore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)），其中*Wait*参数设置为**TRUE**。 如果在将*Wait*设置为**TRUE**的情况下调用内核，则在调度\_级别，调用将以 IRQL 返回。
+-   调用任何内核的对象支持例程（如 [**KeReleaseMutex**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasemutex) 或 [**KeReleaseSemaphore**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleasesemaphore)），其中 *Wait* 参数设置为 **TRUE**。 如果在 " *等待* " 设置为 " **TRUE**" 的情况下调用内核，则调用将在调度级别以 IRQL 返回 \_ 。
 
-当代码执行可能导致页错误的任何内容时，驱动程序代码必须以 IRQL 运行 &lt; 调度\_级别。 如果代码执行以下任一操作，则可能会导致页错误：
+&lt; \_ 当代码执行可能导致页错误的任何内容时，驱动程序代码必须在 IRQL 调度级别运行。 如果代码执行以下任一操作，则可能会导致页错误：
 
 -   访问未在内存中锁定的分页池。
 
@@ -41,12 +41,7 @@ ms.locfileid: "72838320"
 
 -   在用户线程的上下文中访问未锁定的用户缓冲区。
 
-通常，如果所有可分页代码（或数据）的总大小至少为 4 kb，则应将某个部分分页。 应尽可能将纯可分页的代码（或数据）与代码（或数据）隔离在不同的节中，但有时还必须锁定。 例如，将纯粹的可分页代码和已锁定的按需代码组合起来会导致更多的系统空间被锁定，而不是必需的。 但是，如果驱动程序的可能可分页代码（或数据）少于 4 KB，则可以将该代码（或数据）与已锁定的按需代码（或数据）组合到一个部分，以节省系统空间。
+通常情况下，如果所有可分页代码 (或数据) 的总大小至少为 4 kb () KB，则应进行分页。 应尽可能将纯可分页的代码 (或数据) 隔离到不同于代码 (或数据) 的单独节中，但有时必须锁定。 例如，将纯粹的可分页代码和已锁定的按需代码组合起来会导致更多的系统空间被锁定，而不是必需的。 但是，如果驱动程序的可分页代码 (或数据) 的大小不能超过 4 KB，则可以将该代码 (或数据) 与已锁定的按需代码 (或数据) 合并到一个部分，从而节省系统空间。
 
  
-
- 
-
-
-
 

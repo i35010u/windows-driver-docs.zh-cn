@@ -10,12 +10,12 @@ keywords:
 - 计数器 WDK i/o
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e91fb6e7bbdc2944fc7c1f3f222b3ba6d6778ccd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7cedde2a0778512334ee1b0151fb79da4b849fa1
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837202"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189551"
 ---
 # <a name="avoid-polling-devices"></a>避免轮询设备
 
@@ -29,20 +29,15 @@ ms.locfileid: "72837202"
 
 尽管如此，某些仍在使用中的设备已设计用于处理旧的处理器，其中包含的数据总线较窄、时钟速率较慢，以及执行同步 i/o 的单用户单任务操作系统。 此类设备可能需要轮询或其他一些方法来等待设备更新其寄存器。
 
-尽管通过编写递增计数器的简单循环来编写简单的循环来解决速度较慢的设备问题似乎是合乎逻辑的，因此，在设备更新注册时，此类驱动程序在 Windows 平台中不太可能是可移植的。 循环计数器的最大值需要为每个平台自定义。 此外，如果使用良好的优化编译器对驱动程序进行编译，则编译器可能会删除该驱动程序的计数器变量以及它递增的循环。
+尽管通过编写递增计数器的简单循环来编写简单的循环来解决速度较慢的设备问题似乎是合乎逻辑的，因此，在设备更新注册时，此类驱动程序在 Windows 平台中不太可能是可移植的。 循环计数器的最大值需要为每个平台自定义。 此外，如果使用良好的优化编译器对驱动程序进行编译，则编译器可能会删除驱动程序的计数器变量，并且循环 (s) 在其中递增。
 
-**注意**   如果驱动程序必须在设备硬件更新状态时停止，请遵循此实现准则：驱动程序可以在读取设备寄存器之前调用[**KeStallExecutionProcessor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestallexecutionprocessor) 。 驱动程序应最大限度地减少间隔时间间隔，并且应在一般情况下指定一个不超过50微秒的间隔时间间隔。
+**注意**   如果驱动程序必须在设备硬件更新状态时停止，请遵循此实现准则：驱动程序可以在读取设备寄存器之前调用[**KeStallExecutionProcessor**](/windows-hardware/drivers/ddi/ntifs/nf-ntifs-kestallexecutionprocessor) 。 驱动程序应最大限度地减少间隔时间间隔，并且应在一般情况下指定一个不超过50微秒的间隔时间间隔。
 
 **KeStallExecutionProcessor**间隔的粒度为一微秒。
 
-如果设备的更新状态需要超过50微秒，请考虑在驱动程序中设置[设备专用线程](device-dedicated-threads.md)。
+如果设备的更新状态需要超过50微秒，请考虑在驱动程序中设置 [设备专用线程](device-dedicated-threads.md) 。
 
  
 
  
-
- 
-
-
-
 

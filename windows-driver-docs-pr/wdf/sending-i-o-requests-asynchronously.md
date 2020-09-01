@@ -9,12 +9,12 @@ keywords:
 - 异步发送 i/o 请求 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b0cd40fe08ebc56a2b13739b9de5fe464de390b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 723f70bd618685732e8990e642f2446173427930
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845205"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189633"
 ---
 # <a name="sending-io-requests-asynchronously"></a>异步发送 I/O 请求
 
@@ -32,28 +32,28 @@ ms.locfileid: "72845205"
 <thead>
 <tr class="header">
 <th align="left">方法</th>
-<th align="left">用途</th>
+<th align="left">目的</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForRead&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)"><strong>WdfIoTargetFormatRequestForRead</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForRead&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforread)"><strong>WdfIoTargetFormatRequestForRead</strong></a></p></td>
 <td align="left"><p>格式化读取请求</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForWrite&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite)"><strong>WdfIoTargetFormatRequestForWrite</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForWrite&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforwrite)"><strong>WdfIoTargetFormatRequestForWrite</strong></a></p></td>
 <td align="left"><p>格式化写入请求</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforioctl" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForIoctl&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforioctl)"><strong>WdfIoTargetFormatRequestForIoctl</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforioctl" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForIoctl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforioctl)"><strong>WdfIoTargetFormatRequestForIoctl</strong></a></p></td>
 <td align="left"><p>设置设备控件请求的格式</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctl" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForInternalIoctl&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctl)"><strong>WdfIoTargetFormatRequestForInternalIoctl</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctl" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForInternalIoctl&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctl)"><strong>WdfIoTargetFormatRequestForInternalIoctl</strong></a></p></td>
 <td align="left"><p>设置内部设备控制请求的格式</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctlothers" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForInternalIoctlOthers&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctlothers)"><strong>WdfIoTargetFormatRequestForInternalIoctlOthers</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctlothers" data-raw-source="[&lt;strong&gt;WdfIoTargetFormatRequestForInternalIoctlOthers&lt;/strong&gt;](/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetformatrequestforinternalioctlothers)"><strong>WdfIoTargetFormatRequestForInternalIoctlOthers</strong></a></p></td>
 <td align="left"><p>设置非标准内部设备控制请求的格式</p></td>
 </tr>
 </tbody>
@@ -67,23 +67,17 @@ ms.locfileid: "72845205"
 
     使用上表中列出的方法之一来格式化请求。 有关如何使用这些方法的详细信息，请参阅方法的参考页。
 
-2.  注册[*CompletionRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)回调函数。
+2.  注册 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数。
 
-    如果以异步方式发送请求，则通常需要框架在另一个驱动程序完成每个请求时通知驱动程序。 你的驱动程序应定义[*CompletionRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)回调函数并通过调用[**WdfRequestSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)来注册它。 有关详细信息，请参阅[完成 I/o 请求](completing-i-o-requests.md)。
+    如果以异步方式发送请求，则通常需要框架在另一个驱动程序完成每个请求时通知驱动程序。 你的驱动程序应定义 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数并通过调用 [**WdfRequestSetCompletionRoutine**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsetcompletionroutine)来注册它。 有关详细信息，请参阅 [完成 I/o 请求](completing-i-o-requests.md)。
 
 3.  发送请求。
 
-    驱动程序格式化请求并注册[*CompletionRoutine*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine)回调函数后，你的驱动程序必须调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)。 此方法使你能够以同步或异步方式发送请求，具体取决于在*RequestOptions*参数中设置的标志。 有关同步发送 i/o 请求的更简单方法，请参阅[同步发送 I/o 请求](sending-i-o-requests-synchronously.md)。 有关如何获取异步请求或通过调用**WdfRequestSend**发送的任何请求的完成状态的信息，请参阅[完成 i/o 请求](completing-i-o-requests.md)。
+    驱动程序格式化请求并注册 [*CompletionRoutine*](/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_completion_routine) 回调函数后，你的驱动程序必须调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)。 此方法使你能够以同步或异步方式发送请求，具体取决于在 *RequestOptions* 参数中设置的标志。 有关同步发送 i/o 请求的更简单方法，请参阅 [同步发送 I/o 请求](sending-i-o-requests-synchronously.md)。 有关如何获取异步请求或通过调用 **WdfRequestSend**发送的任何请求的完成状态的信息，请参阅 [完成 i/o 请求](completing-i-o-requests.md)。
 
-调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend)发送 i/o 请求的驱动程序稍后可以尝试取消请求。 有关详细信息，请参阅[取消 I/o 请求](canceling-i-o-requests.md)。
+调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) 发送 i/o 请求的驱动程序稍后可以尝试取消请求。 有关详细信息，请参阅 [取消 I/o 请求](canceling-i-o-requests.md)。
 
-对于每个请求，某些驱动程序可能会通过多次调用[**WdfRequestSend**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) ，将单个 i/o 请求发送到多个设备，进而发送到多个 i/o 目标。 在第一次调用**WdfRequestSend**之前，这些驱动程序必须调用[**WdfRequestChangeTarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestchangetarget) ，以验证是否可以将请求发送到下一个 i/o 目标。
-
- 
+对于每个请求，某些驱动程序可能会通过多次调用 [**WdfRequestSend**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) ，将单个 i/o 请求发送到多个设备，进而发送到多个 i/o 目标。 在第一次调用**WdfRequestSend**之前，这些驱动程序必须调用[**WdfRequestChangeTarget**](/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestchangetarget) ，以验证是否可以将请求发送到下一个 i/o 目标。
 
  
-
-
-
-
 

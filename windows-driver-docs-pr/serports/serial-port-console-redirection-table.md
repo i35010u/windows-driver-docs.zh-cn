@@ -6,12 +6,12 @@ keywords:
 - SPCR
 - EMS UART
 ms.date: 07/23/2018
-ms.openlocfilehash: cb0665b61561b9d9d5d3f42de3e043cc929e918c
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: e2f58d31f6e9be28c41d7ff8ec5b73bbac011797
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902628"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188573"
 ---
 # <a name="serial-port-console-redirection-table--spcr"></a>串行端口控制台重定向表 (SPCR) 
 
@@ -38,7 +38,7 @@ ms.locfileid: "88902628"
 | OEM 修订 | 4 | 24 | 提供的 OEM 表 ID 的串行端口控制台重定向表的 OEM 修订版。 |
 | 创建者 ID | 4 | 28 | 创建该表的实用工具的供应商 ID。 对于 DSDT、RSDT、SSDT 和 PSDT 表，这是 ASL 编译器的 ID。 |
 | 创建者修订 | 4 | 32 | 创建该表的实用工具的修订。 对于 DSDT、RSDT、SSDT 和 PSDT 表，这是 ASL 编译器的修订版本。 |
-| 接口类型 | 1 | 36 | 指示注册接口的类型： <p> 对于修订版本1： </p> <ul><li>0 = 完整16550接口 </li><li>1 = 完整16450接口 (还必须接受写入 16550 FCR register)  </li><li>2-255 = 保留 </li></ul><p>对于修订版2： <p>请参阅[DBG2 规范](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn639131(v=vs.85))的表3中的串行端口子类型 </p>|
+| 接口类型 | 1 | 36 | 指示注册接口的类型： <p> 对于修订版本1： </p> <ul><li>0 = 完整16550接口 </li><li>1 = 完整16450接口 (还必须接受写入 16550 FCR register)  </li><li>2-255 = 保留 </li></ul><p>对于修订版2： <p>请参阅[DBG2 规范](/previous-versions/windows/hardware/design/dn639131(v=vs.85))的表3中的串行端口子类型 </p>|
 | 预留 | 3 | 37 | 必须为 0。 |
 | 基址 | 12 | 40|<p>使用 ACPI 一般地址结构描述的串行端口寄存器集的基址。</p>0 = 禁用控制台重定向 <p>**注意：** <p>COM1 (0x3F8) ：</p><ul><li>整数格式： 0x 01 08 00 00 00000000000003F8</li><li>在内存中查看：0x01080000F803000000000000</li></ul><p>COM2 (Ox2F8) ：<ul><li>整数格式： 0x 01 08 00 00 00000000000002F8</li><li>在内存中查看：0x01080000F802000000000000 </li></ul>|
 | 中断类型 | 1 | 52 | UART 使用的中断类型 () ：<ul><li>位 [0]： PC 兼容双 8259 IRQ 中断</li><li>位 [1]： i/o APIC 中断 (全局系统中断) </li><li>位 [2]： i/o SAPIC 中断 (全局系统中断) </li><li>位 [3]： ARMH GIC 中断 (全局系统中断) </li><li>Bit [4： 7]：保留的 (必须设置为 0) </li></ul> 其中 <ul><li>0 = 不支持</li><li>1 = 支持</li></ul> 具有双8259和 i/o APIC 或 i/o SAPIC 的平台必须将 IRQ 位设置 (位 [0] ) 和对应的全局系统中断位。  (例如，支持8259和 SAPIC 的系统为 5) |
@@ -60,7 +60,7 @@ ms.locfileid: "88902628"
 
 ## <a name="revision-history"></a>修订历史
 
-| Date      | 审阅  | 说明|
+| 日期      | 审阅  | 描述|
 |--------|-----|------|
 | 2/15/00   | .10  | 创建|
 | 3/1/00    | .50  | "SPCR"。 添加的签名数据 |

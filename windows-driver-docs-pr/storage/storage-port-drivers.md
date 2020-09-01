@@ -8,26 +8,26 @@ keywords:
 - 端口驱动程序 WDK 存储
 ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1abb10a3b2b5bdf52bb67784db291d824aa4aa
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.openlocfilehash: eb894a7dc857a7d774908f365b06c78f7972306e
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606515"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189431"
 ---
 # <a name="introduction-to-storage-port-drivers"></a>存储端口驱动程序简介
 
 Microsoft Windows 包含三个系统提供的存储端口驱动程序：
 
-- [Storport 驱动程序](storport-driver-overview.md)（*storport*），在 Windows Server 2003 和更高版本的操作系统中可用（建议）
+- [Storport 驱动程序](storport-driver-overview.md) (*Storport.sys*) ，在 Windows Server 2003 和更高版本的操作系统中可用 (建议使用) 
 
-- [SCSI 端口驱动程序](scsi-port-driver-overview.md)（*Scsiport*）
+- [SCSI 端口驱动程序](scsi-port-driver-overview.md) (*Scsiport.sys*) 
 
-- [ATA 端口驱动程序](ata-port-driver-overview.md)（*Ataport*），在 Windows Vista 和更高版本的操作系统中可用
+- [ATA 端口驱动程序](ata-port-driver-overview.md) (*Ataport.sys*) ，在 Windows Vista 和更高版本的操作系统中可用
 
-Storport 驱动程序比 SCSI 端口更有效、性能更高。 因此，应尽可能地开发与 Storport 驱动程序配合使用的微型端口驱动程序。 尤其重要的是，将 Storport 用于高性能设备，例如基于主机的 RAID 和光纤通道适配器。 Storport 不能与不支持即插即用（PnP）或必须使用系统 DMA 的适配器或设备一起使用。 有关使用 Storport 驱动程序的详细限制列表，请参阅对[适配器使用 storport 的要求](requirements-for-using-storport-with-an-adapter.md)。
+Storport 驱动程序比 SCSI 端口更有效、性能更高。 因此，应尽可能地开发与 Storport 驱动程序配合使用的微型端口驱动程序。 尤其重要的是，将 Storport 用于高性能设备，例如基于主机的 RAID 和光纤通道适配器。 Storport 不能用于不支持即插即用 (PnP) 或必须使用系统 DMA 的适配器或设备。 有关使用 Storport 驱动程序的详细限制列表，请参阅对 [适配器使用 storport 的要求](requirements-for-using-storport-with-an-adapter.md)。
 
-ATA 端口驱动程序从基于 SCSI 的协议中防护 ATA 微型端口驱动程序，端口驱动程序使用该协议与较高级别的驱动程序（如存储类驱动程序）进行通信。 例如，连接到 SCSI 端口或 Storport 的微型端口驱动程序必须向端口驱动程序提供 SCSI 识别数据。 这不是 ATA 微型端口驱动程序所必需的。 ATA 端口驱动程序使用 ATA 命令从 ATA 微型端口驱动程序收集必要的数据，对数据进行组织，使其符合 SCSI 感知数据格式，并将数据传递到更高级别的驱动程序，就像它是 SCSI 感知数据一样。 ATA 端口驱动程序还会将其从更高级别的驱动程序接收的每个[SCSI_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block)转换为基于 ATA 的等效项（称为[IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_request_block)）。
+ATA 端口驱动程序从基于 SCSI 的协议中防护 ATA 微型端口驱动程序，端口驱动程序使用该协议与较高级别的驱动程序（如存储类驱动程序）进行通信。 例如，连接到 SCSI 端口或 Storport 的微型端口驱动程序必须向端口驱动程序提供 SCSI 识别数据。 这不是 ATA 微型端口驱动程序所必需的。 ATA 端口驱动程序使用 ATA 命令从 ATA 微型端口驱动程序收集必要的数据，对数据进行组织，使其符合 SCSI 感知数据格式，并将数据传递到更高级别的驱动程序，就像它是 SCSI 感知数据一样。 ATA 端口驱动程序还会将其从更高级别的驱动程序接收的每个 [SCSI_REQUEST_BLOCK](/windows-hardware/drivers/ddi/srb/ns-srb-_scsi_request_block) 转换为基于 ATA 的等效项（称为 [IDE_REQUEST_BLOCK](/windows-hardware/drivers/ddi/irb/ns-irb-_ide_request_block)）。
 
 每个端口驱动程序与一组供应商提供的存储微型端口驱动程序通信，并为微型端口驱动程序调用提供一组支持例程。 每个端口驱动程序通过调用每个存储微型端口驱动程序必须实现的一组标准例程，与其微型端口驱动程序通信。 SCSI 端口驱动程序、Storport 驱动程序和 ATA 端口驱动程序调用的微型端口驱动程序例程非常类似。 可在以下部分中找到端口驱动程序支持例程和微型端口驱动程序例程的列表：
 

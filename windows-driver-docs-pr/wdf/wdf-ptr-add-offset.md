@@ -6,12 +6,12 @@ keywords:
 - WDF_PTR_ADD_OFFSET 宏
 ms.date: 08/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d25e5af8889f724cfd0e345276a60869b980ef9c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c2a8e0ebf83afde8456a51312cd71dca8b83e2df
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845413"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187749"
 ---
 # <a name="wdf_ptr_add_offset-macro"></a>WDF_PTR_ADD_OFFSET 宏
 
@@ -45,7 +45,7 @@ PVOID WDF_PTR_ADD_OFFSET(
 <a name="remarks"></a>备注
 -------
 
-此宏调用[**WDF_PTR_ADD_OFFSET_TYPE**](wdf-ptr-add-offset-type.md) ，并将 *_type*参数设置为 PVOID。
+此宏调用 [**WDF_PTR_ADD_OFFSET_TYPE**](wdf-ptr-add-offset-type.md) ，并将 *_type* 参数设置为 PVOID。
 
 宏的定义如下：
 
@@ -54,7 +54,7 @@ PVOID WDF_PTR_ADD_OFFSET(
         WDF_PTR_ADD_OFFSET_TYPE(_ptr, _offset, PVOID)
 ```
 
-下面是 Toaster 示例（Toaster\\func\\\\）的示例。 在此示例中，驱动程序调用**WDF_PTR_ADD_OFFSET**以添加地址的偏移量，以确定要传递到[**WDF_WMI_BUFFER_APPEND_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string)函数的目标缓冲区地址。
+下面是 Toaster 示例 (Toaster \\ 函数函数示例) 的 \\ 示例 \\ 。 在此示例中，驱动程序调用 **WDF_PTR_ADD_OFFSET** 以添加地址的偏移量，以确定要传递到 [**WDF_WMI_BUFFER_APPEND_STRING**](/windows-hardware/drivers/ddi/wdfwmi/nf-wdfwmi-wdf_wmi_buffer_append_string) 函数的目标缓冲区地址。
 
 ```cpp
         //
@@ -97,29 +97,19 @@ PVOID WDF_PTR_ADD_OFFSET(
 <tbody>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">全局</a></td>
+<td><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">通用</a></td>
 </tr>
 <tr class="even">
 <td><p>最低 KMDF 版本</p></td>
 <td><p>1.5</p></td>
 </tr>
 <tr class="odd">
-<td><p>最低 UMDF 版本</p></td>
+<td><p>最小 UMDF 版本</p></td>
 <td><p>2.0</p></td>
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Wdfcore （包含 Wdf .h）</td>
+<td>Wdfcore (包含 Wdf .h) </td>
 </tr>
 </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-

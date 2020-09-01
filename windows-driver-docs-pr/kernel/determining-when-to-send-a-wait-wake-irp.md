@@ -4,16 +4,16 @@ description: 确定何时发送等待/唤醒 IRP
 ms.assetid: a56cfccc-b44b-4ec5-836b-3a9711ef5f1f
 keywords:
 - 计时等待/唤醒 Irp WDK 电源管理
-- 发送等待/唤醒 Irp
-- 等待/唤醒 Irp WDK 电源管理发送
+- 正在发送等待/唤醒 Irp
+- 等待/唤醒 Irp WDK 电源管理，发送
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bcd0548c378c0d47aad223cd2f363198fc636b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 403de2462abfdba5281f022406c5e64e9e589b89
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371263"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189087"
 ---
 # <a name="determining-when-to-send-a-waitwake-irp"></a>确定何时发送等待/唤醒 IRP
 
@@ -21,18 +21,13 @@ ms.locfileid: "67371263"
 
 
 
-拥有设备的电源策略发送的驱动程序等待/唤醒 Irp 代表其设备。 以下项之一发生时，此类驱动程序必须发送等待/唤醒 IRP:
+拥有设备电源策略的驱动程序代表其设备发送等待/唤醒 Irp。 当出现下列情况之一时，此类驱动程序必须发送等待/唤醒 IRP：
 
--   该驱动程序会让设备进入睡眠状态，但该设备必须能够响应外部唤醒信号中唤醒。
+-   驱动程序正在使设备进入睡眠状态，但设备必须能够唤醒，以响应外部唤醒信号。
 
--   系统将进入睡眠状态，设备必须能够唤醒它。
+-   系统将进入睡眠状态，并且设备必须能够对其唤醒。
 
-电源策略所有者应发送等待/唤醒 IRP，这种情况是即将之前。 它可以发送的 IRP 随时其设备处于 D0，但不是能发送此类的 IRP 时它正在处理另一组 power 或查询能耗 IRP。 作为一般规则，驱动程序应将发送 IRP 插 manager 其处理期间[ **IRP\_MN\_启动\_设备**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)请求，它具有后初始化和启动设备。
-
- 
+电源策略所有者应发送等待/唤醒 IRP，然后再继续此类条件。 它可以在其设备处于 D0 时随时发送 IRP，但它在处理另一个设置电源或查询-电源 IRP 时不得发送此类 IRP。 作为一般规则，当驱动程序初始化并启动了设备之后，驱动程序应在处理即插即用 manager 的 [**irp \_ MN \_ START \_ 设备**](./irp-mn-start-device.md) 请求的过程中发送 IRP。
 
  
-
-
-
 

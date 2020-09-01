@@ -4,54 +4,49 @@ description: ACPI 5.0 规范引入了一组新的硬件要求，以支持运行 
 ms.assetid: C8AA4EE1-D9A6-438E-801B-8EDDF8AA0560
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3504315b3a3aa87a1188b0736ca39549619ade9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f92be409690ea569d1f9dd5097b540a0bec56620
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364545"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189002"
 ---
 # <a name="hardware-requirements-for-soc-based-platforms"></a>基于 SoC 的平台的硬件要求
 
 
-[ACPI 5.0 规范](https://uefi.org/specifications)引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件减少系统设计，以降低成本，并支持连接待机电源模型以启用长的电池使用寿命。
+[ACPI 5.0 规范](https://uefi.org/specifications)引入了一组新的硬件要求，以支持运行 Windows 的基于 SoC 的平台。 ACPI 5.0 支持硬件降低的系统设计以降低成本，并支持连接待机电源型号，以延长电池寿命。
 
-## <a name="hardware-reduced-acpi-platforms"></a>硬件减少 ACPI 平台
+## <a name="hardware-reduced-acpi-platforms"></a>硬件-减少了 ACPI 平台
 
 
-若要支持 Soc，Windows 不需要硬件平台，可以在第 4 章"ACPI 硬件规范"ACPI 5.0 规范的实现任何所述的功能。 修复了如下所示的硬件功能的 ACPI 不是必需的：
+为了支持 Soc，Windows 不需要硬件平台来实现 ACPI 5.0 规范第4章 "ACPI 硬件规范" 中所述的任何功能。 无需 ACPI 固定硬件功能，如下所示：
 
 -   电源管理 (PM) 计时器
 -   实时时钟 (RTC) 唤醒警报
--   系统控制中断 (SCI)
--   固定的硬件集注册 (PMx\_ \*事件/控件/状态注册)
--   GPE 块注册 (GPEx\_ \*事件/控件/状态注册)
--   嵌入式的控制器
+-   系统控制中断 (科幻) 
+-   固定硬件注册集 (PMx \_ \* 事件/控制/状态寄存器) 
+-   GPE 块注册 (GPEx \_ \* 事件/控制/状态寄存器) 
+-   嵌入式控制器
 
-未实现 ACPI 固定硬件接口的平台嘿 *硬件减少*ACPI 平台。 若要指示一个平台，是硬件减少，设置 HW\_减少了\_ACPI 标志中固定 ACPI 描述表 (FADT)。
+未实现 ACPI 固定硬件接口的平台称为 *硬件精简* acpi 平台。 若要指示某个平台硬件已降低，请 \_ \_ 在 "固定 ACPI 说明" 表中设置 "HW 缩减 acpi" 标志 (FADT) "。
 
-硬件减少 ACPI 在平台上，如修复硬件功能*电源按钮*，*盖子状态*，依此类推，已在 ACPI 定义的硬件中实现传统上，以独占方式替换通过它们 ACPI 定义的软件的等效项。 例如，控件方法电源按钮使用而不是固定的硬件等效。
+在硬件上，降低了 ACPI 平台，固定硬件功能（如 *电源按钮*、 *盖子状态*等）在 acpi 定义的硬件中一直被实现，由其 acpi 定义的软件等效项替换。 例如，使用控制方法的 "电源" 按钮而不是固定硬件等效项。
 
 ## <a name="connected-standby"></a>连接待机
 
 
-实现连接待机电源模型 （InstantGo 设备的一个重要功能） 的平台将作为提供低能耗空闲 S0 功能在 ACPI 5.0 中定义的平台公开到 Windows。 必须设置 FADT 中的"低电源 S0 空闲能够"标志以指示该平台支持连接待机状态。
+用于实现连接待机电源型号的平台 (InstantGo 设备的一项重要功能) 作为提供在 ACPI 5.0 中定义的低功耗 S0 空闲功能的平台向 Windows 公开。 必须将 FADT 中的 "低功耗 S0 空闲" 标志设置为指示该平台支持连接待机。
 
-Windows 支持具有低能耗空闲 S0 功能而不考虑它们实现硬件减少 ACPI 或完整 ACPI 的平台。 但是，根据 ACPI 5.0 规范的要求，Windows 不使用具有低能耗空闲 S0 功能，而不考虑 ACPI 配置的平台上传统睡眠/恢复功能。
+Windows 支持具有低功耗 S0 空闲功能的平台，无论它们是实现硬件缩减的 ACPI 还是完全 ACPI。 但是，根据 ACPI 5.0 规范的要求，无论 ACPI 配置如何，Windows 也不会在具有低功耗 S0 空闲功能的平台上使用传统睡眠/恢复功能。
 
-有关连接待机电源模型的详细信息，请参阅[现代备用](https://docs.microsoft.com/previous-versions/dn915061(v=vs.85))。
+有关连接备用电源模式的详细信息，请参阅 [新式备用](/previous-versions/dn915061(v=vs.85))。
 
 ## <a name="acpi-events"></a>ACPI 事件
 
 
-ACPI 5.0 规范的第 4，"ACPI 硬件规范"章的一部分为信号硬件事件定义了全功能的机制。 Windows 支持多个事件规范中定义，这种支持将传递给 SoC 平台。 但是，对于硬件减少 ACPI 平台，GPIO 中断用于发出信号的事件，而不是 ACPI 定义 GPE/SCI 硬件。 但是发出事件的信号后，事件处理是硬件减少和完整 ACPI 平台之间完全相同。 在这两种情况下，ACPI 指定事件处理机制，事件最终将 ACPI 定义的通知发送到相应的设备驱动程序调用相应的控件的方法 （处理程序）。
+作为 ACPI 5.0 规范的第4章 "ACPI 硬件规范" 的一部分，定义了一个功能完备的机制，用于通知硬件事件。 Windows 支持规范中定义的多个事件，此支持将传输到 SoC 平台。 但是，对于硬件缩减的 ACPI 平台，GPIO 中断用于向事件发出信号，而不是由 ACPI 定义的 GPE/科幻硬件提供信号。 发出事件信号后，事件处理在硬件缩减和完整 ACPI 平台之间完全相同。 在这两种情况下，ACPI 指定的事件处理机制将调用相应的控件方法 (处理程序) 事件，最终将 ACPI 定义的通知发送到适当的设备驱动程序。
 
-有关 GPIO 信号 ACPI 事件的详细信息，请参阅 ACPI 5.0 规范 5.6.5，"GPIO-Signaled ACPI 事件"部分。 有关处理的 ACPI 软件事件的详细信息，请参阅部分 5.6.4，"常规用途的事件处理"，ACPI 5.0 规范。
-
- 
+有关 GPIO 终止的 ACPI 事件的详细信息，请参阅 ACPI 5.0 规范的 "GPIO 终止的 ACPI 事件" 部分。 有关 ACPI 软件事件处理的详细信息，请参阅 ACPI 5.0 规范的 5.6.4 "常规用途事件处理" 部分。
 
  
-
-
-
 

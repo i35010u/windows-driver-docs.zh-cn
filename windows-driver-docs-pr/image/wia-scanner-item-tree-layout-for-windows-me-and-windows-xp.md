@@ -4,12 +4,12 @@ description: Windows Me 和 Windows XP 的 WIA 扫描仪项树布局
 ms.assetid: e4824d3a-6439-4ebb-903e-2b592108ddbe
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20a8304abdd39e939dd001c0ad8528d37e828f64
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 136872c780f3c9e4d54a04925f4ba96cab1b4736
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840671"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188881"
 ---
 # <a name="wia-scanner-item-tree-layout-for-windows-xp"></a>适用于 Windows XP 的 WIA 扫描器项树布局
 
@@ -18,7 +18,7 @@ Windows XP 的 WIA 扫描器项树包含一个根项和一个子项。 下图说
 
 ![说明 wia 扫描器项树的关系图](images/scanner-tree.png)
 
-有关如何创建项树的示例，请参阅[应用程序如何创建 WIA 设备](how-the-application-creates-the-wia-device.md)。 有关其他信息，请参阅[初始化 Wia 微型驱动程序](initializing-the-wia-minidriver.md)、**生成和维护** [WIA 驱动程序服务库](wia-driver-services-library.md)中的项树和[**IWiaMiniDrv：:d rvinitializewia**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)。 扫描仪项树中的根项包含所有 WIA 微型驱动程序中存在的信息，以及特定于扫描程序的属性。 扫描仪特定的属性包括设备光学信息和文档送纸器支持。
+有关如何创建项树的示例，请参阅 [应用程序如何创建 WIA 设备](how-the-application-creates-the-wia-device.md) 。 有关其他信息，请参阅 [初始化 Wia 微型驱动程序](initializing-the-wia-minidriver.md)、 **生成和维护** [WIA 驱动程序服务库](wia-driver-services-library.md)中的项树和 [**IWiaMiniDrv：:d rvinitializewia**](/windows-hardware/drivers/ddi/wiamindr_lh/nf-wiamindr_lh-iwiaminidrv-drvinitializewia)。 扫描仪项树中的根项包含所有 WIA 微型驱动程序中存在的信息，以及特定于扫描程序的属性。 扫描仪特定的属性包括设备光学信息和文档送纸器支持。
 
 子项表示设备的数据收集功能，用于传输数据。 应将扫描仪的子项命名为，以反映它可以执行的操作。
 
@@ -43,4 +43,4 @@ Microsoft 需要为 Windows XP 提供以下名称：
 
 -   请求数据传输。
 
-应用程序通常会期望平板扫描仪（包括带有自动文档送纸程序（ADFs）的扫描仪）由两个项表示：一个根项和一个子项。 所有数据传输都是从子项目中执行的。
+应用程序通常需要平板扫描仪，其中包括具有自动文档送纸送 (ADFs) 的扫描程序，这些扫描程序由两个项表示：根项和单个子项。 所有数据传输都是从子项目中执行的。

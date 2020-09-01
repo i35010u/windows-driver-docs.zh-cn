@@ -3,16 +3,16 @@ title: 检测可分页的代码
 description: 检测可分页的代码
 ms.assetid: 5e8a021d-09c3-4e63-b5a8-7559c384ae3d
 keywords:
-- 可分页的驱动程序 WDK 内核，代码检测
-- 检测可分页的代码
+- 可分页驱动程序 WDK 内核，代码检测
+- 检测可分页代码
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fa3027cef0f812845d03128c969aa7fdfe53c7a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 14ef84a6ec9a667e441856fc16697fd03a79a4f3
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371270"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89189079"
 ---
 # <a name="detecting-code-that-can-be-pageable"></a>检测可分页的代码
 
@@ -20,7 +20,7 @@ ms.locfileid: "67371270"
 
 
 
-若要检测的 IRQL 在运行的代码&gt;= 调度\_级别，使用[ **PAGED\_代码**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)宏。 在调试模式下，此宏生成一条消息，当代码运行在 IRQL &gt;= 调度\_级别。 若要将标记为分页代码，如以下示例所示的整个例程的例程中的第一个语句添加该宏：
+若要检测以 IRQL &gt; = 调度级别运行的代码 \_ ，请使用 [**分页 \_ 代码**](./mm-bad-pointer.md) 宏。 在调试模式下，如果代码以 IRQL = 调度级别运行，则此宏将生成一条消息 &gt; \_ 。 添加宏作为例程中的第一个语句，将整个例程标记为分页代码，如以下示例所示：
 
 ```cpp
 NTSTATUS 
@@ -38,12 +38,7 @@ MyDriverXxx(
 } 
 ```
 
-若要确保你在进行这正确，请运行[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)针对与您已完成的驱动程序**强制 IRQL 检查**选项处于启用状态。 此选项将导致系统自动出可分页的所有代码页对驱动程序引发调度到的 IRQL 每次\_级别或更高版本。 使用驱动程序验证程序，您可以迅速找到驱动程序的任何 bug 在此区域中。 否则为通常将仅由客户发现这些 bug，并且它们可以经常是非常困难，以便重现。
+若要确保正确执行此操作，请在启用了 "**强制 IRQL 检查**" 选项的情况下针对完成的驱动程序运行[驱动程序验证程序](../devtest/driver-verifier.md)。 此选项使系统在每次驱动程序将 IRQL 提升为调度 \_ 级别或更高级别时，自动将所有可分页的代码分页。 使用驱动程序验证程序，可以快速找到此区域中的任何驱动程序错误。 否则，这些 bug 通常仅由客户发现，它们可能会很难重现。
 
  
-
- 
-
-
-
 

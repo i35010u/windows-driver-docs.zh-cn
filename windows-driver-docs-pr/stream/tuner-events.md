@@ -8,17 +8,17 @@ keywords:
 - EVENTSETID_TUNER
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d3844389ce57a4d65976902f6ae0f2a9a6c252
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca10e3515046d69472dd1712d9d2ff296bd67a91
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377717"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89187994"
 ---
 # <a name="tuner-events"></a>调谐器事件
 
 
-[EVENTSETID\_调谐器](https://docs.microsoft.com/windows-hardware/drivers/stream/eventsetid-tuner)事件集中包含调谐器事件。 下表描述了属于 EVENTSETID 事件\_调谐器事件集。 第二个表描述了为运行 Windows Vista 及更高版本 AVStream 微型驱动程序实现一个调谐器事件。
+[EVENTSETID \_ 调谐器](./eventsetid-tuner.md)事件集包含调谐器事件。 下表描述了属于 EVENTSETID \_ 调谐器事件集的事件。 第二个表描述了为在 Windows Vista 和更高版本上运行的 AVStream 微型驱动程序实现的调谐器事件。
 
 <table>
 <colgroup>
@@ -28,20 +28,20 @@ ms.locfileid: "67377717"
 <thead>
 <tr class="header">
 <th>EVENTSETID_TUNER KS 事件</th>
-<th>事件描述</th>
+<th>事件说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_CHANGED&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-changed)"><strong>KSEVENT_TUNER_CHANGED</strong></a></p></td>
-<td><p>DirectShow 调谐器已更改，例如，由于调到新的电视频道的通知。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-changed" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_CHANGED&lt;/strong&gt;](./ksevent-tuner-changed.md)"><strong>KSEVENT_TUNER_CHANGED</strong></a></p></td>
+<td><p>向 DirectShow 发出信号，指示调谐器发生了变化，例如，由于对新的电视频道进行了调整。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-下表描述了 EVENTSETID\_调谐器事件适用于 Windows Vista 新增的。
+下表描述了适用 \_ 于 Windows Vista 的 EVENTSETID 调谐器事件。
 
 <table>
 <colgroup>
@@ -51,13 +51,13 @@ ms.locfileid: "67377717"
 <thead>
 <tr class="header">
 <th>EVENTSETID_TUNER KS 事件</th>
-<th>事件描述</th>
+<th>事件说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan)"><strong>KSEVENT_TUNER_INITIATE_SCAN</strong></a></p></td>
-<td><p>启动信号扫描，扫描完成时通知 DirectShow。</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/stream/ksevent-tuner-initiate-scan" data-raw-source="[&lt;strong&gt;KSEVENT_TUNER_INITIATE_SCAN&lt;/strong&gt;](./ksevent-tuner-initiate-scan.md)"><strong>KSEVENT_TUNER_INITIATE_SCAN</strong></a></p></td>
+<td><p>启动信号扫描并在扫描完成时通知 DirectShow。</p></td>
 </tr>
 </tbody>
 </table>
@@ -65,9 +65,4 @@ ms.locfileid: "67377717"
  
 
  
-
- 
-
-
-
 

@@ -1,6 +1,6 @@
 ---
-title: KSPROPERTY\_EXTXPORT\_负载\_中等
-description: KSPROPERTY\_EXTXPORT\_负载\_中型属性设置或获取外部设备的负载介质。 例如，弹出、打开托盘、关闭纸盒等。
+title: KSPROPERTY \_ EXTXPORT \_ LOAD \_ MEDIUM
+description: KSPROPERTY \_ EXTXPORT \_ load \_ medium 属性设置或获取外部设备的负载介质。 例如，弹出、打开托盘、关闭纸盒等。
 ms.assetid: 13ec61ae-4be7-4af6-875f-a6ca178cf6bc
 keywords:
 - KSPROPERTY_EXTXPORT_LOAD_MEDIUM 流媒体设备
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b156226f9d308e4dedd6603c93d775a169c5df
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d5391458f0ca0f104beaa84acbcf484536dfa117
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837950"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89188131"
 ---
-# <a name="ksproperty_extxport_load_medium"></a>KSPROPERTY\_EXTXPORT\_负载\_中等
+# <a name="ksproperty_extxport_load_medium"></a>KSPROPERTY \_ EXTXPORT \_ LOAD \_ MEDIUM
 
 
-KSPROPERTY\_EXTXPORT\_负载\_中型属性设置或获取外部设备的负载介质。 例如，弹出、打开托盘、关闭纸盒等。
+KSPROPERTY \_ EXTXPORT \_ load \_ medium 属性设置或获取外部设备的负载介质。 例如，弹出、打开托盘、关闭纸盒等。
 
 ## <span id="ddk_ksproperty_extxport_load_medium_ks"></span><span id="DDK_KSPROPERTY_EXTXPORT_LOAD_MEDIUM_KS"></span>
 
@@ -41,7 +41,7 @@ KSPROPERTY\_EXTXPORT\_负载\_中型属性设置或获取外部设备的负载�
 </colgroup>
 <thead>
 <tr class="header">
-<th>“获取”</th>
+<th>获取</th>
 <th>设置</th>
 <th>目标</th>
 <th>属性描述符类型</th>
@@ -50,10 +50,10 @@ KSPROPERTY\_EXTXPORT\_负载\_中型属性设置或获取外部设备的负载�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>“是”</p></td>
-<td><p>“是”</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
 <td><p>设备</p></td>
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s" data-raw-source="[&lt;strong&gt;KSPROPERTY_EXTXPORT_S&lt;/strong&gt;](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)"><strong>KSPROPERTY_EXTXPORT_S</strong></a></p></td>
 <td><p>ULONG</p></td>
 </tr>
 </tbody>
@@ -61,12 +61,12 @@ KSPROPERTY\_EXTXPORT\_负载\_中型属性设置或获取外部设备的负载�
 
  
 
-属性值（操作数据）是指定当前负载介质的 ULONG。 例如，弹出，打开托盘或关闭的纸盒。
+ (操作数据) 的属性值是指定当前负载介质的 ULONG。 例如，弹出，打开托盘或关闭的纸盒。
 
 <a name="remarks"></a>备注
 -------
 
-KSPROPERTY\_EXTXPORT\_S 结构的**LoadMedium**成员指定负载介质。
+KSPROPERTY **LoadMedium** \_ EXTXPORT S 结构的 LoadMedium 成员 \_ 指定负载介质。
 
 <a name="requirements"></a>要求
 ------------
@@ -79,7 +79,7 @@ KSPROPERTY\_EXTXPORT\_S 结构的**LoadMedium**成员指定负载介质。
 <tbody>
 <tr class="odd">
 <td><p>标头</p></td>
-<td>Ksmedia （包括 Ksmedia）</td>
+<td>Ksmedia (包含 Ksmedia) </td>
 </tr>
 </tbody>
 </table>
@@ -87,16 +87,9 @@ KSPROPERTY\_EXTXPORT\_S 结构的**LoadMedium**成员指定负载介质。
 ## <a name="see-also"></a>另请参阅
 
 
-[**KSPROPERTY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
+[**KSPROPERTY**](/windows-hardware/drivers/ddi/ks/ns-ks-ksidentifier)
 
-[**KSPROPERTY\_EXTXPORT\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)
-
- 
+[**KSPROPERTY \_ EXTXPORT \_ S**](/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_extxport_s)
 
  
-
-
-
-
-
 
