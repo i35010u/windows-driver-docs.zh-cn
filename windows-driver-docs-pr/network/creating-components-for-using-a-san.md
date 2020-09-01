@@ -7,15 +7,15 @@ keywords:
 - SAN WDK，创建组件
 - 传输驱动程序 WDK San
 - 数据传输 WDK San
-- 将数据 WDK San 传输
+- 传输数据 WDK San
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 816d8bd8a2d5969efcd0302169f03f332c1a81bc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d95c86328a337522a1c2cd81e63b2d0802b4440f
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374901"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218444"
 ---
 # <a name="creating-components-for-using-a-san"></a>创建组件以使用 SAN
 
@@ -23,21 +23,15 @@ ms.locfileid: "67374901"
 
 
 
-Windows 套接字应用程序可以受益于使用系统区域网络 (SAN)。 若要使用 SAN，这些应用程序必须具有 SAN 服务提供程序 DLL 和代理驱动程序为该 DLL。
+Windows 套接字应用程序可以从使用系统区域网络 (SAN) 中获益。 若要使用 SAN，这些应用程序必须有一个 SAN 服务提供程序 DLL 和一个 DLL 的代理驱动程序。
 
-若要使用特定 SAN 来传输数据，您还需要可靠传输该 SAN。 如果在 SAN NIC 硬件中完全实现可靠传输，则为 SAN 需要传输驱动程序。 如有必要，SAN 传输驱动程序 SAN NIC 供应商指定，并且其基础 SAN 代理驱动程序和基础 SAN NIC 的专用接口通过与其通信。
+要使用特定的 SAN 来传输数据，还需要为该 SAN 提供可靠的传输。 如果 SAN NIC 硬件中未完全实现可靠传输，则需要为 SAN 使用传输驱动程序。 如果需要，san 传输驱动程序由 SAN NIC 供应商指定，并通过专用接口与其过量的 SAN 代理驱动程序和基础 SAN NIC 通信。
 
-有关实现 SAN 服务提供程序 DLL 和其代理驱动程序的信息，请参阅[Windows 套接字直接](windows-sockets-direct.md)。 但请注意，本部分中未指定如何编写 SAN 传输驱动程序。
+有关实现 SAN 服务提供程序 DLL 及其代理驱动程序的信息，请参阅 [Windows 套接 Direct](windows-sockets-direct.md)。 但请注意，此部分不指定如何编写 SAN 传输驱动程序。
 
-需要 NDIS 微型端口驱动程序将必须通过以太网、 ATM 或另一个 SAN 等特定 SAN 以外的网络流的数据传输。 TCP/IP 使用 NDIS 微型端口驱动程序将数据发送到 SAN NIC 和此类网络上。
+需要一个 NDIS 微型端口驱动程序来传输必须流过除特定 SAN （如以太网、ATM 或其他 SAN）以外的网络的数据。 TCP/IP 使用 NDIS 微型端口驱动程序将数据发送到 SAN NIC，并通过此类网络发送数据。
 
-有关实施微型端口和传输驱动程序的信息，请参阅*微型端口驱动程序*并[TDI 传输和及其客户端](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff565587(v=vs.85))。
-
- 
+有关实现微型端口和传输驱动程序的信息，请参阅 *微型端口驱动程序* 和 [TDI 传输及其客户端](/previous-versions/windows/hardware/network/ff565587(v=vs.85))。
 
  
-
-
-
-
 

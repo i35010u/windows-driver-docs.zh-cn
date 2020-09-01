@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e12b9cac8aa24b30a13070cf58e73c83f15ddd7c
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: 1975c9fd4a3a1c0095fe42ab63709ce1a82350a5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593889"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217943"
 ---
 # <a name="ndiskdprotocol"></a>!ndiskd.protocol
 
@@ -41,7 +41,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-输入 **！ ndiskd**命令，以查看所有 NDIS 协议的列表、它们的句柄以及到微型端口（如果有）的开放绑定。 在下面的示例中，查找 TCPIP6TUNNEL 协议的句柄 ffff8083e1a95c00。
+输入 **！ ndiskd** 命令，以查看所有 NDIS 协议的列表、它们的句柄和微型端口 (（如果) 有）的绑定。 在下面的示例中，查找 TCPIP6TUNNEL 协议的句柄 ffff8083e1a95c00。
 
 ```console
 3: kd> !ndiskd.protocol
@@ -75,7 +75,7 @@ ffff8083e11cec10 - TCPIP
   ffff8083e0c565a0 - Microsoft Kernel Debug Network Adapter
 ```
 
-在协议的句柄中，现在可以输入或输入 **！ ndiskd**命令来查看该协议的信息，例如绑定到它的微型端口的句柄。
+在协议的句柄中，现在可以输入或输入 **！ ndiskd** 命令来查看该协议的信息，例如绑定到它的微型端口的句柄。
 
 ```console
 3: kd> !ndiskd.protocol ffff8083e1a95c00
@@ -116,14 +116,14 @@ HANDLERS
     DirectOidRequestCompleteHandler        fffff80e2e398120  bp
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)

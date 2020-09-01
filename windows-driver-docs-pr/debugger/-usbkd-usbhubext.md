@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aaad955d90957aac80a01f2b3f565f0c7ff5d66
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 4b38b5cd45ebf1e762ae347e29566f03ebdef15b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534854"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217945"
 ---
 # <a name="usbkdusbhubext"></a>!usbkd.usbhubext
 
@@ -34,18 +34,18 @@ ms.locfileid: "84534854"
 <span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*DeviceExtension*   
 以下项之一的地址：
 
--   USB 集线器的功能设备对象（FDO）的设备扩展。
--   连接到 USB 集线器的设备的物理设备对象（PDO）的设备扩展。
+-   功能设备对象的设备扩展 (USB 集线器的 FDO) 。
+-    (PDO) 连接到 USB 集线器的设备的物理设备对象的设备扩展。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是一种查找 USB 集线器 FDO 的设备扩展地址的方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是一种查找 USB 集线器 FDO 的设备扩展地址的方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -67,7 +67,7 @@ Usbkd
 
 在上面的输出中，可以看到集线器的 FDO 的设备扩展的地址是 `ffffe000023201a0` 。
 
-现在，将设备扩展的地址传递给 **！ usbkd. usbhubext**命令。
+现在，将设备扩展的地址传递给 **！ usbkd. usbhubext** 命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000023201a0
@@ -142,7 +142,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ...
 ```
 
-下面是查找连接到 USB 集线器的设备的 PDO 的设备扩展地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找连接到 USB 集线器的设备的 PDO 的设备扩展地址的一种方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -167,7 +167,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 
 在上面的输出中，可以看到设备的 PDO 的设备扩展地址是 `ffffe00007c883f0` 。
 
-现在，将设备扩展的地址传递给[**！ usbhcdpnp**](-usbkd-usbhcdpnp.md)命令。
+现在，将设备扩展的地址传递给 [**！ usbhcdpnp**](-usbkd-usbhcdpnp.md) 命令。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe00007c883f0
@@ -229,14 +229,7 @@ ProductId:Cruzer
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

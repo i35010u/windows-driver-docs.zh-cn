@@ -1,6 +1,6 @@
 ---
 title: usbkd.usbpdos
-description: Usbkd. usbpdos 命令显示有关 USB 集线器驱动程序创建的所有物理设备对象（PDOs）的信息。
+description: Usbkd. usbpdos 命令显示有关 USB 集线器驱动程序创建 (PDOs) 的所有物理设备对象的信息。
 ms.assetid: 2EFAC774-C400-4218-BF48-2D5DC557A83B
 keywords:
 - usbkd usbpdos Windows 调试
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 43465ea71580f5105a21701c04dee55be659bc39
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ec07e7468fd592d98a9829df44d836e69262ac45
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534688"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217939"
 ---
 # <a name="usbkdusbpdos"></a>!usbkd.usbpdos
 
 
-**！ Usbkd. usbpdos**命令显示有关 USB 集线器驱动程序创建的所有物理设备对象（PDOs）的信息。
+**！ Usbkd usbpdos**命令显示有关 USB 集线器驱动程序创建 (PDOs) 的所有物理设备对象的信息。
 
 ```dbgcmd
 !usbkd.usbpdos
@@ -31,12 +31,12 @@ ms.locfileid: "84534688"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是 **！ usbpdos**命令的输出示例。
+下面是 **！ usbpdos** 命令的输出示例。
 
 ```dbgcmd
 0: kd> !usbkd.usbpdos
@@ -89,14 +89,4 @@ PDO Times:
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
-
-
-
-
-
-
-
-
-
-
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)

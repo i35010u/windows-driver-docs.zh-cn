@@ -6,20 +6,20 @@ keywords:
 - Windows 筛选平台常量网络驱动程序
 ms.date: 11/07/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 189eca60306ecfc00a80ed503c3279eaf65e15d9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bf9739986639f77d014510098cc35a32c140f987
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844390"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218286"
 ---
 # <a name="windows-filtering-platform-constants"></a>Windows 筛选平台常量
 
 本部分介绍 Windows 筛选平台标注驱动程序中使用的常量。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
-[内置标注标识符](built-in-callout-identifiers.md)
+[内置的标注标识符](built-in-callout-identifiers.md)
 
 [筛选层标识符](filtering-layer-identifiers.md)
 
@@ -35,5 +35,4 @@ ms.locfileid: "72844390"
 
 ## <a name="related-topics"></a>相关主题
 
-[Windows 筛选平台标注驱动程序参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-
+[Windows 筛选平台标注驱动程序参考](/windows-hardware/drivers/ddi/_netvista/)

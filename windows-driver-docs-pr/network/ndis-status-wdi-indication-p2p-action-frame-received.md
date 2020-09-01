@@ -1,43 +1,43 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED 来指示已收到 Wi-Fi Direct 操作帧。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED 指示已收到 Wi-fi Direct 操作帧。
 ms.assetid: 16e8f61d-373b-49fb-a0c5-4505fa7e653d
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a2e16bb88167afb0444ba76060fcc80ba35451
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ccf33f5998361485fa9e42e90f6138e40a133983
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218404"
 ---
-# <a name="ndisstatuswdiindicationp2pactionframereceived"></a>NDIS\_状态\_WDI\_指示\_P2P\_操作\_帧\_接收时间
+# <a name="ndis_status_wdi_indication_p2p_action_frame_received"></a>\_ \_ 已收到 NDIS 状态 WDI \_ 指示 \_ P2P \_ 操作 \_ 帧 \_
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_P2P\_操作\_帧\_接收时间以指示已收到 Wi-Fi Direct 操作帧。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI \_ 指示 \_ P2P \_ 操作 \_ 帧 \_ 接收到指示已收到 wi-fi Direct 操作帧。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-主机可能会发出[OID\_WDI\_任务\_P2P\_发送\_响应\_操作\_帧](oid-wdi-task-p2p-send-response-action-frame.md)此请求。
+主机可能会为此请求颁发 [OID \_ WDI \_ TASK \_ P2P \_ 发送 \_ 响应 \_ 操作 \_ 帧](oid-wdi-task-p2p-send-response-action-frame.md) 。
 
-端口必须指示在任何以下情况下这些数据包：
+在以下任何情况下，该端口都必须指示这些数据包：
 
 -   端口处于侦听状态。
--   端口已转到操作状态。
--   端口抛开远程侦听通道何时[OID\_WDI\_任务\_P2P\_发送\_请求\_操作\_帧](oid-wdi-task-p2p-send-request-action-frame.md)或[OID\_WDI\_任务\_P2P\_发送\_响应\_操作\_帧](oid-wdi-task-p2p-send-response-action-frame.md)最近发出。
+-   端口处于操作状态。
+-   在最近发出了 [oid \_ WDI \_ 任务 \_ p2p \_ 发送 \_ 请求 \_ 操作 \_ 框](oid-wdi-task-p2p-send-request-action-frame.md) 或 [OID \_ WDI \_ 任务 \_ p2p 发送 \_ \_ 响应 \_ 操作 \_ ](oid-wdi-task-p2p-send-response-action-frame.md) 帧时，此端口 dwelling 在远程侦听通道上。
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                               | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                                                                                                                    |
+| 类型                                                                                               | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------|--------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_P2P\_传入\_帧\_信息**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-p2p-incoming-frame-information) |                                |          | 传入的 Wi-Fi Direct 操作帧信息。 此信息转发回该端口，当主机发出[OID\_WDI\_任务\_P2P\_发送\_响应\_操作\_帧](oid-wdi-task-p2p-send-response-action-frame.md). |
+| [**WDI \_ TLV \_ P2P \_ 传入 \_ 帧 \_ 信息**](./wdi-tlv-p2p-incoming-frame-information.md) |                                |          | 传入 Wi-fi Direct 操作帧信息。 当主机发出 [OID \_ WDI \_ 任务 \_ P2P \_ 发送 \_ 响应 \_ 操作 \_ 帧](oid-wdi-task-p2p-send-response-action-frame.md)时，此信息将转发回端口。 |
 
  
 
@@ -59,23 +59,18 @@ ms.locfileid: "67380877"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_TASK\_P2P\_SEND\_REQUEST\_ACTION\_FRAME](oid-wdi-task-p2p-send-request-action-frame.md)
+[OID \_ WDI \_ 任务 \_ P2P \_ 发送 \_ 请求 \_ 操作 \_ 帧](oid-wdi-task-p2p-send-request-action-frame.md)
 
-[OID\_WDI\_TASK\_P2P\_SEND\_RESPONSE\_ACTION\_FRAME](oid-wdi-task-p2p-send-response-action-frame.md)
-
- 
+[OID \_ WDI \_ 任务 \_ P2P \_ 发送 \_ 响应 \_ 操作 \_ 帧](oid-wdi-task-p2p-send-response-action-frame.md)
 
  
-
-
-
 

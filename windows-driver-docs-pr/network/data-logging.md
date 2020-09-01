@@ -7,19 +7,19 @@ keywords:
 - 记录 WDK Windows 筛选平台
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e812754f21123d251e60ac382185399bc27a8ae
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f681c6f1e349d3602b6ef925f8c3c859f7796043
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834977"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218438"
 ---
 # <a name="data-logging"></a>数据日志记录
 
 
-若要确定应该记录哪些数据，标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/) callout 函数可以检查数据字段的任何组合、元数据字段以及传递给它的任何原始数据，以及存储在上下文中的任何相关数据与筛选器或数据流相关联。
+若要确定应该记录哪些数据，标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) callout 函数可以检查数据字段的任何组合、元数据字段以及传递给它的任何原始数据，以及与筛选器或数据流关联的上下文中存储的任何相关数据。
 
-例如，如果某一标注跟踪网络层中的某个筛选器丢弃多少个传入（入站） IPv4 数据包，则该标注将添加到 FWPM\_层的筛选器引擎\_入站\_IPPACKET\_V4\_放弃该层. 在这种情况下，标注的[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)标注函数可能类似于以下示例：
+例如，如果某个标注跟踪网络层上的某个筛选器丢弃多少个传入 (入站) IPv4 数据包，则该标注将添加到 FWPM \_ 层 \_ 入站 \_ IPPACKET \_ V4 \_ 丢弃层上的筛选器引擎。 在这种情况下，标注的 [classifyFn](/windows-hardware/drivers/ddi/_netvista/) 标注函数可能类似于以下示例：
 
 ```C++
 ULONG TotalDiscardCount = 0;
@@ -67,14 +67,7 @@ VOID NTAPI
 ## <a name="related-topics"></a>相关主题
 
 
-[classifyFn](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[classifyFn](/windows-hardware/drivers/ddi/_netvista/)
 
  
-
- 
-
-
-
-
-
 

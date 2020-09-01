@@ -3,19 +3,19 @@ title: 打印网页的 ASP 变量
 description: 打印网页的 ASP 变量
 ms.assetid: eab0d5e0-0e20-443c-b714-a2b2327894e4
 keywords:
-- 自定义打印网页 WDK、 ASP 变量
+- 自定义的打印网页 WDK，ASP 变量
 - ASP 变量 WDK 打印机
 - 会话变量 WDK 打印机
-- 打印网页 WDK、 ASP 变量
+- 打印网页 WDK，ASP 变量
 - 网页 WDK 打印机，ASP 变量
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: baa8aa3dcbf93262ad5be4b3d4ebe39d9bd9e9d6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64cf038546ac01e01e942f85e02c1eb61b6b60f6
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380701"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218270"
 ---
 # <a name="asp-variables-for-print-web-pages"></a>打印网页的 ASP 变量
 
@@ -23,15 +23,15 @@ ms.locfileid: "67380701"
 
 
 
-Microsoft 提供一组 ASP 会话变量以供自定义打印网页。 下表列出了会话变量。 自定义的 ASP 文件不能修改这些变量。 如所述，某些变量的有效前提是 Microsoft 的 TCP/IP 端口监视器正用于打印机。
+Microsoft 提供了一组 ASP 会话变量，供自定义的打印网页使用。 下表列出了会话变量。 自定义的 ASP 文件不能修改这些变量。 如上所述，某些变量仅在用于打印机的 Microsoft TCP/IP 端口监视器时有效。
 
-某些变量中作为会话变量传递，而其他参数传递中使用 URL 修饰。 可以使用会话访问会话变量 ("*VariableName*")。 可以使用请求访问的 URL 修饰符中传递的参数 ("*VariableName*")。 如果你想要自动刷新状态页，您可能会发现需 redecorate 页面所需的变量包含的 URL。 由于请求变量必须在 URL 中传递，它们可能需要编码和解码从 ANSI 转换为 Unicode 表示形式。 提供了帮助程序对象，其 COM ProgID 为"OlePrn.OleCvt"，用于启用编码和解码 URL 和 Unicode 中使用的 ANSI 之间。 此对象上的两种方法[ **IOleCvt::EncodeUnicodeName**](https://docs.microsoft.com/windows-hardware/drivers/print/iolecvt-encodeunicodename)，并[ **IOleCvt::DecodeUnicodeName**](https://docs.microsoft.com/windows-hardware/drivers/print/iolecvt-decodeunicodename)，可用于将翻译ANSI 到 Unicode，并从 Unicode 到 ANSI，分别。 此转换不需要执行的会话变量。
+某些变量作为会话变量传入，而其他变量则使用 URL 修饰传入。 会话变量可使用 Session ( "*VariableName*" ) 进行访问。 通过 URL 修饰传入的参数可通过使用请求 ( "*VariableName*" ) 进行访问。 如果希望自动刷新 "状态" 页，您可能会发现有必要用页面所需的变量 redecorate URL。 由于请求变量必须传入 URL，因此它们可能需要编码和解码才能从 ANSI 转换为 Unicode 表示形式。 提供了一个帮助器对象，其 COM ProgID 为 "OlePrn. OleCvt"，提供该对象以在 URL 中使用的 ANSI 和 Unicode 之间启用编码和解码。 此对象上的两个方法 [**IOleCvt：： EncodeUnicodeName**](./iolecvt-encodeunicodename.md)和 [**IOleCvt：:D ecodeunicodename**](./iolecvt-decodeunicodename.md)，可用于从 ANSI 转换为 Unicode，以及从 Unicode 转换为 ansi。 对于 Session 变量，无需执行此转换。
 
-编码的变量值的 TCP/IP 端口变量？
+可变值 TCP/IP 端口变量已编码？
 仅监视？
-类型 MS\_ASP1
+键入 MS \_ ASP1
 
-初始的 Web 页，用于描述特定于打印机的详细信息的目录路径。
+用于描述特定于打印机的详细信息的初始网页的目录路径。
 
 否
 
@@ -39,7 +39,7 @@ Microsoft 提供一组 ASP 会话变量以供自定义打印网页。 下表列�
 
 否
 
-MS\_社区
+MS \_ 社区
 
 打印服务器的 SNMP 团体名称。
 
@@ -49,29 +49,29 @@ MS\_社区
 
 否
 
-MS\_计算机
+MS \_ 计算机
 
 打印服务器的计算机名称。
 
 否
 
-会议
+会话
 
 否
 
-MS\_DefaultPage
+MS \_ DefaultPage
 
-特定于打印机的详细信息的的默认 ASP 文件。
-
-否
-
-会议
+用于特定于打印机的详细信息的默认 ASP 文件。
 
 否
 
-MS\_设备
+会话
 
-打印机的 SNMP 设备的索引。
+否
+
+MS \_ 设备
+
+打印机的 SNMP 设备索引。
 
 是
 
@@ -79,17 +79,17 @@ MS\_设备
 
 否
 
-MS\_DHTMLEnabled
+MS \_ DHTMLEnabled
 
-**TRUE**如果客户端支持动态 HTML; 否则为**FALSE**。
-
-否
-
-会议
+如果客户端支持动态 HTML，则为**TRUE** ;否则**为 FALSE**。
 
 否
 
-MS\_IPAddress
+会话
+
+否
+
+MS \_ IPAddress
 
 打印机的 IP 地址。
 
@@ -99,17 +99,17 @@ MS\_IPAddress
 
 否
 
-MS\_LocalServer
+MS \_ LocalServer
 
-打印服务器的标识符。 这可能是 IP 地址或计算机名称。
-
-否
-
-会议
+打印服务器的标识符。 这可能是 IP 地址或计算机名。
 
 否
 
-MS\_模型
+会话
+
+否
+
+MS \_ 模型
 
 打印机驱动程序的名称。
 
@@ -119,7 +119,7 @@ MS\_模型
 
 是
 
-MS\_Portname
+MS \_ portvalue
 
 打印机的端口名称。
 
@@ -129,7 +129,7 @@ MS\_Portname
 
 是
 
-MS\_打印机
+MS \_ 打印机
 
 打印机的名称。
 
@@ -139,9 +139,9 @@ MS\_打印机
 
 是
 
-MS\_SNMP
+MS \_ SNMP
 
-**TRUE**如果 SNMP 正在使用一台打印机，否则**FALSE**。
+如果将 SNMP 与打印机一起使用，**则为 TRUE** ; 否则为**FALSE**。
 
 是
 
@@ -149,9 +149,9 @@ MS\_SNMP
 
 否
 
-MS\_URLPrinter
+MS \_ URLPrinter
 
-编码的 URL 格式中的打印机的名称。
+打印机的名称，采用编码的 URL 格式。
 
 否
 
@@ -161,12 +161,7 @@ MS\_URLPrinter
 
  
 
-会话变量指定"当前"打印机，也就是说，对其调用 ASP 页打印机的属性。 若要获取对当前打印机，附加的打印机属性或获取属性的另一台打印机，请参阅[ActiveX 对象为打印 Web Pages](activex-objects-for-print-web-pages.md)。
+Session 变量指定 "当前" 打印机的属性，即，为其调用 ASP 页的打印机。 若要获取当前打印机的其他打印机属性，或获取不同打印机的属性，请参阅 [用于打印网页的 ActiveX 对象](activex-objects-for-print-web-pages.md)。
 
  
-
- 
-
-
-
 

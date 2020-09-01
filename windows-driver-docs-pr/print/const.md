@@ -6,12 +6,12 @@ keywords:
 - Const 构造
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a60a0caed5bad52519bfd44025e4c1b4e90270e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 469c840e8e3c2ae192a7b8c799d77bf217612e54
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843679"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218266"
 ---
 # <a name="const-tcpip"></a>Const (TCP/IP)
 
@@ -25,18 +25,18 @@ TCP/IP Const 构造定义必须返回的数据类型和值。 Const 用于不在
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>描述</th>
+<th>Attribute</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>名称</strong></p></td>
+<td><p>name </p></td>
 <td><p>架构值的名称。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>type</strong></p></td>
-<td><p><strong>值</strong>特性中的数据类型（ <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值）。</p></td>
+<td><p><strong>值</strong>特性中的数据类型， <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>枚举中的值。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>value</strong></p></td>
@@ -49,7 +49,7 @@ TCP/IP Const 构造定义必须返回的数据类型和值。 Const 用于不在
 
 ### <a name="code-example"></a>代码示例
 
-下面的代码示例通过向 `Printer` 属性添加 `Extension` 属性，并将 `Version` 属性添加到 `Extension` 属性来扩展双向通信架构。 在此示例中，`Extension` 包含一个常**数值**项，`Category`。 此外，`Version` 有两个常**数值**项，`Major` 和 `Minor`。
+下面的代码示例通过将 `Extension` 属性添加到属性 `Printer` ，并将属性添加到属性来扩展双向通信架构 `Version` `Extension` 。 在此示例中， `Extension` 包含一个常 **数值** 项 `Category` 。 此外， `Version` 有两个常 **数值** 项 `Major` 和 `Minor` 。
 
 ```cpp
 <Property name="Printer">
@@ -72,9 +72,4 @@ TCP/IP Const 构造定义必须返回的数据类型和值。 Const 用于不在
 ```
 
  
-
- 
-
-
-
 

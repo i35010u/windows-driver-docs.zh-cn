@@ -1,35 +1,35 @@
 ---
 title: NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED
-description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 指示主机应该尝试查找要连接到的更好地对等方。
+description: 微型端口驱动程序使用 NDIS_STATUS_WDI_INDICATION_DISASSOCIATION 指示主机应尝试查找更好的对等互连以连接到。
 ms.assetid: 25f920e9-af87-48ad-be64-aa3ebfe2db5f
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 NDIS_STATUS_WDI_INDICATION_ROAMING_NEEDED 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bcc1603c3832a0c9d1cd95e91b830bf49ec712b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 59c58953fd19b447ee7d39cb3286dc772f835401
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375219"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218001"
 ---
-# <a name="ndisstatuswdiindicationroamingneeded"></a>NDIS\_状态\_WDI\_指示\_漫游\_需执行
+# <a name="ndis_status_wdi_indication_roaming_needed"></a>需要有 NDIS \_ 状态 \_ WDI \_ 指示 \_ 漫游 \_
 
 
-微型端口驱动程序使用 NDIS\_状态\_WDI\_指示\_解除关联以指示应尝试找到更好的对等方连接到主机。 链接质量与当前连接的对等方低于特定阈值时，使用此通知。 在发送此通知，主机可能会触发漫游扫描和/或漫游操作。 开始漫游操作之前，Microsoft 组件不执行断开连接。
+微型端口驱动程序使用 NDIS \_ 状态 \_ WDI 指示解除了连接， \_ \_ 以指示主机应尝试查找更好的对等连接。 当当前连接的对等节点的链接质量低于特定阈值时，将使用此通知。 发送此通知时，主机可能会触发漫游扫描和/或漫游操作。 Microsoft 组件在启动漫游操作之前不会执行断开连接。
 
-| Object |
+| 对象 |
 |--------|
-| Port   |
+| 端口   |
 
  
 
-## <a name="payload-data"></a>有效负载数据
+## <a name="payload-data"></a>负载数据
 
 
-| 在任务栏的搜索框中键入                                                                                    | 允许多个 TLV 实例 | 可选 | 描述                                                                                                                         |
+| 类型                                                                                    | 允许多个 TLV 实例 | 可选 | 说明                                                                                                                         |
 |-----------------------------------------------------------------------------------------|--------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [**WDI\_TLV\_ROAMING\_NEEDED\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-roaming-needed-parameters) |                                |          | 漫游触发器的原因。 当[OID\_WDI\_任务\_漫游](oid-wdi-task-roam.md)是触发，因此转发给它。 |
+| [**WDI \_ TLV \_ \_ 需要 \_ 参数**](./wdi-tlv-roaming-needed-parameters.md) |                                |          | 漫游触发器的原因。 当触发 [OID \_ WDI \_ 任务 \_ 漫游](oid-wdi-task-roam.md) 时，此原因将转发给它。 |
 
  
 
@@ -51,21 +51,16 @@ ms.locfileid: "67375219"
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Dot11wdi.h</td>
+<td><p>标头</p></td>
+<td>Dot11wdi</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_WDI\_TASK\_ROAM](oid-wdi-task-roam.md)
-
- 
+[OID \_ WDI \_ 任务 \_ 漫游](oid-wdi-task-roam.md)
 
  
-
-
-
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fbeedc82cadde926e61f1bd2bd47b2ad6f9f61bb
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 8d57fd443e5d660efe0cc9f66755ec8b6538b489
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533982"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217941"
 ---
 # <a name="usbkdusblist"></a>!usbkd.usblist
 
@@ -32,7 +32,7 @@ ms.locfileid: "84533982"
 
 
 <span id="_______ListAddr______"></span><span id="_______listaddr______"></span><span id="_______LISTADDR______"></span>*ListAddr*   
-结构的链接列表的地址。 若要查找 USB 端口驱动程序所维护的链接列表的地址，请使用[**！ usbhcdext**](-usbkd-usbhcdext.md)。 若要查找由 USB 集线器驱动程序维护的链接列表的地址，请使用[**！ usbhubext**](-usbkd-usbhubext.md)。
+结构的链接列表的地址。 若要查找 USB 端口驱动程序所维护的链接列表的地址，请使用 [**！ usbhcdext**](-usbkd-usbhcdext.md)。 若要查找由 USB 集线器驱动程序维护的链接列表的地址，请使用 [**！ usbhubext**](-usbkd-usbhubext.md)。
 
 <span id="_______ListType______"></span><span id="_______listtype______"></span><span id="_______LISTTYPE______"></span>*ListType*   
 以下列表类型之一。
@@ -58,12 +58,12 @@ ms.locfileid: "84533982"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>.DLL
 
 
-Usbkd
+Usbkd.dll
 
 <a name="examples"></a>示例
 --------
 
-下面是查找链接列表地址的一种方法。 首先输入[**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
+下面是查找链接列表地址的一种方法。 首先输入 [**！ usbkd. usb2tree**](-usbkd-usb2tree.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -72,9 +72,9 @@ Usbkd
    ...
 ```
 
-在上面的输出中，FDO 的设备扩展的地址显示为[DML](debugger-markup-language-commands.md)命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
+在上面的输出中，FDO 的设备扩展的地址显示为 [DML](debugger-markup-language-commands.md) 命令 **！ ehci \_ info ffffe00001ca11a0**的参数。
 
-单击 DML 命令或将设备扩展的地址传递给[**！ usbhcdext**](-usbkd-usbhcdext.md)。
+单击 DML 命令或将设备扩展的地址传递给 [**！ usbhcdext**](-usbkd-usbhcdext.md)。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -86,7 +86,7 @@ DeviceHandleList: !usblist ffffe00001ca23b8, DL
 ...
 ```
 
-在上面的输出中，ffffe00001ca23b8 是 usbport 的链接列表的地址 **！ \_USBD \_ 设备 \_ 句柄**结构。
+在上面的输出中，ffffe00001ca23b8 是 usbport 的链接列表的地址 **！ \_USBD \_ 设备 \_ 句柄** 结构。
 
 现在，将链接列表的地址传递给 **！ usblist**。
 
@@ -113,14 +113,7 @@ DriverName :\Driver\USBSTOR      !devstack ffffe000053ef2a0
 
 [USB 2.0 调试器扩展](usb-2-0-extensions.md)
 
-[通用串行总线（USB）驱动程序](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
+[ (USB) 驱动程序的通用串行总线](../usbcon/index.md)
 
  
-
- 
-
-
-
-
-
 

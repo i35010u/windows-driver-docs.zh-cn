@@ -9,12 +9,12 @@ keywords:
 - 初始化 CoNDIS TAPI
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c21c9f178d70dbe353afc8034b5c4e08910baf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f01a468cf95705049dca8ccc821c19954818e6e5
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835054"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218469"
 ---
 # <a name="condis-tapi-initialization"></a>CoNDIS TAPI 初始化
 
@@ -26,30 +26,30 @@ ms.locfileid: "72835054"
 
 -   线路设备数量微型端口驱动程序支持的线路设备，例如调制解调器、传真板和 ISDN 卡。
 
--   有关特定行的信息，例如行标识符和通道地址（电话号码）的数量，该行支持同时传输语音和数据。
+-   有关特定行的信息，例如行标识符和通道地址的数目 (电话号码) 行支持同时传输语音和数据。
 
--   有关设备行上特定通道地址的信息-地址信息包括调用方的标识（调用方 ID）和可能的活动调用数。
+-   有关设备行上特定通道地址的信息-地址信息包括调用方的标识 (调用方 ID) 和可能的活动调用数。
 
-若要检索有关基础硬件的信息，NDPROXY 会发出请求线路和通道地址的请求。 也就是说，NDPROXY 驱动程序查询 CoNDIS WAN 微型端口驱动程序的 TAPI 功能。 NDPROXY 驱动程序调用[**NdisCoOidRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest)函数来查询微型端口驱动程序的 TAPI 功能。 在此调用中，NDPROXY 将 NDIS\_OID\_请求结构。 NDPROXY 在 NDIS\_OID\_请求中指定以下内容：
+若要检索有关基础硬件的信息，NDPROXY 会发出请求线路和通道地址的请求。 也就是说，NDPROXY 驱动程序查询 CoNDIS WAN 微型端口驱动程序的 TAPI 功能。 NDPROXY 驱动程序调用 [**NdisCoOidRequest**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscooidrequest) 函数来查询微型端口驱动程序的 TAPI 功能。 在此调用中，NDPROXY 将传递 NDIS \_ OID \_ 请求结构。 NDPROXY 在 NDIS OID 请求中指定以下 \_ \_ 内容：
 
 -   **RequestType**成员中的**NdisRequestQueryInformation**值
 
--   一个对象标识符（OID），指定要从**OID**成员的微型端口驱动程序中检索的 TAPI 功能
+-    (OID) 的对象标识符，指定要从 **OID** 成员的微型端口驱动程序中检索的 TAPI 功能
 
--   用于保存在**InformationBuffer**成员中返回的 TAPI 功能信息的缓冲区
+-   用于保存在 **InformationBuffer** 成员中返回的 TAPI 功能信息的缓冲区
 
-通过 NDPROXY 驱动程序发送到 CoNDIS WAN 微型端口驱动程序的所有查询均可同步或异步完成。 如果 CoNDIS WAN 微型端口驱动程序确定它无法立即完成查询，则它可以直接将 NDIS\_状态返回\_挂起，并从其 ProtocolCoOidRequest 中调用[**NdisMCmOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)函数。函数完成查询。
+通过 NDPROXY 驱动程序发送到 CoNDIS WAN 微型端口驱动程序的所有查询均可同步或异步完成。 如果 CoNDIS WAN 微型端口驱动程序确定它无法立即完成查询，则它可以只返回 NDIS 状态 "挂起"， \_ \_ 并在它已完成查询时从其*ProtocolCoOidRequest*函数内调用[**NdisMCmOidRequestComplete**](/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmoidrequestcomplete)函数。
 
-CoNDIS WAN 微型端口驱动程序通知 NDPROXY 注册[CONDIS TAPI 注册](condis-tapi-registration.md)中指定的新地址系列时，NDPROXY 会查询以下 oid，以确定 CoNDIS WAN 微型端口驱动程序的 TAPI 特定功能和微型端口驱动程序的 NIC。
+在 CoNDIS WAN 微型端口驱动程序通知 NDPROXY 注册 [CONDIS TAPI 注册](condis-tapi-registration.md)中指定的新地址族后，NDPROXY 将查询以下 oid，以确定 CoNDIS WAN 微型端口驱动程序和微型端口驱动程序 NIC 的特定于 TAPI 的功能。
 
--   NDPROXY 使用 OID 查询小型端口驱动程序[\_CO\_TAPI\_CM\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-cm-caps)来确定微型端口驱动程序的设备（它为其提供 TAPI 服务的设备）支持的行数。 此 OID 还请求微型端口驱动程序，以指示这些行是否具有不同的行功能。
+-   NDPROXY 使用 [OID \_ CO \_ TAPI \_ CM \_ cap](./oid-co-tapi-cm-caps.md) 查询小型小型驱动程序，以确定微型端口驱动程序的设备所支持的行数 (提供 TAPI 服务的设备) 。 此 OID 还请求微型端口驱动程序，以指示这些行是否具有不同的行功能。
 
--   接下来，NDPROXY 会查询带有 OID 的小型小型驱动程序[\_CO\_TAPI\_行\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-line-caps)来确定指定行的电话功能。 此 OID 还请求微型端口驱动程序，以指示此行上的地址是否具有不同的地址功能。
-    -   如果以前的 OID 查询\_CO\_TAPI\_CM\_CAP 指示微型端口驱动程序的设备只支持一行，或者如果设备支持多行具有相同的线路功能，NDPROXY 必须查询 OID\_仅\_的 TAPI\_LINE\_CAP，以获取设备的线路功能。 在这种情况下，微型端口驱动程序返回的线路功能适用于设备上的所有线条。
-    -   如果设备支持多个线路功能不同的行，则 NDPROXY 必须\_的\_CO TAPI\_行\_CAP 一次，以获取每行的行功能。
--   最后，NDPROXY 使用 OID 查询小型端口驱动程序[\_CO\_TAPI\_地址\_cap](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-tapi-address-caps)来确定指定行上指定地址的电话功能。
-    -   如果上次查询 OID\_CO\_TAPI\_行\_CAP 指示该行仅支持一个地址，或者该行上的所有地址都具有相同的地址功能，NDPROXY 查询 OID\_CO\_TAPI\_ADDRESS 仅\_CAP 一次，以确定行中所有地址的功能。
-    -   如果某行支持具有不同功能的多个地址，则 NDPROXY 查询 OID\_每条地址的\_TAPI\_地址\_CAP。
+-   接下来，NDPROXY 将通过 [OID \_ CO \_ TAPI \_ LINE \_ cap](./oid-co-tapi-line-caps.md) 查询微型端口驱动程序，以确定指定行的电话功能。 此 OID 还请求微型端口驱动程序，以指示此行上的地址是否具有不同的地址功能。
+    -   如果前面的 OID \_ co \_ tapi \_ CM cap 查询 \_ 指出微型端口驱动程序的设备仅支持一行，或者如果设备支持多行具有相同的线路功能，则 NDPROXY 只需查询 OID \_ CO \_ tapi \_ 行 \_ 帽一次即可获取设备的线路功能。 在这种情况下，微型端口驱动程序返回的线路功能适用于设备上的所有线条。
+    -   如果设备支持多行具有不同的线路功能，则 NDPROXY 必须 \_ \_ 针对每行查询 OID CO TAPI \_ line \_ cap 一次，以获取每行的行功能。
+-   最后，NDPROXY 使用 [OID \_ CO \_ TAPI \_ 地址 \_ 上限](./oid-co-tapi-address-caps.md) 查询微型端口驱动程序，以确定指定行上指定地址的电话功能。
+    -   如果前面的 OID \_ co \_ tapi \_ 行帽查询 \_ 指出该行仅支持一个地址，或者该行上的所有地址都具有相同的地址功能，则 NDPROXY 仅查询 OID \_ co \_ tapi \_ 地址 \_ 上限一次，以确定线路上所有地址的功能。
+    -   如果某行支持具有不同功能的多个地址，则 NDPROXY \_ 会 \_ \_ \_ 在行的每个地址上查询 OID CO TAPI 地址 cap 一次。
 
 NDPROXY 驱动程序使用通过 TAPI 枚举 Oid 获取的信息来执行以下操作：
 
@@ -57,13 +57,7 @@ NDPROXY 驱动程序使用通过 TAPI 枚举 Oid 获取的信息来执行以下�
 
 -   确定是接受还是拒绝后续的传入 TAPI 调用。
 
--   注册一个或多个要在其上接收后续传入 TAPI 调用的 TAPI 服务访问点（Sap）。
+-   将一个或多个 TAPI 服务接入点注册 (Sap) ，以接收后续的传入 TAPI 呼叫。
 
  
-
- 
-
-
-
-
 

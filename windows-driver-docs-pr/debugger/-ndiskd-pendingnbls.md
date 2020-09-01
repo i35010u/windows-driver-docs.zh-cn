@@ -1,6 +1,6 @@
 ---
 title: ndiskd.pendingnbls
-description: Ndiskd pendingnbls 扩展显示正在传输中的挂起的 Nbl （NET_BUFFER_LISTs）。
+description: Pendingnbls 扩展显示正在传输 (NET_BUFFER_LISTs) 挂起的 Nbl。
 ms.assetid: 9137B995-FCCA-4E25-85D3-FCB5B717EBDF
 keywords:
 - ndiskd pendingnbls Windows 调试
@@ -12,16 +12,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c0595b3a21c08633857a3479df9f7a8e0d0c4964
-ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
+ms.openlocfilehash: b5e79b3a9f4f0772de83a179fd4a76fe2618b079
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593893"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217949"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
 
-**！ Ndiskd pendingnbls**扩展显示正在传输中的挂起 Nbl （[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)）。
+**！ Ndiskd pendingnbls**将显示正在传输中的挂起 Nbl ([**NET \_ BUFFER \_ 列表**](../network/net-buffer-list-structure.md)) 。
 
 ```console
 !ndiskd.pendingnbls [-handle <x>] [-fullstack] [-verbosity <x>] 
@@ -44,7 +44,7 @@ Ndiskd.dll
 
 ### <a name="examples"></a>示例
 
-**！ ndiskd。 pendingnbls**可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的[**！ ndiskd。**](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
+**！ ndiskd。 pendingnbls** 可以传递 NDIS 微型端口、筛选器或打开的句柄。 以下一系列示例使用微型端口句柄。 若要查看所有微型端口及其关联微型驱动程序的列表，请运行不带参数的[**！ ndiskd。**](-ndiskd-netadapter.md) 在下面的示例输出中，查找 "Microsoft 内核调试" 网络适配器，其句柄为 ffffe00bc3f701a0。 其微型驱动程序句柄为 ffffe00bc51b9ae0。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -53,7 +53,7 @@ Ndiskd.dll
     ffffe00bc51b9ae0   ffffe00bc3f701a0    Microsoft Kernel Debug Network Adapter
 ```
 
-若要查看微型端口的挂起 Nbl，请在其微型驱动程序的 SendNetBufferListsHandler 上设置断点。 使用微型驱动程序的句柄运行[**！ ndiskd**](-ndiskd-minidriver.md)命令来查看其处理程序的列表，然后单击 SendNetBufferListsHandler 右侧的 "最佳实践" 链接。 也可以在命令行中输入[**bp 处理**](bp--bu--bm--set-breakpoint-.md)命令。
+若要查看微型端口的挂起 Nbl，请在其微型驱动程序的 SendNetBufferListsHandler 上设置断点。 使用微型驱动程序的句柄运行 [**！ ndiskd**](-ndiskd-minidriver.md) 命令来查看其处理程序的列表，然后单击 SendNetBufferListsHandler 右侧的 "最佳实践" 链接。 也可以在命令行中输入 [**bp 处理**](bp--bu--bm--set-breakpoint-.md) 命令。
 
 ```console
 0: kd> !ndiskd.minidriver ffffe00bc51b9ae0 -handlers
@@ -84,7 +84,7 @@ HANDLERS
     CancelSendHandler                      fffff80ae96122c0  bp
 ```
 
-在 SendNetBufferListsHandler 上设置断点后，输入**g**命令，让调试对象目标计算机运行并命中断点。
+在 SendNetBufferListsHandler 上设置断点后，输入 **g** 命令，让调试对象目标计算机运行并命中断点。
 
 ```console
 0: kd> bp fffff80ae9611870
@@ -93,7 +93,7 @@ Breakpoint 0 hit
 fffff80a`e9611870 4053            push    rbx
 ```
 
-现在，在命中微型驱动程序的 SendNetBufferListsHandler 断点之后，可以通过使用微型端口的句柄输入 **！ ndiskd**命令，查看微型端口的任何挂起的 nbl。
+现在，在命中微型驱动程序的 SendNetBufferListsHandler 断点之后，可以通过使用微型端口的句柄输入 **！ ndiskd** 命令，查看微型端口的任何挂起的 nbl。
 
 **注意**   在此示例中，调试对象目标计算机已在遇到断点时加载网页，因此流量已通过微型端口的数据路径流动。 因此，它有一个要发送的挂起 NBL。 即使在对微型驱动程序的一个或多个 NBL 处理程序设置断点之后，在数据路径中没有活动的情况下，也可能看不到任何挂起的 Nbl。
 
@@ -112,20 +112,20 @@ PHASE 3/3: Found 1 pending NBL(s) of 4817 total NBL(s).
 Search complete.
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[网络驱动程序设计指南](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[网络驱动程序设计指南](../network/index.md)
 
-[Windows Vista 和更高版本的网络引用](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
+[Windows Vista 和更高版本的网络引用](/windows-hardware/drivers/ddi/_netvista/)
 
 [调试网络堆栈](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 扩展（Ndiskd.dll）**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 扩展 ( # A0) **](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
-[**网络 \_ 缓冲区 \_ 列表**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**网络 \_ 缓冲区 \_ 列表**](../network/net-buffer-list-structure.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 

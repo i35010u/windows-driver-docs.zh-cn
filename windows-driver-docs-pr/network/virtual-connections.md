@@ -4,17 +4,17 @@ description: 虚拟连接
 ms.assetid: becb3acf-2a23-408a-8d1f-ff8a1e7ffe61
 keywords:
 - 面向连接的 NDIS WDK，虚拟连接
-- CoNDIS WDK 网络、 虚拟连接
-- 虚拟连接 WDK 的 CoNDIS
-- 有关虚拟连接的虚拟连接 WDK CoNDIS
+- CoNDIS WDK 网络，虚拟连接
+- 虚拟连接 WDK CoNDIS
+- 虚拟连接 WDK CoNDIS，关于虚拟连接
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4112c0eb5f54c3ff2bce50b2ff4cc6babdf4f265
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 76c1152efb95646d4f0d93239aba9786bd1933f8
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373219"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218304"
 ---
 # <a name="virtual-connections"></a>虚拟连接
 
@@ -22,31 +22,25 @@ ms.locfileid: "67373219"
 
 
 
-在本地计算机上 *(VC) 的虚拟连接*为终结点 （或关联），可以托管客户端、 呼叫管理器或 MCM 驱动程序和微型端口驱动程序之间的单一调用。 在网络上，VC 是指两个通信的终结点，例如，两个面向连接的客户端之间的连接。
+在本地计算机上， * (VC) 的虚拟连接 * 是一个终结点 (或关联) ，它可以在客户端、调用管理器、MCM 驱动程序和微型端口驱动程序之间托管单个调用。 在网络上，VC 指两个通信终结点之间的连接，例如两个面向连接的客户端。
 
-许多 VCs 可以处于活动状态 NIC 上一次启用要同时服务许多调用的 NIC。 每个连接可以是到不同的计算机上的不同终结点。
+许多 VCs 在 NIC 上可以同时处于活动状态，从而使 NIC 同时为多个调用服务。 每个连接可以连接到不同计算机上的不同终结点。
 
-在网络上的 VCs 改变它们向客户端提供的服务的类型。 例如，VC 可以提供单向或双向服务。 服务质量 (QoS) 参数的每个方向可以保证特定性能阈值，如带宽和延迟。 根据信号协议，VC QoS 可能协商。 有关 NDIS 支持 QoS 的详细信息，请参阅[的服务质量](quality-of-service.md)。
+网络上的 VCs 因其提供给客户端的服务类型而异。 例如，VC 可以提供单向或双向服务。 服务质量 (QoS) 每个方向的参数可以保证特定的性能阈值，例如带宽和延迟时间。 根据信号协议，VC 的 QoS 可转让。 有关对 QoS 的 NDIS 支持的详细信息，请参阅 [服务质量](quality-of-service.md)。
 
-在网络上的 VC 可以交换 VC (SVC) 或永久 VC (PVC):
+网络上的 VC 可以是交换式 VC (SVC) 或永久 VC (PVC) ：
 
--   SVC 创建所需的特定调用。 例如，面向连接的客户端启动的传出调用，它会使 VC 的创建。 同样，呼叫管理器或 MCM 驱动程序启动它会指示面向连接的客户端的传入呼叫的 VC 的创建。 呼叫管理器或 MCM 驱动程序必须进行通信，并有时协商与远程方 VC 参数。
+-   根据特定调用的需要创建 SVC。 例如，面向连接的客户端为要进行的传出呼叫启动创建 VC。 同样，调用管理器或 MCM 驱动程序会启动为传入调用创建 VC，并向面向连接的客户端指示。 调用管理器或 MCM 驱动程序必须通信，有时会与远程方协商 VC 的参数。
 
--   永久 VC 手动创建，并最终删除通过使用配置实用程序，它不提供在 NDIS 运算符。 可以使用客户端，用于监视此类手动创建和删除的 Pvc [OID\_共同\_添加\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-add-pvc)并[OID\_共同\_删除\_PVC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-co-delete-pvc) Oid 请求呼叫管理器或 MCM 驱动程序添加或删除 PVC 到或从其已配置 Pvc 的列表。 有关 PVC QoS 由操作员配置，并通过网络不协商。
+-   永久 VC 是手动创建的，并最终由运算符使用在 NDIS 中未提供的配置实用工具删除。 监视这种手动创建和删除 Pvc 的客户端可以使用 [OID \_ co \_ ADD \_ pvc](./oid-co-add-pvc.md) 和 [OID \_ co \_ DELETE \_ pvc](./oid-co-delete-pvc.md) oid 来请求调用管理器或 MCM 驱动程序在其已配置的 pvc 列表中添加或删除 PVC。 PVC 的 QoS 由操作员配置，无法通过网络进行流通。
 
-在 NDIS，VC 包括由维护有关 VC 网络上的状态信息的微型端口驱动程序分配的资源。 这些资源可能包括但不限于内存缓冲区、 事件和数据结构。 微型端口驱动程序请求的传入呼叫管理器为 VC 面向连接的客户端的传出调用或调用创建此类上下文。 有关创建 VCs 的详细信息，请参阅[创建 VC](creating-a-vc.md)。
+在 NDIS 中，VC 由微型端口驱动程序分配的资源组成，用于维护有关网络上的 VC 的状态信息。 这些资源可能包括但不限于内存缓冲区、事件和数据结构。 要求使用微型端口驱动程序为一个连接的客户端创建用于传出呼叫的和呼叫管理器的 VC 的此类上下文。 有关创建 VCs 的详细信息，请参阅 [创建 VC](creating-a-vc.md)。
 
-创建的 VC 可用于数据传输之前，必须通过呼叫管理器或 MCM 驱动程序来激活它。 若要激活 VC，微型端口驱动程序或 MCM 驱动程序设置 VC 资源并根据需要来准备要接收或传输 VC 上的数据的 NIC 的 NIC 与进行通信。 VC 激活有关的详细信息，请参阅[激活 VC](activating-a-vc.md)。
+在创建的 VC 可用于数据传输之前，必须通过调用管理器或 MCM 驱动程序将其激活。 若要激活 VC，微型端口驱动程序或 MCM 驱动程序将设置 VC 的资源，并根据需要与 NIC 通信，以便准备 NIC 以在 VC 上接收或传输数据。 有关 VC 激活的详细信息，请参阅 [激活 vc](activating-a-vc.md)。
 
-当关闭调用、 呼叫管理器或 MCM 驱动程序[停用 VC](deactivating-a-vc.md)用于调用。
+当拆开调用时，呼叫管理器或 MCM 驱动程序会停用用于调用的 [VC](deactivating-a-vc.md) 。
 
-VC （面向连接的客户端、 呼叫管理器或 MCM 驱动程序） 的创建者调用，则将调用后，可以使用任一启动[VC 删除](deleting-a-vc.md)或 VC 用于另一个调用。
-
- 
+断开呼叫后，VC 的创建者 (面向连接的客户端、调用管理器或 MCM 驱动程序) 可以启动 [删除 VC](deleting-a-vc.md) 或将 vc 用于另一次调用。
 
  
-
-
-
-
 

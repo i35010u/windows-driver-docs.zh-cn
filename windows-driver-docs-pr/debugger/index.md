@@ -13,12 +13,12 @@ ms.date: 02/22/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 982379cd73e2949bdcd7d0bc46ff53e1fce55f2d
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: fb29f98104178fa23a6773250896a06f56a9a658
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "74861423"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89211145"
 ---
 # <a name="debugging-tools-for-windows-windbg-kd-cdb-ntsd"></a>Windows 调试工具（WinDbg、KD、CDB、NTSD）
 
@@ -31,7 +31,7 @@ ms.locfileid: "74861423"
 
 -   **作为 WDK 的一部分**
 
-    Windows 调试工具包含在 Windows 驱动程序工具包 (WDK) 中。 若要获取 WDK，请参阅[下载 Windows 驱动程序工具包 (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)。
+    Windows 调试工具包含在 Windows 驱动程序工具包 (WDK) 中。 若要获取 WDK，请参阅[下载 Windows 驱动程序工具包 (WDK)](../download-the-wdk.md)。
 
 
 -   **作为 Windows SDK 的一部分**
@@ -41,7 +41,7 @@ ms.locfileid: "74861423"
 
 -   **作为独立工具集**
 
-    可以单独安装 Windows 调试工具而不安装 Windows SDK 或 WDK，方法是启动 Windows SDK 的安装，然后在要安装的功能列表中仅选择“Windows 调试工具”  （并清除所有其他功能的选择）。 若要下载安装程序或 ISO 映像，请参阅 Windows 开发人员中心上的 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
+    可以单独安装 Windows 调试工具而不安装 Windows SDK 或 WDK，方法是启动 Windows SDK 的安装，然后在要安装的功能列表中仅选择“Windows 调试工具”****（并清除所有其他功能的选择）。 若要下载安装程序或 ISO 映像，请参阅 Windows 开发人员中心上的 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 
 
 ## <a name="span-idgetting_started_with_windows_debuggingspanspan-idgetting_started_with_windows_debuggingspanspan-idgetting_started_with_windows_debuggingspanget-started-with-windows-debugging"></a><span id="Getting_Started_with_Windows_Debugging"></span><span id="getting_started_with_windows_debugging"></span><span id="GETTING_STARTED_WITH_WINDOWS_DEBUGGING"></span>Windows 调试入门
@@ -55,15 +55,15 @@ ms.locfileid: "74861423"
 
 如果计算机安装了 Visual Studio 和 WDK，就会有六个可用的调试环境。 有关这些环境的说明，请参阅[调试环境](debuggers-in-the-debugging-tools-for-windows-package.md)。
 
-所有这些调试环境都提供适用于同一基础调试引擎（在 Windows 符号调试程序引擎 (Dbgeng.dll) 中实现）的用户界面。 该调试引擎也称为  “Windows 调试程序”，这六个调试环境统称为  “Windows 调试程序”。
+所有这些调试环境都提供适用于同一基础调试引擎（在 Windows 符号调试程序引擎 (Dbgeng.dll) 中实现）的用户界面。 该调试引擎也称为**“Windows 调试程序”，这六个调试环境统称为**“Windows 调试程序”。
 
 > [!NOTE]
->  Visual Studio 包含自己的调试环境和调试引擎，它们统称为“Visual Studio 调试程序”。 若要了解如何在 Visual Studio 中进行调试，请参阅[在 Visual Studio 中调试](https://docs.microsoft.com/visualstudio/debugger/)。 对于调试托管代码（例如 C#）而言，使用 Visual Studio 调试程序通常是最容易的入门方法。
+> ** Visual Studio 包含自己的调试环境和调试引擎，它们统称为“Visual Studio 调试程序”。 若要了解如何在 Visual Studio 中进行调试，请参阅[在 Visual Studio 中调试](/visualstudio/debugger/)。 对于调试托管代码（例如 C#）而言，使用 Visual Studio 调试程序通常是最容易的入门方法。
 
 
 ## <a name="span-idwindows_debuggersspanspan-idwindows_debuggersspanspan-idwindows_debuggersspanwindows-debuggers"></a><span id="Windows_debuggers"></span><span id="windows_debuggers"></span><span id="WINDOWS_DEBUGGERS"></span>Windows 调试程序
 
-Windows 调试程序可以在基于 x86、x64 或 ARM 的处理器上运行，并且可以调试在那些相同体系结构上运行的代码。 有时候，调试程序和要调试的代码运行在同一计算机上，但另外一些时候，调试程序和要调试的代码则运行在不同的计算机上。 不管哪一种情况，运行调试程序的计算机均称为“主计算机”  ，被调试的计算机均称为“目标计算机”  。 不管是主机计算机还是目标计算机，Windows 调试程序都支持以下 Windows 版本。
+Windows 调试程序可以在基于 x86、x64 或 ARM 的处理器上运行，并且可以调试在那些相同体系结构上运行的代码。 有时候，调试程序和要调试的代码运行在同一计算机上，但另外一些时候，调试程序和要调试的代码则运行在不同的计算机上。 不管哪一种情况，运行调试程序的计算机均称为“主计算机”**，被调试的计算机均称为“目标计算机”**。 不管是主机计算机还是目标计算机，Windows 调试程序都支持以下 Windows 版本。
 
 -   Windows 10 和 Windows Server 2016
 -   Windows 8.1 和 Windows Server 2012 R2

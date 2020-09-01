@@ -1,39 +1,39 @@
 ---
 title: WDI_TLV_CIPHER_KEY_CCMP_KEY
-description: WDI_TLV_CIPHER_KEY_CCMP_KEY 是 TLV 包含 OID_WDI_SET_ADD_CIPHER_KEY CCMP 密码算法的密钥数据。
+description: WDI_TLV_CIPHER_KEY_CCMP_KEY 是一种 TLV，其中包含 OID_WDI_SET_ADD_CIPHER_KEY 的 CCMP 报头密码算法密钥数据。
 ms.assetid: A4754EAC-AA54-45CC-A7C5-B78A2757E012
 ms.date: 07/18/2017
 keywords:
 - 从 Windows Vista 开始 WDI_TLV_CIPHER_KEY_CCMP_KEY 网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f85d2706ff35b030a83863e9e7afd8ddfded22
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69942c3c3cf4923853fb5493562c8c3c11503dcd
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387191"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217975"
 ---
-# <a name="wditlvcipherkeyccmpkey"></a>WDI\_TLV\_CIPHER\_KEY\_CCMP\_KEY
+# <a name="wdi_tlv_cipher_key_ccmp_key"></a>WDI \_ TLV \_ 密码 \_ 密钥 \_ CCMP 报头 \_ 密钥
 
 
-WDI\_TLV\_密码\_密钥\_CCMP\_键是包含 CCMP 密码算法密钥数据的 TLV [OID\_WDI\_设置\_添加\_密码\_密钥](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wdi-set-add-cipher-keys)。
+WDI \_ tlv \_ 密码 \_ 密钥 \_ CCMP 报头 \_ 密钥是一个 TLV，其中包含 OID 的 ccmp 报头密码算法 [密钥 \_ \_ \_ \_ \_ ](./oid-wdi-set-add-cipher-keys.md)数据。
 
 ## <a name="tlv-type"></a>TLV 类型
 
 
 0x50
 
-## <a name="length"></a>长度
+## <a name="length"></a>Length
 
 
-UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一个或多个元素。
+UINT8 元素数组的大小 (以字节为单位) 。 数组必须包含1个或多个元素。
 
 ## <a name="values"></a>值
 
 
-| 在任务栏的搜索框中键入      | 描述                               |
+| 类型      | 说明                               |
 |-----------|-------------------------------------------|
-| UINT8\[\] | 指定 CCMP 密码算法的密钥数据。 |
+| UINT8\[\] | 指定 CCMP 报头密码算法密钥数据。 |
 
  
 
@@ -55,16 +55,11 @@ UINT8 元素的数组大小 （以字节为单位）。 该数组必须包含一
 <td><p>Windows Server 2016</p></td>
 </tr>
 <tr class="odd">
-<td><p>Header</p></td>
+<td><p>标头</p></td>
 <td>Wditypes.hpp</td>
 </tr>
 </tbody>
 </table>
 
  
-
- 
-
-
-
 

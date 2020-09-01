@@ -16,12 +16,12 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7018796055a6e86755433692a1c38d3b509b4341
-ms.sourcegitcommit: 17c1bbc5ea0bef3bbc87794b030a073f905dc942
+ms.openlocfilehash: 2daa0bf1731c3ce18692b70b388f16f9f9ad30c3
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88802683"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218207"
 ---
 # <a name="iprinterbidischemaresponses-interface"></a>IPrinterBidiSchemaResponses 接口
 
@@ -30,7 +30,7 @@ IPrinterBidiSchemaResponses 接口表示由 USB 双向扩展 JavaScript 方法 *
 <a name="members"></a>成员
 -------
 
-**IPrinterBidiSchemaResponses**接口继承自[**IUnknown**](https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterBidiSchemaResponses** 还具有下列类型的成员：
+**IPrinterBidiSchemaResponses**接口继承自[**IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown)接口。 **IPrinterBidiSchemaResponses** 还具有下列类型的成员：
 
 -   [方法](#methods)
 

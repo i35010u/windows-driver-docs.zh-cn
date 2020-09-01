@@ -3,17 +3,17 @@ title: 反序列化的 NDIS 微型端口驱动程序
 description: 反序列化的 NDIS 微型端口驱动程序
 ms.assetid: d133370a-48f4-425b-a2bd-d95ec8b5c369
 keywords:
-- 微型端口驱动程序 WDK 网络类型
+- 微型端口驱动程序 WDK 网络，类型
 - NDIS 微型端口驱动程序 WDK，类型
-- 反序列化的 NDIS 微型端口驱动程序 WDK 网络
+- 反序列化 NDIS 微型端口驱动程序 WDK 网络
 ms.date: 01/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f9c3cf06239430cbb30659b38ffcf3202913a673
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f78387c3f5847abe36a22fc9a479d81ea8f7f32b
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381433"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218430"
 ---
 # <a name="deserialized-ndis-miniport-drivers"></a>反序列化的 NDIS 微型端口驱动程序
 
@@ -21,47 +21,41 @@ ms.locfileid: "67381433"
 
 
 
-所有 NDIS 6.0 和更高版本的驱动程序都都*反序列化*。
+所有 NDIS 6.0 和更高版本的驱动程序均已 *反序列化*。
 
-一个*反序列化的 NDIS 微型端口驱动程序*序列化的操作*MiniportXxx*函数和队列在内部的所有发送请求而不是依赖于 NDIS 来执行这些功能。 因此，反序列化的微型端口驱动程序可以实现全双工性能明显优于序列化的微型端口驱动程序。
+*反序列化的 NDIS 微型端口驱动程序*序列化其自己的*MiniportXxx*函数的操作，并在内部发送请求，而不是依赖 NDIS 来执行这些功能。 因此，反序列化的微型端口驱动程序可以比序列化微型端口驱动程序实现明显更好的全双工性能。
 
-反序列化的驱动程序模型是 NDIS 微型端口驱动程序的默认模型。 面向连接的微型端口驱动程序，以及使用 WDM 的下边缘，微型端口驱动程序必须反序列化的驱动程序。 在编写新的 NDIS 微型端口驱动程序时，您应编写反序列化的驱动程序。 如果可能，你还应端口旧驱动程序到 NDIS 6.0 或更高版本。 有关迁移的驱动程序的详细信息，请参阅：
+反序列化的驱动程序模型是 NDIS 微型端口驱动程序的默认模型。 面向连接的微型端口驱动程序以及具有 WDM 下边缘的微型端口驱动程序必须是反序列化的驱动程序。 编写新的 NDIS 微型端口驱动程序时，应编写反序列化的驱动程序。 如果可能，还应将旧驱动程序移植到 NDIS 6.0 或更高版本。 有关移植驱动程序的详细信息，请参阅：
 
--   [移植到 NDIS 6.0 的 NDIS 5.x 驱动程序](https://docs.microsoft.com/previous-versions/windows/hardware/network/porting-ndis-5-x-drivers-to-ndis-6-0)
--   [移植到 NDIS 6.20 NDIS 6.x 驱动程序](porting-ndis-6-x-drivers-to-ndis-6-20.md)
--   [移植到 NDIS 6.30 NDIS 6.x 驱动程序](porting-ndis-6-x-drivers-to-ndis-6-30.md)
+-   [将 NDIS 1.x 驱动程序移植到 NDIS 6。0](/previous-versions/windows/hardware/network/porting-ndis-5-x-drivers-to-ndis-6-0)
+-   [将 NDIS 6.x 驱动程序移植到 NDIS 6.20](porting-ndis-6-x-drivers-to-ndis-6-20.md)
+-   [将 NDIS 6.x 驱动程序移植到 NDIS 6.30](porting-ndis-6-x-drivers-to-ndis-6-30.md)
 
-它使用 NDIS 接口时，反序列化的微型端口驱动程序必须满足以下要求：
+反序列化的微型端口驱动程序在使用 NDIS 进行接口时必须满足以下要求：
 
--   反序列化的微型端口驱动程序必须将自身标识这种情况下为 NDIS 在初始化过程。
+-   反序列化的微型端口驱动程序必须在初始化期间将自身标识为此类。
 
--   反序列化的微型端口驱动程序必须以异步方式完成所有发送请求。 若要完成发送请求，无连接的 NDIS 6.0 和更高版本的微型端口驱动程序调用**NdisMSendNetBufferListsComplete**函数。 面向连接的 NDIS 6.0 和更高版本的微型端口驱动程序调用**NdisMCoSendNetBufferListsComplete**函数。
+-   反序列化的微型端口驱动程序必须异步完成所有发送请求。 若要完成发送请求，无连接 NDIS 6.0 和更高版本的微型端口驱动程序将调用 **NdisMSendNetBufferListsComplete** 函数。 面向连接的 NDIS 6.0 和更高的微型端口驱动程序调用 **NdisMCoSendNetBufferListsComplete** 函数。
 
--   支持 NDIS 6.0 或更高版本的设置的反序列化的微型端口驱动程序**状态**NET 成员\_缓冲区\_列表结构，它将传递给**NdisMSendNetBufferListsComplete**.
+-   支持 NDIS 6.0 或更高版本的反序列化微型**Status**端口驱动程序 \_ \_ 将会传递到**NdisMSendNetBufferListsComplete**的网络缓冲区列表结构的状态成员。
 
--   如果反序列化的微型端口驱动程序不能立即完成发送请求，它不能用于排队到 NDIS 返回请求。 相反，微型端口驱动程序必须发送请求内部排队直到有足够的资源可用来传输数据。
+-   如果反序列化的微型端口驱动程序无法立即完成发送请求，它无法将对 NDIS 的请求返回到正在重新排队。 相反，微型端口驱动程序必须在内部将发送请求排队，直到有足够的资源可用于传输数据。
 
--   反序列化的微型端口驱动程序必须检查传递到 NDIS 的结构在收到指示直到 NDIS 返回它们之后。 NDIS 返回 NET\_缓冲区\_微型端口驱动程序的列表结构*MiniportReturnNetBufferLists*函数。
+-   反序列化微型端口驱动程序不能在 NDIS 返回它们之前，检查它传递给 NDIS 的结构。 NDIS 将网络 \_ 缓冲区 \_ 列表结构返回到微型端口驱动程序的 *MiniportReturnNetBufferLists* 函数。
 
-反序列化的微型端口驱动程序必须满足以下驱动程序内部的要求：
+反序列化的微型端口驱动程序必须满足以下驱动程序内部要求：
 
--   反序列化的微型端口驱动程序必须保护其网络缓冲区队列[旋转锁](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-spin-locks)。 反序列化的微型端口驱动程序还必须保护其共享的状态同时访问由其自身*MiniportXxx*函数。
+-   反序列化的微型端口驱动程序必须使用 [自旋锁](../kernel/introduction-to-spin-locks.md)保护其网络缓冲区队列。 反序列化的微型端口驱动程序还必须通过其自身的 *MiniportXxx* 函数来保护其共享状态。
 
--   反序列化的微型端口驱动程序*MiniportXxx*函数可以运行在 IRQL &lt;= 调度\_级别。 因此，驱动程序编写器不能假定*MiniportXxx*将处理请求的顺序调用函数。 一个*MiniportXxx*函数可以抢占另*MiniportXxx*在较低的 IRQL 运行的函数。
+-   反序列化的微型端口驱动程序的 *MiniportXxx* 函数可以以 IRQL &lt; = 调度 \_ 级别运行。 因此，驱动程序编写器无法假定 *MiniportXxx* 函数将按它们处理请求的顺序进行调用。 一个 *MiniportXxx* 函数可以抢占以较低的 IRQL 运行的另一个 *MiniportXxx* 函数。
 
--   反序列化的微型端口驱动程序负责网络缓冲区队列管理。 当微型端口驱动程序遇到资源问题时，它不能返回为排队到 NDIS 发送请求。 相反，微型端口驱动程序必须排队在内部的所有发送请求，直到有足够的资源是可用于将数据发送。
+-   反序列化的微型端口驱动程序负责网络缓冲区队列管理。 当微型端口驱动程序遇到资源问题时，它无法将发送请求返回到 NDIS for 正在重新排队。 相反，微型端口驱动程序必须在内部发送所有发送请求，直到有足够的资源可用于发送数据。
 
--   反序列化的微型端口驱动程序应完成发送请求以确定协议的顺序。
+-   反序列化的微型端口驱动程序应按照协议确定的顺序完成发送请求。
 
-有关详细信息大约发送和接收的 NDIS 驱动程序的要求，请参阅[发送和接收操作](send-and-receive-operations.md)。
+有关 NDIS 驱动程序的发送和接收要求的详细信息，请参阅 [发送和接收操作](send-and-receive-operations.md)。
 
-请注意，通常可完成反序列化的微型端口驱动程序将请求发送协议确定顺序。 但是，支持数据包优先级 (例如，IEEE 802.1 p) 的微型端口驱动程序可以对基于优先级的信息的发送请求重新排序。
-
- 
+请注意，反序列化的微型端口驱动程序通常按协议确定的顺序完成发送请求。 但是，支持数据包优先级的微型端口驱动程序 (例如，IEEE 802.1 p) 可以根据优先级信息对发送请求重新排序。
 
  
-
-
-
-
 

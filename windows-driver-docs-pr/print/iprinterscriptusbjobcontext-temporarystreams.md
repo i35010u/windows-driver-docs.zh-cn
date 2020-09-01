@@ -17,16 +17,16 @@ api_type:
 - COM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c596e7c379d77b866b69c234b32da8a442999654
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 06159a996ce3f996780dcd2e875b63e609a97e29
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844328"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218203"
 ---
 # <a name="iprinterscriptusbjobcontexttemporarystreams-method"></a>IPrinterScriptUsbJobContext：： TemporaryStreams 方法
 
-返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)接口的数组。
+返回可由 IHV JavaScript 函数为当前作业使用的永久性数据流的 [IPrinterScriptableSequentialStream](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream) 接口的数组。
 
 <a name="syntax"></a>语法
 ------
@@ -41,17 +41,17 @@ HRESULT TemporaryStreams(
 ----------
 
 *ppArray* \[out，retval\]  
-指向[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)接口的数组的指针。
+指向 [IPrinterScriptableSequentialStream](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream) 接口的数组的指针。
 
 <a name="return-value"></a>返回值
 ------------
 
-此方法返回**HRESULT**值。
+此方法返回 **HRESULT** 值。
 
 <a name="remarks"></a>备注
 -------
 
-**TemporaryStreams**为只读方法。 对于 IHV JavaScript 函数，最多可以有2个临时流。 这些流仅适用于当前打印作业的持续时间。 IHV 可以使用它来存储尚未准备好发送到打印设备的数据。 在以后的**writePrintData** JavaScript 函数调用中，可以使用这些流将存储的数据发送到打印设备。
+**TemporaryStreams** 为只读方法。 对于 IHV JavaScript 函数，最多可以有2个临时流。 这些流仅适用于当前打印作业的持续时间。 IHV 可以使用它来存储尚未准备好发送到打印设备的数据。 在以后的 **writePrintData** JavaScript 函数调用中，可以使用这些流将存储的数据发送到打印设备。
 
 <a name="requirements"></a>要求
 ------------
@@ -72,7 +72,7 @@ HRESULT TemporaryStreams(
 </tr>
 <tr class="odd">
 <td><p>目标平台</p></td>
-<td>桌面</td>
+<td>“桌面”</td>
 </tr>
 </tbody>
 </table>
@@ -81,4 +81,4 @@ HRESULT TemporaryStreams(
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
 
-[IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)
+[IPrinterScriptableSequentialStream](/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)

@@ -6,18 +6,18 @@ ms.date: 12/15/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: c1ab472469eb0ecc8eb66fb6fc42561f19ea4823
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: f9791bbd8f16a1bae467e05d6d7a690082234cdf
+ms.sourcegitcommit: e769619bd37e04762c77444e8b4ce9fe86ef09cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75606427"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89185441"
 ---
 # <a name="storage-driver-design-guide"></a>存储驱动程序设计指南
 
 存储驱动程序包括[类](introduction-to-storage-class-drivers.md)、[端口](storage-port-drivers.md)、[微型端口](storage-miniport-drivers.md)和[筛选器](storage-filter-drivers.md)驱动程序。 通常情况下，设备供应商会为特定的适配器或适配器类型实现微型端口驱动程序。 可以定义一个新的存储类，并为其开发新的类驱动程序，尽管这不常见。 Windows 中的存储类包括磁盘类、CDROM 类、USB 存储类和加密驱动器类。 存储驱动程序开发通常仅限于编写一个适用于 [StorPort](storport-driver-overview.md) 端口驱动程序的微型端口驱动程序。
 
-其他类型的存储设备驱动程序包括安全[接收器](overview.md)驱动程序和特定于设备且适合多路径 I/O 的模块 (_DSM)。 开发 [WMI](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-wmi-classes) 提供程序作为驱动程序的控制接口是为了进行存储管理。
+其他类型的存储设备驱动程序包括安全[接收器](overview.md)驱动程序和特定于设备且适合多路径 I/O 的模块 (_DSM)。 开发 [WMI](./storage-wmi-classes.md) 提供程序作为驱动程序的控制接口是为了进行存储管理。
 
 该存储驱动程序设计指南包含以下部分：
 
@@ -42,4 +42,4 @@ ms.locfileid: "75606427"
 
 ## <a name="driver-verification-for-storport"></a>StorPort 的驱动程序验证
 
-在驱动程序开发过程中使用代码分析工具并进行测试有助于捕获存储驱动程序中的性能问题和缺陷。 [静态驱动程序验证程序 (SDV)](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier) 工具可用于发现存储驱动程序代码中的缺陷。 SDV 中包含的符合性[规则](https://docs.microsoft.com/windows-hardware/drivers/devtest/declaring-functions-by-using-function-role-types-for-storport-drivers)用于验证微型端口驱动程序是否正确使用了 StorPort 例程。
+在驱动程序开发过程中使用代码分析工具并进行测试有助于捕获存储驱动程序中的性能问题和缺陷。 [静态驱动程序验证程序 (SDV)](../devtest/static-driver-verifier.md) 工具可用于发现存储驱动程序代码中的缺陷。 SDV 中包含的符合性[规则](../devtest/declaring-functions-by-using-function-role-types-for-storport-drivers.md)用于验证微型端口驱动程序是否正确使用了 StorPort 例程。

@@ -12,12 +12,12 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.custom: contperfq1
-ms.openlocfilehash: 355e4724b617f38a37efcf8fcc5be3eb4766b0fc
-ms.sourcegitcommit: f5222e608f2853003175244505d5daa3465ac6b3
+ms.openlocfilehash: b5a2ef4ef8c6bbc475502926860a298c5344fd27
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88615087"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218288"
 ---
 # <a name="windows-network-architecture-and-the-osi-model"></a>Windows 网络体系结构和 OSI 模型
 
@@ -56,7 +56,7 @@ MAC 子层管理对物理层的访问，检查帧错误，并管理接收到的�
 
 LLC 子层提供了从一个节点到另一个节点的无错误传输数据帧。 LLC 子层建立和终止逻辑链接、控制帧流、序列帧、确认帧以及重新传输未确认的帧。 LLC 子层使用帧确认和重新传输来通过指向上述层的链接提供几乎错误的免费传输。
 
-在 Windows 中，LLC 子层由称为 [协议驱动程序](ndis-protocol-drivers.md)的软件驱动程序实现。
+在 Windows 中，LLC 子层由称为 [协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)的软件驱动程序实现。
 
 ## <a name="network-layer"></a>网络层
 网络层控制子网的操作。 此层根据以下内容确定数据应采用的物理路径：
@@ -67,7 +67,7 @@ LLC 子层提供了从一个节点到另一个节点的无错误传输数据帧�
 
 -   其他因素，如路由、流量控制、帧碎片整理和重组、逻辑到物理地址映射和使用情况记帐
 
-网络层由 [协议驱动程序](ndis-protocol-drivers.md)实现。
+网络层由 [协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)实现。
 
 ## <a name="transport-layer"></a>传输层
 
@@ -75,13 +75,7 @@ LLC 子层提供了从一个节点到另一个节点的无错误传输数据帧�
 
 协议堆栈中需要最小传输层，其中包含提供虚拟线路功能的可靠网络或 LLC 子层。 例如，由于适用于 Windows 的 NetBEUI 传输驱动程序是与 OSI 兼容的 LLC 子层，因此它的传输层功能很小。 如果协议堆栈不包含 LLC 子层，并且如果网络层不可靠，并且/或者支持与 TCP/IP 的 IP 层或 NWLink 的 IPX 层)  (一样，则传输层应包括帧顺序和确认，并重新传输未确认的帧。
 
-在 Windows 网络体系结构中，传输层由 [协议驱动程序](ndis-protocol-drivers.md)实现，后者有时称为 *传输驱动程序*。
+在 Windows 网络体系结构中，传输层由 [协议驱动程序](./roadmap-for-developing-ndis-protocol-drivers.md)实现，后者有时称为 *传输驱动程序*。
 
  
-
- 
-
-
-
-
 

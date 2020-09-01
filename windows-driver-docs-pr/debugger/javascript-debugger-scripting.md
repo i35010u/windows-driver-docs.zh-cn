@@ -4,12 +4,12 @@ description: 本主题介绍如何使用 JavaScript 创建脚本，这些脚本�
 ms.assetid: 3442E2C4-4054-4698-B7FB-8FE19D26C171
 ms.date: 04/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0689343bf02f3dfefced34cccd50bb36ea87a687
-ms.sourcegitcommit: f610410e1500f0b0a4ca008b52679688ab51033d
+ms.openlocfilehash: c7dc2e7353ce42346da55d84f8173e29b11954e8
+ms.sourcegitcommit: cd84cc10570384b0e7a91cb6f91fe67009c1a90e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88253115"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238145"
 ---
 # <a name="javascript-debugger-scripting"></a>JavaScript 调试器脚本
 
@@ -409,7 +409,7 @@ function uninitializeScript()
 
 下表总结了脚本命令调用的函数
 
-||[.scriptload](-scriptload--load-script-.md)|[.scriptrun（运行脚本）](-scriptrun--run-script-.md)|[.scriptload（卸载脚本）](-scriptunload--unload-script-.md)|
+|命令 |[.scriptload](-scriptload--load-script-.md)|[.scriptrun（运行脚本）](-scriptrun--run-script-.md)|[.scriptload（卸载脚本）](-scriptunload--unload-script-.md)|
 |--- |--- |--- |--- |
 |root|是|是| | |
 |initializeScript|是|是| | |
@@ -830,9 +830,8 @@ Error: 64 bit value loses precision on conversion to number
 
 为了允许调试器扩展维护精度，一组数学函数将在64位库类型的顶层进行投影。 如果扩展需要 (或可能) 需要精度高于53位的传入64位值，则应使用以下方法，而不是依赖标准运算符：
 
-|                   |                           |                                                                                                               |
+| **方法名**   | **签名**             | **说明**                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| **方法名**   | **信号**             | **说明**                                                                                               |
 | asNumber          | . asNumber ( # A1               | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则会 \* \* 引发异常\*\* |
 | convertToNumber   | . convertToNumber ( # A1        | 将64位值转换为 JavaScript 数字。 如果发生精度损失，则 \* \* 不会引发异常\*\* |
 | getLowPart        | . getLowPart ( # A1             | 将64位值的低32位转换为 JavaScript 数字                                         |
@@ -1204,9 +1203,9 @@ Test
 
 下面是开发 JavaScript 调试扩展时可能会有用的 JavaScript 资源。
 
--   [编写 JavaScript 代码](https://docs.microsoft.com/scripting/javascript/writing-javascript-code)
+-   [编写 JavaScript 代码](/scripting/javascript/writing-javascript-code)
 
--   [JScript 语言教程](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/t895bwkh(v=vs.100))
+-   [JScript 语言教程](/previous-versions/visualstudio/visual-studio-2010/t895bwkh(v=vs.100))
 
 -   [Mozilla JavaScript 参考](https://developer.mozilla.org/docs/Web/JavaScript)
 
@@ -1220,13 +1219,3 @@ Test
 [JavaScript 调试器示例脚本](javascript-debugger-example-scripts.md)
 
 [JavaScript 扩展中的本机对象](native-objects-in-javascript-extensions.md)
-
-
-
-
-
-
-
-
-
-

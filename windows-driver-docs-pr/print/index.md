@@ -10,19 +10,19 @@ ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 6004d4eacf32f40d790ffde4202eb93af6c972be
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 3f4280e8755357f0cc9adf76961078462bc1050c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "72842306"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89205885"
 ---
 # <a name="printer-driver-design-guide"></a>打印机驱动程序设计指南
 
 
 本部分提供了有关设计、测试和调试打印机驱动程序的信息。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 
 -   [V4 打印机驱动程序](v4-printer-driver.md)
@@ -59,9 +59,4 @@ ms.locfileid: "72842306"
 ## <a name="related-sections"></a>相关章节
 
 
--   [打印 DDI 参考](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print)
- 
-
-
-
-
+-   [打印 DDI 参考](/windows-hardware/drivers/ddi/_print)

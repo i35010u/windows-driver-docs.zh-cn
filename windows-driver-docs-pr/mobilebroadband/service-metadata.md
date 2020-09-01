@@ -4,12 +4,12 @@ description: 服务元数据概述
 ms.assetid: daf5db05-cf39-4ff2-a2f1-0ffd718c638e
 ms.date: 07/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bd80c43fe7c468c0fe582cfa432729a76d5f1b94
-ms.sourcegitcommit: 67efcd26f7be8f50c92b141ccd14c9c68f4412d8
+ms.openlocfilehash: 64dd8fd0de9ba7e70572062f5e9eefac6fa69bcd
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88902445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218481"
 ---
 # <a name="service-metadata-overview"></a>服务元数据概述
 
@@ -51,7 +51,7 @@ ms.locfileid: "88902445"
 - **服务编号**  
   移动宽带服务提供商的唯一 ID。 使用帐户预配元数据时，此 GUID 还用于标识操作员。 如果更新设备元数据包，则此 GUID 必须保持不变。 服务编号对应于服务元数据包架构中的 [ServiceNumber](servicenumber.md) 元素。
 
-- **运算符徽标** 出现在网络条目旁边的 "Windows 连接管理器" 中的自定义徽标。  (在用户处于漫游网络上时隐藏徽标。 ) 操作员徽标对应于服务元数据包架构中的 [ServiceIconFile](serviceiconfile.md) 元素。 有关徽标要求的详细信息，请参阅 [服务图标要求](https://docs.microsoft.com/windows-hardware/drivers/dashboard/)。  
+- **运算符徽标** 出现在网络条目旁边的 "Windows 连接管理器" 中的自定义徽标。  (在用户处于漫游网络上时隐藏徽标。 ) 操作员徽标对应于服务元数据包架构中的 [ServiceIconFile](serviceiconfile.md) 元素。 有关徽标要求的详细信息，请参阅 [服务图标要求](../dashboard/index.yml)。  
   > [!IMPORTANT]
   > 在 Windows 10 版本1709及更高版本中，此字段已通过 COSA 的品牌替换。 COSA for 署名中的字段在 [规划桌面 COSA/APN 数据库提交](planning-your-desktop-cosa-apn-database-submission.md)中进行了介绍。 如果在 Windows 10 版本1709之前面向 Windows 版本，则仍将创建此部分中所述的元数据包。 有关 COSA 的详细信息，请参阅 [COSA 概述](cosa-overview.md)。
 

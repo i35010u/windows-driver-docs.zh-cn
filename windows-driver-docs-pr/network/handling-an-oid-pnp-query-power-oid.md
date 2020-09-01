@@ -4,36 +4,30 @@ description: 处理 OID_PNP_QUERY_POWER OID
 ms.assetid: aec9393a-debb-41eb-a8a0-b3d1936d707b
 keywords:
 - OID_PNP_QUERY_POWER
-- 网络接口卡 WDK 网络，转换的电源状态
-- Nic WDK 网络，转换的电源状态
-- 电源管理 WDK NDIS 微型端口转换的电源状态
+- 网络接口卡 WDK 网络，过渡电源状态
+- Nic WDK 网络，过渡电源状态
+- 电源管理 WDK NDIS 微型端口，转换电源状态
 - 设备电源状态 WDK 网络
 - 电源状态 WDK 网络
 - 转换电源状态 WDK 网络
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e25f95a384bd41e85af53143a6f508af3e79822
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f2d5995c5ca4c458634bc04e6fa08ce01a05b561
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379825"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218416"
 ---
-# <a name="handling-an-oidpnpquerypower-oid"></a>处理 OID\_PNP\_查询\_POWER OID
+# <a name="handling-an-oid_pnp_query_power-oid"></a>处理 OID \_ PNP \_ 查询 \_ 电源 OID
 
 
 
 
 
-[OID\_PNP\_查询\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-query-power) OID 请求以指示它是否可以转换到低功耗状态的网络适配器的微型端口驱动程序。 微型端口驱动程序必须始终返回 NDIS\_状态\_OID 的查询响应中的成功\_PNP\_查询\_电源。 通过返回 NDIS\_状态\_此 OID 的成功请求，微型端口驱动程序可保证它将转换为指定的设备电源状态在收到的后续的网络适配器[OID\_PNP\_设置\_电源](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)请求。 微型端口驱动程序，在这种情况下，必须执行任何操作危害到太空船转换。
+[Oid \_ PNP \_ 查询 \_ 电源](./oid-pnp-query-power.md)oid 请求微型端口驱动程序，以指示是否可以将网络适配器转换为低功耗状态。 小型端口驱动程序必须始终返回 NDIS \_ 状态 \_ "成功" 以响应 OID \_ PNP 查询电源的查询 \_ \_ 。 通过将 NDIS \_ 状态 \_ 成功返回到此 OID 请求，微型端口驱动程序可保证在收到后续 [OID \_ PNP \_ 设置 \_ 电源](./oid-pnp-set-power.md) 请求时，它会将网络适配器转换为指定的设备电源状态。 在这种情况下，微型端口驱动程序必须不执行任何操作来危害转换。
 
-[OID\_PNP\_查询\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-query-power)请求始终后跟 OID\_PNP\_设置\_POWER 请求。 [OID\_PNP\_设置\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)请求立即可以按照 OID\_PNP\_查询\_POWER 请求或可以到达的未指定时间间隔之后 OID\_PNP\_查询\_POWER 请求。 D0，OID 中指定的设备状态\_PNP\_设置\_电源请求，有效地取消前面的 OID\_PNP\_查询\_POWER 请求。
-
- 
+[Oid \_ pnp \_ 查询 \_ 电源](./oid-pnp-query-power.md)请求始终后跟 oid \_ pnp \_ 设置 \_ 电源请求。 [Oid pnp \_ \_ 集 \_ 电源](./oid-pnp-set-power.md)请求可以紧跟在 oid pnp 查询 \_ 电源请求之后， \_ \_ 或以指定的间隔到达 oid \_ pnp \_ 查询 \_ 电源请求之后。 如果设备状态为 D0，它是在 OID \_ pnp 设置电源请求中指定的，则会 \_ \_ 有效地取消前面的 OID \_ pnp \_ 查询 \_ 电源请求。
 
  
-
-
-
-
 

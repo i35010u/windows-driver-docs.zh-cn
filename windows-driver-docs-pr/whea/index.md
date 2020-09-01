@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: d35e9561036a90667c9c7da5876c2dd7add3efd1
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: bed509c8eddbd24535e4e96b244febe2941db16c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "78947423"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89209481"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows 硬件错误体系结构 (WHEA) 设计指南
 
@@ -32,7 +32,7 @@ ms.locfileid: "78947423"
 
 - 用户模式应用程序如何与 WHEA 平台通信。 有关详细信息，请参阅 [Windows 硬件错误体系结构感知型用户模式应用程序](windows-hardware-error-architecture-aware-user-mode-applications.md)。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 [Windows 硬件错误体系结构简介](introduction-to-the-windows-hardware-error-architecture.md)
 
@@ -52,6 +52,6 @@ ms.locfileid: "78947423"
 
 [Windows 硬件错误体系结构 ACPI 表规范](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/WHEA_ACPI-tables.docx)  
 
-[Hardware Management and Security](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614601(v=vs.85))（硬件管理和安全性）  
+[Hardware Management and Security](/previous-versions/windows/hardware/design/dn614601(v=vs.85))（硬件管理和安全性）  
 
-[**Bug 检查 0x124：WHEA\_UNCORRECTABLE\_ERROR（Windows 调试程序）** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x124---whea-uncorrectable-error)  
+[**Bug 检查 0x124：WHEA\_UNCORRECTABLE\_ERROR（Windows 调试程序）** ](../debugger/bug-check-0x124---whea-uncorrectable-error.md)

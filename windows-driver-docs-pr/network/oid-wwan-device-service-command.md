@@ -1,27 +1,27 @@
 ---
 title: OID_WWAN_DEVICE_SERVICE_COMMAND
-description: OID_WWAN_DEVICE_SERVICE_COMMAND 允许微型端口驱动程序实现特定于供应商的命令。包含供应商定义的结构（NDIS_WWAN_DEVICE_SERVICE_COMMAND）的 NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE 状态通知，用于在完成该事务时提供响应。
+description: OID_WWAN_DEVICE_SERVICE_COMMAND 允许微型端口驱动程序实现特定于供应商的命令。包含供应商定义的结构的 NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE 状态通知 (NDIS_WWAN_DEVICE_SERVICE_COMMAND) 在完成该事务时提供响应。
 ms.assetid: 296E2D23-6EDA-4480-91A3-B6CB39243DAD
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_COMMAND 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_WWAN_DEVICE_SERVICE_COMMAND 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: a046905f185a5d8a0b736997b15fbe9fb1f21493
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fc8b57fae4df01f33af2f956725f1058faf4ce3c
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843858"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218351"
 ---
-# <a name="oid_wwan_device_service_command"></a>OID\_WWAN\_设备\_服务\_命令
+# <a name="oid_wwan_device_service_command"></a>OID \_ WWAN \_ 设备 \_ 服务 \_ 命令
 
 
-OID\_WWAN\_DEVICE\_SERVICE\_命令允许微型端口驱动程序实现特定于供应商的命令。
+OID \_ WWAN \_ 设备 \_ 服务 \_ 命令允许微型端口驱动程序实现特定于供应商的命令。
 
 支持查询和设置请求。
 
-微型端口驱动程序必须异步处理查询和设置请求，最初返回 NDIS\_状态\_指示\_需要请求原始请求，稍后将[**ndis\_状态\_WWAN\_设备发送\_服务\_响应**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-response)状态通知，其中包含供应商定义的结构（[**NDIS\_WWAN\_设备\_SERVICE\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command)），以便在用户完成事务时提供响应。
+微型端口驱动程序必须异步处理查询和设置请求，最初 \_ 返回 \_ \_ 原始请求所需的 ndis 状态指示，稍后发送 [**ndis \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 响应**](./ndis-status-wwan-device-service-response.md) 状态通知，其中包含供应商定义的结构 ([**NDIS \_ WWAN \_ 设备 \_ 服务 \_ 命令**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command)) 在完成事务后提供响应。
 
-如果不支持指定的设备服务或操作，微型端口驱动程序应返回 NDIS\_状态\_不\_支持。
+如果微型端口驱动程序 \_ 不 \_ \_ 支持指定的设备服务或操作，则它应返回不受支持的 NDIS 状态。
 
 <a name="requirements"></a>要求
 ------------
@@ -38,7 +38,7 @@ OID\_WWAN\_DEVICE\_SERVICE\_命令允许微型端口驱动程序实现特定于�
 </tr>
 <tr class="even">
 <td><p>标头</p></td>
-<td>Ntddndis （包括 Ndis .h）</td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
@@ -46,14 +46,9 @@ OID\_WWAN\_DEVICE\_SERVICE\_命令允许微型端口驱动程序实现特定于�
 ## <a name="see-also"></a>另请参阅
 
 
-[ **\_WWAN\_设备\_服务\_响应的 NDIS\_状态**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-wwan-device-service-response)
+[**NDIS \_ 状态 \_ WWAN \_ 设备 \_ 服务 \_ 响应**](./ndis-status-wwan-device-service-response.md)
 
-[**NDIS\_WWAN\_设备\_服务\_命令**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command)
-
- 
+[**NDIS \_ WWAN \_ 设备 \_ 服务 \_ 命令**](/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_command)
 
  
-
-
-
 

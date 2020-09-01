@@ -10,12 +10,12 @@ keywords:
 - 安装的驱动程序测试 WDK 打印机
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 13ea6b5e15a16edeb3fb385b617fdb6e49498361
-ms.sourcegitcommit: 7a7e61b4147a4aa86bf820fd0b0c7681fe17e544
+ms.openlocfilehash: 05ec925488fcb8381cd8facfb9422370fcad2432
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056959"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89218242"
 ---
 # <a name="print-device-installation"></a>打印设备安装
 
@@ -27,7 +27,7 @@ ms.locfileid: "89056959"
 | 系统工作状态 (S0)  | 基本即插即用 |
 | 处于睡眠状态的系统 (S1-S4)  | 请参阅 [电源管理](power-management.md) |
 
-有关详细信息，请参阅 [系统电源状态](https://docs.microsoft.com/windows-hardware/drivers/kernel/system-power-states)。
+有关详细信息，请参阅 [系统电源状态](../kernel/system-power-states.md)。
 
 设备初始安装的最常见系统电源状态是系统工作状态 S0。 大多数设备安装测试最初都应该集中在此处，但在其他系统电源状态下验证安装很重要。
 

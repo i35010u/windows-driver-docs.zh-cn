@@ -1,29 +1,29 @@
 ---
 title: OID_GEN_MULTICAST_BYTES_RCV
-description: 为查询，OID_GEN_MULTICAST_BYTES_RCV OID 多播/功能未出现错误接收的数据包中指定字节的数。
+description: 作为查询，OID_GEN_MULTICAST_BYTES_RCV OID 指定了在未发生错误的情况下接收的多播/功能数据包中的字节数。
 ms.assetid: 9c360aeb-f9b0-41d2-a6e0-feacd5419f55
 ms.date: 08/08/2017
-keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_BYTES_RCV 网络驱动程序
+keywords: -从 Windows Vista 开始 OID_GEN_MULTICAST_BYTES_RCV 的网络驱动程序
 ms.localizationpriority: medium
-ms.openlocfilehash: 9594e29ea93f636d59ed417c5c90f6540847d424
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5451484b20d76869c9d79c19806bedfcb30fbd66
+ms.sourcegitcommit: f500ea2fbfd3e849eb82ee67d011443bff3e2b4c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379408"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89217995"
 ---
-# <a name="oidgenmulticastbytesrcv"></a>OID\_GEN\_MULTICAST\_BYTES\_RCV
+# <a name="oid_gen_multicast_bytes_rcv"></a>OID \_ 生成 \_ 多播 \_ 字节 \_ RCV
 
 
-为查询，OID\_GEN\_多播\_字节\_RCV OID 多播/功能未出现错误接收的数据包中指定的字节数。
+作为查询，OID 生成 \_ \_ 多路广播 \_ 字节 \_ RCV oid 指定接收的没有错误的多播/功能数据包中的字节数。
 
 **版本信息**
 
 <a href="" id="windows-vista-and-later-versions-of-windows"></a>Windows Vista 和更高版本的 Windows  
 已过时。
 
-<a href="" id="ndis-6-0-and-later-drivers"></a>NDIS 6.0 和更高版本的驱动程序  
-未请求。 使用[OID\_代\_统计信息](oid-gen-statistics.md)相反。
+<a href="" id="ndis-6-0-and-later-drivers"></a>NDIS 6.0 和更高版本驱动程序  
+未请求。 请改用 [OID 生成 \_ \_ 统计信息](oid-gen-statistics.md) 。
 
 <a href="" id="ndis-5-1-drivers"></a>NDIS 5.1 驱动程序  
 可选。
@@ -37,7 +37,7 @@ ms.locfileid: "67379408"
 <a name="remarks"></a>备注
 -------
 
-有关 Oid 的统计信息的常规信息，请参阅[General Statistics](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-general-statistics-oids)。
+有关统计信息 Oid 的一般信息，请参阅 [常规统计](./ndis-general-statistics-oids.md)信息。
 
 <a name="requirements"></a>要求
 ------------
@@ -49,21 +49,16 @@ ms.locfileid: "67379408"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Ntddndis.h （包括 Ndis.h）</td>
+<td><p>标头</p></td>
+<td>Ntddndis (包含 Ndis .h) </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 
-[OID\_GEN\_STATISTICS](oid-gen-statistics.md)
-
- 
+[OID \_ 生成 \_ 统计信息](oid-gen-statistics.md)
 
  
-
-
-
 
